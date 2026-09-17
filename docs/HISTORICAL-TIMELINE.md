@@ -10,6 +10,12 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 
 **OPEN:** Determine which build was shown, whether it was playable, and whether any event/demo media or screenshots survive with provenance.
 
+### April 1999 onward — Gamer's Dream web archive exists
+
+**FACT:** The Wayback record for the original Gamer's Dream index path reports captures beginning **1999-04-22**, before the later StoneAge beta and commercial launch. [`SRC-JP-GD-INDEX-ARCHIVE-01`]
+
+**RESEARCH CONSEQUENCE:** The 1999 web layer is not presumed lost. Recovery should continue by historical path/timestamp, especially product, registration, beta, download, shop and support pages.
+
 ### May 1999 — published design intent
 
 **FACT:** `Play Online` issue 012 describes Japan System Supply's then-in-development `STONEAGE` as a relaxed Stone Age RPG whose published design pitch emphasized food/resources, community, and player cooperation contributing to village development. [`SRC-JP-1999-PLAYONLINE-012`]
@@ -18,9 +24,15 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 
 **RESEARCH CONSEQUENCE:** The project's earlier hypothesis that resource/community/village-life ideas may belong to the original JSS conception is now partially promoted to FACT at the level of documented May 1999 design intent.
 
+### August 1999 — beta recruitment closes
+
+**FACT:** `Play Online` issue 015 records **1999-08-20** as the beta application deadline, with 200 reader accounts and lottery selection if oversubscribed. [`SRC-JP-1999-PLAYONLINE-015`]
+
+**OPEN:** Recover the exact application URL printed on the page and the corresponding August 1999 Gamer's Dream/JSS recruitment page.
+
 ### September 1999 — beta test
 
-**FACT:** A `STONEAGE` beta test ran from **1999-09-01 through 1999-09-30** according to contemporaneous `Play Online` issue 015. The magazine also records 200 tester accounts allocated to its readers. [`SRC-JP-1999-PLAYONLINE-015`]
+**FACT:** A `STONEAGE` beta test ran from **1999-09-01 through 1999-09-30** according to contemporaneous `Play Online` issue 015. [`SRC-JP-1999-PLAYONLINE-015`]
 
 **OPEN:** Recover beta client, installer filename, distribution instructions/media, internal version number, file hashes, and beta-to-retail differences.
 
@@ -38,17 +50,50 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 
 **OPEN:** Identify the original magazine issue/page and determine whether the advertised special CD is distinct from the game install/client disc, and what it contains.
 
+### 1999 commercial product requirements
+
+**FACT (archived first-party product page):** An original Gamer's Dream StoneAge product page preserved by Wayback lists:
+
+- release date **1999-10-15**;
+- package price 8,800 yen;
+- MMX Pentium 200 MHz or better;
+- at least 400 MB HDD free space;
+- at least 64 MB RAM;
+- 4x-speed or faster CD-ROM drive;
+- 33.6 Kbps or faster modem / Internet access;
+- at least 2 MB VRAM;
+- DirectX 6.1-compatible video and sound hardware;
+- mouse and keyboard. [`SRC-JP-GD-STONEAGE-INTRO-ARCHIVE-01`]
+
+**FACT:** The same first-party page tells prospective users to purchase the software package first and then register for Gamer's Dream service. [`SRC-JP-GD-STONEAGE-INTRO-ARCHIVE-01`]
+
+**RESEARCH CONSEQUENCE:** The retail release had a normal package-based client/install path. The separately advertised initial-edition special CD must remain a distinct artifact hypothesis until package contents prove otherwise.
+
 ### 1999-10-15 — Japanese commercial start
 
-**FACT (working, high confidence):** The best current evidence supports **1999-10-15** as the Japanese JSS commercial service start date. A contemporaneous 1999-09-17 PC Watch report lists that date as scheduled release, while a 2009 4Gamer tenth-anniversary/service-end retrospective states that service actually started on that date. [`SRC-JP-1999-PCWATCH-TGS-AUTUMN`, `SRC-JP-2009-4GAMER-10TH`]
+**FACT (working, high confidence):** The best current evidence supports **1999-10-15** as the Japanese JSS commercial service start date. A contemporaneous 1999-09-17 PC Watch report lists that date as scheduled release, an archived Gamer's Dream product page lists it as the release date, and a 2009 4Gamer tenth-anniversary/service-end retrospective states that service started on that date. [`SRC-JP-1999-PCWATCH-TGS-AUTUMN`, `SRC-JP-GD-STONEAGE-INTRO-ARCHIVE-01`, `SRC-JP-2009-4GAMER-10TH`]
 
-**OPEN:** Recover the first retail CD-ROM / initial-edition package with provenance, image/dump the media, and extract internal executable/version metadata.
+**OPEN:** Recover the first retail install/client CD-ROM / initial-edition package with provenance, image/dump the media, and extract internal executable/version metadata.
 
 ### Surviving physical-media lead
 
 **OPEN / acquisition lead:** A marketplace listing preserves photographs/descriptive evidence for a purported unopened Japan System Supply `STONEAGE` initial limited edition package, including a seller-described bonus CD-ROM and 1999 Tokyo Game Show promotional material. This is not yet treated as verified original media. [`SRC-JP-1999-RETAIL-MERCARI-01`]
 
 **NEXT VERIFICATION STEP:** obtain direct package/disc imagery or a provenance-preserving dump, then record product identifiers, disc matrix text, file tree, hashes, PE metadata, README/version strings, and package documentation.
+
+## 2000 — JSS collapse and service boundary evidence
+
+### 2000-10-16 — JSS business cessation reported
+
+**FACT:** 4Gamer contemporaneously reported that JSS had effectively ceased business, that LIFESTORM/LIFESTORM2 service and support ended, and that StoneAge support had ended while Gamer's Dream was determining whether the StoneAge service itself could continue. [`SRC-JP-2000-4GAMER-JSS-STOP`]
+
+### 2000-11-10 — Gamer's Dream transition notice
+
+**FACT (archived first-party):** Gamer's Dream's own transition notice states that JSS had handled the StoneAge game-application side, including software corrections and version upgrades, while Gamer's Dream handled server/service operation and billing. [`SRC-JP-GD-JSS-TRANSITION-2000-01`]
+
+**FACT:** After JSS's failure, Gamer's Dream could continue only a reduced service; JSS-dependent technical support/content-event support/version upgrades could no longer continue in the same way, and package sales through the Gamer's Dream online shop were stopped. [`SRC-JP-GD-JSS-TRANSITION-2000-01`]
+
+**RESEARCH CONSEQUENCE:** Recovered executable/data/version-update artifacts should be classified as JSS client/application lineage unless evidence shows they are platform infrastructure; Gamer's Dream account/billing/server pages are service-platform evidence rather than automatically part of the client.
 
 ## 2000 — Taiwan branch
 
