@@ -24,7 +24,7 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Type: contemporaneous Japanese beta announcement/coverage
 - Period: 1999-09
 - Confidence: A
-- Status: beta dates now supported by `SRC-JP-1999-PLAYONLINE-015`; client binary still not recovered
+- Status: beta dates and 1999-08-20 application deadline now supported by `SRC-JP-1999-PLAYONLINE-015`; client binary still not recovered
 - Relevance: proves existence of a public/recruited beta and narrows first recoverable client target.
 
 ### SRC-JP-1999-RETAIL-01
@@ -32,7 +32,7 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Type: JSS first-edition retail package / CD-ROM evidence
 - Period: 1999 launch
 - Confidence: S if physical media can be acquired or imaged with provenance; otherwise B/A/C depending record
-- Status: concrete surviving first-edition package lead now recorded as `SRC-JP-1999-RETAIL-MERCARI-01`; contemporaneous retail advertisement evidence now recorded as `SRC-JP-1999-AD-YAHOO-01`; original verified game-disc image still missing
+- Status: concrete surviving first-edition package lead recorded as `SRC-JP-1999-RETAIL-MERCARI-01`; contemporaneous retail advertisement evidence recorded as `SRC-JP-1999-AD-YAHOO-01`; archived official Gamer's Dream product page recorded as `SRC-JP-GD-STONEAGE-INTRO-ARCHIVE-01`; original verified game-disc image still missing
 - Relevance: top-priority launch artifact.
 
 ### SRC-JP-2003-REVIVAL-01
@@ -112,13 +112,17 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Supports:
   - a `STONEAGE` beta test period from **1999-09-01 through 1999-09-30**;
   - *Play Online* readers being allocated 200 tester accounts;
+  - beta application deadline **1999-08-20**;
+  - application via a form and lottery selection when oversubscribed;
   - existence of a distributable beta-era client before commercial launch.
-- Does not support:
+- Page-level recovery note:
+  - the preserved page includes an application-form / game-homepage information block, but its URL text has not yet been recovered reliably enough to register as fact.
+- Does not support yet:
   - beta installer filename;
-  - exact distribution mechanism;
+  - exact client distribution mechanism/media;
   - checksums or internal version number;
   - exact beta-to-retail differences.
-- Follow-up: recover beta client/media or contemporaneous download/install instructions; capture exact page number(s).
+- Follow-up: prioritize August 1999 Gamer's Dream/JSS archive captures, recover the printed application/game URLs, then recover beta client/media or contemporaneous install instructions.
 
 ### SRC-JP-1999-PCWATCH-TGS-AUTUMN
 
@@ -169,6 +173,101 @@ This is the canonical ledger for historical sources. Entries should record prove
   - recover archived snapshots of `titan.co.jp` and `gamersdream.ne.jp` around August-October 1999;
   - search surviving first-edition packages for the advertised special CD and establish its relationship to the install/client media.
 
+### SRC-JP-GD-INDEX-ARCHIVE-01
+
+- Title: Gamer's Dream archived index
+- Original site period: 1999-2001
+- Retrieval date: 2026-09-18
+- Language/region: Japanese / Japan
+- Source type: Internet Archive Wayback capture of original NTT Data Gamer's Dream site
+- Archived URL: https://web.archive.org/web/20001204061300/http://www.dp.gamersdream.ne.jp/index.html
+- Confidence: **A**
+- Supports:
+  - the original Gamer's Dream site was archived under the host `www.dp.gamersdream.ne.jp`;
+  - Wayback reports captures for the index path beginning **1999-04-22**, before the StoneAge beta and commercial launch;
+  - later preserved site navigation includes StoneAge-specific service/status, title-introduction, special/article and account/service paths.
+- Research value:
+  - proves that pre-beta/pre-launch Gamer's Dream snapshots exist in the archive and should be mined path-by-path rather than assuming the 1999 web material is completely lost.
+- Does not support by itself:
+  - content of a particular 1999 capture;
+  - the beta installer filename or download mechanism.
+
+### SRC-JP-GD-STONEAGE-INTRO-ARCHIVE-01
+
+- Title: archived Gamer's Dream `STONEAGE` title introduction/product page
+- Wayback capture date: 2001-01-28
+- Original page period: page describes the JSS 1999 commercial product; exact first publication date not yet established
+- Retrieval date: 2026-09-18
+- Language/region: Japanese / Japan
+- Source type: archived first-party NTT Data/Gamer's Dream page
+- Archived URL: https://web.archive.org/web/20010128123900/http://www.dp.gamersdream.ne.jp/intro/intro_sa.html
+- Confidence: **A**
+- Supports directly:
+  - genre: RPG;
+  - Japan System Supply attribution;
+  - package price: 8,800 yen;
+  - release date: **1999-10-15**;
+  - CPU: MMX Pentium 200 MHz or better;
+  - HDD free space: at least 400 MB, separate from OS swap needs;
+  - memory: at least 64 MB;
+  - 4x-speed or faster CD-ROM drive;
+  - 33.6 Kbps or faster modem / Internet connection;
+  - VRAM at least 2 MB;
+  - DirectX 6.1-compatible video and sound hardware;
+  - mouse and keyboard;
+  - the normal acquisition flow instructed the user to purchase the software package first and then register for Gamer's Dream service.
+- Research consequence:
+  - materially strengthens the conclusion that the normal commercial product had package-based install/client media;
+  - the initial-edition special/bonus CD must remain a separate artifact hypothesis until direct package contents prove whether it was or was not the install disc.
+- Does not support:
+  - exact standard/initial-edition disc count;
+  - product/JAN code;
+  - disc matrix identifiers;
+  - client executable filename/version;
+  - filesystem or hashes.
+
+### SRC-JP-GD-JSS-TRANSITION-2000-01
+
+- Title: archived Gamer's Dream notice on future `STONEAGE` service following JSS failure
+- Notice date: 2000-11-10
+- Wayback captures used: 2001-01-13 and 2001-02-10
+- Retrieval date: 2026-09-18
+- Language/region: Japanese / Japan
+- Source type: archived first-party NTT Data/Gamer's Dream service notice
+- Archived URLs:
+  - https://web.archive.org/web/20010113210300/http://www.dp.gamersdream.ne.jp/whats_new/sa.html
+  - https://web.archive.org/web/20010210200933/http://www.dp.gamersdream.ne.jp/whats_new/sa2.html
+- Confidence: **A**
+- Supports:
+  - JSS was responsible for the StoneAge game-application side, including client/software correction and version-up work;
+  - Gamer's Dream was responsible for server operation/service and billing;
+  - after JSS's October 2000 failure, Gamer's Dream could continue only a reduced service and could no longer provide the same JSS-dependent technical support/content-event support/version upgrades;
+  - package sales through the Gamer's Dream online shop were stopped;
+  - planned/ongoing software version upgrades could no longer continue under the same arrangement.
+- Archaeology significance:
+  - recovered executable/data/version-update artifacts should be classified primarily as JSS client/application lineage unless evidence shows they are platform-side infrastructure;
+  - Gamer's Dream pages/account/billing/server notices should be treated as service-platform evidence, not automatically as game-client artifacts.
+- Does not support:
+  - exact 1999 client version number;
+  - exact server source code ownership/implementation boundaries;
+  - any unrecovered patch filename.
+
+### SRC-JP-2000-4GAMER-JSS-STOP
+
+- Title: `R.I.P. LIFESTORM`
+- Original date: 2000-10-16
+- Retrieval date: 2026-09-18
+- Language/region: Japanese / Japan
+- Source type: contemporaneous specialist-press report
+- URL: https://www.4gamer.net/archive/200010/ripls.html
+- Confidence: **A**
+- Supports:
+  - JSS had effectively ceased business by 2000-10-16;
+  - LIFESTORM/LIFESTORM2 service and support ended;
+  - StoneAge support had ended, while Gamer's Dream was still checking whether StoneAge service itself could continue.
+- Value:
+  - contemporaneously corroborates the operating disruption later documented in the archived Gamer's Dream first-party notice.
+
 ### SRC-JP-2009-4GAMER-10TH
 
 - Title: `1999年サービス開始の老舗MMORPG「ストーンエイジ」が，2010年2月にサービス終了`
@@ -184,7 +283,7 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Does not support:
   - JSS executable/client version number;
   - original retail media layout.
-- Note: used together with the contemporaneous PC Watch scheduled-release report, this is sufficient for the working timeline to treat 1999-10-15 as the commercial service start unless conflicting primary evidence appears.
+- Note: used together with the contemporaneous PC Watch scheduled-release report and archived Gamer's Dream product page, this is sufficient for the working timeline to treat 1999-10-15 as the commercial service start unless conflicting primary evidence appears.
 
 ### SRC-JP-1999-RETAIL-MERCARI-01
 
@@ -207,7 +306,7 @@ This is the canonical ledger for historical sources. Entries should record prove
   - exact game-disc contents;
   - checksums;
   - internal version number;
-  - whether the listed bonus CD is distinct from the game client disc in a particular way.
+  - whether the listed bonus CD is distinct from the game install/client disc.
 - Promotion criterion: upgrade relevant artifact evidence to **S** only after direct provenance-preserving inspection/imaging/dumping of original media/package.
 
 ## Required metadata for future entries
