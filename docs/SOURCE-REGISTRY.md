@@ -32,7 +32,7 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Type: JSS first-edition retail package / CD-ROM evidence
 - Period: 1999 launch
 - Confidence: S if physical media can be acquired or imaged with provenance; otherwise B/A/C depending record
-- Status: concrete surviving first-edition package lead recorded as `SRC-JP-1999-RETAIL-MERCARI-01`; contemporaneous retail advertisement evidence recorded as `SRC-JP-1999-AD-YAHOO-01`; archived official Gamer's Dream product page recorded as `SRC-JP-GD-STONEAGE-INTRO-ARCHIVE-01`; original verified game-disc image still missing
+- Status: concrete surviving first-edition package lead recorded as `SRC-JP-1999-RETAIL-MERCARI-01`; contemporaneous retail advertisement evidence recorded as `SRC-JP-1999-AD-YAHOO-01`; archived official Gamer's Dream product page recorded as `SRC-JP-GD-STONEAGE-INTRO-ARCHIVE-01`; archived JSS manual now independently confirms normal game-CD installation and a CD NUMBER card; original verified game-disc image still missing
 - Relevance: top-priority launch artifact.
 
 ### SRC-JP-2003-REVIVAL-01
@@ -298,6 +298,65 @@ This is the canonical ledger for historical sources. Entries should record prove
   - whether the archived 2001 binary is byte-identical to a 1999 launcher state.
 - Repository safety:
   - if bytes are later recovered, record hashes and analysis but do not commit the proprietary executable by default.
+
+### SRC-JP-JSS-STONEAGE-MANUAL-ARCHIVE-01
+
+- Title: archived JSS `STONEAGE` official manual / installation and game-start page
+- Original JSS manual index: `http://www.titan.co.jp/stoneage/manual.html`
+- Wayback installation/start capture used: 2001-01-19
+- Retrieval date: 2026-09-18
+- Language/region: Japanese / Japan
+- Source type: archived first-party Japan System Supply manual
+- Archived page URL: https://web.archive.org/web/20010119071900/http://www.titan.co.jp/stoneage/manual01.html
+- Confidence: **A**
+- Supports:
+  - DirectX 6.1 was required and included on the StoneAge **game CD**;
+  - installation began by inserting the game CD, with an automatically starting installer;
+  - install modes were standard (StoneAge + DirectX), minimum (StoneAge only), and custom;
+  - the `map` component could be deselected as an installation workaround;
+  - Windows Start-menu path `[Stoneage]` -> `[stoneage]`;
+  - Gamer's Dream registration/service used an ID NUMBER/password after agreement;
+  - a physical **CD NUMBER card** carried the CD NUMBER required for Gamer's Dream contract/registration;
+  - F12 saved screenshots under a `screenshot` subdirectory beneath the StoneAge folder;
+  - Alt+Enter provided window mode, documented with a 256-color support limitation.
+- Research value:
+  - independently confirms a normal game-CD install path and a separate registration artifact (CD NUMBER card);
+  - gives concrete install/component/path anchors for future disc and client-tree archaeology.
+- Does not support:
+  - exact total disc count in standard or initial editions;
+  - whether the separately advertised initial-edition special CD was or was not the game CD;
+  - product/JAN code;
+  - readable names for server labels damaged by archived-text mojibake.
+
+### SRC-JP-JSS-STONEAGE-FAQ-ARCHIVE-01
+
+- Title: archived JSS `STONEAGE` startup/install/update FAQ
+- Wayback capture used: 2001-02-15
+- Retrieval date: 2026-09-18
+- Language/region: Japanese / Japan
+- Source type: archived first-party Japan System Supply support/FAQ page
+- Archived page URL: https://web.archive.org/web/20010215222514/http://www.titan.co.jp/stoneage/faqstart.html
+- Confidence: **A**
+- Supports:
+  - startup troubleshooting references `MFC42.DLL`;
+  - reinstall instructions refer to reinstalling StoneAge from the CD;
+  - version-up/network troubleshooting tells users to delete files from the StoneAge installation's **`data\download`** directory and clear Windows `Temporary Internet Files` before retrying;
+  - update failures include repeated file downloads, save failures, and a download error containing **`cksum:xxxxxxxxx`**;
+  - proxy configuration is discussed in the update troubleshooting context;
+  - cleanup of data from an earlier StoneAge test instructs users to uninstall and completely remove **`ProgramFiles\jss\stoneage`** before installing the retail product;
+  - CD NUMBER is entered when contracting/registering with Gamer's Dream;
+  - install workarounds include custom installation with `MAP` unchecked;
+  - physical-CD troubleshooting tells users to inspect/clean the readable side of the StoneAge CD.
+- Archaeology significance:
+  - exposes concrete client/update anchors: `ProgramFiles\jss\stoneage`, `data\download`, `cksum:xxxxxxxxx`, `MFC42.DLL`, Windows Temporary Internet Files and proxy settings;
+  - supports a model in which the updater downloaded individual files into a staging/cache area and performed checksum-related validation, while the exact algorithm/protocol remains unresolved.
+- Does not support yet:
+  - checksum algorithm;
+  - update manifest filename/format;
+  - update-server hostname/path;
+  - payload filenames/extensions;
+  - whether WinINet/IE APIs were used directly;
+  - exact Japanese name/label of the earlier test referenced in damaged archive text.
 
 ### SRC-JP-2000-4GAMER-JSS-STOP
 
