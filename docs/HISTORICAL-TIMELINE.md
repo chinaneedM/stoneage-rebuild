@@ -4,23 +4,43 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 
 ## 1999 — JSS origin period
 
-### 1999 pre-launch
+### March 1999 — public exhibition context
 
-**FACT (working):** Contemporaneous Japanese press material exists showing StoneAge before commercial launch.
+**FACT (working):** Contemporary PC Watch coverage of Tokyo Game Show '99 Spring records `STONEAGE` being prominently exhibited in the NTT Data `Gamer's Dream` booth. This establishes that the title was already being publicly promoted by March 1999.
 
-**HYPOTHESIS:** The original design emphasis appears broader than combat alone and may have included village/community life, food/resources, hunting/gathering, and other forms of daily-world interaction.
+**OPEN:** add this source as a fully structured registry record and capture any surviving booth imagery with provenance.
 
-### September 1999
+### May 1999 — published design intent
 
-**FACT (working):** A public beta test existed during this period.
+**FACT:** `Play Online` issue 012 describes Japan System Supply's then-in-development `STONEAGE` as a relaxed Stone Age RPG whose published design pitch emphasized food/resources, community, and player cooperation contributing to village development. [`SRC-JP-1999-PLAYONLINE-012`]
 
-**OPEN:** Recover beta client, installer filename, internal version number, documentation, screenshots/video with provenance.
+**IMPORTANT LIMIT:** This is evidence for **pre-launch design intent**, not automatic proof that every described mechanic shipped unchanged in the final October client.
 
-### October 1999
+**RESEARCH CONSEQUENCE:** The project's earlier hypothesis that resource/community/village-life ideas may belong to the original JSS conception is now partially promoted to FACT at the level of documented May 1999 design intent.
 
-**FACT (working):** Japanese commercial service launched in this period.
+### September 1999 — beta test
 
-**OPEN:** Recover first retail CD-ROM image, launch manual, packaging inserts, readme/patch information, and internal executable version metadata.
+**FACT:** A `STONEAGE` beta test ran from **1999-09-01 through 1999-09-30** according to contemporaneous `Play Online` issue 015. The magazine also records 200 tester accounts allocated to its readers. [`SRC-JP-1999-PLAYONLINE-015`]
+
+**OPEN:** Recover beta client, installer filename, distribution instructions/media, internal version number, file hashes, and beta-to-retail differences.
+
+### 1999-09-17 — Tokyo Game Show '99 Autumn
+
+**FACT:** PC Watch reported `STONEAGE` at the Gamer's Dream booth and identified Japan System Supply as publisher. It gave **1999-10-15** as the scheduled release date. [`SRC-JP-1999-PCWATCH-TGS-AUTUMN`]
+
+**FACT:** The same report describes the contemporary experience in terms of living as a Stone Age inhabitant, hunting dinosaurs, chatting with other players, and adventuring with companions in a deliberately gentle atmosphere. [`SRC-JP-1999-PCWATCH-TGS-AUTUMN`]
+
+### 1999-10-15 — Japanese commercial start
+
+**FACT (working, high confidence):** The best current evidence supports **1999-10-15** as the Japanese JSS commercial service start date. A contemporaneous 1999-09-17 PC Watch report lists that date as scheduled release, while a 2009 4Gamer tenth-anniversary/service-end retrospective states that service actually started on that date. [`SRC-JP-1999-PCWATCH-TGS-AUTUMN`, `SRC-JP-2009-4GAMER-10TH`]
+
+**OPEN:** Recover the first retail CD-ROM / initial-edition package with provenance, image/dump the media, and extract internal executable/version metadata.
+
+### Surviving physical-media lead
+
+**OPEN / acquisition lead:** A marketplace listing preserves photographs/descriptive evidence for a purported unopened Japan System Supply `STONEAGE` initial limited edition package, including a seller-described bonus CD-ROM and 1999 Tokyo Game Show promotional material. This is not yet treated as verified original media. [`SRC-JP-1999-RETAIL-MERCARI-01`]
+
+**NEXT VERIFICATION STEP:** obtain direct package/disc imagery or a provenance-preserving dump, then record product identifiers, disc matrix text, file tree, hashes, PE metadata, README/version strings, and package documentation.
 
 ## 2000 — Taiwan branch
 
@@ -49,4 +69,4 @@ Research categories include:
 
 ## Rule for this file
 
-Every precise date, version number, feature-first-appearance claim, and lore-first-appearance claim should eventually reference a source record ID from `SOURCE-REGISTRY.md`.
+Every precise date, version number, feature-first-appearance claim, and lore-first-appearance claim should reference a source record ID from `SOURCE-REGISTRY.md` once a structured record exists.
