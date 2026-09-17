@@ -32,7 +32,7 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Type: JSS first-edition retail package / CD-ROM evidence
 - Period: 1999 launch
 - Confidence: S if physical media can be acquired or imaged with provenance; otherwise B/A/C depending record
-- Status: concrete surviving first-edition package lead now recorded as `SRC-JP-1999-RETAIL-MERCARI-01`; original verified game-disc image still missing
+- Status: concrete surviving first-edition package lead now recorded as `SRC-JP-1999-RETAIL-MERCARI-01`; contemporaneous retail advertisement evidence now recorded as `SRC-JP-1999-AD-YAHOO-01`; original verified game-disc image still missing
 - Relevance: top-priority launch artifact.
 
 ### SRC-JP-2003-REVIVAL-01
@@ -60,6 +60,24 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Relevance: childhood/reference baseline and major diff target.
 
 ## Structured source records — 2026-09-18 pass
+
+### SRC-JP-1999-PCWATCH-TGS-SPRING
+
+- Title: `東京ゲームショウ'99春　レポート`
+- Original date: 1999-03-19
+- Retrieval date: 2026-09-18
+- Language/region: Japanese / Japan
+- Source type: contemporaneous PC Watch press report
+- URL: https://pc.watch.impress.co.jp/docs/article/990319/tgs.htm
+- Confidence: **A**
+- Supports:
+  - `STONEAGE` was already being publicly exhibited by Tokyo Game Show '99 Spring;
+  - PC Watch described it as the third Gamer's Dream title and as a somewhat comical game set in a prehistoric era;
+  - Gamer's Dream was an NTT Data booth/platform context at that event.
+- Does not support:
+  - exact client build/version shown at the booth;
+  - whether the exhibited build was distributed outside the event;
+  - final retail contents.
 
 ### SRC-JP-1999-PLAYONLINE-012
 
@@ -119,6 +137,37 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Does not support:
   - by itself, that the scheduled date was actually met;
   - retail disc contents/version metadata.
+
+### SRC-JP-1999-AD-YAHOO-01
+
+- Title: `当時物 PC ストーンエイジ StoneAge ブルースフィア BLUE SPHERE 雑誌 広告`
+- Original artifact period: 1999; photographed advertisement is contemporaneous in content
+- Retrieval date: 2026-09-18
+- Language/region: Japanese / Japan
+- Source type: marketplace photographs of a period magazine advertisement
+- Listing URL: https://auctions.yahoo.co.jp/jp/auction/k1223621478
+- Image evidence: Yahoo Auctions listing images; preserve URLs/archival captures separately if possible
+- Confidence: **B** for the legible contemporaneous advertisement content shown in photographs; not S because the project has not directly inspected/archived the original publication page
+- Supports directly from visible advertisement text:
+  - Windows 95/98 as the advertised platform;
+  - **1999-10-15** as the scheduled release date;
+  - planned retail price **8,800 yen before tax**;
+  - Japan System Supply's period web address `http://www.titan.co.jp/`;
+  - Gamer's Dream's period web address `http://www.gamersdream.ne.jp/`;
+  - an original mug was advertised as a reservation bonus;
+  - an initial-edition `STONEAGE` special CD was advertised as an initial bonus/feature.
+- Research value:
+  - independently corroborates the first-edition bonus-CD lead seen in `SRC-JP-1999-RETAIL-MERCARI-01`;
+  - supplies exact period domains for archived-site recovery attempts;
+  - narrows package identification through platform and price metadata.
+- Does not support:
+  - exact contents of the special CD;
+  - whether the special CD is the game client disc or an additional bonus disc;
+  - executable version, hashes, disc matrix identifiers, or final package layout.
+- Follow-up:
+  - locate the original magazine issue/page if possible;
+  - recover archived snapshots of `titan.co.jp` and `gamersdream.ne.jp` around August-October 1999;
+  - search surviving first-edition packages for the advertised special CD and establish its relationship to the install/client media.
 
 ### SRC-JP-2009-4GAMER-10TH
 
