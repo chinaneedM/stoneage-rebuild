@@ -6,9 +6,9 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 
 ### March 1999 — public exhibition context
 
-**FACT (working):** Contemporary PC Watch coverage of Tokyo Game Show '99 Spring records `STONEAGE` being prominently exhibited in the NTT Data `Gamer's Dream` booth. This establishes that the title was already being publicly promoted by March 1999.
+**FACT:** Contemporary PC Watch coverage of Tokyo Game Show '99 Spring records `STONEAGE` being prominently exhibited in NTT Data's `Gamer's Dream` booth as the platform's third title. This establishes that the title was already being publicly promoted by **1999-03-19**. [`SRC-JP-1999-PCWATCH-TGS-SPRING`]
 
-**OPEN:** add this source as a fully structured registry record and capture any surviving booth imagery with provenance.
+**OPEN:** Determine which build was shown, whether it was playable, and whether any event/demo media or screenshots survive with provenance.
 
 ### May 1999 — published design intent
 
@@ -29,6 +29,14 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 **FACT:** PC Watch reported `STONEAGE` at the Gamer's Dream booth and identified Japan System Supply as publisher. It gave **1999-10-15** as the scheduled release date. [`SRC-JP-1999-PCWATCH-TGS-AUTUMN`]
 
 **FACT:** The same report describes the contemporary experience in terms of living as a Stone Age inhabitant, hunting dinosaurs, chatting with other players, and adventuring with companions in a deliberately gentle atmosphere. [`SRC-JP-1999-PCWATCH-TGS-AUTUMN`]
+
+### 1999 retail advertising
+
+**FACT:** A photographed period magazine advertisement for JSS `STONEAGE` gives Windows 95/98 as the platform, **1999-10-15** as the scheduled release date, and **8,800 yen before tax** as the planned price. It also prints the period domains `www.titan.co.jp` and `www.gamersdream.ne.jp`. [`SRC-JP-1999-AD-YAHOO-01`]
+
+**FACT:** The same advertisement visibly promotes an original mug as a reservation bonus and a `STONEAGE` special CD as an initial-edition bonus/feature. This materially strengthens the separate marketplace lead for a surviving first-edition package with bonus CD. [`SRC-JP-1999-AD-YAHOO-01`, `SRC-JP-1999-RETAIL-MERCARI-01`]
+
+**OPEN:** Identify the original magazine issue/page and determine whether the advertised special CD is distinct from the game install/client disc, and what it contains.
 
 ### 1999-10-15 — Japanese commercial start
 
