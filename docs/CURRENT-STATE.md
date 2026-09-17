@@ -32,7 +32,7 @@ The independent GitHub repository and continuity scaffold are established on rem
 - The same advertisement visibly promotes an original mug as a reservation bonus and a `STONEAGE` special CD as an initial-edition bonus/feature.
 - An archived first-party Gamer's Dream StoneAge product page independently lists **1999-10-15** as release date, package price 8,800 yen, a 4x or faster CD-ROM drive, at least 400 MB HDD, 64 MB RAM, MMX Pentium 200 MHz+, 33.6 Kbps+ Internet access, 2 MB+ VRAM, DirectX 6.1-compatible video/sound, mouse and keyboard.
 - The same first-party product page tells users to **purchase the software package first and then register for Gamer's Dream service**, materially confirming a normal package-based install/client path.
-- The archived official JSS manual now confirms that the normal retail path used a StoneAge **game CD**, with DirectX 6.1 on that disc and an auto-start installer. Installation modes were standard, minimum and custom; `map` was a selectable component.
+- The archived official JSS manual confirms that the normal retail path used a StoneAge **game CD**, with DirectX 6.1 on that disc and an auto-start installer. Installation modes were standard, minimum and custom; `map` was a selectable component.
 - The same JSS manual confirms a physical **CD NUMBER card** whose CD NUMBER was required for Gamer's Dream service registration/contracting. The manual also documents `[Stoneage]` -> `[stoneage]` as the Start-menu path and a `screenshot` subdirectory under the StoneAge folder.
 - Singular wording `game CD` does not establish total disc count; the advertised initial-edition special CD remains a separate artifact until direct package evidence establishes its relationship to the install disc.
 - A 2009 4Gamer retrospective states that Japanese service actually started on **1999-10-15**; together with the contemporary PC Watch report and archived Gamer's Dream product page, this date is the high-confidence working commercial start date.
@@ -46,13 +46,14 @@ The independent GitHub repository and continuity scaffold are established on rem
 - Archived Gamer's Dream notices from the JSS collapse period state that JSS handled the StoneAge game-application side, including software corrections and version upgrades, while Gamer's Dream handled server/service operation and billing. After JSS failed in October 2000, Gamer's Dream could continue only reduced service and package sales/version upgrades ceased under the prior arrangement.
 - Taiwan and Mainland Chinese versions followed later and introduced localization/iteration layers.
 
-Precise claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed research is split across:
+Precise first-party claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed research is split across:
 
 - `research/origin/JSS-1999-ORIGIN-EVIDENCE-R1.md`
 - `research/origin/GAMERSDREAM-JSS-ARCHIVE-EVIDENCE-R1.md`
 - `research/clients/JSS-CLIENT-VERSION-ARCHAEOLOGY-R1.md`
+- `research/clients/DESCENDANT-CLIENT-SOURCE-LINEAGE-R1.md` — explicitly lower-confidence later-source lineage clues, not 1999 JSS facts.
 
-### HYPOTHESIS
+### HYPOTHESIS / lower-confidence search leads
 
 - The earliest StoneAge concept may have been much simpler in macro-lore than later versions, even though resource/community/village-life themes are directly attested in May 1999 design coverage.
 - Much of the later macro-lore may have been progressively added to explain and extend an initially simpler world.
@@ -60,20 +61,22 @@ Precise claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed research is split
 - The strongest current media model is that the retail package contained normal install/client media and the initial edition additionally included a separate special/bonus CD. This is **not FACT** until an original first-edition package or first-party contents list proves the disc layout.
 - The updater probably used a manifest/protocol that mapped downloadable files to checksum values, but the manifest filename, checksum algorithm, endpoint and payload format remain unresolved.
 - The OCR-ambiguous character immediately before `PO/sa_apply.html` could be an old-style user-directory marker such as `~`, but this remains a **search hypothesis only** and is not the registered exact beta URL.
+- Multiple later community-preserved client-source trees retain JSS/Gamer's Dream title identifiers. One later lineage uses `StoneAge.exe` as a launcher/update-facing program while project/debug metadata names a runtime `sa.exe`; the runtime also contains the strings `updated` and `CheckForUpdate`. Later Taiwan troubleshooting material independently records `cksum:...:File:sa.exe`. This makes **`sa.exe` a high-value original-artifact search target**, but does **not** establish that the filename or launcher/runtime split existed in the 1999 JSS beta or retail client.
 
 ## Highest-priority research questions
 
 1. **Locate and verify the earliest recoverable JSS retail install/client medium or provenance-preserving image.**
-   - Progress: a surviving `STONEAGE 初回限定版` physical-package lead, contemporaneous retail advertising, official Gamer's Dream product page and official JSS manual now independently constrain the artifact.
-   - Confirmed retail/client anchors: normal **game CD**, physical **CD NUMBER card**, `stoneage.exe`, `ProgramFiles\jss\stoneage`, `map` install component, CD-based auto-start installer, 1999-10-15 release and 8,800-yen package price.
-   - Still missing: provenance-preserving retail disc image/dump, exact disc count, file tree, hashes, retail `stoneage.exe` PE metadata, disc matrix identifiers, product/JAN code, disc-label photos and complete package/manual/insert capture.
+   - Progress: a surviving `STONEAGE 初回限定版` physical-package lead, contemporaneous retail advertising, official Gamer's Dream product page and official JSS manual independently constrain the artifact.
+   - Confirmed JSS retail/client anchors: normal **game CD**, physical **CD NUMBER card**, `stoneage.exe`, `ProgramFiles\jss\stoneage`, `map` install component, CD-based auto-start installer, 1999-10-15 release and 8,800-yen package price.
+   - Search lead from descendant lineages: inspect recovered media for `sa.exe` separately from `stoneage.exe`, plus `updated` and `CheckForUpdate`; these are not yet confirmed JSS-1999 strings.
+   - Still missing: provenance-preserving retail disc image/dump, exact disc count, file tree, hashes, retail executable PE metadata, disc matrix identifiers, product/JAN code, disc-label/back-box photos and complete package/manual/insert capture.
 2. **Recover and fingerprint the archived JSS `stoneage.exe` replacement launcher.**
    - Progress: exact original JSS path is known; JSS advertised the file as 212 KB; Wayback reports two archived captures and exposes the object as binary content.
    - Current limitation: this environment has not extracted the bytes.
-   - Still needed: exact byte size, SHA-256/SHA-1/MD5, PE timestamp, version resources, imports and strings; compare against any future retail-disc launcher.
+   - Still needed: exact byte size, SHA-256/SHA-1/MD5, PE timestamp, version resources, imports and strings; test specifically for process-launch references to `sa.exe`, the token `updated`, and `CheckForUpdate` rather than assuming descendant behavior.
 3. **Recover the automatic-update manifest/protocol and payload naming.**
-   - Progress: updater anchors now include `data\download`, `cksum:xxxxxxxxx`, `MFC42.DLL`, Windows Temporary Internet Files/proxy behavior and `stoneage.exe`.
-   - Still needed: manifest/config filename, update host/path, checksum algorithm, payload filenames/extensions and whether whole files or deltas were delivered.
+   - Progress: first-party updater anchors include `data\download`, `cksum:xxxxxxxxx`, `MFC42.DLL`, Windows Temporary Internet Files/proxy behavior and `stoneage.exe`. Much later Taiwan troubleshooting records a descendant checksum error targeting `sa.exe`, showing that filename-bearing `cksum` records existed in a later lineage.
+   - Still needed from JSS evidence: manifest/config filename, update host/path, checksum algorithm, payload filenames/extensions, the original `cksum` record structure and whether whole files or deltas were delivered.
 4. **Determine the identity and contents of the initial-edition `STONEAGE` special CD.**
    - Progress: the special-CD claim is corroborated by contemporaneous advertising and a surviving sealed-package listing; the official manual separately confirms a normal game CD.
    - OPEN: exact contents, whether physically separate from install/client media, filesystem/audio tracks, identifiers and hashes.
@@ -82,7 +85,7 @@ Precise claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed research is split
    - Still missing: the single OCR-ambiguous character before `PO`, an archived copy of the application page, tester/download instructions, installer/client filename, distribution method/media, hashes, internal version and beta-to-retail diff.
 6. **Mine the surviving JSS/Gamer's Dream web archives for 1999 paths and support/update artifacts.**
    - Progress: JSS `manual.html`, `manual01.html`, `faqstart.html`, `verup.html`, `updater.html` and `stoneage.exe` paths are known; Gamer's Dream archive coverage begins before beta/launch; beta application matching can now target `*PO/sa_apply.html` rather than the whole domain.
-   - Priority targets: update manifests/package names/endpoints; the exact August 1999 beta application capture and sibling tester/download pages; product/shop pages; registration; download/install instructions; support/version pages.
+   - Priority targets: update manifests/package names/endpoints; the exact August 1999 beta application capture and sibling tester/download pages; product/shop pages; registration; download/install instructions; support/version pages; any original occurrence of `sa.exe`, `updated` or `CheckForUpdate`.
 7. Recover JSS launch box/manual inserts and original world-setting text not already represented by the archived online manual.
 8. Determine the earliest documented appearance of:
    - the name "Nies / ニース / 尼斯";
@@ -96,21 +99,26 @@ Precise claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed research is split
 
 ## Completed in the latest work pass
 
-- Re-read the latest remote `main` before continuing and detected that the repository had advanced beyond the prior chat checkpoint; resumed from the newer GitHub state rather than stale chat memory.
+- Re-read the latest remote `main` before continuing and resumed from GitHub rather than stale chat state.
 - Expanded `research/origin/GAMERSDREAM-JSS-ARCHIVE-EVIDENCE-R1.md` with the newly recovered beta-application URL evidence.
 - Recovered, from searchable text extraction of the preserved 1999 *Play Online* issue, the beta application's **Gamer's Dream host** `www.dp.gamersdream.ne.jp` and path tail **`PO/sa_apply.html`**.
 - Explicitly preserved the unresolved character immediately before `PO` as OCR ambiguity instead of silently converting it to `~`, `/` or another character.
-- Narrowed the next Wayback search target from the whole Gamer's Dream domain to archived paths matching **`*PO/sa_apply.html`** and sibling beta/tester/download resources.
-- Previously recovered retail/install/update anchors remain authoritative: normal game CD, CD NUMBER card, `stoneage.exe`, `ProgramFiles\jss\stoneage`, `data\download`, `cksum:xxxxxxxxx`, `MFC42.DLL`, archived launcher path and update history beginning 1999-10-18.
+- Added `research/clients/DESCENDANT-CLIENT-SOURCE-LINEAGE-R1.md` to quarantine and document later community/source-lineage clues separately from first-party JSS evidence.
+- Recorded recurring descendant identifiers `CG_TITLE_JSS_LOGO` / `CG_TITLE_DREAM_LOGO`, and a later launcher/runtime pattern involving `StoneAge.exe`, runtime target `sa.exe`, command-line token `updated` and mutex `CheckForUpdate`.
+- Cross-checked that pattern against later Taiwan troubleshooting material whose updater error explicitly targets `sa.exe` using a `cksum` record; retained this only as descendant evidence, not a retroactive 1999 claim.
+- Searched indexed Japanese retail/collector material for a product/JAN code; no reliable product/JAN identifier was recovered in this pass.
+- The surviving Mercari first-edition listing exposes 13 original-image URLs, but the current retrieval layer cannot fetch those image bodies. No barcode/product code was guessed from inaccessible images.
+- Previously recovered first-party anchors remain authoritative: normal game CD, CD NUMBER card, `stoneage.exe`, `ProgramFiles\jss\stoneage`, `data\download`, `cksum:xxxxxxxxx`, `MFC42.DLL`, archived launcher path and update history beginning 1999-10-18.
 
 ## Immediate next actions
 
-1. Resolve the one OCR-ambiguous character in the beta application URL and match **`*PO/sa_apply.html`** to an August 1999 Wayback capture if one exists; then enumerate sibling paths and links for tester instructions/client delivery.
-2. Mine archived JSS pages and paths using the concrete strings `data/download`, `cksum`, `MFC42.DLL`, `ProgramFiles/jss/stoneage`, `map` and `stoneage.exe` to recover manifest/config/payload names and update-server URLs.
-3. Continue the **physical-media recovery track** using the confirmed normal game CD and CD NUMBER card: identify product/JAN codes, standard-versus-initial-edition disc count, disc-label photographs, matrix codes, manuals/inserts and lawful provenance-preserving image/dump leads.
-4. Keep the **normal retail game CD** and **initial-edition special CD** as separate evidence objects until direct evidence establishes their relationship.
-5. If the archived JSS launcher bytes become obtainable, analyze them outside the repository and record only hashes/metadata/derived findings.
-6. Once any original retail/beta binary or media is recovered, establish the reproducible client-archaeology pipeline: hashes, PE metadata, file tree, resource inventory, strings, asset IDs, update-state labeling and cross-version diff.
+1. Continue **original-artifact recovery**, now checking for `sa.exe` as well as the confirmed JSS `stoneage.exe`; search physical-media file lists, archived installation screenshots and original support pages rather than treating the descendant name as fact.
+2. Resolve the one OCR-ambiguous character in the beta application URL and match **`*PO/sa_apply.html`** to an August 1999 Wayback capture if one exists; then enumerate sibling paths and links for tester instructions/client delivery.
+3. Mine archived JSS pages and paths using `data/download`, `cksum`, `MFC42.DLL`, `ProgramFiles/jss/stoneage`, `map`, `stoneage.exe` and the descendant-derived search strings `sa.exe`, `updated`, `CheckForUpdate` to recover manifest/config/payload names and update-server URLs.
+4. Continue the **physical-media recovery track** using the confirmed normal game CD and CD NUMBER card. Prefer accessible back-box/disc-label scans or original objects that can expose product/JAN codes and matrix identifiers; do not infer them from unavailable marketplace images.
+5. Keep the **normal retail game CD** and **initial-edition special CD** as separate evidence objects until direct evidence establishes their relationship.
+6. If the archived JSS launcher bytes become obtainable, analyze them outside the repository and record only hashes/metadata/derived findings.
+7. Once any original retail/beta binary or media is recovered, establish the reproducible client-archaeology pipeline: hashes, PE metadata, file tree, resource inventory, strings, asset IDs, update-state labeling and cross-version diff.
 
 ## Continuity status
 
@@ -124,4 +132,4 @@ Precise claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed research is split
 
 No repository or workflow blocker.
 
-The project still lacks a verified 1999 JSS retail disc image and September 1999 beta binary. The beta web-recovery blocker has nevertheless narrowed materially: the application page is now anchored to `www.dp.gamersdream.ne.jp` and the path tail `PO/sa_apply.html`, with only one preceding character still unresolved from the indexed scan. The binary/media blocker remains the principal Phase 0 constraint.
+The project still lacks a verified 1999 JSS retail disc image and September 1999 beta binary. The beta web-recovery blocker has narrowed materially to a nearly complete application-page path; the retail/client search now has a second executable-name hypothesis (`sa.exe`) derived from descendant evidence, but that hypothesis cannot be promoted until original JSS material confirms it. The binary/media blocker remains the principal Phase 0 constraint.
