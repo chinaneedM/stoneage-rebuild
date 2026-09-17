@@ -12,7 +12,32 @@ Purpose: record the first structured pass over contemporaneous 1999 Japanese evi
 
 A contemporaneous description of a planned system proves design intent at that date; it does **not** by itself prove the feature shipped unchanged in the retail client.
 
-## 1. May 1999 — pre-launch design intent
+## 1. March 1999 — public exhibition
+
+### Source
+
+`SRC-JP-1999-PCWATCH-TGS-SPRING`
+
+PC Watch, Tokyo Game Show '99 Spring report, published 1999-03-19:
+
+https://pc.watch.impress.co.jp/docs/article/990319/tgs.htm
+
+### FACT
+
+PC Watch reports `STONEAGE` being prominently exhibited in NTT Data's `Gamer's Dream` booth as that platform's third title, describing it as a somewhat comical game set in a prehistoric era.
+
+### What this proves
+
+- the title was in public promotion by 1999-03-19;
+- `STONEAGE` was already positioned within the Gamer's Dream lineup before the May magazine feature and September beta.
+
+### What remains OPEN
+
+- the exact build shown at the event;
+- whether it was playable there;
+- surviving event-specific screenshots/video/demo media with provenance.
+
+## 2. May 1999 — pre-launch design intent
 
 ### Source
 
@@ -45,7 +70,7 @@ It does not prove that every described system survived unchanged into the Septem
 
 The earlier project hypothesis that resource/community/village-life ideas may belong to the original JSS conception is now partially promoted: these themes are **FACT as documented pre-launch design intent**. Their exact implementation in the shipping 1999 client remains OPEN.
 
-## 2. September 1999 — beta test window
+## 3. September 1999 — beta test window
 
 ### Source
 
@@ -74,7 +99,7 @@ The magazine states that the `STONEAGE` beta test ran from **1999-09-01 through 
 - whether beta media was download-only or also distributed on physical media;
 - exact differences from the October retail client.
 
-## 3. 1999-09-17 — launch-date evidence at Tokyo Game Show
+## 4. 1999-09-17 — launch-date evidence at Tokyo Game Show
 
 ### Source
 
@@ -94,7 +119,41 @@ The report describes players living as inhabitants of a Stone Age setting, hunti
 
 This article establishes the contemporaneous scheduled release date, not by itself that the schedule was actually met.
 
-## 4. Later confirmation of commercial start date
+## 5. Period retail advertisement
+
+### Source
+
+`SRC-JP-1999-AD-YAHOO-01`
+
+Yahoo Auctions listing preserving photographs of a period magazine advertisement:
+
+https://auctions.yahoo.co.jp/jp/auction/k1223621478
+
+### FACT from visible advertisement text
+
+The advertisement shows:
+
+- Windows 95/98;
+- scheduled release **1999-10-15**;
+- planned price **8,800 yen before tax**;
+- JSS URL `http://www.titan.co.jp/`;
+- Gamer's Dream URL `http://www.gamersdream.ne.jp/`;
+- an original mug as a reservation bonus;
+- an initial-edition `STONEAGE` special CD as an advertised initial bonus/feature.
+
+### Research consequence
+
+This source materially strengthens the physical-media recovery track because the special-CD claim is no longer dependent only on a modern seller description. It also provides exact period domains to target in web-archive recovery.
+
+### What remains OPEN
+
+- original magazine title/issue/page;
+- contents and purpose of the special CD;
+- whether that CD is separate from the install/client disc;
+- product/JAN code and disc matrix identifiers;
+- archived 1999 snapshots of the two printed domains containing download, support, patch, or beta distribution pages.
+
+## 6. Later confirmation of commercial start date
 
 ### Source
 
@@ -110,9 +169,9 @@ https://www.4gamer.net/games/013/G001377/20091126051/
 
 ### Research consequence
 
-Combined with the contemporaneous 1999-09-17 PC Watch report, this supports treating **1999-10-15** as the JSS commercial service start date unless contradictory primary material is later recovered.
+Combined with the contemporaneous 1999-09-17 PC Watch report and period retail advertisement, this supports treating **1999-10-15** as the JSS commercial service start date unless contradictory primary material is later recovered.
 
-## 5. Physical first-edition retail lead
+## 7. Physical first-edition retail lead
 
 ### Source
 
@@ -128,7 +187,7 @@ The listing photographs/describes an unopened `日本システムサプライ ST
 
 **Acquisition/recovery lead, not yet S-grade evidence.**
 
-The listing is useful because it demonstrates a surviving physical first-edition package candidate and gives us a concrete object to seek from collectors/secondary markets. However, seller text is not sufficient to verify the contents or image the game disc.
+The listing is useful because it demonstrates a surviving physical first-edition package candidate and gives us a concrete object to seek from collectors/secondary markets. The contemporaneous advertisement independently corroborates that a special CD was advertised for the initial edition, but neither source tells us the disc's exact contents.
 
 ### What would promote this lead to S grade
 
@@ -145,13 +204,15 @@ Acquire or obtain a provenance-preserving dump/photo set of an original package 
 - README/patch/version strings;
 - packaging product code, JAN code, price, supported OS and network requirements.
 
-## 6. Current highest-priority recovery target
+## 8. Current highest-priority recovery target
 
 The project still does **not** possess a verified 1999 JSS beta client or retail disc image.
 
 Priority order after this evidence pass:
 
 1. Recover a verifiable 1999 JSS retail CD / initial-edition package or provenance-preserving disc image.
-2. Recover the September 1999 beta client or identify its exact distribution filename/media.
-3. Capture page-level archival copies of the May and September 1999 *Play Online* evidence and record issue/page metadata.
-4. Use the recovered retail/beta artifacts to establish JSS internal version numbering and a reproducible file-level archaeology baseline.
+2. Determine the identity and contents of the advertisement's initial-edition `STONEAGE` special CD.
+3. Recover the September 1999 beta client or identify its exact distribution filename/media.
+4. Recover archived August-October 1999 pages from `titan.co.jp` and `gamersdream.ne.jp`, prioritizing download, support, beta, patch, and product pages.
+5. Capture page-level archival copies of the May and September 1999 *Play Online* evidence and record issue/page metadata.
+6. Use recovered retail/beta artifacts to establish JSS internal version numbering and a reproducible file-level archaeology baseline.
