@@ -6,7 +6,7 @@ Last updated: 2026-09-18
 
 **Phase 0 — StoneAge Origin Archaeology**
 
-The independent GitHub repository has been created and the continuity scaffold is now being established on the remote `main` branch.
+The independent GitHub repository and continuity scaffold are established on remote `main`, and GitHub read/write continuity has been verified through live documentation commits.
 
 ## Confirmed project direction
 
@@ -22,25 +22,31 @@ The independent GitHub repository has been created and the continuity scaffold i
 ### FACT / high-confidence working facts
 
 - StoneAge was developed by Japan System Supply (JSS).
-- Public material exists from 1999 before launch.
-- A public beta existed in September 1999.
-- Japanese commercial service launched in 1999.
+- Public exhibition material exists by Tokyo Game Show '99 Spring.
+- By May 1999, contemporaneous `Play Online` coverage described the planned game as a relaxed Stone Age RPG emphasizing food/resources, community, and cooperative village development. This is now treated as FACT for **published pre-launch design intent**, not automatically as proof of final shipped implementation.
+- A beta test ran from **1999-09-01 through 1999-09-30**, supported by contemporaneous `Play Online` issue 015.
+- PC Watch reported on 1999-09-17 that the JSS title was scheduled for release on **1999-10-15**.
+- A later 4Gamer retrospective states that Japanese service actually started on **1999-10-15**; this date is now the high-confidence working commercial start date.
 - Taiwan and Mainland Chinese versions followed later and introduced localization/iteration layers.
 
-Exact dates, version numbering, and feature ownership must remain tied to source records in `SOURCE-REGISTRY.md` and should be tightened as primary material is recovered.
+Precise claims remain tied to records in `SOURCE-REGISTRY.md`. See `research/origin/JSS-1999-ORIGIN-EVIDENCE-R1.md` for the current 1999 evidence pass.
 
 ### HYPOTHESIS
 
-- The earliest StoneAge concept may have been much simpler in lore than later versions, centered on living in a Stone Age world with people, prehistoric creatures/pets, community, survival/resource activities, exploration, and lighthearted interaction.
+- The earliest StoneAge concept may have been much simpler in macro-lore than later versions, even though resource/community/village-life themes are now directly attested in May 1999 design coverage.
 - Much of the later macro-lore may have been progressively added to explain and extend an initially simpler world.
 - Some mechanics remembered as "core StoneAge" by later players may not have existed for normal players in the earliest Japanese operation.
 
-These are research hypotheses, not final historical conclusions.
+These remain research hypotheses unless a source record supports a narrower factual statement.
 
 ## Highest-priority research questions
 
-1. Locate and verify the earliest recoverable JSS client or retail CD image.
-2. Locate the September 1999 beta client or reliable binary/packaging evidence.
+1. **Locate and verify the earliest recoverable JSS retail client / retail CD image.**
+   - Progress: a concrete surviving `STONEAGE 初回限定版` physical-package lead has been located and recorded as `SRC-JP-1999-RETAIL-MERCARI-01`.
+   - Still missing: provenance-preserving disc image/dump, file tree, hashes, executable/version metadata, manual/insert capture.
+2. **Locate the September 1999 beta client or reliable binary/packaging evidence.**
+   - Progress: beta period is now bounded to 1999-09-01 through 1999-09-30 by contemporaneous evidence.
+   - Still missing: installer filename, distribution method/media, hashes, internal version, beta-to-retail diff.
 3. Recover JSS launch manual/box inserts and original world-setting text.
 4. Determine the earliest documented appearance of:
    - the name "Nies / ニース / 尼斯";
@@ -52,12 +58,27 @@ These are research hypotheses, not final historical conclusions.
 6. Locate the earliest Taiwan client/manual/site and compare it with JSS material.
 7. Locate a clean Mainland early/1.82 client/data set for later diff archaeology.
 
+## Completed in the latest work pass
+
+- Read and obeyed `docs/PROJECT-CONTINUITY-PROTOCOL-R1.md` from the remote repository.
+- Verified repository `chinaneedM/stoneage-rebuild`, default branch `main`, and live write access.
+- Inspected current remote state and latest commit history before resuming work.
+- Added `research/origin/JSS-1999-ORIGIN-EVIDENCE-R1.md`.
+- Expanded `docs/SOURCE-REGISTRY.md` with structured records for:
+  - May 1999 `Play Online` design coverage;
+  - September 1999 `Play Online` beta coverage;
+  - 1999-09-17 PC Watch Tokyo Game Show report;
+  - 2009 4Gamer launch-date retrospective;
+  - surviving first-edition physical-package marketplace lead.
+- Tightened `docs/HISTORICAL-TIMELINE.md` with sourced 1999 milestones and explicit evidence limits.
+- Promoted resource/community/cooperative-village themes from broad hypothesis to FACT only at the narrower level of documented May 1999 pre-launch design intent.
+
 ## Immediate next actions
 
-- Complete the initial remote documentation scaffold and verify the repository is readable/writable through the GitHub connection.
-- Continue primary-source research on 1999 JSS materials.
-- Expand the structured source ledger with URLs, provenance, exact claims, and confidence grades.
-- When binaries become available, build a reproducible client-archaeology pipeline (hashes, PE metadata, file tree, resource inventory, string extraction, asset IDs, and cross-version diff).
+1. Continue the **physical-media recovery track** for the 1999 JSS initial edition: identify additional surviving package/disc listings, collector archives, product identifiers, disc-label photographs, and any lawful provenance-preserving image/dump lead.
+2. In parallel, search for **September 1999 beta distribution traces**: installer filenames, magazine CD-ROMs, Gamer's Dream download pages, archived JSS/NTT pages, tester instructions, README files, and old personal download directories/indexes.
+3. Capture exact page-level metadata for `Play Online` issues 012 and 015 and add stable archival hashes/notes where legally appropriate.
+4. Once any original binary/media is recovered, immediately establish the reproducible client-archaeology pipeline: hashes, PE metadata, file tree, resource inventory, string extraction, asset IDs, and cross-version diff.
 
 ## Continuity status
 
@@ -69,4 +90,6 @@ These are research hypotheses, not final historical conclusions.
 
 ## Blockers
 
-No project-level blocker at present. The next workstream is historical-source recovery and verification.
+No repository or workflow blocker.
+
+The substantive blocker is artifact availability: the project still lacks a verified 1999 JSS retail disc image/client and September 1999 beta binary. Research can continue without them, but executable/file-level archaeology cannot begin until at least one provenance-sufficient binary artifact is recovered.
