@@ -137,11 +137,38 @@ The September 1999 *Play Online* issue additionally records:
 - application deadline: **1999-08-20**;
 - application through a form, with lottery selection if oversubscribed.
 
-The preserved page visibly contains an application-form URL / game-homepage information block, but the URL text has not yet been recovered reliably enough to enter as FACT.
+The preserved page visibly contains an application-form URL / game-homepage information block.
+
+### Newly recovered URL evidence — 2026-09-18
+
+Search-index text extracted from the preserved *Play Online* PDF now consistently exposes the beta application host and path tail as:
+
+- host: `www.dp.gamersdream.ne.jp`
+- path tail: `PO/sa_apply.html`
+
+The current indexed/OCR rendering places one ambiguous character immediately before `PO`, displaying the printed string approximately as:
+
+`http://www.dp.gamersdream.ne.jp/[OCR-AMBIGUOUS]PO/sa_apply.html`
+
+The same extraction also exposes the period root URLs `http://www.gamersdream.ne.jp/` and `http://www.titan.co.jp/` in the adjacent information block.
+
+### Evidence status
+
+**FACT:** the printed beta-application URL used the Gamer's Dream `www.dp.gamersdream.ne.jp` host and ended in `PO/sa_apply.html`.
+
+**OPEN:** the exact character immediately before `PO` is not reliable in the current OCR/index extraction. It is rendered as a double-quote-like character by the search index. Do **not** silently normalize it into `/`, `~`, `%7E`, or another character until the scan itself or an archived URL record resolves it.
+
+**HYPOTHESIS / search lead only:** an old-style user-directory form such as `~PO/sa_apply.html` is technically plausible, but it is not yet evidence-backed strongly enough to register as the exact URL.
 
 ### Research consequence
 
-The beta recovery window should now include **August 1999**, not only September. Archive searches should prioritize Gamer's Dream/JSS pages from early-to-mid August 1999, especially application, tester-instructions, registration, and download paths.
+The beta archive search is now much narrower. Instead of searching the entire 1999 Gamer's Dream site, priority matching should target archived URLs whose tail matches:
+
+`*PO/sa_apply.html`
+
+and then recover linked tester/download/install pages from the same directory lineage.
+
+The beta recovery window should still include **August 1999**, not only September. Archive searches should prioritize early-to-mid August 1999, especially application, tester-instructions, registration and download paths.
 
 ## 5. Current recovery hypotheses to test
 
@@ -157,7 +184,7 @@ The beta was recruited through Gamer's Dream/Play Online and likely used Gamer's
 
 ## 6. Immediate next actions
 
-1. Recover the exact August 1999 Gamer's Dream beta recruitment page and the application URL shown in *Play Online* 015.
+1. Resolve the one ambiguous character in the printed beta application URL and match `*PO/sa_apply.html` to an August 1999 Wayback capture if one exists.
 2. Recover any linked beta installation/download instructions and identify the filename/media.
 3. Recover pre-launch/launch captures of `/intro/intro_sa.html`, the online shop, and related package pages.
 4. Continue product/JAN/disc-label searches using the now-confirmed hardware/product metadata.
