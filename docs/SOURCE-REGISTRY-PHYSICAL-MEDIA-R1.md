@@ -49,6 +49,47 @@ The canonical research analysis for this source group is `research/clients/JSS-R
 - Promotion criterion:
   - direct provenance-preserving inspection of an original 1999 JSS package, first-party package-contents documentation, or a verified dump/photo set exposing labels, matrix identifiers and package/back-box identifiers.
 
+## SRC-JP-1999-RETAIL-MERCARI-IMAGE-SET-01
+
+- Parent listing: `SRC-JP-1999-RETAIL-MERCARI-01`
+- Listing title: `日本システムサプライ STONEAGE 初回限定版 マグカップ マウスパッド`
+- Listing URL: https://jp.mercari.com/item/m44997025885
+- Retrieval date: 2026-09-18
+- Source type: marketplace listing plus enumerated original-image href targets
+- Current listing state: **sold**; the page exposes `1 / 13`, i.e. thirteen listing photographs.
+- Seller text preserved by the live listing states:
+  - the `STONEAGE` package is an unopened initial limited edition;
+  - an initial-edition bonus CD-ROM is inside;
+  - the accompanying mouse pad is attributed by the seller to Tokyo Game Show 1999;
+  - the mug is attributed by the seller to a visit to the company.
+- Confidence: **C** for seller provenance/bundling claims; potentially high visual value if the original photo bodies can be preserved and inspected.
+- Exact original-image hrefs exposed by the listing page:
+  1. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_1.jpg?1745193251=`
+  2. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_2.jpg?1745193251=`
+  3. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_3.jpg?1745193251=`
+  4. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_4.jpg?1745193251=`
+  5. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_5.jpg?1745193251=`
+  6. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_6.jpg?1745193251=`
+  7. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_7.jpg?1745193251=`
+  8. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_8.jpg?1745193251=`
+  9. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_9.jpg?1745193251=`
+  10. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_10.jpg?1745193251=`
+  11. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_11.jpg?1745193251=`
+  12. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_12.jpg?1745193251=`
+  13. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_13.jpg?1745193251=`
+- Retrieval limitation in the current environment:
+  - the listing page exposes the exact original-image URLs, but attempts to retrieve the image bodies through the current extraction path return cache misses;
+  - therefore no barcode, product/JAN code, disc label or matrix code has been read from these thirteen images in this pass.
+- Research consequence:
+  - this sold listing is no longer an active acquisition route, but it is now a concrete **photo-preservation target set** rather than a generic inaccessible marketplace lead;
+  - future work should attempt preservation through another browser/archive/network path before the static image objects disappear;
+  - if any of the thirteen photographs shows a back box, disc face or package side at readable resolution, it could directly close the product/JAN or disc-label gap without requiring the physical object first.
+- Does not establish:
+  - authenticity of every listed accessory association;
+  - exact sealed-box contents without opening/direct inspection;
+  - that the seller's bonus-CD statement identifies which photographed disc is the bonus disc;
+  - any filesystem, binary, checksum or matrix-code fact.
+
 ## SRC-JP-2003-BOTHTEC-PACKAGE-COLLECTOR-PHOTO-01
 
 - Title: later Japanese `STONEAGE` revival package shown in the same collector article
