@@ -252,6 +252,53 @@ This is the canonical ledger for historical sources. Entries should record prove
   - exact server source code ownership/implementation boundaries;
   - any unrecovered patch filename.
 
+### SRC-JP-JSS-STONEAGE-VERUP-ARCHIVE-01
+
+- Title: archived JSS `STONEAGE` version-up information page
+- Original site period: JSS service era; archived capture used is 2000-12-04
+- Retrieval date: 2026-09-18
+- Language/region: Japanese / Japan
+- Source type: archived first-party Japan System Supply page
+- Archived URL: https://web.archive.org/web/20001204205900/http://www.titan.co.jp/stoneage/verup.html
+- Confidence: **A**
+- Supports:
+  - JSS maintained an official StoneAge version-up/update information page;
+  - the preserved automatic version-up history extends back to **1999-10-18**, three days after commercial launch;
+  - the original service received frequent application/content changes including events, bug fixes, map/NPC/item/pet/UI changes and other updates;
+  - the page links to a manual launcher-replacement/update procedure.
+- Archaeology significance:
+  - a retail CD is a launch baseline, not a complete representation of the 1999 JSS client state;
+  - client archaeology should distinguish beta, retail-disc baseline, post-launch patched states and later pre-collapse states.
+- Does not support yet:
+  - numeric/internal version identifiers for the dated update states;
+  - update manifest/package filenames or protocol;
+  - exact file-level delta for each dated entry.
+
+### SRC-JP-JSS-STONEAGE-LAUNCHER-ARCHIVE-01
+
+- Title: archived JSS `STONEAGE` launcher replacement page and executable path
+- Original JSS page: `http://www.titan.co.jp/stoneage/updater.html`
+- Wayback capture used: 2000-12-04
+- Retrieval date: 2026-09-18
+- Language/region: Japanese / Japan
+- Source type: archived first-party Japan System Supply page plus archived binary-path evidence
+- Archived page URL: https://web.archive.org/web/20001204205200/http://www.titan.co.jp/stoneage/updater.html
+- Confidence: **A** for filename, advertised size, installation relationship and purpose; binary bytes remain unverified locally
+- Supports:
+  - the original JSS-era StoneAge startup/launcher executable filename was **`stoneage.exe`**;
+  - JSS offered a replacement `stoneage.exe` advertised as **212 KB**;
+  - users were instructed to overwrite/copy it into the existing StoneAge installation directory, replacing the same-named file;
+  - the replacement addressed startup network errors, version-up errors and failure to transition to the new program after updating;
+  - the linked original executable path was `http://www.titan.co.jp/stoneage/stoneage.exe`;
+  - Wayback reports two captures of that executable path, and following the archived object through the available extractor returns `application/octet-stream`, consistent with a preserved binary body.
+- Research value:
+  - provides the project's first confirmed original-JSS client executable filename and a high-value file-tree/search anchor.
+- Does not support yet:
+  - checksum, exact byte size, PE timestamp, imports, strings or version-resource values of the archived executable;
+  - whether the archived 2001 binary is byte-identical to a 1999 launcher state.
+- Repository safety:
+  - if bytes are later recovered, record hashes and analysis but do not commit the proprietary executable by default.
+
 ### SRC-JP-2000-4GAMER-JSS-STOP
 
 - Title: `R.I.P. LIFESTORM`
