@@ -26,6 +26,7 @@ The independent GitHub repository and continuity scaffold are established on rem
 - Wayback reports archived captures of the original Gamer's Dream index beginning **1999-04-22**, so the pre-beta/pre-launch web layer is at least partially recoverable.
 - By May 1999, contemporaneous `Play Online` coverage described the planned game as a relaxed Stone Age RPG emphasizing food/resources, community, and cooperative village development. This is FACT for **published pre-launch design intent**, not automatic proof of final shipped implementation.
 - Beta recruitment closed **1999-08-20**; the beta itself ran **1999-09-01 through 1999-09-30**, supported by contemporaneous `Play Online` issue 015.
+- The preserved `Play Online` issue 015 is now searchable deeply enough to recover the beta-application URL host as `www.dp.gamersdream.ne.jp` and its path tail as `PO/sa_apply.html`. One character immediately before `PO` remains OCR-ambiguous and is **not** normalized or guessed in the factual record.
 - PC Watch reported on 1999-09-17 that the JSS title was scheduled for release on **1999-10-15**.
 - A photographed period retail advertisement gives Windows 95/98 as platform, **1999-10-15** as scheduled release date, **8,800 yen before tax** as planned price, and prints the period domains `www.titan.co.jp` and `www.gamersdream.ne.jp`.
 - The same advertisement visibly promotes an original mug as a reservation bonus and a `STONEAGE` special CD as an initial-edition bonus/feature.
@@ -58,6 +59,7 @@ Precise claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed research is split
 - Some mechanics remembered as "core StoneAge" by later players may not have existed for normal players in the earliest Japanese operation.
 - The strongest current media model is that the retail package contained normal install/client media and the initial edition additionally included a separate special/bonus CD. This is **not FACT** until an original first-edition package or first-party contents list proves the disc layout.
 - The updater probably used a manifest/protocol that mapped downloadable files to checksum values, but the manifest filename, checksum algorithm, endpoint and payload format remain unresolved.
+- The OCR-ambiguous character immediately before `PO/sa_apply.html` could be an old-style user-directory marker such as `~`, but this remains a **search hypothesis only** and is not the registered exact beta URL.
 
 ## Highest-priority research questions
 
@@ -76,11 +78,11 @@ Precise claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed research is split
    - Progress: the special-CD claim is corroborated by contemporaneous advertising and a surviving sealed-package listing; the official manual separately confirms a normal game CD.
    - OPEN: exact contents, whether physically separate from install/client media, filesystem/audio tracks, identifiers and hashes.
 5. **Locate the September 1999 beta client or reliable binary/media evidence.**
-   - Progress: beta recruitment deadline is **1999-08-20** and test period **1999-09-01 through 1999-09-30**; official FAQ confirms that data from an earlier StoneAge test could persist under `ProgramFiles\jss\stoneage`.
-   - Still missing: exact application URL, recruitment page, installer/client filename, distribution method/media, hashes, internal version and beta-to-retail diff.
+   - Progress: beta recruitment deadline is **1999-08-20** and test period **1999-09-01 through 1999-09-30**; official FAQ confirms that data from an earlier StoneAge test could persist under `ProgramFiles\jss\stoneage`; the printed application URL is narrowed to host `www.dp.gamersdream.ne.jp` with path tail `PO/sa_apply.html`.
+   - Still missing: the single OCR-ambiguous character before `PO`, an archived copy of the application page, tester/download instructions, installer/client filename, distribution method/media, hashes, internal version and beta-to-retail diff.
 6. **Mine the surviving JSS/Gamer's Dream web archives for 1999 paths and support/update artifacts.**
-   - Progress: JSS `manual.html`, `manual01.html`, `faqstart.html`, `verup.html`, `updater.html` and `stoneage.exe` paths are known; Gamer's Dream archive coverage begins before beta/launch.
-   - Priority targets: update manifests/package names/endpoints; August 1999 beta application/tester pages; product/shop pages; registration; download/install instructions; support/version pages.
+   - Progress: JSS `manual.html`, `manual01.html`, `faqstart.html`, `verup.html`, `updater.html` and `stoneage.exe` paths are known; Gamer's Dream archive coverage begins before beta/launch; beta application matching can now target `*PO/sa_apply.html` rather than the whole domain.
+   - Priority targets: update manifests/package names/endpoints; the exact August 1999 beta application capture and sibling tester/download pages; product/shop pages; registration; download/install instructions; support/version pages.
 7. Recover JSS launch box/manual inserts and original world-setting text not already represented by the archived online manual.
 8. Determine the earliest documented appearance of:
    - the name "Nies / ニース / 尼斯";
@@ -94,28 +96,21 @@ Precise claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed research is split
 
 ## Completed in the latest work pass
 
-- Read and obeyed `docs/PROJECT-CONTINUITY-PROTOCOL-R1.md` from the remote repository and resumed from the highest-priority unfinished item.
-- Verified repository `chinaneedM/stoneage-rebuild`, default branch `main`, and live write access.
-- Inspected current remote state and commit history before continuing.
-- Added and expanded `research/origin/JSS-1999-ORIGIN-EVIDENCE-R1.md`.
-- Added `research/origin/GAMERSDREAM-JSS-ARCHIVE-EVIDENCE-R1.md`.
-- Added and expanded `research/clients/JSS-CLIENT-VERSION-ARCHAEOLOGY-R1.md` with retail-install and updater architecture.
-- Expanded `docs/SOURCE-REGISTRY.md` with structured first-party source records for the JSS online manual and FAQ in addition to the previously recovered TGS, magazine, retail-ad, Gamer's Dream, version-up and launcher evidence.
-- Tightened `docs/HISTORICAL-TIMELINE.md` with the normal game-CD path, CD NUMBER card, install components/directories and update staging/checksum evidence.
-- Recovered JSS's official online manual and confirmed the normal **game CD** and **CD NUMBER card** as distinct physical recovery targets.
-- Recovered the JSS FAQ and established concrete updater/client anchors: `ProgramFiles\jss\stoneage`, `data\download`, `cksum:xxxxxxxxx`, `MFC42.DLL`, Temporary Internet Files and proxy-related troubleshooting.
-- Preserved uncertainty around damaged/misencoded fields: no server names, test labels, checksum algorithm or unseen disc-count facts have been invented.
-- Located the archived JSS executable object in Wayback; byte extraction remains blocked by the current environment, so no fabricated hash or metadata has been recorded.
+- Re-read the latest remote `main` before continuing and detected that the repository had advanced beyond the prior chat checkpoint; resumed from the newer GitHub state rather than stale chat memory.
+- Expanded `research/origin/GAMERSDREAM-JSS-ARCHIVE-EVIDENCE-R1.md` with the newly recovered beta-application URL evidence.
+- Recovered, from searchable text extraction of the preserved 1999 *Play Online* issue, the beta application's **Gamer's Dream host** `www.dp.gamersdream.ne.jp` and path tail **`PO/sa_apply.html`**.
+- Explicitly preserved the unresolved character immediately before `PO` as OCR ambiguity instead of silently converting it to `~`, `/` or another character.
+- Narrowed the next Wayback search target from the whole Gamer's Dream domain to archived paths matching **`*PO/sa_apply.html`** and sibling beta/tester/download resources.
+- Previously recovered retail/install/update anchors remain authoritative: normal game CD, CD NUMBER card, `stoneage.exe`, `ProgramFiles\jss\stoneage`, `data\download`, `cksum:xxxxxxxxx`, `MFC42.DLL`, archived launcher path and update history beginning 1999-10-18.
 
 ## Immediate next actions
 
-1. Mine archived JSS pages and paths using the new concrete strings `data/download`, `cksum`, `MFC42.DLL`, `ProgramFiles/jss/stoneage`, `map` and `stoneage.exe` to recover manifest/config/payload names and update-server URLs.
-2. Mine Gamer's Dream archive **backward into August-October 1999**, beginning with registration, announcements, beta/application, shop/product, support/download and StoneAge-specific paths.
-3. Recover the exact **1999-08-20 beta application URL** printed in `Play Online` issue 015 and match it to a Wayback capture if possible.
-4. Continue the **physical-media recovery track** using the now-confirmed normal game CD and CD NUMBER card: identify product/JAN codes, standard-versus-initial-edition disc count, disc-label photographs, matrix codes, manuals/inserts and lawful provenance-preserving image/dump leads.
-5. Keep the **normal retail game CD** and **initial-edition special CD** as separate evidence objects until direct evidence establishes their relationship.
-6. If the archived JSS launcher bytes become obtainable, analyze them outside the repository and record only hashes/metadata/derived findings.
-7. Once any original retail/beta binary or media is recovered, establish the reproducible client-archaeology pipeline: hashes, PE metadata, file tree, resource inventory, strings, asset IDs, update-state labeling and cross-version diff.
+1. Resolve the one OCR-ambiguous character in the beta application URL and match **`*PO/sa_apply.html`** to an August 1999 Wayback capture if one exists; then enumerate sibling paths and links for tester instructions/client delivery.
+2. Mine archived JSS pages and paths using the concrete strings `data/download`, `cksum`, `MFC42.DLL`, `ProgramFiles/jss/stoneage`, `map` and `stoneage.exe` to recover manifest/config/payload names and update-server URLs.
+3. Continue the **physical-media recovery track** using the confirmed normal game CD and CD NUMBER card: identify product/JAN codes, standard-versus-initial-edition disc count, disc-label photographs, matrix codes, manuals/inserts and lawful provenance-preserving image/dump leads.
+4. Keep the **normal retail game CD** and **initial-edition special CD** as separate evidence objects until direct evidence establishes their relationship.
+5. If the archived JSS launcher bytes become obtainable, analyze them outside the repository and record only hashes/metadata/derived findings.
+6. Once any original retail/beta binary or media is recovered, establish the reproducible client-archaeology pipeline: hashes, PE metadata, file tree, resource inventory, strings, asset IDs, update-state labeling and cross-version diff.
 
 ## Continuity status
 
@@ -129,4 +124,4 @@ Precise claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed research is split
 
 No repository or workflow blocker.
 
-The project still lacks a verified 1999 JSS retail disc image and September 1999 beta binary. However, the artifact search is now anchored to a confirmed normal game CD, CD NUMBER card, launcher filename (`stoneage.exe`), install path lineage (`ProgramFiles\jss\stoneage`), updater staging directory (`data\download`), checksum-error signature (`cksum:xxxxxxxxx`) and an original update history beginning 1999-10-18. The remaining binary blocker is therefore substantially narrower and more concrete than at session start.
+The project still lacks a verified 1999 JSS retail disc image and September 1999 beta binary. The beta web-recovery blocker has nevertheless narrowed materially: the application page is now anchored to `www.dp.gamersdream.ne.jp` and the path tail `PO/sa_apply.html`, with only one preceding character still unresolved from the indexed scan. The binary/media blocker remains the principal Phase 0 constraint.
