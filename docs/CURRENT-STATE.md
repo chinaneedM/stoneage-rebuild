@@ -6,7 +6,7 @@ Last updated: 2026-09-18
 
 **Phase 0 — StoneAge Origin Archaeology**
 
-The independent GitHub repository and continuity scaffold are established on remote `main`, and GitHub read/write continuity has been verified through live documentation commits.
+The independent GitHub repository and continuity scaffold are established on remote `main`. GitHub read/write continuity has been verified, and the current workstream is primary-source recovery for the 1999 JSS client, beta, package, and original Gamer's Dream service layer.
 
 ## Confirmed project direction
 
@@ -22,75 +22,77 @@ The independent GitHub repository and continuity scaffold are established on rem
 ### FACT / high-confidence working facts
 
 - StoneAge was developed by Japan System Supply (JSS).
-- `STONEAGE` was already being publicly exhibited at Tokyo Game Show '99 Spring by **1999-03-19**, in NTT Data's Gamer's Dream booth.
-- By May 1999, contemporaneous `Play Online` coverage described the planned game as a relaxed Stone Age RPG emphasizing food/resources, community, and cooperative village development. This is treated as FACT for **published pre-launch design intent**, not automatically as proof of final shipped implementation.
-- A beta test ran from **1999-09-01 through 1999-09-30**, supported by contemporaneous `Play Online` issue 015.
+- `STONEAGE` was publicly exhibited at Tokyo Game Show '99 Spring by **1999-03-19** in NTT Data's Gamer's Dream booth.
+- Wayback reports archived captures of the original Gamer's Dream index beginning **1999-04-22**, so the pre-beta/pre-launch web layer is at least partially recoverable.
+- By May 1999, contemporaneous `Play Online` coverage described the planned game as a relaxed Stone Age RPG emphasizing food/resources, community, and cooperative village development. This is FACT for **published pre-launch design intent**, not automatic proof of final shipped implementation.
+- Beta recruitment closed **1999-08-20**; the beta itself ran **1999-09-01 through 1999-09-30**, supported by contemporaneous `Play Online` issue 015.
 - PC Watch reported on 1999-09-17 that the JSS title was scheduled for release on **1999-10-15**.
 - A photographed period retail advertisement gives Windows 95/98 as platform, **1999-10-15** as scheduled release date, **8,800 yen before tax** as planned price, and prints the period domains `www.titan.co.jp` and `www.gamersdream.ne.jp`.
 - The same advertisement visibly promotes an original mug as a reservation bonus and a `STONEAGE` special CD as an initial-edition bonus/feature.
-- A later 4Gamer retrospective states that Japanese service actually started on **1999-10-15**; this date is now the high-confidence working commercial start date.
+- An archived first-party Gamer's Dream StoneAge product page independently lists **1999-10-15** as release date, package price 8,800 yen, a 4x or faster CD-ROM drive, at least 400 MB HDD, 64 MB RAM, MMX Pentium 200 MHz+, 33.6 Kbps+ Internet access, 2 MB+ VRAM, DirectX 6.1-compatible video/sound, mouse and keyboard.
+- The same first-party product page tells users to **purchase the software package first and then register for Gamer's Dream service**, materially confirming a normal package-based install/client path.
+- A 2009 4Gamer retrospective states that Japanese service actually started on **1999-10-15**; together with the contemporary PC Watch report and archived Gamer's Dream product page, this date is now the high-confidence working commercial start date.
+- Archived Gamer's Dream notices from the JSS collapse period state that JSS handled the StoneAge game-application side, including software corrections and version upgrades, while Gamer's Dream handled server/service operation and billing. After JSS failed in October 2000, Gamer's Dream could continue only reduced service and package sales/version upgrades ceased under the prior arrangement.
 - Taiwan and Mainland Chinese versions followed later and introduced localization/iteration layers.
 
-Precise claims are tied to records in `SOURCE-REGISTRY.md`. See `research/origin/JSS-1999-ORIGIN-EVIDENCE-R1.md` for the current 1999 evidence pass.
+Precise claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed 1999 research is in `research/origin/JSS-1999-ORIGIN-EVIDENCE-R1.md`; archived Gamer's Dream/JSS evidence is in `research/origin/GAMERSDREAM-JSS-ARCHIVE-EVIDENCE-R1.md`.
 
 ### HYPOTHESIS
 
-- The earliest StoneAge concept may have been much simpler in macro-lore than later versions, even though resource/community/village-life themes are now directly attested in May 1999 design coverage.
+- The earliest StoneAge concept may have been much simpler in macro-lore than later versions, even though resource/community/village-life themes are directly attested in May 1999 design coverage.
 - Much of the later macro-lore may have been progressively added to explain and extend an initially simpler world.
 - Some mechanics remembered as "core StoneAge" by later players may not have existed for normal players in the earliest Japanese operation.
-
-These remain research hypotheses unless a source record supports a narrower factual statement.
+- The strongest current media model is that the retail package contained normal install/client media and the initial edition additionally included a separate special/bonus CD. This is **not FACT** until an original first-edition package or first-party contents list proves the disc layout.
 
 ## Highest-priority research questions
 
-1. **Locate and verify the earliest recoverable JSS retail client / retail CD image.**
-   - Progress: a concrete surviving `STONEAGE 初回限定版` physical-package lead is recorded as `SRC-JP-1999-RETAIL-MERCARI-01`; period retail advertising is recorded as `SRC-JP-1999-AD-YAHOO-01`.
-   - Newly established package clues: Windows 95/98, planned price 8,800 yen before tax, JSS domain `www.titan.co.jp`, Gamer's Dream domain `www.gamersdream.ne.jp`, and an advertised initial-edition special CD.
-   - Still missing: provenance-preserving install/client disc image or dump, file tree, hashes, executable/version metadata, disc matrix identifiers, product/JAN code, manual/insert capture.
+1. **Locate and verify the earliest recoverable JSS retail install/client medium or provenance-preserving image.**
+   - Progress: a surviving `STONEAGE 初回限定版` physical-package lead is recorded as `SRC-JP-1999-RETAIL-MERCARI-01`; contemporaneous retail advertising is recorded as `SRC-JP-1999-AD-YAHOO-01`; an archived first-party Gamer's Dream product page is recorded as `SRC-JP-GD-STONEAGE-INTRO-ARCHIVE-01`.
+   - Confirmed retail-path clues: package price 8,800 yen, 1999-10-15 release, CD-ROM drive requirement, 400 MB+ HDD, package purchase before Gamer's Dream registration.
+   - Still missing: provenance-preserving install/client disc image or dump, exact disc count, file tree, hashes, executable/version metadata, disc matrix identifiers, product/JAN code, disc-label photos, manual/insert capture.
 2. **Determine the identity and contents of the initial-edition `STONEAGE` special CD.**
-   - Progress: the special-CD claim is now corroborated by a photographed contemporaneous advertisement rather than only a modern marketplace description.
-   - OPEN: whether it is the install/client disc or a separate bonus disc; exact contents; filesystem/audio tracks; identifiers and hashes.
-3. **Locate the September 1999 beta client or reliable binary/packaging evidence.**
-   - Progress: beta period is bounded to 1999-09-01 through 1999-09-30 by contemporaneous evidence.
-   - Still missing: installer filename, distribution method/media, hashes, internal version, beta-to-retail diff.
-4. Recover JSS launch manual/box inserts and original world-setting text.
-5. Determine the earliest documented appearance of:
+   - Progress: the special-CD claim is corroborated by contemporaneous advertising and a surviving sealed-package listing.
+   - Important distinction: official package/CD-ROM requirements strengthen the case for keeping normal install media and the special CD separate as research objects until proven identical.
+   - OPEN: exact contents, whether physically separate from install/client media, filesystem/audio tracks, identifiers and hashes.
+3. **Locate the September 1999 beta client or reliable binary/media evidence.**
+   - Progress: beta recruitment deadline is **1999-08-20** and test period **1999-09-01 through 1999-09-30**.
+   - Still missing: exact application URL, recruitment page, installer/client filename, distribution method/media, hashes, internal version and beta-to-retail diff.
+4. **Mine the surviving 1999 Gamer's Dream web archive.**
+   - Progress: archive coverage is known to begin 1999-04-22; later original paths/navigation have been recovered.
+   - Priority targets: August 1999 beta application/tester pages; product/shop pages; registration; download/install instructions; support/patch/version pages; StoneAge server/status pages.
+5. Recover JSS launch manual/box inserts and original world-setting text.
+6. Determine the earliest documented appearance of:
    - the name "Nies / ニース / 尼斯";
    - the island-continent geography;
    - elemental/spirit lore;
    - pet riding for normal players;
    - major villages and early map topology.
-6. Determine JSS-era internal client version numbering.
-7. Locate the earliest Taiwan client/manual/site and compare it with JSS material.
-8. Locate a clean Mainland early/1.82 client/data set for later diff archaeology.
+7. Determine JSS-era internal client version numbering.
+8. Locate the earliest Taiwan client/manual/site and compare it with JSS material.
+9. Locate a clean Mainland early/1.82 client/data set for later diff archaeology.
 
 ## Completed in the latest work pass
 
-- Read and obeyed `docs/PROJECT-CONTINUITY-PROTOCOL-R1.md` from the remote repository.
+- Read and obeyed `docs/PROJECT-CONTINUITY-PROTOCOL-R1.md` from the remote repository and resumed from the highest-priority unfinished item.
 - Verified repository `chinaneedM/stoneage-rebuild`, default branch `main`, and live write access.
-- Inspected current remote state and latest commit history before resuming work.
-- Added `research/origin/JSS-1999-ORIGIN-EVIDENCE-R1.md` and extended it with March TGS and retail-ad evidence.
-- Expanded `docs/SOURCE-REGISTRY.md` with structured records for:
-  - 1999-03-19 PC Watch Tokyo Game Show '99 Spring coverage;
-  - May 1999 `Play Online` design coverage;
-  - September 1999 `Play Online` beta coverage;
-  - 1999-09-17 PC Watch Tokyo Game Show '99 Autumn coverage;
-  - a photographed period `STONEAGE` / `BLUE SPHERE` retail advertisement;
-  - 2009 4Gamer launch-date retrospective;
-  - a surviving first-edition physical-package marketplace lead.
-- Tightened `docs/HISTORICAL-TIMELINE.md` with sourced 1999 milestones and explicit evidence limits.
+- Inspected current remote state and commit history before continuing.
+- Added and expanded `research/origin/JSS-1999-ORIGIN-EVIDENCE-R1.md`.
+- Added `research/origin/GAMERSDREAM-JSS-ARCHIVE-EVIDENCE-R1.md`.
+- Expanded `docs/SOURCE-REGISTRY.md` with structured evidence for the March 1999 TGS showing, May 1999 design coverage, August/September beta recruitment/test window, September TGS, retail advertising, archived Gamer's Dream product page, JSS/Gamer's Dream operational boundary, 2000 JSS cessation coverage, 2009 start-date retrospective, and surviving first-edition package lead.
+- Tightened `docs/HISTORICAL-TIMELINE.md` with sourced 1999 milestones and the 2000 operating-boundary evidence.
 - Promoted resource/community/cooperative-village themes from broad hypothesis to FACT only at the narrower level of documented May 1999 pre-launch design intent.
-- Established two period web-archive targets from the retail advertisement: `www.titan.co.jp` and `www.gamersdream.ne.jp`.
-- Initial indexed-web searches for preserved 1999 StoneAge pages on those two domains did not recover a usable archived product/download page yet.
+- Recovered an original Gamer's Dream StoneAge product page from Wayback and confirmed the normal package-purchase/CD-ROM retail path.
+- Recovered archived first-party Gamer's Dream notices that separate JSS client/application responsibilities from Gamer's Dream server/service/billing responsibilities.
+- Confirmed that the Gamer's Dream archive contains snapshots beginning before beta/launch, changing the archive track from a speculative lead into an active recovery source.
 
 ## Immediate next actions
 
-1. Continue the **physical-media recovery track** for the 1999 JSS initial edition: identify additional surviving package/disc listings, collector archives, product/JAN identifiers, disc-label photographs, and any lawful provenance-preserving image/dump lead.
-2. Treat the **initial-edition special CD** as a separate recovery target until evidence proves whether it is or is not the client/install disc.
-3. Continue archived-site recovery for `titan.co.jp` and `gamersdream.ne.jp`, prioritizing August-October 1999 product, download, support, beta, and patch pages.
-4. Search for **September 1999 beta distribution traces**: installer filenames, magazine CD-ROMs, Gamer's Dream download pages, archived JSS/NTT pages, tester instructions, README files, and old personal download directories/indexes.
-5. Capture exact page-level metadata for `Play Online` issues 012 and 015 and add stable archival hashes/notes where legally appropriate.
-6. Once any original binary/media is recovered, immediately establish the reproducible client-archaeology pipeline: hashes, PE metadata, file tree, resource inventory, string extraction, asset IDs, and cross-version diff.
+1. Mine the original Gamer's Dream archive **backward into August-October 1999**, beginning with shop/product, registration, announcements, beta/application, support, download and StoneAge-specific paths.
+2. Recover the exact **1999-08-20 beta application URL** printed in `Play Online` issue 015 and match it to a Wayback capture if possible.
+3. Continue the **physical-media recovery track** using the now-confirmed first-party requirements: identify product/JAN codes, standard-versus-initial-edition disc count, disc-label photographs, matrix codes, manuals/inserts and lawful provenance-preserving image/dump leads.
+4. Keep the **normal retail install/client medium** and **initial-edition special CD** as separate evidence objects until direct evidence establishes their relationship.
+5. Search archived JSS/Gamer's Dream support/version pages for client executable names, patch filenames, internal version strings or version-up notices.
+6. Once any original binary/media is recovered, immediately establish the reproducible client-archaeology pipeline: hashes, PE metadata, file tree, resource inventory, string extraction, asset IDs and cross-version diff.
 
 ## Continuity status
 
@@ -104,4 +106,4 @@ These remain research hypotheses unless a source record supports a narrower fact
 
 No repository or workflow blocker.
 
-The substantive blocker is artifact availability: the project still lacks a verified 1999 JSS retail install/client disc image and September 1999 beta binary. Research can continue without them, but executable/file-level archaeology cannot begin until at least one provenance-sufficient binary artifact is recovered.
+The substantive blocker remains artifact availability: the project still lacks a verified 1999 JSS retail install/client disc image and September 1999 beta binary. However, archived first-party Gamer's Dream pages now provide a viable route to recover launch/beta path information and narrow the identity of those artifacts before a binary is found.
