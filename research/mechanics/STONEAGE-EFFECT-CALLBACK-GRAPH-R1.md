@@ -176,16 +176,40 @@ Per fixed source snapshot, declared-source USE coverage is:
 
 This makes item-use behavior a **version-diff problem**, not an unresolved-data problem.
 
-### Item USE guard classification
+### Item USE guard + body classification
 
-The enhanced source-guard pass further separates active item USE callbacks:
+The final item pass now separates registry presence from executable common semantics.
 
-- 17 unique tokens / 818 row uses are unguarded in all three fixed source lineages;
-- 19 unique tokens / 86 row uses are guarded in all three;
-- 16 unique tokens / 53 row uses have partial source-lineage coverage;
-- 0 tokens are missing from all three.
+Active recovered USE callbacks:
 
-This refines the next reconstruction boundary: the **17 all-three unguarded item USE callbacks** are the cleanest common semantic target, while guarded and partial-source groups remain version tracks.
+- 17 unique tokens / 818 rows are unguarded in all three fixed dispatch tables;
+- 19 / 86 are guarded in all three;
+- 16 / 53 have partial source-lineage coverage.
+
+The 17 unguarded-dispatch candidates refine by function body to:
+
+- **15 stable-body tokens / 816 rows**;
+- **2 profession macro-shell tokens / 2 rows**;
+- 0 mixed-body;
+- 0 partial-body-source.
+
+The macro shells demonstrate why registry presence alone cannot define a common core.
+
+Stable active USE families include battle recovery/status/capture/resurrection/field attribute, warp, encounter controls, pet follow, mic toggle, rename, ordinary skill-up point, pet-owner release and ToHelos work-state effects.
+
+The complete deterministic semantics are documented in `STONEAGE-ITEM-EFFECT-CORE-R1.md`.
+
+### Item non-USE boundary
+
+The active non-USE callback layer is also guard/body classified:
+
+- ATTACH: 2 unguarded stable tokens / 5 rows; 3 guarded tokens / 46 rows.
+- DETACH: 2 unguarded stable / 5; 3 guarded / 46.
+- DROP: 2 unguarded stable / 5; 1 guarded / 35.
+- PICKUP: 1 unguarded stable / 2; no guarded rows.
+- RELIFE: 0 unguarded; 1 all-three guarded token / 3 rows.
+
+The stable non-USE families are equipment encounter control, PickAllPet attach/detach, microphone cleanup, and dice drop/pickup state.
 
 ### Magic callbacks
 
@@ -231,11 +255,10 @@ The callback join itself is now closed at R1.
 
 Semantic reverse engineering should proceed in evidence-quality order:
 
-1. ordinary magic effect families — now reconstructed for the nine all-three unguarded callbacks;
-2. the 17 all-three unguarded item USE callbacks, plus the already-common non-use callback slots;
-3. guarded/partial-source item USE callbacks as explicit version diffs;
-4. common pet-skill families;
-5. quarantine the four all-source-missing pet-skill records until a matching source/client lineage is recovered.
+1. ordinary magic effect families — reconstructed for the nine all-three unguarded callbacks;
+2. common item effects — reconstructed for 15 stable active USE callbacks plus all stable non-USE hooks, with two profession macro-shell USE rows kept versioned;
+3. pet-skill callbacks — next, apply dispatch-guard and body-level classification before semantic reconstruction;
+4. quarantine the four all-source-missing pet-skill records until a matching source/client lineage is recovered.
 
 ## Evidence boundaries
 
