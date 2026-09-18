@@ -1,0 +1,20 @@
+name: Validate StoneAge transport core
+concurrency:
+  group: stoneage-transport-core
+  cancel-in-progress: true
+on:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-transport-core.yml
+      - tools/stoneage_transport_core_model.py
+      - tests/test_stoneage_transport_core_model.py
+      - research/mechanics/STONEAGE-BUS-AIR-TRANSPORT-CORE-R1.md
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_transport_core_model -v

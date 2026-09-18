@@ -672,11 +672,23 @@ Supplemental source ledgers:
 - Local reference validation passes 25 deterministic tests.
 - NPCEnemy R1 is closed for fixed-descendant common core plus recovered 2.5 active surface. Exact 1999/JSS equivalence remains OPEN.
 
+## Bus + Airplane common transport core R1
+
+- Reconstructed the shared fixed-descendant transport state machine: required routes, random route selection, reverse initialization, strict wait/terminal timers, routepoint traversal, terminal roundtrip toggle, whole-party discharge, Bus x/y routing, Air floor/x/y routing, cross-floor passenger warp and Air oneway behavior.
+- Confirmed the real party call graph: both Bus and Air are CHAR_TYPEBUS, and generic CHAR_JoinParty calls NPC_BusCheckJoinParty for both. NPC_AirCheckJoinParty is not reached by the generic boarding path in the inspected fixed sources.
+- Reconstructed active boarding order: front-position -> waiting-mode -> not-already-party -> capacity -> denieditem -> compile-enabled wares gate -> allowitem -> needlevel -> needstone -> immediate Stone debit -> CHAR_JoinParty_Main.
+- Preserved pickupitem lifecycle: boarding preflight does not delete it; individual passenger leave can delete through NPC_BusCheckAllowItem(..., TRUE); normal terminal leader-side whole-party discharge does not call that deletion path.
+- Preserved quirks: duplicate allowitem IDs can reuse one item during preflight but require multiple copies in pickup deletion mode; pickup deletion is non-transactional; configured needstone below -1 would add Stone.
+- _ITEM_CHECKWARES is enabled in all three fixed descendants. Air delitem/maxlevel extensions are compile-disabled or absent and, more importantly, are not on the active generic CHAR_TYPEBUS join path.
+- Added tools/stoneage_transport_core_model.py, tests/test_stoneage_transport_core_model.py, dedicated CI and research/mechanics/STONEAGE-BUS-AIR-TRANSPORT-CORE-R1.md.
+- Local reference validation passes 26 deterministic tests.
+- Next step is the verified 2.5 Bus/Air payload-free usage probe before closing the transport seam.
+
 ## Immediate next actions
 
-1. **Advance to Bus + Airplane as the next shared travel/economy seam.** The recovered secondary-argument queue has 7 Bus + 5 Airplane file-backed refs. Reconstruct their common route, boarding, item, level and Stone gates first, then measure actual 2.5 configuration surface without retaining route payloads.
-2. **Keep the travel reconstruction source/data-driven.** Separate common Bus/Airplane core from compile-gated ticket deletion, max-level or later transport extensions; only promote branches used by fixed descendants and recovered specimen.
-3. **After Bus + Airplane, rerun the secondary-argument queue decision.** Do not reopen NPCEnemy or already closed Warp/ItemShop/SavePoint/PetShop/PetSkillShop/PoolItemShop unless a concrete source/data mismatch appears.
+1. **Measure the recovered 2.5 Bus + Airplane configuration surface.** Run a payload-free aggregate probe over the 7 Bus + 5 Airplane file-backed refs, including route-count/point-shape distributions and presence of boarding/economy keys without retaining coordinates, names or item IDs.
+2. **Use that measurement to close or narrow the transport seam.** Verify whether reverse, oneway, pickupitem, allow/denied item, needlevel, needstone and Air-only source keys are actually active; document source/data mismatches rather than normalizing them.
+3. **Then rerun the secondary-argument queue decision.** Do not reopen NPCEnemy or already closed Warp/ItemShop/SavePoint/PetShop/PetSkillShop/PoolItemShop unless a concrete source/data mismatch appears.
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
 6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.
