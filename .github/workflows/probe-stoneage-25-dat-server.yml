@@ -52,7 +52,7 @@ jobs:
           D="$(find /tmp/sa25/out -type d -path '*/SA2.5主程式/stoneage2.5/map' -print -quit)"
           S="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
           mkdir -p research/recovered
-          python3 tools/stoneage_dat_server_probe.py --dat-dir "$D" --server-map-root "$S" > research/recovered/STONEAGE-25-DAT-SERVER-CROSSCHECK-R1.txt
+          python3 -m tools.stoneage_dat_server_probe --dat-dir "$D" --server-map-root "$S" > research/recovered/STONEAGE-25-DAT-SERVER-CROSSCHECK-R1.txt
       - name: Commit derived report only
         run: |
           git config user.name stoneage-recovery-bot
