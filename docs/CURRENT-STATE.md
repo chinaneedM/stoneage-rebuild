@@ -776,11 +776,23 @@ Supplemental source ledgers:
 - Local reference validation passes 10 deterministic tests.
 - Action R1 is closed. SignBoard / TownPeople / Mic are next handled as lightweight presentation/broadcast registrations rather than full state-machine seams.
 
+## SignBoard / TownPeople / Mic presentation registration — 2026-09-19
+
+- Real-byte presentation workflow 35385048916 succeeded; aggregate SHA-256 is 9e5a2919b44412edc812d9b7612346f74dfa8f99f2910d5e9b424083c425fe2f.
+- SignBoard: all 181 refs resolve; 177 are plain display and 4 use the active %manorid:...% dynamic manor-owner presentation path.
+- TownPeople: 445 refs total; 389 resolved files, 34 inline args, 15 missing files and 7 no-arg refs. Observable dialogue shapes range from 1 to 12 comma-separated variants.
+- The 7 no-arg TownPeople refs map to a literal fixed-source defect: GetArgStr failure is ignored and an uninitialized local buffer is subsequently scanned. They are not normalized into empty dialogue.
+- Mic: all 4 refs resolve; all use eight-token pipe/rectangle mode, all have family flag zero, exactly one enables FREE, and none enables WIND. Active recovered behavior is same-floor rectangle chat; WIND popup and family-announcement paths are dormant.
+- These three classes are presentation/broadcast semantics and do not mutate ordinary player inventory, Gold, location, battle, save, pet or persistent progression in their common paths.
+- Added tools/stoneage_presentation_npc_model.py, tests/test_stoneage_presentation_npc_model.py, dedicated CI and research/mechanics/STONEAGE-PRESENTATION-NPC-SEMANTICS-R1.md.
+- Local reference validation passes 14 deterministic tests.
+- High-volume ordinary presentation NPCs are now removed from core-mechanics priority.
+
 ## Immediate next actions
 
-1. **Register SignBoard, TownPeople and Mic as lightweight presentation/broadcast semantics.** Confirm their fixed-source trigger/range behavior and recovered usage shape without building artificial gameplay-state machines.
-2. **Then re-triage what remains before entering family/race/VIP packages.** Prefer unresolved core economy, persistence, travel, battle or pet semantics over expansion-specific UI packages.
-3. **Keep Bankman, Raceman, Scheduleman and family PK/management packages later-scope unless the re-triage exposes a concrete core dependency.**
+1. **Re-triage the remaining unresolved non-family classes at the persistence/display boundary.** Inspect Dengon and Duelranking first: determine whether they only display server state or introduce a still-unmodeled persistence mutation.
+2. **Split personal-bank mechanics from the later family Bankman package if necessary.** Trade/economy is already modeled, but CHAR_BANKGOLD deposit/withdraw persistence must not be missed merely because its UI entry is family-coupled.
+3. **Keep Raceman, Scheduleman, ManorSman, FMPK/FMWarp and VIP packages later-scope unless they reveal a dependency required by the early/core reconstruction.**
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
 6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.

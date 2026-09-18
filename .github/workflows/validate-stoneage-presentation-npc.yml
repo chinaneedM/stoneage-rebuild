@@ -1,0 +1,20 @@
+name: Validate StoneAge presentation NPC semantics
+concurrency:
+  group: stoneage-presentation-npc
+  cancel-in-progress: true
+on:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-presentation-npc.yml
+      - tools/stoneage_presentation_npc_model.py
+      - tests/test_stoneage_presentation_npc_model.py
+      - research/mechanics/STONEAGE-PRESENTATION-NPC-SEMANTICS-R1.md
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_presentation_npc_model -v
