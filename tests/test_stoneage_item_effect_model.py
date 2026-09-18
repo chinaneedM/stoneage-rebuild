@@ -7,10 +7,17 @@ from tools.stoneage_item_effect_model import (
     battle_item_recovery_gain,
     capture_up_transition,
     dead_targets,
+    change_pet_owner_item_transition,
+    encounter_item_transition,
+    equipment_noenemy_level,
     field_change_consumption,
     item_use_route,
+    microphone_item_transition,
+    noenemy_item_transition,
     living_targets,
     param_modifier_delta,
+    parse_warp_argument,
+    pet_follow_item_transition,
     parse_battle_recovery_option,
     parse_capture_up_option,
     parse_field_change_option,
@@ -23,7 +30,11 @@ from tools.stoneage_item_effect_model import (
     recover_statuses,
     resurrection_target_transition,
     reverse_target_transition,
+    skillup_point_item_transition,
     set_magic_defense,
+    tohelos_item_transition,
+    warp_item_transition,
+    remove_equipment_noenemy,
 )
 
 
@@ -488,6 +499,204 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
             set_magic_defense({1: 4}, kind=1, turn=0),
             {1: 0},
         )
+
+    def test_warp_argument_requires_four_integers(self):
+        self.assertEqual(
+            parse_warp_argument("1 300 12 34"),
+            {"flag": 1, "floor": 300, "x": 12, "y": 34},
+        )
+        self.assertIsNone(parse_warp_argument("1 300 12"))
+
+    def test_warp_rejects_battle_and_floor_117(self):
+        parsed = parse_warp_argument("1 300 12 34")
+        self.assertEqual(
+            warp_item_transition(
+                parsed_argument=parsed,
+                battle_mode_none=False,
+                current_floor=100,
+                party_mode="none",
+                caster_id=5,
+            )["reason"],
+            "in_battle",
+        )
+        self.assertEqual(
+            warp_item_transition(
+                parsed_argument=parsed,
+                battle_mode_none=True,
+                current_floor=117,
+                party_mode="none",
+                caster_id=5,
+            )["reason"],
+            "blocked_floor",
+        )
+
+    def test_warp_party_leader_requires_group_flag(self):
+        parsed = parse_warp_argument("0 300 12 34")
+        r = warp_item_transition(
+            parsed_argument=parsed,
+            battle_mode_none=True,
+            current_floor=100,
+            party_mode="leader",
+            caster_id=5,
+            valid_party_members=(5, 6, 7),
+        )
+        self.assertFalse(r["accepted"])
+        self.assertFalse(r["consume"])
+
+    def test_warp_party_leader_warps_valid_members_and_consumes(self):
+        parsed = parse_warp_argument("1 300 12 34")
+        r = warp_item_transition(
+            parsed_argument=parsed,
+            battle_mode_none=True,
+            current_floor=100,
+            party_mode="leader",
+            caster_id=5,
+            valid_party_members=(5, 6, 7),
+        )
+        self.assertTrue(r["accepted"])
+        self.assertTrue(r["consume"])
+        self.assertEqual(r["targets"], (5, 6, 7))
+
+    def test_warp_party_client_cannot_use(self):
+        parsed = parse_warp_argument("1 300 12 34")
+        r = warp_item_transition(
+            parsed_argument=parsed,
+            battle_mode_none=True,
+            current_floor=100,
+            party_mode="client",
+            caster_id=6,
+        )
+        self.assertEqual(r["reason"], "party_client")
+        self.assertFalse(r["consume"])
+
+    def test_pet_follow_item_is_not_consumed(self):
+        r = pet_follow_item_transition(
+            existing_follow_valid=False,
+            target_valid=True,
+            item_valid=True,
+            follow_level=80,
+            target_level=70,
+            target_in_first_five_pet_slots=True,
+            drop_follow_success=True,
+        )
+        self.assertTrue(r["accepted"])
+        self.assertFalse(r["consume"])
+
+    def test_pet_follow_rejects_level_and_ownership(self):
+        self.assertEqual(
+            pet_follow_item_transition(
+                existing_follow_valid=False,
+                target_valid=True,
+                item_valid=True,
+                follow_level=50,
+                target_level=51,
+                target_in_first_five_pet_slots=True,
+                drop_follow_success=True,
+            )["reason"],
+            "level_too_high",
+        )
+        self.assertEqual(
+            pet_follow_item_transition(
+                existing_follow_valid=False,
+                target_valid=True,
+                item_valid=True,
+                follow_level=80,
+                target_level=50,
+                target_in_first_five_pet_slots=False,
+                drop_follow_success=True,
+            )["reason"],
+            "not_owned_slot",
+        )
+
+    def test_skillup_item_adds_exactly_one_and_consumes(self):
+        self.assertEqual(
+            skillup_point_item_transition(item_valid=True, current_points=8),
+            {"changed": True, "consume": True, "points": 9},
+        )
+
+    def test_noenemy_and_encounter_are_connection_state_consumables(self):
+        self.assertEqual(
+            noenemy_item_transition(item_valid=True),
+            {"changed": True, "consume": True, "noenemy": True},
+        )
+        self.assertEqual(
+            encounter_item_transition(item_valid=True),
+            {"changed": True, "consume": True, "stay_encounter": True},
+        )
+
+    def test_microphone_toggles_only_outside_battle_without_consumption(self):
+        self.assertEqual(
+            microphone_item_transition(
+                caster_valid=True,
+                battle_mode_none=True,
+                current_enabled=False,
+            ),
+            {"changed": True, "consume": False, "enabled": True},
+        )
+        r = microphone_item_transition(
+            caster_valid=True,
+            battle_mode_none=False,
+            current_enabled=True,
+        )
+        self.assertFalse(r["changed"])
+        self.assertTrue(r["enabled"])
+
+    def test_change_pet_owner_clears_foreign_marker_and_consumes(self):
+        r = change_pet_owner_item_transition(
+            caster_valid=True,
+            target_valid=True,
+            item_valid=True,
+            target_is_pet=True,
+            pet_owner_marker="OTHER_ACCOUNT",
+            player_account_marker="ME",
+        )
+        self.assertTrue(r["changed"])
+        self.assertTrue(r["consume"])
+        self.assertEqual(r["pet_owner_marker"], "")
+
+    def test_change_pet_owner_rejects_empty_or_same_marker(self):
+        for marker in ("", "ME"):
+            r = change_pet_owner_item_transition(
+                caster_valid=True,
+                target_valid=True,
+                item_valid=True,
+                target_is_pet=True,
+                pet_owner_marker=marker,
+                player_account_marker="ME",
+            )
+            self.assertFalse(r["changed"])
+            self.assertFalse(r["consume"])
+
+    def test_tohelos_detaches_item_before_argument_failure(self):
+        r = tohelos_item_transition(
+            item_valid=True,
+            option="",
+            caster_party_mode="none",
+            caster_id=5,
+        )
+        self.assertFalse(r["changed"])
+        self.assertTrue(r["consume"])
+
+    def test_tohelos_clamps_negative_values_and_targets_party_leader(self):
+        r = tohelos_item_transition(
+            item_valid=True,
+            option="-20|-3",
+            caster_party_mode="client",
+            caster_id=6,
+            party_leader_id=5,
+        )
+        self.assertEqual(r["target_id"], 5)
+        self.assertEqual(r["cutrate"], 0)
+        self.assertEqual(r["limitcount"], 0)
+        self.assertTrue(r["consume"])
+
+    def test_equipment_noenemy_quantizes_levels_and_remove_clears(self):
+        self.assertEqual(equipment_noenemy_level(250), 200)
+        self.assertEqual(equipment_noenemy_level(150), 120)
+        self.assertEqual(equipment_noenemy_level(90), 80)
+        self.assertEqual(equipment_noenemy_level(50), 40)
+        self.assertEqual(equipment_noenemy_level(39), 0)
+        self.assertEqual(remove_equipment_noenemy(), 0)
 
     def test_reverse_item_uses_same_xor_transition(self):
         r = reverse_target_transition(
