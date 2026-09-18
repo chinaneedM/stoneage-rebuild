@@ -140,6 +140,79 @@ def parse_named_function_table(path, marker):
             last_error = exc
     raise last_error or ValueError("no source table marker supplied")
 
+def parse_named_function_guard_map(path, marker):
+    """Return token -> guarded(bool) for one named dispatch table."""
+    text = path.read_text(encoding="utf-8", errors="replace")
+    markers = (marker,) if isinstance(marker, str) else tuple(marker)
+    last_error = None
+    region = None
+    for candidate in markers:
+        try:
+            region = extract_table_region(text, candidate)
+            break
+        except ValueError as exc:
+            last_error = exc
+    if region is None:
+        raise last_error or ValueError("no source table marker supplied")
+
+    stack = []
+    out = {}
+    for line in region.splitlines():
+        stripped = line.strip()
+        if re.match(r"^#\s*(if|ifdef|ifndef)\b", stripped):
+            stack.append(stripped)
+            continue
+        if re.match(r"^#\s*(elif|else)\b", stripped):
+            if stack:
+                stack[-1] = stripped
+            continue
+        if re.match(r"^#\s*endif\b", stripped):
+            if stack:
+                stack.pop()
+            continue
+        m = re.search(r'\{\s*"([^"]+)"', line)
+        if m:
+            out[m.group(1)] = bool(stack)
+    return out
+
+
+def guard_coverage(counter, lineage_maps):
+    lineages = tuple(sorted(lineage_maps))
+    unique_counts = collections.Counter()
+    row_counts = collections.Counter()
+    digest = hashlib.sha256()
+
+    for token in sorted(counter):
+        states = []
+        for lineage in lineages:
+            mapping = lineage_maps[lineage]
+            if token not in mapping:
+                states.append("missing")
+            else:
+                states.append("guarded" if mapping[token] else "unguarded")
+
+        if all(s == "unguarded" for s in states):
+            label = "unguarded_all3"
+        elif all(s == "guarded" for s in states):
+            label = "guarded_all3"
+        elif all(s != "missing" for s in states):
+            label = "mixed_guard"
+        elif all(s == "missing" for s in states):
+            label = "missing_all3"
+        else:
+            label = "partial_source"
+
+        unique_counts[label] += 1
+        row_counts[label] += counter[token]
+        digest.update((token + "|" + "|".join(states) + "\n").encode("utf-8"))
+
+    return {
+        "unique_counts": unique_counts,
+        "row_counts": row_counts,
+        "classification_sha256": digest.hexdigest(),
+    }
+
+
 def source_dispatch_sets(args):
     return {
         "gavin": {
@@ -207,6 +280,14 @@ def analyze(args):
     item_sets = {name: s["item"] for name, s in sources.items()}
     magic_sets = {name: s["magic"] for name, s in sources.items()}
     petskill_sets = {name: s["petskill"] for name, s in sources.items()}
+    magic_guard_maps = {
+        "gavin": parse_named_function_guard_map(args.gavin_magic, "MAGIC_functbl[]"),
+        "iris": parse_named_function_guard_map(args.iris_magic, "MAGIC_functbl[]"),
+        "bismarck": parse_named_function_guard_map(
+            args.bismarck_magic,
+            ("sMageicFunctionTable[]", "MAGIC_functbl[]"),
+        ),
+    }
 
     return {
         "paths": {
@@ -224,6 +305,7 @@ def analyze(args):
             for slot, counter in item_slots.items()
         },
         "magic": coverage(magic_tokens, magic_sets),
+        "magic_guard": guard_coverage(magic_tokens, magic_guard_maps),
         "petskill": coverage(petskill_tokens, petskill_sets),
     }
 
@@ -252,6 +334,21 @@ def emit(args):
     for slot, result in r["item_slots"].items():
         emit_coverage(f"ITEM_SLOT|{slot}", result)
     emit_coverage("MAGIC", r["magic"])
+    g = r["magic_guard"]
+    labels = (
+        "unguarded_all3",
+        "guarded_all3",
+        "mixed_guard",
+        "partial_source",
+        "missing_all3",
+    )
+    for label in labels:
+        print(
+            f"MAGIC_GUARD_CLASS|{label}|"
+            f"unique_tokens={g['unique_counts'].get(label,0)}|"
+            f"row_uses={g['row_counts'].get(label,0)}"
+        )
+    print(f"MAGIC_GUARD_CLASSIFICATION_SHA256|{g['classification_sha256']}")
     emit_coverage("PETSKILL", r["petskill"])
 
 
