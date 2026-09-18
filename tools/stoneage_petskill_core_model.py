@@ -56,11 +56,12 @@ def skill_normal_guard(target):
     return _command("GUARD", target)
 
 
-def continuation_attack_command(target, option):
+def continuation_attack_command(target, option, *, prior_high=0):
     n = _c_number(option, 1)
     if n < 1 or n > 10:
         n = 1
-    return _command("S_RENZOKU", target, low=n, high=0)
+    # CHAR_SETWORKINT_LOW preserves the previous high half.
+    return _command("S_RENZOKU", target, low=n, high=int(prior_high))
 
 
 def continuation_execution(*, count):
@@ -393,9 +394,21 @@ def status_attack_transition(
     }
 
 
-def earth_round_command(target, option, *, attack_percent_marker="攻%"):
-    per = _percent_value(option, attack_percent_marker, 0, as_float=True)
-    return _command("S_EARTHROUND1", target, low=int(per), high=0)
+def earth_round_command(
+    target,
+    option,
+    *,
+    attack_percent_marker="攻%",
+    prior_com3=0,
+):
+    tail = _after_marker(option, attack_percent_marker)
+    # Unlike most handlers, EarthRound writes the whole COM3 only when the
+    # marker exists. Without it, old COM3 survives and later becomes the
+    # EarthRound0 damage percentage.
+    com3 = int(prior_com3)
+    if tail is not None:
+        com3 = int(_c_number(tail, 0, float_ok=True))
+    return _command("S_EARTHROUND1", target, com3=com3)
 
 
 def earth_round_hide_transition():
@@ -432,8 +445,9 @@ def guard_break_gate(*, target_guarding, target_confused):
     return bool(target_guarding and not target_confused)
 
 
-def abduct_command(target, *, skill_array):
-    return _command("S_ABDUCT", target, low=int(skill_array), high=0)
+def abduct_command(target, *, skill_array, prior_high=0):
+    # CHAR_SETWORKINT_LOW preserves the previous high half.
+    return _command("S_ABDUCT", target, low=int(skill_array), high=int(prior_high))
 
 
 def abduct_probability(*, attacker_level, defender_level, defender_is_player, has_win_func):
@@ -554,8 +568,11 @@ def no_guard_command(
     dodge_marker="避%",
     counter_marker="击%",
     critical_marker="心%",
+    prior_high=0,
 ):
-    dodge = int(_percent_value(option, dodge_marker, 0))
+    dodge_tail = _after_marker(option, dodge_marker)
+    # HIGH is only written when the dodge marker exists.
+    dodge = int(prior_high) if dodge_tail is None else int(_c_number(dodge_tail, 0))
     counter = int(_percent_value(option, counter_marker, 0))
     critical = int(_percent_value(option, critical_marker, 0))
     packed_low = (counter << 8) + critical
