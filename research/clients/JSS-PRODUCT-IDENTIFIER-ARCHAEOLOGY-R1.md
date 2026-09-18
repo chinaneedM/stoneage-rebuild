@@ -179,7 +179,9 @@ Crucially, the direct page does **not** expose a `型番` field. Therefore:
 
 The product image currently resolves to a Suruga no-photo placeholder, so this source does not improve disc-label or package-side resolution.
 
-There is also a catalog-price discrepancy that must remain explicit: contemporaneous advertising / archived first-party product evidence gives **8,800円** (including an advertisement that explicitly says before tax), while Suruga's current catalog field says **9,680円**. The modern retailer value is recorded as a current catalog field and does not override the contemporaneous evidence.
+The apparent **8,800円 vs 9,680円** price discrepancy is now better classified as a catalog-display effect, not contradictory historical price evidence. The period StoneAge advertisement explicitly prints **8,800円（税別）**. Suruga currently displays **9,680円** and warns that tax display may differ. Two JSS controls show the same exact transformation: `チャルボ55` is historically 3,800円 before tax but Suruga displays 4,180円; `カメレオンツイスト` is contemporaneously 6,980円 before tax but Suruga displays 7,678円. Each current Suruga value is exactly the historical tax-exclusive price ×1.10.
+
+This is recorded as a **strong catalog-presentation interpretation**, not as an undocumented statement about Suruga's internal normalization policy. Operationally, the current 9,680円 field is not independent evidence for a different 1999 StoneAge MSRP; **8,800円（税別） remains the historical baseline**.
 
 ## 4. Structural observation
 

@@ -234,10 +234,20 @@ Canonical analysis: `research/clients/JSS-PRODUCT-IDENTIFIER-ARCHAEOLOGY-R1.md`.
   - the direct product page does **not** expose a `型番` field for StoneAge;
   - **`145026779` is Suruga's 管理番号 and must not be treated as the StoneAge model/type code**;
   - the current product image resolves to Suruga's no-photo placeholder, so this record contributes no new package/disc visual evidence.
-- price discrepancy:
-  - contemporaneous StoneAge advertising and the archived Gamer's Dream product record already support **8,800円 before tax / package price 8,800円**;
-  - Suruga's modern catalog currently displays **定価 9,680円**;
-  - this discrepancy is preserved rather than reconciled by assumption. The modern retailer field does not supersede contemporaneous/first-party price evidence.
+- price-display interpretation:
+  - contemporaneous StoneAge advertising and the archived Gamer's Dream product record support **8,800円**; the photographed period advertisement explicitly prints **8,800円（税別）**;
+  - Suruga's current catalog displays **定価 9,680円** and separately warns that tax display may differ between online and physical-store presentation;
+  - two JSS comparison products show the same exact current-catalog arithmetic:
+    - `チャルボ55`: historical **3,800円（税別）** / **3,800円＋税** (period/catalog preservation) versus current Suruga **4,180円**;
+    - `カメレオンツイスト`: contemporaneous **6,980円（税別）** versus current Suruga **7,678円**;
+  - all three current Suruga values equal the historical tax-exclusive amount multiplied by **1.10**: 3,800→4,180; 6,980→7,678; 8,800→9,680.
+  - classification: **strong catalog-presentation interpretation, not a documented Suruga internal-policy statement**. The evidence indicates that the current Suruga `定価` field is very likely presenting these older JSS prices in a modern tax-inclusive normalized form.
+  - research consequence: **9,680円 must not be treated as independent evidence that StoneAge's original 1999 pre-tax MSRP differed from 8,800円**; the period 8,800円（税別） record remains the historical baseline.
+  - comparison URLs:
+    - current Suruga `チャルボ55`: https://www.suruga-ya.jp/product/detail/165000649
+    - historical `チャルボ55` price preservation: https://www.famitsu.com/game/title/21022/reviews
+    - current Suruga `カメレオンツイスト`: https://www.suruga-ya.jp/product/detail/147000043
+    - contemporaneous `カメレオンツイスト` price page: https://elibrary.arcade-museum.com/magazines/j-coj/coin-op-journal--1997-12--22-12/coin-op-journal--1997-12--22-12-376.pdf
 - research consequence:
   - the direct Suruga catalog recovery objective is complete;
   - StoneAge's model/type code remains **OPEN** and must be pursued through a buy-side record, distributor/dealer database, period catalog, clearer package side/back image, or another source that explicitly exposes the model field.
