@@ -140,6 +140,32 @@ Canonical analysis: `research/clients/JSS-PRODUCT-IDENTIFIER-ARCHAEOLOGY-R1.md`.
   - a general rule that the next numerical body must belong to StoneAge;
   - disc matrix text, filesystem contents, hashes or executable version.
 
+## SRC-JP-JSS-LIFESTORM2-YAHOO-HIRES-01
+
+- title: `【新品】Windows～LIFE STORMⅡ　光と闇の継承者～`
+- auction ID: `c771109001`
+- listing URL: https://auctions.yahoo.co.jp/jp/auction/c771109001
+- listing period: 2023-03-23 through 2023-03-30
+- retrieval date: 2026-09-18
+- source type: preserved Yahoo! Auctions photographs of a surviving LIFESTORM II package, manual and optical disc
+- confidence: **B for literal visible artifact fields; C for seller provenance**
+- visual value:
+  - the preserved images are substantially higher resolution than several other package leads;
+  - one photograph shows the package side/back together with the manual and the actual LIFESTORM II optical disc;
+  - another shows the package front/manual artwork;
+  - the full back-box photograph independently confirms Windows 95/98, price `8,800円`, JSS branding and JAN **`4909476302013`**.
+- original image targets:
+  1. package side/back + manual + disc: Yahoo original image associated with auction `c771109001`
+  2. package/manual front: Yahoo original image associated with auction `c771109001`
+  3. full package back: Yahoo original image associated with auction `c771109001`
+- negative observation:
+  - despite the improved resolution, no model/type code can be read with sufficient confidence from the visible package fields;
+  - no disc matrix text is readable.
+- research consequence:
+  - independently corroborates the already promoted LIFESTORM II JAN without relying on the newer auction;
+  - provides a higher-resolution surviving-disc reference for later label/layout comparison;
+  - the LIFESTORM II model/type code remains **OPEN** rather than being inferred from LIFESTORM's `JV02005`.
+
 ## SRC-JP-1999-RETAIL-YAHOO-UNOPENED-01
 
 - title: `未開封 ストーンエイジ`
