@@ -87,7 +87,8 @@ def analyze(data_dir):
 def emit(data_dir):
     r=analyze(data_dir)
     print("StoneAge recovered itemset revision probe — R1")
-    print("No original item names/descriptions/function strings are stored in this report.")\n    print("TYPE_LABEL_BOUNDARY|labels follow a descendant conditional enum and are candidates, not unconditional recovered semantics")
+    print("No original item names/descriptions/function strings are stored in this report.")
+    print("TYPE_LABEL_BOUNDARY|labels follow a descendant conditional enum and are candidates, not unconditional recovered semantics")
     print(f"ROWS|itemset.txt|{r['a_rows']}")
     print(f"ROWS|itemset0710.txt|{r['b_rows']}")
     print(f"SHARED_IDS|{r['shared']}")
