@@ -50,6 +50,12 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 
 **OPEN:** Identify the original magazine issue/page and determine whether the advertised special CD is distinct from the game install/client disc, and what it contains.
 
+### 1999 retail package identifier
+
+**FACT (surviving-package photograph):** A preserved Yahoo! Auctions listing for a seller-described unopened early JSS `STONEAGE` package exposes front/side/back photographs. The back-box barcode is directly readable as **JAN `4909476303010`**. This assignment is based on the photographed StoneAge package itself, not on numerical extrapolation from other JSS products. [`SRC-JP-1999-RETAIL-YAHOO-UNOPENED-01`]
+
+**EVIDENCE LIMIT:** The marketplace photograph supports the literal visible package field at B-level; it does not provide S-grade chain of custody, the still-unresolved package model/type code, disc matrix identifiers, or client filesystem/binary evidence.
+
 ### 1999 commercial product requirements
 
 **FACT (archived first-party product page):** An original Gamer's Dream StoneAge product page preserved by Wayback lists:
