@@ -25,7 +25,7 @@ The independent GitHub repository and continuity scaffold are established on rem
 - StoneAge was developed by Japan System Supply (JSS).
 - `STONEAGE` was publicly exhibited at Tokyo Game Show '99 Spring by **1999-03-19** in NTT Data's Gamer's Dream booth.
 - Wayback reports archived captures of the original Gamer's Dream index beginning **1999-04-22**, so the pre-beta/pre-launch web layer is at least partially recoverable.
-- By May 1999, contemporaneous `Play Online` coverage described the planned game as a relaxed Stone Age RPG emphasizing food/resources, community, and cooperative village development. This is FACT for **published pre-launch design intent**, not automatic proof of final shipped implementation.
+- By May 1999, contemporaneous `Play Online` coverage described the planned game as a relaxed Stone Age RPG emphasizing food/resources, community, cooperative village development, and intended life/resource activities including **hunting, gathering and farming**. The same pre-launch coverage frames the design as trying to minimize the usual online-game focus on fighting, destroying and taking from others. These are FACTS for **published pre-launch design intent**, not automatic proof that every mechanic shipped in the September beta or October retail build.
 - Beta recruitment closed **1999-08-20**; the beta itself ran **1999-09-01 through 1999-09-30**, supported by contemporaneous `Play Online` issue 015.
 - The preserved `Play Online` issue 015 is now searchable deeply enough to recover the beta-application URL host as `www.dp.gamersdream.ne.jp` and its path tail as `PO/sa_apply.html`. One character immediately before `PO` remains OCR-ambiguous and is **not** normalized or guessed in the factual record.
 - PC Watch reported on 1999-09-17 that the JSS title was scheduled for release on **1999-10-15**.
@@ -51,6 +51,7 @@ The independent GitHub repository and continuity scaffold are established on rem
 - Taiwan and Mainland Chinese versions followed later and introduced localization/iteration layers.
 - A near-contemporary 2003 4Gamer revival report states that in the former Japanese StoneAge operation **only GMs could ride dinosaurs**. This is B-level retrospective baseline evidence rather than 1999 primary documentation, but it materially narrows the working original-Japanese baseline: **normal-player pet riding is treated as absent unless stronger JSS evidence contradicts it**.
 - At TGS 2003, revival staff told 4Gamer that the immediate restored game was **basically the same** as the former version and was then focused on restoration/bug fixing. The same report identifies a dedicated **item trade window as a minor change that the original did not have**, with ground-drop exchange described as the older context. This creates a controlled JSS→2003 UI/mechanics diff anchor.
+- Version-lineage archaeology now has two concrete near-descendant anchors: a contemporaneously preserved Netmarble answer identifies its **2003 Korean launch as version `1.74`**, while Mado no Mori's contemporary Japanese revival metadata identifies the **2003-12-12 Japanese beta client as `1.74a`**. The numeric proximity makes a shared/related version lineage a high-value **HYPOTHESIS and recovery target**, but does not establish identical binaries, regional data parity, or that `1.74` was JSS's final internal version.
 
 Precise first-party claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed research is split across:
 
@@ -65,6 +66,7 @@ Precise first-party claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed resea
 - `research/clients/JSS-PRODUCT-IDENTIFIER-ARCHAEOLOGY-R1.md` — reconstructs JSS JAN/model-number families to narrow the 1999 StoneAge retail-package search without assigning inferred identifiers.
 - `research/clients/JSS-RESOURCE-CONTAINER-LINEAGE-R1.md` — tests the possible LIFESTORM II → StoneAge JSS resource-pipeline ancestry through REAL/ADRN filenames, index semantics and the StoneAge `RD` run-length/literal codec.
 - `research/evolution/JSS-TO-2003-REVIVAL-DELTA-R1.md` — uses the earliest Japanese revival as a near-descendant comparison anchor to separate original-Japanese mechanics from 2003 UI/content additions.
+- `research/evolution/STONEAGE-174-VERSION-LINEAGE-R1.md` — isolates Korean `1.74` and Japanese revival `1.74a` as controlled early-client recovery targets without assuming numerical equality means byte/content identity.
 
 Supplemental source ledgers:
 
@@ -88,6 +90,7 @@ Supplemental source ledgers:
 - The updater probably used a manifest/protocol that mapped downloadable files to checksum values, but the manifest filename, checksum algorithm, endpoint and payload format remain unresolved.
 - The OCR-ambiguous character immediately before `PO/sa_apply.html` could be an old-style user-directory marker such as `~`, but this remains a **search hypothesis only** and is not the registered exact beta URL.
 - Multiple later community-preserved client-source trees retain JSS/Gamer's Dream title identifiers and updater-related traits, but the traits are now weighted separately. **`CheckForUpdate`** survives in BismarckDD, Signally and anson1788 client trees despite differing startup/build architecture, making it the strongest descendant updater-coordination search fingerprint. **`sa.exe`** is explicit in Signally and anson1788 project/debug metadata and is independently named by later Taiwan `cksum:...:File:sa.exe` failures, keeping it a high-value runtime candidate without establishing 1999 use. Signally's `updated` + user-facing `StoneAge.exe` launcher gate is narrower, and its conditional `PARAM_ARGS = "HASH___________@@@@@@@@"` placeholder is currently branch-specific/low-priority rather than a generic JSS hypothesis.
+- **Version-lineage bridge:** Korean `1.74` and Japanese revival `1.74a` are now independently documented historical version labels. Their relationship to one another—and to the last JSS client—is **OPEN**. Treat them as high-value bridge artifacts for recovery/diffing, not substitutes for the 1999 retail/beta baseline.
 - **Yuki Tamura** is now a plausible named candidate for at least part of the StoneAge 3D art/animation role described in the preserved anonymous project-leader recollections because Tamura self-reports JSS 3D art work and StoneAge participation. This remains **HYPOTHESIS**, not an identification of the recollection's unnamed `3D animator`.
 
 ## Highest-priority research questions
@@ -129,7 +132,10 @@ Supplemental source ledgers:
    - elemental/spirit lore;
    - normal-player pet riding: **working Japanese-original boundary now narrowed** — 2003 near-contemporary 4Gamer evidence says the former Japanese service allowed dinosaur riding only for GMs; still seek primary JSS confirmation and the earliest regional/build appearance of normal-player riding;
    - major villages and early map topology.
-10. Determine JSS-era internal numeric client version numbering.
+10. **Determine JSS-era internal numeric client version numbering and resolve the new `1.74 / 1.74a` bridge.**
+   - Progress: Korean Netmarble launch evidence explicitly names `1.74`; contemporary Japanese revival metadata explicitly names `1.74a`.
+   - OPEN: whether either label descends directly from a JSS version number, whether the Japanese/Korean builds share a code/data branch, and what the 1999 retail / 2000 final-JSS internal versions were.
+   - Recovery target: authentic/public Korean `1.74` or Japanese `1.74a` installer/file tree for external hashing and controlled diffing.
 11. Locate the earliest Taiwan client/manual/site and compare it with JSS material.
 12. Locate a clean Mainland early/1.82 client/data set for later diff archaeology.
 13. **Recover an original StoneAge staff-credit list and resolve named JSS roles.**
@@ -137,6 +143,11 @@ Supplemental source ledgers:
    - Still needed: original StoneAge credits, staff page, period interview, or project-specific first-person statements that assign exact roles.
 
 ## Completed in the latest work pass
+- Opened a dedicated **StoneAge `1.74 / 1.74a` version-lineage archaeology** track rather than assuming Mainland 1.82 is the earliest practical bridge client.
+- Recovered a same-period 2003 Korean Netmarble service answer naming its launch version **`1.74`**, and separately recovered contemporary Mado no Mori metadata naming the Japanese revival beta client **`1.74a`** with date 2003-12-12.
+- Preserved an older Inium-era transition clue placing Korean `1.74` before the `2.0` family/riding update, while keeping the later preservation source below primary-evidence status.
+- Recorded the strict boundary that `1.74` ≠ `1.74a` ≠ final JSS by assumption: byte identity, regional parity and direct ancestry remain OPEN until an actual client/file tree is recovered and diffed.
+- Exact web/GitHub searches for a provenance-preserving `1.74` or `1.74a` installer, file tree or binary hash produced no credible artifact in this pass, so the newly identified version labels are recovery keys rather than recovered clients.
 - Opened a **JSS → 2003 Japanese revival delta** track using near-contemporary 4Gamer coverage rather than modern player memory.
 - Recovered a strong working boundary for riding: July 2003 revival coverage states that in the former Japanese service **only GMs could ride dinosaurs**. Normal-player riding is therefore not part of the working JSS/Japanese-original baseline unless direct primary evidence later overturns this.
 - Recovered an original UI/mechanics boundary from TGS 2003: revival staff said the restored build was basically the same and then in bug-fixing/restoration mode; the report identifies the dedicated **item trade window as absent from the original**, with ground-drop exchange as the earlier context.
@@ -208,6 +219,7 @@ Supplemental source ledgers:
 9. Continue attempting provenance-preserving extraction of the archived JSS `stoneage.exe` through a route that can actually resolve Wayback. The current local/container path fails DNS before retrieval. If bytes become obtainable, analyze them outside the repository and record only hashes/metadata/derived findings.
 10. Once any original retail/beta binary or media is recovered, establish the reproducible client-archaeology pipeline: hashes, PE metadata, file tree, resource inventory, strings, asset IDs, update-state labeling and cross-version diff.
 11. Treat the 2003 revival as a **near-descendant negative/positive control** when later client artifacts are recovered: specifically test the JSS baseline for GM-only riding capability versus normal-player availability, and absence/presence of a dedicated item-trade window before assigning later mechanics backward.
+12. Add **Korean `1.74` and Japanese revival `1.74a`** to the priority zero-cost client-recovery search. Seek original installer filenames, file sizes/hashes, magazine-CD indexes, old download portals, antivirus/software catalogs, public mirrors or preserved file trees. If recovered, analyze outside the repository and compare executable naming, REAL/ADRN/SPR generations, maps, trade UI and riding assets before making any ancestry claim.
 
 ## Continuity status
 
@@ -221,4 +233,4 @@ Supplemental source ledgers:
 
 No repository or workflow blocker.
 
-The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS retail disc image/dump and September 1999 beta binary. LIFESTORM II and StoneAge JANs are directly resolved from public package photographs, but the StoneAge physical-package blocker remains the missing exact model/type code, disc identities and matrix identifiers; exact JAN/model searches still yield no trustworthy `JV...` field and the 13 Mercari originals are HTTP-403-blocked here. The beta web-recovery blocker remains a nearly complete application-page path; the Retromags No.015 object is identified down to filename, size, MD5 and seedbox target, but the scan body is still unreachable. Direct Wayback binary retrieval is independently blocked in the execution environment by DNS resolution failure, so the archived JSS `stoneage.exe` still has no recovered bytes. The developer-lineage track now has a named, independently cross-checked JSS/StoneAge staff lead in Yuki Tamura, but the original StoneAge credit list and exact staff-role mapping remain unresolved. The retail/client search retains `sa.exe`, `updated`, and `CheckForUpdate` only as descendant-derived search traits until original JSS material confirms each one independently. The binary/media blocker remains the principal Phase 0 constraint.
+The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS retail disc image/dump and September 1999 beta binary. The newly isolated Korean `1.74` and Japanese `1.74a` bridge targets also lack a recovered original installer/file tree/hash, so their relationship to each other and to JSS remains unproven. LIFESTORM II and StoneAge JANs are directly resolved from public package photographs, but the StoneAge physical-package blocker remains the missing exact model/type code, disc identities and matrix identifiers; exact JAN/model searches still yield no trustworthy `JV...` field and the 13 Mercari originals are HTTP-403-blocked here. The beta web-recovery blocker remains a nearly complete application-page path; the Retromags No.015 object is identified down to filename, size, MD5 and seedbox target, but the scan body is still unreachable. Direct Wayback binary retrieval is independently blocked in the execution environment by DNS resolution failure, so the archived JSS `stoneage.exe` still has no recovered bytes. The developer-lineage track now has a named, independently cross-checked JSS/StoneAge staff lead in Yuki Tamura, but the original StoneAge credit list and exact staff-role mapping remain unresolved. The retail/client search retains `sa.exe`, `updated`, and `CheckForUpdate` only as descendant-derived search traits until original JSS material confirms each one independently. The binary/media blocker remains the principal Phase 0 constraint.
