@@ -5,6 +5,7 @@ from types import SimpleNamespace
 
 from tools.stoneage_effect_callback_coverage_probe import (
     analyze,
+    common_unguarded_family_counts,
     choose_active_file,
     parse_global_function_guard_map,
     parse_global_function_table,
@@ -241,6 +242,23 @@ class EffectCallbackCoverageProbeTests(unittest.TestCase):
             self.assertEqual(magic["classes"]["all"], 1)
             self.assertEqual(magic["classes"]["some"], 2)
             self.assertEqual(magic["classes"]["none"], 0)
+
+    def test_common_unguarded_family_counts_are_aggregate_only(self):
+        counter = {"A": 3, "B": 2, "C": 1}
+        maps = {
+            "one": {"A": False, "B": False, "C": True},
+            "two": {"A": False, "B": True, "C": True},
+            "three": {"A": False, "B": False, "C": True},
+        }
+        r = common_unguarded_family_counts(
+            counter,
+            maps,
+            family_map={"A": "alpha", "B": "beta", "C": "gamma"},
+        )
+        self.assertEqual(r["covered_unique"], 1)
+        self.assertEqual(r["covered_rows"], 3)
+        self.assertEqual(r["unique"]["alpha"], 1)
+        self.assertEqual(r["rows"]["alpha"], 3)
 
     def test_item_use_guard_classification_tracks_partial_sources(self):
         with tempfile.TemporaryDirectory() as td:
