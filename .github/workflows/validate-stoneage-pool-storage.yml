@@ -1,0 +1,17 @@
+name: Validate StoneAge ordinary pool storage model
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/mechanics/STONEAGE-ITEM-PET-POOL-STORAGE-R1.md
+      - tools/stoneage_pool_storage_model.py
+      - tests/test_stoneage_pool_storage_model.py
+      - .github/workflows/validate-stoneage-pool-storage.yml
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_pool_storage_model -v
