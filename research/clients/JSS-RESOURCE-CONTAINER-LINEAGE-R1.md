@@ -404,6 +404,34 @@ Classification: **C / later technical community recollection**.
 
 This does not prove the algorithm's 1999 origin, but it is useful because it predates the modern GitHub imports and shows that the REAL/ADRN + “JSS RLE” association existed in the StoneAge technical community by 2006.
 
+## 6B. Recovered StoneAge 2.5 byte-level validation
+
+The project now has a freely recovered StoneAge 2.5 resource corpus and has tested the descendant REAL/ADRN/RD model directly against its bytes.
+
+Recovered bundle SHA-256:
+
+`d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5`
+
+Directly validated on this corpus:
+
+- `adrn_15.bin` is exactly **234,564 × 80-byte records**;
+- every record points within `real_15.bin` and begins at an `RD` block;
+- all indexed REAL blocks are contiguous with no gaps/overlaps and cover the entire REAL file;
+- all 234,564 ADRN/RD dimension bit patterns agree;
+- eight flag-0 blocks use the raw-pixel branch and match `16 + width×height` via ADRN authoritative sizes;
+- the independently written legacy RD decoder successfully decoded **4,225 / 4,225** selected real blocks, including all eight flag-0 records;
+- 1,030 recovered `.MAP` files all follow an 8-byte width/height header plus one uint16 per cell;
+- recovered `.DAT` files use the distinct three-layer client-cache shape documented by descendant source;
+- in 995 structurally valid same-stem MAP/DAT pairs, the MAP payload matches **none** of DAT's tile/parts/event layers.
+
+This materially upgrades the StoneAge side from a descendant-source specification to a **recovered-byte validated 2.5 format specification**.
+
+It still does **not** promote the LIFESTORM II compatibility hypothesis or establish that the 1999 JSS retail client used byte-identical revisions.
+
+Canonical verified-format record:
+
+`research/clients/STONEAGE-25-VERIFIED-RESOURCE-FORMATS-R1.md`
+
 ## 7. Controlled cross-game hypothesis
 
 ### HYPOTHESIS

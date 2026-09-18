@@ -194,9 +194,35 @@ Purpose: register lower-confidence preservation/source-lineage material used to 
   - does not establish first introduction date or title.
 
 
+
+## SRC-SA-25-RECOVERED-RESOURCE-CORPUS-01
+
+- recovered bundle SHA-256: `d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5`
+- source lineage: preserved We Love SA / MediaFire two-part StoneAge 2.5 bundle; payload kept outside repository
+- source type: recovered public preservation bytes / derived validation
+- confidence: **A for literal format properties of this recovered corpus; provenance does not make the runtime a clean operator baseline**
+- derived reports:
+  - `research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt`
+  - `research/recovered/STONEAGE-25-RESOURCE-PROBE-R1.txt`
+  - `research/recovered/STONEAGE-25-RD-DECODE-VALIDATION-R1.txt`
+  - `research/recovered/STONEAGE-25-MAP-DAT-RELATION-R1.txt`
+- supports directly:
+  - 80-byte ADRN record width across 234,564 records;
+  - complete ADRN partitioning of REAL into contiguous `RD` blocks;
+  - flag-0 and flag-1 legacy RD behavior;
+  - 4,225 / 4,225 successful real-block decodes with the independently implemented decoder;
+  - 1,030 single-layer `.MAP` files using 8-byte dimensions + uint16 cells;
+  - distinct three-layer `.DAT` runtime/cache family;
+  - negative result that `.MAP` is not byte-identical to tile, parts or event in any of 995 valid paired files.
+- does not establish:
+  - 1999 JSS byte identity;
+  - purity of the recovered runtime executable layer;
+  - semantic meaning of the `.MAP` uint16 cell values;
+  - LIFESTORM II binary compatibility.
+
 ## Source-group conclusion
 
-The StoneAge side now has a stable descendant-code specification for the REAL/ADRN resource architecture and its legacy `RD` run-length/literal decoder.
+The StoneAge side now has both a stable descendant-code specification **and direct recovered-2.5 byte validation** for the REAL/ADRN resource architecture and its legacy `RD` run-length/literal decoder.
 
 The LIFESTORM II side currently supplies matching filename roles from a later Taiwan-version preservation record, but no inspected bytes.
 
