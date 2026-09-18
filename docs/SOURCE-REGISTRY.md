@@ -116,7 +116,17 @@ This is the canonical ledger for historical sources. Entries should record prove
   - application via a form and lottery selection when oversubscribed;
   - existence of a distributable beta-era client before commercial launch.
 - Page-level recovery note:
-  - the preserved page includes an application-form / game-homepage information block, but its URL text has not yet been recovered reliably enough to register as fact.
+  - the preserved page includes an application-form / game-homepage information block;
+  - search extraction has narrowed the printed beta-application URL to host `www.dp.gamersdream.ne.jp` and path tail `PO/sa_apply.html`, while one character immediately before `PO` remains visually/OCR ambiguous and is not normalized as fact.
+- Independent preservation route:
+  - Retromags file record: https://www.retromags.com/files/file/7018-play-online-no015-september-1999/
+  - submitted 2023-12-14 by `kitsunebi`;
+  - release filename: `Play Online No.015 (September 1999).cbr`;
+  - listed file size: **349 MB**;
+  - listed MD5: **`e009cc707810c4361c849f26248593af`**;
+  - the public download flow resolves to a Retromags seedbox copy, giving a concrete second scan-body route rather than merely a catalog entry.
+- Current retrieval limitation:
+  - this environment can reach the Retromags file/download pages and resolve the final seedbox target, but cannot resolve the seedbox host itself; therefore the second scan body has not yet been visually compared with the Kingpin copy.
 - Does not support yet:
   - beta installer filename;
   - exact client distribution mechanism/media;
