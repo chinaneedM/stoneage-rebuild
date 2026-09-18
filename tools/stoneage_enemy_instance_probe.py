@@ -39,10 +39,24 @@ def setup_value(path,key):
     return None
 
 def to_int(v):
-    try:
-        return int(v.strip(),10)
-    except (ValueError, TypeError):
-        return None
+    """Approximate C atoi(): leading space/sign/digits, otherwise zero."""
+    if v is None:
+        return 0
+    s=v.decode("ascii","ignore") if isinstance(v,(bytes,bytearray)) else str(v)
+    s=s.lstrip()
+    if not s:
+        return 0
+    sign=1
+    if s[0] in "+-":
+        if s[0]=="-":
+            sign=-1
+        s=s[1:]
+    digits=[]
+    for ch in s:
+        if not ch.isdigit():
+            break
+        digits.append(ch)
+    return sign*int("".join(digits),10) if digits else 0
 
 def parse_enemy_row(line):
     """Support the common 2-string schema and active 3-string warp-condition extension."""
@@ -53,9 +67,8 @@ def parse_enemy_row(line):
         if len(fields) < need:
             continue
         vals=[to_int(x) for x in fields[string_fields:need]]
-        if all(v is not None for v in vals):
-            exact=(len(fields)==need)
-            candidates.append((exact,string_fields,label,vals))
+        exact=(len(fields)==need)
+        candidates.append((exact,string_fields,label,vals))
     if not candidates:
         return None,len(fields),None
     candidates.sort(key=lambda x:(x[0],x[1]), reverse=True)
