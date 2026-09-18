@@ -62,14 +62,17 @@ jobs:
           mkdir -p /tmp/effectsrc/{gavin,iris,bismarck}
           curl -fsSL 'https://raw.githubusercontent.com/gavinlinasd/StoneAge/1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56/gmsv/src/function.c' -o /tmp/effectsrc/gavin/function.c
           curl -fsSL 'https://raw.githubusercontent.com/gavinlinasd/StoneAge/1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56/gmsv/src/item/item_event.c' -o /tmp/effectsrc/gavin/item_event.c
+          curl -fsSL 'https://raw.githubusercontent.com/gavinlinasd/StoneAge/1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56/gmsv/src/battle/battle_item.c' -o /tmp/effectsrc/gavin/battle_item.c
           curl -fsSL 'https://raw.githubusercontent.com/gavinlinasd/StoneAge/1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56/gmsv/src/magic/magic_base.c' -o /tmp/effectsrc/gavin/magic.c
           curl -fsSL 'https://raw.githubusercontent.com/gavinlinasd/StoneAge/1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56/gmsv/src/battle/pet_skill.c' -o /tmp/effectsrc/gavin/petskill.c
           curl -fsSL 'https://raw.githubusercontent.com/iriselia/StoneAge/9e6c8ce2cd8ed532a7157773acd1c61582c178b5/Source/gmsv/function.c' -o /tmp/effectsrc/iris/function.c
           curl -fsSL 'https://raw.githubusercontent.com/iriselia/StoneAge/9e6c8ce2cd8ed532a7157773acd1c61582c178b5/Source/gmsv/item/item_event.c' -o /tmp/effectsrc/iris/item_event.c
+          curl -fsSL 'https://raw.githubusercontent.com/iriselia/StoneAge/9e6c8ce2cd8ed532a7157773acd1c61582c178b5/Source/gmsv/battle/battle_item.c' -o /tmp/effectsrc/iris/battle_item.c
           curl -fsSL 'https://raw.githubusercontent.com/iriselia/StoneAge/9e6c8ce2cd8ed532a7157773acd1c61582c178b5/Source/gmsv/magic/magic_base.c' -o /tmp/effectsrc/iris/magic.c
           curl -fsSL 'https://raw.githubusercontent.com/iriselia/StoneAge/9e6c8ce2cd8ed532a7157773acd1c61582c178b5/Source/gmsv/battle/pet_skill.c' -o /tmp/effectsrc/iris/petskill.c
           curl -fsSL 'https://raw.githubusercontent.com/BismarckDD/stoneage/999ffdf1d220ec6666eb65339180689c9caf1876/server/gmsv/function.c' -o /tmp/effectsrc/bismarck/function.c
           curl -fsSL 'https://raw.githubusercontent.com/BismarckDD/stoneage/999ffdf1d220ec6666eb65339180689c9caf1876/server/gmsv/item/item_event.c' -o /tmp/effectsrc/bismarck/item_event.c
+          curl -fsSL 'https://raw.githubusercontent.com/BismarckDD/stoneage/999ffdf1d220ec6666eb65339180689c9caf1876/server/gmsv/battle/battle_item.c' -o /tmp/effectsrc/bismarck/battle_item.c
           curl -fsSL 'https://raw.githubusercontent.com/BismarckDD/stoneage/999ffdf1d220ec6666eb65339180689c9caf1876/server/gmsv/magic/magic_base.c' -o /tmp/effectsrc/bismarck/magic.c
           curl -fsSL 'https://raw.githubusercontent.com/BismarckDD/stoneage/999ffdf1d220ec6666eb65339180689c9caf1876/server/gmsv/battle/pet_skill.c' -o /tmp/effectsrc/bismarck/petskill.c
       - name: Probe effect callback coverage
@@ -84,14 +87,17 @@ jobs:
             --data-dir "$D"
             --gavin-function /tmp/effectsrc/gavin/function.c
             --gavin-item-body /tmp/effectsrc/gavin/item_event.c
+            --gavin-item-battle-body /tmp/effectsrc/gavin/battle_item.c
             --gavin-magic /tmp/effectsrc/gavin/magic.c
             --gavin-petskill /tmp/effectsrc/gavin/petskill.c
             --iris-function /tmp/effectsrc/iris/function.c
             --iris-item-body /tmp/effectsrc/iris/item_event.c
+            --iris-item-battle-body /tmp/effectsrc/iris/battle_item.c
             --iris-magic /tmp/effectsrc/iris/magic.c
             --iris-petskill /tmp/effectsrc/iris/petskill.c
             --bismarck-function /tmp/effectsrc/bismarck/function.c
             --bismarck-item-body /tmp/effectsrc/bismarck/item_event.c
+            --bismarck-item-battle-body /tmp/effectsrc/bismarck/battle_item.c
             --bismarck-magic /tmp/effectsrc/bismarck/magic.c
             --bismarck-petskill /tmp/effectsrc/bismarck/petskill.c
           )
