@@ -61,6 +61,7 @@ Precise first-party claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed resea
 - `research/clients/DESCENDANT-CLIENT-SOURCE-LINEAGE-R1.md` — explicitly lower-confidence later-source lineage clues, not 1999 JSS facts.
 - `research/clients/STONEAGE-EXE-NEGATIVE-CONTROLS-R1.md` — fingerprints later same-name executables so false positives are excluded before JSS provenance analysis.
 - `research/clients/JSS-PRODUCT-IDENTIFIER-ARCHAEOLOGY-R1.md` — reconstructs JSS JAN/model-number families to narrow the 1999 StoneAge retail-package search without assigning inferred identifiers.
+- `research/clients/JSS-RESOURCE-CONTAINER-LINEAGE-R1.md` — tests the possible LIFESTORM II → StoneAge JSS resource-pipeline ancestry through REAL/ADRN filenames, index semantics and the StoneAge `RD` run-length/literal codec.
 
 Supplemental source ledgers:
 
@@ -69,6 +70,7 @@ Supplemental source ledgers:
 - `docs/SOURCE-REGISTRY-PHYSICAL-MEDIA-R1.md`
 - `docs/SOURCE-REGISTRY-PRESERVATION-CONTROLS-R1.md`
 - `docs/SOURCE-REGISTRY-JSS-PRODUCT-IDENTIFIERS-R1.md`
+- `docs/SOURCE-REGISTRY-RESOURCE-CONTAINERS-R1.md`
 
 ### HYPOTHESIS / lower-confidence search leads
 
@@ -77,6 +79,7 @@ Supplemental source ledgers:
 - Some mechanics remembered as "core StoneAge" by later players may not have existed for normal players in the earliest Japanese operation.
 - The strongest current media model is now **strongly corroborated but not S-grade**: the 1999 initial-edition retail package likely contained a normal game/install CD and a physically separate special/bonus CD. The collector photograph visibly depicts two discs beside the early JSS box/manual, but direct inspection or first-party package-contents documentation is still required before the exact layout is promoted to unqualified FACT.
 - Product-number search is now constrained by an observed common JSS JAN stem `4909476`, but the following ranges differ by product family. Check-digit-valid strings such as `4909476302013` and `4909476303010` are retained only as **unassigned search candidates** derived from a hypothetical continuation after LIFESTORM's `4909476301016`; direct searches found no reliable product association. `4909476805019`, previously tempting from the console sequence, is explicitly de-prioritized.
+- **New technical lineage lead:** later LIFESTORM II preservation material names `adrn_1.bin` as an image-address file and `real_1.bin` as an image-data file. Later StoneAge source lineages independently preserve an ADRN index / REAL image-data architecture with a concrete `RD` block header and custom run-length/literal decoder. This makes a shared JSS-era resource pipeline plausible, but the LIFESTORM II bytes have not been recovered and the StoneAge editor reportedly failed to align those LIFESTORM II files. Keep this as **HYPOTHESIS**, not engine-reuse fact.
 - The updater probably used a manifest/protocol that mapped downloadable files to checksum values, but the manifest filename, checksum algorithm, endpoint and payload format remain unresolved.
 - The OCR-ambiguous character immediately before `PO/sa_apply.html` could be an old-style user-directory marker such as `~`, but this remains a **search hypothesis only** and is not the registered exact beta URL.
 - Multiple later community-preserved client-source trees retain JSS/Gamer's Dream title identifiers. The Signally lineage uses `StoneAge.exe` as a launcher/update-facing program while project/debug metadata names a runtime `sa.exe`, and its runtime contains both `updated` and `CheckForUpdate`. A separate BismarckDD lineage also retains the same `CheckForUpdate` mutex while its current build target is itself `stoneage.exe` and the observed startup path lacks Signally's `updated` gate. Therefore updater coordination (`CheckForUpdate`) and launcher/runtime filename separation must be tested as **independent traits**. Later Taiwan troubleshooting independently records `cksum:...:File:sa.exe`, keeping **`sa.exe` a high-value original-artifact search target** without establishing it as a 1999 JSS fact.
@@ -107,24 +110,40 @@ Supplemental source ledgers:
    - Progress: beta recruitment deadline is **1999-08-20** and test period **1999-09-01 through 1999-09-30**; official FAQ confirms that data from an earlier StoneAge test could persist under `ProgramFiles\jss\stoneage`; the printed application URL is narrowed to host `www.dp.gamersdream.ne.jp` with path tail `PO/sa_apply.html`.
    - A second preservation path is now registered: Retromags independently catalogs `Play Online No.015 (September 1999)` (submitted 2023-12-14). It is a second scan route, not an independent historical source. The current extraction layer cannot yet fetch the file-detail/download body for visual comparison.
    - Still missing: the single OCR-ambiguous character before `PO`, an archived copy of the application page, tester/download instructions, installer/client filename, distribution method/media, hashes, internal version and beta-to-retail diff.
-6. **Mine the surviving JSS/Gamer's Dream web archives for 1999 paths and support/update artifacts.**
+6. **Test the LIFESTORM II → StoneAge REAL/ADRN resource-lineage hypothesis using free/public evidence.**
+   - Progress: LIFESTORM II community preservation names `adrn_1.bin` / `real_1.bin` with address-data / image-data roles; two StoneAge descendant source trees preserve the same conceptual split, a concrete ADRN record structure, `RD` image-block signature, and matching legacy run-length/literal decoder implementation.
+   - Current limitation: the old free ASUS WebStorage backup links are unreachable from the present environment, so no LIFESTORM II byte-level validation has been performed.
+   - Next proof target: a freely retrievable LIFESTORM II data copy or equivalent historical bytes; test `RD` headers and decoder compatibility separately from ADRN/map-index compatibility.
+7. **Mine the surviving JSS/Gamer's Dream web archives for 1999 paths and support/update artifacts.**
    - Progress: JSS `manual.html`, `manual01.html`, `faqstart.html`, `verup.html`, `updater.html` and `stoneage.exe` paths are known; Gamer's Dream archive coverage begins before beta/launch; beta application matching can now target `*PO/sa_apply.html` rather than the whole domain.
    - Priority targets: update manifests/package names/endpoints; the exact August 1999 beta application capture and sibling tester/download pages; product/shop pages; registration; download/install instructions; support/version pages; any original occurrence of `sa.exe`, `updated` or `CheckForUpdate`.
-7. Recover JSS launch box/manual inserts and original world-setting text not already represented by the archived online manual.
-8. Determine the earliest documented appearance of:
+8. Recover JSS launch box/manual inserts and original world-setting text not already represented by the archived online manual.
+9. Determine the earliest documented appearance of:
    - the name "Nies / ニース / 尼斯";
    - the island-continent geography;
    - elemental/spirit lore;
    - pet riding for normal players;
    - major villages and early map topology.
-9. Determine JSS-era internal numeric client version numbering.
-10. Locate the earliest Taiwan client/manual/site and compare it with JSS material.
-11. Locate a clean Mainland early/1.82 client/data set for later diff archaeology.
-12. **Recover an original StoneAge staff-credit list and resolve named JSS roles.**
+10. Determine JSS-era internal numeric client version numbering.
+11. Locate the earliest Taiwan client/manual/site and compare it with JSS material.
+12. Locate a clean Mainland early/1.82 client/data set for later diff archaeology.
+13. **Recover an original StoneAge staff-credit list and resolve named JSS roles.**
    - Progress: Yuki Tamura is now a named later first-person StoneAge/JSS staff lead with independent JSS-credit corroboration on `Chameleon Twist`; Hiroyuki Morioka remains a strong but unresolved project-leader identity hypothesis derived from the anonymous recollection lineage and `Chameleon Twist 2` credits.
    - Still needed: original StoneAge credits, staff page, period interview, or project-specific first-person statements that assign exact roles.
 
 ## Completed in the latest work pass
+- Opened a new **resource-container lineage** track without changing the zero-purchase constraint.
+- Recovered a 2013 Omega preservation thread stating that a 2007 LIFESTORM II backup contained `adrn_1.bin`, `real_1.bin` and map data; the poster explicitly described ADRN as image-address data and REAL as image-data.
+- Preserved the negative detail that the StoneAge SAForever map editor could display LIFESTORM II maps but did not correctly align those LIFESTORM II image files. This prevents overclaiming direct format compatibility.
+- Cross-checked two later StoneAge source lineages. Both preserve essentially the same `ADRNBIN` index structure and `initRealbinFileOpen` / `realGetImage` architecture: ADRN supplies bitmap number, offset, size, dimensions and attributes; REAL supplies the encoded image block.
+- Recovered the StoneAge block-level format signature from both trees: `RD_HEADER` begins with `RD`, followed by compression flag, width, height and size.
+- Recovered the matching legacy codec implementation in both trees: a custom run-length/literal scheme using flags `0x80 / 0x40 / 0x10 / 0x20`. Later zlib/high-color branches are kept separate from the undated legacy path.
+- Global GitHub fingerprint search found the exact decoder/ADRN implementation only in the circulated StoneAge code family and ports/forks, not in an independently identified JSS title.
+- Recovered a dated 2006 community technical note that observed `real_136.bin / adrn_136.bin` and referred to what the author called JSS's RLE compression algorithm.
+- Attempted the two free ASUS WebStorage links preserved by the LIFESTORM II thread; the current environment cannot resolve/access the host, so no binary was treated as recovered.
+- Defined a reproducible zero-cost byte-validation plan: if freely accessible LIFESTORM II data appears, hash externally, scan REAL for plausible `RD` blocks, test the legacy decoder, then separately test ADRN offset/size semantics. Negative results are to be recorded rather than forced into an engine-reuse narrative.
+- Added dedicated research and source-registry documents; no LIFESTORM II/StoneAge shared-engine claim was promoted to FACT.
+
 
 - User resource constraint was made explicit and promoted to a durable project rule: archaeology must not require buying, bidding on, shipping, opening, installing, or personally dumping physical StoneAge material.
 - Marketplace/auction pages remain useful for public photographs, identifiers, package descriptions and provenance clues, but are **evidence surfaces only**, not acquisition opportunities.
@@ -149,11 +168,12 @@ Supplemental source ledgers:
 2. Recover a **LIFESTORM II** retail identifier (JAN and model/type code) from freely accessible box scans, Japanese retailer/distributor databases, auction archives, cached listing images, or period catalogs. Use live listings only as public evidence, never as acquisition targets.
 3. Strengthen the two-disc model using **publicly obtainable provenance evidence**: identify the direct StoneAge product/JAN, readable disc labels/matrix codes where public photographs expose them, and determine which disc is the game/install CD versus the advertised bonus CD. Treat numeric sequence candidates only as search keys; do not require possession of the object.
 4. If an original retail/beta client or media image becomes **publicly retrievable at no cost** (or is voluntarily supplied to the project), analyze it outside the repository and record hashes/file trees only; inspect for `stoneage.exe`, `sa.exe`, installer/autostart metadata, `map`, update configuration, `data\download`, `updated` and `CheckForUpdate`.
-5. Obtain either the Retromags or Kingpin No.015 scan body through a file-capable route and visually inspect the printed beta URL; use the second scan to resolve the one OCR-ambiguous character before `PO/sa_apply.html` rather than guessing it. Then match the resulting path to an August 1999 archive capture and enumerate sibling tester/download paths.
-6. Mine archived JSS pages and paths using `data/download`, `cksum`, `MFC42.DLL`, `ProgramFiles/jss/stoneage`, `map`, and `stoneage.exe`; test descendant-derived `sa.exe`, `updated`, and `CheckForUpdate` as **independent** candidate traits so a hit on one is not treated as proof of the others.
-7. Search Yuki Tamura and other independently identified JSS staff for StoneAge-specific portfolios, interviews or staff credits; use exact named-role evidence to test the anonymous developer-recollection corpus rather than merging identities by inference.
-8. Continue attempting provenance-preserving extraction of the archived JSS `stoneage.exe`; if bytes become obtainable, analyze them outside the repository and record only hashes/metadata/derived findings.
-9. Once any original retail/beta binary or media is recovered, establish the reproducible client-archaeology pipeline: hashes, PE metadata, file tree, resource inventory, strings, asset IDs, update-state labeling and cross-version diff.
+5. Continue free/public recovery of the old LIFESTORM II `ls2 data` backup or equivalent preserved bytes. If recovered, do not commit the original files: record hashes and test REAL `RD` block signatures/decoder compatibility first, then ADRN indexing separately.
+6. Obtain either the Retromags or Kingpin No.015 scan body through a file-capable route and visually inspect the printed beta URL; use the second scan to resolve the one OCR-ambiguous character before `PO/sa_apply.html` rather than guessing it. Then match the resulting path to an August 1999 archive capture and enumerate sibling tester/download paths.
+7. Mine archived JSS pages and paths using `data/download`, `cksum`, `MFC42.DLL`, `ProgramFiles/jss/stoneage`, `map`, and `stoneage.exe`; test descendant-derived `sa.exe`, `updated`, and `CheckForUpdate` as **independent** candidate traits so a hit on one is not treated as proof of the others.
+8. Search Yuki Tamura and other independently identified JSS staff for StoneAge-specific portfolios, interviews or staff credits; use exact named-role evidence to test the anonymous developer-recollection corpus rather than merging identities by inference.
+9. Continue attempting provenance-preserving extraction of the archived JSS `stoneage.exe`; if bytes become obtainable, analyze them outside the repository and record only hashes/metadata/derived findings.
+10. Once any original retail/beta binary or media is recovered, establish the reproducible client-archaeology pipeline: hashes, PE metadata, file tree, resource inventory, strings, asset IDs, update-state labeling and cross-version diff.
 
 ## Continuity status
 
