@@ -118,21 +118,68 @@ Result:
 
 The four pet-skill misses remain provenance/version-skew evidence rather than invented behavior.
 
-### B6 — Ordinary magic effect semantics — highest priority
+### B6 — Ordinary magic effect semantics — completed in R1
 
-Magic is the cleanest remaining semantic layer because the recovered active table has complete all-three callback coverage.
+The three pinned descendant dispatch tables share exactly nine unguarded magic callbacks, and the active recovered table aligns with that boundary:
 
-Needed next:
+- 9 all-three unguarded callback tokens / 130 active rows;
+- 8 all-three guarded callback tokens / 51 active rows;
+- no mixed-guard, partial-source, or all-source-missing active magic tokens.
 
-- classify the 17 function families by field/battle effect;
-- reconstruct parameter parsing and target validation;
-- model HP/status/attribute/revival/defense effects;
-- separate attack-magic and later macro-gated extensions where necessary;
-- add deterministic tests for stable old-core formulas and state transitions.
+R1 reconstructs the nine-function common core across:
 
-### B7 — Detailed combat / item / pet-skill sub-mechanics not yet promoted
+- MP gate and mutation ordering;
+- field/battle routing;
+- living/dead target expansion;
+- Recovery target-mode guards;
+- VITAL-scaled recovery;
+- field attribute changes;
+- ordinary status application/recovery;
+- magic-defense timers;
+- resurrection;
+- attribute reverse;
+- resurrection + defense.
 
-The battle core is sufficient for the present loop audit, but future deterministic closure still needs source-verified treatment of the remaining action/status/AI formulas where not already modeled. These should be added only when they are early/core-relevant rather than by copying later feature branches wholesale.
+The model preserves historical quirks such as battle-only casts spending MP before field rejection, nonzero resurrection overwriting its earlier percentage-derived amount, highest-index-only status recovery, and non-immediate attribute restoration when reverse is toggled off.
+
+`tools/stoneage_magic_effect_model.py` is covered by 35 deterministic regression tests. GitHub Actions run `35370420953` completed successfully.
+
+### B7 — Common item effect semantics — highest priority
+
+The enhanced active-item/source guard classification now gives a clean next boundary:
+
+- 17 USE tokens / 818 active row uses are unguarded in all three fixed source lineages;
+- 19 USE tokens / 86 rows are guarded in all three;
+- 16 USE tokens / 53 rows have partial source-lineage coverage;
+- no active USE token is absent from all three.
+
+The next reconstruction should focus on the 17 all-three unguarded USE callbacks and the already-common non-use callback slots.
+
+Initial common semantic families include:
+
+- field/battle HP/MP recovery;
+- status change/recovery;
+- magic defense;
+- parameter change;
+- field-attribute change;
+- attribute reverse;
+- resurrection;
+- capture-rate modification;
+- warp/travel;
+- encounter/no-encounter controls;
+- selected persistent/player/pet state mutations.
+
+Guarded and partial-source item callbacks remain explicit version-diff tracks.
+
+### B8 — Common pet-skill effect semantics
+
+After common item effects, reconstruct the 65 pet-skill callback tokens / 143 rows that resolve in all three fixed source tables.
+
+Keep the four active pet-skill tokens / four rows absent from all three fixed source tables quarantined as source/data skew.
+
+### B9 — Detailed combat sub-mechanics not yet promoted
+
+The battle core is sufficient for the present loop audit, but future deterministic closure still needs source-verified treatment of remaining action/status/AI formulas where not already modeled. Add these only when early/core evidence requires them rather than copying later feature branches wholesale.
 
 ## C. Later/versioned optional systems — do not promote into early core by default
 
@@ -159,7 +206,7 @@ Current high-value extraction gaps are:
 
 - classify the remaining root server tables by authority and runtime loader;
 - resolve early/core NPC class-specific secondary argument/config edges where they materially affect core gameplay;
-- connect item/skill/magic records to executable behavior;
+- complete common item and pet-skill semantic joins after the now-closed magic core;
 - preserve cross-version mismatch evidence in the mixed 2.5 specimen rather than silently “repairing” it;
 - compare the same tables against the first clean 1.74 / 1.74a / JSS bridge artifact when recovered.
 
@@ -192,5 +239,12 @@ The principal historical blocker remains the absence of a provenance-preserving 
 1. ~~Reconstruct save point / elder / LASTTALKELDER return-point semantics.~~ **Completed.**
 2. ~~Close persistent item/pet Pool storage while separating later shared Depot storage.~~ **Completed.**
 3. ~~Close field warp / portal / map-transition authority while separating later mapwarp/no-exit layers.~~ **Completed.**
-4. ~~Build the NPC/world-content graph: magic-file discovery, template/create relationships, dispatch, placement and argument linkage.~~ **Completed.**\n5. Close the remaining **item / magic / pet-skill effect callback joins**.\n6. Then resolve only the early/core NPC secondary argument/config edges that materially remain after callback coverage is known.\n7. Continue detailed combat sub-mechanics only where the evidence shows an early/core gap.\n
+4. ~~Build the NPC/world-content graph: magic-file discovery, template/create relationships, dispatch, placement and argument linkage.~~ **Completed.**
+5. ~~Close item / magic / pet-skill callback joins and classify fixed-source coverage.~~ **Completed.**
+6. ~~Reconstruct the nine all-three unguarded ordinary magic effect callbacks.~~ **Completed.**
+7. Reconstruct the **17 all-three unguarded common item USE callbacks** plus common non-use callback semantics.
+8. Reconstruct the 65 all-three common pet-skill callback families, keeping four all-source-missing recovered rows quarantined.
+9. Resolve only early/core NPC secondary argument/config edges that materially remain.
+10. Continue detailed combat sub-mechanics only where evidence shows an early/core gap.
+
 This ordering closes the ordinary game-state loop before expanding into optional systems.
