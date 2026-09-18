@@ -1,0 +1,17 @@
+name: Validate StoneAge savepoint elder model
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/mechanics/STONEAGE-SAVEPOINT-ELDER-RETURN-CORE-R1.md
+      - tools/stoneage_savepoint_elder_model.py
+      - tests/test_stoneage_savepoint_elder_model.py
+      - .github/workflows/validate-stoneage-savepoint-elder.yml
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_savepoint_elder_model -v
