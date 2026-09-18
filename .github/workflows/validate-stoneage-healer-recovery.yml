@@ -1,0 +1,17 @@
+name: Validate StoneAge healer recovery model
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/mechanics/STONEAGE-HEALER-RECOVERY-CORE-R1.md
+      - tools/stoneage_healer_recovery_model.py
+      - tests/test_stoneage_healer_recovery_model.py
+      - .github/workflows/validate-stoneage-healer-recovery.yml
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_healer_recovery_model -v
