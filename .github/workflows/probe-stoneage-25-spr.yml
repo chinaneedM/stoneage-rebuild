@@ -76,15 +76,17 @@ jobs:
           set -euo pipefail
           SPR="$(find /tmp/sa25/out -type f -path '*/SA2.5主程式/stoneage2.5/data/spr_4.bin' -print -quit)"
           SPRADRN="$(find /tmp/sa25/out -type f -path '*/SA2.5主程式/stoneage2.5/data/spradrn_5.bin' -print -quit)"
-          test -n "$SPR" && test -n "$SPRADRN"
+          ADRN="$(find /tmp/sa25/out -type f -path '*/SA2.5主程式/stoneage2.5/data/adrn_15.bin' -print -quit)"
+          test -n "$SPR" && test -n "$SPRADRN" && test -n "$ADRN"
           mkdir -p research/recovered
           R=research/recovered/STONEAGE-25-SPR-PROBE-R1.txt
           {
             echo 'SOURCE_BUNDLE_SHA256|d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5'
             sha256sum "$SPR" | sed 's#  .*#|spr_4.bin#'
             sha256sum "$SPRADRN" | sed 's#  .*#|spradrn_5.bin#'
+            sha256sum "$ADRN" | sed 's#  .*#|adrn_15.bin#'
             echo
-            python3 -m tools.stoneage_spr_probe --spradrn "$SPRADRN" --spr "$SPR"
+            python3 -m tools.stoneage_spr_probe --spradrn "$SPRADRN" --spr "$SPR" --adrn "$ADRN"
           } > "$R"
           CHANGED="$(git status --short --untracked-files=all)"
           test "$(printf '%s\n' "$CHANGED" | sed '/^$/d' | wc -l)" -eq 1
