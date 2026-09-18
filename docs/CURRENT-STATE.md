@@ -696,11 +696,25 @@ Supplemental source ledgers:
 - Bus + Airplane R1 is closed for the fixed-descendant common core plus recovered 2.5 active surface. Exact JSS equivalence remains OPEN.
 - Queue triage now selects Janken (9 resolved file-backed refs) as the next unresolved state-changing secondary-argument seam; Action and TimeMan are deterministic but presentation-level, while Scheduleman/family packages remain later-scope.
 
+## Janken active core closure — 2026-09-19
+
+- Real-byte Janken probe 35382078973 succeeded: all 9 refs are resolved file-backed configs; aggregate argument SHA-256 is 491e3784ca8476649788cbbb3c93e13e85af1d0b2af8605e913552515071059c.
+- Every recovered Janken config has MainMsg / EntryItem / NoItem / WinWarp / LoseWarp.
+- Every recovered EntryItem is exactly one starred token with quantity 1; every Win/Lose Warp is a valid floor,x,y triple; no recovered WinItem or LoseItem exists.
+- Reconstructed the common result state machine and item lifecycle across the three fixed descendants.
+- Preserved the active historical defect: failed EntryItem validation sends NoItem but does not return, then deletion runs and the Janken selection is still sent. In the recovered quantity-1 shape, having the item consumes one copy; lacking it consumes nothing but still allows play.
+- Preserved dormant source quirks: plain EntryItem deletes every matching copy; insufficient multi-count starred deletion can partially consume available copies; duplicate validation tokens can reuse inventory before deletion.
+- Ties reopen the choice window without re-running EntryItem, so entry consumption occurs once per accepted start, not once per tied round.
+- Win/Lose source order is optional item reward attempt -> result warp -> result action/window; reward return values are ignored. Reward grants are dormant in the recovered 2.5 data.
+- Added tools/stoneage_janken_core_model.py, tests/test_stoneage_janken_core_model.py, dedicated CI and research/mechanics/STONEAGE-JANKEN-CORE-R1.md.
+- Local reference validation passes 20 deterministic tests.
+- Janken R1 is closed for fixed-descendant common behavior plus recovered 2.5 active surface.
+
 ## Immediate next actions
 
-1. **Advance to Janken as the next state-changing secondary-argument seam.** Start with a payload-free recovered 2.5 usage probe over its 9 resolved file-backed refs; measure EntryItem, Win/Lose item mutation, deletion and Win/Lose warp shapes without retaining dialogue, coordinates or item IDs.
-2. **Then reconstruct only the active fixed-descendant Janken core.** Preserve result-selection, item gate/mutation and warp ordering exactly; keep unrelated presentation text out of the deterministic model.
-3. **Keep Action and TimeMan below Janken.** Action is primarily action/message presentation and TimeMan is time-driven NPC graphic/message state; Scheduleman and family PK packages remain later-scope.
+1. **Re-triage the remaining non-family secondary-argument classes for state-changing early/core behavior.** Start with Raceman, Healer / WindowHealer, Windowman and other small unresolved classes; use source semantics plus recovered usage, not raw reference counts.
+2. **Keep Action and TimeMan deferred unless the triage shows a missing core dependency.** Action is message/action presentation and TimeMan is time-driven NPC graphic/message state.
+3. **Keep Scheduleman and family PK / family-management packages later-scope.** Do not let high reference counts or later expansion systems displace unresolved early/core state seams.
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
 6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.
