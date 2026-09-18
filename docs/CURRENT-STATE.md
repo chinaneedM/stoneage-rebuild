@@ -34,6 +34,7 @@ The independent GitHub repository and continuity scaffold are established on rem
 - The same first-party product page tells users to **purchase the software package first and then register for Gamer's Dream service**, materially confirming a normal package-based install/client path.
 - The archived official JSS manual confirms that the normal retail path used a StoneAge **game CD**, with DirectX 6.1 on that disc and an auto-start installer. Installation modes were standard, minimum and custom; `map` was a selectable component.
 - The same JSS manual confirms a physical **CD NUMBER card** whose CD NUMBER was required for Gamer's Dream service registration/contracting. The manual also documents `[Stoneage]` -> `[stoneage]` as the Start-menu path and a `screenshot` subdirectory under the StoneAge folder.
+- JSS product-identifier archaeology now has a verified Windows-family anchor: modern Japanese retailer data records **LIFESTORM** as Windows 95 CD software, model **`JV02005`**, JAN **`4909476301016`**. Other JSS-associated Windows products use different `4909476...` subranges (`古都の旅 京都` = `4909476502031`; `四柱推命入門 しゃべる桃源郷` = `4909476603011`), while JSS Game Boy/N64 titles occupy `49094768...`. Therefore the former shortcut of extrapolating StoneAge from the console sequence is rejected.
 - A later collector-photo set now visibly depicts an early JSS/Gamer's Dream `STONEAGE` box/manual together with **two separate optical discs**. Because the project has not directly inspected the object or established an unbroken provenance chain, this is not S-grade package proof; however, combined with the first-party game-CD manual and contemporaneous bonus-CD advertising, it materially strengthens the separate game-CD + bonus-CD model.
 - The same community article is not reliable as a blanket provenance source: its second Japanese package is visibly branded **BOTHTEC / DigiPark** and supports Windows 98SE/Me/2000/XP, despite wording that implies both packages are JSS-issued. Artifact-level visual evidence therefore takes precedence over that caption.
 - A later first-person professional profile by **Yuki Tamura** states JSS employment from **May 1996 through October 2000**, role `3D Artist`, and explicitly lists **StoneAge** among JSS projects. Preserved 1997 JSS `Chameleon Twist` credits independently list Yuki Tamura under **Computer Arts** and **Game Design**, materially corroborating the named person's JSS identity. This is strong later staff evidence, not a contemporaneous StoneAge staff-credit list.
@@ -58,6 +59,7 @@ Precise first-party claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed resea
 - `research/clients/JSS-RETAIL-PACKAGE-PHOTO-EVIDENCE-R1.md`
 - `research/clients/DESCENDANT-CLIENT-SOURCE-LINEAGE-R1.md` — explicitly lower-confidence later-source lineage clues, not 1999 JSS facts.
 - `research/clients/STONEAGE-EXE-NEGATIVE-CONTROLS-R1.md` — fingerprints later same-name executables so false positives are excluded before JSS provenance analysis.
+- `research/clients/JSS-PRODUCT-IDENTIFIER-ARCHAEOLOGY-R1.md` — reconstructs JSS JAN/model-number families to narrow the 1999 StoneAge retail-package search without assigning inferred identifiers.
 
 Supplemental source ledgers:
 
@@ -65,6 +67,7 @@ Supplemental source ledgers:
 - `docs/SOURCE-REGISTRY-NAMED-STAFF-R1.md`
 - `docs/SOURCE-REGISTRY-PHYSICAL-MEDIA-R1.md`
 - `docs/SOURCE-REGISTRY-PRESERVATION-CONTROLS-R1.md`
+- `docs/SOURCE-REGISTRY-JSS-PRODUCT-IDENTIFIERS-R1.md`
 
 ### HYPOTHESIS / lower-confidence search leads
 
@@ -72,6 +75,7 @@ Supplemental source ledgers:
 - Much of the later macro-lore may have been progressively added to explain and extend an initially simpler world.
 - Some mechanics remembered as "core StoneAge" by later players may not have existed for normal players in the earliest Japanese operation.
 - The strongest current media model is now **strongly corroborated but not S-grade**: the 1999 initial-edition retail package likely contained a normal game/install CD and a physically separate special/bonus CD. The collector photograph visibly depicts two discs beside the early JSS box/manual, but direct inspection or first-party package-contents documentation is still required before the exact layout is promoted to unqualified FACT.
+- Product-number search is now constrained by an observed common JSS JAN stem `4909476`, but the following ranges differ by product family. Check-digit-valid strings such as `4909476302013` and `4909476303010` are retained only as **unassigned search candidates** derived from a hypothetical continuation after LIFESTORM's `4909476301016`; direct searches found no reliable product association. `4909476805019`, previously tempting from the console sequence, is explicitly de-prioritized.
 - The updater probably used a manifest/protocol that mapped downloadable files to checksum values, but the manifest filename, checksum algorithm, endpoint and payload format remain unresolved.
 - The OCR-ambiguous character immediately before `PO/sa_apply.html` could be an old-style user-directory marker such as `~`, but this remains a **search hypothesis only** and is not the registered exact beta URL.
 - Multiple later community-preserved client-source trees retain JSS/Gamer's Dream title identifiers. The Signally lineage uses `StoneAge.exe` as a launcher/update-facing program while project/debug metadata names a runtime `sa.exe`, and its runtime contains both `updated` and `CheckForUpdate`. A separate BismarckDD lineage also retains the same `CheckForUpdate` mutex while its current build target is itself `stoneage.exe` and the observed startup path lacks Signally's `updated` gate. Therefore updater coordination (`CheckForUpdate`) and launcher/runtime filename separation must be tested as **independent traits**. Later Taiwan troubleshooting independently records `cksum:...:File:sa.exe`, keeping **`sa.exe` a high-value original-artifact search target** without establishing it as a 1999 JSS fact.
@@ -85,7 +89,8 @@ Supplemental source ledgers:
    - The Mercari listing is now confirmed **sold**, but its live page exposes all **13 exact original-image URLs** and explicitly states that the unopened initial edition contains an initial-edition bonus CD-ROM. Those thirteen image targets are preserved in `docs/SOURCE-REGISTRY-PHYSICAL-MEDIA-R1.md`; their image bodies remain inaccessible through the current extraction path.
    - Confirmed JSS retail/client anchors: normal **game CD**, physical **CD NUMBER card**, `stoneage.exe`, `ProgramFiles\jss\stoneage`, `map` install component, CD-based auto-start installer, 1999-10-15 release and 8,800-yen package price.
    - Search lead from descendant lineages: inspect recovered media for `sa.exe` separately from `stoneage.exe`, plus `updated` and `CheckForUpdate`; these are not yet confirmed JSS-1999 strings.
-   - Still missing: S-grade confirmation of the two-disc identities/layout, provenance-preserving retail disc image/dump, file tree, hashes, retail executable PE metadata, disc matrix identifiers, product/JAN code, readable disc-label/back-box photos and complete package/manual/insert capture.
+   - Product-identifier progress: JSS Windows `LIFESTORM` is now cataloged as `JV02005` / JAN `4909476301016`; additional JSS Windows examples prove that the common `4909476` stem branches into multiple subranges, so console-number extrapolation is no longer used. A period LIFESTORM II ad fixes its release at 1999-02-20 and 8,800 yen but does not expose a readable JAN/model in the current scan.
+   - Still missing: S-grade confirmation of the two-disc identities/layout, provenance-preserving retail disc image/dump, file tree, hashes, retail executable PE metadata, **direct StoneAge product/JAN code**, readable disc-label/back-box photos and complete package/manual/insert capture.
 2. **Recover and fingerprint the archived JSS `stoneage.exe` replacement launcher.**
    - Progress: exact original JSS path is known; JSS advertised the file as 212 KB; Wayback reports two archived captures and exposes the object as binary content.
    - Current limitation: this environment has not extracted the bytes.
@@ -120,24 +125,22 @@ Supplemental source ledgers:
 
 ## Completed in the latest work pass
 
-- Re-ran the continuity startup against remote `main` and verified that `3293d09840daa4703b64e407ab1e7b99fecbddf4` / tree `002e8e5f27c0f73cb47697b56f81bf958ace183c` was the current authority before new work.
-- Audited the two immediately preceding commits that had not yet been incorporated into this state file:
-  - `research/clients/STONEAGE-EXE-NEGATIVE-CONTROLS-R1.md` now fingerprints a demonstrably later `StoneAge.exe` false positive (SHA-256 `9C019D9F...12A6A7CA`) and excludes it from the JSS candidate pool.
-  - `docs/SOURCE-REGISTRY-PRESERVATION-CONTROLS-R1.md` registers Retromags as a second preservation route for `Play Online No.015 (September 1999)` and records the executable negative control.
-- Attempted direct file-level acquisition of the Kingpin No.015 PDF from the current container path; the network download failed, so no inaccessible page was treated as visually verified.
-- Reconfirmed through Retromags' indexed catalog that No.015 is separately preserved and that No.014 / No.016 are also present, but the No.015 detail/download path remains a cache miss in the current web extraction layer.
-- Re-searched the archived JSS `stoneage.exe` path and exact filename/size combinations; no provenance-preserving binary body or new capture timestamp was recovered.
-- Performed a focused cross-lineage source comparison:
-  - Signally retains `updated` + launcher instruction `StoneAge.exe` + `CheckForUpdate` and `sa.exe` runtime metadata.
-  - BismarckDD retains `CheckForUpdate` with the same updater-purpose comment, while its current build target is `stoneage.exe` and the observed startup path does not contain Signally's `updated` direct-start gate.
-- Refined the descendant hypothesis accordingly: updater mutex/coordination and launcher/runtime filename separation are **separate archaeological traits**. Presence of `CheckForUpdate` must not be used by itself to infer a runtime named `sa.exe`.
-- No 1999 JSS claim was promoted from descendant/community evidence.
+- Re-verified remote `main` before continuing and confirmed `9d19112ae18ad9fb878def5b972b1ea8fbc133cf` / tree `75f16ea3b233f43fc86647abbac823eb4dffa17e` remained authoritative.
+- Continued the highest-priority physical-media/product-identifier search rather than guessing a StoneAge JAN.
+- Recovered a high-value same-medium anchor from Suruga-ya: JSS Windows 95 `LIFESTORM` = model `JV02005`, JAN `4909476301016`.
+- Recovered two additional JSS-associated Windows catalog identifiers: `古都の旅 京都` = `4909476502031`; `四柱推命入門 しゃべる桃源郷` = `4909476603011`.
+- Rechecked JSS console identifiers: `チャルボ55` = `4909476802018`, `カメレオンツイスト` = `4909476803015`, `カメレオンツイスト2` = `4909476804012`.
+- Established the controlled observation that the shared `4909476` stem spans several product families, while the following ranges differ. This invalidates the prior shortcut of treating `4909476805019` as a likely StoneAge code merely because it follows the console sequence.
+- Located a preserved period `LIFESTORM II` advertisement showing Windows 95/98, `1999年2月20日発売`, and 8,800 yen. Its currently accessible scan does not reveal a readable JAN/model number.
+- Generated `4909476302013` and `4909476303010` only as check-digit-valid **search candidates** under a hypothetical continuation of LIFESTORM's PC subseries. Direct web/catalog searches returned no reliable association, so neither number is assigned to LIFESTORM II or StoneAge.
+- Added dedicated product-identifier research and source-ledger files so future searches can distinguish verified identifiers from merely syntactically valid candidates.
+- No StoneAge JAN/model code was promoted without direct evidence.
 
 ## Immediate next actions
 
-1. Preserve/recover the **13 enumerated Mercari original-image bodies** through an alternative browser/archive/cache/network path before those static objects disappear; prioritize any back-box, side-label and disc-face photographs that could expose the 1999 JSS product/JAN code or disc identifiers.
-2. In parallel, locate another original 1999 JSS package or readable seller/collector image set; the sold Mercari listing is now evidence/preservation material, not an acquisition opportunity.
-3. Convert the two-disc model into **S-grade physical-media evidence** by identifying product/JAN and both disc matrix codes and determining exactly which disc is the game/install CD versus the advertised bonus CD.
+1. Continue direct StoneAge package recovery, but now prioritize **product-identifier evidence**: preserve/recover the 13 Mercari original-image bodies and any alternate back/side-box images that can expose JAN/model text.
+2. Recover a **LIFESTORM II** retail identifier (JAN and model/type code) from a box scan, Japanese retailer/distributor database, auction archive or period catalog. It is the most valuable chronological bridge between `LIFESTORM = JV02005 / 4909476301016` and StoneAge.
+3. Convert the two-disc model into **S-grade physical-media evidence** by identifying the direct StoneAge product/JAN plus both disc matrix codes and determining exactly which disc is the game/install CD versus the advertised bonus CD. Treat numeric sequence candidates only as search keys.
 4. If original media becomes obtainable, image it outside the repository and record hashes/file trees only; immediately inspect the game disc for `stoneage.exe`, `sa.exe`, installer/autostart metadata, `map`, update configuration, `data\download`, `updated` and `CheckForUpdate`.
 5. Obtain either the Retromags or Kingpin No.015 scan body through a file-capable route and visually inspect the printed beta URL; use the second scan to resolve the one OCR-ambiguous character before `PO/sa_apply.html` rather than guessing it. Then match the resulting path to an August 1999 archive capture and enumerate sibling tester/download paths.
 6. Mine archived JSS pages and paths using `data/download`, `cksum`, `MFC42.DLL`, `ProgramFiles/jss/stoneage`, `map`, and `stoneage.exe`; test descendant-derived `sa.exe`, `updated`, and `CheckForUpdate` as **independent** candidate traits so a hit on one is not treated as proof of the others.
