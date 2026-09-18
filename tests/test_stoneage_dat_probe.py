@@ -26,6 +26,7 @@ class DatProbeTests(unittest.TestCase):
             self.assertEqual(r["tile_graphics"]["mapped"],3)
             self.assertEqual(r["tile_graphics"]["hit"][0],2)
             self.assertEqual(r["tile_graphics"]["hit"][2],1)
+            self.assertEqual(r["event_unknown_total"],0)
             out=io.StringIO()
             with contextlib.redirect_stdout(out):emit(r)
             self.assertIn("DAT_VALID_COUNT|2",out.getvalue())
