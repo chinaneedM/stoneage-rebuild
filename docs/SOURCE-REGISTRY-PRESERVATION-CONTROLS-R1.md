@@ -62,6 +62,53 @@ Purpose: register preservation redundancy and search-triage sources that improve
   - that JSS used Themida, these resource versions, or this localization.
 - Detailed triage note: `research/clients/STONEAGE-EXE-NEGATIVE-CONTROLS-R1.md`.
 
+## SRC-SA-DESCENDANT-ANSON-UPDATER-LINEAGE-01
+
+- Repository: https://github.com/anson1788/stoneage
+- Observed source anchor: `1997fc20456dbda36d181b9680ae10bed2e9cdf9`
+- Relevant paths:
+  - `石器时代8.5客户端最新源代码/石器源码/system/main.cpp`
+  - `石器时代8.5客户端最新源代码/石器源码/石器源码.vcxproj`
+  - `石器时代8.5客户端最新源代码/石器源码/石器源码.vcxproj.user`
+- Retrieval date: 2026-09-18
+- Source type: later community-preserved StoneAge client-source lineage
+- Classification: **C / LINEAGE SEARCH CONTROL; not JSS primary evidence**
+- Directly observed descendant traits:
+  - client code creates mutex `CheckForUpdate` with a comment that it is used by the update program to detect whether StoneAge is running;
+  - project output/debug metadata explicitly uses `sa.exe` in later configurations, with a separate `sa25.exe` variant also present.
+- Negative/differentiating observations from focused public-source search:
+  - no Signally-style `updated` direct-start gate was recovered;
+  - no user-facing `StoneAge.exe` launcher instruction was recovered;
+  - no `PARAM_ARGS` / `HASH___________@@@@@@@@` occurrence was recovered.
+- Research value:
+  - independently strengthens `CheckForUpdate` as a persistent updater-coordination fingerprint;
+  - independently corroborates `sa.exe` as a later runtime filename;
+  - demonstrates that those two traits can survive without Signally's narrower launcher-gate strings.
+- Does not establish:
+  - any 1999 JSS executable name beyond the already first-party-confirmed `stoneage.exe`;
+  - that JSS used `CheckForUpdate`, `sa.exe`, `updated`, or any later source architecture;
+  - when any descendant trait first appeared.
+
+## CTRL-SA-SIGNALLY-PATCHER-ARG-01
+
+- Repository: https://github.com/Signally190/sking-sacli
+- Observed source anchor: `40cb67ef090ebc0cffd57ca947871bdfd0b18331`
+- Relevant path: `system/main.cpp`
+- Retrieval date: 2026-09-18
+- Source type: branch-local later client-source search control
+- Classification: **LOW-PRIORITY C / BRANCH-SPECIFIC LEAD**
+- Observed:
+  - a patcher-related conditional compares the process command line against `PARAM_ARGS`;
+  - `PARAM_ARGS` is defined as `HASH___________@@@@@@@@`.
+- Cross-search result:
+  - focused global public-code search in this pass found this exact placeholder string only in the Signally tree among the inspected StoneAge source lineages.
+- Research consequence:
+  - keep the string as a low-cost original-binary search probe if JSS bytes are recovered;
+  - do **not** give it the same weight as `CheckForUpdate`, `sa.exe` or the first-party `cksum` vocabulary.
+- Does not establish:
+  - that the placeholder or patcher gate existed in any JSS-era binary;
+  - that it is related to the 1999 updater rather than a later private branch.
+
 ## Operational consequence
 
 For future `stoneage.exe` recovery:
