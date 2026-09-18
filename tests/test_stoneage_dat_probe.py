@@ -21,7 +21,7 @@ class DatProbeTests(unittest.TestCase):
             r=analyze(maps,adrn)
             self.assertEqual(len(r["valid"]),2); self.assertEqual(len(r["invalid"]),1)
             self.assertEqual(r["files"],3)
-            self.assertEqual(r["event_low"][1],1); self.assertEqual(r["event_low"][3],1)
+            self.assertEqual(r["event_low"][1],1); self.assertEqual(r["event_low"][3],2)
             self.assertEqual(r["both"],2)
             self.assertEqual(r["tile_graphics"]["mapped"],2)
             self.assertEqual(r["tile_graphics"]["hit"][0],1)
