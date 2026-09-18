@@ -57,6 +57,9 @@ class StoneAgeResourceProbeTests(unittest.TestCase):
             (map_dir / "200.MAP").write_bytes(
                 struct.pack("<II", 5, 4) + bytes(5 * 4 * 2)
             )
+            (map_dir / "lower.map").write_bytes(
+                struct.pack("<II", 3, 2) + bytes(3 * 2 * 2)
+            )
 
             ra = analyze_real_adrn(adrn, real)
             mp = analyze_maps(map_dir)
@@ -66,15 +69,18 @@ class StoneAgeResourceProbeTests(unittest.TestCase):
             self.assertEqual(ra["counts"]["rd_magic"], 3)
             self.assertEqual(ra["counts"]["size_match"], 3)
             self.assertEqual(ra["counts"]["dimension_match"], 3)
-            self.assertEqual(mp["file_count"], 2)
-            self.assertEqual(mp["counts"]["exact_8_plus_whx2"], 2)
+            self.assertEqual(mp["file_count"], 3)
+            self.assertEqual(mp["counts"]["exact_8_plus_whx2"], 3)
+            self.assertEqual(ra["contiguous_active_offsets"], 2)
+            self.assertEqual(ra["unreferenced_real_tail"], 0)
 
             buf = io.StringIO()
             with contextlib.redirect_stdout(buf):
                 emit(ra, mp)
             output = buf.getvalue()
             self.assertIn("ADRN_RECORD_SIZE|80", output)
-            self.assertIn("MAP_EXACT_8_PLUS_WHX2|2", output)
+            self.assertIn("MAP_EXACT_8_PLUS_WHX2|3", output)
+            self.assertIn("CONTIGUOUS_ACTIVE_OFFSETS|2", output)
 
 
 if __name__ == "__main__":

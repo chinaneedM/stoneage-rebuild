@@ -23,8 +23,15 @@ def analyze_real_adrn(adrn_path: Path, real_path: Path, sample_limit: int = 12):
     bitmap_seen = set()
     duplicate_bitmap = 0
     prev_adder = None
+    prev_end = None
     nondecreasing = 0
+    contiguous = 0
+    gaps = 0
+    overlaps = 0
+    max_end = 0
     active = 0
+    anomaly_samples = []
+    duplicate_samples = []
 
     with adrn_path.open("rb") as af, real_path.open("rb") as rf:
         mm = mmap.mmap(rf.fileno(), 0, access=mmap.ACCESS_READ)
@@ -40,6 +47,8 @@ def analyze_real_adrn(adrn_path: Path, real_path: Path, sample_limit: int = 12):
 
                 if bitmapno in bitmap_seen:
                     duplicate_bitmap += 1
+                    if len(duplicate_samples) < sample_limit:
+                        duplicate_samples.append((idx, bitmapno))
                 else:
                     bitmap_seen.add(bitmapno)
 
@@ -50,7 +59,16 @@ def analyze_real_adrn(adrn_path: Path, real_path: Path, sample_limit: int = 12):
                 active += 1
                 if prev_adder is not None and adder >= prev_adder:
                     nondecreasing += 1
+                if prev_end is not None:
+                    if adder == prev_end:
+                        contiguous += 1
+                    elif adder > prev_end:
+                        gaps += 1
+                    else:
+                        overlaps += 1
                 prev_adder = adder
+                prev_end = adder + size
+                max_end = max(max_end, prev_end)
 
                 in_bounds = (
                     size >= RD_HEADER_SIZE
@@ -80,17 +98,41 @@ def analyze_real_adrn(adrn_path: Path, real_path: Path, sample_limit: int = 12):
                 flags[f"0x{flag:02x}"] += 1
                 rd_width, rd_height, rd_size = struct.unpack_from("<III", hdr, 4)
 
-                counts["size_match" if rd_size == size else "size_mismatch"] += 1
-                counts[
-                    "dimension_match"
-                    if rd_width == width and rd_height == height
-                    else "dimension_mismatch"
-                ] += 1
+                size_matches = rd_size == size
+                dims_match = rd_width == width and rd_height == height
+                plausible_dims = 0 < rd_width <= 16384 and 0 < rd_height <= 16384
+
+                counts["size_match" if size_matches else "size_mismatch"] += 1
+                counts["dimension_match" if dims_match else "dimension_mismatch"] += 1
                 counts[
                     "plausible_dimensions"
-                    if 0 < rd_width <= 16384 and 0 < rd_height <= 16384
+                    if plausible_dims
                     else "implausible_dimensions"
                 ] += 1
+
+                reasons = []
+                if not size_matches:
+                    reasons.append("size_mismatch")
+                if not dims_match:
+                    reasons.append("dimension_mismatch")
+                if not plausible_dims:
+                    reasons.append("implausible_dimensions")
+                if reasons and len(anomaly_samples) < sample_limit:
+                    anomaly_samples.append(
+                        (
+                            idx,
+                            bitmapno,
+                            adder,
+                            size,
+                            width,
+                            height,
+                            flag,
+                            rd_width,
+                            rd_height,
+                            rd_size,
+                            ",".join(reasons),
+                        )
+                    )
 
                 if len(samples) < sample_limit:
                     samples.append(
@@ -121,15 +163,29 @@ def analyze_real_adrn(adrn_path: Path, real_path: Path, sample_limit: int = 12):
         "active_records": active,
         "duplicate_bitmap_numbers": duplicate_bitmap,
         "nondecreasing_active_offsets": nondecreasing,
+        "contiguous_active_offsets": contiguous,
+        "gap_transitions": gaps,
+        "overlap_transitions": overlaps,
+        "max_referenced_end": max_end,
+        "unreferenced_real_tail": max(0, real_size - max_end),
         "counts": counts,
         "flags": flags,
         "samples": samples,
         "bad": bad,
+        "anomaly_samples": anomaly_samples,
+        "duplicate_samples": duplicate_samples,
     }
 
 
 def analyze_maps(map_dir: Path, sample_limit: int = 16):
-    files = sorted(map_dir.glob("*.MAP"), key=lambda p: p.name)
+    files = sorted(
+        (
+            path
+            for path in map_dir.iterdir()
+            if path.is_file() and path.suffix.lower() == ".map"
+        ),
+        key=lambda p: p.name.lower(),
+    )
     counts = collections.Counter()
     dims = collections.Counter()
     exact_examples = []
@@ -192,6 +248,11 @@ def emit(real_adrn, maps):
     print(
         f"NONDECREASING_ACTIVE_OFFSETS|{real_adrn['nondecreasing_active_offsets']}"
     )
+    print(f"CONTIGUOUS_ACTIVE_OFFSETS|{real_adrn['contiguous_active_offsets']}")
+    print(f"GAP_TRANSITIONS|{real_adrn['gap_transitions']}")
+    print(f"OVERLAP_TRANSITIONS|{real_adrn['overlap_transitions']}")
+    print(f"MAX_REFERENCED_END|{real_adrn['max_referenced_end']}")
+    print(f"UNREFERENCED_REAL_TAIL|{real_adrn['unreferenced_real_tail']}")
 
     for key in sorted(real_adrn["counts"]):
         print(f"ADRN_{key.upper()}|{real_adrn['counts'][key]}")
@@ -208,6 +269,17 @@ def emit(real_adrn, maps):
     print("ADRN_BAD_SAMPLE|index|bitmapno|adder|size|w|h|reason")
     for row in real_adrn["bad"]:
         print("ADRN_BAD_SAMPLE|" + "|".join(map(str, row)))
+
+    print(
+        "ADRN_ANOMALY_SAMPLE|index|bitmapno|adder|adrn_size|adrn_w|adrn_h|"
+        "flag|rd_w|rd_h|rd_size|reason"
+    )
+    for row in real_adrn["anomaly_samples"]:
+        print("ADRN_ANOMALY_SAMPLE|" + "|".join(map(str, row)))
+
+    print("ADRN_DUPLICATE_BITMAP_SAMPLE|index|bitmapno")
+    for row in real_adrn["duplicate_samples"]:
+        print("ADRN_DUPLICATE_BITMAP_SAMPLE|" + "|".join(map(str, row)))
 
     print()
     print("MAP")
