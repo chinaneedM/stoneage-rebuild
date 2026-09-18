@@ -48,6 +48,8 @@ class PetSkillProbeTests(unittest.TestCase):
             self.assertEqual(f["text_stats"][11]["count"],1)
             self.assertEqual(f["text_stats"][11]["unique"],1)
             self.assertEqual(f["text_stats"][11]["minlen"],4)
+            self.assertEqual(f["last_vs_func"]["unique_overlap"],0)
+            self.assertEqual(f["last_vs_func"]["same_row"],0)
 
     def test_legacy_and_usetype_schema_detection(self):
         with tempfile.TemporaryDirectory() as td:

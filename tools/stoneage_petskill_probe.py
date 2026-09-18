@@ -159,6 +159,18 @@ def analyze(data_dir,setup=None):
                 for k in counters:
                     if k in vals:counters[k][vals[k]]+=1
         active_paths={Path(v.replace("\\","/")).name.lower() for v in config.values()}
+        last_vs_func=None
+        if rows and max_cols>3 and all(len(x)==max_cols for x in rows):
+            func=[x[2].strip() for x in rows if x[2].strip()]
+            tail=[x[-1].strip() for x in rows if x[-1].strip()]
+            fs=set(func); ts=set(tail)
+            last_vs_func={
+                "func_unique":len(fs),"tail_unique":len(ts),
+                "unique_overlap":len(fs&ts),
+                "tail_rows_in_func_domain":sum(1 for v in tail if v in fs),
+                "same_row":sum(1 for x in rows if x[2].strip() and x[-1].strip() and x[2].strip()==x[-1].strip()),
+                "rows":len(rows),
+            }
         missing=sorted(enemy_ids-selected["idset"])
         unreferenced=sorted(selected["idset"]-enemy_ids)
         files.append({
@@ -166,7 +178,7 @@ def analyze(data_dir,setup=None):
             "rows":len(rows),"field_counts":field_counts,"max_cols":max_cols,"profiles":profiles,"text_stats":text_stats,
             "candidates":candidates,"selected":selected_name,
             "trailing_cols":(max_cols-selected["needed"]) if selected_name!="unknown" else None,
-            "counters":counters,"func_count":len(funcs),
+            "counters":counters,"func_count":len(funcs),"last_vs_func":last_vs_func,
             "active":p.name.lower() in active_paths,
             "enemy_missing":missing,"unreferenced":unreferenced,
         })
@@ -217,6 +229,9 @@ def emit(data_dir,setup=None):
         if f["unreferenced"]:
             print(f"UNREFERENCED_SKILL_ID_SAMPLE|{f['name']}|"+",".join(map(str,f["unreferenced"][:40])))
         print(f"UNIQUE_FUNCTION_TOKENS|{f['name']}|{f['func_count']}")
+        rel=f.get("last_vs_func")
+        if rel:
+            print(f"LAST_COLUMN_VS_FUNC3|{f['name']}|rows={rel['rows']}|func_unique={rel['func_unique']}|tail_unique={rel['tail_unique']}|unique_overlap={rel['unique_overlap']}|tail_rows_in_func_domain={rel['tail_rows_in_func_domain']}|same_row={rel['same_row']}")
         for key in ("FIELD","TARGET","USETYPE","ILLEGAL"):
             for v,n in sorted(f["counters"][key].items()):
                 print(f"{key}_VALUE|{f['name']}|{v}|{n}")
