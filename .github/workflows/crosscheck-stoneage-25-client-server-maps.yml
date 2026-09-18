@@ -1,0 +1,96 @@
+name: Crosscheck recovered StoneAge client server maps
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/crosscheck-stoneage-25-client-server-maps.yml
+      - tools/stoneage_client_server_map_probe.py
+      - tests/test_stoneage_client_server_map_probe.py
+
+permissions:
+  contents: write
+
+jobs:
+  crosscheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deterministic crosscheck tests
+        run: python3 -m unittest tests.test_stoneage_client_server_map_probe -v
+      - name: Install archive tool
+        run: sudo apt-get update && sudo apt-get install -y unar
+      - name: Recover preserved split bundle
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25
+          python3 - <<'PY'
+          import hashlib,html,json,re,http.cookiejar,urllib.parse,urllib.request
+          from pathlib import Path
+          ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124 Safari/537.36'
+          cj=http.cookiejar.CookieJar()
+          op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+          op.addheaders=[('User-Agent',ua),('Accept-Language','en-US,en;q=0.9')]
+          expected={
+              'ev7l29fw77891go':'7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5',
+              'ytaa168o5jih0lx':'567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb',
+          }
+          def get(key,suffix):
+              api='https://www.mediafire.com/api/1.5/file/get_info.php'
+              data=urllib.parse.urlencode({'quick_key':key,'response_format':'json'}).encode()
+              req=urllib.request.Request(api,data=data,headers={'User-Agent':ua})
+              with op.open(req,timeout=60) as r:
+                  info=json.load(r)['response']['file_info']
+              if str(info.get('hash') or '').lower()!=expected[key]:
+                  raise SystemExit('MediaFire metadata hash changed')
+              req=urllib.request.Request(info['links']['normal_download'],headers={'User-Agent':ua})
+              with op.open(req,timeout=60) as r:
+                  page=r.read().decode('utf-8','replace'); referer=r.geturl()
+              m=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S)
+              if not m:
+                  m=re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+              if not m: raise SystemExit('No direct link')
+              dest=Path('/tmp/sa25')/f'part.{suffix}'
+              h=hashlib.sha256()
+              req=urllib.request.Request(html.unescape(m.group(1)),headers={'User-Agent':ua,'Referer':referer})
+              with op.open(req,timeout=300) as r, dest.open('wb') as out:
+                  while True:
+                      b=r.read(1024*1024)
+                      if not b: break
+                      out.write(b); h.update(b)
+              if h.hexdigest()!=expected[key]: raise SystemExit('Hash mismatch')
+          get('ev7l29fw77891go','001')
+          get('ytaa168o5jih0lx','002')
+          PY
+          cat /tmp/sa25/part.001 /tmp/sa25/part.002 > /tmp/sa25/bundle.rar
+          test "$(sha256sum /tmp/sa25/bundle.rar | awk '{print $1}')" = "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+      - name: Extract transiently
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25/out
+          ulimit -c 0
+          unar -f -o /tmp/sa25/out /tmp/sa25/bundle.rar >/tmp/sa25/unar.log 2>&1
+      - name: Crosscheck client and server maps
+        run: |
+          set -euo pipefail
+          CLIENT="$(find /tmp/sa25/out -type d -path '*/SA2.5主程式/stoneage2.5/map' -print -quit)"
+          SERVER="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
+          test -n "$CLIENT" && test -n "$SERVER"
+          mkdir -p research/recovered
+          R=research/recovered/STONEAGE-25-CLIENT-SERVER-MAP-CROSSCHECK-R1.txt
+          {
+            echo 'SOURCE_BUNDLE_SHA256|d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5'
+            echo
+            python3 -m tools.stoneage_client_server_map_probe --client-map-dir "$CLIENT" --server-map-root "$SERVER"
+          } > "$R"
+          CHANGED="$(git status --short --untracked-files=all)"
+          test "$(printf '%s\n' "$CHANGED" | sed '/^$/d' | wc -l)" -eq 1
+          test "$(printf '%s\n' "$CHANGED" | sed -E 's/^.. //' )" = "research/recovered/STONEAGE-25-CLIENT-SERVER-MAP-CROSSCHECK-R1.txt"
+      - name: Commit derived crosscheck report only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-25-CLIENT-SERVER-MAP-CROSSCHECK-R1.txt
+          git commit -m 'research: crosscheck StoneAge 2.5 client server maps'
+          git push
