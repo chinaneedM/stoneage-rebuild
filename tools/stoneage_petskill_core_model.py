@@ -289,8 +289,12 @@ def parse_status_skill(
         turn = _c_number(tail, 3)
     ap = _percent_value(text, attack_percent_marker, None, as_float=True)
     dp = _percent_value(text, defense_percent_marker, None, as_float=True)
+    # The old handler stores loop variable i, not 'status'. If no token is
+    # found, i has reached BATTLE_ST_END; the later status checker rejects it.
+    encoded_status = status if status >= 0 else len(status_tokens)
     return {
-        "status": status,
+        "status": encoded_status,
+        "matched": status >= 0,
         "turn": int(turn),
         "attack_percent": ap,
         "defense_percent": dp,
@@ -330,7 +334,6 @@ def status_attack_probability(
     defender_tough,
     defender_dex,
     attacker_luck,
-    defender_resistance,
     attacker_level,
     defender_level,
     pvp,
@@ -364,7 +367,6 @@ def status_attack_probability(
         + int(attacker_luck)
         - int(status_specific_resist)
         - vital_penalty
-        - int(defender_resistance)
     )
     return min(80, int(per))
 
@@ -497,12 +499,30 @@ def steal_transition(
             raise ValueError("gold percent roll required for gold steal")
         gold = int(float(int(defender_gold)) * int(gold_percent_roll) * 0.01)
         if gold <= 0:
-            return {"success": False, "mode": "gold", "attacker_exits": False, "gold": 0}
-        return {"success": True, "mode": "gold", "attacker_exits": True, "gold": gold}
+            return {
+            "success": False,
+            "mode": "gold",
+            "attacker_exits": False,
+            "defender_gold_loss": 0,
+            "attacker_gold_gain": 0,
+        }
+        return {
+            "success": True,
+            "mode": "gold",
+            "attacker_exits": True,
+            "defender_gold_loss": gold,
+            "attacker_gold_gain": 0,
+        }
 
     slots = tuple(int(x) for x in carried_item_slots)
     if not slots:
-        return {"success": False, "mode": "item", "attacker_exits": False, "item_slot": None}
+        return {
+            "success": False,
+            "mode": "item",
+            "attacker_exits": False,
+            "destroyed_item_slot": None,
+            "attacker_item_gain": False,
+        }
     if chosen_item_ordinal is None:
         raise ValueError("item ordinal required for item steal")
     idx = int(chosen_item_ordinal)
@@ -512,7 +532,8 @@ def steal_transition(
         "success": True,
         "mode": "item",
         "attacker_exits": True,
-        "item_slot": slots[idx],
+        "destroyed_item_slot": slots[idx],
+        "attacker_item_gain": False,
     }
 
 
