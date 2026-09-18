@@ -1,0 +1,17 @@
+name: Validate StoneAge save logout model
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/mechanics/STONEAGE-SAVE-LOGOUT-PERSISTENCE-CORE-R1.md
+      - tools/stoneage_save_logout_model.py
+      - tests/test_stoneage_save_logout_model.py
+      - .github/workflows/validate-stoneage-save-logout.yml
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_save_logout_model -v
