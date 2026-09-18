@@ -6,6 +6,8 @@ from types import SimpleNamespace
 from tools.stoneage_effect_callback_coverage_probe import (
     analyze,
     common_unguarded_family_counts,
+    item_body_coverage,
+    parse_item_function_body_map,
     choose_active_file,
     parse_global_function_guard_map,
     parse_global_function_table,
@@ -242,6 +244,64 @@ class EffectCallbackCoverageProbeTests(unittest.TestCase):
             self.assertEqual(magic["classes"]["all"], 1)
             self.assertEqual(magic["classes"]["some"], 2)
             self.assertEqual(magic["classes"]["none"], 0)
+
+    def test_item_body_parser_distinguishes_macro_shell(self):
+        with tempfile.TemporaryDirectory() as td:
+            p = Path(td) / "item_event.c"
+            p.write_text(
+                'void ITEM_Stable(int x) {\n'
+                '  int y = x + 1;\n'
+                '#ifdef EXTRA\n'
+                '  y += 2;\n'
+                '#endif\n'
+                '}\n'
+                'void ITEM_Shell(int x) {\n'
+                '#ifdef PROF\n'
+                '  int y = x + 1;\n'
+                '#endif\n'
+                '}\n',
+                encoding="utf-8",
+            )
+            r = parse_item_function_body_map(
+                p, {"ITEM_Stable", "ITEM_Shell", "ITEM_Missing"}
+            )
+            self.assertTrue(r["ITEM_Stable"]["present"])
+            self.assertTrue(r["ITEM_Stable"]["unguarded_substantive"])
+            self.assertTrue(r["ITEM_Shell"]["present"])
+            self.assertFalse(r["ITEM_Shell"]["unguarded_substantive"])
+            self.assertFalse(r["ITEM_Missing"]["present"])
+
+    def test_item_body_coverage_refines_dispatch_candidates(self):
+        counter = {"A": 5, "B": 2, "C": 1}
+        dispatch = {
+            "one": {"A": False, "B": False, "C": False},
+            "two": {"A": False, "B": False, "C": False},
+            "three": {"A": False, "B": False, "C": False},
+        }
+        bodies = {
+            "one": {
+                "A": {"present": True, "unguarded_substantive": True},
+                "B": {"present": True, "unguarded_substantive": False},
+                "C": {"present": True, "unguarded_substantive": True},
+            },
+            "two": {
+                "A": {"present": True, "unguarded_substantive": True},
+                "B": {"present": True, "unguarded_substantive": False},
+                "C": {"present": False, "unguarded_substantive": False},
+            },
+            "three": {
+                "A": {"present": True, "unguarded_substantive": True},
+                "B": {"present": True, "unguarded_substantive": False},
+                "C": {"present": True, "unguarded_substantive": True},
+            },
+        }
+        r = item_body_coverage(counter, dispatch, bodies)
+        self.assertEqual(r["unique_counts"]["stable_body_all3"], 1)
+        self.assertEqual(r["row_counts"]["stable_body_all3"], 5)
+        self.assertEqual(r["unique_counts"]["macro_shell_all3"], 1)
+        self.assertEqual(r["row_counts"]["macro_shell_all3"], 2)
+        self.assertEqual(r["unique_counts"]["partial_body_source"], 1)
+        self.assertEqual(r["row_counts"]["partial_body_source"], 1)
 
     def test_common_unguarded_family_counts_are_aggregate_only(self):
         counter = {"A": 3, "B": 2, "C": 1}
