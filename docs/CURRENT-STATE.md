@@ -433,8 +433,8 @@ Supplemental source ledgers:
 ## Save / logout persistence core reconstruction — 2026-09-18
 
 - Reconstructed the ordinary character serialization, periodic/save-point save, normal logout and SAAC acknowledgement path across three preserved descendant lineages.
-- Core character serialization persists CHAR_DATAINT/CHAR_DATACHAR fields, persistent flags, skills, concrete item instances, titles, address-book entries and carried pets. Generic CHAR_WORK/runtime arrays are not serialized.
-- Optional shared pool item/pet arrays are later/versioned persistence surfaces and are not promoted into the early core.
+- Core character serialization persists CHAR_DATAINT/CHAR_DATACHAR fields, persistent flags, skills, concrete carried/equipped items, ordinary Pool items, titles, address-book entries, carried pets and ordinary Pool pets. Generic CHAR_WORK/runtime arrays are not serialized.
+- Corrected terminology after the storage audit: ordinary `poolitemN` / `poolpetN` arrays are character-inline persistent state in the fixed descendants. The separate account-shared `Depotitem` / `Depotpet` warehouse channels are the later/versioned surfaces.
 - Periodic autosave uses a configurable `CharSaveinterval`; the global sweep itself runs only after more than 10 seconds, and a character save occurs only when the connection is active, state is LOGIN, and `now - lastSave > interval`.
 - Periodic and save-point saves use `unlock=FALSE`; they request persistence without ending the account/login lock.
 - Save-send functions serialize and dispatch to SAAC asynchronously and return before durability acknowledgement. Their TRUE result is not proof of a successful disk write.
@@ -445,7 +445,7 @@ Supplemental source ledgers:
 - Runtime character and pet objects are destroyed immediately after the save request is sent, not after the save acknowledgement returns.
 - A failed normal logout-save acknowledgement only reports `Cannot save`; there is no automatic retry, runtime rollback/reconstruction, or lock restoration. The old server therefore has a real last-state loss window.
 - Added `tools/stoneage_save_logout_model.py`, thirteen deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-SAVE-LOGOUT-PERSISTENCE-CORE-R1.md`.
-- GitHub currently reports no workflow-run records yet for the new persistence workflow commits; no CI success is claimed.
+- The Pool/Depot persistence distinction was corrected in the model/tests/report; GitHub Actions run `35365548551` completed **successfully** after that correction.
 - The requested fresh milestone/gap audit is now completed in `docs/PHASE0-MILESTONE-GAP-AUDIT-R1.md`; it separates early/core gaps, later/versioned systems, data/content extraction work, and modern-rebuild engineering.
 
 
@@ -455,7 +455,7 @@ Supplemental source ledgers:
 - Corrected the planning boundary: the recovered gameplay-data inventory and coherence probe already exist and are **completed foundations**, not work to rebuild.
 - Early/core deterministic mechanics now cover creation/birth, growth/transmigration, enemy/group/encounter chains, battle-adjacent death/capture, party, item use/equip, healing, direct trade, item shop, save/logout, and appear/login-return membership behavior.
 - Remaining early/core gaps are ordered as: **save point / elder return state -> persistent item/pet storage -> field warp/map transitions -> NPC/world-content graph -> remaining item/skill effect joins**.
-- Professions, ordinary-player riding, family/guild, AutoPK, six-player party, shared pools, pet fusion and similar later branches remain version-diff tracks unless earlier evidence independently requires them.
+- Professions, ordinary-player riding, family/guild, AutoPK, six-player party, account-shared Depot warehouses, pet fusion and similar later branches remain version-diff tracks unless earlier evidence independently requires them.
 - Modern transactional persistence, typed import pipelines, engine/network/UI architecture and asset recreation remain DESIGN work and must not be mixed into historical reconstruction.
 
 ## Save point / elder / return-point core reconstruction — 2026-09-18
@@ -472,11 +472,29 @@ Supplemental source ledgers:
 - Interaction and immediate-save behavior are versioned: gavinlinasd/iriselia preserve a facing-based gate with a same-cell exception and immediate unlock-false saves; Bismarck uses a distance/death gate and conditional save-point persistence hooks.
 - Added `tools/stoneage_savepoint_elder_model.py`, fourteen deterministic regression tests, `research/mechanics/STONEAGE-SAVEPOINT-ELDER-RETURN-CORE-R1.md`, and dedicated CI.
 - GitHub Actions run `35365018211` completed **successfully** for the model/report state.
-- Next priority: **persistent item/pet storage and pet-shop transfer semantics**, separating ordinary carried/storage behavior from later shared-pool extensions.
+- Persistent item/pet Pool storage has now been reconstructed below. The next priority advances to **field warp / portal / map-transition authority**.
+
+## Ordinary item / pet Pool storage reconstruction — 2026-09-18
+
+- Corrected a prior terminology error: ordinary **Pool** storage and later shared **Depot** storage are different mechanisms. The fixed character object owns ordinary Pool item/pet arrays directly; later Depot arrays use separate macro-gated pointers and SAAC channels.
+- Ordinary Pool items (`poolitemN`) and Pool pets (`poolpetN`) are serialized/deserialized inline with the character save in the fixed descendants.
+- Fixed carried-pet capacity is 5. Ordinary pet Pool usable capacity is `5 + 2 * transmigration`, capped by the compiled Pool maximum (10 in the ordinary inspected configuration).
+- Ordinary item Pool usable capacity is `10 + 4 * transmigration`, capped by the compiled Pool maximum (20 in the ordinary inspected configuration).
+- Pet-shop Pool access is controlled by shop `pool_flg`. Deposit cost is `50 + player_level * 4`.
+- Pet deposit moves the same pet object/index from carried state into the first usable Pool slot, rejects the currently ridden pet, and clears `CHAR_DEFAULTPET` when the deposited pet was selected as default.
+- Pet withdrawal moves the selected Pool pet into the first empty carried slot and compacts the Pool afterward; no ordinary withdrawal fee was observed.
+- Pool item shop deposit cost defaults to 200 unless configured otherwise.
+- The ordinary Pool-item UI marks `DROPATLOGOUT`, `VANISHATDROP`, or `!CANPETMAIL` items as unavailable, but the authoritative ordinary transfer primitive does not recheck those flags.
+- The ordinary Pool-item transfer primitive also ignores the return value from `CHAR_DelGold`. If the debit fails for insufficient gold, the fixed handler can still move the item. This is recorded as a historical implementation defect, not a target modern rule.
+- Item withdrawal moves into the first empty carried slot, charges no observed withdrawal fee, and compacts the Pool.
+- Later shared Depot item code provides useful contrast: it rechecks restricted-item flags and rejects when `CHAR_DelGold` fails. Depot behavior remains versioned and is not back-projected into the ordinary Pool path.
+- Added `tools/stoneage_pool_storage_model.py`, fourteen deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-ITEM-PET-POOL-STORAGE-R1.md`.
+- GitHub Actions run `35365665920` completed **successfully** for the ordinary Pool storage model. The report-state rerun was still in progress at the time this state block was written.
+- Next priority: **field warp / portal / map-transition authority**, then the NPC/world-content graph and remaining item/skill effect joins.
 
 ## Immediate next actions
 
-1. **Continue deterministic early/core loop closure using the existing gameplay inventory.** The inventory/coherence foundations plus enemy/encounter/appear/save-point work are already present. The next server-authoritative seam is **persistent item/pet storage and pet-shop transfer semantics**, followed by field warp/map-transition authority and the NPC/world-content graph. Keep map 817/water-world missing assets and all mixed-snapshot dangling references as version-diff targets for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
+1. **Continue deterministic early/core loop closure using the existing gameplay inventory.** The inventory/coherence foundations plus enemy/encounter/appear/save-point/ordinary-Pool-storage work are already present. The next server-authoritative seam is **field warp / portal / map-transition authority**, followed by the NPC/world-content graph and remaining item/skill effect joins. Keep map 817/water-world missing assets and all mixed-snapshot dangling references as version-diff targets for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
 2. **Reject repacks before analysis.** For every candidate, record source/provenance, archive filename, size, hashes, timestamps, installer metadata, executable names, unexpected patchers/loaders, and signs of private-server modification. Do not call a client "clean" merely because its title/version string looks old.
 3. **The first verified usable client becomes the bridge specimen.** Immediately build a reproducible extraction inventory: complete file tree, hashes, PE metadata, strings/resources, directories, update components, graphics containers, maps, data tables, audio, UI assets, and executable/resource relationships.
 4. **Reverse engineer data before recreating gameplay.** Determine resource/container formats and indexes; decode graphics/animations; map character/pet/item/skill/stat records; reconstruct map formats and event/NPC data; identify combat and progression tables where present; document which behavior is client-side versus server-dependent.
