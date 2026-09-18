@@ -132,8 +132,9 @@ jobs:
             echo 'RESULT|DOWNLOAD_AND_EXTRACTION_SUCCEEDED' >> "$R"
           fi
           rm -f core core.* || true
-          test "$(git status --short | wc -l)" -eq 1
-          git status --short | grep -F '?? research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt'
+          git status --short --untracked-files=all
+          test "$(git status --short --untracked-files=all | wc -l)" -eq 1
+          git status --short --untracked-files=all | grep -F '?? research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt'
       - name: Commit derived report only
         run: |
           git config user.name stoneage-recovery-bot
