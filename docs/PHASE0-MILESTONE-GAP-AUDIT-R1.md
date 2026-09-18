@@ -105,11 +105,32 @@ The recovered 2.5 specimen contains 4,985 effective create blocks with complete 
 
 Class-specific secondary argument/config semantics remain follow-on content archaeology, not a blocker for the generic graph.
 
-### B5 — Item/skill effect callback joins — highest priority
+### B5 — Item / magic / pet-skill callback joins — completed in R1
 
-The repository has item/skill/magic tables and equipment/use mechanics, but a complete table-record -> callback/function -> battle/world effect graph is still incomplete. This is needed before claiming full deterministic reconstruction of consumables, magic and pet skills.
+The recovered active callback tokens are now cross-checked against the three fixed descendant dispatch tables without exposing proprietary table strings.
 
-### B6 — Detailed combat sub-mechanics not yet promoted
+Result:
+
+- magic: 17/17 unique tokens and 181/181 rows resolve in all three;
+- item non-use callback slots: all recovered tokens resolve in all three;
+- item use: 36 common + 16 branch-specific unique tokens, with zero all-source-missing tokens;
+- pet skill: 65 common tokens plus 4 tokens/4 rows absent from all three fixed source tables.
+
+The four pet-skill misses remain provenance/version-skew evidence rather than invented behavior.
+
+### B6 — Ordinary magic effect semantics — highest priority
+
+Magic is the cleanest remaining semantic layer because the recovered active table has complete all-three callback coverage.
+
+Needed next:
+
+- classify the 17 function families by field/battle effect;
+- reconstruct parameter parsing and target validation;
+- model HP/status/attribute/revival/defense effects;
+- separate attack-magic and later macro-gated extensions where necessary;
+- add deterministic tests for stable old-core formulas and state transitions.
+
+### B7 — Detailed combat / item / pet-skill sub-mechanics not yet promoted
 
 The battle core is sufficient for the present loop audit, but future deterministic closure still needs source-verified treatment of the remaining action/status/AI formulas where not already modeled. These should be added only when they are early/core-relevant rather than by copying later feature branches wholesale.
 
