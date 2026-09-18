@@ -101,15 +101,49 @@ Canonical analysis: `research/clients/JSS-PRODUCT-IDENTIFIER-ARCHAEOLOGY-R1.md`.
   - release date printed as `1999年2月20日`
   - price `8,800円` before tax
   - JSS / titan.co.jp context
-- unresolved:
+- unresolved from this advertisement itself:
   - JAN
   - model/type code
   - package barcode
+- cross-reference: the JAN is now independently resolved by `SRC-JP-JSS-LIFESTORM2-YAHOO-AUCTION-ID-01`; the advertisement remains useful as period release/price evidence rather than identifier evidence.
+
+## SRC-JP-JSS-LIFESTORM2-YAHOO-AUCTION-ID-01
+
+- title: `LIFESTORM Ⅱ ～光と闇の継承者～` surviving package/CD auction
+- auction ID: `v1234885585`
+- listing URL: https://auctions.yahoo.co.jp/jp/auction/v1234885585
+- retrieval date: 2026-09-18
+- source type: current Japanese marketplace photographs of a surviving JSS retail package and game disc
+- confidence: **B for literal visible package/disc fields; C for seller provenance**
+- seller/listing scope:
+  - the listing states that only the CD-ROM and package are included;
+  - no claim is made here that the pictured copy is complete beyond those visible objects.
+- directly visible package facts:
+  - title `LIFESTORM II ～光と闇の継承者～`;
+  - Windows 95/98;
+  - ©1999 JAPAN SYSTEM SUPPLY;
+  - price `8,800円(税別)`;
+  - JSS / `http://www.titan.co.jp/` branding;
+  - back-box JAN/barcode **`4909476302013`**.
+- directly visible disc fact:
+  - the photographed optical disc carries matching `LIFESTORM II` artwork/branding beside the package.
+- original image targets exposed by Yahoo:
+  1. https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0206/user/e659419a2817be9367483a4d3ec7660c61f895515cd4978e4f1701151861a988/i-img1200x1200-17824404959388dk1udu7794.jpg
+  2. https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0206/user/e659419a2817be9367483a4d3ec7660c61f895515cd4978e4f1701151861a988/i-img1200x1200-17824404958785mdyu027794.jpg
+  3. https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0206/user/e659419a2817be9367483a4d3ec7660c61f895515cd4978e4f1701151861a988/i-img1200x1200-17824404959065fuqfns7794.jpg
+- research consequence:
+  - the previously unassigned check-digit-valid search candidate `4909476302013` is now **directly bound to LIFESTORM II by a readable package-back barcode photograph** and is promoted from search candidate to observed retail JAN;
+  - the observed JSS online-RPG Windows sequence now includes `LIFESTORM = 4909476301016` and `LIFESTORM II = 4909476302013`.
+- does not establish:
+  - the LIFESTORM II model/type code;
+  - StoneAge's JAN/model;
+  - a general rule that the next numerical body must belong to StoneAge;
+  - disc matrix text, filesystem contents, hashes or executable version.
 
 ## Source-group conclusion
 
-The shared `4909476` stem is now empirically observed across multiple JSS-associated physical products, but the following product-reference ranges differ between Windows titles and console titles.
+The shared `4909476` stem is empirically observed across multiple JSS-associated physical products, and a direct LIFESTORM II package photograph now fixes its JAN as **`4909476302013`**. Together with LIFESTORM's **`4909476301016`**, this gives two consecutive observed identifiers in the JSS Windows online-RPG line.
 
-This **invalidates the earlier shortcut of treating the console `49094768...` series as the direct StoneAge sequence**.
+This **still does not justify assigning the next valid number to StoneAge**. Numerical adjacency remains a search heuristic until a StoneAge package, catalog or first-party source binds an identifier directly.
 
-The next promotion target is a direct LIFESTORM II identifier, followed by a direct StoneAge package/catalog identifier.
+The next identifier targets are the unresolved LIFESTORM II model/type code and, more importantly, a direct StoneAge package/catalog JAN/model identifier.
