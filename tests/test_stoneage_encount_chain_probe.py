@@ -59,6 +59,30 @@ class EncountChainProbeTests(unittest.TestCase):
             with contextlib.redirect_stdout(buf):emit(d,setup)
             self.assertIn("ENEMY_DROP_ITEM_REF|unique=1|itemset_ids=1|matched=1|missing=0",buf.getvalue())
 
+    def test_alternate_files_resolve_active_gaps(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);d=root/"data";d.mkdir()
+            (d/"encount.txt").write_text(encount_row(100)+"\n",encoding="utf-8")
+            (d/"group1.txt").write_text(group_row(101,999,0)+"\n",encoding="utf-8")
+            (d/"group.txt").write_text(group_row(100,200,0)+"\n",encoding="utf-8")
+            (d/"enemy.txt").write_text(enemy_row(200,300,500,2)+"\n",encoding="utf-8")
+            (d/"enemy2.txt").write_text(enemy_row(999,300,500,3)+"\n",encoding="utf-8")
+            (d/"enemybase.txt").write_text(enemybase_row(300)+"\n",encoding="utf-8")
+            (d/"itemset.txt").write_text(item_row(400)+"\n",encoding="utf-8")
+            (d/"itemset0710.txt").write_text(item_row(400)+"\n"+item_row(500)+"\n",encoding="utf-8")
+            setup=root/"setup.cf"
+            setup.write_text("encountfile=data/encount.txt\ngroupfile=data/group1.txt\nenemyfile=data/enemy.txt\nenemybasefile=data/enemybase.txt\nitemset6file=data/itemset.txt\n",encoding="utf-8")
+            r=analyze(d,setup)
+            self.assertEqual(r["enc_group_missing"],[100])
+            self.assertEqual(r["group_cover"]["group.txt"]["resolves_active_missing"],1)
+            self.assertEqual(r["group_enemy_missing"],[999])
+            self.assertEqual(r["enemy_cover"]["enemy2.txt"]["resolves_active_missing"],1)
+            self.assertEqual(r["drop_missing"],[500])
+            self.assertEqual(r["item_cover"]["itemset0710.txt"]["drop_resolves_active_missing"],1)
+            self.assertEqual(r["all_group_residual"],[])
+            self.assertEqual(r["all_enemy_residual"],[])
+            self.assertEqual(r["all_drop_residual"],[])
+
     def test_enemy_three_text_prefix(self):
         with tempfile.TemporaryDirectory() as td:
             root=Path(td);d=root/"data";d.mkdir()

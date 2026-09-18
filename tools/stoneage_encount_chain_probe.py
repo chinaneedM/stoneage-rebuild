@@ -140,6 +140,33 @@ def active_item_ids(data_dir,config):
         if v is not None:ids.add(v)
     return p.name,ids
 
+def group_file_sets(data_dir):
+    out={}
+    for p in sorted(data_dir.glob("group*.txt"),key=lambda x:x.name.lower()):
+        _,rows,bad,_=parse_group(p)
+        if rows and bad==0:out[p.name]={r["id"] for r in rows}
+    return out
+
+def enemy_file_sets(data_dir):
+    out={}
+    for p in sorted(data_dir.glob("enemy*.txt"),key=lambda x:x.name.lower()):
+        if p.name.lower().startswith("enemybase"):continue
+        _,rows,bad,_,prefix=parse_enemy(p)
+        if rows and bad==0:out[p.name]={"ids":{r["id"] for r in rows},"prefix":prefix}
+    return out
+
+def itemset_file_sets(data_dir):
+    out={}
+    for p in sorted(data_dir.glob("itemset*.txt"),key=lambda x:x.name.lower()):
+        ids=set();good=True
+        for r in clean_rows(p):
+            if len(r)!=len(ITEM_SCHEMA):
+                good=False;break
+            v=item_to_int(r[ITEM_INDEX["id"]])
+            if v is not None:ids.add(v)
+        if good and ids:out[p.name]=ids
+    return out
+
 def stats(vals):
     vals=list(vals)
     return (min(vals),max(vals),len(set(vals))) if vals else (None,None,0)
@@ -182,6 +209,32 @@ def analyze(data_dir,setup=None):
     group_prob_sums=[sum(max(0,v) for v in r["groupprobs"]) for r in enc]
     enemy_prob_sums=[sum(max(0,v) for v in r["enemyprobs"]) for r in groups]
 
+    group_candidates=group_file_sets(data_dir)
+    enemy_candidates=enemy_file_sets(data_dir)
+    item_candidates=itemset_file_sets(data_dir)
+    group_cover={name:{
+        "matched":len(enc_group_set & ids),
+        "missing":len(enc_group_set - ids),
+        "resolves_active_missing":len(set(sorted(enc_group_set-group_set)) & ids),
+    } for name,ids in group_candidates.items()}
+    enemy_cover={name:{
+        "matched":len(group_enemy_set & info["ids"]),
+        "missing":len(group_enemy_set - info["ids"]),
+        "resolves_active_missing":len(set(sorted(group_enemy_set-enemy_set)) & info["ids"]),
+        "prefix":info["prefix"],
+    } for name,info in enemy_candidates.items()}
+    item_cover={name:{
+        "drop_matched":len(drop_set & ids),
+        "drop_missing":len(drop_set-ids),
+        "drop_resolves_active_missing":len(set(sorted(drop_set-item_ids)) & ids),
+        "cond_matched":len(cond_set & ids),
+        "cond_missing":len(cond_set-ids),
+        "cond_resolves_active_missing":len(set(sorted(cond_set-item_ids)) & ids),
+    } for name,ids in item_candidates.items()}
+    all_group_ids=set().union(*group_candidates.values()) if group_candidates else set()
+    all_enemy_ids=set().union(*(x["ids"] for x in enemy_candidates.values())) if enemy_candidates else set()
+    all_item_ids=set().union(*item_candidates.values()) if item_candidates else set()
+
     return {
         "config":config,"missing":[],
         "enc_path":ep,"group_path":gp,"enemy_path":xp,"enemybase_cfg":eb_cfg,"enemybase_name":eb_name,
@@ -201,6 +254,11 @@ def analyze(data_dir,setup=None):
         "item_ids":item_ids,
         "floors":floors,"pmins":pmins,"pmaxs":pmaxs,"zorder":z,"enemymax":enemymax,
         "group_prob_sums":group_prob_sums,"enemy_prob_sums":enemy_prob_sums,
+        "group_cover":group_cover,"enemy_cover":enemy_cover,"item_cover":item_cover,
+        "all_group_residual":sorted(enc_group_set-all_group_ids),
+        "all_enemy_residual":sorted(group_enemy_set-all_enemy_ids),
+        "all_drop_residual":sorted(drop_set-all_item_ids),
+        "all_cond_residual":sorted(cond_set-all_item_ids),
     }
 
 def emit(data_dir,setup=None):
@@ -245,6 +303,23 @@ def emit(data_dir,setup=None):
     if r["drop_missing"]:print("ENEMY_DROP_ITEM_MISSING_SAMPLE|"+",".join(map(str,r["drop_missing"][:40])))
     print(f"GROUP_CONDITION_ITEM_REF|unique={len(r['cond_set'])}|matched={len(r['cond_set'])-len(r['cond_missing'])}|missing={len(r['cond_missing'])}")
     if r["cond_missing"]:print("GROUP_CONDITION_ITEM_MISSING_SAMPLE|"+",".join(map(str,r["cond_missing"][:40])))
+
+    for name,s in sorted(r["group_cover"].items()):
+        print(f"GROUP_FILE_COVERAGE|{name}|matched={s['matched']}|missing={s['missing']}|resolves_active_missing={s['resolves_active_missing']}")
+    print(f"ALL_GROUP_FILES_RESIDUAL|{len(r['all_group_residual'])}")
+    if r["all_group_residual"]:print("ALL_GROUP_FILES_RESIDUAL_SAMPLE|"+",".join(map(str,r["all_group_residual"][:40])))
+
+    for name,s in sorted(r["enemy_cover"].items()):
+        print(f"ENEMY_FILE_COVERAGE|{name}|text_prefix={s['prefix']}|matched={s['matched']}|missing={s['missing']}|resolves_active_missing={s['resolves_active_missing']}")
+    print(f"ALL_ENEMY_FILES_RESIDUAL|{len(r['all_enemy_residual'])}")
+    if r["all_enemy_residual"]:print("ALL_ENEMY_FILES_RESIDUAL_SAMPLE|"+",".join(map(str,r["all_enemy_residual"][:40])))
+
+    for name,s in sorted(r["item_cover"].items()):
+        print(f"ITEMSET_FILE_COVERAGE|{name}|drop_matched={s['drop_matched']}|drop_missing={s['drop_missing']}|drop_resolves_active_missing={s['drop_resolves_active_missing']}|condition_matched={s['cond_matched']}|condition_missing={s['cond_missing']}|condition_resolves_active_missing={s['cond_resolves_active_missing']}")
+    print(f"ALL_ITEMSET_FILES_DROP_RESIDUAL|{len(r['all_drop_residual'])}")
+    if r["all_drop_residual"]:print("ALL_ITEMSET_FILES_DROP_RESIDUAL_SAMPLE|"+",".join(map(str,r["all_drop_residual"][:40])))
+    print(f"ALL_ITEMSET_FILES_CONDITION_RESIDUAL|{len(r['all_cond_residual'])}")
+    if r["all_cond_residual"]:print("ALL_ITEMSET_FILES_CONDITION_RESIDUAL_SAMPLE|"+",".join(map(str,r["all_cond_residual"][:40])))
 
 def main():
     ap=argparse.ArgumentParser()
