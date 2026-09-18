@@ -51,28 +51,39 @@ def bucket(v):
 def analyze(dat_dir,adrn_path=None):
     tile=collections.Counter(); parts=collections.Counter(); events=collections.Counter()
     dims=collections.Counter(); invalid=[]; valid=[]; cells=0
-    files=sorted(dat_dir.glob("*.DAT"),key=lambda p:p.name.lower())
+    files=sorted((p for p in dat_dir.iterdir() if p.is_file() and p.suffix.lower()==".dat"),key=lambda p:p.name.lower())
+    event_file_stats=[]
     for p in files:
         try:w,h,t,pa,e=parse_dat(p)
         except ValueError as exc:
             invalid.append((p.name,p.stat().st_size,str(exc))); continue
         valid.append((p.name,w,h)); dims[(w,h)]+=1; cells+=w*h
         tile.update(t); parts.update(pa); events.update(e)
+        unknown=sum(1 for v in e if (v&EVENT_MASK) not in KNOWN_EVENTS)
+        unknown_read=sum(1 for v in e if (v&EVENT_MASK) not in KNOWN_EVENTS and (v&MAP_READ_FLAG))
+        event_file_stats.append((p.name,w,h,unknown,unknown_read))
     def buckets(c):
         o=collections.Counter()
         for v,n in c.items():o[bucket(v)]+=n
         return o
     low=collections.Counter(); high=collections.Counter()
-    read=see=both=0
+    read=see=both=unknown_total=unknown_read_total=unknown_see_total=0
     for v,n in events.items():
         low[v&EVENT_MASK]+=n; high[v&0xf000]+=n
         if v&MAP_READ_FLAG:read+=n
         if v&MAP_SEE_FLAG:see+=n
         if v&(MAP_READ_FLAG|MAP_SEE_FLAG)==(MAP_READ_FLAG|MAP_SEE_FLAG):both+=n
+        if (v&EVENT_MASK) not in KNOWN_EVENTS:
+            unknown_total+=n
+            if v&MAP_READ_FLAG: unknown_read_total+=n
+            if v&MAP_SEE_FLAG: unknown_see_total+=n
     out={"files":len(files),"valid":valid,"invalid":invalid,"dims":dims,"cells":cells,
          "tile":tile,"parts":parts,"events":events,"tile_buckets":buckets(tile),
          "parts_buckets":buckets(parts),"event_low":low,"event_high":high,
-         "read":read,"see":see,"both":both}
+         "read":read,"see":see,"both":both,
+         "event_unknown_total":unknown_total,"event_unknown_read":unknown_read_total,
+         "event_unknown_see":unknown_see_total,
+         "event_file_stats":sorted(event_file_stats,key=lambda x:(-x[3],x[0]))}
     if adrn_path:
         adrn=load_adrn(adrn_path); out["adrn"]=adrn
         for name,c in (("tile_graphics",tile),("parts_graphics",parts)):
@@ -108,6 +119,12 @@ def emit(r):
     print(f"EVENT_READ_FLAG_CELLS|{r['read']}")
     print(f"EVENT_SEE_FLAG_CELLS|{r['see']}")
     print(f"EVENT_BOTH_FLAGS_CELLS|{r['both']}")
+    print(f"EVENT_UNKNOWN_LOW12_CELLS|{r['event_unknown_total']}")
+    print(f"EVENT_UNKNOWN_WITH_READ_FLAG|{r['event_unknown_read']}")
+    print(f"EVENT_UNKNOWN_WITH_SEE_FLAG|{r['event_unknown_see']}")
+    for name,w,h,unknown,unknown_read in r["event_file_stats"][:40]:
+        if unknown:
+            print(f"EVENT_UNKNOWN_FILE|{name}|{w}|{h}|{unknown}|{unknown_read}")
     for v,n in sorted(r["event_high"].items()):print(f"EVENT_HIGH_NIBBLE|0x{v:04x}|{n}")
     for v,n in r["event_low"].most_common():
         print(f"EVENT_LOW12|{v}|{EVENT_NAMES.get(v,'UNKNOWN')}|{n}")
