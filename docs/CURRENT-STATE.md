@@ -523,6 +523,20 @@ Supplemental source ledgers:
 - GitHub Actions run `35367759927` completed **successfully** for the enhanced graph/ambiguity probe.
 - Next priority: **item / magic / pet-skill effect callback joins** — reuse the already recovered schemas and measure data-token -> fixed-source dispatch coverage rather than rebuilding the table parsers.
 
+## Item / magic / pet-skill callback coverage — 2026-09-18
+
+- Closed the table-record -> declared-source dispatch join for active recovered `itemset.txt`, `magic.txt` and `petskill.txt` without redoing their existing schemas.
+- Item callback strings resolve through the global `getFunctionPointerFromName` registry; magic and pet skills each use their own dedicated hash + exact-string dispatch table.
+- Active item callbacks are sparse outside use-time behavior: 957 USE rows / 52 unique tokens; 51 ATTACH rows / 5 tokens; 51 DETACH rows / 5 tokens; 40 DROP rows / 3 tokens; 2 PICKUP rows / 1 token; 3 RELIFE rows / 1 token; INIT/PREOVER/POSTOVER/WATCH are empty in this recovered active itemset.
+- Every recovered non-USE item callback token resolves in all three fixed descendant source tables.
+- Item USE is versioned but fully explainable by the inspected source family: 36/52 unique tokens (904/957 rows) are common to all three; 16/52 tokens (53 rows) exist only in a subset; zero recovered USE tokens are absent from all three.
+- Active magic has the strongest coherence: all 17 unique function tokens across all 181 rows resolve in all three fixed descendant magic dispatch tables.
+- Active pet skills contain 69 unique function tokens across 147 rows: 65 tokens / 143 rows resolve in all three fixed sources, while 4 tokens / 4 rows resolve in none of them. Those four rows are quarantined as recovered-data / inspected-source skew rather than assigned invented behavior.
+- The callback probe uses declared fixed-source table entries; macro-gated textual presence is not promoted to compiled-active proof.
+- Added `tools/stoneage_effect_callback_coverage_probe.py`, deterministic regression tests, dedicated real-byte CI, `research/recovered/STONEAGE-25-EFFECT-CALLBACK-COVERAGE-R1.txt`, and `research/mechanics/STONEAGE-EFFECT-CALLBACK-GRAPH-R1.md`.
+- GitHub Actions run `35368664461` completed **successfully** after parser fixes for the Bismarck magic-table naming divergence.
+- Next priority: **ordinary magic effect semantics**. Magic is selected first because its recovered callback layer is completely covered across all three fixed source lineages; common item effects and common pet-skill effects follow afterward.
+
 ## Immediate next actions
 
 1. **Continue deterministic early/core loop closure using the existing gameplay inventory.** The inventory/coherence foundations plus enemy/encounter/appear/save-point/ordinary-Pool-storage/warp-transition/NPC-world-graph work are already present. The next server-authoritative seam is **item / magic / pet-skill effect callback coverage and joins**. Keep map 817/water-world missing assets, duplicate NPC-template ambiguity, source/data function-set skew, and mixed-snapshot dangling references as version-diff targets for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.\n2. **Reject repacks before analysis.** For every candidate, record source/provenance, archive filename, size, hashes, timestamps, installer metadata, executable names, unexpected patchers/loaders, and signs of private-server modification. Do not call a client "clean" merely because its title/version string looks old.
