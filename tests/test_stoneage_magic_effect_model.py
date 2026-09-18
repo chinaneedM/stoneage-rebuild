@@ -1,6 +1,8 @@
 import unittest
 
 from tools.stoneage_magic_effect_model import (
+    att_reverse_cast_transition,
+    att_reverse_precommand_refresh,
     att_reverse_transition,
     battle_recovery_gain,
     c_atoi,
@@ -17,6 +19,7 @@ from tools.stoneage_magic_effect_model import (
     parse_status_change_option,
     recovery_rate,
     recovery_target_allowed,
+    recovery_wrapper_target_allowed,
     res_and_def_transition,
     resurrection_gain,
     status_recovery_transition,
@@ -131,6 +134,23 @@ class StoneAgeMagicEffectModelTests(unittest.TestCase):
     def test_unknown_target_selector_falls_through_raw(self):
         self.assertEqual(common_alive_target_list(99, set()), (99,))
         self.assertEqual(common_dead_target_list(99, set()), (99,))
+
+    def test_recovery_wrapper_rejects_battle_all_target_only_for_recovery(self):
+        self.assertFalse(
+            recovery_wrapper_target_allowed(
+                "recovery", to_no=22, battling=True
+            )
+        )
+        self.assertTrue(
+            recovery_wrapper_target_allowed(
+                "other_recovery", to_no=22, battling=True
+            )
+        )
+        self.assertTrue(
+            recovery_wrapper_target_allowed(
+                "recovery", to_no=22, battling=False
+            )
+        )
 
     def test_recovery_target_guard_self_only(self):
         self.assertTrue(
@@ -283,6 +303,55 @@ class StoneAgeMagicEffectModelTests(unittest.TestCase):
         self.assertEqual(
             att_reverse_transition(battle_flags=enabled, reverse_bit=bit),
             flags,
+        )
+
+    def test_reverse_enable_immediately_swaps_fixed_attributes(self):
+        r = att_reverse_cast_transition(
+            battle_flags=0,
+            reverse_bit=0x20,
+            earth=10,
+            water=20,
+            fire=30,
+            wind=40,
+        )
+        self.assertEqual(r["battle_flags"], 0x20)
+        self.assertEqual(
+            r["attributes"],
+            {"earth": 30, "water": 40, "fire": 10, "wind": 20},
+        )
+
+    def test_reverse_disable_does_not_immediately_swap_back(self):
+        r = att_reverse_cast_transition(
+            battle_flags=0x20,
+            reverse_bit=0x20,
+            earth=30,
+            water=40,
+            fire=10,
+            wind=20,
+        )
+        self.assertEqual(r["battle_flags"], 0)
+        self.assertEqual(
+            r["attributes"],
+            {"earth": 30, "water": 40, "fire": 10, "wind": 20},
+        )
+
+    def test_precommand_refresh_restores_or_reapplies_reverse(self):
+        base = {"earth": 10, "water": 20, "fire": 30, "wind": 40}
+        self.assertEqual(
+            att_reverse_precommand_refresh(
+                battle_flags=0,
+                reverse_bit=0x20,
+                **base,
+            ),
+            base,
+        )
+        self.assertEqual(
+            att_reverse_precommand_refresh(
+                battle_flags=0x20,
+                reverse_bit=0x20,
+                **base,
+            ),
+            {"earth": 30, "water": 40, "fire": 10, "wind": 20},
         )
 
     def test_res_and_def_skips_living_target(self):
