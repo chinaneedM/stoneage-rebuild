@@ -1,0 +1,107 @@
+name: Probe recovered StoneAge Action NPC usage
+concurrency:
+  group: stoneage-25-action-usage
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/probe-stoneage-25-action-usage.yml
+      - tools/stoneage_action_usage_probe.py
+      - tests/test_stoneage_action_usage_probe.py
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_action_usage_probe -v
+      - run: sudo apt-get update && sudo apt-get install -y unar
+      - name: Recover verified preservation bundle
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25
+          python3 - <<'PY'
+          import hashlib,html,json,re,http.cookiejar,urllib.parse,urllib.request
+          from pathlib import Path
+          ua='Mozilla/5.0'
+          hashes={
+            'ev7l29fw77891go':'7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5',
+            'ytaa168o5jih0lx':'567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb',
+          }
+          opener=urllib.request.build_opener(
+              urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar())
+          )
+          def get(key,suffix):
+            data=urllib.parse.urlencode(
+                {'quick_key':key,'response_format':'json'}
+            ).encode()
+            req=urllib.request.Request(
+                'https://www.mediafire.com/api/1.5/file/get_info.php',
+                data=data,headers={'User-Agent':ua}
+            )
+            with opener.open(req,timeout=60) as r:
+                info=json.load(r)['response']['file_info']
+            if str(info.get('hash','')).lower()!=hashes[key]:
+                raise SystemExit('metadata hash changed')
+            with opener.open(
+                urllib.request.Request(
+                    info['links']['normal_download'],
+                    headers={'User-Agent':ua}
+                ),timeout=60
+            ) as r:
+                page=r.read().decode('utf-8','replace')
+                ref=r.geturl()
+            m=(
+                re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S)
+                or re.search(
+                    r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',
+                    page,re.I
+                )
+            )
+            if not m:
+                raise SystemExit('no direct link')
+            path=Path('/tmp/sa25')/('part.'+suffix)
+            digest=hashlib.sha256()
+            request=urllib.request.Request(
+                html.unescape(m.group(1)),
+                headers={'User-Agent':ua,'Referer':ref}
+            )
+            with opener.open(request,timeout=300) as r,path.open('wb') as out:
+                while True:
+                    block=r.read(1048576)
+                    if not block:
+                        break
+                    out.write(block)
+                    digest.update(block)
+            if digest.hexdigest()!=hashes[key]:
+                raise SystemExit('hash mismatch')
+          get('ev7l29fw77891go','001')
+          get('ytaa168o5jih0lx','002')
+          PY
+          cat /tmp/sa25/part.001 /tmp/sa25/part.002 >/tmp/sa25/bundle.rar
+          test "$(sha256sum /tmp/sa25/bundle.rar|awk '{print $1}')" = "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+          mkdir -p /tmp/sa25/out
+          ulimit -c 0
+          unar -f -o /tmp/sa25/out /tmp/sa25/bundle.rar >/dev/null 2>&1
+      - name: Probe Action NPC usage
+        run: |
+          set -euo pipefail
+          N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
+          test -n "$N"
+          mkdir -p research/recovered
+          R=research/recovered/STONEAGE-25-ACTION-USAGE-R1.txt
+          {
+            echo 'SOURCE_BUNDLE_SHA256|d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5'
+            python3 -m tools.stoneage_action_usage_probe --npc-dir "$N"
+          } > "$R"
+      - name: Commit derived report only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-25-ACTION-USAGE-R1.txt
+          git commit -m 'research: measure recovered Action NPC usage'
+          git pull --rebase origin main
+          git push
