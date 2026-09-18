@@ -24,6 +24,14 @@ Historical archaeology remains useful only when it helps authenticate, date, com
 - Later systems/content may ultimately be integrated, but through coherent progression rather than a feature dump.
 - Emotional milestones such as first pet capture, first ride, first major exploration, etc. are part of the design target.
 
+## Future reconstruction note — historical automation and scripting
+
+- The user's long-term original play experience is preserved as **DESIGN input**: late-game StoneAge progression could become impractically slow if every repeated encounter used only the full manual turn-based battle flow, while third-party fast-battle/automation tools and community-authored scripts became an important part of actual player practice.
+- This does **not** change the current clean-client standard. Official runtime/resources and third-party automation remain separated during archaeology.
+- When reconstruction begins, progression pacing, encounter frequency, battle duration, fast battle/auto-battle, and a possible official sandboxed scripting system must be evaluated together rather than assuming either "copy the grind exactly" or "remove the grind completely."
+- The implementation decision is deliberately deferred until real client/data analysis exposes the underlying progression and combat structure.
+- Canonical design record: `DD-010`.
+
 ## Latest clean-client correction — 2026-09-18
 
 - **Version labels are not byte provenance.** A server/download label such as "1.82" must not be promoted to a client-build fact until the installer/file tree/executable is recovered and inspected.

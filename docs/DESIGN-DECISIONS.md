@@ -90,3 +90,23 @@ Once a usable specimen exists, technical work outranks general historical resear
 7. reimplement the resulting specifications with modern code and independently created/recreated production assets.
 
 Historical articles, prices, package identifiers, staff recollections and marketplace material are supporting evidence only when they help authenticate a client, establish lineage, locate bytes, or resolve a technical ambiguity.
+
+## DD-010 — Historical automation and player scripting are a future design track
+
+**Status:** Accepted as a design constraint; implementation decision deferred
+
+The user's long-term first-hand StoneAge play experience identifies a practical characteristic of the historical player experience: late-game progression could become extremely time-consuming when every repeated encounter required the full traditional transition into and execution of the turn-based battle scene. Third-party automation tools, accelerated-battle behavior and community-authored scripts became an important part of how many players actually played for long periods.
+
+This is recorded as **USER EXPERIENCE / DESIGN INPUT**, not as a claim that third-party tools were part of an official clean client.
+
+Project consequences:
+
+- During archaeology and reverse engineering, official client/runtime data and third-party tools/scripts must remain technically separated so the project can identify what belonged to the original game and what belonged to the surrounding player ecosystem.
+- Historical use of automation does **not** make a contaminated client executable acceptable as the clean baseline.
+- During future reconstruction, do not automatically reproduce the original grind curve and then require an external tool to make the game practical.
+- Also do not automatically erase the historical automation experience merely by flattening progression or reducing every experience requirement. Original pacing, repeated combat, convenience tooling and player-created automation should be studied together.
+- Candidate modern solutions may include native fast battle, configurable auto-battle, repeat-battle controls, offline/simulation-style progression where appropriate, or an official sandboxed scripting/automation system.
+- Historical player-created scripts are especially important as evidence of **emergent player tooling and community creativity**. A future scripting system may be considered as a first-class game feature rather than an uncontrolled external program, but its scope, security model, balance impact and UX are deferred until reconstruction begins.
+- Final choices should be made only after recovered client/data analysis exposes the real combat timing, experience curve, encounter frequency, travel friction and progression structure.
+
+No decision is made yet to ship an external-style addon, script engine, auto-combat system, or altered experience curve. The purpose of this decision is to ensure future reconstruction does not optimize away a major part of the historical play experience before it is understood.
