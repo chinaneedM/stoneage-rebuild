@@ -60,7 +60,7 @@ The convergent core includes:
 - address-book entries;
 - every valid carried pet by pet slot.
 
-Later builds also serialize pool/shared item and pet arrays when those systems are present.
+Ordinary embedded `poolitemN` and `poolpetN` item/pet storage is also serialized unconditionally by these fixed descendants. The later account-shared `Depotitem` / `Depotpet` warehouse surfaces are separate macro-gated persistence channels.
 
 ### WORK fields are different
 
@@ -94,7 +94,7 @@ Login reconstructs a fresh `Char` with defaults and then parses serialized keys 
 - titles;
 - address book;
 - carried pets;
-- optional pool items/pets.
+- ordinary embedded pool items/pets.
 
 Item and pet strings create new runtime item/pet objects and place their indices into the reconstructed character.
 
@@ -350,18 +350,18 @@ The project should keep those two statements separate:
 - **historical rule:** old server was asynchronous and weakly durable;
 - **future design option:** rebuild can provide stronger persistence guarantees.
 
-## Shared depot/pet storage is later
+## Shared Depot item/pet warehouse is later
 
-The earlier candidate seam, account-shared pet storage, is controlled by macros such as:
+The fixed descendants distinguish **ordinary character-embedded pool storage** from a later account-shared **Depot** warehouse. Only the Depot layer is controlled by macros such as:
 
 - `_CHAR_POOLPET`;
 - `_NPC_DEPOTPET`.
 
-The preserved generated version text explicitly presents it as an optional later shared pet warehouse, with 30 depot pet slots in these branches.
+The preserved generated version text explicitly presents the Depot layer as an optional later shared pet warehouse, with 30 depot pet slots in these branches.
 
-It is therefore not promoted into the early persistence core merely because current descendants support it.
+By contrast, ordinary `indexOfExistPoolItems` / `indexOfPoolPet` arrays and their `poolitemN` / `poolpetN` serialization are part of the fixed character object without those Depot feature guards. Therefore the ordinary pools belong to the reconstructed fixed-descendant persistence core, while the shared Depot warehouse remains versioned.
 
-The same separation applies to shared item depot persistence.
+The same separation applies to the later shared item Depot persistence.
 
 ## Deterministic model
 
@@ -378,7 +378,7 @@ Regression coverage includes:
 - periodic/save-point `unlock=FALSE`;
 - logout `unlock=TRUE`;
 - serialization surfaces versus WORK/runtime fields;
-- optional shared pool serialization;
+- ordinary inline pool serialization versus later optional Depot persistence;
 - deletion of DROPATLOGOUT items before snapshot;
 - battle/cleanup/save/runtime-destruction ordering;
 - SAAC unlock-before-write ordering;
@@ -388,7 +388,7 @@ Regression coverage includes:
 
 ## Evidence status
 
-- **FACT:** character save serializes persistent data/string fields, flags, skills, items, titles, address book and carried pets.
+- **FACT:** character save serializes persistent data/string fields, flags, skills, carried/equipped items, ordinary pool items, titles, address book, carried pets and ordinary pool pets.
 - **FACT:** generic WORK/runtime arrays are not part of the character serializer.
 - **FACT:** periodic save is controlled by configurable interval and uses `unlock=FALSE`.
 - **FACT:** save-point save uses `unlock=FALSE`.
@@ -400,7 +400,7 @@ Regression coverage includes:
 - **FACT:** SAAC unlocks the account before attempting the character-file write.
 - **FACT:** runtime character/pet objects are deleted immediately after sending the logout-save request.
 - **FACT:** failed ordinary logout save returns `Cannot save` with no automatic retry or runtime rollback.
-- **VERSIONED:** strict DATAEND parsing, shared depot arrays, online-time/timed-effect persistence bridges and other later fields.
+- **VERSIONED:** strict DATAEND parsing, account-shared Depot arrays/channels, online-time/timed-effect persistence bridges and other later fields.
 - **OPEN:** exact 1999/early-1.x save schema size and every field present in the commercial build.
 - **OPEN:** production operational mitigations outside source (backups, watchdogs, manual restoration, filesystem semantics).
 - **OPEN:** exact chronology of shared item/pet depot extensions.
