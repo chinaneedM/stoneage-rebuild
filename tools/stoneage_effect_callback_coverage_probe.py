@@ -11,6 +11,40 @@ import hashlib
 import re
 from pathlib import Path
 
+ITEM_COMMON_FAMILY = {
+    "ITEM_useRecovery": "battle_recovery",
+    "ITEM_useStatusChange": "battle_status",
+    "ITEM_useStatusRecovery": "battle_status",
+    "ITEM_useMagicDef": "battle_defense",
+    "ITEM_useParamChange": "battle_param",
+    "ITEM_useFieldChange": "battle_field",
+    "ITEM_useAttReverse": "battle_field",
+    "ITEM_useRessurect": "battle_resurrection",
+    "ITEM_useCaptureUp": "battle_capture",
+    "ITEM_useWarp": "movement_encounter",
+    "ITEM_petFollow": "movement_encounter",
+    "ITEM_useNoenemy": "movement_encounter",
+    "ITEM_equipNoenemy": "movement_encounter",
+    "ITEM_remNoenemy": "movement_encounter",
+    "ITEM_useEncounter": "movement_encounter",
+    "ITEM_useMic": "social_ui",
+    "ITEM_dropMic": "social_ui",
+    "ITEM_useRenameItem": "social_ui",
+    "ITEM_pickupDice": "social_ui",
+    "ITEM_dropDice": "social_ui",
+    "ITEM_initLottery": "social_ui",
+    "ITEM_useLottery": "social_ui",
+    "ITEM_useSkup": "progression_ownership",
+    "ITEM_AddPRSkillPoint": "progression_ownership",
+    "ITEM_AddPRSkillPercent": "progression_ownership",
+    "ITEM_changePetOwner": "progression_ownership",
+    "ITEM_useEffectTohelos": "special_effect",
+    "ITEM_DeleteByWatched": "lifecycle",
+    "ITEM_DeleteTimeWatched": "lifecycle",
+    "ITEM_WearEquip": "equipment_hook",
+    "ITEM_ReWearEquip": "equipment_hook",
+}
+
 ITEM_CALLBACK_COLUMNS = {
     "initfunc": 6,
     "preoverfunc": 7,
@@ -259,6 +293,29 @@ def parse_named_function_guard_map(path, marker):
     return out
 
 
+def common_unguarded_family_counts(counter, lineage_maps, family_map=ITEM_COMMON_FAMILY):
+    """Aggregate active tokens that are unguarded in every fixed source lineage."""
+    lineages = tuple(sorted(lineage_maps))
+    unique = collections.Counter()
+    rows = collections.Counter()
+    covered_tokens = set()
+    for token, count in counter.items():
+        if all(
+            token in lineage_maps[name] and not lineage_maps[name][token]
+            for name in lineages
+        ):
+            family = family_map.get(token, "unclassified")
+            unique[family] += 1
+            rows[family] += count
+            covered_tokens.add(token)
+    return {
+        "unique": unique,
+        "rows": rows,
+        "covered_unique": len(covered_tokens),
+        "covered_rows": sum(counter[t] for t in covered_tokens),
+    }
+
+
 def guard_coverage(counter, lineage_maps):
     lineages = tuple(sorted(lineage_maps))
     unique_counts = collections.Counter()
@@ -393,6 +450,9 @@ def analyze(args):
             for slot, counter in item_slots.items()
         },
         "item_use_guard": guard_coverage(item_slots["usefunc"], item_guard_maps),
+        "item_use_common_families": common_unguarded_family_counts(
+            item_slots["usefunc"], item_guard_maps
+        ),
         "magic": coverage(magic_tokens, magic_sets),
         "magic_guard": guard_coverage(magic_tokens, magic_guard_maps),
         "petskill": coverage(petskill_tokens, petskill_sets),
@@ -437,6 +497,17 @@ def emit(args):
             f"row_uses={ig['row_counts'].get(label,0)}"
         )
     print(f"ITEM_USE_GUARD_CLASSIFICATION_SHA256|{ig['classification_sha256']}")
+    fam = r["item_use_common_families"]
+    print(
+        f"ITEM_USE_COMMON_FAMILY_TOTAL|unique_tokens={fam['covered_unique']}|"
+        f"row_uses={fam['covered_rows']}"
+    )
+    for family in sorted(set(fam["unique"]) | set(fam["rows"])):
+        print(
+            f"ITEM_USE_COMMON_FAMILY|{family}|"
+            f"unique_tokens={fam['unique'].get(family,0)}|"
+            f"row_uses={fam['rows'].get(family,0)}"
+        )
     emit_coverage("MAGIC", r["magic"])
     g = r["magic_guard"]
     labels = (
