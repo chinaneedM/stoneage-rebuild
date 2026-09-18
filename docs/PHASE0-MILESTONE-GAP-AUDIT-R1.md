@@ -185,29 +185,62 @@ The stable non-USE semantics cover equipment encounter control, PickAllPet attac
 
 Reference: `research/mechanics/STONEAGE-ITEM-EFFECT-CORE-R1.md`.
 
-### B8 — Common pet-skill effect semantics — highest priority
+### B8 — Common pet-skill effect semantics — completed in R1
 
-The recovered active pet-skill table has:
+The recovered active pet-skill table has 69 unique callbacks / 147 rows.
 
-- 69 unique callback tokens / 147 rows;
-- 65 tokens / 143 rows resolve in all three fixed source tables;
-- 4 tokens / 4 rows resolve in none and remain quarantined as source/data skew.
+Final comment-aware dispatch/body classification:
 
-Do **not** promote the 65 all-three textual matches directly into an early/common core.
+- **15 unguarded + stable-body tokens / 33 rows**;
+- **50 all-three guarded tokens / 110 rows**;
+- 0 mixed-guard;
+- 0 partial-source;
+- **4 all-source-missing tokens / 4 rows**, still quarantined.
 
-The three fixed pet-skill dispatch tables themselves share 68 textual families, but only **15 are unguarded in all three**; the other common entries are feature-macro gated.
+R1 reconstructs the 15 stable active families:
 
-Next work must therefore:
+- none / normal attack / normal guard;
+- continuation attack;
+- charge attack;
+- guardian;
+- power balance;
+- mighty;
+- ordinary status-change attack;
+- earth round;
+- guard break;
+- abduct;
+- steal;
+- merge;
+- no-guard.
 
-1. add comment-aware dispatch-guard classification for active pet-skill tokens;
-2. add substantive function-body classification;
-3. identify the active stable-body common subset;
-4. reconstruct that subset first;
-5. keep guarded families as explicit version layers and the four all-source-missing recovered rows quarantined.
+The reconstruction follows both handler-side COM1/COM2/COM3 encoding and downstream battle execution. It preserves old implementation quirks including continuation damage division, charge wait-state semantics, guardian validity gates, Mighty’s missing-multiplier zero encoding, status turn+1 work timers, EarthRound stale-COM3 residue, Abduct’s minimum-50 chance and unconditional attacker exit after a valid attempt, destructive/non-transfer Steal behavior, and NoGuard’s parsed-but-unconsumed parameters.
 
-### B9 — Detailed combat sub-mechanics not yet promoted
+`tools/stoneage_petskill_core_model.py` is covered by 50 deterministic regression tests. GitHub Actions run `35374921866` completed successfully; report-trigger rerun `35375022224` also passed.
 
-The battle core is sufficient for the present loop audit, but future deterministic closure still needs source-verified treatment of remaining action/status/AI formulas where not already modeled. Add these only when early/core evidence requires them rather than copying later feature branches wholesale.
+The 50 guarded active families remain explicit version layers. The four all-source-missing recovered rows remain quarantined rather than assigned invented behavior.
+
+Reference: `research/mechanics/STONEAGE-PETSKILL-CORE-R1.md`.
+
+### B9 — Early/core NPC secondary argument/config edges — highest priority
+
+The generic NPC/world-content graph is already closed. Do not reopen broad NPC enumeration.
+
+Resolve only secondary arguments/configuration that still materially affect the ordinary early/core game loop after item/magic/pet-skill semantics are known.
+
+Prioritize edges where:
+
+- a common NPC dispatch function has multiple materially different argument modes;
+- the argument selects an early/core state transition, economy operation, travel rule, battle rule, save/return behavior, or pet/item operation;
+- current recovered data contains an unresolved source/data mismatch that prevents deterministic replay;
+- the edge cannot already be explained by the existing NPC/world graph, savepoint, storage, warp, encounter, battle, item, magic or pet-skill models.
+
+Keep event packages, family/profession/tournament systems and other macro-gated later branches out of this pass.
+
+### B10 — Detailed combat sub-mechanics not yet promoted
+
+The battle core is sufficient for the present ordinary loop audit, and magic/item/pet-skill action semantics are now substantially closed.
+
+Continue deeper combat reconstruction only where a concrete early/core evidence gap remains after the NPC secondary-edge pass. Do not copy later feature branches wholesale.
 
 ## C. Later/versioned optional systems — do not promote into early core by default
 
@@ -271,8 +304,8 @@ The principal historical blocker remains the absence of a provenance-preserving 
 5. ~~Close item / magic / pet-skill callback joins and classify fixed-source coverage.~~ **Completed.**
 6. ~~Reconstruct the nine all-three unguarded ordinary magic effect callbacks.~~ **Completed.**
 7. ~~Reconstruct stable common item USE + non-USE callback semantics after dispatch/body refinement.~~ **Completed.**
-8. Classify active pet-skill callbacks by dispatch guard + function body, then reconstruct only the stable-body common subset; keep four all-source-missing rows quarantined.
-9. Resolve only early/core NPC secondary argument/config edges that materially remain.
+8. ~~Classify pet-skill guard/body coverage and reconstruct the 15 stable active families; quarantine four all-source-missing rows.~~ **Completed.**
+9. Resolve only **early/core NPC secondary argument/config edges** that materially remain.
 10. Continue detailed combat sub-mechanics only where evidence shows an early/core gap.
 
 This ordering closes the ordinary game-state loop before expanding into optional systems.
