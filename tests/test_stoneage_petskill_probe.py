@@ -45,6 +45,9 @@ class PetSkillProbeTests(unittest.TestCase):
             self.assertEqual(f["selected"],"cfree6")
             self.assertEqual(f["trailing_cols"],1)
             self.assertEqual(f["profiles"][11][3],1)
+            self.assertEqual(f["text_stats"][11]["count"],1)
+            self.assertEqual(f["text_stats"][11]["unique"],1)
+            self.assertEqual(f["text_stats"][11]["minlen"],4)
 
     def test_legacy_and_usetype_schema_detection(self):
         with tempfile.TemporaryDirectory() as td:

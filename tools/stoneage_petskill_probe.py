@@ -57,9 +57,9 @@ def rows_for(path):
         rows.append(fields)
         counts[len(fields)]+=1
         max_cols=max(max_cols,len(fields))
-    profiles=[]
+    profiles=[]; text_stats=[]
     for idx in range(max_cols):
-        integer=empty=text=missing=0
+        integer=empty=text=missing=0; text_values=[]
         for fields in rows:
             if idx>=len(fields):
                 missing+=1; continue
@@ -69,9 +69,15 @@ def rows_for(path):
             elif to_int(v) is not None:
                 integer+=1
             else:
-                text+=1
+                text+=1; text_values.append(v)
         profiles.append((idx+1,integer,empty,text,missing))
-    return rows,counts,max_cols,profiles
+        lens=collections.Counter(len(v) for v in text_values)
+        text_stats.append({
+            "col":idx+1,"count":len(text_values),"unique":len(set(text_values)),
+            "minlen":min(lens) if lens else 0,"maxlen":max(lens) if lens else 0,
+            "lengths":lens,
+        })
+    return rows,counts,max_cols,profiles,text_stats
 
 def parse_schema(rows,schema):
     chars=schema["char_fields"]; ints=schema["int_names"]
@@ -109,7 +115,7 @@ def analyze(data_dir,setup=None):
     enemy_active,enemy_file,enemy_ids=enemy_skill_ids(data_dir,setup)
     files=[]
     for p in sorted(data_dir.glob("petskill*.txt"),key=lambda x:x.name.lower()):
-        rows,field_counts,max_cols,profiles=rows_for(p)
+        rows,field_counts,max_cols,profiles,text_stats=rows_for(p)
         candidates={}
         for name,schema in SCHEMAS.items():
             parsed=parse_schema(rows,schema)
@@ -157,7 +163,7 @@ def analyze(data_dir,setup=None):
         unreferenced=sorted(selected["idset"]-enemy_ids)
         files.append({
             "name":p.name,"bytes":p.stat().st_size,"sha":sha256(p),
-            "rows":len(rows),"field_counts":field_counts,"max_cols":max_cols,"profiles":profiles,
+            "rows":len(rows),"field_counts":field_counts,"max_cols":max_cols,"profiles":profiles,"text_stats":text_stats,
             "candidates":candidates,"selected":selected_name,
             "trailing_cols":(max_cols-selected["needed"]) if selected_name!="unknown" else None,
             "counters":counters,"func_count":len(funcs),
@@ -189,6 +195,11 @@ def emit(data_dir,setup=None):
             print(f"FIELD_COUNT|{f['name']}|{n}|{c}")
         for col,integer,empty,textc,missing in f["profiles"]:
             print(f"COLUMN_PROFILE|{f['name']}|{col}|integer={integer}|empty={empty}|text={textc}|missing={missing}")
+        for s in f["text_stats"]:
+            if not s["count"]: continue
+            print(f"TEXT_COLUMN_STAT|{f['name']}|{s['col']}|count={s['count']}|unique={s['unique']}|minlen={s['minlen']}|maxlen={s['maxlen']}")
+            for n,c in sorted(s["lengths"].items()):
+                print(f"TEXT_LENGTH|{f['name']}|{s['col']}|{n}|{c}")
         for name in SCHEMAS:
             c=f["candidates"][name]
             print(f"SCHEMA_SCORE|{f['name']}|{name}|compatible={len(c['rows'])}|malformed={c['malformed']}|exact={c['exact']}|enemy_coverage={c['coverage']}|duplicate_ids={c['duplicate_ids']}|id_min={c['id_min']}|id_max={c['id_max']}")
