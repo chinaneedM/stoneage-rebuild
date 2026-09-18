@@ -1,0 +1,15 @@
+StoneAge recovered item-atom probe — R1
+No original atom/item/pet names or source rows are stored in this report.
+SCHEMA_SOURCE|descendant_ITEM_initItemAtom_ITEM_initItemIngCache_ITEM_merge_getPetFix
+ATOM_SCHEMA|name + magicflg
+ITEMSET_LINK|itemset.ingname0..4 -> itematom.name
+ENEMYBASE_LINK|enemybase.atomfixname1..5 -> itematom.name
+ITEMATOM_FILE_EXISTS|1
+FILE|itematom.txt|bytes=775|sha256=daa13fe6d218e09e36f00a06202b6ed089e13d9acc09ffac7769835925899cfa|rows=83|malformed=83|unique_names=0|duplicate_names=0
+FIELD_COUNT|3|83
+ITEMSET_ATOM_COVERAGE|itemset.txt|active=1|rows=13252|bad_width=0|recipe_items=12175|slot_refs=43621|unique_refs=78|matched=0|missing=78|missing_values=0
+ITEMSET_INGVALUE_STAT|itemset.txt|min=1|max=3834|unique=239
+ITEMSET_ATOM_COVERAGE|itemset0710.txt|active=0|rows=13910|bad_width=0|recipe_items=12668|slot_refs=44798|unique_refs=83|matched=0|missing=83|missing_values=0
+ITEMSET_INGVALUE_STAT|itemset0710.txt|min=1|max=5000|unique=242
+ENEMYBASE_ATOM_COVERAGE|enemybase.txt|active=1|rows=988|malformed=0|templates_with_atoms=748|slot_refs=3492|unique_refs=43|matched=0|missing=43
+ENEMYBASE_ATOM_COVERAGE|enemybase2.txt|active=0|rows=640|malformed=0|templates_with_atoms=457|slot_refs=2192|unique_refs=38|matched=0|missing=38
