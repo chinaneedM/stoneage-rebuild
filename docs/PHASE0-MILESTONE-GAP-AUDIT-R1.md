@@ -75,7 +75,7 @@ Direct trade and item shops are modeled, but movement between carried state and 
 - persistence boundary;
 - pet-shop buy/sell or release semantics where they belong to the ordinary early loop.
 
-Later shared-pool extensions must remain versioned.
+Later account-shared **Depot/warehouse** extensions must remain versioned; ordinary character-embedded pool storage is a separate fixed-descendant persistence surface.
 
 ### B3 — Field warp / portal / map-transition authority
 
@@ -121,7 +121,7 @@ Keep these as separate version-diff tracks unless earlier evidence independently
 - AutoPK / tournament / arena extensions;
 - pet fusion/egg systems;
 - six-player party extensions;
-- shared pool item/pet systems;
+- account-shared Depot/warehouse item and pet systems;
 - binding/free-trade restrictions, fame/tax/shop extensions;
 - later mission/event packages, hero/angel branches and high-level rebirth additions;
 - later graphics/compression/high-color branches.
