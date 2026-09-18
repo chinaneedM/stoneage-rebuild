@@ -21,8 +21,8 @@ class GameplayInventoryTests(unittest.TestCase):
             buf=io.StringIO()
             with contextlib.redirect_stdout(buf):emit(out,c,s)
             text=buf.getvalue()
-            self.assertIn("CANDIDATE|client,item|item.dat|3|.dat|",text)
-            self.assertIn("CANDIDATE|server,pet,character_npc_enemy|enemybase.txt|1|.txt|",text)
+            self.assertIn("CANDIDATE|client|item|item.dat|3|.dat|",text)
+            self.assertIn("CANDIDATE|server|pet,character_npc_enemy|enemybase.txt|1|.txt|",text)
             self.assertNotIn("map/100",text)
 
 if __name__=="__main__":unittest.main()
