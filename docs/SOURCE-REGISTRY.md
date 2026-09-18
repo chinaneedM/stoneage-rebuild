@@ -92,10 +92,17 @@ This is the canonical ledger for historical sources. Entries should record prove
   - Japan System Supply was developing `STONEAGE` by May 1999.
   - The published pre-launch concept emphasized a relaxed Stone Age RPG rather than war-centered play.
   - Food/resources and community were explicitly part of the published design description.
-  - Cooperative player activity was described as contributing to village growth / richer communal life.
+  - The scan's indexed contemporaneous text describes **village growth / community formation** as a central player activity.
+  - It names **hunting, gathering and farming** as intended life/resource activities used to secure food/resources and support village development.
+  - It describes player cooperation and differing roles within the community as part of the intended play structure.
+  - It explicitly frames the design as trying to minimize the usual network-game emphasis on **fighting, destroying and taking from others**, reinforcing the cooperative/non-destructive pre-launch design target.
   - A summer 1999 service start was then being targeted.
+- Evidence interpretation:
+  - these are **published May-1999 design intentions**, valuable for reconstructing the original concept and for testing recovered beta/retail builds;
+  - each mechanic must be verified separately against September beta, October retail and JSS update-state evidence before being labeled a shipped gameplay feature.
 - Does not support:
-  - that every described mechanic shipped unchanged in the September beta or October retail release;
+  - that hunting/gathering/farming, village-development systems or role mechanics shipped unchanged—or at all—in the September beta or October retail release;
+  - that a design goal of minimizing fighting/destruction meant combat was absent;
   - exact executable/client version numbers;
   - final retail package contents.
 - Follow-up: capture exact page number(s), scan metadata, and stable archival copy/hash where legally appropriate.
