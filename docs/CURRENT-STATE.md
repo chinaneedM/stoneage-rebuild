@@ -659,11 +659,24 @@ Supplemental source ledgers:
 - TimeMan has 34 file-backed refs but primarily controls NPC time-window visibility/graphics/messages, so it is lower priority than the player-state/battle/travel seams.
 - The queue also records 30 create refs behind duplicate template names and 15 missing secondary argument files, all currently quarantined as preservation/source-order defects rather than silently repaired.
 
+## NPCEnemy active core closure — 2026-09-19
+
+- Real-byte NPCEnemy usage probe 35379672528 succeeded on the verified 2.5 bundle: 279/279 refs are resolved file-backed configs; 200 are gym mode and 79 normal mode.
+- All 279 recovered configs normalize to entype=2. dieact=1 is active in 250 configs and hide/revive in 29; 10 configs activate onebattle=1; 78 use the pre-battle Yes/No prompt; 18 use the item gate; one uses steal.
+- Reconstructed the fixed-descendant common NPCEnemy state machine without reopening general combat: normal first-10 enemy formation with big-enemy front placement, gym 64-candidate random main/pet selection, battle-mode metadata, item/onebattle/prompt gates, steal timing/deletion, dieact hide/revive, old post-win warp, and recovered NEWNPCENEMY FREE/WARP behavior.
+- Preserved source quirks: party clients can return true from encounter routing without directly starting battle; duplicate required-item IDs can reuse one physical item; steal found is cumulative; revival requires strict now > death + delay; ENDEV/NOWEV relational FREE operators collapse to bit presence.
+- Recovered gym data validates the separate selector: every one of 200 gym blocks has 17 enemyno candidates and an enemypetno list of 34 or 36 candidates, while recovered normal lists never exceed the ordinary 10-token limit.
+- The two recovered NEWNPCENEMY blocks contain three NEWEVENT segments with FREE + WARP; FREE families are only ENDEV / EQUIT / LV / NOWEV and no recovered CHECKPARTY or NEW_ACTION mutation key is present.
+- Descendant boundaries remain explicit: _EMENY_CHANCEMAN is enabled in gavin/iriselia but not Bismarck; Bismarck has an extra BattleIn revival guard; _NEW_ITEM_ changes inventory capacity only in Bismarck.
+- Added tools/stoneage_npcenemy_core_model.py, tests/test_stoneage_npcenemy_core_model.py, dedicated CI, and research/mechanics/STONEAGE-NPCENEMY-CORE-R1.md.
+- Local reference validation passes 25 deterministic tests.
+- NPCEnemy R1 is closed for fixed-descendant common core plus recovered 2.5 active surface. Exact 1999/JSS equivalence remains OPEN.
+
 ## Immediate next actions
 
-1. **Advance to NPCEnemy as the next recovered-data-driven secondary-argument seam.** Start with a payload-free 2.5 usage probe over its 279 file-backed refs, then reconstruct only active common enemy-group, item/event gate, battle-entry and post-battle mutation/warp behavior from the three fixed source lineages.
-2. **Keep NPCEnemy battle work bounded by the NPC evidence.** Reuse the already closed common combat mechanics; only add formulas or state transitions that NPCEnemy concretely exposes.
-3. **After NPCEnemy, take Bus + Airplane as the next shared travel/economy seam.** Their recovered queue has 12 file-backed refs and their fixed sources share route, boarding, item, level and Stone checks.
+1. **Advance to Bus + Airplane as the next shared travel/economy seam.** The recovered secondary-argument queue has 7 Bus + 5 Airplane file-backed refs. Reconstruct their common route, boarding, item, level and Stone gates first, then measure actual 2.5 configuration surface without retaining route payloads.
+2. **Keep the travel reconstruction source/data-driven.** Separate common Bus/Airplane core from compile-gated ticket deletion, max-level or later transport extensions; only promote branches used by fixed descendants and recovered specimen.
+3. **After Bus + Airplane, rerun the secondary-argument queue decision.** Do not reopen NPCEnemy or already closed Warp/ItemShop/SavePoint/PetShop/PetSkillShop/PoolItemShop unless a concrete source/data mismatch appears.
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
 6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.
