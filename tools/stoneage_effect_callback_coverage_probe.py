@@ -148,7 +148,7 @@ def source_dispatch_sets(args):
         },
         "bismarck": {
             "item": parse_global_function_table(args.bismarck_function),
-            "magic": parse_named_function_table(args.bismarck_magic, "sMageicFunctionTable[]"),
+            "magic": parse_named_function_table(args.bismarck_magic, ("sMageicFunctionTable[]", "MAGIC_functbl[]")),
             "petskill": parse_named_function_table(args.bismarck_petskill, "PETSKILL_functbl[]"),
         },
     }
