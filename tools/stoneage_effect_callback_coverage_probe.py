@@ -634,6 +634,14 @@ def analyze(args):
             slot: coverage(counter, item_sets)
             for slot, counter in item_slots.items()
         },
+        "item_slot_guards": {
+            slot: guard_coverage(counter, item_guard_maps)
+            for slot, counter in item_slots.items()
+        },
+        "item_slot_common_families": {
+            slot: common_unguarded_family_counts(counter, item_guard_maps)
+            for slot, counter in item_slots.items()
+        },
         "item_use_guard": guard_coverage(item_slots["usefunc"], item_guard_maps),
         "item_use_common_families": common_unguarded_family_counts(
             item_slots["usefunc"], item_guard_maps
@@ -671,6 +679,31 @@ def emit(args):
         print(f"ACTIVE_FILE|{kind}|{r['paths'][kind].name}|rows={r['row_counts'][kind]}")
     for slot, result in r["item_slots"].items():
         emit_coverage(f"ITEM_SLOT|{slot}", result)
+    for slot in ("attachfunc", "detachfunc", "dropfunc", "pickupfunc", "relifefunc"):
+        sg = r["item_slot_guards"][slot]
+        for label in (
+            "unguarded_all3",
+            "guarded_all3",
+            "mixed_guard",
+            "partial_source",
+            "missing_all3",
+        ):
+            print(
+                f"ITEM_SLOT_GUARD_CLASS|{slot}|{label}|"
+                f"unique_tokens={sg['unique_counts'].get(label,0)}|"
+                f"row_uses={sg['row_counts'].get(label,0)}"
+            )
+        sf = r["item_slot_common_families"][slot]
+        print(
+            f"ITEM_SLOT_COMMON_FAMILY_TOTAL|{slot}|"
+            f"unique_tokens={sf['covered_unique']}|row_uses={sf['covered_rows']}"
+        )
+        for family in sorted(set(sf["unique"]) | set(sf["rows"])):
+            print(
+                f"ITEM_SLOT_COMMON_FAMILY|{slot}|{family}|"
+                f"unique_tokens={sf['unique'].get(family,0)}|"
+                f"row_uses={sf['rows'].get(family,0)}"
+            )
     ig = r["item_use_guard"]
     labels = (
         "unguarded_all3",
