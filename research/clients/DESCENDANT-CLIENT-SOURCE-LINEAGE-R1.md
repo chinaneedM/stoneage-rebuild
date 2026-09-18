@@ -93,6 +93,53 @@ https://github.com/Signally190/sking-sacli/blob/40cb67ef090ebc0cffd57ca947871bdf
 
 The same `CG_TITLE_JSS_LOGO` and `CG_TITLE_DREAM_LOGO` identifiers occur in this branch and in multiple other public community StoneAge source trees. This repetition suggests a circulated common ancestry, but source circulation itself is not provenance.
 
+## 2A. Community lineage C — `anson1788/stoneage`
+
+Repository:
+
+https://github.com/anson1788/stoneage
+
+Observed source anchor used in this pass:
+
+`1997fc20456dbda36d181b9680ae10bed2e9cdf9`
+
+This is another later/community client-source preservation tree. Its paths and project settings are visibly tied to much later Hong Kong/Taiwan-era builds and modern Visual Studio work, so it remains **C / LINEAGE LEAD**, not JSS primary evidence.
+
+### C / LINEAGE LEAD — `CheckForUpdate` survives independently
+
+In:
+
+`石器时代8.5客户端最新源代码/石器源码/system/main.cpp`
+
+the client still declares an updater-check handle and creates:
+
+`CreateMutex(NULL, FALSE, "CheckForUpdate")`
+
+with a comment stating that the object is used so the update program can determine whether StoneAge is running.
+
+### C / LINEAGE LEAD — `sa.exe` is explicit build/debug metadata
+
+In:
+
+`石器时代8.5客户端最新源代码/石器源码/石器源码.vcxproj`
+
+the Win32 output path explicitly ends in:
+
+`sa.exe`
+
+and the corresponding `.vcxproj.user` debugger settings also point at later StoneAge installations using `sa.exe`; a VER25 setting separately names `sa25.exe`.
+
+### Negative / differentiating observation
+
+Focused source search in this lineage did **not** recover Signally's combination of:
+
+- direct-start rejection keyed on `updated`;
+- the user-facing instruction to run `StoneAge.exe`;
+- `PARAM_ARGS`;
+- `HASH___________@@@@@@@@`.
+
+This does not prove those traits never existed historically. It does show that `CheckForUpdate` and `sa.exe` can persist in a related StoneAge source lineage **without** the Signally-specific launcher-gate strings.
+
 ## 3. Cross-lineage pattern
 
 Global public-source search finds the JSS/DREAM title constants in multiple separately published StoneAge code trees, including:
@@ -106,9 +153,9 @@ Global public-source search finds the JSS/DREAM title constants in multiple sepa
 
 This is useful for reconstructing **code lineage persistence**, not for dating the constants to a particular JSS build.
 
-## 3A. Cross-lineage refinement - updater mutex is separable from launcher/runtime naming
+## 3A. Cross-lineage refinement - updater traits must be weighted separately
 
-A focused comparison of the two preserved client trees changes the working model in an important way.
+A focused comparison of three preserved client trees changes the working model in an important way.
 
 ### BismarckDD/stoneage at 999ffdf1d220ec6666eb65339180689c9caf1876
 
@@ -127,21 +174,39 @@ This branch retains all of the following together:
 - direct-start rejection unless command line contains `updated`;
 - user-facing instruction to run `StoneAge.exe`;
 - mutex `CheckForUpdate`;
-- project/debug metadata identifying the game runtime as `sa.exe` / target `sa` in relevant configurations.
+- project/debug metadata identifying the game runtime as `sa.exe` / target `sa` in relevant configurations;
+- a disabled/conditional patcher gate using `PARAM_ARGS = "HASH___________@@@@@@@@"`.
+
+### anson1788/stoneage at 1997fc20456dbda36d181b9680ae10bed2e9cdf9
+
+This later source tree independently retains:
+- mutex `CheckForUpdate`;
+- build/debug metadata targeting `sa.exe` (plus a later `sa25.exe` configuration).
+
+But the inspected/publicly indexed source does **not** expose:
+- Signally's `updated` direct-start requirement;
+- the `StoneAge.exe` user-facing launcher instruction;
+- `PARAM_ARGS`;
+- `HASH___________@@@@@@@@`.
 
 ### Research consequence
 
-**C / LINEAGE REFINEMENT:** `CheckForUpdate` must now be treated as an updater-coordination trait that can survive independently of the exact launcher/runtime filename split.
+**C / LINEAGE REFINEMENT:** the candidate updater traits now have different evidentiary weights and must not be treated as one inherited bundle.
 
-Therefore these are separate questions for original JSS archaeology:
+Current descendant-search weighting:
+
+1. **`CheckForUpdate` — strongest source-lineage search fingerprint.** It appears in BismarckDD, Signally and anson1788 client trees while their executable naming/startup logic differs.
+2. **`sa.exe` — strong but later runtime candidate.** It is explicit in Signally and anson1788 project/debug metadata and is independently named by later Taiwan checksum failures.
+3. **`updated` + user-facing `StoneAge.exe` launcher instruction — narrower lineage lead.** Among the inspected public trees, this combination is currently observed in Signally but not BismarckDD or anson1788.
+4. **`HASH___________@@@@@@@@` / `PARAM_ARGS` — low-priority branch-specific lead.** Current global/public code search found it only in Signally, behind a patcher-related conditional. It should not be projected backward unless original evidence independently matches it.
+
+Therefore these remain separate questions for original JSS archaeology:
 1. Did the original JSS client expose a `CheckForUpdate`-type mutex or equivalent updater coordination object?
-2. Did the original JSS launcher pass a token such as `updated`?
-3. Was the game runtime separate from `stoneage.exe`?
-4. If separate, was that runtime actually named `sa.exe`?
+2. Was the game runtime separate from `stoneage.exe`, and if so was it `sa.exe`?
+3. Did any JSS launcher pass a token such as `updated`?
+4. Did any original launcher/runtime use an additional fixed handshake/hash argument?
 
-The existence of `CheckForUpdate` in a branch whose current executable target is itself `stoneage.exe` weakens any inference of the form `CheckForUpdate present -> sa.exe runtime must exist`.
-
-It does **not** weaken `CheckForUpdate` as a useful original-binary search string. It only requires filename architecture and mutex/update coordination to be tested independently.
+The existence of `CheckForUpdate` in branches with differing output executable names demonstrates that updater coordination does **not** determine the filename architecture.
 
 ## 4. Later Taiwan updater evidence independently targets `sa.exe`
 
@@ -191,17 +256,18 @@ The correct evidentiary treatment is:
 
 ## 6. Archaeology consequences
 
-When original JSS media or installations are recovered, do **not** stop after locating `stoneage.exe`. Check separately for:
+When original JSS media or installations are recovered, do **not** stop after locating `stoneage.exe`. Check separately, in this priority order:
 
-1. `sa.exe`, `SA.EXE`, or case variants;
-2. additional executable(s) launched by `stoneage.exe`;
-3. embedded command-line token `updated`;
-4. mutex/object string `CheckForUpdate`;
-5. command lines constructed by the launcher after version-up;
-6. whether `stoneage.exe` and a runtime executable have distinct PE version resources, timestamps and imports;
-7. whether `data\download` payloads replace one or both executable layers;
-8. whether a `cksum` structure in original binaries/configs associates checksum values with filenames in a form ancestral to the later `cksum:...:File:sa.exe` record;
-9. whether the retail disc baseline differs from later JSS patched launcher/runtime pairs.
+1. mutex/object string `CheckForUpdate` or semantically similar updater-coordination objects;
+2. `sa.exe`, `SA.EXE`, or case variants;
+3. additional executable(s) launched by `stoneage.exe`;
+4. filename-bearing `cksum` records and their field structure;
+5. whether `data\download` payloads replace one or multiple executable layers;
+6. embedded command-line token `updated`;
+7. command lines constructed by the launcher after version-up;
+8. fixed launcher/runtime handshake strings such as Signally's branch-local `HASH___________@@@@@@@@`, but only as a low-priority search term;
+9. whether `stoneage.exe` and a runtime executable have distinct PE version resources, timestamps and imports;
+10. whether the retail disc baseline differs from later JSS patched launcher/runtime pairs.
 
 A positive match in original JSS material would allow these descendant clues to be promoted. A negative match would be equally useful because it would date the launcher/runtime split or filename to a later branch.
 
@@ -218,8 +284,8 @@ Until original JSS evidence is recovered, do **not** state as historical fact th
 
 ## 8. Immediate next actions
 
-1. Search original JSS archive pages, archived binaries and physical-media listings for `sa.exe` independently of `stoneage.exe`.
-2. If archived `stoneage.exe` bytes become obtainable, inspect strings/imports/process-launch behavior for `sa.exe`, `updated` and `CheckForUpdate` without committing the proprietary binary.
+1. Search original JSS archive pages, archived binaries and physical-media listings for `CheckForUpdate` / `sa.exe` independently of `stoneage.exe`.
+2. If archived `stoneage.exe` bytes become obtainable, inspect strings/imports/process-launch behavior with weighted targets: first `CheckForUpdate`, `sa.exe` and `cksum`; then `updated`; treat `HASH___________@@@@@@@@` only as a low-priority branch-specific probe.
 3. Search original JSS updater artifacts for a filename-bearing `cksum` record structure rather than assuming the later Taiwan syntax existed unchanged.
 4. On any recovered retail/beta disc image, inventory every `.exe`, `.dll`, `.ini`, manifest/config file and the `data\download` path before running anything.
 5. Compare descendant source structures only after the original artifact baseline is established; use them as diff/search aids, not as a substitute for provenance.
