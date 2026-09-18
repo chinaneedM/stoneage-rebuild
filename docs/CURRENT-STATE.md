@@ -333,6 +333,21 @@ Supplemental source ledgers:
 - Added `tools/stoneage_player_death_model.py`, seven deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-PLAYER-DEATH-REVIVAL-CORE-R1.md`.
 - Next priority: **capture/taming core**, because it closes the existing wild-enemy -> battle -> pet-roster/growth loop before party/formation work.
 
+## Pet capture core reconstruction — 2026-09-18
+
+- Reconstructed the ordinary battle capture gate and probability equation across three preserved descendant server lineages.
+- Stable gate requires a target of enemy type with nonzero PETFLG; without the later `PickAllPet` bypass flag, target level may be at most attacker level + 5.
+- Recovered the literal capture score: `(10 - HP²/MAXHP + level-difference/2 + dex-difference/15 + target capture-default + attacker luck) * attacker charm / 50`, then add temporary capture modifier and +15 for sleeping targets, with upper cap 99 and no lower clamp.
+- Confirmed `RAND(1,100)` is inclusive and success uses strict `roll < score`; therefore capped score 99 yields 98 successful integer outcomes, not 99.
+- Temporary capture modifier is cleared after the check regardless of result.
+- Required capture-item tables are conditional/versioned; R1 accepts them as external version data rather than inventing one canonical table.
+- All three branches define five carried-pet slots. Server pet creation searches the first empty slot only after the probability succeeds, so a full roster can still turn a successful roll into a final failure.
+- Successful capture copies the wild enemy's current HP/MP, core stats, level, abnormal statuses, attributes, rarity/rank, pet ID, skills and other common fields into a new pet; enemy EXP is not copied and max EXP is recomputed from level.
+- Success then records PETGETLV, consumes version-specific condition items, increments GETPETCOUNT, removes the original enemy from battle and normalizes the new pet AI/state.
+- Capture command passes `20` to `BATTLE_MpDown`, but the active implementation is a no-op in all three fixed descendants; R1 records active MP cost as zero and the 20 only as source intent/provenance.
+- Added `tools/stoneage_pet_capture_model.py`, nine deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-PET-CAPTURE-CORE-R1.md`.
+- Next priority: **party / formation state**, especially field party creation/join/leave, leader/client modes, ordering, default-pet coupling and projection into battle sides.
+
 ## Immediate next actions
 
 1. **Continue recovered-byte reverse engineering.** REAL/ADRN/RD, SPR/SPRADRN, DAT runtime semantics, `1021.DAT`, and the major unresolved-graphic skew are now bounded as far as the mixed 2.5 bundle permits. Move the primary technical target outward into **character / pet / item / skill / stat / combat / progression data tables** in the recovered client/server corpus. First build a provenance-preserving inventory of candidate gameplay-data files and identify which tables are authoritative server data versus client display/cache data; then parse one family at a time with deterministic tests. Keep map 817/water-world missing assets as a version-diff target for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
