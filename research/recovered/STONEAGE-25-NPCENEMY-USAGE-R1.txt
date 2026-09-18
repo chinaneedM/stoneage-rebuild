@@ -7,9 +7,13 @@ COUNT|argument_files_missing|0
 COUNT|argument_files_resolved|279
 COUNT|askbattle_prompt_blocks|78
 COUNT|create_refs_npcenemy|279
+COUNT|gym_enemyno_over_10|200
+COUNT|gym_with_enemypetno|200
 COUNT|inline_arguments|0
 COUNT|item_list_duplicate_value_blocks|0
 COUNT|newnpcenemy_blocks|2
+COUNT|normal_enemyno_over_10|0
+COUNT|normal_with_enemypetno|0
 COUNT|old_dieact_warp_missing_coordinate_blocks|0
 COUNT|over_segments_checkparty|0
 COUNT|over_segments_newevent|3
@@ -28,6 +32,7 @@ KEY_BLOCK|deniedmsg|78
 KEY_BLOCK|dieact|279
 KEY_BLOCK|endmsg|7
 KEY_BLOCK|enemyno|279
+KEY_BLOCK|enemypetno|200
 KEY_BLOCK|entype|279
 KEY_BLOCK|gym|200
 KEY_BLOCK|item|18
@@ -54,11 +59,13 @@ LIST_LENGTH|enemyno|length=5|blocks=20
 LIST_LENGTH|enemyno|length=9|blocks=2
 LIST_LENGTH|enemyno|length=10|blocks=37
 LIST_LENGTH|enemyno|length=17|blocks=200
+LIST_LENGTH|enemypetno|length=34|blocks=100
+LIST_LENGTH|enemypetno|length=36|blocks=100
 LIST_LENGTH|item|length=1|blocks=18
 FREE_FAMILY_TERM|ENDEV|6
+FREE_FAMILY_TERM|EQUIT|2
 FREE_FAMILY_TERM|LV|1
 FREE_FAMILY_TERM|NOWEV|2
-FREE_FAMILY_TERM|OTHER|2
 FREE_OPERATOR_TERM|!=|1
 FREE_OPERATOR_TERM|=|9
 FREE_OPERATOR_TERM|>|1
