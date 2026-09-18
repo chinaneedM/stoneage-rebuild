@@ -55,6 +55,11 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
             {"attack_max": 4, "damage_divisor": 4, "attack_loop": True},
         )
 
+    def test_continuation_preserves_prior_high_half(self):
+        r = continuation_attack_command(10, "3", prior_high=77)
+        self.assertEqual(r["low"], 3)
+        self.assertEqual(r["high"], 77)
+
     def test_charge_parses_wait_count_and_attack_percent(self):
         r = charge_attack_command(11, "2 攻%35")
         self.assertEqual(r["command"], "S_CHARGE")
@@ -324,13 +329,23 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
     def test_earth_round_is_two_phase(self):
         r = earth_round_command(12, "攻%35")
         self.assertEqual(r["command"], "S_EARTHROUND1")
-        self.assertEqual(r["low"], 35)
+        self.assertEqual(r["com3"], 35)
         hidden = earth_round_hide_transition()
         self.assertEqual(hidden["next_command"], "S_EARTHROUND0")
         self.assertFalse(hidden["is_attacked_flag"])
         attack = earth_round_attack_transition(attack_percent=35)
         self.assertAlmostEqual(attack["damage_multiplier"], 1.35)
         self.assertTrue(attack["reset_command_after_attack"])
+
+    def test_earth_round_missing_marker_preserves_whole_prior_com3(self):
+        r = earth_round_command(12, "NO_PERCENT", prior_com3=321)
+        self.assertEqual(r["com3"], 321)
+        self.assertAlmostEqual(
+            earth_round_attack_transition(attack_percent=r["com3"])[
+                "damage_multiplier"
+            ],
+            4.21,
+        )
 
     def test_guard_break_attack_modifier(self):
         r = guard_break_command(12, "攻%30", fixed_attack=1000)
@@ -351,6 +366,11 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
         r = abduct_command(12, skill_array=77)
         self.assertEqual(r["command"], "S_ABDUCT")
         self.assertEqual(r["low"], 77)
+
+    def test_abduct_preserves_prior_high_half(self):
+        r = abduct_command(12, skill_array=77, prior_high=9)
+        self.assertEqual(r["low"], 77)
+        self.assertEqual(r["high"], 9)
 
     def test_abduct_probability_has_minimum_fifty(self):
         self.assertEqual(
@@ -500,6 +520,20 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
 
     def test_no_guard_packs_counter_critical_and_dodge(self):
         r = no_guard_command(12, "避%20 击%30 心%40")
+        self.assertEqual(r["high"], 20)
+        self.assertEqual(r["low"], (30 << 8) + 40)
+
+    def test_no_guard_missing_dodge_marker_preserves_prior_high_half(self):
+        r = no_guard_command(12, "击%30 心%40", prior_high=88)
+        self.assertEqual(r["high"], 88)
+        self.assertEqual(r["low"], (30 << 8) + 40)
+
+    def test_no_guard_supports_traditional_counter_marker(self):
+        r = no_guard_command(
+            12,
+            "避%20 擊%30 心%40",
+            counter_marker="擊%",
+        )
         self.assertEqual(r["high"], 20)
         self.assertEqual(r["low"], (30 << 8) + 40)
 
