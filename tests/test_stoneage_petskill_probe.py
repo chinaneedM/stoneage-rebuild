@@ -56,6 +56,6 @@ class PetSkillProbeTests(unittest.TestCase):
             r=analyze(data,setup)
             by={f["name"]:f for f in r["files"]}
             self.assertEqual(by["petskill.txt"]["selected"],"legacy4")
-            self.assertEqual(by["petskill1.txt"]["selected"],"unknown")
+            self.assertEqual(by["petskill1.txt"]["selected"],"cfree6_usetype")
 
 if __name__=="__main__":unittest.main()
