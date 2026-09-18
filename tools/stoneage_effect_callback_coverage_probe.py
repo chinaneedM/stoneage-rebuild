@@ -140,6 +140,31 @@ def parse_named_function_table(path, marker):
             last_error = exc
     raise last_error or ValueError("no source table marker supplied")
 
+def parse_global_function_guard_map(path):
+    """Return token -> guarded(bool) for the global string/function registry."""
+    text = path.read_text(encoding="utf-8", errors="replace")
+    region = extract_table_region(text, "correspondStringAndFunctionTable[]")
+    stack = []
+    out = {}
+    for line in region.splitlines():
+        stripped = line.strip()
+        if re.match(r"^#\s*(if|ifdef|ifndef)\b", stripped):
+            stack.append(stripped)
+            continue
+        if re.match(r"^#\s*(elif|else)\b", stripped):
+            if stack:
+                stack[-1] = stripped
+            continue
+        if re.match(r"^#\s*endif\b", stripped):
+            if stack:
+                stack.pop()
+            continue
+        m = re.search(r'\{\s*\{\s*"([^"]+)"', line)
+        if m:
+            out[m.group(1)] = bool(stack)
+    return out
+
+
 def parse_named_function_guard_map(path, marker):
     """Return token -> guarded(bool) for one named dispatch table."""
     text = path.read_text(encoding="utf-8", errors="replace")
@@ -280,6 +305,11 @@ def analyze(args):
     item_sets = {name: s["item"] for name, s in sources.items()}
     magic_sets = {name: s["magic"] for name, s in sources.items()}
     petskill_sets = {name: s["petskill"] for name, s in sources.items()}
+    item_guard_maps = {
+        "gavin": parse_global_function_guard_map(args.gavin_function),
+        "iris": parse_global_function_guard_map(args.iris_function),
+        "bismarck": parse_global_function_guard_map(args.bismarck_function),
+    }
     magic_guard_maps = {
         "gavin": parse_named_function_guard_map(args.gavin_magic, "MAGIC_functbl[]"),
         "iris": parse_named_function_guard_map(args.iris_magic, "MAGIC_functbl[]"),
@@ -304,6 +334,7 @@ def analyze(args):
             slot: coverage(counter, item_sets)
             for slot, counter in item_slots.items()
         },
+        "item_use_guard": guard_coverage(item_slots["usefunc"], item_guard_maps),
         "magic": coverage(magic_tokens, magic_sets),
         "magic_guard": guard_coverage(magic_tokens, magic_guard_maps),
         "petskill": coverage(petskill_tokens, petskill_sets),
@@ -333,6 +364,21 @@ def emit(args):
         print(f"ACTIVE_FILE|{kind}|{r['paths'][kind].name}|rows={r['row_counts'][kind]}")
     for slot, result in r["item_slots"].items():
         emit_coverage(f"ITEM_SLOT|{slot}", result)
+    ig = r["item_use_guard"]
+    labels = (
+        "unguarded_all3",
+        "guarded_all3",
+        "mixed_guard",
+        "partial_source",
+        "missing_all3",
+    )
+    for label in labels:
+        print(
+            f"ITEM_USE_GUARD_CLASS|{label}|"
+            f"unique_tokens={ig['unique_counts'].get(label,0)}|"
+            f"row_uses={ig['row_counts'].get(label,0)}"
+        )
+    print(f"ITEM_USE_GUARD_CLASSIFICATION_SHA256|{ig['classification_sha256']}")
     emit_coverage("MAGIC", r["magic"])
     g = r["magic_guard"]
     labels = (
