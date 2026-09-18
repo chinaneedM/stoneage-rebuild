@@ -52,16 +52,32 @@ def analyze(dat_dir,adrn_path=None):
     tile=collections.Counter(); parts=collections.Counter(); events=collections.Counter()
     dims=collections.Counter(); invalid=[]; valid=[]; cells=0
     files=sorted((p for p in dat_dir.iterdir() if p.is_file() and p.suffix.lower()==".dat"),key=lambda p:p.name.lower())
-    event_file_stats=[]
+    event_file_stats=[]; event_anomalies=[]
     for p in files:
         try:w,h,t,pa,e=parse_dat(p)
         except ValueError as exc:
             invalid.append((p.name,p.stat().st_size,str(exc))); continue
         valid.append((p.name,w,h)); dims[(w,h)]+=1; cells+=w*h
         tile.update(t); parts.update(pa); events.update(e)
-        unknown=sum(1 for v in e if (v&EVENT_MASK) not in EVENT_NAMES)
-        unknown_read=sum(1 for v in e if (v&EVENT_MASK) not in EVENT_NAMES and (v&MAP_READ_FLAG))
+        unknown_values=[v for v in e if (v&EVENT_MASK) not in EVENT_NAMES]
+        unknown=len(unknown_values)
+        unknown_read=sum(1 for v in unknown_values if v&MAP_READ_FLAG)
         event_file_stats.append((p.name,w,h,unknown,unknown_read))
+        reserved_high=sum(1 for v in e if v&0x3000)
+        if unknown or reserved_high:
+            raw=collections.Counter(unknown_values)
+            low=collections.Counter(v&EVENT_MASK for v in unknown_values)
+            event_anomalies.append({
+                "name":p.name,"w":w,"h":h,"cells":w*h,"unknown":unknown,
+                "reserved_high":reserved_high,"unique_raw":len(raw),"unique_low":len(low),
+                "known":len(e)-unknown,
+                "raw_top":raw.most_common(20),"low_top":low.most_common(20),
+                "low_counts":low,
+                "event_eq_tile":sum(1 for a,b in zip(e,t) if a==b),
+                "event_eq_parts":sum(1 for a,b in zip(e,pa) if a==b),
+                "low_eq_tile_low":sum(1 for a,b in zip(e,t) if (a&EVENT_MASK)==(b&EVENT_MASK)),
+                "low_eq_parts_low":sum(1 for a,b in zip(e,pa) if (a&EVENT_MASK)==(b&EVENT_MASK)),
+            })
     def buckets(c):
         o=collections.Counter()
         for v,n in c.items():o[bucket(v)]+=n
@@ -83,9 +99,15 @@ def analyze(dat_dir,adrn_path=None):
          "read":read,"see":see,"both":both,
          "event_unknown_total":unknown_total,"event_unknown_read":unknown_read_total,
          "event_unknown_see":unknown_see_total,
-         "event_file_stats":sorted(event_file_stats,key=lambda x:(-x[3],x[0]))}
+         "event_file_stats":sorted(event_file_stats,key=lambda x:(-x[3],x[0])),
+         "event_anomalies":sorted(event_anomalies,key=lambda x:(-x["unknown"],-x["reserved_high"],x["name"]))}
     if adrn_path:
         adrn=load_adrn(adrn_path); out["adrn"]=adrn
+        for anomaly in out["event_anomalies"]:
+            mapped_cells=sum(n for v,n in anomaly["low_counts"].items() if v>CG_INVISIBLE and v in adrn["by_bmp"])
+            mapped_unique=sum(1 for v in anomaly["low_counts"] if v>CG_INVISIBLE and v in adrn["by_bmp"])
+            anomaly["unknown_low12_adrn_mapped_cells"]=mapped_cells
+            anomaly["unknown_low12_adrn_mapped_unique"]=mapped_unique
         for name,c in (("tile_graphics",tile),("parts_graphics",parts)):
             refs=mapped=0; unresolved=collections.Counter(); hit=collections.Counter()
             footprint=collections.Counter(); prio=collections.Counter()
@@ -125,6 +147,13 @@ def emit(r):
     for name,w,h,unknown,unknown_read in r["event_file_stats"][:40]:
         if unknown:
             print(f"EVENT_UNKNOWN_FILE|{name}|{w}|{h}|{unknown}|{unknown_read}")
+    for a in r["event_anomalies"][:20]:
+        print(f"EVENT_ANOMALY_FILE|{a['name']}|{a['w']}|{a['h']}|{a['cells']}|known={a['known']}|unknown={a['unknown']}|reserved_high={a['reserved_high']}|unique_raw={a['unique_raw']}|unique_low12={a['unique_low']}")
+        print(f"EVENT_ANOMALY_LAYER_EQUALITY|{a['name']}|raw_eq_tile={a['event_eq_tile']}|raw_eq_parts={a['event_eq_parts']}|low12_eq_tile_low12={a['low_eq_tile_low']}|low12_eq_parts_low12={a['low_eq_parts_low']}")
+        if "unknown_low12_adrn_mapped_cells" in a:
+            print(f"EVENT_ANOMALY_ADRN_OVERLAP|{a['name']}|mapped_cells={a['unknown_low12_adrn_mapped_cells']}|mapped_unique={a['unknown_low12_adrn_mapped_unique']}")
+        for v,n in a["raw_top"]:print(f"EVENT_ANOMALY_RAW_TOP|{a['name']}|0x{v:04x}|{n}")
+        for v,n in a["low_top"]:print(f"EVENT_ANOMALY_LOW12_TOP|{a['name']}|{v}|{n}")
     for v,n in sorted(r["event_high"].items()):print(f"EVENT_HIGH_NIBBLE|0x{v:04x}|{n}")
     for v,n in r["event_low"].most_common():
         print(f"EVENT_LOW12|{v}|{EVENT_NAMES.get(v,'UNKNOWN')}|{n}")

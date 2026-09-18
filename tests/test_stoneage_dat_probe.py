@@ -31,4 +31,17 @@ class DatProbeTests(unittest.TestCase):
             with contextlib.redirect_stdout(out):emit(r)
             self.assertIn("DAT_VALID_COUNT|2",out.getvalue())
             self.assertIn("EVENT_LOW12|3|WARP|2",out.getvalue())
+    def test_event_anomaly_diagnostics(self):
+        with tempfile.TemporaryDirectory() as td:
+            maps=Path(td)
+            maps.joinpath("300.dat").write_bytes(dat(1,2,[291,0],[0,291],[0xc003,0x1123]))
+            r=analyze(maps)
+            self.assertEqual(r["event_unknown_total"],1)
+            self.assertEqual(len(r["event_anomalies"]),1)
+            a=r["event_anomalies"][0]
+            self.assertEqual(a["unknown"],1)
+            self.assertEqual(a["reserved_high"],1)
+            self.assertEqual(a["unique_low"],1)
+            self.assertEqual(a["low_top"][0],(0x123,1))
+
 if __name__=="__main__":unittest.main()
