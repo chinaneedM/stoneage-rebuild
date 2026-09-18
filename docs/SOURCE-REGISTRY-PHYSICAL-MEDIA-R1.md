@@ -90,6 +90,33 @@ The canonical research analysis for this source group is `research/clients/JSS-R
   - that the seller's bonus-CD statement identifies which photographed disc is the bonus disc;
   - any filesystem, binary, checksum or matrix-code fact.
 
+## SRC-JP-1999-RETAIL-YAHOO-UNOPENED-01
+
+- Title: `未開封 ストーンエイジ`
+- Auction ID: `k1131932809`
+- Listing URL: https://auctions.yahoo.co.jp/jp/auction/k1131932809
+- Listing period: 2024-04-09 through 2024-04-13
+- Retrieval date: 2026-09-18
+- Source type: preserved Yahoo! Auctions photographs of a seller-described unopened early JSS StoneAge package
+- Confidence: **B for literal visible package fields; C for seller provenance/unopened-status claim**
+- Visible observations:
+  - front/side/back photographs show the early JSS/Gamer's Dream `STONEAGE` Windows 95/98 package;
+  - the front visibly carries initial-edition promotional marking;
+  - the back carries Japan System Supply branding and a readable retail barcode;
+  - the barcode reads **`4909476303010`**.
+- Original image URLs:
+  1. side: https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0504/users/93c224e074220661380e6f1f93b2056799fea6be/i-img640x480-1712642690euuwgk18923.jpg
+  2. front: https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0504/users/93c224e074220661380e6f1f93b2056799fea6be/i-img640x480-1712642690ufdbie13619.jpg
+  3. back/barcode: https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0504/users/93c224e074220661380e6f1f93b2056799fea6be/i-img640x480-1712642690dlqgj723.jpg
+- Research consequence:
+  - the direct StoneAge retail JAN is now **`4909476303010`**, replacing the prior state in which this number existed only as an inferred search candidate;
+  - this public back-box image closes the product/JAN sub-question without requiring acquisition of the physical object.
+- Does not establish:
+  - package model/type code;
+  - the exact contents of the sealed package;
+  - disc label/matrix identifiers or which optical disc is the normal game CD versus bonus CD;
+  - filesystem contents, hashes, PE metadata or S-grade chain of custody.
+
 ## SRC-JP-2003-BOTHTEC-PACKAGE-COLLECTOR-PHOTO-01
 
 - Title: later Japanese `STONEAGE` revival package shown in the same collector article
