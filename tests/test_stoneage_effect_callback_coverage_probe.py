@@ -6,6 +6,7 @@ from types import SimpleNamespace
 from tools.stoneage_effect_callback_coverage_probe import (
     analyze,
     choose_active_file,
+    parse_global_function_guard_map,
     parse_global_function_table,
     parse_named_function_guard_map,
     parse_named_function_table,
@@ -125,6 +126,24 @@ class EffectCallbackCoverageProbeTests(unittest.TestCase):
             self.assertEqual(parse_global_function_table(g), {"A", "B"})
             self.assertEqual(parse_named_function_table(m, "MAGIC_functbl[]"), {"M1", "M2"})
 
+    def test_global_table_guard_map(self):
+        with tempfile.TemporaryDirectory() as td:
+            p = Path(td) / "function.c"
+            p.write_text(
+                'static CorrespondStringAndFunctionTable '
+                'correspondStringAndFunctionTable[]=\n{\n'
+                '  {{"CORE"}, (void*)1, 0},\n'
+                '#ifdef FEATURE_Y\n'
+                '  {{"EXTRA"}, (void*)1, 0},\n'
+                '#endif\n'
+                '};\n',
+                encoding="utf-8",
+            )
+            self.assertEqual(
+                parse_global_function_guard_map(p),
+                {"CORE": False, "EXTRA": True},
+            )
+
     def test_named_table_guard_map(self):
         with tempfile.TemporaryDirectory() as td:
             p = Path(td) / "magic.c"
@@ -187,6 +206,15 @@ class EffectCallbackCoverageProbeTests(unittest.TestCase):
             self.assertEqual(magic["classes"]["all"], 1)
             self.assertEqual(magic["classes"]["some"], 2)
             self.assertEqual(magic["classes"]["none"], 0)
+
+    def test_item_use_guard_classification_tracks_partial_sources(self):
+        with tempfile.TemporaryDirectory() as td:
+            r = analyze(self.make_args(Path(td)))
+            guard = r["item_use_guard"]
+            self.assertEqual(guard["unique_counts"]["unguarded_all3"], 1)
+            self.assertEqual(guard["row_counts"]["unguarded_all3"], 2)
+            self.assertEqual(guard["unique_counts"]["partial_source"], 3)
+            self.assertEqual(guard["row_counts"]["partial_source"], 3)
 
     def test_magic_guard_classification_tracks_partial_sources(self):
         with tempfile.TemporaryDirectory() as td:
