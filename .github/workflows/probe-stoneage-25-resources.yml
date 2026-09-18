@@ -6,7 +6,9 @@ on:
     paths:
       - .github/workflows/probe-stoneage-25-resources.yml
       - tools/stoneage_resource_probe.py
+      - tools/stoneage_rd_codec.py
       - tests/test_stoneage_resource_probe.py
+      - tests/test_stoneage_rd_codec.py
 
 permissions:
   contents: write
@@ -18,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run deterministic parser tests
-        run: python3 -m unittest tests.test_stoneage_resource_probe -v
+        run: python3 -m unittest tests.test_stoneage_resource_probe tests.test_stoneage_rd_codec -v
       - name: Install archive tool
         run: sudo apt-get update && sudo apt-get install -y unar
       - name: Recover preserved split bundle

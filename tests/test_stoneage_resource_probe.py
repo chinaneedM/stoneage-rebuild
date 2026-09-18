@@ -57,7 +57,9 @@ class StoneAgeResourceProbeTests(unittest.TestCase):
             (map_dir / "200.MAP").write_bytes(
                 struct.pack("<II", 5, 4) + bytes(5 * 4 * 2)
             )
-            (map_dir / "lower.map").write_bytes(
+            nested = map_dir / "nested"
+            nested.mkdir()
+            (nested / "lower.map").write_bytes(
                 struct.pack("<II", 3, 2) + bytes(3 * 2 * 2)
             )
 
@@ -68,7 +70,8 @@ class StoneAgeResourceProbeTests(unittest.TestCase):
             self.assertEqual(ra["remainder"], 0)
             self.assertEqual(ra["counts"]["rd_magic"], 3)
             self.assertEqual(ra["counts"]["size_match"], 3)
-            self.assertEqual(ra["counts"]["dimension_match"], 3)
+            self.assertEqual(ra["counts"]["dimension_bits_match"], 3)
+            self.assertEqual(ra["counts"]["signed_dimension_match"], 3)
             self.assertEqual(mp["file_count"], 3)
             self.assertEqual(mp["counts"]["exact_8_plus_whx2"], 3)
             self.assertEqual(ra["contiguous_active_offsets"], 2)

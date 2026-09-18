@@ -96,27 +96,53 @@ def analyze_real_adrn(adrn_path: Path, real_path: Path, sample_limit: int = 12):
                 counts["rd_magic"] += 1
                 flag = hdr[2]
                 flags[f"0x{flag:02x}"] += 1
-                rd_width, rd_height, rd_size = struct.unpack_from("<III", hdr, 4)
+                rd_width_u, rd_height_u, rd_size = struct.unpack_from("<III", hdr, 4)
+                rd_width_s, rd_height_s = struct.unpack_from("<ii", hdr, 4)
 
                 size_matches = rd_size == size
-                dims_match = rd_width == width and rd_height == height
-                plausible_dims = 0 < rd_width <= 16384 and 0 < rd_height <= 16384
+                dimension_bits_match = (
+                    rd_width_u == (width & 0xFFFFFFFF)
+                    and rd_height_u == (height & 0xFFFFFFFF)
+                )
+                signed_dims_match = rd_width_s == width and rd_height_s == height
+                plausible_dims = 0 < width <= 16384 and 0 < height <= 16384
 
                 counts["size_match" if size_matches else "size_mismatch"] += 1
-                counts["dimension_match" if dims_match else "dimension_mismatch"] += 1
+                counts[
+                    "dimension_bits_match"
+                    if dimension_bits_match
+                    else "dimension_bits_mismatch"
+                ] += 1
+                counts[
+                    "signed_dimension_match"
+                    if signed_dims_match
+                    else "signed_dimension_mismatch"
+                ] += 1
                 counts[
                     "plausible_dimensions"
                     if plausible_dims
-                    else "implausible_dimensions"
+                    else "special_or_implausible_dimensions"
                 ] += 1
+
+                if flag == 0 and plausible_dims:
+                    logical_size = RD_HEADER_SIZE + width * height
+                    counts[
+                        "uncompressed_logical_size_match"
+                        if logical_size == size
+                        else "uncompressed_logical_size_mismatch"
+                    ] += 1
+                    if not size_matches:
+                        counts["flag0_rd_size_field_mismatch"] += 1
+                elif flag == 1 and not size_matches:
+                    counts["flag1_size_mismatch"] += 1
 
                 reasons = []
                 if not size_matches:
-                    reasons.append("size_mismatch")
-                if not dims_match:
-                    reasons.append("dimension_mismatch")
+                    reasons.append("rd_size_field_mismatch")
+                if not dimension_bits_match:
+                    reasons.append("dimension_bits_mismatch")
                 if not plausible_dims:
-                    reasons.append("implausible_dimensions")
+                    reasons.append("special_or_implausible_dimensions")
                 if reasons and len(anomaly_samples) < sample_limit:
                     anomaly_samples.append(
                         (
@@ -127,8 +153,8 @@ def analyze_real_adrn(adrn_path: Path, real_path: Path, sample_limit: int = 12):
                             width,
                             height,
                             flag,
-                            rd_width,
-                            rd_height,
+                            rd_width_s,
+                            rd_height_s,
                             rd_size,
                             ",".join(reasons),
                         )
@@ -146,8 +172,8 @@ def analyze_real_adrn(adrn_path: Path, real_path: Path, sample_limit: int = 12):
                             width,
                             height,
                             flag,
-                            rd_width,
-                            rd_height,
+                            rd_width_s,
+                            rd_height_s,
                             rd_size,
                         )
                     )
@@ -181,10 +207,10 @@ def analyze_maps(map_dir: Path, sample_limit: int = 16):
     files = sorted(
         (
             path
-            for path in map_dir.iterdir()
+            for path in map_dir.rglob("*")
             if path.is_file() and path.suffix.lower() == ".map"
         ),
-        key=lambda p: p.name.lower(),
+        key=lambda p: str(p.relative_to(map_dir)).lower(),
     )
     counts = collections.Counter()
     dims = collections.Counter()
@@ -198,7 +224,7 @@ def analyze_maps(map_dir: Path, sample_limit: int = 16):
         if size < 8:
             counts["too_small"] += 1
             if len(bad_examples) < sample_limit:
-                bad_examples.append((path.name, size, None, None, "too_small"))
+                bad_examples.append((str(path.relative_to(map_dir)), size, None, None, "too_small"))
             continue
 
         with path.open("rb") as f:
@@ -217,11 +243,11 @@ def analyze_maps(map_dir: Path, sample_limit: int = 16):
         if expected == size:
             counts["exact_8_plus_whx2"] += 1
             if len(exact_examples) < sample_limit:
-                exact_examples.append((path.name, size, width, height))
+                exact_examples.append((str(path.relative_to(map_dir)), size, width, height))
         else:
             counts["layout_mismatch"] += 1
             if len(bad_examples) < sample_limit:
-                bad_examples.append((path.name, size, width, height, expected))
+                bad_examples.append((str(path.relative_to(map_dir)), size, width, height, expected))
 
     return {
         "file_count": len(files),
