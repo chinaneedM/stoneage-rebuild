@@ -207,6 +207,19 @@ Detailed analysis:
 
 `research/clients/STONEAGE-25-DAT-RUNTIME-SEMANTICS-R1.md`
 
+A same-bundle DAT↔server crosscheck adds direct static-layer corroboration:
+
+- same-ID/same-dimension pairs: **637**
+- both tile and parts/object exact: **280**
+- tile exact: **421**
+- parts/object exact: **361**
+
+The exceptional `1021.DAT` is not event-only: against the same-ID 407×144 server map, **39,456 tile cells** and **32,706 parts/object cells** differ in addition to its **43,952** non-enum event cells. It is therefore quarantined as a mixed revision/source anomaly rather than used to expand the event schema.
+
+Crosscheck report:
+
+`research/recovered/STONEAGE-25-DAT-SERVER-CROSSCHECK-R1.txt`
+
 ## 8. `.MAP` is NOT a direct copy of any DAT layer — verified negative result
 
 Byte-level pair report:

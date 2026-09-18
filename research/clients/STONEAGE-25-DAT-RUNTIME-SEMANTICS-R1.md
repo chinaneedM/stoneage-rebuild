@@ -121,6 +121,16 @@ For graphic-like tile values, the client:
 
 Small/control values have explicit special-case handling in `readHitMap`; they must not all be treated as normal ADRN graphic IDs.
 
+The inspected descendant client further separates these sub-100 values:
+
+- tile/parts values `1,2,5,6,9,10` produce local hit class 1; value `4` produces hit class 2;
+- tile value `0` becomes hit class 1 only after the map cell has the local `MAP_SEE_FLAG`, otherwise collision is left unchanged;
+- draw code routes values `20–39` to `play_environment`, while that function accepts only tones **20–37**; 38–39 therefore have no effective environment-tone behavior in the inspected branch;
+- draw code routes values `40–59` to `play_map_bgm`; the base branch defines **40–53**, while **54–55** appear only behind a later 6.0 music macro and 56–59 have no defined switch mapping there;
+- values `60–79` are special in collision: `readHitMap` still resolves them through `realGetNo` / ADRN hit metadata even though they are below `CG_INVISIBLE(99)`; the ordinary draw branch does not render them as normal graphics.
+
+These are descendant-source semantics, not proof that every sub-100 assignment was identical in the 1999 JSS client.
+
 ### Recovered-byte corroboration
 
 Across the 995 valid DAT caches:
@@ -228,6 +238,31 @@ Observed recognized event counts over the full corpus are:
 - WARP_NOON: 18
 - WARP_NIGHT: 12
 
+### Bundled server-map crosscheck
+
+A separate recovered-bundle crosscheck compares numeric DAT caches against same-ID LS2MAP server files:
+
+- valid numeric DAT caches: **995**
+- same map ID and dimensions found in the bundled server corpus: **637**
+- both static layers exact: **280**
+- tile exact: **421**
+- parts/object exact: **361**
+- static-layer mismatch in at least one channel: **357**
+
+This materially corroborates the server `tile / obj` → client `tile / parts` relationship, because hundreds of same-ID caches match one or both static layers exactly. It also proves that the recovered client cache and bundled server-map corpus are **not one uniform revision**.
+
+For `1021.DAT`, the same-ID 407×144 server map differs in:
+
+- tile: **39,456 / 58,608 cells (67.32%)**
+- parts/object: **32,706 / 58,608 cells (55.80%)**
+- DAT event low-12 values outside 0–8: **43,952 / 58,608 cells (74.99%)**
+
+Therefore `1021.DAT` is **not an event-only anomaly**. Its static layers also disagree heavily with the bundled same-ID server map. The defensible classification is a quarantined cache from a different/modified map revision, stale cache lineage, or other mixed private-server provenance. The present evidence does **not** distinguish those possibilities, so it must not be called simple byte corruption as fact.
+
+Derived report:
+
+`research/recovered/STONEAGE-25-DAT-SERVER-CROSSCHECK-R1.txt`
+
 ## 8. Collision is derived; DAT does not contain a fourth hit layer
 
 The client builds `hitMap` at runtime from:
@@ -278,13 +313,13 @@ A legacy DAT importer can reconstruct those inputs, but the legacy high-bit cach
 
 ## 11. Remaining open questions
 
-1. Why `1021.DAT` alone contains 43,952 non-enum low-12 event values.
+1. Which exact client/server revision produced `1021.DAT`, and whether its whole-cache mismatch reflects stale cache state, a different map revision, or private-server modification.
 2. Which unresolved tile/parts IDs are caused by:
    - missing/alternate ADRN resource revisions;
    - private-server additions;
    - version skew;
    - special control semantics.
-3. Exact semantics of the small tile/parts control ranges below `CG_INVISIBLE`.
+3. Original-version provenance of the now source-traced sub-100 control ranges, especially whether the descendant 20–37 environment, 40–53 BGM and 60–79 collision-special behavior already existed unchanged in JSS builds.
 4. How the recovered DAT cache compares with a future clean 2.5 / 1.82 / 1.74 / 1.74a / JSS specimen.
 5. Which cache behaviors are original versus later auto-update additions in descendant source.
 
@@ -296,5 +331,5 @@ A legacy DAT importer can reconstruct those inputs, but the legacy high-bit cach
 - DAT as network-refreshed persistent client cache: **descendant client/server source fact**
 - collision derived from tile/parts ADRN attributes: **descendant client source fact, recovered ADRN linkage strongly corroborating**
 - 0–8 event domain across 994/995 valid recovered caches: **FACT for this recovered corpus**
-- `1021.DAT` unknown-event region: **FACT / quarantined anomaly**
+- `1021.DAT` event and static-layer divergence: **FACT for this recovered mixed bundle / quarantined revision-source anomaly**
 - exact equivalence to 1999 JSS behavior: **OPEN**

@@ -13,3 +13,4 @@ Current tools:
 - `stoneage_map_pair_probe.py` — compares recovered one-layer MAP files with same-stem three-layer DAT caches.
 - `stoneage_client_server_map_probe.py` — cross-checks recovered client-directory MAP data against the bundled SACH/server-related map corpus.
 - `stoneage_dat_probe.py` — parses the case-insensitive recovered DAT cache corpus, profiles tile/parts/event layers, maps graphic references through ADRN, and isolates event-domain anomalies.
+- `stoneage_dat_server_probe.py` — compares recovered numeric DAT tile/parts layers with same-ID LS2MAP server tile/object layers to identify exact matches, revision drift, and map-specific cache anomalies.
