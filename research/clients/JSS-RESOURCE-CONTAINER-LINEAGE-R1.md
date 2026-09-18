@@ -214,6 +214,179 @@ Do **not** copy the forum's entire unknown-field pseudo-structure as an authenti
 A separate later StoneAge technical article also describes ADRN as 80-byte / 20-parameter image headers with the early fields corresponding to image ID, REAL address and block length. Multiple mirrors repeat that article, so they are treated as one derivative source lineage rather than independent corroboration.
 
 
+
+## 5B. CrossGate client-resource corroboration
+
+A later technical-format article preserved at multiple mirrors explicitly compares CrossGate and StoneAge client resources.
+
+Primary surviving mirrors used in this pass:
+
+- https://cgsword.com/fanicer.htm
+- https://omega.idv.tw/kdb120/viewthread.php?page=1&threadid=4437
+
+The mirror identifies the original as `http://www.fanicer.com/gallery/FileFmt.htm`, credits the original author as 梦见草 and says 野風信子整理和完善.
+
+Classification: **C / later technical documentation preserved from an older article lineage**.
+
+The article distinguishes:
+
+- CrossGate image index: `GraphicInfo*_*.bin`, 40-byte records;
+- StoneAge image index: `Adrn_*.bin`, 80-byte records;
+- CrossGate image data: `Graphic*_*.bin`;
+- StoneAge image data: `Real_*.bin`.
+
+It describes both games' image blocks as having a 16-byte header beginning with magic `RD`, followed by a version/compression byte, one unknown byte, width, height and total block size.
+
+The article explicitly calls the compression a **JSS-defined Run-Length algorithm used by StoneAge and CrossGate** and documents these control-byte families:
+
+- literal: `0x0n / 0x1n / 0x2n`;
+- repeated value: `0x8n / 0x9n / 0xAn`;
+- repeated background/zero: `0xCn / 0xDn / 0xEn`.
+
+This is later technical documentation, not first-party JSS source, but it independently matches the descendant StoneAge codec structure at a byte-semantic level.
+
+### Modern CrossGate parser cross-check
+
+Three modern CrossGate tool implementations were examined as implementation-level corroboration:
+
+1. `HonorLee-cn/CGTool` at `b4d08112524aa16b9fdb416ef865f8c196ffac20`
+   - `CrossgateToolkit/GraphicData.cs`
+   - reads a 16-byte header: 2-byte `RD`, version byte, unknown byte, width, height, data length;
+   - implements all nine legacy RLE control families.
+
+2. `x-gate/xgtool` at `a5176dbf107f2f1567951476f652391b76f7f702`
+   - `internal/codec.go`
+   - `docs/formats/codec.md`
+   - independently groups control bytes as literal `00/10/20`, repeated byte `80/90/A0`, repeated zero `C0/D0/E0`;
+   - uses 4-bit, 12-bit and 20-bit length forms.
+
+3. `kacoro/crossgate-tools` at `050480c0bf879a460cccd040358ed6c201e0f638`
+   - `src/Utils/cgCoder.ts`
+   - explicitly labels the implementation as a JSS-defined Run-Length algorithm;
+   - implements the same nine control families.
+
+These projects are not independent historical sources for JSS authorship, but they materially corroborate that real CrossGate data in the preservation/tooling ecosystem uses the same codec family described by the older technical article.
+
+## 5C. RD header binary-layout correspondence
+
+The StoneAge descendant `RD_HEADER` source definition contains:
+
+- `id[2]`;
+- one-byte `compressFlag`;
+- `unsigned int width`;
+- `unsigned int height`;
+- `unsigned int size`.
+
+Under the intended 32-bit MSVC default structure alignment, one padding byte falls after `compressFlag`, producing a 16-byte structure:
+
+- offset 0–1: `RD`;
+- offset 2: compression/version byte;
+- offset 3: padding/unspecified byte;
+- offset 4–7: width;
+- offset 8–11: height;
+- offset 12–15: size.
+
+The CrossGate format article and modern CrossGate parsers explicitly represent byte 3 as an “unknown” byte, yielding the same observable 16-byte disk layout.
+
+This is a strong format-family correspondence, but it still does not prove which title first introduced the layout.
+
+## 5D. StoneAge descendant decoder asymmetry
+
+The preserved StoneAge **encoder** supports the three intended literal-length classes:
+
+- short literal via high nibble `0x0`;
+- 12-bit literal via `0x1`;
+- 20-bit literal via `0x2`.
+
+However, the inspected descendant StoneAge `decoder()` literal branch tests the `0x10` extension but does not symmetrically test the `0x20` literal extension before falling back to the low nibble.
+
+By contrast, the older CrossGate/StoneAge technical article and multiple modern CrossGate decoders handle `0x20` as the 20-bit literal-length form.
+
+Research consequence:
+
+- do not blindly treat every line of the circulated StoneAge source as the canonical historical codec specification;
+- the intended legacy codec is better reconstructed from the **encoder + old format documentation + multiple working decoders**;
+- the StoneAge decoder discrepancy should be retained as a possible later source-copy bug, branch-specific bug, or code path that rarely encountered very long literal runs.
+
+No claim is made that the bug existed in the 1999 JSS executable.
+
+## 6A. LS2MAP correction — server map format, not client-resource proof
+
+A separate research branch found the literal magic:
+
+`LS2MAP`
+
+in later StoneAge and CrossGate-related code.
+
+### StoneAge server lineage
+
+`BismarckDD/stoneage`:
+
+`server/gmsv/map/readmap.c`
+
+defines:
+
+`#define MAP_MAGIC "LS2MAP"`
+
+and `MAP_IsMapFile` reads the first six bytes and requires that magic.
+
+The server loader then reads:
+
+- 2-byte map ID;
+- 32-byte map display/name field;
+- 2-byte X size;
+- 2-byte Y size;
+- tile layer;
+- object layer.
+
+### CrossGate preservation/tooling lineage
+
+`esxgx/xgate` identifies itself in its README as a “魔力宝贝复刻版”.
+
+Its `readmap_SA.c` explicitly comments:
+
+“石器、魔力服务器地图档 魔数”
+
+then defines:
+
+`MAP_MAGIC "LS2MAP"`
+
+and labels its detector as checking an `SA/CG` map file.
+
+The same file documents the same basic 44-byte pre-layer layout.
+
+`zhanxj/CrossGateData` also defines:
+
+`SERVER_HEAD = "LS2MAP"`
+
+in `MapInfo.java`, and its `gmsvReader/CMapReader.java` explicitly reads files under `server/map`.
+
+### Critical distinction from client maps
+
+The older CrossGate/StoneAge file-format article describes **client map files** differently:
+
+- CrossGate client maps: a 12-byte header beginning with `MAP` followed by zero bytes;
+- StoneAge client maps: no such header;
+- the subsequent map content is described as otherwise closely related.
+
+Therefore:
+
+**Do not conflate the later/private-server `LS2MAP` format with the original client map format.**
+
+In particular, the existence of the string `LS2MAP` does **not** by itself prove:
+
+- that LIFESTORM II used that header;
+- that `LS2` expands to “LIFESTORM II”;
+- that the 1999 StoneAge retail client's own map files began with `LS2MAP`;
+- that CrossGate's official JSS client used `LS2MAP` client files.
+
+The expansion/origin of the literal name `LS2MAP` remains **OPEN**.
+
+The valid conclusion is narrower:
+
+**C / later server-format lineage:** StoneAge server descendants and CrossGate reconstruction/data tooling share a server-map format identified by the magic `LS2MAP`.
+
+
 ## 6. Independent later community recollection of the codec
 
 A 2006 StoneAge player/developer blog post reports seeing:

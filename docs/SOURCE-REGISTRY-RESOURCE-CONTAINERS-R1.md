@@ -109,6 +109,91 @@ Purpose: register lower-confidence preservation/source-lineage material used to 
   - exact 1999 algorithm;
   - LIFESTORM II compatibility.
 
+
+## SRC-CG-SA-FANICER-FORMAT-LINEAGE-01
+
+- original lineage: `http://www.fanicer.com/gallery/FileFmt.htm`
+- surviving mirrors:
+  - https://cgsword.com/fanicer.htm
+  - https://omega.idv.tw/kdb120/viewthread.php?page=1&threadid=4437
+- credited original author: 梦见草
+- credited editor/organizer: 野風信子
+- retrieval date: 2026-09-18
+- source type: later preservation of older technical reverse-engineering article
+- confidence: **C**
+- supports:
+  - CrossGate `GraphicInfo` vs StoneAge `Adrn` index naming;
+  - 40-byte CrossGate vs 80-byte StoneAge image-index records;
+  - CrossGate `Graphic` vs StoneAge `Real` image-data naming;
+  - 16-byte `RD` image block header;
+  - nine-class Run-Length control-byte scheme;
+  - article's attribution of the codec as JSS-defined and used in both titles;
+  - client-map distinction: CrossGate client map has a 12-byte `MAP` header while StoneAge client map is described as lacking that header.
+- limitation:
+  - not contemporaneous first-party JSS documentation;
+  - “same original team” and JSS-authorship statements remain later technical-community testimony unless independently promoted.
+
+## SRC-CG-CGTOOL-RD-CODEC-01
+
+- repository: https://github.com/HonorLee-cn/CGTool
+- observed commit: `b4d08112524aa16b9fdb416ef865f8c196ffac20`
+- relevant path: `CrossgateToolkit/GraphicData.cs`
+- source type: modern CrossGate parser implementation
+- confidence: **C / FORMAT CORROBORATION**
+- supports:
+  - 16-byte CrossGate `RD` header;
+  - version byte + unknown byte + width + height + data length;
+  - literal/repeat/zero Run-Length families matching the older format article.
+- limitation: modern implementation, not JSS source.
+
+## SRC-CG-XGTOOL-RD-CODEC-01
+
+- repository: https://github.com/x-gate/xgtool
+- observed commit: `a5176dbf107f2f1567951476f652391b76f7f702`
+- relevant paths:
+  - `internal/codec.go`
+  - `docs/formats/codec.md`
+- source type: modern CrossGate codec implementation
+- confidence: **C / FORMAT CORROBORATION**
+- supports:
+  - literal control groups `00/10/20`;
+  - repeated-byte groups `80/90/A0`;
+  - repeated-zero groups `C0/D0/E0`;
+  - 4/12/20-bit run lengths.
+
+## SRC-CG-KACORO-RD-CODEC-01
+
+- repository: https://github.com/kacoro/crossgate-tools
+- observed commit: `050480c0bf879a460cccd040358ed6c201e0f638`
+- relevant path: `src/Utils/cgCoder.ts`
+- source type: modern CrossGate codec implementation
+- confidence: **C / FORMAT CORROBORATION**
+- supports the same nine-class RLE scheme and labels it a JSS-defined Run-Length algorithm.
+
+## SRC-SA-CG-LS2MAP-SERVER-LINEAGE-01
+
+- StoneAge descendant:
+  - repository: https://github.com/BismarckDD/stoneage
+  - commit: `999ffdf1d220ec6666eb65339180689c9caf1876`
+  - path: `server/gmsv/map/readmap.c`
+- CrossGate reconstruction:
+  - repository: https://github.com/esxgx/xgate
+  - path: `readmap_SA.c`
+  - README identifies project as `魔力宝贝复刻版`
+- CrossGate data tooling:
+  - repository: https://github.com/zhanxj/CrossGateData
+  - paths: `src/cg/data/map/MapInfo.java`, `src/cg/data/gmsvReader/CMapReader.java`
+- source type: later source/tooling lineage
+- confidence: **C / SERVER-FORMAT LINEAGE**
+- supports:
+  - literal server-map magic `LS2MAP` across StoneAge server descendants and CrossGate reconstruction/tooling;
+  - common basic server-map header/layer structure.
+- crucial non-establishment:
+  - does not establish that `LS2` means LIFESTORM II;
+  - does not establish original client-map magic;
+  - does not establish first introduction date or title.
+
+
 ## Source-group conclusion
 
 The StoneAge side now has a stable descendant-code specification for the REAL/ADRN resource architecture and its legacy `RD` run-length/literal decoder.
