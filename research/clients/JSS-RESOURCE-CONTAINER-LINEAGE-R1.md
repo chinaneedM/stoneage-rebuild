@@ -170,6 +170,50 @@ This is accurately described as a custom **RLE-style / run-length-plus-literal c
 
 Do not label every later decoder branch as original JSS behavior: the same files also contain later conditional extensions such as zlib-backed high-color modes under feature macros. Those additions must be dated independently.
 
+## 5A. Independent public-sample corroboration of ADRN record size
+
+A 2022 ZenHAX thread preserved a freely shared StoneAge sample whose file set was:
+
+- `adrn.bin`
+- `real.bin`
+- `spr.bin`
+- `spradrn.bin`
+
+Archived/current discussion routes:
+
+- https://zenhax.com/viewtopic.php%40t%3D17201.html
+- https://reshax.com/topic/10614-an-old-game-stoneage-bin/
+
+A responder independently reverse-engineered the sample and reported:
+
+- ADRN is an index for REAL;
+- each ADRN entry is **80 bytes**;
+- the first three 32-bit values are file/image number, REAL file offset, and file length.
+
+Classification: **C / public sample reverse-engineering corroboration**.
+
+### Why 80 bytes matters
+
+The descendant StoneAge source definition independently predicts the same record width under the Win32 32-bit layout used by the client:
+
+- `ADRNBIN` fixed fields before `MAP_ATTR`: 28 bytes;
+- `MAP_ATTR`: 52 bytes after normal 32-bit alignment;
+- total: **80 bytes**.
+
+This is a useful cross-check because the 80-byte result comes from analysis of a public data sample rather than only from reading the source code.
+
+### Precision limit
+
+The pseudo-structure reproduced in the ZenHAX/ResHax post contains a padding-array description that does not arithmetically reconcile with its own stated 80-byte record size. Therefore this project uses only the parts that are mutually consistent with the sample description and descendant source:
+
+- 80-byte record size;
+- record starts with number / REAL offset / REAL length.
+
+Do **not** copy the forum's entire unknown-field pseudo-structure as an authenticated layout.
+
+A separate later StoneAge technical article also describes ADRN as 80-byte / 20-parameter image headers with the early fields corresponding to image ID, REAL address and block length. Multiple mirrors repeat that article, so they are treated as one derivative source lineage rather than independent corroboration.
+
+
 ## 6. Independent later community recollection of the codec
 
 A 2006 StoneAge player/developer blog post reports seeing:

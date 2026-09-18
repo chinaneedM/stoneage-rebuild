@@ -69,6 +69,30 @@ Purpose: register lower-confidence preservation/source-lineage material used to 
 - independence warning:
   - agreement with other public StoneAge trees is code-lineage persistence, not independent historical provenance.
 
+## SRC-SA-2022-ZENHAX-ADRN-SAMPLE-01
+
+- title: `An old game StoneAge (.bin)`
+- original discussion date: 2022-07
+- URLs:
+  - https://zenhax.com/viewtopic.php%40t%3D17201.html
+  - https://reshax.com/topic/10614-an-old-game-stoneage-bin/
+- retrieval date: 2026-09-18
+- source type: public sample discussion / independent reverse engineering
+- confidence: **C**
+- supports:
+  - the shared sample contained `adrn.bin / real.bin / spr.bin / spradrn.bin`;
+  - reverse-engineering response identifies ADRN as an index for REAL;
+  - reported ADRN record width is **80 bytes**;
+  - reported first fields are file/image number, REAL offset and file length.
+- cross-check:
+  - the public descendant source `ADRNBIN` + `MAP_ATTR` layout also totals 80 bytes under the intended Win32 32-bit structure layout, independently matching the reported sample record width.
+- caution:
+  - the forum pseudo-structure's later unknown/padding field listing does not numerically reconcile with its stated 80-byte total; only the mutually consistent record-size and leading-field claims are retained.
+- does not establish:
+  - JSS-1999 provenance of the shared sample;
+  - LIFESTORM II compatibility;
+  - exact meaning of every 80-byte field.
+
 ## SRC-SA-2006-JSS-RLE-BLOG-01
 
 - title: `一遇到跑过来的长毛象公车.人物会变成怎样?`
