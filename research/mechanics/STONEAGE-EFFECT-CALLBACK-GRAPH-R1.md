@@ -140,6 +140,79 @@ For each callback surface it records only aggregate counts:
 
 It does **not** publish original item/magic/pet-skill names, callback tokens, descriptions, options, or data rows.
 
+## Recovered 2.5 coverage result
+
+The hash-pinned active recovered tables produce three materially different coherence profiles.
+
+### Item callbacks
+
+Active `itemset.txt` contains 13,252 rows.
+
+The callback columns are sparse and sharply concentrated in use-time behavior:
+
+- INIT / PREOVER / POSTOVER / WATCH: no non-empty recovered tokens;
+- USE: 957 row uses, 52 unique tokens;
+- ATTACH: 51 row uses, 5 unique tokens;
+- DETACH: 51 row uses, 5 unique tokens;
+- DROP: 40 row uses, 3 unique tokens;
+- PICKUP: 2 row uses, 1 unique token;
+- RELIFE: 3 row uses, 1 unique token.
+
+Every non-USE callback token resolves in **all three** fixed descendant global dispatch tables.
+
+USE is fully explainable by the inspected source family but is versioned:
+
+- 36 / 52 unique USE tokens are declared in all three fixed source tables;
+- 16 / 52 are present in only some fixed descendants;
+- 0 / 52 are absent from all three;
+- 904 / 957 USE rows use an all-three token;
+- 53 / 957 USE rows use a branch-specific token.
+
+Per fixed source snapshot, declared-source USE coverage is:
+
+- Bismarck: 51 / 52 unique tokens, 956 / 957 row uses;
+- gavinlinasd: 44 / 52 unique tokens, 930 / 957 row uses;
+- iriselia: 37 / 52 unique tokens, 905 / 957 row uses.
+
+This makes item-use behavior a **version-diff problem**, not an unresolved-data problem.
+
+### Magic callbacks
+
+Active `magic.txt` contains:
+
+- 181 rows;
+- 17 unique function tokens.
+
+All 17 tokens and all 181 row uses resolve in **all three** fixed descendant magic dispatch tables.
+
+This is the strongest callback-coherence result in the recovered effect layer and makes ordinary magic the best next semantic reconstruction target.
+
+### Pet-skill callbacks
+
+Active `petskill.txt` contains:
+
+- 147 rows;
+- 69 unique function tokens.
+
+Coverage splits cleanly:
+
+- 65 unique tokens / 143 rows resolve in all three fixed source tables;
+- no token is merely branch-specific in this comparison;
+- 4 unique tokens / 4 rows resolve in **none** of the three fixed source tables.
+
+Therefore the four unmatched pet-skill records are classified as **recovered-data / inspected-source skew** until another source snapshot explains them. They are not assigned invented behavior and are not promoted into the historical baseline.
+
+### Resulting work order
+
+The callback join itself is now closed at R1.
+
+Semantic reverse engineering should proceed in evidence-quality order:
+
+1. ordinary magic effect families — complete all-three dispatch coverage;
+2. common item callback families, then the 16 branch-specific USE families as explicit version diffs;
+3. common pet-skill families;
+4. quarantine the four all-source-missing pet-skill records until a matching source/client lineage is recovered.
+
 ## Evidence boundaries
 
 - **FACT:** item callback strings resolve through the global function registry.
@@ -149,14 +222,7 @@ It does **not** publish original item/magic/pet-skill names, callback tokens, de
 - **FACT:** pet-skill function strings resolve through `PETSKILL_functbl[]`; unresolved pet-skill dispatch returns FALSE.
 - **FACT:** recovered active pet-skill IDs cover the active enemybase skill-ID domain.
 - **BOUNDARY:** source-table token presence is declared-source coverage, not compiled-active proof.
-- **OPEN:** exact launch/JSS callback inventory until an earlier clean source/binary/data specimen is recovered.
-
+- **FACT:** recovered active magic callback coverage is complete across all three fixed source tables.\n- **VERSIONED:** recovered item USE callbacks include 16 tokens present in only a subset of the fixed source lineages; none is absent from all three.\n- **SPECIMEN SKEW:** four recovered active pet-skill function tokens, each used by one row, are absent from all three fixed source tables.\n- **OPEN:** exact launch/JSS callback inventory until an earlier clean source/binary/data specimen is recovered.\n
 ## Next seam
 
-Use the real-byte callback coverage result to separate:
-
-1. coherent early/core callback families that can now be analyzed semantically;
-2. branch-specific later callback families;
-3. data/source mismatches that must remain provenance defects rather than reconstructed rules.
-
-Only after that classification should detailed item/magic/pet-skill effect formulas be expanded.
+Coverage classification is now complete. Next priority: reconstruct the **ordinary magic effect core** first, because all 17 recovered magic callback tokens resolve across all three fixed source tables. Then proceed to common item effects and common pet-skill effects, keeping branch-only item USE callbacks and the four unresolved pet-skill rows explicitly versioned/quarantined.\n
