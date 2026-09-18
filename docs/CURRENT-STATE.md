@@ -12,6 +12,7 @@ The independent GitHub repository and continuity scaffold are established on rem
 
 - Single-player game, not a commercial MMORPG operation.
 - Historical clients and materials are research samples, not code/assets to copy directly into the new game.
+- **Research must not depend on the user buying or manually acquiring physical material.** No bidding, purchasing, shipping, opening, installing, or personally dumping original discs/packages is part of the project plan. Auction/marketplace pages are evidence surfaces only; free/public digital recovery is the operational path.
 - Start from the earliest traceable JSS-era StoneAge rather than assuming Mainland China 1.82 is the absolute origin.
 - Mainland 1.82 remains a major reference point because it is close to the user's childhood experience and is commonly remembered as a classic early form.
 - Later systems/content may ultimately be integrated, but through coherent progression rather than a feature dump.
@@ -125,6 +126,12 @@ Supplemental source ledgers:
 
 ## Completed in the latest work pass
 
+- User resource constraint was made explicit and promoted to a durable project rule: archaeology must not require buying, bidding on, shipping, opening, installing, or personally dumping physical StoneAge material.
+- Marketplace/auction pages remain useful for public photographs, identifiers, package descriptions and provenance clues, but are **evidence surfaces only**, not acquisition opportunities.
+- Added DD-008 so future conversations do not drift back into recommending purchase of rare clients/packages.
+- Reframed immediate actions around free/public digital recovery, archived scans, public listings/catalogs, preservation sites, source trees and any freely retrievable original media.
+
+
 - Re-verified remote `main` before continuing and confirmed `9d19112ae18ad9fb878def5b972b1ea8fbc133cf` / tree `75f16ea3b233f43fc86647abbac823eb4dffa17e` remained authoritative.
 - Continued the highest-priority physical-media/product-identifier search rather than guessing a StoneAge JAN.
 - Recovered a high-value same-medium anchor from Suruga-ya: JSS Windows 95 `LIFESTORM` = model `JV02005`, JAN `4909476301016`.
@@ -138,10 +145,10 @@ Supplemental source ledgers:
 
 ## Immediate next actions
 
-1. Continue direct StoneAge package recovery, but now prioritize **product-identifier evidence**: preserve/recover the 13 Mercari original-image bodies and any alternate back/side-box images that can expose JAN/model text.
-2. Recover a **LIFESTORM II** retail identifier (JAN and model/type code) from a box scan, Japanese retailer/distributor database, auction archive or period catalog. It is the most valuable chronological bridge between `LIFESTORM = JV02005 / 4909476301016` and StoneAge.
-3. Convert the two-disc model into **S-grade physical-media evidence** by identifying the direct StoneAge product/JAN plus both disc matrix codes and determining exactly which disc is the game/install CD versus the advertised bonus CD. Treat numeric sequence candidates only as search keys.
-4. If original media becomes obtainable, image it outside the repository and record hashes/file trees only; immediately inspect the game disc for `stoneage.exe`, `sa.exe`, installer/autostart metadata, `map`, update configuration, `data\download`, `updated` and `CheckForUpdate`.
+1. Continue **zero-cost public-source StoneAge package research**: preserve/recover the 13 Mercari original-image bodies and any freely accessible back/side-box images that can expose JAN/model text. Do not pursue purchase, bidding, seller contact, shipping, or user-side acquisition.
+2. Recover a **LIFESTORM II** retail identifier (JAN and model/type code) from freely accessible box scans, Japanese retailer/distributor databases, auction archives, cached listing images, or period catalogs. Use live listings only as public evidence, never as acquisition targets.
+3. Strengthen the two-disc model using **publicly obtainable provenance evidence**: identify the direct StoneAge product/JAN, readable disc labels/matrix codes where public photographs expose them, and determine which disc is the game/install CD versus the advertised bonus CD. Treat numeric sequence candidates only as search keys; do not require possession of the object.
+4. If an original retail/beta client or media image becomes **publicly retrievable at no cost** (or is voluntarily supplied to the project), analyze it outside the repository and record hashes/file trees only; inspect for `stoneage.exe`, `sa.exe`, installer/autostart metadata, `map`, update configuration, `data\download`, `updated` and `CheckForUpdate`.
 5. Obtain either the Retromags or Kingpin No.015 scan body through a file-capable route and visually inspect the printed beta URL; use the second scan to resolve the one OCR-ambiguous character before `PO/sa_apply.html` rather than guessing it. Then match the resulting path to an August 1999 archive capture and enumerate sibling tester/download paths.
 6. Mine archived JSS pages and paths using `data/download`, `cksum`, `MFC42.DLL`, `ProgramFiles/jss/stoneage`, `map`, and `stoneage.exe`; test descendant-derived `sa.exe`, `updated`, and `CheckForUpdate` as **independent** candidate traits so a hit on one is not treated as proof of the others.
 7. Search Yuki Tamura and other independently identified JSS staff for StoneAge-specific portfolios, interviews or staff credits; use exact named-role evidence to test the anonymous developer-recollection corpus rather than merging identities by inference.
@@ -160,4 +167,4 @@ Supplemental source ledgers:
 
 No repository or workflow blocker.
 
-The project still lacks a provenance-preserving 1999 JSS retail disc image/dump and September 1999 beta binary. The physical-package blocker remains narrowed to inaccessible original photo bodies plus missing exact disc identities/matrix/JAN identifiers. The beta web-recovery blocker remains a nearly complete application-page path; Retromags now supplies a second scan target, but its image/file body is not retrievable through the present extraction path. The developer-lineage track now has a named, independently cross-checked JSS/StoneAge staff lead in Yuki Tamura, but the original StoneAge credit list and exact staff-role mapping remain unresolved. The retail/client search retains `sa.exe`, `updated`, and `CheckForUpdate` only as descendant-derived search traits until original JSS material confirms each one independently. The binary/media blocker remains the principal Phase 0 constraint.
+The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS retail disc image/dump and September 1999 beta binary. The physical-package blocker remains narrowed to inaccessible original photo bodies plus missing exact disc identities/matrix/JAN identifiers. The beta web-recovery blocker remains a nearly complete application-page path; Retromags now supplies a second scan target, but its image/file body is not retrievable through the present extraction path. The developer-lineage track now has a named, independently cross-checked JSS/StoneAge staff lead in Yuki Tamura, but the original StoneAge credit list and exact staff-role mapping remain unresolved. The retail/client search retains `sa.exe`, `updated`, and `CheckForUpdate` only as descendant-derived search traits until original JSS material confirms each one independently. The binary/media blocker remains the principal Phase 0 constraint.
