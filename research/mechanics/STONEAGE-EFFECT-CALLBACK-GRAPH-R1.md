@@ -203,12 +203,12 @@ This is the strongest callback-coherence result in the recovered effect layer an
 The active recovered magic layer splits exactly along the three-source preprocessor boundary:
 
 - 9 unique tokens / 130 rows are unguarded in all three;
-- 8 unique tokens / 51 rows are guarded in all three;
+- 7 unique tokens / 46 rows are guarded in all three;
+- 1 unique token / 5 rows has partial source-lineage coverage;
 - 0 mixed-guard tokens;
-- 0 partial-source tokens;
 - 0 missing-all-three tokens.
 
-This is the basis for the separate ordinary-magic semantic model in `STONEAGE-MAGIC-EFFECT-CORE-R1.md`.
+The partial-source family is `MAGIC_AttSkill`: its entries are commented out in the fixed gavin/iriselia dispatch tables and macro-gated in the fixed Bismarck table. The nine unguarded callbacks remain the basis for the separate ordinary-magic semantic model in `STONEAGE-MAGIC-EFFECT-CORE-R1.md`.
 
 ### Pet-skill callbacks
 
@@ -231,7 +231,12 @@ The callback join itself is now closed at R1.
 
 Semantic reverse engineering should proceed in evidence-quality order:
 
-1. ordinary magic effect families — now reconstructed for the nine all-three unguarded callbacks;\n2. the 17 all-three unguarded item USE callbacks, plus the already-common non-use callback slots;\n3. guarded/partial-source item USE callbacks as explicit version diffs;\n4. common pet-skill families;\n5. quarantine the four all-source-missing pet-skill records until a matching source/client lineage is recovered.\n
+1. ordinary magic effect families — now reconstructed for the nine all-three unguarded callbacks;
+2. the 17 all-three unguarded item USE callbacks, plus the already-common non-use callback slots;
+3. guarded/partial-source item USE callbacks as explicit version diffs;
+4. common pet-skill families;
+5. quarantine the four all-source-missing pet-skill records until a matching source/client lineage is recovered.
+
 ## Evidence boundaries
 
 - **FACT:** item callback strings resolve through the global function registry.
@@ -241,7 +246,11 @@ Semantic reverse engineering should proceed in evidence-quality order:
 - **FACT:** pet-skill function strings resolve through `PETSKILL_functbl[]`; unresolved pet-skill dispatch returns FALSE.
 - **FACT:** recovered active pet-skill IDs cover the active enemybase skill-ID domain.
 - **BOUNDARY:** source-table token presence is declared-source coverage, not compiled-active proof.
-- **FACT:** recovered active magic callback coverage is complete across all three fixed source tables.\n- **VERSIONED:** recovered item USE callbacks include 16 tokens present in only a subset of the fixed source lineages; none is absent from all three.\n- **SPECIMEN SKEW:** four recovered active pet-skill function tokens, each used by one row, are absent from all three fixed source tables.\n- **OPEN:** exact launch/JSS callback inventory until an earlier clean source/binary/data specimen is recovered.\n
+- **FACT:** recovered active magic callback coverage is complete across all three fixed source tables.
+- **VERSIONED:** recovered item USE callbacks include 16 tokens present in only a subset of the fixed source lineages; none is absent from all three.
+- **SPECIMEN SKEW:** four recovered active pet-skill function tokens, each used by one row, are absent from all three fixed source tables.
+- **OPEN:** exact launch/JSS callback inventory until an earlier clean source/binary/data specimen is recovered.
+
 ## Next seam
 
-Coverage classification is now complete. Next priority: reconstruct the **ordinary magic effect core** first, because all 17 recovered magic callback tokens resolve across all three fixed source tables. Then proceed to common item effects and common pet-skill effects, keeping branch-only item USE callbacks and the four unresolved pet-skill rows explicitly versioned/quarantined.\n
+Coverage classification is now complete. Next priority: reconstruct the **ordinary magic effect core** first, because all 17 recovered magic callback tokens resolve across all three fixed source tables. Then proceed to common item effects and common pet-skill effects, keeping branch-only item USE callbacks and the four unresolved pet-skill rows explicitly versioned/quarantined.
