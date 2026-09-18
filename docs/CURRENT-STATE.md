@@ -535,16 +535,17 @@ Supplemental source ledgers:
   - 19 unique tokens / 86 rows are guarded in all three;
   - 16 unique tokens / 53 rows have partial source-lineage coverage;
   - zero active USE tokens are absent from all three.
-- Active magic is equally clean at the guard boundary: 9 unique tokens / 130 rows are unguarded in all three, while 8 tokens / 51 rows are guarded in all three; there are no mixed, partial, or missing active magic tokens.
+- Active magic splits into 9 unique tokens / 130 rows unguarded in all three, 7 tokens / 46 rows guarded in all three, and 1 partial-source token / 5 rows (`MAGIC_AttSkill`); there are no mixed-guard or all-source-missing active magic tokens.
 - Active pet skills contain 69 unique function tokens across 147 rows: 65 tokens / 143 rows resolve in all three fixed sources, while 4 tokens / 4 rows resolve in none of them. Those four rows remain quarantined as recovered-data / inspected-source skew rather than assigned invented behavior.
 - Added guard-aware aggregate classification to `tools/stoneage_effect_callback_coverage_probe.py` without publishing recovered callback strings.
-- GitHub Actions run `35370861684` completed **successfully** for the final real-byte callback/guard classification.
-- Callback coverage is no longer the current blocker. The next semantic boundary is the 17 all-three unguarded item USE callbacks.
+- The item probe now strips C comments, classifies dispatch guards, checks substantive function bodies across `item_event.c` + `battle_item.c`, and emits aggregate semantic families without publishing recovered callback strings.
+- Final callback/body probe run `35373534098` completed **successfully**.
+- Callback coverage itself is no longer the blocker; common magic and item semantic layers are closed below, and pet-skill guard/body refinement is next.
 
 ## Ordinary magic effect core reconstruction — 2026-09-18
 
 - Reconstructed the nine magic callback families that are simultaneously unguarded in all three pinned descendant source revisions: Recovery, OtherRecovery, FieldAttChange, StatusChange, MagicDef, StatusRecovery, Ressurect, AttReverse and ResAndDef.
-- The recovered active data independently supports this boundary: those nine tokens account for 130 / 181 active magic rows; the other 51 rows use eight callbacks that are guarded in all three fixed source lineages.
+- The recovered active data independently supports this boundary: those nine tokens account for 130 / 181 active magic rows; 46 rows use seven callbacks guarded in all three fixed source lineages, and five rows use the partial-source `MAGIC_AttSkill` family.
 - Common callback mutation order is caster validity -> battle-init rejection -> MP sufficiency -> MP deduction -> battle/field routing. As a result, battle-only common magic can fail for being outside battle **after MP has already been consumed**.
 - Recovery and OtherRecovery are the two common field-capable families; field target validity is also checked after MP deduction.
 - Old battle target authority is modeled as slots 0..9 and 10..19, with side/all selectors 20/21/22. Ordinary effects expand living targets; resurrection expands dead targets. The old all-target source contains list-termination hazards that are documented but not emulated as unsafe memory behavior.
@@ -560,18 +561,40 @@ Supplemental source ledgers:
 - Macro-gated attack magic, extra status systems, metamorphosis, deep poison, barrier, silence, call-dragon, family/sprite MP modifiers, riding interactions and no-magic-map restrictions remain versioned rather than flattened into this common core.
 - Added `tools/stoneage_magic_effect_model.py`, `tests/test_stoneage_magic_effect_model.py`, dedicated CI and `research/mechanics/STONEAGE-MAGIC-EFFECT-CORE-R1.md`.
 - The final model has **35 deterministic regression tests**. GitHub Actions runs `35370420953` and report-state rerun `35370877749` completed **successfully**.
-- Next priority: **common item effect semantics**, starting with the 17 active USE callbacks that are unguarded in all three fixed source lineages.
+- Ordinary magic R1 remains complete; guarded and partial-source extensions remain versioned rather than back-projected into the launch baseline.
+
+## Common item effect core reconstruction — 2026-09-19
+
+- Refined item evidence from dispatch-only matching to a two-stage test: callback registry guard state plus substantive function-body code across both ordinary item source modules.
+- Active USE layer: 17 tokens / 818 rows are unguarded in all three dispatch tables, but body refinement reduces that to **15 stable-body tokens / 816 rows** plus **2 profession macro-shell tokens / 2 rows**. The two shells remain later/versioned and are not promoted into the common semantic core.
+- Stable active USE families are battle/field recovery, status apply/recover, capture-rate increase, field attribute change, resurrection, warp, pet follow, no-enemy / forced-encounter controls, mic toggle, rename workflow, ordinary skill-up point, pet-owner/rename-lock release, and ToHelos work-state mutation.
+- Battle recovery uses the historical two-byte key layout correctly: source `p+2` advances over the Chinese key itself rather than an invented separator. HP uses the VITAL recovery multiplier; MP does not.
+- Item StatusChange defaults to **0 turns** (magic defaults to 3) with default success 15. StatusRecovery shares the old highest-index-active-candidate behavior.
+- Resurrection shares the common nonzero-percent overwrite quirk and PvP player exclusion.
+- Warp parses `flag floor x y`, rejects battle use, stable blocked floor 117, party-client use, and party-leader single-person flag; the item is consumed only after successful warp.
+- Pet-follow checks target level and carried-pet ownership but does not consume the item after success; the visible loyalty-under-80 rejection is commented out in the fixed source.
+- Rename uses a 1..26 **source-byte** name limit, rejects spaces / full-width spaces / `|`, writes the target rename before catalyst revalidation, treats catalyst argument 0 as unlimited, and decrements/deletes positive remaining counts after successful rename.
+- ToHelos detaches the item before argument parsing, so malformed data still destroys it; party clients write the effect state to the party leader.
+- Stable non-USE boundary is also closed:
+  - ATTACH: 2 stable common tokens / 5 rows; 3 guarded / 46.
+  - DETACH: 2 stable / 5; 3 guarded / 46.
+  - DROP: 2 stable / 5; 1 guarded / 35.
+  - PICKUP: 1 stable / 2.
+  - RELIFE: 0 unguarded common; its 3 rows are entirely all-three guarded.
+- Stable non-USE semantics cover no-enemy equipment attach/detach, PickAllPet attach/detach, mic cleanup, and dice drop/pickup visual state.
+- Added `tools/stoneage_item_effect_model.py`, 68 deterministic tests, dedicated CI, and `research/mechanics/STONEAGE-ITEM-EFFECT-CORE-R1.md`.
+- Item model run `35373496535` completed **successfully** with **68 tests**; final real-byte dispatch/body probe `35373534098` also completed **successfully**.
+- Next priority: **pet-skill dispatch-guard + body classification**. The active recovered table has 65 all-three textual matches / 143 rows, but the fixed source tables share only 15 unguarded pet-skill callback families overall, so the 65-match set must not be promoted wholesale.
 
 ## Immediate next actions
 
-1. **Continue deterministic early/core loop closure using the existing gameplay inventory.** The next server-authoritative seam is the **17 all-three unguarded common item USE callbacks**, plus the already-common non-use item callback slots. Reconstruct their field/battle effect semantics first; keep 19 all-three guarded USE tokens / 86 rows and 16 partial-source tokens / 53 rows as explicit version-diff tracks. After item effects, proceed to the 65 all-three common pet-skill callback families while quarantining four all-source-missing pet-skill rows. Keep map 817/water-world missing assets, duplicate NPC-template ambiguity, NPC function-set source/data skew, and other mixed-snapshot dangling references as comparison targets for the first clean client.
-2. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks rather than treating any descendant package as the original baseline.
-3. **Reject repacks before analysis.** For every candidate, record source/provenance, archive filename, size, hashes, timestamps, installer metadata, executable names, unexpected patchers/loaders, and signs of private-server modification.
-4. **The first verified usable client becomes the bridge specimen.** Immediately build a reproducible extraction inventory: complete file tree, hashes, PE metadata, strings/resources, directories, update components, graphics containers, maps, data tables, audio, UI assets, and executable/resource relationships.
-5. **Reverse engineer data before recreating gameplay.** Determine resource/container formats and indexes; decode graphics/animations; map character/pet/item/skill/stat records; reconstruct map formats and event/NPC data; identify combat and progression tables where present; document which behavior is client-side versus server-dependent.
-6. **Build tooling around recovered bytes.** Put parsers, validators, extractors and diff tools in `tools/`; put deterministic format tests in `tests/`. Do not commit proprietary original client payloads by default.
-7. **Use later/earlier clients comparatively.** When a second clean artifact is recovered, perform file- and data-level diffs to identify inherited versus added maps, pets, skills, UI, systems and format revisions.
-8. **De-prioritize nontechnical archaeology.** Package price, model numbers, collector accessories and similar topics remain paused unless they directly unlock a client, prove provenance, or resolve a technical ambiguity.
+1. **Classify active pet-skill callbacks by dispatch guard and substantive function body before semantic promotion.** The recovered active table has 69 unique callback tokens / 147 rows: 65 tokens / 143 rows resolve textually in all three fixed source tables and four tokens / four rows resolve in none. The fixed pet-skill tables themselves share 68 textual families but only 15 are unguarded in all three, so first measure which active rows actually belong to that stable-body subset. Keep the four all-source-missing rows quarantined.
+2. **Reconstruct only the stable pet-skill subset first.** Start with ordinary attack/guard/multi-hit/power/status/guard-break/steal/merge/no-guard families that survive the guard/body test. Keep macro-gated attack-magic, transformation, deep-poison, barrier, silence, profession/enemy extensions and similar later features in explicit version tracks.
+3. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks rather than treating any descendant package as the original baseline.
+4. **Reject repacks before analysis.** For every candidate, record source/provenance, archive filename, size, hashes, timestamps, installer metadata, executable names, unexpected patchers/loaders, and signs of private-server modification.
+5. **The first verified usable client becomes the bridge specimen.** Immediately build a reproducible extraction inventory and compare its item/magic/pet-skill tables against the reconstructed server-side semantic graph.
+6. **Keep historical reconstruction separate from redesign.** Do not repair old quirks in the archaeology model; record them first, then design modernized rules separately.
+7. **De-prioritize nontechnical archaeology.** Package price, model numbers, collector accessories and similar topics remain paused unless they directly unlock a client, prove provenance, or resolve a technical ambiguity.
 
 ## Continuity status
 
