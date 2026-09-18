@@ -293,6 +293,142 @@ def parse_named_function_guard_map(path, marker):
     return out
 
 
+def _matching_brace_end(text, open_pos):
+    depth = 0
+    state = "code"
+    i = int(open_pos)
+    while i < len(text):
+        ch = text[i]
+        if state == "string":
+            if ch == "\\" and i + 1 < len(text):
+                i += 2
+                continue
+            if ch == '"':
+                state = "code"
+            i += 1
+            continue
+        if state == "char":
+            if ch == "\\" and i + 1 < len(text):
+                i += 2
+                continue
+            if ch == "'":
+                state = "code"
+            i += 1
+            continue
+        if ch == '"':
+            state = "string"
+            i += 1
+            continue
+        if ch == "'":
+            state = "char"
+            i += 1
+            continue
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                return i
+        i += 1
+    return None
+
+
+def parse_item_function_body_map(path, tokens):
+    """Classify whether item callback bodies contain unguarded substantive code."""
+    text = strip_c_comments(path.read_text(encoding="utf-8", errors="replace"))
+    out = {}
+    for token in sorted(set(tokens)):
+        pattern = re.compile(
+            r"(?m)^[ \t]*(?:static[ \t]+)?(?:void|int|BOOL|char|long)[ \t\r\n*]+"
+            + re.escape(token)
+            + r"[ \t\r\n]*\("
+        )
+        m = pattern.search(text)
+        if not m:
+            out[token] = {"present": False, "unguarded_substantive": False}
+            continue
+        open_pos = text.find("{", m.end())
+        if open_pos < 0:
+            out[token] = {"present": False, "unguarded_substantive": False}
+            continue
+        end_pos = _matching_brace_end(text, open_pos)
+        if end_pos is None:
+            out[token] = {"present": False, "unguarded_substantive": False}
+            continue
+        body = text[open_pos + 1 : end_pos]
+        stack = []
+        unguarded_lines = 0
+        guarded_lines = 0
+        for raw in body.splitlines():
+            stripped = raw.strip()
+            if not stripped:
+                continue
+            if re.match(r"^#\s*(if|ifdef|ifndef)\b", stripped):
+                stack.append(stripped)
+                continue
+            if re.match(r"^#\s*(elif|else)\b", stripped):
+                if stack:
+                    stack[-1] = stripped
+                continue
+            if re.match(r"^#\s*endif\b", stripped):
+                if stack:
+                    stack.pop()
+                continue
+            semantic = stripped.replace("{", "").replace("}", "").strip()
+            if not semantic:
+                continue
+            if stack:
+                guarded_lines += 1
+            else:
+                unguarded_lines += 1
+        out[token] = {
+            "present": True,
+            "unguarded_substantive": unguarded_lines > 0,
+            "unguarded_lines": unguarded_lines,
+            "guarded_lines": guarded_lines,
+        }
+    return out
+
+
+def item_body_coverage(counter, dispatch_maps, body_maps):
+    """Refine all-three unguarded item dispatch candidates by function-body evidence."""
+    lineages = tuple(sorted(dispatch_maps))
+    unique = collections.Counter()
+    rows = collections.Counter()
+    digest = hashlib.sha256()
+    for token in sorted(counter):
+        if not all(
+            token in dispatch_maps[name] and not dispatch_maps[name][token]
+            for name in lineages
+        ):
+            continue
+        states = []
+        for name in lineages:
+            body = body_maps[name].get(token, {})
+            if not body.get("present"):
+                states.append("missing")
+            elif body.get("unguarded_substantive"):
+                states.append("stable")
+            else:
+                states.append("macro_shell")
+        if all(s == "stable" for s in states):
+            label = "stable_body_all3"
+        elif all(s == "macro_shell" for s in states):
+            label = "macro_shell_all3"
+        elif "missing" in states:
+            label = "partial_body_source"
+        else:
+            label = "mixed_body_guard"
+        unique[label] += 1
+        rows[label] += counter[token]
+        digest.update((token + "|" + "|".join(states) + "\n").encode("utf-8"))
+    return {
+        "unique_counts": unique,
+        "row_counts": rows,
+        "classification_sha256": digest.hexdigest(),
+    }
+
+
 def common_unguarded_family_counts(counter, lineage_maps, family_map=ITEM_COMMON_FAMILY):
     """Aggregate active tokens that are unguarded in every fixed source lineage."""
     lineages = tuple(sorted(lineage_maps))
@@ -425,6 +561,18 @@ def analyze(args):
         "iris": parse_global_function_guard_map(args.iris_function),
         "bismarck": parse_global_function_guard_map(args.bismarck_function),
     }
+    item_body_maps = None
+    if all(
+        getattr(args, name, None)
+        for name in ("gavin_item_body", "iris_item_body", "bismarck_item_body")
+    ):
+        active_item_tokens = set(item_slots["usefunc"])
+        item_body_maps = {
+            "gavin": parse_item_function_body_map(args.gavin_item_body, active_item_tokens),
+            "iris": parse_item_function_body_map(args.iris_item_body, active_item_tokens),
+            "bismarck": parse_item_function_body_map(args.bismarck_item_body, active_item_tokens),
+        }
+
     magic_guard_maps = {
         "gavin": parse_named_function_guard_map(args.gavin_magic, "MAGIC_functbl[]"),
         "iris": parse_named_function_guard_map(args.iris_magic, "MAGIC_functbl[]"),
@@ -452,6 +600,10 @@ def analyze(args):
         "item_use_guard": guard_coverage(item_slots["usefunc"], item_guard_maps),
         "item_use_common_families": common_unguarded_family_counts(
             item_slots["usefunc"], item_guard_maps
+        ),
+        "item_use_body": (
+            item_body_coverage(item_slots["usefunc"], item_guard_maps, item_body_maps)
+            if item_body_maps is not None else None
         ),
         "magic": coverage(magic_tokens, magic_sets),
         "magic_guard": guard_coverage(magic_tokens, magic_guard_maps),
@@ -508,6 +660,20 @@ def emit(args):
             f"unique_tokens={fam['unique'].get(family,0)}|"
             f"row_uses={fam['rows'].get(family,0)}"
         )
+    ib = r.get("item_use_body")
+    if ib is not None:
+        for label in (
+            "stable_body_all3",
+            "macro_shell_all3",
+            "mixed_body_guard",
+            "partial_body_source",
+        ):
+            print(
+                f"ITEM_USE_BODY_CLASS|{label}|"
+                f"unique_tokens={ib['unique_counts'].get(label,0)}|"
+                f"row_uses={ib['row_counts'].get(label,0)}"
+            )
+        print(f"ITEM_USE_BODY_CLASSIFICATION_SHA256|{ib['classification_sha256']}")
     emit_coverage("MAGIC", r["magic"])
     g = r["magic_guard"]
     labels = (
@@ -529,6 +695,7 @@ def emit(args):
 
 def add_source_args(ap, prefix):
     ap.add_argument(f"--{prefix}-function", type=Path, required=True)
+    ap.add_argument(f"--{prefix}-item-body", type=Path)
     ap.add_argument(f"--{prefix}-magic", type=Path, required=True)
     ap.add_argument(f"--{prefix}-petskill", type=Path, required=True)
 
