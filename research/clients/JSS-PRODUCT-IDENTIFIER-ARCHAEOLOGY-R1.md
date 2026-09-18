@@ -8,7 +8,7 @@ This document is a **search-control artifact**. A numeric pattern is not promote
 
 ## 1. Why this track exists
 
-The 1999 JSS StoneAge package is currently constrained by first-party manual/advertising evidence and later package photographs, but its product/JAN code remains unresolved.
+The 1999 JSS StoneAge package is constrained by first-party manual/advertising evidence and later package photographs. Its retail JAN is now directly resolved as **`4909476303010`** from a surviving package-back photograph; the remaining identifier gap is the exact model/type code and media-level label/matrix identifiers.
 
 A tempting early shortcut was to extrapolate from JSS console barcodes:
 
@@ -193,7 +193,7 @@ Do **not** claim from these records alone that:
 - the first two digits of the five-digit body are a formally documented platform/category code;
 - all Windows games use `30xxx`;
 - LIFESTORM II or StoneAge follows a simple numerical increment;
-- StoneAge has any specific JAN not explicitly recovered from a source.
+- any StoneAge JAN candidate not explicitly bound to StoneAge by a source.
 
 The pattern is a search-space reducer, not a product assignment.
 

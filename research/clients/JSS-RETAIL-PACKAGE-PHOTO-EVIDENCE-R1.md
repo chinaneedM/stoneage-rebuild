@@ -68,7 +68,7 @@ The photograph is later community preservation and lacks a project-controlled ch
 
 `SRC-JP-1999-RETAIL-MERCARI-01` independently describes an unopened JSS `STONEAGE 初回限定版` and states that it contains a bonus CD-ROM.
 
-The listing remains a seller claim until direct inspection; its value is independent corroboration of the collector-photo interpretation.
+The listing remains a seller claim until direct inspection; its value is independent corroboration of the collector-photo interpretation. The seller also speculates that BGM might still be listenable from the bonus disc; that remark is **not evidence** that the disc is an audio CD, contains specific BGM tracks, or uses any particular data/audio layout.
 
 ## 4. Working conclusion
 
@@ -108,7 +108,7 @@ This source-quality defect is useful: it demonstrates why artifact-level visual 
 For the **1999 JSS package**, still recover:
 
 - high-resolution front/back/side box photographs;
-- product/JAN code;
+- package model/type code (the retail JAN is now directly resolved as `4909476303010` by a separate package-back source);
 - both disc face labels at readable resolution;
 - disc matrix / mastering identifiers and, if present, IFPI codes;
 - exact CD NUMBER card format;
@@ -123,8 +123,8 @@ For the **1999 JSS package**, still recover:
 
 1. Search for the exact first-package artwork plus `初回限定版`, `ボーナスCD`, `JAPAN SYSTEM SUPPLY`, `Windows95/98`, and the 1999-10-15 date.
 2. Prioritize collector/seller pages that expose **back-box and disc-face photographs**, not merely front-box thumbnails.
-3. Try to locate the owner/original upload behind the 2020 collector-photo chain and ask only for provenance-preserving metadata if contact becomes possible; do not assume the repost narrative is accurate.
-4. Continue tracking the sealed Mercari package image set; the current web retrieval path exposes the listing but not all 13 original image bodies.
+3. Continue locating public mirrors, caches, archives, and repost lineage behind the 2020 collector-photo chain; do not depend on seller/collector contact or user-side acquisition.
+4. Continue tracking the sealed Mercari package image set. The listing exposes all 13 exact original-image URLs, but every direct original-image request currently returns HTTP 403 in the available extraction path; prioritize public caches/mirrors rather than seller contact.
 5. If an original package becomes obtainable, photograph labels/matrix codes before imaging any media, then image outside the repository and record hashes/metadata only.
 
 ## 8. Effect on Phase 0 priority

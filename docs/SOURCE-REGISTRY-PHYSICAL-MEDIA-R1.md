@@ -60,6 +60,7 @@ The canonical research analysis for this source group is `research/clients/JSS-R
 - Seller text preserved by the live listing states:
   - the `STONEAGE` package is an unopened initial limited edition;
   - an initial-edition bonus CD-ROM is inside;
+  - the seller speculates that BGM might still be listenable from that disc; this is explicitly treated as **seller speculation**, not evidence that the disc is audio-only, contains specific BGM tracks, or has any particular session/layout;
   - the accompanying mouse pad is attributed by the seller to Tokyo Game Show 1999;
   - the mug is attributed by the seller to a visit to the company.
 - Confidence: **C** for seller provenance/bundling claims; potentially high visual value if the original photo bodies can be preserved and inspected.
@@ -78,12 +79,13 @@ The canonical research analysis for this source group is `research/clients/JSS-R
   12. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_12.jpg?1745193251=`
   13. `https://static.mercdn.net/item/detail/orig/photos/m44997025885_13.jpg?1745193251=`
 - Retrieval limitation in the current environment:
-  - the listing page exposes the exact original-image URLs, but attempts to retrieve the image bodies through the current extraction path return cache misses;
-  - therefore no barcode, product/JAN code, disc label or matrix code has been read from these thirteen images in this pass.
+  - the listing page exposes the exact original-image URLs;
+  - each of the thirteen direct original-image requests currently returns **HTTP 403 Forbidden** through the available extraction path;
+  - therefore no additional model/type code, disc label or matrix code has been read from these thirteen images in this pass.
 - Research consequence:
   - this sold listing is no longer an active acquisition route, but it is now a concrete **photo-preservation target set** rather than a generic inaccessible marketplace lead;
   - future work should attempt preservation through another browser/archive/network path before the static image objects disappear;
-  - if any of the thirteen photographs shows a back box, disc face or package side at readable resolution, it could directly close the product/JAN or disc-label gap without requiring the physical object first.
+  - if a public cache/mirror of any of the thirteen photographs exposes a back box, disc face or package side at readable resolution, it could still reveal the missing model/type code, disc label or matrix fields without requiring the physical object; the retail JAN itself is already resolved independently.
 - Does not establish:
   - authenticity of every listed accessory association;
   - exact sealed-box contents without opening/direct inspection;
@@ -150,4 +152,4 @@ Support now comes from three independent evidence types:
 2. contemporaneous advertising: initial-edition **STONEAGE bonus CD**;
 3. later physical-package photography: two visibly separate optical discs shown with the early JSS box/manual.
 
-The remaining gap is no longer merely whether a second disc probably existed. The high-value unresolved questions are now the exact identity, label/matrix code and contents of each disc; package/JAN identifiers; and a provenance-preserving dump/file tree of the actual 1999 game disc.
+The remaining gap is no longer merely whether a second disc probably existed. The high-value unresolved questions are now the exact identity, label/matrix code and contents of each disc; the package model/type code; and a provenance-preserving publicly obtainable dump/file tree of the actual 1999 game disc.

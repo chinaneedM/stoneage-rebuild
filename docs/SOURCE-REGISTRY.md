@@ -167,7 +167,10 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Language/region: Japanese / Japan
 - Source type: marketplace photographs of a period magazine advertisement
 - Listing URL: https://auctions.yahoo.co.jp/jp/auction/k1223621478
-- Image evidence: Yahoo Auctions listing images; preserve URLs/archival captures separately if possible
+- Preserved original-image targets exposed by the listing:
+  1. https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0203/user/fee46e07a796172ff30e16da835b56acd5220ffd85dfadd54285b067cf6812d6/i-img1200x780-17739912563485qf7usl8048.jpg
+  2. https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0203/user/fee46e07a796172ff30e16da835b56acd5220ffd85dfadd54285b067cf6812d6/i-img1200x764-177399125637239rvonr8048.jpg
+- Image evidence: the Yahoo Auctions photographs preserve the period advertisement at approximately 1200-pixel width, reducing dependence on the marketplace page renderer itself
 - Confidence: **B** for the legible contemporaneous advertisement content shown in photographs; not S because the project has not directly inspected/archived the original publication page
 - Supports directly from visible advertisement text:
   - Windows 95/98 as the advertised platform;
