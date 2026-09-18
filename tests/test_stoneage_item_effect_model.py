@@ -7,12 +7,15 @@ from tools.stoneage_item_effect_model import (
     battle_item_recovery_gain,
     capture_up_transition,
     dead_targets,
+    dice_drop_transition,
+    dice_pickup_transition,
     change_pet_owner_item_transition,
     encounter_item_transition,
     equipment_noenemy_level,
     field_change_consumption,
     item_use_route,
     microphone_item_transition,
+    mic_drop_transition,
     noenemy_item_transition,
     living_targets,
     param_modifier_delta,
@@ -34,6 +37,7 @@ from tools.stoneage_item_effect_model import (
     set_magic_defense,
     tohelos_item_transition,
     warp_item_transition,
+    wear_pick_all_pet_transition,
     remove_equipment_noenemy,
     rename_item_begin,
     rename_item_finalize,
@@ -777,6 +781,49 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
         )
         self.assertTrue(r["renamed"])
         self.assertFalse(r["catalyst_changed"])
+
+    def test_drop_mic_forces_runtime_mode_off(self):
+        self.assertEqual(
+            mic_drop_transition(item_valid=True, current_enabled=True),
+            {"changed": True, "enabled": False},
+        )
+        self.assertEqual(
+            mic_drop_transition(item_valid=True, current_enabled=False),
+            {"changed": False, "enabled": False},
+        )
+
+    def test_wear_and_rewear_toggle_pick_all_pet(self):
+        self.assertTrue(wear_pick_all_pet_transition(attached=True))
+        self.assertFalse(wear_pick_all_pet_transition(attached=False))
+
+    def test_dice_drop_and_pickup_round_trip_visual_state(self):
+        faces = (24298, 24299, 24300, 24301, 24302, 24303)
+        names = ("1", "2", "3", "4", "5", "6")
+        dropped = dice_drop_transition(
+            original_image=999,
+            rolled_face=4,
+            face_images=faces,
+            face_names=names,
+        )
+        self.assertEqual(dropped["saved_original_image"], 999)
+        self.assertEqual(dropped["base_image"], 24302)
+        self.assertEqual(dropped["secret_name"], "5")
+        self.assertEqual(
+            dice_pickup_transition(
+                saved_original_image=dropped["saved_original_image"],
+                normal_name="Dice",
+            ),
+            {"base_image": 999, "secret_name": "Dice"},
+        )
+
+    def test_dice_rejects_out_of_range_roll(self):
+        with self.assertRaises(ValueError):
+            dice_drop_transition(
+                original_image=999,
+                rolled_face=6,
+                face_images=(1, 2, 3, 4, 5, 6),
+                face_names=("1", "2", "3", "4", "5", "6"),
+            )
 
     def test_reverse_item_uses_same_xor_transition(self):
         r = reverse_target_transition(
