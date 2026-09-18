@@ -152,6 +152,23 @@ def analyze(dat_dir,adrn_path=None):
             mapped_unique=sum(1 for v in anomaly["low_counts"] if v>CG_INVISIBLE and v in adrn["by_bmp"])
             anomaly["unknown_low12_adrn_mapped_cells"]=mapped_cells
             anomaly["unknown_low12_adrn_mapped_unique"]=mapped_unique
+        unresolved_files=[]
+        for p in files:
+            try:w,h,t,pa,e=parse_dat(p)
+            except ValueError:continue
+            tu=collections.Counter(v for v in t if v>CG_INVISIBLE and v not in adrn["by_bmp"])
+            pu=collections.Counter(v for v in pa if v>CG_INVISIBLE and v not in adrn["by_bmp"])
+            if tu or pu:
+                unresolved_files.append({
+                    "name":p.name,"w":w,"h":h,
+                    "tile_refs":sum(tu.values()),"tile_unique":len(tu),
+                    "parts_refs":sum(pu.values()),"parts_unique":len(pu),
+                    "tile_top":tu.most_common(5),"parts_top":pu.most_common(5),
+                })
+        out["graphic_unresolved_files"]=sorted(
+            unresolved_files,
+            key=lambda x:(-(x["tile_refs"]+x["parts_refs"]),-x["tile_refs"],x["name"].lower())
+        )
         for name,c in (("tile_graphics",tile),("parts_graphics",parts)):
             refs=mapped=0; unresolved=collections.Counter(); hit=collections.Counter()
             footprint=collections.Counter(); prio=collections.Counter()
@@ -208,6 +225,11 @@ def emit(r):
         print(f"ADRN_RECORD_COUNT|{a['records']}")
         print(f"ADRN_BMPNUMBER_INDEX_SIZE|{len(a['by_bmp'])}")
         print(f"ADRN_DUPLICATE_BMPNUMBERS|{a['duplicate']}")
+        print(f"GRAPHIC_UNRESOLVED_FILE_COUNT|{len(r.get('graphic_unresolved_files',[]))}")
+        for x in r.get("graphic_unresolved_files",[])[:40]:
+            print(f"GRAPHIC_UNRESOLVED_FILE|{x['name']}|{x['w']}|{x['h']}|tile_refs={x['tile_refs']}|tile_unique={x['tile_unique']}|parts_refs={x['parts_refs']}|parts_unique={x['parts_unique']}")
+            if x["tile_top"]:print(f"GRAPHIC_UNRESOLVED_FILE_TILE_TOP|{x['name']}|"+",".join(f"{v}:{n}" for v,n in x["tile_top"]))
+            if x["parts_top"]:print(f"GRAPHIC_UNRESOLVED_FILE_PARTS_TOP|{x['name']}|"+",".join(f"{v}:{n}" for v,n in x["parts_top"]))
         for layer in ("tile_graphics","parts_graphics"):
             g=r[layer]; p=layer.upper()
             print(f"{p}_REFS|{g['refs']}")

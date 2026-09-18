@@ -28,6 +28,7 @@ class DatProbeTests(unittest.TestCase):
             self.assertEqual(r["tile_graphics"]["hit"][2],1)
             self.assertEqual(r["event_unknown_total"],0)
             up=r["parts_graphics"]["unresolved_profile"]
+            self.assertEqual(len(r["graphic_unresolved_files"]),0)
             self.assertEqual(up["classes"]["adrn_domain_min"],100)
             self.assertEqual(up["classes"]["adrn_domain_max"],101)
             self.assertEqual(up["classes"]["below_adrn_domain_refs"],0)
@@ -42,6 +43,9 @@ class DatProbeTests(unittest.TestCase):
             maps.joinpath("1.dat").write_bytes(dat(3,1,[101,103,20001],[101,19999,20001],[0,0,0]))
             r=analyze(maps,adrn)
             t=r["tile_graphics"]["unresolved_profile"]; p=r["parts_graphics"]["unresolved_profile"]
+            self.assertEqual(len(r["graphic_unresolved_files"]),1)
+            self.assertEqual(r["graphic_unresolved_files"][0]["tile_refs"],3)
+            self.assertEqual(r["graphic_unresolved_files"][0]["parts_refs"],3)
             self.assertEqual(t["classes"]["within_adrn_gap_refs"],2)
             self.assertEqual(t["classes"]["above_adrn_domain_refs"],1)
             self.assertEqual(t["runs_by_length"][0],(101,101,1,1))
