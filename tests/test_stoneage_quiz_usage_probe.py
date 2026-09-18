@@ -32,8 +32,8 @@ Answer:2
 Level:4
 """
 QUESTIONS = b"""# ignored
-1,1,2,1,1,question,a,b,c
-2,2,4,2,2,question,d,e,f
+1,1,2,1,1,secret-question-payload,a,b,c
+2,2,4,2,2,other-question-payload,d,e,f
 """
 
 
@@ -70,7 +70,7 @@ class QuizUsageProbeTests(unittest.TestCase):
             with contextlib.redirect_stdout(out):
                 emit(analyze(root, root / "question.txt"))
             text = out.getvalue()
-            for secret in ("100*2", "300.301", "1.2.3", "question", "q.arg"):
+            for secret in ("100*2", "300.301", "1.2.3", "secret-question-payload", "other-question-payload", "q.arg"):
                 self.assertNotIn(secret, text)
             self.assertIn("PAIR_SHAPE|Warp|pairs=2|remainder=0|blocks=1", text)
             self.assertIn("QUESTION_FILE|present=1|rows=2", text)
