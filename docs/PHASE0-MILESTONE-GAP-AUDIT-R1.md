@@ -123,8 +123,9 @@ The four pet-skill misses remain provenance/version-skew evidence rather than in
 The three pinned descendant dispatch tables share exactly nine unguarded magic callbacks, and the active recovered table aligns with that boundary:
 
 - 9 all-three unguarded callback tokens / 130 active rows;
-- 8 all-three guarded callback tokens / 51 active rows;
-- no mixed-guard, partial-source, or all-source-missing active magic tokens.
+- 7 all-three guarded callback tokens / 46 active rows;
+- 1 partial-source callback token / 5 active rows (`MAGIC_AttSkill`);
+- no mixed-guard or all-source-missing active magic tokens.
 
 R1 reconstructs the nine-function common core across:
 
