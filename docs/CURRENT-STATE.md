@@ -684,11 +684,23 @@ Supplemental source ledgers:
 - Local reference validation passes 26 deterministic tests.
 - Next step is the verified 2.5 Bus/Air payload-free usage probe before closing the transport seam.
 
+## Bus + Airplane recovered active closure — 2026-09-19
+
+- Real-byte transport usage workflow 35381648065 succeeded against the verified 2.5 bundle; aggregate argument SHA-256 is 351409fa154bd289c78c28e86a93ea3151bfc7f2af2ec1eaed67e0e987838f43.
+- All 7 Bus and 5 Airplane refs are resolved file-backed configs, and all 12 have routenum=1.
+- Active recovered common gates are denieditem + needstone on all 12 transports. Bus fares are 0/20/25/30/40/50 Stone; Air fares are 1000 or 3000 Stone.
+- No recovered transport config uses reverse, allowitem or needlevel. Air additionally has no recovered WAVE, delitem or maxlevel.
+- Air oneway is active in 2/5 configs; all five Air routes contain floor changes, confirming the cross-floor vehicle/passenger warp path as active behavior.
+- Two Air configs contain pickupitem but no allowitem, so pickupitem is inert under the fixed generic boarding code.
+- All 311 Bus route points are valid x,y pairs and all 61 Air points are valid floor,x,y triples; no malformed route points were found.
+- Bus + Airplane R1 is closed for the fixed-descendant common core plus recovered 2.5 active surface. Exact JSS equivalence remains OPEN.
+- Queue triage now selects Janken (9 resolved file-backed refs) as the next unresolved state-changing secondary-argument seam; Action and TimeMan are deterministic but presentation-level, while Scheduleman/family packages remain later-scope.
+
 ## Immediate next actions
 
-1. **Measure the recovered 2.5 Bus + Airplane configuration surface.** Run a payload-free aggregate probe over the 7 Bus + 5 Airplane file-backed refs, including route-count/point-shape distributions and presence of boarding/economy keys without retaining coordinates, names or item IDs.
-2. **Use that measurement to close or narrow the transport seam.** Verify whether reverse, oneway, pickupitem, allow/denied item, needlevel, needstone and Air-only source keys are actually active; document source/data mismatches rather than normalizing them.
-3. **Then rerun the secondary-argument queue decision.** Do not reopen NPCEnemy or already closed Warp/ItemShop/SavePoint/PetShop/PetSkillShop/PoolItemShop unless a concrete source/data mismatch appears.
+1. **Advance to Janken as the next state-changing secondary-argument seam.** Start with a payload-free recovered 2.5 usage probe over its 9 resolved file-backed refs; measure EntryItem, Win/Lose item mutation, deletion and Win/Lose warp shapes without retaining dialogue, coordinates or item IDs.
+2. **Then reconstruct only the active fixed-descendant Janken core.** Preserve result-selection, item gate/mutation and warp ordering exactly; keep unrelated presentation text out of the deterministic model.
+3. **Keep Action and TimeMan below Janken.** Action is primarily action/message presentation and TimeMan is time-driven NPC graphic/message state; Scheduleman and family PK packages remain later-scope.
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
 6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.

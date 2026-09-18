@@ -120,6 +120,43 @@ Accordingly delitem ticket deletion and maxlevel are source capabilities / later
 
 Local validation: 26 deterministic tests passed.
 
+## Recovered 2.5 active configuration
+
+Real-byte workflow run 35381648065 succeeded against the verified bundle.
+
+Aggregate argument-corpus SHA-256:
+
+351409fa154bd289c78c28e86a93ea3151bfc7f2af2ec1eaed67e0e987838f43
+
+All seven Bus refs and all five Airplane refs are resolved file-backed configurations. All twelve declare exactly one route, so the random route chooser degenerates to route 1 in the preserved 2.5 specimen.
+
+Bus:
+
+- all seven explicitly configure waittime; six use 180 seconds and one uses 120;
+- all seven configure denieditem and needstone;
+- denieditem list length is 12 in six configs and 1 in one config;
+- needstone values are 0, 20, 25, 30, 40 and 50, with 50 appearing twice;
+- one config sets seflg=0; the other six omit it and therefore use the true default;
+- no recovered Bus config has reverse, allowitem, pickupitem or needlevel;
+- route point counts are 10, 11, 15, 45, 55, 66 and 109;
+- all 311 recovered Bus route points have the expected x,y arity.
+
+Airplane:
+
+- all five explicitly configure waittime=180, denieditem, needstone and oneway;
+- denieditem list length is 12 in all five;
+- needstone is 1000 in three configs and 3000 in two;
+- oneway is 1 in two configs and 0 in three;
+- pickupitem exists in two configs, but allowitem is absent from all five. Since the source only consumes pickupitem inside allowitem processing, those two pickupitem keys are behaviorally inert in the recovered generic boarding path;
+- no recovered Air config has reverse, allowitem, needlevel, WAVE, delitem or maxlevel;
+- route point counts are 9, 9, 13, 14 and 16;
+- all 61 recovered Air route points have the expected floor,x,y arity;
+- all five Air routes contain at least one floor transition, so cross-floor transport warp is active recovered behavior rather than dormant source capability.
+
+No malformed route point was found in either class.
+
+These measurements confirm that the active 2.5 transport economy is simpler than the source capability set: denied-item restrictions plus Stone fare are live everywhere, Air oneway is live in two cases, while level gates, reverse initialization, allowitem ticket semantics and Air-only delitem/maxlevel are absent from the recovered specimen.
+
 ## Evidence status
 
 FACT: Bus and Air share CHAR_TYPEBUS generic party boarding through NPC_BusCheckJoinParty.
@@ -138,8 +175,16 @@ SOURCE QUIRK: needstone values below -1 would increase gold.
 
 VERSIONED / DORMANT: Air delitem/maxlevel boarding extensions are not on the active generic join path.
 
-OPEN: which route/gate keys and route shapes are actually present in the verified recovered 2.5 Bus/Air argument files.
+FACT: the verified recovered 2.5 surface is measured in STONEAGE-25-BUS-AIR-USAGE-R1.txt and activates denieditem + needstone on all 12 transports, Air oneway on two transports, and cross-floor Air routing on all five Air routes.
+
+FACT: all recovered Bus/Air configs have routenum=1; recovered random route selection therefore always selects route 1.
+
+FACT: recovered Bus/Air has no reverse, allowitem or needlevel key. Recovered Air also has no WAVE, delitem or maxlevel key.
+
+FACT: two Air configs contain pickupitem without allowitem, making pickupitem inert under the fixed-source generic boarding path.
+
+OPEN: exact JSS-era transport rules/data until an earlier clean artifact is recovered.
 
 ## Next seam
 
-Run a payload-free recovered Bus/Air secondary-argument usage probe on the verified 2.5 bundle. Use it to distinguish active 2.5 route/economy configuration from dormant source capabilities, then close or narrow this transport seam.
+Bus + Airplane R1 is closed for the fixed-descendant common core plus the recovered 2.5 active surface. Advance to the next state-changing secondary-argument class selected by the queue triage: Janken.
