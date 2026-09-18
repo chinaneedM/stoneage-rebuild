@@ -420,3 +420,227 @@ def set_magic_defense(current_turns, *, kind, turn):
         kind=kind,
         turn=turn,
     )
+
+
+def parse_warp_argument(option):
+    """Parse ITEM_useWarp's four-integer argument: flag floor x y."""
+    m = re.match(
+        r"\s*([+-]?\d+)\s+([+-]?\d+)\s+([+-]?\d+)\s+([+-]?\d+)",
+        str(option),
+    )
+    if not m:
+        return None
+    flag, floor, x, y = (int(x, 10) for x in m.groups())
+    return {"flag": flag, "floor": floor, "x": x, "y": y}
+
+
+def warp_item_transition(
+    *,
+    parsed_argument,
+    battle_mode_none,
+    current_floor,
+    party_mode,
+    caster_id,
+    valid_party_members=(),
+):
+    """Stable ITEM_WarpForAny control flow around the shared warp primitive.
+
+    floor 117 is blocked in both observed compile branches. Additional blocked
+    floors remain version/macro layers.
+    """
+    if parsed_argument is None:
+        return {"accepted": False, "consume": False, "targets": (), "reason": "bad_argument"}
+    if not battle_mode_none:
+        return {"accepted": False, "consume": False, "targets": (), "reason": "in_battle"}
+    if int(current_floor) == 117:
+        return {"accepted": False, "consume": False, "targets": (), "reason": "blocked_floor"}
+
+    mode = str(party_mode)
+    if mode == "leader":
+        if int(parsed_argument["flag"]) == 0:
+            return {
+                "accepted": False,
+                "consume": False,
+                "targets": (),
+                "reason": "leader_single_only_rejected",
+            }
+        return {
+            "accepted": True,
+            "consume": True,
+            "targets": tuple(valid_party_members),
+            "reason": "party_warp",
+        }
+    if mode == "client":
+        return {"accepted": False, "consume": False, "targets": (), "reason": "party_client"}
+    if mode == "none":
+        return {
+            "accepted": True,
+            "consume": True,
+            "targets": (caster_id,),
+            "reason": "solo_warp",
+        }
+
+    # Legacy helper reaches TRUE without an explicit warp for an unexpected mode.
+    return {"accepted": True, "consume": True, "targets": (), "reason": "unknown_mode"}
+
+
+def pet_follow_item_transition(
+    *,
+    existing_follow_valid,
+    target_valid,
+    item_valid,
+    follow_level,
+    target_level,
+    target_in_first_five_pet_slots,
+    drop_follow_success,
+):
+    """Common ITEM_petFollow eligibility.
+
+    The visible loyalty <80 check has its rejection commented out, and the
+    function does not delete the item after a successful follow operation.
+    """
+    if existing_follow_valid:
+        return {"accepted": False, "consume": False, "reason": "existing_follow"}
+    if not target_valid:
+        return {"accepted": False, "consume": False, "reason": "invalid_target"}
+    if not item_valid:
+        return {"accepted": False, "consume": False, "reason": "invalid_item"}
+    if int(target_level) > int(follow_level):
+        return {"accepted": False, "consume": False, "reason": "level_too_high"}
+    if not target_in_first_five_pet_slots:
+        return {"accepted": False, "consume": False, "reason": "not_owned_slot"}
+    if not drop_follow_success:
+        return {"accepted": False, "consume": False, "reason": "drop_follow_failed"}
+    return {"accepted": True, "consume": False, "reason": "follow_started"}
+
+
+def skillup_point_item_transition(*, item_valid, current_points):
+    if not item_valid:
+        return {"changed": False, "consume": False, "points": int(current_points)}
+    return {"changed": True, "consume": True, "points": int(current_points) + 1}
+
+
+def noenemy_item_transition(*, item_valid):
+    return {
+        "changed": bool(item_valid),
+        "consume": bool(item_valid),
+        "noenemy": bool(item_valid),
+    }
+
+
+def encounter_item_transition(*, item_valid):
+    return {
+        "changed": bool(item_valid),
+        "consume": bool(item_valid),
+        "stay_encounter": bool(item_valid),
+    }
+
+
+def microphone_item_transition(*, caster_valid, battle_mode_none, current_enabled):
+    """ITEM_useMic toggles runtime mic mode only outside battle and is not consumed."""
+    if not caster_valid:
+        return {"changed": False, "consume": False, "enabled": bool(current_enabled)}
+    if not battle_mode_none:
+        return {"changed": False, "consume": False, "enabled": bool(current_enabled)}
+    return {
+        "changed": True,
+        "consume": False,
+        "enabled": not bool(current_enabled),
+    }
+
+
+def change_pet_owner_item_transition(
+    *,
+    caster_valid,
+    target_valid,
+    item_valid,
+    target_is_pet,
+    pet_owner_marker,
+    player_account_marker,
+):
+    """Model ITEM_changePetOwner's rename-lock release behavior."""
+    if not caster_valid or not target_valid or not item_valid:
+        return {
+            "changed": False,
+            "consume": False,
+            "pet_owner_marker": str(pet_owner_marker),
+        }
+    if not target_is_pet:
+        return {
+            "changed": False,
+            "consume": False,
+            "pet_owner_marker": str(pet_owner_marker),
+        }
+    marker = str(pet_owner_marker)
+    if marker == "" or marker == str(player_account_marker):
+        return {"changed": False, "consume": False, "pet_owner_marker": marker}
+    return {"changed": True, "consume": True, "pet_owner_marker": ""}
+
+
+def tohelos_item_transition(
+    *,
+    item_valid,
+    option,
+    caster_party_mode,
+    caster_id,
+    party_leader_id=None,
+):
+    """Model ITEM_useEffectTohelos's destructive parse/mutation order.
+
+    The item is detached from inventory before either argument field is parsed.
+    Any parse failure still destroys the item instance.
+    """
+    if not item_valid:
+        return {
+            "changed": False,
+            "consume": False,
+            "target_id": None,
+            "cutrate": None,
+            "limitcount": None,
+        }
+    parts = str(option).split("|")
+    target = party_leader_id if str(caster_party_mode) == "client" else caster_id
+    if len(parts) < 1 or parts[0] == "":
+        return {
+            "changed": False,
+            "consume": True,
+            "target_id": target,
+            "cutrate": None,
+            "limitcount": None,
+        }
+    cutrate = max(0, int(parts[0]) if re.match(r"\s*[+-]?\d+", parts[0]) else 0)
+    if len(parts) < 2 or parts[1] == "":
+        return {
+            "changed": False,
+            "consume": True,
+            "target_id": target,
+            "cutrate": cutrate,
+            "limitcount": None,
+        }
+    limitcount = max(0, int(parts[1]) if re.match(r"\s*[+-]?\d+", parts[1]) else 0)
+    return {
+        "changed": True,
+        "consume": True,
+        "target_id": target,
+        "cutrate": cutrate,
+        "limitcount": limitcount,
+    }
+
+
+def equipment_noenemy_level(evade_level):
+    """ITEM_equipNoenemy quantizes positive argument levels into four bands."""
+    value = int(evade_level)
+    if value >= 200:
+        return 200
+    if value >= 120:
+        return 120
+    if value >= 80:
+        return 80
+    if value >= 40:
+        return 40
+    return 0
+
+
+def remove_equipment_noenemy():
+    """ITEM_remNoenemy always clears the connection-level equipment value."""
+    return 0
