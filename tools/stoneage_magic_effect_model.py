@@ -156,19 +156,20 @@ def field_recovery_gain(*, rate, rolled_power):
 
 
 def parse_after_marker(text, marker, default):
-    """Mirror the source's marker + one separator + integer convention.
+    """Mirror the source's marker + exactly one separator convention.
 
-    The old code advances by sizeof(marker-array), i.e. text length plus the
-    terminating NUL. In the data syntax that effectively skips one separator
-    byte after the marker. This helper accepts either one non-numeric separator
-    or a directly adjacent integer to keep the semantic model encoding-neutral.
+    The C code advances by sizeof(marker-array), not strlen(marker). Because
+    sizeof includes the terminating NUL, the runtime pointer skips the marker
+    plus one additional byte from the option string. The preserved data syntax
+    therefore needs one separator byte such as '=' before the integer.
     """
     pos = str(text).find(str(marker))
     if pos < 0:
         return int(default)
     tail = str(text)[pos + len(str(marker)) :]
-    if tail and tail[0] not in "+-0123456789":
-        tail = tail[1:]
+    if not tail:
+        return int(default)
+    tail = tail[1:]
     m = re.match(r"\s*([+-]?\d+)", tail)
     return int(m.group(1), 10) if m else int(default)
 
