@@ -63,7 +63,9 @@ def parse_enemy_ids(path):
     return ids
 
 def parse_group_file(path,enemy_ids):
-    rows=[];fc=collections.Counter();bad=0
+    """Parse raw rows and simulate GROUP_initGroup's effective loaded table."""
+    raw_rows=[];loaded_rows=[];fc=collections.Counter();bad=0
+    rejected_no_enemy=0; rejected_duplicate=0
     for line in clean_lines(path):
         f=line.split(b",");fc[len(f)]+=1
         if len(f)<1+len(GROUP_INT_NAMES):
@@ -72,12 +74,39 @@ def parse_group_file(path,enemy_ids):
         for token in f[1:1+len(GROUP_INT_NAMES)]:
             vals.append(-1 if token.strip()==b"" else c_atoi(token))
         row=dict(zip(GROUP_INT_NAMES,vals))
-        eids=[row[f"ENEMY_ID{i}"] for i in range(1,11) if row[f"ENEMY_ID{i}"]!=-1]
-        row["_enemy_refs"]=eids
-        row["_unresolved"]=sum(1 for v in eids if v not in enemy_ids)
-        row["_duplicate_enemy_ids"]=len(eids)-len(set(eids))
-        rows.append(row)
-    return rows,fc,bad
+        raw_eids=[row[f"ENEMY_ID{i}"] for i in range(1,11) if row[f"ENEMY_ID{i}"]!=-1]
+        unresolved=[v for v in raw_eids if v not in enemy_ids]
+        row["_raw_enemy_refs"]=tuple(raw_eids)
+        row["_raw_unresolved"]=len(unresolved)
+
+        # GROUP_initGroup rewrites each unresolved ENEMY_ID slot to -1.
+        for i in range(1,11):
+            key=f"ENEMY_ID{i}"
+            if row[key] != -1 and row[key] not in enemy_ids:
+                row[key] = -1
+
+        effective=[row[f"ENEMY_ID{i}"] for i in range(1,11) if row[f"ENEMY_ID{i}"]!=-1]
+        row["_effective_enemy_refs"]=tuple(effective)
+        row["_duplicate_effective_enemy_ids"]=len(effective)-len(set(effective))
+        raw_rows.append(row)
+
+        # Loader rejects rows that have no resolved enemies, then checks duplicate
+        # non--1 enemy IDs before incrementing GROUP_groupnum.
+        if not effective:
+            rejected_no_enemy += 1
+            continue
+        if row["_duplicate_effective_enemy_ids"] > 0:
+            rejected_duplicate += 1
+            continue
+        loaded_rows.append(row)
+    return {
+        "raw_rows":raw_rows,
+        "loaded_rows":loaded_rows,
+        "field_counts":fc,
+        "bad":bad,
+        "rejected_no_enemy":rejected_no_enemy,
+        "rejected_duplicate":rejected_duplicate,
+    }
 
 def parse_encount_file(path,group_ids):
     rows=[];fc=collections.Counter();schema=collections.Counter();bad=0
@@ -100,7 +129,15 @@ def parse_encount_file(path,group_ids):
             schema["base_30"]+=1
         gids=[row[f"GROUP_ID{i}"] for i in range(1,11) if row[f"GROUP_ID{i}"]!=-1]
         row["_group_refs"]=gids
-        row["_unresolved"]=sum(1 for v in gids if v not in group_ids)
+        unresolved_slots=[]
+        for i in range(1,11):
+            gid=row[f"GROUP_ID{i}"]
+            if gid == -1 or gid in group_ids:
+                continue
+            unresolved_slots.append((i, row[f"GROUP_PROB{i}"]))
+        row["_unresolved"]=len(unresolved_slots)
+        row["_unresolved_positive_weight"]=sum(1 for _,w in unresolved_slots if w>0)
+        row["_unresolved_nonminus_weight"]=sum(1 for _,w in unresolved_slots if w!=-1)
         row["_duplicate_group_ids"]=len(gids)-len(set(gids))
         row["_reversed_prob"]=row["PROB_MIN"]>row["PROB_MAX"]
         row["_rect_width"]=abs(row["X2"]-row["X1"])
@@ -120,12 +157,15 @@ def analyze(data_dir,setup=None):
 
     groups=[]
     for p in sorted(data_dir.glob("group*.txt"),key=lambda p:p.name.lower()):
-        rows,fc,bad=parse_group_file(p,enemy_ids)
-        groups.append({"name":p.name,"rows":rows,"field_counts":fc,"bad":bad,
-                       "sha":sha256(p),"bytes":p.stat().st_size,
-                       "active":bool(group_cfg and Path(group_cfg.replace("\\","/")).name.lower()==p.name.lower())})
+        parsed=parse_group_file(p,enemy_ids)
+        groups.append({
+            "name":p.name,
+            **parsed,
+            "sha":sha256(p),"bytes":p.stat().st_size,
+            "active":bool(group_cfg and Path(group_cfg.replace("\\","/")).name.lower()==p.name.lower())
+        })
     active_group=next((g for g in groups if g["active"]),None)
-    group_ids=set(r["GROUP_ID"] for r in active_group["rows"]) if active_group else set()
+    group_ids=set(r["GROUP_ID"] for r in active_group["loaded_rows"]) if active_group else set()
 
     ep=active_path(data_dir,enc_cfg,"encount.txt")
     enc=None
@@ -145,17 +185,18 @@ def emit(data_dir,setup=None):
     print(f"ACTIVE_ENEMY_ID_COUNT|{enemy_count}")
     print(f"GROUP_FILE_COUNT|{len(groups)}")
     for g in groups:
-        rows=g["rows"]
-        print(f"GROUP_FILE|{g['name']}|bytes={g['bytes']}|sha256={g['sha']}|valid_rows={len(rows)}|malformed={g['bad']}|active={int(g['active'])}")
-        for n,c in sorted(g["field_counts"].items()):print(f"GROUP_FIELD_COUNT|{g['name']}|{n}|{c}")
+        raw=g["raw_rows"]; rows=g["loaded_rows"]
+        print(f"GROUP_FILE|{g['name']}|bytes={g['bytes']}|sha256={g['sha']}|raw_valid_rows={len(raw)}|simulated_loaded_rows={len(rows)}|malformed={g['bad']}|active={int(g['active'])}")
+        for n,count in sorted(g["field_counts"].items()):print(f"GROUP_FIELD_COUNT|{g['name']}|{n}|{count}")
         lo,hi,uq=stat(rows,"GROUP_ID")
-        if lo is not None:print(f"GROUP_ID_STAT|{g['name']}|min={lo}|max={hi}|unique={uq}")
-        print(f"GROUP_UNRESOLVED_ENEMY_REFS|{g['name']}|{sum(r['_unresolved'] for r in rows)}")
-        print(f"GROUP_DUPLICATE_ENEMY_REF_ROWS|{g['name']}|{sum(1 for r in rows if r['_duplicate_enemy_ids']>0)}")
-        print(f"GROUP_WITH_APPEAR_ITEM_GATE|{g['name']}|{sum(1 for r in rows if r['APPEAR_ITEM']!=-1)}")
-        print(f"GROUP_WITH_NOT_APPEAR_ITEM_GATE|{g['name']}|{sum(1 for r in rows if r['NOT_APPEAR_ITEM']!=-1)}")
+        if lo is not None:print(f"GROUP_LOADED_ID_STAT|{g['name']}|min={lo}|max={hi}|unique={uq}")
+        print(f"GROUP_RAW_UNRESOLVED_ENEMY_REFS|{g['name']}|{sum(r['_raw_unresolved'] for r in raw)}")
+        print(f"GROUP_REJECTED_NO_RESOLVED_ENEMY|{g['name']}|{g['rejected_no_enemy']}")
+        print(f"GROUP_REJECTED_DUPLICATE_EFFECTIVE_ENEMY|{g['name']}|{g['rejected_duplicate']}")
+        print(f"GROUP_LOADED_WITH_APPEAR_ITEM_GATE|{g['name']}|{sum(1 for r in rows if r['APPEAR_ITEM']!=-1)}")
+        print(f"GROUP_LOADED_WITH_NOT_APPEAR_ITEM_GATE|{g['name']}|{sum(1 for r in rows if r['NOT_APPEAR_ITEM']!=-1)}")
         for i in range(1,11):
-            print(f"GROUP_SLOT|{g['name']}|{i}|enemy_present={sum(1 for r in rows if r[f'ENEMY_ID{i}']!=-1)}|weight_present={sum(1 for r in rows if r[f'CREATE_PROB{i}']!=-1)}")
+            print(f"GROUP_LOADED_SLOT|{g['name']}|{i}|enemy_present={sum(1 for r in rows if r[f'ENEMY_ID{i}']!=-1)}|weight_present={sum(1 for r in rows if r[f'CREATE_PROB{i}']!=-1)}")
     if enc:
         rows=enc["rows"]
         print(f"ENCOUNT_FILE|{enc['name']}|bytes={enc['bytes']}|sha256={enc['sha']}|valid_rows={len(rows)}|malformed={enc['bad']}")
@@ -164,7 +205,10 @@ def emit(data_dir,setup=None):
         for name in ("INDEX","FLOOR","PROB_MIN","PROB_MAX","ENEMY_MAX","ZORDER"):
             lo,hi,uq=stat(rows,name)
             if lo is not None:print(f"ENCOUNT_STAT|{name}|min={lo}|max={hi}|unique={uq}")
-        print(f"ENCOUNT_UNRESOLVED_GROUP_REFS|{sum(r['_unresolved'] for r in rows)}")
+        print(f"ENCOUNT_UNRESOLVED_EFFECTIVE_GROUP_REFS|{sum(r['_unresolved'] for r in rows)}")
+        print(f"ENCOUNT_ROWS_WITH_UNRESOLVED_EFFECTIVE_GROUP|{sum(1 for r in rows if r['_unresolved']>0)}")
+        print(f"ENCOUNT_UNRESOLVED_GROUP_REFS_POSITIVE_WEIGHT|{sum(r['_unresolved_positive_weight'] for r in rows)}")
+        print(f"ENCOUNT_UNRESOLVED_GROUP_REFS_NONMINUS_WEIGHT|{sum(r['_unresolved_nonminus_weight'] for r in rows)}")
         print(f"ENCOUNT_DUPLICATE_GROUP_REF_ROWS|{sum(1 for r in rows if r['_duplicate_group_ids']>0)}")
         print(f"ENCOUNT_REVERSED_PROB_ROWS|{sum(1 for r in rows if r['_reversed_prob'])}")
         print(f"ENCOUNT_INVALID_ENEMY_MAX_ROWS|{sum(1 for r in rows if r['ENEMY_MAX']<1 or r['ENEMY_MAX']>10)}")
