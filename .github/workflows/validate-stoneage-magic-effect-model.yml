@@ -1,0 +1,22 @@
+name: Validate StoneAge ordinary magic effect model
+concurrency:
+  group: stoneage-magic-effect-model
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-magic-effect-model.yml
+      - tools/stoneage_magic_effect_model.py
+      - tests/test_stoneage_magic_effect_model.py
+      - research/mechanics/STONEAGE-MAGIC-EFFECT-CORE-R1.md
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deterministic magic-effect tests
+        run: python3 -m unittest tests.test_stoneage_magic_effect_model -v
