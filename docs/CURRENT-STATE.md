@@ -31,6 +31,15 @@ Historical archaeology remains useful only when it helps authenticate, date, com
 - Korean `1.74` and Japanese `1.74a` are now prioritized because each has contemporaneous operator-era/free-distribution evidence tied to an explicit client/service version.
 - No 1.74, 1.74a or Sina-labelled "1.82" installer bytes have yet been recovered; therefore no clean-client bridge specimen has yet been accepted.
 
+## New 2.5 byte-recovery path — 2026-09-18
+
+- Recovered a public preservation thread for a **StoneAge 2.5 client + server + login-tool bundle** with two exact MediaFire IDs and an explicit archive layout containing a separate `SA2.5主程式` directory. A 2012 follow-up confirms the two files were successfully re-uploaded and downloadable at that time.
+- This combined bundle is **not accepted as clean**: the thread itself distinguishes the main client from private-server tooling, and a user explicitly noted that many circulating 2.5 copies were modified. If recovered, only the isolated client directory will be evaluated and it must pass contamination checks.
+- Found a separate indexed preservation thread titled **`〖2.5纯净〗石器客户端`** (`tid=2132`). Its title makes it the highest-value current 2.5 lead, but the download body is still access-restricted; `纯净` is a source label, not yet a verified conclusion.
+- Found a later **Wayi official 8.5 client** preservation set with six exact MediaFire IDs. It is too late for the preferred bridge baseline but is valuable as a clean later control.
+- Found the exact Korean preservation token **`NetmarbleStoneAge120`** (`tid=2117`). Its version is not yet tied to Korean 1.74, so it remains a later Korean control/search key.
+- Operational strategy is now dual-track: pursue **actual 2.5 bytes immediately** because they may be recoverable sooner, while continuing the earlier and better-provenanced Korean 1.74 / Japanese 1.74a searches in parallel.
+
 ## Active clean-client recovery leads — 2026-09-18
 
 - **Korean 1.74 — TARGET-A:** a preserved 2003-07-21 Netmarble-era response explicitly gives the service start as 2003-07-28 and the version as `1.74`. The original installer/file tree/hash is not yet recovered, but this is now the strongest exact operator-era bridge-version target.
@@ -246,7 +255,7 @@ Supplemental source ledgers:
 
 ## Immediate next actions
 
-1. **Recover the earliest freely/publicly obtainable clean StoneAge client artifact.** Current order is: (a) recover the Korean **1.74** operator-era installer identity/bytes; (b) recover the official/free Japanese **1.74a** installer identity/bytes from archived `stoneage.to`, Hangame or software mirrors; (c) continue 1999 JSS recovery in parallel; (d) continue extracting the Sina "1.82" href/bytes, but treat it only as an unverified version-label candidate until file-level analysis identifies the actual build. Prefer original installers, magazine-CD mirrors, operator download mirrors, preserved full client archives, or complete file trees with provenance.
+1. **Recover the earliest freely/publicly obtainable clean StoneAge client artifact.** Immediate byte-oriented order is: (a) recover the `〖2.5纯净〗` thread payload or the preserved two-part 2.5 bundle and isolate `SA2.5主程式`; (b) continue Korean **1.74** operator-era installer recovery; (c) continue official/free Japanese **1.74a** recovery; (d) continue 1999 JSS recovery; (e) keep Sina "1.82" as an unverified label candidate. The first recovered candidate must pass provenance/contamination checks before becoming the bridge specimen.
 2. **Reject repacks before analysis.** For every candidate, record source/provenance, archive filename, size, hashes, timestamps, installer metadata, executable names, unexpected patchers/loaders, and signs of private-server modification. Do not call a client "clean" merely because its title/version string looks old.
 3. **The first verified usable client becomes the bridge specimen.** Immediately build a reproducible extraction inventory: complete file tree, hashes, PE metadata, strings/resources, directories, update components, graphics containers, maps, data tables, audio, UI assets, and executable/resource relationships.
 4. **Reverse engineer data before recreating gameplay.** Determine resource/container formats and indexes; decode graphics/animations; map character/pet/item/skill/stat records; reconstruct map formats and event/NPC data; identify combat and progression tables where present; document which behavior is client-side versus server-dependent.

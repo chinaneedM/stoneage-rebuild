@@ -91,11 +91,94 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - "all-in-one" client+server+database packages that explicitly say they were adapted/matched for many versions are modified engineering bundles, not clean baseline clients.
 - Community source-code archives may be useful for format clues, but they do not substitute for a clean historical runtime client.
 
+
+
+## TARGET-B/C — StoneAge 2.5 preserved client/server/login bundle
+
+- Public preservation thread: https://www.lab.welovesa.com/viewthread.php?extra=&page=1&tid=219
+- First posted: 2009-08-29; download links were later refreshed.
+- Preserved public MediaFire IDs:
+  - `ev7l29fw77891go`
+  - `ytaa168o5jih0lx`
+- Preserved archive layout:
+  - `SA2.5主程式`
+  - `SA2.5外掛及登錄器`
+    - `salogin_dat`
+  - `SA2.5服務端`
+    - `gmsv`
+    - `saac`
+- Historical availability check:
+  - on 2012-04-13 a forum user explicitly stated that the two MediaFire files were present after the administrator re-uploaded them;
+  - later posts report that the links subsequently became unavailable again.
+- Purity warning:
+  - this is a **combined engineering bundle**, not an operator-origin installer;
+  - the same thread contains a user remark that they had been trying to find an "original/plain" copy but commonly encountered modified packages;
+  - therefore the bundle as a whole is **not a clean baseline**.
+- Operational use:
+  - if the two parts or mirrors can be recovered, isolate `SA2.5主程式`;
+  - hash and inventory it separately;
+  - check executables/config/resources for private-server endpoints, injected launchers, patched binaries and custom data before assigning any clean-client grade.
+- Current byte status:
+  - the old MediaFire URLs are preserved but are not directly accessible through the current web extraction interface;
+  - exact-ID searches have not yet surfaced an independent live mirror.
+- Status: **TARGET-B/C — potentially useful bridge bytes, purity unknown**.
+
+## TARGET-A/B — `〖2.5纯净〗石器客户端` preservation thread
+
+- Public index: https://lab.welovesa.com/forumdisplay.php?fid=40
+- Thread title: **`〖2.5纯净〗石器客户端`**
+- Thread id: **`2132`**
+- First indexed date: 2012-09-26.
+- Value:
+  - the explicit `纯净` label makes this the highest-value current 2.5 preservation lead;
+  - unlike the combined 2.5 client/server/login bundle, this thread is specifically cataloged as a client.
+- Limitation:
+  - the thread/download body is access-restricted in the current route;
+  - no public filename, size, hash or download URL has yet been extracted;
+  - `纯净` remains the forum label, not a verified cleanliness conclusion.
+- Next action:
+  - recover indexed/printable/archived snippets, reposts or mirrors for thread `tid=2132`;
+  - if bytes are found, run the same clean-client acceptance test before promotion.
+- Status: **TARGET-A/B — high-value 2.5 clean-client lead, bytes not yet recovered**.
+
+## CONTROL-A/B — Wayi official StoneAge 8.5 installer preservation set
+
+- Public preservation thread: https://www.lab.welovesa.com/viewthread.php?action=printable&tid=1654
+- Title: `華義石器時代主程式安裝檔`
+- Six preserved MediaFire IDs:
+  - `l5i274801ov19w7`
+  - `g9b3g3hjmwwttg3`
+  - `e859n1nm1tk12j8`
+  - `69vrzm3nox8f0v9`
+  - `clbwjkcqqhxq6k9`
+  - `42uy5b9abbcu4qr`
+- The poster explicitly described installing it as a clean main program.
+- Later discussion identifies the package as the official Wayi **8.5 / 魔域大冒險** client.
+- Role:
+  - too late to be the preferred earliest bridge specimen;
+  - valuable as a known-official later comparison/control client if its parts or a mirror are recovered.
+- Status: **CONTROL-A/B — later official-client preservation target**.
+
+## CONTROL-B — Korean `NetmarbleStoneAge120` preserved-client token
+
+- Public forum index: https://lab.welovesa.com/forumdisplay.php?fid=40&page=2
+- Indexed title: `韩国石器客户端NetmarbleStoneAge120`
+- Thread id: **`2117`**, first indexed 2012-09-22.
+- Independent forum usage evidence later refers to downloading and installing `NetmarbleStoneAge120`.
+- Value:
+  - supplies an exact package/search token for a preserved Korean client line;
+  - potentially useful to reconstruct Netmarble-era packaging/resource evolution.
+- Limitation:
+  - version identity, original operator distribution path and cleanliness are not established;
+  - this is not evidence that the package is Korean 1.74.
+- Status: **CONTROL-B / later Korean preservation lead**.
+
 ## Current recovery order
 
-1. Recover the **Korean 1.74** operator-era installer identity/bytes.
-2. Recover the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
-3. Continue JSS original executable/full-client recovery in parallel.
-4. Recover the Sina "1.82" href/bytes as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
-5. Continue earliest Taiwan operator-client recovery in parallel.
-6. As soon as any candidate bytes are obtained, stop broad searching long enough to perform the clean-client acceptance test and build the first full inventory.
+1. Recover the public **2.5 clean-client lead** behind thread `tid=2132`, or recover the two-part 2.5 bundle and isolate/verify `SA2.5主程式`. This is currently the fastest route to inspectable early bridge bytes.
+2. Continue recovery of the **Korean 1.74** operator-era installer identity/bytes; it remains the strongest earlier exact-version target.
+3. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
+4. Continue JSS original executable/full-client recovery in parallel.
+5. Recover the Sina "1.82" href/bytes as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
+6. Keep the Wayi official 8.5 package and `NetmarbleStoneAge120` as later controls, not substitutes for an early clean baseline.
+7. As soon as any candidate bytes are obtained, stop broad searching long enough to perform the clean-client acceptance test and build the first full inventory.
