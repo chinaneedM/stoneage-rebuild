@@ -96,7 +96,7 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
 
     def test_battle_recovery_hp_is_checked_before_mp(self):
         r = parse_battle_recovery_option(
-            "HP=100 MP=50",
+            "HP100 MP50",
             hp_token="HP",
             mp_token="MP",
         )
@@ -104,7 +104,7 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
 
     def test_battle_recovery_mp_parse(self):
         r = parse_battle_recovery_option(
-            "MP=60",
+            "MP60",
             hp_token="HP",
             mp_token="MP",
         )
@@ -112,7 +112,7 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
 
     def test_battle_recovery_bad_number_defaults_zero(self):
         r = parse_battle_recovery_option(
-            "HP=x",
+            "HPx",
             hp_token="HP",
             mp_token="MP",
         )
@@ -332,7 +332,7 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
 
     def test_explicit_mp_and_charm_are_player_only(self):
         player = parse_field_recovery_option(
-            "MP=20 CHARM=5",
+            "MP20 CHARM5",
             target_type="player",
             all_token="ALL",
             hp_token="HP",
@@ -341,7 +341,7 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
             loyalty_token="LOYALTY",
         )
         pet = parse_field_recovery_option(
-            "MP=20 CHARM=5",
+            "MP20 CHARM5",
             target_type="pet",
             all_token="ALL",
             hp_token="HP",
@@ -354,7 +354,7 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
 
     def test_loyalty_is_pet_only(self):
         r = parse_field_recovery_option(
-            "LOYALTY=3",
+            "LOYALTY3",
             target_type="pet",
             all_token="ALL",
             hp_token="HP",
@@ -366,7 +366,7 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
 
     def test_field_hp_roll_uses_recovery_rate_and_caps(self):
         req = parse_field_recovery_option(
-            "HP=100",
+            "HP100",
             target_type="player",
             all_token="ALL",
             hp_token="HP",
@@ -389,7 +389,7 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
 
     def test_field_negative_hp_cannot_drop_below_one(self):
         req = parse_field_recovery_option(
-            "HP=-100",
+            "HP-100",
             target_type="player",
             all_token="ALL",
             hp_token="HP",
@@ -409,7 +409,7 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
 
     def test_field_charm_clamps_zero_to_hundred(self):
         req = parse_field_recovery_option(
-            "CHARM=50",
+            "CHARM50",
             target_type="player",
             all_token="ALL",
             hp_token="HP",
@@ -429,7 +429,7 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
 
     def test_field_loyalty_is_stored_x100_and_clamped(self):
         req = parse_field_recovery_option(
-            "LOYALTY=30",
+            "LOYALTY30",
             target_type="pet",
             all_token="ALL",
             hp_token="HP",
