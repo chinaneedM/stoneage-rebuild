@@ -311,14 +311,53 @@ Use an explicit model such as:
 
 A legacy DAT importer can reconstruct those inputs, but the legacy high-bit cache flags should remain import/runtime compatibility metadata rather than canonical world design data.
 
-## 11. Remaining open questions
+## 11. Unresolved graphic-ID ranges — localized to mixed content revisions
+
+The recovered DAT→ADRN crosscheck initially left:
+
+- tile unresolved references: **158,938**
+- parts unresolved references: **48,707**
+
+Range classification now shows:
+
+- **all 158,938 tile unresolved references are inside the recovered ADRN `bmpnumber` domain (100–41000)**;
+- **all 48,707 parts unresolved references are also inside that ADRN domain**;
+- tile has **0** references above the recovered ADRN domain and **0** above the descendant client's ordinary 100–19999 map-graphic range;
+- parts has only **16** unresolved references above 19999.
+
+Therefore the dominant failure mode is **holes inside the action-number namespace**, not IDs simply extending beyond the current ADRN maximum.
+
+The distribution is highly concentrated:
+
+- unresolved DAT files: **156**
+- `817.dat` alone:
+  - tile unresolved: **131,157 / 158,938 = 82.52%**
+  - parts unresolved: **43,587 / 48,707 = 89.49%**
+  - dimensions: **400×600**
+  - event layer: no non-enum low-12 values
+
+The largest missing tile run is **5150–5421** (272 consecutive IDs, 133,014 references). Major missing parts clusters sit in the 11xxx range.
+
+A same-bundle server crosscheck finds **no server LS2MAP with map ID 817**. This is materially different from `1021.DAT`, which has a same-ID server map but disagrees with it heavily.
+
+Descendant source independently groups floor 817 with 8007 / 8015 / 8027 / 8028 / 8029 / 8100 / 8101 and related floors under later conditional systems including:
+
+- `_STATUS_WATERWORD` ("water world" status);
+- `_NEWDRAWBATTLEMAP` automatic battle-map generation;
+- `_AniCrossFrame` animated creatures crossing the scene.
+
+Several of those same floor IDs also appear among the recovered unresolved-graphic maps.
+
+The current evidence therefore supports this conservative classification:
+
+**The recovered bundle mixes map/cache content from a content branch whose matching graphic resources and server maps are not fully present in the recovered `adrn_15.bin` / server-map set.**
+
+This is strong evidence of **cross-revision / mixed-package resource skew**, but it does not by itself identify which exact official or private-server version introduced map 817 or the missing graphic ranges.
+
+## 12. Remaining open questions
 
 1. Which exact client/server revision produced `1021.DAT`, and whether its whole-cache mismatch reflects stale cache state, a different map revision, or private-server modification.
-2. Which unresolved tile/parts IDs are caused by:
-   - missing/alternate ADRN resource revisions;
-   - private-server additions;
-   - version skew;
-   - special control semantics.
+2. Which exact content/resource revision supplies the missing 817/water-world graphic ranges (especially tile 5150–5421 and the 11xxx parts clusters), and whether they first appear in an official later client or a private-server-derived branch.
 3. Original-version provenance of the now source-traced sub-100 control ranges, especially whether the descendant 20–37 environment, 40–53 BGM and 60–79 collision-special behavior already existed unchanged in JSS builds.
 4. How the recovered DAT cache compares with a future clean 2.5 / 1.82 / 1.74 / 1.74a / JSS specimen.
 5. Which cache behaviors are original versus later auto-update additions in descendant source.
@@ -332,4 +371,6 @@ A legacy DAT importer can reconstruct those inputs, but the legacy high-bit cach
 - collision derived from tile/parts ADRN attributes: **descendant client source fact, recovered ADRN linkage strongly corroborating**
 - 0–8 event domain across 994/995 valid recovered caches: **FACT for this recovered corpus**
 - `1021.DAT` event and static-layer divergence: **FACT for this recovered mixed bundle / quarantined revision-source anomaly**
+- unresolved graphic IDs as in-domain ADRN gaps dominated by map 817: **FACT for this recovered corpus**
+- interpretation as cross-revision/mixed-package resource skew: **strong working conclusion; exact source revision OPEN**
 - exact equivalence to 1999 JSS behavior: **OPEN**

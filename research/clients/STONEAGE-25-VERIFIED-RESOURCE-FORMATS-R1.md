@@ -220,6 +220,16 @@ Crosscheck report:
 
 `research/recovered/STONEAGE-25-DAT-SERVER-CROSSCHECK-R1.txt`
 
+Graphic-ID gap localization adds an important resource-provenance boundary:
+
+- tile unresolved refs: **158,938**, all within ADRN domain 100–41000
+- parts unresolved refs: **48,707**, all within ADRN domain
+- `817.dat` alone accounts for **131,157 tile** and **43,587 parts** unresolved refs
+- bundled server LS2MAP corpus has **no map ID 817**
+- descendant source places 817 in later conditional water-world / animated-map systems
+
+These missing IDs are therefore treated as **cross-revision/mixed-package resource skew**, not as evidence that DAT accepts a second hidden graphic-index format.
+
 ## 8. `.MAP` is NOT a direct copy of any DAT layer — verified negative result
 
 Byte-level pair report:
