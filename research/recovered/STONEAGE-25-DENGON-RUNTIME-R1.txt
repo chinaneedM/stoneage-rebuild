@@ -3,6 +3,7 @@ StoneAge recovered Dengon runtime structure probe — R1
 No board filenames/coordinates, messages, player names, or timestamp payloads are stored.
 SCHEMA|Dengon runtime -> 1000 fixed slots x 268 bytes -> counter-only aggregate
 RUNTIME_CORPUS_AGGREGATE_SHA256|cd107a9e86276ede4078bee722bb6b8fb051e9fc72947b2524c7d343e54ace10
+COUNT|counter_only_stub_files|40
 COUNT|empty_files|40
 COUNT|files|40
 COUNT|malformed_counter_records|0
@@ -10,5 +11,6 @@ COUNT|nonzero_counter_records|0
 COUNT|records_examined|0
 COUNT|size_deviation_files|40
 COUNT|valid_counter_records|0
+COUNT|zero_counter_stub_files|40
 FILE_SIZE|bytes=11|files=40
 MAX_ID|value=0|files=40
