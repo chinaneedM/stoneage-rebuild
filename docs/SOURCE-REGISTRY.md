@@ -475,6 +475,68 @@ This is the canonical ledger for historical sources. Entries should record prove
   - a reconstructed JSS baseline should not automatically include the later dedicated item-trade window;
   - any 2003 revival client recovered in the future can be used as a near-descendant diff anchor, but its UI additions must be separated from the earlier baseline.
 
+### SRC-KR-2003-NETMARBLE-174-ANNOUNCE-01
+
+- Title: `◈ 스톤에이지 서비스 일정 및 버전안내 ◈`
+- Original post date: 2003-07-21
+- Retrieval date: 2026-09-18
+- Language/region: Korean / Korea
+- Source type: same-period GameMeca community-board preservation quoting a Netmarble StoneAge homepage Q&A answer
+- URL: https://www.gamemeca.com/fam.php?gcode=fam_scarecrow&gid=133954&rts=board
+- Confidence: **B**
+- Supports:
+  - Netmarble's planned public service date was 2003-07-28;
+  - the quoted Netmarble answer explicitly names the launch version as **`1.74`**;
+  - the operator planned later regular updates.
+- Evidence limit:
+  - the accessible page is a same-period repost of the operator answer rather than the original Netmarble page;
+  - it does not establish any binary hash, installer filename or relationship to JSS's internal version numbering.
+- Archaeology significance:
+  - `1.74` was a real public Korean service-version label, not merely a later private-server convention;
+  - exact `1.74` artifacts are now controlled recovery targets.
+
+### SRC-KR-2001-INIUM-174-TO-20-PRESERVED-01
+
+- Title: `봉두 가족이 생기다^^* - 2001년11월14일`
+- Original material date stated by preservation: 2001-11-14
+- Retrieval date: 2026-09-18
+- Language/region: Korean / Korea
+- Source type: later Pooya's preservation of dated Inium-era StoneAge text/screenshots
+- URL: https://pooyas.com/index.php?document_srl=166300&mid=screenshot
+- Confidence: **C/B**
+- Supports:
+  - the preservation explicitly frames the material as an Inium StoneAge **post-1.74 preview of the 2.0 update**;
+  - the preserved text/screenshots discuss the 2.0 family system and pet-riding capability.
+- Evidence limit:
+  - the current preservation page is not the original 2001 Inium host;
+  - it does not prove which exact 1.74 executable/data build immediately preceded the preview.
+- Archaeology significance:
+  - supplies an independent version-transition clue `1.74 -> 2.0`;
+  - reinforces the value of locating an authentic Inium 1.74 client.
+
+### SRC-JP-2003-MADONOMORI-174A-01
+
+- Title: `石器時代をモチーフにしたMMORPG「STONE AGE」のオープンβテストがスタート`
+- Original date: 2003-12-17
+- Client date field: 2003-12-12
+- Retrieval date: 2026-09-18
+- Language/region: Japanese / Japan
+- Source type: contemporaneous specialist software-release report
+- URL: https://forest.watch.impress.co.jp/article/2003/12/17/stoneage.html
+- Confidence: **A**
+- Supports:
+  - the revived Japanese open-beta client was Windows 98/Me/2000/XP beta freeware;
+  - the software metadata explicitly records version **`1.74a`**;
+  - the metadata date is **2003-12-12**;
+  - the report identifies official `stoneage.to` and Hangame as download surfaces.
+- Does not support:
+  - installer filename, checksum or file tree;
+  - byte identity with Korean `1.74`;
+  - direct identity with the last JSS client.
+- Archaeology significance:
+  - gives a precise near-descendant client version target;
+  - the numeric proximity to Korean `1.74` is recorded as a **lineage hypothesis only**, pending artifact comparison.
+
 ## Required metadata for future entries
 
 Every substantial source should record:
