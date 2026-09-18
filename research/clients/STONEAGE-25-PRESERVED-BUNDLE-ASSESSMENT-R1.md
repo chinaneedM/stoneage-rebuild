@@ -59,6 +59,8 @@ Top-level composition:
 
 - `data/`: 255 files, 793,985,987 bytes
 - `map/`: 2,041 files, 67,960,104 bytes
+  - 1,030 `.MAP` files
+  - 1,011 `.DAT` files
 - five EXE files plus icon/uninstaller support
 
 Major resource containers:
@@ -72,9 +74,11 @@ Major resource containers:
 - `data/battle_2.bin` — 187,500 bytes
 - 220 `battleMap/*.sab` files
 - 16 palette `.sap` files
-- 2,041 `.MAP` files in the core map directory
+- 1,030 single-layer `.MAP` files plus 1,011 three-layer `.DAT` files in the map directory
 
-This is a high-value bridge corpus for resource/container and map-format reconstruction even though the runtime layer is contaminated.
+Important provenance correction: the recovered `.MAP` family is strongly coupled to the bundled SACH external-tool corpus and is **not currently classified as an official client map format**. The `.DAT` family is the format directly corroborated by descendant StoneAge client source (`width / height / tile / parts / event`).
+
+This remains a high-value bridge corpus for resource/container reconstruction, but official-client and external-tool map data must remain separated.
 
 ## Runtime executables
 
@@ -140,15 +144,17 @@ The resource corpus is still immediately useful for deterministic reverse engine
 - sound containers;
 - palettes;
 - battle-map records;
-- 2,041 client map files.
+- 1,011 client-runtime-compatible `.DAT` map-cache files;
+- 1,030 SACH-coupled single-layer `.MAP` files retained as external-tool evidence rather than clean-client map evidence.
 
-The project may use this corpus to build parsers and format specifications while continuing to search for a cleaner runtime client. No claim is made that every resource file is original or strictly 2.5 until cross-version comparison is available.
+The project may use the DAT corpus to build client map-cache specifications while continuing to search for a cleaner runtime client. The MAP corpus remains useful for later automation/pathfinding archaeology. No claim is made that every recovered resource is original or strictly 2.5 until cross-version comparison is available.
 
 ## Next technical actions
 
 1. Treat `stoneage2.5/data/real_15.bin + adrn_15.bin` as the first recovered image-resource test corpus.
 2. Validate the already reconstructed ADRN/REAL record assumptions against these actual bytes.
 3. Decode a small deterministic sample of `RD` blocks and compare dimensions/offsets against ADRN metadata.
-4. Parse representative `.MAP` files and infer the map header/tile-layout family from real bytes.
-5. Keep the runtime executables only as lineage/negative controls.
+4. Reconstruct the recovered `.DAT` client map-cache semantics (`tile / parts / event`) by tracing descendant rendering/collision/network code and validating against the recovered bytes.
+5. Keep the single-layer `.MAP` family in a separate SACH/automation-tool track unless independent client evidence changes its provenance classification.
+6. Keep the runtime executables only as lineage/negative controls.
 6. Continue recovery of a cleaner 2.5 client and the earlier Korean 1.74 / Japanese 1.74a candidates.

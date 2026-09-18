@@ -129,7 +129,8 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Recovery update:
   - both MediaFire parts are currently recoverable and were successfully downloaded, hash-verified, concatenated and extracted by GitHub Actions;
   - the derived inventory is committed at `research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt`;
-  - runtime assessment finds mixed/modified executable variants, while the large REAL/ADRN/MAP resource corpus remains technically valuable.
+  - runtime assessment finds mixed/modified executable variants, while the large REAL/ADRN resource corpus remains technically valuable;
+  - map provenance has been corrected: `stoneage2.5/map` contains **1,030 MAP + 1,011 DAT**, and 905 same-name MAP files are byte-identical to the bundled `SACH-MX0.30/MAP` corpus. The single-layer MAP family is therefore retained as external-tool-coupled evidence, while DAT is the descendant-source-corroborated client runtime map-cache format.
 - Status: **RECOVERED-C runtime / B-grade resource bridge** — not a clean runtime baseline, but usable for resource-format reverse engineering.
 
 ## TARGET-A/B — `〖2.5纯净〗石器客户端` preservation thread
@@ -201,7 +202,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 
 ## Current recovery order
 
-1. Use the recovered 2.5 bundle as a **resource-format bridge only**: validate REAL/ADRN and MAP parsing against its actual recovered resource corpus. Do not use its modified runtime executables as a clean baseline.
+1. Use the recovered 2.5 bundle as a **resource-format bridge only**: REAL/ADRN/RD and SPR/SPRADRN are now validated. Continue with the client-runtime `.DAT` map cache (`tile / parts / event`) and keep the SACH-coupled single-layer `.MAP` family in the external-tool track. Do not use modified runtime executables as a clean baseline.
 2. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132` and compare it against the recovered mixed bundle if bytes become available.
 3. Continue recovery of the **Korean 1.74** operator-era installer identity/bytes; it remains the strongest earlier exact-version target.
 4. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
