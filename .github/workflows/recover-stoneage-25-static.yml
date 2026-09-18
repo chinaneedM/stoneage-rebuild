@@ -16,13 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install archive tools
-        run: sudo apt-get update && sudo apt-get install -y p7zip-full file binutils
+        run: sudo apt-get update && sudo apt-get install -y p7zip-full file binutils unar
       - name: Download preserved split archive
         run: |
           set -euo pipefail
           mkdir -p /tmp/sa25
           python3 - <<'PY'
-          import html,json,re,http.cookiejar,urllib.parse,urllib.request
+          import hashlib,html,json,re,http.cookiejar,urllib.parse,urllib.request
           from pathlib import Path
           ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124 Safari/537.36'
           cj=http.cookiejar.CookieJar()
@@ -52,35 +52,68 @@ jobs:
               url=html.unescape(m.group(1))
               req=urllib.request.Request(url,headers={'User-Agent':ua,'Referer':referer})
               dest=Path('/tmp/sa25')/f'stoneage25.rar.{suffix}'
+              h=hashlib.sha256()
               with op.open(req,timeout=300) as r, open(dest,'wb') as out:
                   while True:
                       b=r.read(1024*1024)
                       if not b: break
-                      out.write(b)
-              print('DOWNLOADED',key,dest.stat().st_size)
+                      out.write(b); h.update(b)
+              digest=h.hexdigest()
+              expected=str(info.get('hash') or '').lower()
+              print('DOWNLOADED',key,dest.stat().st_size,'SHA256',digest,'MEDIAFIRE_HASH',expected)
+              if len(expected)==64 and digest != expected:
+                  raise SystemExit(f'Hash mismatch for {key}: {digest} != {expected}')
+              with open('/tmp/sa25/mediafire-metadata.tsv','a',encoding='utf-8') as mf:
+                  mf.write('\t'.join([key,str(info.get('filename')),str(info.get('size')),expected,str(info.get('created')),digest])+'\n')
           get('ev7l29fw77891go','001')
           get('ytaa168o5jih0lx','002')
           PY
-      - name: Extract and write derived report
+      - name: Reassemble, extract and write derived report
         run: |
-          set -euo pipefail
+          set -uo pipefail
           mkdir -p /tmp/sa25/out research/recovered
           R=research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt
+          cat /tmp/sa25/stoneage25.rar.001 /tmp/sa25/stoneage25.rar.002 > /tmp/sa25/stoneage25-combined.rar
           {
             echo 'StoneAge 2.5 preserved bundle static inventory — R1'
             echo 'Original recovered payload is NOT committed.'
             echo 'Source: https://www.lab.welovesa.com/viewthread.php?extra=&page=1&tid=219'
+            echo
+            echo 'MEDIAFIRE METADATA / DOWNLOADED SHA256'
+            echo 'quick_key|filename|service_size|mediafire_hash|created|downloaded_sha256'
+            tr '\t' '|' < /tmp/sa25/mediafire-metadata.tsv
             echo
             echo 'PART HASHES / SIZES'
             sha256sum /tmp/sa25/stoneage25.rar.00{1,2}
             md5sum /tmp/sa25/stoneage25.rar.00{1,2}
             stat -c '%n|%s' /tmp/sa25/stoneage25.rar.00{1,2}
             echo
-            echo 'ARCHIVE LISTING'
-            7z l -slt /tmp/sa25/stoneage25.rar.001
+            echo 'REASSEMBLED ARCHIVE'
+            sha256sum /tmp/sa25/stoneage25-combined.rar
+            md5sum /tmp/sa25/stoneage25-combined.rar
+            stat -c '%n|%s' /tmp/sa25/stoneage25-combined.rar
+            file /tmp/sa25/stoneage25-combined.rar
+            echo
+            echo 'ARCHIVE TEST / LISTING'
+            7z t /tmp/sa25/stoneage25-combined.rar || true
+            7z l -slt /tmp/sa25/stoneage25-combined.rar || true
           } > "$R" 2>&1
-          7z x -y -o/tmp/sa25/out /tmp/sa25/stoneage25.rar.001 >> "$R" 2>&1
+
+          EXTRACTOR='none'
+          if 7z x -y -o/tmp/sa25/out /tmp/sa25/stoneage25-combined.rar >> "$R" 2>&1; then
+            EXTRACTOR='7z'
+          else
+            rm -rf /tmp/sa25/out && mkdir -p /tmp/sa25/out
+            echo >> "$R"
+            echo '7z extraction failed; trying unar fallback.' >> "$R"
+            if unar -f -o /tmp/sa25/out /tmp/sa25/stoneage25-combined.rar >> "$R" 2>&1; then
+              EXTRACTOR='unar'
+            fi
+          fi
+
           {
+            echo
+            echo "EXTRACTOR|$EXTRACTOR"
             echo
             echo 'EXTRACTED TREE (PATH|BYTES)'
             find /tmp/sa25/out -type f -printf '%P|%s\n' | LC_ALL=C sort
@@ -96,8 +129,14 @@ jobs:
             done < <(find /tmp/sa25/out -type f \( -iname '*.exe' -o -iname '*.dll' \) -print0)
             echo
             echo 'ALL-FILE SHA256'
-            find /tmp/sa25/out -type f -print0 | LC_ALL=C sort -z | xargs -0 sha256sum
+            find /tmp/sa25/out -type f -print0 | LC_ALL=C sort -z | xargs -0 -r sha256sum
           } >> "$R"
+
+          if [ "$EXTRACTOR" = 'none' ]; then
+            echo 'RESULT|DOWNLOAD_VERIFIED_BUT_EXTRACTION_FAILED' >> "$R"
+          else
+            echo 'RESULT|DOWNLOAD_AND_EXTRACTION_SUCCEEDED' >> "$R"
+          fi
           test "$(git status --short | wc -l)" -eq 1
           git status --short | grep -F '?? research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt'
       - name: Commit derived report only
