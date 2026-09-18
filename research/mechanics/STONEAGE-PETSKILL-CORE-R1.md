@@ -518,7 +518,7 @@ The model separates:
 
 Initial dedicated CI run `35374550333` passed 44 tests.
 
-After edge corrections for invalid-status sentinel, steal destruction semantics, and COM3 residue, the synchronized regression suite is expected to supersede that run; project state should cite the latest green run.
+After edge corrections for invalid-status sentinel, steal destruction semantics, and COM3 residue, run `35374921866` passed **50 deterministic tests**. Report-trigger rerun `35375022224` also completed successfully.
 
 ## Evidence boundary
 
