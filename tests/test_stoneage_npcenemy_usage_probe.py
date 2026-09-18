@@ -32,6 +32,7 @@ entype:2
 dieact:1
 onebattle:1
 gym:10
+enemypetno:21,22
 item:5,5
 noitem:8
 B_evend:1,2
@@ -44,6 +45,8 @@ NEWEVENT
 FREE:LV>10&ITEM=5,NOWEV!=3
 WARP:1,2,3;4,5,6
 CHECKPARTY:FALSE
+EvEnd:4
+AddItem:9
 OVER
 """
 
@@ -73,6 +76,8 @@ class NPCEnemyUsageProbeTests(unittest.TestCase):
             self.assertEqual(r["mode_counts"]["steal_before_battle"], 1)
             self.assertEqual(c["item_list_duplicate_value_blocks"], 1)
             self.assertEqual(c["askbattle_prompt_blocks"], 1)
+            self.assertEqual(c["gym_with_enemypetno"], 1)
+            self.assertEqual(c["normal_with_enemypetno"], 0)
         finally:
             td.cleanup()
 
@@ -92,6 +97,8 @@ class NPCEnemyUsageProbeTests(unittest.TestCase):
             self.assertEqual(r["free_operator_terms"][">"], 1)
             self.assertEqual(r["free_operator_terms"]["="], 1)
             self.assertEqual(r["free_operator_terms"]["!="], 1)
+            self.assertEqual(r["new_action_blocks"]["EvEnd"], 1)
+            self.assertEqual(r["new_action_blocks"]["AddItem"], 1)
         finally:
             td.cleanup()
 
@@ -101,6 +108,7 @@ class NPCEnemyUsageProbeTests(unittest.TestCase):
             r = analyze(root)
             self.assertEqual(r["length_hist"][("enemyno", 3)], 1)
             self.assertEqual(r["length_hist"][("item", 2)], 1)
+            self.assertEqual(r["length_hist"][("enemypetno", 2)], 1)
             self.assertEqual(r["length_hist"][("B_evend", 2)], 1)
         finally:
             td.cleanup()

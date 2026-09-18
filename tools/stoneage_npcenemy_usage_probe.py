@@ -13,9 +13,18 @@ CORE_KEYS = (
     b"warpfl", b"warpx", b"warpy", b"entype", b"onebattle", b"time",
     b"NEWTIME", b"Time_Msg", b"deniedmsg", b"noitem", b"B_evend",
     b"B_evnow", b"alreadymsg", b"endmsg", b"herobattlefield",
-    b"startmsg", b"REPLACEMENT",
+    b"startmsg", b"REPLACEMENT", b"enemypetno",
 )
-FREE_FAMILIES = (b"TRANS", b"ENDEV", b"NOWEV", b"ITEM", b"PET", b"LV")
+FREE_FAMILIES = (
+    b"reITEM", b"rePET", b"ENDEV", b"EVEND", b"NOWEV", b"EVNOW",
+    b"EQUIT", b"PARTY", b"TRANS", b"GTIME", b"TIME", b"GOLD",
+    b"ITEM", b"PET", b"LV",
+)
+NEW_ACTION_KEYS = (
+    b"AddGold", b"DelGold", b"DelItem", b"AddItem", b"DelPet", b"AddPet",
+    b"EvEnd", b"EvNow", b"Event_End", b"Event_Now", b"EvClr",
+    b"SetLastTalkelder", b"GetRandItem",
+)
 
 
 def parse_template_map(paths):
@@ -100,8 +109,9 @@ def normalized_mode(value, allowed, default=0):
 
 
 def classify_free_family(term):
+    stripped = term.strip()
     for family in FREE_FAMILIES:
-        if family in term:
+        if stripped.startswith(family):
             return family.decode("ascii")
     return "OTHER"
 
@@ -119,6 +129,7 @@ def analyze(npc_dir):
     length_hist = collections.Counter()
     free_family_terms = collections.Counter()
     free_operator_terms = collections.Counter()
+    new_action_blocks = collections.Counter()
     aggregate = hashlib.sha256()
 
     for zero_key in (
@@ -127,7 +138,8 @@ def analyze(npc_dir):
         "over_segments_newevent", "over_segments_with_free", "over_segments_with_warp",
         "over_segments_checkparty", "item_list_duplicate_value_blocks",
         "steal_without_item_blocks", "old_dieact_warp_missing_coordinate_blocks",
-        "askbattle_prompt_blocks",
+        "askbattle_prompt_blocks", "gym_enemyno_over_10", "normal_enemyno_over_10",
+        "gym_with_enemypetno", "normal_with_enemypetno",
     ):
         counts[zero_key] = 0
 
@@ -162,6 +174,10 @@ def analyze(npc_dir):
         enemy_values = list_values(field_value(data, b"enemyno"))
         length_hist[("enemyno", len(enemy_values))] += 1
 
+        enemy_pet_values = list_values(field_value(data, b"enemypetno"))
+        if enemy_pet_values:
+            length_hist[("enemypetno", len(enemy_pet_values))] += 1
+
         item_values = list_values(field_value(data, b"item"))
         if item_values:
             length_hist[("item", len(item_values))] += 1
@@ -187,7 +203,18 @@ def analyze(npc_dir):
         mode_counts["onebattle_exclusive" if onebattle == 1 else "onebattle_not_exclusive"] += 1
 
         gym = c_atoi(field_value(data, b"gym") or b"-1")
-        mode_counts["battle_gym_mode" if gym > 0 else "battle_normal_mode"] += 1
+        if gym > 0:
+            mode_counts["battle_gym_mode"] += 1
+            if len(enemy_values) > 10:
+                counts["gym_enemyno_over_10"] += 1
+            if enemy_pet_values:
+                counts["gym_with_enemypetno"] += 1
+        else:
+            mode_counts["battle_normal_mode"] += 1
+            if len(enemy_values) > 10:
+                counts["normal_enemyno_over_10"] += 1
+            if enemy_pet_values:
+                counts["normal_with_enemypetno"] += 1
 
         steal = field_value(data, b"steal")
         if steal is not None:
@@ -235,6 +262,9 @@ def analyze(npc_dir):
                     counts["over_segments_with_warp"] += 1
                 if field_value(segment, b"CHECKPARTY") is not None:
                     counts["over_segments_checkparty"] += 1
+                for action_key in NEW_ACTION_KEYS:
+                    if field_value(segment, action_key) is not None:
+                        new_action_blocks[action_key.decode("ascii")] += 1
         elif dieact == 1:
             missing = sum(field_value(data, k) is None for k in (b"warpfl", b"warpx", b"warpy"))
             if missing:
@@ -247,6 +277,7 @@ def analyze(npc_dir):
         "length_hist": length_hist,
         "free_family_terms": free_family_terms,
         "free_operator_terms": free_operator_terms,
+        "new_action_blocks": new_action_blocks,
         "aggregate": aggregate.hexdigest(),
     }
 
@@ -268,6 +299,8 @@ def emit(result):
         print(f"FREE_FAMILY_TERM|{key}|{n}")
     for key, n in sorted(result["free_operator_terms"].items()):
         print(f"FREE_OPERATOR_TERM|{key}|{n}")
+    for key, n in sorted(result["new_action_blocks"].items()):
+        print(f"NEW_ACTION_BLOCK|{key}|{n}")
 
 
 def main():
