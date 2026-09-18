@@ -162,6 +162,14 @@ Classification: **B for literal visible package fields; C for seller provenance/
 
 This closes the previous gap between the numerical `30301` search candidate and a StoneAge-specific artifact. The StoneAge model/type code remains unresolved.
 
+### Suruga catalog-discovery lead
+
+A current search-index view of Suruga-ya's JSS `LIFESTORM` record exposes a related catalog item named **`ストーンエイジ[初回版]`**, classified as **`Windows95/98 CDソフト`**.
+
+The direct StoneAge detail URL/body is not exposed through the current extraction path, so this is a **catalog-recovery lead, not model-code evidence**. It is nevertheless high value because the directly opened LIFESTORM record shows that Suruga's JSS Windows-software schema includes literal JAN and model/type fields. Recovering the corresponding StoneAge record could therefore close the model/type gap without physical acquisition.
+
+No model value is inferred from LIFESTORM's `JV02005`.
+
 ## 4. Structural observation
 
 Across the verified identifiers above, the first seven digits are consistently:
@@ -228,8 +236,8 @@ A prior console-sequence candidate, `4909476805019`, remains explicitly rejected
 
 The highest-value identifier search is now:
 
-1. recover the still-missing **LIFESTORM II model/type code** for JAN `4909476302013`;
-2. recover the **STONEAGE model/type code** for directly observed JAN `4909476303010`;
+1. recover the direct **Suruga StoneAge initial-edition catalog record** and inspect it for the missing model/type code tied to JAN `4909476303010`;
+2. recover the still-missing **LIFESTORM II model/type code** for JAN `4909476302013`;
 3. preserve higher-resolution StoneAge box/disc imagery that may expose model, disc-label or matrix identifiers;
 4. recover at least one additional JSS Windows online-game/software model around 1998–1999 if it helps decode the `JV...` model family;
 5. keep all further numerical extrapolation subordinate to direct package/catalog/media evidence.
@@ -242,8 +250,9 @@ Search exact variants:
 - `ライフストーム2`, `ライフストームII`
 - JSS model-code family around `JV02005`
 - JAN stem `49094763` with period Windows software
+- direct/cached Suruga record for `Windows95/98 CDソフト ストーンエイジ[初回版]`
 - Japanese distributor/dealer catalogs from 1998–1999
 - physical box side/back scans
 - old auction snapshots and retailer inventory dumps
 
-For StoneAge, the package-back target has now succeeded: Yahoo! Auctions listing `k1131932809` directly exposes JAN **`4909476303010`**. The next physical-media priority is higher-resolution side/back/disc evidence for the still-missing model/type and disc/matrix identifiers, followed by a provenance-preserving publicly obtainable disc image or file tree.
+For StoneAge, the package-back target has now succeeded: Yahoo! Auctions listing `k1131932809` directly exposes JAN **`4909476303010`**. The next identifier priority is the newly surfaced Suruga initial-edition catalog lead, followed in parallel by higher-resolution side/back/disc evidence for the still-missing model/type and disc/matrix identifiers, then a provenance-preserving publicly obtainable disc image or file tree.

@@ -196,6 +196,24 @@ Canonical analysis: `research/clients/JSS-PRODUCT-IDENTIFIER-ARCHAEOLOGY-R1.md`.
   - disc label/matrix identifiers, filesystem contents, hashes or executable metadata;
   - S-grade provenance or chain of custody for the photographed object.
 
+## SRC-JP-JSS-STONEAGE-SURUGA-CATALOG-LEAD-01
+
+- title: Suruga-ya indexed `ストーンエイジ[初回版]` catalog lead
+- discovery URL: https://www.suruga-ya.jp/kaitori/kaitori_detail/145002458
+- retrieval date: 2026-09-18
+- source type: current retailer search-index / cross-catalog discovery lead
+- confidence: **C as a discovery lead only; not yet a direct StoneAge product record**
+- observed:
+  - the current indexed snippet for Suruga-ya's JSS `LIFESTORM` record exposes a related catalog item named **`ストーンエイジ[初回版]`**;
+  - the snippet classifies that related item as **`Windows95/98 CDソフト`**;
+  - the directly opened LIFESTORM record confirms Suruga's catalog schema carries literal JAN, manufacturer and model/type fields for JSS Windows software.
+- current limitation:
+  - the available extraction path does not expose the direct StoneAge detail URL or its record body;
+  - no StoneAge model/type code, Suruga management ID or additional identifier is therefore promoted from this lead.
+- research consequence:
+  - prioritize recovery of the direct Suruga StoneAge record through public indexes, caches or catalog mirrors, because it may expose the still-missing model/type field without requiring physical acquisition;
+  - do **not** infer StoneAge's model/type from LIFESTORM's `JV02005` or from numerical adjacency.
+
 ## Source-group conclusion
 
 The shared `4909476` stem is empirically observed across multiple JSS-associated physical products. More importantly, public package photographs now directly bind three consecutive JSS Windows online-RPG retail JANs:
