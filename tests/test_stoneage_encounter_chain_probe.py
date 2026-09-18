@@ -27,9 +27,11 @@ class EncounterChainProbeTests(unittest.TestCase):
             _,_,_,ec,groups,e=analyze(data,setup)
             self.assertEqual(ec,1)
             self.assertTrue(groups[0]["active"])
-            self.assertEqual(groups[0]["rows"][0]["_unresolved"],0)
+            self.assertEqual(groups[0]["loaded_rows"][0]["_raw_unresolved"],0)
             self.assertEqual(e["rows"][0]["_unresolved"],0)
             self.assertEqual(e["schemas"]["extended_33"],1)
+            self.assertEqual(groups[0]["rejected_no_enemy"],0)
+            self.assertEqual(groups[0]["rejected_duplicate"],0)
 
     def test_blank_group_slots_remain_minus_one(self):
         with tempfile.TemporaryDirectory() as td:
@@ -40,7 +42,20 @@ class EncounterChainProbeTests(unittest.TestCase):
             (data/"encount.txt").write_text(enc(9)+"\n",encoding="utf-8")
             setup=root/"setup.cf";setup.write_text("enemyfile=./data/enemy.txt\ngroupfile=./data/group.txt\nencountfile=./data/encount.txt\n",encoding="utf-8")
             *_,groups,e=analyze(data,setup)
-            self.assertEqual(groups[0]["rows"][0]["ENEMY_ID2"],-1)
+            self.assertEqual(groups[0]["loaded_rows"][0]["ENEMY_ID2"],-1)
             self.assertEqual(e["rows"][0]["_unresolved"],0)
+
+    def test_loader_rejects_group_with_only_unresolved_enemy_and_encount_then_dangles(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);data=root/"data";data.mkdir()
+            (data/"enemy.txt").write_text(enemy(7)+"\n",encoding="utf-8")
+            (data/"group.txt").write_text(group(9,999)+"\n",encoding="utf-8")
+            (data/"encount.txt").write_text(enc(9)+"\n",encoding="utf-8")
+            setup=root/"setup.cf";setup.write_text("enemyfile=./data/enemy.txt\ngroupfile=./data/group.txt\nencountfile=./data/encount.txt\n",encoding="utf-8")
+            *_,groups,e=analyze(data,setup)
+            self.assertEqual(groups[0]["rejected_no_enemy"],1)
+            self.assertEqual(len(groups[0]["loaded_rows"]),0)
+            self.assertEqual(e["rows"][0]["_unresolved"],1)
+            self.assertEqual(e["rows"][0]["_unresolved_positive_weight"],1)
 
 if __name__=="__main__":unittest.main()
