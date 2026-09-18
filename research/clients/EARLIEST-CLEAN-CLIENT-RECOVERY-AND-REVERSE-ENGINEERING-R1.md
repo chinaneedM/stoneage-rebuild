@@ -50,7 +50,11 @@ For every candidate record:
 - installer metadata;
 - unexpected launchers, injectors, private-server IP/domain patches, custom logos, replaced assets, DLL loaders or patchers;
 - version strings and region/operator identifiers;
+- login/version fingerprints (including PKEY/RUNKEY when present), treated as **supporting fingerprints only**;
+- login-packet/version behavior where safely inspectable;
 - comparison against other copies of the same claimed version.
+
+Important: a single PKEY/RUNKEY pair is **not** sufficient version proof. Community source trees reuse or relabel the same values across claimed versions; packet format, executable/resource lineage and provenance must agree before promotion.
 
 Classification:
 

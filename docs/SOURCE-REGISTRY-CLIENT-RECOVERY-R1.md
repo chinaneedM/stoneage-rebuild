@@ -107,9 +107,14 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - `SA2.5服務端`
     - `gmsv`
     - `saac`
-- Historical availability check:
-  - on 2012-04-13 a forum user explicitly stated that the two MediaFire files were present after the administrator re-uploaded them;
-  - later posts report that the links subsequently became unavailable again.
+- Historical availability / host lineage:
+  - a 2012-02-26 reply explicitly says the earlier copy had been on **Megaupload** before that service disappeared;
+  - on 2012-04-08 the administrator said the download would be restored;
+  - on 2012-04-13 a forum user explicitly confirmed that the **two MediaFire files** were present after re-upload;
+  - by 2012-12-03 a later reply again reported the download point unavailable.
+- Recovery consequence:
+  - there are at least two historical public-host generations for the same forum bundle (Megaupload -> two-part MediaFire);
+  - search both host generations and reposts by the bundle title / `SA2.5主程式`, rather than assuming the preserved MediaFire IDs are the only possible byte path.
 - Purity warning:
   - this is a **combined engineering bundle**, not an operator-origin installer;
   - the same thread contains a user remark that they had been trying to find an "original/plain" copy but commonly encountered modified packages;
@@ -140,6 +145,23 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - recover indexed/printable/archived snippets, reposts or mirrors for thread `tid=2132`;
   - if bytes are found, run the same clean-client acceptance test before promotion.
 - Status: **TARGET-A/B — high-value 2.5 clean-client lead, bytes not yet recovered**.
+
+## CLEAN-CLIENT CONTROL — version/login fingerprints are multi-factor, not single-key proof
+
+- Primary technical discussion: https://www.lab.welovesa.com/viewthread.php?action=printable&tid=501
+- Later reuse/corroboration discussion: https://www.shiqi.la/forum.php?extra=page%3D1&mobile=no&mod=viewthread&tid=13339
+- Contradiction/control discussion: https://www.lab.welovesa.com/redirect.php?goto=lastpost&tid=3175
+- Observed community technical claims:
+  - a 2010 post labels `_DEFAULT_PKEY = "ttttttttt"` and `_RUNNING_KEY = "20041215"` as **原始2.5版本**;
+  - the same post distinguishes other community branches such as `12345678/12345678` and `cary/cary`;
+  - a 2015 thread shows a different source tree where the same `ttttttttt / 20041215` pair is commented as **7.5**, proving the pair is not a unique version identity;
+  - the 2015 technical reply explicitly notes that different client versions also differ in **login-packet format**, not only key values.
+- Evidence boundary:
+  - these are community/source-lineage technical records, not operator documentation;
+  - **PKEY/RUNKEY must not be used alone to declare a recovered client 2.5 or clean.**
+- Operational validation rule:
+  - use key strings only as one contamination/lineage fingerprint among executable metadata, version strings, packet behavior, file tree, timestamps, launcher/updater structure, REAL/ADRN/resource generations, network endpoints and cross-copy hashes.
+- Status: **CONTROL-A/B — high-value false-positive guard, not a version oracle**.
 
 ## CONTROL-A/B — Wayi official StoneAge 8.5 installer preservation set
 
