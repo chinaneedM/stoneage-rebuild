@@ -1,6 +1,6 @@
 # Current State
 
-Last updated: 2026-09-18
+Last updated: 2026-09-19
 
 ## Current phase
 
@@ -795,11 +795,21 @@ Supplemental source ledgers:
 - **Ordinary Duelranking is read/display only with respect to persistent duel ranking.** It queries `DB_DUELPOINT` through SAAC, pages ten rows at a time and changes only transient `CHAR_WORKSHOPRELEVANT` pagination state.
 - The common Duelranking NPC does not write duel points. Later tournament/family-contend branches are compile-gated, package-coupled extensions and remain later-scope.
 - Canonical boundary record: `research/mechanics/STONEAGE-DENGON-DUELRANKING-PERSISTENCE-BOUNDARY-R1.md`.
+## Personal bank persistence closure — 2026-09-19
+
+- Bankman is the UI adapter: its personal-account path sends `B|G|<CHAR_BANKGOLD>`; the balance mutation itself lives in `FAMILY_Bank` subcommand `G`.
+- Signed transfer semantics are now fixed: positive values move `CHAR_GOLD` into `CHAR_BANKGOLD`; negative values withdraw bank Stone into carried Gold, with projected balance bounds enforced.
+- Preserved historical family coupling: a non-member with zero personal-bank balance is denied; a former/non-member with residual balance can still withdraw it; new positive deposits require current family membership.
+- `CHAR_BANKGOLD` serializes as `bankgld` in the ordinary character record. The `G` mutation branch does **not** call `CHAR_charSave*`; persistence is deferred to the standard periodic/logout/save lifecycle.
+- Personal subcommand `G` and shared-family-treasury subcommand `T` are separate persistence domains; the latter goes through SAAC family-data mutation.
+- Fixed descendants disagree on the compiled personal-bank ceiling: gavinlinasd/iriselia use **10,000,000**, while Bismarck uses **100,000,000**. This remains VERSIONED evidence rather than a universal constant.
+- Added `research/mechanics/STONEAGE-PERSONAL-BANK-PERSISTENCE-R1.md`, `tools/stoneage_personal_bank_model.py`, `tests/test_stoneage_personal_bank_model.py` and dedicated CI.
+- Local deterministic validation passes **13 tests**; GitHub Actions run **35387247569** completed successfully.
 ## Immediate next actions
 
-1. **Trace personal-bank persistence next.** Isolate the `CHAR_BANKGOLD` deposit/withdraw/save path from later family-account coupling so ordinary player bank mechanics are not lost inside the broader Bankman/family package.
-2. **Only after the personal-bank seam is classified, re-triage the remaining unresolved non-family classes for any other early/core persistent mutation.** Do not reopen Dengon or ordinary Duelranking unless contradictory evidence appears.
-3. **Keep Raceman, Scheduleman, ManorSman, FMPK/FMWarp and VIP packages later-scope unless they reveal a dependency required by the early/core reconstruction.**
+1. **Run a fresh residual non-family NPC triage against the recovered 2.5 function set.** Rank only classes that expose direct persistent mutation, ordinary economy, travel/world-state mutation or another still-unmodeled early/core dependency; do not inherit the stale R3 ordering.
+2. **Reconstruct only the highest-value residual ordinary-core seam revealed by that audit.** If the remaining classes collapse to presentation, wrappers around already-modeled mechanics, or later packages, close the NPC core sweep instead of manufacturing work.
+3. **Keep Raceman, Scheduleman, ManorSman, FMPK/FMWarp, family-administration and VIP packages later-scope unless they reveal a dependency required by the early/core reconstruction.**
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
 6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.
