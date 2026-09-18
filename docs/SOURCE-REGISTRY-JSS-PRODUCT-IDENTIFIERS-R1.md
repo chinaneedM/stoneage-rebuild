@@ -140,10 +140,44 @@ Canonical analysis: `research/clients/JSS-PRODUCT-IDENTIFIER-ARCHAEOLOGY-R1.md`.
   - a general rule that the next numerical body must belong to StoneAge;
   - disc matrix text, filesystem contents, hashes or executable version.
 
+## SRC-JP-1999-RETAIL-YAHOO-UNOPENED-01
+
+- title: `未開封 ストーンエイジ`
+- auction ID: `k1131932809`
+- listing URL: https://auctions.yahoo.co.jp/jp/auction/k1131932809
+- listing period: 2024-04-09 through 2024-04-13
+- retrieval date: 2026-09-18
+- source type: preserved Yahoo! Auctions photographs of a seller-described unopened JSS StoneAge retail package
+- confidence: **B for literal visible package fields; C for seller provenance / unopened-status claim**
+- visible package observations:
+  - the front is the early JSS/Gamer's Dream `STONEAGE` Windows 95/98 package design;
+  - the package carries initial-edition promotional marking on the front;
+  - the back shows Japan System Supply branding and the known early retail presentation;
+  - the back-box JAN/barcode is directly readable as **`4909476303010`**.
+- Yahoo original-image targets:
+  1. side: https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0504/users/93c224e074220661380e6f1f93b2056799fea6be/i-img640x480-1712642690euuwgk18923.jpg
+  2. front: https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0504/users/93c224e074220661380e6f1f93b2056799fea6be/i-img640x480-1712642690ufdbie13619.jpg
+  3. back/barcode: https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0504/users/93c224e074220661380e6f1f93b2056799fea6be/i-img640x480-1712642690dlqgj723.jpg
+- research consequence:
+  - **`4909476303010` is promoted from numerical search candidate to directly observed StoneAge retail-package JAN**;
+  - the three directly observed JSS online-RPG JANs now form:
+    - LIFESTORM — `4909476301016`
+    - LIFESTORM II — `4909476302013`
+    - STONEAGE — `4909476303010`
+- does not establish:
+  - StoneAge model/type code;
+  - exact contents of the sealed package;
+  - disc label/matrix identifiers, filesystem contents, hashes or executable metadata;
+  - S-grade provenance or chain of custody for the photographed object.
+
 ## Source-group conclusion
 
-The shared `4909476` stem is empirically observed across multiple JSS-associated physical products, and a direct LIFESTORM II package photograph now fixes its JAN as **`4909476302013`**. Together with LIFESTORM's **`4909476301016`**, this gives two consecutive observed identifiers in the JSS Windows online-RPG line.
+The shared `4909476` stem is empirically observed across multiple JSS-associated physical products. More importantly, public package photographs now directly bind three consecutive JSS Windows online-RPG retail JANs:
 
-This **still does not justify assigning the next valid number to StoneAge**. Numerical adjacency remains a search heuristic until a StoneAge package, catalog or first-party source binds an identifier directly.
+- **LIFESTORM — `4909476301016`**
+- **LIFESTORM II — `4909476302013`**
+- **STONEAGE — `4909476303010`**
 
-The next identifier targets are the unresolved LIFESTORM II model/type code and, more importantly, a direct StoneAge package/catalog JAN/model identifier.
+The StoneAge assignment is **no longer a numbering inference**: it is visible on a surviving early retail box-back photograph. Numerical sequence remains useful only for locating related artifacts and must not be generalized beyond directly observed products.
+
+The next identifier targets are the unresolved LIFESTORM II and StoneAge model/type codes, followed by readable StoneAge disc-label/matrix identifiers.
