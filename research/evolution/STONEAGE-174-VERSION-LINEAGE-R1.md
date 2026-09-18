@@ -130,14 +130,17 @@ Result:
 
 - contemporary/preserved version references were recovered;
 - **no provenance-preserving downloadable 1.74/1.74a client, installer filename, file tree or binary hash was recovered in this pass**;
-- GitHub code search produced no credible 1.74 client artifact.
+- GitHub code search produced no credible 1.74 client artifact;
+- a 2024 Korean Lost Media request independently shows that the Inium client itself was still being actively sought, with the poster reporting only low-resolution surviving screenshots rather than a client copy. This is preservation-status evidence, not proof of permanent loss;
+- GameZone's search index still exposes a separate attachment named `sa_182_code.rar` (403.4 KB) advertised as 1.82 client source, but the attachment bytes are not retrievable through the current path and its provenance is unverified.
 
 ## 8. Controlled next targets
 
 1. Recover the 2003 Japanese `1.74a` installer filename from old `stoneage.to`, Hangame, download portals, antivirus catalogs, magazine CD indexes or cached link pages.
-2. Recover a Korean Inium/Netmarble `1.74` installation package or file tree from a public preservation source.
-3. On any recovered artifact, record hashes externally and keep proprietary bytes out of this repository.
-4. Compare:
+2. Recover a Korean Inium/Netmarble `1.74` installation package or file tree from a public preservation source; explicitly search lost-media communities, old Korean file boards and magazine/software archives because a 2024 preservation request still lacked the client.
+3. Attempt recovery of the indexed `sa_182_code.rar` attachment as a **secondary source-lineage control**; authenticate its age/content before using it and never substitute it for a 1.74 or JSS artifact.
+4. On any recovered artifact, record hashes externally and keep proprietary bytes out of this repository.
+5. Compare:
    - executable names/resources;
    - `REAL/ADRN/SPR/SPRADRN` filenames and generations;
    - map files;
@@ -145,5 +148,5 @@ Result:
    - trade UI;
    - riding assets/flags;
    - server-list/update configuration.
-5. Only after byte/data comparison decide whether `1.74` and `1.74a` share a direct client branch.
-6. Continue treating the 1999 JSS retail disc and September beta as the primary archaeological targets.
+6. Only after byte/data comparison decide whether `1.74` and `1.74a` share a direct client branch.
+7. Continue treating the 1999 JSS retail disc and September beta as the primary archaeological targets.
