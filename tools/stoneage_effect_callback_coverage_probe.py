@@ -390,6 +390,34 @@ def parse_item_function_body_map(path, tokens):
     return out
 
 
+def merge_item_function_body_maps(paths, tokens):
+    """Merge callback body evidence across the ordinary item source modules."""
+    merged = {
+        token: {
+            "present": False,
+            "unguarded_substantive": False,
+            "unguarded_lines": 0,
+            "guarded_lines": 0,
+        }
+        for token in set(tokens)
+    }
+    for path in paths:
+        if path is None:
+            continue
+        current = parse_item_function_body_map(path, tokens)
+        for token, state in current.items():
+            if not state.get("present"):
+                continue
+            dst = merged[token]
+            dst["present"] = True
+            dst["unguarded_substantive"] = (
+                dst["unguarded_substantive"] or state.get("unguarded_substantive", False)
+            )
+            dst["unguarded_lines"] += int(state.get("unguarded_lines", 0))
+            dst["guarded_lines"] += int(state.get("guarded_lines", 0))
+    return merged
+
+
 def item_body_coverage(counter, dispatch_maps, body_maps):
     """Refine all-three unguarded item dispatch candidates by function-body evidence."""
     lineages = tuple(sorted(dispatch_maps))
@@ -568,9 +596,18 @@ def analyze(args):
     ):
         active_item_tokens = set(item_slots["usefunc"])
         item_body_maps = {
-            "gavin": parse_item_function_body_map(args.gavin_item_body, active_item_tokens),
-            "iris": parse_item_function_body_map(args.iris_item_body, active_item_tokens),
-            "bismarck": parse_item_function_body_map(args.bismarck_item_body, active_item_tokens),
+            "gavin": merge_item_function_body_maps(
+                (args.gavin_item_body, getattr(args, "gavin_item_battle_body", None)),
+                active_item_tokens,
+            ),
+            "iris": merge_item_function_body_maps(
+                (args.iris_item_body, getattr(args, "iris_item_battle_body", None)),
+                active_item_tokens,
+            ),
+            "bismarck": merge_item_function_body_maps(
+                (args.bismarck_item_body, getattr(args, "bismarck_item_battle_body", None)),
+                active_item_tokens,
+            ),
         }
 
     magic_guard_maps = {
@@ -696,6 +733,7 @@ def emit(args):
 def add_source_args(ap, prefix):
     ap.add_argument(f"--{prefix}-function", type=Path, required=True)
     ap.add_argument(f"--{prefix}-item-body", type=Path)
+    ap.add_argument(f"--{prefix}-item-battle-body", type=Path)
     ap.add_argument(f"--{prefix}-magic", type=Path, required=True)
     ap.add_argument(f"--{prefix}-petskill", type=Path, required=True)
 
