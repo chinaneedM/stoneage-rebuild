@@ -92,9 +92,10 @@ The path has no rollback. If `GetStone` is applied and a later pet grant fails, 
 
 This creates source-visible edge behavior:
 
-- first empty slot zero makes the counting loop fail immediately and leads to a negative modulus base that collapses positive `rand()` values to candidate 1 in the modeled C remainder behavior;
-- ordinary first-empty indices inside the candidate range can still converge on the correct candidate count;
-- a first-empty index beyond the candidate count can produce a modulus wider than the candidate list, so selection may point beyond configured candidates.
+- the legacy delimiter helper treats index 0 as a successful empty result, so first-empty slot 0 still advances through and counts the complete candidate list;
+- first-empty indices inside the candidate range also converge on the configured candidate count;
+- first-empty index exactly one past the candidate count still decrements back to the true count;
+- starting further beyond the candidate list can leave a modulus wider than the configured candidate count, so selection may point beyond configured candidates.
 
 The reconstruction exposes this quirk instead of replacing it with a clean uniform random choice.
 

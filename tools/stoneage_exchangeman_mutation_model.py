@@ -119,18 +119,25 @@ def evdel_nonstar_effective_item_id(configured_item_id: int, *, pile_enabled: bo
 def source_pet_random_choice(candidate_count: int, first_empty_slot: int, rand_value: int):
     """Mirror AddPet/AddEgg's reuse of first-empty slot as CSV token index.
 
-    Returns a one-based candidate index, None when the source can select beyond
-    the configured list, or raises ZeroDivisionError for the source's zero-modulus
-    hazard.
+    The legacy delimiter helper treats index 0 as a successful empty result.
+    Therefore a first empty pet slot of 0 still advances through the whole
+    candidate list. Starting beyond the list can, however, leave a modulus
+    wider than the configured candidate count.
     """
     candidate_count = int(candidate_count)
     i = int(first_empty_slot)
-    while 1 <= i <= candidate_count:
+
+    def token_exists(index):
+        if index == 0:
+            return True
+        return 1 <= index <= candidate_count
+
+    while token_exists(i):
         i += 1
     i -= 1
     if i == 0:
         raise ZeroDivisionError("source rand()%0 hazard")
-    selected = int(rand_value) % abs(i) + 1
+    selected = int(rand_value) % i + 1
     if selected > candidate_count:
         return None
     return selected

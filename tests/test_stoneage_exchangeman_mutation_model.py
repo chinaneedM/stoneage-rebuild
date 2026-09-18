@@ -62,14 +62,17 @@ class ExChangeManMutationCoreTests(unittest.TestCase):
         self.assertEqual(evdel_nonstar_effective_item_id(123, pile_enabled=True), -1)
         self.assertEqual(evdel_nonstar_effective_item_id(123, pile_enabled=False), 123)
 
-    def test_pet_random_first_slot_zero_collapses_to_first_candidate(self):
-        self.assertEqual(source_pet_random_choice(4, 0, 12345), 1)
+    def test_pet_random_first_slot_zero_still_counts_full_candidate_list(self):
+        self.assertEqual(source_pet_random_choice(4, 0, 12345), 2)
 
     def test_pet_random_normal_when_first_empty_is_within_candidate_range(self):
         self.assertEqual(source_pet_random_choice(4, 2, 5), 2)
 
-    def test_pet_random_can_select_beyond_list_when_first_empty_exceeds_count(self):
-        self.assertIsNone(source_pet_random_choice(2, 5, 3))
+    def test_pet_random_candidate_count_plus_one_still_collapses_to_true_count(self):
+        self.assertEqual(source_pet_random_choice(2, 3, 3), 2)
+
+    def test_pet_random_can_select_beyond_list_when_first_empty_is_further_beyond_count(self):
+        self.assertIsNone(source_pet_random_choice(2, 4, 2))
 
     def test_event_add_checks_delstone_before_mutation(self):
         arg = "EVENT:LV=1|DelStone:100|GetPet:5"
