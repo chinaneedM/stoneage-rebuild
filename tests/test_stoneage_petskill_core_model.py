@@ -213,6 +213,12 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
         self.assertEqual(r["attack_percent"], 20.0)
         self.assertEqual(r["defense_percent"], -10.0)
 
+    def test_missing_status_token_encodes_end_sentinel(self):
+        r = parse_status_skill("UNKNOWN turn2", STATUS)
+        self.assertFalse(r["matched"])
+        self.assertEqual(r["status"], len(STATUS))
+        self.assertEqual(r["turn"], 2)
+
     def test_status_command_encodes_status_and_turn(self):
         r = status_change_command(
             11,
@@ -235,7 +241,6 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
                 defender_tough=20,
                 defender_dex=20,
                 attacker_luck=99,
-                defender_resistance=0,
                 attacker_level=100,
                 defender_level=1,
                 pvp=False,
@@ -254,7 +259,6 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
                 defender_tough=25,
                 defender_dex=25,
                 attacker_luck=10,
-                defender_resistance=0,
                 attacker_level=20,
                 defender_level=10,
                 pvp=False,
@@ -275,7 +279,6 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
                 defender_tough=99,
                 defender_dex=99,
                 attacker_luck=100,
-                defender_resistance=0,
                 attacker_level=100,
                 defender_level=1,
                 pvp=False,
@@ -449,7 +452,8 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
         )
         self.assertTrue(r["success"])
         self.assertEqual(r["mode"], "gold")
-        self.assertEqual(r["gold"], 100)
+        self.assertEqual(r["defender_gold_loss"], 100)
+        self.assertEqual(r["attacker_gold_gain"], 0)
         self.assertTrue(r["attacker_exits"])
 
     def test_steal_zero_gold_converts_to_failure(self):
@@ -472,7 +476,8 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
             chosen_item_ordinal=1,
         )
         self.assertTrue(r["success"])
-        self.assertEqual(r["item_slot"], 11)
+        self.assertEqual(r["destroyed_item_slot"], 11)
+        self.assertFalse(r["attacker_item_gain"])
         self.assertTrue(r["attacker_exits"])
 
     def test_merge_rejects_when_owner_in_battle(self):
