@@ -62,7 +62,8 @@ def analyze(exp_path,setup_path=None):
 def emit(r):
     vals=r["values"]; rows=r["rows"]; cum=r["cumulative"]
     print("StoneAge recovered server EXP probe — R1")
-    print("No original EXP table payload is stored in this report.")\n    print("EXP_VALUE_SEMANTICS|server_LoadEXP_second_token_per_level_required_experience")
+    print("No original EXP table payload is stored in this report.")
+    print("EXP_VALUE_SEMANTICS|server_LoadEXP_second_token_per_level_required_experience")
     print(f"EXP_SHA256|{r['sha256']}")
     print(f"EXP_BYTES|{r['bytes']}")
     print(f"EXP_ROWS|{len(rows)}")
