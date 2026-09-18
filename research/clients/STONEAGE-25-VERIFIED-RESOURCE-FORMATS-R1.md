@@ -187,6 +187,26 @@ Examples:
 
 The corpus also contains zero-byte DAT placeholders/special entries. These must not be forced through the normal three-layer parser.
 
+The completed DAT probe now covers the **entire 1,011-file case-insensitive DAT set**:
+
+- structurally valid three-layer caches: **995**
+- special/invalid normal-parser entries: **16**
+- total cells across valid caches: **8,354,525**
+
+Descendant client/server source additionally resolves the runtime roles:
+
+- server `tile` → client `tile`
+- server `obj` → client `parts`
+- server per-cell `CHAR_WORKEVENTTYPE` → client `event`
+- client `writeMap` adds `MAP_READ_FLAG=0x8000` and `MAP_SEE_FLAG=0x4000` to event values
+- client collision is derived at runtime from tile/parts graphic attributes and event occupancy; no fourth DAT hit layer is serialized
+
+Recovered event bytes strongly corroborate the descendant enum: **994 of the 995 valid DAT files contain no low-12 event values outside 0–8**. The sole outlier, `1021.DAT`, contains all **43,952** non-enum low-12 values and is quarantined as a separate corruption/version/private-server anomaly rather than used to expand the canonical event model.
+
+Detailed analysis:
+
+`research/clients/STONEAGE-25-DAT-RUNTIME-SEMANTICS-R1.md`
+
 ## 8. `.MAP` is NOT a direct copy of any DAT layer — verified negative result
 
 Byte-level pair report:
@@ -215,38 +235,31 @@ Therefore:
 
 This negative result is important. Future work must determine the MAP cell semantics empirically rather than projecting the descendant DAT layer names onto it.
 
-## 9. Current next format target — SPR/SPRADRN
+## 9. SPR/SPRADRN — verified
 
 Recovered files:
 
 - `data/spr_4.bin`: 5,588,120 bytes
 - `data/spradrn_5.bin`: 10,164 bytes
 
-Descendant source defines `SPRADRN` as:
-
-- uint32 `sprNo`
-- uint32 `offset`
-- uint16 `animSize`
-- normal Win32 alignment → **12-byte record**
-
-The recovered SPRADRN length is exactly:
+The recovered SPRADRN is exactly:
 
 `10,164 / 12 = 847 records`
 
-Descendant SPR stream structures are:
+Real-byte validation parses **all 847 records successfully** and walks:
 
-- animation header: 12 bytes
-  - uint16 direction
-  - uint16 animation class
-  - uint32 total animation duration
-  - uint32 frame count
-- frame record: 10 bytes
-  - uint32 ADRN image number
-  - int16 X offset
-  - int16 Y offset
-  - uint16 sound/effect number
+- **70,154 animations**
+- **476,378 frame records**
+- **472,886** direct ADRN bitmap references
+- **3,492** explicit `0xffffffff` sentinel frames
 
-Next validation should check all 847 index records against real SPR offsets and verify that animation/frame walks stay within `spr_4.bin`, then cross-check referenced image IDs against the recovered ADRN image domain.
+No unresolved non-sentinel bitmap references remain in the current report. Six duplicate SPR numbers/offset groups are retained as observed override/duplicate behavior rather than normalized away.
+
+Derived report:
+
+`research/recovered/STONEAGE-25-SPR-PROBE-R1.txt`
+
+The immediate format target has therefore moved past SPR/SPRADRN to deeper DAT runtime semantics, map-event anomalies and subsequent gameplay-data tables.
 
 ## 10. Evidence-grade summary
 
@@ -259,7 +272,10 @@ For recovered StoneAge 2.5 resource corpus:
 - flag-0 raw-block behavior: **verified**
 - legacy RD RLE decoder: **verified on 4,225 real blocks**
 - MAP 8-byte header + one uint16/cell: **verified on 1,030 files**
-- DAT 8-byte header + three uint16/cell layers: **source-backed and corpus-size corroborated**
+- DAT 8-byte header + three uint16/cell layers: **verified on 995 normal recovered caches; source-backed semantics**
+- DAT network/cache role and server `obj` → client `parts`: **descendant client/server source verified**
+- DAT event enum 0–8: **recovered-byte corroborated in 994/995 valid caches; `1021.DAT` quarantined anomaly**
+- DAT collision as derived runtime state rather than a fourth serialized layer: **descendant client source verified**
 - MAP == DAT tile/parts/event: **disproved for all 995 valid paired files**
 - MAP cell semantics: **OPEN**
-- SPR/SPRADRN layout: **next validation target**
+- SPR/SPRADRN 12-byte index + animation/frame stream: **verified across all 847 records**
