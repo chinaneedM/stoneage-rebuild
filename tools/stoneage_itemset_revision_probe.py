@@ -87,16 +87,16 @@ def analyze(data_dir):
 def emit(data_dir):
     r=analyze(data_dir)
     print("StoneAge recovered itemset revision probe — R1")
-    print("No original item names/descriptions/function strings are stored in this report.")
+    print("No original item names/descriptions/function strings are stored in this report.")\n    print("TYPE_LABEL_BOUNDARY|labels follow a descendant conditional enum and are candidates, not unconditional recovered semantics")
     print(f"ROWS|itemset.txt|{r['a_rows']}")
     print(f"ROWS|itemset0710.txt|{r['b_rows']}")
     print(f"SHARED_IDS|{r['shared']}")
     print(f"ITEMSET0710_ONLY_IDS|{r['b_only']}")
     for fname,c in r["type_counts"].items():
         for v,n in sorted(c.items()):
-            print(f"TYPE_VALUE|{fname}|{v}|{TYPE_LABELS.get(v,'unknown')}|{n}")
+            print(f"TYPE_VALUE|{fname}|{v}|descendant_candidate={TYPE_LABELS.get(v,'unknown')}|{n}")
     for v,n in sorted(r["new_type_counts"].items()):
-        print(f"NEW_ID_TYPE_VALUE|{v}|{TYPE_LABELS.get(v,'unknown')}|{n}")
+        print(f"NEW_ID_TYPE_VALUE|{v}|descendant_candidate={TYPE_LABELS.get(v,'unknown')}|{n}")
     for name,c in r["transitions"].items():
         for k,n in sorted(c.items()):
             print(f"TRANSITION|{name}|{k}|{n}")
