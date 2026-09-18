@@ -241,13 +241,46 @@ Active `petskill.txt` contains:
 - 147 rows;
 - 69 unique function tokens.
 
-Coverage splits cleanly:
+Textual fixed-source coverage:
 
 - 65 unique tokens / 143 rows resolve in all three fixed source tables;
-- no token is merely branch-specific in this comparison;
-- 4 unique tokens / 4 rows resolve in **none** of the three fixed source tables.
+- 4 unique tokens / 4 rows resolve in none of the three fixed source tables;
+- no active token is merely branch-specific in this comparison.
 
-Therefore the four unmatched pet-skill records are classified as **recovered-data / inspected-source skew** until another source snapshot explains them. They are not assigned invented behavior and are not promoted into the historical baseline.
+After comment-aware dispatch-guard classification:
+
+- **15 unique tokens / 33 rows** are unguarded in all three fixed source lineages;
+- **50 tokens / 110 rows** are guarded in all three;
+- 0 mixed-guard;
+- 0 partial-source;
+- 4 all-source-missing / 4 rows.
+
+Substantive body classification of the 15 unguarded candidates is equally clean:
+
+- **15 stable-body tokens / 33 rows**;
+- 0 macro shells;
+- 0 mixed-body;
+- 0 partial-body-source.
+
+The stable active families are:
+
+- none / ordinary attack / ordinary guard;
+- continuation attack;
+- charge attack;
+- guardian;
+- power balance;
+- mighty;
+- ordinary status change;
+- earth round;
+- guard break;
+- abduct;
+- steal;
+- merge;
+- no-guard.
+
+Therefore the former “65 all-three matches” figure is a **source-coverage fact, not a common-core boundary**. The deterministic semantic target is the 15-token / 33-row stable subset.
+
+The four unmatched recovered pet-skill records remain classified as **recovered-data / inspected-source skew** until another source snapshot explains them. They are not assigned invented behavior and are not promoted into the historical baseline.
 
 ### Resulting work order
 
@@ -257,7 +290,7 @@ Semantic reverse engineering should proceed in evidence-quality order:
 
 1. ordinary magic effect families — reconstructed for the nine all-three unguarded callbacks;
 2. common item effects — reconstructed for 15 stable active USE callbacks plus all stable non-USE hooks, with two profession macro-shell USE rows kept versioned;
-3. pet-skill callbacks — next, apply dispatch-guard and body-level classification before semantic reconstruction;
+3. pet-skill callbacks — dispatch/body boundary now closed at 15 stable active tokens / 33 rows; reconstruct these 15 before any guarded extension;
 4. quarantine the four all-source-missing pet-skill records until a matching source/client lineage is recovered.
 
 ## Evidence boundaries
