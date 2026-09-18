@@ -654,3 +654,87 @@ def equipment_noenemy_level(evade_level):
 def remove_equipment_noenemy():
     """ITEM_remNoenemy always clears the connection-level equipment value."""
     return 0
+
+
+def validate_rename_item_name(name, *, source_byte_length):
+    """Validate the old rename-item input rule.
+
+    The source uses strlen(), so the authoritative limit is 1..26 source
+    bytes, not Unicode code points. It also rejects ASCII space, full-width
+    space, and the pipe delimiter.
+    """
+    text = str(name)
+    n = int(source_byte_length)
+    if n < 1:
+        return {"valid": False, "reason": "empty"}
+    if n > 26:
+        return {"valid": False, "reason": "too_long"}
+    if " " in text or "　" in text:
+        return {"valid": False, "reason": "space"}
+    if "|" in text:
+        return {"valid": False, "reason": "pipe"}
+    return {"valid": True, "reason": "ok"}
+
+
+def rename_item_begin(*, catalyst_have_slot):
+    """ITEM_useRenameItem starts UI state and does not consume the catalyst."""
+    return {
+        "selected_target_slot": -1,
+        "catalyst_have_slot": int(catalyst_have_slot),
+        "consume": False,
+    }
+
+
+def rename_item_finalize(
+    *,
+    name_valid,
+    target_valid,
+    catalyst_valid,
+    catalyst_remaining,
+):
+    """Model successful rename mutation and catalyst-use ordering.
+
+    The target rename + account marker are written before the catalyst item is
+    revalidated. A missing catalyst can therefore leave the rename committed.
+    Catalyst argument 0 is treated as unlimited use; any nonzero count is
+    decremented, with <=0 deleting the catalyst.
+    """
+    if not name_valid or not target_valid:
+        return {
+            "renamed": False,
+            "catalyst_changed": False,
+            "catalyst_deleted": False,
+            "catalyst_remaining": int(catalyst_remaining),
+        }
+
+    if not catalyst_valid:
+        return {
+            "renamed": True,
+            "catalyst_changed": False,
+            "catalyst_deleted": False,
+            "catalyst_remaining": int(catalyst_remaining),
+        }
+
+    remain = int(catalyst_remaining)
+    if remain == 0:
+        return {
+            "renamed": True,
+            "catalyst_changed": False,
+            "catalyst_deleted": False,
+            "catalyst_remaining": 0,
+        }
+
+    remain -= 1
+    if remain <= 0:
+        return {
+            "renamed": True,
+            "catalyst_changed": True,
+            "catalyst_deleted": True,
+            "catalyst_remaining": 0,
+        }
+    return {
+        "renamed": True,
+        "catalyst_changed": True,
+        "catalyst_deleted": False,
+        "catalyst_remaining": remain,
+    }
