@@ -4,7 +4,9 @@ from tools.stoneage_magic_effect_model import (
     att_reverse_transition,
     battle_recovery_gain,
     c_atoi,
+    common_alive_target_list,
     common_cast_route,
+    common_dead_target_list,
     field_recovery_gain,
     magic_def_transition,
     parse_after_marker,
@@ -14,6 +16,7 @@ from tools.stoneage_magic_effect_model import (
     parse_resurrection_option,
     parse_status_change_option,
     recovery_rate,
+    recovery_target_allowed,
     res_and_def_transition,
     resurrection_gain,
     status_recovery_transition,
@@ -108,6 +111,50 @@ class StoneAgeMagicEffectModelTests(unittest.TestCase):
         self.assertFalse(r["accepted"])
         self.assertEqual(r["route"], "reject_invalid_field_target_after_mp")
         self.assertEqual(r["remaining_mp"], 85)
+
+    def test_common_alive_target_expansion(self):
+        alive = {0, 2, 9, 10, 15, 19}
+        self.assertEqual(common_alive_target_list(2, alive), (2,))
+        self.assertEqual(common_alive_target_list(3, alive), ())
+        self.assertEqual(common_alive_target_list(20, alive), (0, 2, 9))
+        self.assertEqual(common_alive_target_list(21, alive), (10, 15, 19))
+        self.assertEqual(common_alive_target_list(22, alive), (0, 2, 9, 10, 15, 19))
+
+    def test_common_dead_target_expansion(self):
+        dead = {1, 4, 11, 18}
+        self.assertEqual(common_dead_target_list(1, dead), (1,))
+        self.assertEqual(common_dead_target_list(2, dead), ())
+        self.assertEqual(common_dead_target_list(20, dead), (1, 4))
+        self.assertEqual(common_dead_target_list(21, dead), (11, 18))
+        self.assertEqual(common_dead_target_list(22, dead), (1, 4, 11, 18))
+
+    def test_unknown_target_selector_falls_through_raw(self):
+        self.assertEqual(common_alive_target_list(99, set()), (99,))
+        self.assertEqual(common_dead_target_list(99, set()), (99,))
+
+    def test_recovery_target_guard_self_only(self):
+        self.assertTrue(
+            recovery_target_allowed(magic_target=0, caster_battle_no=12, to_no=12)
+        )
+        self.assertFalse(
+            recovery_target_allowed(magic_target=0, caster_battle_no=12, to_no=11)
+        )
+
+    def test_recovery_target_guard_single_rejects_group_selectors(self):
+        self.assertTrue(
+            recovery_target_allowed(magic_target=1, caster_battle_no=0, to_no=19)
+        )
+        self.assertFalse(
+            recovery_target_allowed(magic_target=1, caster_battle_no=0, to_no=20)
+        )
+        self.assertFalse(
+            recovery_target_allowed(magic_target=1, caster_battle_no=0, to_no=22)
+        )
+
+    def test_recovery_other_target_modes_delegate(self):
+        self.assertTrue(
+            recovery_target_allowed(magic_target=2, caster_battle_no=0, to_no=22)
+        )
 
     def test_recovery_option_detects_percent(self):
         self.assertEqual(parse_recovery_option("35%"), {"power": 35, "percent": True})
