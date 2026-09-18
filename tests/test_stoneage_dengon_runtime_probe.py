@@ -39,6 +39,21 @@ class DengonRuntimeProbeTests(unittest.TestCase):
             self.assertEqual(result["max_ids"][0], 1)
             self.assertEqual(EXPECTED_FILE_SIZE, ENTRY_SIZE * LINE_COUNT)
 
+    def test_counter_only_zero_stub(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            d = root / "Dengon"
+            d.mkdir()
+            (d / "stub").write_bytes(b"0000000000:")
+            result = analyze(root)
+            self.assertEqual(
+                result["counts"]["counter_only_stub_files"], 1
+            )
+            self.assertEqual(
+                result["counts"]["zero_counter_stub_files"], 1
+            )
+            self.assertEqual(result["counts"]["records_examined"], 0)
+
     def test_nonzero_counter_without_payload_readout(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)

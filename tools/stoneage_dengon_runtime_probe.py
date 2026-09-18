@@ -61,6 +61,15 @@ def analyze(gmsv_dir):
         else:
             counts["size_deviation_files"] += 1
 
+        if len(data) == COUNTER_SIZE:
+            stub_id = parse_prefix(data)
+            if stub_id is not None:
+                counts["counter_only_stub_files"] += 1
+                if stub_id == 0:
+                    counts["zero_counter_stub_files"] += 1
+                else:
+                    counts["nonzero_counter_stub_files"] += 1
+
         record_count = min(LINE_COUNT, len(data) // ENTRY_SIZE)
         valid = 0
         malformed = 0
