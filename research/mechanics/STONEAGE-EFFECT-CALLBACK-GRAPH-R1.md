@@ -176,6 +176,17 @@ Per fixed source snapshot, declared-source USE coverage is:
 
 This makes item-use behavior a **version-diff problem**, not an unresolved-data problem.
 
+### Item USE guard classification
+
+The enhanced source-guard pass further separates active item USE callbacks:
+
+- 17 unique tokens / 818 row uses are unguarded in all three fixed source lineages;
+- 19 unique tokens / 86 row uses are guarded in all three;
+- 16 unique tokens / 53 row uses have partial source-lineage coverage;
+- 0 tokens are missing from all three.
+
+This refines the next reconstruction boundary: the **17 all-three unguarded item USE callbacks** are the cleanest common semantic target, while guarded and partial-source groups remain version tracks.
+
 ### Magic callbacks
 
 Active `magic.txt` contains:
@@ -186,6 +197,18 @@ Active `magic.txt` contains:
 All 17 tokens and all 181 row uses resolve in **all three** fixed descendant magic dispatch tables.
 
 This is the strongest callback-coherence result in the recovered effect layer and makes ordinary magic the best next semantic reconstruction target.
+
+### Magic guard classification
+
+The active recovered magic layer splits exactly along the three-source preprocessor boundary:
+
+- 9 unique tokens / 130 rows are unguarded in all three;
+- 8 unique tokens / 51 rows are guarded in all three;
+- 0 mixed-guard tokens;
+- 0 partial-source tokens;
+- 0 missing-all-three tokens.
+
+This is the basis for the separate ordinary-magic semantic model in `STONEAGE-MAGIC-EFFECT-CORE-R1.md`.
 
 ### Pet-skill callbacks
 
@@ -208,11 +231,7 @@ The callback join itself is now closed at R1.
 
 Semantic reverse engineering should proceed in evidence-quality order:
 
-1. ordinary magic effect families — complete all-three dispatch coverage;
-2. common item callback families, then the 16 branch-specific USE families as explicit version diffs;
-3. common pet-skill families;
-4. quarantine the four all-source-missing pet-skill records until a matching source/client lineage is recovered.
-
+1. ordinary magic effect families — now reconstructed for the nine all-three unguarded callbacks;\n2. the 17 all-three unguarded item USE callbacks, plus the already-common non-use callback slots;\n3. guarded/partial-source item USE callbacks as explicit version diffs;\n4. common pet-skill families;\n5. quarantine the four all-source-missing pet-skill records until a matching source/client lineage is recovered.\n
 ## Evidence boundaries
 
 - **FACT:** item callback strings resolve through the global function registry.
