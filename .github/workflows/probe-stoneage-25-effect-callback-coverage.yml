@@ -1,0 +1,107 @@
+name: Probe recovered StoneAge effect callback coverage
+concurrency:
+  group: stoneage-25-effect-callback-coverage
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/probe-stoneage-25-effect-callback-coverage.yml
+      - tools/stoneage_effect_callback_coverage_probe.py
+      - tests/test_stoneage_effect_callback_coverage_probe.py
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deterministic coverage tests
+        run: python3 -m unittest tests.test_stoneage_effect_callback_coverage_probe -v
+      - run: sudo apt-get update && sudo apt-get install -y unar
+      - name: Recover verified preservation bundle
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25
+          python3 - <<'PY'
+          import hashlib,html,json,re,http.cookiejar,urllib.parse,urllib.request
+          from pathlib import Path
+          ua='Mozilla/5.0'
+          hashes={
+            'ev7l29fw77891go':'7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5',
+            'ytaa168o5jih0lx':'567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb',
+          }
+          op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+          def get(k,s):
+            data=urllib.parse.urlencode({'quick_key':k,'response_format':'json'}).encode()
+            req=urllib.request.Request('https://www.mediafire.com/api/1.5/file/get_info.php',data=data,headers={'User-Agent':ua})
+            with op.open(req,timeout=60) as r: info=json.load(r)['response']['file_info']
+            if str(info.get('hash','')).lower()!=hashes[k]: raise SystemExit('metadata hash changed')
+            with op.open(urllib.request.Request(info['links']['normal_download'],headers={'User-Agent':ua}),timeout=60) as r:
+              page=r.read().decode('utf-8','replace'); ref=r.geturl()
+            m=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S) or re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+            if not m: raise SystemExit('no direct link')
+            p=Path('/tmp/sa25')/('part.'+s); h=hashlib.sha256()
+            with op.open(urllib.request.Request(html.unescape(m.group(1)),headers={'User-Agent':ua,'Referer':ref}),timeout=300) as r,p.open('wb') as o:
+              while True:
+                b=r.read(1048576)
+                if not b: break
+                o.write(b); h.update(b)
+            if h.hexdigest()!=hashes[k]: raise SystemExit('hash mismatch')
+          get('ev7l29fw77891go','001'); get('ytaa168o5jih0lx','002')
+          PY
+          cat /tmp/sa25/part.001 /tmp/sa25/part.002 >/tmp/sa25/bundle.rar
+          test "$(sha256sum /tmp/sa25/bundle.rar|awk '{print $1}')" = "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+          mkdir -p /tmp/sa25/out
+          ulimit -c 0
+          unar -f -o /tmp/sa25/out /tmp/sa25/bundle.rar >/dev/null 2>&1
+      - name: Fetch fixed descendant source tables
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/effectsrc/{gavin,iris,bismarck}
+          curl -fsSL 'https://raw.githubusercontent.com/gavinlinasd/StoneAge/1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56/gmsv/src/function.c' -o /tmp/effectsrc/gavin/function.c
+          curl -fsSL 'https://raw.githubusercontent.com/gavinlinasd/StoneAge/1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56/gmsv/src/magic/magic_base.c' -o /tmp/effectsrc/gavin/magic.c
+          curl -fsSL 'https://raw.githubusercontent.com/gavinlinasd/StoneAge/1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56/gmsv/src/battle/pet_skill.c' -o /tmp/effectsrc/gavin/petskill.c
+          curl -fsSL 'https://raw.githubusercontent.com/iriselia/StoneAge/9e6c8ce2cd8ed532a7157773acd1c61582c178b5/Source/gmsv/function.c' -o /tmp/effectsrc/iris/function.c
+          curl -fsSL 'https://raw.githubusercontent.com/iriselia/StoneAge/9e6c8ce2cd8ed532a7157773acd1c61582c178b5/Source/gmsv/magic/magic_base.c' -o /tmp/effectsrc/iris/magic.c
+          curl -fsSL 'https://raw.githubusercontent.com/iriselia/StoneAge/9e6c8ce2cd8ed532a7157773acd1c61582c178b5/Source/gmsv/battle/pet_skill.c' -o /tmp/effectsrc/iris/petskill.c
+          curl -fsSL 'https://raw.githubusercontent.com/BismarckDD/stoneage/999ffdf1d220ec6666eb65339180689c9caf1876/server/gmsv/function.c' -o /tmp/effectsrc/bismarck/function.c
+          curl -fsSL 'https://raw.githubusercontent.com/BismarckDD/stoneage/999ffdf1d220ec6666eb65339180689c9caf1876/server/gmsv/magic/magic_base.c' -o /tmp/effectsrc/bismarck/magic.c
+          curl -fsSL 'https://raw.githubusercontent.com/BismarckDD/stoneage/999ffdf1d220ec6666eb65339180689c9caf1876/server/gmsv/battle/pet_skill.c' -o /tmp/effectsrc/bismarck/petskill.c
+      - name: Probe effect callback coverage
+        run: |
+          set -euo pipefail
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
+          test -n "$D"
+          mkdir -p research/recovered
+          R=research/recovered/STONEAGE-25-EFFECT-CALLBACK-COVERAGE-R1.txt
+          ARGS=(
+            --data-dir "$D"
+            --gavin-function /tmp/effectsrc/gavin/function.c
+            --gavin-magic /tmp/effectsrc/gavin/magic.c
+            --gavin-petskill /tmp/effectsrc/gavin/petskill.c
+            --iris-function /tmp/effectsrc/iris/function.c
+            --iris-magic /tmp/effectsrc/iris/magic.c
+            --iris-petskill /tmp/effectsrc/iris/petskill.c
+            --bismarck-function /tmp/effectsrc/bismarck/function.c
+            --bismarck-magic /tmp/effectsrc/bismarck/magic.c
+            --bismarck-petskill /tmp/effectsrc/bismarck/petskill.c
+          )
+          if [ -n "$C" ]; then ARGS+=(--setup "$C"); fi
+          {
+            echo 'SOURCE_BUNDLE_SHA256|d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5'
+            echo 'SOURCE_REVISION|gavinlinasd/StoneAge|1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56'
+            echo 'SOURCE_REVISION|iriselia/StoneAge|9e6c8ce2cd8ed532a7157773acd1c61582c178b5'
+            echo 'SOURCE_REVISION|BismarckDD/stoneage|999ffdf1d220ec6666eb65339180689c9caf1876'
+            python3 -m tools.stoneage_effect_callback_coverage_probe "${ARGS[@]}"
+          } > "$R"
+      - name: Commit derived report only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-25-EFFECT-CALLBACK-COVERAGE-R1.txt
+          git commit -m 'research: analyze StoneAge effect callback coverage'
+          git pull --rebase origin main
+          git push
