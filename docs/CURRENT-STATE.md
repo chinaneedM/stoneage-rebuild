@@ -586,14 +586,44 @@ Supplemental source ledgers:
 - Item model run `35373496535` completed **successfully** with **68 tests**; final real-byte dispatch/body probe `35373534098` also completed **successfully**.
 - Next priority: **pet-skill dispatch-guard + body classification**. The active recovered table has 65 all-three textual matches / 143 rows, but the fixed source tables share only 15 unguarded pet-skill callback families overall, so the 65-match set must not be promoted wholesale.
 
+## Stable pet-skill core reconstruction — 2026-09-19
+
+- Refined the recovered 147-row / 69-token pet-skill table through the same comment-aware dispatch/body evidence chain used for item semantics.
+- Final active boundary:
+  - **15 all-three unguarded + stable-body callback tokens / 33 rows**;
+  - **50 all-three guarded tokens / 110 rows**;
+  - 0 mixed-guard;
+  - 0 partial-source;
+  - **4 all-source-missing tokens / 4 rows**, still quarantined.
+- The stable 15 families are None, NormalAttack, NormalGuard, ContinuationAttack, ChargeAttack, Guardian, PowerBalance, Mighty, StatusChange, EarthRound, GuardBreak, Abduct, Steal, Merge and NoGuard.
+- Reconstructed handler-side COM1/COM2/COM3 encoding and downstream battle execution rather than treating `pet_skill.c` callbacks as complete mechanics by themselves.
+- Key stable semantics:
+  - continuation attack uses N=1..10 and sets both attack count and damage divisor to N;
+  - charge decrements its wait counter through no-action turns, then rebuilds attack power as `FIXSTR + FIXSTR×攻% + MODATTACK` and enters CHARGE_OK;
+  - guardian sets turn-local guardian registration and fails redirect under death, ordinary immobilizing statuses, barrier, self-attack or thrown-weapon attack;
+  - PowerBalance applies immediate fixed-stat percentage changes before the normal attack path;
+  - Mighty encodes multiplier×100 plus dodge modifier, but missing the multiplier marker leaves encoded multiplier 0 despite the local float default 2.00;
+  - ordinary StatusChange defaults to 3 turns, applies only after positive physical damage, stores work timer as requested turn + 1, and uses the stable status probability relationship rather than later suit resistance layers;
+  - EarthRound is two-phase hide -> attack and can consume stale full COM3 when its attack-percent marker is absent;
+  - GuardBreak damages only a guarding, non-confused target;
+  - Abduct has a **minimum 50** base chance against non-player targets and makes the attacker leave after any valid attempt, success or failure;
+  - old Steal has 50% entry chance only against player targets, subtracts/destroys target assets rather than transferring them to the attacker in this function, and makes the attacker leave only on successful theft;
+  - Merge delegates to `ITEM_mergeItem_merge` only when the pet owner is out of battle;
+  - NoGuard packs dodge/counter/critical parameters but the fixed battle switch consumes the command only as `BATTLE_NoAction`.
+- Preserved old COM3 residue behavior: Continuation and Abduct overwrite only LOW; NoGuard conditionally overwrites HIGH; EarthRound may leave the entire prior COM3 unchanged.
+- Three-lineage key-formula spot checks converged; the only observed NoGuard token difference is simplified/traditional counter-marker spelling, not algorithmic behavior. Bismarck also refactors Steal’s inventory upper-bound helper while preserving the same removal semantics.
+- Added `tools/stoneage_petskill_core_model.py`, `tests/test_stoneage_petskill_core_model.py`, dedicated CI, and `research/mechanics/STONEAGE-PETSKILL-CORE-R1.md`.
+- Pet-skill model run `35374921866` completed **successfully** with **50 deterministic tests**; report-trigger rerun `35375022224` also succeeded.
+- B8 is complete. The next deterministic priority is **only the unresolved early/core NPC secondary argument/configuration edges**, not broad NPC re-enumeration and not guarded pet-skill expansion.
+
 ## Immediate next actions
 
-1. **Classify active pet-skill callbacks by dispatch guard and substantive function body before semantic promotion.** The recovered active table has 69 unique callback tokens / 147 rows: 65 tokens / 143 rows resolve textually in all three fixed source tables and four tokens / four rows resolve in none. The fixed pet-skill tables themselves share 68 textual families but only 15 are unguarded in all three, so first measure which active rows actually belong to that stable-body subset. Keep the four all-source-missing rows quarantined.
-2. **Reconstruct only the stable pet-skill subset first.** Start with ordinary attack/guard/multi-hit/power/status/guard-break/steal/merge/no-guard families that survive the guard/body test. Keep macro-gated attack-magic, transformation, deep-poison, barrier, silence, profession/enemy extensions and similar later features in explicit version tracks.
-3. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks rather than treating any descendant package as the original baseline.
-4. **Reject repacks before analysis.** For every candidate, record source/provenance, archive filename, size, hashes, timestamps, installer metadata, executable names, unexpected patchers/loaders, and signs of private-server modification.
-5. **The first verified usable client becomes the bridge specimen.** Immediately build a reproducible extraction inventory and compare its item/magic/pet-skill tables against the reconstructed server-side semantic graph.
-6. **Keep historical reconstruction separate from redesign.** Do not repair old quirks in the archaeology model; record them first, then design modernized rules separately.
+1. **Resolve only the remaining early/core NPC secondary argument/configuration edges.** The generic NPC/world-content graph, save/elder, ordinary Pool storage, warp/map transitions, and common item/magic/pet-skill semantics are already closed. Start from unresolved common NPC dispatch functions where a secondary argument changes ordinary state, economy, travel, battle, pet/item, save/return or other deterministic core behavior.
+2. **Do not reopen broad NPC inventory work.** Skip arguments already explained by the existing world graph and skip later event/family/profession/tournament packages unless earlier evidence independently requires them.
+3. **Use source/data mismatches as the queue.** Prefer unresolved active recovered NPC rows whose argument/config cannot yet be deterministically replayed from the fixed source model; document mixed-snapshot defects rather than silently repairing them.
+4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
+5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
+6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.
 7. **De-prioritize nontechnical archaeology.** Package price, model numbers, collector accessories and similar topics remain paused unless they directly unlock a client, prove provenance, or resolve a technical ambiguity.
 
 ## Continuity status
