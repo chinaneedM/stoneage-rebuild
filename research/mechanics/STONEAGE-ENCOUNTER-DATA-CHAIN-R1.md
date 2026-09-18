@@ -189,6 +189,39 @@ The workflow rehydrates the hash-pinned preservation bundle only in CI and emits
 
 It excludes original rows, names and concrete item/enemy/group IDs.
 
+
+## Recovered 2.5 specimen integrity result
+
+The hash-pinned preservation specimen currently configures:
+
+- `enemy.txt`;
+- `group1.txt`;
+- `encount.txt`.
+
+The corrected aggregate probe, after simulating the actual group loader, found:
+
+- active `enemy.txt`: 2,087 valid concrete enemy rows;
+- active `group1.txt`: 1,257 raw rows, but only 1,256 rows survive loader simulation;
+- the rejected active group loses all usable enemies after 15 raw unresolved enemy references are rewritten to `-1`;
+- only 4 of those 15 unresolved active enemy references exist in the inactive `enemy2.txt`;
+- `encount.txt`: 660 valid 33-field rows;
+- 39 encounter group references, spread across 32 encounter rows, do not resolve to the effective loaded `group1.txt`;
+- all 39 dangling references have positive configured group weights;
+- none of those 39 group IDs exists even in the inactive raw `group.txt`.
+
+This matters because `ENEMY_getEnemy` does:
+
+```c
+g_array = GROUP_getGroupArray(groupid);
+itemid = GROUP_getInt(g_array, GROUP_APPEARBYITEMID);
+```
+
+without checking `g_array == -1`.
+
+Therefore these are not automatically ignored optional references. If the affected encounter area and slot are reached, the old code can index the group array with `-1`, producing undefined behavior.
+
+This is classified as a **preservation-specimen integrity defect / unresolved provenance mismatch**, not as a historical StoneAge gameplay rule. It strengthens the rule that the recovered 2.5 bundle is a technical specimen and must not be promoted to the historical baseline without corroboration.
+
 ## Evidence status
 
 - **FACT:** group.txt resolves ENEMY_ID references against enemy.txt.
@@ -201,7 +234,7 @@ It excludes original rows, names and concrete item/enemy/group IDs.
 - **FACT:** ENCOUNT group weights and GROUP enemy weights are separate selection stages.
 - **FACT:** final enemy count is bounded jointly by area ENEMY_MAX_NUM and enemy CREATEMAXNUM.
 - **VERSIONED:** event-triggered alternate enemy group is an `_ADD_ENCOUNT` extension.
-- **OPEN:** exact launch-era group/encount rows and expansion chronology.
+- **SPECIMEN DEFECT:** the recovered active 2.5 chain contains 39 positively weighted encounter references that resolve to no effective active group and to no inactive raw group row; treat this as incomplete/misaligned preservation data until another source corroborates it.\n- **OPEN:** exact launch-era group/encount rows and expansion chronology.
 - **OPEN:** exact historical client-side presentation/cache correspondence to these server tables.
 
 ## Next seam
