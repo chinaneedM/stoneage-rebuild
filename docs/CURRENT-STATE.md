@@ -750,10 +750,24 @@ Supplemental source ledgers:
 - Local reference validation passes 18 deterministic tests.
 - TimeMan R1 is closed for fixed-descendant common behavior plus recovered 2.5 active surface.
 
+## Windowman recovered routing closure — 2026-09-19
+
+- Real-byte Windowman workflow 35384359937 succeeded: 17 refs all carry inline conff pointers; 13 conff files resolve, 4 are missing from the recovered bundle, and the 13 survivors contain 8 distinct config contents. Resolved conff aggregate SHA-256 is 5115e8544aa95014ded26646fbe75c1dbfa25e0aa48dfd10d4eadb29706e2b80.
+- Fixed-source Windowman is a deterministic window router: button -> optional item-existence / item-absence tests -> target window -> send target window.
+- The 13 surviving 2.5 configs use gotowin routing only. None uses checkhaveitem/haveitemgotowin/checkdonthaveitem/donthaveitemgotowin.
+- None of the 13 surviving configs contains takeitem, giveitem, warp or battle.
+- Source parses takeitem/giveitem but never executes them in the Windowman callback. warp/battle exist only as initialized struct placeholders and are not parsed by the fixed conff reader.
+- Windowman therefore must not be reconstructed as an inventory/warp/battle mechanic from field names alone.
+- Preserved source ordering: if both item conditions existed and both passed, the later don't-have target would overwrite the earlier have-item target.
+- The 4 missing conff files remain an explicit evidence gap; no claim is made that they match the surviving 13.
+- Added tools/stoneage_windowman_core_model.py, tests/test_stoneage_windowman_core_model.py, dedicated CI and research/mechanics/STONEAGE-WINDOWMAN-CORE-R1.md.
+- Local reference validation passes 16 deterministic tests.
+- Windowman R1 is closed for common routing semantics plus the 13 surviving recovered 2.5 configs.
+
 ## Immediate next actions
 
-1. **Advance to Windowman as the next deterministic conditional-window seam.** Probe its 17 recovered inline conff references and the resolved conff contents without retaining dialogue or item IDs; specifically measure whether takeitem/giveitem/warp/battle and item-condition fields appear.
-2. **If recovered Windowman data confirms only conditional presentation, close it as UI routing rather than inventing state mutation.** Then take Action as the next lightweight presentation/action-message seam.
+1. **Advance to Action as the next lightweight common presentation seam.** Its recovered queue has 8 resolved file-backed refs. Measure active msgcol / talk / watch-action message keys first, then reconstruct only the common trigger/message-selection behavior.
+2. **After Action, rerun remaining ordinary non-family NPC triage.** Presentation-only classes can be closed cheaply; do not promote family/race or later VIP systems solely from recovered reference counts.
 3. **Keep Bankman, Raceman, Scheduleman and family PK/management packages later-scope.** Personal-bank mutation is coupled to the family protocol; race and scheduling classes remain expansion/family systems.
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
