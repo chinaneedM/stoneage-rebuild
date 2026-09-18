@@ -156,6 +156,28 @@ Purpose: register preservation redundancy and search-triage sources that improve
   - that it corresponds to an actual 1.82 retail/service binary;
   - any relationship to Korean 1.74 or Japanese 1.74a.
 
+## CTRL-SA-182-GAMEZONE-SERVERPACK-NOT-CLIENT-01
+
+- Title: `[스톤에이지] 1.82 버전 팩`
+- URL: https://gamezone.live/board_MsnU09/113658
+- Post date: 2016-04-27
+- Retrieval date: 2026-09-18
+- Source type: later community file-board listing
+- Classification: **C / NEGATIVE CLIENT-ID CONTROL**
+- Indexed attachment metadata:
+  - filename: `1.82.zip`
+  - listed size: **7.96 MB**
+- Critical author note:
+  - the listing explicitly says **`클라는 2.5 쓰시면 됩니다`** — use the 2.5 client.
+- Research consequence:
+  - despite the title containing `1.82`, this archive must **not** be treated as a StoneAge 1.82 client artifact;
+  - it is a server/build pack intended to be paired with a separate 2.5 client;
+  - title/version strings on private-server file boards are insufficient for client-version attribution without file-level evidence.
+- Does not establish:
+  - a 1.82 retail/service client filename, file tree or hash;
+  - any JSS/Inium/Netmarble provenance for the archive;
+  - a relationship between the separately listed `sa_182_code.rar` source archive and an authentic 1.82 runtime client.
+
 ## Operational consequence
 
 For future `stoneage.exe` recovery:
