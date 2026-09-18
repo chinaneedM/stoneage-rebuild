@@ -210,6 +210,53 @@ The probe scans the hash-pinned recovered bundle transiently and commits only ag
 
 It does **not** publish NPC names, dialogue, concrete arguments, coordinates or original rows.
 
+## Recovered 2.5 aggregate result
+
+The hash-pinned preservation specimen produced a structurally coherent generic NPC graph:
+
+- 2,205 files under the recovered NPC directory;
+- 49 magic-identified template files containing 131 template blocks;
+- 116 unique template-name values, with 8 duplicated names and 15 extra duplicate blocks;
+- 187 magic-identified create files containing 4,985 create blocks;
+- all 4,985 create blocks define a born area;
+- all 4,985 template references resolve;
+- all 4,985 create blocks reference exactly one template;
+- all 4,985 create floors resolve to the recovered server map-ID set;
+- 4,825 create references carry a non-empty NPC argument;
+- 633 distinct effective floor candidates are represented;
+- no recovered create block exercises the old more-than-eight-reference capacity hazard;
+- no recovered template block uses a direct per-event callback override; 130/131 use a function-set token.
+
+This means the recovered generic create -> template -> map linkage is much more internally coherent than the previously observed enemy/group/encounter snapshot mismatch.
+
+### Duplicate-template ambiguity is operational
+
+The duplicate template names are not all inert archive leftovers.
+
+The enhanced probe found:
+
+- 3 duplicated template-name values are actually referenced by create blocks;
+- 30 create blocks reference one of those duplicated names.
+
+`NPC_templateGetTemplateIndex` scans the loaded template array from the beginning and returns the first matching name. Therefore these 30 bindings can depend on template load order if the duplicated definitions differ.
+
+R1 does not choose one duplicate as canonical. This is preserved as a **load-order ambiguity / specimen-integrity risk** to resolve against a cleaner comparison artifact.
+
+### Function-set source/data skew
+
+The recovered templates use 58 distinct non-empty function-set tokens.
+
+Cross-checking those tokens against the static `functionSet[]` tables in the three fixed descendant source revisions shows:
+
+- 44/58 recovered tokens are present in each fixed source table;
+- 13 recovered tokens are absent from **all three** fixed source tables;
+- `Raceman` is present in the gavinlinasd/iriselia source family but absent from the fixed Bismarck table;
+- `VipShop` is present in the fixed Bismarck table but absent from the fixed gavinlinasd/iriselia tables.
+
+The 13 all-source-missing tokens are retained in the derived analysis only as an aggregate mismatch class; their presence proves that the recovered NPC data and the three fixed public source snapshots are not one exact source/data build.
+
+This is another **cross-version preservation skew**, not evidence that the missing functions were broken in the historical commercial game and not evidence that any one descendant source is the canonical implementation for this 2.5 data set.
+
 ## Evidence boundaries
 
 - **FACT:** generic NPC files are recursively discovered and magic-identified.
@@ -222,10 +269,7 @@ It does **not** publish NPC names, dialogue, concrete arguments, coordinates or 
 - **SOURCE HAZARD:** the old reference-count guard can admit a ninth resolved reference.
 - **VERSIONED:** retry-timer ordering differs in the inspected newer Bismarck branch.
 - **OPEN:** exact launch-era NPC content population and which descendant function classes were already present in JSS 1999.
-- **OPEN:** class-specific secondary file dependencies until each early/core NPC class is audited.
-
+- **SPECIMEN SKEW:** 13 recovered function-set tokens are absent from all three fixed descendant source tables; the data/source snapshots are not one exact build.\n- **LOAD-ORDER RISK:** 30 recovered create blocks reference 3 duplicated template-name values, while lookup returns the first loaded match.\n- **OPEN:** class-specific secondary file dependencies until each early/core NPC class is audited.\n
 ## Next seam
 
-After the recovered graph aggregate is available, use its active function-set distribution to prioritize **early/core secondary content edges** rather than parsing every later event/profession/family subsystem.
-
-Then proceed to remaining item/skill effect callback joins.
+The generic NPC/world graph is now closed at R1. Preserve the duplicate-name and function-set source/data mismatches as comparison targets.\n\nNext priority: **item / magic / pet-skill effect callback joins** — measure whether function tokens in the recovered active tables resolve in the fixed descendant dispatch tables, without repeating the already completed table-schema probes.\n
