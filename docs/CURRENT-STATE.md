@@ -412,6 +412,24 @@ Supplemental source ledgers:
 - GitHub reported no workflow-run records yet for the new workflow/research commits; no CI success is claimed.
 - Next priority: fresh deterministic-loop gap audit, with item shop buy/sell, pet storage/shop and save/logout persistence as current candidates.
 
+## NPC item shop core reconstruction — 2026-09-18
+
+- Reconstructed the ordinary `npc_itemshop.c` buy/resale economy across three preserved descendant lineages.
+- Buy unit price is `int(ITEM_COST × buy_rate)` in the ordinary path; missing buy_rate defaults to 1.0. Later changed-cost/fame/tax rules remain version/config layers.
+- Buy requests are server-clamped to the current number of empty carried-item slots; zero capacity rejects the purchase.
+- `CHAR_addItemSpecificItemIndex` uses the first empty item slot and does not merge existing stacks, so the empty-slot clamp reflects the actual shop insertion path even when pile-count support exists.
+- Total affordability is checked before item creation, but purchase execution creates/inserts every requested item first and deducts the total STONE only after all insertions succeed.
+- No rollback transaction surrounds the buy loop: an unexpected mid-loop allocation/registration failure can leave earlier inserted units while no purchase gold has yet been deducted.
+- Player resale eligibility is a whitelist driven by `LimitItemType` / `LimitItemNo`; unmatched items cannot be sold.
+- Grouped sale categories include ACCESSORY (types 8..15), OFFENCE (0..4 and 17..19) and DEFENCE (5..7).
+- Ordinary sale price requires configured `sell_rate`; the local 0.2 initializer is not an unconditional fallback because no matching pricing branch leaves cost at -1.
+- `special_item` pricing is checked first; if a matching special item has no `special_rate`, the preserved fallback is 1.2 × ITEM_COST.
+- With pile support, sale quantity cannot exceed the selected stack count; partial sales decrement the stack and full sales delete the item instance.
+- Sell preflight rejects when `current_gold + proceeds >= max_gold`; therefore an exact-cap result is rejected, unlike direct-trade final-cap semantics.
+- Sale mutation order is item delete/decrement first, then gold addition.
+- Added `tools/stoneage_item_shop_model.py`, fifteen deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-ITEM-SHOP-CORE-R1.md`.
+- Next priority: re-audit **pet storage/pet shop** versus **save/logout persistence boundaries** and choose the larger remaining deterministic loop closure.
+
 ## Immediate next actions
 
 1. **Continue recovered-byte reverse engineering.** REAL/ADRN/RD, SPR/SPRADRN, DAT runtime semantics, `1021.DAT`, and the major unresolved-graphic skew are now bounded as far as the mixed 2.5 bundle permits. Move the primary technical target outward into **character / pet / item / skill / stat / combat / progression data tables** in the recovered client/server corpus. First build a provenance-preserving inventory of candidate gameplay-data files and identify which tables are authoritative server data versus client display/cache data; then parse one family at a time with deterministic tests. Keep map 817/water-world missing assets as a version-diff target for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
