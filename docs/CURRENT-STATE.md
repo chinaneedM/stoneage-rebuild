@@ -24,6 +24,15 @@ Historical archaeology remains useful only when it helps authenticate, date, com
 - Later systems/content may ultimately be integrated, but through coherent progression rather than a feature dump.
 - Emotional milestones such as first pet capture, first ride, first major exploration, etc. are part of the design target.
 
+## Active clean-client recovery leads — 2026-09-18
+
+- **Mainland 1.82 / Sina period mirror — TARGET-A:** Sina's historical StoneAge download page is currently indexed with an explicit `石器时代1.82客户端下载` / `安装包` entry. The actual href, filename and bytes are not yet recovered because the current page-body fetch path times out.
+- **Japanese 1.74a — TARGET-A:** contemporaneous Mado no Mori reporting identifies version `1.74a` dated 2003-12-12 as a free beta client downloadable from the official StoneAge site and Hangame. Installer identity/bytes remain unrecovered.
+- **Korean 1.74 — artifact not yet located:** version identity is documented, but exact client searches still have no clean installer/file tree/hash.
+- **JSS `stoneage.exe` — TARGET-A partial artifact:** exact first-party path is known, but binary extraction remains blocked.
+
+Canonical recovery ledger: `docs/SOURCE-REGISTRY-CLIENT-RECOVERY-R1.md`.
+
 ## Priority reset — 2026-09-18
 
 The user reconfirmed the original project method: **find the earliest free clean client we can actually obtain, understand how the game is built from its real files, and then reconstruct it with modern technology**.
@@ -230,7 +239,7 @@ Supplemental source ledgers:
 
 ## Immediate next actions
 
-1. **Recover the earliest freely/publicly obtainable clean StoneAge client artifact.** Search in parallel for: 1999 JSS beta/retail/update files; Korean `1.74`; Japanese revival `1.74a`; earliest Taiwan clients; early Mainland clients including 1.82. Prefer original installers, magazine-CD mirrors, operator download mirrors, preserved full client archives, or complete file trees with provenance.
+1. **Recover the earliest freely/publicly obtainable clean StoneAge client artifact.** Current first targets are now concrete: (a) extract the Sina period-mirror href/filename/bytes for the explicit Mainland **1.82 安装包** entry; (b) recover the official/free Japanese **1.74a** installer identity/bytes from archived `stoneage.to`, Hangame or software mirrors; (c) continue Korean `1.74` and 1999 JSS recovery in parallel. Prefer original installers, magazine-CD mirrors, operator download mirrors, preserved full client archives, or complete file trees with provenance.
 2. **Reject repacks before analysis.** For every candidate, record source/provenance, archive filename, size, hashes, timestamps, installer metadata, executable names, unexpected patchers/loaders, and signs of private-server modification. Do not call a client "clean" merely because its title/version string looks old.
 3. **The first verified usable client becomes the bridge specimen.** Immediately build a reproducible extraction inventory: complete file tree, hashes, PE metadata, strings/resources, directories, update components, graphics containers, maps, data tables, audio, UI assets, and executable/resource relationships.
 4. **Reverse engineer data before recreating gameplay.** Determine resource/container formats and indexes; decode graphics/animations; map character/pet/item/skill/stat records; reconstruct map formats and event/NPC data; identify combat and progression tables where present; document which behavior is client-side versus server-dependent.
