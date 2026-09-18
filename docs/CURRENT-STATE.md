@@ -378,6 +378,21 @@ Supplemental source ledgers:
 - Added `tools/stoneage_item_use_equip_model.py`, fourteen deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-ITEM-USE-EQUIP-CORE-R1.md`.
 - Next priority: **healing / recovery service semantics**, to close battle damage/death/status -> NPC/payment -> restored player/pet state before economy/trading transfer work.
 
+## Healer / recovery core reconstruction — 2026-09-18
+
+- Reconstructed two distinct recovery NPC systems across three preserved descendant lineages: ordinary free healer and selectable window healer.
+- Ordinary healer restores player HP/MP to max. Standalone players and party clients heal only themselves; a party leader interaction heals every valid party member.
+- Every valid carried pet is always restored to max HP/MP, has its pet death flag cleared, and is parameter-recomputed.
+- Neither healer path clears the player's own death flag or calls player resurrection. Ordinary player abnormal statuses are not explicitly cured. Recovery and revival therefore remain separate mechanisms.
+- Window healer uses a strict free threshold: configured level > player level is free; equality is already paid.
+- Default paid rates are HP = level × 0.5 (minimum 1) and MP = level × 2.0. Combined service charges only player HP/MP components actually below max.
+- Payment is checked/deducted before restoration; insufficient gold causes no heal.
+- Pet healing is free in every window-healer mode. HP-only, MP-only and combined player healing all fully restore every valid pet as a side effect.
+- Explicit pet-only need detection checks pet HP only, not pet MP or death flag, creating a preserved edge case where full-HP/low-MP pets may be reported as not needing healing.
+- When a leader talks to a window healer, each party member gets an individual service flow based on their own level, deficits, gold and pets rather than one shared party transaction.
+- Added `tools/stoneage_healer_recovery_model.py`, fourteen deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-HEALER-RECOVERY-CORE-R1.md`.
+- Next priority: **trading / economy transfer semantics** — gold, item and pet offers, confirmation/locking, capacity checks, exchange ordering and cancellation.
+
 ## Immediate next actions
 
 1. **Continue recovered-byte reverse engineering.** REAL/ADRN/RD, SPR/SPRADRN, DAT runtime semantics, `1021.DAT`, and the major unresolved-graphic skew are now bounded as far as the mixed 2.5 bundle permits. Move the primary technical target outward into **character / pet / item / skill / stat / combat / progression data tables** in the recovered client/server corpus. First build a provenance-preserving inventory of candidate gameplay-data files and identify which tables are authoritative server data versus client display/cache data; then parse one family at a time with deterministic tests. Keep map 817/water-world missing assets as a version-diff target for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
