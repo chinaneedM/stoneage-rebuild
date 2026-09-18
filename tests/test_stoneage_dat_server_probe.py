@@ -16,5 +16,5 @@ class T(unittest.TestCase):
             (s/"100").write_bytes(sm(100,2,1,[1,2],[3,4]));(s/"1021").write_bytes(sm(1021,1,1,[5],[6]))
             c,m,u,x=analyze(d,s)
             self.assertEqual(c["both_exact"],2);self.assertEqual(c["tile_diff_cells"],0);self.assertEqual(c["parts_diff_cells"],0)
-            self.assertEqual(u[0][0],"1021.dat");self.assertEqual(x[0][3:],[0,0,1])
+            self.assertEqual(u[0][0],"1021.dat");self.assertEqual(x[0][3:],(0,0,1))
 if __name__=="__main__":unittest.main()
