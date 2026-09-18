@@ -764,11 +764,23 @@ Supplemental source ledgers:
 - Local reference validation passes 16 deterministic tests.
 - Windowman R1 is closed for common routing semantics plus the 13 surviving recovered 2.5 configs.
 
+## Action NPC presentation core closure — 2026-09-19
+
+- Real-byte Action workflow 35384705409 succeeded: all 8 refs resolve to file-backed configs; aggregate argument SHA-256 is 720f1e31ff060c0053e3db70e2f660c822b0a3b4f135e83b82f586c7aa442eed.
+- Every recovered config contains normal plus all 11 fixed Watch-action response keys: attack, damage, down, sit, hand, pleasure, angry, sad, guard, nod and throw.
+- All 8 recovered configs contain msgcol=1, but literal fixed-source initialization cannot deterministically read it: NPC_ActionInit passes an uninitialized local argstr buffer to NPC_Util_GetNumFromStrWithDelim.
+- Talk responds only to a player in front and uses normal. Watch responds only to a face-to-face player and only for an exact action-table match.
+- Preserved source/comment mismatch: unsupported Watch actions are silent; normal is not an invalid-action fallback despite the source comment.
+- Action performs no inventory, Gold, location, battle, save, pet or persistent-state mutation.
+- Added tools/stoneage_action_core_model.py, tests/test_stoneage_action_core_model.py, dedicated CI and research/mechanics/STONEAGE-ACTION-NPC-CORE-R1.md.
+- Local reference validation passes 10 deterministic tests.
+- Action R1 is closed. SignBoard / TownPeople / Mic are next handled as lightweight presentation/broadcast registrations rather than full state-machine seams.
+
 ## Immediate next actions
 
-1. **Advance to Action as the next lightweight common presentation seam.** Its recovered queue has 8 resolved file-backed refs. Measure active msgcol / talk / watch-action message keys first, then reconstruct only the common trigger/message-selection behavior.
-2. **After Action, rerun remaining ordinary non-family NPC triage.** Presentation-only classes can be closed cheaply; do not promote family/race or later VIP systems solely from recovered reference counts.
-3. **Keep Bankman, Raceman, Scheduleman and family PK/management packages later-scope.** Personal-bank mutation is coupled to the family protocol; race and scheduling classes remain expansion/family systems.
+1. **Register SignBoard, TownPeople and Mic as lightweight presentation/broadcast semantics.** Confirm their fixed-source trigger/range behavior and recovered usage shape without building artificial gameplay-state machines.
+2. **Then re-triage what remains before entering family/race/VIP packages.** Prefer unresolved core economy, persistence, travel, battle or pet semantics over expansion-specific UI packages.
+3. **Keep Bankman, Raceman, Scheduleman and family PK/management packages later-scope unless the re-triage exposes a concrete core dependency.**
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
 6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.
