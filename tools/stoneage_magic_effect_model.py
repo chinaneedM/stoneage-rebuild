@@ -37,6 +37,65 @@ BATTLE_ONLY_EFFECTS = frozenset(
 FIELD_CAPABLE_EFFECTS = frozenset({"recovery", "other_recovery"})
 
 
+
+SIDE_OFFSET = 10
+TARGET_SIDE_0 = 20
+TARGET_SIDE_1 = 21
+TARGET_ALL = 22
+
+
+def common_alive_target_list(to_no, alive_slots, *, side_offset=SIDE_OFFSET):
+    """Logical target expansion from the old non-attack-magic BATTLE_MultiList path.
+
+    Slots 0..9 are side 0; 10..19 are side 1. Single-target requests include
+    the target only when BATTLE_TargetCheck succeeds. Side/all selectors include
+    only valid living targets. Unknown selectors fall through to one raw slot,
+    matching the legacy fallback branch.
+    """
+    to_no = int(to_no)
+    alive = {int(x) for x in alive_slots}
+    if 0 <= to_no < side_offset * 2:
+        return (to_no,) if to_no in alive else ()
+    if to_no == TARGET_SIDE_0:
+        return tuple(i for i in range(0, side_offset) if i in alive)
+    if to_no == TARGET_SIDE_1:
+        return tuple(i for i in range(side_offset, side_offset * 2) if i in alive)
+    if to_no == TARGET_ALL:
+        return tuple(i for i in range(0, side_offset * 2) if i in alive)
+    return (to_no,)
+
+
+def common_dead_target_list(to_no, dead_slots, *, side_offset=SIDE_OFFSET):
+    """Logical target expansion from BATTLE_MultiListDead."""
+    to_no = int(to_no)
+    dead = {int(x) for x in dead_slots}
+    if 0 <= to_no < side_offset * 2:
+        return (to_no,) if to_no in dead else ()
+    if to_no == TARGET_SIDE_0:
+        return tuple(i for i in range(0, side_offset) if i in dead)
+    if to_no == TARGET_SIDE_1:
+        return tuple(i for i in range(side_offset, side_offset * 2) if i in dead)
+    if to_no == TARGET_ALL:
+        return tuple(i for i in range(0, side_offset * 2) if i in dead)
+    return (to_no,)
+
+
+def recovery_target_allowed(*, magic_target, caster_battle_no, to_no):
+    """Packet-side recovery target guard from MAGIC_Recovery_Battle.
+
+    MAGIC_TARGET 0 is self-only. MAGIC_TARGET 1 is single-target only and
+    rejects aggregate selectors (20+). Other target modes are delegated to
+    BATTLE_MultiList.
+    """
+    magic_target = int(magic_target)
+    caster_battle_no = int(caster_battle_no)
+    to_no = int(to_no)
+    if magic_target == 0:
+        return to_no == caster_battle_no
+    if magic_target == 1:
+        return to_no < TARGET_SIDE_0
+    return True
+
 def c_atoi(value):
     """Small C-atoi model: leading whitespace/sign/digits; no digits => 0."""
     text = str(value)
