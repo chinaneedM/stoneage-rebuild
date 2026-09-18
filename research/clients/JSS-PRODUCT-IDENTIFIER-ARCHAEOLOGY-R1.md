@@ -132,6 +132,21 @@ Visible advertisement facts:
 
 The advertisement does **not** expose a readable JAN/model number in the currently accessible image/extraction path.
 
+A current Yahoo! Auctions listing now supplies the missing direct package identifier evidence:
+
+https://auctions.yahoo.co.jp/jp/auction/v1234885585
+
+The listing exposes three full-resolution photographs of a surviving `LIFESTORM II ～光と闇の継承者～` package and CD-ROM. The back-box photograph visibly shows:
+
+- Windows 95/98;
+- JSS / `http://www.titan.co.jp/` branding;
+- price `8,800円(税別)`;
+- JAN/barcode **`4909476302013`**.
+
+Classification: **B for literal visible package fields; C for seller provenance**.
+
+Research consequence: **`4909476302013` is no longer an unassigned candidate. It is directly evidenced as the LIFESTORM II retail JAN.** The model/type code remains unresolved.
+
 This title is chronologically and commercially valuable because it sits immediately before StoneAge in JSS's Windows online-RPG lineage.
 
 ## 4. Structural observation
@@ -145,6 +160,7 @@ Observed product references then diverge by product family:
 | Product | Platform | JAN | 5-digit body after 4909476, before check digit |
 | --- | --- | --- | --- |
 | LIFESTORM | Windows 95 | 4909476301016 | `30101` |
+| LIFESTORM II | Windows 95/98 | **4909476302013** | **`30201`** |
 | 古都の旅 京都 | Windows 3.1/95 | 4909476502031 | `50203` |
 | 四柱推命入門 しゃべる桃源郷 | Windows 3.1/95 | 4909476603011 | `60301` |
 | チャルボ55 | Game Boy | 4909476802018 | `80201` |
@@ -169,27 +185,31 @@ The pattern is a search-space reducer, not a product assignment.
 
 ## 5. Controlled candidate generation
 
-If — and only if as a search heuristic — the `LIFESTORM` online-game body `30101` were followed by simple `30201` / `30301` increments, the EAN-13 check-digit-valid strings would be:
+Earlier in this research pass, the `LIFESTORM` online-game body `30101` was used only as a search heuristic to generate check-digit-valid `30201` / `30301` continuations:
 
 - `4909476302013`
 - `4909476303010`
 
-These strings were searched directly in Japanese web/catalog indexes in this pass and produced **no reliable result**.
+The first of those numbers is now independently resolved by the surviving LIFESTORM II package photograph:
 
-Classification: **HYPOTHESIS / SEARCH CANDIDATE ONLY.**
+- **`4909476302013` = LIFESTORM II — directly evidenced package JAN.**
 
-They must not be labeled `LIFESTORM II` or `STONEAGE` without direct evidence.
+The second remains:
 
-A prior console-sequence candidate, `4909476805019`, is now explicitly **de-prioritized** because the more relevant Windows LIFESTORM record demonstrates that JSS PC software did not simply reuse the `49094768...` console series.
+- **`4909476303010` — HYPOTHESIS / SEARCH CANDIDATE ONLY.**
+
+The fact that LIFESTORM and LIFESTORM II occupy observed bodies `30101` and `30201` makes `30301` a higher-value StoneAge search key than before, but **does not assign it to StoneAge**. Only direct product evidence can make that promotion.
+
+A prior console-sequence candidate, `4909476805019`, remains explicitly **de-prioritized** because the more relevant Windows online-game evidence occupies the `49094763...` range.
 
 ## 6. Research consequences
 
 The highest-value identifier search is now:
 
-1. recover a physical/catalog identifier for `LIFESTORM II`;
-2. compare it with `LIFESTORM = 4909476301016 / JV02005`;
-3. recover at least one more JSS Windows online-game/software model around 1998–1999;
-4. only then use the observed PC sequence to prioritize candidate searches for StoneAge;
+1. recover the still-missing **LIFESTORM II model/type code** while preserving the now-direct JAN `4909476302013`;
+2. compare its model-code pattern with `LIFESTORM = JV02005 / 4909476301016`;
+3. use `4909476303010` only as a prioritized StoneAge search key, never as an assigned identifier;
+4. recover at least one additional JSS Windows online-game/software model around 1998–1999 if available;
 5. verify StoneAge directly from a package back/side photograph, distributor catalog, retail database, JAN database, or original media.
 
 ## 7. Immediate targets
@@ -204,4 +224,4 @@ Search exact variants:
 - physical box side/back scans
 - old auction snapshots and retailer inventory dumps
 
-For StoneAge, retain the existing physical-media priority: a readable 1999 JSS back box or side label beats every inferred sequence.
+For StoneAge, retain the existing physical-media priority: a readable 1999 JSS back box or side label beats every inferred sequence. The newly verified LIFESTORM II JAN makes `4909476303010` a useful exact-string search target, but it remains unassigned until StoneAge-specific evidence is found.
