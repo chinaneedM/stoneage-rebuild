@@ -35,6 +35,9 @@ from tools.stoneage_item_effect_model import (
     tohelos_item_transition,
     warp_item_transition,
     remove_equipment_noenemy,
+    rename_item_begin,
+    rename_item_finalize,
+    validate_rename_item_name,
 )
 
 
@@ -697,6 +700,83 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
         self.assertEqual(equipment_noenemy_level(50), 40)
         self.assertEqual(equipment_noenemy_level(39), 0)
         self.assertEqual(remove_equipment_noenemy(), 0)
+
+    def test_rename_name_uses_source_byte_length_limit(self):
+        self.assertEqual(
+            validate_rename_item_name("abc", source_byte_length=3),
+            {"valid": True, "reason": "ok"},
+        )
+        self.assertEqual(
+            validate_rename_item_name("x", source_byte_length=27)["reason"],
+            "too_long",
+        )
+        self.assertEqual(
+            validate_rename_item_name("", source_byte_length=0)["reason"],
+            "empty",
+        )
+
+    def test_rename_name_rejects_spaces_and_pipe(self):
+        self.assertEqual(
+            validate_rename_item_name("a b", source_byte_length=3)["reason"],
+            "space",
+        )
+        self.assertEqual(
+            validate_rename_item_name("a　b", source_byte_length=4)["reason"],
+            "space",
+        )
+        self.assertEqual(
+            validate_rename_item_name("a|b", source_byte_length=3)["reason"],
+            "pipe",
+        )
+
+    def test_rename_begin_does_not_consume_catalyst(self):
+        self.assertEqual(
+            rename_item_begin(catalyst_have_slot=7),
+            {
+                "selected_target_slot": -1,
+                "catalyst_have_slot": 7,
+                "consume": False,
+            },
+        )
+
+    def test_rename_zero_remaining_is_unlimited(self):
+        r = rename_item_finalize(
+            name_valid=True,
+            target_valid=True,
+            catalyst_valid=True,
+            catalyst_remaining=0,
+        )
+        self.assertTrue(r["renamed"])
+        self.assertFalse(r["catalyst_changed"])
+        self.assertFalse(r["catalyst_deleted"])
+
+    def test_rename_positive_remaining_decrements_or_deletes(self):
+        r = rename_item_finalize(
+            name_valid=True,
+            target_valid=True,
+            catalyst_valid=True,
+            catalyst_remaining=3,
+        )
+        self.assertEqual(r["catalyst_remaining"], 2)
+        self.assertFalse(r["catalyst_deleted"])
+        r = rename_item_finalize(
+            name_valid=True,
+            target_valid=True,
+            catalyst_valid=True,
+            catalyst_remaining=1,
+        )
+        self.assertTrue(r["catalyst_deleted"])
+        self.assertEqual(r["catalyst_remaining"], 0)
+
+    def test_rename_target_commits_before_catalyst_revalidation(self):
+        r = rename_item_finalize(
+            name_valid=True,
+            target_valid=True,
+            catalyst_valid=False,
+            catalyst_remaining=5,
+        )
+        self.assertTrue(r["renamed"])
+        self.assertFalse(r["catalyst_changed"])
 
     def test_reverse_item_uses_same_xor_transition(self):
         r = reverse_target_transition(
