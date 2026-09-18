@@ -430,6 +430,24 @@ Supplemental source ledgers:
 - Added `tools/stoneage_item_shop_model.py`, fifteen deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-ITEM-SHOP-CORE-R1.md`.
 - Next priority: re-audit **pet storage/pet shop** versus **save/logout persistence boundaries** and choose the larger remaining deterministic loop closure.
 
+## Save / logout persistence core reconstruction — 2026-09-18
+
+- Reconstructed the ordinary character serialization, periodic/save-point save, normal logout and SAAC acknowledgement path across three preserved descendant lineages.
+- Core character serialization persists CHAR_DATAINT/CHAR_DATACHAR fields, persistent flags, skills, concrete item instances, titles, address-book entries and carried pets. Generic CHAR_WORK/runtime arrays are not serialized.
+- Optional shared pool item/pet arrays are later/versioned persistence surfaces and are not promoted into the early core.
+- Periodic autosave uses a configurable `CharSaveinterval`; the global sweep itself runs only after more than 10 seconds, and a character save occurs only when the connection is active, state is LOGIN, and `now - lastSave > interval`.
+- Periodic and save-point saves use `unlock=FALSE`; they request persistence without ending the account/login lock.
+- Save-send functions serialize and dispatch to SAAC asynchronously and return before durability acknowledgement. Their TRUE result is not proof of a successful disk write.
+- `ITEM_DROPATLOGOUT` items are destroyed before final logout serialization, so they are intentionally absent from the saved logout snapshot.
+- Normal logout first resolves active battle, then deletes logout-only items, discharges party/runtime memberships, converts selected later runtime timers into persistent fields, sets LASTLEAVETIME, and only then sends the final save.
+- Fixed ordinary logout/disconnect call sites observed pass `save=TRUE`; no normal fixed `save=FALSE` call site was found.
+- Final logout save uses `unlock=TRUE`. On SAAC, account unlock happens before save-envelope construction and before the character-file write.
+- Runtime character and pet objects are destroyed immediately after the save request is sent, not after the save acknowledgement returns.
+- A failed normal logout-save acknowledgement only reports `Cannot save`; there is no automatic retry, runtime rollback/reconstruction, or lock restoration. The old server therefore has a real last-state loss window.
+- Added `tools/stoneage_save_logout_model.py`, thirteen deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-SAVE-LOGOUT-PERSISTENCE-CORE-R1.md`.
+- GitHub currently reports no workflow-run records yet for the new persistence workflow commits; no CI success is claimed.
+- Next priority: **fresh milestone/gap audit** separating early/core mechanics, later optional systems, data/content extraction gaps, and modern-rebuild engineering improvements.
+
 ## Immediate next actions
 
 1. **Continue recovered-byte reverse engineering.** REAL/ADRN/RD, SPR/SPRADRN, DAT runtime semantics, `1021.DAT`, and the major unresolved-graphic skew are now bounded as far as the mixed 2.5 bundle permits. Move the primary technical target outward into **character / pet / item / skill / stat / combat / progression data tables** in the recovered client/server corpus. First build a provenance-preserving inventory of candidate gameplay-data files and identify which tables are authoritative server data versus client display/cache data; then parse one family at a time with deterministic tests. Keep map 817/water-world missing assets as a version-diff target for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
