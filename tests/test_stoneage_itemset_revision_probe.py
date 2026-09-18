@@ -28,6 +28,6 @@ class ItemsetRevisionProbeTests(unittest.TestCase):
             self.assertEqual(r["magic_removed"],[7])
             buf=io.StringIO()
             with contextlib.redirect_stdout(buf):emit(d)
-            self.assertIn("NEW_ID_TYPE_VALUE|31|pet_head|1",buf.getvalue())
+            self.assertIn("NEW_ID_TYPE_VALUE|31|descendant_candidate=pet_head|1",buf.getvalue())
 
 if __name__=="__main__":unittest.main()
