@@ -39,6 +39,50 @@ def load_adrn(path):
         by_bmp[bmpnumber]=attr
     return {"bytes":len(data),"records":len(data)//80,"by_bmp":by_bmp,"duplicate":duplicate}
 
+def consecutive_runs(counter):
+    vals=sorted(counter)
+    if not vals:return []
+    out=[]; start=prev=vals[0]; refs=counter[start]
+    for v in vals[1:]:
+        if v==prev+1:
+            prev=v; refs+=counter[v]
+        else:
+            out.append((start,prev,prev-start+1,refs))
+            start=prev=v; refs=counter[v]
+    out.append((start,prev,prev-start+1,refs))
+    return out
+
+def unresolved_profile(counter, adrn_keys):
+    keys=sorted(k for k in adrn_keys if k>CG_INVISIBLE)
+    lo=keys[0] if keys else None; hi=keys[-1] if keys else None
+    classes=collections.Counter()
+    for v,n in counter.items():
+        if lo is None:
+            classes["no_adrn_domain_refs"]+=n
+        elif v<lo:
+            classes["below_adrn_domain_refs"]+=n
+        elif v>hi:
+            classes["above_adrn_domain_refs"]+=n
+        else:
+            classes["within_adrn_gap_refs"]+=n
+        if 100<=v<=19999:
+            classes["legacy_map_range_refs"]+=n
+        elif v>19999:
+            classes["above_legacy_map_range_refs"]+=n
+        else:
+            classes["below_legacy_map_range_refs"]+=n
+    classes["unresolved_refs"]=sum(counter.values())
+    classes["unresolved_unique"]=len(counter)
+    classes["adrn_domain_min"]=lo if lo is not None else -1
+    classes["adrn_domain_max"]=hi if hi is not None else -1
+    runs=consecutive_runs(counter)
+    return {
+        "classes":classes,
+        "runs_by_length":sorted(runs,key=lambda x:(-x[2],-x[3],x[0])),
+        "runs_by_refs":sorted(runs,key=lambda x:(-x[3],-x[2],x[0])),
+        "top_ids":counter.most_common(40),
+    }
+
 def bucket(v):
     if v==0:return "zero"
     if v<=19:return "control_1_19"
@@ -118,7 +162,8 @@ def analyze(dat_dir,adrn_path=None):
                 mapped+=n; hit[a["hit"]%100]+=n; prio[a["hit"]//100]+=n
                 footprint[(a["atari_x"],a["atari_y"])]+=n
             out[name]={"refs":refs,"mapped":mapped,"unresolved":unresolved,
-                       "hit":hit,"prio":prio,"footprint":footprint}
+                       "hit":hit,"prio":prio,"footprint":footprint,
+                       "unresolved_profile":unresolved_profile(unresolved,adrn["by_bmp"])}
     return out
 
 def emit(r):
@@ -170,6 +215,13 @@ def emit(r):
             print(f"{p}_UNRESOLVED_REFS|{sum(g['unresolved'].values())}")
             print(f"{p}_UNRESOLVED_UNIQUE|{len(g['unresolved'])}")
             if g["unresolved"]:print(f"{p}_UNRESOLVED_SAMPLE|"+",".join(map(str,sorted(g["unresolved"])[:40])))
+            up=g["unresolved_profile"]; cl=up["classes"]
+            print(f"{p}_ADRN_DOMAIN|{cl['adrn_domain_min']}|{cl['adrn_domain_max']}")
+            for key in ("within_adrn_gap_refs","below_adrn_domain_refs","above_adrn_domain_refs","legacy_map_range_refs","above_legacy_map_range_refs","below_legacy_map_range_refs"):
+                print(f"{p}_UNRESOLVED_CLASS|{key}|{cl.get(key,0)}")
+            for v,n in up["top_ids"][:20]:print(f"{p}_UNRESOLVED_TOP_ID|{v}|{n}")
+            for s,e,count,refs in up["runs_by_length"][:20]:print(f"{p}_UNRESOLVED_RUN_BY_LENGTH|{s}|{e}|{count}|{refs}")
+            for s,e,count,refs in up["runs_by_refs"][:20]:print(f"{p}_UNRESOLVED_RUN_BY_REFS|{s}|{e}|{count}|{refs}")
             for v,n in sorted(g["hit"].items()):print(f"{p}_HIT_MOD100|{v}|{n}")
             for v,n in sorted(g["prio"].items()):print(f"{p}_PRIO_TYPE|{v}|{n}")
             for (x,y),n in g["footprint"].most_common(20):print(f"{p}_FOOTPRINT|{x}|{y}|{n}")

@@ -27,10 +27,27 @@ class DatProbeTests(unittest.TestCase):
             self.assertEqual(r["tile_graphics"]["hit"][0],2)
             self.assertEqual(r["tile_graphics"]["hit"][2],1)
             self.assertEqual(r["event_unknown_total"],0)
+            up=r["parts_graphics"]["unresolved_profile"]
+            self.assertEqual(up["classes"]["adrn_domain_min"],100)
+            self.assertEqual(up["classes"]["adrn_domain_max"],101)
+            self.assertEqual(up["classes"]["below_adrn_domain_refs"],0)
             out=io.StringIO()
             with contextlib.redirect_stdout(out):emit(r)
             self.assertIn("DAT_VALID_COUNT|2",out.getvalue())
             self.assertIn("EVENT_LOW12|3|WARP|2",out.getvalue())
+    def test_unresolved_graphic_range_classification(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td); maps=root/"map"; maps.mkdir(); adrn=root/"adrn.bin"
+            adrn.write_bytes(rec(0,100)+rec(1,102)+rec(2,20000))
+            maps.joinpath("1.dat").write_bytes(dat(3,1,[101,103,20001],[101,19999,20001],[0,0,0]))
+            r=analyze(maps,adrn)
+            t=r["tile_graphics"]["unresolved_profile"]; p=r["parts_graphics"]["unresolved_profile"]
+            self.assertEqual(t["classes"]["within_adrn_gap_refs"],2)
+            self.assertEqual(t["classes"]["above_adrn_domain_refs"],1)
+            self.assertEqual(t["runs_by_length"][0],(101,101,1,1))
+            self.assertEqual(p["classes"]["legacy_map_range_refs"],2)
+            self.assertEqual(p["classes"]["above_legacy_map_range_refs"],1)
+
     def test_event_anomaly_diagnostics(self):
         with tempfile.TemporaryDirectory() as td:
             maps=Path(td)
