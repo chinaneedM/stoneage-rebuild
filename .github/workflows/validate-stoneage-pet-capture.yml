@@ -1,0 +1,17 @@
+name: Validate StoneAge pet capture model
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/mechanics/STONEAGE-PET-CAPTURE-CORE-R1.md
+      - tools/stoneage_pet_capture_model.py
+      - tests/test_stoneage_pet_capture_model.py
+      - .github/workflows/validate-stoneage-pet-capture.yml
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_pet_capture_model -v
