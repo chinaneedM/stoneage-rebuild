@@ -90,6 +90,23 @@ A critical implementation detail is preserved: the inspected fixed sources call 
 
 The suite covers secondary argument-file merge, substring field lookup, OR/AND branch selection, level and item conditions, pile/equipment quantity checks, event/save-point bits, the NOWEV defect, reversed IMAGE relations, PET/PETEV count/name behavior, level-scaled costs and round-robin NpcWarp selection.
 
+## Recovered 2.5 usage closure
+
+The hash-pinned 2.5 preservation specimen confirms that ExChangeMan is heavily active rather than merely source-capable:
+
+- 315 unambiguous ExChangeMan create references, all 315 using resolved secondary argument files;
+- 1,429 non-empty EventEnd blocks, of which 1,424 contain EVENT conditions;
+- 298 condition blocks use comma-separated OR and 6,434 condition terms occur inside ampersand-AND branches;
+- active condition-family blocks include ITEM 1,002, LV 697, ENDEV 484, NOWEV 358, PET 78, TIME 20 and SP 4;
+- the specimen contains **2 ITEM relational (< or >) terms**, so the source's never-success ITEM relational bug is live data behavior;
+- it contains **1 NOWEV!= term**, so the source's tautological NOWEV-not-equal bug is also live;
+- it contains zero LV!=, zero PET!= and zero IMAGE relational terms, so those source quirks are dormant in this recovered ExChangeMan corpus;
+- the ExChangeMan argument corpus aggregate is `e87df922d8172bb11d9f41d42011f26028f536c0032a592f155c5da38af67901`.
+
+The aggregate report is `research/recovered/STONEAGE-25-EXCHANGEMAN-USAGE-R1.txt`; it retains no NPC names, dialogue, concrete IDs, paths, coordinates or original argument rows. Probe run `35378522791` completed successfully.
+
+This closes the common ExChangeMan condition seam for the fixed descendants plus the recovered 2.5 specimen. Exact 1999/JSS behavior remains separately open pending an earlier clean artifact.
+
 ## Evidence status
 
 FACT (fixed descendants): file-based secondary NPC arguments are merged into pipe-delimited text before class parsing.
@@ -112,10 +129,10 @@ SOURCE QUIRK: NpcWarp calls the warp primitive with the NPC index.
 
 VERSIONED: later compile-gated mission, profession and extended predicates are not part of the common R1 core.
 
-OPEN: which condition forms are actually exercised by the hash-pinned recovered 2.5 ExChangeMan rows. This requires an aggregate payload-free secondary-argument probe.
+FACT (recovered 2.5): ITEM relational and NOWEV-not-equal source quirks are exercised by the preserved corpus; LV-not-equal, PET-not-equal and IMAGE relational quirks are not exercised there.
 
 OPEN: exact 1999/JSS presence and content until cleaner early data is recovered.
 
 ## Next seam
 
-Continue on the same class rather than broadening the NPC inventory: reconstruct the common ExChangeMan mutation/accept path covering GetItem, DelItem, GetRandItem, Get/DelStone, pet/egg grant/removal, event flag mutation and capacity preflight order. Then measure which stable keys are actually active in the preserved 2.5 specimen with an aggregate secondary-argument probe.
+ExChangeMan R1 is closed for the fixed descendant core plus the recovered 2.5 usage surface. The next data-driven secondary-argument target is NPCEnemy, whose recovered unambiguous queue contains 279 file-backed create references and directly bridges event conditions, item gates, battle creation and post-battle state/warp behavior.

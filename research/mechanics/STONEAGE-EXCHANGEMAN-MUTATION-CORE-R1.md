@@ -117,7 +117,25 @@ This matters for `EndSetFlg`. Flows that first set the current event and then in
 - `tests/test_stoneage_exchangeman_mutation_model.py`
 - `.github/workflows/validate-stoneage-exchangeman-mutation.yml`
 
-Local validation: **25 deterministic tests passed**.
+Local validation: **26 deterministic tests passed**.
+
+## Recovered 2.5 mutation usage closure
+
+The payload-free recovered-data probe confirms that several mutation quirks are live in the preserved 2.5 configuration:
+
+- `DelItem` appears in 477 event blocks;
+- **72 blocks** have the ordinary multi-token/non-star shape capable of triggering the reused-loop-index capacity-projection truncation;
+- **6 blocks** use `DelItem:EVDEL`, and all **6** have a non-star ITEM term capable of reaching the active pile-mode `itemno=-1` deletion defect;
+- `GetItem` appears in 445 blocks and `GetRandItem` in 65;
+- `GetStone` appears in 100 blocks and `DelStone` in 17, but **zero blocks** contain both, so the independent non-net gold precheck is dormant in this specimen;
+- `GetPet` appears in 26 blocks, including **4 random-candidate blocks**; random-candidate `GetEgg` blocks are zero;
+- `DelPet` appears in 59 blocks;
+- `EndSetFlg` appears in 80 blocks: 79 ACCEPT and 1 REQUEST;
+- `NpcWarp` appears in 56 blocks.
+
+The same report identifies no ambiguous ExChangeMan create reference: the one ambiguous ExChangeMan template-name value is not used by the 315 measured ExChangeMan refs.
+
+The general secondary-argument queue probe also confirms that ExChangeMan's 315 refs are all file-backed and that the next high-volume, state-changing unresolved class is NPCEnemy at 279 file-backed refs. Queue run `35378662585` completed successfully.
 
 ## Evidence status
 
@@ -137,8 +155,8 @@ SOURCE QUIRK: `NPC_AcceptDel` ignores random and normal item-grant return values
 
 SOURCE QUIRK: `NPC_NowEventSetFlgCls` toggles instead of conditionally clearing.
 
-OPEN: which of these keys and edge forms are actually used by the hash-pinned recovered 2.5 specimen. The next step is an aggregate, payload-free recovered-data probe.
+FACT (recovered 2.5): the ordinary DelItem projection truncation shape and active pile-mode non-star EVDEL defect are both present in the preserved corpus; GetStone+DelStone non-net precheck is not.
 
 ## Next seam
 
-Do not widen to another NPC class yet. Measure recovered ExChangeMan secondary-argument usage from the verified 2.5 preservation bundle, reporting only aggregate key/condition-family counts and source/data mismatches. Then use those results to decide whether another early/core NPC argument edge remains materially unresolved.
+ExChangeMan R1 is closed for the fixed descendant core plus recovered 2.5 usage. Advance to NPCEnemy: first measure its active secondary keys and guarded branches in the same payload-free 2.5 specimen, then reconstruct only the common event-battle behavior actually required by that data.

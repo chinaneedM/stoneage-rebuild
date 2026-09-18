@@ -634,14 +634,36 @@ Supplemental source ledgers:
 - Confirmed active fixed-build compile branches for `_ITEM_PILENUMS` and `_EXCHANGEMAN_REQUEST_DELPET`.
 - Preserved source quirks: ordinary non-star DelItem can terminate capacity projection early through reused loop index; starred deletion forecast assumes count == freed slots; active pile-mode non-star EVDEL targets -1; mode 2 becomes mode 0 only after preflight; accept-side item grant failures are ignored; GetStone/DelStone prechecks do not net; pet/egg random list counting reuses first-empty pet slot and can widen the random modulus when that starting index is sufficiently beyond the candidate list; EndSetFlg uses a blind NOWEVENT XOR toggle.
 - Added `tools/stoneage_exchangeman_mutation_model.py`, `tests/test_stoneage_exchangeman_mutation_model.py`, dedicated CI, and `research/mechanics/STONEAGE-EXCHANGEMAN-MUTATION-CORE-R1.md`.
-- Local reference validation passes 25 deterministic tests.
-- The next deterministic step is now the aggregate recovered 2.5 ExChangeMan secondary-argument usage probe; only after that should another NPC class be opened.
+- Corrected local reference validation passes 26 deterministic tests.
+- ExChangeMan R1 is closed for the fixed descendant core plus recovered 2.5 usage; the next class is selected by the recovered secondary-argument queue.
+
+## Recovered ExChangeMan usage closure — 2026-09-19
+
+- Real-byte probe `35378522791` completed successfully against the verified 2.5 bundle.
+- The recovered corpus contains 315 unambiguous ExChangeMan create refs, all file-backed, resolving to 1,429 non-empty EventEnd blocks; 1,424 carry EVENT conditions.
+- Source quirks now have data reachability labels rather than being treated uniformly:
+  - live in recovered 2.5: 2 ITEM relational terms (the source never-success path), 1 NOWEV!= term (the source tautology), 72 ordinary DelItem blocks capable of the capacity-loop truncation, and 6/6 EVDEL blocks capable of the active pile-mode non-star item deletion defect;
+  - dormant in this corpus: LV!=, PET!=, IMAGE relational, GetStone+DelStone same-block non-net precheck, and random-candidate GetEgg.
+- Other active mutation surfaces: DelItem 477 blocks, GetItem 445, GetRandItem 65, GetStone 100, DelStone 17, GetPet 26, DelPet 59, EndSetFlg 80, NpcWarp 56.
+- ExChangeMan R1 is now closed for the three fixed descendant source lineages plus this recovered 2.5 usage surface. Exact 1999/JSS equivalence remains open pending an earlier clean artifact.
+- Corrected pet/egg random-list archaeology after checking the legacy delimiter helper: index 0 is a successful empty token, so first-empty pet slot 0 still counts the full candidate list; widening risk begins only when the reused starting index is sufficiently beyond the configured list.
+- Corrected mutation suite now passes **26 deterministic tests**; CI run `35378831677` completed successfully.
+
+## NPC secondary-argument queue — 2026-09-19
+
+- Real-byte queue probe `35378662585` completed successfully over the same hash-pinned 2.5 bundle.
+- Across 4,985 create refs, 4,955 resolve through unambiguous template names; 4,795 of those carry secondary arguments, split into 1,773 file-backed and 3,022 inline.
+- Existing closed systems remain high-volume but are not reopened: Warp 2,904 refs, ItemShop 221, WarpMan 202, SavePoint 22, PetShop 16, PetSkillShop 21, PoolItemShop 5.
+- The highest-volume **unclosed state-changing** class is `NPCEnemy`: **279 refs, all 279 file-backed**. Source pre-audit shows that its secondary config controls enemy groups, item/no-item gates, event flags, single-battle exclusion, battle creation, item theft/deletion, post-battle messages and warp/death actions.
+- Bus (7 file-backed) + Airplane (5 file-backed) remain the next ordinary travel/economy seam after NPCEnemy. Airplane's later ticket-deletion and max-level branches are compile-disabled in the fixed gavin build; shared goods restriction is enabled.
+- TimeMan has 34 file-backed refs but primarily controls NPC time-window visibility/graphics/messages, so it is lower priority than the player-state/battle/travel seams.
+- The queue also records 30 create refs behind duplicate template names and 15 missing secondary argument files, all currently quarantined as preservation/source-order defects rather than silently repaired.
 
 ## Immediate next actions
 
-1. **Measure recovered ExChangeMan usage without retaining payload text.** Add an aggregate probe over the hash-pinned 2.5 specimen so active secondary keys, condition families and source quirks can be distinguished from dormant source capability.
-2. **Use that recovered-data result to close or narrow the ExChangeMan seam.** Record source/data mismatches explicitly; do not silently repair malformed or mixed-snapshot configuration.
-3. **Only then advance to the next unresolved early/core NPC secondary edge.** Do not reopen broad NPC inventory work, and keep later event/family/profession/tournament packages out unless earlier evidence independently requires them.
+1. **Advance to NPCEnemy as the next recovered-data-driven secondary-argument seam.** Start with a payload-free 2.5 usage probe over its 279 file-backed refs, then reconstruct only active common enemy-group, item/event gate, battle-entry and post-battle mutation/warp behavior from the three fixed source lineages.
+2. **Keep NPCEnemy battle work bounded by the NPC evidence.** Reuse the already closed common combat mechanics; only add formulas or state transitions that NPCEnemy concretely exposes.
+3. **After NPCEnemy, take Bus + Airplane as the next shared travel/economy seam.** Their recovered queue has 12 file-backed refs and their fixed sources share route, boarding, item, level and Stone checks.
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
 6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.
