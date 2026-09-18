@@ -322,6 +322,17 @@ Supplemental source ledgers:
 - The ordinary deterministic chain now begins at hometown/character creation and runs through player growth, encounters/battle/rewards and transmigration.
 - Next priority: inventory remaining unmodeled deterministic state transitions before selecting the next seam; favor end-to-end loop closures such as death/revival/savepoint, capture/taming, or party/formation over isolated content-list expansion.
 
+## Player death / revival core reconstruction — 2026-09-18
+
+- Reconstructed the ordinary player `core_Dying -> CHAR_die` callback across three preserved descendant server lineages.
+- Stable death transition now models: party discharge; enemy/unknown deaths requesting drops for every equipped slot; valid non-enemy attacker deaths selecting one random occupied equipment slot; half-gold ground-drop request followed by zero final carried gold; dead-count increment; paralysis/sleep/stone/drunk/confusion/poison cleanup; `ISDIE=1`; `ISATTACKED=0`.
+- Drop helpers can fail because of world-placement constraints, so the model distinguishes requested world drops from guaranteed final carried-state changes.
+- Reconstructed `CHAR_playerresurrect` as a separate in-place operation: base image restore, death flag clear, `ISATTACKED=1`, `ISOVERED=0`, HP clamped to 1..MAXHP; no MP refill and no movement.
+- Preserved login sanitation separately: persisted death flag is cleared and non-positive HP is repaired to 1.
+- Verified that later/new `CharLogout(flg=1)` means return-to-record-point through `LASTTALKELDER`, but no direct Bismarck client death-screen call to `charLogoutStart()` was found at the fixed revision; death -> automatic record-point choreography remains OPEN.
+- Added `tools/stoneage_player_death_model.py`, seven deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-PLAYER-DEATH-REVIVAL-CORE-R1.md`.
+- Next priority: **capture/taming core**, because it closes the existing wild-enemy -> battle -> pet-roster/growth loop before party/formation work.
+
 ## Immediate next actions
 
 1. **Continue recovered-byte reverse engineering.** REAL/ADRN/RD, SPR/SPRADRN, DAT runtime semantics, `1021.DAT`, and the major unresolved-graphic skew are now bounded as far as the mixed 2.5 bundle permits. Move the primary technical target outward into **character / pet / item / skill / stat / combat / progression data tables** in the recovered client/server corpus. First build a provenance-preserving inventory of candidate gameplay-data files and identify which tables are authoritative server data versus client display/cache data; then parse one family at a time with deterministic tests. Keep map 817/water-world missing assets as a version-diff target for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
