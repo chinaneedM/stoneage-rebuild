@@ -210,9 +210,37 @@ Canonical analysis: `research/clients/JSS-PRODUCT-IDENTIFIER-ARCHAEOLOGY-R1.md`.
 - current limitation:
   - the available extraction path does not expose the direct StoneAge detail URL or its record body;
   - no StoneAge model/type code, Suruga management ID or additional identifier is therefore promoted from this lead.
+- resolution update:
+  - the direct StoneAge record was subsequently recovered at Suruga management number `145026779`; this discovery lead is therefore superseded by `SRC-JP-JSS-STONEAGE-SURUGA-DIRECT-01` below.
 - research consequence:
-  - prioritize recovery of the direct Suruga StoneAge record through public indexes, caches or catalog mirrors, because it may expose the still-missing model/type field without requiring physical acquisition;
   - do **not** infer StoneAge's model/type from LIFESTORM's `JV02005` or from numerical adjacency.
+
+## SRC-JP-JSS-STONEAGE-SURUGA-DIRECT-01
+
+- title: Suruga-ya `ストーンエイジ[初回版]` direct product record
+- product archive URL: https://www.suruga-ya.jp/product_archives/19991015_1
+- direct product URL: https://www.suruga-ya.jp/product/detail/145026779
+- retrieval date: 2026-09-18
+- source type: current Japanese retailer catalog / product archive
+- confidence: **B for literal current catalog fields; not primary 1999 package evidence**
+- directly observed:
+  - Suruga's 1999-10-15 product archive lists **`Windows95/98 CDソフト/ストーンエイジ[初回版]`**;
+  - the direct product record identifies manufacturer **日本システムサプライ**;
+  - Suruga management number: **`145026779`**;
+  - release date field: **1999-10-15**;
+  - displayed list price field: **9,680円**;
+  - media note: **`Windowsソフト　メディア：CD`**.
+- important field boundary:
+  - the direct product page does **not** expose a `型番` field for StoneAge;
+  - **`145026779` is Suruga's 管理番号 and must not be treated as the StoneAge model/type code**;
+  - the current product image resolves to Suruga's no-photo placeholder, so this record contributes no new package/disc visual evidence.
+- price discrepancy:
+  - contemporaneous StoneAge advertising and the archived Gamer's Dream product record already support **8,800円 before tax / package price 8,800円**;
+  - Suruga's modern catalog currently displays **定価 9,680円**;
+  - this discrepancy is preserved rather than reconciled by assumption. The modern retailer field does not supersede contemporaneous/first-party price evidence.
+- research consequence:
+  - the direct Suruga catalog recovery objective is complete;
+  - StoneAge's model/type code remains **OPEN** and must be pursued through a buy-side record, distributor/dealer database, period catalog, clearer package side/back image, or another source that explicitly exposes the model field.
 
 ## Source-group conclusion
 

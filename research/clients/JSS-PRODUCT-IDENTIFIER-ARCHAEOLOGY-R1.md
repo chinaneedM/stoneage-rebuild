@@ -162,13 +162,24 @@ Classification: **B for literal visible package fields; C for seller provenance/
 
 This closes the previous gap between the numerical `30301` search candidate and a StoneAge-specific artifact. The StoneAge model/type code remains unresolved.
 
-### Suruga catalog-discovery lead
+### Suruga direct catalog record recovered
 
-A current search-index view of Suruga-ya's JSS `LIFESTORM` record exposes a related catalog item named **`ストーンエイジ[初回版]`**, classified as **`Windows95/98 CDソフト`**.
+The Suruga discovery lead has now been resolved through its dated product archive:
 
-The direct StoneAge detail URL/body is not exposed through the current extraction path, so this is a **catalog-recovery lead, not model-code evidence**. It is nevertheless high value because the directly opened LIFESTORM record shows that Suruga's JSS Windows-software schema includes literal JAN and model/type fields. Recovering the corresponding StoneAge record could therefore close the model/type gap without physical acquisition.
+- archive: `https://www.suruga-ya.jp/product_archives/19991015_1`
+- direct product: `https://www.suruga-ya.jp/product/detail/145026779`
 
-No model value is inferred from LIFESTORM's `JV02005`.
+The dated archive explicitly lists **`Windows95/98 CDソフト/ストーンエイジ[初回版]`** on 1999-10-15. The direct product page identifies **日本システムサプライ**, Suruga management number **`145026779`**, release date **1999-10-15**, displayed list price **9,680円**, and media **CD**.
+
+Crucially, the direct page does **not** expose a `型番` field. Therefore:
+
+- `145026779` is retained only as Suruga's **management number**, not a StoneAge product model;
+- StoneAge's model/type code remains **OPEN**;
+- no model value is inferred from LIFESTORM's `JV02005`.
+
+The product image currently resolves to a Suruga no-photo placeholder, so this source does not improve disc-label or package-side resolution.
+
+There is also a catalog-price discrepancy that must remain explicit: contemporaneous advertising / archived first-party product evidence gives **8,800円** (including an advertisement that explicitly says before tax), while Suruga's current catalog field says **9,680円**. The modern retailer value is recorded as a current catalog field and does not override the contemporaneous evidence.
 
 ## 4. Structural observation
 
@@ -236,7 +247,7 @@ A prior console-sequence candidate, `4909476805019`, remains explicitly rejected
 
 The highest-value identifier search is now:
 
-1. recover the direct **Suruga StoneAge initial-edition catalog record** and inspect it for the missing model/type code tied to JAN `4909476303010`;
+1. recover a **StoneAge model/type-bearing record** for JAN `4909476303010` from Suruga's buy-side index, another retailer/distributor database, a period catalog, or readable package-side/back evidence;
 2. recover the still-missing **LIFESTORM II model/type code** for JAN `4909476302013`;
 3. preserve higher-resolution StoneAge box/disc imagery that may expose model, disc-label or matrix identifiers;
 4. recover at least one additional JSS Windows online-game/software model around 1998–1999 if it helps decode the `JV...` model family;
@@ -250,9 +261,9 @@ Search exact variants:
 - `ライフストーム2`, `ライフストームII`
 - JSS model-code family around `JV02005`
 - JAN stem `49094763` with period Windows software
-- direct/cached Suruga record for `Windows95/98 CDソフト ストーンエイジ[初回版]`
+- Suruga buy-side/search rows or cached variants for management number `145026779` / title `ストーンエイジ[初回版]` that explicitly expose a `型番` field
 - Japanese distributor/dealer catalogs from 1998–1999
 - physical box side/back scans
 - old auction snapshots and retailer inventory dumps
 
-For StoneAge, the package-back target has now succeeded: Yahoo! Auctions listing `k1131932809` directly exposes JAN **`4909476303010`**. The next identifier priority is the newly surfaced Suruga initial-edition catalog lead, followed in parallel by higher-resolution side/back/disc evidence for the still-missing model/type and disc/matrix identifiers, then a provenance-preserving publicly obtainable disc image or file tree.
+For StoneAge, the package-back target has succeeded: Yahoo! Auctions listing `k1131932809` directly exposes JAN **`4909476303010`**. The direct Suruga initial-edition product record is now also recovered, but it exposes only Suruga management number `145026779`, not a model/type field. The identifier priority therefore narrows to a model-bearing catalog/package source, in parallel with higher-resolution side/back/disc evidence for disc labels and matrix identifiers, then a provenance-preserving publicly obtainable disc image or file tree.
