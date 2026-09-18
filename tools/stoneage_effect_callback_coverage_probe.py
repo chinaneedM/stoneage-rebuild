@@ -110,6 +110,64 @@ def single_callback_counter(path, column=2):
     return rows, out
 
 
+def strip_c_comments(text):
+    """Remove C/C++ comments while preserving quoted string contents and newlines."""
+    out = []
+    i = 0
+    state = "code"
+    while i < len(text):
+        ch = text[i]
+        nxt = text[i + 1] if i + 1 < len(text) else ""
+
+        if state == "code":
+            if ch == '"':
+                out.append(ch)
+                state = "string"
+                i += 1
+                continue
+            if ch == "/" and nxt == "/":
+                state = "line_comment"
+                i += 2
+                continue
+            if ch == "/" and nxt == "*":
+                state = "block_comment"
+                i += 2
+                continue
+            out.append(ch)
+            i += 1
+            continue
+
+        if state == "string":
+            out.append(ch)
+            if ch == "\\" and i + 1 < len(text):
+                out.append(text[i + 1])
+                i += 2
+                continue
+            if ch == '"':
+                state = "code"
+            i += 1
+            continue
+
+        if state == "line_comment":
+            if ch == "\n":
+                out.append("\n")
+                state = "code"
+            i += 1
+            continue
+
+        if state == "block_comment":
+            if ch == "*" and nxt == "/":
+                state = "code"
+                i += 2
+                continue
+            if ch == "\n":
+                out.append("\n")
+            i += 1
+            continue
+
+    return "".join(out)
+
+
 def extract_table_region(text, marker):
     pos = text.find(marker)
     if pos < 0:
@@ -123,13 +181,13 @@ def extract_table_region(text, marker):
 
 
 def parse_global_function_table(path):
-    text = path.read_text(encoding="utf-8", errors="replace")
+    text = strip_c_comments(path.read_text(encoding="utf-8", errors="replace"))
     region = extract_table_region(text, "correspondStringAndFunctionTable[]")
     return set(re.findall(r'\{\s*\{\s*"([^"]+)"\s*\}', region))
 
 
 def parse_named_function_table(path, marker):
-    text = path.read_text(encoding="utf-8", errors="replace")
+    text = strip_c_comments(path.read_text(encoding="utf-8", errors="replace"))
     markers = (marker,) if isinstance(marker, str) else tuple(marker)
     last_error = None
     for candidate in markers:
@@ -142,7 +200,7 @@ def parse_named_function_table(path, marker):
 
 def parse_global_function_guard_map(path):
     """Return token -> guarded(bool) for the global string/function registry."""
-    text = path.read_text(encoding="utf-8", errors="replace")
+    text = strip_c_comments(path.read_text(encoding="utf-8", errors="replace"))
     region = extract_table_region(text, "correspondStringAndFunctionTable[]")
     stack = []
     out = {}
@@ -167,7 +225,7 @@ def parse_global_function_guard_map(path):
 
 def parse_named_function_guard_map(path, marker):
     """Return token -> guarded(bool) for one named dispatch table."""
-    text = path.read_text(encoding="utf-8", errors="replace")
+    text = strip_c_comments(path.read_text(encoding="utf-8", errors="replace"))
     markers = (marker,) if isinstance(marker, str) else tuple(marker)
     last_error = None
     region = None
