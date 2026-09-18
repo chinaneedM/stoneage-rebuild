@@ -89,21 +89,23 @@ Map formats and login-return policy are known, but ordinary field traversal stil
 
 This is separate from graphical DAT caching.
 
-### B4 — NPC placement / creation and event-data loading — highest priority
+### B4 — NPC placement / creation and event-data loading — completed in R1
 
-The recovered server corpus contains a large NPC configuration tree, but it is not yet normalized into an authoritative world-content graph.
+The generic NPC world graph is now reconstructed and real-byte-probed:
 
-Needed:
+- recursive magic-file discovery;
+- template -> create reference resolution;
+- map-floor validation;
+- function-set dispatch and direct-override order;
+- runtime generation / INITFUNC specialization;
+- create argument linkage;
+- generation timing and population gates.
 
-- creation/template/include relationships;
-- NPC type/function dispatch;
-- floor/x/y placement;
-- argument/config linkage;
-- early/core NPC classes versus expansion/event content.
+The recovered 2.5 specimen contains 4,985 effective create blocks with complete template/map resolution. It also exposes two provenance hazards that must remain explicit: 30 create blocks reference duplicated template names, and 13 recovered function-set tokens are absent from all three fixed descendant source tables.
 
-This should be provenance-preserving and aggregate-first; original content payloads should not be committed by default.
+Class-specific secondary argument/config semantics remain follow-on content archaeology, not a blocker for the generic graph.
 
-### B5 — Item/skill effect callback joins
+### B5 — Item/skill effect callback joins — highest priority
 
 The repository has item/skill/magic tables and equipment/use mechanics, but a complete table-record -> callback/function -> battle/world effect graph is still incomplete. This is needed before claiming full deterministic reconstruction of consumables, magic and pet skills.
 
@@ -135,7 +137,7 @@ The recovered gameplay inventory already exists and must remain the index rather
 Current high-value extraction gaps are:
 
 - classify the remaining root server tables by authority and runtime loader;
-- build an NPC/world-content graph without publishing original text payloads;
+- resolve early/core NPC class-specific secondary argument/config edges where they materially affect core gameplay;
 - connect item/skill/magic records to executable behavior;
 - preserve cross-version mismatch evidence in the mixed 2.5 specimen rather than silently “repairing” it;
 - compare the same tables against the first clean 1.74 / 1.74a / JSS bridge artifact when recovered.
@@ -169,8 +171,5 @@ The principal historical blocker remains the absence of a provenance-preserving 
 1. ~~Reconstruct save point / elder / LASTTALKELDER return-point semantics.~~ **Completed.**
 2. ~~Close persistent item/pet Pool storage while separating later shared Depot storage.~~ **Completed.**
 3. ~~Close field warp / portal / map-transition authority while separating later mapwarp/no-exit layers.~~ **Completed.**
-4. Build the **NPC/world-content graph**: creation/template/include relationships, type/function dispatch, placement and argument linkage.
-5. Then close the remaining **item/skill effect callback joins**.
-6. Continue detailed combat sub-mechanics only where the evidence shows an early/core gap.
-
+4. ~~Build the NPC/world-content graph: magic-file discovery, template/create relationships, dispatch, placement and argument linkage.~~ **Completed.**\n5. Close the remaining **item / magic / pet-skill effect callback joins**.\n6. Then resolve only the early/core NPC secondary argument/config edges that materially remain after callback coverage is known.\n7. Continue detailed combat sub-mechanics only where the evidence shows an early/core gap.\n
 This ordering closes the ordinary game-state loop before expanding into optional systems.
