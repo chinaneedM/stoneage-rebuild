@@ -112,7 +112,7 @@ def parse_battle_recovery_option(option, *, hp_token, mp_token):
         tail = text[pos_mp + len(str(mp_token)) :]
         return {
             "kind": "mp",
-            "power": _scan_item_value_tail(tail, 0),
+            "power": _scan_direct_value_tail(tail, 0),
             "percent": False,
         }
     return None
