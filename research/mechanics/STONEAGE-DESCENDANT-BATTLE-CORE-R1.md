@@ -1,0 +1,423 @@
+# StoneAge Descendant Battle Core — R1
+
+Date: 2026-09-18
+
+## Purpose
+
+This document reconstructs the **stable descendant battle core** that is useful as an archaeological reference for later StoneAge reimplementation.
+
+It is **not** promoted to a 1999 JSS retail fact. No original JSS server source has been recovered.
+
+Evidence is separated into:
+
+- **stable descendant core** — behavior independently preserved in multiple StoneAge server-source lineages;
+- **compiled descendant branch** — behavior enabled by a known macro in the inspected source;
+- **preserved older branch** — code still present under an inactive/alternate macro path;
+- **later extension** — behavior explicitly tied to later itemset/profession/pet-skill features;
+- **source divergence / suspected branch bug** — incompatible behavior across descendants that must not be silently normalized.
+
+## Source lineages
+
+Primary inspected lineages:
+
+1. `BismarckDD/stoneage`
+   - commit `999ffdf1d220ec6666eb65339180689c9caf1876`
+   - `server/gmsv/battle/battle.c`
+   - `server/gmsv/battle/battle_event.c`
+   - `server/gmsv/include/version.h`
+
+2. `gavinlinasd/StoneAge`
+   - commit `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`
+   - `gmsv/src/battle/battle.c`
+   - `gmsv/src/battle/battle_event.c`
+   - `gmsv/src/include/version.h`
+
+Independent controls:
+
+3. `iriselia/StoneAge`
+   - commit `9e6c8ce2cd8ed532a7157773acd1c61582c178b5`
+   - `Source/gmsv/battle/battle.c`
+   - `Source/gmsv/battle/battle_event.c`
+
+4. `chuyiwen/chuyiwen_gmsv`
+   - commit `426cf0ccab33d38aa3b0118889a13bb38e26f7b9`
+   - `battle/battle.c`
+   - preserves Japanese comments such as “素早さを計算する” and “素早さは値が大きい方が優れている。降順ソートである。”
+
+## 1. Stable numeric constants
+
+The inspected older lineages preserve the same constants:
+
+```text
+DAMAGE_RATE       = 2.0
+D_16              = 1 / 16
+D_8               = 1 / 8
+KAWASHI_MAX_RATE  = 75
+gKawashiPara      = 0.02
+gCounterPara      = 0.08
+gCriticalPara     = 0.09
+```
+
+These are strong source-lineage anchors.
+
+They remain **descendant evidence**, not a claim that the October 1999 retail server used exactly these values.
+
+## 2. Turn action value / initiative
+
+### 2.1 Stable older base behavior
+
+Three older lineages preserve the same ordinary-command shape:
+
+```text
+work = QUICK + 20
+action_value = work - RAND(0, work * 0.30)
+```
+
+Ride-pet branches replace `QUICK` with a ride-adjusted quick value before adding 20.
+
+The older code then clamps a non-positive result to at least 1. One source explicitly comments that this was the official negative-speed treatment before a later modification changed it to a random 1–5 result.
+
+The result is therefore not simply “higher DEX always moves first.” It is:
+
+1. derive current battle `QUICK`;
+2. add 20;
+3. apply command-specific random/order modifiers;
+4. sort the resulting action values in descending order.
+
+This creates deliberate turn-order uncertainty while still strongly favoring faster units.
+
+### 2.2 Item use
+
+Older descendants preserve:
+
+```text
+work = QUICK + 20
+action_value = work - RAND(0, work * 0.30) + work * 0.15
+```
+
+Item use therefore receives an approximately +15% offset relative to the same random base.
+
+### 2.3 Sorting and execution
+
+The battle loop:
+
+1. creates one `BATTLE_CHARLIST` entry per battle participant;
+2. assigns `dex = BATTLE_DexCalc(...)`;
+3. sorts the list with `EntrySort`;
+4. performs combo detection over the sorted list;
+5. iterates the sorted list from index 0 upward and executes each unit's action.
+
+The Japanese-comment source explicitly says the speed comparison is a **descending sort where larger speed values are better**.
+
+### 2.4 Later `sequence` extension
+
+`_EQUIT_SEQUENCE` is annotated as an equipment action-order feature requiring **itemset5**.
+
+Some descendants sort by:
+
+```text
+dex + sequence
+```
+
+rather than just `dex`.
+
+This is a later equipment extension and should not be projected backward into the base combat model.
+
+### 2.5 Source divergences
+
+Do not normalize these away:
+
+- `gavinlinasd` and `iriselia` preserve ordinary `0–30%` random subtraction.
+- `chuyiwen` also preserves 30% as the non-`_DEX_FIX` path.
+- `BismarckDD` changes the ordinary/item path to **0–10%**, and its attack-magic order path to a fixed `0–15` subtraction.
+- `BismarckDD`'s `_EQUIT_SEQUENCE` comparator returns only a boolean 0/1 expression instead of a negative/zero/positive ordering difference. This is incompatible with normal `qsort` comparator semantics and is retained as a **suspected descendant branch bug**, not an ancestral rule.
+- `chuyiwen` comments out the `sequence` comparator and sorts only by `dex`, even while carrying the surrounding sequence extension code.
+
+For reconstruction, the safest historical baseline is therefore:
+
+**base action order = descending randomized speed; equipment sequence is a later optional layer.**
+
+## 3. Physical damage core
+
+### 3.1 Defense construction has two preserved generations
+
+All three major server branches inspected define `_BATTLE_NEWPOWER`.
+
+Under that compiled descendant branch:
+
+```text
+effective_defense = DEFENCEPOWER * 0.70
+```
+
+The source also preserves an alternate older branch:
+
+```text
+effective_defense =
+    DEFENCEPOWER * 0.45
+  + QUICK        * 0.20
+  + FIXVITAL     * 0.10
+```
+
+For a ride-pet defense path the preserved older branch uses a smaller vital contribution.
+
+Important: the mere presence of the older branch does not prove which formula JSS 1999 used.
+
+### 3.2 Base damage is piecewise
+
+After attack/effective-defense construction, the stable descendant formula has three regions.
+
+If attack is below defense:
+
+```text
+damage = RAND(0, 1)
+```
+
+If:
+
+```text
+defense <= attack < defense * 8/7
+```
+
+then:
+
+```text
+damage = RAND(0, attack / 16)
+```
+
+If:
+
+```text
+attack >= defense * 8/7
+```
+
+then:
+
+```text
+K0 = RAND(0, attack / 8) - attack / 16
+damage = 2 * (attack - defense) + K0
+```
+
+The result is then passed through elemental adjustment.
+
+This is materially different from a simple `attack - defense` game.
+
+### 3.3 Stone status
+
+A petrified defender doubles effective defense before the piecewise physical calculation:
+
+```text
+defense *= 2
+```
+
+### 3.4 Later modifiers
+
+Multiple later compile-time extensions can add:
+
+- enemy random power changes;
+- ignore-defense percentages;
+- extra damage / extra defense;
+- profession effects;
+- ride-pet adjustments;
+- item effects.
+
+These are not part of the minimal stable model.
+
+## 4. Elemental adjustment
+
+The physical result is passed to `BATTLE_AttrAdjust`.
+
+The descendant battle model retains the familiar four attributes:
+
+- earth
+- water
+- fire
+- wind
+
+The routine:
+
+1. reads attacker and defender elemental values;
+2. applies optional battle-property callbacks in later branches;
+3. computes elemental matchup through `BATTLE_AttrCalc`;
+4. applies battlefield elemental power adjustment.
+
+Therefore element is not an independent second attack. It modifies the already calculated physical damage result in this path.
+
+Exact JSS-era matchup coefficients remain a separate reconstruction target.
+
+## 5. Dodge / hit relationship
+
+The stable `BATTLE_DuckCheck` core uses attacker and defender fixed dexterity, plus defender luck for player defenders.
+
+Relationship modifiers include:
+
+- enemy → pet: attacker DEX × 0.8;
+- non-enemy → pet: defender DEX × 0.8;
+- non-player → player: attacker DEX × 0.6;
+- player → non-player: defender DEX × 0.6.
+
+Then:
+
+```text
+Big   = max(adjusted attacker DEX, adjusted defender DEX)
+Small = min(...)
+```
+
+If defender DEX is at least attacker DEX, `wari = 1`.
+
+Otherwise:
+
+```text
+wari = Small / Big
+```
+
+Base dodge work:
+
+```text
+Work = (Big - Small) / 0.02
+per  = sqrt(Work) * wari
+per += defender_luck
+```
+
+The result is converted to a 1–10000 scale and capped at **75%**.
+
+Later code adds command, drunkenness, bow, hit-right, profession and passive-skill modifiers. Some bow additions differ across descendants, so they are not part of the minimal cross-lineage model.
+
+## 6. Critical
+
+The stable player-style critical routine uses:
+
+- attacker fixed DEX;
+- defender fixed DEX;
+- attacker luck when attacker is a player;
+- weapon `ITEM_CRITICAL` value.
+
+Default divisor:
+
+```text
+gCriticalPara = 0.09
+```
+
+The same attacker/defender-type asymmetries appear again. In ordinary root-mode cases:
+
+```text
+Work = (Big - Small) / 0.09
+per = (sqrt(Work) + weapon_critical * 0.5) * wari
+per += attacker_luck
+per *= 100
+```
+
+The final check uses a 1–10000 random scale.
+
+Certain enemy↔pet / non-player→player branches switch to a linear `Work` form with divisor 10 instead of the square-root form.
+
+### Critical damage
+
+Stable descendant code first calculates normal damage, then adds:
+
+```text
+DEFENCEPOWER
+* attacker_level / defender_level
+* 0.5
+```
+
+Bow handling diverges from ordinary melee critical damage in the inspected attack sequence.
+
+## 7. Counter
+
+The counter basis again uses attacker/defender DEX relationship with:
+
+```text
+gCounterPara = 0.08
+```
+
+The raw dex-derived value is then combined with weapon matchup information and attacker luck by the counter-check layer before being scaled to the 1–10000 random check.
+
+Therefore a counter chance cannot be faithfully reconstructed from DEX alone; weapon category matchup is part of the mechanism.
+
+## 8. Guard
+
+The stable guard routine draws `RAND(1,100)` and multiplies incoming damage by:
+
+| Roll | Damage multiplier |
+| --- | ---: |
+| 1–25 | 0.00 |
+| 26–50 | 0.10 |
+| 51–70 | 0.20 |
+| 71–85 | 0.30 |
+| 86–95 | 0.40 |
+| 96–100 | 0.50 |
+
+Guard is therefore a stochastic mitigation distribution, not a single fixed percentage.
+
+## 9. Attack resolution order
+
+The stable `BATTLE_AttackSeq` chain is approximately:
+
+1. dodge check, except selected combo handling;
+2. guardian substitution;
+3. critical-rate calculation;
+4. critical or normal physical damage calculation;
+5. command/skill-specific damage modifiers;
+6. guard reduction where applicable;
+7. if result is below 1, fallback random 0/1 behavior;
+8. later branch-specific modifiers/equipment effects.
+
+This ordering matters. For example, guardian substitution occurs before the critical/damage calculation against the final defender.
+
+## 10. Encounter-to-battle bridge already recovered
+
+The recovered server data chain established immediately before this combat pass is:
+
+```text
+map position
+  -> encount region
+  -> weighted group
+  -> weighted enemy instance
+  -> enemybase template
+  -> battle
+```
+
+The movement-side encounter mechanism is also source-backed:
+
+```text
+CEP is clamped to zone min/max
+each eligible step tests rand() % 120 < CEP
+success -> encounter, CEP resets to zone min
+failure -> CEP increments toward zone max
+```
+
+This means battle frequency uses an increasing-probability / soft-pity mechanism rather than a fixed independent percentage per step.
+
+## 11. Reconstruction guidance
+
+When the modern rebuild begins, preserve these concepts separately:
+
+- **historical baseline model** — the best-supported early mechanism;
+- **descendant active model** — what a particular recovered/private server branch actually compiled;
+- **modern design model** — the version we deliberately choose after discussion.
+
+Do not silently copy descendant bugs.
+
+In particular:
+
+- keep base initiative randomness as a configurable rule;
+- make later equipment `sequence` a distinct modifier;
+- express physical damage, element, critical, counter and guard as separate stages;
+- retain deterministic tests for whichever historical profile is selected;
+- do not hard-code private-server profession extensions into the base StoneAge combat layer.
+
+## Evidence-grade summary
+
+- base randomized initiative concept: **strong multi-lineage descendant evidence**
+- ordinary `QUICK+20 - RAND(0, 30%)` profile: **strong older-lineage convergence; Bismarck later divergence exists**
+- descending initiative execution: **strong multi-lineage descendant evidence**
+- equipment `sequence` modifier: **later extension, explicitly tied to itemset5**
+- Bismarck boolean qsort comparator: **descendant branch anomaly / suspected bug**
+- `DAMAGE_RATE=2`, `D_16`, `D_8`, dodge/critical/counter constants: **strong multi-lineage descendant evidence**
+- `_BATTLE_NEWPOWER` defense = 70% DEFENCEPOWER: **compiled descendant branch**
+- 45% DEF + 20% QUICK + 10% VITAL defense: **preserved alternate/older branch; original-version status OPEN**
+- three-region physical damage formula: **strong multi-lineage descendant evidence**
+- elemental adjustment after physical base damage: **strong multi-lineage descendant evidence**
+- dodge, critical and counter DEX asymmetries: **strong multi-lineage descendant evidence**
+- guard multiplier distribution: **strong multi-lineage descendant evidence**
+- exact 1999 JSS combat coefficients: **OPEN pending original server/binary evidence**
