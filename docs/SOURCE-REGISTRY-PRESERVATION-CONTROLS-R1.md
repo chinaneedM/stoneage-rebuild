@@ -109,6 +109,53 @@ Purpose: register preservation redundancy and search-triage sources that improve
   - that the placeholder or patcher gate existed in any JSS-era binary;
   - that it is related to the 1999 updater rather than a later private branch.
 
+## CTRL-KR-INIUM-CLIENT-LOSTMEDIA-2024-01
+
+- Title: `스톤에이지 이니엄 클라이언트`
+- URL: https://gall.dcinside.com/mgallery/board/view/?id=lostmedia&no=20605
+- Post date: 2024-07-27
+- Retrieval date: 2026-09-18
+- Source type: Korean lost-media community search request
+- Classification: **C / PRESERVATION-STATUS CONTROL; not historical version evidence**
+- Visible preservation-status claim:
+  - the poster was actively seeking the Inium StoneAge client;
+  - the post states that only some low-resolution screenshots appeared to remain and that the client itself could not be found by the poster;
+  - two GIF image attachments survive with the post, but no client download/file tree/hash is provided.
+- Current page state:
+  - the accessible page exposes the request and the two image attachments;
+  - the rendered comment area currently exposes no recoverable answer supplying a client artifact.
+- Research value:
+  - demonstrates that the Inium client remained a live lost-media target as late as 2024;
+  - explains why exact `1.74` searches may produce historical discussion without an actual install package.
+- Does not establish:
+  - that all Inium client copies are permanently lost;
+  - which exact Inium build/version the poster sought;
+  - any JSS/Inium binary identity or content relationship.
+
+## CTRL-SA-182-GAMEZONE-SOURCE-ATTACHMENT-01
+
+- Title: `스톤에이지 1.82버전 클라이언트 소스`
+- URL: https://gamezone.live/board_MsnU09/10588117
+- Original post date shown by index: 2021-01-08; page update shown as 2023-06-17
+- Retrieval date: 2026-09-18
+- Source type: later community file-board listing
+- Classification: **C / RECOVERY LEAD; not authenticated original source**
+- Indexed attachment metadata:
+  - filename: `sa_182_code.rar`
+  - listed size: **403.4 KB**
+- Community description:
+  - the post describes the archive as StoneAge 1.82 client source and characterizes it as an early Inium/Netmarble-era source baseline.
+- Current retrieval limitation:
+  - search indexing exposes the attachment filename/size, but the present extraction/network path times out or does not expose the actual attachment URL/bytes;
+  - therefore the archive has **not** been inspected, hashed, authenticated or compared with the already registered public source trees.
+- Research value:
+  - if later recoverable, this archive may provide an earlier comparison point than the modern imported 8.x/community trees;
+  - treat every claim about its age/origin as unverified until the bytes and code chronology are inspected.
+- Does not establish:
+  - that the archive is official Inium, Netmarble or JSS source;
+  - that it corresponds to an actual 1.82 retail/service binary;
+  - any relationship to Korean 1.74 or Japanese 1.74a.
+
 ## Operational consequence
 
 For future `stoneage.exe` recovery:
