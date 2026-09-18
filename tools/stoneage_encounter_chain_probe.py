@@ -153,11 +153,27 @@ def analyze(data_dir,setup=None):
     enemy_cfg=setup_value(setup,"enemyfile")
     group_cfg=setup_value(setup,"groupfile")
     enc_cfg=setup_value(setup,"encountfile")
-    enemy_ids=parse_enemy_ids(active_path(data_dir,enemy_cfg,"enemy.txt"))
+    enemy_files={}
+    for p in sorted(data_dir.glob("enemy*.txt"),key=lambda p:p.name.lower()):
+        if p.name.lower().startswith("enemybase"):
+            continue
+        enemy_files[p.name.lower()]=parse_enemy_ids(p)
+    active_enemy_name=Path(enemy_cfg.replace("\\","/")).name.lower() if enemy_cfg else "enemy.txt"
+    enemy_ids=enemy_files.get(active_enemy_name,set())
+    alternate_enemy_ids=set()
+    for name,ids in enemy_files.items():
+        if name != active_enemy_name:
+            alternate_enemy_ids.update(ids)
 
     groups=[]
     for p in sorted(data_dir.glob("group*.txt"),key=lambda p:p.name.lower()):
         parsed=parse_group_file(p,enemy_ids)
+        parsed["raw_unresolved_found_in_alternate_enemy"] = sum(
+            1
+            for row in parsed["raw_rows"]
+            for eid in row["_raw_enemy_refs"]
+            if eid not in enemy_ids and eid in alternate_enemy_ids
+        )
         groups.append({
             "name":p.name,
             **parsed,
@@ -166,13 +182,24 @@ def analyze(data_dir,setup=None):
         })
     active_group=next((g for g in groups if g["active"]),None)
     group_ids=set(r["GROUP_ID"] for r in active_group["loaded_rows"]) if active_group else set()
+    inactive_raw_group_ids=set()
+    for g in groups:
+        if not g["active"]:
+            inactive_raw_group_ids.update(r["GROUP_ID"] for r in g["raw_rows"])
 
     ep=active_path(data_dir,enc_cfg,"encount.txt")
     enc=None
     if ep.exists():
         rows,fc,schemas,bad=parse_encount_file(ep,group_ids)
+        unresolved_ids=[
+            row[f"GROUP_ID{i}"]
+            for row in rows for i in range(1,11)
+            if row[f"GROUP_ID{i}"]!=-1 and row[f"GROUP_ID{i}"] not in group_ids
+        ]
         enc={"name":ep.name,"rows":rows,"field_counts":fc,"schemas":schemas,"bad":bad,
-             "sha":sha256(ep),"bytes":ep.stat().st_size}
+             "sha":sha256(ep),"bytes":ep.stat().st_size,
+             "unresolved_found_in_inactive_raw":sum(1 for gid in unresolved_ids if gid in inactive_raw_group_ids),
+             "unresolved_found_nowhere":sum(1 for gid in unresolved_ids if gid not in inactive_raw_group_ids)}
     return enemy_cfg,group_cfg,enc_cfg,len(enemy_ids),groups,enc
 
 def emit(data_dir,setup=None):
@@ -191,6 +218,7 @@ def emit(data_dir,setup=None):
         lo,hi,uq=stat(rows,"GROUP_ID")
         if lo is not None:print(f"GROUP_LOADED_ID_STAT|{g['name']}|min={lo}|max={hi}|unique={uq}")
         print(f"GROUP_RAW_UNRESOLVED_ENEMY_REFS|{g['name']}|{sum(r['_raw_unresolved'] for r in raw)}")
+        print(f"GROUP_RAW_UNRESOLVED_ENEMY_REFS_FOUND_IN_ALTERNATE_ENEMY|{g['name']}|{g['raw_unresolved_found_in_alternate_enemy']}")
         print(f"GROUP_REJECTED_NO_RESOLVED_ENEMY|{g['name']}|{g['rejected_no_enemy']}")
         print(f"GROUP_REJECTED_DUPLICATE_EFFECTIVE_ENEMY|{g['name']}|{g['rejected_duplicate']}")
         print(f"GROUP_LOADED_WITH_APPEAR_ITEM_GATE|{g['name']}|{sum(1 for r in rows if r['APPEAR_ITEM']!=-1)}")
@@ -209,6 +237,8 @@ def emit(data_dir,setup=None):
         print(f"ENCOUNT_ROWS_WITH_UNRESOLVED_EFFECTIVE_GROUP|{sum(1 for r in rows if r['_unresolved']>0)}")
         print(f"ENCOUNT_UNRESOLVED_GROUP_REFS_POSITIVE_WEIGHT|{sum(r['_unresolved_positive_weight'] for r in rows)}")
         print(f"ENCOUNT_UNRESOLVED_GROUP_REFS_NONMINUS_WEIGHT|{sum(r['_unresolved_nonminus_weight'] for r in rows)}")
+        print(f"ENCOUNT_UNRESOLVED_GROUP_REFS_FOUND_IN_INACTIVE_RAW_GROUP|{enc['unresolved_found_in_inactive_raw']}")
+        print(f"ENCOUNT_UNRESOLVED_GROUP_REFS_FOUND_NOWHERE|{enc['unresolved_found_nowhere']}")
         print(f"ENCOUNT_DUPLICATE_GROUP_REF_ROWS|{sum(1 for r in rows if r['_duplicate_group_ids']>0)}")
         print(f"ENCOUNT_REVERSED_PROB_ROWS|{sum(1 for r in rows if r['_reversed_prob'])}")
         print(f"ENCOUNT_INVALID_ENEMY_MAX_ROWS|{sum(1 for r in rows if r['ENEMY_MAX']<1 or r['ENEMY_MAX']>10)}")
