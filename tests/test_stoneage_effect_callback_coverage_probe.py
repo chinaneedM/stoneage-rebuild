@@ -116,6 +116,41 @@ class EffectCallbackCoverageProbeTests(unittest.TestCase):
             bismarck_petskill=paths["bismarck"][2],
         )
 
+    def test_commented_dispatch_entries_are_ignored(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            g = root / "g.c"
+            m = root / "m.c"
+            g.write_text(
+                'static CorrespondStringAndFunctionTable '
+                'correspondStringAndFunctionTable[]=\n{\n'
+                '  {{"LIVE"}, (void*)1, 0},\n'
+                '  // {{"DEAD_LINE"}, (void*)1, 0},\n'
+                '  /* {{"DEAD_BLOCK"}, (void*)1, 0}, */\n'
+                '};\n',
+                encoding="utf-8",
+            )
+            m.write_text(
+                'static X MAGIC_functbl[] = {\n'
+                '  {"LIVE_MAGIC", (void*)1, 0},\n'
+                '  // {"DEAD_MAGIC", (void*)1, 0},\n'
+                '};\n',
+                encoding="utf-8",
+            )
+            self.assertEqual(parse_global_function_table(g), {"LIVE"})
+            self.assertEqual(
+                parse_global_function_guard_map(g),
+                {"LIVE": False},
+            )
+            self.assertEqual(
+                parse_named_function_table(m, "MAGIC_functbl[]"),
+                {"LIVE_MAGIC"},
+            )
+            self.assertEqual(
+                parse_named_function_guard_map(m, "MAGIC_functbl[]"),
+                {"LIVE_MAGIC": False},
+            )
+
     def test_source_table_parsers(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)
