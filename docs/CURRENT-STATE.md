@@ -299,6 +299,18 @@ Supplemental source ledgers:
 - Exact 1999/JSS identity remains **OPEN**; this milestone is strong convergent descendant evidence, not direct launch-client proof.
 - Highest-value adjacent progression seam is now **transmigration/reset semantics**, with starter-pet/hometown linkage kept as a separate creation-side track.
 
+## Player transmigration core reconstruction — 2026-09-18
+
+- Reconstructed the common pre-sixth-transmigration player core across three preserved descendant server lineages.
+- Stable ordinary gate: level >= 80, all pending stat points spent, event flags 39/40/42/46 complete; first four transmigrations require pet IDs 693/694/695/696 respectively, fifth requires all four.
+- `CHAR_TRANSEQUATION` is now modeled as cumulative qualifying-quest count plus cumulative transmigration levels, with each level contribution capped at 130.
+- Recovered the common inherited-point equation and literal source `Rounding(...,1)` behavior, then proportional redistribution to VITAL/STR/TOUGH/DEX.
+- Final ordinary reset is modeled as level 1, EXP 0 and free stat points = new transmigration count * 10.
+- Preserved a real version divergence instead of flattening it: gavinlinasd/iriselia and BismarckDD disagree on the last two IDs in the 20-entry quest-count table, so the deterministic core accepts `quest_count` rather than inventing one canonical flag list.
+- Added `tools/stoneage_player_transmigration_model.py`, six deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-PLAYER-TRANSMIGRATION-CORE-R1.md`.
+- Sixth/seventh-transmigration, hero/angel, teacher/profession and other later branches remain separate version-diff evidence.
+- Highest-value adjacent seam is now **starter-pet / hometown creation linkage**, especially separating the original four-village mapping from later unified-newbie-village and configurable starter-pet branches.
+
 ## Immediate next actions
 
 1. **Continue recovered-byte reverse engineering.** REAL/ADRN/RD, SPR/SPRADRN, DAT runtime semantics, `1021.DAT`, and the major unresolved-graphic skew are now bounded as far as the mixed 2.5 bundle permits. Move the primary technical target outward into **character / pet / item / skill / stat / combat / progression data tables** in the recovered client/server corpus. First build a provenance-preserving inventory of candidate gameplay-data files and identify which tables are authoritative server data versus client display/cache data; then parse one family at a time with deterministic tests. Keep map 817/water-world missing assets as a version-diff target for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
