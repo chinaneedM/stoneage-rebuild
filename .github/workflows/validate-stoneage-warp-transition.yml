@@ -1,0 +1,17 @@
+name: Validate StoneAge warp transition model
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/mechanics/STONEAGE-WARP-MAP-TRANSITION-CORE-R1.md
+      - tools/stoneage_warp_transition_model.py
+      - tests/test_stoneage_warp_transition_model.py
+      - .github/workflows/validate-stoneage-warp-transition.yml
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_warp_transition_model -v
