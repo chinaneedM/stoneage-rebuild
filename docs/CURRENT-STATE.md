@@ -363,6 +363,21 @@ Supplemental source ledgers:
 - Added `tools/stoneage_party_formation_model.py`, eleven deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-PARTY-FORMATION-CORE-R1.md`.
 - Next priority: re-audit remaining deterministic loop gaps and select the seam that closes the largest loop, with trading/economy transfer, healing/status-service semantics, and item equip/use transitions as current candidates.
 
+## Item use / equip core reconstruction — 2026-09-18
+
+- Reconstructed the ordinary item-use dispatch and equipment movement layer across three preserved descendant lineages.
+- Common old equipment baseline is five slots: head, body, arm/weapon, decoration 1, decoration 2. Belt/shield/shoes/glove are macro-controlled later extensions.
+- `CHAR_ItemUse` routes every item type except `ITEM_OTHER` and `ITEM_DISH` into equipment placement and returns before `ITEM_USEFUNC`; OTHER/DISH use the ordinary callback path.
+- Direct client inventory/equipment move packets are blocked during battle, but this is not generalized into a ban on battle-time `CHAR_ItemUse`, because battle execution itself invokes it.
+- Un-reborn characters must meet ITEM_LEVEL; that specific common check is bypassed after transmigration. Later STR/DEX/profession/rookie/token restrictions remain versioned extensions.
+- Non-decoration equipment must match its declared slot. Decoration items may use either accessory slot, but two items of the same ITEM_TYPE cannot occupy both decoration slots.
+- Bag -> equip replacement swaps the displaced equipment back into the source bag slot and runs callbacks in stable order: detach old, then attach new.
+- Equip -> empty bag detaches normally. Equip -> occupied bag recursively attempts to equip the bag item into the original equipment slot, producing an indirect exchange only if legal.
+- Direct equipment-slot -> equipment-slot movement is rejected. Baseline bag -> bag behavior is a direct swap; optional pile/stack merging remains macro-controlled.
+- Equipment movement feeds into `CHAR_complianceParameter` and refreshes derived HP/MP/ATK/DEF/QUICK/CHARM/LUCK/elements. Attach/detach callbacks are preserved as separate event hooks rather than being conflated with base stat recomputation.
+- Added `tools/stoneage_item_use_equip_model.py`, fourteen deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-ITEM-USE-EQUIP-CORE-R1.md`.
+- Next priority: **healing / recovery service semantics**, to close battle damage/death/status -> NPC/payment -> restored player/pet state before economy/trading transfer work.
+
 ## Immediate next actions
 
 1. **Continue recovered-byte reverse engineering.** REAL/ADRN/RD, SPR/SPRADRN, DAT runtime semantics, `1021.DAT`, and the major unresolved-graphic skew are now bounded as far as the mixed 2.5 bundle permits. Move the primary technical target outward into **character / pet / item / skill / stat / combat / progression data tables** in the recovered client/server corpus. First build a provenance-preserving inventory of candidate gameplay-data files and identify which tables are authoritative server data versus client display/cache data; then parse one family at a time with deterministic tests. Keep map 817/water-world missing assets as a version-diff target for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
