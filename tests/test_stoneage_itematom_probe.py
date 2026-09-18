@@ -18,7 +18,7 @@ class ItemAtomProbeTests(unittest.TestCase):
     def test_item_and_pet_atom_coverage(self):
         with tempfile.TemporaryDirectory() as td:
             root=Path(td);d=root/"data";d.mkdir()
-            (d/"itematom.txt").write_text("wood,0\nmagic,1\n",encoding="utf-8")
+            (d/"itematom.txt").write_text("wood,0,ignored-a\nmagic,1,ignored-b\n",encoding="utf-8")
             (d/"itemset.txt").write_text(item(1,"wood",3)+"\n"+item(2,"missing",4)+"\n",encoding="utf-8")
             (d/"itemset0710.txt").write_text(item(1,"magic",5)+"\n",encoding="utf-8")
             (d/"enemybase.txt").write_text(eb("wood")+"\n",encoding="utf-8")
@@ -27,6 +27,9 @@ class ItemAtomProbeTests(unittest.TestCase):
             r=analyze(d,setup)
             self.assertEqual(len(r["atomset"]),2)
             self.assertEqual(r["flag_counts"][1],1)
+            self.assertEqual(r["bad"],0)
+            self.assertEqual(r["widths"][3],2)
+            self.assertEqual(r["trailing"][0][3],2)
             self.assertEqual(len(r["itemsets"]["itemset.txt"]["missing"]),1)
             self.assertEqual(len(r["itemsets"]["itemset0710.txt"]["missing"]),0)
             self.assertEqual(len(r["bases"]["enemybase.txt"]["missing"]),0)

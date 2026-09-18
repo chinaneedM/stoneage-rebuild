@@ -18,8 +18,20 @@ def sha256(path):
 
 def parse_atoms(path):
     rows=clean_rows(path);names=[];flags=[];bad=0;widths=collections.Counter(map(len,rows))
+    max_cols=max(widths) if widths else 0
+    trailing=[]
+    for ci in range(2,max_cols):
+        empty=integer=text=missing=0;values=set()
+        for r in rows:
+            if ci>=len(r):missing+=1;continue
+            v=r[ci].strip()
+            if not v:empty+=1;continue
+            values.add(v)
+            try:int(v,10);integer+=1
+            except ValueError:text+=1
+        trailing.append((ci+1,empty,integer,text,missing,len(values)))
     for r in rows:
-        if len(r)!=2:
+        if len(r)<2:
             bad+=1;continue
         name=r[0].strip()
         try:flag=int(r[1].strip() or b"0",10)
@@ -28,7 +40,7 @@ def parse_atoms(path):
         if flag not in (0,1):
             bad+=1;continue
         names.append(name);flags.append(flag)
-    return rows,names,flags,bad,widths
+    return rows,names,flags,bad,widths,trailing
 
 def parse_itemset_atoms(path,atomset):
     rows=clean_rows(path)
@@ -83,7 +95,7 @@ def analyze(data_dir,setup=None):
     atom_path=data_dir/Path(atom_cfg.replace("\\","/")).name if atom_cfg else data_dir/"itematom.txt"
     if not atom_path.exists():
         return {"exists":False,"config":config}
-    raw,names,flags,bad,widths=parse_atoms(atom_path)
+    raw,names,flags,bad,widths,trailing=parse_atoms(atom_path)
     atomset=set(names)
     active_item=active_name(config,("itemset6file","itemset5file","itemset4file","itemset3file","itemfile"))
     active_base=active_name(config,("enemybasefile",))
@@ -99,7 +111,7 @@ def analyze(data_dir,setup=None):
     return {
         "exists":True,"config":config,"atom_path":atom_path,"raw_count":len(raw),
         "names":names,"atomset":atomset,"flags":flags,"flag_counts":flag_counts,
-        "bad":bad,"widths":widths,"duplicate_names":len(names)-len(atomset),
+        "bad":bad,"widths":widths,"trailing":trailing,"duplicate_names":len(names)-len(atomset),
         "itemsets":itemsets,"bases":bases,
     }
 
@@ -108,7 +120,7 @@ def emit(data_dir,setup=None):
     print("StoneAge recovered item-atom probe — R1")
     print("No original atom/item/pet names or source rows are stored in this report.")
     print("SCHEMA_SOURCE|descendant_ITEM_initItemAtom_ITEM_initItemIngCache_ITEM_merge_getPetFix")
-    print("ATOM_SCHEMA|name + magicflg")
+    print("ATOM_SCHEMA|loader consumes col1=name and col2=magicflg; trailing columns are ignored by inspected loader")
     print("ITEMSET_LINK|itemset.ingname0..4 -> itematom.name")
     print("ENEMYBASE_LINK|enemybase.atomfixname1..5 -> itematom.name")
     if not r["exists"]:
@@ -116,6 +128,8 @@ def emit(data_dir,setup=None):
     print("ITEMATOM_FILE_EXISTS|1")
     print(f"FILE|{r['atom_path'].name}|bytes={r['atom_path'].stat().st_size}|sha256={sha256(r['atom_path'])}|rows={r['raw_count']}|malformed={r['bad']}|unique_names={len(r['atomset'])}|duplicate_names={r['duplicate_names']}")
     for n,c in sorted(r["widths"].items()):print(f"FIELD_COUNT|{n}|{c}")
+    for col,empty,integer,textc,missing,unique in r["trailing"]:
+        print(f"TRAILING_COLUMN_PROFILE|{col}|empty={empty}|integer={integer}|text={textc}|missing={missing}|unique_nonempty={unique}")
     for v,n in sorted(r["flag_counts"].items()):print(f"MAGICFLG_VALUE|{v}|{n}")
     for name,x in sorted(r["itemsets"].items()):
         vals=x["values"]
