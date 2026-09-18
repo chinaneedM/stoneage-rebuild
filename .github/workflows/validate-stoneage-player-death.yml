@@ -1,0 +1,17 @@
+name: Validate StoneAge player death model
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/mechanics/STONEAGE-PLAYER-DEATH-REVIVAL-CORE-R1.md
+      - tools/stoneage_player_death_model.py
+      - tests/test_stoneage_player_death_model.py
+      - .github/workflows/validate-stoneage-player-death.yml
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_player_death_model -v
