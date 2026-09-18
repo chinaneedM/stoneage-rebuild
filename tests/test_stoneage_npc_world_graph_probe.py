@@ -107,9 +107,16 @@ functionset=Door
 }
 """
             )
+            (npc / "dup.create").write_bytes(
+                b"NPCCREATE\n{\nfloorid=1\nborncenter=1,1,1,1\nenemy=Same\n}\n"
+            )
             r = analyze(npc)
             self.assertEqual(r["counts"]["template_duplicate_name_values"], 1)
             self.assertEqual(r["counts"]["template_duplicate_extra_blocks"], 1)
+            self.assertEqual(r["counts"]["template_unique_name_values"], 1)
+            self.assertEqual(r["counts"]["create_refs_to_duplicate_template_name"], 1)
+            self.assertEqual(r["counts"]["create_blocks_with_duplicate_template_ref"], 1)
+            self.assertEqual(r["counts"]["duplicate_template_names_referenced"], 1)
 
     def test_create_without_born_is_not_pre_map_valid(self):
         with tempfile.TemporaryDirectory() as td:
