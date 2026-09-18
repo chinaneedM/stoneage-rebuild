@@ -201,6 +201,7 @@ def analyze(npc_dir, setup=None, map_dir=None):
     tnames = [b["name"] for b in tblocks if b["name"]]
     tname_counts = collections.Counter(tnames)
     tset = set(tnames)
+    duplicate_names = {name for name, n in tname_counts.items() if n > 1}
     functionsets = collections.Counter(safe_ascii(b["functionset"]) for b in tblocks)
     direct_slots = collections.Counter()
     for b in tblocks:
@@ -214,6 +215,7 @@ def analyze(npc_dir, setup=None, map_dir=None):
     counts["create_magic_files"] = len(creates)
     counts["template_blocks"] = len(tblocks)
     counts["template_named_blocks"] = len(tnames)
+    counts["template_unique_name_values"] = len(tset)
     counts["template_duplicate_name_values"] = sum(1 for _, n in tname_counts.items() if n > 1)
     counts["template_duplicate_extra_blocks"] = sum(n - 1 for n in tname_counts.values() if n > 1)
     counts["template_with_functionset"] = sum(1 for b in tblocks if b["functionset"])
@@ -227,14 +229,30 @@ def analyze(npc_dir, setup=None, map_dir=None):
     resolved_total = 0
     arg_total = 0
     floors = []
+    referenced_duplicate_names = set()
     resolved_per_block = collections.Counter()
+    for key in (
+        "create_unresolved_template_refs",
+        "create_resolved_refs_over_8",
+        "create_refs_to_duplicate_template_name",
+        "create_blocks_with_duplicate_template_ref",
+        "create_blocks_missing_floor",
+    ):
+        counts[key] = 0
     for b in cblocks:
         refs_total += len(b["enemies"])
         arg_total += sum(1 for _, has_arg in b["enemies"] if has_arg)
         resolved = sum(1 for name, _ in b["enemies"] if name in tset)
+        duplicate_refs = sum(1 for name, _ in b["enemies"] if name in duplicate_names)
         unresolved = len(b["enemies"]) - resolved
         resolved_total += resolved
         counts["create_unresolved_template_refs"] += unresolved
+        counts["create_refs_to_duplicate_template_name"] += duplicate_refs
+        if duplicate_refs:
+            counts["create_blocks_with_duplicate_template_ref"] += 1
+            referenced_duplicate_names.update(
+                name for name, _ in b["enemies"] if name in duplicate_names
+            )
         resolved_per_block[resolved] += 1
         if b["born_defined"]:
             counts["create_with_born"] += 1
@@ -265,6 +283,7 @@ def analyze(npc_dir, setup=None, map_dir=None):
     counts["create_template_refs_total"] = refs_total
     counts["create_template_refs_resolved"] = resolved_total
     counts["create_refs_with_argument"] = arg_total
+    counts["duplicate_template_names_referenced"] = len(referenced_duplicate_names)
     counts["unique_effective_floor_candidates"] = len(set(floors))
 
     cfg = setup_values(setup)
