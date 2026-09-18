@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Analyze recovered StoneAge enemybase pet-template tables using the stable descendant prefix schema."""
 
-import argparse,collections,hashlib\nfrom decimal import Decimal,InvalidOperation
+import argparse,collections,hashlib
+from decimal import Decimal,InvalidOperation
 from pathlib import Path
 
 CHAR_FIELDS=6
