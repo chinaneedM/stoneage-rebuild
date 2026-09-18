@@ -213,8 +213,10 @@ class EffectCallbackCoverageProbeTests(unittest.TestCase):
             guard = r["item_use_guard"]
             self.assertEqual(guard["unique_counts"]["unguarded_all3"], 1)
             self.assertEqual(guard["row_counts"]["unguarded_all3"], 2)
-            self.assertEqual(guard["unique_counts"]["partial_source"], 3)
-            self.assertEqual(guard["row_counts"]["partial_source"], 3)
+            self.assertEqual(guard["unique_counts"]["partial_source"], 2)
+            self.assertEqual(guard["row_counts"]["partial_source"], 2)
+            self.assertEqual(guard["unique_counts"]["missing_all3"], 1)
+            self.assertEqual(guard["row_counts"]["missing_all3"], 1)
 
     def test_magic_guard_classification_tracks_partial_sources(self):
         with tempfile.TemporaryDirectory() as td:
