@@ -130,9 +130,15 @@ def parse_global_function_table(path):
 
 def parse_named_function_table(path, marker):
     text = path.read_text(encoding="utf-8", errors="replace")
-    region = extract_table_region(text, marker)
-    return set(re.findall(r'\{\s*"([^"]+)"', region))
-
+    markers = (marker,) if isinstance(marker, str) else tuple(marker)
+    last_error = None
+    for candidate in markers:
+        try:
+            region = extract_table_region(text, candidate)
+            return set(re.findall(r'\\{\\s*"([^"]+)"', region))
+        except ValueError as exc:
+            last_error = exc
+    raise last_error or ValueError("no source table marker supplied")
 
 def source_dispatch_sets(args):
     return {
