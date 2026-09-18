@@ -38,11 +38,11 @@ class ExChangeManConditionCoreTests(unittest.TestCase):
 
     def test_event_expression_uses_or_between_commas(self):
         state = ExchangeState(level=20)
-        self.assertEqual(evaluate_event_expression("LV=1,LV>10", state), 1)
+        self.assertEqual(evaluate_event_expression("LV=1,LV>10", state), 2)
 
     def test_event_expression_uses_and_inside_branch(self):
         state = ExchangeState(level=20, end_flags=frozenset({3}))
-        self.assertEqual(evaluate_event_expression("LV>10&ENDEV=3,LV=1", state), 0)
+        self.assertEqual(evaluate_event_expression("LV>10&ENDEV=3,LV=1", state), 1)
         self.assertEqual(evaluate_event_expression("LV>10&ENDEV=4,LV=1", state), -1)
 
     def test_level_relations_follow_source(self):

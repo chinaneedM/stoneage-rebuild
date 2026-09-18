@@ -256,8 +256,8 @@ def evaluate_event_expression(
     *,
     required_pet_name: Optional[str] = None,
 ) -> int:
-    """Return the zero-based first satisfied comma branch, or -1."""
-    for index, branch in enumerate(expression.split(",")):
+    """Return the one-based first satisfied comma branch, or -1."""
+    for index, branch in enumerate(expression.split(","), start=1):
         if "&" in branch:
             terms = branch.split("&")
             if all(evaluate_term(t, state, required_pet_name=required_pet_name) for t in terms):

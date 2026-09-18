@@ -40,7 +40,7 @@ This is not exact-key parsing. A longer key containing the requested text can sh
 
 ## EVENT expression structure
 
-NPC_ExChangeManEventCheck treats comma-separated branches as OR. Ampersand-separated terms inside one comma branch are AND. It returns the zero-based index of the first satisfied comma branch, not merely true or false. Later mutation code can reuse that selected branch index.
+NPC_ExChangeManEventCheck treats comma-separated branches as OR. Ampersand-separated terms inside one comma branch are AND. It returns the one-based index of the first satisfied comma branch, not merely true or false. Later mutation code can reuse that selected branch index.
 
 Before later compile-gated extensions, the stable condition dispatcher recognizes LV, ITEM, ENDEV, NOWEV, SP, TIME, IMAGE and PET/PETEV terms.
 
@@ -94,7 +94,7 @@ The suite covers secondary argument-file merge, substring field lookup, OR/AND b
 
 FACT (fixed descendants): file-based secondary NPC arguments are merged into pipe-delimited text before class parsing.
 
-FACT (fixed descendants): ExChangeMan EVENT uses comma OR, ampersand AND, and returns the first matching branch index.
+FACT (fixed descendants): ExChangeMan EVENT uses comma OR, ampersand AND, and returns the first matching one-based branch index.
 
 FACT (fixed descendants): the stable condition set contains LV, ITEM, ENDEV, NOWEV, SP, TIME, IMAGE and PET/PETEV behavior.
 
