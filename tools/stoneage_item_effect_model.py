@@ -738,3 +738,41 @@ def rename_item_finalize(
         "catalyst_deleted": False,
         "catalyst_remaining": remain,
     }
+
+
+def mic_drop_transition(*, item_valid, current_enabled):
+    """ITEM_dropMic forces mic mode off when a valid mic item is dropped."""
+    if not item_valid:
+        return {"changed": False, "enabled": bool(current_enabled)}
+    return {"changed": bool(current_enabled), "enabled": False}
+
+
+def wear_pick_all_pet_transition(*, attached):
+    """ITEM_WearEquip / ITEM_ReWearEquip toggle CHAR_PickAllPet."""
+    return bool(attached)
+
+
+def dice_drop_transition(
+    *,
+    original_image,
+    rolled_face,
+    face_images,
+    face_names,
+):
+    """ITEM_dropDice stores original image and exposes one of six random faces."""
+    face = int(rolled_face)
+    if face < 0 or face >= len(face_images) or face >= len(face_names):
+        raise ValueError("rolled_face outside configured dice faces")
+    return {
+        "saved_original_image": int(original_image),
+        "base_image": int(face_images[face]),
+        "secret_name": str(face_names[face]),
+    }
+
+
+def dice_pickup_transition(*, saved_original_image, normal_name):
+    """ITEM_pickupDice restores normal image/name state."""
+    return {
+        "base_image": int(saved_original_image),
+        "secret_name": str(normal_name),
+    }
