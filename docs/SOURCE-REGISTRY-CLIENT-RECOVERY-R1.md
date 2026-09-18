@@ -126,7 +126,11 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Current byte status:
   - the old MediaFire URLs are preserved but are not directly accessible through the current web extraction interface;
   - exact-ID searches have not yet surfaced an independent live mirror.
-- Status: **TARGET-B/C — potentially useful bridge bytes, purity unknown**.
+- Recovery update:
+  - both MediaFire parts are currently recoverable and were successfully downloaded, hash-verified, concatenated and extracted by GitHub Actions;
+  - the derived inventory is committed at `research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt`;
+  - runtime assessment finds mixed/modified executable variants, while the large REAL/ADRN/MAP resource corpus remains technically valuable.
+- Status: **RECOVERED-C runtime / B-grade resource bridge** — not a clean runtime baseline, but usable for resource-format reverse engineering.
 
 ## TARGET-A/B — `〖2.5纯净〗石器客户端` preservation thread
 
@@ -197,10 +201,11 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 
 ## Current recovery order
 
-1. Recover the public **2.5 clean-client lead** behind thread `tid=2132`, or recover the two-part 2.5 bundle and isolate/verify `SA2.5主程式`. This is currently the fastest route to inspectable early bridge bytes.
-2. Continue recovery of the **Korean 1.74** operator-era installer identity/bytes; it remains the strongest earlier exact-version target.
-3. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
-4. Continue JSS original executable/full-client recovery in parallel.
-5. Recover the Sina "1.82" href/bytes as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
-6. Keep the Wayi official 8.5 package and `NetmarbleStoneAge120` as later controls, not substitutes for an early clean baseline.
-7. As soon as any candidate bytes are obtained, stop broad searching long enough to perform the clean-client acceptance test and build the first full inventory.
+1. Use the recovered 2.5 bundle as a **resource-format bridge only**: validate REAL/ADRN and MAP parsing against its actual recovered resource corpus. Do not use its modified runtime executables as a clean baseline.
+2. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132` and compare it against the recovered mixed bundle if bytes become available.
+3. Continue recovery of the **Korean 1.74** operator-era installer identity/bytes; it remains the strongest earlier exact-version target.
+4. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
+5. Continue JSS original executable/full-client recovery in parallel.
+6. Recover the Sina "1.82" href/bytes as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
+7. Keep the Wayi official 8.5 package and `NetmarbleStoneAge120` as later controls, not substitutes for an early clean baseline.
+8. For any newly recovered candidate bytes, stop broad searching long enough to perform the clean-client acceptance test and build the first full inventory.
