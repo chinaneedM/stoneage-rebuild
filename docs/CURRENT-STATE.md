@@ -788,10 +788,17 @@ Supplemental source ledgers:
 - Local reference validation passes 14 deterministic tests.
 - High-volume ordinary presentation NPCs are now removed from core-mechanics priority.
 
+## Dengon / Duelranking persistence-boundary closure — 2026-09-19
+
+- **Dengon is a real persistence seam, but for world/message state rather than character progression.** The common fixed-descendant implementation stores a location-keyed server-local bulletin board as a 1000-slot x 268-byte ring and writes on non-empty submissions.
+- The recovered 2.5 snapshot does not contain valid full Dengon boards: all 40 runtime files are 11-byte zero-counter stubs. They are preserved as a specimen-shape gap, not promoted into the live board format.
+- **Ordinary Duelranking is read/display only with respect to persistent duel ranking.** It queries `DB_DUELPOINT` through SAAC, pages ten rows at a time and changes only transient `CHAR_WORKSHOPRELEVANT` pagination state.
+- The common Duelranking NPC does not write duel points. Later tournament/family-contend branches are compile-gated, package-coupled extensions and remain later-scope.
+- Canonical boundary record: `research/mechanics/STONEAGE-DENGON-DUELRANKING-PERSISTENCE-BOUNDARY-R1.md`.
 ## Immediate next actions
 
-1. **Re-triage the remaining unresolved non-family classes at the persistence/display boundary.** Inspect Dengon and Duelranking first: determine whether they only display server state or introduce a still-unmodeled persistence mutation.
-2. **Split personal-bank mechanics from the later family Bankman package if necessary.** Trade/economy is already modeled, but CHAR_BANKGOLD deposit/withdraw persistence must not be missed merely because its UI entry is family-coupled.
+1. **Trace personal-bank persistence next.** Isolate the `CHAR_BANKGOLD` deposit/withdraw/save path from later family-account coupling so ordinary player bank mechanics are not lost inside the broader Bankman/family package.
+2. **Only after the personal-bank seam is classified, re-triage the remaining unresolved non-family classes for any other early/core persistent mutation.** Do not reopen Dengon or ordinary Duelranking unless contradictory evidence appears.
 3. **Keep Raceman, Scheduleman, ManorSman, FMPK/FMWarp and VIP packages later-scope unless they reveal a dependency required by the early/core reconstruction.**
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
