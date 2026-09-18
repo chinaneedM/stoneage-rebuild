@@ -45,6 +45,24 @@ ITEM_COMMON_FAMILY = {
     "ITEM_ReWearEquip": "equipment_hook",
 }
 
+PETSKILL_CORE_FAMILY = {
+    "PETSKILL_None": "none",
+    "PETSKILL_NormalAttack": "normal_attack",
+    "PETSKILL_NormalGuard": "normal_guard",
+    "PETSKILL_ContinuationAttack": "continuation_attack",
+    "PETSKILL_ChargeAttack": "charge_attack",
+    "PETSKILL_Guardian": "guardian",
+    "PETSKILL_PowerBalance": "power_balance",
+    "PETSKILL_Mighty": "mighty",
+    "PETSKILL_StatusChange": "status_change",
+    "PETSKILL_EarthRound": "earth_round",
+    "PETSKILL_GuardBreak": "guard_break",
+    "PETSKILL_Abduct": "abduct",
+    "PETSKILL_Steal": "steal",
+    "PETSKILL_Merge": "merge",
+    "PETSKILL_NoGuard": "no_guard",
+}
+
 ITEM_CALLBACK_COLUMNS = {
     "initfunc": 6,
     "preoverfunc": 7,
@@ -610,6 +628,17 @@ def analyze(args):
             ),
         }
 
+    petskill_guard_maps = {
+        "gavin": parse_named_function_guard_map(args.gavin_petskill, "PETSKILL_functbl[]"),
+        "iris": parse_named_function_guard_map(args.iris_petskill, "PETSKILL_functbl[]"),
+        "bismarck": parse_named_function_guard_map(args.bismarck_petskill, "PETSKILL_functbl[]"),
+    }
+    petskill_body_maps = {
+        "gavin": parse_item_function_body_map(args.gavin_petskill, set(petskill_tokens)),
+        "iris": parse_item_function_body_map(args.iris_petskill, set(petskill_tokens)),
+        "bismarck": parse_item_function_body_map(args.bismarck_petskill, set(petskill_tokens)),
+    }
+
     magic_guard_maps = {
         "gavin": parse_named_function_guard_map(args.gavin_magic, "MAGIC_functbl[]"),
         "iris": parse_named_function_guard_map(args.iris_magic, "MAGIC_functbl[]"),
@@ -660,6 +689,13 @@ def analyze(args):
         "magic": coverage(magic_tokens, magic_sets),
         "magic_guard": guard_coverage(magic_tokens, magic_guard_maps),
         "petskill": coverage(petskill_tokens, petskill_sets),
+        "petskill_guard": guard_coverage(petskill_tokens, petskill_guard_maps),
+        "petskill_body": item_body_coverage(
+            petskill_tokens, petskill_guard_maps, petskill_body_maps
+        ),
+        "petskill_common_families": common_unguarded_family_counts(
+            petskill_tokens, petskill_guard_maps, family_map=PETSKILL_CORE_FAMILY
+        ),
     }
 
 
@@ -782,6 +818,44 @@ def emit(args):
         )
     print(f"MAGIC_GUARD_CLASSIFICATION_SHA256|{g['classification_sha256']}")
     emit_coverage("PETSKILL", r["petskill"])
+    pg = r["petskill_guard"]
+    for label in (
+        "unguarded_all3",
+        "guarded_all3",
+        "mixed_guard",
+        "partial_source",
+        "missing_all3",
+    ):
+        print(
+            f"PETSKILL_GUARD_CLASS|{label}|"
+            f"unique_tokens={pg['unique_counts'].get(label,0)}|"
+            f"row_uses={pg['row_counts'].get(label,0)}"
+        )
+    print(f"PETSKILL_GUARD_CLASSIFICATION_SHA256|{pg['classification_sha256']}")
+    pb = r["petskill_body"]
+    for label in (
+        "stable_body_all3",
+        "macro_shell_all3",
+        "mixed_body_guard",
+        "partial_body_source",
+    ):
+        print(
+            f"PETSKILL_BODY_CLASS|{label}|"
+            f"unique_tokens={pb['unique_counts'].get(label,0)}|"
+            f"row_uses={pb['row_counts'].get(label,0)}"
+        )
+    print(f"PETSKILL_BODY_CLASSIFICATION_SHA256|{pb['classification_sha256']}")
+    pf = r["petskill_common_families"]
+    print(
+        f"PETSKILL_COMMON_FAMILY_TOTAL|unique_tokens={pf['covered_unique']}|"
+        f"row_uses={pf['covered_rows']}"
+    )
+    for family in sorted(set(pf["unique"]) | set(pf["rows"])):
+        print(
+            f"PETSKILL_COMMON_FAMILY|{family}|"
+            f"unique_tokens={pf['unique'].get(family,0)}|"
+            f"row_uses={pf['rows'].get(family,0)}"
+        )
 
 
 def add_source_args(ap, prefix):
