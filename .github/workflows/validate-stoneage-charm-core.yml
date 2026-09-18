@@ -1,0 +1,20 @@
+name: Validate StoneAge Charm core
+concurrency:
+  group: stoneage-charm-core
+  cancel-in-progress: true
+on:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-charm-core.yml
+      - tools/stoneage_charm_core_model.py
+      - tests/test_stoneage_charm_core_model.py
+      - research/mechanics/STONEAGE-CHARM-CORE-R1.md
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_charm_core_model -v

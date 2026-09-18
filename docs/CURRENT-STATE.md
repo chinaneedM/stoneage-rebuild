@@ -710,11 +710,23 @@ Supplemental source ledgers:
 - Local reference validation passes 20 deterministic tests.
 - Janken R1 is closed for fixed-descendant common behavior plus recovered 2.5 active surface.
 
+## Charm NPC core closure — 2026-09-19
+
+- Reused the recovered NPC census: 4 Charm refs exist in the verified 2.5 specimen and none has a secondary argument, so no extra configuration probe is required.
+- Confirmed the same core in all three fixed descendant lineages: RATE=10, CHARMHEAL=5, WARU=3; service adds 5 charm up to 100 and refreshes player plus carried-pet parameters.
+- Preserved exact integer cost formula: level × 10 × floor(charm/3) × (transmigration+1), with charm <=1 first replaced by 3.
+- Preserved the non-monotonic source edge: charm 2 costs zero while charm 0/1 cost one division unit.
+- Normal UI refuses a Yes confirmation at charm >=100, but raw CharmUp would use cost=-1 and add one Stone if reached by a stale/forged callback; normal flow and raw mutation semantics are modeled separately.
+- Added tools/stoneage_charm_core_model.py, tests/test_stoneage_charm_core_model.py, dedicated CI and research/mechanics/STONEAGE-CHARM-CORE-R1.md.
+- Local reference validation passes 14 deterministic tests.
+- Healer/WindowHealer were found to already be closed by STONEAGE-HEALER-RECOVERY-CORE-R1 and were not duplicated.
+- Remaining-class triage now selects Riderman ahead of Windowman, Bankman and Raceman.
+
 ## Immediate next actions
 
-1. **Re-triage the remaining non-family secondary-argument classes for state-changing early/core behavior.** Start with Raceman, Healer / WindowHealer, Windowman and other small unresolved classes; use source semantics plus recovered usage, not raw reference counts.
-2. **Keep Action and TimeMan deferred unless the triage shows a missing core dependency.** Action is message/action presentation and TimeMan is time-driven NPC graphic/message state.
-3. **Keep Scheduleman and family PK / family-management packages later-scope.** Do not let high reference counts or later expansion systems displace unresolved early/core state seams.
+1. **Advance to Riderman as the next personal persistent-state seam.** The recovered queue has 4 refs with conff-backed class configuration. Measure the recovered config shape first, then reconstruct tuition, ride-eligibility, item-letter and CHAR_LEARNRIDE progression while separating family/village revenue extensions.
+2. **Keep Windowman and Action/TimeMan deferred.** Their inspected common callbacks are presentation or conditional-window behavior rather than ordinary persistent-state mutation.
+3. **Keep Bankman, Raceman, Scheduleman and family PK/management packages later-scope.** Bank mutation is coupled to family protocol, while Raceman/Scheduleman are race/family subsystems.
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
 6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.
