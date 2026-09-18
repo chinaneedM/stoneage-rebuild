@@ -1,0 +1,17 @@
+name: Validate StoneAge party formation model
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/mechanics/STONEAGE-PARTY-FORMATION-CORE-R1.md
+      - tools/stoneage_party_formation_model.py
+      - tests/test_stoneage_party_formation_model.py
+      - .github/workflows/validate-stoneage-party-formation.yml
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_party_formation_model -v
