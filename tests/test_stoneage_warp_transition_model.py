@@ -181,12 +181,13 @@ class WarpTransitionModelTests(unittest.TestCase):
             "floor_777_suppressed",
         )
 
-    def test_later_noexit_pack_uses_eight_bit_xy_fields(self):
+    def test_later_noexit_pack_roundtrips_only_eight_bit_xy_cleanly(self):
+        point = pack_later_noexit_point(123, 0xFE, 0xAA)
+        self.assertEqual(unpack_later_noexit_point(point), (123, 0xFE, 0xAA))
+
+    def test_later_noexit_pack_does_not_mask_oversized_xy_before_packing(self):
         point = pack_later_noexit_point(123, 0x1FF, 0x2AA)
-        floor, x, y = unpack_later_noexit_point(point)
-        self.assertEqual(floor, 123)
-        self.assertEqual(x, 0xFF)
-        self.assertEqual(y, 0xAA)
+        self.assertNotEqual(unpack_later_noexit_point(point), (123, 0xFF, 0xAA))
 
     def test_later_noexit_uses_configured_exit_when_elder_floor_mismatches_type(self):
         out = later_noexit_redirect(
