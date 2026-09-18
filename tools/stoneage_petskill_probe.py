@@ -57,7 +57,21 @@ def rows_for(path):
         rows.append(fields)
         counts[len(fields)]+=1
         max_cols=max(max_cols,len(fields))
-    return rows,counts,max_cols
+    profiles=[]
+    for idx in range(max_cols):
+        integer=empty=text=missing=0
+        for fields in rows:
+            if idx>=len(fields):
+                missing+=1; continue
+            v=fields[idx].strip()
+            if not v:
+                empty+=1
+            elif to_int(v) is not None:
+                integer+=1
+            else:
+                text+=1
+        profiles.append((idx+1,integer,empty,text,missing))
+    return rows,counts,max_cols,profiles
 
 def parse_schema(rows,schema):
     chars=schema["char_fields"]; ints=schema["int_names"]
@@ -95,7 +109,7 @@ def analyze(data_dir,setup=None):
     enemy_active,enemy_file,enemy_ids=enemy_skill_ids(data_dir,setup)
     files=[]
     for p in sorted(data_dir.glob("petskill*.txt"),key=lambda x:x.name.lower()):
-        rows,field_counts,max_cols=rows_for(p)
+        rows,field_counts,max_cols,profiles=rows_for(p)
         candidates={}
         for name,schema in SCHEMAS.items():
             parsed=parse_schema(rows,schema)
@@ -121,26 +135,31 @@ def analyze(data_dir,setup=None):
                 candidates[n]["needed"],
             )
         )
-        selected=candidates[selected_name]
+        if len(candidates[selected_name]["rows"])==0:
+            selected_name="unknown"
+            selected={"rows":[],"malformed":len(rows),"exact":0,"needed":0,
+                      "idset":set(),"coverage":0,"duplicate_ids":0,
+                      "id_min":None,"id_max":None}
+        else:
+            selected=candidates[selected_name]
         counters={k:collections.Counter() for k in ("FIELD","TARGET","USETYPE","COST","ILLEGAL")}
         funcs=collections.Counter()
-        chars=SCHEMAS[selected_name]["char_fields"]
-        for fields,vals in zip(
-            [r for r in rows if len(r)>=selected["needed"]],
-            selected["rows"]
-        ):
-            # Function name is the third string field in all descendant layouts.
-            if len(fields)>=3 and fields[2]:
-                funcs[fields[2]]+=1
-            for k in counters:
-                if k in vals:counters[k][vals[k]]+=1
+        if selected_name!="unknown":
+            compatible_fields=[r for r in rows if len(r)>=selected["needed"]]
+            for fields,vals in zip(compatible_fields,selected["rows"]):
+                # Function name is the third string field in all descendant layouts.
+                if len(fields)>=3 and fields[2]:
+                    funcs[fields[2]]+=1
+                for k in counters:
+                    if k in vals:counters[k][vals[k]]+=1
         active_paths={Path(v.replace("\\","/")).name.lower() for v in config.values()}
         missing=sorted(enemy_ids-selected["idset"])
         unreferenced=sorted(selected["idset"]-enemy_ids)
         files.append({
             "name":p.name,"bytes":p.stat().st_size,"sha":sha256(p),
-            "rows":len(rows),"field_counts":field_counts,"max_cols":max_cols,
+            "rows":len(rows),"field_counts":field_counts,"max_cols":max_cols,"profiles":profiles,
             "candidates":candidates,"selected":selected_name,
+            "trailing_cols":(max_cols-selected["needed"]) if selected_name!="unknown" else None,
             "counters":counters,"func_count":len(funcs),
             "active":p.name.lower() in active_paths,
             "enemy_missing":missing,"unreferenced":unreferenced,
@@ -165,14 +184,21 @@ def emit(data_dir,setup=None):
         print(f"PETSKILL_CONFIG|{k}|{v}")
     print(f"PETSKILL_FILE_COUNT|{len(r['files'])}")
     for f in r["files"]:
-        print(f"FILE|{f['name']}|bytes={f['bytes']}|sha256={f['sha']}|rows={f['rows']}|active={int(f['active'])}|selected_schema={f['selected']}")
+        print(f"FILE|{f['name']}|bytes={f['bytes']}|sha256={f['sha']}|rows={f['rows']}|active={int(f['active'])}|selected_prefix_schema={f['selected']}|trailing_cols={f['trailing_cols']}")
         for n,c in sorted(f["field_counts"].items()):
             print(f"FIELD_COUNT|{f['name']}|{n}|{c}")
+        for col,integer,empty,textc,missing in f["profiles"]:
+            print(f"COLUMN_PROFILE|{f['name']}|{col}|integer={integer}|empty={empty}|text={textc}|missing={missing}")
         for name in SCHEMAS:
             c=f["candidates"][name]
             print(f"SCHEMA_SCORE|{f['name']}|{name}|compatible={len(c['rows'])}|malformed={c['malformed']}|exact={c['exact']}|enemy_coverage={c['coverage']}|duplicate_ids={c['duplicate_ids']}|id_min={c['id_min']}|id_max={c['id_max']}")
-        sel=f["candidates"][f["selected"]]
+        if f["selected"]=="unknown":
+            sel={"idset":set(),"coverage":0}
+        else:
+            sel=f["candidates"][f["selected"]]
         print(f"SELECTED_ID_COUNT|{f['name']}|{len(sel['idset'])}")
+        if f["selected"]!="unknown" and f["trailing_cols"]:
+            print(f"PREFIX_SCHEMA_TRAILING_COLUMNS|{f['name']}|{f['selected']}|{f['trailing_cols']}")
         print(f"ENEMYBASE_SKILL_COVERAGE|{f['name']}|covered={sel['coverage']}|total={len(r['enemy_ids'])}|missing={len(f['enemy_missing'])}")
         if f["enemy_missing"]:
             print(f"ENEMYBASE_SKILL_MISSING_SAMPLE|{f['name']}|"+",".join(map(str,f["enemy_missing"][:40])))
