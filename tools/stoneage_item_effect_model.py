@@ -78,7 +78,9 @@ def _scan_item_value_tail(tail, default):
     if tail:
         tail = tail[1:]
     m = re.match(r"\s*([+-]?\d+)", tail)
-    return int(m.group(1), 10) if m else int(default)
+    if m:
+        return int(m.group(1), 10)
+    return None if default is None else int(default)
 
 
 def parse_battle_recovery_option(option, *, hp_token, mp_token):
@@ -310,7 +312,8 @@ def parse_field_recovery_option(
 
 
 def _clamp(value, lo, hi):
-    return min(max(int(value), int(lo)), int(hi))
+    # Source order is min(value, max) followed by max(value, min).
+    return max(min(int(value), int(hi)), int(lo))
 
 
 def apply_field_recovery(
