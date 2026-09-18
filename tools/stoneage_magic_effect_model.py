@@ -96,6 +96,20 @@ def recovery_target_allowed(*, magic_target, caster_battle_no, to_no):
         return to_no < TARGET_SIDE_0
     return True
 
+def recovery_wrapper_target_allowed(effect, *, to_no, battling):
+    """Top-level wrapper quirk around ordinary recovery targeting.
+
+    MAGIC_Recovery contains an explicit battle-time rejection for TARGET_ALL
+    (22), added as an old whole-target bug fix. MAGIC_OtherRecovery does not
+    contain that exact wrapper rejection.
+    """
+    if not battling:
+        return True
+    if str(effect) == "recovery" and int(to_no) == TARGET_ALL:
+        return False
+    return True
+
+
 def c_atoi(value):
     """Small C-atoi model: leading whitespace/sign/digits; no digits => 0."""
     text = str(value)
@@ -344,6 +358,68 @@ def magic_def_transition(*, current_turns, kind, turn):
 def att_reverse_transition(*, battle_flags, reverse_bit):
     """BATTLE_MultiAttReverse toggles, rather than merely enabling, the flag."""
     return int(battle_flags) ^ int(reverse_bit)
+
+
+def att_reverse_cast_transition(
+    *,
+    battle_flags,
+    reverse_bit,
+    earth,
+    water,
+    fire,
+    wind,
+):
+    """Apply the immediate BATTLE_MultiAttReverse + BATTLE_AttReverse behavior.
+
+    The XOR happens first. If the new reverse flag is on, fixed elemental
+    values are swapped earth<->fire and water<->wind. If the new flag is off,
+    BATTLE_AttReverse returns immediately, so the current fixed values remain
+    unchanged until the next parameter refresh.
+    """
+    flags = att_reverse_transition(
+        battle_flags=battle_flags,
+        reverse_bit=reverse_bit,
+    )
+    attrs = {
+        "earth": int(earth),
+        "water": int(water),
+        "fire": int(fire),
+        "wind": int(wind),
+    }
+    if flags & int(reverse_bit):
+        attrs = {
+            "earth": int(fire),
+            "water": int(wind),
+            "fire": int(earth),
+            "wind": int(water),
+        }
+    return {"battle_flags": flags, "attributes": attrs}
+
+
+def att_reverse_precommand_refresh(
+    *,
+    battle_flags,
+    reverse_bit,
+    earth,
+    water,
+    fire,
+    wind,
+):
+    """Model parameter refresh: rebuild normal fixed attrs, then reapply reverse."""
+    attrs = {
+        "earth": int(earth),
+        "water": int(water),
+        "fire": int(fire),
+        "wind": int(wind),
+    }
+    if int(battle_flags) & int(reverse_bit):
+        attrs = {
+            "earth": int(fire),
+            "water": int(wind),
+            "fire": int(earth),
+            "wind": int(water),
+        }
+    return attrs
 
 
 def res_and_def_transition(
