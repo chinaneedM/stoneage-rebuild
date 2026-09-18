@@ -21,6 +21,9 @@ class EnemyBaseProbeTests(unittest.TestCase):
             active,files=analyze(data,setup)
             self.assertEqual(active,"./data/enemybase.txt")
             self.assertEqual(len(files[0]["rows"]),2)
+            self.assertEqual(files[0]["raw_row_count"],2)
+            self.assertEqual(files[0]["profiles"][0][3],2)
+            self.assertEqual(files[0]["profiles"][6][1],2)
             self.assertTrue(files[0]["active"])
             self.assertEqual(files[0]["elem_sums"][10],2)
             self.assertEqual(files[1]["malformed"],1)
@@ -28,5 +31,6 @@ class EnemyBaseProbeTests(unittest.TestCase):
             with contextlib.redirect_stdout(buf):emit(data,setup)
             self.assertIn("STAT|enemybase.txt|TEMPNO|min=1|max=2|unique=2",buf.getvalue())
             self.assertIn("UNIQUE_PETSKILL_IDS|enemybase.txt|1",buf.getvalue())
+            self.assertIn("COLUMN_PROFILE|enemybase.txt|7|integer=2|empty=0|text=0|missing=0",buf.getvalue())
 
 if __name__=="__main__":unittest.main()
