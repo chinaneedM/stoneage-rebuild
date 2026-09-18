@@ -1,0 +1,20 @@
+name: Validate StoneAge ExChangeMan condition core
+concurrency:
+  group: stoneage-exchangeman-condition-core
+  cancel-in-progress: true
+on:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-exchangeman-condition.yml
+      - tools/stoneage_exchangeman_condition_model.py
+      - tests/test_stoneage_exchangeman_condition_model.py
+      - research/mechanics/STONEAGE-EXCHANGEMAN-CONDITION-CORE-R1.md
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_exchangeman_condition_model -v

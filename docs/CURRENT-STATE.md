@@ -616,11 +616,22 @@ Supplemental source ledgers:
 - Pet-skill model run `35374921866` completed **successfully** with **50 deterministic tests**; report-trigger rerun `35375022224` also succeeded.
 - B8 is complete. The next deterministic priority is **only the unresolved early/core NPC secondary argument/configuration edges**, not broad NPC re-enumeration and not guarded pet-skill expansion.
 
+## ExChangeMan secondary-argument condition core R1
+
+- Closed the first remaining early/core NPC secondary-argument edge around the common ExChangeMan event-condition interpreter.
+- Confirmed the second-stage argument path: file: references are resolved under npcdir, argument-file lines are merged with pipe separators, and field lookup is substring-based rather than exact-key based.
+- Reconstructed the stable EVENT grammar: comma OR, ampersand AND, first-matching branch index, plus LV / ITEM / ENDEV / NOWEV / SP / TIME / IMAGE and PET/PETEV predicates.
+- Preserved source quirks instead of repairing them: LV!= acts as equality; NOWEV!= is tautological; ITEM less-than/greater-than never succeed; quantity ITEM checks include equipment and pile counts while simple equality is carried-only; IMAGE relational operands are reversed; PET != falls through to equality.
+- Reconstructed level-scaled event cost and the NPC-local round-robin NpcWarp selector. The fixed source passes meindex to the warp primitive, so the archaeology model records NPC-object warp behavior rather than silently converting it to player teleport.
+- Added tools/stoneage_exchangeman_condition_model.py, tests/test_stoneage_exchangeman_condition_model.py, dedicated CI, and research/mechanics/STONEAGE-EXCHANGEMAN-CONDITION-CORE-R1.md.
+- Local reference validation passes 26 deterministic tests.
+- The next deterministic seam remains inside ExChangeMan: mutation/accept semantics and then an aggregate recovered-data usage probe.
+
 ## Immediate next actions
 
-1. **Resolve only the remaining early/core NPC secondary argument/configuration edges.** The generic NPC/world-content graph, save/elder, ordinary Pool storage, warp/map transitions, and common item/magic/pet-skill semantics are already closed. Start from unresolved common NPC dispatch functions where a secondary argument changes ordinary state, economy, travel, battle, pet/item, save/return or other deterministic core behavior.
-2. **Do not reopen broad NPC inventory work.** Skip arguments already explained by the existing world graph and skip later event/family/profession/tournament packages unless earlier evidence independently requires them.
-3. **Use source/data mismatches as the queue.** Prefer unresolved active recovered NPC rows whose argument/config cannot yet be deterministically replayed from the fixed source model; document mixed-snapshot defects rather than silently repairing them.
+1. **Finish the common ExChangeMan mutation / accept path before widening the NPC queue.** Reconstruct deterministic GetItem / DelItem / GetRandItem, Get/DelStone, pet/egg grant-removal, event-flag mutation, capacity preflight and operation order from the same three fixed source lineages.
+2. **Measure recovered ExChangeMan usage without retaining payload text.** Add an aggregate probe over the hash-pinned 2.5 specimen so active secondary keys and condition families can be distinguished from source capability that the recovered data never exercises.
+3. **Only then advance to the next unresolved early/core NPC secondary edge.** Do not reopen broad NPC inventory work, and keep later event/family/profession/tournament packages out unless earlier evidence independently requires them.
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
 6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.
