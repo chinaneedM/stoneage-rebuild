@@ -722,11 +722,25 @@ Supplemental source ledgers:
 - Healer/WindowHealer were found to already be closed by STONEAGE-HEALER-RECOVERY-CORE-R1 and were not duplicated.
 - Remaining-class triage now selects Riderman ahead of Windowman, Bankman and Raceman.
 
+## Riderman active core closure — 2026-09-19
+
+- Real-byte Riderman probe 35383566011 succeeded: 4/4 refs have inline conff pointers, all 4 resolve, and all 4 share one identical conff content; aggregate conff SHA-256 is 20c87aa00cb82aeb7bde861d900f1dc159f9794a2f9693065186578b6b2a7009.
+- Recovered tuition ladder is 5000 -> ride 40, 10000 -> ride 80, 15000 -> ride 120, 20000 -> ride 200, via windows 110/120/130/140 targeting hard-coded actions 6/7/8/9.
+- All four tuition windows retain letter1..4 values, but the active trainer's letter/pet prerequisite block is #if 0 in gavin/iriselia and absent from Bismarck's active path. Recovered data has no takeitem/giveitem/checkhaveitem/checkdonthaveitem key.
+- Training deducts Stone before writing CHAR_LEARNRIDE. Successful training can additionally credit takegold/5 to a matching manor-family account; that family persistence remains a separate later package.
+- Final-tier lineage divergence is explicit: gavin/iriselia only allow exactly learnride=120 into the 200 tier, while Bismarck allows 120..200 inclusive and therefore can repeatedly charge a character already at 200.
+- Native riding confirms CHAR_LEARNRIDE as the pet-level ceiling. Stable common mount gates include not-in-battle, valid pet, not already riding, training >= pet level, loyalty/fixed-AI >=100, player level +5 >= pet level, and a direct ridePetTable mapping.
+- Later riding extensions are versioned: _NEW_RIDEPETS is enabled in gavin/iriselia but not fixed Bismarck; pet-transmigration limits and Bismarck trade-mode checks also diverge.
+- Transmigration dismounts but does not reset CHAR_LEARNRIDE because the reset line is commented out in the fixed source.
+- Added tools/stoneage_riderman_core_model.py, tests/test_stoneage_riderman_core_model.py, dedicated CI and research/mechanics/STONEAGE-RIDERMAN-CORE-R1.md.
+- Local reference validation passes 19 deterministic tests.
+- Riderman R1 is closed for recovered 2.5 trainer configuration plus fixed-descendant common personal riding behavior.
+
 ## Immediate next actions
 
-1. **Advance to Riderman as the next personal persistent-state seam.** The recovered queue has 4 refs with conff-backed class configuration. Measure the recovered config shape first, then reconstruct tuition, ride-eligibility, item-letter and CHAR_LEARNRIDE progression while separating family/village revenue extensions.
-2. **Keep Windowman and Action/TimeMan deferred.** Their inspected common callbacks are presentation or conditional-window behavior rather than ordinary persistent-state mutation.
-3. **Keep Bankman, Raceman, Scheduleman and family PK/management packages later-scope.** Bank mutation is coupled to family protocol, while Raceman/Scheduleman are race/family subsystems.
+1. **Advance to TimeMan as the next common deterministic world-time seam.** Its 34 recovered refs are all file-backed; measure active time/change-image/message keys first, then reconstruct only the fixed-descendant common StoneAge-time visibility/image mode behavior.
+2. **Keep Windowman and Action below TimeMan.** They are primarily conditional-window/message presentation and do not expose an ordinary persistent-state mutation path in the inspected common callbacks.
+3. **Keep Bankman, Raceman, Scheduleman and family PK/management packages later-scope.** Personal-bank mutation is coupled to the family protocol; race and scheduling classes remain expansion/family systems.
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
 6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.
