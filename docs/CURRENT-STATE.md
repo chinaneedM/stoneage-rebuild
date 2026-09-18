@@ -454,7 +454,8 @@ Supplemental source ledgers:
 - Added `docs/PHASE0-MILESTONE-GAP-AUDIT-R1.md` as the current gap map.
 - Corrected the planning boundary: the recovered gameplay-data inventory and coherence probe already exist and are **completed foundations**, not work to rebuild.
 - Early/core deterministic mechanics now cover creation/birth, growth/transmigration, enemy/group/encounter chains, battle-adjacent death/capture, party, item use/equip, healing, direct trade, item shop, save/logout, and appear/login-return membership behavior.
-- The ordered early/core gaps through savepoint/elder, ordinary Pool storage, field warp/map transitions, and the generic NPC/world-content graph are now closed at R1. The next deterministic gap is **item / magic / pet-skill effect callback joins**.\n- Professions, ordinary-player riding, family/guild, AutoPK, six-player party, account-shared Depot warehouses, pet fusion and similar later branches remain version-diff tracks unless earlier evidence independently requires them.
+- The ordered early/core gaps through savepoint/elder, ordinary Pool storage, field warp/map transitions, the generic NPC/world-content graph, callback joins, and the ordinary magic effect core are now closed at R1. The next deterministic gap is **common item effect semantics**.
+- Professions, ordinary-player riding, family/guild, AutoPK, six-player party, account-shared Depot warehouses, pet fusion and similar later branches remain version-diff tracks unless earlier evidence independently requires them.
 - Modern transactional persistence, typed import pipelines, engine/network/UI architecture and asset recreation remain DESIGN work and must not be mixed into historical reconstruction.
 
 ## Save point / elder / return-point core reconstruction — 2026-09-18
@@ -527,24 +528,50 @@ Supplemental source ledgers:
 
 - Closed the table-record -> declared-source dispatch join for active recovered `itemset.txt`, `magic.txt` and `petskill.txt` without redoing their existing schemas.
 - Item callback strings resolve through the global `getFunctionPointerFromName` registry; magic and pet skills each use their own dedicated hash + exact-string dispatch table.
-- Active item callbacks are sparse outside use-time behavior: 957 USE rows / 52 unique tokens; 51 ATTACH rows / 5 tokens; 51 DETACH rows / 5 tokens; 40 DROP rows / 3 tokens; 2 PICKUP rows / 1 token; 3 RELIFE rows / 1 token; INIT/PREOVER/POSTOVER/WATCH are empty in this recovered active itemset.
+- Active item callbacks remain sparse outside use-time behavior: 957 USE rows / 52 unique tokens; 51 ATTACH rows / 5 tokens; 51 DETACH rows / 5 tokens; 40 DROP rows / 3 tokens; 2 PICKUP rows / 1 token; 3 RELIFE rows / 1 token; INIT/PREOVER/POSTOVER/WATCH are empty in this recovered active itemset.
 - Every recovered non-USE item callback token resolves in all three fixed descendant source tables.
-- Item USE is versioned but fully explainable by the inspected source family: 36/52 unique tokens (904/957 rows) are common to all three; 16/52 tokens (53 rows) exist only in a subset; zero recovered USE tokens are absent from all three.
-- Active magic has the strongest coherence: all 17 unique function tokens across all 181 rows resolve in all three fixed descendant magic dispatch tables.
-- Active pet skills contain 69 unique function tokens across 147 rows: 65 tokens / 143 rows resolve in all three fixed sources, while 4 tokens / 4 rows resolve in none of them. Those four rows are quarantined as recovered-data / inspected-source skew rather than assigned invented behavior.
-- The callback probe uses declared fixed-source table entries; macro-gated textual presence is not promoted to compiled-active proof.
-- Added `tools/stoneage_effect_callback_coverage_probe.py`, deterministic regression tests, dedicated real-byte CI, `research/recovered/STONEAGE-25-EFFECT-CALLBACK-COVERAGE-R1.txt`, and `research/mechanics/STONEAGE-EFFECT-CALLBACK-GRAPH-R1.md`.
-- GitHub Actions run `35368664461` completed **successfully** after parser fixes for the Bismarck magic-table naming divergence.
-- Next priority: **ordinary magic effect semantics**. Magic is selected first because its recovered callback layer is completely covered across all three fixed source lineages; common item effects and common pet-skill effects follow afterward.
+- Item USE source coverage is now separated from preprocessor status:
+  - 17 unique tokens / 818 rows are unguarded in all three fixed source lineages;
+  - 19 unique tokens / 86 rows are guarded in all three;
+  - 16 unique tokens / 53 rows have partial source-lineage coverage;
+  - zero active USE tokens are absent from all three.
+- Active magic is equally clean at the guard boundary: 9 unique tokens / 130 rows are unguarded in all three, while 8 tokens / 51 rows are guarded in all three; there are no mixed, partial, or missing active magic tokens.
+- Active pet skills contain 69 unique function tokens across 147 rows: 65 tokens / 143 rows resolve in all three fixed sources, while 4 tokens / 4 rows resolve in none of them. Those four rows remain quarantined as recovered-data / inspected-source skew rather than assigned invented behavior.
+- Added guard-aware aggregate classification to `tools/stoneage_effect_callback_coverage_probe.py` without publishing recovered callback strings.
+- GitHub Actions run `35370861684` completed **successfully** for the final real-byte callback/guard classification.
+- Callback coverage is no longer the current blocker. The next semantic boundary is the 17 all-three unguarded item USE callbacks.
+
+## Ordinary magic effect core reconstruction — 2026-09-18
+
+- Reconstructed the nine magic callback families that are simultaneously unguarded in all three pinned descendant source revisions: Recovery, OtherRecovery, FieldAttChange, StatusChange, MagicDef, StatusRecovery, Ressurect, AttReverse and ResAndDef.
+- The recovered active data independently supports this boundary: those nine tokens account for 130 / 181 active magic rows; the other 51 rows use eight callbacks that are guarded in all three fixed source lineages.
+- Common callback mutation order is caster validity -> battle-init rejection -> MP sufficiency -> MP deduction -> battle/field routing. As a result, battle-only common magic can fail for being outside battle **after MP has already been consumed**.
+- Recovery and OtherRecovery are the two common field-capable families; field target validity is also checked after MP deduction.
+- Old battle target authority is modeled as slots 0..9 and 10..19, with side/all selectors 20/21/22. Ordinary effects expand living targets; resurrection expands dead targets. The old all-target source contains list-termination hazards that are documented but not emulated as unsafe memory behavior.
+- Ordinary Recovery additionally enforces `MAGIC_TARGET` packet-side rules and preserves the old battle-time explicit rejection of selector 22 in the Recovery wrapper.
+- Recovery amount uses a 90%-110% power roll. Player recovery-rate multiplier is `1 + VITAL × 0.00010`; non-player multiplier is `1 + VITAL × 0.00005`. Percentage battle recovery multiplies by target MAXHP; field recovery has no observed percent branch.
+- FieldAttChange parses attribute, power and duration; invalid power outside 0..100 returns to 30 and duration defaults to 3 turns.
+- StatusChange parses status plus default 3-turn / success-15 parameters, then delegates resistance/hit resolution to the battle status checker.
+- StatusRecovery preserves an old single-candidate behavior: it scans all active ordinary statuses, retains the highest-index one, and can clear only that selected status.
+- MagicDef directly writes the selected defense-kind turn counter; later casts overwrite the same kind.
+- Resurrection uses dead-target expansion and skips PvP player resurrection. `power == 0` yields full MAXHP behavior. For nonzero power the old code computes a percent-derived amount when `%` is present and then overwrites it with the 90%-110% random power roll, so the percent marker has no final HP effect.
+- AttReverse toggles the reverse flag with XOR. Enabling immediately maps earth<-fire, water<-wind, fire<-earth, wind<-water. Disabling the flag does not immediately swap values back; normal fixed attributes are rebuilt during the next battle parameter refresh.
+- ResAndDef combines the same resurrection behavior with a magic-defense duration on valid dead targets.
+- Macro-gated attack magic, extra status systems, metamorphosis, deep poison, barrier, silence, call-dragon, family/sprite MP modifiers, riding interactions and no-magic-map restrictions remain versioned rather than flattened into this common core.
+- Added `tools/stoneage_magic_effect_model.py`, `tests/test_stoneage_magic_effect_model.py`, dedicated CI and `research/mechanics/STONEAGE-MAGIC-EFFECT-CORE-R1.md`.
+- The final model has **35 deterministic regression tests**. GitHub Actions runs `35370420953` and report-state rerun `35370877749` completed **successfully**.
+- Next priority: **common item effect semantics**, starting with the 17 active USE callbacks that are unguarded in all three fixed source lineages.
 
 ## Immediate next actions
 
-1. **Continue deterministic early/core loop closure using the existing gameplay inventory.** The inventory/coherence foundations plus enemy/encounter/appear/save-point/ordinary-Pool-storage/warp-transition/NPC-world-graph work are already present. The next server-authoritative seam is **item / magic / pet-skill effect callback coverage and joins**. Keep map 817/water-world missing assets, duplicate NPC-template ambiguity, source/data function-set skew, and mixed-snapshot dangling references as version-diff targets for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.\n2. **Reject repacks before analysis.** For every candidate, record source/provenance, archive filename, size, hashes, timestamps, installer metadata, executable names, unexpected patchers/loaders, and signs of private-server modification. Do not call a client "clean" merely because its title/version string looks old.
-3. **The first verified usable client becomes the bridge specimen.** Immediately build a reproducible extraction inventory: complete file tree, hashes, PE metadata, strings/resources, directories, update components, graphics containers, maps, data tables, audio, UI assets, and executable/resource relationships.
-4. **Reverse engineer data before recreating gameplay.** Determine resource/container formats and indexes; decode graphics/animations; map character/pet/item/skill/stat records; reconstruct map formats and event/NPC data; identify combat and progression tables where present; document which behavior is client-side versus server-dependent.
-5. **Build tooling around recovered bytes.** Put parsers, validators, extractors and diff tools in `tools/`; put deterministic format tests in `tests/`. Do not commit proprietary original client payloads by default—commit hashes, metadata, schemas, derived inventories, test fixtures where legally appropriate, and independently written tooling.
-6. **Use later/earlier clients comparatively.** When a second clean artifact is recovered, perform file- and data-level diffs to identify inherited versus added maps, pets, skills, UI, systems and format revisions. This is the main route for reconstructing evolution; historical articles are secondary corroboration.
-7. **De-prioritize nontechnical archaeology.** Package price, JAN/model numbers, collector accessories, staff biography and similar topics are paused unless they directly unlock a client, prove provenance, or resolve a technical ambiguity.
+1. **Continue deterministic early/core loop closure using the existing gameplay inventory.** The next server-authoritative seam is the **17 all-three unguarded common item USE callbacks**, plus the already-common non-use item callback slots. Reconstruct their field/battle effect semantics first; keep 19 all-three guarded USE tokens / 86 rows and 16 partial-source tokens / 53 rows as explicit version-diff tracks. After item effects, proceed to the 65 all-three common pet-skill callback families while quarantining four all-source-missing pet-skill rows. Keep map 817/water-world missing assets, duplicate NPC-template ambiguity, NPC function-set source/data skew, and other mixed-snapshot dangling references as comparison targets for the first clean client.
+2. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks rather than treating any descendant package as the original baseline.
+3. **Reject repacks before analysis.** For every candidate, record source/provenance, archive filename, size, hashes, timestamps, installer metadata, executable names, unexpected patchers/loaders, and signs of private-server modification.
+4. **The first verified usable client becomes the bridge specimen.** Immediately build a reproducible extraction inventory: complete file tree, hashes, PE metadata, strings/resources, directories, update components, graphics containers, maps, data tables, audio, UI assets, and executable/resource relationships.
+5. **Reverse engineer data before recreating gameplay.** Determine resource/container formats and indexes; decode graphics/animations; map character/pet/item/skill/stat records; reconstruct map formats and event/NPC data; identify combat and progression tables where present; document which behavior is client-side versus server-dependent.
+6. **Build tooling around recovered bytes.** Put parsers, validators, extractors and diff tools in `tools/`; put deterministic format tests in `tests/`. Do not commit proprietary original client payloads by default.
+7. **Use later/earlier clients comparatively.** When a second clean artifact is recovered, perform file- and data-level diffs to identify inherited versus added maps, pets, skills, UI, systems and format revisions.
+8. **De-prioritize nontechnical archaeology.** Package price, model numbers, collector accessories and similar topics remain paused unless they directly unlock a client, prove provenance, or resolve a technical ambiguity.
 
 ## Continuity status
 
