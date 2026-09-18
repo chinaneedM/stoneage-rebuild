@@ -24,11 +24,18 @@ Historical archaeology remains useful only when it helps authenticate, date, com
 - Later systems/content may ultimately be integrated, but through coherent progression rather than a feature dump.
 - Emotional milestones such as first pet capture, first ride, first major exploration, etc. are part of the design target.
 
+## Latest clean-client correction — 2026-09-18
+
+- **Version labels are not byte provenance.** A server/download label such as "1.82" must not be promoted to a client-build fact until the installer/file tree/executable is recovered and inspected.
+- A contemporaneous Beijing Wayi statement materially changes the Sina interpretation: its 2003 anniversary **1.82 server** accepted the then-current `宠物进化史` client, so the Sina `1.82 安装包` label is now a TARGET-B recovery clue rather than an assumed 2001 1.82 baseline.
+- Korean `1.74` and Japanese `1.74a` are now prioritized because each has contemporaneous operator-era/free-distribution evidence tied to an explicit client/service version.
+- No 1.74, 1.74a or Sina-labelled "1.82" installer bytes have yet been recovered; therefore no clean-client bridge specimen has yet been accepted.
+
 ## Active clean-client recovery leads — 2026-09-18
 
-- **Mainland 1.82 / Sina period mirror — TARGET-A:** Sina's historical StoneAge download page is currently indexed with an explicit `石器时代1.82客户端下载` / `安装包` entry. The actual href, filename and bytes are not yet recovered because the current page-body fetch path times out.
-- **Japanese 1.74a — TARGET-A:** contemporaneous Mado no Mori reporting identifies version `1.74a` dated 2003-12-12 as a free beta client downloadable from the official StoneAge site and Hangame. Installer identity/bytes remain unrecovered.
-- **Korean 1.74 — artifact not yet located:** version identity is documented, but exact client searches still have no clean installer/file tree/hash.
+- **Korean 1.74 — TARGET-A:** a preserved 2003-07-21 Netmarble-era response explicitly gives the service start as 2003-07-28 and the version as `1.74`. The original installer/file tree/hash is not yet recovered, but this is now the strongest exact operator-era bridge-version target.
+- **Japanese 1.74a — TARGET-A:** contemporaneous Mado no Mori metadata identifies `1.74a` dated 2003-12-12 as a free beta client, and 4Gamer independently records official-site client pre-download beginning on 2003-12-12 before open beta. Installer identity/bytes remain unrecovered.
+- **Mainland "1.82" / Sina period mirror — TARGET-B pending byte verification:** Sina's historical download page has an explicit `石器时代1.82客户端下载` / `安装包` label, but a contemporaneous Beijing Wayi statement says its 2003 anniversary 1.82 server could be entered with the then-current `宠物进化史` client. Therefore the page label is not proof of an original 1.82 client build; href/bytes remain useful only as a candidate to identify by file-level analysis.
 - **JSS `stoneage.exe` — TARGET-A partial artifact:** exact first-party path is known, but binary extraction remains blocked.
 
 Canonical recovery ledger: `docs/SOURCE-REGISTRY-CLIENT-RECOVERY-R1.md`.
@@ -239,7 +246,7 @@ Supplemental source ledgers:
 
 ## Immediate next actions
 
-1. **Recover the earliest freely/publicly obtainable clean StoneAge client artifact.** Current first targets are now concrete: (a) extract the Sina period-mirror href/filename/bytes for the explicit Mainland **1.82 安装包** entry; (b) recover the official/free Japanese **1.74a** installer identity/bytes from archived `stoneage.to`, Hangame or software mirrors; (c) continue Korean `1.74` and 1999 JSS recovery in parallel. Prefer original installers, magazine-CD mirrors, operator download mirrors, preserved full client archives, or complete file trees with provenance.
+1. **Recover the earliest freely/publicly obtainable clean StoneAge client artifact.** Current order is: (a) recover the Korean **1.74** operator-era installer identity/bytes; (b) recover the official/free Japanese **1.74a** installer identity/bytes from archived `stoneage.to`, Hangame or software mirrors; (c) continue 1999 JSS recovery in parallel; (d) continue extracting the Sina "1.82" href/bytes, but treat it only as an unverified version-label candidate until file-level analysis identifies the actual build. Prefer original installers, magazine-CD mirrors, operator download mirrors, preserved full client archives, or complete file trees with provenance.
 2. **Reject repacks before analysis.** For every candidate, record source/provenance, archive filename, size, hashes, timestamps, installer metadata, executable names, unexpected patchers/loaders, and signs of private-server modification. Do not call a client "clean" merely because its title/version string looks old.
 3. **The first verified usable client becomes the bridge specimen.** Immediately build a reproducible extraction inventory: complete file tree, hashes, PE metadata, strings/resources, directories, update components, graphics containers, maps, data tables, audio, UI assets, and executable/resource relationships.
 4. **Reverse engineer data before recreating gameplay.** Determine resource/container formats and indexes; decode graphics/animations; map character/pet/item/skill/stat records; reconstruct map formats and event/NPC data; identify combat and progression tables where present; document which behavior is client-side versus server-dependent.

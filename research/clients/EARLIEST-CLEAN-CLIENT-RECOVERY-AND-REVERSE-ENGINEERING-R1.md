@@ -21,6 +21,21 @@ Search all branches in parallel rather than waiting indefinitely for one perfect
 
 The first candidate that passes provenance and contamination checks becomes the bridge specimen.
 
+## Version-label rule
+
+A historical page, server name, archive filename, forum post or launcher label is **not sufficient evidence of the client build contained in the bytes**.
+
+Concrete example: a 2003 Beijing Wayi statement says its anniversary "1.82 server" could be entered using the then-current `宠物进化史` client. Therefore a period page labelled "1.82 client/download" must still be verified from the recovered executable, resource set and file tree before being classified as an original 1.82 build.
+
+Version attribution should use, where available:
+
+- PE/file version resources;
+- embedded version strings;
+- installer metadata;
+- operator/domain configuration;
+- file-tree/resource-generation fingerprints;
+- comparison with independently recovered copies.
+
 ## Clean-client acceptance test
 
 For every candidate record:

@@ -12,7 +12,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - **TARGET-B** — credible preservation lead, but distribution provenance is weaker.
 - **REJECT** — demonstrated repack, server bundle, modified client, custom patcher/injector, or mismatched version.
 
-## TARGET-A — Mainland China StoneAge 1.82 — Sina historical download mirror
+## TARGET-B — Mainland China StoneAge "1.82" — Sina historical download label requiring byte verification
 
 - Source page: https://games.sina.com.cn/zhqu/sta/download.shtml
 - Source type: contemporaneous Sina Games StoneAge download page / portal mirror
@@ -21,17 +21,20 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - `石器时代1.82客户端下载`
   - `石器时代1.82`
   - `安装包`
+- Critical version-label caveat:
+  - a contemporaneous Beijing Wayi statement dated 2003-03-21 says the anniversary **1.82 server** could be entered using the then-current **石器时代-宠物进化史** client, with compatibility for other client versions to be added;
+  - therefore a 2003 page/button labelled `1.82` or `1.82 安装包` is **not sufficient proof that the linked bytes are an original historical 1.82 client build**.
+  - source: https://news.17173.com/content/2003-3-21/n48_964760.html
 - Operational value:
-  - this is currently the strongest public period-mirror lead to a Mainland 1.82 client installer;
-  - the page also distinguishes install packages, installed-file packages and virtual-disc images for later versions, which makes the 1.82 `安装包` label materially more useful than a later private-server repost.
+  - Sina remains a valuable period-mirror lead and may still resolve to a genuine old installer;
+  - however its label must be treated as a recovery key only until executable/resource/file-tree evidence identifies the actual client generation.
 - Current blocker:
-  - the present extraction path can index the page text but times out when opening the page body;
   - the historical 1.82 anchor href, filename, size and bytes have not yet been extracted;
-  - therefore **no hash, file tree or purity claim is made**.
+  - therefore **no hash, file tree, exact client-version attribution or purity claim is made**.
 - Next action:
   - recover the original href/filename through search caches, archived HTML, period mirrors, or any surviving Sina download host;
-  - only after bytes are obtained run the clean-client acceptance test.
-- Status: **TARGET-A**.
+  - if bytes are recovered, verify PE/resource/version strings, file tree and contamination before assigning a client version.
+- Status: **TARGET-B / unverified version-label candidate**.
 
 ## TARGET-A — Japanese revival StoneAge 1.74a — official free beta distribution
 
@@ -43,6 +46,9 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - client date field **2003-12-12**;
   - supported Windows 98/Me/2000/XP;
   - downloads were available from the operator's official `stoneage.to` site and Hangame.
+- Independent contemporary corroboration:
+  - 4Gamer's 2003-12-12 report says client **先行ダウンロード** began that day on the official site before the open beta, and that Hangame would also provide the client;
+  - source: https://www.4gamer.net/news/history/2003.12/20031212000000detail.html
 - Operational value:
   - this is direct period evidence of a freely distributed client and therefore a strong clean-client recovery target;
   - it is a useful near-descendant bridge even though it is not a 1999 JSS build.
@@ -53,15 +59,21 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - recover archived `stoneage.to` / Hangame download-page paths, old software-catalog mirrors, magazine-CD indexes, or preserved installer references.
 - Status: **TARGET-A**.
 
-## TARGET-A/B — Korean StoneAge 1.74
+## TARGET-A — Korean StoneAge 1.74 — Netmarble service baseline
 
-- Historical version evidence is already registered separately.
+- Contemporary preserved notice:
+  - https://www.gamemeca.com/fam.php?gcode=fam_scarecrow&gid=133954&rts=board
 - Current state:
-  - the version label `1.74` is independently documented for Korean service;
-  - current exact download/client searches have not yet produced a provenance-preserving installer, mirror, filename, size or hash.
+  - a dated 2003-07-21 preserved response identifies the Netmarble StoneAge service start as **2003-07-28** and the service version as **`1.74`**;
+  - the response also says the service would be provided free to members;
+  - current exact download/client searches still have not produced a provenance-preserving installer, mirror, filename, size or hash.
 - Operational value:
-  - if recovered, Korean 1.74 may be an especially useful bridge because it predates the Japanese 1.74a revival label and can be compared directly.
-- Status: **TARGET-A for version identity / not-yet-located artifact**.
+  - this is a concrete operator-era version anchor rather than a later private-server label;
+  - if its original installer is recovered, Korean 1.74 is currently one of the strongest candidates for the first clean bridge specimen.
+- Evidence boundary:
+  - the dated version statement does not itself prove byte identity with any JSS build;
+  - installer provenance and file-level analysis are still required.
+- Status: **TARGET-A / exact operator-era version identity, bytes not yet located**.
 
 ## TARGET-A — JSS original launcher object
 
@@ -81,8 +93,9 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 
 ## Current recovery order
 
-1. Extract the actual Sina 1.82 installer href/filename/bytes.
-2. Recover Japanese 1.74a installer identity/bytes from archived operator/Hangame/software mirrors.
-3. Continue Korean 1.74 installer recovery.
-4. Continue JSS original executable/full-client recovery in parallel.
-5. As soon as any candidate bytes are obtained, stop broad historical searching long enough to perform the clean-client acceptance test and build the first full inventory.
+1. Recover the **Korean 1.74** operator-era installer identity/bytes.
+2. Recover the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
+3. Continue JSS original executable/full-client recovery in parallel.
+4. Recover the Sina "1.82" href/bytes as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
+5. Continue earliest Taiwan operator-client recovery in parallel.
+6. As soon as any candidate bytes are obtained, stop broad searching long enough to perform the clean-client acceptance test and build the first full inventory.
