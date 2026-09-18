@@ -187,6 +187,21 @@ def analyze(npc_dir):
 
     counts["template_names_exchangeman"] = len(exchange_names)
     counts["template_names_exchangeman_ambiguous"] = len(ambiguous_names)
+    for key in (
+        "create_refs_exchangeman_ambiguous",
+        "quirk_live_lv_not_equal",
+        "quirk_live_nowev_not_equal",
+        "quirk_live_item_relational",
+        "quirk_live_image_relational",
+        "quirk_live_pet_not_equal",
+        "quirk_capable_getstone_delstone_nonnet",
+        "quirk_capable_evdel",
+        "quirk_capable_evdel_nonstar_item_term",
+        "quirk_capable_delitem_loop_index_truncation",
+        "getpet_random_candidate_blocks",
+        "getegg_random_candidate_blocks",
+    ):
+        counts[key] = 0
 
     for name, arg in parse_create_refs(creates):
         if name not in exchange_names:
@@ -255,10 +270,24 @@ def analyze(npc_dir):
                     block_families.add(fam)
                     if b"!=" in term:
                         op_terms["!="] += 1
+                        if fam == "LV":
+                            counts["quirk_live_lv_not_equal"] += 1
+                        elif fam == "NOWEV":
+                            counts["quirk_live_nowev_not_equal"] += 1
+                        elif fam in {"PET", "PETEV"}:
+                            counts["quirk_live_pet_not_equal"] += 1
                     elif b"<" in term:
                         op_terms["<"] += 1
+                        if fam == "ITEM":
+                            counts["quirk_live_item_relational"] += 1
+                        elif fam == "IMAGE":
+                            counts["quirk_live_image_relational"] += 1
                     elif b">" in term:
                         op_terms[">"] += 1
+                        if fam == "ITEM":
+                            counts["quirk_live_item_relational"] += 1
+                        elif fam == "IMAGE":
+                            counts["quirk_live_image_relational"] += 1
                     elif b"=" in term:
                         op_terms["="] += 1
                     else:
@@ -269,14 +298,23 @@ def analyze(npc_dir):
                     family_blocks[fam] += 1
 
             typ = field_value(block, b"TYPE")
+            matched_types = []
             if typ is not None:
-                matched = False
                 for label in (b"REQUEST", b"ACCEPT", b"MESSAGE"):
                     if label in typ:
-                        type_blocks[label.decode("ascii")] += 1
-                        matched = True
-                if not matched:
+                        name = label.decode("ascii")
+                        type_blocks[name] += 1
+                        matched_types.append(name)
+                if not matched_types:
                     type_blocks["OTHER"] += 1
+                    matched_types.append("OTHER")
+
+            if field_value(block, b"EndSetFlg") is not None:
+                if matched_types:
+                    for name in matched_types:
+                        counts["endset_type_" + name.lower()] += 1
+                else:
+                    counts["endset_type_missing"] += 1
 
             delete = field_value(block, b"DelItem")
             if delete is not None:

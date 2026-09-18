@@ -74,6 +74,12 @@ class ExChangeManUsageProbeTests(unittest.TestCase):
             self.assertEqual(c["quirk_capable_delitem_loop_index_truncation"], 1)
             self.assertEqual(c["quirk_capable_getstone_delstone_nonnet"], 1)
             self.assertEqual(c["blocks_getitem_and_random"], 1)
+            self.assertEqual(c["quirk_live_lv_not_equal"], 0)
+            self.assertEqual(c["quirk_live_nowev_not_equal"], 1)
+            self.assertEqual(c["quirk_live_item_relational"], 0)
+            self.assertEqual(c["quirk_live_image_relational"], 0)
+            self.assertEqual(c["quirk_live_pet_not_equal"], 0)
+            self.assertEqual(c["endset_type_accept"], 1)
         finally:
             td.cleanup()
 
