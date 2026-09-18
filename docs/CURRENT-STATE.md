@@ -627,10 +627,20 @@ Supplemental source ledgers:
 - Local reference validation passes 26 deterministic tests.
 - The next deterministic seam remains inside ExChangeMan: mutation/accept semantics and then an aggregate recovered-data usage probe.
 
+## ExChangeMan mutation / accept core R1
+
+- Closed the common ExChangeMan mutation/accept control-flow seam after EVENT branch selection.
+- Reconstructed `NPC_ItemFullCheck`, `NPC_EventAdd`, `NPC_AcceptDel`, item deletion slot-domain differences, pet/egg random candidate selection, and common event-flag set/toggle/clear helpers across the three pinned source descendants.
+- Confirmed active fixed-build compile branches for `_ITEM_PILENUMS` and `_EXCHANGEMAN_REQUEST_DELPET`.
+- Preserved source quirks: ordinary non-star DelItem can terminate capacity projection early through reused loop index; starred deletion forecast assumes count == freed slots; active pile-mode non-star EVDEL targets -1; mode 2 becomes mode 0 only after preflight; accept-side item grant failures are ignored; GetStone/DelStone prechecks do not net; pet/egg random list counting reuses first-empty pet slot; EndSetFlg uses a blind NOWEVENT XOR toggle.
+- Added `tools/stoneage_exchangeman_mutation_model.py`, `tests/test_stoneage_exchangeman_mutation_model.py`, dedicated CI, and `research/mechanics/STONEAGE-EXCHANGEMAN-MUTATION-CORE-R1.md`.
+- Local reference validation passes 25 deterministic tests.
+- The next deterministic step is now the aggregate recovered 2.5 ExChangeMan secondary-argument usage probe; only after that should another NPC class be opened.
+
 ## Immediate next actions
 
-1. **Finish the common ExChangeMan mutation / accept path before widening the NPC queue.** Reconstruct deterministic GetItem / DelItem / GetRandItem, Get/DelStone, pet/egg grant-removal, event-flag mutation, capacity preflight and operation order from the same three fixed source lineages.
-2. **Measure recovered ExChangeMan usage without retaining payload text.** Add an aggregate probe over the hash-pinned 2.5 specimen so active secondary keys and condition families can be distinguished from source capability that the recovered data never exercises.
+1. **Measure recovered ExChangeMan usage without retaining payload text.** Add an aggregate probe over the hash-pinned 2.5 specimen so active secondary keys, condition families and source quirks can be distinguished from dormant source capability.
+2. **Use that recovered-data result to close or narrow the ExChangeMan seam.** Record source/data mismatches explicitly; do not silently repair malformed or mixed-snapshot configuration.
 3. **Only then advance to the next unresolved early/core NPC secondary edge.** Do not reopen broad NPC inventory work, and keep later event/family/profession/tournament packages out unless earlier evidence independently requires them.
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.

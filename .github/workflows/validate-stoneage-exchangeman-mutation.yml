@@ -1,0 +1,21 @@
+name: Validate StoneAge ExChangeMan mutation core
+concurrency:
+  group: stoneage-exchangeman-mutation-core
+  cancel-in-progress: true
+on:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-exchangeman-mutation.yml
+      - tools/stoneage_exchangeman_mutation_model.py
+      - tools/stoneage_exchangeman_condition_model.py
+      - tests/test_stoneage_exchangeman_mutation_model.py
+      - research/mechanics/STONEAGE-EXCHANGEMAN-MUTATION-CORE-R1.md
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_exchangeman_mutation_model -v
