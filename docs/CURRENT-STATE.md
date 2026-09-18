@@ -393,6 +393,25 @@ Supplemental source ledgers:
 - Added `tools/stoneage_healer_recovery_model.py`, fourteen deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-HEALER-RECOVERY-CORE-R1.md`.
 - Next priority: **trading / economy transfer semantics** — gold, item and pet offers, confirmation/locking, capacity checks, exchange ordering and cancellation.
 
+## Direct trade / economy transfer core reconstruction — 2026-09-18
+
+- Reconstructed direct player-to-player trade state and asset-transfer semantics across three preserved descendant lineages; market/stall trade remains separate.
+- Shared trade modes are FREE / SENDING / TRADING / LOCK. In the fixed active ordinary paths the SENDING assignment is dormant/commented, so valid trades normally enter TRADING directly.
+- Trade search requires standalone, non-battle participants. The target must be a player directly in front, trade-enabled, standalone, non-battle and FREE; multiple eligible targets on the same tile are rejected as ambiguous.
+- Direct trade supports carried items, carried pets and carried STONE/gold.
+- A side's confirmation flag freezes that side's own offer: item/pet/gold handlers reject further edits after confirmation.
+- gavinlinasd/iriselia fixed configs enable `_ITEM_PILEFORTRADE + _TRADESYSTEM2`: structured two-side offer records, then confirm/freeze both sides, then each side separately enters LOCK; the second lock triggers swap.
+- Bismarck retains those code paths but its fixed server `version.h` does not enable them, so its active lock choreography is the older/simplified variant. Protocol choreography is therefore versioned rather than flattened.
+- Structured preflight projects inventory/pet capacity and final gold caps before transfer. Full outgoing item stacks and outgoing pets are counted as capacity they will free.
+- Preserved item-capacity formula over-counts exact pile multiples: quantity 20 with receiver max pile 10 requires 3 slots in preflight because source uses `quantity / maxPile + 1` whenever quantity > maxPile.
+- Old gavinlinasd/iriselia pet care gate rejects an un-reborn receiver when offered pet level exceeds receiver level + 5 unless PickAllPet is active; Bismarck later changes this trade-specific delta to +20.
+- Family guardian pets are rejected in the structured old-core path. Later Bismarck binding/free-trade restrictions remain versioned additions.
+- Execution order is destructive: remove both sides' items, pets and offered gold first, then add incoming items, pets and gold. There is no rollback journal/snapshot transaction; safety relies on offer freezing plus preflight checks.
+- Transferred pets receive new owner/player identity and are parameter-recomputed.
+- Added `tools/stoneage_trade_economy_model.py`, seventeen deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-TRADE-ECONOMY-CORE-R1.md`.
+- GitHub reported no workflow-run records yet for the new workflow/research commits; no CI success is claimed.
+- Next priority: fresh deterministic-loop gap audit, with item shop buy/sell, pet storage/shop and save/logout persistence as current candidates.
+
 ## Immediate next actions
 
 1. **Continue recovered-byte reverse engineering.** REAL/ADRN/RD, SPR/SPRADRN, DAT runtime semantics, `1021.DAT`, and the major unresolved-graphic skew are now bounded as far as the mixed 2.5 bundle permits. Move the primary technical target outward into **character / pet / item / skill / stat / combat / progression data tables** in the recovered client/server corpus. First build a provenance-preserving inventory of candidate gameplay-data files and identify which tables are authoritative server data versus client display/cache data; then parse one family at a time with deterministic tests. Keep map 817/water-world missing assets as a version-diff target for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
