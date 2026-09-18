@@ -594,7 +594,7 @@ def analyze(args):
         getattr(args, name, None)
         for name in ("gavin_item_body", "iris_item_body", "bismarck_item_body")
     ):
-        active_item_tokens = set(item_slots["usefunc"])
+        active_item_tokens = set().union(*(set(counter) for counter in item_slots.values()))
         item_body_maps = {
             "gavin": merge_item_function_body_maps(
                 (args.gavin_item_body, getattr(args, "gavin_item_battle_body", None)),
@@ -642,6 +642,13 @@ def analyze(args):
             slot: common_unguarded_family_counts(counter, item_guard_maps)
             for slot, counter in item_slots.items()
         },
+        "item_slot_bodies": (
+            {
+                slot: item_body_coverage(counter, item_guard_maps, item_body_maps)
+                for slot, counter in item_slots.items()
+            }
+            if item_body_maps is not None else None
+        ),
         "item_use_guard": guard_coverage(item_slots["usefunc"], item_guard_maps),
         "item_use_common_families": common_unguarded_family_counts(
             item_slots["usefunc"], item_guard_maps
@@ -693,6 +700,20 @@ def emit(args):
                 f"unique_tokens={sg['unique_counts'].get(label,0)}|"
                 f"row_uses={sg['row_counts'].get(label,0)}"
             )
+        sb_all = r.get("item_slot_bodies")
+        if sb_all is not None:
+            sb = sb_all[slot]
+            for label in (
+                "stable_body_all3",
+                "macro_shell_all3",
+                "mixed_body_guard",
+                "partial_body_source",
+            ):
+                print(
+                    f"ITEM_SLOT_BODY_CLASS|{slot}|{label}|"
+                    f"unique_tokens={sb['unique_counts'].get(label,0)}|"
+                    f"row_uses={sb['row_counts'].get(label,0)}"
+                )
         sf = r["item_slot_common_families"][slot]
         print(
             f"ITEM_SLOT_COMMON_FAMILY_TOTAL|{slot}|"
