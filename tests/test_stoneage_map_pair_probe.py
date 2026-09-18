@@ -28,6 +28,7 @@ class StoneAgeMapPairProbeTests(unittest.TestCase):
             self.assertEqual(result["counts"]["parts_match"], 0)
             self.assertEqual(result["counts"]["event_match"], 0)
             self.assertEqual(result["map_only"], ["200"])
+            self.assertEqual(result["invalid_pairs"], [])
 
 
 if __name__ == "__main__":

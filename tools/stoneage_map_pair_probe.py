@@ -65,13 +65,18 @@ def analyze(map_dir: Path, sample_limit=20):
     }
     samples = []
     mismatches = []
+    invalid_pairs = []
     aggregate = hashlib.sha256()
 
     for key in paired:
         mp = maps[key]
         dp = dats[key]
-        mw, mh, map_payload = read_map_file(mp)
-        dw, dh, tile, parts, event = read_dat_file(dp)
+        try:
+            mw, mh, map_payload = read_map_file(mp)
+            dw, dh, tile, parts, event = read_dat_file(dp)
+        except Exception as exc:
+            invalid_pairs.append((key, mp.stat().st_size, dp.stat().st_size, str(exc)))
+            continue
         header_match = (mw, mh) == (dw, dh)
         tile_match = map_payload == tile
         parts_match = map_payload == parts
@@ -117,6 +122,7 @@ def analyze(map_dir: Path, sample_limit=20):
         "dat_only": dat_only,
         "samples": samples,
         "mismatches": mismatches,
+        "invalid_pairs": invalid_pairs,
         "aggregate_sha256": aggregate.hexdigest(),
     }
 
@@ -135,6 +141,7 @@ def emit(result, sample_limit=20):
     print(f"MAP_EQUALS_DAT_PARTS_COUNT|{c['parts_match']}")
     print(f"MAP_EQUALS_DAT_EVENT_COUNT|{c['event_match']}")
     print(f"MAP_MATCHES_NO_DAT_LAYER_COUNT|{c['map_matches_no_dat_layer']}")
+    print(f"INVALID_PAIR_COUNT|{len(result['invalid_pairs'])}")
     print(f"AGGREGATE_PAIR_SHA256|{result['aggregate_sha256']}")
     print("MAP_ONLY_SAMPLE|" + ",".join(result["map_only"][:sample_limit]))
     print("DAT_ONLY_SAMPLE|" + ",".join(result["dat_only"][:sample_limit]))
@@ -150,6 +157,9 @@ def emit(result, sample_limit=20):
     )
     for row in result["mismatches"][:sample_limit]:
         print("PAIR_MISMATCH_SAMPLE|" + "|".join(map(str, row)))
+    print("INVALID_PAIR_SAMPLE|key|map_bytes|dat_bytes|reason")
+    for row in result["invalid_pairs"][:sample_limit]:
+        print("INVALID_PAIR_SAMPLE|" + "|".join(map(str, row)))
 
 
 def main():
