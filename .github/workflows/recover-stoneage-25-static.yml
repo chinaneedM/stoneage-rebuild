@@ -94,21 +94,15 @@ jobs:
             stat -c '%n|%s' /tmp/sa25/stoneage25-combined.rar
             file /tmp/sa25/stoneage25-combined.rar
             echo
-            echo 'ARCHIVE TEST / LISTING'
-            7z t /tmp/sa25/stoneage25-combined.rar || true
-            7z l -slt /tmp/sa25/stoneage25-combined.rar || true
+            echo 'ARCHIVE LISTING (lsar)'
+            lsar /tmp/sa25/stoneage25-combined.rar || true
           } > "$R" 2>&1
 
           EXTRACTOR='none'
-          if 7z x -y -o/tmp/sa25/out /tmp/sa25/stoneage25-combined.rar >> "$R" 2>&1; then
-            EXTRACTOR='7z'
-          else
-            rm -rf /tmp/sa25/out && mkdir -p /tmp/sa25/out
-            echo >> "$R"
-            echo '7z extraction failed; trying unar fallback.' >> "$R"
-            if unar -f -o /tmp/sa25/out /tmp/sa25/stoneage25-combined.rar >> "$R" 2>&1; then
-              EXTRACTOR='unar'
-            fi
+          ulimit -c 0
+          rm -rf /tmp/sa25/out && mkdir -p /tmp/sa25/out
+          if unar -f -o /tmp/sa25/out /tmp/sa25/stoneage25-combined.rar >> "$R" 2>&1; then
+            EXTRACTOR='unar'
           fi
 
           {
@@ -137,6 +131,7 @@ jobs:
           else
             echo 'RESULT|DOWNLOAD_AND_EXTRACTION_SUCCEEDED' >> "$R"
           fi
+          rm -f core core.* || true
           test "$(git status --short | wc -l)" -eq 1
           git status --short | grep -F '?? research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt'
       - name: Commit derived report only
