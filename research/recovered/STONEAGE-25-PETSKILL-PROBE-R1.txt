@@ -1,0 +1,64 @@
+StoneAge recovered pet-skill probe — R1
+No original skill names/comments/options are stored in this report.
+SCHEMA_SOURCE|descendant_pet_skill_h_and_pet_skill_c
+SCHEMA_LEGACY4|4 char fields + ID,FIELD,TARGET,COST,ILLEGAL
+SCHEMA_CFREE6|6 char fields + ID,FIELD,TARGET,COST,ILLEGAL
+SCHEMA_CFREE6_USETYPE|6 char fields + ID,FIELD,TARGET,USETYPE,COST,ILLEGAL
+ENEMYBASE_ACTIVE_CONFIG|./data/enemybase.txt
+ENEMYBASE_SELECTED_FILE|enemybase.txt
+ENEMYBASE_UNIQUE_SKILL_IDS|111
+PETSKILL_CONFIG|petskillfile1|./data/petskill.txt
+PETSKILL_CONFIG|petskillfile2|./data/petskill.txt
+PETSKILL_FILE_COUNT|2
+FILE|petskill.txt|bytes=15112|sha256=f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4|rows=147|active=1|selected_schema=cfree6
+FIELD_COUNT|petskill.txt|12|147
+SCHEMA_SCORE|petskill.txt|legacy4|compatible=81|malformed=66|exact=0|enemy_coverage=0|duplicate_ids=0|id_min=None|id_max=None
+SCHEMA_SCORE|petskill.txt|cfree6|compatible=147|malformed=0|exact=0|enemy_coverage=111|duplicate_ids=0|id_min=0|id_max=652
+SCHEMA_SCORE|petskill.txt|cfree6_usetype|compatible=0|malformed=147|exact=0|enemy_coverage=0|duplicate_ids=0|id_min=None|id_max=None
+SELECTED_ID_COUNT|petskill.txt|147
+ENEMYBASE_SKILL_COVERAGE|petskill.txt|covered=111|total=111|missing=0
+UNREFERENCED_SKILL_ID_COUNT|petskill.txt|36
+UNREFERENCED_SKILL_ID_SAMPLE|petskill.txt|0,502,547,573,581,584,591,593,602,603,604,607,609,612,614,617,618,620,621,622,623,624,626,628,629,630,639,641,642,643,646,647,648,649,650,652
+UNIQUE_FUNCTION_TOKENS|petskill.txt|69
+FIELD_VALUE|petskill.txt|1|143
+FIELD_VALUE|petskill.txt|2|4
+TARGET_VALUE|petskill.txt|0|6
+TARGET_VALUE|petskill.txt|1|16
+TARGET_VALUE|petskill.txt|2|15
+TARGET_VALUE|petskill.txt|3|14
+TARGET_VALUE|petskill.txt|5|7
+TARGET_VALUE|petskill.txt|6|47
+TARGET_VALUE|petskill.txt|7|41
+TARGET_VALUE|petskill.txt|10|1
+ILLEGAL_VALUE|petskill.txt|0|42
+ILLEGAL_VALUE|petskill.txt|300|1
+ILLEGAL_VALUE|petskill.txt|500|1
+ILLEGAL_VALUE|petskill.txt|1000|10
+ILLEGAL_VALUE|petskill.txt|1500|2
+ILLEGAL_VALUE|petskill.txt|2000|20
+ILLEGAL_VALUE|petskill.txt|2300|1
+ILLEGAL_VALUE|petskill.txt|2500|9
+ILLEGAL_VALUE|petskill.txt|3000|13
+ILLEGAL_VALUE|petskill.txt|3500|1
+ILLEGAL_VALUE|petskill.txt|4000|2
+ILLEGAL_VALUE|petskill.txt|5000|18
+ILLEGAL_VALUE|petskill.txt|8000|2
+ILLEGAL_VALUE|petskill.txt|8500|1
+ILLEGAL_VALUE|petskill.txt|10000|11
+ILLEGAL_VALUE|petskill.txt|15000|2
+ILLEGAL_VALUE|petskill.txt|20000|7
+ILLEGAL_VALUE|petskill.txt|25000|3
+ILLEGAL_VALUE|petskill.txt|30000|1
+COST_TOP|petskill.txt|2|136
+COST_TOP|petskill.txt|3|6
+COST_TOP|petskill.txt|1|5
+FILE|petskill1.txt|bytes=5410|sha256=3afc4591f906fe5c7bb921f4599dbee5a7bfe7ba6f4c518d2bb894e365453a72|rows=56|active=0|selected_schema=cfree6_usetype
+FIELD_COUNT|petskill1.txt|9|56
+SCHEMA_SCORE|petskill1.txt|legacy4|compatible=0|malformed=56|exact=0|enemy_coverage=0|duplicate_ids=0|id_min=None|id_max=None
+SCHEMA_SCORE|petskill1.txt|cfree6|compatible=0|malformed=56|exact=0|enemy_coverage=0|duplicate_ids=0|id_min=None|id_max=None
+SCHEMA_SCORE|petskill1.txt|cfree6_usetype|compatible=0|malformed=56|exact=0|enemy_coverage=0|duplicate_ids=0|id_min=None|id_max=None
+SELECTED_ID_COUNT|petskill1.txt|0
+ENEMYBASE_SKILL_COVERAGE|petskill1.txt|covered=0|total=111|missing=111
+ENEMYBASE_SKILL_MISSING_SAMPLE|petskill1.txt|1,2,3,10,11,12,13,20,30,31,40,41,50,51,52,60,61,80,90,100,110,120,130,140,150,151,152,200,201,210,211,301,302,303,304,305,306,307,308,309
+UNREFERENCED_SKILL_ID_COUNT|petskill1.txt|0
+UNIQUE_FUNCTION_TOKENS|petskill1.txt|0
