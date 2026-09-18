@@ -57,12 +57,14 @@ Precise first-party claims are tied to `docs/SOURCE-REGISTRY.md`. Detailed resea
 - `research/clients/JSS-CLIENT-VERSION-ARCHAEOLOGY-R1.md`
 - `research/clients/JSS-RETAIL-PACKAGE-PHOTO-EVIDENCE-R1.md`
 - `research/clients/DESCENDANT-CLIENT-SOURCE-LINEAGE-R1.md` — explicitly lower-confidence later-source lineage clues, not 1999 JSS facts.
+- `research/clients/STONEAGE-EXE-NEGATIVE-CONTROLS-R1.md` — fingerprints later same-name executables so false positives are excluded before JSS provenance analysis.
 
 Supplemental source ledgers:
 
 - `docs/SOURCE-REGISTRY-DEVELOPER-RECOLLECTIONS-R1.md`
 - `docs/SOURCE-REGISTRY-NAMED-STAFF-R1.md`
 - `docs/SOURCE-REGISTRY-PHYSICAL-MEDIA-R1.md`
+- `docs/SOURCE-REGISTRY-PRESERVATION-CONTROLS-R1.md`
 
 ### HYPOTHESIS / lower-confidence search leads
 
@@ -72,7 +74,7 @@ Supplemental source ledgers:
 - The strongest current media model is now **strongly corroborated but not S-grade**: the 1999 initial-edition retail package likely contained a normal game/install CD and a physically separate special/bonus CD. The collector photograph visibly depicts two discs beside the early JSS box/manual, but direct inspection or first-party package-contents documentation is still required before the exact layout is promoted to unqualified FACT.
 - The updater probably used a manifest/protocol that mapped downloadable files to checksum values, but the manifest filename, checksum algorithm, endpoint and payload format remain unresolved.
 - The OCR-ambiguous character immediately before `PO/sa_apply.html` could be an old-style user-directory marker such as `~`, but this remains a **search hypothesis only** and is not the registered exact beta URL.
-- Multiple later community-preserved client-source trees retain JSS/Gamer's Dream title identifiers. One later lineage uses `StoneAge.exe` as a launcher/update-facing program while project/debug metadata names a runtime `sa.exe`; the runtime also contains the strings `updated` and `CheckForUpdate`. Later Taiwan troubleshooting material independently records `cksum:...:File:sa.exe`. This makes **`sa.exe` a high-value original-artifact search target**, but does **not** establish that the filename or launcher/runtime split existed in the 1999 JSS beta or retail client.
+- Multiple later community-preserved client-source trees retain JSS/Gamer's Dream title identifiers. The Signally lineage uses `StoneAge.exe` as a launcher/update-facing program while project/debug metadata names a runtime `sa.exe`, and its runtime contains both `updated` and `CheckForUpdate`. A separate BismarckDD lineage also retains the same `CheckForUpdate` mutex while its current build target is itself `stoneage.exe` and the observed startup path lacks Signally's `updated` gate. Therefore updater coordination (`CheckForUpdate`) and launcher/runtime filename separation must be tested as **independent traits**. Later Taiwan troubleshooting independently records `cksum:...:File:sa.exe`, keeping **`sa.exe` a high-value original-artifact search target** without establishing it as a 1999 JSS fact.
 - **Yuki Tamura** is now a plausible named candidate for at least part of the StoneAge 3D art/animation role described in the preserved anonymous project-leader recollections because Tamura self-reports JSS 3D art work and StoneAge participation. This remains **HYPOTHESIS**, not an identification of the recollection's unnamed `3D animator`.
 
 ## Highest-priority research questions
@@ -87,7 +89,8 @@ Supplemental source ledgers:
 2. **Recover and fingerprint the archived JSS `stoneage.exe` replacement launcher.**
    - Progress: exact original JSS path is known; JSS advertised the file as 212 KB; Wayback reports two archived captures and exposes the object as binary content.
    - Current limitation: this environment has not extracted the bytes.
-   - Still needed: exact byte size, SHA-256/SHA-1/MD5, PE timestamp, version resources, imports and strings; test specifically for process-launch references to `sa.exe`, the token `updated`, and `CheckForUpdate` rather than assuming descendant behavior.
+   - A known later false-positive `StoneAge.exe` is now fingerprinted and excluded: SHA-256 `9C019D9FAB9C0DC37A37A67519CA5080AE43EC2B2A84B915A24B742512A6A7CA` (2019 PE timestamp; 2010 copyright resource; Simplified-Chinese product metadata; `OriginalFileName=Sa.exe`).
+   - Still needed: exact JSS byte size, SHA-256/SHA-1/MD5, PE timestamp, version resources, imports and strings; test `sa.exe`, `updated`, and `CheckForUpdate` independently rather than assuming they form one inseparable descendant architecture.
 3. **Recover the automatic-update manifest/protocol and payload naming.**
    - Progress: first-party updater anchors include `data\download`, `cksum:xxxxxxxxx`, `MFC42.DLL`, Windows Temporary Internet Files/proxy behavior and `stoneage.exe`. Much later Taiwan troubleshooting records a descendant checksum error targeting `sa.exe`, showing that filename-bearing `cksum` records existed in a later lineage.
    - Still needed from JSS evidence: manifest/config filename, update host/path, checksum algorithm, payload filenames/extensions, the original `cksum` record structure and whether whole files or deltas were delivered.
@@ -96,6 +99,7 @@ Supplemental source ledgers:
    - OPEN: S-grade confirmation that the photographed second disc is the advertised bonus CD, exact disc label/matrix identifier, filesystem/audio tracks, contents and hashes.
 5. **Locate the September 1999 beta client or reliable binary/media evidence.**
    - Progress: beta recruitment deadline is **1999-08-20** and test period **1999-09-01 through 1999-09-30**; official FAQ confirms that data from an earlier StoneAge test could persist under `ProgramFiles\jss\stoneage`; the printed application URL is narrowed to host `www.dp.gamersdream.ne.jp` with path tail `PO/sa_apply.html`.
+   - A second preservation path is now registered: Retromags independently catalogs `Play Online No.015 (September 1999)` (submitted 2023-12-14). It is a second scan route, not an independent historical source. The current extraction layer cannot yet fetch the file-detail/download body for visual comparison.
    - Still missing: the single OCR-ambiguous character before `PO`, an archived copy of the application page, tester/download instructions, installer/client filename, distribution method/media, hashes, internal version and beta-to-retail diff.
 6. **Mine the surviving JSS/Gamer's Dream web archives for 1999 paths and support/update artifacts.**
    - Progress: JSS `manual.html`, `manual01.html`, `faqstart.html`, `verup.html`, `updater.html` and `stoneage.exe` paths are known; Gamer's Dream archive coverage begins before beta/launch; beta application matching can now target `*PO/sa_apply.html` rather than the whole domain.
@@ -116,14 +120,18 @@ Supplemental source ledgers:
 
 ## Completed in the latest work pass
 
-- Re-verified remote `main` before continuing and confirmed `a02f6dfa5e3e22e5777f590fd24213823cde4278` / tree `5707b41050ea9f85fdbb602a17e761c7b44c8714` was still the remote authority at session restart.
-- Continued the physical-media search and beta-URL search. No reliable new 1999 JSS JAN/matrix identifier was recovered, and the single character before `PO/sa_apply.html` remains unresolved rather than guessed.
-- Preserved the existing Mercari result as a sold thirteen-image preservation target; no inaccessible image was treated as read evidence.
-- Recovered a new named staff lead: a public first-person professional profile by **Yuki Tamura** states JSS employment from May 1996 through October 2000, role `3D Artist`, and explicitly includes **StoneAge** among the JSS projects.
-- Cross-checked that identity against preserved original-game credits: the 1997 Japan JSS release `Chameleon Twist` lists **YUKI TAMURA** under Computer Arts and Game Design. This materially authenticates the JSS staff identity while not substituting for a StoneAge-specific period credit.
-- Added `research/origin/JSS-NAMED-STAFF-EVIDENCE-R1.md` and `docs/SOURCE-REGISTRY-NAMED-STAFF-R1.md`.
-- Registered only a controlled hypothesis that Tamura may be one of the 3D art/animation staff referred to by the anonymous StoneAge project-leader recollection; no exact animation/character authorship was inferred.
-- Previously recovered first-party anchors remain authoritative: normal game CD, CD NUMBER card, `stoneage.exe`, `ProgramFiles\jss\stoneage`, `data\download`, `cksum:xxxxxxxxx`, `MFC42.DLL`, archived launcher path and update history beginning 1999-10-18.
+- Re-ran the continuity startup against remote `main` and verified that `3293d09840daa4703b64e407ab1e7b99fecbddf4` / tree `002e8e5f27c0f73cb47697b56f81bf958ace183c` was the current authority before new work.
+- Audited the two immediately preceding commits that had not yet been incorporated into this state file:
+  - `research/clients/STONEAGE-EXE-NEGATIVE-CONTROLS-R1.md` now fingerprints a demonstrably later `StoneAge.exe` false positive (SHA-256 `9C019D9F...12A6A7CA`) and excludes it from the JSS candidate pool.
+  - `docs/SOURCE-REGISTRY-PRESERVATION-CONTROLS-R1.md` registers Retromags as a second preservation route for `Play Online No.015 (September 1999)` and records the executable negative control.
+- Attempted direct file-level acquisition of the Kingpin No.015 PDF from the current container path; the network download failed, so no inaccessible page was treated as visually verified.
+- Reconfirmed through Retromags' indexed catalog that No.015 is separately preserved and that No.014 / No.016 are also present, but the No.015 detail/download path remains a cache miss in the current web extraction layer.
+- Re-searched the archived JSS `stoneage.exe` path and exact filename/size combinations; no provenance-preserving binary body or new capture timestamp was recovered.
+- Performed a focused cross-lineage source comparison:
+  - Signally retains `updated` + launcher instruction `StoneAge.exe` + `CheckForUpdate` and `sa.exe` runtime metadata.
+  - BismarckDD retains `CheckForUpdate` with the same updater-purpose comment, while its current build target is `stoneage.exe` and the observed startup path does not contain Signally's `updated` direct-start gate.
+- Refined the descendant hypothesis accordingly: updater mutex/coordination and launcher/runtime filename separation are **separate archaeological traits**. Presence of `CheckForUpdate` must not be used by itself to infer a runtime named `sa.exe`.
+- No 1999 JSS claim was promoted from descendant/community evidence.
 
 ## Immediate next actions
 
@@ -131,8 +139,8 @@ Supplemental source ledgers:
 2. In parallel, locate another original 1999 JSS package or readable seller/collector image set; the sold Mercari listing is now evidence/preservation material, not an acquisition opportunity.
 3. Convert the two-disc model into **S-grade physical-media evidence** by identifying product/JAN and both disc matrix codes and determining exactly which disc is the game/install CD versus the advertised bonus CD.
 4. If original media becomes obtainable, image it outside the repository and record hashes/file trees only; immediately inspect the game disc for `stoneage.exe`, `sa.exe`, installer/autostart metadata, `map`, update configuration, `data\download`, `updated` and `CheckForUpdate`.
-5. Resolve the one OCR-ambiguous character in the beta application URL and match **`*PO/sa_apply.html`** to an August 1999 Wayback capture if one exists; then enumerate sibling paths and links for tester instructions/client delivery.
-6. Mine archived JSS pages and paths using `data/download`, `cksum`, `MFC42.DLL`, `ProgramFiles/jss/stoneage`, `map`, `stoneage.exe` and the descendant-derived search strings `sa.exe`, `updated`, `CheckForUpdate` to recover manifest/config/payload names and update-server URLs.
+5. Obtain either the Retromags or Kingpin No.015 scan body through a file-capable route and visually inspect the printed beta URL; use the second scan to resolve the one OCR-ambiguous character before `PO/sa_apply.html` rather than guessing it. Then match the resulting path to an August 1999 archive capture and enumerate sibling tester/download paths.
+6. Mine archived JSS pages and paths using `data/download`, `cksum`, `MFC42.DLL`, `ProgramFiles/jss/stoneage`, `map`, and `stoneage.exe`; test descendant-derived `sa.exe`, `updated`, and `CheckForUpdate` as **independent** candidate traits so a hit on one is not treated as proof of the others.
 7. Search Yuki Tamura and other independently identified JSS staff for StoneAge-specific portfolios, interviews or staff credits; use exact named-role evidence to test the anonymous developer-recollection corpus rather than merging identities by inference.
 8. Continue attempting provenance-preserving extraction of the archived JSS `stoneage.exe`; if bytes become obtainable, analyze them outside the repository and record only hashes/metadata/derived findings.
 9. Once any original retail/beta binary or media is recovered, establish the reproducible client-archaeology pipeline: hashes, PE metadata, file tree, resource inventory, strings, asset IDs, update-state labeling and cross-version diff.
@@ -149,4 +157,4 @@ Supplemental source ledgers:
 
 No repository or workflow blocker.
 
-The project still lacks a provenance-preserving 1999 JSS retail disc image/dump and September 1999 beta binary. The physical-package blocker remains narrowed to inaccessible original photo bodies plus missing exact disc identities/matrix/JAN identifiers. The beta web-recovery blocker remains a nearly complete application-page path. The developer-lineage track now has a named, independently cross-checked JSS/StoneAge staff lead in Yuki Tamura, but the original StoneAge credit list and exact staff-role mapping remain unresolved. The retail/client search retains `sa.exe` only as a descendant-derived hypothesis until original JSS material confirms it. The binary/media blocker remains the principal Phase 0 constraint.
+The project still lacks a provenance-preserving 1999 JSS retail disc image/dump and September 1999 beta binary. The physical-package blocker remains narrowed to inaccessible original photo bodies plus missing exact disc identities/matrix/JAN identifiers. The beta web-recovery blocker remains a nearly complete application-page path; Retromags now supplies a second scan target, but its image/file body is not retrievable through the present extraction path. The developer-lineage track now has a named, independently cross-checked JSS/StoneAge staff lead in Yuki Tamura, but the original StoneAge credit list and exact staff-role mapping remain unresolved. The retail/client search retains `sa.exe`, `updated`, and `CheckForUpdate` only as descendant-derived search traits until original JSS material confirms each one independently. The binary/media blocker remains the principal Phase 0 constraint.

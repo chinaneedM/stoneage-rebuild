@@ -106,6 +106,43 @@ Global public-source search finds the JSS/DREAM title constants in multiple sepa
 
 This is useful for reconstructing **code lineage persistence**, not for dating the constants to a particular JSS build.
 
+## 3A. Cross-lineage refinement - updater mutex is separable from launcher/runtime naming
+
+A focused comparison of the two preserved client trees changes the working model in an important way.
+
+### BismarckDD/stoneage at 999ffdf1d220ec6666eb65339180689c9caf1876
+
+The client WinMain still creates `CreateMutex(NULL, FALSE, "CheckForUpdate")`, with a Chinese comment stating that the object exists so the update program can determine whether StoneAge is running.
+
+However, this branch's modern project/build metadata outputs the game client itself as `stoneage.exe`, and the observed `main.cpp` does not retain Signally's direct-start rejection requiring the command-line token `updated`.
+
+Relevant paths:
+- `client/stoneage/game/main.cpp`
+- `client/stoneage.vcxproj`
+- `client/build-client.ps1`
+
+### Signally190/sking-sacli at 40cb67ef090ebc0cffd57ca947871bdfd0b18331
+
+This branch retains all of the following together:
+- direct-start rejection unless command line contains `updated`;
+- user-facing instruction to run `StoneAge.exe`;
+- mutex `CheckForUpdate`;
+- project/debug metadata identifying the game runtime as `sa.exe` / target `sa` in relevant configurations.
+
+### Research consequence
+
+**C / LINEAGE REFINEMENT:** `CheckForUpdate` must now be treated as an updater-coordination trait that can survive independently of the exact launcher/runtime filename split.
+
+Therefore these are separate questions for original JSS archaeology:
+1. Did the original JSS client expose a `CheckForUpdate`-type mutex or equivalent updater coordination object?
+2. Did the original JSS launcher pass a token such as `updated`?
+3. Was the game runtime separate from `stoneage.exe`?
+4. If separate, was that runtime actually named `sa.exe`?
+
+The existence of `CheckForUpdate` in a branch whose current executable target is itself `stoneage.exe` weakens any inference of the form `CheckForUpdate present -> sa.exe runtime must exist`.
+
+It does **not** weaken `CheckForUpdate` as a useful original-binary search string. It only requires filename architecture and mutex/update coordination to be tested independently.
+
 ## 4. Later Taiwan updater evidence independently targets `sa.exe`
 
 Later Taiwan-era player support material preserves a concrete updater failure string:
