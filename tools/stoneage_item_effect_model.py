@@ -10,6 +10,7 @@ import re
 
 from tools.stoneage_magic_effect_model import (
     att_reverse_cast_transition,
+    c_atoi,
     common_alive_target_list,
     common_dead_target_list,
     magic_def_transition,
@@ -608,7 +609,7 @@ def tohelos_item_transition(
             "cutrate": None,
             "limitcount": None,
         }
-    cutrate = max(0, int(parts[0]) if re.match(r"\s*[+-]?\d+", parts[0]) else 0)
+    cutrate = max(0, c_atoi(parts[0]))
     if len(parts) < 2 or parts[1] == "":
         return {
             "changed": False,
@@ -617,7 +618,7 @@ def tohelos_item_transition(
             "cutrate": cutrate,
             "limitcount": None,
         }
-    limitcount = max(0, int(parts[1]) if re.match(r"\s*[+-]?\d+", parts[1]) else 0)
+    limitcount = max(0, c_atoi(parts[1]))
     return {
         "changed": True,
         "consume": True,
