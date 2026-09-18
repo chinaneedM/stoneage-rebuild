@@ -489,12 +489,29 @@ Supplemental source ledgers:
 - Item withdrawal moves into the first empty carried slot, charges no observed withdrawal fee, and compacts the Pool.
 - Later shared Depot item code provides useful contrast: it rechecks restricted-item flags and rejects when `CHAR_DelGold` fails. Depot behavior remains versioned and is not back-projected into the ordinary Pool path.
 - Added `tools/stoneage_pool_storage_model.py`, fourteen deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-ITEM-PET-POOL-STORAGE-R1.md`.
-- GitHub Actions run `35365665920` completed **successfully** for the ordinary Pool storage model. The report-state rerun was still in progress at the time this state block was written.
-- Next priority: **field warp / portal / map-transition authority**, then the NPC/world-content graph and remaining item/skill effect joins.
+- GitHub Actions runs `35365665920` and `35365778213` completed **successfully** for the ordinary Pool storage model/report state.
+- Field warp / portal / map-transition authority has now been reconstructed below. The next priority advances to the **NPC/world-content graph**, then remaining item/skill effect joins.
+
+## Field warp / portal / map-transition core reconstruction — 2026-09-18
+
+- Reconstructed the classic overlap Warp NPC, shared `CHAR_warpToSpecificPoint` primitive, dialogue WarpMan party behavior, later `mapwarp.txt` layer, and later `_MAP_NOEXIT` login relocation as separate mechanisms.
+- The classic field portal is an invisible, overable, non-attackable `CHAR_TYPEWARP` NPC whose simple argument embeds destination `floor|x|y`; initialization rejects invalid destination coordinates.
+- `CHAR_walk` executes PREOVER, moves the character/object into the destination cell, then executes POSTOVER. Classic Warp therefore fires after the player actually steps onto the portal cell.
+- The classic Warp callback directly warps only the triggering player. Party followers reach the same portal through normal follow-walking and trigger independently; the warp primitive itself does not broadcast to the party.
+- Dialogue WarpMan is different: it resolves the party leader and explicitly loops valid party slots, warping the group to one destination.
+- `_CHAR_warpToSpecificPoint` validates the destination before mutation, updates character/object coordinates, calls `MAP_objmove`, refreshes destination encounter min/max, updates map/client state, sets `CHAR_ISWARP` for non-client players, and moves the configured follow pet.
+- Historical consistency hazard: coordinate fields are assigned before `MAP_objmove`; if map-object movement fails, the old source logs the failure without rolling the coordinate mutation back.
+- Ordinary `CHAR_EVENT_WARP` cells suppress the observed random-encounter dispatch for that step.
+- Later `_MAP_WARPPOINT` / `mapwarp.txt` creates explicit map-warp objects with source/destination validation and leader-party broadcast. Fixed version headers place this in a later feature layer; it is not promoted into launch-era core.
+- Later `_MAP_NOEXIT` is a login relocation layer, not a walk portal. It packs configured exit as `(floor<<16)+(x<<8)+y`, so X/Y are effectively byte-sized representation fields and oversized values can corrupt adjacent packed bits.
+- Login ordering is explicit in the fixed older source: `appear.txt` elder redirect runs before the later `_MAP_NOEXIT` lookup. If appear handling changes the floor first, a no-exit entry keyed only to the original saved floor is not subsequently consulted.
+- Added `tools/stoneage_warp_transition_model.py`, seventeen deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-WARP-MAP-TRANSITION-CORE-R1.md`.
+- GitHub Actions run `35366300718` completed **successfully** for the warp-transition model. The report-state rerun was still in progress at the time this block was written.
+- Next priority: **NPC/world-content graph** — creation/template/include relationships, class/function dispatch, placement, argument linkage, and early/core versus later content classification.
 
 ## Immediate next actions
 
-1. **Continue deterministic early/core loop closure using the existing gameplay inventory.** The inventory/coherence foundations plus enemy/encounter/appear/save-point/ordinary-Pool-storage work are already present. The next server-authoritative seam is **field warp / portal / map-transition authority**, followed by the NPC/world-content graph and remaining item/skill effect joins. Keep map 817/water-world missing assets and all mixed-snapshot dangling references as version-diff targets for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
+1. **Continue deterministic early/core loop closure using the existing gameplay inventory.** The inventory/coherence foundations plus enemy/encounter/appear/save-point/ordinary-Pool-storage/warp-transition work are already present. The next server-authoritative seam is the **NPC/world-content graph**, followed by remaining item/skill effect joins. Keep map 817/water-world missing assets and all mixed-snapshot dangling references as version-diff targets for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
 2. **Reject repacks before analysis.** For every candidate, record source/provenance, archive filename, size, hashes, timestamps, installer metadata, executable names, unexpected patchers/loaders, and signs of private-server modification. Do not call a client "clean" merely because its title/version string looks old.
 3. **The first verified usable client becomes the bridge specimen.** Immediately build a reproducible extraction inventory: complete file tree, hashes, PE metadata, strings/resources, directories, update components, graphics containers, maps, data tables, audio, UI assets, and executable/resource relationships.
 4. **Reverse engineer data before recreating gameplay.** Determine resource/container formats and indexes; decode graphics/animations; map character/pet/item/skill/stat records; reconstruct map formats and event/NPC data; identify combat and progression tables where present; document which behavior is client-side versus server-dependent.
