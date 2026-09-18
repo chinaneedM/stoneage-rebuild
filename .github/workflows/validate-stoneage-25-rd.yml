@@ -87,7 +87,7 @@ jobs:
           {
             echo 'SOURCE_BUNDLE_SHA256|d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5'
             echo
-            python3 tools/stoneage_rd_validate.py --adrn "$ADRN" --real "$REAL"
+            python3 -m tools.stoneage_rd_validate --adrn "$ADRN" --real "$REAL"
           } > "$R"
           CHANGED="$(git status --short --untracked-files=all)"
           test "$(printf '%s\n' "$CHANGED" | sed '/^$/d' | wc -l)" -eq 1
