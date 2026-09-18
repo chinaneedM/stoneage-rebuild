@@ -51,7 +51,7 @@ The largest remaining gaps are therefore no longer “basic combat exists?” qu
 
 ## B. Remaining early/core gaps
 
-### B1 — Save point / elder / return-point state — highest priority
+### B1 — Save point / elder / return-point state — completed in R1
 
 This is the immediate next seam.
 
@@ -65,7 +65,7 @@ Why it ranks first:
 
 The fixed descendants show a server-owned elder-coordinate registry plus per-character `LASTTALKELDER` and `SAVEPOINT` state. Reconstructing this closes birth -> savepoint -> login return -> persistence as one deterministic state machine.
 
-### B2 — Persistent item/pet storage and pet-shop transfer
+### B2 — Persistent item/pet storage and pet-shop transfer — completed in R1
 
 Direct trade and item shops are modeled, but movement between carried state and persistent storage/pool state is not yet closed. This should cover:
 
@@ -77,7 +77,7 @@ Direct trade and item shops are modeled, but movement between carried state and 
 
 Later account-shared **Depot/warehouse** extensions must remain versioned; ordinary character-embedded pool storage is a separate fixed-descendant persistence surface.
 
-### B3 — Field warp / portal / map-transition authority
+### B3 — Field warp / portal / map-transition authority — completed in R1
 
 Map formats and login-return policy are known, but ordinary field traversal still needs a source-level model for:
 
@@ -89,7 +89,7 @@ Map formats and login-return policy are known, but ordinary field traversal stil
 
 This is separate from graphical DAT caching.
 
-### B4 — NPC placement / creation and event-data loading
+### B4 — NPC placement / creation and event-data loading — highest priority
 
 The recovered server corpus contains a large NPC configuration tree, but it is not yet normalized into an authoritative world-content graph.
 
@@ -166,11 +166,11 @@ The principal historical blocker remains the absence of a provenance-preserving 
 
 ## Ordered next work
 
-1. Reconstruct **save point / elder / LASTTALKELDER return-point semantics** across the fixed source descendants.
-2. Add deterministic tests for registration, unlock bits, last-elder switching, requirement-gated activation and return lookup.
-3. Explicitly record representation/version hazards rather than normalizing them away.
-4. Then close **persistent item/pet storage**.
-5. Then close **field warp / portal / map-transition authority**.
-6. Then build the **NPC/world-content graph** and remaining item/skill effect joins.
+1. ~~Reconstruct save point / elder / LASTTALKELDER return-point semantics.~~ **Completed.**
+2. ~~Close persistent item/pet Pool storage while separating later shared Depot storage.~~ **Completed.**
+3. ~~Close field warp / portal / map-transition authority while separating later mapwarp/no-exit layers.~~ **Completed.**
+4. Build the **NPC/world-content graph**: creation/template/include relationships, type/function dispatch, placement and argument linkage.
+5. Then close the remaining **item/skill effect callback joins**.
+6. Continue detailed combat sub-mechanics only where the evidence shows an early/core gap.
 
 This ordering closes the ordinary game-state loop before expanding into optional systems.
