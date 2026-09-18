@@ -1,0 +1,37 @@
+StoneAge recovered encounter-chain probe — R1
+No original encounter/group/enemy/item names or table rows are stored in this report.
+SCHEMA_SOURCE|descendant_ENCOUNT_initEncount_GROUP_initGroup_enemy_callback
+CHAIN|encount.groupid -> group.id -> group.enemyid -> enemy.id -> enemy.tempno -> enemybase.tempno
+DROP_CHAIN|enemy.itemid -> active_itemset.id
+ENCOUNT_SCHEMA|33 columns
+GROUP_SCHEMA|1 text + 23 integer/optional-integer columns
+ENEMY_SCHEMA|2_or_3_text_prefix + 31 integer columns
+ACTIVE_FILE|encount|encount.txt|sha256=70bbd997d98508a0587df183b5bdd48222ff42db91bf21bea632e0ed6f2fea87
+ACTIVE_FILE|group|group1.txt|sha256=4a02f2a3fa3d2dcf5589d8a2a560313c35d5a0a7e5e0589cc8df5f7df159ea8f
+ACTIVE_FILE|enemy|enemy.txt|sha256=cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6
+ACTIVE_FILE|enemybase|enemybase.txt
+ACTIVE_FILE|itemset|itemset.txt
+ENCOUNT_ROWS|raw=660|parsed=660|malformed=0
+ENCOUNT_FIELD_COUNT|33|660
+GROUP_ROWS|raw=1257|parsed=1257|malformed=0|duplicate_ids=0
+GROUP_FIELD_COUNT|24|1257
+ENEMY_ROWS|raw=2087|parsed=2087|malformed=0|duplicate_ids=0|text_prefix=3
+ENEMY_FIELD_COUNT|34|2087
+STAT|FLOOR|min=40|max=32021|unique=421
+STAT|ENCOUNT_MIN|min=0|max=100|unique=4
+STAT|ENCOUNT_MAX|min=0|max=100|unique=11
+STAT|ZORDER|min=1|max=500|unique=20
+STAT|ENEMYMAX|min=1|max=10|unique=10
+STAT|ENCOUNT_GROUP_PROB_SUM|min=0|max=250|unique=82
+STAT|GROUP_ENEMY_PROB_SUM|min=0|max=241|unique=41
+ENCOUNT_GROUP_REF|rows=1965|unique=719|matched=688|missing=31
+ENCOUNT_GROUP_MISSING_SAMPLE|196,200,791,792,793,794,795,796,797,799,800,801,802,803,804,805,806,808,809,811,818,819,821,823,824,826,827,1315,1316,1327,1328
+GROUP_UNUSED_BY_ENCOUNT|569
+GROUP_ENEMY_REF|rows=2243|unique=1313|matched=1301|missing=12
+GROUP_ENEMY_MISSING_SAMPLE|1879,1880,1881,1882,1975,1976,1977,1978,2029,2730,2731,2732
+ENEMY_UNUSED_BY_GROUP|786
+ENEMY_TEMPNO_REF|unique=928|enemybase_templates=988|matched=928|missing=0
+ENEMY_DROP_ITEM_REF|unique=410|itemset_ids=13252|matched=347|missing=63
+ENEMY_DROP_ITEM_MISSING_SAMPLE|1566,1567,1568,1569,1570,1571,1572,1573,1574,1575,1576,1577,1578,1579,1580,1581,1582,1583,1584,1585,1589,1590,1683,1721,1722,1723,1728,1729,1730,1731,1732,1734,1737,1738,1739,1740,1741,1742,1743,1744
+GROUP_CONDITION_ITEM_REF|unique=120|matched=116|missing=4
+GROUP_CONDITION_ITEM_MISSING_SAMPLE|2073,2089,20247,20259
