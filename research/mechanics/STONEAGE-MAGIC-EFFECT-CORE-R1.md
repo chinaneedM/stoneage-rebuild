@@ -29,6 +29,22 @@ The other common textual dispatch entries are all behind explicit feature macros
 
 Therefore R1 does **not** flatten all 17 recovered active callback tokens into one “original core”. The nine unguarded families form the stable descendant common denominator; guarded families remain versioned until earlier evidence promotes them.
 
+## Recovered active-table classification
+
+The enhanced real-byte callback probe confirms that the active recovered `magic.txt` aligns exactly with the source guard boundary:
+
+- 181 active magic rows total;
+- 17 unique active callback tokens total;
+- **9 unique tokens / 130 rows** map to callbacks that are unguarded in all three pinned source lineages;
+- **8 unique tokens / 51 rows** map to callbacks that are guarded in all three pinned source lineages;
+- 0 mixed-guard tokens;
+- 0 partial-source tokens;
+- 0 all-source-missing tokens.
+
+This is unusually strong evidence that the nine-function R1 core is not an arbitrary source-code grouping: it is also a major active-data layer in the recovered specimen.
+
+The 51 guarded rows remain valid recovered content evidence, but their exact historical introduction dates are not inferred from the 2.5 specimen.
+
 ## Dispatch and MP mutation order
 
 The ordinary item/magic path is:
@@ -305,12 +321,10 @@ The deterministic model covers:
 - reverse-flag toggling;
 - ResAndDef target transition.
 
-Randomness is injected into the model as an already-rolled amount; tests verify the deterministic state transition around the historical RNG rather than hard-coding a PRNG implementation.
-
+Randomness is injected into the model as an already-rolled amount; tests verify the deterministic state transition around the historical RNG rather than hard-coding a PRNG implementation.\n\nGitHub Actions run `35370420953` completed successfully with **35 deterministic regression tests** after the final recovery-target and attribute-reverse additions.\n
 ## Evidence boundaries
 
-- **FACT:** all three pinned descendant source tables share the same nine unguarded callback families.
-- **FACT:** common wrappers verify MP and deduct it before battle-only field rejection.
+- **FACT:** all three pinned descendant source tables share the same nine unguarded callback families.\n- **FACT:** those nine callbacks account for 130 / 181 active recovered magic rows; the remaining 51 rows use eight callbacks that are guarded in all three source lineages.\n- **FACT:** common wrappers verify MP and deduct it before battle-only field rejection.
 - **FACT:** Recovery/OtherRecovery are field-capable; the other seven modeled families are battle-only in the fixed common path.
 - **FACT:** the fixed recovery-rate formula differs between player and non-player VITAL scaling.
 - **FACT:** common target selectors use the two ten-slot sides plus side/all selector IDs.
