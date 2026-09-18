@@ -348,6 +348,21 @@ Supplemental source ledgers:
 - Added `tools/stoneage_pet_capture_model.py`, nine deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-PET-CAPTURE-CORE-R1.md`.
 - Next priority: **party / formation state**, especially field party creation/join/leave, leader/client modes, ordering, default-pet coupling and projection into battle sides.
 
+## Party / formation core reconstruction — 2026-09-18
+
+- Reconstructed the ordinary field-party state machine and field-to-battle projection across three preserved descendant lineages.
+- Common party modes are NONE / LEADER / CLIENT. The authoritative ordinary roster is leader-owned; client members store a leader pointer.
+- Common baseline is five party slots. Slot 0 is leader-only; first join promotes a standalone target to leader and writes leader self into slot 0; clients fill the first free slot 1..4.
+- Client leave creates a hole and does not compact higher slots. The next join reuses the first hole. Last-client leave changes the leader back to logical NONE even though raw slot 0 may still temporarily hold the leader self-index.
+- Leader discharge dissolves the whole ordinary party.
+- Field formation is a slot-ordered follow chain: leader movement propagates through valid clients in roster order, skipping holes. Ordinary clients cannot independently submit positional walking, though turn-only input remains allowed.
+- Battle projection compacts valid field-party members into player battle slots 0..4 in party order. Each player's selected default pet is fixed to that player's local battle slot + 5, producing the ordinary ten-entry paired layout.
+- Only the selected default pet auto-enters. If it is invalid/dead/non-positive-HP, DEFAULTPET is cleared; active code does not auto-search another carried pet.
+- PvP party identity resolves leader -> self, client -> leader pointer, standalone -> none; two combatants resolving to the same leader are rejected as same party.
+- Bismarck retains an optional `_MULTIPLAYER_` six-player extension, while the generic pet-placement code at the fixed revision still uses a hard-coded +5 pairing offset. R1 therefore excludes six-player support from the convergent old core and marks it for a separate extension audit.
+- Added `tools/stoneage_party_formation_model.py`, eleven deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-PARTY-FORMATION-CORE-R1.md`.
+- Next priority: re-audit remaining deterministic loop gaps and select the seam that closes the largest loop, with trading/economy transfer, healing/status-service semantics, and item equip/use transitions as current candidates.
+
 ## Immediate next actions
 
 1. **Continue recovered-byte reverse engineering.** REAL/ADRN/RD, SPR/SPRADRN, DAT runtime semantics, `1021.DAT`, and the major unresolved-graphic skew are now bounded as far as the mixed 2.5 bundle permits. Move the primary technical target outward into **character / pet / item / skill / stat / combat / progression data tables** in the recovered client/server corpus. First build a provenance-preserving inventory of candidate gameplay-data files and identify which tables are authoritative server data versus client display/cache data; then parse one family at a time with deterministic tests. Keep map 817/water-world missing assets as a version-diff target for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
