@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Analyze recovered StoneAge enemybase pet-template tables using the stable descendant prefix schema."""
 
-import argparse,collections,hashlib
+import argparse,collections,hashlib\nfrom decimal import Decimal,InvalidOperation
 from pathlib import Path
 
 CHAR_FIELDS=6
@@ -30,6 +30,10 @@ def to_int(v):
     try:return int(v.strip() or b"-1",10)
     except ValueError:return None
 
+def to_decimal(v):
+    try:return Decimal(v.strip().decode("ascii"))
+    except (InvalidOperation,UnicodeDecodeError):return None
+
 def parse_file(path):
     rows=[]; field_counts=collections.Counter(); malformed=0; raw_rows=[]
     max_cols=0
@@ -38,20 +42,22 @@ def parse_file(path):
         field_counts[len(fields)]+=1; max_cols=max(max_cols,len(fields))
         if len(fields)<CHAR_FIELDS+len(INT_NAMES):
             malformed+=1; continue
-        ints={name:to_int(fields[idx]) for name,idx in INDEX.items()}
-        if any(v is None for v in ints.values()):
+        vals={name:to_int(fields[idx]) for name,idx in INDEX.items()}
+        vals["LVUPPOINT"]=to_decimal(fields[INDEX["LVUPPOINT"]])
+        if any(v is None for v in vals.values()):
             malformed+=1; continue
-        rows.append(ints)
+        rows.append(vals)
     profiles=[]
     for idx in range(max_cols):
-        integer=empty=text=missing=0
+        integer=decimal=empty=text=missing=0
         for fields in raw_rows:
             if idx>=len(fields): missing+=1; continue
             v=fields[idx].strip()
             if not v: empty+=1
             elif to_int(v) is not None: integer+=1
+            elif to_decimal(v) is not None: decimal+=1
             else: text+=1
-        profiles.append((idx+1,integer,empty,text,missing))
+        profiles.append((idx+1,integer,decimal,empty,text,missing))
     return rows,field_counts,malformed,raw_rows,profiles
 
 def setup_value(path,key):
@@ -101,11 +107,11 @@ def emit(data_dir,setup=None):
         for n,c in sorted(f["field_counts"].items()):
             print(f"FIELD_COUNT|{f['name']}|{n}|{c}")
         numeric_cols=[]; text_cols=[]
-        for col,integer,empty,text,missing in f["profiles"]:
-            total=integer+empty+text+missing
-            if total and integer==total: numeric_cols.append(col)
+        for col,integer,decimal,empty,text,missing in f["profiles"]:
+            total=integer+decimal+empty+text+missing
+            if total and integer+decimal==total: numeric_cols.append(col)
             if text: text_cols.append(col)
-            print(f"COLUMN_PROFILE|{f['name']}|{col}|integer={integer}|empty={empty}|text={text}|missing={missing}")
+            print(f"COLUMN_PROFILE|{f['name']}|{col}|integer={integer}|decimal={decimal}|empty={empty}|text={text}|missing={missing}")
         print(f"ALL_INTEGER_COLUMNS|{f['name']}|"+",".join(map(str,numeric_cols)))
         print(f"TEXT_PRESENT_COLUMNS|{f['name']}|"+",".join(map(str,text_cols)))
         for name in ("TEMPNO","INITNUM","LVUPPOINT","BASEVITAL","BASESTR","BASETGH","BASEDEX","MODAI","GET","EARTHAT","WATERAT","FIREAT","WINDAT","RARE","CRITICAL","COUNTER","SLOT","IMGNUMBER","PETFLG","SIZE"):
