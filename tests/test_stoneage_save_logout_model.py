@@ -63,19 +63,22 @@ class SaveLogoutModelTests(unittest.TestCase):
         surface = serialization_surface()
         self.assertIn("char_data_ints", surface["persisted"])
         self.assertIn("items", surface["persisted"])
+        self.assertIn("pool_items", surface["persisted"])
         self.assertIn("carried_pets", surface["persisted"])
+        self.assertIn("pool_pets", surface["persisted"])
         self.assertIn("work_ints", surface["runtime_only"])
         self.assertNotIn("work_ints", surface["persisted"])
 
-    def test_optional_pool_surfaces_are_versioned(self):
+    def test_later_depot_surfaces_are_versioned(self):
         base = serialization_surface()
         extended = serialization_surface(
-            include_pool_item=True,
-            include_pool_pet=True,
+            include_depot_item=True,
+            include_depot_pet=True,
         )
-        self.assertNotIn("pool_items", base["persisted"])
-        self.assertIn("pool_items", extended["persisted"])
-        self.assertIn("pool_pets", extended["persisted"])
+        self.assertNotIn("depot_items", base["persisted"])
+        self.assertNotIn("depot_pets", base["persisted"])
+        self.assertIn("depot_items", extended["persisted"])
+        self.assertIn("depot_pets", extended["persisted"])
 
     def test_drop_at_logout_items_are_deleted_before_snapshot(self):
         items = (
