@@ -145,38 +145,65 @@ The model preserves historical quirks such as battle-only casts spending MP befo
 
 `tools/stoneage_magic_effect_model.py` is covered by 35 deterministic regression tests. GitHub Actions run `35370420953` completed successfully.
 
-### B7 — Common item effect semantics — highest priority
+### B7 — Common item effect semantics — completed in R1
 
-The enhanced active-item/source guard classification now gives a clean next boundary:
+The final item pass now requires both unguarded dispatch and substantive unguarded function bodies.
 
-- 17 USE tokens / 818 active row uses are unguarded in all three fixed source lineages;
-- 19 USE tokens / 86 rows are guarded in all three;
-- 16 USE tokens / 53 rows have partial source-lineage coverage;
-- no active USE token is absent from all three.
+Active USE layer:
 
-The next reconstruction should focus on the 17 all-three unguarded USE callbacks and the already-common non-use callback slots.
+- 17 tokens / 818 rows are unguarded in all three dispatch tables;
+- after body refinement, **15 tokens / 816 rows** are stable-body common semantics;
+- **2 tokens / 2 rows** are profession macro shells and remain versioned;
+- 19 / 86 active USE rows are all-three guarded;
+- 16 / 53 have partial source-lineage coverage.
 
-Initial common semantic families include:
+Stable active USE families reconstructed in R1 include:
 
-- field/battle HP/MP recovery;
-- status change/recovery;
-- magic defense;
-- parameter change;
-- field-attribute change;
-- attribute reverse;
+- battle/field recovery;
+- ordinary status apply/recover;
+- capture-rate increase;
+- field attribute change;
 - resurrection;
-- capture-rate modification;
 - warp/travel;
-- encounter/no-encounter controls;
-- selected persistent/player/pet state mutations.
+- encounter force/suppression;
+- pet follow;
+- mic toggle;
+- item rename;
+- ordinary skill-up point;
+- pet-owner/rename-lock release;
+- ToHelos encounter-effect state.
 
-Guarded and partial-source item callbacks remain explicit version-diff tracks.
+Stable non-USE callbacks are also closed:
 
-### B8 — Common pet-skill effect semantics
+- ATTACH: 2 stable common tokens / 5 rows;
+- DETACH: 2 / 5;
+- DROP: 2 / 5;
+- PICKUP: 1 / 2;
+- RELIFE: no unguarded common token; its active 3 rows are all-three guarded.
 
-After common item effects, reconstruct the 65 pet-skill callback tokens / 143 rows that resolve in all three fixed source tables.
+The stable non-USE semantics cover equipment encounter control, PickAllPet attach/detach, microphone cleanup and dice drop/pickup state.
 
-Keep the four active pet-skill tokens / four rows absent from all three fixed source tables quarantined as source/data skew.
+Reference: `research/mechanics/STONEAGE-ITEM-EFFECT-CORE-R1.md`.
+
+### B8 — Common pet-skill effect semantics — highest priority
+
+The recovered active pet-skill table has:
+
+- 69 unique callback tokens / 147 rows;
+- 65 tokens / 143 rows resolve in all three fixed source tables;
+- 4 tokens / 4 rows resolve in none and remain quarantined as source/data skew.
+
+Do **not** promote the 65 all-three textual matches directly into an early/common core.
+
+The three fixed pet-skill dispatch tables themselves share 68 textual families, but only **15 are unguarded in all three**; the other common entries are feature-macro gated.
+
+Next work must therefore:
+
+1. add comment-aware dispatch-guard classification for active pet-skill tokens;
+2. add substantive function-body classification;
+3. identify the active stable-body common subset;
+4. reconstruct that subset first;
+5. keep guarded families as explicit version layers and the four all-source-missing recovered rows quarantined.
 
 ### B9 — Detailed combat sub-mechanics not yet promoted
 
@@ -243,8 +270,8 @@ The principal historical blocker remains the absence of a provenance-preserving 
 4. ~~Build the NPC/world-content graph: magic-file discovery, template/create relationships, dispatch, placement and argument linkage.~~ **Completed.**
 5. ~~Close item / magic / pet-skill callback joins and classify fixed-source coverage.~~ **Completed.**
 6. ~~Reconstruct the nine all-three unguarded ordinary magic effect callbacks.~~ **Completed.**
-7. Reconstruct the **17 all-three unguarded common item USE callbacks** plus common non-use callback semantics.
-8. Reconstruct the 65 all-three common pet-skill callback families, keeping four all-source-missing recovered rows quarantined.
+7. ~~Reconstruct stable common item USE + non-USE callback semantics after dispatch/body refinement.~~ **Completed.**
+8. Classify active pet-skill callbacks by dispatch guard + function body, then reconstruct only the stable-body common subset; keep four all-source-missing rows quarantined.
 9. Resolve only early/core NPC secondary argument/config edges that materially remain.
 10. Continue detailed combat sub-mechanics only where evidence shows an early/core gap.
 
