@@ -7,9 +7,11 @@ PERSISTED_SURFACES = (
     "character_flags",
     "skills",
     "items",
+    "pool_items",
     "titles",
     "address_book",
     "carried_pets",
+    "pool_pets",
 )
 
 RUNTIME_ONLY_SURFACES = (
@@ -52,13 +54,17 @@ def save_request(*, trigger):
     raise ValueError("unknown save trigger")
 
 
-def serialization_surface(*, include_pool_item=False, include_pool_pet=False):
-    """Core character string persists data fields, not WORK/runtime fields."""
+def serialization_surface(*, include_depot_item=False, include_depot_pet=False):
+    """Core character string includes ordinary pool storage, not WORK fields.
+
+    Later account-shared Depot item/pet surfaces are separate, macro-gated
+    persistence channels and are exposed only when explicitly requested.
+    """
     persisted = list(PERSISTED_SURFACES)
-    if include_pool_item:
-        persisted.append("pool_items")
-    if include_pool_pet:
-        persisted.append("pool_pets")
+    if include_depot_item:
+        persisted.append("depot_items")
+    if include_depot_pet:
+        persisted.append("depot_pets")
     return {
         "persisted": tuple(persisted),
         "runtime_only": RUNTIME_ONLY_SURFACES,
