@@ -446,11 +446,37 @@ Supplemental source ledgers:
 - A failed normal logout-save acknowledgement only reports `Cannot save`; there is no automatic retry, runtime rollback/reconstruction, or lock restoration. The old server therefore has a real last-state loss window.
 - Added `tools/stoneage_save_logout_model.py`, thirteen deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-SAVE-LOGOUT-PERSISTENCE-CORE-R1.md`.
 - GitHub currently reports no workflow-run records yet for the new persistence workflow commits; no CI success is claimed.
-- Next priority: **fresh milestone/gap audit** separating early/core mechanics, later optional systems, data/content extraction gaps, and modern-rebuild engineering improvements.
+- The requested fresh milestone/gap audit is now completed in `docs/PHASE0-MILESTONE-GAP-AUDIT-R1.md`; it separates early/core gaps, later/versioned systems, data/content extraction work, and modern-rebuild engineering.
+
+
+## Phase 0 deterministic milestone / gap audit — 2026-09-18
+
+- Added `docs/PHASE0-MILESTONE-GAP-AUDIT-R1.md` as the current gap map.
+- Corrected the planning boundary: the recovered gameplay-data inventory and coherence probe already exist and are **completed foundations**, not work to rebuild.
+- Early/core deterministic mechanics now cover creation/birth, growth/transmigration, enemy/group/encounter chains, battle-adjacent death/capture, party, item use/equip, healing, direct trade, item shop, save/logout, and appear/login-return membership behavior.
+- Remaining early/core gaps are ordered as: **save point / elder return state -> persistent item/pet storage -> field warp/map transitions -> NPC/world-content graph -> remaining item/skill effect joins**.
+- Professions, ordinary-player riding, family/guild, AutoPK, six-player party, shared pools, pet fusion and similar later branches remain version-diff tracks unless earlier evidence independently requires them.
+- Modern transactional persistence, typed import pipelines, engine/network/UI architecture and asset recreation remain DESIGN work and must not be mixed into historical reconstruction.
+
+## Save point / elder / return-point core reconstruction — 2026-09-18
+
+- Reconstructed the elder/save-point state machine across the fixed gavinlinasd, iriselia and Bismarck descendant revisions and connected it to the already recovered `appear.txt` login-return behavior.
+- The server owns a 128-slot elder coordinate registry. Ordinary hometowns occupy built-in elder indices 0..3; dynamic `CHAR_ElderSetPosition` accepts indices 4..127.
+- Save-point NPC initialization reads its ID and `Born=floor,x,y`, validates the coordinate, then registers that coordinate into the elder array. No separate standalone record-point coordinate table is required by this fixed source path.
+- Per-character persistent state is split into `CHAR_LASTTALKELDER` plus the `CHAR_SAVEPOINT` unlock bit field. Ordinary birth sets both the hometown last-elder index and the corresponding hometown bit.
+- `NOITEM` save points set the unlock bit before the talk callback checks it, so the same interaction immediately selects that point as `LASTTALKELDER`.
+- Requirement-gated points first test `GetItem`; YES confirmation consumes the configured requirement and only then sets the unlock bit + `LASTTALKELDER`. Concrete item IDs remain content data and are not embedded in the core model.
+- The 128-slot registry and the unlock representation are structurally mismatched: source uses one signed integer and literal `1 << elder_id`. Do **not** infer that all 128 coordinate slots are safely independent unlock bits.
+- `CHAR_getElderPosition` range-checks the index but does not verify that the in-range slot contains a meaningful registered coordinate; unwritten static slots resolve to zero tuples. Older callers can also ignore a failed lookup. The reference model exposes these hazards instead of emulating undefined/uninitialized behavior.
+- Older appear/login semantics now close end-to-end: saved floor in `appear.txt` -> `LASTTALKELDER` -> elder registry -> return floor/x/y. The appear-table X/Y fields remain unused by that observed old caller.
+- Interaction and immediate-save behavior are versioned: gavinlinasd/iriselia preserve a facing-based gate with a same-cell exception and immediate unlock-false saves; Bismarck uses a distance/death gate and conditional save-point persistence hooks.
+- Added `tools/stoneage_savepoint_elder_model.py`, fourteen deterministic regression tests, `research/mechanics/STONEAGE-SAVEPOINT-ELDER-RETURN-CORE-R1.md`, and dedicated CI.
+- GitHub Actions run `35365018211` completed **successfully** for the model/report state.
+- Next priority: **persistent item/pet storage and pet-shop transfer semantics**, separating ordinary carried/storage behavior from later shared-pool extensions.
 
 ## Immediate next actions
 
-1. **Continue recovered-byte reverse engineering.** REAL/ADRN/RD, SPR/SPRADRN, DAT runtime semantics, `1021.DAT`, and the major unresolved-graphic skew are now bounded as far as the mixed 2.5 bundle permits. Move the primary technical target outward into **character / pet / item / skill / stat / combat / progression data tables** in the recovered client/server corpus. First build a provenance-preserving inventory of candidate gameplay-data files and identify which tables are authoritative server data versus client display/cache data; then parse one family at a time with deterministic tests. Keep map 817/water-world missing assets as a version-diff target for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
+1. **Continue deterministic early/core loop closure using the existing gameplay inventory.** The inventory/coherence foundations plus enemy/encounter/appear/save-point work are already present. The next server-authoritative seam is **persistent item/pet storage and pet-shop transfer semantics**, followed by field warp/map-transition authority and the NPC/world-content graph. Keep map 817/water-world missing assets and all mixed-snapshot dangling references as version-diff targets for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
 2. **Reject repacks before analysis.** For every candidate, record source/provenance, archive filename, size, hashes, timestamps, installer metadata, executable names, unexpected patchers/loaders, and signs of private-server modification. Do not call a client "clean" merely because its title/version string looks old.
 3. **The first verified usable client becomes the bridge specimen.** Immediately build a reproducible extraction inventory: complete file tree, hashes, PE metadata, strings/resources, directories, update components, graphics containers, maps, data tables, audio, UI assets, and executable/resource relationships.
 4. **Reverse engineer data before recreating gameplay.** Determine resource/container formats and indexes; decode graphics/animations; map character/pet/item/skill/stat records; reconstruct map formats and event/NPC data; identify combat and progression tables where present; document which behavior is client-side versus server-dependent.
