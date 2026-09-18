@@ -135,7 +135,7 @@ def parse_named_function_table(path, marker):
     for candidate in markers:
         try:
             region = extract_table_region(text, candidate)
-            return set(re.findall(r'\\{\\s*"([^"]+)"', region))
+            return set(re.findall(r'\{\s*"([^"]+)"', region))
         except ValueError as exc:
             last_error = exc
     raise last_error or ValueError("no source table marker supplied")
