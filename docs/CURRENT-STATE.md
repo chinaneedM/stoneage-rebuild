@@ -288,6 +288,17 @@ Supplemental source ledgers:
 - Added dedicated product-identifier research and source-ledger files so future searches can distinguish verified identifiers from merely syntactically valid candidates.
 - StoneAge JAN **`4909476303010`** was promoted only after direct package-back evidence; the StoneAge model/type code remains OPEN.
 
+## Player creation core reconstruction — 2026-09-18
+
+- Cross-checked three preserved descendant server lineages at fixed revisions and reconstructed the ordinary player-creation contract.
+- Ordinary VITAL / STR / TOUGH / DEX creation allocation is now modeled as exactly 20 total points, each input in 0..20, persisted at x100.
+- Ordinary elemental creation allocation is now modeled as exactly 10 total points, each input in 0..10, at most two nonzero elements, with Earth/Fire and Water/Wind mutually exclusive; persisted at x10.
+- Stable defaults recorded for the ordinary path: level 1, EXP 0, free stat points 0, charm 60, MP/max-MP 100.
+- Test-server / configurable new-player overrides were explicitly separated from the baseline instead of being merged into historical rules.
+- Added `tools/stoneage_player_creation_model.py`, deterministic regression coverage, dedicated CI, and `research/mechanics/STONEAGE-PLAYER-CREATION-CORE-R1.md`.
+- Exact 1999/JSS identity remains **OPEN**; this milestone is strong convergent descendant evidence, not direct launch-client proof.
+- Highest-value adjacent progression seam is now **transmigration/reset semantics**, with starter-pet/hometown linkage kept as a separate creation-side track.
+
 ## Immediate next actions
 
 1. **Continue recovered-byte reverse engineering.** REAL/ADRN/RD, SPR/SPRADRN, DAT runtime semantics, `1021.DAT`, and the major unresolved-graphic skew are now bounded as far as the mixed 2.5 bundle permits. Move the primary technical target outward into **character / pet / item / skill / stat / combat / progression data tables** in the recovered client/server corpus. First build a provenance-preserving inventory of candidate gameplay-data files and identify which tables are authoritative server data versus client display/cache data; then parse one family at a time with deterministic tests. Keep map 817/water-world missing assets as a version-diff target for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
