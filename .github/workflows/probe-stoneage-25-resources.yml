@@ -100,8 +100,9 @@ jobs:
             python3 tools/stoneage_resource_probe.py --adrn "$ADRN" --real "$REAL" --map-dir "$MAPDIR"
           } > "$R"
           git status --short --untracked-files=all
-          test "$(git status --short --untracked-files=all | wc -l)" -eq 1
-          git status --short --untracked-files=all | grep -F '?? research/recovered/STONEAGE-25-RESOURCE-PROBE-R1.txt'
+          CHANGED="$(git status --short --untracked-files=all)"
+          test "$(printf '%s\n' "$CHANGED" | sed '/^$/d' | wc -l)" -eq 1
+          test "$(printf '%s\n' "$CHANGED" | sed -E 's/^.. //' )" = "research/recovered/STONEAGE-25-RESOURCE-PROBE-R1.txt"
       - name: Commit derived probe report only
         run: |
           git config user.name stoneage-recovery-bot
