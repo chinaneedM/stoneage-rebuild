@@ -1,0 +1,134 @@
+#!/usr/bin/env python3
+import argparse,array,collections,struct,sys
+from pathlib import Path
+
+CG_INVISIBLE=99
+MAP_READ_FLAG=0x8000
+MAP_SEE_FLAG=0x4000
+EVENT_MASK=0x0fff
+EVENT_NAMES={0:"NONE",1:"NPC",2:"ENEMY",3:"WARP",4:"DOOR",5:"ALTERRATIVE",6:"WARP_MORNING",7:"WARP_NOON",8:"WARP_NIGHT"}
+ADRN_RECORD_SIZE=80
+
+def _u16(data):
+    a=array.array("H"); a.frombytes(data)
+    if sys.byteorder!="little": a.byteswap()
+    return a
+
+def parse_dat(path):
+    data=path.read_bytes()
+    if len(data)<8: raise ValueError("short_header")
+    w,h=struct.unpack_from("<II",data,0)
+    if not (0<w<=10000 and 0<h<=10000): raise ValueError(f"bad_dimensions:{w}x{h}")
+    n=w*h; expected=8+n*6
+    if len(data)!=expected: raise ValueError(f"bad_size:{len(data)}:{expected}")
+    v=_u16(data[8:])
+    return w,h,v[:n],v[n:2*n],v[2*n:3*n]
+
+def load_adrn(path):
+    data=path.read_bytes()
+    if len(data)%80: raise ValueError("adrn_remainder")
+    by_bmp={}; duplicate=0
+    for i in range(0,len(data),80):
+        r=data[i:i+80]
+        bitmapno=struct.unpack_from("<I",r,0)[0]
+        bmpnumber=struct.unpack_from("<I",r,76)[0]
+        attr={"bitmapno":bitmapno,"atari_x":r[28],"atari_y":r[29],
+              "hit":struct.unpack_from("<H",r,30)[0],
+              "height":struct.unpack_from("<h",r,32)[0]}
+        if bmpnumber in by_bmp and bmpnumber: duplicate+=1
+        by_bmp[bmpnumber]=attr
+    return {"bytes":len(data),"records":len(data)//80,"by_bmp":by_bmp,"duplicate":duplicate}
+
+def bucket(v):
+    if v==0:return "zero"
+    if v<=19:return "control_1_19"
+    if v<=39:return "environment_20_39"
+    if v<=59:return "bgm_40_59"
+    if v<=79:return "legacy_special_60_79"
+    if v<=99:return "reserved_80_99"
+    return "graphic_gt_99"
+
+def analyze(dat_dir,adrn_path=None):
+    tile=collections.Counter(); parts=collections.Counter(); events=collections.Counter()
+    dims=collections.Counter(); invalid=[]; valid=[]; cells=0
+    files=sorted(dat_dir.glob("*.DAT"),key=lambda p:p.name.lower())
+    for p in files:
+        try:w,h,t,pa,e=parse_dat(p)
+        except ValueError as exc:
+            invalid.append((p.name,p.stat().st_size,str(exc))); continue
+        valid.append((p.name,w,h)); dims[(w,h)]+=1; cells+=w*h
+        tile.update(t); parts.update(pa); events.update(e)
+    def buckets(c):
+        o=collections.Counter()
+        for v,n in c.items():o[bucket(v)]+=n
+        return o
+    low=collections.Counter(); high=collections.Counter()
+    read=see=both=0
+    for v,n in events.items():
+        low[v&EVENT_MASK]+=n; high[v&0xf000]+=n
+        if v&MAP_READ_FLAG:read+=n
+        if v&MAP_SEE_FLAG:see+=n
+        if v&(MAP_READ_FLAG|MAP_SEE_FLAG)==(MAP_READ_FLAG|MAP_SEE_FLAG):both+=n
+    out={"files":len(files),"valid":valid,"invalid":invalid,"dims":dims,"cells":cells,
+         "tile":tile,"parts":parts,"events":events,"tile_buckets":buckets(tile),
+         "parts_buckets":buckets(parts),"event_low":low,"event_high":high,
+         "read":read,"see":see,"both":both}
+    if adrn_path:
+        adrn=load_adrn(adrn_path); out["adrn"]=adrn
+        for name,c in (("tile_graphics",tile),("parts_graphics",parts)):
+            refs=mapped=0; unresolved=collections.Counter(); hit=collections.Counter()
+            footprint=collections.Counter(); prio=collections.Counter()
+            for v,n in c.items():
+                if v<=CG_INVISIBLE:continue
+                refs+=n; a=adrn["by_bmp"].get(v)
+                if a is None: unresolved[v]+=n; continue
+                mapped+=n; hit[a["hit"]%100]+=n; prio[a["hit"]//100]+=n
+                footprint[(a["atari_x"],a["atari_y"])]+=n
+            out[name]={"refs":refs,"mapped":mapped,"unresolved":unresolved,
+                       "hit":hit,"prio":prio,"footprint":footprint}
+    return out
+
+def emit(r):
+    print("StoneAge recovered client DAT probe — R1")
+    print("No proprietary DAT payload bytes are stored in this report.")
+    print(f"CG_INVISIBLE|{CG_INVISIBLE}")
+    print(f"MAP_READ_FLAG|0x{MAP_READ_FLAG:04x}")
+    print(f"MAP_SEE_FLAG|0x{MAP_SEE_FLAG:04x}")
+    print(f"EVENT_MASK|0x{EVENT_MASK:04x}")
+    print(f"DAT_FILE_COUNT|{r['files']}")
+    print(f"DAT_VALID_COUNT|{len(r['valid'])}")
+    print(f"DAT_INVALID_COUNT|{len(r['invalid'])}")
+    print(f"DAT_TOTAL_CELLS|{r['cells']}")
+    for (w,h),n in r["dims"].most_common(30):print(f"DAT_DIMENSION|{w}|{h}|{n}")
+    for name,size,why in r["invalid"][:40]:print(f"DAT_INVALID|{name}|{size}|{why}")
+    order=["zero","control_1_19","environment_20_39","bgm_40_59","legacy_special_60_79","reserved_80_99","graphic_gt_99"]
+    for layer in ("tile","parts"):
+        for b in order:print(f"{layer.upper()}_BUCKET|{b}|{r[layer+'_buckets'].get(b,0)}")
+        for v,n in r[layer].most_common(30):print(f"{layer.upper()}_TOP_VALUE|{v}|{n}")
+    print(f"EVENT_READ_FLAG_CELLS|{r['read']}")
+    print(f"EVENT_SEE_FLAG_CELLS|{r['see']}")
+    print(f"EVENT_BOTH_FLAGS_CELLS|{r['both']}")
+    for v,n in sorted(r["event_high"].items()):print(f"EVENT_HIGH_NIBBLE|0x{v:04x}|{n}")
+    for v,n in r["event_low"].most_common():
+        print(f"EVENT_LOW12|{v}|{EVENT_NAMES.get(v,'UNKNOWN')}|{n}")
+    if "adrn" in r:
+        a=r["adrn"]
+        print(f"ADRN_BYTES|{a['bytes']}")
+        print(f"ADRN_RECORD_COUNT|{a['records']}")
+        print(f"ADRN_BMPNUMBER_INDEX_SIZE|{len(a['by_bmp'])}")
+        print(f"ADRN_DUPLICATE_BMPNUMBERS|{a['duplicate']}")
+        for layer in ("tile_graphics","parts_graphics"):
+            g=r[layer]; p=layer.upper()
+            print(f"{p}_REFS|{g['refs']}")
+            print(f"{p}_MAPPED_REFS|{g['mapped']}")
+            print(f"{p}_UNRESOLVED_REFS|{sum(g['unresolved'].values())}")
+            print(f"{p}_UNRESOLVED_UNIQUE|{len(g['unresolved'])}")
+            if g["unresolved"]:print(f"{p}_UNRESOLVED_SAMPLE|"+",".join(map(str,sorted(g["unresolved"])[:40])))
+            for v,n in sorted(g["hit"].items()):print(f"{p}_HIT_MOD100|{v}|{n}")
+            for v,n in sorted(g["prio"].items()):print(f"{p}_PRIO_TYPE|{v}|{n}")
+            for (x,y),n in g["footprint"].most_common(20):print(f"{p}_FOOTPRINT|{x}|{y}|{n}")
+
+def main():
+    ap=argparse.ArgumentParser(); ap.add_argument("--dat-dir",type=Path,required=True); ap.add_argument("--adrn",type=Path)
+    a=ap.parse_args(); emit(analyze(a.dat_dir,a.adrn))
+if __name__=="__main__":main()
