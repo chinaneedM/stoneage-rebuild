@@ -311,6 +311,17 @@ Supplemental source ledgers:
 - Sixth/seventh-transmigration, hero/angel, teacher/profession and other later branches remain separate version-diff evidence.
 - Highest-value adjacent seam is now **starter-pet / hometown creation linkage**, especially separating the original four-village mapping from later unified-newbie-village and configurable starter-pet branches.
 
+## Player birth / hometown core reconstruction — 2026-09-18
+
+- Reconstructed the ordinary four-hometown creation linkage from descendant client/server code.
+- Stable hometown input is 0..3; it maps to elder/spawn floors 1006/2006/3006/4006, preserves the corresponding savepoint bit, and maps in Bismarck client UI to 萨姆吉尔村 / 玛丽娜丝村 / 加加村 / 卡鲁它那村.
+- gavinlinasd and iriselia preserve the ordinary starter-pet rule `enemy ID = hometown + 1`; the created pet is initialized for level 1.
+- Descendant comments associate IDs 1..4 with 乌力 / 凯比 / 克克尔 / 威伯, but R1 treats the numeric IDs as stronger evidence and keeps the names as source hints pending authoritative launch enemy-table confirmation.
+- Later `_UNIFIDE_MALINASI`, 6.0 `_DELBORNPLACE` and `_NEW_PLAYER_CF` branches are explicitly separated from the four-village baseline.
+- Added `tools/stoneage_player_birth_model.py`, six deterministic regression tests, dedicated CI, and `research/mechanics/STONEAGE-PLAYER-BIRTH-CORE-R1.md`.
+- The ordinary deterministic chain now begins at hometown/character creation and runs through player growth, encounters/battle/rewards and transmigration.
+- Next priority: inventory remaining unmodeled deterministic state transitions before selecting the next seam; favor end-to-end loop closures such as death/revival/savepoint, capture/taming, or party/formation over isolated content-list expansion.
+
 ## Immediate next actions
 
 1. **Continue recovered-byte reverse engineering.** REAL/ADRN/RD, SPR/SPRADRN, DAT runtime semantics, `1021.DAT`, and the major unresolved-graphic skew are now bounded as far as the mixed 2.5 bundle permits. Move the primary technical target outward into **character / pet / item / skill / stat / combat / progression data tables** in the recovered client/server corpus. First build a provenance-preserving inventory of candidate gameplay-data files and identify which tables are authoritative server data versus client display/cache data; then parse one family at a time with deterministic tests. Keep map 817/water-world missing assets as a version-diff target for the first clean comparison client. Continue `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS recovery in parallel.
