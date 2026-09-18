@@ -4,12 +4,18 @@ Last updated: 2026-09-18
 
 ## Current phase
 
-**Phase 0 — StoneAge Origin Archaeology**
+**Phase 0 — Earliest Clean Client Recovery & Reverse Engineering**
 
-The independent GitHub repository and continuity scaffold are established on remote `main`. GitHub read/write continuity has been verified, and the current workstream is primary-source recovery for the 1999 JSS client, beta, package, install/update system, original Gamer's Dream service layer, and named original-development staff.
+The independent GitHub repository and continuity scaffold are established on remote `main`. The operational objective is now explicit: recover the **earliest freely/publicly obtainable, provenance-preserving and minimally modified StoneAge client / installer / complete file tree**, verify it at file level, then use it as the primary reverse-engineering specimen for reconstructing the game's systems and data.
+
+Historical archaeology remains useful only when it helps authenticate, date, compare, or interpret a recovered client. Package price, retail product-number, staff-history, and similar research are **not primary objectives** unless they directly improve client recovery or technical attribution.
 
 ## Confirmed project direction
 
+- **Primary path: recover the earliest clean client first, then reverse engineer it.**
+- "Clean client" means an original/operator-distributed or otherwise provenance-preserving client, installer, disc image, or complete file tree with no known private-server repack, injected launcher, custom patcher, replaced assets, or undocumented modification. If absolute purity cannot be proven, candidates must be graded and compared rather than silently accepted.
+- Search priority is **earliest freely/publicly obtainable artifact**, not the historically earliest version at any cost. If a 1999 JSS client is unavailable but a later clean 1.74/1.74a/Taiwan/early-Mainland client is recoverable, use the earliest verified available artifact as a bridge specimen and continue diffing backward when older material appears.
+- Once a usable client is recovered, priority immediately shifts from historical research to technical extraction: file tree, hashes, executable metadata, resource/container formats, maps, characters, pets, attributes, skills, items, UI, text tables, animation/sprite indexes, update/runtime structure, and other deterministic game data.
 - Single-player game, not a commercial MMORPG operation.
 - Historical clients and materials are research samples, not code/assets to copy directly into the new game.
 - **Research must not depend on the user buying or manually acquiring physical material.** No bidding, purchasing, shipping, opening, installing, or personally dumping original discs/packages is part of the project plan. Auction/marketplace pages are evidence surfaces only; free/public digital recovery is the operational path.
@@ -17,6 +23,17 @@ The independent GitHub repository and continuity scaffold are established on rem
 - Mainland 1.82 remains a major reference point because it is close to the user's childhood experience and is commonly remembered as a classic early form.
 - Later systems/content may ultimately be integrated, but through coherent progression rather than a feature dump.
 - Emotional milestones such as first pet capture, first ride, first major exploration, etc. are part of the design target.
+
+## Priority reset — 2026-09-18
+
+The user reconfirmed the original project method: **find the earliest free clean client we can actually obtain, understand how the game is built from its real files, and then reconstruct it with modern technology**.
+
+Consequences:
+- historical chronology is subordinate to artifact recovery;
+- product-price/package archaeology is paused;
+- a later but clean and freely obtainable client is more operationally valuable than an earlier version known only from articles;
+- reverse engineering begins as soon as a sufficiently trustworthy client artifact is recovered;
+- the project should progressively reconstruct the whole game model from real data: maps, characters, attributes, skills, pets, items, UI, resources, update/runtime structure and other systems.
 
 ## Current historical working picture
 
@@ -213,18 +230,13 @@ Supplemental source ledgers:
 
 ## Immediate next actions
 
-1. Continue **zero-cost public-source StoneAge package/catalog research**: direct retail JAN **`4909476303010`** and the Suruga direct record are now resolved, but the Suruga page has **no model/type field**. Prioritize Suruga buy-side/search caches for management number `145026779`, other retailer/distributor databases, period catalogs, and higher-resolution package side/back images that explicitly expose a model/type code. In parallel, the 13 Mercari original-image targets remain blocked by HTTP 403, so continue alternate public mirrors/caches for disc labels and matrix text. Do not treat `145026779` or LIFESTORM's `JV02005` as the StoneAge model, and do not pursue purchase, bidding, seller contact, shipping, or user-side acquisition.
-2. Complete the **LIFESTORM II** identifier record by recovering its still-missing model/type code from retailer/distributor databases, period catalogs or a clearer public label image. A higher-resolution package/manual/disc set now independently confirms JAN **`4909476302013`** but still does not make the model/type code or matrix text reliably readable.
-3. Strengthen the two-disc model using **publicly obtainable provenance evidence**: StoneAge JAN **`4909476303010`** is now direct package evidence; next identify the StoneAge model/type code, readable disc labels/matrix codes, and which disc is the game/install CD versus the advertised bonus CD. Do not require possession of the object.
-4. If an original retail/beta client or media image becomes **publicly retrievable at no cost** (or is voluntarily supplied to the project), analyze it outside the repository and record hashes/file trees only; inspect for `stoneage.exe`, `sa.exe`, installer/autostart metadata, `map`, update configuration, `data\download`, `updated` and `CheckForUpdate`.
-5. Continue free/public recovery of the old LIFESTORM II `ls2 data` backup or equivalent preserved bytes. If recovered, do not commit the original files: record hashes and test REAL `RD` block signatures/decoder compatibility first, then ADRN indexing separately.
-6. Recover the actual Retromags or Kingpin No.015 scan body through a file-capable route and visually inspect the printed beta URL. The Retromags object is now concretely identified as a 349 MB CBR with MD5 **`e009cc707810c4361c849f26248593af`** and a resolved seedbox target, but that host is unreachable from the present environment. Use visual comparison—not OCR guessing—to resolve the one ambiguous character before `PO/sa_apply.html`, then match the exact path to an August 1999 archive capture and enumerate sibling tester/download paths.
-7. Mine archived JSS pages and artifacts using `data/download`, `cksum`, `MFC42.DLL`, `ProgramFiles/jss/stoneage`, `map`, and `stoneage.exe`. Weight descendant probes rather than treating them equally: first `CheckForUpdate`, `sa.exe` and filename-bearing `cksum`; then `updated`; use Signally's `HASH___________@@@@@@@@` only as a low-priority branch-specific string. A hit on any one trait must not be treated as proof of the others.
-8. Search Yuki Tamura and other independently identified JSS staff for StoneAge-specific portfolios, interviews or staff credits; use exact named-role evidence to test the anonymous developer-recollection corpus rather than merging identities by inference.
-9. Continue attempting provenance-preserving extraction of the archived JSS `stoneage.exe` through a route that can actually resolve Wayback. The current local/container path fails DNS before retrieval. If bytes become obtainable, analyze them outside the repository and record only hashes/metadata/derived findings.
-10. Once any original retail/beta binary or media is recovered, establish the reproducible client-archaeology pipeline: hashes, PE metadata, file tree, resource inventory, strings, asset IDs, update-state labeling and cross-version diff.
-11. Treat the 2003 revival as a **near-descendant negative/positive control** when later client artifacts are recovered: specifically test the JSS baseline for GM-only riding capability versus normal-player availability, and absence/presence of a dedicated item-trade window before assigning later mechanics backward.
-12. Add **Korean `1.74` and Japanese revival `1.74a`** to the priority zero-cost client-recovery search. Seek original installer filenames, file sizes/hashes, magazine-CD indexes, old download portals, antivirus/software catalogs, public mirrors or preserved file trees. If recovered, analyze outside the repository and compare executable naming, REAL/ADRN/SPR generations, maps, trade UI and riding assets before making any ancestry claim.
+1. **Recover the earliest freely/publicly obtainable clean StoneAge client artifact.** Search in parallel for: 1999 JSS beta/retail/update files; Korean `1.74`; Japanese revival `1.74a`; earliest Taiwan clients; early Mainland clients including 1.82. Prefer original installers, magazine-CD mirrors, operator download mirrors, preserved full client archives, or complete file trees with provenance.
+2. **Reject repacks before analysis.** For every candidate, record source/provenance, archive filename, size, hashes, timestamps, installer metadata, executable names, unexpected patchers/loaders, and signs of private-server modification. Do not call a client "clean" merely because its title/version string looks old.
+3. **The first verified usable client becomes the bridge specimen.** Immediately build a reproducible extraction inventory: complete file tree, hashes, PE metadata, strings/resources, directories, update components, graphics containers, maps, data tables, audio, UI assets, and executable/resource relationships.
+4. **Reverse engineer data before recreating gameplay.** Determine resource/container formats and indexes; decode graphics/animations; map character/pet/item/skill/stat records; reconstruct map formats and event/NPC data; identify combat and progression tables where present; document which behavior is client-side versus server-dependent.
+5. **Build tooling around recovered bytes.** Put parsers, validators, extractors and diff tools in `tools/`; put deterministic format tests in `tests/`. Do not commit proprietary original client payloads by default—commit hashes, metadata, schemas, derived inventories, test fixtures where legally appropriate, and independently written tooling.
+6. **Use later/earlier clients comparatively.** When a second clean artifact is recovered, perform file- and data-level diffs to identify inherited versus added maps, pets, skills, UI, systems and format revisions. This is the main route for reconstructing evolution; historical articles are secondary corroboration.
+7. **De-prioritize nontechnical archaeology.** Package price, JAN/model numbers, collector accessories, staff biography and similar topics are paused unless they directly unlock a client, prove provenance, or resolve a technical ambiguity.
 
 ## Continuity status
 

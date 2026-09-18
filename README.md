@@ -8,24 +8,25 @@ This project is **not** a binary patch, private-server repack, or direct copy of
 
 The development goal is to:
 
-1. Trace the earliest JSS-era StoneAge concept and launch content.
-2. Reconstruct the historical evolution from Japan to Taiwan, Mainland China, and later versions.
-3. Separate historical facts from hypotheses and from our own design decisions.
-4. Reimplement the game with a modern engine, modern rendering, modern input, modern save architecture, and newly created/recreated assets.
-5. Preserve the emotional milestones of the original experience while allowing later systems and richer worldbuilding to be integrated coherently.
+1. Recover the **earliest freely/publicly obtainable clean StoneAge client** (or the earliest trustworthy bridge client if the absolute original is unavailable).
+2. Verify provenance and inventory the real client at file level.
+3. Reverse engineer its executable/runtime structure, resource formats, maps, characters, pets, attributes, skills, items, UI, text/data tables and other deterministic systems.
+4. Diff additional clean versions to reconstruct how the game evolved across JSS, Taiwan, Korea, Mainland China and later branches.
+5. Reimplement the resulting specifications with a modern engine, modern rendering/input/save architecture, and independently created/recreated production assets.
+6. Preserve the emotional milestones of the original experience while integrating later systems coherently rather than copying a single historical build blindly.
 
 ## Current phase
 
-**Phase 0 — StoneAge Origin Archaeology**
+**Phase 0 — Earliest Clean Client Recovery & Reverse Engineering**
 
-Primary research targets:
+Primary targets:
 
-- 1999 JSS concept-stage material.
-- 1999-09 Beta client evidence.
-- 1999-10-15 JSS launch client / retail CD-ROM.
-- Early JSS world-setting and story text.
-- Taiwan 2000 early client and localization changes.
-- Mainland early/1.82 client and content differences.
+- recover the earliest trustworthy client/installer/file tree available at zero acquisition cost;
+- reject private-server repacks and modified clients through provenance and file-level checks;
+- create hashes and full inventories;
+- reverse engineer resource/container formats and deterministic game data;
+- use additional clean versions as controlled diff anchors;
+- keep historical research secondary unless it directly helps artifact recovery or technical interpretation.
 
 See [`docs/CURRENT-STATE.md`](docs/CURRENT-STATE.md).
 

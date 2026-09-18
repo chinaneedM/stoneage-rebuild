@@ -63,3 +63,30 @@ Preferred evidence routes are:
 If a provenance-preserving original client/media image becomes publicly available at no cost, it may be analyzed outside the repository and only hashes, metadata, file trees, and derived research findings should be committed by default.
 
 The project must not ask the user to spend money or personal time acquiring original hardware/media in order to continue research.
+
+## DD-009 — Client-first reverse-engineering priority
+
+**Status:** Accepted
+
+The project’s primary reconstruction method is **artifact-first, not history-first**.
+
+The highest-priority target is the earliest StoneAge client that is simultaneously:
+
+- freely/publicly obtainable;
+- provenance-preserving enough to evaluate;
+- as close as practical to an original operator-distributed build;
+- free of known private-server repacking, custom patchers, replaced assets or undocumented modifications.
+
+The absolute historically earliest client remains desirable, but the project must not stall waiting for an unrecoverable 1999 artifact. If the earliest currently recoverable clean specimen is a later regional/version branch, that artifact becomes the **bridge specimen** for immediate reverse engineering. Older clients can be incorporated later through controlled diffing when recovered.
+
+Once a usable specimen exists, technical work outranks general historical research. Priority order is:
+
+1. preserve provenance and hashes;
+2. inventory the complete file tree;
+3. identify executables, runtime/update components and dependencies;
+4. decode resource/container/index formats;
+5. reconstruct maps, characters, pets, items, skills, attributes, UI, text/data tables and other deterministic content;
+6. compare additional clean clients to recover version evolution;
+7. reimplement the resulting specifications with modern code and independently created/recreated production assets.
+
+Historical articles, prices, package identifiers, staff recollections and marketplace material are supporting evidence only when they help authenticate a client, establish lineage, locate bytes, or resolve a technical ambiguity.
