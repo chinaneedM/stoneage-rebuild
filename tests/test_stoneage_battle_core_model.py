@@ -15,6 +15,8 @@ from tools.stoneage_battle_core_model import (
     initiative_total,
     physical_base_damage,
     raw_counter_basis,
+    battle_exp_from_enemy,
+    ride_pet_exp_from_enemy,
 )
 
 
@@ -69,6 +71,21 @@ class BattleCoreModelTests(unittest.TestCase):
         expected=int(math.sqrt((100-60)/0.09)*100)
         self.assertEqual(per,expected)
         self.assertEqual(critical_bonus(100,50,25),100)
+
+    def test_battle_exp_level_gap_decay(self):
+        base=1500
+        self.assertEqual(battle_exp_from_enemy(base,5,10),1500)
+        self.assertEqual(battle_exp_from_enemy(base,15,10),1500)
+        self.assertEqual(battle_exp_from_enemy(base,16,10),1400)
+        self.assertEqual(battle_exp_from_enemy(base,29,10),100)
+        self.assertEqual(battle_exp_from_enemy(base,30,10),1)
+        self.assertEqual(battle_exp_from_enemy(base,60,10),1)
+
+    def test_ride_pet_exp_applies_sixty_percent_after_decay(self):
+        base=1500
+        self.assertEqual(ride_pet_exp_from_enemy(base,10,10),900)
+        self.assertEqual(ride_pet_exp_from_enemy(base,29,10),60)
+        self.assertEqual(ride_pet_exp_from_enemy(base,30,10),0)
 
     def test_counter_is_only_raw_basis(self):
         value=raw_counter_basis(

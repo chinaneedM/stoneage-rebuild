@@ -388,7 +388,82 @@ failure -> CEP increments toward zone max
 
 This means battle frequency uses an increasing-probability / soft-pity mechanism rather than a fixed independent percentage per step.
 
-## 11. Reconstruction guidance
+## 11. Battle EXP and progression bridge
+
+Three independent descendant server lineages preserve the same per-enemy reward constants and level-gap rule:
+
+```text
+EXPGET_MAXLEVEL = 5
+EXPGET_DIV      = 15
+```
+
+Each defeated enemy supplies its own `CHAR_EXP` value. In the recovered server-data lineage that value originates from the `EXP` field in `enemy.txt` when the enemy instance is created.
+
+For each eligible battle participant:
+
+```text
+level_diff = receiver_level - enemy_level
+
+if level_diff <= 5:
+    award = enemy_exp
+else:
+    factor = 5 + 15 - level_diff
+
+    if factor > 15:
+        factor = 15
+
+    if factor <= 0:
+        award = 1
+    else:
+        award = enemy_exp * factor / 15
+
+    if award < 1:
+        award = 1
+```
+
+Therefore:
+
+- a receiver from any lower level through **+5 levels above the enemy** receives full enemy EXP;
+- at **+6** the reward becomes `14/15`;
+- the reward falls linearly through **+19**, where it is `1/15`;
+- at **+20 or more** the base path gives the minimum **1 EXP**;
+- fighting an enemy above the receiver does not create an extra over-level bonus in this core formula.
+
+In the inspected inner reward loop, the adjusted enemy EXP is added to every eligible participant's `CHAR_WORKGETEXP`; this particular step does **not** divide one enemy's EXP pool by participant count.
+
+### Ride pet
+
+The ride pet runs the same level-gap calculation and then:
+
+```text
+ride_pet_award *= 0.60
+```
+
+Because the variable is an integer, this truncates. The code does not reapply the minimum-one rule after the 60% multiplication, so a far-overlevel ride pet whose base award became 1 can receive **0**.
+
+### Progression chain
+
+The recovered/server-source chain is now:
+
+```text
+enemy.txt EXP
+  -> spawned enemy CHAR_EXP
+  -> per-defeated-enemy level-gap adjustment
+  -> CHAR_WORKGETEXP accumulation
+  -> BATTLE_GetExp / CHAR_AddMaxExp
+  -> exp.txt level thresholds
+```
+
+This distinguishes two different pieces of progression data that should remain separate in a modern rebuild:
+
+- **enemy reward value** — how much a defeated enemy is worth;
+- **level threshold table** — how much accumulated experience is required to level.
+
+Later descendants add many optional modifiers such as equipment EXP boosts, server-wide multipliers, special pets and other private-server adjustments. One Bismarck branch even contains very recent custom minimum-EXP logic. Those layers are explicitly excluded from this stable core.
+
+Evidence grade: **strong multi-lineage descendant evidence**, with recovered `enemy.txt` and `exp.txt` providing the corresponding data-side anchors. Exact JSS-1999 reward coefficients remain OPEN.
+
+## 12. Reconstruction guidance
 
 When the modern rebuild begins, preserve these concepts separately:
 
@@ -420,4 +495,7 @@ In particular:
 - elemental adjustment after physical base damage: **strong multi-lineage descendant evidence**
 - dodge, critical and counter DEX asymmetries: **strong multi-lineage descendant evidence**
 - guard multiplier distribution: **strong multi-lineage descendant evidence**
-- exact 1999 JSS combat coefficients: **OPEN pending original server/binary evidence**
+- battle EXP full-through-+5 / 15-level decay / minimum-one rule: **strong multi-lineage descendant evidence**
+- ride-pet EXP = 60% after the same level-gap rule: **strong multi-lineage descendant evidence**
+- enemy reward data -> battle award -> exp.txt threshold chain: **descendant-source + recovered-data corroborated**
+- exact 1999 JSS combat/progression coefficients: **OPEN pending original server/binary evidence**

@@ -200,3 +200,39 @@ def raw_counter_basis(attacker_dex,defender_dex,
     if work<=0:work=0.0
     base=math.sqrt(work) if root else work
     return int(base*wari)
+
+
+EXP_FULL_LEVEL_ADVANTAGE=5
+EXP_DECAY_WINDOW=15
+
+
+def battle_exp_from_enemy(base_exp,receiver_level,enemy_level):
+    """Stable descendant per-enemy EXP award before later bonus systems.
+
+    A receiver at most 5 levels above the enemy receives full enemy EXP.
+    From +6 through +19 the award declines linearly across a 15-level window.
+    At +20 or more the minimum award is 1.
+    """
+    if base_exp < 0:
+        raise ValueError("base_exp must be non-negative")
+    diff=int(receiver_level)-int(enemy_level)
+    if diff <= EXP_FULL_LEVEL_ADVANTAGE:
+        return int(base_exp)
+
+    factor=EXP_FULL_LEVEL_ADVANTAGE+EXP_DECAY_WINDOW-diff
+    if factor > EXP_DECAY_WINDOW:
+        factor=EXP_DECAY_WINDOW
+    if factor <= 0:
+        return 1
+    award=(int(base_exp)*factor)//EXP_DECAY_WINDOW
+    return max(1,award)
+
+
+def ride_pet_exp_from_enemy(base_exp,ride_pet_level,enemy_level):
+    """Ride-pet award: same level-gap rule, then 60% with C-style truncation.
+
+    The source applies the 60% after the minimum-1 base calculation and does
+    not re-apply the minimum, so a far-overlevel ride pet can receive 0.
+    """
+    award=battle_exp_from_enemy(base_exp,ride_pet_level,enemy_level)
+    return int(award*0.60)
