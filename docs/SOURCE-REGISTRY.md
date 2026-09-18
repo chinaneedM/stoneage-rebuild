@@ -425,6 +425,49 @@ This is the canonical ledger for historical sources. Entries should record prove
   - whether the listed bonus CD is distinct from the game install/client disc.
 - Promotion criterion: upgrade relevant artifact evidence to **S** only after direct provenance-preserving inspection/imaging/dumping of original media/package.
 
+### SRC-JP-2003-4GAMER-OGF-REVIVAL-01
+
+- Title: `［OGF＃06］ボーステックが「Stone Age」（ストーンエイジ）を復活`
+- Original date: 2003-07-26
+- Retrieval date: 2026-09-18
+- Language/region: Japanese / Japan
+- Source type: specialist-press revival announcement with direct post-announcement questioning of Bothtec; near-contemporaneous retrospective on the earlier Japanese service
+- URL: https://www.4gamer.net/news/history/2003.07/20030726001803detail.html
+- Confidence: **B for retrospective description of the former Japanese StoneAge service; A/B for the 2003 revival announcement itself**
+- Supports:
+  - the former Japanese StoneAge is described as having monster capture/pets, turn-based combat, and parties of up to five players;
+  - Bothtec told 4Gamer that the revived product would be a version-up rather than a byte-identical re-release, with additions/changes involving maps, characters and some UI;
+  - the reporter explicitly states that in the former Japanese operation **only GMs could ride dinosaurs**, making normal-player pet riding absent from the earlier Japanese-service baseline represented by this report.
+- Evidence boundary:
+  - the GM-only riding statement is a 2003 specialist-journalist retrospective, not a recovered 1999 JSS manual/patch note;
+  - it does not identify the exact build/date at which riding existed for GMs or the underlying client/server implementation;
+  - the article's speculation about using a contemporary Korean build is explicitly the author's speculation and is not registered as fact.
+- Archaeology significance:
+  - normal-player riding must not be assumed to belong to the JSS Japanese baseline merely because it became iconic in later regional StoneAge versions;
+  - riding should remain a later-layer feature unless an earlier primary artifact contradicts this evidence.
+
+### SRC-JP-2003-4GAMER-TGS-REVIVAL-01
+
+- Title: `［TGS2003 ＃13］ボーステック「銀河英雄伝説VII」＆「ストーンエイジ」の2タイトルを展示`
+- Original date: 2003-09-27
+- Retrieval date: 2026-09-18
+- Language/region: Japanese / Japan
+- Source type: specialist-press hands-on report plus direct on-site staff comments during the Japanese StoneAge revival
+- URL: https://www.4gamer.net/news/history/2003.09/20030927063935detail.html
+- Confidence: **B/A for the directly reported 2003 staff comments and visible revival state; B for retrospective comparison to the original**
+- Supports:
+  - when 4Gamer asked whether the revival was exactly the same as the former game, on-site staff answered that it was **basically the same**, with the immediate effort focused on restoration and bug fixing;
+  - staff said roughly four major updates were planned after the open beta, including map expansion and additional characters;
+  - the report identifies a dedicated **item trade window as a minor change that the original did not have**;
+  - the article describes the old exchange practice in the context of putting items on the ground, explaining the theft risk that the new trade window addressed.
+- Evidence boundary:
+  - this does not prove every 2003-beta data file was unchanged from the final JSS build;
+  - it does not identify exactly which JSS-era client revision served as the revival base;
+  - the article is evidence for a feature boundary, not proof of the exact packet/server implementation of item exchange.
+- Archaeology significance:
+  - a reconstructed JSS baseline should not automatically include the later dedicated item-trade window;
+  - any 2003 revival client recovered in the future can be used as a near-descendant diff anchor, but its UI additions must be separated from the earlier baseline.
+
 ## Required metadata for future entries
 
 Every substantial source should record:
