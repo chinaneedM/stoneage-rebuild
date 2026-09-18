@@ -73,15 +73,24 @@ def _find_token(text, tokens, start=0):
     }
 
 
-def _scan_item_value_tail(tail, default):
-    """Model token match + old for-loop's extra one-byte pointer increment."""
-    tail = str(tail)
-    if tail:
-        tail = tail[1:]
-    m = re.match(r"\s*([+-]?\d+)", tail)
+def _scan_direct_value_tail(tail, default):
+    """Parse a numeric tail immediately after a matched source token.
+
+    Old recovery keys are two-byte Chinese characters in the source encoding;
+    p+2 skips the character itself, not an extra separator.
+    """
+    m = re.match(r"\s*([+-]?\d+)", str(tail))
     if m:
         return int(m.group(1), 10)
     return None if default is None else int(default)
+
+
+def _scan_postloop_value_tail(tail, default):
+    """Parse after token scan loops that advance once more at loop iteration end."""
+    tail = str(tail)
+    if tail:
+        tail = tail[1:]
+    return _scan_direct_value_tail(tail, default)
 
 
 def parse_battle_recovery_option(option, *, hp_token, mp_token):
@@ -95,7 +104,7 @@ def parse_battle_recovery_option(option, *, hp_token, mp_token):
         tail = text[pos_hp + len(str(hp_token)) :]
         return {
             "kind": "hp",
-            "power": _scan_item_value_tail(tail, 0),
+            "power": _scan_direct_value_tail(tail, 0),
             "percent": False,
         }
     pos_mp = text.find(str(mp_token))
@@ -152,7 +161,7 @@ def parse_param_change_option(option, param_tokens):
     found = _find_token(option, param_tokens, start=1)
     if found is None:
         return None
-    power = _scan_item_value_tail(found["tail"], 30)
+    power = _scan_postloop_value_tail(found["tail"], 30)
     return {
         "kind": found["index"],
         "power": power,
@@ -303,7 +312,7 @@ def parse_field_recovery_option(
         if pos < 0:
             continue
         tail = text[pos + len(str(token)) :]
-        scanned = _scan_item_value_tail(tail, None)
+        scanned = _scan_direct_value_tail(tail, None)
         if scanned is None:
             requests[key] = {"base": 1, "randomized": False}
         else:
