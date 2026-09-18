@@ -31,16 +31,28 @@ def to_int(v):
     except ValueError:return None
 
 def parse_file(path):
-    rows=[]; field_counts=collections.Counter(); malformed=0
+    rows=[]; field_counts=collections.Counter(); malformed=0; raw_rows=[]
+    max_cols=0
     for line in clean_lines(path):
-        fields=line.split(b","); field_counts[len(fields)]+=1
+        fields=line.split(b","); raw_rows.append(fields)
+        field_counts[len(fields)]+=1; max_cols=max(max_cols,len(fields))
         if len(fields)<CHAR_FIELDS+len(INT_NAMES):
             malformed+=1; continue
         ints={name:to_int(fields[idx]) for name,idx in INDEX.items()}
         if any(v is None for v in ints.values()):
             malformed+=1; continue
         rows.append(ints)
-    return rows,field_counts,malformed
+    profiles=[]
+    for idx in range(max_cols):
+        integer=empty=text=missing=0
+        for fields in raw_rows:
+            if idx>=len(fields): missing+=1; continue
+            v=fields[idx].strip()
+            if not v: empty+=1
+            elif to_int(v) is not None: integer+=1
+            else: text+=1
+        profiles.append((idx+1,integer,empty,text,missing))
+    return rows,field_counts,malformed,raw_rows,profiles
 
 def setup_value(path,key):
     if not path or not path.exists(): return None
@@ -62,7 +74,7 @@ def analyze(data_dir,setup=None):
     files=sorted(data_dir.glob("enemybase*.txt"),key=lambda p:p.name.lower())
     out=[]
     for p in files:
-        rows,fc,bad=parse_file(p)
+        rows,fc,bad,raw_rows,profiles=parse_file(p)
         skills=collections.Counter()
         for r in rows:
             for n in ("PETSKILL1","PETSKILL2","PETSKILL3","PETSKILL4","PETSKILL5","PETSKILL6","PETSKILL7"):
@@ -70,7 +82,8 @@ def analyze(data_dir,setup=None):
         elem_sums=collections.Counter(r["EARTHAT"]+r["WATERAT"]+r["FIREAT"]+r["WINDAT"] for r in rows)
         out.append({
             "name":p.name,"sha":sha256(p),"bytes":p.stat().st_size,"rows":rows,
-            "field_counts":fc,"malformed":bad,"skills":skills,"elem_sums":elem_sums,
+            "field_counts":fc,"malformed":bad,"raw_row_count":len(raw_rows),"profiles":profiles,
+            "skills":skills,"elem_sums":elem_sums,
             "active": bool(active and Path(active.replace("\\","/")).name.lower()==p.name.lower())
         })
     return active,out
@@ -84,9 +97,17 @@ def emit(data_dir,setup=None):
     print(f"ENEMYBASE_FILE_COUNT|{len(files)}")
     for f in files:
         rows=f["rows"]
-        print(f"FILE|{f['name']}|bytes={f['bytes']}|sha256={f['sha']}|valid_rows={len(rows)}|malformed={f['malformed']}|active={int(f['active'])}")
+        print(f"FILE|{f['name']}|bytes={f['bytes']}|sha256={f['sha']}|rows={f['raw_row_count']}|descendant_prefix_compatible={len(rows)}|active={int(f['active'])}")
         for n,c in sorted(f["field_counts"].items()):
             print(f"FIELD_COUNT|{f['name']}|{n}|{c}")
+        numeric_cols=[]; text_cols=[]
+        for col,integer,empty,text,missing in f["profiles"]:
+            total=integer+empty+text+missing
+            if total and integer==total: numeric_cols.append(col)
+            if text: text_cols.append(col)
+            print(f"COLUMN_PROFILE|{f['name']}|{col}|integer={integer}|empty={empty}|text={text}|missing={missing}")
+        print(f"ALL_INTEGER_COLUMNS|{f['name']}|"+",".join(map(str,numeric_cols)))
+        print(f"TEXT_PRESENT_COLUMNS|{f['name']}|"+",".join(map(str,text_cols)))
         for name in ("TEMPNO","INITNUM","LVUPPOINT","BASEVITAL","BASESTR","BASETGH","BASEDEX","MODAI","GET","EARTHAT","WATERAT","FIREAT","WINDAT","RARE","CRITICAL","COUNTER","SLOT","IMGNUMBER","PETFLG","SIZE"):
             lo,hi,uniq=stat(rows,name)
             if lo is not None: print(f"STAT|{f['name']}|{name}|min={lo}|max={hi}|unique={uniq}")
