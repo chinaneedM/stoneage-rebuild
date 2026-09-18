@@ -59,8 +59,8 @@ def analyze(dat_dir,adrn_path=None):
             invalid.append((p.name,p.stat().st_size,str(exc))); continue
         valid.append((p.name,w,h)); dims[(w,h)]+=1; cells+=w*h
         tile.update(t); parts.update(pa); events.update(e)
-        unknown=sum(1 for v in e if (v&EVENT_MASK) not in KNOWN_EVENTS)
-        unknown_read=sum(1 for v in e if (v&EVENT_MASK) not in KNOWN_EVENTS and (v&MAP_READ_FLAG))
+        unknown=sum(1 for v in e if (v&EVENT_MASK) not in EVENT_NAMES)
+        unknown_read=sum(1 for v in e if (v&EVENT_MASK) not in EVENT_NAMES and (v&MAP_READ_FLAG))
         event_file_stats.append((p.name,w,h,unknown,unknown_read))
     def buckets(c):
         o=collections.Counter()
@@ -73,7 +73,7 @@ def analyze(dat_dir,adrn_path=None):
         if v&MAP_READ_FLAG:read+=n
         if v&MAP_SEE_FLAG:see+=n
         if v&(MAP_READ_FLAG|MAP_SEE_FLAG)==(MAP_READ_FLAG|MAP_SEE_FLAG):both+=n
-        if (v&EVENT_MASK) not in KNOWN_EVENTS:
+        if (v&EVENT_MASK) not in EVENT_NAMES:
             unknown_total+=n
             if v&MAP_READ_FLAG: unknown_read_total+=n
             if v&MAP_SEE_FLAG: unknown_see_total+=n
