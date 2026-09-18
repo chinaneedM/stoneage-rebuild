@@ -736,10 +736,24 @@ Supplemental source ledgers:
 - Local reference validation passes 19 deterministic tests.
 - Riderman R1 is closed for recovered 2.5 trainer configuration plus fixed-descendant common personal riding behavior.
 
+## TimeMan active core closure — 2026-09-19
+
+- Real-byte TimeMan workflow 35384038054 succeeded: all 34 refs are resolved file-backed configs; aggregate argument SHA-256 is 7a3dfbacbaba1137d10052959eb299b0e9c1e1cfa3bff86181b637e5c52aa457.
+- StoneAge time is a 5400-real-second / 90-minute day quantized into 1024 internal hour units. The three fixed descendants share the same TimeMan table and strict-boundary Watch logic.
+- Recovered 2.5 TimeMan uses only ALLNOON (18), ALLNIGHT (9) and AFTER (7); AM/PM/FORE/EVNING/MORNING/FREE are dormant in this specimen.
+- 30 configs omit change_no and therefore use hidden graphic 9999 outside the active window; 4 use numeric alternate graphics. No recovered explicit CLS change value was observed.
+- All 34 configs contain main_msg; variant counts are 16x1, 12x2, 3x3 and 3x4. Only 4 configs contain change_msg, each with one variant.
+- Preserved strict endpoint behavior, including exact hour 0 exclusion in wrapping/FREE intervals.
+- TimeMan is Watch-driven rather than timer-loop-driven: Init stores the rule but does not evaluate current time or explicitly initialize mode/current-graphic state; a nearby player Watch event performs correction.
+- Hidden graphic 9999 suppresses talk; mode 0 uses main_msg and nonzero mode uses change_msg, choosing a comma-separated variant randomly.
+- Added tools/stoneage_timeman_core_model.py, tests/test_stoneage_timeman_core_model.py, dedicated CI and research/mechanics/STONEAGE-TIMEMAN-CORE-R1.md.
+- Local reference validation passes 18 deterministic tests.
+- TimeMan R1 is closed for fixed-descendant common behavior plus recovered 2.5 active surface.
+
 ## Immediate next actions
 
-1. **Advance to TimeMan as the next common deterministic world-time seam.** Its 34 recovered refs are all file-backed; measure active time/change-image/message keys first, then reconstruct only the fixed-descendant common StoneAge-time visibility/image mode behavior.
-2. **Keep Windowman and Action below TimeMan.** They are primarily conditional-window/message presentation and do not expose an ordinary persistent-state mutation path in the inspected common callbacks.
+1. **Advance to Windowman as the next deterministic conditional-window seam.** Probe its 17 recovered inline conff references and the resolved conff contents without retaining dialogue or item IDs; specifically measure whether takeitem/giveitem/warp/battle and item-condition fields appear.
+2. **If recovered Windowman data confirms only conditional presentation, close it as UI routing rather than inventing state mutation.** Then take Action as the next lightweight presentation/action-message seam.
 3. **Keep Bankman, Raceman, Scheduleman and family PK/management packages later-scope.** Personal-bank mutation is coupled to the family protocol; race and scheduling classes remain expansion/family systems.
 4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
