@@ -121,6 +121,22 @@ Derived reports:
 
 These magazine scans strengthen period attribution of the Inium/Hananet surfaces, but they do not yet advance the project from domain-level to file-token recovery.
 
+### 4c. Follow-up NetPower StoneAge page probes — negative file-token controls
+
+Three later near-period StoneAge article ranges were scanned with the same transient OCR / sparse-token pipeline:
+
+- **NetPower 2000-12, pp.173–176** (StoneAge review): only the cross-PSM title token `Stone Age` was recovered; no URL, domain, archive/installer filename or size token survived.
+- **NetPower 2001-01, pp.185–190** (StoneAge preview): no StoneAge URL/archive/installer token was recovered; `32MB` appears in only one OCR mode and remains semantically unresolved, while `titaepowerzine.com` is treated as OCR noise rather than a recovery surface.
+- **NetPower 2001-02, pp.189–194** (StoneAge online-travel article): the only stable Latin domain is the magazine-side `powerzine.com`; no Inium/Hananet/CNET or installer/archive token was recovered.
+
+Derived reports:
+
+- `research/recovered/STONEAGE-NETPOWER-2000-12-LATIN-TOKENS-R1.txt`
+- `research/recovered/STONEAGE-NETPOWER-2001-01-LATIN-TOKENS-R1.txt`
+- `research/recovered/STONEAGE-NETPOWER-2001-02-LATIN-TOKENS-R1.txt`
+
+Operational consequence: these exact article ranges are now low-value repeat targets. Re-run only if a materially better OCR/layout method or a specific visible token justifies it; otherwise return effort to Inium/Hananet/CNET directory/file-name recovery and preserved installation media.
+
 ### 5. Pre-service Samsung distribution plan
 
 iNews24, 2000-07-04:
