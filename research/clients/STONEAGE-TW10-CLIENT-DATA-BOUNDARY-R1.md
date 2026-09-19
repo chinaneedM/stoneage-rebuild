@@ -61,7 +61,7 @@ Therefore the earlier 233-record container count must not be interpreted as 233 
 
 `soundaddr_1.txt` contains 114 address-table records, all with unique names, and all 114 names resolve inside `StoneAge/data/se/`.
 
-The disc contains 116 loose SFX WAV files, so two loose WAV files exist outside the 114-name address-table set.
+The disc contains 116 loose SFX WAV files. The two loose files outside the 114-name address-table set are `sak_91.wav` and `sak_92.wav`.
 
 Independent container diagnostics establish 114 records in `sound_1.bin`: 107 match their loose WAV counterparts exactly, while 7 are variant payloads/RIFF structures. The container and loose WAV directory therefore must remain separate provenance surfaces rather than being flattened into one assumed-identical audio set.
 
