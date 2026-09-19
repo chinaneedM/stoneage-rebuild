@@ -1,25 +1,26 @@
-StoneAge Inium trial-menu locator — R1
-SCOPE|archived-menu-metadata-only|no-client-binary-download
-COUNT|availability_queries|45
-COUNT|available_page_snapshots|39
-COUNT|errors|19
+StoneAge Inium trial-menu locator — R3
+SCOPE|archived-menu-and-child-page-metadata-only|no-client-binary-download
+METHOD|availability+multi-replay-fallback+one-hop-same-site-page-discovery|bounded-concurrency=8
+COUNT|seed_availability_queries|45
+COUNT|seed_available_snapshots|34
+COUNT|seed_replay_success|20
+COUNT|discovered_internal_page_jobs|43
+COUNT|child_jobs_selected|43
+COUNT|child_available_snapshots|0
+COUNT|child_replay_success|0
+COUNT|errors|14
 COUNT|trial_download_hits|0
-ERROR|phase=replay|page=main_4_3.htm|marker=20010623201143|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_4_3.htm|marker=20010803063201|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_5.htm|marker=20010413163630|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_5.htm|marker=20010623195917|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_5.htm|marker=20010814173756|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_6.htm|marker=20010413163523|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_6.htm|marker=20010619060923|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_6.htm|marker=20010801161117|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_7.htm|marker=20010413163851|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_7.htm|marker=20010619061610|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_7.htm|marker=20010801161131|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_8.htm|marker=20010619062446|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_9.htm|marker=20010303112015|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_9.htm|marker=20010627095859|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_9.htm|marker=20010830023207|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_hot.htm|marker=20010413164913|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=main_hot.htm|marker=20010619063201|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=sitemap.htm|marker=20010413160331|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|phase=replay|page=sitemap.htm|marker=20010801145227|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=main_5.htm|marker=20010623195917|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=main_5.htm|marker=20010814173756|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=main_6.htm|marker=20010801161117|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=main_7.htm|marker=20010413163851|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=main_7.htm|marker=20010619061610|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=main_7.htm|marker=20010801161131|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=main_8.htm|marker=20010619062446|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=main_9.htm|marker=20010303112015|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=main_9.htm|marker=20010627095859|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=main_9.htm|marker=20010830023207|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=main_hot.htm|marker=20010413164913|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=main_hot.htm|marker=20010619063201|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=sitemap.htm|marker=20010413160331|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
+ERROR|phase=replay|page=sitemap.htm|marker=20010801145227|kind=RuntimeError|message=URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>; URLError:<urlopen error [Errno 111] Connection refused>
