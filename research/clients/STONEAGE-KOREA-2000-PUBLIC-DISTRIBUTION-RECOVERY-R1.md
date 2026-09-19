@@ -141,6 +141,24 @@ Archive boundary:
 - a separate Arquivo.pt CDX run checks **14 exact known mirror URLs** for 2000–2005 with **0 errors and 0 indexed captures**;
 - these are archive-service-specific negative results only, not evidence that republished mirrors, physical-media copies or other preservation copies no longer exist.
 
+### 4x. Inium trial-menu and Common Crawl probe boundary — 2026-09-19
+
+Two additional archive probes narrow what may safely be concluded from the surviving web record:
+
+- **Inium menu replay (`research/recovered/STONEAGE-INIUM-TRIAL-MENU-R1.txt`, final R5):**
+  - 45 Wayback Availability queries over the known `sitemap.htm` / `main_*.htm` menu set and three 2001 target dates;
+  - 34 unique seed snapshots were reported available;
+  - 20 pages replayed successfully in raw `id_` form after explicitly excluding Wayback toolbar/navigation links;
+  - 14 seed replays still failed with connection-refused errors;
+  - the successful raw pages produced **0 genuine same-site child-page candidates** and **0 trial/demo/download hits**.
+  - This is a **partial negative control only**. It rules out the searched tokens on the 20 successfully replayed raw pages; it does not prove that a separate trial menu never existed, because 14 seed snapshots remain unreadable and the probe is limited to the named menu/sitemap surface and dates.
+
+- **Common Crawl exact/prefix probe (`research/recovered/STONEAGE-COMMONCRAWL-EXACT-PAYLOADS-R1.txt`, R3):**
+  - queried the eight oldest listed Common Crawl indexes for 6 exact targets and 5 mirror-prefix neighborhoods, 88 queries total;
+  - 83 queries ended in HTTP 503 or transport/SSL timeout;
+  - the remaining successful queries returned no rows, and no exact or prefix-relevant result was recovered.
+  - Because the overwhelming majority of queries failed at the archive service/transport layer, this run is **inconclusive and must not be treated as evidence that Common Crawl lacks the targets**. Retry only when the index service is healthy; do not convert its current zero-result count into a preservation conclusion.
+
 This changes the search problem materially: Hananet no longer lacks a file identity. The high-value exact tokens are now the early PDS app ID **`20001031524596220`**, Hananet formal **`sa.exe`** and trial **`sa_demo.exe`**, CNET **`stoneage.zip`**, Gagamel **`stoneagebeta.zip`**, and GameTime **`GW_IDX=9`**.
 
 Derived evidence:
@@ -159,6 +177,8 @@ Derived evidence:
 - `research/recovered/STONEAGE-INIUM-DOWN-PROBE-R1.txt`;
 - `research/recovered/STONEAGE-INIUM-MIRROR-TARGETS-R1.txt`;
 - `research/recovered/STONEAGE-HANANET-PDS-DIRECT-REPLAY-R1.txt`.
+- `research/recovered/STONEAGE-INIUM-TRIAL-MENU-R1.txt`;
+- `research/recovered/STONEAGE-COMMONCRAWL-EXACT-PAYLOADS-R1.txt`.
 
 ### 4a. Exact historical download-root narrowing
 
