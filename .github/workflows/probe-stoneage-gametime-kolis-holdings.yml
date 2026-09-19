@@ -1,0 +1,39 @@
+name: Probe GameTime StoneAge KOLIS holdings
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_gametime_kolis_holding_probe.py
+      - tests/test_stoneage_gametime_kolis_holding_probe.py
+      - .github/workflows/probe-stoneage-gametime-kolis-holdings.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-gametime-kolis-holdings
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_gametime_kolis_holding_probe -v
+      - name: Probe KOLIS holding layer
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_gametime_kolis_holding_probe \
+            > research/recovered/STONEAGE-GAMETIME-2001-KOLIS-HOLDINGS-R1.txt
+      - name: Commit derived catalog metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-GAMETIME-2001-KOLIS-HOLDINGS-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe GameTime KOLIS holdings'
+          git pull --rebase origin main
+          git push
