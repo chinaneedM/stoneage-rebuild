@@ -159,7 +159,7 @@ Two additional archive probes narrow what may safely be concluded from the survi
   - the remaining successful queries returned no rows, and no exact or prefix-relevant result was recovered.
   - Because the overwhelming majority of queries failed at the archive service/transport layer, this run is **inconclusive and must not be treated as evidence that Common Crawl lacks the targets**. Retry only when the index service is healthy; do not convert its current zero-result count into a preservation conclusion.
 
-This changes the search problem materially: Hananet no longer lacks a file identity. The high-value exact tokens are now the early PDS app ID **`20001031524596220`**, Hananet formal **`sa.exe`** and trial **`sa_demo.exe`**, CNET **`stoneage.zip`**, Gagamel **`stoneagebeta.zip`**, and GameTime **`GW_IDX=9`**.
+This changes the search problem materially: Hananet no longer lacks a file identity. The high-value exact tokens are now the early PDS app ID **`20001031524596220`**, Hananet formal **`sa.exe`** and trial **`sa_demo.exe`**, CNET **257MB `stoneage.zip`**, Gagamel **`stoneagebeta.zip`**, GameTime trial **`stone_demo.exe` / GW_IDX=76**, and unresolved GameTime formal mirror **`GW_IDX=9`**. GameTime **`GW_IDX=34 / StoneAge.zip`** is separately resolved as a 0.4/0.42MB manual update and must not be promoted as a full-client candidate.
 
 Derived evidence:
 
@@ -272,6 +272,56 @@ Classification: **A/B / contemporaneous pre-launch distribution-plan evidence**.
 
 Do not treat every planned channel as proven byte-identical distribution. The later product-launch article independently confirms a large education-center package supply agreement, strengthening the offline preservation track.
 
+
+## GameTime data-center StoneAge records resolved — 2026-09-19
+
+A preserved GameTime search page from **2001-07-01** now resolves two concrete StoneAge data-center records that must be separated by role.
+
+### GW_IDX=76 — trial client
+
+- title: **`스톤에이지 체험판 클라이언트`**;
+- file: **`stone_demo.exe`**;
+- category: online;
+- registered: **2001-02-12 19:45:00**;
+- archived list-page size: **234MB**;
+- description states the formal version is about **260MB** and the trial version about **240MB**;
+- trial use is described as **five days**;
+- a separate trial account application is required through Inium;
+- characters and pets raised on the trial service are explicitly said not to carry into the formal server;
+- download counter: **21,187** on the 2001-07-01 archived search result and **53,612** on the 2001-08-20 online-list snapshot.
+
+This is now an exact GameTime trial-client identity and a new filename token independent of Hananet's `sa_demo.exe`.
+
+### GW_IDX=34 — manual update, not a full client
+
+- title: **`스톤에이지 자동 업데이트가 안된다면 이것을...`**;
+- file: **`StoneAge.zip`**;
+- registered: **2000-11-06 11:21:00**;
+- archived list-page size: **0.4MB**;
+- an independent archived GameTime webzine record dated **2001-04-17** labels the same manual-update download **0.42 MB**;
+- instructions say to copy it into the installed StoneAge directory after deleting:
+  - `sa_*.exe`
+  - `server_*.ini`
+  - `stoneage.exe`
+
+This resolves the object's role as an updater payload. It also exposes three concrete installed-client filename patterns useful for later provenance and contamination checks.
+
+### Critical filename collision
+
+GameTime's **0.4/0.42MB `StoneAge.zip` manual update** is not the same evidentiary object as CNET Korea's independently recovered **257MB `/pc/games/online/stoneage.zip`** distribution archive. Future searches must use provenance, size, path, hashes and internal structure rather than basename alone.
+
+### Remaining GameTime formal-mirror gap
+
+Inium's official download page still preserves **`/data/download.asp?GW_IDX=9&GW_Name=Online`** among its formal-version mirrors.
+
+A separate GameTime online-list sweep replayed **11 archived anchors / 52 records with zero errors**, including pages 1–10 where archived. It repeatedly recovers GW_IDX=76 but never GW_IDX=9.
+
+Therefore the GW_IDX=9 branch is now moved away from ordinary `/data/data_list.asp` pagination and toward the older **`/webzine/online/download.asp` / `/webzine/online/down/bbs.asp`** system plus exact mirror/path recovery.
+
+Derived evidence:
+
+- `research/recovered/STONEAGE-GAMETIME-2001-RECORD-RESOLUTION-R1.txt`
+- `research/recovered/STONEAGE-GAMETIME-ONLINE-INDEX-R1.txt`
 
 ## 2001 near-period installation-media lead — GameTime guide bonus CD
 
