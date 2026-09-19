@@ -72,9 +72,9 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - an intact Korean operator client would be a clean **Korean bridge specimen**, not automatic proof of JSS-Japan byte identity.
 - Archive-probe boundary:
   - older broad Wayback CDX / Arquivo.pt probes encountered request timeouts / network-unreachable errors and remain inconclusive;
-  - the latest exact-URL Arquivo.pt CDX pass covers **14 known mirror targets**, 2000–2005, with **0 request errors and 0 indexed captures**; those 14 successful zero-result queries are Arquivo.pt-specific exact-URL negative controls only. The older broad/text-oriented Arquivo probe had transport failures and remains separately inconclusive.
+  - the latest exact-URL Arquivo.pt CDX pass covers **18 known mirror targets**, 2000–2005, with **0 request errors and 0 indexed captures**; the added targets include bare/`www` GameTime `onlStoneAge.zip` and `stone_demo.exe`. Those 18 successful zero-result queries are Arquivo.pt-specific exact-URL negative controls only. The older broad/text-oriented Arquivo probe had transport failures and remains separately inconclusive.
   - final Inium trial-menu probe R5 issued 45 Wayback Availability queries against the known sitemap/main-menu surface: 34 unique snapshots were reported available, 20 raw `id_` pages replayed successfully, 14 seed replays still failed, and the 20 successful raw pages yielded zero trial/demo/download-token hits; Wayback toolbar links were explicitly excluded. This is a **partial** negative control only and does not close the unreadable snapshots or prove that no separate trial menu existed.
-  - Common Crawl mirror-neighborhood probe R3 issued 88 exact/prefix queries across the eight oldest listed indexes, but 83 ended in HTTP 503 or transport/SSL timeouts. Its zero recovered rows are therefore **inconclusive**, not a Common Crawl negative control; retry only under a healthy index service.
+  - Common Crawl mirror-neighborhood probe R3 now includes `onlStoneAge.zip`, `stone_demo.exe` and the GameTime image-PDS prefix. It issued **112** exact/prefix queries across the eight oldest listed indexes, but **109** ended in HTTP 503 or transport timeout. Its zero recovered rows are therefore **inconclusive**, not a Common Crawl negative control; retry only under a healthy index service.
 - Magazine-scan token boundary:
   - NetPower 2000-12 pp.173–176, 2001-01 pp.185–190 and 2001-02 pp.189–194 have now been probed with transient OCR and sparse-token extraction;
   - none produced an Inium/Hananet/CNET URL or installer/archive filename; 2001-02 only recovered the magazine-side `powerzine.com`, while isolated `32MB` / OCR-noise strings remain non-evidence for client size or filename;
@@ -375,21 +375,23 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - NetPower 2001.12: **2 images**, complete directory walks, 0 StoneAge-path hits.
 - Internet Archive exact-token reverse search:
   - **222** item metadata/file-list records checked with 0 request errors;
-  - exact historical keys include `sa_demo.exe`, **`stone_demo.exe`**, `stoneagebeta.zip`, `20001031524596220`, `200009263856`, `GW_IDX=9` and `/pc/games/online/stoneage.zip`;
-  - the exact `stone_demo.exe` search produced 7 IA search-index hits, but file-list verification still produced **0 exact target filename matches**; all **11** file candidates are size-only false positives.
+  - exact historical keys include `sa_demo.exe`, **`stone_demo.exe`**, **`onlStoneAge.zip`**, the full `images/Online/pds/2001/02/onlStoneAge.zip` path, `stoneagebeta.zip`, `20001031524596220`, `200009263856`, `GW_IDX=9` and `/pc/games/online/stoneage.zip`;
+  - the exact `stone_demo.exe` search produced 7 IA search-index hits, but file-list verification still produced **0 exact target filename matches**; both `onlStoneAge.zip` queries returned **0 search results**, and all **11** file candidates are size-only false positives.
 - Wayback CDX 2000–2002 distribution-prefix census:
   - 12 prefix queries, 0 request errors, 362 rows / 181 unique URLs;
   - exact Hananet `stoneage.hananet.net/down/` and CNET `korea.cnet.com/pc/games/online/` prefixes return 0 rows for tested bare/www variants;
   - Gagamel, GameTime and Inium prefixes return real records, making those Hananet/CNET zero-row results archive-specific directory-level negative controls rather than evidence of probe failure;
-  - adding `pds.gametime.co.kr/` as a 13th prefix yields only **11 archived URLs**, all image/JPEG assets and no executable/archive payload; aggregate census becomes **373 rows / 192 unique URLs / 0 errors**.
-- New GameTime recovery lead:
-  - Wayback CDX preserves `http://www.gametime.co.kr/data/data_list.asp?search_word=%bd%ba%c5%e6%bf%a1%c0%cc%c1%f6&category=online` at **2001-07-01 05:34:12 UTC**;
-  - the CP949/EUC-KR search term decodes to **`스톤에이지`**;
-  - this provides a concrete archived StoneAge result surface from which to recover record IDs/detail/download endpoints and test the independently preserved `GW_IDX=9` identity.
+  - adding `pds.gametime.co.kr/` as a 13th prefix yields only **11 archived URLs**, all image/JPEG assets and no executable/archive payload;
+  - adding both bare/`www` `gametime.co.kr/images/Online/pds/2001/02/` prefixes yields **0 rows** for both successful queries. The latest census covers **15 prefixes / 373 rows / 192 unique URLs**; one transient timeout affects only the `www.stoneage.hananet.net/down/` variant and does not weaken the GameTime image-PDS zero-row result.
+- GameTime exact payload resolution:
+  - Wayback CDX preserves `http://www.gametime.co.kr/data/data_list.asp?search_word=%bd%ba%c5%e6%bf%a1%c0%cc%c1%f6&category=online` at **2001-07-01 05:34:12 UTC**, and the CP949/EUC-KR search term decodes to **`스톤에이지`**;
+  - archived HTTP 302 responses for `GW_IDX=9` consistently redirect to **`http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip`**;
+  - archived HTTP 302 responses for `GW_IDX=76` redirect to **`http://www.gametime.co.kr/images/Online/pds/2001/02/stone_demo.exe`**;
+  - IA, Wayback image-PDS prefix enumeration and Arquivo.pt currently expose no payload capture for either exact file; Common Crawl remains inconclusive because 109/112 queries failed.
 - Evidence boundary:
   - all no-hit statements above apply only to the exact carrier/prefix/query corpus;
   - no early Korean clean-client bytes are recovered by these negative controls.
-- Status: **CONTROL-A/B + ACTIVE LEAD — broad public-media surfaces narrowed; GameTime archived result chain is active.**
+- Status: **CONTROL-A/B + TARGET-A payload recovery — broad public-media surfaces narrowed; GameTime record-9 payload filename/path is resolved as `onlStoneAge.zip`, but bytes remain unrecovered.**
 
 ## Current recovery order
 
