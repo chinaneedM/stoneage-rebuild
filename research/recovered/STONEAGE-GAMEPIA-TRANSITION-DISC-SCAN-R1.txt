@@ -1,7 +1,7 @@
 StoneAge GamePia transition-window directory scan — R1
 SCOPE|http-range-directory-metadata-only|no-full-image-download|no-carrier-bytes-committed
-WINDOW|legacy-issues=No.58..No.64|sequence-selected-from-public-corpus
-ITEM|identifier=GAMEPIA_cd_dump|title=GAMEPIA 게임피아 부록 CD 덤프|selected_images=12
+WINDOW|legacy-issues=No.58..No.69|sequence-selected-from-public-corpus
+ITEM|identifier=GAMEPIA_cd_dump|title=GAMEPIA 게임피아 부록 CD 덤프|selected_images=23
 TARGET|name=No.58/CD1/PF2012.bin|size=602173152|md5=1b0a5351e45b6459eb010b42ac6b15b4|sha1=d7744f5f20027ecab8f1800f8fa7be33c84c97bc|format=Unknown
 TARGET|name=No.58/CD2/0007101814.bin|size=764063664|md5=6317118ec147ac6bd34e94c077524438|sha1=ff988e51c359b9725f8df38d6008b52468e8a029|format=Unknown
 TARGET|name=No.59/CD1/SIRIA.mdf|size=627828768|md5=3880a514208891704c93f7e4de408918|sha1=9ee4914b00e80c493314bbcc20ae72248d7ad390|format=MPEG1
@@ -14,8 +14,19 @@ TARGET|name=No.62/CD1/TZAR.bin|size=723397584|md5=06350b151e75b83abf418a9b6b43d1
 TARGET|name=No.62/CD2/CC4.bin|size=729479856|md5=3d4206b73fd62a0cf315c9480abe92a1|sha1=8b8e7f32a699f696519c04e9c5fe22794085c6eb|format=Unknown
 TARGET|name=No.64/CD1/LUNAR_PC.bin|size=766227504|md5=97031b3db7014845dd2a125e9e3b0251|sha1=401019bc3c42d1fdaf69e5cf4528fa718d47ac4c|format=Unknown
 TARGET|name=No.64/CD2/게임피아 (2001-02) - 악튜러스 디지털 공략 CD.img|size=755286000|md5=74e94ed5d4fc784b4ab00842738dcb0e|sha1=51dec5090a5c9bdbf3729561b83efed643e25f80|format=ISO Image
+TARGET|name=No.65/CD1/EVOLVA.bin|size=628381488|md5=7ded948835fe96898c529e4330d089bc|sha1=10246e6bcb3108b9ad503fafcd5ce265ea892d04|format=Unknown
+TARGET|name=No.65/CD2/CD2.bin|size=703690176|md5=a9c03a0db6bed21096495da97e609b49|sha1=e110c44f53fee31fbd59585f3fae78c12a381b6e|format=Unknown
+TARGET|name=No.66/CD1/001229_0928.bin|size=739447632|md5=ad04c667c943e3aa66ca567261d1fa84|sha1=18b53adc3f09759d2bccd2494d86a46e6993fb05|format=Unknown
+TARGET|name=No.66/CD2/CD 2.bin|size=735691488|md5=0bd83cb302a0dec8c75715b644771922|sha1=6acc6044c58969a8cea9ba2d12dd44b8644fe439|format=Unknown
+TARGET|name=No.67/CD1/Gamepia CD 1.mdf|size=790924320|md5=8dc0b8b6dfc2698c3b196a1a0d7c6c51|sha1=b861a24aeb5952a09aed6ebfc94e2379db0fd57f|format=Unknown
+TARGET|name=No.67/CD2/0104121617.bin|size=706383216|md5=73e0bf60098c65e9fb9a622ac23c732d|sha1=7de0f8b9ba3c1416d8e5eb57036004e5ec84ac79|format=Unknown
+TARGET|name=No.68/CD1/Gamepia CD1.bin|size=745487568|md5=a6d5a80604c13bd09fdec75386a846b8|sha1=3b5f90dd3b8bd801ce2ea99b191d93e327603b1b|format=Unknown
+TARGET|name=No.68/CD2/Gamepia CD1.mdf|size=520483968|md5=7f43c4611ddc6c59c0a24e9c95b69d5e|sha1=390edafc978bfccc6aa726ac46d91b46234f6942|format=Unknown
+TARGET|name=No.69/CD1/VIDEOCD.bin|size=526829184|md5=6085f0d1bb532defe4e6d5d87f5809e8|sha1=164a07733b77a8da17f60a04ff6fe8599e5abeb0|format=Unknown
+TARGET|name=No.69/CD2/VIDEOCD.bin|size=663487440|md5=7b6d2f05602f0061daec85405a449efa|sha1=bd63ce5e41fbf4fe92609b75187542eccc1ee384|format=Unknown
+TARGET|name=No.69/CD3/Gamepia.bin|size=772236864|md5=b01bd598835e90f5358d69428ffbcbb1|sha1=43ffee72c3e921eb9a7c7a8db54249d2d30bdf6c|format=Unknown
 COUNT|scan_errors|0
-COUNT|images_scanned|12
+COUNT|images_scanned|23
 COUNT|stoneage_hits|0
 IMAGE|name=No.58/CD1/PF2012.bin|size=602173152|md5=1b0a5351e45b6459eb010b42ac6b15b4|sha1=d7744f5f20027ecab8f1800f8fa7be33c84c97bc|layout=auto-frame-2352-origin-24|volume=PF2012|requests=4|bytes_read=8192|primary_entries=23|primary_dirs=1|joliet=1|joliet_entries=23|truncated=0
 SAMPLE|image=No.58/CD1/PF2012.bin|path=AUTORUN.EXE
@@ -125,3 +136,102 @@ SAMPLE|image=No.64/CD2/게임피아 (2001-02) - 악튜러스 디지털 공략 CD
 SAMPLE|image=No.64/CD2/게임피아 (2001-02) - 악튜러스 디지털 공략 CD.img|path=MPEGXT~1.CST
 SAMPLE|image=No.64/CD2/게임피아 (2001-02) - 악튜러스 디지털 공략 CD.img|path=NICE.EXE
 SAMPLE|image=No.64/CD2/게임피아 (2001-02) - 악튜러스 디지털 공략 CD.img|path=PROGRAM
+IMAGE|name=No.65/CD1/EVOLVA.bin|size=628381488|md5=7ded948835fe96898c529e4330d089bc|sha1=10246e6bcb3108b9ad503fafcd5ce265ea892d04|layout=mode1-2352|volume=EVOLVA|requests=20|bytes_read=40960|primary_entries=66|primary_dirs=9|joliet=1|joliet_entries=66|truncated=0
+SAMPLE|image=No.65/CD1/EVOLVA.bin|path=AUTORUN
+SAMPLE|image=No.65/CD1/EVOLVA.bin|path=AUTORUN.INF
+SAMPLE|image=No.65/CD1/EVOLVA.bin|path=CALOGO~1.JPG
+SAMPLE|image=No.65/CD1/EVOLVA.bin|path=EVOLVA
+SAMPLE|image=No.65/CD1/EVOLVA.bin|path=EVOLVA.ICO
+SAMPLE|image=No.65/CD1/EVOLVA.bin|path=EVOLVA~1.HTM
+SAMPLE|image=No.65/CD1/EVOLVA.bin|path=FLAREL~1.JPG
+SAMPLE|image=No.65/CD1/EVOLVA.bin|path=INTERP~1.JPG
+IMAGE|name=No.65/CD2/CD2.bin|size=703690176|md5=a9c03a0db6bed21096495da97e609b49|sha1=e110c44f53fee31fbd59585f3fae78c12a381b6e|layout=auto-frame-2352-origin-24|volume=CD2|requests=8|bytes_read=16384|primary_entries=13|primary_dirs=3|joliet=1|joliet_entries=13|truncated=0
+SAMPLE|image=No.65/CD2/CD2.bin|path=AUTORUN.INF
+SAMPLE|image=No.65/CD2/CD2.bin|path=GAMEDEMO
+SAMPLE|image=No.65/CD2/CD2.bin|path=GAMEPIA.EXE
+SAMPLE|image=No.65/CD2/CD2.bin|path=GENESI~1.EXE
+SAMPLE|image=No.65/CD2/CD2.bin|path=LINGO.INI
+SAMPLE|image=No.65/CD2/CD2.bin|path=NICE.EXE
+SAMPLE|image=No.65/CD2/CD2.bin|path=PROGRAM
+SAMPLE|image=No.65/CD2/CD2.bin|path=GAMEDEMO/HH2002~1.EXE
+IMAGE|name=No.66/CD1/001229_0928.bin|size=739447632|md5=ad04c667c943e3aa66ca567261d1fa84|sha1=18b53adc3f09759d2bccd2494d86a46e6993fb05|layout=auto-frame-2352-origin-24|volume=001229_0928|requests=6|bytes_read=12288|primary_entries=22|primary_dirs=2|joliet=1|joliet_entries=22|truncated=0
+SAMPLE|image=No.66/CD1/001229_0928.bin|path=AUTORUN.INF
+SAMPLE|image=No.66/CD1/001229_0928.bin|path=DATA.TAG
+SAMPLE|image=No.66/CD1/001229_0928.bin|path=DATA1.CAB
+SAMPLE|image=No.66/CD1/001229_0928.bin|path=DATA1.HDR
+SAMPLE|image=No.66/CD1/001229_0928.bin|path=ICON1.ICO
+SAMPLE|image=No.66/CD1/001229_0928.bin|path=LANG.DAT
+SAMPLE|image=No.66/CD1/001229_0928.bin|path=LAYOUT.BIN
+SAMPLE|image=No.66/CD1/001229_0928.bin|path=LOADER.EXE
+IMAGE|name=No.66/CD2/CD 2.bin|size=735691488|md5=0bd83cb302a0dec8c75715b644771922|sha1=6acc6044c58969a8cea9ba2d12dd44b8644fe439|layout=auto-frame-2352-origin-24|volume=CD_2|requests=14|bytes_read=28672|primary_entries=36|primary_dirs=6|joliet=1|joliet_entries=36|truncated=0
+SAMPLE|image=No.66/CD2/CD 2.bin|path=AUTORUN.INF
+SAMPLE|image=No.66/CD2/CD 2.bin|path=CAFE9
+SAMPLE|image=No.66/CD2/CD 2.bin|path=FALLEN
+SAMPLE|image=No.66/CD2/CD 2.bin|path=GAMEPIA.EXE
+SAMPLE|image=No.66/CD2/CD 2.bin|path=ISO966~1
+SAMPLE|image=No.66/CD2/CD 2.bin|path=LINGO.INI
+SAMPLE|image=No.66/CD2/CD 2.bin|path=MPEGXT~1.CST
+SAMPLE|image=No.66/CD2/CD 2.bin|path=NICE.EXE
+IMAGE|name=No.67/CD1/Gamepia CD 1.mdf|size=790924320|md5=8dc0b8b6dfc2698c3b196a1a0d7c6c51|sha1=b861a24aeb5952a09aed6ebfc94e2379db0fd57f|layout=auto-frame-2448-origin-24|volume=GAMEPIA_CD_1|requests=126|bytes_read=258048|primary_entries=2051|primary_dirs=16|joliet=1|joliet_entries=2052|truncated=0
+SAMPLE|image=No.67/CD1/Gamepia CD 1.mdf|path=AUTORUN.INF
+SAMPLE|image=No.67/CD1/Gamepia CD 1.mdf|path=BMP.
+SAMPLE|image=No.67/CD1/Gamepia CD 1.mdf|path=CA00.IDX
+SAMPLE|image=No.67/CD1/Gamepia CD 1.mdf|path=CA01.IDX
+SAMPLE|image=No.67/CD1/Gamepia CD 1.mdf|path=CA02.IDX
+SAMPLE|image=No.67/CD1/Gamepia CD 1.mdf|path=CA03.IDX
+SAMPLE|image=No.67/CD1/Gamepia CD 1.mdf|path=CA04.IDX
+SAMPLE|image=No.67/CD1/Gamepia CD 1.mdf|path=CA05.IDX
+IMAGE|name=No.67/CD2/0104121617.bin|size=706383216|md5=73e0bf60098c65e9fb9a622ac23c732d|sha1=7de0f8b9ba3c1416d8e5eb57036004e5ec84ac79|layout=auto-frame-2352-origin-24|volume=0104121617|requests=517|bytes_read=1058816|primary_entries=3655|primary_dirs=191|joliet=1|joliet_entries=3655|truncated=0
+SAMPLE|image=No.67/CD2/0104121617.bin|path=AUTORUN.INF
+SAMPLE|image=No.67/CD2/0104121617.bin|path=GAMEDEMO
+SAMPLE|image=No.67/CD2/0104121617.bin|path=GAMEPIA.EXE
+SAMPLE|image=No.67/CD2/0104121617.bin|path=LINGO.INI
+SAMPLE|image=No.67/CD2/0104121617.bin|path=MPEGXT~1.CST
+SAMPLE|image=No.67/CD2/0104121617.bin|path=NICE.EXE
+SAMPLE|image=No.67/CD2/0104121617.bin|path=PATCH
+SAMPLE|image=No.67/CD2/0104121617.bin|path=PROGRAM
+IMAGE|name=No.68/CD1/Gamepia CD1.bin|size=745487568|md5=a6d5a80604c13bd09fdec75386a846b8|sha1=3b5f90dd3b8bd801ce2ea99b191d93e327603b1b|layout=auto-frame-2352-origin-24|volume=GAMEPIA_CD1|requests=42|bytes_read=86016|primary_entries=308|primary_dirs=17|joliet=1|joliet_entries=308|truncated=0
+SAMPLE|image=No.68/CD1/Gamepia CD1.bin|path=AUTORUN.INF
+SAMPLE|image=No.68/CD1/Gamepia CD1.bin|path=CSDATA
+SAMPLE|image=No.68/CD1/Gamepia CD1.bin|path=CSSD
+SAMPLE|image=No.68/CD1/Gamepia CD1.bin|path=CSSETUP.EXE
+SAMPLE|image=No.68/CD1/Gamepia CD1.bin|path=CSTON
+SAMPLE|image=No.68/CD1/Gamepia CD1.bin|path=DIRECTX
+SAMPLE|image=No.68/CD1/Gamepia CD1.bin|path=FASTFOOD
+SAMPLE|image=No.68/CD1/Gamepia CD1.bin|path=GAMANIA.ICO
+IMAGE|name=No.68/CD2/Gamepia CD1.mdf|size=520483968|md5=7f43c4611ddc6c59c0a24e9c95b69d5e|sha1=390edafc978bfccc6aa726ac46d91b46234f6942|layout=auto-frame-2448-origin-24|volume=GAMEPIA_CD1|requests=81|bytes_read=165888|primary_entries=797|primary_dirs=25|joliet=1|joliet_entries=797|truncated=0
+SAMPLE|image=No.68/CD2/Gamepia CD1.mdf|path=AUTORUN.INF
+SAMPLE|image=No.68/CD2/Gamepia CD1.mdf|path=EMPEROR.MPG
+SAMPLE|image=No.68/CD2/Gamepia CD1.mdf|path=GAMEDEMO
+SAMPLE|image=No.68/CD2/Gamepia CD1.mdf|path=GAMEPIA.EXE
+SAMPLE|image=No.68/CD2/Gamepia CD1.mdf|path=JOY_PUYO
+SAMPLE|image=No.68/CD2/Gamepia CD1.mdf|path=LINGO.INI
+SAMPLE|image=No.68/CD2/Gamepia CD1.mdf|path=MOVIE
+SAMPLE|image=No.68/CD2/Gamepia CD1.mdf|path=MPEGXT~1.CST
+IMAGE|name=No.69/CD1/VIDEOCD.bin|size=526829184|md5=6085f0d1bb532defe4e6d5d87f5809e8|sha1=164a07733b77a8da17f60a04ff6fe8599e5abeb0|layout=auto-frame-2352-origin-24|volume=VIDEOCD|requests=11|bytes_read=22528|primary_entries=24|primary_dirs=8|joliet=0|joliet_entries=0|truncated=0
+SAMPLE|image=No.69/CD1/VIDEOCD.bin|path=AUTORUN.INF
+SAMPLE|image=No.69/CD1/VIDEOCD.bin|path=CDDA
+SAMPLE|image=No.69/CD1/VIDEOCD.bin|path=CDI
+SAMPLE|image=No.69/CD1/VIDEOCD.bin|path=EXT
+SAMPLE|image=No.69/CD1/VIDEOCD.bin|path=ICON.ICO
+SAMPLE|image=No.69/CD1/VIDEOCD.bin|path=ICON01.ICO
+SAMPLE|image=No.69/CD1/VIDEOCD.bin|path=KARAOKE
+SAMPLE|image=No.69/CD1/VIDEOCD.bin|path=LINGO.INI
+IMAGE|name=No.69/CD2/VIDEOCD.bin|size=663487440|md5=7b6d2f05602f0061daec85405a449efa|sha1=bd63ce5e41fbf4fe92609b75187542eccc1ee384|layout=auto-frame-2352-origin-24|volume=VIDEOCD|requests=11|bytes_read=22528|primary_entries=24|primary_dirs=8|joliet=0|joliet_entries=0|truncated=0
+SAMPLE|image=No.69/CD2/VIDEOCD.bin|path=AUTORUN.INF
+SAMPLE|image=No.69/CD2/VIDEOCD.bin|path=CDDA
+SAMPLE|image=No.69/CD2/VIDEOCD.bin|path=CDI
+SAMPLE|image=No.69/CD2/VIDEOCD.bin|path=EXT
+SAMPLE|image=No.69/CD2/VIDEOCD.bin|path=ICON.ICO
+SAMPLE|image=No.69/CD2/VIDEOCD.bin|path=ICON01.ICO
+SAMPLE|image=No.69/CD2/VIDEOCD.bin|path=KARAOKE
+SAMPLE|image=No.69/CD2/VIDEOCD.bin|path=LINGO.INI
+IMAGE|name=No.69/CD3/Gamepia.bin|size=772236864|md5=b01bd598835e90f5358d69428ffbcbb1|sha1=43ffee72c3e921eb9a7c7a8db54249d2d30bdf6c|layout=auto-frame-2352-origin-24|volume=GAMEPIA|requests=222|bytes_read=454656|primary_entries=3355|primary_dirs=38|joliet=1|joliet_entries=3355|truncated=0
+SAMPLE|image=No.69/CD3/Gamepia.bin|path=AGPBRA~9
+SAMPLE|image=No.69/CD3/Gamepia.bin|path=AGPDU~11
+SAMPLE|image=No.69/CD3/Gamepia.bin|path=AGPEN~13
+SAMPLE|image=No.69/CD3/Gamepia.bin|path=AGPFR~15
+SAMPLE|image=No.69/CD3/Gamepia.bin|path=AGPGE~17
+SAMPLE|image=No.69/CD3/Gamepia.bin|path=AGPIT~19
+SAMPLE|image=No.69/CD3/Gamepia.bin|path=AGPLAS~7
+SAMPLE|image=No.69/CD3/Gamepia.bin|path=AGPSP~21
