@@ -26,19 +26,15 @@ ANCHORS = (
 )
 
 TARGET_MONTHS = (
-    "2000-11",
     "2000-12",
     "2001-01",
-    "2001-02",
 )
 
 CARRIER = re.compile(r"(?i)\.(?:iso|img|bin|mdf|nrg|ccd|cue)$")
 NETPOWER = re.compile(r"(?i)(net\s*power|netpower|넷\s*파워|넷파워)")
 MONTH_PATTERNS = {
-    "2000-11": re.compile(r"(?i)(2000[-_./ ]?11|2000년\s*11월|0011(?:\D|$))"),
-    "2000-12": re.compile(r"(?i)(2000[-_./ ]?12|2000년\s*12월|0012(?:\D|$))"),
-    "2001-01": re.compile(r"(?i)(2001[-_./ ]?0?1|2001년\s*1월|0101(?:\D|$))"),
-    "2001-02": re.compile(r"(?i)(2001[-_./ ]?0?2|2001년\s*2월|0102(?:\D|$))"),
+    "2000-12": re.compile(r"(?i)(2000[-_./ ]?12(?!\d)|2000년\s*12월|0012(?:\D|$))"),
+    "2001-01": re.compile(r"(?i)(2001[-_./ ]?0?1(?!\d)|2001년\s*1월|0101(?:\D|$))"),
 }
 
 MAX_ROWS = 200
@@ -125,18 +121,28 @@ def exact_queries():
     queries = []
     for month in TARGET_MONTHS:
         year, mm = month.split("-")
-        month_num = str(int(mm))
+        korean_month = str(int(mm))
+        canonical = f"netpower_cd_{year}_{mm}"
+        month_phrase = f"{year}년 {korean_month}월"
+        compact = f"{year}{mm}"
         queries.extend(
             [
-                f'(title:"NetPower" OR title:"Net Power" OR title:"넷파워") AND ({year} AND {month_num})',
-                f'(description:"NetPower" OR description:"Net Power" OR description:"넷파워") AND ({year} AND {month_num})',
+                (
+                    f'identifier:"{canonical}" OR '
+                    f'((title:"NetPower" OR title:"Net Power" OR title:"넷파워") '
+                    f'AND (title:"{month_phrase}" OR title:"{month}" OR title:"{compact}"))'
+                ),
+                (
+                    f'(description:"NetPower" OR description:"Net Power" OR description:"넷파워") '
+                    f'AND (description:"{month_phrase}" OR description:"{month}" OR description:"{compact}")'
+                ),
             ]
         )
     return tuple(queries)
 
 
 def main():
-    print("StoneAge NetPower IA uploader-neighborhood probe — R1")
+    print("StoneAge NetPower IA uploader-neighborhood probe — R2")
     print("SCOPE|internet-archive-metadata-and-file-lists-only|no-carrier-payload-download")
     print("TARGET|months=" + ",".join(TARGET_MONTHS))
     print("ANCHORS|" + ",".join(ANCHORS))
