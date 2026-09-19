@@ -81,11 +81,11 @@ def carrier_images(data):
 
 
 class RemoteImage:
-    def __init__(self, identifier, name, frame=2048, data_offset=0):
+    def __init__(self, identifier, name, frame=2048, origin=0):
         self.identifier = identifier
         self.name = name
         self.frame = frame
-        self.data_offset = data_offset
+        self.origin = origin
         self.url = DOWNLOAD.format(
             urllib.parse.quote(identifier, safe=""),
             urllib.parse.quote(name, safe="/"),
