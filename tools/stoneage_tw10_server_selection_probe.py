@@ -67,6 +67,7 @@ SERVER_PORT_OFFSET = 129
 SERVER_NAME_TABLE_RVA = 0x588B0
 SERVER_NAME_RECORD_SIZE = 64
 SELECT_SERVER_INDEX_RVA = 0x5C860
+CMDLINE_BUFFER_RVA = 0x139B758
 CONNECT_RESET_RVA = 0x2EE20
 CONNECT_GAME_RVA = 0x2EE2C
 SERVER_LOOKUP_WINDOW_RVA = 0x2E840
@@ -640,6 +641,38 @@ def main():
                     f"SERVER_LOOKUP_INS|order={order}|instruction_rva=0x{ins.address-base:x}|"
                     f"mnemonic={clean(ins.mnemonic)}|ops={clean(enhanced_ops(ins,data,base,sections))}"
                 )
+
+        cmd_refs = exact_pointer_refs(data, base, sections, CMDLINE_BUFFER_RVA)
+        print(
+            f"CMDLINE_BUFFER_XREFS|target_rva=0x{CMDLINE_BUFFER_RVA:x}|count={len(cmd_refs)}"
+        )
+        for n, (ptr_rva, ins) in enumerate(cmd_refs, 1):
+            if ins is None:
+                print(
+                    f"CMDLINE_BUFFER_XREF|n={n}|pointer_rva=0x{ptr_rva:x}|decoded=0"
+                )
+                continue
+            print(
+                f"CMDLINE_BUFFER_XREF|n={n}|pointer_rva=0x{ptr_rva:x}|decoded=1|"
+                f"instruction_rva=0x{ins.address-base:x}|mnemonic={clean(ins.mnemonic)}|"
+                f"ops={clean(enhanced_ops(ins,data,base,sections))}"
+            )
+            paths = deep_backward_paths(data, base, sections, ins.address)
+            if paths:
+                path = paths[0]
+                print(
+                    f"CMDLINE_BUFFER_BACKTRACE|n={n}|instructions={len(path)}|"
+                    f"start_rva=0x{path[0].address-base:x}"
+                )
+                for order, prev in enumerate(path, 1):
+                    if prev.mnemonic in {
+                        "push", "mov", "movsx", "movzx", "lea", "call", "cmp", "test"
+                    }:
+                        print(
+                            f"CMDLINE_BUFFER_PREV|n={n}|order={order}|"
+                            f"instruction_rva=0x{prev.address-base:x}|mnemonic={clean(prev.mnemonic)}|"
+                            f"ops={clean(enhanced_ops(prev,data,base,sections))}"
+                        )
 
         for off, text in endpoint_literals(data):
             rva = file_offset_to_rva(sections, off)
