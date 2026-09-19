@@ -215,7 +215,7 @@ def interesting_anchors(raw,base):
 
 
 def main():
-    print("StoneAge GameTime 2001 KOLIS holding-layer probe — R4")
+    print("StoneAge GameTime 2001 KOLIS holding-layer probe — R5")
     print("SCOPE|public-catalog-metadata-only|no-book-or-cd-payload-download")
     s_status,s_final,s_body=get(SEARCH)
     s_raw=decode(s_body)
@@ -279,9 +279,40 @@ def main():
                 420,
             ):
                 print(f"BIB_DETAIL_CONTEXT|bibKey={clean(bib_key)}|token={clean(token)}|text={clean(row,900)}")
-            for token in ("KMO200119860","holding","Holding","청구기호","등록번호","딸림자료","searchResultHolding","fnLib"):
+            for token in ("KMO200119860","UB20011039873","holding","Holding","청구기호","등록번호","딸림자료","searchResultHolding","fnLib","fnMarcView","marcView","fnVolSeContent"):
                 for _,row in context_rows(b_raw,(token,),520):
                     print(f"BIB_DETAIL_RAW|bibKey={clean(bib_key)}|token={clean(token)}|html={clean(row,980)}")
+
+            control_pairs=re.findall(r"fnVolSeContent\(([^)]*)\)",b_raw)
+            for args in control_pairs:
+                parts=[part.strip().strip("'\" ") for part in args.split(",")]
+                if len(parts)<3 or not parts[1]:
+                    continue
+                toc_url=BASE+"/kolisnet/search/include/searchResultHoldingSeContent.do?"+urllib.parse.urlencode({
+                    "kolisVolKey":parts[0],
+                    "localControlNo":parts[1],
+                    "ubControlNo":parts[2],
+                })
+                try:
+                    t_status,t_final,t_body=get(toc_url)
+                except Exception as exc:
+                    print(f"ERROR|phase=volume-content|bibKey={clean(bib_key)}|kind={type(exc).__name__}|message={clean(exc)}")
+                    continue
+                t_raw=decode(t_body)
+                t_plain=strip_markup(t_raw)
+                print(
+                    f"VOLUME_CONTENT|bibKey={clean(bib_key)}|localControlNo={clean(parts[1])}|"
+                    f"ubControlNo={clean(parts[2])}|status={t_status}|final={clean(t_final)}|bytes={len(t_body)}"
+                )
+                for token,row in context_rows(
+                    t_plain,
+                    ("스톤에이지","설치하기","컴팩트디스크","CD","딸림자료","청구기호","등록번호"),
+                    420,
+                ):
+                    print(
+                        f"VOLUME_CONTEXT|bibKey={clean(bib_key)}|localControlNo={clean(parts[1])}|"
+                        f"token={clean(token)}|text={clean(row,900)}"
+                    )
 
         hold_url=BASE+"/kolisnet/search/include/searchResultHoldingLib.do?"+urllib.parse.urlencode({"bibKey":bib_key})
         hold_url=BASE+"/kolisnet/search/include/searchResultHoldingLib.do?"+urllib.parse.urlencode({"bibKey":bib_key})
