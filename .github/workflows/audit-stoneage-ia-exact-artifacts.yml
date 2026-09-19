@@ -1,0 +1,39 @@
+name: Audit exact StoneAge IA artifact leads
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_ia_exact_artifact_audit.py
+      - tests/test_stoneage_ia_exact_artifact_audit.py
+      - .github/workflows/audit-stoneage-ia-exact-artifacts.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-ia-exact-artifacts
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_ia_exact_artifact_audit -v
+      - name: Audit exact IA artifact leads
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_ia_exact_artifact_audit \
+            > research/recovered/STONEAGE-IA-EXACT-ARTIFACT-AUDIT-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-IA-EXACT-ARTIFACT-AUDIT-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: audit exact StoneAge IA artifacts'
+          git pull --rebase origin main
+          git push
