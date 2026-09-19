@@ -3,8 +3,10 @@ import unittest
 
 from tools.stoneage_netpower_remote_iso_scan import (
     NEEDLE,
+    RemoteImage,
     candidate,
     decode_name,
+    infer_layout_from_probe,
     parse_directory,
     root_record,
 )
@@ -53,6 +55,31 @@ class NetPowerRemoteIsoScanTests(unittest.TestCase):
         root = dir_record(b"\x00", 77, 4096, True)
         vd[156:156+len(root)] = root
         self.assertEqual(root_record(bytes(vd)), (77, 4096))
+
+    def test_infer_layout_from_raw_sector_probe(self):
+        probe = bytearray(128000)
+        frame = 2352
+        origin = 16
+        pvd = origin + 16 * frame
+        term = origin + 17 * frame
+        probe[pvd:pvd+7] = b"\x01CD001\x01"
+        probe[term:term+7] = b"\xffCD001\x01"
+        self.assertEqual(infer_layout_from_probe(bytes(probe)), (2352, 16))
+
+    def test_infer_layout_from_mdf_style_probe(self):
+        probe = bytearray(160000)
+        frame = 2448
+        origin = 2464
+        pvd = origin + 16 * frame
+        term = origin + 17 * frame
+        probe[pvd:pvd+7] = b"\x01CD001\x01"
+        probe[term:term+7] = b"\xffCD001\x01"
+        self.assertEqual(infer_layout_from_probe(bytes(probe)), (2448, 2464))
+
+    def test_remote_image_preserves_origin(self):
+        img = RemoteImage("item", "disc.mdf", 2448, 2464)
+        self.assertEqual(img.frame, 2448)
+        self.assertEqual(img.origin, 2464)
 
 
 if __name__ == "__main__":
