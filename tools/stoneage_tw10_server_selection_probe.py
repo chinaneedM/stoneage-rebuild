@@ -69,7 +69,9 @@ SERVER_NAME_RECORD_SIZE = 64
 SELECT_SERVER_INDEX_RVA = 0x5C860
 CONNECT_RESET_RVA = 0x2EE20
 CONNECT_GAME_RVA = 0x2EE2C
-SERVER_LOOKUP_WINDOW_RVA = 0x2E8C0
+SERVER_LOOKUP_WINDOW_RVA = 0x2E840
+SERVER_WRITER_RANGE_START_RVA = 0x2E800
+SERVER_WRITER_RANGE_END_RVA = 0x2E950
 LOCAL_BEFORE = 130
 LOCAL_AFTER = 35
 MAX_ARG_PATHS = 3
@@ -425,6 +427,24 @@ def linear_context(data, base, sections, start_va, max_bytes=0x600, limit=500):
     return list(md().disasm(data[off:end], start_va, count=limit))
 
 
+def direct_calls_into_rva_range(data, base, sections, start_rva, end_rva):
+    sec = next((s for s in sections if s["name"] == ".text"), None)
+    if sec is None:
+        return []
+    blob = data[sec["raw"]:sec["raw"] + sec["raw_size"]]
+    rows = []
+    for rel in range(0, max(0, len(blob) - 5)):
+        if blob[rel] != 0xE8:
+            continue
+        disp = int.from_bytes(blob[rel + 1:rel + 5], "little", signed=True)
+        site_va = base + sec["rva"] + rel
+        target_va = (site_va + 5 + disp) & 0xFFFFFFFF
+        target_rva = target_va - base
+        if start_rva <= target_rva < end_rva:
+            rows.append((site_va, target_va))
+    return sorted(set(rows))
+
+
 def static_cstr_at_rva(data, sections, rva, maxlen):
     off = rva_to_offset(sections, rva)
     if off is None:
@@ -576,8 +596,35 @@ def main():
                     f"mnemonic={clean(ins.mnemonic)}|ops={clean(enhanced_ops(ins,data,base,sections))}{extra}"
                 )
 
+        writer_calls = direct_calls_into_rva_range(
+            data, base, sections, SERVER_WRITER_RANGE_START_RVA, SERVER_WRITER_RANGE_END_RVA
+        )
+        print(
+            f"SERVER_WRITER_CALL_TARGETS|start_rva=0x{SERVER_WRITER_RANGE_START_RVA:x}|"
+            f"end_rva=0x{SERVER_WRITER_RANGE_END_RVA:x}|calls={len(writer_calls)}"
+        )
+        for n, (site_va, target_va) in enumerate(writer_calls, 1):
+            print(
+                f"SERVER_WRITER_CALL|n={n}|callsite_rva=0x{site_va-base:x}|"
+                f"target_rva=0x{target_va-base:x}"
+            )
+            paths = deep_backward_paths(data, base, sections, site_va)
+            if paths:
+                path = paths[0]
+                print(
+                    f"SERVER_WRITER_ARG_PATH|n={n}|instructions={len(path)}|"
+                    f"start_rva=0x{path[0].address-base:x}"
+                )
+                for order, prev in enumerate(path, 1):
+                    if prev.mnemonic in {"push", "mov", "movsx", "movzx", "lea", "call", "cmp", "test"}:
+                        print(
+                            f"SERVER_WRITER_ARG_INS|n={n}|order={order}|"
+                            f"instruction_rva=0x{prev.address-base:x}|mnemonic={clean(prev.mnemonic)}|"
+                            f"ops={clean(enhanced_ops(prev,data,base,sections))}"
+                        )
+
         lookup_ctx = linear_context(
-            data, base, sections, base + SERVER_LOOKUP_WINDOW_RVA, max_bytes=0x90, limit=120
+            data, base, sections, base + SERVER_LOOKUP_WINDOW_RVA, max_bytes=0x120, limit=180
         )
         print(
             f"SERVER_LOOKUP_WINDOW|start_rva=0x{SERVER_LOOKUP_WINDOW_RVA:x}|"
