@@ -83,7 +83,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - `research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md`.
   - derived probes: `research/recovered/STONEAGE-INIUM-TRIAL-MENU-R1.txt`, `research/recovered/STONEAGE-COMMONCRAWL-EXACT-PAYLOADS-R1.txt`.
 - Next action:
-  - recover a surviving copy/mirror from the exact token set: CNET `/pc/games/online/stoneage.zip` (257MB), Hananet PDS `app_id=20001031524596220&type=C03`, Hananet formal `stoneage.hananet.net/down/sa.exe` (260 M), Hananet trial `stoneage.hananet.net/down/sa_demo.exe` (240 M), Gagamel `stoneagebeta.zip`, GameTime trial `stone_demo.exe` / `GW_IDX=76` (234MB list value; description says about 240MB), unresolved GameTime formal-mirror `GW_IDX=9`, and STAD records 8119/8120;
+  - recover a surviving copy/mirror from the exact token set: CNET `/pc/games/online/stoneage.zip` (257MB), Hananet PDS `app_id=20001031524596220&type=C03`, Hananet formal `stoneage.hananet.net/down/sa.exe` (260 M), Hananet trial `stoneage.hananet.net/down/sa_demo.exe` (240 M), Gagamel `stoneagebeta.zip`, GameTime trial `http://www.gametime.co.kr/images/Online/pds/2001/02/stone_demo.exe` / `GW_IDX=76` (234MB list value; description says about 240MB), GameTime record 9 `http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip` / `GW_IDX=9`, and STAD records 8119/8120;
   - compare CNET/Hananet/Gagamel/GameTime candidates only at byte/hash and internal-file-tree level; do not infer equality from size or filename;
   - if bytes appear, immediately perform the clean-client acceptance test before further broad searching.
 - Status: **TARGET-A / highest-priority operational pre-1.74 bridge search; bytes not yet located**.
@@ -104,11 +104,11 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - This provides strong internal key-continuity evidence that Inium's later official GameTime mirror link **`GW_IDX=9`** refers to the earlier GameTime StoneAge Beta client record whose old key was **`num=9`**.
 - Important boundary:
   - the old `num=9` detail page and the parameterized legacy StoneAge download endpoint replay 404;
-  - no payload filename, size, checksum or surviving bytes have yet been recovered for record 9;
+  - archived HTTP 302 response headers now resolve the migrated record to **`http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip`** at 2001-06-14, 2001-08-06, 2001-12-15 and 2002-02-08; size, checksum, version/build, internal tree and surviving bytes remain unresolved;
   - Inium later grouped `GW_IDX=9` with formal-version mirrors, so the project must not assume the payload remained unchanged from the 2000-10-11 Beta listing. The stable record identity and payload identity are separate questions.
 - Derived evidence:
   - `research/recovered/STONEAGE-GAMETIME-LEGACY-WEBZINE-R1.txt`
-- Status: **TARGET-A — historical record identity strongly resolved; payload identity/bytes unresolved.**
+- Status: **TARGET-A — historical record identity and migrated payload filename/path resolved (`onlStoneAge.zip`); payload bytes/build identity unresolved.**
 
 ## TARGET-A/B — GameTime StoneAge data-center records — 2000/2001
 
@@ -143,7 +143,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Derived evidence:
   - `research/recovered/STONEAGE-GAMETIME-2001-RECORD-RESOLUTION-R1.txt`
   - `research/recovered/STONEAGE-GAMETIME-ONLINE-INDEX-R1.txt`
-- Status: **TARGET-A/B — trial client and manual-update identities resolved; record-9 historical StoneAge identity strongly linked across old/new systems; record-9 payload filename/size/version and all client bytes still unresolved.**
+- Status: **TARGET-A/B — trial client and manual-update identities resolved; record-9 historical identity plus migrated payload filename/path (`onlStoneAge.zip`) resolved; record-9 size/version/build/hash/tree and all client bytes still unresolved.**
 
 ## TARGET-A/B — Korean GameTime StoneAge Perfect Guide bonus CD — 2001
 
@@ -395,7 +395,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 
 1. **Korean Inium 2000 public client:** recover the original installer filename/path/bytes through the Inium site, Hananet/GamePlus, CNET and period offline/software archives. It is now the strongest operational early bridge because operator-era free distribution and massive replication are directly attested.
 2. **JSS 1999 beta/retail/launcher:** continue in parallel as the historical origin target; do not lower its evidentiary importance merely because Korean 2000 may be easier to recover.
-3. Resolve **GameTime `GW_IDX=9` through the older webzine/download chain**; the newer data center already resolves GW_IDX=76 as `stone_demo.exe` trial client and GW_IDX=34 as a 0.4/0.42MB manual update, while 52 parsed online records do not contain GW_IDX=9. Keep the 2001 Perfect Guide bonus CD as a separate near-period installation-media target, but do not repeat closed ISBN/title/union-catalog searches unless new supplementary-disc evidence appears.
+3. Recover **GameTime `onlStoneAge.zip`** from the exact migrated payload path `http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip`; archived 302 headers already bind it to `GW_IDX=9`, while legacy `num=9` identifies the historical StoneAge Beta record. Keep the 2001 Perfect Guide bonus CD as a separate near-period installation-media target, but do not repeat closed ISBN/title/union-catalog searches unless new supplementary-disc evidence appears.
 4. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge.
 5. Continue recovery of the **Korean 1.74** exact-version operator-era installer identity/bytes.
 6. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
