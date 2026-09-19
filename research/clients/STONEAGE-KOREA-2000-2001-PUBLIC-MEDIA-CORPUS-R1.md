@@ -121,6 +121,7 @@ Derived report:
 The archive metadata/file-list probe searched both general StoneAge terms and exact historical recovery tokens:
 
 - `sa_demo.exe`
+- **`stone_demo.exe`**
 - `stoneagebeta.zip`
 - `20001031524596220`
 - `200009263856`
@@ -129,13 +130,15 @@ The archive metadata/file-list probe searched both general StoneAge terms and ex
 
 Result:
 
-- 216 unique items;
-- 216 item metadata records fetched;
+- 222 unique items;
+- 222 item metadata records fetched;
 - 0 request errors;
-- 9 size-window candidates;
+- 11 size-window candidates;
 - **0 exact target filename matches**.
 
 The 9 file candidates are size-only false positives. Search hits for `sa_demo.exe` and `GW_IDX=9` were also shown by file-list verification to be unrelated tokenization/substring matches.
+
+The newly recovered `stone_demo.exe` token produced 7 IA search-index hits, but none of those items contains an exact `stone_demo.exe` file in its archive file list. The search-index hits are therefore false-positive/tokenization results, not preserved StoneAge payloads.
 
 Interpretation: this exact Internet Archive metadata-query set is closed as a negative control. Repeating the same queries without a new identifier or search surface is low value.
 
@@ -149,10 +152,10 @@ A 2000–2002 Wayback CDX prefix enumeration queried twelve bare/www distributio
 
 Aggregate result:
 
-- 12 prefix queries;
+- 13 prefix queries;
 - 0 request errors;
-- 362 returned rows;
-- 181 unique archived URLs.
+- 373 returned rows;
+- 192 unique archived URLs.
 
 ### Hananet and CNET directory boundary
 
@@ -169,6 +172,18 @@ The Gagamel `/web_data/download/` prefix returns five archived payload URLs, all
 ### Inium
 
 The Inium `/down` / `/download` prefix has archived web hierarchy and later material. A 2002 payload named `/download/material/sa4_21.exe` is indexed at 268,080 bytes, but this is a later material object and is not evidence of the 2000 clean client.
+
+### GameTime PDS host
+
+The later GameTime StoneAge data-center HTML references **`pds.gametime.co.kr`**, so the PDS host was added as a dedicated 2000–2002 CDX prefix.
+
+Result:
+
+- **11 archived URLs**;
+- all preserved objects are image/JPEG resources;
+- 0 client executable/archive URLs.
+
+Interpretation: the current Wayback prefix-index route for `pds.gametime.co.kr` is closed as a negative control. This does not exclude off-Wayback mirrors, unindexed historical payloads, or attachment URLs on another host.
 
 ### GameTime — new high-value route
 
