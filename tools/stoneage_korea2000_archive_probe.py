@@ -67,9 +67,9 @@ class LinkParser(html.parser.HTMLParser):
             self._text = []
 
 
-def request(url: str, *, timeout: int = 60) -> bytes:
+def request(url: str, *, timeout: int = 30) -> bytes:
     last = None
-    for attempt in range(4):
+    for attempt in range(2):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA})
             with urllib.request.urlopen(req, timeout=timeout) as r:
@@ -89,7 +89,7 @@ def cdx_query(url_pattern: str, start: int, end: int, *, regex: str | None = Non
         ("fl", "timestamp,original,statuscode,mimetype,digest,length"),
         ("filter", "statuscode:200"),
         ("collapse", "urlkey"),
-        ("limit", "50000"),
+        ("limit", "10000"),
     ]
     if regex:
         params.append(("filter", "original:" + regex))
@@ -119,7 +119,7 @@ def archive_links(timestamp: str, original: str):
         url=urllib.parse.quote(original, safe=":/?&=%#+,;@[]!$'()*"),
     )
     try:
-        body = request(url, timeout=90)
+        body = request(url, timeout=45)
     except RuntimeError:
         return []
     text = body.decode("utf-8", "replace")
@@ -155,7 +155,6 @@ def main():
         ("hananet-game", "game.hananet.net/*", r".*(?:[Ss][Tt][Oo][Nn][Ee]|[Aa][Gg][Ee]).*"),
         ("hananet-pds", "pds.hananet.net/*", r".*(?:[Ss][Tt][Oo][Nn][Ee]|[Aa][Gg][Ee]).*"),
         ("cnet-downloads", "korea.cnet.com/downloads/*", r".*(?:[Ss][Tt][Oo][Nn][Ee]|[Aa][Gg][Ee]).*"),
-        ("cnet-site", "korea.cnet.com/*", r".*(?:[Ss][Tt][Oo][Nn][Ee]|[Aa][Gg][Ee]).*"),
     ]
     roots = [
         ("inium-root", "stoneage.enium.co.kr/"),
