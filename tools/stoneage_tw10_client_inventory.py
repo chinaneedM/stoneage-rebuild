@@ -191,11 +191,24 @@ def inventory(bin_path: Path):
                 f"ADDRESS_TABLE|label={label}|records={len(addr_rows)}|"
                 f"unique_names={len(names)}|duplicate_refs={duplicate_refs}"
             )
+            expected_names = {
+                Path(normalize(row["path"])).name.lower()
+                for row in core
+                if normalize(row["path"]).lower().startswith(expected_prefix)
+            }
+            unreferenced_expected = sorted(expected_names - set(names))
             print(
                 f"ADDRESS_TABLE_MATCH|label={label}|present_any={len(present_any)}|"
                 f"present_expected_dir={len(present_expected)}|"
-                f"outside_expected_dir={len(outside_expected)}|missing_any={len(missing_any)}"
+                f"outside_expected_dir={len(outside_expected)}|missing_any={len(missing_any)}|"
+                f"unreferenced_expected_dir={len(unreferenced_expected)}"
             )
+            for name in unreferenced_expected:
+                paths = basename_paths.get(name, [])
+                print(
+                    f"ADDRESS_TABLE_UNREFERENCED|label={label}|name={name}|"
+                    f"paths={';'.join(paths)}"
+                )
             for name, paths in sorted(outside_expected.items()):
                 print(
                     f"ADDRESS_TABLE_OUTSIDE_DIR|label={label}|name={name}|"
