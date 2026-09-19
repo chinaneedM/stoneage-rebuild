@@ -222,6 +222,9 @@ WSOCK_CALL|api=closesocket|n=4|callsite_rva=0x2ef77|thunk_rva=0x4846c|iat_rva=0x
 WSOCK_CALL|api=closesocket|n=5|callsite_rva=0x2efc1|thunk_rva=0x4846c|iat_rva=0x52250|via_thunk=1
 WSOCK_CALL|api=closesocket|n=6|callsite_rva=0x2f102|thunk_rva=0x4846c|iat_rva=0x52250|via_thunk=1
 WSOCK_CALL|api=closesocket|n=7|callsite_rva=0x2f1ad|thunk_rva=0x4846c|iat_rva=0x52250|via_thunk=1
+CONNECT_STATE_MACHINE|start_rva=0x2ee20|instructions=2
+CONNECT_STATE_INS|order=1|instruction_rva=0x2ee20|mnemonic=mov|ops=memabs:0x13f6ba0:.data,imm:0x0
+CONNECT_STATE_INS|order=2|instruction_rva=0x2ee2a|mnemonic=ret|ops=
 NET_LITERAL|file_offset=0x5685c|rva=0x5685c|text=waei.bin
 NET_LITERAL|file_offset=0x59128|rva=0x59128|text=(wgs@mail.hwaei.com.tw)
 SERVER_INFO|rva=0x2e950|instructions=34|direct_targets=1|callers=1|data_globals=2|end_reason=ret
