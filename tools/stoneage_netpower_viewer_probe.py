@@ -11,6 +11,8 @@ import urllib.parse
 import urllib.request
 
 URL="https://www.gamemeca.com/magazine/index.php?mgz=netpower&ym=2000_9"
+MOBILE="https://m.gamemeca.com/magazine.php?mgz=netpower&ym=2000_9"
+JS="https://www.gamemeca.com/magazine/common.1.js"
 UA="Mozilla/5.0 StoneAgeArchaeology/1.0"
 
 def fetch(url):
@@ -25,10 +27,14 @@ def clean(s):
 
 def main():
     body=fetch(URL)
-    print("StoneAge NetPower 2000-09 viewer metadata probe — R1")
+    mobile=fetch(MOBILE)
+    js=fetch(JS)
+    print("StoneAge NetPower 2000-09 viewer metadata probe — R2")
     print("SOURCE|"+URL)
     print("SCOPE|url-and-viewer-metadata-only|no-magazine-image-bytes")
     print("HTML_BYTES|"+str(len(body.encode("utf-8"))))
+    print("MOBILE_HTML_BYTES|"+str(len(mobile.encode("utf-8"))))
+    print("VIEWER_JS_BYTES|"+str(len(js.encode("utf-8"))))
 
     # Preserve script/image/anchor/form targets and interesting literal path tokens.
     attrs=set()
@@ -54,6 +60,23 @@ def main():
     print("COUNT|interesting_literals|"+str(len(literals)))
     for v in sorted(literals):
         print("LITERAL|"+v)
+
+    def emit_context(label, text):
+        keys=("2000_9","page_list","magazine_list","magazine_netpower","jpg","image","page","mgz","ym")
+        seen=set()
+        for line in text.splitlines():
+            compact=line.strip()
+            if not compact or not any(k.lower() in compact.lower() for k in keys):
+                continue
+            compact=clean(compact)
+            if compact in seen:
+                continue
+            seen.add(compact)
+            print(f"{label}|{compact}")
+
+    emit_context("DESKTOP_CONTEXT",body)
+    emit_context("MOBILE_CONTEXT",mobile)
+    emit_context("JS_CONTEXT",js)
 
 if __name__=="__main__":
     main()
