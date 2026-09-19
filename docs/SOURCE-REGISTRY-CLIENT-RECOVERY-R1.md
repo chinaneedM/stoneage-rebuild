@@ -14,6 +14,10 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 
 ## TARGET-A — Korean Inium StoneAge 2000 — mass public/operator distribution
 
+- Trial-service chronology:
+  - DailyGame, 2000-10-12: https://www.dailygame.co.kr/view.php?ud=200010121149020000950_26
+  - reports that Inium had begun StoneAge **trial service on 2000-10-04**;
+  - keep this distinct from later 2000-10-13/14 reporting of the free-service site.
 - Primary official-distribution evidence:
   - Electronic Times, 2000-10-13: https://www.etnews.com/200010120085
   - reports that Inium completed Korean localization/server work and began free service through `http://www.stoneage.enium.co.kr`.
@@ -39,6 +43,9 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - installer filename, size, checksum, complete file tree and exact Hananet/CNET StoneAge URLs remain unknown;
   - byte identity between Inium, Hananet, CNET and packaged copies is unproven;
   - an intact Korean operator client would be a clean **Korean bridge specimen**, not automatic proof of JSS-Japan byte identity.
+- Archive-probe boundary:
+  - current Wayback/CDX and Arquivo.pt metadata probes encountered request timeouts / network-unreachable errors;
+  - their zero-result counts are **INCONCLUSIVE**, not evidence that no archive capture exists.
 - Canonical research note:
   - `research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md`.
 - Next action:
