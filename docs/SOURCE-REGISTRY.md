@@ -656,6 +656,7 @@ This is the canonical ledger for historical sources. Entries should record prove
   - `battle_1.bin` is a 233-record exact concatenation of the loose battle-map files;
   - `sound_1.bin` is structurally valid but seven loose WAV counterparts are variant payloads.
   - canonical reports: `research/recovered/STONEAGE-TW10-TECHNICAL-PROBE-R1.txt`, `research/recovered/STONEAGE-TW10-RUNTIME-DEEP-R1.txt`, `research/recovered/STONEAGE-TW10-RUNTIME-SOUND-R1.txt`.
+  - direct v1.0→2.5 diff: all 125,996 v1.0 ADRN records and all referenced REAL payloads are retained byte-for-byte; the entire 315,842,228-byte `real_1.bin` is a prefix of `real_15.bin`; all 464 v1.0 SPRADRN records/segments and the complete 2,889,630-byte `spr_1.bin` are likewise exact prefixes of the preserved 2.5 resources. Canonical report: `research/recovered/STONEAGE-TW10-VS-25-RESOURCE-DIFF-R1.txt`.
 
 ## Required metadata for future entries
 
