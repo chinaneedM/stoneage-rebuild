@@ -1036,16 +1036,25 @@ Supplemental source ledgers:
 - Canonical interpretation: `research/clients/STONEAGE-TW10-BATTLE-RESOURCE-FORMAT-R1.md`.
 - **Operational consequence:** the battle-scene dataset/file-format boundary is complete enough to leave the critical path. Highest priority is now the full REAL/ADRN + SPR/SPRADRN reconstruction metadata export; audio follows after that.
 
+## Taiwan v1.0 graphics/animation reconstruction metadata — 2026-09-19
+
+- A dedicated deterministic exporter now reconstructs the full v1.0 REAL/ADRN + SPR/SPRADRN identity layer from the hash-verified retail disc and emits **derived metadata only** under `research/recovered/tw10-resource-metadata/`.
+- The export was independently executed by GitHub Actions run **35451600908**, which completed successfully through unit tests, preservation-archive hash verification, metadata generation, gzip integrity checks, deletion of transient proprietary bytes and derived-data commit.
+- `ADRN-R1.tsv.gz` contains all **125,996** unique v1.0 bitmap records. Their spans have **125,995 contiguous transitions** and cover the full **315,842,228-byte REAL** payload with no missing tail. Per-record metadata includes bitmap number, REAL offset/size, x/y offsets, dimensions, RD flag/size metadata and hashes rather than payload bytes.
+- RD flags are fully classified at this layer: **125,988 flag-1 records** and **8 flag-0 records**; two records retain special/implausible dimensions for later semantic interpretation rather than being normalized away.
+- `SPR-GROUP-R1.tsv.gz`, `SPR-ANIMATION-R1.tsv.gz` and `SPR-FRAME-R1.tsv.gz` preserve the complete animation hierarchy: **464 groups, 39,065 animations and 242,085 frames**. All 464 group spans close exactly at the next recorded offset; **3,492 frames** retain the historical `0xffffffff` bitmap sentinel.
+- Source hashes in the manifest match the accepted Taiwan v1.0 anchors already established for `adrn_1.bin`, `real_1.bin`, `spradrn_1.bin` and `spr_1.bin`. Generated dataset hashes are fixed in `research/recovered/tw10-resource-metadata/MANIFEST-R1.txt`.
+- **Operational consequence:** graphics/animation ID recovery is no longer the critical-path discovery task. Highest priority moves to the deterministic audio reconstruction crosswalk.
+
 ## Immediate next actions
 
-1. **Complete and verify the Taiwan v1.0 REAL/ADRN + SPR/SPRADRN reconstruction metadata export.** The exporter, unit tests and dedicated Actions workflow are now present. Accept the generated datasets only after the workflow completes against the hash-verified retail disc. The target surface is all 125,996 graphics records plus all 464 sprite groups / 39,065 animations / 242,085 frames, with offsets, geometry, relationships and hashes but no proprietary payload bytes.
-2. **Build the audio reconstruction crosswalk.** Preserve the distinction among the 114 indexed `sound_1.bin` records, 116 loose SFX WAVs (including unindexed `sak_91.wav` and `sak_92.wav`) and 11 BGM WAVs; retain the known 107 exact indexed/loose matches and seven container variants as separate provenance surfaces.
-3. **Correlate protocol-visible character/pet/item/skill/NPC fields with the preserved 2.5 bridge and descendant source controls.** Promote only fields independently supported for v1.0; keep later-only server/master data explicitly labeled as lineage evidence rather than original fact.
-4. **Use the Taiwan 1.0 baseline as the comparison anchor for future artifact recovery.** Continue targeted JSS 1999 beta/retail recovery and Korean Inium/Hananet/CNET/GameTime exact-token recovery, but no longer let broad archaeology block technical extraction. Any recovered artifact should be diffed against Taiwan 1.0 by hashes, executable structure and resource generations.
-5. **Keep the Korean exact distribution tokens and GameTime guide/retail-media lanes open as cross-region evidence:** CNET `stoneage.zip`, Hananet `sa.exe / sa_demo.exe`, Gagamel `stoneagebeta.zip`, GameTime `onlStoneAge.zip / stone_demo.exe`. Do not repeat archive matrices already recorded as negative unless a new mirror/account/path appears.
-6. **Keep `〖2.5纯净〗` `tid=2132`, Korean 1.74 and Japanese 1.74a as secondary lineage/diff targets.** Version labels remain clues until byte provenance is recovered.
-7. **Treat the recovered mixed 2.5 bundle as a resource-format/server-data bridge, not as the historical baseline.** Its value now increases as a comparison corpus against the clean 1.0 client.
-8. **Keep archaeology separate from redesign.** The accepted retail bytes are evidence for original mechanics/data boundaries; later reconstruction choices remain separate DESIGN decisions.
+1. **Build and verify the Taiwan v1.0 audio reconstruction crosswalk.** Preserve all 114 indexed `sound_1.bin` records, 116 loose SFX WAVs and 11 BGM WAVs with stable IDs/names, offsets, sizes and hashes. Retain the known 107 exact indexed/loose matches, seven indexed container variants and unindexed `sak_91.wav` / `sak_92.wav` as separate provenance classes rather than flattening them.
+2. **Correlate protocol-visible character/pet/item/skill/NPC fields with the preserved 2.5 bridge and descendant source controls.** Promote only fields independently supported for v1.0; keep later-only server/master data explicitly labeled as lineage evidence rather than original fact.
+3. **Use the Taiwan 1.0 baseline as the comparison anchor for future artifact recovery.** Continue targeted JSS 1999 beta/retail recovery and Korean Inium/Hananet/CNET/GameTime exact-token recovery, but no longer let broad archaeology block technical extraction. Any recovered artifact should be diffed against Taiwan 1.0 by hashes, executable structure and resource generations.
+4. **Keep the Korean exact distribution tokens and GameTime guide/retail-media lanes open as cross-region evidence:** CNET `stoneage.zip`, Hananet `sa.exe / sa_demo.exe`, Gagamel `stoneagebeta.zip`, GameTime `onlStoneAge.zip / stone_demo.exe`. Do not repeat archive matrices already recorded as negative unless a new mirror/account/path appears.
+5. **Keep `〖2.5纯净〗` `tid=2132`, Korean 1.74 and Japanese 1.74a as secondary lineage/diff targets.** Version labels remain clues until byte provenance is recovered.
+6. **Treat the recovered mixed 2.5 bundle as a resource-format/server-data bridge, not as the historical baseline.** Its value now increases as a comparison corpus against the clean 1.0 client.
+7. **Keep archaeology separate from redesign.** The accepted retail bytes are evidence for original mechanics/data boundaries; later reconstruction choices remain separate DESIGN decisions.
 
 ## Continuity status
 
