@@ -10,11 +10,13 @@ from __future__ import annotations
 import concurrent.futures
 import hashlib
 import html.parser
+import json
 import re
 import urllib.parse
 import urllib.request
 
 UA = "stoneage-rebuild-archaeology/1.0"
+AVAILABLE = "https://archive.org/wayback/available"
 
 CANDIDATES = [
     ("game-20001019-mainbody", "20001019061522", "http://game.hananet.net:80/gamenet/mainbody.html"),
@@ -92,6 +94,19 @@ def replay(timestamp: str, original: str):
     return f"https://web.archive.org/web/{timestamp}id_/{original}"
 
 
+def closest_snapshot(original: str, requested_timestamp: str):
+    params = urllib.parse.urlencode({
+        "url": original,
+        "timestamp": requested_timestamp[:8],
+    })
+    raw = request(AVAILABLE + "?" + params, timeout=8)
+    payload = json.loads(raw.decode("utf-8", "replace"))
+    closest = payload.get("archived_snapshots", {}).get("closest")
+    if not isinstance(closest, dict) or not closest.get("available"):
+        return None
+    return str(closest.get("timestamp", "")), str(closest.get("status", ""))
+
+
 def decode(data: bytes):
     for enc in ("utf-8", "cp949", "euc-kr"):
         try:
@@ -115,7 +130,20 @@ def safe(value: str, limit: int = 500):
 
 
 def analyze(label: str, timestamp: str, original: str):
-    data = request(replay(timestamp, original))
+    resolved_timestamp = timestamp
+    retrieval = "direct"
+    direct_error = ""
+    try:
+        data = request(replay(timestamp, original))
+    except Exception as exc:
+        direct_error = f"{type(exc).__name__}:{exc}"
+        closest = closest_snapshot(original, timestamp)
+        if closest is None:
+            raise RuntimeError(f"direct={direct_error}; availability=no-snapshot")
+        resolved_timestamp, status = closest
+        retrieval = f"availability-fallback:{status}"
+        data = request(replay(resolved_timestamp, original))
+
     parser = Parser()
     parser.feed(decode(data))
     snippets = sorted({
@@ -132,7 +160,10 @@ def analyze(label: str, timestamp: str, original: str):
             links.add((tag, attr, safe(normalized), safe(anchor, 180)))
     return {
         "label": label,
-        "timestamp": timestamp,
+        "requested_timestamp": timestamp,
+        "timestamp": resolved_timestamp,
+        "retrieval": retrieval,
+        "direct_error": direct_error,
         "original": original,
         "sha256": hashlib.sha256(data).hexdigest(),
         "bytes": len(data),
@@ -173,9 +204,15 @@ def main():
 
     for row in sorted(results, key=lambda x: x["label"]):
         print(
-            f"PAGE|label={row['label']}|timestamp={row['timestamp']}|"
+            f"PAGE|label={row['label']}|requested_timestamp={row['requested_timestamp']}|"
+            f"timestamp={row['timestamp']}|retrieval={safe(row['retrieval'])}|"
             f"bytes={row['bytes']}|sha256={row['sha256']}|original={safe(row['original'])}"
         )
+        if row["direct_error"]:
+            print(
+                f"FALLBACK|label={row['label']}|direct_error={safe(row['direct_error'])}|"
+                f"resolved_timestamp={row['timestamp']}"
+            )
         for value in row["snippets"]:
             print(f"TEXT|label={row['label']}|value={value}")
         for tag, attr, target, anchor in row["links"]:
