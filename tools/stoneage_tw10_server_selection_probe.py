@@ -64,6 +64,8 @@ SERVER_RECORD_SIZE = 193
 SERVER_SLOT_COUNT = 10
 SERVER_IP_OFFSET = 1
 SERVER_PORT_OFFSET = 129
+SERVER_NAME_TABLE_RVA = 0x588B0
+SERVER_NAME_RECORD_SIZE = 64
 SELECT_SERVER_INDEX_RVA = 0x5C860
 LOCAL_BEFORE = 130
 LOCAL_AFTER = 35
@@ -287,6 +289,27 @@ def exact_pointer_refs(data, base, sections, target_rva):
             rows.append((hit["ptr_rva"], None))
         else:
             rows.append((hit["ptr_rva"], ins))
+    return rows
+
+
+def nontext_server_table_pointer_stores(data, base, sections):
+    lo = base + SERVER_TABLE_RVA
+    hi = lo + SERVER_RECORD_SIZE * SERVER_SLOT_COUNT
+    rows = []
+    for sec in sections:
+        if sec["name"] == ".text" or sec["raw_size"] < 4:
+            continue
+        blob = data[sec["raw"]:sec["raw"] + sec["raw_size"]]
+        for rel in range(0, len(blob) - 3):
+            value = int.from_bytes(blob[rel:rel + 4], "little")
+            if lo <= value <= hi:
+                rows.append(
+                    {
+                        "section": sec["name"],
+                        "storage_rva": sec["rva"] + rel,
+                        "target_rva": value - base,
+                    }
+                )
     return rows
 
 
@@ -587,6 +610,46 @@ def main():
                 f"host={clean(host if host is not None else '<unmapped>',160)}|"
                 f"port={clean(port if port is not None else '<unmapped>',80)}"
             )
+
+        for slot in range(SERVER_SLOT_COUNT):
+            name = static_cstr_at_rva(
+                data, sections, SERVER_NAME_TABLE_RVA + slot * SERVER_NAME_RECORD_SIZE,
+                SERVER_NAME_RECORD_SIZE
+            )
+            print(
+                f"SERVER_NAME_SLOT_INITIAL|slot={slot}|"
+                f"name={clean(name if name is not None else '<unmapped>',160)}"
+            )
+        app_label = static_cstr_at_rva(data, sections, 0x59184, 96)
+        print(
+            f"SERVER_TITLE_LABEL|rva=0x59184|text={clean(app_label if app_label is not None else '<unmapped>',160)}"
+        )
+
+        indirect_rows = nontext_server_table_pointer_stores(data, base, sections)
+        print(f"SERVER_TABLE_NON_TEXT_POINTERS|count={len(indirect_rows)}")
+        for n, rowptr in enumerate(indirect_rows, 1):
+            print(
+                f"SERVER_TABLE_NON_TEXT_POINTER|n={n}|section={rowptr['section']}|"
+                f"storage_rva=0x{rowptr['storage_rva']:x}|target_rva=0x{rowptr['target_rva']:x}"
+            )
+            storage_refs = exact_pointer_refs(data, base, sections, rowptr["storage_rva"])
+            print(
+                f"SERVER_TABLE_POINTER_STORAGE_XREFS|n={n}|storage_rva=0x{rowptr['storage_rva']:x}|"
+                f"count={len(storage_refs)}"
+            )
+            for xno, (ptr_rva, ins) in enumerate(storage_refs, 1):
+                if ins is None:
+                    print(
+                        f"SERVER_TABLE_POINTER_STORAGE_XREF|n={n}|xref={xno}|"
+                        f"pointer_rva=0x{ptr_rva:x}|decoded=0"
+                    )
+                else:
+                    print(
+                        f"SERVER_TABLE_POINTER_STORAGE_XREF|n={n}|xref={xno}|"
+                        f"pointer_rva=0x{ptr_rva:x}|decoded=1|"
+                        f"instruction_rva=0x{ins.address-base:x}|mnemonic={clean(ins.mnemonic)}|"
+                        f"ops={clean(enhanced_ops(ins,data,base,sections))}"
+                    )
 
         range_rows = raw_server_table_range_refs(data, base, sections)
         print(
