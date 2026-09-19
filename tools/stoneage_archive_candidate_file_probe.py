@@ -23,14 +23,15 @@ QUERIES=[
     'title:(stoneage OR "stone age") AND mediatype:software',
     'description:(stoneage OR "stone age") AND mediatype:software',
     '"sa_demo.exe"',
+    '"stone_demo.exe"',
     '"stoneagebeta.zip"',
     '"20001031524596220"',
     '"200009263856"',
     '"GW_IDX=9"',
     '"/pc/games/online/stoneage.zip"',
 ]
-EXACT_NAMES={"sa.exe","sa_demo.exe","stoneage.zip","stoneagebeta.zip"}
-INTEREST_NAME=re.compile(r"(?i)(?:^|[/\\])(?:sa(?:_demo)?\.exe|stoneage(?:beta)?\.zip)$")
+EXACT_NAMES={"sa.exe","sa_demo.exe","stone_demo.exe","stoneage.zip","stoneagebeta.zip"}
+INTEREST_NAME=re.compile(r"(?i)(?:^|[/\\])(?:sa(?:_demo)?\.exe|stone_demo\.exe|stoneage(?:beta)?\.zip)$")
 LOW=180*1024*1024
 HIGH=320*1024*1024
 
@@ -78,7 +79,7 @@ def candidate_files(files):
 def main():
     print("StoneAge Internet Archive candidate-file metadata scan — R1")
     print("SCOPE|item-and-filelist-metadata-only|no-payload-download")
-    print("TRAITS|exact=sa.exe,sa_demo.exe,stoneage.zip,stoneagebeta.zip|size_window=180-320MiB")
+    print("TRAITS|exact=sa.exe,sa_demo.exe,stone_demo.exe,stoneage.zip,stoneagebeta.zip|size_window=180-320MiB")
 
     docs={}; query_hits={}; errors=[]
     for idx,q in enumerate(QUERIES,1):
