@@ -333,9 +333,13 @@ A reproducible public-catalog probe adds several identifiers and a holdings sign
 - KOLIS edition navigation resolves the record through edition key **`24118251`**, work number **`UW20191223432`** and `bibKey` **`10041033`**;
 - the `bibKey=10041033` holding endpoint identifies exactly two holders: **국립중앙도서관 / National Library of Korea** (`recKey=1`, library code **`011001`**, Seoul) and **서귀포시동부도서관 / Seogwipo Eastern Library** (`recKey=12909233`, library code **`149013`**, Jeju);
 - RISS separately exposes the National Library local bibliographic number **`KMO200119860`**;
-- these records establish two catalog holdings of the bibliographic object, but do **not** yet establish a call/accession number for the individual copies or the present physical status of either accompanying CD.
+- KOLIS MARC view resolves **`001 UB20011039873`**, **`012 KMO200119860`**, **`035 (011001)KMO200119860`** and field **`300 ... + 컴팩트디스크 1매(12cm)`**, independently confirming one 12cm compact disc as accompanying material in the bibliographic record;
+- the linked KOLIS contents endpoint is live for `KMO200119860` / `UB20011039873` and begins chapter 1 with **`설치하기 = 8`**, confirming a dedicated installation section in the guide;
+- these records establish two catalog holdings of the bibliographic object, but do **not** expose copy-level accession/supplement-status data proving that either accompanying disc is physically intact today.
 
 Derived evidence: `research/recovered/STONEAGE-GAMETIME-2001-LIBRARY-SUPPLEMENT-R1.txt` and `research/recovered/STONEAGE-GAMETIME-2001-KOLIS-HOLDINGS-R1.txt`.
+
+**Public catalog-layer closure:** pause routine ISBN/title/RISS/KOLIS searching. Reopen only for a holder-specific OPAC/accession record, current supplementary-disc status, disc-label imagery, distinct non-book record or a public disc image/preservation copy.
 
 ### Catalog-date normalization
 
