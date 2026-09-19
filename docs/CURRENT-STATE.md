@@ -896,13 +896,16 @@ Supplemental source ledgers:
 
 - Canonical corpus record: `research/clients/STONEAGE-KOREA-2000-2001-PUBLIC-MEDIA-CORPUS-R1.md`.
 
-### Newly opened physical-carrier holder lane (2026-09-19)
+### Korean NetPower public-carrier resolution — 2026-09-19
 
-- An active Korean collector publicly documented extracting **NetPower 2000-10 supplement CDs** and multiple other classic magazine/online-game discs, proving that adjacent-era NetPower carrier media still survives outside the web-archive corpus. The published 2000-10 disc inventories do **not** include StoneAge, so this is not a recovered client; it is a concrete holder/acquisition lead.
-- Surviving NetPower indexes place StoneAge in **2000-11 p.99, 2000-12 p.173, 2001-01 p.185 and 2001-02 p.189**. Those issue supplements now become explicit carrier targets; article presence alone must not be treated as proof of installer presence.
-- A separate 2026 Lost Media recovery post states that a researcher had checked **33 NetPower supplement CDs** and **49 GamePia/PCGM discs**, establishing that a larger Korean game-disc preservation corpus is in circulation, although the issue dates/accounts are not enumerated there.
-- The GameTime `StoneAge Perfect Guide` (ISBN13 `9788995182123`) remains a direct carrier target because the surviving YES24 record explicitly says its included CD contains the StoneAge installation program/demo. See `research/clients/STONEAGE-KOREA-PHYSICAL-CARRIER-HOLDER-LEADS-R1.md`.
-- **Operational next step:** obtain or enumerate NetPower 2000-11 / 2000-12 / 2001-01 / 2001-02 supplement media and the GameTime guide CD, then run exact-token + clean-client acceptance checks on any recovered bytes.
+- A later preserved NetPower contents index is now used only as a **carrier-target map**, not as proof of supplement contents. It places StoneAge coverage in **2000-09 p.87, 2000-11 p.99, 2000-12 p.173, 2001-01 p.185 and 2001-02 p.189**.
+- Internet Archive uploader-neighborhood discovery identified exact public carrier items for **NetPower 2000-09, 2000-11 and 2001-02** under the same preservation uploader that hosts the known Korean PCGM/GamePia corpus.
+- Those three exact NetPower items have now been recursively enumerated at ISO-9660/Joliet directory level through HTTP Range reads only. Each issue exposes **two disc volumes represented as IMG + ISO (four image representations per issue)**. Across all twelve representations: **0 scan errors, 0 truncation and 0 StoneAge/sa_demo/sa.exe/enium path hits**. These are strong file-level negative controls for those exact preserved carriers; they do not prove every physical pressing or another supplement edition was identical.
+- The earlier **NetPower 2001.12** public pair remains a separate exact-carrier negative control: two ISO images, 0 scan errors, 0 truncation and 0 StoneAge-path hits.
+- A corrected R2 Internet Archive metadata probe now isolates the still-missing **2000-12 and 2001-01** issues. Across the two known preservation-uploader neighborhoods plus exact global identifier/title/description searches, both months return **0 exact carrier items with 0 query errors**. This closes the current IA metadata route for those two issues only; it is not evidence that the discs no longer survive in private collections or another preservation account.
+- The active Korean classic-CD collector lane therefore remains useful primarily for **NetPower 2000-12 / 2001-01** and other unindexed carriers, while the **GameTime StoneAge Perfect Guide CD** remains the stronger direct carrier target because surviving bibliographic evidence explicitly describes a StoneAge installation/demo disc.
+- Derived records: `research/recovered/STONEAGE-NETPOWER-2000-09-DISC-SCAN-R1.txt`, `research/recovered/STONEAGE-NETPOWER-EXACT-TARGET-DISC-SCAN-R1.txt`, and `research/recovered/STONEAGE-NETPOWER-IA-UPLOADER-NEIGHBORHOOD-R2.txt`.
+- **Operational consequence:** do not rerun the exact public NetPower 2000-09 / 2000-11 / 2001-02 / 2001.12 carriers unless a new parser or byte-level question changes the task. Pursue 2000-12 / 2001-01 through new holder/account evidence, and prioritize the GameTime guide CD plus the exact operator-distribution payload tokens.
 
 ## Immediate next actions
 

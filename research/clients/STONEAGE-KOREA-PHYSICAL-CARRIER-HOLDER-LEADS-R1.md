@@ -21,6 +21,7 @@ This is still a high-value acquisition lead because the same holder demonstrably
 
 The surviving NetPower contents index / GameMeca magazine archive places StoneAge in these issues:
 
+- **2000-09** — game feature, p.87.
 - **2000-11** — preview, p.99.
 - **2000-12** — review, p.173.
 - **2001-01** — preview, p.185.
@@ -34,6 +35,34 @@ https://m.gamemeca.com/magazine.php?mgz=netpower&ym=2000_12
 https://m.gamemeca.com/magazine.php?mgz=netpower&ym=2001_2
 
 The article presence does **not** prove the supplement CD contains a StoneAge installer. Each supplement disc must be independently inventoried.
+
+
+## Public Internet Archive carrier resolution — 2026-09-19
+
+Uploader-neighborhood enumeration of the already-known Korean magazine-disc preservation corpus exposed exact public NetPower items for three of the StoneAge-adjacent issues:
+
+- `netpower_cd_2000_09`
+- `netpower_cd_2000_11`
+- `netpower_cd_2001_02`
+
+Each item contains two disc volumes represented in both IMG and ISO form. The repository's bounded HTTP-Range scanner recursively enumerated both ISO-9660 and Joliet directory namespaces without downloading complete images.
+
+Results:
+
+- **2000-09:** 4 image representations scanned, 0 errors, 0 truncation, 0 StoneAge-path hits.
+- **2000-11:** 4 image representations scanned, 0 errors, 0 truncation, 0 StoneAge-path hits.
+- **2001-02:** 4 image representations scanned, 0 errors, 0 truncation, 0 StoneAge-path hits.
+- Existing **2001.12** control: 2 public ISO images scanned, likewise 0 StoneAge-path hits.
+
+These results apply to the exact preserved carrier images only. They do not prove that no alternate pressing, replacement disc, private collector copy, or different distribution channel carried StoneAge.
+
+A corrected metadata-only R2 probe then searched the two known preservation-uploader neighborhoods plus exact global Internet Archive identifier/title/description forms for **NetPower 2000-12** and **2001-01**. Both returned **0 exact carrier items with 0 query errors**. Treat this as a current IA-route negative, not a global absence claim.
+
+Derived evidence:
+
+- `research/recovered/STONEAGE-NETPOWER-2000-09-DISC-SCAN-R1.txt`
+- `research/recovered/STONEAGE-NETPOWER-EXACT-TARGET-DISC-SCAN-R1.txt`
+- `research/recovered/STONEAGE-NETPOWER-IA-UPLOADER-NEIGHBORHOOD-R2.txt`
 
 ## Lead C — broader Korean game-media preservation corpus
 
@@ -59,10 +88,10 @@ This is a direct physical-carrier recovery target. A surviving copy with its ori
 
 ## Acquisition / verification order
 
-1. Determine whether surviving **NetPower 2000-11, 2000-12, 2001-01, or 2001-02 supplement CDs** exist in the active collector/community corpus.
-2. Obtain an ISO image or, if bytes cannot yet be shared, at minimum a complete recursive file list with byte sizes and hashes.
-3. Locate an intact **GameTime StoneAge Perfect Guide** copy with the original supplement CD and image that disc losslessly.
-4. On any candidate carrier, search exact known distribution tokens first:
+1. Do **not** reacquire or rescan the exact public NetPower 2000-09 / 2000-11 / 2001-02 carrier images unless a new technical question requires byte-level comparison; their directory-level StoneAge search is closed.
+2. Determine whether **NetPower 2000-12 or 2001-01** supplement media survives in the active collector/community corpus or in a preservation account not exposed by the current IA metadata searches.
+3. Locate an intact **GameTime StoneAge Perfect Guide** copy with the original supplement CD and image that disc losslessly; this remains the strongest physical-carrier target because the product record explicitly describes StoneAge install/demo content.
+4. On any newly recovered carrier, search exact known distribution tokens first:
    - `stoneage.zip`
    - `sa.exe`
    - `sa_demo.exe`
@@ -75,4 +104,4 @@ This is a direct physical-carrier recovery target. A surviving copy with its ori
 
 **OPEN / HIGH-VALUE PHYSICAL-MEDIA RECOVERY LANE.**
 
-No 2000–2001 StoneAge carrier bytes were recovered by this research pass. The value of the lane is that it identifies living/active preservation activity around exactly the Korean magazine-CD ecosystem that distributed contemporary online clients.
+No 2000–2001 StoneAge client bytes were recovered by this pass. The public NetPower 2000-09 / 2000-11 / 2001-02 carriers are now closed as exact directory-level negatives, while 2000-12 / 2001-01 remain unresolved outside the current IA metadata surface. The living collector/preservation ecosystem and the GameTime guide CD therefore remain active acquisition paths.

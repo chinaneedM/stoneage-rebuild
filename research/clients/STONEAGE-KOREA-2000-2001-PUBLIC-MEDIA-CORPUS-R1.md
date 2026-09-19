@@ -58,6 +58,30 @@ Result:
 
 Interpretation: these two specific 2001.12 discs are valid negative controls. They are not evidence against other NetPower issues or other Korean distribution media.
 
+## NetPower launch-adjacent exact-carrier controls
+
+Two additional derived reports now close the publicly indexed launch-adjacent NetPower carriers that can currently be located on Internet Archive:
+
+- `research/recovered/STONEAGE-NETPOWER-2000-09-DISC-SCAN-R1.txt`
+- `research/recovered/STONEAGE-NETPOWER-EXACT-TARGET-DISC-SCAN-R1.txt`
+
+Exact item coverage:
+
+- **NetPower 2000-09** — two disc volumes, each preserved as IMG + ISO; 4 image representations scanned.
+- **NetPower 2000-11** — two disc volumes, each preserved as IMG + ISO; 4 image representations scanned.
+- **NetPower 2001-02** — two disc volumes, each preserved as IMG + ISO; 4 image representations scanned.
+
+Across all twelve representations:
+
+- 0 metadata errors;
+- 0 directory-scan errors;
+- 0 truncation;
+- 0 `stoneage` / `stone age` / `스톤에이지` / `sa_demo` / path-final `sa.exe` / `enium` hits.
+
+The IMG and ISO forms are alternate representations of the same two disc volumes per issue, so they must not be miscounted as twelve independent physical pressings. These results are exact-carrier negatives only.
+
+A separate corrected metadata probe, `research/recovered/STONEAGE-NETPOWER-IA-UPLOADER-NEIGHBORHOOD-R2.txt`, queried the two known preservation-uploader neighborhoods plus precise global identifier/title/description forms for **NetPower 2000-12** and **2001-01**. It completed with zero query errors and found **0 exact carrier items** for either month. This closes only the current Internet Archive metadata route; those discs may still survive in another account or private collection.
+
 ## PC Game Magazine launch-window control
 
 Derived report:
@@ -290,7 +314,7 @@ Derived records:
 
 The public-media route is now materially narrower:
 
-1. Do not repeat the closed NetPower 2001.12, PCGM 2000-09..2001-12, GamePia No.58..69, or exact IA-token scans unless a new token or materially better parser changes the question.
+1. Do not repeat the closed NetPower 2000-09 / 2000-11 / 2001-02 / 2001.12 exact-carrier scans, PCGM 2000-09..2001-12, GamePia No.58..69, or exact IA-token scans unless a new token or materially better parser changes the question. The current IA metadata route for NetPower 2000-12 / 2001-01 is also exhausted until a new uploader/account/identifier appears.
 2. Prioritize exact recovery of GameTime **`onlStoneAge.zip`** at `/images/Online/pds/2001/02/onlStoneAge.zip`, now server-bound to `GW_IDX=9`; the current IA, Wayback and Arquivo routes are exhausted for this exact object, while Common Crawl is service-inconclusive. Shift effort toward reposts, old FTP/web mirrors, software-CD indexes and preserved installations; retain `stone_demo.exe` as the independently resolved trial-client token.
 3. Continue expanded public-disc scanning only where the carrier dates or metadata materially overlap the 2000–2001 Korean distribution window.
 4. On any concrete installer/archive hit, stop broad enumeration and run the clean-client acceptance pipeline: provenance, archive hash, full file tree/per-file hashes, executable metadata, updater/endpoints, resource generations, and contamination checks.

@@ -540,6 +540,67 @@ This is the canonical ledger for historical sources. Entries should record prove
   - gives a precise near-descendant client version target;
   - the numeric proximity to Korean `1.74` is recorded as a **lineage hypothesis only**, pending artifact comparison.
 
+### SRC-KR-NETPOWER-CONTENTS-INDEX-01
+
+- Title: `Net POWER 전체 목차 발행순`
+- Original compilation date: later retrospective index (page updated through 2020-era preservation)
+- Retrieval date: 2026-09-19
+- Language/region: Korean / Korea
+- Source type: later community-preserved magazine contents index
+- URL: https://bihon.tistory.com/entry/Net-POWER-%EC%A0%84%EC%B2%B4-%EB%AA%A9%EC%B0%A8-%EB%B0%9C%ED%96%89%EC%88%9C-2020-05-19-%EA%B8%B0%EC%A4%80
+- Confidence: **C/B** for issue/page targeting
+- Supports:
+  - StoneAge is indexed in NetPower 2000-09 p.87, 2000-11 p.99, 2000-12 p.173, 2001-01 p.185 and 2001-02 p.189;
+  - these issue dates are rational supplement-CD recovery targets.
+- Does not support:
+  - that any corresponding supplement CD contained a StoneAge installer;
+  - client filename, version, checksum or byte identity.
+- Archaeology significance:
+  - provides a bounded carrier-search schedule;
+  - article presence must remain separate from carrier-content evidence.
+
+### SRC-KR-NETPOWER-IA-CARRIER-SET-01
+
+- Titles/items:
+  - `netpower_cd_2000_09` — NetPower 2000-09 CD
+  - `netpower_cd_2000_11` — NetPower 2000-11 CD
+  - `netpower_cd_2001_02` — NetPower 2001-02 CD
+- Retrieval/scan date: 2026-09-19
+- Language/region: Korean / Korea
+- Source type: public preserved magazine supplement-disc images plus derived recursive directory metadata
+- URLs:
+  - https://archive.org/details/netpower_cd_2000_09
+  - https://archive.org/details/netpower_cd_2000_11
+  - https://archive.org/details/netpower_cd_2001_02
+- Confidence: **B** for provenance; direct for the exact preserved image file trees/hashes
+- Supports:
+  - each item exposes two disc volumes represented as IMG + ISO;
+  - all twelve image representations were completely enumerated at ISO-9660/Joliet directory level with 0 scan errors and 0 truncation;
+  - the exact preserved carriers contain 0 StoneAge-path matches under the repository's bounded target-token set.
+- Does not support:
+  - that every historical pressing or replacement copy was byte-identical;
+  - that StoneAge was absent from all NetPower supplements or from other Korean distribution media.
+- Derived records:
+  - `research/recovered/STONEAGE-NETPOWER-2000-09-DISC-SCAN-R1.txt`
+  - `research/recovered/STONEAGE-NETPOWER-EXACT-TARGET-DISC-SCAN-R1.txt`
+
+### SRC-KR-NETPOWER-IA-MISSING-ISSUES-R2-01
+
+- Title: precise Internet Archive NetPower 2000-12 / 2001-01 metadata probe
+- Retrieval date: 2026-09-19
+- Language/region: Korean / Korea
+- Source type: Internet Archive advanced-search + item/file-list metadata
+- Confidence: **B** for the bounded archive-service result
+- Supports:
+  - two known Korean magazine-disc preservation uploader neighborhoods were enumerated;
+  - exact global identifier/title/description searches for NetPower 2000-12 and 2001-01 completed with 0 query errors;
+  - no exact carrier item for either month was found on that current metadata surface.
+- Does not support:
+  - global nonexistence of either disc;
+  - absence from private collections, unindexed IA items, or other preservation services.
+- Derived record:
+  - `research/recovered/STONEAGE-NETPOWER-IA-UPLOADER-NEIGHBORHOOD-R2.txt`
+
 ## Required metadata for future entries
 
 Every substantial source should record:
