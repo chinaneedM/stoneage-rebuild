@@ -45,11 +45,28 @@ LINK=re.compile(r"""(?is)<a\b[^>]*href\s*=\s*["']?([^"' >]+)[^>]*>(.*?)</a>""")
 CONTENT=re.compile(r'''(?i)(content\.asp\?[^\s"'<>]+)''')
 SCRIPT_LOC=re.compile(r"""(?i)(?:location(?:\.href)?\s*=|window\.open\s*\()\s*["']([^"']+)""")
 TAG=re.compile(r"(?is)<[^>]+>")
+TR=re.compile(r"(?is)<tr\b[^>]*>(.*?)</tr>")
 SPACE=re.compile(r"\s+")
 
 
 def plain(s):
     return SPACE.sub(" ",TAG.sub(" ",s)).strip()
+
+
+def row_content_links(html,base):
+    out=[]
+    seen=set()
+    for block in TR.findall(html):
+        match=CONTENT.search(block)
+        if not match:
+            continue
+        href=urllib.parse.urljoin(base,match.group(1).replace("&amp;","&"))
+        text=clean(plain(block),1200)
+        key=(href,text)
+        if key not in seen:
+            seen.add(key)
+            out.append(key)
+    return out
 
 
 def analyze(label,ts,url):
@@ -85,6 +102,7 @@ def analyze(label,ts,url):
         "links":links,"stone_links":stone_links,"stone_context":stone_context,
         "content_pairs":content_pairs,
         "content_urls":[x[0] for x in content_pairs],
+        "row_links":row_content_links(html,url),
         "script_urls":sorted(set(script_urls)),
     }
 
@@ -107,14 +125,19 @@ def main():
         print(
             f"ANCHOR|label={clean(r['label'])}|timestamp={r['timestamp']}|status={r['status']}|"
             f"bytes={r['bytes']}|links={len(r['links'])}|stone_links={len(r['stone_links'])}|"
-            f"content_urls={len(r['content_urls'])}|script_urls={len(r['script_urls'])}|"
-            f"replay={clean(r['replay'])}"
+            f"content_urls={len(r['content_urls'])}|row_links={len(r['row_links'])}|"
+            f"script_urls={len(r['script_urls'])}|replay={clean(r['replay'])}"
         )
         print(f"TEXT|anchor={clean(r['label'])}|text={r['text']}")
         for value in r["stone_context"]:
             print(f"STONE_CONTEXT|anchor={clean(r['label'])}|text={value}")
         for href,label_text in r["stone_links"]:
             print(f"STONE_LINK|anchor={clean(r['label'])}|href={clean(href)}|label={clean(label_text,500)}")
+        for href,row_text in r["row_links"]:
+            print(
+                f"ROW_LINK|anchor={clean(r['label'])}|href={clean(href)}|"
+                f"text={clean(row_text,1200)}"
+            )
         for href,context in r["content_pairs"]:
             print(
                 f"CONTENT_LINK|anchor={clean(r['label'])}|href={clean(href)}|"
