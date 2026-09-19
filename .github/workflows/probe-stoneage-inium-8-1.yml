@@ -1,0 +1,37 @@
+name: Probe Inium StoneAge 8_1 child page
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_inium_8_1_probe.py
+      - tests/test_stoneage_inium_8_1_probe.py
+      - .github/workflows/probe-stoneage-inium-8-1.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-inium-8-1
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_inium_8_1_probe -v
+      - name: Probe archived Inium 8_1 and one-hop pages
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_inium_8_1_probe             > research/recovered/STONEAGE-INIUM-8-1-PROBE-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-INIUM-8-1-PROBE-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Inium StoneAge 8_1 page'
+          git pull --rebase origin main
+          git push
