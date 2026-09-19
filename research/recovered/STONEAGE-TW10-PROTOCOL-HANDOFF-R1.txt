@@ -40,6 +40,8 @@ WSOCK_IMPORT|iat_rva=0x52248|name=__WSAFDIsSet
 WSOCK_IMPORT|iat_rva=0x5224c|name=recv
 WSOCK_IMPORT|iat_rva=0x52250|name=closesocket
 WSOCK_IMPORT|iat_rva=0x52254|name=send
+WSOCK_SEND_IAT|iat_rva=0x52254|raw_text_xrefs=1
+WSOCK_SEND_IAT_REF|iat_rva=0x52254|n=1|decoded=1|instruction_rva=0x48467|mnemonic=and|ops=reg:eax,imm:0x52254:.rdata
 WSOCK_SEND|exact_calls=0
 GLOBAL|rva=0x598e0|section=.data|send_refs=2|text_raw_xrefs=3
 GLOBAL_XREF|global_rva=0x598e0|n=1|instruction_rva=0x1ac15|mnemonic=add|assignment=0
