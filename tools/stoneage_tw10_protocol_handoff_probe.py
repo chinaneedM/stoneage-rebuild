@@ -329,6 +329,25 @@ def callback_cfg_probe(data, base, sections, imports, callback_va):
     }
 
 
+def exact_iat_opcode_sites(data, base, sections, iat_va):
+    sec = next((s for s in sections if s["name"] == ".text"), None)
+    if sec is None:
+        return []
+    blob = data[sec["raw"]:sec["raw"] + sec["raw_size"]]
+    ptr = struct.pack("<I", iat_va & 0xFFFFFFFF)
+    patterns = (("call", b"\xff\x15" + ptr), ("jmp", b"\xff\x25" + ptr))
+    out = []
+    for kind, pattern in patterns:
+        start = 0
+        while True:
+            rel = blob.find(pattern, start)
+            if rel < 0:
+                break
+            out.append((kind, base + sec["rva"] + rel))
+            start = rel + 1
+    return sorted(out, key=lambda x:(x[1],x[0]))
+
+
 def exact_import_calls(data, base, sections, imports, dll_name, api_names):
     names = {str(x).lower() for x in api_names}
     out = []
@@ -499,7 +518,27 @@ def main():
             if dll.lower() == "wsock32.dll" and name.lower() in {"send", "#19"}
         ]
         thunk_call_sites = []
+        opcode_direct_sites = []
         for iat_va in send_iats:
+            exact_sites = exact_iat_opcode_sites(data, base, sections, iat_va)
+            print(
+                f"WSOCK_SEND_IAT_OPCODE|iat_rva=0x{iat_va-base:x}|"
+                f"exact_sites={len(exact_sites)}"
+            )
+            for kind, site_va in exact_sites:
+                print(
+                    f"WSOCK_SEND_IAT_SITE|iat_rva=0x{iat_va-base:x}|kind={kind}|"
+                    f"instruction_rva=0x{site_va-base:x}"
+                )
+                if kind == "jmp":
+                    callers = direct_rel32_call_sites(data, base, sections, site_va)
+                    print(
+                        f"WSOCK_SEND_THUNK|thunk_rva=0x{site_va-base:x}|"
+                        f"direct_callers={len(callers)}"
+                    )
+                    thunk_call_sites.extend((iat_va, site_va, x) for x in callers)
+                else:
+                    opcode_direct_sites.append((iat_va, site_va, None))
             hits = raw_text_pointer_hits(data, base, sections, iat_va)
             print(f"WSOCK_SEND_IAT|iat_rva=0x{iat_va-base:x}|raw_text_xrefs={len(hits)}")
             for n, hit in enumerate(hits, 1):
@@ -526,6 +565,7 @@ def main():
             data, base, sections, imports, "WSOCK32.dll", {"send", "#19"}
         )
         combined_send_calls = [(iat_va, ins.address, None) for iat_va, ins in send_import_calls]
+        combined_send_calls.extend(opcode_direct_sites)
         combined_send_calls.extend(thunk_call_sites)
         uniq_send = {}
         for iat_va, thunk_va, call_va in combined_send_calls:
