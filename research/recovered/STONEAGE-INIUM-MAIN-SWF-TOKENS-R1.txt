@@ -3,5 +3,14 @@ SCOPE|transient-swf-analysis|hash-container-sparse-tokens-only|no-swf-bytes-comm
 COUNT|availability_queries|8
 COUNT|availability_errors|0
 COUNT|unique_snapshots|0
-COUNT|snapshot_errors|0
+COUNT|direct_or_available_candidates|4
+DIRECT_CANDIDATE|timestamp=20001109153100|original=http://stoneage.enium.co.kr:80/main.swf|source=root_snapshot_reference
+DIRECT_CANDIDATE|timestamp=20001109153100|original=http://www.stoneage.enium.co.kr:80/main.swf|source=root_snapshot_reference
+DIRECT_CANDIDATE|timestamp=20010201072800|original=http://stoneage.enium.co.kr:80/main.swf|source=root_snapshot_reference
+DIRECT_CANDIDATE|timestamp=20010201072800|original=http://www.stoneage.enium.co.kr:80/main.swf|source=root_snapshot_reference
+ERROR|phase=snapshot|marker=20001109153100|kind=HTTPError|original=http://stoneage.enium.co.kr:80/main.swf|message=HTTP Error 404: NOT FOUND
+ERROR|phase=snapshot|marker=20001109153100|kind=HTTPError|original=http://www.stoneage.enium.co.kr:80/main.swf|message=HTTP Error 404: NOT FOUND
+ERROR|phase=snapshot|marker=20010201072800|kind=HTTPError|original=http://stoneage.enium.co.kr:80/main.swf|message=HTTP Error 404: NOT FOUND
+ERROR|phase=snapshot|marker=20010201072800|kind=HTTPError|original=http://www.stoneage.enium.co.kr:80/main.swf|message=HTTP Error 404: NOT FOUND
+COUNT|snapshot_errors|4
 COUNT|tokens|0
