@@ -1,0 +1,41 @@
+name: Probe StoneAge Taiwan 2000 preservation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw2000_preservation_probe.py
+      - tests/test_stoneage_tw2000_preservation_probe.py
+      - .github/workflows/probe-stoneage-tw2000-preservation.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-tw2000-preservation
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install bounded RAR metadata parser
+        run: python3 -m pip install --disable-pip-version-check --no-input rarfile==4.5
+      - run: python3 -m unittest tests.test_stoneage_tw2000_preservation_probe -v
+      - name: Probe Redump metadata and remote RAR headers
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_tw2000_preservation_probe \
+            > research/recovered/STONEAGE-TW2000-PRESERVATION-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-TW2000-PRESERVATION-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Taiwan 2000 preserved disc'
+          git pull --rebase origin main
+          git push
