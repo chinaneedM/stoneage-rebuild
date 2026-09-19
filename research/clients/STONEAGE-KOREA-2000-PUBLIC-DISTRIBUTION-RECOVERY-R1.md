@@ -330,9 +330,12 @@ A reproducible public-catalog probe adds several identifiers and a holdings sign
 - the KOLIS aggregate result exposes RISS alias **`U10029631`**;
 - `https://www.riss.kr/link?id=U10029631` resolves to the same RISS detail object as canonical link **`M10029631`**;
 - the RISS detail URL exposes control number **`9b505f870e768aa6ffe0bdc3ef48d419`** and repeats `318p. ... + 컴팩트디스크 1매(12cm)` plus National Library of Korea as a holding institution;
-- the current aggregate output does **not** identify the second holding library, a call/accession number, or the present physical status of either accompanying disc.
+- KOLIS edition navigation resolves the record through edition key **`24118251`**, work number **`UW20191223432`** and `bibKey` **`10041033`**;
+- the `bibKey=10041033` holding endpoint identifies exactly two holders: **국립중앙도서관 / National Library of Korea** (`recKey=1`, library code **`011001`**, Seoul) and **서귀포시동부도서관 / Seogwipo Eastern Library** (`recKey=12909233`, library code **`149013`**, Jeju);
+- RISS separately exposes the National Library local bibliographic number **`KMO200119860`**;
+- these records establish two catalog holdings of the bibliographic object, but do **not** yet establish a call/accession number for the individual copies or the present physical status of either accompanying CD.
 
-Derived evidence: `research/recovered/STONEAGE-GAMETIME-2001-LIBRARY-SUPPLEMENT-R1.txt`.
+Derived evidence: `research/recovered/STONEAGE-GAMETIME-2001-LIBRARY-SUPPLEMENT-R1.txt` and `research/recovered/STONEAGE-GAMETIME-2001-KOLIS-HOLDINGS-R1.txt`.
 
 ### Catalog-date normalization
 
