@@ -1,4 +1,4 @@
-StoneAge GameTime 2001 KOLIS holding-layer probe — R1
+StoneAge GameTime 2001 KOLIS holding-layer probe — R2
 SCOPE|public-catalog-metadata-only|no-book-or-cd-payload-download
 SEARCH|status=200|final=https://www.nl.go.kr/kolisnet/search/searchResultAllList.do?keyword1=8995182121&keywordType1=total&tab=ALL|edition_key=24118251
 POST|action=https://www.nl.go.kr/kolisnet/search/searchResultEditonList.do|field_count=13|ufKey=24118251
@@ -60,3 +60,8 @@ RAW_CONTEXT|token=소장|html=<ul class="infoList"> <li>발행사항 : 게임타
 ANCHOR|label=상세검색|href=https://www.nl.go.kr/kolisnet/search/searchResultEditonList.do#detailSearchView|attrs=class=btn_detail_search;href=#detailSearchView;id=btn_detail_search;onclick=detailSearchView(); return false;;title=상세검색
 ANCHOR|label=스톤 에이지 / 게임타임 [편]|href=https://www.nl.go.kr/kolisnet/search/searchResultEditonList.do#link|attrs=href=#link;onclick=javascript:fnDetail('BO', '10041033');return false;
 ANCHOR|label=2개관|href=https://www.nl.go.kr/kolisnet/search/searchResultEditonList.do#open|attrs=class=moreSearchList;href=#open;onclick=javascript:fnLibList('10041033', this); return false;;title=소장도서관 목록 펼치기
+BIB_KEYS|count=1|values=10041033
+HOLDINGS|bibKey=10041033|status=200|final=https://www.nl.go.kr/kolisnet/search/include/searchResultHoldingLib.do?bibKey=10041033|bytes=2846|lib_key_count=0|lib_keys=
+HOLDING_CONTEXT|bibKey=10041033|token=도서관|text=일반 팝업으로 변경 --> 국립중앙도서관 책바다 참여기관 지역 : 서울 홈페이지 바로가기 일반 팝업으로 변경 --> 서귀포시동부도서관 책바다 참여기관 지역 : 제주 홈페이지 바로가기
+HOLDING_ROW|bibKey=10041033|label=국립중앙도서관|href=#layerLibraryInfo|onclick=javascript:fnPopupDetail('1', this); return false;|lib_keys=
+HOLDING_ROW|bibKey=10041033|label=서귀포시동부도서관|href=#layerLibraryInfo|onclick=javascript:fnPopupDetail('12909233', this); return false;|lib_keys=
