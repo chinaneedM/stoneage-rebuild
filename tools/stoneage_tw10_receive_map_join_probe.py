@@ -55,6 +55,7 @@ MAP_CALLBACKS = {
 }
 DEEP_GRAPH_DEPTH = 10
 DEEP_GRAPH_NODES = 160
+DISPATCH_ROOT_RVA = 0x19730
 MAP_SEMANTIC_NODES = {
     "M": 0x1DA40,
     "MC": 0x1DD90,
@@ -297,6 +298,45 @@ def main():
                 f"PROTOCOL_TARGET|name={label}|occurrences={len(vas)}|decoded_xrefs={len(rows2)}"
             )
 
+        dispatcher_protocol_vas = {}
+        for label in ("XYD", "EV", "EN", "RS", "RD", "ClientLogin", "CreateNewChar", "CharDelete", "CharLogin", "CharList", "CharLogout", "MC", "M"):
+            vas = set()
+            needle = label.encode("ascii") + b"\x00"
+            pos = 0
+            while True:
+                pos = data.find(needle, pos)
+                if pos < 0:
+                    break
+                srva = file_offset_to_rva(sections, pos)
+                if srva is not None:
+                    vas.add(base + srva)
+                pos += 1
+            dispatcher_protocol_vas[label] = vas
+
+        dispatch_start = base + DISPATCH_ROOT_RVA
+        dispatch_end = base + 0x1AA8A
+        dispatch_ins = decode_node_instructions(
+            data, base, sections, dispatch_start, dispatch_end
+        )
+        dispatch_protocol_hits = collections.Counter()
+        first_hit = {}
+        for ins in dispatch_ins:
+            refs = set(referenced_absolute_values(ins))
+            for label, vas in dispatcher_protocol_vas.items():
+                if refs.intersection(vas):
+                    dispatch_protocol_hits[label] += 1
+                    first_hit.setdefault(label, ins.address)
+        print(
+            f"DISPATCH_ROOT_FINGERPRINT|rva=0x{DISPATCH_ROOT_RVA:x}|"
+            f"span_end_rva=0x1aa8a|instructions={len(dispatch_ins)}|"
+            f"protocol_names={len(dispatch_protocol_hits)}"
+        )
+        for label in sorted(dispatch_protocol_hits):
+            print(
+                f"DISPATCH_ROOT_PROTOCOL|name={label}|hits={dispatch_protocol_hits[label]}|"
+                f"first_rva=0x{first_hit[label]-base:x}"
+            )
+
         recv_sites = exact_recv_business_sites(data, base, sections, imports)
         print(f"WSOCK_RECV|business_calls={len(recv_sites)}")
         for n, (iat_va, site_va, thunk_va, via_thunk) in enumerate(recv_sites, 1):
@@ -314,6 +354,24 @@ def main():
                 print(
                     f"WSOCK_RECV_DISPATCH_WINDOW|n={n}|node_rva=0x{dispatch_rva:x}|depth={depth}"
                 )
+            dispatch_va = base + DISPATCH_ROOT_RVA
+            dispatch_node = graph.get(dispatch_va)
+            if dispatch_node is not None:
+                callers = direct_rel32_call_sites(data, base, sections, dispatch_va)
+                print(
+                    f"WSOCK_RECV_DISPATCH_ROOT|n={n}|rva=0x{DISPATCH_ROOT_RVA:x}|"
+                    f"depth={dispatch_node.get('depth',0)}|instructions={dispatch_node['instructions']}|"
+                    f"direct_callers={len(callers)}|direct_targets={len(dispatch_node['internal'])}"
+                )
+                for order, (callsite, target) in enumerate(dispatch_node["call_order"], 1):
+                    print(
+                        f"WSOCK_RECV_DISPATCH_ROOT_CALL|n={n}|order={order}|"
+                        f"callsite_rva=0x{callsite-base:x}|target_rva=0x{target-base:x}"
+                    )
+                for caller in callers:
+                    print(
+                        f"WSOCK_RECV_DISPATCH_ROOT_CALLER|n={n}|callsite_rva=0x{caller-base:x}"
+                    )
             root_node = graph.get(site_va)
             if root_node is not None:
                 for order, (callsite, target) in enumerate(root_node["call_order"], 1):
