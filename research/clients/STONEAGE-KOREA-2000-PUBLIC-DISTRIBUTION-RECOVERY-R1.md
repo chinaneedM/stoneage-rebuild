@@ -159,7 +159,7 @@ Two additional archive probes narrow what may safely be concluded from the survi
   - the remaining successful queries returned no rows, and no exact or prefix-relevant result was recovered.
   - Because the overwhelming majority of queries failed at the archive service/transport layer, this run is **inconclusive and must not be treated as evidence that Common Crawl lacks the targets**. Retry only when the index service is healthy; do not convert its current zero-result count into a preservation conclusion.
 
-This changes the search problem materially: Hananet no longer lacks a file identity. The high-value exact tokens are now the early PDS app ID **`20001031524596220`**, Hananet formal **`sa.exe`** and trial **`sa_demo.exe`**, CNET **257MB `stoneage.zip`**, Gagamel **`stoneagebeta.zip`**, GameTime trial **`stone_demo.exe` / GW_IDX=76**, and unresolved GameTime formal mirror **`GW_IDX=9`**. GameTime **`GW_IDX=34 / StoneAge.zip`** is separately resolved as a 0.4/0.42MB manual update and must not be promoted as a full-client candidate.
+This changes the search problem materially: Hananet no longer lacks a file identity. The high-value exact tokens are now the early PDS app ID **`20001031524596220`**, Hananet formal **`sa.exe`** and trial **`sa_demo.exe`**, CNET **257MB `stoneage.zip`**, Gagamel **`stoneagebeta.zip`**, GameTime trial **`stone_demo.exe` / GW_IDX=76**, and GameTime legacy/migrated **`num=9 / GW_IDX=9`**, now strongly tied to the **2000-10-11 StoneAge Beta-version client** record though its attachment filename/size is still missing. GameTime **`GW_IDX=34 / StoneAge.zip`** is separately resolved as a 0.4/0.42MB manual update and must not be promoted as a full-client candidate.
 
 Derived evidence:
 
@@ -272,6 +272,57 @@ Classification: **A/B / contemporaneous pre-launch distribution-plan evidence**.
 
 Do not treat every planned channel as proven byte-identical distribution. The later product-launch article independently confirms a large education-center package supply agreement, strengthening the offline preservation track.
 
+
+## GameTime legacy StoneAge Beta record 9 — 2026-09-19
+
+The preserved old GameTime webzine list now recovers a direct Korean launch-period StoneAge client record rather than only a later mirror token.
+
+Archived list:
+
+- `/webzine/online/down/bbs.asp?name=&page=4`;
+- preserved **2001-01-07**;
+- row date **2000-10-11**;
+- displayed row number **7**;
+- title **`스톤 에이지 베타 버젼용 클라이언트`** / StoneAge Beta-version client;
+- counter **7,898**;
+- author `최승진객원기자`;
+- machine-bound target:
+  **`content.asp?name=&num=9&ref=37&page=4`**.
+
+This is not inferred from neighboring text: the recovery probe now parses each HTML table row and emits the row's own `content.asp` link together with its text.
+
+### Old-to-new GameTime key continuity
+
+The same legacy system provides a control pair:
+
+- old StoneAge manual-update row -> **`num=34`**;
+- migrated GameTime data-center record -> **`GW_IDX=34`**;
+- both carry the same StoneAge manual-update identity, later resolved as the 0.4/0.42MB `StoneAge.zip` updater.
+
+That control strongly supports continuity of the numeric record key across the old `num` and newer `GW_IDX` systems.
+
+Therefore Inium's later official mirror URL:
+
+- **`/data/download.asp?GW_IDX=9&GW_Name=Online`**
+
+is strongly linked to the old GameTime StoneAge Beta client record whose legacy key is **`num=9`**.
+
+### Evidence boundary
+
+The old `num=9` detail page and parameterized legacy StoneAge download endpoint both replay HTTP 404, so the project still lacks:
+
+- the record-9 payload filename;
+- exact payload size;
+- client version/build;
+- checksum;
+- file tree;
+- payload bytes.
+
+Inium later grouped `GW_IDX=9` among formal-version download mirrors. That later classification must **not** be used to assume that the payload remained unchanged from the 2000-10-11 Beta listing. The record key can persist while the linked attachment is replaced. Record identity and byte identity therefore remain separate evidence layers.
+
+Derived evidence:
+
+- `research/recovered/STONEAGE-GAMETIME-LEGACY-WEBZINE-R1.txt`
 
 ## GameTime data-center StoneAge records resolved — 2026-09-19
 
