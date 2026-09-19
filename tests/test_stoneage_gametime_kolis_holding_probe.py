@@ -26,6 +26,12 @@ class GameTimeKolisHoldingProbeTests(unittest.TestCase):
         self.assertEqual(rows[0][0],"국립중앙도서관")
         self.assertEqual(rows[0][3],"556677")
 
+    def test_holding_rows_extract_popup_key(self):
+        raw = """<a href="#layerLibraryInfo" onclick="javascript:fnPopupDetail('12909233', this); return false;">서귀포시동부도서관</a>"""
+        rows=holding_rows(raw,"https://www.nl.go.kr/x")
+        self.assertEqual(rows[0][0],"서귀포시동부도서관")
+        self.assertEqual(rows[0][3],"12909233")
+
     def test_search_form_parser(self):
         raw='''<form name="searchParamForm" action="/old">
         <input type="hidden" name="keyword1" value="8995182121">
