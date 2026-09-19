@@ -67,7 +67,9 @@ SERVER_PORT_OFFSET = 129
 SERVER_NAME_TABLE_RVA = 0x588B0
 SERVER_NAME_RECORD_SIZE = 64
 SELECT_SERVER_INDEX_RVA = 0x5C860
-CONNECT_STATE_MACHINE_RVA = 0x2EE20
+CONNECT_RESET_RVA = 0x2EE20
+CONNECT_GAME_RVA = 0x2EE2C
+SERVER_LOOKUP_WINDOW_RVA = 0x2E8C0
 LOCAL_BEFORE = 130
 LOCAL_AFTER = 35
 MAX_ARG_PATHS = 3
@@ -412,6 +414,17 @@ def forward_context(data, base, sections, start_va, limit=64):
     return out
 
 
+def linear_context(data, base, sections, start_va, max_bytes=0x600, limit=500):
+    off = rva_to_offset(sections, start_va - base)
+    if off is None:
+        return []
+    sec = section_for_va(base, sections, start_va)
+    if sec is None:
+        return []
+    end = min(len(data), sec["raw"] + sec["raw_size"], off + max_bytes)
+    return list(md().disasm(data[off:end], start_va, count=limit))
+
+
 def static_cstr_at_rva(data, sections, rva, maxlen):
     off = rva_to_offset(sections, rva)
     if off is None:
@@ -524,21 +537,60 @@ def main():
                                     f"ops={clean(enhanced_ops(ins,data,base,sections))}"
                                 )
 
-        connect_ctx = forward_context(
-            data, base, sections, base + CONNECT_STATE_MACHINE_RVA, limit=220
+        reset_ctx = forward_context(
+            data, base, sections, base + CONNECT_RESET_RVA, limit=16
         )
+        reset_callers = direct_rel32_call_sites(data, base, sections, base + CONNECT_RESET_RVA)
         print(
-            f"CONNECT_STATE_MACHINE|start_rva=0x{CONNECT_STATE_MACHINE_RVA:x}|"
-            f"instructions={len(connect_ctx)}"
+            f"CONNECT_RESET|start_rva=0x{CONNECT_RESET_RVA:x}|"
+            f"instructions={len(reset_ctx)}|callers={len(reset_callers)}"
         )
-        for order, ins in enumerate(connect_ctx, 1):
+        for caller in reset_callers:
+            print(f"CONNECT_RESET_CALLER|callsite_rva=0x{caller-base:x}")
+        for order, ins in enumerate(reset_ctx, 1):
+            print(
+                f"CONNECT_RESET_INS|order={order}|instruction_rva=0x{ins.address-base:x}|"
+                f"mnemonic={clean(ins.mnemonic)}|ops={clean(enhanced_ops(ins,data,base,sections))}"
+            )
+
+        game_ctx = linear_context(
+            data, base, sections, base + CONNECT_GAME_RVA, max_bytes=0x520, limit=420
+        )
+        game_callers = direct_rel32_call_sites(data, base, sections, base + CONNECT_GAME_RVA)
+        print(
+            f"CONNECT_GAME|start_rva=0x{CONNECT_GAME_RVA:x}|"
+            f"instructions={len(game_ctx)}|callers={len(game_callers)}"
+        )
+        for caller in game_callers:
+            print(f"CONNECT_GAME_CALLER|callsite_rva=0x{caller-base:x}")
+        for order, ins in enumerate(game_ctx, 1):
+            api = network_event(ins, imports, thunk_api)
             branch = ins.mnemonic.startswith("j") or ins.mnemonic.startswith("ret")
-            if branch or ins.mnemonic in {
+            if api or branch or ins.mnemonic in {
                 "mov", "movsx", "movzx", "lea", "push", "call", "cmp", "test",
                 "add", "sub", "imul", "shl", "shr", "xor", "and", "or"
             }:
+                extra = f"|api={api}" if api else ""
                 print(
-                    f"CONNECT_STATE_INS|order={order}|instruction_rva=0x{ins.address-base:x}|"
+                    f"CONNECT_GAME_INS|order={order}|instruction_rva=0x{ins.address-base:x}|"
+                    f"mnemonic={clean(ins.mnemonic)}|ops={clean(enhanced_ops(ins,data,base,sections))}{extra}"
+                )
+
+        lookup_ctx = linear_context(
+            data, base, sections, base + SERVER_LOOKUP_WINDOW_RVA, max_bytes=0x90, limit=120
+        )
+        print(
+            f"SERVER_LOOKUP_WINDOW|start_rva=0x{SERVER_LOOKUP_WINDOW_RVA:x}|"
+            f"instructions={len(lookup_ctx)}"
+        )
+        for order, ins in enumerate(lookup_ctx, 1):
+            if ins.mnemonic.startswith("j") or ins.mnemonic.startswith("ret") or ins.mnemonic in {
+                "mov", "movsx", "movzx", "lea", "push", "call", "cmp", "test",
+                "add", "sub", "imul", "shl", "shr", "xor", "and", "or",
+                "rep movsb", "rep movsd"
+            }:
+                print(
+                    f"SERVER_LOOKUP_INS|order={order}|instruction_rva=0x{ins.address-base:x}|"
                     f"mnemonic={clean(ins.mnemonic)}|ops={clean(enhanced_ops(ins,data,base,sections))}"
                 )
 
