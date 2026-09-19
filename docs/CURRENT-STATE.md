@@ -814,15 +814,23 @@ Supplemental source ledgers:
 - The global question table has 150 non-comment source rows; the fixed loader accepts 149 nine-field rows and skips one eight-field row. Loaded answer types are 22 two-choice, 84 three-choice and 43 free-text questions.
 - Preserved free-text substring matching, ordered score-threshold evaluation, eight concurrent session slots, 100-entry no-repeat history, and the full-inventory/EntryItem interaction.
 - Added `research/mechanics/STONEAGE-QUIZ-CORE-R1.md`, usage probe/model/tests and dedicated CI. Core validation run **35419980296** succeeded.
+## Residual ordinary NPC sweep closure — 2026-09-19
+
+- Final LuckyMan/Door probe run **35420226969** succeeded after correcting create→template matching to the server's case-insensitive semantics.
+- Recovered 2.5 has **1 LuckyMan template block / 1 stable template name** and **3 Door template blocks / 3 stable template names**, but **zero create references for both classes**. They are defined but not instantiated in this recovered world.
+- LuckyMan fixed-source behavior is only a carried-Stone charge plus random fortune text keyed by `CHAR_LUCK`; it grants no item/EXP, changes no luck/progression and performs no travel/battle.
+- Door fixed-source behavior mutates only door NPC/world runtime state (graphic, overability, switch count, close timing) and checks key/title/password conditions; it does not consume player items or Gold. Room-admin auction fields belong to the deferred RoomAdmin package.
+- Canonical closure: `research/mechanics/STONEAGE-RESIDUAL-NPC-SWEEP-CLOSURE-R1.md`.
+- **Ordinary non-family NPC mechanics sweep is now closed.** Thirteen unmatched recovered function-set tokens remain explicit source/data lineage gaps rather than guessed implementations.
 ## Immediate next actions
 
-1. **Close the residual ordinary NPC sweep with LuckyMan and Door.** Verify recovered 2.5 active argument shapes and determine whether either exposes a still-unmodeled core mechanic beyond a narrow Stone sink or transient door/world state.
-2. **If no new foundational seam appears, stop expanding the NPC queue.** Keep the thirteen recovered function-set tokens that do not join to any pinned source table as explicit source/data skew rather than inventing implementations.
-3. **Keep Raceman, Scheduleman, ManorSman, FMPK/FMWarp, family-administration and VIP packages later-scope unless they reveal a dependency required by the early/core reconstruction.**
-4. **Return primary technical priority to clean-client recovery and concrete cross-system gaps once the ordinary NPC sweep is closed.** Detailed combat should reopen only for a demonstrated formula/data gap.
-5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
+1. **Resume clean-client recovery as the primary track.** Highest-value public targets remain `〖2.5纯净〗` thread `tid=2132`, Korean **1.74**, Japanese **1.74a**, and original JSS beta/retail/launcher artifacts; version labels alone are not byte provenance.
+2. **Treat the recovered mixed 2.5 bundle as a resource-format bridge, not a clean runtime baseline.** Continue using only provenance-safe derived measurements from its REAL/ADRN/SPR/DAT/NPC data.
+3. **On any newly recovered candidate bytes, stop broad searching and run the clean-client acceptance test immediately:** provenance, hashes, file tree, executable metadata, endpoints/patchers, resource generations and cross-copy contamination checks.
+4. **Do not reopen the ordinary NPC queue, family/race/VIP packages or deeper combat unless a cleaner/earlier client exposes a concrete contradiction or missing core dependency.**
+5. **Keep the thirteen recovered function-set tokens that do not join to any pinned source table as explicit source/data skew.** A similarly named later/unused source file is not enough to invent the missing implementation.
 6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.
-7. **De-prioritize nontechnical archaeology.** Package price, model numbers, collector accessories and similar topics remain paused unless they directly unlock a client, prove provenance, or resolve a technical ambiguity.
+7. **De-prioritize nontechnical archaeology.** Package price, collector accessories and similar topics remain paused unless they directly unlock a client, prove provenance, or resolve a technical ambiguity.
 
 ## Continuity status
 
