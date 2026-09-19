@@ -6,9 +6,9 @@ Metadata only. No WARC records or payload bytes are downloaded.
 
 from __future__ import annotations
 
+import concurrent.futures
 import json
 import re
-import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -39,14 +39,14 @@ RELEVANT=re.compile(
 )
 
 
-def fetch(url,timeout=15):
+def fetch(url,timeout=12):
     req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/json,text/plain,*/*"})
     with urllib.request.urlopen(req,timeout=timeout) as r:
         return r.read()
 
 
 def collections(limit=8):
-    rows=json.loads(fetch(COLLINFO,20).decode("utf-8","replace"))
+    rows=json.loads(fetch(COLLINFO,15).decode("utf-8","replace"))
     entries=[]
     for row in rows:
         index_id=str(row.get("id","")).strip()
@@ -58,11 +58,7 @@ def collections(limit=8):
 
 def query_url(api,url,match_type="exact"):
     separator="&" if "?" in api else "?"
-    params={
-        "url":url,
-        "output":"json",
-        "filter":"status:200",
-    }
+    params={"url":url,"output":"json","filter":"status:200"}
     if match_type!="exact":
         params["matchType"]=match_type
         params["limit"]="100"
@@ -72,7 +68,7 @@ def query_url(api,url,match_type="exact"):
 def query(api,url,match_type="exact"):
     endpoint=query_url(api,url,match_type)
     try:
-        data=fetch(endpoint,15)
+        data=fetch(endpoint,12)
     except urllib.error.HTTPError as exc:
         if exc.code==404:
             return []
@@ -110,10 +106,19 @@ def record(index_id,label,mode,target,row):
     )
 
 
+def run_job(job):
+    index_id,api,label,url,mode=job
+    try:
+        rows=query(api,url,mode)
+        return index_id,label,url,mode,rows,None
+    except Exception as exc:
+        return index_id,label,url,mode,[],(type(exc).__name__,str(exc))
+
+
 def main():
-    print("StoneAge Common Crawl mirror-neighborhood probe — R2")
+    print("StoneAge Common Crawl mirror-neighborhood probe — R3")
     print("SCOPE|cdxj-metadata-only|no-warc-download|no-client-binary-download")
-    print("METHOD|exact-targets+prefix-neighborhoods|404-means-no-index-match")
+    print("METHOD|exact-targets+prefix-neighborhoods|404-means-no-index-match|bounded-concurrency=4")
     try:
         indexes=collections()
     except Exception as exc:
@@ -125,35 +130,31 @@ def main():
     print(f"COUNT|exact_targets|{len(EXACT_TARGETS)}")
     print(f"COUNT|prefix_targets|{len(PREFIX_TARGETS)}")
 
+    jobs=[]
+    for index_id,api in indexes:
+        jobs.extend((index_id,api,label,url,"exact") for label,url in EXACT_TARGETS)
+        jobs.extend((index_id,api,label,url,"prefix") for label,url in PREFIX_TARGETS)
+
     exact_results=[]
     prefix_rows=[]
     errors=[]
-    for index_id,api in indexes:
-        for label,url in EXACT_TARGETS:
-            try:
-                rows=query(api,url,"exact")
-            except Exception as exc:
-                errors.append((index_id,label,"exact",url,type(exc).__name__,str(exc)))
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
+        for index_id,label,url,mode,rows,error in ex.map(run_job,jobs):
+            if error:
+                errors.append((index_id,label,mode,url,error[0],error[1]))
+                continue
+            if mode=="exact":
+                exact_results.extend(record(index_id,label,mode,url,row) for row in rows)
             else:
-                for row in rows:
-                    exact_results.append(record(index_id,label,"exact",url,row))
-            time.sleep(0.35)
-        for label,url in PREFIX_TARGETS:
-            try:
-                rows=query(api,url,"prefix")
-            except Exception as exc:
-                errors.append((index_id,label,"prefix",url,type(exc).__name__,str(exc)))
-            else:
-                for row in rows:
-                    prefix_rows.append((index_id,label,url,row))
-            time.sleep(0.35)
+                prefix_rows.extend((index_id,label,url,row) for row in rows)
 
-    relevant_prefix=[]
-    for index_id,label,target,row in prefix_rows:
-        if is_relevant(row.get("url") or target):
-            relevant_prefix.append(record(index_id,label,"prefix",target,row))
+    relevant_prefix=[
+        record(index_id,label,"prefix",target,row)
+        for index_id,label,target,row in prefix_rows
+        if is_relevant(row.get("url") or target)
+    ]
 
-    print(f"COUNT|queries|{len(indexes)*(len(EXACT_TARGETS)+len(PREFIX_TARGETS))}")
+    print(f"COUNT|queries|{len(jobs)}")
     print(f"COUNT|errors|{len(errors)}")
     print(f"COUNT|exact_raw_results|{len(exact_results)}")
     print(f"COUNT|prefix_raw_results|{len(prefix_rows)}")
