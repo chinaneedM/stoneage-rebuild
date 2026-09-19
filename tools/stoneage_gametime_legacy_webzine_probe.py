@@ -52,15 +52,25 @@ def analyze(label,ts,url):
     stone_context=[]
     for m in STONE.finditer(text):
         stone_context.append(clean(text[max(0,m.start()-280):min(len(text),m.end()+500)],900))
-    content_urls=sorted(set(
-        urllib.parse.urljoin(url,m.group(1).replace("&amp;","&"))
-        for m in CONTENT.finditer(html)
-    ))
+    content_pairs=[]
+    seen_content=set()
+    for m in CONTENT.finditer(html):
+        absolute=urllib.parse.urljoin(url,m.group(1).replace("&amp;","&"))
+        if absolute in seen_content:
+            continue
+        seen_content.add(absolute)
+        context=clean(
+            plain(html[max(0,m.start()-500):min(len(html),m.end()+700)]),
+            1500,
+        )
+        content_pairs.append((absolute,context))
     return {
         "label":label,"timestamp":ts,"url":url,"status":status,"replay":replay,
         "bytes":len(body),"text":clean(text,2500),
         "links":links,"stone_links":stone_links,"stone_context":stone_context,
-        "content_urls":content_urls,"script_urls":sorted(set(script_urls)),
+        "content_pairs":content_pairs,
+        "content_urls":[x[0] for x in content_pairs],
+        "script_urls":sorted(set(script_urls)),
     }
 
 
@@ -90,8 +100,11 @@ def main():
             print(f"STONE_CONTEXT|anchor={clean(r['label'])}|text={value}")
         for href,label_text in r["stone_links"]:
             print(f"STONE_LINK|anchor={clean(r['label'])}|href={clean(href)}|label={clean(label_text,500)}")
-        for href in r["content_urls"]:
-            print(f"CONTENT_LINK|anchor={clean(r['label'])}|href={clean(href)}")
+        for href,context in r["content_pairs"]:
+            print(
+                f"CONTENT_LINK|anchor={clean(r['label'])}|href={clean(href)}|"
+                f"context={clean(context,1500)}"
+            )
         for href in r["script_urls"]:
             print(f"SCRIPT_LINK|anchor={clean(r['label'])}|href={clean(href)}")
 
