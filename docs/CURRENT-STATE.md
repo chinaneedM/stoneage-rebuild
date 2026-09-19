@@ -831,15 +831,25 @@ Supplemental source ledgers:
 - This does **not** establish the exact 2000 version number, installer filename, size, checksum, mirror URL or byte identity between distribution channels. Korean localization also means a clean Inium client is a bridge specimen, not automatic JSS-Japan byte identity.
 - Exact installer/path searches have not yet recovered bytes. The immediate objective is now **filename/path discovery** from Inium, Hananet/GamePlus, CNET Korea, period software catalogs, magazine/ISP CDs and preserved pre-Netmarble installations.
 - Canonical record: `research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md` and `docs/SOURCE-REGISTRY-CLIENT-RECOVERY-R1.md`.
+## 2001 Korean install-CD recovery sub-track — 2026-09-19
+
+- YES24 and Aladin independently catalog the GameTime `스톤에이지 퍼펙트 가이드`; YES24 dates it **2001-04-30**, lists **CD 1**, and explicitly states that the bonus CD contains the **StoneAge installation program** plus demo-game CD content.
+- Exact identifiers: ISBN-13 **9788995182123**, ISBN-10 **8995182121**.
+- This creates a concrete near-period Korean installation-media recovery target. It is later than the 2000 Inium/Hananet/CNET online target, but materially earlier and more provenance-specific than the 2003 1.74 bridge.
+- No disc image, installer filename, version, size, hash or file tree is recovered yet; equality with the 2000 online client must not be assumed.
+- Recovery remains public-only: search exact title/ISBN/CD metadata and preservation/ISO catalogs; no purchase or user-side acquisition dependency.
+- Registered in `STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md` and the clean-client source registry.
+
 ## Immediate next actions
 
-1. **Prioritize Korean Inium 2000 filename/path/byte recovery.** Trace the operator site plus Hananet/GamePlus and CNET mirror lineages; search period software catalogs, magazine/ISP CDs, PC-education-center/package indexes and preserved pre-Netmarble installations.
-2. **Continue JSS 1999 beta/retail/launcher recovery in parallel.** It remains the historical origin target even though Korean 2000 now has stronger mass-replication recovery odds.
-3. **Keep `〖2.5纯净〗` `tid=2132`, Korean 1.74 and Japanese 1.74a as secondary clean-client targets.** Version labels and forum labels remain clues, not byte provenance.
-4. **On any newly recovered candidate bytes, stop broad searching and run the clean-client acceptance test immediately:** source chain, hashes, complete file tree, executable metadata, endpoints/patchers, resource generations and cross-copy contamination checks.
-5. **Treat the recovered mixed 2.5 bundle only as a provenance-safe resource-format bridge.** Do not reopen the ordinary NPC/family/race/VIP/combat queues unless cleaner/earlier evidence exposes a concrete gap.
-6. **Keep the thirteen recovered function-set tokens that do not join to any pinned source table as explicit source/data skew.** A similarly named later/unused source file is not enough to invent the missing implementation.
-7. **Keep archaeology separate from redesign and de-prioritize nontechnical history** unless it directly unlocks client bytes, provenance or a technical ambiguity.
+1. **Prioritize Korean Inium 2000 filename/path/byte recovery.** Trace the exact `www.stoneage.enium.co.kr` host plus Hananet/GamePlus and KoreaCNET mirror lineages; search period software catalogs and preserved pre-Netmarble installations.
+2. **Pursue the 2001 GameTime guide bonus CD as a concrete near-period install-media sub-track.** Search exact ISBN/title/CD-image records and compare any recovered payload against future 2000 copies rather than assuming equality.
+3. **Continue JSS 1999 beta/retail/launcher recovery in parallel.** It remains the historical origin target even though Korean 2000 now has stronger mass-replication recovery odds.
+4. **Keep `〖2.5纯净〗` `tid=2132`, Korean 1.74 and Japanese 1.74a as secondary clean-client targets.** Version labels and forum labels remain clues, not byte provenance.
+5. **On any newly recovered candidate bytes, stop broad searching and run the clean-client acceptance test immediately:** source chain, hashes, complete file tree, executable metadata, endpoints/patchers, resource generations and cross-copy contamination checks.
+6. **Treat the recovered mixed 2.5 bundle only as a provenance-safe resource-format bridge.** Do not reopen the ordinary NPC/family/race/VIP/combat queues unless cleaner/earlier evidence exposes a concrete gap.
+7. **Keep the thirteen recovered function-set tokens that do not join to any pinned source table as explicit source/data skew.** A similarly named later/unused source file is not enough to invent the missing implementation.
+8. **Keep archaeology separate from redesign and de-prioritize nontechnical history** unless it directly unlocks client bytes, provenance or a technical ambiguity.
 
 ## Continuity status
 
