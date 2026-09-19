@@ -6,6 +6,7 @@ from tools.stoneage_tw10_client_inventory import (
     is_excluded_bundle,
     is_field_map_file,
     is_named_master_candidate,
+    parse_address_table_bytes,
 )
 
 
@@ -19,6 +20,13 @@ class TaiwanV10ClientInventoryTests(unittest.TestCase):
         self.assertEqual(classify_path("StoneAge/data/se/sak_01.wav"), "audio_sfx")
         self.assertEqual(classify_path("StoneAge/data/pal/Palet_0.sap"), "palette")
         self.assertEqual(classify_path("StoneAge/data/savedata.dat"), "local_state")
+
+    def test_address_table_unique_vs_record_counts(self):
+        rows = parse_address_table_bytes(
+            b"0:4:battle00.sab 4:4:battle01.sab 8:4:battle00.sab"
+        )
+        self.assertEqual(len(rows), 3)
+        self.assertEqual(len({row[2] for row in rows}), 2)
 
     def test_boundary_classification(self):
         self.assertTrue(is_core_client("StoneAge/data/real_1.bin"))

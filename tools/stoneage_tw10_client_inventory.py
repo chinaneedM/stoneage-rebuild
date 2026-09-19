@@ -91,11 +91,31 @@ def is_named_master_candidate(path: str) -> bool:
     return any(term in rel for term in MASTER_TERMS)
 
 
+def row_bytes(img, row) -> bytes:
+    return b"".join(img.iter_extent(row["lba"], row["size"]))
+
+
 def row_sha256(img, row) -> str:
     h = hashlib.sha256()
     for chunk in img.iter_extent(row["lba"], row["size"]):
         h.update(chunk)
     return h.hexdigest()
+
+
+def parse_address_table_bytes(data: bytes):
+    text = data.decode("utf-8", errors="replace")
+    rows = []
+    for token in text.split():
+        parts = token.split(":", 2)
+        if len(parts) != 3:
+            continue
+        try:
+            offset = int(parts[0])
+            size = int(parts[1])
+        except ValueError:
+            continue
+        rows.append((offset, size, Path(parts[2]).name.lower()))
+    return rows
 
 
 def inventory(bin_path: Path):
@@ -134,6 +154,29 @@ def inventory(bin_path: Path):
             f"named_master_candidates={len(masters)}"
         )
         print(f"CORE_CLIENT_BYTES|{sum(row['size'] for row in core)}")
+
+        by_path = {normalize(row["path"]).lower(): row for row in core}
+        for label, table_path in (
+            ("battle", "stoneage/data/battletxt_1.txt"),
+            ("sound", "stoneage/data/soundaddr_1.txt"),
+        ):
+            table_row = by_path.get(table_path)
+            if table_row is None:
+                print(f"ADDRESS_TABLE|label={label}|missing=1")
+                continue
+            addr_rows = parse_address_table_bytes(row_bytes(img, table_row))
+            names = collections.Counter(name for _, _, name in addr_rows)
+            duplicate_refs = sum(max(0, count - 1) for count in names.values())
+            print(
+                f"ADDRESS_TABLE|label={label}|records={len(addr_rows)}|"
+                f"unique_names={len(names)}|duplicate_refs={duplicate_refs}"
+            )
+            for name, count in sorted(names.items()):
+                if count > 1:
+                    print(
+                        f"ADDRESS_TABLE_DUPLICATE|label={label}|name={name}|refs={count}"
+                    )
+
         for category in sorted(categories):
             print(
                 f"CATEGORY|name={category}|files={categories[category]}|"
