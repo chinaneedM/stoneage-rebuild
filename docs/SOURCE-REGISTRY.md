@@ -657,6 +657,7 @@ This is the canonical ledger for historical sources. Entries should record prove
   - `sound_1.bin` is structurally valid but seven loose WAV counterparts are variant payloads.
   - canonical reports: `research/recovered/STONEAGE-TW10-TECHNICAL-PROBE-R1.txt`, `research/recovered/STONEAGE-TW10-RUNTIME-DEEP-R1.txt`, `research/recovered/STONEAGE-TW10-RUNTIME-SOUND-R1.txt`.
   - direct v1.0 protocol-to-socket handoff is now binary-proven: `0x1b3f0` calls through function-pointer slot `0x598e0`; init helper `0x1ac10` receives callback `0x2eca0`; that callback updates pending-length state `0x13ede20`; the unique socket flush at `0x2eb33` consumes the same length with buffer `0x13f1e34`, socket `0x13ede24`, flags 0, and reaches WSOCK32 `send` through thunk `0x48466` / IAT `0x52254`. Canonical report: `research/recovered/STONEAGE-TW10-PROTOCOL-HANDOFF-R1.txt`.
+  - v1.0 server-selection provenance is now binary-proven through the runtime startup path: WinMain-shaped RVA `0x1c4c0` stores its third incoming argument as the shared command-line source `0x139b758`; the same source feeds `realbin:/adrnbin:/sprbin:/spradrnbin:/windowmode/nodelay` parsing and the sole server-table writer `0x2e890`, which parses repeated `IP:` records into a 10 x 193-byte host/port table. Selected entries flow through `0x2e950` to the unique `socket/htons/inet_addr/gethostbyname/connect` game connection path. The disc's `StoneAge.exe` independently has one `CreateProcessA` site and builds the matching resource/startup command family before launching `sa_%d.exe`. The exact operator-era upstream provider of the dynamic `IP:` fragment remains open, but runtime endpoint delivery is established as launcher/process-command-line handoff. Canonical records: `research/recovered/STONEAGE-TW10-SERVER-SELECTION-R1.txt` and `research/clients/STONEAGE-TW10-SERVER-SELECTION-LINEAGE-R1.md`.
   - direct v1.0→2.5 diff: all 125,996 v1.0 ADRN records and all referenced REAL payloads are retained byte-for-byte; the entire 315,842,228-byte `real_1.bin` is a prefix of `real_15.bin`; all 464 v1.0 SPRADRN records/segments and the complete 2,889,630-byte `spr_1.bin` are likewise exact prefixes of the preserved 2.5 resources. Canonical report: `research/recovered/STONEAGE-TW10-VS-25-RESOURCE-DIFF-R1.txt`.
 
 ### SRC-CODE-DESC-STONEAGE-BISMARCKDD-999FFDF1
@@ -674,11 +675,16 @@ This is the canonical ledger for historical sources. Entries should record prove
   - `client/stoneage/proto/lssproto_util.cpp`
   - `client/stoneage/system/map.cpp`
   - `client/stoneage/system/netproc.cpp`
+  - `client/stoneage/system/netmain.cpp`
+  - `client/stoneage/game/main.cpp`
+  - `client/stoneage/wgs/common.cpp`
 - Supports:
   - later LSSPROTO numbering/order and generated send-builder structure;
   - later implementations of `CreateHeader`, `strcatsafe`, `mkstr_int`, `mkstr_string`, and `Send`;
   - later `lssproto_Send` hands bytes to an indirect `lssproto.write_func` callback;
-  - later map cache uses `map\\%d.dat` with width/height + tile/parts/event layers and receives server map rectangles through map protocol handlers.
+  - later map cache uses `map\\%d.dat` with width/height + tile/parts/event layers and receives server map rectangles through map protocol handlers;
+  - later client lineage assigns WinMain `lpCmdLine` to a shared `CmdLine` pointer and parses the same `realbin:/adrnbin:/sprbin:/spradrnbin:/windowmode/nodelay` token family; this is a structural control for the independently recovered v1.0 startup parser, not proof of v1.0 addresses;
+  - later `GameServer`/`getServerInfo` and WGS code provide semantic comparison for host/port table roles, while exact v1.0 table dimensions and endpoint provenance remain established only from the retail binary.
 - Does not support by itself:
   - that any specific function address or behavior existed in Taiwan v1.0;
   - byte identity with the accepted 2000 retail binary;
