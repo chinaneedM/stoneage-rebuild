@@ -24,6 +24,9 @@ INIT_CALLBACK|callback_rva=0x2eca0|instructions=5|indirect_calls=0|import_api_ki
 INIT_CALLBACK_CFG|callback_rva=0x2eca0|blocks=5|instructions=27|globals=2|import_api_kinds=0|direct_targets=0
 INIT_CALLBACK_GLOBAL|callback_rva=0x2eca0|global_rva=0x13ede1c|refs=1
 INIT_CALLBACK_GLOBAL|callback_rva=0x2eca0|global_rva=0x13ede20|refs=2
+INIT_CALLBACK_DATA_REF|callback_rva=0x2eca0|instruction_rva=0x2eca0|global_rva=0x13ede1c|mnemonic=mov|write=0|ops=reg:eax,memabs:0x13ede1c:.data
+INIT_CALLBACK_DATA_REF|callback_rva=0x2eca0|instruction_rva=0x2ecaf|global_rva=0x13ede20|mnemonic=mov|write=0|ops=reg:edx,memabs:0x13ede20:.data
+INIT_CALLBACK_DATA_REF|callback_rva=0x2eca0|instruction_rva=0x2ece1|global_rva=0x13ede20|mnemonic=mov|write=1|ops=memabs:0x13ede20:.data,reg:eax
 WSOCK_IMPORTS|count=15
 WSOCK_IMPORT|iat_rva=0x5221c|name=WSAGetLastError
 WSOCK_IMPORT|iat_rva=0x52220|name=socket
