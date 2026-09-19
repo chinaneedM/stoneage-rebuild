@@ -1,10 +1,12 @@
 StoneAge Hananet frame-path recovery probe — R1
 SCOPE|transient-html|hash-sparse-text-matching-links-only|no-client-binary-download
-COUNT|candidates|10
-COUNT|errors|0
-COUNT|fetched_pages|10
+COUNT|candidates|11
+COUNT|errors|2
+COUNT|fetched_pages|9
 COUNT|matching_snippets|1
-COUNT|matching_links|4
+COUNT|matching_links|5
+ERROR|label=pds-20010506-index2|timestamp=20010506010917|kind=URLError|original=http://pds.hananet.net:80/index2.html|message=<urlopen error [Errno 111] Connection refused>
+ERROR|label=pds-20010506-topfrm|timestamp=20010506010917|kind=URLError|original=http://pds.hananet.net:80/topfrm.html|message=<urlopen error [Errno 111] Connection refused>
 PAGE|label=game-20001019-mainbody|timestamp=20001019061522|bytes=30865|sha256=d96fa9164f46f45518383b086bef7be557a1b89fc96e362eba1f01e8705d5a4f|original=http://game.hananet.net:80/gamenet/mainbody.html
 LINK|label=game-20001019-mainbody|tag=img|attr=src|target=http://game.hananet.net:80/gamenet/newimg/gameplus.gif|anchor=
 PAGE|label=game-20001019-maintop|timestamp=20001019061522|bytes=2140|sha256=5d24dce2afcb33f741d6bdc6bffbe240ea053556fc12bab7800892248d5a03fa|original=http://game.hananet.net:80/gamenet/maintop.html
@@ -14,9 +16,9 @@ LINK|label=game-20010118-mainbody|tag=a|attr=href|target=http://game.hananet.net
 LINK|label=game-20010118-mainbody|tag=a|attr=href|target=http://game.hananet.net/gamenet/sitemap/map/mapstoneage.html|anchor=[게임Plus]스톤에이지 게임Plus 신규 오픈
 LINK|label=game-20010118-mainbody|tag=img|attr=src|target=http://game.hananet.net:80/gamenet/newimg/gameplus.gif|anchor=
 PAGE|label=game-20010118-maintop|timestamp=20010118211100|bytes=2140|sha256=5d24dce2afcb33f741d6bdc6bffbe240ea053556fc12bab7800892248d5a03fa|original=http://game.hananet.net:80/gamenet/maintop.html
+PAGE|label=game-20010118-mapstoneage|timestamp=20010118211100|bytes=348|sha256=cdae377905fa371494025d6db771f18d4a4d6a785849b02ace5e1962e47af916|original=http://game.hananet.net:80/gamenet/sitemap/map/mapstoneage.html
+LINK|label=game-20010118-mapstoneage|tag=frame|attr=src|target=http://game.hananet.net:80/gamenet/newframe/frstoneage.html|anchor=
 PAGE|label=pds-20001018-index2|timestamp=20001018214759|bytes=511|sha256=8dfe605151d00aef064127950aa3615500405c5e0c3e42ed0c7d01dcccf0e92c|original=http://pds.hananet.net:80/index2.html
 PAGE|label=pds-20001018-topfrm|timestamp=20001018214759|bytes=41|sha256=edf5dfbf9db62c53a917bb1874c052a9f4fa86d39a24c1786b82e6cb67c89804|original=http://pds.hananet.net:80/topfrm.html
 PAGE|label=pds-20001019-index2|timestamp=20001019044248|bytes=511|sha256=8dfe605151d00aef064127950aa3615500405c5e0c3e42ed0c7d01dcccf0e92c|original=http://pds.hananet.net:80/index2.html
 PAGE|label=pds-20001019-topfrm|timestamp=20001019044248|bytes=41|sha256=edf5dfbf9db62c53a917bb1874c052a9f4fa86d39a24c1786b82e6cb67c89804|original=http://pds.hananet.net:80/topfrm.html
-PAGE|label=pds-20010506-index2|timestamp=20010506010917|bytes=511|sha256=8dfe605151d00aef064127950aa3615500405c5e0c3e42ed0c7d01dcccf0e92c|original=http://pds.hananet.net:80/index2.html
-PAGE|label=pds-20010506-topfrm|timestamp=20010506010917|bytes=41|sha256=edf5dfbf9db62c53a917bb1874c052a9f4fa86d39a24c1786b82e6cb67c89804|original=http://pds.hananet.net:80/topfrm.html
