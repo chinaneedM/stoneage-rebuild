@@ -9,6 +9,7 @@ SEND_EVENT|order=5|kind=indirect_mem|callsite_rva=0x1b46e|global_rva=0x598e0|glo
 GLOBAL|rva=0x598e0|section=.data|send_refs=2|text_raw_xrefs=3
 GLOBAL_XREF|global_rva=0x598e0|n=1|instruction_rva=0x1ac15|mnemonic=add|assignment=0
 GLOBAL_XREF|global_rva=0x598e0|n=2|instruction_rva=0x1ac22|mnemonic=mov|assignment=1|src_kind=reg|src_value=0x13|src_section=
+ASSIGN_CONTEXT|global_rva=0x598e0|assignment_rva=0x1ac22|src_reg=eax|instructions=0
 GLOBAL_XREF|global_rva=0x598e0|n=3|instruction_rva=0x1b46f|mnemonic=adc|assignment=0
 GLOBAL|rva=0x598e4|section=.data|send_refs=2|text_raw_xrefs=64
 GLOBAL_XREF|global_rva=0x598e4|n=1|instruction_rva=0x18271|mnemonic=or|assignment=0
@@ -78,6 +79,7 @@ GLOBAL_XREF|global_rva=0x598e4|n=64|instruction_rva=0x18f51|mnemonic=or|assignme
 GLOBAL|rva=0x598fc|section=.data|send_refs=1|text_raw_xrefs=7
 GLOBAL_XREF|global_rva=0x598fc|n=1|instruction_rva=0x1ad3d|mnemonic=xor|assignment=0
 GLOBAL_XREF|global_rva=0x598fc|n=2|instruction_rva=0x1adb5|mnemonic=mov|assignment=1|src_kind=reg|src_value=0x13|src_section=
+ASSIGN_CONTEXT|global_rva=0x598fc|assignment_rva=0x1adb5|src_reg=eax|instructions=0
 GLOBAL_XREF|global_rva=0x598fc|n=3|instruction_rva=0x1ae7c|mnemonic=cmp|assignment=0
 GLOBAL_XREF|global_rva=0x598fc|n=4|instruction_rva=0x1af18|mnemonic=xor|assignment=0
 GLOBAL_XREF|global_rva=0x598fc|n=5|instruction_rva=0x1af71|mnemonic=or|assignment=0
