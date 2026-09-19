@@ -60,8 +60,16 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Exact title: `스톤에이지 퍼펙트 가이드`
 - ISBN-13: `9788995182123`
 - ISBN-10: `8995182121`
-- YES24 date: **2001-04-30**
-- Media: **CD 1**
+- Catalog dates differ but refer to the same identified volume:
+  - Aladin: **2001-01-01**;
+  - YES24: **2001-04-30**;
+  - RISS: **2001**;
+  - all converge on the same ISBN family and 318-page book, so the dates are treated as catalog variants rather than separate editions.
+- Media:
+  - YES24: **CD 1**;
+  - RISS formal physical description: **318p + compact disc 1 (12cm)**.
+- RISS permanent record: `https://www.riss.kr/link?id=M10029631`.
+- RISS lists **National Library of Korea (국립중앙도서관)** as a holding institution.
 - Critical catalog fact:
   - YES24 explicitly says the bonus CD contains the **StoneAge installation program** plus demo-game CD content.
 - Operational value:
@@ -72,7 +80,8 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - do not assume the CD equals the 2000 online client;
   - any public CD image must be compared at file level against other Korean copies.
 - Recovery method:
-  - search exact title/ISBN plus `부록 CD`, `설치프로그램`, ISO and preservation-catalog tokens;
+  - prioritize National Library / union-catalog supplementary-material metadata, accession/control fields, disc-label images and any distinct non-book record;
+  - continue exact title/ISBN plus `부록 CD`, `설치프로그램`, ISO and preservation-catalog searches outside the already exhausted Internet Archive metadata queries;
   - use only public/preservation recovery paths; do not make purchase/manual acquisition a project dependency.
 - Status: **TARGET-A/B / concrete 2001 install-media lead; bytes not yet located**.
 
