@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Probe public Korean library/catalog metadata for the 2001 GameTime StoneAge guide bonus CD.
+"""Probe public Korean catalog metadata for the 2001 GameTime StoneAge guide bonus CD.
 
-Metadata only. The probe does not request or download any book/CD payload.
+Metadata only. No book/CD payload is requested. R2 focuses on structural identifiers
+and holdings/detail navigation rather than dumping generic page links.
 """
 
 from __future__ import annotations
@@ -18,37 +19,39 @@ ISBN10="8995182121"
 ISBN13="9788995182123"
 RISS_IDS=("M10029631","U10029631")
 TITLE_TERMS=("스톤 에이지","스톤에이지")
-TOKENS=(
-    ISBN10,ISBN13,"M10029631","U10029631",
-    "스톤 에이지","스톤에이지","게임타임",
-    "compact disc","컴팩트디스크","cd-rom","cd 1","부록","딸림자료",
-    "국립중앙도서관","소장","청구기호","등록번호","제어번호",
-)
 KOLIS="https://www.nl.go.kr/kolisnet/search/searchResultAllList.do"
+KEYWORDS=(
+    "스톤 에이지","스톤에이지","2 개 도서관 소장","2개 도서관 소장",
+    "컴팩트디스크","딸림자료","청구기호","등록번호","제어번호","소장기관",
+)
+STRUCTURAL_RE=(
+    re.compile(r"(?i)\b[MU]\d{6,}\b"),
+    re.compile(r"(?i)\b(?:control_no|controlNo|controlno|rec_key|recKey|reckey|manage_code|manageCode|managecode)\b[^\s<>'\"]{0,120}"),
+    re.compile(r"(?i)[0-9a-f]{32,64}"),
+    re.compile(r"(?i)(?:search|detail|hold|holding|library)[A-Za-z0-9_./?=&%:+-]{3,180}"),
+)
 
 
-class LinkParser(html.parser.HTMLParser):
+class AnchorParser(html.parser.HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        self.links=[]
-        self._href=None
+        self.anchors=[]
+        self._attrs=None
         self._text=[]
 
     def handle_starttag(self,tag,attrs):
         if tag.lower()=="a":
-            href=dict(attrs).get("href")
-            if href:
-                self._href=href
-                self._text=[]
+            self._attrs=dict(attrs)
+            self._text=[]
 
     def handle_data(self,data):
-        if self._href is not None:
+        if self._attrs is not None:
             self._text.append(data)
 
     def handle_endtag(self,tag):
-        if tag.lower()=="a" and self._href is not None:
-            self.links.append((self._href," ".join(self._text)))
-            self._href=None
+        if tag.lower()=="a" and self._attrs is not None:
+            self.anchors.append((self._attrs," ".join(self._text)))
+            self._attrs=None
             self._text=[]
 
 
@@ -57,24 +60,21 @@ def clean(v,limit=900):
     return "".join(c for c in s if c>=" " and c!="\x7f").replace("|","%7C")[:limit]
 
 
-def get(url,timeout=20,attempts=3):
+def get(url,timeout=15,attempts=2):
     last=None
     for i in range(attempts):
         try:
-            req=urllib.request.Request(
-                url,
-                headers={
-                    "User-Agent":UA,
-                    "Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.8",
-                    "Accept-Language":"ko-KR,ko;q=0.9,en;q=0.7",
-                },
-            )
+            req=urllib.request.Request(url,headers={
+                "User-Agent":UA,
+                "Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.8",
+                "Accept-Language":"ko-KR,ko;q=0.9,en;q=0.7",
+            })
             with urllib.request.urlopen(req,timeout=timeout) as r:
                 return r.status,r.geturl(),r.read()
         except Exception as exc:
             last=exc
             if i+1<attempts:
-                time.sleep(0.8*(i+1))
+                time.sleep(0.6)
     raise last
 
 
@@ -94,107 +94,112 @@ def strip_markup(text):
     return " ".join(html.unescape(text).split())
 
 
-def snippets(text,tokens=TOKENS,radius=180):
-    lower=text.lower()
-    emitted=set()
+def contexts(text,needles,radius=260,limit=30):
+    low=text.lower()
     out=[]
-    for token in tokens:
-        needle=token.lower()
-        start=0
-        while True:
-            i=lower.find(needle,start)
+    seen=set()
+    for needle in needles:
+        n=needle.lower()
+        pos=0
+        while len(out)<limit:
+            i=low.find(n,pos)
             if i<0:
                 break
-            s=max(0,i-radius)
-            e=min(len(text),i+len(token)+radius)
-            value=clean(text[s:e],500)
-            if value not in emitted:
-                emitted.add(value)
-                out.append((token,value))
-            start=i+len(needle)
-            if len(out)>=80:
-                return out
+            value=clean(text[max(0,i-radius):min(len(text),i+len(needle)+radius)],650)
+            if value not in seen:
+                seen.add(value)
+                out.append((needle,value))
+            pos=i+max(1,len(n))
     return out
 
 
-def relevant_link(href,label):
-    joined=(href+" "+label).lower()
-    return any(t.lower() in joined for t in TOKENS) or "riss.kr/link?id=" in joined
+def structural_tokens(text):
+    found=set()
+    for rx in STRUCTURAL_RE:
+        for m in rx.finditer(text):
+            found.add(clean(m.group(0),220))
+    return sorted(found)
 
 
-def kolis_urls():
-    rows=[]
-    for q in (ISBN10,ISBN13,*TITLE_TERMS):
-        for kind in ("total","title","standardNumber"):
-            params=urllib.parse.urlencode({"keyword1":q,"keywordType1":kind,"tab":"ALL"})
-            rows.append((f"kolis-{kind}-{q}",KOLIS+"?"+params))
+def interesting_anchor(attrs,label):
+    blob=" ".join([label]+[f"{k}={v}" for k,v in attrs.items()])
+    low=blob.lower()
+    return (
+        any(k.lower() in low for k in KEYWORDS)
+        or ISBN10 in blob or ISBN13 in blob
+        or "riss.kr/link?id=" in low
+        or any(x in low for x in ("detail","hold","library","searchresult","control","reckey","manage"))
+    )
+
+
+def anchor_rows(text,base):
+    p=AnchorParser()
+    try:
+        p.feed(text)
+    except Exception:
+        pass
+    out=[]
+    seen=set()
+    for attrs,label in p.anchors:
+        if not interesting_anchor(attrs,label):
+            continue
+        href=attrs.get("href","")
+        if href:
+            href=urllib.parse.urljoin(base,href)
+        attr_text=";".join(f"{k}={v}" for k,v in sorted(attrs.items()) if k in {
+            "href","onclick","id","class","data-id","data-value","data-key","title"
+        })
+        row=(clean(label,260),clean(href,500),clean(attr_text,700))
+        if row not in seen:
+            seen.add(row)
+            out.append(row)
+    return out[:120]
+
+
+def targets():
+    params=urllib.parse.urlencode({"keyword1":ISBN10,"keywordType1":"total","tab":"ALL"})
+    rows=[("kolis-isbn10",KOLIS+"?"+params)]
+    rows += [(f"riss-{rid}",f"https://www.riss.kr/link?id={rid}") for rid in RISS_IDS]
     return rows
-
-
-def riss_urls():
-    return [(f"riss-{rid}",f"https://www.riss.kr/link?id={rid}") for rid in RISS_IDS]
 
 
 def probe(label,url):
     try:
         status,final,body=get(url)
     except Exception as exc:
-        return {
-            "label":label,"url":url,"error":f"{type(exc).__name__}: {exc}",
-            "status":"","final":"","snippets":[],"links":[],"ids":[],
-        }
-
-    text=decode(body)
-    plain=strip_markup(text)
-    p=LinkParser()
-    try:
-        p.feed(text)
-    except Exception:
-        pass
-
-    links=[]
-    for href,label_text in p.links:
-        absolute=urllib.parse.urljoin(final,href)
-        if relevant_link(absolute,label_text):
-            links.append((absolute,clean(label_text,250)))
-
-    ids=sorted(set(re.findall(r"(?i)(?:[?&]id=|\b)([MU]\d{6,})",text)))
+        return {"label":label,"url":url,"error":f"{type(exc).__name__}: {exc}"}
+    raw=decode(body)
+    plain=strip_markup(raw)
     return {
         "label":label,"url":url,"error":"","status":status,"final":final,
-        "snippets":snippets(plain),"links":links[:80],"ids":ids,
+        "plain_contexts":contexts(plain,KEYWORDS,220,24),
+        "raw_contexts":contexts(raw,(ISBN10,*RISS_IDS,*TITLE_TERMS,"2 개 도서관 소장"),420,20),
+        "tokens":structural_tokens(raw),
+        "anchors":anchor_rows(raw,final),
     }
 
 
 def main():
-    print("StoneAge GameTime 2001 library supplementary-material probe — R1")
+    print("StoneAge GameTime 2001 library supplementary-material probe — R2")
     print("SCOPE|public-catalog-metadata-only|no-book-or-cd-payload-download")
+    print("METHOD|focused-kolis-isbn+riss-aliases+raw-navigation-parameter-extraction")
     print(f"TARGET|isbn10={ISBN10}|isbn13={ISBN13}|riss_ids={','.join(RISS_IDS)}")
-    targets=kolis_urls()+riss_urls()
-    results=[probe(label,url) for label,url in targets]
-
+    results=[probe(label,url) for label,url in targets()]
     print(f"COUNT|queries|{len(results)}")
-    print(f"COUNT|errors|{sum(bool(r['error']) for r in results)}")
-    print(f"COUNT|responses|{sum(not r['error'] for r in results)}")
-    print(f"COUNT|snippet_hits|{sum(len(r['snippets']) for r in results)}")
-    print(f"COUNT|relevant_links|{sum(len(r['links']) for r in results)}")
-
+    print(f"COUNT|errors|{sum(bool(r.get('error')) for r in results)}")
     for r in results:
-        if r["error"]:
+        if r.get("error"):
             print(f"ERROR|source={clean(r['label'])}|url={clean(r['url'])}|message={clean(r['error'])}")
             continue
-        print(
-            f"RESPONSE|source={clean(r['label'])}|status={r['status']}|"
-            f"requested={clean(r['url'])}|final={clean(r['final'])}|ids={clean(','.join(r['ids']))}"
-        )
-        for token,value in r["snippets"]:
-            print(f"SNIPPET|source={clean(r['label'])}|token={clean(token)}|text={clean(value,520)}")
-        seen=set()
-        for href,label_text in r["links"]:
-            key=(href,label_text)
-            if key in seen:
-                continue
-            seen.add(key)
-            print(f"LINK|source={clean(r['label'])}|href={clean(href)}|label={clean(label_text)}")
+        print(f"RESPONSE|source={clean(r['label'])}|status={r['status']}|final={clean(r['final'])}")
+        for token,value in r["plain_contexts"]:
+            print(f"FACT_CONTEXT|source={clean(r['label'])}|token={clean(token)}|text={clean(value,620)}")
+        for token,value in r["raw_contexts"]:
+            print(f"RAW_CONTEXT|source={clean(r['label'])}|token={clean(token)}|html={clean(value,820)}")
+        for value in r["tokens"]:
+            print(f"STRUCT|source={clean(r['label'])}|value={clean(value)}")
+        for label_text,href,attrs in r["anchors"]:
+            print(f"ANCHOR|source={clean(r['label'])}|label={label_text}|href={href}|attrs={attrs}")
 
 
 if __name__=="__main__":
