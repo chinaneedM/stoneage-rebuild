@@ -1,0 +1,37 @@
+name: Probe GameTime StoneAge bonus CD archive metadata
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_gametime_cd_archive_probe.py
+      - tests/test_stoneage_gametime_cd_archive_probe.py
+      - .github/workflows/probe-stoneage-gametime-cd-archive.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-gametime-cd-archive-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_gametime_cd_archive_probe -v
+      - name: Query Internet Archive metadata only
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_gametime_cd_archive_probe             > research/recovered/STONEAGE-GAMETIME-2001-CD-ARCHIVE-METADATA-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-GAMETIME-2001-CD-ARCHIVE-METADATA-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe GameTime StoneAge CD archive metadata'
+          git pull --rebase origin main
+          git push
