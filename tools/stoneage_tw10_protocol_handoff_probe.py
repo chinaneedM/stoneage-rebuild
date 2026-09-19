@@ -494,16 +494,53 @@ def main():
         print(f"WSOCK_IMPORTS|count={len(wsock_imports)}")
         for iat_va, name in wsock_imports:
             print(f"WSOCK_IMPORT|iat_rva=0x{iat_va-base:x}|name={clean(name)}")
+        send_iats = [
+            iat_va for iat_va, (dll, name) in imports.items()
+            if dll.lower() == "wsock32.dll" and name.lower() in {"send", "#19"}
+        ]
+        thunk_call_sites = []
+        for iat_va in send_iats:
+            hits = raw_text_pointer_hits(data, base, sections, iat_va)
+            print(f"WSOCK_SEND_IAT|iat_rva=0x{iat_va-base:x}|raw_text_xrefs={len(hits)}")
+            for n, hit in enumerate(hits, 1):
+                ins = recover_xref_instruction(data, base, sections, hit, iat_va)
+                if ins is None:
+                    print(
+                        f"WSOCK_SEND_IAT_REF|iat_rva=0x{iat_va-base:x}|n={n}|"
+                        f"pointer_rva=0x{hit['ptr_rva']:x}|decoded=0"
+                    )
+                    continue
+                print(
+                    f"WSOCK_SEND_IAT_REF|iat_rva=0x{iat_va-base:x}|n={n}|decoded=1|"
+                    f"instruction_rva=0x{ins.address-base:x}|mnemonic={clean(ins.mnemonic)}|"
+                    f"ops={clean(operand_summary(ins,base,sections))}"
+                )
+                if ins.mnemonic == "jmp":
+                    callers = direct_rel32_call_sites(data, base, sections, ins.address)
+                    print(
+                        f"WSOCK_SEND_THUNK|thunk_rva=0x{ins.address-base:x}|"
+                        f"direct_callers={len(callers)}"
+                    )
+                    thunk_call_sites.extend((iat_va, ins.address, x) for x in callers)
         send_import_calls = exact_import_calls(
             data, base, sections, imports, "WSOCK32.dll", {"send", "#19"}
         )
-        print(f"WSOCK_SEND|exact_calls={len(send_import_calls)}")
-        for n, (iat_va, send_ins) in enumerate(send_import_calls, 1):
+        combined_send_calls = [(iat_va, ins.address, None) for iat_va, ins in send_import_calls]
+        combined_send_calls.extend(thunk_call_sites)
+        uniq_send = {}
+        for iat_va, thunk_va, call_va in combined_send_calls:
+            site = thunk_va if call_va is None else call_va
+            uniq_send[(iat_va, site)] = (iat_va, site, call_va is not None, thunk_va)
+        print(f"WSOCK_SEND|exact_calls={len(uniq_send)}")
+        for n, (iat_va, send_site, via_thunk, thunk_va) in enumerate(
+            [uniq_send[k] for k in sorted(uniq_send)], 1
+        ):
             print(
-                f"WSOCK_SEND_CALL|n={n}|callsite_rva=0x{send_ins.address-base:x}|"
-                f"iat_rva=0x{iat_va-base:x}"
+                f"WSOCK_SEND_CALL|n={n}|callsite_rva=0x{send_site-base:x}|"
+                f"iat_rva=0x{iat_va-base:x}|via_thunk={int(via_thunk)}|"
+                f"thunk_rva=0x{thunk_va-base:x}"
             )
-            paths = backward_paths(data, base, sections, send_ins.address)
+            paths = backward_paths(data, base, sections, send_site)
             ranked = sorted(
                 enumerate(paths, 1),
                 key=lambda item: (
@@ -515,7 +552,7 @@ def main():
             for path_no, path in ranked:
                 for order, prev in enumerate(path, 1):
                     print(
-                        f"WSOCK_SEND_PREV|callsite_rva=0x{send_ins.address-base:x}|path={path_no}|"
+                        f"WSOCK_SEND_PREV|callsite_rva=0x{send_site-base:x}|path={path_no}|"
                         f"order={order}|instruction_rva=0x{prev.address-base:x}|"
                         f"mnemonic={clean(prev.mnemonic)}|ops={clean(operand_summary(prev,base,sections))}"
                     )
