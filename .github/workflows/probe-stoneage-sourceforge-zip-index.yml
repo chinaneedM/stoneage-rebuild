@@ -1,0 +1,39 @@
+name: Probe StoneAge SourceForge ZIP indexes
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sourceforge_zip_index_probe.py
+      - tests/test_stoneage_sourceforge_zip_index_probe.py
+      - .github/workflows/probe-stoneage-sourceforge-zip-index.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sourceforge-zip-index
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_sourceforge_zip_index_probe -v
+      - name: Probe SourceForge ZIP central directories
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sourceforge_zip_index_probe \
+            > research/recovered/STONEAGE-SOURCEFORGE-ZIP-INDEX-R1.txt
+      - name: Commit derived archive metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-SOURCEFORGE-ZIP-INDEX-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe SourceForge StoneAge ZIP indexes'
+          git pull --rebase origin main
+          git push
