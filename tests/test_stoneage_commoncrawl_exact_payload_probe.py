@@ -15,6 +15,8 @@ class CommonCrawlExactPayloadProbeTests(unittest.TestCase):
         self.assertTrue(is_relevant("http://stoneage.hananet.net/down/sa_demo.exe"))
         self.assertTrue(is_relevant("http://www.gagamel.com/web_data/download/stoneagebeta.zip"))
         self.assertTrue(is_relevant("http://pds.hananet.net/view.asp?app_id=20001031524596220&type=C03"))
+        self.assertTrue(is_relevant("http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip"))
+        self.assertTrue(is_relevant("http://www.gametime.co.kr/images/Online/pds/2001/02/stone_demo.exe"))
         self.assertFalse(is_relevant("http://korea.cnet.com/pc/games/online/unrelated.zip"))
 
 
