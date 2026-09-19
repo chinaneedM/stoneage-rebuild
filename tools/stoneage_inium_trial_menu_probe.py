@@ -83,13 +83,12 @@ def availability(url,date):
 
 
 def replay_urls(ts,url,archive_url=""):
-    out=[]
+    # Raw id_ replay comes first so Wayback toolbar/navigation links cannot be
+    # mistaken for links that belonged to the historical Inium page.
+    out=[f"https://web.archive.org/web/{ts}id_/{url}"]
     if archive_url:
         out.append(archive_url.replace("http://web.archive.org/","https://web.archive.org/",1))
-    out.extend([
-        f"https://web.archive.org/web/{ts}id_/{url}",
-        f"https://web.archive.org/web/{ts}/{url}",
-    ])
+    out.append(f"https://web.archive.org/web/{ts}/{url}")
     dedup=[]
     seen=set()
     for value in out:
@@ -132,6 +131,13 @@ def same_site_page(base,target):
     if host not in {"stoneage.enium.co.kr","www.stoneage.enium.co.kr"}:
         return None
     path=p.path.lower()
+    # Normal Wayback replays inject toolbar links beginning /web/. When such
+    # links are resolved against the original URL they look same-site unless
+    # they are explicitly excluded.
+    if path=="/web/" or path.startswith("/web/"):
+        return None
+    if "web.archive.org" in absolute.lower():
+        return None
     if not (path.endswith(PAGE_EXT) or path.endswith("/")):
         return None
     return urllib.parse.urlunsplit((p.scheme or "http",p.netloc,p.path,p.query,""))
@@ -203,9 +209,9 @@ def append_failures(errors,phase,failures):
 
 
 def main():
-    print("StoneAge Inium trial-menu locator — R4")
+    print("StoneAge Inium trial-menu locator — R5")
     print("SCOPE|archived-menu-and-child-page-metadata-only|no-client-binary-download")
-    print("METHOD|seed-availability+multi-replay+one-hop-child-direct-replay+availability-fallback|bounded-concurrency=8")
+    print("METHOD|raw-id-first+seed-availability+one-hop-child-direct-replay+availability-fallback|bounded-concurrency=8")
 
     seed_jobs=[(page,date,ROOT+page) for page in PAGES for date in DATES]
     seed_av,errors=locate(seed_jobs)
