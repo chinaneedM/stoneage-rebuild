@@ -44,6 +44,17 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - the archived STAD 자료실 page says game-data downloads should be made from the corresponding GameNet game page and lists **record 8119**, `온라인게임 스톤에이지 정식 버전`, **260 M**, dated **2001-02-10**, plus **record 8120**, `온라인게임 스톤에이지 체험 버전`, **240 M**, also dated **2001-02-10**;
   - the individual 8119/8120 record bodies replay as HTTP 404, so their concrete attachment filenames/download redirects remain unresolved;
   - the 260 M full-version record is close in nominal size to CNET's 257MB `stoneage.zip`, but no equality claim is made without byte/hash evidence.
+- Exact Inium official-download mirror evidence:
+  - archived Inium `down.htm` on **2000-11-09** links CNET `Software_Id=200009263856` and Hananet through `flashlinks.cgi` to exact PDS record **`view.asp?app_id=20001031524596220&type=C03`**;
+  - archived 2001-04 `down.htm` explicitly says the listed StoneAge programs are **formal-version** downloads and directs trial users to a separate trial menu;
+  - by 2001-06 the same official page links Gagamel **`/web_data/download/stoneagebeta.zip`** and GameTime **`download.asp?GW_IDX=9&GW_Name=Online`** alongside Hananet;
+  - by 2001-08 the official page exposes Hananet direct path **`http://stoneage.hananet.net/down/sa.exe`**;
+  - the Gagamel `stoneagebeta.zip` filename must not be classified as a trial build by name alone because Inium's page classifies the listed mirrors as formal-version downloads.
+- Exact mirror archive boundary:
+  - Wayback preserves the Hananet `flashlinks.cgi` wrapper and its frame target to PDS app ID `20001031524596220`;
+  - six normalized direct-replay variants of the inner PDS record return HTTP 404 at the known wrapper timestamps;
+  - exact Availability/direct-prefix checks for Hananet `sa.exe` and Gagamel `stoneagebeta.zip` yielded no recoverable binary snapshot;
+  - these are Wayback-specific negative results and do not establish global loss.
 - Offline replication evidence:
   - iNews24, 2000-07-04: https://www.inews24.com/view/8928 records the planned Samsung PC / education-center distribution;
   - DailyGame, 2000-10-27: https://www.dailygame.co.kr/view.php?ud=200010271416380001837_26 reports a later package-supply agreement of roughly 60,000 units through the Samsung PC-education-center operator plus PC-game retail distribution.
@@ -53,7 +64,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - these independent distribution surfaces materially improve the chance that a provenance-preserving copy survives.
 - Evidence boundary:
   - no exact 2000 client version label has been recovered;
-  - CNET's payload filename/path and nominal size are recovered (`/pc/games/online/stoneage.zip`, 257MB), while Hananet has full/trial record identities and nominal sizes but still lacks concrete attachment/file URLs; checksums, complete file tree and all client bytes remain unknown;
+  - CNET's payload filename/path and nominal size are recovered (`/pc/games/online/stoneage.zip`, 257MB); Hananet now has full/trial record identities and nominal sizes plus exact early PDS app ID `20001031524596220` and later formal-version direct path `stoneage.hananet.net/down/sa.exe`; checksums, complete file tree and all client bytes remain unknown;
   - byte identity between Inium, Hananet, CNET and packaged copies is unproven;
   - an intact Korean operator client would be a clean **Korean bridge specimen**, not automatic proof of JSS-Japan byte identity.
 - Archive-probe boundary:
@@ -66,8 +77,8 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Canonical research note:
   - `research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md`.
 - Next action:
-  - exploit Hananet records **8119 / 260 M** and **8120 / 240 M** by targeting the corresponding GameNet StoneAge pages around **2001-02-10** and later preserved snapshots, recovering any filename, attachment or redirect;
-  - continue exact-copy/mirror recovery for CNET `/pc/games/online/stoneage.zip` (257MB) and compare any Hananet payload only at file/hash level;
+  - recover a surviving copy/mirror from the exact token set: CNET `/pc/games/online/stoneage.zip` (257MB), Hananet PDS `app_id=20001031524596220&type=C03`, Hananet `stoneage.hananet.net/down/sa.exe`, Gagamel `stoneagebeta.zip`, GameTime `GW_IDX=9`, and STAD records 8119/8120;
+  - compare CNET/Hananet/Gagamel/GameTime candidates only at byte/hash and internal-file-tree level; do not infer equality from size or filename;
   - if bytes appear, immediately perform the clean-client acceptance test before further broad searching.
 - Status: **TARGET-A / highest-priority operational pre-1.74 bridge search; bytes not yet located**.
 
