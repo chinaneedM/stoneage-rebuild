@@ -490,6 +490,23 @@ def graph_business_hits(graph, base, business):
     return sorted(set(hits))
 
 
+def import_business_calls(data, base, sections, imports, dll_name, api_name):
+    out = []
+    for iat_va, (dll, name) in imports.items():
+        if dll.lower() != dll_name.lower() or name.lower() != api_name.lower():
+            continue
+        for kind, site_va in exact_iat_opcode_sites(data, base, sections, iat_va):
+            if kind == "call":
+                out.append((site_va, site_va, iat_va, False))
+            elif kind == "jmp":
+                for caller in direct_rel32_call_sites(data, base, sections, site_va):
+                    out.append((caller, site_va, iat_va, True))
+    uniq = {}
+    for row in out:
+        uniq[(row[0], row[1], row[2])] = row
+    return [uniq[k] for k in sorted(uniq)]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--bin", required=True)
@@ -511,6 +528,57 @@ def main():
         data, pe, base, sections, imports = image_layout(exe)
         text_sec, instructions = disassemble_text(data, base, sections)
         index_by_va = {ins.address: i for i, ins in enumerate(instructions)}
+
+        launcher_row = by_path.get("StoneAge/StoneAge.exe")
+        if launcher_row is not None:
+            launcher_exe = root / "StoneAge.exe"
+            extract_row(img, launcher_row, launcher_exe)
+            ldata, lpe, lbase, lsections, limports = image_layout(launcher_exe)
+            launch_calls = import_business_calls(
+                ldata, lbase, lsections, limports, "KERNEL32.dll", "CreateProcessA"
+            )
+            print(
+                f"LAUNCHER_CREATEPROCESS|calls={len(launch_calls)}|"
+                f"bytes={launcher_exe.stat().st_size}|image_base=0x{lbase:x}"
+            )
+            for n, (site_va, thunk_va, iat_va, via_thunk) in enumerate(launch_calls, 1):
+                print(
+                    f"LAUNCHER_CREATEPROCESS_CALL|n={n}|callsite_rva=0x{site_va-lbase:x}|"
+                    f"thunk_rva=0x{thunk_va-lbase:x}|iat_rva=0x{iat_va-lbase:x}|"
+                    f"via_thunk={int(via_thunk)}"
+                )
+                paths = deep_backward_paths(ldata, lbase, lsections, site_va)
+                path = next((candidate for candidate in paths if candidate), None)
+                if path:
+                    print(
+                        f"LAUNCHER_CREATEPROCESS_ARG_PATH|n={n}|instructions={len(path)}|"
+                        f"start_rva=0x{path[0].address-lbase:x}"
+                    )
+                    for order, prev in enumerate(path, 1):
+                        if prev.mnemonic in {
+                            "push", "mov", "movsx", "movzx", "lea", "call", "cmp", "test"
+                        }:
+                            print(
+                                f"LAUNCHER_CREATEPROCESS_ARG_INS|n={n}|order={order}|"
+                                f"instruction_rva=0x{prev.address-lbase:x}|mnemonic={clean(prev.mnemonic)}|"
+                                f"ops={clean(enhanced_ops(prev,ldata,lbase,lsections))}"
+                            )
+                ctx = linear_context(
+                    ldata, lbase, lsections, max(lbase + 0x1000, site_va - 0x100),
+                    max_bytes=0x180, limit=180
+                )
+                for order, ins in enumerate(ctx, 1):
+                    if site_va - 0x100 <= ins.address <= site_va + 0x30 and (
+                        ins.mnemonic in {"push", "mov", "movsx", "movzx", "lea", "call", "cmp", "test"}
+                        or ins.mnemonic.startswith("j")
+                    ):
+                        print(
+                            f"LAUNCHER_CREATEPROCESS_CONTEXT|n={n}|order={order}|"
+                            f"instruction_rva=0x{ins.address-lbase:x}|mnemonic={clean(ins.mnemonic)}|"
+                            f"ops={clean(enhanced_ops(ins,ldata,lbase,lsections))}"
+                        )
+        else:
+            print("LAUNCHER_CREATEPROCESS|missing=1")
 
         print(
             f"RUNTIME|bytes={exe.stat().st_size}|image_base=0x{base:x}|"
