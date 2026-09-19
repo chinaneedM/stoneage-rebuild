@@ -843,7 +843,8 @@ Supplemental source ledgers:
 
 ## Korea 2000 recovery-surface narrowing — 2026-09-19
 
-- Contemporary references now resolve **CNET Korea's download root** to `http://korea.cnet.com/downloads/` and the **Hananet software repository** to `http://pds.hananet.net`; the remaining gap is the StoneAge child path / installer filename, not the portal root.
+- Contemporary references resolve **CNET Korea's download root** to `http://korea.cnet.com/downloads/` and the **Hananet software repository** to `http://pds.hananet.net`.
+- **CNET StoneAge child-record identity is now recovered:** preserved 2000-11-10 and 2001-01-24 download-index snapshots both point StoneAge to `File.asp?Platform_Id=1&Software_Id=200009263856`. The remaining CNET gap is now the detail-record payload metadata / actual installer filename and bytes, not the child-record identity.
 - NetPower public scans provide near-period corroboration: September 2000 StoneAge pages independently show `www.hananet.net`; November 2000 StoneAge pages repeatedly show `enium` + `stoneage` and one OCR mode recovers partial `http://stoneage`. No executable/archive filename was recovered.
 - Do **not** interpret the single-mode `32MB` OCR token as client size; its semantic context is unresolved.
 - The 2001 GameTime guide CD remains a concrete install-media target, but a reproducible Internet Archive metadata probe returned zero items for both ISBNs and multiple title/GameTime query variants. That closes only the current IA metadata route, not the physical/public-preservation search.
