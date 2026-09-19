@@ -1,0 +1,61 @@
+StoneAge NetPower IA uploader-neighborhood probe — R1
+SCOPE|internet-archive-metadata-and-file-lists-only|no-carrier-payload-download
+TARGET|months=2000-11,2000-12,2001-01,2001-02
+ANCHORS|pcgm-cd-dump,GAMEPIA_cd_dump,20230716_20230716_0953
+ANCHOR|identifier=pcgm-cd-dump|title=PCGM PC 게임 매거진 부록 CD 덤프|uploader=mirubackup1@gmail.com|files=305
+ANCHOR|identifier=GAMEPIA_cd_dump|title=GAMEPIA 게임피아 부록 CD 덤프|uploader=mirubackup1@gmail.com|files=348
+ANCHOR|identifier=20230716_20230716_0953|title=NetPower 2001.12 CD|uploader=marty0837@naver.com|files=9
+QUERY|n=1|kind=uploader-netpower|uploader=marty0837@naver.com|numFound=1|returned=1|q=uploader:"marty0837@naver.com" AND (NetPower OR "Net Power" OR 넷파워)
+QUERY|n=2|kind=uploader-period|uploader=marty0837@naver.com|numFound=3|returned=3|q=uploader:"marty0837@naver.com" AND mediatype:software AND year:[2000 TO 2001]
+QUERY|n=3|kind=uploader-netpower|uploader=mirubackup1@gmail.com|numFound=32|returned=32|q=uploader:"mirubackup1@gmail.com" AND (NetPower OR "Net Power" OR 넷파워)
+QUERY|n=4|kind=uploader-period|uploader=mirubackup1@gmail.com|numFound=4|returned=4|q=uploader:"mirubackup1@gmail.com" AND mediatype:software AND year:[2000 TO 2001]
+QUERY|n=5|kind=global-exact|uploader=|numFound=1|returned=1|q=(title:"NetPower" OR title:"Net Power" OR title:"넷파워") AND (2000 AND 11)
+QUERY|n=6|kind=global-exact|uploader=|numFound=4|returned=4|q=(description:"NetPower" OR description:"Net Power" OR description:"넷파워") AND (2000 AND 11)
+QUERY|n=7|kind=global-exact|uploader=|numFound=0|returned=0|q=(title:"NetPower" OR title:"Net Power" OR title:"넷파워") AND (2000 AND 12)
+QUERY|n=8|kind=global-exact|uploader=|numFound=1|returned=1|q=(description:"NetPower" OR description:"Net Power" OR description:"넷파워") AND (2000 AND 12)
+QUERY|n=9|kind=global-exact|uploader=|numFound=1|returned=1|q=(title:"NetPower" OR title:"Net Power" OR title:"넷파워") AND (2001 AND 1)
+QUERY|n=10|kind=global-exact|uploader=|numFound=1|returned=1|q=(description:"NetPower" OR description:"Net Power" OR description:"넷파워") AND (2001 AND 1)
+QUERY|n=11|kind=global-exact|uploader=|numFound=1|returned=1|q=(title:"NetPower" OR title:"Net Power" OR title:"넷파워") AND (2001 AND 2)
+QUERY|n=12|kind=global-exact|uploader=|numFound=2|returned=2|q=(description:"NetPower" OR description:"Net Power" OR description:"넷파워") AND (2001 AND 2)
+COUNT|uploaders|2
+COUNT|unique_search_items|42
+COUNT|metadata_inspected|42
+COUNT|target_candidates|35
+COUNT|errors|0
+CANDIDATE|score=3|identifier=20230716_20230716_0953|title=NetPower 2001.12 CD|date=2001-11-02|uploader=marty0837@naver.com|netpower=1|months=2001-01|carrier_count=2
+CARRIER|identifier=20230716_20230716_0953|name=011102_1545(넷파워 2001년 12월호).iso|months=|size=658546688|md5=f9781e8c8badc12566eeef7a79362ab0|sha1=9bc589ddd1399aa5306ecdfa8caf10ebbae474ac|format=ISO Image|source=original
+CARRIER|identifier=20230716_20230716_0953|name=Net_CD_1(넷파워 2001년 12월호).iso|months=|size=600608768|md5=14cbcb85fddae45ecddfbdd87fc5e654|sha1=03777dd9b78ed997ba5227ede49319099868c626|format=ISO Image|source=original
+CANDIDATE|score=3|identifier=netpower_cd_2000_11|title=넷파워 Net Power 2000년 11월 CD|date=2000-11-01|uploader=mirubackup1@gmail.com|netpower=1|months=2000-11|carrier_count=6
+CANDIDATE|score=3|identifier=netpower_cd_2001_02|title=넷파워 Net Power 2001년 02월 CD|date=2001-02-01|uploader=mirubackup1@gmail.com|netpower=1|months=2001-02|carrier_count=6
+CANDIDATE|score=3|identifier=netpower_cd_2001_11|title=넷파워 Net Power 2001년 11월 CD|date=2001-11-01|uploader=mirubackup1@gmail.com|netpower=1|months=2001-01|carrier_count=3
+CANDIDATE|score=2|identifier=arxiv-1608.03571|title=Radio emission in Mercury magnetosphere|date=2016-08-11|uploader=arkiver@archive.org|netpower=1|months=|carrier_count=0
+CANDIDATE|score=2|identifier=net-power-2000-02-vol1|title=넷파워 Net Power 2000년 2월 Vol1 CD|date=2000-02-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_1999_12|title=넷파워 Net Power 1999년 12월 CD|date=1999-12-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=6
+CANDIDATE|score=2|identifier=netpower_cd_2000_02|title=넷파워 Net Power 2000년 02월 CD|date=2000-02-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=6
+CANDIDATE|score=2|identifier=netpower_cd_2000_09|title=넷파워 Net Power 2000년 09월 CD|date=2000-09-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=6
+CANDIDATE|score=2|identifier=netpower_cd_2001_08|title=넷파워 Net Power 2001년 08월 CD|date=2001-08-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2002_01|title=넷파워 Net Power 2002년 01월 CD|date=2002-01-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2002_02|title=넷파워 Net Power 2002년 02월 CD|date=2002-02-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2002_03|title=넷파워 Net Power 2002년 03월 CD|date=2002-03-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2002_04|title=넷파워 Net Power 2002년 04월 CD|date=2002-04-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2002_06|title=넷파워 Net Power 2002년 06월 CD|date=2002-06-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2002_10|title=넷파워 Net Power 2002년 10월 CD|date=2002-10-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2002_12|title=넷파워 Net Power 2002년 12월 CD|date=2002-12-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2003_01|title=넷파워 Net Power 2003년 01월 CD|date=2003-01-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2003_02|title=넷파워 Net Power 2003년 02월 CD|date=2003-02-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=6
+CANDIDATE|score=2|identifier=netpower_cd_2003_03|title=넷파워 Net Power 2003년 03월 CD|date=2003-03-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2003_04|title=넷파워 Net Power 2003년 04월 CD|date=2003-04-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2003_05|title=넷파워 Net Power 2003년 05월 CD|date=2003-05-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2003_06|title=넷파워 Net Power 2003년 06월 CD|date=2003-06-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2003_07|title=넷파워 Net Power 2003년 07월 CD|date=2003-07-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2003_08|title=넷파워 Net Power 2003년 08월 CD|date=2003-08-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2003_09|title=넷파워 Net Power 2003년 09월 CD|date=2003-09-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2003_10|title=넷파워 Net Power 2003년 10월 CD|date=2003-10-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2003_11|title=넷파워 Net Power 2003년 11월 CD|date=2003-11-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2003_12|title=넷파워 Net Power 2003년 12월 CD|date=2003-12-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2004_01|title=넷파워 Net Power 2004년 01월 CD|date=2004-01-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2004_02|title=넷파워 Net Power 2004년 02월 CD|date=2004-02-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2004_03|title=넷파워 Net Power 2004년 03월 CD|date=2004-03-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2004_04|title=넷파워 Net Power 2004년 04월 CD|date=2004-04-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=2|identifier=netpower_cd_2004_07|title=넷파워 Net Power 2004년 07월 CD|date=2004-07-01|uploader=mirubackup1@gmail.com|netpower=1|months=|carrier_count=3
+CANDIDATE|score=1|identifier=baram_491|title=바람의나라 The Kingdom of the Winds v4.91 Official Cliient Installer|date=2000-12-14|uploader=mirubackup1@gmail.com|netpower=0|months=2000-12|carrier_count=0
