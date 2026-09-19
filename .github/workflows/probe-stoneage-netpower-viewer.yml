@@ -1,0 +1,31 @@
+name: Probe NetPower 2000-09 viewer metadata
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_netpower_viewer_probe.py
+      - tests/test_stoneage_netpower_viewer_probe.py
+      - .github/workflows/probe-stoneage-netpower-viewer.yml
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_netpower_viewer_probe -v
+      - name: Probe public viewer metadata
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_netpower_viewer_probe > research/recovered/STONEAGE-NETPOWER-2000-09-VIEWER-METADATA-R1.txt
+      - name: Commit metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-NETPOWER-2000-09-VIEWER-METADATA-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe NetPower 2000-09 viewer metadata'
+          git pull --rebase origin main
+          git push
