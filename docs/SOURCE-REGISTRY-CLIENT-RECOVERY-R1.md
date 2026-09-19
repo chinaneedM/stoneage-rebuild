@@ -374,13 +374,14 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - GamePia No.58–69: **23 images**, complete directory walks, 0 scan errors, 0 truncation, 0 StoneAge-path hits;
   - NetPower 2001.12: **2 images**, complete directory walks, 0 StoneAge-path hits.
 - Internet Archive exact-token reverse search:
-  - **216** item metadata/file-list records checked with 0 request errors;
-  - exact historical keys included `sa_demo.exe`, `stoneagebeta.zip`, `20001031524596220`, `200009263856`, `GW_IDX=9` and `/pc/games/online/stoneage.zip`;
-  - **0 exact target filename matches**; nine file candidates were size-only false positives.
+  - **222** item metadata/file-list records checked with 0 request errors;
+  - exact historical keys include `sa_demo.exe`, **`stone_demo.exe`**, `stoneagebeta.zip`, `20001031524596220`, `200009263856`, `GW_IDX=9` and `/pc/games/online/stoneage.zip`;
+  - the exact `stone_demo.exe` search produced 7 IA search-index hits, but file-list verification still produced **0 exact target filename matches**; all **11** file candidates are size-only false positives.
 - Wayback CDX 2000–2002 distribution-prefix census:
   - 12 prefix queries, 0 request errors, 362 rows / 181 unique URLs;
   - exact Hananet `stoneage.hananet.net/down/` and CNET `korea.cnet.com/pc/games/online/` prefixes return 0 rows for tested bare/www variants;
-  - Gagamel, GameTime and Inium prefixes return real records, making those Hananet/CNET zero-row results archive-specific directory-level negative controls rather than evidence of probe failure.
+  - Gagamel, GameTime and Inium prefixes return real records, making those Hananet/CNET zero-row results archive-specific directory-level negative controls rather than evidence of probe failure;
+  - adding `pds.gametime.co.kr/` as a 13th prefix yields only **11 archived URLs**, all image/JPEG assets and no executable/archive payload; aggregate census becomes **373 rows / 192 unique URLs / 0 errors**.
 - New GameTime recovery lead:
   - Wayback CDX preserves `http://www.gametime.co.kr/data/data_list.asp?search_word=%bd%ba%c5%e6%bf%a1%c0%cc%c1%f6&category=online` at **2001-07-01 05:34:12 UTC**;
   - the CP949/EUC-KR search term decodes to **`스톤에이지`**;
