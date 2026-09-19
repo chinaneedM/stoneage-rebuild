@@ -17,6 +17,16 @@ ANCHORS=[
     ("legacy-bbs-page2","20010107182400","http://www.gametime.co.kr/webzine/online/down/bbs.asp?name=&page=2"),
     ("legacy-bbs-page3","20010107183300","http://www.gametime.co.kr/webzine/online/down/bbs.asp?name=&page=3"),
     ("legacy-bbs-page4","20010107184000","http://www.gametime.co.kr/webzine/online/down/bbs.asp?name=&page=4"),
+    (
+        "legacy-stoneage-beta-content",
+        "20010107184000",
+        "http://www.gametime.co.kr/webzine/online/down/content.asp?name=&num=10&ref=38&page=4",
+    ),
+    (
+        "legacy-stoneage-beta-content-online",
+        "20010107184000",
+        "http://www.gametime.co.kr/webzine/online/down/content.asp?name=online&num=10&ref=38&page=4",
+    ),
     ("legacy-download-bare","20001109191700","http://www.gametime.co.kr/webzine/online/download.asp"),
     (
         "legacy-download-stoneage",
