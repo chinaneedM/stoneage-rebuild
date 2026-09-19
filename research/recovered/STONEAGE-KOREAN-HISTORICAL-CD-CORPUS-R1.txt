@@ -8,6 +8,12 @@ QUERY|n=5|numFound=1|returned=1|q="Korean" AND "coverdisc" AND mediatype:softwar
 QUERY|n=6|numFound=27|returned=27|q="Korea" AND "CD-ROM" AND mediatype:software AND year:[1999 TO 2002]
 QUERY|n=7|numFound=8|returned=8|q=description:("부록 CD" OR "부록CD") AND mediatype:software
 QUERY|n=8|numFound=0|returned=0|q=description:("게임 CD" OR "게임CD") AND mediatype:software AND year:[1999 TO 2002]
+QUERY|n=9|numFound=1|returned=1|q=title:"넷파워" AND mediatype:software
+QUERY|n=10|numFound=2|returned=2|q=creator:"제우미디어" AND mediatype:software
+QUERY|n=11|numFound=1|returned=1|q=title:"게임피아" AND mediatype:software
+QUERY|n=12|numFound=1|returned=1|q=title:"PC 게임 매거진" AND mediatype:software
+QUERY|n=13|numFound=1|returned=1|q=description:"로스트 미디어" AND mediatype:software
+QUERY|n=14|numFound=2|returned=2|q=description:"부록 CD 덤프" AND mediatype:software
 COUNT|unique_items|111
 COUNT|selected_metadata_candidates|53
 COUNT|metadata_fetched|53
