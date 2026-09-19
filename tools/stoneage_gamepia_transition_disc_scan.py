@@ -44,7 +44,7 @@ def select_files(data):
 def main():
     print("StoneAge GamePia transition-window directory scan — R1")
     print("SCOPE|http-range-directory-metadata-only|no-full-image-download|no-carrier-bytes-committed")
-    print("WINDOW|legacy-issues=No.58..No.64|sequence-selected-from-public-corpus")
+    print("WINDOW|legacy-issues=No.58..No.69|sequence-selected-from-public-corpus")
     data=metadata(IDENTIFIER)
     doc=data.get("metadata",{})
     rows=select_files(data)
