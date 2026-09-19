@@ -30,6 +30,7 @@ from tools.stoneage_tw10_mapcache_binary_probe import (
     imported_call,
     referenced_absolute_values,
     rva_to_offset,
+    disassemble_text,
 )
 from tools.stoneage_tw10_exact_xref_probe import (
     recover_xref_instruction,
@@ -40,6 +41,8 @@ SEND_RVA = 0x1B3F0
 MAX_BYTES = 0x800
 MAX_INSNS = 400
 MAX_GLOBAL_XREFS = 64
+ASSIGN_CONTEXT_BEFORE = 16
+ASSIGN_CONTEXT_AFTER = 4
 
 
 def clean(v, limit=800):
@@ -145,6 +148,45 @@ def assignment_details(ins, global_va, base, sections):
     }
 
 
+def operand_summary(ins, base, sections):
+    parts = []
+    for op in ins.operands:
+        if op.type == X86_OP_REG:
+            parts.append(f"reg:{ins.reg_name(op.reg)}")
+        elif op.type == X86_OP_IMM:
+            value = int(op.imm) & 0xFFFFFFFF
+            sec = section_name_for_va(base, sections, value)
+            if sec:
+                parts.append(f"imm:0x{value-base:x}:{sec}")
+            else:
+                parts.append(f"imm:0x{value:x}")
+        elif op.type == X86_OP_MEM:
+            addr = abs_mem_address(ins, op)
+            if addr is not None:
+                sec = section_name_for_va(base, sections, addr)
+                if sec:
+                    parts.append(f"memabs:0x{addr-base:x}:{sec}")
+                else:
+                    parts.append(f"memabs:0x{addr:x}")
+            else:
+                mem = op.mem
+                b = ins.reg_name(mem.base) if mem.base else ""
+                x = ins.reg_name(mem.index) if mem.index else ""
+                parts.append(f"mem:{b}:{x}:{int(mem.scale)}:{int(mem.disp)}")
+        else:
+            parts.append(f"op:{op.type}")
+    return ",".join(parts)
+
+
+def assignment_context(instructions, target_va, base, sections):
+    index = next((i for i, ins in enumerate(instructions) if ins.address == target_va), None)
+    if index is None:
+        return []
+    lo = max(0, index - ASSIGN_CONTEXT_BEFORE)
+    hi = min(len(instructions), index + ASSIGN_CONTEXT_AFTER + 1)
+    return instructions[lo:hi]
+
+
 def callback_probe(data, base, sections, imports, callback_va):
     rva = callback_va - base
     off = rva_to_offset(sections, rva)
@@ -193,6 +235,7 @@ def main():
         extract_row(img, row, exe)
         data, pe, base, sections, imports = image_layout(exe)
         lo, hi = image_range(base, sections)
+        text_sec, text_instructions = disassemble_text(data, base, sections)
 
         instructions, events, globals_seen = decode_helper(
             data, base, sections, imports, SEND_RVA
@@ -245,6 +288,19 @@ def main():
                         if details is not None else ""
                     )
                 )
+                if details is not None and details["src_kind"] == "reg":
+                    ctx = assignment_context(text_instructions, ins.address, base, sections)
+                    print(
+                        f"ASSIGN_CONTEXT|global_rva=0x{global_va-base:x}|"
+                        f"assignment_rva=0x{ins.address-base:x}|src_reg={clean(ins.reg_name(details['src_value']))}|"
+                        f"instructions={len(ctx)}"
+                    )
+                    for order, ctx_ins in enumerate(ctx, 1):
+                        print(
+                            f"ASSIGN_CTX|global_rva=0x{global_va-base:x}|assignment_rva=0x{ins.address-base:x}|"
+                            f"order={order}|instruction_rva=0x{ctx_ins.address-base:x}|"
+                            f"mnemonic={clean(ctx_ins.mnemonic)}|ops={clean(operand_summary(ctx_ins,base,sections))}"
+                        )
                 if (
                     details is not None
                     and details["src_kind"] == "imm"
