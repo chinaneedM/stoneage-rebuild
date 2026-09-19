@@ -27,7 +27,7 @@ ANCHORS=[
 ]
 STONE=re.compile(r"(?i)(스톤\s*에이지|스톤에이지|stone\s*age|stoneage)")
 LINK=re.compile(r"""(?is)<a\b[^>]*href\s*=\s*["']?([^"' >]+)[^>]*>(.*?)</a>""")
-CONTENT=re.compile(r"(?i)(content\.asp\?[^\s"'<>]+)")
+CONTENT=re.compile(r'''(?i)(content\.asp\?[^\s"'<>]+)''')
 SCRIPT_LOC=re.compile(r"""(?i)(?:location(?:\.href)?\s*=|window\.open\s*\()\s*["']([^"']+)""")
 TAG=re.compile(r"(?is)<[^>]+>")
 SPACE=re.compile(r"\s+")
