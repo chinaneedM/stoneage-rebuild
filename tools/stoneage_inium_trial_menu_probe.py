@@ -22,7 +22,7 @@ PAGES=[
 ROOT="http://stoneage.enium.co.kr/"
 KEY=re.compile(r"(?i)(체험|trial|demo|다운로드|download|sa_demo|\.exe|\.zip)")
 PAGE_EXT=(".htm",".html",".asp",".cgi")
-MAX_CHILDREN=160
+MAX_CHILDREN=100
 
 
 class P(html.parser.HTMLParser):
@@ -56,7 +56,7 @@ class P(html.parser.HTMLParser):
             self._a=[]
 
 
-def get(url,timeout=12,attempts=3):
+def get(url,timeout=8,attempts=2):
     last=None
     for attempt in range(attempts):
         try:
@@ -66,31 +66,26 @@ def get(url,timeout=12,attempts=3):
         except Exception as exc:
             last=exc
             if attempt+1<attempts:
-                time.sleep(0.6*(attempt+1))
+                time.sleep(0.4*(attempt+1))
     raise last
 
 
 def availability(url,date):
     q=urllib.parse.urlencode({"url":url,"timestamp":date})
-    o=json.loads(get(AVAIL+"?"+q,8).decode("utf-8","replace"))
+    o=json.loads(get(AVAIL+"?"+q,8,attempts=2).decode("utf-8","replace"))
     c=o.get("archived_snapshots",{}).get("closest")
     if not isinstance(c,dict) or not c.get("available"):
         return None
     ts=str(c.get("timestamp",""))
     if not ts:
         return None
-    return {
-        "timestamp":ts,
-        "archive_url":str(c.get("url","")),
-        "status":str(c.get("status","")),
-    }
+    return {"timestamp":ts,"archive_url":str(c.get("url","")),"status":str(c.get("status",""))}
 
 
 def replay_urls(ts,url,archive_url=""):
     out=[]
     if archive_url:
-        normalized=archive_url.replace("http://web.archive.org/","https://web.archive.org/",1)
-        out.append(normalized)
+        out.append(archive_url.replace("http://web.archive.org/","https://web.archive.org/",1))
     out.extend([
         f"https://web.archive.org/web/{ts}id_/{url}",
         f"https://web.archive.org/web/{ts}/{url}",
@@ -108,7 +103,7 @@ def fetch_replay(ts,url,archive_url=""):
     errors=[]
     for candidate in replay_urls(ts,url,archive_url):
         try:
-            return get(candidate,15,attempts=2),candidate
+            return get(candidate,8,attempts=1),candidate
         except Exception as exc:
             errors.append(f"{type(exc).__name__}:{exc}")
     raise RuntimeError("; ".join(errors))
@@ -183,27 +178,42 @@ def locate(jobs):
     return available,errors
 
 
+def analyze_many(rows,phase):
+    successes=[]
+    errors=[]
+    def one(row):
+        label,date,url,cap=row
+        try:
+            return row,analyze(url,cap),None
+        except Exception as exc:
+            return row,None,(type(exc).__name__,str(exc))
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+        for row,result,error in ex.map(one,rows):
+            label,date,url,cap=row
+            if error:
+                errors.append((phase,label,cap["timestamp"],error[0],error[1]))
+            else:
+                successes.append((row,result))
+    return successes,errors
+
+
 def main():
-    print("StoneAge Inium trial-menu locator — R2")
+    print("StoneAge Inium trial-menu locator — R3")
     print("SCOPE|archived-menu-and-child-page-metadata-only|no-client-binary-download")
-    print("METHOD|availability+multi-replay-fallback+one-hop-same-site-page-discovery")
+    print("METHOD|availability+multi-replay-fallback+one-hop-same-site-page-discovery|bounded-concurrency=8")
 
     seed_jobs=[(page,date,ROOT+page) for page in PAGES for date in DATES]
     seed_av,errors=locate(seed_jobs)
     seed_unique={}
     for page,date,url,cap in seed_av:
         seed_unique[(url,cap["timestamp"])]=(page,date,url,cap)
+    seed_rows=sorted(seed_unique.values(),key=lambda x:(x[0],x[3]["timestamp"]))
 
     found=[]
     child_jobs={}
-    seed_ok=0
-    for page,date,url,cap in sorted(seed_unique.values(),key=lambda x:(x[0],x[3]["timestamp"])):
-        try:
-            hits,children,used=analyze(url,cap)
-            seed_ok+=1
-        except Exception as exc:
-            errors.append(("replay",page,cap["timestamp"],type(exc).__name__,str(exc)))
-            continue
+    seed_done,seed_errors=analyze_many(seed_rows,"replay")
+    errors.extend(seed_errors)
+    for (page,date,url,cap),(hits,children,used) in seed_done:
         for h in hits:
             found.append(("seed",page,cap["timestamp"])+h+(used,))
         for child in children:
@@ -215,26 +225,22 @@ def main():
     child_unique={}
     for label,date,url,cap in child_av:
         child_unique[(url,cap["timestamp"])]=(label,date,url,cap)
+    child_rows=sorted(child_unique.values(),key=lambda x:(x[0],x[3]["timestamp"]))
 
-    child_ok=0
-    for label,date,url,cap in sorted(child_unique.values(),key=lambda x:(x[0],x[3]["timestamp"])):
-        try:
-            hits,_,used=analyze(url,cap)
-            child_ok+=1
-        except Exception as exc:
-            errors.append(("child-replay",label,cap["timestamp"],type(exc).__name__,str(exc)))
-            continue
+    child_done,child_replay_errors=analyze_many(child_rows,"child-replay")
+    errors.extend(child_replay_errors)
+    for (label,date,url,cap),(hits,_,used) in child_done:
         page=urllib.parse.urlsplit(url).path.lstrip("/") or url
         for h in hits:
             found.append(("child",page,cap["timestamp"])+h+(used,))
 
     print(f"COUNT|seed_availability_queries|{len(seed_jobs)}")
     print(f"COUNT|seed_available_snapshots|{len(seed_unique)}")
-    print(f"COUNT|seed_replay_success|{seed_ok}")
+    print(f"COUNT|seed_replay_success|{len(seed_done)}")
     print(f"COUNT|discovered_internal_page_jobs|{len(child_jobs)}")
     print(f"COUNT|child_jobs_selected|{len(selected)}")
     print(f"COUNT|child_available_snapshots|{len(child_unique)}")
-    print(f"COUNT|child_replay_success|{child_ok}")
+    print(f"COUNT|child_replay_success|{len(child_done)}")
     print(f"COUNT|errors|{len(errors)}")
     print(f"COUNT|trial_download_hits|{len(found)}")
 
