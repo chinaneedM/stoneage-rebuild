@@ -658,8 +658,8 @@ def main():
                 f"ops={clean(enhanced_ops(ins,data,base,sections))}"
             )
             paths = deep_backward_paths(data, base, sections, ins.address)
-            if paths:
-                path = paths[0]
+            path = next((candidate for candidate in paths if candidate), None)
+            if path:
                 print(
                     f"CMDLINE_BUFFER_BACKTRACE|n={n}|instructions={len(path)}|"
                     f"start_rva=0x{path[0].address-base:x}"
