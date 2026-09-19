@@ -28,6 +28,10 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - GameMeca, 2000-12-28: https://www.gamemeca.com/view.php?gid=5963
   - reports Hananet downloads above approximately **400,000** and CNET downloads above approximately **310,000**;
   - also says Hananet GamePlus service would begin on 2000-12-29.
+- Exact CNET child-record evidence:
+  - preserved CNET Korea download-index snapshots dated **2000-11-10** and **2001-01-24** both identify StoneAge with `Software_Id=200009263856`;
+  - canonical child path: `/downloads/File.asp?Platform_Id=1&Software_Id=200009263856`;
+  - this resolves the CNET software-record identity but not yet the payload filename, file size, version or bytes.
 - Hananet infrastructure corroboration:
   - Korea Economic Daily, 2000-04-27: https://www.hankyung.com/article/2000042732051
   - identifies `www.hananet.net`, its game-content surface `http://game.hananet.net`, and the 2000 GamePlus service.
