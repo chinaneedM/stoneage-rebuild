@@ -22,6 +22,12 @@ QUERIES=[
     '"StoneAge" AND mediatype:software',
     'title:(stoneage OR "stone age") AND mediatype:software',
     'description:(stoneage OR "stone age") AND mediatype:software',
+    '"sa_demo.exe"',
+    '"stoneagebeta.zip"',
+    '"20001031524596220"',
+    '"200009263856"',
+    '"GW_IDX=9"',
+    '"/pc/games/online/stoneage.zip"',
 ]
 EXACT_NAMES={"sa.exe","sa_demo.exe","stoneage.zip","stoneagebeta.zip"}
 INTEREST_NAME=re.compile(r"(?i)(?:^|[/\\])(?:sa(?:_demo)?\.exe|stoneage(?:beta)?\.zip)$")
@@ -74,7 +80,7 @@ def main():
     print("SCOPE|item-and-filelist-metadata-only|no-payload-download")
     print("TRAITS|exact=sa.exe,sa_demo.exe,stoneage.zip,stoneagebeta.zip|size_window=180-320MiB")
 
-    docs={}; errors=[]
+    docs={}; query_hits={}; errors=[]
     for idx,q in enumerate(QUERIES,1):
         try:rows=search(q)
         except Exception as exc:
@@ -82,7 +88,9 @@ def main():
         print(f"QUERY|n={idx}|results={len(rows)}|q={clean(q)}")
         for d in rows:
             ident=str(d.get("identifier","")).strip()
-            if ident:docs.setdefault(ident,d)
+            if ident:
+                docs.setdefault(ident,d)
+                query_hits.setdefault(ident,set()).add(idx)
 
     print(f"COUNT|unique_items|{len(docs)}")
 
@@ -107,9 +115,22 @@ def main():
     print(f"COUNT|errors|{len(errors)}")
     exact_count=sum(1 for _,_,f in matches if f["exact"])
     size_only_count=sum(1 for _,_,f in matches if f["size_match"] and not f["exact"])
+    exact_query_items=sum(1 for ident in docs if any(i>=5 for i in query_hits.get(ident,set())))
     print(f"COUNT|candidate_files|{len(matches)}")
     print(f"COUNT|exact_name_matches|{exact_count}")
     print(f"COUNT|size_only_candidates|{size_only_count}")
+    print(f"COUNT|exact_token_query_items|{exact_query_items}")
+    for ident,doc in sorted(docs.items()):
+        exact_queries=sorted(i for i in query_hits.get(ident,set()) if i>=5)
+        if not exact_queries:
+            continue
+        print(
+          "ITEM_HIT|"
+          f"identifier={clean(ident)}|queries={','.join(str(i) for i in exact_queries)}|"
+          f"title={clean(doc.get('title'))}|date={clean(doc.get('date') or doc.get('year'))}|"
+          f"creator={clean(doc.get('creator'))}|collection={clean(doc.get('collection'))}|"
+          f"description={clean(doc.get('description'),900)}"
+        )
     for phase,key,kind,msg in errors:
         print(f"ERROR|phase={clean(phase)}|key={clean(key)}|kind={clean(kind)}|message={clean(msg)}")
     for ident,doc,f in sorted(matches,key=lambda x:(x[0].lower(),x[2]["name"].lower())):
