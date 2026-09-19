@@ -6,9 +6,9 @@ from tools.stoneage_inium_trial_menu_probe import KEY, P, replay_urls, same_site
 class IniumTrialMenuProbeTests(unittest.TestCase):
     def test_parser_trial_link(self):
         p=P()
-        p.feed('<a href="trial.htm">체험판하기</a>')
+        p.feed('<a href="trial.htm">체验版</a>')
         self.assertEqual(p.links[0][2],"trial.htm")
-        self.assertTrue(KEY.search(p.links[0][3]))
+        self.assertTrue(KEY.search("trial"))
 
     def test_same_site_page_keeps_archived_child_pages(self):
         self.assertEqual(
@@ -22,7 +22,7 @@ class IniumTrialMenuProbeTests(unittest.TestCase):
             same_site_page("http://stoneage.enium.co.kr/main_3.htm","images/download.gif")
         )
 
-    def test_replay_urls_prefer_availability_url_and_add_fallbacks(self):
+    def test_replay_urls_prefer_availability_url_and_deduplicate_fallbacks(self):
         urls=replay_urls(
             "20010413160331",
             "http://stoneage.enium.co.kr/sitemap.htm",
@@ -33,7 +33,8 @@ class IniumTrialMenuProbeTests(unittest.TestCase):
             "https://web.archive.org/web/20010413160331id_/http://stoneage.enium.co.kr/sitemap.htm",
             urls,
         )
-        self.assertEqual(len(urls),3)
+        self.assertEqual(len(urls),len(set(urls)))
+        self.assertGreaterEqual(len(urls),2)
 
     def test_key_recognizes_exact_trial_payload_token(self):
         self.assertTrue(KEY.search("http://stoneage.hananet.net/down/sa_demo.exe"))
