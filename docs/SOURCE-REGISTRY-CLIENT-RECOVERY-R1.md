@@ -42,7 +42,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Canonical research note:
   - `research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md`.
 - Next action:
-  - prioritize filename/path recovery from `stoneage.enium.co.kr`, Hananet/GamePlus, CNET Korea, period software catalogs, magazine/ISP CDs and preserved Inium installations;
+  - prioritize filename/path recovery from `www.stoneage.enium.co.kr`, Hananet/GamePlus, CNET Korea, period software catalogs, magazine/ISP CDs and preserved Inium installations;
   - if bytes appear, immediately perform the clean-client acceptance test before further broad searching.
 - Status: **TARGET-A / highest-priority operational pre-1.74 bridge search; bytes not yet located**.
 
