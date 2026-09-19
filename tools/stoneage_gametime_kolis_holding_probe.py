@@ -175,7 +175,10 @@ def holding_rows(raw,base):
     for attrs,label in p.rows:
         onclick=attrs.get("onclick","")
         href=attrs.get("href","")
-        keys=call_first_args(onclick,"fnLibDetail")
+        keys=[]
+        for value in call_first_args(onclick,"fnLibDetail")+call_first_args(onclick,"fnPopupDetail"):
+            if value.lower() not in {"libkey","reckey","key"} and value not in keys:
+                keys.append(value)
         blob=" ".join((label,onclick,href))
         if not keys and not any(k in blob for k in ("도서관","소장","국립","대학교")):
             continue
