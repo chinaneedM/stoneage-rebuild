@@ -25,6 +25,14 @@ class TaiwanV10ClientInventoryTests(unittest.TestCase):
         rows = parse_address_table_bytes(
             b"0:4:battle00.sab 4:4:battle01.sab 8:4:battle00.sab"
         )
+        self.assertEqual(
+            rows,
+            [
+                (0, 4, "battle00.sab"),
+                (4, 4, "battle01.sab"),
+                (8, 4, "battle00.sab"),
+            ],
+        )
         self.assertEqual(len(rows), 3)
         self.assertEqual(len({row[2] for row in rows}), 2)
 
