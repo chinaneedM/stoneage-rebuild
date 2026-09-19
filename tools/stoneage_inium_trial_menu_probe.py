@@ -178,9 +178,9 @@ def locate(jobs):
     return available,errors
 
 
-def analyze_many(rows,phase):
+def analyze_many(rows):
     successes=[]
-    errors=[]
+    failures=[]
     def one(row):
         label,date,url,cap=row
         try:
@@ -189,18 +189,23 @@ def analyze_many(rows,phase):
             return row,None,(type(exc).__name__,str(exc))
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
         for row,result,error in ex.map(one,rows):
-            label,date,url,cap=row
             if error:
-                errors.append((phase,label,cap["timestamp"],error[0],error[1]))
+                failures.append((row,error))
             else:
                 successes.append((row,result))
-    return successes,errors
+    return successes,failures
+
+
+def append_failures(errors,phase,failures):
+    for row,error in failures:
+        label,date,url,cap=row
+        errors.append((phase,label,cap["timestamp"],error[0],error[1]))
 
 
 def main():
-    print("StoneAge Inium trial-menu locator — R3")
+    print("StoneAge Inium trial-menu locator — R4")
     print("SCOPE|archived-menu-and-child-page-metadata-only|no-client-binary-download")
-    print("METHOD|availability+multi-replay-fallback+one-hop-same-site-page-discovery|bounded-concurrency=8")
+    print("METHOD|seed-availability+multi-replay+one-hop-child-direct-replay+availability-fallback|bounded-concurrency=8")
 
     seed_jobs=[(page,date,ROOT+page) for page in PAGES for date in DATES]
     seed_av,errors=locate(seed_jobs)
@@ -210,37 +215,81 @@ def main():
     seed_rows=sorted(seed_unique.values(),key=lambda x:(x[0],x[3]["timestamp"]))
 
     found=[]
-    child_jobs={}
-    seed_done,seed_errors=analyze_many(seed_rows,"replay")
-    errors.extend(seed_errors)
+    child_candidates={}
+    seed_done,seed_failures=analyze_many(seed_rows)
+    append_failures(errors,"replay",seed_failures)
     for (page,date,url,cap),(hits,children,used) in seed_done:
         for h in hits:
             found.append(("seed",page,cap["timestamp"])+h+(used,))
         for child in children:
-            child_jobs.setdefault((child,date),(child,date,child))
+            key=(child,date)
+            child_candidates.setdefault(
+                key,
+                (child,date,child,cap["timestamp"],page),
+            )
 
-    selected=[child_jobs[k] for k in sorted(child_jobs)[:MAX_CHILDREN]]
-    child_av,child_errors=locate(selected)
-    errors.extend(child_errors)
-    child_unique={}
-    for label,date,url,cap in child_av:
-        child_unique[(url,cap["timestamp"])]=(label,date,url,cap)
-    child_rows=sorted(child_unique.values(),key=lambda x:(x[0],x[3]["timestamp"]))
+    selected=[child_candidates[k] for k in sorted(child_candidates)[:MAX_CHILDREN]]
+    for child,date,url,parent_ts,parent_page in selected:
+        print(
+            f"CHILD|url={safe(url)}|query_date={safe(date)}|"
+            f"parent_timestamp={safe(parent_ts)}|parent_page={safe(parent_page)}"
+        )
 
-    child_done,child_replay_errors=analyze_many(child_rows,"child-replay")
-    errors.extend(child_replay_errors)
-    for (label,date,url,cap),(hits,_,used) in child_done:
+    direct_rows=[
+        (child,date,url,{"timestamp":parent_ts,"archive_url":"","status":"parent-timestamp"})
+        for child,date,url,parent_ts,parent_page in selected
+    ]
+    direct_done,direct_failures=analyze_many(direct_rows)
+
+    child_success={}
+    for row,result in direct_done:
+        label,date,url,cap=row
+        child_success[(url,cap["timestamp"])]=(row,result,"direct")
+
+    # Availability is only a fallback for direct failures. This avoids treating
+    # Availability=0 as proof that a linked child page cannot replay at the
+    # timestamp of the archived parent page.
+    failed_jobs=[]
+    failed_meta={}
+    for row,error in direct_failures:
+        label,date,url,cap=row
+        failed_jobs.append((label,date,url))
+        failed_meta[(url,date)]=(row,error)
+
+    fallback_av,fallback_av_errors=locate(failed_jobs)
+    errors.extend(fallback_av_errors)
+    fallback_rows=[]
+    for label,date,url,cap in fallback_av:
+        fallback_rows.append((label,date,url,cap))
+    fallback_done,fallback_failures=analyze_many(fallback_rows)
+    append_failures(errors,"child-fallback-replay",fallback_failures)
+
+    fallback_keys={(row[2],row[1]) for row,result in fallback_done}
+    for row,result in fallback_done:
+        label,date,url,cap=row
+        child_success[(url,cap["timestamp"])]=(row,result,"availability-fallback")
+
+    for row,error in direct_failures:
+        label,date,url,cap=row
+        if (url,date) not in fallback_keys:
+            errors.append(("child-direct-replay",label,cap["timestamp"],error[0],error[1]))
+
+    for (url,ts),(row,result,mode) in sorted(child_success.items()):
+        label,date,url,cap=row
+        hits,_,used=result
         page=urllib.parse.urlsplit(url).path.lstrip("/") or url
         for h in hits:
-            found.append(("child",page,cap["timestamp"])+h+(used,))
+            found.append((f"child-{mode}",page,cap["timestamp"])+h+(used,))
 
     print(f"COUNT|seed_availability_queries|{len(seed_jobs)}")
     print(f"COUNT|seed_available_snapshots|{len(seed_unique)}")
     print(f"COUNT|seed_replay_success|{len(seed_done)}")
-    print(f"COUNT|discovered_internal_page_jobs|{len(child_jobs)}")
+    print(f"COUNT|discovered_internal_page_jobs|{len(child_candidates)}")
     print(f"COUNT|child_jobs_selected|{len(selected)}")
-    print(f"COUNT|child_available_snapshots|{len(child_unique)}")
-    print(f"COUNT|child_replay_success|{len(child_done)}")
+    print(f"COUNT|child_direct_replay_success|{len(direct_done)}")
+    print(f"COUNT|child_fallback_availability_queries|{len(failed_jobs)}")
+    print(f"COUNT|child_fallback_available_snapshots|{len(fallback_rows)}")
+    print(f"COUNT|child_fallback_replay_success|{len(fallback_done)}")
     print(f"COUNT|errors|{len(errors)}")
     print(f"COUNT|trial_download_hits|{len(found)}")
 
