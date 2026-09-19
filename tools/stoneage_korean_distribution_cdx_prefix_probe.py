@@ -29,6 +29,8 @@ TARGETS=[
     ("gametime-webzine","http://www.gametime.co.kr/webzine/online/"),
     ("gametime-webzine-bare","http://gametime.co.kr/webzine/online/"),
     ("gametime-pds","http://pds.gametime.co.kr/"),
+    ("gametime-image-pds","http://www.gametime.co.kr/images/Online/pds/2001/02/"),
+    ("gametime-image-pds-bare","http://gametime.co.kr/images/Online/pds/2001/02/"),
     ("inium-root-download","http://stoneage.enium.co.kr/down"),
     ("inium-root-download-www","http://www.stoneage.enium.co.kr/down"),
 ]
