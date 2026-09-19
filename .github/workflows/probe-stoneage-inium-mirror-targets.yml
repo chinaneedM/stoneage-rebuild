@@ -1,0 +1,37 @@
+name: Probe Inium-linked StoneAge mirror targets
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_inium_mirror_target_probe.py
+      - tests/test_stoneage_inium_mirror_target_probe.py
+      - .github/workflows/probe-stoneage-inium-mirror-targets.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-inium-mirror-targets
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_inium_mirror_target_probe -v
+      - name: Probe exact mirror records and binary prefixes
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_inium_mirror_target_probe             > research/recovered/STONEAGE-INIUM-MIRROR-TARGETS-R1.txt
+      - name: Commit derived mirror metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-INIUM-MIRROR-TARGETS-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Inium-linked StoneAge mirrors'
+          git pull --rebase origin main
+          git push
