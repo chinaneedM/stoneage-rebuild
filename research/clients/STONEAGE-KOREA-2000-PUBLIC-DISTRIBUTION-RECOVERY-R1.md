@@ -159,7 +159,7 @@ Two additional archive probes narrow what may safely be concluded from the survi
   - the remaining successful queries returned no rows, and no exact or prefix-relevant result was recovered.
   - Because the overwhelming majority of queries failed at the archive service/transport layer, this run is **inconclusive and must not be treated as evidence that Common Crawl lacks the targets**. Retry only when the index service is healthy; do not convert its current zero-result count into a preservation conclusion.
 
-This changes the search problem materially: Hananet no longer lacks a file identity. The high-value exact tokens are now the early PDS app ID **`20001031524596220`**, Hananet formal **`sa.exe`** and trial **`sa_demo.exe`**, CNET **257MB `stoneage.zip`**, Gagamel **`stoneagebeta.zip`**, GameTime trial **`stone_demo.exe` / GW_IDX=76**, and GameTime legacy/migrated **`num=9 / GW_IDX=9`**, now strongly tied to the **2000-10-11 StoneAge Beta-version client** record though its attachment filename/size is still missing. GameTime **`GW_IDX=34 / StoneAge.zip`** is separately resolved as a 0.4/0.42MB manual update and must not be promoted as a full-client candidate.
+This changes the search problem materially: Hananet no longer lacks a file identity. The high-value exact tokens are now the early PDS app ID **`20001031524596220`**, Hananet formal **`sa.exe`** and trial **`sa_demo.exe`**, CNET **257MB `stoneage.zip`**, Gagamel **`stoneagebeta.zip`**, GameTime trial **`/images/Online/pds/2001/02/stone_demo.exe` / GW_IDX=76**, and GameTime legacy/migrated **`num=9 / GW_IDX=9`** whose archived 302 response headers now resolve to **`/images/Online/pds/2001/02/onlStoneAge.zip`**. GameTime **`GW_IDX=34 / StoneAge.zip`** is separately resolved as a 0.4/0.42MB manual update and must not be promoted as a full-client candidate.
 
 Derived evidence:
 
@@ -307,11 +307,39 @@ Therefore Inium's later official mirror URL:
 
 is strongly linked to the old GameTime StoneAge Beta client record whose legacy key is **`num=9`**.
 
+### Archived redirect closes the migrated payload filename
+
+Wayback preserved the **HTTP 302 responses themselves** for the newer GameTime download handler.
+
+For **GW_IDX=9**:
+
+- 2001-06-14;
+- 2001-08-06;
+- 2001-12-15;
+- 2002-02-08;
+
+all return the same Location:
+
+**`http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip`**
+
+For control record **GW_IDX=76**, preserved 302 responses at multiple dates consistently point to:
+
+**`http://www.gametime.co.kr/images/Online/pds/2001/02/stone_demo.exe`**
+
+This is substantially stronger than filename inference from page labels: the archived server response binds each numeric record to a concrete payload URL.
+
+The exact-payload probe then tested `onlStoneAge.zip` and `stone_demo.exe` directly. Eight Wayback Availability queries completed with zero request errors and returned zero available payload captures. CDX returns zero rows for both bare/www `onlStoneAge.zip` URLs; the two `stone_demo.exe` CDX requests timed out and remain inconclusive. These are archive-service-specific boundaries, not proof that mirrors/reposts do not survive elsewhere.
+
+Derived evidence:
+
+- `research/recovered/STONEAGE-GAMETIME-DOWNLOAD-REDIRECT-CDX-R1.txt`
+- `research/recovered/STONEAGE-GAMETIME-REDIRECT-HEADERS-R1.txt`
+- `research/recovered/STONEAGE-GAMETIME-PAYLOAD-CAPTURES-R1.txt`
+
 ### Evidence boundary
 
-The old `num=9` detail page and parameterized legacy StoneAge download endpoint both replay HTTP 404, so the project still lacks:
+The old `num=9` detail page and parameterized legacy StoneAge download endpoint both replay HTTP 404, but the migrated download endpoint is captured as HTTP 302. Four archived replays of `GW_IDX=9` — 2001-06-14, 2001-08-06, 2001-12-15 and 2002-02-08 — consistently return Location **`http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip`**. Therefore the project now has the record-9 payload filename/path, but still lacks:
 
-- the record-9 payload filename;
 - exact payload size;
 - client version/build;
 - checksum;
@@ -363,11 +391,7 @@ GameTime's **0.4/0.42MB `StoneAge.zip` manual update** is not the same evidentia
 
 ### Remaining GameTime formal-mirror gap
 
-Inium's official download page still preserves **`/data/download.asp?GW_IDX=9&GW_Name=Online`** among its formal-version mirrors.
-
-A separate GameTime online-list sweep replayed **11 archived anchors / 52 records with zero errors**, including pages 1–10 where archived. It repeatedly recovers GW_IDX=76 but never GW_IDX=9.
-
-Therefore the GW_IDX=9 branch is now moved away from ordinary `/data/data_list.asp` pagination and toward the older **`/webzine/online/download.asp` / `/webzine/online/down/bbs.asp`** system plus exact mirror/path recovery.
+Inium's official download page preserves **`/data/download.asp?GW_IDX=9&GW_Name=Online`** among its formal-version mirrors, and archived GameTime HTTP 302 responses now resolve that handler to **`/images/Online/pds/2001/02/onlStoneAge.zip`**. A separate GameTime online-list sweep replayed **11 archived anchors / 52 records with zero errors**, including pages 1–10 where archived; it repeatedly recovers GW_IDX=76 but never exposes a visible GW_IDX=9 list row. The remaining gap is therefore no longer the handler or payload filename/path: it is recovery of the actual `onlStoneAge.zip` bytes, size, build/version and file tree, plus determination of whether GameTime replaced the record-9 attachment between the 2000 Beta listing and Inium's later formal-mirror classification.
 
 Derived evidence:
 
