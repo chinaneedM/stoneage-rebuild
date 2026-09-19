@@ -601,6 +601,55 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Derived record:
   - `research/recovered/STONEAGE-NETPOWER-IA-UPLOADER-NEIGHBORHOOD-R2.txt`
 
+### SRC-TW-2000-WAEI-V10-REDUMP-104630
+
+- Title/artifact: `Shiqi Shidai / 石器時代 / StoneAge` Taiwan retail CD, Redump disc 104630
+- Original period: 2000 Taiwan release branch
+- Preservation dump date: DiscImageCreator 2023-03-09 tooling; archive member timestamps 2023-05-21
+- Retrieval/verification date: 2026-09-19
+- Language/region: Traditional Chinese / Taiwan
+- Source type: original retail optical media preservation, packaging/disc photographs, Redump record and byte-verified DiscImageCreator image
+- Public preservation surfaces:
+  - https://archive.org/details/stoneage_tw_2000_win
+  - http://redump.org/disc/104630/
+- Confidence: **S** for the exact preserved media identity, hashes, ring code and file tree
+- Physical/media identifiers:
+  - mastering ring: `華義國際股份有限公司 石器時代 V1.0 P-RPG-0008`
+  - mastering SID: `IFPI LE92`
+  - mould SID: `IFPI·9W10`
+  - barcode: `4 710739 350098`
+  - volume label: `STONEAGE`
+  - one MODE1/2352 track
+- Preservation archive:
+  - `CD_DIC.rar`
+  - size 842,125,501
+  - MD5 `b37a4a47f4eb608cac67e4ddf7a1621a`
+  - SHA1 `b8cf92720b6ec8b3f46ea2e9bfcda986d21e7ded`
+- Verified disc track:
+  - `STONEAGE.bin`, 523,449,360 bytes
+  - CRC32 `e4638c81`
+  - MD5 `b477bfc2b62527b255ab9f822349dc14`
+  - SHA1 `d0f270163772eb587185a65e24a3f7e565263f2f`
+  - SHA256 `905ee6ad89b8ca7f55a5c1132eede99a15ee7cb1b868f9b0b398fb0c76cfd159`
+- Supports:
+  - an original Waei/JSS Taiwan **v1.0 / Original** retail disc survives publicly with provenance-preserving dump metadata;
+  - Redump and the recovered public copy agree at track-hash level;
+  - the disc contains a complete directly readable StoneAge client tree;
+  - the early branch contains `StoneAge.exe` and `sa_3.exe`, early `*_1.bin` resource generations and Waei operator host strings;
+  - DiscImageCreator reports 0 disc errors and no copy protection found.
+- Does not support:
+  - byte identity with the 1999 Japanese JSS beta/retail client;
+  - equivalence with Korean Inium/Hananet/CNET builds;
+  - server-side rules/data absent from the client;
+  - treating the separately bundled `人在江湖` and music-preview directories as StoneAge client content.
+- Canonical derived records:
+  - `research/recovered/STONEAGE-IA-EXACT-ARTIFACT-AUDIT-R1.txt`
+  - `research/recovered/STONEAGE-TW2000-PRESERVATION-R1.txt`
+  - `research/recovered/STONEAGE-TW2000-CLEAN-CLIENT-ACCEPTANCE-R1.txt`
+- Archaeology significance:
+  - first accepted early clean retail client baseline in the repository;
+  - activates direct runtime/resource reverse engineering while JSS 1999 and Korean 2000 recovery continue as lineage-comparison tracks.
+
 ## Required metadata for future entries
 
 Every substantial source should record:
