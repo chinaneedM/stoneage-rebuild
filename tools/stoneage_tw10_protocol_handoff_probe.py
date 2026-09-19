@@ -40,6 +40,14 @@ from tools.stoneage_tw10_exact_xref_probe import (
 SEND_RVA = 0x1B3F0
 INIT_RVA = 0x1AC10
 DEFAULT_WRITE_RVA = 0x1B3D0
+DISPATCH_BRANCHES = (
+    ("ClientLogin", 0x1A70B),
+    ("CreateNewChar", 0x1A787),
+    ("CharDelete", 0x1A82C),
+    ("CharLogin", 0x1A8D1),
+    ("CharList", 0x1A976),
+    ("CharLogout", 0x1AA1B),
+)
 MAX_BYTES = 0x800
 MAX_INSNS = 400
 MAX_GLOBAL_XREFS = 64
@@ -438,6 +446,33 @@ def main():
                 extra = f"|reg_id={value}"
             print(
                 f"SEND_EVENT|order={order}|kind={kind}|callsite_rva=0x{addr-base:x}{extra}"
+            )
+
+        print(f"DISPATCH_BRANCHES|count={len(DISPATCH_BRANCHES)}")
+        dispatch_target_usage = collections.Counter()
+        for protocol_name, branch_rva in DISPATCH_BRANCHES:
+            cfg = callback_cfg_probe(data, base, sections, imports, base + branch_rva)
+            print(
+                f"DISPATCH_BRANCH|name={protocol_name}|rva=0x{branch_rva:x}|"
+                f"blocks={cfg['blocks']}|instructions={cfg['instructions']}|"
+                f"direct_targets={len(cfg['direct'])}|import_api_kinds={len(cfg['api'])}|"
+                f"globals={len(cfg['globals'])}"
+            )
+            for target, count in sorted(cfg["direct"].items()):
+                dispatch_target_usage[target] += count
+                print(
+                    f"DISPATCH_DIRECT|name={protocol_name}|branch_rva=0x{branch_rva:x}|"
+                    f"target_rva=0x{target-base:x}|calls={count}"
+                )
+            for (dll, name), count in sorted(cfg["api"].items(), key=lambda x:(x[0][0].lower(),x[0][1].lower())):
+                print(
+                    f"DISPATCH_API|name={protocol_name}|branch_rva=0x{branch_rva:x}|"
+                    f"dll={clean(dll)}|api={clean(name)}|calls={count}"
+                )
+        for target, count in sorted(dispatch_target_usage.items(), key=lambda x:(-x[1],x[0])):
+            print(
+                f"DISPATCH_SHARED_TARGET|target_rva=0x{target-base:x}|"
+                f"aggregate_calls={count}"
             )
 
         init_va = base + INIT_RVA
