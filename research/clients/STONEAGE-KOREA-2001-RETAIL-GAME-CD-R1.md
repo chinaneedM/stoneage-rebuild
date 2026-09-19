@@ -4,7 +4,7 @@ Date: 2026-09-19
 
 ## Purpose
 
-Track the independently attested Korean retail/package StoneAge game CD as a public-preservation recovery target distinct from:
+Track the independently attested **mass-distributed Korean retail/package StoneAge game CD** as a public-preservation recovery target distinct from:
 
 - the 2000–2002 operator/portal download mirrors;
 - the 2001 GameTime Perfect Guide bonus CD;
@@ -13,6 +13,35 @@ Track the independently attested Korean retail/package StoneAge game CD as a pub
 This is a recovery target, not proof that a publicly downloadable disc image currently exists.
 
 ## Contemporary evidence
+
+### DailyGame / Daily eSports — 2000-10-27
+
+Sources:
+
+- https://www.dailygame.co.kr/view.php?ud=200010271416380001837_26
+- syndicated copy: https://www.dailyesports.com/view.php?ud=200010271416380001837_26
+
+The contemporary product-presentation report states that Inium had signed a supply contract with Samsung PC-education-center operator **Mentec (`멘테크`) for roughly 60,000 sale packages (`판매용 패키지`)** and planned nationwide retail distribution through **Yongsan PC-game wholesalers**.
+
+This materially upgrades the physical-media branch:
+
+- the package channel is attested already in **October 2000**, during the original Korean trial/distribution period;
+- the planned volume is mass-market scale rather than an isolated promotional disc;
+- the distribution path is explicitly tied to Yongsan wholesalers and nationwide PC-game shops.
+
+Evidence class:
+
+- **FACT / contemporary industry-press evidence of a 60,000-unit retail-package supply contract.**
+
+Open fields:
+
+- whether all contracted units were manufactured/shipped;
+- package SKU/catalog number;
+- package price;
+- outer-box artwork;
+- CD label/matrix code;
+- exact client build and installer filename;
+- relationship between this package disc and portal-distributed clients.
 
 ### Electronic Times — 2001-05-04
 
@@ -124,4 +153,4 @@ If a public dump or file tree appears, capture before interpretation:
 
 ## Status
 
-**TARGET-A/B — independently attested Korean retail game-CD/package channel; exact media identity and public bytes not yet recovered.**
+**TARGET-A — mass-distribution physical-media bridge independently attested from October 2000 (≈60,000 sale-package supply contract) through 2001 retail/package use; exact media identity and public bytes not yet recovered.**
