@@ -84,6 +84,19 @@ class LuckyDoorUsageProbeTests(unittest.TestCase):
         finally:
             td.cleanup()
 
+    def test_create_template_name_match_is_case_insensitive(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            (root / "t").write_bytes(TPL)
+            (root / "c").write_bytes(
+                b"NPCCREATE\n{\nenemy=l|file:l.arg\n}\n"
+                b"{\nenemy=d|1|2|n|0|5|0|0\n}\n"
+            )
+            (root / "l.arg").write_bytes(LUCKY)
+            result = analyze(root)
+            self.assertEqual(result["counts"][("LuckyMan", "refs")], 1)
+            self.assertEqual(result["counts"][("Door", "refs")], 1)
+
     def test_numeric_and_title_field8_classification(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)
