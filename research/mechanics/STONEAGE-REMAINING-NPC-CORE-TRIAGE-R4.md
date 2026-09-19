@@ -60,7 +60,7 @@ Both remain later/versioned package work.
 
 | Class | Recovered refs | Active effect surface | R4 classification |
 | --- | ---: | --- | --- |
-| Quiz | 4 | entry item/Stone consumption, item reward, score-band warp | **next core seam** |
+| Quiz | 22 create refs | quantity-1 entry-item consumption, item reward, score-band warp | **closed by STONEAGE-QUIZ-CORE-R1** |
 | LuckyMan | 1 | Stone charge plus randomized result presentation | economy mutation, below Quiz |
 | Door | 3 | runtime open/close/overability/key checks | ordinary world-state seam, no direct player persistence in npc_door.c |
 | BodyLan | 2 | transient event state plus party warp | event wrapper over already-modeled warp primitive |
@@ -77,7 +77,7 @@ Common source keys include EntryItem, EntryStone, GetItem, Border, Warp, Quiznum
 
 The source can validate and consume entry items, validate and deduct carried Stone, choose questions from the global question.txt table, score answers, grant one reward item from a configured candidate set, and choose a destination from score thresholds before warping the player.
 
-Recovered 2.5 has four Quiz refs. Therefore R4 promotes a payload-free real-byte Quiz usage probe as the immediate next task.
+Recovered 2.5 has 22 Quiz create refs through one duplicated-but-stable Quiz template-name value. The earlier four-count was a template-block count, not an instance count. The real-byte probe and core reconstruction are now closed by `STONEAGE-QUIZ-CORE-R1.md`.
 
 ### LuckyMan
 
@@ -107,13 +107,13 @@ Familyman, FmDengon, FmHealer, FmLetter, FMPKCallMan, FMPKMan, FMWarpMan, ManorS
 
 ## Immediate action
 
-1. Run the recovered 2.5 Quiz probe against the four refs and global question table without retaining questions, answer text, item IDs, coordinates or dialogue.
-2. Reconstruct only the active recovered Quiz mutation shape plus stable common fixed-source control flow.
-3. Then re-evaluate LuckyMan and Door. If neither exposes a material core gap beyond Stone sink / transient world-door state, close the residual ordinary NPC sweep and return priority to clean-client recovery plus any concrete combat/data gaps.
+1. Re-evaluate LuckyMan and Door against recovered 2.5 arguments and the pinned fixed descendants.
+2. If LuckyMan remains only a narrow Stone sink/random-message service and Door remains transient world-door state, register those semantics without opening a new large subsystem.
+3. Then close the residual ordinary NPC sweep and return priority to clean-client recovery plus any concrete combat/data gaps.
 
 ## Evidence status
 
-- **FACT:** Quiz is common to all three pinned fixed function-set tables and has four recovered 2.5 refs.
+- **FACT:** Quiz is common to all three pinned fixed function-set tables and has 22 recovered 2.5 create refs; four was the count of Quiz template blocks, not create instances.
 - **FACT:** common Quiz source can consume items/Stone, grant item rewards and warp by score threshold.
 - **FACT:** thirteen recovered 2.5 tokens do not join to any of the three pinned fixed function-set tables.
 - **FACT:** LuckyMan deducts Stone in its accepted fixed-source service path.
