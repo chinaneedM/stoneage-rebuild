@@ -150,7 +150,9 @@ Derived evidence:
 - `research/recovered/STONEAGE-HANANET-MENU-PAGES-R1.txt`;
 - `research/recovered/STONEAGE-HANANET-BOARDS-R1.txt`;
 - `research/recovered/STONEAGE-HANANET-BOARD-RECORDS-R1.txt`;
-- `research/recovered/STONEAGE-HANANET-STAD-ROWS-R1.txt`;\n- `research/recovered/STONEAGE-HANANET-PKBOARD-MECHANISM-R1.txt`;\n- `research/recovered/STONEAGE-HANANET-STAD-SOURCE-ORDER-R1.txt`;
+- `research/recovered/STONEAGE-HANANET-STAD-ROWS-R1.txt`;
+- `research/recovered/STONEAGE-HANANET-PKBOARD-MECHANISM-R1.txt`;
+- `research/recovered/STONEAGE-HANANET-STAD-SOURCE-ORDER-R1.txt`;
 - `research/recovered/STONEAGE-HANANET-PDS-H01-DETAILS-R1.txt`.
 - `research/recovered/STONEAGE-HANANET-DATED-DOWNLOAD-SURFACES-R1.txt`;
 - `research/recovered/STONEAGE-INIUM-8-1-PROBE-R1.txt`;
