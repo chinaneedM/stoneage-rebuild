@@ -1,0 +1,33 @@
+StoneAge Hananet dedicated-menu availability probe — R1
+SCOPE|metadata-only|no-page-body|no-client-binary-download
+COUNT|queries|28
+COUNT|errors|24
+COUNT|available|4
+ERROR|requested=20001229|url=http://stoneage.hananet.net/1.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010118|url=http://stoneage.hananet.net/1.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010201|url=http://stoneage.hananet.net/1.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010430|url=http://stoneage.hananet.net/1.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20001229|url=http://stoneage.hananet.net/2.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010201|url=http://stoneage.hananet.net/2.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010430|url=http://stoneage.hananet.net/2.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20001229|url=http://stoneage.hananet.net/2_2.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010201|url=http://stoneage.hananet.net/2_2.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010430|url=http://stoneage.hananet.net/2_2.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20001229|url=http://stoneage.hananet.net/2_3.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010201|url=http://stoneage.hananet.net/2_3.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010430|url=http://stoneage.hananet.net/2_3.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20001229|url=http://stoneage.hananet.net/2_4.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010201|url=http://stoneage.hananet.net/2_4.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010430|url=http://stoneage.hananet.net/2_4.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20001229|url=http://stoneage.hananet.net/2_5.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010118|url=http://stoneage.hananet.net/2_5.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010201|url=http://stoneage.hananet.net/2_5.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010430|url=http://stoneage.hananet.net/2_5.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20001229|url=http://stoneage.hananet.net/main.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010118|url=http://stoneage.hananet.net/main.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010201|url=http://stoneage.hananet.net/main.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|requested=20010430|url=http://stoneage.hananet.net/main.htm|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+RESULT|requested=20010118|available=1|timestamp=20010226185448|status=200|url=http://stoneage.hananet.net/2.htm|archived=http://web.archive.org/web/20010226185448/http://stoneage.hananet.net:80/2.htm
+RESULT|requested=20010118|available=1|timestamp=20010226182509|status=200|url=http://stoneage.hananet.net/2_2.htm|archived=http://web.archive.org/web/20010226182509/http://stoneage.hananet.net:80/2_2.htm
+RESULT|requested=20010118|available=1|timestamp=20010126160100|status=200|url=http://stoneage.hananet.net/2_3.htm|archived=http://web.archive.org/web/20010126160100/http://stoneage.hananet.net:80/2_3.htm
+RESULT|requested=20010118|available=1|timestamp=20010123223000|status=200|url=http://stoneage.hananet.net/2_4.htm|archived=http://web.archive.org/web/20010123223000/http://stoneage.hananet.net:80/2_4.htm
