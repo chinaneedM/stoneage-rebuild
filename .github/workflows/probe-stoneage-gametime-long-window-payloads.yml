@@ -1,0 +1,38 @@
+name: Probe long-window GameTime StoneAge payloads
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_gametime_long_window_payload_probe.py
+      - tests/test_stoneage_gametime_long_window_payload_probe.py
+      - .github/workflows/probe-stoneage-gametime-long-window-payloads.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-gametime-long-window-payloads
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_gametime_long_window_payload_probe -v
+      - name: Probe long-window exact payload survival
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_gametime_long_window_payload_probe             > research/recovered/STONEAGE-GAMETIME-LONG-WINDOW-PAYLOADS-R1.txt
+      - name: Commit derived CDX metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-GAMETIME-LONG-WINDOW-PAYLOADS-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe long-window GameTime payload survival'
+          git pull --rebase origin main
+          git push
