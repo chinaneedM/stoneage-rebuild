@@ -58,6 +58,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - earlier exact Availability/direct-prefix checks for Gagamel `stoneagebeta.zip` likewise yielded no recoverable binary snapshot;
   - these are Wayback-specific negative results and do not establish global loss.
 - Offline replication evidence:
+  - the 2001 GameTime `스톤 에이지 = Stone age` guide is a concrete near-period install-media carrier: RISS `M10029631` records **318 pages + one 12cm compact disc** and National Library of Korea as a holding institution; KOLIS ISBN-10 search reports the same title as an offline 2001 general-book record held by **2 libraries**, and exposes RISS alias `U10029631`; that alias resolves to the same RISS control object `9b505f870e768aa6ffe0bdc3ef48d419`. The second library and current disc status remain unresolved. Derived metadata: `research/recovered/STONEAGE-GAMETIME-2001-LIBRARY-SUPPLEMENT-R1.txt`.
   - iNews24, 2000-07-04: https://www.inews24.com/view/8928 records the planned Samsung PC / education-center distribution;
   - DailyGame, 2000-10-27: https://www.dailygame.co.kr/view.php?ud=200010271416380001837_26 reports a later package-supply agreement of roughly 60,000 units through the Samsung PC-education-center operator plus PC-game retail distribution.
 - Operational value:
