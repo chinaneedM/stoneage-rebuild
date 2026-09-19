@@ -1,0 +1,17 @@
+name: Validate StoneAge Quiz core
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/mechanics/STONEAGE-QUIZ-CORE-R1.md
+      - tools/stoneage_quiz_core_model.py
+      - tests/test_stoneage_quiz_core_model.py
+      - .github/workflows/validate-stoneage-quiz-core.yml
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_quiz_core_model -v
