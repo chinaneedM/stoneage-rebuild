@@ -92,11 +92,11 @@ Derived report:
 
 - `research/recovered/STONEAGE-GAMEPIA-TRANSITION-DISC-SCAN-R1.txt`
 
-The selected GamePia sequence covers issues No.58 through No.64, crossing the Korean StoneAge trial/formal distribution period. Twelve carrier images were scanned.
+The selected GamePia sequence now covers issues No.58 through No.69, crossing and extending beyond the Korean StoneAge trial/formal distribution period. Twenty-three carrier images were scanned.
 
 Result:
 
-- 12 images scanned;
+- 23 images scanned;
 - 0 scan errors;
 - 0 StoneAge-path hits;
 - no truncation.
@@ -110,7 +110,7 @@ Date-bearing carrier names include:
 
 Large directory trees were fully enumerated, including 3,212 entries on No.58 CD2 and 3,943 entries on No.61 CD1.
 
-Interpretation: No.58–64 are closed as exact-carrier negative controls. Other GamePia issues remain distinct candidates and are not covered by this conclusion.
+Interpretation: No.58–69 are closed as exact-carrier negative controls. Other GamePia issues remain distinct candidates and are not covered by this conclusion.
 
 ## Internet Archive exact-token reverse search
 
@@ -188,11 +188,45 @@ Focused resolver:
 
 Until that resolver finishes, no new GameTime payload identity beyond the already known historical `GW_IDX=9` may be claimed.
 
+## GameTime StoneAge data-center identities recovered
+
+The archived GameTime StoneAge search page at **2001-07-01 05:34:12 UTC** now resolves two concrete records:
+
+- **GW_IDX=76 — StoneAge trial client**
+  - title: `스톤에이지 체험판 클라이언트`;
+  - filename: **`stone_demo.exe`**;
+  - registered: **2001-02-12 19:45:00**;
+  - list-page size: **234MB**;
+  - description says the formal version is roughly **260MB** and the trial version roughly **240MB**;
+  - trial access is described as five days and requires a separate trial-account application;
+  - trial characters/pets are explicitly described as not linked to the formal server;
+  - archived download count is 21,187 on 2001-07-01 and 53,612 on 2001-08-20.
+
+- **GW_IDX=34 — StoneAge manual update**
+  - title: `스톤에이지 자동 업데이트가 안된다면 이것을...`;
+  - filename: **`StoneAge.zip`**;
+  - registered: **2000-11-06 11:21:00**;
+  - list-page size: **0.4MB**;
+  - an independent 2001-04-17 GameTime webzine record shows **0.42 MB**;
+  - the instructions identify it as a **manual update**, not a full client;
+  - before copying the update, users are told to delete **`sa_*.exe`**, **`server_*.ini`** and **`stoneage.exe`** from the installed StoneAge directory.
+
+This is a critical filename-collision control: GameTime's **0.4/0.42MB `StoneAge.zip`** is a manual update and must not be conflated with CNET Korea's independently recovered **257MB `/pc/games/online/stoneage.zip`** full-client distribution object.
+
+The same archived 2000-12-08 GameTime StoneAge article links `/webzine/online/download.asp?name=스톤에이지` and describes Inium as the Korean operator. The article says Korean beta service began for general users on October 1 and formal service was planned for December; these article statements are retained as contemporary GameTime reporting rather than silently merged with other launch-date sources.
+
+A broader archived online-list sweep successfully replayed **11 anchors / 52 parsed records with zero replay errors**, including pages 1–10 where available. It repeatedly recovers GW_IDX=76 but does **not** recover **GW_IDX=9**. Therefore GW_IDX=9 is no longer treated as something that can be found merely by continuing current data-center pagination. The remaining branch is the older GameTime webzine/download system and exact historical mirror link preserved on Inium's official page.
+
+Derived records:
+
+- `research/recovered/STONEAGE-GAMETIME-2001-RECORD-RESOLUTION-R1.txt`
+- `research/recovered/STONEAGE-GAMETIME-ONLINE-INDEX-R1.txt`
+
 ## Operational consequence
 
 The public-media route is now materially narrower:
 
-1. Do not repeat the closed NetPower 2001.12, PCGM 2000-09..2001-12, GamePia No.58..64, or exact IA-token scans unless a new token or materially better parser changes the question.
+1. Do not repeat the closed NetPower 2001.12, PCGM 2000-09..2001-12, GamePia No.58..69, or exact IA-token scans unless a new token or materially better parser changes the question.
 2. Prioritize the archived GameTime StoneAge search/result chain.
 3. Continue expanded public-disc scanning only where the carrier dates or metadata materially overlap the 2000–2001 Korean distribution window.
 4. On any concrete installer/archive hit, stop broad enumeration and run the clean-client acceptance pipeline: provenance, archive hash, full file tree/per-file hashes, executable metadata, updater/endpoints, resource generations, and contamination checks.
