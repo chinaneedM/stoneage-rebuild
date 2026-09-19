@@ -26,7 +26,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p research/recovered
-          python3 -m tools.stoneage_korea2000_archive_probe --root-only \
+          python3 -m tools.stoneage_korea2000_archive_probe --inium-only \
             > research/recovered/STONEAGE-KOREA-2000-ARCHIVE-PATH-PROBE-R1.txt
       - name: Commit derived metadata report only
         run: |
