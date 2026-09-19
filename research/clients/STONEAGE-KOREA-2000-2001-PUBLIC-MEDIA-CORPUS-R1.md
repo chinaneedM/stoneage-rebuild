@@ -64,11 +64,11 @@ Derived report:
 
 - `research/recovered/STONEAGE-KOREAN-PC-MAGAZINE-LAUNCH-WINDOW-R1.txt`
 
-The first closed launch-window pass covers 13 public PC Game Magazine carriers from 2000-09 through 2001-06.
+The final R1 pass covers 21 public PC Game Magazine carriers from 2000-09 through 2001-12.
 
 Result:
 
-- 13 images scanned;
+- 21 images scanned;
 - 0 scan errors;
 - 0 StoneAge-path hits;
 - no truncation;
@@ -82,9 +82,9 @@ Notable date-proximate carriers include:
 - `200010/CD2/ED3_CD1.mdf`
 - `200011/CD1/PB2.mdf`
 - `200011/CD2/NEW.mdf`
-- 2001-01 through 2001-06 PCGM carriers.
+- 2001-01 through 2001-12 PCGM carriers.
 
-Interpretation: these exact thirteen carriers are closed as directory-level negatives. The scanner has since been extended through the rest of 2001; that extension remains a separate run/result and must not be conflated with this already closed 13-disc pass until its report completes.
+Interpretation: these exact twenty-one carriers are closed as directory-level negatives for the full 2000-09 through 2001-12 scan window.
 
 ## GamePia transition-window control
 
@@ -192,7 +192,7 @@ Until that resolver finishes, no new GameTime payload identity beyond the alread
 
 The public-media route is now materially narrower:
 
-1. Do not repeat the closed NetPower 2001.12, PCGM 2000-09..2001-06, GamePia No.58..64, or exact IA-token scans unless a new token or materially better parser changes the question.
+1. Do not repeat the closed NetPower 2001.12, PCGM 2000-09..2001-12, GamePia No.58..64, or exact IA-token scans unless a new token or materially better parser changes the question.
 2. Prioritize the archived GameTime StoneAge search/result chain.
 3. Continue expanded public-disc scanning only where the carrier dates or metadata materially overlap the 2000–2001 Korean distribution window.
 4. On any concrete installer/archive hit, stop broad enumeration and run the clean-client acceptance pipeline: provenance, archive hash, full file tree/per-file hashes, executable metadata, updater/endpoints, resource generations, and contamination checks.
