@@ -28,6 +28,10 @@ TARGETS = [
     ("hananet-pds-record-www", "http://www.pds.hananet.net/view.asp?app_id=20001031524596220&type=C03"),
     ("gametime-gw9", "http://www.gametime.co.kr/data/download.asp?GW_IDX=9&GW_Name=Online"),
     ("gametime-gw9-bare", "http://gametime.co.kr/data/download.asp?GW_IDX=9&GW_Name=Online"),
+    ("gametime-onlstoneage", "http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip"),
+    ("gametime-onlstoneage-bare", "http://gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip"),
+    ("gametime-stone-demo", "http://www.gametime.co.kr/images/Online/pds/2001/02/stone_demo.exe"),
+    ("gametime-stone-demo-bare", "http://gametime.co.kr/images/Online/pds/2001/02/stone_demo.exe"),
     ("gametime-early", "http://www.gametime.co.kr/webzine/online/download.asp?name=스톤에이지"),
     ("gametime-early-bare", "http://gametime.co.kr/webzine/online/download.asp?name=스톤에이지"),
 ]
