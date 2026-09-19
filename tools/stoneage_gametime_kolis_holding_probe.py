@@ -215,7 +215,7 @@ def interesting_anchors(raw,base):
 
 
 def main():
-    print("StoneAge GameTime 2001 KOLIS holding-layer probe — R3")
+    print("StoneAge GameTime 2001 KOLIS holding-layer probe — R4")
     print("SCOPE|public-catalog-metadata-only|no-book-or-cd-payload-download")
     s_status,s_final,s_body=get(SEARCH)
     s_raw=decode(s_body)
@@ -257,7 +257,33 @@ def main():
         print("ERROR|phase=holding-list|kind=RuntimeError|message=no bibKey recovered")
         return
 
+    detail_form_attrs,detail_fields=search_form(raw)
     for bib_key in bib_keys:
+        book_fields=dict(detail_fields)
+        book_fields["publishFormCode"]="BO"
+        book_fields["bibKey"]=bib_key
+        book_url=BASE+"/kolisnet/search/searchResultDetail.do"
+        try:
+            b_status,b_final,b_body=post(book_url,book_fields,d_final)
+        except Exception as exc:
+            print(f"ERROR|phase=bibliographic-detail|bibKey={clean(bib_key)}|kind={type(exc).__name__}|message={clean(exc)}")
+        else:
+            b_raw=decode(b_body)
+            b_plain=strip_markup(b_raw)
+            print(
+                f"BIB_DETAIL|bibKey={clean(bib_key)}|status={b_status}|final={clean(b_final)}|bytes={len(b_body)}"
+            )
+            for token,row in context_rows(
+                b_plain,
+                ("스톤 에이지","게임타임","형태사항","컴팩트디스크","딸림자료","소장","청구기호","등록번호","KMO200119860","011001","149013"),
+                420,
+            ):
+                print(f"BIB_DETAIL_CONTEXT|bibKey={clean(bib_key)}|token={clean(token)}|text={clean(row,900)}")
+            for token in ("KMO200119860","holding","Holding","청구기호","등록번호","딸림자료","searchResultHolding","fnLib"):
+                for _,row in context_rows(b_raw,(token,),520):
+                    print(f"BIB_DETAIL_RAW|bibKey={clean(bib_key)}|token={clean(token)}|html={clean(row,980)}")
+
+        hold_url=BASE+"/kolisnet/search/include/searchResultHoldingLib.do?"+urllib.parse.urlencode({"bibKey":bib_key})
         hold_url=BASE+"/kolisnet/search/include/searchResultHoldingLib.do?"+urllib.parse.urlencode({"bibKey":bib_key})
         try:
             h_status,h_final,h_body=get(hold_url)
