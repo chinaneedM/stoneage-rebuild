@@ -147,6 +147,7 @@ def main():
     p.add_argument("--from-year", type=int, default=2000)
     p.add_argument("--to-year", type=int, default=2003)
     p.add_argument("--root-only", action="store_true")
+    p.add_argument("--inium-only", action="store_true")
     args = p.parse_args()
 
     surfaces = [
@@ -169,8 +170,12 @@ def main():
     hits: list[Hit] = []
     errors = []
 
+    selected_surfaces = surfaces
+    if args.inium_only:
+        selected_surfaces = [x for x in surfaces if x[0].startswith("inium-")]
+
     if not args.root_only:
-        for surface, pattern, regex in surfaces:
+        for surface, pattern, regex in selected_surfaces:
             try:
                 rows = cdx_query(pattern, args.from_year, args.to_year, regex=regex)
             except Exception as exc:
@@ -189,7 +194,7 @@ def main():
                     )
                 )
 
-    if args.root_only:
+    if args.root_only or args.inium_only:
         roots = [x for x in roots if x[0] in {"inium-root-www", "inium-root-bare"}]
 
     root_rows = []
@@ -207,7 +212,8 @@ def main():
     print("StoneAge Korea 2000 public-distribution archive probe — R1")
     print("SCOPE|metadata-and-link-targets-only|no-client-binary-download")
     print(f"YEARS|from={args.from_year}|to={args.to_year}")
-    print(f"MODE|{'root-only' if args.root_only else 'full'}")
+    mode = "root-only" if args.root_only else ("inium-only" if args.inium_only else "full")
+    print(f"MODE|{mode}")
     for surface, kind, message in errors:
         print(f"ERROR|{surface}|{kind}|{safe_token(message)}")
 
