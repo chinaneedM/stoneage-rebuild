@@ -42,7 +42,8 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - all exposed menu paths `1.htm`, `2.htm`, `2_2.htm`, `2_3.htm`, `2_4.htm`, `2_5.htm` have now been replayed; `2.htm` explicitly documents StoneAge CD-ROM installation, automatic install-menu startup, standard Setup mode and DirectX 6.1;
   - recovered `2_5.htm` exposes the Hananet boards `GAM2:STAD`, `STAF`, `STAN`;
   - the archived STAD 자료실 page says game-data downloads should be made from the corresponding GameNet game page and lists **record 8119**, `온라인게임 스톤에이지 정식 버전`, **260 M**, dated **2001-02-10**, plus **record 8120**, `온라인게임 스톤에이지 체험 버전`, **240 M**, also dated **2001-02-10**;
-  - the individual 8119/8120 record bodies replay as HTTP 404, so their concrete attachment filenames/download redirects remain unresolved;
+  - bounded inspection of that same archived STAD HTML source recovers disabled/commented direct-file rows that explicitly map **8120 / trial / 240 M → `http://stoneage.hananet.net/down/sa_demo.exe`** and **8119 / formal / 260 M → `http://stoneage.hananet.net/down/sa.exe`**; because those rows are inside an HTML comment block in the 2001-08-14 capture, they prove historical mapping but not that the buttons were visibly active at that snapshot;
+  - the individual 8119/8120 record bodies still replay as HTTP 404;
   - the 260 M full-version record is close in nominal size to CNET's 257MB `stoneage.zip`, but no equality claim is made without byte/hash evidence.
 - Exact Inium official-download mirror evidence:
   - archived Inium `down.htm` on **2000-11-09** links CNET `Software_Id=200009263856` and Hananet through `flashlinks.cgi` to exact PDS record **`view.asp?app_id=20001031524596220&type=C03`**;
@@ -53,7 +54,8 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Exact mirror archive boundary:
   - Wayback preserves the Hananet `flashlinks.cgi` wrapper and its frame target to PDS app ID `20001031524596220`;
   - six normalized direct-replay variants of the inner PDS record return HTTP 404 at the known wrapper timestamps;
-  - exact Availability/direct-prefix checks for Hananet `sa.exe` and Gagamel `stoneagebeta.zip` yielded no recoverable binary snapshot;
+  - exact Availability checks for Hananet **formal `sa.exe` (260 M)** and **trial `sa_demo.exe` (240 M)** produced 24 zero-error queries and zero available snapshots; direct replay of bare/`www` host variants at the known 2001-08-14 STAD timestamp returned HTTP 404 for both files;
+  - earlier exact Availability/direct-prefix checks for Gagamel `stoneagebeta.zip` likewise yielded no recoverable binary snapshot;
   - these are Wayback-specific negative results and do not establish global loss.
 - Offline replication evidence:
   - iNews24, 2000-07-04: https://www.inews24.com/view/8928 records the planned Samsung PC / education-center distribution;
@@ -64,12 +66,12 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - these independent distribution surfaces materially improve the chance that a provenance-preserving copy survives.
 - Evidence boundary:
   - no exact 2000 client version label has been recovered;
-  - CNET's payload filename/path and nominal size are recovered (`/pc/games/online/stoneage.zip`, 257MB); Hananet now has full/trial record identities and nominal sizes plus exact early PDS app ID `20001031524596220` and later formal-version direct path `stoneage.hananet.net/down/sa.exe`; checksums, complete file tree and all client bytes remain unknown;
+  - CNET's payload filename/path and nominal size are recovered (`/pc/games/online/stoneage.zip`, 257MB); Hananet now has exact mappings **formal `sa.exe` / 260 M** and **trial `sa_demo.exe` / 240 M**, plus early PDS app ID `20001031524596220`; checksums, complete file tree and all client bytes remain unknown;
   - byte identity between Inium, Hananet, CNET and packaged copies is unproven;
   - an intact Korean operator client would be a clean **Korean bridge specimen**, not automatic proof of JSS-Japan byte identity.
 - Archive-probe boundary:
-  - current Wayback/CDX and Arquivo.pt metadata probes encountered request timeouts / network-unreachable errors;
-  - their zero-result counts are **INCONCLUSIVE**, not evidence that no archive capture exists.
+  - older broad Wayback CDX / Arquivo.pt probes encountered request timeouts / network-unreachable errors and remain inconclusive;
+  - a newer exact-URL Arquivo.pt CDX pass against 12 known mirror targets completed 9 URL queries with zero indexed captures while 3 URL variants failed with network-unreachable errors; the 9 successful zero-result queries are exact-URL negative controls only, and the 3 failures remain inconclusive.
 - Magazine-scan token boundary:
   - NetPower 2000-12 pp.173–176, 2001-01 pp.185–190 and 2001-02 pp.189–194 have now been probed with transient OCR and sparse-token extraction;
   - none produced an Inium/Hananet/CNET URL or installer/archive filename; 2001-02 only recovered the magazine-side `powerzine.com`, while isolated `32MB` / OCR-noise strings remain non-evidence for client size or filename;
@@ -77,7 +79,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Canonical research note:
   - `research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md`.
 - Next action:
-  - recover a surviving copy/mirror from the exact token set: CNET `/pc/games/online/stoneage.zip` (257MB), Hananet PDS `app_id=20001031524596220&type=C03`, Hananet `stoneage.hananet.net/down/sa.exe`, Gagamel `stoneagebeta.zip`, GameTime `GW_IDX=9`, and STAD records 8119/8120;
+  - recover a surviving copy/mirror from the exact token set: CNET `/pc/games/online/stoneage.zip` (257MB), Hananet PDS `app_id=20001031524596220&type=C03`, Hananet formal `stoneage.hananet.net/down/sa.exe` (260 M), Hananet trial `stoneage.hananet.net/down/sa_demo.exe` (240 M), Gagamel `stoneagebeta.zip`, GameTime `GW_IDX=9`, and STAD records 8119/8120;
   - compare CNET/Hananet/Gagamel/GameTime candidates only at byte/hash and internal-file-tree level; do not infer equality from size or filename;
   - if bytes appear, immediately perform the clean-client acceptance test before further broad searching.
 - Status: **TARGET-A / highest-priority operational pre-1.74 bridge search; bytes not yet located**.
