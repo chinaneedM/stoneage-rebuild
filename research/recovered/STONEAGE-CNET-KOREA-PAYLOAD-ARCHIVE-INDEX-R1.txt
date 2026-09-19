@@ -1,0 +1,15 @@
+StoneAge CNET payload exact archive-index probe — R1
+PAYLOAD|/pc/games/online/stoneage.zip|detail_page_size_label=257MB
+SCOPE|archive-index-metadata-only|no-client-binary-download
+COUNT|queries|8
+COUNT|errors|8
+COUNT|raw_results|0
+ERROR|source=arquivo|query="/pc/games/online/stoneage.zip"|kind=TimeoutError|message=The read operation timed out
+ERROR|source=arquivo|query="http://korea.cnet.com/pc/games/online/stoneage.zip"|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
+ERROR|source=arquivo|query="stoneage.zip" "korea.cnet.com"|kind=TimeoutError|message=The read operation timed out
+ERROR|source=arquivo|query="stoneage.zip" "스톤에이지"|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
+ERROR|source=cdx|query=http://korea.cnet.com/pc/games/online/stoneage.zip|kind=TimeoutError|message=The read operation timed out
+ERROR|source=cdx|query=http://www.korea.cnet.com/pc/games/online/stoneage.zip|kind=TimeoutError|message=The read operation timed out
+ERROR|source=cdx|query=korea.cnet.com/*stoneage.zip|kind=TimeoutError|message=The read operation timed out
+ERROR|source=cdx|query=www.korea.cnet.com/*stoneage.zip|kind=TimeoutError|message=The read operation timed out
+COUNT|unique_results|0
