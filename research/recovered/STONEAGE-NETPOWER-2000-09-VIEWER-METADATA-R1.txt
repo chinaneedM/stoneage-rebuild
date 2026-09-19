@@ -1,7 +1,9 @@
-StoneAge NetPower 2000-09 viewer metadata probe — R1
+StoneAge NetPower 2000-09 viewer metadata probe — R2
 SOURCE|https://www.gamemeca.com/magazine/index.php?mgz=netpower&ym=2000_9
 SCOPE|url-and-viewer-metadata-only|no-magazine-image-bytes
 HTML_BYTES|7623
+MOBILE_HTML_BYTES|24546
+VIEWER_JS_BYTES|13384
 COUNT|attribute_urls|33
 ATTR|https://cdn.gamemeca.com/design/magazine/css/common.css?v=260919
 ATTR|https://cdn.gamemeca.com/design/magazine/images/btn_top.jpg
@@ -66,3 +68,226 @@ LITERAL|magazine_netpower_2000_9
 LITERAL|netpower
 LITERAL|page_list
 LITERAL|state_netpower
+DESKTOP_CONTEXT|<link href="https://cdn.gamemeca.com/g17/images/icon/gamemeca_16x16.ico" rel="shortcut icon" />
+DESKTOP_CONTEXT|<link rel="apple-touch-icon-precomposed" href="https://cdn.gamemeca.com/g17/images/icon/gamemeca_120x120.png" />
+DESKTOP_CONTEXT|<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://cdn.gamemeca.com/g17/images/icon/gamemeca_180x180.png" />
+DESKTOP_CONTEXT|<meta property="me2:image" content="https://cdn.gamemeca.com/magazine/netpower/2000/2000_9/2000_9.jpg"/>
+DESKTOP_CONTEXT|<meta property="og:url" content="https://www.gamemeca.com/magazine/?mgz=netpower&ym=2000_9"/>
+DESKTOP_CONTEXT|<meta property="og:image" content="https://cdn.gamemeca.com/magazine/netpower/2000/2000_9/2000_9.jpg"/>
+DESKTOP_CONTEXT|<meta name="twitter:site" content="https://www.gamemeca.com/magazine/?mgz=netpower&ym=2000_9">
+DESKTOP_CONTEXT|<meta name="twitter:image" content="https://cdn.gamemeca.com/magazine/netpower/2000/2000_9/2000_9.jpg">
+DESKTOP_CONTEXT|<link rel="canonical" href="https://www.gamemeca.com/magazine/?mgz=netpower&ym=2000_9" />
+DESKTOP_CONTEXT|<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.gamemeca.com/magazine.php?mgz=netpower&ym=2000_9" />
+DESKTOP_CONTEXT|var YM = "2000_9";
+DESKTOP_CONTEXT|<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2639901077908883" crossorigin="anonymous"></script>
+DESKTOP_CONTEXT|<a href="/"><img src="//cdn.gamemeca.com/g17/images/common/meca_logo_s.gif" /></a>
+DESKTOP_CONTEXT|<li class="menu-mz-img mzMenu01"><a href="?mgz=gamechamp"></a></li>
+DESKTOP_CONTEXT|<li class="menu-mz-img mzMenu02"><a href="?mgz=pcchamp"></a></li>
+DESKTOP_CONTEXT|<li class="menu-mz-img mzMenu03 on"><a href="?mgz=netpower"></a></li>
+DESKTOP_CONTEXT|<li class="menu-mz-img mzMenu04"><a href="?mgz=mecazine"></a></li>
+DESKTOP_CONTEXT|<li class="menu-mz-img mzMenu05"><a href="?mgz=cartoon"></a></li>
+DESKTOP_CONTEXT|<span><img src="https://cdn.gamemeca.com/design/magazine/images/gs_text.jpg" /></span>
+DESKTOP_CONTEXT|<select class="select_ym">
+DESKTOP_CONTEXT|<a class="moveTop"><img src="https://cdn.gamemeca.com/design/magazine/images/btn_top.jpg" /></a>
+DESKTOP_CONTEXT|<ul class="magazine_list"></ul>
+DESKTOP_CONTEXT|<ul class="page_list"></ul>
+DESKTOP_CONTEXT|var comment = commentRun("magazine_netpower_2000_9", jQuery("#wrapper .magazineComment"), "넷파워 - 2000년 9월호", "/magazine/index.php?mgz=netpower&ym=2000_9", "");
+MOBILE_CONTEXT|<link href="https://cdn.gamemeca.com/g17/images/icon/gamemeca_16x16.ico" rel="shortcut icon">
+MOBILE_CONTEXT|<link rel="apple-touch-icon-precomposed" href="https://cdn.gamemeca.com/g17/images/icon/gamemeca_120x120.png" />
+MOBILE_CONTEXT|<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://cdn.gamemeca.com/g17/images/icon/gamemeca_180x180.png" />
+MOBILE_CONTEXT|<meta property="og:image" content="https://cdn.gamemeca.com/design/images/sns/sns_logo.png" />
+MOBILE_CONTEXT|<meta property="og:image:width" content="600" />
+MOBILE_CONTEXT|<meta property="og:image:height" content="335" />
+MOBILE_CONTEXT|<meta name="twitter:card" content="summary_large_image" />
+MOBILE_CONTEXT|<meta name="twitter:image" content="https://cdn.gamemeca.com/design/images/sns/sns_logo.png" />
+MOBILE_CONTEXT|<meta name="image" content="https://cdn.gamemeca.com/design/images/sns/sns_logo.png" />
+MOBILE_CONTEXT|<link rel="image_src" href="https://cdn.gamemeca.com/design/images/sns/sns_logo.png" />
+MOBILE_CONTEXT|<link rel="canonical" href="https://www.gamemeca.com/magazine/view.php?mgz=netpower&ym=2000_9" />
+MOBILE_CONTEXT|var startpage = 1;
+MOBILE_CONTEXT|var oldpage = 1;
+MOBILE_CONTEXT|var nowpage = 1;
+MOBILE_CONTEXT|var endpage = 278;
+MOBILE_CONTEXT|var showpage = 1;
+MOBILE_CONTEXT|var swiper_mgz;
+MOBILE_CONTEXT|if(nowpage == 1) { }
+MOBILE_CONTEXT|showPageLists();
+MOBILE_CONTEXT|swiper_mgz = new Swiper("#mgzView", {
+MOBILE_CONTEXT|page = jQuery("#mgzView > .swiper-wrapper > .swiper-slide-active").data("page");
+MOBILE_CONTEXT|jQuery(".thisPage").text(page);
+MOBILE_CONTEXT|nowpage = page;
+MOBILE_CONTEXT|showpage = page;
+MOBILE_CONTEXT|jQuery("#magazine_pages").empty();
+MOBILE_CONTEXT|if(oldpage > nowpage ) { //후진
+MOBILE_CONTEXT|location.href= "magazine.php?mgz=netpower&ym=2000_9&p="+nowpage;
+MOBILE_CONTEXT|}else if(oldpage < nowpage) { //전진
+MOBILE_CONTEXT|oldpage = nowpage;
+MOBILE_CONTEXT|jQuery("#mgz_page_no").val(page);
+MOBILE_CONTEXT|if(nowpage > 1) {
+MOBILE_CONTEXT|swiper_mgz.prependSlide('<div class="swiper-slide" data-page="'+(nowpage-1)+'"><span class="zineIMG"><img src="mgz_img.php?m=b&title=netpower&ym=2000_9&p='+(nowpage-1)+'" /></span></div>');
+MOBILE_CONTEXT|swiper_mgz.prependSlide('<div class="swiper-slide" data-page="1"><span class="zineIMG"><img src="mgz_img.php?m=b&title=netpower&ym=2000_9&p=1" /></span></div>');
+MOBILE_CONTEXT|if(nowpage < endpage) {
+MOBILE_CONTEXT|swiper_mgz.appendSlide('<div class="swiper-slide" data-page="'+(nowpage+1)+'"><span class="zineIMG"><img src="mgz_img.php?m=b&title=netpower&ym=2000_9&p='+(nowpage+1)+'" /></span></div>');
+MOBILE_CONTEXT|swiper_mgz.appendSlide('<div class="swiper-slide" data-page="'+endpage+'"><span class="zineIMG"><img src="mgz_img.php?m=b&title=netpower&ym=2000_9&p='+endpage+'" /></span></div>');
+MOBILE_CONTEXT|$("#mgz_page_no").keyup(function () {
+MOBILE_CONTEXT|$("#mgz_page_no").keydown(function () {
+MOBILE_CONTEXT|$("#mgz_page_no").keypress(function () {
+MOBILE_CONTEXT|function showPageLists() {
+MOBILE_CONTEXT|showpage = parseInt(showpage);
+MOBILE_CONTEXT|for( i = showpage; i <showpage + 10; i++) {
+MOBILE_CONTEXT|if(i >= endpage)continue;
+MOBILE_CONTEXT|html += '<a class="thmblstZine_a" onclick="movePage('+parseInt(i+1)+')">';
+MOBILE_CONTEXT|html += '<span class="thmblst2_mw" style="background: url(mgz_img.php?title=netpower&ym=2000_9&p='+parseInt(i+1)+') no-repeat; background-size: 100% 100%;"><img src="https://cdn.gamemeca.com/g17/mobile/images/main/none_img3.png" width="340" class="thmblst2_m" alt=""></span>';
+MOBILE_CONTEXT|html += '<span class="pageNum">'+parseInt(i+1)+'</span>';
+MOBILE_CONTEXT|showpage = showpage + 10;
+MOBILE_CONTEXT|if(showpage >= endpage) jQuery(".ctmZine").hide();
+MOBILE_CONTEXT|jQuery("#magazine_pages").append(html);
+MOBILE_CONTEXT|//https://cdn.gamemeca.com/g17/mobile/images/main/none_img3.png
+MOBILE_CONTEXT|function movePageButton(move) {
+MOBILE_CONTEXT|page = nowpage+move;
+MOBILE_CONTEXT|movePage(page);
+MOBILE_CONTEXT|function movePageButton2() {
+MOBILE_CONTEXT|page = parseInt(jQuery("#mgz_page_no").val());
+MOBILE_CONTEXT|function movePage(page) {
+MOBILE_CONTEXT|if(page < startpage)page = startpage;
+MOBILE_CONTEXT|if(page > endpage)page = endpage;
+MOBILE_CONTEXT|swiper_mgz.removeAllSlides();
+MOBILE_CONTEXT|movePageAct(page);
+MOBILE_CONTEXT|page = parseInt(page);
+MOBILE_CONTEXT|html = '<div class="swiper-slide" data-page="'+page+'"><span class="zineIMG"><img src="mgz_img.php?m=b&title=netpower&ym=2000_9&p='+page+'"/></span></div>';
+MOBILE_CONTEXT|swiper_mgz.addSlide(0, html);
+MOBILE_CONTEXT|location.href= "magazine.php?mgz=netpower&ym=2000_9&p="+page;
+MOBILE_CONTEXT|function movePageAct(page) {
+MOBILE_CONTEXT|if(jQuery("#mgz_reply").css("display") == "block") {
+MOBILE_CONTEXT|jQuery("#mgz_reply").hide();
+MOBILE_CONTEXT|jQuery("#mgz_reply").show();
+MOBILE_CONTEXT|<a class="prev10" onclick="movePageButton(-10);"><img src="https://cdn.gamemeca.com/design/magazine/images/btn_ppre.gif"></a>
+MOBILE_CONTEXT|<a class="prev" onclick="movePageButton(-1);"><img src="https://cdn.gamemeca.com/design/magazine/images/btn_pre.gif"></a>
+MOBILE_CONTEXT|<p class="txt" href="#"><span class="thisPage" style="color:#6397ED;">1</span> / <span class="endPage">278</span></p>
+MOBILE_CONTEXT|<a class="next" onclick="movePageButton(1);"><img src="https://cdn.gamemeca.com/design/magazine/images/btn_next.gif"></a>
+MOBILE_CONTEXT|<a class="next10" onclick="movePageButton(10);"><img src="https://cdn.gamemeca.com/design/magazine/images/btn_nnext.gif"></a>
+MOBILE_CONTEXT|<input type="text" name="mgz_page_no" id="mgz_page_no" value="1"/><a class="gmSearchBtn" onclick="movePageButton2();">이동</a>
+MOBILE_CONTEXT|<div class="pgclose"><a class="pgcloseBtn" href="/magazine.php?mgz=netpower"></a></div>
+MOBILE_CONTEXT|<img src="https://cdn.gamemeca.com/g17/mobile/images/magazine/pop-info.png"/>
+MOBILE_CONTEXT|<div id="magazineIndex" class="mgz_index">
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('65');">[뉴스] NEWS INSPACE<span>.....65</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('69');">[뉴스] NEWS OUTSPACE<span>.....69</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('73');">[마감특보] 리니지 에피소드 VII<span>.....73</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('79');">[게임특집] 리볼버1774<span>.....79</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('83');">[게임특집] 마법의 대륙2<span>.....83</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('87');">[게임특집] 스톤에이지<span>.....87</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('97');">[기획특집] 디아블로2에서 가장 궁금했던 10가지 비밀<span>.....97</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('105');">[기획특집] 무료 온라인 게임 모음<span>.....105</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('109');">[시사기획] 성인용 온라인 게임의 문제점과 대책<span>.....109</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('113');">[칼럼] 나의 게임, 나의 인생, 나는 그레이엄입니다<span>.....113</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('115');">[프리뷰] 제트리그 3D:홈런 레이스<span>.....115</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('117');">[프리뷰] 미르의 전설2<span>.....117</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('119');">[프리뷰] 리뉴얼<span>.....119</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('121');">[프리뷰] 얌<span>.....121</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('123');">[프리뷰] 사이픽 온라인<span>.....123</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('125');">[리뷰] 리니지<span>.....125</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('147');">[리뷰] 판타지 포 유<span>.....147</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('153');">[리뷰] 레드문<span>.....153</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('159');">[업체탐방] JC엔터테인먼트에 가다<span>.....159</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('163');">[리뷰] 드래곤라자 온라인<span>.....163</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('170');">[리뷰] 천년<span>.....170</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('174');">[리뷰] 헬브레스<span>.....174</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('178');">[리뷰] 영웅문<span>.....178</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('182');">[리뷰] 포트리스2<span>.....182</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('186');">[리뷰] 다크세이버<span>.....186</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('192');">[리뷰] 어둠의 전설<span>.....192</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('200');">[리뷰] 바람의 나라<span>.....200</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('226');">[리뷰] 그라운드 컨트롤<span>.....226</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('228');">[리뷰] 아이스 윈드 데일<span>.....228</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('230');">[리뷰] 디아블로2 <span>.....230</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('240');">[기획 ] 게임방 레이다<span>.....240</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('244');">[기획] 이런 게임 한판 어때요?<span>.....244</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('246');">[리뷰] 리니지<span>.....246</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn highlight" onclick="movePage('252');">[리뷰] 어둠의 전설<span>.....252</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('272');">[기획] 도전 네트웍 챔피언<span>.....272</span></a></li>
+MOBILE_CONTEXT|<li><a class="indexBtn" onclick="movePage('276');">[순위] 네티의 게임차트<span>.....276</span></a></li>
+MOBILE_CONTEXT|<div id="mgzView" class="swiper-container" style="width:100%;">
+MOBILE_CONTEXT|<div class="swiper-slide" data-page="1">
+MOBILE_CONTEXT|<img src="mgz_img.php?m=b&title=netpower&ym=2000_9&p=1"/>
+MOBILE_CONTEXT|var checkPage = url +"/login/check.php?callback=?";
+MOBILE_CONTEXT|jQuery.getJSON(checkPage, {"lt":snsType}, function(rs) {
+MOBILE_CONTEXT|comment.acd = "magazine_netpower_2000_9";
+MOBILE_CONTEXT|comment.url = "https://m.gamemeca.com/magazine.php?mgz=netpower&ym=2000_9";
+MOBILE_CONTEXT|<div id="mgz_reply" style="display:none;">
+MOBILE_CONTEXT|<ul id="magazine_pages" class="thmblst2_u">
+MOBILE_CONTEXT|<li class="ctm2_l"><button type="button" class="btn_default" onclick="showPageLists()">더보기+</button></li>
+JS_CONTEXT|var pageList = {};
+JS_CONTEXT|if(YM==v) option.attr("selected", true);
+JS_CONTEXT|jQuery(".select_ym").append(option);
+JS_CONTEXT|if(YM != "") {
+JS_CONTEXT|pageList.check = 1;
+JS_CONTEXT|pageList = booksList.open_books[YM];
+JS_CONTEXT|pageList.check = 0;
+JS_CONTEXT|jQuery(".viewTitle").html('<a href="/magazine/index.php?mgz='+MAGAZINE+'">'+booksList.name+'</a> > <a href="/magazine/?mgz='+MAGAZINE+'&ym='+YM+'">'+pageList.name+'</a>');
+JS_CONTEXT|pagePrint();
+JS_CONTEXT|jQuery(".select_ym").on("change", function() {
+JS_CONTEXT|location.href = "?mgz=" + MAGAZINE + "&ym="+jQuery(this).children(":selected").attr("value");
+JS_CONTEXT|jQuery(".magazine_list").on("click", "a.viewList", function() {
+JS_CONTEXT|var ym = jQuery(this).attr("data-ym");
+JS_CONTEXT|if(!ym) return false;
+JS_CONTEXT|location.href = "?mgz="+MAGAZINE+"&ym="+ym;
+JS_CONTEXT|jQuery(".page_list").on("click", "a.viewPage", function() {
+JS_CONTEXT|//view(jQuery(this).data("page"));
+JS_CONTEXT|movePage("up");
+JS_CONTEXT|movePage("down");
+JS_CONTEXT|if(code == 39) view(pageList.thisPage+1);
+JS_CONTEXT|else if(code == 37) view(pageList.thisPage-1);
+JS_CONTEXT|if(pageList.thisPage == pageList.page_end) return false;
+JS_CONTEXT|location.href = "?mgz="+MAGAZINE+"&ym="+YM+"&p="+(pageList.thisPage+1);
+JS_CONTEXT|//view(pageList.thisPage+1);
+JS_CONTEXT|if((pageList.thisPage+10) >= pageList.page_end) {
+JS_CONTEXT|location.href = "?mgz="+MAGAZINE+"&ym="+YM+"&p="+(pageList.page_end);
+JS_CONTEXT|location.href = "?mgz="+MAGAZINE+"&ym="+YM+"&p="+(pageList.thisPage+10);
+JS_CONTEXT|//view(pageList.thisPage+10);
+JS_CONTEXT|if((pageList.thisPage-10) <= 1) {
+JS_CONTEXT|location.href = "?mgz="+MAGAZINE+"&ym="+YM+"&p=1";
+JS_CONTEXT|location.href = "?mgz="+MAGAZINE+"&ym="+YM+"&p="+(pageList.thisPage-10);
+JS_CONTEXT|//view(pageList.thisPage-10);
+JS_CONTEXT|if(pageList.thisPage == 1) return false;
+JS_CONTEXT|location.href = "?mgz="+MAGAZINE+"&ym="+YM+"&p="+(pageList.thisPage-1);
+JS_CONTEXT|//view(pageList.thisPage-1);
+JS_CONTEXT|location.href = "?mgz="+MAGAZINE+"&ym="+YM+"&p="+jQuery("#containerVom input[name='gmSearchText']").val();
+JS_CONTEXT|//location.href = "view.php?mgz="+MAGAZINE+"&ym="+YM+"&p="+jQuery(this).attr("data-page");
+JS_CONTEXT|//view(jQuery(this).attr("data-page"));
+JS_CONTEXT|var cover_a = jQuery("<a>").addClass("viewList").attr("data-ym", i).attr("data-tooltip-title", v.name);
+JS_CONTEXT|var cover_img = jQuery("<img>").attr("src", "file.php?title="+MAGAZINE+"&ym="+i);
+JS_CONTEXT|jQuery(".magazine_list").append(cover_li.append(cover_a.append(cover_img)));
+JS_CONTEXT|var pagePrint = function() {
+JS_CONTEXT|pageList.data = [];
+JS_CONTEXT|for(i=1; i<=pageList.page_end;i++) {
+JS_CONTEXT|pageList.data[i] = "file.php?m=b&title="+MAGAZINE+"&ym="+YM+"&p="+i;
+JS_CONTEXT|var cover_a = jQuery("<a>").addClass("viewPage").data("page", i);
+JS_CONTEXT|var cover_num = jQuery("<span>").addClass("pageNum").text(i);
+JS_CONTEXT|cover_a.attr("href", "view.php?mgz="+MAGAZINE+"&ym="+YM+"&p="+i);
+JS_CONTEXT|cover_img = cover_img.attr("src-data", "file.php?title="+MAGAZINE+"&ym="+YM+"&p="+i);
+JS_CONTEXT|cover_img = cover_img.attr("src", "file.php?title="+MAGAZINE+"&ym="+YM+"&p="+i);
+JS_CONTEXT|jQuery(".page_list").append(cover_li.append(cover_a.append(cover_img).append(cover_num)));
+JS_CONTEXT|if(p > pageList.page_end) return false;
+JS_CONTEXT|if(pageList.page_free < p && pageList.check == 1) {
+JS_CONTEXT|jQuery.getJSON("payment.php?m=payment&mc="+MAGAZINE+"&ym="+YM+"&title="+encodeURIComponent(booksList.name+" "+pageList.name), function(rs) {
+JS_CONTEXT|pageList.thisPage = parseInt(p);
+JS_CONTEXT|jQuery("#main2 div.page div.img").empty().append(jQuery("<img>").attr("src", pageList.data[p]));
+JS_CONTEXT|jQuery("#main2 div.magazinePage div.page").css("top", 0);
+JS_CONTEXT|jQuery("#containerVom .thisPage").text(pageList.thisPage);
+JS_CONTEXT|jQuery("#containerVom input[name='gmSearchText']").val(pageList.thisPage);
+JS_CONTEXT|jQuery("#containerVom .endPage").text(pageList.page_end);
+JS_CONTEXT|jQuery.getJSON("load.php?path="+MAGAZINE+"&book="+YM, function(rs) {
+JS_CONTEXT|var span = jQuery("<span>").text("....."+v.page);
+JS_CONTEXT|var title = jQuery("<a>").text(v.title).addClass("indexBtn").attr("data-page", v.page);
+JS_CONTEXT|title.attr("href", "view.php?mgz="+MAGAZINE+"&ym="+YM+"&p="+v.page).attr("target", "_blank");
+JS_CONTEXT|var movePage = function(o) {
+JS_CONTEXT|var imgTop = parseInt(jQuery("#main2 div.magazinePage div.page").css("top"));
+JS_CONTEXT|var imgHeight = parseInt(jQuery("#main2 div.magazinePage div.page").css("height"));
+JS_CONTEXT|var pageHeight = parseInt(jQuery("#main2 div.magazinePage").css("height"));
+JS_CONTEXT|jQuery("#main2 div.magazinePage div.page").css("top", "+=50");
+JS_CONTEXT|if(pageHeight >= (imgTop+imgHeight)) {
+JS_CONTEXT|jQuery("#main2 div.magazinePage div.page").css("top", pageHeight-imgHeight);
+JS_CONTEXT|jQuery("#main2 div.magazinePage div.page").css("top", "-=50");
+JS_CONTEXT|comment.homePage = "//www.gamemeca.com/";
+JS_CONTEXT|comment.jsonPage = "//www.gamemeca.com/_comment/json.php?callback=?";
+JS_CONTEXT|comment.checkPage = "//www.gamemeca.com/login/check.php?callback=?";
+JS_CONTEXT|jQuery(this).attr("href", "view.php?mgz="+MAGAZINE+"&ym="+YM+"&p="+cidp).attr("target", "_blank");
