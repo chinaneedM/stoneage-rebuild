@@ -278,6 +278,7 @@ def callback_cfg_probe(data, base, sections, imports, callback_va):
     api = collections.Counter()
     direct = collections.Counter()
     globals_seen = collections.Counter()
+    data_events = []
     block_count = 0
     while queue and block_count < 48 and len(visited_ins) < 600:
         start = queue.pop(0)
@@ -299,6 +300,8 @@ def callback_cfg_probe(data, base, sections, imports, callback_va):
             for value in referenced_absolute_values(ins):
                 if section_name_for_va(base, sections, value) == ".data":
                     globals_seen[value] += 1
+                    write = assignment_details(ins, value, base, sections) is not None
+                    data_events.append((ins.address, value, ins.mnemonic, write, operand_summary(ins, base, sections)))
             if ins.mnemonic == "call":
                 for op in ins.operands:
                     if op.type == X86_OP_IMM:
@@ -326,6 +329,7 @@ def callback_cfg_probe(data, base, sections, imports, callback_va):
         "api": api,
         "direct": direct,
         "globals": globals_seen,
+        "data_events": data_events,
     }
 
 
@@ -494,6 +498,12 @@ def main():
                 print(
                     f"INIT_CALLBACK_GLOBAL|callback_rva=0x{cb_va-base:x}|"
                     f"global_rva=0x{global_va-base:x}|refs={count}"
+                )
+            for ins_va, global_va, mnemonic, write, ops in cfg["data_events"]:
+                print(
+                    f"INIT_CALLBACK_DATA_REF|callback_rva=0x{cb_va-base:x}|"
+                    f"instruction_rva=0x{ins_va-base:x}|global_rva=0x{global_va-base:x}|"
+                    f"mnemonic={clean(mnemonic)}|write={int(write)}|ops={clean(ops)}"
                 )
             for (dll, name), count in sorted(cfg["api"].items(), key=lambda x:(x[0][0].lower(),x[0][1].lower())):
                 print(
