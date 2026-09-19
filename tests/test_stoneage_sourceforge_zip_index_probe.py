@@ -15,7 +15,7 @@ class SourceForgeZipIndexProbeTests(unittest.TestCase):
     def make_zip(self):
         out = io.BytesIO()
         with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as zf:
-            zf.writestr("StoneAge/stoneage.exe", b"MZ" + b"\\0" * 64)
+            zf.writestr("StoneAge/stoneage.exe", b"MZ" + b"\0" * 64)
             zf.writestr("StoneAge/data/real.bin", b"data")
             zf.writestr("launcher/custom_launcher.exe", b"MZ")
         return out.getvalue()
@@ -49,7 +49,8 @@ class SourceForgeZipIndexProbeTests(unittest.TestCase):
         self.assertEqual(classify("launcher/custom_launcher.exe"), "contamination-marker")
 
     def test_reject_multi_disk_eocd(self):
-        eocd = struct.pack("<4s4H2LH", b"PK\\x05\\x06", 1, 0, 0, 0, 0, 0, 0)
+        # Minimal EOCD with disk_number=1.
+        eocd = struct.pack("<4s4H2LH", b"PK\x05\x06", 1, 0, 0, 0, 0, 0, 0)
         with self.assertRaisesRegex(ValueError, "multi-disk"):
             parse_eocd_tail(eocd, len(eocd))
 

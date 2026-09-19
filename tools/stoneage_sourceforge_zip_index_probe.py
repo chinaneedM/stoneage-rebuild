@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Metadata-only probe of the current SourceForge stoneage ZIP files.
+"""Metadata-only probe of the current SourceForge ``stoneage`` ZIP files.
 
-The probe never downloads archive members. It requests one byte to learn the
+The probe never downloads archive members.  It requests one byte to learn the
 remote object length, then only the ZIP tail and central-directory byte range.
 If a server ignores Range, the response is rejected before its body is read.
 """
@@ -30,23 +30,23 @@ MAX_CENTRAL_DIRECTORY = 16 * 1024 * 1024
 MAX_SAMPLE = 30
 MAX_HITS = 250
 
-EOCD_SIG = b"PK\\x05\\x06"
-CENTRAL_SIG = b"PK\\x01\\x02"
+EOCD_SIG = b"PK\x05\x06"
+CENTRAL_SIG = b"PK\x01\x02"
 
 EXACT_TARGET = re.compile(
     r"(?i)(?:^|[/\\])(?:"
-    r"onlstoneage\\.zip|stone_demo\\.exe|sa_demo\\.exe|stoneagebeta\\.zip|"
-    r"stoneage\\.exe|sa\\.exe|stoneage\\.zip"
+    r"onlstoneage\.zip|stone_demo\.exe|sa_demo\.exe|stoneagebeta\.zip|"
+    r"stoneage\.exe|sa\.exe|stoneage\.zip"
     r")$"
 )
 ARCHAEOLOGY = re.compile(
-    r"(?i)(stone\\s*age|stoneage|스톤에이지|"
-    r"(?:^|[/\\])real\\.bin$|(?:^|[/\\])adrn[^/\\]*\\.bin$|"
-    r"(?:^|[/\\])[^/\\]+\\.spr$)"
+    r"(?i)(stone\s*age|stoneage|스톤에이지|"
+    r"(?:^|[/\\])real\.bin$|(?:^|[/\\])adrn[^/\\]*\.bin$|"
+    r"(?:^|[/\\])[^/\\]+\.spr$)"
 )
 CONTAMINATION = re.compile(
     r"(?i)(launcher|patcher|private|server[_-]?(?:list|ip|config)|"
-    r"(?:^|[/\\])ip\\.txt$|(?:^|[/\\])sa_[^/\\]*\\.exe$)"
+    r"(?:^|[/\\])ip\.txt$|(?:^|[/\\])sa_[^/\\]*\.exe$)"
 )
 
 
@@ -63,7 +63,7 @@ class CentralEntry:
 
 def clean(value, limit=900):
     text = " ".join(str(value if value is not None else "").split())
-    return "".join(ch for ch in text if ch >= " " and ch != "\\x7f").replace("|", "%7C")[:limit]
+    return "".join(ch for ch in text if ch >= " " and ch != "\x7f").replace("|", "%7C")[:limit]
 
 
 def candidate_urls(name):
@@ -95,7 +95,7 @@ def _open_range(url, start, end, timeout=25):
 def discover_size(url, timeout=25):
     with _open_range(url, 0, 0, timeout) as response:
         content_range = response.headers.get("Content-Range", "")
-        match = re.fullmatch(r"bytes\\s+0-0/(\\d+)", content_range.strip(), re.I)
+        match = re.fullmatch(r"bytes\s+0-0/(\d+)", content_range.strip(), re.I)
         if not match:
             raise RuntimeError(f"unexpected-content-range {content_range!r}")
         total = int(match.group(1))
@@ -133,11 +133,11 @@ def parse_eocd_tail(tail, total_size):
     if sig != EOCD_SIG:
         raise ValueError("bad EOCD signature")
     if pos + 22 + comment_length > len(tail):
-        raise ValueError("truncated EOCD comment")
+        raise ValueError "truncated EOCD comment")
     if disk_number != 0 or central_disk != 0 or disk_entries != total_entries:
         raise ValueError("multi-disk ZIP unsupported")
     if total_entries == 0xFFFF or central_size == 0xFFFFFFFF or central_offset == 0xFFFFFFFF:
-        raise ValueError("ZIP64 central directory unsupported")
+        raise ValueError "ZIP64 central directory unsupported")
     if central_size > MAX_CENTRAL_DIRECTORY:
         raise ValueError(f"central directory too large: {central_size}")
     if central_offset + central_size > total_size:
@@ -158,7 +158,7 @@ def decode_name(raw, flags):
             text = raw.decode(encoding)
         except UnicodeDecodeError:
             continue
-        if any("\\uac00" <= ch <= "\\ud7a3" for ch in text):
+        if any("\uac00" <= ch <= "\ud7a3" for ch in text):
             return text
     return raw.decode("cp437", "replace")
 
