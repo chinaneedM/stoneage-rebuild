@@ -14,6 +14,9 @@ PAGES=[
     ("root","20001018214759","http://pds.hananet.net:80/"),
     ("index2","20001018214759","http://pds.hananet.net:80/index2.html"),
     ("topfrm","20001018214759","http://pds.hananet.net:80/topfrm.html"),
+    ("nav","20001018214759","http://pds.hananet.net:80/nav.html"),
+    ("top","20001018214759","http://pds.hananet.net:80/top.asp"),
+    ("content","20001018214759","http://pds.hananet.net:80/content.html"),
 ]
 PATH_RE=re.compile(r"""(?ix)(?:https?://[a-z0-9._:/?&=%#~-]{4,}|[a-z0-9_./?-]{2,}\.(?:html?|asp|cgi|php|js)(?:\?[a-z0-9_=&%.-]+)?)""")
 WAYBACK_PREFIX=re.compile(r"^https?://web\.archive\.org/web/\d+(?:[a-z_]+)?/",re.I)
