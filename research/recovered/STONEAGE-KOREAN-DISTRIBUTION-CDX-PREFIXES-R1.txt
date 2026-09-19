@@ -2,7 +2,7 @@ StoneAge Korean distribution-directory Wayback CDX enumeration — R1
 SCOPE|cdx-metadata-only|no-archived-payload-download
 WINDOW|from=2000|to=2002
 PREFIX|label=hananet-down|url=http://stoneage.hananet.net/down/|status=ok|rows=0|relevant=0
-PREFIX|label=hananet-down-www|url=http://www.stoneage.hananet.net/down/|status=ok|rows=0|relevant=0
+PREFIX|label=hananet-down-www|url=http://www.stoneage.hananet.net/down/|status=error|rows=0|relevant=0
 PREFIX|label=cnet-online|url=http://korea.cnet.com/pc/games/online/|status=ok|rows=0|relevant=0
 PREFIX|label=cnet-online-www|url=http://www.korea.cnet.com/pc/games/online/|status=ok|rows=0|relevant=0
 PREFIX|label=gagamel-webdata|url=http://www.gagamel.com/web_data/download/|status=ok|rows=5|relevant=5
@@ -12,13 +12,16 @@ PREFIX|label=gametime-data-bare|url=http://gametime.co.kr/data/|status=ok|rows=1
 PREFIX|label=gametime-webzine|url=http://www.gametime.co.kr/webzine/online/|status=ok|rows=26|relevant=16
 PREFIX|label=gametime-webzine-bare|url=http://gametime.co.kr/webzine/online/|status=ok|rows=26|relevant=16
 PREFIX|label=gametime-pds|url=http://pds.gametime.co.kr/|status=ok|rows=11|relevant=2
+PREFIX|label=gametime-image-pds|url=http://www.gametime.co.kr/images/Online/pds/2001/02/|status=ok|rows=0|relevant=0
+PREFIX|label=gametime-image-pds-bare|url=http://gametime.co.kr/images/Online/pds/2001/02/|status=ok|rows=0|relevant=0
 PREFIX|label=inium-root-download|url=http://stoneage.enium.co.kr/down|status=ok|rows=23|relevant=3
 PREFIX|label=inium-root-download-www|url=http://www.stoneage.enium.co.kr/down|status=ok|rows=23|relevant=3
-COUNT|queries|13
-COUNT|errors|0
+COUNT|queries|15
+COUNT|errors|1
 COUNT|rows|373
 COUNT|relevant_rows|184
 COUNT|unique_urls|192
+ERROR|label=hananet-down-www|url=http://www.stoneage.hananet.net/down/|kind=URLError|message=<urlopen error timed out>
 HIT|label=gagamel-webdata|timestamp=20010517061712|url=http://www.gagamel.com:80/web_data/download/JL2Patch.exe|mime=application/octet-stream|status=200|digest=Q3722PCSBYOFFGJNY5YOLMNHTOFXN3IF|length=139502
 HIT|label=gagamel-webdata|timestamp=20011030214205|url=http://www.gagamel.com:80/web_data/download/JL2Patch_20011004.exe|mime=application/octet-stream|status=200|digest=VJ3I4MBRPCZXAFXNL4C5TVFKLCP2LA72|length=134657
 HIT|label=gagamel-webdata|timestamp=20011105104802|url=http://www.gagamel.com:80/web_data/download/JetG2_HomerunRace.exe|mime=application/octet-stream|status=200|digest=OMRX64CIOWV5ZFZSKOEUISDHUPVIJWXA|length=12093710
