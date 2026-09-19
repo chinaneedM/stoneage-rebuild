@@ -5,6 +5,7 @@ Stores no magazine image bytes or article text; only URL/attribute/path tokens
 needed to locate historically relevant scan pages.
 """
 
+import hashlib
 import html
 import re
 import urllib.parse
@@ -19,6 +20,21 @@ def fetch(url):
     req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept-Language":"ko,en;q=0.8"})
     with urllib.request.urlopen(req,timeout=30) as r:
         return r.read().decode("utf-8","replace")
+
+def page_meta(page):
+    url=f"https://m.gamemeca.com/mgz_img.php?m=b&title=netpower&ym=2000_9&p={page}"
+    req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"image/*"})
+    with urllib.request.urlopen(req,timeout=30) as resp:
+        data=resp.read()
+        return {
+            "page": page,
+            "request": url,
+            "final": resp.geturl(),
+            "status": getattr(resp,"status",200),
+            "type": resp.headers.get("Content-Type",""),
+            "length": len(data),
+            "sha256": hashlib.sha256(data).hexdigest(),
+        }
 
 def clean(s):
     s=html.unescape(s)
@@ -77,6 +93,25 @@ def main():
     emit_context("DESKTOP_CONTEXT",body)
     emit_context("MOBILE_CONTEXT",mobile)
     emit_context("JS_CONTEXT",js)
+
+    for page in range(87,97):
+        try:
+            meta=page_meta(page)
+            print(
+                "PAGE_META|"
+                + "|".join(
+                    [
+                        f"page={meta['page']}",
+                        f"status={meta['status']}",
+                        f"type={clean(meta['type'])}",
+                        f"bytes={meta['length']}",
+                        f"sha256={meta['sha256']}",
+                        f"final={clean(meta['final'])}",
+                    ]
+                )
+            )
+        except Exception as exc:
+            print(f"PAGE_ERROR|page={page}|{type(exc).__name__}|{clean(str(exc))}")
 
 if __name__=="__main__":
     main()
