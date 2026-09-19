@@ -25,6 +25,12 @@ URLS = [
     "http://www.stoneage.enium.co.kr/main.swf",
 ]
 DATES = ["20001109", "20001201", "20010201", "20010401"]
+DIRECT_CANDIDATES = [
+    ("20001109153100", "http://stoneage.enium.co.kr:80/main.swf"),
+    ("20001109153100", "http://www.stoneage.enium.co.kr:80/main.swf"),
+    ("20010201072800", "http://stoneage.enium.co.kr:80/main.swf"),
+    ("20010201072800", "http://www.stoneage.enium.co.kr:80/main.swf"),
+]
 
 ASCII_TOKEN = re.compile(
     rb"""(?ix)
@@ -122,11 +128,20 @@ def main():
     print(f"COUNT|availability_errors|{len(errors)}")
     print(f"COUNT|unique_snapshots|{len(hits)}")
 
+    candidates = set((ts, original) for ts, original in DIRECT_CANDIDATES)
+    candidates.update((ts, original) for ts, original in hits)
     all_tokens = set()
-    for (ts, original), (status, archived) in sorted(hits.items()):
-        print(
-            f"SNAPSHOT|timestamp={ts}|status={safe(status)}|original={safe(original)}|archived={safe(archived)}"
-        )
+    print(f"COUNT|direct_or_available_candidates|{len(candidates)}")
+    for ts, original in sorted(candidates):
+        if (ts, original) in hits:
+            status, archived = hits[(ts, original)]
+            print(
+                f"SNAPSHOT|timestamp={ts}|status={safe(status)}|original={safe(original)}|archived={safe(archived)}"
+            )
+        else:
+            print(
+                f"DIRECT_CANDIDATE|timestamp={ts}|original={safe(original)}|source=root_snapshot_reference"
+            )
         try:
             data = request(id_url(ts, original), timeout=15)
             sig, version, declared, unpacked = unpack_swf(data)
