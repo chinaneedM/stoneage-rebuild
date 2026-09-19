@@ -13,9 +13,9 @@ import re
 from tools.stoneage_netpower_remote_iso_scan import clean, metadata, scan_one
 
 IDENTIFIER="GAMEPIA_cd_dump"
-ISSUE=re.compile(r"(?i)(?:^|/)No\.(?:58|59|60|61|62|63|64|65|66|67|68|69)(?:/|$)")
+ISSUE=re.compile(r"(?i)(?:^|/)No\.(?:58|59|60|61|62|63|64|65|66|67|68|69|70|71|72|73|74)(?:/|$)")
 IMAGE=re.compile(r"(?i)\.(?:iso|img|bin|mdf)$")
-MAX_IMAGES=24
+MAX_IMAGES=40
 
 
 def selected_name(name):
@@ -44,7 +44,7 @@ def select_files(data):
 def main():
     print("StoneAge GamePia transition-window directory scan — R1")
     print("SCOPE|http-range-directory-metadata-only|no-full-image-download|no-carrier-bytes-committed")
-    print("WINDOW|legacy-issues=No.58..No.69|sequence-selected-from-public-corpus")
+    print("WINDOW|legacy-issues=No.58..No.74|through-2001-12-public-corpus")
     data=metadata(IDENTIFIER)
     doc=data.get("metadata",{})
     rows=select_files(data)
