@@ -83,7 +83,27 @@ Korea Economic Daily, 2000-04-27:
 - identifies its game-content surface as `http://game.hananet.net`;
 - describes the GamePlus online-game service launching in 2000.
 
-This corroborates the portal family named in the December StoneAge article, but does **not** yet identify StoneAge's exact historical Hananet page or download URL.
+This corroborates the portal family named in the December StoneAge article. Archive recovery has now resolved a concrete StoneAge-specific GamePlus path chain:
+
+- a preserved 2001-01-18 GamePlus main page contains **`[게임Plus]스톤에이지 게임Plus 신규 오픈`**;
+- that entry points to `/gamenet/sitemap/map/mapstoneage.html`;
+- the sitemap page frames `/gamenet/newframe/frstoneage.html`;
+- that frame in turn loads both `/gamenet/newframe/contents/stoneage.html` and the dedicated host **`http://stoneage.hananet.net/main.htm`**;
+- the dedicated homepage is preserved and exposes menu paths `1.htm`, `2.htm`, `2_2.htm`, `2_3.htm`, `2_4.htm`, and `2_5.htm`, while also linking back to `http://stoneage.enium.co.kr`.
+
+The dedicated site's `1.htm` is already recovered from the 2001-01-18 snapshot and contains StoneAge descriptive text. Wayback Availability independently confirms later archived snapshots for:
+
+- `2.htm` — 2001-02-26 18:54:48;
+- `2_2.htm` — 2001-02-26 18:25:09;
+- `2_3.htm` — 2001-01-26 16:01:00;
+- `2_4.htm` — 2001-01-23 22:30:00.
+
+The current task is to extract those exact menu pages for download/install targets. `2_5.htm` remains unresolved because Availability requests were rate-limited; this is not evidence that the page was never archived.
+
+Derived evidence:
+
+- `research/recovered/STONEAGE-HANANET-FRAME-PATHS-R1.txt`;
+- `research/recovered/STONEAGE-HANANET-MENU-AVAILABILITY-R1.txt`.
 
 ### 4a. Exact historical download-root narrowing
 
@@ -313,6 +333,18 @@ Highest-value exact search surfaces now are:
 - preservation communities holding pre-Netmarble Inium installations.
 
 Search must prioritize **filename/path recovery** over more general history articles. Once a plausible filename or original mirror URL appears, search by that exact token across archives and mirrors.
+
+## Inium archived-root resource boundary
+
+The preserved Inium root snapshot explicitly embeds **`main.swf`**, making that SWF a concrete historical site-resource path. However:
+
+- Wayback Availability returns zero snapshots for both bare and `www` `main.swf` URL variants across the tested 2000-2001 dates;
+- direct replay at the known root-page timestamps **2000-11-09 15:31:00** and **2001-02-01 07:28:00** returns HTTP 404 for both host variants;
+- no SWF bytes or embedded download tokens were recovered.
+
+Therefore the root HTML proves the historical `main.swf` reference, but the SWF itself is currently **unrecovered** and should not be treated as an available archive asset.
+
+Derived evidence: `research/recovered/STONEAGE-INIUM-MAIN-SWF-TOKENS-R1.txt`.
 
 ## Archive-probe interpretation
 
