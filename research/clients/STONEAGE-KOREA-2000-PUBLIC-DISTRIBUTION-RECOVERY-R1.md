@@ -97,6 +97,23 @@ Contemporary independent web references now narrow two of the mass-distribution 
 
 These roots are contemporaneous infrastructure evidence. They still do **not** reveal StoneAge's child URL or installer filename, but they replace the earlier generic `CNET` / `Hananet` search surfaces with precise historical directory roots.
 
+### 4a.1. Exact CNET Korea StoneAge download-record identity recovered
+
+A preserved CNET Korea download-index snapshot dated **2000-11-10** contains a direct StoneAge entry:
+
+- label: `Stoneage(스톤에이지)`;
+- detail path: `/downloads/File.asp?Platform_Id=1&Software_Id=200009263856`;
+- exact record identifier: **`Software_Id=200009263856`**.
+
+A second preserved CNET Korea snapshot dated **2001-01-24** independently lists the same record ID as `스톤에이지(Stoneage)`, confirming that the identifier is stable across at least those two archived index states.
+
+This is the project's first exact child-record identity for one of the named 2000 mass-distribution portals. It upgrades the CNET branch from root-level evidence to a concrete historical software record. The direct payload filename, file size, version and binary bytes are still unresolved and are now being pursued from this exact record.
+
+Derived evidence:
+
+- `research/recovered/STONEAGE-KOREA-2000-WAYBACK-AVAILABLE-R1.txt`;
+- `research/recovered/STONEAGE-KOREA-2000-WAYBACK-SNAPSHOT-LINKS-R1.txt`.
+
 ### 4b. NetPower September/November 2000 scan corroboration
 
 GameMeca's public NetPower scan viewer supplies near-period page images that were probed with transient OCR; only sparse Latin recovery tokens were committed.
