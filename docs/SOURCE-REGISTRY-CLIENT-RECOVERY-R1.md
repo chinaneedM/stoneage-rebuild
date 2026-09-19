@@ -108,6 +108,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - Inium later grouped `GW_IDX=9` with formal-version mirrors, so the project must not assume the payload remained unchanged from the 2000-10-11 Beta listing. The stable record identity and payload identity are separate questions.
 - Derived evidence:
   - `research/recovered/STONEAGE-GAMETIME-LEGACY-WEBZINE-R1.txt`
+- Long-window Wayback boundary: a zero-error **2000–2012** exact-CDX pass over 8 scheme/host/`:80` variants finds **0 rows for every `onlStoneAge.zip` variant**. The same pass resolves all `stone_demo.exe` variants to one canonical **2003-04-26 HTTP 404** capture, proving only that the trial path was dead by then.
 - Status: **TARGET-A — historical record identity and migrated payload filename/path resolved (`onlStoneAge.zip`); payload bytes/build identity unresolved.**
 
 ## TARGET-A/B — GameTime StoneAge data-center records — 2000/2001
@@ -144,6 +145,21 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - `research/recovered/STONEAGE-GAMETIME-2001-RECORD-RESOLUTION-R1.txt`
   - `research/recovered/STONEAGE-GAMETIME-ONLINE-INDEX-R1.txt`
 - Status: **TARGET-A/B — trial client and manual-update identities resolved; record-9 historical identity plus migrated payload filename/path (`onlStoneAge.zip`) resolved; record-9 size/version/build/hash/tree and all client bytes still unresolved.**
+
+## TARGET-A/B — Korean Inium retail/package game CD — 2001
+
+- Contemporary distribution evidence:
+  - Electronic Times, 2001-05-04: StoneAge users could buy a **game CD in Yongsan and similar retail locations**, with a **two-month free-use coupon** included — https://www.etnews.com/200104300317
+  - GameMeca, 2001-07-09: Inium's registered StoneAge total explicitly included **package purchasers (`패키지 구입자`)** alongside paid members and trial registrants — https://www.gamemeca.com/view.php?gid=3718
+- Interpretation:
+  - this independently establishes a retail/package StoneAge CD channel in the Korean Inium era;
+  - it is a distinct recovery object from the GameTime Perfect Guide bonus CD unless disc/package evidence proves equality;
+  - exact package publisher/catalog number, disc label, client version/build, installer filename, volume label, filesystem, checksum and relationship to Hananet/CNET/GameTime mirrors remain OPEN.
+- Canonical target record:
+  - `research/clients/STONEAGE-KOREA-2001-RETAIL-GAME-CD-R1.md`
+- Acceptance:
+  - require public provenance, image/file hashes, complete tree, installer metadata and contamination checks before treating any dump as an original clean client.
+- Status: **TARGET-A/B — independently attested physical-media bridge; public bytes not yet recovered.**
 
 ## TARGET-A/B — Korean GameTime StoneAge Perfect Guide bonus CD — 2001
 
@@ -397,11 +413,12 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 
 1. **Korean Inium 2000 public client:** recover the original installer filename/path/bytes through the Inium site, Hananet/GamePlus, CNET and period offline/software archives. It is now the strongest operational early bridge because operator-era free distribution and massive replication are directly attested.
 2. **JSS 1999 beta/retail/launcher:** continue in parallel as the historical origin target; do not lower its evidentiary importance merely because Korean 2000 may be easier to recover.
-3. Recover **GameTime `onlStoneAge.zip`** from the exact migrated payload path `http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip`; archived 302 headers already bind it to `GW_IDX=9`, while legacy `num=9` identifies the historical StoneAge Beta record. Keep the 2001 Perfect Guide bonus CD as a separate near-period installation-media target, but do not repeat closed ISBN/title/union-catalog searches unless new supplementary-disc evidence appears.
-4. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge.
-5. Continue recovery of the **Korean 1.74** exact-version operator-era installer identity/bytes.
-6. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
-7. Treat the recovered mixed 2.5 bundle as a **resource-format bridge only**; do not spend primary recovery effort extending its modified runtime surface while earlier clean-client targets remain open.
+3. Recover **GameTime `onlStoneAge.zip`** from the exact migrated payload path `http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip`; archived 302 headers bind it to `GW_IDX=9`, while legacy `num=9` identifies the historical StoneAge Beta record. The current IA/Wayback/Arquivo metadata routes are exhausted for this exact object; Common Crawl remains service-inconclusive.
+4. Recover the **Korean retail/package StoneAge game CD** independently attested by 2001 Electronic Times and GameMeca reporting; search public disc-preservation/catalog/photo/checksum surfaces and keep it distinct from the GameTime guide bonus CD until media evidence proves equality.
+5. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge.
+6. Continue recovery of the **Korean 1.74** exact-version operator-era installer identity/bytes.
+7. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
+8. Treat the recovered mixed 2.5 bundle as a **resource-format bridge only**; do not spend primary recovery effort extending its modified runtime surface while earlier clean-client targets remain open.
 8. Recover the Sina "1.82" href/bytes only as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
 9. Keep the Wayi official 8.5 package and `NetmarbleStoneAge120` as later controls, not substitutes for an early clean baseline.
 10. For any newly recovered candidate bytes, stop broad searching immediately and perform the clean-client acceptance test plus first full inventory.
