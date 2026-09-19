@@ -66,7 +66,7 @@ def stable_target_names(files):
             if functionset in TARGETS:
                 target_blocks[functionset] += 1
             if name:
-                mapping[name].append(functionset)
+                mapping[name.lower()].append(functionset)
 
     stable = {}
     ambiguous = set()
@@ -103,7 +103,7 @@ def refs(files):
                 if key != b"enemy":
                     continue
                 name, sep, arg = value.partition(b"|")
-                yield name.strip(), arg if sep else b""
+                yield name.strip().lower(), arg if sep else b""
 
 
 def assigned_file(arg):
