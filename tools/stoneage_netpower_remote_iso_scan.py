@@ -123,10 +123,7 @@ class RemoteImage:
         raise last
 
     def sector(self, lba):
-        if self.frame == 2048:
-            return self.raw_range(lba * 2048, 2048)
-        raw = self.raw_range(lba * self.frame + self.data_offset, 2048)
-        return raw
+        return self.raw_range(self.origin + lba * self.frame, 2048)
 
     def extent(self, lba, length):
         chunks = []
@@ -141,10 +138,32 @@ class RemoteImage:
         return b"".join(chunks)
 
 
+def infer_layout_from_probe(probe):
+    """Infer logical-sector stride/origin from consecutive ISO volume descriptors."""
+    starts = []
+    for i in range(1, len(probe) - 6):
+        if probe[i:i+5] != b"CD001" or probe[i+5] != 1:
+            continue
+        dtype = probe[i-1]
+        if dtype in (1, 2, 255):
+            starts.append((i-1, dtype))
+    for idx, (pvd_start, dtype) in enumerate(starts):
+        if dtype != 1:
+            continue
+        for next_start, next_type in starts[idx+1:]:
+            frame = next_start - pvd_start
+            if next_type in (2, 255) and 1800 <= frame <= 3000:
+                origin = pvd_start - 16 * frame
+                if 0 <= origin <= 1024 * 1024:
+                    return frame, origin
+                break
+    return None
+
+
 def detect_layout(identifier, name):
     errors = []
-    for frame, offset, label in ((2048, 0, "iso2048"), (2352, 16, "mode1-2352")):
-        img = RemoteImage(identifier, name, frame, offset)
+    for frame, origin, label in ((2048, 0, "iso2048"), (2352, 16, "mode1-2352")):
+        img = RemoteImage(identifier, name, frame, origin)
         try:
             pvd = img.sector(16)
         except Exception as exc:
@@ -153,6 +172,28 @@ def detect_layout(identifier, name):
         if len(pvd) >= 7 and pvd[0] == 1 and pvd[1:6] == b"CD001" and pvd[6] == 1:
             return img, pvd, label, errors
         errors.append(f"{label}:no-pvd")
+
+    probe_img = RemoteImage(identifier, name)
+    try:
+        probe = probe_img.raw_range(0, 256 * 1024)
+        inferred = infer_layout_from_probe(probe)
+    except Exception as exc:
+        errors.append(f"autodetect:{type(exc).__name__}:{exc}")
+        inferred = None
+    if inferred is not None:
+        frame, origin = inferred
+        label = f"auto-frame-{frame}-origin-{origin}"
+        img = RemoteImage(identifier, name, frame, origin)
+        try:
+            pvd = img.sector(16)
+        except Exception as exc:
+            errors.append(f"{label}:{type(exc).__name__}:{exc}")
+        else:
+            if len(pvd) >= 7 and pvd[0] == 1 and pvd[1:6] == b"CD001" and pvd[6] == 1:
+                return img, pvd, label, errors
+            errors.append(f"{label}:no-pvd")
+    else:
+        errors.append("autodetect:no-layout")
     raise RuntimeError("; ".join(errors))
 
 
