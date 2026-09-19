@@ -21,6 +21,12 @@ class IniumTrialMenuProbeTests(unittest.TestCase):
         self.assertIsNone(
             same_site_page("http://stoneage.enium.co.kr/main_3.htm","images/download.gif")
         )
+        self.assertIsNone(
+            same_site_page(
+                "http://stoneage.enium.co.kr/main_3.htm",
+                "/web/20010413*/http://stoneage.enium.co.kr/main_3.htm",
+            )
+        )
 
     def test_replay_urls_prefer_availability_url_and_deduplicate_fallbacks(self):
         urls=replay_urls(
@@ -28,10 +34,9 @@ class IniumTrialMenuProbeTests(unittest.TestCase):
             "http://stoneage.enium.co.kr/sitemap.htm",
             "http://web.archive.org/web/20010413160331/http://stoneage.enium.co.kr/sitemap.htm",
         )
-        self.assertTrue(urls[0].startswith("https://web.archive.org/"))
-        self.assertIn(
+        self.assertEqual(
+            urls[0],
             "https://web.archive.org/web/20010413160331id_/http://stoneage.enium.co.kr/sitemap.htm",
-            urls,
         )
         self.assertEqual(len(urls),len(set(urls)))
         self.assertGreaterEqual(len(urls),2)
