@@ -48,6 +48,14 @@ DISPATCH_BRANCHES = (
     ("CharList", 0x1A976),
     ("CharLogout", 0x1AA1B),
 )
+DISPATCH_NAME_XREFS = (
+    ("ClientLogin", 0x1A6D5),
+    ("CreateNewChar", 0x1A751),
+    ("CharDelete", 0x1A7F6),
+    ("CharLogin", 0x1A89B),
+    ("CharList", 0x1A940),
+    ("CharLogout", 0x1A9E5),
+)
 MAX_BYTES = 0x800
 MAX_INSNS = 400
 MAX_GLOBAL_XREFS = 64
@@ -279,6 +287,50 @@ def immediate_text_push(ins, base, sections):
     return value if section_name_for_va(base, sections, value) == ".text" else None
 
 
+def file_offset_to_rva_local(sections, file_offset):
+    for sec in sections:
+        if sec["raw"] <= file_offset < sec["raw"] + sec["raw_size"]:
+            return sec["rva"] + (file_offset - sec["raw"])
+    return None
+
+
+def named_string_mov_xrefs(data, base, sections, text):
+    needle = text.encode("ascii") + b"\x00"
+    out = []
+    pos = 0
+    while True:
+        pos = data.find(needle, pos)
+        if pos < 0:
+            break
+        rva = file_offset_to_rva_local(sections, pos)
+        if rva is not None:
+            target_va = base + rva
+            for hit in raw_text_pointer_hits(data, base, sections, target_va):
+                ins = recover_xref_instruction(data, base, sections, hit, target_va)
+                if ins is not None and ins.mnemonic == "mov":
+                    out.append(ins.address)
+        pos += 1
+    return sorted(set(out))
+
+
+def linear_slice_calls(data, base, sections, start_va, end_va):
+    off = rva_to_offset(sections, start_va - base)
+    end_off = rva_to_offset(sections, end_va - base)
+    if off is None or end_off is None or end_off <= off:
+        return [], []
+    insns = list(md().disasm(data[off:end_off], start_va))
+    calls = []
+    for ins in insns:
+        if ins.mnemonic != "call":
+            continue
+        for op in ins.operands:
+            if op.type == X86_OP_IMM:
+                target = int(op.imm) & 0xFFFFFFFF
+                if section_name_for_va(base, sections, target) == ".text":
+                    calls.append((ins.address, target))
+    return insns, calls
+
+
 def callback_cfg_probe(data, base, sections, imports, callback_va):
     queue = [callback_va]
     visited_blocks = set()
@@ -447,6 +499,32 @@ def main():
             print(
                 f"SEND_EVENT|order={order}|kind={kind}|callsite_rva=0x{addr-base:x}{extra}"
             )
+
+        procget_mov = named_string_mov_xrefs(data, base, sections, "ProcGet")
+        print(
+            f"DISPATCH_NEXT_NAME|name=ProcGet|mov_xrefs={len(procget_mov)}|"
+            f"rvas={','.join(f'0x{x-base:x}' for x in procget_mov)}"
+        )
+        slice_entries = list(DISPATCH_NAME_XREFS)
+        slice_ends = [rva for _, rva in slice_entries[1:]]
+        if procget_mov:
+            slice_ends.append(procget_mov[0] - base)
+        else:
+            slice_ends.append(slice_entries[-1][1] + 0xA5)
+        for (protocol_name, start_rva), end_rva in zip(slice_entries, slice_ends):
+            insns, calls = linear_slice_calls(
+                data, base, sections, base + start_rva, base + end_rva
+            )
+            print(
+                f"DISPATCH_SLICE|name={protocol_name}|start_rva=0x{start_rva:x}|"
+                f"end_rva=0x{end_rva:x}|bytes={end_rva-start_rva}|"
+                f"instructions={len(insns)}|direct_calls={len(calls)}"
+            )
+            for order, (callsite, target) in enumerate(calls, 1):
+                print(
+                    f"DISPATCH_SLICE_CALL|name={protocol_name}|order={order}|"
+                    f"callsite_rva=0x{callsite-base:x}|target_rva=0x{target-base:x}"
+                )
 
         print(f"DISPATCH_BRANCHES|count={len(DISPATCH_BRANCHES)}")
         dispatch_target_usage = collections.Counter()
