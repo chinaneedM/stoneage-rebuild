@@ -2,6 +2,7 @@ import json
 import unittest
 
 from tools.stoneage_korean_distribution_cdx_prefix_probe import (
+    TARGETS,
     cdx_url,
     parse_response,
     relevant,
@@ -27,7 +28,12 @@ class KoreanDistributionCdxPrefixProbeTests(unittest.TestCase):
     def test_relevant_prefers_payload_like_tail(self):
         self.assertTrue(relevant({"original":"http://x/down/sa_demo.exe"}))
         self.assertTrue(relevant({"original":"http://x/down/patch101.zip"}))
+        self.assertTrue(relevant({"original":"http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip"}))
         self.assertFalse(relevant({"original":"http://x/down/banner.gif"}))
+
+    def test_gametime_image_pds_prefix_registered(self):
+        urls={url for _,url in TARGETS}
+        self.assertIn("http://www.gametime.co.kr/images/Online/pds/2001/02/",urls)
 
 
 if __name__=="__main__":
