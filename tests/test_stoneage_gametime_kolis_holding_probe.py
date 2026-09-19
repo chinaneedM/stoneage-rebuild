@@ -9,10 +9,9 @@ from tools.stoneage_gametime_kolis_holding_probe import (
 
 class GameTimeKolisHoldingProbeTests(unittest.TestCase):
     def test_edition_key(self):
-        self.assertEqual(
-            edition_key('<a onclick="javascript:fnEdtionList(\'24118251\'); return false;">x</a>'),
-            "24118251",
-        )
+        raw = """function fnEdtionList(ufKey, tab){ var x=1; }
+<a onclick="javascript:fnEdtionList('24118251'); return false;">x</a>"""
+        self.assertEqual(edition_key(raw), "24118251")
 
     def test_search_form_parser(self):
         raw='''<form name="searchParamForm" action="/old">
