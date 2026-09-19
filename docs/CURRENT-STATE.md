@@ -977,9 +977,32 @@ Supplemental source ledgers:
 - **Operational consequence:** the network-handoff subtask is complete. The highest-priority unresolved protocol work is now the six mov-side receive/dispatch branches and their join to incoming `recv`; in parallel, resolve the six `map\\%d.dat` callsites into create/read/write/check roles and connect the map-write path to receive/dispatch.
 - Canonical technical record: `research/clients/STONEAGE-TW10-LSSPROTO-GENERATOR-LINEAGE-R1.md`. Derived xref evidence: `research/recovered/STONEAGE-TW10-EXACT-XREF-R1.txt`.
 
+
+## Taiwan v1.0 receive dispatcher and map-protocol join — 2026-09-19
+
+- A dedicated derived-only binary probe now closes the **incoming Winsock receive -> LSSPROTO string dispatcher** chain in the accepted Taiwan v1.0 runtime. The unique WSOCK32 `recv` business call is at RVA `0x2ea8a`, through thunk `0x48472` to IAT RVA `0x5224c`.
+- The same network path has exactly one direct call to dispatcher root RVA **`0x19730`** at callsite **`0x2eae3`**. Starting from the `recv` call, the direct-call graph reaches `0x19730` at depth 2.
+- `0x19730` is independently fingerprinted as the string-protocol dispatcher: its opening direct calls are `0x1b010`, `0x1b300`, and `0x1afb0`, and its contiguous dispatch region contains exact protocol-name references including `EV`, `EN`, `RS`, and `RD`. This closes the earlier unresolved `recv -> protocol dispatcher` join without relying on descendant source addresses.
+- The six login/character mov-side branches are now structurally resolved:
+  - `ClientLogin` -> final receive callback `0x2f200`
+  - `CreateNewChar` -> `0x31e90`
+  - `CharDelete` -> `0x31f90`
+  - `CharLogin` -> `0x2f530`
+  - `CharList` -> `0x2f320`
+  - `CharLogout` -> `0x2f610`
+  Their shared string-decode/copy pair is `0x1b140 -> 0x1b4c0`. Binary control shape and independently matching descendant semantics identify these as the v1.0 equivalents of `lssproto_demkstr_string` and `lssproto_wrapStringAddr`. The integer decoder is `0x1b120`: the `MC` branch calls it exactly eight times and the `M` branch exactly five times, reproducing their observed integer field counts.
+- The map protocol branches are now exact:
+  - `MC` mov-side dispatch xref at `0x19e2e` -> eight integer decodes + one string decode/copy -> callback **`0x30d20`**.
+  - `M` mov-side dispatch xref at `0x19f54` -> five integer decodes + one string decode/copy -> callback **`0x30ef0`**.
+- The **server map-data -> local map-cache file join is now binary-proven.** `M` callback `0x30ef0` reaches function `0x1da40` at graph depth 3; that function contains exact `map\\%d.dat` xref `0x1da50` and references file modes `rb+`, `wb`, `rb+`, proving a writable/update map-file path. This independently reproduces the role later preserved as the map rectangle write path.
+- `MC` callback `0x30d20` reaches function `0x1dd90` at graph depth 4; that function contains exact `map\\%d.dat` xref `0x1dda0` and references `rb`, `wb`, `rb`, proving a read/check/create-if-missing path. This independently matches the later checksum/read-control role, while the exact historical v1.0 symbolic function name remains unclaimed.
+- Canonical derived evidence: `research/recovered/STONEAGE-TW10-RECEIVE-MAP-JOIN-R1.txt`. Canonical interpretation record: `research/clients/STONEAGE-TW10-RECEIVE-MAP-LINEAGE-R1.md`.
+- **Operational consequence:** the six requested login/character receive branches, their incoming `recv` join, and the `MC/M` map protocol-to-file join are complete. Remaining work in this track is to classify the other four exact `map\\%d.dat` callsites and then move into server-selection/endpoint provenance.
+
+
 ## Immediate next actions
 
-1. **Resolve the six Taiwan v1.0 per-protocol mov-side receive/dispatch branches and the map-cache receive/write join.** Start from `ClientLogin 0x1a70b`, `CreateNewChar 0x1a787`, `CharDelete 0x1a82c`, `CharLogin 0x1a8d1`, `CharList 0x1a976`, and `CharLogout 0x1aa1b`; identify shared decode/dispatch helpers and join them to incoming `recv`. In parallel, distinguish the six exact `map\\%d.dat` callsites into create/read/write/check/automap roles and connect the map-write path to the corresponding receive/dispatch logic.
+1. **Finish classifying the remaining Taiwan v1.0 `map\\%d.dat` paths.** The `M` writable/update path is now joined to xref `0x1da50`, and the `MC` read/check path to `0x1dda0`. Resolve the remaining exact xrefs `0x1d846`, `0x21306`, `0x21721`, and `0x218fe` into create/read/check/automap or other concrete roles, using v1.0 binary behavior first and descendant source only as a control.
 2. **Resolve the Taiwan v1.0 login/server-selection chain beyond the now-confirmed Winsock layer.** Trace how `ClientLogin` / `CharLogin` reach `gethostbyname` / `inet_addr` / `connect`, and identify the source of server host/port data (embedded table, `waei.bin`, config, updater handoff or another path) before asserting endpoint-selection behavior.
 3. **Build deterministic inventories from the accepted client:** maps/battle maps, sprite/animation groups, characters/pets where recoverable client-side, UI/text/audio assets, executable/runtime files and any client-side item/skill/config tables. Explicitly mark server-side data that the client does not contain.
 4. **Use the Taiwan 1.0 baseline as the comparison anchor for future artifact recovery.** Continue targeted JSS 1999 beta/retail recovery and Korean Inium/Hananet/CNET/GameTime exact-token recovery, but no longer let broad archaeology block technical extraction. Any recovered artifact should be diffed against Taiwan 1.0 by hashes, executable structure and resource generations.

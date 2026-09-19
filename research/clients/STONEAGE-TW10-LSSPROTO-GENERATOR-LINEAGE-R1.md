@@ -106,18 +106,22 @@ This exact count/order correspondence is substantially stronger than matching na
 
 ## Receive/dispatch side
 
-The second reference for each protocol name is a `mov` and leads to a distinct small branch:
+The second reference for each protocol name is a `mov` and belongs to the v1.0 string-protocol dispatcher rooted at `0x19730`.
 
-- ClientLogin -> `0x1a70b`
-- CreateNewChar -> `0x1a787`
-- CharDelete -> `0x1a82c`
-- CharLogin -> `0x1a8d1`
-- CharList -> `0x1a976`
-- CharLogout -> `0x1aa1b`
+The six login/character branches are now resolved through their shared decode/copy helpers and terminal callbacks:
 
-This supports a per-protocol dispatch/receive path separate from the common send-side generator.
+- ClientLogin branch -> `0x2f200`
+- CreateNewChar -> `0x31e90`
+- CharDelete -> `0x31f90`
+- CharLogin -> `0x2f530`
+- CharList -> `0x2f320`
+- CharLogout -> `0x2f610`
 
-Exact handler semantics remain to be resolved from parameter extraction and downstream calls.
+Shared receive-side helpers are `0x1b140` (string de-escape/decoder equivalent) and `0x1b4c0` (string-address copy/wrapper equivalent). `0x1b120` is the integer decoder: the independently observed `MC` branch calls it eight times, and `M` five times, matching their field counts.
+
+The incoming network join is also closed: the unique WSOCK32 `recv` business call at `0x2ea8a` occurs in the network path that calls dispatcher root `0x19730` at `0x2eae3`. The dispatcher root itself contains exact early protocol-name cases (`EV`, `EN`, `RS`, `RD`) and leads into the later login and map protocol cases.
+
+Map receive lineage is recorded separately in `research/clients/STONEAGE-TW10-RECEIVE-MAP-LINEAGE-R1.md`.
 
 ## Network handoff boundary
 
@@ -152,8 +156,7 @@ Established directly from Taiwan v1.0 bytes:
 
 Still OPEN:
 
-- exact semantics of the six per-protocol receive/dispatch branches;
-- the incoming `recv` -> protocol dispatcher join;
+- exact symbolic names for a subset of receive-side utility helpers beyond the roles proven by binary structure;
 - exact symbolic names for runtime globals beyond roles proven by use;
 - whether every later LSSPROTO message remained byte/semantics compatible;
 - server-side validation and logic not present in the retail client.
