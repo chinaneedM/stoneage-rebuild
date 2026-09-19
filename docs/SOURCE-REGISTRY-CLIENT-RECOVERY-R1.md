@@ -1,6 +1,6 @@
 # Source Registry Supplement — Clean Client Recovery R1
 
-Date: 2026-09-18
+Date: 2026-09-19
 
 Purpose: track **actual client-byte recovery targets** under DD-009. This ledger is intentionally narrower than the historical source registry. A version description, screenshot or article is not a recovered client.
 
@@ -11,6 +11,40 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - **TARGET-A** — period/operator or reputable contemporary download evidence exists, but bytes have not yet been recovered.
 - **TARGET-B** — credible preservation lead, but distribution provenance is weaker.
 - **REJECT** — demonstrated repack, server bundle, modified client, custom patcher/injector, or mismatched version.
+
+## TARGET-A — Korean Inium StoneAge 2000 — mass public/operator distribution
+
+- Primary official-distribution evidence:
+  - Electronic Times, 2000-10-13: https://www.etnews.com/200010120085
+  - reports that Inium completed Korean localization/server work and began free service through `http://www.stoneage.enium.co.kr`.
+- Distribution-scale corroboration:
+  - Electronic Times, 2000-10-28: https://m.etnews.com/200010270015
+  - reports roughly 200,000 downloads within the first weeks of free service.
+- Named mirror evidence:
+  - GameMeca, 2000-12-28: https://www.gamemeca.com/view.php?gid=5963
+  - reports Hananet downloads above approximately **400,000** and CNET downloads above approximately **310,000**;
+  - also says Hananet GamePlus service would begin on 2000-12-29.
+- Hananet infrastructure corroboration:
+  - Korea Economic Daily, 2000-04-27: https://www.hankyung.com/article/2000042732051
+  - identifies `www.hananet.net`, its game-content surface `http://game.hananet.net`, and the 2000 GamePlus service.
+- Offline replication evidence:
+  - iNews24, 2000-07-04: https://www.inews24.com/view/8928 records the planned Samsung PC / education-center distribution;
+  - DailyGame, 2000-10-27: https://www.dailygame.co.kr/view.php?ud=200010271416380001837_26 reports a later package-supply agreement of roughly 60,000 units through the Samsung PC-education-center operator plus PC-game retail distribution.
+- Operational value:
+  - this is substantially earlier than the 2003 Korean 1.74 / Japanese 1.74a targets;
+  - the client was replicated across an official site, at least two high-volume download portals, and material offline/package channels;
+  - these independent distribution surfaces materially improve the chance that a provenance-preserving copy survives.
+- Evidence boundary:
+  - no exact 2000 client version label has been recovered;
+  - installer filename, size, checksum, complete file tree and exact Hananet/CNET StoneAge URLs remain unknown;
+  - byte identity between Inium, Hananet, CNET and packaged copies is unproven;
+  - an intact Korean operator client would be a clean **Korean bridge specimen**, not automatic proof of JSS-Japan byte identity.
+- Canonical research note:
+  - `research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md`.
+- Next action:
+  - prioritize filename/path recovery from `stoneage.enium.co.kr`, Hananet/GamePlus, CNET Korea, period software catalogs, magazine/ISP CDs and preserved Inium installations;
+  - if bytes appear, immediately perform the clean-client acceptance test before further broad searching.
+- Status: **TARGET-A / highest-priority operational pre-1.74 bridge search; bytes not yet located**.
 
 ## TARGET-B — Mainland China StoneAge "1.82" — Sina historical download label requiring byte verification
 
@@ -202,11 +236,12 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 
 ## Current recovery order
 
-1. Use the recovered 2.5 bundle as a **resource-format bridge only**: REAL/ADRN/RD and SPR/SPRADRN are now validated. Continue with the client-runtime `.DAT` map cache (`tile / parts / event`) and keep the SACH-coupled single-layer `.MAP` family in the external-tool track. Do not use modified runtime executables as a clean baseline.
-2. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132` and compare it against the recovered mixed bundle if bytes become available.
-3. Continue recovery of the **Korean 1.74** operator-era installer identity/bytes; it remains the strongest earlier exact-version target.
-4. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
-5. Continue JSS original executable/full-client recovery in parallel.
-6. Recover the Sina "1.82" href/bytes as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
-7. Keep the Wayi official 8.5 package and `NetmarbleStoneAge120` as later controls, not substitutes for an early clean baseline.
-8. For any newly recovered candidate bytes, stop broad searching long enough to perform the clean-client acceptance test and build the first full inventory.
+1. **Korean Inium 2000 public client:** recover the original installer filename/path/bytes through the Inium site, Hananet/GamePlus, CNET and period offline/software archives. It is now the strongest operational early bridge because operator-era free distribution and massive replication are directly attested.
+2. **JSS 1999 beta/retail/launcher:** continue in parallel as the historical origin target; do not lower its evidentiary importance merely because Korean 2000 may be easier to recover.
+3. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge.
+4. Continue recovery of the **Korean 1.74** exact-version operator-era installer identity/bytes.
+5. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
+6. Treat the recovered mixed 2.5 bundle as a **resource-format bridge only**; do not spend primary recovery effort extending its modified runtime surface while earlier clean-client targets remain open.
+7. Recover the Sina "1.82" href/bytes only as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
+8. Keep the Wayi official 8.5 package and `NetmarbleStoneAge120` as later controls, not substitutes for an early clean baseline.
+9. For any newly recovered candidate bytes, stop broad searching immediately and perform the clean-client acceptance test plus first full inventory.
