@@ -57,27 +57,43 @@ def iter_blocks(path):
 
 def stable_target_names(files):
     mapping = collections.defaultdict(list)
+    target_blocks = collections.Counter()
     for path in files:
         for entries in iter_blocks(path):
             d = dict(entries)
             name = d.get(b"templatename")
+            functionset = d.get(b"functionset", b"")
+            if functionset in TARGETS:
+                target_blocks[functionset] += 1
             if name:
-                mapping[name].append(d.get(b"functionset", b""))
+                mapping[name].append(functionset)
 
     stable = {}
     ambiguous = set()
     duplicate_stable = collections.Counter()
+    stable_names = collections.Counter()
+    ambiguous_names = collections.Counter()
     for name, defs in mapping.items():
         target_defs = [d for d in defs if d in TARGETS]
         if not target_defs:
             continue
         if all(d == target_defs[0] for d in defs):
             stable[name] = target_defs[0]
+            stable_names[target_defs[0]] += 1
             if len(defs) > 1:
                 duplicate_stable[target_defs[0]] += 1
         else:
             ambiguous.add(name)
-    return stable, ambiguous, duplicate_stable
+            for target in set(target_defs):
+                ambiguous_names[target] += 1
+    return (
+        stable,
+        ambiguous,
+        duplicate_stable,
+        stable_names,
+        ambiguous_names,
+        target_blocks,
+    )
 
 
 def refs(files):
@@ -143,9 +159,21 @@ def analyze(npc_dir):
     )
     templates = [p for p in files if magic_kind(p) == "template"]
     creates = [p for p in files if magic_kind(p) == "create"]
-    stable, ambiguous, duplicate_stable = stable_target_names(templates)
+    (
+        stable,
+        ambiguous,
+        duplicate_stable,
+        stable_names,
+        ambiguous_names,
+        target_blocks,
+    ) = stable_target_names(templates)
 
     counts = collections.Counter()
+    for target in TARGETS:
+        label = target.decode("ascii")
+        counts[(label, "template_blocks")] = target_blocks[target]
+        counts[(label, "stable_template_names")] = stable_names[target]
+        counts[(label, "ambiguous_template_names")] = ambiguous_names[target]
     values = collections.Counter()
     shapes = collections.Counter()
     aggregate = hashlib.sha256()
