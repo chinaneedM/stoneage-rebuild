@@ -271,6 +271,79 @@ def immediate_text_push(ins, base, sections):
     return value if section_name_for_va(base, sections, value) == ".text" else None
 
 
+def callback_cfg_probe(data, base, sections, imports, callback_va):
+    queue = [callback_va]
+    visited_blocks = set()
+    visited_ins = set()
+    api = collections.Counter()
+    direct = collections.Counter()
+    globals_seen = collections.Counter()
+    block_count = 0
+    while queue and block_count < 48 and len(visited_ins) < 600:
+        start = queue.pop(0)
+        if start in visited_blocks:
+            continue
+        visited_blocks.add(start)
+        block_count += 1
+        off = rva_to_offset(sections, start - base)
+        if off is None:
+            continue
+        blob = data[off:min(len(data), off + 0x600)]
+        for ins in md().disasm(blob, start, count=160):
+            if ins.address in visited_ins:
+                break
+            visited_ins.add(ins.address)
+            imp = imported_call(ins, imports)
+            if imp:
+                api[imp] += 1
+            for value in referenced_absolute_values(ins):
+                if section_name_for_va(base, sections, value) == ".data":
+                    globals_seen[value] += 1
+            if ins.mnemonic == "call":
+                for op in ins.operands:
+                    if op.type == X86_OP_IMM:
+                        target = int(op.imm) & 0xFFFFFFFF
+                        if section_name_for_va(base, sections, target) == ".text":
+                            direct[target] += 1
+            next_va = ins.address + ins.size
+            if ins.mnemonic == "jmp":
+                target = next((int(op.imm) & 0xFFFFFFFF for op in ins.operands if op.type == X86_OP_IMM), None)
+                if target is not None and section_name_for_va(base, sections, target) == ".text":
+                    queue.append(target)
+                break
+            if ins.mnemonic.startswith("j") and ins.mnemonic != "jmp":
+                target = next((int(op.imm) & 0xFFFFFFFF for op in ins.operands if op.type == X86_OP_IMM), None)
+                if target is not None and section_name_for_va(base, sections, target) == ".text":
+                    queue.append(target)
+                if section_name_for_va(base, sections, next_va) == ".text":
+                    queue.append(next_va)
+                break
+            if ins.mnemonic.startswith("ret"):
+                break
+    return {
+        "blocks": block_count,
+        "instructions": len(visited_ins),
+        "api": api,
+        "direct": direct,
+        "globals": globals_seen,
+    }
+
+
+def exact_import_calls(data, base, sections, imports, dll_name, api_name):
+    out = []
+    for iat_va, (dll, name) in imports.items():
+        if dll.lower() != dll_name.lower() or name.lower() != api_name.lower():
+            continue
+        for hit in raw_text_pointer_hits(data, base, sections, iat_va):
+            ins = recover_xref_instruction(data, base, sections, hit, iat_va)
+            if ins is not None and ins.mnemonic == "call":
+                out.append((iat_va, ins))
+    uniq = {}
+    for iat_va, ins in out:
+        uniq[(iat_va, ins.address)] = (iat_va, ins)
+    return [uniq[k] for k in sorted(uniq)]
+
+
 def callback_probe(data, base, sections, imports, callback_va):
     rva = callback_va - base
     off = rva_to_offset(sections, rva)
@@ -388,6 +461,53 @@ def main():
                     print(
                         f"INIT_CALLBACK_DIRECT|callback_rva=0x{cb_va-base:x}|"
                         f"target_rva=0x{target-base:x}|calls={count}"
+                    )
+
+        for cb_va in sorted(init_callback_candidates):
+            cfg = callback_cfg_probe(data, base, sections, imports, cb_va)
+            print(
+                f"INIT_CALLBACK_CFG|callback_rva=0x{cb_va-base:x}|blocks={cfg['blocks']}|"
+                f"instructions={cfg['instructions']}|globals={len(cfg['globals'])}|"
+                f"import_api_kinds={len(cfg['api'])}|direct_targets={len(cfg['direct'])}"
+            )
+            for global_va, count in sorted(cfg["globals"].items()):
+                print(
+                    f"INIT_CALLBACK_GLOBAL|callback_rva=0x{cb_va-base:x}|"
+                    f"global_rva=0x{global_va-base:x}|refs={count}"
+                )
+            for (dll, name), count in sorted(cfg["api"].items(), key=lambda x:(x[0][0].lower(),x[0][1].lower())):
+                print(
+                    f"INIT_CALLBACK_CFG_API|callback_rva=0x{cb_va-base:x}|dll={clean(dll)}|"
+                    f"api={clean(name)}|calls={count}"
+                )
+            for target, count in sorted(cfg["direct"].items()):
+                print(
+                    f"INIT_CALLBACK_CFG_DIRECT|callback_rva=0x{cb_va-base:x}|"
+                    f"target_rva=0x{target-base:x}|calls={count}"
+                )
+
+        send_import_calls = exact_import_calls(data, base, sections, imports, "WSOCK32.dll", "send")
+        print(f"WSOCK_SEND|exact_calls={len(send_import_calls)}")
+        for n, (iat_va, send_ins) in enumerate(send_import_calls, 1):
+            print(
+                f"WSOCK_SEND_CALL|n={n}|callsite_rva=0x{send_ins.address-base:x}|"
+                f"iat_rva=0x{iat_va-base:x}"
+            )
+            paths = backward_paths(data, base, sections, send_ins.address)
+            ranked = sorted(
+                enumerate(paths, 1),
+                key=lambda item: (
+                    -sum(1 for ins in item[1] if ins.mnemonic == "push"),
+                    -len(item[1]),
+                    item[0],
+                ),
+            )[:6]
+            for path_no, path in ranked:
+                for order, prev in enumerate(path, 1):
+                    print(
+                        f"WSOCK_SEND_PREV|callsite_rva=0x{send_ins.address-base:x}|path={path_no}|"
+                        f"order={order}|instruction_rva=0x{prev.address-base:x}|"
+                        f"mnemonic={clean(prev.mnemonic)}|ops={clean(operand_summary(prev,base,sections))}"
                     )
 
         for global_va, refs_in_send in sorted(globals_seen.items()):
