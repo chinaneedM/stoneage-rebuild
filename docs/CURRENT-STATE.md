@@ -841,10 +841,17 @@ Supplemental source ledgers:
 - Recovery remains public-only: search exact title/ISBN/CD metadata and preservation/ISO catalogs; no purchase or user-side acquisition dependency.
 - Registered in `STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md` and the clean-client source registry.
 
+## Korea 2000 recovery-surface narrowing — 2026-09-19
+
+- Contemporary references now resolve **CNET Korea's download root** to `http://korea.cnet.com/downloads/` and the **Hananet software repository** to `http://pds.hananet.net`; the remaining gap is the StoneAge child path / installer filename, not the portal root.
+- NetPower public scans provide near-period corroboration: September 2000 StoneAge pages independently show `www.hananet.net`; November 2000 StoneAge pages repeatedly show `enium` + `stoneage` and one OCR mode recovers partial `http://stoneage`. No executable/archive filename was recovered.
+- Do **not** interpret the single-mode `32MB` OCR token as client size; its semantic context is unresolved.
+- The 2001 GameTime guide CD remains a concrete install-media target, but a reproducible Internet Archive metadata probe returned zero items for both ISBNs and multiple title/GameTime query variants. That closes only the current IA metadata route, not the physical/public-preservation search.
+- A 2025 Korean Lost Media preservation post proves that NetPower 2000-10 and other period magazine CDs still survive and can be extracted. The two listed NetPower 2000-10 discs contain many contemporary online clients but **not StoneAge**; no indexed public follow-up download was found. Treat this as preservation feasibility plus a negative control, not a StoneAge hit.
 ## Immediate next actions
 
-1. **Prioritize Korean Inium 2000 filename/path/byte recovery.** Trace the exact `www.stoneage.enium.co.kr` host plus Hananet/GamePlus and KoreaCNET mirror lineages; search period software catalogs and preserved pre-Netmarble installations.
-2. **Pursue the 2001 GameTime guide bonus CD as a concrete near-period install-media sub-track.** Search exact ISBN/title/CD-image records and compare any recovered payload against future 2000 copies rather than assuming equality.
+1. **Prioritize Korean Inium 2000 file-token/byte recovery.** The portal roots are now narrowed to `www.stoneage.enium.co.kr`, `game.hananet.net` / `pds.hananet.net`, and `korea.cnet.com/downloads/`; search specifically for StoneAge child URLs, installer/archive filenames, sizes and surviving mirror copies.
+2. **Pursue the 2001 GameTime guide bonus CD through non-IA public preservation/catalog routes.** Exact IA metadata queries are exhausted for the known ISBN/title variants; next value comes from library CD holdings, disc-label photos, old-share indexes or newly discovered file tokens.
 3. **Continue JSS 1999 beta/retail/launcher recovery in parallel.** It remains the historical origin target even though Korean 2000 now has stronger mass-replication recovery odds.
 4. **Keep `〖2.5纯净〗` `tid=2132`, Korean 1.74 and Japanese 1.74a as secondary clean-client targets.** Version labels and forum labels remain clues, not byte provenance.
 5. **On any newly recovered candidate bytes, stop broad searching and run the clean-client acceptance test immediately:** source chain, hashes, complete file tree, executable metadata, endpoints/patchers, resource generations and cross-copy contamination checks.
