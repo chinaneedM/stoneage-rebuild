@@ -19,6 +19,11 @@ PAGES=[
     ("2_2","20010226182509","http://stoneage.hananet.net/2_2.htm"),
     ("2_3","20010126160100","http://stoneage.hananet.net/2_3.htm"),
     ("2_4","20010123223000","http://stoneage.hananet.net/2_4.htm"),
+    ("2_5-a","20010118211100","http://stoneage.hananet.net/2_5.htm"),
+    ("2_5-b","20010123223000","http://stoneage.hananet.net/2_5.htm"),
+    ("2_5-c","20010126160100","http://stoneage.hananet.net/2_5.htm"),
+    ("2_5-d","20010226182509","http://stoneage.hananet.net/2_5.htm"),
+    ("2_5-e","20010226185448","http://stoneage.hananet.net/2_5.htm"),
 ]
 KEY=re.compile(r"(?i)(stone\s*age|stoneage|스톤\s*에이지|download|다운로드|설치|setup|install|client|patch|update|\.exe\b|\.zip\b|\.rar\b|\.cab\b|\b\d+(?:\.\d+)?\s*(?:kb|mb|gb)\b)")
 WAYBACK_PREFIX=re.compile(r"^https?://web\.archive\.org/web/\d+(?:[a-z_]+)?/",re.I)
