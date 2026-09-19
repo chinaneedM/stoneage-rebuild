@@ -302,6 +302,7 @@ def main():
             )
 
             combined_nodes = {}
+            shared_root_targets = collections.Counter()
             for n, (hit, ins) in enumerate(recovered, 1):
                 print(
                     f"XREF|text={clean(label)}|n={n}|pointer_rva=0x{hit['ptr_rva']:x}|"
@@ -309,6 +310,22 @@ def main():
                     f"instruction_size={ins.size}"
                 )
                 graph = expand_from_exact_root(data, base, sections, imports, ins.address)
+                root_node = graph.get(ins.address)
+                if root_node is not None:
+                    for target_va, calls in sorted(root_node["internal"].items()):
+                        shared_root_targets[target_va] += 1
+                        print(
+                            f"XREF_CALL|text={clean(label)}|n={n}|"
+                            f"target_rva=0x{target_va-base:x}|calls={calls}"
+                        )
+                    for (dll, name), calls in sorted(
+                        root_node["api_counts"].items(),
+                        key=lambda x: (x[0][0].lower(), x[0][1].lower()),
+                    ):
+                        print(
+                            f"XREF_DIRECT_API|text={clean(label)}|n={n}|"
+                            f"dll={clean(dll)}|api={clean(name)}|calls={calls}"
+                        )
                 for va, node in graph.items():
                     prev = combined_nodes.get(va)
                     if prev is None or node["depth"] < prev["depth"]:
@@ -327,6 +344,14 @@ def main():
                     )
 
             counts, depths = aggregate(combined_nodes)
+            for target_va, root_count in sorted(
+                shared_root_targets.items(),
+                key=lambda x: (-x[1], x[0]),
+            ):
+                print(
+                    f"SHARED_ROOT_CALL|text={clean(label)}|target_rva=0x{target_va-base:x}|"
+                    f"root_xrefs={root_count}"
+                )
             print(
                 f"TARGET_GRAPH|text={clean(label)}|nodes={len(combined_nodes)}|"
                 f"interesting_api_kinds={len(counts)}"
