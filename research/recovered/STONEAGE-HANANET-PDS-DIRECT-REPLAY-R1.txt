@@ -1,0 +1,21 @@
+StoneAge Hananet PDS direct-replay variant probe — R1
+SCOPE|direct-replay-normalization+sparse-html+64-byte-prefix-only|no-complete-binary-download
+REPLAY|timestamp=20001210160500|status=404|ok=0|url=http://pds.hananet.net/view.asp?app_id=20001031524596220&type=C03|resolved=|error=HTTP Error 404: NOT FOUND
+REPLAY|timestamp=20001210160500|status=404|ok=0|url=http://pds.hananet.net:80/view.asp?app_id=20001031524596220&type=C03|resolved=|error=HTTP Error 404: NOT FOUND
+REPLAY|timestamp=20001210160500|status=404|ok=0|url=http://www.pds.hananet.net/view.asp?app_id=20001031524596220&type=C03|resolved=|error=HTTP Error 404: NOT FOUND
+REPLAY|timestamp=20001210160500|status=404|ok=0|url=http://pds.hananet.net/view.asp?type=C03&app_id=20001031524596220|resolved=|error=HTTP Error 404: NOT FOUND
+REPLAY|timestamp=20001210160500|status=404|ok=0|url=http://pds.hananet.net/view.asp?app_id=20001031524596220|resolved=|error=HTTP Error 404: NOT FOUND
+REPLAY|timestamp=20001210160500|status=404|ok=0|url=http://pds.hananet.net/View.asp?app_id=20001031524596220&type=C03|resolved=|error=HTTP Error 404: NOT FOUND
+REPLAY|timestamp=20010630185101|status=404|ok=0|url=http://pds.hananet.net/view.asp?app_id=20001031524596220&type=C03|resolved=|error=HTTP Error 404: NOT FOUND
+REPLAY|timestamp=20010630185101|status=404|ok=0|url=http://pds.hananet.net:80/view.asp?app_id=20001031524596220&type=C03|resolved=|error=HTTP Error 404: NOT FOUND
+REPLAY|timestamp=20010630185101|status=404|ok=0|url=http://www.pds.hananet.net/view.asp?app_id=20001031524596220&type=C03|resolved=|error=HTTP Error 404: NOT FOUND
+REPLAY|timestamp=20010630185101|status=404|ok=0|url=http://pds.hananet.net/view.asp?type=C03&app_id=20001031524596220|resolved=|error=HTTP Error 404: NOT FOUND
+REPLAY|timestamp=20010630185101|status=404|ok=0|url=http://pds.hananet.net/view.asp?app_id=20001031524596220|resolved=|error=HTTP Error 404: NOT FOUND
+REPLAY|timestamp=20010630185101|status=404|ok=0|url=http://pds.hananet.net/View.asp?app_id=20001031524596220&type=C03|resolved=|error=HTTP Error 404: NOT FOUND
+COUNT|html_success|0
+PREFIX|target=hananet-sa|timestamp=20010801142046|ok=0|status=404|url=http://stoneage.hananet.net/down/sa.exe|resolved=|content_type=|content_length=|prefix_len=0|magic_hex=|prefix_sha256=|error=HTTP Error 404: Object Not Found
+PREFIX|target=hananet-sa|timestamp=20010803115715|ok=0|status=404|url=http://stoneage.hananet.net/down/sa.exe|resolved=|content_type=|content_length=|prefix_len=0|magic_hex=|prefix_sha256=|error=HTTP Error 404: Object Not Found
+PREFIX|target=hananet-sa|timestamp=20010814135008|ok=0|status=404|url=http://stoneage.hananet.net/down/sa.exe|resolved=|content_type=|content_length=|prefix_len=0|magic_hex=|prefix_sha256=|error=HTTP Error 404: Object Not Found
+PREFIX|target=gagamel|timestamp=20010609062605|ok=0|status=404|url=http://www.gagamel.com/web_data/download/stoneagebeta.zip|resolved=|content_type=|content_length=|prefix_len=0|magic_hex=|prefix_sha256=|error=HTTP Error 404: NOT FOUND
+PREFIX|target=gagamel|timestamp=20010801142046|ok=0|status=404|url=http://www.gagamel.com/web_data/download/stoneagebeta.zip|resolved=|content_type=|content_length=|prefix_len=0|magic_hex=|prefix_sha256=|error=HTTP Error 404: NOT FOUND
+COUNT|binary_prefix_success|0
