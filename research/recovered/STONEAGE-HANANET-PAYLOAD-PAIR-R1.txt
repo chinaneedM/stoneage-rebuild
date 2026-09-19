@@ -1,0 +1,11 @@
+StoneAge Hananet formal/trial payload probe — R1
+SCOPE|availability+64-byte-prefix-only|no-complete-binary-download
+MAPPING|formal=sa.exe:260 M|trial=sa_demo.exe:240 M|source=Hananet STAD archived HTML comment block
+COUNT|availability_queries|24
+COUNT|availability_errors|0
+COUNT|unique_available_snapshots|0
+PREFIX_ERROR|target=formal-sa-exe|size_label=260 M|timestamp=20010814230641|source=known-stad|kind=HTTPError|message=HTTP Error 404: Object Not Found
+PREFIX_ERROR|target=formal-sa-exe-www|size_label=260 M|timestamp=20010814230641|source=known-stad|kind=HTTPError|message=HTTP Error 404: Object Not Found
+PREFIX_ERROR|target=trial-sa-demo-exe|size_label=240 M|timestamp=20010814230641|source=known-stad|kind=HTTPError|message=HTTP Error 404: Object Not Found
+PREFIX_ERROR|target=trial-sa-demo-exe-www|size_label=240 M|timestamp=20010814230641|source=known-stad|kind=HTTPError|message=HTTP Error 404: Object Not Found
+COUNT|prefix_success|0
