@@ -8,6 +8,7 @@ Only record metadata, short text snippets, and link targets are emitted.
 
 from __future__ import annotations
 
+import concurrent.futures
 import html
 import html.parser
 import json
@@ -73,16 +74,16 @@ class Parser(html.parser.HTMLParser):
             self._anchor_text = []
 
 
-def request(url: str, timeout: int = 15) -> bytes:
+def request(url: str, timeout: int = 8, attempts: int = 1) -> bytes:
     last = None
-    for attempt in range(2):
+    for attempt in range(attempts):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA})
             with urllib.request.urlopen(req, timeout=timeout) as response:
                 return response.read()
         except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
             last = exc
-            time.sleep(1 + attempt)
+            if attempt + 1 < attempts:\n                time.sleep(1 + attempt)
     raise RuntimeError(f"request failed: {url}: {last}")
 
 
@@ -104,7 +105,7 @@ def closest(payload: dict):
 
 def availability(original: str, requested: str):
     query = urllib.parse.urlencode({"url": original, "timestamp": requested})
-    payload = json.loads(request(AVAILABLE + "?" + query, timeout=10).decode("utf-8", "replace"))
+    payload = json.loads(request(AVAILABLE + "?" + query, timeout=8, attempts=1).decode("utf-8", "replace"))
     return closest(payload)
 
 
@@ -147,17 +148,28 @@ def main():
     print(f"RECORD|Software_Id={SOFTWARE_ID}")
     print("SCOPE|metadata-links-short-snippets-only|transient-html|no-client-binary-download")
 
+    jobs = [(original, requested) for original in URL_VARIANTS for requested in DATES]
+
+    def probe_availability(job):
+        original, requested = job
+        try:
+            hit = availability(original, requested)
+        except Exception as exc:
+            return ("error", requested, original, type(exc).__name__, str(exc))
+        if hit:
+            timestamp, status, archived = hit
+            return ("hit", timestamp, original, status, archived)
+        return ("miss", requested, original, "", "")
+
     found = {}
     errors = []
-    for original in URL_VARIANTS:
-        for requested in DATES:
-            try:
-                hit = availability(original, requested)
-            except Exception as exc:
-                errors.append(("availability", requested, original, type(exc).__name__, str(exc)))
-                continue
-            if hit:
-                timestamp, status, archived = hit
+    with concurrent.futures.ThreadPoolExecutor(max_workers=12) as executor:
+        for result in executor.map(probe_availability, jobs):
+            if result[0] == "error":
+                _, requested, original, kind, message = result
+                errors.append(("availability", requested, original, kind, message))
+            elif result[0] == "hit":
+                _, timestamp, original, status, archived = result
                 found[(timestamp, original)] = (status, archived)
 
     print(f"COUNT|availability_queries|{len(URL_VARIANTS) * len(DATES)}")
@@ -182,7 +194,7 @@ def main():
             continue
         fetched.add(key)
         try:
-            body = request(snapshot_url(timestamp, original), timeout=20)
+            body = request(snapshot_url(timestamp, original), timeout=12, attempts=1)
             text = decode(body)
             parser = Parser()
             parser.feed(text)
