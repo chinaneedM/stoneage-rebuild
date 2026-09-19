@@ -1,41 +1,63 @@
 StoneAge Hananet frame-path recovery probe — R1
 SCOPE|transient-html|hash-sparse-text-matching-links-only|no-client-binary-download
 COUNT|candidates|20
-COUNT|errors|12
-COUNT|fetched_pages|8
-COUNT|matching_snippets|2
-COUNT|matching_links|58
-ERROR|label=hananet-stoneage-20010118-1|timestamp=20010118211100|kind=URLError|original=http://stoneage.hananet.net/1.htm|message=<urlopen error [Errno 111] Connection refused>
-ERROR|label=hananet-stoneage-20010118-2|timestamp=20010118211100|kind=URLError|original=http://stoneage.hananet.net/2.htm|message=<urlopen error [Errno 111] Connection refused>
-ERROR|label=hananet-stoneage-20010118-2-2|timestamp=20010118211100|kind=URLError|original=http://stoneage.hananet.net/2_2.htm|message=<urlopen error [Errno 111] Connection refused>
-ERROR|label=hananet-stoneage-20010118-2-3|timestamp=20010118211100|kind=URLError|original=http://stoneage.hananet.net/2_3.htm|message=<urlopen error [Errno 111] Connection refused>
-ERROR|label=hananet-stoneage-20010118-2-4|timestamp=20010118211100|kind=URLError|original=http://stoneage.hananet.net/2_4.htm|message=<urlopen error [Errno 111] Connection refused>
-ERROR|label=hananet-stoneage-20010118-2-5|timestamp=20010118211100|kind=URLError|original=http://stoneage.hananet.net/2_5.htm|message=<urlopen error [Errno 111] Connection refused>
-ERROR|label=pds-20001018-index2|timestamp=20001018214759|kind=URLError|original=http://pds.hananet.net:80/index2.html|message=<urlopen error [Errno 111] Connection refused>
-ERROR|label=pds-20001018-topfrm|timestamp=20001018214759|kind=URLError|original=http://pds.hananet.net:80/topfrm.html|message=<urlopen error [Errno 111] Connection refused>
-ERROR|label=pds-20001019-index2|timestamp=20001019044248|kind=URLError|original=http://pds.hananet.net:80/index2.html|message=<urlopen error [Errno 111] Connection refused>
-ERROR|label=pds-20001019-topfrm|timestamp=20001019044248|kind=URLError|original=http://pds.hananet.net:80/topfrm.html|message=<urlopen error [Errno 111] Connection refused>
-ERROR|label=pds-20010506-index2|timestamp=20010506010917|kind=URLError|original=http://pds.hananet.net:80/index2.html|message=<urlopen error [Errno 111] Connection refused>
-ERROR|label=pds-20010506-topfrm|timestamp=20010506010917|kind=URLError|original=http://pds.hananet.net:80/topfrm.html|message=<urlopen error [Errno 111] Connection refused>
-PAGE|label=game-20001019-mainbody|timestamp=20001019061522|bytes=30865|sha256=d96fa9164f46f45518383b086bef7be557a1b89fc96e362eba1f01e8705d5a4f|original=http://game.hananet.net:80/gamenet/mainbody.html
+COUNT|errors|11
+COUNT|fetched_pages|9
+COUNT|matching_snippets|4
+COUNT|matching_links|78
+ERROR|label=hananet-stoneage-20010118-2|timestamp=20010118211100|kind=HTTPError|original=http://stoneage.hananet.net/2.htm|message=HTTP Error 429: Too Many Requests
+ERROR|label=hananet-stoneage-20010118-2-2|timestamp=20010118211100|kind=HTTPError|original=http://stoneage.hananet.net/2_2.htm|message=HTTP Error 429: Too Many Requests
+ERROR|label=hananet-stoneage-20010118-2-3|timestamp=20010118211100|kind=HTTPError|original=http://stoneage.hananet.net/2_3.htm|message=HTTP Error 429: Too Many Requests
+ERROR|label=hananet-stoneage-20010118-2-4|timestamp=20010118211100|kind=HTTPError|original=http://stoneage.hananet.net/2_4.htm|message=HTTP Error 429: Too Many Requests
+ERROR|label=hananet-stoneage-20010118-2-5|timestamp=20010118211100|kind=HTTPError|original=http://stoneage.hananet.net/2_5.htm|message=HTTP Error 429: Too Many Requests
+ERROR|label=pds-20001018-index2|timestamp=20001018214759|kind=HTTPError|original=http://pds.hananet.net:80/index2.html|message=HTTP Error 429: Too Many Requests
+ERROR|label=pds-20001018-topfrm|timestamp=20001018214759|kind=HTTPError|original=http://pds.hananet.net:80/topfrm.html|message=HTTP Error 429: Too Many Requests
+ERROR|label=pds-20001019-index2|timestamp=20001019044248|kind=HTTPError|original=http://pds.hananet.net:80/index2.html|message=HTTP Error 429: Too Many Requests
+ERROR|label=pds-20001019-topfrm|timestamp=20001019044248|kind=HTTPError|original=http://pds.hananet.net:80/topfrm.html|message=HTTP Error 429: Too Many Requests
+ERROR|label=pds-20010506-index2|timestamp=20010506010917|kind=HTTPError|original=http://pds.hananet.net:80/index2.html|message=HTTP Error 429: Too Many Requests
+ERROR|label=pds-20010506-topfrm|timestamp=20010506010917|kind=HTTPError|original=http://pds.hananet.net:80/topfrm.html|message=HTTP Error 429: Too Many Requests
+PAGE|label=game-20001019-mainbody|requested_timestamp=20001019061522|timestamp=20001019061522|retrieval=direct|bytes=30865|sha256=d96fa9164f46f45518383b086bef7be557a1b89fc96e362eba1f01e8705d5a4f|original=http://game.hananet.net:80/gamenet/mainbody.html
 LINK|label=game-20001019-mainbody|tag=img|attr=src|target=http://game.hananet.net:80/gamenet/newimg/gameplus.gif|anchor=
-PAGE|label=game-20001019-maintop|timestamp=20001019061522|bytes=2140|sha256=5d24dce2afcb33f741d6bdc6bffbe240ea053556fc12bab7800892248d5a03fa|original=http://game.hananet.net:80/gamenet/maintop.html
-PAGE|label=game-20010118-contents-stoneage|timestamp=20010118211100|bytes=1828|sha256=0adc870a711bb0dc0f30bbfc07b1760a4f513442daa8881387301d3f1413d175|original=http://game.hananet.net:80/gamenet/newframe/contents/stoneage.html
+PAGE|label=game-20001019-maintop|requested_timestamp=20001019061522|timestamp=20001019061522|retrieval=direct|bytes=2140|sha256=5d24dce2afcb33f741d6bdc6bffbe240ea053556fc12bab7800892248d5a03fa|original=http://game.hananet.net:80/gamenet/maintop.html
+PAGE|label=game-20010118-contents-stoneage|requested_timestamp=20010118211100|timestamp=20010118211100|retrieval=direct|bytes=1828|sha256=0adc870a711bb0dc0f30bbfc07b1760a4f513442daa8881387301d3f1413d175|original=http://game.hananet.net:80/gamenet/newframe/contents/stoneage.html
 TEXT|label=game-20010118-contents-stoneage|value=스톤에이지
 LINK|label=game-20010118-contents-stoneage|tag=a|attr=href|target=http://game.hananet.net:80/gamenet/newframe/frstoneage.html|anchor=스톤에이지
-PAGE|label=game-20010118-frstoneage|timestamp=20010118211100|bytes=502|sha256=a7cbd1702e6e16d2178e18987500449ec75c20ce83284d23089179260bf5e2ed|original=http://game.hananet.net:80/gamenet/newframe/frstoneage.html
+PAGE|label=game-20010118-frstoneage|requested_timestamp=20010118211100|timestamp=20010118211100|retrieval=direct|bytes=502|sha256=a7cbd1702e6e16d2178e18987500449ec75c20ce83284d23089179260bf5e2ed|original=http://game.hananet.net:80/gamenet/newframe/frstoneage.html
 LINK|label=game-20010118-frstoneage|tag=frame|attr=src|target=http://game.hananet.net:80/gamenet/newframe/contents/stoneage.html|anchor=
 LINK|label=game-20010118-frstoneage|tag=frame|attr=src|target=http://stoneage.hananet.net/main.htm|anchor=
-PAGE|label=game-20010118-mainbody|timestamp=20010118211100|bytes=33633|sha256=64e00ded76dcf726c63c1931cd3e882558ab66d0838cf407fc87024cabf3f31d|original=http://game.hananet.net:80/gamenet/mainbody.html
+PAGE|label=game-20010118-mainbody|requested_timestamp=20010118211100|timestamp=20010118211100|retrieval=direct|bytes=33633|sha256=64e00ded76dcf726c63c1931cd3e882558ab66d0838cf407fc87024cabf3f31d|original=http://game.hananet.net:80/gamenet/mainbody.html
 TEXT|label=game-20010118-mainbody|value=[게임Plus]스톤에이지 게임Plus 신규 오픈
 LINK|label=game-20010118-mainbody|tag=a|attr=href|target=http://game.hananet.net/gamenet/sitemap/map/mapstoneage.html|anchor=
 LINK|label=game-20010118-mainbody|tag=a|attr=href|target=http://game.hananet.net/gamenet/sitemap/map/mapstoneage.html|anchor=[게임Plus]스톤에이지 게임Plus 신규 오픈
 LINK|label=game-20010118-mainbody|tag=area|attr=href|target=http://game.hananet.net/gamenet/sitemap/map/mapstoneage.html|anchor=
 LINK|label=game-20010118-mainbody|tag=img|attr=src|target=http://game.hananet.net:80/gamenet/newimg/gameplus.gif|anchor=
-PAGE|label=game-20010118-maintop|timestamp=20010118211100|bytes=2140|sha256=5d24dce2afcb33f741d6bdc6bffbe240ea053556fc12bab7800892248d5a03fa|original=http://game.hananet.net:80/gamenet/maintop.html
-PAGE|label=game-20010118-mapstoneage|timestamp=20010118211100|bytes=348|sha256=cdae377905fa371494025d6db771f18d4a4d6a785849b02ace5e1962e47af916|original=http://game.hananet.net:80/gamenet/sitemap/map/mapstoneage.html
+PAGE|label=game-20010118-maintop|requested_timestamp=20010118211100|timestamp=20010118211100|retrieval=direct|bytes=2140|sha256=5d24dce2afcb33f741d6bdc6bffbe240ea053556fc12bab7800892248d5a03fa|original=http://game.hananet.net:80/gamenet/maintop.html
+PAGE|label=game-20010118-mapstoneage|requested_timestamp=20010118211100|timestamp=20010118211100|retrieval=direct|bytes=348|sha256=cdae377905fa371494025d6db771f18d4a4d6a785849b02ace5e1962e47af916|original=http://game.hananet.net:80/gamenet/sitemap/map/mapstoneage.html
 LINK|label=game-20010118-mapstoneage|tag=frame|attr=src|target=http://game.hananet.net:80/gamenet/newframe/frstoneage.html|anchor=
-PAGE|label=hananet-stoneage-20010118-main|timestamp=20010118211100|bytes=5551|sha256=0a39011ff1259d3943882878ca33efc9f151ee4b7760b273a30a4ff96f2d7fcd|original=http://stoneage.hananet.net/main.htm
+PAGE|label=hananet-stoneage-20010118-1|requested_timestamp=20010118211100|timestamp=20010118211100|retrieval=direct|bytes=6492|sha256=781f293c4d254a1dc25a3483bec1961b54106ef267224e00422532311649cddd|original=http://stoneage.hananet.net/1.htm
+TEXT|label=hananet-stoneage-20010118-1|value=스톤에이지는 유저들간의 교류를 위해 총 5명의 파티를 만들 수 있고, 서로 명함을 주고받는
+TEXT|label=hananet-stoneage-20010118-1|value=자신의 애완동물과 친구과 될 것입니다. 스톤에이지는 전투를 위주로
+LINK|label=hananet-stoneage-20010118-1|tag=a|attr=href|target=http://stoneage.hananet.net/1.htm|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=a|attr=href|target=http://stoneage.hananet.net/2.htm|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/1.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_01.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_02.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_03.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_04.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_05.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_06.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_07.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_08.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_09.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_10.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_11.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_12.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_13.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_14.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/pa1.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/pa2.gif|anchor=
+LINK|label=hananet-stoneage-20010118-1|tag=img|attr=src|target=http://stoneage.hananet.net/img/patrn05b.gif|anchor=
+PAGE|label=hananet-stoneage-20010118-main|requested_timestamp=20010118211100|timestamp=20010118211100|retrieval=direct|bytes=5551|sha256=0a39011ff1259d3943882878ca33efc9f151ee4b7760b273a30a4ff96f2d7fcd|original=http://stoneage.hananet.net/main.htm
 LINK|label=hananet-stoneage-20010118-main|tag=area|attr=href|target=http://stoneage.enium.co.kr|anchor=
 LINK|label=hananet-stoneage-20010118-main|tag=area|attr=href|target=http://stoneage.hananet.net/1.htm|anchor=
 LINK|label=hananet-stoneage-20010118-main|tag=area|attr=href|target=http://stoneage.hananet.net/2.htm|anchor=
