@@ -39,9 +39,9 @@ class TaiwanV10ClientInventoryTests(unittest.TestCase):
         self.assertEqual(len({row[2] for row in rows}), 2)
 
     def test_sab_candidate_parser(self):
-        data = b"SAB\\x00" + b"\\x12\\x34\\x00\\x01"
+        data = bytes([0x53, 0x41, 0x42, 0x00, 0x12, 0x34, 0x00, 0x01])
         header, big_endian, little_endian = parse_sab_candidate(data)
-        self.assertEqual(header, b"SAB\\x00")
+        self.assertEqual(header, bytes([0x53, 0x41, 0x42, 0x00]))
         self.assertEqual(big_endian, (0x1234, 0x0001))
         self.assertEqual(little_endian, (0x3412, 0x0100))
         with self.assertRaises(ValueError):
