@@ -22,6 +22,7 @@ CANDIDATES = [
     ("game-20010118-mainbody", "20010118211100", "http://game.hananet.net:80/gamenet/mainbody.html"),
     ("game-20010118-maintop", "20010118211100", "http://game.hananet.net:80/gamenet/maintop.html"),
     ("game-20010118-mapstoneage", "20010118211100", "http://game.hananet.net:80/gamenet/sitemap/map/mapstoneage.html"),
+    ("game-20010118-frstoneage", "20010118211100", "http://game.hananet.net:80/gamenet/newframe/frstoneage.html"),
     ("pds-20001018-index2", "20001018214759", "http://pds.hananet.net:80/index2.html"),
     ("pds-20001018-topfrm", "20001018214759", "http://pds.hananet.net:80/topfrm.html"),
     ("pds-20001019-index2", "20001019044248", "http://pds.hananet.net:80/index2.html"),
