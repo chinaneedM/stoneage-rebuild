@@ -1,0 +1,66 @@
+name: Export StoneAge Taiwan v1.0 resource metadata
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_resource_metadata.py
+      - tests/test_stoneage_tw10_resource_metadata.py
+      - .github/workflows/export-stoneage-tw10-resource-metadata.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-tw10-resource-metadata
+  cancel-in-progress: true
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run exporter unit tests
+        run: python3 -m unittest tests.test_stoneage_tw10_resource_metadata -v
+      - name: Download and verify accepted Taiwan preservation archive
+        run: |
+          set -euo pipefail
+          curl -L --fail --retry 3 --retry-delay 2 --silent --show-error \
+            -o /tmp/CD_DIC.rar 'https://archive.org/download/stoneage_tw_2000_win/CD_DIC.rar'
+          echo "b37a4a47f4eb608cac67e4ddf7a1621a  /tmp/CD_DIC.rar" | md5sum -c -
+          echo "b8cf92720b6ec8b3f46ea2e9bfcda986d21e7ded  /tmp/CD_DIC.rar" | sha1sum -c -
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/tw10
+          7z x -y -o/tmp/tw10 /tmp/CD_DIC.rar 'STONEAGE.bin' >/dev/null
+          test "$(stat -c %s /tmp/tw10/STONEAGE.bin)" = "523449360"
+      - name: Export deterministic reconstruction metadata
+        run: |
+          set -euo pipefail
+          rm -rf research/recovered/tw10-resource-metadata
+          python3 -m tools.stoneage_tw10_resource_metadata \
+            --bin /tmp/tw10/STONEAGE.bin \
+            --out-dir research/recovered/tw10-resource-metadata
+      - name: Verify generated dataset surface
+        run: |
+          set -euo pipefail
+          test -s research/recovered/tw10-resource-metadata/MANIFEST-R1.txt
+          test -s research/recovered/tw10-resource-metadata/ADRN-R1.tsv.gz
+          test -s research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz
+          test -s research/recovered/tw10-resource-metadata/SPR-ANIMATION-R1.tsv.gz
+          test -s research/recovered/tw10-resource-metadata/SPR-FRAME-R1.tsv.gz
+          gzip -t research/recovered/tw10-resource-metadata/*.tsv.gz
+      - name: Delete transient proprietary payloads
+        if: always()
+        run: rm -rf /tmp/tw10 /tmp/CD_DIC.rar
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/tw10-resource-metadata
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: export Taiwan v1.0 resource metadata'
+          git pull --rebase origin main
+          git push
