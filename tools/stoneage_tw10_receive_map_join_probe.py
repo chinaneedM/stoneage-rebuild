@@ -29,6 +29,7 @@ from tools.stoneage_tw10_protocol_handoff_probe import (
     section_name_for_va,
 )
 from tools.stoneage_tw10_exact_xref_probe import (
+    decode_forward_node,
     expand_from_exact_root,
     raw_text_pointer_hits,
     recover_xref_instruction,
@@ -47,6 +48,12 @@ DISPATCH_RVA_MIN = 0x18000
 DISPATCH_RVA_MAX = 0x1B000
 SHORT_PROTOCOLS = ("MC", "M", "C", "CA")
 MAP_XREF_RVAS = (0x1D846, 0x1DA50, 0x1DDA0, 0x21306, 0x21721, 0x218FE)
+MAP_CALLBACKS = {
+    "MC": 0x30D20,
+    "M": 0x30EF0,
+}
+DEEP_GRAPH_DEPTH = 10
+DEEP_GRAPH_NODES = 160
 
 
 def clean(v, limit=900):
@@ -98,6 +105,49 @@ def exact_recv_business_sites(data, base, sections, imports):
     for row in out:
         uniq[(row[0], row[1])] = row
     return [uniq[k] for k in sorted(uniq)]
+
+
+def deep_call_graph(data, base, sections, imports, root_va, max_depth=DEEP_GRAPH_DEPTH, max_nodes=DEEP_GRAPH_NODES):
+    queue = collections.deque([(root_va, 0)])
+    nodes = {}
+    while queue and len(nodes) < max_nodes:
+        va, depth = queue.popleft()
+        if va in nodes:
+            nodes[va]["depth"] = min(nodes[va]["depth"], depth)
+            continue
+        node = decode_forward_node(data, base, sections, imports, va)
+        if node is None:
+            continue
+        node["depth"] = depth
+        nodes[va] = node
+        if depth >= max_depth:
+            continue
+        for target in node["internal"]:
+            if target not in nodes:
+                queue.append((target, depth + 1))
+    return nodes
+
+
+def graph_map_xref_hits(graph, base):
+    hits = []
+    for node_va, node in graph.items():
+        start_rva = node_va - base
+        end_rva = node.get("end_va", node_va) - base
+        if end_rva < start_rva:
+            start_rva, end_rva = end_rva, start_rva
+        for xref_rva in MAP_XREF_RVAS:
+            if start_rva <= xref_rva <= end_rva + 8:
+                hits.append((node_va, node.get("depth", 0), xref_rva))
+    return sorted(set(hits))
+
+
+def graph_dispatch_window_nodes(graph, base):
+    out = []
+    for node_va, node in graph.items():
+        rva = node_va - base
+        if DISPATCH_RVA_MIN <= rva < DISPATCH_RVA_MAX:
+            out.append((rva, node.get("depth", 0)))
+    return sorted(out)
 
 
 def decode_node_instructions(data, base, sections, start_va, end_va):
@@ -211,11 +261,15 @@ def main():
                 f"iat_rva=0x{iat_va-base:x}|via_thunk={int(via_thunk)}|"
                 f"thunk_rva=0x{thunk_va-base:x}"
             )
-            graph = expand_from_exact_root(data, base, sections, imports, site_va)
+            graph = deep_call_graph(data, base, sections, imports, site_va)
             print(
                 f"WSOCK_RECV_GRAPH|n={n}|nodes={len(graph)}|"
                 f"max_depth={max((node['depth'] for node in graph.values()), default=0)}"
             )
+            for dispatch_rva, depth in graph_dispatch_window_nodes(graph, base):
+                print(
+                    f"WSOCK_RECV_DISPATCH_WINDOW|n={n}|node_rva=0x{dispatch_rva:x}|depth={depth}"
+                )
             root_node = graph.get(site_va)
             if root_node is not None:
                 for order, (callsite, target) in enumerate(root_node["call_order"], 1):
@@ -267,6 +321,64 @@ def main():
                     f"MAP_PROTOCOL_SLICE_CALL|name={label}|order={order}|"
                     f"callsite_rva=0x{callsite-base:x}|target_rva=0x{target-base:x}"
                 )
+
+        map_string_rows = all_string_xrefs(data, base, sections, r"map\%d.dat")
+        map_string_vas = set()
+        needle = b"map\\%d.dat\x00"
+        pos = 0
+        while True:
+            pos = data.find(needle, pos)
+            if pos < 0:
+                break
+            srva = file_offset_to_rva(sections, pos)
+            if srva is not None:
+                map_string_vas.add(base + srva)
+            pos += 1
+        print(
+            f"MAP_STRING|occurrences={len(map_string_vas)}|decoded_xrefs={len(map_string_rows)}"
+        )
+
+        for name, callback_rva in MAP_CALLBACKS.items():
+            root_va = base + callback_rva
+            graph = deep_call_graph(data, base, sections, imports, root_va)
+            print(
+                f"MAP_CALLBACK_GRAPH|name={name}|rva=0x{callback_rva:x}|nodes={len(graph)}|"
+                f"max_depth={max((node['depth'] for node in graph.values()), default=0)}"
+            )
+            root_node = graph.get(root_va)
+            if root_node is not None:
+                for order, (callsite, target) in enumerate(root_node["call_order"], 1):
+                    print(
+                        f"MAP_CALLBACK_ROOT_CALL|name={name}|order={order}|"
+                        f"callsite_rva=0x{callsite-base:x}|target_rva=0x{target-base:x}"
+                    )
+            for node_va, depth, xref_rva in graph_map_xref_hits(graph, base):
+                print(
+                    f"MAP_CALLBACK_XREF_JOIN|name={name}|node_rva=0x{node_va-base:x}|"
+                    f"depth={depth}|map_xref_rva=0x{xref_rva:x}"
+                )
+            for node_va, node in sorted(graph.items()):
+                insns = decode_node_instructions(
+                    data, base, sections, node_va, node.get("end_va", node_va)
+                )
+                for ins in insns:
+                    vals = set(referenced_absolute_values(ins))
+                    if vals.intersection(map_string_vas):
+                        print(
+                            f"MAP_CALLBACK_STRING_JOIN|name={name}|node_rva=0x{node_va-base:x}|"
+                            f"depth={node.get('depth',0)}|instruction_rva=0x{ins.address-base:x}"
+                        )
+            direct_targets = collections.Counter()
+            for node in graph.values():
+                direct_targets.update(node["internal"])
+            for target, count in sorted(direct_targets.items()):
+                if count > 1 or target == root_va:
+                    continue
+                trva = target - base
+                if any(abs(trva - xr) < 0x400 for xr in MAP_XREF_RVAS):
+                    print(
+                        f"MAP_CALLBACK_NEAR_TARGET|name={name}|target_rva=0x{trva:x}|calls={count}"
+                    )
 
         for rva in MAP_XREF_RVAS:
             print(f"MAP_FILE_XREF|rva=0x{rva:x}")
