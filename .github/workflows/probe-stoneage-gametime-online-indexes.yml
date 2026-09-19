@@ -1,0 +1,38 @@
+name: Probe GameTime StoneAge online indexes
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_gametime_online_index_probe.py
+      - tests/test_stoneage_gametime_online_index_probe.py
+      - .github/workflows/probe-stoneage-gametime-online-indexes.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-gametime-online-indexes
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_gametime_online_index_probe -v
+      - name: Resolve GameTime online-index StoneAge records
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_gametime_online_index_probe             > research/recovered/STONEAGE-GAMETIME-ONLINE-INDEX-R1.txt
+      - name: Commit derived archived metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-GAMETIME-ONLINE-INDEX-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: resolve GameTime online-index records'
+          git pull --rebase origin main
+          git push
