@@ -248,7 +248,7 @@ def main():
     for label,href,attr_text in interesting_anchors(raw,d_final):
         print(f"ANCHOR|label={label}|href={href}|attrs={attr_text}")
 
-    bib_keys=call_first_args(raw,"fnLibList")
+    bib_keys=[value for value in call_first_args(raw,"fnLibList") if value.isdigit()]
     print(f"BIB_KEYS|count={len(bib_keys)}|values={clean(','.join(bib_keys))}")
     if not bib_keys:
         print("ERROR|phase=holding-list|kind=RuntimeError|message=no bibKey recovered")
@@ -263,7 +263,7 @@ def main():
             continue
         h_raw=decode(h_body)
         h_plain=strip_markup(h_raw)
-        lib_keys=call_first_args(h_raw,"fnLibDetail")
+        lib_keys=[value for value in call_first_args(h_raw,"fnLibDetail") if value.lower()!="libkey"]
         print(
             f"HOLDINGS|bibKey={clean(bib_key)}|status={h_status}|final={clean(h_final)}|"
             f"bytes={len(h_body)}|lib_key_count={len(lib_keys)}|lib_keys={clean(','.join(lib_keys))}"
