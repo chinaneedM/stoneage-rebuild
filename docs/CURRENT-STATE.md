@@ -861,9 +861,11 @@ Supplemental source ledgers:
 ## GameTime bonus-CD public-library confirmation — 2026-09-19
 
 - RISS formal bibliographic record `M10029631` identifies the GameTime `스톤 에이지 = Stone age` volume as **318 pages + one 12cm compact disc** and lists **National Library of Korea** as a holding institution.
-- This upgrades the 2001 bonus-CD path from retailer-only evidence to a public union-library bibliographic holding. It still does **not** prove that the physical disc is currently intact, separately accessioned, digitized or publicly downloadable.
+- A reproducible KOLIS/RISS metadata probe now sharpens that record: KOLIS ISBN-10 search returns one 2001 general-book record marked **offline** and reports **2 libraries holding it**; the same result exposes RISS alias `U10029631`. That alias resolves to the same RISS detail record, whose canonical link is `M10029631` and whose detail URL carries control number `9b505f870e768aa6ffe0bdc3ef48d419`.
+- This upgrades the 2001 bonus-CD path from retailer-only evidence to a public union-library bibliographic holding with a second-holding signal. It still does **not** identify the second library or prove that either physical disc is currently intact, separately accessioned, digitized or publicly downloadable.
 - Aladin (`2001-01-01`) and YES24 (`2001-04-30`) use different catalog dates for the same 318-page ISBN-13 `9788995182123` volume; RISS gives year 2001 and ISBN-10 `8995182121`. Treat these as date-metadata variants, not separate guide/CD editions.
-- Next useful evidence is no longer another ISBN search: resolve National Library / union-catalog supplementary-material fields, call/accession/control identifiers, disc-label imagery or any distinct non-book record.
+- Derived catalog probe: `research/recovered/STONEAGE-GAMETIME-2001-LIBRARY-SUPPLEMENT-R1.txt`.
+- Next useful evidence is no longer another ISBN search: resolve the **second holding institution**, National Library / union-catalog call/accession metadata, current accompanying-disc status, disc-label imagery or any distinct non-book record.
 ## Immediate next actions
 
 1. **Recover bytes or surviving mirrors from the now-exact Korean distribution tokens.** Highest-value keys are CNET `/pc/games/online/stoneage.zip` (257MB), Hananet PDS **`app_id=20001031524596220&type=C03`**, Hananet formal-version direct path **`stoneage.hananet.net/down/sa.exe`**, Gagamel `stoneagebeta.zip`, GameTime `GW_IDX=9`, and STAD records **8119/260 M** + **8120/240 M**. Continue mirror/archive/catalog recovery by these exact tokens; compare only by bytes/hashes and reject unrelated arcade/MAME `stoneage.zip` hits.
