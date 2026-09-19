@@ -105,7 +105,11 @@ def main():
 
     print(f"COUNT|metadata_fetched|{len(metas)}")
     print(f"COUNT|errors|{len(errors)}")
+    exact_count=sum(1 for _,_,f in matches if f["exact"])
+    size_only_count=sum(1 for _,_,f in matches if f["size_match"] and not f["exact"])
     print(f"COUNT|candidate_files|{len(matches)}")
+    print(f"COUNT|exact_name_matches|{exact_count}")
+    print(f"COUNT|size_only_candidates|{size_only_count}")
     for phase,key,kind,msg in errors:
         print(f"ERROR|phase={clean(phase)}|key={clean(key)}|kind={clean(kind)}|message={clean(msg)}")
     for ident,doc,f in sorted(matches,key=lambda x:(x[0].lower(),x[2]["name"].lower())):
