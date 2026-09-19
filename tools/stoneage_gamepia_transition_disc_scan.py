@@ -13,7 +13,7 @@ import re
 from tools.stoneage_netpower_remote_iso_scan import clean, metadata, scan_one
 
 IDENTIFIER="GAMEPIA_cd_dump"
-ISSUE=re.compile(r"(?i)(?:^|/)No\.(?:58|59|60|61|62|63|64)(?:/|$)")
+ISSUE=re.compile(r"(?i)(?:^|/)No\.(?:58|59|60|61|62|63|64|65|66|67|68|69)(?:/|$)")
 IMAGE=re.compile(r"(?i)\.(?:iso|img|bin|mdf)$")
 MAX_IMAGES=24
 
