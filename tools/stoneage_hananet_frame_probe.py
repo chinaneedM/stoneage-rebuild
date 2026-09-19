@@ -12,6 +12,8 @@ import hashlib
 import html.parser
 import json
 import re
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -85,9 +87,23 @@ class Parser(html.parser.HTMLParser):
 
 
 def request(url: str, timeout: int = 12):
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read()
+    last = None
+    for attempt in range(3):
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read()
+        except urllib.error.HTTPError as exc:
+            last = exc
+            if exc.code != 429 or attempt == 2:
+                raise
+            time.sleep(2 * (attempt + 1))
+        except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
+            last = exc
+            if attempt == 2:
+                raise
+            time.sleep(1 + attempt)
+    raise RuntimeError(f"request failed: {url}: {last}")
 
 
 def replay(timestamp: str, original: str):
@@ -178,7 +194,7 @@ def main():
 
     results = []
     errors = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as ex:
         futures = {
             ex.submit(analyze, label, ts, original): (label, ts, original)
             for label, ts, original in CANDIDATES
