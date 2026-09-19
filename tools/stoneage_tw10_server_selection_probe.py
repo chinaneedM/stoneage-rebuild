@@ -490,6 +490,22 @@ def graph_business_hits(graph, base, business):
     return sorted(set(hits))
 
 
+def candidate_ascii_literals(data, base, sections, terms):
+    pattern = re.compile(rb"[\x20-\x7e]{3,}")
+    out = []
+    lowered = tuple(t.lower() for t in terms)
+    for match in pattern.finditer(data):
+        try:
+            text = match.group().decode("ascii")
+        except UnicodeDecodeError:
+            continue
+        if not any(term in text.lower() for term in lowered):
+            continue
+        rva = file_offset_to_rva(sections, match.start())
+        out.append((match.start(), rva, text))
+    return out
+
+
 def import_business_calls(data, base, sections, imports, dll_name, api_name):
     out = []
     for iat_va, (dll, name) in imports.items():
@@ -541,6 +557,36 @@ def main():
                 f"LAUNCHER_CREATEPROCESS|calls={len(launch_calls)}|"
                 f"bytes={launcher_exe.stat().st_size}|image_base=0x{lbase:x}"
             )
+            launcher_terms = (
+                "IP:", "realbin:", "adrnbin:", "sprbin:", "spradrnbin:",
+                "windowmode", "nodelay", "updated", "sa_"
+            )
+            launcher_literals = candidate_ascii_literals(
+                ldata, lbase, lsections, launcher_terms
+            )
+            print(f"LAUNCHER_CMD_LITERAL_COUNT|count={len(launcher_literals)}")
+            for ln, (file_off, lit_rva, lit) in enumerate(launcher_literals, 1):
+                print(
+                    f"LAUNCHER_CMD_LITERAL|n={ln}|file_offset=0x{file_off:x}|"
+                    f"rva={'' if lit_rva is None else hex(lit_rva)}|text={clean(lit,240)}"
+                )
+                if lit_rva is None:
+                    continue
+                target_va = lbase + lit_rva
+                for xn, hit in enumerate(raw_text_pointer_hits(ldata,lbase,lsections,target_va),1):
+                    ins = recover_xref_instruction(ldata,lbase,lsections,hit,target_va)
+                    if ins is None:
+                        print(
+                            f"LAUNCHER_CMD_LITERAL_XREF|n={ln}|xref={xn}|"
+                            f"pointer_rva=0x{hit['ptr_rva']:x}|decoded=0"
+                        )
+                    else:
+                        print(
+                            f"LAUNCHER_CMD_LITERAL_XREF|n={ln}|xref={xn}|"
+                            f"instruction_rva=0x{ins.address-lbase:x}|mnemonic={clean(ins.mnemonic)}|"
+                            f"ops={clean(enhanced_ops(ins,ldata,lbase,lsections))}"
+                        )
+
             for n, (site_va, thunk_va, iat_va, via_thunk) in enumerate(launch_calls, 1):
                 print(
                     f"LAUNCHER_CREATEPROCESS_CALL|n={n}|callsite_rva=0x{site_va-lbase:x}|"
@@ -564,11 +610,11 @@ def main():
                                 f"ops={clean(enhanced_ops(prev,ldata,lbase,lsections))}"
                             )
                 ctx = linear_context(
-                    ldata, lbase, lsections, max(lbase + 0x1000, site_va - 0x100),
-                    max_bytes=0x180, limit=180
+                    ldata, lbase, lsections, max(lbase + 0x1000, site_va - 0x500),
+                    max_bytes=0x580, limit=520
                 )
                 for order, ins in enumerate(ctx, 1):
-                    if site_va - 0x100 <= ins.address <= site_va + 0x30 and (
+                    if site_va - 0x500 <= ins.address <= site_va + 0x30 and (
                         ins.mnemonic in {"push", "mov", "movsx", "movzx", "lea", "call", "cmp", "test"}
                         or ins.mnemonic.startswith("j")
                     ):
