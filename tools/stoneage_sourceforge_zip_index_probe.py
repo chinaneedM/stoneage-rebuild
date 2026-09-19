@@ -133,11 +133,11 @@ def parse_eocd_tail(tail, total_size):
     if sig != EOCD_SIG:
         raise ValueError("bad EOCD signature")
     if pos + 22 + comment_length > len(tail):
-        raise ValueError "truncated EOCD comment")
+        raise ValueError("truncated EOCD comment")
     if disk_number != 0 or central_disk != 0 or disk_entries != total_entries:
         raise ValueError("multi-disk ZIP unsupported")
     if total_entries == 0xFFFF or central_size == 0xFFFFFFFF or central_offset == 0xFFFFFFFF:
-        raise ValueError "ZIP64 central directory unsupported")
+        raise ValueError("ZIP64 central directory unsupported")
     if central_size > MAX_CENTRAL_DIRECTORY:
         raise ValueError(f"central directory too large: {central_size}")
     if central_offset + central_size > total_size:
