@@ -23,6 +23,8 @@ from tools.stoneage_tw10_mapcache_binary_probe import (
     referenced_absolute_values,
     rva_to_offset,
 )
+from tools.stoneage_tw10_exact_xref_probe import decode_forward_node
+
 from tools.stoneage_tw10_protocol_handoff_probe import (
     backward_paths,
     direct_rel32_call_sites,
@@ -33,6 +35,7 @@ from tools.stoneage_tw10_protocol_handoff_probe import (
 )
 from tools.stoneage_tw10_receive_map_join_probe import (
     all_string_xrefs,
+    decode_node_instructions,
     deep_call_graph,
     file_offset_to_rva,
 )
@@ -51,6 +54,7 @@ NETWORK_APIS = (
 )
 ENDPOINT_APIS = ("socket", "htons", "inet_addr", "gethostbyname", "connect")
 WAEI_XREF_RVA = 0xD4F2
+SERVER_INFO_RVA = 0x2E950
 LOCAL_BEFORE = 130
 LOCAL_AFTER = 35
 MAX_ARG_PATHS = 3
@@ -219,6 +223,30 @@ def endpoint_literals(data):
     return sorted(values)
 
 
+def data_displacements(ins, base, sections):
+    out = set()
+    for op in ins.operands:
+        if op.type != X86_OP_MEM:
+            continue
+        value = int(op.mem.disp) & 0xFFFFFFFF
+        sec = section_for_va(base, sections, value)
+        if sec is not None and sec["name"] in {".data", ".rdata", ".bss"}:
+            out.add(value)
+    return out
+
+
+def function_data_globals(data, base, sections, imports, rva):
+    va = base + rva
+    node = decode_forward_node(data, base, sections, imports, va)
+    if node is None:
+        return None, collections.Counter()
+    globals_seen = collections.Counter()
+    for ins in decode_node_instructions(data, base, sections, va, node.get("end_va", va)):
+        for value in data_displacements(ins, base, sections):
+            globals_seen[value] += 1
+    return node, globals_seen
+
+
 def graph_business_hits(graph, base, business):
     sites = {}
     for api, rows in business.items():
@@ -297,7 +325,7 @@ def main():
                             f"start_rva=0x{path[0].address-base:x}"
                         )
                         for order, ins in enumerate(path, 1):
-                            if ins.mnemonic in {"push", "mov", "lea", "call", "cmp", "test"}:
+                            if ins.mnemonic in {"push", "mov", "movsx", "movzx", "lea", "call", "cmp", "test"}:
                                 print(
                                     f"DEEP_ARG_INS|api={api}|n={n}|order={order}|"
                                     f"instruction_rva=0x{ins.address-base:x}|mnemonic={clean(ins.mnemonic)}|"
@@ -333,7 +361,37 @@ def main():
                     f"CONNECT_EVENT|n={n}|order={order}|instruction_rva=0x{addr-base:x}|api={api}"
                 )
 
-        # Test whether the known waei.bin code path actually joins networking.
+        server_node, server_globals = function_data_globals(
+            data, base, sections, imports, SERVER_INFO_RVA
+        )
+        if server_node is None:
+            print(f"SERVER_INFO_MISSING|rva=0x{SERVER_INFO_RVA:x}")
+        else:
+            callers = direct_rel32_call_sites(data, base, sections, base + SERVER_INFO_RVA)
+            print(
+                f"SERVER_INFO|rva=0x{SERVER_INFO_RVA:x}|instructions={server_node['instructions']}|"
+                f"direct_targets={len(server_node['internal'])}|callers={len(callers)}|"
+                f"data_globals={len(server_globals)}|end_reason={server_node['end_reason']}"
+            )
+            for caller in callers:
+                print(f"SERVER_INFO_CALLER|callsite_rva=0x{caller-base:x}")
+            for value, count in sorted(server_globals.items()):
+                print(
+                    f"SERVER_INFO_GLOBAL|rva=0x{value-base:x}|section={section_for_va(base,sections,value)['name']}|refs={count}"
+                )
+            for order, ins in enumerate(
+                decode_node_instructions(
+                    data, base, sections, base + SERVER_INFO_RVA, server_node.get("end_va", base + SERVER_INFO_RVA)
+                ),
+                1,
+            ):
+                print(
+                    f"SERVER_INFO_INS|order={order}|instruction_rva=0x{ins.address-base:x}|"
+                    f"mnemonic={clean(ins.mnemonic)}|ops={clean(enhanced_ops(ins,data,base,sections))}"
+                )
+
+        # Test whether the known waei.bin code path actually joins networking or
+        # touches the same server-table globals.
         waei_rows = all_string_xrefs(data, base, sections, "waei.bin")
         print(f"WAEI_BIN|decoded_xrefs={len(waei_rows)}")
         for occurrence, string_rva, ins in waei_rows:
@@ -347,6 +405,19 @@ def main():
                     f"WAEI_NETWORK_JOIN|occurrence={occurrence}|api={api}|"
                     f"node_rva=0x{node_va-base:x}|depth={depth}|callsite_rva=0x{site_va-base:x}"
                 )
+            server_global_set = set(server_globals)
+            for node_va, node in sorted(graph.items()):
+                insns = decode_node_instructions(
+                    data, base, sections, node_va, node.get("end_va", node_va)
+                )
+                for ins2 in insns:
+                    for value in data_displacements(ins2, base, sections):
+                        if value in server_global_set:
+                            print(
+                                f"WAEI_SERVER_GLOBAL_JOIN|occurrence={occurrence}|"
+                                f"node_rva=0x{node_va-base:x}|depth={node.get('depth',0)}|"
+                                f"instruction_rva=0x{ins2.address-base:x}|global_rva=0x{value-base:x}"
+                            )
 
     finally:
         img.close()
