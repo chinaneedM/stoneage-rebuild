@@ -179,8 +179,10 @@ def analyze_questions(path):
     result = {
         "present": bool(path and path.is_file()),
         "aggregate": "",
-        "rows": 0,
+        "source_rows": 0,
+        "loaded_rows": 0,
         "arity": collections.Counter(),
+        "invalid_shape": collections.Counter(),
         "type": collections.Counter(),
         "level": collections.Counter(),
         "answer_type": collections.Counter(),
@@ -197,13 +199,27 @@ def analyze_questions(path):
                 continue
             digest.update(hashlib.sha256(line).digest())
             parts = [x.strip() for x in line.split(b",")]
-            result["rows"] += 1
+            result["source_rows"] += 1
             result["arity"][len(parts)] += 1
-            if len(parts) >= 5:
-                result["type"][atoi(parts[1])] += 1
-                result["level"][atoi(parts[2])] += 1
-                result["answer_type"][atoi(parts[3])] += 1
-                result["answer_no"][atoi(parts[4])] += 1
+            if len(parts) < 9:
+                result["invalid_shape"]["fewer_than_9_fields"] += 1
+                continue
+
+            q_type = atoi(parts[1])
+            level = atoi(parts[2])
+            answer_type = atoi(parts[3])
+            answer_no = atoi(parts[4])
+
+            if answer_type == 1 and answer_no == 3:
+                result["invalid_shape"]["two_choice_answer_no_3"] += 1
+            if answer_type == 4 and answer_no != 1:
+                result["invalid_shape"]["free_text_answer_no_not_1"] += 1
+
+            result["loaded_rows"] += 1
+            result["type"][q_type] += 1
+            result["level"][level] += 1
+            result["answer_type"][answer_type] += 1
+            result["answer_no"][answer_no] += 1
     result["aggregate"] = digest.hexdigest()
     return result
 
@@ -228,6 +244,8 @@ def analyze(npc_dir, question_file=None):
     reward_candidate_arity = collections.Counter()
     warp_destination_arity = collections.Counter()
     scalar_shapes = collections.Counter()
+    scalar_values = collections.Counter()
+    threshold_values = collections.Counter()
     aggregate = hashlib.sha256()
 
     for name, arg in refs(creates):
@@ -270,15 +288,17 @@ def analyze(npc_dir, question_file=None):
             for q in qs:
                 quantities[q] += 1
 
-        entry_stone = field(data, b"EntryStone")
-        if entry_stone is not None:
-            v = atoi(entry_stone)
-            scalar_shapes[("EntryStone", "negative" if v < 0 else "nonnegative")] += 1
-
-        quiznum = field(data, b"Quiznum")
-        if quiznum is not None:
-            v = atoi(quiznum)
-            scalar_shapes[("Quiznum", "positive" if v > 0 else "nonpositive")] += 1
+        for scalar_key in (b"EntryStone", b"Quiznum", b"Type", b"Answer", b"Level"):
+            value = field(data, scalar_key)
+            if value is None:
+                continue
+            v = atoi(value)
+            label = scalar_key.decode("ascii")
+            scalar_values[(label, v)] += 1
+            if scalar_key == b"EntryStone":
+                scalar_shapes[(label, "negative" if v < 0 else "nonnegative")] += 1
+            elif scalar_key == b"Quiznum":
+                scalar_shapes[(label, "positive" if v > 0 else "nonpositive")] += 1
 
         for key in (b"GetItem", b"Border", b"Warp"):
             value = field(data, key)
@@ -289,6 +309,8 @@ def analyze(npc_dir, question_file=None):
             pair_shapes[(label, pairs, remainder)] += 1
 
             vals = csv(value)
+            for i in range(0, len(vals) - 1, 2):
+                threshold_values[(label, atoi(vals[i]))] += 1
             if key == b"GetItem":
                 for i in range(1, len(vals), 2):
                     reward_candidate_arity[len([x for x in vals[i].split(b".") if x])] += 1
@@ -305,6 +327,8 @@ def analyze(npc_dir, question_file=None):
         "reward_candidate_arity": reward_candidate_arity,
         "warp_destination_arity": warp_destination_arity,
         "scalar_shapes": scalar_shapes,
+        "scalar_values": scalar_values,
+        "threshold_values": threshold_values,
         "aggregate": aggregate.hexdigest(),
         "questions": analyze_questions(question_file),
     }
@@ -337,13 +361,22 @@ def emit(result):
         print(f"WARP_DESTINATION_ARITY|arity={arity}|pairs={n}")
     for (key, shape), n in sorted(result["scalar_shapes"].items()):
         print(f"SCALAR_SHAPE|{key}|{shape}|blocks={n}")
+    for (key, value), n in sorted(result["scalar_values"].items()):
+        print(f"SCALAR_VALUE|{key}|value={value}|blocks={n}")
+    for (key, value), n in sorted(result["threshold_values"].items()):
+        print(f"THRESHOLD_VALUE|{key}|value={value}|pairs={n}")
 
     q = result["questions"]
-    print(f"QUESTION_FILE|present={int(q['present'])}|rows={q['rows']}")
+    print(
+        f"QUESTION_FILE|present={int(q['present'])}|"
+        f"source_rows={q['source_rows']}|loaded_rows={q['loaded_rows']}"
+    )
     if q["present"]:
         print("QUESTION_AGGREGATE_SHA256|" + q["aggregate"])
         for arity, n in sorted(q["arity"].items()):
-            print(f"QUESTION_ARITY|fields={arity}|rows={n}")
+            print(f"QUESTION_ARITY|fields={arity}|source_rows={n}")
+        for shape, n in sorted(q["invalid_shape"].items()):
+            print(f"QUESTION_INVALID|{shape}|rows={n}")
         for label in ("type", "level", "answer_type", "answer_no"):
             for value, n in sorted(q[label].items()):
                 print(f"QUESTION_META|{label}|value={value}|rows={n}")
