@@ -83,7 +83,8 @@ def request(url: str, timeout: int = 8, attempts: int = 1) -> bytes:
                 return response.read()
         except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
             last = exc
-            if attempt + 1 < attempts:\n                time.sleep(1 + attempt)
+            if attempt + 1 < attempts:
+                time.sleep(1 + attempt)
     raise RuntimeError(f"request failed: {url}: {last}")
 
 
