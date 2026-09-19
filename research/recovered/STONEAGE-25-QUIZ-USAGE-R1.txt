@@ -2,7 +2,36 @@ SOURCE_BUNDLE_SHA256|d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d010
 StoneAge recovered Quiz usage probe — R1
 No NPC/template names, paths, dialogue, questions, answer text, coordinates, concrete item IDs, or original argument rows are stored.
 SCHEMA|Quiz refs -> secondary args + global question table -> key/state-mutation shape aggregate
-ARG_CORPUS_AGGREGATE_SHA256|e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+ARG_CORPUS_AGGREGATE_SHA256|ca0f288083a3f6b6049d69061bb49c9b87cdb7b295543b8d455972d72c94567e
+COUNT|ambiguous_mixed_quiz_template_names|0
+COUNT|duplicate_stable_quiz_template_names|1
+COUNT|refs|22
+COUNT|resolved_files|22
+COUNT|stable_quiz_template_names|1
+KEY_BLOCK|Answer|22
+KEY_BLOCK|Border|22
+KEY_BLOCK|EntryItem|22
+KEY_BLOCK|FailureMsg|22
+KEY_BLOCK|GetItem|4
+KEY_BLOCK|ItemFullMsg|3
+KEY_BLOCK|Level|22
+KEY_BLOCK|NoEntryMsg|22
+KEY_BLOCK|Party|22
+KEY_BLOCK|Quiznum|22
+KEY_BLOCK|StartMsg|22
+KEY_BLOCK|Type|22
+KEY_BLOCK|Warp|21
+ENTRY_ITEM_SHAPE|plain_tokens=0|blocks=22
+ENTRY_ITEM_SHAPE|star_tokens=1|blocks=22
+ENTRY_ITEM_SHAPE|tokens=1|blocks=22
+ENTRY_ITEM_QUANTITY|quantity=1|tokens=22
+PAIR_SHAPE|Border|pairs=2|remainder=0|blocks=22
+PAIR_SHAPE|GetItem|pairs=1|remainder=0|blocks=4
+PAIR_SHAPE|Warp|pairs=1|remainder=0|blocks=6
+PAIR_SHAPE|Warp|pairs=2|remainder=0|blocks=15
+GETITEM_CANDIDATE_ARITY|arity=1|pairs=4
+WARP_DESTINATION_ARITY|arity=3|pairs=36
+SCALAR_SHAPE|Quiznum|positive|blocks=22
 QUESTION_FILE|present=1|rows=150
 QUESTION_AGGREGATE_SHA256|fdf6b872320c1593769875a15a9feb1242ffb73f69ffef81de3ff02f5ed780c5
 QUESTION_ARITY|fields=8|rows=1
