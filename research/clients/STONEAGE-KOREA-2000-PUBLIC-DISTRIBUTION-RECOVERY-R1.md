@@ -107,6 +107,35 @@ The same preserved list snapshot shows view counts of 60,319 for the full-versio
 
 A separate Hananet PDS H01-detail enumeration extracted 33 catalog record IDs from the archived index, but every detail-page replay failed with HTTP 404 or connection refusal. That path is therefore **archive/capture-inconclusive**, not a negative finding about StoneAge content.
 
+#### Inium official `down.htm` cross-mirror topology
+
+A bounded recovery from Hananet's persistent link to `http://stoneage.enium.co.kr/8_1.htm` exposed Inium's HTML homepage `main_st.htm`, which in turn directly links **`down.htm`**. That official Inium download page is now recovered across multiple dates.
+
+The 2000-11-09 snapshot is especially important because it predates Hananet GamePlus service integration and already says that StoneAge is in trial/free operation with formal service planned for December 1. Its download choices include:
+
+- CNET Korea exact detail record: `/downloads/File.asp?Platform_Id=1&Software_Id=200009263856`;
+- Hananet tracking wrapper whose target is the exact PDS record **`http://pds.hananet.net/view.asp?app_id=20001031524596220&type=C03`**;
+- GameTime promotional/download-related surface.
+
+The 2000-12-08 snapshot preserves the same CNET and Hananet identities. By 2001-04-13, Inium's page explicitly states that the StoneAge programs listed there are **`정식판용` / formal-version programs** and that trial users should download through the separate trial menu. It also advises users whose automatic update fails to obtain manual-update files from the data room.
+
+By 2001-06-09 / 2001-08-01, the official page exposes additional mirror identities:
+
+- Gagamel: **`http://www.gagamel.com/web_data/download/stoneagebeta.zip`**;
+- GameTime: **`http://www.gametime.co.kr/data/download.asp?GW_IDX=9&GW_Name=Online`**;
+- by 2001-08-01, Hananet is a direct binary path: **`http://stoneage.hananet.net/down/sa.exe`**.
+
+Because the same Inium page labels the listed downloads as formal-version programs, the Gagamel filename `stoneagebeta.zip` must **not** be classified as a trial client from filename alone.
+
+Archive boundary:
+
+- Wayback preserves the Hananet `flashlinks.cgi` wrapper and its frame target to `app_id=20001031524596220&type=C03`;
+- six normalized direct-replay forms of that inner PDS record return HTTP 404 at the known wrapper timestamps;
+- exact Availability/direct-prefix probes for `stoneage.hananet.net/down/sa.exe` and `stoneagebeta.zip` found no recoverable binary snapshot;
+- these are exact Wayback negative results only, not evidence that no other mirror/preservation copy exists.
+
+This changes the search problem materially: Hananet no longer lacks a file identity. The high-value exact tokens are now the early PDS app ID **`20001031524596220`**, the later Hananet **`sa.exe`**, CNET **`stoneage.zip`**, Gagamel **`stoneagebeta.zip`**, and GameTime **`GW_IDX=9`**.
+
 Derived evidence:
 
 - `research/recovered/STONEAGE-HANANET-FRAME-PATHS-R1.txt`;
@@ -116,6 +145,11 @@ Derived evidence:
 - `research/recovered/STONEAGE-HANANET-BOARD-RECORDS-R1.txt`;
 - `research/recovered/STONEAGE-HANANET-STAD-ROWS-R1.txt`;
 - `research/recovered/STONEAGE-HANANET-PDS-H01-DETAILS-R1.txt`.
+- `research/recovered/STONEAGE-HANANET-DATED-DOWNLOAD-SURFACES-R1.txt`;
+- `research/recovered/STONEAGE-INIUM-8-1-PROBE-R1.txt`;
+- `research/recovered/STONEAGE-INIUM-DOWN-PROBE-R1.txt`;
+- `research/recovered/STONEAGE-INIUM-MIRROR-TARGETS-R1.txt`;
+- `research/recovered/STONEAGE-HANANET-PDS-DIRECT-REPLAY-R1.txt`.
 
 ### 4a. Exact historical download-root narrowing
 
