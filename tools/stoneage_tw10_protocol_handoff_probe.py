@@ -329,10 +329,11 @@ def callback_cfg_probe(data, base, sections, imports, callback_va):
     }
 
 
-def exact_import_calls(data, base, sections, imports, dll_name, api_name):
+def exact_import_calls(data, base, sections, imports, dll_name, api_names):
+    names = {str(x).lower() for x in api_names}
     out = []
     for iat_va, (dll, name) in imports.items():
-        if dll.lower() != dll_name.lower() or name.lower() != api_name.lower():
+        if dll.lower() != dll_name.lower() or name.lower() not in names:
             continue
         for hit in raw_text_pointer_hits(data, base, sections, iat_va):
             ins = recover_xref_instruction(data, base, sections, hit, iat_va)
@@ -486,7 +487,16 @@ def main():
                     f"target_rva=0x{target-base:x}|calls={count}"
                 )
 
-        send_import_calls = exact_import_calls(data, base, sections, imports, "WSOCK32.dll", "send")
+        wsock_imports = sorted(
+            (iat_va, name) for iat_va, (dll, name) in imports.items()
+            if dll.lower() == "wsock32.dll"
+        )
+        print(f"WSOCK_IMPORTS|count={len(wsock_imports)}")
+        for iat_va, name in wsock_imports:
+            print(f"WSOCK_IMPORT|iat_rva=0x{iat_va-base:x}|name={clean(name)}")
+        send_import_calls = exact_import_calls(
+            data, base, sections, imports, "WSOCK32.dll", {"send", "#19"}
+        )
         print(f"WSOCK_SEND|exact_calls={len(send_import_calls)}")
         for n, (iat_va, send_ins) in enumerate(send_import_calls, 1):
             print(
