@@ -71,8 +71,12 @@ class QuizUsageProbeTests(unittest.TestCase):
             self.assertEqual(result["pair_shapes"][("GetItem", 2, 0)], 1)
             self.assertEqual(result["reward_candidate_arity"][2], 1)
             self.assertEqual(result["warp_destination_arity"][3], 2)
-            self.assertEqual(result["questions"]["rows"], 2)
+            self.assertEqual(result["questions"]["source_rows"], 2)
+            self.assertEqual(result["questions"]["loaded_rows"], 2)
             self.assertEqual(result["questions"]["arity"][9], 2)
+            self.assertEqual(result["scalar_values"][("Quiznum", 5)], 1)
+            self.assertEqual(result["scalar_values"][("EntryStone", 50)], 1)
+            self.assertEqual(result["threshold_values"][("Warp", 4)], 1)
         finally:
             td.cleanup()
 
@@ -108,7 +112,23 @@ class QuizUsageProbeTests(unittest.TestCase):
             for secret in ("100*2", "300.301", "1.2.3", "secret-question-payload", "other-question-payload", "q.arg"):
                 self.assertNotIn(secret, text)
             self.assertIn("PAIR_SHAPE|Warp|pairs=2|remainder=0|blocks=1", text)
-            self.assertIn("QUESTION_FILE|present=1|rows=2", text)
+            self.assertIn(
+                "QUESTION_FILE|present=1|source_rows=2|loaded_rows=2", text
+            )
+        finally:
+            td.cleanup()
+
+    def test_question_loader_shape_matches_fixed_parser(self):
+        td, root = self.build()
+        try:
+            with (root / "question.txt").open("ab") as f:
+                f.write(b"3,1,1,2,1,too-short,a,b\n")
+            result = analyze(root, root / "question.txt")
+            self.assertEqual(result["questions"]["source_rows"], 3)
+            self.assertEqual(result["questions"]["loaded_rows"], 2)
+            self.assertEqual(
+                result["questions"]["invalid_shape"]["fewer_than_9_fields"], 1
+            )
         finally:
             td.cleanup()
 
