@@ -1,0 +1,41 @@
+name: Scan Korean launch-window PC magazine discs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_netpower_remote_iso_scan.py
+      - tools/stoneage_korean_pc_magazine_launch_window_scan.py
+      - tests/test_stoneage_netpower_remote_iso_scan.py
+      - tests/test_stoneage_korean_pc_magazine_launch_window_scan.py
+      - .github/workflows/scan-stoneage-korean-launch-window-discs.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-korean-launch-window-discs
+  cancel-in-progress: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python3 -m unittest             tests.test_stoneage_netpower_remote_iso_scan             tests.test_stoneage_korean_pc_magazine_launch_window_scan -v
+      - name: Scan public Korean launch-window disc directory sectors
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_korean_pc_magazine_launch_window_scan             > research/recovered/STONEAGE-KOREAN-PC-MAGAZINE-LAUNCH-WINDOW-R1.txt
+      - name: Commit derived directory metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-KOREAN-PC-MAGAZINE-LAUNCH-WINDOW-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: scan Korean launch-window disc directories'
+          git pull --rebase origin main
+          git push
