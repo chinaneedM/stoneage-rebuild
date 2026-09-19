@@ -14,7 +14,7 @@ from tools.stoneage_netpower_remote_iso_scan import clean, metadata, scan_one
 
 IDENTIFIER="pcgm-cd-dump"
 IMAGE=re.compile(r"(?i)\.(?:iso|img|bin|mdf)$")
-DATED_WINDOW=re.compile(r"(?i)(?:^|/)(?:2000(?:09|10|11|12)|2001(?:01|02|03|04|05|06))(?:/|$)")
+DATED_WINDOW=re.compile(r"(?i)(?:^|/)(?:2000(?:09|10|11|12)|2001(?:01|02|03|04|05|06|07|08|09|10|11|12))(?:/|$)")
 LEGACY_WINDOW=re.compile(r"(?i)(?:^|/)No\.(?:58|59|60|61|62|63|64)(?:/|$)")
 MAX_IMAGES=32
 
@@ -51,7 +51,7 @@ def select_files(data):
 def main():
     print("StoneAge Korean PC magazine launch-window directory scan — R1")
     print("SCOPE|http-range-directory-metadata-only|no-full-image-download|no-carrier-bytes-committed")
-    print("WINDOW|dated=2000-09..2001-06|legacy-issues=No.58..No.64")
+    print("WINDOW|dated=2000-09..2001-12|legacy-issues=No.58..No.64")
     data=metadata(IDENTIFIER)
     doc=data.get("metadata",{})
     rows=select_files(data)
