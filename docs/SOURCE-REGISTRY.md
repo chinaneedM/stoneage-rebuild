@@ -649,6 +649,13 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Archaeology significance:
   - first accepted early clean retail client baseline in the repository;
   - activates direct runtime/resource reverse engineering while JSS 1999 and Korean 2000 recovery continue as lineage-comparison tracks.
+- Derived technical validation (2026-09-19):
+  - `StoneAge.exe` is the Waei update/launch front-end: verified WinINet imports, `CreateProcessA`, updater paths/host and generation-pattern code references;
+  - `sa_3.exe` is the game runtime: DirectDraw/DirectInput/WinMM imports, `ClientLogin` / `CharLogin` code references, battle-map and resource paths;
+  - existing 2.5 REAL/ADRN and SPR/SPRADRN parsers consume the v1.0 generation unchanged, establishing format-schema continuity;
+  - `battle_1.bin` is a 233-record exact concatenation of the loose battle-map files;
+  - `sound_1.bin` is structurally valid but seven loose WAV counterparts are variant payloads.
+  - canonical reports: `research/recovered/STONEAGE-TW10-TECHNICAL-PROBE-R1.txt`, `research/recovered/STONEAGE-TW10-RUNTIME-DEEP-R1.txt`, `research/recovered/STONEAGE-TW10-RUNTIME-SOUND-R1.txt`.
 
 ## Required metadata for future entries
 
