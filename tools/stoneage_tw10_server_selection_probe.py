@@ -290,6 +290,55 @@ def exact_pointer_refs(data, base, sections, target_rva):
     return rows
 
 
+def exact_pointer_ref_candidates(data, base, sections, target_rva):
+    target_va = base + target_rva
+    rows = []
+    decoder = md()
+    for hit in raw_text_pointer_hits(data, base, sections, target_va):
+        ptr_off = hit["ptr_file_offset"]
+        candidates = []
+        for back in range(0, 16):
+            start = ptr_off - back
+            if start < 0:
+                continue
+            rva = file_offset_to_rva(sections, start)
+            if isinstance(rva, tuple):
+                rva = rva[0]
+            if rva is None:
+                continue
+            blob = data[start:min(len(data), start + 24)]
+            decoded = list(decoder.disasm(blob, base + rva, count=1))
+            if not decoded:
+                continue
+            ins = decoded[0]
+            if not (start <= ptr_off and ptr_off + 4 <= start + ins.size):
+                continue
+            refs = set(referenced_absolute_values(ins))
+            if target_va not in refs:
+                continue
+            preds = predecessor_candidates(data, base, sections, ins.address)
+            candidates.append((back, len(preds), ins))
+        rows.append((hit["ptr_rva"], sorted(candidates, key=lambda x: (-x[1], x[0], x[2].size))))
+    return rows
+
+
+def forward_context(data, base, sections, start_va, limit=64):
+    off = rva_to_offset(sections, start_va - base)
+    if off is None:
+        return []
+    sec = section_for_va(base, sections, start_va)
+    if sec is None:
+        return []
+    end = min(len(data), sec["raw"] + sec["raw_size"], off + 512)
+    decoder = md()
+    out = []
+    for ins in decoder.disasm(data[off:end], start_va, count=limit):
+        out.append(ins)
+        if ins.mnemonic.startswith("ret"):
+            break
+    return out
+
+
 def static_cstr_at_rva(data, sections, rva, maxlen):
     off = rva_to_offset(sections, rva)
     if off is None:
@@ -466,6 +515,15 @@ def main():
             f"refs={len(table_refs)}|writes={sum(1 for row in table_refs if row['write'])}|"
             f"select_index_rva=0x{SELECT_SERVER_INDEX_RVA:x}"
         )
+        table_sec = section_for_va(base, sections, base + SERVER_TABLE_RVA)
+        table_off = rva_to_offset(sections, SERVER_TABLE_RVA)
+        if table_sec is not None:
+            print(
+                f"SERVER_TABLE_STORAGE|section={table_sec['name']}|section_rva=0x{table_sec['rva']:x}|"
+                f"raw_size={table_sec['raw_size']}|vsize={table_sec['vsize']}|"
+                f"offset_in_section={SERVER_TABLE_RVA-table_sec['rva']}|"
+                f"file_backed={int(table_off is not None)}"
+            )
         print(
             f"SERVER_LAYOUT_INFERENCE|slots={SERVER_SLOT_COUNT}|record_size={SERVER_RECORD_SIZE}|"
             f"used_offset=0|ip_offset={SERVER_IP_OFFSET}|ip_span={SERVER_PORT_OFFSET-SERVER_IP_OFFSET}|"
@@ -503,6 +561,41 @@ def main():
                     f"instruction_rva=0x{ins.address-base:x}|mnemonic={clean(ins.mnemonic)}|"
                     f"ops={clean(enhanced_ops(ins,data,base,sections))}"
                 )
+
+            candidate_rows = exact_pointer_ref_candidates(data, base, sections, target_rva)
+            for n, (ptr_rva, candidates) in enumerate(candidate_rows, 1):
+                print(
+                    f"EXACT_XREF_CANDIDATES|label={label}|n={n}|pointer_rva=0x{ptr_rva:x}|"
+                    f"count={len(candidates)}"
+                )
+                for cno, (back, pred_count, candidate) in enumerate(candidates, 1):
+                    print(
+                        f"EXACT_XREF_CANDIDATE|label={label}|n={n}|candidate={cno}|"
+                        f"instruction_rva=0x{candidate.address-base:x}|back={back}|"
+                        f"predecessors={pred_count}|mnemonic={clean(candidate.mnemonic)}|"
+                        f"ops={clean(enhanced_ops(candidate,data,base,sections))}"
+                    )
+
+            if label in {"table_base", "select_index"}:
+                for n, (_, ins) in enumerate(rows_exact, 1):
+                    if ins is None:
+                        continue
+                    context = forward_context(data, base, sections, ins.address, limit=72)
+                    print(
+                        f"XREF_FORWARD_CONTEXT|label={label}|n={n}|"
+                        f"start_rva=0x{ins.address-base:x}|instructions={len(context)}"
+                    )
+                    for order, ctx in enumerate(context, 1):
+                        if ctx.mnemonic in {
+                            "mov", "movsx", "movzx", "lea", "push", "call", "cmp", "test",
+                            "rep movsb", "rep movsd", "rep stosb", "rep stosd", "stosb", "stosd",
+                            "add", "sub", "imul", "shl", "shr", "xor", "and", "or"
+                        }:
+                            print(
+                                f"XREF_FORWARD_INS|label={label}|n={n}|order={order}|"
+                                f"instruction_rva=0x{ctx.address-base:x}|mnemonic={clean(ctx.mnemonic)}|"
+                                f"ops={clean(enhanced_ops(ctx,data,base,sections))}"
+                            )
         for n, row in enumerate(table_refs, 1):
             ins = row["ins"]
             print(
