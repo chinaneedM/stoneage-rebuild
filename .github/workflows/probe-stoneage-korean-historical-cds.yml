@@ -1,0 +1,39 @@
+name: Discover Korean historical CD corpus
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_korean_historical_cd_corpus_probe.py
+      - tests/test_stoneage_korean_historical_cd_corpus_probe.py
+      - .github/workflows/probe-stoneage-korean-historical-cds.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-korean-historical-cd-corpus
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_korean_historical_cd_corpus_probe -v
+      - name: Discover Korean historical CD carriers
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_korean_historical_cd_corpus_probe \
+            > research/recovered/STONEAGE-KOREAN-HISTORICAL-CD-CORPUS-R1.txt
+      - name: Commit metadata-only discovery result
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-KOREAN-HISTORICAL-CD-CORPUS-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: discover Korean historical CD corpus'
+          git pull --rebase origin main
+          git push
