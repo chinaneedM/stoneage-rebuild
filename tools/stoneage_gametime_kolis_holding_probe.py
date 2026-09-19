@@ -146,7 +146,7 @@ def search_form(raw):
 
 
 def edition_key(raw):
-    m=re.search(r"fnEdtionList\([^0-9]*(\d+)",raw)
+    m=re.search(r"fnEdtionList\\(\\s*[\\\"']?(\\d+)",raw)
     if not m:
         raise RuntimeError("edition key not found")
     return m.group(1)
