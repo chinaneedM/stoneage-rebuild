@@ -121,11 +121,22 @@ Exact handler semantics remain to be resolved from parameter extraction and down
 
 ## Network handoff boundary
 
-The exact direct-call graphs for these message builders do not reach a named WSOCK32 import.
+Taiwan v1.0 now independently closes the generated-protocol -> socket-write chain from retail bytes.
 
-The descendant `lssproto_Send` implementation explains a plausible architectural reason: it appends a newline and hands the encoded message to `lssproto.write_func(fd, encoded, len)`, an indirect function pointer rather than a direct `send()` call.
+- `0x1b3f0 = lssproto_Send` ends at `0x1b46e` with an indirect call through the `.data` function-pointer slot `0x598e0`.
+- The initialization helper at `0x1ac10` loads its first argument, first installs default text target `0x1b3d0` into `0x598e0`, tests the caller-supplied pointer, and at `0x1ac22` overwrites `0x598e0` when that pointer is non-null. This independently reproduces the later `lssproto_InitClient(writefunc,...)` control shape.
+- `0x1ac10` has one direct caller, `0x2ebe3`; every valid call-predecessor path identifies `0x2eca0` as the callback argument.
+- Control-flow recovery of callback `0x2eca0` shows it reads the pending-length global `0x13ede20` at `0x2ecaf` and writes the updated value back at `0x2ece1`. It also references `0x13ede1c`; that second global's human-readable role remains unassigned.
+- The WSOCK32 `send` import occupies IAT RVA `0x52254`. The exact linker thunk is `0x48466` (`jmp [IAT]`) and has exactly one direct caller, `0x2eb33`.
+- Immediately before `0x2eb33`, the runtime loads length from `0x13ede20` and socket from `0x13ede24`, then supplies flags `0`, that length, buffer address `0x13f1e34`, and the socket to `send`.
 
-For Taiwan v1.0 this is currently a **lineage-consistent hypothesis**, not yet a binary-proven fact. The next binary task is therefore to inspect `0x1b3f0` for an indirect call and trace the backing function pointer's initialization to the actual socket/write wrapper.
+The binary-proven handoff is therefore:
+
+`lssproto_Send 0x1b3f0 -> [0x598e0] -> callback 0x2eca0 -> pending write state -> 0x2eb33 -> thunk 0x48466 -> WSOCK32 send (IAT 0x52254)`
+
+The later source predicted this two-stage buffered-write architecture, but the addresses, shared state and final Winsock call above are independently recovered from the accepted Taiwan v1.0 binary.
+
+Canonical derived evidence: `research/recovered/STONEAGE-TW10-PROTOCOL-HANDOFF-R1.txt`.
 
 ## Evidence boundary
 
@@ -133,14 +144,17 @@ Established directly from Taiwan v1.0 bytes:
 
 - exact protocol-name locations and xrefs;
 - send-side versus dispatch-side reference forms;
-- exact helper RVAs;
-- exact helper call counts and order;
-- the five helper semantic mappings above, because the six-message count/order constraints uniquely reproduce the preserved generator structure.
+- exact protocol utility helper RVAs, call counts and call order;
+- the `lssproto_Send` indirect callback slot and its initialization semantics;
+- the sole non-null callback supplied by the runtime;
+- callback mutation of the pending-length state;
+- the unique WSOCK32 `send` thunk/caller and its socket/buffer/length/flags argument path.
 
 Still OPEN:
 
-- exact identity of the indirect network write callback in Taiwan v1.0;
-- exact mapping of receive/dispatch branch helpers;
+- exact semantics of the six per-protocol receive/dispatch branches;
+- the incoming `recv` -> protocol dispatcher join;
+- exact symbolic names for runtime globals beyond roles proven by use;
 - whether every later LSSPROTO message remained byte/semantics compatible;
 - server-side validation and logic not present in the retail client.
 
