@@ -237,12 +237,57 @@ Derived records:
 - `research/recovered/STONEAGE-GAMETIME-2001-RECORD-RESOLUTION-R1.txt`
 - `research/recovered/STONEAGE-GAMETIME-ONLINE-INDEX-R1.txt`
 
+## GameTime record 9 exact payload redirect recovered
+
+The migrated GameTime handler is no longer only a record-level clue.
+
+Archived HTTP 302 responses for:
+
+- `/data/download.asp?GW_IDX=9&GW_Name=Online`
+
+at **2001-06-14**, **2001-08-06**, **2001-12-15** and **2002-02-08** all preserve the same redirect target:
+
+**`http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip`**
+
+The control trial record:
+
+- `GW_IDX=76`
+
+preserves the parallel redirect target:
+
+**`http://www.gametime.co.kr/images/Online/pds/2001/02/stone_demo.exe`**
+
+This creates an exact payload filename/path pair for the two GameTime records and confirms that the download handler redirected to files under the GameTime image/PDS tree.
+
+The legacy evidence remains important:
+
+- old `num=9` is the 2000-10-11 `스톤 에이지 베타 버젼용 클라이언트`;
+- old `num=34` is the StoneAge manual update;
+- migrated `GW_IDX=34` preserves the same manual-update identity;
+- later Inium links `GW_IDX=9` among formal-version mirrors.
+
+Therefore **`onlStoneAge.zip`** is the migrated record-9 payload identity, but the project must still not assume that its bytes remained unchanged from the original 2000 Beta attachment. Persistent record key and persistent attachment filename are not sufficient to prove persistent byte identity.
+
+Direct archive checks:
+
+- `onlStoneAge.zip`: bare/www CDX queries return zero rows;
+- `stone_demo.exe`: CDX requests timed out and remain inconclusive;
+- eight exact Wayback Availability checks across the two payloads complete without request errors and return zero available captures.
+
+No client bytes were recovered by these checks.
+
+Derived records:
+
+- `research/recovered/STONEAGE-GAMETIME-DOWNLOAD-REDIRECT-CDX-R1.txt`
+- `research/recovered/STONEAGE-GAMETIME-REDIRECT-HEADERS-R1.txt`
+- `research/recovered/STONEAGE-GAMETIME-PAYLOAD-CAPTURES-R1.txt`
+
 ## Operational consequence
 
 The public-media route is now materially narrower:
 
 1. Do not repeat the closed NetPower 2001.12, PCGM 2000-09..2001-12, GamePia No.58..69, or exact IA-token scans unless a new token or materially better parser changes the question.
-2. Prioritize the archived GameTime StoneAge search/result chain.
+2. Prioritize exact recovery of GameTime **`onlStoneAge.zip`** at `/images/Online/pds/2001/02/onlStoneAge.zip`, now server-bound to `GW_IDX=9`; retain `stone_demo.exe` as the independently resolved trial-client token.
 3. Continue expanded public-disc scanning only where the carrier dates or metadata materially overlap the 2000–2001 Korean distribution window.
 4. On any concrete installer/archive hit, stop broad enumeration and run the clean-client acceptance pipeline: provenance, archive hash, full file tree/per-file hashes, executable metadata, updater/endpoints, resource generations, and contamination checks.
 
@@ -250,4 +295,4 @@ The public-media route is now materially narrower:
 
 **OPEN / narrowed recovery surface.**
 
-No provenance-preserving 2000–2001 Korean StoneAge client bytes have yet been recovered by this corpus pass. The main gain is reproducible elimination of specific public carriers and discovery of the archived 2001-07-01 GameTime StoneAge search surface.
+No provenance-preserving 2000–2001 Korean StoneAge client bytes have yet been recovered by this corpus pass. The main gain is reproducible elimination of specific public carriers plus recovery of GameTime's exact migrated record-9 payload path **`/images/Online/pds/2001/02/onlStoneAge.zip`** and trial path **`/images/Online/pds/2001/02/stone_demo.exe`**.
