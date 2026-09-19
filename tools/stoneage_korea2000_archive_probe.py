@@ -187,6 +187,9 @@ def main():
                     )
                 )
 
+    if args.root_only:
+        roots = [x for x in roots if x[0] == "inium-root"]
+
     root_rows = []
     for surface, pattern in roots:
         try:
