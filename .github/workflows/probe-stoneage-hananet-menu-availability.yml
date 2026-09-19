@@ -1,0 +1,37 @@
+name: Probe Hananet StoneAge menu availability
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_hananet_menu_availability_probe.py
+      - tests/test_stoneage_hananet_menu_availability_probe.py
+      - .github/workflows/probe-stoneage-hananet-menu-availability.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-hananet-menu-availability
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_hananet_menu_availability_probe -v
+      - name: Query Hananet menu availability
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_hananet_menu_availability_probe             > research/recovered/STONEAGE-HANANET-MENU-AVAILABILITY-R1.txt
+      - name: Commit derived availability metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-HANANET-MENU-AVAILABILITY-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Hananet StoneAge menu availability'
+          git pull --rebase origin main
+          git push
