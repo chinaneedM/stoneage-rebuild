@@ -23,7 +23,11 @@ from tools.stoneage_tw10_mapcache_binary_probe import (
     referenced_absolute_values,
     rva_to_offset,
 )
-from tools.stoneage_tw10_exact_xref_probe import decode_forward_node
+from tools.stoneage_tw10_exact_xref_probe import (
+    decode_forward_node,
+    raw_text_pointer_hits,
+    recover_xref_instruction,
+)
 
 from tools.stoneage_tw10_protocol_handoff_probe import (
     backward_paths,
@@ -57,6 +61,9 @@ WAEI_XREF_RVA = 0xD4F2
 SERVER_INFO_RVA = 0x2E950
 SERVER_TABLE_RVA = 0x13F5E40
 SERVER_RECORD_SIZE = 193
+SERVER_SLOT_COUNT = 10
+SERVER_IP_OFFSET = 1
+SERVER_PORT_OFFSET = 129
 SELECT_SERVER_INDEX_RVA = 0x5C860
 LOCAL_BEFORE = 130
 LOCAL_AFTER = 35
@@ -271,6 +278,33 @@ def server_table_refs(instructions, base):
     return out
 
 
+def exact_pointer_refs(data, base, sections, target_rva):
+    target_va = base + target_rva
+    rows = []
+    for hit in raw_text_pointer_hits(data, base, sections, target_va):
+        ins = recover_xref_instruction(data, base, sections, hit, target_va)
+        if ins is None:
+            rows.append((hit["ptr_rva"], None))
+        else:
+            rows.append((hit["ptr_rva"], ins))
+    return rows
+
+
+def static_cstr_at_rva(data, sections, rva, maxlen):
+    off = rva_to_offset(sections, rva)
+    if off is None:
+        return None
+    raw = data[off:min(len(data), off + maxlen)]
+    end = raw.find(b"\x00")
+    if end >= 0:
+        raw = raw[:end]
+    if not raw:
+        return ""
+    if any(b < 0x20 or b > 0x7E for b in raw):
+        return "<non-ascii>"
+    return raw.decode("ascii", "replace")
+
+
 def function_data_globals(data, base, sections, imports, rva):
     va = base + rva
     node = decode_forward_node(data, base, sections, imports, va)
@@ -432,6 +466,43 @@ def main():
             f"refs={len(table_refs)}|writes={sum(1 for row in table_refs if row['write'])}|"
             f"select_index_rva=0x{SELECT_SERVER_INDEX_RVA:x}"
         )
+        print(
+            f"SERVER_LAYOUT_INFERENCE|slots={SERVER_SLOT_COUNT}|record_size={SERVER_RECORD_SIZE}|"
+            f"used_offset=0|ip_offset={SERVER_IP_OFFSET}|ip_span={SERVER_PORT_OFFSET-SERVER_IP_OFFSET}|"
+            f"port_offset={SERVER_PORT_OFFSET}|port_span={SERVER_RECORD_SIZE-SERVER_PORT_OFFSET}"
+        )
+        for slot in range(SERVER_SLOT_COUNT):
+            row_rva = SERVER_TABLE_RVA + slot * SERVER_RECORD_SIZE
+            host = static_cstr_at_rva(data, sections, row_rva + SERVER_IP_OFFSET, SERVER_PORT_OFFSET-SERVER_IP_OFFSET)
+            port = static_cstr_at_rva(data, sections, row_rva + SERVER_PORT_OFFSET, SERVER_RECORD_SIZE-SERVER_PORT_OFFSET)
+            print(
+                f"SERVER_SLOT_INITIAL|slot={slot}|mapped={int(host is not None and port is not None)}|"
+                f"host={clean(host if host is not None else '<unmapped>',160)}|"
+                f"port={clean(port if port is not None else '<unmapped>',80)}"
+            )
+
+        exact_targets = (
+            ("table_base", SERVER_TABLE_RVA),
+            ("ip_field_0", SERVER_TABLE_RVA + SERVER_IP_OFFSET),
+            ("port_field_0", SERVER_TABLE_RVA + SERVER_PORT_OFFSET),
+            ("select_index", SELECT_SERVER_INDEX_RVA),
+        )
+        for label, target_rva in exact_targets:
+            rows_exact = exact_pointer_refs(data, base, sections, target_rva)
+            print(
+                f"EXACT_DATA_XREFS|label={label}|target_rva=0x{target_rva:x}|count={len(rows_exact)}"
+            )
+            for n, (ptr_rva, ins) in enumerate(rows_exact, 1):
+                if ins is None:
+                    print(
+                        f"EXACT_DATA_XREF|label={label}|n={n}|pointer_rva=0x{ptr_rva:x}|decoded=0"
+                    )
+                    continue
+                print(
+                    f"EXACT_DATA_XREF|label={label}|n={n}|pointer_rva=0x{ptr_rva:x}|decoded=1|"
+                    f"instruction_rva=0x{ins.address-base:x}|mnemonic={clean(ins.mnemonic)}|"
+                    f"ops={clean(enhanced_ops(ins,data,base,sections))}"
+                )
         for n, row in enumerate(table_refs, 1):
             ins = row["ins"]
             print(
