@@ -215,7 +215,7 @@ def interesting_anchors(raw,base):
 
 
 def main():
-    print("StoneAge GameTime 2001 KOLIS holding-layer probe — R5")
+    print("StoneAge GameTime 2001 KOLIS holding-layer probe — R6")
     print("SCOPE|public-catalog-metadata-only|no-book-or-cd-payload-download")
     s_status,s_final,s_body=get(SEARCH)
     s_raw=decode(s_body)
@@ -283,10 +283,26 @@ def main():
                 for _,row in context_rows(b_raw,(token,),520):
                     print(f"BIB_DETAIL_RAW|bibKey={clean(bib_key)}|token={clean(token)}|html={clean(row,980)}")
 
+            marc_url=BASE+"/kolisnet/search/searchResultMarc.do"
+            try:
+                m_status,m_final,m_body=post(marc_url,book_fields,b_final)
+            except Exception as exc:
+                print(f"ERROR|phase=marc-view|bibKey={clean(bib_key)}|kind={type(exc).__name__}|message={clean(exc)}")
+            else:
+                m_raw=decode(m_body)
+                m_plain=strip_markup(m_raw)
+                print(f"MARC|bibKey={clean(bib_key)}|status={m_status}|final={clean(m_final)}|bytes={len(m_body)}")
+                for token,row in context_rows(
+                    m_plain,
+                    ("KMO200119860","UB20011039873","컴팩트디스크","compact disc","300","500","505","ISBN"),
+                    460,
+                ):
+                    print(f"MARC_CONTEXT|bibKey={clean(bib_key)}|token={clean(token)}|text={clean(row,940)}")
+
             control_pairs=re.findall(r"fnVolSeContent\(([^)]*)\)",b_raw)
             for args in control_pairs:
                 parts=[part.strip().strip("'\" ") for part in args.split(",")]
-                if len(parts)<3 or not parts[1]:
+                if len(parts)<3 or not re.match(r"^[A-Z]{2,4}\\d+$",parts[1]):
                     continue
                 toc_url=BASE+"/kolisnet/search/include/searchResultHoldingSeContent.do?"+urllib.parse.urlencode({
                     "kolisVolKey":parts[0],
