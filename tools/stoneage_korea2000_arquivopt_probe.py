@@ -12,7 +12,8 @@ UA = "stoneage-rebuild-archaeology/1.0"
 API = "https://arquivo.pt/textsearch"
 
 QUERIES = (
-    ("inium-url", '"stoneage.enium.co.kr"'),
+    ("inium-url-www", '"www.stoneage.enium.co.kr"'),
+    ("inium-url-bare", '"stoneage.enium.co.kr"'),
     ("inium-site-korean", '"스톤에이지" site:stoneage.enium.co.kr'),
     ("hananet-korean", '"스톤에이지" site:hananet.net'),
     ("hananet-latin", 'stoneage site:hananet.net'),
