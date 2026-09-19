@@ -46,6 +46,29 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - if bytes appear, immediately perform the clean-client acceptance test before further broad searching.
 - Status: **TARGET-A / highest-priority operational pre-1.74 bridge search; bytes not yet located**.
 
+## TARGET-A/B — Korean GameTime StoneAge Perfect Guide bonus CD — 2001
+
+- YES24 catalog: https://www.yes24.com/product/goods/199761
+- Aladin catalog: https://www.aladin.co.kr/shop/wproduct.aspx?itemid=282190
+- Exact title: `스톤에이지 퍼펙트 가이드`
+- ISBN-13: `9788995182123`
+- ISBN-10: `8995182121`
+- YES24 date: **2001-04-30**
+- Media: **CD 1**
+- Critical catalog fact:
+  - YES24 explicitly says the bonus CD contains the **StoneAge installation program** plus demo-game CD content.
+- Operational value:
+  - this is a concrete early Korean installation-program carrier rather than a version-name recollection;
+  - it is later than the 2000 Inium/Hananet/CNET mass-download target, but earlier than the 2003 1.74 bridge and can provide an independent near-period client specimen.
+- Evidence boundary:
+  - disc bytes, installer filename, size, version and hashes are not recovered;
+  - do not assume the CD equals the 2000 online client;
+  - any public CD image must be compared at file level against other Korean copies.
+- Recovery method:
+  - search exact title/ISBN plus `부록 CD`, `설치프로그램`, ISO and preservation-catalog tokens;
+  - use only public/preservation recovery paths; do not make purchase/manual acquisition a project dependency.
+- Status: **TARGET-A/B / concrete 2001 install-media lead; bytes not yet located**.
+
 ## TARGET-B — Mainland China StoneAge "1.82" — Sina historical download label requiring byte verification
 
 - Source page: https://games.sina.com.cn/zhqu/sta/download.shtml
@@ -238,10 +261,11 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 
 1. **Korean Inium 2000 public client:** recover the original installer filename/path/bytes through the Inium site, Hananet/GamePlus, CNET and period offline/software archives. It is now the strongest operational early bridge because operator-era free distribution and massive replication are directly attested.
 2. **JSS 1999 beta/retail/launcher:** continue in parallel as the historical origin target; do not lower its evidentiary importance merely because Korean 2000 may be easier to recover.
-3. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge.
-4. Continue recovery of the **Korean 1.74** exact-version operator-era installer identity/bytes.
-5. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
-6. Treat the recovered mixed 2.5 bundle as a **resource-format bridge only**; do not spend primary recovery effort extending its modified runtime surface while earlier clean-client targets remain open.
-7. Recover the Sina "1.82" href/bytes only as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
-8. Keep the Wayi official 8.5 package and `NetmarbleStoneAge120` as later controls, not substitutes for an early clean baseline.
-9. For any newly recovered candidate bytes, stop broad searching immediately and perform the clean-client acceptance test plus first full inventory.
+3. Search the **2001 GameTime Perfect Guide bonus CD** by exact ISBN/title as a concrete near-period install-media sub-track; do not substitute it for the earlier 2000 online target.
+4. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge.
+5. Continue recovery of the **Korean 1.74** exact-version operator-era installer identity/bytes.
+6. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
+7. Treat the recovered mixed 2.5 bundle as a **resource-format bridge only**; do not spend primary recovery effort extending its modified runtime surface while earlier clean-client targets remain open.
+8. Recover the Sina "1.82" href/bytes only as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
+9. Keep the Wayi official 8.5 package and `NetmarbleStoneAge120` as later controls, not substitutes for an early clean baseline.
+10. For any newly recovered candidate bytes, stop broad searching immediately and perform the clean-client acceptance test plus first full inventory.
