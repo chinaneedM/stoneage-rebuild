@@ -83,10 +83,45 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - `research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md`.
   - derived probes: `research/recovered/STONEAGE-INIUM-TRIAL-MENU-R1.txt`, `research/recovered/STONEAGE-COMMONCRAWL-EXACT-PAYLOADS-R1.txt`.
 - Next action:
-  - recover a surviving copy/mirror from the exact token set: CNET `/pc/games/online/stoneage.zip` (257MB), Hananet PDS `app_id=20001031524596220&type=C03`, Hananet formal `stoneage.hananet.net/down/sa.exe` (260 M), Hananet trial `stoneage.hananet.net/down/sa_demo.exe` (240 M), Gagamel `stoneagebeta.zip`, GameTime `GW_IDX=9`, and STAD records 8119/8120;
+  - recover a surviving copy/mirror from the exact token set: CNET `/pc/games/online/stoneage.zip` (257MB), Hananet PDS `app_id=20001031524596220&type=C03`, Hananet formal `stoneage.hananet.net/down/sa.exe` (260 M), Hananet trial `stoneage.hananet.net/down/sa_demo.exe` (240 M), Gagamel `stoneagebeta.zip`, GameTime trial `stone_demo.exe` / `GW_IDX=76` (234MB list value; description says about 240MB), unresolved GameTime formal-mirror `GW_IDX=9`, and STAD records 8119/8120;
   - compare CNET/Hananet/Gagamel/GameTime candidates only at byte/hash and internal-file-tree level; do not infer equality from size or filename;
   - if bytes appear, immediately perform the clean-client acceptance test before further broad searching.
 - Status: **TARGET-A / highest-priority operational pre-1.74 bridge search; bytes not yet located**.
+
+## TARGET-A/B — GameTime StoneAge data-center records — 2000/2001
+
+- Archived search surface:
+  - `http://www.gametime.co.kr/data/data_list.asp?search_word=%bd%ba%c5%e6%bf%a1%c0%cc%c1%f6&category=online`
+  - preserved at **2001-07-01 05:34:12 UTC**;
+  - CP949/EUC-KR query decodes to `스톤에이지`.
+- **GW_IDX=76**:
+  - title: `스톤에이지 체험판 클라이언트`;
+  - filename: **`stone_demo.exe`**;
+  - registered **2001-02-12 19:45:00**;
+  - list-page size **234MB**;
+  - description says formal version about **260MB**, trial version about **240MB**;
+  - five-day trial, separate trial account, and trial characters/pets not linked to the formal server;
+  - observed archived download counts: 21,187 on 2001-07-01 and 53,612 on 2001-08-20.
+- **GW_IDX=34**:
+  - title: `스톤에이지 자동 업데이트가 안된다면 이것을...`;
+  - filename: **`StoneAge.zip`**;
+  - registered **2000-11-06 11:21:00**;
+  - list-page size **0.4MB**;
+  - independent 2001-04-17 GameTime webzine record labels the same manual-update object **0.42 MB**;
+  - update instructions explicitly require deleting `sa_*.exe`, `server_*.ini`, and `stoneage.exe` before copying the update.
+- Collision guard:
+  - GameTime `StoneAge.zip` is a sub-megabyte **manual update**;
+  - CNET Korea `/pc/games/online/stoneage.zip` is independently recorded as a **257MB** distribution object;
+  - identical basename is not evidence of identical payload or role.
+- Broad online-list sweep:
+  - 11 archived anchors / 52 parsed records;
+  - 0 replay errors;
+  - GW_IDX=76 repeats across later list pages;
+  - **GW_IDX=9 does not appear**, so the surviving `GW_IDX=9` lead should be pursued through the older GameTime webzine/download system and Inium's preserved formal-version mirror page rather than more data-center pagination.
+- Derived evidence:
+  - `research/recovered/STONEAGE-GAMETIME-2001-RECORD-RESOLUTION-R1.txt`
+  - `research/recovered/STONEAGE-GAMETIME-ONLINE-INDEX-R1.txt`
+- Status: **TARGET-A/B — trial client identity and manual-update identity resolved; GW_IDX=9 formal-mirror object still unresolved; payload bytes not recovered.**
 
 ## TARGET-A/B — Korean GameTime StoneAge Perfect Guide bonus CD — 2001
 
@@ -314,7 +349,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - `research/clients/STONEAGE-KOREA-2000-2001-PUBLIC-MEDIA-CORPUS-R1.md`
 - Public carrier directory scans:
   - PC Game Magazine: **21 images**, 2000-09 through 2001-12, complete directory walks, 0 scan errors, 0 truncation, 0 StoneAge-path hits;
-  - GamePia No.58–64: **12 images**, complete directory walks, 0 scan errors, 0 truncation, 0 StoneAge-path hits;
+  - GamePia No.58–69: **23 images**, complete directory walks, 0 scan errors, 0 truncation, 0 StoneAge-path hits;
   - NetPower 2001.12: **2 images**, complete directory walks, 0 StoneAge-path hits.
 - Internet Archive exact-token reverse search:
   - **216** item metadata/file-list records checked with 0 request errors;
@@ -337,7 +372,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 
 1. **Korean Inium 2000 public client:** recover the original installer filename/path/bytes through the Inium site, Hananet/GamePlus, CNET and period offline/software archives. It is now the strongest operational early bridge because operator-era free distribution and massive replication are directly attested.
 2. **JSS 1999 beta/retail/launcher:** continue in parallel as the historical origin target; do not lower its evidentiary importance merely because Korean 2000 may be easier to recover.
-3. Resolve the **archived 2001-07-01 GameTime `스톤에이지` search/result chain** and its relation to `GW_IDX=9`; keep the 2001 Perfect Guide bonus CD as a separate near-period installation-media target, but do not repeat closed ISBN/title/union-catalog searches unless new supplementary-disc evidence appears.
+3. Resolve **GameTime `GW_IDX=9` through the older webzine/download chain**; the newer data center already resolves GW_IDX=76 as `stone_demo.exe` trial client and GW_IDX=34 as a 0.4/0.42MB manual update, while 52 parsed online records do not contain GW_IDX=9. Keep the 2001 Perfect Guide bonus CD as a separate near-period installation-media target, but do not repeat closed ISBN/title/union-catalog searches unless new supplementary-disc evidence appears.
 4. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge.
 5. Continue recovery of the **Korean 1.74** exact-version operator-era installer identity/bytes.
 6. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
