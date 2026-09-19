@@ -37,10 +37,13 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Hananet infrastructure corroboration:
   - Korea Economic Daily, 2000-04-27: https://www.hankyung.com/article/2000042732051
   - identifies `www.hananet.net`, its game-content surface `http://game.hananet.net`, and the 2000 GamePlus service.
-- Exact Hananet StoneAge service-chain evidence:
+- Exact Hananet StoneAge service/distribution evidence:
   - preserved GamePlus material links `[게임Plus]스톤에이지 게임Plus 신규 오픈` through `/gamenet/sitemap/map/mapstoneage.html` and `/gamenet/newframe/frstoneage.html` to the dedicated host `http://stoneage.hananet.net/main.htm`;
-  - the archived dedicated homepage exposes menu paths `1.htm`, `2.htm`, `2_2.htm`, `2_3.htm`, `2_4.htm`, `2_5.htm` and links back to the Inium operator site;
-  - archived snapshots are confirmed for `1.htm`, `2.htm`, `2_2.htm`, `2_3.htm`, and `2_4.htm`; download/install targets inside those pages remain under extraction.
+  - all exposed menu paths `1.htm`, `2.htm`, `2_2.htm`, `2_3.htm`, `2_4.htm`, `2_5.htm` have now been replayed; `2.htm` explicitly documents StoneAge CD-ROM installation, automatic install-menu startup, standard Setup mode and DirectX 6.1;
+  - recovered `2_5.htm` exposes the Hananet boards `GAM2:STAD`, `STAF`, `STAN`;
+  - the archived STAD 자료실 page says game-data downloads should be made from the corresponding GameNet game page and lists **record 8119**, `온라인게임 스톤에이지 정식 버전`, **260 M**, dated **2001-02-10**, plus **record 8120**, `온라인게임 스톤에이지 체험 버전`, **240 M**, also dated **2001-02-10**;
+  - the individual 8119/8120 record bodies replay as HTTP 404, so their concrete attachment filenames/download redirects remain unresolved;
+  - the 260 M full-version record is close in nominal size to CNET's 257MB `stoneage.zip`, but no equality claim is made without byte/hash evidence.
 - Offline replication evidence:
   - iNews24, 2000-07-04: https://www.inews24.com/view/8928 records the planned Samsung PC / education-center distribution;
   - DailyGame, 2000-10-27: https://www.dailygame.co.kr/view.php?ud=200010271416380001837_26 reports a later package-supply agreement of roughly 60,000 units through the Samsung PC-education-center operator plus PC-game retail distribution.
@@ -50,7 +53,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - these independent distribution surfaces materially improve the chance that a provenance-preserving copy survives.
 - Evidence boundary:
   - no exact 2000 client version label has been recovered;
-  - installer filename, size, checksum, complete file tree and exact Hananet/CNET StoneAge URLs remain unknown;
+  - CNET's payload filename/path and nominal size are recovered (`/pc/games/online/stoneage.zip`, 257MB), while Hananet has full/trial record identities and nominal sizes but still lacks concrete attachment/file URLs; checksums, complete file tree and all client bytes remain unknown;
   - byte identity between Inium, Hananet, CNET and packaged copies is unproven;
   - an intact Korean operator client would be a clean **Korean bridge specimen**, not automatic proof of JSS-Japan byte identity.
 - Archive-probe boundary:
@@ -63,7 +66,8 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Canonical research note:
   - `research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md`.
 - Next action:
-  - prioritize filename/path recovery from `www.stoneage.enium.co.kr`, Hananet/GamePlus, CNET Korea, period software catalogs, magazine/ISP CDs and preserved Inium installations;
+  - exploit Hananet records **8119 / 260 M** and **8120 / 240 M** by targeting the corresponding GameNet StoneAge pages around **2001-02-10** and later preserved snapshots, recovering any filename, attachment or redirect;
+  - continue exact-copy/mirror recovery for CNET `/pc/games/online/stoneage.zip` (257MB) and compare any Hananet payload only at file/hash level;
   - if bytes appear, immediately perform the clean-client acceptance test before further broad searching.
 - Status: **TARGET-A / highest-priority operational pre-1.74 bridge search; bytes not yet located**.
 
