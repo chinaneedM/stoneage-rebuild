@@ -91,19 +91,31 @@ This corroborates the portal family named in the December StoneAge article. Arch
 - that frame in turn loads both `/gamenet/newframe/contents/stoneage.html` and the dedicated host **`http://stoneage.hananet.net/main.htm`**;
 - the dedicated homepage is preserved and exposes menu paths `1.htm`, `2.htm`, `2_2.htm`, `2_3.htm`, `2_4.htm`, and `2_5.htm`, while also linking back to `http://stoneage.enium.co.kr`.
 
-The dedicated site's `1.htm` is already recovered from the 2001-01-18 snapshot and contains StoneAge descriptive text. Wayback Availability independently confirms later archived snapshots for:
+The dedicated menu chain is now materially recovered:
 
-- `2.htm` — 2001-02-26 18:54:48;
-- `2_2.htm` — 2001-02-26 18:25:09;
-- `2_3.htm` — 2001-01-26 16:01:00;
-- `2_4.htm` — 2001-01-23 22:30:00.
+- `1.htm` contains StoneAge descriptive text;
+- `2.htm` (archived 2001-02-26) explicitly tells users to insert the **StoneAge CD into the CD-ROM**, after which the installation menu starts automatically; it also instructs users to follow Setup, choose the standard setup mode in normal cases, and states that DirectX 6.1 is required;
+- `2_2.htm`, `2_3.htm`, and `2_4.htm` are also replayed;
+- `2_5.htm` was recovered identically across five tested replay timestamps (14,455 bytes, SHA-256 `1cd6ed9ce3a943e629358b614fa358f22a84e53dbb988792441658548b171408`) and exposes three Hananet board codes: `GAM2:STAD`, `STAF`, and `STAN`.
 
-The current task is to extract those exact menu pages for download/install targets. `2_5.htm` remains unresolved because Availability requests were rate-limited; this is not evidence that the page was never archived.
+The archived **STAD 자료실** page then supplies the strongest Hananet file-level catalog metadata recovered so far. It explicitly says that game-data downloads should be made from the corresponding GameNet game page and lists two StoneAge records, both dated **2001-02-10**:
+
+- record **8119** — `온라인게임 스톤에이지 정식 버전` — **260 M**;
+- record **8120** — `온라인게임 스톤에이지 체험 버전` — **240 M**.
+
+The same preserved list snapshot shows view counts of 60,319 for the full-version record and 227,882 for the trial-version record at capture time. The individual record pages currently replay as HTTP 404, so their attachment filenames and final download URLs remain unrecovered. The 260 M full-version entry is close to CNET's 257MB `stoneage.zip`, but the project must not infer byte identity, compression equality, or even identical packaging from approximate size alone.
+
+A separate Hananet PDS H01-detail enumeration extracted 33 catalog record IDs from the archived index, but every detail-page replay failed with HTTP 404 or connection refusal. That path is therefore **archive/capture-inconclusive**, not a negative finding about StoneAge content.
 
 Derived evidence:
 
 - `research/recovered/STONEAGE-HANANET-FRAME-PATHS-R1.txt`;
-- `research/recovered/STONEAGE-HANANET-MENU-AVAILABILITY-R1.txt`.
+- `research/recovered/STONEAGE-HANANET-MENU-AVAILABILITY-R1.txt`;
+- `research/recovered/STONEAGE-HANANET-MENU-PAGES-R1.txt`;
+- `research/recovered/STONEAGE-HANANET-BOARDS-R1.txt`;
+- `research/recovered/STONEAGE-HANANET-BOARD-RECORDS-R1.txt`;
+- `research/recovered/STONEAGE-HANANET-STAD-ROWS-R1.txt`;
+- `research/recovered/STONEAGE-HANANET-PDS-H01-DETAILS-R1.txt`.
 
 ### 4a. Exact historical download-root narrowing
 
@@ -115,7 +127,7 @@ Contemporary independent web references now narrow two of the mass-distribution 
 - **Hananet software repository root:** `http://pds.hananet.net`
   - November 2000 software-site rankings list the Hanaro/Hananet download repository at this exact root.
 
-These roots are contemporaneous infrastructure evidence. They still do **not** reveal StoneAge's child URL or installer filename, but they replace the earlier generic `CNET` / `Hananet` search surfaces with precise historical directory roots.
+These roots are contemporaneous infrastructure evidence. Subsequent archive recovery has now resolved CNET's StoneAge child record and payload path plus Hananet's dedicated StoneAge site and full/trial catalog records; the remaining Hananet gap is the concrete attachment/file URL, while CNET's remaining gap is surviving payload bytes.
 
 ### 4a.1. Exact CNET Korea StoneAge download-record identity recovered
 
