@@ -55,6 +55,9 @@ NETWORK_APIS = (
 ENDPOINT_APIS = ("socket", "htons", "inet_addr", "gethostbyname", "connect")
 WAEI_XREF_RVA = 0xD4F2
 SERVER_INFO_RVA = 0x2E950
+SERVER_TABLE_RVA = 0x13F5E40
+SERVER_RECORD_SIZE = 193
+SELECT_SERVER_INDEX_RVA = 0x5C860
 LOCAL_BEFORE = 130
 LOCAL_AFTER = 35
 MAX_ARG_PATHS = 3
@@ -235,6 +238,39 @@ def data_displacements(ins, base, sections):
     return out
 
 
+def server_table_refs(instructions, base):
+    table_lo = base + SERVER_TABLE_RVA
+    table_hi = table_lo + SERVER_RECORD_SIZE
+    out = []
+    for ins in instructions:
+        for op_index, op in enumerate(ins.operands):
+            if op.type != X86_OP_MEM:
+                continue
+            disp = int(op.mem.disp) & 0xFFFFFFFF
+            if table_lo <= disp < table_hi:
+                is_write = (
+                    op_index == 0
+                    and ins.mnemonic
+                    in {
+                        "mov", "movsx", "movzx", "stosb", "stosd", "stosw",
+                        "add", "sub", "or", "and", "xor", "inc", "dec"
+                    }
+                )
+                out.append(
+                    {
+                        "ins": ins,
+                        "op_index": op_index,
+                        "disp": disp,
+                        "offset": disp - table_lo,
+                        "base_reg": ins.reg_name(op.mem.base) if op.mem.base else "",
+                        "index_reg": ins.reg_name(op.mem.index) if op.mem.index else "",
+                        "scale": int(op.mem.scale),
+                        "write": is_write,
+                    }
+                )
+    return out
+
+
 def function_data_globals(data, base, sections, imports, rva):
     va = base + rva
     node = decode_forward_node(data, base, sections, imports, va)
@@ -390,8 +426,24 @@ def main():
                     f"mnemonic={clean(ins.mnemonic)}|ops={clean(enhanced_ops(ins,data,base,sections))}"
                 )
 
+        table_refs = server_table_refs(instructions, base)
+        print(
+            f"SERVER_TABLE|rva=0x{SERVER_TABLE_RVA:x}|record_size={SERVER_RECORD_SIZE}|"
+            f"refs={len(table_refs)}|writes={sum(1 for row in table_refs if row['write'])}|"
+            f"select_index_rva=0x{SELECT_SERVER_INDEX_RVA:x}"
+        )
+        for n, row in enumerate(table_refs, 1):
+            ins = row["ins"]
+            print(
+                f"SERVER_TABLE_REF|n={n}|instruction_rva=0x{ins.address-base:x}|"
+                f"mnemonic={clean(ins.mnemonic)}|op_index={row['op_index']}|"
+                f"field_offset={row['offset']}|base_reg={clean(row['base_reg'])}|"
+                f"index_reg={clean(row['index_reg'])}|scale={row['scale']}|"
+                f"write={int(row['write'])}|ops={clean(enhanced_ops(ins,data,base,sections))}"
+            )
+
         # Test whether the known waei.bin code path actually joins networking or
-        # touches the same server-table globals.
+        # touches the same server-table globals / record region.
         waei_rows = all_string_xrefs(data, base, sections, "waei.bin")
         print(f"WAEI_BIN|decoded_xrefs={len(waei_rows)}")
         for occurrence, string_rva, ins in waei_rows:
@@ -406,6 +458,8 @@ def main():
                     f"node_rva=0x{node_va-base:x}|depth={depth}|callsite_rva=0x{site_va-base:x}"
                 )
             server_global_set = set(server_globals)
+            table_lo = base + SERVER_TABLE_RVA
+            table_hi = table_lo + SERVER_RECORD_SIZE
             for node_va, node in sorted(graph.items()):
                 insns = decode_node_instructions(
                     data, base, sections, node_va, node.get("end_va", node_va)
@@ -417,6 +471,17 @@ def main():
                                 f"WAEI_SERVER_GLOBAL_JOIN|occurrence={occurrence}|"
                                 f"node_rva=0x{node_va-base:x}|depth={node.get('depth',0)}|"
                                 f"instruction_rva=0x{ins2.address-base:x}|global_rva=0x{value-base:x}"
+                            )
+                    for op in ins2.operands:
+                        if op.type != X86_OP_MEM:
+                            continue
+                        disp = int(op.mem.disp) & 0xFFFFFFFF
+                        if table_lo <= disp < table_hi:
+                            print(
+                                f"WAEI_SERVER_TABLE_JOIN|occurrence={occurrence}|"
+                                f"node_rva=0x{node_va-base:x}|depth={node.get('depth',0)}|"
+                                f"instruction_rva=0x{ins2.address-base:x}|"
+                                f"field_offset={disp-table_lo}|mnemonic={clean(ins2.mnemonic)}"
                             )
 
     finally:
