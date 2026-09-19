@@ -23,6 +23,8 @@ EXACT_TARGETS=[
     ("gagamel-zip","http://www.gagamel.com/web_data/download/stoneagebeta.zip"),
     ("hananet-pds","http://pds.hananet.net/view.asp?app_id=20001031524596220&type=C03"),
     ("gametime-gw9","http://www.gametime.co.kr/data/download.asp?GW_IDX=9&GW_Name=Online"),
+    ("gametime-onlstoneage","http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip"),
+    ("gametime-stone-demo","http://www.gametime.co.kr/images/Online/pds/2001/02/stone_demo.exe"),
 ]
 
 PREFIX_TARGETS=[
@@ -30,12 +32,13 @@ PREFIX_TARGETS=[
     ("cnet-online-prefix","http://korea.cnet.com/pc/games/online/"),
     ("gagamel-download-prefix","http://www.gagamel.com/web_data/download/"),
     ("gametime-data-prefix","http://www.gametime.co.kr/data/"),
+    ("gametime-online-pds-prefix","http://www.gametime.co.kr/images/Online/pds/2001/02/"),
     ("hananet-pds-prefix","http://pds.hananet.net/view.asp"),
 ]
 
 RELEVANT=re.compile(
-    r"(?i)(stoneage|sa_demo\.exe|(?:^|/)sa\.exe|stoneagebeta\.zip|"
-    r"20001031524596220|gw_idx=9|gw_name=online)"
+    r"(?i)(stoneage|onlstoneage\.zip|stone_demo\.exe|sa_demo\.exe|(?:^|/)sa\.exe|stoneagebeta\.zip|"
+    r"20001031524596220|gw_idx=9|gw_idx=76|gw_name=online)"
 )
 
 
