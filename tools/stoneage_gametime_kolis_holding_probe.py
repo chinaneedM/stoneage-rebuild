@@ -151,6 +151,42 @@ def edition_key(raw):
         raise RuntimeError("edition key not found")
     return m.group(1)
 
+def call_first_args(raw,name):
+    """Return first JS call argument values without assuming quote style."""
+    out=[]
+    seen=set()
+    for body in re.findall(re.escape(name)+r"\(([^)]*)\)",raw):
+        first=body.split(",",1)[0].strip().strip("'\" ")
+        if first and first not in seen:
+            seen.add(first)
+            out.append(first)
+    return out
+
+
+def holding_rows(raw,base):
+    """Extract holding-library anchors and fnLibDetail recKeys."""
+    p=AnchorParser()
+    try:
+        p.feed(raw)
+    except Exception:
+        pass
+    rows=[]
+    seen=set()
+    for attrs,label in p.rows:
+        onclick=attrs.get("onclick","")
+        href=attrs.get("href","")
+        keys=call_first_args(onclick,"fnLibDetail")
+        blob=" ".join((label,onclick,href))
+        if not keys and not any(k in blob for k in ("도서관","소장","국립","대학교")):
+            continue
+        absolute=urllib.parse.urljoin(base,href) if href and not href.startswith("#") else href
+        row=(clean(label,300),clean(absolute,600),clean(onclick,700),clean(",".join(keys),300))
+        if row not in seen:
+            seen.add(row)
+            rows.append(row)
+    return rows
+
+
 
 def interesting_anchors(raw,base):
     p=AnchorParser()
@@ -176,7 +212,7 @@ def interesting_anchors(raw,base):
 
 
 def main():
-    print("StoneAge GameTime 2001 KOLIS holding-layer probe — R1")
+    print("StoneAge GameTime 2001 KOLIS holding-layer probe — R2")
     print("SCOPE|public-catalog-metadata-only|no-book-or-cd-payload-download")
     s_status,s_final,s_body=get(SEARCH)
     s_raw=decode(s_body)
@@ -211,6 +247,57 @@ def main():
 
     for label,href,attr_text in interesting_anchors(raw,d_final):
         print(f"ANCHOR|label={label}|href={href}|attrs={attr_text}")
+
+    bib_keys=call_first_args(raw,"fnLibList")
+    print(f"BIB_KEYS|count={len(bib_keys)}|values={clean(','.join(bib_keys))}")
+    if not bib_keys:
+        print("ERROR|phase=holding-list|kind=RuntimeError|message=no bibKey recovered")
+        return
+
+    for bib_key in bib_keys:
+        hold_url=BASE+"/kolisnet/search/include/searchResultHoldingLib.do?"+urllib.parse.urlencode({"bibKey":bib_key})
+        try:
+            h_status,h_final,h_body=get(hold_url)
+        except Exception as exc:
+            print(f"ERROR|phase=holding-list|bibKey={clean(bib_key)}|kind={type(exc).__name__}|message={clean(exc)}")
+            continue
+        h_raw=decode(h_body)
+        h_plain=strip_markup(h_raw)
+        lib_keys=call_first_args(h_raw,"fnLibDetail")
+        print(
+            f"HOLDINGS|bibKey={clean(bib_key)}|status={h_status}|final={clean(h_final)}|"
+            f"bytes={len(h_body)}|lib_key_count={len(lib_keys)}|lib_keys={clean(','.join(lib_keys))}"
+        )
+        for token,row in context_rows(h_plain,("도서관","국립","대학교","소장","청구기호","등록번호","KMO"),360):
+            print(f"HOLDING_CONTEXT|bibKey={clean(bib_key)}|token={clean(token)}|text={clean(row,820)}")
+        for label,href,onclick,keys in holding_rows(h_raw,h_final):
+            print(
+                f"HOLDING_ROW|bibKey={clean(bib_key)}|label={label}|href={href}|"
+                f"onclick={onclick}|lib_keys={keys}"
+            )
+
+        for lib_key in lib_keys:
+            detail_url=BASE+"/kolisnet/cooper/cooperDetail.do?"+urllib.parse.urlencode({"recKey":lib_key})
+            try:
+                l_status,l_final,l_body=get(detail_url)
+            except Exception as exc:
+                print(f"ERROR|phase=library-detail|libKey={clean(lib_key)}|kind={type(exc).__name__}|message={clean(exc)}")
+                continue
+            l_raw=decode(l_body)
+            l_plain=strip_markup(l_raw)
+            print(
+                f"LIBRARY_DETAIL|bibKey={clean(bib_key)}|libKey={clean(lib_key)}|status={l_status}|"
+                f"final={clean(l_final)}|bytes={len(l_body)}"
+            )
+            for token,row in context_rows(
+                l_plain,
+                ("도서관","기관명","주소","전화","홈페이지","소장","청구기호","등록번호","KMO"),
+                360,
+            ):
+                print(
+                    f"LIBRARY_CONTEXT|bibKey={clean(bib_key)}|libKey={clean(lib_key)}|"
+                    f"token={clean(token)}|text={clean(row,820)}"
+                )
 
 
 if __name__=="__main__":
