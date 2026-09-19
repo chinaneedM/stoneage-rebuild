@@ -27,6 +27,12 @@ QUERIES=[
     '"Korea" AND "CD-ROM" AND mediatype:software AND year:[1999 TO 2002]',
     'description:("부록 CD" OR "부록CD") AND mediatype:software',
     'description:("게임 CD" OR "게임CD") AND mediatype:software AND year:[1999 TO 2002]',
+    'title:"넷파워" AND mediatype:software',
+    'creator:"제우미디어" AND mediatype:software',
+    'title:"게임피아" AND mediatype:software',
+    'title:"PC 게임 매거진" AND mediatype:software',
+    'description:"로스트 미디어" AND mediatype:software',
+    'description:"부록 CD 덤프" AND mediatype:software',
 ]
 CARRIER=re.compile(r"(?i)\.(?:iso|bin|img|mdf|nrg|ccd|cue|toast|dmg)$")
 KOREA=re.compile(r"(?i)(korea|korean|한국|대한민국|게임|net\s*power|pc\s*power|gamemeca)")
