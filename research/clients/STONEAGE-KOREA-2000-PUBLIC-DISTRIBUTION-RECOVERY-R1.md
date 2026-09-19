@@ -136,8 +136,10 @@ Archive boundary:
 
 - Wayback preserves the Hananet `flashlinks.cgi` wrapper and its frame target to `app_id=20001031524596220&type=C03`;
 - six normalized direct-replay forms of that inner PDS record return HTTP 404 at the known wrapper timestamps;
-- exact Availability/direct-prefix probes for `stoneage.hananet.net/down/sa.exe` and `stoneagebeta.zip` found no recoverable binary snapshot;
-- these are exact Wayback negative results only, not evidence that no other mirror/preservation copy exists.
+- exact Wayback Availability checks for Hananet formal `sa.exe` / 260 M and trial `sa_demo.exe` / 240 M cover 24 date/host combinations with zero request errors and zero available captures; direct replay at the known 2001-08-14 STAD timestamp returns HTTP 404 for bare and `www` variants of both files;
+- earlier exact checks for Gagamel `stoneagebeta.zip` likewise found no recoverable binary snapshot;
+- a separate Arquivo.pt CDX run checks **14 exact known mirror URLs** for 2000–2005 with **0 errors and 0 indexed captures**;
+- these are archive-service-specific negative results only, not evidence that republished mirrors, physical-media copies or other preservation copies no longer exist.
 
 This changes the search problem materially: Hananet no longer lacks a file identity. The high-value exact tokens are now the early PDS app ID **`20001031524596220`**, Hananet formal **`sa.exe`** and trial **`sa_demo.exe`**, CNET **`stoneage.zip`**, Gagamel **`stoneagebeta.zip`**, and GameTime **`GW_IDX=9`**.
 
