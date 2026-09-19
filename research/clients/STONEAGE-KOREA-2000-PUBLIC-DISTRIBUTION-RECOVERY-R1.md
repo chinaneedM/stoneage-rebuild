@@ -103,7 +103,12 @@ The archived **STAD 자료실** page then supplies the strongest Hananet file-le
 - record **8119** — `온라인게임 스톤에이지 정식 버전` — **260 M**;
 - record **8120** — `온라인게임 스톤에이지 체험 버전` — **240 M**.
 
-The same preserved list snapshot shows view counts of 60,319 for the full-version record and 227,882 for the trial-version record at capture time. The individual record pages currently replay as HTTP 404, so their attachment filenames and final download URLs remain unrecovered. The 260 M full-version entry is close to CNET's 257MB `stoneage.zip`, but the project must not infer byte identity, compression equality, or even identical packaging from approximate size alone.
+The same preserved list snapshot shows view counts of 60,319 for the full-version record and 227,882 for the trial-version record at capture time. A bounded source-order inspection of that **same archived HTML** recovers disabled/commented direct-file button rows that explicitly map the two records:
+
+- record **8120**, trial version, **240 M** → **`http://stoneage.hananet.net/down/sa_demo.exe`**;
+- record **8119**, formal/full version, **260 M** → **`http://stoneage.hananet.net/down/sa.exe`**.
+
+These button rows sit inside an HTML comment block in the 2001-08-14 preserved source, so they are direct evidence of the historical title/size/file mapping but **not** evidence that the buttons were visibly active at that snapshot. The individual 8119/8120 detail pages still replay as HTTP 404. The 260 M full-version entry remains close to CNET's 257MB `stoneage.zip`, but the project must not infer byte identity, compression equality, or identical packaging from approximate size alone.
 
 A separate Hananet PDS H01-detail enumeration extracted 33 catalog record IDs from the archived index, but every detail-page replay failed with HTTP 404 or connection refusal. That path is therefore **archive/capture-inconclusive**, not a negative finding about StoneAge content.
 
@@ -134,7 +139,7 @@ Archive boundary:
 - exact Availability/direct-prefix probes for `stoneage.hananet.net/down/sa.exe` and `stoneagebeta.zip` found no recoverable binary snapshot;
 - these are exact Wayback negative results only, not evidence that no other mirror/preservation copy exists.
 
-This changes the search problem materially: Hananet no longer lacks a file identity. The high-value exact tokens are now the early PDS app ID **`20001031524596220`**, the later Hananet **`sa.exe`**, CNET **`stoneage.zip`**, Gagamel **`stoneagebeta.zip`**, and GameTime **`GW_IDX=9`**.
+This changes the search problem materially: Hananet no longer lacks a file identity. The high-value exact tokens are now the early PDS app ID **`20001031524596220`**, Hananet formal **`sa.exe`** and trial **`sa_demo.exe`**, CNET **`stoneage.zip`**, Gagamel **`stoneagebeta.zip`**, and GameTime **`GW_IDX=9`**.
 
 Derived evidence:
 
@@ -143,7 +148,7 @@ Derived evidence:
 - `research/recovered/STONEAGE-HANANET-MENU-PAGES-R1.txt`;
 - `research/recovered/STONEAGE-HANANET-BOARDS-R1.txt`;
 - `research/recovered/STONEAGE-HANANET-BOARD-RECORDS-R1.txt`;
-- `research/recovered/STONEAGE-HANANET-STAD-ROWS-R1.txt`;
+- `research/recovered/STONEAGE-HANANET-STAD-ROWS-R1.txt`;\n- `research/recovered/STONEAGE-HANANET-PKBOARD-MECHANISM-R1.txt`;\n- `research/recovered/STONEAGE-HANANET-STAD-SOURCE-ORDER-R1.txt`;
 - `research/recovered/STONEAGE-HANANET-PDS-H01-DETAILS-R1.txt`.
 - `research/recovered/STONEAGE-HANANET-DATED-DOWNLOAD-SURFACES-R1.txt`;
 - `research/recovered/STONEAGE-INIUM-8-1-PROBE-R1.txt`;
