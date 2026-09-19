@@ -72,12 +72,15 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Archive-probe boundary:
   - older broad Wayback CDX / Arquivo.pt probes encountered request timeouts / network-unreachable errors and remain inconclusive;
   - a newer exact-URL Arquivo.pt CDX pass against 12 known mirror targets completed 9 URL queries with zero indexed captures while 3 URL variants failed with network-unreachable errors; the 9 successful zero-result queries are exact-URL negative controls only, and the 3 failures remain inconclusive.
+  - final Inium trial-menu probe R5 issued 45 Wayback Availability queries against the known sitemap/main-menu surface: 34 unique snapshots were reported available, 20 raw `id_` pages replayed successfully, 14 seed replays still failed, and the 20 successful raw pages yielded zero trial/demo/download-token hits; Wayback toolbar links were explicitly excluded. This is a **partial** negative control only and does not close the unreadable snapshots or prove that no separate trial menu existed.
+  - Common Crawl mirror-neighborhood probe R3 issued 88 exact/prefix queries across the eight oldest listed indexes, but 83 ended in HTTP 503 or transport/SSL timeouts. Its zero recovered rows are therefore **inconclusive**, not a Common Crawl negative control; retry only under a healthy index service.
 - Magazine-scan token boundary:
   - NetPower 2000-12 pp.173–176, 2001-01 pp.185–190 and 2001-02 pp.189–194 have now been probed with transient OCR and sparse-token extraction;
   - none produced an Inium/Hananet/CNET URL or installer/archive filename; 2001-02 only recovered the magazine-side `powerzine.com`, while isolated `32MB` / OCR-noise strings remain non-evidence for client size or filename;
   - treat these exact page ranges as closed low-value repeat targets unless a materially better extraction method appears.
 - Canonical research note:
   - `research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md`.
+  - derived probes: `research/recovered/STONEAGE-INIUM-TRIAL-MENU-R1.txt`, `research/recovered/STONEAGE-COMMONCRAWL-EXACT-PAYLOADS-R1.txt`.
 - Next action:
   - recover a surviving copy/mirror from the exact token set: CNET `/pc/games/online/stoneage.zip` (257MB), Hananet PDS `app_id=20001031524596220&type=C03`, Hananet formal `stoneage.hananet.net/down/sa.exe` (260 M), Hananet trial `stoneage.hananet.net/down/sa_demo.exe` (240 M), Gagamel `stoneagebeta.zip`, GameTime `GW_IDX=9`, and STAD records 8119/8120;
   - compare CNET/Hananet/Gagamel/GameTime candidates only at byte/hash and internal-file-tree level; do not infer equality from size or filename;
