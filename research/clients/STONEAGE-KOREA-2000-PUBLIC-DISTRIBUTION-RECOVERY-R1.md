@@ -83,6 +83,42 @@ Classification: **A/B / contemporaneous pre-launch distribution-plan evidence**.
 
 Do not treat every planned channel as proven byte-identical distribution. The later product-launch article independently confirms a large education-center package supply agreement, strengthening the offline preservation track.
 
+
+## 2001 near-period installation-media lead — GameTime guide bonus CD
+
+A concrete physical installation-program carrier is independently cataloged by major Korean booksellers:
+
+- title: `스톤에이지 퍼펙트 가이드` / StoneAge Perfect Guide
+- publisher/imprint: GameTime
+- YES24 publication date: **2001-04-30**
+- ISBN-13: **9788995182123**
+- ISBN-10: **8995182121**
+- media: **CD 1**
+- YES24 catalog: https://www.yes24.com/product/goods/199761
+- Aladin catalog: https://www.aladin.co.kr/shop/wproduct.aspx?itemid=282190
+
+YES24's surviving catalog description explicitly states that the bonus CD contains:
+
+- a StoneAge installation program; and
+- demo-game CD content.
+
+This is stronger than a generic strategy-guide or package lead because the surviving catalog directly identifies an installation program on the included disc.
+
+Evidence boundary:
+
+- the CD contents have not been recovered;
+- no installer filename, size, version string, checksum or file tree is known;
+- the 2001 guide date does not prove that the installer is identical to the October/December 2000 Inium download;
+- the disc may reflect a later patched Korean client state and may contain unrelated demo software alongside StoneAge.
+
+Recovery use:
+
+- search the exact title, ISBNs and `부록 CD` / `설치프로그램` tokens in public ISO/CD preservation catalogs, old Korean magazine/software-CD indexes and library/digital-preservation collections;
+- if an image is recovered, inventory only through the standard clean-client acceptance pipeline;
+- compare its StoneAge payload against any future Inium/Hananet/CNET copy rather than assuming equality.
+
+Classification: **TARGET-A/B near-period installation-media sub-track**. It is later than the 2000 public-download target but much earlier and more provenance-specific than the 2003 1.74 bridge.
+
 ## Provenance interpretation
 
 ### What can be claimed
