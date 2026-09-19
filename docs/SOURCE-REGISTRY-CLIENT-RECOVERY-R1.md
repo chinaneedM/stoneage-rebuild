@@ -88,6 +88,28 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - if bytes appear, immediately perform the clean-client acceptance test before further broad searching.
 - Status: **TARGET-A / highest-priority operational pre-1.74 bridge search; bytes not yet located**.
 
+## TARGET-A — GameTime legacy StoneAge Beta record / migrated record 9
+
+- Preserved old-system list:
+  - `http://www.gametime.co.kr/webzine/online/down/bbs.asp?name=&page=4`
+  - replayed from **2001-01-07**.
+- Machine-parsed row:
+  - displayed row number **7**;
+  - title **`스톤 에이지 베타 버젼용 클라이언트`**;
+  - author `최승진객원기자`;
+  - count **7,898**;
+  - date **2000-10-11**;
+  - exact row target **`content.asp?name=&num=9&ref=37&page=4`**.
+- The same old system independently binds the StoneAge manual-update row to **`num=34`**. The migrated GameTime data center preserves that same update under **`GW_IDX=34`**, with matching title/role and the recovered `StoneAge.zip` updater filename.
+- This provides strong internal key-continuity evidence that Inium's later official GameTime mirror link **`GW_IDX=9`** refers to the earlier GameTime StoneAge Beta client record whose old key was **`num=9`**.
+- Important boundary:
+  - the old `num=9` detail page and the parameterized legacy StoneAge download endpoint replay 404;
+  - no payload filename, size, checksum or surviving bytes have yet been recovered for record 9;
+  - Inium later grouped `GW_IDX=9` with formal-version mirrors, so the project must not assume the payload remained unchanged from the 2000-10-11 Beta listing. The stable record identity and payload identity are separate questions.
+- Derived evidence:
+  - `research/recovered/STONEAGE-GAMETIME-LEGACY-WEBZINE-R1.txt`
+- Status: **TARGET-A — historical record identity strongly resolved; payload identity/bytes unresolved.**
+
 ## TARGET-A/B — GameTime StoneAge data-center records — 2000/2001
 
 - Archived search surface:
@@ -117,11 +139,11 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - 11 archived anchors / 52 parsed records;
   - 0 replay errors;
   - GW_IDX=76 repeats across later list pages;
-  - **GW_IDX=9 does not appear**, so the surviving `GW_IDX=9` lead should be pursued through the older GameTime webzine/download system and Inium's preserved formal-version mirror page rather than more data-center pagination.
+  - **GW_IDX=9 does not appear in the migrated list pages**, but the legacy webzine now resolves StoneAge Beta to old record `num=9`; old `num=34` -> new `GW_IDX=34` continuity strongly links the old record 9 to Inium's later `GW_IDX=9` mirror URL.
 - Derived evidence:
   - `research/recovered/STONEAGE-GAMETIME-2001-RECORD-RESOLUTION-R1.txt`
   - `research/recovered/STONEAGE-GAMETIME-ONLINE-INDEX-R1.txt`
-- Status: **TARGET-A/B — trial client identity and manual-update identity resolved; GW_IDX=9 formal-mirror object still unresolved; payload bytes not recovered.**
+- Status: **TARGET-A/B — trial client and manual-update identities resolved; record-9 historical StoneAge identity strongly linked across old/new systems; record-9 payload filename/size/version and all client bytes still unresolved.**
 
 ## TARGET-A/B — Korean GameTime StoneAge Perfect Guide bonus CD — 2001
 
