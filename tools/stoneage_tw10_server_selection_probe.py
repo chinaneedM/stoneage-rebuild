@@ -67,6 +67,7 @@ SERVER_PORT_OFFSET = 129
 SERVER_NAME_TABLE_RVA = 0x588B0
 SERVER_NAME_RECORD_SIZE = 64
 SELECT_SERVER_INDEX_RVA = 0x5C860
+CONNECT_STATE_MACHINE_RVA = 0x2EE20
 LOCAL_BEFORE = 130
 LOCAL_AFTER = 35
 MAX_ARG_PATHS = 3
@@ -522,6 +523,24 @@ def main():
                                     f"instruction_rva=0x{ins.address-base:x}|mnemonic={clean(ins.mnemonic)}|"
                                     f"ops={clean(enhanced_ops(ins,data,base,sections))}"
                                 )
+
+        connect_ctx = forward_context(
+            data, base, sections, base + CONNECT_STATE_MACHINE_RVA, limit=220
+        )
+        print(
+            f"CONNECT_STATE_MACHINE|start_rva=0x{CONNECT_STATE_MACHINE_RVA:x}|"
+            f"instructions={len(connect_ctx)}"
+        )
+        for order, ins in enumerate(connect_ctx, 1):
+            branch = ins.mnemonic.startswith("j") or ins.mnemonic.startswith("ret")
+            if branch or ins.mnemonic in {
+                "mov", "movsx", "movzx", "lea", "push", "call", "cmp", "test",
+                "add", "sub", "imul", "shl", "shr", "xor", "and", "or"
+            }:
+                print(
+                    f"CONNECT_STATE_INS|order={order}|instruction_rva=0x{ins.address-base:x}|"
+                    f"mnemonic={clean(ins.mnemonic)}|ops={clean(enhanced_ops(ins,data,base,sections))}"
+                )
 
         for off, text in endpoint_literals(data):
             rva = file_offset_to_rva(sections, off)
