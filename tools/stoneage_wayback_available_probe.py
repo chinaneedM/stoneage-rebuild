@@ -6,6 +6,7 @@ This records metadata only. It does not download archived pages or client binari
 
 from __future__ import annotations
 
+import concurrent.futures
 import json
 import time
 import urllib.error
@@ -33,9 +34,9 @@ KEY_DATES = [
 ]
 
 
-def request_json(url: str, *, timeout: int = 30) -> dict:
+def request_json(url: str, *, timeout: int = 8) -> dict:
     last = None
-    for attempt in range(2):
+    for attempt in range(1):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA})
             with urllib.request.urlopen(req, timeout=timeout) as response:
@@ -71,30 +72,45 @@ def main() -> None:
     print("SCOPE|metadata-only|no-archived-page-download|no-client-binary-download")
     print("WINDOW|requested_dates=20001004,20001013,20001027,20001228,20010115,20010430")
 
-    rows = []
-    errors = []
+    jobs = []
     for surface, target in SURFACES:
         for requested in KEY_DATES:
             query = urllib.parse.urlencode({"url": target, "timestamp": requested})
-            url = API + "?" + query
-            try:
-                payload = request_json(url)
-                closest = parse_closest(payload)
-            except Exception as exc:
-                errors.append((surface, requested, type(exc).__name__, str(exc)))
-                continue
-            if closest is None:
-                rows.append((surface, requested, "", "", ""))
+            jobs.append((surface, requested, API + "?" + query))
+
+    def probe_one(job):
+        surface, requested, url = job
+        try:
+            payload = request_json(url)
+            closest = parse_closest(payload)
+        except Exception as exc:
+            return ("error", surface, requested, type(exc).__name__, str(exc))
+        if closest is None:
+            return ("row", surface, requested, "", "", "")
+        return (
+            "row",
+            surface,
+            requested,
+            closest["timestamp"],
+            closest["status"],
+            closest["url"],
+        )
+
+    rows = []
+    errors = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        for result in executor.map(probe_one, jobs):
+            if result[0] == "error":
+                _, surface, requested, kind, message = result
+                errors.append((surface, requested, kind, message))
             else:
-                rows.append(
-                    (
-                        surface,
-                        requested,
-                        closest["timestamp"],
-                        closest["status"],
-                        closest["url"],
-                    )
-                )
+                _, surface, requested, timestamp, status, url = result
+                rows.append((surface, requested, timestamp, status, url))
+
+    surface_order = {name: i for i, (name, _) in enumerate(SURFACES)}
+    date_order = {date: i for i, date in enumerate(KEY_DATES)}
+    errors.sort(key=lambda x: (surface_order[x[0]], date_order[x[1]]))
+    rows.sort(key=lambda x: (surface_order[x[0]], date_order[x[1]]))
 
     for surface, requested, kind, message in errors:
         print(f"ERROR|surface={surface}|requested={requested}|kind={kind}|message={safe(message)}")
