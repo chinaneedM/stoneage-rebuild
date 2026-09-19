@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from tools.stoneage_exact_mirror_arquivopt_cdx_probe import parse_rows, query_url
+from tools.stoneage_exact_mirror_arquivopt_cdx_probe import TARGETS, parse_rows, query_url
 
 
 class ExactMirrorArquivoCdxProbeTests(unittest.TestCase):
@@ -24,6 +24,11 @@ class ExactMirrorArquivoCdxProbeTests(unittest.TestCase):
         self.assertIn("stoneage.hananet.net", url)
         self.assertIn("from=2000", url)
         self.assertIn("to=2005", url)
+
+    def test_gametime_payload_targets_registered(self):
+        urls={url for _,url in TARGETS}
+        self.assertIn("http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip", urls)
+        self.assertIn("http://www.gametime.co.kr/images/Online/pds/2001/02/stone_demo.exe", urls)
 
 
 if __name__ == "__main__":
