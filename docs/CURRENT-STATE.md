@@ -858,7 +858,7 @@ Supplemental source ledgers:
 - Next useful evidence is no longer another ISBN search: resolve National Library / union-catalog supplementary-material fields, call/accession/control identifiers, disc-label imagery or any distinct non-book record.
 ## Immediate next actions
 
-1. **Prioritize Korean Inium 2000 file-token/byte recovery.** The portal roots are now narrowed to `www.stoneage.enium.co.kr`, `game.hananet.net` / `pds.hananet.net`, and `korea.cnet.com/downloads/`; search specifically for StoneAge child URLs, installer/archive filenames, sizes and surviving mirror copies.
+1. **Exploit the exact CNET Korea StoneAge record first, then continue Inium/Hananet byte recovery.** CNET is now pinned to `Software_Id=200009263856`; recover its detail-page payload metadata, installer/archive filename, size and any archived/direct mirror target. In parallel, continue child-path recovery under `www.stoneage.enium.co.kr`, `game.hananet.net` / `pds.hananet.net`.
 2. **Resolve the National Library / RISS GameTime bonus-CD holding at supplementary-material level.** The book+12cm-CD bibliographic object and National Library holding are now confirmed; next value is call/accession/control metadata, current accompanying-disc status, disc-label imagery, a distinct non-book record or a public preservation copy—not repeated ISBN searches.
 3. **Continue JSS 1999 beta/retail/launcher recovery in parallel.** It remains the historical origin target even though Korean 2000 now has stronger mass-replication recovery odds.
 4. **Keep `〖2.5纯净〗` `tid=2132`, Korean 1.74 and Japanese 1.74a as secondary clean-client targets.** Version labels and forum labels remain clues, not byte provenance.
