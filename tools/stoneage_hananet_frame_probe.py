@@ -55,9 +55,13 @@ class Parser(html.parser.HTMLParser):
         if tag == "a" and attrs.get("href"):
             self._href = attrs["href"]
             self._anchor = []
+        elif attrs.get("href"):
+            label = attrs.get("alt") or attrs.get("title") or ""
+            self.links.append((tag, "href", attrs["href"], label))
         for attr in ("src", "action"):
             if attrs.get(attr):
-                self.links.append((tag, attr, attrs[attr], ""))
+                label = attrs.get("alt") or attrs.get("title") or ""
+                self.links.append((tag, attr, attrs[attr], label))
 
     def handle_data(self, data):
         if data.strip():
