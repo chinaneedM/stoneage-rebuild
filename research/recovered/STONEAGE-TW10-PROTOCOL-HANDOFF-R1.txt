@@ -21,6 +21,10 @@ INIT_CALLBACK_CANDIDATE|callsite_rva=0x2ebe3|path=10|callback_rva=0x2eca0
 INIT_CALLBACK_CANDIDATE|callsite_rva=0x2ebe3|path=11|callback_rva=0x2eca0
 INIT_CALLBACK_CANDIDATE|callsite_rva=0x2ebe3|path=12|callback_rva=0x2eca0
 INIT_CALLBACK|callback_rva=0x2eca0|instructions=5|indirect_calls=0|import_api_kinds=0|direct_targets=0
+INIT_CALLBACK_CFG|callback_rva=0x2eca0|blocks=5|instructions=27|globals=2|import_api_kinds=0|direct_targets=0
+INIT_CALLBACK_GLOBAL|callback_rva=0x2eca0|global_rva=0x13ede1c|refs=1
+INIT_CALLBACK_GLOBAL|callback_rva=0x2eca0|global_rva=0x13ede20|refs=2
+WSOCK_SEND|exact_calls=0
 GLOBAL|rva=0x598e0|section=.data|send_refs=2|text_raw_xrefs=3
 GLOBAL_XREF|global_rva=0x598e0|n=1|instruction_rva=0x1ac15|mnemonic=add|assignment=0
 GLOBAL_XREF|global_rva=0x598e0|n=2|instruction_rva=0x1ac22|mnemonic=mov|assignment=1|src_kind=reg|src_value=0x13|src_section=
