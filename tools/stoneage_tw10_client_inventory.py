@@ -118,6 +118,31 @@ def parse_address_table_bytes(data: bytes):
     return rows
 
 
+def parse_sab_candidate(data: bytes):
+    """Parse the lineage-backed SAB candidate: 4-byte header + BE uint16 cells."""
+    if len(data) < 4 or (len(data) - 4) % 2:
+        raise ValueError("SAB candidate length must be 4 + 2*n bytes")
+    header = data[:4]
+    payload = data[4:]
+    be_values = tuple(
+        int.from_bytes(payload[i:i + 2], "big")
+        for i in range(0, len(payload), 2)
+    )
+    le_values = tuple(
+        int.from_bytes(payload[i:i + 2], "little")
+        for i in range(0, len(payload), 2)
+    )
+    return header, be_values, le_values
+
+
+def split_palette_candidate(data: bytes):
+    """Split the bytes consumed by descendant 224-triplet palette readers."""
+    consumed = 224 * 3
+    if len(data) < consumed:
+        raise ValueError("palette candidate is shorter than 224 RGB/BGR triplets")
+    return data[:consumed], data[consumed:]
+
+
 def inventory(bin_path: Path):
     img, rows, layout, joliet = find_rows(bin_path)
     try:
@@ -160,6 +185,87 @@ def inventory(bin_path: Path):
         for row in core:
             p = normalize(row["path"])
             basename_paths[Path(p).name.lower()].append(p)
+
+        adrn_row = by_path.get("stoneage/data/adrn_1.bin")
+        adrn_bitmapnos = set()
+        if adrn_row is not None:
+            adrn_data = row_bytes(img, adrn_row)
+            if len(adrn_data) % 80 == 0:
+                adrn_bitmapnos = {
+                    int.from_bytes(adrn_data[offset:offset + 4], "little")
+                    for offset in range(0, len(adrn_data), 80)
+                }
+
+        battle_sab_rows = [
+            row for row in core
+            if normalize(row["path"]).lower().startswith("stoneage/data/battlemap/")
+            and normalize(row["path"]).lower().endswith(".sab")
+        ]
+        sab_exact_804 = 0
+        sab_header_sab = 0
+        sab_tile_400 = 0
+        sab_be_resolved = 0
+        sab_le_resolved = 0
+        sab_cells = 0
+        for row in sorted(battle_sab_rows, key=lambda r: normalize(r["path"]).lower()):
+            data = row_bytes(img, row)
+            header, be_values, le_values = parse_sab_candidate(data)
+            if len(data) == 804:
+                sab_exact_804 += 1
+            if header[:3] == b"SAB":
+                sab_header_sab += 1
+            if len(be_values) == 400:
+                sab_tile_400 += 1
+            be_resolved = sum(value in adrn_bitmapnos for value in be_values)
+            le_resolved = sum(value in adrn_bitmapnos for value in le_values)
+            sab_be_resolved += be_resolved
+            sab_le_resolved += le_resolved
+            sab_cells += len(be_values)
+            ascii_header = "".join(
+                chr(value) if 32 <= value < 127 else "."
+                for value in header
+            )
+            print(
+                f"BATTLE_SAB_RECORD|path={normalize(row['path'])}|size={len(data)}|"
+                f"header_hex={header.hex()}|header_ascii={ascii_header}|"
+                f"tile_count={len(be_values)}|be_min={min(be_values, default=-1)}|"
+                f"be_max={max(be_values, default=-1)}|be_unique={len(set(be_values))}|"
+                f"be_adrn_resolved={be_resolved}|le_adrn_resolved={le_resolved}|"
+                f"payload_sha256={hashlib.sha256(data[4:]).hexdigest()}"
+            )
+        print(
+            f"BATTLE_SAB_SUMMARY|files={len(battle_sab_rows)}|"
+            f"exact_size_804={sab_exact_804}|header_sab={sab_header_sab}|"
+            f"tile_count_400={sab_tile_400}|cells={sab_cells}|"
+            f"be_adrn_resolved={sab_be_resolved}|le_adrn_resolved={sab_le_resolved}|"
+            f"adrn_bitmapnos={len(adrn_bitmapnos)}"
+        )
+
+        palette_rows = [
+            row for row in core
+            if normalize(row["path"]).lower().startswith("stoneage/data/pal/")
+            and normalize(row["path"]).lower().endswith(".sap")
+        ]
+        palette_exact_708 = 0
+        palette_tail_hashes = set()
+        for row in sorted(palette_rows, key=lambda r: normalize(r["path"]).lower()):
+            data = row_bytes(img, row)
+            consumed, tail = split_palette_candidate(data)
+            if len(data) == 708:
+                palette_exact_708 += 1
+            tail_hash = hashlib.sha256(tail).hexdigest()
+            palette_tail_hashes.add(tail_hash)
+            print(
+                f"PALETTE_RECORD|path={normalize(row['path'])}|size={len(data)}|"
+                f"lineage_consumed_bytes={len(consumed)}|lineage_triplets={len(consumed) // 3}|"
+                f"tail_bytes={len(tail)}|consumed_sha256={hashlib.sha256(consumed).hexdigest()}|"
+                f"tail_sha256={tail_hash}"
+            )
+        print(
+            f"PALETTE_SUMMARY|files={len(palette_rows)}|exact_size_708={palette_exact_708}|"
+            f"lineage_consumed_bytes=672|lineage_triplets=224|"
+            f"tail_bytes_if_708=36|distinct_tail_hashes={len(palette_tail_hashes)}"
+        )
 
         for label, table_path, container_path, expected_prefix in (
             (
