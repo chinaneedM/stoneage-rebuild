@@ -1,0 +1,38 @@
+name: Scan Korean NetPower CD directories
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_netpower_remote_iso_scan.py
+      - tests/test_stoneage_netpower_remote_iso_scan.py
+      - .github/workflows/scan-stoneage-netpower-cd-directories.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-netpower-cd-directories
+  cancel-in-progress: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_netpower_remote_iso_scan -v
+      - name: Scan public NetPower disc directory sectors
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_netpower_remote_iso_scan             > research/recovered/STONEAGE-NETPOWER-CD-DIRECTORY-SCAN-R1.txt
+      - name: Commit derived directory metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-NETPOWER-CD-DIRECTORY-SCAN-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: scan NetPower CD directory metadata'
+          git pull --rebase origin main
+          git push
