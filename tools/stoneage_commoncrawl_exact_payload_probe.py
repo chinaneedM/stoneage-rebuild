@@ -26,14 +26,19 @@ def fetch(url,timeout=15):
 
 def collections(limit=8):
     rows=json.loads(fetch(COLLINFO,20).decode("utf-8","replace"))
-    ids=[str(x.get("id","")) for x in rows if x.get("id")]
+    entries=[]
+    for row in rows:
+        index_id=str(row.get("id","")).strip()
+        api=str(row.get("cdx-api","") or row.get("cdx_api","")).strip()
+        if index_id and api:
+            entries.append((index_id,api))
     # collinfo is normally newest-first; oldest indexes are the most useful here.
-    return list(reversed(ids))[:limit]
+    return list(reversed(entries))[:limit]
 
-def query(index_id,url):
-    endpoint=f"https://index.commoncrawl.org/{index_id}-index?"
+def query(api,url):
+    separator="&" if "?" in api else "?"
     params=urllib.parse.urlencode({"url":url,"output":"json","filter":"status:200"})
-    text=fetch(endpoint+params,15).decode("utf-8","replace").strip()
+    text=fetch(api+separator+params,15).decode("utf-8","replace").strip()
     out=[]
     for line in text.splitlines():
         line=line.strip()
@@ -53,14 +58,14 @@ def main():
     try:indexes=collections()
     except Exception as exc:
         print(f"FATAL|collinfo|{type(exc).__name__}|{clean(exc)}");return
-    print("INDEXES|" + ",".join(indexes))
+    print("INDEXES|" + ",".join(index_id for index_id,_ in indexes))
     print(f"COUNT|indexes|{len(indexes)}")
     print(f"COUNT|targets|{len(TARGETS)}")
 
     results=[]; errors=[]
-    for index_id in indexes:
+    for index_id,api in indexes:
         for label,url in TARGETS:
-            try:rows=query(index_id,url)
+            try:rows=query(api,url)
             except Exception as exc:
                 errors.append((index_id,label,url,type(exc).__name__,str(exc)))
             else:
