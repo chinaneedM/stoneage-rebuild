@@ -290,6 +290,55 @@ def exact_pointer_refs(data, base, sections, target_rva):
     return rows
 
 
+def raw_server_table_range_refs(data, base, sections):
+    text_sec = next((sec for sec in sections if sec["name"] == ".text"), None)
+    if text_sec is None:
+        return []
+    blob = data[text_sec["raw"]:text_sec["raw"] + text_sec["raw_size"]]
+    lo = base + SERVER_TABLE_RVA
+    hi = lo + SERVER_RECORD_SIZE * SERVER_SLOT_COUNT
+    rows = []
+    seen = set()
+    for rel in range(0, max(0, len(blob) - 3)):
+        value = int.from_bytes(blob[rel:rel + 4], "little")
+        if not (lo <= value <= hi):
+            continue
+        ptr_rva = text_sec["rva"] + rel
+        key = (ptr_rva, value)
+        if key in seen:
+            continue
+        seen.add(key)
+        hit = {
+            "ptr_file_offset": text_sec["raw"] + rel,
+            "ptr_rva": ptr_rva,
+            "ptr_va": base + ptr_rva,
+        }
+        decoder = md()
+        candidates = []
+        for back in range(0, 16):
+            start = hit["ptr_file_offset"] - back
+            if start < 0:
+                continue
+            rva = file_offset_to_rva(sections, start)
+            if isinstance(rva, tuple):
+                rva = rva[0]
+            if rva is None:
+                continue
+            decoded = list(decoder.disasm(data[start:min(len(data), start + 24)], base + rva, count=1))
+            if not decoded:
+                continue
+            ins = decoded[0]
+            if not (start <= hit["ptr_file_offset"] and hit["ptr_file_offset"] + 4 <= start + ins.size):
+                continue
+            if value not in set(referenced_absolute_values(ins)):
+                continue
+            preds = predecessor_candidates(data, base, sections, ins.address)
+            candidates.append((len(preds), back, ins))
+        candidates.sort(key=lambda x: (-x[0], x[1], x[2].size))
+        rows.append((ptr_rva, value, candidates))
+    return rows
+
+
 def exact_pointer_ref_candidates(data, base, sections, target_rva):
     target_va = base + target_rva
     rows = []
@@ -539,8 +588,35 @@ def main():
                 f"port={clean(port if port is not None else '<unmapped>',80)}"
             )
 
+        range_rows = raw_server_table_range_refs(data, base, sections)
+        print(
+            f"SERVER_TABLE_RANGE_XREFS|start_rva=0x{SERVER_TABLE_RVA:x}|"
+            f"end_rva=0x{SERVER_TABLE_RVA + SERVER_RECORD_SIZE * SERVER_SLOT_COUNT:x}|"
+            f"raw_hits={len(range_rows)}"
+        )
+        for n, (ptr_rva, value, candidates) in enumerate(range_rows, 1):
+            offset = value - (base + SERVER_TABLE_RVA)
+            slot = offset // SERVER_RECORD_SIZE if offset < SERVER_RECORD_SIZE * SERVER_SLOT_COUNT else SERVER_SLOT_COUNT
+            field_offset = offset % SERVER_RECORD_SIZE if offset < SERVER_RECORD_SIZE * SERVER_SLOT_COUNT else 0
+            if candidates:
+                pred_count, back, best = candidates[0]
+                print(
+                    f"SERVER_TABLE_RANGE_XREF|n={n}|pointer_rva=0x{ptr_rva:x}|"
+                    f"target_rva=0x{value-base:x}|offset={offset}|slot={slot}|field_offset={field_offset}|"
+                    f"candidates={len(candidates)}|best_rva=0x{best.address-base:x}|"
+                    f"predecessors={pred_count}|back={back}|mnemonic={clean(best.mnemonic)}|"
+                    f"ops={clean(enhanced_ops(best,data,base,sections))}"
+                )
+            else:
+                print(
+                    f"SERVER_TABLE_RANGE_XREF|n={n}|pointer_rva=0x{ptr_rva:x}|"
+                    f"target_rva=0x{value-base:x}|offset={offset}|slot={slot}|field_offset={field_offset}|"
+                    f"candidates=0"
+                )
+
         exact_targets = (
             ("table_base", SERVER_TABLE_RVA),
+            ("table_end", SERVER_TABLE_RVA + SERVER_RECORD_SIZE * SERVER_SLOT_COUNT),
             ("ip_field_0", SERVER_TABLE_RVA + SERVER_IP_OFFSET),
             ("port_field_0", SERVER_TABLE_RVA + SERVER_PORT_OFFSET),
             ("select_index", SELECT_SERVER_INDEX_RVA),
