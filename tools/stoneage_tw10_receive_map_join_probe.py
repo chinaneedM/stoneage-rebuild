@@ -20,6 +20,7 @@ from tools.stoneage_tw10_mapcache_binary_probe import (
     rva_to_offset,
 )
 from tools.stoneage_tw10_protocol_handoff_probe import (
+    backward_paths,
     callback_cfg_probe,
     direct_rel32_call_sites,
     exact_iat_opcode_sites,
@@ -54,6 +55,11 @@ MAP_CALLBACKS = {
 }
 DEEP_GRAPH_DEPTH = 10
 DEEP_GRAPH_NODES = 160
+MAP_SEMANTIC_NODES = {
+    "M": 0x1DA40,
+    "MC": 0x1DD90,
+}
+FILE_MODE_LITERALS = ("rb+", "r+b", "rb", "wb", "wb+", "w+b")
 
 
 def clean(v, limit=900):
@@ -139,6 +145,44 @@ def graph_map_xref_hits(graph, base):
             if start_rva <= xref_rva <= end_rva + 8:
                 hits.append((node_va, node.get("depth", 0), xref_rva))
     return sorted(set(hits))
+
+
+def literal_vas(data, base, sections, literals):
+    out = {}
+    for literal in literals:
+        needle = literal.encode("ascii") + b"\x00"
+        vas = set()
+        pos = 0
+        while True:
+            pos = data.find(needle, pos)
+            if pos < 0:
+                break
+            rva = file_offset_to_rva(sections, pos)
+            if rva is not None:
+                vas.add(base + rva)
+            pos += 1
+        out[literal] = vas
+    return out
+
+
+def node_literal_hits(data, base, sections, node_va, node, values):
+    hits = []
+    insns = decode_node_instructions(data, base, sections, node_va, node.get("end_va", node_va))
+    for ins in insns:
+        refs = set(referenced_absolute_values(ins))
+        for label, vas in values.items():
+            if refs.intersection(vas):
+                hits.append((ins.address, label))
+    return sorted(set(hits))
+
+
+def edge_calls_to(graph, target_va):
+    out = []
+    for node_va, node in graph.items():
+        for callsite, target in node["call_order"]:
+            if target == target_va:
+                out.append((node_va, callsite, node.get("depth", 0)))
+    return sorted(set(out))
 
 
 def graph_dispatch_window_nodes(graph, base):
@@ -378,6 +422,50 @@ def main():
                 if any(abs(trva - xr) < 0x400 for xr in MAP_XREF_RVAS):
                     print(
                         f"MAP_CALLBACK_NEAR_TARGET|name={name}|target_rva=0x{trva:x}|calls={count}"
+                    )
+
+        mode_vas = literal_vas(data, base, sections, FILE_MODE_LITERALS)
+        for name, semantic_rva in MAP_SEMANTIC_NODES.items():
+            root_va = base + MAP_CALLBACKS[name]
+            graph = deep_call_graph(data, base, sections, imports, root_va)
+            target_va = base + semantic_rva
+            node = graph.get(target_va)
+            if node is None:
+                print(f"MAP_SEMANTIC_NODE_MISSING|name={name}|rva=0x{semantic_rva:x}")
+                continue
+            print(
+                f"MAP_SEMANTIC_NODE|name={name}|rva=0x{semantic_rva:x}|depth={node.get('depth',0)}|"
+                f"instructions={node['instructions']}|direct_targets={len(node['internal'])}|"
+                f"end_reason={node['end_reason']}"
+            )
+            for ins_va, mode in node_literal_hits(
+                data, base, sections, target_va, node, mode_vas
+            ):
+                print(
+                    f"MAP_SEMANTIC_MODE|name={name}|node_rva=0x{semantic_rva:x}|"
+                    f"instruction_rva=0x{ins_va-base:x}|mode={mode}"
+                )
+            for parent_va, callsite_va, depth in edge_calls_to(graph, target_va):
+                paths = backward_paths(data, base, sections, callsite_va)
+                ranked = sorted(
+                    paths,
+                    key=lambda path: (
+                        -sum(1 for ins in path if ins.mnemonic == "push"),
+                        -len(path),
+                    ),
+                )
+                best = ranked[0] if ranked else []
+                pushes = [ins for ins in best if ins.mnemonic == "push"]
+                print(
+                    f"MAP_SEMANTIC_CALL|name={name}|target_rva=0x{semantic_rva:x}|"
+                    f"parent_rva=0x{parent_va-base:x}|callsite_rva=0x{callsite_va-base:x}|"
+                    f"parent_depth={depth}|best_path_instructions={len(best)}|pushes={len(pushes)}"
+                )
+                for order, ins in enumerate(pushes, 1):
+                    print(
+                        f"MAP_SEMANTIC_ARG|name={name}|order={order}|"
+                        f"instruction_rva=0x{ins.address-base:x}|"
+                        f"ops={clean(operand_summary(ins,base,sections))}"
                     )
 
         for rva in MAP_XREF_RVAS:
