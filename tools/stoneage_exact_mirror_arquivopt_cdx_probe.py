@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import concurrent.futures
 import json
+import time
 import urllib.parse
 import urllib.request
 
@@ -19,6 +20,8 @@ TARGETS = [
     ("cnet-stoneage-zip-www", "http://www.korea.cnet.com/pc/games/online/stoneage.zip"),
     ("hananet-sa-exe", "http://stoneage.hananet.net/down/sa.exe"),
     ("hananet-sa-exe-www", "http://www.stoneage.hananet.net/down/sa.exe"),
+    ("hananet-sa-demo-exe", "http://stoneage.hananet.net/down/sa_demo.exe"),
+    ("hananet-sa-demo-exe-www", "http://www.stoneage.hananet.net/down/sa_demo.exe"),
     ("gagamel-stoneagebeta", "http://www.gagamel.com/web_data/download/stoneagebeta.zip"),
     ("gagamel-stoneagebeta-bare", "http://gagamel.com/web_data/download/stoneagebeta.zip"),
     ("hananet-pds-record", "http://pds.hananet.net/view.asp?app_id=20001031524596220&type=C03"),
@@ -30,10 +33,21 @@ TARGETS = [
 ]
 
 
-def fetch_bytes(url: str, timeout: int = 12) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json,text/plain,*/*"})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read()
+def fetch_bytes(url: str, timeout: int = 12, attempts: int = 2) -> bytes:
+    last = None
+    for attempt in range(attempts):
+        try:
+            req = urllib.request.Request(
+                url,
+                headers={"User-Agent": UA, "Accept": "application/json,text/plain,*/*"},
+            )
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read()
+        except Exception as exc:
+            last = exc
+            if attempt + 1 < attempts:
+                time.sleep(1.5)
+    raise last
 
 
 def parse_rows(data: bytes):
@@ -128,7 +142,7 @@ def main():
 
     results = []
     errors = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
         futures = [ex.submit(query_one, label, original) for label, original in TARGETS]
         for fut in futures:
             label, original, rows, error = fut.result()
