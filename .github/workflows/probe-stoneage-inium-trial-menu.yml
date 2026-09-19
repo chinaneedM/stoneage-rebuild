@@ -1,0 +1,37 @@
+name: Locate Inium StoneAge trial menu
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_inium_trial_menu_probe.py
+      - tests/test_stoneage_inium_trial_menu_probe.py
+      - .github/workflows/probe-stoneage-inium-trial-menu.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-inium-trial-menu
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_inium_trial_menu_probe -v
+      - name: Locate archived trial menu/page
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_inium_trial_menu_probe             > research/recovered/STONEAGE-INIUM-TRIAL-MENU-R1.txt
+      - name: Commit derived menu metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-INIUM-TRIAL-MENU-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: locate Inium StoneAge trial menu'
+          git pull --rebase origin main
+          git push
