@@ -68,6 +68,8 @@ SERVER_NAME_TABLE_RVA = 0x588B0
 SERVER_NAME_RECORD_SIZE = 64
 SELECT_SERVER_INDEX_RVA = 0x5C860
 CMDLINE_BUFFER_RVA = 0x139B758
+CMDLINE_INIT_WINDOW_RVA = 0x1C490
+CMDLINE_ASSIGN_RVA = 0x1C4D0
 CONNECT_RESET_RVA = 0x2EE20
 CONNECT_GAME_RVA = 0x2EE2C
 SERVER_LOOKUP_WINDOW_RVA = 0x2E840
@@ -640,6 +642,37 @@ def main():
                 print(
                     f"SERVER_LOOKUP_INS|order={order}|instruction_rva=0x{ins.address-base:x}|"
                     f"mnemonic={clean(ins.mnemonic)}|ops={clean(enhanced_ops(ins,data,base,sections))}"
+                )
+
+        cmd_init_ctx = linear_context(
+            data, base, sections, base + CMDLINE_INIT_WINDOW_RVA, max_bytes=0x110, limit=120
+        )
+        print(
+            f"CMDLINE_INIT_WINDOW|start_rva=0x{CMDLINE_INIT_WINDOW_RVA:x}|"
+            f"assign_rva=0x{CMDLINE_ASSIGN_RVA:x}|instructions={len(cmd_init_ctx)}"
+        )
+        for order, ins in enumerate(cmd_init_ctx, 1):
+            if ins.mnemonic.startswith("j") or ins.mnemonic.startswith("ret") or ins.mnemonic in {
+                "mov", "movsx", "movzx", "lea", "push", "call", "cmp", "test",
+                "add", "sub", "xor", "and", "or"
+            }:
+                imp = imported_call(ins, imports)
+                extra = ""
+                if imp:
+                    extra = f"|import_dll={clean(imp[0])}|import_api={clean(imp[1])}"
+                print(
+                    f"CMDLINE_INIT_INS|order={order}|instruction_rva=0x{ins.address-base:x}|"
+                    f"mnemonic={clean(ins.mnemonic)}|ops={clean(enhanced_ops(ins,data,base,sections))}{extra}"
+                )
+
+        # The assignment itself is inside a WinMain-shaped function. Probe nearby
+        # candidate entry addresses to expose any direct CRT caller relationship.
+        for candidate_rva in range(0x1C480, 0x1C4B1):
+            callers = direct_rel32_call_sites(data, base, sections, base + candidate_rva)
+            if callers:
+                print(
+                    f"CMDLINE_INIT_ENTRY_CANDIDATE|rva=0x{candidate_rva:x}|"
+                    f"callers={','.join(f'0x{x-base:x}' for x in callers)}"
                 )
 
         cmd_refs = exact_pointer_refs(data, base, sections, CMDLINE_BUFFER_RVA)
