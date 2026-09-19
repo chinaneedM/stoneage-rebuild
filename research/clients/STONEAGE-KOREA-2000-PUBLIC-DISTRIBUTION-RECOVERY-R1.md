@@ -324,6 +324,16 @@ RISS now provides a formal bibliographic record for the same GameTime volume:
 
 This upgrades the bonus-CD lead from retailer-only marketing metadata to a formal public-library bibliographic object. It does **not** yet prove that the accompanying disc is presently intact, independently cataloged, digitized, or publicly downloadable at the holding institution.
 
+A reproducible public-catalog probe adds several identifiers and a holdings signal:
+
+- KOLIS ISBN-10 `8995182121` search returns exactly one 2001 **general-book** result, marked **offline**, and states **`2 개 도서관 소장` / held by 2 libraries**;
+- the KOLIS aggregate result exposes RISS alias **`U10029631`**;
+- `https://www.riss.kr/link?id=U10029631` resolves to the same RISS detail object as canonical link **`M10029631`**;
+- the RISS detail URL exposes control number **`9b505f870e768aa6ffe0bdc3ef48d419`** and repeats `318p. ... + 컴팩트디스크 1매(12cm)` plus National Library of Korea as a holding institution;
+- the current aggregate output does **not** identify the second holding library, a call/accession number, or the present physical status of either accompanying disc.
+
+Derived evidence: `research/recovered/STONEAGE-GAMETIME-2001-LIBRARY-SUPPLEMENT-R1.txt`.
+
 ### Catalog-date normalization
 
 The known commercial catalogs disagree on the date while identifying the same physical book:
