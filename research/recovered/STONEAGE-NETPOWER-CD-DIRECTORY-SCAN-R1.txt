@@ -3,32 +3,8 @@ SCOPE|http-range-directory-metadata-only|no-full-image-download|no-carrier-bytes
 COUNT|candidate_items|1
 COUNT|image_candidates_selected|2
 COUNT|metadata_errors|0
-COUNT|scan_errors|0
-COUNT|images_scanned|2
+COUNT|scan_errors|2
+COUNT|images_scanned|0
 COUNT|stoneage_hits|0
-IMAGE|identifier=20230716_20230716_0953|title=NetPower 2001.12 CD|date=2001-11-02T00:00:00Z|name=011102_1545(넷파워 2001년 12월호).iso|size=658546688|md5=f9781e8c8badc12566eeef7a79362ab0|sha1=9bc589ddd1399aa5306ecdfa8caf10ebbae474ac|layout=iso2048|volume=DISC |requests=18|bytes_read=36864|primary_entries=109|primary_dirs=7|joliet=1|joliet_entries=109|truncated=0
-SAMPLE|identifier=20230716_20230716_0953|image=011102_1545(넷파워 2001년 12월호).iso|path=AUTORUN.INF
-SAMPLE|identifier=20230716_20230716_0953|image=011102_1545(넷파워 2001년 12월호).iso|path=CDLOG.ICO
-SAMPLE|identifier=20230716_20230716_0953|image=011102_1545(넷파워 2001년 12월호).iso|path=PLAY12_1.EXE
-SAMPLE|identifier=20230716_20230716_0953|image=011102_1545(넷파워 2001년 12월호).iso|path=CLIENT
-SAMPLE|identifier=20230716_20230716_0953|image=011102_1545(넷파워 2001년 12월호).iso|path=DEMO
-SAMPLE|identifier=20230716_20230716_0953|image=011102_1545(넷파워 2001년 12월호).iso|path=INTERNET
-SAMPLE|identifier=20230716_20230716_0953|image=011102_1545(넷파워 2001년 12월호).iso|path=UTIL
-SAMPLE|identifier=20230716_20230716_0953|image=011102_1545(넷파워 2001년 12월호).iso|path=CLIENT/ARCHESSETUP.EXE
-SAMPLE|identifier=20230716_20230716_0953|image=011102_1545(넷파워 2001년 12월호).iso|path=CLIENT/CASETUP.EXE
-SAMPLE|identifier=20230716_20230716_0953|image=011102_1545(넷파워 2001년 12월호).iso|path=CLIENT/GOD12SETUP.EXE
-SAMPLE|identifier=20230716_20230716_0953|image=011102_1545(넷파워 2001년 12월호).iso|path=CLIENT/HCFULL175.EXE
-SAMPLE|identifier=20230716_20230716_0953|image=011102_1545(넷파워 2001년 12월호).iso|path=CLIENT/ICELAND.EXE
-IMAGE|identifier=20230716_20230716_0953|title=NetPower 2001.12 CD|date=2001-11-02T00:00:00Z|name=Net_CD_1(넷파워 2001년 12월호).iso|size=600608768|md5=14cbcb85fddae45ecddfbdd87fc5e654|sha1=03777dd9b78ed997ba5227ede49319099868c626|layout=iso2048|volume=DISC |requests=8|bytes_read=16384|primary_entries=29|primary_dirs=3|joliet=1|joliet_entries=29|truncated=0
-SAMPLE|identifier=20230716_20230716_0953|image=Net_CD_1(넷파워 2001년 12월호).iso|path=AUTORUN.INF
-SAMPLE|identifier=20230716_20230716_0953|image=Net_CD_1(넷파워 2001년 12월호).iso|path=CDLOG.ICO
-SAMPLE|identifier=20230716_20230716_0953|image=Net_CD_1(넷파워 2001년 12월호).iso|path=PLAY12.EXE
-SAMPLE|identifier=20230716_20230716_0953|image=Net_CD_1(넷파워 2001년 12월호).iso|path=ARCANE
-SAMPLE|identifier=20230716_20230716_0953|image=Net_CD_1(넷파워 2001년 12월호).iso|path=DRAGONRAJA
-SAMPLE|identifier=20230716_20230716_0953|image=Net_CD_1(넷파워 2001년 12월호).iso|path=ARCANE/_INST32I.EX_
-SAMPLE|identifier=20230716_20230716_0953|image=Net_CD_1(넷파워 2001년 12월호).iso|path=ARCANE/_ISDEL.EXE
-SAMPLE|identifier=20230716_20230716_0953|image=Net_CD_1(넷파워 2001년 12월호).iso|path=ARCANE/_SETUP.DLL
-SAMPLE|identifier=20230716_20230716_0953|image=Net_CD_1(넷파워 2001년 12월호).iso|path=ARCANE/_SYS1.CAB
-SAMPLE|identifier=20230716_20230716_0953|image=Net_CD_1(넷파워 2001년 12월호).iso|path=ARCANE/_USER1.CAB
-SAMPLE|identifier=20230716_20230716_0953|image=Net_CD_1(넷파워 2001년 12월호).iso|path=ARCANE/DATA.TAG
-SAMPLE|identifier=20230716_20230716_0953|image=Net_CD_1(넷파워 2001년 12월호).iso|path=ARCANE/DATA1.CAB
+SCAN_ERROR|identifier=20230716_20230716_0953|title=NetPower 2001.12 CD|date=2001-11-02T00:00:00Z|name=011102_1545(넷파워 2001년 12월호).iso|size=658546688|md5=f9781e8c8badc12566eeef7a79362ab0|sha1=9bc589ddd1399aa5306ecdfa8caf10ebbae474ac|message=RuntimeError: iso2048:AttributeError:'RemoteImage' object has no attribute 'origin'; mode1-2352:AttributeError:'RemoteImage' object has no attribute 'origin'; auto-frame-2048-origin-0:AttributeError:'RemoteImage' object has no attribute 'origin'
+SCAN_ERROR|identifier=20230716_20230716_0953|title=NetPower 2001.12 CD|date=2001-11-02T00:00:00Z|name=Net_CD_1(넷파워 2001년 12월호).iso|size=600608768|md5=14cbcb85fddae45ecddfbdd87fc5e654|sha1=03777dd9b78ed997ba5227ede49319099868c626|message=RuntimeError: iso2048:AttributeError:'RemoteImage' object has no attribute 'origin'; mode1-2352:AttributeError:'RemoteImage' object has no attribute 'origin'; auto-frame-2048-origin-0:AttributeError:'RemoteImage' object has no attribute 'origin'
