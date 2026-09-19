@@ -107,7 +107,18 @@ A preserved CNET Korea download-index snapshot dated **2000-11-10** contains a d
 
 A second preserved CNET Korea snapshot dated **2001-01-24** independently lists the same record ID as `스톤에이지(Stoneage)`, confirming that the identifier is stable across at least those two archived index states.
 
-This is the project's first exact child-record identity for one of the named 2000 mass-distribution portals. It upgrades the CNET branch from root-level evidence to a concrete historical software record. The direct payload filename, file size, version and binary bytes are still unresolved and are now being pursued from this exact record.
+This is the project's first exact child-record identity for one of the named 2000 mass-distribution portals. It upgrades the CNET branch from root-level evidence to a concrete historical software record.
+
+The archived detail record has now resolved two additional payload facts:
+
+- file-size label: **`257MB`**;
+- download target parameter: **`/pc/games/online/stoneage.zip`**.
+
+The same detail page links the maker homepage to `http://stoneage.enium.co.kr`. Multiple preserved detail snapshots from 2000-12 through 2001-04 repeat the same payload path and size label. The CNET download counter rises from 234,187 on the 2000-12-01 snapshot to 271,192 on the 2000-12-11 snapshot, independently fitting the contemporary reporting that CNET distribution was already at very large scale by late December.
+
+An exact Wayback Availability probe against both `korea.cnet.com/pc/games/online/stoneage.zip` and the `www` host variant across key 2000-2001 dates returned **zero available payload snapshots** with zero request errors. This is a negative result only for those exact Wayback URL queries; it does not prove the 257MB ZIP is globally lost.
+
+Search caution: `stoneage.zip` is also a common filename for an unrelated 1991 arcade/MAME bootleg. Any future hit must therefore be validated by **257MB-scale size, Korean CNET/Inium provenance, the `/pc/games/online/` path, internal StoneAge client structure, or equivalent file-level evidence** rather than filename alone.
 
 Derived evidence:
 
