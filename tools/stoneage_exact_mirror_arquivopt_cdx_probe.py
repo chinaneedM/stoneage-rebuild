@@ -51,8 +51,10 @@ def parse_rows(data: bytes):
             line = line.strip()
             if not line:
                 continue
-            if " {" in line and not line.startswith("{"):
-                line = line.split(" ", 1)[1]
+            if not line.startswith("{"):
+                brace = line.find("{")
+                if brace >= 0:
+                    line = line[brace:]
             try:
                 item = json.loads(line)
             except json.JSONDecodeError:
