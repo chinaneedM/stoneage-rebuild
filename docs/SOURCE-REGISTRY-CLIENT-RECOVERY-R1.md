@@ -37,6 +37,10 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Hananet infrastructure corroboration:
   - Korea Economic Daily, 2000-04-27: https://www.hankyung.com/article/2000042732051
   - identifies `www.hananet.net`, its game-content surface `http://game.hananet.net`, and the 2000 GamePlus service.
+- Exact Hananet StoneAge service-chain evidence:
+  - preserved GamePlus material links `[게임Plus]스톤에이지 게임Plus 신규 오픈` through `/gamenet/sitemap/map/mapstoneage.html` and `/gamenet/newframe/frstoneage.html` to the dedicated host `http://stoneage.hananet.net/main.htm`;
+  - the archived dedicated homepage exposes menu paths `1.htm`, `2.htm`, `2_2.htm`, `2_3.htm`, `2_4.htm`, `2_5.htm` and links back to the Inium operator site;
+  - archived snapshots are confirmed for `1.htm`, `2.htm`, `2_2.htm`, `2_3.htm`, and `2_4.htm`; download/install targets inside those pages remain under extraction.
 - Offline replication evidence:
   - iNews24, 2000-07-04: https://www.inews24.com/view/8928 records the planned Samsung PC / education-center distribution;
   - DailyGame, 2000-10-27: https://www.dailygame.co.kr/view.php?ud=200010271416380001837_26 reports a later package-supply agreement of roughly 60,000 units through the Samsung PC-education-center operator plus PC-game retail distribution.
