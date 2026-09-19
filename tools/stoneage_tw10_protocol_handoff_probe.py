@@ -38,6 +38,8 @@ from tools.stoneage_tw10_exact_xref_probe import (
 )
 
 SEND_RVA = 0x1B3F0
+INIT_RVA = 0x1AC10
+DEFAULT_WRITE_RVA = 0x1B3D0
 MAX_BYTES = 0x800
 MAX_INSNS = 400
 MAX_GLOBAL_XREFS = 64
@@ -243,6 +245,32 @@ def backward_paths(data, base, sections, target_va):
     return complete[:BACKTRACE_MAX_PATHS]
 
 
+def direct_rel32_call_sites(data, base, sections, target_va):
+    sec = next((s for s in sections if s["name"] == ".text"), None)
+    if sec is None:
+        return []
+    blob = data[sec["raw"]:sec["raw"] + sec["raw_size"]]
+    out = []
+    for rel in range(0, max(0, len(blob) - 5)):
+        if blob[rel] != 0xE8:
+            continue
+        disp = struct.unpack_from("<i", blob, rel + 1)[0]
+        site_va = base + sec["rva"] + rel
+        if (site_va + 5 + disp) & 0xFFFFFFFF == target_va:
+            out.append(site_va)
+    return out
+
+
+def immediate_text_push(ins, base, sections):
+    if ins.mnemonic != "push" or len(ins.operands) != 1:
+        return None
+    op = ins.operands[0]
+    if op.type != X86_OP_IMM:
+        return None
+    value = int(op.imm) & 0xFFFFFFFF
+    return value if section_name_for_va(base, sections, value) == ".text" else None
+
+
 def callback_probe(data, base, sections, imports, callback_va):
     rva = callback_va - base
     off = rva_to_offset(sections, rva)
@@ -314,6 +342,53 @@ def main():
             print(
                 f"SEND_EVENT|order={order}|kind={kind}|callsite_rva=0x{addr-base:x}{extra}"
             )
+
+        init_va = base + INIT_RVA
+        init_calls = direct_rel32_call_sites(data, base, sections, init_va)
+        print(
+            f"INIT_HELPER|rva=0x{INIT_RVA:x}|default_write_rva=0x{DEFAULT_WRITE_RVA:x}|"
+            f"direct_callers={len(init_calls)}"
+        )
+        init_callback_candidates = set()
+        for n, call_va in enumerate(init_calls, 1):
+            print(f"INIT_CALL|n={n}|callsite_rva=0x{call_va-base:x}")
+            paths = backward_paths(data, base, sections, call_va)
+            for path_no, path in enumerate(paths, 1):
+                pushed = []
+                for prev in path:
+                    candidate = immediate_text_push(prev, base, sections)
+                    if candidate is not None:
+                        pushed.append(candidate)
+                if pushed:
+                    nearest = pushed[-1]
+                    init_callback_candidates.add(nearest)
+                    print(
+                        f"INIT_CALLBACK_CANDIDATE|callsite_rva=0x{call_va-base:x}|path={path_no}|"
+                        f"callback_rva=0x{nearest-base:x}"
+                    )
+        for cb_va in sorted(init_callback_candidates):
+            probed = callback_probe(data, base, sections, imports, cb_va)
+            if probed is None:
+                continue
+            print(
+                f"INIT_CALLBACK|callback_rva=0x{cb_va-base:x}|instructions={probed['instructions']}|"
+                f"indirect_calls={probed['indirect']}|import_api_kinds={len(probed['api'])}|"
+                f"direct_targets={len(probed['direct'])}"
+            )
+            for (dll, name), count in sorted(
+                probed["api"].items(), key=lambda x:(x[0][0].lower(),x[0][1].lower())
+            ):
+                print(
+                    f"INIT_CALLBACK_API|callback_rva=0x{cb_va-base:x}|dll={clean(dll)}|"
+                    f"api={clean(name)}|calls={count}"
+                )
+            for target, count in sorted(probed["direct"].items()):
+                sec_name = section_name_for_va(base, sections, target)
+                if sec_name == ".text":
+                    print(
+                        f"INIT_CALLBACK_DIRECT|callback_rva=0x{cb_va-base:x}|"
+                        f"target_rva=0x{target-base:x}|calls={count}"
+                    )
 
         for global_va, refs_in_send in sorted(globals_seen.items()):
             if not (lo <= global_va < hi):
