@@ -46,6 +46,10 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Archive-probe boundary:
   - current Wayback/CDX and Arquivo.pt metadata probes encountered request timeouts / network-unreachable errors;
   - their zero-result counts are **INCONCLUSIVE**, not evidence that no archive capture exists.
+- Magazine-scan token boundary:
+  - NetPower 2000-12 pp.173–176, 2001-01 pp.185–190 and 2001-02 pp.189–194 have now been probed with transient OCR and sparse-token extraction;
+  - none produced an Inium/Hananet/CNET URL or installer/archive filename; 2001-02 only recovered the magazine-side `powerzine.com`, while isolated `32MB` / OCR-noise strings remain non-evidence for client size or filename;
+  - treat these exact page ranges as closed low-value repeat targets unless a materially better extraction method appears.
 - Canonical research note:
   - `research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md`.
 - Next action:
