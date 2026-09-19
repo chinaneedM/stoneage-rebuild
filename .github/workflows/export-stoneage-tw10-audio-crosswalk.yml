@@ -1,0 +1,65 @@
+name: Export StoneAge Taiwan v1.0 audio crosswalk
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_audio_metadata.py
+      - tests/test_stoneage_tw10_audio_metadata.py
+      - .github/workflows/export-stoneage-tw10-audio-crosswalk.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-tw10-audio-crosswalk
+  cancel-in-progress: true
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run audio exporter unit tests
+        run: python3 -m unittest tests.test_stoneage_tw10_audio_metadata -v
+      - name: Download and verify accepted Taiwan preservation archive
+        run: |
+          set -euo pipefail
+          curl -L --fail --retry 3 --retry-delay 2 --silent --show-error \
+            -o /tmp/CD_DIC.rar 'https://archive.org/download/stoneage_tw_2000_win/CD_DIC.rar'
+          echo "b37a4a47f4eb608cac67e4ddf7a1621a  /tmp/CD_DIC.rar" | md5sum -c -
+          echo "b8cf92720b6ec8b3f46ea2e9bfcda986d21e7ded  /tmp/CD_DIC.rar" | sha1sum -c -
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/tw10
+          7z x -y -o/tmp/tw10 /tmp/CD_DIC.rar 'STONEAGE.bin' >/dev/null
+          test "$(stat -c %s /tmp/tw10/STONEAGE.bin)" = "523449360"
+      - name: Export deterministic audio crosswalk
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_audio_metadata \
+            --bin /tmp/tw10/STONEAGE.bin \
+            --out research/recovered/STONEAGE-TW10-AUDIO-DATASET-R1.txt
+      - name: Verify historical audio boundary
+        run: |
+          set -euo pipefail
+          test -s research/recovered/STONEAGE-TW10-AUDIO-DATASET-R1.txt
+          grep -F 'SUMMARY|indexed=114|loose_sfx=116|bgm=11|exact_file=107|variant_same_pcm=1|variant_pcm_diff=6|missing_loose=0|unindexed_sfx=2|container_bytes=3695418' \
+            research/recovered/STONEAGE-TW10-AUDIO-DATASET-R1.txt
+          test "$(grep -c '^INDEXED|' research/recovered/STONEAGE-TW10-AUDIO-DATASET-R1.txt)" = "114"
+          test "$(grep -c '^UNINDEXED_SFX|' research/recovered/STONEAGE-TW10-AUDIO-DATASET-R1.txt)" = "2"
+          test "$(grep -c '^BGM|' research/recovered/STONEAGE-TW10-AUDIO-DATASET-R1.txt)" = "11"
+      - name: Delete transient proprietary payloads
+        if: always()
+        run: rm -rf /tmp/tw10 /tmp/CD_DIC.rar
+      - name: Commit derived audio metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-TW10-AUDIO-DATASET-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: export Taiwan v1.0 audio crosswalk'
+          git pull --rebase origin main
+          git push
