@@ -805,12 +805,21 @@ Supplemental source ledgers:
 - Fixed descendants disagree on the compiled personal-bank ceiling: gavinlinasd/iriselia use **10,000,000**, while Bismarck uses **100,000,000**. This remains VERSIONED evidence rather than a universal constant.
 - Added `research/mechanics/STONEAGE-PERSONAL-BANK-PERSISTENCE-R1.md`, `tools/stoneage_personal_bank_model.py`, `tests/test_stoneage_personal_bank_model.py` and dedicated CI.
 - Local deterministic validation passes **13 tests**; GitHub Actions run **35387247569** completed successfully.
+## Quiz active core closure — 2026-09-19
+
+- Corrected an earlier census interpretation: recovered 2.5 contains **22 Quiz create refs** through one duplicated-but-stable Quiz template-name value; four was the number of Quiz template blocks, not live create references.
+- Real-byte Quiz probe run **35419940820** succeeded. All 22 configs resolve; every one uses a single starred `EntryItem` with quantity 1, while **none uses EntryStone**.
+- `Party` exists in all 22 configs, and the fixed source only shows the party warning before continuing. Therefore the historical “party warning but no actual block” defect is active in this recovered specimen.
+- `Warp` is active in 21/22 configs (36 valid three-field destinations total); `GetItem` is active in 4/22 and each recovered reward has one candidate item.
+- The global question table has 150 non-comment source rows; the fixed loader accepts 149 nine-field rows and skips one eight-field row. Loaded answer types are 22 two-choice, 84 three-choice and 43 free-text questions.
+- Preserved free-text substring matching, ordered score-threshold evaluation, eight concurrent session slots, 100-entry no-repeat history, and the full-inventory/EntryItem interaction.
+- Added `research/mechanics/STONEAGE-QUIZ-CORE-R1.md`, usage probe/model/tests and dedicated CI. Core validation run **35419980296** succeeded.
 ## Immediate next actions
 
-1. **Run a fresh residual non-family NPC triage against the recovered 2.5 function set.** Rank only classes that expose direct persistent mutation, ordinary economy, travel/world-state mutation or another still-unmodeled early/core dependency; do not inherit the stale R3 ordering.
-2. **Reconstruct only the highest-value residual ordinary-core seam revealed by that audit.** If the remaining classes collapse to presentation, wrappers around already-modeled mechanics, or later packages, close the NPC core sweep instead of manufacturing work.
+1. **Close the residual ordinary NPC sweep with LuckyMan and Door.** Verify recovered 2.5 active argument shapes and determine whether either exposes a still-unmodeled core mechanic beyond a narrow Stone sink or transient door/world state.
+2. **If no new foundational seam appears, stop expanding the NPC queue.** Keep the thirteen recovered function-set tokens that do not join to any pinned source table as explicit source/data skew rather than inventing implementations.
 3. **Keep Raceman, Scheduleman, ManorSman, FMPK/FMWarp, family-administration and VIP packages later-scope unless they reveal a dependency required by the early/core reconstruction.**
-4. **Continue detailed combat only when the NPC pass exposes a concrete early/core formula gap.** Magic, item and the 15 stable pet-skill families now already connect through the battle execution layer.
+4. **Return primary technical priority to clean-client recovery and concrete cross-system gaps once the ordinary NPC sweep is closed.** Detailed combat should reopen only for a demonstrated formula/data gap.
 5. **Continue clean-client recovery in parallel.** Maintain the no-purchase rule and keep `〖2.5纯净〗`, Korean **1.74**, Japanese **1.74a**, and JSS beta/retail artifacts as controlled provenance tracks.
 6. **Keep historical reconstruction separate from redesign.** Preserve old quirks in the archaeology model first; any modern simplification, safer state typing, balance change or UX improvement belongs in later DESIGN work.
 7. **De-prioritize nontechnical archaeology.** Package price, model numbers, collector accessories and similar topics remain paused unless they directly unlock a client, prove provenance, or resolve a technical ambiguity.
