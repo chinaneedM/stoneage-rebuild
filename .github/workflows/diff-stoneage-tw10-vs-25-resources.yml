@@ -1,0 +1,107 @@
+name: Diff StoneAge Taiwan v1.0 and 2.5 resources
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_vs_25_resource_diff.py
+      - tests/test_stoneage_tw10_vs_25_resource_diff.py
+      - .github/workflows/diff-stoneage-tw10-vs-25-resources.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-tw10-vs-25-resources
+  cancel-in-progress: true
+
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_tw10_vs_25_resource_diff -v
+      - name: Install archive tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq unar 7zip
+      - name: Recover verified StoneAge 2.5 bridge
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25
+          python3 - <<'PY'
+          import hashlib,html,json,re,http.cookiejar,urllib.parse,urllib.request
+          from pathlib import Path
+          ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124 Safari/537.36'
+          expected={
+            'ev7l29fw77891go':'7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5',
+            'ytaa168o5jih0lx':'567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb',
+          }
+          cj=http.cookiejar.CookieJar()
+          op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+          op.addheaders=[('User-Agent',ua),('Accept-Language','en-US,en;q=0.9')]
+          for key,suffix in [('ev7l29fw77891go','001'),('ytaa168o5jih0lx','002')]:
+              data=urllib.parse.urlencode({'quick_key':key,'response_format':'json'}).encode()
+              req=urllib.request.Request('https://www.mediafire.com/api/1.5/file/get_info.php',data=data,headers={'User-Agent':ua})
+              with op.open(req,timeout=60) as r:
+                  info=json.load(r)['response']['file_info']
+              if str(info.get('hash') or '').lower()!=expected[key]:
+                  raise SystemExit('MediaFire metadata hash changed')
+              req=urllib.request.Request(info['links']['normal_download'],headers={'User-Agent':ua})
+              with op.open(req,timeout=60) as r:
+                  page=r.read().decode('utf-8','replace'); referer=r.geturl()
+              m=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S)
+              if not m:
+                  m=re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+              if not m: raise SystemExit('No direct link')
+              dest=Path('/tmp/sa25')/f'part.{suffix}'
+              h=hashlib.sha256()
+              req=urllib.request.Request(html.unescape(m.group(1)),headers={'User-Agent':ua,'Referer':referer})
+              with op.open(req,timeout=300) as r, dest.open('wb') as out:
+                  while True:
+                      b=r.read(1024*1024)
+                      if not b: break
+                      out.write(b); h.update(b)
+              if h.hexdigest()!=expected[key]: raise SystemExit('Hash mismatch')
+          PY
+          cat /tmp/sa25/part.001 /tmp/sa25/part.002 > /tmp/sa25/bundle.rar
+          test "$(sha256sum /tmp/sa25/bundle.rar | awk '{print $1}')" = "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+          mkdir -p /tmp/sa25/out
+          unar -f -o /tmp/sa25/out /tmp/sa25/bundle.rar >/tmp/sa25/unar.log 2>&1
+      - name: Recover verified Taiwan v1.0 track
+        run: |
+          set -euo pipefail
+          curl -L --fail --retry 3 --retry-delay 2 --silent --show-error \
+            -o /tmp/CD_DIC.rar \
+            'https://archive.org/download/stoneage_tw_2000_win/CD_DIC.rar'
+          echo "b37a4a47f4eb608cac67e4ddf7a1621a  /tmp/CD_DIC.rar" | md5sum -c -
+          echo "b8cf92720b6ec8b3f46ea2e9bfcda986d21e7ded  /tmp/CD_DIC.rar" | sha1sum -c -
+          mkdir -p /tmp/tw10
+          7z x -y -o/tmp/tw10 /tmp/CD_DIC.rar 'STONEAGE.bin' >/dev/null
+          test "$(stat -c %s /tmp/tw10/STONEAGE.bin)" = "523449360"
+      - name: Diff verified resource generations
+        run: |
+          set -euo pipefail
+          ADRN="$(find /tmp/sa25/out -type f -path '*/SA2.5主程式/stoneage2.5/data/adrn_15.bin' -print -quit)"
+          REAL="$(find /tmp/sa25/out -type f -path '*/SA2.5主程式/stoneage2.5/data/real_15.bin' -print -quit)"
+          SPR="$(find /tmp/sa25/out -type f -path '*/SA2.5主程式/stoneage2.5/data/spr_4.bin' -print -quit)"
+          SPRADRN="$(find /tmp/sa25/out -type f -path '*/SA2.5主程式/stoneage2.5/data/spradrn_5.bin' -print -quit)"
+          test -n "$ADRN" && test -n "$REAL" && test -n "$SPR" && test -n "$SPRADRN"
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_tw10_vs_25_resource_diff \
+            --tw-bin /tmp/tw10/STONEAGE.bin \
+            --v25-adrn "$ADRN" --v25-real "$REAL" \
+            --v25-spradrn "$SPRADRN" --v25-spr "$SPR" \
+            > research/recovered/STONEAGE-TW10-VS-25-RESOURCE-DIFF-R1.txt
+      - name: Delete transient proprietary payloads
+        if: always()
+        run: rm -rf /tmp/sa25 /tmp/tw10 /tmp/CD_DIC.rar
+      - name: Commit derived diff only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-TW10-VS-25-RESOURCE-DIFF-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: diff Taiwan 1.0 against 2.5 resources'
+          git pull --rebase origin main
+          git push
