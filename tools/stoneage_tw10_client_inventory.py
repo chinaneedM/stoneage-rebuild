@@ -161,9 +161,19 @@ def inventory(bin_path: Path):
             p = normalize(row["path"])
             basename_paths[Path(p).name.lower()].append(p)
 
-        for label, table_path, expected_prefix in (
-            ("battle", "stoneage/data/battletxt_1.txt", "stoneage/data/battlemap/"),
-            ("sound", "stoneage/data/soundaddr_1.txt", "stoneage/data/se/"),
+        for label, table_path, container_path, expected_prefix in (
+            (
+                "battle",
+                "stoneage/data/battletxt_1.txt",
+                "stoneage/data/battle_1.bin",
+                "stoneage/data/battlemap/",
+            ),
+            (
+                "sound",
+                "stoneage/data/soundaddr_1.txt",
+                "stoneage/data/sound_1.bin",
+                "stoneage/data/se/",
+            ),
         ):
             table_row = by_path.get(table_path)
             if table_row is None:
@@ -172,6 +182,51 @@ def inventory(bin_path: Path):
             addr_rows = parse_address_table_bytes(row_bytes(img, table_row))
             names = collections.Counter(name for _, _, name in addr_rows)
             duplicate_refs = sum(max(0, count - 1) for count in names.values())
+
+            container_row = by_path.get(container_path)
+            record_bytes = sum(size for _, size, _ in addr_rows)
+            span_end = max((offset + size for offset, size, _ in addr_rows), default=0)
+            contiguous = all(
+                addr_rows[index][0]
+                == addr_rows[index - 1][0] + addr_rows[index - 1][1]
+                for index in range(1, len(addr_rows))
+            )
+            starts_zero = bool(addr_rows) and addr_rows[0][0] == 0
+            container_size = container_row["size"] if container_row is not None else -1
+            print(
+                f"ADDRESS_TABLE_CONTAINER|label={label}|table_path={table_path}|"
+                f"container_path={container_path}|records={len(addr_rows)}|"
+                f"record_bytes={record_bytes}|span_end={span_end}|"
+                f"container_size={container_size}|starts_zero={int(starts_zero)}|"
+                f"contiguous={int(contiguous)}|"
+                f"span_matches_container={int(container_row is not None and span_end == container_size)}"
+            )
+
+            record_categories = collections.Counter()
+            record_category_bytes = collections.Counter()
+            for index, (offset, size, name) in enumerate(addr_rows):
+                paths = basename_paths.get(name, [])
+                matched_rows = [by_path[p.lower()] for p in paths if p.lower() in by_path]
+                categories_for_record = sorted(
+                    {classify_path(row["path"]) for row in matched_rows}
+                )
+                category = ";".join(categories_for_record) if categories_for_record else "missing"
+                record_categories[category] += 1
+                record_category_bytes[category] += size
+                path_text = ";".join(paths)
+                file_sizes = ";".join(str(row["size"]) for row in matched_rows)
+                file_hashes = ";".join(row_sha256(img, row) for row in matched_rows)
+                print(
+                    f"ADDRESS_RECORD|label={label}|index={index}|offset={offset}|size={size}|"
+                    f"name={name}|match_count={len(matched_rows)}|category={category}|"
+                    f"paths={path_text}|file_sizes={file_sizes}|sha256={file_hashes}"
+                )
+            for category in sorted(record_categories):
+                print(
+                    f"ADDRESS_TABLE_CATEGORY|label={label}|category={category}|"
+                    f"records={record_categories[category]}|"
+                    f"record_bytes={record_category_bytes[category]}"
+                )
             present_any = set()
             present_expected = set()
             outside_expected = {}
