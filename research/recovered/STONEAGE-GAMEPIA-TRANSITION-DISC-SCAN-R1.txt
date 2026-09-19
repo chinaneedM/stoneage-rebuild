@@ -1,7 +1,7 @@
 StoneAge GamePia transition-window directory scan — R1
 SCOPE|http-range-directory-metadata-only|no-full-image-download|no-carrier-bytes-committed
-WINDOW|legacy-issues=No.58..No.69|sequence-selected-from-public-corpus
-ITEM|identifier=GAMEPIA_cd_dump|title=GAMEPIA 게임피아 부록 CD 덤프|selected_images=23
+WINDOW|legacy-issues=No.58..No.74|through-2001-12-public-corpus
+ITEM|identifier=GAMEPIA_cd_dump|title=GAMEPIA 게임피아 부록 CD 덤프|selected_images=34
 TARGET|name=No.58/CD1/PF2012.bin|size=602173152|md5=1b0a5351e45b6459eb010b42ac6b15b4|sha1=d7744f5f20027ecab8f1800f8fa7be33c84c97bc|format=Unknown
 TARGET|name=No.58/CD2/0007101814.bin|size=764063664|md5=6317118ec147ac6bd34e94c077524438|sha1=ff988e51c359b9725f8df38d6008b52468e8a029|format=Unknown
 TARGET|name=No.59/CD1/SIRIA.mdf|size=627828768|md5=3880a514208891704c93f7e4de408918|sha1=9ee4914b00e80c493314bbcc20ae72248d7ad390|format=MPEG1
@@ -25,8 +25,19 @@ TARGET|name=No.68/CD2/Gamepia CD1.mdf|size=520483968|md5=7f43c4611ddc6c59c0a24e9
 TARGET|name=No.69/CD1/VIDEOCD.bin|size=526829184|md5=6085f0d1bb532defe4e6d5d87f5809e8|sha1=164a07733b77a8da17f60a04ff6fe8599e5abeb0|format=Unknown
 TARGET|name=No.69/CD2/VIDEOCD.bin|size=663487440|md5=7b6d2f05602f0061daec85405a449efa|sha1=bd63ce5e41fbf4fe92609b75187542eccc1ee384|format=Unknown
 TARGET|name=No.69/CD3/Gamepia.bin|size=772236864|md5=b01bd598835e90f5358d69428ffbcbb1|sha1=43ffee72c3e921eb9a7c7a8db54249d2d30bdf6c|format=Unknown
+TARGET|name=No.70/CD1/PIA2.bin|size=750723120|md5=469ea588861a287e8de931c192b15660|sha1=0c5d1bab1597aed7503e7598ba6484f84e6336d9|format=Unknown
+TARGET|name=No.70/CD2/Gamepia CD2.bin|size=665557200|md5=f3466de45ddf82faf13e9fabdbfbebc9|sha1=3360f2267d18554e9154caa432b6a3d09c15bc67|format=Unknown
+TARGET|name=No.71/CD1/GAMEPIA.bin|size=771945216|md5=2c1a5aeaf9f1da58b15ee7bd400d352b|sha1=6bd9283128d7ea78475eb000b053f21a3c46bcf2|format=Unknown
+TARGET|name=No.71/CD2/게임피아 (2001-09) - 클로즈 컴뱃 5.img|size=753115104|md5=e8232b784d4ac311c8685945621c24cf|sha1=dbe55807f16bc8338e9a27d0dd576acb4cc147fc|format=ISO Image
+TARGET|name=No.72/CD1/LWR.bin|size=706260912|md5=e460f5ff4129d0a420bdbc042712027c|sha1=5ce52932d7b672389f4b87b1b93e8c13c5ee1b64|format=Unknown
+TARGET|name=No.72/CD2/GAMEPIA2.bin|size=744135168|md5=2c43820c58abedd6d9af0dfc411b5d27|sha1=418d5bfd745d9d97babd4918e009be24ec338016|format=Unknown
+TARGET|name=No.72/CD3/게임피아10월호.bin|size=440960016|md5=e25edcb91b05a6a0c166553722c83f74|sha1=6d7dd3f2d9b9453961c778d7343682ef92f5d2ea|format=Unknown
+TARGET|name=No.73/CD1/Oni.bin|size=724919328|md5=cf0fac44a933c39a0b156a585136f047|sha1=4a9f21e47c1f43fd30cd91444644c2bc9d518d0d|format=Unknown
+TARGET|name=No.73/CD2/GAMEPIA2.bin|size=717251808|md5=3db76384e0f7e36292a69aed32d591c8|sha1=01676d365455da76ce79816a6a54ec3408cddcd6|format=Unknown
+TARGET|name=No.74/CD1/GROWLANSER.mdf|size=560134224|md5=127b354a084baebcca3af934c487d5da|sha1=ff57b24b4ef641d67536a508353acd25af5fe9d2|format=Unknown
+TARGET|name=No.74/CD2/Gamepia2.bin|size=756433776|md5=52925b0ea98b2073a1dea7addba5112c|sha1=e6439ca315891ad784b4de1b0ac728c2f9af79f6|format=Unknown
 COUNT|scan_errors|0
-COUNT|images_scanned|23
+COUNT|images_scanned|34
 COUNT|stoneage_hits|0
 IMAGE|name=No.58/CD1/PF2012.bin|size=602173152|md5=1b0a5351e45b6459eb010b42ac6b15b4|sha1=d7744f5f20027ecab8f1800f8fa7be33c84c97bc|layout=auto-frame-2352-origin-24|volume=PF2012|requests=4|bytes_read=8192|primary_entries=23|primary_dirs=1|joliet=1|joliet_entries=23|truncated=0
 SAMPLE|image=No.58/CD1/PF2012.bin|path=AUTORUN.EXE
@@ -235,3 +246,99 @@ SAMPLE|image=No.69/CD3/Gamepia.bin|path=AGPGE~17
 SAMPLE|image=No.69/CD3/Gamepia.bin|path=AGPIT~19
 SAMPLE|image=No.69/CD3/Gamepia.bin|path=AGPLAS~7
 SAMPLE|image=No.69/CD3/Gamepia.bin|path=AGPSP~21
+IMAGE|name=No.70/CD1/PIA2.bin|size=750723120|md5=469ea588861a287e8de931c192b15660|sha1=0c5d1bab1597aed7503e7598ba6484f84e6336d9|layout=mode1-2352|volume=PIA2|requests=427|bytes_read=874496|primary_entries=7473|primary_dirs=17|joliet=1|joliet_entries=7473|truncated=0
+SAMPLE|image=No.70/CD1/PIA2.bin|path=ADM0402
+SAMPLE|image=No.70/CD1/PIA2.bin|path=ADM0715
+SAMPLE|image=No.70/CD1/PIA2.bin|path=ADM1022
+SAMPLE|image=No.70/CD1/PIA2.bin|path=AUTORUN.EXE
+SAMPLE|image=No.70/CD1/PIA2.bin|path=AUTORUN.INF
+SAMPLE|image=No.70/CD1/PIA2.bin|path=PIA2
+SAMPLE|image=No.70/CD1/PIA2.bin|path=PIA2INST.BMP
+SAMPLE|image=No.70/CD1/PIA2.bin|path=SETUP.BMP
+IMAGE|name=No.70/CD2/Gamepia CD2.bin|size=665557200|md5=f3466de45ddf82faf13e9fabdbfbebc9|sha1=3360f2267d18554e9154caa432b6a3d09c15bc67|layout=auto-frame-2352-origin-24|volume=GAMEPIA_CD2|requests=61|bytes_read=124928|primary_entries=749|primary_dirs=15|joliet=1|joliet_entries=749|truncated=0
+SAMPLE|image=No.70/CD2/Gamepia CD2.bin|path=AUTORUN.INF
+SAMPLE|image=No.70/CD2/Gamepia CD2.bin|path=BONG-1.ASF
+SAMPLE|image=No.70/CD2/Gamepia CD2.bin|path=GAMEPIA.EXE
+SAMPLE|image=No.70/CD2/Gamepia CD2.bin|path=KOEI
+SAMPLE|image=No.70/CD2/Gamepia CD2.bin|path=LINEAGE
+SAMPLE|image=No.70/CD2/Gamepia CD2.bin|path=LINGO.INI
+SAMPLE|image=No.70/CD2/Gamepia CD2.bin|path=MPEGXT~1.CST
+SAMPLE|image=No.70/CD2/Gamepia CD2.bin|path=NICE.EXE
+IMAGE|name=No.71/CD1/GAMEPIA.bin|size=771945216|md5=2c1a5aeaf9f1da58b15ee7bd400d352b|sha1=6bd9283128d7ea78475eb000b053f21a3c46bcf2|layout=mode1-2352|volume=GAMEPIA|requests=35|bytes_read=71680|primary_entries=882|primary_dirs=19|joliet=0|joliet_entries=0|truncated=0
+SAMPLE|image=No.71/CD1/GAMEPIA.bin|path=AUTOEXEC.EXE
+SAMPLE|image=No.71/CD1/GAMEPIA.bin|path=AUTORUN.INF
+SAMPLE|image=No.71/CD1/GAMEPIA.bin|path=CTITLE.BMP
+SAMPLE|image=No.71/CD1/GAMEPIA.bin|path=DATA.TAG
+SAMPLE|image=No.71/CD1/GAMEPIA.bin|path=DATA1.CAB
+SAMPLE|image=No.71/CD1/GAMEPIA.bin|path=DIRECTX
+SAMPLE|image=No.71/CD1/GAMEPIA.bin|path=GAMEPIA.EXE
+SAMPLE|image=No.71/CD1/GAMEPIA.bin|path=JOYNARA
+IMAGE|name=No.71/CD2/게임피아 (2001-09) - 클로즈 컴뱃 5.img|size=753115104|md5=e8232b784d4ac311c8685945621c24cf|sha1=dbe55807f16bc8338e9a27d0dd576acb4cc147fc|layout=mode1-2352|volume=CLOSECOMBAT|requests=36|bytes_read=73728|primary_entries=384|primary_dirs=9|joliet=1|joliet_entries=384|truncated=0
+SAMPLE|image=No.71/CD2/게임피아 (2001-09) - 클로즈 컴뱃 5.img|path=A2.APM
+SAMPLE|image=No.71/CD2/게임피아 (2001-09) - 클로즈 컴뱃 5.img|path=A2.EXE
+SAMPLE|image=No.71/CD2/게임피아 (2001-09) - 클로즈 컴뱃 5.img|path=AOL50US.EXE
+SAMPLE|image=No.71/CD2/게임피아 (2001-09) - 클로즈 컴뱃 5.img|path=AUTO
+SAMPLE|image=No.71/CD2/게임피아 (2001-09) - 클로즈 컴뱃 5.img|path=AUTORUN.EXE
+SAMPLE|image=No.71/CD2/게임피아 (2001-09) - 클로즈 컴뱃 5.img|path=AUTORUN.INF
+SAMPLE|image=No.71/CD2/게임피아 (2001-09) - 클로즈 컴뱃 5.img|path=CC5.EXE
+SAMPLE|image=No.71/CD2/게임피아 (2001-09) - 클로즈 컴뱃 5.img|path=DATA
+IMAGE|name=No.72/CD1/LWR.bin|size=706260912|md5=e460f5ff4129d0a420bdbc042712027c|sha1=5ce52932d7b672389f4b87b1b93e8c13c5ee1b64|layout=auto-frame-2352-origin-24|volume=LWR|requests=16|bytes_read=32768|primary_entries=68|primary_dirs=5|joliet=1|joliet_entries=68|truncated=0
+SAMPLE|image=No.72/CD1/LWR.bin|path=AUTORUN.EXE
+SAMPLE|image=No.72/CD1/LWR.bin|path=AUTORUN.INF
+SAMPLE|image=No.72/CD1/LWR.bin|path=LWR
+SAMPLE|image=No.72/CD1/LWR.bin|path=LWR.ICO
+SAMPLE|image=No.72/CD1/LWR.bin|path=LWR.ID
+SAMPLE|image=No.72/CD1/LWR.bin|path=LWR/DATA
+SAMPLE|image=No.72/CD1/LWR.bin|path=LWR/LWR.EXE
+SAMPLE|image=No.72/CD1/LWR.bin|path=LWR/DATA/16M
+IMAGE|name=No.72/CD2/GAMEPIA2.bin|size=744135168|md5=2c43820c58abedd6d9af0dfc411b5d27|sha1=418d5bfd745d9d97babd4918e009be24ec338016|layout=auto-frame-2352-origin-24|volume=GAMEPIA2|requests=16|bytes_read=32768|primary_entries=49|primary_dirs=7|joliet=1|joliet_entries=49|truncated=0
+SAMPLE|image=No.72/CD2/GAMEPIA2.bin|path=AKIMBO.ICO
+SAMPLE|image=No.72/CD2/GAMEPIA2.bin|path=AUTORUN
+SAMPLE|image=No.72/CD2/GAMEPIA2.bin|path=AUTORUN.APM
+SAMPLE|image=No.72/CD2/GAMEPIA2.bin|path=AUTORUN.INF
+SAMPLE|image=No.72/CD2/GAMEPIA2.bin|path=DIRECTX
+SAMPLE|image=No.72/CD2/GAMEPIA2.bin|path=FS
+SAMPLE|image=No.72/CD2/GAMEPIA2.bin|path=GAMEPIA.EXE
+SAMPLE|image=No.72/CD2/GAMEPIA2.bin|path=LINGO.INI
+IMAGE|name=No.72/CD3/게임피아10월호.bin|size=440960016|md5=e25edcb91b05a6a0c166553722c83f74|sha1=6d7dd3f2d9b9453961c778d7343682ef92f5d2ea|layout=auto-frame-2352-origin-24|volume=10|requests=26|bytes_read=53248|primary_entries=39|primary_dirs=12|joliet=1|joliet_entries=39|truncated=0
+SAMPLE|image=No.72/CD3/게임피아10월호.bin|path=AUTORUN.INF
+SAMPLE|image=No.72/CD3/게임피아10월호.bin|path=BANNER
+SAMPLE|image=No.72/CD3/게임피아10월호.bin|path=GAME
+SAMPLE|image=No.72/CD3/게임피아10월호.bin|path=GAMEPIA.EXE
+SAMPLE|image=No.72/CD3/게임피아10월호.bin|path=ONLINE
+SAMPLE|image=No.72/CD3/게임피아10월호.bin|path=PATCH
+SAMPLE|image=No.72/CD3/게임피아10월호.bin|path=BANNER/IBOB
+SAMPLE|image=No.72/CD3/게임피아10월호.bin|path=BANNER/NICEIN~1
+IMAGE|name=No.73/CD1/Oni.bin|size=724919328|md5=cf0fac44a933c39a0b156a585136f047|sha1=4a9f21e47c1f43fd30cd91444644c2bc9d518d0d|layout=mode1-2352|volume=ONI|requests=20|bytes_read=40960|primary_entries=38|primary_dirs=9|joliet=1|joliet_entries=38|truncated=0
+SAMPLE|image=No.73/CD1/Oni.bin|path=AUTORUN.INF
+SAMPLE|image=No.73/CD1/Oni.bin|path=BMPS
+SAMPLE|image=No.73/CD1/Oni.bin|path=DATA.TAG
+SAMPLE|image=No.73/CD1/Oni.bin|path=DATA1.CAB
+SAMPLE|image=No.73/CD1/Oni.bin|path=DATA1.HDR
+SAMPLE|image=No.73/CD1/Oni.bin|path=ENGLISH
+SAMPLE|image=No.73/CD1/Oni.bin|path=FRENCH
+SAMPLE|image=No.73/CD1/Oni.bin|path=FRENCH.RTP
+IMAGE|name=No.73/CD2/GAMEPIA2.bin|size=717251808|md5=3db76384e0f7e36292a69aed32d591c8|sha1=01676d365455da76ce79816a6a54ec3408cddcd6|layout=auto-frame-2352-origin-24|volume=GAMEPIA2|requests=12|bytes_read=24576|primary_entries=24|primary_dirs=5|joliet=1|joliet_entries=24|truncated=0
+SAMPLE|image=No.73/CD2/GAMEPIA2.bin|path=AUTORUN.INF
+SAMPLE|image=No.73/CD2/GAMEPIA2.bin|path=DEMO
+SAMPLE|image=No.73/CD2/GAMEPIA2.bin|path=GAMEPIA.EXE
+SAMPLE|image=No.73/CD2/GAMEPIA2.bin|path=LINGO.INI
+SAMPLE|image=No.73/CD2/GAMEPIA2.bin|path=NICE.EXE
+SAMPLE|image=No.73/CD2/GAMEPIA2.bin|path=ONLINE
+SAMPLE|image=No.73/CD2/GAMEPIA2.bin|path=PROGRAM
+SAMPLE|image=No.73/CD2/GAMEPIA2.bin|path=DEMO/STRONG~1.EXE
+IMAGE|name=No.74/CD1/GROWLANSER.mdf|size=560134224|md5=127b354a084baebcca3af934c487d5da|sha1=ff57b24b4ef641d67536a508353acd25af5fe9d2|layout=auto-frame-2448-origin-16|volume=GROWLANSER|requests=4|bytes_read=8192|primary_entries=5|primary_dirs=1|joliet=1|joliet_entries=5|truncated=0
+SAMPLE|image=No.74/CD1/GROWLANSER.mdf|path=AUTORUN.INF
+SAMPLE|image=No.74/CD1/GROWLANSER.mdf|path=CD2.DAT
+SAMPLE|image=No.74/CD1/GROWLANSER.mdf|path=GROWSET.EXE
+SAMPLE|image=No.74/CD1/GROWLANSER.mdf|path=ICON1.ICO
+SAMPLE|image=No.74/CD1/GROWLANSER.mdf|path=INSTALL.EXE
+IMAGE|name=No.74/CD2/Gamepia2.bin|size=756433776|md5=52925b0ea98b2073a1dea7addba5112c|sha1=e6439ca315891ad784b4de1b0ac728c2f9af79f6|layout=auto-frame-2352-origin-24|volume=GAMEPIA2|requests=264|bytes_read=540672|primary_entries=3121|primary_dirs=58|joliet=1|joliet_entries=3121|truncated=0
+SAMPLE|image=No.74/CD2/Gamepia2.bin|path=AUTORUN.BMP
+SAMPLE|image=No.74/CD2/Gamepia2.bin|path=AUTORUN.EXE
+SAMPLE|image=No.74/CD2/Gamepia2.bin|path=AUTORUN.INF
+SAMPLE|image=No.74/CD2/Gamepia2.bin|path=AUTORUN1.BMP
+SAMPLE|image=No.74/CD2/Gamepia2.bin|path=DEMO
+SAMPLE|image=No.74/CD2/Gamepia2.bin|path=DIRECTX7
+SAMPLE|image=No.74/CD2/Gamepia2.bin|path=GAMEPIA.EXE
+SAMPLE|image=No.74/CD2/Gamepia2.bin|path=INDEO
