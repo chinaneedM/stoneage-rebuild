@@ -1,0 +1,69 @@
+name: Accept StoneAge Taiwan 2000 clean-client candidate
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw2000_clean_client_acceptance.py
+      - tests/test_stoneage_tw2000_clean_client_acceptance.py
+      - .github/workflows/accept-stoneage-tw2000-clean-client.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-tw2000-clean-client
+  cancel-in-progress: true
+
+jobs:
+  accept:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_tw2000_clean_client_acceptance -v
+      - name: Download public preservation archive to ephemeral runner
+        run: |
+          set -euo pipefail
+          curl -L --fail --retry 3 --retry-delay 2 --silent --show-error \
+            -o /tmp/CD_DIC.rar \
+            'https://archive.org/download/stoneage_tw_2000_win/CD_DIC.rar'
+          test "$(stat -c %s /tmp/CD_DIC.rar)" = "842125501"
+          echo "b37a4a47f4eb608cac67e4ddf7a1621a  /tmp/CD_DIC.rar" | md5sum -c -
+          echo "b8cf92720b6ec8b3f46ea2e9bfcda986d21e7ded  /tmp/CD_DIC.rar" | sha1sum -c -
+      - name: Extract only required disc and small dump metadata
+        run: |
+          set -euo pipefail
+          command -v 7z >/dev/null 2>&1 || {
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq 7zip
+          }
+          mkdir -p /tmp/stoneage_tw2000
+          7z x -y -o/tmp/stoneage_tw2000 /tmp/CD_DIC.rar \
+            'STONEAGE.bin' 'STONEAGE.cue' 'STONEAGE_img.cue' \
+            '!submissionInfo.json' '!submissionInfo.txt' \
+            'STONEAGE_disc.txt' 'STONEAGE_drive.txt' 'STONEAGE_20230309T204228.txt'
+          test -f /tmp/stoneage_tw2000/STONEAGE.bin
+          test "$(stat -c %s /tmp/stoneage_tw2000/STONEAGE.bin)" = "523449360"
+      - name: Analyze recovered disc without committing payloads
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_tw2000_clean_client_acceptance \
+            --bin /tmp/stoneage_tw2000/STONEAGE.bin \
+            --aux-dir /tmp/stoneage_tw2000 \
+            > research/recovered/STONEAGE-TW2000-CLEAN-CLIENT-ACCEPTANCE-R1.txt
+      - name: Delete transient proprietary payloads before git operations
+        if: always()
+        run: |
+          rm -rf /tmp/stoneage_tw2000 /tmp/CD_DIC.rar
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-TW2000-CLEAN-CLIENT-ACCEPTANCE-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: accept Taiwan 2000 preserved client candidate'
+          git pull --rebase origin main
+          git push
