@@ -308,11 +308,36 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - this is not evidence that the package is Korean 1.74.
 - Status: **CONTROL-B / later Korean preservation lead**.
 
+## CONTROL / LEAD — Korean 2000–2001 public-media corpus
+
+- Canonical derived record:
+  - `research/clients/STONEAGE-KOREA-2000-2001-PUBLIC-MEDIA-CORPUS-R1.md`
+- Public carrier directory scans:
+  - PC Game Magazine: **21 images**, 2000-09 through 2001-12, complete directory walks, 0 scan errors, 0 truncation, 0 StoneAge-path hits;
+  - GamePia No.58–64: **12 images**, complete directory walks, 0 scan errors, 0 truncation, 0 StoneAge-path hits;
+  - NetPower 2001.12: **2 images**, complete directory walks, 0 StoneAge-path hits.
+- Internet Archive exact-token reverse search:
+  - **216** item metadata/file-list records checked with 0 request errors;
+  - exact historical keys included `sa_demo.exe`, `stoneagebeta.zip`, `20001031524596220`, `200009263856`, `GW_IDX=9` and `/pc/games/online/stoneage.zip`;
+  - **0 exact target filename matches**; nine file candidates were size-only false positives.
+- Wayback CDX 2000–2002 distribution-prefix census:
+  - 12 prefix queries, 0 request errors, 362 rows / 181 unique URLs;
+  - exact Hananet `stoneage.hananet.net/down/` and CNET `korea.cnet.com/pc/games/online/` prefixes return 0 rows for tested bare/www variants;
+  - Gagamel, GameTime and Inium prefixes return real records, making those Hananet/CNET zero-row results archive-specific directory-level negative controls rather than evidence of probe failure.
+- New GameTime recovery lead:
+  - Wayback CDX preserves `http://www.gametime.co.kr/data/data_list.asp?search_word=%bd%ba%c5%e6%bf%a1%c0%cc%c1%f6&category=online` at **2001-07-01 05:34:12 UTC**;
+  - the CP949/EUC-KR search term decodes to **`스톤에이지`**;
+  - this provides a concrete archived StoneAge result surface from which to recover record IDs/detail/download endpoints and test the independently preserved `GW_IDX=9` identity.
+- Evidence boundary:
+  - all no-hit statements above apply only to the exact carrier/prefix/query corpus;
+  - no early Korean clean-client bytes are recovered by these negative controls.
+- Status: **CONTROL-A/B + ACTIVE LEAD — broad public-media surfaces narrowed; GameTime archived result chain is active.**
+
 ## Current recovery order
 
 1. **Korean Inium 2000 public client:** recover the original installer filename/path/bytes through the Inium site, Hananet/GamePlus, CNET and period offline/software archives. It is now the strongest operational early bridge because operator-era free distribution and massive replication are directly attested.
 2. **JSS 1999 beta/retail/launcher:** continue in parallel as the historical origin target; do not lower its evidentiary importance merely because Korean 2000 may be easier to recover.
-3. Search the **2001 GameTime Perfect Guide bonus CD** by exact ISBN/title as a concrete near-period install-media sub-track; do not substitute it for the earlier 2000 online target.
+3. Resolve the **archived 2001-07-01 GameTime `스톤에이지` search/result chain** and its relation to `GW_IDX=9`; keep the 2001 Perfect Guide bonus CD as a separate near-period installation-media target, but do not repeat closed ISBN/title/union-catalog searches unless new supplementary-disc evidence appears.
 4. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge.
 5. Continue recovery of the **Korean 1.74** exact-version operator-era installer identity/bytes.
 6. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
