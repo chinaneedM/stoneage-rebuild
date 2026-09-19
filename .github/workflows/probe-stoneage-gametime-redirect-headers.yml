@@ -1,0 +1,38 @@
+name: Probe GameTime archived redirect headers
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_gametime_redirect_header_probe.py
+      - tests/test_stoneage_gametime_redirect_header_probe.py
+      - .github/workflows/probe-stoneage-gametime-redirect-headers.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-gametime-redirect-headers
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_gametime_redirect_header_probe -v
+      - name: Read archived GameTime 302 headers without following redirects
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_gametime_redirect_header_probe             > research/recovered/STONEAGE-GAMETIME-REDIRECT-HEADERS-R1.txt
+      - name: Commit derived response metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-GAMETIME-REDIRECT-HEADERS-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: recover GameTime archived redirect headers'
+          git pull --rebase origin main
+          git push
