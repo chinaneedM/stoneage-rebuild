@@ -43,6 +43,8 @@ MAX_INSNS = 400
 MAX_GLOBAL_XREFS = 64
 ASSIGN_CONTEXT_BEFORE = 16
 ASSIGN_CONTEXT_AFTER = 4
+BACKTRACE_DEPTH = 10
+BACKTRACE_MAX_PATHS = 24
 
 
 def clean(v, limit=800):
@@ -187,6 +189,60 @@ def assignment_context(instructions, target_va, base, sections):
     return instructions[lo:hi]
 
 
+def predecessor_candidates(data, base, sections, target_va):
+    target_off = rva_to_offset(sections, target_va - base)
+    if target_off is None:
+        return []
+    out = []
+    decoder = md()
+    for back in range(1, 16):
+        start = target_off - back
+        if start < 0:
+            continue
+        start_rva = None
+        for sec in sections:
+            if sec["raw"] <= start < sec["raw"] + sec["raw_size"]:
+                start_rva = sec["rva"] + (start - sec["raw"])
+                if sec["name"] != ".text":
+                    start_rva = None
+                break
+        if start_rva is None:
+            continue
+        one = list(decoder.disasm(data[start:target_off], base + start_rva, count=1))
+        if not one:
+            continue
+        ins = one[0]
+        if ins.address + ins.size == target_va:
+            out.append(ins)
+    uniq = {}
+    for ins in out:
+        uniq[(ins.address, ins.size, ins.mnemonic, ins.op_str)] = ins
+    return sorted(uniq.values(), key=lambda x: x.address)
+
+
+def backward_paths(data, base, sections, target_va):
+    frontier = [(target_va, [])]
+    complete = []
+    for _ in range(BACKTRACE_DEPTH):
+        nxt = []
+        for cursor, rev_path in frontier:
+            preds = predecessor_candidates(data, base, sections, cursor)
+            if not preds:
+                complete.append(list(reversed(rev_path)))
+                continue
+            for pred in preds:
+                nxt.append((pred.address, rev_path + [pred]))
+                if len(nxt) >= BACKTRACE_MAX_PATHS:
+                    break
+            if len(nxt) >= BACKTRACE_MAX_PATHS:
+                break
+        if not nxt:
+            break
+        frontier = nxt[:BACKTRACE_MAX_PATHS]
+    complete.extend(list(reversed(path)) for _, path in frontier)
+    return complete[:BACKTRACE_MAX_PATHS]
+
+
 def callback_probe(data, base, sections, imports, callback_va):
     rva = callback_va - base
     off = rva_to_offset(sections, rva)
@@ -301,6 +357,18 @@ def main():
                             f"order={order}|instruction_rva=0x{ctx_ins.address-base:x}|"
                             f"mnemonic={clean(ctx_ins.mnemonic)}|ops={clean(operand_summary(ctx_ins,base,sections))}"
                         )
+                    paths = backward_paths(data, base, sections, ins.address)
+                    print(
+                        f"ASSIGN_BACKTRACE|global_rva=0x{global_va-base:x}|"
+                        f"assignment_rva=0x{ins.address-base:x}|paths={len(paths)}|depth={BACKTRACE_DEPTH}"
+                    )
+                    for path_no, path in enumerate(paths, 1):
+                        for order, prev in enumerate(path, 1):
+                            print(
+                                f"ASSIGN_PREV|global_rva=0x{global_va-base:x}|assignment_rva=0x{ins.address-base:x}|"
+                                f"path={path_no}|order={order}|instruction_rva=0x{prev.address-base:x}|"
+                                f"mnemonic={clean(prev.mnemonic)}|ops={clean(operand_summary(prev,base,sections))}"
+                            )
                 if (
                     details is not None
                     and details["src_kind"] == "imm"
