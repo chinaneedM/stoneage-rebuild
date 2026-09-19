@@ -156,9 +156,14 @@ def inventory(bin_path: Path):
         print(f"CORE_CLIENT_BYTES|{sum(row['size'] for row in core)}")
 
         by_path = {normalize(row["path"]).lower(): row for row in core}
-        for label, table_path in (
-            ("battle", "stoneage/data/battletxt_1.txt"),
-            ("sound", "stoneage/data/soundaddr_1.txt"),
+        basename_paths = collections.defaultdict(list)
+        for row in core:
+            p = normalize(row["path"])
+            basename_paths[Path(p).name.lower()].append(p)
+
+        for label, table_path, expected_prefix in (
+            ("battle", "stoneage/data/battletxt_1.txt", "stoneage/data/battlemap/"),
+            ("sound", "stoneage/data/soundaddr_1.txt", "stoneage/data/se/"),
         ):
             table_row = by_path.get(table_path)
             if table_row is None:
@@ -167,10 +172,37 @@ def inventory(bin_path: Path):
             addr_rows = parse_address_table_bytes(row_bytes(img, table_row))
             names = collections.Counter(name for _, _, name in addr_rows)
             duplicate_refs = sum(max(0, count - 1) for count in names.values())
+            present_any = set()
+            present_expected = set()
+            outside_expected = {}
+            missing_any = []
+            for name in names:
+                paths = basename_paths.get(name, [])
+                if paths:
+                    present_any.add(name)
+                expected = [p for p in paths if p.lower().startswith(expected_prefix)]
+                if expected:
+                    present_expected.add(name)
+                elif paths:
+                    outside_expected[name] = paths
+                else:
+                    missing_any.append(name)
             print(
                 f"ADDRESS_TABLE|label={label}|records={len(addr_rows)}|"
                 f"unique_names={len(names)}|duplicate_refs={duplicate_refs}"
             )
+            print(
+                f"ADDRESS_TABLE_MATCH|label={label}|present_any={len(present_any)}|"
+                f"present_expected_dir={len(present_expected)}|"
+                f"outside_expected_dir={len(outside_expected)}|missing_any={len(missing_any)}"
+            )
+            for name, paths in sorted(outside_expected.items()):
+                print(
+                    f"ADDRESS_TABLE_OUTSIDE_DIR|label={label}|name={name}|"
+                    f"paths={';'.join(paths)}"
+                )
+            for name in sorted(missing_any):
+                print(f"ADDRESS_TABLE_MISSING|label={label}|name={name}")
             for name, count in sorted(names.items()):
                 if count > 1:
                     print(
