@@ -17,6 +17,18 @@ CREATE = b"""NPCCREATE
 enemy=Q|file:q.arg
 }
 """
+DUP_TPL = b"""NPCTEMPLATE
+{
+templatename=Q
+functionset=Quiz
+}
+"""
+MIXED_TPL = b"""NPCTEMPLATE
+{
+templatename=Q
+functionset=TownPeople
+}
+"""
 ARG = b"""StartMsg:x
 Quiznum:5
 EntryItem:100*2,200
@@ -53,6 +65,7 @@ class QuizUsageProbeTests(unittest.TestCase):
             result = analyze(root, root / "question.txt")
             self.assertEqual(result["counts"]["refs"], 1)
             self.assertEqual(result["counts"]["resolved_files"], 1)
+            self.assertEqual(result["counts"]["stable_quiz_template_names"], 1)
             self.assertEqual(result["item_shapes"][("tokens", 2)], 1)
             self.assertEqual(result["quantities"][2], 1)
             self.assertEqual(result["pair_shapes"][("GetItem", 2, 0)], 1)
@@ -60,6 +73,28 @@ class QuizUsageProbeTests(unittest.TestCase):
             self.assertEqual(result["warp_destination_arity"][3], 2)
             self.assertEqual(result["questions"]["rows"], 2)
             self.assertEqual(result["questions"]["arity"][9], 2)
+        finally:
+            td.cleanup()
+
+    def test_duplicate_same_functionset_remains_stable_quiz(self):
+        td, root = self.build()
+        try:
+            (root / "t2").write_bytes(DUP_TPL)
+            result = analyze(root, root / "question.txt")
+            self.assertEqual(result["counts"]["refs"], 1)
+            self.assertEqual(result["counts"]["duplicate_stable_quiz_template_names"], 1)
+            self.assertEqual(result["counts"]["ambiguous_mixed_quiz_template_names"], 0)
+        finally:
+            td.cleanup()
+
+    def test_mixed_duplicate_is_reported_as_load_order_ambiguity(self):
+        td, root = self.build()
+        try:
+            (root / "t2").write_bytes(MIXED_TPL)
+            result = analyze(root, root / "question.txt")
+            self.assertEqual(result["counts"]["refs"], 0)
+            self.assertEqual(result["counts"]["ambiguous_mixed_quiz_template_names"], 1)
+            self.assertEqual(result["counts"]["ambiguous_mixed_template_refs"], 1)
         finally:
             td.cleanup()
 
