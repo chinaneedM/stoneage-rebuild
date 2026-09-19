@@ -29,6 +29,7 @@ from tools.stoneage_tw10_protocol_handoff_probe import (
     exact_iat_opcode_sites,
     md,
     operand_summary,
+    predecessor_candidates,
 )
 from tools.stoneage_tw10_receive_map_join_probe import (
     all_string_xrefs,
@@ -53,6 +54,8 @@ WAEI_XREF_RVA = 0xD4F2
 LOCAL_BEFORE = 130
 LOCAL_AFTER = 35
 MAX_ARG_PATHS = 3
+DEEP_BACKTRACE = 42
+DEEP_BACKTRACE_PATHS = 24
 
 
 def clean(v, limit=700):
@@ -116,6 +119,36 @@ def enhanced_ops(ins, data, base, sections):
         else:
             parts.append(f"op:{op.type}")
     return ",".join(parts)
+
+
+def deep_backward_paths(data, base, sections, target_va):
+    frontier = [(target_va, [])]
+    complete = []
+    for _ in range(DEEP_BACKTRACE):
+        nxt = []
+        for cursor, rev_path in frontier:
+            preds = predecessor_candidates(data, base, sections, cursor)
+            if not preds:
+                complete.append(list(reversed(rev_path)))
+                continue
+            for pred in preds:
+                nxt.append((pred.address, rev_path + [pred]))
+                if len(nxt) >= DEEP_BACKTRACE_PATHS:
+                    break
+            if len(nxt) >= DEEP_BACKTRACE_PATHS:
+                break
+        if not nxt:
+            break
+        frontier = nxt[:DEEP_BACKTRACE_PATHS]
+    complete.extend(list(reversed(path)) for _, path in frontier)
+    uniq = {}
+    for path in complete:
+        key = tuple(ins.address for ins in path)
+        uniq[key] = path
+    return sorted(
+        uniq.values(),
+        key=lambda p: (-len(p), -sum(1 for ins in p if ins.mnemonic == "push")),
+    )[:DEEP_BACKTRACE_PATHS]
 
 
 def wsock_business_calls(data, base, sections, imports):
@@ -251,6 +284,22 @@ def main():
                             if ins.mnemonic in {"push", "mov", "lea", "call"}:
                                 print(
                                     f"ARG_INS|api={api}|n={n}|path={pno}|order={order}|"
+                                    f"instruction_rva=0x{ins.address-base:x}|mnemonic={clean(ins.mnemonic)}|"
+                                    f"ops={clean(enhanced_ops(ins,data,base,sections))}"
+                                )
+
+                    deep_paths = deep_backward_paths(data, base, sections, site_va)
+                    if deep_paths:
+                        path = deep_paths[0]
+                        print(
+                            f"DEEP_ARG_PATH|api={api}|n={n}|instructions={len(path)}|"
+                            f"pushes={sum(1 for ins in path if ins.mnemonic == 'push')}|"
+                            f"start_rva=0x{path[0].address-base:x}"
+                        )
+                        for order, ins in enumerate(path, 1):
+                            if ins.mnemonic in {"push", "mov", "lea", "call", "cmp", "test"}:
+                                print(
+                                    f"DEEP_ARG_INS|api={api}|n={n}|order={order}|"
                                     f"instruction_rva=0x{ins.address-base:x}|mnemonic={clean(ins.mnemonic)}|"
                                     f"ops={clean(enhanced_ops(ins,data,base,sections))}"
                                 )
