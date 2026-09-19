@@ -896,6 +896,14 @@ Supplemental source ledgers:
 
 - Canonical corpus record: `research/clients/STONEAGE-KOREA-2000-2001-PUBLIC-MEDIA-CORPUS-R1.md`.
 
+### Newly opened physical-carrier holder lane (2026-09-19)
+
+- An active Korean collector publicly documented extracting **NetPower 2000-10 supplement CDs** and multiple other classic magazine/online-game discs, proving that adjacent-era NetPower carrier media still survives outside the web-archive corpus. The published 2000-10 disc inventories do **not** include StoneAge, so this is not a recovered client; it is a concrete holder/acquisition lead.
+- Surviving NetPower indexes place StoneAge in **2000-11 p.99, 2000-12 p.173, 2001-01 p.185 and 2001-02 p.189**. Those issue supplements now become explicit carrier targets; article presence alone must not be treated as proof of installer presence.
+- A separate 2026 Lost Media recovery post states that a researcher had checked **33 NetPower supplement CDs** and **49 GamePia/PCGM discs**, establishing that a larger Korean game-disc preservation corpus is in circulation, although the issue dates/accounts are not enumerated there.
+- The GameTime `StoneAge Perfect Guide` (ISBN13 `9788995182123`) remains a direct carrier target because the surviving YES24 record explicitly says its included CD contains the StoneAge installation program/demo. See `research/clients/STONEAGE-KOREA-PHYSICAL-CARRIER-HOLDER-LEADS-R1.md`.
+- **Operational next step:** obtain or enumerate NetPower 2000-11 / 2000-12 / 2001-01 / 2001-02 supplement media and the GameTime guide CD, then run exact-token + clean-client acceptance checks on any recovered bytes.
+
 ## Immediate next actions
 
 1. **Recover bytes or surviving mirrors from the now-exact Korean distribution tokens.** Highest-value keys are CNET `/pc/games/online/stoneage.zip` (257MB), Hananet PDS **`app_id=20001031524596220&type=C03`**, Hananet formal-version direct path **`stoneage.hananet.net/down/sa.exe`**, Hananet trial **`sa_demo.exe`**, Gagamel `stoneagebeta.zip`, GameTime trial **`/images/Online/pds/2001/02/stone_demo.exe` / GW_IDX=76**, and GameTime record 9 **`/images/Online/pds/2001/02/onlStoneAge.zip` / GW_IDX=9 / legacy num=9**. Treat GameTime `GW_IDX=34 / StoneAge.zip` as a 0.4/0.42MB manual update, not a full-client candidate. Compare candidate clients only by bytes/hashes and internal trees; reject unrelated arcade/MAME `stoneage.zip` hits.
