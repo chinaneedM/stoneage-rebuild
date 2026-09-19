@@ -19,6 +19,20 @@ This does not recover bytes yet, but it materially improves preservation odds: t
 
 ## Contemporary evidence
 
+### 0. Trial-service start versus later free-service reporting
+
+DailyGame, 2000-10-12:
+
+- https://www.dailygame.co.kr/view.php?ud=200010121149020000950_26
+- reports that Inium imported JSS StoneAge and had begun **trial service on 2000-10-04**.
+
+This date must be kept distinct from the 2000-10-13/14 Electronic Times coverage that describes the Korean localization/server work and free-service site. The evidence therefore supports a chronology of:
+
+- **2000-10-04:** trial service already underway, per contemporary DailyGame reporting;
+- **2000-10-13/14:** contemporaneous Electronic Times coverage of free Korean service through the Inium StoneAge site.
+
+Do not collapse these into one “launch date”; the labels and reporting events differ.
+
 ### 1. Inium official free-service site
 
 Electronic Times, 2000-10-13:
@@ -156,7 +170,7 @@ The Korean localization is not a purity defect by itself. If an operator-distrib
 
 Highest-value exact search surfaces now are:
 
-- `stoneage.enium.co.kr` historical download pages / link dumps;
+- `www.stoneage.enium.co.kr` historical download pages / link dumps;
 - Hananet / `game.hananet.net` / GamePlus StoneAge pages around late 2000;
 - CNET Korea StoneAge download pages around late 2000;
 - Korean software-download catalogs and antivirus/file indexes retaining original filenames;
@@ -166,6 +180,21 @@ Highest-value exact search surfaces now are:
 - preservation communities holding pre-Netmarble Inium installations.
 
 Search must prioritize **filename/path recovery** over more general history articles. Once a plausible filename or original mirror URL appears, search by that exact token across archives and mirrors.
+
+## Archive-probe interpretation
+
+Two automated metadata-only probes were run against public web archives:
+
+- Internet Archive / Wayback CDX: `research/recovered/STONEAGE-KOREA-2000-ARCHIVE-PATH-PROBE-R1.txt`;
+- Arquivo.pt: `research/recovered/STONEAGE-KOREA-2000-ARQUIVOPT-PROBE-R1.txt`.
+
+Both currently return zero usable records **only after request-level timeout/network errors**. The zero counts are therefore **INCONCLUSIVE**, not evidence that the sites were never archived.
+
+Operational rule:
+
+- do not cite either zero count as a negative preservation result;
+- retry through other archive endpoints/environments only when useful;
+- meanwhile prioritize indexed historical pages, filename tokens, magazine/software-CD catalogs and surviving mirror references.
 
 ## Acceptance test if bytes are recovered
 
