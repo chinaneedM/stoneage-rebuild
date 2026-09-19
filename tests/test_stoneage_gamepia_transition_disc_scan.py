@@ -9,10 +9,11 @@ class GamePiaTransitionDiscScanTests(unittest.TestCase):
         self.assertTrue(selected_name("No.61/CD1/IMAGE.img"))
         self.assertTrue(selected_name("No.64/CD2/bonus.mdf"))
         self.assertTrue(selected_name("No.69/CD3/Gamepia.bin"))
+        self.assertTrue(selected_name("No.74/CD2/Gamepia2.bin"))
 
     def test_rejects_outside_issues_and_sidecars(self):
         self.assertFalse(selected_name("No.57/CD1/Sin.bin"))
-        self.assertFalse(selected_name("No.70/CD1/NEW.mdf"))
+        self.assertFalse(selected_name("No.75/CD1/NEW.mdf"))
         self.assertFalse(selected_name("No.61/CD1/IMAGE.ccd"))
 
 
