@@ -7,6 +7,8 @@ from tools.stoneage_tw10_client_inventory import (
     is_field_map_file,
     is_named_master_candidate,
     parse_address_table_bytes,
+    parse_sab_candidate,
+    split_palette_candidate,
 )
 
 
@@ -35,6 +37,24 @@ class TaiwanV10ClientInventoryTests(unittest.TestCase):
         )
         self.assertEqual(len(rows), 3)
         self.assertEqual(len({row[2] for row in rows}), 2)
+
+    def test_sab_candidate_parser(self):
+        data = b"SAB\\x00" + b"\\x12\\x34\\x00\\x01"
+        header, big_endian, little_endian = parse_sab_candidate(data)
+        self.assertEqual(header, b"SAB\\x00")
+        self.assertEqual(big_endian, (0x1234, 0x0001))
+        self.assertEqual(little_endian, (0x3412, 0x0100))
+        with self.assertRaises(ValueError):
+            parse_sab_candidate(b"SAB")
+
+    def test_palette_candidate_split(self):
+        consumed = bytes([1]) * (224 * 3)
+        tail = bytes([2]) * 36
+        got_consumed, got_tail = split_palette_candidate(consumed + tail)
+        self.assertEqual(got_consumed, consumed)
+        self.assertEqual(got_tail, tail)
+        with self.assertRaises(ValueError):
+            split_palette_candidate(bytes([0]) * 671)
 
     def test_boundary_classification(self):
         self.assertTrue(is_core_client("StoneAge/data/real_1.bin"))
