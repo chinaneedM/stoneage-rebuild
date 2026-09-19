@@ -175,7 +175,7 @@ def probe(label,url):
         "plain_contexts":contexts(plain,KEYWORDS,220,24),
         "raw_contexts":contexts(raw,(ISBN10,*RISS_IDS,*TITLE_TERMS,"2 개 도서관 소장","fnEdtionList","searchResultEditonList.do","24118251","LibraryList.do","providerId=07","LibraryLocalBibno"),520,36),
         "tokens":structural_tokens(raw),
-        "edition_keys":sorted(set(re.findall(r"fnEdtionList\\(\\s*[\\\"']?(\\d+)",raw))),
+        "edition_keys":sorted(set(re.findall(r"fnEdtionList\(\s*[\"']?(\d+)",raw))),
         "anchors":anchor_rows(raw,final),
     }
 
