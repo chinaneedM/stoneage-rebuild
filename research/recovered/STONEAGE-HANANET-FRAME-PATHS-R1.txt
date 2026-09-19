@@ -1,21 +1,15 @@
 StoneAge Hananet frame-path recovery probe — R1
 SCOPE|transient-html|hash-sparse-text-matching-links-only|no-client-binary-download
 COUNT|candidates|20
-COUNT|errors|11
-COUNT|fetched_pages|9
-COUNT|matching_snippets|4
-COUNT|matching_links|78
-ERROR|label=hananet-stoneage-20010118-2|timestamp=20010118211100|kind=HTTPError|original=http://stoneage.hananet.net/2.htm|message=HTTP Error 429: Too Many Requests
-ERROR|label=hananet-stoneage-20010118-2-2|timestamp=20010118211100|kind=HTTPError|original=http://stoneage.hananet.net/2_2.htm|message=HTTP Error 429: Too Many Requests
-ERROR|label=hananet-stoneage-20010118-2-3|timestamp=20010118211100|kind=HTTPError|original=http://stoneage.hananet.net/2_3.htm|message=HTTP Error 429: Too Many Requests
-ERROR|label=hananet-stoneage-20010118-2-4|timestamp=20010118211100|kind=HTTPError|original=http://stoneage.hananet.net/2_4.htm|message=HTTP Error 429: Too Many Requests
-ERROR|label=hananet-stoneage-20010118-2-5|timestamp=20010118211100|kind=HTTPError|original=http://stoneage.hananet.net/2_5.htm|message=HTTP Error 429: Too Many Requests
-ERROR|label=pds-20001018-index2|timestamp=20001018214759|kind=HTTPError|original=http://pds.hananet.net:80/index2.html|message=HTTP Error 429: Too Many Requests
-ERROR|label=pds-20001018-topfrm|timestamp=20001018214759|kind=HTTPError|original=http://pds.hananet.net:80/topfrm.html|message=HTTP Error 429: Too Many Requests
-ERROR|label=pds-20001019-index2|timestamp=20001019044248|kind=HTTPError|original=http://pds.hananet.net:80/index2.html|message=HTTP Error 429: Too Many Requests
-ERROR|label=pds-20001019-topfrm|timestamp=20001019044248|kind=HTTPError|original=http://pds.hananet.net:80/topfrm.html|message=HTTP Error 429: Too Many Requests
-ERROR|label=pds-20010506-index2|timestamp=20010506010917|kind=HTTPError|original=http://pds.hananet.net:80/index2.html|message=HTTP Error 429: Too Many Requests
-ERROR|label=pds-20010506-topfrm|timestamp=20010506010917|kind=HTTPError|original=http://pds.hananet.net:80/topfrm.html|message=HTTP Error 429: Too Many Requests
+COUNT|errors|5
+COUNT|fetched_pages|15
+COUNT|matching_snippets|10
+COUNT|matching_links|132
+ERROR|label=hananet-stoneage-20010118-2-5|timestamp=20010118211100|kind=URLError|original=http://stoneage.hananet.net/2_5.htm|message=<urlopen error timed out>
+ERROR|label=hananet-stoneage-20010123-2-4|timestamp=20010123223000|kind=URLError|original=http://stoneage.hananet.net/2_4.htm|message=<urlopen error timed out>
+ERROR|label=hananet-stoneage-20010126-2-3|timestamp=20010126160100|kind=URLError|original=http://stoneage.hananet.net/2_3.htm|message=<urlopen error timed out>
+ERROR|label=pds-20001018-index2|timestamp=20001018214759|kind=RuntimeError|original=http://pds.hananet.net:80/index2.html|message=direct=URLError:<urlopen error timed out>; availability=no-snapshot
+ERROR|label=pds-20001018-topfrm|timestamp=20001018214759|kind=URLError|original=http://pds.hananet.net:80/topfrm.html|message=<urlopen error timed out>
 PAGE|label=game-20001019-mainbody|requested_timestamp=20001019061522|timestamp=20001019061522|retrieval=direct|bytes=30865|sha256=d96fa9164f46f45518383b086bef7be557a1b89fc96e362eba1f01e8705d5a4f|original=http://game.hananet.net:80/gamenet/mainbody.html
 LINK|label=game-20001019-mainbody|tag=img|attr=src|target=http://game.hananet.net:80/gamenet/newimg/gameplus.gif|anchor=
 PAGE|label=game-20001019-maintop|requested_timestamp=20001019061522|timestamp=20001019061522|retrieval=direct|bytes=2140|sha256=5d24dce2afcb33f741d6bdc6bffbe240ea053556fc12bab7800892248d5a03fa|original=http://game.hananet.net:80/gamenet/maintop.html
@@ -107,3 +101,71 @@ LINK|label=hananet-stoneage-20010118-main|tag=img|attr=src|target=http://stoneag
 LINK|label=hananet-stoneage-20010118-main|tag=img|attr=src|target=http://stoneage.hananet.net/img/11111_40.gif|anchor=
 LINK|label=hananet-stoneage-20010118-main|tag=img|attr=src|target=http://stoneage.hananet.net/img/11111_41.gif|anchor=
 LINK|label=hananet-stoneage-20010118-main|tag=img|attr=src|target=http://stoneage.hananet.net/img/11111_42.gif|anchor=
+PAGE|label=hananet-stoneage-20010226-2|requested_timestamp=20010226185448|timestamp=20010226185448|retrieval=direct|bytes=11109|sha256=dd2e74d7d5d8c55edbef77cde4c75ea7653c6d026c737e6c199f7a548ccea1ac|original=http://stoneage.hananet.net/2.htm
+TEXT|label=hananet-stoneage-20010226-2|value=2. 서버 선택 화면에서 [종료]를 클릭하면 STONEAGE를 종료합니다.
+TEXT|label=hananet-stoneage-20010226-2|value=2. 스톤에이지를 실행시킵
+TEXT|label=hananet-stoneage-20010226-2|value=2. 스톤에이지의 CD를 CD-ROM에 넣어 주십시오.
+TEXT|label=hananet-stoneage-20010226-2|value=3. Stoneage 실행하기’버튼을 클릭합니다. ID NUMBER와 패스워드를 각각 [ID NUMBER] [PASSWORD]에 입력하고 OK버튼을 누릅니다.
+TEXT|label=hananet-stoneage-20010226-2|value=5. Setup방법을 선택할 때 특별한 문제가 없으면 ‘표준’을 선택하여 주십시오.
+TEXT|label=hananet-stoneage-20010226-2|value=스톤에이지의 동작에는 Direct X 6.1이 필요합니다.
+LINK|label=hananet-stoneage-20010226-2|tag=a|attr=href|target=http://stoneage.hananet.net/1.htm|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=a|attr=href|target=http://stoneage.hananet.net/2.htm|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=a|attr=href|target=http://stoneage.hananet.net/2_2.htm|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=a|attr=href|target=http://stoneage.hananet.net/2_3.htm|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=a|attr=href|target=http://stoneage.hananet.net/2_4.htm|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=a|attr=href|target=http://stoneage.hananet.net/2_5.htm|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_01.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_02.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_03.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_04.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_05.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_06.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_07.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_08.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_09.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_10.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_11.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_12.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_13.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_14.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/2.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/bt1_1.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/bt1_2.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/bt1_3.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/bt1_4.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/bt1_5.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/patrn05c.gif|anchor=
+PAGE|label=hananet-stoneage-20010226-2-2|requested_timestamp=20010226182509|timestamp=20010226182509|retrieval=direct|bytes=16887|sha256=ccee3c3c9b37170c9bec5fa5c1446a8f6e157c2af15ca766cdd3d39c5b466f19|original=http://stoneage.hananet.net/2_2.htm
+LINK|label=hananet-stoneage-20010226-2-2|tag=a|attr=href|target=http://stoneage.hananet.net/1.htm|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=a|attr=href|target=http://stoneage.hananet.net/2.htm|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=a|attr=href|target=http://stoneage.hananet.net/2_2.htm|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=a|attr=href|target=http://stoneage.hananet.net/2_3.htm|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=a|attr=href|target=http://stoneage.hananet.net/2_4.htm|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=a|attr=href|target=http://stoneage.hananet.net/2_5.htm|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_01.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_02.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_03.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_04.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_05.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_06.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_07.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_08.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_09.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_10.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_11.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_12.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_13.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/11_top_14.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/2.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/bt1_1.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/bt1_2.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/bt1_3.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/bt1_4.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/bt1_5.gif|anchor=
+LINK|label=hananet-stoneage-20010226-2-2|tag=img|attr=src|target=http://stoneage.hananet.net/img/patrn05c.gif|anchor=
+PAGE|label=pds-20001019-index2|requested_timestamp=20001019044248|timestamp=20001019081905|retrieval=availability-fallback:200|bytes=511|sha256=8dfe605151d00aef064127950aa3615500405c5e0c3e42ed0c7d01dcccf0e92c|original=http://pds.hananet.net:80/index2.html
+FALLBACK|label=pds-20001019-index2|direct_error=URLError:<urlopen error timed out>|resolved_timestamp=20001019081905
+PAGE|label=pds-20001019-topfrm|requested_timestamp=20001019044248|timestamp=20001019044248|retrieval=direct|bytes=41|sha256=edf5dfbf9db62c53a917bb1874c052a9f4fa86d39a24c1786b82e6cb67c89804|original=http://pds.hananet.net:80/topfrm.html
+PAGE|label=pds-20010506-index2|requested_timestamp=20010506010917|timestamp=20010409143357|retrieval=availability-fallback:200|bytes=511|sha256=8dfe605151d00aef064127950aa3615500405c5e0c3e42ed0c7d01dcccf0e92c|original=http://pds.hananet.net:80/index2.html
+FALLBACK|label=pds-20010506-index2|direct_error=URLError:<urlopen error timed out>|resolved_timestamp=20010409143357
+PAGE|label=pds-20010506-topfrm|requested_timestamp=20010506010917|timestamp=20010506010917|retrieval=direct|bytes=41|sha256=edf5dfbf9db62c53a917bb1874c052a9f4fa86d39a24c1786b82e6cb67c89804|original=http://pds.hananet.net:80/topfrm.html
