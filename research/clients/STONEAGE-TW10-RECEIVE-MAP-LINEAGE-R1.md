@@ -148,9 +148,23 @@ Lineage-control interpretation, not independent historical naming:
 - later names `writeMap` / `mapCheckSum`;
 - exact later data-structure implementation details beyond what v1.0 bytes reproduce.
 
+## Complete six-path map fingerprint
+
+The accepted v1.0 binary contains exactly six code references to the pooled `map\\%d.dat` literal. Their independently observed file-mode signatures are:
+
+| xref RVA | File-mode sequence | Binary role | Later control mapping |
+| ---: | --- | --- | --- |
+| `0x1d846` | `rb -> wb` | create/initialize map file | `createMap` |
+| `0x1da50` | `rb+ -> wb -> rb+` | writable rectangle/update path | `writeMap` |
+| `0x1dda0` | `rb -> wb -> rb` | read/check/create-if-missing path | `readMap` |
+| `0x21306` | `rb -> wb -> rb` | automap read/create path | `createAutoMap` |
+| `0x21721` | `rb` | automap visibility/read-flag path | `readAutoMapSeeFlag` |
+| `0x218fe` | `rb+` | automap visibility/write-flag path | `writeAutoMapSeeFlag` |
+
+The exact six-count, increasing code order and file-mode signatures reproduce the six corresponding functions in the pinned descendant control source. The **roles** are therefore lineage-constrained and reconstruction-usable; the later C/C++ symbol spellings are not claimed as recovered v1.0 debug symbols.
+
 Still OPEN:
 
-- roles of exact `map\\%d.dat` xrefs `0x1d846`, `0x21306`, `0x21721`, and `0x218fe`;
 - exact semantic name for every intermediate callback/helper;
 - server endpoint source and selection chain;
 - server-side logic absent from the retail client.
