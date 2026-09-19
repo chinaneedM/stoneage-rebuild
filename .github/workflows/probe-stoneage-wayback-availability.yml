@@ -1,0 +1,38 @@
+name: Probe Korea 2000 Wayback availability
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_wayback_available_probe.py
+      - tests/test_stoneage_wayback_available_probe.py
+      - .github/workflows/probe-stoneage-wayback-availability.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-korea2000-wayback-availability
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_wayback_available_probe -v
+      - name: Query Wayback Availability API
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_wayback_available_probe \
+            > research/recovered/STONEAGE-KOREA-2000-WAYBACK-AVAILABLE-R1.txt
+      - name: Commit derived metadata report only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-KOREA-2000-WAYBACK-AVAILABLE-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Korea 2000 Wayback availability'
+          git pull --rebase origin main
+          git push
