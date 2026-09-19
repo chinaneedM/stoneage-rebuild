@@ -1,0 +1,38 @@
+name: Probe GameTime download redirects
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_gametime_download_redirect_cdx_probe.py
+      - tests/test_stoneage_gametime_download_redirect_cdx_probe.py
+      - .github/workflows/probe-stoneage-gametime-download-redirects.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-gametime-download-redirects
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_gametime_download_redirect_cdx_probe -v
+      - name: Enumerate archived GameTime download redirects
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_gametime_download_redirect_cdx_probe             > research/recovered/STONEAGE-GAMETIME-DOWNLOAD-REDIRECT-CDX-R1.txt
+      - name: Commit derived CDX metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-GAMETIME-DOWNLOAD-REDIRECT-CDX-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe GameTime download redirect metadata'
+          git pull --rebase origin main
+          git push
