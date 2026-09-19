@@ -212,7 +212,7 @@ def interesting_anchors(raw,base):
 
 
 def main():
-    print("StoneAge GameTime 2001 KOLIS holding-layer probe — R2")
+    print("StoneAge GameTime 2001 KOLIS holding-layer probe — R3")
     print("SCOPE|public-catalog-metadata-only|no-book-or-cd-payload-download")
     s_status,s_final,s_body=get(SEARCH)
     s_raw=decode(s_body)
@@ -264,19 +264,27 @@ def main():
         h_raw=decode(h_body)
         h_plain=strip_markup(h_raw)
         lib_keys=[value for value in call_first_args(h_raw,"fnLibDetail") if value.lower()!="libkey"]
+        popup_keys=[value for value in call_first_args(h_raw,"fnPopupDetail") if value.lower() not in {"libkey","reckey","key"}]
+        detail_keys=[]
+        for value in lib_keys+popup_keys:
+            if value not in detail_keys:
+                detail_keys.append(value)
         print(
             f"HOLDINGS|bibKey={clean(bib_key)}|status={h_status}|final={clean(h_final)}|"
-            f"bytes={len(h_body)}|lib_key_count={len(lib_keys)}|lib_keys={clean(','.join(lib_keys))}"
+            f"bytes={len(h_body)}|lib_key_count={len(lib_keys)}|lib_keys={clean(','.join(lib_keys))}|"
+            f"popup_key_count={len(popup_keys)}|popup_keys={clean(','.join(popup_keys))}"
         )
         for token,row in context_rows(h_plain,("도서관","국립","대학교","소장","청구기호","등록번호","KMO"),360):
             print(f"HOLDING_CONTEXT|bibKey={clean(bib_key)}|token={clean(token)}|text={clean(row,820)}")
+        for _,row in context_rows(h_raw,("fnPopupDetail","cooperDetail","recKey","12909233"),460):
+            print(f"HOLDING_RAW|bibKey={clean(bib_key)}|html={clean(row,940)}")
         for label,href,onclick,keys in holding_rows(h_raw,h_final):
             print(
                 f"HOLDING_ROW|bibKey={clean(bib_key)}|label={label}|href={href}|"
                 f"onclick={onclick}|lib_keys={keys}"
             )
 
-        for lib_key in lib_keys:
+        for lib_key in detail_keys:
             detail_url=BASE+"/kolisnet/cooper/cooperDetail.do?"+urllib.parse.urlencode({"recKey":lib_key})
             try:
                 l_status,l_final,l_body=get(detail_url)
