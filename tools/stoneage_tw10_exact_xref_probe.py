@@ -172,6 +172,7 @@ def decode_forward_node(data, base, sections, imports, start_va):
     insns = []
     api_counts = collections.Counter()
     internal = collections.Counter()
+    call_order = []
     end_reason = "limit"
 
     text = text_section(sections)
@@ -189,6 +190,7 @@ def decode_forward_node(data, base, sections, imports, start_va):
                     target = int(op.imm) & 0xFFFFFFFF
                     if text_lo <= target < text_hi:
                         internal[target] += 1
+                        call_order.append((ins.address, target))
         if ins.mnemonic.startswith("ret"):
             end_reason = "ret"
             break
@@ -212,6 +214,7 @@ def decode_forward_node(data, base, sections, imports, start_va):
         "instructions": len(insns),
         "api_counts": api_counts,
         "internal": internal,
+        "call_order": call_order,
         "end_reason": end_reason,
     }
 
@@ -316,6 +319,11 @@ def main():
                 graph = expand_from_exact_root(data, base, sections, imports, ins.address)
                 root_node = graph.get(ins.address)
                 if root_node is not None:
+                    for order_index, (callsite_va, target_va) in enumerate(root_node["call_order"], 1):
+                        print(
+                            f"XREF_CALL_ORDER|text={clean(label)}|n={n}|order={order_index}|"
+                            f"callsite_rva=0x{callsite_va-base:x}|target_rva=0x{target_va-base:x}"
+                        )
                     for target_va, calls in sorted(root_node["internal"].items()):
                         shared_root_targets[target_va] += 1
                         print(
