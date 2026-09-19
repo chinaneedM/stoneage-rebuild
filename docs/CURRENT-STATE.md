@@ -824,12 +824,13 @@ Supplemental source ledgers:
 - **Ordinary non-family NPC mechanics sweep is now closed.** Thirteen unmatched recovered function-set tokens remain explicit source/data lineage gaps rather than guessed implementations.
 ## Korean Inium 2000 mass-distribution recovery lead — 2026-09-19
 
-- A new pre-1.74 TARGET-A is now established from contemporary sources: Inium announced free Korean StoneAge service through `stoneage.enium.co.kr` in October 2000 after localization/server work.
+- A new pre-1.74 TARGET-A is established from contemporary sources. DailyGame reports **trial service had begun on 2000-10-04**; later 2000-10-13/14 Electronic Times coverage describes free Korean service through exact host `www.stoneage.enium.co.kr`. These are preserved as distinct chronology points rather than one launch date.
 - By late October, contemporary product-launch coverage reported roughly **200,000 downloads**.
 - GameMeca on 2000-12-28 reported approximately **400,000 Hananet downloads** and **310,000 CNET downloads**, proving at least two high-volume portal mirror surfaces in addition to the operator site.
 - Contemporary launch/distribution coverage also records Samsung PC/education-center channels and a roughly **60,000-unit** package-supply agreement, adding an offline preservation track.
 - This does **not** establish the exact 2000 version number, installer filename, size, checksum, mirror URL or byte identity between distribution channels. Korean localization also means a clean Inium client is a bridge specimen, not automatic JSS-Japan byte identity.
 - Exact installer/path searches have not yet recovered bytes. The immediate objective is now **filename/path discovery** from Inium, Hananet/GamePlus, CNET Korea, period software catalogs, magazine/ISP CDs and preserved pre-Netmarble installations.
+- Archive metadata probes are currently **inconclusive**: Wayback/CDX and Arquivo.pt runs returned request timeouts / network-unreachable errors, so their zero counts must not be read as evidence of no archived captures.
 - Canonical record: `research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md` and `docs/SOURCE-REGISTRY-CLIENT-RECOVERY-R1.md`.
 ## 2001 Korean install-CD recovery sub-track — 2026-09-19
 
