@@ -848,10 +848,16 @@ Supplemental source ledgers:
 - Do **not** interpret the single-mode `32MB` OCR token as client size; its semantic context is unresolved.
 - The 2001 GameTime guide CD remains a concrete install-media target, but a reproducible Internet Archive metadata probe returned zero items for both ISBNs and multiple title/GameTime query variants. That closes only the current IA metadata route, not the physical/public-preservation search.
 - A 2025 Korean Lost Media preservation post proves that NetPower 2000-10 and other period magazine CDs still survive and can be extracted. The two listed NetPower 2000-10 discs contain many contemporary online clients but **not StoneAge**; no indexed public follow-up download was found. Treat this as preservation feasibility plus a negative control, not a StoneAge hit.
+## GameTime bonus-CD public-library confirmation — 2026-09-19
+
+- RISS formal bibliographic record `M10029631` identifies the GameTime `스톤 에이지 = Stone age` volume as **318 pages + one 12cm compact disc** and lists **National Library of Korea** as a holding institution.
+- This upgrades the 2001 bonus-CD path from retailer-only evidence to a public union-library bibliographic holding. It still does **not** prove that the physical disc is currently intact, separately accessioned, digitized or publicly downloadable.
+- Aladin (`2001-01-01`) and YES24 (`2001-04-30`) use different catalog dates for the same 318-page ISBN-13 `9788995182123` volume; RISS gives year 2001 and ISBN-10 `8995182121`. Treat these as date-metadata variants, not separate guide/CD editions.
+- Next useful evidence is no longer another ISBN search: resolve National Library / union-catalog supplementary-material fields, call/accession/control identifiers, disc-label imagery or any distinct non-book record.
 ## Immediate next actions
 
 1. **Prioritize Korean Inium 2000 file-token/byte recovery.** The portal roots are now narrowed to `www.stoneage.enium.co.kr`, `game.hananet.net` / `pds.hananet.net`, and `korea.cnet.com/downloads/`; search specifically for StoneAge child URLs, installer/archive filenames, sizes and surviving mirror copies.
-2. **Pursue the 2001 GameTime guide bonus CD through non-IA public preservation/catalog routes.** Exact IA metadata queries are exhausted for the known ISBN/title variants; next value comes from library CD holdings, disc-label photos, old-share indexes or newly discovered file tokens.
+2. **Resolve the National Library / RISS GameTime bonus-CD holding at supplementary-material level.** The book+12cm-CD bibliographic object and National Library holding are now confirmed; next value is call/accession/control metadata, current accompanying-disc status, disc-label imagery, a distinct non-book record or a public preservation copy—not repeated ISBN searches.
 3. **Continue JSS 1999 beta/retail/launcher recovery in parallel.** It remains the historical origin target even though Korean 2000 now has stronger mass-replication recovery odds.
 4. **Keep `〖2.5纯净〗` `tid=2132`, Korean 1.74 and Japanese 1.74a as secondary clean-client targets.** Version labels and forum labels remain clues, not byte provenance.
 5. **On any newly recovered candidate bytes, stop broad searching and run the clean-client acceptance test immediately:** source chain, hashes, complete file tree, executable metadata, endpoints/patchers, resource generations and cross-copy contamination checks.
