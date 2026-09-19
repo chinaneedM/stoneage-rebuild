@@ -1,0 +1,76 @@
+StoneAge Taiwan v1.0 InstallShield probe — R1
+SCOPE|ephemeral-verified-disc|derived-installer-inventory-only|no-payload-commit
+FILESYSTEM|layout=mode1-2352|joliet=1|entries=421
+TARGET|path=StoneAge/data1.cab|size=560323|sha256=4fa32c9bedba85d6a4f550367b1746f7526540ef4d76048afccb1f0dbddbf586
+TARGET|path=StoneAge/data1.hdr|size=49940|sha256=a1fc14c10d553a0eaff103bc14d206f0c7e21d2324077a48d2fe814b6decbb2e
+TARGET|path=StoneAge/data2.cab|size=512|sha256=0f067a0961c9a6aae77f099d3fb95e3f3fede5a467812ace1d7289b60092e049
+TARGET|path=StoneAge/layout.bin|size=440|sha256=f64ebca34387a8159a5ea119fd138eb93936bac8d34f5bf5ad8c150b5f66622c
+TARGET|path=StoneAge/setup.inx|size=132112|sha256=eff8dff893378792118d63ad335dbff0be4b0d09f7c67b4361e99c25900d0e10
+TARGET|path=StoneAge/Setup.exe|size=35840|sha256=380d6d28b7cfb2c6f4b964ec5d1f5b04c932a370272ca96190178717448913cb
+TARGET|path=StoneAge/Setup.ini|size=142|sha256=fc925b2817a881af2dddce77272c0a12c16e9d71cd9a6423a96599cd9a425bbc
+COUNT|missing_targets|0
+STRING_COUNT|path=StoneAge/setup.inx|hits=23
+STRING|path=StoneAge/setup.inx|text=_ComponentReinstall
+STRING|path=StoneAge/setup.inx|text=InstallStatusMIF
+STRING|path=StoneAge/setup.inx|text=IfxOnExitInstall
+STRING|path=StoneAge/setup.inx|text=IfxOnAbortInstall
+STRING|path=StoneAge/setup.inx|text=IfxOnInitInstall
+STRING|path=StoneAge/setup.inx|text=IfxOnDisk1Installing
+STRING|path=StoneAge/setup.inx|text=IfxOnDisk1Installed
+STRING|path=StoneAge/setup.inx|text=Waei Majang Path
+STRING|path=StoneAge/setup.inx|text=Waei Majang Execution
+STRING|path=StoneAge/setup.inx|text=Waei Majang UnExecution
+STRING|path=StoneAge/setup.inx|text=\Install.exe!
+STRING|path=StoneAge/setup.inx|text=NAME = "Installation"
+STRING|path=StoneAge/setup.inx|text=NAME = "InstallStatus"
+STRING|path=StoneAge/setup.inx|text=Failed silent installation. May be failed to allocate Memory.!
+STRING|path=StoneAge/setup.inx|text=Installation Successful.
+STRING|path=StoneAge/setup.inx|text=Software\Microsoft\Windows\CurrentVersion\Uninstall\
+STRING|path=StoneAge/setup.inx|text=UninstallString
+STRING|path=StoneAge/setup.inx|text=Failed silent installation. May be failed to allocate Memory.'
+STRING|path=StoneAge/setup.inx|text=InstallShield Silent
+STRING|path=StoneAge/setup.inx|text=UNINSTALL_STRING
+STRING|path=StoneAge/setup.inx|text=InstallShield can not call DLL function:
+STRING|path=StoneAge/setup.inx|text=InstallShield Installation Information
+STRING|path=StoneAge/setup.inx|text=C:\My Installations\
+STRING_COUNT|path=StoneAge/Setup.exe|hits=6
+STRING|path=StoneAge/Setup.exe|text=VerInstallFileA
+STRING|path=StoneAge/Setup.exe|text=\InstallShield
+STRING|path=StoneAge/Setup.exe|text=\InstallShield\engine
+STRING|path=StoneAge/Setup.exe|text=\InstallShield\engine\6
+STRING|path=StoneAge/Setup.exe|text=\InstallShield\engine\6\Intel 32
+STRING|path=StoneAge/Setup.exe|text=\InstallShield\engine\6\Intel 32\
+STRING_COUNT|path=StoneAge/Setup.ini|hits=0
+UNSHIELD|list_rc=0|extract_rc=0
+UNSHIELD_LIST|text=Cabinet: /tmp/tmplbe4qhj_/StoneAge/data1.cab
+UNSHIELD_LIST|text=192512 <Support>English Files\_IsRes.dll
+UNSHIELD_LIST|text=28430 <Engine>Engine Files\corecomp.ini
+UNSHIELD_LIST|text=307200 <Support>Non-SelfRegistering\isrt.dll
+UNSHIELD_LIST|text=1168 <Support>Non-SelfRegistering\default.pal
+UNSHIELD_LIST|text=237568 <Engine>ScriptEngine\IScript.dll
+UNSHIELD_LIST|text=212992 <Engine>Log Services\ILog.dll
+UNSHIELD_LIST|text=0 <Engine>Log Services Placeholder\ILog.dll
+UNSHIELD_LIST|text=669 <Support>English String Tables\value.shl
+UNSHIELD_LIST|text=358 <Support>Language Independent OS Independent Files\license.txt
+UNSHIELD_LIST|text=151552 <Engine>SelfRegistering\ctor.dll
+UNSHIELD_LIST|text=32768 <Engine>SelfRegistering\objectps.dll
+UNSHIELD_LIST|text=208896 <Engine>SelfRegistering\iuser.dll
+UNSHIELD_LIST|text=0 <Engine>Kernel Placeholder\iKernel.exe
+UNSHIELD_LIST|text=-------- -------
+UNSHIELD_LIST|text=13 files
+COUNT|unshield_files|13
+COUNT|unshield_bytes|1374113
+INSTALLED_FILE|path=_Engine_Engine_Files/corecomp.ini|size=28430|sha256=a841b2a687122c08e28440c29efe7be222cc9883a6c368747172a222d930a3da|map_like=0
+INSTALLED_FILE|path=_Engine_Kernel_Placeholder/iKernel.exe|size=0|sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855|map_like=0
+INSTALLED_FILE|path=_Engine_Log_Services/ILog.dll|size=212992|sha256=ce762f688c098cb4ceda474902ae06004a75b9d62bce55e701b225b0845dab6e|map_like=0
+INSTALLED_FILE|path=_Engine_Log_Services_Placeholder/ILog.dll|size=0|sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855|map_like=0
+INSTALLED_FILE|path=_Engine_ScriptEngine/IScript.dll|size=237568|sha256=8047f9354eb66963cc09eb44920c158c41465153ee0ed7bb7ad8e8a66ffb114a|map_like=0
+INSTALLED_FILE|path=_Engine_SelfRegistering/ctor.dll|size=151552|sha256=984e3391ac2a783045154453d1b2397411a32e81d24e479fcea4ed0ac9817899|map_like=0
+INSTALLED_FILE|path=_Engine_SelfRegistering/iuser.dll|size=208896|sha256=ede31c8f2ead504a1b3556e1285a7c071add3145db68589472c4161a573a6717|map_like=0
+INSTALLED_FILE|path=_Engine_SelfRegistering/objectps.dll|size=32768|sha256=1aacf1666132a2a6ffee05e6077924e0717c9a0690d657821e1e9e6ad63cb3e7|map_like=0
+INSTALLED_FILE|path=_Support_English_Files/_IsRes.dll|size=192512|sha256=25c4c127eac5b2136b7bc04561aab5f93a9125f16e2a8cc803cb5e45958d8203|map_like=0
+INSTALLED_FILE|path=_Support_English_String_Tables/value.shl|size=669|sha256=2da79a2b79e9b7fd42ca85f559197ff48246d925319eda5a46d5f3f5639e79e0|map_like=0
+INSTALLED_FILE|path=_Support_Language_Independent_OS_Independent_Files/license.txt|size=358|sha256=d532b726ef24d67b2dc4caa365175447171f23663f30beed866e9246630a966c|map_like=0
+INSTALLED_FILE|path=_Support_Non-SelfRegistering/default.pal|size=1168|sha256=8075162db275eb52f5d691b15fc0d970cb007f5bece33ce5db509edf51c1f020|map_like=0
+INSTALLED_FILE|path=_Support_Non-SelfRegistering/isrt.dll|size=307200|sha256=7dd25a8e21b97990c514885a6cf4dc384c671907845d69614583c697a54cc1b7|map_like=0
+COUNT|map_like_installed_files|0
