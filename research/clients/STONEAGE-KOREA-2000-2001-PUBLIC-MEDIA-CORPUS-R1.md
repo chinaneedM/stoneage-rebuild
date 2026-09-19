@@ -122,6 +122,8 @@ The archive metadata/file-list probe searched both general StoneAge terms and ex
 
 - `sa_demo.exe`
 - **`stone_demo.exe`**
+- **`onlStoneAge.zip`**
+- **`images/Online/pds/2001/02/onlStoneAge.zip`**
 - `stoneagebeta.zip`
 - `20001031524596220`
 - `200009263856`
@@ -136,9 +138,9 @@ Result:
 - 11 size-window candidates;
 - **0 exact target filename matches**.
 
-The 9 file candidates are size-only false positives. Search hits for `sa_demo.exe` and `GW_IDX=9` were also shown by file-list verification to be unrelated tokenization/substring matches.
+The 11 file candidates are size-only false positives. Search hits for `sa_demo.exe` and `GW_IDX=9` were also shown by file-list verification to be unrelated tokenization/substring matches.
 
-The newly recovered `stone_demo.exe` token produced 7 IA search-index hits, but none of those items contains an exact `stone_demo.exe` file in its archive file list. The search-index hits are therefore false-positive/tokenization results, not preserved StoneAge payloads.
+The newly recovered `stone_demo.exe` token produced 7 IA search-index hits, but none of those items contains an exact `stone_demo.exe` file in its archive file list. The search-index hits are therefore false-positive/tokenization results, not preserved StoneAge payloads. The exact `onlStoneAge.zip` basename query and the full `images/Online/pds/2001/02/onlStoneAge.zip` path query each return **0 IA search results**.
 
 Interpretation: this exact Internet Archive metadata-query set is closed as a negative control. Repeating the same queries without a new identifier or search surface is low value.
 
@@ -148,20 +150,18 @@ Derived report:
 
 - `research/recovered/STONEAGE-KOREAN-DISTRIBUTION-CDX-PREFIXES-R1.txt`
 
-A 2000–2002 Wayback CDX prefix enumeration queried twelve bare/www distribution-directory variants.
+A 2000–2002 Wayback CDX prefix enumeration now covers fifteen distribution-directory variants, including the exact GameTime image-PDS directory recovered from the record-9 redirect.
 
 Aggregate result:
 
-- 13 prefix queries;
-- 0 request errors;
+- 15 prefix queries;
+- 1 request error, limited to a timeout on `www.stoneage.hananet.net/down/`;
 - 373 returned rows;
 - 192 unique archived URLs.
 
 ### Hananet and CNET directory boundary
 
-The exact Hananet `/down/` and CNET `/pc/games/online/` prefixes return **0 rows** for both tested host variants.
-
-Because the same probe returns substantial records for Gagamel, GameTime, and Inium, these zero-row results are useful Wayback directory-level negative controls for those exact prefixes and date window.
+The bare Hananet `/down/` prefix and both CNET `/pc/games/online/` host variants return **0 rows**; the `www` Hananet variant timed out in the latest run and should remain inconclusive rather than be counted as another zero. Because the same probe returns substantial records for Gagamel, GameTime, and Inium, the successful zero-row results are useful Wayback directory-level negative controls for those exact prefixes and date window.
 
 They do not prove that `sa.exe`, `sa_demo.exe`, or `stoneage.zip` never survived on other mirrors or outside Wayback.
 
@@ -183,9 +183,9 @@ Result:
 - all preserved objects are image/JPEG resources;
 - 0 client executable/archive URLs.
 
-Interpretation: the current Wayback prefix-index route for `pds.gametime.co.kr` is closed as a negative control. This does not exclude off-Wayback mirrors, unindexed historical payloads, or attachment URLs on another host.
+Interpretation: the current Wayback prefix-index route for `pds.gametime.co.kr` is closed as a negative control. In addition, both bare and `www` **`gametime.co.kr/images/Online/pds/2001/02/`** prefix queries complete successfully with **0 rows**, so the exact directory that later housed `onlStoneAge.zip` and `stone_demo.exe` has no Wayback CDX entries in this 2000–2002 census. This does not exclude off-Wayback mirrors or unindexed historical payloads.
 
-### GameTime — new high-value route
+### GameTime — archived StoneAge result route
 
 GameTime's archived `/data/` namespace contains a preserved StoneAge-specific search page:
 
@@ -194,14 +194,14 @@ GameTime's archived `/data/` namespace contains a preserved StoneAge-specific se
 - CP949/EUC-KR decoding: **`스톤에이지`**
 - category: `online`
 
-This is a concrete archived GameTime StoneAge result surface, not merely a generic portal root. It is now the highest-value unresolved branch from this corpus because it may expose the underlying GameTime record ID, detail endpoint, and relationship to the independently known `GW_IDX=9` mirror token.
+This route is no longer merely a lead. The resolver completed and exposed `GW_IDX=76 → stone_demo.exe`, `GW_IDX=34 → StoneAge.zip` (manual update), while the legacy webzine plus archived 302 headers resolve record 9 through to **`onlStoneAge.zip`**. The remaining GameTime problem is payload-byte recovery and build identity, not record/filename discovery.
 
-Focused resolver:
+Derived records:
 
-- `tools/stoneage_gametime_stoneage_record_probe.py`
-- expected derived record: `research/recovered/STONEAGE-GAMETIME-2001-RECORD-RESOLUTION-R1.txt`
-
-Until that resolver finishes, no new GameTime payload identity beyond the already known historical `GW_IDX=9` may be claimed.
+- `research/recovered/STONEAGE-GAMETIME-2001-RECORD-RESOLUTION-R1.txt`
+- `research/recovered/STONEAGE-GAMETIME-ONLINE-INDEX-R1.txt`
+- `research/recovered/STONEAGE-GAMETIME-LEGACY-WEBZINE-R1.txt`
+- `research/recovered/STONEAGE-GAMETIME-REDIRECT-HEADERS-R1.txt`
 
 ## GameTime StoneAge data-center identities recovered
 
@@ -270,9 +270,13 @@ Therefore **`onlStoneAge.zip`** is the migrated record-9 payload identity, but t
 
 Direct archive checks:
 
-- `onlStoneAge.zip`: bare/www CDX queries return zero rows;
-- `stone_demo.exe`: CDX requests timed out and remain inconclusive;
-- eight exact Wayback Availability checks across the two payloads complete without request errors and return zero available captures.
+- `onlStoneAge.zip`: bare/www exact CDX queries return zero rows;
+- `stone_demo.exe`: exact CDX requests timed out and remain inconclusive;
+- eight exact Wayback Availability checks across the two payloads complete without request errors and return zero available captures;
+- both bare/`www` `gametime.co.kr/images/Online/pds/2001/02/` prefix queries complete successfully with zero rows;
+- Internet Archive metadata/file-list search returns zero `onlStoneAge.zip` basename/path search hits and zero exact target filename matches across 222 inspected items;
+- Arquivo.pt checks 18 exact mirror URLs with zero request errors and zero indexed captures, including bare/`www` `onlStoneAge.zip` and `stone_demo.exe`;
+- the updated Common Crawl probe includes both files and their directory prefix, but 109 of 112 queries fail with HTTP 503 or timeout, so Common Crawl remains **inconclusive**, not negative evidence.
 
 No client bytes were recovered by these checks.
 
@@ -287,7 +291,7 @@ Derived records:
 The public-media route is now materially narrower:
 
 1. Do not repeat the closed NetPower 2001.12, PCGM 2000-09..2001-12, GamePia No.58..69, or exact IA-token scans unless a new token or materially better parser changes the question.
-2. Prioritize exact recovery of GameTime **`onlStoneAge.zip`** at `/images/Online/pds/2001/02/onlStoneAge.zip`, now server-bound to `GW_IDX=9`; retain `stone_demo.exe` as the independently resolved trial-client token.
+2. Prioritize exact recovery of GameTime **`onlStoneAge.zip`** at `/images/Online/pds/2001/02/onlStoneAge.zip`, now server-bound to `GW_IDX=9`; the current IA, Wayback and Arquivo routes are exhausted for this exact object, while Common Crawl is service-inconclusive. Shift effort toward reposts, old FTP/web mirrors, software-CD indexes and preserved installations; retain `stone_demo.exe` as the independently resolved trial-client token.
 3. Continue expanded public-disc scanning only where the carrier dates or metadata materially overlap the 2000–2001 Korean distribution window.
 4. On any concrete installer/archive hit, stop broad enumeration and run the clean-client acceptance pipeline: provenance, archive hash, full file tree/per-file hashes, executable metadata, updater/endpoints, resource generations, and contamination checks.
 
