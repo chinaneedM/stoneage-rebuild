@@ -527,6 +527,26 @@ def main():
                     )
 
         for rva in MAP_XREF_RVAS:
+            va = base + rva
+            node = decode_forward_node(data, base, sections, imports, va)
+            if node is None:
+                print(f"MAP_XREF_SIGNATURE_MISSING|rva=0x{rva:x}")
+                continue
+            mode_hits = node_literal_hits(data, base, sections, va, node, mode_vas)
+            api_names = sorted({name for (dll, name) in node["api_counts"]})
+            print(
+                f"MAP_XREF_SIGNATURE|rva=0x{rva:x}|instructions={node['instructions']}|"
+                f"direct_targets={len(node['internal'])}|modes={','.join(mode for _,mode in mode_hits)}|"
+                f"apis={','.join(api_names)}|end_reason={node['end_reason']}"
+            )
+            for ins_va, mode in mode_hits:
+                print(
+                    f"MAP_XREF_MODE|rva=0x{rva:x}|instruction_rva=0x{ins_va-base:x}|mode={mode}"
+                )
+            for target, count in sorted(node["internal"].items()):
+                print(
+                    f"MAP_XREF_DIRECT|rva=0x{rva:x}|target_rva=0x{target-base:x}|calls={count}"
+                )
             print(f"MAP_FILE_XREF|rva=0x{rva:x}")
     finally:
         img.close()
