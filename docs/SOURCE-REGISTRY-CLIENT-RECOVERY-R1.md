@@ -146,20 +146,21 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - `research/recovered/STONEAGE-GAMETIME-ONLINE-INDEX-R1.txt`
 - Status: **TARGET-A/B — trial client and manual-update identities resolved; record-9 historical identity plus migrated payload filename/path (`onlStoneAge.zip`) resolved; record-9 size/version/build/hash/tree and all client bytes still unresolved.**
 
-## TARGET-A/B — Korean Inium retail/package game CD — 2001
+## TARGET-A — Korean Inium retail/package game CD — 2000–2001
 
 - Contemporary distribution evidence:
+  - DailyGame / Daily eSports, 2000-10-27: Inium reportedly signed a supply contract with Samsung PC-education-center operator **Mentec (`멘테크`) for roughly 60,000 sale packages (`판매용 패키지`)** and planned nationwide retail distribution through **Yongsan PC-game wholesalers** — https://www.dailygame.co.kr/view.php?ud=200010271416380001837_26 ; syndicated copy https://www.dailyesports.com/view.php?ud=200010271416380001837_26
   - Electronic Times, 2001-05-04: StoneAge users could buy a **game CD in Yongsan and similar retail locations**, with a **two-month free-use coupon** included — https://www.etnews.com/200104300317
   - GameMeca, 2001-07-09: Inium's registered StoneAge total explicitly included **package purchasers (`패키지 구입자`)** alongside paid members and trial registrants — https://www.gamemeca.com/view.php?gid=3718
 - Interpretation:
-  - this independently establishes a retail/package StoneAge CD channel in the Korean Inium era;
+  - this independently establishes a **mass-distribution retail/package StoneAge CD channel from the original October 2000 Korean distribution period through 2001**; the 60,000 figure is a reported supply-contract quantity, not proof that every unit was manufactured/shipped/sold;
   - it is a distinct recovery object from the GameTime Perfect Guide bonus CD unless disc/package evidence proves equality;
   - exact package publisher/catalog number, disc label, client version/build, installer filename, volume label, filesystem, checksum and relationship to Hananet/CNET/GameTime mirrors remain OPEN.
 - Canonical target record:
   - `research/clients/STONEAGE-KOREA-2001-RETAIL-GAME-CD-R1.md`
 - Acceptance:
   - require public provenance, image/file hashes, complete tree, installer metadata and contamination checks before treating any dump as an original clean client.
-- Status: **TARGET-A/B — independently attested physical-media bridge; public bytes not yet recovered.**
+- Status: **TARGET-A — mass-distribution physical-media bridge independently attested from October 2000; public bytes not yet recovered.**
 
 ## TARGET-A/B — Korean GameTime StoneAge Perfect Guide bonus CD — 2001
 
