@@ -1,0 +1,8 @@
+StoneAge Hananet STAD detail/attachment probe — R1
+SCOPE|transient-html|sparse-attachment-metadata-only|no-client-binary-download
+COUNT|availability_queries|10
+COUNT|candidate_snapshots|2
+COUNT|replayed|0
+COUNT|errors|2
+ERROR|phase=replay|post=8119|label=8119-formal-260M|marker=20010814230641|kind=HTTPError|message=HTTP Error 404: NOT FOUND
+ERROR|phase=replay|post=8120|label=8120-trial-240M|marker=20010814230641|kind=HTTPError|message=HTTP Error 404: NOT FOUND
