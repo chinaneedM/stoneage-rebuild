@@ -151,14 +151,16 @@ def main():
 
     surfaces = [
         # Operator site: the entire host is StoneAge-specific, so keep all indexed URLs.
-        ("inium", "stoneage.enium.co.kr/*", None),
+        ("inium-www", "www.stoneage.enium.co.kr/*", None),
+        ("inium-bare", "stoneage.enium.co.kr/*", None),
         # Portal/download surfaces: retain only URL-level StoneAge terms when possible.
         ("hananet-game", "game.hananet.net/*", r".*(?:[Ss][Tt][Oo][Nn][Ee]|[Aa][Gg][Ee]).*"),
         ("hananet-pds", "pds.hananet.net/*", r".*(?:[Ss][Tt][Oo][Nn][Ee]|[Aa][Gg][Ee]).*"),
         ("cnet-downloads", "korea.cnet.com/downloads/*", r".*(?:[Ss][Tt][Oo][Nn][Ee]|[Aa][Gg][Ee]).*"),
     ]
     roots = [
-        ("inium-root", "stoneage.enium.co.kr/"),
+        ("inium-root-www", "www.stoneage.enium.co.kr/"),
+        ("inium-root-bare", "stoneage.enium.co.kr/"),
         ("hananet-game-root", "game.hananet.net/"),
         ("hananet-pds-root", "pds.hananet.net/"),
         ("cnet-downloads-root", "korea.cnet.com/downloads/"),
@@ -188,7 +190,7 @@ def main():
                 )
 
     if args.root_only:
-        roots = [x for x in roots if x[0] == "inium-root"]
+        roots = [x for x in roots if x[0] in {"inium-root-www", "inium-root-bare"}]
 
     root_rows = []
     for surface, pattern in roots:
