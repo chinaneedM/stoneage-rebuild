@@ -173,16 +173,17 @@ def probe(label,url):
     return {
         "label":label,"url":url,"error":"","status":status,"final":final,
         "plain_contexts":contexts(plain,KEYWORDS,220,24),
-        "raw_contexts":contexts(raw,(ISBN10,*RISS_IDS,*TITLE_TERMS,"2 개 도서관 소장"),420,20),
+        "raw_contexts":contexts(raw,(ISBN10,*RISS_IDS,*TITLE_TERMS,"2 개 도서관 소장","fnEdtionList","searchResultEditonList.do","24118251","LibraryList.do","providerId=07","LibraryLocalBibno"),520,36),
         "tokens":structural_tokens(raw),
+        "edition_keys":sorted(set(re.findall(r"fnEdtionList\\([\\\'\\\"]?(\\d+)",raw))),
         "anchors":anchor_rows(raw,final),
     }
 
 
 def main():
-    print("StoneAge GameTime 2001 library supplementary-material probe — R2")
+    print("StoneAge GameTime 2001 library supplementary-material probe — R3")
     print("SCOPE|public-catalog-metadata-only|no-book-or-cd-payload-download")
-    print("METHOD|focused-kolis-isbn+riss-aliases+raw-navigation-parameter-extraction")
+    print("METHOD|focused-kolis-isbn+riss-aliases+edition-key-and-holdings-call-extraction")
     print(f"TARGET|isbn10={ISBN10}|isbn13={ISBN13}|riss_ids={','.join(RISS_IDS)}")
     results=[probe(label,url) for label,url in targets()]
     print(f"COUNT|queries|{len(results)}")
@@ -196,6 +197,8 @@ def main():
             print(f"FACT_CONTEXT|source={clean(r['label'])}|token={clean(token)}|text={clean(value,620)}")
         for token,value in r["raw_contexts"]:
             print(f"RAW_CONTEXT|source={clean(r['label'])}|token={clean(token)}|html={clean(value,820)}")
+        for key in r["edition_keys"]:
+            print(f"EDITION_KEY|source={clean(r['label'])}|value={clean(key)}")
         for value in r["tokens"]:
             print(f"STRUCT|source={clean(r['label'])}|value={clean(value)}")
         for label_text,href,attrs in r["anchors"]:
