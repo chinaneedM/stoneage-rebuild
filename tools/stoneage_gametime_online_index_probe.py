@@ -20,6 +20,11 @@ ANCHORS=[
         "search_word=%bd%ba%c5%e6%bf%a1%c0%cc%c1%f6&category=online",
     ),
     (
+        "online-page1-20020805",
+        "20020805180447",
+        "http://www.gametime.co.kr/data/data_list.asp?search_word=&category=online&page=1",
+    ),
+    (
         "online-page2-20010809",
         "20010809014939",
         "http://www.gametime.co.kr/data/data_list.asp?search_word=&category=online&page=2",
@@ -33,6 +38,36 @@ ANCHORS=[
         "online-page4-20010907",
         "20010907233615",
         "http://www.gametime.co.kr/data/data_list.asp?search_word=&category=online&page=4",
+    ),
+    (
+        "online-page5-20020615",
+        "20020615004608",
+        "http://www.gametime.co.kr/data/data_list.asp?search_word=&category=online&page=5",
+    ),
+    (
+        "online-page6-20020811",
+        "20020811153901",
+        "http://www.gametime.co.kr/data/data_list.asp?search_word=&category=online&page=6",
+    ),
+    (
+        "online-page7-20020623",
+        "20020623175310",
+        "http://www.gametime.co.kr/data/data_list.asp?search_word=&category=online&page=7",
+    ),
+    (
+        "online-page8-20020625",
+        "20020625163754",
+        "http://www.gametime.co.kr/data/data_list.asp?search_word=&category=online&page=8",
+    ),
+    (
+        "online-page9-20020628",
+        "20020628020613",
+        "http://www.gametime.co.kr/data/data_list.asp?search_word=&category=online&page=9",
+    ),
+    (
+        "online-page10-20020701",
+        "20020701033701",
+        "http://www.gametime.co.kr/data/data_list.asp?search_word=&category=online&page=10",
     ),
 ]
 
@@ -70,7 +105,7 @@ def extract_records(html):
             "filename":filename,
             "title":title,
             "description":desc,
-            "stoneage":bool(STONE_RE.search(" ".join((filename,title,desc,plain(context))))),
+            "stoneage":bool(STONE_RE.search(" ".join((filename,title,desc)))),
             "context":clean(plain(context),1200),
         })
     # stable de-duplication by id+filename
