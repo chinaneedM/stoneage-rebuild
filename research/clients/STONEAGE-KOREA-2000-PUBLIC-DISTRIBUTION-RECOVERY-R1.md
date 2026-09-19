@@ -169,6 +169,38 @@ Recovery use:
 
 Classification: **TARGET-A/B near-period installation-media sub-track**. It is later than the 2000 public-download target but much earlier and more provenance-specific than the 2003 1.74 bridge.
 
+### Public union-library confirmation — RISS / National Library of Korea
+
+RISS now provides a formal bibliographic record for the same GameTime volume:
+
+- RISS permanent link: `https://www.riss.kr/link?id=M10029631`;
+- RISS control number: `9b505f870e768aa6ffe0bdc3ef48d419`;
+- title: `스톤 에이지 = Stone age`;
+- publisher/year: GameTime, Seoul, 2001;
+- ISBN-10: `8995182121`;
+- physical description: **318 pages + 1 compact disc (12 cm)**;
+- series: `퍼펙트 가이드; vol.5`;
+- listed holding institution: **National Library of Korea (국립중앙도서관)**;
+- table of contents begins with a dedicated `설치하기` / installation section.
+
+This upgrades the bonus-CD lead from retailer-only marketing metadata to a formal public-library bibliographic object. It does **not** yet prove that the accompanying disc is presently intact, independently cataloged, digitized, or publicly downloadable at the holding institution.
+
+### Catalog-date normalization
+
+The known commercial catalogs disagree on the date while identifying the same physical book:
+
+- Aladin: `2001-01-01`, 318 pages, ISBN-13 `9788995182123`;
+- YES24: `2001-04-30`, 318 pages, ISBN-13 `9788995182123`, CD 1;
+- RISS: year `2001`, ISBN-10 `8995182121`, 318 pages + 1 compact disc.
+
+Because the identifiers and pagination converge, these are treated as **catalog-date variants for one bibliographic object**, not evidence for two separate StoneAge guides or two different bonus CDs.
+
+Recovery consequence:
+
+- stop branching the search into a hypothetical January edition versus April edition unless a genuinely different ISBN/edition statement appears;
+- prioritize public National Library / union-catalog metadata for the accompanying disc: accession/control fields, call number, supplementary-material status, disc-label images or a distinct non-book record;
+- continue public preservation searches by ISBN and RISS control identifiers, but do not contact institutions or make physical acquisition a project dependency.
+
 ### GameTime CD public-archive metadata probe
 
 A reproducible Internet Archive metadata-only probe queried:
