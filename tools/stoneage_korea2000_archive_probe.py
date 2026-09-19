@@ -146,6 +146,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--from-year", type=int, default=2000)
     p.add_argument("--to-year", type=int, default=2003)
+    p.add_argument("--root-only", action="store_true")
     args = p.parse_args()
 
     surfaces = [
@@ -166,24 +167,25 @@ def main():
     hits: list[Hit] = []
     errors = []
 
-    for surface, pattern, regex in surfaces:
-        try:
-            rows = cdx_query(pattern, args.from_year, args.to_year, regex=regex)
-        except Exception as exc:
-            errors.append((surface, type(exc).__name__, str(exc)))
-            continue
-        for row in rows:
-            hits.append(
-                Hit(
-                    surface,
-                    str(row.get("timestamp", "")),
-                    str(row.get("original", "")),
-                    str(row.get("statuscode", "")),
-                    str(row.get("mimetype", "")),
-                    str(row.get("digest", "")),
-                    str(row.get("length", "")),
+    if not args.root_only:
+        for surface, pattern, regex in surfaces:
+            try:
+                rows = cdx_query(pattern, args.from_year, args.to_year, regex=regex)
+            except Exception as exc:
+                errors.append((surface, type(exc).__name__, str(exc)))
+                continue
+            for row in rows:
+                hits.append(
+                    Hit(
+                        surface,
+                        str(row.get("timestamp", "")),
+                        str(row.get("original", "")),
+                        str(row.get("statuscode", "")),
+                        str(row.get("mimetype", "")),
+                        str(row.get("digest", "")),
+                        str(row.get("length", "")),
+                    )
                 )
-            )
 
     root_rows = []
     for surface, pattern in roots:
@@ -200,6 +202,7 @@ def main():
     print("StoneAge Korea 2000 public-distribution archive probe — R1")
     print("SCOPE|metadata-and-link-targets-only|no-client-binary-download")
     print(f"YEARS|from={args.from_year}|to={args.to_year}")
+    print(f"MODE|{'root-only' if args.root_only else 'full'}")
     for surface, kind, message in errors:
         print(f"ERROR|{surface}|{kind}|{safe_token(message)}")
 
