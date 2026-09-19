@@ -85,6 +85,42 @@ Korea Economic Daily, 2000-04-27:
 
 This corroborates the portal family named in the December StoneAge article, but does **not** yet identify StoneAge's exact historical Hananet page or download URL.
 
+### 4a. Exact historical download-root narrowing
+
+Contemporary independent web references now narrow two of the mass-distribution surfaces to exact historical roots:
+
+- **CNET Korea download root:** `http://korea.cnet.com/downloads/`
+  - a 2000-04-21 Korean Mac-news post announces the Korean Download.com/CNET service and gives this exact URL;
+  - November 2000 site rankings independently list CNet Korea's software-download service at the same root.
+- **Hananet software repository root:** `http://pds.hananet.net`
+  - November 2000 software-site rankings list the Hanaro/Hananet download repository at this exact root.
+
+These roots are contemporaneous infrastructure evidence. They still do **not** reveal StoneAge's child URL or installer filename, but they replace the earlier generic `CNET` / `Hananet` search surfaces with precise historical directory roots.
+
+### 4b. NetPower September/November 2000 scan corroboration
+
+GameMeca's public NetPower scan viewer supplies near-period page images that were probed with transient OCR; only sparse Latin recovery tokens were committed.
+
+September 2000 StoneAge feature, pages 87-96:
+
+- page 92 independently yields `www.hananet.net` in both OCR segmentation modes;
+- the same page also yields contemporaneous Korean broadband-provider domains;
+- no `.exe`, `.zip`, `.cab`, installer filename or reliable client-size token was recovered.
+
+November 2000 StoneAge preview, pages 99-102:
+
+- page 99 yields `enium` and `Stone Age` / `stoneage` in all three OCR modes;
+- one OCR mode yields the partial URL token `http://stoneage`, consistent with the independently documented Inium operator host;
+- no installer filename was recovered;
+- a single-mode `32MB` token is retained only as OCR evidence and is **not** classified as client size.
+
+Derived reports:
+
+- `research/recovered/STONEAGE-NETPOWER-2000-09-LATIN-TOKENS-R1.txt`
+- `research/recovered/STONEAGE-NETPOWER-2000-11-LATIN-TOKENS-R1.txt`
+
+These magazine scans strengthen period attribution of the Inium/Hananet surfaces, but they do not yet advance the project from domain-level to file-token recovery.
+
 ### 5. Pre-service Samsung distribution plan
 
 iNews24, 2000-07-04:
@@ -133,6 +169,27 @@ Recovery use:
 
 Classification: **TARGET-A/B near-period installation-media sub-track**. It is later than the 2000 public-download target but much earlier and more provenance-specific than the 2003 1.74 bridge.
 
+### GameTime CD public-archive metadata probe
+
+A reproducible Internet Archive metadata-only probe queried:
+
+- both ISBNs;
+- Korean and English title variants;
+- GameTime + StoneAge title/description combinations;
+- `StoneAge Perfect Guide` variants.
+
+Result: all five queries returned **0 items** at the time of the probe.
+
+Derived report:
+
+- `research/recovered/STONEAGE-GAMETIME-2001-CD-ARCHIVE-METADATA-R1.txt`.
+
+Interpretation:
+
+- this is a valid negative result for those exact **Internet Archive metadata queries**;
+- it is **not** evidence that the physical CD no longer survives or that no unindexed/private-to-public preservation copy exists;
+- do not repeat the same IA metadata queries unless new title/identifier/file tokens are discovered.
+
 ## Provenance interpretation
 
 ### What can be claimed
@@ -171,8 +228,8 @@ The Korean localization is not a purity defect by itself. If an operator-distrib
 Highest-value exact search surfaces now are:
 
 - `www.stoneage.enium.co.kr` historical download pages / link dumps;
-- Hananet / `game.hananet.net` / GamePlus StoneAge pages around late 2000;
-- CNET Korea StoneAge download pages around late 2000;
+- Hananet / `game.hananet.net` / GamePlus plus the exact software repository root `http://pds.hananet.net` around late 2000;
+- CNET Korea exact download root `http://korea.cnet.com/downloads/`, then any surviving StoneAge child path/file token;
 - Korean software-download catalogs and antivirus/file indexes retaining original filenames;
 - magazine / ISP / PC-education-center CD indexes;
 - Samsung PC education-center / MenTech package references;
@@ -225,8 +282,8 @@ Only byte comparison can determine whether the parallel distribution channels ca
 ## Open questions
 
 - What exact filename did Inium distribute from its official site in October/December 2000?
-- What exact StoneAge page/path did Hananet/GamePlus use?
-- Which Korean CNET domain/path hosted the 310,000-download mirror?
+- What exact StoneAge page/path or file token did Hananet/GamePlus / `pds.hananet.net` use?
+- What StoneAge child path/file token existed beneath the now-resolved CNET Korea root `http://korea.cnet.com/downloads/`?
 - Did Hananet/CNET mirror a complete installer or a patch/bootstrapper?
 - Did the 60,000 education-center packages use the same client state as the online mirrors?
 - Can a surviving Inium installation be dated before later 1.74 updates from executable/resource evidence?
