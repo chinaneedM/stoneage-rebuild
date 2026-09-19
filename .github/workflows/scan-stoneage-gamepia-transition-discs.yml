@@ -1,0 +1,38 @@
+name: Scan GamePia transition-window discs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_gamepia_transition_disc_scan.py
+      - tests/test_stoneage_gamepia_transition_disc_scan.py
+      - .github/workflows/scan-stoneage-gamepia-transition-discs.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-gamepia-transition-discs
+  cancel-in-progress: true
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_gamepia_transition_disc_scan -v
+      - name: Scan public GamePia transition-window disc directories
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_gamepia_transition_disc_scan             > research/recovered/STONEAGE-GAMEPIA-TRANSITION-DISC-SCAN-R1.txt
+      - name: Commit derived directory metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-GAMEPIA-TRANSITION-DISC-SCAN-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: scan GamePia transition disc directories'
+          git pull --rebase origin main
+          git push
