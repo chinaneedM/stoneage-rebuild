@@ -45,6 +45,10 @@ class LuckyDoorUsageProbeTests(unittest.TestCase):
         td, root = self.build()
         try:
             result = analyze(root)
+            self.assertEqual(result["counts"][("LuckyMan", "template_blocks")], 1)
+            self.assertEqual(result["counts"][("Door", "template_blocks")], 1)
+            self.assertEqual(result["counts"][("LuckyMan", "stable_template_names")], 1)
+            self.assertEqual(result["counts"][("Door", "stable_template_names")], 1)
             self.assertEqual(result["counts"][("LuckyMan", "refs")], 1)
             self.assertEqual(result["counts"][("Door", "refs")], 1)
             self.assertEqual(
