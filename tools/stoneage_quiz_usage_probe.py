@@ -60,6 +60,13 @@ def iter_blocks(path):
 
 
 def template_names(files):
+    """Return stable Quiz template names and mixed-definition ambiguities.
+
+    The server resolves duplicate template names by the first loaded match.
+    For a payload-free deterministic probe we can safely accept a duplicate
+    name only when every surviving definition selects Quiz.  Mixed duplicate
+    definitions remain explicit load-order ambiguity rather than being guessed.
+    """
     mapping = collections.defaultdict(list)
     for path in files:
         for entries in iter_blocks(path):
@@ -67,11 +74,21 @@ def template_names(files):
             name = d.get(b"templatename")
             if name:
                 mapping[name].append(d.get(b"functionset", b""))
-    return {
+    stable = {
         name
         for name, defs in mapping.items()
-        if len(defs) == 1 and defs[0] == b"Quiz"
+        if defs and all(functionset == b"Quiz" for functionset in defs)
     }
+    ambiguous = {
+        name
+        for name, defs in mapping.items()
+        if any(functionset == b"Quiz" for functionset in defs)
+        and not all(functionset == b"Quiz" for functionset in defs)
+    }
+    duplicate_stable = {
+        name for name in stable if len(mapping[name]) > 1
+    }
+    return stable, ambiguous, duplicate_stable
 
 
 def refs(files):
@@ -198,9 +215,12 @@ def analyze(npc_dir, question_file=None):
     )
     templates = [p for p in files if magic_kind(p) == "template"]
     creates = [p for p in files if magic_kind(p) == "create"]
-    names = template_names(templates)
+    names, ambiguous_names, duplicate_stable_names = template_names(templates)
 
     counts = collections.Counter()
+    counts["stable_quiz_template_names"] = len(names)
+    counts["duplicate_stable_quiz_template_names"] = len(duplicate_stable_names)
+    counts["ambiguous_mixed_quiz_template_names"] = len(ambiguous_names)
     keys = collections.Counter()
     item_shapes = collections.Counter()
     quantities = collections.Counter()
@@ -211,6 +231,9 @@ def analyze(npc_dir, question_file=None):
     aggregate = hashlib.sha256()
 
     for name, arg in refs(creates):
+        if name in ambiguous_names:
+            counts["ambiguous_mixed_template_refs"] += 1
+            continue
         if name not in names:
             continue
         counts["refs"] += 1
