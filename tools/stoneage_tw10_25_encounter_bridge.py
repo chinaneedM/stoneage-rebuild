@@ -85,6 +85,7 @@ class EnemyVariantBridge:
     duel_point: int
     style: int
     capturable: bool
+    drop_slots: tuple[tuple[int, int], ...] = ()
 
     @classmethod
     def from_enemy(cls, row: Mapping[str, Any]) -> "EnemyVariantBridge":
@@ -105,6 +106,13 @@ class EnemyVariantBridge:
             duel_point=_int(row, "DUELPOINT"),
             style=_int(row, "STYLE"),
             capturable=bool(_int(row, "PETFLG")),
+            drop_slots=tuple(
+                (
+                    _int(row, f"ITEM{slot}", -1),
+                    _int(row, f"ITEMPROB{slot}", 0),
+                )
+                for slot in range(1, 11)
+            ),
         )
 
     @property

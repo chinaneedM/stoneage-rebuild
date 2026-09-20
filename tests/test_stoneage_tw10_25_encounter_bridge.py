@@ -43,6 +43,20 @@ class Taiwan25EncounterBridgeTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             enemy.choose_level(3)
 
+    def test_enemy_variant_preserves_ten_item_probability_slots(self):
+        row=enemy_row(700,88)
+        row.update({
+            "ITEM1":501,
+            "ITEMPROB1":125,
+            "ITEM10":999,
+            "ITEMPROB10":1000,
+        })
+        enemy=EnemyVariantBridge.from_enemy(row)
+        self.assertEqual(len(enemy.drop_slots),10)
+        self.assertEqual(enemy.drop_slots[0],(501,125))
+        self.assertEqual(enemy.drop_slots[1],(-1,0))
+        self.assertEqual(enemy.drop_slots[9],(999,1000))
+
     def test_group_accepts_exact_recovered_probe_field_names(self):
         row = {
             "GROUP_ID": 100,

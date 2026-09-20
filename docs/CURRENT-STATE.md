@@ -1397,13 +1397,21 @@ Supplemental source ledgers:
   - counter profit uses the actual counter actor as a one-entry attack list;
   - combo profit uses the complete eligible combo attack list and does not split EXP between members in the pinned enabled branch;
   - `BATTLE_AddExpItem()` source-shaped scanning is explicit: every `HP <= 0 && ISDIE == false` reward enemy is claimed by the current profit trigger, so deferred status deaths are **not** reassigned to an invented DoT owner.
+- Battle item-drop mechanics are now closed to the strong stable-descendant boundary, with runtime item-instance wiring still explicit:
+  - enemy variants now preserve all ten \`ITEMn / ITEMPROBn\` source slots;
+  - pinned Gavin \`version.h\` enables \`_FIX_ITEMPROB\`, so that build uses \`RAND(0,999) < ITEMPROB\`; the preserved \`0..99\` branch remains separately modeled because exact JSS-1999 selection is OPEN;
+  - enemy-held items are instantiated at spawn, not invented at final victory settlement;
+  - kill profit randomly selects an attack-list ticket, maps pet tickets to the owning player entry, and preserves duplicate-owner tickets rather than deduplicating them;
+  - each player battle entry has a three-item pending reward buffer; overflow either destroys the new item or replaces/destroys one random old pending item;
+  - final item settlement takes the first empty persistent bag slot; no-space items are destroyed, and a dead player does not settle pending items;
+  - detailed evidence is recorded in \`research/mechanics/STONEAGE-BATTLE-DROP-SETTLEMENT-R1.md\`.
 - Still OPEN / deliberately excluded:
   - exact JSS-1999 choice of level-threshold regime/table;
   - maximum-level and pet-limit-level behavior;
   - complete visible pet AI/loyalty compliance projection;
   - early-JSS confirmation of later-gated combo-profit behavior;
   - full counter/combo/status action/damage execution;
-  - items, money, capture, escape and other post-battle rewards.
+  - persistent-battle wiring for item instances, then money, capture, escape and other post-battle rewards.
 - Code validations:
   - `81e9572f1ff309982d13c7f1979a51516a5593a8` — pending ordinary kill EXP accumulation; runs **35514277568** and **35514277633** both success.
   - `b3207d71bc8dafa557e31d3450be2d6efb00bd29` — no-level-cross EXP persistence; run **35514525635** success.
@@ -1415,10 +1423,11 @@ Supplemental source ledgers:
   - `ab9d3d90b87fcb857bc5f6ee24a10f2d816ad793` — player-kill ride-pet attribution; battle-core **35516458527** and gameplay **35516458580** success.
   - `dce9ccc6a25f8135a5bad2145b1505c24b99528a` — reward-only ride-pet persistent settlement; gameplay **35516543065** success.
   - `56fdb2c17aa96b51252b4ee939b2a99664a09487` — counter/combo/deferred-status source-shaped profit scanning; battle-core **35516770864** and gameplay **35516770753** success.
+  - `82692a51e05f1ca607178e901abd296bd84fa87b` — source-shaped battle-drop core; battle-core **35517467464** and gameplay **35517467477** success.
 
 ## Immediate next actions
 
-1. **Extend post-battle rewards one subsystem at a time now that EXP attribution/settlement is closed.** Recover and implement drops first, then money, capture, escape, death penalties and recovery as separate evidence seams; do not bundle them into one guessed settlement routine.
+1. **Finish the item-drop runtime seam before moving to the next reward subsystem.** Carry concrete enemy-held item instances through persistent battle state and settle them into the existing 20-slot single-player inventory using the now-closed three-slot/first-empty rules; after that, recover money, capture, escape, death penalties and recovery separately.
 2. **Expand counter/combo/status battle execution only through their own deterministic mechanics seams.** Their EXP attribution is closed; future action/damage/status execution must feed the existing source-shaped profit-list/scan model rather than redefine reward ownership.
 3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
 4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
