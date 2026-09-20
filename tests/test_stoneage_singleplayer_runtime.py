@@ -1,6 +1,7 @@
 import unittest
 from types import MappingProxyType
 
+from tools.stoneage_encounter_frequency_model import EncounterFrequencyState
 from tools.stoneage_map_collision_model import (
     CHARACTER,
     CollisionProfile,
@@ -288,6 +289,92 @@ class SinglePlayerHistoricalRuntimeTests(unittest.TestCase):
         self.assertFalse(blocked.walk.moved)
         self.assertIsNone(blocked.encounter)
         self.assertEqual(domain.world.player_position, MapPosition(2000, 11, 11))
+
+    def test_frequency_loop_increments_then_triggers_and_resets(self):
+        domain = SinglePlayerHistoricalDomain(static=make_static())
+        domain.persistent.character = make_player()
+        topology = make_topology()
+        place_player_on_topology(domain, topology, MapPosition(2000, 10, 11))
+        runtime = SinglePlayerHistoricalRuntime(domain, topology)
+
+        miss = runtime.walk_step_with_frequency(
+            destination=MapPosition(2000, 11, 11),
+            entry_allowed=True,
+            frequency_roll=119,
+            encounter_rolls=EncounterRolls(0, 0, 0),
+        )
+        self.assertIsNotNone(miss.frequency)
+        self.assertEqual(miss.frequency.clamped_current, 10)
+        self.assertFalse(miss.frequency.roll_hit)
+        self.assertEqual(runtime.encounter_frequency.current, 11)
+        self.assertIsNone(miss.encounter)
+
+        hit = runtime.walk_step_with_frequency(
+            destination=MapPosition(2000, 12, 11),
+            entry_allowed=True,
+            frequency_roll=10,
+            encounter_rolls=EncounterRolls(0, 0, 0),
+        )
+        self.assertTrue(hit.frequency.roll_hit)
+        self.assertTrue(hit.frequency.encounter_triggered)
+        self.assertEqual(runtime.encounter_frequency.current, 10)
+        self.assertIsNotNone(hit.encounter)
+        self.assertEqual(hit.encounter.position, MapPosition(2000, 12, 11))
+
+    def test_warp_frequency_hit_is_suppressed_without_reset_or_increment(self):
+        domain = SinglePlayerHistoricalDomain(static=make_static())
+        domain.persistent.character = make_player()
+        topology = make_topology()
+        place_player_on_topology(domain, topology, MapPosition(1000, 4, 5))
+        runtime = SinglePlayerHistoricalRuntime(
+            domain,
+            topology,
+            encounter_frequency=EncounterFrequencyState(
+                current=8,
+                minimum=5,
+                maximum=8,
+            ),
+        )
+
+        step = runtime.walk_step_with_frequency(
+            destination=MapPosition(1000, 5, 5),
+            entry_allowed=True,
+            frequency_roll=7,
+            encounter_rolls=EncounterRolls(0, 0, 0),
+        )
+        self.assertTrue(step.walk.warp_triggered)
+        self.assertTrue(step.walk.encounter_suppressed)
+        self.assertTrue(step.frequency.roll_hit)
+        self.assertTrue(step.frequency.encounter_suppressed)
+        self.assertFalse(step.frequency.encounter_triggered)
+        self.assertEqual(runtime.encounter_frequency.current, 8)
+        self.assertIsNone(step.encounter)
+        self.assertEqual(domain.world.player_position, MapPosition(2000, 10, 11))
+
+    def test_blocked_frequency_walk_does_not_touch_cep(self):
+        domain = SinglePlayerHistoricalDomain(static=make_static())
+        domain.persistent.character = make_player()
+        topology = make_topology()
+        place_player_on_topology(domain, topology, MapPosition(2000, 10, 11))
+        runtime = SinglePlayerHistoricalRuntime(
+            domain,
+            topology,
+            encounter_frequency=EncounterFrequencyState(
+                current=15,
+                minimum=10,
+                maximum=20,
+            ),
+        )
+
+        step = runtime.walk_step_with_frequency(
+            destination=MapPosition(2000, 11, 11),
+            entry_allowed=False,
+            frequency_roll=0,
+            encounter_rolls=EncounterRolls(0, 0, 0),
+        )
+        self.assertFalse(step.walk.moved)
+        self.assertIsNone(step.frequency)
+        self.assertEqual(runtime.encounter_frequency.current, 15)
 
     def test_blocked_walk_never_generates_encounter_even_if_rolls_are_supplied(self):
         domain = SinglePlayerHistoricalDomain(static=make_static())
