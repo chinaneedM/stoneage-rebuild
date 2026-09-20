@@ -28,6 +28,14 @@ from tools.stoneage_battle_core_model import (
     battle_kill_profit,
     battle_kill_profit_scan,
     ride_pet_exp_from_enemy,
+    BattleDropItem,
+    DropRecipientTicket,
+    DropAllocationRoll,
+    BattleDropAllocation,
+    BattleDropSettlement,
+    enemy_item_probability_hit,
+    allocate_battle_drop_items,
+    settle_player_battle_drops,
 )
 
 
@@ -288,6 +296,80 @@ class BattleCoreModelTests(unittest.TestCase):
         self.assertGreater(value,0)
         # The final counter probability also needs weapon matchup and luck.
         self.assertIsInstance(value,int)
+
+
+    def test_enemy_drop_probability_preserves_fixed_and_legacy_scales(self):
+        self.assertFalse(enemy_item_probability_hit(0,None))
+        self.assertTrue(enemy_item_probability_hit(1,0))
+        self.assertFalse(enemy_item_probability_hit(1,1))
+        self.assertTrue(enemy_item_probability_hit(1000,999))
+        self.assertTrue(enemy_item_probability_hit(100,99,fixed_itemprob=False))
+        with self.assertRaises(ValueError):
+            enemy_item_probability_hit(0,0)
+        with self.assertRaises(ValueError):
+            enemy_item_probability_hit(1001,0)
+
+    def test_drop_allocation_routes_pet_ticket_to_owner_without_deduping_tickets(self):
+        items=(BattleDropItem('item:a',101),BattleDropItem('item:b',102))
+        result=allocate_battle_drop_items(
+            items,
+            (
+                DropRecipientTicket('player:hero','player:hero'),
+                DropRecipientTicket('pet:ally','player:hero'),
+            ),
+            (DropAllocationRoll(0),DropAllocationRoll(1)),
+        )
+        self.assertIsInstance(result,BattleDropAllocation)
+        self.assertEqual(result.pending_by_player_entry_id['player:hero'],items)
+        self.assertEqual(result.destroyed_items,())
+
+    def test_drop_buffer_full_branch_discards_or_replaces_with_explicit_rng(self):
+        old=(
+            BattleDropItem('old:0',10),
+            BattleDropItem('old:1',11),
+            BattleDropItem('old:2',12),
+        )
+        discarded=allocate_battle_drop_items(
+            (BattleDropItem('new:discard',20),),
+            (DropRecipientTicket('player','player'),),
+            (DropAllocationRoll(0,False,None),),
+            pending_by_player_entry_id={'player':old},
+        )
+        self.assertEqual(discarded.pending_by_player_entry_id['player'],old)
+        self.assertEqual(discarded.destroyed_items,(BattleDropItem('new:discard',20),))
+        replaced=allocate_battle_drop_items(
+            (BattleDropItem('new:keep',21),),
+            (DropRecipientTicket('player','player'),),
+            (DropAllocationRoll(0,True,1),),
+            pending_by_player_entry_id={'player':old},
+        )
+        self.assertEqual(
+            replaced.pending_by_player_entry_id['player'],
+            (old[0],BattleDropItem('new:keep',21),old[2]),
+        )
+        self.assertEqual(replaced.destroyed_items,(old[1],))
+
+    def test_drop_buffer_rng_is_not_consumed_before_buffer_is_full(self):
+        with self.assertRaises(ValueError):
+            allocate_battle_drop_items(
+                (BattleDropItem('item',10),),
+                (DropRecipientTicket('player','player'),),
+                (DropAllocationRoll(0,False,None),),
+            )
+
+    def test_drop_settlement_uses_first_empty_bag_slots_and_destroys_overflow(self):
+        items=(
+            BattleDropItem('item:0',10),
+            BattleDropItem('item:1',11),
+            BattleDropItem('item:2',12),
+        )
+        result=settle_player_battle_drops(items,tuple(range(18)))
+        self.assertIsInstance(result,BattleDropSettlement)
+        self.assertEqual(dict(result.inventory_additions_by_slot),{18:items[0],19:items[1]})
+        self.assertEqual(result.destroyed_items,(items[2],))
+        dead=settle_player_battle_drops(items,(),player_alive=False)
+        self.assertEqual(dict(dead.inventory_additions_by_slot),{})
+        self.assertEqual(dead.destroyed_items,items)
 
 
 if __name__=="__main__":

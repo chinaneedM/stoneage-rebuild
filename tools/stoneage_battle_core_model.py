@@ -542,3 +542,209 @@ def battle_kill_profit_scan(
         pet_variable_ai_delta_by_participant_id=MappingProxyType(variable_ai),
         kill_count_delta_by_participant_id=MappingProxyType(kill_count),
     )
+
+
+# Stable descendant battle-drop constants.
+ENEMY_DROP_SLOT_COUNT=10
+BATTLE_PENDING_DROP_MAX=3
+ITEMPROB_FIXED_SCALE=1000
+ITEMPROB_LEGACY_SCALE=100
+
+
+@dataclass(frozen=True)
+class BattleDropItem:
+    """Identity of an already-instantiated enemy-held item."""
+    instance_id: str
+    template_id: int
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self,'instance_id',str(self.instance_id))
+        object.__setattr__(self,'template_id',int(self.template_id))
+        if not self.instance_id:
+            raise ValueError('drop item instance_id must not be empty')
+
+
+@dataclass(frozen=True)
+class DropRecipientTicket:
+    """One attack-list ticket and the player entry that receives its loot."""
+    participant_id: str
+    player_entry_id: str
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self,'participant_id',str(self.participant_id))
+        object.__setattr__(self,'player_entry_id',str(self.player_entry_id))
+        if not self.participant_id or not self.player_entry_id:
+            raise ValueError('drop recipient ids must not be empty')
+
+
+@dataclass(frozen=True)
+class DropAllocationRoll:
+    """Explicit RNG consumed for one enemy-held item during profit scanning."""
+    recipient_index: int
+    replace_when_full: bool | None = None
+    replacement_slot: int | None = None
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self,'recipient_index',int(self.recipient_index))
+        if self.replacement_slot is not None:
+            object.__setattr__(self,'replacement_slot',int(self.replacement_slot))
+
+
+@dataclass(frozen=True)
+class BattleDropAllocation:
+    pending_by_player_entry_id: Mapping[str,tuple[BattleDropItem,...]]
+    destroyed_items: tuple[BattleDropItem,...]
+
+
+@dataclass(frozen=True)
+class BattleDropSettlement:
+    inventory_additions_by_slot: Mapping[int,BattleDropItem]
+    destroyed_items: tuple[BattleDropItem,...]
+
+
+def enemy_item_probability_hit(probability,roll,*,fixed_itemprob=True):
+    """Resolve ITEMPROB using the selected preserved descendant branch."""
+    scale=ITEMPROB_FIXED_SCALE if fixed_itemprob else ITEMPROB_LEGACY_SCALE
+    probability=int(probability)
+    if probability < 0 or probability > scale:
+        raise ValueError(f'item probability must be in 0..{scale}')
+    if probability == 0:
+        if roll is not None:
+            raise ValueError('zero item probability consumes no RNG roll')
+        return False
+    if roll is None:
+        raise ValueError('non-zero item probability requires an RNG roll')
+    roll=int(roll)
+    if not 0 <= roll < scale:
+        raise ValueError(f'item probability roll must be in 0..{scale-1}')
+    return roll < probability
+
+
+def allocate_battle_drop_items(
+    items: Sequence[BattleDropItem],
+    attack_list: Sequence[DropRecipientTicket],
+    rolls: Sequence[DropAllocationRoll],
+    *,
+    pending_by_player_entry_id: Mapping[str,Sequence[BattleDropItem]] | None = None,
+):
+    """Allocate instantiated enemy items at the three-slot battle buffer seam."""
+    items=tuple(
+        item if isinstance(item,BattleDropItem) else BattleDropItem(*item)
+        for item in items
+    )
+    tickets=tuple(
+        ticket if isinstance(ticket,DropRecipientTicket)
+        else DropRecipientTicket(*ticket)
+        for ticket in attack_list
+    )
+    rolls=tuple(
+        roll if isinstance(roll,DropAllocationRoll)
+        else DropAllocationRoll(*roll)
+        for roll in rolls
+    )
+    if not tickets:
+        raise ValueError('drop attack_list must contain at least one ticket')
+    if len(items) != len(rolls):
+        raise ValueError('one drop allocation roll is required per item')
+
+    pools={
+        str(owner):[
+            item if isinstance(item,BattleDropItem) else BattleDropItem(*item)
+            for item in values
+        ]
+        for owner,values in (pending_by_player_entry_id or {}).items()
+    }
+    for owner,pool in pools.items():
+        if len(pool) > BATTLE_PENDING_DROP_MAX:
+            raise ValueError(
+                f'pending drop pool for {owner} exceeds {BATTLE_PENDING_DROP_MAX}'
+            )
+
+    seen=set()
+    for pool in pools.values():
+        for item in pool:
+            if item.instance_id in seen:
+                raise ValueError(f'duplicate drop item instance {item.instance_id}')
+            seen.add(item.instance_id)
+    for item in items:
+        if item.instance_id in seen:
+            raise ValueError(f'duplicate drop item instance {item.instance_id}')
+        seen.add(item.instance_id)
+
+    destroyed=[]
+    for item,roll in zip(items,rolls):
+        if not 0 <= roll.recipient_index < len(tickets):
+            raise ValueError('drop recipient_index outside attack-list range')
+        owner=tickets[roll.recipient_index].player_entry_id
+        pool=pools.setdefault(owner,[])
+        if len(pool) < BATTLE_PENDING_DROP_MAX:
+            if roll.replace_when_full is not None or roll.replacement_slot is not None:
+                raise ValueError('non-full drop pool consumes no replacement RNG')
+            pool.append(item)
+            continue
+        if roll.replace_when_full is None:
+            raise ValueError('full drop pool requires RAND(0,1) replacement decision')
+        if not bool(roll.replace_when_full):
+            if roll.replacement_slot is not None:
+                raise ValueError('discard branch consumes no replacement-slot RNG')
+            destroyed.append(item)
+            continue
+        if roll.replacement_slot is None:
+            raise ValueError('replacement branch requires RAND(0,2) slot')
+        slot=int(roll.replacement_slot)
+        if not 0 <= slot < BATTLE_PENDING_DROP_MAX:
+            raise ValueError('replacement slot must be in 0..2')
+        destroyed.append(pool[slot])
+        pool[slot]=item
+
+    return BattleDropAllocation(
+        pending_by_player_entry_id=MappingProxyType(
+            {owner:tuple(pool) for owner,pool in pools.items()}
+        ),
+        destroyed_items=tuple(destroyed),
+    )
+
+
+def settle_player_battle_drops(
+    pending_items: Sequence[BattleDropItem],
+    occupied_inventory_slots: Sequence[int],
+    *,
+    player_alive=True,
+    inventory_slot_count=20,
+):
+    """Settle pending drops to first empty bag slots; destroy non-fitting items."""
+    items=tuple(
+        item if isinstance(item,BattleDropItem) else BattleDropItem(*item)
+        for item in pending_items
+    )
+    if len(items) > BATTLE_PENDING_DROP_MAX:
+        raise ValueError('pending battle drops exceed three-slot source buffer')
+    inventory_slot_count=int(inventory_slot_count)
+    if inventory_slot_count <= 0:
+        raise ValueError('inventory_slot_count must be positive')
+    occupied={int(slot) for slot in occupied_inventory_slots}
+    if any(slot < 0 or slot >= inventory_slot_count for slot in occupied):
+        raise ValueError('occupied inventory slot outside bag range')
+    if not bool(player_alive):
+        return BattleDropSettlement(
+            inventory_additions_by_slot=MappingProxyType({}),
+            destroyed_items=items,
+        )
+
+    additions={}
+    destroyed=[]
+    for item in items:
+        empty=next(
+            (slot for slot in range(inventory_slot_count) if slot not in occupied),
+            None,
+        )
+        if empty is None:
+            destroyed.append(item)
+            continue
+        occupied.add(empty)
+        additions[empty]=item
+
+    return BattleDropSettlement(
+        inventory_additions_by_slot=MappingProxyType(additions),
+        destroyed_items=tuple(destroyed),
+    )
