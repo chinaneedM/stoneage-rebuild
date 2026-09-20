@@ -135,8 +135,7 @@ def allied_pet_participant(pet: PetActor) -> BattleParticipant:
     )
 
 
-def enemy_participant_from_birth(
-    encounter: EncounterRequest,
+def enemy_participant_from_spawn_state(
     variant: EnemyVariantBridge,
     template: PetTemplateBridge,
     birth: PetBirthBridgeState,
@@ -144,20 +143,14 @@ def enemy_participant_from_birth(
     spawn_index: int,
 ) -> BattleParticipant:
     spawn_index = int(spawn_index)
-    if not 0 <= spawn_index < encounter.max_enemy_count:
-        raise ValueError("spawn_index outside encounter enemy-count boundary")
-    if variant.enemy_id != encounter.enemy_variant_id.value:
-        raise ValueError("enemy variant does not match EncounterRequest")
-    if variant.tempno != encounter.pet_template_id.value:
-        raise ValueError("enemy template identity does not match EncounterRequest")
-    if template.tempno != encounter.pet_template_id.value:
-        raise ValueError("pet template does not match EncounterRequest")
+    if spawn_index < 0:
+        raise ValueError("spawn_index must be >= 0")
+    if variant.tempno != template.tempno:
+        raise ValueError("enemy variant/template identity mismatch")
     if birth.template_ref.namespace != "enemybase.TEMPNO":
         raise ValueError("enemy birth uses unexpected template namespace")
-    if int(birth.template_ref.template_id) != encounter.pet_template_id.value:
-        raise ValueError("enemy birth template does not match EncounterRequest")
-    if birth.level != encounter.level:
-        raise ValueError("enemy birth level does not match EncounterRequest")
+    if int(birth.template_ref.template_id) != template.tempno:
+        raise ValueError("enemy birth template does not match enemy template")
     if template.name is None:
         raise ValueError("enemy battle participant requires template name")
 
@@ -176,6 +169,35 @@ def enemy_participant_from_birth(
         fixed_vital=int(birth.internal_vital),
         source_variant_id=variant.enemy_id,
         source_template_id=template.tempno,
+    )
+
+
+def enemy_participant_from_birth(
+    encounter: EncounterRequest,
+    variant: EnemyVariantBridge,
+    template: PetTemplateBridge,
+    birth: PetBirthBridgeState,
+    *,
+    spawn_index: int,
+) -> BattleParticipant:
+    spawn_index = int(spawn_index)
+    if not 0 <= spawn_index < encounter.max_enemy_count:
+        raise ValueError("spawn_index outside encounter enemy-count boundary")
+    if variant.enemy_id != encounter.enemy_variant_id.value:
+        raise ValueError("enemy variant does not match EncounterRequest")
+    if variant.tempno != encounter.pet_template_id.value:
+        raise ValueError("enemy template identity does not match EncounterRequest")
+    if template.tempno != encounter.pet_template_id.value:
+        raise ValueError("pet template does not match EncounterRequest")
+    if int(birth.template_ref.template_id) != encounter.pet_template_id.value:
+        raise ValueError("enemy birth template does not match EncounterRequest")
+    if birth.level != encounter.level:
+        raise ValueError("enemy birth level does not match EncounterRequest")
+    return enemy_participant_from_spawn_state(
+        variant,
+        template,
+        birth,
+        spawn_index=spawn_index,
     )
 
 
