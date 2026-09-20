@@ -2,6 +2,13 @@ import unittest
 from types import MappingProxyType
 
 from tools.stoneage_battle_command_model import ATTACK, WAIT
+from tools.stoneage_battle_round_model import (
+    BATTLE_COM_ATTACK,
+    BATTLE_COM_WAIT,
+    BattleCombatProfile,
+    BattleCommand,
+    OrdinaryAttackRolls,
+)
 from tools.stoneage_enemy_spawn_model import EnemyBirthRolls
 from tools.stoneage_singleplayer_domain import (
     HistoricalStaticData,
@@ -217,6 +224,73 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
             error_status=True,
         )
         self.assertEqual(fallback.command.kind, WAIT)
+
+    def test_group_battle_runtime_resolves_one_ordinary_attack_round(self):
+        request = self.domain.request_encounter_group(group_roll=0)
+        spawned = self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=2,
+            selection_rolls=(0, 50),
+            birth_rolls=self.birth_rolls(),
+        )
+        battle = self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+        )
+        enemy_ids = [enemy.participant_id for enemy in battle.enemies]
+        commands = {
+            "player": BattleCommand(BATTLE_COM_ATTACK, command2=10),
+            **{
+                enemy_id: BattleCommand(BATTLE_COM_WAIT)
+                for enemy_id in enemy_ids
+            },
+        }
+        profiles = {
+            participant_id: BattleCombatProfile(
+                fixed_dex=100,
+                fixed_luck=0,
+                earth=0,
+                water=0,
+                fire=0,
+                wind=0,
+            )
+            for participant_id in ("player", *enemy_ids)
+        }
+        result = self.runtime.resolve_ordinary_battle_round(
+            battle,
+            commands=commands,
+            initiative_random_subtracts={
+                participant_id: 0
+                for participant_id in ("player", *enemy_ids)
+            },
+            slots={
+                "player": 0,
+                enemy_ids[0]: 10,
+                enemy_ids[1]: 11,
+            },
+            profiles=profiles,
+            attack_rolls={
+                "player": OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                    minimum_damage_roll_0_1=1,
+                )
+            },
+            defense_profile="newpower_70pct",
+            tie_break_order=("player", *enemy_ids),
+        )
+        player_event = next(
+            event for event in result.events
+            if event.participant_id == "player"
+        )
+        self.assertEqual(player_event.resolved_target_slot, 10)
+        self.assertIn(player_event.result, ("normal", "miss"))
+        self.assertLessEqual(
+            result.hp_by_slot[10],
+            battle.enemies[0].hp,
+        )
 
     def test_old_single_variant_encounter_projection_remains_compatible(self):
         request = self.domain.request_encounter(
