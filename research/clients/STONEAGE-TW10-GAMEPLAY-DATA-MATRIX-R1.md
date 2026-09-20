@@ -260,6 +260,61 @@ Reconstruction consequence:
 
 **EARLY LINEAGE:** `CA` carries `CHARINDEX|X|Y|ACTION|PARAM...`, supporting an event/action stream separate from persistent object state.
 
+### V1 DIRECT — `C` object-record parser
+
+The accepted v1 `C` callback at RVA `0x31260` is now field-bounded directly from the original binary.
+
+It first splits the incoming `C` envelope into comma-separated records. For each record, the legacy object classifier uses field-presence tests and then follows one of three directly observed layouts:
+
+**Character/object record — 12 fields in this v1 binary**
+
+| Token | Direct v1 parse role | Early-lineage semantic mapping |
+| ---: | --- | --- |
+| 1 | decimal token | character/object type |
+| 2 | string token → base-62 conversion | runtime character/object index |
+| 3 | string token → decimal conversion | X |
+| 4 | string token → decimal conversion | Y |
+| 5 | string token → decimal conversion | direction |
+| 6 | string token → decimal conversion | base graphic |
+| 7 | string token → decimal conversion | level |
+| 8 | decimal token | name color |
+| 9 | escaped string | name |
+| 10 | escaped string | self/free title |
+| 11 | string token → decimal conversion | walkable |
+| 12 | string token → decimal conversion | height |
+
+The v1 character branch contains **no token-13 extraction** before control leaves the main character-record path. The later generated control's `POPUPNAMECOLOR` field therefore must remain a later/versioned extension relative to this accepted v1 binary.
+
+**Ground item record — 6 fields**
+
+The v1 callback directly tests for a sixth token and then parses:
+
+1. base-62 runtime object ID;
+2. X;
+3. Y;
+4. graphic ID;
+5. integer class/type value;
+6. escaped information string.
+
+The human-readable names are lineage mappings; the six-position parse shape and conversion roles are V1 DIRECT.
+
+**Ground money record — 4 fields**
+
+If the sixth token is absent but a fourth token is present, the v1 callback parses:
+
+1. base-62 runtime object ID;
+2. X;
+3. Y;
+4. money amount.
+
+The later descendant source independently preserves the same three-way legacy parser, including presentation-only money graphics chosen client-side by amount. Those presentation constants remain lineage support unless separately fingerprinted in v1.
+
+Reconstruction consequence:
+
+- v1 world-state transport distinguishes runtime **character/object**, **ground-item** and **ground-money** records inside the same `C` envelope;
+- the accepted v1 character record is a 12-field layout, not the later 13+ field descendants;
+- runtime object IDs remain separate from server template IDs.
+
 ## Pet / enemy state matrix
 
 ### Client-visible pet state
@@ -428,6 +483,20 @@ Safe conclusion:
 
 - the 2.5 graph is a useful **server-content implementation bridge** for how NPC templates/create records can generate v1-style world objects and WN sessions;
 - exact 2.5 NPC scripts, coordinates, functionsets and later feature NPCs are not v1 content evidence.
+
+### V1 DIRECT — `WN` forwarding boundary
+
+The accepted v1 `WN` callback at RVA `0x328c0` contains no token parser of its own. Its only direct business call is target RVA `0x12930`.
+
+The bounded call prelude shows five incoming callback arguments pushed onward to that target without an intervening transformation. Combined with the already direct top-level receive shape (**4 integers + 1 string**), this establishes an original-client boundary in which the generated protocol decoder supplies a five-value window/session tuple and the `WN` callback forwards it to the client window subsystem.
+
+The early generated lineage names the tuple:
+
+`window type | button mask/type | sequence number | source object index | data`.
+
+Those semantic labels remain lineage names, but the five-value forwarding boundary and target RVA are V1 DIRECT.
+
+Reconstruction consequence: model NPC/window interaction as a **server-driven window session** with a decoded transport tuple forwarded into a client presentation subsystem. Do not model the client as owning authoritative NPC dialog/shop master data merely because later server bundles contain it.
 
 ## Battle and display surfaces
 
