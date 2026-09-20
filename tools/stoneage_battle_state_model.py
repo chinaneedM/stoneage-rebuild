@@ -69,10 +69,7 @@ class PersistentBattleState:
                 raise ValueError("finished battle requires winning_side 0 or 1")
 
         participants = _participant_map(self.session)
-        expected_exp_ids = {
-            pid for pid, participant in participants.items()
-            if participant.side == "player"
-        }
+        expected_exp_ids = set(_exp_recipient_ids(self.session))
         actual_exp_ids = {str(pid) for pid in self.pending_exp_by_participant_id}
         if actual_exp_ids != expected_exp_ids:
             missing = sorted(expected_exp_ids - actual_exp_ids)
@@ -125,6 +122,24 @@ def _participant_map(session: BattleSession) -> dict[str, BattleParticipant]:
     return result
 
 
+def _exp_recipient_ids(session: BattleSession) -> tuple[str, ...]:
+    ids=[
+        str(participant.participant_id)
+        for participant in _session_participants(session)
+        if participant.side == "player"
+    ]
+    ride=session.ride_pet
+    if ride is not None:
+        if ride.side != "player" or ride.kind != "pet":
+            raise ValueError("ride EXP recipient must be a player-side pet")
+        if ride.source_pet_slot is None:
+            raise ValueError("ride EXP recipient lacks source pet slot")
+        ride_id=str(ride.participant_id)
+        if ride_id not in ids:
+            ids.append(ride_id)
+    return tuple(ids)
+
+
 def _freeze_mapping(values: Mapping) -> Mapping:
     return MappingProxyType(dict(values))
 
@@ -158,8 +173,7 @@ def begin_persistent_battle(
     }
     pending_exp = {
         pid: 0
-        for pid, participant in participants.items()
-        if participant.side == "player"
+        for pid in _exp_recipient_ids(session)
     }
     pending_pet_variable_ai = {
         pid: 0
@@ -265,9 +279,10 @@ def _pending_profit_after_ordinary_round(
 ) -> tuple[Mapping[str,int],Mapping[str,int]]:
     """Apply the source-shaped kill-profit allocator to ordinary kill events.
 
-    The current ordinary resolver produces a one-entry attack list. Ride-pet
-    identity and multi-entry combo/counter/status attack lists are intentionally
-    left for their own execution seams, but the reward loop itself is shared.
+    The current ordinary resolver produces a one-entry attack list. An explicit
+    ride-pet snapshot is attached only to a player recipient, matching
+    BATTLE_getRidePet(); combo/counter/status multi-entry attribution remains
+    outside this execution seam.
     """
     participants = _participant_map(state.session)
     participant_id_by_slot = {
@@ -305,6 +320,7 @@ def _pending_profit_after_ordinary_round(
                 f"enemy {target_id} lacks reward EXP provenance"
             )
 
+        ride=state.session.ride_pet if actor.kind == "player" else None
         profit=battle_kill_profit(
             int(target.reward_exp),
             int(target.level),
@@ -313,10 +329,22 @@ def _pending_profit_after_ordinary_round(
                     actor_id,
                     int(actor.level),
                     str(actor.kind),
+                    ride_pet_id=(
+                        None if ride is None else str(ride.participant_id)
+                    ),
+                    ride_pet_level=(
+                        None if ride is None else int(ride.level)
+                    ),
                 ),
             ),
         )
         for participant_id,award in profit.direct_exp_by_participant_id.items():
+            pending_exp[participant_id]+=int(award)
+        for participant_id,award in profit.ride_exp_by_participant_id.items():
+            if participant_id not in pending_exp:
+                raise ValueError(
+                    f"ride kill profit references unknown EXP recipient {participant_id}"
+                )
             pending_exp[participant_id]+=int(award)
         for participant_id,delta in (
             profit.pet_variable_ai_delta_by_participant_id.items()

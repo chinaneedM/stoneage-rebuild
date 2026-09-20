@@ -180,6 +180,24 @@ class SinglePlayerBattleLifecycleTests(unittest.TestCase):
         self.assertEqual(session.allied_pets[0].source_pet_slot, 2)
         self.assertEqual(session.enemies[0].source_variant_id, 700)
 
+        ride_session = begin_battle(
+            domain,
+            request,
+            enemies=(enemy_spawn(request),),
+            ride_pet_slot=2,
+        )
+        self.assertEqual(ride_session.allied_pets, ())
+        self.assertIsNotNone(ride_session.ride_pet)
+        self.assertEqual(ride_session.ride_pet.participant_id, "pet:2")
+        self.assertEqual(ride_session.ride_pet.source_pet_slot, 2)
+        with self.assertRaises(KeyError):
+            begin_battle(
+                domain,
+                request,
+                enemies=(enemy_spawn(request),),
+                ride_pet_slot=4,
+            )
+
         with self.assertRaises(ValueError):
             begin_battle(domain, request, enemies=())
 

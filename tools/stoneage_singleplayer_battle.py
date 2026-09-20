@@ -70,6 +70,7 @@ class BattleSession:
     allied_pets: tuple[BattleParticipant, ...]
     enemies: tuple[BattleParticipant, ...]
     evidence_profile: str = "DESCENDANT_BATTLE_CORE_R1"
+    ride_pet: BattleParticipant | None = None
 
 
 @dataclass(frozen=True)
@@ -223,12 +224,31 @@ def _allied_battle_participants(
     return tuple(allies)
 
 
+def _ride_pet_reward_recipient(
+    domain: SinglePlayerHistoricalDomain,
+    ride_pet_slot: int | None,
+) -> BattleParticipant | None:
+    """Snapshot the owned pet selected by CHAR_RIDEPET for reward attribution.
+
+    Stable BATTLE_getRidePet() resolves this pet through the player's owned-pet
+    slot only after a player actor receives kill profit. It is therefore kept
+    separate from the active allied battle-actor list.
+    """
+    if ride_pet_slot is None:
+        return None
+    slot=PetSlot(int(ride_pet_slot))
+    if slot not in domain.persistent.pets:
+        raise KeyError(f"ride pet slot {slot.value} is not populated")
+    return allied_pet_participant(domain.persistent.pets[slot])
+
+
 def begin_group_battle(
     domain: SinglePlayerHistoricalDomain,
     encounter: GroupEncounterRequest,
     *,
     enemies: Sequence[BattleParticipant],
     allied_pet_slots: Sequence[int] = (),
+    ride_pet_slot: int | None = None,
 ) -> BattleSession:
     position = domain.world.player_position
     if position is None:
@@ -260,6 +280,7 @@ def begin_group_battle(
         player=player_participant(domain.persistent.character),
         allied_pets=_allied_battle_participants(domain, allied_pet_slots),
         enemies=enemy_tuple,
+        ride_pet=_ride_pet_reward_recipient(domain, ride_pet_slot),
     )
 
 
@@ -269,6 +290,7 @@ def begin_battle(
     *,
     enemies: Sequence[BattleParticipant],
     allied_pet_slots: Sequence[int] = (),
+    ride_pet_slot: int | None = None,
 ) -> BattleSession:
     position = domain.world.player_position
     if position is None:
@@ -299,6 +321,7 @@ def begin_battle(
         player=player_participant(domain.persistent.character),
         allied_pets=_allied_battle_participants(domain, allied_pet_slots),
         enemies=enemy_tuple,
+        ride_pet=_ride_pet_reward_recipient(domain, ride_pet_slot),
     )
 
 

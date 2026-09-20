@@ -41,6 +41,7 @@ def participant(
     quick=50,
     level=10,
     reward_exp=None,
+    source_pet_slot=None,
 ):
     return BattleParticipant(
         participant_id=pid,
@@ -55,10 +56,11 @@ def participant(
         name=pid,
         fixed_vital=40,
         reward_exp=reward_exp,
+        source_pet_slot=source_pet_slot,
     )
 
 
-def session(player, enemies, pets=()):
+def session(player, enemies, pets=(), ride_pet=None):
     encounter = EncounterRequest(
         position=MapPosition(2000, 10, 10),
         area_index=1,
@@ -74,6 +76,7 @@ def session(player, enemies, pets=()):
         player=player,
         allied_pets=tuple(pets),
         enemies=tuple(enemies),
+        ride_pet=ride_pet,
     )
 
 
@@ -230,6 +233,55 @@ class PersistentBattleStateTests(unittest.TestCase):
                 attack_rolls={},
                 defense_profile="newpower_70pct",
             )
+
+    def test_player_kill_also_awards_exp_to_nonparticipant_ride_pet(self):
+        player = participant(
+            "player", "player", "player",
+            attack=200, quick=100, level=10,
+        )
+        ride = participant(
+            "pet:0", "player", "pet",
+            quick=20, level=16, source_pet_slot=0,
+        )
+        enemy = participant(
+            "enemy", "enemy", "enemy",
+            hp=30, defense=20, quick=20, level=10, reward_exp=1500,
+        )
+        state = begin_persistent_battle(
+            session(player, (enemy,), ride_pet=ride),
+            slots={"player": 0, "enemy": 10},
+        )
+        self.assertEqual(
+            dict(state.pending_exp_by_participant_id),
+            {"player": 0, "pet:0": 0},
+        )
+        self.assertNotIn("pet:0", state.hp_by_participant_id)
+
+        result = resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player": BattleCommand(BATTLE_COM_ATTACK, command2=10),
+                "enemy": BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player": 0, "enemy": 0},
+            profiles={"player": profile(), "enemy": profile()},
+            attack_rolls={
+                "player": OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(
+            dict(result.after.pending_exp_by_participant_id),
+            {"player": 1500, "pet:0": 840},
+        )
+        self.assertEqual(
+            dict(result.after.pending_pet_variable_ai_by_participant_id),
+            {},
+        )
 
     def test_enemy_death_awards_only_the_player_side_actor_that_caused_it(self):
         player = participant("player", "player", "player", quick=40)
