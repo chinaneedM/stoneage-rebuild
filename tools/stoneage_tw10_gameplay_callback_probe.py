@@ -19,9 +19,8 @@ from tools.stoneage_tw10_mapcache_binary_probe import (
     image_layout,
     imported_call,
     rva_to_offset,
-    section_name_for_va,
 )
-from tools.stoneage_tw10_protocol_handoff_probe import md
+from tools.stoneage_tw10_protocol_handoff_probe import md, section_name_for_va
 
 CALLBACKS = {
     "S": 0x2F670,
