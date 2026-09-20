@@ -3,8 +3,13 @@ import unittest
 
 from tools.stoneage_battle_core_model import (
     ENEMY, PET, PLAYER,
+    attribute_adjusted_damage,
+    attribute_core_damage,
     critical_bonus,
+    critical_damage,
     critical_per_10000,
+    elemental_vector,
+    field_attribute_power,
     dodge_per_10000,
     early_action_value,
     early_item_action_value,
@@ -43,6 +48,42 @@ class BattleCoreModelTests(unittest.TestCase):
         self.assertEqual(physical_base_damage(70,70,4),4)
         self.assertEqual(physical_base_damage(100,70,0),53)
         self.assertEqual(physical_base_damage(100,70,12),65)
+
+    def test_elemental_vector_and_attribute_core(self):
+        self.assertEqual(elemental_vector(0,0,0,0),(0,0,0,0,100))
+        self.assertEqual(elemental_vector(25,25,25,25),(25,25,25,25,0))
+        # Neutral-on-neutral preserves ordinary damage.
+        self.assertEqual(
+            attribute_core_damage(100,(0,0,0,0),(0,0,0,0)),
+            100,
+        )
+        # Fire overcomes wind and is weak against water in the stable table.
+        self.assertEqual(
+            attribute_core_damage(100,(0,0,100,0),(0,0,0,100)),
+            150,
+        )
+        self.assertEqual(
+            attribute_core_damage(100,(0,0,100,0),(0,100,0,0)),
+            60,
+        )
+
+    def test_field_attribute_ratio_and_critical_addition(self):
+        self.assertEqual(field_attribute_power((0,0,0,0),"none",0),0.5)
+        self.assertAlmostEqual(
+            field_attribute_power((100,0,0,0),"earth",100),
+            1.0,
+        )
+        self.assertEqual(
+            attribute_adjusted_damage(
+                100,
+                (100,0,0,0),
+                (0,0,0,0),
+                field_attr="earth",
+                field_power=100,
+            ),
+            300,
+        )
+        self.assertEqual(critical_damage(60,100,50,25),160)
 
     def test_guard_distribution_edges(self):
         cases={
