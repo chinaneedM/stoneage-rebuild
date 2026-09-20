@@ -1214,15 +1214,30 @@ Supplemental source ledgers:
 - Remote validation **35509951036** passes with collision-model and runtime-integration regression coverage.
 - **Operational consequence:** movement no longer requires inventing a collision algorithm. Once a validated image-property dataset is recovered, the same runtime path becomes data-driven without redesign.
 
+## Movement-side encounter frequency / CEP loop — 2026-09-20
+
+- `research/mechanics/STONEAGE-ENCOUNTER-FREQUENCY-CEP-R1.md` records the stable-descendant movement-side encounter-frequency loop and explicitly keeps its earliest-commercial provenance OPEN.
+- `tools/stoneage_encounter_frequency_model.py` models runtime CEP independently from encounter-content selection:
+  - current CEP is clamped to the active min/max bounds;
+  - the base random domain is `0..119` from `rand()%120`;
+  - misses increment CEP by one up to max;
+  - an actual encounter resets CEP to min;
+  - an ordinary Warp-suppressed random hit neither resets nor enters the miss-increment branch;
+  - missing zone lookup preserves prior bounds, matching the inspected replace-only-on-success behavior.
+- `SinglePlayerHistoricalRuntime` now owns `EncounterFrequencyState` directly instead of recreating a network connection object.
+- New runtime paths preserve the fixed-source ordering: refresh encounter bounds from the departure coordinate after a successful walk, resolve CEP with explicit randomness, then request encounter content at the current world position only when the CEP decision actually dispatches an encounter.
+- The older direct encounter-selection path remains available as a deterministic bridge/test entry point and is not silently reinterpreted as CEP behavior.
+- Remote validation **35510186803** passes with CEP unit tests and runtime soft-pity/Warp-suppression regression coverage.
+- **Operational consequence:** encounter frequency and encounter content selection are now separate deterministic subsystems. The remaining combat-side critical path is enemy-count/birth orchestration and the first battle-round command boundary.
+
 ## Immediate next actions
 
-1. **Promote the movement-side encounter-frequency/CEP loop into the runtime.** Preserve the recovered clamp/increment/reset soft-pity ordering and keep its exact evidence grade/version boundary explicit.
-2. **Close enemy spawn-count/birth orchestration and the first battle-round command boundary.** Use explicit recovered formulas and deterministic rolls; do not invent AI, drop or victory semantics that remain unresolved.
-3. **Recover/validate the early image-number collision-property dataset.** The collision algorithm is closed; autonomous historical movement now needs provenance-safe Taiwan-v1.0/JSS `WALKABLE/HAVEHEIGHT` image metadata rather than descendant table substitution.
-4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
-5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
-6. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
-7. **Keep historical reconstruction and later redesign separate.** The historical loop is now executable at skeleton level; optimization, automation/外挂-like convenience features and single-player redesign remain explicit DESIGN layers rather than silent historical rewrites.
+1. **Close enemy spawn-count/birth orchestration and the first battle-round command boundary.** Use explicit recovered formulas and deterministic rolls; do not invent AI, drop or victory semantics that remain unresolved.
+2. **Recover/validate the early image-number collision-property dataset.** The collision algorithm is closed; autonomous historical movement now needs provenance-safe Taiwan-v1.0/JSS `WALKABLE/HAVEHEIGHT` image metadata rather than descendant table substitution.
+3. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
+4. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
+5. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
+6. **Keep historical reconstruction and later redesign separate.** The historical loop is now executable at skeleton level; optimization, automation/外挂-like convenience features and single-player redesign remain explicit DESIGN layers rather than silent historical rewrites.
 
 
 ## Continuity status
