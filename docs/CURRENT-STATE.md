@@ -1068,15 +1068,39 @@ Supplemental source ledgers:
 - The matrix defines the first reconstruction-safe gameplay schemas for `CharacterState`, `WorldObject`, `PetState`, `PetSkillView`, `ItemView/ItemInstance` and `NPCWindowSession`, while quarantining later 2.5-only fields from the v1 baseline.
 - **Operational consequence:** broad protocol-name inventory and first-pass server-table correlation are complete enough to leave the critical path. Highest priority is now v1 callback-internal parsing for `S`, `C`, `I` and `WN`, so selected inner string fields can be promoted from EARLY LINEAGE to V1 DIRECT.
 
+## Taiwan v1.0 field-level gameplay schema — 2026-09-20
+
+- The callback-internal parsing pass is now complete enough to define a reconstruction baseline directly from the accepted Taiwan v1.0 client.
+- The original `S` status dispatcher is binary-decoded as exactly ten implemented categories: **C, D, E, I, J, K, M, N, P, W**. `F,G,H,L,O,Q,R,S,T,U,V` share the default branch in this compiled client.
+- Shared original-client token helpers are structurally fingerprinted: string-token extraction `0x46c70`, decimal-token conversion role `0x46da0`, base-62 token conversion role `0x46e70`, and escape-decoding role `0x46ff0`.
+- Direct v1 full player state `S:P` ends at token **26**: base-62 update mask, decimal tokens 2..24, escaped strings 25..26. Later transmigration/ride/base-graphic extensions are outside this compiled layout.
+- Direct v1 full pet state `S:K` ends at token **21**: base-62 update mask, decimal tokens 2..19, escaped strings 20..21. Later pet transmigration/fusion/ride/bless extensions are outside this compiled layout.
+- The v1 `C` callback is now bounded directly into three legacy world-record variants:
+  - character/object record = **12 fields**;
+  - ground-item record = **6 fields**;
+  - ground-money record = **4 fields**.
+  The later character-field `POPUPNAMECOLOR` at token 13 is not read by this v1 character path.
+- The v1 inventory/pet-skill layouts are now binary-direct:
+  - full inventory `S:I` = **20 slots × 9 fields**;
+  - incremental `I` = **10 fields per record** including explicit slot index;
+  - pet-skill view `S:W` = **7 skill slots × 5 fields**.
+  Neither v1 item layout contains the later durability/damage field.
+- The v1 `WN` callback is proven as a five-value forwarding boundary into target RVA `0x12930`, preserving the server-driven window/session architecture.
+- Canonical derived binary evidence: `research/recovered/STONEAGE-TW10-GAMEPLAY-CALLBACKS-R1.txt`. Canonical interpretation: `research/clients/STONEAGE-TW10-GAMEPLAY-DATA-MATRIX-R1.md`.
+- A canonical machine-readable baseline now exists at `research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json`. It separates **V1_DIRECT position/type/count evidence** from **EARLY_LINEAGE semantic names**, preserves explicit 2.5 bridge policy and lists direct version exclusions.
+- Schema validation is enforced by `tests/test_stoneage_tw10_gameplay_schema.py` and `.github/workflows/validate-stoneage-tw10-gameplay-schema.yml`; GitHub Actions run **35506265458** completed successfully.
+- **Operational consequence:** broad client protocol and first-pass field-layout archaeology are no longer the critical path. The project can now start constructing reconstruction-side gameplay models and explicit v1-runtime ↔ server-master bridge mappings without importing later 2.5-only fields into the historical baseline.
+
 ## Immediate next actions
 
-1. **Fingerprint the accepted v1 `S`, `C`, `I` and `WN` callback internals.** Identify their shared token parsers, category/switch structure and field extraction patterns. Prioritize direct confirmation of player status, pet status, world-object identity/position, item view fields and NPC/window session fields.
-2. **Promote only independently confirmed inner fields in the gameplay data matrix.** Keep the early 2000 generated protocol as the semantic control and the mixed 2.5 tables as server-data bridges; do not infer missing v1 fields from either source.
-3. **Turn confirmed matrix fields into machine-readable reconstruction schemas/tests.** Preserve runtime IDs separately from authoritative template IDs and keep explicit evidence tags per field.
-4. **Use the Taiwan 1.0 baseline as the comparison anchor for future artifact recovery.** Continue targeted JSS 1999 beta/retail recovery and Korean Inium/Hananet/CNET/GameTime exact-token recovery, but do not let broad archaeology block technical extraction.
+1. **Build explicit reconstruction bridge models from the v1 gameplay schema to the preserved 2.5 master-data corpus.** Start with pet/enemy, pet-skill, item and NPC/window identity relationships. Keep runtime object/slot IDs separate from authoritative template IDs and tag every bridge field as 2.5-only, lineage-supported or unresolved.
+2. **Implement the first reconstruction-side data models/tests against `STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json`.** Prioritize CharacterState, PetState, ItemInstance/ItemView, PetSkillView, WorldObject and NPCWindowSession. These models should consume the schema rather than hard-code later descendant layouts.
+3. **Close remaining server-authoritative formula/identity gaps only where implementation needs them.** Highest-value targets are pet/enemy template→runtime derivation, item template→client-view derivation, pet-skill template→client-view derivation and NPC template/create→world-object/window-session derivation.
+4. **Use the Taiwan 1.0 baseline as the comparison anchor for future artifact recovery.** Continue targeted JSS 1999 beta/retail and Korean Inium/Hananet/CNET/GameTime recovery, but do not let broad archaeology block reconstruction engineering.
 5. **Keep `〖2.5纯净〗` `tid=2132`, Korean 1.74 and Japanese 1.74a as secondary lineage/diff targets.** Version labels remain clues until byte provenance is recovered.
-6. **Treat the recovered mixed 2.5 bundle as a resource-format/server-data bridge, not as the historical baseline.**
-7. **Keep archaeology separate from redesign.** Later reconstruction choices remain separate DESIGN decisions.
+6. **Treat the recovered mixed 2.5 bundle as a bridge, not the historical baseline.** Never backfill a v1 field merely because it exists in a 2.5 table.
+7. **Keep archaeology separate from redesign.** Historical compatibility models come first; later single-player redesign/optimization decisions remain separate DESIGN decisions.
+
 
 ## Continuity status
 
