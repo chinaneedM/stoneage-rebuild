@@ -1,5 +1,8 @@
 import unittest
 
+from tools.stoneage_tw10_25_encounter_bridge import EnemyVariantBridge
+from tools.stoneage_tw10_gameplay_model import load_gameplay_schema
+
 from tools.stoneage_tw10_25_bridge_model import (
     ItemTemplateBridge,
     NpcCreateBridge,
@@ -9,6 +12,7 @@ from tools.stoneage_tw10_25_bridge_model import (
     PetTemplateBridge,
     build_npc_runtime_bridge,
     build_pet_birth_bridge,
+    build_reconstructed_pet_state,
     c_atoi,
 )
 
@@ -110,6 +114,137 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
         self.assertEqual(projected["quick"], 26)
         self.assertEqual(projected["graphic_id"], 10123)
         self.assertNotIn("max_mp", projected)
+
+    def test_enemy_variant_template_birth_composes_exact_v1_pet_state(self):
+        variant = EnemyVariantBridge.from_enemy(
+            {
+                "ID": 700,
+                "TEMPNO": 88,
+                "LV_MIN": 3,
+                "LV_MAX": 4,
+                "CREATEMAXNUM": 2,
+                "CREATEMINNUM": 1,
+                "TACTICS": 1,
+                "EXP": -1,
+                "DUELPOINT": 0,
+                "STYLE": 0,
+                "PETFLG": 1,
+            }
+        )
+        template = PetTemplateBridge.from_enemybase(
+            {
+                "NAME": "Stone Wolf",
+                "TEMPNO": 88,
+                "INITNUM": 100,
+                "LVUPPOINT": "5.00",
+                "BASEVITAL": 20,
+                "BASESTR": 20,
+                "BASETGH": 20,
+                "BASEDEX": 20,
+                "IMGNUMBER": 10123,
+                "MODAI": 4,
+                "EARTHAT": 50,
+                "WATERAT": 50,
+                "FIREAT": 0,
+                "WINDAT": 0,
+                "SLOT": 4,
+                "PETSKILL1": 1,
+                "PETSKILL2": 2,
+                "PETSKILL3": 41,
+            }
+        )
+        state = build_reconstructed_pet_state(
+            variant,
+            template,
+            pet_slot=2,
+            level_roll=0,
+            birth_offsets=(-2, -1, 1, 2),
+            spawn_allocation_rolls=(0, 0, 0, 1, 1, 2, 2, 2, 3, 3),
+            mp=80,
+            max_mp=100,
+            exp=12,
+            max_exp=200,
+            rename_flag=1,
+            free_name="Buddy",
+            runtime_object_id=9001,
+        )
+        schema = load_gameplay_schema()
+        expected_names = [
+            f["name"] for f in schema["records"]["status_pet_full"]["fields"]
+        ]
+        fields = state.v1_pet_state_fields()
+        self.assertEqual(list(fields), expected_names)
+        self.assertEqual(fields["update_mask"], 1)
+        self.assertEqual(fields["graphic_id"], 10123)
+        self.assertEqual((fields["hp"], fields["max_hp"]), (168, 168))
+        self.assertEqual((fields["mp"], fields["max_mp"]), (80, 100))
+        self.assertEqual((fields["exp"], fields["max_exp"]), (12, 200))
+        self.assertEqual(fields["level"], 3)
+        self.assertEqual((fields["attack"], fields["defense"], fields["quick"]), (29, 32, 26))
+        self.assertEqual(fields["name"], "Stone Wolf")
+        self.assertEqual(fields["free_name"], "Buddy")
+        self.assertEqual(state.skill_ids, (1, 2, 41))
+
+        self.assertEqual(state.variant_ref.namespace, "enemy.ID")
+        self.assertEqual(state.variant_ref.template_id, 700)
+        self.assertEqual(state.template_ref.namespace, "enemybase.TEMPNO")
+        self.assertEqual(state.template_ref.template_id, 88)
+        self.assertEqual(state.pet_slot, 2)
+        self.assertEqual(state.runtime_object_id, 9001)
+        self.assertNotEqual(state.variant_ref.template_id, state.template_ref.template_id)
+        self.assertNotEqual(state.pet_slot, state.template_ref.template_id)
+        self.assertNotEqual(state.runtime_object_id, state.template_ref.template_id)
+
+    def test_pet_composition_rejects_enemy_template_identity_mismatch(self):
+        variant = EnemyVariantBridge.from_enemy(
+            {
+                "ID": 700,
+                "TEMPNO": 88,
+                "LV_MIN": 1,
+                "LV_MAX": 1,
+                "CREATEMAXNUM": 1,
+                "CREATEMINNUM": 1,
+                "TACTICS": 1,
+                "EXP": -1,
+                "DUELPOINT": 0,
+                "STYLE": 0,
+                "PETFLG": 1,
+            }
+        )
+        template = PetTemplateBridge.from_enemybase(
+            {
+                "NAME": "Wrong",
+                "TEMPNO": 89,
+                "INITNUM": 100,
+                "LVUPPOINT": 5,
+                "BASEVITAL": 20,
+                "BASESTR": 20,
+                "BASETGH": 20,
+                "BASEDEX": 20,
+                "IMGNUMBER": 1,
+                "MODAI": 1,
+                "EARTHAT": 25,
+                "WATERAT": 25,
+                "FIREAT": 25,
+                "WINDAT": 25,
+                "SLOT": 4,
+            }
+        )
+        with self.assertRaises(ValueError):
+            build_reconstructed_pet_state(
+                variant,
+                template,
+                pet_slot=0,
+                level_roll=0,
+                birth_offsets=(0, 0, 0, 0),
+                spawn_allocation_rolls=(0, 0, 0, 1, 1, 2, 2, 2, 3, 3),
+                mp=0,
+                max_mp=0,
+                exp=0,
+                max_exp=0,
+                rename_flag=0,
+                free_name="",
+            )
 
     def test_pet_skill_client_view_excludes_server_behavior_fields(self):
         skill = PetSkillTemplateBridge.from_petskill(
