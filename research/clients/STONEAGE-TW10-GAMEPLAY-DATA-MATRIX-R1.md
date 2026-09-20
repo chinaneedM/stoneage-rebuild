@@ -664,6 +664,24 @@ Server behavior callback/formula remains a separate authoritative implementation
 - data payload
 - client selection/result
 
+## Machine-readable reconstruction schema
+
+The field-level baseline is now encoded in:
+
+- `research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json`
+- `tests/test_stoneage_tw10_gameplay_schema.py`
+- `.github/workflows/validate-stoneage-tw10-gameplay-schema.yml`
+
+GitHub Actions run **35506265458** validates the schema successfully.
+
+The JSON deliberately separates:
+
+- `position_evidence = V1_DIRECT` for original-client token position/type/count;
+- `semantic_evidence = EARLY_LINEAGE` for human-readable field names inherited from the early generated source family;
+- explicit 2.5 bridge policy and version exclusions.
+
+This is the canonical machine-readable input for reconstruction code. Later server/master-data IDs must be attached through explicit bridge mappings rather than overwriting these client/runtime identities.
+
 ## Next verification seam
 
 The first callback-internal field pass is now sufficiently closed for reconstruction work:
