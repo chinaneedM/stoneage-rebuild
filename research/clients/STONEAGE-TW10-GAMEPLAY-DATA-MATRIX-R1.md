@@ -119,19 +119,40 @@ The 21-character mapping is direct v1 evidence:
 
 The **category letters and branch RVAs are V1 DIRECT**. The human-readable meanings in the third column remain EARLY LINEAGE until the individual branches are field-by-field matched.
 
-The branch call shapes strongly reproduce the early parser structure:
+The shared parser helpers are now structurally fingerprinted from the v1 binary:
 
-- `C`: five calls to helper `0x46da0`;
-- `D`: two calls to `0x46da0`;
-- `E`: two calls to `0x46da0`;
-- `M`: three calls to `0x46da0`;
-- `J`: four `0x46da0`, two `0x46c70`, two `0x46ff0`;
-- `W`: three `0x46da0`, two `0x46c70`, two `0x46ff0`;
-- `I`: six `0x46da0`, three `0x46c70`, three `0x46ff0`;
-- `P`: 46 `0x46da0`, four `0x46c70`, four `0x46ff0` static callsites across full/partial update paths;
-- `K`: 36 `0x46da0`, four `0x46c70`, four `0x46ff0` static callsites across full/partial update paths.
+- `0x46c70` is the v1 **string-token extraction role**. C/I callsites supply the delimiter `'|'`, token index and output-buffer bound; the helper itself contains DBCS-aware scanning through `IsDBCSLeadByte`.
+- `0x46da0` is the v1 **decimal-integer-token role**. It has the shorter source/delimiter/index calling shape and directly calls `0x46c70` before an integer-conversion path. The later symbolic name `getIntegerToken` is lineage terminology, not a recovered v1 symbol.
+- `0x46e70` is the v1 **base-62-integer-token role** used for the bitmask/kubun fields in `P`, `K` and `N`. It directly calls `0x46c70` and a distinct conversion helper. The later symbolic name `getInteger62Token` remains lineage terminology.
+- `0x46ff0` is the v1 **escape-decoding role**: one pointer argument, paired immediately after extracted string fields, with its own decode helper.
 
-The C/I callback probe independently shows the same three helper RVAs in the same structural roles. Their exact semantic names are still being fingerprinted from the v1 helper bodies/callsites; R1 does not yet label the RVAs themselves as direct `getIntegerToken` / `getStringToken` / unescape symbols.
+This makes the following branch structure direct v1 evidence:
+
+| S category | Direct v1 token structure |
+| --- | --- |
+| `C` | decimal integer tokens 1..5 |
+| `D` | decimal integer tokens 1..2 |
+| `E` | decimal integer tokens 1..2 |
+| `M` | decimal integer tokens 1..3 |
+| `J` | decimal integers 1..4; escaped strings 5..6 |
+| `N` | base-62 mask token 1; decimal integers 2..6; escaped string 7 on the full-update path |
+| `P` | base-62 mask token 1; decimal integers 2..24; escaped strings 25..26 on the full-update path |
+| `K` | base-62 mask token 1; decimal integers 2..19; escaped strings 20..21 on the full-update path |
+| `W` | loop body contains three decimal-token roles + two escaped-string roles per static record path; exact stride is being independently fingerprinted |
+| `I` | loop body contains six decimal-token roles + three escaped-string roles per static record path; exact stride is being independently fingerprinted |
+
+The early 2000 generated protocol assigns meanings that match these direct shapes exactly for the fixed-layout categories:
+
+- `C`: floor, max X, max Y, X, Y;
+- `D`: character/runtime ID and server-time value;
+- `E`: minimum and maximum encounter percentages;
+- `M`: HP, MP and EXP;
+- `J`: magic use/kind, MP, field, target, name, comment;
+- `N`: party member ID, level, max HP, HP, MP, name after the update mask;
+- `P`: old player-state sequence ending with gold, title/index and duel-point-like integer state, then name/free-name;
+- `K`: old pet-state sequence ending with skill-slot count and rename flag, then name/free-name.
+
+The **positions/counts are V1 DIRECT**; the human-readable field names remain semantic mappings supported by the early generated lineage unless independently tied to v1 storage/use sites.
 
 ### Direct version exclusion
 
@@ -145,6 +166,13 @@ In the pinned later client source:
 - a ride-related extension uses category `X`.
 
 In the accepted v1 binary, `G` and `S` map to the shared default branch, while `B` and `X` lie outside the accepted `C..W` dispatch range. Therefore those specific later `S`-message category implementations are **not present in this compiled Taiwan v1 client**. This does not date every related game concept globally; it establishes a concrete client-version boundary for these protocol implementations.
+
+Two additional packet-layout boundaries are now binary-direct:
+
+- the v1 full `S:P` path reads decimal fields only through token **24**, then immediately reads the two escaped strings at tokens **25 and 26**. The later descendant additions for player transmigration/ride/base-graphic state therefore are **not present in this v1 full-status layout**;
+- the v1 full `S:K` path reads decimal fields only through token **19**, then immediately reads the two escaped strings at tokens **20 and 21**. The later descendant pet-transmigration/fusion/ride/bless extensions therefore are **not present in this v1 full pet-status layout**.
+
+These statements are specific to the compiled v1 status protocol layout; they do not claim that every related gameplay concept was impossible elsewhere in the product lineage.
 
 Canonical derived evidence: `research/recovered/STONEAGE-TW10-GAMEPLAY-CALLBACKS-R1.txt`.
 
