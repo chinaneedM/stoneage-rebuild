@@ -220,6 +220,10 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
             tuple(x.participant.level for x in spawned),
             (4, 5),
         )
+        self.assertEqual(
+            tuple(x.participant.reward_exp for x in spawned),
+            (100, 100),
+        )
 
         battle = self.runtime.start_group_battle(
             request,
@@ -402,6 +406,10 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(second.after.phase, FINISHED)
         self.assertEqual(second.after.result, PLAYER_WIN)
         self.assertEqual(second.after.winning_side, 0)
+        self.assertEqual(
+            dict(second.after.pending_exp_by_participant_id),
+            {"player": 100},
+        )
 
     def test_terminal_persistent_battle_settlement_updates_only_direct_hp(self):
         self.domain.persistent.pets[PetSlot(2)] = allied_pet()

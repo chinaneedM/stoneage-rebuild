@@ -8,8 +8,11 @@ living non-pet actors. R1 models the ordinary single-player subset:
 - side 1: enemy actors;
 - rescue/spectator modes are not yet represented.
 
-Rewards, drops, EXP, escape/capture and post-battle recovery remain outside
-this state machine.
+Persistent EXP application, drops, escape/capture and post-battle recovery
+remain outside this state machine. R1 now preserves the earlier stable
+battle-local WORKGETEXP seam: ordinary enemy deaths can accumulate pending EXP
+for the player-side actor that caused the death, without applying it to
+persistent character EXP or level state.
 """
 
 from __future__ import annotations
@@ -18,6 +21,7 @@ from dataclasses import dataclass, replace
 from types import MappingProxyType
 from typing import Mapping, Sequence
 
+from tools.stoneage_battle_core_model import battle_exp_from_enemy
 from tools.stoneage_battle_round_model import (
     BattleCombatProfile,
     BattleCommand,
@@ -41,6 +45,7 @@ class PersistentBattleState:
     session: BattleSession
     slots: Mapping[str, int]
     hp_by_participant_id: Mapping[str, int]
+    pending_exp_by_participant_id: Mapping[str, int]
     turn: int = 0
     phase: str = ACTIVE
     result: str | None = None
@@ -58,6 +63,21 @@ class PersistentBattleState:
                 raise ValueError("finished battle requires victory/defeat result")
             if self.winning_side not in {0, 1}:
                 raise ValueError("finished battle requires winning_side 0 or 1")
+
+        participants = _participant_map(self.session)
+        expected_exp_ids = {
+            pid for pid, participant in participants.items()
+            if participant.side == "player"
+        }
+        actual_exp_ids = {str(pid) for pid in self.pending_exp_by_participant_id}
+        if actual_exp_ids != expected_exp_ids:
+            missing = sorted(expected_exp_ids - actual_exp_ids)
+            extra = sorted(actual_exp_ids - expected_exp_ids)
+            raise ValueError(
+                f"pending EXP participants mismatch; missing={missing}, extra={extra}"
+            )
+        if any(int(value) < 0 for value in self.pending_exp_by_participant_id.values()):
+            raise ValueError("pending EXP cannot be negative")
 
 
 @dataclass(frozen=True)
@@ -112,10 +132,16 @@ def begin_persistent_battle(
         pid: max(0, int(participant.hp))
         for pid, participant in participants.items()
     }
+    pending_exp = {
+        pid: 0
+        for pid, participant in participants.items()
+        if participant.side == "player"
+    }
     state = PersistentBattleState(
         session=session,
         slots=_freeze_mapping(normalized_slots),
         hp_by_participant_id=_freeze_mapping(hp),
+        pending_exp_by_participant_id=_freeze_mapping(pending_exp),
     )
     return _with_termination(state)
 
@@ -201,6 +227,58 @@ def active_participants(
     )
 
 
+def _pending_exp_after_ordinary_round(
+    state: PersistentBattleState,
+    round_result: ResolvedOrdinaryRound,
+) -> Mapping[str, int]:
+    """Mirror the stable ordinary WORKGETEXP accumulation seam.
+
+    BATTLE_AddExpItem() runs after an attack and scans newly dead enemies.
+    For an ordinary single-target attack the attack list contains exactly the
+    acting participant, so only that player-side actor receives the defeated
+    enemy's adjusted EXP. Combo/counter/status and ride-pet reward behavior are
+    separate seams and are not inferred here.
+    """
+    participants = _participant_map(state.session)
+    participant_id_by_slot = {
+        int(slot): str(pid)
+        for pid, slot in state.slots.items()
+    }
+    pending = {
+        str(pid): int(value)
+        for pid, value in state.pending_exp_by_participant_id.items()
+    }
+
+    for event in round_result.events:
+        if event.target_hp_before is None or event.target_hp_after is None:
+            continue
+        if int(event.target_hp_before) <= 0 or int(event.target_hp_after) != 0:
+            continue
+        actor_id = str(event.participant_id)
+        actor = participants[actor_id]
+        if actor.side != "player":
+            continue
+        if event.resolved_target_slot is None:
+            continue
+        target_id = participant_id_by_slot.get(int(event.resolved_target_slot))
+        if target_id is None:
+            raise ValueError("resolved kill target slot has no participant")
+        target = participants[target_id]
+        if target.kind != "enemy":
+            continue
+        if target.reward_exp is None:
+            raise ValueError(
+                f"enemy {target_id} lacks reward EXP provenance"
+            )
+        pending[actor_id] += battle_exp_from_enemy(
+            int(target.reward_exp),
+            int(actor.level),
+            int(target.level),
+        )
+
+    return _freeze_mapping(pending)
+
+
 def resolve_persistent_ordinary_round(
     state: PersistentBattleState,
     *,
@@ -264,6 +342,10 @@ def resolve_persistent_ordinary_round(
         session=state.session,
         slots=state.slots,
         hp_by_participant_id=_freeze_mapping(hp),
+        pending_exp_by_participant_id=_pending_exp_after_ordinary_round(
+            state,
+            round_result,
+        ),
         turn=int(state.turn) + 1,
         phase=ACTIVE,
         result=None,

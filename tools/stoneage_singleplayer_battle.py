@@ -55,6 +55,7 @@ class BattleParticipant:
     source_variant_id: int | None = None
     source_template_id: int | None = None
     source_pet_slot: int | None = None
+    reward_exp: int | None = None
 
     def initiative(self, random_subtract: int) -> int:
         return early_action_value(self.quick, int(random_subtract))
@@ -170,6 +171,7 @@ def enemy_participant_from_spawn_state(
         fixed_vital=int(birth.internal_vital),
         source_variant_id=variant.enemy_id,
         source_template_id=template.tempno,
+        reward_exp=int(variant.exp_override),
     )
 
 

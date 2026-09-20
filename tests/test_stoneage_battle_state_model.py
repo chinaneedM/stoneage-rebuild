@@ -40,6 +40,7 @@ def participant(
     defense=70,
     quick=50,
     level=10,
+    reward_exp=None,
 ):
     return BattleParticipant(
         participant_id=pid,
@@ -53,6 +54,7 @@ def participant(
         quick=quick,
         name=pid,
         fixed_vital=40,
+        reward_exp=reward_exp,
     )
 
 
@@ -186,7 +188,7 @@ class PersistentBattleStateTests(unittest.TestCase):
         )
         enemy = participant(
             "enemy", "enemy", "enemy",
-            hp=30, defense=20, quick=40,
+            hp=30, defense=20, quick=40, reward_exp=1500,
         )
         state = begin_persistent_battle(
             session(player, (enemy,)),
@@ -214,6 +216,10 @@ class PersistentBattleStateTests(unittest.TestCase):
         self.assertEqual(result.after.phase, FINISHED)
         self.assertEqual(result.after.result, PLAYER_WIN)
         self.assertEqual(result.after.winning_side, 0)
+        self.assertEqual(
+            dict(result.after.pending_exp_by_participant_id),
+            {"player": 1500},
+        )
 
         with self.assertRaisesRegex(ValueError, "after battle termination"):
             resolve_persistent_ordinary_round(
@@ -224,6 +230,52 @@ class PersistentBattleStateTests(unittest.TestCase):
                 attack_rolls={},
                 defense_profile="newpower_70pct",
             )
+
+    def test_enemy_death_awards_only_the_player_side_actor_that_caused_it(self):
+        player = participant("player", "player", "player", quick=40)
+        pet = participant(
+            "pet:0", "player", "pet",
+            attack=200, quick=100, level=16,
+        )
+        enemy = participant(
+            "enemy", "enemy", "enemy",
+            hp=30, defense=20, quick=20, level=10, reward_exp=1500,
+        )
+        state = begin_persistent_battle(
+            session(player, (enemy,), pets=(pet,)),
+            slots={"player": 0, "pet:0": 1, "enemy": 10},
+        )
+        result = resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player": BattleCommand(BATTLE_COM_WAIT),
+                "pet:0": BattleCommand(BATTLE_COM_ATTACK, command2=10),
+                "enemy": BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={
+                "player": 0,
+                "pet:0": 0,
+                "enemy": 0,
+            },
+            profiles={
+                "player": profile(),
+                "pet:0": profile(),
+                "enemy": profile(),
+            },
+            attack_rolls={
+                "pet:0": OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.after.phase, FINISHED)
+        self.assertEqual(
+            dict(result.after.pending_exp_by_participant_id),
+            {"player": 0, "pet:0": 1400},
+        )
 
     def test_source_side_check_order_preserves_enemy_win_if_both_are_zero(self):
         player = participant("player", "player", "player", hp=1)
