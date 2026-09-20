@@ -7,9 +7,11 @@ on:
       - tools/stoneage_battle_core_model.py
       - tools/stoneage_battle_round_model.py
       - tools/stoneage_battle_state_model.py
+      - tools/stoneage_combat_profile_bridge.py
       - tests/test_stoneage_battle_core_model.py
       - tests/test_stoneage_battle_round_model.py
       - tests/test_stoneage_battle_state_model.py
+      - tests/test_stoneage_combat_profile_bridge.py
       - .github/workflows/validate-stoneage-battle-core.yml
 permissions:
   contents: read
@@ -18,4 +20,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -m unittest tests.test_stoneage_battle_core_model tests.test_stoneage_battle_round_model tests.test_stoneage_battle_state_model -v
+      - run: python3 -m unittest tests.test_stoneage_battle_core_model tests.test_stoneage_battle_round_model tests.test_stoneage_battle_state_model tests.test_stoneage_combat_profile_bridge -v
