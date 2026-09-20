@@ -64,6 +64,7 @@ from tools.stoneage_singleplayer_domain import (
     EncounterRolls,
     GroupEncounterRequest,
     MapPosition,
+    PetSlot,
     SinglePlayerHistoricalDomain,
 )
 from tools.stoneage_tw10_25_bridge_model import PetTemplateBridge, ReconstructedPetBridgeState
@@ -434,6 +435,99 @@ class SinglePlayerHistoricalRuntime:
                 player_updates={
                     "hp": int(state.hp_by_participant_id[player_id]),
                 },
+                pet_updates=pet_updates,
+            ),
+        )
+
+    def finish_persistent_battle_without_level_crossing(
+        self,
+        state: PersistentBattleState,
+    ) -> BattleReturn:
+        """Settle HP plus pending EXP only when no level threshold is crossed.
+
+        Taiwan v1 exposes separate EXP/max-EXP fields, while descendant sources
+        preserve two different level-transition regimes. Below the current
+        max-EXP boundary both regimes agree on simple addition. Reaching or
+        crossing that boundary is rejected until the historical progression
+        profile is selected explicitly.
+        """
+        if state.phase != FINISHED or state.result is None:
+            raise ValueError("cannot settle battle before termination")
+
+        session = state.session
+        player_id = session.player.participant_id
+        if player_id not in state.hp_by_participant_id:
+            raise ValueError("terminal battle state is missing player HP")
+        if player_id not in state.pending_exp_by_participant_id:
+            raise ValueError("terminal battle state is missing player pending EXP")
+
+        character = self.domain.persistent.character
+        if character is None:
+            raise ValueError("persistent player state is required for EXP settlement")
+
+        player_hp = int(state.hp_by_participant_id[player_id])
+        player_updates: dict[str, int] = {"hp": player_hp}
+        pet_updates: dict[int, dict[str, int]] = {}
+
+        # Stable BATTLE_GetExpGold() returns immediately for a dead player.
+        # Therefore its owned-pet EXP loop is also skipped on player defeat.
+        player_can_receive_exp = player_hp > 0
+        if player_can_receive_exp:
+            pending = int(state.pending_exp_by_participant_id[player_id])
+            if pending > 0:
+                current_exp = int(character.fields["exp"])
+                max_exp = int(character.fields["max_exp"])
+                next_exp = current_exp + pending
+                if max_exp <= current_exp or next_exp >= max_exp:
+                    raise ValueError(
+                        "pending EXP reaches unresolved level-up threshold"
+                    )
+                player_updates["exp"] = next_exp
+
+        for participant in session.allied_pets:
+            if participant.source_pet_slot is None:
+                raise ValueError(
+                    f"allied participant {participant.participant_id} lacks source pet slot"
+                )
+            participant_id = participant.participant_id
+            if participant_id not in state.hp_by_participant_id:
+                raise ValueError(
+                    f"terminal battle state is missing HP for {participant_id}"
+                )
+            if participant_id not in state.pending_exp_by_participant_id:
+                raise ValueError(
+                    f"terminal battle state is missing pending EXP for {participant_id}"
+                )
+
+            slot = int(participant.source_pet_slot)
+            hp = int(state.hp_by_participant_id[participant_id])
+            updates: dict[str, int] = {"hp": hp}
+
+            # Stable pet EXP application happens only from the living player's
+            # result path and skips pets already marked dead.
+            if player_can_receive_exp and hp > 0:
+                pending = int(state.pending_exp_by_participant_id[participant_id])
+                if pending > 0:
+                    pet_slot = PetSlot(slot)
+                    if pet_slot not in self.domain.persistent.pets:
+                        raise KeyError(f"missing persistent pet slot {slot}")
+                    pet = self.domain.persistent.pets[pet_slot]
+                    current_exp = int(pet.state["exp"])
+                    max_exp = int(pet.state["max_exp"])
+                    next_exp = current_exp + pending
+                    if max_exp <= current_exp or next_exp >= max_exp:
+                        raise ValueError(
+                            "pending EXP reaches unresolved level-up threshold"
+                        )
+                    updates["exp"] = next_exp
+            pet_updates[slot] = updates
+
+        return apply_battle_outcome(
+            self.domain,
+            session,
+            BattleOutcome(
+                result=state.result,
+                player_updates=player_updates,
                 pet_updates=pet_updates,
             ),
         )

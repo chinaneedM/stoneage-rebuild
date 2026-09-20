@@ -458,6 +458,139 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["hp"], 21)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"], 10)
 
+    def test_nonlevel_exp_settlement_applies_only_below_current_thresholds(self):
+        self.domain.persistent.pets[PetSlot(2)] = allied_pet()
+        request = self.domain.request_encounter_group(group_roll=0)
+        spawned = self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle = self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+            allied_pet_slots=(2,),
+        )
+        enemy_id = battle.enemies[0].participant_id
+        state = self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player": 0, "pet:2": 1, enemy_id: 10},
+        )
+        terminal = replace(
+            state,
+            hp_by_participant_id=MappingProxyType(
+                {"player": 73, "pet:2": 21, enemy_id: 0}
+            ),
+            pending_exp_by_participant_id=MappingProxyType(
+                {"player": 100, "pet:2": 200}
+            ),
+            phase=FINISHED,
+            result=PLAYER_WIN,
+            winning_side=0,
+        )
+
+        returned = self.runtime.finish_persistent_battle_without_level_crossing(
+            terminal
+        )
+
+        self.assertEqual(returned.result, PLAYER_WIN)
+        self.assertEqual(self.domain.persistent.character.fields["hp"], 73)
+        self.assertEqual(self.domain.persistent.character.fields["exp"], 100)
+        self.assertEqual(self.domain.persistent.character.fields["level"], 5)
+        self.assertEqual(self.domain.persistent.character.fields["max_exp"], 1000)
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["hp"], 21)
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"], 210)
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["level"], 4)
+        self.assertEqual(
+            self.domain.persistent.pets[PetSlot(2)].state["max_exp"],
+            500,
+        )
+
+    def test_nonlevel_exp_settlement_blocks_threshold_crossing_atomically(self):
+        self.domain.persistent.pets[PetSlot(2)] = allied_pet()
+        request = self.domain.request_encounter_group(group_roll=0)
+        spawned = self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle = self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+            allied_pet_slots=(2,),
+        )
+        enemy_id = battle.enemies[0].participant_id
+        state = self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player": 0, "pet:2": 1, enemy_id: 10},
+        )
+        terminal = replace(
+            state,
+            hp_by_participant_id=MappingProxyType(
+                {"player": 73, "pet:2": 21, enemy_id: 0}
+            ),
+            pending_exp_by_participant_id=MappingProxyType(
+                {"player": 1000, "pet:2": 200}
+            ),
+            phase=FINISHED,
+            result=PLAYER_WIN,
+            winning_side=0,
+        )
+
+        with self.assertRaisesRegex(ValueError, "unresolved level-up threshold"):
+            self.runtime.finish_persistent_battle_without_level_crossing(
+                terminal
+            )
+
+        self.assertEqual(self.domain.persistent.character.fields["hp"], 100)
+        self.assertEqual(self.domain.persistent.character.fields["exp"], 0)
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["hp"], 60)
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"], 10)
+
+    def test_defeat_does_not_apply_owned_pet_pending_exp(self):
+        self.domain.persistent.pets[PetSlot(2)] = allied_pet()
+        request = self.domain.request_encounter_group(group_roll=0)
+        spawned = self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle = self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+            allied_pet_slots=(2,),
+        )
+        enemy_id = battle.enemies[0].participant_id
+        state = self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player": 0, "pet:2": 1, enemy_id: 10},
+        )
+        terminal = replace(
+            state,
+            hp_by_participant_id=MappingProxyType(
+                {"player": 0, "pet:2": 21, enemy_id: 10}
+            ),
+            pending_exp_by_participant_id=MappingProxyType(
+                {"player": 50, "pet:2": 200}
+            ),
+            phase=FINISHED,
+            result="defeat",
+            winning_side=1,
+        )
+
+        self.runtime.finish_persistent_battle_without_level_crossing(terminal)
+
+        self.assertEqual(self.domain.persistent.character.fields["hp"], 0)
+        self.assertEqual(self.domain.persistent.character.fields["exp"], 0)
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["hp"], 21)
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"], 10)
+
     def test_old_single_variant_encounter_projection_remains_compatible(self):
         request = self.domain.request_encounter(
             group_roll=0,
