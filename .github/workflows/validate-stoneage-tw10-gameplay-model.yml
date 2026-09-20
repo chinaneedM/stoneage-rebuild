@@ -12,6 +12,8 @@ on:
       - tools/stoneage_map_collision_model.py
       - tools/stoneage_encounter_frequency_model.py
       - tools/stoneage_enemy_spawn_model.py
+      - tools/stoneage_battle_command_model.py
+      - tools/stoneage_enemy_spawn_model.py
       - tools/stoneage_singleplayer_battle.py
       - tools/stoneage_singleplayer_runtime.py
       - tools/stoneage_singleplayer_persistence.py
@@ -31,6 +33,9 @@ on:
       - tests/test_stoneage_singleplayer_world.py
       - tests/test_stoneage_map_collision_model.py
       - tests/test_stoneage_encounter_frequency_model.py
+      - tests/test_stoneage_enemy_spawn_model.py
+      - tests/test_stoneage_battle_command_model.py
+      - tests/test_stoneage_group_battle_runtime.py
       - tests/test_stoneage_enemy_spawn_model.py
       - tests/test_stoneage_singleplayer_battle.py
       - tests/test_stoneage_singleplayer_runtime.py
