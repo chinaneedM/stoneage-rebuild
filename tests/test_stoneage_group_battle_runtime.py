@@ -1,4 +1,5 @@
 import unittest
+from dataclasses import replace
 from types import MappingProxyType
 
 from tools.stoneage_battle_command_model import ATTACK, WAIT
@@ -9,6 +10,7 @@ from tools.stoneage_battle_round_model import (
     BattleCommand,
     OrdinaryAttackRolls,
 )
+from tools.stoneage_battle_state_model import FINISHED, PLAYER_WIN
 from tools.stoneage_enemy_spawn_model import EnemyBirthRolls
 from tools.stoneage_singleplayer_domain import (
     HistoricalStaticData,
@@ -291,6 +293,82 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
             result.hp_by_slot[10],
             battle.enemies[0].hp,
         )
+
+    def test_runtime_persistent_state_carries_hp_across_rounds_to_victory(self):
+        request = self.domain.request_encounter_group(group_roll=0)
+        spawned = self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle = self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+        )
+        enemy = replace(
+            battle.enemies[0],
+            hp=150,
+            max_hp=150,
+            defense=70,
+            quick=40,
+        )
+        battle = replace(battle, enemies=(enemy,))
+        enemy_id = enemy.participant_id
+        profiles = {
+            "player": BattleCombatProfile(
+                fixed_dex=100,
+                fixed_luck=0,
+                earth=0,
+                water=0,
+                fire=0,
+                wind=0,
+            ),
+            enemy_id: BattleCombatProfile(
+                fixed_dex=100,
+                fixed_luck=0,
+                earth=0,
+                water=0,
+                fire=0,
+                wind=0,
+            ),
+        }
+        state = self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player": 0, enemy_id: 10},
+        )
+
+        def advance(current):
+            return self.runtime.resolve_persistent_battle_round(
+                current,
+                commands={
+                    "player": BattleCommand(BATTLE_COM_ATTACK, command2=10),
+                    enemy_id: BattleCommand(BATTLE_COM_WAIT),
+                },
+                initiative_random_subtracts={"player": 0, enemy_id: 0},
+                profiles=profiles,
+                attack_rolls={
+                    "player": OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    )
+                },
+                defense_profile="newpower_70pct",
+            )
+
+        first = advance(state)
+        self.assertEqual(first.after.turn, 1)
+        self.assertGreater(first.after.hp_by_participant_id[enemy_id], 0)
+        self.assertLess(first.after.hp_by_participant_id[enemy_id], 150)
+
+        second = advance(first.after)
+        self.assertEqual(second.after.turn, 2)
+        self.assertEqual(second.after.hp_by_participant_id[enemy_id], 0)
+        self.assertEqual(second.after.phase, FINISHED)
+        self.assertEqual(second.after.result, PLAYER_WIN)
+        self.assertEqual(second.after.winning_side, 0)
 
     def test_old_single_variant_encounter_projection_remains_compatible(self):
         request = self.domain.request_encounter(
