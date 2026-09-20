@@ -474,6 +474,75 @@
         "exact mapping from each 2.5 functionset family to early v1 object type",
         "exact original server allocation rule for runtime object indexes"
       ]
+    },
+    "encounter_chain": {
+      "source_entities": [
+        "encount",
+        "group",
+        "enemy",
+        "enemybase"
+      ],
+      "source_artifacts": [
+        "research/mechanics/STONEAGE-ENCOUNTER-DATA-CHAIN-R1.md",
+        "research/recovered/STONEAGE-25-ENCOUNTER-CHAIN-PROBE-R1.txt",
+        "research/mechanics/STONEAGE-ENEMY-INSTANCE-DATA-SCHEMA-R1.md",
+        "research/recovered/STONEAGE-25-ENEMY-INSTANCE-PROBE-R1.txt"
+      ],
+      "executable_model": "tools/stoneage_tw10_25_encounter_bridge.py",
+      "evidence": "BRIDGE_2_5",
+      "status": "server_authoritative_bridge",
+      "identity_chain": [
+        {
+          "namespace": "encount.INDEX",
+          "role": "floor/rectangle encounter-area identity",
+          "resolves_to": "group.GROUP_ID",
+          "selection": "GROUP_PROB weighted after item gates"
+        },
+        {
+          "namespace": "group.GROUP_ID",
+          "role": "encounter composition identity",
+          "resolves_to": "enemy.ID",
+          "selection": "CREATEPROB weighted"
+        },
+        {
+          "namespace": "enemy.ID",
+          "role": "concrete enemy variant identity",
+          "resolves_to": "enemybase.TEMPNO",
+          "selection": "level range / encounter multiplicity / AI and reward overrides"
+        },
+        {
+          "namespace": "enemybase.TEMPNO",
+          "role": "pet/enemy species-template identity",
+          "resolves_to": "runtime enemy/pet state through descendant creation formulas",
+          "selection": "template stats, elements, skills and presentation identity"
+        }
+      ],
+      "explicit_non_equivalences": [
+        "encount.INDEX != group.GROUP_ID",
+        "group.GROUP_ID != enemy.ID",
+        "enemy.ID != enemybase.TEMPNO",
+        "enemybase.TEMPNO != v1 runtime_object_id",
+        "enemy.PETFLG capture gate != enemybase.PETFLG template property"
+      ],
+      "runtime_rules": [
+        "overlapping encounter rectangles select the highest positive ZORDER",
+        "APPEAR_BY_ITEM and NOT_APPEAR_BY_ITEM gate group eligibility",
+        "GROUP_PROB and CREATEPROB are two independent weighted-selection stages",
+        "effective encounter size is bounded by area ENEMY_MAX_NUM and concrete enemy CREATEMAXNUM",
+        "CREATEMINNUM is loaded but has no demonstrated runtime enforcement in the fixed descendant core",
+        "event alternate enemy-group routing is a later/versioned extension"
+      ],
+      "recovered_specimen_integrity": {
+        "active_enemy_rows": 2087,
+        "active_group_raw_rows": 1257,
+        "active_group_effective_rows": 1256,
+        "encount_rows": 660,
+        "unresolved_positive_group_refs": 39,
+        "affected_encount_rows": 32,
+        "classification": "SPECIMEN_DEFECT",
+        "policy": "Do not synthesize missing groups and do not reinterpret these dangling positive references as historical gameplay. Strict reconstruction code must fail explicitly when such a path is reached."
+      },
+      "v1_boundary": "This chain is server/master-data bridge evidence. The accepted Taiwan v1.0 client proves visible runtime state and transport surfaces, not these recovered 2.5 server rows."
     }
   },
   "reconstruction_contract": {
