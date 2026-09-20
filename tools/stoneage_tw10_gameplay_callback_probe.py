@@ -140,7 +140,7 @@ def indirect_jump_info(data, base, sections, cfg):
         table_va = None
         if mem_ops:
             disp = int(mem_ops[0].mem.disp) & 0xFFFFFFFF
-            if section_name_for_va(base, sections, disp) in {".rdata", ".data"}:
+            if section_name_for_va(base, sections, disp) in {".text", ".rdata", ".data"}:
                 table_va = disp
         context_addrs = [x for x in ordered if x < addr][-12:]
         context = [
@@ -170,6 +170,79 @@ def indirect_jump_info(data, base, sections, cfg):
                             break
         out.append((addr - base, table_va - base if table_va else None, context, entries))
     return out
+
+
+def s_char_switch(data, base, sections, cfg):
+    """Decode the compact S callback dispatch over ASCII C..W.
+
+    The accepted v1 callback normalizes data[0] by subtracting 'C', bounds it
+    to 0x14, translates through a byte lookup table, then performs an indexed
+    indirect jump through a dword target table. Return only derived mapping
+    metadata.
+    """
+    if not cfg["indirect_jumps"]:
+        return None
+    jump_addr, jump_ins = cfg["indirect_jumps"][0]
+    jump_mem = next((op for op in jump_ins.operands if op.type == X86_OP_MEM), None)
+    if jump_mem is None:
+        return None
+    jump_table_va = int(jump_mem.mem.disp) & 0xFFFFFFFF
+    if not section_name_for_va(base, sections, jump_table_va):
+        return None
+
+    lookup_va = None
+    for addr in sorted(a for a in cfg["instructions"] if a < jump_addr)[-20:]:
+        ins = cfg["instructions"][addr]
+        if ins.mnemonic not in {"mov", "movzx", "movsx"}:
+            continue
+        for op in ins.operands:
+            if op.type != X86_OP_MEM:
+                continue
+            disp = int(op.mem.disp) & 0xFFFFFFFF
+            # The lookup source is an indexed byte read from image-backed data.
+            if disp and section_name_for_va(base, sections, disp):
+                lookup_va = disp
+    if lookup_va is None:
+        return None
+
+    lookup_off = rva_to_offset(sections, lookup_va - base)
+    jump_off = rva_to_offset(sections, jump_table_va - base)
+    if lookup_off is None or jump_off is None:
+        return None
+
+    start_code = ord("C")
+    count = ord("W") - start_code + 1
+    lookup = list(data[lookup_off:lookup_off + count])
+    if len(lookup) != count:
+        return None
+    max_slot = max(lookup) if lookup else -1
+    targets = {}
+    for slot in range(max_slot + 1):
+        pos = jump_off + slot * 4
+        if pos + 4 > len(data):
+            break
+        target_va = struct.unpack_from("<I", data, pos)[0]
+        if section_name_for_va(base, sections, target_va) == ".text":
+            targets[slot] = target_va - base
+
+    categories = []
+    for offset, slot in enumerate(lookup):
+        categories.append(
+            {
+                "char": chr(start_code + offset),
+                "char_code": start_code + offset,
+                "slot": slot,
+                "target_rva": targets.get(slot),
+            }
+        )
+    return {
+        "lookup_rva": lookup_va - base,
+        "jump_table_rva": jump_table_va - base,
+        "jump_ops": jump_ins.op_str,
+        "lookup": lookup,
+        "targets": targets,
+        "categories": categories,
+    }
 
 
 def shared_direct_targets(cfgs):
@@ -234,9 +307,14 @@ def main():
             for jump_rva, table_rva, context, entries in indirect_jump_info(
                 data, base, sections, cfg
             ):
+                jump_ins = next(
+                    ins for addr, ins in cfg["indirect_jumps"]
+                    if addr - base == jump_rva
+                )
                 print(
                     f"INDIRECT_JUMP|name={label}|instruction_rva=0x{jump_rva:x}|"
-                    f"table_rva={'' if table_rva is None else hex(table_rva)}|entries={len(entries)}"
+                    f"table_rva={'' if table_rva is None else hex(table_rva)}|entries={len(entries)}|"
+                    f"ops={clean(jump_ins.op_str)}"
                 )
                 for order, (ctx_rva, mnemonic, ops) in enumerate(context, 1):
                     print(
@@ -248,6 +326,42 @@ def main():
                         f"JUMP_TABLE|name={label}|jump_rva=0x{jump_rva:x}|index={index}|"
                         f"target_rva=0x{target_rva:x}"
                     )
+
+            if label == "S":
+                switch = s_char_switch(data, base, sections, cfg)
+                if switch is not None:
+                    print(
+                        f"S_SWITCH|start=C|end=W|lookup_rva=0x{switch['lookup_rva']:x}|"
+                        f"jump_table_rva=0x{switch['jump_table_rva']:x}|"
+                        f"jump_ops={clean(switch['jump_ops'])}|"
+                        f"lookup_slots={','.join(map(str, switch['lookup']))}|"
+                        f"unique_slots={len(set(switch['lookup']))}|"
+                        f"resolved_slots={len(switch['targets'])}"
+                    )
+                    seen_targets = {}
+                    for item in switch["categories"]:
+                        target = item["target_rva"]
+                        print(
+                            f"S_CATEGORY|char={item['char']}|code={item['char_code']}|"
+                            f"slot={item['slot']}|target_rva={'' if target is None else hex(target)}"
+                        )
+                        if target is not None:
+                            seen_targets.setdefault(target, []).append(item["char"])
+                    for target_rva, chars in sorted(seen_targets.items()):
+                        branch = collect_cfg(data, base, sections, imports, target_rva)
+                        print(
+                            f"S_BRANCH|chars={','.join(chars)}|target_rva=0x{target_rva:x}|"
+                            f"blocks={len(branch['blocks'])}|instructions={len(branch['instructions'])}|"
+                            f"direct_targets={len(branch['direct_calls'])}"
+                        )
+                        for target, count in sorted(
+                            branch["direct_calls"].items(),
+                            key=lambda x: (-x[1], x[0]),
+                        ):
+                            print(
+                                f"S_BRANCH_DIRECT|chars={','.join(chars)}|branch_rva=0x{target_rva:x}|"
+                                f"target_rva=0x{target-base:x}|calls={count}"
+                            )
 
         for target, counts in sorted(
             shared_direct_targets(cfgs).items(),
