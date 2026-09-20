@@ -269,6 +269,43 @@ class PetSkillTemplateBridge:
         }
 
 
+CHAR_COLORWHITE = 0
+CHAR_COLORYELLOW = 4
+CHAR_COLORGREEN = 5
+ITEM_DISH_TYPE = 20
+
+ITEM_VIEW_FLAG_CANPETMAIL = 1 << 0
+ITEM_VIEW_FLAG_CANMERGEFROM = 1 << 1
+ITEM_VIEW_FLAG_DISH = 1 << 2
+
+
+@dataclass(frozen=True)
+class ItemInstanceBridge:
+    template_ref: TemplateRef
+    visible_name: str
+    secondary_display_text: str
+    color: int
+    effect_text: str
+    graphic_id: int
+    field_context: int
+    target_class: int
+    level: int
+    send_or_use_flags: int
+
+    def client_view_fields(self) -> dict[str, Any]:
+        return {
+            "name": self.visible_name,
+            "secondary_display_text": self.secondary_display_text,
+            "color": self.color,
+            "memo_or_effect_text": self.effect_text,
+            "graphic_id": self.graphic_id,
+            "field_context": self.field_context,
+            "target_class": self.target_class,
+            "level": self.level,
+            "send_or_use_flags": self.send_or_use_flags,
+        }
+
+
 @dataclass(frozen=True)
 class ItemTemplateBridge:
     template_id: int
@@ -278,6 +315,9 @@ class ItemTemplateBridge:
     field_context: int
     target_class: int
     level: int
+    item_type: int | None = None
+    can_pet_mail: bool = False
+    can_merge_from: bool = False
     ordinary_name: str | None = None
 
     @classmethod
@@ -290,6 +330,9 @@ class ItemTemplateBridge:
             field_context=int(_required(row, "fieldtype")),
             target_class=int(_required(row, "target")),
             level=int(_required(row, "level")),
+            item_type=int(row["type"]) if row.get("type") not in (None, "") else None,
+            can_pet_mail=bool(int(row["canpetmail"])) if row.get("canpetmail") not in (None, "") else False,
+            can_merge_from=bool(int(row["canmergefrom"])) if row.get("canmergefrom") not in (None, "") else False,
             ordinary_name=str(row["name"]) if row.get("name") is not None else None,
         )
 
@@ -297,30 +340,54 @@ class ItemTemplateBridge:
     def template_ref(self) -> TemplateRef:
         return TemplateRef("itemset.id", self.template_id)
 
+    def instantiate(
+        self,
+        *,
+        secondary_display_text: str = "",
+        instance_cdkey: str = "",
+        merge_flag: bool = False,
+    ) -> ItemInstanceBridge:
+        """Build the fixed-descendant base instance -> v1 item-view projection."""
+        color = CHAR_COLORWHITE
+        if str(instance_cdkey):
+            color = CHAR_COLORGREEN
+        elif merge_flag:
+            color = CHAR_COLORYELLOW
+
+        flags = 0
+        if self.can_pet_mail:
+            flags |= ITEM_VIEW_FLAG_CANPETMAIL
+        if self.can_merge_from:
+            flags |= ITEM_VIEW_FLAG_CANMERGEFROM
+        if self.item_type == ITEM_DISH_TYPE:
+            flags |= ITEM_VIEW_FLAG_DISH
+
+        return ItemInstanceBridge(
+            template_ref=self.template_ref,
+            visible_name=self.visible_name,
+            secondary_display_text=str(secondary_display_text),
+            color=color,
+            effect_text=self.effect_text,
+            graphic_id=self.graphic_id,
+            field_context=self.field_context,
+            target_class=self.target_class,
+            level=self.level,
+            send_or_use_flags=flags,
+        )
+
     def client_view_fields(
         self,
         *,
-        secondary_runtime_text: str = "",
-        color: int = 0,
-        send_or_use_flags: int = 0,
+        secondary_display_text: str = "",
+        instance_cdkey: str = "",
+        merge_flag: bool = False,
     ) -> dict[str, Any]:
-        """Build only the nine-field v1 item view payload.
-
-        The later fixed server lineage sources the first string from
-        ITEM_SECRETNAME, the second from a runtime paramshow buffer, and
-        computes the flags value at runtime.
-        """
-        return {
-            "name": self.visible_name,
-            "secondary_or_secret_name": str(secondary_runtime_text),
-            "color": int(color),
-            "memo_or_effect_text": self.effect_text,
-            "graphic_id": self.graphic_id,
-            "field_context": self.field_context,
-            "target_class": self.target_class,
-            "level": self.level,
-            "send_or_use_flags": int(send_or_use_flags),
-        }
+        """Compatibility helper returning the nine-field v1 item view."""
+        return self.instantiate(
+            secondary_display_text=secondary_display_text,
+            instance_cdkey=instance_cdkey,
+            merge_flag=merge_flag,
+        ).client_view_fields()
 
 
 @dataclass(frozen=True)
