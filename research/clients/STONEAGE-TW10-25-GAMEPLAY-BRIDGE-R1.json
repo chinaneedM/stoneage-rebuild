@@ -473,7 +473,62 @@
         "exact Taiwan v1.0 NPC coordinates/scripts/dialogue",
         "exact mapping from each 2.5 functionset family to early v1 object type",
         "exact original server allocation rule for runtime object indexes"
-      ]
+      ],
+      "world_derivation": {
+        "source_lineage_paths": [
+          "server/gmsv/npc/npcgen.c",
+          "gmsv/src/char/char.c",
+          "server/common/gmsv_server_send.c"
+        ],
+        "evidence": "BRIDGE_2_5",
+        "status": "descendant_runtime_derivation",
+        "generation_rules": [
+          "NPCCREATE floor/born area selects the runtime spawn floor/X/Y; the chosen X/Y are runtime values rather than template IDs",
+          "NPCCREATE DIR becomes runtime CHAR_DIR",
+          "NPCTEMPLATE IMAGENUMBER becomes runtime base image unless NPCCREATE BASEIMAGENUMBER overrides it",
+          "NPCTEMPLATE CHARNAME becomes runtime CHAR_NAME unless NPCCREATE NAME overrides it",
+          "NPC generation allocates a CHAR instance first and then allocates an OBJECT entry with initObjectOne; that allocated object index becomes CHAR_WORKOBJINDEX",
+          "the C world-object serializer emits the allocated object index in base-62 and reads X/Y from OBJECT state plus direction/image/name/default CHAR presentation state",
+          "fields not explicitly assigned by NPC generation, including level/title/walkable/height presentation values, come from the default CHAR/type/runtime state rather than directly from the NPC template row"
+        ],
+        "v1_projection": {
+          "record": "world_character_record",
+          "fields": {
+            "object_type": "runtime CHAR_WHICHTYPE / default-runtime character type; exact numeric early mapping remains version-bound",
+            "runtime_object_id": "allocated OBJECT index (CHAR_WORKOBJINDEX)",
+            "x": "runtime OBJECT X selected at spawn",
+            "y": "runtime OBJECT Y selected at spawn",
+            "direction": "NPCCREATE DIR -> CHAR_DIR",
+            "base_graphic_id": "NPCTEMPLATE IMAGENUMBER with NPCCREATE BASEIMAGENUMBER override",
+            "level": "default/runtime CHAR_LV",
+            "name_color": "runtime/default presentation state; later descendants may derive display color from additional systems",
+            "name": "NPCTEMPLATE CHARNAME with NPCCREATE NAME override",
+            "self_or_free_title": "default/runtime CHAR title state",
+            "walkable": "runtime/default CHAR_ISOVERED-style presentation flag",
+            "height": "runtime/default CHAR_HAVEHEIGHT-style presentation flag"
+          }
+        }
+      },
+      "window_derivation": {
+        "source_lineage_paths": [
+          "server/common/gmsv_server_send.c",
+          "server/gmsv/npc/npc_windowman.c",
+          "server/gmsv/npc/*"
+        ],
+        "evidence": "BRIDGE_2_5",
+        "status": "descendant_runtime_derivation",
+        "rules": [
+          "GmsvServer_WN_send sends windowtype, buttontype, seqno, objindex and data as five independent values",
+          "ordinary NPC window senders commonly source objindex from CHAR_WORKOBJINDEX of the NPC runtime object",
+          "seqno is a window/interaction state number and must never be interpreted as an NPC object index",
+          "data is generated per window/session and is not a static NPC template identity"
+        ],
+        "v1_projection": {
+          "record": "npc_window_session",
+          "source_object_index": "same allocated NPC runtime object index used by the world object",
+          "sequence_number": "independent window/session state ID"
+        }
+      }
     },
     "encounter_chain": {
       "source_entities": [
