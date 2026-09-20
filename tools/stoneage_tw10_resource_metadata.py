@@ -66,12 +66,54 @@ class DeterministicGzipTsv:
             self.raw.close()
 
 
+def parse_map_attr(data: bytes):
+    """Parse the 52-byte MAP_ATTR tail preserved in an 80-byte ADRN record."""
+    if len(data) != 52:
+        raise ValueError("MAP_ATTR must be 52 bytes")
+    values = struct.unpack("<BBH18h3H2xI", data)
+    signed_names = (
+        "height_flag",
+        "broken",
+        "indamage",
+        "outdamage",
+        "inpoison",
+        "innumb",
+        "inquiet",
+        "instone",
+        "indark",
+        "inconfuse",
+        "outpoison",
+        "outnumb",
+        "outquiet",
+        "outstone",
+        "outdark",
+        "outconfuse",
+        "effect1",
+        "effect2",
+    )
+    attr = {
+        "atari_x": values[0],
+        "atari_y": values[1],
+        "hit_raw": values[2],
+    }
+    for name, value in zip(signed_names, values[3:21]):
+        attr[name] = value
+    attr["damy_a"] = values[21]
+    attr["damy_b"] = values[22]
+    attr["damy_c"] = values[23]
+    attr["map_number"] = values[24]
+    attr["hit_flag"] = attr["hit_raw"] % 100
+    attr["priority_type"] = attr["hit_raw"] // 100
+    return attr
+
+
 def parse_adrn_record(rec: bytes):
     if len(rec) != ADRN_RECORD_SIZE:
         raise ValueError("ADRN record must be 80 bytes")
     bitmapno, adder, size, xoff, yoff, width, height = struct.unpack_from(
         "<IIIiiii", rec, 0
     )
+    attr = parse_map_attr(rec[28:])
     return {
         "bitmapno": bitmapno,
         "adder": adder,
@@ -80,11 +122,17 @@ def parse_adrn_record(rec: bytes):
         "yoff": yoff,
         "width": width,
         "height": height,
+        **attr,
         "attr_sha256": hashlib.sha256(rec[28:]).hexdigest(),
     }
 
 
-def export_adrn(adrn_path: Path, real_path: Path, out_path: Path):
+def export_adrn(
+    adrn_path: Path,
+    real_path: Path,
+    out_path: Path,
+    collision_out: Path | None = None,
+):
     adrn_size = adrn_path.stat().st_size
     real_size = real_path.stat().st_size
     if adrn_size % ADRN_RECORD_SIZE:
@@ -97,6 +145,10 @@ def export_adrn(adrn_path: Path, real_path: Path, out_path: Path):
     prev_end = None
     flag_counts = {}
     special_dimensions = 0
+    collision_by_map_number = {}
+    collision_duplicate_map_numbers = 0
+    hit_flag_counts = {}
+    priority_type_counts = {}
 
     with adrn_path.open("rb") as af, real_path.open("rb") as rf, DeterministicGzipTsv(out_path) as out:
         mm = mmap.mmap(rf.fileno(), 0, access=mmap.ACCESS_READ)
@@ -109,6 +161,29 @@ def export_adrn(adrn_path: Path, real_path: Path, out_path: Path):
                 rec = af.read(ADRN_RECORD_SIZE)
                 row = parse_adrn_record(rec)
                 bitmapno = row["bitmapno"]
+
+                map_number = int(row["map_number"])
+                if map_number != 0:
+                    if map_number in collision_by_map_number:
+                        collision_duplicate_map_numbers += 1
+                    # Descendant initRealbinFileOpen assigns in ADRN file order;
+                    # therefore the last record for a map number wins.
+                    collision_by_map_number[map_number] = (
+                        index,
+                        bitmapno,
+                        int(row["atari_x"]),
+                        int(row["atari_y"]),
+                        int(row["hit_raw"]),
+                        int(row["hit_flag"]),
+                        int(row["priority_type"]),
+                        int(row["height_flag"]),
+                    )
+                hit_flag = int(row["hit_flag"])
+                hit_flag_counts[hit_flag] = hit_flag_counts.get(hit_flag, 0) + 1
+                priority_type = int(row["priority_type"])
+                priority_type_counts[priority_type] = (
+                    priority_type_counts.get(priority_type, 0) + 1
+                )
                 if bitmapno in bitmap_seen:
                     raise ValueError(f"duplicate v1.0 bitmap number: {bitmapno}")
                 bitmap_seen.add(bitmapno)
@@ -144,6 +219,19 @@ def export_adrn(adrn_path: Path, real_path: Path, out_path: Path):
         finally:
             mm.close()
 
+    if collision_out is not None:
+        with DeterministicGzipTsv(collision_out) as collision:
+            collision.write(
+                "map_number\tadrn_index\tbitmapno\tatari_x\tatari_y\thit_raw\t"
+                "hit_flag\tpriority_type\theight_flag\n"
+            )
+            for map_number in sorted(collision_by_map_number):
+                row = collision_by_map_number[map_number]
+                collision.write(
+                    f"{map_number}\t{row[0]}\t{row[1]}\t{row[2]}\t{row[3]}\t"
+                    f"{row[4]}\t{row[5]}\t{row[6]}\t{row[7]}\n"
+                )
+
     if max_end != real_size:
         raise ValueError(f"REAL coverage incomplete: {max_end} != {real_size}")
     return {
@@ -152,6 +240,10 @@ def export_adrn(adrn_path: Path, real_path: Path, out_path: Path):
         "contiguous_transitions": contiguous,
         "real_bytes": real_size,
         "special_dimensions": special_dimensions,
+        "collision_map_numbers": len(collision_by_map_number),
+        "collision_duplicate_map_numbers": collision_duplicate_map_numbers,
+        "hit_flag_counts": hit_flag_counts,
+        "priority_type_counts": priority_type_counts,
         "flag_counts": flag_counts,
     }
 
@@ -307,6 +399,7 @@ def main():
             paths["adrn_1.bin"],
             paths["real_1.bin"],
             out_dir / "ADRN-R1.tsv.gz",
+            out_dir / "COLLISION-ATTR-R1.tsv.gz",
         )
         spr_metrics = export_spr(
             paths["spradrn_1.bin"],
@@ -318,11 +411,21 @@ def main():
         metrics = {
             "filesystem_layout": layout,
             "joliet": int(joliet),
-            **{f"adrn_{k}": v for k, v in adrn_metrics.items() if k != "flag_counts"},
+            **{
+                f"adrn_{k}": v
+                for k, v in adrn_metrics.items()
+                if k not in {"flag_counts", "hit_flag_counts", "priority_type_counts"}
+            },
             **{f"spr_{k}": v for k, v in spr_metrics.items()},
         }
         for flag, count in sorted(adrn_metrics["flag_counts"].items()):
             metrics[f"adrn_rd_flag_0x{flag:02x}"] = count
+        for hit_flag, count in sorted(adrn_metrics["hit_flag_counts"].items()):
+            metrics[f"adrn_collision_hit_flag_{hit_flag}"] = count
+        for priority_type, count in sorted(
+            adrn_metrics["priority_type_counts"].items()
+        ):
+            metrics[f"adrn_collision_priority_type_{priority_type}"] = count
 
         manifest = write_manifest(out_dir, paths, metrics)
         print(manifest.read_text("utf-8"), end="")
