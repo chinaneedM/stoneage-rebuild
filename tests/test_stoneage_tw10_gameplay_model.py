@@ -87,7 +87,7 @@ class TaiwanGameplayModelTests(unittest.TestCase):
         self.assertEqual(inc.slot, 4)
         for key in (
             "name",
-            "secondary_or_secret_name",
+            "secondary_display_text",
             "color",
             "memo_or_effect_text",
             "graphic_id",
