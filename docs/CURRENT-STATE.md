@@ -1358,14 +1358,45 @@ Supplemental source ledgers:
 - Remote validation **35513868341** passes at `6212cd394646778b2c47c07c931b5415efbec94e`.
 - **Operational consequence:** combat-profile provenance and direct terminal HP/result return are closed to the first reconstruction-safe boundary. The next combat-side priority is to recover the exact ordinary EXP settlement orchestration before implementing rewards.
 
+## Ordinary battle EXP accumulation and safe persistence boundary — 2026-09-20
+
+- Stable-descendant `BATTLE_ClearGetExp()` / `BATTLE_AddExpItem()` / `BATTLE_GetExpGold()` ordering has now been recovered far enough to separate battle-local EXP accumulation from persistent EXP application.
+- Ordinary single-hit R1 now preserves enemy reward provenance from `enemy.EXP` on each spawned `BattleParticipant`.
+- `PersistentBattleState.pending_exp_by_participant_id` mirrors the descendant battle-local `CHAR_WORKGETEXP` seam:
+  - initialized to zero for player-side participants;
+  - an enemy reward is added only when an ordinary event first moves that enemy from `HP > 0` to `HP == 0`;
+  - for ordinary single-target attack, only the acting player-side participant receives the award;
+  - the existing level-gap formula is applied per defeated enemy;
+  - no party-wide sharing is invented.
+- `SinglePlayerHistoricalRuntime.finish_persistent_battle_without_level_crossing()` now permits EXP persistence only where both recovered descendant progression regimes agree: `current_exp + pending_exp < max_exp`.
+- Reaching or crossing `max_exp` is rejected **before any HP/EXP mutation**, because two descendant progression regimes diverge at level transition:
+  - legacy path: cumulative `CHAR_EXP` compared with cumulative next-level threshold;
+  - later `_NEWOPEN_MAXEXP` path: current-level EXP compared with an external per-level requirement, then consumed on level-up.
+- Stable `BATTLE_GetExpGold()` behavior is also preserved at this boundary:
+  - dead player receives no EXP;
+  - if the player is dead, the owned-pet EXP loop is never entered;
+  - living pets are eligible only from the living-player result path.
+- Still OPEN / deliberately excluded:
+  - exact JSS-1999 choice of level-threshold regime/table;
+  - threshold-crossing level-up mutation;
+  - player duel-point/charm/free-stat consequences at level-up;
+  - pet growth rolls and pet level-up state mutation;
+  - ride-pet 60% EXP side award;
+  - combo/counter/status kill attribution;
+  - items, money, capture, escape and other post-battle rewards.
+- Code validations:
+  - `81e9572f1ff309982d13c7f1979a51516a5593a8` — pending ordinary kill EXP accumulation; runs **35514277568** and **35514277633** both success.
+  - `b3207d71bc8dafa557e31d3450be2d6efb00bd29` — no-level-cross EXP persistence; run **35514525635** success.
+
 ## Immediate next actions
 
-1. **Close the first ordinary EXP-settlement orchestration seam.** The per-enemy level-gap EXP formula is already preserved from stable descendants, but do not wire it into persistent state until participant eligibility, defeated-enemy accumulation, award ordering and level-up application are independently pinned. Keep JSS-era coefficient provenance explicit.
-2. **Extend post-battle rewards one subsystem at a time after EXP.** Drops, money, capture, escape, death penalties and recovery remain separate evidence seams; do not bundle them into one guessed settlement routine.
-3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
-4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
-5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
-6. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen and keep historical reconstruction separate from redesign.** Never repair missing references by inventing data; later optimization/automation remains an explicit DESIGN layer.
+1. **Close the level-transition profile without collapsing distinct historical regimes.** Recover/version the legacy cumulative-threshold path versus the later `_NEWOPEN_MAXEXP` per-level path, and only then connect threshold-crossing EXP to level/free-point/pet-growth mutation. Do not use the mixed 2.5 `exp.txt` as an early JSS table by default.
+2. **Close remaining EXP side paths independently.** Ride-pet 60% awards and combo/counter/status kill attribution require their own execution seams; do not generalize them from the ordinary single-hit model.
+3. **Extend post-battle rewards one subsystem at a time after EXP.** Drops, money, capture, escape, death penalties and recovery remain separate evidence seams; do not bundle them into one guessed settlement routine.
+4. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
+5. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
+6. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
+7. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen and keep historical reconstruction separate from redesign.** Never repair missing references by inventing data; later optimization/automation remains an explicit DESIGN layer.
 
 
 ## Continuity status

@@ -20,15 +20,27 @@ The earlier two lineages agree directly on the fixed three-point level-up rule. 
 
 ## 2. Experience threshold versus stat-point reward
 
-The already recovered progression chain is:
+The recovered descendant progression chain is:
 
 ```text
 enemy EXP
-  -> battle EXP award
-  -> accumulated CHAR_EXP
-  -> exp.txt level threshold
+  -> battle-local WORKGETEXP accumulation
+  -> persistent CHAR_EXP application
+  -> level-threshold check
   -> one or more level-ups
 ```
+
+The threshold/EXP representation is **versioned** rather than singular:
+
+- the legacy compiled path keeps cumulative `CHAR_EXP` and compares it with a
+  cumulative next-level entry from the built-in `LevelUpTbl`;
+- the later `_NEWOPEN_MAXEXP` path loads external per-level requirements,
+  treats `CHAR_EXP` as current-level progress and subtracts the requirement
+  at each level-up.
+
+The mixed 2.5 external `exp.txt` therefore must not be described as the
+default threshold source for the older path or silently promoted to a JSS-1999
+fact.
 
 When a player gains `UpLevel` levels, the stable older rule awards:
 

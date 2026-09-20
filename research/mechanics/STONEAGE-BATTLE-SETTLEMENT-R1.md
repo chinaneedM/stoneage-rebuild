@@ -52,12 +52,28 @@ That preserves two important safety properties:
 Therefore this seam cannot introduce an unverified reward field simply by
 including it in a battle result object.
 
-## 4. What R1 deliberately does not do
+## 4. EXP is now a separate, narrower settlement seam
 
-R1 does not infer or apply:
+The direct HP-only adapter remains unchanged.
 
-- player EXP or level-up;
-- pet EXP or level-up;
+A second explicit runtime adapter,
+`finish_persistent_battle_without_level_crossing()`, may additionally apply
+battle-local pending EXP when the award remains strictly below the currently
+exposed `max_exp` boundary.
+
+That restriction is intentional. Taiwan v1 exposes separate EXP/max-EXP
+status fields, while descendant server source preserves two incompatible
+level-transition regimes. Below the threshold both simply add the award; at
+the threshold their EXP-state mutation diverges.
+
+Canonical EXP reconstruction record:
+
+- `research/mechanics/STONEAGE-BATTLE-EXP-SETTLEMENT-R1.md`
+
+Still not inferred or applied here:
+
+- threshold-crossing player or pet level-up;
+- level-up stat/growth side effects;
 - item drops;
 - money;
 - capture;
@@ -67,8 +83,6 @@ R1 does not infer or apply:
 - post-battle warp;
 - equipment durability;
 - later private-server reward modifiers.
-
-Those systems must be recovered and introduced separately.
 
 ## 5. Regression coverage
 
@@ -91,7 +105,9 @@ The in-process path now has a deterministic lifecycle through:
 
 `world -> encounter -> spawned group battle -> multi-round HP -> termination -> direct HP/result return -> world`
 
-The next reward-side problem is no longer generic "battle settlement." It is
-the narrower EXP orchestration seam: participant eligibility, defeated-enemy
-accumulation, application ordering and level-up behavior must be pinned before
-the already-recovered per-enemy EXP arithmetic is connected to persistence.
+Ordinary single-hit EXP provenance, kill attribution, pending accumulation and
+below-threshold persistence are now closed to a reconstruction-safe boundary.
+
+The next EXP problem is specifically the **level-transition profile**. The
+legacy cumulative-threshold path and later per-level-consumption path must stay
+versioned until original-era evidence selects one for the early baseline.
