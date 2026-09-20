@@ -1107,6 +1107,14 @@ Supplemental source ledgers:
   - a distinct ten-roll allocation adds exactly ten spawn-stat points;
   - current internal four stats use `(((level-1)*LVUPPOINT)+INITNUM) * current_base`;
   - derived combat projection remains separate from the historical v1 wire evidence.
+- NPC runtime derivation is now closed to the first reconstruction-safe boundary:
+  - NPCCREATE spawn area supplies runtime floor/X/Y and DIR;
+  - NPCTEMPLATE supplies image/name with NPCCREATE override support;
+  - CHAR instance creation is followed by OBJECT allocation, and that newly allocated object index becomes `CHAR_WORKOBJINDEX`;
+  - v1 `C.runtime_object_id` and `WN.source_object_index` therefore refer to the same runtime object identity;
+  - `WN.sequence_number` remains an independent window/session state ID;
+  - level/title/walkable/height and comparable presentation fields remain explicit default/runtime CHAR inputs rather than being falsely attributed to static NPC template rows.
+  This boundary is implemented in `build_npc_runtime_bridge()` and validated in the combined model suite.
 - `tools/stoneage_tw10_25_encounter_bridge.py` now models the strict server identity chain:
   `encount.INDEX -> group.GROUP_ID -> enemy.ID -> enemybase.TEMPNO -> runtime state`.
   It accepts the exact field names emitted by the recovered probes as well as the normalized documentation names.
@@ -1123,10 +1131,10 @@ Supplemental source ledgers:
 
 ## Immediate next actions
 
-1. **Close NPC template/create -> v1 WorldObject / WN runtime derivation.** Trace the fixed descendant server object serializer and window sender far enough to distinguish static NPC template/create fields, allocated runtime object index, world-object presentation fields and per-session WN values. Do not equate Windowman route numbers with runtime object indexes.
-2. **Close ItemTemplate -> ItemInstance -> v1 ItemView derivation.** Keep `itemset.id` authoritative and separate from inventory slots; identify which v1 nine-field values are template-copied, per-instance/runtime-computed or presentation-only.
-3. **Compose enemy variant + pet template + pet birth + v1 PetState into one deterministic reconstruction path.** Preserve `enemy.ID`, `enemybase.TEMPNO`, pet slot and runtime object identity as distinct namespaces and keep BRIDGE_2_5 formula evidence visibly separate from V1_DIRECT client fields.
-4. **Add an engine-facing domain boundary over the reconstruction models.** The first prototype API should expose maps/world objects, player state, inventory, pets/skills, NPC sessions and encounter requests without requiring any network server process; historical network protocol remains an evidence source/adaptor, not the target architecture.
+1. **Close ItemTemplate -> ItemInstance -> v1 ItemView derivation.** Keep `itemset.id` authoritative and separate from inventory slots; identify which v1 nine-field values are template-copied, per-instance/runtime-computed or presentation-only. In particular, resolve the origin of color, the second runtime text field and the old send/use flag bits.
+2. **Compose enemy variant + pet template + pet birth + v1 PetState into one deterministic reconstruction path.** Preserve `enemy.ID`, `enemybase.TEMPNO`, pet slot and runtime object identity as distinct namespaces and keep BRIDGE_2_5 formula evidence visibly separate from V1_DIRECT client fields.
+3. **Add an engine-facing domain boundary over the reconstruction models.** The first prototype API should expose maps/world objects, player state, inventory, pets/skills, NPC sessions and encounter requests without requiring any network server process; historical network protocol remains an evidence source/adaptor, not the target architecture.
+4. **Close remaining default/runtime presentation gaps only when implementation needs them.** Examples include exact early object-type numeric values and default NPC title/walkable/height derivation; do not infer them from later expansions prematurely.
 5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
 6. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
 7. **Keep historical reconstruction and later redesign separate.** Once the deterministic historical domain layer can run end-to-end, optimization, automation/外挂-like convenience features and single-player redesign can be discussed as explicit DESIGN layers.
