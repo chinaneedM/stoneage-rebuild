@@ -1,0 +1,277 @@
+import unittest
+
+from tools.stoneage_battle_round_model import (
+    BATTLE_COM_ATTACK,
+    BATTLE_COM_GUARD,
+    BATTLE_COM_WAIT,
+    BattleCombatProfile,
+    BattleCommand,
+    OrdinaryAttackRolls,
+    prepare_battle_round,
+    resolve_ordinary_round,
+)
+from tools.stoneage_singleplayer_battle import BattleParticipant
+
+
+def actor(pid, side, kind, *, hp=100, attack=100, defense=70, quick=50, level=10):
+    return BattleParticipant(
+        participant_id=pid,
+        side=side,
+        kind=kind,
+        level=level,
+        hp=hp,
+        max_hp=hp,
+        attack=attack,
+        defense=defense,
+        quick=quick,
+        name=pid,
+        fixed_vital=40,
+    )
+
+
+def profile(dex=100, luck=0, earth=0, water=0, fire=0, wind=0):
+    return BattleCombatProfile(
+        fixed_dex=dex,
+        fixed_luck=luck,
+        earth=earth,
+        water=water,
+        fire=fire,
+        wind=wind,
+    )
+
+
+class BattleRoundModelTests(unittest.TestCase):
+    def test_prepare_round_sorts_descending_and_requires_explicit_tie(self):
+        a = actor("a", "player", "player", quick=80)
+        b = actor("b", "enemy", "enemy", quick=60)
+        commands = {
+            "a": BattleCommand(BATTLE_COM_WAIT),
+            "b": BattleCommand(BATTLE_COM_WAIT),
+        }
+        prepared = prepare_battle_round(
+            (a, b),
+            commands,
+            {"a": 0, "b": 0},
+        )
+        self.assertEqual(
+            tuple(x.participant.participant_id for x in prepared.ordered_entries),
+            ("a", "b"),
+        )
+
+        with self.assertRaisesRegex(ValueError, "tie_break_order"):
+            prepare_battle_round(
+                (a, b),
+                commands,
+                {"a": 20, "b": 0},
+            )
+
+    def test_guard_is_active_before_slow_guard_actor_turn(self):
+        player = actor("player", "player", "player", quick=20)
+        enemy = actor("enemy", "enemy", "enemy", quick=100)
+        prepared = prepare_battle_round(
+            (player, enemy),
+            {
+                "player": BattleCommand(BATTLE_COM_GUARD),
+                "enemy": BattleCommand(BATTLE_COM_ATTACK, command2=0),
+            },
+            {"player": 0, "enemy": 0},
+        )
+        result = resolve_ordinary_round(
+            prepared,
+            slots={"player": 0, "enemy": 10},
+            profiles={"player": profile(), "enemy": profile()},
+            attack_rolls={
+                "enemy": OrdinaryAttackRolls(
+                    dodge_roll_1_10000=None,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                    guard_roll_1_100=1,
+                    minimum_damage_roll_0_1=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.action_order, ("enemy", "player"))
+        self.assertEqual(result.events[0].result, "allguard")
+        self.assertEqual(result.events[0].damage, 0)
+        self.assertEqual(result.hp_by_participant_id["player"], 100)
+
+    def test_normal_attack_applies_recovered_damage_to_hp(self):
+        player = actor("player", "player", "player", quick=100)
+        enemy = actor("enemy", "enemy", "enemy", quick=50)
+        prepared = prepare_battle_round(
+            (player, enemy),
+            {
+                "player": BattleCommand(BATTLE_COM_ATTACK, command2=10),
+                "enemy": BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player": 0, "enemy": 0},
+        )
+        result = resolve_ordinary_round(
+            prepared,
+            slots={"player": 0, "enemy": 10},
+            profiles={"player": profile(), "enemy": profile()},
+            attack_rolls={
+                "player": OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.events[0].result, "normal")
+        self.assertEqual(result.events[0].damage, 95)
+        self.assertEqual(result.hp_by_slot[10], 5)
+        self.assertEqual(result.events[1].result, "wait")
+
+    def test_dodge_short_circuits_damage_and_critical(self):
+        player = actor("player", "player", "player", quick=100)
+        enemy = actor("enemy", "enemy", "enemy", quick=50)
+        prepared = prepare_battle_round(
+            (player, enemy),
+            {
+                "player": BattleCommand(BATTLE_COM_ATTACK, command2=10),
+                "enemy": BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player": 0, "enemy": 0},
+        )
+        result = resolve_ordinary_round(
+            prepared,
+            slots={"player": 0, "enemy": 10},
+            profiles={"player": profile(), "enemy": profile()},
+            attack_rolls={
+                "player": OrdinaryAttackRolls(
+                    dodge_roll_1_10000=1,
+                    critical_roll_1_10000=1,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.events[0].result, "dodge")
+        self.assertEqual(result.events[0].damage, 0)
+        self.assertEqual(result.hp_by_slot[10], 100)
+
+    def test_critical_adds_raw_defense_level_ratio_term(self):
+        player = actor("player", "player", "player", quick=100)
+        enemy = actor("enemy", "enemy", "enemy", quick=50)
+        prepared = prepare_battle_round(
+            (player, enemy),
+            {
+                "player": BattleCommand(BATTLE_COM_ATTACK, command2=10),
+                "enemy": BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player": 0, "enemy": 0},
+        )
+        result = resolve_ordinary_round(
+            prepared,
+            slots={"player": 0, "enemy": 10},
+            profiles={"player": profile(), "enemy": profile()},
+            attack_rolls={
+                "player": OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=1,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.events[0].result, "critical")
+        self.assertEqual(result.events[0].damage, 130)
+        self.assertEqual(result.hp_by_slot[10], 0)
+
+    def test_dead_submitted_target_retargets_at_execution_time(self):
+        player = actor(
+            "player", "player", "player",
+            hp=100, attack=200, defense=70, quick=100,
+        )
+        pet = actor(
+            "pet", "player", "pet",
+            hp=100, attack=150, defense=60, quick=80,
+        )
+        enemy0 = actor(
+            "enemy0", "enemy", "enemy",
+            hp=50, attack=10, defense=20, quick=50,
+        )
+        enemy1 = actor(
+            "enemy1", "enemy", "enemy",
+            hp=100, attack=10, defense=20, quick=40,
+        )
+        prepared = prepare_battle_round(
+            (player, pet, enemy0, enemy1),
+            {
+                "player": BattleCommand(BATTLE_COM_ATTACK, command2=10),
+                "pet": BattleCommand(BATTLE_COM_ATTACK, command2=10),
+                "enemy0": BattleCommand(BATTLE_COM_WAIT),
+                "enemy1": BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player": 0, "pet": 0, "enemy0": 0, "enemy1": 0},
+        )
+        result = resolve_ordinary_round(
+            prepared,
+            slots={"player": 0, "pet": 1, "enemy0": 10, "enemy1": 11},
+            profiles={
+                "player": profile(),
+                "pet": profile(),
+                "enemy0": profile(),
+                "enemy1": profile(),
+            },
+            attack_rolls={
+                "player": OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+                "pet": OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                    retarget_roll=0,
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.events[0].resolved_target_slot, 10)
+        self.assertEqual(result.hp_by_slot[10], 0)
+        self.assertEqual(result.events[1].participant_id, "pet")
+        self.assertTrue(result.events[1].retargeted)
+        self.assertEqual(result.events[1].resolved_target_slot, 11)
+        self.assertEqual(result.events[2].participant_id, "enemy0")
+        self.assertEqual(result.events[2].result, "skipped_dead")
+
+    def test_same_side_live_target_is_outside_status_free_seam(self):
+        player = actor("player", "player", "player", quick=100)
+        pet = actor("pet", "player", "pet", quick=80)
+        enemy = actor("enemy", "enemy", "enemy", quick=40)
+        prepared = prepare_battle_round(
+            (player, pet, enemy),
+            {
+                "player": BattleCommand(BATTLE_COM_ATTACK, command2=1),
+                "pet": BattleCommand(BATTLE_COM_WAIT),
+                "enemy": BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player": 0, "pet": 0, "enemy": 0},
+        )
+        with self.assertRaisesRegex(ValueError, "same-side"):
+            resolve_ordinary_round(
+                prepared,
+                slots={"player": 0, "pet": 1, "enemy": 10},
+                profiles={
+                    "player": profile(),
+                    "pet": profile(),
+                    "enemy": profile(),
+                },
+                attack_rolls={
+                    "player": OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    )
+                },
+                defense_profile="newpower_70pct",
+            )
+
+
+if __name__ == "__main__":
+    unittest.main()
