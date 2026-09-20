@@ -70,10 +70,18 @@ Canonical EXP reconstruction record:
 
 - `research/mechanics/STONEAGE-BATTLE-EXP-SETTLEMENT-R1.md`
 
+A third explicit adapter, `finish_persistent_battle_with_player_progression()`,
+can settle a **player** threshold crossing only through a caller-selected
+versioned EXP profile and caller-supplied future thresholds. Stable player
+side effects (+3 free points per level, per-level DP, and once-per-result +2
+charm) are applied only when those persistent fields already exist.
+
+Pet threshold crossing still fails atomically because its randomized growth
+mutation is a separate unresolved seam.
+
 Still not inferred or applied here:
 
-- threshold-crossing player or pet level-up;
-- level-up stat/growth side effects;
+- pet threshold-crossing growth;
 - item drops;
 - money;
 - capture;
@@ -108,6 +116,6 @@ The in-process path now has a deterministic lifecycle through:
 Ordinary single-hit EXP provenance, kill attribution, pending accumulation and
 below-threshold persistence are now closed to a reconstruction-safe boundary.
 
-The next EXP problem is specifically the **level-transition profile**. The
-legacy cumulative-threshold path and later per-level-consumption path must stay
-versioned until original-era evidence selects one for the early baseline.
+Player threshold crossing is now supported only through explicit versioned
+profiles; no profile is silently selected as the JSS baseline. The next EXP
+problem is the separate randomized **pet level-growth** seam.

@@ -1376,21 +1376,30 @@ Supplemental source ledgers:
   - dead player receives no EXP;
   - if the player is dead, the owned-pet EXP loop is never entered;
   - living pets are eligible only from the living-player result path.
+- Player threshold crossing is now versioned instead of guessed:
+  - `LEGACY_CUMULATIVE_EXP` preserves cumulative EXP and cumulative thresholds;
+  - `PER_LEVEL_EXP` preserves later current-level EXP consumption;
+  - every crossed player level yields +3 free-stat points and `new_level * 10` DP;
+  - battle-result charm is +2 once when one or more levels are gained, not +2 per level;
+  - threshold values after a crossing remain explicit caller inputs, so no later table is silently promoted to JSS.
+- `finish_persistent_battle_with_player_progression()` applies those player transitions only when the caller selects the profile and supplies future thresholds; it also requires existing `free_stat_points`, `charm`, and `duel_point_like_state` fields.
+- Pet threshold crossing remains atomically blocked until randomized pet-growth mutation is modeled.
 - Still OPEN / deliberately excluded:
   - exact JSS-1999 choice of level-threshold regime/table;
-  - threshold-crossing level-up mutation;
-  - player duel-point/charm/free-stat consequences at level-up;
   - pet growth rolls and pet level-up state mutation;
+  - maximum-level behavior;
   - ride-pet 60% EXP side award;
   - combo/counter/status kill attribution;
   - items, money, capture, escape and other post-battle rewards.
 - Code validations:
   - `81e9572f1ff309982d13c7f1979a51516a5593a8` — pending ordinary kill EXP accumulation; runs **35514277568** and **35514277633** both success.
   - `b3207d71bc8dafa557e31d3450be2d6efb00bd29` — no-level-cross EXP persistence; run **35514525635** success.
+  - `509ac9fa68e67ce3e962bb700eae7e1817aee578` — explicit player EXP transition profiles; run **35514947237** success.
+  - `1a48e8f57d3673c3a902351a754b5c6e5d8907f4` — explicit player threshold-crossing settlement; run **35515032705** success.
 
 ## Immediate next actions
 
-1. **Close the level-transition profile without collapsing distinct historical regimes.** Recover/version the legacy cumulative-threshold path versus the later `_NEWOPEN_MAXEXP` per-level path, and only then connect threshold-crossing EXP to level/free-point/pet-growth mutation. Do not use the mixed 2.5 `exp.txt` as an early JSS table by default.
+1. **Close pet threshold-crossing growth as its own deterministic seam.** Recover `CHAR_PetLevelUp()` rank/random growth inputs and represent every RNG draw explicitly before allowing pet EXP to cross a level boundary; keep pet AI/loyalty side effects separately evidenced.
 2. **Close remaining EXP side paths independently.** Ride-pet 60% awards and combo/counter/status kill attribution require their own execution seams; do not generalize them from the ordinary single-hit model.
 3. **Extend post-battle rewards one subsystem at a time after EXP.** Drops, money, capture, escape, death penalties and recovery remain separate evidence seams; do not bundle them into one guessed settlement routine.
 4. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.

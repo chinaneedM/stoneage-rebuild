@@ -2,7 +2,7 @@
 
 Date: 2026-09-20
 
-Status: **ordinary single-hit accumulation closed from stable descendants; threshold-crossing profile remains versioned/OPEN for the early baseline**
+Status: **ordinary single-hit accumulation and explicit player threshold-crossing profiles closed; exact JSS profile/table and pet level-up remain OPEN**
 
 ## Purpose
 
@@ -177,15 +177,45 @@ Validation:
 
 - gameplay-model run 35514525635 — success.
 
-## 8. Explicitly OPEN
+## 8. Explicit player threshold-crossing settlement
+
+`tools/stoneage_player_growth_model.py` now represents both recovered
+progression regimes explicitly:
+
+- `LEGACY_CUMULATIVE_EXP`: cumulative EXP is retained after each level;
+- `PER_LEVEL_EXP`: each crossed current-level requirement is subtracted.
+
+`resolve_player_exp_transition()` requires every post-crossing threshold as an
+explicit input. It returns, rather than hides, the stable player side effects:
+
+- `+3` free-stat points per gained level;
+- duel points `+= new_level * 10` for each gained level;
+- charm `+2` once when one or more levels are gained.
+
+`SinglePlayerHistoricalRuntime.finish_persistent_battle_with_player_progression()`
+can now persist a player crossing only when:
+
+- the progression profile is explicitly selected;
+- all required future threshold values are supplied;
+- the persistent player already contains `free_stat_points`, `charm`, and
+  `duel_point_like_state` so no new field is fabricated.
+
+Pet EXP remains prevalidated before any mutation. If a living pet would reach
+or cross its own `max_exp`, the entire settlement is rejected atomically until
+the randomized pet-growth seam is modeled.
+
+Validation:
+
+- `509ac9fa68e67ce3e962bb700eae7e1817aee578` / run **35514947237** — player EXP profile model;
+- `1a48e8f57d3673c3a902351a754b5c6e5d8907f4` / run **35515032705** — runtime player threshold-crossing settlement.
+
+## 9. Explicitly OPEN
 
 Before threshold-crossing persistence can be promoted for the early baseline,
 the project still needs an explicit/versioned decision or stronger evidence
 for:
 
 - JSS-1999 threshold representation and exact table;
-- multiple-level crossing behavior for the target baseline;
-- player level-up duel-point/charm/free-stat consequences;
 - pet level-up random growth application;
 - maximum-level behavior;
 - ride-pet EXP;
