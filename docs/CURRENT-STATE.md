@@ -1278,14 +1278,38 @@ Supplemental source ledgers:
   - export with explicit collision-dataset integrity requirement **35511442265** — success.
 - **Operational consequence:** former immediate action 1 is closed. Early-client movement no longer needs later server `WALKABLE/HAVEHEIGHT` substitution.
 
+## Ordinary attack / guard / wait round resolution — 2026-09-20
+
+- The stable descendant battle loop is now executable through the first status-free ordinary effect seam:
+  - explicit COM1/COM2/COM3 command envelope;
+  - recovered ordinary action-value generation;
+  - descending action order;
+  - explicit caller tie order when equal values hit the source's undefined C-`qsort` tie case;
+  - execution-time dead/invalid-target check and random opponent retarget;
+  - guard stance active from submitted commands before the guard actor's own sorted turn;
+  - dodge, critical, physical damage, four-element adjustment, guard reduction and direct HP subtraction.
+- Stable random comparison details are preserved:
+  - dodge: `RAND(1,10000) <= per`;
+  - critical: `RAND(1,10000) < per`.
+- Stable four-attribute coefficients are now executable: same **1.0**, advantage **1.5**, disadvantage **0.6**, with neutral remainder and explicit battlefield element scalar.
+- The earliest defense branch remains provenance-sensitive, so round execution still requires explicit `newpower_70pct` vs `preserved_old_mixed` profile selection.
+- `BattleCombatProfile` keeps fixed DEX/LUCK/elements/weapon-critical explicit instead of silently equating early client display labels with server WORK fields.
+- `tools/stoneage_singleplayer_runtime.py` now exposes `resolve_ordinary_battle_round()`, allowing a spawned group battle to run one deterministic attack/guard/wait round entirely in-process.
+- Deliberately excluded: AI selection, counter/combo/guardian, bows/boomerangs, ride-pet sharing, reactions/statuses, skills/items/magic, capture/escape, battle termination and reward settlement.
+- Evidence: `research/mechanics/STONEAGE-ORDINARY-BATTLE-ROUND-R1.md`.
+- Remote validation:
+  - battle-core run **35512116840** — success;
+  - full gameplay/runtime run **35512186213** — success.
+- **Operational consequence:** former immediate battle action is closed to the first deterministic effect boundary; the next battle problem is persistent multi-round state/termination, not first-hit arithmetic.
+
 ## Immediate next actions
 
-1. **Close the next battle-resolution seam only where evidence is stable.** Prioritize ordinary attack/guard/wait turn ordering and target/effect application before AI, capture, escape, drops or EXP settlement; keep unresolved branches explicit.
-2. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
-3. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
-4. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
-5. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
-6. **Keep historical reconstruction and later redesign separate.** The historical loop is now executable at skeleton level; optimization, automation/外挂-like convenience features and single-player redesign remain explicit DESIGN layers rather than silent historical rewrites.
+1. **Promote the ordinary-round result into a persistent multi-round in-process battle state and close the first battle-termination boundary.** Preserve current HP/command state across rounds and identify stable victory/defeat exit conditions before EXP/drop settlement; do not invent AI or reward rules.
+2. **Close the combat-profile bridge where evidence permits.** Recover/validate how early player/pet client fields correspond to server fixed DEX/LUCK and elemental work values; keep explicit inputs wherever the early mapping remains unproven.
+3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
+4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
+5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
+6. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen and keep historical reconstruction separate from redesign.** Never repair missing references by inventing data; later optimization/automation remains an explicit DESIGN layer.
 
 
 ## Continuity status
