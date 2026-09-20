@@ -12,7 +12,7 @@ from pathlib import Path
 import struct
 import tempfile
 
-from capstone.x86 import X86_OP_IMM, X86_OP_MEM
+from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_OP_REG
 
 from tools.stoneage_tw10_technical_probe import find_rows, extract_row
 from tools.stoneage_tw10_mapcache_binary_probe import (
@@ -245,6 +245,75 @@ def s_char_switch(data, base, sections, cfg):
     }
 
 
+def direct_call_target(ins):
+    if ins.mnemonic != "call":
+        return None
+    for op in ins.operands:
+        if op.type == X86_OP_IMM:
+            return int(op.imm) & 0xFFFFFFFF
+    return None
+
+
+def callsite_stack_signature(base, cfg, target_va):
+    """Collect derived caller-cleanup and nearby immediate push patterns."""
+    ordered = sorted(cfg["instructions"])
+    position = {addr: i for i, addr in enumerate(ordered)}
+    rows = []
+    for addr in ordered:
+        ins = cfg["instructions"][addr]
+        if direct_call_target(ins) != target_va:
+            continue
+        idx = position[addr]
+        pushes = []
+        # Only accept a short contiguous linear window before the call.
+        previous = []
+        cursor = idx - 1
+        last_start = addr
+        while cursor >= 0 and len(previous) < 12:
+            paddr = ordered[cursor]
+            pins = cfg["instructions"][paddr]
+            if paddr + pins.size != last_start:
+                break
+            if pins.mnemonic.startswith("j") or pins.mnemonic == "call":
+                break
+            previous.append(pins)
+            last_start = paddr
+            cursor -= 1
+        previous.reverse()
+        for pins in previous:
+            if pins.mnemonic != "push":
+                continue
+            imm = next(
+                (int(op.imm) & 0xFFFFFFFF for op in pins.operands if op.type == X86_OP_IMM),
+                None,
+            )
+            if imm is not None:
+                pushes.append(imm)
+
+        cleanup = None
+        next_addr = addr + ins.size
+        nxt = cfg["instructions"].get(next_addr)
+        if nxt is not None and nxt.mnemonic == "add" and len(nxt.operands) >= 2:
+            dst, src = nxt.operands[0], nxt.operands[1]
+            if (
+                dst.type == X86_OP_REG
+                and nxt.reg_name(dst.reg).lower() == "esp"
+                and src.type == X86_OP_IMM
+            ):
+                cleanup = int(src.imm) & 0xFFFFFFFF
+        rows.append((addr - base, cleanup, tuple(pushes)))
+    return rows
+
+
+def helper_body_fingerprint(data, base, sections, imports, target_rva):
+    cfg = collect_cfg(data, base, sections, imports, target_rva)
+    rets = []
+    for addr, ins in sorted(cfg["instructions"].items()):
+        if ins.mnemonic.startswith("ret"):
+            rets.append((addr - base, ins.op_str))
+    return cfg, rets
+
+
 def shared_direct_targets(cfgs):
     memberships = collections.defaultdict(dict)
     for label, cfg in cfgs.items():
@@ -363,8 +432,52 @@ def main():
                                 f"target_rva=0x{target-base:x}|calls={count}"
                             )
 
+        shared = shared_direct_targets(cfgs)
+        for helper_rva in (0x46C70, 0x46DA0, 0x46FF0):
+            helper_va = base + helper_rva
+            helper_cfg, helper_rets = helper_body_fingerprint(
+                data, base, sections, imports, helper_rva
+            )
+            print(
+                f"HELPER|rva=0x{helper_rva:x}|blocks={len(helper_cfg['blocks'])}|"
+                f"instructions={len(helper_cfg['instructions'])}|"
+                f"direct_targets={len(helper_cfg['direct_calls'])}|"
+                f"import_targets={len(helper_cfg['import_calls'])}|"
+                f"ret_sites={len(helper_rets)}"
+            )
+            for ret_rva, ops in helper_rets:
+                print(
+                    f"HELPER_RET|rva=0x{helper_rva:x}|instruction_rva=0x{ret_rva:x}|"
+                    f"ops={clean(ops)}"
+                )
+            for label, cfg in cfgs.items():
+                sigs = callsite_stack_signature(base, cfg, helper_va)
+                if not sigs:
+                    continue
+                cleanup_counts = collections.Counter(
+                    cleanup for _, cleanup, _ in sigs
+                )
+                print(
+                    f"HELPER_CALLS|callback={label}|helper_rva=0x{helper_rva:x}|"
+                    f"calls={len(sigs)}|cleanup_bytes="
+                    + ",".join(
+                        f"{'none' if key is None else key}:{count}"
+                        for key, count in sorted(
+                            cleanup_counts.items(),
+                            key=lambda x: (-1 if x[0] is None else x[0]),
+                        )
+                    )
+                )
+                for call_rva, cleanup, pushes in sigs:
+                    print(
+                        f"HELPER_CALLSITE|callback={label}|helper_rva=0x{helper_rva:x}|"
+                        f"callsite_rva=0x{call_rva:x}|"
+                        f"cleanup_bytes={'' if cleanup is None else cleanup}|"
+                        f"immediate_pushes={','.join(hex(v) for v in pushes)}"
+                    )
+
         for target, counts in sorted(
-            shared_direct_targets(cfgs).items(),
+            shared.items(),
             key=lambda x: (-sum(x[1].values()), x[0]),
         ):
             detail = ",".join(f"{name}:{counts[name]}" for name in sorted(counts))
