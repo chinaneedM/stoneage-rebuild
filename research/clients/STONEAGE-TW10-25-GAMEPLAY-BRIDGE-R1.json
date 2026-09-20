@@ -306,13 +306,13 @@
             "inventory_full_slot",
             "inventory_incremental_record"
           ],
-          "target_field": "secondary_or_secret_name",
+          "target_field": "secondary_display_text",
           "source_field": null,
-          "relation": "v1 second string is a separate client-visible field; fixed later server code shown here emits an empty paramshow in this position, so exact master-table source is OPEN",
+          "relation": "runtime display-summary/paramshow field; fixed descendant sender sets it empty on the active base path",
           "baseline_evidence": "V1_DIRECT",
           "semantic_evidence": "EARLY_LINEAGE",
-          "bridge_evidence": "OPEN",
-          "status": "open_or_runtime_derived"
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "runtime_derived"
         },
         {
           "target_records": [
@@ -393,7 +393,7 @@
           "status": "open_or_runtime_derived"
         }
       ],
-      "note_on_name_fields": "The v1 wire has two escaped name-like strings. Fixed descendant server code explicitly sources the first transmitted item-status string from ITEM_SECRETNAME and uses a runtime paramshow buffer for the second. Therefore this bridge does not force itemset.name into either v1 wire field without further evidence.",
+      "note_on_name_fields": "The v1 wire has two escaped leading strings. Fixed descendant client names them name/name2, while all three fixed descendant senders source the first from ITEM_SECRETNAME and the second from runtime paramshow (empty on the active base path). itemset.name is not forced into either v1 wire field.",
       "server_only_or_versioned_fields": [
         "id",
         "cost",
@@ -414,7 +414,24 @@
         "canmergeto",
         "ingredient_fields",
         "durability_extensions"
-      ]
+      ],
+      "instance_derivation": {
+        "evidence": "BRIDGE_2_5",
+        "status": "descendant_runtime_derivation",
+        "source_lineage_paths": [
+          "gmsv/src/item/item.c",
+          "Source/gmsv/item/item.c",
+          "server/gmsv/item/item.c"
+        ],
+        "rules": [
+          "ITEM_makeItem copies the template into an instance and may apply integer randomdata before the instance is registered",
+          "v1 field 1 is sent from instance ITEM_SECRETNAME",
+          "v1 field 2 is runtime paramshow/secondary display text and is empty on the fixed descendant base path",
+          "v1 color defaults to CHAR_COLORWHITE (0), becomes CHAR_COLORGREEN (5) when instance CDKEY is non-empty, otherwise becomes CHAR_COLORYELLOW (4) when MERGEFLG is set",
+          "base sendFlag bit 0 = CANPETMAIL, bit 1 = CANMERGEFROM, bit 2 = item TYPE is DISH",
+          "later inlay flags occupy bits 3/4 and later damage/fix state can occupy bit 5; these are not promoted into the Taiwan v1 baseline"
+        ]
+      }
     },
     "npc_master_to_world_and_window": {
       "source_entity": "npc_template_create_graph",
