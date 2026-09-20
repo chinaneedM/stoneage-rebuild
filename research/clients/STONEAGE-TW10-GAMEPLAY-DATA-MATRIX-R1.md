@@ -371,6 +371,24 @@ Not promoted to v1 FACT:
 
 ## Pet-skill data matrix
 
+### V1 DIRECT — full pet-skill view layout
+
+The accepted v1 `S:W` branch at RVA `0x30b4f` independently fixes the old pet-skill view shape:
+
+- the pet slot is encoded in the category prefix byte (`W0..`);
+- the callback clears exactly **7 skill slots** before parsing;
+- each skill record advances its token base by exactly **5**;
+- the loop advances bases `1, 6, 11, 16, 21, 26, 31` and terminates when the next base would be `36`;
+- each populated record contains **3 decimal integers + 2 escaped strings**.
+
+The early generated lineage maps those five positions to:
+
+`skill ID | field/use-context | target | name | comment`.
+
+Therefore the **7-slot count, 5-field stride and field wire types are V1 DIRECT**. The human-readable names are EARLY LINEAGE semantics whose shape matches the original binary exactly.
+
+This directly excludes later pet-skill record extensions from the v1 baseline unless separately evidenced.
+
 **V1 DIRECT:**
 
 - C→S `PS`: 3 ints + 1 string;
@@ -405,6 +423,53 @@ The strongest bridge is therefore:
 `COST`, `ILLEGAL`, callback/function tokens and later extra columns are **2.5 BRIDGE / VERSIONED**, not v1 facts unless separately established.
 
 ## Item data matrix
+
+### V1 DIRECT — full and incremental inventory layouts
+
+Two independent v1 callbacks now bound the item wire model.
+
+**Full inventory state — `S:I`**
+
+The `S:I` branch starts its first record at token 1, advances the record base by exactly **9**, and terminates when the running base reaches `182`. Starting from internal base value 2, `2 + 20 × 9 = 182`, proving exactly **20 inventory slots** in this compiled v1 layout.
+
+Each full-state slot has exactly **9 fields**:
+
+| Relative field | Direct v1 wire role | Early-lineage semantic mapping |
+| ---: | --- | --- |
+| 1 | escaped string | name |
+| 2 | escaped string | secondary/secret name |
+| 3 | decimal integer | color |
+| 4 | escaped string | memo/effect text |
+| 5 | decimal integer | graphic ID |
+| 6 | decimal integer | field/use-context |
+| 7 | decimal integer | target |
+| 8 | decimal integer | level |
+| 9 | decimal integer | send/use flags |
+
+The 9-field width and 20-slot count are V1 DIRECT.
+
+**Incremental item update — top-level `I` callback**
+
+The v1 `I` callback parses a repeated **10-field record**. Its loop carries a token base forward by exactly **10**; after each record the next slot-index and name positions are derived from that increment.
+
+The first record is directly anchored by token 1 = decimal slot index and token 2 = escaped name. The remaining parse pattern is:
+
+| Relative field | Direct v1 wire role | Early-lineage semantic mapping |
+| ---: | --- | --- |
+| 1 | decimal integer | inventory slot index |
+| 2 | escaped string | name |
+| 3 | escaped string | secondary/secret name |
+| 4 | decimal integer | color |
+| 5 | escaped string | memo/effect text |
+| 6 | decimal integer | graphic ID |
+| 7 | decimal integer | field/use-context |
+| 8 | decimal integer | target |
+| 9 | decimal integer | level |
+| 10 | decimal integer | send/use flags |
+
+The **10-field incremental width is V1 DIRECT**. Its difference from `S:I` is exactly the explicit slot-index field.
+
+**Version boundary:** neither v1 item layout contains the later descendant durability/damage string that follows send flags in newer source variants. Pile counts, alchemy tags, pet-item types, jigsaw fields, upgrade/countdown fields and other later additions likewise do not belong in the accepted v1 wire baseline.
 
 **V1 DIRECT:**
 
@@ -601,12 +666,14 @@ Server behavior callback/formula remains a separate authoritative implementation
 
 ## Next verification seam
 
-The highest-value next binary step is no longer broad protocol enumeration. It is **inside the v1 callbacks**:
+The first callback-internal field pass is now sufficiently closed for reconstruction work:
 
-1. fingerprint `S` callback RVA `0x2f670` and identify its internal P/C/I/S/J/N/K/W category parsers;
-2. fingerprint `C` callback RVA `0x31260` and verify the old world-object field count/order;
-3. fingerprint `I` callback RVA `0x325f0` for item subrecord layout;
-4. fingerprint `WN` callback RVA `0x328c0` for window/session semantics.
+- `S:P`, `S:K`, `S:N`, `S:C/D/E/M/J` fixed layouts are bounded;
+- `S:I` is fixed at 20 × 9 fields;
+- incremental `I` is fixed at 10 fields per record;
+- `S:W` is fixed at 7 × 5 fields;
+- `C` character/item/money record variants are bounded;
+- `WN` is proven as a five-value forwarding boundary.
 
-Those passes can promote selected inner fields from EARLY LINEAGE to V1 DIRECT without requiring any original server binary.
+Highest-value next step is therefore to encode these facts into a **machine-readable evidence-tagged gameplay schema** and validate it in CI. Further binary work should be targeted only where a schema field still lacks a v1 position/type anchor or where implementation needs a storage/formula detail.
 
