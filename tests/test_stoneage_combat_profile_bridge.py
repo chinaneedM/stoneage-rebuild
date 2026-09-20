@@ -200,7 +200,7 @@ class CombatProfileBridgeTests(unittest.TestCase):
         profile = birth_combat_profile(source)
         self.assertEqual(profile.fixed_dex, 42)
         self.assertEqual(profile.fixed_luck, 0)
-        self.assertEqual(profile.elements, (50, 0, 0, 0))
+        self.assertEqual(profile.elements, (50, 50, 0, 0))
         self.assertEqual(profile.weapon_critical, 0)
 
     def test_reconstructed_pet_profile_reads_preserved_birth_source(self):
