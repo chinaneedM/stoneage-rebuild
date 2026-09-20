@@ -19,6 +19,7 @@ from tools.stoneage_singleplayer_domain import (
     InventorySlot,
     ItemTemplateId,
     PetActor,
+    PetGrowthState,
     PetSkill,
     PetSlot,
     PetTemplateId,
@@ -28,7 +29,8 @@ from tools.stoneage_singleplayer_domain import (
 )
 
 
-PERSISTENCE_SCHEMA = "stoneage.singleplayer.persistence.r1"
+LEGACY_PERSISTENCE_SCHEMA = "stoneage.singleplayer.persistence.r1"
+PERSISTENCE_SCHEMA = "stoneage.singleplayer.persistence.r2"
 _TOP_LEVEL_KEYS = {"schema", "character", "inventory", "pets"}
 
 
@@ -70,6 +72,18 @@ def dump_persistent_state(
                 "variant_id": pet.variant_id.value,
                 "template_id": pet.template_id.value,
                 "state": _plain_mapping(pet.state, label=f"pet slot {slot.value}"),
+                "growth": (
+                    None
+                    if pet.growth is None
+                    else {
+                        "pet_rank": int(pet.growth.pet_rank),
+                        "alloc_point": int(pet.growth.alloc_point),
+                        "internal_vital": int(pet.growth.internal_vital),
+                        "internal_strength": int(pet.growth.internal_strength),
+                        "internal_toughness": int(pet.growth.internal_toughness),
+                        "internal_dexterity": int(pet.growth.internal_dexterity),
+                    }
+                ),
                 "skills": [
                     {
                         "template_id": int(skill.template_id),
@@ -103,8 +117,9 @@ def _require_exact_top_level(payload: Mapping[str, Any]) -> None:
 
 def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
     _require_exact_top_level(payload)
-    if payload["schema"] != PERSISTENCE_SCHEMA:
-        raise ValueError(f"unsupported persistence schema: {payload['schema']}")
+    schema = payload["schema"]
+    if schema not in {LEGACY_PERSISTENCE_SCHEMA, PERSISTENCE_SCHEMA}:
+        raise ValueError(f"unsupported persistence schema: {schema}")
 
     state = PersistentPlayerState()
 
@@ -143,13 +158,16 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
     for row in pets:
         if not isinstance(row, Mapping):
             raise ValueError("pet entry must be an object")
-        if set(row) != {
+        expected_pet_keys = {
             "slot",
             "variant_id",
             "template_id",
             "state",
             "skills",
-        }:
+        }
+        if schema == PERSISTENCE_SCHEMA:
+            expected_pet_keys.add("growth")
+        if set(row) != expected_pet_keys:
             raise ValueError("pet entry has unexpected shape")
         slot = PetSlot(int(row["slot"]))
         if slot.value in seen_pets:
@@ -175,6 +193,30 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
                 )
             )
 
+        growth = None
+        if schema == PERSISTENCE_SCHEMA and row["growth"] is not None:
+            growth_row = row["growth"]
+            if not isinstance(growth_row, Mapping):
+                raise ValueError("pet growth must be an object or null")
+            expected_growth_keys = {
+                "pet_rank",
+                "alloc_point",
+                "internal_vital",
+                "internal_strength",
+                "internal_toughness",
+                "internal_dexterity",
+            }
+            if set(growth_row) != expected_growth_keys:
+                raise ValueError("pet growth entry has unexpected shape")
+            growth = PetGrowthState(
+                pet_rank=int(growth_row["pet_rank"]),
+                alloc_point=int(growth_row["alloc_point"]),
+                internal_vital=int(growth_row["internal_vital"]),
+                internal_strength=int(growth_row["internal_strength"]),
+                internal_toughness=int(growth_row["internal_toughness"]),
+                internal_dexterity=int(growth_row["internal_dexterity"]),
+            )
+
         pet = PetActor(
             slot=slot,
             variant_id=EnemyVariantId(int(row["variant_id"])),
@@ -182,6 +224,7 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
             runtime_object_id=None,
             state=MappingProxyType(dict(row["state"])),
             skills=tuple(skills),
+            growth=growth,
         )
         state.pets[slot] = pet
 

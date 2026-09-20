@@ -130,6 +130,34 @@ class PetSkill:
 
 
 @dataclass(frozen=True)
+class PetGrowthState:
+    '''Hidden persistent growth identity, separate from the v1 S:K view.'''
+
+    pet_rank: int
+    alloc_point: int
+    internal_vital: int
+    internal_strength: int
+    internal_toughness: int
+    internal_dexterity: int
+
+    def __post_init__(self) -> None:
+        rank=int(self.pet_rank)
+        packed=int(self.alloc_point)
+        if not 0 <= rank <= 5:
+            raise ValueError('pet_rank must be in 0..5')
+        if not 0 <= packed <= 0xFFFFFFFF:
+            raise ValueError('alloc_point must fit unsigned 32-bit storage')
+        for value in (
+            self.internal_vital,
+            self.internal_strength,
+            self.internal_toughness,
+            self.internal_dexterity,
+        ):
+            if int(value) < 0:
+                raise ValueError('pet internal growth stats must be non-negative')
+
+
+@dataclass(frozen=True)
 class PetActor:
     slot: PetSlot
     variant_id: EnemyVariantId
@@ -137,6 +165,7 @@ class PetActor:
     runtime_object_id: RuntimeObjectId | None
     state: Mapping[str, Any]
     skills: tuple[PetSkill, ...]
+    growth: PetGrowthState | None = None
 
 
 @dataclass(frozen=True)
@@ -266,6 +295,14 @@ def adapt_pet_state(
         runtime_object_id,
         MappingProxyType(state.v1_pet_state_fields()),
         tuple(resolved_skills),
+        growth=PetGrowthState(
+            pet_rank=state.birth.pet_rank,
+            alloc_point=state.birth.alloc_point,
+            internal_vital=state.birth.internal_vital,
+            internal_strength=state.birth.internal_strength,
+            internal_toughness=state.birth.internal_toughness,
+            internal_dexterity=state.birth.internal_dexterity,
+        ),
     )
 
 

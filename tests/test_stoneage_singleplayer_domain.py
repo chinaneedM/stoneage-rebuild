@@ -177,6 +177,9 @@ class SinglePlayerHistoricalDomainTests(unittest.TestCase):
         self.assertEqual(pet.runtime_object_id, RuntimeObjectId(9001))
         self.assertEqual(pet.skills[0].template_id, 41)
         self.assertEqual(pet.skills[0].view["name"], "Skill")
+        self.assertIsNotNone(pet.growth)
+        self.assertEqual(pet.growth.pet_rank, 4)
+        self.assertEqual(pet.growth.alloc_point, 0x12131516)
 
         npc_runtime = build_npc()
         npc = domain.place_npc(npc_runtime)

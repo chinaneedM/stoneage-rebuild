@@ -8,6 +8,7 @@ from tools.stoneage_singleplayer_domain import (
     ItemTemplateId,
     NpcSession,
     PetActor,
+    PetGrowthState,
     PetSkill,
     PetSlot,
     PetTemplateId,
@@ -73,6 +74,14 @@ def make_state():
                 view=MappingProxyType({"skill_id": 41, "name": "Skill"}),
             ),
         ),
+        growth=PetGrowthState(
+            pet_rank=4,
+            alloc_point=0x12131516,
+            internal_vital=1800,
+            internal_strength=1900,
+            internal_toughness=2100,
+            internal_dexterity=2200,
+        ),
     )
     state.pets[pet.slot] = pet
     return state
@@ -97,6 +106,10 @@ class SinglePlayerPersistenceTests(unittest.TestCase):
         self.assertEqual(restored_pet.template_id, PetTemplateId(88))
         self.assertIsNone(restored_pet.runtime_object_id)
         self.assertEqual(restored_pet.skills[0].template_id, 41)
+        self.assertIsNotNone(restored_pet.growth)
+        self.assertEqual(restored_pet.growth.pet_rank, 4)
+        self.assertEqual(restored_pet.growth.alloc_point, 0x12131516)
+        self.assertEqual(restored_pet.growth.internal_dexterity, 2200)
 
     def test_json_encoding_is_deterministic_and_roundtrips(self):
         state = make_state()
@@ -130,7 +143,7 @@ class SinglePlayerPersistenceTests(unittest.TestCase):
         payload = dump_persistent_state(make_state())
 
         wrong_schema = dict(payload)
-        wrong_schema["schema"] = "stoneage.singleplayer.persistence.r2"
+        wrong_schema["schema"] = "stoneage.singleplayer.persistence.r999"
         with self.assertRaises(ValueError):
             load_persistent_state(wrong_schema)
 
@@ -144,6 +157,14 @@ class SinglePlayerPersistenceTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             load_persistent_state(missing)
 
+    def test_r1_payload_migrates_without_inventing_hidden_pet_growth(self):
+        payload = dump_persistent_state(make_state())
+        payload["schema"] = "stoneage.singleplayer.persistence.r1"
+        for pet in payload["pets"]:
+            del pet["growth"]
+
+        restored = load_persistent_state(payload)
+        self.assertIsNone(restored.pets[PetSlot(2)].growth)
     def test_duplicate_slots_are_rejected(self):
         payload = dump_persistent_state(make_state())
         payload["inventory"] = payload["inventory"] * 2
