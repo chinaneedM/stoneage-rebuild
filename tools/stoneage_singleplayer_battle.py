@@ -21,6 +21,7 @@ from tools.stoneage_battle_core_model import (
 )
 from tools.stoneage_singleplayer_domain import (
     EncounterRequest,
+    GroupEncounterRequest,
     MapPosition,
     PetActor,
     PetSlot,
@@ -62,7 +63,7 @@ class BattleParticipant:
 @dataclass(frozen=True)
 class BattleSession:
     origin_position: MapPosition
-    encounter: EncounterRequest
+    encounter: EncounterRequest | GroupEncounterRequest
     player: BattleParticipant
     allied_pets: tuple[BattleParticipant, ...]
     enemies: tuple[BattleParticipant, ...]
@@ -201,6 +202,63 @@ def enemy_participant_from_birth(
     )
 
 
+def _allied_battle_participants(
+    domain: SinglePlayerHistoricalDomain,
+    allied_pet_slots: Sequence[int],
+) -> tuple[BattleParticipant, ...]:
+    allies = []
+    seen_slots: set[int] = set()
+    for raw_slot in allied_pet_slots:
+        slot = PetSlot(int(raw_slot))
+        if slot.value in seen_slots:
+            raise ValueError(f"duplicate allied pet slot {slot.value}")
+        seen_slots.add(slot.value)
+        if slot not in domain.persistent.pets:
+            raise KeyError(f"allied pet slot {slot.value} is not populated")
+        allies.append(allied_pet_participant(domain.persistent.pets[slot]))
+    return tuple(allies)
+
+
+def begin_group_battle(
+    domain: SinglePlayerHistoricalDomain,
+    encounter: GroupEncounterRequest,
+    *,
+    enemies: Sequence[BattleParticipant],
+    allied_pet_slots: Sequence[int] = (),
+) -> BattleSession:
+    position = domain.world.player_position
+    if position is None:
+        raise ValueError("world position is required before battle")
+    if position != encounter.position:
+        raise ValueError(
+            "GroupEncounterRequest position no longer matches world position"
+        )
+    if domain.persistent.character is None:
+        raise ValueError("player state is required before battle")
+
+    enemy_tuple = tuple(enemies)
+    if not enemy_tuple:
+        raise ValueError("battle requires at least one enemy spawn")
+    if len(enemy_tuple) > encounter.max_enemy_count:
+        raise ValueError("enemy spawn count exceeds group encounter boundary")
+
+    participant_ids: set[str] = set()
+    for enemy in enemy_tuple:
+        if enemy.side != ENEMY_SIDE or enemy.kind != "enemy":
+            raise ValueError("enemy list contains a non-enemy participant")
+        if enemy.participant_id in participant_ids:
+            raise ValueError(f"duplicate battle participant id {enemy.participant_id}")
+        participant_ids.add(enemy.participant_id)
+
+    return BattleSession(
+        origin_position=position,
+        encounter=encounter,
+        player=player_participant(domain.persistent.character),
+        allied_pets=_allied_battle_participants(domain, allied_pet_slots),
+        enemies=enemy_tuple,
+    )
+
+
 def begin_battle(
     domain: SinglePlayerHistoricalDomain,
     encounter: EncounterRequest,
@@ -231,22 +289,11 @@ def begin_battle(
         if enemy.level != encounter.level:
             raise ValueError("battle enemy level does not match EncounterRequest")
 
-    allies = []
-    seen_slots: set[int] = set()
-    for raw_slot in allied_pet_slots:
-        slot = PetSlot(int(raw_slot))
-        if slot.value in seen_slots:
-            raise ValueError(f"duplicate allied pet slot {slot.value}")
-        seen_slots.add(slot.value)
-        if slot not in domain.persistent.pets:
-            raise KeyError(f"allied pet slot {slot.value} is not populated")
-        allies.append(allied_pet_participant(domain.persistent.pets[slot]))
-
     return BattleSession(
         origin_position=position,
         encounter=encounter,
         player=player_participant(domain.persistent.character),
-        allied_pets=tuple(allies),
+        allied_pets=_allied_battle_participants(domain, allied_pet_slots),
         enemies=enemy_tuple,
     )
 
