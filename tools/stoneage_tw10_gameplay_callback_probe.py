@@ -314,6 +314,45 @@ def helper_body_fingerprint(data, base, sections, imports, target_rva):
     return cfg, rets
 
 
+def scaled_index_arithmetic(base, cfg):
+    """Return compact derived index-multiplier evidence without raw disassembly."""
+    rows = []
+    for addr, ins in sorted(cfg["instructions"].items()):
+        if ins.mnemonic == "lea" and len(ins.operands) >= 2:
+            dst, src = ins.operands[0], ins.operands[1]
+            if dst.type == X86_OP_REG and src.type == X86_OP_MEM:
+                mem = src.mem
+                if mem.scale in (2, 4, 8) and mem.index:
+                    rows.append(
+                        (
+                            addr - base,
+                            "lea",
+                            ins.reg_name(dst.reg),
+                            ins.reg_name(mem.base) if mem.base else "",
+                            ins.reg_name(mem.index),
+                            mem.scale,
+                            int(mem.disp),
+                        )
+                    )
+        elif ins.mnemonic == "imul" and len(ins.operands) >= 3:
+            dst, src, imm = ins.operands[0], ins.operands[1], ins.operands[2]
+            if dst.type == X86_OP_REG and src.type == X86_OP_REG and imm.type == X86_OP_IMM:
+                value = int(imm.imm)
+                if -128 <= value <= 128:
+                    rows.append(
+                        (
+                            addr - base,
+                            "imul",
+                            ins.reg_name(dst.reg),
+                            ins.reg_name(src.reg),
+                            "",
+                            value,
+                            0,
+                        )
+                    )
+    return rows
+
+
 def shared_direct_targets(cfgs):
     memberships = collections.defaultdict(dict)
     for label, cfg in cfgs.items():
@@ -374,6 +413,12 @@ def main():
                     f"ASCII_IMM|name={label}|instruction_rva=0x{rva_event:x}|"
                     f"mnemonic={mnemonic}|value={value}|char={clean(char)}|ops={clean(ops)}"
                 )
+            if label == "I":
+                for rva_event, kind, dst, base_reg, index_reg, scale, disp in scaled_index_arithmetic(base, cfg):
+                    print(
+                        f"INDEX_ARITH|name=I|instruction_rva=0x{rva_event:x}|kind={kind}|"
+                        f"dst={dst}|base={base_reg}|index={index_reg}|scale={scale}|disp={disp}"
+                    )
             for jump_rva, table_rva, context, entries in indirect_jump_info(
                 data, base, sections, cfg
             ):
@@ -433,6 +478,13 @@ def main():
                                 f"S_BRANCH_DIRECT|chars={','.join(chars)}|branch_rva=0x{target_rva:x}|"
                                 f"target_rva=0x{target-base:x}|calls={count}"
                             )
+                        if chars in (["I"], ["W"]):
+                            for rva_event, kind, dst, base_reg, index_reg, scale, disp in scaled_index_arithmetic(base, branch):
+                                print(
+                                    f"INDEX_ARITH|name=S:{chars[0]}|instruction_rva=0x{rva_event:x}|"
+                                    f"kind={kind}|dst={dst}|base={base_reg}|index={index_reg}|"
+                                    f"scale={scale}|disp={disp}"
+                                )
 
         shared = shared_direct_targets(cfgs)
         analysis_cfgs = dict(cfgs)
