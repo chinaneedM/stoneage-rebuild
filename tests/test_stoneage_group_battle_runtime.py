@@ -332,6 +332,10 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(profiles["player"].elements, (50, 50, 0, 0))
         self.assertEqual(
             profiles[enemy_id].fixed_dex,
+            spawned[0].participant.quick,
+        )
+        self.assertNotEqual(
+            profiles[enemy_id].fixed_dex,
             battle.enemies[0].quick,
         )
         state = self.runtime.start_persistent_battle_state(
