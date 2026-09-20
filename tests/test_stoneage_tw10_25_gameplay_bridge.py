@@ -87,6 +87,21 @@ class Taiwan25GameplayBridgeTests(unittest.TestCase):
         self.assertIn("functionset name != v1 object_type", joined)
         self.assertIn("windowman conff window number != v1 runtime object index", joined)
 
+    def test_encounter_chain_keeps_four_server_identities_distinct(self):
+        encounter = self.bridge["bridges"]["encounter_chain"]
+        namespaces = [step["namespace"] for step in encounter["identity_chain"]]
+        self.assertEqual(
+            namespaces,
+            ["encount.INDEX", "group.GROUP_ID", "enemy.ID", "enemybase.TEMPNO"],
+        )
+        non_eq = " ".join(encounter["explicit_non_equivalences"])
+        self.assertIn("enemy.ID != enemybase.TEMPNO", non_eq)
+        self.assertIn("enemybase.TEMPNO != v1 runtime_object_id", non_eq)
+        specimen = encounter["recovered_specimen_integrity"]
+        self.assertEqual(specimen["unresolved_positive_group_refs"], 39)
+        self.assertEqual(specimen["affected_encount_rows"], 32)
+        self.assertEqual(specimen["classification"], "SPECIMEN_DEFECT")
+
     def test_required_identity_guards_are_present(self):
         rules = {r["rule"]: r["status"] for r in self.bridge["identity_rules"]}
         for name in (
