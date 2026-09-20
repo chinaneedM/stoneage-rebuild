@@ -14,6 +14,7 @@ from types import MappingProxyType
 from typing import Any, Mapping, Sequence
 
 from tools.stoneage_battle_core_model import (
+    BattleDropItem,
     early_action_value,
     effective_defense_newpower,
     effective_defense_preserved_old,
@@ -57,6 +58,7 @@ class BattleParticipant:
     source_template_id: int | None = None
     source_pet_slot: int | None = None
     reward_exp: int | None = None
+    reward_items: tuple[BattleDropItem, ...] = ()
 
     def initiative(self, random_subtract: int) -> int:
         return early_action_value(self.quick, int(random_subtract))
@@ -146,6 +148,7 @@ def enemy_participant_from_spawn_state(
     birth: PetBirthBridgeState,
     *,
     spawn_index: int,
+    reward_items: Sequence[BattleDropItem] = (),
 ) -> BattleParticipant:
     spawn_index = int(spawn_index)
     if spawn_index < 0:
@@ -158,6 +161,11 @@ def enemy_participant_from_spawn_state(
         raise ValueError("enemy birth template does not match enemy template")
     if template.name is None:
         raise ValueError("enemy battle participant requires template name")
+    reward_items=tuple(reward_items)
+    if len(reward_items) > 10:
+        raise ValueError("enemy reward items exceed ten source item slots")
+    if len({item.instance_id for item in reward_items}) != len(reward_items):
+        raise ValueError("enemy reward item instance ids must be unique")
 
     projection = birth.combat_projection()
     return BattleParticipant(
@@ -175,6 +183,7 @@ def enemy_participant_from_spawn_state(
         source_variant_id=variant.enemy_id,
         source_template_id=template.tempno,
         reward_exp=int(variant.exp_override),
+        reward_items=reward_items,
     )
 
 
@@ -185,6 +194,7 @@ def enemy_participant_from_birth(
     birth: PetBirthBridgeState,
     *,
     spawn_index: int,
+    reward_items: Sequence[BattleDropItem] = (),
 ) -> BattleParticipant:
     spawn_index = int(spawn_index)
     if not 0 <= spawn_index < encounter.max_enemy_count:
@@ -204,6 +214,7 @@ def enemy_participant_from_birth(
         template,
         birth,
         spawn_index=spawn_index,
+        reward_items=reward_items,
     )
 
 

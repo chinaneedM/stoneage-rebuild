@@ -1,6 +1,11 @@
 import unittest
 from dataclasses import replace
 
+from tools.stoneage_battle_core_model import (
+    BattleDropItem,
+    DropAllocationRoll,
+)
+
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_WAIT,
@@ -42,6 +47,7 @@ def participant(
     level=10,
     reward_exp=None,
     source_pet_slot=None,
+    reward_items=(),
 ):
     return BattleParticipant(
         participant_id=pid,
@@ -57,6 +63,7 @@ def participant(
         fixed_vital=40,
         reward_exp=reward_exp,
         source_pet_slot=source_pet_slot,
+        reward_items=tuple(reward_items),
     )
 
 
@@ -347,6 +354,50 @@ class PersistentBattleStateTests(unittest.TestCase):
         self.assertEqual(living_non_pet_count(zero, 0), 0)
         self.assertEqual(living_non_pet_count(zero, 1), 0)
         self.assertEqual(termination_result(zero), (ENEMY_WIN, 1))
+
+
+    def test_enemy_drop_items_flow_into_player_pending_buffer_on_ordinary_kill(self):
+        player=participant("player","player","player",attack=200,quick=100)
+        items=(
+            BattleDropItem("drop:a",501,{"name":"A"}),
+            BattleDropItem("drop:b",502,{"name":"B"}),
+        )
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=30,defense=20,quick=20,reward_exp=100,
+            reward_items=items,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            drop_rolls_by_enemy_id={
+                "enemy":(DropAllocationRoll(0),DropAllocationRoll(0)),
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.after.phase,FINISHED)
+        self.assertEqual(
+            result.after.pending_drop_items_by_player_entry_id["player"],
+            items,
+        )
+        self.assertEqual(result.after.destroyed_drop_items,())
+
 
 
 if __name__ == "__main__":

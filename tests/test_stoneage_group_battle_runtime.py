@@ -3,6 +3,10 @@ from dataclasses import replace
 from types import MappingProxyType
 
 from tools.stoneage_battle_command_model import ATTACK, WAIT
+from tools.stoneage_battle_core_model import (
+    BattleDropItem,
+    DropAllocationRoll,
+)
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_WAIT,
@@ -20,6 +24,7 @@ from tools.stoneage_player_growth_model import (
 from tools.stoneage_singleplayer_domain import (
     EnemyVariantId,
     HistoricalStaticData,
+    InventorySlot,
     MapPosition,
     PetActor,
     PetGrowthState,
@@ -930,6 +935,78 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(request.enemy_variant_id.value, 700)
         self.assertEqual(request.pet_template_id.value, 88)
         self.assertEqual(request.level, 4)
+
+
+    def test_persistent_drop_buffer_settles_into_first_empty_inventory_slot(self):
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+        )
+        drop=BattleDropItem(
+            "enemy-drop:501",
+            501,
+            {"name":"Recovered Drop","graphic_id":12345},
+        )
+        enemy_actor=replace(
+            battle.enemies[0],
+            hp=30,
+            max_hp=30,
+            defense=20,
+            quick=20,
+            reward_items=(drop,),
+        )
+        battle=replace(battle,enemies=(enemy_actor,))
+        enemy_id=enemy_actor.participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player":0,enemy_id:10},
+        )
+        result=self.runtime.resolve_persistent_battle_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                enemy_id:BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,enemy_id:0},
+            profiles={
+                "player":BattleCombatProfile(
+                    fixed_dex=100,fixed_luck=0,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+                enemy_id:BattleCombatProfile(
+                    fixed_dex=100,fixed_luck=0,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            drop_rolls_by_enemy_id={
+                enemy_id:(DropAllocationRoll(0),),
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(
+            result.after.pending_drop_items_by_player_entry_id["player"],
+            (drop,),
+        )
+        self.runtime.finish_persistent_battle_without_level_crossing(result.after)
+        stored=self.domain.persistent.inventory[InventorySlot(0)]
+        self.assertEqual(stored.template_id.value,501)
+        self.assertEqual(stored.view["name"],"Recovered Drop")
+
 
 
 if __name__ == "__main__":

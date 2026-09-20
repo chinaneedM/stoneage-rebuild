@@ -556,10 +556,16 @@ class BattleDropItem:
     """Identity of an already-instantiated enemy-held item."""
     instance_id: str
     template_id: int
+    view: Mapping[str,object] | None = None
 
     def __post_init__(self) -> None:
         object.__setattr__(self,'instance_id',str(self.instance_id))
         object.__setattr__(self,'template_id',int(self.template_id))
+        object.__setattr__(
+            self,
+            'view',
+            MappingProxyType(dict(self.view or {})),
+        )
         if not self.instance_id:
             raise ValueError('drop item instance_id must not be empty')
 

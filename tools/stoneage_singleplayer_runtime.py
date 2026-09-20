@@ -9,6 +9,7 @@ commands, AI and battle outcomes as explicit inputs.
 from __future__ import annotations
 
 from dataclasses import dataclass, field, replace
+from types import MappingProxyType
 from typing import Mapping, Sequence
 
 from tools.stoneage_encounter_frequency_model import (
@@ -22,6 +23,11 @@ from tools.stoneage_map_collision_model import (
     DynamicOccupant,
     StaticCollisionMap,
     ordinary_step_allowed,
+)
+from tools.stoneage_battle_core_model import (
+    BattleDropSettlement,
+    DropAllocationRoll,
+    settle_player_battle_drops,
 )
 from tools.stoneage_battle_command_model import (
     BattleRoundAction,
@@ -73,6 +79,9 @@ from tools.stoneage_singleplayer_domain import (
     EncounterRequest,
     EncounterRolls,
     GroupEncounterRequest,
+    InventoryItem,
+    InventorySlot,
+    ItemTemplateId,
     MapPosition,
     PetGrowthState,
     PetSlot,
@@ -388,6 +397,9 @@ class SinglePlayerHistoricalRuntime:
         initiative_random_subtracts: Mapping[str, int],
         profiles: Mapping[str, BattleCombatProfile],
         attack_rolls: Mapping[str, OrdinaryAttackRolls],
+        drop_rolls_by_enemy_id: Mapping[
+            str,Sequence[DropAllocationRoll]
+        ] | None = None,
         defense_profile: str,
         field_attr: str = "none",
         field_power: int = 0,
@@ -400,11 +412,48 @@ class SinglePlayerHistoricalRuntime:
             initiative_random_subtracts=initiative_random_subtracts,
             profiles=profiles,
             attack_rolls=attack_rolls,
+            drop_rolls_by_enemy_id=drop_rolls_by_enemy_id,
             defense_profile=defense_profile,
             field_attr=field_attr,
             field_power=field_power,
             tie_break_order=tie_break_order,
         )
+
+    def _settle_persistent_battle_drops(
+        self,
+        state: PersistentBattleState,
+    ) -> BattleDropSettlement:
+        player_id=str(state.session.player.participant_id)
+        if player_id not in state.pending_drop_items_by_player_entry_id:
+            raise ValueError("terminal battle state is missing player drop buffer")
+        settlement=settle_player_battle_drops(
+            state.pending_drop_items_by_player_entry_id[player_id],
+            tuple(slot.value for slot in self.domain.persistent.inventory),
+            player_alive=int(state.hp_by_participant_id[player_id])>0,
+            inventory_slot_count=20,
+        )
+        staged=dict(self.domain.persistent.inventory)
+        for raw_slot,item in settlement.inventory_additions_by_slot.items():
+            slot=InventorySlot(int(raw_slot))
+            if slot in staged:
+                raise ValueError(f"drop settlement selected occupied slot {slot.value}")
+            staged[slot]=InventoryItem(
+                slot=slot,
+                template_id=ItemTemplateId(int(item.template_id)),
+                view=MappingProxyType(dict(item.view or {})),
+            )
+        self.domain.persistent.inventory.clear()
+        self.domain.persistent.inventory.update(staged)
+        return settlement
+
+    def _apply_persistent_battle_outcome(
+        self,
+        state: PersistentBattleState,
+        outcome: BattleOutcome,
+    ) -> BattleReturn:
+        result=apply_battle_outcome(self.domain,state.session,outcome)
+        self._settle_persistent_battle_drops(state)
+        return result
 
     def finish_persistent_battle(
         self,
@@ -414,8 +463,8 @@ class SinglePlayerHistoricalRuntime:
 
         This boundary intentionally settles only state already produced by the
         validated battle state machine: result plus surviving player/allied-pet
-        HP. Rewards, drops, EXP, money, capture/escape, death penalties and
-        recovery remain separate evidence seams.
+        HP plus the already-earned three-slot item-drop buffer. EXP, money,
+        capture/escape, death penalties and recovery remain separate seams.
         """
         if state.phase != FINISHED or state.result is None:
             raise ValueError("cannot settle battle before termination")
@@ -440,9 +489,8 @@ class SinglePlayerHistoricalRuntime:
                 "hp": int(state.hp_by_participant_id[participant_id])
             }
 
-        return apply_battle_outcome(
-            self.domain,
-            session,
+        return self._apply_persistent_battle_outcome(
+            state,
             BattleOutcome(
                 result=state.result,
                 player_updates={
@@ -575,9 +623,8 @@ class SinglePlayerHistoricalRuntime:
                     )
                 pet_updates[slot]={"exp":next_exp}
 
-        return apply_battle_outcome(
-            self.domain,
-            session,
+        return self._apply_persistent_battle_outcome(
+            state,
             BattleOutcome(
                 result=state.result,
                 player_updates=player_updates,
@@ -902,9 +949,8 @@ class SinglePlayerHistoricalRuntime:
                     )
                 pet_updates[slot]=updates
 
-        return apply_battle_outcome(
-            self.domain,
-            session,
+        return self._apply_persistent_battle_outcome(
+            state,
             BattleOutcome(
                 result=state.result,
                 player_updates=player_updates,
