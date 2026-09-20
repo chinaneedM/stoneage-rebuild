@@ -181,7 +181,26 @@
           "status": "server_or_versioned_only",
           "reason": "no matching field exists in the accepted v1 S:K full wire layout."
         }
-      ]
+      ],
+      "birth_derivation": {
+        "source_lineage_paths": [
+          "server/gmsv/char/enemy.c",
+          "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md",
+          "tools/stoneage_pet_growth_model.py"
+        ],
+        "evidence": "BRIDGE_2_5",
+        "status": "descendant_formula_bridge",
+        "rules": [
+          "enemybase numeric fields are loaded with atoi in the fixed descendant; LVUPPOINT text such as 5.00 therefore becomes integer 5",
+          "PETRANK is calculated from the unmodified template sum BASEVITAL+BASESTR+BASETGH+BASEDEX",
+          "each growth-base component then receives an explicit -2..+2 birth offset",
+          "the individualized four bytes are packed into CHAR_ALLOCPOINT before spawn-stat allocation",
+          "ten independent 0..3 allocation outcomes add exactly ten points across the four current-stat bases",
+          "current internal VITAL/STR/TOUGH/DEX = (((level-1)*LVUPPOINT)+INITNUM) * (individualized base + spawn allocation count)",
+          "CHAR_complianceParameter then derives client-facing max HP / attack / defence / quick and other work values"
+        ],
+        "v1_boundary": "The formula is a reconstruction bridge from convergent descendant server source. The accepted Taiwan v1 client directly proves the resulting visible pet-state fields, not these server coefficients."
+      }
     },
     "pet_skill_template_to_view": {
       "source_entity": "petskill",
