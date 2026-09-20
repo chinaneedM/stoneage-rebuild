@@ -157,14 +157,29 @@ BattleSession
 without network/server processes and without the caller manually carrying
 intermediate HP.
 
-## 8. Settlement remains separate
+## 8. Minimal terminal HP settlement is now closed separately
 
-A terminal battle state does **not** yet imply:
+The termination model itself still does not infer rewards. A later
+reconstruction adapter now consumes only an already-finished
+`PersistentBattleState` and projects its direct HP/result state back into the
+single-player persistent domain.
 
-- EXP award;
+Canonical settlement record:
+
+- `research/mechanics/STONEAGE-BATTLE-SETTLEMENT-R1.md`
+
+The closed R1 projection is deliberately limited to:
+
+- `victory` / `defeat` result;
+- terminal player HP;
+- terminal HP of allied pets that participated;
+- unchanged battle-origin world position.
+
+It still does **not** imply:
+
+- EXP award or level-up;
 - drops;
 - money;
-- pet EXP;
 - capture result;
 - escape result;
 - death penalties;
@@ -173,11 +188,7 @@ A terminal battle state does **not** yet imply:
 - equipment durability;
 - any later extension settlement.
 
-Those belong to later independently recovered seams.
-
-The existing `BattleOutcome` / `finish_battle()` API remains an explicit
-world-state return boundary and is not silently filled from unverified reward
-logic.
+Those remain later independently recovered seams.
 
 ## Validation
 

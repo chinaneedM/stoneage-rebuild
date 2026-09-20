@@ -1326,10 +1326,42 @@ Supplemental source ledgers:
   - runtime multi-round integration run **35512877215** — success.
 - **Operational consequence:** former immediate action 1 is closed to the first persistent victory/defeat boundary. The next highest-priority unresolved implementation seam is the combat-profile bridge for fixed DEX/LUCK and elemental work values.
 
+## Combat-profile provenance bridge — 2026-09-20
+
+- `tools/stoneage_combat_profile_bridge.py` now provides an evidence-bounded bridge from provenance-bearing reconstructed state into `BattleCombatProfile`.
+- Stable-descendant status/work-stat evidence closes the following numeric mappings without treating similarly named client fields as interchangeable:
+  - player v1 status `dexterity` -> fixed DEX numeric projection;
+  - player v1 status `luck` -> fixed LUCK;
+  - player v1 status earth/water/fire/wind -> fixed elemental work values;
+  - pet/enemy reconstructed birth internal DEX -> fixed DEX;
+  - reconstructed birth raw attributes -> fixed elemental projection using the preserved opposite-element overwrite order and nonnegative battle clamp.
+- A generic persisted pet `quick` field is deliberately **not** accepted as fixed DEX provenance. Allied pets require their preserved reconstructed birth source; enemy profiles require their concrete `SpawnedEnemy` source.
+- `SinglePlayerHistoricalRuntime.build_group_battle_combat_profiles()` now derives the complete profile map from player state plus provenance-bearing allied-pet/enemy sources.
+- A regression at `124f382826fff48842afa6526478c9741565a8a0` exposed an incorrect test assumption that a later-mutated participant `quick` should overwrite the birth-derived fixed DEX. The test was corrected without weakening provenance semantics.
+- Remote validation **35513757842** passes at `0fa2fc22133dddf41686053079a53adf5d75df31`.
+- Evidence boundary: these mappings are stable-descendant/reconstruction bridges; byte-level proof of every corresponding JSS-1999 server work field remains OPEN.
+
+## Terminal battle HP settlement boundary — 2026-09-20
+
+- `SinglePlayerHistoricalRuntime.finish_persistent_battle()` now projects a **finished** `PersistentBattleState` back into the single-player persistent domain.
+- The R1 settlement boundary writes only state already produced by the validated battle state machine:
+  - battle result (`victory` / `defeat`);
+  - terminal player HP;
+  - terminal HP for allied pets that actually participated.
+- The existing `apply_battle_outcome()` guard remains authoritative:
+  - world position must still equal the battle origin;
+  - only existing persistent fields may be updated;
+  - no new reward/state key can be invented during settlement.
+- Active/nonterminal battle state is rejected.
+- Regression coverage proves player and pet EXP remain unchanged while HP is settled.
+- Explicitly still excluded: EXP award/level-up orchestration, drops, money, capture, escape, death penalties, healing/revival, post-battle warp and later extension rewards.
+- Remote validation **35513868341** passes at `6212cd394646778b2c47c07c931b5415efbec94e`.
+- **Operational consequence:** combat-profile provenance and direct terminal HP/result return are closed to the first reconstruction-safe boundary. The next combat-side priority is to recover the exact ordinary EXP settlement orchestration before implementing rewards.
+
 ## Immediate next actions
 
-1. **Close the combat-profile bridge where evidence permits.** Recover/validate how early player/pet client fields correspond to server fixed DEX/LUCK and elemental work values used by dodge/critical/attribute calculations; keep explicit inputs wherever the early mapping remains unproven.
-2. **Extend battle settlement only along stable evidence seams after the profile bridge.** Prioritize direct HP/state return and ordinary victory/defeat consequences before EXP/drop/capture/escape; do not let later extension systems contaminate the early baseline.
+1. **Close the first ordinary EXP-settlement orchestration seam.** The per-enemy level-gap EXP formula is already preserved from stable descendants, but do not wire it into persistent state until participant eligibility, defeated-enemy accumulation, award ordering and level-up application are independently pinned. Keep JSS-era coefficient provenance explicit.
+2. **Extend post-battle rewards one subsystem at a time after EXP.** Drops, money, capture, escape, death penalties and recovery remain separate evidence seams; do not bundle them into one guessed settlement routine.
 3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
 4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
 5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
