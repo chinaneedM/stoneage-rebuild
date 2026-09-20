@@ -1198,11 +1198,27 @@ Supplemental source ledgers:
 - Remote validation **35509162758** passes with the persistence tests integrated into the combined single-player/gameplay model suite.
 - **Operational consequence:** the former immediate persistence action is complete to the first versioned local boundary. The single-player runtime now has a clean save/load direction without reconstructing historical login/account-server architecture.
 
+## Map collision / object-overability algorithm seam — 2026-09-20
+
+- `research/mechanics/STONEAGE-MAP-COLLISION-OVERABILITY-R1.md` records the recovered stable-descendant collision chain.
+- `tools/stoneage_map_collision_model.py` now models the evidence-backed algorithm:
+  - a map cell supplies tile image id + object/parts image id;
+  - per-image `WALKABLE` / `HAVEHEIGHT` metadata determines static entry;
+  - object WALKABLE modes 0/1/2 mean block / defer-to-tile / force-walkable;
+  - flying uses tile+object HAVEHEIGHT rather than ordinary WALKABLE;
+  - diagonal movement requires both orthogonal side cells to pass static walkability;
+  - target-cell non-overable characters/items are a separate dynamic blocking layer.
+- Unknown image metadata raises instead of receiving a guessed/default walkability value.
+- `SinglePlayerHistoricalRuntime.walk_step_with_collision()` can now consume a validated collision map/profile and calculate the movement verdict itself. The older explicit `entry_allowed` path remains available while the exact early image-property dataset is unresolved.
+- The current repository still lacks a provenance-safe Taiwan-v1.0/JSS image-number property table equivalent to descendant `data/map/mapset.txt`. Therefore the algorithmic seam is closed but the final early-version collision content table remains OPEN.
+- Remote validation **35509951036** passes with collision-model and runtime-integration regression coverage.
+- **Operational consequence:** movement no longer requires inventing a collision algorithm. Once a validated image-property dataset is recovered, the same runtime path becomes data-driven without redesign.
+
 ## Immediate next actions
 
-1. **Close the map collision/object-overability seam with evidence before making movement autonomous.** The runtime currently accepts an explicit collision verdict by design; do not reinterpret arbitrary recovered MAP/DAT values as walkability without proving the mapping.
-2. **Promote the movement-side encounter-frequency/CEP loop into the runtime.** Preserve the recovered clamp/increment/reset soft-pity ordering and keep its exact evidence grade/version boundary explicit.
-3. **Close enemy spawn-count/birth orchestration and the first battle-round command boundary.** Use explicit recovered formulas and deterministic rolls; do not invent AI, drop or victory semantics that remain unresolved.
+1. **Promote the movement-side encounter-frequency/CEP loop into the runtime.** Preserve the recovered clamp/increment/reset soft-pity ordering and keep its exact evidence grade/version boundary explicit.
+2. **Close enemy spawn-count/birth orchestration and the first battle-round command boundary.** Use explicit recovered formulas and deterministic rolls; do not invent AI, drop or victory semantics that remain unresolved.
+3. **Recover/validate the early image-number collision-property dataset.** The collision algorithm is closed; autonomous historical movement now needs provenance-safe Taiwan-v1.0/JSS `WALKABLE/HAVEHEIGHT` image metadata rather than descendant table substitution.
 4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
 5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
 6. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
