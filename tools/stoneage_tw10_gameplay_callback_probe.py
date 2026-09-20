@@ -554,6 +554,30 @@ def main():
                                     f"scale={scale}|disp={disp}"
                                 )
 
+        # Dynamic token-helper preludes: enough to reconstruct j*N+k index arithmetic
+        # without committing proprietary payload bytes.
+        for label, cfg in (
+            ("I", cfgs["I"]),
+            ("S:I", s_branch_cfgs.get("I")),
+            ("S:W", s_branch_cfgs.get("W")),
+        ):
+            if cfg is None:
+                continue
+            for helper_rva in (0x46C70, 0x46DA0):
+                for call_rva, seq in call_prelude(
+                    base, cfg, base + helper_rva, limit=18
+                ):
+                    print(
+                        f"TOKEN_PRELUDE|name={label}|helper_rva=0x{helper_rva:x}|"
+                        f"callsite_rva=0x{call_rva:x}|instructions={len(seq)}"
+                    )
+                    for order, (irva, mnemonic, ops) in enumerate(seq, 1):
+                        print(
+                            f"TOKEN_PRELUDE_INSN|name={label}|helper_rva=0x{helper_rva:x}|"
+                            f"callsite_rva=0x{call_rva:x}|order={order}|"
+                            f"instruction_rva=0x{irva:x}|mnemonic={mnemonic}|ops={clean(ops)}"
+                        )
+
         # Compact arithmetic/control windows used to resolve dynamic token strides.
         for label, cfg, start_rva, end_rva in (
             ("I", cfgs["I"], 0x32650, 0x326B0),
