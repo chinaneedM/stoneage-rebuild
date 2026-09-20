@@ -402,3 +402,57 @@ class SinglePlayerHistoricalDomain:
             level=level,
             max_enemy_count=effective_enemy_count_limit(area, (enemy,)),
         )
+
+@dataclass(frozen=True)
+class EncounterRolls:
+    group_roll: int
+    enemy_roll: int
+    level_roll: int
+
+
+@dataclass(frozen=True)
+class SimulationTickResult:
+    tick_index: int
+    player_position: MapPosition | None
+    world_object_ids: tuple[RuntimeObjectId, ...]
+    inventory_slots: tuple[InventorySlot, ...]
+    pet_slots: tuple[PetSlot, ...]
+    active_npc_sequences: tuple[int, ...]
+    encounter_request: EncounterRequest | None = None
+
+
+@dataclass
+class SinglePlayerSimulation:
+    """Minimal deterministic simulation shell over the historical domain.
+
+    A tick does not invent real-time mechanics. State-changing operations remain
+    explicit domain calls, while optional encounter rolls let an engine-owned
+    RNG drive the already reconstructed encounter selection path.
+    """
+
+    domain: SinglePlayerHistoricalDomain
+    tick_index: int = 0
+
+    def step(
+        self,
+        *,
+        encounter_rolls: EncounterRolls | None = None,
+    ) -> SimulationTickResult:
+        self.tick_index += 1
+        encounter = None
+        if encounter_rolls is not None:
+            encounter = self.domain.request_encounter(
+                group_roll=encounter_rolls.group_roll,
+                enemy_roll=encounter_rolls.enemy_roll,
+                level_roll=encounter_rolls.level_roll,
+            )
+        return SimulationTickResult(
+            tick_index=self.tick_index,
+            player_position=self.domain.world.player_position,
+            world_object_ids=tuple(sorted(self.domain.world.npcs)),
+            inventory_slots=tuple(sorted(self.domain.persistent.inventory)),
+            pet_slots=tuple(sorted(self.domain.persistent.pets)),
+            active_npc_sequences=tuple(sorted(self.domain.interactions.npc_sessions)),
+            encounter_request=encounter,
+        )
+
