@@ -1,0 +1,1157 @@
+{
+  "schema_id": "stoneage.tw10.gameplay.r1",
+  "schema_version": 1,
+  "baseline": {
+    "product": "StoneAge",
+    "region": "Taiwan",
+    "version_label": "v1.0",
+    "executable": "StoneAge/sa_3.exe",
+    "authority": "accepted retail disc",
+    "interpretation_matrix": "research/clients/STONEAGE-TW10-GAMEPLAY-DATA-MATRIX-R1.md",
+    "binary_report": "research/recovered/STONEAGE-TW10-GAMEPLAY-CALLBACKS-R1.txt"
+  },
+  "evidence_levels": {
+    "V1_DIRECT": "position/type/count independently observed in accepted Taiwan v1.0 binary or disc",
+    "EARLY_LINEAGE": "semantic name/meaning mapped from pinned early generated protocol lineage",
+    "BRIDGE_2_5": "later recovered server/master-data bridge; not v1 baseline proof",
+    "VERSIONED_OPEN": "later/version-dependent or unresolved"
+  },
+  "records": {
+    "status_location": {
+      "transport": {
+        "protocol": "S",
+        "category": "C",
+        "callback_rva": "0x2f6ae"
+      },
+      "record_width": 5,
+      "fields": [
+        {
+          "position": 1,
+          "name": "floor",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "max_x",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "max_y",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 4,
+          "name": "x",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 5,
+          "name": "y",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "status_identity_time": {
+      "transport": {
+        "protocol": "S",
+        "category": "D",
+        "callback_rva": "0x2f797"
+      },
+      "record_width": 2,
+      "fields": [
+        {
+          "position": 1,
+          "name": "runtime_character_id",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "server_time",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "status_encounter_range": {
+      "transport": {
+        "protocol": "S",
+        "category": "E",
+        "callback_rva": "0x30408"
+      },
+      "record_width": 2,
+      "fields": [
+        {
+          "position": 1,
+          "name": "minimum_encounter_percent",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "maximum_encounter_percent",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "status_compact_progress": {
+      "transport": {
+        "protocol": "S",
+        "category": "M",
+        "callback_rva": "0x2fe2e"
+      },
+      "record_width": 3,
+      "fields": [
+        {
+          "position": 1,
+          "name": "hp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "mp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "exp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "status_magic_slot": {
+      "transport": {
+        "protocol": "S",
+        "category": "J",
+        "callback_rva": "0x30445",
+        "slot_prefix": "J<digit>"
+      },
+      "record_width": 6,
+      "fields": [
+        {
+          "position": 1,
+          "name": "use_or_kind",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "mp_cost",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "field_context",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 4,
+          "name": "target_class",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 5,
+          "name": "name",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 6,
+          "name": "comment",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "status_party_member": {
+      "transport": {
+        "protocol": "S",
+        "category": "N",
+        "callback_rva": "0x305a4",
+        "slot_prefix": "N<digit>"
+      },
+      "full_record_width": 7,
+      "fields": [
+        {
+          "position": 1,
+          "name": "update_mask",
+          "wire_type": "base62_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "runtime_character_id",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "level",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 4,
+          "name": "max_hp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 5,
+          "name": "hp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 6,
+          "name": "mp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 7,
+          "name": "name",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "status_player_full": {
+      "transport": {
+        "protocol": "S",
+        "category": "P",
+        "callback_rva": "0x2f7f0"
+      },
+      "full_record_width": 26,
+      "fields": [
+        {
+          "position": 1,
+          "name": "update_mask",
+          "wire_type": "base62_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "hp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "max_hp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 4,
+          "name": "mp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 5,
+          "name": "max_mp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 6,
+          "name": "vital",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 7,
+          "name": "strength",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 8,
+          "name": "toughness",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 9,
+          "name": "dexterity",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 10,
+          "name": "exp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 11,
+          "name": "max_exp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 12,
+          "name": "level",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 13,
+          "name": "attack",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 14,
+          "name": "defense",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 15,
+          "name": "quick",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 16,
+          "name": "charm",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 17,
+          "name": "luck",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 18,
+          "name": "earth",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 19,
+          "name": "water",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 20,
+          "name": "fire",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 21,
+          "name": "wind",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 22,
+          "name": "gold",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 23,
+          "name": "title_or_index_state",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 24,
+          "name": "duel_point_like_state",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 25,
+          "name": "name",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 26,
+          "name": "free_name_or_title",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "status_pet_full": {
+      "transport": {
+        "protocol": "S",
+        "category": "K",
+        "callback_rva": "0x2fe94",
+        "slot_prefix": "K<digit>"
+      },
+      "full_record_width": 21,
+      "fields": [
+        {
+          "position": 1,
+          "name": "update_mask",
+          "wire_type": "base62_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "graphic_id",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "hp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 4,
+          "name": "max_hp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 5,
+          "name": "mp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 6,
+          "name": "max_mp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 7,
+          "name": "exp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 8,
+          "name": "max_exp",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 9,
+          "name": "level",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 10,
+          "name": "attack",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 11,
+          "name": "defense",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 12,
+          "name": "quick",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 13,
+          "name": "ai",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 14,
+          "name": "earth",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 15,
+          "name": "water",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 16,
+          "name": "fire",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 17,
+          "name": "wind",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 18,
+          "name": "max_skill_slots",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 19,
+          "name": "rename_flag",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 20,
+          "name": "name",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 21,
+          "name": "free_name",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "inventory_full_slot": {
+      "transport": {
+        "protocol": "S",
+        "category": "I",
+        "callback_rva": "0x30922"
+      },
+      "slot_count": 20,
+      "record_width": 9,
+      "fields": [
+        {
+          "position": 1,
+          "name": "name",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "secondary_or_secret_name",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "color",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 4,
+          "name": "memo_or_effect_text",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 5,
+          "name": "graphic_id",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 6,
+          "name": "field_context",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 7,
+          "name": "target_class",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 8,
+          "name": "level",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 9,
+          "name": "send_or_use_flags",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "inventory_incremental_record": {
+      "transport": {
+        "protocol": "I",
+        "callback_rva": "0x325f0"
+      },
+      "record_width": 10,
+      "termination": "name-token extractor returns end condition",
+      "fields": [
+        {
+          "position": 1,
+          "name": "inventory_slot",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "name",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "secondary_or_secret_name",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 4,
+          "name": "color",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 5,
+          "name": "memo_or_effect_text",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 6,
+          "name": "graphic_id",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 7,
+          "name": "field_context",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 8,
+          "name": "target_class",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 9,
+          "name": "level",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 10,
+          "name": "send_or_use_flags",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "pet_skill_view_slot": {
+      "transport": {
+        "protocol": "S",
+        "category": "W",
+        "callback_rva": "0x30b4f",
+        "pet_slot_prefix": "W<digit>"
+      },
+      "slot_count": 7,
+      "record_width": 5,
+      "fields": [
+        {
+          "position": 1,
+          "name": "skill_id",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "field_context",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "target_class",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 4,
+          "name": "name",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 5,
+          "name": "comment",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "world_character_record": {
+      "transport": {
+        "protocol": "C",
+        "callback_rva": "0x31260",
+        "envelope_separator": ","
+      },
+      "record_width": 12,
+      "fields": [
+        {
+          "position": 1,
+          "name": "object_type",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "runtime_object_id",
+          "wire_type": "base62_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "x",
+          "wire_type": "decimal_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 4,
+          "name": "y",
+          "wire_type": "decimal_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 5,
+          "name": "direction",
+          "wire_type": "decimal_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 6,
+          "name": "base_graphic_id",
+          "wire_type": "decimal_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 7,
+          "name": "level",
+          "wire_type": "decimal_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 8,
+          "name": "name_color",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 9,
+          "name": "name",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 10,
+          "name": "self_or_free_title",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 11,
+          "name": "walkable",
+          "wire_type": "decimal_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 12,
+          "name": "height",
+          "wire_type": "decimal_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "world_ground_item_record": {
+      "transport": {
+        "protocol": "C",
+        "callback_rva": "0x31260"
+      },
+      "record_width": 6,
+      "fields": [
+        {
+          "position": 1,
+          "name": "runtime_object_id",
+          "wire_type": "base62_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "x",
+          "wire_type": "decimal_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "y",
+          "wire_type": "decimal_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 4,
+          "name": "graphic_id",
+          "wire_type": "decimal_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 5,
+          "name": "class_or_type",
+          "wire_type": "decimal_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 6,
+          "name": "information",
+          "wire_type": "escaped_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "world_ground_money_record": {
+      "transport": {
+        "protocol": "C",
+        "callback_rva": "0x31260"
+      },
+      "record_width": 4,
+      "fields": [
+        {
+          "position": 1,
+          "name": "runtime_object_id",
+          "wire_type": "base62_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "x",
+          "wire_type": "decimal_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "y",
+          "wire_type": "decimal_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 4,
+          "name": "money_amount",
+          "wire_type": "decimal_string_to_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "npc_window_session": {
+      "transport": {
+        "protocol": "WN",
+        "callback_rva": "0x328c0",
+        "forward_target_rva": "0x12930"
+      },
+      "record_width": 5,
+      "fields": [
+        {
+          "position": 1,
+          "name": "window_type",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "button_mask_or_type",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "sequence_number",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 4,
+          "name": "source_object_index",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 5,
+          "name": "data",
+          "wire_type": "decoded_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ]
+    },
+    "character_creation": {
+      "transport": {
+        "protocol": "CreateNewChar"
+      },
+      "record_width": 13,
+      "fields": [
+        {
+          "position": 1,
+          "name": "data_place_number",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 2,
+          "name": "name",
+          "wire_type": "decoded_string",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 3,
+          "name": "body_image_id",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 4,
+          "name": "face_image_id",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 5,
+          "name": "vital",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 6,
+          "name": "strength",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 7,
+          "name": "toughness",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 8,
+          "name": "dexterity",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 9,
+          "name": "earth",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 10,
+          "name": "water",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 11,
+          "name": "fire",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 12,
+          "name": "wind",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        },
+        {
+          "position": 13,
+          "name": "hometown",
+          "wire_type": "decoded_int",
+          "position_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE"
+        }
+      ],
+      "note": "Top-level v1 builder shape is 12 integers plus one string; positions here follow the early generated semantic signature."
+    }
+  },
+  "direct_version_exclusions": [
+    "S:P tokens after 26 in later descendants (transmigration/ride/base-graphic and later extensions)",
+    "S:K tokens after 21 in later descendants (pet transmigration/fusion/ride/bless and later extensions)",
+    "S category G profession cooldown implementation",
+    "S category S profession-skill implementation",
+    "S category B pet-item implementation",
+    "S category X ride-related implementation",
+    "C character record token 13 POPUPNAMECOLOR and later appended fields",
+    "S:I durability/damage string and later item fields",
+    "I durability/damage string and later item fields",
+    "item pile/alchemy/pet-item/jigsaw/upgrade/countdown extensions"
+  ],
+  "server_bridge_policy": {
+    "statement": "Runtime IDs and client-visible state are not automatically server template IDs.",
+    "bridges": {
+      "pet_template": "2.5 enemybase.txt is BRIDGE_2_5 only",
+      "pet_skill_template": "2.5 petskill.txt is BRIDGE_2_5 only",
+      "item_template": "2.5 itemset.txt is BRIDGE_2_5 only",
+      "npc_world": "2.5 NPC world graph is BRIDGE_2_5 only"
+    }
+  }
+}
