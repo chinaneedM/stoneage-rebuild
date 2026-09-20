@@ -152,6 +152,39 @@ INDEX_ARITH|name=I|instruction_rva=0x32672|kind=lea|dst=edx|base=eax|index=eax|s
 INDEX_ARITH|name=I|instruction_rva=0x32697|kind=lea|dst=ebx|base=ebx|index=ebx|scale=4|disp=0
 CALLBACK|name=WN|rva=0x328c0|blocks=3|instructions=16|direct_targets=1|import_targets=0|indirect_jumps=0
 DIRECT|name=WN|target_rva=0x12930|calls=1
+WN_FORWARD|callsite_rva=0x328e2|target_rva=0x12930|prelude_instructions=10
+WN_FORWARD_PRELUDE|order=1|instruction_rva=0x328c9|mnemonic=mov|ops=eax, dword ptr [esp + 0x18]
+WN_FORWARD_PRELUDE|order=2|instruction_rva=0x328cd|mnemonic=mov|ops=ecx, dword ptr [esp + 0x14]
+WN_FORWARD_PRELUDE|order=3|instruction_rva=0x328d1|mnemonic=mov|ops=edx, dword ptr [esp + 0x10]
+WN_FORWARD_PRELUDE|order=4|instruction_rva=0x328d5|mnemonic=push|ops=eax
+WN_FORWARD_PRELUDE|order=5|instruction_rva=0x328d6|mnemonic=mov|ops=eax, dword ptr [esp + 0x10]
+WN_FORWARD_PRELUDE|order=6|instruction_rva=0x328da|mnemonic=push|ops=ecx
+WN_FORWARD_PRELUDE|order=7|instruction_rva=0x328db|mnemonic=mov|ops=ecx, dword ptr [esp + 0x10]
+WN_FORWARD_PRELUDE|order=8|instruction_rva=0x328df|mnemonic=push|ops=edx
+WN_FORWARD_PRELUDE|order=9|instruction_rva=0x328e0|mnemonic=push|ops=eax
+WN_FORWARD_PRELUDE|order=10|instruction_rva=0x328e1|mnemonic=push|ops=ecx
+C_MAIN_PARSE|callsite_rva=0x31307|target_rva=0x46da0|role=decimal_token|immediate_pushes=0x1,0x7c
+C_MAIN_PARSE|callsite_rva=0x31326|target_rva=0x46c70|role=string_token|immediate_pushes=0x7ff,0x2,0x7c
+C_MAIN_PARSE|callsite_rva=0x31330|target_rva=0x46df0|role=base62_convert|immediate_pushes=
+C_MAIN_PARSE|callsite_rva=0x3134d|target_rva=0x46c70|role=string_token|immediate_pushes=0x7ff,0x3,0x7c
+C_MAIN_PARSE|callsite_rva=0x31357|target_rva=0x49566|role=decimal_convert|immediate_pushes=
+C_MAIN_PARSE|callsite_rva=0x31374|target_rva=0x46c70|role=string_token|immediate_pushes=0x7ff,0x4,0x7c
+C_MAIN_PARSE|callsite_rva=0x31381|target_rva=0x49566|role=decimal_convert|immediate_pushes=
+C_MAIN_PARSE|callsite_rva=0x313a0|target_rva=0x46c70|role=string_token|immediate_pushes=0x7ff,0x5,0x7c
+C_MAIN_PARSE|callsite_rva=0x313aa|target_rva=0x49566|role=decimal_convert|immediate_pushes=
+C_MAIN_PARSE|callsite_rva=0x313d7|target_rva=0x46c70|role=string_token|immediate_pushes=0x7ff,0x6,0x7c
+C_MAIN_PARSE|callsite_rva=0x313e1|target_rva=0x49566|role=decimal_convert|immediate_pushes=
+C_MAIN_PARSE|callsite_rva=0x313fe|target_rva=0x46c70|role=string_token|immediate_pushes=0x7ff,0x7,0x7c
+C_MAIN_PARSE|callsite_rva=0x3140b|target_rva=0x49566|role=decimal_convert|immediate_pushes=
+C_MAIN_PARSE|callsite_rva=0x31420|target_rva=0x46da0|role=decimal_token|immediate_pushes=0x8,0x7c
+C_MAIN_PARSE|callsite_rva=0x31442|target_rva=0x46c70|role=string_token|immediate_pushes=0x7ff,0x9,0x7c
+C_MAIN_PARSE|callsite_rva=0x3144f|target_rva=0x46ff0|role=unescape|immediate_pushes=
+C_MAIN_PARSE|callsite_rva=0x3146d|target_rva=0x46c70|role=string_token|immediate_pushes=0x7ff,0xa,0x7c
+C_MAIN_PARSE|callsite_rva=0x3147a|target_rva=0x46ff0|role=unescape|immediate_pushes=
+C_MAIN_PARSE|callsite_rva=0x31498|target_rva=0x46c70|role=string_token|immediate_pushes=0x7ff,0xb,0x7c
+C_MAIN_PARSE|callsite_rva=0x314a2|target_rva=0x49566|role=decimal_convert|immediate_pushes=
+C_MAIN_PARSE|callsite_rva=0x314c1|target_rva=0x46c70|role=string_token|immediate_pushes=0x7ff,0xc,0x7c
+C_MAIN_PARSE|callsite_rva=0x314cb|target_rva=0x49566|role=decimal_convert|immediate_pushes=
 HELPER|rva=0x46c70|blocks=11|instructions=82|direct_targets=1|import_targets=1|ret_sites=3
 HELPER_DIRECT|rva=0x46c70|target_rva=0x46d30|calls=2
 HELPER_IMPORT|rva=0x46c70|dll=KERNEL32.dll|api=IsDBCSLeadByte|calls=1
