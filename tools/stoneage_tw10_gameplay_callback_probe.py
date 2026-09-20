@@ -558,8 +558,8 @@ def main():
         # without committing proprietary payload bytes.
         for label, cfg in (
             ("I", cfgs["I"]),
-            ("S:I", s_branch_cfgs.get("I")),
-            ("S:W", s_branch_cfgs.get("W")),
+            ("S:I", s_branch_cfgs.get("S:I")),
+            ("S:W", s_branch_cfgs.get("S:W")),
         ):
             if cfg is None:
                 continue
@@ -580,9 +580,9 @@ def main():
 
         # Compact arithmetic/control windows used to resolve dynamic token strides.
         for label, cfg, start_rva, end_rva in (
-            ("I", cfgs["I"], 0x32650, 0x326B0),
-            ("S:I", s_branch_cfgs.get("I"), 0x30922, 0x309B0),
-            ("S:W", s_branch_cfgs.get("W"), 0x30B4F, 0x30BC0),
+            ("I", cfgs["I"], 0x32650, 0x328C0),
+            ("S:I", s_branch_cfgs.get("S:I"), 0x30922, 0x30B4F),
+            ("S:W", s_branch_cfgs.get("S:W"), 0x30B4F, 0x30CCB),
         ):
             if cfg is None:
                 continue
