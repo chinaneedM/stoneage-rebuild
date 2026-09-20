@@ -445,10 +445,10 @@ def resolve_persistent_ordinary_round(
     initiative_random_subtracts: Mapping[str, int],
     profiles: Mapping[str, BattleCombatProfile],
     attack_rolls: Mapping[str, OrdinaryAttackRolls],
+    defense_profile: str,
     drop_rolls_by_enemy_id: Mapping[
         str,Sequence[DropAllocationRoll]
     ] | None = None,
-    defense_profile: str,
     field_attr: str = "none",
     field_power: int = 0,
     tie_break_order: Sequence[str] | None = None,
