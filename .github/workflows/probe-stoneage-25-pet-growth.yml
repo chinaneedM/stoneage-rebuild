@@ -67,6 +67,10 @@ jobs:
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
           git add research/recovered/STONEAGE-25-PET-GROWTH-R1.txt
+          if git diff --cached --quiet; then
+            echo "Derived pet-growth report unchanged; nothing to commit."
+            exit 0
+          fi
           git commit -m 'research: profile StoneAge pet growth ranks'
           git pull --rebase origin main
           git push
