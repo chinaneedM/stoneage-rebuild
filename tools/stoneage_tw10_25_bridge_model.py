@@ -327,6 +327,27 @@ class ItemTemplateBridge:
 class NpcTemplateBridge:
     template_name: str
     functionset: str | None = None
+    character_name: str | None = None
+    image_number: int | None = None
+    default_type: int | None = None
+
+    @classmethod
+    def from_template(cls, row: Mapping[str, Any]) -> "NpcTemplateBridge":
+        return cls(
+            template_name=str(_required(row, "TEMPLATENAME")),
+            functionset=(
+                str(row["FUNCTIONSET"]) if row.get("FUNCTIONSET") not in (None, "") else None
+            ),
+            character_name=(
+                str(row["CHARNAME"]) if row.get("CHARNAME") not in (None, "") else None
+            ),
+            image_number=(
+                int(row["IMAGENUMBER"]) if row.get("IMAGENUMBER") not in (None, "") else None
+            ),
+            default_type=(
+                int(row["TYPE"]) if row.get("TYPE") not in (None, "") else None
+            ),
+        )
 
     @property
     def template_ref(self) -> TemplateRef:
@@ -338,6 +359,10 @@ class NpcCreateBridge:
     floor_id: int
     template_names: tuple[str, ...]
     create_num: int | None = None
+    direction: int | None = None
+    image_override: int | None = None
+    name_override: str | None = None
+    create_index: int | None = None
 
     @classmethod
     def from_create(
@@ -346,11 +371,19 @@ class NpcCreateBridge:
         floor_id: int,
         template_names: Sequence[str],
         create_num: int | None = None,
+        direction: int | None = None,
+        image_override: int | None = None,
+        name_override: str | None = None,
+        create_index: int | None = None,
     ) -> "NpcCreateBridge":
         return cls(
             int(floor_id),
             tuple(str(x) for x in template_names),
             None if create_num is None else int(create_num),
+            None if direction is None else int(direction),
+            None if image_override is None else int(image_override),
+            None if name_override in (None, "") else str(name_override),
+            None if create_index is None else int(create_index),
         )
 
 
@@ -374,3 +407,116 @@ class NpcRuntimeLink:
             template.template_ref,
             None if floor_id is None else int(floor_id),
         )
+
+
+@dataclass(frozen=True)
+class NpcRuntimeState:
+    """Descendant-supported NPC runtime state before v1 wire serialization."""
+
+    runtime_object_id: int
+    template_ref: TemplateRef
+    floor_id: int
+    x: int
+    y: int
+    direction: int
+    base_graphic_id: int
+    name: str
+    object_type: int
+    level: int
+    name_color: int
+    self_title: str
+    walkable: int
+    height: int
+    create_index: int | None = None
+
+    def v1_world_character_fields(self) -> dict[str, Any]:
+        """Project into exactly the 12-field Taiwan v1 C character record."""
+        return {
+            "object_type": self.object_type,
+            "runtime_object_id": self.runtime_object_id,
+            "x": self.x,
+            "y": self.y,
+            "direction": self.direction,
+            "base_graphic_id": self.base_graphic_id,
+            "level": self.level,
+            "name_color": self.name_color,
+            "name": self.name,
+            "self_or_free_title": self.self_title,
+            "walkable": self.walkable,
+            "height": self.height,
+        }
+
+    def window_session_fields(
+        self,
+        *,
+        window_type: int,
+        button_mask_or_type: int,
+        sequence_number: int,
+        data: str,
+    ) -> dict[str, Any]:
+        """Build the five-value v1 WN receive/session view.
+
+        The key invariant is that source_object_index is the allocated runtime
+        object index, while sequence_number is an independent window state ID.
+        """
+        return {
+            "window_type": int(window_type),
+            "button_mask_or_type": int(button_mask_or_type),
+            "sequence_number": int(sequence_number),
+            "source_object_index": self.runtime_object_id,
+            "data": str(data),
+        }
+
+
+def build_npc_runtime_bridge(
+    template: NpcTemplateBridge,
+    create: NpcCreateBridge,
+    *,
+    runtime_object_id: int,
+    spawn_x: int,
+    spawn_y: int,
+    object_type: int,
+    default_level: int,
+    default_name_color: int,
+    default_self_title: str = "",
+    default_walkable: int = 0,
+    default_height: int = 0,
+) -> NpcRuntimeState:
+    """Model the fixed descendant NPC generation -> v1-visible state boundary.
+
+    Template/create data selects presentation and spawn inputs, but the object
+    index is allocated only after the CHAR instance has been created. Fields
+    not assigned by NPC generation remain explicit default-CHAR inputs.
+    """
+    if template.template_name not in create.template_names:
+        raise ValueError("create rule does not reference this NPC template")
+    if create.direction is None:
+        raise ValueError("NPC create direction is required")
+    graphic = (
+        create.image_override
+        if create.image_override is not None and create.image_override != -1
+        else template.image_number
+    )
+    if graphic is None:
+        raise ValueError("NPC template/create bridge has no image number")
+    name = create.name_override or template.character_name
+    if name is None:
+        raise ValueError("NPC template/create bridge has no character name")
+
+    return NpcRuntimeState(
+        runtime_object_id=int(runtime_object_id),
+        template_ref=template.template_ref,
+        floor_id=create.floor_id,
+        x=int(spawn_x),
+        y=int(spawn_y),
+        direction=int(create.direction),
+        base_graphic_id=int(graphic),
+        name=str(name),
+        object_type=int(object_type),
+        level=int(default_level),
+        name_color=int(default_name_color),
+        self_title=str(default_self_title),
+        walkable=int(default_walkable),
+        height=int(default_height),
+        create_index=create.create_index,
+    )
