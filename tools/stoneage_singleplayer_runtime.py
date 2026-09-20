@@ -36,6 +36,12 @@ from tools.stoneage_battle_round_model import (
     prepare_battle_round,
     resolve_ordinary_round,
 )
+from tools.stoneage_battle_state_model import (
+    PersistentBattleState,
+    PersistentRoundResult,
+    begin_persistent_battle,
+    resolve_persistent_ordinary_round,
+)
 from tools.stoneage_enemy_spawn_model import (
     EnemyBirthRolls,
     SpawnedEnemy,
@@ -327,6 +333,41 @@ class SinglePlayerHistoricalRuntime:
             command,
             initiative_random_subtract=initiative_random_subtract,
             error_status=error_status,
+        )
+
+    def start_persistent_battle_state(
+        self,
+        session: BattleSession,
+        *,
+        slots: Mapping[str, int],
+    ) -> PersistentBattleState:
+        """Promote a battle shell into persistent multi-round state."""
+        return begin_persistent_battle(session, slots=slots)
+
+    def resolve_persistent_battle_round(
+        self,
+        state: PersistentBattleState,
+        *,
+        commands: Mapping[str, BattleCommand],
+        initiative_random_subtracts: Mapping[str, int],
+        profiles: Mapping[str, BattleCombatProfile],
+        attack_rolls: Mapping[str, OrdinaryAttackRolls],
+        defense_profile: str,
+        field_attr: str = "none",
+        field_power: int = 0,
+        tie_break_order: Sequence[str] | None = None,
+    ) -> PersistentRoundResult:
+        """Advance one deterministic ordinary round and retain battle HP."""
+        return resolve_persistent_ordinary_round(
+            state,
+            commands=commands,
+            initiative_random_subtracts=initiative_random_subtracts,
+            profiles=profiles,
+            attack_rolls=attack_rolls,
+            defense_profile=defense_profile,
+            field_attr=field_attr,
+            field_power=field_power,
+            tie_break_order=tie_break_order,
         )
 
     def resolve_ordinary_battle_round(
