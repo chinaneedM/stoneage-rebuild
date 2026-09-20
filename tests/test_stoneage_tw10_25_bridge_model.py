@@ -7,6 +7,7 @@ from tools.stoneage_tw10_25_bridge_model import (
     NpcTemplateBridge,
     PetSkillTemplateBridge,
     PetTemplateBridge,
+    build_npc_runtime_bridge,
     build_pet_birth_bridge,
     c_atoi,
 )
@@ -174,6 +175,96 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
         self.assertEqual(item.ordinary_name, "ordinary")
         self.assertEqual(item.template_ref.template_id, 500)
         self.assertNotIn("template_id", view)
+
+    def test_npc_template_create_to_world_and_window_runtime_boundary(self):
+        template = NpcTemplateBridge(
+            "elder",
+            "Windowman",
+            character_name="Village Elder",
+            image_number=30001,
+            default_type=1,
+        )
+        create = NpcCreateBridge.from_create(
+            floor_id=1000,
+            template_names=["elder"],
+            create_num=1,
+            direction=6,
+            image_override=30002,
+            name_override="Elder",
+            create_index=77,
+        )
+        runtime = build_npc_runtime_bridge(
+            template,
+            create,
+            runtime_object_id=34567,
+            spawn_x=12,
+            spawn_y=34,
+            object_type=2,
+            default_level=1,
+            default_name_color=0,
+            default_self_title="",
+            default_walkable=0,
+            default_height=0,
+        )
+        world = runtime.v1_world_character_fields()
+        self.assertEqual(
+            list(world),
+            [
+                "object_type",
+                "runtime_object_id",
+                "x",
+                "y",
+                "direction",
+                "base_graphic_id",
+                "level",
+                "name_color",
+                "name",
+                "self_or_free_title",
+                "walkable",
+                "height",
+            ],
+        )
+        self.assertEqual(world["runtime_object_id"], 34567)
+        self.assertEqual(world["direction"], 6)
+        self.assertEqual(world["base_graphic_id"], 30002)
+        self.assertEqual(world["name"], "Elder")
+        self.assertEqual(runtime.template_ref.template_id, "elder")
+        self.assertEqual(runtime.create_index, 77)
+
+        wn = runtime.window_session_fields(
+            window_type=1,
+            button_mask_or_type=3,
+            sequence_number=105,
+            data="payload",
+        )
+        self.assertEqual(wn["source_object_index"], 34567)
+        self.assertEqual(wn["sequence_number"], 105)
+        self.assertNotEqual(wn["source_object_index"], wn["sequence_number"])
+
+    def test_npc_generation_uses_template_values_when_create_has_no_override(self):
+        template = NpcTemplateBridge(
+            "guide",
+            character_name="Guide",
+            image_number=31000,
+        )
+        create = NpcCreateBridge.from_create(
+            floor_id=2000,
+            template_names=["guide"],
+            direction=2,
+            image_override=-1,
+        )
+        runtime = build_npc_runtime_bridge(
+            template,
+            create,
+            runtime_object_id=10,
+            spawn_x=1,
+            spawn_y=2,
+            object_type=2,
+            default_level=1,
+            default_name_color=0,
+        )
+        self.assertEqual(runtime.base_graphic_id, 31000)
+        self.assertEqual(runtime.name, "Guide")
 
     def test_npc_runtime_identity_remains_distinct(self):
         template = NpcTemplateBridge("elder", "Windowman")
