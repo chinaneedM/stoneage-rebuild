@@ -99,6 +99,5 @@ The encounter bridge also preserves all ten raw \`ITEMn / ITEMPROBn\` pairs on \
 ## Still open
 
 - byte-level JSS-1999 confirmation of ITEMPROB scale;
-- carrying concrete reconstructed item-instance state through the single-player persistent battle state;
-- capture, money, escape, death penalties and recovery;
+- money, capture, escape, death penalties and recovery;
 - later private-server drop-rate extensions, which are intentionally excluded from the base model.
