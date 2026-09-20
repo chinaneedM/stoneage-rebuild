@@ -1,0 +1,297 @@
+# StoneAge ordinary attack / guard / wait round resolution — R1
+
+Date: 2026-09-20
+
+Status: **stable-descendant FACT / reconstruction-safe execution boundary; JSS-era server provenance remains OPEN**
+
+## Purpose
+
+This closes the first deterministic battle-effect seam after encounter and
+enemy birth:
+
+```
+submitted commands
+ -> action values
+ -> descending action order
+ -> execution-time target validation / retarget
+ -> dodge / critical
+ -> physical + elemental damage
+ -> guard reduction
+ -> HP subtraction
+```
+
+It deliberately does not invent enemy AI or later battle systems.
+
+## Evidence anchors
+
+Primary stable descendant:
+
+- `gavinlinasd/StoneAge@1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`
+  - `gmsv/src/battle/battle.c`
+  - `gmsv/src/battle/battle_event.c`
+
+Independent descendant comparison remains available through the previously
+recorded StoneAge source lineage.
+
+The implementation remains a bridge/reference model. It is not a claim that
+every coefficient has already been proven byte-for-byte for the 1999 JSS
+server.
+
+## 1. Action ordering
+
+The stable battle loop calculates each entry's DEX/action value, then calls
+`qsort` with a comparator equivalent to:
+
+```
+second.dex - first.dex
+```
+
+so larger action values execute first.
+
+The recovered ordinary action-value profile remains:
+
+```
+work = QUICK + 20
+dex  = work - RAND(0, int(work * 0.30))
+dex  = max(1, dex)
+```
+
+The source comparator returns zero for equal action values. C `qsort` does
+not define a historical stable tie order, so the reconstruction refuses to
+invent one: equal action values require an explicit caller-supplied
+`tie_break_order`.
+
+## 2. Guard is a submitted stance, not a speed-gated activation
+
+`BATTLE_AttackSeq()` inspects the defender's already stored COM1 command.
+
+If COM1 is GUARD:
+
+- `BATTLE_DuckCheck()` immediately returns false;
+- the defender therefore does not dodge that ordinary attack;
+- critical checking still occurs;
+- after damage calculation, `BATTLE_GuardAdjust()` reduces the damage.
+
+Consequently a slow guard actor is already guarding when a faster attacker
+acts earlier in the same round. The reconstruction records guard stance from
+the submitted command set before executing the sorted action list.
+
+## 3. Dead actors are skipped when their turn arrives
+
+The stable battle loop checks battle/death state again immediately before
+executing the sorted entry.
+
+The reconstruction therefore keeps the original sorted order but emits
+`skipped_dead` when an earlier action reduced that actor to zero HP.
+
+## 4. Target validation and execution-time retarget
+
+For an ordinary melee command the stable path calls `BATTLE_TargetAdjust()`
+at action execution time.
+
+If the submitted target is no longer valid,
+`BATTLE_DefaultAttacker()`:
+
+1. scans living entries on the opposing side in battle-slot order;
+2. constructs a candidate list;
+3. chooses `RAND(0, candidate_count - 1)`.
+
+The deterministic reconstruction therefore requires an explicit
+`retarget_roll` only when the original target has become invalid.
+
+Same-side attacks are outside this first status-free seam because confusion,
+team-attack prevention and related branches are intentionally excluded.
+
+## 5. Dodge and critical order
+
+The stable single-hit path performs:
+
+1. dodge check;
+2. guardian check;
+3. critical check;
+4. damage calculation.
+
+Guardian behavior is not yet promoted into R1, but the relative dodge /
+critical order is preserved.
+
+The minimal dodge core uses fixed DEX and player-only fixed LUCK. Its stable
+random comparison is:
+
+```
+RAND(1, 10000) <= dodge_probability
+```
+
+The critical core uses fixed DEX, player-only fixed LUCK and weapon critical.
+Its stable random comparison is slightly different:
+
+```
+RAND(1, 10000) < critical_probability
+```
+
+That one-character difference is retained explicitly.
+
+Guard suppresses the ordinary dodge check but does not suppress critical.
+
+## 6. Physical defense profile remains explicit
+
+Two stable source branches are already preserved by the project:
+
+- compiled descendant `newpower_70pct`;
+- preserved older mixed-stat expression.
+
+The project still does not claim which branch belongs to the earliest JSS
+server, so round execution requires an explicit `defense_profile`.
+
+No hidden default is used to erase that provenance uncertainty.
+
+## 7. Four-attribute damage
+
+The stable ordinary damage path applies the four elemental attributes after
+the physical base calculation.
+
+Constants:
+
+- same: **1.0**
+- advantage: **1.5**
+- disadvantage: **0.6**
+- attribute maximum basis: **100**
+
+Element order is earth / water / fire / wind, with a derived neutral remainder:
+
+```
+none = max(0, 100 - earth - water - fire - wind)
+```
+
+Recovered relationships include:
+
+- fire > wind; fire < water;
+- water > fire; water < earth;
+- earth > water; earth < wind;
+- wind > earth; wind < fire;
+- neutral vs elemental uses the disadvantage coefficient.
+
+The source stores the elemental subtotals in integer lvalues, so the
+reconstruction preserves C-style truncation at those assignments.
+
+The battlefield elemental scalar is also retained as an explicit
+`field_attr / field_power` input. With no battlefield attribute, attacker and
+defender scalars are both 0.5 and cancel.
+
+## 8. Critical damage
+
+For a non-bow ordinary critical, stable `BATTLE_CriDamageCalc()` first runs
+normal damage calculation, then adds:
+
+```
+defender_WORKDEFENCEPOWER
+* attacker_level / defender_level
+* 0.5
+```
+
+R1 excludes bows, so this additive term is used only in the non-bow ordinary
+path.
+
+## 9. Guard reduction and zero damage
+
+After ordinary/critical damage:
+
+`BATTLE_GuardAdjust()` uses the already recovered distribution:
+
+- 1..25 -> 0%
+- 26..50 -> 10%
+- 51..70 -> 20%
+- 71..85 -> 30%
+- 86..95 -> 40%
+- 96..100 -> 50%
+
+If damage is then below 1, the stable source replaces it with
+`RAND(0,1)`.
+
+If the resulting damage is zero:
+
+- ordinary attack -> MISS;
+- guarding target -> ALLGUARD.
+
+## 10. HP application
+
+For the ordinary no-ride/no-reaction path, the stable damage application is
+equivalent to:
+
+```
+hp = max(0, hp - damage)
+```
+
+before later reaction/ultimate systems.
+
+R1 therefore applies only direct target HP subtraction and intentionally
+excludes reflect, absorb, ride-pet sharing, knock-away/ultimate state and
+wake-up/status side effects.
+
+## 11. Explicit combat profile boundary
+
+The reconstructed round requires a `BattleCombatProfile` containing:
+
+- fixed DEX;
+- fixed LUCK;
+- earth/water/fire/wind;
+- weapon critical.
+
+These values are not automatically inferred from similarly named client
+display fields where the exact early server WORK-stat bridge remains
+unproven.
+
+This preserves a clean distinction between:
+
+- directly recovered combat arithmetic; and
+- still-open client-display -> server-work-stat provenance.
+
+## Implementation
+
+Core arithmetic:
+
+- `tools/stoneage_battle_core_model.py`
+
+Round command/order/effect execution:
+
+- `tools/stoneage_battle_round_model.py`
+
+Single-player runtime bridge:
+
+- `tools/stoneage_singleplayer_runtime.py`
+
+Regression coverage:
+
+- `tests/test_stoneage_battle_core_model.py`
+- `tests/test_stoneage_battle_round_model.py`
+- `tests/test_stoneage_group_battle_runtime.py`
+
+Validated remote runs:
+
+- battle-core **35512116840** — success;
+- gameplay/runtime **35512186213** — success.
+
+## Deliberately excluded from R1
+
+- automatic enemy command/AI selection;
+- counterattacks;
+- combo/multi-hit rewriting;
+- guardian interception;
+- bow and boomerang behavior;
+- ride-pet damage sharing;
+- reflect/absorb/vanish and other reaction systems;
+- abnormal statuses/confusion/team attacks;
+- pet/profession skills;
+- item/magic actions;
+- capture and escape resolution;
+- battle termination, victory/defeat settlement;
+- EXP, drops and post-battle recovery.
+
+## Consequence
+
+The project now has a deterministic, in-process first-round execution layer:
+encounters can produce concrete enemies, a battle session can receive explicit
+commands and random results, and ordinary attacks can resolve through the
+historically recovered ordering and damage chain into concrete HP changes.
+
+The next battle milestone can therefore focus on persistent multi-round battle
+state and termination boundaries instead of re-deriving first-hit arithmetic.
