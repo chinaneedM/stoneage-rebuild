@@ -1184,16 +1184,29 @@ Supplemental source ledgers:
   - **35509083296** validates the full end-to-end historical runtime slice.
 - **Operational consequence:** the previous immediate actions 1–3 are now closed to the first reconstruction-safe executable boundary. We have moved beyond architecture scaffolding into an actual in-process single-player historical game loop skeleton without requiring a network server.
 
+## Standalone single-player persistence boundary — 2026-09-20
+
+- `tools/stoneage_singleplayer_persistence.py` now defines versioned local save schema `stoneage.singleplayer.persistence.r1`.
+- This is explicitly a **DESIGN** persistence format, not a recovered historical account/save format.
+- Only player-owned persistent state is serialized:
+  - player field snapshot;
+  - inventory slot + item-template identity + current reconstructed item view;
+  - pet slot + enemy-variant identity + enemybase-template identity + current pet state + skill views.
+- Static master data, transient world objects, NPC/window sessions, active battle state and all network/account-server concepts are excluded from the payload.
+- Pet/runtime world object identity is deliberately not persisted; restored pets return with `runtime_object_id=None` so a future world load allocates fresh transient identity instead of aliasing an old runtime object.
+- Payload shape and schema are strict, duplicate inventory/pet slots are rejected, and deterministic JSON encoding is covered by regression tests.
+- Remote validation **35509162758** passes with the persistence tests integrated into the combined single-player/gameplay model suite.
+- **Operational consequence:** the former immediate persistence action is complete to the first versioned local boundary. The single-player runtime now has a clean save/load direction without reconstructing historical login/account-server architecture.
+
 ## Immediate next actions
 
-1. **Add the standalone single-player persistence boundary.** Persist only `PersistentPlayerState` data in a versioned local format; static master data, transient world objects, active sessions and network/account-server concepts must remain outside the save payload.
-2. **Close the map collision/object-overability seam with evidence before making movement autonomous.** The runtime currently accepts an explicit collision verdict by design; do not reinterpret arbitrary recovered MAP/DAT values as walkability without proving the mapping.
-3. **Promote the movement-side encounter-frequency/CEP loop into the runtime.** Preserve the recovered clamp/increment/reset soft-pity ordering and keep its exact evidence grade/version boundary explicit.
-4. **Close enemy spawn-count/birth orchestration and the first battle-round command boundary.** Use explicit recovered formulas and deterministic rolls; do not invent AI, drop or victory semantics that remain unresolved.
-5. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
-6. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
-7. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
-8. **Keep historical reconstruction and later redesign separate.** The historical loop is now executable at skeleton level; optimization, automation/外挂-like convenience features and single-player redesign remain explicit DESIGN layers rather than silent historical rewrites.
+1. **Close the map collision/object-overability seam with evidence before making movement autonomous.** The runtime currently accepts an explicit collision verdict by design; do not reinterpret arbitrary recovered MAP/DAT values as walkability without proving the mapping.
+2. **Promote the movement-side encounter-frequency/CEP loop into the runtime.** Preserve the recovered clamp/increment/reset soft-pity ordering and keep its exact evidence grade/version boundary explicit.
+3. **Close enemy spawn-count/birth orchestration and the first battle-round command boundary.** Use explicit recovered formulas and deterministic rolls; do not invent AI, drop or victory semantics that remain unresolved.
+4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
+5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
+6. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
+7. **Keep historical reconstruction and later redesign separate.** The historical loop is now executable at skeleton level; optimization, automation/外挂-like convenience features and single-player redesign remain explicit DESIGN layers rather than silent historical rewrites.
 
 
 ## Continuity status
