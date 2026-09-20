@@ -50,7 +50,15 @@ from tools.stoneage_enemy_spawn_model import (
     plan_enemy_spawns,
 )
 from tools.stoneage_combat_profile_bridge import group_battle_combat_profiles
-from tools.stoneage_player_growth_model import resolve_player_exp_transition
+from tools.stoneage_pet_growth_model import (
+    PetLevelGrowthRolls,
+    resolve_pet_exp_growth_transition,
+    unpack_growth_base,
+)
+from tools.stoneage_player_growth_model import (
+    base_derived_stats,
+    resolve_player_exp_transition,
+)
 from tools.stoneage_singleplayer_battle import (
     BattleOutcome,
     BattleParticipant,
@@ -65,6 +73,7 @@ from tools.stoneage_singleplayer_domain import (
     EncounterRolls,
     GroupEncounterRequest,
     MapPosition,
+    PetGrowthState,
     PetSlot,
     SinglePlayerHistoricalDomain,
 )
@@ -540,13 +549,32 @@ class SinglePlayerHistoricalRuntime:
         player_exp_profile: str,
         next_player_max_exp_by_level: Mapping[int, int],
     ) -> BattleReturn:
-        '''Settle HP/EXP with an explicit player level-transition profile.
+        '''Compatibility boundary that keeps pet threshold crossing unresolved.'''
+        return self.finish_persistent_battle_with_progression(
+            state,
+            player_exp_profile=player_exp_profile,
+            next_player_max_exp_by_level=next_player_max_exp_by_level,
+        )
 
-        Player threshold crossing is allowed only through the versioned growth
-        model. Pet threshold crossing remains blocked because pet level-up
-        mutates randomized growth state that is not yet wired into settlement.
-        All validation occurs before apply_battle_outcome(), preserving atomic
-        failure when any participant reaches an unresolved boundary.
+    def finish_persistent_battle_with_progression(
+        self,
+        state: PersistentBattleState,
+        *,
+        player_exp_profile: str,
+        next_player_max_exp_by_level: Mapping[int, int],
+        pet_exp_profile: str | None = None,
+        next_pet_max_exp_by_slot: Mapping[int, Mapping[int, int]] | None = None,
+        pet_level_growth_rolls_by_slot: Mapping[
+            int, Sequence[PetLevelGrowthRolls]
+        ] | None = None,
+    ) -> BattleReturn:
+        '''Settle player and pet EXP through explicitly selected progression seams.
+
+        Pet threshold crossing is accepted only when the caller supplies a
+        versioned EXP profile, the post-crossing threshold values for that pet,
+        and exactly one explicit 10+1 growth-roll bundle per level gained.
+        No implicit RNG, auto-heal, visible-AI rewrite or later reward rule is
+        introduced here.
         '''
         if state.phase != FINISHED or state.result is None:
             raise ValueError('cannot settle battle before termination')
@@ -565,6 +593,7 @@ class SinglePlayerHistoricalRuntime:
         player_hp=int(state.hp_by_participant_id[player_id])
         player_updates: dict[str,int]={'hp':player_hp}
         pet_updates: dict[int,dict[str,int]]={}
+        pet_growth_updates: dict[int,PetGrowthState]={}
         player_can_receive_exp=player_hp>0
 
         if player_can_receive_exp:
@@ -608,6 +637,15 @@ class SinglePlayerHistoricalRuntime:
                         + transition.duel_point_delta
                     )
 
+        pet_thresholds={
+            int(slot): thresholds
+            for slot,thresholds in (next_pet_max_exp_by_slot or {}).items()
+        }
+        pet_rolls={
+            int(slot): tuple(rolls)
+            for slot,rolls in (pet_level_growth_rolls_by_slot or {}).items()
+        }
+
         for participant in session.allied_pets:
             if participant.source_pet_slot is None:
                 raise ValueError(
@@ -637,11 +675,68 @@ class SinglePlayerHistoricalRuntime:
                     current_exp=int(pet.state['exp'])
                     max_exp=int(pet.state['max_exp'])
                     next_exp=current_exp+pending
-                    if max_exp<=current_exp or next_exp>=max_exp:
-                        raise ValueError(
-                            'pet pending EXP reaches unresolved pet level-up threshold'
+                    if max_exp<=current_exp:
+                        raise ValueError('pet persistent EXP is already at or above max EXP')
+                    if next_exp<max_exp:
+                        updates['exp']=next_exp
+                    else:
+                        if pet_exp_profile is None:
+                            raise ValueError(
+                                'pet pending EXP reaches unresolved pet level-up threshold'
+                            )
+                        if pet.growth is None:
+                            raise ValueError(
+                                f'pet slot {slot} lacks hidden growth identity'
+                            )
+                        if slot not in pet_thresholds:
+                            raise ValueError(
+                                f'pet slot {slot} lacks explicit post-level EXP thresholds'
+                            )
+                        if slot not in pet_rolls:
+                            raise ValueError(
+                                f'pet slot {slot} lacks explicit level-up growth rolls'
+                            )
+                        growth=pet.growth
+                        transition=resolve_pet_exp_growth_transition(
+                            int(pet.state['level']),
+                            current_exp,
+                            pending,
+                            max_exp,
+                            profile=pet_exp_profile,
+                            next_max_exp_by_level=pet_thresholds[slot],
+                            growth_base=unpack_growth_base(growth.alloc_point),
+                            rank=growth.pet_rank,
+                            current_internal_stats=(
+                                growth.internal_vital,
+                                growth.internal_strength,
+                                growth.internal_toughness,
+                                growth.internal_dexterity,
+                            ),
+                            current_variable_ai=growth.variable_ai,
+                            level_rolls=pet_rolls[slot],
                         )
-                    updates['exp']=next_exp
+                        derived=base_derived_stats(
+                            *transition.growth.end_internal_stats
+                        )
+                        updates.update({
+                            'level':transition.end_level,
+                            'exp':transition.end_exp,
+                            'max_exp':transition.next_max_exp,
+                            'max_hp':derived['max_hp'],
+                            'attack':derived['attack_power'],
+                            'defense':derived['defence_power'],
+                            'quick':derived['quick'],
+                            'hp':min(hp,derived['max_hp']),
+                        })
+                        pet_growth_updates[slot]=PetGrowthState(
+                            pet_rank=growth.pet_rank,
+                            alloc_point=growth.alloc_point,
+                            internal_vital=transition.growth.end_internal_stats[0],
+                            internal_strength=transition.growth.end_internal_stats[1],
+                            internal_toughness=transition.growth.end_internal_stats[2],
+                            internal_dexterity=transition.growth.end_internal_stats[3],
+                            variable_ai=transition.growth.end_variable_ai,
+                        )
             pet_updates[slot]=updates
 
         return apply_battle_outcome(
@@ -651,6 +746,7 @@ class SinglePlayerHistoricalRuntime:
                 result=state.result,
                 player_updates=player_updates,
                 pet_updates=pet_updates,
+                pet_growth_updates=pet_growth_updates,
             ),
         )
 

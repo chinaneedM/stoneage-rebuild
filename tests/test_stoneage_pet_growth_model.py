@@ -1,5 +1,9 @@
 import unittest
 
+from tools.stoneage_player_growth_model import (
+    LEGACY_CUMULATIVE_EXP,
+    PER_LEVEL_EXP,
+)
 from tools.stoneage_pet_growth_model import (
     PetLevelGrowthRolls,
     VARIABLE_AI_LEVELUP_DELTA,
@@ -9,6 +13,7 @@ from tools.stoneage_pet_growth_model import (
     pack_growth_base,
     pet_level_increments,
     pet_rank_from_template_base,
+    resolve_pet_exp_growth_transition,
     unpack_growth_base,
 )
 
@@ -90,6 +95,80 @@ class PetGrowthModelTests(unittest.TestCase):
             ),
         )
         self.assertEqual(transition.end_variable_ai,10000)
+    def test_legacy_pet_exp_crossing_keeps_cumulative_exp_and_applies_growth(self):
+        transition=resolve_pet_exp_growth_transition(
+            4,10,490,500,
+            profile=LEGACY_CUMULATIVE_EXP,
+            next_max_exp_by_level={5:900},
+            growth_base=(18,19,21,22),
+            rank=4,
+            current_internal_stats=(1800,1900,2100,2200),
+            current_variable_ai=0,
+            level_rolls=(
+                PetLevelGrowthRolls(
+                    (0,0,0,1,1,2,2,2,3,3),
+                    530,
+                ),
+            ),
+        )
+        self.assertEqual(
+            (transition.end_level,transition.end_exp,transition.next_max_exp),
+            (5,500,900),
+        )
+        self.assertEqual(transition.levels_gained,1)
+        self.assertEqual(
+            transition.growth.end_internal_stats,
+            (1911,2011,2227,2327),
+        )
+        self.assertEqual(transition.growth.end_variable_ai,500)
+
+    def test_per_level_pet_exp_crossing_consumes_requirement(self):
+        transition=resolve_pet_exp_growth_transition(
+            4,10,490,500,
+            profile=PER_LEVEL_EXP,
+            next_max_exp_by_level={5:400},
+            growth_base=(18,19,21,22),
+            rank=4,
+            current_internal_stats=(1800,1900,2100,2200),
+            current_variable_ai=0,
+            level_rolls=(
+                PetLevelGrowthRolls(
+                    (0,0,0,1,1,2,2,2,3,3),
+                    530,
+                ),
+            ),
+        )
+        self.assertEqual(
+            (transition.end_level,transition.end_exp,transition.next_max_exp),
+            (5,0,400),
+        )
+
+    def test_pet_exp_transition_has_no_implicit_growth_rng(self):
+        with self.assertRaisesRegex(ValueError,'exactly one growth roll bundle'):
+            resolve_pet_exp_growth_transition(
+                4,10,490,500,
+                profile=LEGACY_CUMULATIVE_EXP,
+                next_max_exp_by_level={5:900},
+                growth_base=(18,19,21,22),
+                rank=4,
+                current_internal_stats=(1800,1900,2100,2200),
+                current_variable_ai=0,
+                level_rolls=(),
+            )
+        with self.assertRaisesRegex(ValueError,'exactly one growth roll bundle'):
+            resolve_pet_exp_growth_transition(
+                4,10,100,500,
+                profile=LEGACY_CUMULATIVE_EXP,
+                next_max_exp_by_level={},
+                growth_base=(18,19,21,22),
+                rank=4,
+                current_internal_stats=(1800,1900,2100,2200),
+                current_variable_ai=0,
+                level_rolls=(
+                    PetLevelGrowthRolls((0,)*10,530),
+                ),
+            )
+
     def test_rank_range_validation(self):
         with self.assertRaises(ValueError):
             pet_level_increments((20,20,20,20),5,[0]*10,549)

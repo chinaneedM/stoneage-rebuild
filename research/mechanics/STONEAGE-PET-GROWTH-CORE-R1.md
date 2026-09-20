@@ -210,6 +210,35 @@ VARIABLEAI by +500 after every level.
 
 Later family/teacher fame code inside descendant `CHAR_PetLevelUp()` is
 explicitly excluded from this stable core.
+## 8.2 Explicit EXP-to-growth settlement seam
+
+Pet threshold crossing is now modeled as a composition of two independently
+visible mechanisms:
+
+1. the selected EXP threshold profile decides how many levels are gained and
+   what EXP/max-EXP remains;
+2. exactly one `PetLevelGrowthRolls` bundle is consumed for each gained level.
+
+`resolve_pet_exp_growth_transition()` rejects any mismatch between levels
+gained and supplied RNG bundles. There is no hidden random-number generator in
+the reconstruction seam.
+
+At runtime, threshold-crossing settlement additionally requires the pet's
+persisted hidden growth identity:
+
+- `PETRANK`;
+- packed individualized `CHAR_ALLOCPOINT`;
+- current internal VITAL/STR/TOUGH/DEX;
+- current `CHAR_VARIABLEAI`.
+
+After explicit growth, the already-recovered compliance projection recalculates
+max HP, attack, defense and quick. Current battle HP is only clamped to the new
+maximum; level-up does **not** imply automatic healing in this seam.
+
+The hidden VARIABLEAI is persisted separately. The visible pet AI/loyalty value
+is not rewritten here because its full owner/charm/template compliance
+projection remains a distinct evidence boundary.
+
 ## 9. Why this matters for reconstruction
 
 The pet system is not merely:

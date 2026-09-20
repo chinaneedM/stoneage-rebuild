@@ -2,7 +2,9 @@
 """Reference model for the convergent StoneAge descendant pet-growth core."""
 
 from dataclasses import dataclass
-from typing import Sequence
+from typing import Mapping, Sequence
+
+from tools.stoneage_player_growth_model import resolve_player_exp_transition
 
 VARIABLE_AI_LEVELUP_DELTA=500
 VARIABLE_AI_MIN=-10000
@@ -29,6 +31,18 @@ class PetGrowthTransition:
     start_variable_ai: int
     end_variable_ai: int
     levels_gained: int
+
+@dataclass(frozen=True)
+class PetExpGrowthTransition:
+    profile: str
+    start_level: int
+    start_exp: int
+    award_exp: int
+    end_level: int
+    end_exp: int
+    next_max_exp: int
+    levels_gained: int
+    growth: PetGrowthTransition
 
 RANK_THRESHOLDS=((100,0),(95,1),(90,2),(85,3),(80,4),(0,5))
 RANK_ROLL_RANGES=((450,500),(470,520),(490,540),(510,560),(530,580),(550,600))
@@ -139,6 +153,60 @@ def advance_pet_growth(
         end_variable_ai=variable_ai,
         levels_gained=len(increments),
     )
+
+def resolve_pet_exp_growth_transition(
+    current_level,
+    current_exp,
+    award_exp,
+    current_max_exp,
+    *,
+    profile,
+    next_max_exp_by_level: Mapping[int,int] | None,
+    growth_base,
+    rank,
+    current_internal_stats,
+    current_variable_ai,
+    level_rolls: Sequence[PetLevelGrowthRolls],
+):
+    '''Resolve EXP thresholds and exactly one explicit growth draw bundle per level.
+
+    Pet EXP follows the same versioned CHAR_LevelUpCheck threshold regimes as
+    player EXP. Unlike players, each crossed level additionally invokes
+    CHAR_PetLevelUp() and CHAR_PetAddVariableAi(), so the caller must provide
+    exactly one deterministic PetLevelGrowthRolls bundle for every level gained.
+    '''
+    exp_transition=resolve_player_exp_transition(
+        current_level,
+        current_exp,
+        award_exp,
+        current_max_exp,
+        profile=profile,
+        next_max_exp_by_level=next_max_exp_by_level,
+    )
+    rolls=tuple(level_rolls)
+    if len(rolls)!=exp_transition.levels_gained:
+        raise ValueError(
+            'pet level-up requires exactly one growth roll bundle per gained level'
+        )
+    growth=advance_pet_growth(
+        growth_base=growth_base,
+        rank=rank,
+        current_internal_stats=current_internal_stats,
+        current_variable_ai=current_variable_ai,
+        level_rolls=rolls,
+    )
+    return PetExpGrowthTransition(
+        profile=exp_transition.profile,
+        start_level=exp_transition.start_level,
+        start_exp=exp_transition.start_exp,
+        award_exp=exp_transition.award_exp,
+        end_level=exp_transition.end_level,
+        end_exp=exp_transition.end_exp,
+        next_max_exp=exp_transition.next_max_exp,
+        levels_gained=exp_transition.levels_gained,
+        growth=growth,
+    )
+
 
 def pet_level_increments(growth_base,rank,allocation_rolls,rank_roll):
     """Return (vital, strength, toughness, dexterity) increments."""

@@ -12,6 +12,7 @@ from tools.stoneage_battle_round_model import (
 )
 from tools.stoneage_battle_state_model import FINISHED, PLAYER_WIN
 from tools.stoneage_enemy_spawn_model import EnemyBirthRolls
+from tools.stoneage_pet_growth_model import PetLevelGrowthRolls
 from tools.stoneage_player_growth_model import (
     LEGACY_CUMULATIVE_EXP,
     PER_LEVEL_EXP,
@@ -21,6 +22,7 @@ from tools.stoneage_singleplayer_domain import (
     HistoricalStaticData,
     MapPosition,
     PetActor,
+    PetGrowthState,
     PetSlot,
     PetTemplateId,
     PlayerState,
@@ -134,6 +136,15 @@ def allied_pet():
             }
         ),
         skills=(),
+        growth=PetGrowthState(
+            pet_rank=4,
+            alloc_point=0x12131516,
+            internal_vital=1800,
+            internal_strength=1900,
+            internal_toughness=2100,
+            internal_dexterity=2200,
+            variable_ai=0,
+        ),
     )
 
 
@@ -705,6 +716,115 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(fields['duel_point_like_state'],0)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state['hp'],60)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state['exp'],10)
+    def test_explicit_pet_level_crossing_updates_hidden_growth_and_derived_state(self):
+        self.domain.persistent.pets[PetSlot(2)] = allied_pet()
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,templates=self.templates,entry_count_roll=1,
+            selection_rolls=(0,),birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(
+            request,spawned_enemies=spawned,allied_pet_slots=(2,),
+        )
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,slots={'player':0,'pet:2':1,enemy_id:10},
+        )
+        terminal=replace(
+            state,
+            hp_by_participant_id=MappingProxyType(
+                {'player':73,'pet:2':21,enemy_id:0}
+            ),
+            pending_exp_by_participant_id=MappingProxyType(
+                {'player':0,'pet:2':490}
+            ),
+            phase=FINISHED,result=PLAYER_WIN,winning_side=0,
+        )
+
+        self.runtime.finish_persistent_battle_with_progression(
+            terminal,
+            player_exp_profile=LEGACY_CUMULATIVE_EXP,
+            next_player_max_exp_by_level={},
+            pet_exp_profile=LEGACY_CUMULATIVE_EXP,
+            next_pet_max_exp_by_slot={2:{5:900}},
+            pet_level_growth_rolls_by_slot={
+                2:(
+                    PetLevelGrowthRolls(
+                        (0,0,0,1,1,2,2,2,3,3),
+                        530,
+                    ),
+                )
+            },
+        )
+
+        pet=self.domain.persistent.pets[PetSlot(2)]
+        self.assertEqual(
+            (pet.state['level'],pet.state['exp'],pet.state['max_exp']),
+            (5,500,900),
+        )
+        self.assertEqual(
+            (pet.state['hp'],pet.state['max_hp']),
+            (21,142),
+        )
+        self.assertEqual(
+            (pet.state['attack'],pet.state['defense'],pet.state['quick']),
+            (25,27,23),
+        )
+        self.assertIsNotNone(pet.growth)
+        self.assertEqual(
+            (
+                pet.growth.internal_vital,
+                pet.growth.internal_strength,
+                pet.growth.internal_toughness,
+                pet.growth.internal_dexterity,
+            ),
+            (1911,2011,2227,2327),
+        )
+        self.assertEqual(pet.growth.variable_ai,500)
+        self.assertEqual(pet.growth.pet_rank,4)
+        self.assertEqual(pet.growth.alloc_point,0x12131516)
+
+    def test_explicit_pet_crossing_without_growth_rolls_is_atomic(self):
+        self.domain.persistent.pets[PetSlot(2)] = allied_pet()
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,templates=self.templates,entry_count_roll=1,
+            selection_rolls=(0,),birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(
+            request,spawned_enemies=spawned,allied_pet_slots=(2,),
+        )
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,slots={'player':0,'pet:2':1,enemy_id:10},
+        )
+        terminal=replace(
+            state,
+            hp_by_participant_id=MappingProxyType(
+                {'player':73,'pet:2':21,enemy_id:0}
+            ),
+            pending_exp_by_participant_id=MappingProxyType(
+                {'player':100,'pet:2':490}
+            ),
+            phase=FINISHED,result=PLAYER_WIN,winning_side=0,
+        )
+
+        with self.assertRaisesRegex(ValueError,'explicit level-up growth rolls'):
+            self.runtime.finish_persistent_battle_with_progression(
+                terminal,
+                player_exp_profile=LEGACY_CUMULATIVE_EXP,
+                next_player_max_exp_by_level={},
+                pet_exp_profile=LEGACY_CUMULATIVE_EXP,
+                next_pet_max_exp_by_slot={2:{5:900}},
+                pet_level_growth_rolls_by_slot={},
+            )
+
+        self.assertEqual(self.domain.persistent.character.fields['hp'],100)
+        self.assertEqual(self.domain.persistent.character.fields['exp'],0)
+        pet=self.domain.persistent.pets[PetSlot(2)]
+        self.assertEqual((pet.state['hp'],pet.state['exp'],pet.state['level']),(60,10,4))
+        self.assertEqual(pet.growth.variable_ai,0)
+
     def test_old_single_variant_encounter_projection_remains_compatible(self):
         request = self.domain.request_encounter(
             group_roll=0,
