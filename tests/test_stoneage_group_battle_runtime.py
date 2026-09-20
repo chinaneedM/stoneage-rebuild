@@ -90,6 +90,12 @@ def player_state():
                 "attack": 100,
                 "defense": 80,
                 "quick": 60,
+                "charm": 0,
+                "luck": 7,
+                "earth": 50,
+                "water": 50,
+                "fire": 0,
+                "wind": 0,
                 "name": "Hero",
             }
         )
@@ -316,24 +322,18 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         )
         battle = replace(battle, enemies=(enemy,))
         enemy_id = enemy.participant_id
-        profiles = {
-            "player": BattleCombatProfile(
-                fixed_dex=100,
-                fixed_luck=0,
-                earth=0,
-                water=0,
-                fire=0,
-                wind=0,
-            ),
-            enemy_id: BattleCombatProfile(
-                fixed_dex=100,
-                fixed_luck=0,
-                earth=0,
-                water=0,
-                fire=0,
-                wind=0,
-            ),
-        }
+        profiles = self.runtime.build_group_battle_combat_profiles(
+            battle,
+            spawned_enemies=spawned,
+            player_weapon_critical=0,
+        )
+        self.assertEqual(profiles["player"].fixed_dex, 30)
+        self.assertEqual(profiles["player"].fixed_luck, 7)
+        self.assertEqual(profiles["player"].elements, (50, 50, 0, 0))
+        self.assertEqual(
+            profiles[enemy_id].fixed_dex,
+            battle.enemies[0].quick,
+        )
         state = self.runtime.start_persistent_battle_state(
             battle,
             slots={"player": 0, enemy_id: 10},
