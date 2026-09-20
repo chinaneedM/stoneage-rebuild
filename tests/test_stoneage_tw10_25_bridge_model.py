@@ -138,7 +138,7 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
         self.assertNotIn("cost", skill.client_view_fields())
         self.assertNotIn("function_name", skill.client_view_fields())
 
-    def test_item_template_builds_exact_nine_field_v1_view(self):
+    def test_item_template_builds_exact_nine_field_v1_view_through_instance(self):
         item = ItemTemplateBridge.from_itemset(
             {
                 "id": 500,
@@ -146,21 +146,25 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
                 "secretname": "visible",
                 "effectstring": "effect",
                 "imagenumber": 24002,
+                "type": 20,
                 "fieldtype": 0,
                 "target": 1,
                 "level": 0,
+                "canpetmail": 1,
+                "canmergefrom": 1,
             }
         )
-        view = item.client_view_fields(
-            secondary_runtime_text="runtime",
-            color=3,
-            send_or_use_flags=7,
+        instance = item.instantiate(
+            secondary_display_text="runtime",
+            instance_cdkey="bound-owner",
+            merge_flag=True,
         )
+        view = instance.client_view_fields()
         self.assertEqual(
             list(view),
             [
                 "name",
-                "secondary_or_secret_name",
+                "secondary_display_text",
                 "color",
                 "memo_or_effect_text",
                 "graphic_id",
@@ -171,10 +175,36 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
             ],
         )
         self.assertEqual(view["name"], "visible")
-        self.assertEqual(view["secondary_or_secret_name"], "runtime")
+        self.assertEqual(view["secondary_display_text"], "runtime")
+        self.assertEqual(view["color"], 5)
+        self.assertEqual(view["send_or_use_flags"], 7)
         self.assertEqual(item.ordinary_name, "ordinary")
         self.assertEqual(item.template_ref.template_id, 500)
+        self.assertEqual(instance.template_ref.template_id, 500)
         self.assertNotIn("template_id", view)
+
+    def test_item_instance_color_precedence_matches_fixed_descendant_sender(self):
+        item = ItemTemplateBridge.from_itemset(
+            {
+                "id": 501,
+                "secretname": "visible",
+                "effectstring": "effect",
+                "imagenumber": 24003,
+                "type": 0,
+                "fieldtype": 0,
+                "target": 1,
+                "level": 0,
+                "canpetmail": 0,
+                "canmergefrom": 0,
+            }
+        )
+        self.assertEqual(item.instantiate().color, 0)
+        self.assertEqual(item.instantiate(merge_flag=True).color, 4)
+        self.assertEqual(
+            item.instantiate(instance_cdkey="owner", merge_flag=True).color,
+            5,
+        )
+        self.assertEqual(item.instantiate().send_or_use_flags, 0)
 
     def test_npc_template_create_to_world_and_window_runtime_boundary(self):
         template = NpcTemplateBridge(
