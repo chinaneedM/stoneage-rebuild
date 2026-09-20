@@ -10,6 +10,7 @@ on:
       - tools/stoneage_singleplayer_domain.py
       - tools/stoneage_singleplayer_world.py
       - tools/stoneage_singleplayer_battle.py
+      - tools/stoneage_singleplayer_runtime.py
       - tools/stoneage_battle_core_model.py
       - tools/stoneage_warp_transition_model.py
       - research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json
@@ -22,6 +23,7 @@ on:
       - tests/test_stoneage_singleplayer_domain.py
       - tests/test_stoneage_singleplayer_world.py
       - tests/test_stoneage_singleplayer_battle.py
+      - tests/test_stoneage_singleplayer_runtime.py
       - tests/test_stoneage_battle_core_model.py
       - tests/test_stoneage_warp_transition_model.py
       - .github/workflows/validate-stoneage-tw10-gameplay-model.yml
@@ -43,5 +45,6 @@ jobs:
             tests.test_stoneage_singleplayer_domain \
             tests.test_stoneage_singleplayer_world \
             tests.test_stoneage_singleplayer_battle \
+            tests.test_stoneage_singleplayer_runtime \
             tests.test_stoneage_warp_transition_model \
             tests.test_stoneage_battle_core_model -v
