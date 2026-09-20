@@ -1160,16 +1160,40 @@ Supplemental source ledgers:
   - **35508555419** validates the final domain + tick test suite.
 - **Operational consequence:** the former immediate actions 1–3 (engine-facing domain boundary, deterministic bridge adapters, and minimal single-player state/tick shell) are complete to the first reconstruction-safe boundary. The critical path can now move from architecture scaffolding to a playable deterministic chain using already recovered map/warp and battle models.
 
+## First end-to-end in-process historical simulation slice — 2026-09-20
+
+- `tools/stoneage_singleplayer_world.py` connects recovered map dimensions and classic overlap-Warp semantics to the single-player world domain.
+  - map floor/width/height bounds are explicit;
+  - ordinary walk attempts cannot silently change floor;
+  - collision/object-overability remains an explicit `entry_allowed` input until exact MAP/DAT collision semantics are independently closed;
+  - classic Warp executes only after the player has entered the overlap cell;
+  - ordinary Warp steps suppress same-step random encounter dispatch;
+  - the documented legacy non-transactional `MAP_objmove` failure boundary is preserved as evidence rather than silently rewritten.
+- `tools/stoneage_singleplayer_battle.py` connects `EncounterRequest` to a minimal battle lifecycle:
+  - player, explicitly selected allied pets and explicit enemy spawns become typed battle participants;
+  - enemy variant/template/level identities are validated against the encounter request;
+  - descendant battle-core initiative and physical-damage formulas are callable only with explicit randomness and an explicit defense-profile choice;
+  - unresolved enemy count, birth rolls, commands, AI, drops and result semantics remain explicit inputs;
+  - battle outcomes may update only existing persistent state fields and return to the unchanged world position.
+- `tools/stoneage_singleplayer_runtime.py` composes the first end-to-end deterministic runtime slice:
+  `world walk -> Warp -> encounter -> battle -> outcome -> world`.
+  Blocked walks do not generate encounters, and Warp steps preserve the recovered encounter-suppression ordering.
+- Remote validation is green:
+  - **35508914734** validates the single-player map/Warp integration together with the recovered Warp model;
+  - **35509025827** validates encounter-to-battle lifecycle integration together with the descendant battle-core model;
+  - **35509083296** validates the full end-to-end historical runtime slice.
+- **Operational consequence:** the previous immediate actions 1–3 are now closed to the first reconstruction-safe executable boundary. We have moved beyond architecture scaffolding into an actual in-process single-player historical game loop skeleton without requiring a network server.
+
 ## Immediate next actions
 
-1. **Connect recovered map/warp topology to the single-player world domain.** Reuse the existing map-pair and warp-transition models to define legal floor/coordinate transitions and collision/transition boundaries without inventing new movement rules.
-2. **Connect `EncounterRequest` to the recovered battle-core model.** Define the deterministic boundary from world encounter selection into battle participants/state and back to world state, preserving historical formulas and unresolved fields explicitly.
-3. **Define the first end-to-end playable historical simulation slice.** Target: load static map/master data -> place player/NPCs -> move/warp through validated topology -> resolve an encounter request -> enter/exit a deterministic battle shell, all in-process.
-4. **Add a standalone persistence boundary after the playable slice is stable.** Persist only the appropriate `PersistentPlayerState` material; do not recreate historical account/network-server architecture unless needed as evidence.
+1. **Add the standalone single-player persistence boundary.** Persist only `PersistentPlayerState` data in a versioned local format; static master data, transient world objects, active sessions and network/account-server concepts must remain outside the save payload.
+2. **Close the map collision/object-overability seam with evidence before making movement autonomous.** The runtime currently accepts an explicit collision verdict by design; do not reinterpret arbitrary recovered MAP/DAT values as walkability without proving the mapping.
+3. **Promote the movement-side encounter-frequency/CEP loop into the runtime.** Preserve the recovered clamp/increment/reset soft-pity ordering and keep its exact evidence grade/version boundary explicit.
+4. **Close enemy spawn-count/birth orchestration and the first battle-round command boundary.** Use explicit recovered formulas and deterministic rolls; do not invent AI, drop or victory semantics that remain unresolved.
 5. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
 6. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
 7. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
-8. **Keep historical reconstruction and later redesign separate.** Once the deterministic historical domain layer runs end-to-end, optimization, automation/外挂-like convenience features and single-player redesign can be discussed as explicit DESIGN layers.
+8. **Keep historical reconstruction and later redesign separate.** The historical loop is now executable at skeleton level; optimization, automation/外挂-like convenience features and single-player redesign remain explicit DESIGN layers rather than silent historical rewrites.
 
 
 ## Continuity status
