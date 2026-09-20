@@ -13,6 +13,7 @@ from tools.stoneage_singleplayer_domain import (
     EnemyVariantId,
     MapPosition,
     PetActor,
+    PetGrowthState,
     PetSlot,
     PetTemplateId,
     PlayerState,
@@ -259,6 +260,30 @@ class SinglePlayerBattleLifecycleTests(unittest.TestCase):
         self.assertEqual(domain.persistent.character.fields["exp"], 100)
         self.assertEqual(domain.persistent.pets[PetSlot(2)].state["hp"], 30)
 
+        growth = PetGrowthState(
+            pet_rank=4,
+            alloc_point=0x14141414,
+            internal_vital=2000,
+            internal_strength=2000,
+            internal_toughness=2000,
+            internal_dexterity=2000,
+            variable_ai=500,
+        )
+        apply_battle_outcome(
+            domain,
+            session,
+            BattleOutcome(
+                result="victory",
+                player_updates={},
+                pet_updates={},
+                pet_growth_updates={2: growth},
+            ),
+        )
+        self.assertEqual(
+            domain.persistent.pets[PetSlot(2)].growth,
+            growth,
+        )
+
     def test_outcome_does_not_invent_new_fields_or_ignore_world_drift(self):
         domain = domain_for_battle()
         request = encounter()
@@ -277,6 +302,26 @@ class SinglePlayerBattleLifecycleTests(unittest.TestCase):
                     pet_updates={},
                 ),
             )
+
+        pet_domain = domain_for_battle()
+        pet_session = begin_battle(
+            pet_domain,
+            request,
+            enemies=(enemy_spawn(request),),
+            allied_pet_slots=(2,),
+        )
+        with self.assertRaises(ValueError):
+            apply_battle_outcome(
+                pet_domain,
+                pet_session,
+                BattleOutcome(
+                    result="victory",
+                    player_updates={"hp": 70},
+                    pet_updates={2: {"unknown_reward": 1}},
+                ),
+            )
+        self.assertEqual(pet_domain.persistent.character.fields["hp"], 100)
+        self.assertEqual(pet_domain.persistent.pets[PetSlot(2)].state["hp"], 60)
 
         domain.move_player(floor_id=2000, x=11, y=11)
         with self.assertRaises(ValueError):

@@ -81,6 +81,7 @@ def make_state():
             internal_strength=1900,
             internal_toughness=2100,
             internal_dexterity=2200,
+            variable_ai=500,
         ),
     )
     state.pets[pet.slot] = pet
@@ -110,6 +111,7 @@ class SinglePlayerPersistenceTests(unittest.TestCase):
         self.assertEqual(restored_pet.growth.pet_rank, 4)
         self.assertEqual(restored_pet.growth.alloc_point, 0x12131516)
         self.assertEqual(restored_pet.growth.internal_dexterity, 2200)
+        self.assertEqual(restored_pet.growth.variable_ai, 500)
 
     def test_json_encoding_is_deterministic_and_roundtrips(self):
         state = make_state()
@@ -165,6 +167,17 @@ class SinglePlayerPersistenceTests(unittest.TestCase):
 
         restored = load_persistent_state(payload)
         self.assertIsNone(restored.pets[PetSlot(2)].growth)
+    def test_r2_payload_migrates_variable_ai_to_zero(self):
+        payload = dump_persistent_state(make_state())
+        payload["schema"] = "stoneage.singleplayer.persistence.r2"
+        for pet in payload["pets"]:
+            if pet["growth"] is not None:
+                del pet["growth"]["variable_ai"]
+
+        restored = load_persistent_state(payload)
+        self.assertIsNotNone(restored.pets[PetSlot(2)].growth)
+        self.assertEqual(restored.pets[PetSlot(2)].growth.variable_ai, 0)
+
     def test_duplicate_slots_are_rejected(self):
         payload = dump_persistent_state(make_state())
         payload["inventory"] = payload["inventory"] * 2

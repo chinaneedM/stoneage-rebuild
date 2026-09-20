@@ -24,6 +24,7 @@ from tools.stoneage_singleplayer_domain import (
     GroupEncounterRequest,
     MapPosition,
     PetActor,
+    PetGrowthState,
     PetSlot,
     PlayerState,
     SinglePlayerHistoricalDomain,
@@ -76,6 +77,7 @@ class BattleOutcome:
     result: str
     player_updates: Mapping[str, Any]
     pet_updates: Mapping[int, Mapping[str, Any]]
+    pet_growth_updates: Mapping[int, PetGrowthState] | None = None
 
 
 @dataclass(frozen=True)
@@ -369,21 +371,40 @@ def apply_battle_outcome(
             subject="player",
         )
     )
-    domain.persistent.character = player
 
-    for raw_slot, updates in outcome.pet_updates.items():
-        slot = PetSlot(int(raw_slot))
-        if slot not in domain.persistent.pets:
+    pet_state_updates = {
+        int(raw_slot): updates
+        for raw_slot, updates in outcome.pet_updates.items()
+    }
+    pet_growth_updates = {
+        int(raw_slot): growth
+        for raw_slot, growth in (outcome.pet_growth_updates or {}).items()
+    }
+    staged_pets = dict(domain.persistent.pets)
+    for raw_slot in sorted(set(pet_state_updates) | set(pet_growth_updates)):
+        slot = PetSlot(raw_slot)
+        if slot not in staged_pets:
             raise KeyError(f"battle outcome references missing pet slot {slot.value}")
-        pet = domain.persistent.pets[slot]
-        domain.persistent.pets[slot] = replace(
-            pet,
-            state=_updated_existing_fields(
+        pet = staged_pets[slot]
+        next_state = pet.state
+        if raw_slot in pet_state_updates:
+            next_state = _updated_existing_fields(
                 pet.state,
-                updates,
+                pet_state_updates[raw_slot],
                 subject=f"pet slot {slot.value}",
-            ),
+            )
+        next_growth = pet_growth_updates.get(raw_slot, pet.growth)
+        if next_growth is not None and not isinstance(next_growth, PetGrowthState):
+            raise TypeError("pet growth update must be PetGrowthState or null")
+        staged_pets[slot] = replace(
+            pet,
+            state=next_state,
+            growth=next_growth,
         )
+
+    domain.persistent.character = player
+    domain.persistent.pets.clear()
+    domain.persistent.pets.update(staged_pets)
 
     return BattleReturn(
         result=str(outcome.result),

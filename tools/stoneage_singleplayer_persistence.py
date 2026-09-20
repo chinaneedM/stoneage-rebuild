@@ -30,7 +30,8 @@ from tools.stoneage_singleplayer_domain import (
 
 
 LEGACY_PERSISTENCE_SCHEMA = "stoneage.singleplayer.persistence.r1"
-PERSISTENCE_SCHEMA = "stoneage.singleplayer.persistence.r2"
+PET_GROWTH_PERSISTENCE_SCHEMA = "stoneage.singleplayer.persistence.r2"
+PERSISTENCE_SCHEMA = "stoneage.singleplayer.persistence.r3"
 _TOP_LEVEL_KEYS = {"schema", "character", "inventory", "pets"}
 
 
@@ -82,6 +83,7 @@ def dump_persistent_state(
                         "internal_strength": int(pet.growth.internal_strength),
                         "internal_toughness": int(pet.growth.internal_toughness),
                         "internal_dexterity": int(pet.growth.internal_dexterity),
+                        "variable_ai": int(pet.growth.variable_ai),
                     }
                 ),
                 "skills": [
@@ -118,7 +120,11 @@ def _require_exact_top_level(payload: Mapping[str, Any]) -> None:
 def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
     _require_exact_top_level(payload)
     schema = payload["schema"]
-    if schema not in {LEGACY_PERSISTENCE_SCHEMA, PERSISTENCE_SCHEMA}:
+    if schema not in {
+        LEGACY_PERSISTENCE_SCHEMA,
+        PET_GROWTH_PERSISTENCE_SCHEMA,
+        PERSISTENCE_SCHEMA,
+    }:
         raise ValueError(f"unsupported persistence schema: {schema}")
 
     state = PersistentPlayerState()
@@ -165,7 +171,7 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
             "state",
             "skills",
         }
-        if schema == PERSISTENCE_SCHEMA:
+        if schema != LEGACY_PERSISTENCE_SCHEMA:
             expected_pet_keys.add("growth")
         if set(row) != expected_pet_keys:
             raise ValueError("pet entry has unexpected shape")
@@ -194,7 +200,7 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
             )
 
         growth = None
-        if schema == PERSISTENCE_SCHEMA and row["growth"] is not None:
+        if schema != LEGACY_PERSISTENCE_SCHEMA and row["growth"] is not None:
             growth_row = row["growth"]
             if not isinstance(growth_row, Mapping):
                 raise ValueError("pet growth must be an object or null")
@@ -206,6 +212,8 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
                 "internal_toughness",
                 "internal_dexterity",
             }
+            if schema == PERSISTENCE_SCHEMA:
+                expected_growth_keys.add("variable_ai")
             if set(growth_row) != expected_growth_keys:
                 raise ValueError("pet growth entry has unexpected shape")
             growth = PetGrowthState(
@@ -215,6 +223,11 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
                 internal_strength=int(growth_row["internal_strength"]),
                 internal_toughness=int(growth_row["internal_toughness"]),
                 internal_dexterity=int(growth_row["internal_dexterity"]),
+                variable_ai=(
+                    int(growth_row["variable_ai"])
+                    if schema == PERSISTENCE_SCHEMA
+                    else 0
+                ),
             )
 
         pet = PetActor(

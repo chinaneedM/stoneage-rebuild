@@ -139,6 +139,7 @@ class PetGrowthState:
     internal_strength: int
     internal_toughness: int
     internal_dexterity: int
+    variable_ai: int = 0
 
     def __post_init__(self) -> None:
         rank=int(self.pet_rank)
@@ -155,6 +156,9 @@ class PetGrowthState:
         ):
             if int(value) < 0:
                 raise ValueError('pet internal growth stats must be non-negative')
+        variable_ai=int(self.variable_ai)
+        if not -10000 <= variable_ai <= 10000:
+            raise ValueError('pet variable_ai must be in -10000..10000')
 
 
 @dataclass(frozen=True)
