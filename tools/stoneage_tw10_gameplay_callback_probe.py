@@ -348,6 +348,7 @@ def main():
         print(f"RUNTIME|image_base=0x{base:x}|layout={layout}|joliet={int(joliet)}")
 
         cfgs = {}
+        s_branch_cfgs = {}
         for label, rva in CALLBACKS.items():
             cfg = collect_cfg(data, base, sections, imports, rva)
             cfgs[label] = cfg
@@ -418,6 +419,7 @@ def main():
                             seen_targets.setdefault(target, []).append(item["char"])
                     for target_rva, chars in sorted(seen_targets.items()):
                         branch = collect_cfg(data, base, sections, imports, target_rva)
+                        s_branch_cfgs[f"S:{','.join(chars)}"] = branch
                         print(
                             f"S_BRANCH|chars={','.join(chars)}|target_rva=0x{target_rva:x}|"
                             f"blocks={len(branch['blocks'])}|instructions={len(branch['instructions'])}|"
@@ -433,7 +435,9 @@ def main():
                             )
 
         shared = shared_direct_targets(cfgs)
-        for helper_rva in (0x46C70, 0x46DA0, 0x46FF0):
+        analysis_cfgs = dict(cfgs)
+        analysis_cfgs.update(s_branch_cfgs)
+        for helper_rva in (0x46C70, 0x46DA0, 0x46E70, 0x46FF0):
             helper_va = base + helper_rva
             helper_cfg, helper_rets = helper_body_fingerprint(
                 data, base, sections, imports, helper_rva
@@ -445,12 +449,22 @@ def main():
                 f"import_targets={len(helper_cfg['import_calls'])}|"
                 f"ret_sites={len(helper_rets)}"
             )
+            for target, count in sorted(helper_cfg["direct_calls"].items()):
+                print(
+                    f"HELPER_DIRECT|rva=0x{helper_rva:x}|target_rva=0x{target-base:x}|"
+                    f"calls={count}"
+                )
+            for (dll, api), count in sorted(helper_cfg["import_calls"].items()):
+                print(
+                    f"HELPER_IMPORT|rva=0x{helper_rva:x}|dll={clean(dll)}|"
+                    f"api={clean(api)}|calls={count}"
+                )
             for ret_rva, ops in helper_rets:
                 print(
                     f"HELPER_RET|rva=0x{helper_rva:x}|instruction_rva=0x{ret_rva:x}|"
                     f"ops={clean(ops)}"
                 )
-            for label, cfg in cfgs.items():
+            for label, cfg in analysis_cfgs.items():
                 sigs = callsite_stack_signature(base, cfg, helper_va)
                 if not sigs:
                     continue
