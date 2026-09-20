@@ -73,8 +73,15 @@ class Taiwan25GameplayBridgeTests(unittest.TestCase):
                     continue
                 self.assert_target_field(record, target_field)
         self.assertNotIn("inventory_slot", mappings)
-        self.assertIsNone(mappings["secondary_or_secret_name"]["source_field"])
+        self.assertIsNone(mappings["secondary_display_text"]["source_field"])
         self.assertIsNone(mappings["send_or_use_flags"]["source_field"])
+        instance = bridge["instance_derivation"]
+        rules = " ".join(instance["rules"])
+        self.assertIn("ITEM_SECRETNAME", rules)
+        self.assertIn("paramshow", rules)
+        self.assertIn("bit 0 = CANPETMAIL", rules)
+        self.assertIn("bit 1 = CANMERGEFROM", rules)
+        self.assertIn("bit 2 = item TYPE is DISH", rules)
         quarantined = " ".join(bridge["server_only_or_versioned_fields"]).lower()
         for token in ("durability", "campile", "magicid", "useaction"):
             self.assertIn(token, quarantined)
