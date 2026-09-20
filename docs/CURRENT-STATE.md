@@ -1255,10 +1255,33 @@ Supplemental source ledgers:
 - Remote combined validation **35510677772** passes with spawn, mixed-battle, command and runtime coverage.
 - **Operational consequence:** immediate action 1 is closed to the first reconstruction-safe group/birth/command boundary. The runtime no longer assumes one enemy variant per random encounter.
 
+## Taiwan v1 native image collision dataset — 2026-09-20
+
+- The accepted Taiwan Waei/JSS v1.0 retail client's 80-byte ADRN records are now parsed as the independently established 28-byte image/index header plus the stable-descendant 52-byte `MAP_ATTR` tail.
+- Deterministic resource export now produces `research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz` directly from verified `StoneAge/data/adrn_1.bin`; no descendant `mapset.txt` values are substituted.
+- Verified source: `adrn_1.bin` = **10,079,680 bytes**, SHA-256 `47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8`, **125,996** records.
+- Recovered nonzero map-number collision mappings: **9,286**, with **3** duplicate source-order assignments. The exporter mirrors client initialization by retaining the last assignment.
+- Native ADRN hit-flag distribution across all records: `0=122,639`, `1=3,295`, `2=62`. Priority-type distribution: `0=125,803`, `2=88`, `3=105`.
+- `tools/stoneage_tw10_hit_map_model.py` now mirrors the v1-compatible client `readHitMap()` ordering and preserves:
+  - `hit == 0` blocking;
+  - `hit == 1` normally passable;
+  - `hit == 2` as the distinct local override marker;
+  - `atari_x/atari_y` parts collision footprints;
+  - the active `15680..15732` origin-only special case;
+  - reserved small map codes, the 60..79 ADRN exception and final NPC-event blocking.
+- `height_flag` is recovered as source metadata but is **not** silently promoted into movement semantics because the recovered client `readHitMap()` path does not consume it.
+- Retail-disc inventory still reports `field_map_disc_files=0`: the collision-property dataset is now closed, while the provenance-complete field-map plane corpus remains a separate runtime/cache recovery question.
+- Evidence and boundary are recorded in `research/mechanics/STONEAGE-TW10-ADRN-COLLISION-R1.md`.
+- Remote validation:
+  - gameplay/model run **35511074585** — success;
+  - repaired real-disc export **35511391125** — success;
+  - export with explicit collision-dataset integrity requirement **35511442265** — success.
+- **Operational consequence:** former immediate action 1 is closed. Early-client movement no longer needs later server `WALKABLE/HAVEHEIGHT` substitution.
+
 ## Immediate next actions
 
-1. **Recover/validate the early image-number collision-property dataset.** The collision algorithm is closed; autonomous historical movement now needs provenance-safe Taiwan-v1.0/JSS `WALKABLE/HAVEHEIGHT` image metadata rather than descendant table substitution.
-2. **Close the next battle-resolution seam only where evidence is stable.** Prioritize ordinary attack/guard/wait turn ordering and target/effect application before AI, capture, escape, drops or EXP settlement; keep unresolved branches explicit.
+1. **Close the next battle-resolution seam only where evidence is stable.** Prioritize ordinary attack/guard/wait turn ordering and target/effect application before AI, capture, escape, drops or EXP settlement; keep unresolved branches explicit.
+2. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
 3. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
 4. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
 5. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
