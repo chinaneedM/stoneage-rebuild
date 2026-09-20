@@ -9,7 +9,7 @@ commands, AI and battle outcomes as explicit inputs.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Sequence
+from typing import Mapping, Sequence
 
 from tools.stoneage_encounter_frequency_model import (
     EncounterFrequencyDecision,
@@ -27,6 +27,14 @@ from tools.stoneage_battle_command_model import (
     BattleRoundAction,
     parse_player_battle_command,
     prepare_player_round_action,
+)
+from tools.stoneage_battle_round_model import (
+    BattleCombatProfile,
+    BattleCommand,
+    OrdinaryAttackRolls,
+    ResolvedOrdinaryRound,
+    prepare_battle_round,
+    resolve_ordinary_round,
 )
 from tools.stoneage_enemy_spawn_model import (
     EnemyBirthRolls,
@@ -319,6 +327,42 @@ class SinglePlayerHistoricalRuntime:
             command,
             initiative_random_subtract=initiative_random_subtract,
             error_status=error_status,
+        )
+
+    def resolve_ordinary_battle_round(
+        self,
+        session: BattleSession,
+        *,
+        commands: Mapping[str, BattleCommand],
+        initiative_random_subtracts: Mapping[str, int],
+        slots: Mapping[str, int],
+        profiles: Mapping[str, BattleCombatProfile],
+        attack_rolls: Mapping[str, OrdinaryAttackRolls],
+        defense_profile: str,
+        field_attr: str = "none",
+        field_power: int = 0,
+        tie_break_order: Sequence[str] | None = None,
+    ) -> ResolvedOrdinaryRound:
+        """Resolve one explicit attack/guard/wait round inside the battle shell."""
+        participants = (
+            session.player,
+            *session.allied_pets,
+            *session.enemies,
+        )
+        prepared = prepare_battle_round(
+            participants,
+            commands,
+            initiative_random_subtracts,
+            tie_break_order=tie_break_order,
+        )
+        return resolve_ordinary_round(
+            prepared,
+            slots=slots,
+            profiles=profiles,
+            attack_rolls=attack_rolls,
+            defense_profile=defense_profile,
+            field_attr=field_attr,
+            field_power=field_power,
         )
 
     def start_battle(
