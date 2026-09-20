@@ -277,6 +277,159 @@ TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=8|instru
 TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=9|instruction_rva=0x3287b|mnemonic=push|ops=0x7c
 TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=10|instruction_rva=0x3287d|mnemonic=push|ops=ebp
 TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=11|instruction_rva=0x3287e|mnemonic=mov|ops=dword ptr [esp + 0x1c], eax
+TOKEN_PRELUDE|name=S:I|helper_rva=0x46c70|callsite_rva=0x30942|instructions=11
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30942|order=1|instruction_rva=0x30922|mnemonic=mov|ops=esi, 2
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30942|order=2|instruction_rva=0x30927|mnemonic=inc|ops=ebx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30942|order=3|instruction_rva=0x30928|mnemonic=mov|ops=dword ptr [esp + 0x10], esi
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30942|order=4|instruction_rva=0x3092c|mnemonic=mov|ops=ebp, 0x17f8a18
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30942|order=5|instruction_rva=0x30931|mnemonic=lea|ops=edx, [esp + 0x20]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30942|order=6|instruction_rva=0x30935|mnemonic=lea|ops=eax, [esi - 1]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30942|order=7|instruction_rva=0x30938|mnemonic=push|ops=edx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30942|order=8|instruction_rva=0x30939|mnemonic=push|ops=0xff
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30942|order=9|instruction_rva=0x3093e|mnemonic=push|ops=eax
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30942|order=10|instruction_rva=0x3093f|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30942|order=11|instruction_rva=0x30941|mnemonic=push|ops=ebx
+TOKEN_PRELUDE|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|instructions=18
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=1|instruction_rva=0x3098f|mnemonic=not|ops=ecx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=2|instruction_rva=0x30991|mnemonic=sub|ops=edi, ecx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=3|instruction_rva=0x30993|mnemonic=lea|ops=edx, [ebp + 2]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=4|instruction_rva=0x30996|mnemonic=mov|ops=eax, ecx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=5|instruction_rva=0x30998|mnemonic=mov|ops=esi, edi
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=6|instruction_rva=0x3099a|mnemonic=mov|ops=edi, edx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=7|instruction_rva=0x3099c|mnemonic=shr|ops=ecx, 2
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=8|instruction_rva=0x3099f|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=9|instruction_rva=0x309a1|mnemonic=mov|ops=ecx, eax
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=10|instruction_rva=0x309a3|mnemonic=and|ops=ecx, 3
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=11|instruction_rva=0x309a6|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=12|instruction_rva=0x309a8|mnemonic=mov|ops=esi, dword ptr [esp + 0x10]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=13|instruction_rva=0x309ac|mnemonic=lea|ops=ecx, [esp + 0x120]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=14|instruction_rva=0x309b3|mnemonic=push|ops=ecx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=15|instruction_rva=0x309b4|mnemonic=push|ops=0xff
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=16|instruction_rva=0x309b9|mnemonic=push|ops=esi
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=17|instruction_rva=0x309ba|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x309bd|order=18|instruction_rva=0x309bc|mnemonic=push|ops=ebx
+TOKEN_PRELUDE|name=S:I|helper_rva=0x46c70|callsite_rva=0x30a48|instructions=8
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30a48|order=1|instruction_rva=0x30a2a|mnemonic=mov|ops=dword ptr [ebp + 0x88], 0
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30a48|order=2|instruction_rva=0x30a34|mnemonic=lea|ops=edx, [esp + 0x220]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30a48|order=3|instruction_rva=0x30a3b|mnemonic=lea|ops=eax, [esi + 2]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30a48|order=4|instruction_rva=0x30a3e|mnemonic=push|ops=edx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30a48|order=5|instruction_rva=0x30a3f|mnemonic=push|ops=0xff
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30a48|order=6|instruction_rva=0x30a44|mnemonic=push|ops=eax
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30a48|order=7|instruction_rva=0x30a45|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46c70|callsite_rva=0x30a48|order=8|instruction_rva=0x30a47|mnemonic=push|ops=ebx
+TOKEN_PRELUDE|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|instructions=18
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=1|instruction_rva=0x309ef|mnemonic=or|ops=ecx, 0xffffffff
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=2|instruction_rva=0x309f2|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=3|instruction_rva=0x309f4|mnemonic=not|ops=ecx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=4|instruction_rva=0x309f6|mnemonic=sub|ops=edi, ecx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=5|instruction_rva=0x309f8|mnemonic=lea|ops=edx, [ebp + 0x1f]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=6|instruction_rva=0x309fb|mnemonic=mov|ops=eax, ecx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=7|instruction_rva=0x309fd|mnemonic=mov|ops=esi, edi
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=8|instruction_rva=0x309ff|mnemonic=mov|ops=edi, edx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=9|instruction_rva=0x30a01|mnemonic=shr|ops=ecx, 2
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=10|instruction_rva=0x30a04|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=11|instruction_rva=0x30a06|mnemonic=mov|ops=ecx, eax
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=12|instruction_rva=0x30a08|mnemonic=and|ops=ecx, 3
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=13|instruction_rva=0x30a0b|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=14|instruction_rva=0x30a0d|mnemonic=mov|ops=esi, dword ptr [esp + 0x10]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=15|instruction_rva=0x30a11|mnemonic=lea|ops=ecx, [esi + 1]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=16|instruction_rva=0x30a14|mnemonic=push|ops=ecx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=17|instruction_rva=0x30a15|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30a18|order=18|instruction_rva=0x30a17|mnemonic=push|ops=ebx
+TOKEN_PRELUDE|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|instructions=18
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=1|instruction_rva=0x30a7a|mnemonic=or|ops=ecx, 0xffffffff
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=2|instruction_rva=0x30a7d|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=3|instruction_rva=0x30a7f|mnemonic=not|ops=ecx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=4|instruction_rva=0x30a81|mnemonic=sub|ops=edi, ecx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=5|instruction_rva=0x30a83|mnemonic=lea|ops=edx, [ebp + 0x30]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=6|instruction_rva=0x30a86|mnemonic=mov|ops=eax, ecx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=7|instruction_rva=0x30a88|mnemonic=mov|ops=esi, edi
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=8|instruction_rva=0x30a8a|mnemonic=mov|ops=edi, edx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=9|instruction_rva=0x30a8c|mnemonic=shr|ops=ecx, 2
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=10|instruction_rva=0x30a8f|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=11|instruction_rva=0x30a91|mnemonic=mov|ops=ecx, eax
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=12|instruction_rva=0x30a93|mnemonic=and|ops=ecx, 3
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=13|instruction_rva=0x30a96|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=14|instruction_rva=0x30a98|mnemonic=mov|ops=esi, dword ptr [esp + 0x10]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=15|instruction_rva=0x30a9c|mnemonic=lea|ops=ecx, [esi + 3]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=16|instruction_rva=0x30a9f|mnemonic=push|ops=ecx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=17|instruction_rva=0x30aa0|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30aa3|order=18|instruction_rva=0x30aa2|mnemonic=push|ops=ebx
+TOKEN_PRELUDE|name=S:I|helper_rva=0x46da0|callsite_rva=0x30ab5|instructions=5
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30ab5|order=1|instruction_rva=0x30aa8|mnemonic=lea|ops=edx, [esi + 4]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30ab5|order=2|instruction_rva=0x30aab|mnemonic=mov|ops=dword ptr [ebp + 0x8c], eax
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30ab5|order=3|instruction_rva=0x30ab1|mnemonic=push|ops=edx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30ab5|order=4|instruction_rva=0x30ab2|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30ab5|order=5|instruction_rva=0x30ab4|mnemonic=push|ops=ebx
+TOKEN_PRELUDE|name=S:I|helper_rva=0x46da0|callsite_rva=0x30ac8|instructions=5
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30ac8|order=1|instruction_rva=0x30aba|mnemonic=mov|ops=word ptr [ebp + 0x94], ax
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30ac8|order=2|instruction_rva=0x30ac1|mnemonic=lea|ops=eax, [esi + 5]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30ac8|order=3|instruction_rva=0x30ac4|mnemonic=push|ops=eax
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30ac8|order=4|instruction_rva=0x30ac5|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30ac8|order=5|instruction_rva=0x30ac7|mnemonic=push|ops=ebx
+TOKEN_PRELUDE|name=S:I|helper_rva=0x46da0|callsite_rva=0x30b0a|instructions=5
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30b0a|order=1|instruction_rva=0x30afa|mnemonic=mov|ops=word ptr [ebp + 0x98], 0
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30b0a|order=2|instruction_rva=0x30b03|mnemonic=lea|ops=edx, [esi + 6]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30b0a|order=3|instruction_rva=0x30b06|mnemonic=push|ops=edx
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30b0a|order=4|instruction_rva=0x30b07|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30b0a|order=5|instruction_rva=0x30b09|mnemonic=push|ops=ebx
+TOKEN_PRELUDE|name=S:I|helper_rva=0x46da0|callsite_rva=0x30b1c|instructions=5
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30b1c|order=1|instruction_rva=0x30b0f|mnemonic=mov|ops=dword ptr [ebp + 0x90], eax
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30b1c|order=2|instruction_rva=0x30b15|mnemonic=lea|ops=eax, [esi + 7]
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30b1c|order=3|instruction_rva=0x30b18|mnemonic=push|ops=eax
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30b1c|order=4|instruction_rva=0x30b19|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:I|helper_rva=0x46da0|callsite_rva=0x30b1c|order=5|instruction_rva=0x30b1b|mnemonic=push|ops=ebx
+TOKEN_PRELUDE|name=S:W|helper_rva=0x46c70|callsite_rva=0x30b9b|instructions=10
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30b9b|order=1|instruction_rva=0x30b7b|mnemonic=mov|ops=eax, 1
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30b9b|order=2|instruction_rva=0x30b80|mnemonic=lea|ops=ebp, [ebp + 0x17f7af0]
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30b9b|order=3|instruction_rva=0x30b86|mnemonic=mov|ops=dword ptr [esp + 0x14], eax
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30b9b|order=4|instruction_rva=0x30b8a|mnemonic=lea|ops=ecx, [esp + 0x20]
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30b9b|order=5|instruction_rva=0x30b8e|mnemonic=add|ops=eax, 3
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30b9b|order=6|instruction_rva=0x30b91|mnemonic=push|ops=ecx
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30b9b|order=7|instruction_rva=0x30b92|mnemonic=push|ops=0xff
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30b9b|order=8|instruction_rva=0x30b97|mnemonic=push|ops=eax
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30b9b|order=9|instruction_rva=0x30b98|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30b9b|order=10|instruction_rva=0x30b9a|mnemonic=push|ops=ebx
+TOKEN_PRELUDE|name=S:W|helper_rva=0x46c70|callsite_rva=0x30c5b|instructions=8
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30c5b|order=1|instruction_rva=0x30c43|mnemonic=lea|ops=edx, [esp + 0x244]
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30c5b|order=2|instruction_rva=0x30c4a|mnemonic=add|ops=esi, 4
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30c5b|order=3|instruction_rva=0x30c4d|mnemonic=push|ops=edx
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30c5b|order=4|instruction_rva=0x30c4e|mnemonic=push|ops=0xff
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30c5b|order=5|instruction_rva=0x30c53|mnemonic=push|ops=esi
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30c5b|order=6|instruction_rva=0x30c54|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30c5b|order=7|instruction_rva=0x30c56|mnemonic=push|ops=ebx
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46c70|callsite_rva=0x30c5b|order=8|instruction_rva=0x30c57|mnemonic=mov|ops=word ptr [ebp - 2], ax
+TOKEN_PRELUDE|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|instructions=18
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=1|instruction_rva=0x30bf4|mnemonic=mov|ops=edi, 0x45c938
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=2|instruction_rva=0x30bf9|mnemonic=or|ops=ecx, 0xffffffff
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=3|instruction_rva=0x30bfc|mnemonic=xor|ops=eax, eax
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=4|instruction_rva=0x30bfe|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=5|instruction_rva=0x30c00|mnemonic=not|ops=ecx
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=6|instruction_rva=0x30c02|mnemonic=sub|ops=edi, ecx
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=7|instruction_rva=0x30c04|mnemonic=mov|ops=edx, ecx
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=8|instruction_rva=0x30c06|mnemonic=mov|ops=esi, edi
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=9|instruction_rva=0x30c08|mnemonic=mov|ops=edi, ebp
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=10|instruction_rva=0x30c0a|mnemonic=shr|ops=ecx, 2
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=11|instruction_rva=0x30c0d|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=12|instruction_rva=0x30c0f|mnemonic=mov|ops=ecx, edx
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=13|instruction_rva=0x30c11|mnemonic=and|ops=ecx, 3
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=14|instruction_rva=0x30c14|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=15|instruction_rva=0x30c16|mnemonic=mov|ops=esi, dword ptr [esp + 0x14]
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=16|instruction_rva=0x30c1a|mnemonic=push|ops=esi
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=17|instruction_rva=0x30c1b|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c1e|order=18|instruction_rva=0x30c1d|mnemonic=push|ops=ebx
+TOKEN_PRELUDE|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c2e|instructions=5
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c2e|order=1|instruction_rva=0x30c23|mnemonic=mov|ops=word ptr [ebp - 6], ax
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c2e|order=2|instruction_rva=0x30c27|mnemonic=lea|ops=eax, [esi + 1]
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c2e|order=3|instruction_rva=0x30c2a|mnemonic=push|ops=eax
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c2e|order=4|instruction_rva=0x30c2b|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c2e|order=5|instruction_rva=0x30c2d|mnemonic=push|ops=ebx
+TOKEN_PRELUDE|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c3e|instructions=5
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c3e|order=1|instruction_rva=0x30c33|mnemonic=lea|ops=ecx, [esi + 2]
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c3e|order=2|instruction_rva=0x30c36|mnemonic=mov|ops=word ptr [ebp - 4], ax
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c3e|order=3|instruction_rva=0x30c3a|mnemonic=push|ops=ecx
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c3e|order=4|instruction_rva=0x30c3b|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=S:W|helper_rva=0x46da0|callsite_rva=0x30c3e|order=5|instruction_rva=0x30c3d|mnemonic=push|ops=ebx
 PARSE_WINDOW|name=I|instruction_rva=0x32651|mnemonic=lea|ops=ecx, [esp + 0x1c]
 PARSE_WINDOW|name=I|instruction_rva=0x32655|mnemonic=push|ops=ecx
 PARSE_WINDOW|name=I|instruction_rva=0x32656|mnemonic=call|ops=0x446ff0
@@ -307,6 +460,485 @@ PARSE_WINDOW|name=I|instruction_rva=0x326a5|mnemonic=repne scasb|ops=al, byte pt
 PARSE_WINDOW|name=I|instruction_rva=0x326a7|mnemonic=not|ops=ecx
 PARSE_WINDOW|name=I|instruction_rva=0x326a9|mnemonic=dec|ops=ecx
 PARSE_WINDOW|name=I|instruction_rva=0x326aa|mnemonic=mov|ops=word ptr [ebx + 0x17f8a18], 1
+PARSE_WINDOW|name=I|instruction_rva=0x326b3|mnemonic=cmp|ops=ecx, 0x1c
+PARSE_WINDOW|name=I|instruction_rva=0x326b6|mnemonic=ja|ops=0x4326e1
+PARSE_WINDOW|name=I|instruction_rva=0x326b8|mnemonic=lea|ops=edi, [esp + 0x1c]
+PARSE_WINDOW|name=I|instruction_rva=0x326bc|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=I|instruction_rva=0x326bf|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=I|instruction_rva=0x326c1|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x326c3|mnemonic=sub|ops=edi, ecx
+PARSE_WINDOW|name=I|instruction_rva=0x326c5|mnemonic=lea|ops=edx, [ebx + 0x17f8a1a]
+PARSE_WINDOW|name=I|instruction_rva=0x326cb|mnemonic=mov|ops=eax, ecx
+PARSE_WINDOW|name=I|instruction_rva=0x326cd|mnemonic=mov|ops=esi, edi
+PARSE_WINDOW|name=I|instruction_rva=0x326cf|mnemonic=mov|ops=edi, edx
+PARSE_WINDOW|name=I|instruction_rva=0x326d1|mnemonic=shr|ops=ecx, 2
+PARSE_WINDOW|name=I|instruction_rva=0x326d4|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+PARSE_WINDOW|name=I|instruction_rva=0x326d6|mnemonic=mov|ops=ecx, eax
+PARSE_WINDOW|name=I|instruction_rva=0x326d8|mnemonic=and|ops=ecx, 3
+PARSE_WINDOW|name=I|instruction_rva=0x326db|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+PARSE_WINDOW|name=I|instruction_rva=0x326dd|mnemonic=mov|ops=esi, dword ptr [esp + 0x10]
+PARSE_WINDOW|name=I|instruction_rva=0x326e1|mnemonic=lea|ops=ecx, [esp + 0x11c]
+PARSE_WINDOW|name=I|instruction_rva=0x326e8|mnemonic=lea|ops=edx, [esi + 3]
+PARSE_WINDOW|name=I|instruction_rva=0x326eb|mnemonic=push|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x326ec|mnemonic=push|ops=0xff
+PARSE_WINDOW|name=I|instruction_rva=0x326f1|mnemonic=push|ops=edx
+PARSE_WINDOW|name=I|instruction_rva=0x326f2|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=I|instruction_rva=0x326f4|mnemonic=push|ops=ebp
+PARSE_WINDOW|name=I|instruction_rva=0x326f5|mnemonic=call|ops=0x446c70
+PARSE_WINDOW|name=I|instruction_rva=0x326fa|mnemonic=lea|ops=eax, [esp + 0x130]
+PARSE_WINDOW|name=I|instruction_rva=0x32701|mnemonic=push|ops=eax
+PARSE_WINDOW|name=I|instruction_rva=0x32702|mnemonic=call|ops=0x446ff0
+PARSE_WINDOW|name=I|instruction_rva=0x32707|mnemonic=lea|ops=edi, [esp + 0x134]
+PARSE_WINDOW|name=I|instruction_rva=0x3270e|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=I|instruction_rva=0x32711|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=I|instruction_rva=0x32713|mnemonic=add|ops=esp, 0x18
+PARSE_WINDOW|name=I|instruction_rva=0x32716|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=I|instruction_rva=0x32718|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x3271a|mnemonic=dec|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x3271b|mnemonic=cmp|ops=ecx, 0x10
+PARSE_WINDOW|name=I|instruction_rva=0x3271e|mnemonic=ja|ops=0x43274c
+PARSE_WINDOW|name=I|instruction_rva=0x32720|mnemonic=lea|ops=edi, [esp + 0x11c]
+PARSE_WINDOW|name=I|instruction_rva=0x32727|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=I|instruction_rva=0x3272a|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=I|instruction_rva=0x3272c|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x3272e|mnemonic=sub|ops=edi, ecx
+PARSE_WINDOW|name=I|instruction_rva=0x32730|mnemonic=lea|ops=edx, [ebx + 0x17f8a37]
+PARSE_WINDOW|name=I|instruction_rva=0x32736|mnemonic=mov|ops=eax, ecx
+PARSE_WINDOW|name=I|instruction_rva=0x32738|mnemonic=mov|ops=esi, edi
+PARSE_WINDOW|name=I|instruction_rva=0x3273a|mnemonic=mov|ops=edi, edx
+PARSE_WINDOW|name=I|instruction_rva=0x3273c|mnemonic=shr|ops=ecx, 2
+PARSE_WINDOW|name=I|instruction_rva=0x3273f|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+PARSE_WINDOW|name=I|instruction_rva=0x32741|mnemonic=mov|ops=ecx, eax
+PARSE_WINDOW|name=I|instruction_rva=0x32743|mnemonic=and|ops=ecx, 3
+PARSE_WINDOW|name=I|instruction_rva=0x32746|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+PARSE_WINDOW|name=I|instruction_rva=0x32748|mnemonic=mov|ops=esi, dword ptr [esp + 0x10]
+PARSE_WINDOW|name=I|instruction_rva=0x3274c|mnemonic=lea|ops=ecx, [esi + 4]
+PARSE_WINDOW|name=I|instruction_rva=0x3274f|mnemonic=push|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x32750|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=I|instruction_rva=0x32752|mnemonic=push|ops=ebp
+PARSE_WINDOW|name=I|instruction_rva=0x32753|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=I|instruction_rva=0x32758|mnemonic=add|ops=esp, 0xc
+PARSE_WINDOW|name=I|instruction_rva=0x3275b|mnemonic=mov|ops=dword ptr [ebx + 0x17f8aa0], eax
+PARSE_WINDOW|name=I|instruction_rva=0x32761|mnemonic=test|ops=eax, eax
+PARSE_WINDOW|name=I|instruction_rva=0x32763|mnemonic=jge|ops=0x43276f
+PARSE_WINDOW|name=I|instruction_rva=0x32765|mnemonic=mov|ops=dword ptr [ebx + 0x17f8aa0], 0
+PARSE_WINDOW|name=I|instruction_rva=0x3276f|mnemonic=lea|ops=edx, [esp + 0x21c]
+PARSE_WINDOW|name=I|instruction_rva=0x32776|mnemonic=lea|ops=eax, [esi + 5]
+PARSE_WINDOW|name=I|instruction_rva=0x32779|mnemonic=push|ops=edx
+PARSE_WINDOW|name=I|instruction_rva=0x3277a|mnemonic=push|ops=0xff
+PARSE_WINDOW|name=I|instruction_rva=0x3277f|mnemonic=push|ops=eax
+PARSE_WINDOW|name=I|instruction_rva=0x32780|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=I|instruction_rva=0x32782|mnemonic=push|ops=ebp
+PARSE_WINDOW|name=I|instruction_rva=0x32783|mnemonic=call|ops=0x446c70
+PARSE_WINDOW|name=I|instruction_rva=0x32788|mnemonic=lea|ops=ecx, [esp + 0x230]
+PARSE_WINDOW|name=I|instruction_rva=0x3278f|mnemonic=push|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x32790|mnemonic=call|ops=0x446ff0
+PARSE_WINDOW|name=I|instruction_rva=0x32795|mnemonic=lea|ops=edi, [esp + 0x234]
+PARSE_WINDOW|name=I|instruction_rva=0x3279c|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=I|instruction_rva=0x3279f|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=I|instruction_rva=0x327a1|mnemonic=add|ops=esp, 0x18
+PARSE_WINDOW|name=I|instruction_rva=0x327a4|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=I|instruction_rva=0x327a6|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x327a8|mnemonic=dec|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x327a9|mnemonic=cmp|ops=ecx, 0x54
+PARSE_WINDOW|name=I|instruction_rva=0x327ac|mnemonic=ja|ops=0x4327da
+PARSE_WINDOW|name=I|instruction_rva=0x327ae|mnemonic=lea|ops=edi, [esp + 0x21c]
+PARSE_WINDOW|name=I|instruction_rva=0x327b5|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=I|instruction_rva=0x327b8|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=I|instruction_rva=0x327ba|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x327bc|mnemonic=sub|ops=edi, ecx
+PARSE_WINDOW|name=I|instruction_rva=0x327be|mnemonic=lea|ops=edx, [ebx + 0x17f8a48]
+PARSE_WINDOW|name=I|instruction_rva=0x327c4|mnemonic=mov|ops=eax, ecx
+PARSE_WINDOW|name=I|instruction_rva=0x327c6|mnemonic=mov|ops=esi, edi
+PARSE_WINDOW|name=I|instruction_rva=0x327c8|mnemonic=mov|ops=edi, edx
+PARSE_WINDOW|name=I|instruction_rva=0x327ca|mnemonic=shr|ops=ecx, 2
+PARSE_WINDOW|name=I|instruction_rva=0x327cd|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+PARSE_WINDOW|name=I|instruction_rva=0x327cf|mnemonic=mov|ops=ecx, eax
+PARSE_WINDOW|name=I|instruction_rva=0x327d1|mnemonic=and|ops=ecx, 3
+PARSE_WINDOW|name=I|instruction_rva=0x327d4|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+PARSE_WINDOW|name=I|instruction_rva=0x327d6|mnemonic=mov|ops=esi, dword ptr [esp + 0x10]
+PARSE_WINDOW|name=I|instruction_rva=0x327da|mnemonic=lea|ops=ecx, [esi + 6]
+PARSE_WINDOW|name=I|instruction_rva=0x327dd|mnemonic=push|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x327de|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=I|instruction_rva=0x327e0|mnemonic=push|ops=ebp
+PARSE_WINDOW|name=I|instruction_rva=0x327e1|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=I|instruction_rva=0x327e6|mnemonic=lea|ops=edx, [esi + 7]
+PARSE_WINDOW|name=I|instruction_rva=0x327e9|mnemonic=mov|ops=dword ptr [ebx + 0x17f8aa4], eax
+PARSE_WINDOW|name=I|instruction_rva=0x327ef|mnemonic=push|ops=edx
+PARSE_WINDOW|name=I|instruction_rva=0x327f0|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=I|instruction_rva=0x327f2|mnemonic=push|ops=ebp
+PARSE_WINDOW|name=I|instruction_rva=0x327f3|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=I|instruction_rva=0x327f8|mnemonic=mov|ops=word ptr [ebx + 0x17f8aac], ax
+PARSE_WINDOW|name=I|instruction_rva=0x327ff|mnemonic=lea|ops=eax, [esi + 8]
+PARSE_WINDOW|name=I|instruction_rva=0x32802|mnemonic=push|ops=eax
+PARSE_WINDOW|name=I|instruction_rva=0x32803|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=I|instruction_rva=0x32805|mnemonic=push|ops=ebp
+PARSE_WINDOW|name=I|instruction_rva=0x32806|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=I|instruction_rva=0x3280b|mnemonic=add|ops=esp, 0x24
+PARSE_WINDOW|name=I|instruction_rva=0x3280e|mnemonic=cmp|ops=ax, 0x64
+PARSE_WINDOW|name=I|instruction_rva=0x32812|mnemonic=mov|ops=word ptr [ebx + 0x17f8aae], ax
+PARSE_WINDOW|name=I|instruction_rva=0x32819|mnemonic=jl|ops=0x432838
+PARSE_WINDOW|name=I|instruction_rva=0x3281b|mnemonic=movsx|ops=eax, ax
+PARSE_WINDOW|name=I|instruction_rva=0x3281e|mnemonic=cdq|ops=
+PARSE_WINDOW|name=I|instruction_rva=0x3281f|mnemonic=mov|ops=ecx, 0x64
+PARSE_WINDOW|name=I|instruction_rva=0x32824|mnemonic=idiv|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x32826|mnemonic=mov|ops=word ptr [ebx + 0x17f8aae], dx
+PARSE_WINDOW|name=I|instruction_rva=0x3282d|mnemonic=mov|ops=word ptr [ebx + 0x17f8ab0], 1
+PARSE_WINDOW|name=I|instruction_rva=0x32836|mnemonic=jmp|ops=0x432841
+PARSE_WINDOW|name=I|instruction_rva=0x32838|mnemonic=mov|ops=word ptr [ebx + 0x17f8ab0], 0
+PARSE_WINDOW|name=I|instruction_rva=0x32841|mnemonic=lea|ops=edx, [esi + 9]
+PARSE_WINDOW|name=I|instruction_rva=0x32844|mnemonic=push|ops=edx
+PARSE_WINDOW|name=I|instruction_rva=0x32845|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=I|instruction_rva=0x32847|mnemonic=push|ops=ebp
+PARSE_WINDOW|name=I|instruction_rva=0x32848|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=I|instruction_rva=0x3284d|mnemonic=add|ops=esi, 0xa
+PARSE_WINDOW|name=I|instruction_rva=0x32850|mnemonic=mov|ops=dword ptr [ebx + 0x17f8aa8], eax
+PARSE_WINDOW|name=I|instruction_rva=0x32856|mnemonic=push|ops=esi
+PARSE_WINDOW|name=I|instruction_rva=0x32857|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=I|instruction_rva=0x32859|mnemonic=push|ops=ebp
+PARSE_WINDOW|name=I|instruction_rva=0x3285a|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=I|instruction_rva=0x3285f|mnemonic=mov|ops=word ptr [ebx + 0x17f8ab2], ax
+PARSE_WINDOW|name=I|instruction_rva=0x32866|mnemonic=mov|ops=ebx, dword ptr [esp + 0x30]
+PARSE_WINDOW|name=I|instruction_rva=0x3286a|mnemonic=add|ops=esp, 0x18
+PARSE_WINDOW|name=I|instruction_rva=0x3286d|mnemonic=add|ops=ebx, 0xa
+PARSE_WINDOW|name=I|instruction_rva=0x32870|mnemonic=mov|ops=dword ptr [esp + 0x18], ebx
+PARSE_WINDOW|name=I|instruction_rva=0x32874|mnemonic=lea|ops=ecx, [ebx - 1]
+PARSE_WINDOW|name=I|instruction_rva=0x32877|mnemonic=lea|ops=eax, [ebx - 2]
+PARSE_WINDOW|name=I|instruction_rva=0x3287a|mnemonic=push|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x3287b|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=I|instruction_rva=0x3287d|mnemonic=push|ops=ebp
+PARSE_WINDOW|name=I|instruction_rva=0x3287e|mnemonic=mov|ops=dword ptr [esp + 0x1c], eax
+PARSE_WINDOW|name=I|instruction_rva=0x32882|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=I|instruction_rva=0x32887|mnemonic=lea|ops=edx, [esp + 0x28]
+PARSE_WINDOW|name=I|instruction_rva=0x3288b|mnemonic=mov|ops=dword ptr [esp + 0x20], eax
+PARSE_WINDOW|name=I|instruction_rva=0x3288f|mnemonic=push|ops=edx
+PARSE_WINDOW|name=I|instruction_rva=0x32890|mnemonic=push|ops=0xff
+PARSE_WINDOW|name=I|instruction_rva=0x32895|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=I|instruction_rva=0x32896|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=I|instruction_rva=0x32898|mnemonic=push|ops=ebp
+PARSE_WINDOW|name=I|instruction_rva=0x32899|mnemonic=call|ops=0x446c70
+PARSE_WINDOW|name=I|instruction_rva=0x3289e|mnemonic=add|ops=esp, 0x20
+PARSE_WINDOW|name=I|instruction_rva=0x328a1|mnemonic=cmp|ops=eax, 1
+PARSE_WINDOW|name=I|instruction_rva=0x328a4|mnemonic=jne|ops=0x43264d
+PARSE_WINDOW|name=I|instruction_rva=0x328aa|mnemonic=pop|ops=edi
+PARSE_WINDOW|name=I|instruction_rva=0x328ab|mnemonic=pop|ops=ebx
+PARSE_WINDOW|name=I|instruction_rva=0x328ac|mnemonic=pop|ops=esi
+PARSE_WINDOW|name=I|instruction_rva=0x328ad|mnemonic=pop|ops=ebp
+PARSE_WINDOW|name=I|instruction_rva=0x328ae|mnemonic=add|ops=esp, 0x30c
+PARSE_WINDOW|name=I|instruction_rva=0x328b4|mnemonic=ret|ops=
+PARSE_WINDOW|name=S:I|instruction_rva=0x30922|mnemonic=mov|ops=esi, 2
+PARSE_WINDOW|name=S:I|instruction_rva=0x30927|mnemonic=inc|ops=ebx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30928|mnemonic=mov|ops=dword ptr [esp + 0x10], esi
+PARSE_WINDOW|name=S:I|instruction_rva=0x3092c|mnemonic=mov|ops=ebp, 0x17f8a18
+PARSE_WINDOW|name=S:I|instruction_rva=0x30931|mnemonic=lea|ops=edx, [esp + 0x20]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30935|mnemonic=lea|ops=eax, [esi - 1]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30938|mnemonic=push|ops=edx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30939|mnemonic=push|ops=0xff
+PARSE_WINDOW|name=S:I|instruction_rva=0x3093e|mnemonic=push|ops=eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x3093f|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:I|instruction_rva=0x30941|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30942|mnemonic=call|ops=0x446c70
+PARSE_WINDOW|name=S:I|instruction_rva=0x30947|mnemonic=lea|ops=ecx, [esp + 0x34]
+PARSE_WINDOW|name=S:I|instruction_rva=0x3094b|mnemonic=push|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x3094c|mnemonic=call|ops=0x446ff0
+PARSE_WINDOW|name=S:I|instruction_rva=0x30951|mnemonic=lea|ops=edi, [esp + 0x38]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30955|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=S:I|instruction_rva=0x30958|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x3095a|mnemonic=add|ops=esp, 0x18
+PARSE_WINDOW|name=S:I|instruction_rva=0x3095d|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=S:I|instruction_rva=0x3095f|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30961|mnemonic=dec|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30962|mnemonic=jne|ops=0x43096d
+PARSE_WINDOW|name=S:I|instruction_rva=0x30964|mnemonic=mov|ops=word ptr [ebp], ax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30968|mnemonic=jmp|ops=0x430b2b
+PARSE_WINDOW|name=S:I|instruction_rva=0x3096d|mnemonic=lea|ops=edi, [esp + 0x20]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30971|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=S:I|instruction_rva=0x30974|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30976|mnemonic=mov|ops=word ptr [ebp], 1
+PARSE_WINDOW|name=S:I|instruction_rva=0x3097c|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=S:I|instruction_rva=0x3097e|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30980|mnemonic=dec|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30981|mnemonic=cmp|ops=ecx, 0x1c
+PARSE_WINDOW|name=S:I|instruction_rva=0x30984|mnemonic=ja|ops=0x4309ac
+PARSE_WINDOW|name=S:I|instruction_rva=0x30986|mnemonic=lea|ops=edi, [esp + 0x20]
+PARSE_WINDOW|name=S:I|instruction_rva=0x3098a|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=S:I|instruction_rva=0x3098d|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=S:I|instruction_rva=0x3098f|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30991|mnemonic=sub|ops=edi, ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30993|mnemonic=lea|ops=edx, [ebp + 2]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30996|mnemonic=mov|ops=eax, ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30998|mnemonic=mov|ops=esi, edi
+PARSE_WINDOW|name=S:I|instruction_rva=0x3099a|mnemonic=mov|ops=edi, edx
+PARSE_WINDOW|name=S:I|instruction_rva=0x3099c|mnemonic=shr|ops=ecx, 2
+PARSE_WINDOW|name=S:I|instruction_rva=0x3099f|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+PARSE_WINDOW|name=S:I|instruction_rva=0x309a1|mnemonic=mov|ops=ecx, eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x309a3|mnemonic=and|ops=ecx, 3
+PARSE_WINDOW|name=S:I|instruction_rva=0x309a6|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+PARSE_WINDOW|name=S:I|instruction_rva=0x309a8|mnemonic=mov|ops=esi, dword ptr [esp + 0x10]
+PARSE_WINDOW|name=S:I|instruction_rva=0x309ac|mnemonic=lea|ops=ecx, [esp + 0x120]
+PARSE_WINDOW|name=S:I|instruction_rva=0x309b3|mnemonic=push|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x309b4|mnemonic=push|ops=0xff
+PARSE_WINDOW|name=S:I|instruction_rva=0x309b9|mnemonic=push|ops=esi
+PARSE_WINDOW|name=S:I|instruction_rva=0x309ba|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:I|instruction_rva=0x309bc|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:I|instruction_rva=0x309bd|mnemonic=call|ops=0x446c70
+PARSE_WINDOW|name=S:I|instruction_rva=0x309c2|mnemonic=lea|ops=edx, [esp + 0x134]
+PARSE_WINDOW|name=S:I|instruction_rva=0x309c9|mnemonic=push|ops=edx
+PARSE_WINDOW|name=S:I|instruction_rva=0x309ca|mnemonic=call|ops=0x446ff0
+PARSE_WINDOW|name=S:I|instruction_rva=0x309cf|mnemonic=lea|ops=edi, [esp + 0x138]
+PARSE_WINDOW|name=S:I|instruction_rva=0x309d6|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=S:I|instruction_rva=0x309d9|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x309db|mnemonic=add|ops=esp, 0x18
+PARSE_WINDOW|name=S:I|instruction_rva=0x309de|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=S:I|instruction_rva=0x309e0|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x309e2|mnemonic=dec|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x309e3|mnemonic=cmp|ops=ecx, 0x10
+PARSE_WINDOW|name=S:I|instruction_rva=0x309e6|mnemonic=ja|ops=0x430a11
+PARSE_WINDOW|name=S:I|instruction_rva=0x309e8|mnemonic=lea|ops=edi, [esp + 0x120]
+PARSE_WINDOW|name=S:I|instruction_rva=0x309ef|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=S:I|instruction_rva=0x309f2|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=S:I|instruction_rva=0x309f4|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x309f6|mnemonic=sub|ops=edi, ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x309f8|mnemonic=lea|ops=edx, [ebp + 0x1f]
+PARSE_WINDOW|name=S:I|instruction_rva=0x309fb|mnemonic=mov|ops=eax, ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x309fd|mnemonic=mov|ops=esi, edi
+PARSE_WINDOW|name=S:I|instruction_rva=0x309ff|mnemonic=mov|ops=edi, edx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a01|mnemonic=shr|ops=ecx, 2
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a04|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a06|mnemonic=mov|ops=ecx, eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a08|mnemonic=and|ops=ecx, 3
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a0b|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a0d|mnemonic=mov|ops=esi, dword ptr [esp + 0x10]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a11|mnemonic=lea|ops=ecx, [esi + 1]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a14|mnemonic=push|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a15|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a17|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a18|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a1d|mnemonic=add|ops=esp, 0xc
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a20|mnemonic=mov|ops=dword ptr [ebp + 0x88], eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a26|mnemonic=test|ops=eax, eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a28|mnemonic=jge|ops=0x430a34
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a2a|mnemonic=mov|ops=dword ptr [ebp + 0x88], 0
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a34|mnemonic=lea|ops=edx, [esp + 0x220]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a3b|mnemonic=lea|ops=eax, [esi + 2]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a3e|mnemonic=push|ops=edx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a3f|mnemonic=push|ops=0xff
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a44|mnemonic=push|ops=eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a45|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a47|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a48|mnemonic=call|ops=0x446c70
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a4d|mnemonic=lea|ops=ecx, [esp + 0x234]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a54|mnemonic=push|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a55|mnemonic=call|ops=0x446ff0
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a5a|mnemonic=lea|ops=edi, [esp + 0x238]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a61|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a64|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a66|mnemonic=add|ops=esp, 0x18
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a69|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a6b|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a6d|mnemonic=dec|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a6e|mnemonic=cmp|ops=ecx, 0x54
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a71|mnemonic=ja|ops=0x430a9c
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a73|mnemonic=lea|ops=edi, [esp + 0x220]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a7a|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a7d|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a7f|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a81|mnemonic=sub|ops=edi, ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a83|mnemonic=lea|ops=edx, [ebp + 0x30]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a86|mnemonic=mov|ops=eax, ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a88|mnemonic=mov|ops=esi, edi
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a8a|mnemonic=mov|ops=edi, edx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a8c|mnemonic=shr|ops=ecx, 2
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a8f|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a91|mnemonic=mov|ops=ecx, eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a93|mnemonic=and|ops=ecx, 3
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a96|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a98|mnemonic=mov|ops=esi, dword ptr [esp + 0x10]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a9c|mnemonic=lea|ops=ecx, [esi + 3]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30a9f|mnemonic=push|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30aa0|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:I|instruction_rva=0x30aa2|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30aa3|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=S:I|instruction_rva=0x30aa8|mnemonic=lea|ops=edx, [esi + 4]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30aab|mnemonic=mov|ops=dword ptr [ebp + 0x8c], eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ab1|mnemonic=push|ops=edx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ab2|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ab4|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ab5|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=S:I|instruction_rva=0x30aba|mnemonic=mov|ops=word ptr [ebp + 0x94], ax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ac1|mnemonic=lea|ops=eax, [esi + 5]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ac4|mnemonic=push|ops=eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ac5|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ac7|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ac8|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=S:I|instruction_rva=0x30acd|mnemonic=add|ops=esp, 0x24
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ad0|mnemonic=cmp|ops=ax, 0x64
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ad4|mnemonic=mov|ops=word ptr [ebp + 0x96], ax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30adb|mnemonic=jl|ops=0x430afa
+PARSE_WINDOW|name=S:I|instruction_rva=0x30add|mnemonic=movsx|ops=eax, ax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ae0|mnemonic=cdq|ops=
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ae1|mnemonic=mov|ops=ecx, 0x64
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ae6|mnemonic=idiv|ops=ecx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30ae8|mnemonic=mov|ops=word ptr [ebp + 0x96], dx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30aef|mnemonic=mov|ops=word ptr [ebp + 0x98], 1
+PARSE_WINDOW|name=S:I|instruction_rva=0x30af8|mnemonic=jmp|ops=0x430b03
+PARSE_WINDOW|name=S:I|instruction_rva=0x30afa|mnemonic=mov|ops=word ptr [ebp + 0x98], 0
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b03|mnemonic=lea|ops=edx, [esi + 6]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b06|mnemonic=push|ops=edx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b07|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b09|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b0a|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b0f|mnemonic=mov|ops=dword ptr [ebp + 0x90], eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b15|mnemonic=lea|ops=eax, [esi + 7]
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b18|mnemonic=push|ops=eax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b19|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b1b|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b1c|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b21|mnemonic=add|ops=esp, 0x18
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b24|mnemonic=mov|ops=word ptr [ebp + 0x9a], ax
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b2b|mnemonic=add|ops=esi, 9
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b2e|mnemonic=add|ops=ebp, 0x9c
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b34|mnemonic=cmp|ops=esi, 0xb6
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b3a|mnemonic=mov|ops=dword ptr [esp + 0x10], esi
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b3e|mnemonic=jl|ops=0x430931
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b44|mnemonic=pop|ops=edi
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b45|mnemonic=pop|ops=esi
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b46|mnemonic=pop|ops=ebp
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b47|mnemonic=pop|ops=ebx
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b48|mnemonic=add|ops=esp, 0x310
+PARSE_WINDOW|name=S:I|instruction_rva=0x30b4e|mnemonic=ret|ops=
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b4f|mnemonic=movsx|ops=eax, byte ptr [ebx + 1]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b53|mnemonic=sub|ops=eax, 0x30
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b56|mnemonic=add|ops=ebx, 3
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b59|mnemonic=lea|ops=ecx, [eax + eax*8]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b5c|mnemonic=lea|ops=ecx, [eax + ecx*4]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b5f|mnemonic=lea|ops=edx, [ecx + ecx*4]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b62|mnemonic=mov|ops=ecx, 7
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b67|mnemonic=lea|ops=ebp, [eax + edx*2]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b6a|mnemonic=shl|ops=ebp, 1
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b6c|mnemonic=lea|ops=eax, [ebp + 0x17f7ae8]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b72|mnemonic=mov|ops=word ptr [eax], di
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b75|mnemonic=add|ops=eax, 0x6a
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b78|mnemonic=dec|ops=ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b79|mnemonic=jne|ops=0x430b72
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b7b|mnemonic=mov|ops=eax, 1
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b80|mnemonic=lea|ops=ebp, [ebp + 0x17f7af0]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b86|mnemonic=mov|ops=dword ptr [esp + 0x14], eax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b8a|mnemonic=lea|ops=ecx, [esp + 0x20]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b8e|mnemonic=add|ops=eax, 3
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b91|mnemonic=push|ops=ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b92|mnemonic=push|ops=0xff
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b97|mnemonic=push|ops=eax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b98|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b9a|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30b9b|mnemonic=call|ops=0x446c70
+PARSE_WINDOW|name=S:W|instruction_rva=0x30ba0|mnemonic=lea|ops=edx, [esp + 0x34]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30ba4|mnemonic=push|ops=edx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30ba5|mnemonic=call|ops=0x446ff0
+PARSE_WINDOW|name=S:W|instruction_rva=0x30baa|mnemonic=lea|ops=edi, [esp + 0x38]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bae|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bb1|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bb3|mnemonic=add|ops=esp, 0x18
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bb6|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bb8|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bba|mnemonic=dec|ops=ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bbb|mnemonic=je|ops=0x430cb4
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bc1|mnemonic=lea|ops=edi, [esp + 0x20]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bc5|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bc8|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bca|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bcc|mnemonic=dec|ops=ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bcd|mnemonic=mov|ops=word ptr [ebp - 8], 1
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bd3|mnemonic=cmp|ops=ecx, 0x18
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bd6|mnemonic=ja|ops=0x430bf4
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bd8|mnemonic=lea|ops=edi, [esp + 0x20]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bdc|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bdf|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30be1|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30be3|mnemonic=sub|ops=edi, ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30be5|mnemonic=mov|ops=eax, ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30be7|mnemonic=mov|ops=esi, edi
+PARSE_WINDOW|name=S:W|instruction_rva=0x30be9|mnemonic=mov|ops=edi, ebp
+PARSE_WINDOW|name=S:W|instruction_rva=0x30beb|mnemonic=shr|ops=ecx, 2
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bee|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bf0|mnemonic=mov|ops=ecx, eax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bf2|mnemonic=jmp|ops=0x430c11
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bf4|mnemonic=mov|ops=edi, 0x45c938
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bf9|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bfc|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30bfe|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c00|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c02|mnemonic=sub|ops=edi, ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c04|mnemonic=mov|ops=edx, ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c06|mnemonic=mov|ops=esi, edi
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c08|mnemonic=mov|ops=edi, ebp
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c0a|mnemonic=shr|ops=ecx, 2
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c0d|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c0f|mnemonic=mov|ops=ecx, edx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c11|mnemonic=and|ops=ecx, 3
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c14|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c16|mnemonic=mov|ops=esi, dword ptr [esp + 0x14]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c1a|mnemonic=push|ops=esi
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c1b|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c1d|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c1e|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c23|mnemonic=mov|ops=word ptr [ebp - 6], ax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c27|mnemonic=lea|ops=eax, [esi + 1]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c2a|mnemonic=push|ops=eax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c2b|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c2d|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c2e|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c33|mnemonic=lea|ops=ecx, [esi + 2]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c36|mnemonic=mov|ops=word ptr [ebp - 4], ax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c3a|mnemonic=push|ops=ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c3b|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c3d|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c3e|mnemonic=call|ops=0x446da0
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c43|mnemonic=lea|ops=edx, [esp + 0x244]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c4a|mnemonic=add|ops=esi, 4
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c4d|mnemonic=push|ops=edx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c4e|mnemonic=push|ops=0xff
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c53|mnemonic=push|ops=esi
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c54|mnemonic=push|ops=0x7c
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c56|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c57|mnemonic=mov|ops=word ptr [ebp - 2], ax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c5b|mnemonic=call|ops=0x446c70
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c60|mnemonic=lea|ops=eax, [esp + 0x258]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c67|mnemonic=push|ops=eax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c68|mnemonic=call|ops=0x446ff0
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c6d|mnemonic=lea|ops=edi, [esp + 0x5c]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c71|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c74|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c76|mnemonic=add|ops=esp, 0x3c
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c79|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c7b|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c7d|mnemonic=dec|ops=ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c7e|mnemonic=cmp|ops=ecx, 0x48
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c81|mnemonic=ja|ops=0x430c8f
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c83|mnemonic=lea|ops=edi, [esp + 0x220]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c8a|mnemonic=lea|ops=edx, [ebp + 0x19]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c8d|mnemonic=jmp|ops=0x430c97
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c8f|mnemonic=lea|ops=edx, [ebp + 0x19]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c92|mnemonic=mov|ops=edi, 0x45c928
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c97|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c9a|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c9c|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30c9e|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30ca0|mnemonic=sub|ops=edi, ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30ca2|mnemonic=mov|ops=eax, ecx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30ca4|mnemonic=mov|ops=esi, edi
+PARSE_WINDOW|name=S:W|instruction_rva=0x30ca6|mnemonic=mov|ops=edi, edx
+PARSE_WINDOW|name=S:W|instruction_rva=0x30ca8|mnemonic=shr|ops=ecx, 2
+PARSE_WINDOW|name=S:W|instruction_rva=0x30cab|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30cad|mnemonic=mov|ops=ecx, eax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30caf|mnemonic=and|ops=ecx, 3
+PARSE_WINDOW|name=S:W|instruction_rva=0x30cb2|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30cb4|mnemonic=mov|ops=eax, dword ptr [esp + 0x14]
+PARSE_WINDOW|name=S:W|instruction_rva=0x30cb8|mnemonic=add|ops=ebp, 0x6a
+PARSE_WINDOW|name=S:W|instruction_rva=0x30cbb|mnemonic=add|ops=eax, 5
+PARSE_WINDOW|name=S:W|instruction_rva=0x30cbe|mnemonic=cmp|ops=eax, 0x24
+PARSE_WINDOW|name=S:W|instruction_rva=0x30cc1|mnemonic=mov|ops=dword ptr [esp + 0x14], eax
+PARSE_WINDOW|name=S:W|instruction_rva=0x30cc5|mnemonic=jl|ops=0x430b8a
 WN_FORWARD|callsite_rva=0x328e2|target_rva=0x12930|prelude_instructions=10
 WN_FORWARD_PRELUDE|order=1|instruction_rva=0x328c9|mnemonic=mov|ops=eax, dword ptr [esp + 0x18]
 WN_FORWARD_PRELUDE|order=2|instruction_rva=0x328cd|mnemonic=mov|ops=ecx, dword ptr [esp + 0x14]
