@@ -344,6 +344,37 @@ class BattleKillProfit:
     kill_count_delta_by_participant_id: Mapping[str,int]
 
 
+@dataclass(frozen=True)
+class KillProfitScanEnemy:
+    """One battle entry as seen by BATTLE_AddExpItem()'s death scan."""
+
+    enemy_id: str
+    level: int
+    reward_exp: int
+    hp: int
+    is_die: bool = False
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self,'enemy_id',str(self.enemy_id))
+        object.__setattr__(self,'level',int(self.level))
+        object.__setattr__(self,'reward_exp',int(self.reward_exp))
+        object.__setattr__(self,'hp',int(self.hp))
+        object.__setattr__(self,'is_die',bool(self.is_die))
+        if self.reward_exp < 0:
+            raise ValueError('reward_exp must be non-negative')
+
+
+@dataclass(frozen=True)
+class BattleKillProfitScan:
+    """Aggregated EXP/loyalty result of one source-shaped profit scan."""
+
+    claimed_enemy_ids: tuple[str,...]
+    direct_exp_by_participant_id: Mapping[str,int]
+    ride_exp_by_participant_id: Mapping[str,int]
+    pet_variable_ai_delta_by_participant_id: Mapping[str,int]
+    kill_count_delta_by_participant_id: Mapping[str,int]
+
+
 
 def battle_exp_from_enemy(base_exp,receiver_level,enemy_level):
     """Stable descendant per-enemy EXP award before later bonus systems.
@@ -439,6 +470,73 @@ def battle_kill_profit(
             add(variable_ai,pid,delta)
 
     return BattleKillProfit(
+        direct_exp_by_participant_id=MappingProxyType(direct),
+        ride_exp_by_participant_id=MappingProxyType(ride),
+        pet_variable_ai_delta_by_participant_id=MappingProxyType(variable_ai),
+        kill_count_delta_by_participant_id=MappingProxyType(kill_count),
+    )
+
+
+def battle_kill_profit_scan(
+    enemies: Sequence[KillProfitScanEnemy],
+    attack_list: Sequence[KillProfitRecipient],
+    *,
+    norisk=False,
+):
+    """Mirror BATTLE_AddExpItem() scanning all unprocessed dead entries.
+
+    The stable source does not ask which action caused each death. At every
+    BATTLE_AddProfit() call it scans all battle entries and claims every entry
+    with HP <= 0 and ISDIE == false for the *current* attack list, then marks
+    that entry dead. This means a deferred status death can be collected by a
+    later unrelated profit trigger; no original DoT/status owner is retained by
+    this reward routine.
+
+    Callers supply only reward-bearing enemy entries here. Player/PvP death,
+    drops, ultimate hooks and dead-count mutation stay outside this pure EXP
+    allocation model.
+    """
+    recipients=tuple(attack_list)
+    if not recipients:
+        raise ValueError('attack_list must contain at least one recipient')
+
+    direct={}
+    ride={}
+    variable_ai={}
+    kill_count={}
+    claimed=[]
+    seen=set()
+
+    def add_all(target,source):
+        for key,value in source.items():
+            target[key]=target.get(key,0)+int(value)
+
+    for raw_enemy in tuple(enemies):
+        enemy=(
+            raw_enemy
+            if isinstance(raw_enemy,KillProfitScanEnemy)
+            else KillProfitScanEnemy(*raw_enemy)
+        )
+        if enemy.enemy_id in seen:
+            raise ValueError(f'duplicate profit-scan enemy id {enemy.enemy_id}')
+        seen.add(enemy.enemy_id)
+        if enemy.hp > 0 or enemy.is_die:
+            continue
+
+        profit=battle_kill_profit(
+            enemy.reward_exp,
+            enemy.level,
+            recipients,
+            norisk=norisk,
+        )
+        claimed.append(enemy.enemy_id)
+        add_all(direct,profit.direct_exp_by_participant_id)
+        add_all(ride,profit.ride_exp_by_participant_id)
+        add_all(variable_ai,profit.pet_variable_ai_delta_by_participant_id)
+        add_all(kill_count,profit.kill_count_delta_by_participant_id)
+
+    return BattleKillProfitScan(
+        claimed_enemy_ids=tuple(claimed),
         direct_exp_by_participant_id=MappingProxyType(direct),
         ride_exp_by_participant_id=MappingProxyType(ride),
         pet_variable_ai_delta_by_participant_id=MappingProxyType(variable_ai),

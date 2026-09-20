@@ -21,9 +21,12 @@ from tools.stoneage_battle_core_model import (
     physical_base_damage,
     raw_counter_basis,
     BattleKillProfit,
+    BattleKillProfitScan,
     KillProfitRecipient,
+    KillProfitScanEnemy,
     battle_exp_from_enemy,
     battle_kill_profit,
+    battle_kill_profit_scan,
     ride_pet_exp_from_enemy,
 )
 
@@ -198,6 +201,85 @@ class BattleCoreModelTests(unittest.TestCase):
         self.assertEqual(
             dict(norisk.pet_variable_ai_delta_by_participant_id),
             {},
+        )
+
+    def test_profit_scan_counter_shape_credits_actual_counter_actor(self):
+        scan=battle_kill_profit_scan(
+            (
+                KillProfitScanEnemy('enemy:0',10,1500,0,False),
+            ),
+            (
+                KillProfitRecipient('counter:pet',16,PET),
+            ),
+        )
+        self.assertIsInstance(scan,BattleKillProfitScan)
+        self.assertEqual(scan.claimed_enemy_ids,('enemy:0',))
+        self.assertEqual(
+            dict(scan.direct_exp_by_participant_id),
+            {'counter:pet':1400},
+        )
+        self.assertEqual(
+            dict(scan.pet_variable_ai_delta_by_participant_id),
+            {'counter:pet':1},
+        )
+
+    def test_profit_scan_combo_shape_credits_every_attack_list_member(self):
+        scan=battle_kill_profit_scan(
+            (
+                KillProfitScanEnemy('enemy:0',10,1500,0,False),
+            ),
+            (
+                KillProfitRecipient('player:a',10,PLAYER),
+                KillProfitRecipient('player:b',16,PLAYER),
+            ),
+        )
+        self.assertEqual(
+            dict(scan.direct_exp_by_participant_id),
+            {'player:a':1500,'player:b':1400},
+        )
+        self.assertEqual(
+            dict(scan.kill_count_delta_by_participant_id),
+            {'player:a':1,'player:b':1},
+        )
+
+    def test_profit_scan_deferred_status_death_belongs_to_next_profit_trigger(self):
+        scan=battle_kill_profit_scan(
+            (
+                # The status tick has already reduced this enemy to zero, but
+                # no profit routine ran yet, so ISDIE is still false.
+                KillProfitScanEnemy('status-dead',10,100,0,False),
+                # An already processed corpse is not awarded again.
+                KillProfitScanEnemy('already-claimed',10,200,0,True),
+                KillProfitScanEnemy('still-alive',10,300,1,False),
+            ),
+            (
+                # This can be an unrelated later ordinary/counter/magic profit
+                # trigger; the source scan has no stored status owner here.
+                KillProfitRecipient('next-trigger',10,PLAYER),
+            ),
+        )
+        self.assertEqual(scan.claimed_enemy_ids,('status-dead',))
+        self.assertEqual(
+            dict(scan.direct_exp_by_participant_id),
+            {'next-trigger':100},
+        )
+
+    def test_profit_scan_claims_all_unprocessed_dead_entries_in_one_call(self):
+        scan=battle_kill_profit_scan(
+            (
+                KillProfitScanEnemy('dead:a',10,100,0,False),
+                KillProfitScanEnemy('dead:b',10,250,-5,False),
+            ),
+            (KillProfitRecipient('player',10,PLAYER),),
+        )
+        self.assertEqual(scan.claimed_enemy_ids,('dead:a','dead:b'))
+        self.assertEqual(
+            dict(scan.direct_exp_by_participant_id),
+            {'player':350},
+        )
+        self.assertEqual(
+            dict(scan.kill_count_delta_by_participant_id),
+            {'player':2},
         )
 
     def test_counter_is_only_raw_basis(self):
