@@ -152,6 +152,36 @@ INDEX_ARITH|name=I|instruction_rva=0x32672|kind=lea|dst=edx|base=eax|index=eax|s
 INDEX_ARITH|name=I|instruction_rva=0x32697|kind=lea|dst=ebx|base=ebx|index=ebx|scale=4|disp=0
 CALLBACK|name=WN|rva=0x328c0|blocks=3|instructions=16|direct_targets=1|import_targets=0|indirect_jumps=0
 DIRECT|name=WN|target_rva=0x12930|calls=1
+PARSE_WINDOW|name=I|instruction_rva=0x32651|mnemonic=lea|ops=ecx, [esp + 0x1c]
+PARSE_WINDOW|name=I|instruction_rva=0x32655|mnemonic=push|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x32656|mnemonic=call|ops=0x446ff0
+PARSE_WINDOW|name=I|instruction_rva=0x3265b|mnemonic=lea|ops=edi, [esp + 0x20]
+PARSE_WINDOW|name=I|instruction_rva=0x3265f|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=I|instruction_rva=0x32662|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=I|instruction_rva=0x32664|mnemonic=add|ops=esp, 4
+PARSE_WINDOW|name=I|instruction_rva=0x32667|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=I|instruction_rva=0x32669|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x3266b|mnemonic=dec|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x3266c|mnemonic=jne|ops=0x432689
+PARSE_WINDOW|name=I|instruction_rva=0x3266e|mnemonic=mov|ops=eax, dword ptr [esp + 0x14]
+PARSE_WINDOW|name=I|instruction_rva=0x32672|mnemonic=lea|ops=edx, [eax + eax*4]
+PARSE_WINDOW|name=I|instruction_rva=0x32675|mnemonic=shl|ops=edx, 3
+PARSE_WINDOW|name=I|instruction_rva=0x32678|mnemonic=sub|ops=edx, eax
+PARSE_WINDOW|name=I|instruction_rva=0x3267a|mnemonic=mov|ops=word ptr [edx*4 + 0x17f8a18], 0
+PARSE_WINDOW|name=I|instruction_rva=0x32684|mnemonic=jmp|ops=0x43286d
+PARSE_WINDOW|name=I|instruction_rva=0x32689|mnemonic=mov|ops=ebx, dword ptr [esp + 0x14]
+PARSE_WINDOW|name=I|instruction_rva=0x3268d|mnemonic=mov|ops=ecx, dword ptr [esp + 0x14]
+PARSE_WINDOW|name=I|instruction_rva=0x32691|mnemonic=lea|ops=edi, [esp + 0x1c]
+PARSE_WINDOW|name=I|instruction_rva=0x32695|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=I|instruction_rva=0x32697|mnemonic=lea|ops=ebx, [ebx + ebx*4]
+PARSE_WINDOW|name=I|instruction_rva=0x3269a|mnemonic=shl|ops=ebx, 3
+PARSE_WINDOW|name=I|instruction_rva=0x3269d|mnemonic=sub|ops=ebx, ecx
+PARSE_WINDOW|name=I|instruction_rva=0x3269f|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=I|instruction_rva=0x326a2|mnemonic=shl|ops=ebx, 2
+PARSE_WINDOW|name=I|instruction_rva=0x326a5|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=I|instruction_rva=0x326a7|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x326a9|mnemonic=dec|ops=ecx
+PARSE_WINDOW|name=I|instruction_rva=0x326aa|mnemonic=mov|ops=word ptr [ebx + 0x17f8a18], 1
 WN_FORWARD|callsite_rva=0x328e2|target_rva=0x12930|prelude_instructions=10
 WN_FORWARD_PRELUDE|order=1|instruction_rva=0x328c9|mnemonic=mov|ops=eax, dword ptr [esp + 0x18]
 WN_FORWARD_PRELUDE|order=2|instruction_rva=0x328cd|mnemonic=mov|ops=ecx, dword ptr [esp + 0x14]
