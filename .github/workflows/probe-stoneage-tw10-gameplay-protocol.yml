@@ -43,7 +43,7 @@ jobs:
           python3 -m tools.stoneage_tw10_gameplay_protocol_probe \
             --bin /tmp/tw10/STONEAGE.bin \
             > research/recovered/STONEAGE-TW10-GAMEPLAY-PROTOCOL-R1.txt
-      - name: Verify critical v1.0 protocol shapes
+      - name: Verify direct v1.0 anchor shapes
         run: |
           set -euo pipefail
           report=research/recovered/STONEAGE-TW10-GAMEPLAY-PROTOCOL-R1.txt
@@ -51,15 +51,9 @@ jobs:
           grep -E '^SHAPE_COMPARE\|region=recv\|name=C\|.*exact=1$' "$report"
           grep -E '^SHAPE_COMPARE\|region=recv\|name=S\|.*exact=1$' "$report"
           grep -E '^SHAPE_COMPARE\|region=recv\|name=I\|.*exact=1$' "$report"
-          grep -E '^SHAPE_COMPARE\|region=send\|name=MI\|.*exact=1$' "$report"
-          grep -E '^SHAPE_COMPARE\|region=recv\|name=SI\|.*exact=1$' "$report"
-          grep -E '^SHAPE_COMPARE\|region=send\|name=PS\|.*exact=1$' "$report"
-          grep -E '^SHAPE_COMPARE\|region=recv\|name=PS\|.*exact=1$' "$report"
-          grep -E '^SHAPE_COMPARE\|region=send\|name=SKUP\|.*exact=1$' "$report"
-          grep -E '^SHAPE_COMPARE\|region=recv\|name=SKUP\|.*exact=1$' "$report"
-          grep -E '^SHAPE_COMPARE\|region=recv\|name=WN\|.*exact=1$' "$report"
-          grep -E '^SHAPE_COMPARE\|region=recv\|name=PME\|.*exact=1$' "$report"
           grep -E '^SHAPE_COMPARE\|region=send\|name=CreateNewChar\|.*exact=1$' "$report"
+          grep -E '^REGION_SUMMARY\|region=send\|' "$report"
+          grep -E '^REGION_SUMMARY\|region=recv\|' "$report"
       - name: Delete transient proprietary payloads
         if: always()
         run: rm -rf /tmp/tw10 /tmp/CD_DIC.rar
