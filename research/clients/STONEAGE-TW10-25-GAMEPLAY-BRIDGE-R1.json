@@ -1,0 +1,484 @@
+{
+  "schema_id": "stoneage.tw10.25.gameplay-bridge.r1",
+  "schema_version": 1,
+  "baseline_schema": "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+  "baseline_rule": "Taiwan v1.0 client/runtime schema remains authoritative for historical wire/state fields; recovered 2.5 data is a server/master-data bridge only.",
+  "pinned_descendant_control": {
+    "repository": "BismarckDD/stoneage",
+    "commit": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "evidence_levels": {
+    "V1_DIRECT": "original Taiwan v1.0 client position/type/count evidence",
+    "EARLY_LINEAGE": "semantic mapping from early generated/client lineage",
+    "BRIDGE_2_5": "recovered 2.5 server/master data or fixed descendant server derivation",
+    "OPEN": "relationship not sufficiently demonstrated"
+  },
+  "identity_rules": [
+    {
+      "rule": "runtime_object_id_is_not_template_id",
+      "status": "REQUIRED",
+      "detail": "C/S runtime object/character indexes are transient runtime identities and must not be equated with enemybase TEMPNO, itemset id, NPC template name, or any other master-data ID."
+    },
+    {
+      "rule": "inventory_slot_is_not_item_template_id",
+      "status": "REQUIRED",
+      "detail": "I/S:I inventory slot numbers address owned runtime instances; itemset.id remains an authoritative template identity."
+    },
+    {
+      "rule": "pet_slot_is_not_enemybase_tempno",
+      "status": "REQUIRED",
+      "detail": "K/W prefix slots address owned runtime pets; enemybase.TEMPNO is a server template identity."
+    },
+    {
+      "rule": "v1_wire_fields_must_not_be_backfilled_from_2_5",
+      "status": "REQUIRED",
+      "detail": "A field existing in a 2.5 table does not make it a Taiwan v1.0 client field."
+    }
+  ],
+  "bridges": {
+    "pet_template_to_pet_state": {
+      "source_entity": "enemybase",
+      "source_artifact": "research/recovered/STONEAGE-25-ENEMYBASE-PROBE-R1.txt",
+      "server_lineage_paths": [
+        "server/gmsv/include/enemy.h",
+        "server/gmsv/char/enemy.c"
+      ],
+      "template_identity": {
+        "source_field": "TEMPNO",
+        "target_role": "authoritative_pet_template_id",
+        "target_is_wire_field": false,
+        "bridge_evidence": "BRIDGE_2_5",
+        "status": "server_identity_only"
+      },
+      "mappings": [
+        {
+          "target_record": "status_pet_full",
+          "target_field": "graphic_id",
+          "source_field": "IMGNUMBER",
+          "relation": "template value copied into runtime base image identity in fixed descendant server",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_record": "status_pet_full",
+          "target_field": "ai",
+          "source_field": "MODAI",
+          "relation": "template value copied into runtime CHAR_MODAI in fixed descendant server",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_record": "status_pet_full",
+          "target_field": "earth",
+          "source_field": "EARTHAT",
+          "relation": "template elemental value copied into runtime pet state in fixed descendant server",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_record": "status_pet_full",
+          "target_field": "water",
+          "source_field": "WATERAT",
+          "relation": "template elemental value copied into runtime pet state in fixed descendant server",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_record": "status_pet_full",
+          "target_field": "fire",
+          "source_field": "FIREAT",
+          "relation": "template elemental value copied into runtime pet state in fixed descendant server",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_record": "status_pet_full",
+          "target_field": "wind",
+          "source_field": "WINDAT",
+          "relation": "template elemental value copied into runtime pet state in fixed descendant server",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_record": "status_pet_full",
+          "target_field": "max_skill_slots",
+          "source_field": "SLOT",
+          "relation": "template skill-slot count copied into runtime CHAR_SLOT in fixed descendant server",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        }
+      ],
+      "skill_assignment_bridge": {
+        "source_fields": [
+          "PETSKILL1",
+          "PETSKILL2",
+          "PETSKILL3",
+          "PETSKILL4",
+          "PETSKILL5",
+          "PETSKILL6",
+          "PETSKILL7"
+        ],
+        "target_record": "pet_skill_view_slot",
+        "target_field": "skill_id",
+        "relation": "fixed descendant server copies template PETSKILL1..7 IDs into runtime pet skill array; client receives per-slot skill IDs separately via S:W",
+        "bridge_evidence": "BRIDGE_2_5",
+        "status": "lineage_supported_bridge"
+      },
+      "derived_or_open": [
+        {
+          "target_fields": [
+            "hp",
+            "max_hp",
+            "mp",
+            "max_mp",
+            "exp",
+            "max_exp",
+            "level",
+            "attack",
+            "defense",
+            "quick"
+          ],
+          "source_fields": [
+            "INITNUM",
+            "LVUPPOINT",
+            "BASEVITAL",
+            "BASESTR",
+            "BASETGH",
+            "BASEDEX"
+          ],
+          "status": "OPEN",
+          "reason": "runtime values are level/growth/formula derived and must not be treated as direct copies from the template."
+        },
+        {
+          "source_fields": [
+            "GET",
+            "POISON",
+            "PARALYSIS",
+            "SLEEP",
+            "STONE",
+            "DRUNK",
+            "CONFUSION",
+            "RARE",
+            "CRITICAL",
+            "COUNTER",
+            "PETFLG",
+            "SIZE"
+          ],
+          "status": "server_or_versioned_only",
+          "reason": "no matching field exists in the accepted v1 S:K full wire layout."
+        }
+      ]
+    },
+    "pet_skill_template_to_view": {
+      "source_entity": "petskill",
+      "source_artifact": "research/recovered/STONEAGE-25-PETSKILL-PROBE-R1.txt",
+      "server_lineage_paths": [
+        "server/gmsv/include/pet_skill.h",
+        "server/gmsv/battle/pet_skill.c"
+      ],
+      "selected_2_5_prefix_schema": "CFREE6: NAME, COMMENT, FUNCNAME, OPTION, FREE, KINDCODE + ID, FIELD, TARGET, COST, ILLEGAL",
+      "mappings": [
+        {
+          "target_record": "pet_skill_view_slot",
+          "target_field": "skill_id",
+          "source_field": "ID",
+          "relation": "same semantic client-view field preserved by fixed descendant server schema",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_record": "pet_skill_view_slot",
+          "target_field": "field_context",
+          "source_field": "FIELD",
+          "relation": "same semantic client-view field preserved by fixed descendant server schema",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_record": "pet_skill_view_slot",
+          "target_field": "target_class",
+          "source_field": "TARGET",
+          "relation": "same semantic client-view field preserved by fixed descendant server schema",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_record": "pet_skill_view_slot",
+          "target_field": "name",
+          "source_field": "NAME",
+          "relation": "same semantic client-view field preserved by fixed descendant server schema",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_record": "pet_skill_view_slot",
+          "target_field": "comment",
+          "source_field": "COMMENT",
+          "relation": "same semantic client-view field preserved by fixed descendant server schema",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        }
+      ],
+      "server_only_fields": [
+        "FUNCNAME",
+        "OPTION",
+        "FREE",
+        "KINDCODE",
+        "COST",
+        "ILLEGAL",
+        "trailing_2_5_column"
+      ],
+      "policy": "Server behavior/cost/legality/callback columns must not be inserted into the five-field v1 S:W record."
+    },
+    "item_template_to_item_view": {
+      "source_entity": "itemset",
+      "source_artifact": "research/recovered/STONEAGE-25-ITEMSET-SCHEMA-R1.txt",
+      "server_lineage_paths": [
+        "server/gmsv/include/item.h",
+        "server/gmsv/item/item.c"
+      ],
+      "template_identity": {
+        "source_field": "id",
+        "target_role": "authoritative_item_template_id",
+        "target_is_wire_field": false,
+        "bridge_evidence": "BRIDGE_2_5",
+        "status": "server_identity_only"
+      },
+      "mappings": [
+        {
+          "target_records": [
+            "inventory_full_slot",
+            "inventory_incremental_record"
+          ],
+          "target_field": "name",
+          "source_field": "secretname",
+          "relation": "note: fixed descendant ITEM_makeItemStatusString sends ITEM_SECRETNAME as the visible first string in the old item-status surface",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_records": [
+            "inventory_full_slot",
+            "inventory_incremental_record"
+          ],
+          "target_field": "secondary_or_secret_name",
+          "source_field": null,
+          "relation": "v1 second string is a separate client-visible field; fixed later server code shown here emits an empty paramshow in this position, so exact master-table source is OPEN",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "OPEN",
+          "status": "open_or_runtime_derived"
+        },
+        {
+          "target_records": [
+            "inventory_full_slot",
+            "inventory_incremental_record"
+          ],
+          "target_field": "memo_or_effect_text",
+          "source_field": "effectstring",
+          "relation": "fixed descendant ITEM_makeItemStatusString sends ITEM_EFFECTSTRING",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_records": [
+            "inventory_full_slot",
+            "inventory_incremental_record"
+          ],
+          "target_field": "graphic_id",
+          "source_field": "imagenumber",
+          "relation": "fixed descendant ITEM_makeItemStatusString sends ITEM_BASEIMAGENUMBER",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_records": [
+            "inventory_full_slot",
+            "inventory_incremental_record"
+          ],
+          "target_field": "field_context",
+          "source_field": "fieldtype",
+          "relation": "fixed descendant ITEM_makeItemStatusString sends ITEM_ABLEUSEFIELD",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_records": [
+            "inventory_full_slot",
+            "inventory_incremental_record"
+          ],
+          "target_field": "target_class",
+          "source_field": "target",
+          "relation": "fixed descendant ITEM_makeItemStatusString sends ITEM_TARGET",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_records": [
+            "inventory_full_slot",
+            "inventory_incremental_record"
+          ],
+          "target_field": "level",
+          "source_field": "level",
+          "relation": "fixed descendant ITEM_makeItemStatusString sends ITEM_LEVEL",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "lineage_supported_bridge"
+        },
+        {
+          "target_records": [
+            "inventory_full_slot",
+            "inventory_incremental_record"
+          ],
+          "target_field": "send_or_use_flags",
+          "source_field": null,
+          "relation": "computed runtime bitfield in fixed descendant ITEM_makeItemStatusString, not a direct itemset column",
+          "baseline_evidence": "V1_DIRECT",
+          "semantic_evidence": "EARLY_LINEAGE",
+          "bridge_evidence": "OPEN",
+          "status": "open_or_runtime_derived"
+        }
+      ],
+      "note_on_name_fields": "The v1 wire has two escaped name-like strings. Fixed descendant server code explicitly sources the first transmitted item-status string from ITEM_SECRETNAME and uses a runtime paramshow buffer for the second. Therefore this bridge does not force itemset.name into either v1 wire field without further evidence.",
+      "server_only_or_versioned_fields": [
+        "id",
+        "cost",
+        "type",
+        "dambreak",
+        "upinums",
+        "campile",
+        "requirements",
+        "combat_modifiers",
+        "magicid",
+        "magicprob",
+        "magicusemp",
+        "useaction",
+        "dropatlogout",
+        "vanishatdrop",
+        "canpetmail",
+        "canmergefrom",
+        "canmergeto",
+        "ingredient_fields",
+        "durability_extensions"
+      ]
+    },
+    "npc_master_to_world_and_window": {
+      "source_entity": "npc_template_create_graph",
+      "source_artifact": "research/recovered/STONEAGE-25-NPC-WORLD-GRAPH-R1.txt",
+      "server_lineage_paths": [
+        "server/gmsv/npc/npctemplate.c",
+        "server/gmsv/npc/*"
+      ],
+      "mappings": [
+        {
+          "target_record": "world_character_record",
+          "target_fields": [
+            "runtime_object_id",
+            "x",
+            "y",
+            "direction",
+            "base_graphic_id",
+            "name",
+            "walkable",
+            "height"
+          ],
+          "source_fields": [
+            "template/create/runtime NPC fields"
+          ],
+          "relation": "NPC template/create records instantiate authoritative server runtime NPC objects which are serialized into client world-object records",
+          "baseline_evidence": "V1_DIRECT",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "architecture_bridge_only"
+        },
+        {
+          "target_record": "npc_window_session",
+          "target_fields": [
+            "window_type",
+            "button_mask_or_type",
+            "sequence_number",
+            "source_object_index",
+            "data"
+          ],
+          "source_fields": [
+            "NPC callback/window routing runtime state"
+          ],
+          "relation": "server NPC callbacks generate WN sessions; exact values are runtime/session products rather than static NPC-table columns",
+          "baseline_evidence": "V1_DIRECT",
+          "bridge_evidence": "BRIDGE_2_5",
+          "status": "architecture_bridge_only"
+        }
+      ],
+      "explicit_non_equivalences": [
+        "NPC template name != v1 runtime_object_id",
+        "NPCCREATE floorid != complete v1 world-object record",
+        "2.5 functionset name != v1 object_type enum value",
+        "Windowman conff window number != v1 runtime object index"
+      ],
+      "open_fields": [
+        "exact Taiwan v1.0 NPC template population",
+        "exact Taiwan v1.0 NPC coordinates/scripts/dialogue",
+        "exact mapping from each 2.5 functionset family to early v1 object type",
+        "exact original server allocation rule for runtime object indexes"
+      ]
+    }
+  },
+  "reconstruction_contract": {
+    "runtime_models": [
+      "CharacterState",
+      "PetState",
+      "PetSkillView",
+      "ItemInstance",
+      "ItemView",
+      "WorldObject",
+      "NPCWindowSession"
+    ],
+    "authoritative_template_models": [
+      "PetTemplateBridge",
+      "PetSkillTemplateBridge",
+      "ItemTemplateBridge",
+      "NpcTemplateBridge",
+      "NpcCreateBridge"
+    ],
+    "required_separation": [
+      "runtime identity vs template identity",
+      "wire-visible field vs server-only behavior field",
+      "v1 baseline vs 2.5 versioned extension",
+      "static template value vs runtime/formula-derived value"
+    ]
+  }
+}
