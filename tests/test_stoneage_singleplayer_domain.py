@@ -1,6 +1,7 @@
 import unittest
 
 from tools.stoneage_singleplayer_domain import (
+    EncounterRolls,
     EnemyVariantId,
     HistoricalStaticData,
     InventorySlot,
@@ -9,6 +10,7 @@ from tools.stoneage_singleplayer_domain import (
     PetTemplateId,
     RuntimeObjectId,
     SinglePlayerHistoricalDomain,
+    SinglePlayerSimulation,
 )
 from tools.stoneage_tw10_gameplay_model import CharacterState, DecodedRecord
 from tools.stoneage_tw10_25_bridge_model import (
@@ -285,6 +287,64 @@ class SinglePlayerHistoricalDomainTests(unittest.TestCase):
         enemy = EnemyVariantBridge.from_enemy(enemy_row())
         with self.assertRaises(ValueError):
             HistoricalStaticData(enemy_variants={88: enemy})
+
+
+    def test_minimal_simulation_tick_keeps_state_partitions_and_explicit_rng(self):
+        enemy = EnemyVariantBridge.from_enemy(enemy_row())
+        group = GroupBridge.from_group(
+            {
+                "GROUP_ID": 100,
+                "APPEAR_ITEM": 500,
+                "ENEMY_ID1": 700,
+                "CREATE_PROB1": 100,
+            }
+        )
+        area = EncounterAreaBridge.from_encount(
+            {
+                "INDEX": 21,
+                "FLOOR": 1000,
+                "X1": 0,
+                "Y1": 0,
+                "X2": 20,
+                "Y2": 20,
+                "PROB_MIN": 10,
+                "PROB_MAX": 20,
+                "ENEMY_MAX": 3,
+                "ZORDER": 1,
+                "GROUP_ID1": 100,
+                "GROUP_PROB1": 100,
+            }
+        )
+        domain = SinglePlayerHistoricalDomain(
+            static=HistoricalStaticData(
+                encounter_areas=(area,),
+                encounter_groups={100: group},
+                enemy_variants={700: enemy},
+            )
+        )
+        domain.move_player(floor_id=1000, x=10, y=10)
+        domain.put_item(0, item_500())
+        domain.put_pet(build_pet(), {41: skill_41()})
+        domain.place_npc(build_npc())
+
+        simulation = SinglePlayerSimulation(domain)
+        first = simulation.step(
+            encounter_rolls=EncounterRolls(
+                group_roll=0,
+                enemy_roll=0,
+                level_roll=1,
+            )
+        )
+        self.assertEqual(first.tick_index, 1)
+        self.assertEqual(first.inventory_slots, (InventorySlot(0),))
+        self.assertEqual(first.pet_slots[0].value, 2)
+        self.assertEqual(first.world_object_ids, (RuntimeObjectId(34567),))
+        self.assertEqual(first.encounter_request.level, 4)
+
+        second = simulation.step()
+        self.assertEqual(second.tick_index, 2)
+        self.assertIsNone(second.encounter_request)
+        self.assertEqual(second.player_position, first.player_position)
 
 
 if __name__ == "__main__":
