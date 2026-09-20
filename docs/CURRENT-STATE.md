@@ -1230,10 +1230,35 @@ Supplemental source ledgers:
 - Remote validation **35510186803** passes with CEP unit tests and runtime soft-pity/Warp-suppression regression coverage.
 - **Operational consequence:** encounter frequency and encounter content selection are now separate deterministic subsystems. The remaining combat-side critical path is enemy-count/birth orchestration and the first battle-round command boundary.
 
+## Group-level enemy spawn + first battle command boundary — 2026-09-20
+
+- Stable descendant `ENEMY_getEnemy()` evidence corrected the earlier single-variant encounter simplification:
+  - encounter area selects a group first;
+  - total enemy target count is drawn from `1..min(ENEMY_MAX_NUM, sum(slot CREATEMAXNUM))`;
+  - each enemy position independently reselects a weighted group slot;
+  - duplicate enemy-ID slots multiply that variant's effective create cap;
+  - the selection loop retains the 100-attempt guard;
+  - `CREATEMINNUM` is retained as source data but is not enforced because the inspected stable generation path does not read it.
+- Recovered `enemybase.SIZE` (0 normal / 1 big) is now retained in `PetTemplateBridge.size_class`.
+  - at most five big enemies are placed;
+  - a sixth big selection reduces the target count;
+  - a big enemy selected after position 4 swaps into the first five with an earlier normal enemy when possible.
+- `tools/stoneage_enemy_spawn_model.py` materializes every selected enemy with independent level, four birth offsets and ten allocation rolls before producing battle participants.
+- A new group-level encounter request is exposed alongside the older single-variant compatibility projection. Mixed-variant enemy groups can now enter one `BattleSession`.
+- `tools/stoneage_battle_command_model.py` defines the first ordinary player round-command boundary for `H|target` attack, `G` guard, `N` wait, `E` escape and `T|target` capture.
+  - target positions use the stable 20-slot domain;
+  - invalid attack/capture targets preserve the source's `-1` sentinel;
+  - error-status fallback maps checked commands to `N`;
+  - initiative uses the recovered explicit-randomness profile.
+- Later profession/pet-skill/item/magic/AI/effect/victory logic remains outside this boundary.
+- `research/mechanics/STONEAGE-ENEMY-SPAWN-BATTLE-COMMAND-R1.md` records the evidence and exclusions.
+- Remote combined validation **35510677772** passes with spawn, mixed-battle, command and runtime coverage.
+- **Operational consequence:** immediate action 1 is closed to the first reconstruction-safe group/birth/command boundary. The runtime no longer assumes one enemy variant per random encounter.
+
 ## Immediate next actions
 
-1. **Close enemy spawn-count/birth orchestration and the first battle-round command boundary.** Use explicit recovered formulas and deterministic rolls; do not invent AI, drop or victory semantics that remain unresolved.
-2. **Recover/validate the early image-number collision-property dataset.** The collision algorithm is closed; autonomous historical movement now needs provenance-safe Taiwan-v1.0/JSS `WALKABLE/HAVEHEIGHT` image metadata rather than descendant table substitution.
+1. **Recover/validate the early image-number collision-property dataset.** The collision algorithm is closed; autonomous historical movement now needs provenance-safe Taiwan-v1.0/JSS `WALKABLE/HAVEHEIGHT` image metadata rather than descendant table substitution.
+2. **Close the next battle-resolution seam only where evidence is stable.** Prioritize ordinary attack/guard/wait turn ordering and target/effect application before AI, capture, escape, drops or EXP settlement; keep unresolved branches explicit.
 3. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
 4. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
 5. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
