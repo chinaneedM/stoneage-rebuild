@@ -200,6 +200,42 @@
           "CHAR_complianceParameter then derives client-facing max HP / attack / defence / quick and other work values"
         ],
         "v1_boundary": "The formula is a reconstruction bridge from convergent descendant server source. The accepted Taiwan v1 client directly proves the resulting visible pet-state fields, not these server coefficients."
+      },
+      "composed_pet_state": {
+        "evidence": "BRIDGE_2_5",
+        "status": "reconstruction_composition",
+        "executable_model": "build_reconstructed_pet_state in tools/stoneage_tw10_25_bridge_model.py",
+        "identity_chain": [
+          "enemy.ID is the concrete enemy variant identity",
+          "enemybase.TEMPNO is the pet/species template identity",
+          "pet slot is the owner's carried-pet position",
+          "runtime object index is optional world presence identity and is never substituted for the other three"
+        ],
+        "derived_v1_fields": [
+          "graphic_id",
+          "hp",
+          "max_hp",
+          "level",
+          "attack",
+          "defense",
+          "quick",
+          "ai",
+          "earth",
+          "water",
+          "fire",
+          "wind",
+          "max_skill_slots",
+          "name"
+        ],
+        "explicit_runtime_inputs": [
+          "mp",
+          "max_mp",
+          "exp",
+          "max_exp",
+          "rename_flag",
+          "free_name"
+        ],
+        "policy": "Values not closed by the current bridge are explicit inputs. They are not defaulted from later server formulas merely to complete the 21-field v1 S:K record."
       }
     },
     "pet_skill_template_to_view": {
