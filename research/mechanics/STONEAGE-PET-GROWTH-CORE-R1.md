@@ -182,6 +182,34 @@ The resulting increments are added to:
 
 Bismarck later wraps the cast with `max(0,...)`; for normal non-negative growth bases this does not change the core result.
 
+## 8.1 Multi-level transition and loyalty-variable side effect
+
+The battle result path invokes `CHAR_PetLevelUp()` once for each gained level
+and immediately follows each call with:
+
+```text
+CHAR_PetAddVariableAi(pet, AI_FIX_PETLEVELUP)
+```
+
+Cross-lineage constants preserve:
+
+```text
+AI_FIX_PETLEVELUP = +5 * 100 = +500
+CHAR_VARIABLEAI range = -10000 .. +10000
+```
+
+`CHAR_VARIABLEAI` is hidden persistent loyalty variation stored at x100 scale.
+It is **not** the v1-visible pet AI value. `CHAR_complianceParameter()` later
+combines owner level/charm, pet level, template `MODAI`, and VARIABLEAI to
+produce `CHAR_WORKFIXAI`, which is what the pet status protocol sends.
+
+The reconstruction model therefore now represents each gained level with one
+`PetLevelGrowthRolls` bundle (ten allocation rolls + one rank roll) and
+`advance_pet_growth()` applies all bundles in order while adding/clamping
+VARIABLEAI by +500 after every level.
+
+Later family/teacher fame code inside descendant `CHAR_PetLevelUp()` is
+explicitly excluded from this stable core.
 ## 9. Why this matters for reconstruction
 
 The pet system is not merely:

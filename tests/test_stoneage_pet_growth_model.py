@@ -1,6 +1,9 @@
 import unittest
 
 from tools.stoneage_pet_growth_model import (
+    PetLevelGrowthRolls,
+    VARIABLE_AI_LEVELUP_DELTA,
+    advance_pet_growth,
     allocation_counts,
     individualize_growth_base,
     pack_growth_base,
@@ -45,6 +48,48 @@ class PetGrowthModelTests(unittest.TestCase):
         )
         self.assertEqual(increments,(115,110,115,110))
 
+    def test_multi_level_growth_consumes_one_explicit_roll_bundle_per_level(self):
+        transition=advance_pet_growth(
+            growth_base=(20,20,20,20),
+            rank=0,
+            current_internal_stats=(2000,2000,2000,2000),
+            current_variable_ai=0,
+            level_rolls=(
+                PetLevelGrowthRolls(
+                    (0,0,0,1,1,2,2,2,3,3),
+                    500,
+                ),
+                PetLevelGrowthRolls(
+                    (3,3,3,2,2,1,1,1,0,0),
+                    450,
+                ),
+            ),
+        )
+        self.assertEqual(
+            transition.per_level_increments,
+            ((115,110,115,110),(99,103,99,103)),
+        )
+        self.assertEqual(
+            transition.end_internal_stats,
+            (2214,2213,2214,2213),
+        )
+        self.assertEqual(transition.levels_gained,2)
+        self.assertEqual(
+            transition.end_variable_ai,
+            2*VARIABLE_AI_LEVELUP_DELTA,
+        )
+
+    def test_variable_ai_levelup_delta_clamps_at_stable_limit(self):
+        transition=advance_pet_growth(
+            growth_base=(20,20,20,20),
+            rank=0,
+            current_internal_stats=(2000,2000,2000,2000),
+            current_variable_ai=9800,
+            level_rolls=(
+                PetLevelGrowthRolls((0,0,0,1,1,2,2,2,3,3),500),
+            ),
+        )
+        self.assertEqual(transition.end_variable_ai,10000)
     def test_rank_range_validation(self):
         with self.assertRaises(ValueError):
             pet_level_increments((20,20,20,20),5,[0]*10,549)

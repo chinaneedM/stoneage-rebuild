@@ -1,6 +1,35 @@
 #!/usr/bin/env python3
 """Reference model for the convergent StoneAge descendant pet-growth core."""
 
+from dataclasses import dataclass
+from typing import Sequence
+
+VARIABLE_AI_LEVELUP_DELTA=500
+VARIABLE_AI_MIN=-10000
+VARIABLE_AI_MAX=10000
+
+
+@dataclass(frozen=True)
+class PetLevelGrowthRolls:
+    allocation_rolls: tuple[int, ...]
+    rank_roll: int
+
+    def __post_init__(self) -> None:
+        object.__setattr__(
+            self, "allocation_rolls", tuple(int(x) for x in self.allocation_rolls)
+        )
+        object.__setattr__(self, "rank_roll", int(self.rank_roll))
+
+
+@dataclass(frozen=True)
+class PetGrowthTransition:
+    start_internal_stats: tuple[int, int, int, int]
+    end_internal_stats: tuple[int, int, int, int]
+    per_level_increments: tuple[tuple[int, int, int, int], ...]
+    start_variable_ai: int
+    end_variable_ai: int
+    levels_gained: int
+
 RANK_THRESHOLDS=((100,0),(95,1),(90,2),(85,3),(80,4),(0,5))
 RANK_ROLL_RANGES=((450,500),(470,520),(490,540),(510,560),(530,580),(550,600))
 
@@ -57,6 +86,59 @@ def allocation_counts(allocation_rolls):
         counts[roll]+=1
     return tuple(counts)
 
+
+def advance_pet_growth(
+    growth_base,
+    rank,
+    current_internal_stats,
+    current_variable_ai,
+    level_rolls: Sequence[PetLevelGrowthRolls],
+):
+    '''Apply one explicit stable-descendant growth draw set per gained level.
+
+    CHAR_ALLOCPOINT/growth_base and PETRANK are persistent identity inputs and
+    are not mutated by level-up. Each level consumes ten allocation draws and
+    one rank-band multiplier draw, then adds +500 to hidden VARIABLEAI with
+    the stable -10000..10000 clamp.
+    '''
+    if len(growth_base)!=4 or len(current_internal_stats)!=4:
+        raise ValueError('growth and current stat vectors must have four components')
+    start=tuple(int(x) for x in current_internal_stats)
+    if any(x<0 for x in start):
+        raise ValueError('current internal pet stats must be non-negative')
+    variable_ai=int(current_variable_ai)
+    if not VARIABLE_AI_MIN<=variable_ai<=VARIABLE_AI_MAX:
+        raise ValueError('current_variable_ai outside stable range')
+
+    current=list(start)
+    increments=[]
+    for raw_rolls in tuple(level_rolls):
+        rolls=(
+            raw_rolls
+            if isinstance(raw_rolls,PetLevelGrowthRolls)
+            else PetLevelGrowthRolls(*raw_rolls)
+        )
+        inc=pet_level_increments(
+            growth_base,
+            rank,
+            rolls.allocation_rolls,
+            rolls.rank_roll,
+        )
+        current=[value+delta for value,delta in zip(current,inc)]
+        increments.append(tuple(inc))
+        variable_ai=min(
+            VARIABLE_AI_MAX,
+            max(VARIABLE_AI_MIN,variable_ai+VARIABLE_AI_LEVELUP_DELTA),
+        )
+
+    return PetGrowthTransition(
+        start_internal_stats=start,
+        end_internal_stats=tuple(current),
+        per_level_increments=tuple(increments),
+        start_variable_ai=int(current_variable_ai),
+        end_variable_ai=variable_ai,
+        levels_gained=len(increments),
+    )
 
 def pet_level_increments(growth_base,rank,allocation_rolls,rank_roll):
     """Return (vital, strength, toughness, dexterity) increments."""
