@@ -1,6 +1,14 @@
 import unittest
 from types import MappingProxyType
 
+from tools.stoneage_map_collision_model import (
+    CHARACTER,
+    CollisionProfile,
+    DynamicOccupant,
+    ImageCollisionMeta,
+    MapCellImages,
+    StaticCollisionMap,
+)
 from tools.stoneage_singleplayer_battle import (
     BattleOutcome,
     enemy_participant_from_birth,
@@ -239,6 +247,47 @@ class SinglePlayerHistoricalRuntimeTests(unittest.TestCase):
         self.assertEqual(domain.persistent.character.fields["hp"], 70)
         self.assertEqual(domain.persistent.character.fields["exp"], 100)
         self.assertIn(RuntimeObjectId(40000), domain.world.npcs)
+
+    def test_runtime_can_use_validated_collision_profile_without_boolean_guess(self):
+        domain = SinglePlayerHistoricalDomain(static=make_static())
+        domain.persistent.character = make_player()
+        topology = make_topology()
+        place_player_on_topology(domain, topology, MapPosition(2000, 10, 11))
+        runtime = SinglePlayerHistoricalRuntime(domain, topology)
+
+        cells = {
+            (10, 11): MapCellImages(1, 11),
+            (11, 11): MapCellImages(1, 11),
+            (12, 11): MapCellImages(1, 11),
+        }
+        collision_map = StaticCollisionMap(2000, 30, 30, cells)
+        collision_profile = CollisionProfile(
+            {
+                1: ImageCollisionMeta(1, 1, False),
+                11: ImageCollisionMeta(11, 1, False),
+            }
+        )
+
+        moved = runtime.walk_step_with_collision(
+            collision_map=collision_map,
+            collision_profile=collision_profile,
+            destination=MapPosition(2000, 11, 11),
+        )
+        self.assertTrue(moved.walk.moved)
+        self.assertEqual(domain.world.player_position, MapPosition(2000, 11, 11))
+
+        blocked = runtime.walk_step_with_collision(
+            collision_map=collision_map,
+            collision_profile=collision_profile,
+            destination=MapPosition(2000, 12, 11),
+            destination_occupants=(
+                DynamicOccupant(CHARACTER, overable=False),
+            ),
+            encounter_rolls=EncounterRolls(0, 0, 0),
+        )
+        self.assertFalse(blocked.walk.moved)
+        self.assertIsNone(blocked.encounter)
+        self.assertEqual(domain.world.player_position, MapPosition(2000, 11, 11))
 
     def test_blocked_walk_never_generates_encounter_even_if_rolls_are_supplied(self):
         domain = SinglePlayerHistoricalDomain(static=make_static())
