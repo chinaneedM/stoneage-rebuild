@@ -1129,15 +1129,28 @@ Supplemental source ledgers:
   Latest relevant successful runs: **35507294753** (bridge schema) and **35507294756** (combined model suite).
 - **Operational consequence:** the first reconstruction-safe gameplay domain layer now exists. The critical path moves from broad data archaeology to closing the few remaining runtime derivation seams needed for an actual single-player engine prototype.
 
+- ItemTemplate -> ItemInstance -> v1 ItemView is now closed to the first reconstruction-safe boundary:
+  - canonical item field 2 is `secondary_display_text`, not a second secret-name field;
+  - fixed descendant senders source field 1 from instance `ITEM_SECRETNAME` and field 2 from runtime `paramshow/name2` (empty on the active base path);
+  - `ItemInstanceBridge` derives v1 color and base send/use flags from instance/template state instead of treating them as raw itemset columns;
+  - base color derivation is white=0, bound/nonempty CDKEY -> green=5, otherwise merge flag -> yellow=4;
+  - base sendFlag bits are CANPETMAIL=bit0, CANMERGEFROM=bit1, DISH=bit2; later inlay/damage bits remain quarantined;
+  - schema/bridge/model suites are green at runs **35507746385**, **35507746366**, **35507746369**.
+- Enemy variant + pet template + birth formula -> v1 PetState is now composed:
+  - `build_reconstructed_pet_state()` validates `enemy.TEMPNO == enemybase.TEMPNO`;
+  - concrete `enemy.ID`, template `enemybase.TEMPNO`, owner pet slot and optional world runtime object ID remain four distinct namespaces;
+  - bridge-derived v1 fields are combined with explicit unresolved runtime inputs for MP/EXP/rename/free-name rather than inventing later formulas;
+  - the output field set/order is checked against the canonical 21-field v1 `S:K` schema;
+  - latest combined model validation **35507842293** and bridge validation **35507842310** both pass.
 ## Immediate next actions
 
-1. **Close ItemTemplate -> ItemInstance -> v1 ItemView derivation.** Keep `itemset.id` authoritative and separate from inventory slots; identify which v1 nine-field values are template-copied, per-instance/runtime-computed or presentation-only. In particular, resolve the origin of color, the second runtime text field and the old send/use flag bits.
-2. **Compose enemy variant + pet template + pet birth + v1 PetState into one deterministic reconstruction path.** Preserve `enemy.ID`, `enemybase.TEMPNO`, pet slot and runtime object identity as distinct namespaces and keep BRIDGE_2_5 formula evidence visibly separate from V1_DIRECT client fields.
-3. **Add an engine-facing domain boundary over the reconstruction models.** The first prototype API should expose maps/world objects, player state, inventory, pets/skills, NPC sessions and encounter requests without requiring any network server process; historical network protocol remains an evidence source/adaptor, not the target architecture.
-4. **Close remaining default/runtime presentation gaps only when implementation needs them.** Examples include exact early object-type numeric values and default NPC title/walkable/height derivation; do not infer them from later expansions prematurely.
+1. **Add the engine-facing historical domain boundary.** Expose map/world objects, player state, inventory, pets/skills, NPC sessions and encounter requests as ordinary in-process single-player domain objects/services. No network server process should be required; the recovered protocol remains an evidence adapter only.
+2. **Build deterministic adapter paths from recovered bridge models into that domain boundary.** Start with world/NPC + inventory + pet + encounter composition and ensure template/runtime identities remain typed/separate.
+3. **Define the minimal single-player simulation tick and state container without redesigning mechanics.** Separate static master data, persistent player state, transient world state and interaction/session state so later engine selection is not coupled to historical server architecture.
+4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
 5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
 6. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
-7. **Keep historical reconstruction and later redesign separate.** Once the deterministic historical domain layer can run end-to-end, optimization, automation/外挂-like convenience features and single-player redesign can be discussed as explicit DESIGN layers.
+7. **Keep historical reconstruction and later redesign separate.** Once the deterministic historical domain layer runs end-to-end, optimization, automation/外挂-like convenience features and single-player redesign can be discussed as explicit DESIGN layers.
 
 
 ## Continuity status
