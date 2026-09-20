@@ -474,10 +474,6 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(self.domain.persistent.character.fields["exp"], 0)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["hp"], 21)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"], 10)
-        self.assertEqual(
-            self.domain.persistent.pets[PetSlot(2)].growth.variable_ai,
-            1,
-        )
 
     def test_nonlevel_exp_settlement_applies_only_below_current_thresholds(self):
         self.domain.persistent.pets[PetSlot(2)] = allied_pet()
@@ -621,6 +617,10 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(self.domain.persistent.character.fields["exp"], 0)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["hp"], 21)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"], 10)
+        self.assertEqual(
+            self.domain.persistent.pets[PetSlot(2)].growth.variable_ai,
+            1,
+        )
 
     def test_explicit_legacy_player_level_crossing_settles_growth_side_effects(self):
         self.domain.persistent.pets[PetSlot(2)] = allied_pet()
