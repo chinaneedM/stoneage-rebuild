@@ -89,6 +89,65 @@ This is evidence only about this compiled v1 client surface. It does **not** pro
 
 Therefore these are recorded as **not observed in the bounded v1 generated surface**, not as “absent from StoneAge v1”.
 
+## V1 DIRECT — internal `S` status-category switch
+
+The accepted v1 `S` callback at RVA `0x2f670` now has a directly decoded compact switch.
+
+The binary:
+
+1. reads the first byte of the `S` payload;
+2. subtracts ASCII `'C'`;
+3. bounds the normalized value to `0x14`, i.e. `C..W`;
+4. translates it through the byte lookup table at RVA `0x30d04`;
+5. jumps through the dword target table at RVA `0x30cd8`.
+
+The 21-character mapping is direct v1 evidence:
+
+| Category | v1 branch | Early-lineage meaning |
+| --- | --- | --- |
+| `C` | `0x2f6ae` | map/floor and position state |
+| `D` | `0x2f797` | character ID / server-time state |
+| `E` | `0x30408` | encounter-percentage range |
+| `I` | `0x30922` | full item/inventory state |
+| `J` | `0x30445` | magic slot/state |
+| `K` | `0x2fe94` | owned-pet state |
+| `M` | `0x2fe2e` | compact HP/MP/EXP state |
+| `N` | `0x305a4` | party-member state |
+| `P` | `0x2f7f0` | player status |
+| `W` | `0x30b4f` | owned-pet skill view |
+| `F,G,H,L,O,Q,R,S,T,U,V` | shared default `0x30ccb` | not implemented by this compiled v1 switch |
+
+The **category letters and branch RVAs are V1 DIRECT**. The human-readable meanings in the third column remain EARLY LINEAGE until the individual branches are field-by-field matched.
+
+The branch call shapes strongly reproduce the early parser structure:
+
+- `C`: five calls to helper `0x46da0`;
+- `D`: two calls to `0x46da0`;
+- `E`: two calls to `0x46da0`;
+- `M`: three calls to `0x46da0`;
+- `J`: four `0x46da0`, two `0x46c70`, two `0x46ff0`;
+- `W`: three `0x46da0`, two `0x46c70`, two `0x46ff0`;
+- `I`: six `0x46da0`, three `0x46c70`, three `0x46ff0`;
+- `P`: 46 `0x46da0`, four `0x46c70`, four `0x46ff0` static callsites across full/partial update paths;
+- `K`: 36 `0x46da0`, four `0x46c70`, four `0x46ff0` static callsites across full/partial update paths.
+
+The C/I callback probe independently shows the same three helper RVAs in the same structural roles. Their exact semantic names are still being fingerprinted from the v1 helper bodies/callsites; R1 does not yet label the RVAs themselves as direct `getIntegerToken` / `getStringToken` / unescape symbols.
+
+### Direct version exclusion
+
+This switch provides a stronger boundary than descendant macro names alone.
+
+In the pinned later client source:
+
+- profession-skill status uses category `S`;
+- later profession cooldown uses category `G`;
+- pet-item status uses category `B`;
+- a ride-related extension uses category `X`.
+
+In the accepted v1 binary, `G` and `S` map to the shared default branch, while `B` and `X` lie outside the accepted `C..W` dispatch range. Therefore those specific later `S`-message category implementations are **not present in this compiled Taiwan v1 client**. This does not date every related game concept globally; it establishes a concrete client-version boundary for these protocol implementations.
+
+Canonical derived evidence: `research/recovered/STONEAGE-TW10-GAMEPLAY-CALLBACKS-R1.txt`.
+
 ## Character data matrix
 
 ### Character creation
