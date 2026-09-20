@@ -353,6 +353,65 @@ def scaled_index_arithmetic(base, cfg):
     return rows
 
 
+def call_prelude(base, cfg, target_va, limit=16):
+    ordered = sorted(cfg["instructions"])
+    pos = {addr: idx for idx, addr in enumerate(ordered)}
+    rows = []
+    for addr in ordered:
+        ins = cfg["instructions"][addr]
+        if direct_call_target(ins) != target_va:
+            continue
+        idx = pos[addr]
+        seq = []
+        cursor = idx - 1
+        last_start = addr
+        while cursor >= 0 and len(seq) < limit:
+            paddr = ordered[cursor]
+            pins = cfg["instructions"][paddr]
+            if paddr + pins.size != last_start:
+                break
+            if pins.mnemonic.startswith("j") or pins.mnemonic == "call":
+                break
+            seq.append((paddr - base, pins.mnemonic, pins.op_str))
+            last_start = paddr
+            cursor -= 1
+        seq.reverse()
+        rows.append((addr - base, seq))
+    return rows
+
+
+def c_main_parse_profile(base, cfg):
+    """Accepted-v1 legacy character/object record parse window.
+
+    The main character branch begins with integer token 1 at 0x31307 and the
+    next parser branch starts at 0x3167a. Emit only helper call positions and
+    fixed immediate token indices from this bounded path.
+    """
+    roles = {
+        0x46C70: "string_token",
+        0x46DA0: "decimal_token",
+        0x46DF0: "base62_convert",
+        0x46FF0: "unescape",
+        0x49566: "decimal_convert",
+    }
+    rows = []
+    for addr, ins in sorted(cfg["instructions"].items()):
+        rva = addr - base
+        if not (0x31307 <= rva < 0x3167A):
+            continue
+        target = direct_call_target(ins)
+        if target is None:
+            continue
+        trva = target - base
+        role = roles.get(trva)
+        if role is None:
+            continue
+        pushes = callsite_stack_signature(base, cfg, target)
+        fixed = next((p for call_rva, _cleanup, p in pushes if call_rva == rva), ())
+        rows.append((rva, trva, role, fixed))
+    return rows
+
+
 def shared_direct_targets(cfgs):
     memberships = collections.defaultdict(dict)
     for label, cfg in cfgs.items():
@@ -485,6 +544,24 @@ def main():
                                     f"kind={kind}|dst={dst}|base={base_reg}|index={index_reg}|"
                                     f"scale={scale}|disp={disp}"
                                 )
+
+        wn_cfg = cfgs["WN"]
+        for call_rva, seq in call_prelude(base, wn_cfg, base + 0x12930):
+            print(
+                f"WN_FORWARD|callsite_rva=0x{call_rva:x}|target_rva=0x12930|"
+                f"prelude_instructions={len(seq)}"
+            )
+            for order, (irva, mnemonic, ops) in enumerate(seq, 1):
+                print(
+                    f"WN_FORWARD_PRELUDE|order={order}|instruction_rva=0x{irva:x}|"
+                    f"mnemonic={mnemonic}|ops={clean(ops)}"
+                )
+
+        for rva, target_rva, role, pushes in c_main_parse_profile(base, cfgs["C"]):
+            print(
+                f"C_MAIN_PARSE|callsite_rva=0x{rva:x}|target_rva=0x{target_rva:x}|"
+                f"role={role}|immediate_pushes={','.join(hex(v) for v in pushes)}"
+            )
 
         shared = shared_direct_targets(cfgs)
         analysis_cfgs = dict(cfgs)
