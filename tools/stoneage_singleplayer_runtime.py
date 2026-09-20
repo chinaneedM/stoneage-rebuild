@@ -11,6 +11,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Sequence
 
+from tools.stoneage_map_collision_model import (
+    CollisionProfile,
+    DynamicOccupant,
+    StaticCollisionMap,
+    ordinary_step_allowed,
+)
 from tools.stoneage_singleplayer_battle import (
     BattleOutcome,
     BattleParticipant,
@@ -80,6 +86,37 @@ class SinglePlayerHistoricalRuntime:
             tick_index=self.tick_index,
             walk=walk,
             encounter=encounter,
+        )
+
+    def walk_step_with_collision(
+        self,
+        *,
+        collision_map: StaticCollisionMap,
+        collision_profile: CollisionProfile,
+        destination: MapPosition,
+        destination_occupants: Sequence[DynamicOccupant] = (),
+        is_flying: bool = False,
+        encounter_rolls: EncounterRolls | None = None,
+        action_is_walk: bool = True,
+        map_objmove_ok: bool = True,
+    ) -> HistoricalRuntimeStep:
+        current = self.domain.world.player_position
+        if current is None:
+            raise ValueError("player position is required before collision resolution")
+        decision = ordinary_step_allowed(
+            collision_map,
+            collision_profile,
+            origin=current,
+            destination=destination,
+            destination_occupants=destination_occupants,
+            is_flying=is_flying,
+        )
+        return self.walk_step(
+            destination=destination,
+            entry_allowed=decision.allowed,
+            encounter_rolls=encounter_rolls,
+            action_is_walk=action_is_walk,
+            map_objmove_ok=map_objmove_ok,
         )
 
     def start_battle(
