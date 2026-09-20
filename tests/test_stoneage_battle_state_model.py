@@ -16,6 +16,7 @@ from tools.stoneage_battle_state_model import (
     begin_persistent_battle,
     living_non_pet_count,
     resolve_persistent_ordinary_round,
+    termination_result,
 )
 from tools.stoneage_singleplayer_battle import (
     BattleParticipant,
@@ -235,11 +236,9 @@ class PersistentBattleStateTests(unittest.TestCase):
             state,
             hp_by_participant_id={"player": 0, "enemy": 0},
         )
-        # Build-time state is still active until termination is evaluated by a
-        # round transition; this assertion documents the source check order
-        # through direct living counts rather than inventing a draw result.
         self.assertEqual(living_non_pet_count(zero, 0), 0)
         self.assertEqual(living_non_pet_count(zero, 1), 0)
+        self.assertEqual(termination_result(zero), (ENEMY_WIN, 1))
 
 
 if __name__ == "__main__":
