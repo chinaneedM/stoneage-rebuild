@@ -50,6 +50,7 @@ from tools.stoneage_enemy_spawn_model import (
     plan_enemy_spawns,
 )
 from tools.stoneage_combat_profile_bridge import group_battle_combat_profiles
+from tools.stoneage_player_growth_model import resolve_player_exp_transition
 from tools.stoneage_singleplayer_battle import (
     BattleOutcome,
     BattleParticipant,
@@ -521,6 +522,127 @@ class SinglePlayerHistoricalRuntime:
                         )
                     updates["exp"] = next_exp
             pet_updates[slot] = updates
+
+        return apply_battle_outcome(
+            self.domain,
+            session,
+            BattleOutcome(
+                result=state.result,
+                player_updates=player_updates,
+                pet_updates=pet_updates,
+            ),
+        )
+
+    def finish_persistent_battle_with_player_progression(
+        self,
+        state: PersistentBattleState,
+        *,
+        player_exp_profile: str,
+        next_player_max_exp_by_level: Mapping[int, int],
+    ) -> BattleReturn:
+        '''Settle HP/EXP with an explicit player level-transition profile.
+
+        Player threshold crossing is allowed only through the versioned growth
+        model. Pet threshold crossing remains blocked because pet level-up
+        mutates randomized growth state that is not yet wired into settlement.
+        All validation occurs before apply_battle_outcome(), preserving atomic
+        failure when any participant reaches an unresolved boundary.
+        '''
+        if state.phase != FINISHED or state.result is None:
+            raise ValueError('cannot settle battle before termination')
+
+        session=state.session
+        player_id=session.player.participant_id
+        if player_id not in state.hp_by_participant_id:
+            raise ValueError('terminal battle state is missing player HP')
+        if player_id not in state.pending_exp_by_participant_id:
+            raise ValueError('terminal battle state is missing player pending EXP')
+
+        character=self.domain.persistent.character
+        if character is None:
+            raise ValueError('persistent player state is required for EXP settlement')
+
+        player_hp=int(state.hp_by_participant_id[player_id])
+        player_updates: dict[str,int]={'hp':player_hp}
+        pet_updates: dict[int,dict[str,int]]={}
+        player_can_receive_exp=player_hp>0
+
+        if player_can_receive_exp:
+            pending=int(state.pending_exp_by_participant_id[player_id])
+            if pending>0:
+                fields=character.fields
+                transition=resolve_player_exp_transition(
+                    int(fields['level']),
+                    int(fields['exp']),
+                    pending,
+                    int(fields['max_exp']),
+                    profile=player_exp_profile,
+                    next_max_exp_by_level=next_player_max_exp_by_level,
+                )
+                player_updates.update({
+                    'level':transition.end_level,
+                    'exp':transition.end_exp,
+                    'max_exp':transition.next_max_exp,
+                })
+                if transition.levels_gained>0:
+                    required=(
+                        'free_stat_points',
+                        'charm',
+                        'duel_point_like_state',
+                    )
+                    missing=[key for key in required if key not in fields]
+                    if missing:
+                        raise ValueError(
+                            f'player level-up requires persistent fields {missing}'
+                        )
+                    player_updates['free_stat_points']=(
+                        int(fields['free_stat_points'])
+                        + transition.free_stat_points_delta
+                    )
+                    player_updates['charm']=min(
+                        100,
+                        int(fields['charm'])+transition.charm_delta,
+                    )
+                    player_updates['duel_point_like_state']=(
+                        int(fields['duel_point_like_state'])
+                        + transition.duel_point_delta
+                    )
+
+        for participant in session.allied_pets:
+            if participant.source_pet_slot is None:
+                raise ValueError(
+                    f'allied participant {participant.participant_id} lacks source pet slot'
+                )
+            participant_id=participant.participant_id
+            if participant_id not in state.hp_by_participant_id:
+                raise ValueError(
+                    f'terminal battle state is missing HP for {participant_id}'
+                )
+            if participant_id not in state.pending_exp_by_participant_id:
+                raise ValueError(
+                    f'terminal battle state is missing pending EXP for {participant_id}'
+                )
+
+            slot=int(participant.source_pet_slot)
+            pet_slot=PetSlot(slot)
+            if pet_slot not in self.domain.persistent.pets:
+                raise KeyError(f'missing persistent pet slot {slot}')
+            hp=int(state.hp_by_participant_id[participant_id])
+            updates: dict[str,int]={'hp':hp}
+
+            if player_can_receive_exp and hp>0:
+                pending=int(state.pending_exp_by_participant_id[participant_id])
+                if pending>0:
+                    pet=self.domain.persistent.pets[pet_slot]
+                    current_exp=int(pet.state['exp'])
+                    max_exp=int(pet.state['max_exp'])
+                    next_exp=current_exp+pending
+                    if max_exp<=current_exp or next_exp>=max_exp:
+                        raise ValueError(
+                            'pet pending EXP reaches unresolved pet level-up threshold'
+                        )
+                    updates['exp']=next_exp
+            pet_updates[slot]=updates
 
         return apply_battle_outcome(
             self.domain,

@@ -12,6 +12,10 @@ from tools.stoneage_battle_round_model import (
 )
 from tools.stoneage_battle_state_model import FINISHED, PLAYER_WIN
 from tools.stoneage_enemy_spawn_model import EnemyBirthRolls
+from tools.stoneage_player_growth_model import (
+    LEGACY_CUMULATIVE_EXP,
+    PER_LEVEL_EXP,
+)
 from tools.stoneage_singleplayer_domain import (
     EnemyVariantId,
     HistoricalStaticData,
@@ -95,6 +99,8 @@ def player_state():
                 "defense": 80,
                 "quick": 60,
                 "charm": 0,
+                "free_stat_points": 0,
+                "duel_point_like_state": 0,
                 "luck": 7,
                 "earth": 50,
                 "water": 50,
@@ -591,6 +597,114 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["hp"], 21)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"], 10)
 
+    def test_explicit_legacy_player_level_crossing_settles_growth_side_effects(self):
+        self.domain.persistent.pets[PetSlot(2)] = allied_pet()
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,templates=self.templates,entry_count_roll=1,
+            selection_rolls=(0,),birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(
+            request,spawned_enemies=spawned,allied_pet_slots=(2,),
+        )
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,slots={'player':0,'pet:2':1,enemy_id:10},
+        )
+        terminal=replace(
+            state,
+            hp_by_participant_id=MappingProxyType(
+                {'player':73,'pet:2':21,enemy_id:0}
+            ),
+            pending_exp_by_participant_id=MappingProxyType(
+                {'player':1100,'pet:2':100}
+            ),
+            phase=FINISHED,result=PLAYER_WIN,winning_side=0,
+        )
+
+        self.runtime.finish_persistent_battle_with_player_progression(
+            terminal,
+            player_exp_profile=LEGACY_CUMULATIVE_EXP,
+            next_player_max_exp_by_level={6:1500},
+        )
+
+        fields=self.domain.persistent.character.fields
+        self.assertEqual((fields['level'],fields['exp'],fields['max_exp']),(6,1100,1500))
+        self.assertEqual(fields['free_stat_points'],3)
+        self.assertEqual(fields['charm'],2)
+        self.assertEqual(fields['duel_point_like_state'],60)
+        self.assertEqual(fields['hp'],73)
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state['exp'],110)
+
+    def test_explicit_per_level_player_crossing_consumes_requirement(self):
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,templates=self.templates,entry_count_roll=1,
+            selection_rolls=(0,),birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(request,spawned_enemies=spawned)
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,slots={'player':0,enemy_id:10},
+        )
+        terminal=replace(
+            state,
+            hp_by_participant_id=MappingProxyType({'player':80,enemy_id:0}),
+            pending_exp_by_participant_id=MappingProxyType({'player':1100}),
+            phase=FINISHED,result=PLAYER_WIN,winning_side=0,
+        )
+
+        self.runtime.finish_persistent_battle_with_player_progression(
+            terminal,
+            player_exp_profile=PER_LEVEL_EXP,
+            next_player_max_exp_by_level={6:500},
+        )
+
+        fields=self.domain.persistent.character.fields
+        self.assertEqual((fields['level'],fields['exp'],fields['max_exp']),(6,100,500))
+        self.assertEqual(fields['free_stat_points'],3)
+        self.assertEqual(fields['charm'],2)
+        self.assertEqual(fields['duel_point_like_state'],60)
+
+    def test_pet_level_crossing_remains_atomic_unresolved_boundary(self):
+        self.domain.persistent.pets[PetSlot(2)] = allied_pet()
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,templates=self.templates,entry_count_roll=1,
+            selection_rolls=(0,),birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(
+            request,spawned_enemies=spawned,allied_pet_slots=(2,),
+        )
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,slots={'player':0,'pet:2':1,enemy_id:10},
+        )
+        terminal=replace(
+            state,
+            hp_by_participant_id=MappingProxyType(
+                {'player':73,'pet:2':21,enemy_id:0}
+            ),
+            pending_exp_by_participant_id=MappingProxyType(
+                {'player':1100,'pet:2':490}
+            ),
+            phase=FINISHED,result=PLAYER_WIN,winning_side=0,
+        )
+
+        with self.assertRaisesRegex(ValueError,'unresolved pet level-up threshold'):
+            self.runtime.finish_persistent_battle_with_player_progression(
+                terminal,
+                player_exp_profile=LEGACY_CUMULATIVE_EXP,
+                next_player_max_exp_by_level={6:1500},
+            )
+
+        fields=self.domain.persistent.character.fields
+        self.assertEqual((fields['hp'],fields['level'],fields['exp']),(100,5,0))
+        self.assertEqual(fields['free_stat_points'],0)
+        self.assertEqual(fields['charm'],0)
+        self.assertEqual(fields['duel_point_like_state'],0)
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state['hp'],60)
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state['exp'],10)
     def test_old_single_variant_encounter_projection_remains_compatible(self):
         request = self.domain.request_encounter(
             group_roll=0,
