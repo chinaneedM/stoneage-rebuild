@@ -20,6 +20,11 @@ KAWASHI_MAX_RATE=75
 KAWASHI_PARA=0.02
 CRITICAL_PARA=0.09
 COUNTER_PARA=0.08
+ATTR_MAX=100
+AJ_SAME=1.0
+AJ_UP=1.5
+AJ_DOWN=0.6
+D_ATTR=1.0/(ATTR_MAX*ATTR_MAX)
 
 
 def _c_int(value):
@@ -87,6 +92,107 @@ def physical_base_damage(attack,effective_defense,random_value):
         raise ValueError("random_value outside high-attack range")
     k0=random_value-attack*D_16
     return _c_int((attack-effective_defense)*DAMAGE_RATE+k0)
+
+
+
+def elemental_vector(earth,water,fire,wind):
+    """Return stable BATTLE_GetAttr order: earth, water, fire, wind, none."""
+    values=[max(0,int(x)) for x in (earth,water,fire,wind)]
+    none=max(0,ATTR_MAX-sum(values))
+    return (*values,none)
+
+
+def attribute_core_damage(damage,attacker_elements,defender_elements):
+    """Stable BATTLE_AttrCalc without later field/property extensions.
+
+    Elements are supplied in earth, water, fire, wind order. The source uses
+    integer lvalues around floating coefficients, so each elemental subtotal
+    and the final return are truncated toward zero.
+    """
+    if int(damage)<0:
+        raise ValueError("damage must be non-negative")
+    ae=elemental_vector(*attacker_elements)
+    de=elemental_vector(*defender_elements)
+    earth,water,fire,wind,none=ae
+    dearth,dwater,dfire,dwind,dnone=de
+    # BATTLE_AttrAdjust multiplies attacker element weights by base damage
+    # before entering BATTLE_AttrCalc.
+    fire*=int(damage)
+    water*=int(damage)
+    earth*=int(damage)
+    wind*=int(damage)
+    none*=int(damage)
+
+    fire=_c_int(
+        fire*dnone*AJ_UP + fire*dfire*AJ_SAME
+        + fire*dwater*AJ_DOWN + fire*dearth*AJ_SAME
+        + fire*dwind*AJ_UP
+    )
+    water=_c_int(
+        water*dnone*AJ_UP + water*dfire*AJ_UP
+        + water*dwater*AJ_SAME + water*dearth*AJ_DOWN
+        + water*dwind*AJ_SAME
+    )
+    earth=_c_int(
+        earth*dnone*AJ_UP + earth*dfire*AJ_SAME
+        + earth*dwater*AJ_UP + earth*dearth*AJ_SAME
+        + earth*dwind*AJ_DOWN
+    )
+    wind=_c_int(
+        wind*dnone*AJ_UP + wind*dfire*AJ_DOWN
+        + wind*dwater*AJ_SAME + wind*dearth*AJ_UP
+        + wind*dwind*AJ_SAME
+    )
+    none=_c_int(
+        none*dnone*AJ_SAME + none*dfire*AJ_DOWN
+        + none*dwater*AJ_DOWN + none*dearth*AJ_DOWN
+        + none*dwind*AJ_DOWN
+    )
+    return _c_int((fire+water+earth+wind+none)*D_ATTR)
+
+
+def field_attribute_power(elements,field_attr="none",field_power=0):
+    """Stable BATTLE_FieldAttAdjust scalar for one participant."""
+    earth,water,fire,wind,_none=elemental_vector(*elements)
+    field_power=float(field_power)
+    selected={
+        "earth":earth,
+        "water":water,
+        "fire":fire,
+        "wind":wind,
+    }.get(str(field_attr))
+    if selected is None:
+        if str(field_attr)!="none":
+            raise ValueError(f"unknown field attribute: {field_attr}")
+        return 0.5
+    return 0.5 + selected*field_power*0.01*0.01*0.5
+
+
+def attribute_adjusted_damage(
+    damage,
+    attacker_elements,
+    defender_elements,
+    *,
+    field_attr="none",
+    field_power=0,
+):
+    """Stable four-attribute adjustment with explicit battlefield attribute."""
+    core=attribute_core_damage(damage,attacker_elements,defender_elements)
+    at=field_attribute_power(attacker_elements,field_attr,field_power)
+    df=field_attribute_power(defender_elements,field_attr,field_power)
+    return _c_int(core*(at/df))
+
+
+def critical_damage(
+    normal_attribute_damage,
+    defence_power,
+    attacker_level,
+    defender_level,
+):
+    """Stable non-bow critical additive term after normal damage calculation."""
+    return int(normal_attribute_damage)+critical_bonus(
+        defence_power,attacker_level,defender_level
+    )
 
 
 def guard_multiplier(roll_1_100):
