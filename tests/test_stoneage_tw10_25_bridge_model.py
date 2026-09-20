@@ -7,6 +7,8 @@ from tools.stoneage_tw10_25_bridge_model import (
     NpcTemplateBridge,
     PetSkillTemplateBridge,
     PetTemplateBridge,
+    build_pet_birth_bridge,
+    c_atoi,
 )
 
 
@@ -52,6 +54,61 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
         self.assertEqual(pet.template_ref.namespace, "enemybase.TEMPNO")
         self.assertNotIn("hp", pet.directly_bridgeable_pet_state())
         self.assertEqual(pet.growth_inputs()["BASEVITAL"], 20)
+
+    def test_c_atoi_matches_descendant_enemybase_loader(self):
+        self.assertEqual(c_atoi("5.00"), 5)
+        self.assertEqual(c_atoi("10.75"), 10)
+        self.assertEqual(c_atoi("-2.9"), -2)
+        self.assertEqual(c_atoi("abc"), 0)
+
+    def test_pet_birth_formula_bridge_is_deterministic_from_explicit_random_inputs(self):
+        pet = PetTemplateBridge.from_enemybase(
+            {
+                "TEMPNO": 88,
+                "INITNUM": 100,
+                "LVUPPOINT": "5.00",
+                "BASEVITAL": 20,
+                "BASESTR": 20,
+                "BASETGH": 20,
+                "BASEDEX": 20,
+                "IMGNUMBER": 10123,
+                "MODAI": 4,
+                "EARTHAT": 50,
+                "WATERAT": 50,
+                "FIREAT": 0,
+                "WINDAT": 0,
+                "SLOT": 4,
+                "PETSKILL1": 1,
+                "PETSKILL2": 2,
+                "PETSKILL3": 41,
+            }
+        )
+        born = build_pet_birth_bridge(
+            pet,
+            level=3,
+            birth_offsets=(-2, -1, 1, 2),
+            spawn_allocation_rolls=(0, 0, 0, 1, 1, 2, 2, 2, 3, 3),
+        )
+        self.assertEqual(pet.level_up_point, 5)
+        self.assertEqual(born.pet_rank, 4)
+        self.assertEqual(born.individualized_growth_base, (18, 19, 21, 22))
+        self.assertEqual(born.spawn_allocation_counts, (3, 2, 3, 2))
+        self.assertEqual(
+            (
+                born.internal_vital,
+                born.internal_strength,
+                born.internal_toughness,
+                born.internal_dexterity,
+            ),
+            (2310, 2310, 2640, 2640),
+        )
+        projected = born.combat_projection()
+        self.assertEqual(projected["max_hp"], 168)
+        self.assertEqual(projected["attack"], 29)
+        self.assertEqual(projected["defense"], 32)
+        self.assertEqual(projected["quick"], 26)
+        self.assertEqual(projected["graphic_id"], 10123)
+        self.assertNotIn("max_mp", projected)
 
     def test_pet_skill_client_view_excludes_server_behavior_fields(self):
         skill = PetSkillTemplateBridge.from_petskill(
