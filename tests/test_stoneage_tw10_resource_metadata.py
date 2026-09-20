@@ -76,7 +76,10 @@ class TaiwanV10ResourceMetadataTests(unittest.TestCase):
                 + struct.pack(
                     "<IIIiiii", 101, len(block1), len(block2), 1, -1, 1, 2
                 )
-                + bytes([1]) * 52
+                + struct.pack(
+                    "<BBH18h3H2xI",
+                    1, 1, 1, *([1] * 18), 1, 1, 1, 0,
+                )
             )
 
             out1 = root / "adrn1.tsv.gz"
