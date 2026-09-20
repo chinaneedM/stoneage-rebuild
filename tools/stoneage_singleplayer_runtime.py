@@ -23,6 +23,17 @@ from tools.stoneage_map_collision_model import (
     StaticCollisionMap,
     ordinary_step_allowed,
 )
+from tools.stoneage_battle_command_model import (
+    BattleRoundAction,
+    parse_player_battle_command,
+    prepare_player_round_action,
+)
+from tools.stoneage_enemy_spawn_model import (
+    EnemyBirthRolls,
+    SpawnedEnemy,
+    materialize_spawn_plan,
+    plan_enemy_spawns,
+)
 from tools.stoneage_singleplayer_battle import (
     BattleOutcome,
     BattleParticipant,
@@ -30,13 +41,16 @@ from tools.stoneage_singleplayer_battle import (
     BattleSession,
     apply_battle_outcome,
     begin_battle,
+    begin_group_battle,
 )
 from tools.stoneage_singleplayer_domain import (
     EncounterRequest,
     EncounterRolls,
+    GroupEncounterRequest,
     MapPosition,
     SinglePlayerHistoricalDomain,
 )
+from tools.stoneage_tw10_25_bridge_model import PetTemplateBridge
 from tools.stoneage_tw10_25_encounter_bridge import active_encounter_area
 from tools.stoneage_singleplayer_world import (
     HistoricalWorldTopology,
@@ -51,6 +65,7 @@ class HistoricalRuntimeStep:
     walk: WalkResolution
     encounter: EncounterRequest | None
     frequency: EncounterFrequencyDecision | None = None
+    group_encounter: GroupEncounterRequest | None = None
 
 
 @dataclass
@@ -82,11 +97,15 @@ class SinglePlayerHistoricalRuntime:
         self.tick_index += 1
 
         encounter = None
+        group_encounter = None
         if (
             walk.moved
             and not walk.encounter_suppressed
             and encounter_rolls is not None
         ):
+            group_encounter = self.domain.request_encounter_group(
+                group_roll=encounter_rolls.group_roll,
+            )
             encounter = self.domain.request_encounter(
                 group_roll=encounter_rolls.group_roll,
                 enemy_roll=encounter_rolls.enemy_roll,
@@ -97,6 +116,7 @@ class SinglePlayerHistoricalRuntime:
             tick_index=self.tick_index,
             walk=walk,
             encounter=encounter,
+            group_encounter=group_encounter,
         )
 
     def walk_step_with_frequency(
@@ -148,7 +168,11 @@ class SinglePlayerHistoricalRuntime:
         self.encounter_frequency = frequency.after
 
         encounter = None
+        group_encounter = None
         if frequency.encounter_triggered:
+            group_encounter = self.domain.request_encounter_group(
+                group_roll=encounter_rolls.group_roll,
+            )
             encounter = self.domain.request_encounter(
                 group_roll=encounter_rolls.group_roll,
                 enemy_roll=encounter_rolls.enemy_roll,
@@ -160,6 +184,7 @@ class SinglePlayerHistoricalRuntime:
             walk=walk,
             encounter=encounter,
             frequency=frequency,
+            group_encounter=group_encounter,
         )
 
     def walk_step_with_collision(
@@ -224,6 +249,76 @@ class SinglePlayerHistoricalRuntime:
             encounter_rolls=encounter_rolls,
             action_is_walk=action_is_walk,
             map_objmove_ok=map_objmove_ok,
+        )
+
+    def spawn_group_enemies(
+        self,
+        encounter: GroupEncounterRequest,
+        *,
+        templates: dict[int, PetTemplateBridge],
+        entry_count_roll: int,
+        selection_rolls: Sequence[int],
+        birth_rolls: Sequence[EnemyBirthRolls],
+    ) -> tuple[SpawnedEnemy, ...]:
+        if self.domain.world.player_position != encounter.position:
+            raise ValueError("group encounter position no longer matches world state")
+
+        areas = [
+            area
+            for area in self.domain.static.encounter_areas
+            if area.index == encounter.area_index
+        ]
+        if len(areas) != 1:
+            raise ValueError(
+                f"group encounter area {encounter.area_index} is not uniquely loaded"
+            )
+        if encounter.group_id not in self.domain.static.encounter_groups:
+            raise KeyError(f"group encounter references missing group {encounter.group_id}")
+
+        plan = plan_enemy_spawns(
+            areas[0],
+            self.domain.static.encounter_groups[encounter.group_id],
+            self.domain.static.enemy_variants,
+            templates,
+            entry_count_roll=entry_count_roll,
+            selection_rolls=selection_rolls,
+        )
+        if plan.actual_count > encounter.max_enemy_count:
+            raise ValueError("spawn plan exceeds GroupEncounterRequest boundary")
+        return materialize_spawn_plan(
+            plan,
+            templates,
+            birth_rolls=birth_rolls,
+        )
+
+    def start_group_battle(
+        self,
+        encounter: GroupEncounterRequest,
+        *,
+        spawned_enemies: Sequence[SpawnedEnemy],
+        allied_pet_slots: Sequence[int] = (),
+    ) -> BattleSession:
+        return begin_group_battle(
+            self.domain,
+            encounter,
+            enemies=tuple(spawn.participant for spawn in spawned_enemies),
+            allied_pet_slots=allied_pet_slots,
+        )
+
+    def prepare_player_action(
+        self,
+        session: BattleSession,
+        wire_command: str,
+        *,
+        initiative_random_subtract: int,
+        error_status: bool = False,
+    ) -> BattleRoundAction:
+        command = parse_player_battle_command(wire_command)
+        return prepare_player_round_action(
+            session.player,
+            command,
+            initiative_random_subtract=initiative_random_subtract,
+            error_status=error_status,
         )
 
     def start_battle(
