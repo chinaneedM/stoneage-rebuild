@@ -152,6 +152,131 @@ INDEX_ARITH|name=I|instruction_rva=0x32672|kind=lea|dst=edx|base=eax|index=eax|s
 INDEX_ARITH|name=I|instruction_rva=0x32697|kind=lea|dst=ebx|base=ebx|index=ebx|scale=4|disp=0
 CALLBACK|name=WN|rva=0x328c0|blocks=3|instructions=16|direct_targets=1|import_targets=0|indirect_jumps=0
 DIRECT|name=WN|target_rva=0x12930|calls=1
+TOKEN_PRELUDE|name=I|helper_rva=0x46c70|callsite_rva=0x3262f|instructions=7
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x3262f|order=1|instruction_rva=0x3261c|mnemonic=mov|ops=dword ptr [esp + 0x18], eax
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x3262f|order=2|instruction_rva=0x32620|mnemonic=lea|ops=eax, [esp + 0x20]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x3262f|order=3|instruction_rva=0x32624|mnemonic=push|ops=eax
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x3262f|order=4|instruction_rva=0x32625|mnemonic=push|ops=0xff
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x3262f|order=5|instruction_rva=0x3262a|mnemonic=push|ops=2
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x3262f|order=6|instruction_rva=0x3262c|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x3262f|order=7|instruction_rva=0x3262e|mnemonic=push|ops=ebp
+TOKEN_PRELUDE|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|instructions=18
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=1|instruction_rva=0x326c3|mnemonic=sub|ops=edi, ecx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=2|instruction_rva=0x326c5|mnemonic=lea|ops=edx, [ebx + 0x17f8a1a]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=3|instruction_rva=0x326cb|mnemonic=mov|ops=eax, ecx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=4|instruction_rva=0x326cd|mnemonic=mov|ops=esi, edi
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=5|instruction_rva=0x326cf|mnemonic=mov|ops=edi, edx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=6|instruction_rva=0x326d1|mnemonic=shr|ops=ecx, 2
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=7|instruction_rva=0x326d4|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=8|instruction_rva=0x326d6|mnemonic=mov|ops=ecx, eax
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=9|instruction_rva=0x326d8|mnemonic=and|ops=ecx, 3
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=10|instruction_rva=0x326db|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=11|instruction_rva=0x326dd|mnemonic=mov|ops=esi, dword ptr [esp + 0x10]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=12|instruction_rva=0x326e1|mnemonic=lea|ops=ecx, [esp + 0x11c]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=13|instruction_rva=0x326e8|mnemonic=lea|ops=edx, [esi + 3]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=14|instruction_rva=0x326eb|mnemonic=push|ops=ecx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=15|instruction_rva=0x326ec|mnemonic=push|ops=0xff
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=16|instruction_rva=0x326f1|mnemonic=push|ops=edx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=17|instruction_rva=0x326f2|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x326f5|order=18|instruction_rva=0x326f4|mnemonic=push|ops=ebp
+TOKEN_PRELUDE|name=I|helper_rva=0x46c70|callsite_rva=0x32783|instructions=8
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32783|order=1|instruction_rva=0x32765|mnemonic=mov|ops=dword ptr [ebx + 0x17f8aa0], 0
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32783|order=2|instruction_rva=0x3276f|mnemonic=lea|ops=edx, [esp + 0x21c]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32783|order=3|instruction_rva=0x32776|mnemonic=lea|ops=eax, [esi + 5]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32783|order=4|instruction_rva=0x32779|mnemonic=push|ops=edx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32783|order=5|instruction_rva=0x3277a|mnemonic=push|ops=0xff
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32783|order=6|instruction_rva=0x3277f|mnemonic=push|ops=eax
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32783|order=7|instruction_rva=0x32780|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32783|order=8|instruction_rva=0x32782|mnemonic=push|ops=ebp
+TOKEN_PRELUDE|name=I|helper_rva=0x46c70|callsite_rva=0x32899|instructions=7
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32899|order=1|instruction_rva=0x32887|mnemonic=lea|ops=edx, [esp + 0x28]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32899|order=2|instruction_rva=0x3288b|mnemonic=mov|ops=dword ptr [esp + 0x20], eax
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32899|order=3|instruction_rva=0x3288f|mnemonic=push|ops=edx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32899|order=4|instruction_rva=0x32890|mnemonic=push|ops=0xff
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32899|order=5|instruction_rva=0x32895|mnemonic=push|ops=ebx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32899|order=6|instruction_rva=0x32896|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x32899|order=7|instruction_rva=0x32898|mnemonic=push|ops=ebp
+TOKEN_PRELUDE|name=I|helper_rva=0x46da0|callsite_rva=0x32617|instructions=6
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32617|order=1|instruction_rva=0x32605|mnemonic=mov|ops=ebp, dword ptr [esp + 0x31c]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32617|order=2|instruction_rva=0x3260c|mnemonic=push|ops=1
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32617|order=3|instruction_rva=0x3260e|mnemonic=xor|ops=esi, esi
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32617|order=4|instruction_rva=0x32610|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32617|order=5|instruction_rva=0x32612|mnemonic=push|ops=ebp
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32617|order=6|instruction_rva=0x32613|mnemonic=mov|ops=dword ptr [esp + 0x14], esi
+TOKEN_PRELUDE|name=I|helper_rva=0x46da0|callsite_rva=0x32753|instructions=18
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=1|instruction_rva=0x32727|mnemonic=or|ops=ecx, 0xffffffff
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=2|instruction_rva=0x3272a|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=3|instruction_rva=0x3272c|mnemonic=not|ops=ecx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=4|instruction_rva=0x3272e|mnemonic=sub|ops=edi, ecx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=5|instruction_rva=0x32730|mnemonic=lea|ops=edx, [ebx + 0x17f8a37]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=6|instruction_rva=0x32736|mnemonic=mov|ops=eax, ecx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=7|instruction_rva=0x32738|mnemonic=mov|ops=esi, edi
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=8|instruction_rva=0x3273a|mnemonic=mov|ops=edi, edx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=9|instruction_rva=0x3273c|mnemonic=shr|ops=ecx, 2
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=10|instruction_rva=0x3273f|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=11|instruction_rva=0x32741|mnemonic=mov|ops=ecx, eax
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=12|instruction_rva=0x32743|mnemonic=and|ops=ecx, 3
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=13|instruction_rva=0x32746|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=14|instruction_rva=0x32748|mnemonic=mov|ops=esi, dword ptr [esp + 0x10]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=15|instruction_rva=0x3274c|mnemonic=lea|ops=ecx, [esi + 4]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=16|instruction_rva=0x3274f|mnemonic=push|ops=ecx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=17|instruction_rva=0x32750|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32753|order=18|instruction_rva=0x32752|mnemonic=push|ops=ebp
+TOKEN_PRELUDE|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|instructions=18
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=1|instruction_rva=0x327b5|mnemonic=or|ops=ecx, 0xffffffff
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=2|instruction_rva=0x327b8|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=3|instruction_rva=0x327ba|mnemonic=not|ops=ecx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=4|instruction_rva=0x327bc|mnemonic=sub|ops=edi, ecx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=5|instruction_rva=0x327be|mnemonic=lea|ops=edx, [ebx + 0x17f8a48]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=6|instruction_rva=0x327c4|mnemonic=mov|ops=eax, ecx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=7|instruction_rva=0x327c6|mnemonic=mov|ops=esi, edi
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=8|instruction_rva=0x327c8|mnemonic=mov|ops=edi, edx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=9|instruction_rva=0x327ca|mnemonic=shr|ops=ecx, 2
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=10|instruction_rva=0x327cd|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=11|instruction_rva=0x327cf|mnemonic=mov|ops=ecx, eax
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=12|instruction_rva=0x327d1|mnemonic=and|ops=ecx, 3
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=13|instruction_rva=0x327d4|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=14|instruction_rva=0x327d6|mnemonic=mov|ops=esi, dword ptr [esp + 0x10]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=15|instruction_rva=0x327da|mnemonic=lea|ops=ecx, [esi + 6]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=16|instruction_rva=0x327dd|mnemonic=push|ops=ecx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=17|instruction_rva=0x327de|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327e1|order=18|instruction_rva=0x327e0|mnemonic=push|ops=ebp
+TOKEN_PRELUDE|name=I|helper_rva=0x46da0|callsite_rva=0x327f3|instructions=5
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327f3|order=1|instruction_rva=0x327e6|mnemonic=lea|ops=edx, [esi + 7]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327f3|order=2|instruction_rva=0x327e9|mnemonic=mov|ops=dword ptr [ebx + 0x17f8aa4], eax
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327f3|order=3|instruction_rva=0x327ef|mnemonic=push|ops=edx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327f3|order=4|instruction_rva=0x327f0|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x327f3|order=5|instruction_rva=0x327f2|mnemonic=push|ops=ebp
+TOKEN_PRELUDE|name=I|helper_rva=0x46da0|callsite_rva=0x32806|instructions=5
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32806|order=1|instruction_rva=0x327f8|mnemonic=mov|ops=word ptr [ebx + 0x17f8aac], ax
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32806|order=2|instruction_rva=0x327ff|mnemonic=lea|ops=eax, [esi + 8]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32806|order=3|instruction_rva=0x32802|mnemonic=push|ops=eax
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32806|order=4|instruction_rva=0x32803|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32806|order=5|instruction_rva=0x32805|mnemonic=push|ops=ebp
+TOKEN_PRELUDE|name=I|helper_rva=0x46da0|callsite_rva=0x32848|instructions=5
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32848|order=1|instruction_rva=0x32838|mnemonic=mov|ops=word ptr [ebx + 0x17f8ab0], 0
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32848|order=2|instruction_rva=0x32841|mnemonic=lea|ops=edx, [esi + 9]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32848|order=3|instruction_rva=0x32844|mnemonic=push|ops=edx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32848|order=4|instruction_rva=0x32845|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32848|order=5|instruction_rva=0x32847|mnemonic=push|ops=ebp
+TOKEN_PRELUDE|name=I|helper_rva=0x46da0|callsite_rva=0x3285a|instructions=5
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x3285a|order=1|instruction_rva=0x3284d|mnemonic=add|ops=esi, 0xa
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x3285a|order=2|instruction_rva=0x32850|mnemonic=mov|ops=dword ptr [ebx + 0x17f8aa8], eax
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x3285a|order=3|instruction_rva=0x32856|mnemonic=push|ops=esi
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x3285a|order=4|instruction_rva=0x32857|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x3285a|order=5|instruction_rva=0x32859|mnemonic=push|ops=ebp
+TOKEN_PRELUDE|name=I|helper_rva=0x46da0|callsite_rva=0x32882|instructions=11
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=1|instruction_rva=0x3285f|mnemonic=mov|ops=word ptr [ebx + 0x17f8ab2], ax
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=2|instruction_rva=0x32866|mnemonic=mov|ops=ebx, dword ptr [esp + 0x30]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=3|instruction_rva=0x3286a|mnemonic=add|ops=esp, 0x18
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=4|instruction_rva=0x3286d|mnemonic=add|ops=ebx, 0xa
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=5|instruction_rva=0x32870|mnemonic=mov|ops=dword ptr [esp + 0x18], ebx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=6|instruction_rva=0x32874|mnemonic=lea|ops=ecx, [ebx - 1]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=7|instruction_rva=0x32877|mnemonic=lea|ops=eax, [ebx - 2]
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=8|instruction_rva=0x3287a|mnemonic=push|ops=ecx
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=9|instruction_rva=0x3287b|mnemonic=push|ops=0x7c
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=10|instruction_rva=0x3287d|mnemonic=push|ops=ebp
+TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46da0|callsite_rva=0x32882|order=11|instruction_rva=0x3287e|mnemonic=mov|ops=dword ptr [esp + 0x1c], eax
 PARSE_WINDOW|name=I|instruction_rva=0x32651|mnemonic=lea|ops=ecx, [esp + 0x1c]
 PARSE_WINDOW|name=I|instruction_rva=0x32655|mnemonic=push|ops=ecx
 PARSE_WINDOW|name=I|instruction_rva=0x32656|mnemonic=call|ops=0x446ff0
