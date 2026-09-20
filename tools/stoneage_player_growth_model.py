@@ -1,8 +1,109 @@
 #!/usr/bin/env python3
 """Reference model for the convergent StoneAge descendant player-growth core."""
 
+from dataclasses import dataclass
+from typing import Mapping
+
 POINTS_PER_LEVEL=3
 INTERNAL_PER_DISPLAY_POINT=100
+
+LEGACY_CUMULATIVE_EXP='legacy_cumulative'
+PER_LEVEL_EXP='per_level'
+PLAYER_LEVELUP_CHARM_DELTA=2
+
+EXP_PROFILES=frozenset({LEGACY_CUMULATIVE_EXP,PER_LEVEL_EXP})
+
+
+@dataclass(frozen=True)
+class PlayerExpTransition:
+    profile: str
+    start_level: int
+    start_exp: int
+    award_exp: int
+    end_level: int
+    end_exp: int
+    next_max_exp: int
+    levels_gained: int
+    free_stat_points_delta: int
+    charm_delta: int
+    duel_point_delta: int
+
+
+def resolve_player_exp_transition(
+    current_level,
+    current_exp,
+    award_exp,
+    current_max_exp,
+    *,
+    profile,
+    next_max_exp_by_level: Mapping[int,int] | None = None,
+):
+    '''Resolve one explicitly selected descendant EXP transition regime.
+
+    current_max_exp is the max/next EXP exposed for the current level.
+    After a crossing, next_max_exp_by_level[new_level] supplies the next
+    exposed value. Threshold data remains caller-supplied so later mixed
+    server tables are never silently promoted to an early JSS baseline.
+    '''
+    level=int(current_level)
+    exp=int(current_exp)
+    award=int(award_exp)
+    max_exp=int(current_max_exp)
+    profile=str(profile)
+    future={} if next_max_exp_by_level is None else {
+        int(k):int(v) for k,v in next_max_exp_by_level.items()
+    }
+
+    if profile not in EXP_PROFILES:
+        raise ValueError(f'unknown EXP profile: {profile}')
+    if level < 1:
+        raise ValueError('current_level must be >= 1')
+    if exp < 0 or award < 0:
+        raise ValueError('EXP values must be non-negative')
+    if max_exp <= 0:
+        raise ValueError('current_max_exp must be positive')
+    if exp >= max_exp:
+        raise ValueError('starting EXP must be below current max EXP')
+
+    start_level=level
+    start_exp=exp
+    work_exp=exp+award
+    levels_gained=0
+    duel_point_delta=0
+
+    while work_exp >= max_exp:
+        crossed=max_exp
+        if profile == PER_LEVEL_EXP:
+            work_exp-=crossed
+
+        level+=1
+        levels_gained+=1
+        duel_point_delta+=level*10
+
+        if level not in future:
+            raise ValueError(f'missing next max EXP for new level {level}')
+        next_max=int(future[level])
+        if next_max <= 0:
+            raise ValueError('next max EXP must be positive')
+        if profile == LEGACY_CUMULATIVE_EXP and next_max <= crossed:
+            raise ValueError(
+                'legacy cumulative max EXP must increase after level-up'
+            )
+        max_exp=next_max
+
+    return PlayerExpTransition(
+        profile=profile,
+        start_level=start_level,
+        start_exp=start_exp,
+        award_exp=award,
+        end_level=level,
+        end_exp=work_exp,
+        next_max_exp=max_exp,
+        levels_gained=levels_gained,
+        free_stat_points_delta=levels_gained*POINTS_PER_LEVEL,
+        charm_delta=PLAYER_LEVELUP_CHARM_DELTA if levels_gained else 0,
+        duel_point_delta=duel_point_delta,
+    )
 
 
 def displayed_stat(internal_value):

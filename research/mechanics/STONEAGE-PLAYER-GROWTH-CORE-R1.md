@@ -64,6 +64,57 @@ UpLevel * getSkup()
 
 behind a configuration feature; its setup defaults to 3. That configurable layer is a later server extension. The cross-lineage baseline remains **3 points per level**.
 
+## 2.1 Explicit level-transition profiles
+
+The two recovered descendant regimes are now represented as explicit reference
+profiles in `tools/stoneage_player_growth_model.py` rather than being selected
+implicitly.
+
+`LEGACY_CUMULATIVE_EXP` preserves the older compiled behavior:
+
+```text
+work_exp = cumulative_exp + award
+while work_exp >= cumulative_threshold_for_next_level:
+    level += 1
+    # crossed threshold is NOT subtracted
+```
+
+`PER_LEVEL_EXP` preserves the later `_NEWOPEN_MAXEXP` behavior:
+
+```text
+work_exp = current_level_exp + award
+while work_exp >= requirement_for_next_level:
+    work_exp -= requirement_for_next_level
+    level += 1
+```
+
+The threshold value after each crossing is caller-supplied. This is
+deliberate: the recovered mixed-2.5 `exp.txt` may be used as evidence for its
+own later profile, but it is not silently substituted for an unknown JSS-1999
+table.
+
+### Player level-up side effects
+
+`CHAR_LevelUpCheck()` adds duel points once for every crossed level using the
+new level number:
+
+```text
+duel_point += new_level * 10
+```
+
+The battle-result wrapper then applies:
+
+```text
+free_stat_points += UpLevel * 3
+charm = min(100, charm + 2)
+```
+
+The charm adjustment is executed **once when `UpLevel > 0`**, not once per
+level. Thus a two-level jump gives six free points and both level-specific DP
+awards, but still only +2 charm for that result-processing call.
+
+The reference model returns these values as deltas. It deliberately does not
+mutate persistent state or select a threshold table.
 ## 3. Four allocatable player stats
 
 The allocation table is exactly:
