@@ -1091,15 +1091,45 @@ Supplemental source ledgers:
 - Schema validation is enforced by `tests/test_stoneage_tw10_gameplay_schema.py` and `.github/workflows/validate-stoneage-tw10-gameplay-schema.yml`; GitHub Actions run **35506265458** completed successfully.
 - **Operational consequence:** broad client protocol and first-pass field-layout archaeology are no longer the critical path. The project can now start constructing reconstruction-side gameplay models and explicit v1-runtime ↔ server-master bridge mappings without importing later 2.5-only fields into the historical baseline.
 
+## Reconstruction gameplay bridge/model baseline — 2026-09-20
+
+- The Taiwan v1.0 client field schema is now consumed by executable reconstruction code rather than remaining documentation-only.
+- `research/clients/STONEAGE-TW10-25-GAMEPLAY-BRIDGE-R1.json` is the canonical explicit bridge from the v1 client/runtime schema to the recovered 2.5 server/master-data specimen. It preserves four hard identity separations: runtime object ID != template ID, inventory slot != item template ID, pet slot != enemybase TEMPNO, and 2.5 fields must not be backfilled into the v1 wire baseline.
+- `tools/stoneage_tw10_gameplay_model.py` provides schema-driven `CharacterState`, `PetState`, `ItemView`, `PetSkillView`, `WorldObject` and `NPCWindowSession` records. Widths, names and wire conversions are loaded from `STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json`, including the historical base-62 alphabet and escape decoder.
+- `tools/stoneage_tw10_25_bridge_model.py` provides explicit template bridge objects for enemybase, petskill, itemset and NPC template/create identities. Template references remain separate objects and never overwrite v1 runtime/slot identities.
+- Pet-template bridging is now split into:
+  - direct copied/runtime-visible fields such as graphic ID, MODAI, elements, skill-slot count and pet-skill IDs;
+  - growth/formula inputs such as INITNUM, LVUPPOINT and BASEVITAL/STR/TGH/DEX.
+- The convergent descendant pet birth path is executable as a **BRIDGE_2_5 formula layer**:
+  - fixed descendant enemybase loader uses `atoi`, so textual `LVUPPOINT=5.00` is stored as integer 5;
+  - PETRANK is calculated from the unmodified template four-stat sum;
+  - each growth component receives an explicit -2..+2 birth offset and is packed into `CHAR_ALLOCPOINT`;
+  - a distinct ten-roll allocation adds exactly ten spawn-stat points;
+  - current internal four stats use `(((level-1)*LVUPPOINT)+INITNUM) * current_base`;
+  - derived combat projection remains separate from the historical v1 wire evidence.
+- `tools/stoneage_tw10_25_encounter_bridge.py` now models the strict server identity chain:
+  `encount.INDEX -> group.GROUP_ID -> enemy.ID -> enemybase.TEMPNO -> runtime state`.
+  It accepts the exact field names emitted by the recovered probes as well as the normalized documentation names.
+- Group and enemy weighting remain separate stages; z-order overlap, item gates, concrete enemy level ranges and `CREATEMAXNUM` bounding are modeled explicitly. Unresolved positive references raise hard errors rather than reproducing the old C code's possible negative-array indexing.
+- The recovered active 2.5 specimen's **39 positively weighted unresolved group references across 32 encount rows** are encoded as `SPECIMEN_DEFECT`, not gameplay behavior; reconstruction code must not synthesize missing groups.
+- Validation is layered and green:
+  - gameplay baseline/schema tests;
+  - v1↔2.5 bridge-schema tests;
+  - schema-driven runtime model tests;
+  - executable template/pet-birth bridge tests;
+  - strict encounter-chain tests.
+  Latest relevant successful runs: **35507294753** (bridge schema) and **35507294756** (combined model suite).
+- **Operational consequence:** the first reconstruction-safe gameplay domain layer now exists. The critical path moves from broad data archaeology to closing the few remaining runtime derivation seams needed for an actual single-player engine prototype.
+
 ## Immediate next actions
 
-1. **Build explicit reconstruction bridge models from the v1 gameplay schema to the preserved 2.5 master-data corpus.** Start with pet/enemy, pet-skill, item and NPC/window identity relationships. Keep runtime object/slot IDs separate from authoritative template IDs and tag every bridge field as 2.5-only, lineage-supported or unresolved.
-2. **Implement the first reconstruction-side data models/tests against `STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json`.** Prioritize CharacterState, PetState, ItemInstance/ItemView, PetSkillView, WorldObject and NPCWindowSession. These models should consume the schema rather than hard-code later descendant layouts.
-3. **Close remaining server-authoritative formula/identity gaps only where implementation needs them.** Highest-value targets are pet/enemy template→runtime derivation, item template→client-view derivation, pet-skill template→client-view derivation and NPC template/create→world-object/window-session derivation.
-4. **Use the Taiwan 1.0 baseline as the comparison anchor for future artifact recovery.** Continue targeted JSS 1999 beta/retail and Korean Inium/Hananet/CNET/GameTime recovery, but do not let broad archaeology block reconstruction engineering.
-5. **Keep `〖2.5纯净〗` `tid=2132`, Korean 1.74 and Japanese 1.74a as secondary lineage/diff targets.** Version labels remain clues until byte provenance is recovered.
-6. **Treat the recovered mixed 2.5 bundle as a bridge, not the historical baseline.** Never backfill a v1 field merely because it exists in a 2.5 table.
-7. **Keep archaeology separate from redesign.** Historical compatibility models come first; later single-player redesign/optimization decisions remain separate DESIGN decisions.
+1. **Close NPC template/create -> v1 WorldObject / WN runtime derivation.** Trace the fixed descendant server object serializer and window sender far enough to distinguish static NPC template/create fields, allocated runtime object index, world-object presentation fields and per-session WN values. Do not equate Windowman route numbers with runtime object indexes.
+2. **Close ItemTemplate -> ItemInstance -> v1 ItemView derivation.** Keep `itemset.id` authoritative and separate from inventory slots; identify which v1 nine-field values are template-copied, per-instance/runtime-computed or presentation-only.
+3. **Compose enemy variant + pet template + pet birth + v1 PetState into one deterministic reconstruction path.** Preserve `enemy.ID`, `enemybase.TEMPNO`, pet slot and runtime object identity as distinct namespaces and keep BRIDGE_2_5 formula evidence visibly separate from V1_DIRECT client fields.
+4. **Add an engine-facing domain boundary over the reconstruction models.** The first prototype API should expose maps/world objects, player state, inventory, pets/skills, NPC sessions and encounter requests without requiring any network server process; historical network protocol remains an evidence source/adaptor, not the target architecture.
+5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
+6. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
+7. **Keep historical reconstruction and later redesign separate.** Once the deterministic historical domain layer can run end-to-end, optimization, automation/外挂-like convenience features and single-player redesign can be discussed as explicit DESIGN layers.
 
 
 ## Continuity status
