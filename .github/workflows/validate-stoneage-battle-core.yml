@@ -6,8 +6,10 @@ on:
       - research/mechanics/STONEAGE-DESCENDANT-BATTLE-CORE-R1.md
       - tools/stoneage_battle_core_model.py
       - tools/stoneage_battle_round_model.py
+      - tools/stoneage_battle_state_model.py
       - tests/test_stoneage_battle_core_model.py
       - tests/test_stoneage_battle_round_model.py
+      - tests/test_stoneage_battle_state_model.py
       - .github/workflows/validate-stoneage-battle-core.yml
 permissions:
   contents: read
@@ -16,4 +18,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -m unittest tests.test_stoneage_battle_core_model tests.test_stoneage_battle_round_model -v
+      - run: python3 -m unittest tests.test_stoneage_battle_core_model tests.test_stoneage_battle_round_model tests.test_stoneage_battle_state_model -v
