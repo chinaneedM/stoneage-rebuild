@@ -48,6 +48,7 @@ from tools.stoneage_enemy_spawn_model import (
     materialize_spawn_plan,
     plan_enemy_spawns,
 )
+from tools.stoneage_combat_profile_bridge import group_battle_combat_profiles
 from tools.stoneage_singleplayer_battle import (
     BattleOutcome,
     BattleParticipant,
@@ -64,7 +65,7 @@ from tools.stoneage_singleplayer_domain import (
     MapPosition,
     SinglePlayerHistoricalDomain,
 )
-from tools.stoneage_tw10_25_bridge_model import PetTemplateBridge
+from tools.stoneage_tw10_25_bridge_model import PetTemplateBridge, ReconstructedPetBridgeState
 from tools.stoneage_tw10_25_encounter_bridge import active_encounter_area
 from tools.stoneage_singleplayer_world import (
     HistoricalWorldTopology,
@@ -333,6 +334,26 @@ class SinglePlayerHistoricalRuntime:
             command,
             initiative_random_subtract=initiative_random_subtract,
             error_status=error_status,
+        )
+
+    def build_group_battle_combat_profiles(
+        self,
+        session: BattleSession,
+        *,
+        spawned_enemies: Sequence[SpawnedEnemy],
+        allied_pet_sources: Sequence[ReconstructedPetBridgeState] = (),
+        player_weapon_critical: int,
+    ) -> Mapping[str, BattleCombatProfile]:
+        """Build battle profiles only from provenance-bearing runtime sources."""
+        player_state = self.domain.persistent.character
+        if player_state is None:
+            raise ValueError("persistent player state is required for combat profiles")
+        return group_battle_combat_profiles(
+            session,
+            player_state=player_state,
+            player_weapon_critical=player_weapon_critical,
+            spawned_enemies=spawned_enemies,
+            allied_pet_sources=allied_pet_sources,
         )
 
     def start_persistent_battle_state(
