@@ -1302,10 +1302,34 @@ Supplemental source ledgers:
   - full gameplay/runtime run **35512186213** — success.
 - **Operational consequence:** former immediate battle action is closed to the first deterministic effect boundary; the next battle problem is persistent multi-round state/termination, not first-hit arithmetic.
 
+## Persistent multi-round battle state and first termination boundary — 2026-09-20
+
+- `tools/stoneage_battle_state_model.py` now promotes a `BattleSession` into immutable multi-round battle state with:
+  - current HP by participant;
+  - completed turn count;
+  - active/finished phase;
+  - victory/defeat result and winning side;
+  - previous submitted command set;
+  - persistent participant-slot identity.
+- Successive ordinary rounds now consume only currently living actors, while dead participant identity remains retained in battle state for target invalidation/history.
+- Stable descendant `BATTLE_OnlyRescue()` termination semantics are preserved:
+  - pets are explicitly skipped when determining whether a side still has a survival-bearing actor;
+  - therefore an allied pet **does not** keep the player side alive after the player dies;
+  - side 0 is checked first, then side 1, so the source's asymmetric both-zero edge ordering is preserved instead of inventing a draw.
+- Rescue/join-battle mode remains outside this R1 boundary rather than being guessed.
+- `tools/stoneage_singleplayer_runtime.py` now exposes `start_persistent_battle_state()` and `resolve_persistent_battle_round()`; real spawned group battles can carry HP from round to round until terminal state.
+- Reward/post-battle settlement remains separate: no EXP, drops, money, death penalties, healing, capture/escape or post-battle warp is inferred from termination.
+- Evidence: `research/mechanics/STONEAGE-BATTLE-STATE-TERMINATION-R1.md`.
+- Remote validation:
+  - battle-core run **35512820440** — success;
+  - gameplay state run **35512816199** — success;
+  - runtime multi-round integration run **35512877215** — success.
+- **Operational consequence:** former immediate action 1 is closed to the first persistent victory/defeat boundary. The next highest-priority unresolved implementation seam is the combat-profile bridge for fixed DEX/LUCK and elemental work values.
+
 ## Immediate next actions
 
-1. **Promote the ordinary-round result into a persistent multi-round in-process battle state and close the first battle-termination boundary.** Preserve current HP/command state across rounds and identify stable victory/defeat exit conditions before EXP/drop settlement; do not invent AI or reward rules.
-2. **Close the combat-profile bridge where evidence permits.** Recover/validate how early player/pet client fields correspond to server fixed DEX/LUCK and elemental work values; keep explicit inputs wherever the early mapping remains unproven.
+1. **Close the combat-profile bridge where evidence permits.** Recover/validate how early player/pet client fields correspond to server fixed DEX/LUCK and elemental work values used by dodge/critical/attribute calculations; keep explicit inputs wherever the early mapping remains unproven.
+2. **Extend battle settlement only along stable evidence seams after the profile bridge.** Prioritize direct HP/state return and ordinary victory/defeat consequences before EXP/drop/capture/escape; do not let later extension systems contaminate the early baseline.
 3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
 4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
 5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
