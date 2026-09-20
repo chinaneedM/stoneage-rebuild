@@ -108,6 +108,7 @@ def player_state():
                 "charm": 0,
                 "free_stat_points": 0,
                 "duel_point_like_state": 0,
+                "gold": 1234,
                 "luck": 7,
                 "earth": 50,
                 "water": 50,
@@ -555,6 +556,7 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(self.domain.world.player_position, battle.origin_position)
         self.assertEqual(self.domain.persistent.character.fields["hp"], 73)
         self.assertEqual(self.domain.persistent.character.fields["exp"], 0)
+        self.assertEqual(self.domain.persistent.character.fields["gold"], 1234)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["hp"], 21)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"], 10)
 
@@ -603,6 +605,7 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(self.domain.persistent.character.fields["exp"], 100)
         self.assertEqual(self.domain.persistent.character.fields["level"], 5)
         self.assertEqual(self.domain.persistent.character.fields["max_exp"], 1000)
+        self.assertEqual(self.domain.persistent.character.fields["gold"], 1234)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["hp"], 21)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"], 210)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["level"], 4)

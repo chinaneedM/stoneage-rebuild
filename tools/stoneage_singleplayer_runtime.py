@@ -463,8 +463,10 @@ class SinglePlayerHistoricalRuntime:
 
         This boundary intentionally settles only state already produced by the
         validated battle state machine: result plus surviving player/allied-pet
-        HP plus the already-earned three-slot item-drop buffer. EXP, money,
-        capture/escape, death penalties and recovery remain separate seams.
+        HP plus the already-earned three-slot item-drop buffer. The stable
+        base descendants do not mutate character currency in BATTLE_GetExpGold;
+        the later macro-gated _BATTLE_GOLD extension is intentionally excluded.
+        EXP, capture/escape, death penalties and recovery remain separate seams.
         """
         if state.phase != FINISHED or state.result is None:
             raise ValueError("cannot settle battle before termination")
