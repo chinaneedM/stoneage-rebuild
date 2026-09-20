@@ -15,6 +15,7 @@ on:
       - tools/stoneage_enemy_spawn_model.py
       - tools/stoneage_battle_command_model.py
       - tools/stoneage_battle_round_model.py
+      - tools/stoneage_battle_state_model.py
       - tools/stoneage_singleplayer_battle.py
       - tools/stoneage_singleplayer_runtime.py
       - tools/stoneage_singleplayer_persistence.py
@@ -38,6 +39,7 @@ on:
       - tests/test_stoneage_enemy_spawn_model.py
       - tests/test_stoneage_battle_command_model.py
       - tests/test_stoneage_battle_round_model.py
+      - tests/test_stoneage_battle_state_model.py
       - tests/test_stoneage_group_battle_runtime.py
       - tests/test_stoneage_singleplayer_battle.py
       - tests/test_stoneage_singleplayer_runtime.py
@@ -73,4 +75,5 @@ jobs:
             tests.test_stoneage_singleplayer_persistence \
             tests.test_stoneage_warp_transition_model \
             tests.test_stoneage_battle_core_model \
-            tests.test_stoneage_battle_round_model -v
+            tests.test_stoneage_battle_round_model \
+            tests.test_stoneage_battle_state_model -v
