@@ -1406,13 +1406,19 @@ Supplemental source ledgers:
   - concrete spawned `BattleDropItem` snapshots now flow through enemy participants, `PersistentBattleState`, ordinary-kill allocation and all persistent finish paths into the existing 20-slot `PersistentPlayerState.inventory`;
   - final item settlement takes the first empty persistent bag slot; no-space items are destroyed, and a dead player does not settle pending items;
   - detailed evidence is recorded in \`research/mechanics/STONEAGE-BATTLE-DROP-SETTLEMENT-R1.md\`.
+- Battle money is now closed as a **negative stable-descendant invariant**, not as an invented reward formula:
+  - Gavin and independent iriselia descendants both retain `BATTLE_GetExpGold()` but perform no battle `CHAR_GOLD` mutation and expose no `ENEMY_GOLD`, `WORKGETGOLD`, `_BATTLE_GOLD` or `getBattleGold` base path;
+  - the ordinary economy still has persistent `CHAR_GOLD`, so this is specifically a battle-reward absence rather than a missing currency system;
+  - a later Bismarck derivative adds an explicitly macro/config-gated `_BATTLE_GOLD / BATTLEGOLD` fixed bonus; it is treated as a later private-server extension and excluded from the base reconstruction;
+  - the runtime regression fixture now preserves `gold=1234` unchanged across terminal battle and EXP-settlement paths;
+  - exact JSS-1999 absence remains OPEN until original server evidence is recovered; detailed evidence is in `research/mechanics/STONEAGE-BATTLE-MONEY-R1.md`.
 - Still OPEN / deliberately excluded:
   - exact JSS-1999 choice of level-threshold regime/table;
   - maximum-level and pet-limit-level behavior;
   - complete visible pet AI/loyalty compliance projection;
   - early-JSS confirmation of later-gated combo-profit behavior;
   - full counter/combo/status action/damage execution;
-  - money, capture, escape and other post-battle rewards.
+  - capture, escape and other post-battle rewards.
 - Code validations:
   - `81e9572f1ff309982d13c7f1979a51516a5593a8` — pending ordinary kill EXP accumulation; runs **35514277568** and **35514277633** both success.
   - `b3207d71bc8dafa557e31d3450be2d6efb00bd29` — no-level-cross EXP persistence; run **35514525635** success.
@@ -1427,10 +1433,11 @@ Supplemental source ledgers:
   - `82692a51e05f1ca607178e901abd296bd84fa87b` — source-shaped battle-drop core; battle-core **35517467464** and gameplay **35517467477** success.
   - `cd1206d069c9fb2e61414996748ee24070e5cadd` — concrete pending-drop state plus persistent-inventory settlement; battle-core **35517775715** and gameplay **35517775683** success.
   - `bebb6c6fc8ddbf495cb8a9f159f63dd0e6f475e3` — normalized runtime/drop round signature ordering; battle-core **35517829479** and gameplay **35517829457** success.
+  - `a5f27d5dd792406e653ded8f4e1dce770851a710` — preserve the stable no-battle-money runtime invariant; gameplay **35518043576** success.
 
 ## Immediate next actions
 
-1. **Recover and implement battle money next, now that item drops are closed through persistent inventory.** Keep money as its own source-provenance seam; only after it is closed proceed to capture, escape, death penalties and recovery.
+1. **Recover battle capture next.** Determine the exact eligibility gates, probability calculation, target ownership/slot capacity, success state transition and post-battle persistence before implementing capture; do not borrow later private-server capture modifiers into the base profile. After capture, proceed to escape, death penalties and recovery as separate seams.
 2. **Expand counter/combo/status battle execution only through their own deterministic mechanics seams.** Their EXP attribution is closed; future action/damage/status execution must feed the existing source-shaped profit-list/scan model rather than redefine reward ownership.
 3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
 4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
