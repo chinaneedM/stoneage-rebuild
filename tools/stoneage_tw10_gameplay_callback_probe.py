@@ -412,6 +412,15 @@ def c_main_parse_profile(base, cfg):
     return rows
 
 
+def bounded_instruction_window(base, cfg, start_rva, end_rva):
+    rows = []
+    for addr, ins in sorted(cfg["instructions"].items()):
+        rva = addr - base
+        if start_rva <= rva < end_rva:
+            rows.append((rva, ins.mnemonic, ins.op_str))
+    return rows
+
+
 def shared_direct_targets(cfgs):
     memberships = collections.defaultdict(dict)
     for label, cfg in cfgs.items():
@@ -544,6 +553,22 @@ def main():
                                     f"kind={kind}|dst={dst}|base={base_reg}|index={index_reg}|"
                                     f"scale={scale}|disp={disp}"
                                 )
+
+        # Compact arithmetic/control windows used to resolve dynamic token strides.
+        for label, cfg, start_rva, end_rva in (
+            ("I", cfgs["I"], 0x32650, 0x326B0),
+            ("S:I", s_branch_cfgs.get("I"), 0x30922, 0x309B0),
+            ("S:W", s_branch_cfgs.get("W"), 0x30B4F, 0x30BC0),
+        ):
+            if cfg is None:
+                continue
+            for irva, mnemonic, ops in bounded_instruction_window(
+                base, cfg, start_rva, end_rva
+            ):
+                print(
+                    f"PARSE_WINDOW|name={label}|instruction_rva=0x{irva:x}|"
+                    f"mnemonic={mnemonic}|ops={clean(ops)}"
+                )
 
         wn_cfg = cfgs["WN"]
         for call_rva, seq in call_prelude(base, wn_cfg, base + 0x12930):
