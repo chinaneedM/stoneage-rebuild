@@ -158,12 +158,24 @@ class NpcSession:
 
 @dataclass(frozen=True)
 class EncounterRequest:
+    """Legacy single-variant encounter projection kept for compatibility."""
+
     area_index: int
     position: MapPosition
     group_id: int
     enemy_variant_id: EnemyVariantId
     pet_template_id: PetTemplateId
     level: int
+    max_enemy_count: int
+
+
+@dataclass(frozen=True)
+class GroupEncounterRequest:
+    """Group-level encounter boundary matching stable ENEMY_getEnemy ordering."""
+
+    area_index: int
+    position: MapPosition
+    group_id: int
     max_enemy_count: int
 
 
@@ -358,6 +370,39 @@ class SinglePlayerHistoricalDomain:
             raise ValueError("NPC session source identity does not match world NPC")
         self.interactions.npc_sessions[session.sequence_number] = session
         return session
+
+    def request_encounter_group(
+        self,
+        *,
+        group_roll: int,
+    ) -> GroupEncounterRequest | None:
+        position = self.world.player_position
+        if position is None:
+            raise ValueError("player position is required before encounter lookup")
+        area = active_encounter_area(
+            self.static.encounter_areas,
+            floor=position.floor_id,
+            x=position.x,
+            y=position.y,
+        )
+        if area is None:
+            return None
+
+        inventory_template_ids = tuple(
+            item.template_id.value for item in self.persistent.inventory.values()
+        )
+        group = choose_group(
+            area,
+            self.static.encounter_groups,
+            inventory_template_ids=inventory_template_ids,
+            roll=group_roll,
+        )
+        return GroupEncounterRequest(
+            area_index=area.index,
+            position=position,
+            group_id=group.group_id,
+            max_enemy_count=area.enemy_max_num,
+        )
 
     def request_encounter(
         self,
