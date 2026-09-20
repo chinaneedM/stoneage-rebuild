@@ -9,12 +9,14 @@ on:
       - tools/stoneage_tw10_25_encounter_bridge.py
       - tools/stoneage_singleplayer_domain.py
       - tools/stoneage_singleplayer_world.py
+      - tools/stoneage_map_collision_model.py
       - tools/stoneage_singleplayer_battle.py
       - tools/stoneage_singleplayer_runtime.py
       - tools/stoneage_singleplayer_persistence.py
       - tools/stoneage_battle_core_model.py
       - tools/stoneage_warp_transition_model.py
       - research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json
+      - research/mechanics/STONEAGE-MAP-COLLISION-OVERABILITY-R1.md
       - research/clients/STONEAGE-TW10-25-GAMEPLAY-BRIDGE-R1.json
       - tests/test_stoneage_tw10_gameplay_model.py
       - tests/test_stoneage_tw10_25_bridge_model.py
@@ -23,6 +25,7 @@ on:
       - tests/test_stoneage_tw10_25_gameplay_bridge.py
       - tests/test_stoneage_singleplayer_domain.py
       - tests/test_stoneage_singleplayer_world.py
+      - tests/test_stoneage_map_collision_model.py
       - tests/test_stoneage_singleplayer_battle.py
       - tests/test_stoneage_singleplayer_runtime.py
       - tests/test_stoneage_singleplayer_persistence.py
@@ -46,6 +49,7 @@ jobs:
             tests.test_stoneage_tw10_gameplay_model \
             tests.test_stoneage_singleplayer_domain \
             tests.test_stoneage_singleplayer_world \
+            tests.test_stoneage_map_collision_model \
             tests.test_stoneage_singleplayer_battle \
             tests.test_stoneage_singleplayer_runtime \
             tests.test_stoneage_singleplayer_persistence \
