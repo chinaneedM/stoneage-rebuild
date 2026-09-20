@@ -102,6 +102,22 @@ class Taiwan25GameplayBridgeTests(unittest.TestCase):
         self.assertEqual(specimen["affected_encount_rows"], 32)
         self.assertEqual(specimen["classification"], "SPECIMEN_DEFECT")
 
+    def test_npc_world_and_window_runtime_derivation_is_explicit(self):
+        npc = self.bridge["bridges"]["npc_master_to_world_and_window"]
+        world = npc["world_derivation"]
+        window = npc["window_derivation"]
+        self.assertEqual(world["v1_projection"]["record"], "world_character_record")
+        self.assertIn("allocated OBJECT index", world["v1_projection"]["fields"]["runtime_object_id"])
+        self.assertEqual(window["v1_projection"]["record"], "npc_window_session")
+        self.assertIn(
+            "same allocated NPC runtime object index",
+            window["v1_projection"]["source_object_index"],
+        )
+        self.assertIn(
+            "independent window/session state ID",
+            window["v1_projection"]["sequence_number"],
+        )
+
     def test_required_identity_guards_are_present(self):
         rules = {r["rule"]: r["status"] for r in self.bridge["identity_rules"]}
         for name in (
