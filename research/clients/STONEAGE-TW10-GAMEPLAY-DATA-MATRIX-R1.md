@@ -437,7 +437,7 @@ Each full-state slot has exactly **9 fields**:
 | Relative field | Direct v1 wire role | Early-lineage semantic mapping |
 | ---: | --- | --- |
 | 1 | escaped string | name |
-| 2 | escaped string | secondary/secret name |
+| 2 | escaped string | secondary display text (`name2` / runtime `paramshow`) |
 | 3 | decimal integer | color |
 | 4 | escaped string | memo/effect text |
 | 5 | decimal integer | graphic ID |
@@ -458,7 +458,7 @@ The first record is directly anchored by token 1 = decimal slot index and token 
 | ---: | --- | --- |
 | 1 | decimal integer | inventory slot index |
 | 2 | escaped string | name |
-| 3 | escaped string | secondary/secret name |
+| 3 | escaped string | secondary display text (`name2` / runtime `paramshow`) |
 | 4 | decimal integer | color |
 | 5 | escaped string | memo/effect text |
 | 6 | decimal integer | graphic ID |
@@ -467,7 +467,9 @@ The first record is directly anchored by token 1 = decimal slot index and token 
 | 9 | decimal integer | level |
 | 10 | decimal integer | send/use flags |
 
-The **10-field incremental width is V1 DIRECT**. Its difference from `S:I` is exactly the explicit slot-index field.
+The **10-field incremental width is V1 DIRECT**.
+
+Fixed descendant item senders independently clarify the two leading strings: the first client-visible string is sourced from instance `ITEM_SECRETNAME`; the second is a runtime `paramshow`/client `name2` field and is empty on the active base sender path. It should therefore not be mislabeled as a second secret-name field. Its difference from `S:I` is exactly the explicit slot-index field.
 
 **Version boundary:** neither v1 item layout contains the later descendant durability/damage string that follows send flags in newer source variants. Pile counts, alchemy tags, pet-item types, jigsaw fields, upgrade/countdown fields and other later additions likewise do not belong in the accepted v1 wire baseline.
 
