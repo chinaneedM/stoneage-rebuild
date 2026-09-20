@@ -103,6 +103,10 @@ S_BRANCH|chars=W|target_rva=0x30b4f|blocks=13|instructions=138|direct_targets=3
 S_BRANCH_DIRECT|chars=W|branch_rva=0x30b4f|target_rva=0x46da0|calls=3
 S_BRANCH_DIRECT|chars=W|branch_rva=0x30b4f|target_rva=0x46c70|calls=2
 S_BRANCH_DIRECT|chars=W|branch_rva=0x30b4f|target_rva=0x46ff0|calls=2
+INDEX_ARITH|name=S:W|instruction_rva=0x30b59|kind=lea|dst=ecx|base=eax|index=eax|scale=8|disp=0
+INDEX_ARITH|name=S:W|instruction_rva=0x30b5c|kind=lea|dst=ecx|base=eax|index=ecx|scale=4|disp=0
+INDEX_ARITH|name=S:W|instruction_rva=0x30b5f|kind=lea|dst=edx|base=ecx|index=ecx|scale=4|disp=0
+INDEX_ARITH|name=S:W|instruction_rva=0x30b67|kind=lea|dst=ebp|base=eax|index=edx|scale=2|disp=0
 S_BRANCH|chars=F,G,H,L,O,Q,R,S,T,U,V|target_rva=0x30ccb|blocks=1|instructions=6|direct_targets=0
 CALLBACK|name=C|rva=0x31260|blocks=42|instructions=525|direct_targets=19|import_targets=0|indirect_jumps=0
 DIRECT|name=C|target_rva=0x46c70|calls=24
@@ -144,6 +148,8 @@ ASCII_IMM|name=I|instruction_rva=0x327a9|mnemonic=cmp|value=84|char=T|ops=ecx, 0
 ASCII_IMM|name=I|instruction_rva=0x3280b|mnemonic=add|value=36|char=$|ops=esp, 0x24
 ASCII_IMM|name=I|instruction_rva=0x3280e|mnemonic=cmp|value=100|char=d|ops=ax, 0x64
 ASCII_IMM|name=I|instruction_rva=0x3289e|mnemonic=add|value=32|char=|ops=esp, 0x20
+INDEX_ARITH|name=I|instruction_rva=0x32672|kind=lea|dst=edx|base=eax|index=eax|scale=4|disp=0
+INDEX_ARITH|name=I|instruction_rva=0x32697|kind=lea|dst=ebx|base=ebx|index=ebx|scale=4|disp=0
 CALLBACK|name=WN|rva=0x328c0|blocks=3|instructions=16|direct_targets=1|import_targets=0|indirect_jumps=0
 DIRECT|name=WN|target_rva=0x12930|calls=1
 HELPER|rva=0x46c70|blocks=11|instructions=82|direct_targets=1|import_targets=1|ret_sites=3
