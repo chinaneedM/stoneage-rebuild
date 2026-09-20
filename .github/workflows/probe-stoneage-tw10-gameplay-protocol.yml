@@ -1,0 +1,75 @@
+name: Probe StoneAge Taiwan v1.0 gameplay protocol
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_gameplay_protocol_probe.py
+      - tests/test_stoneage_tw10_gameplay_protocol_probe.py
+      - .github/workflows/probe-stoneage-tw10-gameplay-protocol.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-tw10-gameplay-protocol
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Python dependencies
+        run: python3 -m pip install --quiet capstone pefile
+      - name: Run protocol probe unit tests
+        run: python3 -m unittest tests.test_stoneage_tw10_gameplay_protocol_probe -v
+      - name: Download and verify accepted Taiwan preservation archive
+        run: |
+          set -euo pipefail
+          curl -L --fail --retry 3 --retry-delay 2 --silent --show-error \
+            -o /tmp/CD_DIC.rar 'https://archive.org/download/stoneage_tw_2000_win/CD_DIC.rar'
+          echo "b37a4a47f4eb608cac67e4ddf7a1621a  /tmp/CD_DIC.rar" | md5sum -c -
+          echo "b8cf92720b6ec8b3f46ea2e9bfcda986d21e7ded  /tmp/CD_DIC.rar" | sha1sum -c -
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/tw10
+          7z x -y -o/tmp/tw10 /tmp/CD_DIC.rar 'STONEAGE.bin' >/dev/null
+          test "$(stat -c %s /tmp/tw10/STONEAGE.bin)" = "523449360"
+      - name: Generate gameplay protocol matrix
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_gameplay_protocol_probe \
+            --bin /tmp/tw10/STONEAGE.bin \
+            > research/recovered/STONEAGE-TW10-GAMEPLAY-PROTOCOL-R1.txt
+      - name: Verify critical v1.0 protocol shapes
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-TW10-GAMEPLAY-PROTOCOL-R1.txt
+          test -s "$report"
+          grep -E '^SHAPE_COMPARE\|region=recv\|name=C\|.*exact=1$' "$report"
+          grep -E '^SHAPE_COMPARE\|region=recv\|name=S\|.*exact=1$' "$report"
+          grep -E '^SHAPE_COMPARE\|region=recv\|name=I\|.*exact=1$' "$report"
+          grep -E '^SHAPE_COMPARE\|region=send\|name=MI\|.*exact=1$' "$report"
+          grep -E '^SHAPE_COMPARE\|region=recv\|name=SI\|.*exact=1$' "$report"
+          grep -E '^SHAPE_COMPARE\|region=send\|name=PS\|.*exact=1$' "$report"
+          grep -E '^SHAPE_COMPARE\|region=recv\|name=PS\|.*exact=1$' "$report"
+          grep -E '^SHAPE_COMPARE\|region=send\|name=SKUP\|.*exact=1$' "$report"
+          grep -E '^SHAPE_COMPARE\|region=recv\|name=SKUP\|.*exact=1$' "$report"
+          grep -E '^SHAPE_COMPARE\|region=recv\|name=WN\|.*exact=1$' "$report"
+          grep -E '^SHAPE_COMPARE\|region=recv\|name=PME\|.*exact=1$' "$report"
+          grep -E '^SHAPE_COMPARE\|region=send\|name=CreateNewChar\|.*exact=1$' "$report"
+      - name: Delete transient proprietary payloads
+        if: always()
+        run: rm -rf /tmp/tw10 /tmp/CD_DIC.rar
+      - name: Commit derived protocol metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-TW10-GAMEPLAY-PROTOCOL-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: inventory Taiwan v1.0 gameplay protocol'
+          git pull --rebase origin main
+          git push
