@@ -131,8 +131,11 @@ def _direct_small_code(
     tile_plane: bool,
 ) -> int:
     value = int(value)
-    if tile_plane and value == 0 and (int(event_value) & MAP_SEE_FLAG) == 0:
-        return current
+    if value == 0:
+        if not tile_plane:
+            return current
+        if (int(event_value) & MAP_SEE_FLAG) == 0:
+            return current
     if value in (0, 1, 2, 5, 6, 9, 10):
         return HIT_BLOCKED if current != HIT_OVERRIDE else current
     if value == 4:
