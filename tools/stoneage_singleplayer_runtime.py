@@ -37,6 +37,7 @@ from tools.stoneage_battle_round_model import (
     resolve_ordinary_round,
 )
 from tools.stoneage_battle_state_model import (
+    FINISHED,
     PersistentBattleState,
     PersistentRoundResult,
     begin_persistent_battle,
@@ -389,6 +390,52 @@ class SinglePlayerHistoricalRuntime:
             field_attr=field_attr,
             field_power=field_power,
             tie_break_order=tie_break_order,
+        )
+
+    def finish_persistent_battle(
+        self,
+        state: PersistentBattleState,
+    ) -> BattleReturn:
+        """Project terminal battle HP back into persistent single-player state.
+
+        This boundary intentionally settles only state already produced by the
+        validated battle state machine: result plus surviving player/allied-pet
+        HP. Rewards, drops, EXP, money, capture/escape, death penalties and
+        recovery remain separate evidence seams.
+        """
+        if state.phase != FINISHED or state.result is None:
+            raise ValueError("cannot settle battle before termination")
+
+        session = state.session
+        player_id = session.player.participant_id
+        if player_id not in state.hp_by_participant_id:
+            raise ValueError("terminal battle state is missing player HP")
+
+        pet_updates: dict[int, Mapping[str, int]] = {}
+        for participant in session.allied_pets:
+            if participant.source_pet_slot is None:
+                raise ValueError(
+                    f"allied participant {participant.participant_id} lacks source pet slot"
+                )
+            participant_id = participant.participant_id
+            if participant_id not in state.hp_by_participant_id:
+                raise ValueError(
+                    f"terminal battle state is missing HP for {participant_id}"
+                )
+            pet_updates[int(participant.source_pet_slot)] = {
+                "hp": int(state.hp_by_participant_id[participant_id])
+            }
+
+        return apply_battle_outcome(
+            self.domain,
+            session,
+            BattleOutcome(
+                result=state.result,
+                player_updates={
+                    "hp": int(state.hp_by_participant_id[player_id]),
+                },
+                pet_updates=pet_updates,
+            ),
         )
 
     def resolve_ordinary_battle_round(

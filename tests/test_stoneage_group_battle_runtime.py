@@ -13,8 +13,12 @@ from tools.stoneage_battle_round_model import (
 from tools.stoneage_battle_state_model import FINISHED, PLAYER_WIN
 from tools.stoneage_enemy_spawn_model import EnemyBirthRolls
 from tools.stoneage_singleplayer_domain import (
+    EnemyVariantId,
     HistoricalStaticData,
     MapPosition,
+    PetActor,
+    PetSlot,
+    PetTemplateId,
     PlayerState,
     SinglePlayerHistoricalDomain,
 )
@@ -99,6 +103,31 @@ def player_state():
                 "name": "Hero",
             }
         )
+    )
+
+
+def allied_pet():
+    return PetActor(
+        slot=PetSlot(2),
+        variant_id=EnemyVariantId(701),
+        template_id=PetTemplateId(89),
+        runtime_object_id=None,
+        state=MappingProxyType(
+            {
+                "hp": 60,
+                "max_hp": 60,
+                "mp": 20,
+                "max_mp": 20,
+                "exp": 10,
+                "max_exp": 500,
+                "level": 4,
+                "attack": 50,
+                "defense": 45,
+                "quick": 40,
+                "name": "Ally",
+            }
+        ),
+        skills=(),
     )
 
 
@@ -373,6 +402,53 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(second.after.phase, FINISHED)
         self.assertEqual(second.after.result, PLAYER_WIN)
         self.assertEqual(second.after.winning_side, 0)
+
+    def test_terminal_persistent_battle_settlement_updates_only_direct_hp(self):
+        self.domain.persistent.pets[PetSlot(2)] = allied_pet()
+        request = self.domain.request_encounter_group(group_roll=0)
+        spawned = self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle = self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+            allied_pet_slots=(2,),
+        )
+        enemy_id = battle.enemies[0].participant_id
+        state = self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player": 0, "pet:2": 1, enemy_id: 10},
+        )
+
+        with self.assertRaisesRegex(ValueError, "before termination"):
+            self.runtime.finish_persistent_battle(state)
+
+        terminal = replace(
+            state,
+            hp_by_participant_id=MappingProxyType(
+                {
+                    "player": 73,
+                    "pet:2": 21,
+                    enemy_id: 0,
+                }
+            ),
+            phase=FINISHED,
+            result=PLAYER_WIN,
+            winning_side=0,
+        )
+        returned = self.runtime.finish_persistent_battle(terminal)
+
+        self.assertEqual(returned.result, PLAYER_WIN)
+        self.assertEqual(returned.world_position, battle.origin_position)
+        self.assertEqual(self.domain.world.player_position, battle.origin_position)
+        self.assertEqual(self.domain.persistent.character.fields["hp"], 73)
+        self.assertEqual(self.domain.persistent.character.fields["exp"], 0)
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["hp"], 21)
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"], 10)
 
     def test_old_single_variant_encounter_projection_remains_compatible(self):
         request = self.domain.request_encounter(
