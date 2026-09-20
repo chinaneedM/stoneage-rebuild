@@ -1142,15 +1142,34 @@ Supplemental source ledgers:
   - bridge-derived v1 fields are combined with explicit unresolved runtime inputs for MP/EXP/rename/free-name rather than inventing later formulas;
   - the output field set/order is checked against the canonical 21-field v1 `S:K` schema;
   - latest combined model validation **35507842293** and bridge validation **35507842310** both pass.
+## Engine-facing single-player historical domain boundary — 2026-09-20
+
+- `tools/stoneage_singleplayer_domain.py` now defines the first engine-facing, in-process historical domain boundary. It intentionally has no socket, packet, account-server or network-server dependency; recovered v1 wire/protocol structures enter only through explicit evidence adapters.
+- Historical identity namespaces are now typed separately at the domain edge: runtime object ID, inventory slot, item template ID, pet slot, enemy variant ID, enemybase pet template ID and NPC template ID cannot be silently substituted for one another.
+- Deterministic adapters now cover the previously recovered bridge seams:
+  - v1 `CharacterState` -> engine-facing player snapshot;
+  - `ItemInstanceBridge` -> inventory item;
+  - composed enemy/template/birth `ReconstructedPetBridgeState` + petskill templates -> pet actor + skill views;
+  - `NpcRuntimeState` -> world NPC and in-process NPC window/session state;
+  - encounter area/group/enemy bridge tables + current position/inventory -> deterministic `EncounterRequest`.
+- Runtime state is explicitly partitioned into `HistoricalStaticData`, `PersistentPlayerState`, `TransientWorldState` and `InteractionState`. This prevents future engine selection from inheriting the old network-server process architecture.
+- `SinglePlayerSimulation.step()` provides the minimal deterministic simulation shell. It advances only a local tick index and snapshots state; optional `EncounterRolls` are supplied explicitly by the caller so no new RNG, movement, timing, collision or battle mechanics are invented.
+- Remote validation is green:
+  - **35508501840** validates the initial in-process historical domain boundary;
+  - **35508543992** validates the deterministic simulation-tick implementation;
+  - **35508555419** validates the final domain + tick test suite.
+- **Operational consequence:** the former immediate actions 1–3 (engine-facing domain boundary, deterministic bridge adapters, and minimal single-player state/tick shell) are complete to the first reconstruction-safe boundary. The critical path can now move from architecture scaffolding to a playable deterministic chain using already recovered map/warp and battle models.
+
 ## Immediate next actions
 
-1. **Add the engine-facing historical domain boundary.** Expose map/world objects, player state, inventory, pets/skills, NPC sessions and encounter requests as ordinary in-process single-player domain objects/services. No network server process should be required; the recovered protocol remains an evidence adapter only.
-2. **Build deterministic adapter paths from recovered bridge models into that domain boundary.** Start with world/NPC + inventory + pet + encounter composition and ensure template/runtime identities remain typed/separate.
-3. **Define the minimal single-player simulation tick and state container without redesigning mechanics.** Separate static master data, persistent player state, transient world state and interaction/session state so later engine selection is not coupled to historical server architecture.
-4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
-5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
-6. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
-7. **Keep historical reconstruction and later redesign separate.** Once the deterministic historical domain layer runs end-to-end, optimization, automation/外挂-like convenience features and single-player redesign can be discussed as explicit DESIGN layers.
+1. **Connect recovered map/warp topology to the single-player world domain.** Reuse the existing map-pair and warp-transition models to define legal floor/coordinate transitions and collision/transition boundaries without inventing new movement rules.
+2. **Connect `EncounterRequest` to the recovered battle-core model.** Define the deterministic boundary from world encounter selection into battle participants/state and back to world state, preserving historical formulas and unresolved fields explicitly.
+3. **Define the first end-to-end playable historical simulation slice.** Target: load static map/master data -> place player/NPCs -> move/warp through validated topology -> resolve an encounter request -> enter/exit a deterministic battle shell, all in-process.
+4. **Add a standalone persistence boundary after the playable slice is stable.** Persist only the appropriate `PersistentPlayerState` material; do not recreate historical account/network-server architecture unless needed as evidence.
+5. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
+6. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
+7. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen.** Never repair missing references by inventing data and never promote later extension fields into the v1 historical baseline without independent evidence.
+8. **Keep historical reconstruction and later redesign separate.** Once the deterministic historical domain layer runs end-to-end, optimization, automation/外挂-like convenience features and single-player redesign can be discussed as explicit DESIGN layers.
 
 
 ## Continuity status
