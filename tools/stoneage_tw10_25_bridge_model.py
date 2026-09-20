@@ -63,6 +63,7 @@ class PetTemplateBridge:
     base_toughness: int | None = None
     base_dexterity: int | None = None
     level_up_point: int | None = None
+    size: int | None = None
     size_class: int | None = None
 
     @classmethod
@@ -124,6 +125,7 @@ class PetTemplateBridge:
             "BASETGH": self.base_toughness,
             "BASEDEX": self.base_dexterity,
             "LVUPPOINT": self.level_up_point,
+            "SIZE": self.size,
         }
 
 
