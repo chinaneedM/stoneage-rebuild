@@ -1,0 +1,62 @@
+StoneAge Taiwan v1.0 gameplay callback structure probe — R1
+SCOPE|accepted-retail-disc|derived-binary-metadata-only|no-payload
+RUNTIME|image_base=0x400000|layout=mode1-2352|joliet=1
+CALLBACK|name=S|rva=0x2f670|blocks=4|instructions=23|direct_targets=0|import_targets=0|indirect_jumps=1
+INDIRECT_JUMP|name=S|instruction_rva=0x2f6a7|table_rva=|entries=0
+JUMP_CONTEXT|name=S|jump_rva=0x2f6a7|order=1|instruction_rva=0x2f67d|mnemonic=push|ops=esi
+JUMP_CONTEXT|name=S|jump_rva=0x2f6a7|order=2|instruction_rva=0x2f67e|mnemonic=push|ops=edi
+JUMP_CONTEXT|name=S|jump_rva=0x2f6a7|order=3|instruction_rva=0x2f67f|mnemonic=xor|ops=edi, edi
+JUMP_CONTEXT|name=S|jump_rva=0x2f6a7|order=4|instruction_rva=0x2f681|mnemonic=cmp|ops=eax, edi
+JUMP_CONTEXT|name=S|jump_rva=0x2f6a7|order=5|instruction_rva=0x2f683|mnemonic=jne|ops=0x430ccb
+JUMP_CONTEXT|name=S|jump_rva=0x2f6a7|order=6|instruction_rva=0x2f689|mnemonic=mov|ops=ebx, dword ptr [esp + 0x328]
+JUMP_CONTEXT|name=S|jump_rva=0x2f6a7|order=7|instruction_rva=0x2f690|mnemonic=movsx|ops=eax, byte ptr [ebx]
+JUMP_CONTEXT|name=S|jump_rva=0x2f6a7|order=8|instruction_rva=0x2f693|mnemonic=add|ops=eax, -0x43
+JUMP_CONTEXT|name=S|jump_rva=0x2f6a7|order=9|instruction_rva=0x2f696|mnemonic=cmp|ops=eax, 0x14
+JUMP_CONTEXT|name=S|jump_rva=0x2f6a7|order=10|instruction_rva=0x2f699|mnemonic=ja|ops=0x430ccb
+JUMP_CONTEXT|name=S|jump_rva=0x2f6a7|order=11|instruction_rva=0x2f69f|mnemonic=xor|ops=ecx, ecx
+JUMP_CONTEXT|name=S|jump_rva=0x2f6a7|order=12|instruction_rva=0x2f6a1|mnemonic=mov|ops=cl, byte ptr [eax + 0x430d04]
+CALLBACK|name=C|rva=0x31260|blocks=42|instructions=525|direct_targets=19|import_targets=0|indirect_jumps=0
+DIRECT|name=C|target_rva=0x46c70|calls=24
+DIRECT|name=C|target_rva=0x49566|calls=13
+DIRECT|name=C|target_rva=0x46da0|calls=3
+DIRECT|name=C|target_rva=0x46df0|calls=3
+DIRECT|name=C|target_rva=0x46ff0|calls=3
+DIRECT|name=C|target_rva=0x5ed0|calls=1
+DIRECT|name=C|target_rva=0x5f30|calls=1
+DIRECT|name=C|target_rva=0x6fa0|calls=1
+DIRECT|name=C|target_rva=0x7340|calls=1
+DIRECT|name=C|target_rva=0x74f0|calls=1
+DIRECT|name=C|target_rva=0x77c0|calls=1
+DIRECT|name=C|target_rva=0x3c750|calls=1
+DIRECT|name=C|target_rva=0x3c7f0|calls=1
+DIRECT|name=C|target_rva=0x3c940|calls=1
+DIRECT|name=C|target_rva=0x3ca60|calls=1
+DIRECT|name=C|target_rva=0x3cb20|calls=1
+DIRECT|name=C|target_rva=0x3cb40|calls=1
+DIRECT|name=C|target_rva=0x48748|calls=1
+DIRECT|name=C|target_rva=0x49160|calls=1
+ASCII_IMM|name=C|instruction_rva=0x31379|mnemonic=add|value=80|char=P|ops=esp, 0x50
+ASCII_IMM|name=C|instruction_rva=0x31403|mnemonic=add|value=72|char=H|ops=esp, 0x48
+ASCII_IMM|name=C|instruction_rva=0x3147f|mnemonic=add|value=64|char=@|ops=esp, 0x40
+ASCII_IMM|name=C|instruction_rva=0x314d6|mnemonic=add|value=48|char=0|ops=esp, 0x30
+ASCII_IMM|name=C|instruction_rva=0x31598|mnemonic=add|value=48|char=0|ops=eax, 0x30
+ASCII_IMM|name=C|instruction_rva=0x3160c|mnemonic=add|value=52|char=4|ops=esp, 0x34
+ASCII_IMM|name=C|instruction_rva=0x31629|mnemonic=add|value=48|char=0|ops=eax, 0x30
+ASCII_IMM|name=C|instruction_rva=0x316ff|mnemonic=add|value=68|char=D|ops=esp, 0x44
+ASCII_IMM|name=C|instruction_rva=0x31779|mnemonic=add|value=64|char=@|ops=esp, 0x40
+ASCII_IMM|name=C|instruction_rva=0x31826|mnemonic=add|value=68|char=D|ops=esp, 0x44
+ASCII_IMM|name=C|instruction_rva=0x3186f|mnemonic=add|value=40|char=(|ops=esp, 0x28
+CALLBACK|name=I|rva=0x325f0|blocks=21|instructions=226|direct_targets=3|import_targets=0|indirect_jumps=0
+DIRECT|name=I|target_rva=0x46da0|calls=8
+DIRECT|name=I|target_rva=0x46c70|calls=4
+DIRECT|name=I|target_rva=0x46ff0|calls=3
+ASCII_IMM|name=I|instruction_rva=0x32634|mnemonic=add|value=32|char=|ops=esp, 0x20
+ASCII_IMM|name=I|instruction_rva=0x327a9|mnemonic=cmp|value=84|char=T|ops=ecx, 0x54
+ASCII_IMM|name=I|instruction_rva=0x3280b|mnemonic=add|value=36|char=$|ops=esp, 0x24
+ASCII_IMM|name=I|instruction_rva=0x3280e|mnemonic=cmp|value=100|char=d|ops=ax, 0x64
+ASCII_IMM|name=I|instruction_rva=0x3289e|mnemonic=add|value=32|char=|ops=esp, 0x20
+CALLBACK|name=WN|rva=0x328c0|blocks=3|instructions=16|direct_targets=1|import_targets=0|indirect_jumps=0
+DIRECT|name=WN|target_rva=0x12930|calls=1
+SHARED_DIRECT|target_rva=0x46c70|callbacks=2|calls=C:24,I:4|total=28
+SHARED_DIRECT|target_rva=0x46da0|callbacks=2|calls=C:3,I:8|total=11
+SHARED_DIRECT|target_rva=0x46ff0|callbacks=2|calls=C:3,I:3|total=6
