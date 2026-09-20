@@ -1057,15 +1057,26 @@ Supplemental source ledgers:
 - The 11 BGM WAVs are outside `soundaddr_1.txt` / `sound_1.bin` and remain a separate historical namespace.
 - **Operational consequence:** the deterministic client-side resource recovery path (battle, graphics/animation and audio) is sufficiently complete to move the critical path to protocol-visible gameplay/master-data correlation. Do not re-open audio archaeology unless new provenance or an implementation question requires it.
 
+## Taiwan v1.0 gameplay protocol / master-data matrix — 2026-09-20
+
+- A new original-client protocol inventory now derives the accepted Taiwan v1.0 generated-protocol surface directly from `sa_3.exe`: **20 unique C→S builder names** in RVA `0x18c00..0x19730` and **33 unique S→C dispatch names** in `0x19730..0x1aa8a`. Canonical derived report: `research/recovered/STONEAGE-TW10-GAMEPLAY-PROTOCOL-R1.txt`.
+- GitHub Actions run **35505024289** completed successfully against the hash-verified retail disc after the workflow was corrected to preserve control drift rather than forcing every descendant-control message to exist in the compiled v1 client.
+- Exact v1 field-type shapes independently match the early generated lineage for key gameplay messages including `C`, `CA`, `CD`, `S`, `I`, `SI`, `KS`, `PS`, `SKUP`, `WN`, `PME`, `M`, `MC`, `RS`, `RD`, `B`, `D` and `CreateNewChar`.
+- Especially strong direct anchors are: C→S `PS = 3 ints + 1 string`; S→C `PS = 4 ints`; C→S `WN = 5 ints + 1 string`; S→C `WN = 4 ints + 1 string`; S→C `PME = 7 ints + 1 string`; C→S `CreateNewChar = 12 ints + 1 string`.
+- The bounded v1 send-builder region does not expose separate lineage-control builders `S` or `MI`, and the bounded receive region does not expose `EF` or `SE`. This is recorded only as **not observed in this compiled v1 surface**; it is not promoted to proof that the logical operations never existed.
+- `research/clients/STONEAGE-TW10-GAMEPLAY-DATA-MATRIX-R1.md` now correlates the direct v1 protocol surfaces with the early generated 2000 lineage and the preserved 2.5 server/master-data bridge. It explicitly labels evidence as **V1 DIRECT / EARLY LINEAGE / 2.5 BRIDGE / VERSIONED-OPEN**.
+- The matrix defines the first reconstruction-safe gameplay schemas for `CharacterState`, `WorldObject`, `PetState`, `PetSkillView`, `ItemView/ItemInstance` and `NPCWindowSession`, while quarantining later 2.5-only fields from the v1 baseline.
+- **Operational consequence:** broad protocol-name inventory and first-pass server-table correlation are complete enough to leave the critical path. Highest priority is now v1 callback-internal parsing for `S`, `C`, `I` and `WN`, so selected inner string fields can be promoted from EARLY LINEAGE to V1 DIRECT.
+
 ## Immediate next actions
 
-1. **Build a Taiwan v1.0 protocol-visible gameplay/master-data evidence matrix.** Correlate fields independently visible in the accepted v1.0 runtime/protocol for character, pet/enemy, item, skill and NPC/world state against the preserved 2.5 server/master-data bridge and pinned descendant source controls. Record each field as direct v1.0 FACT, lineage-supported meaning, later-only/versioned field, or OPEN; do not promote later table columns merely because they exist in 2.5.
-2. **Use the matrix to define the first reconstruction-ready gameplay data schemas.** Prefer identity and state fields that have direct v1.0 packet/runtime evidence, then attach 2.5 table relationships only where the evidence chain is explicit.
-3. **Use the Taiwan 1.0 baseline as the comparison anchor for future artifact recovery.** Continue targeted JSS 1999 beta/retail recovery and Korean Inium/Hananet/CNET/GameTime exact-token recovery, but do not let broad archaeology block technical extraction. Any recovered artifact should be diffed against Taiwan 1.0 by hashes, executable structure and resource generations.
-4. **Keep the Korean exact distribution tokens and GameTime guide/retail-media lanes open as cross-region evidence:** CNET `stoneage.zip`, Hananet `sa.exe / sa_demo.exe`, Gagamel `stoneagebeta.zip`, GameTime `onlStoneAge.zip / stone_demo.exe`. Do not repeat archive matrices already recorded as negative unless a new mirror/account/path appears.
+1. **Fingerprint the accepted v1 `S`, `C`, `I` and `WN` callback internals.** Identify their shared token parsers, category/switch structure and field extraction patterns. Prioritize direct confirmation of player status, pet status, world-object identity/position, item view fields and NPC/window session fields.
+2. **Promote only independently confirmed inner fields in the gameplay data matrix.** Keep the early 2000 generated protocol as the semantic control and the mixed 2.5 tables as server-data bridges; do not infer missing v1 fields from either source.
+3. **Turn confirmed matrix fields into machine-readable reconstruction schemas/tests.** Preserve runtime IDs separately from authoritative template IDs and keep explicit evidence tags per field.
+4. **Use the Taiwan 1.0 baseline as the comparison anchor for future artifact recovery.** Continue targeted JSS 1999 beta/retail recovery and Korean Inium/Hananet/CNET/GameTime exact-token recovery, but do not let broad archaeology block technical extraction.
 5. **Keep `〖2.5纯净〗` `tid=2132`, Korean 1.74 and Japanese 1.74a as secondary lineage/diff targets.** Version labels remain clues until byte provenance is recovered.
-6. **Treat the recovered mixed 2.5 bundle as a resource-format/server-data bridge, not as the historical baseline.** Its value now increases as a comparison corpus against the clean 1.0 client.
-7. **Keep archaeology separate from redesign.** The accepted retail bytes are evidence for original mechanics/data boundaries; later reconstruction choices remain separate DESIGN decisions.
+6. **Treat the recovered mixed 2.5 bundle as a resource-format/server-data bridge, not as the historical baseline.**
+7. **Keep archaeology separate from redesign.** Later reconstruction choices remain separate DESIGN decisions.
 
 ## Continuity status
 
