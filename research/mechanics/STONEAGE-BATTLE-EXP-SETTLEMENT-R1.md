@@ -209,16 +209,56 @@ Validation:
 - `509ac9fa68e67ce3e962bb700eae7e1817aee578` / run **35514947237** — player EXP profile model;
 - `1a48e8f57d3673c3a902351a754b5c6e5d8907f4` / run **35515032705** — runtime player threshold-crossing settlement.
 
-## 9. Explicitly OPEN
+## 9. Explicit pet threshold-crossing settlement
 
-Before threshold-crossing persistence can be promoted for the early baseline,
-the project still needs an explicit/versioned decision or stronger evidence
+The pet path now composes the selected EXP regime with the stable randomized
+growth chain without hiding any RNG.
+
+Persistent pet growth identity carries:
+
+- PETRANK;
+- packed individualized ALLOCPOINT;
+- current internal VITAL / STR / TOUGH / DEX;
+- hidden VARIABLEAI.
+
+For every level gained, the caller must provide one `PetLevelGrowthRolls`
+bundle containing all ten four-way allocation draws and the rank-band draw.
+`resolve_pet_exp_growth_transition()` rejects missing or surplus bundles.
+
+`SinglePlayerHistoricalRuntime.finish_persistent_battle_with_progression()`
+then stages, validates and commits the resulting visible and hidden state
+atomically. The visible compliance subset currently closed by evidence is:
+
+- level / EXP / max EXP;
+- max HP;
+- attack;
+- defense;
+- quick.
+
+Terminal battle HP is preserved unless it exceeds the recalculated maximum; no
+level-up heal is invented. Hidden VARIABLEAI receives the stable +500 per
+gained level with the recovered clamp. The derived visible AI/loyalty value is
+left unchanged because its complete owner/charm/template compliance projection
+is a separate seam.
+
+Persistence r3 records VARIABLEAI; r2 migration supplies its recovered creation
+default of zero, while r1 remains unable to invent missing growth identity.
+
+Validation chain:
+
+- `250a328660dcd070b0116880f4212c895818b0e8` / **35515398842** — explicit multi-level pet growth;
+- `95f7e1e36f06eb4f9a00f3a35088dba32f56acc8` / **35515685028** — persistent hidden loyalty-growth state and atomic outcome staging;
+- `687240810018cf5448daeef2e07d79f0e94dc3d3` / **35515940125**, **35515940131**, **35515940173** — integrated pet threshold crossing and all relevant validations.
+
+## 10. Explicitly OPEN
+
+The project still needs an explicit/versioned decision or stronger evidence
 for:
 
 - JSS-1999 threshold representation and exact table;
-- pet level-up random growth application;
-- maximum-level behavior;
-- ride-pet EXP;
+- maximum-level and pet-limit-level behavior;
+- complete visible pet AI/loyalty compliance;
+- ride-pet execution/attribution around the already-preserved 60% award;
 - combo/counter/status kill attribution.
 
 Those uncertainties must remain visible rather than being hidden behind the

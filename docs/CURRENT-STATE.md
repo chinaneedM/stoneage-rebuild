@@ -1383,12 +1383,19 @@ Supplemental source ledgers:
   - battle-result charm is +2 once when one or more levels are gained, not +2 per level;
   - threshold values after a crossing remain explicit caller inputs, so no later table is silently promoted to JSS.
 - `finish_persistent_battle_with_player_progression()` applies those player transitions only when the caller selects the profile and supplies future thresholds; it also requires existing `free_stat_points`, `charm`, and `duel_point_like_state` fields.
-- Pet threshold crossing remains atomically blocked until randomized pet-growth mutation is modeled.
+- Pet threshold crossing is now closed to an explicit deterministic descendant boundary:
+  - `PetGrowthState` persists PETRANK, individualized ALLOCPOINT, current internal V/S/T/D, and hidden VARIABLEAI;
+  - persistence schema r3 stores VARIABLEAI, with explicit r1/r2 migration behavior;
+  - `PetLevelGrowthRolls` carries all ten allocation draws plus the rank-band draw for one gained level;
+  - `resolve_pet_exp_growth_transition()` requires exactly one roll bundle per level gained and composes it with the selected cumulative/per-level EXP profile;
+  - `finish_persistent_battle_with_progression()` can now settle player and pet threshold crossings atomically;
+  - pet level-up recalculates the already-closed max-HP/attack/defense/quick projection while preserving terminal battle HP rather than auto-healing;
+  - hidden VARIABLEAI receives the stable +500-per-level update; visible pet AI remains a separate compliance seam and is not guessed.
 - Still OPEN / deliberately excluded:
   - exact JSS-1999 choice of level-threshold regime/table;
-  - pet growth rolls and pet level-up state mutation;
-  - maximum-level behavior;
-  - ride-pet 60% EXP side award;
+  - maximum-level and pet-limit-level behavior;
+  - complete visible pet AI/loyalty compliance projection;
+  - ride-pet execution/attribution around the already-modeled 60% arithmetic;
   - combo/counter/status kill attribution;
   - items, money, capture, escape and other post-battle rewards.
 - Code validations:
@@ -1396,16 +1403,18 @@ Supplemental source ledgers:
   - `b3207d71bc8dafa557e31d3450be2d6efb00bd29` — no-level-cross EXP persistence; run **35514525635** success.
   - `509ac9fa68e67ce3e962bb700eae7e1817aee578` — explicit player EXP transition profiles; run **35514947237** success.
   - `1a48e8f57d3673c3a902351a754b5c6e5d8907f4` — explicit player threshold-crossing settlement; run **35515032705** success.
+  - `250a328660dcd070b0116880f4212c895818b0e8` — explicit multi-level pet growth/VARIABLEAI model; run **35515398842** success.
+  - `95f7e1e36f06eb4f9a00f3a35088dba32f56acc8` — persistent pet loyalty-growth identity and staged atomic battle outcome; run **35515685028** success.
+  - `687240810018cf5448daeef2e07d79f0e94dc3d3` — explicit pet threshold-crossing settlement; gameplay **35515940125**, pet-growth **35515940131**, and recovery probe **35515940173** all success.
 
 ## Immediate next actions
 
-1. **Close pet threshold-crossing growth as its own deterministic seam.** Recover `CHAR_PetLevelUp()` rank/random growth inputs and represent every RNG draw explicitly before allowing pet EXP to cross a level boundary; keep pet AI/loyalty side effects separately evidenced.
-2. **Close remaining EXP side paths independently.** Ride-pet 60% awards and combo/counter/status kill attribution require their own execution seams; do not generalize them from the ordinary single-hit model.
-3. **Extend post-battle rewards one subsystem at a time after EXP.** Drops, money, capture, escape, death penalties and recovery remain separate evidence seams; do not bundle them into one guessed settlement routine.
-4. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
-5. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
-6. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
-7. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen and keep historical reconstruction separate from redesign.** Never repair missing references by inventing data; later optimization/automation remains an explicit DESIGN layer.
+1. **Close the remaining EXP side paths independently.** `ride_pet_exp_from_enemy()` already preserves the 60%-after-level-gap arithmetic; the missing work is ride-pet execution identity/attribution plus combo/counter/status kill attribution. Do not generalize these from ordinary single-hit attacks.
+2. **Extend post-battle rewards one subsystem at a time after EXP.** Drops, money, capture, escape, death penalties and recovery remain separate evidence seams; do not bundle them into one guessed settlement routine.
+3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
+4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
+5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
+6. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen and keep historical reconstruction separate from redesign.** Never repair missing references by inventing data; later optimization/automation remains an explicit DESIGN layer.
 
 
 ## Continuity status
