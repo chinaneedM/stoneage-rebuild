@@ -325,12 +325,14 @@ class SinglePlayerHistoricalRuntime:
         *,
         spawned_enemies: Sequence[SpawnedEnemy],
         allied_pet_slots: Sequence[int] = (),
+        ride_pet_slot: int | None = None,
     ) -> BattleSession:
         return begin_group_battle(
             self.domain,
             encounter,
             enemies=tuple(spawn.participant for spawn in spawned_enemies),
             allied_pet_slots=allied_pet_slots,
+            ride_pet_slot=ride_pet_slot,
         )
 
     def prepare_player_action(
@@ -542,6 +544,36 @@ class SinglePlayerHistoricalRuntime:
                         )
                     updates["exp"] = next_exp
             pet_updates[slot] = updates
+
+        active_pet_ids={
+            str(participant.participant_id)
+            for participant in session.allied_pets
+        }
+        ride=session.ride_pet
+        if ride is not None and str(ride.participant_id) not in active_pet_ids:
+            if ride.source_pet_slot is None:
+                raise ValueError("ride EXP recipient lacks source pet slot")
+            participant_id=str(ride.participant_id)
+            if participant_id not in state.pending_exp_by_participant_id:
+                raise ValueError(
+                    "terminal battle state is missing ride-pet pending EXP"
+                )
+            slot=int(ride.source_pet_slot)
+            pet_slot=PetSlot(slot)
+            if pet_slot not in self.domain.persistent.pets:
+                raise KeyError(f"missing persistent ride pet slot {slot}")
+            pet=self.domain.persistent.pets[pet_slot]
+            hp=int(pet.state["hp"])
+            pending=int(state.pending_exp_by_participant_id[participant_id])
+            if player_can_receive_exp and hp>0 and pending>0:
+                current_exp=int(pet.state["exp"])
+                max_exp=int(pet.state["max_exp"])
+                next_exp=current_exp+pending
+                if max_exp<=current_exp or next_exp>=max_exp:
+                    raise ValueError(
+                        "ride-pet pending EXP reaches unresolved level-up threshold"
+                    )
+                pet_updates[slot]={"exp":next_exp}
 
         return apply_battle_outcome(
             self.domain,
@@ -779,6 +811,97 @@ class SinglePlayerHistoricalRuntime:
                         )
             pet_updates[slot]=updates
 
+        active_pet_ids={
+            str(participant.participant_id)
+            for participant in session.allied_pets
+        }
+        ride=session.ride_pet
+        if ride is not None and str(ride.participant_id) not in active_pet_ids:
+            if ride.source_pet_slot is None:
+                raise ValueError('ride EXP recipient lacks source pet slot')
+            participant_id=str(ride.participant_id)
+            if participant_id not in state.pending_exp_by_participant_id:
+                raise ValueError(
+                    'terminal battle state is missing ride-pet pending EXP'
+                )
+            slot=int(ride.source_pet_slot)
+            pet_slot=PetSlot(slot)
+            if pet_slot not in self.domain.persistent.pets:
+                raise KeyError(f'missing persistent ride pet slot {slot}')
+            pet=self.domain.persistent.pets[pet_slot]
+            hp=int(pet.state['hp'])
+            pending=int(state.pending_exp_by_participant_id[participant_id])
+            if player_can_receive_exp and hp>0 and pending>0:
+                current_exp=int(pet.state['exp'])
+                max_exp=int(pet.state['max_exp'])
+                next_exp=current_exp+pending
+                updates: dict[str,int]={}
+                if max_exp<=current_exp:
+                    raise ValueError(
+                        'ride pet persistent EXP is already at or above max EXP'
+                    )
+                if next_exp<max_exp:
+                    updates['exp']=next_exp
+                else:
+                    if pet_exp_profile is None:
+                        raise ValueError(
+                            'ride-pet pending EXP reaches unresolved pet level-up threshold'
+                        )
+                    if pet.growth is None:
+                        raise ValueError(
+                            f'ride pet slot {slot} lacks hidden growth identity'
+                        )
+                    if slot not in pet_thresholds:
+                        raise ValueError(
+                            f'ride pet slot {slot} lacks explicit post-level EXP thresholds'
+                        )
+                    if slot not in pet_rolls:
+                        raise ValueError(
+                            f'ride pet slot {slot} lacks explicit level-up growth rolls'
+                        )
+                    growth=pet.growth
+                    transition=resolve_pet_exp_growth_transition(
+                        int(pet.state['level']),
+                        current_exp,
+                        pending,
+                        max_exp,
+                        profile=pet_exp_profile,
+                        next_max_exp_by_level=pet_thresholds[slot],
+                        growth_base=unpack_growth_base(growth.alloc_point),
+                        rank=growth.pet_rank,
+                        current_internal_stats=(
+                            growth.internal_vital,
+                            growth.internal_strength,
+                            growth.internal_toughness,
+                            growth.internal_dexterity,
+                        ),
+                        current_variable_ai=growth.variable_ai,
+                        level_rolls=pet_rolls[slot],
+                    )
+                    derived=base_derived_stats(
+                        *transition.growth.end_internal_stats
+                    )
+                    updates.update({
+                        'level':transition.end_level,
+                        'exp':transition.end_exp,
+                        'max_exp':transition.next_max_exp,
+                        'max_hp':derived['max_hp'],
+                        'attack':derived['attack_power'],
+                        'defense':derived['defence_power'],
+                        'quick':derived['quick'],
+                        'hp':min(hp,derived['max_hp']),
+                    })
+                    pet_growth_updates[slot]=PetGrowthState(
+                        pet_rank=growth.pet_rank,
+                        alloc_point=growth.alloc_point,
+                        internal_vital=transition.growth.end_internal_stats[0],
+                        internal_strength=transition.growth.end_internal_stats[1],
+                        internal_toughness=transition.growth.end_internal_stats[2],
+                        internal_dexterity=transition.growth.end_internal_stats[3],
+                        variable_ai=transition.growth.end_variable_ai,
+                    )
+                pet_updates[slot]=updates
+
         return apply_battle_outcome(
             self.domain,
             session,
@@ -832,12 +955,14 @@ class SinglePlayerHistoricalRuntime:
         *,
         enemies: Sequence[BattleParticipant],
         allied_pet_slots: Sequence[int] = (),
+        ride_pet_slot: int | None = None,
     ) -> BattleSession:
         return begin_battle(
             self.domain,
             encounter,
             enemies=enemies,
             allied_pet_slots=allied_pet_slots,
+            ride_pet_slot=ride_pet_slot,
         )
 
     def finish_battle(

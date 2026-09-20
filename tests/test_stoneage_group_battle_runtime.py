@@ -428,6 +428,84 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
             {"player": 100},
         )
 
+    def test_player_kill_ride_pet_exp_settles_without_active_pet_entry(self):
+        self.domain.persistent.pets[PetSlot(2)] = allied_pet()
+        request = self.domain.request_encounter_group(group_roll=0)
+        spawned = self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle = self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+            ride_pet_slot=2,
+        )
+        self.assertEqual(battle.allied_pets, ())
+        self.assertEqual(battle.ride_pet.source_pet_slot, 2)
+
+        enemy = replace(
+            battle.enemies[0],
+            hp=30,
+            max_hp=30,
+            defense=20,
+            quick=20,
+        )
+        battle = replace(battle, enemies=(enemy,))
+        enemy_id = enemy.participant_id
+        state = self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player": 0, enemy_id: 10},
+        )
+        result = self.runtime.resolve_persistent_battle_round(
+            state,
+            commands={
+                "player": BattleCommand(BATTLE_COM_ATTACK, command2=10),
+                enemy_id: BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player": 0, enemy_id: 0},
+            profiles={
+                "player": BattleCombatProfile(
+                    fixed_dex=100,
+                    fixed_luck=0,
+                    earth=0,
+                    water=0,
+                    fire=0,
+                    wind=0,
+                ),
+                enemy_id: BattleCombatProfile(
+                    fixed_dex=100,
+                    fixed_luck=0,
+                    earth=0,
+                    water=0,
+                    fire=0,
+                    wind=0,
+                ),
+            },
+            attack_rolls={
+                "player": OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.after.phase, FINISHED)
+        self.assertEqual(
+            dict(result.after.pending_exp_by_participant_id),
+            {"player": 100, "pet:2": 60},
+        )
+        self.assertNotIn("pet:2", result.after.hp_by_participant_id)
+
+        self.runtime.finish_persistent_battle_without_level_crossing(result.after)
+        pet=self.domain.persistent.pets[PetSlot(2)]
+        self.assertEqual(pet.state["exp"],70)
+        self.assertEqual(pet.state["hp"],60)
+        self.assertEqual(pet.growth.variable_ai,0)
+
     def test_terminal_persistent_battle_settlement_updates_only_direct_hp(self):
         self.domain.persistent.pets[PetSlot(2)] = allied_pet()
         request = self.domain.request_encounter_group(group_roll=0)
