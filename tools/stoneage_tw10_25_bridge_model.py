@@ -11,12 +11,37 @@ from dataclasses import dataclass
 from typing import Any, Mapping, Sequence
 
 from tools.stoneage_tw10_gameplay_model import TemplateRef
+from tools.stoneage_pet_growth_model import (
+    allocation_counts,
+    individualize_growth_base,
+    pack_growth_base,
+    pet_rank_from_template_base,
+)
+from tools.stoneage_player_growth_model import base_derived_stats
 
 
 def _required(row: Mapping[str, Any], key: str) -> Any:
     if key not in row:
         raise KeyError(f"missing bridge source field: {key}")
     return row[key]
+
+
+def c_atoi(value: Any) -> int:
+    """Model the fixed descendant loader's atoi treatment of table fields."""
+    text = str(value).lstrip()
+    if not text:
+        return 0
+    sign = 1
+    if text[0] in "+-":
+        if text[0] == "-":
+            sign = -1
+        text = text[1:]
+    digits = []
+    for ch in text:
+        if not ch.isdigit():
+            break
+        digits.append(ch)
+    return sign * int("".join(digits) or "0")
 
 
 @dataclass(frozen=True)
@@ -30,11 +55,12 @@ class PetTemplateBridge:
     wind: int
     skill_slots: int
     skill_ids: tuple[int, ...]
-    base_vital: int | float | None = None
-    base_strength: int | float | None = None
-    base_toughness: int | float | None = None
-    base_dexterity: int | float | None = None
-    level_up_point: int | float | None = None
+    init_num: int | None = None
+    base_vital: int | None = None
+    base_strength: int | None = None
+    base_toughness: int | None = None
+    base_dexterity: int | None = None
+    level_up_point: int | None = None
 
     @classmethod
     def from_enemybase(cls, row: Mapping[str, Any]) -> "PetTemplateBridge":
@@ -58,11 +84,12 @@ class PetTemplateBridge:
             wind=int(_required(row, "WINDAT")),
             skill_slots=slot_count,
             skill_ids=skills,
-            base_vital=row.get("BASEVITAL"),
-            base_strength=row.get("BASESTR"),
-            base_toughness=row.get("BASETGH"),
-            base_dexterity=row.get("BASEDEX"),
-            level_up_point=row.get("LVUPPOINT"),
+            init_num=c_atoi(row["INITNUM"]) if row.get("INITNUM") is not None else None,
+            base_vital=c_atoi(row["BASEVITAL"]) if row.get("BASEVITAL") is not None else None,
+            base_strength=c_atoi(row["BASESTR"]) if row.get("BASESTR") is not None else None,
+            base_toughness=c_atoi(row["BASETGH"]) if row.get("BASETGH") is not None else None,
+            base_dexterity=c_atoi(row["BASEDEX"]) if row.get("BASEDEX") is not None else None,
+            level_up_point=c_atoi(row["LVUPPOINT"]) if row.get("LVUPPOINT") is not None else None,
         )
 
     @property
@@ -81,15 +108,124 @@ class PetTemplateBridge:
             "max_skill_slots": self.skill_slots,
         }
 
-    def growth_inputs(self) -> dict[str, int | float | None]:
+    def growth_inputs(self) -> dict[str, int | None]:
         """Formula inputs remain separate from direct client-state mappings."""
         return {
+            "INITNUM": self.init_num,
             "BASEVITAL": self.base_vital,
             "BASESTR": self.base_strength,
             "BASETGH": self.base_toughness,
             "BASEDEX": self.base_dexterity,
             "LVUPPOINT": self.level_up_point,
         }
+
+
+@dataclass(frozen=True)
+class PetBirthBridgeState:
+    template_ref: TemplateRef
+    level: int
+    pet_rank: int
+    individualized_growth_base: tuple[int, int, int, int]
+    alloc_point: int
+    spawn_allocation_counts: tuple[int, int, int, int]
+    internal_vital: int
+    internal_strength: int
+    internal_toughness: int
+    internal_dexterity: int
+    graphic_id: int
+    ai: int
+    earth: int
+    water: int
+    fire: int
+    wind: int
+    max_skill_slots: int
+    skill_ids: tuple[int, ...]
+
+    def combat_projection(self) -> dict[str, int]:
+        """Stable descendant pre-equipment compliance projection."""
+        derived = base_derived_stats(
+            self.internal_vital,
+            self.internal_strength,
+            self.internal_toughness,
+            self.internal_dexterity,
+        )
+        return {
+            "max_hp": derived["max_hp"],
+            "hp": derived["max_hp"],
+            "attack": derived["attack_power"],
+            "defense": derived["defence_power"],
+            "quick": derived["quick"],
+            "level": self.level,
+            "graphic_id": self.graphic_id,
+            "ai": self.ai,
+            "earth": self.earth,
+            "water": self.water,
+            "fire": self.fire,
+            "wind": self.wind,
+            "max_skill_slots": self.max_skill_slots,
+        }
+
+
+def build_pet_birth_bridge(
+    template: PetTemplateBridge,
+    *,
+    level: int,
+    birth_offsets: Sequence[int],
+    spawn_allocation_rolls: Sequence[int],
+) -> PetBirthBridgeState:
+    """Reproduce the convergent descendant enemy/pet birth arithmetic.
+
+    This is BRIDGE_2_5 formula evidence, not a claim that Taiwan v1.0 server
+    coefficients have been independently recovered.
+    """
+    required = (
+        template.init_num,
+        template.level_up_point,
+        template.base_vital,
+        template.base_strength,
+        template.base_toughness,
+        template.base_dexterity,
+    )
+    if any(value is None for value in required):
+        raise ValueError("pet template is missing birth/growth inputs")
+    level = int(level)
+    if level < 1:
+        raise ValueError("level must be >= 1")
+
+    template_base = (
+        int(template.base_vital),
+        int(template.base_strength),
+        int(template.base_toughness),
+        int(template.base_dexterity),
+    )
+    rank = pet_rank_from_template_base(*template_base)
+    individualized = individualize_growth_base(template_base, tuple(birth_offsets))
+    packed = pack_growth_base(*individualized)
+    counts = allocation_counts(tuple(spawn_allocation_rolls))
+    current_base = tuple(base + bonus for base, bonus in zip(individualized, counts))
+    scale = ((level - 1) * int(template.level_up_point)) + int(template.init_num)
+    current = tuple(scale * value for value in current_base)
+
+    return PetBirthBridgeState(
+        template_ref=template.template_ref,
+        level=level,
+        pet_rank=rank,
+        individualized_growth_base=individualized,
+        alloc_point=packed,
+        spawn_allocation_counts=counts,
+        internal_vital=current[0],
+        internal_strength=current[1],
+        internal_toughness=current[2],
+        internal_dexterity=current[3],
+        graphic_id=template.graphic_id,
+        ai=template.ai,
+        earth=template.earth,
+        water=template.water,
+        fire=template.fire,
+        wind=template.wind,
+        max_skill_slots=template.skill_slots,
+        skill_ids=template.skill_ids,
+    )
 
 
 @dataclass(frozen=True)
