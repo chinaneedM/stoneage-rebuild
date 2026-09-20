@@ -17,12 +17,13 @@ from typing import Any, Iterable, Mapping, Sequence
 from tools.stoneage_tw10_gameplay_model import TemplateRef
 
 
-def _int(row: Mapping[str, Any], key: str, default: int | None = None) -> int:
-    if key not in row:
+def _int(row: Mapping[str, Any], key: str, default: int | None = None, *aliases: str) -> int:
+    source_key = next((candidate for candidate in (key, *aliases) if candidate in row), None)
+    if source_key is None:
         if default is None:
             raise KeyError(f"missing encounter source field: {key}")
         return int(default)
-    value = row[key]
+    value = row[source_key]
     if value is None or value == "":
         if default is None:
             raise ValueError(f"empty encounter source field: {key}")
@@ -35,11 +36,18 @@ def _slots(
     id_prefix: str,
     weight_prefix: str,
     count: int = 10,
+    *,
+    weight_prefix_aliases: Sequence[str] = (),
 ) -> tuple[tuple[int, int], ...]:
     out = []
     for n in range(1, count + 1):
         identity = _int(row, f"{id_prefix}{n}", -1)
-        weight = _int(row, f"{weight_prefix}{n}", -1)
+        weight = _int(
+            row,
+            f"{weight_prefix}{n}",
+            -1,
+            *(f"{prefix}{n}" for prefix in weight_prefix_aliases),
+        )
         out.append((identity, weight))
     return tuple(out)
 
@@ -126,9 +134,16 @@ class GroupBridge:
     def from_group(cls, row: Mapping[str, Any]) -> "GroupBridge":
         return cls(
             group_id=_int(row, "GROUP_ID"),
-            appear_by_item_id=_int(row, "APPEAR_BY_ITEM_ID", -1),
-            not_appear_by_item_id=_int(row, "NOT_APPEAR_BY_ITEM_ID", -1),
-            enemy_slots=_slots(row, "ENEMY_ID", "CREATEPROB"),
+            appear_by_item_id=_int(row, "APPEAR_BY_ITEM_ID", -1, "APPEAR_ITEM"),
+            not_appear_by_item_id=_int(
+                row, "NOT_APPEAR_BY_ITEM_ID", -1, "NOT_APPEAR_ITEM"
+            ),
+            enemy_slots=_slots(
+                row,
+                "ENEMY_ID",
+                "CREATEPROB",
+                weight_prefix_aliases=("CREATE_PROB",),
+            ),
         )
 
     def is_eligible(self, inventory_template_ids: Iterable[int]) -> bool:
@@ -182,8 +197,9 @@ class EncounterAreaBridge:
     def from_encount(cls, row: Mapping[str, Any]) -> "EncounterAreaBridge":
         x1, x2 = _int(row, "X1"), _int(row, "X2")
         y1, y2 = _int(row, "Y1"), _int(row, "Y2")
-        p1, p2 = _int(row, "ENCOUNT_PROB_MIN"), _int(row, "ENCOUNT_PROB_MAX")
-        enemy_max = _int(row, "ENEMY_MAX_NUM")
+        p1 = _int(row, "ENCOUNT_PROB_MIN", None, "PROB_MIN")
+        p2 = _int(row, "ENCOUNT_PROB_MAX", None, "PROB_MAX")
+        enemy_max = _int(row, "ENEMY_MAX_NUM", None, "ENEMY_MAX")
         if not 1 <= enemy_max <= 10:
             raise ValueError("ENEMY_MAX_NUM must be in 1..10")
         return cls(
