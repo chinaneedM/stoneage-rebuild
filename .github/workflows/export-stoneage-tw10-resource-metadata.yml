@@ -47,6 +47,7 @@ jobs:
           set -euo pipefail
           test -s research/recovered/tw10-resource-metadata/MANIFEST-R1.txt
           test -s research/recovered/tw10-resource-metadata/ADRN-R1.tsv.gz
+          test -s research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz
           test -s research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz
           test -s research/recovered/tw10-resource-metadata/SPR-ANIMATION-R1.tsv.gz
           test -s research/recovered/tw10-resource-metadata/SPR-FRAME-R1.tsv.gz
