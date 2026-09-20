@@ -1,0 +1,25 @@
+name: Validate StoneAge Taiwan v1.0 gameplay model
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_gameplay_model.py
+      - research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json
+      - research/clients/STONEAGE-TW10-25-GAMEPLAY-BRIDGE-R1.json
+      - tests/test_stoneage_tw10_gameplay_model.py
+      - tests/test_stoneage_tw10_gameplay_schema.py
+      - tests/test_stoneage_tw10_25_gameplay_bridge.py
+      - .github/workflows/validate-stoneage-tw10-gameplay-model.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate schema-driven reconstruction model
+        run: |
+          python3 -m unittest             tests.test_stoneage_tw10_gameplay_schema             tests.test_stoneage_tw10_25_gameplay_bridge             tests.test_stoneage_tw10_gameplay_model -v
