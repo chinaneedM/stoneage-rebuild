@@ -18,6 +18,7 @@ from tools.stoneage_pet_growth_model import (
     pet_rank_from_template_base,
 )
 from tools.stoneage_player_growth_model import base_derived_stats
+from tools.stoneage_tw10_25_encounter_bridge import EnemyVariantBridge
 
 
 def _required(row: Mapping[str, Any], key: str) -> Any:
@@ -48,6 +49,7 @@ def c_atoi(value: Any) -> int:
 class PetTemplateBridge:
     tempno: int
     graphic_id: int
+    name: str | None
     ai: int
     earth: int
     water: int
@@ -77,6 +79,7 @@ class PetTemplateBridge:
         return cls(
             tempno=int(_required(row, "TEMPNO")),
             graphic_id=int(_required(row, "IMGNUMBER")),
+            name=str(row["NAME"]) if row.get("NAME") not in (None, "") else None,
             ai=int(_required(row, "MODAI")),
             earth=int(_required(row, "EARTHAT")),
             water=int(_required(row, "WATERAT")),
@@ -224,6 +227,102 @@ def build_pet_birth_bridge(
         fire=template.fire,
         wind=template.wind,
         max_skill_slots=template.skill_slots,
+        skill_ids=template.skill_ids,
+    )
+
+
+@dataclass(frozen=True)
+class ReconstructedPetBridgeState:
+    """Composed server-bridge state projected onto the v1 S:K domain."""
+
+    variant_ref: TemplateRef
+    template_ref: TemplateRef
+    pet_slot: int
+    runtime_object_id: int | None
+    birth: PetBirthBridgeState
+    v1_fields: Mapping[str, Any]
+    skill_ids: tuple[int, ...]
+
+    def v1_pet_state_fields(self) -> dict[str, Any]:
+        return dict(self.v1_fields)
+
+
+def build_reconstructed_pet_state(
+    variant: EnemyVariantBridge,
+    template: PetTemplateBridge,
+    *,
+    pet_slot: int,
+    level_roll: int,
+    birth_offsets: Sequence[int],
+    spawn_allocation_rolls: Sequence[int],
+    mp: int,
+    max_mp: int,
+    exp: int,
+    max_exp: int,
+    rename_flag: int,
+    free_name: str,
+    name: str | None = None,
+    runtime_object_id: int | None = None,
+) -> ReconstructedPetBridgeState:
+    """Compose enemy variant + pet template + birth formula into v1 S:K fields.
+
+    The bridge deliberately requires unresolved runtime values as explicit
+    inputs instead of importing later formulas into the Taiwan v1 baseline.
+    """
+    if int(variant.tempno) != int(template.tempno):
+        raise ValueError(
+            f"enemy.ID {variant.enemy_id} resolves TEMPNO {variant.tempno}, "
+            f"not template {template.tempno}"
+        )
+    pet_slot = int(pet_slot)
+    if not 0 <= pet_slot < 5:
+        raise ValueError("pet_slot must be in 0..4")
+
+    level = variant.choose_level(level_roll)
+    birth = build_pet_birth_bridge(
+        template,
+        level=level,
+        birth_offsets=birth_offsets,
+        spawn_allocation_rolls=spawn_allocation_rolls,
+    )
+    projection = birth.combat_projection()
+    resolved_name = template.name if name is None else str(name)
+    if resolved_name is None:
+        raise ValueError("pet name must come from enemybase NAME or explicit input")
+
+    fields = {
+        "update_mask": 1,
+        "graphic_id": projection["graphic_id"],
+        "hp": projection["hp"],
+        "max_hp": projection["max_hp"],
+        "mp": int(mp),
+        "max_mp": int(max_mp),
+        "exp": int(exp),
+        "max_exp": int(max_exp),
+        "level": projection["level"],
+        "attack": projection["attack"],
+        "defense": projection["defense"],
+        "quick": projection["quick"],
+        "ai": projection["ai"],
+        "earth": projection["earth"],
+        "water": projection["water"],
+        "fire": projection["fire"],
+        "wind": projection["wind"],
+        "max_skill_slots": projection["max_skill_slots"],
+        "rename_flag": int(rename_flag),
+        "name": resolved_name,
+        "free_name": str(free_name),
+    }
+
+    return ReconstructedPetBridgeState(
+        variant_ref=variant.variant_ref,
+        template_ref=template.template_ref,
+        pet_slot=pet_slot,
+        runtime_object_id=(
+            None if runtime_object_id is None else int(runtime_object_id)
+        ),
+        birth=birth,
+        v1_fields=fields,
         skill_ids=template.skill_ids,
     )
 
