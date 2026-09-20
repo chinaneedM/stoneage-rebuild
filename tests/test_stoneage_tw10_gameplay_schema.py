@@ -57,6 +57,24 @@ class TaiwanGameplaySchemaTests(unittest.TestCase):
         self.assertEqual(incremental["record_width"], 10)
         self.assertEqual(pet_skill["slot_count"], 7)
         self.assertEqual(pet_skill["record_width"], 5)
+        self.assertEqual(
+            [field["name"] for field in full_item["fields"]],
+            [
+                "name",
+                "secondary_display_text",
+                "color",
+                "memo_or_effect_text",
+                "graphic_id",
+                "field_context",
+                "target_class",
+                "level",
+                "send_or_use_flags",
+            ],
+        )
+        self.assertEqual(
+            [field["name"] for field in incremental["fields"]][1:],
+            [field["name"] for field in full_item["fields"]],
+        )
 
         self.assertEqual(
             [field["name"] for field in pet_skill["fields"]],
