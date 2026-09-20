@@ -1391,12 +1391,18 @@ Supplemental source ledgers:
   - `finish_persistent_battle_with_progression()` can now settle player and pet threshold crossings atomically;
   - pet level-up recalculates the already-closed max-HP/attack/defense/quick projection while preserving terminal battle HP rather than auto-healing;
   - hidden VARIABLEAI receives the stable +500-per-level update; visible pet AI remains a separate compliance seam and is not guessed.
+- EXP side-path attribution is now closed to the stable-descendant boundary:
+  - player kill profit can resolve an owned ride pet independently of the active allied-actor list;
+  - ride-pet EXP uses that pet's own level-gap calculation, then 60% truncation, and can settle even when the pet never occupied a battle slot;
+  - counter profit uses the actual counter actor as a one-entry attack list;
+  - combo profit uses the complete eligible combo attack list and does not split EXP between members in the pinned enabled branch;
+  - `BATTLE_AddExpItem()` source-shaped scanning is explicit: every `HP <= 0 && ISDIE == false` reward enemy is claimed by the current profit trigger, so deferred status deaths are **not** reassigned to an invented DoT owner.
 - Still OPEN / deliberately excluded:
   - exact JSS-1999 choice of level-threshold regime/table;
   - maximum-level and pet-limit-level behavior;
   - complete visible pet AI/loyalty compliance projection;
-  - ride-pet execution/attribution around the already-modeled 60% arithmetic;
-  - combo/counter/status kill attribution;
+  - early-JSS confirmation of later-gated combo-profit behavior;
+  - full counter/combo/status action/damage execution;
   - items, money, capture, escape and other post-battle rewards.
 - Code validations:
   - `81e9572f1ff309982d13c7f1979a51516a5593a8` — pending ordinary kill EXP accumulation; runs **35514277568** and **35514277633** both success.
@@ -1406,11 +1412,14 @@ Supplemental source ledgers:
   - `250a328660dcd070b0116880f4212c895818b0e8` — explicit multi-level pet growth/VARIABLEAI model; run **35515398842** success.
   - `95f7e1e36f06eb4f9a00f3a35088dba32f56acc8` — persistent pet loyalty-growth identity and staged atomic battle outcome; run **35515685028** success.
   - `687240810018cf5448daeef2e07d79f0e94dc3d3` — explicit pet threshold-crossing settlement; gameplay **35515940125**, pet-growth **35515940131**, and recovery probe **35515940173** all success.
+  - `ab9d3d90b87fcb857bc5f6ee24a10f2d816ad793` — player-kill ride-pet attribution; battle-core **35516458527** and gameplay **35516458580** success.
+  - `dce9ccc6a25f8135a5bad2145b1505c24b99528a` — reward-only ride-pet persistent settlement; gameplay **35516543065** success.
+  - `56fdb2c17aa96b51252b4ee939b2a99664a09487` — counter/combo/deferred-status source-shaped profit scanning; battle-core **35516770864** and gameplay **35516770753** success.
 
 ## Immediate next actions
 
-1. **Close the remaining EXP side paths independently.** `ride_pet_exp_from_enemy()` already preserves the 60%-after-level-gap arithmetic; the missing work is ride-pet execution identity/attribution plus combo/counter/status kill attribution. Do not generalize these from ordinary single-hit attacks.
-2. **Extend post-battle rewards one subsystem at a time after EXP.** Drops, money, capture, escape, death penalties and recovery remain separate evidence seams; do not bundle them into one guessed settlement routine.
+1. **Extend post-battle rewards one subsystem at a time now that EXP attribution/settlement is closed.** Recover and implement drops first, then money, capture, escape, death penalties and recovery as separate evidence seams; do not bundle them into one guessed settlement routine.
+2. **Expand counter/combo/status battle execution only through their own deterministic mechanics seams.** Their EXP attribution is closed; future action/damage/status execution must feed the existing source-shaped profit-list/scan model rather than redefine reward ownership.
 3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
 4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
 5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.

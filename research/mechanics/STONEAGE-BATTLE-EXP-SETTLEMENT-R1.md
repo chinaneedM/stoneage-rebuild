@@ -2,7 +2,7 @@
 
 Date: 2026-09-20
 
-Status: **ordinary single-hit accumulation and explicit player threshold-crossing profiles closed; exact JSS profile/table and pet level-up remain OPEN**
+Status: **descendant EXP attribution/settlement closed through ride-pet and source-shaped profit scans; exact JSS threshold profile/table remains OPEN**
 
 ## Purpose
 
@@ -53,14 +53,34 @@ After the attack it calls BATTLE_AddProfit(). BATTLE_AddExpItem() scans enemies
 satisfying HP <= 0 and not already marked dead. The reward is therefore
 processed on the first qualifying death scan and the enemy is then marked dead.
 
-For the currently reconstructed ordinary single-target ATTACK/GUARD/WAIT seam:
+For the reconstructed ordinary single-target ATTACK/GUARD/WAIT seam:
 
 - a player kill awards the player;
 - an allied-pet kill awards that allied pet;
 - non-killing participants do not automatically share the reward.
 
-Combo/counter/status execution can construct different attack lists and
-remains outside this R1 attribution seam.
+The pinned descendant also closes the other **reward-attribution shapes**:
+
+- **counter:** after each `BATTLE_Counter()` call, the loop rewrites
+  `aAttackList[0] = attackNoSub` and immediately calls
+  `BATTLE_AddProfit()`. The actual counter actor is therefore the single
+  recipient for that profit trigger.
+- **combo:** the loop builds one `aAttackList` from every combo member still
+  valid, alive and able to move, then calls `BATTLE_Combo()`. In the pinned
+  build, `_Item_ReLifeAct` is enabled and the complete combo attack list is
+  then passed to `BATTLE_AddProfit()`; every listed member receives its own
+  independently level-adjusted EXP rather than a split share.
+- **deferred status death:** `BATTLE_StatusSeq()` can reduce HP to zero and
+  set death state without calling `BATTLE_AddProfit()`. The later
+  `BATTLE_AddExpItem()` scan does not retain a status/DoT owner; it scans all
+  entries satisfying `HP <= 0 && ISDIE == false` and assigns every such
+  reward to the **current** attack list before marking those entries processed.
+  Therefore a status death can be collected by the next unrelated profit
+  trigger. Reconstructing a modern "DoT owner gets credit" rule here would not
+  reproduce this descendant behavior.
+
+Full counter/combo/status **action execution** remains a separate combat-mechanics
+surface; their EXP attribution no longer needs to be guessed.
 
 ## 3. Per-enemy award arithmetic
 
@@ -76,8 +96,16 @@ For reward EXP E and receiver-level gap (receiver_level - enemy_level):
 No ordinary party-size divisor is present in this loop.
 
 The stable source has a separate ride-pet award of 60% after the level-gap
-calculation. That path is not yet represented by the current single-player
-battle participant model and remains separate.
+calculation. `BATTLE_getRidePet()` resolves that recipient from the **player
+actor's owned-pet slot**, not from the attack list. The ride pet uses its own
+level for decay, then the result is multiplied by 0.60 with truncation and no
+second minimum clamp.
+
+The single-player battle session now preserves that relationship as an
+explicit reward-only ride-pet snapshot. A ride pet can therefore receive
+pending EXP even when it is not an independent allied battle actor. Settlement
+preserves its persistent HP and sends threshold crossings through the same
+explicit pet-growth/RNG seam as any other owned pet.
 
 ## 4. Reconstruction state
 
@@ -250,16 +278,37 @@ Validation chain:
 - `95f7e1e36f06eb4f9a00f3a35088dba32f56acc8` / **35515685028** — persistent hidden loyalty-growth state and atomic outcome staging;
 - `687240810018cf5448daeef2e07d79f0e94dc3d3` / **35515940125**, **35515940131**, **35515940173** — integrated pet threshold crossing and all relevant validations.
 
-## 10. Explicitly OPEN
+## 10. Closed side-path attribution and remaining OPEN items
 
-The project still needs an explicit/versioned decision or stronger evidence
-for:
+The descendant EXP attribution layer now has executable coverage for:
+
+- ordinary one-actor kill profit;
+- player -> owned ride-pet 60% side awards, including reward-only ride pets;
+- counter-shaped one-actor profit lists;
+- combo-shaped multi-actor profit lists without EXP splitting;
+- the source's deferred dead-entry scan, including status deaths that have no
+  retained DoT owner in the profit routine.
+
+Validation:
+
+- `ab9d3d90b87fcb857bc5f6ee24a10f2d816ad793` — ride-pet attribution;
+  battle-core **35516458527**, gameplay **35516458580** success.
+- `dce9ccc6a25f8135a5bad2145b1505c24b99528a` — reward-only ride-pet
+  persistent settlement; gameplay **35516543065** success.
+- `56fdb2c17aa96b51252b4ee939b2a99664a09487` — source-shaped profit
+  scanning for counter/combo/deferred-status attribution; battle-core
+  **35516770864** and gameplay **35516770753** success.
+
+Still OPEN:
 
 - JSS-1999 threshold representation and exact table;
 - maximum-level and pet-limit-level behavior;
 - complete visible pet AI/loyalty compliance;
-- ride-pet execution/attribution around the already-preserved 60% award;
-- combo/counter/status kill attribution.
+- independent early-JSS confirmation of later-gated combo profit behavior,
+  especially the `_Item_ReLifeAct` boundary;
+- full counter/combo/status action, damage and status execution in the modern
+  battle runtime. That execution work must reuse the closed attribution rules
+  rather than redefine them.
 
 Those uncertainties must remain visible rather than being hidden behind the
 mixed 2.5 server defaults.
