@@ -21,7 +21,10 @@ from dataclasses import dataclass, replace
 from types import MappingProxyType
 from typing import Mapping, Sequence
 
-from tools.stoneage_battle_core_model import battle_exp_from_enemy
+from tools.stoneage_battle_core_model import (
+    KillProfitRecipient,
+    battle_kill_profit,
+)
 from tools.stoneage_battle_round_model import (
     BattleCombatProfile,
     BattleCommand,
@@ -46,6 +49,7 @@ class PersistentBattleState:
     slots: Mapping[str, int]
     hp_by_participant_id: Mapping[str, int]
     pending_exp_by_participant_id: Mapping[str, int]
+    pending_pet_variable_ai_by_participant_id: Mapping[str, int]
     turn: int = 0
     phase: str = ACTIVE
     result: str | None = None
@@ -78,6 +82,26 @@ class PersistentBattleState:
             )
         if any(int(value) < 0 for value in self.pending_exp_by_participant_id.values()):
             raise ValueError("pending EXP cannot be negative")
+
+        expected_pet_ids = {
+            pid for pid, participant in participants.items()
+            if participant.side == "player" and participant.kind == "pet"
+        }
+        actual_pet_ids = {
+            str(pid) for pid in self.pending_pet_variable_ai_by_participant_id
+        }
+        if actual_pet_ids != expected_pet_ids:
+            missing = sorted(expected_pet_ids - actual_pet_ids)
+            extra = sorted(actual_pet_ids - expected_pet_ids)
+            raise ValueError(
+                f"pending pet VARIABLEAI participants mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        if any(
+            int(value) < 0
+            for value in self.pending_pet_variable_ai_by_participant_id.values()
+        ):
+            raise ValueError("pending pet VARIABLEAI delta cannot be negative")
 
 
 @dataclass(frozen=True)
@@ -137,11 +161,19 @@ def begin_persistent_battle(
         for pid, participant in participants.items()
         if participant.side == "player"
     }
+    pending_pet_variable_ai = {
+        pid: 0
+        for pid, participant in participants.items()
+        if participant.side == "player" and participant.kind == "pet"
+    }
     state = PersistentBattleState(
         session=session,
         slots=_freeze_mapping(normalized_slots),
         hp_by_participant_id=_freeze_mapping(hp),
         pending_exp_by_participant_id=_freeze_mapping(pending_exp),
+        pending_pet_variable_ai_by_participant_id=_freeze_mapping(
+            pending_pet_variable_ai
+        ),
     )
     return _with_termination(state)
 
@@ -227,26 +259,28 @@ def active_participants(
     )
 
 
-def _pending_exp_after_ordinary_round(
+def _pending_profit_after_ordinary_round(
     state: PersistentBattleState,
     round_result: ResolvedOrdinaryRound,
-) -> Mapping[str, int]:
-    """Mirror the stable ordinary WORKGETEXP accumulation seam.
+) -> tuple[Mapping[str,int],Mapping[str,int]]:
+    """Apply the source-shaped kill-profit allocator to ordinary kill events.
 
-    BATTLE_AddExpItem() runs after an attack and scans newly dead enemies.
-    For an ordinary single-target attack the attack list contains exactly the
-    acting participant, so only that player-side actor receives the defeated
-    enemy's adjusted EXP. Combo/counter/status and ride-pet reward behavior are
-    separate seams and are not inferred here.
+    The current ordinary resolver produces a one-entry attack list. Ride-pet
+    identity and multi-entry combo/counter/status attack lists are intentionally
+    left for their own execution seams, but the reward loop itself is shared.
     """
     participants = _participant_map(state.session)
     participant_id_by_slot = {
         int(slot): str(pid)
         for pid, slot in state.slots.items()
     }
-    pending = {
+    pending_exp = {
         str(pid): int(value)
         for pid, value in state.pending_exp_by_participant_id.items()
+    }
+    pending_variable_ai = {
+        str(pid): int(value)
+        for pid, value in state.pending_pet_variable_ai_by_participant_id.items()
     }
 
     for event in round_result.events:
@@ -270,14 +304,33 @@ def _pending_exp_after_ordinary_round(
             raise ValueError(
                 f"enemy {target_id} lacks reward EXP provenance"
             )
-        pending[actor_id] += battle_exp_from_enemy(
+
+        profit=battle_kill_profit(
             int(target.reward_exp),
-            int(actor.level),
             int(target.level),
+            (
+                KillProfitRecipient(
+                    actor_id,
+                    int(actor.level),
+                    str(actor.kind),
+                ),
+            ),
         )
+        for participant_id,award in profit.direct_exp_by_participant_id.items():
+            pending_exp[participant_id]+=int(award)
+        for participant_id,delta in (
+            profit.pet_variable_ai_delta_by_participant_id.items()
+        ):
+            if participant_id not in pending_variable_ai:
+                raise ValueError(
+                    f"pet kill profit references non-allied pet {participant_id}"
+                )
+            pending_variable_ai[participant_id]+=int(delta)
 
-    return _freeze_mapping(pending)
-
+    return (
+        _freeze_mapping(pending_exp),
+        _freeze_mapping(pending_variable_ai),
+    )
 
 def resolve_persistent_ordinary_round(
     state: PersistentBattleState,
@@ -338,14 +391,16 @@ def resolve_persistent_ordinary_round(
             for participant_id, value in round_result.hp_by_participant_id.items()
         }
     )
+    pending_exp,pending_variable_ai=_pending_profit_after_ordinary_round(
+        state,
+        round_result,
+    )
     next_state = PersistentBattleState(
         session=state.session,
         slots=state.slots,
         hp_by_participant_id=_freeze_mapping(hp),
-        pending_exp_by_participant_id=_pending_exp_after_ordinary_round(
-            state,
-            round_result,
-        ),
+        pending_exp_by_participant_id=pending_exp,
+        pending_pet_variable_ai_by_participant_id=pending_variable_ai,
         turn=int(state.turn) + 1,
         phase=ACTIVE,
         result=None,

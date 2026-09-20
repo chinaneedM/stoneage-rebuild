@@ -7,6 +7,9 @@ are deliberately excluded.
 """
 
 import math
+from dataclasses import dataclass
+from types import MappingProxyType
+from typing import Mapping, Sequence
 
 PLAYER="player"
 PET="pet"
@@ -311,6 +314,36 @@ def raw_counter_basis(attacker_dex,defender_dex,
 EXP_FULL_LEVEL_ADVANTAGE=5
 EXP_DECAY_WINDOW=15
 
+PET_KILL_VARIABLE_AI_DELTA=1
+PET_HIGHER_ENEMY_KILL_VARIABLE_AI_DELTA=20
+
+
+@dataclass(frozen=True)
+class KillProfitRecipient:
+    participant_id: str
+    level: int
+    kind: str
+    ride_pet_id: str | None = None
+    ride_pet_level: int | None = None
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self,'participant_id',str(self.participant_id))
+        object.__setattr__(self,'level',int(self.level))
+        if (self.ride_pet_id is None) != (self.ride_pet_level is None):
+            raise ValueError('ride pet id and level must be supplied together')
+        if self.ride_pet_id is not None:
+            object.__setattr__(self,'ride_pet_id',str(self.ride_pet_id))
+            object.__setattr__(self,'ride_pet_level',int(self.ride_pet_level))
+
+
+@dataclass(frozen=True)
+class BattleKillProfit:
+    direct_exp_by_participant_id: Mapping[str,int]
+    ride_exp_by_participant_id: Mapping[str,int]
+    pet_variable_ai_delta_by_participant_id: Mapping[str,int]
+    kill_count_delta_by_participant_id: Mapping[str,int]
+
+
 
 def battle_exp_from_enemy(base_exp,receiver_level,enemy_level):
     """Stable descendant per-enemy EXP award before later bonus systems.
@@ -342,3 +375,72 @@ def ride_pet_exp_from_enemy(base_exp,ride_pet_level,enemy_level):
     """
     award=battle_exp_from_enemy(base_exp,ride_pet_level,enemy_level)
     return int(award*0.60)
+
+
+def battle_kill_profit(
+    base_exp,
+    enemy_level,
+    attack_list: Sequence[KillProfitRecipient],
+    *,
+    norisk=False,
+):
+    '''Mirror the stable BATTLE_AddExpItem() reward loop for one newly dead enemy.
+
+    Every entry in the attack list receives its own full level-adjusted EXP.
+    A valid ride pet receives a separate award using the ride pet's own level,
+    then 60% truncation. Direct pet attackers also receive the normal-risk
+    VARIABLEAI kill adjustment. Item drops and later dead-extra hooks remain
+    outside this pure allocation model.
+    '''
+    recipients=tuple(attack_list)
+    if not recipients:
+        raise ValueError('attack_list must contain at least one recipient')
+
+    direct={}
+    ride={}
+    variable_ai={}
+    kill_count={}
+
+    def add(mapping,key,value):
+        mapping[key]=mapping.get(key,0)+int(value)
+
+    for raw in recipients:
+        recipient=(
+            raw
+            if isinstance(raw,KillProfitRecipient)
+            else KillProfitRecipient(*raw)
+        )
+        pid=recipient.participant_id
+        add(
+            direct,
+            pid,
+            battle_exp_from_enemy(base_exp,recipient.level,enemy_level),
+        )
+        add(kill_count,pid,1)
+
+        if recipient.ride_pet_id is not None:
+            add(
+                ride,
+                recipient.ride_pet_id,
+                ride_pet_exp_from_enemy(
+                    base_exp,
+                    recipient.ride_pet_level,
+                    enemy_level,
+                ),
+            )
+            add(kill_count,recipient.ride_pet_id,1)
+
+        if recipient.kind==PET and not norisk:
+            delta=(
+                PET_HIGHER_ENEMY_KILL_VARIABLE_AI_DELTA
+                if int(enemy_level)>recipient.level
+                else PET_KILL_VARIABLE_AI_DELTA
+            )
+            add(variable_ai,pid,delta)
+
+    return BattleKillProfit(
+        direct_exp_by_participant_id=MappingProxyType(direct),
+        ride_exp_by_participant_id=MappingProxyType(ride),
+        pet_variable_ai_delta_by_participant_id=MappingProxyType(variable_ai),
+        kill_count_delta_by_participant_id=MappingProxyType(kill_count),
+    )

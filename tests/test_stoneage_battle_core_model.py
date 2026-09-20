@@ -20,7 +20,10 @@ from tools.stoneage_battle_core_model import (
     initiative_total,
     physical_base_damage,
     raw_counter_basis,
+    BattleKillProfit,
+    KillProfitRecipient,
     battle_exp_from_enemy,
+    battle_kill_profit,
     ride_pet_exp_from_enemy,
 )
 
@@ -127,6 +130,75 @@ class BattleCoreModelTests(unittest.TestCase):
         self.assertEqual(ride_pet_exp_from_enemy(base,10,10),900)
         self.assertEqual(ride_pet_exp_from_enemy(base,29,10),60)
         self.assertEqual(ride_pet_exp_from_enemy(base,30,10),0)
+
+    def test_kill_profit_attack_list_does_not_split_exp(self):
+        profit=battle_kill_profit(
+            1500,
+            10,
+            (
+                KillProfitRecipient('player',16,PLAYER),
+                KillProfitRecipient('pet:0',29,PET),
+            ),
+        )
+        self.assertIsInstance(profit,BattleKillProfit)
+        self.assertEqual(
+            dict(profit.direct_exp_by_participant_id),
+            {'player':1400,'pet:0':100},
+        )
+        self.assertEqual(
+            dict(profit.kill_count_delta_by_participant_id),
+            {'player':1,'pet:0':1},
+        )
+        self.assertEqual(
+            dict(profit.pet_variable_ai_delta_by_participant_id),
+            {'pet:0':1},
+        )
+
+    def test_kill_profit_ride_pet_uses_its_own_level_and_can_receive_zero(self):
+        profit=battle_kill_profit(
+            1500,
+            10,
+            (
+                KillProfitRecipient(
+                    'player',10,PLAYER,
+                    ride_pet_id='ride:2',
+                    ride_pet_level=30,
+                ),
+            ),
+        )
+        self.assertEqual(
+            dict(profit.direct_exp_by_participant_id),
+            {'player':1500},
+        )
+        self.assertEqual(
+            dict(profit.ride_exp_by_participant_id),
+            {'ride:2':0},
+        )
+        self.assertEqual(
+            dict(profit.kill_count_delta_by_participant_id),
+            {'player':1,'ride:2':1},
+        )
+
+    def test_pet_kill_loyalty_delta_distinguishes_higher_enemy_and_norisk(self):
+        higher=battle_kill_profit(
+            100,
+            10,
+            (KillProfitRecipient('pet:0',5,PET),),
+        )
+        self.assertEqual(
+            dict(higher.pet_variable_ai_delta_by_participant_id),
+            {'pet:0':20},
+        )
+        norisk=battle_kill_profit(
+            100,
+            10,
+            (KillProfitRecipient('pet:0',5,PET),),
+            norisk=True,
+        )
+        self.assertEqual(
+            dict(norisk.pet_variable_ai_delta_by_participant_id),
+            {},
+        )
 
     def test_counter_is_only_raw_basis(self):
         value=raw_counter_basis(

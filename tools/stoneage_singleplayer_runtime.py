@@ -8,7 +8,7 @@ commands, AI and battle outcomes as explicit inputs.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Mapping, Sequence
 
 from tools.stoneage_encounter_frequency_model import (
@@ -52,6 +52,7 @@ from tools.stoneage_enemy_spawn_model import (
 from tools.stoneage_combat_profile_bridge import group_battle_combat_profiles
 from tools.stoneage_pet_growth_model import (
     PetLevelGrowthRolls,
+    adjust_pet_variable_ai,
     resolve_pet_exp_growth_transition,
     unpack_growth_base,
 )
@@ -453,14 +454,7 @@ class SinglePlayerHistoricalRuntime:
         self,
         state: PersistentBattleState,
     ) -> BattleReturn:
-        """Settle HP plus pending EXP only when no level threshold is crossed.
-
-        Taiwan v1 exposes separate EXP/max-EXP fields, while descendant sources
-        preserve two different level-transition regimes. Below the current
-        max-EXP boundary both regimes agree on simple addition. Reaching or
-        crossing that boundary is rejected until the historical progression
-        profile is selected explicitly.
-        """
+        """Settle HP, below-threshold EXP, and already-earned pet kill loyalty."""
         if state.phase != FINISHED or state.result is None:
             raise ValueError("cannot settle battle before termination")
 
@@ -478,9 +472,8 @@ class SinglePlayerHistoricalRuntime:
         player_hp = int(state.hp_by_participant_id[player_id])
         player_updates: dict[str, int] = {"hp": player_hp}
         pet_updates: dict[int, dict[str, int]] = {}
+        pet_growth_updates: dict[int, PetGrowthState] = {}
 
-        # Stable BATTLE_GetExpGold() returns immediately for a dead player.
-        # Therefore its owned-pet EXP loop is also skipped on player defeat.
         player_can_receive_exp = player_hp > 0
         if player_can_receive_exp:
             pending = int(state.pending_exp_by_participant_id[player_id])
@@ -508,20 +501,38 @@ class SinglePlayerHistoricalRuntime:
                 raise ValueError(
                     f"terminal battle state is missing pending EXP for {participant_id}"
                 )
+            if participant_id not in state.pending_pet_variable_ai_by_participant_id:
+                raise ValueError(
+                    f"terminal battle state is missing pet VARIABLEAI delta for {participant_id}"
+                )
 
             slot = int(participant.source_pet_slot)
+            pet_slot = PetSlot(slot)
+            if pet_slot not in self.domain.persistent.pets:
+                raise KeyError(f"missing persistent pet slot {slot}")
+            pet = self.domain.persistent.pets[pet_slot]
             hp = int(state.hp_by_participant_id[participant_id])
             updates: dict[str, int] = {"hp": hp}
 
-            # Stable pet EXP application happens only from the living player's
-            # result path and skips pets already marked dead.
+            loyalty_delta=int(
+                state.pending_pet_variable_ai_by_participant_id[participant_id]
+            )
+            if loyalty_delta:
+                if pet.growth is None:
+                    raise ValueError(
+                        f"pet slot {slot} lacks hidden growth identity for VARIABLEAI"
+                    )
+                pet_growth_updates[slot]=replace(
+                    pet.growth,
+                    variable_ai=adjust_pet_variable_ai(
+                        pet.growth.variable_ai,
+                        loyalty_delta,
+                    ),
+                )
+
             if player_can_receive_exp and hp > 0:
                 pending = int(state.pending_exp_by_participant_id[participant_id])
                 if pending > 0:
-                    pet_slot = PetSlot(slot)
-                    if pet_slot not in self.domain.persistent.pets:
-                        raise KeyError(f"missing persistent pet slot {slot}")
-                    pet = self.domain.persistent.pets[pet_slot]
                     current_exp = int(pet.state["exp"])
                     max_exp = int(pet.state["max_exp"])
                     next_exp = current_exp + pending
@@ -539,6 +550,7 @@ class SinglePlayerHistoricalRuntime:
                 result=state.result,
                 player_updates=player_updates,
                 pet_updates=pet_updates,
+                pet_growth_updates=pet_growth_updates,
             ),
         )
 
@@ -660,6 +672,10 @@ class SinglePlayerHistoricalRuntime:
                 raise ValueError(
                     f'terminal battle state is missing pending EXP for {participant_id}'
                 )
+            if participant_id not in state.pending_pet_variable_ai_by_participant_id:
+                raise ValueError(
+                    f'terminal battle state is missing pet VARIABLEAI delta for {participant_id}'
+                )
 
             slot=int(participant.source_pet_slot)
             pet_slot=PetSlot(slot)
@@ -667,11 +683,31 @@ class SinglePlayerHistoricalRuntime:
                 raise KeyError(f'missing persistent pet slot {slot}')
             hp=int(state.hp_by_participant_id[participant_id])
             updates: dict[str,int]={'hp':hp}
+            pet=self.domain.persistent.pets[pet_slot]
+            loyalty_delta=int(
+                state.pending_pet_variable_ai_by_participant_id[participant_id]
+            )
+            loyalty_variable_ai=(
+                adjust_pet_variable_ai(
+                    pet.growth.variable_ai,
+                    loyalty_delta,
+                )
+                if loyalty_delta and pet.growth is not None
+                else (pet.growth.variable_ai if pet.growth is not None else None)
+            )
+            if loyalty_delta and pet.growth is None:
+                raise ValueError(
+                    f'pet slot {slot} lacks hidden growth identity for VARIABLEAI'
+                )
+            if loyalty_delta and pet.growth is not None:
+                pet_growth_updates[slot]=replace(
+                    pet.growth,
+                    variable_ai=loyalty_variable_ai,
+                )
 
             if player_can_receive_exp and hp>0:
                 pending=int(state.pending_exp_by_participant_id[participant_id])
                 if pending>0:
-                    pet=self.domain.persistent.pets[pet_slot]
                     current_exp=int(pet.state['exp'])
                     max_exp=int(pet.state['max_exp'])
                     next_exp=current_exp+pending
@@ -712,7 +748,11 @@ class SinglePlayerHistoricalRuntime:
                                 growth.internal_toughness,
                                 growth.internal_dexterity,
                             ),
-                            current_variable_ai=growth.variable_ai,
+                            current_variable_ai=(
+                                loyalty_variable_ai
+                                if loyalty_variable_ai is not None
+                                else growth.variable_ai
+                            ),
                             level_rolls=pet_rolls[slot],
                         )
                         derived=base_derived_stats(

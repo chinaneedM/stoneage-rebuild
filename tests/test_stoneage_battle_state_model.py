@@ -276,6 +276,10 @@ class PersistentBattleStateTests(unittest.TestCase):
             dict(result.after.pending_exp_by_participant_id),
             {"player": 0, "pet:0": 1400},
         )
+        self.assertEqual(
+            dict(result.after.pending_pet_variable_ai_by_participant_id),
+            {"pet:0": 1},
+        )
 
     def test_source_side_check_order_preserves_enemy_win_if_both_are_zero(self):
         player = participant("player", "player", "player", hp=1)

@@ -474,6 +474,10 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(self.domain.persistent.character.fields["exp"], 0)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["hp"], 21)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"], 10)
+        self.assertEqual(
+            self.domain.persistent.pets[PetSlot(2)].growth.variable_ai,
+            1,
+        )
 
     def test_nonlevel_exp_settlement_applies_only_below_current_thresholds(self):
         self.domain.persistent.pets[PetSlot(2)] = allied_pet()
@@ -503,6 +507,9 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
             pending_exp_by_participant_id=MappingProxyType(
                 {"player": 100, "pet:2": 200}
             ),
+            pending_pet_variable_ai_by_participant_id=MappingProxyType(
+                {"pet:2": 20}
+            ),
             phase=FINISHED,
             result=PLAYER_WIN,
             winning_side=0,
@@ -523,6 +530,10 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(
             self.domain.persistent.pets[PetSlot(2)].state["max_exp"],
             500,
+        )
+        self.assertEqual(
+            self.domain.persistent.pets[PetSlot(2)].growth.variable_ai,
+            20,
         )
 
     def test_nonlevel_exp_settlement_blocks_threshold_crossing_atomically(self):
@@ -595,6 +606,9 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
             ),
             pending_exp_by_participant_id=MappingProxyType(
                 {"player": 50, "pet:2": 200}
+            ),
+            pending_pet_variable_ai_by_participant_id=MappingProxyType(
+                {"pet:2": 1}
             ),
             phase=FINISHED,
             result="defeat",
@@ -738,6 +752,9 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
             pending_exp_by_participant_id=MappingProxyType(
                 {'player':0,'pet:2':490}
             ),
+            pending_pet_variable_ai_by_participant_id=MappingProxyType(
+                {'pet:2':1}
+            ),
             phase=FINISHED,result=PLAYER_WIN,winning_side=0,
         )
 
@@ -780,7 +797,7 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
             ),
             (1911,2011,2227,2327),
         )
-        self.assertEqual(pet.growth.variable_ai,500)
+        self.assertEqual(pet.growth.variable_ai,501)
         self.assertEqual(pet.growth.pet_rank,4)
         self.assertEqual(pet.growth.alloc_point,0x12131516)
 

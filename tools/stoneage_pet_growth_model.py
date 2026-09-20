@@ -101,6 +101,16 @@ def allocation_counts(allocation_rolls):
     return tuple(counts)
 
 
+def adjust_pet_variable_ai(current_variable_ai,delta):
+    current=int(current_variable_ai)
+    if not VARIABLE_AI_MIN<=current<=VARIABLE_AI_MAX:
+        raise ValueError('current_variable_ai outside stable range')
+    return min(
+        VARIABLE_AI_MAX,
+        max(VARIABLE_AI_MIN,current+int(delta)),
+    )
+
+
 def advance_pet_growth(
     growth_base,
     rank,
@@ -140,9 +150,9 @@ def advance_pet_growth(
         )
         current=[value+delta for value,delta in zip(current,inc)]
         increments.append(tuple(inc))
-        variable_ai=min(
-            VARIABLE_AI_MAX,
-            max(VARIABLE_AI_MIN,variable_ai+VARIABLE_AI_LEVELUP_DELTA),
+        variable_ai=adjust_pet_variable_ai(
+            variable_ai,
+            VARIABLE_AI_LEVELUP_DELTA,
         )
 
     return PetGrowthTransition(
