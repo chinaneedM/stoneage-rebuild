@@ -39,6 +39,8 @@ from tools.stoneage_battle_round_model import (
     BattleCombatProfile,
     BattleCommand,
     OrdinaryAttackRolls,
+    OrdinaryCaptureContext,
+    OrdinaryCaptureRolls,
     ResolvedOrdinaryRound,
     prepare_battle_round,
     resolve_ordinary_round,
@@ -556,6 +558,8 @@ def resolve_persistent_ordinary_round(
     profiles: Mapping[str, BattleCombatProfile],
     attack_rolls: Mapping[str, OrdinaryAttackRolls],
     defense_profile: str,
+    capture_contexts: Mapping[str, OrdinaryCaptureContext] | None = None,
+    capture_rolls: Mapping[str, OrdinaryCaptureRolls] | None = None,
     drop_rolls_by_enemy_id: Mapping[
         str,Sequence[DropAllocationRoll]
     ] | None = None,
@@ -599,6 +603,8 @@ def resolve_persistent_ordinary_round(
         profiles=profiles,
         attack_rolls=attack_rolls,
         defense_profile=defense_profile,
+        capture_contexts=capture_contexts,
+        capture_rolls=capture_rolls,
         field_attr=field_attr,
         field_power=field_power,
     )
@@ -620,9 +626,31 @@ def resolve_persistent_ordinary_round(
         round_result,
         drop_rolls_by_enemy_id=drop_rolls_by_enemy_id,
     )
+    exited_ids={str(pid) for pid in round_result.exited_participant_ids}
+    invalid_exits=sorted(
+        exited_ids-{str(enemy.participant_id) for enemy in state.session.enemies}
+    )
+    if invalid_exits:
+        raise ValueError(f"ordinary round exited non-enemy entries: {invalid_exits}")
+    next_session=(
+        replace(
+            state.session,
+            enemies=tuple(
+                enemy for enemy in state.session.enemies
+                if str(enemy.participant_id) not in exited_ids
+            ),
+        )
+        if exited_ids
+        else state.session
+    )
+    next_slots=dict(state.slots)
+    for pid in exited_ids:
+        next_slots.pop(pid,None)
+        hp.pop(pid,None)
+
     next_state = PersistentBattleState(
-        session=state.session,
-        slots=state.slots,
+        session=next_session,
+        slots=_freeze_mapping(next_slots),
         hp_by_participant_id=_freeze_mapping(hp),
         pending_exp_by_participant_id=pending_exp,
         pending_pet_variable_ai_by_participant_id=pending_variable_ai,

@@ -9,10 +9,13 @@ from tools.stoneage_battle_core_model import (
 
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
+    BATTLE_COM_CAPTURE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
     OrdinaryAttackRolls,
+    OrdinaryCaptureContext,
+    OrdinaryCaptureRolls,
 )
 from tools.stoneage_battle_state_model import (
     ACTIVE,
@@ -472,6 +475,57 @@ class PersistentBattleStateTests(unittest.TestCase):
         self.assertFalse(result.resolution.success)
         self.assertIs(result.after,state)
         self.assertEqual(result.after.phase,ACTIVE)
+
+
+    def test_capture_command_round_removes_target_without_exp_or_drop_profit(self):
+        player=participant("player","player","player",quick=100,level=10)
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=10,max_hp=100,quick=20,level=10,reward_exp=1500,
+            reward_items=(BattleDropItem("held:round",501),),
+            capturable=True,capture_default=11,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_CAPTURE,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={
+                "player":BattleCombatProfile(
+                    fixed_dex=30,fixed_luck=3,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+                "enemy":BattleCombatProfile(
+                    fixed_dex=15,fixed_luck=0,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            capture_contexts={
+                "player":OrdinaryCaptureContext(
+                    attacker_charm=50,
+                    occupied_pet_slots=(0,2),
+                ),
+            },
+            capture_rolls={
+                "player":OrdinaryCaptureRolls(1),
+            },
+        )
+        self.assertEqual(result.round.exited_participant_ids,("enemy",))
+        self.assertEqual(result.after.session.enemies,())
+        self.assertEqual(result.after.phase,FINISHED)
+        self.assertEqual(result.after.result,PLAYER_WIN)
+        self.assertEqual(dict(result.after.pending_exp_by_participant_id),{"player":0})
+        self.assertEqual(
+            result.after.pending_drop_items_by_player_entry_id["player"],()
+        )
 
 
 if __name__ == "__main__":

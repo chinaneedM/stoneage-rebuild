@@ -2,11 +2,14 @@ import unittest
 
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
+    BATTLE_COM_CAPTURE,
     BATTLE_COM_GUARD,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
     OrdinaryAttackRolls,
+    OrdinaryCaptureContext,
+    OrdinaryCaptureRolls,
     prepare_battle_round,
     resolve_ordinary_round,
 )
@@ -271,6 +274,50 @@ class BattleRoundModelTests(unittest.TestCase):
                 },
                 defense_profile="newpower_70pct",
             )
+
+
+    def test_capture_executes_in_action_order_and_exits_target_without_hp_damage(self):
+        player=participant("player","player","player",quick=100,level=10)
+        enemy=replace(
+            participant("enemy","enemy","enemy",quick=20,level=10,hp=10),
+            max_hp=100,
+            capturable=True,
+            capture_default=11,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_CAPTURE,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"enemy":0},
+        )
+        resolved=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={
+                "player":profile(fixed_dex=30,fixed_luck=3),
+                "enemy":profile(fixed_dex=15),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            capture_contexts={
+                "player":OrdinaryCaptureContext(
+                    attacker_charm=50,
+                    occupied_pet_slots=(0,2),
+                ),
+            },
+            capture_rolls={
+                "player":OrdinaryCaptureRolls(capture_roll_1_100=1),
+            },
+        )
+        event=resolved.events[0]
+        self.assertEqual(event.result,"capture_success")
+        self.assertEqual(event.target_hp_before,10)
+        self.assertEqual(event.target_hp_after,10)
+        self.assertEqual(event.capture_resolution.assigned_pet_slot,1)
+        self.assertEqual(resolved.exited_participant_ids,("enemy",))
+        self.assertEqual(resolved.hp_by_participant_id["enemy"],10)
 
 
 if __name__ == "__main__":

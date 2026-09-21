@@ -18,6 +18,8 @@ from tools.stoneage_battle_core_model import (
     OTHER,
     PET,
     PLAYER,
+    BattleCaptureInputs,
+    BattleCaptureResolution,
     attribute_adjusted_damage,
     critical_damage,
     critical_per_10000,
@@ -28,6 +30,7 @@ from tools.stoneage_battle_core_model import (
     effective_defense_preserved_old,
     guard_damage,
     physical_base_damage,
+    resolve_battle_capture_attempt,
 )
 from tools.stoneage_singleplayer_battle import BattleParticipant
 
@@ -250,7 +253,7 @@ def prepare_battle_round(
 SIDE_OFFSET = 10
 BATTLE_SLOT_COUNT = 20
 ORDINARY_RESOLUTION_COMMANDS = frozenset(
-    {BATTLE_COM_ATTACK, BATTLE_COM_GUARD, BATTLE_COM_WAIT}
+    {BATTLE_COM_ATTACK, BATTLE_COM_GUARD, BATTLE_COM_CAPTURE, BATTLE_COM_WAIT}
 )
 
 
@@ -289,6 +292,53 @@ class OrdinaryAttackRolls:
 
 
 @dataclass(frozen=True)
+class OrdinaryCaptureRolls:
+    """RAND values consumed by TargetAdjust + BATTLE_CaptureCheck."""
+    capture_roll_1_100: int | None
+    retarget_roll: int | None = None
+
+
+@dataclass(frozen=True)
+class OrdinaryCaptureContext:
+    """Non-random player/target state not carried by BattleParticipant."""
+    attacker_charm: int
+    pick_all_pet: bool = False
+    temporary_capture_modifier: int = 0
+    target_sleep_by_participant_id: Mapping[str,int] | None = None
+    required_items_present_by_participant_id: Mapping[str,bool] | None = None
+    occupied_pet_slots: tuple[int,...] = ()
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self,'attacker_charm',int(self.attacker_charm))
+        object.__setattr__(
+            self,'temporary_capture_modifier',int(self.temporary_capture_modifier)
+        )
+        object.__setattr__(
+            self,
+            'target_sleep_by_participant_id',
+            MappingProxyType({
+                str(key):int(value)
+                for key,value in (self.target_sleep_by_participant_id or {}).items()
+            }),
+        )
+        object.__setattr__(
+            self,
+            'required_items_present_by_participant_id',
+            MappingProxyType({
+                str(key):bool(value)
+                for key,value in (
+                    self.required_items_present_by_participant_id or {}
+                ).items()
+            }),
+        )
+        object.__setattr__(
+            self,
+            'occupied_pet_slots',
+            tuple(int(slot) for slot in self.occupied_pet_slots),
+        )
+
+
+@dataclass(frozen=True)
 class OrdinaryRoundEvent:
     participant_id: str
     slot: int
@@ -302,6 +352,7 @@ class OrdinaryRoundEvent:
     damage: int = 0
     target_hp_before: int | None = None
     target_hp_after: int | None = None
+    capture_resolution: BattleCaptureResolution | None = None
 
 
 @dataclass(frozen=True)
@@ -310,6 +361,7 @@ class ResolvedOrdinaryRound:
     hp_by_participant_id: Mapping[str, int]
     hp_by_slot: Mapping[int, int]
     action_order: tuple[str, ...]
+    exited_participant_ids: tuple[str, ...] = ()
 
 
 def _participant_battle_kind(participant: BattleParticipant) -> str:
@@ -395,15 +447,22 @@ def _retarget_slot(
     by_slot: Mapping[int, BattleParticipant],
     hp_by_slot: Mapping[int, int],
     roll: int | None,
+    *,
+    excluded_slots: Sequence[int] = (),
 ) -> int | None:
     target_side = 1 - _slot_side(actor_slot)
+    excluded={int(slot) for slot in excluded_slots}
     candidates = tuple(
         slot
         for slot in range(
             target_side * SIDE_OFFSET,
             target_side * SIDE_OFFSET + SIDE_OFFSET,
         )
-        if slot in by_slot and int(hp_by_slot.get(slot, 0)) > 0
+        if (
+            slot in by_slot
+            and slot not in excluded
+            and int(hp_by_slot.get(slot, 0)) > 0
+        )
     )
     if not candidates:
         return None
@@ -423,10 +482,12 @@ def resolve_ordinary_round(
     profiles: Mapping[str, BattleCombatProfile],
     attack_rolls: Mapping[str, OrdinaryAttackRolls],
     defense_profile: str,
+    capture_contexts: Mapping[str, OrdinaryCaptureContext] | None = None,
+    capture_rolls: Mapping[str, OrdinaryCaptureRolls] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
-    """Execute the first status-free attack/guard/wait battle seam.
+    """Execute the status-free attack/guard/capture/wait battle seam.
 
     Guard stance is taken from the submitted command set before action sorting,
     matching BATTLE_AttackSeq's inspection of the defender's COM1 rather than
@@ -435,7 +496,7 @@ def resolve_ordinary_round(
     for entry in prepared.ordered_entries:
         if entry.command.command1 not in ORDINARY_RESOLUTION_COMMANDS:
             raise ValueError(
-                "ordinary resolver accepts only ATTACK/GUARD/WAIT commands"
+                "ordinary resolver accepts only ATTACK/GUARD/CAPTURE/WAIT commands"
             )
 
     by_slot, slot_by_id = _build_slot_maps(prepared, slots)
@@ -461,6 +522,10 @@ def resolve_ordinary_round(
     }
 
     events: list[OrdinaryRoundEvent] = []
+    exited_slots: set[int] = set()
+    exited_ids: list[str] = []
+    capture_contexts=dict(capture_contexts or {})
+    capture_rolls=dict(capture_rolls or {})
 
     for entry in prepared.ordered_entries:
         participant = entry.participant
@@ -489,6 +554,17 @@ def resolve_ordinary_round(
                 )
             )
             continue
+        if slot in exited_slots:
+            events.append(
+                OrdinaryRoundEvent(
+                    participant_id,
+                    slot,
+                    entry.command.command1,
+                    entry.action_value,
+                    "skipped_exited",
+                )
+            )
+            continue
 
         if entry.command.command1 == BATTLE_COM_WAIT:
             events.append(
@@ -514,6 +590,114 @@ def resolve_ordinary_round(
             )
             continue
 
+        if entry.command.command1 == BATTLE_COM_CAPTURE:
+            if participant_id not in capture_contexts:
+                raise KeyError(
+                    f"missing capture context for {participant_id}"
+                )
+            if participant_id not in capture_rolls:
+                raise KeyError(
+                    f"missing capture rolls for {participant_id}"
+                )
+            context=capture_contexts[participant_id]
+            cap_rolls=capture_rolls[participant_id]
+            original_target=int(entry.command.command2)
+            target=original_target
+            retargeted=False
+            target_alive=(
+                target in by_slot
+                and target not in exited_slots
+                and int(hp_by_slot.get(target,0))>0
+            )
+            if not target_alive:
+                target=_retarget_slot(
+                    slot,
+                    by_slot,
+                    hp_by_slot,
+                    cap_rolls.retarget_roll,
+                    excluded_slots=exited_slots,
+                )
+                retargeted=True
+            if target is None:
+                events.append(
+                    OrdinaryRoundEvent(
+                        participant_id,
+                        slot,
+                        BATTLE_COM_CAPTURE,
+                        entry.action_value,
+                        "no_target",
+                        original_target_slot=original_target,
+                        retargeted=True,
+                    )
+                )
+                continue
+            defender=by_slot[target]
+            defender_id=str(defender.participant_id)
+            if defender.capturable is None:
+                raise ValueError(
+                    f"capture target {defender_id} lacks PETFLG provenance"
+                )
+            if defender.capture_default is None:
+                raise ValueError(
+                    f"capture target {defender_id} lacks enemybase GET provenance"
+                )
+            attacker_profile=profiles[participant_id]
+            defender_profile=profiles[defender_id]
+            inputs=BattleCaptureInputs(
+                attacker_level=int(participant.level),
+                attacker_charm=int(context.attacker_charm),
+                attacker_fixed_dex=int(attacker_profile.fixed_dex),
+                attacker_fixed_luck=int(attacker_profile.fixed_luck),
+                target_level=int(defender.level),
+                target_hp=int(hp_by_slot[target]),
+                target_max_hp=int(defender.max_hp),
+                target_fixed_dex=int(defender_profile.fixed_dex),
+                target_capture_default=int(defender.capture_default),
+                target_is_enemy=(defender.kind=="enemy"),
+                target_capturable=bool(defender.capturable),
+                pick_all_pet=bool(context.pick_all_pet),
+                temporary_capture_modifier=int(
+                    context.temporary_capture_modifier
+                ),
+                target_sleep=int(
+                    context.target_sleep_by_participant_id.get(defender_id,0)
+                ),
+                required_items_present=bool(
+                    context.required_items_present_by_participant_id.get(
+                        defender_id,True
+                    )
+                ),
+                occupied_pet_slots=context.occupied_pet_slots,
+            )
+            resolution=resolve_battle_capture_attempt(
+                inputs,
+                roll_1_100=cap_rolls.capture_roll_1_100,
+            )
+            before=int(hp_by_slot[target])
+            if resolution.success:
+                exited_slots.add(target)
+                exited_ids.append(defender_id)
+            events.append(
+                OrdinaryRoundEvent(
+                    participant_id,
+                    slot,
+                    BATTLE_COM_CAPTURE,
+                    entry.action_value,
+                    (
+                        "capture_success"
+                        if resolution.success
+                        else str(resolution.failure_reason)
+                    ),
+                    original_target_slot=original_target,
+                    resolved_target_slot=target,
+                    retargeted=retargeted,
+                    target_hp_before=before,
+                    target_hp_after=before,
+                    capture_resolution=resolution,
+                )
+            )
+            continue
+
         rolls = attack_rolls.get(participant_id)
         if rolls is None:
             raise KeyError(f"missing ordinary attack rolls for {participant_id}")
@@ -524,6 +708,7 @@ def resolve_ordinary_round(
 
         target_alive = (
             target in by_slot
+            and target not in exited_slots
             and int(hp_by_slot.get(target, 0)) > 0
         )
         if target_alive and _slot_side(target) == _slot_side(slot):
@@ -536,6 +721,7 @@ def resolve_ordinary_round(
                 by_slot,
                 hp_by_slot,
                 rolls.retarget_roll,
+                excluded_slots=exited_slots,
             )
             retargeted = True
 
@@ -678,4 +864,5 @@ def resolve_ordinary_round(
             entry.participant.participant_id
             for entry in prepared.ordered_entries
         ),
+        exited_participant_ids=tuple(exited_ids),
     )
