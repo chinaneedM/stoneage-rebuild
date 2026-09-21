@@ -25,6 +25,7 @@ from tools.stoneage_map_collision_model import (
     ordinary_step_allowed,
 )
 from tools.stoneage_battle_core_model import (
+    BattleCaptureInputs,
     BattleDropSettlement,
     DropAllocationRoll,
     settle_player_battle_drops,
@@ -45,8 +46,10 @@ from tools.stoneage_battle_round_model import (
 from tools.stoneage_battle_state_model import (
     FINISHED,
     PersistentBattleState,
+    PersistentCaptureResult,
     PersistentRoundResult,
     begin_persistent_battle,
+    resolve_persistent_capture_transition,
     resolve_persistent_ordinary_round,
 )
 from tools.stoneage_enemy_spawn_model import (
@@ -83,6 +86,7 @@ from tools.stoneage_singleplayer_domain import (
     InventorySlot,
     ItemTemplateId,
     MapPosition,
+    PetActor,
     PetGrowthState,
     PetSlot,
     SinglePlayerHistoricalDomain,
@@ -388,6 +392,62 @@ class SinglePlayerHistoricalRuntime:
     ) -> PersistentBattleState:
         """Promote a battle shell into persistent multi-round state."""
         return begin_persistent_battle(session, slots=slots)
+
+    def resolve_persistent_capture(
+        self,
+        state: PersistentBattleState,
+        *,
+        attacker_id: str,
+        target_id: str,
+        inputs: BattleCaptureInputs,
+        roll_1_100: int | None,
+        captured_pet: PetActor | None = None,
+    ) -> PersistentCaptureResult:
+        """Resolve capture and atomically install the copied pet on success.
+
+        The complete captured PetActor is required from a provenance-bearing
+        adapter because this runtime does not guess unresolved MP, skill-view,
+        EXP-threshold or other copied fields.
+        """
+        occupied=tuple(sorted(slot.value for slot in self.domain.persistent.pets))
+        if tuple(sorted(inputs.occupied_pet_slots)) != occupied:
+            raise ValueError("capture pet-slot occupancy drift")
+        result=resolve_persistent_capture_transition(
+            state,
+            attacker_id=attacker_id,
+            target_id=target_id,
+            inputs=inputs,
+            roll_1_100=roll_1_100,
+        )
+        if not result.resolution.success:
+            return result
+        if captured_pet is None:
+            raise ValueError("successful capture requires a complete captured PetActor")
+        if result.captured_target is None:
+            raise ValueError("successful capture lacks captured target snapshot")
+        slot=PetSlot(int(result.resolution.assigned_pet_slot))
+        if captured_pet.slot != slot:
+            raise ValueError("captured pet slot does not match source first-empty slot")
+        if slot in self.domain.persistent.pets:
+            raise ValueError("captured pet slot became occupied before persistence")
+        target=result.captured_target
+        if target.source_variant_id is None or target.source_template_id is None:
+            raise ValueError("captured target lacks source identity")
+        if captured_pet.variant_id.value != int(target.source_variant_id):
+            raise ValueError("captured pet variant identity drift")
+        if captured_pet.template_id.value != int(target.source_template_id):
+            raise ValueError("captured pet template identity drift")
+        for key,expected in (
+            ("level",target.level),
+            ("hp",target.hp),
+            ("max_hp",target.max_hp),
+        ):
+            if key not in captured_pet.state:
+                raise ValueError(f"captured pet state lacks copied {key}")
+            if int(captured_pet.state[key]) != int(expected):
+                raise ValueError(f"captured pet copied {key} drift")
+        self.domain.persistent.pets[slot]=captured_pet
+        return result
 
     def resolve_persistent_battle_round(
         self,

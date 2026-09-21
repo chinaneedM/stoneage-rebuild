@@ -59,6 +59,8 @@ class BattleParticipant:
     source_pet_slot: int | None = None
     reward_exp: int | None = None
     reward_items: tuple[BattleDropItem, ...] = ()
+    capturable: bool | None = None
+    capture_default: int | None = None
 
     def initiative(self, random_subtract: int) -> int:
         return early_action_value(self.quick, int(random_subtract))
@@ -184,6 +186,11 @@ def enemy_participant_from_spawn_state(
         source_template_id=template.tempno,
         reward_exp=int(variant.exp_override),
         reward_items=reward_items,
+        capturable=bool(variant.capturable),
+        capture_default=(
+            None if template.capture_default is None
+            else int(template.capture_default)
+        ),
     )
 
 

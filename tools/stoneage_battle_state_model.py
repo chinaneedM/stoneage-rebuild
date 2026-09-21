@@ -8,8 +8,9 @@ living non-pet actors. R1 models the ordinary single-player subset:
 - side 1: enemy actors;
 - rescue/spectator modes are not yet represented.
 
-Persistent EXP application, escape/capture and post-battle recovery remain
-outside this state machine. R1 preserves both the earlier stable battle-local
+Persistent EXP application, escape and post-battle recovery remain outside
+this state machine. Capture now has an explicit transition seam after its
+source-shaped eligibility/probability result; R1 also preserves the stable battle-local
 WORKGETEXP seam and the three-slot pending item buffer: ordinary enemy deaths
 can accumulate pending EXP
 for the player-side actor that caused the death, without applying it to
@@ -24,12 +25,15 @@ from typing import Mapping, Sequence
 
 from tools.stoneage_battle_core_model import (
     BATTLE_PENDING_DROP_MAX,
+    BattleCaptureInputs,
+    BattleCaptureResolution,
     BattleDropItem,
     DropAllocationRoll,
     DropRecipientTicket,
     KillProfitRecipient,
     allocate_battle_drop_items,
     battle_kill_profit,
+    resolve_battle_capture_attempt,
 )
 from tools.stoneage_battle_round_model import (
     BattleCombatProfile,
@@ -133,6 +137,14 @@ class PersistentBattleState:
 class PersistentRoundResult:
     before: PersistentBattleState
     round: ResolvedOrdinaryRound
+    after: PersistentBattleState
+
+
+@dataclass(frozen=True)
+class PersistentCaptureResult:
+    before: PersistentBattleState
+    resolution: BattleCaptureResolution
+    captured_target: BattleParticipant | None
     after: PersistentBattleState
 
 
@@ -302,6 +314,104 @@ def active_participants(
         participant_snapshot(state, participant.participant_id)
         for participant in _session_participants(state.session)
         if int(state.hp_by_participant_id[participant.participant_id]) > 0
+    )
+
+
+def resolve_persistent_capture_transition(
+    state: PersistentBattleState,
+    *,
+    attacker_id: str,
+    target_id: str,
+    inputs: BattleCaptureInputs,
+    roll_1_100: int | None,
+) -> PersistentCaptureResult:
+    """Apply only the post-BATTLE_CaptureCheck battle-entry transition.
+
+    Command initiative/target-adjust dispatch is intentionally outside this
+    seam. On success the enemy is removed like BATTLE_Exit(), while HP is not
+    forced to zero and no kill-profit scan runs; capture therefore cannot
+    manufacture EXP or drop ownership.
+    """
+    if state.phase != ACTIVE:
+        raise ValueError("cannot capture after battle termination")
+    participants=_participant_map(state.session)
+    attacker_id=str(attacker_id)
+    target_id=str(target_id)
+    if attacker_id not in participants:
+        raise KeyError(f"unknown capture attacker {attacker_id}")
+    if target_id not in participants:
+        raise KeyError(f"unknown capture target {target_id}")
+    attacker=participants[attacker_id]
+    target=participants[target_id]
+    if attacker.side != "player" or attacker.kind != "player":
+        raise ValueError("capture attacker must be the player battle entry")
+    if target.side != "enemy" or target.kind != "enemy":
+        raise ValueError("capture target must be an enemy battle entry")
+    current_hp=int(state.hp_by_participant_id[target_id])
+    if current_hp <= 0:
+        raise ValueError("cannot capture a non-living battle target")
+    if int(inputs.attacker_level) != int(attacker.level):
+        raise ValueError("capture attacker level drift")
+    if int(inputs.target_level) != int(target.level):
+        raise ValueError("capture target level drift")
+    if int(inputs.target_hp) != current_hp:
+        raise ValueError("capture target current HP drift")
+    if int(inputs.target_max_hp) != int(target.max_hp):
+        raise ValueError("capture target max HP drift")
+    if target.capturable is None:
+        raise ValueError("capture target lacks PETFLG provenance")
+    if bool(inputs.target_capturable) != bool(target.capturable):
+        raise ValueError("capture PETFLG provenance drift")
+    if target.capture_default is None:
+        raise ValueError("capture target lacks enemybase GET provenance")
+    if int(inputs.target_capture_default) != int(target.capture_default):
+        raise ValueError("capture default provenance drift")
+
+    resolution=resolve_battle_capture_attempt(inputs,roll_1_100=roll_1_100)
+    if not resolution.success:
+        return PersistentCaptureResult(
+            before=state,
+            resolution=resolution,
+            captured_target=None,
+            after=state,
+        )
+
+    captured=participant_snapshot(state,target_id)
+    remaining_enemies=tuple(
+        enemy for enemy in state.session.enemies
+        if str(enemy.participant_id) != target_id
+    )
+    if len(remaining_enemies) != len(state.session.enemies)-1:
+        raise ValueError("capture target was not uniquely present in enemy entries")
+    next_session=replace(state.session,enemies=remaining_enemies)
+    slots=dict(state.slots)
+    hp=dict(state.hp_by_participant_id)
+    slots.pop(target_id)
+    hp.pop(target_id)
+    next_state=PersistentBattleState(
+        session=next_session,
+        slots=_freeze_mapping(slots),
+        hp_by_participant_id=_freeze_mapping(hp),
+        pending_exp_by_participant_id=state.pending_exp_by_participant_id,
+        pending_pet_variable_ai_by_participant_id=(
+            state.pending_pet_variable_ai_by_participant_id
+        ),
+        pending_drop_items_by_player_entry_id=(
+            state.pending_drop_items_by_player_entry_id
+        ),
+        destroyed_drop_items=state.destroyed_drop_items,
+        turn=state.turn,
+        phase=ACTIVE,
+        result=None,
+        winning_side=None,
+        last_commands=state.last_commands,
+    )
+    next_state=_with_termination(next_state)
+    return PersistentCaptureResult(
+        before=state,
+        resolution=resolution,
+        captured_target=captured,
+        after=next_state,
     )
 
 

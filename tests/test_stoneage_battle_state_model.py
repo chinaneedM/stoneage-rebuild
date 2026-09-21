@@ -2,6 +2,7 @@ import unittest
 from dataclasses import replace
 
 from tools.stoneage_battle_core_model import (
+    BattleCaptureInputs,
     BattleDropItem,
     DropAllocationRoll,
 )
@@ -20,6 +21,7 @@ from tools.stoneage_battle_state_model import (
     PLAYER_WIN,
     begin_persistent_battle,
     living_non_pet_count,
+    resolve_persistent_capture_transition,
     resolve_persistent_ordinary_round,
     termination_result,
 )
@@ -48,6 +50,11 @@ def participant(
     reward_exp=None,
     source_pet_slot=None,
     reward_items=(),
+    max_hp=None,
+    capturable=None,
+    capture_default=None,
+    source_variant_id=None,
+    source_template_id=None,
 ):
     return BattleParticipant(
         participant_id=pid,
@@ -55,7 +62,7 @@ def participant(
         kind=kind,
         level=level,
         hp=hp,
-        max_hp=hp,
+        max_hp=hp if max_hp is None else max_hp,
         attack=attack,
         defense=defense,
         quick=quick,
@@ -64,6 +71,10 @@ def participant(
         reward_exp=reward_exp,
         source_pet_slot=source_pet_slot,
         reward_items=tuple(reward_items),
+        capturable=capturable,
+        capture_default=capture_default,
+        source_variant_id=source_variant_id,
+        source_template_id=source_template_id,
     )
 
 
@@ -398,6 +409,69 @@ class PersistentBattleStateTests(unittest.TestCase):
         )
         self.assertEqual(result.after.destroyed_drop_items,())
 
+
+
+    def test_successful_capture_exits_enemy_without_kill_profit(self):
+        player=participant("player","player","player",level=10)
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=10,max_hp=100,level=10,reward_exp=1500,
+            reward_items=(BattleDropItem("held",501),),
+            capturable=True,capture_default=11,
+            source_variant_id=700,source_template_id=88,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+        )
+        result=resolve_persistent_capture_transition(
+            state,
+            attacker_id="player",
+            target_id="enemy",
+            inputs=BattleCaptureInputs(
+                10,50,30,3,10,10,100,15,11,
+                occupied_pet_slots=(0,2),
+            ),
+            roll_1_100=1,
+        )
+        self.assertTrue(result.resolution.success)
+        self.assertEqual(result.resolution.assigned_pet_slot,1)
+        self.assertEqual(result.captured_target.hp,10)
+        self.assertEqual(result.after.session.enemies,())
+        self.assertNotIn("enemy",result.after.hp_by_participant_id)
+        self.assertNotIn("enemy",result.after.slots)
+        self.assertEqual(result.after.phase,FINISHED)
+        self.assertEqual(result.after.result,PLAYER_WIN)
+        self.assertEqual(dict(result.after.pending_exp_by_participant_id),{"player":0})
+        self.assertEqual(
+            result.after.pending_drop_items_by_player_entry_id["player"],
+            (),
+        )
+        self.assertEqual(result.after.destroyed_drop_items,())
+
+    def test_failed_capture_leaves_battle_state_unchanged(self):
+        player=participant("player","player","player",level=10)
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=10,max_hp=100,level=10,
+            capturable=True,capture_default=11,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+        )
+        result=resolve_persistent_capture_transition(
+            state,
+            attacker_id="player",
+            target_id="enemy",
+            inputs=BattleCaptureInputs(
+                10,50,30,3,10,10,100,15,11,
+            ),
+            roll_1_100=24,
+        )
+        self.assertFalse(result.resolution.success)
+        self.assertIs(result.after,state)
+        self.assertEqual(result.after.phase,ACTIVE)
 
 
 if __name__ == "__main__":
