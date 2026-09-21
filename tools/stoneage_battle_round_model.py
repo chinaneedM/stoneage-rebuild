@@ -2,9 +2,9 @@
 """Stable-descendant first battle-round command/order boundary.
 
 This module reconstructs the command envelope and action-order seam without
-inventing player input or enemy AI. Commands are explicit inputs. Later skills,
-combo rewriting, profession systems and full action execution remain outside
-this R1 boundary.
+inventing player input or enemy AI. Commands are explicit inputs. Later skills and profession systems remain outside this R1 boundary. Stable
+base combo formation is reconstructed as an explicit opt-in rewrite after
+action sorting; combo damage execution remains a separate seam.
 """
 
 from __future__ import annotations
@@ -28,6 +28,7 @@ from tools.stoneage_battle_core_model import (
     attribute_adjusted_damage,
     critical_damage,
     critical_per_10000,
+    counter_weapon_blocks_counter,
     dodge_per_10000,
     early_action_value,
     early_item_action_value,
@@ -106,6 +107,7 @@ class RoundEntry:
     command: BattleCommand
     action_value: int
     source_order: int
+    combo_id: int = 0
 
     @property
     def ready_to_execute(self) -> bool:
@@ -254,6 +256,106 @@ def prepare_battle_round(
         executable_entries=executable,
         no_action_entries=no_action,
         tie_break_was_required=tie_required,
+    )
+
+
+def apply_base_combo_rewrite(
+    prepared: PreparedBattleRound,
+    profiles: Mapping[str, "BattleCombatProfile"],
+    start_rolls_1_100: Mapping[str, int] | None,
+) -> PreparedBattleRound:
+    """Mirror stable ComboCheck() on the already action-sorted entry list.
+
+    This is the common base branch only: enemy starters use 20 percent,
+    non-enemy starters use 50 percent, and later _ITEM_ADDCOMBO equipment
+    bonuses are excluded. A successful starter consumes its own roll even when
+    no later actor ultimately joins it. Actors that join an active group do not
+    consume a start roll.
+    """
+    if start_rolls_1_100 is None:
+        return prepared
+
+    entries=list(prepared.ordered_entries)
+    start: int | None=None
+    old_target=-3
+    old_side: str | None=None
+    next_combo_id=1
+
+    def with_combo(entry: RoundEntry, combo_id: int) -> RoundEntry:
+        return RoundEntry(
+            participant=entry.participant,
+            command=BattleCommand(
+                BATTLE_COM_COMBO,
+                command2=entry.command.command2,
+                command3=entry.command.command3,
+                input_complete=entry.command.input_complete,
+            ),
+            action_value=entry.action_value,
+            source_order=entry.source_order,
+            combo_id=int(combo_id),
+        )
+
+    for i in range(len(entries)):
+        entry=entries[i]
+        participant=entry.participant
+        participant_id=str(participant.participant_id)
+        if participant_id not in profiles:
+            raise KeyError(f"missing combat profile for {participant_id}")
+        command=entry.command
+        side=str(participant.side)
+        movable=int(participant.hp)>0
+        throwing=counter_weapon_blocks_counter(
+            profiles[participant_id].counter_weapon_type
+        )
+
+        if start is not None:
+            if (
+                command.command1 != BATTLE_COM_ATTACK
+                or int(command.command2) != int(old_target)
+                or side != old_side
+                or throwing
+                or not movable
+            ):
+                start=None
+                old_side=side
+            else:
+                group_id=next_combo_id
+                entries[i]=with_combo(entry,group_id)
+                entries[start]=with_combo(entries[start],group_id)
+
+        if start is None:
+            if (
+                command.command1 == BATTLE_COM_ATTACK
+                and not throwing
+                and movable
+            ):
+                if participant_id not in start_rolls_1_100:
+                    raise KeyError(
+                        f"missing combo start roll for eligible actor {participant_id}"
+                    )
+                roll=_validated_roll(
+                    start_rolls_1_100[participant_id],
+                    1,
+                    100,
+                    "combo_start_roll_1_100",
+                )
+                per=20 if participant.kind=="enemy" else 50
+                if roll <= per:
+                    start=i
+                    old_target=int(command.command2)
+                    old_side=side
+                    next_combo_id+=1
+
+    ordered=tuple(entries)
+    executable=tuple(entry for entry in ordered if entry.ready_to_execute)
+    no_action=tuple(
+        entry for entry in executable if not entry.command.produces_action
+    )
+    return PreparedBattleRound(
+        ordered_entries=ordered,
+        executable_entries=executable,
+        no_action_entries=no_action,
+        tie_break_was_required=prepared.tie_break_was_required,
     )
 
 

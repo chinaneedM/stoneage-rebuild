@@ -4,6 +4,7 @@ from dataclasses import replace
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_CAPTURE,
+    BATTLE_COM_COMBO,
     BATTLE_COM_ESCAPE,
     BATTLE_COM_GUARD,
     BATTLE_COM_WAIT,
@@ -15,6 +16,7 @@ from tools.stoneage_battle_round_model import (
     OrdinaryCaptureRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
+    apply_base_combo_rewrite,
     prepare_battle_round,
     resolve_ordinary_round,
 )
@@ -81,6 +83,96 @@ class BattleRoundModelTests(unittest.TestCase):
                 commands,
                 {"a": 20, "b": 0},
             )
+
+    def test_base_combo_rewrite_groups_sorted_contiguous_same_target_attacks(self):
+        p1=actor("p1","player","player",quick=100)
+        p2=actor("p2","player","pet",quick=90)
+        p3=actor("p3","player","pet",quick=80)
+        enemy=actor("enemy","enemy","enemy",quick=10)
+        prepared=prepare_battle_round(
+            (p1,p2,p3,enemy),
+            {
+                "p1":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "p2":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "p3":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"p1":0,"p2":0,"p3":0,"enemy":0},
+        )
+        rewritten=apply_base_combo_rewrite(
+            prepared,
+            {
+                "p1":profile(),
+                "p2":profile(),
+                "p3":profile(),
+                "enemy":profile(),
+            },
+            # Only the starter consumes a roll; joiners need no roll.
+            {"p1":50},
+        )
+        first_three=rewritten.ordered_entries[:3]
+        self.assertEqual(
+            tuple(entry.command.command1 for entry in first_three),
+            (BATTLE_COM_COMBO,BATTLE_COM_COMBO,BATTLE_COM_COMBO),
+        )
+        self.assertEqual(
+            len({entry.combo_id for entry in first_three}),
+            1,
+        )
+        self.assertGreater(first_three[0].combo_id,0)
+
+    def test_base_combo_enemy_start_boundary_is_inclusive_twenty_percent(self):
+        e1=actor("e1","enemy","enemy",quick=100)
+        e2=actor("e2","enemy","enemy",quick=90)
+        player=actor("player","player","player",quick=10)
+        commands={
+            "e1":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            "e2":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            "player":BattleCommand(BATTLE_COM_WAIT),
+        }
+        prepared=prepare_battle_round(
+            (e1,e2,player),commands,{"e1":0,"e2":0,"player":0}
+        )
+        profiles={"e1":profile(),"e2":profile(),"player":profile()}
+        hit=apply_base_combo_rewrite(prepared,profiles,{"e1":20})
+        self.assertEqual(hit.ordered_entries[0].command.command1,BATTLE_COM_COMBO)
+        self.assertEqual(hit.ordered_entries[1].command.command1,BATTLE_COM_COMBO)
+
+        miss=apply_base_combo_rewrite(
+            prepared,profiles,{"e1":21,"e2":100}
+        )
+        self.assertEqual(miss.ordered_entries[0].command.command1,BATTLE_COM_ATTACK)
+        self.assertEqual(miss.ordered_entries[1].command.command1,BATTLE_COM_ATTACK)
+
+    def test_base_combo_throwing_weapon_breaks_chain(self):
+        p1=actor("p1","player","player",quick=100)
+        p2=actor("p2","player","pet",quick=90)
+        p3=actor("p3","player","pet",quick=80)
+        enemy=actor("enemy","enemy","enemy",quick=10)
+        prepared=prepare_battle_round(
+            (p1,p2,p3,enemy),
+            {
+                "p1":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "p2":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "p3":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"p1":0,"p2":0,"p3":0,"enemy":0},
+        )
+        rewritten=apply_base_combo_rewrite(
+            prepared,
+            {
+                "p1":profile(),
+                "p2":profile(counter_weapon_type="bow"),
+                "p3":profile(),
+                "enemy":profile(),
+            },
+            {"p1":1,"p3":100},
+        )
+        self.assertEqual(
+            tuple(entry.command.command1 for entry in rewritten.ordered_entries[:3]),
+            (BATTLE_COM_ATTACK,BATTLE_COM_ATTACK,BATTLE_COM_ATTACK),
+        )
 
     def test_guard_is_active_before_slow_guard_actor_turn(self):
         player = actor("player", "player", "player", quick=20)
