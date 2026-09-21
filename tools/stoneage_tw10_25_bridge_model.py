@@ -64,6 +64,7 @@ class PetTemplateBridge:
     base_dexterity: int | None = None
     level_up_point: int | None = None
     size_class: int | None = None
+    capture_default: int | None = None
 
     @classmethod
     def from_enemybase(cls, row: Mapping[str, Any]) -> "PetTemplateBridge":
@@ -96,6 +97,9 @@ class PetTemplateBridge:
             level_up_point=c_atoi(row["LVUPPOINT"]) if row.get("LVUPPOINT") is not None else None,
             size_class=(
                 int(row["SIZE"]) if row.get("SIZE") not in (None, "") else None
+            ),
+            capture_default=(
+                c_atoi(row["GET"]) if row.get("GET") is not None else None
             ),
         )
 

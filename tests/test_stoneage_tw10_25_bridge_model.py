@@ -72,6 +72,7 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
                 "TEMPNO": 88,
                 "INITNUM": 100,
                 "LVUPPOINT": "5.00",
+                "GET": 11,
                 "BASEVITAL": 20,
                 "BASESTR": 20,
                 "BASETGH": 20,
@@ -173,6 +174,7 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
             f["name"] for f in schema["records"]["status_pet_full"]["fields"]
         ]
         fields = state.v1_pet_state_fields()
+        self.assertEqual(template.capture_default,11)
         self.assertEqual(list(fields), expected_names)
         self.assertEqual(fields["update_mask"], 1)
         self.assertEqual(fields["graphic_id"], 10123)

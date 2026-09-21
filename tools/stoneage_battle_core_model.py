@@ -754,3 +754,136 @@ def settle_player_battle_drops(
         inventory_additions_by_slot=MappingProxyType(additions),
         destroyed_items=tuple(destroyed),
     )
+
+
+# Stable descendant capture seam.
+PET_SLOT_COUNT=5
+
+
+@dataclass(frozen=True)
+class BattleCaptureInputs:
+    """Explicit values consumed by BATTLE_CaptureCheck/PET_createPetFromCharaIndex."""
+    attacker_level: int
+    attacker_charm: int
+    attacker_fixed_dex: int
+    attacker_fixed_luck: int
+    target_level: int
+    target_hp: int
+    target_max_hp: int
+    target_fixed_dex: int
+    target_capture_default: int
+    target_is_enemy: bool = True
+    target_capturable: bool = True
+    pick_all_pet: bool = False
+    temporary_capture_modifier: int = 0
+    target_sleep: int = 0
+    required_items_present: bool = True
+    occupied_pet_slots: tuple[int,...] = ()
+
+    def __post_init__(self) -> None:
+        for name in (
+            'attacker_level','attacker_charm','attacker_fixed_dex',
+            'attacker_fixed_luck','target_level','target_hp','target_max_hp',
+            'target_fixed_dex','target_capture_default',
+            'temporary_capture_modifier','target_sleep',
+        ):
+            object.__setattr__(self,name,int(getattr(self,name)))
+        slots=tuple(int(slot) for slot in self.occupied_pet_slots)
+        if len(set(slots)) != len(slots):
+            raise ValueError('occupied pet slots must be unique')
+        if any(slot < 0 or slot >= PET_SLOT_COUNT for slot in slots):
+            raise ValueError('occupied pet slot must be in 0..4')
+        object.__setattr__(self,'occupied_pet_slots',slots)
+
+
+@dataclass(frozen=True)
+class BattleCaptureResolution:
+    success: bool
+    failure_reason: str | None
+    displayed_probability: float | None
+    rng_consumed: bool
+    assigned_pet_slot: int | None
+    capture_modifier_after: int = 0
+
+
+def first_empty_pet_slot(occupied_pet_slots: Sequence[int],*,slot_count=PET_SLOT_COUNT):
+    """Mirror CHAR_getCharPetElement(): ascending first-free slot or -1."""
+    slot_count=int(slot_count)
+    if slot_count <= 0:
+        raise ValueError('pet slot count must be positive')
+    occupied={int(slot) for slot in occupied_pet_slots}
+    if any(slot < 0 or slot >= slot_count for slot in occupied):
+        raise ValueError('occupied pet slot outside pet array')
+    for slot in range(slot_count):
+        if slot not in occupied:
+            return slot
+    return -1
+
+
+def battle_capture_probability(inputs: BattleCaptureInputs) -> float:
+    """Mirror stable BATTLE_CaptureCheck arithmetic without gates or RNG."""
+    if not isinstance(inputs,BattleCaptureInputs):
+        inputs=BattleCaptureInputs(**dict(inputs))
+    max_hp=float(inputs.target_max_hp)
+    if max_hp <= 0:
+        max_hp=1.0
+    hp=float(inputs.target_hp)
+    hp_term=10.0-(hp*hp)/max_hp
+    level_term=float(inputs.attacker_level)/2.0-float(inputs.target_level)/2.0
+    dex_term=float(inputs.attacker_fixed_dex)/15.0-float(inputs.target_fixed_dex)/15.0
+    work=(
+        hp_term+level_term+dex_term
+        +float(inputs.target_capture_default+inputs.attacker_fixed_luck)
+    )*float(inputs.attacker_charm)/50.0
+    work+=float(inputs.temporary_capture_modifier)
+    if inputs.target_sleep > 0:
+        work+=15.0
+    if work > 99.0:
+        work=99.0
+    return work
+
+
+def resolve_battle_capture_attempt(
+    inputs: BattleCaptureInputs,
+    *,
+    roll_1_100: int | None,
+) -> BattleCaptureResolution:
+    """Resolve capture gates, RNG order and the later five-slot capacity check."""
+    if not isinstance(inputs,BattleCaptureInputs):
+        inputs=BattleCaptureInputs(**dict(inputs))
+
+    def failed(reason,probability=None,rng=False):
+        return BattleCaptureResolution(
+            False,reason,probability,rng,None,0
+        )
+
+    if not inputs.required_items_present:
+        if roll_1_100 is not None:
+            raise ValueError('missing required capture item consumes no capture RNG')
+        return failed('missing_required_items')
+    if not inputs.target_is_enemy:
+        if roll_1_100 is not None:
+            raise ValueError('non-enemy capture target consumes no capture RNG')
+        return failed('target_not_enemy',0.0)
+    if not inputs.target_capturable:
+        if roll_1_100 is not None:
+            raise ValueError('PETFLG=0 capture target consumes no capture RNG')
+        return failed('target_not_capturable',0.0)
+    if not inputs.pick_all_pet and inputs.attacker_level+5 < inputs.target_level:
+        if roll_1_100 is not None:
+            raise ValueError('level-gated capture consumes no capture RNG')
+        return failed('target_level_too_high',0.0)
+
+    probability=battle_capture_probability(inputs)
+    if roll_1_100 is None:
+        raise ValueError('eligible capture attempt requires RAND(1,100) result')
+    roll=int(roll_1_100)
+    if not 1 <= roll <= 100:
+        raise ValueError('capture roll must be in 1..100')
+    if not roll < probability:
+        return failed('capture_roll_failed',probability,True)
+
+    slot=first_empty_pet_slot(inputs.occupied_pet_slots)
+    if slot < 0:
+        return failed('pet_slots_full',probability,True)
+    return BattleCaptureResolution(True,None,probability,True,slot,0)

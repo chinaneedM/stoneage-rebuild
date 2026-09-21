@@ -36,6 +36,11 @@ from tools.stoneage_battle_core_model import (
     enemy_item_probability_hit,
     allocate_battle_drop_items,
     settle_player_battle_drops,
+    BattleCaptureInputs,
+    BattleCaptureResolution,
+    first_empty_pet_slot,
+    battle_capture_probability,
+    resolve_battle_capture_attempt,
 )
 
 
@@ -370,6 +375,72 @@ class BattleCoreModelTests(unittest.TestCase):
         dead=settle_player_battle_drops(items,(),player_alive=False)
         self.assertEqual(dict(dead.inventory_additions_by_slot),{})
         self.assertEqual(dead.destroyed_items,items)
+
+
+    def test_capture_probability_matches_stable_formula_and_sleep_bonus(self):
+        base=BattleCaptureInputs(
+            attacker_level=10,attacker_charm=50,attacker_fixed_dex=30,
+            attacker_fixed_luck=3,target_level=10,target_hp=10,
+            target_max_hp=100,target_fixed_dex=15,target_capture_default=11,
+        )
+        self.assertAlmostEqual(battle_capture_probability(base),25.0)
+        asleep=BattleCaptureInputs(**{**base.__dict__,"target_sleep":1})
+        self.assertAlmostEqual(battle_capture_probability(asleep),40.0)
+
+    def test_capture_probability_caps_only_upper_end_at_99(self):
+        high=BattleCaptureInputs(99,100,999,5,1,1,100,0,100,
+            temporary_capture_modifier=999)
+        self.assertEqual(battle_capture_probability(high),99.0)
+        low=BattleCaptureInputs(1,1,0,0,99,100,1,999,-100)
+        self.assertLess(battle_capture_probability(low),0.0)
+
+    def test_capture_roll_uses_strict_less_than(self):
+        inputs=BattleCaptureInputs(10,50,30,3,10,10,100,15,11)
+        success=resolve_battle_capture_attempt(inputs,roll_1_100=24)
+        self.assertIsInstance(success,BattleCaptureResolution)
+        self.assertTrue(success.success)
+        self.assertEqual(success.assigned_pet_slot,0)
+        failed=resolve_battle_capture_attempt(inputs,roll_1_100=25)
+        self.assertFalse(failed.success)
+        self.assertEqual(failed.failure_reason,'capture_roll_failed')
+
+    def test_capture_gates_do_not_consume_rng_and_pick_all_pet_only_bypasses_level(self):
+        too_high=BattleCaptureInputs(1,100,30,5,7,1,100,10,30)
+        result=resolve_battle_capture_attempt(too_high,roll_1_100=None)
+        self.assertEqual(result.failure_reason,'target_level_too_high')
+        self.assertFalse(result.rng_consumed)
+        bypass=BattleCaptureInputs(**{**too_high.__dict__,"pick_all_pet":True})
+        result=resolve_battle_capture_attempt(bypass,roll_1_100=1)
+        self.assertTrue(result.rng_consumed)
+        nonpet=BattleCaptureInputs(**{**bypass.__dict__,"target_capturable":False})
+        result=resolve_battle_capture_attempt(nonpet,roll_1_100=None)
+        self.assertEqual(result.failure_reason,'target_not_capturable')
+        self.assertFalse(result.rng_consumed)
+
+    def test_capture_pet_capacity_is_checked_after_successful_rng(self):
+        inputs=BattleCaptureInputs(
+            50,100,100,5,1,1,100,1,50,
+            occupied_pet_slots=(0,1,2,3,4),
+        )
+        result=resolve_battle_capture_attempt(inputs,roll_1_100=1)
+        self.assertFalse(result.success)
+        self.assertTrue(result.rng_consumed)
+        self.assertEqual(result.failure_reason,'pet_slots_full')
+        self.assertEqual(result.capture_modifier_after,0)
+
+    def test_capture_first_empty_pet_slot_is_ascending_zero_to_four(self):
+        self.assertEqual(first_empty_pet_slot((0,2,4)),1)
+        self.assertEqual(first_empty_pet_slot((0,1,2,3,4)),-1)
+
+    def test_capture_missing_required_item_consumes_no_rng(self):
+        inputs=BattleCaptureInputs(
+            50,100,100,5,1,1,100,1,50,
+            required_items_present=False,temporary_capture_modifier=25,
+        )
+        result=resolve_battle_capture_attempt(inputs,roll_1_100=None)
+        self.assertEqual(result.failure_reason,'missing_required_items')
+        self.assertFalse(result.rng_consumed)
+        self.assertEqual(result.capture_modifier_after,0)
 
 
 if __name__=="__main__":
