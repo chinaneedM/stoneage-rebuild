@@ -41,6 +41,8 @@ from tools.stoneage_battle_round_model import (
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
+    OrdinaryEscapeContext,
+    OrdinaryEscapeRolls,
     ResolvedOrdinaryRound,
     prepare_battle_round,
     resolve_ordinary_round,
@@ -53,6 +55,7 @@ FINISHED = "finished"
 
 PLAYER_WIN = "victory"
 ENEMY_WIN = "defeat"
+PLAYER_ESCAPE = "escape"
 
 
 @dataclass(frozen=True)
@@ -69,6 +72,7 @@ class PersistentBattleState:
     result: str | None = None
     winning_side: int | None = None
     last_commands: Mapping[str, BattleCommand] | None = None
+    escape_count_by_participant_id: Mapping[str,int] | None = None
 
     def __post_init__(self) -> None:
         if self.phase not in {ACTIVE, FINISHED}:
@@ -77,12 +81,52 @@ class PersistentBattleState:
             if self.result is not None or self.winning_side is not None:
                 raise ValueError("active battle cannot already have a result")
         else:
-            if self.result not in {PLAYER_WIN, ENEMY_WIN}:
-                raise ValueError("finished battle requires victory/defeat result")
-            if self.winning_side not in {0, 1}:
-                raise ValueError("finished battle requires winning_side 0 or 1")
+            if self.result == PLAYER_ESCAPE:
+                if self.winning_side is not None:
+                    raise ValueError("escape finish must not claim a winning side")
+            else:
+                if self.result not in {PLAYER_WIN, ENEMY_WIN}:
+                    raise ValueError(
+                        "finished battle requires victory/defeat/escape result"
+                    )
+                if self.winning_side not in {0, 1}:
+                    raise ValueError(
+                        "victory/defeat finish requires winning_side 0 or 1"
+                    )
 
         participants = _participant_map(self.session)
+        expected_escape_ids={
+            pid for pid,participant in participants.items()
+            if participant.kind != "pet"
+        }
+        if self.escape_count_by_participant_id is None:
+            object.__setattr__(
+                self,
+                "escape_count_by_participant_id",
+                _freeze_mapping({
+                    pid:0 for pid in sorted(expected_escape_ids)
+                }),
+            )
+        else:
+            normalized_escape={
+                str(pid):int(value)
+                for pid,value in self.escape_count_by_participant_id.items()
+            }
+            actual_escape_ids=set(normalized_escape)
+            if actual_escape_ids != expected_escape_ids:
+                missing=sorted(expected_escape_ids-actual_escape_ids)
+                extra=sorted(actual_escape_ids-expected_escape_ids)
+                raise ValueError(
+                    f"escape-count participants mismatch; "
+                    f"missing={missing}, extra={extra}"
+                )
+            if any(value < 0 for value in normalized_escape.values()):
+                raise ValueError("stored escape count cannot be negative")
+            object.__setattr__(
+                self,
+                "escape_count_by_participant_id",
+                _freeze_mapping(normalized_escape),
+            )
         expected_exp_ids = set(_exp_recipient_ids(self.session))
         actual_exp_ids = {str(pid) for pid in self.pending_exp_by_participant_id}
         if actual_exp_ids != expected_exp_ids:
@@ -234,6 +278,11 @@ def begin_persistent_battle(
             pending_pet_variable_ai
         ),
         pending_drop_items_by_player_entry_id=_freeze_mapping(pending_drops),
+        escape_count_by_participant_id=_freeze_mapping({
+            pid:0
+            for pid,participant in participants.items()
+            if participant.kind != "pet"
+        }),
     )
     return _with_termination(state)
 
@@ -407,6 +456,11 @@ def resolve_persistent_capture_transition(
         result=None,
         winning_side=None,
         last_commands=state.last_commands,
+        escape_count_by_participant_id=_freeze_mapping({
+            pid:count
+            for pid,count in state.escape_count_by_participant_id.items()
+            if pid != target_id
+        }),
     )
     next_state=_with_termination(next_state)
     return PersistentCaptureResult(
@@ -560,6 +614,8 @@ def resolve_persistent_ordinary_round(
     defense_profile: str,
     capture_contexts: Mapping[str, OrdinaryCaptureContext] | None = None,
     capture_rolls: Mapping[str, OrdinaryCaptureRolls] | None = None,
+    escape_contexts: Mapping[str, OrdinaryEscapeContext] | None = None,
+    escape_rolls: Mapping[str, OrdinaryEscapeRolls] | None = None,
     drop_rolls_by_enemy_id: Mapping[
         str,Sequence[DropAllocationRoll]
     ] | None = None,
@@ -587,6 +643,20 @@ def resolve_persistent_ordinary_round(
             f"missing={missing}, extra={extra}"
         )
 
+    normalized_escape_contexts=dict(escape_contexts or {})
+    for participant_id,context in normalized_escape_contexts.items():
+        participant_id=str(participant_id)
+        if participant_id not in state.escape_count_by_participant_id:
+            raise ValueError(
+                f"escape context references non-escape battle entry {participant_id}"
+            )
+        expected=int(state.escape_count_by_participant_id[participant_id])
+        if int(context.stored_escape_count_before) != expected:
+            raise ValueError(
+                f"escape counter drift for {participant_id}: "
+                f"state={expected}, context={context.stored_escape_count_before}"
+            )
+
     prepared = prepare_battle_round(
         participants,
         commands,
@@ -605,6 +675,8 @@ def resolve_persistent_ordinary_round(
         defense_profile=defense_profile,
         capture_contexts=capture_contexts,
         capture_rolls=capture_rolls,
+        escape_contexts=normalized_escape_contexts,
+        escape_rolls=escape_rolls,
         field_attr=field_attr,
         field_power=field_power,
     )
@@ -627,26 +699,55 @@ def resolve_persistent_ordinary_round(
         drop_rolls_by_enemy_id=drop_rolls_by_enemy_id,
     )
     exited_ids={str(pid) for pid in round_result.exited_participant_ids}
-    invalid_exits=sorted(
-        exited_ids-{str(enemy.participant_id) for enemy in state.session.enemies}
-    )
+    enemy_ids={str(enemy.participant_id) for enemy in state.session.enemies}
+    invalid_exits=sorted(exited_ids-enemy_ids)
     if invalid_exits:
         raise ValueError(f"ordinary round exited non-enemy entries: {invalid_exits}")
+
+    escaped_ids={str(pid) for pid in round_result.escaped_participant_ids}
+    player_id=str(state.session.player.participant_id)
+    allied_pet_ids={
+        str(pet.participant_id) for pet in state.session.allied_pets
+    }
+    invalid_escapes=sorted(
+        escaped_ids-({player_id}|allied_pet_ids|enemy_ids)
+    )
+    if invalid_escapes:
+        raise ValueError(
+            f"ordinary round escaped unknown entries: {invalid_escapes}"
+        )
+    if (escaped_ids & allied_pet_ids) and player_id not in escaped_ids:
+        raise ValueError("allied pet escaped without its player entry")
+
+    escape_counts=dict(state.escape_count_by_participant_id)
+    for event in round_result.events:
+        if event.escape_resolution is None:
+            continue
+        pid=str(event.participant_id)
+        if pid not in escape_counts:
+            raise ValueError(f"escape event has no stored counter for {pid}")
+        escape_counts[pid]=int(
+            event.escape_resolution.stored_escape_count_after
+        )
+
+    escaped_enemy_ids=escaped_ids & enemy_ids
+    removed_enemy_ids=exited_ids | escaped_enemy_ids
     next_session=(
         replace(
             state.session,
             enemies=tuple(
                 enemy for enemy in state.session.enemies
-                if str(enemy.participant_id) not in exited_ids
+                if str(enemy.participant_id) not in removed_enemy_ids
             ),
         )
-        if exited_ids
+        if removed_enemy_ids
         else state.session
     )
     next_slots=dict(state.slots)
-    for pid in exited_ids:
+    for pid in removed_enemy_ids:
         next_slots.pop(pid,None)
         hp.pop(pid,None)
+        escape_counts.pop(pid,None)
 
     next_state = PersistentBattleState(
         session=next_session,
@@ -661,8 +762,17 @@ def resolve_persistent_ordinary_round(
         result=None,
         winning_side=None,
         last_commands=_freeze_mapping(commands),
+        escape_count_by_participant_id=_freeze_mapping(escape_counts),
     )
-    next_state = _with_termination(next_state)
+    if player_id in escaped_ids:
+        next_state=replace(
+            next_state,
+            phase=FINISHED,
+            result=PLAYER_ESCAPE,
+            winning_side=None,
+        )
+    else:
+        next_state = _with_termination(next_state)
     return PersistentRoundResult(
         before=state,
         round=round_result,

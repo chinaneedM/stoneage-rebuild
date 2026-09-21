@@ -41,6 +41,8 @@ from tools.stoneage_battle_round_model import (
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
+    OrdinaryEscapeContext,
+    OrdinaryEscapeRolls,
     ResolvedOrdinaryRound,
     prepare_battle_round,
     resolve_ordinary_round,
@@ -492,6 +494,8 @@ class SinglePlayerHistoricalRuntime:
         defense_profile: str,
         capture_contexts: Mapping[str,OrdinaryCaptureContext] | None = None,
         capture_rolls: Mapping[str,OrdinaryCaptureRolls] | None = None,
+        escape_contexts: Mapping[str,OrdinaryEscapeContext] | None = None,
+        escape_rolls: Mapping[str,OrdinaryEscapeRolls] | None = None,
         captured_pets_by_target_id: Mapping[str,PetActor] | None = None,
         drop_rolls_by_enemy_id: Mapping[
             str,Sequence[DropAllocationRoll]
@@ -517,6 +521,8 @@ class SinglePlayerHistoricalRuntime:
             attack_rolls=attack_rolls,
             capture_contexts=contexts,
             capture_rolls=capture_rolls,
+            escape_contexts=escape_contexts,
+            escape_rolls=escape_rolls,
             drop_rolls_by_enemy_id=drop_rolls_by_enemy_id,
             defense_profile=defense_profile,
             field_attr=field_attr,

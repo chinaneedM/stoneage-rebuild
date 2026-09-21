@@ -10,17 +10,21 @@ from tools.stoneage_battle_core_model import (
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_CAPTURE,
+    BATTLE_COM_ESCAPE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
+    OrdinaryEscapeContext,
+    OrdinaryEscapeRolls,
 )
 from tools.stoneage_battle_state_model import (
     ACTIVE,
     ENEMY_WIN,
     FINISHED,
+    PLAYER_ESCAPE,
     PLAYER_WIN,
     begin_persistent_battle,
     living_non_pet_count,
@@ -526,6 +530,109 @@ class PersistentBattleStateTests(unittest.TestCase):
         self.assertEqual(
             result.after.pending_drop_items_by_player_entry_id["player"],()
         )
+
+
+    def test_persistent_escape_counter_increments_on_failure_then_drives_next_attempt(self):
+        player=participant("player","player","player",quick=100,level=10)
+        enemy=participant("enemy","enemy","enemy",quick=20,level=30)
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+        )
+        self.assertEqual(
+            dict(state.escape_count_by_participant_id),
+            {"player":0,"enemy":0},
+        )
+        first=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_ESCAPE),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={
+                "player":BattleCombatProfile(
+                    fixed_dex=0,fixed_luck=2,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+                "enemy":profile(),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            escape_contexts={
+                "player":OrdinaryEscapeContext(
+                    stored_escape_count_before=0,
+                ),
+            },
+            escape_rolls={
+                "player":OrdinaryEscapeRolls(40),
+            },
+        )
+        self.assertEqual(first.after.phase,ACTIVE)
+        self.assertEqual(first.after.escape_count_by_participant_id["player"],1)
+        self.assertEqual(first.round.events[0].result,"escape_failed")
+
+        second=resolve_persistent_ordinary_round(
+            first.after,
+            commands={
+                "player":BattleCommand(BATTLE_COM_ESCAPE),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={
+                "player":BattleCombatProfile(
+                    fixed_dex=0,fixed_luck=2,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+                "enemy":profile(),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            escape_contexts={
+                "player":OrdinaryEscapeContext(
+                    stored_escape_count_before=1,
+                ),
+            },
+            escape_rolls={
+                "player":OrdinaryEscapeRolls(79),
+            },
+        )
+        self.assertEqual(second.round.events[0].escape_resolution.probability,80)
+        self.assertEqual(second.after.phase,FINISHED)
+        self.assertEqual(second.after.result,PLAYER_ESCAPE)
+        self.assertIsNone(second.after.winning_side)
+        self.assertEqual(second.after.escape_count_by_participant_id["player"],2)
+        self.assertEqual(
+            dict(second.after.pending_exp_by_participant_id),
+            {"player":0},
+        )
+
+    def test_persistent_escape_rejects_caller_counter_drift(self):
+        player=participant("player","player","player",level=10)
+        enemy=participant("enemy","enemy","enemy",level=10)
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+        )
+        with self.assertRaisesRegex(ValueError,"escape counter drift"):
+            resolve_persistent_ordinary_round(
+                state,
+                commands={
+                    "player":BattleCommand(BATTLE_COM_ESCAPE),
+                    "enemy":BattleCommand(BATTLE_COM_WAIT),
+                },
+                initiative_random_subtracts={"player":0,"enemy":0},
+                profiles={"player":profile(),"enemy":profile()},
+                attack_rolls={},
+                defense_profile="newpower_70pct",
+                escape_contexts={
+                    "player":OrdinaryEscapeContext(
+                        stored_escape_count_before=1,
+                    ),
+                },
+                escape_rolls={"player":OrdinaryEscapeRolls(1)},
+            )
+
 
 
 if __name__ == "__main__":
