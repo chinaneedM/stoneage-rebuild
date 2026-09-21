@@ -40,6 +40,7 @@ from tools.stoneage_battle_core_model import (
 from tools.stoneage_battle_round_model import (
     BattleCombatProfile,
     BattleCommand,
+    CounterAttemptRolls,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
@@ -680,6 +681,10 @@ def resolve_persistent_ordinary_round(
     capture_rolls: Mapping[str, OrdinaryCaptureRolls] | None = None,
     escape_contexts: Mapping[str, OrdinaryEscapeContext] | None = None,
     escape_rolls: Mapping[str, OrdinaryEscapeRolls] | None = None,
+    counter_rolls_by_attack_id: Mapping[
+        str,Sequence[CounterAttemptRolls]
+    ] | None = None,
+    counter_abio_by_participant_id: Mapping[str,bool] | None = None,
     no_risk: bool = False,
     drop_rolls_by_enemy_id: Mapping[
         str,Sequence[DropAllocationRoll]
@@ -742,6 +747,8 @@ def resolve_persistent_ordinary_round(
         capture_rolls=capture_rolls,
         escape_contexts=normalized_escape_contexts,
         escape_rolls=escape_rolls,
+        counter_rolls_by_attack_id=counter_rolls_by_attack_id,
+        counter_abio_by_participant_id=counter_abio_by_participant_id,
         field_attr=field_attr,
         field_power=field_power,
     )

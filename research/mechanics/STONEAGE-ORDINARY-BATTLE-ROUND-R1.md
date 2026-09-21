@@ -270,10 +270,38 @@ Validated remote runs:
 - battle-core **35512116840** — success;
 - gameplay/runtime **35512186213** — success.
 
+## Counter execution extension — 2026-09-21
+
+The ordinary resolver now has an explicit opt-in counter path. Supplying
+`counter_rolls_by_attack_id` enables the stable base `BATTLE_Counter()`
+continuation loop; leaving it as `None` preserves the earlier no-counter R1
+boundary for callers that have not yet supplied counter RNG.
+
+The recovered source order is preserved:
+
+1. a main ordinary attack leaves a continuation flag only when it was not a
+   critical, did not strike a guarding target, and did not kill the target;
+2. the original defender is the first counter candidate;
+3. the candidate must still be alive, use ATTACK, and not carry ABIO;
+4. the exact player/non-player counter check runs;
+5. on success the ordinary attack sequence resolves and positive damage is
+   multiplied by `0.75` with C-style truncation and minimum 1;
+6. surviving NORMAL or DODGE may hand control back to the other actor;
+7. MISS, CRITICAL, death, failed eligibility/check, or five attempts stop the
+   chain.
+
+Counter events carry their actual actor identity. This is intentional: the
+persistent battle layer can therefore reuse the existing kill/death/drop seam,
+and a player-side counter kill is credited to the counter actor rather than the
+original main attacker.
+
+The extension still excludes guardian interception, damage reactions,
+abnormal-status effects and later special counter modifiers.
+
 ## Deliberately excluded from R1
 
 - automatic enemy command/AI selection;
-- counterattacks;
+- counter variants that require guardian/reaction/status or later special-command extensions;
 - combo/multi-hit rewriting;
 - guardian interception;
 - bow and boomerang behavior;

@@ -14,6 +14,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
+    CounterAttemptRolls,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
@@ -358,7 +359,76 @@ class PersistentBattleStateTests(unittest.TestCase):
             {"pet:0": 1},
         )
 
-    def test_source_side_check_order_preserves_enemy_win_if_both_are_zero(self):
+    def test_player_counter_kill_uses_counter_actor_for_pending_exp(self):
+        player=participant(
+            "player","player","player",
+            hp=100,attack=200,defense=70,quick=40,level=10,
+        )
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=30,attack=20,defense=20,quick=100,level=10,reward_exp=1500,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={
+                "player":BattleCombatProfile(
+                    fixed_dex=200,fixed_luck=0,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+                "enemy":BattleCombatProfile(
+                    fixed_dex=100,fixed_luck=0,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+            },
+            attack_rolls={
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=1,
+                ),
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+            },
+            counter_rolls_by_attack_id={
+                "enemy":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=1,
+                        attack_rolls=OrdinaryAttackRolls(
+                            dodge_roll_1_10000=10000,
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                    ),
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        counter=[
+            event for event in result.round.events
+            if event.is_counter and event.participant_id=="player"
+        ][0]
+        self.assertEqual(counter.result,"counter_normal")
+        self.assertEqual(counter.target_hp_after,0)
+        self.assertEqual(result.after.phase,FINISHED)
+        self.assertEqual(result.after.result,PLAYER_WIN)
+        self.assertEqual(
+            dict(result.after.pending_exp_by_participant_id),
+            {"player":1500},
+        )
+
+        def test_source_side_check_order_preserves_enemy_win_if_both_are_zero(self):
         player = participant("player", "player", "player", hp=1)
         enemy = participant("enemy", "enemy", "enemy", hp=1)
         state = begin_persistent_battle(

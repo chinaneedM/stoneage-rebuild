@@ -9,6 +9,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
+    CounterAttemptRolls,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
@@ -36,7 +37,15 @@ def actor(pid, side, kind, *, hp=100, attack=100, defense=70, quick=50, level=10
     )
 
 
-def profile(dex=100, luck=0, earth=0, water=0, fire=0, wind=0):
+def profile(
+    dex=100,
+    luck=0,
+    earth=0,
+    water=0,
+    fire=0,
+    wind=0,
+    counter_weapon_type="fist",
+):
     return BattleCombatProfile(
         fixed_dex=dex,
         fixed_luck=luck,
@@ -44,6 +53,7 @@ def profile(dex=100, luck=0, earth=0, water=0, fire=0, wind=0):
         water=water,
         fire=fire,
         wind=wind,
+        counter_weapon_type=counter_weapon_type,
     )
 
 
@@ -188,7 +198,133 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(result.events[0].damage, 130)
         self.assertEqual(result.hp_by_slot[10], 0)
 
-    def test_dead_submitted_target_retargets_at_execution_time(self):
+    def test_counter_chain_uses_defender_first_and_scales_positive_damage(self):
+        player=actor(
+            "player","player","player",
+            hp=40,attack=60,defense=70,quick=100,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=100,attack=80,defense=70,quick=50,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={
+                "player":profile(dex=100),
+                "enemy":profile(dex=200),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+                # Required by the submitted later action even though the
+                # counter kills its target before that action executes.
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+            },
+            counter_rolls_by_attack_id={
+                "player":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=1,
+                        attack_rolls=OrdinaryAttackRolls(
+                            dodge_roll_1_10000=10000,
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                    ),
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.events[0].participant_id,"player")
+        self.assertEqual(result.events[0].result,"normal")
+        self.assertEqual(result.events[0].damage,18)
+        counter=result.events[1]
+        self.assertTrue(counter.is_counter)
+        self.assertEqual(counter.counter_attempt,1)
+        self.assertEqual(counter.participant_id,"enemy")
+        self.assertEqual(counter.result,"counter_normal")
+        self.assertEqual(counter.damage,42)
+        self.assertEqual(counter.target_hp_before,40)
+        self.assertEqual(counter.target_hp_after,0)
+        self.assertEqual(result.hp_by_participant_id["player"],0)
+        self.assertEqual(result.events[2].result,"no_target")
+
+    def test_throwing_weapon_counter_gate_stops_chain_without_attack_rng(self):
+        player=actor("player","player","player",attack=60,quick=100)
+        enemy=actor("enemy","enemy","enemy",attack=60,quick=50)
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={
+                "player":profile(dex=100),
+                "enemy":profile(dex=200,counter_weapon_type="bow"),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=1,
+                    damage_roll=0,
+                ),
+            },
+            counter_rolls_by_attack_id={
+                "player":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=None,
+                        attack_rolls=None,
+                    ),
+                ),
+                # The enemy's later ordinary attack also reaches the player
+                # counter check; the same bow gate prevents RNG there.
+                "enemy":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=None,
+                        attack_rolls=None,
+                    ),
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        counter_events=[event for event in result.events if event.is_counter]
+        self.assertEqual(len(counter_events),2)
+        self.assertTrue(
+            all(event.result=="counter_blocked_weapon" for event in counter_events)
+        )
+        self.assertTrue(
+            all(
+                not event.counter_check_resolution.rng_consumed
+                for event in counter_events
+            )
+        )
+
+        def test_dead_submitted_target_retargets_at_execution_time(self):
         player = actor(
             "player", "player", "player",
             hp=100, attack=200, defense=70, quick=100,

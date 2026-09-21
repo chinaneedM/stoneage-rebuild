@@ -404,12 +404,29 @@ RAND(1,10000) <= threshold
 That literal lower-bound handling gives a zero-basis non-player counter a
 1-in-10000 success boundary. It is preserved rather than normalized away.
 
-The probability/check seam is now deterministic. Full `BATTLE_Counter()`
-action execution remains separate: the inspected source applies ordinary
-attack resolution, scales positive counter damage to 75%, and the battle loop
-can alternate counter attempts up to five times. Those execution semantics are
-not promoted until their continuation/termination conditions are modeled
-without guessing.
+The probability/check seam is deterministic. The base status-free
+`BATTLE_Counter()` execution seam is also now modeled behind explicit counter
+RNG inputs:
+
+- the first candidate counter actor is the defender from the main attack;
+- only an ATTACK-command actor can counter in the base seam;
+- ABIO candidates are rejected;
+- a successful check reuses ordinary dodge / critical / physical / attribute
+  resolution;
+- positive counter damage is truncated after multiplication by `0.75`, with
+  the source minimum of 1 preserved;
+- MISS and CRITICAL stop the chain, as does killing the target;
+- DODGE and surviving NORMAL results may continue;
+- the battle loop alternates the two actors for at most five counter attempts.
+
+Main-attack continuation is likewise source-shaped for the supported seam:
+critical, guarding target, or target death suppress the chain; ordinary
+NORMAL/MISS/DODGE against a surviving non-guarding target permit it.
+
+Guardian interception, damage-reaction systems, abnormal statuses and the
+later special `BATTLE_COM_S_NOGUARD` modifier remain excluded. Counter EXP
+continues to flow through the already-closed actual-counter-actor profit
+attribution rather than a new reward rule.
 
 ## 8. Guard
 

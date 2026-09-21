@@ -22,6 +22,9 @@ from tools.stoneage_battle_core_model import (
     BattleCaptureResolution,
     BattleEscapeInputs,
     BattleEscapeResolution,
+    BattleCounterCheckInputs,
+    BattleCounterCheckResolution,
+    COUNTER_WEAPON_FIST,
     attribute_adjusted_damage,
     critical_damage,
     critical_per_10000,
@@ -33,6 +36,7 @@ from tools.stoneage_battle_core_model import (
     guard_damage,
     physical_base_damage,
     resolve_battle_capture_attempt,
+    resolve_battle_counter_check,
     resolve_battle_escape_attempt,
 )
 from tools.stoneage_singleplayer_battle import BattleParticipant
@@ -277,6 +281,7 @@ class BattleCombatProfile:
     fire: int
     wind: int
     weapon_critical: int = 0
+    counter_weapon_type: str = COUNTER_WEAPON_FIST
 
     @property
     def elements(self) -> tuple[int, int, int, int]:
@@ -298,6 +303,14 @@ class OrdinaryAttackRolls:
     guard_roll_1_100: int | None = None
     minimum_damage_roll_0_1: int | None = None
     retarget_roll: int | None = None
+
+
+@dataclass(frozen=True)
+class CounterAttemptRolls:
+    """Explicit RNG consumed by one BATTLE_Counter() attempt."""
+
+    counter_check_roll_1_10000: int | None
+    attack_rolls: OrdinaryAttackRolls | None = None
 
 
 @dataclass(frozen=True)
@@ -396,6 +409,9 @@ class OrdinaryRoundEvent:
     target_hp_after: int | None = None
     capture_resolution: BattleCaptureResolution | None = None
     escape_resolution: BattleEscapeResolution | None = None
+    is_counter: bool = False
+    counter_attempt: int | None = None
+    counter_check_resolution: BattleCounterCheckResolution | None = None
 
 
 @dataclass(frozen=True)
@@ -457,6 +473,283 @@ def _effective_defense_for_round(
             stone=False,
         )
     raise ValueError(f"unknown defense profile: {defense_profile}")
+
+
+def _resolve_counter_chain(
+    *,
+    initial_attacker_slot: int,
+    initial_defender_slot: int,
+    by_slot: Mapping[int, BattleParticipant],
+    hp_by_slot: dict[int, int],
+    hp_by_id: dict[str, int],
+    profiles: Mapping[str, BattleCombatProfile],
+    command_by_slot: Mapping[int, BattleCommand],
+    action_value_by_slot: Mapping[int, int],
+    counter_rolls: Sequence[CounterAttemptRolls],
+    counter_abio_by_participant_id: Mapping[str, bool],
+    defense_profile: str,
+    field_attr: str,
+    field_power: int,
+) -> tuple[OrdinaryRoundEvent, ...]:
+    """Execute the stable base alternating BATTLE_Counter() loop.
+
+    This is deliberately limited to the already-recovered status-free,
+    no-guardian/no-reaction ordinary physical seam. The source permits at most
+    five alternating attempts after a main attack's continuation flag remains
+    true. Each successful counter uses BATTLE_AttackSeq-style dodge/critical/
+    damage resolution, then scales positive damage to 75 percent.
+    """
+    supplied=tuple(counter_rolls)
+    if len(supplied) > 5:
+        raise ValueError("stable counter chain accepts at most five attempts")
+
+    resolved: list[OrdinaryRoundEvent] = []
+    for attempt_index in range(5):
+        actor_slot=(
+            int(initial_defender_slot)
+            if attempt_index % 2 == 0
+            else int(initial_attacker_slot)
+        )
+        target_slot=(
+            int(initial_attacker_slot)
+            if attempt_index % 2 == 0
+            else int(initial_defender_slot)
+        )
+        actor=by_slot[actor_slot]
+        target=by_slot[target_slot]
+        actor_id=str(actor.participant_id)
+        target_id=str(target.participant_id)
+        action_value=int(action_value_by_slot[actor_slot])
+        before=int(hp_by_slot[target_slot])
+
+        if int(hp_by_slot[actor_slot]) <= 0 or before <= 0:
+            resolved.append(
+                OrdinaryRoundEvent(
+                    actor_id,
+                    actor_slot,
+                    BATTLE_COM_ATTACK,
+                    action_value,
+                    "counter_ineligible_dead",
+                    original_target_slot=target_slot,
+                    resolved_target_slot=target_slot,
+                    target_hp_before=before,
+                    target_hp_after=before,
+                    is_counter=True,
+                    counter_attempt=attempt_index + 1,
+                )
+            )
+            break
+
+        if command_by_slot[actor_slot].command1 != BATTLE_COM_ATTACK:
+            resolved.append(
+                OrdinaryRoundEvent(
+                    actor_id,
+                    actor_slot,
+                    BATTLE_COM_ATTACK,
+                    action_value,
+                    "counter_ineligible_command",
+                    original_target_slot=target_slot,
+                    resolved_target_slot=target_slot,
+                    target_hp_before=before,
+                    target_hp_after=before,
+                    is_counter=True,
+                    counter_attempt=attempt_index + 1,
+                )
+            )
+            break
+
+        if bool(counter_abio_by_participant_id.get(actor_id,False)):
+            resolved.append(
+                OrdinaryRoundEvent(
+                    actor_id,
+                    actor_slot,
+                    BATTLE_COM_ATTACK,
+                    action_value,
+                    "counter_ineligible_abio",
+                    original_target_slot=target_slot,
+                    resolved_target_slot=target_slot,
+                    target_hp_before=before,
+                    target_hp_after=before,
+                    is_counter=True,
+                    counter_attempt=attempt_index + 1,
+                )
+            )
+            break
+
+        if attempt_index >= len(supplied):
+            raise KeyError(
+                "missing explicit counter attempt rolls for "
+                f"{actor_id} at chain attempt {attempt_index + 1}"
+            )
+        attempt=supplied[attempt_index]
+        actor_profile=profiles[actor_id]
+        target_profile=profiles[target_id]
+        check=resolve_battle_counter_check(
+            BattleCounterCheckInputs(
+                attacker_kind=_participant_battle_kind(actor),
+                defender_kind=_participant_battle_kind(target),
+                attacker_fixed_dex=int(actor_profile.fixed_dex),
+                defender_fixed_dex=int(target_profile.fixed_dex),
+                attacker_fixed_luck=_source_luck(actor,actor_profile),
+                attacker_weapon_type=str(actor_profile.counter_weapon_type),
+                defender_weapon_type=str(target_profile.counter_weapon_type),
+            ),
+            roll_1_10000=attempt.counter_check_roll_1_10000,
+        )
+        if not check.success:
+            resolved.append(
+                OrdinaryRoundEvent(
+                    actor_id,
+                    actor_slot,
+                    BATTLE_COM_ATTACK,
+                    action_value,
+                    (
+                        "counter_blocked_weapon"
+                        if check.blocked_by_throwing_weapon
+                        else "counter_check_failed"
+                    ),
+                    original_target_slot=target_slot,
+                    resolved_target_slot=target_slot,
+                    target_hp_before=before,
+                    target_hp_after=before,
+                    is_counter=True,
+                    counter_attempt=attempt_index + 1,
+                    counter_check_resolution=check,
+                )
+            )
+            break
+
+        rolls=attempt.attack_rolls
+        if rolls is None:
+            raise ValueError(
+                f"counter attack rolls required after successful check for {actor_id}"
+            )
+
+        target_guarding=(
+            command_by_slot[target_slot].command1 == BATTLE_COM_GUARD
+        )
+        if not target_guarding:
+            dodge_roll=_validated_roll(
+                rolls.dodge_roll_1_10000,
+                1,
+                10000,
+                "counter dodge_roll_1_10000",
+            )
+            dodge_probability=dodge_per_10000(
+                actor_profile.fixed_dex,
+                target_profile.fixed_dex,
+                defender_luck=_source_luck(target,target_profile),
+                attacker_type=_participant_battle_kind(actor),
+                defender_type=_participant_battle_kind(target),
+            )
+            if dodge_roll <= dodge_probability:
+                resolved.append(
+                    OrdinaryRoundEvent(
+                        actor_id,
+                        actor_slot,
+                        BATTLE_COM_ATTACK,
+                        action_value,
+                        "counter_dodge",
+                        original_target_slot=target_slot,
+                        resolved_target_slot=target_slot,
+                        target_hp_before=before,
+                        target_hp_after=before,
+                        is_counter=True,
+                        counter_attempt=attempt_index + 1,
+                        counter_check_resolution=check,
+                    )
+                )
+                continue
+
+        critical_roll=_validated_roll(
+            rolls.critical_roll_1_10000,
+            1,
+            10000,
+            "counter critical_roll_1_10000",
+        )
+        critical_probability=critical_per_10000(
+            actor_profile.fixed_dex,
+            target_profile.fixed_dex,
+            attacker_luck=_source_luck(actor,actor_profile),
+            weapon_critical=int(actor_profile.weapon_critical),
+            attacker_type=_participant_battle_kind(actor),
+            defender_type=_participant_battle_kind(target),
+        )
+        is_critical=critical_roll < critical_probability
+
+        base_damage=physical_base_damage(
+            actor.attack,
+            _effective_defense_for_round(target,defense_profile),
+            int(rolls.damage_roll),
+        )
+        damage=attribute_adjusted_damage(
+            base_damage,
+            actor_profile.elements,
+            target_profile.elements,
+            field_attr=field_attr,
+            field_power=field_power,
+        )
+        if is_critical:
+            damage=critical_damage(
+                damage,
+                target.defense,
+                actor.level,
+                target.level,
+            )
+
+        if target_guarding:
+            guard_roll=_validated_roll(
+                rolls.guard_roll_1_100,
+                1,
+                100,
+                "counter guard_roll_1_100",
+            )
+            damage=guard_damage(damage,guard_roll)
+
+        if damage < 1:
+            damage=_validated_roll(
+                rolls.minimum_damage_roll_0_1,
+                0,
+                1,
+                "counter minimum_damage_roll_0_1",
+            )
+
+        if damage == 0:
+            attack_seq_result=(
+                "counter_allguard" if target_guarding else "counter_miss"
+            )
+        else:
+            attack_seq_result=(
+                "counter_critical" if is_critical else "counter_normal"
+            )
+            damage=max(1,int(float(damage)*0.75))
+
+        after=max(0,before-int(damage))
+        hp_by_slot[target_slot]=after
+        hp_by_id[target_id]=after
+        resolved.append(
+            OrdinaryRoundEvent(
+                actor_id,
+                actor_slot,
+                BATTLE_COM_ATTACK,
+                action_value,
+                attack_seq_result,
+                original_target_slot=target_slot,
+                resolved_target_slot=target_slot,
+                critical=(attack_seq_result=="counter_critical"),
+                damage=int(damage),
+                target_hp_before=before,
+                target_hp_after=after,
+                is_counter=True,
+                counter_attempt=attempt_index + 1,
+                counter_check_resolution=check,
+            )
+        )
+
+        if attack_seq_result in {"counter_miss","counter_critical"} or after <= 0:
+            break
+
+    return tuple(resolved)
 
 
 def _build_slot_maps(
@@ -530,12 +823,18 @@ def resolve_ordinary_round(
     capture_rolls: Mapping[str, OrdinaryCaptureRolls] | None = None,
     escape_contexts: Mapping[str, OrdinaryEscapeContext] | None = None,
     escape_rolls: Mapping[str, OrdinaryEscapeRolls] | None = None,
+    counter_rolls_by_attack_id: Mapping[
+        str,Sequence[CounterAttemptRolls]
+    ] | None = None,
+    counter_abio_by_participant_id: Mapping[str,bool] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
     """Execute the status-free attack/guard/capture/escape/wait battle seam.
 
-    Guard stance is taken from the submitted command set before action sorting,
+    Passing counter_rolls_by_attack_id enables the recovered base counter loop;
+    leaving it as None preserves the earlier no-counter R1 boundary. Guard
+    stance is taken from the submitted command set before action sorting,
     matching BATTLE_AttackSeq's inspection of the defender's COM1 rather than
     requiring the guard actor's own execution turn to occur first.
     """
@@ -574,7 +873,56 @@ def resolve_ordinary_round(
     capture_rolls=dict(capture_rolls or {})
     escape_contexts=dict(escape_contexts or {})
     escape_rolls=dict(escape_rolls or {})
+    normalized_counter_rolls=(
+        None
+        if counter_rolls_by_attack_id is None
+        else {
+            str(participant_id):tuple(rolls)
+            for participant_id,rolls in counter_rolls_by_attack_id.items()
+        }
+    )
+    normalized_counter_abio={
+        str(participant_id):bool(value)
+        for participant_id,value in (
+            counter_abio_by_participant_id or {}
+        ).items()
+    }
+    command_by_slot={
+        slot_by_id[entry.participant.participant_id]:entry.command
+        for entry in prepared.ordered_entries
+    }
+    action_value_by_slot={
+        slot_by_id[entry.participant.participant_id]:int(entry.action_value)
+        for entry in prepared.ordered_entries
+    }
     escaped_ids: list[str] = []
+
+    def append_counter_chain(
+        main_actor_id: str,
+        main_actor_slot: int,
+        target_slot: int,
+    ) -> None:
+        if normalized_counter_rolls is None:
+            return
+        events.extend(
+            _resolve_counter_chain(
+                initial_attacker_slot=int(main_actor_slot),
+                initial_defender_slot=int(target_slot),
+                by_slot=by_slot,
+                hp_by_slot=hp_by_slot,
+                hp_by_id=hp_by_id,
+                profiles=profiles,
+                command_by_slot=command_by_slot,
+                action_value_by_slot=action_value_by_slot,
+                counter_rolls=normalized_counter_rolls.get(
+                    str(main_actor_id),()
+                ),
+                counter_abio_by_participant_id=normalized_counter_abio,
+                defense_profile=defense_profile,
+                field_attr=field_attr,
+                field_power=field_power,
+            )
+        )
 
     for entry in prepared.ordered_entries:
         participant = entry.participant
@@ -908,6 +1256,7 @@ def resolve_ordinary_round(
                         target_hp_after=before,
                     )
                 )
+                append_counter_chain(participant_id,slot,target)
                 continue
 
         critical_roll = _validated_roll(
@@ -988,6 +1337,8 @@ def resolve_ordinary_round(
                 target_hp_after=after,
             )
         )
+        if result != "critical" and target not in guarding and after > 0:
+            append_counter_chain(participant_id,slot,target)
 
     return ResolvedOrdinaryRound(
         events=tuple(events),
