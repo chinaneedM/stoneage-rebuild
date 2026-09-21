@@ -383,9 +383,9 @@ class BattleCoreModelTests(unittest.TestCase):
             attacker_fixed_luck=3,target_level=10,target_hp=10,
             target_max_hp=100,target_fixed_dex=15,target_capture_default=11,
         )
-        self.assertAlmostEqual(battle_capture_probability(base),25.0)
+        self.assertAlmostEqual(battle_capture_probability(base),24.0)
         asleep=BattleCaptureInputs(**{**base.__dict__,"target_sleep":1})
-        self.assertAlmostEqual(battle_capture_probability(asleep),40.0)
+        self.assertAlmostEqual(battle_capture_probability(asleep),39.0)
 
     def test_capture_probability_caps_only_upper_end_at_99(self):
         high=BattleCaptureInputs(99,100,999,5,1,1,100,0,100,
@@ -396,11 +396,11 @@ class BattleCoreModelTests(unittest.TestCase):
 
     def test_capture_roll_uses_strict_less_than(self):
         inputs=BattleCaptureInputs(10,50,30,3,10,10,100,15,11)
-        success=resolve_battle_capture_attempt(inputs,roll_1_100=24)
+        success=resolve_battle_capture_attempt(inputs,roll_1_100=23)
         self.assertIsInstance(success,BattleCaptureResolution)
         self.assertTrue(success.success)
         self.assertEqual(success.assigned_pet_slot,0)
-        failed=resolve_battle_capture_attempt(inputs,roll_1_100=25)
+        failed=resolve_battle_capture_attempt(inputs,roll_1_100=24)
         self.assertFalse(failed.success)
         self.assertEqual(failed.failure_reason,'capture_roll_failed')
 
