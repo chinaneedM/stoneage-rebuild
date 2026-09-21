@@ -428,7 +428,7 @@ class PersistentBattleStateTests(unittest.TestCase):
             {"player":1500},
         )
 
-        def test_source_side_check_order_preserves_enemy_win_if_both_are_zero(self):
+    def test_source_side_check_order_preserves_enemy_win_if_both_are_zero(self):
         player = participant("player", "player", "player", hp=1)
         enemy = participant("enemy", "enemy", "enemy", hp=1)
         state = begin_persistent_battle(

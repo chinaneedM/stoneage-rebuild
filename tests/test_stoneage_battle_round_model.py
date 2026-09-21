@@ -324,7 +324,7 @@ class BattleRoundModelTests(unittest.TestCase):
             )
         )
 
-        def test_dead_submitted_target_retargets_at_execution_time(self):
+    def test_dead_submitted_target_retargets_at_execution_time(self):
         player = actor(
             "player", "player", "player",
             hp=100, attack=200, defense=70, quick=100,
