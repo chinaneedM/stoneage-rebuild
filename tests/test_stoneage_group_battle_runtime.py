@@ -1313,5 +1313,121 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
 
 
 
+    def test_finish_escape_persists_hp_revives_carried_pets_and_discards_profit(self):
+        active=allied_pet()
+        reserve=replace(
+            allied_pet(),
+            slot=PetSlot(3),
+            variant_id=EnemyVariantId(702),
+            template_id=PetTemplateId(90),
+            state=MappingProxyType({
+                **dict(allied_pet().state),
+                "hp":0,
+                "name":"Reserve",
+            }),
+        )
+        self.domain.persistent.pets[PetSlot(2)]=active
+        self.domain.persistent.pets[PetSlot(3)]=reserve
+
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+            allied_pet_slots=(2,),
+        )
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player":0,"pet:2":1,enemy_id:10},
+        )
+        state=replace(
+            state,
+            hp_by_participant_id=MappingProxyType({
+                "player":73,
+                "pet:2":0,
+                enemy_id:battle.enemies[0].hp,
+            }),
+            pending_exp_by_participant_id=MappingProxyType({
+                "player":100,
+                "pet:2":50,
+            }),
+            pending_pet_variable_ai_by_participant_id=MappingProxyType({
+                "pet:2":1,
+            }),
+            pending_drop_items_by_player_entry_id=MappingProxyType({
+                "player":(BattleDropItem("escaped:drop",501),),
+            }),
+        )
+        escaped=self.runtime.resolve_persistent_battle_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_ESCAPE),
+                enemy_id:BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,enemy_id:0},
+            profiles={
+                "player":BattleCombatProfile(
+                    fixed_dex=30,fixed_luck=3,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+                enemy_id:BattleCombatProfile(
+                    fixed_dex=20,fixed_luck=0,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            escape_contexts={
+                "player":OrdinaryEscapeContext(
+                    stored_escape_count_before=0,
+                ),
+            },
+            escape_rolls={"player":OrdinaryEscapeRolls(1)},
+        )
+        returned=self.runtime.finish_persistent_escape(escaped.after)
+        self.assertEqual(returned.result,PLAYER_ESCAPE)
+        self.assertEqual(self.domain.persistent.character.fields["hp"],73)
+        self.assertEqual(self.domain.persistent.character.fields["exp"],0)
+        self.assertEqual(self.domain.persistent.inventory,{})
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["hp"],1)
+        self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"],10)
+        self.assertEqual(
+            self.domain.persistent.pets[PetSlot(2)].growth.variable_ai,
+            0,
+        )
+        self.assertEqual(self.domain.persistent.pets[PetSlot(3)].state["hp"],1)
+
+    def test_finish_escape_rejects_non_escape_terminal(self):
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(request,spawned_enemies=spawned)
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,slots={"player":0,enemy_id:10},
+        )
+        terminal=replace(
+            state,
+            phase=FINISHED,
+            result=PLAYER_WIN,
+            winning_side=0,
+        )
+        with self.assertRaisesRegex(ValueError,"terminal escape state"):
+            self.runtime.finish_persistent_escape(terminal)
+
+
+
 if __name__ == "__main__":
     unittest.main()

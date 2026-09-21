@@ -1434,6 +1434,7 @@ Supplemental source ledgers:
   - stored escape-attempt counters are persistent battle-entry state and caller-provided contexts are checked against them, so failed attempts affect later attempts deterministically;
   - stable \`BATTLE_Finish()\` calls \`BATTLE_GetProfit()\` only for entries still present at finish, while successful escape has already cleared the player entry through \`BATTLE_Exit()\`; runtime victory/EXP/drop finishers therefore reject escape terminals instead of accidentally awarding pending battle profit;
   - exact BATTLE_Exit recovery/status cleanup is still a separate seam and has not been guessed into the escape return path;
+  - dedicated `finish_persistent_escape()` now returns a successful escape to world state without calling the normal drop/EXP settlement path; player HP is preserved, active-pet battle HP is preserved, and every carried non-mail pet at HP≤0 is restored to HP=1, matching the stable player `BATTLE_Exit()` loop in the current no-pet-mail single-player scope;
   - detailed evidence is recorded in \`research/mechanics/STONEAGE-BATTLE-ESCAPE-R1.md\`.
 - Still OPEN / deliberately excluded:
   - exact JSS-1999 choice of level-threshold regime/table;
@@ -1441,7 +1442,7 @@ Supplemental source ledgers:
   - complete visible pet AI/loyalty compliance projection;
   - early-JSS confirmation of later-gated combo-profit behavior;
   - full counter/combo/status action/damage execution;
-  - exact BATTLE_Exit recovery/status cleanup after escape and other post-battle recovery rules.
+  - exact persistent modeling of battle-only bad-status fields and later macro-gated BATTLE_Exit effects not represented by the current status-free domain;
 - Code validations:
   - `81e9572f1ff309982d13c7f1979a51516a5593a8` — pending ordinary kill EXP accumulation; runs **35514277568** and **35514277633** both success.
   - `b3207d71bc8dafa557e31d3450be2d6efb00bd29` — no-level-cross EXP persistence; run **35514525635** success.
@@ -1467,7 +1468,7 @@ Supplemental source ledgers:
 
 ## Immediate next actions
 
-1. **Recover BATTLE_Exit recovery/status cleanup next.** Separate ordinary escape return behavior from death penalties: determine exact player/pet HP floor handling, bad-status clearing, pet battle-entry cleanup and any version-gated post-exit effects before adding a dedicated escape settlement path.
+1. **Recover defeat/death penalty and post-defeat recovery next.** Keep ordinary defeat separate from successful escape: identify the stable HP floor, charm/duel/equipment consequences, pet recovery and return-state behavior before implementing any loss settlement.
 2. **Expand counter/combo/status battle execution only through their own deterministic mechanics seams.** Their EXP attribution is closed; future action/damage/status execution must feed the existing source-shaped profit-list/scan model rather than redefine reward ownership.
 3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
 4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.

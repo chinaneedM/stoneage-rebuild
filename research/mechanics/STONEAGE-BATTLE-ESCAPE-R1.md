@@ -128,7 +128,9 @@ Accordingly, the single-player runtime's ordinary victory/defeat finishers now r
 
 `BATTLE_Exit()` also contains status cleanup, battle-mode cleanup, active-pet detachment and HP-floor handling for certain player/pet states. Those effects are broader than escape and overlap the project's death/recovery seam.
 
-R1 therefore does **not** yet expose a dedicated persistent escape-return settlement. The next seam is to reconstruct the exact BATTLE_Exit recovery/status behavior and only then project escape HP/pet state back to persistent single-player state.
+The current status-free single-player domain now exposes `finish_persistent_escape()`. It preserves the escaping player's terminal HP, projects active-pet terminal HP, applies the stable carried-pet HP floor of 1 to HP<=0 pets, and deliberately discards pending EXP/drop/loyalty profit. The domain has no pet-mail state, so its five persistent pet slots correspond to the ordinary carried non-mail subset of the source loop.
+
+Battle-only status arrays are not represented by this domain; their source reset remains documented rather than emulated as invented persistent fields. Later macro-gated BATTLE_Exit effects likewise remain profile-specific.
 
 ## Implemented deterministic seams
 
@@ -152,6 +154,15 @@ R1 therefore does **not** yet expose a dedicated persistent escape-return settle
   - battle-core Action `35550479374` success;
   - gameplay Action `35550479386` success.
 
+- `3f46afd892267763236f7344f4417ff510fe994b`
+  - ordinary victory/EXP/drop settlement rejects escape terminals;
+  - source evidence records that escaped entries are absent from the later BATTLE_Finish profit scan;
+  - gameplay Action `35551212031` success.
+
+- current follow-up
+  - dedicated escape return settles HP only, floors carried non-mail pets at HP 1, and does not settle pending EXP/drop/loyalty;
+  - battle-only status clearing remains outside the status-free persistent schema.
+
 ## Confidence boundary
 
 **CLOSED for the strong stable-descendant mechanics profile:**
@@ -172,6 +183,6 @@ R1 therefore does **not** yet expose a dedicated persistent escape-return settle
 
 - byte-level confirmation that all details are identical to the 1999 JSS server;
 - exact early-JSS map/event restrictions around whether escape command submission is permitted;
-- complete BATTLE_Exit recovery/status cleanup and its exact early-version profile;
+- exact early-version profile for battle-only status arrays and later macro-gated BATTLE_Exit effects;
 - death penalties and post-defeat recovery;
 - any later `_ESCAPE_RESET`, event scoring or private-server anti-abuse behavior.

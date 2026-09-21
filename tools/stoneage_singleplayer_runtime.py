@@ -623,6 +623,66 @@ class SinglePlayerHistoricalRuntime:
         self._settle_persistent_battle_drops(state)
         return result
 
+    def finish_persistent_escape(
+        self,
+        state: PersistentBattleState,
+    ) -> BattleReturn:
+        """Return a successful escape to persistent state without battle profit.
+
+        Stable BATTLE_Exit clears the escaping player's battle entry before the
+        normal finish-profit scan. In the current single-player domain there is
+        no pet-mail mode, so all five persistent pet slots are ordinary carried
+        pets: active-pet terminal HP is retained, and any carried pet at HP <= 0
+        is restored to HP 1 as in the stable player BATTLE_Exit branch.
+
+        EXP, pending item drops and pending pet loyalty are deliberately not
+        settled here. Battle-only status flags are not represented by this
+        status-free domain and therefore require no persistent mutation.
+        """
+        if state.phase != FINISHED or state.result != PLAYER_ESCAPE:
+            raise ValueError("escape settlement requires a terminal escape state")
+
+        session=state.session
+        player_id=str(session.player.participant_id)
+        if player_id not in state.hp_by_participant_id:
+            raise ValueError("escape state is missing player HP")
+        player_hp=int(state.hp_by_participant_id[player_id])
+        if player_hp <= 0:
+            raise ValueError("successful escape requires a living player")
+
+        active_pet_hp_by_slot: dict[int,int]={}
+        for participant in session.allied_pets:
+            if participant.source_pet_slot is None:
+                raise ValueError(
+                    f"allied participant {participant.participant_id} lacks source pet slot"
+                )
+            participant_id=str(participant.participant_id)
+            if participant_id not in state.hp_by_participant_id:
+                raise ValueError(
+                    f"escape state is missing HP for {participant_id}"
+                )
+            active_pet_hp_by_slot[int(participant.source_pet_slot)]=int(
+                state.hp_by_participant_id[participant_id]
+            )
+
+        pet_updates: dict[int,Mapping[str,int]]={}
+        for pet_slot,pet in self.domain.persistent.pets.items():
+            slot=int(pet_slot.value)
+            if "hp" not in pet.state:
+                raise ValueError(f"persistent pet slot {slot} lacks HP")
+            hp=active_pet_hp_by_slot.get(slot,int(pet.state["hp"]))
+            pet_updates[slot]={"hp":1 if hp <= 0 else hp}
+
+        return apply_battle_outcome(
+            self.domain,
+            state.session,
+            BattleOutcome(
+                result=PLAYER_ESCAPE,
+                player_updates={"hp":player_hp},
+                pet_updates=pet_updates,
+            ),
+        )
+
     def _require_profit_settleable_terminal(
         self,
         state: PersistentBattleState,
