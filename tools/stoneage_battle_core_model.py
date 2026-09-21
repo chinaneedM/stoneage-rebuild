@@ -1021,3 +1021,74 @@ def resolve_battle_escape_attempt(
         effective_luck=luck,
         average_opponent_level=average,
     )
+
+
+CH_FIX_PLAYERDEAD=-2
+AI_FIX_PLAYERDEAD=-100
+AI_FIX_PETDEAD=-500
+
+
+@dataclass(frozen=True)
+class BattleNormalDeathInputs:
+    """Stable BATTLE_NormalDeadExtra inputs kept separate from final defeat."""
+
+    victim_kind: str
+    victim_level: int
+    owner_level: int | None = None
+    pve_battle: bool = True
+    no_risk: bool = False
+    default_pet_present: bool = False
+
+    def __post_init__(self) -> None:
+        kind=str(self.victim_kind)
+        object.__setattr__(self,"victim_kind",kind)
+        object.__setattr__(self,"victim_level",int(self.victim_level))
+        if self.owner_level is not None:
+            object.__setattr__(self,"owner_level",int(self.owner_level))
+        if kind == PET and self.owner_level is None:
+            raise ValueError("pet normal-death penalty requires owner_level")
+
+
+@dataclass(frozen=True)
+class BattleNormalDeathResolution:
+    player_charm_delta: int = 0
+    default_pet_variable_ai_delta: int = 0
+    victim_pet_variable_ai_delta: int = 0
+    owner_dead_pet_count_delta: int = 0
+    clears_victim_command: bool = False
+
+
+def resolve_battle_normal_death_penalty(
+    inputs: BattleNormalDeathInputs,
+) -> BattleNormalDeathResolution:
+    """Mirror the stable PvE/non-norisk BATTLE_NormalDeadExtra side effects."""
+
+    if not isinstance(inputs,BattleNormalDeathInputs):
+        inputs=BattleNormalDeathInputs(**dict(inputs))
+
+    if not inputs.pve_battle or inputs.no_risk:
+        return BattleNormalDeathResolution()
+
+    if inputs.victim_kind == PLAYER:
+        level_divisor=2 if int(inputs.victim_level) <= 10 else 1
+        charm=int(CH_FIX_PLAYERDEAD/level_divisor)
+        active_pet=(
+            int(AI_FIX_PLAYERDEAD/level_divisor)
+            if inputs.default_pet_present
+            else 0
+        )
+        return BattleNormalDeathResolution(
+            player_charm_delta=charm,
+            default_pet_variable_ai_delta=active_pet,
+            clears_victim_command=True,
+        )
+
+    if inputs.victim_kind == PET:
+        level_divisor=2 if int(inputs.owner_level) <= 10 else 1
+        return BattleNormalDeathResolution(
+            victim_pet_variable_ai_delta=int(AI_FIX_PETDEAD/level_divisor),
+            owner_dead_pet_count_delta=1,
+            clears_victim_command=True,
+        )
+
+    return BattleNormalDeathResolution()

@@ -44,6 +44,9 @@ from tools.stoneage_battle_core_model import (
     BattleEscapeInputs,
     BattleEscapeResolution,
     resolve_battle_escape_attempt,
+    BattleNormalDeathInputs,
+    BattleNormalDeathResolution,
+    resolve_battle_normal_death_penalty,
 )
 
 
@@ -573,6 +576,84 @@ class BattleCoreModelTests(unittest.TestCase):
         self.assertFalse(result.check_success)
         self.assertTrue(result.exits_battle)
         self.assertTrue(result.rng_consumed)
+
+
+    def test_normal_player_death_penalty_is_per_death_and_low_level_halves(self):
+        high=resolve_battle_normal_death_penalty(
+            BattleNormalDeathInputs(
+                victim_kind=PLAYER,
+                victim_level=11,
+                default_pet_present=True,
+            )
+        )
+        self.assertIsInstance(high,BattleNormalDeathResolution)
+        self.assertEqual(high.player_charm_delta,-2)
+        self.assertEqual(high.default_pet_variable_ai_delta,-100)
+        self.assertTrue(high.clears_victim_command)
+
+        low=resolve_battle_normal_death_penalty(
+            BattleNormalDeathInputs(
+                victim_kind=PLAYER,
+                victim_level=10,
+                default_pet_present=True,
+            )
+        )
+        self.assertEqual(low.player_charm_delta,-1)
+        self.assertEqual(low.default_pet_variable_ai_delta,-50)
+
+    def test_normal_player_death_without_active_pet_does_not_invent_pet_penalty(self):
+        result=resolve_battle_normal_death_penalty(
+            BattleNormalDeathInputs(
+                victim_kind=PLAYER,
+                victim_level=50,
+                default_pet_present=False,
+            )
+        )
+        self.assertEqual(result.player_charm_delta,-2)
+        self.assertEqual(result.default_pet_variable_ai_delta,0)
+
+    def test_normal_pet_death_uses_owner_level_and_increments_dead_pet_count(self):
+        high=resolve_battle_normal_death_penalty(
+            BattleNormalDeathInputs(
+                victim_kind=PET,
+                victim_level=20,
+                owner_level=11,
+            )
+        )
+        self.assertEqual(high.victim_pet_variable_ai_delta,-500)
+        self.assertEqual(high.owner_dead_pet_count_delta,1)
+        self.assertTrue(high.clears_victim_command)
+
+        low=resolve_battle_normal_death_penalty(
+            BattleNormalDeathInputs(
+                victim_kind=PET,
+                victim_level=99,
+                owner_level=10,
+            )
+        )
+        self.assertEqual(low.victim_pet_variable_ai_delta,-250)
+        self.assertEqual(low.owner_dead_pet_count_delta,1)
+
+    def test_normal_death_penalty_is_disabled_for_pvp_or_norisk(self):
+        pvp=resolve_battle_normal_death_penalty(
+            BattleNormalDeathInputs(
+                victim_kind=PLAYER,
+                victim_level=50,
+                pve_battle=False,
+                default_pet_present=True,
+            )
+        )
+        no_risk=resolve_battle_normal_death_penalty(
+            BattleNormalDeathInputs(
+                victim_kind=PET,
+                victim_level=50,
+                owner_level=50,
+                no_risk=True,
+            )
+        )
+        self.assertEqual(pvp,BattleNormalDeathResolution())
+        self.assertEqual(no_risk,BattleNormalDeathResolution())
+
 
 
 if __name__=="__main__":
