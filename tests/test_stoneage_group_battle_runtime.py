@@ -10,10 +10,13 @@ from tools.stoneage_battle_core_model import (
 )
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
+    BATTLE_COM_CAPTURE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
     OrdinaryAttackRolls,
+    OrdinaryCaptureContext,
+    OrdinaryCaptureRolls,
 )
 from tools.stoneage_battle_state_model import FINISHED, PLAYER_WIN
 from tools.stoneage_enemy_spawn_model import EnemyBirthRolls
@@ -1095,6 +1098,143 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
             result.after.pending_drop_items_by_player_entry_id["player"],
             (),
         )
+
+
+    def test_capture_command_round_persists_pet_through_runtime(self):
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+        )
+        enemy_actor=replace(
+            battle.enemies[0],
+            hp=10,
+            max_hp=100,
+            quick=20,
+            capturable=True,
+            capture_default=11,
+        )
+        battle=replace(battle,enemies=(enemy_actor,))
+        enemy_id=enemy_actor.participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player":0,enemy_id:10},
+        )
+        captured=PetActor(
+            slot=PetSlot(0),
+            variant_id=EnemyVariantId(enemy_actor.source_variant_id),
+            template_id=PetTemplateId(enemy_actor.source_template_id),
+            runtime_object_id=None,
+            state=MappingProxyType({
+                "level":enemy_actor.level,
+                "hp":10,
+                "max_hp":100,
+                "exp":0,
+                "max_exp":500,
+                "attack":enemy_actor.attack,
+                "defense":enemy_actor.defense,
+                "quick":enemy_actor.quick,
+                "name":enemy_actor.name,
+            }),
+            skills=(),
+            growth=None,
+        )
+        result=self.runtime.resolve_persistent_battle_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_CAPTURE,command2=10),
+                enemy_id:BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,enemy_id:0},
+            profiles={
+                "player":BattleCombatProfile(
+                    fixed_dex=30,fixed_luck=7,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+                enemy_id:BattleCombatProfile(
+                    fixed_dex=20,fixed_luck=0,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            capture_contexts={
+                "player":OrdinaryCaptureContext(
+                    attacker_charm=50,
+                    occupied_pet_slots=(),
+                ),
+            },
+            capture_rolls={
+                "player":OrdinaryCaptureRolls(capture_roll_1_100=1),
+            },
+            captured_pets_by_target_id={enemy_id:captured},
+        )
+        self.assertEqual(result.after.phase,FINISHED)
+        self.assertEqual(result.after.result,PLAYER_WIN)
+        self.assertEqual(result.round.exited_participant_ids,(enemy_id,))
+        self.assertEqual(
+            self.domain.persistent.pets[PetSlot(0)].variant_id.value,
+            enemy_actor.source_variant_id,
+        )
+        self.assertEqual(dict(result.after.pending_exp_by_participant_id),{"player":0})
+        self.assertEqual(
+            result.after.pending_drop_items_by_player_entry_id["player"],()
+        )
+
+    def test_capture_command_round_is_atomic_when_captured_pet_mapping_is_missing(self):
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(request,spawned_enemies=spawned)
+        enemy_actor=replace(
+            battle.enemies[0],
+            hp=10,max_hp=100,quick=20,capturable=True,capture_default=11,
+        )
+        battle=replace(battle,enemies=(enemy_actor,))
+        enemy_id=enemy_actor.participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,slots={"player":0,enemy_id:10},
+        )
+        with self.assertRaisesRegex(ValueError,"captured pet mapping mismatch"):
+            self.runtime.resolve_persistent_battle_round(
+                state,
+                commands={
+                    "player":BattleCommand(BATTLE_COM_CAPTURE,command2=10),
+                    enemy_id:BattleCommand(BATTLE_COM_WAIT),
+                },
+                initiative_random_subtracts={"player":0,enemy_id:0},
+                profiles={
+                    "player":BattleCombatProfile(
+                        fixed_dex=30,fixed_luck=7,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                    enemy_id:BattleCombatProfile(
+                        fixed_dex=20,fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                },
+                attack_rolls={},
+                defense_profile="newpower_70pct",
+                capture_contexts={
+                    "player":OrdinaryCaptureContext(
+                        attacker_charm=50,occupied_pet_slots=(),
+                    ),
+                },
+                capture_rolls={"player":OrdinaryCaptureRolls(1)},
+            )
+        self.assertEqual(self.domain.persistent.pets,{})
 
 
 if __name__ == "__main__":

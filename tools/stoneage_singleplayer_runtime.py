@@ -39,6 +39,8 @@ from tools.stoneage_battle_round_model import (
     BattleCombatProfile,
     BattleCommand,
     OrdinaryAttackRolls,
+    OrdinaryCaptureContext,
+    OrdinaryCaptureRolls,
     ResolvedOrdinaryRound,
     prepare_battle_round,
     resolve_ordinary_round,
@@ -449,6 +451,36 @@ class SinglePlayerHistoricalRuntime:
         self.domain.persistent.pets[slot]=captured_pet
         return result
 
+    def _validated_captured_pet(
+        self,
+        *,
+        target: BattleParticipant,
+        assigned_slot: int,
+        captured_pet: PetActor,
+        staged_pets: Mapping[PetSlot,PetActor],
+    ) -> tuple[PetSlot,PetActor]:
+        slot=PetSlot(int(assigned_slot))
+        if captured_pet.slot != slot:
+            raise ValueError("captured pet slot does not match source first-empty slot")
+        if slot in staged_pets:
+            raise ValueError("captured pet slot became occupied before persistence")
+        if target.source_variant_id is None or target.source_template_id is None:
+            raise ValueError("captured target lacks source identity")
+        if captured_pet.variant_id.value != int(target.source_variant_id):
+            raise ValueError("captured pet variant identity drift")
+        if captured_pet.template_id.value != int(target.source_template_id):
+            raise ValueError("captured pet template identity drift")
+        for key,expected in (
+            ("level",target.level),
+            ("hp",target.hp),
+            ("max_hp",target.max_hp),
+        ):
+            if key not in captured_pet.state:
+                raise ValueError(f"captured pet state lacks copied {key}")
+            if int(captured_pet.state[key]) != int(expected):
+                raise ValueError(f"captured pet copied {key} drift")
+        return slot,captured_pet
+
     def resolve_persistent_battle_round(
         self,
         state: PersistentBattleState,
@@ -458,6 +490,9 @@ class SinglePlayerHistoricalRuntime:
         profiles: Mapping[str, BattleCombatProfile],
         attack_rolls: Mapping[str, OrdinaryAttackRolls],
         defense_profile: str,
+        capture_contexts: Mapping[str,OrdinaryCaptureContext] | None = None,
+        capture_rolls: Mapping[str,OrdinaryCaptureRolls] | None = None,
+        captured_pets_by_target_id: Mapping[str,PetActor] | None = None,
         drop_rolls_by_enemy_id: Mapping[
             str,Sequence[DropAllocationRoll]
         ] | None = None,
@@ -465,19 +500,85 @@ class SinglePlayerHistoricalRuntime:
         field_power: int = 0,
         tie_break_order: Sequence[str] | None = None,
     ) -> PersistentRoundResult:
-        """Advance one deterministic ordinary round and retain battle HP."""
-        return resolve_persistent_ordinary_round(
+        """Advance one deterministic round and persist successful captures atomically."""
+        contexts=dict(capture_contexts or {})
+        occupied=tuple(sorted(slot.value for slot in self.domain.persistent.pets))
+        for participant_id,context in contexts.items():
+            if tuple(sorted(context.occupied_pet_slots)) != occupied:
+                raise ValueError(
+                    f"capture pet-slot occupancy drift for {participant_id}"
+                )
+
+        result=resolve_persistent_ordinary_round(
             state,
             commands=commands,
             initiative_random_subtracts=initiative_random_subtracts,
             profiles=profiles,
             attack_rolls=attack_rolls,
+            capture_contexts=contexts,
+            capture_rolls=capture_rolls,
             drop_rolls_by_enemy_id=drop_rolls_by_enemy_id,
             defense_profile=defense_profile,
             field_attr=field_attr,
             field_power=field_power,
             tie_break_order=tie_break_order,
         )
+
+        supplied={
+            str(target_id):pet
+            for target_id,pet in (captured_pets_by_target_id or {}).items()
+        }
+        successful=[]
+        target_id_by_slot={
+            int(slot):str(participant_id)
+            for participant_id,slot in state.slots.items()
+        }
+        participants={
+            str(participant.participant_id):participant
+            for participant in (
+                state.session.player,
+                *state.session.allied_pets,
+                *state.session.enemies,
+            )
+        }
+        for event in result.round.events:
+            resolution=event.capture_resolution
+            if resolution is None or not resolution.success:
+                continue
+            if event.resolved_target_slot is None:
+                raise ValueError("successful capture lacks resolved target slot")
+            target_id=target_id_by_slot.get(int(event.resolved_target_slot))
+            if target_id is None:
+                raise ValueError("successful capture target slot has no participant")
+            successful.append((target_id,resolution))
+
+        expected_ids={target_id for target_id,_ in successful}
+        supplied_ids=set(supplied)
+        if supplied_ids != expected_ids:
+            missing=sorted(expected_ids-supplied_ids)
+            extra=sorted(supplied_ids-expected_ids)
+            raise ValueError(
+                f"captured pet mapping mismatch; missing={missing}, extra={extra}"
+            )
+
+        staged=dict(self.domain.persistent.pets)
+        for target_id,resolution in successful:
+            if target_id not in participants:
+                raise ValueError(f"captured target {target_id} lacks source participant")
+            if resolution.assigned_pet_slot is None:
+                raise ValueError("successful capture lacks assigned pet slot")
+            slot,pet=self._validated_captured_pet(
+                target=participants[target_id],
+                assigned_slot=resolution.assigned_pet_slot,
+                captured_pet=supplied[target_id],
+                staged_pets=staged,
+            )
+            staged[slot]=pet
+
+        if successful:
+            self.domain.persistent.pets.clear()
+            self.domain.persistent.pets.update(staged)
+        return result
 
     def _settle_persistent_battle_drops(
         self,
