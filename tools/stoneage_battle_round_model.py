@@ -20,6 +20,8 @@ from tools.stoneage_battle_core_model import (
     PLAYER,
     BattleCaptureInputs,
     BattleCaptureResolution,
+    BattleEscapeInputs,
+    BattleEscapeResolution,
     attribute_adjusted_damage,
     critical_damage,
     critical_per_10000,
@@ -31,6 +33,7 @@ from tools.stoneage_battle_core_model import (
     guard_damage,
     physical_base_damage,
     resolve_battle_capture_attempt,
+    resolve_battle_escape_attempt,
 )
 from tools.stoneage_singleplayer_battle import BattleParticipant
 
@@ -253,7 +256,13 @@ def prepare_battle_round(
 SIDE_OFFSET = 10
 BATTLE_SLOT_COUNT = 20
 ORDINARY_RESOLUTION_COMMANDS = frozenset(
-    {BATTLE_COM_ATTACK, BATTLE_COM_GUARD, BATTLE_COM_CAPTURE, BATTLE_COM_WAIT}
+    {
+        BATTLE_COM_ATTACK,
+        BATTLE_COM_GUARD,
+        BATTLE_COM_CAPTURE,
+        BATTLE_COM_ESCAPE,
+        BATTLE_COM_WAIT,
+    }
 )
 
 
@@ -339,6 +348,39 @@ class OrdinaryCaptureContext:
 
 
 @dataclass(frozen=True)
+class OrdinaryEscapeRolls:
+    """RAND(1,100) consumed by BATTLE_EscapeCheck outside PvP."""
+    escape_roll_1_100: int | None
+
+
+@dataclass(frozen=True)
+class OrdinaryEscapeContext:
+    """Non-random source state needed by BATTLE_Escape/BATTLE_EscapeCheck."""
+    stored_escape_count_before: int
+    actor_rare: int = 0
+    opponent_abio_by_participant_id: Mapping[str,bool] | None = None
+    pvp: bool = False
+    forced_exit: bool = False
+
+    def __post_init__(self) -> None:
+        count=int(self.stored_escape_count_before)
+        if count < 0:
+            raise ValueError("stored escape count cannot be negative")
+        object.__setattr__(self,'stored_escape_count_before',count)
+        object.__setattr__(self,'actor_rare',int(self.actor_rare))
+        object.__setattr__(
+            self,
+            'opponent_abio_by_participant_id',
+            MappingProxyType({
+                str(pid):bool(value)
+                for pid,value in (
+                    self.opponent_abio_by_participant_id or {}
+                ).items()
+            }),
+        )
+
+
+@dataclass(frozen=True)
 class OrdinaryRoundEvent:
     participant_id: str
     slot: int
@@ -353,6 +395,7 @@ class OrdinaryRoundEvent:
     target_hp_before: int | None = None
     target_hp_after: int | None = None
     capture_resolution: BattleCaptureResolution | None = None
+    escape_resolution: BattleEscapeResolution | None = None
 
 
 @dataclass(frozen=True)
@@ -362,6 +405,7 @@ class ResolvedOrdinaryRound:
     hp_by_slot: Mapping[int, int]
     action_order: tuple[str, ...]
     exited_participant_ids: tuple[str, ...] = ()
+    escaped_participant_ids: tuple[str, ...] = ()
 
 
 def _participant_battle_kind(participant: BattleParticipant) -> str:
@@ -484,10 +528,12 @@ def resolve_ordinary_round(
     defense_profile: str,
     capture_contexts: Mapping[str, OrdinaryCaptureContext] | None = None,
     capture_rolls: Mapping[str, OrdinaryCaptureRolls] | None = None,
+    escape_contexts: Mapping[str, OrdinaryEscapeContext] | None = None,
+    escape_rolls: Mapping[str, OrdinaryEscapeRolls] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
-    """Execute the status-free attack/guard/capture/wait battle seam.
+    """Execute the status-free attack/guard/capture/escape/wait battle seam.
 
     Guard stance is taken from the submitted command set before action sorting,
     matching BATTLE_AttackSeq's inspection of the defender's COM1 rather than
@@ -496,7 +542,7 @@ def resolve_ordinary_round(
     for entry in prepared.ordered_entries:
         if entry.command.command1 not in ORDINARY_RESOLUTION_COMMANDS:
             raise ValueError(
-                "ordinary resolver accepts only ATTACK/GUARD/CAPTURE/WAIT commands"
+                "ordinary resolver accepts only ATTACK/GUARD/CAPTURE/ESCAPE/WAIT commands"
             )
 
     by_slot, slot_by_id = _build_slot_maps(prepared, slots)
@@ -526,6 +572,9 @@ def resolve_ordinary_round(
     exited_ids: list[str] = []
     capture_contexts=dict(capture_contexts or {})
     capture_rolls=dict(capture_rolls or {})
+    escape_contexts=dict(escape_contexts or {})
+    escape_rolls=dict(escape_rolls or {})
+    escaped_ids: list[str] = []
 
     for entry in prepared.ordered_entries:
         participant = entry.participant
@@ -586,6 +635,90 @@ def resolve_ordinary_round(
                     BATTLE_COM_GUARD,
                     entry.action_value,
                     "guard",
+                )
+            )
+            continue
+
+        if entry.command.command1 == BATTLE_COM_ESCAPE:
+            # Stable BATTLE_Command ignores ESCAPE for CHAR_TYPEPET.
+            if participant.kind == "pet":
+                events.append(
+                    OrdinaryRoundEvent(
+                        participant_id,
+                        slot,
+                        BATTLE_COM_ESCAPE,
+                        entry.action_value,
+                        "escape_ignored_pet",
+                    )
+                )
+                continue
+            if participant_id not in escape_contexts:
+                raise KeyError(f"missing escape context for {participant_id}")
+            if participant_id not in escape_rolls:
+                raise KeyError(f"missing escape rolls for {participant_id}")
+            context=escape_contexts[participant_id]
+            esc_rolls=escape_rolls[participant_id]
+            opponent_side=1-_slot_side(slot)
+            opponents=tuple(
+                by_slot[other_slot]
+                for other_slot in sorted(by_slot)
+                if (
+                    _slot_side(other_slot)==opponent_side
+                    and other_slot not in exited_slots
+                )
+            )
+            opponent_levels=tuple(int(opponent.level) for opponent in opponents)
+            opponent_abio=tuple(
+                bool(
+                    context.opponent_abio_by_participant_id.get(
+                        str(opponent.participant_id),
+                        False,
+                    )
+                )
+                for opponent in opponents
+            )
+            actor_profile=profiles[participant_id]
+            resolution=resolve_battle_escape_attempt(
+                BattleEscapeInputs(
+                    actor_level=int(participant.level),
+                    actor_kind=str(participant.kind),
+                    actor_fixed_luck=int(actor_profile.fixed_luck),
+                    actor_rare=int(context.actor_rare),
+                    stored_escape_count_before=int(
+                        context.stored_escape_count_before
+                    ),
+                    opponent_levels=opponent_levels,
+                    opponent_abio_flags=opponent_abio,
+                    pvp=bool(context.pvp),
+                    forced_exit=bool(context.forced_exit),
+                ),
+                roll_1_100=esc_rolls.escape_roll_1_100,
+            )
+            if resolution.exits_battle:
+                exited_slots.add(slot)
+                escaped_ids.append(str(participant_id))
+                # BATTLE_Exit(player) also clears the active pet battle entry.
+                if participant.side=="player" and participant.kind=="player":
+                    for other_slot,other in by_slot.items():
+                        if (
+                            other.side=="player"
+                            and other.kind=="pet"
+                            and other_slot not in exited_slots
+                        ):
+                            exited_slots.add(other_slot)
+                            escaped_ids.append(str(other.participant_id))
+            events.append(
+                OrdinaryRoundEvent(
+                    participant_id,
+                    slot,
+                    BATTLE_COM_ESCAPE,
+                    entry.action_value,
+                    (
+                        "escape_success"
+                        if resolution.exits_battle
+                        else "escape_failed"
+                    ),
+                    escape_resolution=resolution,
                 )
             )
             continue
@@ -865,4 +998,5 @@ def resolve_ordinary_round(
             for entry in prepared.ordered_entries
         ),
         exited_participant_ids=tuple(exited_ids),
+        escaped_participant_ids=tuple(escaped_ids),
     )

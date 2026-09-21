@@ -4,6 +4,7 @@ from dataclasses import replace
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_CAPTURE,
+    BATTLE_COM_ESCAPE,
     BATTLE_COM_GUARD,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
@@ -11,6 +12,8 @@ from tools.stoneage_battle_round_model import (
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
+    OrdinaryEscapeContext,
+    OrdinaryEscapeRolls,
     prepare_battle_round,
     resolve_ordinary_round,
 )
@@ -319,6 +322,113 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(event.capture_resolution.assigned_pet_slot,1)
         self.assertEqual(resolved.exited_participant_ids,("enemy",))
         self.assertEqual(resolved.hp_by_participant_id["enemy"],10)
+
+
+    def test_escape_runs_in_action_order_and_skips_active_pet_after_player_exit(self):
+        player=actor("player","player","player",quick=100,level=10)
+        pet=actor("pet","player","pet",quick=80,level=10)
+        enemy=actor("enemy","enemy","enemy",quick=20,level=10)
+        prepared=prepare_battle_round(
+            (player,pet,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ESCAPE),
+                "pet":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"pet":1,"enemy":10},
+            profiles={
+                "player":profile(luck=3),
+                "pet":profile(),
+                "enemy":profile(),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            escape_contexts={
+                "player":OrdinaryEscapeContext(
+                    stored_escape_count_before=0,
+                ),
+            },
+            escape_rolls={
+                "player":OrdinaryEscapeRolls(1),
+            },
+        )
+        self.assertEqual(result.events[0].result,"escape_success")
+        self.assertEqual(result.events[0].escape_resolution.probability,100)
+        self.assertEqual(
+            result.events[0].escape_resolution.stored_escape_count_after,
+            1,
+        )
+        self.assertEqual(result.events[1].result,"skipped_exited")
+        self.assertEqual(
+            result.escaped_participant_ids,
+            ("player","pet"),
+        )
+        self.assertEqual(result.hp_by_participant_id["player"],100)
+        self.assertEqual(result.hp_by_participant_id["pet"],100)
+
+    def test_failed_escape_keeps_actor_in_round_and_reports_incremented_counter(self):
+        player=actor("player","player","player",quick=100,level=10)
+        enemy=actor("enemy","enemy","enemy",quick=20,level=30)
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ESCAPE),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(luck=2),"enemy":profile()},
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            escape_contexts={
+                "player":OrdinaryEscapeContext(
+                    stored_escape_count_before=0,
+                ),
+            },
+            escape_rolls={"player":OrdinaryEscapeRolls(40)},
+        )
+        event=result.events[0]
+        self.assertEqual(event.result,"escape_failed")
+        self.assertFalse(event.escape_resolution.exits_battle)
+        self.assertEqual(event.escape_resolution.probability,40)
+        self.assertEqual(event.escape_resolution.stored_escape_count_after,1)
+        self.assertEqual(result.escaped_participant_ids,())
+
+    def test_pet_escape_command_is_source_ignored_without_rng(self):
+        player=actor("player","player","player",quick=20)
+        pet=actor("pet","player","pet",quick=100)
+        enemy=actor("enemy","enemy","enemy",quick=10)
+        prepared=prepare_battle_round(
+            (player,pet,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet":BattleCommand(BATTLE_COM_ESCAPE),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"pet":1,"enemy":10},
+            profiles={
+                "player":profile(),
+                "pet":profile(),
+                "enemy":profile(),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.events[0].participant_id,"pet")
+        self.assertEqual(result.events[0].result,"escape_ignored_pet")
+        self.assertIsNone(result.events[0].escape_resolution)
+
 
 
 if __name__ == "__main__":
