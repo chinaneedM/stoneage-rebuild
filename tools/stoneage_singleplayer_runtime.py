@@ -497,6 +497,7 @@ class SinglePlayerHistoricalRuntime:
         capture_rolls: Mapping[str,OrdinaryCaptureRolls] | None = None,
         escape_contexts: Mapping[str,OrdinaryEscapeContext] | None = None,
         escape_rolls: Mapping[str,OrdinaryEscapeRolls] | None = None,
+        no_risk: bool = False,
         captured_pets_by_target_id: Mapping[str,PetActor] | None = None,
         drop_rolls_by_enemy_id: Mapping[
             str,Sequence[DropAllocationRoll]
@@ -524,6 +525,7 @@ class SinglePlayerHistoricalRuntime:
             capture_rolls=capture_rolls,
             escape_contexts=escape_contexts,
             escape_rolls=escape_rolls,
+            no_risk=no_risk,
             drop_rolls_by_enemy_id=drop_rolls_by_enemy_id,
             defense_profile=defense_profile,
             field_attr=field_attr,

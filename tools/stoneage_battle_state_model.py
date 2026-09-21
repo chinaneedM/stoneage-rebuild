@@ -34,6 +34,8 @@ from tools.stoneage_battle_core_model import (
     allocate_battle_drop_items,
     battle_kill_profit,
     resolve_battle_capture_attempt,
+    BattleNormalDeathInputs,
+    resolve_battle_normal_death_penalty,
 )
 from tools.stoneage_battle_round_model import (
     BattleCombatProfile,
@@ -66,6 +68,8 @@ class PersistentBattleState:
     pending_exp_by_participant_id: Mapping[str, int]
     pending_pet_variable_ai_by_participant_id: Mapping[str, int]
     pending_drop_items_by_player_entry_id: Mapping[str, tuple[BattleDropItem, ...]]
+    pending_player_charm_delta: int = 0
+    pending_player_dead_pet_count_delta: int = 0
     destroyed_drop_items: tuple[BattleDropItem, ...] = ()
     turn: int = 0
     phase: str = ACTIVE
@@ -152,11 +156,8 @@ class PersistentBattleState:
                 f"pending pet VARIABLEAI participants mismatch; "
                 f"missing={missing}, extra={extra}"
             )
-        if any(
-            int(value) < 0
-            for value in self.pending_pet_variable_ai_by_participant_id.values()
-        ):
-            raise ValueError("pending pet VARIABLEAI delta cannot be negative")
+        if int(self.pending_player_dead_pet_count_delta) < 0:
+            raise ValueError("pending player dead-pet count delta cannot be negative")
 
         expected_drop_ids={str(self.session.player.participant_id)}
         actual_drop_ids={
@@ -450,6 +451,10 @@ def resolve_persistent_capture_transition(
         pending_drop_items_by_player_entry_id=(
             state.pending_drop_items_by_player_entry_id
         ),
+        pending_player_charm_delta=state.pending_player_charm_delta,
+        pending_player_dead_pet_count_delta=(
+            state.pending_player_dead_pet_count_delta
+        ),
         destroyed_drop_items=state.destroyed_drop_items,
         turn=state.turn,
         phase=ACTIVE,
@@ -480,6 +485,8 @@ def _pending_profit_after_ordinary_round(
     Mapping[str,int],
     Mapping[str,int],
     Mapping[str,tuple[BattleDropItem,...]],
+    int,
+    int,
     tuple[BattleDropItem,...],
 ]:
     """Apply ordinary-kill EXP/loyalty and the source-shaped item buffer."""
@@ -500,6 +507,10 @@ def _pending_profit_after_ordinary_round(
         str(pid): tuple(items)
         for pid,items in state.pending_drop_items_by_player_entry_id.items()
     }
+    pending_player_charm_delta=int(state.pending_player_charm_delta)
+    pending_player_dead_pet_count_delta=int(
+        state.pending_player_dead_pet_count_delta
+    )
     destroyed=list(state.destroyed_drop_items)
     drop_rolls={
         str(enemy_id): tuple(rolls)
@@ -512,16 +523,64 @@ def _pending_profit_after_ordinary_round(
             continue
         if int(event.target_hp_before) <= 0 or int(event.target_hp_after) != 0:
             continue
-        actor_id = str(event.participant_id)
-        actor = participants[actor_id]
-        if actor.side != "player":
-            continue
         if event.resolved_target_slot is None:
             continue
         target_id = participant_id_by_slot.get(int(event.resolved_target_slot))
         if target_id is None:
-            raise ValueError("resolved kill target slot has no participant")
+            raise ValueError("resolved death target slot has no participant")
         target = participants[target_id]
+
+        if target.side == "player" and target.kind in {"player","pet"}:
+            if target.kind == "player":
+                allied=tuple(state.session.allied_pets)
+                if len(allied) > 1:
+                    raise ValueError(
+                        "player-death penalty requires a unique active/default pet"
+                    )
+                default_pet_id=(
+                    None if not allied else str(allied[0].participant_id)
+                )
+                penalty=resolve_battle_normal_death_penalty(
+                    BattleNormalDeathInputs(
+                        victim_kind="player",
+                        victim_level=int(target.level),
+                        default_pet_present=(default_pet_id is not None),
+                    )
+                )
+                pending_player_charm_delta+=int(
+                    penalty.player_charm_delta
+                )
+                if default_pet_id is not None:
+                    if default_pet_id not in pending_variable_ai:
+                        raise ValueError(
+                            "player-death pet penalty references unknown allied pet"
+                        )
+                    pending_variable_ai[default_pet_id]+=int(
+                        penalty.default_pet_variable_ai_delta
+                    )
+            else:
+                penalty=resolve_battle_normal_death_penalty(
+                    BattleNormalDeathInputs(
+                        victim_kind="pet",
+                        victim_level=int(target.level),
+                        owner_level=int(state.session.player.level),
+                    )
+                )
+                if target_id not in pending_variable_ai:
+                    raise ValueError(
+                        "pet-death penalty references unknown allied pet"
+                    )
+                pending_variable_ai[target_id]+=int(
+                    penalty.victim_pet_variable_ai_delta
+                )
+                pending_player_dead_pet_count_delta+=int(
+                    penalty.owner_dead_pet_count_delta
+                )
+
+        actor_id = str(event.participant_id)
+        actor = participants[actor_id]
+        if actor.side != "player":
+            continue
         if target.kind != "enemy":
             continue
         if target.reward_exp is None:
@@ -602,6 +661,8 @@ def _pending_profit_after_ordinary_round(
         _freeze_mapping(pending_exp),
         _freeze_mapping(pending_variable_ai),
         _freeze_mapping(pending_drops),
+        int(pending_player_charm_delta),
+        int(pending_player_dead_pet_count_delta),
         tuple(destroyed),
     )
 def resolve_persistent_ordinary_round(
@@ -616,6 +677,7 @@ def resolve_persistent_ordinary_round(
     capture_rolls: Mapping[str, OrdinaryCaptureRolls] | None = None,
     escape_contexts: Mapping[str, OrdinaryEscapeContext] | None = None,
     escape_rolls: Mapping[str, OrdinaryEscapeRolls] | None = None,
+    no_risk: bool = False,
     drop_rolls_by_enemy_id: Mapping[
         str,Sequence[DropAllocationRoll]
     ] | None = None,
@@ -692,12 +754,25 @@ def resolve_persistent_ordinary_round(
         pending_exp,
         pending_variable_ai,
         pending_drops,
+        pending_player_charm_delta,
+        pending_player_dead_pet_count_delta,
         destroyed_drops,
     )=_pending_profit_after_ordinary_round(
         state,
         round_result,
         drop_rolls_by_enemy_id=drop_rolls_by_enemy_id,
     )
+    if bool(no_risk):
+        # Stable BATTLE_NormalDeadExtra is disabled for no-risk PvE battles.
+        # Kill profit remains independent and is preserved.
+        pending_player_charm_delta=int(state.pending_player_charm_delta)
+        pending_player_dead_pet_count_delta=int(
+            state.pending_player_dead_pet_count_delta
+        )
+        pending_variable_ai=dict(pending_variable_ai)
+        for pid,value in state.pending_pet_variable_ai_by_participant_id.items():
+            pending_variable_ai[str(pid)]=int(value)
+        pending_variable_ai=_freeze_mapping(pending_variable_ai)
     exited_ids={str(pid) for pid in round_result.exited_participant_ids}
     enemy_ids={str(enemy.participant_id) for enemy in state.session.enemies}
     invalid_exits=sorted(exited_ids-enemy_ids)
@@ -756,6 +831,10 @@ def resolve_persistent_ordinary_round(
         pending_exp_by_participant_id=pending_exp,
         pending_pet_variable_ai_by_participant_id=pending_variable_ai,
         pending_drop_items_by_player_entry_id=pending_drops,
+        pending_player_charm_delta=pending_player_charm_delta,
+        pending_player_dead_pet_count_delta=(
+            pending_player_dead_pet_count_delta
+        ),
         destroyed_drop_items=destroyed_drops,
         turn=int(state.turn) + 1,
         phase=ACTIVE,
