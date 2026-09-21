@@ -290,7 +290,7 @@ class BattleRoundModelTests(unittest.TestCase):
                 ),
                 "enemy":OrdinaryAttackRolls(
                     dodge_roll_1_10000=10000,
-                    critical_roll_1_10000=1,
+                    critical_roll_1_10000=10000,
                     damage_roll=0,
                 ),
             },
