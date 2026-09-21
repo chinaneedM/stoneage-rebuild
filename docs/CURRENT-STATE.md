@@ -1412,13 +1412,24 @@ Supplemental source ledgers:
   - a later Bismarck derivative adds an explicitly macro/config-gated `_BATTLE_GOLD / BATTLEGOLD` fixed bonus; it is treated as a later private-server extension and excluded from the base reconstruction;
   - the runtime regression fixture now preserves `gold=1234` unchanged across terminal battle and EXP-settlement paths;
   - exact JSS-1999 absence remains OPEN until original server evidence is recovered; detailed evidence is in `research/mechanics/STONEAGE-BATTLE-MONEY-R1.md`.
+- Battle capture is now closed to the strong stable-descendant mechanics boundary and the current explicit single-player persistence boundary:
+  - \`BATTLE_COM_CAPTURE\` / \`T|target\` now executes inside the ordinary action-order seam rather than remaining parse-only;
+  - target adjustment keeps a still-valid submitted target or uses an explicit opposite-side retarget roll; capture-specific enemy/PETFLG eligibility remains in the capture check rather than being conflated with generic target validity;
+  - capture requires an enemy target with PETFLG enabled and, unless \`PickAllPet\` is active, rejects targets more than five levels above the player before RNG;
+  - \`enemybase.GET\` is preserved as \`capture_default\`; the stable formula uses current HP squared over max HP, level gap, fixed-DEX gap, target GET, fixed luck, fixed charm, temporary capture modifier and sleep +15, caps only above 99, then uses strict \`RAND(1,100) < WorkGet\`;
+  - temporary capture modifier resets after the attempt;
+  - five pet slots are scanned 0→4 for the first empty slot **after** a successful capture roll, so a full pet array can consume a successful RNG result and still fail;
+  - success removes the enemy battle entry through a BATTLE_Exit-shaped transition without setting HP to zero, so it awards neither kill EXP nor held-item drops;
+  - ordinary-round capture now requires a complete source-identified \`PetActor\` and validates slot, variant/template, level, HP and max-HP before atomically updating persistent pets;
+  - both pinned Gavin and independent iriselia builds enable later \`_CAPTURE_FREES\` required-item extensions; those hard-coded conditions remain profile-specific/OPEN for early JSS and are not silently promoted into the base rule;
+  - detailed evidence is recorded in \`research/mechanics/STONEAGE-BATTLE-CAPTURE-R1.md\`.
 - Still OPEN / deliberately excluded:
   - exact JSS-1999 choice of level-threshold regime/table;
   - maximum-level and pet-limit-level behavior;
   - complete visible pet AI/loyalty compliance projection;
   - early-JSS confirmation of later-gated combo-profit behavior;
   - full counter/combo/status action/damage execution;
-  - capture, escape and other post-battle rewards.
+  - escape and other post-battle rewards.
 - Code validations:
   - `81e9572f1ff309982d13c7f1979a51516a5593a8` — pending ordinary kill EXP accumulation; runs **35514277568** and **35514277633** both success.
   - `b3207d71bc8dafa557e31d3450be2d6efb00bd29` — no-level-cross EXP persistence; run **35514525635** success.
@@ -1434,10 +1445,14 @@ Supplemental source ledgers:
   - `cd1206d069c9fb2e61414996748ee24070e5cadd` — concrete pending-drop state plus persistent-inventory settlement; battle-core **35517775715** and gameplay **35517775683** success.
   - `bebb6c6fc8ddbf495cb8a9f159f63dd0e6f475e3` — normalized runtime/drop round signature ordering; battle-core **35517829479** and gameplay **35517829457** success.
   - `a5f27d5dd792406e653ded8f4e1dce770851a710` — preserve the stable no-battle-money runtime invariant; gameplay **35518043576** success.
+  - `d832b32741ecf6d097be5f4640c55d4dfd4a3720` — capture gates/formula, strict RNG boundary and enemybase GET bridge; battle-core **35549443783** and gameplay **35549443834** success.
+  - `7d321792543a537ea9318eb14b504c147518a843` — non-kill persistent capture transition and explicit captured-pet installation; battle-core **35549610051** and gameplay **35549610032** success.
+  - `882a124471bda8ae31a22dfa6f75c3998afd4aaa` — capture execution inside ordinary action order / exited-target tracking; battle-core **35549871944** and gameplay **35549871985** success.
+  - `cb7d57cbc6488f9c815c0043c72c99dce9672a4c` — atomic captured-pet persistence from ordinary battle rounds; gameplay **35549951206** success.
 
 ## Immediate next actions
 
-1. **Recover battle capture next.** Determine the exact eligibility gates, probability calculation, target ownership/slot capacity, success state transition and post-battle persistence before implementing capture; do not borrow later private-server capture modifiers into the base profile. After capture, proceed to escape, death penalties and recovery as separate seams.
+1. **Recover and implement battle escape next.** Preserve the source attempt counter, luck bands, opponent-level averaging, strict RNG boundary and BATTLE_Exit behavior as a separate deterministic seam; keep PvP/forced-escape branches explicit and do not mix death penalties or recovery into escape.
 2. **Expand counter/combo/status battle execution only through their own deterministic mechanics seams.** Their EXP attribution is closed; future action/damage/status execution must feed the existing source-shaped profit-list/scan model rather than redefine reward ownership.
 3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
 4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
