@@ -49,6 +49,7 @@ from tools.stoneage_battle_round_model import (
 )
 from tools.stoneage_battle_state_model import (
     FINISHED,
+    PLAYER_ESCAPE,
     PersistentBattleState,
     PersistentCaptureResult,
     PersistentRoundResult,
@@ -622,6 +623,17 @@ class SinglePlayerHistoricalRuntime:
         self._settle_persistent_battle_drops(state)
         return result
 
+    def _require_profit_settleable_terminal(
+        self,
+        state: PersistentBattleState,
+    ) -> None:
+        if state.phase != FINISHED or state.result is None:
+            raise ValueError("cannot settle battle before termination")
+        if state.result == PLAYER_ESCAPE:
+            raise ValueError(
+                "escaped battle must use the dedicated escape/recovery settlement seam"
+            )
+
     def finish_persistent_battle(
         self,
         state: PersistentBattleState,
@@ -635,8 +647,7 @@ class SinglePlayerHistoricalRuntime:
         the later macro-gated _BATTLE_GOLD extension is intentionally excluded.
         EXP, capture/escape, death penalties and recovery remain separate seams.
         """
-        if state.phase != FINISHED or state.result is None:
-            raise ValueError("cannot settle battle before termination")
+        self._require_profit_settleable_terminal(state)
 
         session = state.session
         player_id = session.player.participant_id
@@ -674,8 +685,7 @@ class SinglePlayerHistoricalRuntime:
         state: PersistentBattleState,
     ) -> BattleReturn:
         """Settle HP, below-threshold EXP, and already-earned pet kill loyalty."""
-        if state.phase != FINISHED or state.result is None:
-            raise ValueError("cannot settle battle before termination")
+        self._require_profit_settleable_terminal(state)
 
         session = state.session
         player_id = session.player.participant_id
@@ -836,8 +846,7 @@ class SinglePlayerHistoricalRuntime:
         No implicit RNG, auto-heal, visible-AI rewrite or later reward rule is
         introduced here.
         '''
-        if state.phase != FINISHED or state.result is None:
-            raise ValueError('cannot settle battle before termination')
+        self._require_profit_settleable_terminal(state)
 
         session=state.session
         player_id=session.player.participant_id

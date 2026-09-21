@@ -11,14 +11,17 @@ from tools.stoneage_battle_core_model import (
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_CAPTURE,
+    BATTLE_COM_ESCAPE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
+    OrdinaryEscapeContext,
+    OrdinaryEscapeRolls,
 )
-from tools.stoneage_battle_state_model import FINISHED, PLAYER_WIN
+from tools.stoneage_battle_state_model import FINISHED, PLAYER_ESCAPE, PLAYER_WIN
 from tools.stoneage_enemy_spawn_model import EnemyBirthRolls
 from tools.stoneage_pet_growth_model import PetLevelGrowthRolls
 from tools.stoneage_player_growth_model import (
@@ -1235,6 +1238,79 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
                 capture_rolls={"player":OrdinaryCaptureRolls(1)},
             )
         self.assertEqual(self.domain.persistent.pets,{})
+
+
+    def test_escape_terminal_is_rejected_by_profit_settlement_paths(self):
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+        )
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player":0,enemy_id:10},
+        )
+        escaped=self.runtime.resolve_persistent_battle_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_ESCAPE),
+                enemy_id:BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,enemy_id:0},
+            profiles={
+                "player":BattleCombatProfile(
+                    fixed_dex=30,fixed_luck=3,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+                enemy_id:BattleCombatProfile(
+                    fixed_dex=20,fixed_luck=0,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            escape_contexts={
+                "player":OrdinaryEscapeContext(
+                    stored_escape_count_before=0,
+                ),
+            },
+            escape_rolls={
+                "player":OrdinaryEscapeRolls(1),
+            },
+        )
+        self.assertEqual(escaped.after.phase,FINISHED)
+        self.assertEqual(escaped.after.result,PLAYER_ESCAPE)
+
+        finishers=(
+            lambda: self.runtime.finish_persistent_battle(escaped.after),
+            lambda: self.runtime.finish_persistent_battle_without_level_crossing(
+                escaped.after
+            ),
+            lambda: self.runtime.finish_persistent_battle_with_progression(
+                escaped.after,
+                player_exp_profile=LEGACY_CUMULATIVE_EXP,
+                next_player_max_exp_by_level={},
+            ),
+        )
+        for index,finish in enumerate(finishers):
+            with self.subTest(finisher=index):
+                with self.assertRaisesRegex(
+                    ValueError,
+                    "dedicated escape/recovery settlement seam",
+                ):
+                    finish()
+
+        self.assertEqual(self.domain.persistent.character.fields["exp"],0)
+        self.assertEqual(self.domain.persistent.inventory,{})
+
 
 
 if __name__ == "__main__":

@@ -1423,13 +1423,25 @@ Supplemental source ledgers:
   - ordinary-round capture now requires a complete source-identified \`PetActor\` and validates slot, variant/template, level, HP and max-HP before atomically updating persistent pets;
   - both pinned Gavin and independent iriselia builds enable later \`_CAPTURE_FREES\` required-item extensions; those hard-coded conditions remain profile-specific/OPEN for early JSS and are not silently promoted into the base rule;
   - detailed evidence is recorded in \`research/mechanics/STONEAGE-BATTLE-CAPTURE-R1.md\`.
+- Battle escape is now closed to the strong stable-descendant probability/action-state boundary, with final recovery deliberately isolated:
+  - \`E\` maps to \`BATTLE_COM_ESCAPE\`; pet entries do not execute the ordinary escape branch;
+  - \`BATTLE_ENTRY.escape\` initializes at 0, \`BATTLE_Escape()\` increments it before calling \`BATTLE_EscapeCheck()\`, and the check reads \`escape+1\`; the first ordinary attempt therefore uses effective attempt count 2 and this source off-by-one is preserved;
+  - player fixed luck is clamped to 1..5; enemy escape luck maps RARE 0/1/other to 1/3/5;
+  - opponent average level includes the source ABIO -100 adjustment before C-style truncating division;
+  - ordinary probability uses the stable luck bands and strict \`RAND(1,100) < Esc\`, clamps only the lower end to 1 and does not cap the upper end;
+  - PvP escape succeeds before RNG; forced escape still executes the probability check/RNG first but exits regardless of check failure;
+  - successful player escape performs a BATTLE_Exit-shaped action exit, removes the active allied pet entry from subsequent action execution, and is represented as a distinct persistent \`escape\` terminal rather than victory/defeat;
+  - stored escape-attempt counters are persistent battle-entry state and caller-provided contexts are checked against them, so failed attempts affect later attempts deterministically;
+  - stable \`BATTLE_Finish()\` calls \`BATTLE_GetProfit()\` only for entries still present at finish, while successful escape has already cleared the player entry through \`BATTLE_Exit()\`; runtime victory/EXP/drop finishers therefore reject escape terminals instead of accidentally awarding pending battle profit;
+  - exact BATTLE_Exit recovery/status cleanup is still a separate seam and has not been guessed into the escape return path;
+  - detailed evidence is recorded in \`research/mechanics/STONEAGE-BATTLE-ESCAPE-R1.md\`.
 - Still OPEN / deliberately excluded:
   - exact JSS-1999 choice of level-threshold regime/table;
   - maximum-level and pet-limit-level behavior;
   - complete visible pet AI/loyalty compliance projection;
   - early-JSS confirmation of later-gated combo-profit behavior;
   - full counter/combo/status action/damage execution;
-  - escape and other post-battle rewards.
+  - exact BATTLE_Exit recovery/status cleanup after escape and other post-battle recovery rules.
 - Code validations:
   - `81e9572f1ff309982d13c7f1979a51516a5593a8` — pending ordinary kill EXP accumulation; runs **35514277568** and **35514277633** both success.
   - `b3207d71bc8dafa557e31d3450be2d6efb00bd29` — no-level-cross EXP persistence; run **35514525635** success.
@@ -1449,10 +1461,13 @@ Supplemental source ledgers:
   - `7d321792543a537ea9318eb14b504c147518a843` — non-kill persistent capture transition and explicit captured-pet installation; battle-core **35549610051** and gameplay **35549610032** success.
   - `882a124471bda8ae31a22dfa6f75c3998afd4aaa` — capture execution inside ordinary action order / exited-target tracking; battle-core **35549871944** and gameplay **35549871985** success.
   - `cb7d57cbc6488f9c815c0043c72c99dce9672a4c` — atomic captured-pet persistence from ordinary battle rounds; gameplay **35549951206** success.
+  - `cfa3f855f09e8147ba241d66428377ce3e1df20e` — stable escape probability/counter/PvP/forced-exit core; battle-core **35550194003** and gameplay **35550194001** success.
+  - `454952adfbbef33090719bb2d45162481c188da7` — escape execution inside ordinary action order; battle-core **35550379184** and gameplay **35550379230** success.
+  - `a8c228e946c1c810a1cf32c7cbba76aa0611f830` — persistent escape attempt counters and distinct player-escape terminal; battle-core **35550479374** and gameplay **35550479386** success.
 
 ## Immediate next actions
 
-1. **Recover and implement battle escape next.** Preserve the source attempt counter, luck bands, opponent-level averaging, strict RNG boundary and BATTLE_Exit behavior as a separate deterministic seam; keep PvP/forced-escape branches explicit and do not mix death penalties or recovery into escape.
+1. **Recover BATTLE_Exit recovery/status cleanup next.** Separate ordinary escape return behavior from death penalties: determine exact player/pet HP floor handling, bad-status clearing, pet battle-entry cleanup and any version-gated post-exit effects before adding a dedicated escape settlement path.
 2. **Expand counter/combo/status battle execution only through their own deterministic mechanics seams.** Their EXP attribution is closed; future action/damage/status execution must feed the existing source-shaped profit-list/scan model rather than redefine reward ownership.
 3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
 4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
