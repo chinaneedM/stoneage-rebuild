@@ -794,5 +794,47 @@ class PersistentBattleStateTests(unittest.TestCase):
 
 
 
+    def test_no_risk_does_not_erase_ordinary_pet_kill_loyalty(self):
+        player=participant("player","player","player",quick=20,level=20)
+        pet=participant(
+            "pet:0","player","pet",
+            attack=200,quick=100,level=20,source_pet_slot=0,
+        )
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=20,defense=0,quick=10,level=10,reward_exp=100,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,),pets=(pet,)),
+            slots={"player":0,"pet:0":1,"enemy":10},
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet:0":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,"pet:0":0,"enemy":0},
+            profiles={"player":profile(),"pet:0":profile(),"enemy":profile()},
+            attack_rolls={
+                "pet:0":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+            no_risk=True,
+        )
+        self.assertEqual(
+            result.after.pending_pet_variable_ai_by_participant_id["pet:0"],
+            1,
+        )
+        self.assertEqual(result.after.pending_player_charm_delta,0)
+        self.assertEqual(result.after.pending_player_dead_pet_count_delta,0)
+
+
+
 if __name__ == "__main__":
     unittest.main()

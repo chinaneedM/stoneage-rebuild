@@ -480,6 +480,7 @@ def _pending_profit_after_ordinary_round(
     state: PersistentBattleState,
     round_result: ResolvedOrdinaryRound,
     *,
+    no_risk: bool = False,
     drop_rolls_by_enemy_id: Mapping[str,Sequence[DropAllocationRoll]] | None = None,
 ) -> tuple[
     Mapping[str,int],
@@ -544,6 +545,7 @@ def _pending_profit_after_ordinary_round(
                     BattleNormalDeathInputs(
                         victim_kind="player",
                         victim_level=int(target.level),
+                        no_risk=bool(no_risk),
                         default_pet_present=(default_pet_id is not None),
                     )
                 )
@@ -564,6 +566,7 @@ def _pending_profit_after_ordinary_round(
                         victim_kind="pet",
                         victim_level=int(target.level),
                         owner_level=int(state.session.player.level),
+                        no_risk=bool(no_risk),
                     )
                 )
                 if target_id not in pending_variable_ai:
@@ -760,19 +763,9 @@ def resolve_persistent_ordinary_round(
     )=_pending_profit_after_ordinary_round(
         state,
         round_result,
+        no_risk=bool(no_risk),
         drop_rolls_by_enemy_id=drop_rolls_by_enemy_id,
     )
-    if bool(no_risk):
-        # Stable BATTLE_NormalDeadExtra is disabled for no-risk PvE battles.
-        # Kill profit remains independent and is preserved.
-        pending_player_charm_delta=int(state.pending_player_charm_delta)
-        pending_player_dead_pet_count_delta=int(
-            state.pending_player_dead_pet_count_delta
-        )
-        pending_variable_ai=dict(pending_variable_ai)
-        for pid,value in state.pending_pet_variable_ai_by_participant_id.items():
-            pending_variable_ai[str(pid)]=int(value)
-        pending_variable_ai=_freeze_mapping(pending_variable_ai)
     exited_ids={str(pid) for pid in round_result.exited_participant_ids}
     enemy_ids={str(enemy.participant_id) for enemy in state.session.enemies}
     invalid_exits=sorted(exited_ids-enemy_ids)

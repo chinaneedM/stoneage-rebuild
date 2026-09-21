@@ -707,7 +707,7 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
 
         self.runtime.finish_persistent_battle_without_level_crossing(terminal)
 
-        self.assertEqual(self.domain.persistent.character.fields["hp"], 0)
+        self.assertEqual(self.domain.persistent.character.fields["hp"], 1)
         self.assertEqual(self.domain.persistent.character.fields["exp"], 0)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["hp"], 21)
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"], 10)
@@ -1400,7 +1400,7 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(self.domain.persistent.pets[PetSlot(2)].state["exp"],10)
         self.assertEqual(
             self.domain.persistent.pets[PetSlot(2)].growth.variable_ai,
-            0,
+            1,
         )
         self.assertEqual(self.domain.persistent.pets[PetSlot(3)].state["hp"],1)
 
@@ -1426,6 +1426,95 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         )
         with self.assertRaisesRegex(ValueError,"terminal escape state"):
             self.runtime.finish_persistent_escape(terminal)
+
+
+
+    def test_defeat_settlement_applies_death_penalties_hp_floor_and_hidden_count(self):
+        self.domain.persistent.character=PlayerState(
+            MappingProxyType({
+                **dict(self.domain.persistent.character.fields),
+                "charm":5,
+            })
+        )
+        self.domain.persistent.pets[PetSlot(2)]=allied_pet()
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,templates=self.templates,entry_count_roll=1,
+            selection_rolls=(0,),birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(
+            request,spawned_enemies=spawned,allied_pet_slots=(2,),
+        )
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,slots={"player":0,"pet:2":1,enemy_id:10},
+        )
+        terminal=replace(
+            state,
+            hp_by_participant_id=MappingProxyType({
+                "player":0,"pet:2":0,enemy_id:10,
+            }),
+            pending_exp_by_participant_id=MappingProxyType({
+                "player":500,"pet:2":200,
+            }),
+            pending_pet_variable_ai_by_participant_id=MappingProxyType({
+                "pet:2":-600,
+            }),
+            pending_player_charm_delta=-2,
+            pending_player_dead_pet_count_delta=1,
+            phase=FINISHED,result="defeat",winning_side=1,
+        )
+        returned=self.runtime.finish_persistent_battle_without_level_crossing(
+            terminal
+        )
+        self.assertEqual(returned.result,"defeat")
+        self.assertEqual(self.domain.persistent.character.fields["hp"],1)
+        self.assertEqual(self.domain.persistent.character.fields["exp"],0)
+        self.assertEqual(self.domain.persistent.character.fields["charm"],3)
+        pet=self.domain.persistent.pets[PetSlot(2)]
+        self.assertEqual(pet.state["hp"],1)
+        self.assertEqual(pet.state["exp"],10)
+        self.assertEqual(pet.growth.variable_ai,-600)
+        self.assertEqual(self.domain.persistent.dead_pet_count,1)
+
+    def test_plain_finish_also_flushes_immediate_death_side_effects(self):
+        self.domain.persistent.character=PlayerState(
+            MappingProxyType({
+                **dict(self.domain.persistent.character.fields),
+                "charm":1,
+            })
+        )
+        self.domain.persistent.pets[PetSlot(2)]=allied_pet()
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,templates=self.templates,entry_count_roll=1,
+            selection_rolls=(0,),birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(
+            request,spawned_enemies=spawned,allied_pet_slots=(2,),
+        )
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,slots={"player":0,"pet:2":1,enemy_id:10},
+        )
+        terminal=replace(
+            state,
+            hp_by_participant_id=MappingProxyType({
+                "player":0,"pet:2":20,enemy_id:10,
+            }),
+            pending_pet_variable_ai_by_participant_id=MappingProxyType({
+                "pet:2":-100,
+            }),
+            pending_player_charm_delta=-2,
+            phase=FINISHED,result="defeat",winning_side=1,
+        )
+        self.runtime.finish_persistent_battle(terminal)
+        self.assertEqual(self.domain.persistent.character.fields["hp"],1)
+        self.assertEqual(self.domain.persistent.character.fields["charm"],0)
+        self.assertEqual(
+            self.domain.persistent.pets[PetSlot(2)].growth.variable_ai,
+            -100,
+        )
 
 
 

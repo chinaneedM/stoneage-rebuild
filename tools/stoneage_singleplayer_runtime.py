@@ -616,43 +616,43 @@ class SinglePlayerHistoricalRuntime:
         self.domain.persistent.inventory.update(staged)
         return settlement
 
-    def _apply_persistent_battle_outcome(
+    def _battle_exit_projection(
         self,
         state: PersistentBattleState,
-        outcome: BattleOutcome,
-    ) -> BattleReturn:
-        result=apply_battle_outcome(self.domain,state.session,outcome)
-        self._settle_persistent_battle_drops(state)
-        return result
+    ) -> tuple[
+        dict[str,int],
+        dict[int,dict[str,int]],
+        dict[int,PetGrowthState],
+    ]:
+        """Project stable player BATTLE_Exit recovery and immediate penalties.
 
-    def finish_persistent_escape(
-        self,
-        state: PersistentBattleState,
-    ) -> BattleReturn:
-        """Return a successful escape to persistent state without battle profit.
-
-        Stable BATTLE_Exit clears the escaping player's battle entry before the
-        normal finish-profit scan. In the current single-player domain there is
-        no pet-mail mode, so all five persistent pet slots are ordinary carried
-        pets: active-pet terminal HP is retained, and any carried pet at HP <= 0
-        is restored to HP 1 as in the stable player BATTLE_Exit branch.
-
-        EXP, pending item drops and pending pet loyalty are deliberately not
-        settled here. Battle-only status flags are not represented by this
-        status-free domain and therefore require no persistent mutation.
+        EXP and the three-slot item buffer are deliberately absent here.
+        Death charm and pet VARIABLEAI changes are included because the source
+        mutates those character objects at death time, before BATTLE_Finish.
         """
-        if state.phase != FINISHED or state.result != PLAYER_ESCAPE:
-            raise ValueError("escape settlement requires a terminal escape state")
+        if state.phase != FINISHED or state.result is None:
+            raise ValueError("battle-exit projection requires terminal state")
+        character=self.domain.persistent.character
+        if character is None:
+            raise ValueError("persistent player state is required for battle exit")
 
         session=state.session
         player_id=str(session.player.participant_id)
         if player_id not in state.hp_by_participant_id:
-            raise ValueError("escape state is missing player HP")
-        player_hp=int(state.hp_by_participant_id[player_id])
-        if player_hp <= 0:
-            raise ValueError("successful escape requires a living player")
+            raise ValueError("terminal battle state is missing player HP")
+        terminal_player_hp=int(state.hp_by_participant_id[player_id])
+        player_updates: dict[str,int]={"hp":max(1,terminal_player_hp)}
 
-        active_pet_hp_by_slot: dict[int,int]={}
+        charm_delta=int(state.pending_player_charm_delta)
+        if charm_delta:
+            if "charm" not in character.fields:
+                raise ValueError("death charm penalty requires persistent charm field")
+            player_updates["charm"]=max(
+                0,
+                min(100,int(character.fields["charm"])+charm_delta),
+            )
+
+        active_pet_by_slot: dict[int,tuple[str,int]]={}
         for participant in session.allied_pets:
             if participant.source_pet_slot is None:
                 raise ValueError(
@@ -661,29 +661,90 @@ class SinglePlayerHistoricalRuntime:
             participant_id=str(participant.participant_id)
             if participant_id not in state.hp_by_participant_id:
                 raise ValueError(
-                    f"escape state is missing HP for {participant_id}"
+                    f"terminal battle state is missing HP for {participant_id}"
                 )
-            active_pet_hp_by_slot[int(participant.source_pet_slot)]=int(
-                state.hp_by_participant_id[participant_id]
+            active_pet_by_slot[int(participant.source_pet_slot)]=(
+                participant_id,
+                int(state.hp_by_participant_id[participant_id]),
             )
 
-        pet_updates: dict[int,Mapping[str,int]]={}
+        pet_updates: dict[int,dict[str,int]]={}
+        pet_growth_updates: dict[int,PetGrowthState]={}
         for pet_slot,pet in self.domain.persistent.pets.items():
             slot=int(pet_slot.value)
             if "hp" not in pet.state:
                 raise ValueError(f"persistent pet slot {slot} lacks HP")
-            hp=active_pet_hp_by_slot.get(slot,int(pet.state["hp"]))
-            pet_updates[slot]={"hp":1 if hp <= 0 else hp}
+            active=active_pet_by_slot.get(slot)
+            terminal_hp=(
+                int(pet.state["hp"])
+                if active is None
+                else int(active[1])
+            )
+            pet_updates[slot]={"hp":max(1,terminal_hp)}
+            if active is None:
+                continue
+            participant_id=active[0]
+            if participant_id not in state.pending_pet_variable_ai_by_participant_id:
+                raise ValueError(
+                    f"terminal battle state is missing pet VARIABLEAI delta for {participant_id}"
+                )
+            loyalty_delta=int(
+                state.pending_pet_variable_ai_by_participant_id[participant_id]
+            )
+            if loyalty_delta:
+                if pet.growth is None:
+                    raise ValueError(
+                        f"pet slot {slot} lacks hidden growth identity for VARIABLEAI"
+                    )
+                pet_growth_updates[slot]=replace(
+                    pet.growth,
+                    variable_ai=adjust_pet_variable_ai(
+                        pet.growth.variable_ai,
+                        loyalty_delta,
+                    ),
+                )
+        return player_updates,pet_updates,pet_growth_updates
 
-        return apply_battle_outcome(
+    def _apply_persistent_battle_outcome(
+        self,
+        state: PersistentBattleState,
+        outcome: BattleOutcome,
+    ) -> BattleReturn:
+        result=apply_battle_outcome(self.domain,state.session,outcome)
+        self._settle_persistent_battle_drops(state)
+        self.domain.persistent.dead_pet_count+=int(
+            state.pending_player_dead_pet_count_delta
+        )
+        return result
+
+    def finish_persistent_escape(
+        self,
+        state: PersistentBattleState,
+    ) -> BattleReturn:
+        """Return successful escape without normal Finish EXP or item profit."""
+        if state.phase != FINISHED or state.result != PLAYER_ESCAPE:
+            raise ValueError("escape settlement requires a terminal escape state")
+        player_id=str(state.session.player.participant_id)
+        if int(state.hp_by_participant_id.get(player_id,0)) <= 0:
+            raise ValueError("successful escape requires a living player")
+
+        player_updates,pet_updates,pet_growth_updates=(
+            self._battle_exit_projection(state)
+        )
+        result=apply_battle_outcome(
             self.domain,
             state.session,
             BattleOutcome(
                 result=PLAYER_ESCAPE,
-                player_updates={"hp":player_hp},
+                player_updates=player_updates,
                 pet_updates=pet_updates,
+                pet_growth_updates=pet_growth_updates,
             ),
         )
+        self.domain.persistent.dead_pet_count+=int(
+            state.pending_player_dead_pet_count_delta
+        )
+        return result
 
     def _require_profit_settleable_terminal(
         self,
@@ -700,45 +761,18 @@ class SinglePlayerHistoricalRuntime:
         self,
         state: PersistentBattleState,
     ) -> BattleReturn:
-        """Project terminal battle HP back into persistent single-player state.
-
-        This boundary intentionally settles only state already produced by the
-        validated battle state machine: result plus surviving player/allied-pet
-        HP plus the already-earned three-slot item-drop buffer. The stable
-        base descendants do not mutate character currency in BATTLE_GetExpGold;
-        the later macro-gated _BATTLE_GOLD extension is intentionally excluded.
-        EXP, capture/escape, death penalties and recovery remain separate seams.
-        """
+        """Settle BATTLE_Exit state and already-earned drops, but not EXP."""
         self._require_profit_settleable_terminal(state)
-
-        session = state.session
-        player_id = session.player.participant_id
-        if player_id not in state.hp_by_participant_id:
-            raise ValueError("terminal battle state is missing player HP")
-
-        pet_updates: dict[int, Mapping[str, int]] = {}
-        for participant in session.allied_pets:
-            if participant.source_pet_slot is None:
-                raise ValueError(
-                    f"allied participant {participant.participant_id} lacks source pet slot"
-                )
-            participant_id = participant.participant_id
-            if participant_id not in state.hp_by_participant_id:
-                raise ValueError(
-                    f"terminal battle state is missing HP for {participant_id}"
-                )
-            pet_updates[int(participant.source_pet_slot)] = {
-                "hp": int(state.hp_by_participant_id[participant_id])
-            }
-
+        player_updates,pet_updates,pet_growth_updates=(
+            self._battle_exit_projection(state)
+        )
         return self._apply_persistent_battle_outcome(
             state,
             BattleOutcome(
                 result=state.result,
-                player_updates={
-                    "hp": int(state.hp_by_participant_id[player_id]),
-                },
+                player_updates=player_updates,
                 pet_updates=pet_updates,
+                pet_growth_updates=pet_growth_updates,
             ),
         )
 
@@ -746,93 +780,61 @@ class SinglePlayerHistoricalRuntime:
         self,
         state: PersistentBattleState,
     ) -> BattleReturn:
-        """Settle HP, below-threshold EXP, and already-earned pet kill loyalty."""
+        """Settle exit state plus below-threshold EXP without inventing level-ups."""
         self._require_profit_settleable_terminal(state)
-
-        session = state.session
-        player_id = session.player.participant_id
-        if player_id not in state.hp_by_participant_id:
-            raise ValueError("terminal battle state is missing player HP")
+        session=state.session
+        player_id=str(session.player.participant_id)
         if player_id not in state.pending_exp_by_participant_id:
             raise ValueError("terminal battle state is missing player pending EXP")
-
-        character = self.domain.persistent.character
+        character=self.domain.persistent.character
         if character is None:
             raise ValueError("persistent player state is required for EXP settlement")
 
-        player_hp = int(state.hp_by_participant_id[player_id])
-        player_updates: dict[str, int] = {"hp": player_hp}
-        pet_updates: dict[int, dict[str, int]] = {}
-        pet_growth_updates: dict[int, PetGrowthState] = {}
-
-        player_can_receive_exp = player_hp > 0
+        terminal_player_hp=int(state.hp_by_participant_id[player_id])
+        player_can_receive_exp=terminal_player_hp>0
+        player_updates,pet_updates,pet_growth_updates=(
+            self._battle_exit_projection(state)
+        )
         if player_can_receive_exp:
-            pending = int(state.pending_exp_by_participant_id[player_id])
-            if pending > 0:
-                current_exp = int(character.fields["exp"])
-                max_exp = int(character.fields["max_exp"])
-                next_exp = current_exp + pending
-                if max_exp <= current_exp or next_exp >= max_exp:
+            pending=int(state.pending_exp_by_participant_id[player_id])
+            if pending>0:
+                current_exp=int(character.fields["exp"])
+                max_exp=int(character.fields["max_exp"])
+                next_exp=current_exp+pending
+                if max_exp<=current_exp or next_exp>=max_exp:
                     raise ValueError(
                         "pending EXP reaches unresolved level-up threshold"
                     )
-                player_updates["exp"] = next_exp
+                player_updates["exp"]=next_exp
 
         for participant in session.allied_pets:
+            participant_id=str(participant.participant_id)
             if participant.source_pet_slot is None:
                 raise ValueError(
-                    f"allied participant {participant.participant_id} lacks source pet slot"
-                )
-            participant_id = participant.participant_id
-            if participant_id not in state.hp_by_participant_id:
-                raise ValueError(
-                    f"terminal battle state is missing HP for {participant_id}"
+                    f"allied participant {participant_id} lacks source pet slot"
                 )
             if participant_id not in state.pending_exp_by_participant_id:
                 raise ValueError(
                     f"terminal battle state is missing pending EXP for {participant_id}"
                 )
-            if participant_id not in state.pending_pet_variable_ai_by_participant_id:
-                raise ValueError(
-                    f"terminal battle state is missing pet VARIABLEAI delta for {participant_id}"
-                )
-
-            slot = int(participant.source_pet_slot)
-            pet_slot = PetSlot(slot)
+            slot=int(participant.source_pet_slot)
+            pet_slot=PetSlot(slot)
             if pet_slot not in self.domain.persistent.pets:
                 raise KeyError(f"missing persistent pet slot {slot}")
-            pet = self.domain.persistent.pets[pet_slot]
-            hp = int(state.hp_by_participant_id[participant_id])
-            updates: dict[str, int] = {"hp": hp}
-
-            loyalty_delta=int(
-                state.pending_pet_variable_ai_by_participant_id[participant_id]
-            )
-            if loyalty_delta:
-                if pet.growth is None:
-                    raise ValueError(
-                        f"pet slot {slot} lacks hidden growth identity for VARIABLEAI"
-                    )
-                pet_growth_updates[slot]=replace(
-                    pet.growth,
-                    variable_ai=adjust_pet_variable_ai(
-                        pet.growth.variable_ai,
-                        loyalty_delta,
-                    ),
-                )
-
-            if player_can_receive_exp and hp > 0:
-                pending = int(state.pending_exp_by_participant_id[participant_id])
-                if pending > 0:
-                    current_exp = int(pet.state["exp"])
-                    max_exp = int(pet.state["max_exp"])
-                    next_exp = current_exp + pending
-                    if max_exp <= current_exp or next_exp >= max_exp:
+            pet=self.domain.persistent.pets[pet_slot]
+            terminal_hp=int(state.hp_by_participant_id[participant_id])
+            updates=pet_updates[slot]
+            if player_can_receive_exp and terminal_hp>0:
+                pending=int(state.pending_exp_by_participant_id[participant_id])
+                if pending>0:
+                    current_exp=int(pet.state["exp"])
+                    max_exp=int(pet.state["max_exp"])
+                    next_exp=current_exp+pending
+                    if max_exp<=current_exp or next_exp>=max_exp:
                         raise ValueError(
                             "pending EXP reaches unresolved level-up threshold"
                         )
-                    updates["exp"] = next_exp
-            pet_updates[slot] = updates
+                    updates["exp"]=next_exp
 
         active_pet_ids={
             str(participant.participant_id)
@@ -862,7 +864,7 @@ class SinglePlayerHistoricalRuntime:
                     raise ValueError(
                         "ride-pet pending EXP reaches unresolved level-up threshold"
                     )
-                pet_updates[slot]={"exp":next_exp}
+                pet_updates[slot]["exp"]=next_exp
 
         return self._apply_persistent_battle_outcome(
             state,
@@ -922,10 +924,10 @@ class SinglePlayerHistoricalRuntime:
             raise ValueError('persistent player state is required for EXP settlement')
 
         player_hp=int(state.hp_by_participant_id[player_id])
-        player_updates: dict[str,int]={'hp':player_hp}
-        pet_updates: dict[int,dict[str,int]]={}
-        pet_growth_updates: dict[int,PetGrowthState]={}
         player_can_receive_exp=player_hp>0
+        player_updates,pet_updates,pet_growth_updates=(
+            self._battle_exit_projection(state)
+        )
 
         if player_can_receive_exp:
             pending=int(state.pending_exp_by_participant_id[player_id])
@@ -959,9 +961,13 @@ class SinglePlayerHistoricalRuntime:
                         int(fields['free_stat_points'])
                         + transition.free_stat_points_delta
                     )
-                    player_updates['charm']=min(
-                        100,
-                        int(fields['charm'])+transition.charm_delta,
+                    player_updates['charm']=max(
+                        0,
+                        min(
+                            100,
+                            int(player_updates.get('charm',fields['charm']))
+                            + transition.charm_delta,
+                        ),
                     )
                     player_updates['duel_point_like_state']=(
                         int(fields['duel_point_like_state'])
@@ -1001,28 +1007,9 @@ class SinglePlayerHistoricalRuntime:
             if pet_slot not in self.domain.persistent.pets:
                 raise KeyError(f'missing persistent pet slot {slot}')
             hp=int(state.hp_by_participant_id[participant_id])
-            updates: dict[str,int]={'hp':hp}
+            updates=pet_updates[slot]
             pet=self.domain.persistent.pets[pet_slot]
-            loyalty_delta=int(
-                state.pending_pet_variable_ai_by_participant_id[participant_id]
-            )
-            loyalty_variable_ai=(
-                adjust_pet_variable_ai(
-                    pet.growth.variable_ai,
-                    loyalty_delta,
-                )
-                if loyalty_delta and pet.growth is not None
-                else (pet.growth.variable_ai if pet.growth is not None else None)
-            )
-            if loyalty_delta and pet.growth is None:
-                raise ValueError(
-                    f'pet slot {slot} lacks hidden growth identity for VARIABLEAI'
-                )
-            if loyalty_delta and pet.growth is not None:
-                pet_growth_updates[slot]=replace(
-                    pet.growth,
-                    variable_ai=loyalty_variable_ai,
-                )
+            growth=pet_growth_updates.get(slot,pet.growth)
 
             if player_can_receive_exp and hp>0:
                 pending=int(state.pending_exp_by_participant_id[participant_id])
@@ -1039,7 +1026,7 @@ class SinglePlayerHistoricalRuntime:
                             raise ValueError(
                                 'pet pending EXP reaches unresolved pet level-up threshold'
                             )
-                        if pet.growth is None:
+                        if growth is None:
                             raise ValueError(
                                 f'pet slot {slot} lacks hidden growth identity'
                             )
@@ -1051,7 +1038,6 @@ class SinglePlayerHistoricalRuntime:
                             raise ValueError(
                                 f'pet slot {slot} lacks explicit level-up growth rolls'
                             )
-                        growth=pet.growth
                         transition=resolve_pet_exp_growth_transition(
                             int(pet.state['level']),
                             current_exp,
@@ -1067,11 +1053,7 @@ class SinglePlayerHistoricalRuntime:
                                 growth.internal_toughness,
                                 growth.internal_dexterity,
                             ),
-                            current_variable_ai=(
-                                loyalty_variable_ai
-                                if loyalty_variable_ai is not None
-                                else growth.variable_ai
-                            ),
+                            current_variable_ai=growth.variable_ai,
                             level_rolls=pet_rolls[slot],
                         )
                         derived=base_derived_stats(
@@ -1122,7 +1104,7 @@ class SinglePlayerHistoricalRuntime:
                 current_exp=int(pet.state['exp'])
                 max_exp=int(pet.state['max_exp'])
                 next_exp=current_exp+pending
-                updates: dict[str,int]={}
+                updates=pet_updates[slot]
                 if max_exp<=current_exp:
                     raise ValueError(
                         'ride pet persistent EXP is already at or above max EXP'

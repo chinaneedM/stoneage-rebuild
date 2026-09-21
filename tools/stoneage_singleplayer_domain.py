@@ -243,6 +243,12 @@ class PersistentPlayerState:
     character: PlayerState | None = None
     inventory: dict[InventorySlot, InventoryItem] = field(default_factory=dict)
     pets: dict[PetSlot, PetActor] = field(default_factory=dict)
+    dead_pet_count: int = 0
+
+    def __post_init__(self) -> None:
+        self.dead_pet_count=int(self.dead_pet_count)
+        if self.dead_pet_count < 0:
+            raise ValueError("dead_pet_count cannot be negative")
 
 
 @dataclass
