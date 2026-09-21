@@ -41,6 +41,9 @@ from tools.stoneage_battle_core_model import (
     first_empty_pet_slot,
     battle_capture_probability,
     resolve_battle_capture_attempt,
+    BattleEscapeInputs,
+    BattleEscapeResolution,
+    resolve_battle_escape_attempt,
 )
 
 
@@ -441,6 +444,135 @@ class BattleCoreModelTests(unittest.TestCase):
         self.assertEqual(result.failure_reason,'missing_required_items')
         self.assertFalse(result.rng_consumed)
         self.assertEqual(result.capture_modifier_after,0)
+
+
+    def test_escape_first_attempt_preserves_source_double_increment(self):
+        result=resolve_battle_escape_attempt(
+            BattleEscapeInputs(
+                actor_level=10,
+                actor_kind='player',
+                actor_fixed_luck=3,
+                stored_escape_count_before=0,
+                opponent_levels=(10,),
+            ),
+            roll_1_100=99,
+        )
+        self.assertIsInstance(result,BattleEscapeResolution)
+        self.assertEqual(result.stored_escape_count_after,1)
+        self.assertEqual(result.effective_escape_count,2)
+        self.assertEqual(result.probability,100)
+        self.assertTrue(result.check_success)
+
+    def test_escape_strict_less_than_and_failure_keeps_incremented_counter(self):
+        result=resolve_battle_escape_attempt(
+            BattleEscapeInputs(
+                actor_level=10,
+                actor_kind='player',
+                actor_fixed_luck=2,
+                opponent_levels=(30,),
+            ),
+            roll_1_100=40,
+        )
+        # 40*2 - 2*(30-10) = 40; strict '<' therefore fails on roll 40.
+        self.assertEqual(result.probability,40)
+        self.assertFalse(result.check_success)
+        self.assertFalse(result.exits_battle)
+        self.assertEqual(result.stored_escape_count_after,1)
+
+    def test_escape_player_luck_is_clamped_and_chance_has_no_upper_cap(self):
+        result=resolve_battle_escape_attempt(
+            BattleEscapeInputs(
+                actor_level=1,
+                actor_kind='player',
+                actor_fixed_luck=999,
+                opponent_levels=(99,),
+            ),
+            roll_1_100=100,
+        )
+        self.assertEqual(result.effective_luck,5)
+        self.assertEqual(result.probability,190)
+        self.assertTrue(result.check_success)
+
+    def test_escape_enemy_rare_maps_to_source_luck_bands(self):
+        rare0=resolve_battle_escape_attempt(
+            BattleEscapeInputs(
+                actor_level=10,actor_kind='enemy',actor_rare=0,
+                opponent_levels=(10,),
+            ),
+            roll_1_100=1,
+        )
+        rare1=resolve_battle_escape_attempt(
+            BattleEscapeInputs(
+                actor_level=10,actor_kind='enemy',actor_rare=1,
+                opponent_levels=(10,),
+            ),
+            roll_1_100=1,
+        )
+        rare2=resolve_battle_escape_attempt(
+            BattleEscapeInputs(
+                actor_level=10,actor_kind='enemy',actor_rare=2,
+                opponent_levels=(10,),
+            ),
+            roll_1_100=1,
+        )
+        self.assertEqual(
+            (rare0.effective_luck,rare1.effective_luck,rare2.effective_luck),
+            (1,3,5),
+        )
+        self.assertEqual(
+            (rare0.probability,rare1.probability,rare2.probability),
+            (60,100,190),
+        )
+
+    def test_escape_abio_subtracts_100_before_integer_average(self):
+        result=resolve_battle_escape_attempt(
+            BattleEscapeInputs(
+                actor_level=10,
+                actor_kind='player',
+                actor_fixed_luck=1,
+                opponent_levels=(50,51),
+                opponent_abio_flags=(True,False),
+            ),
+            roll_1_100=1,
+        )
+        # (-100+50+51)/2 truncates toward zero to 0.
+        self.assertEqual(result.average_opponent_level,0)
+        self.assertEqual(result.probability,80)
+
+    def test_escape_no_opponents_still_consumes_rng_at_probability_100(self):
+        failed=resolve_battle_escape_attempt(
+            BattleEscapeInputs(
+                actor_level=10,actor_kind='player',opponent_levels=(),
+            ),
+            roll_1_100=100,
+        )
+        self.assertEqual(failed.probability,100)
+        self.assertTrue(failed.rng_consumed)
+        self.assertFalse(failed.check_success)
+
+    def test_pvp_escape_check_returns_true_without_rng(self):
+        result=resolve_battle_escape_attempt(
+            BattleEscapeInputs(
+                actor_level=10,actor_kind='player',pvp=True,
+            ),
+            roll_1_100=None,
+        )
+        self.assertTrue(result.check_success)
+        self.assertTrue(result.exits_battle)
+        self.assertFalse(result.rng_consumed)
+        self.assertIsNone(result.probability)
+
+    def test_forced_escape_still_consumes_check_rng_but_exits_on_failure(self):
+        result=resolve_battle_escape_attempt(
+            BattleEscapeInputs(
+                actor_level=1,actor_kind='player',actor_fixed_luck=1,
+                opponent_levels=(99,),forced_exit=True,
+            ),
+            roll_1_100=100,
+        )
+        self.assertFalse(result.check_success)
+        self.assertTrue(result.exits_battle)
+        self.assertTrue(result.rng_consumed)
 
 
 if __name__=="__main__":

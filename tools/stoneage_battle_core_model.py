@@ -887,3 +887,137 @@ def resolve_battle_capture_attempt(
     if slot < 0:
         return failed('pet_slots_full',probability,True)
     return BattleCaptureResolution(True,None,probability,True,slot,0)
+
+
+@dataclass(frozen=True)
+class BattleEscapeInputs:
+    """Explicit values consumed by stable BATTLE_Escape/BATTLE_EscapeCheck."""
+    actor_level: int
+    actor_kind: str
+    actor_fixed_luck: int = 1
+    actor_rare: int = 0
+    stored_escape_count_before: int = 0
+    opponent_levels: tuple[int,...] = ()
+    opponent_abio_flags: tuple[bool,...] = ()
+    pvp: bool = False
+    forced_exit: bool = False
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self,'actor_level',int(self.actor_level))
+        object.__setattr__(self,'actor_kind',str(self.actor_kind))
+        object.__setattr__(self,'actor_fixed_luck',int(self.actor_fixed_luck))
+        object.__setattr__(self,'actor_rare',int(self.actor_rare))
+        count=int(self.stored_escape_count_before)
+        if count < 0:
+            raise ValueError('stored escape count cannot be negative')
+        object.__setattr__(self,'stored_escape_count_before',count)
+        levels=tuple(int(value) for value in self.opponent_levels)
+        flags=tuple(bool(value) for value in self.opponent_abio_flags)
+        if flags and len(flags) != len(levels):
+            raise ValueError('opponent ABIO flags must match opponent levels')
+        if not flags:
+            flags=(False,)*len(levels)
+        object.__setattr__(self,'opponent_levels',levels)
+        object.__setattr__(self,'opponent_abio_flags',flags)
+        if self.actor_kind not in {'player','enemy'}:
+            raise ValueError('ordinary escape actor must be player or enemy')
+
+
+@dataclass(frozen=True)
+class BattleEscapeResolution:
+    check_success: bool
+    exits_battle: bool
+    probability: int | None
+    rng_consumed: bool
+    stored_escape_count_after: int
+    effective_escape_count: int
+    effective_luck: int | None
+    average_opponent_level: int | None
+
+
+def _c_trunc_div(numerator: int,denominator: int) -> int:
+    """C99-style integer division truncating toward zero."""
+    if int(denominator) == 0:
+        raise ZeroDivisionError('integer division by zero')
+    return int(int(numerator)/int(denominator))
+
+
+def resolve_battle_escape_attempt(
+    inputs: BattleEscapeInputs,
+    *,
+    roll_1_100: int | None,
+) -> BattleEscapeResolution:
+    """Mirror stable BATTLE_Escape() then BATTLE_EscapeCheck() ordering.
+
+    The source increments entry.escape first, then EscapeCheck uses escape+1.
+    Since battle-entry initialization sets escape=0, an ordinary first attempt
+    therefore uses an effective multiplier of 2. This apparently redundant
+    increment is preserved rather than normalized away.
+    """
+    if not isinstance(inputs,BattleEscapeInputs):
+        inputs=BattleEscapeInputs(**dict(inputs))
+
+    stored_after=inputs.stored_escape_count_before+1
+    effective_count=stored_after+1
+
+    if inputs.pvp:
+        if roll_1_100 is not None:
+            raise ValueError('PvP escape check returns before consuming RNG')
+        return BattleEscapeResolution(
+            check_success=True,
+            exits_battle=True,
+            probability=None,
+            rng_consumed=False,
+            stored_escape_count_after=stored_after,
+            effective_escape_count=effective_count,
+            effective_luck=None,
+            average_opponent_level=None,
+        )
+
+    if inputs.actor_kind == 'enemy':
+        if inputs.actor_rare == 0:
+            luck=1
+        elif inputs.actor_rare == 1:
+            luck=3
+        else:
+            luck=5
+    else:
+        luck=min(5,max(1,int(inputs.actor_fixed_luck)))
+
+    if not inputs.opponent_levels:
+        average=0
+        chance=100
+    else:
+        total=0
+        for level,abio in zip(
+            inputs.opponent_levels,
+            inputs.opponent_abio_flags,
+        ):
+            if abio:
+                total-=100
+            total+=int(level)
+        average=_c_trunc_div(total,len(inputs.opponent_levels))
+        if luck >= 5:
+            chance=95*effective_count
+        else:
+            base={4:60,3:50,2:40,1:30}[luck]
+            chance=base*effective_count-2*(average-inputs.actor_level)
+    if chance < 1:
+        chance=1
+
+    if roll_1_100 is None:
+        raise ValueError('non-PvP escape check requires RAND(1,100) result')
+    roll=int(roll_1_100)
+    if not 1 <= roll <= 100:
+        raise ValueError('escape roll must be in 1..100')
+    check_success=roll < chance
+    return BattleEscapeResolution(
+        check_success=check_success,
+        exits_battle=(check_success or bool(inputs.forced_exit)),
+        probability=int(chance),
+        rng_consumed=True,
+        stored_escape_count_after=stored_after,
+        effective_escape_count=effective_count,
+        effective_luck=luck,
+        average_opponent_level=average,
+    )
