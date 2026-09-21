@@ -324,15 +324,92 @@ Bow handling diverges from ordinary melee critical damage in the inspected attac
 
 ## 7. Counter
 
-The counter basis again uses attacker/defender DEX relationship with:
+The counter check has now been re-read directly from two pinned independent
+descendant trees:
+
+- `gavinlinasd/StoneAge@1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`;
+- `iriselia/StoneAge@9e6c8ce2cd8ed532a7157773acd1c61582c178b5`.
+
+Both preserve the same `BATTLE_CounterCalc`, `BATTLE_CounterCheckPlayer`,
+`BATTLE_CounterCheckPet`, weapon mapper and counter table.
+
+The DEX basis uses:
 
 ```text
 gCounterPara = 0.08
 ```
 
-The raw dex-derived value is then combined with weapon matchup information and attacker luck by the counter-check layer before being scaled to the 1–10000 random check.
+and the same type asymmetries already modeled by `raw_counter_basis()`.
+One C-semantic detail is important: `Work` is an **int**, so
 
-Therefore a counter chance cannot be faithfully reconstructed from DEX alone; weapon category matchup is part of the mechanism.
+```text
+Work = (Big - Small) / divisor
+```
+
+truncates toward zero *before* the square-root or linear branch. The returned
+counter basis is also an int.
+
+### 7.1 Weapon categories and source anomaly
+
+The source enum contains NONE / CLAW / AXE / CLUB / SPEAR / BOW / THROW /
+OTHER, and the literal `CounterTbl` contains these seven stored rows:
+
+```text
+10  9  8  8  5  0  0  0
+10  9  7  7  6  0  0  0
+ 9  8 10 10  7  0  0  0
+ 8  8 10 10  7  0  0  0
+ 6  6  8  8  9  0  0  0
+ 0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0
+```
+
+`BATTLE_ItemType2ItemMap()` maps fist→CLAW, axe→AXE, club→CLUB,
+bow→BOW and boomerang/bound-throw/break-throw→THROW. **ITEM_SPEAR is not
+mapped in either pinned source**, despite the SPEAR enum/table column existing;
+it therefore falls through to NONE. This is preserved as a descendant-source
+behavior/anomaly rather than silently repaired.
+
+`BATTLE_IsThrowWepon()` independently rejects bow, boomerang, break-throw
+and bound-throw on **either** counter participant before the random check.
+
+### 7.2 Player counter actor
+
+For a player counter actor the stable base branch is:
+
+```text
+basis   = BATTLE_CounterCalc(counter_actor, target)
+matchup = CounterTbl[actor_weapon][target_weapon]
+per     = basis * matchup * 0.1 + actor_FIXLUCK
+threshold = per * 100
+RAND(1,10000) < threshold
+```
+
+The comparison is strict `<`. The later `_SUIT_ADDENDUM` counter modifier
+is explicitly excluded from the base reconstruction.
+
+### 7.3 Non-player counter actor
+
+The non-player branch does **not** apply the weapon matchup table or player
+luck. After the throwing-weapon gate it uses the raw DEX basis, caps it above
+100, multiplies by 100 and compares with **inclusive** `<=`:
+
+```text
+per = min(100, BATTLE_CounterCalc(...))
+threshold = per * 100
+if threshold <= 0: threshold = 1
+RAND(1,10000) <= threshold
+```
+
+That literal lower-bound handling gives a zero-basis non-player counter a
+1-in-10000 success boundary. It is preserved rather than normalized away.
+
+The probability/check seam is now deterministic. Full `BATTLE_Counter()`
+action execution remains separate: the inspected source applies ordinary
+attack resolution, scales positive counter damage to 75%, and the battle loop
+can alternate counter attempts up to five times. Those execution semantics are
+not promoted until their continuation/termination conditions are modeled
+without guessing.
 
 ## 8. Guard
 

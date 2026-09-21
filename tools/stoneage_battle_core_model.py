@@ -288,7 +288,11 @@ def critical_bonus(defence_power,attacker_level,defender_level):
 
 def raw_counter_basis(attacker_dex,defender_dex,
                       attacker_type=PLAYER,defender_type=ENEMY):
-    """DEX-derived counter basis before weapon matchup/luck are applied."""
+    """DEX-derived counter basis before weapon matchup/luck are applied.
+
+    Stable descendants store Work in an int before sqrt/linear evaluation, so
+    the division result truncates toward zero before the final wari scaling.
+    """
     at=int(attacker_dex);df=int(defender_dex)
     root=True;divisor=COUNTER_PARA
     if attacker_type==ENEMY and defender_type==PET:
@@ -305,10 +309,219 @@ def raw_counter_basis(attacker_dex,defender_dex,
     else:
         big,small=df,at
         wari=0.0 if big<=0 else small/big
-    work=(big-small)/divisor
-    if work<=0:work=0.0
+    work=_c_int((big-small)/divisor)
+    if work<=0:work=0
     base=math.sqrt(work) if root else work
     return int(base*wari)
+
+
+COUNTER_WEAPON_FIST="fist"
+COUNTER_WEAPON_AXE="axe"
+COUNTER_WEAPON_CLUB="club"
+COUNTER_WEAPON_SPEAR="spear"
+COUNTER_WEAPON_BOW="bow"
+COUNTER_WEAPON_BOOMERANG="boomerang"
+COUNTER_WEAPON_BOUNDTHROW="boundthrow"
+COUNTER_WEAPON_BREAKTHROW="breakthrow"
+COUNTER_WEAPON_OTHER="other"
+
+_COUNTER_WEAPON_TYPES=frozenset({
+    COUNTER_WEAPON_FIST,
+    COUNTER_WEAPON_AXE,
+    COUNTER_WEAPON_CLUB,
+    COUNTER_WEAPON_SPEAR,
+    COUNTER_WEAPON_BOW,
+    COUNTER_WEAPON_BOOMERANG,
+    COUNTER_WEAPON_BOUNDTHROW,
+    COUNTER_WEAPON_BREAKTHROW,
+    COUNTER_WEAPON_OTHER,
+})
+_COUNTER_THROWING_WEAPONS=frozenset({
+    COUNTER_WEAPON_BOW,
+    COUNTER_WEAPON_BOOMERANG,
+    COUNTER_WEAPON_BOUNDTHROW,
+    COUNTER_WEAPON_BREAKTHROW,
+})
+# BATTLE_ItemType2ItemMap() in both pinned stable descendants deliberately
+# omits ITEM_SPEAR despite retaining BATTLE_C_SPEAR in the enum/table. Preserve
+# that source behavior: spear and unrecognized/other categories fall to NONE.
+_COUNTER_WEAPON_CATEGORY=MappingProxyType({
+    COUNTER_WEAPON_FIST:1,
+    COUNTER_WEAPON_AXE:2,
+    COUNTER_WEAPON_CLUB:3,
+    COUNTER_WEAPON_SPEAR:0,
+    COUNTER_WEAPON_BOW:5,
+    COUNTER_WEAPON_BOOMERANG:6,
+    COUNTER_WEAPON_BOUNDTHROW:6,
+    COUNTER_WEAPON_BREAKTHROW:6,
+    COUNTER_WEAPON_OTHER:0,
+})
+# Literal seven rows present in the pinned source. Category 7 (OTHER) is never
+# returned by the source mapper and is therefore not invented here.
+_COUNTER_WEAPON_MATCHUP=(
+    (10,9,8,8,5,0,0,0),
+    (10,9,7,7,6,0,0,0),
+    (9,8,10,10,7,0,0,0),
+    (8,8,10,10,7,0,0,0),
+    (6,6,8,8,9,0,0,0),
+    (0,0,0,0,0,0,0,0),
+    (0,0,0,0,0,0,0,0),
+)
+
+
+def _counter_weapon_type(value):
+    weapon=str(value).lower()
+    if weapon not in _COUNTER_WEAPON_TYPES:
+        raise ValueError(f"unknown counter weapon type: {value}")
+    return weapon
+
+
+def counter_weapon_category(weapon_type):
+    """Stable BATTLE_ItemType2ItemMap category, including the spear omission."""
+    return int(_COUNTER_WEAPON_CATEGORY[_counter_weapon_type(weapon_type)])
+
+
+def counter_weapon_matchup(attacker_weapon_type,defender_weapon_type):
+    """Return the literal CounterTbl multiplier for two source weapon types."""
+    at=counter_weapon_category(attacker_weapon_type)
+    df=counter_weapon_category(defender_weapon_type)
+    return int(_COUNTER_WEAPON_MATCHUP[at][df])
+
+
+def counter_weapon_blocks_counter(weapon_type):
+    """BATTLE_IsThrowWepon gate used by both counter-check branches."""
+    return _counter_weapon_type(weapon_type) in _COUNTER_THROWING_WEAPONS
+
+
+@dataclass(frozen=True)
+class BattleCounterCheckInputs:
+    """Stable base inputs consumed by BATTLE_CounterCheck."""
+
+    attacker_kind: str
+    defender_kind: str
+    attacker_fixed_dex: int
+    defender_fixed_dex: int
+    attacker_fixed_luck: int = 0
+    attacker_weapon_type: str = COUNTER_WEAPON_FIST
+    defender_weapon_type: str = COUNTER_WEAPON_FIST
+
+    def __post_init__(self) -> None:
+        attacker_kind=str(self.attacker_kind)
+        defender_kind=str(self.defender_kind)
+        valid_kinds={PLAYER,PET,ENEMY,OTHER}
+        if attacker_kind not in valid_kinds or defender_kind not in valid_kinds:
+            raise ValueError("counter actor kind must be player/pet/enemy/other")
+        object.__setattr__(self,"attacker_kind",attacker_kind)
+        object.__setattr__(self,"defender_kind",defender_kind)
+        object.__setattr__(self,"attacker_fixed_dex",int(self.attacker_fixed_dex))
+        object.__setattr__(self,"defender_fixed_dex",int(self.defender_fixed_dex))
+        object.__setattr__(self,"attacker_fixed_luck",int(self.attacker_fixed_luck))
+        object.__setattr__(
+            self,"attacker_weapon_type",
+            _counter_weapon_type(self.attacker_weapon_type),
+        )
+        object.__setattr__(
+            self,"defender_weapon_type",
+            _counter_weapon_type(self.defender_weapon_type),
+        )
+
+
+@dataclass(frozen=True)
+class BattleCounterCheckResolution:
+    raw_basis: int
+    weapon_matchup: int | None
+    source_reported_percent: float
+    comparison_threshold: float
+    comparison: str
+    rng_consumed: bool
+    success: bool
+    blocked_by_throwing_weapon: bool = False
+
+
+def resolve_battle_counter_check(
+    inputs: BattleCounterCheckInputs,
+    *,
+    roll_1_10000: int | None,
+):
+    """Mirror the stable base BATTLE_CounterCheck RNG boundary.
+
+    Player counter actors use the source weapon matchup table plus FIXLUCK and
+    the strict comparison RAND(1,10000) < threshold. Non-player actors use only
+    the raw counter basis, cap it at 100 percent, and use <=. Throwing weapons
+    on either side reject the counter before RNG.
+    """
+    if not isinstance(inputs,BattleCounterCheckInputs):
+        raise TypeError("inputs must be BattleCounterCheckInputs")
+
+    basis=raw_counter_basis(
+        inputs.attacker_fixed_dex,
+        inputs.defender_fixed_dex,
+        attacker_type=inputs.attacker_kind,
+        defender_type=inputs.defender_kind,
+    )
+
+    if (
+        counter_weapon_blocks_counter(inputs.attacker_weapon_type)
+        or counter_weapon_blocks_counter(inputs.defender_weapon_type)
+    ):
+        return BattleCounterCheckResolution(
+            raw_basis=basis,
+            weapon_matchup=None,
+            source_reported_percent=0.0,
+            comparison_threshold=0.0,
+            comparison="blocked",
+            rng_consumed=False,
+            success=False,
+            blocked_by_throwing_weapon=True,
+        )
+
+    if roll_1_10000 is None:
+        raise ValueError("counter roll is required when weapon gate permits RNG")
+    roll=int(roll_1_10000)
+    if not 1 <= roll <= 10000:
+        raise ValueError("counter roll must be 1..10000")
+
+    if inputs.attacker_kind==PLAYER:
+        matchup=counter_weapon_matchup(
+            inputs.attacker_weapon_type,
+            inputs.defender_weapon_type,
+        )
+        percent=(
+            float(basis)*float(matchup)*0.1
+            + float(inputs.attacker_fixed_luck)
+        )
+        reported=percent
+        threshold=percent*100.0
+        if threshold <= 0:
+            threshold=1.0
+            reported=0.0
+        return BattleCounterCheckResolution(
+            raw_basis=basis,
+            weapon_matchup=matchup,
+            source_reported_percent=reported,
+            comparison_threshold=threshold,
+            comparison="<",
+            rng_consumed=True,
+            success=roll < threshold,
+        )
+
+    percent=min(100.0,float(basis))
+    reported=percent
+    threshold=percent*100.0
+    if threshold <= 0:
+        threshold=1.0
+        # Literal BATTLE_CounterCheckPet writes the post-threshold value back
+        # through pPer, producing this odd one-at-10000 floor.
+        reported=1.0
+    return BattleCounterCheckResolution(
+        raw_basis=basis,
+        weapon_matchup=None,
+        source_reported_percent=reported,
+        comparison_threshold=threshold,
+        comparison="<=",
+        rng_consumed=True,
+        success=roll <= threshold,
+    )
 
 
 EXP_FULL_LEVEL_ADVANTAGE=5

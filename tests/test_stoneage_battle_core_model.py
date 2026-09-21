@@ -20,6 +20,12 @@ from tools.stoneage_battle_core_model import (
     initiative_total,
     physical_base_damage,
     raw_counter_basis,
+    counter_weapon_category,
+    counter_weapon_matchup,
+    counter_weapon_blocks_counter,
+    BattleCounterCheckInputs,
+    BattleCounterCheckResolution,
+    resolve_battle_counter_check,
     BattleKillProfit,
     BattleKillProfitScan,
     KillProfitRecipient,
@@ -301,12 +307,78 @@ class BattleCoreModelTests(unittest.TestCase):
             {'player':2},
         )
 
-    def test_counter_is_only_raw_basis(self):
-        value=raw_counter_basis(
-            100,100,attacker_type=PLAYER,defender_type=ENEMY)
-        self.assertGreater(value,0)
-        # The final counter probability also needs weapon matchup and luck.
-        self.assertIsInstance(value,int)
+    def test_counter_raw_basis_preserves_c_int_work_truncation(self):
+        # Work=(7-6)/0.08 is stored in a C int before sqrt: 12, not 12.5.
+        self.assertEqual(
+            raw_counter_basis(
+                6,7,attacker_type=PLAYER,defender_type=PLAYER
+            ),
+            2,
+        )
+
+    def test_counter_weapon_table_preserves_source_mapper_and_spear_omission(self):
+        self.assertEqual(counter_weapon_category("fist"),1)
+        self.assertEqual(counter_weapon_category("axe"),2)
+        self.assertEqual(counter_weapon_category("club"),3)
+        self.assertEqual(counter_weapon_category("spear"),0)
+        self.assertEqual(counter_weapon_matchup("fist","fist"),9)
+        self.assertEqual(counter_weapon_matchup("axe","club"),10)
+        self.assertEqual(counter_weapon_matchup("spear","fist"),9)
+        self.assertTrue(counter_weapon_blocks_counter("bow"))
+        self.assertTrue(counter_weapon_blocks_counter("boomerang"))
+        self.assertFalse(counter_weapon_blocks_counter("axe"))
+
+    def test_player_counter_check_uses_matchup_luck_and_strict_less_than(self):
+        inputs=BattleCounterCheckInputs(
+            attacker_kind=PLAYER,
+            defender_kind=ENEMY,
+            attacker_fixed_dex=100,
+            defender_fixed_dex=100,
+            attacker_fixed_luck=2,
+            attacker_weapon_type="fist",
+            defender_weapon_type="fist",
+        )
+        success=resolve_battle_counter_check(inputs,roll_1_10000=2179)
+        boundary=resolve_battle_counter_check(inputs,roll_1_10000=2180)
+        self.assertIsInstance(success,BattleCounterCheckResolution)
+        self.assertEqual(success.raw_basis,22)
+        self.assertEqual(success.weapon_matchup,9)
+        self.assertAlmostEqual(success.source_reported_percent,21.8)
+        self.assertAlmostEqual(success.comparison_threshold,2180.0)
+        self.assertEqual(success.comparison,"<")
+        self.assertTrue(success.success)
+        self.assertFalse(boundary.success)
+
+    def test_nonplayer_counter_check_preserves_inclusive_one_in_10000_floor(self):
+        inputs=BattleCounterCheckInputs(
+            attacker_kind=PET,
+            defender_kind=ENEMY,
+            attacker_fixed_dex=80,
+            defender_fixed_dex=100,
+        )
+        floor=resolve_battle_counter_check(inputs,roll_1_10000=1)
+        miss=resolve_battle_counter_check(inputs,roll_1_10000=2)
+        self.assertEqual(floor.raw_basis,0)
+        self.assertEqual(floor.source_reported_percent,1.0)
+        self.assertEqual(floor.comparison_threshold,1.0)
+        self.assertEqual(floor.comparison,"<=")
+        self.assertTrue(floor.success)
+        self.assertFalse(miss.success)
+
+    def test_throwing_weapon_blocks_counter_without_consuming_rng(self):
+        result=resolve_battle_counter_check(
+            BattleCounterCheckInputs(
+                attacker_kind=PLAYER,
+                defender_kind=ENEMY,
+                attacker_fixed_dex=100,
+                defender_fixed_dex=80,
+                attacker_weapon_type="bow",
+            ),
+            roll_1_10000=None,
+        )
+        self.assertTrue(result.blocked_by_throwing_weapon)
+        self.assertFalse(result.rng_consumed)
+        self.assertFalse(result.success)
 
 
     def test_enemy_drop_probability_preserves_fixed_and_legacy_scales(self):
