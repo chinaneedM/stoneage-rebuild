@@ -1,4 +1,5 @@
 import unittest
+from dataclasses import replace
 
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
@@ -277,9 +278,9 @@ class BattleRoundModelTests(unittest.TestCase):
 
 
     def test_capture_executes_in_action_order_and_exits_target_without_hp_damage(self):
-        player=participant("player","player","player",quick=100,level=10)
+        player=actor("player","player","player",quick=100,level=10)
         enemy=replace(
-            participant("enemy","enemy","enemy",quick=20,level=10,hp=10),
+            actor("enemy","enemy","enemy",quick=20,level=10,hp=10),
             max_hp=100,
             capturable=True,
             capture_default=11,
@@ -296,8 +297,8 @@ class BattleRoundModelTests(unittest.TestCase):
             prepared,
             slots={"player":0,"enemy":10},
             profiles={
-                "player":profile(fixed_dex=30,fixed_luck=3),
-                "enemy":profile(fixed_dex=15),
+                "player":profile(dex=30,luck=3),
+                "enemy":profile(dex=15),
             },
             attack_rolls={},
             defense_profile="newpower_70pct",
