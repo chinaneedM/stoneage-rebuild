@@ -117,6 +117,7 @@ class BaseStatusAttackResolution:
     roll_1_100: int | None
     rng_consumed: bool
     success: bool
+    blocked_by_damage_gate: bool = False
 
 
 def active_base_status_names(status: BaseBattleStatusState) -> tuple[str,...]:
@@ -260,6 +261,104 @@ def resolve_base_status_application(
                 STATUS_STONE,
             }
         ),
+    )
+
+
+@dataclass(frozen=True)
+class BasePhysicalOnHitStatusInputs:
+    status: str
+    attacker_level: int
+    defender_level: int
+    pvp: bool
+    attacker_fixed_luck: int
+    defender_vital: int
+    defender_str: int
+    defender_tough: int
+    defender_dex: int
+    defender_resistance: int
+    source_turn: int
+    per_offset: int = 30
+
+    def __post_init__(self) -> None:
+        status=str(self.status)
+        if status not in BASE_STATUS_ORDER:
+            raise ValueError(f"unsupported common base status: {status}")
+        object.__setattr__(self,"status",status)
+        for name in (
+            "attacker_level","defender_level","attacker_fixed_luck",
+            "defender_vital","defender_str","defender_tough",
+            "defender_dex","defender_resistance","source_turn",
+            "per_offset",
+        ):
+            object.__setattr__(self,name,int(getattr(self,name)))
+        if self.source_turn < 0:
+            raise ValueError("physical source_turn cannot be negative")
+        object.__setattr__(self,"pvp",bool(self.pvp))
+
+
+def resolve_base_physical_on_hit_status_application(
+    inputs: BasePhysicalOnHitStatusInputs,
+    current_status: BaseBattleStatusState,
+    *,
+    damage_after_resolution: int,
+    roll_1_100: int | None,
+) -> BaseStatusApplicationResolution:
+    """Mirror the common BATTLE_Attack() status payload branch.
+
+    The physical path is gated by positive post-DamageSub damage, calls the
+    shared status check with Range=40/Bai=2.0, stores source_turn+1 on success,
+    then applies the source's extra DRUNK integer halving.
+    """
+    damage=int(damage_after_resolution)
+    if damage <= 0:
+        return BaseStatusApplicationResolution(
+            check=BaseStatusAttackResolution(
+                status=inputs.status,
+                eligible=False,
+                blocked_by_existing_status=False,
+                source_probability_value=None,
+                roll_1_100=None,
+                rng_consumed=False,
+                success=False,
+                blocked_by_damage_gate=True,
+            ),
+            status_before=current_status,
+            status_after=current_status,
+            turn_written=None,
+            command_cleared=False,
+        )
+
+    application=resolve_base_status_application(
+        BaseStatusAttackInputs(
+            status=inputs.status,
+            attacker_level=inputs.attacker_level,
+            defender_level=inputs.defender_level,
+            pvp=inputs.pvp,
+            attacker_fixed_luck=inputs.attacker_fixed_luck,
+            defender_vital=inputs.defender_vital,
+            defender_str=inputs.defender_str,
+            defender_tough=inputs.defender_tough,
+            defender_dex=inputs.defender_dex,
+            defender_resistance=inputs.defender_resistance,
+            per_offset=inputs.per_offset,
+            level_range=40,
+            level_scale=2.0,
+        ),
+        current_status,
+        turn=int(inputs.source_turn)+1,
+        roll_1_100=roll_1_100,
+    )
+    if not application.check.success or inputs.status != STATUS_DRUNK:
+        return application
+
+    final_turn=int(application.status_after.drunk)//2
+    return replace(
+        application,
+        status_after=replace(
+            application.status_after,
+            drunk=final_turn,
+        ),
+        turn_written=final_turn,
     )
 
 

@@ -2,8 +2,10 @@ import unittest
 
 from tools.stoneage_battle_status_model import (
     BaseBattleStatusState,
+    BasePhysicalOnHitStatusInputs,
     BaseStatusAttackInputs,
     BaseStatusTickInputs,
+    STATUS_DRUNK,
     STATUS_PARALYSIS,
     STATUS_POISON,
     apply_base_status_counter,
@@ -12,6 +14,7 @@ from tools.stoneage_battle_status_model import (
     base_status_can_move,
     base_stone_defense_multiplier,
     resolve_base_damage_wakeup,
+    resolve_base_physical_on_hit_status_application,
     resolve_base_status_application,
     resolve_base_status_attack_check,
     resolve_base_status_tick,
@@ -184,6 +187,111 @@ class BattleStatusModelTests(unittest.TestCase):
         self.assertFalse(miss.check.success)
         self.assertIsNone(miss.turn_written)
         self.assertEqual(miss.status_after,BaseBattleStatusState())
+
+    def test_physical_status_requires_positive_resolved_damage_without_rng(self):
+        result=resolve_base_physical_on_hit_status_application(
+            BasePhysicalOnHitStatusInputs(
+                status=STATUS_POISON,
+                attacker_level=30,
+                defender_level=10,
+                pvp=False,
+                attacker_fixed_luck=5,
+                defender_vital=25,
+                defender_str=25,
+                defender_tough=25,
+                defender_dex=25,
+                defender_resistance=3,
+                source_turn=3,
+            ),
+            BaseBattleStatusState(),
+            damage_after_resolution=0,
+            roll_1_100=None,
+        )
+        self.assertFalse(result.check.eligible)
+        self.assertTrue(result.check.blocked_by_damage_gate)
+        self.assertFalse(result.check.rng_consumed)
+        self.assertEqual(result.status_after,BaseBattleStatusState())
+
+    def test_breakthrow_shape_writes_one_turn_paralysis(self):
+        inputs=BasePhysicalOnHitStatusInputs(
+            status=STATUS_PARALYSIS,
+            attacker_level=99,
+            defender_level=1,
+            pvp=False,
+            attacker_fixed_luck=99,
+            defender_vital=99,
+            defender_str=1,
+            defender_tough=1,
+            defender_dex=1,
+            defender_resistance=0,
+            source_turn=0,
+        )
+        hit=resolve_base_physical_on_hit_status_application(
+            inputs,
+            BaseBattleStatusState(),
+            damage_after_resolution=1,
+            roll_1_100=19,
+        )
+        self.assertEqual(hit.check.source_probability_value,20)
+        self.assertTrue(hit.check.success)
+        self.assertEqual(hit.turn_written,1)
+        self.assertEqual(hit.status_after.paralysis,1)
+
+    def test_physical_general_status_uses_30_40_2_profile_and_turn_plus_one(self):
+        inputs=BasePhysicalOnHitStatusInputs(
+            status=STATUS_POISON,
+            attacker_level=30,
+            defender_level=10,
+            pvp=False,
+            attacker_fixed_luck=5,
+            defender_vital=25,
+            defender_str=25,
+            defender_tough=25,
+            defender_dex=25,
+            defender_resistance=3,
+            source_turn=3,
+        )
+        hit=resolve_base_physical_on_hit_status_application(
+            inputs,
+            BaseBattleStatusState(),
+            damage_after_resolution=10,
+            roll_1_100=61,
+        )
+        boundary=resolve_base_physical_on_hit_status_application(
+            inputs,
+            BaseBattleStatusState(),
+            damage_after_resolution=10,
+            roll_1_100=62,
+        )
+        self.assertEqual(hit.check.source_probability_value,62)
+        self.assertTrue(hit.check.success)
+        self.assertEqual(hit.turn_written,4)
+        self.assertEqual(hit.status_after.poison,4)
+        self.assertFalse(boundary.check.success)
+
+    def test_physical_drunk_halves_counter_after_turn_plus_one_write(self):
+        result=resolve_base_physical_on_hit_status_application(
+            BasePhysicalOnHitStatusInputs(
+                status=STATUS_DRUNK,
+                attacker_level=30,
+                defender_level=10,
+                pvp=False,
+                attacker_fixed_luck=100,
+                defender_vital=25,
+                defender_str=25,
+                defender_tough=25,
+                defender_dex=25,
+                defender_resistance=0,
+                source_turn=3,
+                per_offset=100,
+            ),
+            BaseBattleStatusState(),
+            damage_after_resolution=10,
+            roll_1_100=1,
+        )
+        self.assertTrue(result.check.success)
+        self.assertEqual(result.turn_written,2)
+        self.assertEqual(result.status_after.drunk,2)
 
     def test_can_move_common_base_blockers(self):
         self.assertFalse(
