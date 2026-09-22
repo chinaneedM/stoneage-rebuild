@@ -791,6 +791,7 @@ def _resolve_counter_chain(
     action_value_by_slot: Mapping[int, int],
     counter_rolls: Sequence[CounterAttemptRolls],
     counter_abio_by_participant_id: Mapping[str, bool],
+    ultimate_overkill_by_participant_id: dict[str,int],
     defense_profile: str,
     field_attr: str,
     field_power: int,
@@ -1046,6 +1047,74 @@ def _resolve_counter_chain(
         after=max(0,before-int(damage))
         hp_by_slot[target_slot]=after
         hp_by_id[target_id]=after
+
+        ultimate_damage_resolution=None
+        death_ultimate_resolution=None
+        ultimate_kind=0
+        if int(damage)>0:
+            ultimate_damage_resolution=resolve_battle_ultimate_damage(
+                BattleUltimateDamageInputs(
+                    damage_for_threshold=int(damage),
+                    hp_damage_applied=max(0,int(before)-int(after)),
+                    target_hp_before=int(before),
+                    target_max_hp=int(target.max_hp),
+                    accumulated_overkill_before=int(
+                        ultimate_overkill_by_participant_id[target_id]
+                    ),
+                )
+            )
+            ultimate_overkill_by_participant_id[target_id]=int(
+                ultimate_damage_resolution.accumulated_overkill_after
+            )
+            ultimate_kind=int(
+                ultimate_damage_resolution.ultimate_kind
+            )
+            if int(before)>0 and int(after)<=0:
+                victim_abio=bool(
+                    counter_abio_by_participant_id.get(target_id,False)
+                )
+                victim_kind=_participant_battle_kind(target)
+                needs_ultimate_roll=bool(
+                    (not victim_abio)
+                    and victim_kind != PLAYER
+                    and is_critical
+                )
+                if (
+                    rolls.ultimate_roll_1_100 is not None
+                    and not needs_ultimate_roll
+                ):
+                    raise ValueError(
+                        "counter ultimate_roll_1_100 supplied on unused "
+                        "death path"
+                    )
+                death_ultimate_resolution=(
+                    resolve_battle_death_ultimate_override(
+                        BattleDeathUltimateInputs(
+                            base_ultimate_kind=ultimate_kind,
+                            victim_kind=victim_kind,
+                            abio=victim_abio,
+                            critical=bool(is_critical),
+                        ),
+                        critical_roll_1_100=(
+                            rolls.ultimate_roll_1_100
+                            if needs_ultimate_roll
+                            else None
+                        ),
+                    )
+                )
+                ultimate_kind=int(
+                    death_ultimate_resolution.ultimate_kind
+                )
+            elif rolls.ultimate_roll_1_100 is not None:
+                raise ValueError(
+                    "counter ultimate_roll_1_100 supplied without "
+                    "non-player critical death"
+                )
+        elif rolls.ultimate_roll_1_100 is not None:
+            raise ValueError(
+                "counter ultimate_roll_1_100 supplied on zero-damage path"
+            )
+
         if int(damage)>0:
             target_runtime=status_runtime_by_participant_id[target_id]
             wake=resolve_base_damage_wakeup(
@@ -1074,6 +1143,9 @@ def _resolve_counter_chain(
                 is_counter=True,
                 counter_attempt=attempt_index + 1,
                 counter_check_resolution=check,
+                ultimate_damage_resolution=ultimate_damage_resolution,
+                death_ultimate_resolution=death_ultimate_resolution,
+                ultimate_kind=int(ultimate_kind),
             )
         )
 
@@ -2232,6 +2304,7 @@ def resolve_ordinary_round(
                     str(main_actor_id),()
                 ),
                 counter_abio_by_participant_id=normalized_counter_abio,
+                ultimate_overkill_by_participant_id=ultimate_overkill,
                 defense_profile=defense_profile,
                 field_attr=field_attr,
                 field_power=field_power,

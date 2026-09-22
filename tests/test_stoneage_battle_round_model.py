@@ -2516,6 +2516,134 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(result.hp_by_participant_id["player"],0)
         self.assertEqual(result.events[2].result,"no_target")
 
+    def test_counter_damage_uses_ultimate_threshold_and_persists_accumulator(self):
+        player=actor(
+            "player","player","player",
+            hp=10,attack=60,defense=70,quick=100,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=100,attack=80,defense=70,quick=50,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={
+                "player":profile(dex=100),
+                "enemy":profile(dex=200),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+            },
+            counter_rolls_by_attack_id={
+                "player":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=1,
+                        attack_rolls=OrdinaryAttackRolls(
+                            dodge_roll_1_10000=10000,
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                    ),
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        counter=[
+            event for event in result.events
+            if event.is_counter
+        ][0]
+        self.assertEqual(counter.target_hp_before,10)
+        self.assertEqual(counter.target_hp_after,0)
+        self.assertEqual(counter.ultimate_kind,2)
+        self.assertIsNotNone(counter.ultimate_damage_resolution)
+        self.assertEqual(
+            result.ultimate_overkill_by_participant_id["player"],
+            0,
+        )
+
+    def test_counter_nonplayer_critical_death_uses_strict_extra_roll(self):
+        player=actor(
+            "player","player","player",
+            hp=100,attack=80,defense=70,quick=100,
+        )
+        enemy=replace(
+            actor(
+                "enemy","enemy","enemy",
+                hp=20,attack=60,defense=70,quick=50,
+            ),
+            max_hp=100,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={
+                "player":profile(dex=200),
+                "enemy":profile(dex=10000),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+            },
+            counter_rolls_by_attack_id={
+                "enemy":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=1,
+                        attack_rolls=OrdinaryAttackRolls(
+                            dodge_roll_1_10000=10000,
+                            critical_roll_1_10000=1,
+                            damage_roll=0,
+                            ultimate_roll_1_100=49,
+                        ),
+                    ),
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        counter=[
+            event for event in result.events
+            if event.is_counter and event.participant_id=="player"
+        ][0]
+        self.assertTrue(counter.critical)
+        self.assertEqual(counter.target_hp_after,0)
+        self.assertEqual(counter.ultimate_kind,1)
+        self.assertTrue(
+            counter.death_ultimate_resolution.critical_roll_consumed
+        )
+
     def test_throwing_weapon_counter_gate_stops_chain_without_attack_rng(self):
         player=actor("player","player","player",attack=60,quick=100)
         enemy=actor("enemy","enemy","enemy",attack=60,quick=50)
