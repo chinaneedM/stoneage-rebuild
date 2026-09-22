@@ -1,4 +1,5 @@
 import unittest
+import urllib.parse
 
 from tools.stoneage_jss1999_beta_apply_candidate_probe import (
     CANDIDATES,
@@ -52,7 +53,13 @@ class Jss1999BetaApplyCandidateProbeTests(unittest.TestCase):
             "19990820",
         )
         self.assertIn("timestamp=19990820",url)
-        self.assertIn("%7EPO",url.upper())
+        self.assertIn("~PO",urllib.parse.unquote_plus(url))
+
+        encoded=query_url(
+            "http://www.dp.gamersdream.ne.jp/%7EPO/sa_apply.html",
+            "19990820",
+        )
+        self.assertIn("%7EPO",urllib.parse.unquote_plus(encoded).upper())
 
 
 if __name__=="__main__":
