@@ -1,9 +1,9 @@
 StoneAge Internet Archive candidate-file metadata scan — R1
 SCOPE|item-and-filelist-metadata-only|no-payload-download
-TRAITS|exact=sa.exe,sa_demo.exe,stone_demo.exe,onlStoneAge.zip,stoneage.zip,stoneagebeta.zip|size_window=180-320MiB
+TRAITS|exact=sa.exe,sa_demo.exe,sa174hg.exe,stone_demo.exe,onlStoneAge.zip,stoneage.zip,stoneagebeta.zip|size_window=180-320MiB
 QUERY|n=1|results=0|q="스톤에이지" AND mediatype:software
 QUERY|n=2|results=53|q="StoneAge" AND mediatype:software
-QUERY|n=3|results=65|q=title:(stoneage OR "stone age") AND mediatype:software
+QUERY|n=3|results=67|q=title:(stoneage OR "stone age") AND mediatype:software
 QUERY|n=4|results=100|q=description:(stoneage OR "stone age") AND mediatype:software
 QUERY|n=5|results=66|q="sa_demo.exe"
 QUERY|n=6|results=7|q="stone_demo.exe"
@@ -14,8 +14,9 @@ QUERY|n=10|results=0|q="20001031524596220"
 QUERY|n=11|results=0|q="200009263856"
 QUERY|n=12|results=2|q="GW_IDX=9"
 QUERY|n=13|results=0|q="/pc/games/online/stoneage.zip"
-COUNT|unique_items|222
-COUNT|metadata_fetched|222
+QUERY|n=14|results=0|q="sa174hg.exe"
+COUNT|unique_items|223
+COUNT|metadata_fetched|223
 COUNT|errors|0
 COUNT|candidate_files|11
 COUNT|exact_name_matches|0
