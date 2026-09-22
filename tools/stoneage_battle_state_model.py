@@ -851,9 +851,11 @@ def resolve_persistent_ordinary_round(
         counter_rolls_by_attack_id=counter_rolls_by_attack_id,
         counter_abio_by_participant_id=counter_abio_by_participant_id,
         combo_rolls_by_starter_id=combo_rolls_by_starter_id,
-        base_status_runtime_by_participant_id=(
-            state.base_status_runtime_by_participant_id
-        ),
+        base_status_runtime_by_participant_id=_freeze_mapping({
+            participant_id:
+                state.base_status_runtime_by_participant_id[participant_id]
+            for participant_id in living_ids
+        }),
         base_status_rolls_by_participant_id=(
             base_status_rolls_by_participant_id
         ),
@@ -928,7 +930,10 @@ def resolve_persistent_ordinary_round(
     )
     next_slots=dict(state.slots)
     next_status_runtime=dict(
-        round_result.base_status_runtime_by_participant_id
+        state.base_status_runtime_by_participant_id
+    )
+    next_status_runtime.update(
+        dict(round_result.base_status_runtime_by_participant_id)
     )
     for pid in removed_enemy_ids:
         next_slots.pop(pid,None)

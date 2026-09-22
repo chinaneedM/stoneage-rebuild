@@ -1307,6 +1307,7 @@ def resolve_ordinary_round(
         participant = entry.participant
         participant_id = participant.participant_id
         slot = slot_by_id[participant_id]
+        current_status_tick=None
 
         if (
             entry.command.command1 == BATTLE_COM_COMBO
@@ -1386,6 +1387,7 @@ def resolve_ordinary_round(
                     ride_work_quick=runtime.ride_work_quick,
                 )
             )
+            current_status_tick=tick
             hp_by_slot[slot]=int(tick.hp_after)
             hp_by_id[str(participant_id)]=int(tick.hp_after)
             runtime=replace(
@@ -1779,9 +1781,8 @@ def resolve_ordinary_round(
             target_alive
             and _slot_side(target) == _slot_side(slot)
             and not (
-                "tick" in locals()
-                and tick is not None
-                and tick.confusion_rewrote_command
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
             )
         ):
             raise ValueError(

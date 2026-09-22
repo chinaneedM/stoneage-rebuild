@@ -363,6 +363,56 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(attack[0].resolved_target_slot,10)
         self.assertLess(result.hp_by_participant_id["enemy"],200)
 
+    def test_confusion_provenance_does_not_leak_to_later_actor(self):
+        p1=actor("p1","player","player",attack=60,quick=100)
+        p2=actor("p2","player","pet",attack=60,quick=90)
+        enemy=actor("enemy","enemy","enemy",quick=20)
+        prepared=prepare_battle_round(
+            (p1,p2,enemy),
+            {
+                "p1":BattleCommand(BATTLE_COM_WAIT),
+                "p2":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"p1":0,"p2":0,"enemy":0},
+        )
+        with self.assertRaisesRegex(ValueError,"same-side ordinary attacks"):
+            resolve_ordinary_round(
+                prepared,
+                slots={"p1":0,"p2":1,"enemy":10},
+                profiles={
+                    "p1":profile(),"p2":profile(),"enemy":profile(),
+                },
+                attack_rolls={
+                    "p1":OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    ),
+                    "p2":OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    ),
+                },
+                base_status_runtime_by_participant_id={
+                    "p1":BaseBattleStatusRuntime(
+                        status=BaseBattleStatusState(confusion=2),
+                        work_quick=100,
+                    ),
+                    "p2":BaseBattleStatusRuntime(work_quick=90),
+                    "enemy":BaseBattleStatusRuntime(work_quick=20),
+                },
+                base_status_rolls_by_participant_id={
+                    "p1":BaseStatusTurnRolls(
+                        confusion_action_roll_1_100=1,
+                        confusion_side_roll_0_1=1,
+                        confusion_pos_roll_0_9=9,
+                    )
+                },
+                defense_profile="newpower_70pct",
+            )
+
     def test_guard_is_active_before_slow_guard_actor_turn(self):
         player = actor("player", "player", "player", quick=20)
         enemy = actor("enemy", "enemy", "enemy", quick=100)
