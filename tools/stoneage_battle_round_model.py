@@ -42,6 +42,7 @@ from tools.stoneage_battle_core_model import (
 )
 from tools.stoneage_battle_status_model import (
     BASE_STATUS_NAME_BY_INDEX,
+    STATUS_POISON,
     BaseBattleStatusRuntime,
     BasePhysicalOnHitStatusInputs,
     BaseStatusApplicationResolution,
@@ -2031,9 +2032,21 @@ def resolve_ordinary_round(
                         ),
                     )
                     if status_application.check.success:
+                        poison_stat_sum=target_runtime.poison_stat_sum
+                        if (
+                            status_name == STATUS_POISON
+                            and poison_stat_sum is None
+                        ):
+                            poison_stat_sum=(
+                                int(status_profile.vital)
+                                + int(status_profile.strength)
+                                + int(status_profile.tough)
+                                + int(status_profile.dex)
+                            )
                         status_runtime[str(defender_id)]=replace(
                             target_runtime,
                             status=status_application.status_after,
+                            poison_stat_sum=poison_stat_sum,
                         )
                         if status_application.command_cleared:
                             command_by_slot[target]=BattleCommand(

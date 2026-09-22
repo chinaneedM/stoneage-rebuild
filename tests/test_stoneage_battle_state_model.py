@@ -118,10 +118,10 @@ def session(player, enemies, pets=(), ride_pet=None):
     )
 
 
-def profile():
+def profile(*, luck=0):
     return BattleCombatProfile(
         fixed_dex=100,
-        fixed_luck=0,
+        fixed_luck=int(luck),
         earth=0,
         water=0,
         fire=0,
