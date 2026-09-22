@@ -9,6 +9,8 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_COMBO,
     BATTLE_COM_ESCAPE,
     BATTLE_COM_GUARD,
+    BATTLE_COM_S_GUARDIAN_ATTACK,
+    BATTLE_COM_S_GUARDIAN_GUARD,
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
@@ -457,6 +459,108 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(packed,0x00040003)
         self.assertEqual(battle_command3_low(packed),3)
         self.assertEqual(battle_command3_high(packed),4)
+
+    def test_guardian_attack_command_auto_registers_front_row_owner(self):
+        player=actor("player","player","player",hp=200,quick=20)
+        pet=actor("pet","player","pet",hp=200,attack=80,quick=10)
+        enemy=actor("enemy","enemy","enemy",hp=200,attack=100,quick=100)
+        prepared=prepare_battle_round(
+            (player,pet,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet":BattleCommand(
+                    BATTLE_COM_S_GUARDIAN_ATTACK,
+                    command2=10,
+                ),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"pet":5,"enemy":10},
+            profiles={
+                "player":profile(),
+                "pet":profile(),
+                "enemy":profile(),
+            },
+            attack_rolls={
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+                "pet":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        enemy_attack=[
+            event for event in result.events
+            if event.participant_id=="enemy"
+        ][0]
+        self.assertTrue(enemy_attack.guardian_redirected)
+        self.assertEqual(enemy_attack.guarded_target_slot,0)
+        self.assertEqual(enemy_attack.guardian_slot,5)
+        self.assertEqual(result.hp_by_participant_id["player"],200)
+        self.assertLess(result.hp_by_participant_id["pet"],200)
+
+    def test_guardian_attack_front_row_pet_does_not_invent_owner_registration(self):
+        pet=actor("pet","player","pet",hp=200,attack=80,quick=10)
+        enemy=actor("enemy","enemy","enemy",hp=200,attack=100,quick=100)
+        prepared=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(
+                    BATTLE_COM_S_GUARDIAN_ATTACK,
+                    command2=10,
+                ),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(),"enemy":profile()},
+            attack_rolls={
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+                "pet":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        enemy_attack=[
+            event for event in result.events
+            if event.participant_id=="enemy"
+        ][0]
+        self.assertFalse(enemy_attack.guardian_redirected)
+
+    def test_enum_only_guardian_guard_is_not_executable_common_handler(self):
+        pet=actor("pet","player","pet")
+        prepared=prepare_battle_round(
+            (pet,),
+            {"pet":BattleCommand(BATTLE_COM_S_GUARDIAN_GUARD)},
+            {"pet":0},
+        )
+        with self.assertRaises(ValueError):
+            resolve_ordinary_round(
+                prepared,
+                slots={"pet":5},
+                profiles={"pet":profile()},
+                attack_rolls={},
+                defense_profile="newpower_70pct",
+            )
 
     def test_guardian_redirects_after_dodge_and_before_damage(self):
         player=actor("player","player","player",attack=100,quick=100)

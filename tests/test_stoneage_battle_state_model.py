@@ -13,6 +13,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_CAPTURE,
     BATTLE_COM_ESCAPE,
+    BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
@@ -271,6 +272,61 @@ class PersistentBattleStateTests(unittest.TestCase):
         )
         self.assertEqual(second.after.turn, 2)
         self.assertLess(second.after.hp_by_participant_id["enemy"], first_hp)
+
+    def test_guardian_attack_command_auto_registration_persists_redirected_damage(self):
+        player=participant("player","player","player",hp=200,quick=20)
+        pet=participant(
+            "pet:0","player","pet",
+            hp=200,attack=80,quick=10,source_pet_slot=0,
+        )
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=200,attack=100,quick=100,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,),pets=(pet,)),
+            slots={"player":0,"pet:0":5,"enemy":10},
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet:0":BattleCommand(
+                    BATTLE_COM_S_GUARDIAN_ATTACK,
+                    command2=10,
+                ),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            initiative_random_subtracts={
+                "player":0,"pet:0":0,"enemy":0,
+            },
+            profiles={
+                "player":profile(),
+                "pet:0":profile(),
+                "enemy":profile(),
+            },
+            attack_rolls={
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+                "pet:0":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.after.hp_by_participant_id["player"],200)
+        self.assertLess(result.after.hp_by_participant_id["pet:0"],200)
+        enemy_attack=[
+            event for event in result.round.events
+            if event.participant_id=="enemy"
+        ][0]
+        self.assertTrue(enemy_attack.guardian_redirected)
+        self.assertEqual(enemy_attack.guardian_slot,5)
 
     def test_guardian_redirect_persists_damage_on_guardian_only(self):
         player=participant(

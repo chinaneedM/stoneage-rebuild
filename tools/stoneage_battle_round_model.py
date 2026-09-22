@@ -76,6 +76,8 @@ BATTLE_COM_COMBOEND = 10
 BATTLE_COM_WAIT = 11
 
 # Stable unguarded pet-skill command sequence begins at 1000.
+BATTLE_COM_S_GUARDIAN_ATTACK = 1003
+BATTLE_COM_S_GUARDIAN_GUARD = 1004  # enum-only in pinned common Guardian handler
 BATTLE_COM_S_STATUSCHANGE = 1008
 
 
@@ -106,6 +108,8 @@ BASE_COMMAND_CODES = frozenset(
         BATTLE_COM_COMBO,
         BATTLE_COM_COMBOEND,
         BATTLE_COM_WAIT,
+        BATTLE_COM_S_GUARDIAN_ATTACK,
+        BATTLE_COM_S_GUARDIAN_GUARD,
         BATTLE_COM_S_STATUSCHANGE,
     }
 )
@@ -126,7 +130,7 @@ class BattleCommand:
         command1 = int(self.command1)
         if command1 not in BASE_COMMAND_CODES:
             raise ValueError(
-                "unsupported command outside reconstructed base/status-change seam"
+                "unsupported command outside reconstructed base/pet-skill seam"
             )
         object.__setattr__(self, "command1", command1)
         object.__setattr__(self, "command2", int(self.command2))
@@ -406,6 +410,7 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_ESCAPE,
         BATTLE_COM_COMBO,
         BATTLE_COM_WAIT,
+        BATTLE_COM_S_GUARDIAN_ATTACK,
         BATTLE_COM_S_STATUSCHANGE,
     }
 )
@@ -1192,7 +1197,9 @@ def resolve_ordinary_round(
     for entry in prepared.ordered_entries:
         if entry.command.command1 not in ORDINARY_RESOLUTION_COMMANDS:
             raise ValueError(
-                "ordinary resolver accepts the reconstructed base commands plus S_STATUSCHANGE"
+                "ordinary resolver accepts reconstructed base commands plus "
+                "S_GUARDIAN_ATTACK and S_STATUSCHANGE; the pinned common "
+                "Guardian handler does not execute enum-only S_GUARDIAN_GUARD"
             )
 
     by_slot, slot_by_id = _build_slot_maps(prepared, slots)
@@ -1338,6 +1345,38 @@ def resolve_ordinary_round(
             raise TypeError(
                 f"guardian registration for slot {defender_slot} has wrong type"
             )
+
+    # PETSKILL_Guardian attack mode sets COM1=S_GUARDIAN_ATTACK, marks the
+    # actor with CHAR_BATTLEFLG_GUARDIAN, and registers its front-row owner.
+    # This registration exists before action sorting/execution.
+    for guardian_entry in prepared.ordered_entries:
+        if (
+            guardian_entry.command.command1
+            != BATTLE_COM_S_GUARDIAN_ATTACK
+            or not guardian_entry.command.input_complete
+            or int(guardian_entry.participant.hp) <= 0
+        ):
+            continue
+        guardian_id=str(guardian_entry.participant.participant_id)
+        guardian_slot=int(slot_by_id[guardian_id])
+        side=_slot_side(guardian_slot)
+        ownerpos=guardian_slot-5-side*SIDE_OFFSET
+        if ownerpos < 0 or ownerpos > 19:
+            continue
+        guarded_slot=side*SIDE_OFFSET+ownerpos
+        auto=GuardianRegistration(
+            guardian_slot=guardian_slot,
+            guardian_flag=True,
+        )
+        if (
+            guarded_slot in guardian_registrations
+            and guardian_registrations[guarded_slot] != auto
+        ):
+            raise ValueError(
+                f"conflicting guardian registrations for slot {guarded_slot}"
+            )
+        guardian_registrations[guarded_slot]=auto
+
     if guardian_registrations and combo_groups:
         raise ValueError(
             "guardian interaction with combo execution is a separate seam"
