@@ -1449,8 +1449,9 @@ Supplemental source ledgers:
   - maximum-level and pet-limit-level behavior;
   - complete visible pet AI/loyalty compliance projection;
   - early-JSS confirmation of the descendant `_Item_ReLifeAct` combo-profit compile path;
-  - base DamageReact (VANISH > ABSROB > REFLEC) is closed for no-ride ordinary and Combo paths, including continuation/status/wakeup ordering; later macro-gated TRAP/ACUPUNCTURE/BATTLE_MODEL variants remain excluded;
-  - ride-pet damage sharing and fall-off remain the next physical-damage gap for ordinary/Combo persistent rounds;
+  - base DamageReact (VANISH > ABSROB > REFLEC) is closed for ordinary and Combo paths, including ride-pet immediate/deferred split interaction, continuation/status/wakeup ordering; later macro-gated TRAP/ACUPUNCTURE/BATTLE_MODEL variants remain excluded;
+  - ride-pet physical damage sharing is closed to the stable-descendant boundary: ordinary `BATTLE_DamageSub`, Combo `BATTLE_DamageSubCale/BATTLE_DamageSub2`, ABSROB/REFLEC immediate split, ride-pet death unmount/PETFALL, persistent battle runtime and final owned-pet HP settlement are integrated without making the ride pet an active battle entry;
+  - counter-with-ride remains a separate unresolved interaction and is still rejected explicitly rather than guessed;
   - later macro-gated status families and exact battle-exit cleanup for fields outside the common poison/paralysis/sleep/stone/drunk/confusion runtime;
 - Code validations:
   - `81e9572f1ff309982d13c7f1979a51516a5593a8` — pending ordinary kill EXP accumulation; runs **35514277568** and **35514277633** both success.
@@ -1492,11 +1493,14 @@ Supplemental source ledgers:
   - `a11cbc5693d220635000a156f4f499ea86d1aa6a` — integrate active common statuses with alternating counter execution and damage wake-up; battle-core **35690243546** and gameplay **35690243482** success.
   - `a86701f3afb09552b789c386abea6ad730c0ec2c` — integrate source-shaped common status timing with Combo formation/execution, including early later-member `StatusSeq` and one-member combo behavior; pet-skill **35690533578**, battle-core **35690533588**, gameplay **35690533586** success.
   - `466505c6f2f95b17431bdb5d8964a99a56bb7fab` — integrate stable base DamageReact into ordinary and per-member Combo execution, including Reflect redirection, Absorb/Vanish, continuation suppression, reaction charge persistence and explicit Combo aggregate settlement; battle-core **35692745170**, gameplay **35692745208**, pet-skill **35692745206** success.
+  - `cb18f95f8023488698fbc7a171e19535377591a2` — repair ordinary ride-damage integration regressions and restore capture/counter/ride runtime consistency; battle-core **35705885777**, gameplay **35705885952**, pet-skill **35705885946** success.
+  - `a3d8f4333a3f27f163ac76e2c6d398ccf18181a8` — integrate ride-pet sharing with Combo deferred settlement and ABSROB/REFLEC immediate reactions; battle-core **35706892102**, gameplay **35706892101**, pet-skill **35706892110** success.
+  - `fe23831896c6654475df1d9b7648b3d08319d2f6` — persist non-entry ride-pet battle HP/PETFALL outcome through final owned-pet battle-exit settlement; gameplay **35707126569** success.
 
 ## Immediate next actions
 
-1. **Close ride-pet damage sharing next.** Reconstruct the stable ordinary `BATTLE_DamageSub` split, Combo `BATTLE_DamageSubCale/BATTLE_DamageSub2` split, reflected/absorbed ride damage, ride-pet death unmount and `PETFALL` transition; keep later macro-gated ride skills separate.
-2. **Then close the remaining physical post-damage boundary.** Recover only source-backed ultimate/knock-away and any base battle-exit cleanup required by the reconstructed damage path; do not import profession/TRAP/ACUPUNCTURE extensions.
+1. **Close the remaining physical post-damage boundary next.** Recover only source-backed ultimate/knock-away behavior and any base battle-exit cleanup required by the reconstructed damage path; do not import profession/TRAP/ACUPUNCTURE extensions.
+2. **Close ride-pet counter interaction only if the pinned source yields an unambiguous path.** Ordinary, Combo, ABSROB/REFLEC and persistent PETFALL/HP settlement are closed; do not infer counter behavior from those paths.
 3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
 4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
 5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
