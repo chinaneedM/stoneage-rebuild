@@ -478,6 +478,27 @@ This is the canonical ledger for historical sources. Entries should record prove
   - a reconstructed JSS baseline should not automatically include the later dedicated item-trade window;
   - any 2003 revival client recovered in the future can be used as a near-descendant diff anchor, but its UI additions must be separated from the earlier baseline.
 
+### SRC-KR-2003-NETMARBLE-EARLY-VERSION-ETNEWS-01
+
+- Title: `넷마블, ‘스톤에이지’서비스`
+- Original publication date: 2003-07-11
+- Retrieval/verification date: 2026-09-23
+- Language/region: Korean / Korea
+- Source type: contemporaneous Korean technology-industry press report of Netmarble's service announcement
+- URL: https://www.etnews.com/200307100179
+- Confidence: **A/B** for the quoted launch strategy; not a binary-distribution artifact
+- Supports:
+  - Netmarble announced that it would service StoneAge through its own site;
+  - the report says Netmarble planned to begin with the game's **early-development version** (`개발초기 버전`) and then continue upgrading it;
+  - this statement predates the 2003-07-21 operator-Q&A preservation that explicitly names the 2003-07-28 launch label as `1.74`.
+- Evidence boundary:
+  - the report does not name an installer filename, payload URL, file size, checksum, internal build identifier or file tree;
+  - `개발초기 버전` is a contemporaneous descriptive phrase, not a byte-level equivalence statement;
+  - combining this source with the later `1.74` launch-label source does **not** prove byte identity with an Inium/JSS client carrying the same numerical version label.
+- Archaeology significance:
+  - independently corroborates that Netmarble intentionally restarted from an early StoneAge state rather than a later feature-rich branch;
+  - strengthens the requirement to compare any recovered Korean Netmarble `1.74` artifact byte-for-byte against other regional `1.74`/JSS candidates instead of merging them by version string alone.
+
 ### SRC-KR-2003-NETMARBLE-174-ANNOUNCE-01
 
 - Title: `◈ 스톤에이지 서비스 일정 및 버전안내 ◈`

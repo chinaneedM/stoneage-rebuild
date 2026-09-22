@@ -1518,6 +1518,7 @@ Supplemental source ledgers:
 ## Korean 1.74 archive-recovery evidence boundary — 2026-09-22
 
 - The Netmarble 2003 launch-version target remains historically valid: same-period evidence names the 2003-07-28 service version as `1.74`.
+- A separate contemporaneous ETNews report dated **2003-07-11** records Netmarble's launch strategy as starting from StoneAge's **`개발초기 버전` (early-development version)** and upgrading afterward. Read together, these sources prove an early-state launch strategy plus the public label `1.74`; they do **not** establish byte identity with Inium/JSS or any other regional client carrying the same numerical label.
 - The bounded dual-index/root probe now distinguishes requested dates from the actual capture dates returned by Wayback Availability. Its corrected R2 result is **`PARTIAL_NO_HITS`** for the target period:
   - indexed URLs in the 2003–2004 bounded query: **0**;
   - launch-window root snapshots (2003-07 through 2003-09): **0**;
