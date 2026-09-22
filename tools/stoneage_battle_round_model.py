@@ -143,6 +143,38 @@ class BattleCommand:
 
 
 @dataclass(frozen=True)
+class BattleCommandSetupEffects:
+    """Work-state mutations already performed by command/skill submission.
+
+    These are deliberately separate from BattleCommand because the fixed
+    source stores them outside COM1/COM2/COM3 (work attack/defense power,
+    battle flags, and BattleArray guardian registration).
+    """
+
+    attack_power: int | None = None
+    defense_power: int | None = None
+    guardian_flag: bool = False
+    guardian_for_slot: int | None = None
+    guardian_barrier: int = 0
+
+    def __post_init__(self) -> None:
+        if self.attack_power is not None:
+            object.__setattr__(self,"attack_power",int(self.attack_power))
+        if self.defense_power is not None:
+            object.__setattr__(self,"defense_power",int(self.defense_power))
+        object.__setattr__(self,"guardian_flag",bool(self.guardian_flag))
+        if self.guardian_for_slot is not None:
+            slot=int(self.guardian_for_slot)
+            if not 0 <= slot < BATTLE_SLOT_COUNT:
+                raise ValueError("guardian_for_slot must be in 0..19")
+            object.__setattr__(self,"guardian_for_slot",slot)
+        barrier=int(self.guardian_barrier)
+        if barrier < 0:
+            raise ValueError("guardian_barrier cannot be negative")
+        object.__setattr__(self,"guardian_barrier",barrier)
+
+
+@dataclass(frozen=True)
 class RoundEntry:
     participant: BattleParticipant
     command: BattleCommand
@@ -628,15 +660,41 @@ def _slot_side(slot: int) -> int:
     return 0 if int(slot) < SIDE_OFFSET else 1
 
 
+def _effective_attack_power(
+    participant: BattleParticipant,
+    effects_by_participant_id: Mapping[str,BattleCommandSetupEffects],
+) -> int:
+    effects=effects_by_participant_id.get(str(participant.participant_id))
+    if effects is not None and effects.attack_power is not None:
+        return int(effects.attack_power)
+    return int(participant.attack)
+
+
+def _effective_defense_power(
+    participant: BattleParticipant,
+    effects_by_participant_id: Mapping[str,BattleCommandSetupEffects],
+) -> int:
+    effects=effects_by_participant_id.get(str(participant.participant_id))
+    if effects is not None and effects.defense_power is not None:
+        return int(effects.defense_power)
+    return int(participant.defense)
+
+
 def _effective_defense_for_round(
     participant: BattleParticipant,
     defense_profile: str,
     *,
     stone: bool = False,
+    work_defense: int | None = None,
 ) -> float:
+    defense=(
+        int(participant.defense)
+        if work_defense is None
+        else int(work_defense)
+    )
     if defense_profile == "newpower_70pct":
         return effective_defense_newpower(
-            participant.defense,
+            defense,
             stone=bool(stone),
         )
     if defense_profile == "preserved_old_mixed":
@@ -645,7 +703,7 @@ def _effective_defense_for_round(
                 "preserved_old_mixed requires explicit defender.fixed_vital"
             )
         return effective_defense_preserved_old(
-            participant.defense,
+            defense,
             participant.quick,
             participant.fixed_vital,
             stone=bool(stone),
@@ -661,6 +719,9 @@ def _resolve_counter_chain(
     hp_by_slot: dict[int, int],
     hp_by_id: dict[str, int],
     profiles: Mapping[str, BattleCombatProfile],
+    setup_effects_by_participant_id: Mapping[
+        str,BattleCommandSetupEffects
+    ],
     command_by_slot: Mapping[int, BattleCommand],
     action_value_by_slot: Mapping[int, int],
     counter_rolls: Sequence[CounterAttemptRolls],
@@ -855,9 +916,18 @@ def _resolve_counter_chain(
         )
         is_critical=critical_roll < critical_probability
 
+        target_defense=_effective_defense_power(
+            target,setup_effects_by_participant_id
+        )
         base_damage=physical_base_damage(
-            actor.attack,
-            _effective_defense_for_round(target,defense_profile),
+            _effective_attack_power(
+                actor,setup_effects_by_participant_id
+            ),
+            _effective_defense_for_round(
+                target,
+                defense_profile,
+                work_defense=target_defense,
+            ),
             int(rolls.damage_roll),
         )
         damage=attribute_adjusted_damage(
@@ -870,7 +940,7 @@ def _resolve_counter_chain(
         if is_critical:
             damage=critical_damage(
                 damage,
-                target.defense,
+                target_defense,
                 actor.level,
                 target.level,
             )
@@ -1183,6 +1253,9 @@ def resolve_ordinary_round(
     guardian_registrations_by_defender_slot: Mapping[
         int,GuardianRegistration
     ] | None = None,
+    command_setup_effects_by_participant_id: Mapping[
+        str,BattleCommandSetupEffects
+    ] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
@@ -1332,6 +1405,24 @@ def resolve_ordinary_round(
             f"status application RNG references unknown actors: "
             f"{unknown_status_application_ids}"
         )
+    setup_effects={
+        str(participant_id):effects
+        for participant_id,effects in (
+            command_setup_effects_by_participant_id or {}
+        ).items()
+    }
+    unknown_setup_effect_ids=sorted(set(setup_effects)-set(slot_by_id))
+    if unknown_setup_effect_ids:
+        raise ValueError(
+            f"command setup effects reference unknown actors: "
+            f"{unknown_setup_effect_ids}"
+        )
+    for participant_id,effects in setup_effects.items():
+        if not isinstance(effects,BattleCommandSetupEffects):
+            raise TypeError(
+                f"command setup effects for {participant_id} have wrong type"
+            )
+
     guardian_registrations={
         int(defender_slot):registration
         for defender_slot,registration in (
@@ -1346,7 +1437,31 @@ def resolve_ordinary_round(
                 f"guardian registration for slot {defender_slot} has wrong type"
             )
 
-    # PETSKILL_Guardian attack mode sets COM1=S_GUARDIAN_ATTACK, marks the
+    # Explicit command-submission effects carry the defensive Guardian
+    # branch, whose COM1 is indistinguishable from an ordinary GUARD.
+    for guardian_id,effects in setup_effects.items():
+        if (
+            not effects.guardian_flag
+            or effects.guardian_for_slot is None
+        ):
+            continue
+        guardian_slot=int(slot_by_id[guardian_id])
+        guarded_slot=int(effects.guardian_for_slot)
+        registration=GuardianRegistration(
+            guardian_slot=guardian_slot,
+            guardian_flag=True,
+            guardian_barrier=int(effects.guardian_barrier),
+        )
+        if (
+            guarded_slot in guardian_registrations
+            and guardian_registrations[guarded_slot] != registration
+        ):
+            raise ValueError(
+                f"conflicting guardian registrations for slot {guarded_slot}"
+            )
+        guardian_registrations[guarded_slot]=registration
+
+        # PETSKILL_Guardian attack mode sets COM1=S_GUARDIAN_ATTACK, marks the
     # actor with CHAR_BATTLEFLG_GUARDIAN, and registers its front-row owner.
     # This registration exists before action sorting/execution.
     for guardian_entry in prepared.ordered_entries:
@@ -1419,6 +1534,7 @@ def resolve_ordinary_round(
                 hp_by_slot=hp_by_slot,
                 hp_by_id=hp_by_id,
                 profiles=profiles,
+                setup_effects_by_participant_id=setup_effects,
                 command_by_slot=command_by_slot,
                 action_value_by_slot=action_value_by_slot,
                 counter_rolls=normalized_counter_rolls.get(
@@ -1896,6 +2012,16 @@ def resolve_ordinary_round(
         if rolls is None:
             raise KeyError(f"missing ordinary attack rolls for {participant_id}")
         attack_command_code=int(command.command1)
+        if attack_command_code in {
+            BATTLE_COM_S_GUARDIAN_ATTACK,
+            BATTLE_COM_S_STATUSCHANGE,
+        }:
+            command_by_slot[slot]=BattleCommand(
+                BATTLE_COM_ATTACK,
+                command2=command.command2,
+                command3=command.command3,
+                input_complete=command.input_complete,
+            )
 
         original_target = int(command.command2)
         target = original_target
@@ -2057,8 +2183,11 @@ def resolve_ordinary_round(
         # Stable source uses RAND(1,10000) < per for criticals.
         is_critical = critical_roll < critical_probability
 
+        defender_work_defense=_effective_defense_power(
+            defender,setup_effects
+        )
         base_damage = physical_base_damage(
-            participant.attack,
+            _effective_attack_power(participant,setup_effects),
             _effective_defense_for_round(
                 defender,
                 defense_profile,
@@ -2067,6 +2196,7 @@ def resolve_ordinary_round(
                         status_runtime[str(defender_id)].status
                     ) > 1.0
                 ),
+                work_defense=defender_work_defense,
             ),
             int(rolls.damage_roll),
         )
@@ -2080,7 +2210,7 @@ def resolve_ordinary_round(
         if is_critical:
             damage = critical_damage(
                 damage,
-                defender.defense,
+                defender_work_defense,
                 participant.level,
                 defender.level,
             )

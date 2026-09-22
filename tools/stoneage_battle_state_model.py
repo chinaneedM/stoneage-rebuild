@@ -40,6 +40,7 @@ from tools.stoneage_battle_core_model import (
 from tools.stoneage_battle_round_model import (
     BattleCombatProfile,
     BattleCommand,
+    BattleCommandSetupEffects,
     ComboExecutionRolls,
     CounterAttemptRolls,
     OrdinaryAttackRolls,
@@ -851,6 +852,9 @@ def resolve_persistent_ordinary_round(
     guardian_registrations_by_defender_slot: Mapping[
         int,GuardianRegistration
     ] | None = None,
+    command_setup_effects_by_participant_id: Mapping[
+        str,BattleCommandSetupEffects
+    ] | None = None,
     no_risk: bool = False,
     drop_rolls_by_enemy_id: Mapping[
         str,Sequence[DropAllocationRoll]
@@ -937,6 +941,9 @@ def resolve_persistent_ordinary_round(
         ),
         guardian_registrations_by_defender_slot=(
             guardian_registrations_by_defender_slot
+        ),
+        command_setup_effects_by_participant_id=(
+            command_setup_effects_by_participant_id
         ),
         field_attr=field_attr,
         field_power=field_power,

@@ -15,6 +15,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
+    BattleCommandSetupEffects,
     ComboExecutionRolls,
     CounterAttemptRolls,
     OrdinaryAttackRolls,
@@ -459,6 +460,101 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(packed,0x00040003)
         self.assertEqual(battle_command3_low(packed),3)
         self.assertEqual(battle_command3_high(packed),4)
+
+    def test_defensive_guardian_setup_effect_registers_selected_target(self):
+        player=actor("player","player","player",hp=200,quick=20)
+        pet=actor("pet","player","pet",hp=200,quick=10)
+        enemy=actor("enemy","enemy","enemy",hp=200,attack=100,quick=100)
+        prepared=prepare_battle_round(
+            (player,pet,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet":BattleCommand(BATTLE_COM_GUARD,command2=0),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"pet":5,"enemy":10},
+            profiles={
+                "player":profile(),
+                "pet":profile(),
+                "enemy":profile(),
+            },
+            attack_rolls={
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                    guard_roll_1_100=100,
+                )
+            },
+            command_setup_effects_by_participant_id={
+                "pet":BattleCommandSetupEffects(
+                    guardian_flag=True,
+                    guardian_for_slot=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        attack=result.events[0]
+        self.assertTrue(attack.guardian_redirected)
+        self.assertEqual(attack.guardian_slot,5)
+        self.assertEqual(result.hp_by_participant_id["player"],200)
+        self.assertLess(result.hp_by_participant_id["pet"],200)
+
+    def test_command_setup_attack_and_defense_power_feed_physical_resolution(self):
+        player=actor(
+            "player","player","player",
+            hp=300,attack=100,defense=70,quick=100,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=300,attack=100,defense=70,quick=20,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"enemy":0},
+        )
+        baseline=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        boosted=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            command_setup_effects_by_participant_id={
+                "player":BattleCommandSetupEffects(attack_power=200),
+                "enemy":BattleCommandSetupEffects(defense_power=140),
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertNotEqual(
+            baseline.events[0].damage,
+            boosted.events[0].damage,
+        )
 
     def test_guardian_attack_command_auto_registers_front_row_owner(self):
         player=actor("player","player","player",hp=200,quick=20)
