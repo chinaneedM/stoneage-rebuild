@@ -1,5 +1,7 @@
 import unittest
 
+from tools.stoneage_battle_status_model import BaseBattleStatusState
+
 from tools.stoneage_item_effect_model import (
     apply_field_recovery,
     apply_param_modifier,
@@ -10,6 +12,7 @@ from tools.stoneage_item_effect_model import (
     dice_drop_transition,
     dice_pickup_transition,
     change_pet_owner_item_transition,
+    common_item_status_change_transition,
     encounter_item_transition,
     equipment_noenemy_level,
     field_change_consumption,
@@ -163,6 +166,49 @@ class StoneAgeItemEffectModelTests(unittest.TestCase):
     def test_item_status_explicit_turn_and_success(self):
         r = parse_status_change_option("SLEEP turn=4 成=35", STATUS)
         self.assertEqual(r, {"status": 2, "turn": 4, "success": 35})
+
+    def test_item_status_change_uses_shared_hit_core_and_exact_turn(self):
+        parsed=parse_status_change_option("POISON turn=3 成=15",STATUS)
+        result=common_item_status_change_transition(
+            current_status=BaseBattleStatusState(),
+            status_index=parsed["status"],
+            turn=parsed["turn"],
+            success_offset=parsed["success"],
+            attacker_level=30,
+            defender_level=10,
+            pvp=False,
+            attacker_fixed_luck=5,
+            defender_vital=25,
+            defender_str=25,
+            defender_tough=25,
+            defender_dex=25,
+            defender_resistance=3,
+            roll_1_100=26,
+        )
+        self.assertTrue(result["check"].success)
+        self.assertEqual(result["status"].poison,3)
+
+    def test_item_status_default_zero_turn_is_preserved_not_normalized(self):
+        parsed=parse_status_change_option("POISON",STATUS)
+        result=common_item_status_change_transition(
+            current_status=BaseBattleStatusState(),
+            status_index=parsed["status"],
+            turn=parsed["turn"],
+            success_offset=100,
+            attacker_level=30,
+            defender_level=10,
+            pvp=False,
+            attacker_fixed_luck=100,
+            defender_vital=25,
+            defender_str=25,
+            defender_tough=25,
+            defender_dex=25,
+            defender_resistance=0,
+            roll_1_100=1,
+        )
+        self.assertTrue(result["check"].success)
+        self.assertEqual(result["application"].turn_written,0)
+        self.assertEqual(result["status"].poison,0)
 
     def test_status_recovery_parser_accepts_none_status(self):
         self.assertEqual(

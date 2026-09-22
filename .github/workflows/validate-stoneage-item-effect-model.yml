@@ -8,6 +8,8 @@ on:
     paths:
       - .github/workflows/validate-stoneage-item-effect-model.yml
       - tools/stoneage_item_effect_model.py
+      - tools/stoneage_magic_effect_model.py
+      - tools/stoneage_battle_status_model.py
       - tests/test_stoneage_item_effect_model.py
       - research/mechanics/STONEAGE-ITEM-EFFECT-CORE-R1.md
 permissions:

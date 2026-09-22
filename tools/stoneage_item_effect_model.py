@@ -13,6 +13,7 @@ from tools.stoneage_magic_effect_model import (
     c_atoi,
     common_alive_target_list,
     common_dead_target_list,
+    common_magic_status_change_transition,
     magic_def_transition,
     parse_after_marker,
     parse_field_attribute_option,
@@ -138,6 +139,42 @@ def parse_status_change_option(option, status_tokens):
         "turn": parse_after_marker(option, "turn", 0),
         "success": parse_after_marker(option, "成", 15),
     }
+
+
+def common_item_status_change_transition(
+    *,
+    current_status,
+    status_index,
+    turn,
+    success_offset,
+    attacker_level,
+    defender_level,
+    pvp,
+    attacker_fixed_luck,
+    defender_vital,
+    defender_str,
+    defender_tough,
+    defender_dex,
+    defender_resistance,
+    roll_1_100,
+):
+    """Item StatusChange delegates to the same BATTLE_MultiStatusChange core."""
+    return common_magic_status_change_transition(
+        current_status=current_status,
+        status_index=status_index,
+        turn=turn,
+        success_offset=success_offset,
+        attacker_level=attacker_level,
+        defender_level=defender_level,
+        pvp=pvp,
+        attacker_fixed_luck=attacker_fixed_luck,
+        defender_vital=defender_vital,
+        defender_str=defender_str,
+        defender_tough=defender_tough,
+        defender_dex=defender_dex,
+        defender_resistance=defender_resistance,
+        roll_1_100=roll_1_100,
+    )
 
 
 def parse_status_recovery_option(option, status_tokens):
