@@ -10,6 +10,7 @@ from tools.stoneage_battle_damage_react_model import (
     base_damage_react_active,
     base_damage_react_blocks_main_continuation,
     base_damage_react_kind,
+    resolve_base_combo_member_damage_react,
     resolve_base_damage_react,
 )
 
@@ -118,6 +119,52 @@ class BattleDamageReactModelTests(unittest.TestCase):
         self.assertEqual(result.state_after,state)
         self.assertEqual(result.defender_hp_after,40)
         self.assertEqual(result.wakeup_target,"defender")
+
+    def test_combo_normal_member_defers_damage_but_wakes_defender(self):
+        r=resolve_base_combo_member_damage_react(
+            BaseDamageReactState(),
+            raw_damage=30,
+            attacker_hp=100,
+            attacker_max_hp=100,
+            defender_hp=80,
+            defender_max_hp=100,
+        )
+        self.assertEqual(r.accumulated_damage,30)
+        self.assertEqual(r.defender_hp_after,80)
+        self.assertEqual(r.wakeup_target,"defender")
+        self.assertFalse(r.charge_consumed)
+
+    def test_combo_reflect_is_immediate_and_not_accumulated(self):
+        r=resolve_base_combo_member_damage_react(
+            BaseDamageReactState(reflect=1),
+            raw_damage=30,
+            attacker_hp=100,
+            attacker_max_hp=100,
+            defender_hp=80,
+            defender_max_hp=100,
+        )
+        self.assertEqual(r.accumulated_damage,0)
+        self.assertEqual(r.attacker_hp_after,70)
+        self.assertEqual(r.defender_hp_after,80)
+        self.assertEqual(r.state_after.reflect,0)
+        self.assertEqual(r.wakeup_target,"attacker")
+
+    def test_combo_throwing_reflect_keeps_charge_and_stale_wakeup_target(self):
+        r=resolve_base_combo_member_damage_react(
+            BaseDamageReactState(reflect=1),
+            raw_damage=30,
+            attacker_hp=100,
+            attacker_max_hp=100,
+            defender_hp=80,
+            defender_max_hp=100,
+            attacker_uses_throwing_weapon=True,
+        )
+        self.assertEqual(r.accumulated_damage,30)
+        self.assertEqual(r.attacker_hp_after,100)
+        self.assertEqual(r.defender_hp_after,80)
+        self.assertEqual(r.state_after.reflect,1)
+        self.assertEqual(r.wakeup_target,"attacker")
+        self.assertTrue(r.reflect_blocked_by_throwing_weapon)
 
     def test_normal_damage_hits_defender(self):
         result=resolve_base_damage_react(

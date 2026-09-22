@@ -65,6 +65,31 @@ class BaseDamageReactResolution:
             raise ValueError("wakeup_target must be attacker/defender/None")
 
 
+@dataclass(frozen=True)
+class BaseComboMemberDamageReactResolution:
+    """One stable Combo member reaction before final aggregate settlement."""
+
+    state_before: BaseDamageReactState
+    state_after: BaseDamageReactState
+    selected_kind: int
+    effective_kind: int
+    raw_damage: int
+    accumulated_damage: int
+    attacker_hp_before: int
+    attacker_hp_after: int
+    defender_hp_before: int
+    defender_hp_after: int
+    wakeup_target: str | None
+    charge_consumed: bool
+    reflect_blocked_by_throwing_weapon: bool
+
+    def __post_init__(self) -> None:
+        if self.wakeup_target not in {None,"attacker","defender"}:
+            raise ValueError("wakeup_target must be attacker/defender/None")
+        if int(self.accumulated_damage) < 0:
+            raise ValueError("accumulated_damage cannot be negative")
+
+
 def base_damage_react_kind(state: BaseDamageReactState) -> int:
     """Mirror BATTLE_GetDamageReact priority."""
     if not isinstance(state,BaseDamageReactState):
@@ -113,6 +138,82 @@ def apply_base_magic_def(
     if kind == DAMAGE_REACT_VANISH:
         return replace(state,vanish=count)
     raise ValueError("common magic-defense kind must be ABSROB/REFLEC/VANISH")
+
+
+def resolve_base_combo_member_damage_react(
+    state: BaseDamageReactState,
+    *,
+    raw_damage: int,
+    attacker_hp: int,
+    attacker_max_hp: int,
+    defender_hp: int,
+    defender_max_hp: int,
+    attacker_uses_throwing_weapon: bool = False,
+) -> BaseComboMemberDamageReactResolution:
+    """Mirror BATTLE_Combo's per-member reaction/accumulation split."""
+    if not isinstance(state,BaseDamageReactState):
+        raise TypeError("state must be BaseDamageReactState")
+    raw_damage=int(raw_damage)
+    attacker_hp=int(attacker_hp)
+    attacker_max_hp=int(attacker_max_hp)
+    defender_hp=int(defender_hp)
+    defender_max_hp=int(defender_max_hp)
+    if raw_damage < 0:
+        raise ValueError("raw_damage cannot be negative")
+    if not 0 <= attacker_hp <= attacker_max_hp:
+        raise ValueError("attacker HP must be within max HP")
+    if not 0 <= defender_hp <= defender_max_hp:
+        raise ValueError("defender HP must be within max HP")
+
+    selected=base_damage_react_kind(state)
+    if raw_damage <= 0:
+        return BaseComboMemberDamageReactResolution(
+            state,state,selected,DAMAGE_REACT_NONE,0,0,
+            attacker_hp,attacker_hp,defender_hp,defender_hp,
+            None,False,False,
+        )
+
+    # Combo pre-fetches REFLEC before its throwing-weapon gate. When throwing
+    # bypasses reflection, damage is deferred to the final aggregate and the
+    # reflect charge remains, but the stale react kind still wakes attacker.
+    if selected == DAMAGE_REACT_REFLEC and bool(attacker_uses_throwing_weapon):
+        return BaseComboMemberDamageReactResolution(
+            state,state,selected,DAMAGE_REACT_NONE,raw_damage,raw_damage,
+            attacker_hp,attacker_hp,defender_hp,defender_hp,
+            "attacker",False,True,
+        )
+
+    if selected == DAMAGE_REACT_NONE:
+        return BaseComboMemberDamageReactResolution(
+            state,state,selected,DAMAGE_REACT_NONE,raw_damage,raw_damage,
+            attacker_hp,attacker_hp,defender_hp,defender_hp,
+            "defender",False,False,
+        )
+
+    immediate=resolve_base_damage_react(
+        state,
+        raw_damage=raw_damage,
+        attacker_hp=attacker_hp,
+        attacker_max_hp=attacker_max_hp,
+        defender_hp=defender_hp,
+        defender_max_hp=defender_max_hp,
+        attacker_uses_throwing_weapon=False,
+    )
+    return BaseComboMemberDamageReactResolution(
+        immediate.state_before,
+        immediate.state_after,
+        immediate.selected_kind,
+        immediate.effective_kind,
+        raw_damage,
+        0,
+        immediate.attacker_hp_before,
+        immediate.attacker_hp_after,
+        immediate.defender_hp_before,
+        immediate.defender_hp_after,
+        immediate.wakeup_target,
+        immediate.charge_consumed,
+        False,
+    )
 
 
 def resolve_base_damage_react(
