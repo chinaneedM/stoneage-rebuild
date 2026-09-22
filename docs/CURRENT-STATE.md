@@ -1,6 +1,6 @@
 # Current State
 
-Last updated: 2026-09-22
+Last updated: 2026-09-23
 
 ## Current phase
 
@@ -1556,7 +1556,8 @@ Supplemental source ledgers:
   - Arquivo.pt exact target: **0 results**;
   - Internet Archive metadata/file scan: exact `sa174hg.exe`, exact official URL, `StoneAge + 1.74a`, and `STONE AGE + 248MB` queries all return **0 target items**, with **0 exact-name file matches**;
   - Common Crawl exact/prefix probe is **INCONCLUSIVE**, not a no-hit result: all 128 requests in that bounded run failed with 503/timeouts.
-- These negative/indeterminate surfaces shift the next recovery step toward historical mirrors, physical carriers and exact-size/name secondary distribution evidence rather than further filename guessing.
+  - Wayback CDX prefix-neighborhood scan over **8** HTTP/HTTPS and www/non-www official-host prefixes for 2003–2005 completed with **0 errors** and **0 saturated prefixes**. The four `hangame.gamania.co.jp/stoneage/` variants return **0 indexed rows**; the four `hangame.co.jp/publish/sa/` variants each canonicalize to the same **1,046** indexed rows / **98** relevant launch-or-binary rows, but contain **0 indexed `sa174hg.exe` rows**. This is a bounded archive-index result only and does **not** disprove an unindexed original payload or historical mirror.
+- These negative/indeterminate surfaces now close the useful official-host Wayback index neighborhood for the known filename. The next recovery step should prioritize historical mirrors, physical carriers and exact-size/name secondary distribution evidence rather than repeating official-host filename guesses.
 - Source registration: `SRC-JP-2003-HANGAME-174A-INSTALL-CHAIN-01`.
 - Validation:
   - exact-install workflow run **35730448438** — success;
@@ -1565,6 +1566,7 @@ Supplemental source ledgers:
   - exact-payload TimeMap fallback run **35734544741** — success, exact `sa174hg.exe` TimeMap rows = 0;
   - high-precision Internet Archive metadata run **35734351311** — success, no exact Japan-1.74a target item/file match;
   - Common Crawl run **35733694437** — workflow success but all 128 index requests failed, therefore evidence status remains INCONCLUSIVE on that backend.
+  - Wayback prefix-neighborhood run **35781109170** — success; 8/8 prefixes completed, 0 errors, 0 saturation, 0 indexed `sa174hg.exe` rows. Derived report: `research/recovered/STONEAGE-JAPAN-174A-WAYBACK-PREFIX-R1.txt`.
 
 ## Japanese 2004 retail-package carrier target — 2026-09-22
 
@@ -1588,7 +1590,7 @@ Supplemental source ledgers:
 
 1. **Populate the now-wired Taiwan-v1 cache → collision-profile → hit-map path when a provenance-safe early field-map corpus is recovered.** The strict DAT plane parser, derived collision-profile loader and composition adapter are already closed; until authentic bytes exist, do not substitute the mixed 2.5/SACH map corpus or fabricate absent retail-disc field maps.
 2. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
-3. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999 and Korean 1.74 remain high-value provenance targets; for Japanese 1.74a, validate and recover the now-exact **248MB** official launch payload `http://hangame.gamania.co.jp/stoneage/sa174hg.exe`, using both filename and size as search anchors while keeping payload bytes/hashes separate from the already-proven launch-page metadata.
+3. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999 and Korean 1.74 remain high-value provenance targets. For Japanese 1.74a, the exact official URL plus official-host Wayback exact/prefix surfaces are now bounded without recovering the payload; continue recovery through historical mirrors, secondary distribution evidence and physical carriers keyed by the exact filename `sa174hg.exe` plus the **248MB** launch-page size anchor, while keeping any future payload bytes/hashes separate from the already-proven launch-page metadata.
 4. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen and keep historical reconstruction separate from redesign.** Never repair missing references by inventing data; later optimization/automation remains an explicit DESIGN layer.
 
 
