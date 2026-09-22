@@ -523,6 +523,8 @@ class BattleRoundModelTests(unittest.TestCase):
             attack_rolls={
                 "player":OrdinaryAttackRolls(
                     dodge_roll_1_10000=1,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
                 )
             },
             guardian_registrations_by_defender_slot={
