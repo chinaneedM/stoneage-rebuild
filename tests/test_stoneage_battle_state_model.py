@@ -3,6 +3,7 @@ from dataclasses import replace
 
 from tools.stoneage_battle_damage_react_model import BaseDamageReactState
 from tools.stoneage_battle_guardian_model import GuardianRegistration
+from tools.stoneage_battle_ride_damage_model import RidePetRuntime
 
 from tools.stoneage_battle_core_model import (
     BattleCaptureInputs,
@@ -682,6 +683,58 @@ class PersistentBattleStateTests(unittest.TestCase):
                 defense_profile="newpower_70pct",
             )
 
+    def test_ride_runtime_is_separate_from_active_entry_maps_and_validates_identity(self):
+        player=participant("player","player","player")
+        ride=participant(
+            "pet:0","player","pet",
+            hp=55,max_hp=80,defense=33,source_pet_slot=0,
+        )
+        enemy=participant("enemy","enemy","enemy")
+        state=begin_persistent_battle(
+            session(player,(enemy,),ride_pet=ride),
+            slots={"player":0,"enemy":10},
+        )
+        self.assertEqual(state.ride_pet_runtime.hp,55)
+        self.assertEqual(state.ride_pet_runtime.max_hp,80)
+        self.assertEqual(state.ride_pet_runtime.defense_power,33)
+        self.assertNotIn("pet:0",state.hp_by_participant_id)
+        self.assertNotIn("pet:0",state.slots)
+        self.assertNotIn(
+            "pet:0",state.base_status_runtime_by_participant_id
+        )
+        self.assertNotIn(
+            "pet:0",state.base_damage_react_state_by_participant_id
+        )
+
+        with self.assertRaisesRegex(ValueError,"pet identity drift"):
+            begin_persistent_battle(
+                session(player,(enemy,),ride_pet=ride),
+                slots={"player":0,"enemy":10},
+                ride_pet_runtime=RidePetRuntime(
+                    rider_id="player",
+                    pet_id="pet:9",
+                    hp=55,
+                    max_hp=80,
+                    defense_power=33,
+                ),
+            )
+
+    def test_no_ride_session_rejects_synthetic_ride_runtime(self):
+        player=participant("player","player","player")
+        enemy=participant("enemy","enemy","enemy")
+        with self.assertRaisesRegex(ValueError,"without BattleSession.ride_pet"):
+            begin_persistent_battle(
+                session(player,(enemy,)),
+                slots={"player":0,"enemy":10},
+                ride_pet_runtime=RidePetRuntime(
+                    rider_id="player",
+                    pet_id="pet:0",
+                    hp=50,
+                    max_hp=100,
+                    defense_power=30,
+                ),
+            )
+
     def test_player_kill_also_awards_exp_to_nonparticipant_ride_pet(self):
         player = participant(
             "player", "player", "player",
@@ -704,6 +757,12 @@ class PersistentBattleStateTests(unittest.TestCase):
             {"player": 0, "pet:0": 0},
         )
         self.assertNotIn("pet:0", state.hp_by_participant_id)
+        self.assertIsNotNone(state.ride_pet_runtime)
+        self.assertEqual(state.ride_pet_runtime.rider_id,"player")
+        self.assertEqual(state.ride_pet_runtime.pet_id,"pet:0")
+        self.assertEqual(state.ride_pet_runtime.hp,ride.hp)
+        self.assertTrue(state.ride_pet_runtime.mounted)
+        self.assertFalse(state.ride_pet_runtime.petfall)
 
         result = resolve_persistent_ordinary_round(
             state,

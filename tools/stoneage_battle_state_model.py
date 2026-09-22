@@ -55,6 +55,7 @@ from tools.stoneage_battle_round_model import (
 )
 from tools.stoneage_battle_damage_react_model import BaseDamageReactState
 from tools.stoneage_battle_guardian_model import GuardianRegistration
+from tools.stoneage_battle_ride_damage_model import RidePetRuntime
 from tools.stoneage_battle_status_model import (
     BaseBattleStatusRuntime,
     BaseStatusApplicationResolution,
@@ -95,6 +96,7 @@ class PersistentBattleState:
     base_damage_react_state_by_participant_id: Mapping[
         str,BaseDamageReactState
     ] | None = None
+    ride_pet_runtime: RidePetRuntime | None = None
 
     def __post_init__(self) -> None:
         if self.phase not in {ACTIVE, FINISHED}:
@@ -188,6 +190,45 @@ class PersistentBattleState:
                 "base_damage_react_state_by_participant_id",
                 _freeze_mapping(normalized_react),
             )
+
+        ride=self.session.ride_pet
+        rider_id=str(self.session.player.participant_id)
+        if ride is None:
+            if self.ride_pet_runtime is not None:
+                raise ValueError(
+                    "ride runtime exists without BattleSession.ride_pet"
+                )
+        else:
+            if ride.side != "player" or ride.kind != "pet":
+                raise ValueError(
+                    "ride runtime requires player-side pet provenance"
+                )
+            if self.ride_pet_runtime is None:
+                object.__setattr__(
+                    self,
+                    "ride_pet_runtime",
+                    RidePetRuntime(
+                        rider_id=rider_id,
+                        pet_id=str(ride.participant_id),
+                        hp=max(0,int(ride.hp)),
+                        max_hp=int(ride.max_hp),
+                        defense_power=int(ride.defense),
+                        mounted=True,
+                        petfall=False,
+                    ),
+                )
+            else:
+                runtime=self.ride_pet_runtime
+                if not isinstance(runtime,RidePetRuntime):
+                    raise TypeError(
+                        "ride_pet_runtime must be RidePetRuntime or null"
+                    )
+                if runtime.rider_id != rider_id:
+                    raise ValueError("ride runtime rider identity drift")
+                if runtime.pet_id != str(ride.participant_id):
+                    raise ValueError("ride runtime pet identity drift")
+                if int(runtime.max_hp) != int(ride.max_hp):
+                    raise ValueError("ride runtime max-HP provenance drift")
 
         expected_escape_ids={            pid for pid,participant in participants.items()
             if participant.kind != "pet"
@@ -338,6 +379,7 @@ def begin_persistent_battle(
     base_damage_react_state_by_participant_id: Mapping[
         str,BaseDamageReactState
     ] | None = None,
+    ride_pet_runtime: RidePetRuntime | None = None,
 ) -> PersistentBattleState:
     participants = _participant_map(session)
     normalized_slots = {str(pid): int(slot) for pid, slot in slots.items()}
@@ -393,6 +435,7 @@ def begin_persistent_battle(
         base_damage_react_state_by_participant_id=(
             base_damage_react_state_by_participant_id
         ),
+        ride_pet_runtime=ride_pet_runtime,
     )
     return _with_termination(state)
 
@@ -647,6 +690,7 @@ def resolve_persistent_capture_transition(
             )
             if pid != target_id
         }),
+        ride_pet_runtime=state.ride_pet_runtime,
     )
     next_state=_with_termination(next_state)
     return PersistentCaptureResult(
@@ -1119,6 +1163,7 @@ def resolve_persistent_ordinary_round(
         base_damage_react_state_by_participant_id=_freeze_mapping(
             next_damage_react
         ),
+        ride_pet_runtime=state.ride_pet_runtime,
     )
     if player_id in escaped_ids:
         next_state=replace(

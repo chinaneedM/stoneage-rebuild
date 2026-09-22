@@ -6,6 +6,44 @@ from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
+class RidePetRuntime:
+    """Battle-local state for a non-entry pet currently selected as CHAR_RIDEPET."""
+
+    rider_id: str
+    pet_id: str
+    hp: int
+    max_hp: int
+    defense_power: int
+    mounted: bool = True
+    petfall: bool = False
+
+    def __post_init__(self) -> None:
+        rider_id=str(self.rider_id)
+        pet_id=str(self.pet_id)
+        if not rider_id:
+            raise ValueError("ride runtime requires rider_id")
+        if not pet_id:
+            raise ValueError("ride runtime requires pet_id")
+        hp=int(self.hp)
+        max_hp=int(self.max_hp)
+        if max_hp < 0:
+            raise ValueError("ride-pet max_hp cannot be negative")
+        if not 0 <= hp <= max_hp:
+            raise ValueError("ride-pet hp must be within max_hp")
+        mounted=bool(self.mounted)
+        petfall=bool(self.petfall)
+        if mounted and petfall:
+            raise ValueError("mounted ride pet cannot already carry PETFALL")
+        object.__setattr__(self,"rider_id",rider_id)
+        object.__setattr__(self,"pet_id",pet_id)
+        object.__setattr__(self,"hp",hp)
+        object.__setattr__(self,"max_hp",max_hp)
+        object.__setattr__(self,"defense_power",int(self.defense_power))
+        object.__setattr__(self,"mounted",mounted)
+        object.__setattr__(self,"petfall",petfall)
+
+
+@dataclass(frozen=True)
 class RideDamageSplit:
     raw_damage: int
     rider_amount: int
