@@ -1,0 +1,39 @@
+name: Probe Korea 1.74 exact download paths
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_korea174_exact_download_probe.py
+      - tests/test_stoneage_korea174_exact_download_probe.py
+      - .github/workflows/probe-stoneage-korea174-exact-download.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-korea174-exact-download
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run exact-path probe unit tests
+        run: python3 -m unittest tests.test_stoneage_korea174_exact_download_probe -v
+      - name: Trace exact official paths
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_korea174_exact_download_probe \
+            > research/recovered/STONEAGE-KOREA-174-EXACT-DOWNLOAD-PATH-R1.txt
+      - name: Commit derived metadata report only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-KOREA-174-EXACT-DOWNLOAD-PATH-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: trace Korea 1.74 exact download paths'
+          git pull --rebase origin main
+          git push
