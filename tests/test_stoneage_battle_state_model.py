@@ -810,7 +810,7 @@ class PersistentBattleStateTests(unittest.TestCase):
     def test_player_death_finishes_even_if_allied_pet_is_alive(self):
         player = participant(
             "player", "player", "player",
-            hp=30, defense=20, quick=40,
+            hp=30, max_hp=100, defense=20, quick=40,
         )
         pet = participant("pet:0", "player", "pet", hp=100, quick=30)
         enemy = participant(
