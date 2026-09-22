@@ -593,6 +593,103 @@ class PersistentBattleStateTests(unittest.TestCase):
             0,
         )
 
+    def test_ordinary_ultimate_player_death_uses_ultimate_penalties(self):
+        player=participant(
+            "player","player","player",
+            hp=30,max_hp=30,defense=20,quick=40,level=20,
+        )
+        pet=participant(
+            "pet:0","player","pet",
+            hp=100,quick=30,level=20,source_pet_slot=0,
+        )
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=100,attack=200,defense=20,quick=100,level=20,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,),pets=(pet,)),
+            slots={"player":0,"pet:0":1,"enemy":10},
+        )
+        self.assertEqual(
+            dict(state.ultimate_overkill_by_participant_id),
+            {"player":0,"pet:0":0,"enemy":0},
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet:0":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            initiative_random_subtracts={
+                "player":0,"pet:0":0,"enemy":0,
+            },
+            profiles={
+                "player":profile(),"pet:0":profile(),"enemy":profile(),
+            },
+            attack_rolls={
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        attack=[
+            event for event in result.round.events
+            if event.participant_id=="enemy"
+        ][0]
+        self.assertEqual(attack.ultimate_kind,2)
+        self.assertEqual(result.after.pending_player_charm_delta,-4)
+        self.assertEqual(
+            result.after.pending_pet_variable_ai_by_participant_id[
+                "pet:0"
+            ],
+            -1000,
+        )
+        self.assertEqual(result.after.phase,FINISHED)
+        self.assertEqual(result.after.result,ENEMY_WIN)
+
+    def test_ordinary_abio_death_forces_kind_one_without_extra_rng(self):
+        player=participant(
+            "player","player","player",
+            hp=100,attack=80,quick=100,level=20,
+        )
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=20,max_hp=100,defense=70,quick=20,
+            level=20,reward_exp=100,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            battle_abio_by_participant_id={"enemy":True},
+            defense_profile="newpower_70pct",
+        )
+        attack=result.round.events[0]
+        self.assertEqual(attack.target_hp_after,0)
+        self.assertEqual(attack.ultimate_kind,1)
+        self.assertFalse(
+            attack.death_ultimate_resolution.critical_roll_consumed
+        )
+
     def test_player_death_finishes_even_if_allied_pet_is_alive(self):
         player = participant("player", "player", "player", hp=30, quick=40)
         pet = participant("pet:0", "player", "pet", hp=100, quick=30)

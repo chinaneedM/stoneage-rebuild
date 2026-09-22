@@ -36,6 +36,8 @@ from tools.stoneage_battle_core_model import (
     resolve_battle_capture_attempt,
     BattleNormalDeathInputs,
     resolve_battle_normal_death_penalty,
+    BattleUltimateDeathInputs,
+    resolve_battle_ultimate_death_penalty,
 )
 from tools.stoneage_battle_round_model import (
     BattleCombatProfile,
@@ -97,6 +99,7 @@ class PersistentBattleState:
         str,BaseDamageReactState
     ] | None = None
     ride_pet_runtime: RidePetRuntime | None = None
+    ultimate_overkill_by_participant_id: Mapping[str,int] | None = None
 
     def __post_init__(self) -> None:
         if self.phase not in {ACTIVE, FINISHED}:
@@ -261,6 +264,41 @@ class PersistentBattleState:
                 "escape_count_by_participant_id",
                 _freeze_mapping(normalized_escape),
             )
+        expected_ultimate_ids=set(participants)
+        if self.ultimate_overkill_by_participant_id is None:
+            object.__setattr__(
+                self,
+                "ultimate_overkill_by_participant_id",
+                _freeze_mapping({
+                    pid:0 for pid in sorted(expected_ultimate_ids)
+                }),
+            )
+        else:
+            normalized_ultimate={
+                str(pid):int(value)
+                for pid,value in (
+                    self.ultimate_overkill_by_participant_id.items()
+                )
+            }
+            if set(normalized_ultimate) != expected_ultimate_ids:
+                missing=sorted(
+                    expected_ultimate_ids-set(normalized_ultimate)
+                )
+                extra=sorted(
+                    set(normalized_ultimate)-expected_ultimate_ids
+                )
+                raise ValueError(
+                    f"ultimate accumulator participants mismatch; "
+                    f"missing={missing}, extra={extra}"
+                )
+            if any(value < 0 for value in normalized_ultimate.values()):
+                raise ValueError("ultimate accumulator cannot be negative")
+            object.__setattr__(
+                self,
+                "ultimate_overkill_by_participant_id",
+                _freeze_mapping(normalized_ultimate),
+            )
+
         expected_exp_ids = set(_exp_recipient_ids(self.session))
         actual_exp_ids = {str(pid) for pid in self.pending_exp_by_participant_id}
         if actual_exp_ids != expected_exp_ids:
@@ -691,6 +729,13 @@ def resolve_persistent_capture_transition(
             if pid != target_id
         }),
         ride_pet_runtime=state.ride_pet_runtime,
+        ultimate_overkill_by_participant_id=_freeze_mapping({
+            pid:value
+            for pid,value in (
+                state.ultimate_overkill_by_participant_id.items()
+            )
+            if pid != target_id
+        }),
     )
     next_state=_with_termination(next_state)
     return PersistentCaptureResult(
@@ -780,14 +825,28 @@ def _pending_profit_after_ordinary_round(
                 default_pet_id=(
                     None if not allied else str(allied[0].participant_id)
                 )
-                penalty=resolve_battle_normal_death_penalty(
-                    BattleNormalDeathInputs(
-                        victim_kind="player",
-                        victim_level=int(target.level),
-                        no_risk=bool(no_risk),
-                        default_pet_present=(default_pet_id is not None),
+                if int(event.ultimate_kind) > 0:
+                    penalty=resolve_battle_ultimate_death_penalty(
+                        BattleUltimateDeathInputs(
+                            victim_kind="player",
+                            victim_level=int(target.level),
+                            no_risk=bool(no_risk),
+                            default_pet_present=(
+                                default_pet_id is not None
+                            ),
+                        )
                     )
-                )
+                else:
+                    penalty=resolve_battle_normal_death_penalty(
+                        BattleNormalDeathInputs(
+                            victim_kind="player",
+                            victim_level=int(target.level),
+                            no_risk=bool(no_risk),
+                            default_pet_present=(
+                                default_pet_id is not None
+                            ),
+                        )
+                    )
                 pending_player_charm_delta+=int(
                     penalty.player_charm_delta
                 )
@@ -800,14 +859,28 @@ def _pending_profit_after_ordinary_round(
                         penalty.default_pet_variable_ai_delta
                     )
             else:
-                penalty=resolve_battle_normal_death_penalty(
-                    BattleNormalDeathInputs(
-                        victim_kind="pet",
-                        victim_level=int(target.level),
-                        owner_level=int(state.session.player.level),
-                        no_risk=bool(no_risk),
+                if int(event.ultimate_kind) > 0:
+                    penalty=resolve_battle_ultimate_death_penalty(
+                        BattleUltimateDeathInputs(
+                            victim_kind="pet",
+                            victim_level=int(target.level),
+                            owner_level=int(
+                                state.session.player.level
+                            ),
+                            no_risk=bool(no_risk),
+                        )
                     )
-                )
+                else:
+                    penalty=resolve_battle_normal_death_penalty(
+                        BattleNormalDeathInputs(
+                            victim_kind="pet",
+                            victim_level=int(target.level),
+                            owner_level=int(
+                                state.session.player.level
+                            ),
+                            no_risk=bool(no_risk),
+                        )
+                    )
                 if target_id not in pending_variable_ai:
                     raise ValueError(
                         "pet-death penalty references unknown allied pet"
@@ -951,6 +1024,7 @@ def resolve_persistent_ordinary_round(
         str,Sequence[CounterAttemptRolls]
     ] | None = None,
     counter_abio_by_participant_id: Mapping[str,bool] | None = None,
+    battle_abio_by_participant_id: Mapping[str,bool] | None = None,
     combo_start_rolls_1_100: Mapping[str,int] | None = None,
     combo_rolls_by_starter_id: Mapping[
         str,ComboExecutionRolls
@@ -1042,6 +1116,12 @@ def resolve_persistent_ordinary_round(
         escape_rolls=escape_rolls,
         counter_rolls_by_attack_id=counter_rolls_by_attack_id,
         counter_abio_by_participant_id=counter_abio_by_participant_id,
+        battle_abio_by_participant_id=battle_abio_by_participant_id,
+        ultimate_overkill_by_participant_id=_freeze_mapping({
+            participant_id:
+                state.ultimate_overkill_by_participant_id[participant_id]
+            for participant_id in living_ids
+        }),
         combo_rolls_by_starter_id=combo_rolls_by_starter_id,
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
@@ -1151,12 +1231,19 @@ def resolve_persistent_ordinary_round(
     next_damage_react.update(
         dict(round_result.base_damage_react_state_by_participant_id)
     )
+    next_ultimate_overkill=dict(
+        state.ultimate_overkill_by_participant_id
+    )
+    next_ultimate_overkill.update(
+        dict(round_result.ultimate_overkill_by_participant_id)
+    )
     for pid in removed_enemy_ids:
         next_slots.pop(pid,None)
         hp.pop(pid,None)
         escape_counts.pop(pid,None)
         next_status_runtime.pop(pid,None)
         next_damage_react.pop(pid,None)
+        next_ultimate_overkill.pop(pid,None)
 
     next_state = PersistentBattleState(
         session=next_session,
@@ -1183,6 +1270,9 @@ def resolve_persistent_ordinary_round(
             next_damage_react
         ),
         ride_pet_runtime=round_result.ride_pet_runtime,
+        ultimate_overkill_by_participant_id=_freeze_mapping(
+            next_ultimate_overkill
+        ),
     )
     if player_id in escaped_ids:
         next_state=replace(
