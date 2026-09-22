@@ -134,7 +134,10 @@ The canonical research analysis for this source group is `research/clients/JSS-R
   - package front visibly carries **BOTHTEC** and DigiPark branding, not Japan System Supply branding;
   - supported OS list is Windows 98SE/Me/2000/XP, which is incompatible with treating this box as a 1999 JSS launch artifact;
   - the back shows product code `WR-04156` and barcode `4988609011565`;
-  - the package states that a game CD and two game tickets are enclosed, and the photographed disc also bears BOTHTEC/DigiPark-era branding.
+  - the package-back contents panel explicitly lists **2 game CDs**, **2 game tickets**, a manual and a plush strap;
+  - the publicly replayable disc photograph independently carries `STONEAGE`, `CD-ROM`, Windows 98SE/Me/2000/XP, DigiPark, BOTHTEC and **`WR-04156` on the disc face itself**;
+  - no reliable Disc 1/Disc 2 ordinal, matrix/mastering string or IFPI code is readable in the current photograph, so the two included CDs must not be assumed byte-identical or content-identical;
+  - the adjacent photographed 30-day ticket contains an activation credential; that credential is intentionally not transcribed into the repository because it is irrelevant to media identification.
 - Source-quality warning:
   - the community article describes its two Japanese packages as JSS-issued packages, but the second package is visibly a **Bothtec/DigiPark** product.
   - Therefore the article's captions cannot be treated as authoritative provenance; each photographed artifact must be classified from its own visible evidence.

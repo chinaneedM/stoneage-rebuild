@@ -97,7 +97,11 @@ Visible second-package evidence shows:
 - DigiPark branding;
 - Windows 98SE/Me/2000/XP support;
 - product code `WR-04156`;
-- barcode `4988609011565`.
+- barcode `4988609011565`;
+- a package-back contents panel listing **2 game CDs**, **2 game tickets**, a manual and a plush strap;
+- a separately photographed game-disc face carrying `STONEAGE`, `CD-ROM`, DigiPark, BOTHTEC, the same Windows support line and **`WR-04156`**.
+
+The current disc photograph does **not** expose a reliable Disc 1/Disc 2 ordinal, readable matrix/mastering text or IFPI code. The two packaged game CDs therefore remain two physical media objects whose byte/content relationship is OPEN rather than inferred.
 
 Therefore that second package belongs to the later Japanese revival lineage and must **not** be used to infer 1999 JSS packaging, disc count, CDK format or client state.
 

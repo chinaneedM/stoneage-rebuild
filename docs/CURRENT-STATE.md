@@ -1571,7 +1571,8 @@ Supplemental source ledgers:
   - normalized visible-text SHA-256 `4a1187b9aa876442e99828437836a5dec3e0b7185f6785c4faaf6b66f1802f39`.
 - The page also recovers the period retailer target **Item City product_id=423** and package-art asset `/image/package/illust_01.jpg`.
 - This package is now a uniquely searchable high-value **near-descendant physical carrier**. It may provide a complete Japanese client and therefore a controlled diff target against Taiwan v1.0 and the 2003-12 1.74a install chain.
-- Evidence boundary: the May/June 2004 package must **not** be treated as byte-identical to the December 2003 1.74a client without disc-image comparison. The recovered official page identifies the product, not either CD's byte content.
+- The older collector-photo chain is now re-openable through its article mirror and adds disc-level corroboration: the package back explicitly lists **2 game CDs + 2 game tickets**, while one photographed game-disc face itself carries `WR-04156`, `CD-ROM`, Windows 98SE/Me/2000/XP, DigiPark and BOTHTEC. No readable disc ordinal, matrix/mastering string or IFPI code is available from that image.
+- Evidence boundary: the May/June 2004 package must **not** be treated as byte-identical to the December 2003 1.74a client without disc-image comparison. The two packaged CDs must likewise not be assumed byte-identical merely because one photographed disc shares the package model code.
 - Derived report: `research/recovered/STONEAGE-JAPAN-2004-PACKAGE-PROBE-R1.txt`.
 - Source registrations: `SRC-JP-2004-4GAMER-RETAIL-PACKAGE-01` and `SRC-JP-2004-STONEAGE-PACKAGE-PAGE-01`.
 - Validation: package-page run **35735602501** — success.
