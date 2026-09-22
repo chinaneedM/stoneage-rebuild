@@ -1054,6 +1054,147 @@ class PersistentBattleStateTests(unittest.TestCase):
             ("player","pet:0"),
         )
 
+    def test_enemy_combo_ultimate_player_death_uses_ultimate_penalties(self):
+        player=participant(
+            "player","player","player",
+            hp=30,max_hp=30,defense=20,quick=20,level=20,
+        )
+        pet=participant(
+            "pet:0","player","pet",
+            hp=100,quick=10,level=20,source_pet_slot=0,
+        )
+        enemy1=participant(
+            "enemy:1","enemy","enemy",
+            hp=100,attack=100,defense=70,quick=100,level=20,
+        )
+        enemy2=participant(
+            "enemy:2","enemy","enemy",
+            hp=100,attack=100,defense=70,quick=90,level=20,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy1,enemy2),pets=(pet,)),
+            slots={
+                "player":0,
+                "pet:0":1,
+                "enemy:1":10,
+                "enemy:2":11,
+            },
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet:0":BattleCommand(BATTLE_COM_WAIT),
+                "enemy:1":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+                "enemy:2":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            initiative_random_subtracts={
+                "player":0,
+                "pet:0":0,
+                "enemy:1":0,
+                "enemy:2":0,
+            },
+            profiles={
+                "player":profile(),
+                "pet:0":profile(),
+                "enemy:1":profile(),
+                "enemy:2":profile(),
+            },
+            attack_rolls={},
+            combo_start_rolls_1_100={"enemy:1":1},
+            combo_rolls_by_starter_id={
+                "enemy:1":ComboExecutionRolls((
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    ),
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    ),
+                ))
+            },
+            defense_profile="newpower_70pct",
+        )
+        combo_death=[
+            event for event in result.round.events
+            if event.is_combo and event.target_hp_after==0
+        ][0]
+        self.assertEqual(combo_death.ultimate_kind,2)
+        self.assertEqual(result.after.pending_player_charm_delta,-4)
+        self.assertEqual(
+            result.after.pending_pet_variable_ai_by_participant_id[
+                "pet:0"
+            ],
+            -1000,
+        )
+        self.assertEqual(result.after.result,ENEMY_WIN)
+
+    def test_counter_ultimate_player_death_uses_ultimate_penalty(self):
+        player=participant(
+            "player","player","player",
+            hp=10,max_hp=10,attack=60,defense=70,quick=100,level=20,
+        )
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=100,attack=80,defense=70,quick=50,level=20,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={
+                "player":BattleCombatProfile(
+                    fixed_dex=100,fixed_luck=0,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+                "enemy":BattleCombatProfile(
+                    fixed_dex=200,fixed_luck=0,
+                    earth=0,water=0,fire=0,wind=0,
+                ),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+            },
+            counter_rolls_by_attack_id={
+                "player":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=1,
+                        attack_rolls=OrdinaryAttackRolls(
+                            dodge_roll_1_10000=10000,
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                    ),
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        counter=[
+            event for event in result.round.events
+            if event.is_counter and event.participant_id=="enemy"
+        ][0]
+        self.assertEqual(counter.target_hp_after,0)
+        self.assertEqual(counter.ultimate_kind,2)
+        self.assertEqual(result.after.pending_player_charm_delta,-4)
+        self.assertEqual(result.after.result,ENEMY_WIN)
+
     def test_player_counter_kill_uses_counter_actor_for_pending_exp(self):
         player=participant(
             "player","player","player",
