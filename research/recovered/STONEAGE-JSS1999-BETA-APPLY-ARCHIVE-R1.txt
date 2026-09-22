@@ -2,17 +2,19 @@ StoneAge 1999 beta application wildcard archive probe — R1
 SCOPE|cdx-index-metadata-only|no-page-body|no-url-character-normalization
 YEAR|1999
 KNOWN|host=www.dp.gamersdream.ne.jp|tail=PO/sa_apply.html|preceding-character=OPEN
-QUERY|backend=wayback|label=dp-tail|rows=0|pattern=dp.gamersdream.ne.jp/*PO/sa_apply.html
-QUERY|backend=wayback|label=www-dp-file|rows=0|pattern=www.dp.gamersdream.ne.jp/*sa_apply.html
 QUERY|backend=wayback|label=dp-file|rows=0|pattern=dp.gamersdream.ne.jp/*sa_apply.html
 QUERY|backend=arquivo|label=www-dp-tail|rows=0|pattern=www.dp.gamersdream.ne.jp/*PO/sa_apply.html
 QUERY|backend=arquivo|label=dp-tail|rows=0|pattern=dp.gamersdream.ne.jp/*PO/sa_apply.html
 QUERY|backend=arquivo|label=www-dp-file|rows=0|pattern=www.dp.gamersdream.ne.jp/*sa_apply.html
 QUERY|backend=arquivo|label=dp-file|rows=0|pattern=dp.gamersdream.ne.jp/*sa_apply.html
-COUNT|queries_succeeded|7
-COUNT|queries_failed|3
+COUNT|queries_succeeded|5
+COUNT|queries_failed|7
 COUNT|tail_matches|0
-ERROR|backend=wayback|label=www-dp-tail|kind=TimeoutError|pattern=www.dp.gamersdream.ne.jp/*PO/sa_apply.html|message=The read operation timed out
+ERROR|backend=arquivo-host|label=dp-host|kind=URLError|pattern=dp.gamersdream.ne.jp/*|message=<urlopen error [Errno 101] Network is unreachable>
+ERROR|backend=arquivo-host|label=www-dp-host|kind=URLError|pattern=www.dp.gamersdream.ne.jp/*|message=<urlopen error [Errno 101] Network is unreachable>
+ERROR|backend=wayback|label=dp-tail|kind=TimeoutError|pattern=dp.gamersdream.ne.jp/*PO/sa_apply.html|message=The read operation timed out
+ERROR|backend=wayback|label=www-dp-file|kind=HTTPError|pattern=www.dp.gamersdream.ne.jp/*sa_apply.html|message=HTTP Error 503: Service Unavailable
+ERROR|backend=wayback|label=www-dp-tail|kind=HTTPError|pattern=www.dp.gamersdream.ne.jp/*PO/sa_apply.html|message=HTTP Error 503: Service Unavailable
 ERROR|backend=wayback-filter|label=dp-host|kind=URLError|pattern=dp.gamersdream.ne.jp/*|message=<urlopen error timed out>
-ERROR|backend=wayback-filter|label=www-dp-host|kind=URLError|pattern=www.dp.gamersdream.ne.jp/*|message=<urlopen error timed out>
-RESOLUTION|BOUNDED_NO_MATCH|ambiguous character remains OPEN
+ERROR|backend=wayback-filter|label=www-dp-host|kind=TimeoutError|pattern=www.dp.gamersdream.ne.jp/*|message=The read operation timed out
+RESOLUTION|PARTIAL_NO_MATCH|queries_succeeded=5|queries_failed=7|ambiguous character remains OPEN
