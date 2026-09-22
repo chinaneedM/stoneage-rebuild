@@ -595,10 +595,12 @@ This is the canonical ledger for historical sources. Entries should record prove
   - the retail package began sale on **2004-05-20**;
   - the package contained **two CD-ROMs carrying the game client**, two 30-day tickets, an installation/game-guide manual and an Upopo dinosaur strap;
   - the report's retailer link targets the official `http://stoneage.to/package.html` page.
-- Does not support:
+- Does not support **by itself**:
   - package JAN/model code, disc hashes/file trees or matrix identifiers;
   - byte identity with the December 2003 `1.74a` client;
   - which exact post-beta patch level was pressed onto either disc.
+- Follow-up note:
+  - the article's exact official `package.html` link has since been recovered independently; that separate official-page source closes JAN/model identity as recorded in `SRC-JP-2004-STONEAGE-PACKAGE-PAGE-01`.
 - Archaeology significance:
   - establishes a concrete original physical carrier for the same Japanese revival lineage only five months after the 1.74a beta;
   - gives the project a disc-recovery route that is independent of the missing `sa174hg.exe` web payload.

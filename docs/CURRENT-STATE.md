@@ -1564,10 +1564,17 @@ Supplemental source ledgers:
 - A contemporaneous 4Gamer report dated **2004-05-20** states that the Japanese retail package went on sale that day before the 2004-06-03 formal service launch.
 - The package is explicitly described as containing **two CD-ROMs with the game client**, two 30-day tickets, an installation/game-guide manual and an Upopo dinosaur strap.
 - The same article's retailer link resolves to the exact official path **`http://stoneage.to/package.html`**; the formal-service link resolves to `service.html`.
-- This package is a new high-value **near-descendant physical carrier**. It may provide a complete Japanese client and therefore a controlled diff target against Taiwan v1.0 and the 2003-12 1.74a install chain.
-- Evidence boundary: the May 2004 package must **not** be treated as byte-identical to the December 2003 1.74a client without disc-image comparison.
-- A dedicated bounded recovery workflow now probes the official package page for archive captures, product/JAN/model identifiers, retailer/image paths and other derived carrier metadata without committing archived HTML or proprietary client bytes.
-- Source registration: `SRC-JP-2004-4GAMER-RETAIL-PACKAGE-01`.
+- The official package page is now independently recovered at Wayback timestamp **20040604192109**. Its derived, prose-free metadata closes the physical-product identity:
+  - JAN/EAN-13: **`4988609011565`**;
+  - package/model code: **`WR-04156`**;
+  - one CD-ROM token, one Upopo token and two 30-day tokens in normalized visible text;
+  - normalized visible-text SHA-256 `4a1187b9aa876442e99828437836a5dec3e0b7185f6785c4faaf6b66f1802f39`.
+- The page also recovers the period retailer target **Item City product_id=423** and package-art asset `/image/package/illust_01.jpg`.
+- This package is now a uniquely searchable high-value **near-descendant physical carrier**. It may provide a complete Japanese client and therefore a controlled diff target against Taiwan v1.0 and the 2003-12 1.74a install chain.
+- Evidence boundary: the May/June 2004 package must **not** be treated as byte-identical to the December 2003 1.74a client without disc-image comparison. The recovered official page identifies the product, not either CD's byte content.
+- Derived report: `research/recovered/STONEAGE-JAPAN-2004-PACKAGE-PROBE-R1.txt`.
+- Source registrations: `SRC-JP-2004-4GAMER-RETAIL-PACKAGE-01` and `SRC-JP-2004-STONEAGE-PACKAGE-PAGE-01`.
+- Validation: package-page run **35735602501** — success.
 
 ## Immediate next actions
 
