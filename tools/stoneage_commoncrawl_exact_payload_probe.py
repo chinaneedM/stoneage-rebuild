@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Probe Common Crawl indexes for exact and nearby StoneAge Korean mirror URLs.
+"""Probe Common Crawl indexes for exact and nearby historical StoneAge payload URLs.
 
 Metadata only. No WARC records or payload bytes are downloaded.
 """
@@ -25,6 +25,10 @@ EXACT_TARGETS=[
     ("gametime-gw9","http://www.gametime.co.kr/data/download.asp?GW_IDX=9&GW_Name=Online"),
     ("gametime-onlstoneage","http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip"),
     ("gametime-stone-demo","http://www.gametime.co.kr/images/Online/pds/2001/02/stone_demo.exe"),
+    (
+        "japan174a-hangame-launch",
+        "http://hangame.gamania.co.jp/stoneage/sa174hg.exe",
+    ),
 ]
 
 PREFIX_TARGETS=[
@@ -34,10 +38,14 @@ PREFIX_TARGETS=[
     ("gametime-data-prefix","http://www.gametime.co.kr/data/"),
     ("gametime-online-pds-prefix","http://www.gametime.co.kr/images/Online/pds/2001/02/"),
     ("hananet-pds-prefix","http://pds.hananet.net/view.asp"),
+    (
+        "japan174a-hangame-prefix",
+        "http://hangame.gamania.co.jp/stoneage/",
+    ),
 ]
 
 RELEVANT=re.compile(
-    r"(?i)(stoneage|onlstoneage\.zip|stone_demo\.exe|sa_demo\.exe|(?:^|/)sa\.exe|stoneagebeta\.zip|"
+    r"(?i)(stoneage|sa174hg\.exe|onlstoneage\.zip|stone_demo\.exe|sa_demo\.exe|(?:^|/)sa\.exe|stoneagebeta\.zip|"
     r"20001031524596220|gw_idx=9|gw_idx=76|gw_name=online)"
 )
 
@@ -119,7 +127,7 @@ def run_job(job):
 
 
 def main():
-    print("StoneAge Common Crawl mirror-neighborhood probe — R3")
+    print("StoneAge Common Crawl mirror-neighborhood probe — R4")
     print("SCOPE|cdxj-metadata-only|no-warc-download|no-client-binary-download")
     print("METHOD|exact-targets+prefix-neighborhoods|404-means-no-index-match|bounded-concurrency=4")
     try:
