@@ -100,6 +100,7 @@ class PersistentBattleState:
     ] | None = None
     ride_pet_runtime: RidePetRuntime | None = None
     ultimate_overkill_by_participant_id: Mapping[str,int] | None = None
+    ultimate_exited_participant_ids: tuple[str,...] = ()
 
     def __post_init__(self) -> None:
         if self.phase not in {ACTIVE, FINISHED}:
@@ -122,6 +123,25 @@ class PersistentBattleState:
                     )
 
         participants = _participant_map(self.session)
+        normalized_ultimate_exits=tuple(
+            str(pid) for pid in self.ultimate_exited_participant_ids
+        )
+        if len(normalized_ultimate_exits) != len(set(normalized_ultimate_exits)):
+            raise ValueError("ultimate-exited participants cannot contain duplicates")
+        unknown_ultimate_exits=sorted(
+            set(normalized_ultimate_exits)-set(participants)
+        )
+        if unknown_ultimate_exits:
+            raise ValueError(
+                "ultimate-exited participants are not in battle session: "
+                f"{unknown_ultimate_exits}"
+            )
+        object.__setattr__(
+            self,
+            "ultimate_exited_participant_ids",
+            normalized_ultimate_exits,
+        )
+
         expected_status_ids=set(participants)
         if self.base_status_runtime_by_participant_id is None:
             object.__setattr__(
@@ -492,7 +512,10 @@ def living_non_pet_count(
         raise ValueError("side must be 0 or 1")
     participants = _participant_map(state.session)
     count = 0
+    ultimate_exited=set(state.ultimate_exited_participant_ids)
     for pid, participant in participants.items():
+        if pid in ultimate_exited:
+            continue
         slot = int(state.slots[pid])
         if (0 if slot < 10 else 1) != side:
             continue
@@ -558,10 +581,14 @@ def active_participants(
     state: PersistentBattleState,
 ) -> tuple[BattleParticipant, ...]:
     """Return living actors only, retaining original session order."""
+    ultimate_exited=set(state.ultimate_exited_participant_ids)
     return tuple(
         participant_snapshot(state, participant.participant_id)
         for participant in _session_participants(state.session)
-        if int(state.hp_by_participant_id[participant.participant_id]) > 0
+        if (
+            str(participant.participant_id) not in ultimate_exited
+            and int(state.hp_by_participant_id[participant.participant_id]) > 0
+        )
     )
 
 
@@ -736,6 +763,10 @@ def resolve_persistent_capture_transition(
             )
             if pid != target_id
         }),
+        ultimate_exited_participant_ids=tuple(
+            pid for pid in state.ultimate_exited_participant_ids
+            if pid != target_id
+        ),
     )
     next_state=_with_termination(next_state)
     return PersistentCaptureResult(
@@ -1180,6 +1211,16 @@ def resolve_persistent_ordinary_round(
         raise ValueError(f"ordinary round exited non-enemy entries: {invalid_exits}")
 
     escaped_ids={str(pid) for pid in round_result.escaped_participant_ids}
+    ultimate_exited_ids={
+        str(pid) for pid in round_result.ultimate_exited_participant_ids
+    }
+    known_ids=set(_participant_map(state.session))
+    invalid_ultimate_exits=sorted(ultimate_exited_ids-known_ids)
+    if invalid_ultimate_exits:
+        raise ValueError(
+            "ordinary round ultimate-exited unknown entries: "
+            f"{invalid_ultimate_exits}"
+        )
     player_id=str(state.session.player.participant_id)
     allied_pet_ids={
         str(pet.participant_id) for pet in state.session.allied_pets
@@ -1204,6 +1245,10 @@ def resolve_persistent_ordinary_round(
         escape_counts[pid]=int(
             event.escape_resolution.stored_escape_count_after
         )
+    # BATTLE_Exit resets the entry escape counter for every exiting non-pet.
+    for pid in ultimate_exited_ids:
+        if pid in escape_counts:
+            escape_counts[pid]=0
 
     escaped_enemy_ids=escaped_ids & enemy_ids
     removed_enemy_ids=exited_ids | escaped_enemy_ids
@@ -1237,6 +1282,11 @@ def resolve_persistent_ordinary_round(
     next_ultimate_overkill.update(
         dict(round_result.ultimate_overkill_by_participant_id)
     )
+    next_ultimate_exited=list(state.ultimate_exited_participant_ids)
+    for pid in round_result.ultimate_exited_participant_ids:
+        pid=str(pid)
+        if pid not in next_ultimate_exited:
+            next_ultimate_exited.append(pid)
     for pid in removed_enemy_ids:
         next_slots.pop(pid,None)
         hp.pop(pid,None)
@@ -1244,6 +1294,8 @@ def resolve_persistent_ordinary_round(
         next_status_runtime.pop(pid,None)
         next_damage_react.pop(pid,None)
         next_ultimate_overkill.pop(pid,None)
+        if pid in next_ultimate_exited:
+            next_ultimate_exited.remove(pid)
 
     next_state = PersistentBattleState(
         session=next_session,
@@ -1273,6 +1325,7 @@ def resolve_persistent_ordinary_round(
         ultimate_overkill_by_participant_id=_freeze_mapping(
             next_ultimate_overkill
         ),
+        ultimate_exited_participant_ids=tuple(next_ultimate_exited),
     )
     if player_id in escaped_ids:
         next_state=replace(

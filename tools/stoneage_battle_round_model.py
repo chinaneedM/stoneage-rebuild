@@ -689,6 +689,7 @@ class ResolvedOrdinaryRound:
     ] | None = None
     ride_pet_runtime: RidePetRuntime | None = None
     ultimate_overkill_by_participant_id: Mapping[str,int] | None = None
+    ultimate_exited_participant_ids: tuple[str, ...] = ()
     exited_participant_ids: tuple[str, ...] = ()
     escaped_participant_ids: tuple[str, ...] = ()
 
@@ -2280,6 +2281,107 @@ def resolve_ordinary_round(
         for entry in prepared.ordered_entries
     }
     escaped_ids: list[str] = []
+    ultimate_exited_ids: list[str] = []
+
+    def register_ultimate_exits(
+        new_events: Sequence[OrdinaryRoundEvent],
+    ) -> None:
+        """Apply immediate BATTLE_UltimateExtra/BATTLE_Exit entry effects.
+
+        Profit itself remains represented by the death event and is settled by
+        the persistent layer after the round.  Entry removal must be immediate
+        because the stable command loop calls BATTLE_AddProfit after each
+        attack/counter before later actors execute.
+        """
+        nonlocal ride_runtime,active_ride
+
+        for event in new_events:
+            if int(event.ultimate_kind) <= 0:
+                continue
+            if (
+                event.target_hp_before is None
+                or event.target_hp_after is None
+                or int(event.target_hp_before) <= 0
+                or int(event.target_hp_after) > 0
+                or event.resolved_target_slot is None
+            ):
+                continue
+
+            target_slot=int(event.resolved_target_slot)
+            if target_slot not in by_slot:
+                raise ValueError(
+                    "ultimate death resolved to an unknown battle slot"
+                )
+            target=by_slot[target_slot]
+            target_id=str(target.participant_id)
+            if target_id in ultimate_exited_ids:
+                continue
+
+            exited_slots.add(target_slot)
+            ultimate_exited_ids.append(target_id)
+
+            if target.kind != "player":
+                continue
+
+            # BATTLE_UltimateExtra(player) first calls
+            # BATTLE_PetDefaultExit(), then BATTLE_Exit(player).  The current
+            # single-player battle session has no independent DEFAULTPET
+            # selector, so at most one active allied pet can be projected
+            # without inventing ownership/selection.
+            active_allied=[
+                (other_slot,other)
+                for other_slot,other in by_slot.items()
+                if (
+                    other.side==target.side
+                    and other.kind=="pet"
+                    and str(other.participant_id)
+                    not in ultimate_exited_ids
+                    and other_slot not in exited_slots
+                )
+            ]
+            if len(active_allied) > 1:
+                raise ValueError(
+                    "player ultimate exit requires a unique active/default pet"
+                )
+            if active_allied:
+                pet_slot,pet=active_allied[0]
+                exited_slots.add(int(pet_slot))
+                ultimate_exited_ids.append(str(pet.participant_id))
+
+            # AddProfit marks ISDIE before UltimateExtra. BATTLE_Exit(player)
+            # clears ISDIE and restores the dead player to HP=1.
+            hp_by_slot[target_slot]=1
+            hp_by_id[target_id]=1
+
+            # The player BATTLE_Exit path clears base battle statuses for the
+            # player and every carried pet and restores dead carried pets to 1.
+            status_runtime[target_id]=BaseBattleStatusRuntime(
+                work_quick=int(target.quick)
+            )
+            for other_slot,other in by_slot.items():
+                if other.side!=target.side or other.kind!="pet":
+                    continue
+                other_id=str(other.participant_id)
+                if int(hp_by_slot.get(other_slot,0)) <= 0:
+                    hp_by_slot[other_slot]=1
+                    hp_by_id[other_id]=1
+                status_runtime[other_id]=BaseBattleStatusRuntime(
+                    work_quick=int(other.quick)
+                )
+
+            # BATTLE_Exit clears WORKPETFALL after converting the ride state
+            # to unmounted.  No fall flag is allowed to leak past exit.
+            if (
+                ride_runtime is not None
+                and str(ride_runtime.rider_id)==target_id
+                and ride_runtime.petfall
+            ):
+                ride_runtime=replace(
+                    ride_runtime,
+                    mounted=False,
+                    petfall=False,
+                )
+                active_ride=False
 
     def append_counter_chain(
         main_actor_id: str,
@@ -2288,28 +2390,28 @@ def resolve_ordinary_round(
     ) -> None:
         if normalized_counter_rolls is None:
             return
-        events.extend(
-            _resolve_counter_chain(
-                initial_attacker_slot=int(main_actor_slot),
-                initial_defender_slot=int(target_slot),
-                by_slot=by_slot,
-                hp_by_slot=hp_by_slot,
-                hp_by_id=hp_by_id,
-                profiles=profiles,
-                setup_effects_by_participant_id=setup_effects,
-                status_runtime_by_participant_id=status_runtime,
-                command_by_slot=command_by_slot,
-                action_value_by_slot=action_value_by_slot,
-                counter_rolls=normalized_counter_rolls.get(
-                    str(main_actor_id),()
-                ),
-                counter_abio_by_participant_id=normalized_counter_abio,
-                ultimate_overkill_by_participant_id=ultimate_overkill,
-                defense_profile=defense_profile,
-                field_attr=field_attr,
-                field_power=field_power,
-            )
+        counter_events=_resolve_counter_chain(
+            initial_attacker_slot=int(main_actor_slot),
+            initial_defender_slot=int(target_slot),
+            by_slot=by_slot,
+            hp_by_slot=hp_by_slot,
+            hp_by_id=hp_by_id,
+            profiles=profiles,
+            setup_effects_by_participant_id=setup_effects,
+            status_runtime_by_participant_id=status_runtime,
+            command_by_slot=command_by_slot,
+            action_value_by_slot=action_value_by_slot,
+            counter_rolls=normalized_counter_rolls.get(
+                str(main_actor_id),()
+            ),
+            counter_abio_by_participant_id=normalized_counter_abio,
+            ultimate_overkill_by_participant_id=ultimate_overkill,
+            defense_profile=defense_profile,
+            field_attr=field_attr,
+            field_power=field_power,
         )
+        events.extend(counter_events)
+        register_ultimate_exits(counter_events)
 
     for entry in prepared.ordered_entries:
         participant = entry.participant
@@ -2860,6 +2962,7 @@ def resolve_ordinary_round(
                 battle_abio_by_participant_id=battle_abio,
             )
             events.extend(combo_events)
+            register_ultimate_exits(combo_events)
             active_ride=bool(
                 ride_runtime is not None and ride_runtime.mounted
             )
@@ -3445,6 +3548,7 @@ def resolve_ordinary_round(
                 ultimate_kind=int(ultimate_kind),
             )
         )
+        register_ultimate_exits((events[-1],))
         # BATTLE_Attack forces continuation FALSE whenever Guardian>=0.
         if (
             not guardian_redirected
@@ -3477,6 +3581,7 @@ def resolve_ordinary_round(
         ultimate_overkill_by_participant_id=MappingProxyType(
             dict(ultimate_overkill)
         ),
+        ultimate_exited_participant_ids=tuple(ultimate_exited_ids),
         exited_participant_ids=tuple(exited_ids),
         escaped_participant_ids=tuple(escaped_ids),
     )
