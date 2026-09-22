@@ -83,5 +83,34 @@ wake the target.
 - tools/stoneage_battle_status_model.py
 - tests/test_stoneage_battle_status_model.py
 
-The current seam is pure/deterministic. Integration into persistent round state
-is the next status step; no later status family is implicitly enabled.
+## Ordinary and persistent battle integration
+
+The base status runtime is now connected to the ordinary and persistent battle
+layers. A living actor's status tick executes when that sorted actor reaches
+its turn. The resulting HP/status/work-QUICK state is written back into
+`PersistentBattleState` for the next round.
+
+The integration preserves several source-order details:
+
+- a one-count paralysis/sleep/stone can expire during the tick but the command
+  it already cleared stays suppressed for that turn;
+- a still-active confusion entry can rewrite that command later in the same
+  status loop;
+- positive damage can wake a sleeping actor before that actor's own turn, so
+  its original submitted command can still execute;
+- stone is projected into the ordinary physical-defense path;
+- dead allied entries remain in persistent status storage even though the next
+  round's executable entry list contains living actors only.
+
+Counter/combo execution with active base statuses is intentionally rejected by
+the current API and remains a separate source-recovery seam rather than an
+implicit composition.
+
+Validation:
+
+- pure status model: commit `badeba6934d07a9c0605bdac13fd8b32b31501c1`, battle-core run **35671000903**;
+- integrated effective state: commit `9c79098637943d8101a612e8e5ee80de6b694656`, battle-core **35671549996** and gameplay **35671550039**.
+
+No later status family is implicitly enabled. The next status milestone is to
+recover the ordinary status-application/resistance paths that create these
+base counters.

@@ -99,8 +99,9 @@ If the submitted target is no longer valid,
 The deterministic reconstruction therefore requires an explicit
 `retarget_roll` only when the original target has become invalid.
 
-Same-side attacks are outside this first status-free seam because confusion,
-team-attack prevention and related branches are intentionally excluded.
+Same-side ordinary attacks remain rejected unless the current actor's
+source-shaped confusion tick explicitly rewrote the target for that turn.
+That provenance is carried per actor and is never inherited by a later entry.
 
 ## 5. Dodge and critical order
 
@@ -223,9 +224,11 @@ hp = max(0, hp - damage)
 
 before later reaction/ultimate systems.
 
-R1 therefore applies only direct target HP subtraction and intentionally
-excludes reflect, absorb, ride-pet sharing, knock-away/ultimate state and
-wake-up/status side effects.
+The original status-free R1 applies direct target HP subtraction. The current
+base-status extension additionally applies stone's defense doubling and the
+stable positive-damage sleep wake-up / damage-count mutation when an explicit
+base-status runtime is present. Reflect, absorb, vanish, guardian, ride-pet
+sharing and knock-away/ultimate state remain outside this seam.
 
 ## 11. Explicit combat profile boundary
 
@@ -298,28 +301,60 @@ original main attacker.
 The extension still excludes guardian interception, damage reactions,
 abnormal-status effects and later special counter modifiers.
 
+## Combo formation and execution extension — 2026-09-22
+
+The stable base combo seam is now reconstructed through formation, status-free
+damage execution and existing reward ownership.
+
+- Formation runs after action-value sorting.
+- Base starter chance is `RAND(1,100) <= 20` for enemies and `<= 50` for non-enemies.
+- Only contiguous ATTACK entries with the same side and target, movable state and non-throwing weapons join.
+- `BATTLE_AttackSeq(..., BATTLE_COM_COMBO)` skips dodge but retains critical/guard/damage handling.
+- Each member contributes at least 1 damage after AttackSeq; damage is accumulated and target HP is mutated only when the final member applies the total.
+- A group reduced to one viable member falls back to ordinary ATTACK through the recovered `ComboCheck2()` behavior.
+- In both pinned descendants `_Item_ReLifeAct` is enabled and combo dispatch passes the complete attack list to `BATTLE_AddProfit()`. The persistent model therefore sends that same full list into the already-closed EXP/loyalty/drop allocation seam rather than inventing a combo-specific reward rule.
+
+Early-JSS confirmation of that later-gated compile path remains a provenance question.
+
+Validated state: commit `1bcbf15a07652f194d78b20c29a59a452f6b00cf`; battle-core run **35670646011** and gameplay run **35670645876** succeeded.
+
+## Common base-status integration — 2026-09-22
+
+The ordinary and persistent battle layers now consume the common six-status runtime recovered in `STONEAGE-BATTLE-STATUS-CORE-R1.md`.
+
+- status processing occurs when the sorted actor reaches its turn;
+- paralysis/sleep/stone can clear the current command before counters decrement;
+- poison decrements first and, while still active, applies the recovered non-lethal `Compute_Down()` HP loss;
+- confusion can rewrite the current command/target with explicit RNG, including same-side targets;
+- stone doubles the supported defense profile during ordinary physical resolution;
+- positive direct damage clears sleep immediately and increments the damage counter;
+- status counters and work QUICK persist across rounds; dead allied entries remain in persistent status state even when omitted from the next active-entry projection.
+
+Base-status interaction with counter/combo is deliberately rejected for now instead of being guessed.
+
+Validated effective state: commit `9c79098637943d8101a612e8e5ee80de6b694656`; battle-core run **35671549996** and gameplay run **35671550039** succeeded.
+
 ## Deliberately excluded from R1
 
 - automatic enemy command/AI selection;
 - counter variants that require guardian/reaction/status or later special-command extensions;
-- combo/multi-hit rewriting;
+- combo variants that require guardian/reaction/status/ride-pet or later item bonuses;
 - guardian interception;
-- bow and boomerang behavior;
+- bow and boomerang specialized behavior;
 - ride-pet damage sharing;
 - reflect/absorb/vanish and other reaction systems;
-- abnormal statuses/confusion/team attacks;
+- later macro-gated status families and base-status interaction with counter/combo;
 - pet/profession skills;
-- item/magic actions;
-- capture and escape resolution;
-- battle termination, victory/defeat settlement;
-- EXP, drops and post-battle recovery.
+- item/magic actions and their status-application hooks;
+- exact JSS-1999 provenance for descendant-only compile switches.
 
 ## Consequence
 
-The project now has a deterministic, in-process first-round execution layer:
-encounters can produce concrete enemies, a battle session can receive explicit
-commands and random results, and ordinary attacks can resolve through the
-historically recovered ordering and damage chain into concrete HP changes.
+The project now has a deterministic in-process ordinary/persistent battle
+execution layer covering attack/guard/capture/escape, status-free counter and
+combo, common base-status timing, concrete HP mutation and the existing
+source-shaped EXP/drop/death/return seams.
 
-The next battle milestone can therefore focus on persistent multi-round battle
-state and termination boundaries instead of re-deriving first-hit arithmetic.
+The next battle milestone is status **application/acquisition** and then the
+explicit interaction seams between status, counter/combo, guardian and damage
+reactions; it is no longer persistent-state scaffolding.

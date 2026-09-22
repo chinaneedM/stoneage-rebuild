@@ -1,6 +1,6 @@
 # Current State
 
-Last updated: 2026-09-19
+Last updated: 2026-09-22
 
 ## Current phase
 
@@ -1440,9 +1440,10 @@ Supplemental source ledgers:
   - exact JSS-1999 choice of level-threshold regime/table;
   - maximum-level and pet-limit-level behavior;
   - complete visible pet AI/loyalty compliance projection;
-  - early-JSS confirmation of later-gated combo-profit behavior;
-  - full counter/combo/status action/damage execution;
-  - exact persistent modeling of battle-only bad-status fields and later macro-gated BATTLE_Exit effects not represented by the current status-free domain;
+  - early-JSS confirmation of the descendant `_Item_ReLifeAct` combo-profit compile path;
+  - base-status **application/acquisition** seams: ordinary magic/item/pet-skill status hit/resistance -> status counter creation are not yet connected to the persistent battle state;
+  - counter/combo interaction with active statuses, guardian interception, reflect/absorb/vanish, ride-pet damage sharing and later special-command branches;
+  - later macro-gated status families and exact battle-exit cleanup for fields outside the common poison/paralysis/sleep/stone/drunk/confusion runtime;
 - Code validations:
   - `81e9572f1ff309982d13c7f1979a51516a5593a8` — pending ordinary kill EXP accumulation; runs **35514277568** and **35514277633** both success.
   - `b3207d71bc8dafa557e31d3450be2d6efb00bd29` — no-level-cross EXP persistence; run **35514525635** success.
@@ -1465,11 +1466,20 @@ Supplemental source ledgers:
   - `cfa3f855f09e8147ba241d66428377ce3e1df20e` — stable escape probability/counter/PvP/forced-exit core; battle-core **35550194003** and gameplay **35550194001** success.
   - `454952adfbbef33090719bb2d45162481c188da7` — escape execution inside ordinary action order; battle-core **35550379184** and gameplay **35550379230** success.
   - `a8c228e946c1c810a1cf32c7cbba76aa0611f830` — persistent escape attempt counters and distinct player-escape terminal; battle-core **35550479374** and gameplay **35550479386** success.
+  - `1502f77ff0e98892364368a280e0e085e78306e9` — stable normal-death penalty model; battle-core **35551474239** and gameplay **35551474260** success.
+  - `cb0380b0445007dffe02f328786c50e9a07c3545` — accumulate normal-death battle penalties; battle-core **35551570877** and gameplay **35551570910** success.
+  - `baeb1ac13c1f821f851d86598c804812dba4bbc6` — settle normal-death penalties and exit recovery; battle-core **35551877523** and gameplay **35551877522** success.
+  - `0f45ed769fd171636b8d860ce171e3bde700c127` — stable counter probability, weapon matchup/gate and C-integer boundary; battle-core **35552584700** and gameplay **35552584734** success.
+  - `c775b5780c69d52f6a19e297b610d30d602fac9f` — validated status-free alternating counter execution chain and actual-counter-actor profit routing; battle-core **35553042492** and gameplay **35553042493** success.
+  - `be823c662f300ca6cefaba5de20deb7058c825c3` — stable post-sort base combo formation; battle-core **35553360554** and gameplay **35553360547** success.
+  - `1bcbf15a07652f194d78b20c29a59a452f6b00cf` — stable status-free combo accumulated damage plus full attack-list EXP/drop routing; battle-core **35670646011** and gameplay **35670645876** success.
+  - `badeba6934d07a9c0605bdac13fd8b32b31501c1` — common poison/paralysis/sleep/stone/drunk/confusion timing model; battle-core **35671000903** success.
+  - `9c79098637943d8101a612e8e5ee80de6b694656` — integrate common statuses into ordinary/persistent rounds, including poison persistence, immobilization, confusion rewrite, stone defense and positive-damage sleep wake-up; battle-core **35671549996** and gameplay **35671550039** success.
 
 ## Immediate next actions
 
-1. **Recover defeat/death penalty and post-defeat recovery next.** Keep ordinary defeat separate from successful escape: identify the stable HP floor, charm/duel/equipment consequences, pet recovery and return-state behavior before implementing any loss settlement.
-2. **Expand counter/combo/status battle execution only through their own deterministic mechanics seams.** Their EXP attribution is closed; future action/damage/status execution must feed the existing source-shaped profit-list/scan model rather than redefine reward ownership.
+1. **Recover the common status-application seam next.** Trace ordinary magic/item/pet-skill status hit and resistance paths into poison/paralysis/sleep/stone/drunk/confusion counters, keeping later macro-gated families separate; then connect only evidence-backed base status creation to the persistent battle state.
+2. **Close status × counter/combo and guardian/reaction interactions as separate deterministic seams.** Counter and combo base execution are closed; do not guess how active statuses, guardian interception, reflect/absorb/vanish or ride-pet sharing alter those paths.
 3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
 4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
 5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
