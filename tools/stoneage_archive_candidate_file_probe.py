@@ -39,6 +39,13 @@ QUERIES=[
     '"4988609011565"',
     '"WR-04156"',
     '"item-city.com" AND "product_id=423"',
+    '"스톤에이지" AND "1.74"',
+    '"StoneAge" AND "1.74"',
+    '"넷마블" AND "스톤에이지"',
+    '"Netmarble" AND "StoneAge"',
+    '"game3.netmarble.net/stoneage"',
+    '"game3.netmarble.net" AND "stoneage"',
+    '"20030728" AND "StoneAge"',
 ]
 EXACT_NAMES={"sa.exe","sa_demo.exe","sa174hg.exe","stone_demo.exe","onlstoneage.zip","stoneage.zip","stoneagebeta.zip"}
 INTEREST_NAME=re.compile(r"(?i)(?:^|[/\\])(?:sa(?:_demo)?\.exe|sa174hg\.exe|stone_demo\.exe|onlstoneage\.zip|stoneage(?:beta)?\.zip)$")
@@ -87,9 +94,9 @@ def candidate_files(files):
     return out
 
 def main():
-    print("StoneAge Internet Archive candidate-file metadata scan — R3")
+    print("StoneAge Internet Archive candidate-file metadata scan — R4")
     print("SCOPE|item-and-filelist-metadata-only|no-payload-download")
-    print("TRAITS|exact=sa.exe,sa_demo.exe,sa174hg.exe,stone_demo.exe,onlStoneAge.zip,stoneage.zip,stoneagebeta.zip|japan174a=official-url+1.74a+248MB|japan2004=JAN4988609011565+WR-04156+ItemCity423|size_window=180-320MiB")
+    print("TRAITS|exact=sa.exe,sa_demo.exe,sa174hg.exe,stone_demo.exe,onlStoneAge.zip,stoneage.zip,stoneagebeta.zip|korea174=StoneAge+1.74+Netmarble+game3-host+20030728|japan174a=official-url+1.74a+248MB|japan2004=JAN4988609011565+WR-04156+ItemCity423|size_window=180-320MiB")
 
     docs={}; query_hits={}; errors=[]
     for idx,q in enumerate(QUERIES,1):

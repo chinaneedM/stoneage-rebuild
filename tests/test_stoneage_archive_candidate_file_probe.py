@@ -19,6 +19,15 @@ class ArchiveCandidateFileProbeTests(unittest.TestCase):
         self.assertIn('"WR-04156"',QUERIES)
         self.assertIn('"item-city.com" AND "product_id=423"',QUERIES)
 
+    def test_korea_174_launch_metadata_queries_are_pinned(self):
+        self.assertIn('"스톤에이지" AND "1.74"',QUERIES)
+        self.assertIn('"StoneAge" AND "1.74"',QUERIES)
+        self.assertIn('"넷마블" AND "스톤에이지"',QUERIES)
+        self.assertIn('"Netmarble" AND "StoneAge"',QUERIES)
+        self.assertIn('"game3.netmarble.net/stoneage"',QUERIES)
+        self.assertIn('"game3.netmarble.net" AND "stoneage"',QUERIES)
+        self.assertIn('"20030728" AND "StoneAge"',QUERIES)
+
     def test_exact_name(self):
         rows=candidate_files([{"name":"client/sa_demo.exe","size":"123"}])
         self.assertEqual(len(rows),1)
