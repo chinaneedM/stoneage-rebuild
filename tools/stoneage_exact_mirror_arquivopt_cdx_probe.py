@@ -34,6 +34,8 @@ TARGETS = [
     ("gametime-stone-demo-bare", "http://gametime.co.kr/images/Online/pds/2001/02/stone_demo.exe"),
     ("gametime-early", "http://www.gametime.co.kr/webzine/online/download.asp?name=스톤에이지"),
     ("gametime-early-bare", "http://gametime.co.kr/webzine/online/download.asp?name=스톤에이지"),
+    ("japan-sa174hg", "http://hangame.gamania.co.jp/stoneage/sa174hg.exe"),
+    ("japan-sa174hg-www", "http://www.hangame.gamania.co.jp/stoneage/sa174hg.exe"),
 ]
 
 
