@@ -41,6 +41,7 @@ from tools.stoneage_battle_core_model import (
     resolve_battle_escape_attempt,
 )
 from tools.stoneage_battle_damage_react_model import (
+    DAMAGE_REACT_ABSROB,
     DAMAGE_REACT_REFLEC,
     BaseComboMemberDamageReactResolution,
     BaseDamageReactResolution,
@@ -59,6 +60,9 @@ from tools.stoneage_battle_ride_damage_model import (
     RideHpResolution,
     RidePetRuntime,
     apply_ride_damage,
+    apply_ride_heal,
+    combo_ride_damage_split,
+    immediate_reaction_ride_split,
     ordinary_ride_damage_split,
 )
 from tools.stoneage_battle_status_model import (
@@ -1086,7 +1090,8 @@ def _resolve_combo_group_with_reactions(
     defense_profile: str,
     field_attr: str,
     field_power: int,
-) -> tuple[OrdinaryRoundEvent, ...]:
+    ride_pet_runtime: RidePetRuntime | None = None,
+) -> tuple[tuple[OrdinaryRoundEvent, ...], RidePetRuntime | None]:
     """Execute the stable per-member Combo DamageReact path."""
     group=tuple(members)
     member_rolls=tuple(rolls.member_attack_rolls)
@@ -1106,9 +1111,18 @@ def _resolve_combo_group_with_reactions(
         str(participant.participant_id):int(slot)
         for slot,participant in by_slot.items()
     }
+    ride_runtime=ride_pet_runtime
+    target_ride_active=bool(
+        ride_runtime is not None
+        and ride_runtime.mounted
+        and target_id == ride_runtime.rider_id
+    )
 
     resolved=[]
     accumulated=0
+    accumulated_rider=0
+    accumulated_pet=0
+    accumulated_shared=False
     for member_index,(entry,attack_roll) in enumerate(
         zip(group,member_rolls),start=1
     ):
@@ -1186,11 +1200,98 @@ def _resolve_combo_group_with_reactions(
             ),
         )
         damage_react_state_by_participant_id[target_id]=react.state_after
+
+        ride_split=None
+        ride_hp_resolution=None
+        ride_pet_fell_rider_id=None
+        event_damage=contribution
+        if ride_runtime is not None and ride_runtime.mounted:
+            if (
+                react.effective_kind == DAMAGE_REACT_ABSROB
+                and target_id == ride_runtime.rider_id
+            ):
+                ride_split=immediate_reaction_ride_split(
+                    contribution,
+                    rider_defense_power=int(target.defense),
+                    pet_defense_power=int(ride_runtime.defense_power),
+                    pet_hp=int(ride_runtime.hp),
+                )
+                ride_hp_resolution=apply_ride_heal(
+                    ride_split,
+                    rider_hp=int(react.defender_hp_before),
+                    rider_max_hp=int(target.max_hp),
+                    pet_hp=int(ride_runtime.hp),
+                    pet_max_hp=int(ride_runtime.max_hp),
+                )
+                react=replace(
+                    react,
+                    defender_hp_after=int(ride_hp_resolution.rider_hp_after),
+                )
+                event_damage=int(ride_split.rider_amount)
+                ride_runtime=replace(
+                    ride_runtime,
+                    hp=int(ride_hp_resolution.pet_hp_after),
+                )
+            elif (
+                react.effective_kind == DAMAGE_REACT_REFLEC
+                and actor_id == ride_runtime.rider_id
+            ):
+                ride_split=immediate_reaction_ride_split(
+                    contribution,
+                    rider_defense_power=int(actor.defense),
+                    pet_defense_power=int(ride_runtime.defense_power),
+                    pet_hp=int(ride_runtime.hp),
+                )
+                ride_hp_resolution=apply_ride_damage(
+                    ride_split,
+                    rider_hp=int(react.attacker_hp_before),
+                    rider_max_hp=int(actor.max_hp),
+                    pet_hp=int(ride_runtime.hp),
+                    pet_max_hp=int(ride_runtime.max_hp),
+                )
+                react=replace(
+                    react,
+                    attacker_hp_after=int(ride_hp_resolution.rider_hp_after),
+                )
+                event_damage=int(ride_split.rider_amount)
+                if ride_hp_resolution.unmounted:
+                    ride_pet_fell_rider_id=ride_runtime.rider_id
+                ride_runtime=replace(
+                    ride_runtime,
+                    hp=int(ride_hp_resolution.pet_hp_after),
+                    mounted=(
+                        False
+                        if ride_hp_resolution.unmounted
+                        else ride_runtime.mounted
+                    ),
+                    petfall=bool(
+                        ride_runtime.petfall or ride_hp_resolution.petfall
+                    ),
+                )
+
+        if int(react.accumulated_damage)>0:
+            deferred=int(react.accumulated_damage)
+            accumulated+=deferred
+            if target_ride_active and ride_runtime is not None:
+                ride_split=combo_ride_damage_split(
+                    deferred,
+                    rider_defense_power=int(target.defense),
+                    pet_defense_power=int(ride_runtime.defense_power),
+                    pet_hp=int(ride_runtime.hp),
+                )
+                accumulated_rider+=int(ride_split.rider_amount)
+                accumulated_pet+=int(ride_split.pet_amount)
+                accumulated_shared=bool(
+                    accumulated_shared or ride_split.shared
+                )
+                event_damage=int(ride_split.rider_amount)
+            else:
+                accumulated_rider+=deferred
+
         hp_by_slot[actor_slot]=int(react.attacker_hp_after)
         hp_by_id[actor_id]=int(react.attacker_hp_after)
         hp_by_slot[int(target_slot)]=int(react.defender_hp_after)
         hp_by_id[target_id]=int(react.defender_hp_after)
-        accumulated+=int(react.accumulated_damage)
 
         wake_id=(
             actor_id if react.wakeup_target=="attacker"
@@ -1232,13 +1333,16 @@ def _resolve_combo_group_with_reactions(
                 resolved_target_slot=int(event_slot),
                 retargeted=bool(retargeted),
                 critical=bool(is_critical),
-                damage=contribution,
+                damage=int(event_damage),
                 target_hp_before=event_before,
                 target_hp_after=event_after,
                 is_combo=True,
                 combo_id=int(combo_id),
                 combo_member_index=int(member_index),
                 combo_damage_react_resolution=react,
+                ride_damage_split=ride_split,
+                ride_hp_resolution=ride_hp_resolution,
+                ride_pet_fell_rider_id=ride_pet_fell_rider_id,
             )
         )
 
@@ -1246,7 +1350,42 @@ def _resolve_combo_group_with_reactions(
     # the final attack-list member, with reactions disabled for settlement.
     if accumulated > 0:
         before=int(hp_by_slot[int(target_slot)])
-        after=max(0,before-int(accumulated))
+        settlement_split=None
+        settlement_hp=None
+        ride_pet_fell_rider_id=None
+        if target_ride_active and ride_runtime is not None:
+            settlement_split=RideDamageSplit(
+                int(accumulated),
+                int(accumulated_rider),
+                int(accumulated_pet),
+                bool(accumulated_shared),
+            )
+            settlement_hp=apply_ride_damage(
+                settlement_split,
+                rider_hp=before,
+                rider_max_hp=int(target.max_hp),
+                pet_hp=int(ride_runtime.hp),
+                pet_max_hp=int(ride_runtime.max_hp),
+            )
+            after=int(settlement_hp.rider_hp_after)
+            if settlement_hp.unmounted:
+                ride_pet_fell_rider_id=ride_runtime.rider_id
+            ride_runtime=replace(
+                ride_runtime,
+                hp=int(settlement_hp.pet_hp_after),
+                mounted=(
+                    False
+                    if settlement_hp.unmounted
+                    else ride_runtime.mounted
+                ),
+                petfall=bool(
+                    ride_runtime.petfall or settlement_hp.petfall
+                ),
+            )
+            settlement_damage=int(settlement_split.rider_amount)
+        else:
+            after=max(0,before-int(accumulated))
+            settlement_damage=int(accumulated)
         hp_by_slot[int(target_slot)]=after
         hp_by_id[target_id]=after
         last=group[-1]
@@ -1261,16 +1400,19 @@ def _resolve_combo_group_with_reactions(
                 original_target_slot=int(original_target_slot),
                 resolved_target_slot=int(target_slot),
                 retargeted=bool(retargeted),
-                damage=int(accumulated),
+                damage=int(settlement_damage),
                 target_hp_before=before,
                 target_hp_after=after,
                 is_combo=True,
                 combo_id=int(combo_id),
                 combo_settlement=True,
                 profit_participant_ids=actor_ids,
+                ride_damage_split=settlement_split,
+                ride_hp_resolution=settlement_hp,
+                ride_pet_fell_rider_id=ride_pet_fell_rider_id,
             )
         )
-    return tuple(resolved)
+    return tuple(resolved),ride_runtime
 
 
 def _resolve_combo_group(
@@ -1291,8 +1433,9 @@ def _resolve_combo_group(
     defense_profile: str,
     field_attr: str,
     field_power: int,
-) -> tuple[OrdinaryRoundEvent, ...]:
-    """Execute the status-free/no-reaction stable combo damage seam."""
+    ride_pet_runtime: RidePetRuntime | None = None,
+) -> tuple[tuple[OrdinaryRoundEvent, ...], RidePetRuntime | None]:
+    """Execute the status-free stable combo damage seam."""
     group=tuple(members)
     if len(group) < 1:
         raise ValueError("combo execution requires at least one live member")
@@ -1334,6 +1477,7 @@ def _resolve_combo_group(
             defense_profile=defense_profile,
             field_attr=field_attr,
             field_power=field_power,
+            ride_pet_runtime=ride_pet_runtime,
         )
     actor_ids=tuple(
         str(entry.participant.participant_id) for entry in group
@@ -1342,9 +1486,18 @@ def _resolve_combo_group(
         str(participant.participant_id):int(slot)
         for slot,participant in by_slot.items()
     }
+    ride_runtime=ride_pet_runtime
+    target_ride_active=bool(
+        ride_runtime is not None
+        and ride_runtime.mounted
+        and target_id == ride_runtime.rider_id
+    )
 
     rows=[]
     total_damage=0
+    rider_damage=0
+    pet_damage=0
+    any_shared=False
     for member_index,(entry,attack_roll) in enumerate(
         zip(group,member_rolls),
         start=1,
@@ -1423,6 +1576,22 @@ def _resolve_combo_group(
 
         contribution=max(1,int(damage))
         total_damage+=contribution
+        member_split=None
+        event_damage=contribution
+        if target_ride_active and ride_runtime is not None:
+            member_split=combo_ride_damage_split(
+                contribution,
+                rider_defense_power=int(target.defense),
+                pet_defense_power=int(ride_runtime.defense_power),
+                pet_hp=int(ride_runtime.hp),
+            )
+            rider_damage+=int(member_split.rider_amount)
+            pet_damage+=int(member_split.pet_amount)
+            any_shared=bool(any_shared or member_split.shared)
+            event_damage=int(member_split.rider_amount)
+        else:
+            rider_damage+=contribution
+
         wake=resolve_base_damage_wakeup(
             target_runtime.status,
             damage_count_before=target_runtime.damage_count,
@@ -1440,12 +1609,45 @@ def _resolve_combo_group(
                 actor_slot,
                 result,
                 is_critical,
-                contribution,
+                event_damage,
                 member_index,
+                member_split,
             )
         )
 
-    after=max(0,before-int(total_damage))
+    settlement_hp=None
+    ride_pet_fell_rider_id=None
+    if target_ride_active and ride_runtime is not None:
+        aggregate=RideDamageSplit(
+            int(total_damage),
+            int(rider_damage),
+            int(pet_damage),
+            bool(any_shared),
+        )
+        settlement_hp=apply_ride_damage(
+            aggregate,
+            rider_hp=before,
+            rider_max_hp=int(target.max_hp),
+            pet_hp=int(ride_runtime.hp),
+            pet_max_hp=int(ride_runtime.max_hp),
+        )
+        after=int(settlement_hp.rider_hp_after)
+        if settlement_hp.unmounted:
+            ride_pet_fell_rider_id=ride_runtime.rider_id
+        ride_runtime=replace(
+            ride_runtime,
+            hp=int(settlement_hp.pet_hp_after),
+            mounted=(
+                False
+                if settlement_hp.unmounted
+                else ride_runtime.mounted
+            ),
+            petfall=bool(
+                ride_runtime.petfall or settlement_hp.petfall
+            ),
+        )
+    else:
+        after=max(0,before-int(total_damage))
     hp_by_slot[int(target_slot)]=after
     hp_by_id[target_id]=after
 
@@ -1455,8 +1657,9 @@ def _resolve_combo_group(
         actor_slot,
         result,
         is_critical,
-        contribution,
+        event_damage,
         member_index,
+        member_split,
     ) in enumerate(rows):
         is_last=(row_index==len(rows)-1)
         resolved.append(
@@ -1470,16 +1673,21 @@ def _resolve_combo_group(
                 resolved_target_slot=int(target_slot),
                 retargeted=bool(retargeted),
                 critical=bool(is_critical),
-                damage=int(contribution),
+                damage=int(event_damage),
                 target_hp_before=before,
                 target_hp_after=(after if is_last else before),
                 is_combo=True,
                 combo_id=int(combo_id),
                 combo_member_index=int(member_index),
                 profit_participant_ids=actor_ids,
+                ride_damage_split=member_split,
+                ride_hp_resolution=(settlement_hp if is_last else None),
+                ride_pet_fell_rider_id=(
+                    ride_pet_fell_rider_id if is_last else None
+                ),
             )
         )
-    return tuple(resolved)
+    return tuple(resolved),ride_runtime
 
 
 def _build_slot_maps(
@@ -1789,20 +1997,9 @@ def resolve_ordinary_round(
                 "non-entry ride pet cannot also occupy an active battle slot"
             )
         active_ride=bool(ride_runtime.mounted)
-        if active_ride and combo_groups:
-            raise ValueError(
-                "ride-pet interaction with Combo is a separate seam"
-            )
         if active_ride and normalized_counter_rolls is not None:
             raise ValueError(
                 "ride-pet interaction with counter execution is a separate seam"
-            )
-        if active_ride and any(
-            base_damage_react_active(react_state)
-            for react_state in damage_react_state.values()
-        ):
-            raise ValueError(
-                "ride-pet interaction with DamageReact is a separate seam"
             )
 
     guardian_registrations={
@@ -2451,25 +2648,28 @@ def resolve_ordinary_round(
                     raise ValueError("combo group crossed battle sides")
                 if int(candidate.command.command2) != original_target:
                     raise ValueError("combo group target drift")
-            events.extend(
-                _resolve_combo_group(
-                    combo_id=int(entry.combo_id),
-                    members=live_group,
-                    original_target_slot=original_target,
-                    target_slot=int(target),
-                    retargeted=retargeted,
-                    by_slot=by_slot,
-                    hp_by_slot=hp_by_slot,
-                    hp_by_id=hp_by_id,
-                    profiles=profiles,
-                    status_runtime_by_participant_id=status_runtime,
-                    damage_react_state_by_participant_id=damage_react_state,
-                    guarding=guarding,
-                    rolls=combo_rolls,
-                    defense_profile=defense_profile,
-                    field_attr=field_attr,
-                    field_power=field_power,
-                )
+            combo_events,ride_runtime=_resolve_combo_group(
+                combo_id=int(entry.combo_id),
+                members=live_group,
+                original_target_slot=original_target,
+                target_slot=int(target),
+                retargeted=retargeted,
+                by_slot=by_slot,
+                hp_by_slot=hp_by_slot,
+                hp_by_id=hp_by_id,
+                profiles=profiles,
+                status_runtime_by_participant_id=status_runtime,
+                damage_react_state_by_participant_id=damage_react_state,
+                guarding=guarding,
+                rolls=combo_rolls,
+                defense_profile=defense_profile,
+                field_attr=field_attr,
+                field_power=field_power,
+                ride_pet_runtime=ride_runtime,
+            )
+            events.extend(combo_events)
+            active_ride=bool(
+                ride_runtime is not None and ride_runtime.mounted
             )
             processed_combo_ids.add(int(entry.combo_id))
             continue
@@ -2737,46 +2937,117 @@ def resolve_ordinary_round(
         ride_hp_resolution=None
         ride_pet_fell_rider_id=None
         event_damage=int(damage)
-        if (
-            active_ride
-            and ride_runtime is not None
-            and reaction_defender_id == ride_runtime.rider_id
-        ):
-            ride_split=ordinary_ride_damage_split(
-                int(damage),
-                rider_defense_power=int(defender_work_defense),
-                pet_defense_power=int(ride_runtime.defense_power),
-                pet_hp=int(ride_runtime.hp),
-            )
-            ride_hp_resolution=apply_ride_damage(
-                ride_split,
-                rider_hp=int(reaction_resolution.defender_hp_before),
-                rider_max_hp=int(reaction_defender.max_hp),
-                pet_hp=int(ride_runtime.hp),
-                pet_max_hp=int(ride_runtime.max_hp),
-            )
-            reaction_resolution=replace(
-                reaction_resolution,
-                defender_hp_after=int(
-                    ride_hp_resolution.rider_hp_after
-                ),
-            )
-            event_damage=int(ride_split.rider_amount)
-            if ride_hp_resolution.unmounted:
-                ride_pet_fell_rider_id=ride_runtime.rider_id
-            ride_runtime=replace(
-                ride_runtime,
-                hp=int(ride_hp_resolution.pet_hp_after),
-                mounted=(
-                    False
-                    if ride_hp_resolution.unmounted
-                    else ride_runtime.mounted
-                ),
-                petfall=bool(
-                    ride_runtime.petfall or ride_hp_resolution.petfall
-                ),
-            )
-            active_ride=bool(ride_runtime.mounted)
+        if active_ride and ride_runtime is not None:
+            rider_id=str(ride_runtime.rider_id)
+            if (
+                reaction_resolution.effective_kind == DAMAGE_REACT_ABSROB
+                and reaction_defender_id == rider_id
+            ):
+                ride_split=immediate_reaction_ride_split(
+                    int(damage),
+                    rider_defense_power=int(defender_work_defense),
+                    pet_defense_power=int(ride_runtime.defense_power),
+                    pet_hp=int(ride_runtime.hp),
+                )
+                ride_hp_resolution=apply_ride_heal(
+                    ride_split,
+                    rider_hp=int(reaction_resolution.defender_hp_before),
+                    rider_max_hp=int(reaction_defender.max_hp),
+                    pet_hp=int(ride_runtime.hp),
+                    pet_max_hp=int(ride_runtime.max_hp),
+                )
+                reaction_resolution=replace(
+                    reaction_resolution,
+                    defender_hp_after=int(
+                        ride_hp_resolution.rider_hp_after
+                    ),
+                )
+                event_damage=int(ride_split.rider_amount)
+                ride_runtime=replace(
+                    ride_runtime,
+                    hp=int(ride_hp_resolution.pet_hp_after),
+                )
+            elif (
+                reaction_resolution.effective_kind == DAMAGE_REACT_REFLEC
+                and str(participant_id) == rider_id
+            ):
+                attacker_work_defense=_effective_defense_power(
+                    participant,setup_effects
+                )
+                ride_split=immediate_reaction_ride_split(
+                    int(damage),
+                    rider_defense_power=int(attacker_work_defense),
+                    pet_defense_power=int(ride_runtime.defense_power),
+                    pet_hp=int(ride_runtime.hp),
+                )
+                ride_hp_resolution=apply_ride_damage(
+                    ride_split,
+                    rider_hp=int(reaction_resolution.attacker_hp_before),
+                    rider_max_hp=int(participant.max_hp),
+                    pet_hp=int(ride_runtime.hp),
+                    pet_max_hp=int(ride_runtime.max_hp),
+                )
+                reaction_resolution=replace(
+                    reaction_resolution,
+                    attacker_hp_after=int(
+                        ride_hp_resolution.rider_hp_after
+                    ),
+                )
+                event_damage=int(ride_split.rider_amount)
+                if ride_hp_resolution.unmounted:
+                    ride_pet_fell_rider_id=ride_runtime.rider_id
+                ride_runtime=replace(
+                    ride_runtime,
+                    hp=int(ride_hp_resolution.pet_hp_after),
+                    mounted=(
+                        False
+                        if ride_hp_resolution.unmounted
+                        else ride_runtime.mounted
+                    ),
+                    petfall=bool(
+                        ride_runtime.petfall or ride_hp_resolution.petfall
+                    ),
+                )
+                active_ride=bool(ride_runtime.mounted)
+            elif (
+                reaction_resolution.damage_target == "defender"
+                and reaction_defender_id == rider_id
+            ):
+                ride_split=ordinary_ride_damage_split(
+                    int(damage),
+                    rider_defense_power=int(defender_work_defense),
+                    pet_defense_power=int(ride_runtime.defense_power),
+                    pet_hp=int(ride_runtime.hp),
+                )
+                ride_hp_resolution=apply_ride_damage(
+                    ride_split,
+                    rider_hp=int(reaction_resolution.defender_hp_before),
+                    rider_max_hp=int(reaction_defender.max_hp),
+                    pet_hp=int(ride_runtime.hp),
+                    pet_max_hp=int(ride_runtime.max_hp),
+                )
+                reaction_resolution=replace(
+                    reaction_resolution,
+                    defender_hp_after=int(
+                        ride_hp_resolution.rider_hp_after
+                    ),
+                )
+                event_damage=int(ride_split.rider_amount)
+                if ride_hp_resolution.unmounted:
+                    ride_pet_fell_rider_id=ride_runtime.rider_id
+                ride_runtime=replace(
+                    ride_runtime,
+                    hp=int(ride_hp_resolution.pet_hp_after),
+                    mounted=(
+                        False
+                        if ride_hp_resolution.unmounted
+                        else ride_runtime.mounted
+                    ),
+                    petfall=bool(
+                        ride_runtime.petfall or ride_hp_resolution.petfall
+                    ),
+                )
+                active_ride=bool(ride_runtime.mounted)
 
         hp_by_slot[slot]=int(reaction_resolution.attacker_hp_after)
         hp_by_id[str(participant_id)]=int(

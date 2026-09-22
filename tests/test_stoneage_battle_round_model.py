@@ -1683,7 +1683,7 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertTrue(result.ride_pet_runtime.petfall)
         self.assertEqual(attack.ride_pet_fell_rider_id,"player")
 
-    def test_active_ride_rejects_unclosed_counter_combo_and_reaction_interactions(self):
+    def test_active_ride_still_rejects_unclosed_counter_interaction(self):
         player=actor("player","player","player",quick=100)
         enemy=actor("enemy","enemy","enemy",quick=50)
         runtime=RidePetRuntime(
@@ -1714,25 +1714,250 @@ class BattleRoundModelTests(unittest.TestCase):
                 ride_pet_runtime=runtime,
                 defense_profile="newpower_70pct",
             )
-        with self.assertRaisesRegex(ValueError,"DamageReact"):
-            resolve_ordinary_round(
-                prepared,
-                slots={"player":0,"enemy":10},
-                profiles={"player":profile(),"enemy":profile()},
-                attack_rolls={
-                    "player":OrdinaryAttackRolls(
-                        dodge_roll_1_10000=10000,
-                        critical_roll_1_10000=10000,
-                        damage_roll=0,
-                    )
+
+    def test_ride_absorb_heals_rider_and_pet_with_immediate_split(self):
+        player=replace(
+            actor(
+                "player","player","player",
+                hp=100,defense=60,quick=20,
+            ),
+            max_hp=300,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=300,attack=100,quick=100,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            base_damage_react_state_by_participant_id={
+                "player":BaseDamageReactState(absorb=1),
+                "enemy":BaseDamageReactState(),
+            },
+            ride_pet_runtime=RidePetRuntime(
+                rider_id="player",pet_id="pet:0",
+                hp=50,max_hp=200,defense_power=40,
+            ),
+            defense_profile="newpower_70pct",
+        )
+        attack=[e for e in result.events if e.participant_id=="enemy"][0]
+        self.assertIsNotNone(attack.ride_damage_split)
+        self.assertIsNotNone(attack.ride_hp_resolution)
+        self.assertGreater(result.hp_by_participant_id["player"],100)
+        self.assertGreater(result.ride_pet_runtime.hp,50)
+        self.assertEqual(
+            result.hp_by_participant_id["player"]-100,
+            attack.ride_hp_resolution.rider_hp_after
+            - attack.ride_hp_resolution.rider_hp_before,
+        )
+        self.assertEqual(
+            result.ride_pet_runtime.hp-50,
+            attack.ride_hp_resolution.pet_hp_after
+            - attack.ride_hp_resolution.pet_hp_before,
+        )
+        self.assertEqual(
+            result.base_damage_react_state_by_participant_id[
+                "player"
+            ].absorb,
+            0,
+        )
+
+    def test_reflect_splits_back_to_attacking_rider_and_ride_pet(self):
+        player=actor(
+            "player","player","player",
+            hp=300,attack=100,defense=60,quick=100,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=300,quick=20,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            base_damage_react_state_by_participant_id={
+                "player":BaseDamageReactState(),
+                "enemy":BaseDamageReactState(reflect=1),
+            },
+            ride_pet_runtime=RidePetRuntime(
+                rider_id="player",pet_id="pet:0",
+                hp=200,max_hp=200,defense_power=40,
+            ),
+            defense_profile="newpower_70pct",
+        )
+        attack=[e for e in result.events if e.participant_id=="player"][0]
+        self.assertEqual(
+            attack.damage_react_resolution.effective_kind,
+            DAMAGE_REACT_REFLEC,
+        )
+        self.assertIsNotNone(attack.ride_damage_split)
+        self.assertEqual(
+            300-result.hp_by_participant_id["player"],
+            attack.ride_damage_split.rider_amount,
+        )
+        self.assertEqual(
+            200-result.ride_pet_runtime.hp,
+            attack.ride_damage_split.pet_amount,
+        )
+        self.assertEqual(result.hp_by_participant_id["enemy"],300)
+
+    def test_enemy_combo_uses_deferred_ride_split_and_petfall(self):
+        player=actor(
+            "player","player","player",
+            hp=300,defense=60,quick=10,
+        )
+        e1=actor(
+            "e1","enemy","enemy",
+            hp=300,attack=200,quick=100,
+        )
+        e2=actor(
+            "e2","enemy","enemy",
+            hp=300,attack=200,quick=90,
+        )
+        prepared=apply_base_combo_rewrite(
+            prepare_battle_round(
+                (e1,e2,player),
+                {
+                    "e1":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+                    "e2":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+                    "player":BattleCommand(BATTLE_COM_WAIT),
                 },
-                base_damage_react_state_by_participant_id={
-                    "player":BaseDamageReactState(reflect=1),
-                    "enemy":BaseDamageReactState(),
+                {"e1":0,"e2":0,"player":0},
+            ),
+            {"e1":profile(),"e2":profile(),"player":profile()},
+            {"e1":1},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"e1":10,"e2":11},
+            profiles={"player":profile(),"e1":profile(),"e2":profile()},
+            attack_rolls={},
+            combo_rolls_by_starter_id={
+                "e1":ComboExecutionRolls((
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,damage_roll=0
+                    ),
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,damage_roll=0
+                    ),
+                ))
+            },
+            ride_pet_runtime=RidePetRuntime(
+                rider_id="player",pet_id="pet:0",
+                hp=1,max_hp=100,defense_power=40,
+            ),
+            defense_profile="newpower_70pct",
+        )
+        combo=[e for e in result.events if e.is_combo]
+        self.assertEqual(len(combo),2)
+        self.assertTrue(all(e.ride_damage_split is not None for e in combo))
+        self.assertEqual(
+            300-result.hp_by_participant_id["player"],
+            sum(e.damage for e in combo),
+        )
+        self.assertEqual(result.ride_pet_runtime.hp,0)
+        self.assertFalse(result.ride_pet_runtime.mounted)
+        self.assertTrue(result.ride_pet_runtime.petfall)
+        self.assertEqual(combo[-1].ride_pet_fell_rider_id,"player")
+
+    def test_combo_absorb_heals_ride_pet_before_deferred_settlement(self):
+        player=replace(
+            actor(
+                "player","player","player",
+                hp=200,defense=60,quick=10,
+            ),
+            max_hp=300,
+        )
+        e1=actor(
+            "e1","enemy","enemy",
+            hp=300,attack=100,quick=100,
+        )
+        e2=actor(
+            "e2","enemy","enemy",
+            hp=300,attack=100,quick=90,
+        )
+        prepared=apply_base_combo_rewrite(
+            prepare_battle_round(
+                (e1,e2,player),
+                {
+                    "e1":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+                    "e2":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+                    "player":BattleCommand(BATTLE_COM_WAIT),
                 },
-                ride_pet_runtime=runtime,
-                defense_profile="newpower_70pct",
-            )
+                {"e1":0,"e2":0,"player":0},
+            ),
+            {"e1":profile(),"e2":profile(),"player":profile()},
+            {"e1":1},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"e1":10,"e2":11},
+            profiles={"player":profile(),"e1":profile(),"e2":profile()},
+            attack_rolls={},
+            combo_rolls_by_starter_id={
+                "e1":ComboExecutionRolls((
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,damage_roll=0
+                    ),
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,damage_roll=0
+                    ),
+                ))
+            },
+            base_damage_react_state_by_participant_id={
+                "player":BaseDamageReactState(absorb=1),
+                "e1":BaseDamageReactState(),
+                "e2":BaseDamageReactState(),
+            },
+            ride_pet_runtime=RidePetRuntime(
+                rider_id="player",pet_id="pet:0",
+                hp=50,max_hp=200,defense_power=40,
+            ),
+            defense_profile="newpower_70pct",
+        )
+        combo=[e for e in result.events if e.is_combo]
+        self.assertEqual(len(combo),3)
+        self.assertIsNotNone(combo[0].ride_hp_resolution)
+        settlement=[e for e in combo if e.combo_settlement][0]
+        self.assertIsNotNone(settlement.ride_damage_split)
+        self.assertIsNotNone(settlement.ride_hp_resolution)
+        self.assertEqual(
+            result.base_damage_react_state_by_participant_id[
+                "player"
+            ].absorb,
+            0,
+        )
 
     def test_normal_attack_applies_recovered_damage_to_hp(self):
         player = actor("player", "player", "player", quick=100)
