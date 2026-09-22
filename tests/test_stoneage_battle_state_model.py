@@ -13,6 +13,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_CAPTURE,
     BATTLE_COM_ESCAPE,
+    BATTLE_COM_GUARD,
     BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_WAIT,
