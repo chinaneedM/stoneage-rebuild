@@ -540,6 +540,34 @@ This is the canonical ledger for historical sources. Entries should record prove
   - gives a precise near-descendant client version target;
   - the numeric proximity to Korean `1.74` is recorded as a **lineage hypothesis only**, pending artifact comparison.
 
+### SRC-JP-2003-HANGAME-174A-INSTALL-CHAIN-01
+
+- Title/artifact: Hangame StoneAge 1.74a launch-window installation chain
+- Original period: 2003-12-14 to 2003-12-15 launch window; later CAB captures in 2004
+- Retrieval/verification date: 2026-09-22
+- Language/region: Japanese / Japan
+- Source type: official Hangame pages and archived official CAB metadata/body prefix, recovered through Wayback CDX/Availability
+- Official paths:
+  - `http://www.hangame.co.jp/publish/sa/sasetup.asp`
+  - `http://www.hangame.co.jp/publish/sa/sasetup2.asp`
+  - `http://www.hangame.co.jp/publish/sa/HgSA.cab`
+- Confidence: **A** for the official page/path relationship and recovered launch-window page timestamps; **B/A** for the later archived CAB representing the same Hangame control lineage
+- Supports:
+  - `sasetup.asp` is preserved at **2003-12-14 05:55:53 UTC** and links to both `sasetup2.asp` and the official StoneAge download page `sadl.asp`;
+  - `sasetup2.asp` is preserved at **2003-12-15 09:53:20 UTC** and links back to `sasetup.asp`, establishing a two-step official install/startup instruction chain during the 1.74a open-beta launch window;
+  - the exact Hangame control path `HgSA.cab` has preserved 2004 captures with one stable Wayback digest (`UYG45A3V3FPUJZIRQAI6SB22R4HALKOF`);
+  - a successful bounded replay of that CAB exposes two members: `HgSA.dll` (38,400 bytes, DOS timestamp **2003-12-14 21:20:46**) and `HgSA.inf` (233 bytes, DOS timestamp **2003-12-14 21:05:14**);
+  - the CAB header identifies a small one-folder/two-file control package, so `HgSA.cab` is **not** the full StoneAge client payload.
+- Does not support:
+  - the full Japanese 1.74a installer filename, size, checksum or file tree;
+  - that the later 2004 archived CAB bytes are byte-identical to any unarchived 2003-12 CAB response, despite the member timestamps falling in the launch window;
+  - byte identity with Korean 1.74 or JSS 1999.
+- Derived record:
+  - `research/recovered/STONEAGE-JAPAN-174A-EXACT-INSTALL-CHAIN-R1.txt`
+- Archaeology significance:
+  - generic client-name guessing is no longer the best next step;
+  - the highest-value exact recovery target is now the official `sadl.asp` download page plus launch-window `stoneage.to` snapshots, which may expose the complete client payload URL.
+
 ### SRC-KR-NETPOWER-CONTENTS-INDEX-01
 
 - Title: `Net POWER 전체 목차 발행순`
