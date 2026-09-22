@@ -1449,8 +1449,8 @@ Supplemental source ledgers:
   - maximum-level and pet-limit-level behavior;
   - complete visible pet AI/loyalty compliance projection;
   - early-JSS confirmation of the descendant `_Item_ReLifeAct` combo-profit compile path;
-  - damage-reaction interactions still outside the reconstructed physical seam: reflect/trap/acupuncture-style redirection, absorb/vanish, and their exact continuation/status/wakeup ordering;
-  - ride-pet damage sharing and later special-command branches not yet closed into the ordinary/combo persistent round;
+  - base DamageReact (VANISH > ABSROB > REFLEC) is closed for no-ride ordinary and Combo paths, including continuation/status/wakeup ordering; later macro-gated TRAP/ACUPUNCTURE/BATTLE_MODEL variants remain excluded;
+  - ride-pet damage sharing and fall-off remain the next physical-damage gap for ordinary/Combo persistent rounds;
   - later macro-gated status families and exact battle-exit cleanup for fields outside the common poison/paralysis/sleep/stone/drunk/confusion runtime;
 - Code validations:
   - `81e9572f1ff309982d13c7f1979a51516a5593a8` — pending ordinary kill EXP accumulation; runs **35514277568** and **35514277633** both success.
@@ -1491,11 +1491,12 @@ Supplemental source ledgers:
   - `2fa7c2bde4ca882a2275f507d6f2a0e6f3a3d514` — bridge stable Guardian/StatusChange handler outputs into numeric round commands plus setup effects; pet-skill **35689840680** and battle-core **35689840660** success.
   - `a11cbc5693d220635000a156f4f499ea86d1aa6a` — integrate active common statuses with alternating counter execution and damage wake-up; battle-core **35690243546** and gameplay **35690243482** success.
   - `a86701f3afb09552b789c386abea6ad730c0ec2c` — integrate source-shaped common status timing with Combo formation/execution, including early later-member `StatusSeq` and one-member combo behavior; pet-skill **35690533578**, battle-core **35690533588**, gameplay **35690533586** success.
+  - `466505c6f2f95b17431bdb5d8964a99a56bb7fab` — integrate stable base DamageReact into ordinary and per-member Combo execution, including Reflect redirection, Absorb/Vanish, continuation suppression, reaction charge persistence and explicit Combo aggregate settlement; battle-core **35692745170**, gameplay **35692745208**, pet-skill **35692745206** success.
 
 ## Immediate next actions
 
-1. **Recover the common DamageReact seam next.** Trace the stable physical attack/Combo ordering for reflect, absorb, vanish and other unguarded reaction states; keep macro-gated profession/pet extensions separate and do not infer missing reaction state from display/UI labels.
-2. **Close ride-pet damage sharing after DamageReact.** Reconstruct only the source-backed HP split/fall-off transitions needed by ordinary and Combo damage, then connect them to persistent battle state without importing later private-server rules.
+1. **Close ride-pet damage sharing next.** Reconstruct the stable ordinary `BATTLE_DamageSub` split, Combo `BATTLE_DamageSubCale/BATTLE_DamageSub2` split, reflected/absorbed ride damage, ride-pet death unmount and `PETFALL` transition; keep later macro-gated ride skills separate.
+2. **Then close the remaining physical post-damage boundary.** Recover only source-backed ultimate/knock-away and any base battle-exit cleanup required by the reconstructed damage path; do not import profession/TRAP/ACUPUNCTURE extensions.
 3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
 4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
 5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.

@@ -215,20 +215,11 @@ If the resulting damage is zero:
 
 ## 10. HP application
 
-For the ordinary no-ride/no-reaction path, the stable damage application is
-equivalent to:
-
-```
-hp = max(0, hp - damage)
-```
-
-before later reaction/ultimate systems.
-
-The original status-free R1 applies direct target HP subtraction. The current
-base-status extension additionally applies stone's defense doubling and the
-stable positive-damage sleep wake-up / damage-count mutation when an explicit
-base-status runtime is present. Reflect, absorb, vanish, guardian, ride-pet
-sharing and knock-away/ultimate state remain outside this seam.
+For the no-ride path, post-AttackSeq damage now passes through the stable base
+DamageReact layer. VANISH, ABSROB and REFLEC are modeled with source priority,
+charge consumption and HP redirection; ordinary Reflect also redirects
+wakeup/status to the attacker, while Absorb/Vanish suppress wakeup. Ride-pet
+sharing and knock-away/ultimate state remain outside this section.
 
 ## 11. Explicit combat profile boundary
 
@@ -341,8 +332,8 @@ Validated effective state: commit `9c79098637943d8101a612e8e5ee80de6b694656`; ba
 - combo variants that require guardian/reaction/status/ride-pet or later item bonuses;
 - guardian interception;
 - bow and boomerang specialized behavior;
-- ride-pet damage sharing;
-- reflect/absorb/vanish and other reaction systems;
+- ride-pet damage sharing and ride-pet fall-off;
+- macro-gated reaction families such as TRAP/ACUPUNCTURE and later reaction extensions;
 - later macro-gated status families and base-status interaction with counter/combo;
 - pet/profession skills;
 - item/magic actions and their status-application hooks;
@@ -358,3 +349,29 @@ source-shaped EXP/drop/death/return seams.
 The next battle milestone is status **application/acquisition** and then the
 explicit interaction seams between status, counter/combo, guardian and damage
 reactions; it is no longer persistent-state scaffolding.
+
+## Base DamageReact integration — 2026-09-22
+
+The common no-ride DamageReact path is now connected to ordinary and Combo
+execution.
+
+- Priority is VANISH > ABSROB > REFLEC > NONE.
+- Any active reaction on the ordinary main attacker or current defender
+  suppresses counter continuation before AttackSeq.
+- Guardian redirection happens first; DamageReact then reads the actual
+  post-Guardian defender.
+- Non-throw Reflect consumes one charge and redirects HP, wakeup and
+  StatusChange targeting to the attacker.
+- Throwing weapons bypass Reflect without consuming its charge.
+- Absorb heals and Vanish preserves HP; both suppress DamageWakeUp, while a
+  positive StatusChange attack still performs its later status check.
+- Combo evaluates reactions per member. Immediate Reflect/Absorb/Vanish is
+  applied member-by-member; only non-reacted member damage enters the final
+  aggregate settlement. The settlement event preserves the full combo
+  attack-list for reward attribution.
+
+Validated effective state: commit
+`466505c6f2f95b17431bdb5d8964a99a56bb7fab`; battle-core
+**35692745170**, gameplay **35692745208**, pet-skill **35692745206**.
+
+The next physical-damage seam is ride-pet sharing.
