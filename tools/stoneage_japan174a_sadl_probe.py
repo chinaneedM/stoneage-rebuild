@@ -8,13 +8,16 @@ client binary is downloaded or committed.
 from __future__ import annotations
 
 import hashlib
+import html
 import json
+import re
 import urllib.parse
 import urllib.request
 
 from tools.stoneage_japan174a_exact_install_probe import (
     MAX_BODY,
     clean,
+    decode_html,
     interesting_html_refs,
     signature,
 )
@@ -41,6 +44,45 @@ def availability(date):
         "timestamp":str(closest.get("timestamp","")),
         "status":str(closest.get("status","")),
         "url":str(closest.get("url","")),
+    }
+
+
+def derived_page_facts(body):
+    """Return compact launch-page facts without preserving page prose."""
+    decoded=decode_html(body)
+    visible=html.unescape(re.sub(r"(?is)<[^>]+>"," ",decoded))
+    visible=" ".join(visible.split())
+    versions=tuple(
+        sorted(
+            set(
+                re.findall(
+                    r"(?<![0-9.])([0-9]+\.[0-9]+[A-Za-z]?)(?![0-9.])",
+                    visible,
+                )
+            )
+        )
+    )
+    sizes=tuple(
+        sorted(
+            set(
+                match.upper().replace(" ","")
+                for match in re.findall(
+                    r"(?i)\b[0-9]+(?:\.[0-9]+)?\s*(?:KB|MB|GB|KBYTE|MBYTE|GBYTE)\b",
+                    visible,
+                )
+            )
+        )
+    )
+    lower=decoded.lower()
+    return {
+        "versions":versions,
+        "sizes":sizes,
+        "sa174hg_occurrences":lower.count("sa174hg.exe"),
+        "stoneage_exe_occurrences":lower.count("stoneage.exe"),
+        "visible_text_chars":len(visible),
+        "visible_text_sha256":hashlib.sha256(
+            visible.encode("utf-8")
+        ).hexdigest(),
     }
 
 
@@ -110,6 +152,16 @@ def main():
             f"content_type={clean(result['content_type'])}|final={clean(result['final'])}"
         )
         if sig=="html":
+            facts=derived_page_facts(body)
+            print(
+                f"PAGE_FACT|timestamp={timestamp}|"
+                f"versions={','.join(facts['versions'])}|"
+                f"sizes={','.join(facts['sizes'])}|"
+                f"sa174hg_occurrences={facts['sa174hg_occurrences']}|"
+                f"stoneage_exe_occurrences={facts['stoneage_exe_occurrences']}|"
+                f"visible_text_chars={facts['visible_text_chars']}|"
+                f"visible_text_sha256={facts['visible_text_sha256']}"
+            )
             for ref in interesting_html_refs(body):
                 refs.add((timestamp,ref))
 
