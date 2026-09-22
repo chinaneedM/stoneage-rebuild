@@ -180,6 +180,14 @@ no later map payload is promoted into the early baseline.
 A real Taiwan-v1/JSS field-map corpus must still be authenticated independently
 before its tile/parts/event planes can populate this path.
 
+The single-player reconstruction runtime also exposes a separately named
+`walk_step_with_taiwan_v10_hit_map()` boundary (plus its CEP-frequency
+variant). It binds the hit map to an explicit floor id and consumes only the
+v1 `checkHitMap` verdict. It deliberately does **not** layer the descendant
+server's `WALKABLE/HAVEHEIGHT`, diagonal-corner or dynamic-overability rules
+onto the early-client path. This keeps both evidence lineages executable
+without silently merging their semantics.
+
 ## 8. Validation
 
 Deterministic exporter:

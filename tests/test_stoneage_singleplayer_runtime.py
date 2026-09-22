@@ -29,6 +29,12 @@ from tools.stoneage_singleplayer_world import (
     LegacyWarpEdge,
     place_player_on_topology,
 )
+from tools.stoneage_tw10_hit_map_model import (
+    HIT_BLOCKED,
+    HIT_OVERRIDE,
+    HIT_PASSABLE,
+    TaiwanV10HitMap,
+)
 from tools.stoneage_tw10_25_bridge_model import (
     NpcCreateBridge,
     NpcTemplateBridge,
@@ -289,6 +295,43 @@ class SinglePlayerHistoricalRuntimeTests(unittest.TestCase):
         self.assertFalse(blocked.walk.moved)
         self.assertIsNone(blocked.encounter)
         self.assertEqual(domain.world.player_position, MapPosition(2000, 11, 11))
+
+    def test_runtime_keeps_taiwan_v1_hit_map_semantics_separate(self):
+        domain = SinglePlayerHistoricalDomain(static=make_static())
+        domain.persistent.character = make_player()
+        topology = make_topology()
+        place_player_on_topology(domain, topology, MapPosition(2000, 10, 11))
+        runtime = SinglePlayerHistoricalRuntime(domain, topology)
+
+        cells = [HIT_PASSABLE] * (30 * 30)
+        cells[11 * 30 + 11] = HIT_OVERRIDE
+        cells[11 * 30 + 12] = HIT_BLOCKED
+        hit_map = TaiwanV10HitMap(30, 30, tuple(cells))
+
+        override = runtime.walk_step_with_taiwan_v10_hit_map(
+            floor_id=2000,
+            hit_map=hit_map,
+            destination=MapPosition(2000, 11, 11),
+        )
+        self.assertTrue(override.walk.moved)
+        self.assertEqual(domain.world.player_position, MapPosition(2000, 11, 11))
+
+        blocked = runtime.walk_step_with_taiwan_v10_hit_map(
+            floor_id=2000,
+            hit_map=hit_map,
+            destination=MapPosition(2000, 12, 11),
+            encounter_rolls=EncounterRolls(0, 0, 0),
+        )
+        self.assertFalse(blocked.walk.moved)
+        self.assertIsNone(blocked.encounter)
+        self.assertEqual(domain.world.player_position, MapPosition(2000, 11, 11))
+
+        with self.assertRaisesRegex(ValueError, "active floor"):
+            runtime.walk_step_with_taiwan_v10_hit_map(
+                floor_id=1000,
+                hit_map=hit_map,
+                destination=MapPosition(2000, 12, 11),
+            )
 
     def test_frequency_loop_increments_then_triggers_and_resets(self):
         domain = SinglePlayerHistoricalDomain(static=make_static())

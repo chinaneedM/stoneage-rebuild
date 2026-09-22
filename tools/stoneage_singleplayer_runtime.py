@@ -96,6 +96,7 @@ from tools.stoneage_singleplayer_domain import (
     PetSlot,
     SinglePlayerHistoricalDomain,
 )
+from tools.stoneage_tw10_hit_map_model import TaiwanV10HitMap
 from tools.stoneage_tw10_25_bridge_model import PetTemplateBridge, ReconstructedPetBridgeState
 from tools.stoneage_tw10_25_encounter_bridge import active_encounter_area
 from tools.stoneage_singleplayer_world import (
@@ -231,6 +232,65 @@ class SinglePlayerHistoricalRuntime:
             encounter=encounter,
             frequency=frequency,
             group_encounter=group_encounter,
+        )
+
+    def walk_step_with_taiwan_v10_hit_map(
+        self,
+        *,
+        floor_id: int,
+        hit_map: TaiwanV10HitMap,
+        destination: MapPosition,
+        encounter_rolls: EncounterRolls | None = None,
+        action_is_walk: bool = True,
+        map_objmove_ok: bool = True,
+    ) -> HistoricalRuntimeStep:
+        """Resolve entry through the recovered Taiwan-v1 client checkHitMap path.
+
+        This entry point deliberately does not apply the separate descendant
+        server WALKABLE/HAVEHEIGHT, diagonal-corner or dynamic-overability
+        rules. The caller must bind the hit map to an authenticated floor.
+        """
+        current = self.domain.world.player_position
+        if current is None:
+            raise ValueError("player position is required before collision resolution")
+        floor_id = int(floor_id)
+        if current.floor_id != floor_id or destination.floor_id != floor_id:
+            raise ValueError("Taiwan-v1 hit map must be bound to the active floor")
+        entry_allowed = not hit_map.blocked_at(destination.x, destination.y)
+        return self.walk_step(
+            destination=destination,
+            entry_allowed=entry_allowed,
+            encounter_rolls=encounter_rolls,
+            action_is_walk=action_is_walk,
+            map_objmove_ok=map_objmove_ok,
+        )
+
+    def walk_step_with_taiwan_v10_hit_map_frequency(
+        self,
+        *,
+        floor_id: int,
+        hit_map: TaiwanV10HitMap,
+        destination: MapPosition,
+        frequency_roll: int,
+        encounter_rolls: EncounterRolls,
+        action_is_walk: bool = True,
+        map_objmove_ok: bool = True,
+    ) -> HistoricalRuntimeStep:
+        """Compose Taiwan-v1 checkHitMap with the separately recovered CEP loop."""
+        current = self.domain.world.player_position
+        if current is None:
+            raise ValueError("player position is required before collision resolution")
+        floor_id = int(floor_id)
+        if current.floor_id != floor_id or destination.floor_id != floor_id:
+            raise ValueError("Taiwan-v1 hit map must be bound to the active floor")
+        entry_allowed = not hit_map.blocked_at(destination.x, destination.y)
+        return self.walk_step_with_frequency(
+            destination=destination,
+            entry_allowed=entry_allowed,
+            frequency_roll=frequency_roll,
+            encounter_rolls=encounter_rolls,
+            action_is_walk=action_is_walk,
+            map_objmove_ok=map_objmove_ok,
         )
 
     def walk_step_with_collision(
