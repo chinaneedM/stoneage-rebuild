@@ -1,6 +1,6 @@
-StoneAge Internet Archive candidate-file metadata scan — R2
+StoneAge Internet Archive candidate-file metadata scan — R3
 SCOPE|item-and-filelist-metadata-only|no-payload-download
-TRAITS|exact=sa.exe,sa_demo.exe,sa174hg.exe,stone_demo.exe,onlStoneAge.zip,stoneage.zip,stoneagebeta.zip|japan174a=official-url+1.74a+248MB|size_window=180-320MiB
+TRAITS|exact=sa.exe,sa_demo.exe,sa174hg.exe,stone_demo.exe,onlStoneAge.zip,stoneage.zip,stoneagebeta.zip|japan174a=official-url+1.74a+248MB|japan2004=JAN4988609011565+WR-04156+ItemCity423|size_window=180-320MiB
 QUERY|n=1|results=0|q="스톤에이지" AND mediatype:software
 QUERY|n=2|results=53|q="StoneAge" AND mediatype:software
 QUERY|n=3|results=67|q=title:(stoneage OR "stone age") AND mediatype:software
@@ -19,6 +19,9 @@ QUERY|n=15|results=0|q="hangame.gamania.co.jp/stoneage/sa174hg.exe"
 QUERY|n=16|results=0|q="hangame.gamania.co.jp/stoneage"
 QUERY|n=17|results=0|q="StoneAge" AND "1.74a"
 QUERY|n=18|results=0|q="STONE AGE" AND "248MB"
+QUERY|n=19|results=0|q="4988609011565"
+QUERY|n=20|results=0|q="WR-04156"
+QUERY|n=21|results=0|q="item-city.com" AND "product_id=423"
 COUNT|unique_items|223
 COUNT|metadata_fetched|223
 COUNT|errors|0
