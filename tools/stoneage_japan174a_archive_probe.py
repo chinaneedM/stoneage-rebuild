@@ -10,7 +10,6 @@ from __future__ import annotations
 import html.parser
 import json
 import re
-import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -19,6 +18,9 @@ import urllib.request
 UA = "stoneage-rebuild-archaeology/1.0"
 CDX = "https://web.archive.org/cdx/search/cdx"
 WAYBACK = "https://web.archive.org/web/{timestamp}id_/{url}"
+REQUEST_TIMEOUT_SECONDS = 12
+ARCHIVE_TIMEOUT_SECONDS = 15
+ROOT_SNAPSHOT_LIMIT = 3
 
 DOWNLOAD_EXT = re.compile(
     r"(?i)\.(?:exe|zip|rar|cab|lzh|lha|arj|gz|tgz|bz2|msi)(?:$|[?#])"
@@ -55,17 +57,18 @@ class LinkParser(html.parser.HTMLParser):
             self._text = []
 
 
-def request(url: str, *, timeout: int = 30) -> bytes:
-    last = None
-    for attempt in range(2):
-        try:
-            req = urllib.request.Request(url, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=timeout) as response:
-                return response.read()
-        except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
-            last = exc
-            time.sleep(1 + attempt)
-    raise RuntimeError(f"request failed: {url}: {last}")
+def request(
+    url: str,
+    *,
+    timeout: int = REQUEST_TIMEOUT_SECONDS,
+) -> bytes:
+    """Perform one bounded request; the caller records failures in the report."""
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            return response.read()
+    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as exc:
+        raise RuntimeError(f"request failed: {url}: {exc}") from exc
 
 
 def decode_html(data: bytes) -> str:
@@ -114,7 +117,7 @@ def archived_links(timestamp: str, original: str):
         timestamp=timestamp,
         url=urllib.parse.quote(original,safe=":/?&=%#+,;@[]!$'()*"),
     )
-    body=request(target,timeout=45)
+    body=request(target,timeout=ARCHIVE_TIMEOUT_SECONDS)
     parser=LinkParser()
     parser.feed(decode_html(body))
     out=[]
@@ -145,28 +148,16 @@ def select_launch_snapshots(rows, *, limit: int = 8):
 
 
 def main() -> None:
-    # Keep archive queries narrow. Full-host wildcards are both expensive and
-    # low-value for client archaeology; every pattern below is directly
-    # download/client related.
-    official_patterns=(
-        "*.exe","*.zip","*.lzh","*.lha","*.cab","*.msi",
-        "*download*","*client*","*setup*","*install*","*patch*","*update*",
-    )
+    # Query each official StoneAge subtree once, then filter archive rows locally.
+    # This keeps request count bounded while retaining executable/archive URLs
+    # and paths that explicitly mention client/download/update concepts.
     surfaces=[
-        (f"official-bare:{pattern}","stoneage.to/"+pattern)
-        for pattern in official_patterns
-    ] + [
-        (f"official-www:{pattern}","www.stoneage.to/"+pattern)
-        for pattern in official_patterns
-    ] + [
-        # Later preserved community references identify Hangame's StoneAge
-        # publishing path as /publish/sa/main.asp. Search that exact subtree
-        # because the URL itself does not contain the token "stoneage".
-        (f"hangame-sa:{pattern}","www.hangame.co.jp/publish/sa/"+pattern)
-        for pattern in official_patterns
-    ] + [
-        ("hangame-bare:stoneage","hangame.co.jp/*stoneage*"),
-        ("hangame-www:stoneage","www.hangame.co.jp/*stoneage*"),
+        ("official-bare","stoneage.to/*"),
+        ("official-www","www.stoneage.to/*"),
+        ("hangame-sa","www.hangame.co.jp/publish/sa/*"),
+        ("hangame-sa-bare","hangame.co.jp/publish/sa/*"),
+        ("hangame-bare-stoneage","hangame.co.jp/*stoneage*"),
+        ("hangame-www-stoneage","www.hangame.co.jp/*stoneage*"),
     ]
     roots=[
         ("official-root-bare","http://stoneage.to/"),
@@ -180,17 +171,24 @@ def main() -> None:
     print("StoneAge Japan 1.74a public archive client probe — R1")
     print("SCOPE|metadata-and-link-targets-only|no-client-binary-download")
     print("YEARS|from=2003|to=2005")
+    print(
+        f"REQUEST_POLICY|request_timeout={REQUEST_TIMEOUT_SECONDS}|"
+        f"archive_timeout={ARCHIVE_TIMEOUT_SECONDS}|"
+        f"root_snapshot_limit={ROOT_SNAPSHOT_LIMIT}|attempts=1"
+    )
 
     errors=[]
     indexed=[]
     for surface,pattern in surfaces:
         try:
-            rows=cdx_query(pattern,2003,2005)
+            rows=cdx_query(pattern,2003,2005,limit=5000)
         except Exception as exc:
             errors.append((surface,type(exc).__name__,str(exc)))
             continue
         for row in rows:
-            indexed.append((surface,row))
+            original=str(row.get("original",""))
+            if DOWNLOAD_EXT.search(original) or INTEREST.search(original):
+                indexed.append((surface,row))
 
     dedup={}
     for surface,row in indexed:
@@ -224,7 +222,7 @@ def main() -> None:
         except Exception as exc:
             errors.append((surface,type(exc).__name__,str(exc)))
             continue
-        for row in select_launch_snapshots(rows):
+        for row in select_launch_snapshots(rows,limit=ROOT_SNAPSHOT_LIMIT):
             root_snapshots.append((surface,row))
 
     emitted=set()
@@ -252,7 +250,7 @@ def main() -> None:
             )
         )
 
-    for surface,kind,message in errors:
+    for surface,kind,message in sorted(errors):
         print(f"ERROR|{safe(surface)}|{safe(kind)}|{safe(message)}")
     print(f"COUNT|errors|{len(errors)}")
 

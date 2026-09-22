@@ -1,8 +1,11 @@
 import unittest
 
 from tools.stoneage_japan174a_archive_probe import (
+    ARCHIVE_TIMEOUT_SECONDS,
     DOWNLOAD_EXT,
     INTEREST,
+    REQUEST_TIMEOUT_SECONDS,
+    ROOT_SNAPSHOT_LIMIT,
     LinkParser,
     decode_html,
     safe,
@@ -50,6 +53,11 @@ class Japan174aArchiveProbeTests(unittest.TestCase):
         out=safe(value)
         self.assertNotIn("\x00",out)
         self.assertLessEqual(len(out),500)
+
+    def test_archive_request_budget_is_bounded(self):
+        self.assertLessEqual(REQUEST_TIMEOUT_SECONDS,15)
+        self.assertLessEqual(ARCHIVE_TIMEOUT_SECONDS,20)
+        self.assertLessEqual(ROOT_SNAPSHOT_LIMIT,3)
 
 
 if __name__ == "__main__":

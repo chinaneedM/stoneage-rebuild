@@ -10,7 +10,6 @@ from __future__ import annotations
 import html.parser
 import json
 import re
-import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -19,6 +18,9 @@ import urllib.request
 UA="stoneage-rebuild-archaeology/1.0"
 CDX="https://web.archive.org/cdx/search/cdx"
 WAYBACK="https://web.archive.org/web/{timestamp}id_/{url}"
+REQUEST_TIMEOUT_SECONDS=12
+ARCHIVE_TIMEOUT_SECONDS=15
+ROOT_SNAPSHOT_LIMIT=3
 
 DOWNLOAD_EXT=re.compile(
     r"(?i)\.(?:exe|zip|rar|cab|lzh|lha|arj|gz|tgz|bz2|msi)(?:$|[?#])"
@@ -54,17 +56,14 @@ class LinkParser(html.parser.HTMLParser):
             self._text=[]
 
 
-def request(url,*,timeout=30):
-    last=None
-    for attempt in range(2):
-        try:
-            req=urllib.request.Request(url,headers={"User-Agent":UA})
-            with urllib.request.urlopen(req,timeout=timeout) as response:
-                return response.read()
-        except (urllib.error.URLError,TimeoutError,ConnectionError) as exc:
-            last=exc
-            time.sleep(1+attempt)
-    raise RuntimeError(f"request failed: {url}: {last}")
+def request(url,*,timeout=REQUEST_TIMEOUT_SECONDS):
+    """Perform one bounded request; the caller records failures in the report."""
+    try:
+        req=urllib.request.Request(url,headers={"User-Agent":UA})
+        with urllib.request.urlopen(req,timeout=timeout) as response:
+            return response.read()
+    except (urllib.error.URLError,TimeoutError,ConnectionError,OSError) as exc:
+        raise RuntimeError(f"request failed: {url}: {exc}") from exc
 
 
 def decode_html(data):
@@ -105,7 +104,7 @@ def archived_links(timestamp,original):
         url=urllib.parse.quote(original,safe=":/?&=%#+,;@[]!$'()*"),
     )
     parser=LinkParser()
-    parser.feed(decode_html(request(url,timeout=45)))
+    parser.feed(decode_html(request(url,timeout=ARCHIVE_TIMEOUT_SECONDS)))
     out=[]
     for href,anchor in parser.links:
         absolute=urllib.parse.urljoin(original,href)
@@ -133,31 +132,16 @@ def select_launch_snapshots(rows,*,limit=8):
 
 
 def main():
-    targeted=(
-        "*.exe","*.zip","*.lzh","*.lha","*.cab","*.msi",
-        "*download*","*client*","*setup*","*install*","*patch*","*update*",
-    )
+    # Query each official StoneAge subtree once, then filter archive rows locally.
+    # This replaces dozens of wildcard requests while preserving every archived
+    # executable/archive URL and every path containing a client/download term.
     surfaces=[
-        (f"game3:{pattern}","game3.netmarble.net/stoneage/"+pattern)
-        for pattern in targeted
-    ] + [
-        (f"game3-www:{pattern}","www.game3.netmarble.net/stoneage/"+pattern)
-        for pattern in targeted
-    ] + [
-        # Later preserved Netmarble references use /cp_site/stoneage.
-        # Keep it a separately-labelled candidate subtree; do not infer that
-        # it existed at launch unless the 2003-2004 archive index proves it.
-        (f"game3-cp-site:{pattern}","game3.netmarble.net/cp_site/stoneage/"+pattern)
-        for pattern in targeted
-    ] + [
-        (f"game3-www-cp-site:{pattern}","www.game3.netmarble.net/cp_site/stoneage/"+pattern)
-        for pattern in targeted
-    ] + [
-        (f"brand:{pattern}","stoneage.netmarble.net/"+pattern)
-        for pattern in targeted
-    ] + [
-        (f"brand-www:{pattern}","www.stoneage.netmarble.net/"+pattern)
-        for pattern in targeted
+        ("game3","game3.netmarble.net/stoneage/*"),
+        ("game3-www","www.game3.netmarble.net/stoneage/*"),
+        ("game3-cp-site","game3.netmarble.net/cp_site/stoneage/*"),
+        ("game3-www-cp-site","www.game3.netmarble.net/cp_site/stoneage/*"),
+        ("brand","stoneage.netmarble.net/*"),
+        ("brand-www","www.stoneage.netmarble.net/*"),
     ]
     roots=[
         ("game3-root","http://game3.netmarble.net/stoneage/"),
@@ -171,17 +155,24 @@ def main():
     print("StoneAge Korea Netmarble 1.74 archive client probe — R1")
     print("SCOPE|metadata-and-link-targets-only|no-client-binary-download")
     print("YEARS|from=2003|to=2004")
+    print(
+        f"REQUEST_POLICY|request_timeout={REQUEST_TIMEOUT_SECONDS}|"
+        f"archive_timeout={ARCHIVE_TIMEOUT_SECONDS}|"
+        f"root_snapshot_limit={ROOT_SNAPSHOT_LIMIT}|attempts=1"
+    )
     errors=[]
     indexed=[]
 
     for surface,pattern in surfaces:
         try:
-            rows=cdx_query(pattern)
+            rows=cdx_query(pattern,limit=5000)
         except Exception as exc:
             errors.append((surface,type(exc).__name__,str(exc)))
             continue
         for row in rows:
-            indexed.append((surface,row))
+            original=str(row.get("original",""))
+            if DOWNLOAD_EXT.search(original) or INTEREST.search(original):
+                indexed.append((surface,row))
 
     uniq={}
     for surface,row in indexed:
@@ -211,7 +202,7 @@ def main():
         except Exception as exc:
             errors.append((surface,type(exc).__name__,str(exc)))
             continue
-        for row in select_launch_snapshots(rows):
+        for row in select_launch_snapshots(rows,limit=ROOT_SNAPSHOT_LIMIT):
             snapshots.append((surface,row))
 
     links=set()
@@ -235,7 +226,7 @@ def main():
             "LINK|"
             + "|".join(safe(x) for x in (surface,ts,kind,target,anchor))
         )
-    for surface,kind,message in errors:
+    for surface,kind,message in sorted(errors):
         print(f"ERROR|{safe(surface)}|{safe(kind)}|{safe(message)}")
     print(f"COUNT|errors|{len(errors)}")
 
