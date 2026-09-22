@@ -194,6 +194,16 @@ Attack redirection only succeeds when the registered guardian:
 
 Guardian entries and guardian flags are cleared during battle pre-command setup, so registration is turn-local rather than permanent state.
 
+The fixed physical execution order is now connected end-to-end:
+
+1. dodge is checked against the original target;
+2. Guardian eligibility is checked;
+3. successful interception replaces the physical defender before critical/damage;
+4. wake-up and ordinary physical status application use that final defender;
+5. a successful Guardian interception forces the attack continuation flag false, so the ordinary counter chain does not start from the intercepted hit.
+
+The stable enum value `BATTLE_COM_S_GUARDIAN_GUARD=1004` is present in all three pinned headers but has no common executable occurrence. The actual defensive Guardian handler writes ordinary `BATTLE_COM_GUARD` and stores the guardian registration separately. R1 preserves that split rather than inventing an execution path for 1004.
+
 ## Power balance
 
 The handler selects `BATTLE_COM_S_POWERBALANCE` and can immediately modify:
@@ -524,7 +534,9 @@ The four active all-source-missing callback rows remain quarantined.
 Artifacts:
 
 - `tools/stoneage_petskill_core_model.py`
+- `tools/stoneage_petskill_round_bridge.py`
 - `tests/test_stoneage_petskill_core_model.py`
+- `tests/test_stoneage_petskill_round_bridge.py`
 - `.github/workflows/validate-stoneage-petskill-core.yml`
 - `tools/stoneage_effect_callback_coverage_probe.py`
 - `research/recovered/STONEAGE-25-EFFECT-CALLBACK-COVERAGE-R1.txt`
@@ -539,6 +551,8 @@ The model separates:
 Initial dedicated CI run `35374550333` passed 44 tests.
 
 After edge corrections for invalid-status sentinel, steal destruction semantics, and COM3 residue, run `35374921866` passed **50 deterministic tests**. Report-trigger rerun `35375022224` also completed successfully.
+
+The round bridge and shared Guardian/status integration were subsequently validated by pet-skill run **35689840680** and battle-core run **35689840660** at `2fa7c2bde4ca882a2275f507d6f2a0e6f3a3d514`. The later Combo/status integration remained compatible in pet-skill run **35690533578**.
 
 ## Evidence boundary
 

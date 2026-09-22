@@ -1436,13 +1436,21 @@ Supplemental source ledgers:
   - exact BATTLE_Exit recovery/status cleanup is still a separate seam and has not been guessed into the escape return path;
   - dedicated `finish_persistent_escape()` now returns a successful escape to world state without calling the normal drop/EXP settlement path; player HP is preserved, active-pet battle HP is preserved, and every carried non-mail pet at HP≤0 is restored to HP=1, matching the stable player `BATTLE_Exit()` loop in the current no-pet-mail single-player scope;
   - detailed evidence is recorded in \`research/mechanics/STONEAGE-BATTLE-ESCAPE-R1.md\`.
+- Common base status acquisition and its ordinary physical interaction seams are now closed to the pinned descendant boundary:
+  - ordinary magic and item StatusChange delegate to the shared base status core and write their requested duration directly;
+  - pet StatusChange (`BATTLE_COM_S_STATUSCHANGE=1008`) executes through the ordinary physical path, requires positive resolved damage, uses the stable `PerOffset=30 / Range=40 / Bai=2.0` profile, writes `turn+1`, and preserves the physical DRUNK post-write halving;
+  - COM3 LOW/HIGH packing is reconstructed exactly and a stable pet-skill bridge now carries handler-side attack/defense work-power mutations into the round core without reparsing skill text;
+  - Guardian eligibility is shared and deterministic; interception occurs after original-target dodge and before critical/damage, redirects physical status application to the guardian, forces redirected zero damage to 1 NORMAL, and suppresses the ordinary counter continuation;
+  - `BATTLE_COM_S_GUARDIAN_ATTACK=1003` auto-registers the paired front-row owner; the defensive Guardian branch uses ordinary `GUARD` plus turn-local registration; enum-only `1004` has no common executable handler in the three pinned lineages;
+  - active common statuses now interact with the alternating counter chain without a synthetic blanket block; positive counter damage uses the common damage-wakeup runtime;
+  - Combo formation now uses pre-tick `CanMoveCheck`, later members run one early `StatusSeq` inside the starter branch, immobilized members are consumed/excluded, the source one-member-combo behavior is retained, and every positive combo member applies target damage-wakeup semantics.
 - Still OPEN / deliberately excluded:
   - exact JSS-1999 choice of level-threshold regime/table;
   - maximum-level and pet-limit-level behavior;
   - complete visible pet AI/loyalty compliance projection;
   - early-JSS confirmation of the descendant `_Item_ReLifeAct` combo-profit compile path;
-  - base-status **application/acquisition** seams: ordinary magic/item/pet-skill status hit/resistance -> status counter creation are not yet connected to the persistent battle state;
-  - counter/combo interaction with active statuses, guardian interception, reflect/absorb/vanish, ride-pet damage sharing and later special-command branches;
+  - damage-reaction interactions still outside the reconstructed physical seam: reflect/trap/acupuncture-style redirection, absorb/vanish, and their exact continuation/status/wakeup ordering;
+  - ride-pet damage sharing and later special-command branches not yet closed into the ordinary/combo persistent round;
   - later macro-gated status families and exact battle-exit cleanup for fields outside the common poison/paralysis/sleep/stone/drunk/confusion runtime;
 - Code validations:
   - `81e9572f1ff309982d13c7f1979a51516a5593a8` — pending ordinary kill EXP accumulation; runs **35514277568** and **35514277633** both success.
@@ -1475,11 +1483,19 @@ Supplemental source ledgers:
   - `1bcbf15a07652f194d78b20c29a59a452f6b00cf` — stable status-free combo accumulated damage plus full attack-list EXP/drop routing; battle-core **35670646011** and gameplay **35670645876** success.
   - `badeba6934d07a9c0605bdac13fd8b32b31501c1` — common poison/paralysis/sleep/stone/drunk/confusion timing model; battle-core **35671000903** success.
   - `9c79098637943d8101a612e8e5ee80de6b694656` — integrate common statuses into ordinary/persistent rounds, including poison persistence, immobilization, confusion rewrite, stone defense and positive-damage sleep wake-up; battle-core **35671549996** and gameplay **35671550039** success.
+  - `c06bff3e10610cb7b035ccb847bf235ecf620f37` — unify pet status-hit probability with the shared base-status core; pet-skill **35672999246**, battle-core **35672998977**, magic **35672999058**, item **35672998940** success.
+  - `9b12bacf010281b8bffa51da1192ab742d9cf433` — execute pet StatusChange (`1008`) through ordinary/persistent rounds with source same-round decrement timing; battle-core **35673677261** and gameplay **35673677219** success.
+  - `a1ac32a02870a475aad4bcdc13f8d30b647d69eb` — shared stable Guardian eligibility core; battle-core **35674077053** and pet-skill **35674077050** success.
+  - `19138a26430b58e35f475f4f644d8dcf14d7dbb0` — Guardian interception in ordinary/persistent rounds; battle-core **35689247554** and gameplay **35689247544** success.
+  - `11b264a3e1293a06f33845ea847109a859f02d76` — derive `S_GUARDIAN_ATTACK=1003` registration from the submitted command; battle-core **35689434766** and gameplay **35689434791** success.
+  - `2fa7c2bde4ca882a2275f507d6f2a0e6f3a3d514` — bridge stable Guardian/StatusChange handler outputs into numeric round commands plus setup effects; pet-skill **35689840680** and battle-core **35689840660** success.
+  - `a11cbc5693d220635000a156f4f499ea86d1aa6a` — integrate active common statuses with alternating counter execution and damage wake-up; battle-core **35690243546** and gameplay **35690243482** success.
+  - `a86701f3afb09552b789c386abea6ad730c0ec2c` — integrate source-shaped common status timing with Combo formation/execution, including early later-member `StatusSeq` and one-member combo behavior; pet-skill **35690533578**, battle-core **35690533588**, gameplay **35690533586** success.
 
 ## Immediate next actions
 
-1. **Recover the common status-application seam next.** Trace ordinary magic/item/pet-skill status hit and resistance paths into poison/paralysis/sleep/stone/drunk/confusion counters, keeping later macro-gated families separate; then connect only evidence-backed base status creation to the persistent battle state.
-2. **Close status × counter/combo and guardian/reaction interactions as separate deterministic seams.** Counter and combo base execution are closed; do not guess how active statuses, guardian interception, reflect/absorb/vanish or ride-pet sharing alter those paths.
+1. **Recover the common DamageReact seam next.** Trace the stable physical attack/Combo ordering for reflect, absorb, vanish and other unguarded reaction states; keep macro-gated profession/pet extensions separate and do not infer missing reaction state from display/UI labels.
+2. **Close ride-pet damage sharing after DamageReact.** Reconstruct only the source-backed HP split/fall-off transitions needed by ordinary and Combo damage, then connect them to persistent battle state without importing later private-server rules.
 3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
 4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
 5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.

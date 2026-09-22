@@ -423,10 +423,30 @@ Main-attack continuation is likewise source-shaped for the supported seam:
 critical, guarding target, or target death suppress the chain; ordinary
 NORMAL/MISS/DODGE against a surviving non-guarding target permit it.
 
-Guardian interception, damage-reaction systems, abnormal statuses and the
-later special `BATTLE_COM_S_NOGUARD` modifier remain excluded. Counter EXP
-continues to flow through the already-closed actual-counter-actor profit
-attribution rather than a new reward rule.
+Common base statuses and Guardian interaction are now connected to this counter boundary:
+
+- counter execution does not run an extra `BATTLE_StatusSeq`; eligibility therefore depends on the actor's COM1 state at that exact point;
+- active poison/drunk/confusion do not receive a synthetic counter prohibition;
+- positive counter damage uses the shared `BATTLE_DamageWakeUp` model, including sleep clearing and damage-count advancement;
+- current stone status is reflected in the counter target's effective defense;
+- Guardian interception of the **main** physical hit forces continuation false, while the common `BATTLE_Counter` path itself initializes Guardian to -2 and does not perform a fresh GuardianCheck.
+
+Damage-reaction systems and the later special `BATTLE_COM_S_NOGUARD` modifier remain separate seams. Counter EXP continues to flow through the already-closed actual-counter-actor profit attribution rather than a new reward rule.
+
+### 7.4 Status timing inside Combo
+
+The stable source performs `EntrySort` and `ComboCheck` before per-actor `BATTLE_StatusSeq`. Combo formation therefore uses the current pre-decrement `BATTLE_CanMoveCheck` state.
+
+At execution:
+
+- the starter reaches the ordinary per-entry StatusSeq point first;
+- each later member in the same combo group is advanced and receives one early StatusSeq inside the starter's Combo branch;
+- after that early tick, a later member is added when still alive and `BATTLE_CanMoveCheck` is true; the source does not re-test whether confusion rewrote COM1 away from COMBO;
+- consumed later entries do not receive a second normal turn/status tick;
+- if all later members fall out, the source still calls `BATTLE_Combo` with the starter alone (and only logs its historical one-person-combo diagnostic);
+- every executed combo member calls the physical attack sequence against the shared target; current stone affects defense, and every positive member contribution reaches the damage-wakeup boundary even though accumulated HP damage is committed on the final member.
+
+This timing is represented by the deterministic round model and validated at `a86701f3afb09552b789c386abea6ad730c0ec2c`.
 
 ## 8. Guard
 
