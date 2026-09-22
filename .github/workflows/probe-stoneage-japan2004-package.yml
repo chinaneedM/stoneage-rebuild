@@ -1,0 +1,39 @@
+name: Probe Japan 2004 StoneAge retail package
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_japan2004_package_probe.py
+      - tests/test_stoneage_japan2004_package_probe.py
+      - .github/workflows/probe-stoneage-japan2004-package.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-japan2004-package
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run package-probe unit tests
+        run: python3 -m unittest tests.test_stoneage_japan2004_package_probe -v
+      - name: Probe official 2004 package page
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_japan2004_package_probe \
+            > research/recovered/STONEAGE-JAPAN-2004-PACKAGE-PROBE-R1.txt
+      - name: Commit derived metadata report only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-JAPAN-2004-PACKAGE-PROBE-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Japan 2004 StoneAge package'
+          git pull --rebase origin main
+          git push
