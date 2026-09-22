@@ -764,6 +764,18 @@ class BattleCoreModelTests(unittest.TestCase):
         self.assertTrue(hit.critical_roll_consumed)
         self.assertEqual(miss.ultimate_kind,0)
 
+    def test_combo_enemy_only_scope_does_not_promote_pet_critical_death(self):
+        result=resolve_battle_death_ultimate_override(
+            BattleDeathUltimateInputs(
+                base_ultimate_kind=0,
+                victim_kind=PET,
+                critical=True,
+                critical_scope="enemy_only",
+            )
+        )
+        self.assertEqual(result.ultimate_kind,0)
+        self.assertFalse(result.critical_roll_consumed)
+
     def test_player_critical_death_does_not_use_nonplayer_ultimate_roll(self):
         result=resolve_battle_death_ultimate_override(
             BattleDeathUltimateInputs(

@@ -1339,15 +1339,22 @@ class BattleDeathUltimateInputs:
     victim_kind: str
     abio: bool = False
     critical: bool = False
+    critical_scope: str = "nonplayer"
 
     def __post_init__(self) -> None:
         kind=int(self.base_ultimate_kind)
         if kind not in {0,1,2}:
             raise ValueError("base_ultimate_kind must be 0, 1 or 2")
+        scope=str(self.critical_scope)
+        if scope not in {"nonplayer","enemy_only"}:
+            raise ValueError(
+                "critical_scope must be nonplayer or enemy_only"
+            )
         object.__setattr__(self,"base_ultimate_kind",kind)
         object.__setattr__(self,"victim_kind",str(self.victim_kind))
         object.__setattr__(self,"abio",bool(self.abio))
         object.__setattr__(self,"critical",bool(self.critical))
+        object.__setattr__(self,"critical_scope",scope)
 
 
 @dataclass(frozen=True)
@@ -1371,9 +1378,22 @@ def resolve_battle_death_ultimate_override(
             raise ValueError("ABIO ultimate override does not consume critical RNG")
         return BattleDeathUltimateResolution(1,False)
 
-    if inputs.victim_kind != PLAYER and inputs.critical:
+    critical_eligible=bool(
+        inputs.critical
+        and (
+            (
+                inputs.critical_scope == "nonplayer"
+                and inputs.victim_kind != PLAYER
+            )
+            or (
+                inputs.critical_scope == "enemy_only"
+                and inputs.victim_kind == ENEMY
+            )
+        )
+    )
+    if critical_eligible:
         if critical_roll_1_100 is None:
-            raise ValueError("non-player critical death requires RAND(1,100)")
+            raise ValueError("eligible critical death requires RAND(1,100)")
         roll=int(critical_roll_1_100)
         if not 1 <= roll <= 100:
             raise ValueError("critical death ultimate roll must be in 1..100")
