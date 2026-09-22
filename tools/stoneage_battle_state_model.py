@@ -690,7 +690,7 @@ def resolve_persistent_capture_transition(
             )
             if pid != target_id
         }),
-        ride_pet_runtime=round_result.ride_pet_runtime,
+        ride_pet_runtime=state.ride_pet_runtime,
     )
     next_state=_with_termination(next_state)
     return PersistentCaptureResult(
@@ -1182,7 +1182,7 @@ def resolve_persistent_ordinary_round(
         base_damage_react_state_by_participant_id=_freeze_mapping(
             next_damage_react
         ),
-        ride_pet_runtime=state.ride_pet_runtime,
+        ride_pet_runtime=round_result.ride_pet_runtime,
     )
     if player_id in escaped_ids:
         next_state=replace(

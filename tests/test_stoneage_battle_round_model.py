@@ -1684,8 +1684,8 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(attack.ride_pet_fell_rider_id,"player")
 
     def test_active_ride_rejects_unclosed_counter_combo_and_reaction_interactions(self):
-        player=actor("player","player","player")
-        enemy=actor("enemy","enemy","enemy")
+        player=actor("player","player","player",quick=100)
+        enemy=actor("enemy","enemy","enemy",quick=50)
         runtime=RidePetRuntime(
             rider_id="player",pet_id="pet:0",
             hp=100,max_hp=100,defense_power=40,
