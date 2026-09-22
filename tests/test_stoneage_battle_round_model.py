@@ -1,6 +1,10 @@
 import unittest
 from dataclasses import replace
 
+from tools.stoneage_battle_damage_react_model import (
+    BaseDamageReactState,
+    DAMAGE_REACT_REFLEC,
+)
 from tools.stoneage_battle_guardian_model import GuardianRegistration
 
 from tools.stoneage_battle_round_model import (
@@ -763,6 +767,195 @@ class BattleRoundModelTests(unittest.TestCase):
             baseline.events[0].damage,
             boosted.events[0].damage,
         )
+
+    def test_reflect_redirects_hp_status_and_wakeup_to_attacker(self):
+        pet=actor(
+            "pet","player","pet",
+            hp=200,attack=100,quick=100,level=20,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=200,quick=20,level=10,
+        )
+        prepared=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(
+                    BATTLE_COM_S_STATUSCHANGE,
+                    command2=10,
+                    command3=pack_battle_command3(low=1,high=3),
+                ),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(luck=10),"enemy":profile()},
+            attack_rolls={
+                "pet":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            counter_rolls_by_attack_id={
+                "pet":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=1,
+                        attack_rolls=OrdinaryAttackRolls(
+                            dodge_roll_1_10000=10000,
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                    ),
+                )
+            },
+            base_damage_react_state_by_participant_id={
+                "pet":BaseDamageReactState(),
+                "enemy":BaseDamageReactState(reflect=1),
+            },
+            base_status_combat_profiles_by_participant_id={
+                "pet":BaseStatusCombatProfile(
+                    vital=25,strength=25,tough=25,dex=25,
+                )
+            },
+            status_application_rolls_by_attack_id={"pet":29},
+            defense_profile="newpower_70pct",
+        )
+        attack=result.events[0]
+        self.assertEqual(
+            attack.damage_react_resolution.effective_kind,
+            DAMAGE_REACT_REFLEC,
+        )
+        self.assertEqual(attack.resolved_target_slot,0)
+        self.assertLess(result.hp_by_participant_id["pet"],200)
+        self.assertEqual(result.hp_by_participant_id["enemy"],200)
+        self.assertEqual(
+            result.base_damage_react_state_by_participant_id[
+                "enemy"
+            ].reflect,
+            0,
+        )
+        self.assertEqual(
+            result.base_status_runtime_by_participant_id["pet"].status.poison,
+            4,
+        )
+        self.assertEqual(
+            result.base_status_runtime_by_participant_id["pet"].damage_count,
+            1,
+        )
+        self.assertFalse(any(event.is_counter for event in result.events))
+
+    def test_absorb_heals_without_wakeup(self):
+        player=actor("player","player","player",attack=100,quick=100)
+        enemy=replace(
+            actor("enemy","enemy","enemy",hp=80,quick=20),
+            max_hp=100,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            base_status_runtime_by_participant_id={
+                "player":BaseBattleStatusRuntime(work_quick=100),
+                "enemy":BaseBattleStatusRuntime(
+                    status=BaseBattleStatusState(sleep=2),
+                    work_quick=20,
+                ),
+            },
+            base_damage_react_state_by_participant_id={
+                "player":BaseDamageReactState(),
+                "enemy":BaseDamageReactState(absorb=1),
+            },
+            defense_profile="newpower_70pct",
+        )
+        attack=result.events[0]
+        self.assertGreater(attack.damage,0)
+        self.assertGreater(result.hp_by_participant_id["enemy"],80)
+        self.assertEqual(
+            result.base_status_runtime_by_participant_id["enemy"].status.sleep,
+            2,
+        )
+        self.assertEqual(
+            result.base_status_runtime_by_participant_id["enemy"].damage_count,
+            0,
+        )
+        self.assertEqual(
+            result.base_damage_react_state_by_participant_id["enemy"].absorb,
+            0,
+        )
+
+    def test_throwing_weapon_bypasses_reflect_but_still_blocks_counter(self):
+        player=actor("player","player","player",attack=100,quick=100)
+        enemy=actor("enemy","enemy","enemy",hp=200,quick=20)
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={
+                "player":profile(counter_weapon_type="bow"),
+                "enemy":profile(),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            counter_rolls_by_attack_id={
+                "player":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=1,
+                        attack_rolls=OrdinaryAttackRolls(
+                            dodge_roll_1_10000=10000,
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                    ),
+                )
+            },
+            base_damage_react_state_by_participant_id={
+                "player":BaseDamageReactState(),
+                "enemy":BaseDamageReactState(reflect=1),
+            },
+            defense_profile="newpower_70pct",
+        )
+        attack=result.events[0]
+        self.assertTrue(
+            attack.damage_react_resolution.reflect_blocked_by_throwing_weapon
+        )
+        self.assertEqual(result.hp_by_participant_id["player"],100)
+        self.assertLess(result.hp_by_participant_id["enemy"],200)
+        self.assertEqual(
+            result.base_damage_react_state_by_participant_id["enemy"].reflect,
+            1,
+        )
+        self.assertFalse(any(event.is_counter for event in result.events))
 
     def test_guardian_attack_command_auto_registers_front_row_owner(self):
         player=actor("player","player","player",hp=200,quick=20)

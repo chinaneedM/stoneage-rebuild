@@ -40,6 +40,14 @@ from tools.stoneage_battle_core_model import (
     resolve_battle_counter_check,
     resolve_battle_escape_attempt,
 )
+from tools.stoneage_battle_damage_react_model import (
+    DAMAGE_REACT_REFLEC,
+    BaseDamageReactResolution,
+    BaseDamageReactState,
+    base_damage_react_active,
+    base_damage_react_blocks_main_continuation,
+    resolve_base_damage_react,
+)
 from tools.stoneage_battle_guardian_model import (
     GuardianRegistration,
     guardian_redirect_allowed,
@@ -636,6 +644,7 @@ class OrdinaryRoundEvent:
     guardian_redirected: bool = False
     guarded_target_slot: int | None = None
     guardian_slot: int | None = None
+    damage_react_resolution: BaseDamageReactResolution | None = None
 
 
 @dataclass(frozen=True)
@@ -646,6 +655,9 @@ class ResolvedOrdinaryRound:
     action_order: tuple[str, ...]
     base_status_runtime_by_participant_id: Mapping[
         str,BaseBattleStatusRuntime
+    ] | None = None
+    base_damage_react_state_by_participant_id: Mapping[
+        str,BaseDamageReactState
     ] | None = None
     exited_participant_ids: tuple[str, ...] = ()
     escaped_participant_ids: tuple[str, ...] = ()
@@ -1318,6 +1330,9 @@ def resolve_ordinary_round(
     command_setup_effects_by_participant_id: Mapping[
         str,BattleCommandSetupEffects
     ] | None = None,
+    base_damage_react_state_by_participant_id: Mapping[
+        str,BaseDamageReactState
+    ] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
@@ -1485,6 +1500,33 @@ def resolve_ordinary_round(
                 f"command setup effects for {participant_id} have wrong type"
             )
 
+    supplied_damage_react={
+        str(participant_id):react_state
+        for participant_id,react_state in (
+            base_damage_react_state_by_participant_id or {}
+        ).items()
+    }
+    unknown_damage_react_ids=sorted(
+        set(supplied_damage_react)-set(slot_by_id)
+    )
+    if unknown_damage_react_ids:
+        raise ValueError(
+            f"base damage-react state references unknown actors: "
+            f"{unknown_damage_react_ids}"
+        )
+    damage_react_state={
+        participant_id:supplied_damage_react.get(
+            participant_id,
+            BaseDamageReactState(),
+        )
+        for participant_id in slot_by_id
+    }
+    for participant_id,react_state in damage_react_state.items():
+        if not isinstance(react_state,BaseDamageReactState):
+            raise TypeError(
+                f"base damage-react state for {participant_id} has wrong type"
+            )
+
     guardian_registrations={
         int(defender_slot):registration
         for defender_slot,registration in (
@@ -1557,6 +1599,16 @@ def resolve_ordinary_round(
     if guardian_registrations and combo_groups:
         raise ValueError(
             "guardian interaction with combo execution is a separate seam"
+        )
+    if (
+        combo_groups
+        and any(
+            base_damage_react_active(react_state)
+            for react_state in damage_react_state.values()
+        )
+    ):
+        raise ValueError(
+            "damage-react interaction with combo execution is a separate seam"
         )
     has_active_base_status=any(
         any(int(getattr(runtime.status,name))>0 for name in (
@@ -2217,6 +2269,12 @@ def resolve_ordinary_round(
         attacker_profile = profiles[participant_id]
         defender_profile = profiles[defender_id]
         before = hp_by_slot[target]
+        continuation_blocked_by_reaction=(
+            base_damage_react_blocks_main_continuation(
+                damage_react_state[str(participant_id)],
+                damage_react_state[str(defender_id)],
+            )
+        )
 
         # Source order: dodge is checked against the original/adjusted target
         # before BATTLE_GuardianCheck can redirect the physical hit.
@@ -2249,7 +2307,8 @@ def resolve_ordinary_round(
                         target_hp_after=before,
                     )
                 )
-                append_counter_chain(participant_id,slot,target)
+                if not continuation_blocked_by_reaction:
+                    append_counter_chain(participant_id,slot,target)
                 continue
 
         counter_target_slot=int(target)
@@ -2390,78 +2449,127 @@ def resolve_ordinary_round(
         else:
             result = "critical" if is_critical else "normal"
 
-        after = max(0, before - int(damage))
-        hp_by_slot[damage_target_slot] = after
-        hp_by_id[defender_id] = after
-        status_application=None
-        if int(damage) > 0:
-            target_runtime=status_runtime[str(defender_id)]
+        reaction_defender=defender
+        reaction_defender_id=str(defender_id)
+        reaction_resolution=resolve_base_damage_react(
+            damage_react_state[reaction_defender_id],
+            raw_damage=int(damage),
+            attacker_hp=int(hp_by_slot[slot]),
+            attacker_max_hp=int(participant.max_hp),
+            defender_hp=int(hp_by_slot[damage_target_slot]),
+            defender_max_hp=int(reaction_defender.max_hp),
+            attacker_uses_throwing_weapon=counter_weapon_blocks_counter(
+                attacker_profile.counter_weapon_type
+            ),
+        )
+        damage_react_state[reaction_defender_id]=reaction_resolution.state_after
+
+        hp_by_slot[slot]=int(reaction_resolution.attacker_hp_after)
+        hp_by_id[str(participant_id)]=int(
+            reaction_resolution.attacker_hp_after
+        )
+        hp_by_slot[damage_target_slot]=int(
+            reaction_resolution.defender_hp_after
+        )
+        hp_by_id[reaction_defender_id]=int(
+            reaction_resolution.defender_hp_after
+        )
+
+        if reaction_resolution.effective_kind == DAMAGE_REACT_REFLEC:
+            resolved_damage_slot=int(slot)
+            resolved_damage_id=str(participant_id)
+            before=int(reaction_resolution.attacker_hp_before)
+            after=int(reaction_resolution.attacker_hp_after)
+            status_target_slot=int(slot)
+        else:
+            resolved_damage_slot=int(damage_target_slot)
+            resolved_damage_id=reaction_defender_id
+            before=int(reaction_resolution.defender_hp_before)
+            after=int(reaction_resolution.defender_hp_after)
+            status_target_slot=int(damage_target_slot)
+
+        if (
+            int(damage) > 0
+            and reaction_resolution.wakeup_target is not None
+        ):
+            wake_target_id=(
+                str(participant_id)
+                if reaction_resolution.wakeup_target == "attacker"
+                else reaction_defender_id
+            )
+            wake_runtime=status_runtime[wake_target_id]
             wake=resolve_base_damage_wakeup(
-                target_runtime.status,
-                damage_count_before=target_runtime.damage_count,
+                wake_runtime.status,
+                damage_count_before=wake_runtime.damage_count,
                 damage=int(damage),
             )
-            target_runtime=replace(
-                target_runtime,
+            status_runtime[wake_target_id]=replace(
+                wake_runtime,
                 status=wake.status_after,
                 damage_count=wake.damage_count_after,
             )
-            status_runtime[str(defender_id)]=target_runtime
 
-            if attack_command_code == BATTLE_COM_S_STATUSCHANGE:
-                status_index=battle_command3_low(command.command3)
-                status_name=BASE_STATUS_NAME_BY_INDEX.get(status_index)
-                if status_name is not None:
-                    if str(defender_id) not in status_combat_profiles:
-                        raise KeyError(
-                            f"missing base status combat profile for {defender_id}"
-                        )
-                    status_profile=status_combat_profiles[str(defender_id)]
-                    status_application=resolve_base_physical_on_hit_status_application(
-                        BasePhysicalOnHitStatusInputs(
-                            status=status_name,
-                            attacker_level=int(participant.level),
-                            defender_level=int(defender.level),
-                            pvp=False,
-                            attacker_fixed_luck=int(attacker_profile.fixed_luck),
-                            defender_vital=int(status_profile.vital),
-                            defender_str=int(status_profile.strength),
-                            defender_tough=int(status_profile.tough),
-                            defender_dex=int(status_profile.dex),
-                            defender_resistance=status_profile.resistance_for(
-                                status_name
-                            ),
-                            source_turn=battle_command3_high(command.command3),
-                            per_offset=30,
-                        ),
-                        target_runtime.status,
-                        damage_after_resolution=int(damage),
-                        roll_1_100=status_application_rolls.get(
-                            str(participant_id)
-                        ),
+        status_application=None
+        if (
+            int(damage) > 0
+            and attack_command_code == BATTLE_COM_S_STATUSCHANGE
+        ):
+            status_index=battle_command3_low(command.command3)
+            status_name=BASE_STATUS_NAME_BY_INDEX.get(status_index)
+            if status_name is not None:
+                status_target=by_slot[status_target_slot]
+                status_target_id=str(status_target.participant_id)
+                if status_target_id not in status_combat_profiles:
+                    raise KeyError(
+                        f"missing base status combat profile for {status_target_id}"
                     )
-                    if status_application.check.success:
-                        poison_stat_sum=target_runtime.poison_stat_sum
-                        if (
-                            status_name == STATUS_POISON
-                            and poison_stat_sum is None
-                        ):
-                            poison_stat_sum=(
-                                int(status_profile.vital)
-                                + int(status_profile.strength)
-                                + int(status_profile.tough)
-                                + int(status_profile.dex)
-                            )
-                        status_runtime[str(defender_id)]=replace(
-                            target_runtime,
-                            status=status_application.status_after,
-                            poison_stat_sum=poison_stat_sum,
+                status_profile=status_combat_profiles[status_target_id]
+                target_runtime=status_runtime[status_target_id]
+                status_application=resolve_base_physical_on_hit_status_application(
+                    BasePhysicalOnHitStatusInputs(
+                        status=status_name,
+                        attacker_level=int(participant.level),
+                        defender_level=int(status_target.level),
+                        pvp=False,
+                        attacker_fixed_luck=int(attacker_profile.fixed_luck),
+                        defender_vital=int(status_profile.vital),
+                        defender_str=int(status_profile.strength),
+                        defender_tough=int(status_profile.tough),
+                        defender_dex=int(status_profile.dex),
+                        defender_resistance=status_profile.resistance_for(
+                            status_name
+                        ),
+                        source_turn=battle_command3_high(command.command3),
+                        per_offset=30,
+                    ),
+                    target_runtime.status,
+                    damage_after_resolution=int(damage),
+                    roll_1_100=status_application_rolls.get(
+                        str(participant_id)
+                    ),
+                )
+                if status_application.check.success:
+                    poison_stat_sum=target_runtime.poison_stat_sum
+                    if (
+                        status_name == STATUS_POISON
+                        and poison_stat_sum is None
+                    ):
+                        poison_stat_sum=(
+                            int(status_profile.vital)
+                            + int(status_profile.strength)
+                            + int(status_profile.tough)
+                            + int(status_profile.dex)
                         )
-                        if status_application.command_cleared:
-                            command_by_slot[damage_target_slot]=BattleCommand(
-                                BATTLE_COM_NONE
-                            )
-                            guarding.discard(damage_target_slot)
+                    status_runtime[status_target_id]=replace(
+                        target_runtime,
+                        status=status_application.status_after,
+                        poison_stat_sum=poison_stat_sum,
+                    )
+                    if status_application.command_cleared:
+                        command_by_slot[status_target_slot]=BattleCommand(
+                            BATTLE_COM_NONE
+                        )
+                        guarding.discard(status_target_slot)
         events.append(
             OrdinaryRoundEvent(
                 participant_id,
@@ -2470,7 +2578,7 @@ def resolve_ordinary_round(
                 entry.action_value,
                 result,
                 original_target_slot=original_target,
-                resolved_target_slot=damage_target_slot,
+                resolved_target_slot=resolved_damage_slot,
                 retargeted=retargeted,
                 critical=is_critical,
                 damage=int(damage),
@@ -2480,11 +2588,13 @@ def resolve_ordinary_round(
                 guardian_redirected=guardian_redirected,
                 guarded_target_slot=guarded_target_slot,
                 guardian_slot=guardian_slot,
+                damage_react_resolution=reaction_resolution,
             )
         )
         # BATTLE_Attack forces continuation FALSE whenever Guardian>=0.
         if (
             not guardian_redirected
+            and not continuation_blocked_by_reaction
             and result != "critical"
             and counter_target_slot not in guarding
             and after > 0
@@ -2505,6 +2615,9 @@ def resolve_ordinary_round(
         ),
         base_status_runtime_by_participant_id=MappingProxyType(
             dict(status_runtime)
+        ),
+        base_damage_react_state_by_participant_id=MappingProxyType(
+            dict(damage_react_state)
         ),
         exited_participant_ids=tuple(exited_ids),
         escaped_participant_ids=tuple(escaped_ids),

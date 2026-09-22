@@ -53,6 +53,7 @@ from tools.stoneage_battle_round_model import (
     prepare_battle_round,
     resolve_ordinary_round,
 )
+from tools.stoneage_battle_damage_react_model import BaseDamageReactState
 from tools.stoneage_battle_guardian_model import GuardianRegistration
 from tools.stoneage_battle_status_model import (
     BaseBattleStatusRuntime,
@@ -90,6 +91,9 @@ class PersistentBattleState:
     escape_count_by_participant_id: Mapping[str,int] | None = None
     base_status_runtime_by_participant_id: Mapping[
         str,BaseBattleStatusRuntime
+    ] | None = None
+    base_damage_react_state_by_participant_id: Mapping[
+        str,BaseDamageReactState
     ] | None = None
 
     def __post_init__(self) -> None:
@@ -150,8 +154,42 @@ class PersistentBattleState:
                 _freeze_mapping(normalized_status),
             )
 
-        expected_escape_ids={
-            pid for pid,participant in participants.items()
+        expected_react_ids=set(participants)
+        if self.base_damage_react_state_by_participant_id is None:
+            object.__setattr__(
+                self,
+                "base_damage_react_state_by_participant_id",
+                _freeze_mapping({
+                    pid:BaseDamageReactState()
+                    for pid in participants
+                }),
+            )
+        else:
+            normalized_react={
+                str(pid):react_state
+                for pid,react_state in (
+                    self.base_damage_react_state_by_participant_id.items()
+                )
+            }
+            if set(normalized_react) != expected_react_ids:
+                missing=sorted(expected_react_ids-set(normalized_react))
+                extra=sorted(set(normalized_react)-expected_react_ids)
+                raise ValueError(
+                    f"damage-react participants mismatch; "
+                    f"missing={missing}, extra={extra}"
+                )
+            for pid,react_state in normalized_react.items():
+                if not isinstance(react_state,BaseDamageReactState):
+                    raise TypeError(
+                        f"damage-react state for {pid} has wrong type"
+                    )
+            object.__setattr__(
+                self,
+                "base_damage_react_state_by_participant_id",
+                _freeze_mapping(normalized_react),
+            )
+
+        expected_escape_ids={            pid for pid,participant in participants.items()
             if participant.kind != "pet"
         }
         if self.escape_count_by_participant_id is None:
@@ -297,6 +335,9 @@ def begin_persistent_battle(
     base_status_runtime_by_participant_id: Mapping[
         str,BaseBattleStatusRuntime
     ] | None = None,
+    base_damage_react_state_by_participant_id: Mapping[
+        str,BaseDamageReactState
+    ] | None = None,
 ) -> PersistentBattleState:
     participants = _participant_map(session)
     normalized_slots = {str(pid): int(slot) for pid, slot in slots.items()}
@@ -348,6 +389,9 @@ def begin_persistent_battle(
         }),
         base_status_runtime_by_participant_id=(
             base_status_runtime_by_participant_id
+        ),
+        base_damage_react_state_by_participant_id=(
+            base_damage_react_state_by_participant_id
         ),
     )
     return _with_termination(state)
@@ -593,6 +637,13 @@ def resolve_persistent_capture_transition(
             pid:runtime
             for pid,runtime in (
                 state.base_status_runtime_by_participant_id.items()
+            )
+            if pid != target_id
+        }),
+        base_damage_react_state_by_participant_id=_freeze_mapping({
+            pid:react_state
+            for pid,react_state in (
+                state.base_damage_react_state_by_participant_id.items()
             )
             if pid != target_id
         }),
@@ -950,6 +1001,11 @@ def resolve_persistent_ordinary_round(
         command_setup_effects_by_participant_id=(
             command_setup_effects_by_participant_id
         ),
+        base_damage_react_state_by_participant_id=_freeze_mapping({
+            participant_id:
+                state.base_damage_react_state_by_participant_id[participant_id]
+            for participant_id in living_ids
+        }),
         field_attr=field_attr,
         field_power=field_power,
     )
@@ -1026,11 +1082,18 @@ def resolve_persistent_ordinary_round(
     next_status_runtime.update(
         dict(round_result.base_status_runtime_by_participant_id)
     )
+    next_damage_react=dict(
+        state.base_damage_react_state_by_participant_id
+    )
+    next_damage_react.update(
+        dict(round_result.base_damage_react_state_by_participant_id)
+    )
     for pid in removed_enemy_ids:
         next_slots.pop(pid,None)
         hp.pop(pid,None)
         escape_counts.pop(pid,None)
         next_status_runtime.pop(pid,None)
+        next_damage_react.pop(pid,None)
 
     next_state = PersistentBattleState(
         session=next_session,
@@ -1052,6 +1115,9 @@ def resolve_persistent_ordinary_round(
         escape_count_by_participant_id=_freeze_mapping(escape_counts),
         base_status_runtime_by_participant_id=_freeze_mapping(
             next_status_runtime
+        ),
+        base_damage_react_state_by_participant_id=_freeze_mapping(
+            next_damage_react
         ),
     )
     if player_id in escaped_ids:

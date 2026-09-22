@@ -1,6 +1,7 @@
 import unittest
 from dataclasses import replace
 
+from tools.stoneage_battle_damage_react_model import BaseDamageReactState
 from tools.stoneage_battle_guardian_model import GuardianRegistration
 
 from tools.stoneage_battle_core_model import (
@@ -323,6 +324,49 @@ class PersistentBattleStateTests(unittest.TestCase):
         self.assertEqual(result.after.hp_by_participant_id["player"],200)
         self.assertLess(result.after.hp_by_participant_id["pet:0"],200)
         self.assertTrue(result.round.events[0].guardian_redirected)
+
+    def test_reflect_charge_and_reflected_hp_persist_across_round(self):
+        player=participant(
+            "player","player","player",
+            hp=200,attack=100,quick=100,
+        )
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=200,quick=20,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+            base_damage_react_state_by_participant_id={
+                "player":BaseDamageReactState(),
+                "enemy":BaseDamageReactState(reflect=1),
+            },
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertLess(result.after.hp_by_participant_id["player"],200)
+        self.assertEqual(result.after.hp_by_participant_id["enemy"],200)
+        self.assertEqual(
+            result.after.base_damage_react_state_by_participant_id[
+                "enemy"
+            ].reflect,
+            0,
+        )
 
     def test_guardian_attack_command_auto_registration_persists_redirected_damage(self):
         player=participant("player","player","player",hp=200,quick=20)
