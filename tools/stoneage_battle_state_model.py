@@ -55,6 +55,7 @@ from tools.stoneage_battle_round_model import (
 from tools.stoneage_battle_status_model import (
     BaseBattleStatusRuntime,
     BaseStatusApplicationResolution,
+    BaseStatusCombatProfile,
     BaseStatusTurnRolls,
 )
 from tools.stoneage_singleplayer_battle import BattleParticipant, BattleSession
@@ -842,6 +843,10 @@ def resolve_persistent_ordinary_round(
     base_status_rolls_by_participant_id: Mapping[
         str,BaseStatusTurnRolls
     ] | None = None,
+    base_status_combat_profiles_by_participant_id: Mapping[
+        str,BaseStatusCombatProfile
+    ] | None = None,
+    status_application_rolls_by_attack_id: Mapping[str,int] | None = None,
     no_risk: bool = False,
     drop_rolls_by_enemy_id: Mapping[
         str,Sequence[DropAllocationRoll]
@@ -919,6 +924,12 @@ def resolve_persistent_ordinary_round(
         }),
         base_status_rolls_by_participant_id=(
             base_status_rolls_by_participant_id
+        ),
+        base_status_combat_profiles_by_participant_id=(
+            base_status_combat_profiles_by_participant_id
+        ),
+        status_application_rolls_by_attack_id=(
+            status_application_rolls_by_attack_id
         ),
         field_attr=field_attr,
         field_power=field_power,

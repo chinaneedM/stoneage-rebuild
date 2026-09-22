@@ -11,6 +11,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_CAPTURE,
     BATTLE_COM_ESCAPE,
+    BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
@@ -21,6 +22,7 @@ from tools.stoneage_battle_round_model import (
     OrdinaryCaptureRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
+    pack_battle_command3,
 )
 from tools.stoneage_battle_state_model import (
     ACTIVE,
@@ -39,6 +41,7 @@ from tools.stoneage_battle_status_model import (
     BaseBattleStatusRuntime,
     BaseBattleStatusState,
     BaseStatusAttackInputs,
+    BaseStatusCombatProfile,
     STATUS_POISON,
     resolve_base_status_application,
 )
@@ -266,6 +269,63 @@ class PersistentBattleStateTests(unittest.TestCase):
         )
         self.assertEqual(second.after.turn, 2)
         self.assertLess(second.after.hp_by_participant_id["enemy"], first_hp)
+
+    def test_statuschange_command_persists_new_status_from_round(self):
+        player=participant("player","player","player",quick=20)
+        pet=participant(
+            "pet:0","player","pet",
+            attack=100,quick=100,level=20,source_pet_slot=0,
+        )
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=200,quick=10,level=10,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,),pets=(pet,)),
+            slots={"player":0,"pet:0":1,"enemy":10},
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet:0":BattleCommand(
+                    BATTLE_COM_S_STATUSCHANGE,
+                    command2=10,
+                    command3=pack_battle_command3(low=1,high=3),
+                ),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={
+                "player":0,"pet:0":0,"enemy":0,
+            },
+            profiles={
+                "player":profile(),
+                "pet:0":profile(luck=10),
+                "enemy":profile(),
+            },
+            attack_rolls={
+                "pet:0":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            base_status_combat_profiles_by_participant_id={
+                "enemy":BaseStatusCombatProfile(
+                    vital=25,strength=25,tough=25,dex=25,
+                    resistance_by_status={STATUS_POISON:5},
+                )
+            },
+            status_application_rolls_by_attack_id={"pet:0":44},
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(
+            result.after.base_status_runtime_by_participant_id[
+                "enemy"
+            ].status.poison,
+            4,
+        )
+        self.assertEqual(result.after.turn,1)
 
     def test_poison_status_persists_across_rounds_and_stops_at_one_hp(self):
         player=participant(

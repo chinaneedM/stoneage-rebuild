@@ -41,12 +41,17 @@ from tools.stoneage_battle_core_model import (
     resolve_battle_escape_attempt,
 )
 from tools.stoneage_battle_status_model import (
+    BASE_STATUS_NAME_BY_INDEX,
     BaseBattleStatusRuntime,
+    BasePhysicalOnHitStatusInputs,
+    BaseStatusApplicationResolution,
+    BaseStatusCombatProfile,
     BaseStatusTickInputs,
     BaseStatusTickResult,
     BaseStatusTurnRolls,
     base_stone_defense_multiplier,
     resolve_base_damage_wakeup,
+    resolve_base_physical_on_hit_status_application,
     resolve_base_status_tick,
 )
 from tools.stoneage_singleplayer_battle import BattleParticipant
@@ -65,9 +70,25 @@ BATTLE_COM_COMBO = 9
 BATTLE_COM_COMBOEND = 10
 BATTLE_COM_WAIT = 11
 
+# Stable unguarded pet-skill command sequence begins at 1000.
+BATTLE_COM_S_STATUSCHANGE = 1008
+
+
+def battle_command3_low(value: int) -> int:
+    return int(value) & 0xFFFF
+
+
+def battle_command3_high(value: int) -> int:
+    return int(value) >> 16
+
+
+def pack_battle_command3(*, low: int, high: int) -> int:
+    """Mirror CHAR_SETWORKINT_LOW/HIGH for the common positive COM3 payloads."""
+    return (int(high) << 16) | (int(low) & 0xFFFF)
+
+
 BASE_COMMAND_CODES = frozenset(
     {
-        BATTLE_COM_NONE,
         BATTLE_COM_NONE,
         BATTLE_COM_ATTACK,
         BATTLE_COM_GUARD,
@@ -80,6 +101,7 @@ BASE_COMMAND_CODES = frozenset(
         BATTLE_COM_COMBO,
         BATTLE_COM_COMBOEND,
         BATTLE_COM_WAIT,
+        BATTLE_COM_S_STATUSCHANGE,
     }
 )
 
@@ -99,7 +121,7 @@ class BattleCommand:
         command1 = int(self.command1)
         if command1 not in BASE_COMMAND_CODES:
             raise ValueError(
-                "R1 accepts only stable base command codes 0..11"
+                "unsupported command outside reconstructed base/status-change seam"
             )
         object.__setattr__(self, "command1", command1)
         object.__setattr__(self, "command2", int(self.command2))
@@ -379,6 +401,7 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_ESCAPE,
         BATTLE_COM_COMBO,
         BATTLE_COM_WAIT,
+        BATTLE_COM_S_STATUSCHANGE,
     }
 )
 
@@ -545,6 +568,7 @@ class OrdinaryRoundEvent:
     combo_member_index: int | None = None
     profit_participant_ids: tuple[str, ...] = ()
     status_tick_resolution: BaseStatusTickResult | None = None
+    status_application_resolution: BaseStatusApplicationResolution | None = None
 
 
 @dataclass(frozen=True)
@@ -1139,6 +1163,10 @@ def resolve_ordinary_round(
     base_status_rolls_by_participant_id: Mapping[
         str,BaseStatusTurnRolls
     ] | None = None,
+    base_status_combat_profiles_by_participant_id: Mapping[
+        str,BaseStatusCombatProfile
+    ] | None = None,
+    status_application_rolls_by_attack_id: Mapping[str,int] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
@@ -1153,7 +1181,7 @@ def resolve_ordinary_round(
     for entry in prepared.ordered_entries:
         if entry.command.command1 not in ORDINARY_RESOLUTION_COMMANDS:
             raise ValueError(
-                "ordinary resolver accepts only NONE/ATTACK/GUARD/CAPTURE/ESCAPE/COMBO/WAIT commands"
+                "ordinary resolver accepts the reconstructed base commands plus S_STATUSCHANGE"
             )
 
     by_slot, slot_by_id = _build_slot_maps(prepared, slots)
@@ -1252,6 +1280,39 @@ def resolve_ordinary_round(
     if unknown_status_roll_ids:
         raise ValueError(
             f"base status RNG references unknown actors: {unknown_status_roll_ids}"
+        )
+    status_combat_profiles={
+        str(participant_id):profile
+        for participant_id,profile in (
+            base_status_combat_profiles_by_participant_id or {}
+        ).items()
+    }
+    unknown_status_profile_ids=sorted(
+        set(status_combat_profiles)-set(slot_by_id)
+    )
+    if unknown_status_profile_ids:
+        raise ValueError(
+            f"base status combat profiles reference unknown actors: "
+            f"{unknown_status_profile_ids}"
+        )
+    for participant_id,profile in status_combat_profiles.items():
+        if not isinstance(profile,BaseStatusCombatProfile):
+            raise TypeError(
+                f"base status combat profile for {participant_id} has wrong type"
+            )
+    status_application_rolls={
+        str(participant_id):int(roll)
+        for participant_id,roll in (
+            status_application_rolls_by_attack_id or {}
+        ).items()
+    }
+    unknown_status_application_ids=sorted(
+        set(status_application_rolls)-set(slot_by_id)
+    )
+    if unknown_status_application_ids:
+        raise ValueError(
+            f"status application RNG references unknown actors: "
+            f"{unknown_status_application_ids}"
         )
     has_active_base_status=any(
         any(int(getattr(runtime.status,name))>0 for name in (
@@ -1767,6 +1828,7 @@ def resolve_ordinary_round(
         rolls = attack_rolls.get(participant_id)
         if rolls is None:
             raise KeyError(f"missing ordinary attack rolls for {participant_id}")
+        attack_command_code=int(command.command1)
 
         original_target = int(command.command2)
         target = original_target
@@ -1803,7 +1865,7 @@ def resolve_ordinary_round(
                 OrdinaryRoundEvent(
                     participant_id,
                     slot,
-                    BATTLE_COM_ATTACK,
+                    attack_command_code,
                     entry.action_value,
                     "no_target",
                     original_target_slot=original_target,
@@ -1838,7 +1900,7 @@ def resolve_ordinary_round(
                     OrdinaryRoundEvent(
                         participant_id,
                         slot,
-                        BATTLE_COM_ATTACK,
+                        attack_command_code,
                         entry.action_value,
                         "dodge",
                         original_target_slot=original_target,
@@ -1921,6 +1983,7 @@ def resolve_ordinary_round(
         after = max(0, before - int(damage))
         hp_by_slot[target] = after
         hp_by_id[defender_id] = after
+        status_application=None
         if int(damage) > 0:
             target_runtime=status_runtime[str(defender_id)]
             wake=resolve_base_damage_wakeup(
@@ -1928,16 +1991,60 @@ def resolve_ordinary_round(
                 damage_count_before=target_runtime.damage_count,
                 damage=int(damage),
             )
-            status_runtime[str(defender_id)]=replace(
+            target_runtime=replace(
                 target_runtime,
                 status=wake.status_after,
                 damage_count=wake.damage_count_after,
             )
+            status_runtime[str(defender_id)]=target_runtime
+
+            if attack_command_code == BATTLE_COM_S_STATUSCHANGE:
+                status_index=battle_command3_low(command.command3)
+                status_name=BASE_STATUS_NAME_BY_INDEX.get(status_index)
+                if status_name is not None:
+                    if str(defender_id) not in status_combat_profiles:
+                        raise KeyError(
+                            f"missing base status combat profile for {defender_id}"
+                        )
+                    status_profile=status_combat_profiles[str(defender_id)]
+                    status_application=resolve_base_physical_on_hit_status_application(
+                        BasePhysicalOnHitStatusInputs(
+                            status=status_name,
+                            attacker_level=int(participant.level),
+                            defender_level=int(defender.level),
+                            pvp=False,
+                            attacker_fixed_luck=int(attacker_profile.fixed_luck),
+                            defender_vital=int(status_profile.vital),
+                            defender_str=int(status_profile.strength),
+                            defender_tough=int(status_profile.tough),
+                            defender_dex=int(status_profile.dex),
+                            defender_resistance=status_profile.resistance_for(
+                                status_name
+                            ),
+                            source_turn=battle_command3_high(command.command3),
+                            per_offset=30,
+                        ),
+                        target_runtime.status,
+                        damage_after_resolution=int(damage),
+                        roll_1_100=status_application_rolls.get(
+                            str(participant_id)
+                        ),
+                    )
+                    if status_application.check.success:
+                        status_runtime[str(defender_id)]=replace(
+                            target_runtime,
+                            status=status_application.status_after,
+                        )
+                        if status_application.command_cleared:
+                            command_by_slot[target]=BattleCommand(
+                                BATTLE_COM_NONE
+                            )
+                            guarding.discard(target)
         events.append(
             OrdinaryRoundEvent(
                 participant_id,
                 slot,
-                BATTLE_COM_ATTACK,
+                attack_command_code,
                 entry.action_value,
                 result,
                 original_target_slot=original_target,
@@ -1947,6 +2054,7 @@ def resolve_ordinary_round(
                 damage=int(damage),
                 target_hp_before=before,
                 target_hp_after=after,
+                status_application_resolution=status_application,
             )
         )
         if result != "critical" and target not in guarding and after > 0:

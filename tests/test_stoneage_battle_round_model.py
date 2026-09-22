@@ -7,6 +7,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_COMBO,
     BATTLE_COM_ESCAPE,
     BATTLE_COM_GUARD,
+    BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
@@ -18,13 +19,18 @@ from tools.stoneage_battle_round_model import (
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
     apply_base_combo_rewrite,
+    battle_command3_high,
+    battle_command3_low,
+    pack_battle_command3,
     prepare_battle_round,
     resolve_ordinary_round,
 )
 from tools.stoneage_battle_status_model import (
     BaseBattleStatusRuntime,
     BaseBattleStatusState,
+    BaseStatusCombatProfile,
     BaseStatusTurnRolls,
+    STATUS_POISON,
 )
 from tools.stoneage_singleplayer_battle import BattleParticipant
 
@@ -443,6 +449,96 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(result.events[0].result, "allguard")
         self.assertEqual(result.events[0].damage, 0)
         self.assertEqual(result.hp_by_participant_id["player"], 100)
+
+    def test_command3_halves_match_fixed_battle_macros(self):
+        packed=pack_battle_command3(low=3,high=4)
+        self.assertEqual(packed,0x00040003)
+        self.assertEqual(battle_command3_low(packed),3)
+        self.assertEqual(battle_command3_high(packed),4)
+
+    def test_statuschange_command_runs_ordinary_attack_then_applies_status(self):
+        pet=actor("pet","player","pet",attack=100,quick=100,level=20)
+        enemy=actor("enemy","enemy","enemy",hp=200,quick=20,level=10)
+        prepared=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(
+                    BATTLE_COM_S_STATUSCHANGE,
+                    command2=10,
+                    command3=pack_battle_command3(low=1,high=3),
+                ),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(luck=10),"enemy":profile()},
+            attack_rolls={
+                "pet":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            base_status_runtime_by_participant_id={
+                "pet":BaseBattleStatusRuntime(work_quick=100),
+                "enemy":BaseBattleStatusRuntime(work_quick=20),
+            },
+            base_status_combat_profiles_by_participant_id={
+                "enemy":BaseStatusCombatProfile(
+                    vital=25,strength=25,tough=25,dex=25,
+                    resistance_by_status={STATUS_POISON:5},
+                )
+            },
+            status_application_rolls_by_attack_id={"pet":44},
+            defense_profile="newpower_70pct",
+        )
+        event=result.events[0]
+        self.assertEqual(event.command1,BATTLE_COM_S_STATUSCHANGE)
+        self.assertEqual(event.result,"normal")
+        self.assertGreater(event.damage,0)
+        self.assertIsNotNone(event.status_application_resolution)
+        self.assertTrue(event.status_application_resolution.check.success)
+        self.assertEqual(
+            result.base_status_runtime_by_participant_id["enemy"].status.poison,
+            4,
+        )
+
+    def test_statuschange_dodge_consumes_no_status_rng_or_profile(self):
+        pet=actor("pet","player","pet",quick=100)
+        enemy=actor("enemy","enemy","enemy",quick=20)
+        prepared=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(
+                    BATTLE_COM_S_STATUSCHANGE,
+                    command2=10,
+                    command3=pack_battle_command3(low=1,high=3),
+                ),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"pet":0,"enemy":10},
+            profiles={
+                "pet":profile(dex=100),
+                "enemy":profile(dex=10000),
+            },
+            attack_rolls={
+                "pet":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=1,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.events[0].result,"dodge")
+        self.assertIsNone(result.events[0].status_application_resolution)
 
     def test_normal_attack_applies_recovered_damage_to_hp(self):
         player = actor("player", "player", "player", quick=100)

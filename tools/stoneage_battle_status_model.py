@@ -10,6 +10,8 @@ behavior without inventing later gated effects.
 from __future__ import annotations
 
 from dataclasses import dataclass, field, replace
+from types import MappingProxyType
+from typing import Mapping
 
 
 STATUS_POISON="poison"
@@ -72,6 +74,38 @@ class BaseBattleStatusState:
             if value < 0:
                 raise ValueError(f"{name} status counter cannot be negative")
             object.__setattr__(self,name,value)
+
+
+@dataclass(frozen=True)
+class BaseStatusCombatProfile:
+    """Raw fixed attributes/resistances consumed by BATTLE_StatusAttackCheck."""
+
+    vital: int
+    strength: int
+    tough: int
+    dex: int
+    resistance_by_status: Mapping[str,int] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        for name in ("vital","strength","tough","dex"):
+            object.__setattr__(self,name,int(getattr(self,name)))
+        normalized={}
+        for name,value in self.resistance_by_status.items():
+            name=str(name)
+            if name not in BASE_STATUS_ORDER:
+                raise ValueError(f"unsupported base-status resistance: {name}")
+            normalized[name]=int(value)
+        object.__setattr__(
+            self,
+            "resistance_by_status",
+            MappingProxyType(normalized),
+        )
+
+    def resistance_for(self, status: str) -> int:
+        status=str(status)
+        if status not in BASE_STATUS_ORDER:
+            raise ValueError(f"unsupported common base status: {status}")
+        return int(self.resistance_by_status.get(status,0))
 
 
 @dataclass(frozen=True)
