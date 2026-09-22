@@ -53,6 +53,15 @@ from tools.stoneage_battle_core_model import (
     BattleNormalDeathInputs,
     BattleNormalDeathResolution,
     resolve_battle_normal_death_penalty,
+    BattleUltimateDamageInputs,
+    BattleUltimateDamageResolution,
+    resolve_battle_ultimate_damage,
+    BattleDeathUltimateInputs,
+    BattleDeathUltimateResolution,
+    resolve_battle_death_ultimate_override,
+    BattleUltimateDeathInputs,
+    BattleUltimateDeathResolution,
+    resolve_battle_ultimate_death_penalty,
 )
 
 
@@ -649,6 +658,208 @@ class BattleCoreModelTests(unittest.TestCase):
         self.assertTrue(result.exits_battle)
         self.assertTrue(result.rng_consumed)
 
+
+    def test_ultimate_direct_threshold_uses_exact_maxhp_times_1_2_plus_20(self):
+        below=resolve_battle_ultimate_damage(
+            BattleUltimateDamageInputs(
+                damage_for_threshold=139,
+                hp_damage_applied=100,
+                target_hp_before=100,
+                target_max_hp=100,
+            )
+        )
+        self.assertIsInstance(below,BattleUltimateDamageResolution)
+        self.assertEqual(below.ultimate_kind,0)
+        self.assertEqual(below.threshold_times_five,700)
+
+        exact=resolve_battle_ultimate_damage(
+            BattleUltimateDamageInputs(
+                damage_for_threshold=140,
+                hp_damage_applied=100,
+                target_hp_before=100,
+                target_max_hp=100,
+                accumulated_overkill_before=999,
+            )
+        )
+        self.assertEqual(exact.ultimate_kind,2)
+        self.assertEqual(exact.accumulated_overkill_after,0)
+
+    def test_ultimate_fractional_threshold_preserves_c_comparison_boundary(self):
+        miss=resolve_battle_ultimate_damage(
+            BattleUltimateDamageInputs(
+                damage_for_threshold=141,
+                hp_damage_applied=101,
+                target_hp_before=101,
+                target_max_hp=101,
+            )
+        )
+        hit=resolve_battle_ultimate_damage(
+            BattleUltimateDamageInputs(
+                damage_for_threshold=142,
+                hp_damage_applied=101,
+                target_hp_before=101,
+                target_max_hp=101,
+            )
+        )
+        self.assertEqual(miss.ultimate_kind,0)
+        self.assertEqual(hit.ultimate_kind,2)
+
+    def test_ultimate_overkill_accumulates_across_deaths_then_resets_on_hit(self):
+        first=resolve_battle_ultimate_damage(
+            BattleUltimateDamageInputs(
+                damage_for_threshold=110,
+                hp_damage_applied=110,
+                target_hp_before=100,
+                target_max_hp=100,
+                accumulated_overkill_before=120,
+            )
+        )
+        self.assertEqual(first.ultimate_kind,0)
+        self.assertEqual(first.overkill_damage,10)
+        self.assertEqual(first.accumulated_overkill_after,130)
+
+        second=resolve_battle_ultimate_damage(
+            BattleUltimateDamageInputs(
+                damage_for_threshold=110,
+                hp_damage_applied=110,
+                target_hp_before=100,
+                target_max_hp=100,
+                accumulated_overkill_before=130,
+            )
+        )
+        self.assertEqual(second.ultimate_kind,1)
+        self.assertEqual(second.accumulated_overkill_after,0)
+
+    def test_death_ultimate_abio_overrides_kind_without_rng(self):
+        result=resolve_battle_death_ultimate_override(
+            BattleDeathUltimateInputs(
+                base_ultimate_kind=2,
+                victim_kind=ENEMY,
+                abio=True,
+                critical=True,
+            )
+        )
+        self.assertIsInstance(result,BattleDeathUltimateResolution)
+        self.assertEqual(result.ultimate_kind,1)
+        self.assertFalse(result.critical_roll_consumed)
+
+    def test_nonplayer_critical_death_ultimate_uses_strict_roll_less_than_50(self):
+        hit=resolve_battle_death_ultimate_override(
+            BattleDeathUltimateInputs(
+                base_ultimate_kind=0,
+                victim_kind=ENEMY,
+                critical=True,
+            ),
+            critical_roll_1_100=49,
+        )
+        miss=resolve_battle_death_ultimate_override(
+            BattleDeathUltimateInputs(
+                base_ultimate_kind=0,
+                victim_kind=ENEMY,
+                critical=True,
+            ),
+            critical_roll_1_100=50,
+        )
+        self.assertEqual(hit.ultimate_kind,1)
+        self.assertTrue(hit.critical_roll_consumed)
+        self.assertEqual(miss.ultimate_kind,0)
+
+    def test_player_critical_death_does_not_use_nonplayer_ultimate_roll(self):
+        result=resolve_battle_death_ultimate_override(
+            BattleDeathUltimateInputs(
+                base_ultimate_kind=2,
+                victim_kind=PLAYER,
+                critical=True,
+            )
+        )
+        self.assertEqual(result.ultimate_kind,2)
+        with self.assertRaisesRegex(ValueError,"unused path"):
+            resolve_battle_death_ultimate_override(
+                BattleDeathUltimateInputs(
+                    base_ultimate_kind=0,
+                    victim_kind=PLAYER,
+                    critical=True,
+                ),
+                critical_roll_1_100=1,
+            )
+
+    def test_ultimate_player_penalty_is_double_normal_death_and_low_level_halves(self):
+        high=resolve_battle_ultimate_death_penalty(
+            BattleUltimateDeathInputs(
+                victim_kind=PLAYER,
+                victim_level=11,
+                default_pet_present=True,
+            )
+        )
+        self.assertIsInstance(high,BattleUltimateDeathResolution)
+        self.assertEqual(high.player_charm_delta,-4)
+        self.assertEqual(high.default_pet_variable_ai_delta,-1000)
+
+        low=resolve_battle_ultimate_death_penalty(
+            BattleUltimateDeathInputs(
+                victim_kind=PLAYER,
+                victim_level=10,
+                default_pet_present=True,
+            )
+        )
+        self.assertEqual(low.player_charm_delta,-2)
+        self.assertEqual(low.default_pet_variable_ai_delta,-500)
+
+    def test_ultimate_pet_penalty_uses_owner_level_and_clears_default_pet(self):
+        high=resolve_battle_ultimate_death_penalty(
+            BattleUltimateDeathInputs(
+                victim_kind=PET,
+                victim_level=99,
+                owner_level=11,
+            )
+        )
+        self.assertEqual(high.victim_pet_variable_ai_delta,-1000)
+        self.assertEqual(high.owner_dead_pet_count_delta,1)
+        self.assertTrue(high.clears_owner_default_pet)
+
+        low=resolve_battle_ultimate_death_penalty(
+            BattleUltimateDeathInputs(
+                victim_kind=PET,
+                victim_level=99,
+                owner_level=10,
+            )
+        )
+        self.assertEqual(low.victim_pet_variable_ai_delta,-500)
+        self.assertEqual(low.owner_dead_pet_count_delta,1)
+
+    def test_ultimate_penalty_preserves_pvp_and_norisk_structure(self):
+        player_norisk=resolve_battle_ultimate_death_penalty(
+            BattleUltimateDeathInputs(
+                victim_kind=PLAYER,
+                victim_level=50,
+                no_risk=True,
+                default_pet_present=True,
+            )
+        )
+        pet_pvp=resolve_battle_ultimate_death_penalty(
+            BattleUltimateDeathInputs(
+                victim_kind=PET,
+                victim_level=50,
+                owner_level=50,
+                pve_battle=False,
+            )
+        )
+        pet_norisk=resolve_battle_ultimate_death_penalty(
+            BattleUltimateDeathInputs(
+                victim_kind=PET,
+                victim_level=50,
+                owner_level=50,
+                no_risk=True,
+            )
+        )
+        self.assertEqual(player_norisk.player_charm_delta,0)
+        self.assertEqual(player_norisk.default_pet_variable_ai_delta,0)
+        self.assertTrue(player_norisk.exits_victim_battle)
+        self.assertEqual(pet_pvp.victim_pet_variable_ai_delta,0)
+        self.assertEqual(pet_pvp.owner_dead_pet_count_delta,0)
+        self.assertTrue(pet_pvp.clears_owner_default_pet)
+        self.assertEqual(pet_norisk.victim_pet_variable_ai_delta,0)
+        self.assertEqual(pet_norisk.owner_dead_pet_count_delta,1)
 
     def test_normal_player_death_penalty_is_per_death_and_low_level_halves(self):
         high=resolve_battle_normal_death_penalty(

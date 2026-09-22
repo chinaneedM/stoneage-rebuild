@@ -1240,6 +1240,225 @@ CH_FIX_PLAYERDEAD=-2
 AI_FIX_PLAYERDEAD=-100
 AI_FIX_PETDEAD=-500
 
+CH_FIX_PLAYERULTIMATE=-4
+AI_FIX_PLAYERULTIMATE=-1000
+AI_FIX_PETULTIMATE=-1000
+
+
+@dataclass(frozen=True)
+class BattleUltimateDamageInputs:
+    """Stable BATTLE_DamageSub/BATTLE_DamageSub2 ultimate accumulator inputs.
+
+    damage_for_threshold is the source's pre-HP-settlement damage value.
+    hp_damage_applied is the actual HP subtraction applied to the resolved
+    damage target (for ride splitting / reflection these can differ).
+    """
+
+    damage_for_threshold: int
+    hp_damage_applied: int
+    target_hp_before: int
+    target_max_hp: int
+    accumulated_overkill_before: int = 0
+
+    def __post_init__(self) -> None:
+        for name in (
+            "damage_for_threshold",
+            "hp_damage_applied",
+            "target_hp_before",
+            "target_max_hp",
+            "accumulated_overkill_before",
+        ):
+            value=int(getattr(self,name))
+            if value < 0:
+                raise ValueError(f"{name} cannot be negative")
+            object.__setattr__(self,name,value)
+        if self.target_max_hp <= 0:
+            raise ValueError("target_max_hp must be positive")
+        if self.target_hp_before > self.target_max_hp:
+            raise ValueError("target_hp_before cannot exceed target_max_hp")
+
+
+@dataclass(frozen=True)
+class BattleUltimateDamageResolution:
+    ultimate_kind: int
+    threshold_times_five: int
+    overkill_damage: int
+    accumulated_overkill_after: int
+
+    def __post_init__(self) -> None:
+        if int(self.ultimate_kind) not in {0,1,2}:
+            raise ValueError("ultimate_kind must be 0, 1 or 2")
+
+
+def resolve_battle_ultimate_damage(
+    inputs: BattleUltimateDamageInputs,
+) -> BattleUltimateDamageResolution:
+    """Mirror stable maxHP*1.2+20 threshold and WORKULTIMATE accumulation."""
+
+    if not isinstance(inputs,BattleUltimateDamageInputs):
+        inputs=BattleUltimateDamageInputs(**dict(inputs))
+
+    threshold5=int(inputs.target_max_hp)*6+100
+    overkill=max(
+        0,
+        int(inputs.hp_damage_applied)-int(inputs.target_hp_before),
+    )
+
+    if int(inputs.damage_for_threshold)*5 >= threshold5:
+        return BattleUltimateDamageResolution(
+            ultimate_kind=2,
+            threshold_times_five=threshold5,
+            overkill_damage=overkill,
+            accumulated_overkill_after=0,
+        )
+
+    accumulated=int(inputs.accumulated_overkill_before)
+    if overkill > 0:
+        accumulated+=overkill
+        if accumulated*5 >= threshold5:
+            return BattleUltimateDamageResolution(
+                ultimate_kind=1,
+                threshold_times_five=threshold5,
+                overkill_damage=overkill,
+                accumulated_overkill_after=0,
+            )
+
+    return BattleUltimateDamageResolution(
+        ultimate_kind=0,
+        threshold_times_five=threshold5,
+        overkill_damage=overkill,
+        accumulated_overkill_after=accumulated,
+    )
+
+
+@dataclass(frozen=True)
+class BattleDeathUltimateInputs:
+    """Post-damage dead-target override from the ordinary Attack path."""
+
+    base_ultimate_kind: int
+    victim_kind: str
+    abio: bool = False
+    critical: bool = False
+
+    def __post_init__(self) -> None:
+        kind=int(self.base_ultimate_kind)
+        if kind not in {0,1,2}:
+            raise ValueError("base_ultimate_kind must be 0, 1 or 2")
+        object.__setattr__(self,"base_ultimate_kind",kind)
+        object.__setattr__(self,"victim_kind",str(self.victim_kind))
+        object.__setattr__(self,"abio",bool(self.abio))
+        object.__setattr__(self,"critical",bool(self.critical))
+
+
+@dataclass(frozen=True)
+class BattleDeathUltimateResolution:
+    ultimate_kind: int
+    critical_roll_consumed: bool = False
+
+
+def resolve_battle_death_ultimate_override(
+    inputs: BattleDeathUltimateInputs,
+    *,
+    critical_roll_1_100: int | None = None,
+) -> BattleDeathUltimateResolution:
+    """Apply dead-target ABIO / non-player critical ultimate override."""
+
+    if not isinstance(inputs,BattleDeathUltimateInputs):
+        inputs=BattleDeathUltimateInputs(**dict(inputs))
+
+    if inputs.abio:
+        if critical_roll_1_100 is not None:
+            raise ValueError("ABIO ultimate override does not consume critical RNG")
+        return BattleDeathUltimateResolution(1,False)
+
+    if inputs.victim_kind != PLAYER and inputs.critical:
+        if critical_roll_1_100 is None:
+            raise ValueError("non-player critical death requires RAND(1,100)")
+        roll=int(critical_roll_1_100)
+        if not 1 <= roll <= 100:
+            raise ValueError("critical death ultimate roll must be in 1..100")
+        return BattleDeathUltimateResolution(
+            1 if roll < 50 else int(inputs.base_ultimate_kind),
+            True,
+        )
+
+    if critical_roll_1_100 is not None:
+        raise ValueError("critical death ultimate RNG supplied on unused path")
+    return BattleDeathUltimateResolution(int(inputs.base_ultimate_kind),False)
+
+
+@dataclass(frozen=True)
+class BattleUltimateDeathInputs:
+    """Stable BATTLE_UltimateExtra PvE penalty subset."""
+
+    victim_kind: str
+    victim_level: int
+    owner_level: int | None = None
+    pve_battle: bool = True
+    no_risk: bool = False
+    default_pet_present: bool = False
+
+    def __post_init__(self) -> None:
+        kind=str(self.victim_kind)
+        object.__setattr__(self,"victim_kind",kind)
+        object.__setattr__(self,"victim_level",int(self.victim_level))
+        if self.owner_level is not None:
+            object.__setattr__(self,"owner_level",int(self.owner_level))
+        if kind == PET and self.owner_level is None:
+            raise ValueError("pet ultimate penalty requires owner_level")
+
+
+@dataclass(frozen=True)
+class BattleUltimateDeathResolution:
+    player_charm_delta: int = 0
+    default_pet_variable_ai_delta: int = 0
+    victim_pet_variable_ai_delta: int = 0
+    owner_dead_pet_count_delta: int = 0
+    clears_owner_default_pet: bool = False
+    exits_victim_battle: bool = True
+
+
+def resolve_battle_ultimate_death_penalty(
+    inputs: BattleUltimateDeathInputs,
+) -> BattleUltimateDeathResolution:
+    """Mirror base player/pet PvE penalties in BATTLE_UltimateExtra."""
+
+    if not isinstance(inputs,BattleUltimateDeathInputs):
+        inputs=BattleUltimateDeathInputs(**dict(inputs))
+
+    if inputs.victim_kind == PLAYER:
+        if not inputs.pve_battle or inputs.no_risk:
+            return BattleUltimateDeathResolution()
+        level_divisor=2 if int(inputs.victim_level) <= 10 else 1
+        return BattleUltimateDeathResolution(
+            player_charm_delta=int(CH_FIX_PLAYERULTIMATE/level_divisor),
+            default_pet_variable_ai_delta=(
+                int(AI_FIX_PLAYERULTIMATE/level_divisor)
+                if inputs.default_pet_present
+                else 0
+            ),
+        )
+
+    if inputs.victim_kind == PET:
+        level_divisor=2 if int(inputs.owner_level) <= 10 else 1
+        if not inputs.pve_battle:
+            return BattleUltimateDeathResolution(
+                clears_owner_default_pet=True,
+            )
+        if inputs.no_risk:
+            return BattleUltimateDeathResolution(
+                owner_dead_pet_count_delta=1,
+                clears_owner_default_pet=True,
+            )
+        return BattleUltimateDeathResolution(
+            victim_pet_variable_ai_delta=int(
+                AI_FIX_PETULTIMATE/level_divisor
+            ),
+            owner_dead_pet_count_delta=1,
+            clears_owner_default_pet=True,
+        )
+
+    return BattleUltimateDeathResolution()
 
 @dataclass(frozen=True)
 class BattleNormalDeathInputs:
