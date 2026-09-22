@@ -303,25 +303,35 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Title: archived JSS `STONEAGE` launcher replacement page and executable path
 - Original JSS page: `http://www.titan.co.jp/stoneage/updater.html`
 - Wayback capture used: 2000-12-04
-- Retrieval date: 2026-09-18
+- Retrieval date: 2026-09-18; binary replay/analysis refreshed 2026-09-23
 - Language/region: Japanese / Japan
-- Source type: archived first-party Japan System Supply page plus archived binary-path evidence
+- Source type: archived first-party Japan System Supply page plus archived first-party executable bytes analyzed transiently
 - Archived page URL: https://web.archive.org/web/20001204205200/http://www.titan.co.jp/stoneage/updater.html
-- Confidence: **A** for filename, advertised size, installation relationship and purpose; binary bytes remain unverified locally
+- Confidence: **A/S** for the first-party filename/path and derived byte-level metadata of the archived 2001 replacement object; not proof of a 1999 retail-disc binary
 - Supports:
-  - the original JSS-era StoneAge startup/launcher executable filename was **`stoneage.exe`**;
-  - JSS offered a replacement `stoneage.exe` advertised as **212 KB**;
-  - users were instructed to overwrite/copy it into the existing StoneAge installation directory, replacing the same-named file;
-  - the replacement addressed startup network errors, version-up errors and failure to transition to the new program after updating;
-  - the linked original executable path was `http://www.titan.co.jp/stoneage/stoneage.exe`;
-  - Wayback reports two captures of that executable path, and following the archived object through the available extractor returns `application/octet-stream`, consistent with a preserved binary body.
+  - the original JSS-era startup/launcher executable filename was **`stoneage.exe`**;
+  - JSS advertised the replacement as **212 KB** and instructed users to overwrite the same-named file in the StoneAge installation directory;
+  - the linked original executable path is `http://www.titan.co.jp/stoneage/stoneage.exe`;
+  - Wayback CDX exposes binary captures at **2001-05-03 01:38:34 UTC** and **2001-07-09 04:19:51 UTC** with the same archive digest;
+  - bounded transient replay recovers the same **217,088-byte** x86 PE from both captures:
+    - MD5 `8a5dc8b64f57574ffdd139a762a41aaa`
+    - SHA-1 `43d4f038aca05d055b0f59cac26fd7fae4dbc099`
+    - SHA-256 `6795d9349168f77aa025d7c4ea05d005c5bbfe33dd4b227eb7731802fa7eb82b`;
+  - PE linker timestamp is **2000-02-10 07:58:33 UTC**, entry RVA `0x43b2`, image base `0x400000`, subsystem 2, with four sections `.text/.rdata/.data/.rsrc`;
+  - the outer PE statically imports only `KERNEL32.dll`, `MSVCRT.dll`, and `USER32.dll`;
+  - original binary strings directly expose `update.gamersdream.ne.jp`, `/~stoneage/newest.txt`, `/~stoneage/%s`, `data\\download\\%s`, `(cksum:%u : File : %s)`, `sa_*.exe`, `sa_%d.exe`, and `updated`;
+  - generation-numbered resource families for `real`, `adrn`, `spr`, `spradrn`, `battle`, `battletxt`, `sound`, and `soundaddr` are embedded in the same binary.
 - Research value:
-  - provides the project's first confirmed original-JSS client executable filename and a high-value file-tree/search anchor.
-- Does not support yet:
-  - checksum, exact byte size, PE timestamp, imports, strings or version-resource values of the archived executable;
-  - whether the archived 2001 binary is byte-identical to a 1999 launcher state.
+  - closes the first recovered original-JSS executable bytes;
+  - converts updater host, manifest path, remote payload-template path, local staging path and checksum-report shape from descendant hypotheses into first-party binary evidence.
+- Still OPEN:
+  - whether this 2001 archived replacement is byte-identical to any 1999 launcher state;
+  - `newest.txt` content grammar and checksum algorithm;
+  - transport/network implementation at the outer-vs-embedded-resource boundary;
+  - version-resource fields and the role of the unusually large **184,320-byte `.rsrc`** section.
+- Derived report: `research/recovered/STONEAGE-JSS-LAUNCHER-ARCHIVE-PROBE-R1.txt`; workflow run **35781291855** — success.
 - Repository safety:
-  - if bytes are later recovered, record hashes and analysis but do not commit the proprietary executable by default.
+  - executable bytes existed only in the CI runner temporary directory; the workflow's no-EXE retention check passed.
 
 ### SRC-JP-JSS-STONEAGE-MANUAL-ARCHIVE-01
 
