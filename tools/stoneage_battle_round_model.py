@@ -1090,31 +1090,6 @@ def _resolve_combo_group_with_reactions(
     target_profile=profiles[target_id]
     target_runtime=status_runtime_by_participant_id[target_id]
     target_guarding=int(target_slot) in guarding
-    if base_damage_react_active(
-        damage_react_state_by_participant_id[target_id]
-    ):
-        return _resolve_combo_group_with_reactions(
-            combo_id=combo_id,
-            members=members,
-            original_target_slot=original_target_slot,
-            target_slot=target_slot,
-            retargeted=retargeted,
-            by_slot=by_slot,
-            hp_by_slot=hp_by_slot,
-            hp_by_id=hp_by_id,
-            profiles=profiles,
-            status_runtime_by_participant_id=(
-                status_runtime_by_participant_id
-            ),
-            damage_react_state_by_participant_id=(
-                damage_react_state_by_participant_id
-            ),
-            guarding=guarding,
-            rolls=rolls,
-            defense_profile=defense_profile,
-            field_attr=field_attr,
-            field_power=field_power,
-        )
     actor_ids=tuple(str(x.participant.participant_id) for x in group)
     slot_by_id={
         str(participant.participant_id):int(slot)
@@ -1324,6 +1299,31 @@ def _resolve_combo_group(
     target_profile=profiles[target_id]
     target_runtime=status_runtime_by_participant_id[target_id]
     target_guarding=int(target_slot) in guarding
+    if base_damage_react_active(
+        damage_react_state_by_participant_id[target_id]
+    ):
+        return _resolve_combo_group_with_reactions(
+            combo_id=combo_id,
+            members=members,
+            original_target_slot=original_target_slot,
+            target_slot=target_slot,
+            retargeted=retargeted,
+            by_slot=by_slot,
+            hp_by_slot=hp_by_slot,
+            hp_by_id=hp_by_id,
+            profiles=profiles,
+            status_runtime_by_participant_id=(
+                status_runtime_by_participant_id
+            ),
+            damage_react_state_by_participant_id=(
+                damage_react_state_by_participant_id
+            ),
+            guarding=guarding,
+            rolls=rolls,
+            defense_profile=defense_profile,
+            field_attr=field_attr,
+            field_power=field_power,
+        )
     actor_ids=tuple(
         str(entry.participant.participant_id) for entry in group
     )
