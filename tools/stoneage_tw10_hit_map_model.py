@@ -10,7 +10,11 @@ This is separate from the descendant server WALKABLE/HAVEHEIGHT model.
 
 from __future__ import annotations
 
+import csv
 from dataclasses import dataclass
+import gzip
+from pathlib import Path
+import struct
 from types import MappingProxyType
 from typing import Mapping, Sequence
 
@@ -77,6 +81,68 @@ class TaiwanV10CollisionProfile:
         return self.by_map_number[map_number]
 
 
+_COLLISION_PROFILE_REQUIRED_COLUMNS = frozenset(
+    {
+        "map_number",
+        "bitmapno",
+        "atari_x",
+        "atari_y",
+        "hit_raw",
+        "hit_flag",
+        "priority_type",
+        "height_flag",
+    }
+)
+
+
+def load_taiwan_v10_collision_profile(
+    path: str | Path,
+) -> TaiwanV10CollisionProfile:
+    """Load the derived Taiwan-v1 collision TSV without original ADRN bytes."""
+    rows: dict[int, TaiwanV10CollisionAttr] = {}
+    with gzip.open(Path(path), "rt", encoding="utf-8", newline="") as source:
+        reader = csv.DictReader(source, delimiter="\t")
+        columns = set(reader.fieldnames or ())
+        missing = _COLLISION_PROFILE_REQUIRED_COLUMNS - columns
+        if missing:
+            raise ValueError(
+                "collision metadata is missing required columns: "
+                + ", ".join(sorted(missing))
+            )
+
+        for line_number, row in enumerate(reader, start=2):
+            map_number = int(row["map_number"])
+            if map_number <= 0:
+                raise ValueError(
+                    f"collision metadata line {line_number} has non-positive map_number"
+                )
+            if map_number in rows:
+                raise ValueError(
+                    f"collision metadata contains duplicate map_number {map_number}"
+                )
+            attr = TaiwanV10CollisionAttr(
+                map_number=map_number,
+                bitmapno=int(row["bitmapno"]),
+                atari_x=int(row["atari_x"]),
+                atari_y=int(row["atari_y"]),
+                hit_raw=int(row["hit_raw"]),
+                height_flag=int(row["height_flag"]),
+            )
+            if int(row["hit_flag"]) != attr.hit_flag:
+                raise ValueError(
+                    f"collision metadata line {line_number} has inconsistent hit_flag"
+                )
+            if int(row["priority_type"]) != attr.priority_type:
+                raise ValueError(
+                    f"collision metadata line {line_number} has inconsistent priority_type"
+                )
+            rows[map_number] = attr
+
+    if not rows:
+        raise ValueError("collision metadata contains no map-number rows")
+    return TaiwanV10CollisionProfile(rows)
+
+
 @dataclass(frozen=True)
 class TaiwanV10HitMap:
     width: int
@@ -105,6 +171,71 @@ class TaiwanV10HitMap:
     def blocked_at(self, x: int, y: int) -> bool:
         # v1 checkHitMap blocks only value 1. Value 2 is an override marker.
         return self.value_at(x, y) == HIT_BLOCKED
+
+
+@dataclass(frozen=True)
+class StoneAgeDatMapCache:
+    """Strict three-plane map\\%d.dat cache representation.
+
+    The binary layout is descendant-source-corroborated. A successfully parsed
+    cache is not, by itself, evidence that its payload belongs to Taiwan v1.0.
+    Provenance must be established independently before historical use.
+    """
+
+    width: int
+    height: int
+    tile: tuple[int, ...]
+    parts: tuple[int, ...]
+    event: tuple[int, ...]
+
+    def __post_init__(self) -> None:
+        width = int(self.width)
+        height = int(self.height)
+        if width < 1 or height < 1:
+            raise ValueError("map-cache dimensions must be positive")
+        size = width * height
+
+        normalized = {}
+        for name in ("tile", "parts", "event"):
+            plane = tuple(int(value) for value in getattr(self, name))
+            if len(plane) != size:
+                raise ValueError(
+                    f"map-cache {name} plane length does not match width*height"
+                )
+            if any(value < 0 or value > 0xFFFF for value in plane):
+                raise ValueError(f"map-cache {name} values must fit uint16")
+            normalized[name] = plane
+
+        object.__setattr__(self, "width", width)
+        object.__setattr__(self, "height", height)
+        for name, plane in normalized.items():
+            object.__setattr__(self, name, plane)
+
+
+def parse_stoneage_dat_map_cache(
+    data: bytes | bytearray | memoryview,
+) -> StoneAgeDatMapCache:
+    """Parse the exact width/height + tile/parts/event uint16 cache layout."""
+    raw = bytes(data)
+    if len(raw) < 8:
+        raise ValueError("map cache is shorter than its 8-byte header")
+    width, height = struct.unpack_from("<II", raw, 0)
+    if width < 1 or height < 1:
+        raise ValueError("map-cache dimensions must be positive")
+    cells = width * height
+    expected = 8 + cells * 2 * 3
+    if len(raw) != expected:
+        raise ValueError(
+            f"map-cache size {len(raw)} does not match expected {expected}"
+        )
+    values = struct.unpack_from(f"<{cells * 3}H", raw, 8)
+    return StoneAgeDatMapCache(
+        width=width,
+        height=height,
+        tile=tuple(values[:cells]),
+        parts=tuple(values[cells : cells * 2]),
+        event=tuple(values[cells * 2 :]),
+    )
 
 
 def _validate_planes(
@@ -251,3 +382,37 @@ def build_taiwan_v10_hit_map(
                 hit_map[index] = HIT_BLOCKED
 
     return TaiwanV10HitMap(width, height, tuple(hit_map))
+
+
+def build_taiwan_v10_hit_map_from_cache(
+    cache: StoneAgeDatMapCache,
+    *,
+    profile: TaiwanV10CollisionProfile,
+) -> TaiwanV10HitMap:
+    """Compose a provenance-approved three-plane cache with Taiwan-v1 metadata."""
+    if not isinstance(cache, StoneAgeDatMapCache):
+        raise TypeError("cache must be StoneAgeDatMapCache")
+    return build_taiwan_v10_hit_map(
+        width=cache.width,
+        height=cache.height,
+        tile=cache.tile,
+        parts=cache.parts,
+        event=cache.event,
+        profile=profile,
+    )
+
+
+def build_taiwan_v10_hit_map_from_dat(
+    data: bytes | bytearray | memoryview,
+    *,
+    profile: TaiwanV10CollisionProfile,
+) -> TaiwanV10HitMap:
+    """Parse a three-plane cache and run the Taiwan-v1 hit-map algorithm.
+
+    This function deliberately performs no provenance inference. In particular,
+    parsing a mixed 2.5 DAT does not promote it into the Taiwan-v1/JSS baseline.
+    """
+    return build_taiwan_v10_hit_map_from_cache(
+        parse_stoneage_dat_map_cache(data),
+        profile=profile,
+    )

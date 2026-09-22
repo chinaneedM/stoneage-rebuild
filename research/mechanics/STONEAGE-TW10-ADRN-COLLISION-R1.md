@@ -153,7 +153,34 @@ not the provenance of every field-map plane.
 
 Field maps remain a separate runtime/cache reconstruction layer.
 
-## 7. Validation
+## 7. Provenance-gated field-cache adapter
+
+The reconstruction now has a strict software bridge for the final missing
+field-map layer without inventing any field-map content:
+
+- `StoneAgeDatMapCache` and `parse_stoneage_dat_map_cache()` in
+  `tools/stoneage_tw10_hit_map_model.py` parse the descendant-source-
+  corroborated `map\\%d.dat` layout exactly: an 8-byte little-endian
+  width/height header followed by equal-sized uint16 tile, parts and event
+  planes;
+- `load_taiwan_v10_collision_profile()` consumes only the committed derived
+  `COLLISION-ATTR-R1.tsv.gz` surface and verifies its redundant hit/priority
+  columns against `hit_raw`;
+- `build_taiwan_v10_hit_map_from_cache()` and
+  `build_taiwan_v10_hit_map_from_dat()` compose those planes with the
+  recovered Taiwan-v1 collision profile and the already closed v1 hit-map
+  algorithm.
+
+This closes an **implementation interface**, not the provenance gap. The DAT
+parser intentionally performs no historical inference: a mixed 2.5 DAT can
+match the cache layout while still being a later bridge specimen. Tests use
+synthetic cache bytes plus the committed derived Taiwan-v1 collision metadata;
+no later map payload is promoted into the early baseline.
+
+A real Taiwan-v1/JSS field-map corpus must still be authenticated independently
+before its tile/parts/event planes can populate this path.
+
+## 8. Validation
 
 Deterministic exporter:
 

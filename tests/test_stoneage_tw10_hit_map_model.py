@@ -1,3 +1,5 @@
+from pathlib import Path
+import struct
 import unittest
 
 from tools.stoneage_tw10_hit_map_model import (
@@ -8,6 +10,9 @@ from tools.stoneage_tw10_hit_map_model import (
     TaiwanV10CollisionAttr,
     TaiwanV10CollisionProfile,
     build_taiwan_v10_hit_map,
+    build_taiwan_v10_hit_map_from_dat,
+    load_taiwan_v10_collision_profile,
+    parse_stoneage_dat_map_cache,
 )
 
 
@@ -22,6 +27,14 @@ def profile():
             103: TaiwanV10CollisionAttr(103, 1003, 2, 2, 0),
             15680: TaiwanV10CollisionAttr(15680, 9000, 3, 3, 1),
         }
+    )
+
+
+def dat_cache_bytes(*, width, height, tile, parts, event):
+    values = tuple(tile) + tuple(parts) + tuple(event)
+    return (
+        struct.pack("<II", int(width), int(height))
+        + struct.pack(f"<{len(values)}H", *values)
     )
 
 
@@ -178,6 +191,58 @@ class TaiwanV10HitMapTests(unittest.TestCase):
                 event=(0,),
                 profile=profile(),
             )
+
+
+    def test_strict_dat_cache_parser_exposes_three_planes(self):
+        cache = parse_stoneage_dat_map_cache(
+            dat_cache_bytes(
+                width=2,
+                height=1,
+                tile=(100, 101),
+                parts=(0, 103),
+                event=(0, 1),
+            )
+        )
+        self.assertEqual((cache.width, cache.height), (2, 1))
+        self.assertEqual(cache.tile, (100, 101))
+        self.assertEqual(cache.parts, (0, 103))
+        self.assertEqual(cache.event, (0, 1))
+
+    def test_dat_cache_parser_rejects_payload_size_mismatch(self):
+        valid = dat_cache_bytes(
+            width=1,
+            height=1,
+            tile=(100,),
+            parts=(0,),
+            event=(0,),
+        )
+        with self.assertRaisesRegex(ValueError, "does not match expected"):
+            parse_stoneage_dat_map_cache(valid + b"\\x00")
+
+    def test_dat_cache_composes_directly_into_v1_hit_map(self):
+        result = build_taiwan_v10_hit_map_from_dat(
+            dat_cache_bytes(
+                width=2,
+                height=1,
+                tile=(100, 101),
+                parts=(0, 0),
+                event=(0, 0),
+            ),
+            profile=profile(),
+        )
+        self.assertEqual(result.cells, (HIT_PASSABLE, HIT_BLOCKED))
+
+    def test_committed_derived_collision_profile_loads_without_adrn_payload(self):
+        path = (
+            Path(__file__).resolve().parents[1]
+            / "research"
+            / "recovered"
+            / "tw10-resource-metadata"
+            / "COLLISION-ATTR-R1.tsv.gz"
+        )
+        loaded = load_taiwan_v10_collision_profile(path)
+        self.assertEqual(len(loaded.by_map_number), 9286)
+        self.assertTrue(all(key > 0 for key in loaded.by_map_number))
 
 
 if __name__ == "__main__":
