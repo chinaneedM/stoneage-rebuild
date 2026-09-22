@@ -1,0 +1,39 @@
+name: Probe JSS 1999 beta application candidates
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_jss1999_beta_apply_candidate_probe.py
+      - tests/test_stoneage_jss1999_beta_apply_candidate_probe.py
+      - .github/workflows/probe-stoneage-jss1999-beta-apply-candidates.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-jss1999-beta-apply-candidates
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate candidate boundary
+        run: python3 -m unittest tests.test_stoneage_jss1999_beta_apply_candidate_probe -v
+      - name: Query candidate URLs through Availability
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_jss1999_beta_apply_candidate_probe \
+            > research/recovered/STONEAGE-JSS1999-BETA-APPLY-CANDIDATES-R1.txt
+      - name: Commit derived Availability metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-JSS1999-BETA-APPLY-CANDIDATES-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe JSS 1999 beta URL candidates'
+          git pull --rebase origin main
+          git push
