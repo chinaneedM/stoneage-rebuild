@@ -1,0 +1,19 @@
+StoneAge JSS update archive probe — R1
+SCOPE|launcher-derived-first-party-paths|1999-2002|cdx-metadata+bounded-newest-text|no-resource-binary-download
+LAUNCHER_EVIDENCE|host=update.gamersdream.ne.jp|manifest=/~stoneage/newest.txt|payload_pattern=/~stoneage/%s
+TITAN_PREFIX_BOUNDARY|source-derived-candidate-only|launcher-embeds-titan-root-separately
+LIMIT|prefix_rows=5000|manifest_bytes=262144
+COUNT|exact_targets|2
+COUNT|prefix_targets|4
+COUNT|errors|0
+COUNT|exact_rows|0
+COUNT|prefix_rows|0
+COUNT|saturated_prefixes|0
+PREFIX|label=update-host|rows=0|relevant=0|saturated=0|url=http://update.gamersdream.ne.jp/~stoneage/
+PREFIX|label=update-host-port80|rows=0|relevant=0|saturated=0|url=http://update.gamersdream.ne.jp:80/~stoneage/
+PREFIX|label=titan-source-derived-candidate|rows=0|relevant=0|saturated=0|url=http://www.titan.co.jp/~stoneage/
+PREFIX|label=titan-source-derived-candidate-port80|rows=0|relevant=0|saturated=0|url=http://www.titan.co.jp:80/~stoneage/
+COUNT|relevant_prefix_rows|0
+COUNT|resource_family_rows|0
+COUNT|map_like_rows|0
+RESOLUTION|BOUNDED_NO_INDEX_ROWS|no archive index rows in tested launcher-derived paths; does not disprove historical availability
