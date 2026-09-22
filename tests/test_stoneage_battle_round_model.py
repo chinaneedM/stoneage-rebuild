@@ -21,6 +21,11 @@ from tools.stoneage_battle_round_model import (
     prepare_battle_round,
     resolve_ordinary_round,
 )
+from tools.stoneage_battle_status_model import (
+    BaseBattleStatusRuntime,
+    BaseBattleStatusState,
+    BaseStatusTurnRolls,
+)
 from tools.stoneage_singleplayer_battle import BattleParticipant
 
 
@@ -233,6 +238,130 @@ class BattleRoundModelTests(unittest.TestCase):
             ("p1","p2"),
         )
         self.assertEqual(result.events[-1].result,"wait")
+
+    def test_sleep_one_suppresses_turn_even_when_it_expires(self):
+        player=actor("player","player","player",quick=100)
+        enemy=actor("enemy","enemy","enemy",quick=20)
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={},
+            base_status_runtime_by_participant_id={
+                "player":BaseBattleStatusRuntime(
+                    status=BaseBattleStatusState(sleep=1),
+                    work_quick=100,
+                ),
+                "enemy":BaseBattleStatusRuntime(work_quick=20),
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.events[0].result,"status_tick")
+        self.assertEqual(result.events[1].result,"status_no_action")
+        self.assertEqual(result.hp_by_participant_id["enemy"],100)
+        self.assertEqual(
+            result.base_status_runtime_by_participant_id["player"].status.sleep,
+            0,
+        )
+
+    def test_positive_damage_wakes_slower_sleeping_actor_before_its_turn(self):
+        player=actor("player","player","player",hp=200,attack=100,quick=50)
+        enemy=actor("enemy","enemy","enemy",hp=200,attack=60,quick=100)
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+            },
+            base_status_runtime_by_participant_id={
+                "player":BaseBattleStatusRuntime(
+                    status=BaseBattleStatusState(sleep=2),
+                    work_quick=50,
+                ),
+                "enemy":BaseBattleStatusRuntime(work_quick=100),
+            },
+            defense_profile="newpower_70pct",
+        )
+        player_attack=[
+            event for event in result.events
+            if event.participant_id=="player" and event.result=="normal"
+        ]
+        self.assertEqual(len(player_attack),1)
+        runtime=result.base_status_runtime_by_participant_id["player"]
+        self.assertEqual(runtime.status.sleep,0)
+        self.assertEqual(runtime.damage_count,1)
+
+    def test_confusion_can_rewrite_wait_into_same_round_attack(self):
+        player=actor("player","player","player",attack=60,quick=100)
+        enemy=actor("enemy","enemy","enemy",hp=200,quick=20)
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            base_status_runtime_by_participant_id={
+                "player":BaseBattleStatusRuntime(
+                    status=BaseBattleStatusState(confusion=2),
+                    work_quick=100,
+                ),
+                "enemy":BaseBattleStatusRuntime(work_quick=20),
+            },
+            base_status_rolls_by_participant_id={
+                "player":BaseStatusTurnRolls(
+                    confusion_action_roll_1_100=1,
+                    confusion_side_roll_0_1=1,
+                    confusion_pos_roll_0_9=9,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        attack=[
+            event for event in result.events
+            if event.participant_id=="player" and event.result=="normal"
+        ]
+        self.assertEqual(len(attack),1)
+        self.assertEqual(attack[0].resolved_target_slot,10)
+        self.assertLess(result.hp_by_participant_id["enemy"],200)
 
     def test_guard_is_active_before_slow_guard_actor_turn(self):
         player = actor("player", "player", "player", quick=20)

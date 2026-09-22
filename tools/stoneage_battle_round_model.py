@@ -9,7 +9,7 @@ action sorting; combo damage execution remains a separate seam.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from types import MappingProxyType
 from typing import Mapping, Sequence
 
@@ -40,6 +40,15 @@ from tools.stoneage_battle_core_model import (
     resolve_battle_counter_check,
     resolve_battle_escape_attempt,
 )
+from tools.stoneage_battle_status_model import (
+    BaseBattleStatusRuntime,
+    BaseStatusTickInputs,
+    BaseStatusTickResult,
+    BaseStatusTurnRolls,
+    base_stone_defense_multiplier,
+    resolve_base_damage_wakeup,
+    resolve_base_status_tick,
+)
 from tools.stoneage_singleplayer_battle import BattleParticipant
 
 
@@ -58,6 +67,7 @@ BATTLE_COM_WAIT = 11
 
 BASE_COMMAND_CODES = frozenset(
     {
+        BATTLE_COM_NONE,
         BATTLE_COM_NONE,
         BATTLE_COM_ATTACK,
         BATTLE_COM_GUARD,
@@ -534,6 +544,7 @@ class OrdinaryRoundEvent:
     combo_id: int | None = None
     combo_member_index: int | None = None
     profit_participant_ids: tuple[str, ...] = ()
+    status_tick_resolution: BaseStatusTickResult | None = None
 
 
 @dataclass(frozen=True)
@@ -542,6 +553,9 @@ class ResolvedOrdinaryRound:
     hp_by_participant_id: Mapping[str, int]
     hp_by_slot: Mapping[int, int]
     action_order: tuple[str, ...]
+    base_status_runtime_by_participant_id: Mapping[
+        str,BaseBattleStatusRuntime
+    ] | None = None
     exited_participant_ids: tuple[str, ...] = ()
     escaped_participant_ids: tuple[str, ...] = ()
 
@@ -580,9 +594,14 @@ def _slot_side(slot: int) -> int:
 def _effective_defense_for_round(
     participant: BattleParticipant,
     defense_profile: str,
+    *,
+    stone: bool = False,
 ) -> float:
     if defense_profile == "newpower_70pct":
-        return effective_defense_newpower(participant.defense, stone=False)
+        return effective_defense_newpower(
+            participant.defense,
+            stone=bool(stone),
+        )
     if defense_profile == "preserved_old_mixed":
         if participant.fixed_vital is None:
             raise ValueError(
@@ -592,7 +611,7 @@ def _effective_defense_for_round(
             participant.defense,
             participant.quick,
             participant.fixed_vital,
-            stone=False,
+            stone=bool(stone),
         )
     raise ValueError(f"unknown defense profile: {defense_profile}")
 
@@ -1114,6 +1133,12 @@ def resolve_ordinary_round(
     combo_rolls_by_starter_id: Mapping[
         str,ComboExecutionRolls
     ] | None = None,
+    base_status_runtime_by_participant_id: Mapping[
+        str,BaseBattleStatusRuntime
+    ] | None = None,
+    base_status_rolls_by_participant_id: Mapping[
+        str,BaseStatusTurnRolls
+    ] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
@@ -1128,7 +1153,7 @@ def resolve_ordinary_round(
     for entry in prepared.ordered_entries:
         if entry.command.command1 not in ORDINARY_RESOLUTION_COMMANDS:
             raise ValueError(
-                "ordinary resolver accepts only ATTACK/GUARD/CAPTURE/ESCAPE/COMBO/WAIT commands"
+                "ordinary resolver accepts only NONE/ATTACK/GUARD/CAPTURE/ESCAPE/COMBO/WAIT commands"
             )
 
     by_slot, slot_by_id = _build_slot_maps(prepared, slots)
@@ -1191,6 +1216,55 @@ def resolve_ordinary_round(
         if len(group) < 2:
             raise ValueError(f"prepared combo {combo_id} has fewer than two members")
     processed_combo_ids: set[int]=set()
+
+    supplied_status_runtime={
+        str(participant_id):runtime
+        for participant_id,runtime in (
+            base_status_runtime_by_participant_id or {}
+        ).items()
+    }
+    unknown_status_ids=sorted(
+        set(supplied_status_runtime)-set(slot_by_id)
+    )
+    if unknown_status_ids:
+        raise ValueError(
+            f"base status runtime references unknown actors: {unknown_status_ids}"
+        )
+    status_runtime={
+        participant_id:supplied_status_runtime.get(
+            participant_id,
+            BaseBattleStatusRuntime(),
+        )
+        for participant_id in slot_by_id
+    }
+    for participant_id,runtime in status_runtime.items():
+        if not isinstance(runtime,BaseBattleStatusRuntime):
+            raise TypeError(
+                f"base status runtime for {participant_id} has wrong type"
+            )
+    status_rolls={
+        str(participant_id):rolls
+        for participant_id,rolls in (
+            base_status_rolls_by_participant_id or {}
+        ).items()
+    }
+    unknown_status_roll_ids=sorted(set(status_rolls)-set(slot_by_id))
+    if unknown_status_roll_ids:
+        raise ValueError(
+            f"base status RNG references unknown actors: {unknown_status_roll_ids}"
+        )
+    has_active_base_status=any(
+        any(int(getattr(runtime.status,name))>0 for name in (
+            "poison","paralysis","sleep","stone","drunk","confusion"
+        ))
+        for runtime in status_runtime.values()
+    )
+    if has_active_base_status and (
+        counter_rolls_by_attack_id is not None or bool(combo_groups)
+    ):
+        raise ValueError(
+            "base-status interaction with counter/combo is a separate seam"
+        )
 
     command_by_slot={
         slot_by_id[entry.participant.participant_id]:entry.command
@@ -1274,7 +1348,112 @@ def resolve_ordinary_round(
             )
             continue
 
-        if entry.command.command1 == BATTLE_COM_WAIT:
+        command=entry.command
+        runtime=status_runtime[str(participant_id)]
+        status_before=runtime.status
+        if any(int(getattr(status_before,name))>0 for name in (
+            "poison","paralysis","sleep","stone","drunk","confusion"
+        )):
+            rolls=status_rolls.get(
+                str(participant_id),
+                BaseStatusTurnRolls(),
+            )
+            valid_target_slots=tuple(
+                other_slot
+                for other_slot in sorted(by_slot)
+                if (
+                    other_slot not in exited_slots
+                    and int(hp_by_slot.get(other_slot,0)) > 0
+                )
+            )
+            tick=resolve_base_status_tick(
+                BaseStatusTickInputs(
+                    hp=int(hp_by_slot[slot]),
+                    status=status_before,
+                    poison_stat_sum=runtime.poison_stat_sum,
+                    actor_slot=int(slot),
+                    valid_target_slots=valid_target_slots,
+                    confusion_action_roll_1_100=(
+                        rolls.confusion_action_roll_1_100
+                    ),
+                    confusion_side_roll_0_1=(
+                        rolls.confusion_side_roll_0_1
+                    ),
+                    confusion_pos_roll_0_9=(
+                        rolls.confusion_pos_roll_0_9
+                    ),
+                    work_quick=runtime.work_quick,
+                    ride_work_quick=runtime.ride_work_quick,
+                )
+            )
+            hp_by_slot[slot]=int(tick.hp_after)
+            hp_by_id[str(participant_id)]=int(tick.hp_after)
+            runtime=replace(
+                runtime,
+                status=tick.status_after,
+                work_quick=tick.work_quick_after,
+            )
+            status_runtime[str(participant_id)]=runtime
+            events.append(
+                OrdinaryRoundEvent(
+                    str(participant_id),
+                    int(slot),
+                    int(entry.command.command1),
+                    int(entry.action_value),
+                    "status_tick",
+                    original_target_slot=int(slot),
+                    resolved_target_slot=int(slot),
+                    damage=int(tick.poison_damage),
+                    target_hp_before=int(tick.hp_before),
+                    target_hp_after=int(tick.hp_after),
+                    status_tick_resolution=tick,
+                )
+            )
+            if tick.command_override == "none":
+                command=BattleCommand(
+                    BATTLE_COM_NONE,
+                    command2=entry.command.command2,
+                    command3=entry.command.command3,
+                    input_complete=entry.command.input_complete,
+                )
+                guarding.discard(slot)
+            elif tick.command_override == "attack":
+                if tick.target_override is None:
+                    raise ValueError("confusion attack rewrite lacks target")
+                if int(tick.target_override) < 0:
+                    events.append(
+                        OrdinaryRoundEvent(
+                            str(participant_id),
+                            int(slot),
+                            BATTLE_COM_NONE,
+                            int(entry.action_value),
+                            "confusion_no_target",
+                        )
+                    )
+                    command_by_slot[slot]=BattleCommand(BATTLE_COM_NONE)
+                    continue
+                command=BattleCommand(
+                    BATTLE_COM_ATTACK,
+                    command2=int(tick.target_override),
+                    command3=entry.command.command3,
+                    input_complete=entry.command.input_complete,
+                )
+                guarding.discard(slot)
+            command_by_slot[slot]=command
+
+        if command.command1 == BATTLE_COM_NONE:
+            events.append(
+                OrdinaryRoundEvent(
+                    str(participant_id),
+                    int(slot),
+                    BATTLE_COM_NONE,
+                    int(entry.action_value),
+                    "status_no_action",
+                )
+            )
+            continue
+
+        if command.command1 == BATTLE_COM_WAIT:
             events.append(
                 OrdinaryRoundEvent(
                     participant_id,
@@ -1286,7 +1465,7 @@ def resolve_ordinary_round(
             )
             continue
 
-        if entry.command.command1 == BATTLE_COM_GUARD:
+        if command.command1 == BATTLE_COM_GUARD:
             events.append(
                 OrdinaryRoundEvent(
                     participant_id,
@@ -1298,7 +1477,7 @@ def resolve_ordinary_round(
             )
             continue
 
-        if entry.command.command1 == BATTLE_COM_ESCAPE:
+        if command.command1 == BATTLE_COM_ESCAPE:
             # Stable BATTLE_Command ignores ESCAPE for CHAR_TYPEPET.
             if participant.kind == "pet":
                 events.append(
@@ -1382,7 +1561,7 @@ def resolve_ordinary_round(
             )
             continue
 
-        if entry.command.command1 == BATTLE_COM_CAPTURE:
+        if command.command1 == BATTLE_COM_CAPTURE:
             if participant_id not in capture_contexts:
                 raise KeyError(
                     f"missing capture context for {participant_id}"
@@ -1393,7 +1572,7 @@ def resolve_ordinary_round(
                 )
             context=capture_contexts[participant_id]
             cap_rolls=capture_rolls[participant_id]
-            original_target=int(entry.command.command2)
+            original_target=int(command.command2)
             target=original_target
             retargeted=False
             target_alive=(
@@ -1587,7 +1766,7 @@ def resolve_ordinary_round(
         if rolls is None:
             raise KeyError(f"missing ordinary attack rolls for {participant_id}")
 
-        original_target = int(entry.command.command2)
+        original_target = int(command.command2)
         target = original_target
         retargeted = False
 
@@ -1596,9 +1775,17 @@ def resolve_ordinary_round(
             and target not in exited_slots
             and int(hp_by_slot.get(target, 0)) > 0
         )
-        if target_alive and _slot_side(target) == _slot_side(slot):
+        if (
+            target_alive
+            and _slot_side(target) == _slot_side(slot)
+            and not (
+                "tick" in locals()
+                and tick is not None
+                and tick.confusion_rewrote_command
+            )
+        ):
             raise ValueError(
-                "same-side ordinary attacks are outside the status-free R1 seam"
+                "same-side ordinary attacks require confusion provenance"
             )
         if not target_alive:
             target = _retarget_slot(
@@ -1682,7 +1869,15 @@ def resolve_ordinary_round(
 
         base_damage = physical_base_damage(
             participant.attack,
-            _effective_defense_for_round(defender, defense_profile),
+            _effective_defense_for_round(
+                defender,
+                defense_profile,
+                stone=(
+                    base_stone_defense_multiplier(
+                        status_runtime[str(defender_id)].status
+                    ) > 1.0
+                ),
+            ),
             int(rolls.damage_roll),
         )
         damage = attribute_adjusted_damage(
@@ -1725,6 +1920,18 @@ def resolve_ordinary_round(
         after = max(0, before - int(damage))
         hp_by_slot[target] = after
         hp_by_id[defender_id] = after
+        if int(damage) > 0:
+            target_runtime=status_runtime[str(defender_id)]
+            wake=resolve_base_damage_wakeup(
+                target_runtime.status,
+                damage_count_before=target_runtime.damage_count,
+                damage=int(damage),
+            )
+            status_runtime[str(defender_id)]=replace(
+                target_runtime,
+                status=wake.status_after,
+                damage_count=wake.damage_count_after,
+            )
         events.append(
             OrdinaryRoundEvent(
                 participant_id,
@@ -1751,6 +1958,9 @@ def resolve_ordinary_round(
         action_order=tuple(
             entry.participant.participant_id
             for entry in prepared.ordered_entries
+        ),
+        base_status_runtime_by_participant_id=MappingProxyType(
+            dict(status_runtime)
         ),
         exited_participant_ids=tuple(exited_ids),
         escaped_participant_ids=tuple(escaped_ids),

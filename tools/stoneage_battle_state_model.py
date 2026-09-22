@@ -52,6 +52,10 @@ from tools.stoneage_battle_round_model import (
     prepare_battle_round,
     resolve_ordinary_round,
 )
+from tools.stoneage_battle_status_model import (
+    BaseBattleStatusRuntime,
+    BaseStatusTurnRolls,
+)
 from tools.stoneage_singleplayer_battle import BattleParticipant, BattleSession
 
 
@@ -80,6 +84,9 @@ class PersistentBattleState:
     winning_side: int | None = None
     last_commands: Mapping[str, BattleCommand] | None = None
     escape_count_by_participant_id: Mapping[str,int] | None = None
+    base_status_runtime_by_participant_id: Mapping[
+        str,BaseBattleStatusRuntime
+    ] | None = None
 
     def __post_init__(self) -> None:
         if self.phase not in {ACTIVE, FINISHED}:
@@ -102,6 +109,43 @@ class PersistentBattleState:
                     )
 
         participants = _participant_map(self.session)
+        expected_status_ids=set(participants)
+        if self.base_status_runtime_by_participant_id is None:
+            object.__setattr__(
+                self,
+                "base_status_runtime_by_participant_id",
+                _freeze_mapping({
+                    pid:BaseBattleStatusRuntime(
+                        work_quick=int(participant.quick)
+                    )
+                    for pid,participant in participants.items()
+                }),
+            )
+        else:
+            normalized_status={
+                str(pid):runtime
+                for pid,runtime in (
+                    self.base_status_runtime_by_participant_id.items()
+                )
+            }
+            if set(normalized_status) != expected_status_ids:
+                missing=sorted(expected_status_ids-set(normalized_status))
+                extra=sorted(set(normalized_status)-expected_status_ids)
+                raise ValueError(
+                    f"base-status participants mismatch; "
+                    f"missing={missing}, extra={extra}"
+                )
+            for pid,runtime in normalized_status.items():
+                if not isinstance(runtime,BaseBattleStatusRuntime):
+                    raise TypeError(
+                        f"base status runtime for {pid} has wrong type"
+                    )
+            object.__setattr__(
+                self,
+                "base_status_runtime_by_participant_id",
+                _freeze_mapping(normalized_status),
+            )
+
         expected_escape_ids={
             pid for pid,participant in participants.items()
             if participant.kind != "pet"
@@ -238,6 +282,9 @@ def begin_persistent_battle(
     session: BattleSession,
     *,
     slots: Mapping[str, int],
+    base_status_runtime_by_participant_id: Mapping[
+        str,BaseBattleStatusRuntime
+    ] | None = None,
 ) -> PersistentBattleState:
     participants = _participant_map(session)
     normalized_slots = {str(pid): int(slot) for pid, slot in slots.items()}
@@ -287,6 +334,9 @@ def begin_persistent_battle(
             for pid,participant in participants.items()
             if participant.kind != "pet"
         }),
+        base_status_runtime_by_participant_id=(
+            base_status_runtime_by_participant_id
+        ),
     )
     return _with_termination(state)
 
@@ -355,9 +405,15 @@ def participant_snapshot(
     if participant_id not in participants:
         raise KeyError(f"unknown battle participant {participant_id}")
     participant = participants[participant_id]
+    runtime=state.base_status_runtime_by_participant_id[participant_id]
     return replace(
         participant,
         hp=int(state.hp_by_participant_id[participant_id]),
+        quick=(
+            int(participant.quick)
+            if runtime.work_quick is None
+            else int(runtime.work_quick)
+        ),
     )
 
 
@@ -467,6 +523,13 @@ def resolve_persistent_capture_transition(
         escape_count_by_participant_id=_freeze_mapping({
             pid:count
             for pid,count in state.escape_count_by_participant_id.items()
+            if pid != target_id
+        }),
+        base_status_runtime_by_participant_id=_freeze_mapping({
+            pid:runtime
+            for pid,runtime in (
+                state.base_status_runtime_by_participant_id.items()
+            )
             if pid != target_id
         }),
     )
@@ -715,6 +778,9 @@ def resolve_persistent_ordinary_round(
     combo_rolls_by_starter_id: Mapping[
         str,ComboExecutionRolls
     ] | None = None,
+    base_status_rolls_by_participant_id: Mapping[
+        str,BaseStatusTurnRolls
+    ] | None = None,
     no_risk: bool = False,
     drop_rolls_by_enemy_id: Mapping[
         str,Sequence[DropAllocationRoll]
@@ -785,6 +851,12 @@ def resolve_persistent_ordinary_round(
         counter_rolls_by_attack_id=counter_rolls_by_attack_id,
         counter_abio_by_participant_id=counter_abio_by_participant_id,
         combo_rolls_by_starter_id=combo_rolls_by_starter_id,
+        base_status_runtime_by_participant_id=(
+            state.base_status_runtime_by_participant_id
+        ),
+        base_status_rolls_by_participant_id=(
+            base_status_rolls_by_participant_id
+        ),
         field_attr=field_attr,
         field_power=field_power,
     )
@@ -855,10 +927,14 @@ def resolve_persistent_ordinary_round(
         else state.session
     )
     next_slots=dict(state.slots)
+    next_status_runtime=dict(
+        round_result.base_status_runtime_by_participant_id
+    )
     for pid in removed_enemy_ids:
         next_slots.pop(pid,None)
         hp.pop(pid,None)
         escape_counts.pop(pid,None)
+        next_status_runtime.pop(pid,None)
 
     next_state = PersistentBattleState(
         session=next_session,
@@ -878,6 +954,9 @@ def resolve_persistent_ordinary_round(
         winning_side=None,
         last_commands=_freeze_mapping(commands),
         escape_count_by_participant_id=_freeze_mapping(escape_counts),
+        base_status_runtime_by_participant_id=_freeze_mapping(
+            next_status_runtime
+        ),
     )
     if player_id in escaped_ids:
         next_state=replace(

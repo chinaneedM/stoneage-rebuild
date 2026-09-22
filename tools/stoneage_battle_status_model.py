@@ -9,7 +9,7 @@ behavior without inventing later gated effects.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, replace
+from dataclasses import dataclass, field, replace
 
 
 STATUS_POISON="poison"
@@ -53,6 +53,42 @@ class BaseBattleStatusState:
             if value < 0:
                 raise ValueError(f"{name} status counter cannot be negative")
             object.__setattr__(self,name,value)
+
+
+@dataclass(frozen=True)
+class BaseStatusTurnRolls:
+    confusion_action_roll_1_100: int | None = None
+    confusion_side_roll_0_1: int | None = None
+    confusion_pos_roll_0_9: int | None = None
+
+
+@dataclass(frozen=True)
+class BaseBattleStatusRuntime:
+    status: BaseBattleStatusState = field(
+        default_factory=BaseBattleStatusState
+    )
+    poison_stat_sum: int | None = None
+    work_quick: int | None = None
+    ride_work_quick: int | None = None
+    damage_count: int = 0
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.status,BaseBattleStatusState):
+            raise TypeError("status must be BaseBattleStatusState")
+        if self.poison_stat_sum is not None:
+            object.__setattr__(
+                self,"poison_stat_sum",int(self.poison_stat_sum)
+            )
+        if self.work_quick is not None:
+            object.__setattr__(self,"work_quick",int(self.work_quick))
+        if self.ride_work_quick is not None:
+            object.__setattr__(
+                self,"ride_work_quick",int(self.ride_work_quick)
+            )
+        damage_count=int(self.damage_count)
+        if damage_count < 0:
+            raise ValueError("damage_count cannot be negative")
+        object.__setattr__(self,"damage_count",damage_count)
 
 
 @dataclass(frozen=True)

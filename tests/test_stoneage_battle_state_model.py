@@ -34,6 +34,10 @@ from tools.stoneage_battle_state_model import (
     resolve_persistent_ordinary_round,
     termination_result,
 )
+from tools.stoneage_battle_status_model import (
+    BaseBattleStatusRuntime,
+    BaseBattleStatusState,
+)
 from tools.stoneage_singleplayer_battle import (
     BattleParticipant,
     BattleSession,
@@ -170,6 +174,62 @@ class PersistentBattleStateTests(unittest.TestCase):
         )
         self.assertEqual(second.after.turn, 2)
         self.assertLess(second.after.hp_by_participant_id["enemy"], first_hp)
+
+    def test_poison_status_persists_across_rounds_and_stops_at_one_hp(self):
+        player=participant(
+            "player","player","player",
+            hp=10,quick=100,
+        )
+        enemy=participant("enemy","enemy","enemy",quick=20)
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+            base_status_runtime_by_participant_id={
+                "player":BaseBattleStatusRuntime(
+                    status=BaseBattleStatusState(poison=2),
+                    poison_stat_sum=10000,
+                    work_quick=100,
+                ),
+                "enemy":BaseBattleStatusRuntime(work_quick=20),
+            },
+        )
+        first=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(first.after.hp_by_participant_id["player"],1)
+        self.assertEqual(
+            first.after.base_status_runtime_by_participant_id[
+                "player"
+            ].status.poison,
+            1,
+        )
+
+        second=resolve_persistent_ordinary_round(
+            first.after,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(second.after.hp_by_participant_id["player"],1)
+        self.assertEqual(
+            second.after.base_status_runtime_by_participant_id[
+                "player"
+            ].status.poison,
+            0,
+        )
 
     def test_player_death_finishes_even_if_allied_pet_is_alive(self):
         player = participant("player", "player", "player", hp=30, quick=40)
