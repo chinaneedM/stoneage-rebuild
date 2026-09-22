@@ -722,6 +722,7 @@ def _resolve_counter_chain(
     setup_effects_by_participant_id: Mapping[
         str,BattleCommandSetupEffects
     ],
+    status_runtime_by_participant_id: dict[str,BaseBattleStatusRuntime],
     command_by_slot: Mapping[int, BattleCommand],
     action_value_by_slot: Mapping[int, int],
     counter_rolls: Sequence[CounterAttemptRolls],
@@ -919,6 +920,7 @@ def _resolve_counter_chain(
         target_defense=_effective_defense_power(
             target,setup_effects_by_participant_id
         )
+        target_runtime=status_runtime_by_participant_id[target_id]
         base_damage=physical_base_damage(
             _effective_attack_power(
                 actor,setup_effects_by_participant_id
@@ -926,6 +928,11 @@ def _resolve_counter_chain(
             _effective_defense_for_round(
                 target,
                 defense_profile,
+                stone=(
+                    base_stone_defense_multiplier(
+                        target_runtime.status
+                    ) > 1.0
+                ),
                 work_defense=target_defense,
             ),
             int(rolls.damage_roll),
@@ -975,6 +982,18 @@ def _resolve_counter_chain(
         after=max(0,before-int(damage))
         hp_by_slot[target_slot]=after
         hp_by_id[target_id]=after
+        if int(damage)>0:
+            target_runtime=status_runtime_by_participant_id[target_id]
+            wake=resolve_base_damage_wakeup(
+                target_runtime.status,
+                damage_count_before=target_runtime.damage_count,
+                damage=int(damage),
+            )
+            status_runtime_by_participant_id[target_id]=replace(
+                target_runtime,
+                status=wake.status_after,
+                damage_count=wake.damage_count_after,
+            )
         resolved.append(
             OrdinaryRoundEvent(
                 actor_id,
@@ -1502,11 +1521,9 @@ def resolve_ordinary_round(
         ))
         for runtime in status_runtime.values()
     )
-    if has_active_base_status and (
-        counter_rolls_by_attack_id is not None or bool(combo_groups)
-    ):
+    if has_active_base_status and bool(combo_groups):
         raise ValueError(
-            "base-status interaction with counter/combo is a separate seam"
+            "base-status interaction with combo is a separate seam"
         )
 
     command_by_slot={
@@ -1535,6 +1552,7 @@ def resolve_ordinary_round(
                 hp_by_id=hp_by_id,
                 profiles=profiles,
                 setup_effects_by_participant_id=setup_effects,
+                status_runtime_by_participant_id=status_runtime,
                 command_by_slot=command_by_slot,
                 action_value_by_slot=action_value_by_slot,
                 counter_rolls=normalized_counter_rolls.get(

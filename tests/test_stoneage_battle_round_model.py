@@ -1155,6 +1155,155 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(result.events[0].damage, 130)
         self.assertEqual(result.hp_by_slot[10], 0)
 
+    def test_active_drunk_does_not_pre_tick_counter_before_actor_turn(self):
+        player=actor(
+            "player","player","player",
+            hp=200,attack=60,defense=70,quick=100,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=200,attack=60,defense=70,quick=50,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={
+                "player":profile(dex=100),
+                "enemy":profile(dex=200),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+            },
+            counter_rolls_by_attack_id={
+                "player":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=1,
+                        attack_rolls=OrdinaryAttackRolls(
+                            dodge_roll_1_10000=10000,
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                    ),
+                ),
+                "enemy":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=10000,
+                        attack_rolls=None,
+                    ),
+                ),
+            },
+            base_status_runtime_by_participant_id={
+                "player":BaseBattleStatusRuntime(work_quick=100),
+                "enemy":BaseBattleStatusRuntime(
+                    status=BaseBattleStatusState(drunk=2),
+                    work_quick=50,
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        counter=[
+            event for event in result.events
+            if event.is_counter and event.participant_id=="enemy"
+        ][0]
+        self.assertEqual(counter.result,"counter_normal")
+        # Counter occurs during the faster player's action, before enemy's own
+        # later StatusSeq. Drunk is decremented only when enemy's turn arrives.
+        self.assertEqual(
+            result.base_status_runtime_by_participant_id[
+                "enemy"
+            ].status.drunk,
+            1,
+        )
+
+    def test_counter_positive_damage_updates_damage_wakeup_runtime(self):
+        player=actor(
+            "player","player","player",
+            hp=200,attack=60,defense=70,quick=100,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=200,attack=60,defense=70,quick=50,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={
+                "player":profile(dex=100),
+                "enemy":profile(dex=200),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=1,
+                    damage_roll=0,
+                ),
+            },
+            counter_rolls_by_attack_id={
+                "player":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=1,
+                        attack_rolls=OrdinaryAttackRolls(
+                            dodge_roll_1_10000=10000,
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                    ),
+                ),
+            },
+            base_status_runtime_by_participant_id={
+                "player":BaseBattleStatusRuntime(
+                    work_quick=100,
+                    damage_count=7,
+                ),
+                "enemy":BaseBattleStatusRuntime(work_quick=50),
+            },
+            defense_profile="newpower_70pct",
+        )
+        counter=[
+            event for event in result.events
+            if event.is_counter and event.participant_id=="enemy"
+        ][0]
+        self.assertGreater(counter.damage,0)
+        # Enemy's later main attack is critical and therefore does not start a
+        # second counter chain, but it still also causes positive damage. The
+        # runtime count therefore records both the counter hit and later hit.
+        self.assertEqual(
+            result.base_status_runtime_by_participant_id[
+                "player"
+            ].damage_count,
+            9,
+        )
+
     def test_counter_chain_uses_defender_first_and_scales_positive_damage(self):
         player=actor(
             "player","player","player",
