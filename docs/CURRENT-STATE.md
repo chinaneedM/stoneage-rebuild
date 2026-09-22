@@ -1272,12 +1272,14 @@ Supplemental source ledgers:
   - reserved small map codes, the 60..79 ADRN exception and final NPC-event blocking.
 - `height_flag` is recovered as source metadata but is **not** silently promoted into movement semantics because the recovered client `readHitMap()` path does not consume it.
 - Retail-disc inventory still reports `field_map_disc_files=0`: the collision-property dataset is now closed, while the provenance-complete field-map plane corpus remains a separate runtime/cache recovery question.
+- The provenance-gated cache-plane software bridge is now closed without fabricating field content: `StoneAgeDatMapCache` strictly parses the descendant-source-corroborated 8-byte width/height + uint16 tile/parts/event DAT layout; `load_taiwan_v10_collision_profile()` verifies and loads the committed derived Taiwan-v1 collision TSV; and the cache/DAT composition helpers feed those planes directly into the recovered v1 hit-map algorithm. The parser performs no provenance inference, so mixed 2.5 DAT payloads remain later bridge specimens rather than Taiwan-v1 evidence.
 - Evidence and boundary are recorded in `research/mechanics/STONEAGE-TW10-ADRN-COLLISION-R1.md`.
 - Remote validation:
   - gameplay/model run **35511074585** — success;
   - repaired real-disc export **35511391125** — success;
-  - export with explicit collision-dataset integrity requirement **35511442265** — success.
-- **Operational consequence:** former immediate action 1 is closed. Early-client movement no longer needs later server `WALKABLE/HAVEHEIGHT` substitution.
+  - export with explicit collision-dataset integrity requirement **35511442265** — success;
+  - provenance-gated cache-plane adapter commit `1d1f5a69574c855ad06f211ebaf0241b51249764`, gameplay/model run **35726829348** — success.
+- **Operational consequence:** the implementation path from authenticated field-cache bytes through Taiwan-v1 ADRN metadata to the v1 hit map is closed. The only remaining early collision-content gap is recovery/authentication of a provenance-safe Taiwan-v1/JSS field-map plane corpus itself; later 2.5/SACH data must not be substituted.
 
 ## Ordinary attack / guard / wait round resolution — 2026-09-20
 
@@ -1513,7 +1515,7 @@ Supplemental source ledgers:
 
 ## Immediate next actions
 
-1. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
+1. **Populate the now-wired Taiwan-v1 cache → collision-profile → hit-map path when a provenance-safe early field-map corpus is recovered.** The strict DAT plane parser, derived collision-profile loader and composition adapter are already closed; until authentic bytes exist, do not substitute the mixed 2.5/SACH map corpus or fabricate absent retail-disc field maps.
 2. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
 3. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
 4. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen and keep historical reconstruction separate from redesign.** Never repair missing references by inventing data; later optimization/automation remains an explicit DESIGN layer.
