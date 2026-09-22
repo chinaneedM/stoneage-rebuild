@@ -2164,6 +2164,7 @@ class BattleRoundModelTests(unittest.TestCase):
                     dodge_roll_1_10000=10000,
                     critical_roll_1_10000=1,
                     damage_roll=0,
+                    ultimate_roll_1_100=100,
                 )
             },
             defense_profile="newpower_70pct",
