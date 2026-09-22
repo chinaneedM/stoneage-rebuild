@@ -17,6 +17,7 @@ import urllib.request
 
 UA="stoneage-rebuild-archaeology/1.0"
 CDX="https://web.archive.org/cdx/search/cdx"
+ARQUIVO_CDX="https://arquivo.pt/wayback/cdx"
 WAYBACK="https://web.archive.org/web/{timestamp}id_/{url}"
 REQUEST_TIMEOUT_SECONDS=12
 ARCHIVE_TIMEOUT_SECONDS=15
@@ -98,6 +99,59 @@ def cdx_query(pattern,start=2003,end=2004,*,collapse=True,limit=2000):
     ]
 
 
+def parse_arquivo_cdx(data):
+    """Normalize Arquivo.pt pywb NDJSON records to the Wayback row shape."""
+    rows=[]
+    for line_number,line in enumerate(
+        data.decode("utf-8","replace").splitlines(),
+        start=1,
+    ):
+        line=line.strip()
+        if not line:
+            continue
+        value=json.loads(line)
+        if not isinstance(value,dict):
+            raise ValueError(
+                f"Arquivo.pt CDX line {line_number} is not a JSON object"
+            )
+        rows.append(
+            {
+                "timestamp":str(value.get("timestamp","")),
+                "original":str(value.get("url","")),
+                "statuscode":str(value.get("status","")),
+                "mimetype":str(value.get("mime","")),
+                "digest":str(value.get("digest","")),
+                "length":str(value.get("length","")),
+            }
+        )
+    return rows
+
+
+def arquivo_cdx_query(pattern,start=2003,end=2004,*,limit=2000):
+    params=[
+        ("url",pattern),("from",str(start)),("to",str(end)),
+        ("output","json"),
+        ("fields","timestamp,url,status,mime,digest,length"),
+        ("filter","=status:200"),("limit",str(limit)),
+    ]
+    return parse_arquivo_cdx(
+        request(ARQUIVO_CDX+"?"+urllib.parse.urlencode(params))
+    )
+
+
+def classify_probe_result(*,hit_count,successful_queries,failed_queries):
+    hit_count=int(hit_count)
+    successful_queries=int(successful_queries)
+    failed_queries=int(failed_queries)
+    if hit_count > 0:
+        return "HITS"
+    if successful_queries == 0:
+        return "INCONCLUSIVE"
+    if failed_queries > 0:
+        return "PARTIAL_NO_HITS"
+    return "BOUNDED_NO_HITS"
+
+
 def archived_links(timestamp,original):
     url=WAYBACK.format(
         timestamp=timestamp,
@@ -155,6 +209,7 @@ def main():
     print("StoneAge Korea Netmarble 1.74 archive client probe — R1")
     print("SCOPE|metadata-and-link-targets-only|no-client-binary-download")
     print("YEARS|from=2003|to=2004")
+    print("INDEX_BACKENDS|wayback,arquivo.pt")
     print(
         f"REQUEST_POLICY|request_timeout={REQUEST_TIMEOUT_SECONDS}|"
         f"archive_timeout={ARCHIVE_TIMEOUT_SECONDS}|"
@@ -162,35 +217,52 @@ def main():
     )
     errors=[]
     indexed=[]
+    index_stats={
+        "wayback":{"succeeded":0,"failed":0},
+        "arquivo":{"succeeded":0,"failed":0},
+    }
+    backends=(
+        ("wayback",lambda pattern: cdx_query(pattern,limit=5000)),
+        ("arquivo",lambda pattern: arquivo_cdx_query(pattern,limit=5000)),
+    )
 
-    for surface,pattern in surfaces:
-        try:
-            rows=cdx_query(pattern,limit=5000)
-        except Exception as exc:
-            errors.append((surface,type(exc).__name__,str(exc)))
-            continue
-        for row in rows:
-            original=str(row.get("original",""))
-            if DOWNLOAD_EXT.search(original) or INTEREST.search(original):
-                indexed.append((surface,row))
+    for backend,query in backends:
+        for surface,pattern in surfaces:
+            try:
+                rows=query(pattern)
+            except Exception as exc:
+                index_stats[backend]["failed"]+=1
+                errors.append(
+                    (backend+":"+surface,type(exc).__name__,str(exc))
+                )
+                continue
+            index_stats[backend]["succeeded"]+=1
+            for row in rows:
+                original=str(row.get("original",""))
+                if DOWNLOAD_EXT.search(original) or INTEREST.search(original):
+                    indexed.append((backend,surface,row))
 
     uniq={}
-    for surface,row in indexed:
+    for backend,surface,row in indexed:
         original=str(row.get("original",""))
-        uniq.setdefault((surface,original),(surface,row))
+        uniq.setdefault(
+            (backend,surface,original),
+            (backend,surface,row),
+        )
     print(f"COUNT|indexed_urls|{len(uniq)}")
-    for surface,row in sorted(
+    for backend,surface,row in sorted(
         uniq.values(),
-        key=lambda x:(x[0],str(x[1].get("original","")).lower()),
+        key=lambda x:(x[0],x[1],str(x[2].get("original","")).lower()),
     ):
         print(
             "URL|"
             + "|".join(
                 safe(x)
                 for x in (
-                    surface,row.get("timestamp",""),row.get("statuscode",""),
-                    row.get("mimetype",""),row.get("length",""),
-                    row.get("digest",""),row.get("original",""),
+                    backend,surface,row.get("timestamp",""),
+                    row.get("statuscode",""),row.get("mimetype",""),
+                    row.get("length",""),row.get("digest",""),
+                    row.get("original",""),
                 )
             )
         )
@@ -226,9 +298,33 @@ def main():
             "LINK|"
             + "|".join(safe(x) for x in (surface,ts,kind,target,anchor))
         )
+    for backend in ("wayback","arquivo"):
+        print(
+            f"COUNT|{backend}_index_queries_succeeded|"
+            f"{index_stats[backend]['succeeded']}"
+        )
+        print(
+            f"COUNT|{backend}_index_queries_failed|"
+            f"{index_stats[backend]['failed']}"
+        )
     for surface,kind,message in sorted(errors):
         print(f"ERROR|{safe(surface)}|{safe(kind)}|{safe(message)}")
     print(f"COUNT|errors|{len(errors)}")
+    successful_queries=sum(
+        item["succeeded"] for item in index_stats.values()
+    )
+    failed_queries=sum(item["failed"] for item in index_stats.values())
+    hit_count=len(uniq)+len(links)
+    result=classify_probe_result(
+        hit_count=hit_count,
+        successful_queries=successful_queries,
+        failed_queries=failed_queries,
+    )
+    print(
+        f"RESULT|{result}|hits={hit_count}|"
+        f"index_queries_succeeded={successful_queries}|"
+        f"index_queries_failed={failed_queries}"
+    )
 
 
 if __name__=="__main__":

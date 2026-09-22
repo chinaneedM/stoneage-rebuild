@@ -7,7 +7,9 @@ from tools.stoneage_japan174a_archive_probe import (
     REQUEST_TIMEOUT_SECONDS,
     ROOT_SNAPSHOT_LIMIT,
     LinkParser,
+    classify_probe_result,
     decode_html,
+    parse_arquivo_cdx,
     safe,
     select_launch_snapshots,
 )
@@ -58,6 +60,51 @@ class Japan174aArchiveProbeTests(unittest.TestCase):
         self.assertLessEqual(REQUEST_TIMEOUT_SECONDS,15)
         self.assertLessEqual(ARCHIVE_TIMEOUT_SECONDS,20)
         self.assertLessEqual(ROOT_SNAPSHOT_LIMIT,3)
+
+    def test_arquivo_ndjson_is_normalized(self):
+        raw=(
+            b'{"timestamp":"20031212000000",'
+            b'"url":"http://stoneage.to/client/sa174a.exe",'
+            b'"status":"200","mime":"application/octet-stream",'
+            b'"digest":"ABC","length":"123"}\n'
+        )
+        self.assertEqual(
+            parse_arquivo_cdx(raw),
+            [{
+                "timestamp":"20031212000000",
+                "original":"http://stoneage.to/client/sa174a.exe",
+                "statuscode":"200",
+                "mimetype":"application/octet-stream",
+                "digest":"ABC",
+                "length":"123",
+            }],
+        )
+
+    def test_probe_result_distinguishes_outage_from_no_hits(self):
+        self.assertEqual(
+            classify_probe_result(
+                hit_count=0,successful_queries=0,failed_queries=12
+            ),
+            "INCONCLUSIVE",
+        )
+        self.assertEqual(
+            classify_probe_result(
+                hit_count=0,successful_queries=3,failed_queries=9
+            ),
+            "PARTIAL_NO_HITS",
+        )
+        self.assertEqual(
+            classify_probe_result(
+                hit_count=0,successful_queries=12,failed_queries=0
+            ),
+            "BOUNDED_NO_HITS",
+        )
+        self.assertEqual(
+            classify_probe_result(
+                hit_count=1,successful_queries=1,failed_queries=11
+            ),
+            "HITS",
+        )
 
 
 if __name__ == "__main__":
