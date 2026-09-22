@@ -1,12 +1,15 @@
 import json
+import urllib.parse
 import unittest
 
 from tools.stoneage_jss1999_beta_apply_archive_probe import (
     PATTERNS,
+    WAYBACK_HOST_PREFIXES,
     arquivo_url,
     candidate_detail,
     parse_arquivo,
     parse_wayback,
+    wayback_host_filtered_url,
     wayback_url,
 )
 
@@ -59,6 +62,17 @@ class Jss1999BetaApplyArchiveProbeTests(unittest.TestCase):
         self.assertIn("to=1999",wayback_url(PATTERNS[0][1]))
         self.assertIn("from=1999",arquivo_url(PATTERNS[0][1]))
         self.assertIn("to=1999",arquivo_url(PATTERNS[0][1]))
+
+    def test_wayback_host_fallback_filters_known_tail_server_side(self):
+        self.assertEqual(
+            WAYBACK_HOST_PREFIXES[0][1],
+            "www.dp.gamersdream.ne.jp/*",
+        )
+        url=wayback_host_filtered_url(WAYBACK_HOST_PREFIXES[0][1])
+        decoded=urllib.parse.unquote_plus(url)
+        self.assertIn("original:.*PO/sa_apply\\.html$",decoded)
+        self.assertIn("from=1999",url)
+        self.assertIn("to=1999",url)
 
 
 if __name__=="__main__":

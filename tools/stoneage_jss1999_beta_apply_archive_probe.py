@@ -27,6 +27,11 @@ PATTERNS=(
     ("dp-file","dp.gamersdream.ne.jp/*sa_apply.html"),
 )
 
+WAYBACK_HOST_PREFIXES=(
+    ("www-dp-host","www.dp.gamersdream.ne.jp/*"),
+    ("dp-host","dp.gamersdream.ne.jp/*"),
+)
+
 
 def request(url,*,timeout=12):
     req=urllib.request.Request(
@@ -123,6 +128,22 @@ def arquivo_url(pattern):
     return ARQUIVO_CDX+"?"+urllib.parse.urlencode(params)
 
 
+def wayback_host_filtered_url(pattern):
+    """Query a whole 1999 host while filtering the known literal tail."""
+    params=[
+        ("url",pattern),
+        ("from",YEAR),
+        ("to",YEAR),
+        ("output","json"),
+        ("fl","timestamp,original,statuscode,mimetype,digest,length"),
+        ("filter","statuscode:200"),
+        ("filter",r"original:.*PO/sa_apply\.html$"),
+        ("limit","500"),
+        ("collapse","urlkey"),
+    ]
+    return WAYBACK_CDX+"?"+urllib.parse.urlencode(params)
+
+
 def normalize(row):
     return {
         "timestamp":str(row.get("timestamp") or row.get("date") or ""),
@@ -193,6 +214,26 @@ def main():
                 detail=candidate_detail(normalized["original"])
                 if detail["matches_tail"]:
                     results.append((backend,label,normalized,detail))
+
+    for label,pattern in WAYBACK_HOST_PREFIXES:
+        endpoint=wayback_host_filtered_url(pattern)
+        try:
+            rows=parse_wayback(request(endpoint))
+            success+=1
+        except Exception as exc:
+            errors.append(
+                ("wayback-filter",label,pattern,type(exc).__name__,str(exc))
+            )
+            continue
+        print(
+            f"QUERY|backend=wayback-filter|label={label}|rows={len(rows)}|"
+            f"pattern={clean(pattern)}|server_filter=known-tail"
+        )
+        for row in rows:
+            normalized=normalize(row)
+            detail=candidate_detail(normalized["original"])
+            if detail["matches_tail"]:
+                results.append(("wayback-filter",label,normalized,detail))
 
     emitted={}
     for backend,label,row,detail in results:
