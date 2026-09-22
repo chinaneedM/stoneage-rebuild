@@ -47,7 +47,7 @@ FILE_RE = re.compile(
     r"(?:newest\.txt|sa_\d+\.exe|(?:real|adrn|spr|spradrn|battle|sound)_\d+\.bin|"
     r"(?:battletxt|soundaddr)_\d+\.txt|[\w./\\~-]*map[\w./\\~-]*\.(?:bin|dat|txt))"
 )
-URL_RE = re.compile(r"(?i)https?://[^\s\"'<>|]+")
+URL_RE = re.compile(r"(?i)https?://[^\s\\\"'<>|]+")
 RESOURCE_RE = re.compile(
     r"(?i)(newest\.txt$|sa_\d+\.exe$|(?:real|adrn|spr|spradrn|battle|sound)_\d+\.bin$|"
     r"(?:battletxt|soundaddr)_\d+\.txt$)"
