@@ -1411,7 +1411,7 @@ class PersistentBattleStateTests(unittest.TestCase):
         )
         enemy=participant(
             "enemy","enemy","enemy",
-            hp=100,attack=200,quick=100,level=20,
+            hp=100,attack=20,quick=100,level=20,
         )
         state=begin_persistent_battle(
             session(player,(enemy,),pets=(pet,)),
@@ -1522,7 +1522,7 @@ class PersistentBattleStateTests(unittest.TestCase):
         )
         enemy=participant(
             "enemy","enemy","enemy",
-            hp=100,attack=200,quick=100,level=20,
+            hp=100,attack=20,quick=100,level=20,
         )
         state=begin_persistent_battle(
             session(player,(enemy,),pets=(pet,)),
