@@ -1529,7 +1529,12 @@ Supplemental source ledgers:
 - The later official Netmarble candidate surface includes the 2006 `/cp_site/stoneage/down/down_load.asp` and `down_debugler.asp` routes. These are useful descendant path clues only; they are **not** evidence that the same paths or payloads existed for the 2003 1.74 launch.
 - The former report behavior that allowed a nearest-later Availability capture to produce generic `HITS` has been removed. Only evidence inside the bounded early period can now advance the Korean 1.74 result.
 - Derived report: `research/recovered/STONEAGE-KOREA-174-ARCHIVE-CLIENT-PROBE-R1.txt`.
-- Validation: Korea archive run **35734946655** — success.
+- A separate Internet Archive item/file-list metadata pass now closes that bounded surface for the known 2003 launch anchors:
+  - exact queries for Korean `스톤에이지 + 1.74`, English `StoneAge + 1.74`, Korean `넷마블 + 스톤에이지`, the historical `game3.netmarble.net/stoneage` host, and `20030728 + StoneAge` return **0 target items**;
+  - `Netmarble + StoneAge` returns two 2002 Mainland-China Waei CD-ROM items whose modern descriptions mention Netmarble as IP owner; they are description-level false positives for this Korean-2003 recovery question and are not promoted into the 1.74 lineage;
+  - the scan finds **0 exact-name payload matches** and no size-window candidate attributable to a Korean 1.74 query.
+- Derived report: `research/recovered/STONEAGE-ARCHIVE-CANDIDATE-FILES-R1.txt` R4, bot commit `37cfe42571f1cd712f2e7fe6b6fa24f19664ca2f`.
+- Validation: Korea archive run **35734946655** and high-precision IA metadata run **35778883888** — success.
 
 ## Japanese 1.74a Hangame launch-install chain — 2026-09-22
 
