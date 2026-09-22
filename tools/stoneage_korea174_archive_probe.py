@@ -76,7 +76,7 @@ def decode_html(data):
     return data.decode("latin-1","replace")
 
 
-def cdx_query(pattern,start=2003,end=2004,*,collapse=True,limit=10000):
+def cdx_query(pattern,start=2003,end=2004,*,collapse=True,limit=2000):
     params=[
         ("url",pattern),("from",str(start)),("to",str(end)),
         ("output","json"),
@@ -120,7 +120,7 @@ def safe(value,limit=500):
     return value[:limit]
 
 
-def select_launch_snapshots(rows,*,limit=24):
+def select_launch_snapshots(rows,*,limit=8):
     def rank(row):
         ts=str(row.get("timestamp",""))
         launch=0 if "20030701" <= ts[:8] <= "20030930" else 1
@@ -133,11 +133,22 @@ def select_launch_snapshots(rows,*,limit=24):
 
 
 def main():
+    targeted=(
+        "*.exe","*.zip","*.lzh","*.lha","*.cab","*.msi",
+        "*download*","*client*","*setup*","*install*","*patch*","*update*",
+    )
     surfaces=[
-        ("game3","game3.netmarble.net/stoneage/*"),
-        ("game3-www","www.game3.netmarble.net/stoneage/*"),
-        ("brand","stoneage.netmarble.net/*"),
-        ("brand-www","www.stoneage.netmarble.net/*"),
+        (f"game3:{pattern}","game3.netmarble.net/stoneage/"+pattern)
+        for pattern in targeted
+    ] + [
+        (f"game3-www:{pattern}","www.game3.netmarble.net/stoneage/"+pattern)
+        for pattern in targeted
+    ] + [
+        (f"brand:{pattern}","stoneage.netmarble.net/"+pattern)
+        for pattern in targeted
+    ] + [
+        (f"brand-www:{pattern}","www.stoneage.netmarble.net/"+pattern)
+        for pattern in targeted
     ]
     roots=[
         ("game3-root","http://game3.netmarble.net/stoneage/"),

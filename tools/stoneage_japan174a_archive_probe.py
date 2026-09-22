@@ -83,7 +83,7 @@ def cdx_query(
     end: int,
     *,
     collapse: bool = True,
-    limit: int = 10000,
+    limit: int = 2000,
 ):
     params = [
         ("url",url_pattern),
@@ -131,7 +131,7 @@ def safe(value: str, limit: int = 500) -> str:
     return value[:limit]
 
 
-def select_launch_snapshots(rows, *, limit: int = 24):
+def select_launch_snapshots(rows, *, limit: int = 8):
     """Prefer snapshots around the 2003-12-12/16 launch window."""
     def rank(row):
         ts=str(row.get("timestamp",""))
@@ -145,11 +145,22 @@ def select_launch_snapshots(rows, *, limit: int = 24):
 
 
 def main() -> None:
+    # Keep archive queries narrow. Full-host wildcards are both expensive and
+    # low-value for client archaeology; every pattern below is directly
+    # download/client related.
+    official_patterns=(
+        "*.exe","*.zip","*.lzh","*.lha","*.cab","*.msi",
+        "*download*","*client*","*setup*","*install*","*patch*","*update*",
+    )
     surfaces=[
-        ("official-bare","stoneage.to/*"),
-        ("official-www","www.stoneage.to/*"),
-        ("hangame-bare","hangame.co.jp/*stoneage*"),
-        ("hangame-www","www.hangame.co.jp/*stoneage*"),
+        (f"official-bare:{pattern}","stoneage.to/"+pattern)
+        for pattern in official_patterns
+    ] + [
+        (f"official-www:{pattern}","www.stoneage.to/"+pattern)
+        for pattern in official_patterns
+    ] + [
+        ("hangame-bare:stoneage","hangame.co.jp/*stoneage*"),
+        ("hangame-www:stoneage","www.hangame.co.jp/*stoneage*"),
     ]
     roots=[
         ("official-root-bare","http://stoneage.to/"),
