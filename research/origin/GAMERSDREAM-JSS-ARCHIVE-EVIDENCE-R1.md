@@ -158,17 +158,23 @@ The same extraction also exposes the period root URLs `http://www.gamersdream.ne
 
 **OPEN:** the exact character immediately before `PO` is not reliable in the current OCR/index extraction. It is rendered as a double-quote-like character by the search index. Do **not** silently normalize it into `/`, `~`, `%7E`, or another character until the scan itself or an archived URL record resolves it.
 
-**HYPOTHESIS / search lead only:** an old-style user-directory form such as `~PO/sa_apply.html` is technically plausible, but it is not yet evidence-backed strongly enough to register as the exact URL.
+**TESTED SEARCH LEADS, NOT FACT:** the old-style user-directory spelling `/~PO/sa_apply.html`, its `/%7EPO/` encoded form, the plain `/PO/sa_apply.html` form, and corresponding bare-host variants were checked through Wayback Availability on six key dates from 1999-08-01 through 1999-09-30. All **30** requests completed and returned **0 archive captures**. This is an archive-coverage result only; it does not prove that the printed URL was or was not one of those spellings.
+
+The complementary wildcard/index probe records **0 literal `PO/sa_apply.html` matches** on successful 1999 queries, but remains **PARTIAL_NO_MATCH** because several Wayback and host-wide requests failed. Reports:
+- `research/recovered/STONEAGE-JSS1999-BETA-APPLY-ARCHIVE-R1.txt`;
+- `research/recovered/STONEAGE-JSS1999-BETA-APPLY-CANDIDATES-R1.txt`.
 
 ### Research consequence
 
-The beta archive search is now much narrower. Instead of searching the entire 1999 Gamer's Dream site, priority matching should target archived URLs whose tail matches:
+The beta archive search is now much narrower. The exact character before `PO` remains OPEN, but further blind ASCII-character enumeration is not justified. Priority should move to:
 
-`*PO/sa_apply.html`
+1. a readable scan/page image that resolves the printed glyph;
+2. a preserved 1999 Gamer's Dream URL list/index that independently returns the original path;
+3. linked tester/download/install pages discovered from other authenticated beta-era material.
 
-and then recover linked tester/download/install pages from the same directory lineage.
+Any future archive query can still use the known literal tail `*PO/sa_apply.html`, but a no-capture result must remain separate from a claim about what the magazine actually printed.
 
-The beta recovery window should still include **August 1999**, not only September. Archive searches should prioritize early-to-mid August 1999, especially application, tester-instructions, registration and download paths.
+The beta recovery window should still include **August 1999**, not only September, especially tester instructions, registration and download paths.
 
 ## 5. Current recovery hypotheses to test
 

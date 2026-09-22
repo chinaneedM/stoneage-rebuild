@@ -124,7 +124,10 @@ This is the canonical ledger for historical sources. Entries should record prove
   - existence of a distributable beta-era client before commercial launch.
 - Page-level recovery note:
   - the preserved page includes an application-form / game-homepage information block;
-  - search extraction has narrowed the printed beta-application URL to host `www.dp.gamersdream.ne.jp` and path tail `PO/sa_apply.html`, while one character immediately before `PO` remains visually/OCR ambiguous and is not normalized as fact.
+  - search extraction has narrowed the printed beta-application URL to host `www.dp.gamersdream.ne.jp` and path tail `PO/sa_apply.html`, while one character immediately before `PO` remains visually/OCR ambiguous and is not normalized as fact;
+  - bounded 1999 archive-index probing in `research/recovered/STONEAGE-JSS1999-BETA-APPLY-ARCHIVE-R1.txt` returns **0 literal tail matches** on the successful queries, but the final run is only **PARTIAL_NO_MATCH** because multiple Wayback/host-wide requests time out or fail;
+  - a separate exact-candidate Availability pass in `research/recovered/STONEAGE-JSS1999-BETA-APPLY-CANDIDATES-R1.txt` completes **30/30** queries for `/~PO/`, `/%7EPO/`, `/PO/` and bare-host equivalents across six August/September 1999 dates, with **0 archive captures**;
+  - those zero-capture results do **not** disprove any printed URL form. They only remove archive-capture support for the tested spellings; the printed character remains OPEN and must not be guessed.
 - Independent preservation route:
   - Retromags file record: https://www.retromags.com/files/file/7018-play-online-no015-september-1999/
   - submitted 2023-12-14 by `kitsunebi`;
