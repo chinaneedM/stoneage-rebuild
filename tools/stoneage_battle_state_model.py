@@ -52,6 +52,7 @@ from tools.stoneage_battle_round_model import (
     prepare_battle_round,
     resolve_ordinary_round,
 )
+from tools.stoneage_battle_guardian_model import GuardianRegistration
 from tools.stoneage_battle_status_model import (
     BaseBattleStatusRuntime,
     BaseStatusApplicationResolution,
@@ -847,6 +848,9 @@ def resolve_persistent_ordinary_round(
         str,BaseStatusCombatProfile
     ] | None = None,
     status_application_rolls_by_attack_id: Mapping[str,int] | None = None,
+    guardian_registrations_by_defender_slot: Mapping[
+        int,GuardianRegistration
+    ] | None = None,
     no_risk: bool = False,
     drop_rolls_by_enemy_id: Mapping[
         str,Sequence[DropAllocationRoll]
@@ -930,6 +934,9 @@ def resolve_persistent_ordinary_round(
         ),
         status_application_rolls_by_attack_id=(
             status_application_rolls_by_attack_id
+        ),
+        guardian_registrations_by_defender_slot=(
+            guardian_registrations_by_defender_slot
         ),
         field_attr=field_attr,
         field_power=field_power,

@@ -1,6 +1,8 @@
 import unittest
 from dataclasses import replace
 
+from tools.stoneage_battle_guardian_model import GuardianRegistration
+
 from tools.stoneage_battle_core_model import (
     BattleCaptureInputs,
     BattleDropItem,
@@ -269,6 +271,56 @@ class PersistentBattleStateTests(unittest.TestCase):
         )
         self.assertEqual(second.after.turn, 2)
         self.assertLess(second.after.hp_by_participant_id["enemy"], first_hp)
+
+    def test_guardian_redirect_persists_damage_on_guardian_only(self):
+        player=participant(
+            "player","player","player",
+            attack=100,quick=100,
+        )
+        target=participant(
+            "target","enemy","enemy",
+            hp=200,quick=20,
+        )
+        guardian=participant(
+            "guardian","enemy","enemy",
+            hp=200,quick=10,
+        )
+        state=begin_persistent_battle(
+            session(player,(target,guardian)),
+            slots={"player":0,"target":10,"guardian":11},
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "target":BattleCommand(BATTLE_COM_WAIT),
+                "guardian":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={
+                "player":0,"target":0,"guardian":0,
+            },
+            profiles={
+                "player":profile(),
+                "target":profile(),
+                "guardian":profile(),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            guardian_registrations_by_defender_slot={
+                10:GuardianRegistration(guardian_slot=11)
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.after.hp_by_participant_id["target"],200)
+        self.assertLess(result.after.hp_by_participant_id["guardian"],200)
+        attack=result.round.events[0]
+        self.assertTrue(attack.guardian_redirected)
+        self.assertEqual(attack.resolved_target_slot,11)
 
     def test_statuschange_command_persists_new_status_from_round(self):
         player=participant("player","player","player",quick=20)

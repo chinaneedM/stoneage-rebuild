@@ -40,6 +40,10 @@ from tools.stoneage_battle_core_model import (
     resolve_battle_counter_check,
     resolve_battle_escape_attempt,
 )
+from tools.stoneage_battle_guardian_model import (
+    GuardianRegistration,
+    guardian_redirect_allowed,
+)
 from tools.stoneage_battle_status_model import (
     BASE_STATUS_NAME_BY_INDEX,
     STATUS_POISON,
@@ -570,6 +574,9 @@ class OrdinaryRoundEvent:
     profit_participant_ids: tuple[str, ...] = ()
     status_tick_resolution: BaseStatusTickResult | None = None
     status_application_resolution: BaseStatusApplicationResolution | None = None
+    guardian_redirected: bool = False
+    guarded_target_slot: int | None = None
+    guardian_slot: int | None = None
 
 
 @dataclass(frozen=True)
@@ -1168,6 +1175,9 @@ def resolve_ordinary_round(
         str,BaseStatusCombatProfile
     ] | None = None,
     status_application_rolls_by_attack_id: Mapping[str,int] | None = None,
+    guardian_registrations_by_defender_slot: Mapping[
+        int,GuardianRegistration
+    ] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
@@ -1314,6 +1324,23 @@ def resolve_ordinary_round(
         raise ValueError(
             f"status application RNG references unknown actors: "
             f"{unknown_status_application_ids}"
+        )
+    guardian_registrations={
+        int(defender_slot):registration
+        for defender_slot,registration in (
+            guardian_registrations_by_defender_slot or {}
+        ).items()
+    }
+    for defender_slot,registration in guardian_registrations.items():
+        if not 0 <= int(defender_slot) <= 19:
+            raise ValueError("guardian defender slot must be in 0..19")
+        if not isinstance(registration,GuardianRegistration):
+            raise TypeError(
+                f"guardian registration for slot {defender_slot} has wrong type"
+            )
+    if guardian_registrations and combo_groups:
+        raise ValueError(
+            "guardian interaction with combo execution is a separate seam"
         )
     has_active_base_status=any(
         any(int(getattr(runtime.status,name))>0 for name in (
@@ -1881,7 +1908,8 @@ def resolve_ordinary_round(
         defender_profile = profiles[defender_id]
         before = hp_by_slot[target]
 
-        # BATTLE_DuckCheck immediately returns FALSE for a guarding defender.
+        # Source order: dodge is checked against the original/adjusted target
+        # before BATTLE_GuardianCheck can redirect the physical hit.
         if target not in guarding:
             dodge_roll = _validated_roll(
                 rolls.dodge_roll_1_10000,
@@ -1913,6 +1941,65 @@ def resolve_ordinary_round(
                 )
                 append_counter_chain(participant_id,slot,target)
                 continue
+
+        counter_target_slot=int(target)
+        damage_target_slot=int(target)
+        guardian_redirected=False
+        guarded_target_slot=None
+        guardian_slot=None
+        registration=guardian_registrations.get(int(target))
+        if registration is not None:
+            candidate_slot=int(registration.guardian_slot)
+            candidate=by_slot.get(candidate_slot)
+            candidate_runtime=(
+                None
+                if candidate is None
+                else status_runtime[str(candidate.participant_id)]
+            )
+            if guardian_redirect_allowed(
+                guardian_exists=(
+                    candidate is not None
+                    and candidate_slot not in exited_slots
+                ),
+                guardian_slot=candidate_slot,
+                defender_slot=int(target),
+                guardian_alive=(
+                    candidate is not None
+                    and candidate_slot not in exited_slots
+                    and int(hp_by_slot.get(candidate_slot,0)) > 0
+                ),
+                guardian_flag=bool(registration.guardian_flag),
+                guardian_sleep=(
+                    0 if candidate_runtime is None
+                    else int(candidate_runtime.status.sleep)
+                ),
+                guardian_confusion=(
+                    0 if candidate_runtime is None
+                    else int(candidate_runtime.status.confusion)
+                ),
+                guardian_paralysis=(
+                    0 if candidate_runtime is None
+                    else int(candidate_runtime.status.paralysis)
+                ),
+                guardian_stone=(
+                    0 if candidate_runtime is None
+                    else int(candidate_runtime.status.stone)
+                ),
+                guardian_barrier=int(registration.guardian_barrier),
+                guardian_is_attacker=(candidate_slot==int(slot)),
+                attacker_uses_throw_weapon=counter_weapon_blocks_counter(
+                    attacker_profile.counter_weapon_type
+                ),
+            ):
+                guardian_redirected=True
+                guarded_target_slot=int(target)
+                guardian_slot=candidate_slot
+                damage_target_slot=candidate_slot
+
+        defender = by_slot[damage_target_slot]
+        defender_id = defender.participant_id
+        defender_profile = profiles[defender_id]
+        before = hp_by_slot[damage_target_slot]
 
         critical_roll = _validated_roll(
             rolls.critical_roll_1_10000,
@@ -1959,7 +2046,7 @@ def resolve_ordinary_round(
                 defender.level,
             )
 
-        if target in guarding:
+        if damage_target_slot in guarding:
             guard_roll = _validated_roll(
                 rolls.guard_roll_1_100,
                 1,
@@ -1976,13 +2063,21 @@ def resolve_ordinary_round(
                 "minimum_damage_roll_0_1",
             )
 
-        if damage == 0:
-            result = "allguard" if target in guarding else "miss"
+        if damage == 0 and guardian_redirected:
+            # AttackSeq forces a redirected zero-damage result to NORMAL/1.
+            damage=1
+            result="normal"
+        elif damage == 0:
+            result = (
+                "allguard"
+                if damage_target_slot in guarding
+                else "miss"
+            )
         else:
             result = "critical" if is_critical else "normal"
 
         after = max(0, before - int(damage))
-        hp_by_slot[target] = after
+        hp_by_slot[damage_target_slot] = after
         hp_by_id[defender_id] = after
         status_application=None
         if int(damage) > 0:
@@ -2049,10 +2144,10 @@ def resolve_ordinary_round(
                             poison_stat_sum=poison_stat_sum,
                         )
                         if status_application.command_cleared:
-                            command_by_slot[target]=BattleCommand(
+                            command_by_slot[damage_target_slot]=BattleCommand(
                                 BATTLE_COM_NONE
                             )
-                            guarding.discard(target)
+                            guarding.discard(damage_target_slot)
         events.append(
             OrdinaryRoundEvent(
                 participant_id,
@@ -2061,17 +2156,30 @@ def resolve_ordinary_round(
                 entry.action_value,
                 result,
                 original_target_slot=original_target,
-                resolved_target_slot=target,
+                resolved_target_slot=damage_target_slot,
                 retargeted=retargeted,
                 critical=is_critical,
                 damage=int(damage),
                 target_hp_before=before,
                 target_hp_after=after,
                 status_application_resolution=status_application,
+                guardian_redirected=guardian_redirected,
+                guarded_target_slot=guarded_target_slot,
+                guardian_slot=guardian_slot,
             )
         )
-        if result != "critical" and target not in guarding and after > 0:
-            append_counter_chain(participant_id,slot,target)
+        # BATTLE_Attack forces continuation FALSE whenever Guardian>=0.
+        if (
+            not guardian_redirected
+            and result != "critical"
+            and counter_target_slot not in guarding
+            and after > 0
+        ):
+            append_counter_chain(
+                participant_id,
+                slot,
+                counter_target_slot,
+            )
 
     return ResolvedOrdinaryRound(
         events=tuple(events),
