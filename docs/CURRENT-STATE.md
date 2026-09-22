@@ -1209,10 +1209,11 @@ Supplemental source ledgers:
   - diagonal movement requires both orthogonal side cells to pass static walkability;
   - target-cell non-overable characters/items are a separate dynamic blocking layer.
 - Unknown image metadata raises instead of receiving a guessed/default walkability value.
-- `SinglePlayerHistoricalRuntime.walk_step_with_collision()` can now consume a validated collision map/profile and calculate the movement verdict itself. The older explicit `entry_allowed` path remains available while the exact early image-property dataset is unresolved.
-- The current repository still lacks a provenance-safe Taiwan-v1.0/JSS image-number property table equivalent to descendant `data/map/mapset.txt`. Therefore the algorithmic seam is closed but the final early-version collision content table remains OPEN.
-- Remote validation **35509951036** passes with collision-model and runtime-integration regression coverage.
-- **Operational consequence:** movement no longer requires inventing a collision algorithm. Once a validated image-property dataset is recovered, the same runtime path becomes data-driven without redesign.
+- `SinglePlayerHistoricalRuntime.walk_step_with_collision()` can consume a validated collision map/profile and calculate the movement verdict itself.
+- This older 2026-09-20 collision-algorithm milestone was subsequently superseded on the data side by direct Taiwan-v1 retail-disc ADRN recovery. `research/mechanics/STONEAGE-TW10-ADRN-COLLISION-R1.md` and `research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz` now provide the provenance-safe Taiwan-v1 map-number collision-property dataset and the v1 `readHitMap` interpretation.
+- The remaining collision-content gap is **not** the image-property table. It is the provenance-complete Taiwan-v1/JSS field-map tile/parts/event plane corpus itself: the accepted Taiwan-v1 retail disc contains zero ordinary field-map DAT files, while the recovered mixed 2.5 DAT corpus remains a later bridge/specimen and must not be promoted into the early baseline.
+- Remote validation **35509951036** passes with collision-model and runtime-integration regression coverage; later ADRN/hit-map validations are recorded in the dedicated Taiwan-v1 collision milestone.
+- **Operational consequence:** movement no longer requires inventing either the collision algorithm or Taiwan-v1 image collision attributes. A provenance-safe field-map plane source is the only missing data layer before the early-client collision path can be populated end to end.
 
 ## Movement-side encounter frequency / CEP loop — 2026-09-20
 
