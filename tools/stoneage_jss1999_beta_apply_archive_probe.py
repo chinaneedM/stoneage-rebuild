@@ -32,6 +32,11 @@ WAYBACK_HOST_PREFIXES=(
     ("dp-host","dp.gamersdream.ne.jp/*"),
 )
 
+ARQUIVO_HOST_PREFIXES=(
+    ("www-dp-host","www.dp.gamersdream.ne.jp/*"),
+    ("dp-host","dp.gamersdream.ne.jp/*"),
+)
+
 
 def request(url,*,timeout=12):
     req=urllib.request.Request(
@@ -144,6 +149,20 @@ def wayback_host_filtered_url(pattern):
     return WAYBACK_CDX+"?"+urllib.parse.urlencode(params)
 
 
+def arquivo_host_url(pattern):
+    """Query the bounded 1999 host prefix, then filter the known tail locally."""
+    params=[
+        ("url",pattern),
+        ("from",YEAR),
+        ("to",YEAR),
+        ("output","json"),
+        ("fields","timestamp,url,status,mime,digest,length"),
+        ("filter","=status:200"),
+        ("limit","5000"),
+    ]
+    return ARQUIVO_CDX+"?"+urllib.parse.urlencode(params)
+
+
 def normalize(row):
     return {
         "timestamp":str(row.get("timestamp") or row.get("date") or ""),
@@ -235,6 +254,28 @@ def main():
             if detail["matches_tail"]:
                 results.append(("wayback-filter",label,normalized,detail))
 
+    for label,pattern in ARQUIVO_HOST_PREFIXES:
+        endpoint=arquivo_host_url(pattern)
+        try:
+            rows=parse_arquivo(request(endpoint))
+            success+=1
+        except Exception as exc:
+            errors.append(
+                ("arquivo-host",label,pattern,type(exc).__name__,str(exc))
+            )
+            continue
+        local_matches=0
+        for row in rows:
+            normalized=normalize(row)
+            detail=candidate_detail(normalized["original"])
+            if detail["matches_tail"]:
+                local_matches+=1
+                results.append(("arquivo-host",label,normalized,detail))
+        print(
+            f"QUERY|backend=arquivo-host|label={label}|rows={len(rows)}|"
+            f"local_tail_matches={local_matches}|pattern={clean(pattern)}"
+        )
+
     emitted={}
     for backend,label,row,detail in results:
         key=(row["timestamp"],row["original"],row["digest"])
@@ -261,6 +302,11 @@ def main():
 
     if emitted:
         print("RESOLUTION|ARCHIVE_URL_FOUND|use literal RESULT original/path; do not reinterpret")
+    elif success and errors:
+        print(
+            f"RESOLUTION|PARTIAL_NO_MATCH|queries_succeeded={success}|"
+            f"queries_failed={len(errors)}|ambiguous character remains OPEN"
+        )
     elif success:
         print("RESOLUTION|BOUNDED_NO_MATCH|ambiguous character remains OPEN")
     else:

@@ -3,8 +3,10 @@ import urllib.parse
 import unittest
 
 from tools.stoneage_jss1999_beta_apply_archive_probe import (
+    ARQUIVO_HOST_PREFIXES,
     PATTERNS,
     WAYBACK_HOST_PREFIXES,
+    arquivo_host_url,
     arquivo_url,
     candidate_detail,
     parse_arquivo,
@@ -73,6 +75,17 @@ class Jss1999BetaApplyArchiveProbeTests(unittest.TestCase):
         self.assertIn("original:.*PO/sa_apply\\.html$",decoded)
         self.assertIn("from=1999",url)
         self.assertIn("to=1999",url)
+
+    def test_arquivo_host_fallback_is_bounded_and_does_not_guess_path(self):
+        self.assertEqual(
+            ARQUIVO_HOST_PREFIXES[0][1],
+            "www.dp.gamersdream.ne.jp/*",
+        )
+        url=arquivo_host_url(ARQUIVO_HOST_PREFIXES[0][1])
+        self.assertIn("from=1999",url)
+        self.assertIn("to=1999",url)
+        self.assertIn("limit=5000",url)
+        self.assertNotIn("~PO",urllib.parse.unquote_plus(url))
 
 
 if __name__=="__main__":
