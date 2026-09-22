@@ -30,6 +30,15 @@ class ExactMirrorArquivoCdxProbeTests(unittest.TestCase):
         self.assertIn("http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip", urls)
         self.assertIn("http://www.gametime.co.kr/images/Online/pds/2001/02/stone_demo.exe", urls)
 
+    def test_japan_2004_package_targets_registered(self):
+        urls={url for _,url in TARGETS}
+        self.assertIn("http://stoneage.to/package.html",urls)
+        self.assertIn(
+            "http://www.item-city.com/shopping/SO_shopping.cgi?"
+            "ten_id=itemcity&product_id=423",
+            urls,
+        )
+
     def test_japan_174a_payload_target_registered(self):
         urls={url for _,url in TARGETS}
         self.assertIn(

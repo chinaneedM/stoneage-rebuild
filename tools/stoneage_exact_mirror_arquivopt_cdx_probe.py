@@ -36,6 +36,11 @@ TARGETS = [
     ("gametime-early-bare", "http://gametime.co.kr/webzine/online/download.asp?name=스톤에이지"),
     ("japan-sa174hg", "http://hangame.gamania.co.jp/stoneage/sa174hg.exe"),
     ("japan-sa174hg-www", "http://www.hangame.gamania.co.jp/stoneage/sa174hg.exe"),
+    ("japan2004-package-page", "http://stoneage.to/package.html"),
+    (
+        "japan2004-itemcity-423",
+        "http://www.item-city.com/shopping/SO_shopping.cgi?ten_id=itemcity&product_id=423",
+    ),
 ]
 
 
@@ -142,7 +147,7 @@ def normalize_row(row):
 
 
 def main():
-    print("StoneAge exact-mirror Arquivo.pt CDX probe — R1")
+    print("StoneAge exact-mirror Arquivo.pt CDX probe — R2")
     print("SCOPE|cdx-index-metadata-only|no-archived-page-download|no-client-binary-download")
     print("YEARS|2000-2005")
 
