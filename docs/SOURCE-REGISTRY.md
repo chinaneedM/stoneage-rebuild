@@ -561,17 +561,19 @@ This is the canonical ledger for historical sources. Entries should record prove
   - a successful bounded replay of that CAB exposes two members: `HgSA.dll` (38,400 bytes, DOS timestamp **2003-12-14 21:20:46**) and `HgSA.inf` (233 bytes, DOS timestamp **2003-12-14 21:05:14**);
   - the CAB header identifies a small one-folder/two-file control package, so `HgSA.cab` is **not** the full StoneAge client payload;
   - the official `sadl.asp` page is independently preserved at **2003-12-14 05:10:53 UTC**, inside the 1.74a launch window, and directly references **`http://hangame.gamania.co.jp/stoneage/sa174hg.exe`**;
-  - the same page also contains the relative executable token `stoneage.exe`; this is retained as a secondary search trait, not promoted to the full-package identity.
+  - a prose-free structured pass over that same archived page derives a **248MB** package-size token, **2** occurrences of `sa174hg.exe`, **1** occurrence of `stoneage.exe`, and normalized visible-text SHA-256 `990aec04c1a078ac4255bb4cc9a5eed69fda2cff3329ccfc9ed110e6b9a9f92b`;
+  - the page's normalized visible text contains no explicit version token, so **1.74a** continues to come from the independent contemporaneous Mado no Mori release record rather than filename interpretation;
+  - the relative executable token `stoneage.exe` is retained as a secondary search trait, not promoted to the full-package identity.
 - Does not support:
-  - archived byte availability, size, checksum or file tree of `sa174hg.exe` until the exact-payload probe closes those fields;
+  - archived byte availability, exact byte length, checksum or file tree of `sa174hg.exe`; the **248MB** figure is an official launch-page display-size token, not a recovered binary byte count;
   - that the later 2004 archived CAB bytes are byte-identical to any unarchived 2003-12 CAB response, despite the member timestamps falling in the launch window;
   - byte identity with Korean 1.74 or JSS 1999.
 - Derived records:
   - `research/recovered/STONEAGE-JAPAN-174A-EXACT-INSTALL-CHAIN-R1.txt`
   - `research/recovered/STONEAGE-JAPAN-174A-SADL-PROBE-R1.txt`
 - Archaeology significance:
-  - the Japanese 1.74a client search no longer requires installer-name guessing: the launch-window official download page has recovered the exact client URL `sa174hg.exe`;
-  - the next evidence step is exact archive metadata/prefix validation for that URL, followed by transient byte-level extraction only if a preserved payload is actually available.
+  - the Japanese 1.74a client search no longer requires installer-name or rough-size guessing: the launch-window official download page has recovered the exact client URL `sa174hg.exe` and a **248MB** displayed size;
+  - the next evidence step is exact archive metadata/prefix validation for that URL plus size-constrained mirror/carrier search, followed by transient byte-level extraction only if a preserved payload is actually available.
 
 ### SRC-KR-NETPOWER-CONTENTS-INDEX-01
 
