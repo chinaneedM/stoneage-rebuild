@@ -10,6 +10,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
+    ComboExecutionRolls,
     CounterAttemptRolls,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
@@ -173,6 +174,65 @@ class BattleRoundModelTests(unittest.TestCase):
             tuple(entry.command.command1 for entry in rewritten.ordered_entries[:3]),
             (BATTLE_COM_ATTACK,BATTLE_COM_ATTACK,BATTLE_COM_ATTACK),
         )
+
+    def test_combo_execution_skips_dodge_and_applies_total_on_last_member(self):
+        p1=actor("p1","player","player",attack=60,quick=100)
+        p2=actor("p2","player","pet",attack=60,quick=90)
+        enemy=actor("enemy","enemy","enemy",hp=300,defense=70,quick=10)
+        prepared=prepare_battle_round(
+            (p1,p2,enemy),
+            {
+                "p1":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "p2":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"p1":0,"p2":0,"enemy":0},
+        )
+        prepared=apply_base_combo_rewrite(
+            prepared,
+            {"p1":profile(),"p2":profile(),"enemy":profile()},
+            {"p1":1},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"p1":0,"p2":1,"enemy":10},
+            profiles={"p1":profile(),"p2":profile(),"enemy":profile()},
+            attack_rolls={},
+            combo_rolls_by_starter_id={
+                "p1":ComboExecutionRolls(
+                    (
+                        OrdinaryAttackRolls(
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                        OrdinaryAttackRolls(
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                    )
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        combo_events=[event for event in result.events if event.is_combo]
+        self.assertEqual(len(combo_events),2)
+        self.assertEqual(
+            tuple(event.participant_id for event in combo_events),
+            ("p1","p2"),
+        )
+        self.assertEqual(combo_events[0].target_hp_before,300)
+        self.assertEqual(combo_events[0].target_hp_after,300)
+        self.assertEqual(combo_events[1].target_hp_before,300)
+        self.assertLess(combo_events[1].target_hp_after,300)
+        self.assertEqual(
+            300-result.hp_by_participant_id["enemy"],
+            sum(event.damage for event in combo_events),
+        )
+        self.assertEqual(
+            combo_events[1].profit_participant_ids,
+            ("p1","p2"),
+        )
+        self.assertEqual(result.events[-1].result,"wait")
 
     def test_guard_is_active_before_slow_guard_actor_turn(self):
         player = actor("player", "player", "player", quick=20)

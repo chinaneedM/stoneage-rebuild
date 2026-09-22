@@ -40,6 +40,7 @@ from tools.stoneage_battle_core_model import (
 from tools.stoneage_battle_round_model import (
     BattleCombatProfile,
     BattleCommand,
+    ComboExecutionRolls,
     CounterAttemptRolls,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
@@ -47,6 +48,7 @@ from tools.stoneage_battle_round_model import (
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
     ResolvedOrdinaryRound,
+    apply_base_combo_rewrite,
     prepare_battle_round,
     resolve_ordinary_round,
 )
@@ -592,23 +594,46 @@ def _pending_profit_after_ordinary_round(
                 f"enemy {target_id} lacks reward EXP provenance"
             )
 
-        ride=state.session.ride_pet if actor.kind == "player" else None
-        profit=battle_kill_profit(
-            int(target.reward_exp),
-            int(target.level),
-            (
+        profit_actor_ids=(
+            tuple(str(pid) for pid in event.profit_participant_ids)
+            if event.profit_participant_ids
+            else (actor_id,)
+        )
+        if len(profit_actor_ids) != len(set(profit_actor_ids)):
+            raise ValueError("profit attack-list contains duplicate participant ids")
+        profit_recipients=[]
+        for profit_actor_id in profit_actor_ids:
+            if profit_actor_id not in participants:
+                raise ValueError(
+                    f"profit attack-list references unknown actor {profit_actor_id}"
+                )
+            profit_actor=participants[profit_actor_id]
+            if profit_actor.side != "player":
+                raise ValueError(
+                    "enemy death profit attack-list crossed battle sides"
+                )
+            ride=(
+                state.session.ride_pet
+                if profit_actor.kind == "player"
+                else None
+            )
+            profit_recipients.append(
                 KillProfitRecipient(
-                    actor_id,
-                    int(actor.level),
-                    str(actor.kind),
+                    profit_actor_id,
+                    int(profit_actor.level),
+                    str(profit_actor.kind),
                     ride_pet_id=(
                         None if ride is None else str(ride.participant_id)
                     ),
                     ride_pet_level=(
                         None if ride is None else int(ride.level)
                     ),
-                ),
-            ),
+                )
+            )
+        profit=battle_kill_profit(
+            int(target.reward_exp),
+            int(target.level),
+            tuple(profit_recipients),
         )
         for participant_id,award in profit.direct_exp_by_participant_id.items():
             pending_exp[participant_id]+=int(award)
@@ -635,11 +660,12 @@ def _pending_profit_after_ordinary_round(
                 )
             allocation=allocate_battle_drop_items(
                 reward_items,
-                (
+                tuple(
                     DropRecipientTicket(
-                        actor_id,
+                        profit_actor_id,
                         str(state.session.player.participant_id),
-                    ),
+                    )
+                    for profit_actor_id in profit_actor_ids
                 ),
                 drop_rolls[target_id],
                 pending_by_player_entry_id=pending_drops,
@@ -685,6 +711,10 @@ def resolve_persistent_ordinary_round(
         str,Sequence[CounterAttemptRolls]
     ] | None = None,
     counter_abio_by_participant_id: Mapping[str,bool] | None = None,
+    combo_start_rolls_1_100: Mapping[str,int] | None = None,
+    combo_rolls_by_starter_id: Mapping[
+        str,ComboExecutionRolls
+    ] | None = None,
     no_risk: bool = False,
     drop_rolls_by_enemy_id: Mapping[
         str,Sequence[DropAllocationRoll]
@@ -733,6 +763,11 @@ def resolve_persistent_ordinary_round(
         initiative_random_subtracts,
         tie_break_order=tie_break_order,
     )
+    prepared = apply_base_combo_rewrite(
+        prepared,
+        profiles,
+        combo_start_rolls_1_100,
+    )
     current_slots = {
         participant.participant_id: int(state.slots[participant.participant_id])
         for participant in participants
@@ -749,6 +784,7 @@ def resolve_persistent_ordinary_round(
         escape_rolls=escape_rolls,
         counter_rolls_by_attack_id=counter_rolls_by_attack_id,
         counter_abio_by_participant_id=counter_abio_by_participant_id,
+        combo_rolls_by_starter_id=combo_rolls_by_starter_id,
         field_attr=field_attr,
         field_power=field_power,
     )

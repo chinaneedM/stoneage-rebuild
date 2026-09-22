@@ -367,6 +367,7 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_GUARD,
         BATTLE_COM_CAPTURE,
         BATTLE_COM_ESCAPE,
+        BATTLE_COM_COMBO,
         BATTLE_COM_WAIT,
     }
 )
@@ -413,6 +414,21 @@ class CounterAttemptRolls:
 
     counter_check_roll_1_10000: int | None
     attack_rolls: OrdinaryAttackRolls | None = None
+
+
+@dataclass(frozen=True)
+class ComboExecutionRolls:
+    """Explicit RNG consumed by one stable combo execution."""
+
+    member_attack_rolls: tuple[OrdinaryAttackRolls, ...]
+    retarget_roll: int | None = None
+
+    def __post_init__(self) -> None:
+        object.__setattr__(
+            self,
+            "member_attack_rolls",
+            tuple(self.member_attack_rolls),
+        )
 
 
 @dataclass(frozen=True)
@@ -514,6 +530,10 @@ class OrdinaryRoundEvent:
     is_counter: bool = False
     counter_attempt: int | None = None
     counter_check_resolution: BattleCounterCheckResolution | None = None
+    is_combo: bool = False
+    combo_id: int | None = None
+    combo_member_index: int | None = None
+    profit_participant_ids: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -854,6 +874,168 @@ def _resolve_counter_chain(
     return tuple(resolved)
 
 
+def _resolve_combo_group(
+    *,
+    combo_id: int,
+    members: Sequence[RoundEntry],
+    original_target_slot: int,
+    target_slot: int,
+    retargeted: bool,
+    by_slot: Mapping[int, BattleParticipant],
+    hp_by_slot: dict[int, int],
+    hp_by_id: dict[str, int],
+    profiles: Mapping[str, BattleCombatProfile],
+    guarding: set[int],
+    rolls: ComboExecutionRolls,
+    defense_profile: str,
+    field_attr: str,
+    field_power: int,
+) -> tuple[OrdinaryRoundEvent, ...]:
+    """Execute the status-free/no-reaction stable combo damage seam."""
+    group=tuple(members)
+    if len(group) < 2:
+        raise ValueError("combo execution requires at least two live members")
+    member_rolls=tuple(rolls.member_attack_rolls)
+    if len(member_rolls) != len(group):
+        raise ValueError(
+            "combo execution requires one attack-roll bundle per live member"
+        )
+
+    target=by_slot[int(target_slot)]
+    target_id=str(target.participant_id)
+    before=int(hp_by_slot[int(target_slot)])
+    if before <= 0:
+        raise ValueError("combo target must be alive at execution")
+    target_profile=profiles[target_id]
+    target_guarding=int(target_slot) in guarding
+    actor_ids=tuple(
+        str(entry.participant.participant_id) for entry in group
+    )
+    slot_by_actor_id={
+        str(participant.participant_id):int(slot)
+        for slot,participant in by_slot.items()
+    }
+
+    rows=[]
+    total_damage=0
+    for member_index,(entry,attack_roll) in enumerate(
+        zip(group,member_rolls),
+        start=1,
+    ):
+        actor=entry.participant
+        actor_id=str(actor.participant_id)
+        actor_slot=slot_by_actor_id[actor_id]
+        if int(hp_by_slot[actor_slot]) <= 0:
+            raise ValueError("dead combo member reached execution helper")
+        actor_profile=profiles[actor_id]
+
+        critical_roll=_validated_roll(
+            attack_roll.critical_roll_1_10000,
+            1,
+            10000,
+            "combo critical_roll_1_10000",
+        )
+        critical_probability=critical_per_10000(
+            actor_profile.fixed_dex,
+            target_profile.fixed_dex,
+            attacker_luck=_source_luck(actor,actor_profile),
+            weapon_critical=int(actor_profile.weapon_critical),
+            attacker_type=_participant_battle_kind(actor),
+            defender_type=_participant_battle_kind(target),
+        )
+        is_critical=critical_roll < critical_probability
+
+        base_damage=physical_base_damage(
+            actor.attack,
+            _effective_defense_for_round(target,defense_profile),
+            int(attack_roll.damage_roll),
+        )
+        damage=attribute_adjusted_damage(
+            base_damage,
+            actor_profile.elements,
+            target_profile.elements,
+            field_attr=field_attr,
+            field_power=field_power,
+        )
+        if is_critical:
+            damage=critical_damage(
+                damage,
+                target.defense,
+                actor.level,
+                target.level,
+            )
+        if target_guarding:
+            guard_roll=_validated_roll(
+                attack_roll.guard_roll_1_100,
+                1,
+                100,
+                "combo guard_roll_1_100",
+            )
+            damage=guard_damage(damage,guard_roll)
+
+        if damage < 1:
+            damage=_validated_roll(
+                attack_roll.minimum_damage_roll_0_1,
+                0,
+                1,
+                "combo minimum_damage_roll_0_1",
+            )
+
+        if damage == 0:
+            result="combo_allguard" if target_guarding else "combo_miss"
+        else:
+            result="combo_critical" if is_critical else "combo_normal"
+
+        contribution=max(1,int(damage))
+        total_damage+=contribution
+        rows.append(
+            (
+                entry,
+                actor_slot,
+                result,
+                is_critical,
+                contribution,
+                member_index,
+            )
+        )
+
+    after=max(0,before-int(total_damage))
+    hp_by_slot[int(target_slot)]=after
+    hp_by_id[target_id]=after
+
+    resolved=[]
+    for row_index,(
+        entry,
+        actor_slot,
+        result,
+        is_critical,
+        contribution,
+        member_index,
+    ) in enumerate(rows):
+        is_last=(row_index==len(rows)-1)
+        resolved.append(
+            OrdinaryRoundEvent(
+                str(entry.participant.participant_id),
+                int(actor_slot),
+                BATTLE_COM_COMBO,
+                int(entry.action_value),
+                result,
+                original_target_slot=int(original_target_slot),
+                resolved_target_slot=int(target_slot),
+                retargeted=bool(retargeted),
+                critical=bool(is_critical),
+                damage=int(contribution),
+                target_hp_before=before,
+                target_hp_after=(after if is_last else before),
+                is_combo=True,
+                combo_id=int(combo_id),
+                combo_member_index=int(member_index),
+                profit_participant_ids=actor_ids,
+            )
+        )
+    return tuple(resolved)
+
+
 def _build_slot_maps(
     prepared: PreparedBattleRound,
     slots: Mapping[str, int],
@@ -929,13 +1111,16 @@ def resolve_ordinary_round(
         str,Sequence[CounterAttemptRolls]
     ] | None = None,
     counter_abio_by_participant_id: Mapping[str,bool] | None = None,
+    combo_rolls_by_starter_id: Mapping[
+        str,ComboExecutionRolls
+    ] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
-    """Execute the status-free attack/guard/capture/escape/wait battle seam.
+    """Execute the status-free base battle seam.
 
-    Passing counter_rolls_by_attack_id enables the recovered base counter loop;
-    leaving it as None preserves the earlier no-counter R1 boundary. Guard
+    Passing counter_rolls_by_attack_id enables the recovered base counter loop.
+    Prepared COMBO groups additionally require combo_rolls_by_starter_id. Guard
     stance is taken from the submitted command set before action sorting,
     matching BATTLE_AttackSeq's inspection of the defender's COM1 rather than
     requiring the guard actor's own execution turn to occur first.
@@ -943,7 +1128,7 @@ def resolve_ordinary_round(
     for entry in prepared.ordered_entries:
         if entry.command.command1 not in ORDINARY_RESOLUTION_COMMANDS:
             raise ValueError(
-                "ordinary resolver accepts only ATTACK/GUARD/CAPTURE/ESCAPE/WAIT commands"
+                "ordinary resolver accepts only ATTACK/GUARD/CAPTURE/ESCAPE/COMBO/WAIT commands"
             )
 
     by_slot, slot_by_id = _build_slot_maps(prepared, slots)
@@ -989,6 +1174,24 @@ def resolve_ordinary_round(
             counter_abio_by_participant_id or {}
         ).items()
     }
+    normalized_combo_rolls={
+        str(participant_id):rolls
+        for participant_id,rolls in (
+            combo_rolls_by_starter_id or {}
+        ).items()
+    }
+    combo_groups: dict[int,list[RoundEntry]]={}
+    for combo_entry in prepared.ordered_entries:
+        if combo_entry.command.command1 != BATTLE_COM_COMBO:
+            continue
+        if int(combo_entry.combo_id) <= 0:
+            raise ValueError("prepared COMBO command lacks a positive combo_id")
+        combo_groups.setdefault(int(combo_entry.combo_id),[]).append(combo_entry)
+    for combo_id,group in combo_groups.items():
+        if len(group) < 2:
+            raise ValueError(f"prepared combo {combo_id} has fewer than two members")
+    processed_combo_ids: set[int]=set()
+
     command_by_slot={
         slot_by_id[entry.participant.participant_id]:entry.command
         for entry in prepared.ordered_entries
@@ -1030,6 +1233,12 @@ def resolve_ordinary_round(
         participant = entry.participant
         participant_id = participant.participant_id
         slot = slot_by_id[participant_id]
+
+        if (
+            entry.command.command1 == BATTLE_COM_COMBO
+            and int(entry.combo_id) in processed_combo_ids
+        ):
+            continue
 
         if not entry.command.input_complete:
             events.append(
@@ -1280,6 +1489,99 @@ def resolve_ordinary_round(
                 )
             )
             continue
+
+        if entry.command.command1 == BATTLE_COM_COMBO:
+            group=combo_groups[int(entry.combo_id)]
+            current_index=group.index(entry)
+            live_group=tuple(
+                candidate
+                for candidate in group[current_index:]
+                if (
+                    candidate.command.input_complete
+                    and int(
+                        hp_by_slot[
+                            slot_by_id[candidate.participant.participant_id]
+                        ]
+                    ) > 0
+                    and slot_by_id[candidate.participant.participant_id]
+                    not in exited_slots
+                )
+            )
+            if len(live_group) >= 2:
+                starter_id=str(participant_id)
+                if starter_id not in normalized_combo_rolls:
+                    raise KeyError(
+                        f"missing combo execution rolls for starter {starter_id}"
+                    )
+                combo_rolls=normalized_combo_rolls[starter_id]
+                original_target=int(entry.command.command2)
+                target=original_target
+                retargeted=False
+                target_alive=(
+                    target in by_slot
+                    and target not in exited_slots
+                    and int(hp_by_slot.get(target,0)) > 0
+                )
+                if target_alive and _slot_side(target)==_slot_side(slot):
+                    raise ValueError(
+                        "same-side combo attacks are outside the status-free seam"
+                    )
+                if not target_alive:
+                    target=_retarget_slot(
+                        slot,
+                        by_slot,
+                        hp_by_slot,
+                        combo_rolls.retarget_roll,
+                        excluded_slots=exited_slots,
+                    )
+                    retargeted=True
+                if target is None:
+                    events.append(
+                        OrdinaryRoundEvent(
+                            str(participant_id),
+                            int(slot),
+                            BATTLE_COM_COMBO,
+                            int(entry.action_value),
+                            "combo_no_target",
+                            original_target_slot=original_target,
+                            retargeted=True,
+                            is_combo=True,
+                            combo_id=int(entry.combo_id),
+                        )
+                    )
+                    continue
+                for candidate in live_group:
+                    if candidate.participant.side != participant.side:
+                        raise ValueError("combo group crossed battle sides")
+                    if int(candidate.command.command2) != original_target:
+                        raise ValueError("combo group target drift")
+                events.extend(
+                    _resolve_combo_group(
+                        combo_id=int(entry.combo_id),
+                        members=live_group,
+                        original_target_slot=original_target,
+                        target_slot=int(target),
+                        retargeted=retargeted,
+                        by_slot=by_slot,
+                        hp_by_slot=hp_by_slot,
+                        hp_by_id=hp_by_id,
+                        profiles=profiles,
+                        guarding=guarding,
+                        rolls=combo_rolls,
+                        defense_profile=defense_profile,
+                        field_attr=field_attr,
+                        field_power=field_power,
+                    )
+                )
+                processed_combo_ids.add(int(entry.combo_id))
+                continue
+
+            command_by_slot[slot]=BattleCommand(
+                BATTLE_COM_ATTACK,
+                command2=entry.command.command2,
+                command3=entry.command.command3,
+                input_complete=entry.command.input_complete,
+            )
 
         rolls = attack_rolls.get(participant_id)
         if rolls is None:

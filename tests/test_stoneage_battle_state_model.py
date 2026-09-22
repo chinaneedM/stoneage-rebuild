@@ -14,6 +14,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
+    ComboExecutionRolls,
     CounterAttemptRolls,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
@@ -357,6 +358,82 @@ class PersistentBattleStateTests(unittest.TestCase):
         self.assertEqual(
             dict(result.after.pending_pet_variable_ai_by_participant_id),
             {"pet:0": 1},
+        )
+
+    def test_combo_kill_credits_full_attack_list_and_drop_ticket_set(self):
+        player=participant(
+            "player","player","player",
+            attack=200,quick=100,level=10,
+        )
+        pet=participant(
+            "pet:0","player","pet",
+            attack=200,quick=90,level=10,source_pet_slot=0,
+        )
+        item=BattleDropItem("drop:combo",701,{"name":"combo-drop"})
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=30,defense=20,quick=10,level=10,
+            reward_exp=1500,reward_items=(item,),
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,),pets=(pet,)),
+            slots={"player":0,"pet:0":1,"enemy":10},
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "pet:0":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={
+                "player":0,"pet:0":0,"enemy":0,
+            },
+            profiles={
+                "player":profile(),"pet:0":profile(),"enemy":profile(),
+            },
+            attack_rolls={},
+            combo_start_rolls_1_100={"player":1},
+            combo_rolls_by_starter_id={
+                "player":ComboExecutionRolls(
+                    (
+                        OrdinaryAttackRolls(
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                        OrdinaryAttackRolls(
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                    )
+                )
+            },
+            drop_rolls_by_enemy_id={
+                "enemy":(DropAllocationRoll(recipient_index=1),),
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.after.phase,FINISHED)
+        self.assertEqual(result.after.result,PLAYER_WIN)
+        self.assertEqual(
+            dict(result.after.pending_exp_by_participant_id),
+            {"player":1500,"pet:0":1500},
+        )
+        self.assertEqual(
+            dict(result.after.pending_pet_variable_ai_by_participant_id),
+            {"pet:0":1},
+        )
+        self.assertEqual(
+            result.after.pending_drop_items_by_player_entry_id["player"],
+            (item,),
+        )
+        combo_death=[
+            event for event in result.round.events
+            if event.is_combo and event.target_hp_after==0
+        ][0]
+        self.assertEqual(
+            combo_death.profit_participant_ids,
+            ("player","pet:0"),
         )
 
     def test_player_counter_kill_uses_counter_actor_for_pending_exp(self):
