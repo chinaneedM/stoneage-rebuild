@@ -1393,7 +1393,14 @@ def resolve_battle_death_ultimate_override(
     )
     if critical_eligible:
         if critical_roll_1_100 is None:
-            raise ValueError("eligible critical death requires RAND(1,100)")
+            label=(
+                "non-player"
+                if inputs.critical_scope == "nonplayer"
+                else "enemy"
+            )
+            raise ValueError(
+                f"{label} critical death requires RAND(1,100)"
+            )
         roll=int(critical_roll_1_100)
         if not 1 <= roll <= 100:
             raise ValueError("critical death ultimate roll must be in 1..100")
