@@ -11,8 +11,11 @@ import re
 
 from tools.stoneage_battle_status_model import (
     BASE_STATUS_NAME_BY_INDEX,
+    BaseBattleStatusState,
+    BasePhysicalOnHitStatusInputs,
     BaseStatusAttackInputs,
     base_status_attack_probability_value,
+    resolve_base_physical_on_hit_status_application,
 )
 
 
@@ -371,6 +374,63 @@ def status_attack_probability(
             level_scale=level_multiplier,
         )
     )
+
+
+def status_attack_application(
+    *,
+    current_status,
+    damage,
+    status,
+    turn,
+    defender_vital,
+    defender_str,
+    defender_tough,
+    defender_dex,
+    attacker_luck,
+    attacker_level,
+    defender_level,
+    pvp,
+    status_specific_resist=0,
+    roll_1_to_100=None,
+    per_offset=30,
+):
+    """Authoritative stable pet StatusChange physical application seam.
+
+    The handler supplies status + turn in COM3; BATTLE_Attack supplies the
+    positive-damage gate and the common 30/40/2 status-check profile.
+    """
+    if not isinstance(current_status,BaseBattleStatusState):
+        raise TypeError("current_status must be BaseBattleStatusState")
+    status=int(status)
+    status_name=BASE_STATUS_NAME_BY_INDEX.get(status)
+    if status_name is None:
+        return {
+            "valid_status":False,
+            "application":None,
+        }
+    application=resolve_base_physical_on_hit_status_application(
+        BasePhysicalOnHitStatusInputs(
+            status=status_name,
+            attacker_level=attacker_level,
+            defender_level=defender_level,
+            pvp=pvp,
+            attacker_fixed_luck=attacker_luck,
+            defender_vital=defender_vital,
+            defender_str=defender_str,
+            defender_tough=defender_tough,
+            defender_dex=defender_dex,
+            defender_resistance=status_specific_resist,
+            source_turn=turn,
+            per_offset=per_offset,
+        ),
+        current_status,
+        damage_after_resolution=damage,
+        roll_1_100=roll_1_to_100,
+    )
+    return {
+        "valid_status":True,
+        "application":application,
+    }
 
 
 def status_attack_transition(

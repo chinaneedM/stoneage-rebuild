@@ -1,5 +1,7 @@
 import unittest
 
+from tools.stoneage_battle_status_model import BaseBattleStatusState
+
 from tools.stoneage_petskill_core_model import (
     abduct_command,
     abduct_probability,
@@ -25,6 +27,7 @@ from tools.stoneage_petskill_core_model import (
     skill_none,
     skill_normal_attack,
     skill_normal_guard,
+    status_attack_application,
     status_attack_probability,
     status_attack_transition,
     status_change_command,
@@ -304,6 +307,90 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
             ),
             80,
         )
+
+    def test_status_application_uses_authoritative_physical_core(self):
+        result=status_attack_application(
+            current_status=BaseBattleStatusState(),
+            damage=100,
+            status=1,
+            turn=3,
+            defender_vital=25,
+            defender_str=25,
+            defender_tough=25,
+            defender_dex=25,
+            attacker_luck=10,
+            attacker_level=20,
+            defender_level=10,
+            pvp=False,
+            status_specific_resist=5,
+            roll_1_to_100=44,
+        )
+        self.assertTrue(result["valid_status"])
+        application=result["application"]
+        self.assertEqual(application.check.source_probability_value,45)
+        self.assertTrue(application.check.success)
+        self.assertEqual(application.turn_written,4)
+        self.assertEqual(application.status_after.poison,4)
+
+    def test_status_application_preserves_damage_gate_and_invalid_sentinel(self):
+        blocked=status_attack_application(
+            current_status=BaseBattleStatusState(),
+            damage=0,
+            status=3,
+            turn=3,
+            defender_vital=25,
+            defender_str=25,
+            defender_tough=25,
+            defender_dex=25,
+            attacker_luck=99,
+            attacker_level=20,
+            defender_level=10,
+            pvp=False,
+            roll_1_to_100=None,
+        )
+        self.assertTrue(blocked["valid_status"])
+        self.assertTrue(blocked["application"].check.blocked_by_damage_gate)
+        self.assertFalse(blocked["application"].check.rng_consumed)
+
+        invalid=status_attack_application(
+            current_status=BaseBattleStatusState(),
+            damage=100,
+            status=len(STATUS),
+            turn=3,
+            defender_vital=25,
+            defender_str=25,
+            defender_tough=25,
+            defender_dex=25,
+            attacker_luck=99,
+            attacker_level=20,
+            defender_level=10,
+            pvp=False,
+            roll_1_to_100=None,
+        )
+        self.assertFalse(invalid["valid_status"])
+        self.assertIsNone(invalid["application"])
+
+    def test_status_application_carries_physical_drunk_post_write_halving(self):
+        result=status_attack_application(
+            current_status=BaseBattleStatusState(),
+            damage=100,
+            status=5,
+            turn=3,
+            defender_vital=25,
+            defender_str=25,
+            defender_tough=25,
+            defender_dex=25,
+            attacker_luck=100,
+            attacker_level=20,
+            defender_level=10,
+            pvp=False,
+            roll_1_to_100=1,
+            per_offset=100,
+        )
+        application=result["application"]
+        self.assertTrue(application.check.success)
+        self.assertEqual(application.turn_written,2)
+        self.assertEqual(application.status_after.drunk,2)
 
     def test_status_transition_requires_positive_damage(self):
         r = status_attack_transition(
