@@ -21,4 +21,9 @@ class ArchiveCandidateFileProbeTests(unittest.TestCase):
     def test_irrelevant(self):
         self.assertEqual(candidate_files([{"name":"foo.txt","size":"100"}]),[])
 
+    def test_japan_174a_exact_name(self):
+        rows=candidate_files([{"name":"mirror/sa174hg.exe","size":"123"}])
+        self.assertEqual(len(rows),1)
+        self.assertTrue(rows[0]["exact"])
+
 if __name__=="__main__":unittest.main()
