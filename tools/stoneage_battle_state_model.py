@@ -820,6 +820,9 @@ def _pending_profit_after_ordinary_round(
     }
     consumed_drop_rolls=set()
     ride_runtime=state.ride_pet_runtime
+    ultimate_exited_ids={
+        str(pid) for pid in round_result.ultimate_exited_participant_ids
+    }
     ride_mounted=bool(
         ride_runtime is not None and ride_runtime.mounted
     )
@@ -856,7 +859,7 @@ def _pending_profit_after_ordinary_round(
                 default_pet_id=(
                     None if not allied else str(allied[0].participant_id)
                 )
-                if int(event.ultimate_kind) > 0:
+                if target_id in ultimate_exited_ids:
                     penalty=resolve_battle_ultimate_death_penalty(
                         BattleUltimateDeathInputs(
                             victim_kind="player",
@@ -890,7 +893,7 @@ def _pending_profit_after_ordinary_round(
                         penalty.default_pet_variable_ai_delta
                     )
             else:
-                if int(event.ultimate_kind) > 0:
+                if target_id in ultimate_exited_ids:
                     penalty=resolve_battle_ultimate_death_penalty(
                         BattleUltimateDeathInputs(
                             victim_kind="pet",

@@ -673,6 +673,11 @@ class OrdinaryRoundEvent:
     ultimate_damage_resolution: BattleUltimateDamageResolution | None = None
     death_ultimate_resolution: BattleDeathUltimateResolution | None = None
     ultimate_kind: int = 0
+    # Exact round-local BENT_FLG_ULTIMATE write. Most paths leave these null
+    # and the flag target is the resolved death target. Combo+DamageReact can
+    # write the flag to a different entry after its quirky defindex rewrite.
+    ultimate_flag_target_slot: int | None = None
+    ultimate_flag_kind: int = 0
 
 
 @dataclass(frozen=True)
@@ -2282,6 +2287,9 @@ def resolve_ordinary_round(
     }
     escaped_ids: list[str] = []
     ultimate_exited_ids: list[str] = []
+    # Source BENT_FLG_ULTIMATE is cleared at the start of each battle turn.
+    # Keep it round-local; do not persist it across PersistentBattleState.
+    ultimate_marked_slots: dict[int,int] = {}
 
     def register_ultimate_exits(
         new_events: Sequence[OrdinaryRoundEvent],
@@ -2295,9 +2303,34 @@ def resolve_ordinary_round(
         """
         nonlocal ride_runtime,active_ride
 
+        # BATTLE_Combo returns before BATTLE_AddProfit scans deaths.
+        # Collect every entry-flag write first so a later Combo write can affect
+        # an earlier reflected death in the same Combo call.
         for event in new_events:
-            if int(event.ultimate_kind) <= 0:
-                continue
+            if event.ultimate_flag_target_slot is not None:
+                flag_slot=int(event.ultimate_flag_target_slot)
+                if flag_slot not in by_slot:
+                    raise ValueError(
+                        "ultimate flag write resolved to an unknown battle slot"
+                    )
+                flag_kind=int(event.ultimate_flag_kind)
+                if flag_kind not in {1,2}:
+                    raise ValueError(
+                        "explicit ultimate flag write requires kind 1 or 2"
+                    )
+                ultimate_marked_slots[flag_slot]=flag_kind
+            elif (
+                int(event.ultimate_kind)>0
+                and event.resolved_target_slot is not None
+            ):
+                flag_slot=int(event.resolved_target_slot)
+                if flag_slot not in by_slot:
+                    raise ValueError(
+                        "ultimate death resolved to an unknown battle slot"
+                    )
+                ultimate_marked_slots[flag_slot]=int(event.ultimate_kind)
+
+        for event in new_events:
             if (
                 event.target_hp_before is None
                 or event.target_hp_after is None
@@ -2310,8 +2343,10 @@ def resolve_ordinary_round(
             target_slot=int(event.resolved_target_slot)
             if target_slot not in by_slot:
                 raise ValueError(
-                    "ultimate death resolved to an unknown battle slot"
+                    "death resolved to an unknown battle slot"
                 )
+            if int(ultimate_marked_slots.get(target_slot,0)) <= 0:
+                continue
             target=by_slot[target_slot]
             target_id=str(target.participant_id)
             if target_id in ultimate_exited_ids:
