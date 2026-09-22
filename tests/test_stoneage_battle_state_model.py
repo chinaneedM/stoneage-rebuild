@@ -319,11 +319,17 @@ class PersistentBattleStateTests(unittest.TestCase):
             status_application_rolls_by_attack_id={"pet:0":44},
             defense_profile="newpower_70pct",
         )
+        application=[
+            event.status_application_resolution
+            for event in result.round.events
+            if event.status_application_resolution is not None
+        ][0]
+        self.assertEqual(application.turn_written,4)
         self.assertEqual(
             result.after.base_status_runtime_by_participant_id[
                 "enemy"
             ].status.poison,
-            4,
+            3,
         )
         self.assertEqual(result.after.turn,1)
 

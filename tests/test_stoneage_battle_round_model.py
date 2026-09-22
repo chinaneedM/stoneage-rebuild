@@ -502,8 +502,14 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertIsNotNone(event.status_application_resolution)
         self.assertTrue(event.status_application_resolution.check.success)
         self.assertEqual(
-            result.base_status_runtime_by_participant_id["enemy"].status.poison,
+            event.status_application_resolution.turn_written,
             4,
+        )
+        # Enemy is slower, so its own StatusSeq runs later in this same round:
+        # the newly written poison 4 decrements to 3 before round end.
+        self.assertEqual(
+            result.base_status_runtime_by_participant_id["enemy"].status.poison,
+            3,
         )
 
     def test_statuschange_dodge_consumes_no_status_rng_or_profile(self):
