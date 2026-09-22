@@ -27,6 +27,7 @@ MAX_SNAPSHOTS_PER_TARGET=8
 
 TARGETS=(
     ("hangame-control-cab","http://www.hangame.co.jp:80/publish/sa/HgSA.cab"),
+    ("hangame-sadl","http://www.hangame.co.jp:80/publish/sa/sadl.asp"),
     ("hangame-sasetup","http://www.hangame.co.jp:80/publish/sa/sasetup.asp"),
     ("hangame-sasetup2","http://www.hangame.co.jp:80/publish/sa/sasetup2.asp"),
 )
