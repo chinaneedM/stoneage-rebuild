@@ -1273,13 +1273,15 @@ Supplemental source ledgers:
 - `height_flag` is recovered as source metadata but is **not** silently promoted into movement semantics because the recovered client `readHitMap()` path does not consume it.
 - Retail-disc inventory still reports `field_map_disc_files=0`: the collision-property dataset is now closed, while the provenance-complete field-map plane corpus remains a separate runtime/cache recovery question.
 - The provenance-gated cache-plane software bridge is now closed without fabricating field content: `StoneAgeDatMapCache` strictly parses the descendant-source-corroborated 8-byte width/height + uint16 tile/parts/event DAT layout; `load_taiwan_v10_collision_profile()` verifies and loads the committed derived Taiwan-v1 collision TSV; and the cache/DAT composition helpers feed those planes directly into the recovered v1 hit-map algorithm. The parser performs no provenance inference, so mixed 2.5 DAT payloads remain later bridge specimens rather than Taiwan-v1 evidence.
+- The single-player runtime now keeps the early-client collision path explicitly separate from the descendant-server collision model: `walk_step_with_taiwan_v10_hit_map()` and its CEP-frequency variant bind a recovered Taiwan-v1 hit map to the active floor and consume only the v1 `checkHitMap` verdict. They do not silently add descendant `WALKABLE/HAVEHEIGHT`, diagonal-corner or dynamic-overability rules.
 - Evidence and boundary are recorded in `research/mechanics/STONEAGE-TW10-ADRN-COLLISION-R1.md`.
 - Remote validation:
   - gameplay/model run **35511074585** — success;
   - repaired real-disc export **35511391125** — success;
   - export with explicit collision-dataset integrity requirement **35511442265** — success;
-  - provenance-gated cache-plane adapter commit `1d1f5a69574c855ad06f211ebaf0241b51249764`, gameplay/model run **35726829348** — success.
-- **Operational consequence:** the implementation path from authenticated field-cache bytes through Taiwan-v1 ADRN metadata to the v1 hit map is closed. The only remaining early collision-content gap is recovery/authentication of a provenance-safe Taiwan-v1/JSS field-map plane corpus itself; later 2.5/SACH data must not be substituted.
+  - provenance-gated cache-plane adapter commit `1d1f5a69574c855ad06f211ebaf0241b51249764`, gameplay/model run **35726829348** — success;
+  - Taiwan-v1 runtime collision-path separation commit `e1d684fb299a011126525e0989094e48de783079`, gameplay/model run **35727710528** — success.
+- **Operational consequence:** the implementation path from authenticated field-cache bytes through Taiwan-v1 ADRN metadata to the v1 hit map and then into the single-player movement runtime is closed without merging later server semantics. The only remaining early collision-content gap is recovery/authentication of a provenance-safe Taiwan-v1/JSS field-map plane corpus itself; later 2.5/SACH data must not be substituted.
 
 ## Ordinary attack / guard / wait round resolution — 2026-09-20
 
