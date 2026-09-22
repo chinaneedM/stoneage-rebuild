@@ -236,6 +236,18 @@ def select_launch_snapshots(rows, *, limit: int = 8):
     return sorted(unique.values(),key=rank)[:limit]
 
 
+def snapshot_period(timestamp):
+    """Separate launch-window evidence from pre/post-launch archive clues."""
+    day=str(timestamp)[:8]
+    if len(day) != 8 or not day.isdigit():
+        return "unknown"
+    if "20031201" <= day <= "20040131":
+        return "launch"
+    if day < "20031201":
+        return "prelaunch"
+    return "postlaunch"
+
+
 def main() -> None:
     # Query each official StoneAge subtree once, then filter archive rows locally.
     # This keeps request count bounded while retaining executable/archive URLs
@@ -259,7 +271,7 @@ def main() -> None:
         ("hangame-gamania-root",HANGAME_GAMANIA_STONEAGE_ROOT),
     ]
 
-    print("StoneAge Japan 1.74a public archive client probe — R1")
+    print("StoneAge Japan 1.74a public archive client probe — R2")
     print("SCOPE|metadata-and-link-targets-only|no-client-binary-download")
     print("YEARS|from=2003|to=2005")
     print("INDEX_BACKENDS|wayback,arquivo.pt")
@@ -407,8 +419,13 @@ def main() -> None:
     ]
 
     emitted=set()
+    snapshot_period_counts={
+        "launch":0,"prelaunch":0,"postlaunch":0,"unknown":0
+    }
     for surface,row in root_snapshots:
         timestamp=str(row.get("timestamp",""))
+        period=snapshot_period(timestamp)
+        snapshot_period_counts[period]+=1
         original=str(row.get("original",""))
         try:
             links=archived_links(timestamp,original)
@@ -416,9 +433,22 @@ def main() -> None:
             errors.append((surface+"@"+timestamp,type(exc).__name__,str(exc)))
             continue
         for target,anchor in links:
-            emitted.add((surface,timestamp,target,anchor))
+            emitted.add((period,surface,timestamp,target,anchor))
+
+    download_indexed={
+        row
+        for row in dedup.values()
+        if DOWNLOAD_EXT.search(str(row[2].get("original","")))
+    }
+    download_links={
+        row for row in emitted if DOWNLOAD_EXT.search(row[3])
+    }
+    page_links=emitted-download_links
 
     print(f"COUNT|root_snapshots_probed|{len(root_snapshots)}")
+    print(f"COUNT|root_snapshots_launch_window|{snapshot_period_counts['launch']}")
+    print(f"COUNT|root_snapshots_prelaunch|{snapshot_period_counts['prelaunch']}")
+    print(f"COUNT|root_snapshots_postlaunch|{snapshot_period_counts['postlaunch']}")
     print(f"COUNT|root_cdx_queries_succeeded|{root_stats['cdx_succeeded']}")
     print(f"COUNT|root_cdx_queries_failed|{root_stats['cdx_failed']}")
     print(
@@ -431,14 +461,23 @@ def main() -> None:
     )
     print(f"COUNT|root_availability_hits|{root_stats['availability_hits']}")
     print(f"COUNT|interesting_links|{len(emitted)}")
-    print(f"COUNT|download_links|{sum(1 for _,_,target,_ in emitted if DOWNLOAD_EXT.search(target))}")
-    for surface,timestamp,target,anchor in sorted(emitted):
-        kind="download" if DOWNLOAD_EXT.search(target) else "interest"
+    print(f"COUNT|page_candidate_links|{len(page_links)}")
+    print(f"COUNT|download_indexed_urls|{len(download_indexed)}")
+    print(f"COUNT|download_links|{len(download_links)}")
+    for period,surface,timestamp,target,anchor in sorted(page_links):
         print(
-            "LINK|"
+            "PAGE_LINK|"
             + "|".join(
                 safe(x)
-                for x in (surface,timestamp,kind,target,anchor)
+                for x in (period,surface,timestamp,"interest",target,anchor)
+            )
+        )
+    for period,surface,timestamp,target,anchor in sorted(download_links):
+        print(
+            "DOWNLOAD_LINK|"
+            + "|".join(
+                safe(x)
+                for x in (period,surface,timestamp,"download",target,anchor)
             )
         )
 
@@ -464,14 +503,18 @@ def main() -> None:
         + root_stats["cdx_failed"]
         + root_stats["availability_failed"]
     )
-    hit_count=len(dedup)+len(emitted)
+    payload_hit_count=len(download_indexed)+len(download_links)
+    page_candidate_count=(
+        len(dedup)-len(download_indexed)+len(page_links)
+    )
     result=classify_probe_result(
-        hit_count=hit_count,
+        hit_count=payload_hit_count,
         successful_queries=successful_queries,
         failed_queries=failed_queries,
     )
     print(
-        f"RESULT|{result}|hits={hit_count}|"
+        f"RESULT|{result}|payload_hits={payload_hit_count}|"
+        f"page_candidates={page_candidate_count}|"
         f"index_queries_succeeded={successful_queries}|"
         f"index_queries_failed={failed_queries}"
     )
