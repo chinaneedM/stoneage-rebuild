@@ -1451,8 +1451,10 @@ Supplemental source ledgers:
   - early-JSS confirmation of the descendant `_Item_ReLifeAct` combo-profit compile path;
   - base DamageReact (VANISH > ABSROB > REFLEC) is closed for ordinary and Combo paths, including ride-pet immediate/deferred split interaction, continuation/status/wakeup ordering; later macro-gated TRAP/ACUPUNCTURE/BATTLE_MODEL variants remain excluded;
   - ride-pet physical damage sharing is closed to the stable-descendant boundary: ordinary `BATTLE_DamageSub`, Combo `BATTLE_DamageSubCale/BATTLE_DamageSub2`, ABSROB/REFLEC immediate split, ride-pet death unmount/PETFALL, persistent battle runtime and final owned-pet HP settlement are integrated without making the ride pet an active battle entry;
+  - stable ultimate/knock-away damage classification is closed for ordinary attacks, no-DamageReact base Combo settlement, and Counter: the exact `maxHP * 1.2 + 20` threshold, cross-hit `CHAR_WORKULTIMATE` overkill accumulation/reset, direct kind 2 vs accumulated kind 1, ABIO override, ordinary/Counter non-player critical override, Combo enemy-only critical override, and distinct player/pet ultimate-death penalties are integrated through persistent battle state;
+  - Combo + DamageReact ultimate propagation remains deliberately OPEN because the pinned descendants call immediate `BATTLE_DamageSub` for REFLEC/ABSROB/VANISH but discard its returned `IsUltimate`, while the final `BATTLE_DamageSub2` result can be computed against the original defender immediately before Reflect rewrites the death-check target; this historical coupling must not be normalized by inference;
   - counter-with-ride remains a separate unresolved interaction and is still rejected explicitly rather than guessed;
-  - later macro-gated status families and exact battle-exit cleanup for fields outside the common poison/paralysis/sleep/stone/drunk/confusion runtime;
+  - exact `BATTLE_UltimateExtra` battle-entry removal/profit/exit cleanup and later macro-gated status families remain open outside the reconstructed common poison/paralysis/sleep/stone/drunk/confusion runtime;
 - Code validations:
   - `81e9572f1ff309982d13c7f1979a51516a5593a8` — pending ordinary kill EXP accumulation; runs **35514277568** and **35514277633** both success.
   - `b3207d71bc8dafa557e31d3450be2d6efb00bd29` — no-level-cross EXP persistence; run **35514525635** success.
@@ -1496,15 +1498,22 @@ Supplemental source ledgers:
   - `cb18f95f8023488698fbc7a171e19535377591a2` — repair ordinary ride-damage integration regressions and restore capture/counter/ride runtime consistency; battle-core **35705885777**, gameplay **35705885952**, pet-skill **35705885946** success.
   - `a3d8f4333a3f27f163ac76e2c6d398ccf18181a8` — integrate ride-pet sharing with Combo deferred settlement and ABSROB/REFLEC immediate reactions; battle-core **35706892102**, gameplay **35706892101**, pet-skill **35706892110** success.
   - `fe23831896c6654475df1d9b7648b3d08319d2f6` — persist non-entry ride-pet battle HP/PETFALL outcome through final owned-pet battle-exit settlement; gameplay **35707126569** success.
+  - `a06b876b3beeb437c2f558103a802dc91472d99e` — recover the pure stable ultimate threshold/overkill accumulator, ABIO/critical override and distinct ultimate-death penalty core; battle-core **35709542102** and gameplay **35709542070** success.
+  - `5b5c1c69da1f40a5ecf520b50f493a6677a9be5e` — integrate ordinary-attack ultimate resolution with explicit conditional RNG; battle-core **35710287966** and gameplay **35710287840** success.
+  - `33cb29c89ae04cee751c138da087dc0de1ad181f` — persist ordinary ultimate accumulation and player/pet ultimate-death penalties through battle state; battle-core **35710773444** and gameplay **35710773551** success.
+  - `a9ae37d232cb326f43bc7feeb23876627b032f8c` — integrate no-DamageReact base Combo final-settlement ultimate semantics with Combo's enemy-only critical override scope; battle-core **35711243416**, gameplay **35711243461**, pet-skill **35711243440** success.
+  - `2f503cae53d88683871098fd5c625eda30876809` — integrate stable Counter ultimate threshold/accumulator and non-player critical-death override; battle-core **35712053357** and gameplay **35712053423** success.
+  - `cc26b0ae30058caa01ed454d848326be0375d15b` — prove persistent Combo and Counter ultimate deaths select ultimate penalties rather than normal-death penalties; battle-core **35712203367** and gameplay **35712203319** success.
 
 ## Immediate next actions
 
-1. **Close the remaining physical post-damage boundary next.** Recover only source-backed ultimate/knock-away behavior and any base battle-exit cleanup required by the reconstructed damage path; do not import profession/TRAP/ACUPUNCTURE extensions.
-2. **Close ride-pet counter interaction only if the pinned source yields an unambiguous path.** Ordinary, Combo, ABSROB/REFLEC and persistent PETFALL/HP settlement are closed; do not infer counter behavior from those paths.
-3. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
-4. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
-5. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
-6. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen and keep historical reconstruction separate from redesign.** Never repair missing references by inventing data; later optimization/automation remains an explicit DESIGN layer.
+1. **Close the remaining ultimate exit/cleanup boundary next.** Recover exact source-backed `BATTLE_UltimateExtra` entry removal, reward/profit interaction and battle-exit cleanup after an ultimate death; keep normal death and ultimate death distinct and do not import profession/TRAP/ACUPUNCTURE extensions.
+2. **Resolve Combo + DamageReact ultimate side effects only to the literal pinned-source behavior.** Preserve the discarded immediate `BATTLE_DamageSub` return and final `DamageSub2`/Reflect target-order quirk rather than normalizing it.
+3. **Close ride-pet counter interaction only if the pinned source yields an unambiguous path.** Ordinary, Combo, ABSROB/REFLEC and persistent PETFALL/HP settlement are closed; do not infer counter behavior from those paths.
+4. **Connect recovered Taiwan-v1 collision metadata to field-map/cache planes when a provenance-safe map corpus is available.** The image collision properties and client hit-map algorithm are closed; do not fabricate absent retail-disc field maps.
+5. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
+6. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS 1999, Korean 1.74 and Japanese 1.74a remain high-value provenance targets when obtainable.
+7. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen and keep historical reconstruction separate from redesign.** Never repair missing references by inventing data; later optimization/automation remains an explicit DESIGN layer.
 
 
 ## Continuity status
