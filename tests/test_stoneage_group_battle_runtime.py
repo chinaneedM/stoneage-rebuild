@@ -21,7 +21,12 @@ from tools.stoneage_battle_round_model import (
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
 )
-from tools.stoneage_battle_state_model import FINISHED, PLAYER_ESCAPE, PLAYER_WIN
+from tools.stoneage_battle_state_model import (
+    ENEMY_WIN,
+    FINISHED,
+    PLAYER_ESCAPE,
+    PLAYER_WIN,
+)
 from tools.stoneage_enemy_spawn_model import EnemyBirthRolls
 from tools.stoneage_pet_growth_model import PetLevelGrowthRolls
 from tools.stoneage_player_growth_model import (
@@ -1482,6 +1487,107 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
             1,
         )
         self.assertEqual(self.domain.persistent.pets[PetSlot(3)].state["hp"],1)
+
+    def test_player_ultimate_exit_discards_profit_and_uses_explicit_elder_return(self):
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+        )
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player":0,enemy_id:10},
+        )
+        terminal=replace(
+            state,
+            hp_by_participant_id=MappingProxyType({
+                "player":1,
+                enemy_id:int(state.hp_by_participant_id[enemy_id]),
+            }),
+            pending_exp_by_participant_id=MappingProxyType({
+                "player":500,
+            }),
+            pending_drop_items_by_player_entry_id=MappingProxyType({
+                "player":(
+                    BattleDropItem("ultimate:unsettled",501),
+                ),
+            }),
+            ultimate_exited_participant_ids=("player",),
+            phase=FINISHED,
+            result=ENEMY_WIN,
+            winning_side=1,
+        )
+
+        with self.assertRaisesRegex(
+            ValueError,
+            "dedicated ultimate-exit settlement seam",
+        ):
+            self.runtime.finish_persistent_battle_without_level_crossing(
+                terminal
+            )
+
+        elder=MapPosition(
+            battle.origin_position.floor_id+1,
+            battle.origin_position.x+2,
+            battle.origin_position.y+3,
+        )
+        returned=self.runtime.finish_persistent_player_ultimate_exit(
+            terminal,
+            elder_return_position=elder,
+        )
+        self.assertEqual(returned.result,ENEMY_WIN)
+        self.assertEqual(returned.world_position,elder)
+        self.assertEqual(self.domain.world.player_position,elder)
+        self.assertEqual(self.domain.persistent.character.fields["hp"],1)
+        self.assertEqual(self.domain.persistent.character.fields["exp"],0)
+        self.assertEqual(self.domain.persistent.inventory,{})
+
+    def test_player_ultimate_exit_none_elder_lookup_keeps_origin(self):
+        request=self.domain.request_encounter_group(group_roll=0)
+        spawned=self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle=self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+        )
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player":0,enemy_id:10},
+        )
+        terminal=replace(
+            state,
+            hp_by_participant_id=MappingProxyType({
+                "player":1,
+                enemy_id:int(state.hp_by_participant_id[enemy_id]),
+            }),
+            ultimate_exited_participant_ids=("player",),
+            phase=FINISHED,
+            result=ENEMY_WIN,
+            winning_side=1,
+        )
+        returned=self.runtime.finish_persistent_player_ultimate_exit(
+            terminal,
+            elder_return_position=None,
+        )
+        self.assertEqual(returned.world_position,battle.origin_position)
+        self.assertEqual(
+            self.domain.world.player_position,
+            battle.origin_position,
+        )
 
     def test_finish_escape_rejects_non_escape_terminal(self):
         request=self.domain.request_encounter_group(group_roll=0)

@@ -589,6 +589,15 @@ class SinglePlayerHistoricalRuntime:
             self.domain.persistent.pets.update(staged)
         return result
 
+    def _player_ultimate_exited(
+        self,
+        state: PersistentBattleState,
+    ) -> bool:
+        player_id=str(state.session.player.participant_id)
+        return player_id in {
+            str(pid) for pid in state.ultimate_exited_participant_ids
+        }
+
     def _settle_persistent_battle_drops(
         self,
         state: PersistentBattleState,
@@ -599,7 +608,10 @@ class SinglePlayerHistoricalRuntime:
         settlement=settle_player_battle_drops(
             state.pending_drop_items_by_player_entry_id[player_id],
             tuple(slot.value for slot in self.domain.persistent.inventory),
-            player_alive=int(state.hp_by_participant_id[player_id])>0,
+            player_alive=(
+                int(state.hp_by_participant_id[player_id])>0
+                and not self._player_ultimate_exited(state)
+            ),
             inventory_slot_count=20,
         )
         staged=dict(self.domain.persistent.inventory)
@@ -771,6 +783,63 @@ class SinglePlayerHistoricalRuntime:
         )
         return result
 
+    def finish_persistent_player_ultimate_exit(
+        self,
+        state: PersistentBattleState,
+        *,
+        elder_return_position: MapPosition | None,
+    ) -> BattleReturn:
+        """Settle a player BATTLE_UltimateExtra/BATTLE_Exit terminal.
+
+        Stable BATTLE_AddProfit marks the victim dead before BATTLE_GetProfit.
+        BATTLE_GetExpGold therefore returns immediately, and UltimateExtra
+        removes the player entry before BATTLE_Finish. Pending battle EXP and
+        item profit are consequently not settled on this path.
+
+        elder_return_position is the explicit CHAR_getElderPosition result:
+        a position means lookup succeeded; None means lookup failed and the
+        player remains at the battle-origin world position.
+        """
+        if state.phase != FINISHED or state.result is None:
+            raise ValueError(
+                "player ultimate-exit settlement requires terminal state"
+            )
+        if not self._player_ultimate_exited(state):
+            raise ValueError(
+                "player ultimate-exit settlement requires an ultimate-exited player"
+            )
+        if (
+            elder_return_position is not None
+            and not isinstance(elder_return_position,MapPosition)
+        ):
+            raise TypeError(
+                "elder_return_position must be MapPosition or null"
+            )
+
+        player_updates,pet_updates,pet_growth_updates=(
+            self._battle_exit_projection(state)
+        )
+        result=apply_battle_outcome(
+            self.domain,
+            state.session,
+            BattleOutcome(
+                result=state.result,
+                player_updates=player_updates,
+                pet_updates=pet_updates,
+                pet_growth_updates=pet_growth_updates,
+            ),
+        )
+        self.domain.persistent.dead_pet_count+=int(
+            state.pending_player_dead_pet_count_delta
+        )
+
+        if elder_return_position is not None:
+            self.domain.world.player_position=elder_return_position
+            result=replace(
+                result,
+                world_position=elder_return_position,
+            )
+        return result
     def _require_profit_settleable_terminal(
         self,
         state: PersistentBattleState,
@@ -780,6 +849,11 @@ class SinglePlayerHistoricalRuntime:
         if state.result == PLAYER_ESCAPE:
             raise ValueError(
                 "escaped battle must use the dedicated escape/recovery settlement seam"
+            )
+        if self._player_ultimate_exited(state):
+            raise ValueError(
+                "player ultimate exit must use the dedicated "
+                "ultimate-exit settlement seam"
             )
 
     def finish_persistent_battle(
