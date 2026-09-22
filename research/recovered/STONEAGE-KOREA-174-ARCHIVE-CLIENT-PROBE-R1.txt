@@ -1,0 +1,21 @@
+StoneAge Korea Netmarble 1.74 archive client probe — R1
+SCOPE|metadata-and-link-targets-only|no-client-binary-download
+YEARS|from=2003|to=2004
+REQUEST_POLICY|request_timeout=12|archive_timeout=15|root_snapshot_limit=3|attempts=1
+COUNT|indexed_urls|0
+COUNT|root_snapshots_probed|0
+COUNT|interesting_links|0
+COUNT|download_links|0
+ERROR|brand|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=stoneage.netmarble.net%2F%2A&from=2003&to=2004&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: HTTP Error 503: Service Unavailable
+ERROR|brand-root|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fstoneage.netmarble.net%2F&from=2003&to=2004&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: <urlopen error timed out>
+ERROR|brand-root-www|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.stoneage.netmarble.net%2F&from=2003&to=2004&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: <urlopen error timed out>
+ERROR|brand-www|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=www.stoneage.netmarble.net%2F%2A&from=2003&to=2004&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: <urlopen error timed out>
+ERROR|game3|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=game3.netmarble.net%2Fstoneage%2F%2A&from=2003&to=2004&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: The read operation timed out
+ERROR|game3-cp-site|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=game3.netmarble.net%2Fcp_site%2Fstoneage%2F%2A&from=2003&to=2004&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: HTTP Error 503: Service Unavailable
+ERROR|game3-cp-site-root|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame3.netmarble.net%2Fcp_site%2Fstoneage%2F&from=2003&to=2004&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: <urlopen error timed out>
+ERROR|game3-cp-site-root-index|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame3.netmarble.net%2Fcp_site%2Fstoneage%2Findex.asp&from=2003&to=2004&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: <urlopen error timed out>
+ERROR|game3-root|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame3.netmarble.net%2Fstoneage%2F&from=2003&to=2004&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: <urlopen error timed out>
+ERROR|game3-root-www|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.game3.netmarble.net%2Fstoneage%2F&from=2003&to=2004&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: <urlopen error timed out>
+ERROR|game3-www|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=www.game3.netmarble.net%2Fstoneage%2F%2A&from=2003&to=2004&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: HTTP Error 503: Service Unavailable
+ERROR|game3-www-cp-site|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=www.game3.netmarble.net%2Fcp_site%2Fstoneage%2F%2A&from=2003&to=2004&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: HTTP Error 503: Service Unavailable
+COUNT|errors|12
