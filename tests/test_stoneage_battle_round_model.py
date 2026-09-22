@@ -1927,7 +1927,7 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertTrue(result.ride_pet_runtime.petfall)
         self.assertEqual(attack.ride_pet_fell_rider_id,"player")
 
-    def test_active_ride_still_rejects_unclosed_counter_interaction(self):
+    def test_active_ride_allows_counter_probe_without_eligible_defender(self):
         player=actor("player","player","player",quick=100)
         enemy=actor("enemy","enemy","enemy",quick=50)
         runtime=RidePetRuntime(
@@ -1942,22 +1942,24 @@ class BattleRoundModelTests(unittest.TestCase):
             },
             {"player":0,"enemy":0},
         )
-        with self.assertRaisesRegex(ValueError,"counter execution"):
-            resolve_ordinary_round(
-                prepared,
-                slots={"player":0,"enemy":10},
-                profiles={"player":profile(),"enemy":profile()},
-                attack_rolls={
-                    "player":OrdinaryAttackRolls(
-                        dodge_roll_1_10000=10000,
-                        critical_roll_1_10000=10000,
-                        damage_roll=0,
-                    )
-                },
-                counter_rolls_by_attack_id={},
-                ride_pet_runtime=runtime,
-                defense_profile="newpower_70pct",
-            )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            counter_rolls_by_attack_id={},
+            ride_pet_runtime=runtime,
+            defense_profile="newpower_70pct",
+        )
+        probe=[event for event in result.events if event.is_counter][0]
+        self.assertEqual(probe.result,"counter_ineligible_command")
+        self.assertEqual(result.ride_pet_runtime,runtime)
 
     def test_ride_absorb_heals_rider_and_pet_with_immediate_split(self):
         player=replace(
@@ -2813,7 +2815,12 @@ class BattleRoundModelTests(unittest.TestCase):
                     CounterAttemptRolls(
                         counter_check_roll_1_10000=10000,
                     ),
-                )
+                ),
+                "enemy":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=10000,
+                    ),
+                ),
             },
             ride_pet_runtime=RidePetRuntime(
                 rider_id="rider",
@@ -2895,7 +2902,12 @@ class BattleRoundModelTests(unittest.TestCase):
                     CounterAttemptRolls(
                         counter_check_roll_1_10000=10000,
                     ),
-                )
+                ),
+                "enemy":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=10000,
+                    ),
+                ),
             },
             ride_pet_runtime=RidePetRuntime(
                 rider_id="rider",
