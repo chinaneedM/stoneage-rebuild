@@ -7,6 +7,7 @@ on:
       - tools/stoneage_battle_core_model.py
       - tools/stoneage_battle_damage_react_model.py
       - tools/stoneage_battle_guardian_model.py
+      - tools/stoneage_battle_ride_damage_model.py
       - tools/stoneage_petskill_round_bridge.py
       - tools/stoneage_battle_round_model.py
       - tools/stoneage_battle_state_model.py
@@ -15,6 +16,7 @@ on:
       - tests/test_stoneage_battle_core_model.py
       - tests/test_stoneage_battle_damage_react_model.py
       - tests/test_stoneage_battle_guardian_model.py
+      - tests/test_stoneage_battle_ride_damage_model.py
       - tests/test_stoneage_petskill_round_bridge.py
       - tests/test_stoneage_battle_status_model.py
       - tests/test_stoneage_battle_round_model.py
@@ -28,4 +30,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -m unittest tests.test_stoneage_battle_core_model tests.test_stoneage_battle_damage_react_model tests.test_stoneage_battle_guardian_model tests.test_stoneage_petskill_round_bridge tests.test_stoneage_battle_status_model tests.test_stoneage_battle_round_model tests.test_stoneage_battle_state_model tests.test_stoneage_combat_profile_bridge -v
+      - run: python3 -m unittest tests.test_stoneage_battle_core_model tests.test_stoneage_battle_damage_react_model tests.test_stoneage_battle_guardian_model tests.test_stoneage_battle_ride_damage_model tests.test_stoneage_petskill_round_bridge tests.test_stoneage_battle_status_model tests.test_stoneage_battle_round_model tests.test_stoneage_battle_state_model tests.test_stoneage_combat_profile_bridge -v
