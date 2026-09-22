@@ -159,6 +159,12 @@ def main() -> None:
         (f"official-www:{pattern}","www.stoneage.to/"+pattern)
         for pattern in official_patterns
     ] + [
+        # Later preserved community references identify Hangame's StoneAge
+        # publishing path as /publish/sa/main.asp. Search that exact subtree
+        # because the URL itself does not contain the token "stoneage".
+        (f"hangame-sa:{pattern}","www.hangame.co.jp/publish/sa/"+pattern)
+        for pattern in official_patterns
+    ] + [
         ("hangame-bare:stoneage","hangame.co.jp/*stoneage*"),
         ("hangame-www:stoneage","www.hangame.co.jp/*stoneage*"),
     ]
@@ -167,6 +173,8 @@ def main() -> None:
         ("official-root-www","http://www.stoneage.to/"),
         ("official-root-bare-https","https://stoneage.to/"),
         ("official-root-www-https","https://www.stoneage.to/"),
+        ("hangame-sa-main","http://www.hangame.co.jp/publish/sa/main.asp"),
+        ("hangame-sa-root","http://www.hangame.co.jp/publish/sa/"),
     ]
 
     print("StoneAge Japan 1.74a public archive client probe — R1")
