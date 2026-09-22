@@ -1515,6 +1515,21 @@ Supplemental source ledgers:
   - `17eae020746968f18cc8aa5cdd2839f9b7346fca` — close Combo + DamageReact ultimate coupling exactly as pinned: discarded immediate returns retain accumulator side effects, final `DamageSub2` uses deferred damage, and stale Reflect can misroute the entry ultimate flag; battle-core **35723491402**, gameplay **35723491531**, pet-skill **35723491375** success.
   - `ecdfcbb9404cc1593b0299fa50c47f720760aec0` / `80aad145d0a2945791c7480043bec71e4f137ca8` — close Counter + ride-pet through the source-shared `BATTLE_DamageSub` path, including 75%-scaled raw damage, rider/pet split, immediate unmount/PETFALL and later same-chain no-share behavior; battle-core **35724103327** and gameplay **35724103367** success.
 
+## Korean 1.74 archive-recovery evidence boundary — 2026-09-22
+
+- The Netmarble 2003 launch-version target remains historically valid: same-period evidence names the 2003-07-28 service version as `1.74`.
+- The bounded dual-index/root probe now distinguishes requested dates from the actual capture dates returned by Wayback Availability. Its corrected R2 result is **`PARTIAL_NO_HITS`** for the target period:
+  - indexed URLs in the 2003–2004 bounded query: **0**;
+  - launch-window root snapshots (2003-07 through 2003-09): **0**;
+  - all 2003–2004 root snapshots: **0**;
+  - early interesting links: **0**;
+  - later candidate root snapshots: **6**;
+  - later candidate links: **11**.
+- The later official Netmarble candidate surface includes the 2006 `/cp_site/stoneage/down/down_load.asp` and `down_debugler.asp` routes. These are useful descendant path clues only; they are **not** evidence that the same paths or payloads existed for the 2003 1.74 launch.
+- The former report behavior that allowed a nearest-later Availability capture to produce generic `HITS` has been removed. Only evidence inside the bounded early period can now advance the Korean 1.74 result.
+- Derived report: `research/recovered/STONEAGE-KOREA-174-ARCHIVE-CLIENT-PROBE-R1.txt`.
+- Validation: Korea archive run **35734946655** — success.
+
 ## Japanese 1.74a Hangame launch-install chain — 2026-09-22
 
 - The generic archive scan is now complemented by exact official Hangame launch-window evidence.
@@ -1527,12 +1542,32 @@ Supplemental source ledgers:
 - The later 2004 `HgSA.cab` captures share one Wayback digest, but the project does **not** infer byte identity with an unarchived 2003-12 response merely from the internal member timestamps.
 - The launch-window official download page is now directly recovered: `sadl.asp` snapshot **2003-12-14 05:10:53 UTC** independently replays successfully and references the exact client URL **`http://hangame.gamania.co.jp/stoneage/sa174hg.exe`**. It also contains the secondary relative token `stoneage.exe`.
 - A second deterministic pass over that same archived page retains no page prose but derives a **248MB** client-size token, **2** occurrences of `sa174hg.exe`, **1** occurrence of `stoneage.exe`, and a normalized visible-text SHA-256 `990aec04c1a078ac4255bb4cc9a5eed69fda2cff3329ccfc9ed110e6b9a9f92b`. No explicit version token is present in the page's normalized visible text; the 1.74a version remains independently anchored by the contemporaneous Mado no Mori release metadata.
-- The Japanese 1.74a **payload bytes** remain unrecovered until the exact URL's archive metadata/prefix is verified; installer-name and launch-page size discovery are no longer open.
+- The Japanese 1.74a **payload bytes** remain unrecovered; installer-name and launch-page size discovery are no longer open. The exact-payload recovery surface is now bounded more tightly:
+  - Wayback exact CDX: no recovered row in the current probe; some requests time out;
+  - Wayback Availability: no exact `sa174hg.exe` capture found for the launch/near-launch key dates;
+  - Wayback Memento TimeMap for the exact URL: **0 mementos**;
+  - Arquivo.pt exact target: **0 results**;
+  - Internet Archive metadata/file scan: exact `sa174hg.exe`, exact official URL, `StoneAge + 1.74a`, and `STONE AGE + 248MB` queries all return **0 target items**, with **0 exact-name file matches**;
+  - Common Crawl exact/prefix probe is **INCONCLUSIVE**, not a no-hit result: all 128 requests in that bounded run failed with 503/timeouts.
+- These negative/indeterminate surfaces shift the next recovery step toward historical mirrors, physical carriers and exact-size/name secondary distribution evidence rather than further filename guessing.
 - Source registration: `SRC-JP-2003-HANGAME-174A-INSTALL-CHAIN-01`.
 - Validation:
   - exact-install workflow run **35730448438** — success;
   - focused `sadl.asp` run **35731811512** — success and independently reproduces the launch-client URL;
-  - structured launch-page metadata run **35733850300** — success and derives the 248MB package-size anchor without retaining page prose.
+  - structured launch-page metadata run **35733850300** — success and derives the 248MB package-size anchor without retaining page prose;
+  - exact-payload TimeMap fallback run **35734544741** — success, exact `sa174hg.exe` TimeMap rows = 0;
+  - high-precision Internet Archive metadata run **35734351311** — success, no exact Japan-1.74a target item/file match;
+  - Common Crawl run **35733694437** — workflow success but all 128 index requests failed, therefore evidence status remains INCONCLUSIVE on that backend.
+
+## Japanese 2004 retail-package carrier target — 2026-09-22
+
+- A contemporaneous 4Gamer report dated **2004-05-20** states that the Japanese retail package went on sale that day before the 2004-06-03 formal service launch.
+- The package is explicitly described as containing **two CD-ROMs with the game client**, two 30-day tickets, an installation/game-guide manual and an Upopo dinosaur strap.
+- The same article's retailer link resolves to the exact official path **`http://stoneage.to/package.html`**; the formal-service link resolves to `service.html`.
+- This package is a new high-value **near-descendant physical carrier**. It may provide a complete Japanese client and therefore a controlled diff target against Taiwan v1.0 and the 2003-12 1.74a install chain.
+- Evidence boundary: the May 2004 package must **not** be treated as byte-identical to the December 2003 1.74a client without disc-image comparison.
+- A dedicated bounded recovery workflow now probes the official package page for archive captures, product/JAN/model identifiers, retailer/image paths and other derived carrier metadata without committing archived HTML or proprietary client bytes.
+- Source registration: `SRC-JP-2004-4GAMER-RETAIL-PACKAGE-01`.
 
 ## Immediate next actions
 

@@ -498,6 +498,11 @@ This is the canonical ledger for historical sources. Entries should record prove
   - `1.74` was a real public Korean service-version label, not merely a later private-server convention;
   - exact `1.74` artifacts are now controlled recovery targets.
 
+- Derived recovery-status record:
+  - `research/recovered/STONEAGE-KOREA-174-ARCHIVE-CLIENT-PROBE-R1.txt`;
+  - corrected R2 semantics record **0 launch-window / 0 total 2003–2004 root snapshots** and keep the 2006 Netmarble download routes as later candidate clues only.
+- This bounded archive result does not weaken the contemporaneous evidence that the launch label was `1.74`; it only means the original 2003 client path/bytes remain unrecovered on the tested archive surfaces.
+
 ### SRC-KR-2001-INIUM-174-TO-20-PRESERVED-01
 
 - Title: `봉두 가족이 생기다^^* - 2001년11월14일`
@@ -573,7 +578,32 @@ This is the canonical ledger for historical sources. Entries should record prove
   - `research/recovered/STONEAGE-JAPAN-174A-SADL-PROBE-R1.txt`
 - Archaeology significance:
   - the Japanese 1.74a client search no longer requires installer-name or rough-size guessing: the launch-window official download page has recovered the exact client URL `sa174hg.exe` and a **248MB** displayed size;
-  - the next evidence step is exact archive metadata/prefix validation for that URL plus size-constrained mirror/carrier search, followed by transient byte-level extraction only if a preserved payload is actually available.
+  - bounded exact-payload checks currently find **0 TimeMap mementos**, **0 Arquivo exact results**, **0 Internet Archive exact-target/file-name hits**, while the Common Crawl run is **INCONCLUSIVE** because every request failed with 503/timeouts;
+  - the next evidence step is therefore historical mirror/carrier recovery using the exact filename, URL and 248MB display-size anchors, followed by transient byte-level extraction only if a preserved payload is actually available.
+
+### SRC-JP-2004-4GAMER-RETAIL-PACKAGE-01
+
+- Title: `ほのぼのMMORPG「ストーンエイジ」正式サービス開始日決定`
+- Original date: 2004-05-20
+- Retrieval/verification date: 2026-09-22
+- Language/region: Japanese / Japan
+- Source type: contemporaneous specialist game-industry report
+- URL: https://www.4gamer.net/news/history/2004.05/20040520194557detail.html
+- Confidence: **A**
+- Supports:
+  - Japanese formal service was announced for 2004-06-03;
+  - the retail package began sale on **2004-05-20**;
+  - the package contained **two CD-ROMs carrying the game client**, two 30-day tickets, an installation/game-guide manual and an Upopo dinosaur strap;
+  - the report's retailer link targets the official `http://stoneage.to/package.html` page.
+- Does not support:
+  - package JAN/model code, disc hashes/file trees or matrix identifiers;
+  - byte identity with the December 2003 `1.74a` client;
+  - which exact post-beta patch level was pressed onto either disc.
+- Archaeology significance:
+  - establishes a concrete original physical carrier for the same Japanese revival lineage only five months after the 1.74a beta;
+  - gives the project a disc-recovery route that is independent of the missing `sa174hg.exe` web payload.
+- Dedicated derived probe target:
+  - `research/recovered/STONEAGE-JAPAN-2004-PACKAGE-PROBE-R1.txt` once the bounded workflow produces it.
 
 ### SRC-KR-NETPOWER-CONTENTS-INDEX-01
 
