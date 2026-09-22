@@ -1,7 +1,21 @@
 import unittest
-from tools.stoneage_archive_candidate_file_probe import candidate_files,LOW,HIGH
+from tools.stoneage_archive_candidate_file_probe import (
+    HIGH,
+    LOW,
+    QUERIES,
+    candidate_files,
+)
 
 class ArchiveCandidateFileProbeTests(unittest.TestCase):
+    def test_japan_174a_launch_metadata_queries_are_pinned(self):
+        self.assertIn('"sa174hg.exe"',QUERIES)
+        self.assertIn(
+            '"hangame.gamania.co.jp/stoneage/sa174hg.exe"',
+            QUERIES,
+        )
+        self.assertIn('"StoneAge" AND "1.74a"',QUERIES)
+        self.assertIn('"STONE AGE" AND "248MB"',QUERIES)
+
     def test_exact_name(self):
         rows=candidate_files([{"name":"client/sa_demo.exe","size":"123"}])
         self.assertEqual(len(rows),1)
