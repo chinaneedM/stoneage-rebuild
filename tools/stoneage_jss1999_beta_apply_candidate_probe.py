@@ -106,7 +106,7 @@ def probe(job):
 def main():
     print("StoneAge JSS 1999 beta application candidate Availability probe — R1")
     print("SCOPE|explicit-hypotheses-only|availability-metadata|no-page-body")
-    print("EVIDENCE_BOUNDARY|negative-result-eliminates-tested-candidate-only")
+    print("EVIDENCE_BOUNDARY|negative-result=absence-of-archive-capture-only|does-not-disprove-printed-url")
     print("KNOWN|host=www.dp.gamersdream.ne.jp|tail=PO/sa_apply.html|preceding-character=OPEN")
     print("DATES|"+",".join(KEY_DATES))
 
@@ -133,7 +133,7 @@ def main():
     print(f"COUNT|queries|{len(jobs)}")
     print(f"COUNT|queries_succeeded|{len(rows)}")
     print(f"COUNT|queries_failed|{len(errors)}")
-    print(f"COUNT|1999_exact_candidate_hits|{len(hits)}")
+    print(f"COUNT|1999_candidate_capture_hits|{len(hits)}")
 
     for label,original,date,closest in rows:
         if closest is None:
@@ -164,9 +164,9 @@ def main():
     if hits:
         print("RESOLUTION|CANDIDATE_CAPTURE_FOUND|inspect literal archived original before promotion")
     elif rows and errors:
-        print("RESOLUTION|PARTIAL_NO_CANDIDATE_HIT|only tested candidates remain unconfirmed")
+        print("RESOLUTION|PARTIAL_NO_CANDIDATE_CAPTURE|printed character remains OPEN")
     elif rows:
-        print("RESOLUTION|BOUNDED_NO_CANDIDATE_HIT|tested candidates eliminated for queried dates")
+        print("RESOLUTION|BOUNDED_NO_CANDIDATE_CAPTURE|printed character remains OPEN")
     else:
         print("RESOLUTION|INCONCLUSIVE|all Availability queries failed")
 
