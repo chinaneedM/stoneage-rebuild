@@ -517,6 +517,126 @@ class BattleRoundModelTests(unittest.TestCase):
             0,
         )
 
+    def test_plain_combo_ultimate_is_resolved_on_final_settlement_only(self):
+        e1=actor(
+            "e1","enemy","enemy",
+            hp=100,attack=100,quick=100,
+        )
+        e2=actor(
+            "e2","enemy","enemy",
+            hp=100,attack=100,quick=90,
+        )
+        player=actor(
+            "player","player","player",
+            hp=30,defense=20,quick=10,
+        )
+        prepared=apply_base_combo_rewrite(
+            prepare_battle_round(
+                (e1,e2,player),
+                {
+                    "e1":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+                    "e2":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+                    "player":BattleCommand(BATTLE_COM_WAIT),
+                },
+                {"e1":0,"e2":0,"player":0},
+            ),
+            {"e1":profile(),"e2":profile(),"player":profile()},
+            {"e1":1},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"e1":10,"e2":11},
+            profiles={
+                "player":profile(),"e1":profile(),"e2":profile(),
+            },
+            attack_rolls={},
+            combo_rolls_by_starter_id={
+                "e1":ComboExecutionRolls((
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    ),
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    ),
+                ))
+            },
+            defense_profile="newpower_70pct",
+        )
+        combo=[e for e in result.events if e.is_combo]
+        self.assertEqual(len(combo),2)
+        self.assertEqual(combo[0].ultimate_kind,0)
+        self.assertIsNone(combo[0].ultimate_damage_resolution)
+        self.assertEqual(combo[-1].target_hp_after,0)
+        self.assertEqual(combo[-1].ultimate_kind,2)
+        self.assertIsNotNone(combo[-1].ultimate_damage_resolution)
+
+    def test_plain_combo_enemy_critical_death_uses_enemy_only_extra_roll(self):
+        p1=actor(
+            "p1","player","player",
+            hp=100,attack=80,quick=100,
+        )
+        p2=actor(
+            "p2","player","pet",
+            hp=100,attack=80,quick=90,
+        )
+        enemy=replace(
+            actor(
+                "enemy","enemy","enemy",
+                hp=20,defense=70,quick=10,
+            ),
+            max_hp=100,
+        )
+        prepared=apply_base_combo_rewrite(
+            prepare_battle_round(
+                (p1,p2,enemy),
+                {
+                    "p1":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                    "p2":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                    "enemy":BattleCommand(BATTLE_COM_WAIT),
+                },
+                {"p1":0,"p2":0,"enemy":0},
+            ),
+            {
+                "p1":profile(dex=10000),
+                "p2":profile(dex=10000),
+                "enemy":profile(dex=1),
+            },
+            {"p1":1},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"p1":0,"p2":1,"enemy":10},
+            profiles={
+                "p1":profile(dex=10000),
+                "p2":profile(dex=10000),
+                "enemy":profile(dex=1),
+            },
+            attack_rolls={},
+            combo_rolls_by_starter_id={
+                "p1":ComboExecutionRolls((
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=1,
+                        damage_roll=0,
+                    ),
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=1,
+                        damage_roll=0,
+                        ultimate_roll_1_100=49,
+                    ),
+                ))
+            },
+            defense_profile="newpower_70pct",
+        )
+        combo=[e for e in result.events if e.is_combo]
+        self.assertTrue(combo[-1].critical)
+        self.assertEqual(combo[-1].target_hp_after,0)
+        self.assertEqual(combo[-1].ultimate_kind,1)
+        self.assertTrue(
+            combo[-1].death_ultimate_resolution.critical_roll_consumed
+        )
+
     def test_combo_execution_skips_dodge_and_applies_total_on_last_member(self):
         p1=actor("p1","player","player",attack=60,quick=100)
         p2=actor("p2","player","pet",attack=60,quick=90)

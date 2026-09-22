@@ -1445,9 +1445,21 @@ def _resolve_combo_group(
     field_attr: str,
     field_power: int,
     ride_pet_runtime: RidePetRuntime | None = None,
+    ultimate_overkill_by_participant_id: dict[str,int] | None = None,
+    battle_abio_by_participant_id: Mapping[str,bool] | None = None,
 ) -> tuple[tuple[OrdinaryRoundEvent, ...], RidePetRuntime | None]:
     """Execute the status-free stable combo damage seam."""
     group=tuple(members)
+    if ultimate_overkill_by_participant_id is None:
+        ultimate_overkill_by_participant_id={
+            str(entry.participant.participant_id):0
+            for entry in group
+        }
+        target_pid=str(by_slot[int(target_slot)].participant_id)
+        ultimate_overkill_by_participant_id.setdefault(target_pid,0)
+    battle_abio_by_participant_id=dict(
+        battle_abio_by_participant_id or {}
+    )
     if len(group) < 1:
         raise ValueError("combo execution requires at least one live member")
     member_rolls=tuple(rolls.member_attack_rolls)
@@ -1662,6 +1674,62 @@ def _resolve_combo_group(
     hp_by_slot[int(target_slot)]=after
     hp_by_id[target_id]=after
 
+    last_entry=group[-1]
+    last_roll=member_rolls[-1]
+    last_is_critical=bool(rows[-1][3])
+    settlement_damage_for_ultimate=int(rider_damage)
+    ultimate_damage_resolution=resolve_battle_ultimate_damage(
+        BattleUltimateDamageInputs(
+            damage_for_threshold=settlement_damage_for_ultimate,
+            hp_damage_applied=max(0,int(before)-int(after)),
+            target_hp_before=int(before),
+            target_max_hp=int(target.max_hp),
+            accumulated_overkill_before=int(
+                ultimate_overkill_by_participant_id[target_id]
+            ),
+        )
+    )
+    ultimate_overkill_by_participant_id[target_id]=int(
+        ultimate_damage_resolution.accumulated_overkill_after
+    )
+    ultimate_kind=int(ultimate_damage_resolution.ultimate_kind)
+    death_ultimate_resolution=None
+    if int(before) > 0 and int(after) <= 0:
+        victim_abio=bool(
+            battle_abio_by_participant_id.get(target_id,False)
+        )
+        needs_ultimate_roll=bool(
+            (not victim_abio)
+            and _participant_battle_kind(target) == ENEMY
+            and last_is_critical
+        )
+        if (
+            last_roll.ultimate_roll_1_100 is not None
+            and not needs_ultimate_roll
+        ):
+            raise ValueError(
+                "combo ultimate_roll_1_100 supplied on unused death path"
+            )
+        death_ultimate_resolution=resolve_battle_death_ultimate_override(
+            BattleDeathUltimateInputs(
+                base_ultimate_kind=ultimate_kind,
+                victim_kind=_participant_battle_kind(target),
+                abio=victim_abio,
+                critical=last_is_critical,
+                critical_scope="enemy_only",
+            ),
+            critical_roll_1_100=(
+                last_roll.ultimate_roll_1_100
+                if needs_ultimate_roll
+                else None
+            ),
+        )
+        ultimate_kind=int(death_ultimate_resolution.ultimate_kind)
+    elif last_roll.ultimate_roll_1_100 is not None:
+        raise ValueError(
+            "combo ultimate_roll_1_100 supplied without enemy critical death"
+        )
+
     resolved=[]
     for row_index,(
         entry,
@@ -1695,6 +1763,15 @@ def _resolve_combo_group(
                 ride_hp_resolution=(settlement_hp if is_last else None),
                 ride_pet_fell_rider_id=(
                     ride_pet_fell_rider_id if is_last else None
+                ),
+                ultimate_damage_resolution=(
+                    ultimate_damage_resolution if is_last else None
+                ),
+                death_ultimate_resolution=(
+                    death_ultimate_resolution if is_last else None
+                ),
+                ultimate_kind=(
+                    int(ultimate_kind) if is_last else 0
                 ),
             )
         )
@@ -2706,6 +2783,8 @@ def resolve_ordinary_round(
                 field_attr=field_attr,
                 field_power=field_power,
                 ride_pet_runtime=ride_runtime,
+                ultimate_overkill_by_participant_id=ultimate_overkill,
+                battle_abio_by_participant_id=battle_abio,
             )
             events.extend(combo_events)
             active_ride=bool(
