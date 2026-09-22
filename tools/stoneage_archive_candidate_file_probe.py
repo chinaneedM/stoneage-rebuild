@@ -36,6 +36,9 @@ QUERIES=[
     '"hangame.gamania.co.jp/stoneage"',
     '"StoneAge" AND "1.74a"',
     '"STONE AGE" AND "248MB"',
+    '"4988609011565"',
+    '"WR-04156"',
+    '"item-city.com" AND "product_id=423"',
 ]
 EXACT_NAMES={"sa.exe","sa_demo.exe","sa174hg.exe","stone_demo.exe","onlstoneage.zip","stoneage.zip","stoneagebeta.zip"}
 INTEREST_NAME=re.compile(r"(?i)(?:^|[/\\])(?:sa(?:_demo)?\.exe|sa174hg\.exe|stone_demo\.exe|onlstoneage\.zip|stoneage(?:beta)?\.zip)$")
@@ -84,9 +87,9 @@ def candidate_files(files):
     return out
 
 def main():
-    print("StoneAge Internet Archive candidate-file metadata scan — R2")
+    print("StoneAge Internet Archive candidate-file metadata scan — R3")
     print("SCOPE|item-and-filelist-metadata-only|no-payload-download")
-    print("TRAITS|exact=sa.exe,sa_demo.exe,sa174hg.exe,stone_demo.exe,onlStoneAge.zip,stoneage.zip,stoneagebeta.zip|japan174a=official-url+1.74a+248MB|size_window=180-320MiB")
+    print("TRAITS|exact=sa.exe,sa_demo.exe,sa174hg.exe,stone_demo.exe,onlStoneAge.zip,stoneage.zip,stoneagebeta.zip|japan174a=official-url+1.74a+248MB|japan2004=JAN4988609011565+WR-04156+ItemCity423|size_window=180-320MiB")
 
     docs={}; query_hits={}; errors=[]
     for idx,q in enumerate(QUERIES,1):

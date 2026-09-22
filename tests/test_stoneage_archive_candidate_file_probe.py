@@ -15,6 +15,9 @@ class ArchiveCandidateFileProbeTests(unittest.TestCase):
         )
         self.assertIn('"StoneAge" AND "1.74a"',QUERIES)
         self.assertIn('"STONE AGE" AND "248MB"',QUERIES)
+        self.assertIn('"4988609011565"',QUERIES)
+        self.assertIn('"WR-04156"',QUERIES)
+        self.assertIn('"item-city.com" AND "product_id=423"',QUERIES)
 
     def test_exact_name(self):
         rows=candidate_files([{"name":"client/sa_demo.exe","size":"123"}])
