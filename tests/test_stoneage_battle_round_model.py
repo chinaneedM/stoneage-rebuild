@@ -889,9 +889,11 @@ class BattleRoundModelTests(unittest.TestCase):
         attack=result.events[0]
         self.assertGreater(attack.damage,0)
         self.assertGreater(result.hp_by_participant_id["enemy"],80)
+        # ABSROB does not call DamageWakeUp. The slower defender then reaches
+        # its own StatusSeq in the same round, so sleep 2 decrements to 1.
         self.assertEqual(
             result.base_status_runtime_by_participant_id["enemy"].status.sleep,
-            2,
+            1,
         )
         self.assertEqual(
             result.base_status_runtime_by_participant_id["enemy"].damage_count,
