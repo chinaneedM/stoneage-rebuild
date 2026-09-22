@@ -144,6 +144,15 @@ def main():
         (f"game3-www:{pattern}","www.game3.netmarble.net/stoneage/"+pattern)
         for pattern in targeted
     ] + [
+        # Later preserved Netmarble references use /cp_site/stoneage.
+        # Keep it a separately-labelled candidate subtree; do not infer that
+        # it existed at launch unless the 2003-2004 archive index proves it.
+        (f"game3-cp-site:{pattern}","game3.netmarble.net/cp_site/stoneage/"+pattern)
+        for pattern in targeted
+    ] + [
+        (f"game3-www-cp-site:{pattern}","www.game3.netmarble.net/cp_site/stoneage/"+pattern)
+        for pattern in targeted
+    ] + [
         (f"brand:{pattern}","stoneage.netmarble.net/"+pattern)
         for pattern in targeted
     ] + [
@@ -153,6 +162,8 @@ def main():
     roots=[
         ("game3-root","http://game3.netmarble.net/stoneage/"),
         ("game3-root-www","http://www.game3.netmarble.net/stoneage/"),
+        ("game3-cp-site-root","http://game3.netmarble.net/cp_site/stoneage/"),
+        ("game3-cp-site-root-index","http://game3.netmarble.net/cp_site/stoneage/index.asp"),
         ("brand-root","http://stoneage.netmarble.net/"),
         ("brand-root-www","http://www.stoneage.netmarble.net/"),
     ]
