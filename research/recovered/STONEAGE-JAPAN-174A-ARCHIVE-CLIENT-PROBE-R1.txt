@@ -1,21 +1,30 @@
 StoneAge Japan 1.74a public archive client probe — R1
 SCOPE|metadata-and-link-targets-only|no-client-binary-download
 YEARS|from=2003|to=2005
+INDEX_BACKENDS|wayback,arquivo.pt
 REQUEST_POLICY|request_timeout=12|archive_timeout=15|root_snapshot_limit=3|attempts=1
-COUNT|indexed_urls|0
-COUNT|root_snapshots_probed|0
+COUNT|indexed_urls|3
+URL|wayback|hangame-sa-bare|20040428024327|200|application/octet-stream|24579|UYG45A3V3FPUJZIRQAI6SB22R4HALKOF|http://www.hangame.co.jp:80/publish/sa/HgSA.cab
+URL|wayback|hangame-sa-bare|20031214055553|200|text/html|3072|MNSMATDHUBN4ZROB73PUI7W2RKMYOGQ3|http://www.hangame.co.jp:80/publish/sa/sasetup.asp
+URL|wayback|hangame-sa-bare|20031215095320|200|text/html|3193|BU6JVRFTOJX7U4G5RHNHS54ULJRHGGCR|http://www.hangame.co.jp:80/publish/sa/sasetup2.asp
+COUNT|root_snapshots_probed|3
 COUNT|interesting_links|0
 COUNT|download_links|0
-ERROR|hangame-bare-stoneage|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=hangame.co.jp%2F%2Astoneage%2A&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: The read operation timed out
-ERROR|hangame-sa|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=www.hangame.co.jp%2Fpublish%2Fsa%2F%2A&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: The read operation timed out
-ERROR|hangame-sa-bare|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=hangame.co.jp%2Fpublish%2Fsa%2F%2A&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: The read operation timed out
-ERROR|hangame-sa-main|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.hangame.co.jp%2Fpublish%2Fsa%2Fmain.asp&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: <urlopen error timed out>
+COUNT|wayback_index_queries_succeeded|1
+COUNT|wayback_index_queries_failed|5
+COUNT|arquivo_index_queries_succeeded|6
+COUNT|arquivo_index_queries_failed|0
+ERROR|hangame-sa-main@20040204033924|RuntimeError|request failed: https://web.archive.org/web/20040204033924id_/http://www.hangame.co.jp:80/publish/sa/main.asp: <urlopen error timed out>
+ERROR|hangame-sa-main@20040605005047|RuntimeError|request failed: https://web.archive.org/web/20040605005047id_/http://www.hangame.co.jp:80/publish/sa/main.asp: <urlopen error _ssl.c:983: The handshake operation timed out>
 ERROR|hangame-sa-root|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.hangame.co.jp%2Fpublish%2Fsa%2F&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: <urlopen error timed out>
-ERROR|hangame-www-stoneage|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=www.hangame.co.jp%2F%2Astoneage%2A&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: <urlopen error timed out>
-ERROR|official-bare|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=stoneage.to%2F%2A&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: The read operation timed out
-ERROR|official-root-bare|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fstoneage.to%2F&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: The read operation timed out
-ERROR|official-root-bare-https|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fstoneage.to%2F&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: <urlopen error timed out>
+ERROR|official-root-bare|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fstoneage.to%2F&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: <urlopen error timed out>
+ERROR|official-root-bare-https|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fstoneage.to%2F&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: The read operation timed out
 ERROR|official-root-www|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.stoneage.to%2F&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: <urlopen error timed out>
 ERROR|official-root-www-https|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.stoneage.to%2F&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=500: <urlopen error timed out>
-ERROR|official-www|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=www.stoneage.to%2F%2A&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: The read operation timed out
+ERROR|wayback:hangame-bare-stoneage|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=hangame.co.jp%2F%2Astoneage%2A&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: <urlopen error timed out>
+ERROR|wayback:hangame-sa|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=www.hangame.co.jp%2Fpublish%2Fsa%2F%2A&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: HTTP Error 503: Service Unavailable
+ERROR|wayback:hangame-www-stoneage|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=www.hangame.co.jp%2F%2Astoneage%2A&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: <urlopen error timed out>
+ERROR|wayback:official-bare|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=stoneage.to%2F%2A&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: HTTP Error 503: Service Unavailable
+ERROR|wayback:official-www|RuntimeError|request failed: https://web.archive.org/cdx/search/cdx?url=www.stoneage.to%2F%2A&from=2003&to=2005&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&limit=5000&collapse=urlkey: HTTP Error 503: Service Unavailable
 COUNT|errors|12
+RESULT|HITS|hits=3|index_queries_succeeded=7|index_queries_failed=5
