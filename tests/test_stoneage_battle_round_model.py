@@ -2582,12 +2582,12 @@ class BattleRoundModelTests(unittest.TestCase):
     def test_counter_nonplayer_critical_death_uses_strict_extra_roll(self):
         player=actor(
             "player","player","player",
-            hp=100,attack=80,defense=70,quick=100,
+            hp=100,attack=80,defense=70,quick=50,
         )
         enemy=replace(
             actor(
                 "enemy","enemy","enemy",
-                hp=20,attack=60,defense=70,quick=50,
+                hp=20,attack=60,defense=70,quick=100,
             ),
             max_hp=100,
         )
@@ -2603,8 +2603,8 @@ class BattleRoundModelTests(unittest.TestCase):
             prepared,
             slots={"player":0,"enemy":10},
             profiles={
-                "player":profile(dex=200),
-                "enemy":profile(dex=10000),
+                "player":profile(dex=10000),
+                "enemy":profile(dex=1),
             },
             attack_rolls={
                 "player":OrdinaryAttackRolls(
