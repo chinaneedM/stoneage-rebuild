@@ -1,0 +1,39 @@
+name: Probe Japan 1.74a sadl page
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_japan174a_sadl_probe.py
+      - tests/test_stoneage_japan174a_sadl_probe.py
+      - .github/workflows/probe-stoneage-japan174a-sadl.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-japan174a-sadl
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run sadl probe unit tests
+        run: python3 -m unittest tests.test_stoneage_japan174a_sadl_probe -v
+      - name: Probe official launch download page
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_japan174a_sadl_probe \
+            > research/recovered/STONEAGE-JAPAN-174A-SADL-PROBE-R1.txt
+      - name: Commit derived metadata report only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-JAPAN-174A-SADL-PROBE-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Japan 1.74a sadl page'
+          git pull --rebase origin main
+          git push
