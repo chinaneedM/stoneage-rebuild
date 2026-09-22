@@ -1201,6 +1201,10 @@ class BattleRoundModelTests(unittest.TestCase):
                             damage_roll=0,
                         ),
                     ),
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=10000,
+                        attack_rolls=None,
+                    ),
                 ),
                 "enemy":(
                     CounterAttemptRolls(
@@ -1277,6 +1281,10 @@ class BattleRoundModelTests(unittest.TestCase):
                             critical_roll_1_10000=10000,
                             damage_roll=0,
                         ),
+                    ),
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=10000,
+                        attack_rolls=None,
                     ),
                 ),
             },
