@@ -329,7 +329,13 @@ This is the canonical ledger for historical sources. Entries should record prove
   - `newest.txt` content grammar and checksum algorithm;
   - transport/network implementation at the outer-vs-embedded-resource boundary;
   - version-resource fields and the role of the unusually large **184,320-byte `.rsrc`** section.
-- Derived report: `research/recovered/STONEAGE-JSS-LAUNCHER-ARCHIVE-PROBE-R1.txt`; workflow run **35781291855** — success.
+- Follow-on archive-index boundary:
+  - exact `newest.txt` queries and prefix queries for `update.gamersdream.ne.jp/~stoneage/`, plus the separately labeled source-derived `www.titan.co.jp/~stoneage/` candidate, were tested for 1999–2002;
+  - all 6 queries completed with **0 errors**, **0 saturation** and **0 CDX rows**;
+  - this does not contradict the updater host/path strings recovered from the binary; it only means no matching Wayback CDX capture is currently indexed on those tested paths.
+- Derived reports:
+  - `research/recovered/STONEAGE-JSS-LAUNCHER-ARCHIVE-PROBE-R1.txt`; workflow run **35781291855** — success;
+  - `research/recovered/STONEAGE-JSS-UPDATE-ARCHIVE-PROBE-R1.txt`; workflow run **35781723407** — success after parser-test correction.
 - Repository safety:
   - executable bytes existed only in the CI runner temporary directory; the workflow's no-EXE retention check passed.
 
