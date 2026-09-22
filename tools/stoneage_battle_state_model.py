@@ -907,6 +907,11 @@ def resolve_persistent_ordinary_round(
         prepared,
         profiles,
         combo_start_rolls_1_100,
+        base_status_runtime_by_participant_id=_freeze_mapping({
+            participant_id:
+                state.base_status_runtime_by_participant_id[participant_id]
+            for participant_id in living_ids
+        }),
     )
     current_slots = {
         participant.participant_id: int(state.slots[participant.participant_id])

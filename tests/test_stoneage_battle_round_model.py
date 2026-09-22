@@ -191,6 +191,214 @@ class BattleRoundModelTests(unittest.TestCase):
             (BATTLE_COM_ATTACK,BATTLE_COM_ATTACK,BATTLE_COM_ATTACK),
         )
 
+    def test_combo_formation_uses_pre_tick_can_move_status(self):
+        p1=actor("p1","player","player",quick=100)
+        p2=actor("p2","player","pet",quick=90)
+        p3=actor("p3","player","pet",quick=80)
+        enemy=actor("enemy","enemy","enemy",quick=10)
+        prepared=prepare_battle_round(
+            (p1,p2,p3,enemy),
+            {
+                "p1":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "p2":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "p3":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"p1":0,"p2":0,"p3":0,"enemy":0},
+        )
+        rewritten=apply_base_combo_rewrite(
+            prepared,
+            {
+                "p1":profile(),"p2":profile(),
+                "p3":profile(),"enemy":profile(),
+            },
+            {"p1":1,"p3":100},
+            base_status_runtime_by_participant_id={
+                "p2":BaseBattleStatusRuntime(
+                    status=BaseBattleStatusState(sleep=1),
+                    work_quick=90,
+                )
+            },
+        )
+        self.assertEqual(
+            tuple(
+                entry.command.command1
+                for entry in rewritten.ordered_entries[:3]
+            ),
+            (
+                BATTLE_COM_ATTACK,
+                BATTLE_COM_ATTACK,
+                BATTLE_COM_ATTACK,
+            ),
+        )
+
+    def test_combo_later_member_ticks_early_and_can_survive_expiration(self):
+        p1=actor("p1","player","player",attack=60,quick=100)
+        p2=actor("p2","player","pet",attack=60,quick=90)
+        enemy=actor("enemy","enemy","enemy",hp=300,quick=10)
+        prepared=prepare_battle_round(
+            (p1,p2,enemy),
+            {
+                "p1":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "p2":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"p1":0,"p2":0,"enemy":0},
+        )
+        prepared=apply_base_combo_rewrite(
+            prepared,
+            {"p1":profile(),"p2":profile(),"enemy":profile()},
+            {"p1":1},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"p1":0,"p2":1,"enemy":10},
+            profiles={"p1":profile(),"p2":profile(),"enemy":profile()},
+            attack_rolls={},
+            combo_rolls_by_starter_id={
+                "p1":ComboExecutionRolls((
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    ),
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    ),
+                ))
+            },
+            base_status_runtime_by_participant_id={
+                "p1":BaseBattleStatusRuntime(work_quick=100),
+                "p2":BaseBattleStatusRuntime(
+                    status=BaseBattleStatusState(sleep=1),
+                    work_quick=90,
+                ),
+                "enemy":BaseBattleStatusRuntime(work_quick=10),
+            },
+            defense_profile="newpower_70pct",
+        )
+        p2_ticks=[
+            event for event in result.events
+            if (
+                event.participant_id=="p2"
+                and event.status_tick_resolution is not None
+            )
+        ]
+        combo_events=[event for event in result.events if event.is_combo]
+        self.assertEqual(len(p2_ticks),1)
+        self.assertEqual(len(combo_events),2)
+        self.assertEqual(
+            result.base_status_runtime_by_participant_id["p2"].status.sleep,
+            0,
+        )
+
+    def test_combo_later_member_still_immobilized_is_consumed_but_excluded(self):
+        p1=actor("p1","player","player",attack=60,quick=100)
+        p2=actor("p2","player","pet",attack=60,quick=90)
+        enemy=actor("enemy","enemy","enemy",hp=300,quick=10)
+        prepared=prepare_battle_round(
+            (p1,p2,enemy),
+            {
+                "p1":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "p2":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"p1":0,"p2":0,"enemy":0},
+        )
+        prepared=apply_base_combo_rewrite(
+            prepared,
+            {"p1":profile(),"p2":profile(),"enemy":profile()},
+            {"p1":1},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"p1":0,"p2":1,"enemy":10},
+            profiles={"p1":profile(),"p2":profile(),"enemy":profile()},
+            attack_rolls={},
+            combo_rolls_by_starter_id={
+                "p1":ComboExecutionRolls((
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    ),
+                ))
+            },
+            base_status_runtime_by_participant_id={
+                "p1":BaseBattleStatusRuntime(work_quick=100),
+                "p2":BaseBattleStatusRuntime(
+                    status=BaseBattleStatusState(sleep=2),
+                    work_quick=90,
+                ),
+                "enemy":BaseBattleStatusRuntime(work_quick=10),
+            },
+            defense_profile="newpower_70pct",
+        )
+        combo_events=[event for event in result.events if event.is_combo]
+        p2_ticks=[
+            event for event in result.events
+            if (
+                event.participant_id=="p2"
+                and event.status_tick_resolution is not None
+            )
+        ]
+        self.assertEqual(len(combo_events),1)
+        self.assertEqual(combo_events[0].participant_id,"p1")
+        self.assertEqual(len(p2_ticks),1)
+        self.assertEqual(
+            result.base_status_runtime_by_participant_id["p2"].status.sleep,
+            1,
+        )
+
+    def test_combo_each_positive_member_wakes_target_and_counts_damage(self):
+        p1=actor("p1","player","player",attack=60,quick=100)
+        p2=actor("p2","player","pet",attack=60,quick=90)
+        enemy=actor("enemy","enemy","enemy",hp=300,quick=10)
+        prepared=prepare_battle_round(
+            (p1,p2,enemy),
+            {
+                "p1":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "p2":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"p1":0,"p2":0,"enemy":0},
+        )
+        prepared=apply_base_combo_rewrite(
+            prepared,
+            {"p1":profile(),"p2":profile(),"enemy":profile()},
+            {"p1":1},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"p1":0,"p2":1,"enemy":10},
+            profiles={"p1":profile(),"p2":profile(),"enemy":profile()},
+            attack_rolls={},
+            combo_rolls_by_starter_id={
+                "p1":ComboExecutionRolls((
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    ),
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    ),
+                ))
+            },
+            base_status_runtime_by_participant_id={
+                "p1":BaseBattleStatusRuntime(work_quick=100),
+                "p2":BaseBattleStatusRuntime(work_quick=90),
+                "enemy":BaseBattleStatusRuntime(
+                    status=BaseBattleStatusState(sleep=2),
+                    work_quick=10,
+                    damage_count=4,
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        runtime=result.base_status_runtime_by_participant_id["enemy"]
+        self.assertEqual(runtime.status.sleep,0)
+        self.assertEqual(runtime.damage_count,6)
+
     def test_combo_execution_skips_dodge_and_applies_total_on_last_member(self):
         p1=actor("p1","player","player",attack=60,quick=100)
         p2=actor("p2","player","pet",attack=60,quick=90)

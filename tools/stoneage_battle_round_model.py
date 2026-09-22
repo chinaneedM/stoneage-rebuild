@@ -54,6 +54,7 @@ from tools.stoneage_battle_status_model import (
     BaseStatusTickInputs,
     BaseStatusTickResult,
     BaseStatusTurnRolls,
+    base_status_can_move,
     base_stone_defense_multiplier,
     resolve_base_damage_wakeup,
     resolve_base_physical_on_hit_status_application,
@@ -336,6 +337,9 @@ def apply_base_combo_rewrite(
     prepared: PreparedBattleRound,
     profiles: Mapping[str, "BattleCombatProfile"],
     start_rolls_1_100: Mapping[str, int] | None,
+    base_status_runtime_by_participant_id: Mapping[
+        str,BaseBattleStatusRuntime
+    ] | None = None,
 ) -> PreparedBattleRound:
     """Mirror stable ComboCheck() on the already action-sorted entry list.
 
@@ -349,6 +353,17 @@ def apply_base_combo_rewrite(
         return prepared
 
     entries=list(prepared.ordered_entries)
+    status_runtime={
+        str(participant_id):runtime
+        for participant_id,runtime in (
+            base_status_runtime_by_participant_id or {}
+        ).items()
+    }
+    for participant_id,runtime in status_runtime.items():
+        if not isinstance(runtime,BaseBattleStatusRuntime):
+            raise TypeError(
+                f"base status runtime for combo actor {participant_id} has wrong type"
+            )
     start: int | None=None
     old_target=-3
     old_side: str | None=None
@@ -376,7 +391,14 @@ def apply_base_combo_rewrite(
             raise KeyError(f"missing combat profile for {participant_id}")
         command=entry.command
         side=str(participant.side)
-        movable=int(participant.hp)>0
+        runtime=status_runtime.get(
+            participant_id,
+            BaseBattleStatusRuntime(),
+        )
+        movable=(
+            int(participant.hp)>0
+            and base_status_can_move(runtime.status)
+        )
         throwing=counter_weapon_blocks_counter(
             profiles[participant_id].counter_weapon_type
         )
@@ -1030,6 +1052,7 @@ def _resolve_combo_group(
     hp_by_slot: dict[int, int],
     hp_by_id: dict[str, int],
     profiles: Mapping[str, BattleCombatProfile],
+    status_runtime_by_participant_id: dict[str,BaseBattleStatusRuntime],
     guarding: set[int],
     rolls: ComboExecutionRolls,
     defense_profile: str,
@@ -1038,8 +1061,8 @@ def _resolve_combo_group(
 ) -> tuple[OrdinaryRoundEvent, ...]:
     """Execute the status-free/no-reaction stable combo damage seam."""
     group=tuple(members)
-    if len(group) < 2:
-        raise ValueError("combo execution requires at least two live members")
+    if len(group) < 1:
+        raise ValueError("combo execution requires at least one live member")
     member_rolls=tuple(rolls.member_attack_rolls)
     if len(member_rolls) != len(group):
         raise ValueError(
@@ -1052,6 +1075,7 @@ def _resolve_combo_group(
     if before <= 0:
         raise ValueError("combo target must be alive at execution")
     target_profile=profiles[target_id]
+    target_runtime=status_runtime_by_participant_id[target_id]
     target_guarding=int(target_slot) in guarding
     actor_ids=tuple(
         str(entry.participant.participant_id) for entry in group
@@ -1092,7 +1116,15 @@ def _resolve_combo_group(
 
         base_damage=physical_base_damage(
             actor.attack,
-            _effective_defense_for_round(target,defense_profile),
+            _effective_defense_for_round(
+                target,
+                defense_profile,
+                stone=(
+                    base_stone_defense_multiplier(
+                        target_runtime.status
+                    ) > 1.0
+                ),
+            ),
             int(attack_roll.damage_roll),
         )
         damage=attribute_adjusted_damage(
@@ -1133,6 +1165,17 @@ def _resolve_combo_group(
 
         contribution=max(1,int(damage))
         total_damage+=contribution
+        wake=resolve_base_damage_wakeup(
+            target_runtime.status,
+            damage_count_before=target_runtime.damage_count,
+            damage=contribution,
+        )
+        target_runtime=replace(
+            target_runtime,
+            status=wake.status_after,
+            damage_count=wake.damage_count_after,
+        )
+        status_runtime_by_participant_id[target_id]=target_runtime
         rows.append(
             (
                 entry,
@@ -1521,10 +1564,6 @@ def resolve_ordinary_round(
         ))
         for runtime in status_runtime.values()
     )
-    if has_active_base_status and bool(combo_groups):
-        raise ValueError(
-            "base-status interaction with combo is a separate seam"
-        )
 
     command_by_slot={
         slot_by_id[entry.participant.participant_id]:entry.command
@@ -1933,98 +1972,186 @@ def resolve_ordinary_round(
             )
             continue
 
-        if entry.command.command1 == BATTLE_COM_COMBO:
+        if command.command1 == BATTLE_COM_COMBO:
             group=combo_groups[int(entry.combo_id)]
             current_index=group.index(entry)
-            live_group=tuple(
-                candidate
-                for candidate in group[current_index:]
+            live_members=[entry]
+
+            # Source COMBO execution advances over all later members now. Each
+            # later member runs BATTLE_StatusSeq at this early point and is
+            # included iff it is alive and can move after that tick. Its COM1
+            # rewrite (including confusion) does not cancel membership.
+            for candidate in group[current_index+1:]:
+                candidate_id=str(candidate.participant.participant_id)
+                candidate_slot=int(slot_by_id[candidate_id])
                 if (
-                    candidate.command.input_complete
-                    and int(
-                        hp_by_slot[
-                            slot_by_id[candidate.participant.participant_id]
-                        ]
-                    ) > 0
-                    and slot_by_id[candidate.participant.participant_id]
-                    not in exited_slots
-                )
-            )
-            if len(live_group) >= 2:
-                starter_id=str(participant_id)
-                if starter_id not in normalized_combo_rolls:
-                    raise KeyError(
-                        f"missing combo execution rolls for starter {starter_id}"
+                    not candidate.command.input_complete
+                    or candidate_slot in exited_slots
+                    or int(hp_by_slot.get(candidate_slot,0)) <= 0
+                ):
+                    continue
+
+                candidate_runtime=status_runtime[candidate_id]
+                candidate_status=candidate_runtime.status
+                if any(
+                    int(getattr(candidate_status,name))>0
+                    for name in (
+                        "poison","paralysis","sleep",
+                        "stone","drunk","confusion",
                     )
-                combo_rolls=normalized_combo_rolls[starter_id]
-                original_target=int(entry.command.command2)
-                target=original_target
-                retargeted=False
-                target_alive=(
-                    target in by_slot
-                    and target not in exited_slots
-                    and int(hp_by_slot.get(target,0)) > 0
-                )
-                if target_alive and _slot_side(target)==_slot_side(slot):
-                    raise ValueError(
-                        "same-side combo attacks are outside the status-free seam"
+                ):
+                    candidate_rolls=status_rolls.get(
+                        candidate_id,
+                        BaseStatusTurnRolls(),
                     )
-                if not target_alive:
-                    target=_retarget_slot(
-                        slot,
-                        by_slot,
-                        hp_by_slot,
-                        combo_rolls.retarget_roll,
-                        excluded_slots=exited_slots,
-                    )
-                    retargeted=True
-                if target is None:
-                    events.append(
-                        OrdinaryRoundEvent(
-                            str(participant_id),
-                            int(slot),
-                            BATTLE_COM_COMBO,
-                            int(entry.action_value),
-                            "combo_no_target",
-                            original_target_slot=original_target,
-                            retargeted=True,
-                            is_combo=True,
-                            combo_id=int(entry.combo_id),
+                    valid_target_slots=tuple(
+                        other_slot
+                        for other_slot in sorted(by_slot)
+                        if (
+                            other_slot not in exited_slots
+                            and int(hp_by_slot.get(other_slot,0)) > 0
                         )
                     )
+                    tick=resolve_base_status_tick(
+                        BaseStatusTickInputs(
+                            hp=int(hp_by_slot[candidate_slot]),
+                            status=candidate_status,
+                            poison_stat_sum=candidate_runtime.poison_stat_sum,
+                            actor_slot=candidate_slot,
+                            valid_target_slots=valid_target_slots,
+                            confusion_action_roll_1_100=(
+                                candidate_rolls.confusion_action_roll_1_100
+                            ),
+                            confusion_side_roll_0_1=(
+                                candidate_rolls.confusion_side_roll_0_1
+                            ),
+                            confusion_pos_roll_0_9=(
+                                candidate_rolls.confusion_pos_roll_0_9
+                            ),
+                            work_quick=candidate_runtime.work_quick,
+                            ride_work_quick=candidate_runtime.ride_work_quick,
+                        )
+                    )
+                    hp_by_slot[candidate_slot]=int(tick.hp_after)
+                    hp_by_id[candidate_id]=int(tick.hp_after)
+                    candidate_runtime=replace(
+                        candidate_runtime,
+                        status=tick.status_after,
+                        work_quick=tick.work_quick_after,
+                    )
+                    status_runtime[candidate_id]=candidate_runtime
+                    events.append(
+                        OrdinaryRoundEvent(
+                            candidate_id,
+                            candidate_slot,
+                            int(candidate.command.command1),
+                            int(candidate.action_value),
+                            "status_tick",
+                            original_target_slot=candidate_slot,
+                            resolved_target_slot=candidate_slot,
+                            damage=int(tick.poison_damage),
+                            target_hp_before=int(tick.hp_before),
+                            target_hp_after=int(tick.hp_after),
+                            status_tick_resolution=tick,
+                        )
+                    )
+                    if tick.command_override=="none":
+                        command_by_slot[candidate_slot]=BattleCommand(
+                            BATTLE_COM_NONE,
+                            command2=candidate.command.command2,
+                            command3=candidate.command.command3,
+                            input_complete=candidate.command.input_complete,
+                        )
+                        guarding.discard(candidate_slot)
+                    elif tick.command_override=="attack":
+                        command_by_slot[candidate_slot]=BattleCommand(
+                            BATTLE_COM_ATTACK,
+                            command2=(
+                                -1
+                                if tick.target_override is None
+                                else int(tick.target_override)
+                            ),
+                            command3=candidate.command.command3,
+                            input_complete=candidate.command.input_complete,
+                        )
+                        guarding.discard(candidate_slot)
+
+                    if not tick.can_move_after_tick:
+                        continue
+
+                if int(hp_by_slot.get(candidate_slot,0)) <= 0:
                     continue
-                for candidate in live_group:
-                    if candidate.participant.side != participant.side:
-                        raise ValueError("combo group crossed battle sides")
-                    if int(candidate.command.command2) != original_target:
-                        raise ValueError("combo group target drift")
-                events.extend(
-                    _resolve_combo_group(
-                        combo_id=int(entry.combo_id),
-                        members=live_group,
+                live_members.append(candidate)
+
+            live_group=tuple(live_members)
+            starter_id=str(participant_id)
+            if starter_id not in normalized_combo_rolls:
+                raise KeyError(
+                    f"missing combo execution rolls for starter {starter_id}"
+                )
+            combo_rolls=normalized_combo_rolls[starter_id]
+            original_target=int(entry.command.command2)
+            target=original_target
+            retargeted=False
+            target_alive=(
+                target in by_slot
+                and target not in exited_slots
+                and int(hp_by_slot.get(target,0)) > 0
+            )
+            if target_alive and _slot_side(target)==_slot_side(slot):
+                raise ValueError(
+                    "same-side combo attacks require a separate provenance seam"
+                )
+            if not target_alive:
+                target=_retarget_slot(
+                    slot,
+                    by_slot,
+                    hp_by_slot,
+                    combo_rolls.retarget_roll,
+                    excluded_slots=exited_slots,
+                )
+                retargeted=True
+            if target is None:
+                events.append(
+                    OrdinaryRoundEvent(
+                        str(participant_id),
+                        int(slot),
+                        BATTLE_COM_COMBO,
+                        int(entry.action_value),
+                        "combo_no_target",
                         original_target_slot=original_target,
-                        target_slot=int(target),
-                        retargeted=retargeted,
-                        by_slot=by_slot,
-                        hp_by_slot=hp_by_slot,
-                        hp_by_id=hp_by_id,
-                        profiles=profiles,
-                        guarding=guarding,
-                        rolls=combo_rolls,
-                        defense_profile=defense_profile,
-                        field_attr=field_attr,
-                        field_power=field_power,
+                        retargeted=True,
+                        is_combo=True,
+                        combo_id=int(entry.combo_id),
                     )
                 )
-                processed_combo_ids.add(int(entry.combo_id))
                 continue
-
-            command_by_slot[slot]=BattleCommand(
-                BATTLE_COM_ATTACK,
-                command2=entry.command.command2,
-                command3=entry.command.command3,
-                input_complete=entry.command.input_complete,
+            for candidate in live_group:
+                if candidate.participant.side != participant.side:
+                    raise ValueError("combo group crossed battle sides")
+                if int(candidate.command.command2) != original_target:
+                    raise ValueError("combo group target drift")
+            events.extend(
+                _resolve_combo_group(
+                    combo_id=int(entry.combo_id),
+                    members=live_group,
+                    original_target_slot=original_target,
+                    target_slot=int(target),
+                    retargeted=retargeted,
+                    by_slot=by_slot,
+                    hp_by_slot=hp_by_slot,
+                    hp_by_id=hp_by_id,
+                    profiles=profiles,
+                    status_runtime_by_participant_id=status_runtime,
+                    guarding=guarding,
+                    rolls=combo_rolls,
+                    defense_profile=defense_profile,
+                    field_attr=field_attr,
+                    field_power=field_power,
+                )
             )
+            processed_combo_ids.add(int(entry.combo_id))
+            continue
 
         rolls = attack_rolls.get(participant_id)
         if rolls is None:
