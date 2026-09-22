@@ -520,6 +520,85 @@ class GroupEncounterBattleRuntimeTests(unittest.TestCase):
         self.assertEqual(pet.state["hp"],60)
         self.assertEqual(pet.growth.variable_ai,0)
 
+    def test_terminal_ride_pet_hp_settles_from_nonentry_runtime(self):
+        self.domain.persistent.pets[PetSlot(2)] = allied_pet()
+        request = self.domain.request_encounter_group(group_roll=0)
+        spawned = self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle = self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+            ride_pet_slot=2,
+        )
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player":0,enemy_id:10},
+        )
+        terminal=replace(
+            state,
+            hp_by_participant_id=MappingProxyType({
+                **dict(state.hp_by_participant_id),
+                enemy_id:0,
+            }),
+            ride_pet_runtime=replace(state.ride_pet_runtime,hp=17),
+            phase=FINISHED,
+            result=PLAYER_WIN,
+            winning_side=0,
+        )
+        self.runtime.finish_persistent_battle(terminal)
+        self.assertEqual(
+            self.domain.persistent.pets[PetSlot(2)].state["hp"],
+            17,
+        )
+
+    def test_terminal_fallen_ride_pet_recovers_to_one_hp(self):
+        self.domain.persistent.pets[PetSlot(2)] = allied_pet()
+        request = self.domain.request_encounter_group(group_roll=0)
+        spawned = self.runtime.spawn_group_enemies(
+            request,
+            templates=self.templates,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(self.birth_rolls()[0],),
+        )
+        battle = self.runtime.start_group_battle(
+            request,
+            spawned_enemies=spawned,
+            ride_pet_slot=2,
+        )
+        enemy_id=battle.enemies[0].participant_id
+        state=self.runtime.start_persistent_battle_state(
+            battle,
+            slots={"player":0,enemy_id:10},
+        )
+        terminal=replace(
+            state,
+            hp_by_participant_id=MappingProxyType({
+                **dict(state.hp_by_participant_id),
+                enemy_id:0,
+            }),
+            ride_pet_runtime=replace(
+                state.ride_pet_runtime,
+                hp=0,
+                mounted=False,
+                petfall=True,
+            ),
+            phase=FINISHED,
+            result=PLAYER_WIN,
+            winning_side=0,
+        )
+        self.runtime.finish_persistent_battle(terminal)
+        self.assertEqual(
+            self.domain.persistent.pets[PetSlot(2)].state["hp"],
+            1,
+        )
+
     def test_terminal_persistent_battle_settlement_updates_only_direct_hp(self):
         self.domain.persistent.pets[PetSlot(2)] = allied_pet()
         request = self.domain.request_encounter_group(group_roll=0)

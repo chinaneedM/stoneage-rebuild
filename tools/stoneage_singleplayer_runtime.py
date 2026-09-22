@@ -668,6 +668,22 @@ class SinglePlayerHistoricalRuntime:
                 int(state.hp_by_participant_id[participant_id]),
             )
 
+        ride_pet_terminal_hp_by_slot: dict[int,int]={}
+        ride=session.ride_pet
+        if ride is not None:
+            if ride.source_pet_slot is None:
+                raise ValueError("ride pet lacks source pet slot at battle exit")
+            if state.ride_pet_runtime is None:
+                raise ValueError("terminal battle state is missing ride-pet runtime")
+            ride_slot=int(ride.source_pet_slot)
+            if ride_slot in active_pet_by_slot:
+                raise ValueError(
+                    "ride pet cannot also be an active allied battle entry"
+                )
+            ride_pet_terminal_hp_by_slot[ride_slot]=int(
+                state.ride_pet_runtime.hp
+            )
+
         pet_updates: dict[int,dict[str,int]]={}
         pet_growth_updates: dict[int,PetGrowthState]={}
         for pet_slot,pet in self.domain.persistent.pets.items():
@@ -675,10 +691,19 @@ class SinglePlayerHistoricalRuntime:
             if "hp" not in pet.state:
                 raise ValueError(f"persistent pet slot {slot} lacks HP")
             active=active_pet_by_slot.get(slot)
+            ride_terminal_hp=ride_pet_terminal_hp_by_slot.get(slot)
+            if active is not None and ride_terminal_hp is not None:
+                raise ValueError(
+                    "persistent pet slot cannot be active and ride-only"
+                )
             terminal_hp=(
-                int(pet.state["hp"])
-                if active is None
-                else int(active[1])
+                int(active[1])
+                if active is not None
+                else (
+                    int(ride_terminal_hp)
+                    if ride_terminal_hp is not None
+                    else int(pet.state["hp"])
+                )
             )
             pet_updates[slot]={"hp":max(1,terminal_hp)}
             if active is None:
