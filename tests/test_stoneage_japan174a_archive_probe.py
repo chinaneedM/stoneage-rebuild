@@ -2,6 +2,8 @@ import unittest
 
 from tools.stoneage_japan174a_archive_probe import (
     ARCHIVE_TIMEOUT_SECONDS,
+    HANGAME_GAMANIA_STONEAGE_PATTERN,
+    HANGAME_GAMANIA_STONEAGE_ROOT,
     DOWNLOAD_EXT,
     INTEREST,
     REQUEST_TIMEOUT_SECONDS,
@@ -56,6 +58,16 @@ class Japan174aArchiveProbeTests(unittest.TestCase):
         out=safe(value)
         self.assertNotIn("\x00",out)
         self.assertLessEqual(len(out),500)
+
+    def test_hangame_gamania_launch_directory_is_pinned(self):
+        self.assertEqual(
+            HANGAME_GAMANIA_STONEAGE_PATTERN,
+            "hangame.gamania.co.jp/stoneage/*",
+        )
+        self.assertEqual(
+            HANGAME_GAMANIA_STONEAGE_ROOT,
+            "http://hangame.gamania.co.jp/stoneage/",
+        )
 
     def test_archive_request_budget_is_bounded(self):
         self.assertLessEqual(REQUEST_TIMEOUT_SECONDS,15)

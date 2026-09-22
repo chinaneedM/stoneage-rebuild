@@ -23,6 +23,8 @@ WAYBACK = "https://web.archive.org/web/{timestamp}id_/{url}"
 REQUEST_TIMEOUT_SECONDS = 12
 ARCHIVE_TIMEOUT_SECONDS = 15
 ROOT_SNAPSHOT_LIMIT = 3
+HANGAME_GAMANIA_STONEAGE_PATTERN = "hangame.gamania.co.jp/stoneage/*"
+HANGAME_GAMANIA_STONEAGE_ROOT = "http://hangame.gamania.co.jp/stoneage/"
 ROOT_KEY_DATES = ("20031212","20031216","20031217","20040115")
 
 DOWNLOAD_EXT = re.compile(
@@ -243,6 +245,7 @@ def main() -> None:
         ("official-www","www.stoneage.to/*"),
         ("hangame-sa","www.hangame.co.jp/publish/sa/*"),
         ("hangame-sa-bare","hangame.co.jp/publish/sa/*"),
+        ("hangame-gamania-stoneage",HANGAME_GAMANIA_STONEAGE_PATTERN),
         ("hangame-bare-stoneage","hangame.co.jp/*stoneage*"),
         ("hangame-www-stoneage","www.hangame.co.jp/*stoneage*"),
     ]
@@ -253,6 +256,7 @@ def main() -> None:
         ("official-root-www-https","https://www.stoneage.to/"),
         ("hangame-sa-main","http://www.hangame.co.jp/publish/sa/main.asp"),
         ("hangame-sa-root","http://www.hangame.co.jp/publish/sa/"),
+        ("hangame-gamania-root",HANGAME_GAMANIA_STONEAGE_ROOT),
     ]
 
     print("StoneAge Japan 1.74a public archive client probe — R1")
