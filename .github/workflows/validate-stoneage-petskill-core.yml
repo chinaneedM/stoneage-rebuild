@@ -8,6 +8,7 @@ on:
     paths:
       - .github/workflows/validate-stoneage-petskill-core.yml
       - tools/stoneage_petskill_core_model.py
+      - tools/stoneage_battle_status_model.py
       - tests/test_stoneage_petskill_core_model.py
       - research/mechanics/STONEAGE-PETSKILL-CORE-R1.md
 permissions:

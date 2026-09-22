@@ -142,6 +142,48 @@ def apply_base_status_counter(
     return replace(current,**{status:turn})
 
 
+def base_status_attack_probability_value(
+    inputs: BaseStatusAttackInputs,
+) -> int:
+    """Return the source probability value before the strict RAND(1,100) check."""
+    if inputs.status == STATUS_PARALYSIS:
+        return 20-int(inputs.defender_resistance)
+
+    stat_sum=(
+        int(inputs.defender_vital)
+        + int(inputs.defender_str)
+        + int(inputs.defender_tough)
+        + int(inputs.defender_dex)
+    )
+    if stat_sum <= 0:
+        raise ValueError(
+            "general base status check requires positive defender stat sum"
+        )
+    f_vital_p=(
+        (float(inputs.defender_vital)/float(stat_sum))
+        / 0.25
+        * 10.0
+    )
+    if inputs.pvp:
+        level=0
+    else:
+        level=int(
+            (int(inputs.attacker_level)-int(inputs.defender_level))
+            * float(inputs.level_scale)
+        )
+    level=max(-int(inputs.level_range),min(int(inputs.level_range),level))
+    per=int(
+        int(inputs.per_offset)
+        + level
+        + int(inputs.attacker_fixed_luck)
+        - int(inputs.defender_resistance)
+        - f_vital_p
+    )
+    if per > 80:
+        per=80
+    return int(per)
+
+
 def resolve_base_status_attack_check(
     inputs: BaseStatusAttackInputs,
     current_status: BaseBattleStatusState,
@@ -162,41 +204,7 @@ def resolve_base_status_attack_check(
             success=False,
         )
 
-    if inputs.status == STATUS_PARALYSIS:
-        per=20-int(inputs.defender_resistance)
-    else:
-        stat_sum=(
-            int(inputs.defender_vital)
-            + int(inputs.defender_str)
-            + int(inputs.defender_tough)
-            + int(inputs.defender_dex)
-        )
-        if stat_sum <= 0:
-            raise ValueError(
-                "general base status check requires positive defender stat sum"
-            )
-        f_vital_p=(
-            (float(inputs.defender_vital)/float(stat_sum))
-            / 0.25
-            * 10.0
-        )
-        if inputs.pvp:
-            level=0
-        else:
-            level=int(
-                (int(inputs.attacker_level)-int(inputs.defender_level))
-                * float(inputs.level_scale)
-            )
-        level=max(-int(inputs.level_range),min(int(inputs.level_range),level))
-        per=int(
-            int(inputs.per_offset)
-            + level
-            + int(inputs.attacker_fixed_luck)
-            - int(inputs.defender_resistance)
-            - f_vital_p
-        )
-        if per > 80:
-            per=80
+    per=base_status_attack_probability_value(inputs)
 
     if roll_1_100 is None:
         raise ValueError("eligible base status check requires RAND(1,100)")

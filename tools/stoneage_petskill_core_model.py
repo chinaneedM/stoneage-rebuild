@@ -9,6 +9,12 @@ the four recovered callbacks absent from all three pinned source lineages.
 
 import re
 
+from tools.stoneage_battle_status_model import (
+    BASE_STATUS_NAME_BY_INDEX,
+    BaseStatusAttackInputs,
+    base_status_attack_probability_value,
+)
+
 
 def _c_number(text, default=0, *, float_ok=False):
     pattern = r"\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+))" if float_ok else r"\s*([+-]?\d+)"
@@ -339,37 +345,32 @@ def status_attack_probability(
     defender_level,
     pvp,
     status_specific_resist=0,
-    per_offset=0,
+    per_offset=30,
     level_range=40,
     level_multiplier=2.0,
 ):
-    """Stable core of BATTLE_StatusAttackCheck used after damaging status attacks."""
-    status = int(status)
-    if status <= 0:
+    """Delegate pet status-attack probability to the common status core."""
+    status=int(status)
+    status_name=BASE_STATUS_NAME_BY_INDEX.get(status)
+    if status_name is None:
         return 0
-    if status == 2:  # paralysis in fixed table
-        return 20 - int(status_specific_resist)
-
-    total = (
-        int(defender_vital)
-        + int(defender_str)
-        + int(defender_tough)
-        + int(defender_dex)
+    return base_status_attack_probability_value(
+        BaseStatusAttackInputs(
+            status=status_name,
+            attacker_level=attacker_level,
+            defender_level=defender_level,
+            pvp=pvp,
+            attacker_fixed_luck=attacker_luck,
+            defender_vital=defender_vital,
+            defender_str=defender_str,
+            defender_tough=defender_tough,
+            defender_dex=defender_dex,
+            defender_resistance=status_specific_resist,
+            per_offset=per_offset,
+            level_range=level_range,
+            level_scale=level_multiplier,
+        )
     )
-    vital_penalty = 0.0 if total == 0 else (int(defender_vital) / total) / 0.25 * 10.0
-    if pvp:
-        level = 0
-    else:
-        level = int((int(attacker_level) - int(defender_level)) * float(level_multiplier))
-        level = max(-int(level_range), min(int(level_range), level))
-    per = (
-        int(per_offset)
-        + level
-        + int(attacker_luck)
-        - int(status_specific_resist)
-        - vital_penalty
-    )
-    return min(80, int(per))
 
 
 def status_attack_transition(
@@ -386,10 +387,13 @@ def status_attack_transition(
         return {"applied": False, "timer": 0, "clear_command": False}
     if int(rolled_1_to_100) >= int(probability):
         return {"applied": False, "timer": 0, "clear_command": False}
-    # Source writes gBattleStausTurn + 1 into the work timer.
+    # Source writes gBattleStausTurn + 1, then physical DRUNK is halved.
+    timer=int(turn)+1
+    if int(status)==5:
+        timer//=2
     return {
         "applied": True,
-        "timer": int(turn) + 1,
+        "timer": timer,
         "clear_command": int(status) in set(immobilizing_statuses),
     }
 

@@ -254,8 +254,24 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
             13,
         )
 
-    def test_status_probability_level_and_vital_penalty(self):
-        # Vital ratio .25 => / .25 * 10 = 10 penalty.
+    def test_status_probability_uses_battle_attack_base_thirty(self):
+        self.assertEqual(
+            status_attack_probability(
+                status=1,
+                defender_vital=25,
+                defender_str=25,
+                defender_tough=25,
+                defender_dex=25,
+                attacker_luck=10,
+                attacker_level=20,
+                defender_level=10,
+                pvp=False,
+                status_specific_resist=5,
+            ),
+            45,
+        )
+
+    def test_status_probability_allows_explicit_per_offset_override(self):
         self.assertEqual(
             status_attack_probability(
                 status=1,
@@ -269,8 +285,6 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
                 pvp=False,
                 status_specific_resist=5,
                 per_offset=0,
-                level_range=40,
-                level_multiplier=2.0,
             ),
             15,
         )
@@ -325,6 +339,19 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
         self.assertTrue(r["applied"])
         self.assertEqual(r["timer"], 4)
         self.assertTrue(r["clear_command"])
+
+    def test_physical_drunk_status_halves_written_timer(self):
+        r=status_attack_transition(
+            damage=100,
+            status=5,
+            turn=3,
+            already_has_ordinary_status=False,
+            probability=80,
+            rolled_1_to_100=20,
+        )
+        self.assertTrue(r["applied"])
+        self.assertEqual(r["timer"],2)
+        self.assertFalse(r["clear_command"])
 
     def test_earth_round_is_two_phase(self):
         r = earth_round_command(12, "攻%35")
