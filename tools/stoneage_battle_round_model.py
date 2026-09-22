@@ -802,11 +802,13 @@ def _resolve_counter_chain(
     defense_profile: str,
     field_attr: str,
     field_power: int,
-) -> tuple[OrdinaryRoundEvent, ...]:
+    ride_pet_runtime: RidePetRuntime | None = None,
+) -> tuple[tuple[OrdinaryRoundEvent, ...], RidePetRuntime | None]:
     """Execute the stable base alternating BATTLE_Counter() loop.
 
     This is deliberately limited to the already-recovered status-free,
-    no-guardian/no-reaction ordinary physical seam. The source permits at most
+    no-guardian/no-reaction ordinary physical seam. Ride-pet sharing is part
+    of the same source BATTLE_DamageSub call used here. The source permits at most
     five alternating attempts after a main attack's continuation flag remains
     true. Each successful counter uses BATTLE_AttackSeq-style dodge/critical/
     damage resolution, then scales positive damage to 75 percent.
@@ -816,6 +818,7 @@ def _resolve_counter_chain(
         raise ValueError("stable counter chain accepts at most five attempts")
 
     resolved: list[OrdinaryRoundEvent] = []
+    ride_runtime=ride_pet_runtime
     for attempt_index in range(5):
         actor_slot=(
             int(initial_defender_slot)
@@ -1051,7 +1054,47 @@ def _resolve_counter_chain(
             )
             damage=max(1,int(float(damage)*0.75))
 
-        after=max(0,before-int(damage))
+        ride_split=None
+        ride_hp_resolution=None
+        ride_pet_fell_rider_id=None
+        event_damage=int(damage)
+        if (
+            int(damage)>0
+            and ride_runtime is not None
+            and ride_runtime.mounted
+            and str(ride_runtime.rider_id)==target_id
+        ):
+            ride_split=ordinary_ride_damage_split(
+                int(damage),
+                rider_defense_power=int(target_defense),
+                pet_defense_power=int(ride_runtime.defense_power),
+                pet_hp=int(ride_runtime.hp),
+            )
+            ride_hp_resolution=apply_ride_damage(
+                ride_split,
+                rider_hp=int(before),
+                rider_max_hp=int(target.max_hp),
+                pet_hp=int(ride_runtime.hp),
+                pet_max_hp=int(ride_runtime.max_hp),
+            )
+            after=int(ride_hp_resolution.rider_hp_after)
+            event_damage=int(ride_split.rider_amount)
+            if ride_hp_resolution.unmounted:
+                ride_pet_fell_rider_id=str(ride_runtime.rider_id)
+            ride_runtime=replace(
+                ride_runtime,
+                hp=int(ride_hp_resolution.pet_hp_after),
+                mounted=(
+                    False
+                    if ride_hp_resolution.unmounted
+                    else ride_runtime.mounted
+                ),
+                petfall=bool(
+                    ride_runtime.petfall or ride_hp_resolution.petfall
+                ),
+            )
+        else:
+            after=max(0,before-int(damage))
         hp_by_slot[target_slot]=after
         hp_by_id[target_id]=after
 
@@ -1122,12 +1165,12 @@ def _resolve_counter_chain(
                 "counter ultimate_roll_1_100 supplied on zero-damage path"
             )
 
-        if int(damage)>0:
+        if int(event_damage)>0:
             target_runtime=status_runtime_by_participant_id[target_id]
             wake=resolve_base_damage_wakeup(
                 target_runtime.status,
                 damage_count_before=target_runtime.damage_count,
-                damage=int(damage),
+                damage=int(event_damage),
             )
             status_runtime_by_participant_id[target_id]=replace(
                 target_runtime,
@@ -1144,12 +1187,15 @@ def _resolve_counter_chain(
                 original_target_slot=target_slot,
                 resolved_target_slot=target_slot,
                 critical=(attack_seq_result=="counter_critical"),
-                damage=int(damage),
+                damage=int(event_damage),
                 target_hp_before=before,
                 target_hp_after=after,
                 is_counter=True,
                 counter_attempt=attempt_index + 1,
                 counter_check_resolution=check,
+                ride_damage_split=ride_split,
+                ride_hp_resolution=ride_hp_resolution,
+                ride_pet_fell_rider_id=ride_pet_fell_rider_id,
                 ultimate_damage_resolution=ultimate_damage_resolution,
                 death_ultimate_resolution=death_ultimate_resolution,
                 ultimate_kind=int(ultimate_kind),
@@ -1159,7 +1205,7 @@ def _resolve_counter_chain(
         if attack_seq_result in {"counter_miss","counter_critical"} or after <= 0:
             break
 
-    return tuple(resolved)
+    return tuple(resolved),ride_runtime
 
 
 def _resolve_combo_group_with_reactions(
@@ -2373,11 +2419,6 @@ def resolve_ordinary_round(
                 "non-entry ride pet cannot also occupy an active battle slot"
             )
         active_ride=bool(ride_runtime.mounted)
-        if active_ride and normalized_counter_rolls is not None:
-            raise ValueError(
-                "ride-pet interaction with counter execution is a separate seam"
-            )
-
     guardian_registrations={
         int(defender_slot):registration
         for defender_slot,registration in (
@@ -2606,7 +2647,8 @@ def resolve_ordinary_round(
     ) -> None:
         if normalized_counter_rolls is None:
             return
-        counter_events=_resolve_counter_chain(
+        nonlocal ride_runtime,active_ride
+        counter_events,ride_runtime=_resolve_counter_chain(
             initial_attacker_slot=int(main_actor_slot),
             initial_defender_slot=int(target_slot),
             by_slot=by_slot,
@@ -2625,6 +2667,10 @@ def resolve_ordinary_round(
             defense_profile=defense_profile,
             field_attr=field_attr,
             field_power=field_power,
+            ride_pet_runtime=ride_runtime,
+        )
+        active_ride=bool(
+            ride_runtime is not None and ride_runtime.mounted
         )
         events.extend(counter_events)
         register_ultimate_exits(counter_events)
