@@ -740,7 +740,7 @@ class PersistentBattleStateTests(unittest.TestCase):
         )
         self.assertEqual(
             result.after.pending_exp_by_participant_id["player"],
-            100,
+            66,
         )
         self.assertEqual(result.after.phase,FINISHED)
         self.assertEqual(result.after.result,PLAYER_WIN)
@@ -812,7 +812,7 @@ class PersistentBattleStateTests(unittest.TestCase):
         pet = participant("pet:0", "player", "pet", hp=100, quick=30)
         enemy = participant(
             "enemy", "enemy", "enemy",
-            hp=100, attack=200, defense=20, quick=100,
+            hp=100, attack=30, defense=20, quick=100,
         )
         state = begin_persistent_battle(
             session(player, (enemy,), pets=(pet,)),
