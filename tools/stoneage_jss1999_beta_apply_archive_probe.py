@@ -91,6 +91,8 @@ def parse_arquivo(data):
             value=obj.get(key)
             if isinstance(value,list):
                 return [item for item in value if isinstance(item,dict)]
+        if any(key in obj for key in ("url","original","timestamp")):
+            return [obj]
     return []
 
 
