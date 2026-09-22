@@ -607,6 +607,36 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Dedicated derived probe target:
   - `research/recovered/STONEAGE-JAPAN-2004-PACKAGE-PROBE-R1.txt` once the bounded workflow produces it.
 
+### SRC-JP-2004-STONEAGE-PACKAGE-PAGE-01
+
+- Title: official Japanese StoneAge retail-package page `package.html`
+- Original period: retail package on sale from 2004-05-20; archived page snapshot 2004-06-04 19:21:09 UTC
+- Retrieval/verification date: 2026-09-22
+- Language/region: Japanese / Japan
+- Source type: archived official operator product page, reached from the contemporaneous 4Gamer retailer-link target
+- Original URL: `http://stoneage.to/package.html`
+- Preserved snapshot: Wayback timestamp `20040604192109`
+- Confidence: **A/S** for product identity fields emitted from the recovered official page; not a disc-byte source
+- Supports:
+  - JAN/EAN-13 **`4988609011565`**;
+  - package/model code **`WR-04156`**;
+  - the page describes CD-ROM media, an Upopo bonus item and two 30-day tokens in normalized visible text;
+  - period retailer target **Item City `product_id=423`**;
+  - package-art asset path `/image/package/illust_01.jpg`;
+  - normalized visible-text SHA-256 `4a1187b9aa876442e99828437836a5dec3e0b7185f6785c4faaf6b66f1802f39`.
+- Does not support:
+  - either retail CD's byte content, hashes, volume labels, matrix/mastering codes or file tree;
+  - byte identity with the December 2003 `1.74a` launch client `sa174hg.exe`;
+  - which exact post-beta patch level was pressed on either disc;
+  - that every physical copy/pressing had byte-identical media.
+- Derived records:
+  - `research/recovered/STONEAGE-JAPAN-2004-PACKAGE-PROBE-R1.txt`
+  - `research/recovered/STONEAGE-JAPAN-2004-ITEMCITY-PROBE-R1.txt`
+- Archaeology significance:
+  - converts the 2004 Japanese package from a generic product mention into a uniquely searchable physical-carrier target;
+  - gives artifact recovery exact JAN/model/retailer anchors independent of the missing 2003-12 web payload;
+  - a recovered disc remains a near-descendant comparison artifact and must not be promoted to a 1.74a byte baseline without direct comparison.
+
 ### SRC-KR-NETPOWER-CONTENTS-INDEX-01
 
 - Title: `Net POWER 전체 목차 발행순`
