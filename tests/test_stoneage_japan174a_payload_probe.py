@@ -13,7 +13,7 @@ class Japan174aPayloadProbeTests(unittest.TestCase):
         self.assertEqual(signature(b"MZ"+b"\0"*80),"pe-mz")
 
     def test_pe_header_summary_reads_minimal_header(self):
-        data=bytearray(256)
+        data=bytearray(512)
         data[:2]=b"MZ"
         struct.pack_into("<I",data,0x3C,0x80)
         data[0x80:0x84]=b"PE\0\0"
