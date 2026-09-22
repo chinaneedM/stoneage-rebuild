@@ -1,0 +1,38 @@
+name: Probe Japan 1.74a StoneAge archive client
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_japan174a_archive_probe.py
+      - tests/test_stoneage_japan174a_archive_probe.py
+      - .github/workflows/probe-stoneage-japan174a-archive.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-japan174a-archive-probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_japan174a_archive_probe -v
+      - name: Query public archive metadata
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_japan174a_archive_probe \
+            > research/recovered/STONEAGE-JAPAN-174A-ARCHIVE-CLIENT-PROBE-R1.txt
+      - name: Commit derived metadata report only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-JAPAN-174A-ARCHIVE-CLIENT-PROBE-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Japan 1.74a archive client'
+          git pull --rebase origin main
+          git push
