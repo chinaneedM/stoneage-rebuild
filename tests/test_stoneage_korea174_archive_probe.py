@@ -13,6 +13,7 @@ from tools.stoneage_korea174_archive_probe import (
     parse_arquivo_cdx,
     safe,
     select_launch_snapshots,
+    snapshot_period,
 )
 
 
@@ -50,6 +51,12 @@ class Korea174ArchiveProbeTests(unittest.TestCase):
             [row["timestamp"] for row in selected],
             ["20030728000000","20030901000000","20030601000000"],
         )
+
+    def test_snapshot_period_separates_launch_early_and_later(self):
+        self.assertEqual(snapshot_period("20030728000000"),"launch")
+        self.assertEqual(snapshot_period("20040115000000"),"early")
+        self.assertEqual(snapshot_period("20060401000000"),"later")
+        self.assertEqual(snapshot_period(""),"unknown")
 
     def test_safe_caps_and_removes_controls(self):
         out=safe("a\x00b"+("x"*1000))

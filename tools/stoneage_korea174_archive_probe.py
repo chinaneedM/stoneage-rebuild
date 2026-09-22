@@ -209,6 +209,18 @@ def select_launch_snapshots(rows,*,limit=8):
     return sorted(unique.values(),key=rank)[:limit]
 
 
+def snapshot_period(timestamp):
+    """Classify archive evidence without treating nearest-later captures as launch proof."""
+    day=str(timestamp)[:8]
+    if len(day) != 8 or not day.isdigit():
+        return "unknown"
+    if "20030701" <= day <= "20030930":
+        return "launch"
+    if "20030101" <= day <= "20041231":
+        return "early"
+    return "later"
+
+
 def main():
     # Query each official StoneAge subtree once, then filter archive rows locally.
     # This replaces dozens of wildcard requests while preserving every archived
@@ -230,7 +242,7 @@ def main():
         ("brand-root-www","http://www.stoneage.netmarble.net/"),
     ]
 
-    print("StoneAge Korea Netmarble 1.74 archive client probe — R1")
+    print("StoneAge Korea Netmarble 1.74 archive client probe — R2")
     print("SCOPE|metadata-and-link-targets-only|no-client-binary-download")
     print("YEARS|from=2003|to=2004")
     print("INDEX_BACKENDS|wayback,arquivo.pt")
@@ -362,8 +374,11 @@ def main():
     ]
 
     links=set()
+    snapshot_period_counts={"launch":0,"early":0,"later":0,"unknown":0}
     for surface,row in snapshots:
         ts=str(row.get("timestamp",""))
+        period=snapshot_period(ts)
+        snapshot_period_counts[period]+=1
         original=str(row.get("original",""))
         try:
             found=archived_links(ts,original)
@@ -371,9 +386,25 @@ def main():
             errors.append((surface+"@"+ts,type(exc).__name__,str(exc)))
             continue
         for target,anchor in found:
-            links.add((surface,ts,target,anchor))
+            links.add((period,surface,ts,target,anchor))
+
+    early_links={
+        row for row in links if row[0] in {"launch","early"}
+    }
+    later_links={
+        row for row in links if row[0] not in {"launch","early"}
+    }
 
     print(f"COUNT|root_snapshots_probed|{len(snapshots)}")
+    print(f"COUNT|root_snapshots_launch_window|{snapshot_period_counts['launch']}")
+    print(
+        f"COUNT|root_snapshots_early_2003_2004|"
+        f"{snapshot_period_counts['launch'] + snapshot_period_counts['early']}"
+    )
+    print(
+        f"COUNT|root_snapshots_later_candidates|"
+        f"{snapshot_period_counts['later'] + snapshot_period_counts['unknown']}"
+    )
     print(f"COUNT|root_cdx_queries_succeeded|{root_stats['cdx_succeeded']}")
     print(f"COUNT|root_cdx_queries_failed|{root_stats['cdx_failed']}")
     print(
@@ -386,12 +417,27 @@ def main():
     )
     print(f"COUNT|root_availability_hits|{root_stats['availability_hits']}")
     print(f"COUNT|interesting_links|{len(links)}")
-    print(f"COUNT|download_links|{sum(1 for _,_,target,_ in links if DOWNLOAD_EXT.search(target))}")
-    for surface,ts,target,anchor in sorted(links):
+    print(f"COUNT|early_interesting_links|{len(early_links)}")
+    print(f"COUNT|later_candidate_links|{len(later_links)}")
+    print(
+        f"COUNT|early_download_links|"
+        f"{sum(1 for _,_,_,target,_ in early_links if DOWNLOAD_EXT.search(target))}"
+    )
+    print(
+        f"COUNT|later_candidate_download_links|"
+        f"{sum(1 for _,_,_,target,_ in later_links if DOWNLOAD_EXT.search(target))}"
+    )
+    for period,surface,ts,target,anchor in sorted(early_links):
         kind="download" if DOWNLOAD_EXT.search(target) else "interest"
         print(
-            "LINK|"
-            + "|".join(safe(x) for x in (surface,ts,kind,target,anchor))
+            "EARLY_LINK|"
+            + "|".join(safe(x) for x in (period,surface,ts,kind,target,anchor))
+        )
+    for period,surface,ts,target,anchor in sorted(later_links):
+        kind="download" if DOWNLOAD_EXT.search(target) else "interest"
+        print(
+            "LATER_LINK|"
+            + "|".join(safe(x) for x in (period,surface,ts,kind,target,anchor))
         )
     for backend in ("wayback","arquivo"):
         print(
@@ -415,14 +461,18 @@ def main():
         + root_stats["cdx_failed"]
         + root_stats["availability_failed"]
     )
-    hit_count=len(uniq)+len(links)
+    # Indexed URL queries are explicitly bounded to 2003-2004, so they
+    # count as early evidence. Nearest-later Availability snapshots do not.
+    early_hit_count=len(uniq)+len(early_links)
+    later_candidate_count=len(later_links)
     result=classify_probe_result(
-        hit_count=hit_count,
+        hit_count=early_hit_count,
         successful_queries=successful_queries,
         failed_queries=failed_queries,
     )
     print(
-        f"RESULT|{result}|hits={hit_count}|"
+        f"RESULT|{result}|early_hits={early_hit_count}|"
+        f"later_candidates={later_candidate_count}|"
         f"index_queries_succeeded={successful_queries}|"
         f"index_queries_failed={failed_queries}"
     )
