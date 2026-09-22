@@ -9,6 +9,9 @@ the four recovered callbacks absent from all three pinned source lineages.
 
 import re
 
+from tools.stoneage_battle_guardian_model import (
+    guardian_redirect_allowed as _guardian_redirect_allowed_core,
+)
 from tools.stoneage_battle_status_model import (
     BASE_STATUS_NAME_BY_INDEX,
     BaseBattleStatusState,
@@ -211,41 +214,9 @@ def guardian_command(
     )
 
 
-def guardian_redirect_allowed(
-    *,
-    guardian_exists,
-    guardian_slot,
-    defender_slot,
-    guardian_alive,
-    guardian_flag,
-    guardian_sleep=0,
-    guardian_confusion=0,
-    guardian_paralysis=0,
-    guardian_stone=0,
-    guardian_barrier=0,
-    guardian_is_attacker=False,
-    attacker_uses_throw_weapon=False,
-):
-    if not guardian_exists:
-        return False
-    if int(guardian_slot) == int(defender_slot):
-        return False
-    if not guardian_alive or not guardian_flag:
-        return False
-    if any(
-        int(x) > 0
-        for x in (
-            guardian_sleep,
-            guardian_confusion,
-            guardian_paralysis,
-            guardian_stone,
-            guardian_barrier,
-        )
-    ):
-        return False
-    if guardian_is_attacker or attacker_uses_throw_weapon:
-        return False
-    return True
+def guardian_redirect_allowed(**kwargs):
+    """Compatibility wrapper around the shared guardian battle seam."""
+    return _guardian_redirect_allowed_core(**kwargs)
 
 
 def mighty_command(
