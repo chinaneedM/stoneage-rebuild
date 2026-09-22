@@ -283,6 +283,16 @@ PerOffset
 - vitality-ratio penalty
 ```
 
+For ordinary pet StatusChange attacks, the enclosing `BATTLE_Attack()` path
+initializes the common status-hit base (`suitpoison` / `PerOffset`) to **30**
+before the command-specific status and turn are read from COM3. Therefore the
+stable base pet path uses **PerOffset=30, Range=40, Bai=2.0**.
+
+The earlier reference-model default of zero for this pet path was incorrect.
+The implementation now delegates the arithmetic to the shared base-status core
+in `tools/stoneage_battle_status_model.py`; a different offset is accepted
+only when a separately proven versioned source explicitly supplies one.
+
 where the vitality penalty is based on:
 
 ```
@@ -293,15 +303,25 @@ The normal non-PvP level term is clamped to ±40 in this call path and uses mult
 
 The stable core caps the final chance at 80 but does not add a corresponding lower clamp.
 
-When application succeeds, the work timer is written as:
+When application succeeds, the work timer is first written as:
 
 ```
 requested_turn + 1
 ```
 
+The physical attack path then has an additional stable DRUNK quirk: the
+just-written drunk counter is immediately divided by two with integer
+arithmetic. Ordinary magic/item StatusChange does not use this physical
+post-write adjustment; those paths write their requested turn directly.
+
 Selected immobilizing statuses also clear the target’s pending command.
 
 Later suit/equipment resistance additions remain macro/version layers and are not part of this base probability model.
+
+Shared-core correction validated at commit
+`c06bff3e10610cb7b035ccb847bf235ecf620f37`: pet-skill run
+**35672999246**, battle-core **35672998977**, ordinary-magic
+**35672999058**, and item-effect **35672998940** all succeeded.
 
 ## Earth round
 
