@@ -1,5 +1,7 @@
 import unittest
 
+from tools.stoneage_battle_status_model import BaseBattleStatusState
+
 from tools.stoneage_magic_effect_model import (
     att_reverse_cast_transition,
     att_reverse_precommand_refresh,
@@ -9,6 +11,7 @@ from tools.stoneage_magic_effect_model import (
     common_alive_target_list,
     common_cast_route,
     common_dead_target_list,
+    common_magic_status_change_transition,
     field_recovery_gain,
     magic_def_transition,
     parse_after_marker,
@@ -27,6 +30,71 @@ from tools.stoneage_magic_effect_model import (
 
 
 class StoneAgeMagicEffectModelTests(unittest.TestCase):
+    def test_common_magic_status_change_uses_common_check_and_exact_turn(self):
+        result=common_magic_status_change_transition(
+            current_status=BaseBattleStatusState(),
+            status_index=1,
+            turn=3,
+            success_offset=15,
+            attacker_level=30,
+            defender_level=10,
+            pvp=False,
+            attacker_fixed_luck=5,
+            defender_vital=25,
+            defender_str=25,
+            defender_tough=25,
+            defender_dex=25,
+            defender_resistance=3,
+            roll_1_100=26,
+        )
+        self.assertTrue(result["check"].success)
+        self.assertEqual(result["check"].source_probability_value,27)
+        self.assertEqual(result["status"].poison,3)
+        self.assertFalse(result["command_cleared"])
+
+    def test_common_magic_immobilizer_clears_command_on_success(self):
+        result=common_magic_status_change_transition(
+            current_status=BaseBattleStatusState(),
+            status_index=2,
+            turn=4,
+            success_offset=99,
+            attacker_level=1,
+            defender_level=99,
+            pvp=False,
+            attacker_fixed_luck=99,
+            defender_vital=100,
+            defender_str=1,
+            defender_tough=1,
+            defender_dex=1,
+            defender_resistance=0,
+            roll_1_100=19,
+        )
+        self.assertTrue(result["check"].success)
+        self.assertEqual(result["status"].paralysis,4)
+        self.assertTrue(result["command_cleared"])
+
+    def test_common_magic_status_change_does_not_replace_existing_status(self):
+        current=BaseBattleStatusState(sleep=2)
+        result=common_magic_status_change_transition(
+            current_status=current,
+            status_index=1,
+            turn=3,
+            success_offset=100,
+            attacker_level=99,
+            defender_level=1,
+            pvp=False,
+            attacker_fixed_luck=99,
+            defender_vital=25,
+            defender_str=25,
+            defender_tough=25,
+            defender_dex=25,
+            defender_resistance=0,
+            roll_1_100=None,
+        )
+        self.assertFalse(result["check"].rng_consumed)
+        self.assertFalse(result["check"].success)
+        self.assertEqual(result["status"],current)
+
     def test_c_atoi_matches_leading_integer_semantics(self):
         self.assertEqual(c_atoi("  -42abc"), -42)
         self.assertEqual(c_atoi("+17%"), 17)

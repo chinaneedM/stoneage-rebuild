@@ -2,16 +2,158 @@ import unittest
 
 from tools.stoneage_battle_status_model import (
     BaseBattleStatusState,
+    BaseStatusAttackInputs,
     BaseStatusTickInputs,
+    STATUS_PARALYSIS,
+    STATUS_POISON,
+    apply_base_status_counter,
+    base_status_name_from_index,
     base_poison_damage,
     base_status_can_move,
     base_stone_defense_multiplier,
     resolve_base_damage_wakeup,
+    resolve_base_status_attack_check,
     resolve_base_status_tick,
 )
 
 
 class BattleStatusModelTests(unittest.TestCase):
+    def test_status_index_mapping_is_common_base_only(self):
+        self.assertEqual(base_status_name_from_index(1),STATUS_POISON)
+        self.assertEqual(base_status_name_from_index(2),STATUS_PARALYSIS)
+        with self.assertRaises(ValueError):
+            base_status_name_from_index(7)
+
+    def test_existing_status_blocks_new_status_without_rng(self):
+        result=resolve_base_status_attack_check(
+            BaseStatusAttackInputs(
+                status=STATUS_POISON,
+                attacker_level=10,
+                defender_level=10,
+                pvp=False,
+                attacker_fixed_luck=0,
+                defender_vital=25,
+                defender_str=25,
+                defender_tough=25,
+                defender_dex=25,
+                defender_resistance=0,
+                per_offset=15,
+                level_range=30,
+                level_scale=1.0,
+            ),
+            BaseBattleStatusState(sleep=2),
+            roll_1_100=None,
+        )
+        self.assertFalse(result.eligible)
+        self.assertTrue(result.blocked_by_existing_status)
+        self.assertFalse(result.rng_consumed)
+
+    def test_paralysis_uses_fixed_twenty_minus_resistance_and_strict_less_than(self):
+        inputs=BaseStatusAttackInputs(
+            status=STATUS_PARALYSIS,
+            attacker_level=99,
+            defender_level=1,
+            pvp=False,
+            attacker_fixed_luck=50,
+            defender_vital=90,
+            defender_str=1,
+            defender_tough=1,
+            defender_dex=1,
+            defender_resistance=3,
+            per_offset=99,
+            level_range=30,
+            level_scale=1.0,
+        )
+        hit=resolve_base_status_attack_check(
+            inputs,BaseBattleStatusState(),roll_1_100=16
+        )
+        boundary=resolve_base_status_attack_check(
+            inputs,BaseBattleStatusState(),roll_1_100=17
+        )
+        self.assertEqual(hit.source_probability_value,17)
+        self.assertTrue(hit.success)
+        self.assertFalse(boundary.success)
+
+    def test_general_status_formula_uses_vital_share_level_luck_and_resistance(self):
+        inputs=BaseStatusAttackInputs(
+            status=STATUS_POISON,
+            attacker_level=30,
+            defender_level=10,
+            pvp=False,
+            attacker_fixed_luck=5,
+            defender_vital=25,
+            defender_str=25,
+            defender_tough=25,
+            defender_dex=25,
+            defender_resistance=3,
+            per_offset=15,
+            level_range=30,
+            level_scale=1.0,
+        )
+        hit=resolve_base_status_attack_check(
+            inputs,BaseBattleStatusState(),roll_1_100=26
+        )
+        boundary=resolve_base_status_attack_check(
+            inputs,BaseBattleStatusState(),roll_1_100=27
+        )
+        self.assertEqual(hit.source_probability_value,27)
+        self.assertTrue(hit.success)
+        self.assertFalse(boundary.success)
+
+    def test_general_status_caps_only_upper_end_and_pvp_removes_level_delta(self):
+        capped=resolve_base_status_attack_check(
+            BaseStatusAttackInputs(
+                status=STATUS_POISON,
+                attacker_level=100,
+                defender_level=1,
+                pvp=False,
+                attacker_fixed_luck=100,
+                defender_vital=1,
+                defender_str=99,
+                defender_tough=0,
+                defender_dex=0,
+                defender_resistance=0,
+                per_offset=100,
+                level_range=30,
+                level_scale=2.0,
+            ),
+            BaseBattleStatusState(),
+            roll_1_100=79,
+        )
+        self.assertEqual(capped.source_probability_value,80)
+        self.assertTrue(capped.success)
+        self.assertFalse(
+            resolve_base_status_attack_check(
+                BaseStatusAttackInputs(
+                    status=STATUS_POISON,
+                    attacker_level=1,
+                    defender_level=100,
+                    pvp=True,
+                    attacker_fixed_luck=0,
+                    defender_vital=100,
+                    defender_str=0,
+                    defender_tough=0,
+                    defender_dex=0,
+                    defender_resistance=50,
+                    per_offset=15,
+                    level_range=30,
+                    level_scale=1.0,
+                ),
+                BaseBattleStatusState(),
+                roll_1_100=1,
+            ).success
+        )
+
+    def test_apply_base_status_counter_sets_exact_magic_turn(self):
+        self.assertEqual(
+            apply_base_status_counter(
+                BaseBattleStatusState(),
+                status=STATUS_POISON,
+                turn=3,
+            ).poison,
+            3,
+        )
+
     def test_can_move_common_base_blockers(self):
         self.assertFalse(
             base_status_can_move(BaseBattleStatusState(paralysis=1))

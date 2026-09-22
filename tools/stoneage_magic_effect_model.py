@@ -10,6 +10,14 @@ Later macro-controlled magic families are intentionally excluded.
 
 import re
 
+from tools.stoneage_battle_status_model import (
+    BaseBattleStatusState,
+    BaseStatusAttackInputs,
+    apply_base_status_counter,
+    base_status_name_from_index,
+    resolve_base_status_attack_check,
+)
+
 COMMON_MAGIC_EFFECTS = (
     "recovery",
     "other_recovery",
@@ -288,6 +296,70 @@ def parse_status_change_option(option, status_tokens):
         "status": status,
         "turn": parse_after_marker(tail, "turn", 3),
         "success": parse_after_marker(tail, "成", 15),
+    }
+
+
+def common_magic_status_change_transition(
+    *,
+    current_status,
+    status_index,
+    turn,
+    success_offset,
+    attacker_level,
+    defender_level,
+    pvp,
+    attacker_fixed_luck,
+    defender_vital,
+    defender_str,
+    defender_tough,
+    defender_dex,
+    defender_resistance,
+    roll_1_100,
+):
+    """Common unguarded StatusChange -> BATTLE_MultiStatusChange seam.
+
+    The common magic caller fixes Range=30 and Bai=1.0. On success it writes
+    the parsed turn count exactly; unlike the physical on-hit status path it
+    does not add one turn here.
+    """
+    if not isinstance(current_status,BaseBattleStatusState):
+        raise TypeError("current_status must be BaseBattleStatusState")
+    status_name=base_status_name_from_index(status_index)
+    check=resolve_base_status_attack_check(
+        BaseStatusAttackInputs(
+            status=status_name,
+            attacker_level=attacker_level,
+            defender_level=defender_level,
+            pvp=pvp,
+            attacker_fixed_luck=attacker_fixed_luck,
+            defender_vital=defender_vital,
+            defender_str=defender_str,
+            defender_tough=defender_tough,
+            defender_dex=defender_dex,
+            defender_resistance=defender_resistance,
+            per_offset=success_offset,
+            level_range=30,
+            level_scale=1.0,
+        ),
+        current_status,
+        roll_1_100=roll_1_100,
+    )
+    next_status=current_status
+    if check.success:
+        next_status=apply_base_status_counter(
+            current_status,
+            status=status_name,
+            turn=int(turn),
+        )
+    return {
+        "status_name":status_name,
+        "check":check,
+        "status":next_status,
+        "command_cleared":bool(
+            check.success and status_name in {
+                "paralysis","sleep","stone"
+            }
+        ),
     }
 
 

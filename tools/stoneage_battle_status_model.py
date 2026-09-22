@@ -28,6 +28,25 @@ BASE_STATUS_ORDER=(
     STATUS_CONFUSION,
 )
 
+BASE_STATUS_NAME_BY_INDEX={
+    1:STATUS_POISON,
+    2:STATUS_PARALYSIS,
+    3:STATUS_SLEEP,
+    4:STATUS_STONE,
+    5:STATUS_DRUNK,
+    6:STATUS_CONFUSION,
+}
+BASE_STATUS_INDEX_BY_NAME={
+    name:index for index,name in BASE_STATUS_NAME_BY_INDEX.items()
+}
+
+
+def base_status_name_from_index(index: int) -> str:
+    index=int(index)
+    if index not in BASE_STATUS_NAME_BY_INDEX:
+        raise ValueError(f"status index {index} is outside common base statuses")
+    return BASE_STATUS_NAME_BY_INDEX[index]
+
 
 def _c_div(numerator: int, denominator: int) -> int:
     numerator=int(numerator)
@@ -53,6 +72,145 @@ class BaseBattleStatusState:
             if value < 0:
                 raise ValueError(f"{name} status counter cannot be negative")
             object.__setattr__(self,name,value)
+
+
+@dataclass(frozen=True)
+class BaseStatusAttackInputs:
+    status: str
+    attacker_level: int
+    defender_level: int
+    pvp: bool
+    attacker_fixed_luck: int
+    defender_vital: int
+    defender_str: int
+    defender_tough: int
+    defender_dex: int
+    defender_resistance: int
+    per_offset: int
+    level_range: int
+    level_scale: float
+
+    def __post_init__(self) -> None:
+        status=str(self.status)
+        if status not in BASE_STATUS_ORDER:
+            raise ValueError(f"unsupported common base status: {status}")
+        object.__setattr__(self,"status",status)
+        for name in (
+            "attacker_level","defender_level","attacker_fixed_luck",
+            "defender_vital","defender_str","defender_tough",
+            "defender_dex","defender_resistance","per_offset",
+            "level_range",
+        ):
+            object.__setattr__(self,name,int(getattr(self,name)))
+        if self.level_range < 0:
+            raise ValueError("level_range cannot be negative")
+        object.__setattr__(self,"pvp",bool(self.pvp))
+        object.__setattr__(self,"level_scale",float(self.level_scale))
+
+
+@dataclass(frozen=True)
+class BaseStatusAttackResolution:
+    status: str
+    eligible: bool
+    blocked_by_existing_status: bool
+    source_probability_value: int | None
+    roll_1_100: int | None
+    rng_consumed: bool
+    success: bool
+
+
+def active_base_status_names(status: BaseBattleStatusState) -> tuple[str,...]:
+    return tuple(
+        name for name in BASE_STATUS_ORDER
+        if int(getattr(status,name)) > 0
+    )
+
+
+def apply_base_status_counter(
+    current: BaseBattleStatusState,
+    *,
+    status: str,
+    turn: int,
+) -> BaseBattleStatusState:
+    status=str(status)
+    if status not in BASE_STATUS_ORDER:
+        raise ValueError(f"unsupported common base status: {status}")
+    turn=int(turn)
+    if turn < 0:
+        raise ValueError("base status turn cannot be negative")
+    return replace(current,**{status:turn})
+
+
+def resolve_base_status_attack_check(
+    inputs: BaseStatusAttackInputs,
+    current_status: BaseBattleStatusState,
+    *,
+    roll_1_100: int | None,
+) -> BaseStatusAttackResolution:
+    """Mirror common BATTLE_StatusAttackCheck without later suit/Lua resist."""
+
+    active=active_base_status_names(current_status)
+    if active:
+        return BaseStatusAttackResolution(
+            status=inputs.status,
+            eligible=False,
+            blocked_by_existing_status=True,
+            source_probability_value=None,
+            roll_1_100=None,
+            rng_consumed=False,
+            success=False,
+        )
+
+    if inputs.status == STATUS_PARALYSIS:
+        per=20-int(inputs.defender_resistance)
+    else:
+        stat_sum=(
+            int(inputs.defender_vital)
+            + int(inputs.defender_str)
+            + int(inputs.defender_tough)
+            + int(inputs.defender_dex)
+        )
+        if stat_sum <= 0:
+            raise ValueError(
+                "general base status check requires positive defender stat sum"
+            )
+        f_vital_p=(
+            (float(inputs.defender_vital)/float(stat_sum))
+            / 0.25
+            * 10.0
+        )
+        if inputs.pvp:
+            level=0
+        else:
+            level=int(
+                (int(inputs.attacker_level)-int(inputs.defender_level))
+                * float(inputs.level_scale)
+            )
+        level=max(-int(inputs.level_range),min(int(inputs.level_range),level))
+        per=int(
+            int(inputs.per_offset)
+            + level
+            + int(inputs.attacker_fixed_luck)
+            - int(inputs.defender_resistance)
+            - f_vital_p
+        )
+        if per > 80:
+            per=80
+
+    if roll_1_100 is None:
+        raise ValueError("eligible base status check requires RAND(1,100)")
+    roll=int(roll_1_100)
+    if not 1 <= roll <= 100:
+        raise ValueError("base status roll must be in 1..100")
+    return BaseStatusAttackResolution(
+        status=inputs.status,
+        eligible=True,
+        blocked_by_existing_status=False,
+        source_probability_value=int(per),
+        roll_1_100=roll,
+        rng_consumed=True,
+        success=(roll < int(per)),
+    )
 
 
 @dataclass(frozen=True)
