@@ -12,6 +12,7 @@ from tools.stoneage_battle_status_model import (
     base_status_can_move,
     base_stone_defense_multiplier,
     resolve_base_damage_wakeup,
+    resolve_base_status_application,
     resolve_base_status_attack_check,
     resolve_base_status_tick,
 )
@@ -153,6 +154,36 @@ class BattleStatusModelTests(unittest.TestCase):
             ).poison,
             3,
         )
+
+    def test_status_application_writes_only_after_successful_check(self):
+        inputs=BaseStatusAttackInputs(
+            status=STATUS_POISON,
+            attacker_level=30,
+            defender_level=10,
+            pvp=False,
+            attacker_fixed_luck=5,
+            defender_vital=25,
+            defender_str=25,
+            defender_tough=25,
+            defender_dex=25,
+            defender_resistance=3,
+            per_offset=15,
+            level_range=30,
+            level_scale=1.0,
+        )
+        hit=resolve_base_status_application(
+            inputs,BaseBattleStatusState(),turn=3,roll_1_100=26
+        )
+        self.assertTrue(hit.check.success)
+        self.assertEqual(hit.turn_written,3)
+        self.assertEqual(hit.status_after.poison,3)
+
+        miss=resolve_base_status_application(
+            inputs,BaseBattleStatusState(),turn=3,roll_1_100=27
+        )
+        self.assertFalse(miss.check.success)
+        self.assertIsNone(miss.turn_written)
+        self.assertEqual(miss.status_after,BaseBattleStatusState())
 
     def test_can_move_common_base_blockers(self):
         self.assertFalse(

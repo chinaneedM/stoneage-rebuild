@@ -54,6 +54,7 @@ from tools.stoneage_battle_round_model import (
 )
 from tools.stoneage_battle_status_model import (
     BaseBattleStatusRuntime,
+    BaseStatusApplicationResolution,
     BaseStatusTurnRolls,
 )
 from tools.stoneage_singleplayer_battle import BattleParticipant, BattleSession
@@ -231,6 +232,14 @@ class PersistentBattleState:
 class PersistentRoundResult:
     before: PersistentBattleState
     round: ResolvedOrdinaryRound
+    after: PersistentBattleState
+
+
+@dataclass(frozen=True)
+class PersistentBaseStatusApplicationResult:
+    before: PersistentBattleState
+    target_id: str
+    application: BaseStatusApplicationResolution
     after: PersistentBattleState
 
 
@@ -425,6 +434,58 @@ def active_participants(
         participant_snapshot(state, participant.participant_id)
         for participant in _session_participants(state.session)
         if int(state.hp_by_participant_id[participant.participant_id]) > 0
+    )
+
+
+def apply_persistent_base_status_application(
+    state: PersistentBattleState,
+    *,
+    target_id: str,
+    application: BaseStatusApplicationResolution,
+) -> PersistentBaseStatusApplicationResult:
+    """Persist one already-resolved common base-status application.
+
+    The status hit formula remains in the pure status/magic layer. This seam
+    only commits its result after checking target identity, liveness and the
+    exact pre-application status snapshot.
+    """
+    if state.phase != ACTIVE:
+        raise ValueError("cannot apply battle status after battle termination")
+    target_id=str(target_id)
+    participants=_participant_map(state.session)
+    if target_id not in participants:
+        raise KeyError(f"unknown battle status target {target_id}")
+    if int(state.hp_by_participant_id[target_id]) <= 0:
+        raise ValueError("common status application target must be alive")
+    if not isinstance(application,BaseStatusApplicationResolution):
+        raise TypeError("application must be BaseStatusApplicationResolution")
+
+    runtime=state.base_status_runtime_by_participant_id[target_id]
+    if runtime.status != application.status_before:
+        raise ValueError("base status application pre-state drift")
+
+    if not application.check.success:
+        return PersistentBaseStatusApplicationResult(
+            before=state,
+            target_id=target_id,
+            application=application,
+            after=state,
+        )
+
+    runtimes=dict(state.base_status_runtime_by_participant_id)
+    runtimes[target_id]=replace(
+        runtime,
+        status=application.status_after,
+    )
+    after=replace(
+        state,
+        base_status_runtime_by_participant_id=_freeze_mapping(runtimes),
+    )
+    return PersistentBaseStatusApplicationResult(
+        before=state,
+        target_id=target_id,
+        application=application,
+        after=after,
     )
 
 

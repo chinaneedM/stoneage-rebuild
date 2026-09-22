@@ -214,6 +214,56 @@ def resolve_base_status_attack_check(
 
 
 @dataclass(frozen=True)
+class BaseStatusApplicationResolution:
+    check: BaseStatusAttackResolution
+    status_before: BaseBattleStatusState
+    status_after: BaseBattleStatusState
+    turn_written: int | None
+    command_cleared: bool
+
+
+def resolve_base_status_application(
+    inputs: BaseStatusAttackInputs,
+    current_status: BaseBattleStatusState,
+    *,
+    turn: int,
+    roll_1_100: int | None,
+) -> BaseStatusApplicationResolution:
+    """Run status hit-check then perform the caller-selected exact turn write."""
+    turn=int(turn)
+    if turn < 0:
+        raise ValueError("base status turn cannot be negative")
+    check=resolve_base_status_attack_check(
+        inputs,
+        current_status,
+        roll_1_100=roll_1_100,
+    )
+    after=current_status
+    written=None
+    if check.success:
+        after=apply_base_status_counter(
+            current_status,
+            status=inputs.status,
+            turn=turn,
+        )
+        written=turn
+    return BaseStatusApplicationResolution(
+        check=check,
+        status_before=current_status,
+        status_after=after,
+        turn_written=written,
+        command_cleared=bool(
+            check.success
+            and inputs.status in {
+                STATUS_PARALYSIS,
+                STATUS_SLEEP,
+                STATUS_STONE,
+            }
+        ),
+    )
+
+
+@dataclass(frozen=True)
 class BaseStatusTurnRolls:
     confusion_action_roll_1_100: int | None = None
     confusion_side_roll_0_1: int | None = None

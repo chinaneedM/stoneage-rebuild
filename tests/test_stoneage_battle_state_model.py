@@ -28,6 +28,7 @@ from tools.stoneage_battle_state_model import (
     FINISHED,
     PLAYER_ESCAPE,
     PLAYER_WIN,
+    apply_persistent_base_status_application,
     begin_persistent_battle,
     living_non_pet_count,
     resolve_persistent_capture_transition,
@@ -37,6 +38,9 @@ from tools.stoneage_battle_state_model import (
 from tools.stoneage_battle_status_model import (
     BaseBattleStatusRuntime,
     BaseBattleStatusState,
+    BaseStatusAttackInputs,
+    STATUS_POISON,
+    resolve_base_status_application,
 )
 from tools.stoneage_singleplayer_battle import (
     BattleParticipant,
@@ -123,6 +127,94 @@ def profile():
 
 
 class PersistentBattleStateTests(unittest.TestCase):
+    def test_resolved_common_status_application_commits_atomically(self):
+        player=participant("player","player","player")
+        enemy=participant("enemy","enemy","enemy")
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+        )
+        inputs=BaseStatusAttackInputs(
+            status=STATUS_POISON,
+            attacker_level=30,
+            defender_level=10,
+            pvp=False,
+            attacker_fixed_luck=5,
+            defender_vital=25,
+            defender_str=25,
+            defender_tough=25,
+            defender_dex=25,
+            defender_resistance=3,
+            per_offset=15,
+            level_range=30,
+            level_scale=1.0,
+        )
+        application=resolve_base_status_application(
+            inputs,
+            state.base_status_runtime_by_participant_id["enemy"].status,
+            turn=3,
+            roll_1_100=26,
+        )
+        applied=apply_persistent_base_status_application(
+            state,
+            target_id="enemy",
+            application=application,
+        )
+        self.assertEqual(
+            applied.after.base_status_runtime_by_participant_id[
+                "enemy"
+            ].status.poison,
+            3,
+        )
+        self.assertEqual(
+            applied.after.hp_by_participant_id,
+            state.hp_by_participant_id,
+        )
+
+    def test_failed_status_application_is_identity_and_drift_is_rejected(self):
+        player=participant("player","player","player")
+        enemy=participant("enemy","enemy","enemy")
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+        )
+        inputs=BaseStatusAttackInputs(
+            status=STATUS_POISON,
+            attacker_level=10,
+            defender_level=10,
+            pvp=False,
+            attacker_fixed_luck=0,
+            defender_vital=25,
+            defender_str=25,
+            defender_tough=25,
+            defender_dex=25,
+            defender_resistance=0,
+            per_offset=15,
+            level_range=30,
+            level_scale=1.0,
+        )
+        miss=resolve_base_status_application(
+            inputs,
+            BaseBattleStatusState(),
+            turn=3,
+            roll_1_100=100,
+        )
+        result=apply_persistent_base_status_application(
+            state,target_id="enemy",application=miss
+        )
+        self.assertIs(result.after,state)
+
+        drifted=resolve_base_status_application(
+            inputs,
+            BaseBattleStatusState(sleep=1),
+            turn=3,
+            roll_1_100=None,
+        )
+        with self.assertRaisesRegex(ValueError,"pre-state drift"):
+            apply_persistent_base_status_application(
+                state,target_id="enemy",application=drifted
+            )
+
     def test_two_rounds_preserve_hp_and_increment_turn(self):
         player = participant("player", "player", "player", attack=60, quick=100)
         enemy = participant("enemy", "enemy", "enemy", hp=200, defense=70, quick=40)

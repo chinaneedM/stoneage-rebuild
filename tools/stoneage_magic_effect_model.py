@@ -13,9 +13,8 @@ import re
 from tools.stoneage_battle_status_model import (
     BaseBattleStatusState,
     BaseStatusAttackInputs,
-    apply_base_status_counter,
     base_status_name_from_index,
-    resolve_base_status_attack_check,
+    resolve_base_status_application,
 )
 
 COMMON_MAGIC_EFFECTS = (
@@ -325,7 +324,7 @@ def common_magic_status_change_transition(
     if not isinstance(current_status,BaseBattleStatusState):
         raise TypeError("current_status must be BaseBattleStatusState")
     status_name=base_status_name_from_index(status_index)
-    check=resolve_base_status_attack_check(
+    application=resolve_base_status_application(
         BaseStatusAttackInputs(
             status=status_name,
             attacker_level=attacker_level,
@@ -342,24 +341,15 @@ def common_magic_status_change_transition(
             level_scale=1.0,
         ),
         current_status,
+        turn=int(turn),
         roll_1_100=roll_1_100,
     )
-    next_status=current_status
-    if check.success:
-        next_status=apply_base_status_counter(
-            current_status,
-            status=status_name,
-            turn=int(turn),
-        )
     return {
         "status_name":status_name,
-        "check":check,
-        "status":next_status,
-        "command_cleared":bool(
-            check.success and status_name in {
-                "paralysis","sleep","stone"
-            }
-        ),
+        "check":application.check,
+        "application":application,
+        "status":application.status_after,
+        "command_cleared":application.command_cleared,
     }
 
 
