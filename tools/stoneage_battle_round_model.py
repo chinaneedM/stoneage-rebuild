@@ -24,6 +24,10 @@ from tools.stoneage_battle_core_model import (
     BattleEscapeResolution,
     BattleCounterCheckInputs,
     BattleCounterCheckResolution,
+    BattleUltimateDamageInputs,
+    BattleUltimateDamageResolution,
+    BattleDeathUltimateInputs,
+    BattleDeathUltimateResolution,
     COUNTER_WEAPON_FIST,
     attribute_adjusted_damage,
     critical_damage,
@@ -39,6 +43,8 @@ from tools.stoneage_battle_core_model import (
     resolve_battle_capture_attempt,
     resolve_battle_counter_check,
     resolve_battle_escape_attempt,
+    resolve_battle_ultimate_damage,
+    resolve_battle_death_ultimate_override,
 )
 from tools.stoneage_battle_damage_react_model import (
     DAMAGE_REACT_ABSROB,
@@ -524,6 +530,7 @@ class OrdinaryAttackRolls:
     guard_roll_1_100: int | None = None
     minimum_damage_roll_0_1: int | None = None
     retarget_roll: int | None = None
+    ultimate_roll_1_100: int | None = None
 
 
 @dataclass(frozen=True)
@@ -663,6 +670,9 @@ class OrdinaryRoundEvent:
     ride_damage_split: RideDamageSplit | None = None
     ride_hp_resolution: RideHpResolution | None = None
     ride_pet_fell_rider_id: str | None = None
+    ultimate_damage_resolution: BattleUltimateDamageResolution | None = None
+    death_ultimate_resolution: BattleDeathUltimateResolution | None = None
+    ultimate_kind: int = 0
 
 
 @dataclass(frozen=True)
@@ -678,6 +688,7 @@ class ResolvedOrdinaryRound:
         str,BaseDamageReactState
     ] | None = None
     ride_pet_runtime: RidePetRuntime | None = None
+    ultimate_overkill_by_participant_id: Mapping[str,int] | None = None
     exited_participant_ids: tuple[str, ...] = ()
     escaped_participant_ids: tuple[str, ...] = ()
 
@@ -1765,6 +1776,8 @@ def resolve_ordinary_round(
         str,Sequence[CounterAttemptRolls]
     ] | None = None,
     counter_abio_by_participant_id: Mapping[str,bool] | None = None,
+    battle_abio_by_participant_id: Mapping[str,bool] | None = None,
+    ultimate_overkill_by_participant_id: Mapping[str,int] | None = None,
     combo_rolls_by_starter_id: Mapping[
         str,ComboExecutionRolls
     ] | None = None,
@@ -1850,6 +1863,33 @@ def resolve_ordinary_round(
             counter_abio_by_participant_id or {}
         ).items()
     }
+    battle_abio={
+        str(participant_id):bool(value)
+        for participant_id,value in (
+            battle_abio_by_participant_id or {}
+        ).items()
+    }
+    unknown_abio_ids=sorted(set(battle_abio)-set(slot_by_id))
+    if unknown_abio_ids:
+        raise ValueError(
+            f"battle ABIO references unknown actors: {unknown_abio_ids}"
+        )
+    if ultimate_overkill_by_participant_id is None:
+        ultimate_overkill={pid:0 for pid in slot_by_id}
+    else:
+        ultimate_overkill={
+            str(pid):int(value)
+            for pid,value in ultimate_overkill_by_participant_id.items()
+        }
+        if set(ultimate_overkill) != set(slot_by_id):
+            missing=sorted(set(slot_by_id)-set(ultimate_overkill))
+            extra=sorted(set(ultimate_overkill)-set(slot_by_id))
+            raise ValueError(
+                f"ultimate accumulator participants mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        if any(value < 0 for value in ultimate_overkill.values()):
+            raise ValueError("ultimate accumulator cannot be negative")
     normalized_combo_rolls={
         str(participant_id):rolls
         for participant_id,rolls in (
@@ -3073,6 +3113,77 @@ def resolve_ordinary_round(
             after=int(reaction_resolution.defender_hp_after)
             status_target_slot=int(damage_target_slot)
 
+        ultimate_damage_resolution=None
+        death_ultimate_resolution=None
+        ultimate_kind=0
+        if int(damage) > 0:
+            hp_damage_applied=max(0,int(before)-int(after))
+            ultimate_damage_resolution=resolve_battle_ultimate_damage(
+                BattleUltimateDamageInputs(
+                    damage_for_threshold=int(damage),
+                    hp_damage_applied=int(hp_damage_applied),
+                    target_hp_before=int(before),
+                    target_max_hp=int(
+                        by_slot[resolved_damage_slot].max_hp
+                    ),
+                    accumulated_overkill_before=int(
+                        ultimate_overkill[resolved_damage_id]
+                    ),
+                )
+            )
+            ultimate_overkill[resolved_damage_id]=int(
+                ultimate_damage_resolution.accumulated_overkill_after
+            )
+            ultimate_kind=int(
+                ultimate_damage_resolution.ultimate_kind
+            )
+            if int(before) > 0 and int(after) <= 0:
+                victim_kind=_participant_battle_kind(
+                    by_slot[resolved_damage_slot]
+                )
+                victim_abio=bool(
+                    battle_abio.get(resolved_damage_id,False)
+                )
+                needs_ultimate_roll=bool(
+                    (not victim_abio)
+                    and victim_kind != PLAYER
+                    and is_critical
+                )
+                if (
+                    rolls.ultimate_roll_1_100 is not None
+                    and not needs_ultimate_roll
+                ):
+                    raise ValueError(
+                        "ultimate_roll_1_100 supplied on unused death path"
+                    )
+                death_ultimate_resolution=(
+                    resolve_battle_death_ultimate_override(
+                        BattleDeathUltimateInputs(
+                            base_ultimate_kind=ultimate_kind,
+                            victim_kind=victim_kind,
+                            abio=victim_abio,
+                            critical=bool(is_critical),
+                        ),
+                        critical_roll_1_100=(
+                            rolls.ultimate_roll_1_100
+                            if needs_ultimate_roll
+                            else None
+                        ),
+                    )
+                )
+                ultimate_kind=int(
+                    death_ultimate_resolution.ultimate_kind
+                )
+            elif rolls.ultimate_roll_1_100 is not None:
+                raise ValueError(
+                    "ultimate_roll_1_100 supplied when no "
+                    "non-player critical death consumed it"
+                )
+        elif rolls.ultimate_roll_1_100 is not None:
+            raise ValueError(
+                "ultimate_roll_1_100 supplied on zero-damage path"
+            )
+
         if (
             int(damage) > 0
             and reaction_resolution.wakeup_target is not None
@@ -3177,6 +3288,9 @@ def resolve_ordinary_round(
                 ride_damage_split=ride_split,
                 ride_hp_resolution=ride_hp_resolution,
                 ride_pet_fell_rider_id=ride_pet_fell_rider_id,
+                ultimate_damage_resolution=ultimate_damage_resolution,
+                death_ultimate_resolution=death_ultimate_resolution,
+                ultimate_kind=int(ultimate_kind),
             )
         )
         # BATTLE_Attack forces continuation FALSE whenever Guardian>=0.
@@ -3208,6 +3322,9 @@ def resolve_ordinary_round(
             dict(damage_react_state)
         ),
         ride_pet_runtime=ride_runtime,
+        ultimate_overkill_by_participant_id=MappingProxyType(
+            dict(ultimate_overkill)
+        ),
         exited_participant_ids=tuple(exited_ids),
         escaped_participant_ids=tuple(escaped_ids),
     )

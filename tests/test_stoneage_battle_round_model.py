@@ -1959,6 +1959,134 @@ class BattleRoundModelTests(unittest.TestCase):
             0,
         )
 
+    def test_ordinary_direct_ultimate_threshold_is_exposed_on_event(self):
+        player=actor(
+            "player","player","player",
+            hp=100,attack=200,quick=100,
+        )
+        enemy=replace(
+            actor(
+                "enemy","enemy","enemy",
+                hp=30,defense=20,quick=20,
+            ),
+            max_hp=30,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        attack=result.events[0]
+        self.assertEqual(attack.target_hp_after,0)
+        self.assertEqual(attack.ultimate_kind,2)
+        self.assertIsNotNone(attack.ultimate_damage_resolution)
+        self.assertEqual(
+            result.ultimate_overkill_by_participant_id["enemy"],
+            0,
+        )
+
+    def test_ordinary_enemy_critical_death_consumes_strict_ultimate_roll(self):
+        player=actor(
+            "player","player","player",
+            hp=100,attack=80,quick=100,
+        )
+        enemy=replace(
+            actor(
+                "enemy","enemy","enemy",
+                hp=20,defense=70,quick=20,
+            ),
+            max_hp=100,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={
+                "player":profile(dex=10000),
+                "enemy":profile(dex=1),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=1,
+                    damage_roll=0,
+                    ultimate_roll_1_100=49,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        attack=result.events[0]
+        self.assertTrue(attack.critical)
+        self.assertEqual(attack.target_hp_after,0)
+        self.assertEqual(attack.ultimate_kind,1)
+        self.assertTrue(
+            attack.death_ultimate_resolution.critical_roll_consumed
+        )
+
+    def test_ordinary_critical_death_requires_explicit_ultimate_roll(self):
+        player=actor(
+            "player","player","player",
+            hp=100,attack=80,quick=100,
+        )
+        enemy=replace(
+            actor(
+                "enemy","enemy","enemy",
+                hp=20,defense=70,quick=20,
+            ),
+            max_hp=100,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"enemy":0},
+        )
+        with self.assertRaisesRegex(
+            ValueError,
+            "non-player critical death requires",
+        ):
+            resolve_ordinary_round(
+                prepared,
+                slots={"player":0,"enemy":10},
+                profiles={
+                    "player":profile(dex=10000),
+                    "enemy":profile(dex=1),
+                },
+                attack_rolls={
+                    "player":OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=1,
+                        damage_roll=0,
+                    )
+                },
+                defense_profile="newpower_70pct",
+            )
+
     def test_normal_attack_applies_recovered_damage_to_hp(self):
         player = actor("player", "player", "player", quick=100)
         enemy = actor("enemy", "enemy", "enemy", quick=50)
