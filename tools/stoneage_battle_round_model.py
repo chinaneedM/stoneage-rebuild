@@ -42,10 +42,12 @@ from tools.stoneage_battle_core_model import (
 )
 from tools.stoneage_battle_damage_react_model import (
     DAMAGE_REACT_REFLEC,
+    BaseComboMemberDamageReactResolution,
     BaseDamageReactResolution,
     BaseDamageReactState,
     base_damage_react_active,
     base_damage_react_blocks_main_continuation,
+    resolve_base_combo_member_damage_react,
     resolve_base_damage_react,
 )
 from tools.stoneage_battle_guardian_model import (
@@ -645,6 +647,8 @@ class OrdinaryRoundEvent:
     guarded_target_slot: int | None = None
     guardian_slot: int | None = None
     damage_react_resolution: BaseDamageReactResolution | None = None
+    combo_damage_react_resolution: BaseComboMemberDamageReactResolution | None = None
+    combo_settlement: bool = False
 
 
 @dataclass(frozen=True)
@@ -1053,6 +1057,236 @@ def _resolve_counter_chain(
     return tuple(resolved)
 
 
+def _resolve_combo_group_with_reactions(
+    *,
+    combo_id: int,
+    members: Sequence[RoundEntry],
+    original_target_slot: int,
+    target_slot: int,
+    retargeted: bool,
+    by_slot: Mapping[int, BattleParticipant],
+    hp_by_slot: dict[int, int],
+    hp_by_id: dict[str, int],
+    profiles: Mapping[str, BattleCombatProfile],
+    status_runtime_by_participant_id: dict[str,BaseBattleStatusRuntime],
+    damage_react_state_by_participant_id: dict[str,BaseDamageReactState],
+    guarding: set[int],
+    rolls: ComboExecutionRolls,
+    defense_profile: str,
+    field_attr: str,
+    field_power: int,
+) -> tuple[OrdinaryRoundEvent, ...]:
+    """Execute the stable per-member Combo DamageReact path."""
+    group=tuple(members)
+    member_rolls=tuple(rolls.member_attack_rolls)
+    if len(member_rolls) != len(group):
+        raise ValueError(
+            "combo execution requires one attack-roll bundle per live member"
+        )
+    target=by_slot[int(target_slot)]
+    target_id=str(target.participant_id)
+    if int(hp_by_slot[int(target_slot)]) <= 0:
+        raise ValueError("combo target must be alive at execution")
+    target_profile=profiles[target_id]
+    target_runtime=status_runtime_by_participant_id[target_id]
+    target_guarding=int(target_slot) in guarding
+    if base_damage_react_active(
+        damage_react_state_by_participant_id[target_id]
+    ):
+        return _resolve_combo_group_with_reactions(
+            combo_id=combo_id,
+            members=members,
+            original_target_slot=original_target_slot,
+            target_slot=target_slot,
+            retargeted=retargeted,
+            by_slot=by_slot,
+            hp_by_slot=hp_by_slot,
+            hp_by_id=hp_by_id,
+            profiles=profiles,
+            status_runtime_by_participant_id=(
+                status_runtime_by_participant_id
+            ),
+            damage_react_state_by_participant_id=(
+                damage_react_state_by_participant_id
+            ),
+            guarding=guarding,
+            rolls=rolls,
+            defense_profile=defense_profile,
+            field_attr=field_attr,
+            field_power=field_power,
+        )
+    actor_ids=tuple(str(x.participant.participant_id) for x in group)
+    slot_by_id={
+        str(participant.participant_id):int(slot)
+        for slot,participant in by_slot.items()
+    }
+
+    resolved=[]
+    accumulated=0
+    for member_index,(entry,attack_roll) in enumerate(
+        zip(group,member_rolls),start=1
+    ):
+        actor=entry.participant
+        actor_id=str(actor.participant_id)
+        actor_slot=slot_by_id[actor_id]
+        if int(hp_by_slot[actor_slot]) <= 0:
+            raise ValueError("dead combo member reached execution helper")
+        actor_profile=profiles[actor_id]
+
+        critical_roll=_validated_roll(
+            attack_roll.critical_roll_1_10000,1,10000,
+            "combo critical_roll_1_10000",
+        )
+        is_critical=critical_roll < critical_per_10000(
+            actor_profile.fixed_dex,
+            target_profile.fixed_dex,
+            attacker_luck=_source_luck(actor,actor_profile),
+            weapon_critical=int(actor_profile.weapon_critical),
+            attacker_type=_participant_battle_kind(actor),
+            defender_type=_participant_battle_kind(target),
+        )
+        damage=attribute_adjusted_damage(
+            physical_base_damage(
+                actor.attack,
+                _effective_defense_for_round(
+                    target,
+                    defense_profile,
+                    stone=(
+                        base_stone_defense_multiplier(
+                            target_runtime.status
+                        ) > 1.0
+                    ),
+                ),
+                int(attack_roll.damage_roll),
+            ),
+            actor_profile.elements,
+            target_profile.elements,
+            field_attr=field_attr,
+            field_power=field_power,
+        )
+        if is_critical:
+            damage=critical_damage(
+                damage,target.defense,actor.level,target.level
+            )
+        if target_guarding:
+            damage=guard_damage(
+                damage,
+                _validated_roll(
+                    attack_roll.guard_roll_1_100,1,100,
+                    "combo guard_roll_1_100",
+                ),
+            )
+        if damage < 1:
+            damage=_validated_roll(
+                attack_roll.minimum_damage_roll_0_1,0,1,
+                "combo minimum_damage_roll_0_1",
+            )
+        result=(
+            ("combo_allguard" if target_guarding else "combo_miss")
+            if damage == 0
+            else ("combo_critical" if is_critical else "combo_normal")
+        )
+        contribution=max(1,int(damage))
+
+        react=resolve_base_combo_member_damage_react(
+            damage_react_state_by_participant_id[target_id],
+            raw_damage=contribution,
+            attacker_hp=int(hp_by_slot[actor_slot]),
+            attacker_max_hp=int(actor.max_hp),
+            defender_hp=int(hp_by_slot[int(target_slot)]),
+            defender_max_hp=int(target.max_hp),
+            attacker_uses_throwing_weapon=counter_weapon_blocks_counter(
+                actor_profile.counter_weapon_type
+            ),
+        )
+        damage_react_state_by_participant_id[target_id]=react.state_after
+        hp_by_slot[actor_slot]=int(react.attacker_hp_after)
+        hp_by_id[actor_id]=int(react.attacker_hp_after)
+        hp_by_slot[int(target_slot)]=int(react.defender_hp_after)
+        hp_by_id[target_id]=int(react.defender_hp_after)
+        accumulated+=int(react.accumulated_damage)
+
+        wake_id=(
+            actor_id if react.wakeup_target=="attacker"
+            else target_id if react.wakeup_target=="defender"
+            else None
+        )
+        if wake_id is not None:
+            runtime=status_runtime_by_participant_id[wake_id]
+            wake=resolve_base_damage_wakeup(
+                runtime.status,
+                damage_count_before=runtime.damage_count,
+                damage=contribution,
+            )
+            status_runtime_by_participant_id[wake_id]=replace(
+                runtime,
+                status=wake.status_after,
+                damage_count=wake.damage_count_after,
+            )
+            if wake_id==target_id:
+                target_runtime=status_runtime_by_participant_id[target_id]
+
+        if react.effective_kind == DAMAGE_REACT_REFLEC:
+            event_slot=actor_slot
+            event_before=int(react.attacker_hp_before)
+            event_after=int(react.attacker_hp_after)
+        else:
+            event_slot=int(target_slot)
+            event_before=int(react.defender_hp_before)
+            event_after=int(react.defender_hp_after)
+
+        resolved.append(
+            OrdinaryRoundEvent(
+                actor_id,
+                int(actor_slot),
+                BATTLE_COM_COMBO,
+                int(entry.action_value),
+                result,
+                original_target_slot=int(original_target_slot),
+                resolved_target_slot=int(event_slot),
+                retargeted=bool(retargeted),
+                critical=bool(is_critical),
+                damage=contribution,
+                target_hp_before=event_before,
+                target_hp_after=event_after,
+                is_combo=True,
+                combo_id=int(combo_id),
+                combo_member_index=int(member_index),
+                combo_damage_react_resolution=react,
+            )
+        )
+
+    # BATTLE_DamageSub2 applies only the non-reacted accumulated damage after
+    # the final attack-list member, with reactions disabled for settlement.
+    if accumulated > 0:
+        before=int(hp_by_slot[int(target_slot)])
+        after=max(0,before-int(accumulated))
+        hp_by_slot[int(target_slot)]=after
+        hp_by_id[target_id]=after
+        last=group[-1]
+        last_id=str(last.participant.participant_id)
+        resolved.append(
+            OrdinaryRoundEvent(
+                last_id,
+                int(slot_by_id[last_id]),
+                BATTLE_COM_COMBO,
+                int(last.action_value),
+                "combo_settlement",
+                original_target_slot=int(original_target_slot),
+                resolved_target_slot=int(target_slot),
+                retargeted=bool(retargeted),
+                damage=int(accumulated),
+                target_hp_before=before,
+                target_hp_after=after,
+                is_combo=True,
+                combo_id=int(combo_id),
+                combo_settlement=True,
+                profit_participant_ids=actor_ids,
+            )
+        )
+    return tuple(resolved)
+
+
 def _resolve_combo_group(
     *,
     combo_id: int,
@@ -1065,6 +1299,7 @@ def _resolve_combo_group(
     hp_by_id: dict[str, int],
     profiles: Mapping[str, BattleCombatProfile],
     status_runtime_by_participant_id: dict[str,BaseBattleStatusRuntime],
+    damage_react_state_by_participant_id: dict[str,BaseDamageReactState],
     guarding: set[int],
     rolls: ComboExecutionRolls,
     defense_profile: str,
@@ -1599,16 +1834,6 @@ def resolve_ordinary_round(
     if guardian_registrations and combo_groups:
         raise ValueError(
             "guardian interaction with combo execution is a separate seam"
-        )
-    if (
-        combo_groups
-        and any(
-            base_damage_react_active(react_state)
-            for react_state in damage_react_state.values()
-        )
-    ):
-        raise ValueError(
-            "damage-react interaction with combo execution is a separate seam"
         )
     has_active_base_status=any(
         any(int(getattr(runtime.status,name))>0 for name in (
@@ -2195,6 +2420,7 @@ def resolve_ordinary_round(
                     hp_by_id=hp_by_id,
                     profiles=profiles,
                     status_runtime_by_participant_id=status_runtime,
+                    damage_react_state_by_participant_id=damage_react_state,
                     guarding=guarding,
                     rolls=combo_rolls,
                     defense_profile=defense_profile,
