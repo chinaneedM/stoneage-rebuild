@@ -1,0 +1,39 @@
+name: Probe Japan 1.74a exact install chain
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_japan174a_exact_install_probe.py
+      - tests/test_stoneage_japan174a_exact_install_probe.py
+      - .github/workflows/probe-stoneage-japan174a-exact-install.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-japan174a-exact-install
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run exact-install probe unit tests
+        run: python3 -m unittest tests.test_stoneage_japan174a_exact_install_probe -v
+      - name: Probe recovered official Hangame install chain
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_japan174a_exact_install_probe \
+            > research/recovered/STONEAGE-JAPAN-174A-EXACT-INSTALL-CHAIN-R1.txt
+      - name: Commit derived metadata report only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-JAPAN-174A-EXACT-INSTALL-CHAIN-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Japan 1.74a exact install chain'
+          git pull --rebase origin main
+          git push
