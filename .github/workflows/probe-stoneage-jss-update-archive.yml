@@ -1,0 +1,44 @@
+name: Probe JSS StoneAge update archive
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_jss_update_archive_probe.py
+      - tests/test_stoneage_jss_update_archive_probe.py
+      - .github/workflows/probe-stoneage-jss-update-archive.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-jss-update-archive
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSS update archive probe
+        run: python3 -m unittest tests.test_stoneage_jss_update_archive_probe -v
+      - name: Probe archived update manifest and directory metadata
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_jss_update_archive_probe \
+            > research/recovered/STONEAGE-JSS-UPDATE-ARCHIVE-PROBE-R1.txt
+      - name: Verify no archived binary payload was retained
+        run: |
+          set -euo pipefail
+          ! find research tools tests -type f \( -iname '*.exe' -o -iname '*.bin' -o -iname '*.cab' -o -iname '*.zip' \) -print -quit | grep -q .
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-JSS-UPDATE-ARCHIVE-PROBE-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe archived JSS update paths'
+          git pull --rebase origin main
+          git push
