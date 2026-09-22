@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import struct
 import urllib.error
 import urllib.parse
@@ -17,6 +18,7 @@ import urllib.request
 UA="stoneage-rebuild-archaeology/1.0 (+https://github.com/chinaneedM/stoneage-rebuild)"
 CDX="https://web.archive.org/cdx/search/cdx"
 AVAIL="https://archive.org/wayback/available"
+TIMEMAP="https://web.archive.org/web/timemap/link/"
 MAX_PREFIX=64*1024
 
 TARGETS=(
@@ -107,6 +109,47 @@ def availability(url,date):
     }
 
 
+def parse_timemap_link(data,url):
+    """Normalize Memento link-format rows for one exact original URL."""
+    text=data.decode("utf-8","replace")
+    rows=[]
+    seen=set()
+    pattern=re.compile(
+        r'<(?P<replay>https?://[^>]+)>;\s*'
+        r'rel="(?P<rel>[^"]*memento[^"]*)"'
+        r'(?:;\s*datetime="(?P<datetime>[^"]+)")?',
+        re.I,
+    )
+    for match in pattern.finditer(text):
+        replay=match.group("replay")
+        ts_match=re.search(r"/web/(\d{14})(?:[a-z_]+)?/",replay,re.I)
+        if not ts_match:
+            continue
+        timestamp=ts_match.group(1)
+        key=(timestamp,url)
+        if key in seen:
+            continue
+        seen.add(key)
+        rows.append(
+            {
+                "timestamp":timestamp,
+                "status":"200",
+                "url":url,
+                "source":"timemap",
+                "replay":replay,
+                "rel":match.group("rel"),
+                "datetime":match.group("datetime") or "",
+            }
+        )
+    return tuple(sorted(rows,key=lambda row:row["timestamp"]))
+
+
+def timemap_exact(url):
+    endpoint=TIMEMAP+url
+    raw=get(endpoint,timeout=12,limit=256*1024)["body"]
+    return parse_timemap_link(raw,url)
+
+
 def signature(body):
     body=bytes(body)
     if body.startswith(b"MZ"):
@@ -186,7 +229,7 @@ def select_capture_rows(url,cdx_rows,avail_rows):
                 "digest":"",
                 "length":"",
                 "redirect":"",
-                "source":"availability",
+                "source":str(cap.get("source","availability")),
             },
         )
     return tuple(sorted(merged.values(),key=lambda x:(x["timestamp"],x["original"])))
@@ -227,8 +270,8 @@ def prefix_probe(row):
 
 
 def main():
-    print("StoneAge Japan 1.74a exact payload metadata probe — R1")
-    print("SCOPE|launch-page-exact-urls|metadata+64KiB-prefix-only|no-full-client-download")
+    print("StoneAge Japan 1.74a exact payload metadata probe — R2")
+    print("SCOPE|launch-page-exact-urls|cdx+availability+timemap+64KiB-prefix-only|no-full-client-download")
     print("PROVENANCE|sa174hg.exe recovered from official Hangame sadl.asp snapshot 20031214051053")
     print("KEY_DATES|"+",".join(KEY_DATES))
 
@@ -239,6 +282,13 @@ def main():
             cdx_rows=[]
             cdx_error=f"{type(exc).__name__}:{exc}"
 
+        timemap_rows=[]
+        timemap_error=""
+        try:
+            timemap_rows=list(timemap_exact(url))
+        except Exception as exc:
+            timemap_error=f"{type(exc).__name__}:{exc}"
+
         avail_rows=[]
         avail_errors=[]
         for date in KEY_DATES:
@@ -247,7 +297,7 @@ def main():
             except Exception as exc:
                 avail_errors.append((date,f"{type(exc).__name__}:{exc}"))
 
-        captures=select_capture_rows(url,cdx_rows,avail_rows)
+        captures=select_capture_rows(url,cdx_rows,avail_rows+timemap_rows)
         launch_rows=[
             row for row in captures
             if "20031212" <= row["timestamp"][:8] <= "20040131"
@@ -255,6 +305,7 @@ def main():
         print(
             f"TARGET|label={clean(label)}|url={clean(url)}|"
             f"cdx_rows={len(cdx_rows)}|cdx_error={clean(cdx_error)}|"
+            f"timemap_rows={len(timemap_rows)}|timemap_error={clean(timemap_error)}|"
             f"availability_hits={sum(x is not None for x in avail_rows)}|"
             f"availability_errors={len(avail_errors)}|captures={len(captures)}|"
             f"launch_window_captures={len(launch_rows)}"

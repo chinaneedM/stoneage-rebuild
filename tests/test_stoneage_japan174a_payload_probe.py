@@ -2,6 +2,7 @@ import struct
 import unittest
 
 from tools.stoneage_japan174a_payload_probe import (
+    parse_timemap_link,
     pe_header_summary,
     select_capture_rows,
     signature,
@@ -9,6 +10,25 @@ from tools.stoneage_japan174a_payload_probe import (
 
 
 class Japan174aPayloadProbeTests(unittest.TestCase):
+    def test_timemap_link_normalizes_exact_mementos(self):
+        rows=parse_timemap_link(
+            (
+                '<http://x/sa174hg.exe>; rel="original",\n'
+                '<http://web.archive.org/web/20031214010101/'
+                'http://x/sa174hg.exe>; rel="first memento"; '
+                'datetime="Sun, 14 Dec 2003 01:01:01 GMT",\n'
+                '<http://web.archive.org/web/20040102030405id_/'
+                'http://x/sa174hg.exe>; rel="last memento"; '
+                'datetime="Fri, 02 Jan 2004 03:04:05 GMT"'
+            ).encode("utf-8"),
+            "http://x/sa174hg.exe",
+        )
+        self.assertEqual(
+            [row["timestamp"] for row in rows],
+            ["20031214010101","20040102030405"],
+        )
+        self.assertTrue(all(row["source"]=="timemap" for row in rows))
+
     def test_signature_detects_pe(self):
         self.assertEqual(signature(b"MZ"+b"\0"*80),"pe-mz")
 
@@ -28,6 +48,19 @@ class Japan174aPayloadProbeTests(unittest.TestCase):
         self.assertEqual(out["sections"],3)
         self.assertEqual(out["optional_magic"],0x10B)
         self.assertEqual(out["subsystem"],2)
+
+    def test_capture_rows_preserve_timemap_source(self):
+        rows=select_capture_rows(
+            "http://x/sa174hg.exe",
+            [],
+            [{
+                "timestamp":"20031214010101",
+                "status":"200",
+                "url":"http://x/sa174hg.exe",
+                "source":"timemap",
+            }],
+        )
+        self.assertEqual(rows[0]["source"],"timemap")
 
     def test_capture_rows_keep_cdx_metadata(self):
         rows=select_capture_rows(
