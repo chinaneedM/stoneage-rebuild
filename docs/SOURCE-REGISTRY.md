@@ -131,9 +131,10 @@ This is the canonical ledger for historical sources. Entries should record prove
   - release filename: `Play Online No.015 (September 1999).cbr`;
   - listed file size: **349 MB**;
   - listed MD5: **`e009cc707810c4361c849f26248593af`**;
-  - the public download flow resolves to a Retromags seedbox copy, giving a concrete second scan-body route rather than merely a catalog entry.
+  - the public download flow resolves to the exact final object `https://seedbox.retromags.com:19918/Retromags%20Collection%202023/Play%20Online%20No.015%20(September%201999).cbr`, giving a concrete second scan-body route rather than merely a catalog entry.
 - Current retrieval limitation:
-  - this environment can reach the Retromags file/download pages and resolve the final seedbox target, but cannot resolve the seedbox host itself; therefore the second scan body has not yet been visually compared with the Kingpin copy.
+  - on 2026-09-23 the Retromags download page again resolved to that exact seedbox object, but a direct transient-workspace retrieval failed at DNS resolution for `seedbox.retromags.com`;
+  - no CBR bytes were obtained, so the listed MD5 has not been independently recomputed and the second scan body has not yet been visually compared with the Kingpin copy.
 - Does not support yet:
   - beta installer filename;
   - exact client distribution mechanism/media;
