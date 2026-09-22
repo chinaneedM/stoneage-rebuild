@@ -18,10 +18,12 @@ import urllib.request
 UA="stoneage-rebuild-archaeology/1.0"
 CDX="https://web.archive.org/cdx/search/cdx"
 ARQUIVO_CDX="https://arquivo.pt/wayback/cdx"
+AVAIL="https://archive.org/wayback/available"
 WAYBACK="https://web.archive.org/web/{timestamp}id_/{url}"
 REQUEST_TIMEOUT_SECONDS=12
 ARCHIVE_TIMEOUT_SECONDS=15
 ROOT_SNAPSHOT_LIMIT=3
+ROOT_KEY_DATES=("20030721","20030728","20030815","20030915")
 
 DOWNLOAD_EXT=re.compile(
     r"(?i)\.(?:exe|zip|rar|cab|lzh|lha|arj|gz|tgz|bz2|msi)(?:$|[?#])"
@@ -152,6 +154,28 @@ def classify_probe_result(*,hit_count,successful_queries,failed_queries):
     return "BOUNDED_NO_HITS"
 
 
+def parse_availability_closest(payload):
+    snapshots=payload.get("archived_snapshots")
+    if not isinstance(snapshots,dict):
+        return None
+    closest=snapshots.get("closest")
+    if not isinstance(closest,dict) or not closest.get("available"):
+        return None
+    return {
+        "timestamp":str(closest.get("timestamp","")),
+        "status":str(closest.get("status","")),
+        "url":str(closest.get("url","")),
+    }
+
+
+def availability(root,date):
+    params=urllib.parse.urlencode({"url":root,"timestamp":date})
+    payload=json.loads(
+        request(AVAIL+"?"+params,timeout=8).decode("utf-8","replace")
+    )
+    return parse_availability_closest(payload)
+
+
 def archived_links(timestamp,original):
     url=WAYBACK.format(
         timestamp=timestamp,
@@ -213,7 +237,8 @@ def main():
     print(
         f"REQUEST_POLICY|request_timeout={REQUEST_TIMEOUT_SECONDS}|"
         f"archive_timeout={ARCHIVE_TIMEOUT_SECONDS}|"
-        f"root_snapshot_limit={ROOT_SNAPSHOT_LIMIT}|attempts=1"
+        f"root_snapshot_limit={ROOT_SNAPSHOT_LIMIT}|"
+        f"root_key_dates={','.join(ROOT_KEY_DATES)}|attempts=1"
     )
     errors=[]
     indexed=[]
@@ -268,14 +293,73 @@ def main():
         )
 
     snapshots=[]
+    root_stats={
+        "cdx_succeeded":0,
+        "cdx_failed":0,
+        "availability_succeeded":0,
+        "availability_failed":0,
+        "availability_hits":0,
+    }
     for surface,root in roots:
         try:
             rows=cdx_query(root,collapse=False,limit=500)
+            root_stats["cdx_succeeded"]+=1
         except Exception as exc:
+            rows=[]
+            root_stats["cdx_failed"]+=1
             errors.append((surface,type(exc).__name__,str(exc)))
-            continue
         for row in select_launch_snapshots(rows,limit=ROOT_SNAPSHOT_LIMIT):
             snapshots.append((surface,row))
+
+        for date in ROOT_KEY_DATES:
+            try:
+                cap=availability(root,date)
+                root_stats["availability_succeeded"]+=1
+            except Exception as exc:
+                root_stats["availability_failed"]+=1
+                errors.append(
+                    (
+                        f"availability:{surface}@{date}",
+                        type(exc).__name__,
+                        str(exc),
+                    )
+                )
+                continue
+            if cap is None or cap.get("status") != "200":
+                continue
+            ts=str(cap.get("timestamp",""))
+            if not ts:
+                continue
+            root_stats["availability_hits"]+=1
+            snapshots.append(
+                (
+                    surface,
+                    {
+                        "timestamp":ts,
+                        "original":root,
+                        "statuscode":cap.get("status",""),
+                        "mimetype":"",
+                        "digest":"",
+                        "length":"",
+                    },
+                )
+            )
+
+    snapshot_unique={}
+    for surface,row in snapshots:
+        key=(
+            surface,
+            str(row.get("timestamp","")),
+            str(row.get("original","")),
+        )
+        snapshot_unique.setdefault(key,(surface,row))
+    snapshots=[
+        item
+        for _,item in sorted(
+            snapshot_unique.items(),
+            key=lambda pair:pair[0],
+        )
+    ]
 
     links=set()
     for surface,row in snapshots:
@@ -290,6 +374,17 @@ def main():
             links.add((surface,ts,target,anchor))
 
     print(f"COUNT|root_snapshots_probed|{len(snapshots)}")
+    print(f"COUNT|root_cdx_queries_succeeded|{root_stats['cdx_succeeded']}")
+    print(f"COUNT|root_cdx_queries_failed|{root_stats['cdx_failed']}")
+    print(
+        f"COUNT|root_availability_queries_succeeded|"
+        f"{root_stats['availability_succeeded']}"
+    )
+    print(
+        f"COUNT|root_availability_queries_failed|"
+        f"{root_stats['availability_failed']}"
+    )
+    print(f"COUNT|root_availability_hits|{root_stats['availability_hits']}")
     print(f"COUNT|interesting_links|{len(links)}")
     print(f"COUNT|download_links|{sum(1 for _,_,target,_ in links if DOWNLOAD_EXT.search(target))}")
     for surface,ts,target,anchor in sorted(links):
@@ -310,10 +405,16 @@ def main():
     for surface,kind,message in sorted(errors):
         print(f"ERROR|{safe(surface)}|{safe(kind)}|{safe(message)}")
     print(f"COUNT|errors|{len(errors)}")
-    successful_queries=sum(
-        item["succeeded"] for item in index_stats.values()
+    successful_queries=(
+        sum(item["succeeded"] for item in index_stats.values())
+        + root_stats["cdx_succeeded"]
+        + root_stats["availability_succeeded"]
     )
-    failed_queries=sum(item["failed"] for item in index_stats.values())
+    failed_queries=(
+        sum(item["failed"] for item in index_stats.values())
+        + root_stats["cdx_failed"]
+        + root_stats["availability_failed"]
+    )
     hit_count=len(uniq)+len(links)
     result=classify_probe_result(
         hit_count=hit_count,

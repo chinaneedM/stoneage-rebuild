@@ -9,6 +9,7 @@ from tools.stoneage_korea174_archive_probe import (
     LinkParser,
     classify_probe_result,
     decode_html,
+    parse_availability_closest,
     parse_arquivo_cdx,
     safe,
     select_launch_snapshots,
@@ -77,6 +78,30 @@ class Korea174ArchiveProbeTests(unittest.TestCase):
                 "digest":"ABC",
                 "length":"123",
             }],
+        )
+
+    def test_availability_closest_is_normalized(self):
+        self.assertEqual(
+            parse_availability_closest(
+                {
+                    "archived_snapshots":{
+                        "closest":{
+                            "available":True,
+                            "status":"200",
+                            "timestamp":"20030728010203",
+                            "url":"http://web.archive.org/web/20030728010203/http://x/",
+                        }
+                    }
+                }
+            ),
+            {
+                "timestamp":"20030728010203",
+                "status":"200",
+                "url":"http://web.archive.org/web/20030728010203/http://x/",
+            },
+        )
+        self.assertIsNone(
+            parse_availability_closest({"archived_snapshots":{}})
         )
 
     def test_probe_result_distinguishes_outage_from_no_hits(self):
