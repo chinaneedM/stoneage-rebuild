@@ -517,6 +517,130 @@ class BattleRoundModelTests(unittest.TestCase):
             0,
         )
 
+    def test_combo_immediate_reflect_ultimate_returns_are_discarded(self):
+        p1=actor("p1","player","player",hp=30,attack=500,quick=100)
+        p2=actor("p2","player","pet",hp=30,attack=500,quick=90)
+        enemy=actor("enemy","enemy","enemy",hp=300,defense=20,quick=10)
+        prepared=prepare_battle_round(
+            (p1,p2,enemy),
+            {
+                "p1":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "p2":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"p1":0,"p2":0,"enemy":0},
+        )
+        combo_entries=tuple(
+            replace(
+                entry,
+                command=BattleCommand(BATTLE_COM_COMBO,command2=10),
+                combo_id=1,
+            )
+            if entry.participant.participant_id in {"p1","p2"}
+            else entry
+            for entry in prepared.ordered_entries
+        )
+        prepared=replace(prepared,ordered_entries=combo_entries)
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"p1":0,"p2":1,"enemy":10},
+            profiles={"p1":profile(),"p2":profile(),"enemy":profile()},
+            attack_rolls={},
+            combo_rolls_by_starter_id={
+                "p1":ComboExecutionRolls((
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,damage_roll=0
+                    ),
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,damage_roll=0
+                    ),
+                ))
+            },
+            base_damage_react_state_by_participant_id={
+                "p1":BaseDamageReactState(),
+                "p2":BaseDamageReactState(),
+                "enemy":BaseDamageReactState(reflect=2),
+            },
+            defense_profile="newpower_70pct",
+        )
+        combo=[event for event in result.events if event.is_combo]
+        self.assertEqual(len(combo),2)
+        self.assertEqual(
+            [event.ultimate_damage_resolution.ultimate_kind for event in combo],
+            [2,2],
+        )
+        self.assertEqual([event.ultimate_kind for event in combo],[0,0])
+        self.assertEqual(result.ultimate_exited_participant_ids,())
+        self.assertEqual(result.hp_by_participant_id["p1"],0)
+        self.assertEqual(result.hp_by_participant_id["p2"],0)
+        self.assertEqual(result.hp_by_participant_id["enemy"],300)
+
+    def test_combo_final_reflect_misroutes_damage_sub2_ultimate_flag(self):
+        p1=actor("p1","player","player",hp=100,attack=500,quick=100)
+        p2=actor("p2","player","pet",hp=30,attack=500,quick=90)
+        enemy=actor("enemy","enemy","enemy",hp=30,defense=20,quick=10)
+        prepared=prepare_battle_round(
+            (p1,p2,enemy),
+            {
+                "p1":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "p2":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"p1":0,"p2":0,"enemy":0},
+        )
+        combo_entries=tuple(
+            replace(
+                entry,
+                command=BattleCommand(BATTLE_COM_COMBO,command2=10),
+                combo_id=1,
+            )
+            if entry.participant.participant_id in {"p1","p2"}
+            else entry
+            for entry in prepared.ordered_entries
+        )
+        prepared=replace(prepared,ordered_entries=combo_entries)
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"p1":0,"p2":1,"enemy":10},
+            profiles={
+                "p1":profile(counter_weapon_type="bow"),
+                "p2":profile(),
+                "enemy":profile(),
+            },
+            attack_rolls={},
+            combo_rolls_by_starter_id={
+                "p1":ComboExecutionRolls((
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,damage_roll=0
+                    ),
+                    OrdinaryAttackRolls(
+                        critical_roll_1_10000=10000,damage_roll=0
+                    ),
+                ))
+            },
+            base_damage_react_state_by_participant_id={
+                "p1":BaseDamageReactState(),
+                "p2":BaseDamageReactState(),
+                "enemy":BaseDamageReactState(reflect=1),
+            },
+            defense_profile="newpower_70pct",
+        )
+        settlement=[
+            event for event in result.events
+            if event.is_combo and event.combo_settlement
+        ][0]
+        self.assertEqual(
+            settlement.ultimate_damage_resolution.ultimate_kind,
+            2,
+        )
+        self.assertEqual(settlement.ultimate_kind,2)
+        self.assertEqual(settlement.resolved_target_slot,10)
+        self.assertEqual(settlement.ultimate_flag_target_slot,1)
+        self.assertEqual(settlement.ultimate_flag_kind,2)
+        self.assertEqual(result.hp_by_participant_id["enemy"],0)
+        self.assertEqual(result.ultimate_exited_participant_ids,("p2",))
+        self.assertNotIn("enemy",result.ultimate_exited_participant_ids)
+
     def test_plain_combo_ultimate_is_resolved_on_final_settlement_only(self):
         e1=actor(
             "e1","enemy","enemy",

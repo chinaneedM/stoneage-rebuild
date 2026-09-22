@@ -49,6 +49,7 @@ from tools.stoneage_battle_core_model import (
 from tools.stoneage_battle_damage_react_model import (
     DAMAGE_REACT_ABSROB,
     DAMAGE_REACT_REFLEC,
+    DAMAGE_REACT_VANISH,
     BaseComboMemberDamageReactResolution,
     BaseDamageReactResolution,
     BaseDamageReactState,
@@ -1180,9 +1181,19 @@ def _resolve_combo_group_with_reactions(
     field_attr: str,
     field_power: int,
     ride_pet_runtime: RidePetRuntime | None = None,
+    ultimate_overkill_by_participant_id: dict[str,int] | None = None,
+    battle_abio_by_participant_id: Mapping[str,bool] | None = None,
 ) -> tuple[tuple[OrdinaryRoundEvent, ...], RidePetRuntime | None]:
     """Execute the stable per-member Combo DamageReact path."""
     group=tuple(members)
+    if ultimate_overkill_by_participant_id is None:
+        ultimate_overkill_by_participant_id={
+            str(participant.participant_id):0
+            for participant in by_slot.values()
+        }
+    battle_abio_by_participant_id=dict(
+        battle_abio_by_participant_id or {}
+    )
     member_rolls=tuple(rolls.member_attack_rolls)
     if len(member_rolls) != len(group):
         raise ValueError(
@@ -1212,6 +1223,7 @@ def _resolve_combo_group_with_reactions(
     accumulated_rider=0
     accumulated_pet=0
     accumulated_shared=False
+    last_react=None
     for member_index,(entry,attack_roll) in enumerate(
         zip(group,member_rolls),start=1
     ):
@@ -1289,6 +1301,7 @@ def _resolve_combo_group_with_reactions(
             ),
         )
         damage_react_state_by_participant_id[target_id]=react.state_after
+        last_react=react
 
         ride_split=None
         ride_hp_resolution=None
@@ -1382,6 +1395,54 @@ def _resolve_combo_group_with_reactions(
         hp_by_slot[int(target_slot)]=int(react.defender_hp_after)
         hp_by_id[target_id]=int(react.defender_hp_after)
 
+        # The immediate BATTLE_DamageSub return is discarded by BATTLE_Combo,
+        # but its internal WORKULTIMATE mutation still occurs. Preserve that
+        # accumulator/reset side effect without turning the return into an
+        # entry ultimate flag.
+        immediate_ultimate_resolution=None
+        immediate_damage_sub_called=bool(
+            (
+                react.selected_kind == DAMAGE_REACT_REFLEC
+                and not react.reflect_blocked_by_throwing_weapon
+            )
+            or react.selected_kind in {
+                DAMAGE_REACT_ABSROB,
+                DAMAGE_REACT_VANISH,
+            }
+        )
+        if immediate_damage_sub_called:
+            if react.selected_kind == DAMAGE_REACT_REFLEC:
+                immediate_target_id=actor_id
+                immediate_before=int(react.attacker_hp_before)
+                immediate_after=int(react.attacker_hp_after)
+                immediate_max_hp=int(actor.max_hp)
+            else:
+                immediate_target_id=target_id
+                immediate_before=int(react.defender_hp_before)
+                immediate_after=int(react.defender_hp_after)
+                immediate_max_hp=int(target.max_hp)
+            immediate_ultimate_resolution=resolve_battle_ultimate_damage(
+                BattleUltimateDamageInputs(
+                    damage_for_threshold=int(contribution),
+                    hp_damage_applied=max(
+                        0,
+                        immediate_before-immediate_after,
+                    ),
+                    target_hp_before=int(immediate_before),
+                    target_max_hp=int(immediate_max_hp),
+                    accumulated_overkill_before=int(
+                        ultimate_overkill_by_participant_id[
+                            immediate_target_id
+                        ]
+                    ),
+                )
+            )
+            ultimate_overkill_by_participant_id[
+                immediate_target_id
+            ]=int(
+                immediate_ultimate_resolution.accumulated_overkill_after
+            )
+
         wake_id=(
             actor_id if react.wakeup_target=="attacker"
             else target_id if react.wakeup_target=="defender"
@@ -1432,11 +1493,26 @@ def _resolve_combo_group_with_reactions(
                 ride_damage_split=ride_split,
                 ride_hp_resolution=ride_hp_resolution,
                 ride_pet_fell_rider_id=ride_pet_fell_rider_id,
+                ultimate_damage_resolution=immediate_ultimate_resolution,
             )
         )
 
-    # BATTLE_DamageSub2 applies only the non-reacted accumulated damage after
-    # the final attack-list member, with reactions disabled for settlement.
+    # BATTLE_DamageSub2 is assigned to the local ultimate variable only after
+    # the final member. It receives reactions disabled (refrect=-1), so only
+    # deferred/non-reacted Combo damage participates in this returned value.
+    last=group[-1]
+    last_id=str(last.participant.participant_id)
+    last_slot=int(slot_by_id[last_id])
+    last_roll=member_rolls[-1]
+    last_is_critical=bool(resolved[-1].critical)
+    if last_react is None:
+        raise AssertionError("combo reaction execution produced no last reaction")
+
+    settlement_ultimate_resolution=None
+    settlement_death_ultimate_resolution=None
+    settlement_ultimate_kind=0
+    settlement_event_index=None
+
     if accumulated > 0:
         before=int(hp_by_slot[int(target_slot)])
         settlement_split=None
@@ -1475,14 +1551,31 @@ def _resolve_combo_group_with_reactions(
         else:
             after=max(0,before-int(accumulated))
             settlement_damage=int(accumulated)
+
         hp_by_slot[int(target_slot)]=after
         hp_by_id[target_id]=after
-        last=group[-1]
-        last_id=str(last.participant.participant_id)
+        settlement_ultimate_resolution=resolve_battle_ultimate_damage(
+            BattleUltimateDamageInputs(
+                damage_for_threshold=int(accumulated_rider),
+                hp_damage_applied=max(0,int(before)-int(after)),
+                target_hp_before=int(before),
+                target_max_hp=int(target.max_hp),
+                accumulated_overkill_before=int(
+                    ultimate_overkill_by_participant_id[target_id]
+                ),
+            )
+        )
+        ultimate_overkill_by_participant_id[target_id]=int(
+            settlement_ultimate_resolution.accumulated_overkill_after
+        )
+        settlement_ultimate_kind=int(
+            settlement_ultimate_resolution.ultimate_kind
+        )
+
         resolved.append(
             OrdinaryRoundEvent(
                 last_id,
-                int(slot_by_id[last_id]),
+                last_slot,
                 BATTLE_COM_COMBO,
                 int(last.action_value),
                 "combo_settlement",
@@ -1499,8 +1592,92 @@ def _resolve_combo_group_with_reactions(
                 ride_damage_split=settlement_split,
                 ride_hp_resolution=settlement_hp,
                 ride_pet_fell_rider_id=ride_pet_fell_rider_id,
+                ultimate_damage_resolution=settlement_ultimate_resolution,
             )
         )
+        settlement_event_index=len(resolved)-1
+
+    # Historical quirk: after DamageSub2 has already computed ultimate against
+    # the original defender, stale REFLEC rewrites defindex=attackindex. The
+    # death check and eventual BENT_FLG_ULTIMATE write then use that rewritten
+    # entry. Throwing-weapon reflect bypass still leaves react==REFLEC here.
+    death_check_slot=(
+        last_slot
+        if last_react.selected_kind == DAMAGE_REACT_REFLEC
+        else int(target_slot)
+    )
+    death_check_target=by_slot[death_check_slot]
+    death_check_id=str(death_check_target.participant_id)
+    if int(hp_by_slot[death_check_slot]) <= 0:
+        victim_abio=bool(
+            battle_abio_by_participant_id.get(death_check_id,False)
+        )
+        needs_ultimate_roll=bool(
+            (not victim_abio)
+            and _participant_battle_kind(death_check_target) == ENEMY
+            and last_is_critical
+        )
+        if (
+            last_roll.ultimate_roll_1_100 is not None
+            and not needs_ultimate_roll
+        ):
+            raise ValueError(
+                "combo DamageReact ultimate_roll_1_100 supplied on unused "
+                "death path"
+            )
+        settlement_death_ultimate_resolution=(
+            resolve_battle_death_ultimate_override(
+                BattleDeathUltimateInputs(
+                    base_ultimate_kind=settlement_ultimate_kind,
+                    victim_kind=_participant_battle_kind(death_check_target),
+                    abio=victim_abio,
+                    critical=last_is_critical,
+                    critical_scope="enemy_only",
+                ),
+                critical_roll_1_100=(
+                    last_roll.ultimate_roll_1_100
+                    if needs_ultimate_roll
+                    else None
+                ),
+            )
+        )
+        settlement_ultimate_kind=int(
+            settlement_death_ultimate_resolution.ultimate_kind
+        )
+    elif last_roll.ultimate_roll_1_100 is not None:
+        raise ValueError(
+            "combo DamageReact ultimate_roll_1_100 supplied without "
+            "enemy critical death"
+        )
+
+    flag_slot=(
+        death_check_slot if settlement_ultimate_kind>0 else None
+    )
+    flag_kind=(
+        int(settlement_ultimate_kind)
+        if settlement_ultimate_kind>0
+        else 0
+    )
+    if settlement_event_index is None:
+        # DamageSub2(0) returns 0 and emits no distinct HP transaction in this
+        # model. Attach the source final death-check/flag metadata to the last
+        # member event so AddProfit can still observe the round-local flag.
+        resolved[-1]=replace(
+            resolved[-1],
+            death_ultimate_resolution=settlement_death_ultimate_resolution,
+            ultimate_kind=int(settlement_ultimate_kind),
+            ultimate_flag_target_slot=flag_slot,
+            ultimate_flag_kind=flag_kind,
+        )
+    else:
+        resolved[settlement_event_index]=replace(
+            resolved[settlement_event_index],
+            death_ultimate_resolution=settlement_death_ultimate_resolution,
+            ultimate_kind=int(settlement_ultimate_kind),
+            ultimate_flag_target_slot=flag_slot,
+            ultimate_flag_kind=flag_kind,
+        )
+
     return tuple(resolved),ride_runtime
 
 
@@ -1579,6 +1756,10 @@ def _resolve_combo_group(
             field_attr=field_attr,
             field_power=field_power,
             ride_pet_runtime=ride_pet_runtime,
+            ultimate_overkill_by_participant_id=(
+                ultimate_overkill_by_participant_id
+            ),
+            battle_abio_by_participant_id=battle_abio_by_participant_id,
         )
     actor_ids=tuple(
         str(entry.participant.participant_id) for entry in group
