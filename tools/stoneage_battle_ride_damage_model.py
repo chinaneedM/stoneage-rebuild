@@ -161,7 +161,9 @@ def apply_ride_damage(
         raise ValueError("ride-pet HP must be within max HP")
     rider_after=max(0,rider_hp-int(split.rider_amount))
     pet_after=max(0,pet_hp-int(split.pet_amount))
-    fell=bool(split.shared and pet_hp>0 and pet_after<=0)
+    # DamageSub's final defpet check unmounts whenever the selected ride pet
+    # is at/below zero after application, even if it entered this call at zero.
+    fell=bool(pet_after<=0)
     return RideHpResolution(
         rider_hp,rider_after,pet_hp,pet_after,fell,fell
     )

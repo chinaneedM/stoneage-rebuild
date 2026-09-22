@@ -6,6 +6,7 @@ from tools.stoneage_battle_damage_react_model import (
     DAMAGE_REACT_REFLEC,
 )
 from tools.stoneage_battle_guardian_model import GuardianRegistration
+from tools.stoneage_battle_ride_damage_model import RidePetRuntime
 
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
@@ -1585,6 +1586,153 @@ class BattleRoundModelTests(unittest.TestCase):
         )
         self.assertEqual(result.events[0].result,"dodge")
         self.assertIsNone(result.events[0].status_application_resolution)
+
+    def test_ordinary_damage_splits_to_nonentry_ride_pet(self):
+        player=actor(
+            "player","player","player",
+            hp=200,defense=60,quick=20,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=200,attack=100,quick=100,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            ride_pet_runtime=RidePetRuntime(
+                rider_id="player",
+                pet_id="pet:0",
+                hp=100,
+                max_hp=100,
+                defense_power=40,
+            ),
+            defense_profile="newpower_70pct",
+        )
+        attack=[e for e in result.events if e.participant_id=="enemy"][0]
+        self.assertIsNotNone(attack.ride_damage_split)
+        self.assertTrue(attack.ride_damage_split.shared)
+        self.assertEqual(
+            200-result.hp_by_participant_id["player"],
+            attack.ride_damage_split.rider_amount,
+        )
+        self.assertEqual(
+            100-result.ride_pet_runtime.hp,
+            attack.ride_damage_split.pet_amount,
+        )
+        self.assertEqual(
+            attack.damage,attack.ride_damage_split.rider_amount
+        )
+        self.assertNotIn("pet:0",result.hp_by_participant_id)
+
+    def test_ride_pet_death_unmounts_and_sets_petfall(self):
+        player=actor(
+            "player","player","player",
+            hp=200,defense=60,quick=20,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=200,attack=200,quick=100,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            ride_pet_runtime=RidePetRuntime(
+                rider_id="player",
+                pet_id="pet:0",
+                hp=1,
+                max_hp=100,
+                defense_power=40,
+            ),
+            defense_profile="newpower_70pct",
+        )
+        attack=[e for e in result.events if e.participant_id=="enemy"][0]
+        self.assertEqual(result.ride_pet_runtime.hp,0)
+        self.assertFalse(result.ride_pet_runtime.mounted)
+        self.assertTrue(result.ride_pet_runtime.petfall)
+        self.assertEqual(attack.ride_pet_fell_rider_id,"player")
+
+    def test_active_ride_rejects_unclosed_counter_combo_and_reaction_interactions(self):
+        player=actor("player","player","player")
+        enemy=actor("enemy","enemy","enemy")
+        runtime=RidePetRuntime(
+            rider_id="player",pet_id="pet:0",
+            hp=100,max_hp=100,defense_power=40,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"player":0,"enemy":0},
+        )
+        with self.assertRaisesRegex(ValueError,"counter execution"):
+            resolve_ordinary_round(
+                prepared,
+                slots={"player":0,"enemy":10},
+                profiles={"player":profile(),"enemy":profile()},
+                attack_rolls={
+                    "player":OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    )
+                },
+                counter_rolls_by_attack_id={},
+                ride_pet_runtime=runtime,
+                defense_profile="newpower_70pct",
+            )
+        with self.assertRaisesRegex(ValueError,"DamageReact"):
+            resolve_ordinary_round(
+                prepared,
+                slots={"player":0,"enemy":10},
+                profiles={"player":profile(),"enemy":profile()},
+                attack_rolls={
+                    "player":OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    )
+                },
+                base_damage_react_state_by_participant_id={
+                    "player":BaseDamageReactState(reflect=1),
+                    "enemy":BaseDamageReactState(),
+                },
+                ride_pet_runtime=runtime,
+                defense_profile="newpower_70pct",
+            )
 
     def test_normal_attack_applies_recovered_damage_to_hp(self):
         player = actor("player", "player", "player", quick=100)

@@ -735,6 +735,47 @@ class PersistentBattleStateTests(unittest.TestCase):
                 ),
             )
 
+    def test_enemy_hit_persists_ride_pet_hp_and_petfall_without_adding_battle_entry(self):
+        player=participant(
+            "player","player","player",
+            hp=200,defense=60,quick=20,
+        )
+        ride=participant(
+            "pet:0","player","pet",
+            hp=1,max_hp=100,defense=40,
+            source_pet_slot=0,
+        )
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=200,attack=200,quick=100,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,),ride_pet=ride),
+            slots={"player":0,"enemy":10},
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "enemy":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.after.ride_pet_runtime.hp,0)
+        self.assertFalse(result.after.ride_pet_runtime.mounted)
+        self.assertTrue(result.after.ride_pet_runtime.petfall)
+        self.assertNotIn("pet:0",result.after.hp_by_participant_id)
+        self.assertNotIn("pet:0",result.after.slots)
+
     def test_player_kill_also_awards_exp_to_nonparticipant_ride_pet(self):
         player = participant(
             "player", "player", "player",

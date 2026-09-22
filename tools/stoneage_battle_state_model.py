@@ -690,7 +690,7 @@ def resolve_persistent_capture_transition(
             )
             if pid != target_id
         }),
-        ride_pet_runtime=state.ride_pet_runtime,
+        ride_pet_runtime=round_result.ride_pet_runtime,
     )
     next_state=_with_termination(next_state)
     return PersistentCaptureResult(
@@ -743,8 +743,22 @@ def _pending_profit_after_ordinary_round(
         for enemy_id,rolls in (drop_rolls_by_enemy_id or {}).items()
     }
     consumed_drop_rolls=set()
+    ride_runtime=state.ride_pet_runtime
+    ride_mounted=bool(
+        ride_runtime is not None and ride_runtime.mounted
+    )
+    ride_rider_id=(
+        None if ride_runtime is None else str(ride_runtime.rider_id)
+    )
 
     for event in round_result.events:
+        if event.ride_pet_fell_rider_id is not None:
+            if (
+                ride_rider_id is None
+                or str(event.ride_pet_fell_rider_id) != ride_rider_id
+            ):
+                raise ValueError("ride-pet fall event references unknown rider")
+            ride_mounted=False
         if event.target_hp_before is None or event.target_hp_after is None:
             continue
         if int(event.target_hp_before) <= 0 or int(event.target_hp_after) != 0:
@@ -836,7 +850,11 @@ def _pending_profit_after_ordinary_round(
                 )
             ride=(
                 state.session.ride_pet
-                if profit_actor.kind == "player"
+                if (
+                    profit_actor.kind == "player"
+                    and ride_mounted
+                    and ride_rider_id == profit_actor_id
+                )
                 else None
             )
             profit_recipients.append(
@@ -1050,6 +1068,7 @@ def resolve_persistent_ordinary_round(
                 state.base_damage_react_state_by_participant_id[participant_id]
             for participant_id in living_ids
         }),
+        ride_pet_runtime=state.ride_pet_runtime,
         field_attr=field_attr,
         field_power=field_power,
     )

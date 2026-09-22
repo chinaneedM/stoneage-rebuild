@@ -54,6 +54,13 @@ from tools.stoneage_battle_guardian_model import (
     GuardianRegistration,
     guardian_redirect_allowed,
 )
+from tools.stoneage_battle_ride_damage_model import (
+    RideDamageSplit,
+    RideHpResolution,
+    RidePetRuntime,
+    apply_ride_damage,
+    ordinary_ride_damage_split,
+)
 from tools.stoneage_battle_status_model import (
     BASE_STATUS_NAME_BY_INDEX,
     STATUS_POISON,
@@ -649,6 +656,9 @@ class OrdinaryRoundEvent:
     damage_react_resolution: BaseDamageReactResolution | None = None
     combo_damage_react_resolution: BaseComboMemberDamageReactResolution | None = None
     combo_settlement: bool = False
+    ride_damage_split: RideDamageSplit | None = None
+    ride_hp_resolution: RideHpResolution | None = None
+    ride_pet_fell_rider_id: str | None = None
 
 
 @dataclass(frozen=True)
@@ -663,6 +673,7 @@ class ResolvedOrdinaryRound:
     base_damage_react_state_by_participant_id: Mapping[
         str,BaseDamageReactState
     ] | None = None
+    ride_pet_runtime: RidePetRuntime | None = None
     exited_participant_ids: tuple[str, ...] = ()
     escaped_participant_ids: tuple[str, ...] = ()
 
@@ -1042,7 +1053,7 @@ def _resolve_counter_chain(
                 original_target_slot=target_slot,
                 resolved_target_slot=target_slot,
                 critical=(attack_seq_result=="counter_critical"),
-                damage=int(damage),
+                damage=int(event_damage),
                 target_hp_before=before,
                 target_hp_after=after,
                 is_counter=True,
@@ -1568,6 +1579,7 @@ def resolve_ordinary_round(
     base_damage_react_state_by_participant_id: Mapping[
         str,BaseDamageReactState
     ] | None = None,
+    ride_pet_runtime: RidePetRuntime | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
@@ -1760,6 +1772,37 @@ def resolve_ordinary_round(
         if not isinstance(react_state,BaseDamageReactState):
             raise TypeError(
                 f"base damage-react state for {participant_id} has wrong type"
+            )
+
+    ride_runtime=ride_pet_runtime
+    active_ride=False
+    if ride_runtime is not None:
+        if not isinstance(ride_runtime,RidePetRuntime):
+            raise TypeError("ride_pet_runtime must be RidePetRuntime or null")
+        if ride_runtime.rider_id not in slot_by_id:
+            raise ValueError("ride runtime rider is not an active battle entry")
+        rider=by_slot[slot_by_id[ride_runtime.rider_id]]
+        if rider.kind != "player":
+            raise ValueError("common ride runtime rider must be a player")
+        if ride_runtime.pet_id in slot_by_id:
+            raise ValueError(
+                "non-entry ride pet cannot also occupy an active battle slot"
+            )
+        active_ride=bool(ride_runtime.mounted)
+        if active_ride and combo_groups:
+            raise ValueError(
+                "ride-pet interaction with Combo is a separate seam"
+            )
+        if active_ride and normalized_counter_rolls is not None:
+            raise ValueError(
+                "ride-pet interaction with counter execution is a separate seam"
+            )
+        if active_ride and any(
+            base_damage_react_active(react_state)
+            for react_state in damage_react_state.values()
+        ):
+            raise ValueError(
+                "ride-pet interaction with DamageReact is a separate seam"
             )
 
     guardian_registrations={
@@ -2690,6 +2733,51 @@ def resolve_ordinary_round(
         )
         damage_react_state[reaction_defender_id]=reaction_resolution.state_after
 
+        ride_split=None
+        ride_hp_resolution=None
+        ride_pet_fell_rider_id=None
+        event_damage=int(damage)
+        if (
+            active_ride
+            and ride_runtime is not None
+            and reaction_defender_id == ride_runtime.rider_id
+        ):
+            ride_split=ordinary_ride_damage_split(
+                int(damage),
+                rider_defense_power=int(defender_work_defense),
+                pet_defense_power=int(ride_runtime.defense_power),
+                pet_hp=int(ride_runtime.hp),
+            )
+            ride_hp_resolution=apply_ride_damage(
+                ride_split,
+                rider_hp=int(reaction_resolution.defender_hp_before),
+                rider_max_hp=int(reaction_defender.max_hp),
+                pet_hp=int(ride_runtime.hp),
+                pet_max_hp=int(ride_runtime.max_hp),
+            )
+            reaction_resolution=replace(
+                reaction_resolution,
+                defender_hp_after=int(
+                    ride_hp_resolution.rider_hp_after
+                ),
+            )
+            event_damage=int(ride_split.rider_amount)
+            if ride_hp_resolution.unmounted:
+                ride_pet_fell_rider_id=ride_runtime.rider_id
+            ride_runtime=replace(
+                ride_runtime,
+                hp=int(ride_hp_resolution.pet_hp_after),
+                mounted=(
+                    False
+                    if ride_hp_resolution.unmounted
+                    else ride_runtime.mounted
+                ),
+                petfall=bool(
+                    ride_runtime.petfall or ride_hp_resolution.petfall
+                ),
+            )
+            active_ride=bool(ride_runtime.mounted)
+
         hp_by_slot[slot]=int(reaction_resolution.attacker_hp_after)
         hp_by_id[str(participant_id)]=int(
             reaction_resolution.attacker_hp_after
@@ -2737,7 +2825,7 @@ def resolve_ordinary_round(
 
         status_application=None
         if (
-            int(damage) > 0
+            int(event_damage) > 0
             and attack_command_code == BATTLE_COM_S_STATUSCHANGE
         ):
             status_index=battle_command3_low(command.command3)
@@ -2769,7 +2857,7 @@ def resolve_ordinary_round(
                         per_offset=30,
                     ),
                     target_runtime.status,
-                    damage_after_resolution=int(damage),
+                    damage_after_resolution=int(event_damage),
                     roll_1_100=status_application_rolls.get(
                         str(participant_id)
                     ),
@@ -2815,6 +2903,9 @@ def resolve_ordinary_round(
                 guarded_target_slot=guarded_target_slot,
                 guardian_slot=guardian_slot,
                 damage_react_resolution=reaction_resolution,
+                ride_damage_split=ride_split,
+                ride_hp_resolution=ride_hp_resolution,
+                ride_pet_fell_rider_id=ride_pet_fell_rider_id,
             )
         )
         # BATTLE_Attack forces continuation FALSE whenever Guardian>=0.
@@ -2845,6 +2936,7 @@ def resolve_ordinary_round(
         base_damage_react_state_by_participant_id=MappingProxyType(
             dict(damage_react_state)
         ),
+        ride_pet_runtime=ride_runtime,
         exited_participant_ids=tuple(exited_ids),
         escaped_participant_ids=tuple(escaped_ids),
     )
