@@ -1144,6 +1144,37 @@ Every substantial source should record:
   - locate a 21CN-native StoneAge / `精灵王传说` software-detail record under archived `list.php?id=...` or related `downit.php` topology.
 
 
+
+### SRC-CN-2002-21CN-SA25UP-JPG-01
+
+- Historical URL: `http://download.21cn.com:80/file/game/maoxian/sa25up.jpg`
+- Wayback timestamp: **2002-05-17 23:58:42 UTC**
+- Retrieval/research date: **2026-09-25**
+- Source type: recoverable archived 21CN-hosted same-stem JPEG sidecar
+- HTTP replay: **200**
+- Recovered body size: **9,312 bytes**
+- SHA-256: `7b475f1b3613d87e4e5747bb98d68ac186da265518359ac819b97c19b3b8b80e`
+- JPEG dimensions: **120 × 169**, 8-bit, 3 components
+- JPEG metadata: EXIF present; JFIF 1.02; comment `ACD Systems Digital Imaging`; no ICC or Photoshop segment detected
+- Transient visual observation: illustrated game-art panel showing multiple stylised human figures and dinosaur / prehistoric-fantasy creatures; no reliably readable edition/version/operator text at the archived resolution.
+- Confidence: **A for URL/timestamp/HTTP status/bytes/hash/dimensions; B for literal broad visual description; OPEN for exact artwork edition and relationship to ZIP contents**
+- Supports:
+  - a native 21CN `sa25up`-stem game-art asset existed and was successfully archived by May 2002;
+  - the `sa25up` object family predates the 2003 archived source-page link and later reposts.
+- Does not support:
+  - successful archival or current recoverability of `sa25up.zip`;
+  - that the ZIP is the documented 8.25 MB updater or the 575/580 MB full package;
+  - official Beijing-Waei provenance, clean-client status, file tree, checksum or byte identity;
+  - a direct operator-to-21CN distribution contract.
+- Crawl-neighborhood note:
+  - `list.php?id=8831` was captured at **2002-05-17 23:12:52 UTC** in the nearest currently indexed two-hour crawl neighborhood;
+  - this is only a discovery candidate until an explicit HTML/path relation is recovered.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-21CN-JPG-R1.txt`
+  - `research/recovered/STONEAGE-SA25-21CN-CRAWL-NEIGHBORHOOD-R1.txt`
+  - `research/clients/STONEAGE-SA25-21CN-SA25UP-JPG-VISUAL-R1.md`
+
+
 ### SRC-CN-2003-PCPC-SA25UP-SOURCE-ARCHIVE-01
 
 - Title/context: archived legacy software/game download-link page `/soft/soft.htm`
