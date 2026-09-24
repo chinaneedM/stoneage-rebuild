@@ -320,18 +320,28 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Public index: https://lab.welovesa.com/forumdisplay.php?fid=40
 - Thread title: **`〖2.5纯净〗石器客户端`**
 - Thread id: **`2132`**
-- First indexed date: 2012-09-26.
+- Author: **`rayrix`**
+- First indexed date: **2012-09-26**
+- Current public index explicitly labels the thread **`售價 石幣 5`**.
 - Value:
-  - the explicit `纯净` label makes this the highest-value current 2.5 preservation lead;
-  - unlike the combined 2.5 client/server/login bundle, this thread is specifically cataloged as a client.
-- Limitation:
-  - the thread/download body is access-restricted in the current route;
-  - no public filename, size, hash or download URL has yet been extracted;
-  - `纯净` remains the forum label, not a verified cleanliness conclusion.
+  - the explicit `纯净` label and client-only cataloguing make this a high-value 2.5 preservation lead;
+  - it remains materially preferable to mixed client/server/login bundles if an independently accessible copy or mirror is found.
+- Public-surface boundary:
+  - anonymous page 1 and printable responses expose the title shell but no client filename, size, hash, attachment ID or download URL;
+  - anonymous pages **2–5** resolve to the login/permission shell and expose **0** download/attachment references;
+  - the tested Wayback exact/prefix surface produced no relevant `tid=2132` capture; timeout/error rows are not treated as negative evidence;
+  - no login, payment, cookie purchase or access-control bypass was attempted.
+- Evidence boundary:
+  - `纯净` is a community title label, **not** a verified cleanliness conclusion;
+  - no byte-level claim may be made until an independent repost/mirror or legitimately accessible artifact is recovered and fingerprinted.
+- Derived reports:
+  - `research/recovered/STONEAGE-WELOVESA-25-CLEAN-THREAD-R1.txt`;
+  - `research/recovered/STONEAGE-WELOVESA-25-CLEAN-REPLIES-R1.txt`.
 - Next action:
-  - recover indexed/printable/archived snippets, reposts or mirrors for thread `tid=2132`;
-  - if bytes are found, run the same clean-client acceptance test before promotion.
-- Status: **TARGET-A/B — high-value 2.5 clean-client lead, bytes not yet recovered**.
+  - do **not** repeat the same anonymous forum/Wayback route;
+  - pursue independent reposts/mirrors, contemporaneous installed-tree backups, FTP/CDN mirrors and physical-disc preservation by exact 2.5 carrier identity;
+  - if bytes are found, run the clean-client acceptance test before promotion.
+- Status: **TARGET-A/B / PUBLIC SURFACE BOUNDED — high-value lead, no public payload token yet**.
 
 ## CLEAN-CLIENT CONTROL — version/login fingerprints are multi-factor, not single-key proof
 
