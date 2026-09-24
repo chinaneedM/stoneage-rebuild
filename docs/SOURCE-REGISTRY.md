@@ -1464,32 +1464,43 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-SA25-SHIQICLUB-BODY-IMAGES-R1.txt`.
 
 
-### SRC-CN-2020-BAHAMUT-SA25-CLIENT-PACKAGE-01
 
-- Title: `石器時代周邊收藏，石器用戶端禮包篇（六）2.5精靈王傳說版用戶端產包`
-- Author/account: **寂寞如風 / stoneage2017**
-- Publication timestamp shown by live page: **2020-09-21 11:13:04**
+
+
+### SRC-CN-2016-SMZDM-SA25-INSTALL-DISCS-01
+
+- Title: `此情可待成追忆：记那些年的石器时代`
+- Publication timestamp: **2016-06-20 17:32:33**
 - Retrieval/research date: **2026-09-25**
-- URL: https://forum.gamer.com.tw/C.php?bsn=1571&snA=81400
-- Source type: modern collector article documenting surviving StoneAge 2.5 client packages; not a contemporaneous 2002 primary source and not a disc dump.
-- Literal package observations:
-  - the author describes many 2.5 new-user-package cover variants;
-  - the 2.5 period is described as having a **green WGS gift box**, contrasted with an orange WGS gift box in 2.0;
-  - a **simplified client package** is separately mentioned.
-- Mirror/control:
-  - `https://www.shiqi.club/shiqi2712.html` preserves substantially the same package text and exposes 11 article-body package photographs under the 2020/11 upload path;
-  - derived body-image mapping is recorded without treating the photograph bytes as disc contents.
-- Confidence: **A for the literal live-page text/title/author/timestamp and mirror URLs; B for collector classification of surviving package forms; OPEN for original package-to-disc chain and disc bytes**.
+- URL: `https://post.smzdm.com/p/462347/`
+- Source type: independent modern collector/player post showing surviving original-era installation media; **not** a disc dump and not contemporaneous 2002 documentation.
+- Literal install-disc section:
+  - the author says the first purchased StoneAge package was a 2.0 new-user package;
+  - then explicitly states that **2.5, 3.0, 4.0, 5.0 and 疯狂原始人 installation discs** were still preserved, while some boxes and the 6.0 disc were no longer present.
+- Exact section-photo recovery:
+  - **6** image URLs recovered from the install-disc section;
+  - all six bodies replayed successfully at **1080×607** with **0 errors**;
+  - SHA-256 values:
+    - `98ad75b6eb5fa5aca6fa7e37095bd207779321ea4991ccf0754117cfaf3884c3`
+    - `7e3a7d614f86fbe719ff29ab152c596ab96b712159f9401108fb3434fd083be9`
+    - `9aa2a77e75075a25cc5ea773ec7fd79ce3f085160b3352566aabfeb1299edb34`
+    - `6378d9b7159209a112de6e0653f89edc9c4c95f06cf01eb30742c9675ffa7b29`
+    - `951aae22e52a55c45a72f4d2c59b13248f7115d5278960f09528e4cc2398a074`
+    - `6cbdd069c8482d7f4818238c124e4a44faa4aa680f2dd7be3d7e591d0e0762c7`.
+- Cross-source visual test:
+  - compared against 11 currently recoverable Ruten 2.5 package/disc photographs;
+  - the best automatic local-feature result produced **40 RANSAC inliers / 0.0396 inlier ratio**;
+  - this is **not promoted as a same-artwork or same-disc match**.
+- Confidence:
+  - **A for literal surviving text, exact section-photo URLs, image dimensions and hashes**;
+  - **B for the author's identification of the preserved disc sequence as independent collector testimony**;
+  - **OPEN for exact package-to-photo position, pressing/mastering, matrix/IFPI and disc contents**.
 - Supports:
-  - visual/product-family identification of surviving 2.5 package variants;
-  - prioritizing complete boxed media and simplified client packages as physical recovery targets.
+  - an independent second survival chain showing that a Mainland-era StoneAge 2.5 installation disc remained physically preserved in 2016;
+  - future exact-photo or physical-carrier comparison.
 - Does not support:
-  - disc filesystem, ISO/hash, mastering/matrix/IFPI identity, clean-client status or byte equality among packages.
-- Derived reports:
-  - `research/recovered/STONEAGE-SA25-BAHAMUT-CLIENT-PACKAGE-R1.txt`
-  - `research/recovered/STONEAGE-SA25-SHIQICLUB-PACKAGE-MIRROR-R1.txt`
-  - `research/recovered/STONEAGE-SA25-SHIQICLUB-BODY-IMAGES-R1.txt`.
-
+  - ISO/filesystem contents, installer build, clean-client provenance, or byte equivalence to any other 2.5 disc/client.
+- Derived report: `research/recovered/STONEAGE-SA25-SMZDM-DISC-R1.txt`.
 
 ### SRC-CN-2013-XUNLEI-SA25-CLIENT-LEAD-01
 

@@ -1891,26 +1891,13 @@ Supplemental source ledgers:
 - Derived reports: `research/recovered/STONEAGE-SA25-BAHAMUT-CLIENT-PACKAGE-R1.txt`, `research/recovered/STONEAGE-SA25-SHIQICLUB-PACKAGE-MIRROR-R1.txt`, and `research/recovered/STONEAGE-SA25-SHIQICLUB-BODY-IMAGES-R1.txt`.
 - A separate **2013 Xunlei standalone-client token** was also recovered from a surviving one-click/private-server post: client URL `http://kuai.xunlei.com/d/DX1fAAJeiQBWT-tR9ee`. Exact/prefix Wayback, Availability and Arquivo probes produced **0 payload-preservation hits**; the source itself describes paired server/client distribution and local `elize.ini` modification. Therefore this is retained only as a **descendant/private-server lineage token**, not as 2002 clean-client provenance, and it does not outrank physical-disc/full-client recovery.
 - Derived Xunlei report: `research/recovered/STONEAGE-SA25-XUNLEI-CLIENT-R1.txt`.
+- An **independent 2016 physical-survival control** now comes from the SMZDM collector post `此情可待成追忆：记那些年的石器时代`: its install-disc section explicitly says the author still had **2.5 / 3.0 / 4.0 / 5.0 / 疯狂原始人 installation discs**. The exact section contains six recoverable 1080×607 photographs; all six were hash-locked with 0 fetch errors. Automatic comparison against current Ruten 2.5 photographs is **not strong enough to assert same-artwork identity** (best RANSAC result: 40 inliers, ~3.96% ratio), so this source is used only as a second independent survival/visual-control chain, not as a pressing or byte-equivalence claim.
+- Derived independent-disc report: `research/recovered/STONEAGE-SA25-SMZDM-DISC-R1.txt`.
+- Canonical independent-disc source: `SRC-CN-2016-SMZDM-SA25-INSTALL-DISCS-01`.
 
 
 
-## StoneAge 2.5 physical-package carrier map + 2013 descendant-client lead — 2026-09-25
 
-- The 2.5 physical-carrier surface is now more tightly resolved. Contemporaneous 17173 product material states that both **石器时代2.5延年益兽包** and **石器时代2.5春满钱坤包** include a **StoneAge 2.5 client CD**, while the **2.5新手报到包** existed in **three package variants**. This identifies multiple operator-era product families capable of carrying full-client media; it does not prove that their discs were byte-identical.
-- A live Bahamut collector article, `snA=81400`, titled **石器時代周邊收藏，石器用戶端禮包篇（六）2.5精靈王傳說版用戶端產包**, further documents the surviving package family as modern collector evidence. It describes many 2.5 new-user-package cover variants, a **green WGS gift box** in the 2.5 period, and a **simplified client package**. The independently surviving `shiqi.club/shiqi2712.html` mirror preserves the same text and exposes a sequence of 11 article-body package photographs under `/zb_users/upload/2020/11/`.
-- These collector/package photographs are **visual carrier controls only**. They can help classify an exposed disc or box as belonging to the correct 2.5 product family, but they cannot establish ISO contents, mastering/matrix/IFPI identity, installer build, or clean-byte provenance.
-- A separate 2013 public post provides an exact historical descendant-client token: **`http://kuai.xunlei.com/d/DX1fAAJeiQBWT-tR9ee`**, explicitly labelled as the **client download** for a StoneAge 2.5 one-click/private-server bundle. The post also states that the included `elize.ini` had been locally modified for a LAN address, so this lead is classified as a **descendant/private-server client backup**, not original-2002 provenance.
-- A bounded preservation pass over that exact Xunlei URL found **0 Wayback exact rows, 0 Wayback prefix rows, no available snapshots at four 2013–2014 anchors, and 0 Arquivo rows**. CI access to the current source page itself is HTTP 403, but the exact token/source text is independently visible on the current public web surface. The Xunlei route is therefore **BOUNDED on the tested preservation indexes**; reopen only from a new mirror, filename, hash, re-upload or archived redirect.
-- Highest information gain remains a **public provenance-preserving read/dump or file tree from a surviving 2.5 client CD**, followed by an independently preserved contemporaneous installed-tree backup. Modern private-server bundles remain useful only as descendant comparison controls.
-- Derived reports:
-  - `research/recovered/STONEAGE-SA25-BAHAMUT-CLIENT-PACKAGE-R1.txt`
-  - `research/recovered/STONEAGE-SA25-SHIQICLUB-PACKAGE-MIRROR-R1.txt`
-  - `research/recovered/STONEAGE-SA25-SHIQICLUB-BODY-IMAGES-R1.txt`
-  - `research/recovered/STONEAGE-SA25-XUNLEI-CLIENT-R1.txt`
-- Canonical sources:
-  - `SRC-CN-2002-17173-SA25-PRODUCT-01`
-  - `SRC-CN-2020-BAHAMUT-SA25-CLIENT-PACKAGE-01`
-  - `SRC-CN-2013-XUNLEI-SA25-CLIENT-LEAD-01`.
 
 ## Immediate next actions
 
