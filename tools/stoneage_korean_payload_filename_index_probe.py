@@ -6,6 +6,7 @@ and the public old-disc torrent path snapshot. No client/disc payload bytes are 
 """
 from __future__ import annotations
 
+import concurrent.futures
 import hashlib
 import io
 import os
@@ -127,10 +128,10 @@ def main():
                 f"IA_QUERY|label={label}|filename={name}|status={st}|bytes={len(body)}|"
                 f"sha256={hashlib.sha256(body).hexdigest()}|items={len(docs)}|final={clean(final)}"
             )
-            for doc in docs:
+            def inspect_doc(doc):
                 ident = str(doc.get("identifier") or "")
                 if not ident:
-                    continue
+                    return doc, ident, None, None
                 try:
                     mst, mfinal, mbody, meta = ia_metadata(ident)
                     strict_files = []
@@ -143,6 +144,18 @@ def main():
                         )
                         if strict_candidate(name, mode, filename=fn, size=size, context=ctx):
                             strict_files.append(f)
+                    return doc, ident, (mst, mbody, strict_files), None
+                except Exception as e:
+                    return doc, ident, None, (type(e).__name__, str(e))
+
+            with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+                for doc, ident, result, error in ex.map(inspect_doc, docs):
+                    if not ident:
+                        continue
+                    if error:
+                        errors.append((f"ia-meta:{label}:{ident}", error[0], error[1]))
+                        continue
+                    mst, mbody, strict_files = result
                     if strict_files:
                         ia_hits[(label, ident)] = strict_files
                         print(
@@ -154,8 +167,6 @@ def main():
                                 f"IA_FILE|label={label}|identifier={clean(ident)}|name={clean(f.get('name'))}|"
                                 f"size={clean(f.get('size'))}|md5={clean(f.get('md5'))}|sha1={clean(f.get('sha1'))}"
                             )
-                except Exception as e:
-                    errors.append((f"ia-meta:{label}:{ident}", type(e).__name__, str(e)))
         except Exception as e:
             errors.append((f"ia:{label}", type(e).__name__, str(e)))
 
