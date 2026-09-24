@@ -1,0 +1,8 @@
+StoneAge JSS SaUpdate manifest-root dataflow probe — R1
+SCOPE|first-party-host-path-xrefs+operand-shapes+absolute-datarefs+direct-callers|derived-only
+FETCH|status=206|bytes=217088|sha256=6795d9349168f77aa025d7c4ea05d005c5bbfe33dd4b227eb7731802fa7eb82b|final=https://web.archive.org/web/20010503013834id_/http://www.titan.co.jp/stoneage/stoneage.exe
+TARGET|label=manifest-host|text=update.gamersdream.ne.jp|locations=1
+STRING_LOCATION|label=manifest-host|file_off=28728|rva=0x7038|xrefs=1
+TARGET|label=manifest-path|text=/~stoneage/newest.txt|locations=1
+STRING_LOCATION|label=manifest-path|file_off=28704|rva=0x7020|xrefs=1
+RESOLUTION|MANIFEST_ROOT_DATAFLOW_DERIVED|targets=2|xrefs=2|root_functions=0|binary-not-committed
