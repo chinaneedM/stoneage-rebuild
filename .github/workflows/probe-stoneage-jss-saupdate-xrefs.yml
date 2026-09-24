@@ -1,0 +1,44 @@
+name: Probe archived JSS SaUpdate xrefs
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_jss_saupdate_xref_probe.py
+      - tests/test_stoneage_jss_saupdate_xref_probe.py
+      - .github/workflows/probe-stoneage-jss-saupdate-xrefs.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-jss-saupdate-xrefs
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate SaUpdate xref probe
+        run: python3 -m unittest tests.test_stoneage_jss_saupdate_xref_probe -v
+      - name: Derive updater xref/import map transiently
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_jss_saupdate_xref_probe \
+            > research/recovered/STONEAGE-JSS-SAUPDATE-XREF-R1.txt
+      - name: Verify no executable or binary resource was retained
+        run: |
+          set -euo pipefail
+          ! find research tools tests -type f \( -iname '*.exe' -o -iname '*.bin' -o -iname '*.cab' -o -iname '*.zip' \) -print -quit | grep -q .
+      - name: Commit derived xref metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-JSS-SAUPDATE-XREF-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: map JSS SaUpdate string xrefs'
+          git pull --rebase origin main
+          git push
