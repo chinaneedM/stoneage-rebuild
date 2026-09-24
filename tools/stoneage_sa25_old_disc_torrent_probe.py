@@ -10,15 +10,13 @@ URL="https://www.nuduseng.com/laoguangpan/allseeds.zip"
 UA="stoneage-rebuild-archaeology/1.0"
 MAX_ZIP=100_000_000
 MAX_TORRENT=25_000_000
-TOKENS=(
+STRONG=(
     "2001C226",
     "哇靠轰炸鸡",
     "2001 NEW GAME 093",
-    "NEW GAME 093",
-    "藏经阁280",
 )
-CONTEXTUAL=(("总第280期","NEW GAME"),("总第280期","藏经阁"),("总第280期","2001C226"))
-WEAK=("NEW GAME","藏经阁")
+CONTEXTUAL=(("总第280期","2001 NEW GAME 093"),("总第280期","2001C226"))
+WEAK=("总第280期","NEW GAME 093","藏经阁280","280","NEW GAME","藏经阁")
 
 def clean(v,n=2200):
     return " ".join(str(v or "").split()).replace("|","%7C")[:n]
@@ -89,16 +87,28 @@ def torrent_paths(meta):
 def interesting(paths, raw):
     joined="\n".join(paths)
     low=joined.lower()
-    strong=[t for t in TOKENS if t.lower() in low]
+    strong=[t for t in STRONG if t.lower() in low]
     # “总第280期” is generic (e.g. magazines); require a catalog-specific co-token.
     for a,b in CONTEXTUAL:
         if a.lower() in low and b.lower() in low:
             strong.append(a+"+"+b)
     weak=[]
-    if not strong:
-        for t in WEAK:
-            if t.lower() in low: weak.append(t)
+    for t in WEAK:
+        if t.lower() in low:
+            weak.append(t)
     return tuple(dict.fromkeys(strong)),tuple(dict.fromkeys(weak))
+
+def relevant_paths(paths,strong,weak):
+    if strong:
+        exact=tuple(t.lower() for t in STRONG)
+        contextual=("总第280期","2001 new game 093","2001c226")
+        return tuple(
+            p for p in paths
+            if any(t in p.lower() for t in exact)
+            or ("总第280期" in p and any(t in p.lower() for t in contextual[1:]))
+        )
+    hints=tuple(t.lower() for t in weak)
+    return tuple(p for p in paths if any(t in p.lower() for t in hints))
 
 def fetch():
     req=urllib.request.Request(URL,headers={"User-Agent":UA,"Accept":"application/zip,*/*"})
