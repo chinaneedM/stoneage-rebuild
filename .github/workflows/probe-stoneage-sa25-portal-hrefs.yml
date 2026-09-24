@@ -1,0 +1,47 @@
+name: Probe StoneAge 2.5 historical portal hrefs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa25_portal_href_probe.py
+      - tests/test_stoneage_sa25_portal_href_probe.py
+      - .github/workflows/probe-stoneage-sa25-portal-hrefs.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-portal-hrefs
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate probe
+        run: python3 -m unittest tests.test_stoneage_sa25_portal_href_probe -v
+      - name: Replay historical portal pages
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa25_portal_href_probe \
+            > research/recovered/STONEAGE-SA25-PORTAL-HREFS-R1.txt
+      - name: Commit derived metadata only
+        shell: bash
+        run: |
+          set -euo pipefail
+          report='research/recovered/STONEAGE-SA25-PORTAL-HREFS-R1.txt'
+          cp "$report" /tmp/STONEAGE-SA25-PORTAL-HREFS-R1.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/STONEAGE-SA25-PORTAL-HREFS-R1.txt "$report"
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: recover historical StoneAge 2.5 portal hrefs'
+          git push
