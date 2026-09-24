@@ -134,7 +134,7 @@ jobs:
                   except: continue
                   if sum(s.lower().count(t.lower()) for t in toks)>sum(best.lower().count(t.lower()) for t in toks): best=s
               return best
-          def clean(x,n=2800): return " ".join(x.split()).replace("|","%7C")[:n]
+          def clean(x,n=2800): return " ".join(str(x).split()).replace("|","%7C")[:n]
           hits=0
           for p in Path('/tmp/sa25cat/chm').rglob('*'):
               if not p.is_file() or p.stat().st_size>3_000_000: continue
