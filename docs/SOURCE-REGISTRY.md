@@ -1064,3 +1064,25 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-WAEI-SA25-TYRO-SUBTREE-R1.txt`;
   - `research/recovered/STONEAGE-WAEI-PRE25-UPGRADE-CAPTURE-R1.txt`;
   - `research/recovered/STONEAGE-WAEI-2002-PAYLOAD-DOMAIN-R1.txt`.
+
+
+### SRC-CN-2002-17173-SA25-PRODUCT-01
+
+- Title: `《石器2.5--精灵王传说》产品介绍`
+- Retrieval date: 2026-09-24
+- Language/region: Simplified Chinese / Mainland China
+- Source type: surviving 17173 StoneAge product-description page
+- URL: https://news.17173.com/z/stoneage/banben/sa25-cp.htm
+- Confidence: **A-** for period product composition as preserved by the contemporaneous StoneAge portal; not a disc dump
+- Supports:
+  - `石器时代2.5延年益兽包` is described as including a **StoneAge 2.5 client CD** plus WGS/physical extras;
+  - `石器时代2.5春满钱坤包` is likewise described as including a **StoneAge 2.5 client CD**;
+  - `石器时代2.5新手报到包` existed in three package variants.
+- Archaeology significance:
+  - identifies official product families that physically carried a 2.5 client disc and can therefore serve as provenance-preserving recovery targets.
+- Does not support:
+  - any disc hash, file tree, mastering/pressing identity or byte equality between the product families;
+  - that a current marketplace disc is authentic without physical verification;
+  - Taiwan-v1 field-map provenance.
+- Current lead report:
+  - `research/recovered/STONEAGE-SA25-LIVE-PHYSICAL-LEADS-R1.md`.
