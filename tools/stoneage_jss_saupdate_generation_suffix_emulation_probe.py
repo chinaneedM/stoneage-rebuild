@@ -30,16 +30,16 @@ STUB_BASE=0x32000000
 SENTINEL=0x33000000
 
 CASES=(
-    ("extension-generation","real.bin_12",12),
-    ("leading-zero","spr.bin_0017",17),
-    ("trailing-text","battle.dat_42extra",42),
-    ("negative","sound.bin_-3",-3),
-    ("underscore-before-dot","real_12.bin",0),
+    ("generation-before-extension","real_12.bin",12),
+    ("leading-zero","spr_0017.bin",17),
+    ("trailing-text","battle_42extra.dat",42),
+    ("negative","sound_-3.bin",-3),
+    ("underscore-after-dot","real.bin_12",0),
     ("dot-no-underscore","real.bin",0),
     ("no-dot","real_12",0),
-    ("nondigit-suffix","real.bin_beta",0),
-    ("first-underscore-wins","real.bin_beta_9",0),
-    ("nested-dot","foo.bar.baz_27",27),
+    ("nondigit-suffix","real_beta.bin",0),
+    ("first-underscore-wins","real_beta_9.bin",0),
+    ("nested-extension","foo_27.bar.baz",27),
 )
 
 
