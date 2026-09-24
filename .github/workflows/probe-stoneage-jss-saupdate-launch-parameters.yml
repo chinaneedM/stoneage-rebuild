@@ -1,0 +1,44 @@
+name: Probe archived JSS SaUpdate launch parameters
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_jss_saupdate_launch_parameter_probe.py
+      - tests/test_stoneage_jss_saupdate_launch_parameter_probe.py
+      - .github/workflows/probe-stoneage-jss-saupdate-launch-parameters.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-jss-saupdate-launch-parameters
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate launch-parameter probe
+        run: python3 -m unittest tests.test_stoneage_jss_saupdate_launch_parameter_probe -v
+      - name: Derive launch-parameter relationships
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_jss_saupdate_launch_parameter_probe \
+            > research/recovered/STONEAGE-JSS-SAUPDATE-LAUNCH-PARAMETERS-R1.txt
+      - name: Verify no executable was retained
+        run: |
+          set -euo pipefail
+          ! find research tools tests -type f -iname '*.exe' -print -quit | grep -q .
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-JSS-SAUPDATE-LAUNCH-PARAMETERS-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: derive JSS launch parameter semantics'
+          git pull --rebase origin main
+          git push
