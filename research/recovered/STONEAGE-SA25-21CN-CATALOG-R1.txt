@@ -1,0 +1,40 @@
+StoneAge 2.5 21CN catalogue-record scan — R1
+SCOPE|wayback-21cn-list-html|derived-match-context-only|no-linked-game-payload
+CDX|status=200|bytes=140831|sha256=cc76f5088931c5cc115c4d973a9bed12e27940b93da57daeb24dd8d5e45c8cbe|rows=1129|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2F202.104.32.168%2Flist.php&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=2001&to=2004&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=5000
+ERROR_SUMMARY|kind=tuple|count=1110
+ERROR_SAMPLE|id=1070|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1072|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=10720|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=10721|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=10724|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=10725|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=10731|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=10735|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=10736|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=10768|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1090|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1104|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1107|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1108|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1109|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1114|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1118|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1122|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1123|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1124|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1125|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1126|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1127|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=113|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1130|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1131|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1137|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1138|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1139|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+ERROR_SAMPLE|id=1140|kind=tuple|message=('URLError', '<urlopen error [Errno 111] Connection refused>')
+COUNT|catalog_rows|1129
+COUNT|completed_pages|19
+COUNT|matched_pages|0
+COUNT|errors|1110
+RESOLUTION|PARTIAL_21CN_CATALOGUE_SCAN|retry failed pages or narrow by newly recovered IDs/tokens
+EVIDENCE_BOUNDARY|a 21CN catalogue-page match can establish 21CN-native metadata and link topology; it cannot prove linked bytes were official, clean, complete, or successfully archived.
