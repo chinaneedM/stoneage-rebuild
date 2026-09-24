@@ -2019,7 +2019,7 @@ MAP|timestamp=20030623234451|id=60342|path=map/60342.DAT|bytes=3008|sha256=f3bf4
 MAP|timestamp=20030623234451|id=60343|path=map/60343.DAT|bytes=7208|sha256=be0bdb0206337a60b4ad776120d96fcd1be4a0dec6e0a1720d824b16418994cb|valid_three_plane=1|width=30|height=40|cells=1200|tile_nonzero=1200|parts_nonzero=442|event_nonzero=1200|tile_max=5075|parts_max=14648|event_max=49155
 MAP|timestamp=20030623234451|id=60344|path=map/60344.DAT|bytes=1358|sha256=daa9f383d0cd307f4d22956686340da4a7b3977cd198046c71e5024451b6eddd|valid_three_plane=1|width=15|height=15|cells=225|tile_nonzero=225|parts_nonzero=85|event_nonzero=225|tile_max=4208|parts_max=15119|event_max=49152
 MAP|timestamp=20030623234451|id=60345|path=map/60345.DAT|bytes=12428|sha256=f3b727cf387659db2f2c6ed1b64b60e9253d71bf0669b571d9b830a6116eab3c|valid_three_plane=1|width=46|height=45|cells=2070|tile_nonzero=1416|parts_nonzero=934|event_nonzero=2043|tile_max=4639|parts_max=14400|event_max=49155
-EXTRACT|timestamp=20030623234451|7z_code=0|extracted_bytes=50135116|map_files=1008|valid_three_plane=995|invalid_map_files=13|map_bytes=50135110|map_id_min=0|map_id_max=60345|mapset_sha256=57edd950e79c3da1e9aeb38c5ea1cce7b37475a3054c1487dc12a9b4dd1b7a4a|error=
+EXTRACT|timestamp=20030623234451|tool=/usr/bin/7z|7z_code=0|extracted_bytes=50135116|map_files=1008|valid_three_plane=995|invalid_map_files=13|map_bytes=50135110|map_id_min=0|map_id_max=60345|mapset_sha256=57edd950e79c3da1e9aeb38c5ea1cce7b37475a3054c1487dc12a9b4dd1b7a4a|error=
 CAPTURE|timestamp=20031210092426|status=200|bytes=4800717|sha256=5f7f58e0d26d596e926a7d551d7c24e8a9a27824d5bdc53be3955b19b0e13abc|md5=45d78cce7bd5d4bfb74d3d2260f83081|signature=pe-mz|content_type=application/octet-stream|final=https://web.archive.org/web/20031210092426id_/http://www.wuxitianlong.com:80/sa/map.exe
 ARCHIVE|timestamp=20031210092426|7z_code=0|entries=1014|map_entries=1011|error=
 ARCHIVE_MAP_ENTRY|timestamp=20031210092426|path=map/7300.dat|size=135008|packed=20890|crc=6D39EF9A|method=m5:22
@@ -3034,6 +3034,6 @@ ARCHIVE_MAP_ENTRY|timestamp=20031210092426|path=map/8008.dat|size=9608|packed=23
 ARCHIVE_MAP_ENTRY|timestamp=20031210092426|path=map/8100.dat|size=21608|packed=850|crc=DB74C9A6|method=m5:22
 ARCHIVE_MAP_ENTRY|timestamp=20031210092426|path=map/8101.dat|size=21608|packed=877|crc=69794EFD|method=m5:22
 MAP|timestamp=20031210092426|id=7300|path=map/7300.dat|bytes=0|sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855|valid_three_plane=0
-EXTRACT|timestamp=20031210092426|7z_code=-11|extracted_bytes=0|map_files=1|valid_three_plane=0|invalid_map_files=1|map_bytes=0|map_id_min=7300|map_id_max=7300|mapset_sha256=5496e9f56d5132e0c1b047a0b45b5babee5da9105db40c3cd8b9fdb74f33510e|error=
-COMPARE|a=20030623234451|b=20031210092426|package_same=0|package_bytes_same=0|map_count_same=0|mapset_same=0
+EXTRACT|timestamp=20031210092426|tool=/usr/bin/7z|7z_code=-11|extracted_bytes=0|map_files=1|valid_three_plane=0|invalid_map_files=1|map_bytes=0|map_id_min=7300|map_id_max=7300|mapset_sha256=5496e9f56d5132e0c1b047a0b45b5babee5da9105db40c3cd8b9fdb74f33510e|error=
+COMPARE|a=20030623234451|b=20031210092426|package_same=0|package_bytes_same=0|both_maps_usable=0|map_count_same=0|mapset_same=0
 RESOLUTION|HISTORICAL_MAP_PACK_BYTES_RECOVERED|derived map-cache corpus available for descendant comparison only
