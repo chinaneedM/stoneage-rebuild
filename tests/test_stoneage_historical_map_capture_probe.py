@@ -2,7 +2,7 @@ import struct
 import unittest
 
 from tools.stoneage_historical_map_capture_probe import (
-    CAPTURES, MAP_RE, parse_map_dat, signature
+    CAPTURES, MAP_RE, parse_map_dat, signature, seven_zip_command
 )
 
 
@@ -29,6 +29,9 @@ class HistoricalMapCaptureProbeTests(unittest.TestCase):
     def test_signature(self):
         self.assertEqual(signature(b"MZ"+b"\0"*10),"pe-mz")
         self.assertEqual(signature(b"PK\x03\x04abc"),"zip")
+
+    def test_archive_tool_resolver_returns_command(self):
+        self.assertTrue(seven_zip_command())
 
 
 if __name__=="__main__":
