@@ -410,6 +410,25 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - no early Korean clean-client bytes are recovered by these negative controls.
 - Status: **CONTROL-A/B + TARGET-A payload recovery — broad public-media surfaces narrowed; GameTime record-9 payload filename/path is resolved as `onlStoneAge.zip`, but bytes remain unrecovered.**
 
+## TARGET-C / BOUNDED — 2009 `YSA2.5.8.rar` standalone-client mirror
+
+- Source thread: `https://www.iopq.net/thread-16615099-1-1.html`
+- Thread date: **2009-12-17**
+- Exact client URL preserved in the post: `http://download1.92ysa.com/YSA2.5.8.rar`
+- Reported size: **about 420 MB**
+- Provenance warning:
+  - the same thread instructs users to run the package in a private-server/single-player setup and references 92YSA;
+  - therefore the filename is a useful historical mirror token, not evidence of an untouched Beijing-Waei 2002 client.
+- Exact public-preservation probe:
+  - Wayback exact HTTP capture: **0**
+  - Wayback exact HTTPS capture: **0**
+  - Wayback Availability snapshot: **0**
+  - Internet Archive exact-filename item: **0**
+  - DiscMaster exact-filename row: **0**
+  - no payload bytes were recovered.
+- Derived report: `research/recovered/STONEAGE-YSA25-ARCHIVE-PROBE-R1.txt`
+- Status: **TARGET-C / BOUNDED — retain exact URL token; do not repeat the same public-index route unless a new mirror/repost appears**.
+
 ## CONTROL-C — modern public StoneAge 2.5 descendant/community distribution
 
 - Current source page: `https://99ds.com/`
@@ -449,7 +468,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 5. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge.
 6. Continue recovery of the **Korean 1.74** exact-version operator-era installer identity/bytes.
 7. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
-8. Treat the recovered mixed 2.5 bundle as a **resource-format bridge only**; the 2026 public 2.5 archive is now closed as a **descendant/community control** and should not receive further primary clean-client recovery effort unless independent provenance appears.
+8. Treat the recovered mixed 2.5 bundle as a **resource-format bridge only**; the 2026 public 2.5 archive is closed as a **descendant/community control**, and the 2009 `YSA2.5.8.rar` exact mirror is currently public-index-negative. Neither should receive further primary clean-client recovery effort unless an independent mirror or stronger provenance appears.
 9. Recover the Sina "1.82" href/bytes only as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
 10. Keep the Wayi official 8.5 package and `NetmarbleStoneAge120` as later controls, not substitutes for an early clean baseline.
 11. For any newly recovered candidate bytes, stop broad searching immediately and perform the clean-client acceptance test plus first full inventory.
