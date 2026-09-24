@@ -10,6 +10,9 @@ class ExactCarrierTests(unittest.TestCase):
         self.assertIn("popular-games",labels)
         self.assertIn("tengtu-guide",labels)
         self.assertIn("bombing-chicken-game",labels)
+        bombing=next(x for x in TARGETS if x[0]=="bombing-chicken-game")
+        self.assertIn("哇靠轰炸鸡",bombing[1])
+        self.assertIn("2001C226 哇靠轰炸鸡",bombing[1])
 
     def test_product_strict_matching(self):
         self.assertTrue(strict_match("spring-pack",("石器时代2.5春满钱坤包",),"product","石器时代2.5 春满钱坤包 客户端光盘"))
@@ -25,6 +28,7 @@ class ExactCarrierTests(unittest.TestCase):
         self.assertTrue(strict_match("bombing-chicken-game",qs,"crosspromo","北京华义 轰炸鸡 石器时代 促销光盘"))
         self.assertTrue(strict_match("bombing-chicken-game",qs,"crosspromo","Waei Chicken Shoot StoneAge bonus disc"))
         self.assertFalse(strict_match("bombing-chicken-game",qs,"crosspromo","Chicken Shoot 2002 Lithuanian CD"))
+        self.assertFalse(strict_match("bombing-chicken-game",qs,"crosspromo","2001C226 哇靠轰炸鸡完美中文版 华议国际"))
 
     def test_interesting_disc_files(self):
         meta={"files":[{"name":"disc.iso"},{"name":"cover.jpg"},{"name":"setup.exe"}]}

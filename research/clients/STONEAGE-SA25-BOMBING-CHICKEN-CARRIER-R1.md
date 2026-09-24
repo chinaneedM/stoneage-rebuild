@@ -62,3 +62,19 @@ That record proves that original physical-media preservation exists for the base
 ## Status
 
 **OPEN / NEW INDEPENDENT CARRIER LEAD.** The carrier identity is source-attested; the exact Chinese disc identity, package metadata, StoneAge payload variant, filename, hash and bytes remain unrecovered.
+
+
+## SEARCH-ONLY alias lead — 2026-09-24
+
+A later public optical-disc catalogue preserves a more specific lexical identity for the game family:
+
+- catalogue block: `2001 NEW GAME 093（总第280期）2CD`;
+- entry identifier: **`2001C226`**;
+- title string: **`哇靠轰炸鸡完美中文版`**;
+- publisher string as preserved by that catalogue: **`华议国际`**;
+- public catalogue surface:
+  - https://oddownload.nuduseng.com/18%E8%80%81%E5%85%89%E7%9B%98%E7%BE%A4%28%E7%BE%A4%E5%8F%B7854318908%29%E7%BE%A4%E5%8F%8B%E5%88%86%E4%BA%AB%E6%B1%87%E6%80%BB%202020%E5%B9%B44%E6%9C%88-5%E6%9C%88/2020-04-30/%E8%97%8F%E7%BB%8F%E9%98%81-%E4%B8%9C%E6%96%B9%E7%8B%82%E9%BE%99/%E8%97%8F%E7%B6%93%E9%96%A3%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F%E6%80%BB%E7%9B%AE%E5%BD%95%EF%BC%88001-710%EF%BC%89.pdf
+
+**EVIDENCE BOUNDARY:** this is a later collector/catalogue surface, not a contemporaneous Beijing-Waei product record. The literal `华议国际` string may be an original catalogue spelling, OCR/transcription error, or a different publisher identity; it must **not** be silently normalized to `华义国际`. Likewise, `2001C226` is treated as a catalogue-local identifier unless an independent source proves otherwise.
+
+**Operational use:** `哇靠轰炸鸡`, `哇靠轰炸鸡完美中文版`, and `2001C226` are added only as search tokens. A result containing these tokens alone is emitted as `SEARCH_ONLY_NOT_STRICT`; it cannot qualify as a StoneAge 2.5 carrier without an independent Waei/StoneAge association.

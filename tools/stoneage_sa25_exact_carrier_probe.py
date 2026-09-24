@@ -9,7 +9,7 @@ file lists only for strict candidate items.
 Metadata only; no disc/client payload is downloaded.
 """
 from __future__ import annotations
-import concurrent.futures, hashlib, json, re, urllib.parse, urllib.request
+import concurrent.futures, hashlib, json, re, time, urllib.parse, urllib.request
 
 UA="stoneage-rebuild-archaeology/1.0"
 DISCM="https://discmaster.textfiles.com/search"
@@ -19,7 +19,7 @@ DISC_EXTS=(".iso",".bin",".cue",".img",".nrg",".mdf",".mds",".ccd",".sub",".toas
 ARCHIVE_EXTS=(".zip",".7z",".rar",".exe",".cab")
 
 TARGETS=(
- ("bombing-chicken-game",("轰炸鸡","轰炸鸡 华义","轰炸鸡 石器时代2.5","Chicken Shoot Waei","Chicken Shoot StoneAge"),"crosspromo"),
+ ("bombing-chicken-game",("轰炸鸡","轰炸鸡 华义","轰炸鸡 石器时代2.5","哇靠轰炸鸡","哇靠轰炸鸡 华议国际","2001C226 哇靠轰炸鸡","Chicken Shoot Waei","Chicken Shoot StoneAge"),"crosspromo"),
  ("newbie-pack",("石器时代2.5新手报到包","石器时代 2.5 新手报到包"),"product"),
  ("spring-pack",("石器时代2.5春满钱坤包","春满钱坤包","春满乾坤包"),"product"),
  ("longevity-pack",("石器时代2.5延年益兽包","延年益兽包"),"product"),
@@ -45,11 +45,19 @@ def clean(v,limit=1800):
     s=" ".join(str(v if v is not None else "").split())
     return "".join(ch for ch in s if ch>=" " and ch!="\x7f").replace("|","%7C")[:limit]
 
-def fetch_json(url,timeout=45):
-    req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/json"})
-    with urllib.request.urlopen(req,timeout=timeout) as r:
-        b=r.read()
-        return int(getattr(r,"status",r.getcode())),r.geturl(),b,json.loads(b.decode("utf-8"))
+def fetch_json(url,timeout=45,attempts=3):
+    last=None
+    for attempt in range(attempts):
+        try:
+            req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/json"})
+            with urllib.request.urlopen(req,timeout=timeout) as r:
+                b=r.read()
+                return int(getattr(r,"status",r.getcode())),r.geturl(),b,json.loads(b.decode("utf-8"))
+        except Exception as e:
+            last=e
+            if attempt+1<attempts:
+                time.sleep(2*(attempt+1))
+    raise last
 
 def discm_url(q):
     p=[("q",f'"{q}"'),("qfields","t"),("mode","deep"),("dedup","dedup"),
@@ -170,6 +178,12 @@ def main():
                 blob=" ".join(str(row.get(k) or "") for k in ("itemName","fileid","filename","href","text","title"))
                 if strict_match(label,queries,kind,blob): strict.append(row)
             print(f"DISCM_QUERY|label={label}|query={clean(q)}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|rows={len(rows)}|strict={len(strict)}|final={clean(final)}")
+            for row in rows:
+                if kind=="crosspromo":
+                    blob=" ".join(str(row.get(k) or "") for k in ("itemName","fileid","filename","href","text","title"))
+                    nb=norm(blob)
+                    if norm("哇靠轰炸鸡") in nb or norm("2001C226") in nb:
+                        print(f"DISCM_LEAD|label={label}|itemid={clean(row.get('itemid'))}|itemName={clean(row.get('itemName'))}|fileid={clean(row.get('fileid'))}|filename={clean(row.get('filename'))}|size={clean(row.get('size'))}|ts={clean(row.get('ts'))}|b3sum={clean(row.get('b3sum'))}|classification=SEARCH_ONLY_NOT_STRICT")
             for row in strict:
                 key=(str(row.get("itemid","")),str(row.get("fileid","")))
                 strict_discm[key]=(label,row)
@@ -180,6 +194,12 @@ def main():
                 blob=" ".join(str(row.get(k) or "") for k in ("identifier","title","description","date","year"))
                 if strict_match(label,queries,kind,blob): strict.append(row)
             print(f"IA_QUERY|label={label}|query={clean(q)}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|items={len(docs)}|strict={len(strict)}|final={clean(final)}")
+            for row in docs:
+                if kind=="crosspromo":
+                    blob=" ".join(str(row.get(k) or "") for k in ("identifier","title","description","date","year"))
+                    nb=norm(blob)
+                    if norm("哇靠轰炸鸡") in nb or norm("2001C226") in nb:
+                        print(f"IA_LEAD|label={label}|identifier={clean(row.get('identifier'))}|title={clean(row.get('title'))}|date={clean(row.get('date'))}|year={clean(row.get('year'))}|collection={clean(row.get('collection'))}|classification=SEARCH_ONLY_NOT_STRICT")
             for row in strict:
                 ident=str(row.get("identifier") or "")
                 strict_ia[ident]=(label,row)
