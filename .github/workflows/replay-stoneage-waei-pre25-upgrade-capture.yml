@@ -1,0 +1,49 @@
+name: Replay pre-2.5 Waei upgrade capture
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_pre25_upgrade_capture_probe.py
+      - tests/test_stoneage_waei_pre25_upgrade_capture_probe.py
+      - .github/workflows/replay-stoneage-waei-pre25-upgrade-capture.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-pre25-upgrade-capture
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate pre-2.5 capture probe
+        run: python3 -m unittest tests.test_stoneage_waei_pre25_upgrade_capture_probe -v
+      - name: Replay exact 2001 capture
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_pre25_upgrade_capture_probe \
+            > research/recovered/STONEAGE-WAEI-PRE25-UPGRADE-CAPTURE-R1.txt
+      - name: Commit derived evidence only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-WAEI-PRE25-UPGRADE-CAPTURE-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: replay pre-2.5 Waei upgrade capture'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_waei_pre25_upgrade_capture_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: replay pre-2.5 Waei upgrade capture'
+          fi
+          git push
