@@ -12,12 +12,21 @@ class TorrentProbeTests(unittest.TestCase):
     def test_strong_path(self):
         meta={b"info":{b"name":"2001 NEW GAME 093".encode()}}
         strong,weak=interesting(torrent_paths(meta),b"")
-        self.assertIn("NEW GAME 093",strong)
+        self.assertIn("2001 NEW GAME 093",strong)
 
     def test_generic_issue_280_is_not_target(self):
         meta={b"info":{b"name":"读者 2002年第11期（总第280期）".encode()}}
         strong,weak=interesting(torrent_paths(meta),b"")
         self.assertFalse(strong)
+
+    def test_relevant_paths_excludes_unrelated_issue_280(self):
+        paths=(
+            "读者30年/2002年第11期（总第280期）.epub.jpg",
+            "藏经阁/2001 NEW GAME 093（总第280期）2CD/disc.iso",
+        )
+        strong,weak=interesting(paths,b"")
+        selected=relevant_paths(paths,strong,weak)
+        self.assertEqual(selected,(paths[1],))
 
     def test_contextual_issue_280_requires_catalog_token(self):
         meta={b"info":{b"files":[
