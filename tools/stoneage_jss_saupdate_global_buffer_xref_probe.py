@@ -20,6 +20,7 @@ from tools.stoneage_jss_saupdate_function_flow_probe import (
     raw_pointer_hits,
     recover_xref_instruction,
     resolve_call,
+    function_summary,
 )
 from tools.stoneage_tw10_mapcache_binary_probe import referenced_absolute_values
 from tools.stoneage_tw10_technical_probe import pe_sections
@@ -103,6 +104,7 @@ def main():
     strings=ascii_strings(data,layout,image_base)
 
     total=0
+    unknown_function_indexes=[]
     for target_va,label in TARGETS:
         target_rva=target_va-image_base
         rows=[]
@@ -114,6 +116,8 @@ def main():
             if idx is None:
                 continue
             rows.append((ins,idx))
+            if label.startswith("unknown-launch-buffer-"):
+                unknown_function_indexes.append((label,idx))
         rows=sorted({(ins.address,idx):(ins,idx) for ins,idx in rows}.values(),key=lambda x:x[0].address)
         total+=len(rows)
         print(f"BUFFER|label={label}|va=0x{target_va:x}|xrefs={len(rows)}")
@@ -137,7 +141,34 @@ def main():
                     f"call_rva=0x{call_rva:x}|kind={kind}|dll={clean(dll)}|target={clean(name)}"
                 )
 
-    print(f"RESOLUTION|GLOBAL_BUFFER_XREFS_DERIVED|targets={len(TARGETS)}|xrefs={total}|binary-not-committed")
+    # Function-level context for the two unknown launch buffers.
+    emitted=set()
+    for label,idx in unknown_function_indexes:
+        f=function_summary(instructions,idx,image_base,imports,thunks,strings)
+        key=(f["start_rva"],f["end_rva"])
+        if key in emitted:
+            continue
+        emitted.add(key)
+        print(
+            f"UNKNOWN_FUNCTION|start_rva=0x{f['start_rva']:x}|end_rva=0x{f['end_rva']:x}|"
+            f"boundary={f['boundary']}|instructions={f['instructions']}|"
+            f"strings={f['string_total']}|calls={f['call_total']}"
+        )
+        for order,(ins_rva,string_rva,text_value) in enumerate(f["strings"],1):
+            print(
+                f"UNKNOWN_STRING|function_rva=0x{f['start_rva']:x}|order={order}|"
+                f"ins_rva=0x{ins_rva:x}|text={clean(text_value)}"
+            )
+        for order,(call_rva,kind,dll,name) in enumerate(f["calls"],1):
+            print(
+                f"UNKNOWN_CALL|function_rva=0x{f['start_rva']:x}|order={order}|"
+                f"call_rva=0x{call_rva:x}|kind={kind}|dll={clean(dll)}|target={clean(name)}"
+            )
+
+    print(
+        f"RESOLUTION|GLOBAL_BUFFER_XREFS_DERIVED|targets={len(TARGETS)}|xrefs={total}|"
+        f"unknown_functions={len(emitted)}|binary-not-committed"
+    )
 
 
 if __name__=="__main__":
