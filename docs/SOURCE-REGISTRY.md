@@ -1100,9 +1100,12 @@ Every substantial source should record:
 - Supports:
   - an independently sourced exact filename/path token, `sa25up.zip`, circulated as a StoneAge 2.5 download link;
   - reopening bounded preservation indexes once for this precise token rather than inventing installer/updater filenames.
+- Original-source boundary at registration time:
+  - this mirror page alone did not establish the payload type from the `up` suffix.
+- Superseding native evidence:
+  - native 21CN record `20165` now explicitly classifies the exact linked `sa25up.zip` item as a **`客户端升级包`** sized `8473 k` / later `8.27M`, ruling out the 575/580 MB complete package at the catalogue-description level;
+  - exact byte identity with the separately reported 8.25 MB operator updater remains unproven because the ZIP body is unrecovered.
 - Does not support:
-  - that `sa25up.zip` is the documented 8.25 MB updater merely because the filename contains `up`;
-  - that it is the 575/580 MB complete package;
   - that the IP host was Beijing Waei or another official operator;
   - clean-client status, file size, hash, archive members, or byte identity with any preserved 2.5 corpus.
 - Follow-up result:
@@ -1140,9 +1143,60 @@ Every substantial source should record:
 - Derived reports:
   - `research/recovered/STONEAGE-SA25-HOST-IDENTITY-R1.txt`;
   - `research/recovered/STONEAGE-SA25-HOST-NEIGHBORHOOD-R1.txt`.
-- Follow-up target:
-  - locate a 21CN-native StoneAge / `精灵王传说` software-detail record under archived `list.php?id=...` or related `downit.php` topology.
+- Follow-up result:
+  - **RESOLVED:** native record `list.php?id=20165` has been recovered and independently cross-validated as `石器时代2.5—精灵王传说`; continue from its `downit.php` and mirror topology rather than repeating broad catalogue discovery.
 
+
+
+
+### SRC-CN-2002-21CN-SA25-CATALOG-20165-01
+
+- Native catalogue ID: **`20165`**
+- Native URL family: `http://download.21cn.com/list.php?id=20165`
+- Earliest archived HTTP-200 capture: **2002-02-12 01:05:02 UTC**
+- Internal整理 date shown by page: **2002-01-31**
+- Retrieval/research date: **2026-09-25**
+- Source type: native 21CN software-detail page plus independent archived ranking-link cross-checks
+- Exact page title: **`石器时代2.5—精灵王传说`**
+- Native fields:
+  - software version: **`客户端升级包`**
+  - software category: **冒险角色**
+  - software nature: **共享**
+  - file size: **`8473 k`** on the earliest replay; later layouts render **`8.27M`**
+  - supported systems: Win9x / WinME / WinNT / Win2000 / WinXP
+  - software company: **北京华义**
+- Exact linked assets on the 2002-02-12 page:
+  - `http://download.21cn.com/file/game/maoxian/sa25up.zip`
+  - `http://download.21cn.com/file/game/maoxian/sa25up.jpg`
+- Later topology:
+  - 2002-08 and later pages expose `downit.php?id=20165&num=0`;
+  - 2003 pages migrate the artwork/payload paths into `file1/game/maoxian/`;
+  - a 2003-10 capture points the ZIP through `dg.download.21cn.com/file1/game/maoxian/sa25up.zip`;
+  - a 2004 capture shows `dg.download.21cn.com/file1xjy/game/maoxian/sa25up.zip`.
+- Independent ID cross-validation:
+  - `research/recovered/STONEAGE-SA25-21CN-RANK-LINK-R1.txt` recovers `id=20165` from four separate 2003 category-ranking anchors;
+  - `research/recovered/STONEAGE-SA25-21CN-RANKING-ID-R1.txt` independently recovers the same ID from the 2003-03-13 native page.
+- Confidence:
+  - **A** for the native catalogue ID, title, archive dates, page fields and explicit link topology;
+  - **A** for classification of the 21CN-linked `sa25up.zip` item as a **client upgrade package**;
+  - **OPEN** for the unavailable ZIP's byte integrity and exact equality to the operator-referenced updater.
+- Supports:
+  - resolving `sa25up.zip` as the 21CN-distributed **StoneAge 2.5 client upgrade package**, not the 575/580 MB complete client;
+  - a native 21CN StoneAge 2.5 catalogue presence by 2002-02-12;
+  - direct same-record linkage between the 2.5 page, `sa25up.zip`, and `sa25up.jpg`.
+- Size reconciliation:
+  - contemporaneous 17173/Sina records describe the updater as **8.25 MB**;
+  - 21CN records this mirror as **8473 k / 8.27M**;
+  - preserve both measurements until payload bytes are recovered; do not silently normalize or claim byte identity.
+- Does not support:
+  - that the ZIP bytes are currently recoverable;
+  - byte equality with the Beijing-Waei operator copy;
+  - that 21CN did or did not alter/repack the file;
+  - any field-map/file-tree provenance from the updater without recovered bytes.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-21CN-RANK-LINK-R1.txt`
+  - `research/recovered/STONEAGE-SA25-21CN-RANKING-ID-R1.txt`
+  - `research/recovered/STONEAGE-SA25-21CN-RECORD-20165-R1.txt`
 
 
 ### SRC-CN-2002-21CN-SA25UP-JPG-01
@@ -1163,7 +1217,7 @@ Every substantial source should record:
   - the `sa25up` object family predates the 2003 archived source-page link and later reposts.
 - Does not support:
   - successful archival or current recoverability of `sa25up.zip`;
-  - that the ZIP is the documented 8.25 MB updater or the 575/580 MB full package;
+  - byte integrity or exact byte identity of the ZIP. **Package type is now resolved separately by native record `20165` as a client upgrade package**, ruling out the 575/580 MB full package at the catalogue-description level;
   - official Beijing-Waei provenance, clean-client status, file tree, checksum or byte identity;
   - a direct operator-to-21CN distribution contract.
 - Crawl-neighborhood note:
