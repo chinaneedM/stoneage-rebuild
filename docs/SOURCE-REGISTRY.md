@@ -1096,7 +1096,7 @@ Every substantial source should record:
 - Source type: later-surviving third-party software-link mirror; page header states `from http://pcpc.idv.tw/soft/soft.htm`
 - URL: https://www.geocities.ws/kk00000099/link.html
 - Exact StoneAge target exposed by the page: `http://202.104.32.168/file/game/maoxian/sa25up.zip`
-- Confidence: **C+ for the literal surviving link text; OPEN for original publication date, host ownership, payload size/content and operator provenance**
+- Confidence: **C+ for the literal surviving link text; A for the separate identification of the IP as 21CN download infrastructure; OPEN for original publication date, payload size/content and operator provenance**
 - Supports:
   - an independently sourced exact filename/path token, `sa25up.zip`, circulated as a StoneAge 2.5 download link;
   - reopening bounded preservation indexes once for this precise token rather than inventing installer/updater filenames.
@@ -1113,6 +1113,37 @@ Every substantial source should record:
 
 
 
+
+### SRC-CN-2001-2002-21CN-DOWNLOAD-HOST-01
+
+- Historical IP: `202.104.32.168`
+- Research date: **2026-09-25**
+- Source type: dated Wayback replays of the host root and native software-detail pages
+- Key captures:
+  - **2001-12-27 12:44:46 UTC** — host root, title `21CN.COM - 下载`, SHA-256 `e1bddcbd266109772d63be517e91dc0ba4f65943d6c94bc8574ab203c3a5f5f4`;
+  - **2002-02-01 18:03:27 UTC** — `list.php?id=113`, title `Cool Desk 99 - 下载 - 21CN.COM`, SHA-256 `d6a9489cbd4d817d1c565c8c17b1ca199f84efb52da51d2f94ba4a966bdcddf0`;
+  - **2002-02-01 19:05:12 UTC** — `list.php?id=1137`, title `PC-Cillin 2002 Pattern 218 - 下载 - 21CN.COM`, SHA-256 `5210302cd7e279c29297d72cbd57bf7d36177eb1997f3cf65e905dfd0b4b5218`.
+- Visible/decoded host identity fields:
+  - `21CN.COM - 下载`;
+  - `download.21cn.com`;
+  - `粤ICP证010001`;
+  - `世纪龙信息网络有限责任公司版权所有`.
+- Confidence: **A for the historical host/site identity; OPEN for the provenance and integrity of the StoneAge payload hosted under that infrastructure**
+- Supports:
+  - `202.104.32.168` was serving 21CN software-download infrastructure during the relevant 2001–2002 period;
+  - the later `sa25up.zip` URL is therefore not evidence of a Beijing-Waei-owned host merely from its IP/path.
+- Does not support:
+  - that 21CN modified or did not modify the StoneAge file;
+  - that the StoneAge file was successfully downloadable at any surviving capture;
+  - payload size, checksum, archive contents, build, or clean-client status;
+  - a direct operator-to-21CN distribution contract.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-HOST-IDENTITY-R1.txt`;
+  - `research/recovered/STONEAGE-SA25-HOST-NEIGHBORHOOD-R1.txt`.
+- Follow-up target:
+  - locate a 21CN-native StoneAge / `精灵王传说` software-detail record under archived `list.php?id=...` or related `downit.php` topology.
+
+
 ### SRC-CN-2003-PCPC-SA25UP-SOURCE-ARCHIVE-01
 
 - Title/context: archived legacy software/game download-link page `/soft/soft.htm`
@@ -1124,7 +1155,7 @@ Every substantial source should record:
 - Replayed body size: **406,274 bytes**
 - Character evidence: Big5/CP950 byte-level matches directly recover `下載`, `石器時代2.5`, and `精靈王傳說`.
 - Literal dated row: `[下載]石器時代2.5—精靈王傳說` -> `http://202.104.32.168/file/game/maoxian/sa25up.zip`
-- Confidence: **B+ for the literal archived page body, capture timestamp and href; OPEN for the linked host's operator identity and payload contents**
+- Confidence: **B+ for the literal archived page body, capture timestamp and href; A for the separate identification of the linked IP as 21CN download infrastructure; OPEN for StoneAge payload/operator provenance and contents**
 - Supports:
   - the exact `sa25up.zip` StoneAge 2.5 link text was present on this source page no later than **2003-06-05**;
   - the later Geocities and 2012 PIXNET copies preserve a link already demonstrably present on a 2003 archived source page.
