@@ -15,7 +15,7 @@ from __future__ import annotations
 import collections
 import hashlib
 
-from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_OP_REG, X86_REG_EBP
+from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_OP_REG, X86_REG_EBP, X86_REG_ESP
 
 from tools.stoneage_jss_launcher_archive_probe import ORIGINAL, get_bounded, replay_url
 from tools.stoneage_jss_launcher_deep_probe import KNOWN_SHA256, TIMESTAMP, parse_pe_layout
@@ -69,6 +69,26 @@ def stack_param_slots(insns, start_idx, end_idx):
             disp = int(op.mem.disp)
             rows[disp] += 1
             if len(examples[disp]) < 8:
+                examples[disp].append((ins.address, ins.mnemonic, op_index))
+    return rows, examples
+
+
+def raw_esp_slots(insns, start_idx, end_idx):
+    """Raw ESP-relative memory slots for leaf/no-frame helpers.
+
+    These are not automatically called arguments because ESP may move. They are
+    emitted only as structural evidence for reconstructing the leaf helper ABI.
+    """
+    rows = collections.Counter()
+    examples = collections.defaultdict(list)
+    for idx in range(start_idx, end_idx + 1):
+        ins = insns[idx]
+        for op_index, op in enumerate(ins.operands):
+            if op.type != X86_OP_MEM or op.mem.base != X86_REG_ESP:
+                continue
+            disp = int(op.mem.disp)
+            rows[disp] += 1
+            if len(examples[disp]) < 12:
                 examples[disp].append((ins.address, ins.mnemonic, op_index))
     return rows, examples
 
@@ -241,6 +261,22 @@ def main():
                     f"PARAM_USE|helper={label}|ebp_disp=+0x{disp:x}|"
                     f"rva=0x{rva_va-image_base:x}|mnemonic={clean(mnemonic)}|operand_index={op_index}"
                 )
+
+        if helper_rva == 0x3C60:
+            esp_rows, esp_examples = raw_esp_slots(insns, start_idx, end_idx)
+            print(
+                f"RAW_ESP_SLOTS|helper={label}|unique={len(esp_rows)}|"
+                f"values={','.join(f'{x:+#x}' for x in sorted(esp_rows))}"
+            )
+            for disp, count in sorted(esp_rows.items()):
+                print(
+                    f"RAW_ESP_SLOT|helper={label}|disp={disp:+#x}|accesses={count}"
+                )
+                for rva_va, mnemonic, op_index in esp_examples[disp]:
+                    print(
+                        f"RAW_ESP_USE|helper={label}|disp={disp:+#x}|"
+                        f"rva=0x{rva_va-image_base:x}|mnemonic={clean(mnemonic)}|operand_index={op_index}"
+                    )
 
         for row in branches:
             branch_name = row["branch"][0] if row["branch"] else ""
