@@ -40,6 +40,16 @@ ASCII_RE=re.compile(rb"[\x20-\x7e]{2,}")
 MAX_STRINGS_PER_FUNCTION=80
 MAX_CALLS_PER_FUNCTION=120
 
+# Exact internal E8 targets observed in the recovered SaUpdate binary.
+# Labels are analytical roles to be tested, not original source symbols.
+SEEDED_FUNCTION_RVAS=(
+    ("state-key-helper",0x25D0),
+    ("manifest-wrapper",0x2880),
+    ("post-download-state",0x3610),
+    ("update-state-sequence",0x3C60),
+    ("launch-tail",0x3F20),
+)
+
 MFC_EXTRA_ORDINALS={
     537:"CString::CString(char const*)",
     690:"CInternetSession::~CInternetSession",
@@ -266,6 +276,30 @@ def main():
         for order,(call_rva,kind,dll,name) in enumerate(f["calls"],1):
             print(
                 f"CALL|function_rva=0x{start_rva:x}|order={order}|call_rva=0x{call_rva:x}|"
+                f"kind={kind}|dll={clean(dll)}|target={clean(name)}"
+            )
+
+    # Inspect selected exact local call targets independently of string anchoring.
+    for role,rva in SEEDED_FUNCTION_RVAS:
+        idx=by_addr.get(image_base+rva)
+        if idx is None:
+            print(f"SEEDED_FUNCTION|role={role}|rva=0x{rva:x}|decoded=0")
+            continue
+        f=function_summary(instructions,idx,image_base,imports,thunks,strings)
+        print(
+            f"SEEDED_FUNCTION|role={role}|rva=0x{rva:x}|decoded=1|"
+            f"start_rva=0x{f['start_rva']:x}|end_rva=0x{f['end_rva']:x}|"
+            f"boundary={f['boundary']}|instructions={f['instructions']}|"
+            f"strings={f['string_total']}|calls={f['call_total']}"
+        )
+        for order,(ins_rva,string_rva,text_value) in enumerate(f["strings"],1):
+            print(
+                f"SEEDED_STRING|role={role}|order={order}|ins_rva=0x{ins_rva:x}|"
+                f"string_rva=0x{string_rva:x}|text={clean(text_value)}"
+            )
+        for order,(call_rva,kind,dll,name) in enumerate(f["calls"],1):
+            print(
+                f"SEEDED_CALL|role={role}|order={order}|call_rva=0x{call_rva:x}|"
                 f"kind={kind}|dll={clean(dll)}|target={clean(name)}"
             )
 

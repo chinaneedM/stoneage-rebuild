@@ -2,6 +2,7 @@ import struct
 import unittest
 
 from tools.stoneage_jss_saupdate_function_flow_probe import (
+    SEEDED_FUNCTION_RVAS,
     ascii_strings,
     mapped_import,
     recover_xref_instruction,
@@ -33,6 +34,12 @@ class JssSaUpdateFunctionFlowProbeTests(unittest.TestCase):
         self.assertIsNotNone(ins)
         self.assertEqual(ins.mnemonic,"push")
         self.assertEqual(ins.address,0x401010)
+
+    def test_seed_roles_are_unique(self):
+        roles=[role for role,_ in SEEDED_FUNCTION_RVAS]
+        rvas=[rva for _,rva in SEEDED_FUNCTION_RVAS]
+        self.assertEqual(len(roles),len(set(roles)))
+        self.assertEqual(len(rvas),len(set(rvas)))
 
     def test_known_mfc_mapping(self):
         self.assertEqual(
