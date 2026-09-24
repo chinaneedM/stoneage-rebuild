@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install analysis dependency
-        run: pip install --quiet capstone
+        run: pip install --quiet pefile capstone
       - name: Validate JSS SaUpdate function-flow probe
         run: python3 -m unittest tests.test_stoneage_jss_saupdate_function_flow_probe -v
       - name: Derive function-bounded updater flow
