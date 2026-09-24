@@ -51,3 +51,29 @@ If preservation metadata or media bytes are recovered, inspect for:
 ## Status
 
 **OPEN / NEW EXACT PHYSICAL-MEDIA LEAD.**
+
+## Collector comparison baseline — 2026-09-24
+
+A later specialist collector series provides a materially stronger **media-classification baseline** than title text alone:
+
+- `石器時代華義國際石器周邊收藏光碟篇（二）` explicitly labels the 2.5 segment's upper disc as the **mainland client unified-artwork disc**, with a Taiwan-version disc below it:
+  - https://forum.gamer.com.tw/C.php?bsn=1571&snA=81429
+- The collector's broader disc taxonomy separates **official client discs / magazine-gift discs / strategy-book-gift discs** and mainland/Taiwan variants:
+  - https://forum.gamer.com.tw/C.php?bsn=1571&snA=81430
+- `光碟篇（三）` states that some mainland strategy-book gift discs are nevertheless just **client installer packages**, despite their secondary carrier provenance:
+  - https://forum.gamer.com.tw/C.php?bsn=1571&snA=81428
+- The collector's `延年益壽包` post separately identifies a **2.5-period disc**, while the 2.5 client-package post documents multiple Waei-era 2.5 package variants:
+  - https://forum.gamer.com.tw/C.php?bsn=1571&snA=81388
+  - https://forum.gamer.com.tw/C.php?bsn=1571&snA=81400
+
+### Classification consequence
+
+The Wanfang disc remains **OPEN / UNCLASSIFIED-CARRIER** rather than being promoted or rejected.
+
+The next decisive question is no longer merely “does the disc say StoneAge 2.5?” but:
+
+1. does its artwork/printed identity match the known **mainland unified official client-disc** family;
+2. if not, can it be tied to a magazine, strategy book, publisher bundle or other secondary carrier;
+3. if it is a secondary carrier, does a read-only file tree show an unchanged official full client installer or only the 8.25 MB updater / multimedia material.
+
+A secondary carrier can still be technically valuable, but it must not inherit official Beijing-Waei provenance by implication.
