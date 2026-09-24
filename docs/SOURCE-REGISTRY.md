@@ -997,3 +997,70 @@ Every substantial source should record:
 - Derived reports:
   - `research/recovered/STONEAGE-HISTORICAL-MAP-CAPTURE-R1.txt`;
   - `research/recovered/STONEAGE-2003-MAP-TIMELINE-R1.txt`.
+
+
+### SRC-CN-2002-17173-SA25-UPGRADE-01
+
+- Title: `《石器2.5--精灵王传说》升级办法`
+- Original period: 2002-01/02 rollout context; page states retail launch **2002-01-20**
+- Retrieval date: 2026-09-24
+- Language/region: Simplified Chinese / Mainland China
+- Source type: contemporaneous 17173 StoneAge portal/version guide
+- URL: https://news.17173.com/z/stoneage/banben/sa25-up.htm
+- Confidence: **A-** for contemporaneous distribution facts; not first-party binary evidence
+- Supports:
+  - 2.5 retail launch on 2002-01-20 and early-February server migration;
+  - complete 2.5 package stated as **580 MB** and updater as **8.25 MB**;
+  - Beijing Waei web download plus a named list of Jan/Feb-2002 magazine/guide cover-disc carriers;
+  - the complete package is described as a clean full reinstall, while the 8.25 MB updater requires an existing 2.x installation.
+- Does not support:
+  - the exact historical download URL or filename;
+  - byte identity of any later-preserved 2.5 bundle;
+  - Taiwan-v1 field-map provenance.
+
+### SRC-CN-2002-SINA-SA25-UPGRADE-01
+
+- Title: `《石器时代2.5》升级方法`
+- Original date/context: February 2002; states server upgrade beginning **2002-02-04**
+- Retrieval date: 2026-09-24
+- Language/region: Simplified Chinese / Mainland China
+- Source type: contemporaneous Sina Games news/distribution record
+- URL: https://games.sina.com.cn/newgames/0202/02057854.shtml
+- Confidence: **A-** for contemporaneous distribution facts; not first-party binary evidence
+- Supports:
+  - 2.5 retail launch on 2002-01-20 and server migration beginning 2002-02-04;
+  - complete package stated as **575 MB** and updater as **8.25 MB**;
+  - Beijing Waei web download plus the same periodical/guide distribution pattern.
+- Conflict note:
+  - 17173 reports the full package as **580 MB**. Preserve both reported sizes until a recoverable package or first-party file listing resolves whether this is rounding, a different build, or editorial variance.
+- Does not support:
+  - an exact installer filename or historical payload URL;
+  - byte identity with any preserved descendant corpus.
+
+### SRC-CN-2001-2002-WAEI-STONEAGE2-UPGRADE-PATH-01
+
+- Title/path: Beijing Waei StoneAge2 `/ZHUANQU/stoneage2/tyro/upgrade.asp`
+- Preserved capture: **2001-12-04 16:57:11 UTC**
+- Retrieval date: 2026-09-24
+- Language/region: Simplified Chinese / Mainland China
+- Source type: official Waei page preserved by Wayback; plus February-2002 official Waei inbound links to the same pathname
+- Historical URL: `http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/upgrade.asp`
+- Clean replay SHA-256: `73fde66ffb3c92261d66715f873fa9b9f54166e4443d5d29924fe137cdcb8d35`
+- Confidence: **A/S-derived** for the 2001 captured page body and dated official link topology; **OPEN** for the unpreserved February-2002 destination body
+- Supports:
+  - the `stoneage2` official site tree existed before the 2.5 retail rollout;
+  - the preserved 2001 page explicitly identifies **石器时代2.0** and is a **“升级所需经验”** level/experience guide;
+  - clean structural extraction yields **99 candidate references and 0 strong payload references**;
+  - three preserved February-2002 Waei pages independently link the same pathname.
+- Critical semantic correction:
+  - `upgrade.asp` in the preserved 2001 site does **not** mean a software updater; `升级` here is character leveling. The path name must not be used as evidence for a 2.5 installer/download target.
+- Does not support:
+  - that the February-2002 destination body was byte-identical to the 2001 capture;
+  - any 2.5 installer filename, payload URL, mirror host, hash, or package size;
+  - any field-map byte provenance.
+- Derived reports:
+  - `research/recovered/STONEAGE-WAEI-SA25-KEYPAGES-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-SA25-UPGRADE-PAGE-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-SA25-TYRO-SUBTREE-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-PRE25-UPGRADE-CAPTURE-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-2002-PAYLOAD-DOMAIN-R1.txt`.
