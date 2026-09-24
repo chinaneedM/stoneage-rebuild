@@ -20,6 +20,8 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+      - name: Install analysis dependencies
+        run: pip install --quiet pefile capstone
       - name: Validate launch-parameter probe
         run: python3 -m unittest tests.test_stoneage_jss_saupdate_launch_parameter_probe -v
       - name: Derive launch-parameter relationships
