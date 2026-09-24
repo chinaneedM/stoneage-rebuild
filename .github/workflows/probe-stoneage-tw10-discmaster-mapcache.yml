@@ -1,0 +1,49 @@
+name: Probe Taiwan v1 map-cache carriers in DiscMaster
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_discmaster_mapcache_probe.py
+      - tests/test_stoneage_tw10_discmaster_mapcache_probe.py
+      - .github/workflows/probe-stoneage-tw10-discmaster-mapcache.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-tw10-discmaster-mapcache
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Taiwan v1 DiscMaster probe
+        run: python3 -m unittest tests.test_stoneage_tw10_discmaster_mapcache_probe -v
+      - name: Probe Taiwan v1 installed-tree carriers and map caches
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_tw10_discmaster_mapcache_probe \
+            > research/recovered/STONEAGE-TW10-DISCMASTER-MAPCACHE-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-TW10-DISCMASTER-MAPCACHE-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Taiwan v1 DiscMaster map caches'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_tw10_discmaster_mapcache_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe Taiwan v1 DiscMaster map caches'
+          fi
+          git push
