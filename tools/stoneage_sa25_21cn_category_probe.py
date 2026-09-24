@@ -23,7 +23,7 @@ CDX="https://web.archive.org/cdx/search/cdx"
 PREFIX="http://202.104.32.168/second.php"
 TOKENS=("石器时代","石器時代","精灵王","精靈王","StoneAge","stone age","sa25")
 HREF_RE=re.compile(r"""(?is)href\s*=\s*["']?([^"'\s>]+)""")
-LIST_ID_RE=re.compile(r"(?i)list\.php\?[^#"'<>]*?\bid=(\d+)")
+LIST_ID_RE=re.compile(r'''(?i)list\.php\?[^#"'<>]*?\bid=(\d+)''')
 
 
 def clean(v,limit=1800):
