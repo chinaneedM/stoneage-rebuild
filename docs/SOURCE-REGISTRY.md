@@ -889,3 +889,58 @@ Every substantial source should record:
   - the exact version/build of every file present in the article author's installation;
   - any specific `map/<n>.dat` bytes, hashes, dimensions, or map IDs;
   - treating later full-map packs as v1 evidence without independent dating/version provenance.
+
+
+### SRC-CN-2002-SINA-SA40-FULL-MAP-PATCH-01
+
+- Title: `《石器时代4.0》最新地图补丁`
+- Original date: **2002-11-08**
+- Retrieval date: 2026-09-24
+- Language/region: Simplified Chinese / Mainland China StoneAge distribution
+- Source type: contemporaneous Sina Games download-center record
+- URL: https://games.sina.com.cn/downgames/updatex/11084599.shtml
+- Confidence: **A** for the dated download record and stated package purpose; package bytes remain unrecovered
+- Supports:
+  - the record identifies Waei as the game company and reports a **3440K** StoneAge 4.0 map patch;
+  - the description explicitly states that installation makes all game maps visible and removes the need to read MAP data from the server during play;
+  - the Sina local-download link exposes the source-derived filename `shiqi4updatex_02_11_08.zip` and download record id `aid=61620`.
+- Archaeology significance:
+  - independently corroborates that complete map-cache packages were distributed in the historical client ecosystem;
+  - provides a dated descendant map corpus target suitable for controlled diffing if bytes are recovered.
+- Does not support:
+  - Taiwan v1.0 map-byte provenance;
+  - byte identity between the 4.0 map pack and any earlier v1/1.82/2.x cache;
+  - any map IDs, dimensions, hashes or package contents until the archive itself is recovered.
+- Derived archive-index reports:
+  - `research/recovered/STONEAGE-HISTORICAL-MAP-PACK-ARCHIVE-R1.txt`;
+  - `research/recovered/STONEAGE-HISTORICAL-MAP-PACK-ARCHIVE-FALLBACK-R1.txt` when available.
+
+### SRC-CN-2003-SINA-SA-DOWNLOAD-HUB-01
+
+- Title: `石器时代7.0石头就业所相关下载` / `石器时代ONLINE宠物进化史相关下载`
+- Original date: **2003-04-03**
+- Retrieval date: 2026-09-24
+- Language/region: Simplified Chinese / Mainland China StoneAge distribution
+- Source type: contemporaneous Sina Games StoneAge download-hub pages
+- URLs:
+  - https://games.sina.com.cn/zhqu/sta/download.shtml
+  - https://games.sina.com.cn/zhqu/sta/ltxs/sqxz.shtml
+- Confidence: **A** for the contemporaneous labels and recovered href targets; version identity of downloadable bytes remains unverified
+- Supports:
+  - the 5.0 page explicitly exposes a `完整地图档下载` / `MAP` entry;
+  - the 6.0 section explicitly exposes a `真正全开MAP地图` entry;
+  - the current preserved HTML resolves those map entries to the exact FTP target `ftp://211.90.133.5/dowload/sa/map.exe`, with the 6.0 hub also exposing the mirror `http://www.wuxitianlong.com/sa/map.exe`;
+  - the same hub exposes a Sina-labelled `石器时代1.82` installer target `ftp://211.90.133.5/dowload/sa/sa1.82.exe`;
+  - the 7.0 section separately offers an already-installed self-extracting package described as containing fully opened maps.
+- Archaeology significance:
+  - establishes a historical distribution path for complete map-cache material and an exact TARGET-B filename for the Sina-labelled 1.82 client;
+  - provides descendant comparison targets without changing the Taiwan-v1 provenance gate.
+- Does not support:
+  - that `sa1.82.exe` is byte-identical to an original 2001-era 1.82 build; its build identity must be established from recovered bytes;
+  - that the 5.0/6.0 `map.exe` bytes are identical merely because the preserved pages resolve to the same URL;
+  - using any 4.0/5.0/6.0/7.0 map pack as Taiwan-v1 historical data without controlled version/provenance analysis.
+- Derived reports:
+  - `research/recovered/STONEAGE-SINA-DOWNLOAD-TARGETS-R1.txt`;
+  - `research/recovered/STONEAGE-SINA-182-ARCHIVE-R1.txt`;
+  - `research/recovered/STONEAGE-SINA-182-ARCHIVE-FALLBACK-R1.txt`;
+  - `research/recovered/STONEAGE-HISTORICAL-MAP-PACK-ARCHIVE-R1.txt`.
