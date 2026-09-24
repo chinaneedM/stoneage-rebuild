@@ -513,6 +513,18 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - `research/recovered/STONEAGE-SA25-EXACT-CARRIERS-R1.txt`.
 - Status: **TARGET-E / OPEN, PUBLIC-INDEX-NEGATIVE AT TESTED SURFACE — do not repeat the same DiscMaster/IA exact metadata pass; next useful evidence is a Chinese/Waei package/disc scan, catalogue with independent publisher identity, file tree, checksum, installer filename or independent repost.**
 
+
+### Old-disc torrent/catalog cross-check — 2026-09-24
+
+- The public 老光盘群 `allseeds.zip` snapshot was scanned across **89 torrent metadata entries** for exact StoneAge client/resource signatures and title/carrier tokens.
+- Result: **0 exact client-signature paths**, **0 multi-signature client candidates**, and only **5 lexical StoneAge-title paths** across 4 torrents.
+- The separate 2.5 catalogue-neighborhood scan produced **0 strong hits**; `总第280期` / `NEW GAME` / `藏经阁` matches were catalog/index neighborhood only.
+- Public catalogue text ties `2001 NEW GAME 093（总第280期）2CD` to `2001C226 哇靠轰炸鸡完美中文版`, but this is a later collector/pirate-compilation identity and is **not** equivalent to the original Beijing-Waei 《轰炸鸡》 carrier named by the 2002 StoneAge distribution records.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-OLD-DISC-TORRENTS-R2.txt`;
+  - `research/recovered/STONEAGE-OLD-DISC-TORRENT-SIGNATURES-R1.txt`.
+- Status refinement: **TARGET-E remains OPEN, while the tested 老光盘群 torrent-metadata snapshot is BOUNDED for direct client recovery.** Reopen only for a materially newer upstream metadata set or a new independently sourced exact disc/file token.
+
 ## Current recovery order
 
 1. **Korean Inium 2000 public client:** recover the original installer filename/path/bytes through the Inium site, Hananet/GamePlus, CNET and period offline/software archives. It is now the strongest operational early bridge because operator-era free distribution and massive replication are directly attested.
