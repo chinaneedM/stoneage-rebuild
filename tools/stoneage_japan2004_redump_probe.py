@@ -93,13 +93,13 @@ def result_count(vis):
 def form_fields(body):
     text=body.decode("utf-8","replace")
     names=set()
-    for tag in re.findall(r"(?is)<(?:input|select|textarea)\\b[^>]*>",text):
-        m=re.search(r"""(?is)\\bname\\s*=\\s*["']?([^"'\\s>]+)""",tag)
+    for tag in re.findall(r"(?is)<(?:input|select|textarea)\b[^>]*>",text):
+        m=re.search(r"""(?is)\bname\s*=\s*["']?([^"'\s>]+)""",tag)
         if m:names.add(html.unescape(m.group(1)))
     forms=[]
-    for tag in re.findall(r"(?is)<form\\b[^>]*>",text):
-        action=re.search(r"""(?is)\\baction\\s*=\\s*["']?([^"'\\s>]+)""",tag)
-        method=re.search(r"""(?is)\\bmethod\\s*=\\s*["']?([^"'\\s>]+)""",tag)
+    for tag in re.findall(r"(?is)<form\b[^>]*>",text):
+        action=re.search(r"""(?is)\baction\s*=\s*["']?([^"'\s>]+)""",tag)
+        method=re.search(r"""(?is)\bmethod\s*=\s*["']?([^"'\s>]+)""",tag)
         forms.append((html.unescape(action.group(1)) if action else "", (method.group(1) if method else "").upper()))
     return tuple(sorted(names)),tuple(forms)
 
@@ -185,3 +185,7 @@ def main():
     else:
         print("RESOLUTION|INCONCLUSIVE|modern Redump query surface incomplete")
 
+
+
+if __name__=="__main__":
+    main()
