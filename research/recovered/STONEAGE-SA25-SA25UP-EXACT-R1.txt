@@ -1,0 +1,24 @@
+StoneAge 2.5 sa25up.zip exact-token preservation probe — R1
+SCOPE|exact-url+exact-filename|archive-index-metadata-only|no-historical-payload-download
+SOURCE_PAGE|https://www.geocities.ws/kk00000099/link.html
+TARGET|token=sa25up.zip|url=http://202.104.32.168/file/game/maoxian/sa25up.zip
+WAYBACK_QUERY|requested=20020120|status=200|bytes=112|sha256=30833b07f59f40c4d043ee38b9b175333aa6ea3a0699c57839b2d02d4229a078|final=https://archive.org/wayback/available?url=http%3A%2F%2F202.104.32.168%2Ffile%2Fgame%2Fmaoxian%2Fsa25up.zip&timestamp=20020120|available=0
+WAYBACK_QUERY|requested=20020205|status=200|bytes=112|sha256=bab4fb1b70b0d8b78209e6e5117771df5dadd64042884019141b9944e7083aec|final=https://archive.org/wayback/available?url=http%3A%2F%2F202.104.32.168%2Ffile%2Fgame%2Fmaoxian%2Fsa25up.zip&timestamp=20020205|available=0
+WAYBACK_QUERY|requested=20021231|status=200|bytes=112|sha256=3c527a0f92f812c46ec91ec95cf13fe773775659632cec4112521dde662d2ab6|final=https://archive.org/wayback/available?url=http%3A%2F%2F202.104.32.168%2Ffile%2Fgame%2Fmaoxian%2Fsa25up.zip&timestamp=20021231|available=0
+WAYBACK_QUERY|requested=20031231|status=200|bytes=112|sha256=c751fb4cf9f4c03c65c07ff2fd70225344bf8440ba7dab71b1dc405236592107|final=https://archive.org/wayback/available?url=http%3A%2F%2F202.104.32.168%2Ffile%2Fgame%2Fmaoxian%2Fsa25up.zip&timestamp=20031231|available=0
+ARQUIVO_QUERY|status=ok|bytes=0|sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855|rows=0
+CC_INDEXES|CC-MAIN-2008-2009,CC-MAIN-2009-2010,CC-MAIN-2012,CC-MAIN-2013-20,CC-MAIN-2013-48,CC-MAIN-2014-10,CC-MAIN-2014-15,CC-MAIN-2014-23
+CC_QUERY|index=CC-MAIN-2008-2009|rows=0
+CC_QUERY|index=CC-MAIN-2009-2010|rows=0
+CC_QUERY|index=CC-MAIN-2012|rows=0
+CC_QUERY|index=CC-MAIN-2013-20|rows=0
+CC_QUERY|index=CC-MAIN-2013-48|rows=0
+CC_QUERY|index=CC-MAIN-2014-10|rows=0
+CC_QUERY|index=CC-MAIN-2014-15|rows=0
+CC_QUERY|index=CC-MAIN-2014-23|rows=0
+DISCM_QUERY|status=200|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|rows=0|strict=0|final=https://discmaster.textfiles.com/search?q=%22sa25up.zip%22&qfields=t&mode=deep&dedup=dedup&limit=100&outputAs=json&showItemName=showItemName&tsMin=2000&tsMax=2004
+IA_QUERY|status=200|bytes=298|sha256=fa88f661e41f2ecde473a49f050cece968bf315b20bd00640f247fe013c011e9|items=0|final=https://archive.org/advancedsearch.php?q=%22sa25up.zip%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&rows=100&page=1&output=json
+COUNT|hits|0
+COUNT|errors|0
+RESOLUTION|NO_SA25UP_INDEX_HIT|tested exact-url/file-index surfaces bounded
+EVIDENCE_BOUNDARY|the historical link page establishes an exact token/URL lead only; the basename sa25up.zip does not establish whether the file is the 8.25MB updater, the 575/580MB full package, or another repack without recovered metadata/bytes.
