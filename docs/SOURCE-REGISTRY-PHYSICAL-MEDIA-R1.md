@@ -156,3 +156,51 @@ Support now comes from three independent evidence types:
 3. later physical-package photography: two visibly separate optical discs shown with the early JSS box/manual.
 
 The remaining gap is no longer merely whether a second disc probably existed. The high-value unresolved questions are now the exact identity, label/matrix code and contents of each disc; the package model/type code; and a provenance-preserving publicly obtainable dump/file tree of the actual 1999 game disc.
+
+
+## SRC-CN-2002-SA25-WANFANG-DISC-PHOTO-01
+
+- Title visible on disc: `永远的石器时代 2.5 精灵王传说`
+- Publisher imprint visible on disc: **万方数据电子出版社**
+- Visible ISBN: **`7-900096-07-8/Z.03`**
+- Visible barcode: **`9787900096074`**
+- Public collector image/source surface: https://www.shiqi.me/pt_17.htm
+- Retrieval/research date: 2026-09-24
+- Source type: later public collector photograph of physical optical media
+- Confidence: **B for literal visible disc-face fields; D for exact payload/provenance beyond the photograph**
+- Corroborating survival evidence:
+  - a separate collector article states that the author retained StoneAge installation discs for versions 2.5, 3.0, 4.0 and 5.0: https://post.smzdm.com/p/462347/
+- Exact preservation-index result:
+  - DiscMaster / Internet Archive queries using ISBN, barcode, title and publisher variants produced **0 strict preservation hits** and **0 interesting media-file hits**, with **0 probe errors**;
+  - one raw DiscMaster ISBN result was inspected and is an unrelated Brockhaus Multimedia 2007 update file, not StoneAge media.
+- Does **not** establish:
+  - that this is the client CD included in Beijing-Waei's `新手报到包`, `春满钱坤包` or `延年益兽包`;
+  - that the disc contains the full 575/580 MB client rather than the 8.25 MB updater, guide/multimedia content, or another composition;
+  - any filesystem tree, volume label, installer filename, binary hash or map-cache provenance.
+- Promotion criterion:
+  - a provenance-preserving disc image/read-only file tree, or independent package documentation tying the same ISBN/barcode disc to a specific Beijing-Waei distribution package.
+- Derived evidence record: `research/clients/STONEAGE-SA25-WANFANG-DISC-R1.md`
+- Derived index report: `research/recovered/STONEAGE-SA25-WANFANG-DISC-PROBE-R1.txt`
+
+## SRC-CN-2001-BOMBING-CHICKEN-COLLECTOR-CATALOG-01
+
+- Later collector-catalogue entry: **`2001C226 哇靠轰炸鸡完美中文版`**
+- Preserved catalogue attributes: approximately **210M**, shooting genre, literal publisher string **`华议国际`**
+- Confidence: **C for literal later-catalogue metadata; D for StoneAge/Waei payload provenance**
+- Evidence boundary:
+  - `华议国际` is retained literally and is **not** silently normalized to `华义国际`;
+  - the catalogue-local ID `2001C226` is not an official publisher/product code unless independently proven;
+  - expanded CHM/RTF scanning found no StoneAge Online / `精灵王传说` / `StoneAge` catalogue item on the tested surface.
+- Torrent-metadata crosscheck:
+  - public `allseeds.zip` contained **89** torrent metadata entries;
+  - corrected target-identity R2 classification produced **0 exact target strong hits / 81 weak catalogue-neighborhood hits / 0 errors**;
+  - the R1 `总第280期` strong result was an unrelated `读者` magazine issue and is explicitly rejected as a false positive;
+  - a separate signature scan produced **0 exact client/resource signature paths / 0 multi-exact client candidates / 5 lexical paths / 0 errors**;
+  - those lexical paths do not identify a client: they include historical-era material, a same-name mini-game and the secondary-documentation filename `大软石器时代特刊纪念册.pdf`.
+- Operational consequence:
+  - the tested collector catalogue/torrent surface is bounded for client-media recovery under the current exact identities/signatures;
+  - reopen only from a new exact image filename, checksum, catalogue record, package identity, installed-tree signature or independent repost.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R4.txt`
+  - `research/recovered/STONEAGE-SA25-OLD-DISC-TORRENTS-R2.txt`
+  - `research/recovered/STONEAGE-OLD-DISC-TORRENT-SIGNATURES-R1.txt`
