@@ -169,7 +169,7 @@ def collector_reference_images():
     page_rows = []
     for index_url, needles in COLLECTOR_INDEXES:
         try:
-            st, final, h, body = fetch(index_url, accept="text/html,*/*")
+            st, final, h, body = fetch(index_url, accept="text/html,*/*", timeout=15, attempts=1)
             p = ImageParser()
             p.feed(body.decode("utf-8", "replace"))
             links = []
@@ -179,7 +179,7 @@ def collector_reference_images():
                     links.append(normalize_image_url(final, row.get("href")))
             page_rows.append((index_url, st, tuple(links)))
             for article_url in links[:6]:
-                ast, afinal, ah, abody = fetch(article_url, accept="text/html,*/*", referer=index_url)
+                ast, afinal, ah, abody = fetch(article_url, accept="text/html,*/*", referer=index_url, timeout=15, attempts=1)
                 ap = ImageParser()
                 ap.feed(abody.decode("utf-8", "replace"))
                 for i, img in enumerate(ap.rows):
@@ -268,12 +268,14 @@ def match_features(a, b):
     }
 
 
-def load_image(label, url, referer=None):
+def load_image(label, url, referer=None, *, timeout=35, attempts=3):
     st, final, h, body = fetch(
         url,
         accept="image/*,*/*",
         referer=referer,
         limit=MAX_IMAGE_BYTES,
+        timeout=timeout,
+        attempts=attempts,
     )
     ctype = h.get("Content-Type", "")
     f = decode_features(body)
@@ -301,7 +303,7 @@ def metric_line(kind, left, right, m):
 
 
 def main():
-    print("StoneAge 2.5 physical-media transient visual fingerprint probe — R3")
+    print("StoneAge 2.5 physical-media transient visual fingerprint probe — R4")
     print("SCOPE|public-image-read-transient|derived-metrics-only|no-login|no-purchase|no-image-commit")
     print(f"OFFICIAL_REFERENCE|{OFFICIAL_MAINLAND_REFERENCE}")
     print(f"WANFANG_PAGE|{WANFANG_PAGE}")
@@ -381,9 +383,9 @@ def main():
             errors.append((row["label"], type(e).__name__, str(e)))
 
     collector = []
-    for row in collector_meta[:100]:
+    for row in collector_meta[:24]:
         try:
-            f = load_image(row["label"], row["url"], referer=row.get("article"))
+            f = load_image(row["label"], row["url"], referer=row.get("article"), timeout=12, attempts=1)
             if max(f["width"], f["height"]) < 300:
                 continue
             loaded[f["label"]] = f
