@@ -1,0 +1,41 @@
+name: Probe Waei 2002 payload domain
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_2002_payload_domain_probe.py
+      - tests/test_stoneage_waei_2002_payload_domain_probe.py
+      - .github/workflows/probe-stoneage-waei-2002-payload-domain.yml
+permissions:
+  contents: write
+concurrency:
+  group: stoneage-waei-2002-payload-domain
+  cancel-in-progress: true
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate domain payload probe
+        run: python3 -m unittest tests.test_stoneage_waei_2002_payload_domain_probe -v
+      - name: Probe Waei payload URL metadata
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_2002_payload_domain_probe > research/recovered/STONEAGE-WAEI-2002-PAYLOAD-DOMAIN-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-WAEI-2002-PAYLOAD-DOMAIN-R1.txt'
+          git add "$report"; git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Waei 2002 payload domain'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true; git fetch origin main; git reset --hard origin/main
+            python3 -m tools.stoneage_waei_2002_payload_domain_probe > "$report"
+            git add "$report"; git diff --cached --quiet && exit 0
+            git commit -m 'research: probe Waei 2002 payload domain'
+          fi
+          git push
