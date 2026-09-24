@@ -27,7 +27,7 @@ from tools.stoneage_sa25_old_disc_torrent_probe import (
     MAX_ZIP,
     URL,
     bdecode,
-    fetch_zip,
+    fetch as fetch_zip,
     root_info_span,
     torrent_paths,
 )
