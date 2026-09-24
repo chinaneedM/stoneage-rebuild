@@ -1,0 +1,197 @@
+name: Probe WeLoveSA 2.5 clean-client thread
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/probe-stoneage-welovesa-25-clean-thread.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-welovesa-25-clean-thread
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Probe live and archived public views
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered /tmp/wlsa25
+          python3 - > research/recovered/STONEAGE-WELOVESA-25-CLEAN-THREAD-R1.txt <<'PY'
+          import hashlib, html, json, re, urllib.parse, urllib.request
+          from urllib.error import HTTPError, URLError
+
+          UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36'
+          TITLE='〖2.5纯净〗石器客户端'
+          HOSTS=('lab.welovesa.com','www.lab.welovesa.com')
+          PATHS=(
+              '/viewthread.php?tid=2132',
+              '/viewthread.php?tid=2132&extra=page%3D1',
+              '/forum.php?mod=viewthread&tid=2132',
+              '/archiver/tid-2132.html',
+              '/archiver/?tid-2132.html',
+              '/archiver/index.php?action=tid&value=2132',
+              '/wap/index.php?action=thread&tid=2132',
+              '/viewthread.php?action=printable&tid=2132',
+              '/viewthread.php?tid=2132&view=print',
+          )
+          URL_RE=re.compile(r'(?i)\b(?:https?|ftp)://[^\s"\'<>]+')
+          ATT_RE=re.compile(r'(?i)(?:attachment|attach|aid|file|filename|mediafire|rayfile|115|xunlei|pan\.baidu|mega|dropbox|drive\.google|\.rar|\.zip|\.7z|\.exe|\.iso|\.bin|\.cue)')
+          TITLE_TOKENS=('2.5','纯净','純淨','石器客户端','石器客戶端')
+
+          def clean(s,limit=1200):
+              s=html.unescape(str(s or '')).replace('\x00',' ')
+              s=' '.join(s.split())
+              return s.replace('|','%7C')[:limit]
+
+          def fetch(url,timeout=35,max_bytes=8_000_000):
+              req=urllib.request.Request(url,headers={
+                  'User-Agent':UA,
+                  'Accept':'text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8',
+                  'Accept-Language':'zh-CN,zh;q=0.9,en;q=0.7'
+              })
+              try:
+                  with urllib.request.urlopen(req,timeout=timeout) as r:
+                      b=r.read(max_bytes+1)
+                      return {
+                          'ok':True,'status':getattr(r,'status',r.getcode()),
+                          'url':r.geturl(),'bytes':len(b),'truncated':len(b)>max_bytes,
+                          'sha256':hashlib.sha256(b).hexdigest(),
+                          'body':b[:max_bytes].decode('utf-8','replace')
+                      }
+              except HTTPError as e:
+                  try: body=e.read(500000).decode('utf-8','replace')
+                  except Exception: body=''
+                  return {'ok':False,'status':e.code,'url':url,'error':'HTTPError','body':body}
+              except Exception as e:
+                  return {'ok':False,'url':url,'error':type(e).__name__+': '+str(e),'body':''}
+
+          def candidates(body):
+              out=[]
+              for u in URL_RE.findall(body):
+                  if any(x in u.lower() for x in ('download','mediafire','rayfile','115.com','xunlei','pan.baidu','mega.','attachment','attach','file','stoneage','.rar','.zip','.7z','.exe','.iso','.bin','.cue')):
+                      out.append(('URL',u))
+              # capture relevant HTML/text lines around file/download markers
+              for raw in re.split(r'[\r\n]+',body):
+                  t=re.sub(r'<[^>]+>',' ',raw)
+                  if ATT_RE.search(t):
+                      out.append(('TEXT',clean(t,1800)))
+              seen=set(); ded=[]
+              for kind,val in out:
+                  k=(kind,val)
+                  if k not in seen:
+                      seen.add(k); ded.append((kind,val))
+              return ded[:500]
+
+          print('StoneAge WeLoveSA 2.5 clean-client thread probe — R1')
+          print('SCOPE|tid=2132|public-view+archive-surface|metadata-and-link-extraction-only')
+          print('THREAD_TITLE|'+TITLE)
+          print('THREAD_ID|2132')
+          print('INDEX_SURFACE|forumdisplay fid=40 currently exposes title, author rayrix, date 2012-09-26, paid/read-restricted thread')
+          live_hits=0
+          for scheme in ('https','http'):
+              for host in HOSTS:
+                  for path in PATHS:
+                      url=f'{scheme}://{host}{path}'
+                      r=fetch(url)
+                      body=r.get('body','')
+                      title_hit=all(tok.lower() in body.lower() for tok in ('2.5','石器')) and ('纯净' in body or '純淨' in body)
+                      cs=candidates(body)
+                      print(f"LIVE|url={clean(url)}|ok={int(r.get('ok',False))}|status={r.get('status','')}|bytes={r.get('bytes','')}|sha256={r.get('sha256','')}|final={clean(r.get('url',''))}|title_hit={int(title_hit)}|candidate_rows={len(cs)}|error={clean(r.get('error',''))}")
+                      if title_hit: live_hits+=1
+                      for kind,val in cs:
+                          print(f'LIVE_{kind}|source={clean(url)}|value={clean(val,2000)}')
+
+          # Wayback exact and prefix metadata around the thread paths.
+          cdx='https://web.archive.org/cdx/search/cdx'
+          cdx_targets=(
+              'http://lab.welovesa.com/viewthread.php?tid=2132',
+              'https://lab.welovesa.com/viewthread.php?tid=2132',
+              'http://www.lab.welovesa.com/viewthread.php?tid=2132',
+              'https://www.lab.welovesa.com/viewthread.php?tid=2132',
+              'http://lab.welovesa.com/viewthread.php',
+              'http://www.lab.welovesa.com/viewthread.php',
+              'http://lab.welovesa.com/archiver/',
+              'http://www.lab.welovesa.com/archiver/',
+          )
+          captures=[]
+          for target in cdx_targets:
+              is_prefix=target.endswith('viewthread.php') or target.endswith('/archiver/')
+              params=[
+                  ('url',target),('output','json'),
+                  ('fl','timestamp,original,statuscode,mimetype,digest,length'),
+                  ('filter','statuscode:200'),('from','2012'),('to','2026'),
+                  ('collapse','digest'),('limit','1000')
+              ]
+              if is_prefix: params.append(('matchType','prefix'))
+              u=cdx+'?'+urllib.parse.urlencode(params)
+              r=fetch(u,max_bytes=12_000_000)
+              rows=[]
+              if r.get('ok'):
+                  try:
+                      data=json.loads(r['body'])
+                      if isinstance(data,list) and data:
+                          hdr=data[0]
+                          rows=[dict(zip(hdr,x)) for x in data[1:] if isinstance(x,list)]
+                  except Exception as e:
+                      print(f'CDX_PARSE_ERROR|target={clean(target)}|error={type(e).__name__}')
+              relevant=[]
+              for row in rows:
+                  o=str(row.get('original',''))
+                  if 'tid=2132' in o or 'tid-2132' in o or 'value=2132' in o:
+                      relevant.append(row)
+              print(f"CDX|target={clean(target)}|prefix={int(is_prefix)}|ok={int(r.get('ok',False))}|status={r.get('status','')}|rows={len(rows)}|relevant={len(relevant)}|error={clean(r.get('error',''))}")
+              for row in relevant:
+                  key=(row.get('timestamp',''),row.get('original',''),row.get('digest',''))
+                  captures.append((key,row))
+                  print('CDX_HIT|'+'|'.join(f'{k}={clean(v)}' for k,v in row.items()))
+
+          uniq={}
+          for key,row in captures: uniq[key]=row
+          cap=sorted(uniq.values(),key=lambda x:x.get('timestamp',''))
+          print(f'COUNT|live_title_hits|{live_hits}')
+          print(f'COUNT|wayback_relevant_unique|{len(cap)}')
+
+          # Replay up to 20 unique relevant captures and extract links/text only.
+          replay_hits=0
+          for row in cap[:20]:
+              ts=row.get('timestamp',''); orig=row.get('original','')
+              if not ts or not orig: continue
+              u=f'https://web.archive.org/web/{ts}id_/{orig}'
+              r=fetch(u,max_bytes=8_000_000)
+              body=r.get('body','')
+              title_hit=('2.5' in body and ('纯净' in body or '純淨' in body) and ('石器' in body))
+              cs=candidates(body)
+              print(f"REPLAY|timestamp={ts}|original={clean(orig)}|ok={int(r.get('ok',False))}|status={r.get('status','')}|bytes={r.get('bytes','')}|sha256={r.get('sha256','')}|title_hit={int(title_hit)}|candidate_rows={len(cs)}|error={clean(r.get('error',''))}")
+              if title_hit: replay_hits+=1
+              for kind,val in cs:
+                  print(f'REPLAY_{kind}|timestamp={ts}|value={clean(val,2000)}')
+
+          print(f'COUNT|replay_title_hits|{replay_hits}')
+          if replay_hits or live_hits:
+              print('RESOLUTION|PUBLIC_THREAD_BODY_SURFACE_FOUND|inspect extracted attachment/download tokens')
+          elif cap:
+              print('RESOLUTION|ARCHIVE_METADATA_FOUND_BODY_UNRESOLVED|keep capture tokens and pursue alternate replay')
+          else:
+              print('RESOLUTION|NO_PUBLIC_BODY_OR_ARCHIVE_CAPTURE_FOUND|title remains index-only on tested surface')
+          print('EVIDENCE_BOUNDARY|The thread title uses 纯净/clean as a community label only; any recovered bytes must independently pass provenance and contamination checks.')
+          PY
+
+      - name: Commit derived report only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-WELOVESA-25-CLEAN-THREAD-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe WeLoveSA 2.5 clean-client thread'
+          git pull --rebase origin main
+          git push
