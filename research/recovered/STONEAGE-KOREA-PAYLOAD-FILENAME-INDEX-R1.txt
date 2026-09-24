@@ -1,0 +1,27 @@
+StoneAge Korean 2000-2001 exact payload filename preservation probe — R1
+SCOPE|DiscMaster+IA-metadata+old-disc-torrent-paths|no-client-or-disc-payload
+TARGET|label=gametime-formal|filename=onlStoneAge.zip|mode=distinctive
+TARGET|label=gametime-trial|filename=stone_demo.exe|mode=distinctive
+TARGET|label=hananet-trial|filename=sa_demo.exe|mode=distinctive
+TARGET|label=gagamel-beta|filename=stoneagebeta.zip|mode=distinctive
+TARGET|label=cnet-formal|filename=stoneage.zip|mode=ambiguous-large
+TARGET|label=hananet-formal|filename=sa.exe|mode=ambiguous-large
+DISCM_QUERY|label=gametime-formal|filename=onlStoneAge.zip|status=200|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|rows=0|strict=0|final=https://discmaster.textfiles.com/search?q=%22onlStoneAge.zip%22&qfields=t&mode=deep&dedup=dedup&limit=100&outputAs=json&showItemName=showItemName&tsMin=2000&tsMax=2004
+DISCM_QUERY|label=gametime-trial|filename=stone_demo.exe|status=200|bytes=3271|sha256=546e6330f7da1b5cf9df17692b2e1c29fd06ad9707052b8d5a5993648c038408|rows=1|strict=0|final=https://discmaster.textfiles.com/search?q=%22stone_demo.exe%22&qfields=t&mode=deep&dedup=dedup&limit=100&outputAs=json&showItemName=showItemName&tsMin=2000&tsMax=2004
+DISCM_QUERY|label=hananet-trial|filename=sa_demo.exe|status=200|bytes=7561|sha256=9813068d0a8b7a2802c1309017ce8abb2ee5178dc584d8ff9d1a6c2d12777701|rows=3|strict=0|final=https://discmaster.textfiles.com/search?q=%22sa_demo.exe%22&qfields=t&mode=deep&dedup=dedup&limit=100&outputAs=json&showItemName=showItemName&tsMin=2000&tsMax=2004
+DISCM_QUERY|label=gagamel-beta|filename=stoneagebeta.zip|status=200|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|rows=0|strict=0|final=https://discmaster.textfiles.com/search?q=%22stoneagebeta.zip%22&qfields=t&mode=deep&dedup=dedup&limit=100&outputAs=json&showItemName=showItemName&tsMin=2000&tsMax=2004
+DISCM_QUERY|label=cnet-formal|filename=stoneage.zip|status=200|bytes=1832|sha256=e9f78e6f0cbb10531257ed06dcfe3671852d91e788b5c3d82a199a9d733453bf|rows=1|strict=0|final=https://discmaster.textfiles.com/search?q=%22stoneage.zip%22&qfields=t&mode=deep&dedup=dedup&limit=100&outputAs=json&showItemName=showItemName&tsMin=2000&tsMax=2004
+DISCM_QUERY|label=hananet-formal|filename=sa.exe|status=200|bytes=221085|sha256=cbdfcf3faf85b6ab74c8a7d6395c0030cf00016d9f397e7af5e0ac8009d9798c|rows=100|strict=0|final=https://discmaster.textfiles.com/search?q=%22sa.exe%22&qfields=t&mode=deep&dedup=dedup&limit=100&outputAs=json&showItemName=showItemName&tsMin=2000&tsMax=2004
+IA_QUERY|label=gametime-formal|filename=onlStoneAge.zip|status=200|bytes=317|sha256=7f12032eea259c420670133c6597b257d4cc085732c863eac3d2c6144dc96099|items=0|final=https://archive.org/advancedsearch.php?q=%22onlStoneAge.zip%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&rows=100&page=1&output=json
+IA_QUERY|label=gametime-trial|filename=stone_demo.exe|status=200|bytes=228604|sha256=babbb7b4d4e2f47fb19c0ccaadfd610aca60c246a17fad0b7cca19112e3bdbaf|items=7|final=https://archive.org/advancedsearch.php?q=%22stone_demo.exe%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&rows=100&page=1&output=json
+IA_QUERY|label=hananet-trial|filename=sa_demo.exe|status=200|bytes=1507883|sha256=67dfff086ec4c75482fd3d96d4b89647a9de85acc0310594f698a6a4a7d6bae9|items=66|final=https://archive.org/advancedsearch.php?q=%22sa_demo.exe%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&rows=100&page=1&output=json
+IA_QUERY|label=gagamel-beta|filename=stoneagebeta.zip|status=200|bytes=322|sha256=fcd0859809292328e8b452287ad120763aaae0584b77e043b2ea3a24423823c9|items=0|final=https://archive.org/advancedsearch.php?q=%22stoneagebeta.zip%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&rows=100&page=1&output=json
+IA_QUERY|label=cnet-formal|filename=stoneage.zip|status=200|bytes=53723|sha256=acd29074fece95686c9f9af1d3df1d71879c7b4eb0ca694ef4d66e99007e9f70|items=2|final=https://archive.org/advancedsearch.php?q=%22stoneage.zip%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&rows=100&page=1&output=json
+IA_QUERY|label=hananet-formal|filename=sa.exe|status=200|bytes=557208|sha256=9a1ceac2018efb8097ad06986877f3eae93d3f1e28818eb352564b6420a46d66|items=59|final=https://archive.org/advancedsearch.php?q=%22sa.exe%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&rows=100&page=1&output=json
+TORRENT_ZIP|status=200|bytes=42275530|sha256=3bf12ddb3da0ead7b92905a3b9f0fbc29d64e102577cd67521129914dd29c03c|last_modified=Tue, 08 Sep 2026 01:43:00 GMT|final=https://www.nuduseng.com/laoguangpan/allseeds.zip
+COUNT|discm_strict_hits|0
+COUNT|ia_items_with_strict_files|0
+COUNT|torrent_strict_hits|0
+COUNT|errors|0
+RESOLUTION|NO_KOREAN_PAYLOAD_FILENAME_HIT|tested file-level/index surfaces bounded for exact tokens
+EVIDENCE_BOUNDARY|distinctive filename hits are recovery candidates, not clean-client proof; stoneage.zip and sa.exe require Korean StoneAge context or 220-300MB scale because their basenames are ambiguous.
