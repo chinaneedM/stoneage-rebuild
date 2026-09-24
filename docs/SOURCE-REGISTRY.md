@@ -1525,3 +1525,36 @@ Every substantial source should record:
   - clean-client status;
   - byte equality with the 2002 575/580 MB full package or any physical-disc carrier.
 - Derived report: `research/recovered/STONEAGE-SA25-XUNLEI-CLIENT-R1.txt`.
+
+
+### SRC-CN-2020-BAHAMUT-SA25-YANNIAN-PHYSICAL-01
+
+- Title: `石器時代周邊收藏——用戶端禮包篇（一）延年益壽包`
+- Author/account: **寂寞如風 / stoneage2017**
+- Publication timestamps:
+  - Bahamut forum: **2020-09-01 15:21:31**
+  - Bahamut creator page: **2020-09-01 15:19:18**
+- Retrieval/research date: **2026-09-25**
+- URLs:
+  - `https://forum.gamer.com.tw/C.php?bsn=1571&snA=81388`
+  - `https://home.gamer.com.tw/artwork.php?sn=4902119`
+- Source type: modern collector documentation of a surviving Mainland StoneAge package; **not** a contemporaneous 2002 source and **not** a disc dump.
+- Literal high-value observations:
+  - the article identifies the package as `延年益壽包`;
+  - a photographed item is explicitly labelled `2.5時期的光碟`;
+  - the next photographed item is explicitly labelled `2.5版本的說明書`.
+- Contemporaneous cross-controls:
+  - the 17173 StoneAge 2.5 upgrade page places the 2.5 retail rollout in January/February 2002, identifies the 580 MB full upgrade and 8.25 MB updater, and names `春满钱坤包` / `延年益兽包` as upgrade-acquisition products;
+  - a Sina Technology interview dated 2002-02-08 states that 联邦、智冠、华义 would issue a limited `石器时代延年益寿包` on 2002-02-09.
+- Name-normalization warning: preserve each source's literal form (`益壽` / `益寿` / `益兽`); spelling variation is not byte provenance.
+- Public-byte search status:
+  - exact package/title/article-token queries combined with ISO / 光盘镜像 / 光碟 / 客户端 / 下载 returned collector/retrospective material but no verifiable ISO, raw disc image, complete file tree or hash tied to this exact specimen in this pass.
+- Confidence:
+  - **A for current-page title/author/timestamps and literal collector labels**;
+  - **B for physical-carrier classification when cross-read with contemporaneous 2.5 product material**;
+  - **OPEN for package-to-disc chain, volume label, matrix/IFPI, filesystem, installer filename, ISO/hash, mastering identity and byte equality**.
+- Research consequence:
+  - treat this article/specimen as a high-value surviving-physical-carrier identity control;
+  - prioritize any future public read/listing/dump that can connect this carrier to a disc file tree and cryptographic hashes;
+  - do not infer field-map dates or clean-client bytes from the photographs alone.
+- Derived report: `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-PHYSICAL-R1.txt`.
