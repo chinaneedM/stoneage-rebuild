@@ -12,7 +12,11 @@ import hashlib
 from pathlib import Path
 import re
 
-from tools.stoneage_tw10_hit_map_model import (\n    load_taiwan_v10_collision_profile,\n    parse_stoneage_dat_map_cache,\n)\nfrom tools.stoneage_tw10_25_fieldmap_compat_probe import requires_profile
+from tools.stoneage_tw10_hit_map_model import (
+    load_taiwan_v10_collision_profile,
+    parse_stoneage_dat_map_cache,
+)
+from tools.stoneage_tw10_25_fieldmap_compat_probe import requires_profile
 
 NUMERIC_DAT=re.compile(r"^(\d+)\.dat$",re.I)
 
@@ -172,8 +176,9 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--historical-root",type=Path,required=True)
     parser.add_argument("--preserved-root",type=Path,required=True)
+    parser.add_argument("--profile",type=Path)
     args=parser.parse_args()
-    emit(args.historical_root,args.preserved_root)
+    emit(args.historical_root,args.preserved_root,args.profile)
 
 
 if __name__=="__main__":
