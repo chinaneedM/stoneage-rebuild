@@ -208,6 +208,8 @@ SEEDED_CALL|role=manifest-post-download|order=9|call_rva=0x1b0d|kind=indirect|dl
 SEEDED_CALL|role=manifest-post-download|order=10|call_rva=0x1b1a|kind=indirect|dll=|target=
 SEEDED_CALL|role=manifest-post-download|order=11|call_rva=0x1f14|kind=import|dll=MFC42.DLL|target=ordinal:6199
 SEEDED_CALL|role=manifest-post-download|order=12|call_rva=0x1f48|kind=internal|dll=|target=0x1f80
+SEEDED_FUNCTION|role=manifest-line-helper|rva=0x1f80|decoded=1|start_rva=0x1f80|end_rva=0x1fdf|boundary=bounded|instructions=42|strings=0|calls=0
+SEEDED_FUNCTION|role=manifest-load-helper|rva=0x2060|decoded=1|start_rva=0x2060|end_rva=0x2094|boundary=bounded|instructions=26|strings=0|calls=0
 SEEDED_FUNCTION|role=post-download-state|rva=0x3610|decoded=1|start_rva=0x3610|end_rva=0x3696|boundary=bounded|instructions=52|strings=2|calls=6
 SEEDED_STRING|role=post-download-state|order=1|ins_rva=0x3622|string_rva=0x7aec|text=rb
 SEEDED_STRING|role=post-download-state|order=2|ins_rva=0x3631|string_rva=0x779c|text=wb+
