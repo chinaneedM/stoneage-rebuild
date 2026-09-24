@@ -881,6 +881,24 @@ MANIFEST_CALL|rva=0x1ac6|kind=internal|dll=|target=0x1f80
 MANIFEST_CALL|rva=0x1afd|kind=internal|dll=|target=0x2060
 MANIFEST_CALL|rva=0x1b0d|kind=indirect|dll=|target=
 MANIFEST_CALL|rva=0x1b1a|kind=indirect|dll=|target=
-MANIFEST_CALL|rva=0x1f14|kind=import|dll=MFC42.DLL|target=ordinal:6199
+MANIFEST_CALL|rva=0x1f14|kind=import|dll=MFC42.DLL|target=CWnd::SetWindowTextA
 MANIFEST_CALL|rva=0x1f48|kind=internal|dll=|target=0x1f80
+CONTROL_CHECK|rva=0x1a46|match=1|expect=imm:0x1|observed=rva=0x1a46%7Cmnemonic=push%7Cops=1:imm:0x1
+CONTROL_CHECK|rva=0x1a48|match=1|expect=imm:0x3a|observed=rva=0x1a48%7Cmnemonic=push%7Cops=1:imm:0x3a
+CONTROL_CHECK|rva=0x1d74|match=1|expect=string:IP|observed=rva=0x1d74%7Cmnemonic=mov%7Cops=1:reg:esi;2:string:IP
+CONTROL_CHECK|rva=0x1daa|match=1|expect=stack:+0x10|observed=rva=0x1daa%7Cmnemonic=mov%7Cops=1:reg:eax;2:stack:+0x10
+CONTROL_CHECK|rva=0x1db2|match=1|expect=stack:+0x41c|observed=rva=0x1db2%7Cmnemonic=lea%7Cops=1:reg:edi;2:stack:+0x41c
+CONTROL_CHECK|rva=0x1dc6|match=1|expect=va-rva:0x45c2fc|observed=rva=0x1dc6%7Cmnemonic=mov%7Cops=1:reg:edi;2:va-rva:0x45c2fc
+CONTROL_CHECK|rva=0x1de5|match=1|expect=imm:0x1|observed=rva=0x1de5%7Cmnemonic=cmp%7Cops=1:reg:eax;2:imm:0x1
+CONTROL_CHECK|rva=0x1dea|match=1|expect=stack:+0x41c|observed=rva=0x1dea%7Cmnemonic=lea%7Cops=1:reg:edi;2:stack:+0x41c
+CONTROL_CHECK|rva=0x1e00|match=1|expect=va-rva:0x45befc|observed=rva=0x1e00%7Cmnemonic=mov%7Cops=1:reg:edi;2:va-rva:0x45befc
+CONTROL_CHECK|rva=0x1e11|match=1|expect=stack:+0x10|observed=rva=0x1e11%7Cmnemonic=inc%7Cops=1:stack:+0x10
+CONTROL_CHECK|rva=0x1e1a|match=1|expect=string:IP:1|observed=rva=0x1e1a%7Cmnemonic=mov%7Cops=1:reg:esi;2:string:IP:1
+CONTROL_CHECK|rva=0x1e77|match=1|expect=string:MESSAGE|observed=rva=0x1e77%7Cmnemonic=mov%7Cops=1:reg:esi;2:string:MESSAGE
+CONTROL_CHECK|rva=0x1ead|match=1|expect=stack:+0x81c|observed=rva=0x1ead%7Cmnemonic=lea%7Cops=1:reg:edi;2:stack:+0x81c
+CONTROL_CHECK|rva=0x1ec6|match=1|expect=va-rva:0x457c74|observed=rva=0x1ec6%7Cmnemonic=mov%7Cops=1:reg:edi;2:va-rva:0x457c74
+CONTROL_CHECK|rva=0x1f14|match=1|expect=MFC42.DLL!CWnd::SetWindowTextA|observed=('import', 'MFC42.DLL', 'CWnd::SetWindowTextA')
+IP_CONTROL|key=IP|source=full-manifest-line|first_buffer=0x85c2fc|second_buffer=0x85befc|counter=0-based|copies=first-two-lines|launch_args=execl-8-and-9
+MESSAGE_CONTROL|key=MESSAGE|source=colon-field-2|presentation=CWnd::SetWindowTextA|launch_control_buffer=0
+IP1_REACHABILITY|literal_compare=present|normal_colon-field1=IP-for-IP:1-prefix|direct-record-key-reachability=not-demonstrated
 RESOLUTION|MANIFEST_GRAMMAR_DERIVED|fields=12|field_xrefs=12|manifest_calls=12|helpers=2|binary-not-committed
