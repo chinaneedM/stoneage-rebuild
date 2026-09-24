@@ -12,7 +12,8 @@ from __future__ import annotations
 import hashlib, html, json, re, urllib.parse, urllib.request
 
 UA="stoneage-rebuild-archaeology/1.0"
-CDX="https://web.archive.org/cdx/search/cdx"\nAVAIL="https://archive.org/wayback/available"
+CDX="https://web.archive.org/cdx/search/cdx"
+AVAIL="https://archive.org/wayback/available"
 TARGETS=(
     "http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/upgrade.asp",
     "http://www.waei.com.cn/zhuanqu/stoneage2/tyro/upgrade.asp",
