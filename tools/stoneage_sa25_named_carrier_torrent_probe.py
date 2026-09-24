@@ -34,8 +34,10 @@ def canonical_period(s):
     patterns = (
         (r"2002(?:年)?(?:第)?0?2(?:月|期|号)", "period200202"),
         (r"2002[-._/]0?2(?:月|期|号)?", "period200202"),
+        (r"(?<!\\d)200202(?!\\d)", "period200202"),
         (r"2002(?:年)?(?:第)?0?1(?:月|期|号)", "period200201"),
         (r"2002[-._/]0?1(?:月|期|号)?", "period200201"),
+        (r"(?<!\\d)200201(?!\\d)", "period200201"),
     )
     for pattern, replacement in patterns:
         raw = re.sub(pattern, replacement, raw)
