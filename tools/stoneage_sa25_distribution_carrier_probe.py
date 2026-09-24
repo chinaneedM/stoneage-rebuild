@@ -104,12 +104,50 @@ def ia_docs(value):
     return tuple(row for row in docs if isinstance(row,dict))
 
 def likely_stoneage(row):
+    """Broad diagnostic match; intentionally permissive."""
     blob=" ".join(
         str(row.get(k) or "")
         for k in ("itemName","fileid","filename","href","text","title")
     ).lower()
     markers=("stoneage","stone age","石器时代","精灵王")
     return any(marker.lower() in blob for marker in markers)
+
+def strict_game_candidate(row):
+    """Require project/version semantics, not generic 'Stone Age' word collisions."""
+    blob=" ".join(
+        str(row.get(k) or "")
+        for k in ("itemName","fileid","filename","href","text","title","description")
+    )
+    low=blob.lower()
+    project_markers=(
+        "石器时代2.5","石器时代 2.5","精灵王传说","精灵王的传说",
+        "stoneage2.5","stoneage 2.5","stoneage_2.5","waei",
+        "sa_2903","sa2.5","sa25setup","stoneage25.exe",
+    )
+    if any(marker.lower() in low for marker in project_markers):
+        return True
+    # A generic StoneAge occurrence is accepted only if it appears with explicit
+    # version/operator context, so fonts, Amiga games and unrelated software drop out.
+    generic=("stoneage" in low or "stone age" in low or "石器时代" in blob)
+    context=("2.5" in low or "waei" in low or "华义" in blob or "精灵王" in blob)
+    return generic and context
+
+def strict_ia_candidate(label,row):
+    blob=" ".join(str(row.get(k) or "") for k in ("title","description","identifier"))
+    if label in {"stoneage25","cn-version","spirit-king"}:
+        return strict_game_candidate(row)
+    carrier_terms={
+        "popular-software-2002":"大众软件",
+        "computer-fan-2002":"电脑爱好者",
+        "chip-cn-2002":"CHIP新电脑",
+        "pc-free-2002":"PC任我行",
+        "computer-world-2002":"家庭电脑世界",
+    }
+    term=carrier_terms.get(label)
+    if not term:
+        return False
+    year=str(row.get("year") or row.get("date") or "")
+    return term.lower() in blob.lower() and year.startswith("2002")
 
 def main():
     print("StoneAge 2.5 contemporaneous distribution carrier probe — R1")
@@ -119,7 +157,9 @@ def main():
 
     errors=[]
     disc_candidates=[]
+    strict_disc_candidates=[]
     ia_candidates=[]
+    strict_ia_candidates=[]
 
     for label,query,field in DISCM_QUERIES:
         try:
@@ -127,15 +167,17 @@ def main():
             status,final,body,data=fetch_json(url)
             rows=discmaster_rows(data)
             relevant=[row for row in rows if likely_stoneage(row)]
+            strict=[row for row in rows if strict_game_candidate(row)]
             disc_candidates.extend(relevant)
+            strict_disc_candidates.extend(strict)
             print(
                 f"DISCM_QUERY|label={label}|field={field}|status={status}|bytes={len(body)}|"
                 f"sha256={hashlib.sha256(body).hexdigest()}|rows={len(rows)}|"
-                f"stoneage_candidates={len(relevant)}|final={clean(final)}"
+                f"broad_candidates={len(relevant)}|strict_candidates={len(strict)}|final={clean(final)}"
             )
-            for row in relevant[:100]:
+            for row in strict[:100]:
                 print(
-                    f"DISCM_HIT|label={label}|itemid={clean(row.get('itemid'))}|"
+                    f"DISCM_STRICT_HIT|label={label}|itemid={clean(row.get('itemid'))}|"
                     f"itemName={clean(row.get('itemName'))}|fileid={clean(row.get('fileid'))}|"
                     f"filename={clean(row.get('filename'))}|family={clean(row.get('family'))}|"
                     f"size={clean(row.get('size'))}|ts={clean(row.get('ts'))}|"
@@ -149,14 +191,17 @@ def main():
             url=ia_url(query)
             status,final,body,data=fetch_json(url)
             docs=ia_docs(data)
+            strict=[row for row in docs if strict_ia_candidate(label,row)]
             ia_candidates.extend(docs)
+            strict_ia_candidates.extend(strict)
             print(
                 f"IA_QUERY|label={label}|status={status}|bytes={len(body)}|"
-                f"sha256={hashlib.sha256(body).hexdigest()}|items={len(docs)}|final={clean(final)}"
+                f"sha256={hashlib.sha256(body).hexdigest()}|items={len(docs)}|"
+                f"strict_candidates={len(strict)}|final={clean(final)}"
             )
-            for row in docs[:100]:
+            for row in strict[:100]:
                 print(
-                    f"IA_HIT|label={label}|identifier={clean(row.get('identifier'))}|"
+                    f"IA_STRICT_HIT|label={label}|identifier={clean(row.get('identifier'))}|"
                     f"title={clean(row.get('title'))}|date={clean(row.get('date'))}|"
                     f"year={clean(row.get('year'))}|collection={clean(row.get('collection'))}|"
                     f"description={clean(row.get('description'))}"
@@ -167,22 +212,29 @@ def main():
     for scope,kind,message in errors:
         print(f"ERROR|scope={clean(scope)}|kind={clean(kind)}|message={clean(message)}")
 
-    disc_keys={
+    broad_disc_keys={
         (str(row.get("itemid","")),str(row.get("fileid","")))
         for row in disc_candidates
     }
-    ia_keys={str(row.get("identifier","")) for row in ia_candidates if row.get("identifier")}
-    print(f"COUNT|discm_unique_candidates|{len(disc_keys)}")
-    print(f"COUNT|ia_unique_items|{len(ia_keys)}")
+    strict_disc_keys={
+        (str(row.get("itemid","")),str(row.get("fileid","")))
+        for row in strict_disc_candidates
+    }
+    broad_ia_keys={str(row.get("identifier","")) for row in ia_candidates if row.get("identifier")}
+    strict_ia_keys={str(row.get("identifier","")) for row in strict_ia_candidates if row.get("identifier")}
+    print(f"COUNT|discm_broad_candidates|{len(broad_disc_keys)}")
+    print(f"COUNT|discm_strict_candidates|{len(strict_disc_keys)}")
+    print(f"COUNT|ia_broad_items|{len(broad_ia_keys)}")
+    print(f"COUNT|ia_strict_candidates|{len(strict_ia_keys)}")
     print(f"COUNT|errors|{len(errors)}")
-    if disc_keys:
-        print("RESOLUTION|DISCM_STONEAGE_CARRIER_CANDIDATES_FOUND|inspect item provenance and file tree before payload recovery")
-    elif ia_keys:
-        print("RESOLUTION|IA_CARRIER_CANDIDATES_FOUND|inspect item metadata/files before payload recovery")
+    if strict_disc_keys:
+        print("RESOLUTION|DISCM_STRICT_CARRIER_CANDIDATES_FOUND|inspect item provenance and file tree before payload recovery")
+    elif strict_ia_keys:
+        print("RESOLUTION|IA_STRICT_CARRIER_CANDIDATES_FOUND|inspect item metadata/files before payload recovery")
     elif errors:
-        print("RESOLUTION|PARTIAL_NO_HIT|one or more carrier indexes unavailable")
+        print("RESOLUTION|PARTIAL_NO_STRICT_HIT|broad lexical hits exist but no strict carrier and one or more indexes failed")
     else:
-        print("RESOLUTION|NO_INDEXED_CARRIER_HIT|tested preservation indexes expose no candidate")
+        print("RESOLUTION|NO_STRICT_INDEXED_CARRIER_HIT|broad lexical hits are non-project collisions; no strict 2.5 carrier found")
 
 if __name__=="__main__":
     main()
