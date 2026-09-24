@@ -1,0 +1,44 @@
+name: Probe archived JSS SaUpdate helper semantics
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_jss_saupdate_helper_semantics_probe.py
+      - tests/test_stoneage_jss_saupdate_helper_semantics_probe.py
+      - .github/workflows/probe-stoneage-jss-saupdate-helper-semantics.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-jss-saupdate-helper-semantics
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSS SaUpdate helper semantics probe
+        run: python3 -m unittest tests.test_stoneage_jss_saupdate_helper_semantics_probe -v
+      - name: Derive JSS SaUpdate helper semantics
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_jss_saupdate_helper_semantics_probe \
+            > research/recovered/STONEAGE-JSS-SAUPDATE-HELPER-SEMANTICS-R1.txt
+      - name: Verify no binary or disassembly payload was retained
+        run: |
+          set -euo pipefail
+          ! find research tools tests -type f \( -iname '*.exe' -o -iname '*.bin' -o -iname '*.cab' -o -iname '*.zip' \) -print -quit | grep -q .
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-JSS-SAUPDATE-HELPER-SEMANTICS-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: derive JSS SaUpdate helper semantics'
+          git pull --rebase origin main
+          git push
