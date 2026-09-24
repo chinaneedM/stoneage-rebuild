@@ -1800,8 +1800,11 @@ Supplemental source ledgers:
 - Wayback CDX contains malformed/suffixed URL records at **2002-07-12** (`sa25up.zip+`), **2002-09-29** (`sa25up.zip&nbsp`) and **2003-06-23** (`sa25up.zip%20`), plus an exact unsuffixed URL record at **2006-01-05**. **Every one of these payload-path records is HTTP 404**, so they are URL-circulation/crawler evidence only and provide no archived client/update bytes.
 - The Geocities-attributed source `pcpc.idv.tw/soft/soft.htm` has successful Wayback source-page captures beginning with a currently identified **2003-06-05 10:48:51 UTC** snapshot, followed by 2003-12-03 and 2005-01-01 captures.
 - Arquivo.pt produced no relevant exact/prefix rows. The Common Crawl branch is **inconclusive**, not negative: all 32 tested queries failed with service 503/504/timeouts.
-- The next evidence gate is the **dated source-page body itself**: determine whether the 2003-06-05 snapshot actually contains the StoneAge 2.5 row and exact href. Only a positive body replay may establish a terminus-ante-quem for the link text.
-- Derived report: `research/recovered/STONEAGE-SA25-SA25UP-NEIGHBORHOOD-R1.txt`.
+- The dated source-page body has now been replayed successfully. The **2003-06-05 10:48:51 UTC** capture is HTTP 200, 406,274 bytes, SHA-256 `604304bd2c931c463ccb575f3920dd096a340441825a58274d9f6e897dc966c5`, and its raw bytes directly match Big5/CP950 `下載`, `石器時代2.5`, and `精靈王傳說`.
+- The page literally contains **`[下載]石器時代2.5—精靈王傳說`** linked to `http://202.104.32.168/file/game/maoxian/sa25up.zip`. The same exact row/href survives in the 2003-12-03 and 2005-01-01 source captures.
+- Therefore **2003-06-05 is now the terminus-ante-quem for the link text on the archived source page**. This does not prove the linked payload was live, official, clean, or equal to either the documented 8.25 MB updater or 575/580 MB full package; all currently recovered payload-path Wayback records remain HTTP 404.
+- Derived reports: `research/recovered/STONEAGE-SA25-SA25UP-NEIGHBORHOOD-R1.txt` and `research/recovered/STONEAGE-SA25-PCPC-SOURCE-REPLAY-R1.txt`.
+- Canonical dated source record: `SRC-CN-2003-PCPC-SA25UP-SOURCE-ARCHIVE-01`.
 
 ## StoneAge 2.5 DiscMaster file-signature boundary — 2026-09-25
 
