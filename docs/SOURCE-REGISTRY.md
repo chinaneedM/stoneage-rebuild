@@ -1111,6 +1111,28 @@ Every substantial source should record:
 - Derived report: `research/recovered/STONEAGE-SA25-SA25UP-EXACT-R1.txt`.
 
 
+
+### SRC-CN-2012-PIXNET-SA25UP-REPOST-01
+
+- Title: `U車車軟體分享區1`
+- Publication timestamp shown by page: **2012-04-11 18:00**
+- Retrieval date: **2026-09-25**
+- Language/region: Traditional Chinese / Taiwan-hosted later repost
+- URL: https://bunvcudxc.pixnet.net/blog/posts/8022503587
+- Source type: later third-party repost of a broad legacy software/game download-link collection
+- Confidence: **C+ for literal surviving text and page timestamp; D/OPEN for the original age and provenance of the copied StoneAge link**
+- Literal StoneAge row: `[下載]石器時代2.5—精靈王傳說` -> `http://202.104.32.168/file/game/maoxian/sa25up.zip`
+- Supports:
+  - a second surviving web copy of the same exact `sa25up.zip` URL and StoneAge 2.5 label;
+  - the URL was not unique to the Geocities survivor and circulated within copied legacy download-link lists.
+- Does not support:
+  - that the URL was still live in 2012;
+  - that the link list itself originated in 2002;
+  - that `sa25up.zip` was official, clean, 8.25 MB, 575/580 MB, or byte-identical to any known specimen.
+- Research consequence:
+  - use this as **survival/circulation corroboration only**;
+  - the evidence-bearing next step remains archive-neighborhood recovery around the historical IP path and the Geocities-attributed source `pcpc.idv.tw/soft/soft.htm`, not payload classification from the filename.
+
 ### SRC-DERIVED-KR-PAYLOAD-FILENAME-INDEX-R1
 
 - Type: derived preservation-index negative control over source-derived exact Korean StoneAge payload filenames
