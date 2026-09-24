@@ -12,6 +12,16 @@ class JssSaUpdateCallArgsProbeTests(unittest.TestCase):
         self.assertEqual(imm_desc(0,{}),"null")
         self.assertEqual(imm_desc(0x407000,{0x407000:"updated"}),"string:updated")
 
+    def test_global_buffer_labels(self):
+        self.assertEqual(
+            imm_desc(0x85E6FC,{}),
+            "global:sa-executable-buffer@0x85e6fc",
+        )
+        self.assertEqual(
+            imm_desc(0x85E2FC,{}),
+            "global:realbin-state-buffer@0x85e2fc",
+        )
+
     def test_nearest_push_is_argument_one(self):
         blob=bytearray()
         blob+=b"\x6a\x00"

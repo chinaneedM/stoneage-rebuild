@@ -22,18 +22,10 @@ from tools.stoneage_jss_saupdate_xref_probe import parse_imports, section_blob
 from tools.stoneage_jss_saupdate_http_flow_probe import import_thunks, import_call_sites
 
 MAX_BACK=32
-MAX_ARGS=8
+MAX_ARGS=16
 
 # Exact code sites already established by prior derived probes.
 FOCUS_SITES=(
-    (0x157B,"manifest-wrapper-dispatch"),
-    (0x2902,"wrapper-to-http-core"),
-    (0x299E,"internet-session-ctor"),
-    (0x2A28,"get-http-connection"),
-    (0x2A44,"open-http-request"),
-    (0x2A54,"send-http-request"),
-    (0x2A5F,"query-http-status"),
-    (0x2D9B,"per-file-http-core-reentry"),
     (0x3D54,"sa-name-format-or-helper"),
     (0x3D71,"sa-name-followup"),
     (0x3D78,"unlink-old-sa"),
@@ -51,6 +43,26 @@ FOCUS_SITES=(
     (0x3ECC,"state-op-adrnbin"),
     (0x3F00,"execl-launch"),
 )
+
+# Global buffers bound by the immediately preceding format-shaped call sites.
+# These are analytical roles derived from argument structure, not original symbols.
+GLOBAL_BUFFER_LABELS={
+    0x85E6FC:"sa-executable-buffer",
+    0x85E2FC:"realbin-state-buffer",
+    0x85DEFC:"soundbin-state-buffer",
+    0x85CAFC:"battlebin-state-buffer",
+    0x85D2FC:"sprbin-state-buffer",
+    0x85CEFC:"spradrnbin-state-buffer",
+    0x85D6FC:"adrnbin-state-buffer",
+}
+SELECTOR_BY_LABEL={
+    "generation-scan-before-realbin":("realbin",2),
+    "generation-scan-before-soundbin":("soundbin",3),
+    "generation-scan-before-battlebin":("battlebin",8),
+    "generation-scan-before-sprbin":("sprbin",4),
+    "generation-scan-before-spradrnbin":("spradrnbin",5),
+    "generation-scan-before-adrnbin":("adrnbin",6),
+}
 
 
 def clean(v,limit=900):
@@ -124,6 +136,8 @@ def imm_desc(value,strings):
     v=int(value)&0xffffffff
     if v==0:return "null"
     if v in strings:return "string:"+clean(strings[v],500)
+    if v in GLOBAL_BUFFER_LABELS:
+        return f"global:{GLOBAL_BUFFER_LABELS[v]}@0x{v:x}"
     return f"imm:0x{v:x}"
 
 
@@ -234,6 +248,25 @@ def main():
             print(f"STACK_ARG|call_rva=0x{rva:x}|index={n}|push_rva=0x{addr-base:x}|source={clean(src)}")
         for n,(ins_rva,s) in enumerate(near,1):
             print(f"NEAR_STRING|call_rva=0x{rva:x}|order={n}|ins_rva=0x{ins_rva:x}|text={clean(s)}")
+
+        if label in SELECTOR_BY_LABEL and args:
+            key,expected=SELECTOR_BY_LABEL[label]
+            observed=args[0][1]
+            print(
+                f"GENERATION_SELECTOR|call_rva=0x{rva:x}|key={key}|"
+                f"expected={expected}|observed={clean(observed)}|match={int(observed==f'imm:0x{expected:x}')}"
+            )
+
+        # Recognize the repeated destination + '*bin:%d' + integer formatting shape.
+        if label.startswith("state-op-") and len(args)>=3:
+            print(
+                f"STATE_FORMAT_BINDING|call_rva=0x{rva:x}|key={label[9:]}|"
+                f"destination={clean(args[0][1])}|format={clean(args[1][1])}|value={clean(args[2][1])}"
+            )
+
+        if label=="execl-launch":
+            vector=";".join(f"{n}:{src}" for n,(_,src) in enumerate(args,1))
+            print(f"LAUNCH_VECTOR|call_rva=0x{rva:x}|args={clean(vector,4000)}")
 
     print(
         f"RESOLUTION|CALL_ARGUMENT_SOURCES_DERIVED|decoded_sites={decoded}|"
