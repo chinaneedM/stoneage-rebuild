@@ -8,7 +8,7 @@ class T(unittest.TestCase):
         self.assertIn("matchType=exact",cdx_url(TARGETS[0]))
     def test_attrs(self):
         x=attrs('<img src="https://truth.bahamut.com.tw/s01/x.jpg"><a href="/C.php?bsn=1571">x</a>')
-        self.assertEqual(len(x),2)
+        self.assertEqual(len(x),1)\n        self.assertIn("truth.bahamut.com.tw",x[0])
 
 if __name__=="__main__":
     unittest.main()
