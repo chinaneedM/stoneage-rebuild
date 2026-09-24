@@ -1,0 +1,46 @@
+name: Probe StoneAge 2.5 portal Availability fallback
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa25_portal_availability_probe.py
+      - tests/test_stoneage_sa25_portal_availability_probe.py
+      - .github/workflows/probe-stoneage-sa25-portal-availability.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-portal-availability
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_sa25_portal_availability_probe -v
+      - name: Probe bounded historical captures
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa25_portal_availability_probe \
+            > research/recovered/STONEAGE-SA25-PORTAL-AVAILABILITY-R2.txt
+      - name: Commit derived metadata only
+        shell: bash
+        run: |
+          set -euo pipefail
+          report='research/recovered/STONEAGE-SA25-PORTAL-AVAILABILITY-R2.txt'
+          cp "$report" /tmp/STONEAGE-SA25-PORTAL-AVAILABILITY-R2.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/STONEAGE-SA25-PORTAL-AVAILABILITY-R2.txt "$report"
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe StoneAge 2.5 portal Availability fallback'
+          git push
