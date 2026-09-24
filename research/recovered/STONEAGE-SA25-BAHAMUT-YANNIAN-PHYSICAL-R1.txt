@@ -1,0 +1,62 @@
+StoneAge 2.5 Yan-Nian-Yi-Shou package surviving-disc control — R1
+Research date: 2026-09-25
+Status: SURVIVING PHYSICAL-CARRIER CONTROL / NO PUBLIC BYTE DUMP RECOVERED IN THIS PASS
+
+SCOPE
+- Target: Mainland StoneAge 2.5 "延年益壽包 / 延年益寿包 / 延年益兽包" physical carrier.
+- Goal: determine whether a publicly identifiable surviving package includes a 2.5-era disc/manual and whether a public ISO, file tree, or other byte-bearing copy can be located.
+- This report is provenance research only. It does not copy proprietary game payloads into the repository.
+
+PRIMARY MODERN COLLECTOR SOURCE
+- Bahamut forum:
+  https://forum.gamer.com.tw/C.php?bsn=1571&snA=81388
+- Bahamut creator mirror:
+  https://home.gamer.com.tw/artwork.php?sn=4902119
+- Title: 石器時代周邊收藏——用戶端禮包篇（一）延年益壽包
+- Author/account: 寂寞如風 / stoneage2017
+- Forum timestamp: 2020-09-01 15:21:31.
+- Creator-page timestamp: 2020-09-01 15:19:18.
+- Source class: modern collector documentation of a surviving physical package; not a contemporaneous 2002 operator source and not a disc dump.
+
+LITERAL HIGH-VALUE OBSERVATIONS
+- The article identifies the package as "延年益壽包".
+- In the package walkthrough, the author explicitly labels a photographed object as "2.5時期的光碟".
+- The following photographed item is explicitly labelled "2.5版本的說明書", with the author noting it is the same style as the normal client manual.
+- These statements make this page a concrete surviving-physical-specimen control rather than only a generic package-family description.
+
+CONTEMPORANEOUS CROSS-CONTROLS
+- 17173's StoneAge 2.5 upgrade page states that the 2.5 retail version launched 2002-01-20, identifies a 580 MB complete 2.5 upgrade and an 8.25 MB updater, and names the early-February "春满钱坤包" and "延年益兽包" as ways to obtain the upgrade.
+- A Sina Technology interview dated 2002-02-08 states that 联邦、智冠、华义 would issue a limited "石器时代延年益寿包" in Beijing and other cities on 2002-02-09.
+- Naming varies across sources (益壽 / 益寿 / 益兽). Preserve the literal form used by each source; do not silently treat spelling as byte provenance.
+
+PUBLIC-BYTE SEARCH PASS
+- Exact/title/package queries were run with combinations of:
+  延年益壽包 / 延年益寿包 / 延年益兽包
+  石器时代 2.5
+  ISO / 光盘镜像 / 光碟 / 客户端 / 下载
+  snA=81388 / stoneage2017
+- Current indexed results returned the collector pages, package/version retrospectives, and related historical articles.
+- No result in this pass exposed a verifiable ISO, raw disc image, complete file tree, installer hash, or other byte-bearing public artifact tied to this exact surviving specimen.
+- This is a bounded search result for the queries/surfaces tested, not a claim that no dump exists anywhere.
+
+EVIDENCE CLASSIFICATION
+- FACT: the current Bahamut/creator pages exist and attribute the package walkthrough to stoneage2017 / 寂寞如風 with the timestamps above.
+- MODERN COLLECTOR EVIDENCE: the walkthrough labels a surviving photographed disc as a 2.5-era disc and a photographed manual as a 2.5 manual.
+- CONTEMPORANEOUS FACT: 17173 and Sina independently place the named package in the early-2002 StoneAge 2.5 rollout surface.
+- OPEN: package-to-disc chain of custody, disc label/matrix/IFPI, pressing/mastering identity, filesystem, installer filename, ISO/hash, and byte equality with any 575/580 MB full-client distribution.
+- OPEN: whether the photographed disc is the exact client CD described by contemporaneous product material; the combined evidence is strong for carrier classification but not sufficient for byte provenance.
+
+RESEARCH CONSEQUENCE
+- Promote "延年益壽包 / 延年益寿包 / 延年益兽包" plus the Bahamut specimen/article identifiers to high-value physical-carrier discovery tokens.
+- Future public listings, preservation corpora, disc-reading projects, or installed-tree backups that claim this package should be checked first for:
+  1. package-to-disc visual continuity;
+  2. disc volume label and file tree;
+  3. installer/executable filenames and sizes;
+  4. cryptographic hashes;
+  5. matrix/mastering/IFPI data where available;
+  6. comparison against the accepted Taiwan 1.0 baseline and the current 2.5 bridge specimen.
+- Do not infer any game-resource date or field-map provenance from the collector photo alone.
+- Do not require the user to purchase, ship, open, or manually dump media.
+
+CANONICAL SOURCE ID
+SRC-CN-2020-BAHAMUT-SA25-YANNIAN-PHYSICAL-01
