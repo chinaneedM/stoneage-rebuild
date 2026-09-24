@@ -29,8 +29,10 @@ FACT|generation_from_filename|RVA 0x2060 derives a generation integer from field
 OPEN|field5|Colon field 5 is definitely extracted into a temporary parser buffer, but no persistent record member or downstream semantic use has yet been recovered. The current evidence supports "not consumed by the recovered common resource-record population path", not a claim that the historical manifest producer assigned no meaning to it.
 FACT|record_flag|Record +0x110 is the selected-for-update/download flag. Helper RVA 0x2530 takes selector, minimum generation and maximum generation; for matching records whose filename-derived generation lies in that inclusive range it writes +0x110=1. The download loops at 0x2d0f and 0x2f9b skip records whose flag is zero.
 FACT|max_generation_helper|RVA 0x2570 takes a resource selector, scans matching record filenames through generation helper RVA 0x2060, and returns the maximum generation or -1 when none is found.
-OPEN|ip1_reachability|A literal IP:1 dispatch constant exists, but a naive manifest line beginning IP:1:... would be split by 0x3a into field1=IP. Therefore IP:1 must not yet be described as a proven literal record key; it may be legacy/dead logic or depend on a transformed representation not yet recovered.
-OPEN|message_ip_semantics|IP, IP:1 and MESSAGE control-line semantics and their exact relationship to the two final _execl control buffers remain unresolved.
+FACT|ip_control|For records whose colon field 1 is IP, the parser copies the complete selected manifest line, not just field 2, into two global control buffers in encounter order: the first IP line goes to 0x85c2fc and the second to 0x85befc. These exact buffers are _execl arguments 8 and 9.
+FACT|message_control|For records whose colon field 1 is MESSAGE, colon field 2 is copied to a presentation buffer and passed to MFC42 CWnd::SetWindowTextA (ordinal 6199, independently mapped from the pinned VC6 MFC42.DEF). MESSAGE is therefore updater UI/presentation state, not either final launch-control argument.
+OPEN|ip_payload_semantics|The internal payload syntax/meaning carried inside the two full IP lines is not yet recovered because no authentic newest.txt record has been recovered.
+OPEN|ip1_reachability|A literal IP:1 comparison branch exists, but the verified normal field-1 extraction uses colon as delimiter and index 1, so a normal line beginning IP:1:... first dispatches as IP. Direct reachability of the separate IP:1 branch is therefore not demonstrated and must not be treated as a proven on-wire record type.
 
 EVIDENCE|manifest_grammar_report=research/recovered/STONEAGE-JSS-SAUPDATE-MANIFEST-GRAMMAR-R1.txt
 EVIDENCE|line_helper_report=research/recovered/STONEAGE-JSS-SAUPDATE-MANIFEST-LINE-EMULATION-R1.txt
@@ -43,4 +45,6 @@ VALIDATION|generation_suffix_run=35954573651|conclusion=success
 VALIDATION|manifest_record_run=35954509013|conclusion=success
 VALIDATION|manifest_record_layout_run=35954899766|conclusion=success
 VALIDATION|update_selection_semantics_run=35954929935|conclusion=success
-RESOLUTION|NEWEST_RESOURCE_GRAMMAR_CORE_CLOSED|line-and-colon-structure=FACT|resource-key-selector-map=FACT|filename-size-checksum-generation=FACT|update-selection-flag=FACT|field5-and-control-lines=OPEN|binary-not-committed
+VALIDATION|message_window_mapping_run=35955249881|conclusion=success
+VALIDATION|manifest_control_semantics_run=35955281338|conclusion=success
+RESOLUTION|NEWEST_RESOURCE_GRAMMAR_CORE_CLOSED|line-and-colon-structure=FACT|resource-key-selector-map=FACT|filename-size-checksum-generation=FACT|update-selection-flag=FACT|ip-and-message-control=FACT|field5-and-ip-payload-values=OPEN|binary-not-committed
