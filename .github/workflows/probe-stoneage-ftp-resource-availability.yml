@@ -1,0 +1,119 @@
+name: Probe StoneAge FTP resource Availability
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/probe-stoneage-ftp-resource-availability.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-ftp-resource-availability
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check exact resource snapshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 - > research/recovered/STONEAGE-FTP-RESOURCE-AVAILABILITY-R1.txt <<'PY'
+          import concurrent.futures,hashlib,json,urllib.parse,urllib.request
+
+          UA='stoneage-rebuild-archaeology/1.0'
+          AV='https://archive.org/wayback/available'
+          BASES=('http://ftp.stoneage.com.cn/','https://ftp.stoneage.com.cn/')
+          PATHS=(
+            'StoneAge.exe','sa_3.exe','Setup.ini',
+            'real_1.bin','adrn_1.bin','spr_1.bin','spradrn_1.bin','battle_1.bin',
+            'data/real_1.bin','data/adrn_1.bin','data/spr_1.bin','data/spradrn_1.bin','data/battle_1.bin',
+            'battlemap/battle218.sab','battletxt_1.txt','soundaddr_1.txt'
+          )
+          DATES=('20001231','20010516','20011231','20020228')
+
+          def clean(v,n=1800):
+            return ' '.join(str(v or '').split()).replace('|','%7C')[:n]
+
+          def fetch(url,timeout=12,limit=None):
+            req=urllib.request.Request(url,headers={'User-Agent':UA,'Accept':'application/json,*/*'})
+            with urllib.request.urlopen(req,timeout=timeout) as r:
+              b=r.read() if limit is None else r.read(limit+1)
+              if limit is not None and len(b)>limit: raise ValueError('response-too-large')
+              return int(getattr(r,'status',r.getcode())),r.geturl(),b
+
+          def one(original,date):
+            u=AV+'?'+urllib.parse.urlencode({'url':original,'timestamp':date})
+            try:
+              st,final,b=fetch(u)
+              obj=json.loads(b.decode('utf-8','replace'))
+              c=(obj.get('archived_snapshots') or {}).get('closest') or {}
+              return original,date,st,b,c,None
+            except Exception as e:
+              return original,date,None,b'',{},(type(e).__name__,str(e))
+
+          print('StoneAge FTP exact-resource Availability probe — R1')
+          print('SCOPE|2000-2002-exact-resource-URLs|Wayback-Availability|small-200-replay-only')
+          tasks=[(b+p,d) for b in BASES for p in PATHS for d in DATES]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
+            rows=[f.result() for f in concurrent.futures.as_completed([ex.submit(one,*t) for t in tasks])]
+          captures={}
+          errors=[]
+          for original,date,st,b,c,err in sorted(rows):
+            if err:
+              errors.append((original,date,*err))
+              print(f'ERROR|url={clean(original)}|requested={date}|kind={err[0]}|message={clean(err[1])}')
+              continue
+            ts=str(c.get('timestamp') or ''); status=str(c.get('status') or ''); u=str(c.get('url') or '')
+            bounded=bool(ts and ts[:4] in ('2000','2001','2002'))
+            print(f'AVAIL|url={clean(original)}|requested={date}|available={int(bool(c.get("available")))}|capture_ts={ts}|capture_status={status}|bounded={int(bounded)}|capture_url={clean(u)}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}')
+            if c.get('available') and status=='200' and bounded:
+              captures[(ts,original)]=c
+
+          replayed=0
+          for (ts,orig),c in sorted(captures.items()):
+            try:
+              st,final,b=fetch(f'https://web.archive.org/web/{ts}id_/{orig}',20,25_000_000)
+              replayed+=1
+              print(f'REPLAY|timestamp={ts}|original={clean(orig)}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|final={clean(final)}')
+            except ValueError:
+              print(f'REPLAY_SKIP|timestamp={ts}|original={clean(orig)}|reason=over-25MB')
+            except Exception as e:
+              print(f'REPLAY_ERROR|timestamp={ts}|original={clean(orig)}|kind={type(e).__name__}|message={clean(e)}')
+
+          print(f'COUNT|queries|{len(tasks)}')
+          print(f'COUNT|bounded_200_captures|{len(captures)}')
+          print(f'COUNT|replayed_small_200|{replayed}')
+          print(f'COUNT|errors|{len(errors)}')
+          if captures:
+            print('RESOLUTION|EARLY_RESOURCE_CAPTURE_METADATA_FOUND|compare replayed bytes or recover large capture transiently')
+          elif errors:
+            print('RESOLUTION|NO_200_CAPTURE_WITH_PARTIAL_ERRORS|keep route bounded but not fully negative')
+          else:
+            print('RESOLUTION|NO_200_CAPTURE_ON_EXACT_RESOURCE_URLS|resource-level Availability route bounded')
+          print('EVIDENCE_BOUNDARY|Availability nearest snapshots are only accepted when capture timestamp is 2000-2002 and status is 200.')
+          PY
+      - name: Commit derived report
+        shell: bash
+        run: |
+          set -euo pipefail
+          R='research/recovered/STONEAGE-FTP-RESOURCE-AVAILABILITY-R1.txt'
+          cp "$R" /tmp/report.txt
+          echo 'DERIVED_REPORT_BEGIN'; cat "$R"; echo 'DERIVED_REPORT_END'
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe StoneAge FTP resource Availability'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
