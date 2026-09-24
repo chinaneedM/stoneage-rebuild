@@ -1,0 +1,45 @@
+name: Recover exact StoneAge 2.5 Yan-Nian disc photo
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa25_yannian_disc_photo_probe.py
+      - tests/test_stoneage_sa25_yannian_disc_photo_probe.py
+      - .github/workflows/probe-stoneage-sa25-yannian-disc-photo.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-yannian-disc-photo
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install OpenCV runtime
+        run: python3 -m pip install --quiet opencv-python-headless
+      - run: python3 -m unittest tests.test_stoneage_sa25_yannian_disc_photo_probe -v
+      - name: Recover source-labelled 2.5 disc photo
+        run: |
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa25_yannian_disc_photo_probe > research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-DISC-PHOTO-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-DISC-PHOTO-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: recover exact StoneAge 2.5 Yan-Nian disc photo'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
