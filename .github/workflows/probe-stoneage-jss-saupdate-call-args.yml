@@ -1,0 +1,43 @@
+name: Probe archived JSS SaUpdate call arguments
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_jss_saupdate_call_args_probe.py
+      - tests/test_stoneage_jss_saupdate_call_args_probe.py
+      - .github/workflows/probe-stoneage-jss-saupdate-call-args.yml
+permissions:
+  contents: write
+concurrency:
+  group: stoneage-jss-saupdate-call-args
+  cancel-in-progress: true
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install analysis dependencies
+        run: pip install --quiet pefile capstone
+      - name: Validate call-argument probe
+        run: python3 -m unittest tests.test_stoneage_jss_saupdate_call_args_probe -v
+      - name: Derive focused call argument sources
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_jss_saupdate_call_args_probe \
+            > research/recovered/STONEAGE-JSS-SAUPDATE-CALL-ARGS-R1.txt
+      - name: Verify no executable payload was retained
+        run: |
+          set -euo pipefail
+          ! find research tools tests -type f -iname '*.exe' -print -quit | grep -q .
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-JSS-SAUPDATE-CALL-ARGS-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: derive JSS SaUpdate call arguments'
+          git pull --rebase origin main
+          git push
