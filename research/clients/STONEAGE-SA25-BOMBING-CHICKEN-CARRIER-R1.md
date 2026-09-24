@@ -78,3 +78,21 @@ A later public optical-disc catalogue preserves a more specific lexical identity
 **EVIDENCE BOUNDARY:** this is a later collector/catalogue surface, not a contemporaneous Beijing-Waei product record. The literal `华议国际` string may be an original catalogue spelling, OCR/transcription error, or a different publisher identity; it must **not** be silently normalized to `华义国际`. Likewise, `2001C226` is treated as a catalogue-local identifier unless an independent source proves otherwise.
 
 **Operational use:** `哇靠轰炸鸡`, `哇靠轰炸鸡完美中文版`, and `2001C226` are added only as search tokens. A result containing these tokens alone is emitted as `SEARCH_ONLY_NOT_STRICT`; it cannot qualify as a StoneAge 2.5 carrier without an independent Waei/StoneAge association.
+
+
+## Refined preservation-index result — 2026-09-24
+
+The exact-carrier probe was rerun after adding the catalogue-only aliases and retry logic.
+
+- total source-named 2.5 carrier targets: **20**;
+- 《轰炸鸡》 target queries: eight DiscMaster + eight Internet Archive metadata queries;
+- DiscMaster strict hits: **0**;
+- Internet Archive strict items: **0**;
+- IA interesting carrier files: **0**;
+- probe errors: **0**;
+- generic IA query for `轰炸鸡`: **18 metadata items**, but **0** carried the independent Waei/StoneAge association required for a strict hit;
+- `哇靠轰炸鸡`, `哇靠轰炸鸡 华议国际`, `2001C226 哇靠轰炸鸡`, `Chicken Shoot Waei`, and `Chicken Shoot StoneAge` all returned no strict preserved-carrier result on the tested indexes.
+
+A modern Bilibili search surface labels a video **“经典射鸡老游戏：哇靠轰炸鸡中文版(射鸡英雄传1)”**, while modern game databases use `射鸡英雄传` for `Chicken Shoot`. This is useful only as a search alias/hypothesis because later GBA/Wii releases reuse the same title family and can easily create false positives.
+
+**Operational boundary:** the DiscMaster/IA exact metadata route is now bounded for this carrier. Reopen it only when a new independently sourced Chinese/Waei package identity, installer filename, disc label, checksum, file tree or repost token appears.
