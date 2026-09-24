@@ -1109,3 +1109,27 @@ Every substantial source should record:
   - metadata-only exact-token probe found **0 hits / 0 errors** across Wayback Availability period anchors, Arquivo.pt exact URL, eight Common Crawl index generations, DiscMaster exact filename indexing and Internet Archive metadata/file lists;
   - tested exact preservation-index route is therefore **BOUNDED** pending a new mirror/hostname/capture/file token.
 - Derived report: `research/recovered/STONEAGE-SA25-SA25UP-EXACT-R1.txt`.
+
+
+### SRC-DERIVED-KR-PAYLOAD-FILENAME-INDEX-R1
+
+- Type: derived preservation-index negative control over source-derived exact Korean StoneAge payload filenames
+- Research date: **2026-09-25**
+- Derived report: `research/recovered/STONEAGE-KOREA-PAYLOAD-FILENAME-INDEX-R1.txt`
+- Exact targets:
+  - GameTime formal mirror: `onlStoneAge.zip`
+  - GameTime trial: `stone_demo.exe`
+  - Hananet formal: `sa.exe`
+  - Hananet trial: `sa_demo.exe`
+  - Gagamel beta record: `stoneagebeta.zip`
+  - CNET formal mirror: `stoneage.zip`
+- Preservation surfaces tested:
+  - DiscMaster file/path index;
+  - Internet Archive advanced item search followed by exact file-list inspection;
+  - public old-disc `allseeds.zip` torrent path metadata.
+- Result: **0 strict DiscMaster hits / 0 IA items with strict file matches / 0 strict torrent-path hits / 0 errors**.
+- False-positive control:
+  - `sa.exe` and `stoneage.zip` are ambiguous basenames and are not promoted without the expected 220–300 MB scale or explicit Korean StoneAge/operator context;
+  - raw lexical rows therefore do not count as client recovery.
+- Confidence: **A for the bounded negative result on the tested index snapshots; no claim about preservation services/corpora not tested**
+- Consequence: do not repeat these exact index queries unless a new corpus, checksum, mirror URL, carrier identity, or other precise token changes the search space.
