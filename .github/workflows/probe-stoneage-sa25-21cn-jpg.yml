@@ -29,6 +29,23 @@ jobs:
           mkdir -p research/recovered
           python3 -m tools.stoneage_sa25_21cn_jpg_probe \
             > research/recovered/STONEAGE-SA25-21CN-JPG-R1.txt
+      - name: Fetch transient JPG for visual inspection
+        run: |
+          python3 - <<'PY'
+          import urllib.request
+          url='https://web.archive.org/web/20020517235842id_/http://download.21cn.com:80/file/game/maoxian/sa25up.jpg'
+          req=urllib.request.Request(url,headers={'User-Agent':'stoneage-rebuild-archaeology/1.0'})
+          with urllib.request.urlopen(req,timeout=30) as r:
+              data=r.read(500000)
+          open('/tmp/sa25up-20020517.jpg','wb').write(data)
+          PY
+      - name: Upload transient JPG artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sa25up-jpg-visual-inspection
+          path: /tmp/sa25up-20020517.jpg
+          retention-days: 1
+          if-no-files-found: error
       - name: Commit derived metadata only
         run: |
           set -euo pipefail
