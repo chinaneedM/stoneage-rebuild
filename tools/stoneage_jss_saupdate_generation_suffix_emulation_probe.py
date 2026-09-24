@@ -38,7 +38,7 @@ CASES=(
     ("dot-no-underscore","real.bin",0),
     ("no-dot","real_12",0),
     ("nondigit-suffix","real_beta.bin",0),
-    ("first-underscore-wins","real_beta_9.bin",0),
+    ("last-underscore-before-dot","real_beta_9.bin",9),
     ("nested-extension","foo_27.bar.baz",27),
 )
 
