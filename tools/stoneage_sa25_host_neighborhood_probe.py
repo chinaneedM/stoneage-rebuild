@@ -147,6 +147,13 @@ def main():
             for row in rows:
                 key=(str(row.get("timestamp") or ""),str(row.get("original") or ""))
                 all_rows[key]=row
+            if label=="game-200":
+                for row in rows:
+                    print(
+                        f"GAME200|timestamp={clean(row.get('timestamp'))}|original={clean(row.get('original'))}|"
+                        f"status={clean(row.get('statuscode'))}|mime={clean(row.get('mimetype'))}|"
+                        f"length={clean(row.get('length'))}|digest={clean(row.get('digest'))}|redirect={clean(row.get('redirect'))}"
+                    )
             identities=[r for r in rows if html_identity_candidate(r)]
             for r in identities[:100]:
                 print(
