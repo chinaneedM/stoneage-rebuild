@@ -46,7 +46,7 @@ jobs:
           if h.hexdigest()!=expected:
               raise SystemExit(f'historical map package hash mismatch: {h.hexdigest()}')
           PY
-          7zz x -y -o/tmp/sa-map-2003/out /tmp/sa-map-2003/map.exe >/tmp/sa-map-2003/7z.log
+          7z x -y -o/tmp/sa-map-2003/out /tmp/sa-map-2003/map.exe >/tmp/sa-map-2003/7z.log
       - name: Recover preserved 2.5 bridge bundle transiently
         run: |
           set -euo pipefail
