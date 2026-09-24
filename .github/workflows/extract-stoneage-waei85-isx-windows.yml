@@ -1,0 +1,163 @@
+name: Extract Waei StoneAge installer with pinned ISx
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/extract-stoneage-waei85-isx-windows.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei85-isx-windows
+  cancel-in-progress: true
+
+jobs:
+  extract:
+    runs-on: windows-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Recover verified six-part installer
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path C:\sa85\parts | Out-Null
+          @'
+          import hashlib,html,http.cookiejar,json,re,urllib.parse,urllib.request
+          from pathlib import Path
+          keys=[
+            ('l5i274801ov19w7','057f9e825a77f33e853eb44772ca2c22b917bb12b6eddc0fc445b5d2ed97256e'),
+            ('g9b3g3hjmwwttg3','4e5f8e40e6cd166a3790391cbe4e05035ec24aae8fb01d595efe3dcee4c8c579'),
+            ('e859n1nm1tk12j8','2b08c6a17b6e051676ed6b82e0e1a5857b2ba1bb3a321a58b8240494fa2ceb0a'),
+            ('69vrzm3nox8f0v9','f3b9a97f02ba331e7543a801d5b10c88a99ba1da597d50310dc57aa081e9e2df'),
+            ('clbwjkcqqhxq6k9','8c2000d61100377dba024c28bedc66af34831ebb75a245324d457e0dd8f6f04b'),
+            ('42uy5b9abbcu4qr','5d812f7437f9db0a272cbed08de64a569fe3962a5d121ba239a4c5e84ed0827b'),
+          ]
+          ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124 Safari/537.36'
+          cj=http.cookiejar.CookieJar()
+          op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+          op.addheaders=[('User-Agent',ua)]
+          for key,expected in keys:
+            data=urllib.parse.urlencode({'quick_key':key,'response_format':'json'}).encode()
+            req=urllib.request.Request('https://www.mediafire.com/api/1.5/file/get_info.php',data=data,headers={'User-Agent':ua})
+            with op.open(req,timeout=60) as r: info=json.load(r)['response']['file_info']
+            req=urllib.request.Request(info['links']['normal_download'],headers={'User-Agent':ua})
+            with op.open(req,timeout=60) as r:
+              page=r.read().decode('utf-8','replace'); referer=r.geturl()
+            m=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S)
+            if not m: m=re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+            if not m: raise SystemExit('no direct link '+key)
+            dest=Path(r'C:\sa85\parts')/str(info['filename'])
+            h=hashlib.sha256()
+            req=urllib.request.Request(html.unescape(m.group(1)),headers={'User-Agent':ua,'Referer':referer})
+            with op.open(req,timeout=420) as r,dest.open('wb') as out:
+              for b in iter(lambda:r.read(1024*1024),b''):
+                out.write(b); h.update(b)
+            if h.hexdigest()!=expected: raise SystemExit('hash mismatch '+key)
+          outp=Path(r'C:\sa85\STONEAGE20060616.exe')
+          with outp.open('wb') as out:
+            for i in range(1,7):
+              p=Path(r'C:\sa85\parts')/f'STONEAGE20060616.exe.{i:03d}'
+              with p.open('rb') as f:
+                for b in iter(lambda:f.read(1024*1024),b''): out.write(b)
+          h=hashlib.sha256()
+          with outp.open('rb') as f:
+            for b in iter(lambda:f.read(1024*1024),b''): h.update(b)
+          if h.hexdigest()!='971780abc65ed29a6a7aeb1a528c7db2ef07b11a188e56deaef90a54986609f5':
+            raise SystemExit('wrapper hash mismatch')
+          '@ | Set-Content -Encoding UTF8 C:\sa85\recover.py
+          python C:\sa85\recover.py
+
+      - name: Build pinned ISx
+        shell: pwsh
+        run: |
+          git clone -q https://github.com/Coldblackice/InstallShield-installer-extractor-ISx.git C:\sa85\ISx
+          Set-Location C:\sa85\ISx
+          git checkout -q 3c4177ddd0519244490ff8e78d380110c8dacdc8
+          if ((git rev-parse HEAD).Trim() -ne '3c4177ddd0519244490ff8e78d380110c8dacdc8') { throw 'pin mismatch' }
+          $vcvars='C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+          if (!(Test-Path $vcvars)) { $vcvars='C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat' }
+          if (!(Test-Path $vcvars)) { throw 'vcvars64 not found' }
+          $cmd='call "'+$vcvars+'" && cl /nologo /O2 /DNO_INFLATE /Fe:ISx.exe ISx.c'
+          cmd /c $cmd
+          if (!(Test-Path C:\sa85\ISx\ISx.exe)) { throw 'build failed' }
+
+      - name: Run ISx and inventory extracted stream
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path C:\sa85\out | Out-Null
+          $report=Join-Path $env:GITHUB_WORKSPACE 'research\recovered\STONEAGE-WAEI85-ISX-WINDOWS-R1.txt'
+          New-Item -ItemType Directory -Force -Path (Split-Path $report) | Out-Null
+          @(
+            'StoneAge Waei ISx native extraction — R1',
+            'SCOPE|verified-2012-six-part-mirror|pinned-ISx-Windows-native|derived-metadata-only',
+            'INSTALLER_SHA256|971780abc65ed29a6a7aeb1a528c7db2ef07b11a188e56deaef90a54986609f5',
+            'AUTHENTICODE_SIGNER|WAYI INTERNATIONAL DIGITAL ENTERTAINMENT CO., LTD.',
+            'AUTHENTICODE_TIMESTAMP|2007-02-15T05:56:59Z',
+            'ISX_REPO|Coldblackice/InstallShield-installer-extractor-ISx',
+            'ISX_COMMIT|3c4177ddd0519244490ff8e78d380110c8dacdc8'
+          ) | Set-Content -Encoding UTF8 $report
+          $p=Start-Process -FilePath C:\sa85\ISx\ISx.exe -ArgumentList @('C:\sa85\STONEAGE20060616.exe','C:\sa85\out') -Wait -PassThru -NoNewWindow -RedirectStandardOutput C:\sa85\stdout.txt -RedirectStandardError C:\sa85\stderr.txt
+          Add-Content $report "ISX_EXIT|$($p.ExitCode)"
+          Add-Content $report 'ISX_STDOUT_BEGIN'
+          Get-Content C:\sa85\stdout.txt -ErrorAction SilentlyContinue | Add-Content $report
+          Add-Content $report 'ISX_STDOUT_END'
+          Add-Content $report 'ISX_STDERR_BEGIN'
+          Get-Content C:\sa85\stderr.txt -ErrorAction SilentlyContinue | Add-Content $report
+          Add-Content $report 'ISX_STDERR_END'
+          @'
+          import hashlib,sys
+          from pathlib import Path
+          root=Path(r'C:\sa85\out'); report=Path(sys.argv[1])
+          def sha(p):
+            h=hashlib.sha256()
+            with p.open('rb') as f:
+              for b in iter(lambda:f.read(1024*1024),b''): h.update(b)
+            return h.hexdigest()
+          rows=[]
+          for p in root.rglob('*'):
+            if p.is_file(): rows.append((p.relative_to(root).as_posix(),p.stat().st_size,sha(p),p))
+          rows.sort(key=lambda x:x[0].lower())
+          with report.open('a',encoding='utf-8') as out:
+            out.write(f'ISX_TREE|files={len(rows)}|bytes={sum(x[1] for x in rows)}\n')
+            for rel,size,d,p in rows:
+              out.write(f'ISX_FILE|path={rel}|bytes={size}|sha256={d}\n')
+              if rel.lower().endswith(('.ini','.txt','.inx','.iss','.xml')):
+                raw=p.read_bytes()
+                for enc in ('utf-8','utf-16le','gb18030','big5','latin1'):
+                  try:s=raw.decode(enc,'ignore')
+                  except:continue
+                  vals=[line for line in s.splitlines() if any(k in line.lower() for k in ('stoneage','wayi','waei','8.5','8.0','version','product','company','2006','2007'))]
+                  if vals:
+                    for line in vals[:100]: out.write(f'ISX_TEXT|path={rel}|encoding={enc}|value={line.replace("|","%7C")[:1000]}\n')
+                    break
+            out.write('RESULT|ISX_NATIVE_EXTRACTION_COMPLETED\n')
+            out.write('EVIDENCE_BOUNDARY|Authenticode identity supports operator origin of the signed wrapper; exact game version still requires internal payload evidence.\n')
+          '@ | Set-Content -Encoding UTF8 C:\sa85\inventory.py
+          python C:\sa85\inventory.py $report
+
+      - name: Delete transient payloads
+        if: always()
+        shell: pwsh
+        run: Remove-Item -Recurse -Force C:\sa85 -ErrorAction SilentlyContinue
+
+      - name: Commit derived report only
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          R='research/recovered/STONEAGE-WAEI85-ISX-WINDOWS-R1.txt'
+          test -f "$R" || exit 0
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: extract Waei installer with pinned ISx'
+          git push
