@@ -75,6 +75,7 @@ MFC_EXTRA_ORDINALS={
     2379:"CWnd::Default",
     2642:"CWnd::EnableWindow",
     3092:"CWnd::GetDlgItem",
+    6199:"CWnd::SetWindowTextA",
 }
 MFC_NAMES={**MFC_EXTRA_ORDINALS,**MFC_NETWORK_ORDINALS}
 
