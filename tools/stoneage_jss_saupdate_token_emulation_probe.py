@@ -67,7 +67,7 @@ def map_image(uc, data, layout, image_base):
     return size
 
 
-def emulate_case(data, layout, image_base, text, field_index, max_len=0x400):
+def emulate_case(data, layout, image_base, text, field_index, arg_layout, max_len=0x400):
     uc = Uc(UC_ARCH_X86, UC_MODE_32)
     map_image(uc, data, layout, image_base)
     uc.mem_map(STACK_BASE, STACK_SIZE)
@@ -81,12 +81,18 @@ def emulate_case(data, layout, image_base, text, field_index, max_len=0x400):
     uc.mem_write(dest, b"\xCC" * 0x800)
 
     esp = STACK_BASE + STACK_SIZE - 0x100
+    if arg_layout == "dest-first":
+        arg1, arg3 = dest, src
+    elif arg_layout == "source-first":
+        arg1, arg3 = src, dest
+    else:
+        raise ValueError(f"unknown arg layout: {arg_layout}")
     frame = struct.pack(
         "<IIIII",
         SENTINEL,
-        dest,
+        arg1,
         int(field_index),
-        src,
+        arg3,
         int(max_len),
     )
     uc.mem_write(esp, frame)
@@ -137,31 +143,35 @@ def main():
 
     successes = 0
     failures = 0
-    for case_no, text in enumerate(CASES, 1):
-        for field in (1, 2, 3, 4):
-            try:
-                result = emulate_case(data, layout, image_base, text, field)
-            except Exception as exc:
-                failures += 1
+    for arg_layout in ("dest-first", "source-first"):
+        print(f"ARG_LAYOUT|name={arg_layout}")
+        for case_no, text in enumerate(CASES, 1):
+            for field in (1, 2, 3, 4):
+                try:
+                    result = emulate_case(
+                        data, layout, image_base, text, field, arg_layout
+                    )
+                except Exception as exc:
+                    failures += 1
+                    print(
+                        f"CASE_ERROR|layout={arg_layout}|case={case_no}|field={field}|"
+                        f"input={clean(text)}|kind={type(exc).__name__}|message={clean(exc)}"
+                    )
+                    continue
+                if not result["returned"]:
+                    failures += 1
+                    print(
+                        f"CASE_BOUNDED|layout={arg_layout}|case={case_no}|field={field}|"
+                        f"input={clean(text)}|eip=0x{result['eip']:x}|"
+                        f"eax=0x{result['eax']:x}|instructions={result['instructions']}|returned=0"
+                    )
+                    continue
+                successes += 1
                 print(
-                    f"CASE_ERROR|case={case_no}|field={field}|input={clean(text)}|"
-                    f"kind={type(exc).__name__}|message={clean(exc)}"
+                    f"CASE|layout={arg_layout}|case={case_no}|field={field}|"
+                    f"input={clean(text)}|output={clean(result['out'])}|"
+                    f"eax=0x{result['eax']:x}|instructions={result['instructions']}|returned=1"
                 )
-                continue
-            if not result["returned"]:
-                failures += 1
-                print(
-                    f"CASE_BOUNDED|case={case_no}|field={field}|input={clean(text)}|"
-                    f"eip=0x{result['eip']:x}|eax=0x{result['eax']:x}|"
-                    f"instructions={result['instructions']}|returned=0"
-                )
-                continue
-            successes += 1
-            print(
-                f"CASE|case={case_no}|field={field}|input={clean(text)}|"
-                f"output={clean(result['out'])}|eax=0x{result['eax']:x}|"
-                f"instructions={result['instructions']}|returned=1"
-            )
 
     print(
         f"RESOLUTION|TOKEN_HELPER_EMULATED|successes={successes}|failures={failures}|"
