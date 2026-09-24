@@ -73,7 +73,7 @@ jobs:
               return out
 
           rows=[]
-          rows.append("StoneAge 2.5 old-disc catalogue neighborhood probe — R2")
+          rows.append("StoneAge 2.5 old-disc catalogue neighborhood probe — R3")
           rows.append("SCOPE|small catalogue metadata+text only|DOC/CHM extraction|no PDF body|no game/disc image")
           for label,path,limit,dest in (
               ("summary",SUMMARY,2_000_000,"/tmp/sa25cat/summary.bin"),
@@ -126,7 +126,7 @@ jobs:
             if 7z x -y /tmp/sa25cat/catalog.chm -o/tmp/sa25cat/chm >/tmp/sa25cat/7z.log 2>&1; then
               python3 - <<'PY'
           from pathlib import Path
-          toks=("2001C226","哇靠轰炸鸡","NEW GAME 093","总第280期")
+          toks=("2001C226","哇靠轰炸鸡","NEW GAME 093","总第280期","石器时代","石器時代","精灵王传说","精靈王傳說","StoneAge","华义","華義","万方","萬方","2.5")
           def decode(b):
               best=''
               for enc in ('utf-8','gb18030','big5','utf-16le','latin1'):
