@@ -1,0 +1,49 @@
+name: Probe Beijing Waei StoneAge 2.5 download pages
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_sa25_download_probe.py
+      - tests/test_stoneage_waei_sa25_download_probe.py
+      - .github/workflows/probe-stoneage-waei-sa25-download.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-sa25-download
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate official-page probe
+        run: python3 -m unittest tests.test_stoneage_waei_sa25_download_probe -v
+      - name: Probe official 2002 StoneAge archive pages
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_sa25_download_probe \
+            > research/recovered/STONEAGE-WAEI-SA25-DOWNLOAD-R1.txt
+      - name: Commit derived HTML metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-WAEI-SA25-DOWNLOAD-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe official Waei 2.5 download pages'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_waei_sa25_download_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe official Waei 2.5 download pages'
+          fi
+          git push
