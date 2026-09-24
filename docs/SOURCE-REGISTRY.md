@@ -1155,3 +1155,47 @@ Every substantial source should record:
   - raw lexical rows therefore do not count as client recovery.
 - Confidence: **A for the bounded negative result on the tested index snapshots; no claim about preservation services/corpora not tested**
 - Consequence: do not repeat these exact index queries unless a new corpus, checksum, mirror URL, carrier identity, or other precise token changes the search space.
+
+
+### SRC-DERIVED-SA25-SA25UP-NEIGHBORHOOD-R1
+
+- Type: derived archive-index chronology / neighborhood analysis for the exact StoneAge 2.5 `sa25up.zip` path
+- Research date: **2026-09-25**
+- Derived report: `research/recovered/STONEAGE-SA25-SA25UP-NEIGHBORHOOD-R1.txt`
+- Target path: `http://202.104.32.168/file/game/maoxian/sa25up.zip`
+- Attributed source page: `http://pcpc.idv.tw/soft/soft.htm`
+- Wayback CDX findings:
+  - **2002-07-12 03:14:03 UTC** — `sa25up.zip+`, HTTP **404**;
+  - **2002-09-29 10:14:30 UTC** — `sa25up.zip&nbsp`, HTTP **404**;
+  - **2003-06-23 11:51:44 UTC** — `sa25up.zip%20`, HTTP **404**;
+  - **2006-01-05 11:28:03 UTC** — exact unsuffixed `sa25up.zip`, HTTP **404**.
+- Source-page Availability findings:
+  - successful archived source-page capture exists at **2003-06-05 10:48:51 UTC**;
+  - later successful source captures include **2003-12-03 04:24:12 UTC** and **2005-01-01 01:21:07 UTC**.
+- Arquivo.pt: 0 relevant rows on the tested exact/prefix surfaces.
+- Common Crawl: **inconclusive** because all 32 tested queries failed with 503/504/timeouts; this is not negative archive evidence.
+- Confidence:
+  - **A for literal Wayback index timestamps/statuses on the tested records**;
+  - **OPEN** for when the link first appeared on the source page and whether the payload was ever live/downloadable.
+- Evidence boundary:
+  - the 2002 index rows prove only that malformed/suffixed forms of the URL reached the archive crawler and returned 404;
+  - they do **not** prove client/update bytes existed at those timestamps;
+  - successful source-page capture metadata does not by itself prove the StoneAge row was present in the captured body.
+- Next gate: replay the dated source-page bodies and inspect the exact StoneAge row/href before assigning a terminus-ante-quem to the link text.
+
+### SRC-DERIVED-SA25-DISCMASTER-SIGNATURE-CARRIERS-R1
+
+- Type: derived DiscMaster file-index search using filenames verified in the recovered StoneAge 2.5-family bridge
+- Research date: **2026-09-25**
+- Derived report: `research/recovered/STONEAGE-SA25-DISCMASTER-SIGNATURE-CARRIERS-R1.txt`
+- Distinctive resource signatures tested: `adrn_15.bin`, `real_15.bin`, `spradrn_5.bin`.
+- Supporting generic signatures tested: `StoneAge.exe`, `Startup.exe`, `UNWISE.EXE`.
+- Result:
+  - all three distinctive resource names returned **0 exact rows**;
+  - generic supporting names produced many unrelated weak rows;
+  - **0 candidate carriers / 0 strong carriers / 0 errors**.
+- Confidence: **A for the bounded negative result on the tested DiscMaster index snapshot**.
+- Evidence boundary:
+  - bridge filenames can locate related trees but cannot authenticate a carrier as original/clean even if found;
+  - generic runtime/uninstaller filenames are not StoneAge evidence by themselves.
+- Consequence: the current DiscMaster filename-signature route is **BOUNDED**; reopen only if a new distinctive verified filename, hash, carrier identity or materially changed index becomes available.
