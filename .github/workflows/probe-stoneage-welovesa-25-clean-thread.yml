@@ -31,17 +31,14 @@ jobs:
 
           UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36'
           TITLE='〖2.5纯净〗石器客户端'
-          HOSTS=('lab.welovesa.com','www.lab.welovesa.com')
+          HOSTS=('lab.welovesa.com',)
           PATHS=(
               '/viewthread.php?tid=2132',
-              '/viewthread.php?tid=2132&extra=page%3D1',
               '/forum.php?mod=viewthread&tid=2132',
               '/archiver/tid-2132.html',
-              '/archiver/?tid-2132.html',
               '/archiver/index.php?action=tid&value=2132',
               '/wap/index.php?action=thread&tid=2132',
               '/viewthread.php?action=printable&tid=2132',
-              '/viewthread.php?tid=2132&view=print',
           )
           URL_RE=re.compile(r'(?i)\b(?:https?|ftp)://[^\s"\'<>]+')
           ATT_RE=re.compile(r'(?i)(?:attachment|attach|aid|file|filename|mediafire|rayfile|115|xunlei|pan\.baidu|mega|dropbox|drive\.google|\.rar|\.zip|\.7z|\.exe|\.iso|\.bin|\.cue)')
@@ -52,7 +49,7 @@ jobs:
               s=' '.join(s.split())
               return s.replace('|','%7C')[:limit]
 
-          def fetch(url,timeout=35,max_bytes=8_000_000):
+          def fetch(url,timeout=10,max_bytes=8_000_000):
               req=urllib.request.Request(url,headers={
                   'User-Agent':UA,
                   'Accept':'text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8',
@@ -115,12 +112,8 @@ jobs:
           cdx_targets=(
               'http://lab.welovesa.com/viewthread.php?tid=2132',
               'https://lab.welovesa.com/viewthread.php?tid=2132',
-              'http://www.lab.welovesa.com/viewthread.php?tid=2132',
-              'https://www.lab.welovesa.com/viewthread.php?tid=2132',
               'http://lab.welovesa.com/viewthread.php',
-              'http://www.lab.welovesa.com/viewthread.php',
               'http://lab.welovesa.com/archiver/',
-              'http://www.lab.welovesa.com/archiver/',
           )
           captures=[]
           for target in cdx_targets:
@@ -162,7 +155,7 @@ jobs:
 
           # Replay up to 20 unique relevant captures and extract links/text only.
           replay_hits=0
-          for row in cap[:20]:
+          for row in cap[:8]:
               ts=row.get('timestamp',''); orig=row.get('original','')
               if not ts or not orig: continue
               u=f'https://web.archive.org/web/{ts}id_/{orig}'
