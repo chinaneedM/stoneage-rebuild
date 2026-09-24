@@ -98,6 +98,41 @@ def semantic_shape(by_rva,rva,base,strings):
     return abstract_instruction(ins,base,strings) if ins is not None else ""
 
 
+def derive_field5_semantics(insns,base,strings):
+    rows=[]
+    for ins in insns:
+        rva=ins.address-base
+        if not (MANIFEST_RANGE[0] <= rva <= MANIFEST_RANGE[1]):
+            continue
+        for op in ins.operands:
+            if op.type!=X86_OP_MEM or op.mem.base!=X86_REG_ESP or op.mem.index!=X86_REG_INVALID:
+                continue
+            disp=int(op.mem.disp)
+            # The fifth-field buffer is stable-stack +0x141c. After pushes,
+            # an alias would appear at a larger displacement, so retain a
+            # generous 0x1400..0x15ff window across the parser.
+            if 0x1400 <= disp <= 0x15ff:
+                rows.append((rva,disp,abstract_instruction(ins,base,strings)))
+    exact=[row for row in rows if row[0]==0x1aad and row[1]==0x141c]
+    post=[row for row in rows if row[0]>0x1ac6]
+    print(
+        f"FIELD5_STACK_WINDOW|refs={len(rows)}|extract_dest_refs={len(exact)}|"
+        f"post_extract_refs={len(post)}"
+    )
+    for rva,disp,shape in rows:
+        print(
+            f"FIELD5_STACK_REF|rva=0x{rva:x}|disp=0x{disp:x}|"
+            f"phase={'post' if rva>0x1ac6 else 'extract'}|insn={clean(shape,1800)}"
+        )
+    if len(rows)==1 and len(exact)==1 and not post:
+        print(
+            "FIELD5_SEMANTIC|parser_behavior=extracted-but-not-consumed|"
+            "persistent-record-member=none-recovered|historical-producer-meaning=unknown"
+        )
+    else:
+        print("FIELD5_SEMANTIC|parser_behavior=REQUIRES_REVIEW")
+
+
 def derive_control_semantics(insns,base,strings,imports,thunks):
     by_rva={ins.address-base:ins for ins in insns}
     checks=(
@@ -291,6 +326,7 @@ def main():
             f"dll={clean(dll)}|target={clean(target)}"
         )
 
+    derive_field5_semantics(insns,base,strings)
     derive_control_semantics(insns,base,strings,imports,thunks)
 
     print(
