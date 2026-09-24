@@ -130,8 +130,7 @@ def parse_map_dat(data):
     }
 
 
-def safe_extract(archive_path,out_dir):
-    code,out,err=run7z(["x","-y",f"-o{out_dir}",str(archive_path)],timeout=180)
+def extracted_size(out_dir):
     total=0
     for root,dirs,files in os.walk(out_dir):
         for name in files:
@@ -142,7 +141,28 @@ def safe_extract(archive_path,out_dir):
                 continue
             if total>MAX_EXTRACTED:
                 raise ValueError(f"extracted data exceeds {MAX_EXTRACTED} byte safety cap")
-    return code,total,err
+    return total
+
+
+def safe_extract(archive_path,out_dir):
+    code,out,err=run7z(["x","-y",f"-o{out_dir}",str(archive_path)],timeout=180)
+    if code==0:
+        return seven_zip_command(),code,extracted_size(out_dir),err
+
+    # Some historical NSIS captures list correctly in p7zip but crash during
+    # bulk extraction. Retry with The Unarchiver before declaring the capture
+    # structurally unreadable.
+    shutil.rmtree(out_dir,ignore_errors=True)
+    Path(out_dir).mkdir(parents=True,exist_ok=True)
+    proc=subprocess.run(
+        ["unar","-f","-o",str(out_dir),str(archive_path)],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        timeout=240,
+        check=False,
+    )
+    fallback_err=proc.stderr.decode("utf-8","replace")
+    return "unar",proc.returncode,extracted_size(out_dir),fallback_err
 
 
 def iter_map_files(root):
@@ -204,7 +224,7 @@ def main():
 
             extract_dir=work/f"extract-{timestamp}"
             extract_dir.mkdir()
-            extract_code,extracted_bytes,extract_err=safe_extract(archive,extract_dir)
+            extract_tool,extract_code,extracted_bytes,extract_err=safe_extract(archive,extract_dir)
             maps=iter_map_files(extract_dir)
             parsed=0
             invalid=0
@@ -237,7 +257,7 @@ def main():
                 "\n".join(f"{mid}:{h}" for mid,h in zip(map_ids,hashes)).encode("ascii")
             ).hexdigest()
             print(
-                f"EXTRACT|timestamp={timestamp}|tool={clean(seven_zip_command())}|7z_code={extract_code}|extracted_bytes={extracted_bytes}|"
+                f"EXTRACT|timestamp={timestamp}|tool={clean(extract_tool)}|extract_code={extract_code}|extracted_bytes={extracted_bytes}|"
                 f"map_files={len(maps)}|valid_three_plane={parsed}|invalid_map_files={invalid}|"
                 f"map_bytes={total_map_bytes}|map_id_min={min(map_ids) if map_ids else ''}|"
                 f"map_id_max={max(map_ids) if map_ids else ''}|mapset_sha256={mapset_digest}|"
