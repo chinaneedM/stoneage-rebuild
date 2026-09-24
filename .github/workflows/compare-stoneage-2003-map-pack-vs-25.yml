@@ -102,7 +102,7 @@ jobs:
           test -n "$HIST"
           test -n "$PRES"
           mkdir -p research/recovered
-          python3 -m tools.stoneage_historical_map_25_compare             --historical-root "$HIST"             --preserved-root "$PRES"             > research/recovered/STONEAGE-2003-MAP-VS-25-R1.txt
+          python3 -m tools.stoneage_historical_map_25_compare --historical-root "$HIST" --preserved-root "$PRES" --profile research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz > research/recovered/STONEAGE-2003-MAP-VS-25-R1.txt
       - name: Verify proprietary payloads were not retained
         run: |
           set -euo pipefail
@@ -122,7 +122,7 @@ jobs:
             git reset --hard origin/main
             HIST="$(find /tmp/sa-map-2003/out -type d -name map -print -quit)"
             PRES="$(find /tmp/sa25/out -type d -path '*/SA2.5主程式/stoneage2.5/map' -print -quit)"
-            python3 -m tools.stoneage_historical_map_25_compare --historical-root "$HIST" --preserved-root "$PRES" > "$report"
+            python3 -m tools.stoneage_historical_map_25_compare --historical-root "$HIST" --preserved-root "$PRES" --profile research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz > "$report"
             git add "$report"
             git diff --cached --quiet && exit 0
             git commit -m 'research: compare archived 2003 maps with 2.5 corpus'
