@@ -1112,6 +1112,32 @@ Every substantial source should record:
 
 
 
+
+### SRC-CN-2003-PCPC-SA25UP-SOURCE-ARCHIVE-01
+
+- Title/context: archived legacy software/game download-link page `/soft/soft.htm`
+- Archive timestamp: **2003-06-05 10:48:51 UTC**
+- Retrieval/research date: **2026-09-25**
+- Historical URL: `http://pcpc.idv.tw:80/soft/soft.htm`
+- Wayback raw replay: timestamp `20030605104851`
+- Replay SHA-256: `604304bd2c931c463ccb575f3920dd096a340441825a58274d9f6e897dc966c5`
+- Replayed body size: **406,274 bytes**
+- Character evidence: Big5/CP950 byte-level matches directly recover `下載`, `石器時代2.5`, and `精靈王傳說`.
+- Literal dated row: `[下載]石器時代2.5—精靈王傳說` -> `http://202.104.32.168/file/game/maoxian/sa25up.zip`
+- Confidence: **B+ for the literal archived page body, capture timestamp and href; OPEN for the linked host's operator identity and payload contents**
+- Supports:
+  - the exact `sa25up.zip` StoneAge 2.5 link text was present on this source page no later than **2003-06-05**;
+  - the later Geocities and 2012 PIXNET copies preserve a link already demonstrably present on a 2003 archived source page.
+- Does not support:
+  - that the linked file returned HTTP 200 or remained downloadable at the capture timestamp;
+  - that the file is Beijing-Waei/operator-distributed;
+  - that `up` means the documented 8.25 MB updater;
+  - the file's size, hash, archive members, client build, cleanliness, or byte relationship to the recovered mixed 2.5 bridge.
+- Cross-check:
+  - the same exact row/href is present in successful source-page captures at **2003-12-03** and **2005-01-01**;
+  - separate Wayback payload-path records are 404, including malformed/suffixed URL forms indexed in 2002.
+- Derived report: `research/recovered/STONEAGE-SA25-PCPC-SOURCE-REPLAY-R1.txt`.
+
 ### SRC-CN-2012-PIXNET-SA25UP-REPOST-01
 
 - Title: `U車車軟體分享區1`
