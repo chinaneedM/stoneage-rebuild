@@ -1,0 +1,55 @@
+name: Probe archived JSS SaUpdate checksum helper
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_jss_saupdate_checksum_emulation_probe.py
+      - tests/test_stoneage_jss_saupdate_checksum_emulation_probe.py
+      - .github/workflows/probe-stoneage-jss-saupdate-checksum-emulation.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-jss-saupdate-checksum-emulation
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install analysis dependencies
+        run: pip install --quiet pefile capstone unicorn
+      - name: Validate checksum-helper emulation probe
+        run: python3 -m unittest tests.test_stoneage_jss_saupdate_checksum_emulation_probe -v
+      - name: Emulate checksum helper
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_jss_saupdate_checksum_emulation_probe \
+            > research/recovered/STONEAGE-JSS-SAUPDATE-CHECKSUM-EMULATION-R1.txt
+      - name: Verify no binary payload was retained
+        run: |
+          set -euo pipefail
+          ! find research tools tests -type f \( -iname '*.exe' -o -iname '*.bin' -o -iname '*.cab' -o -iname '*.zip' \) -print -quit | grep -q .
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-JSS-SAUPDATE-CHECKSUM-EMULATION-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: emulate JSS SaUpdate checksum helper'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_jss_saupdate_checksum_emulation_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: emulate JSS SaUpdate checksum helper'
+          fi
+          git push
