@@ -1500,7 +1500,17 @@ Every substantial source should record:
   - future exact-photo or physical-carrier comparison.
 - Does not support:
   - ISO/filesystem contents, installer build, clean-client provenance, or byte equivalence to any other 2.5 disc/client.
-- Derived report: `research/recovered/STONEAGE-SA25-SMZDM-DISC-R1.txt`.
+- New image-order resolution:
+  - the install-disc section contains **6** photos;
+  - photo 1 follows the explicit 2.0 new-user-package description;
+  - the article then lists **2.5, 3.0, 4.0, 5.0, 疯狂原始人** and five remaining photos follow in that HTML order;
+  - therefore photo 2, `https://am.zdmimg.com/201606/16/5762764a03643.jpg_e1080.jpg`, is a **high-confidence article-order candidate for the 2.5 installation disc**, not a byte-level identification.
+- Evidence boundary for the order mapping:
+  - the page/order association can guide visual matching;
+  - it does not establish volume label, filesystem, installer build, pressing/mastering identity, matrix/IFPI or clean-client provenance.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-SMZDM-DISC-R1.txt`
+  - `research/recovered/STONEAGE-SA25-SMZDM-DISC-ORDER-R1.txt`.
 
 ### SRC-CN-2013-XUNLEI-SA25-CLIENT-LEAD-01
 
