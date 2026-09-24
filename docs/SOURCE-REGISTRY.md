@@ -325,23 +325,36 @@ This is the canonical ledger for historical sources. Entries should record prove
   - the outer PE statically imports only `KERNEL32.dll`, `MSVCRT.dll`, and `USER32.dll`;
   - original binary strings directly expose `update.gamersdream.ne.jp`, `/~stoneage/newest.txt`, `/~stoneage/%s`, `data\\download\\%s`, `(cksum:%u : File : %s)`, `sa_*.exe`, `sa_%d.exe`, and `updated`;
   - generation-numbered resource families for `real`, `adrn`, `spr`, `spradrn`, `battle`, `battletxt`, `sound`, and `soundaddr` are embedded in the same binary.
+  - MFC42 HTTP-call topology binds the first-party updater strings to a concrete Internet-session / HTTP request path rather than treating them as unreferenced literals;
+  - all 23 direct calls to the generation scanner recover the complete selector set **1–9**, mapped as **1=sa, 2=real, 3=sound, 4=spr, 5=spradrn, 6=adrn, 7=soundaddr, 8=battle, 9=battletxt**;
+  - bounded x86 emulation verifies the reusable RVA `0x3c60` token helper as `(source, 1-based token index, destination, maximum length)`, using space/tab/colon delimiters with repeated-delimiter collapsing; this helper is observed in later data parsers and is not by itself proof of `newest.txt` grammar;
+  - bounded emulation of RVA `0x3f20` with stubbed `fopen/fgetc/fclose` verifies the file checksum behavior on 8/8 synthetic cases as **`Σ(byte[i] + i)`**, zero-based `i`, in the routine's 32-bit accumulator;
+  - final `_execl` launch passes generated `sa_%d.exe`, literal `updated`, `realbin/adrnbin/sprbin/spradrnbin` state strings and two additional launch-control buffers; the extra buffers are associated with code paths containing `IP:1` / `MESSAGE`, but exact labels remain unresolved;
+  - selector-7 `soundaddr` and selector-9 `battletxt` update functions have no references to those two extra launch-control buffers.
 - Research value:
   - closes the first recovered original-JSS executable bytes;
   - converts updater host, manifest path, remote payload-template path, local staging path and checksum-report shape from descendant hypotheses into first-party binary evidence.
 - Still OPEN:
   - whether this 2001 archived replacement is byte-identical to any 1999 launcher state;
-  - `newest.txt` content grammar and checksum algorithm;
-  - transport/network implementation and `newest.txt` parser/checksum semantics;
-  - whether the socket layer is imported dynamically, manually resolved, or reached through another runtime mechanism.
+  - the exact `newest.txt` record grammar, field meanings and real historical generation/checksum records;
+  - the exact semantic roles/formats of the two additional launch-control buffers associated with the `IP:1` / `MESSAGE` path;
+  - lower-level socket implementation details beyond the now-recovered MFC HTTP application-layer topology.
 - Follow-on archive-index boundary:
   - exact `newest.txt` queries and prefix queries for `update.gamersdream.ne.jp/~stoneage/`, plus the separately labeled source-derived `www.titan.co.jp/~stoneage/` candidate, were tested for 1999–2002;
   - all 6 queries completed with **0 errors**, **0 saturation** and **0 CDX rows**;
   - this does not contradict the updater host/path strings recovered from the binary; it only means no matching Wayback CDX capture is currently indexed on those tested paths.
-- Derived reports:
-  - `research/recovered/STONEAGE-JSS-LAUNCHER-ARCHIVE-PROBE-R1.txt`; workflow run **35781291855** — success;
-  - `research/recovered/STONEAGE-JSS-LAUNCHER-DEEP-PROBE-R1.txt`; workflow run **35948368684** — success;
-  - `research/recovered/STONEAGE-JSS-SAUPDATE-SEMANTIC-R1.txt`; workflow run **35948545627** — success;
-  - `research/recovered/STONEAGE-JSS-UPDATE-ARCHIVE-PROBE-R1.txt`; workflow run **35781723407** — success after parser-test correction.
+- Derived reports / final validation:
+  - `research/recovered/STONEAGE-JSS-LAUNCHER-ARCHIVE-PROBE-R1.txt`; **35781291855** — success;
+  - `research/recovered/STONEAGE-JSS-LAUNCHER-DEEP-PROBE-R1.txt`; **35948368684** — success;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-SEMANTIC-R1.txt`; **35948545627** — success;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-XREF-R1.txt`; **35948787670** — success;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-CALL-ARGS-R1.txt`; parser/core runs **35951460845 / 35951653442** — success;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-HELPER-SEMANTICS-R1.txt`; **35951664729** — success;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-TOKEN-EMULATION-R1.txt`; **35951529320** — success;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-CHECKSUM-EMULATION-R1.txt`; **35951872034** — success, indexed-sum rule matches 8/8 cases;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-LAUNCH-PARAMETERS-R1.txt`; **35951951617** — success;
+  - `research/recovered/STONEAGE-JSS-UPDATE-ARCHIVE-PROBE-R1.txt`; **35781723407** — success after parser-test correction.
+  - Earlier failed/cancelled setup/test attempts are excluded from evidentiary status.
 - Repository safety:
   - executable bytes existed only in the CI runner temporary directory; the workflow's no-EXE retention check passed.
 

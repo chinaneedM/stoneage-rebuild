@@ -1,6 +1,6 @@
 # Current State
 
-Last updated: 2026-09-23
+Last updated: 2026-09-24
 
 ## Current phase
 
@@ -1539,6 +1539,14 @@ Supplemental source ledgers:
   - checksum-error shape `(cksum:%u : File : %s)`;
   - generation-numbered payload/resource families including `sa_%d.exe`, `real_%d.bin`, `adrn_%d.bin`, `spr_%d.bin`, `spradrn_%d.bin`, `battle_%d.bin`, `battletxt_%d.txt`, `sound_%d.bin`, and `soundaddr_%d.txt`;
   - the literal state token `updated`.
+- Reverse engineering now closes several updater semantics directly from the recovered SaUpdate bytes:
+  - the manifest/update transport is implemented through MFC42 Internet classes: `CInternetSession`, `GetHttpConnection`, `OpenRequest`, `SendRequest` and `QueryInfoStatusCode`; the recovered `newest.txt` host/path therefore belongs to a concrete HTTP update path rather than a generic string-only lead;
+  - the local resource-generation scanner uses the complete selector set **1–9**: **1=sa**, **2=real**, **3=sound**, **4=spr**, **5=spradrn**, **6=adrn**, **7=soundaddr**, **8=battle**, **9=battletxt**. This mapping is grounded by all 23 direct callers plus the scanner's wildcard/prefix branches;
+  - selector 7 resolves `data\\soundaddr_%d.txt` and selector 9 resolves `data\\battletxt_%d.txt`; neither selector function references either of the two unresolved launch-control buffers;
+  - final process launch is an `_execl` vector beginning with the generated `sa_%d.exe` path and literal `updated`, followed by state strings for `realbin`, `adrnbin`, `sprbin`, `spradrnbin`, then two additional control buffers. The latter have code-context ties to `IP:1` / `MESSAGE`, but their exact semantic names remain OPEN;
+  - the no-import helper at RVA `0x3c60` has been executed under bounded x86 emulation. Its verified call shape is **source string, 1-based token index, destination buffer, maximum length**; it splits on **space, tab and colon**, collapses repeated delimiters, and returns an empty destination when the requested field is absent. It is used by later `data\\se` / `battleMap` / `pal` parsers and is **not promoted to the `newest.txt` parser without direct evidence**;
+  - the file checksum helper at RVA `0x3f20` has been isolated with stubbed CRT I/O and verified on eight synthetic byte sequences. Its observed 32-bit checksum is **`Σ(byte[i] + i)` with zero-based `i`**; this candidate matches **8/8** bounded emulation cases, while CRC32, Adler32, plain byte sum, XOR and length do not.
+- The checksum-error string `(cksum:%u : File : %s)` can therefore now be tied to a concrete recovered checksum routine; the remaining manifest question is the exact **`newest.txt` record grammar and how its fields encode filename/version/checksum/update state**, not the checksum algorithm itself.
 - This promotes the updater host/manifest/payload-template/resource-family model from descendant inference to **first-party JSS binary evidence**. It does **not** prove that the archived 2001 launcher is byte-identical to the 1999 retail or beta launcher.
 - A follow-on 1999–2002 Wayback CDX probe tested exact `newest.txt` targets plus prefix neighborhoods for `update.gamersdream.ne.jp/~stoneage/` and a separately labeled source-derived `www.titan.co.jp/~stoneage/` candidate. All **6** tested exact/prefix queries completed with **0 errors**, **0 saturation**, and **0 index rows**.
 - Evidence boundary: the zero-row archive-index result does **not** disprove the historical updater paths exposed by the launcher. It only means the tested Wayback CDX surface currently provides no manifest/resource capture to replay.
@@ -1546,8 +1554,17 @@ Supplemental source ledgers:
   - `research/recovered/STONEAGE-JSS-LAUNCHER-ARCHIVE-PROBE-R1.txt`;
   - `research/recovered/STONEAGE-JSS-LAUNCHER-DEEP-PROBE-R1.txt`;
   - `research/recovered/STONEAGE-JSS-SAUPDATE-SEMANTIC-R1.txt`;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-XREF-R1.txt`;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-HTTP-FLOW-R1.txt`;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-FUNCTION-FLOW-R1.txt`;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-GLOBAL-BUFFERS-R1.txt`;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-CALL-ARGS-R1.txt`;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-HELPER-SEMANTICS-R1.txt`;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-TOKEN-EMULATION-R1.txt`;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-CHECKSUM-EMULATION-R1.txt`;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-LAUNCH-PARAMETERS-R1.txt`;
   - `research/recovered/STONEAGE-JSS-UPDATE-ARCHIVE-PROBE-R1.txt`.
-- Validation: launcher workflow **35781291855** — success; deep-structure workflow **35948368684** — success; SaUpdate semantic workflow **35948545627** — success; updater-path workflow **35781723407** — success after the parser-test correction.
+- Validation includes launcher **35781291855**, deep structure **35948368684**, semantic **35948545627**, xref **35948787670**, parser/call-argument **35951460845 / 35951653442**, helper semantics **35951664729**, token emulation **35951529320**, checksum-rule verification **35951872034**, launch-parameter **35951951617**, and updater-path **35781723407** — all successful final runs. Earlier failed/cancelled CI attempts are not evidence.
 
 ## Korean 1.74 archive-recovery evidence boundary — 2026-09-22
 
@@ -1623,7 +1640,7 @@ Supplemental source ledgers:
 
 1. **Populate the now-wired Taiwan-v1 cache → collision-profile → hit-map path when a provenance-safe early field-map corpus is recovered.** The strict DAT plane parser, derived collision-profile loader and composition adapter are already closed; until authentic bytes exist, do not substitute the mixed 2.5/SACH map corpus or fabricate absent retail-disc field maps.
 2. **Close remaining default/runtime presentation gaps only when an implementation path actually needs them.** Exact early object-type numeric values and default NPC title/walkable/height behavior remain explicit/versioned until required.
-3. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** For JSS, the archived 2001 replacement launcher bytes are now recovered and the direct launcher-derived updater CDX surface is bounded at zero rows; continue seeking the 1999 retail/beta client and alternate preservation/mirror routes for `newest.txt` or version payloads rather than repeating the same Wayback prefixes. Korean 1.74 remains a high-value provenance target. For Japanese 1.74a, the exact official URL plus official-host Wayback exact/prefix surfaces are now bounded without recovering the payload; continue recovery through historical mirrors, secondary distribution evidence and physical carriers keyed by the exact filename `sa174hg.exe` plus the **248MB** launch-page size anchor, while keeping any future payload bytes/hashes separate from the already-proven launch-page metadata.
+3. **Use Taiwan 1.0 as the comparison anchor for future artifact recovery, but do not let broad archaeology block implementation.** JSS SaUpdate's HTTP topology, complete 1–9 resource selector map, launch vector, reusable token helper and checksum rule are now materially recovered from first-party bytes. The next JSS archaeology target is therefore **actual 1999 retail/beta bytes or a surviving `newest.txt` / version payload that can reveal the record grammar and real generation numbers**; do not repeat the already bounded official Wayback prefixes. Korean 1.74 remains a high-value provenance target. For Japanese 1.74a, continue through historical mirrors, secondary distribution evidence and physical carriers keyed by exact `sa174hg.exe` plus the **248MB** size anchor.
 4. **Treat the recovered mixed 2.5 bundle strictly as a bridge/specimen and keep historical reconstruction separate from redesign.** Never repair missing references by inventing data; later optimization/automation remains an explicit DESIGN layer.
 
 
