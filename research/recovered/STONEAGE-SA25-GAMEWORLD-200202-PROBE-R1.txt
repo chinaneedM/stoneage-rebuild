@@ -1,0 +1,18 @@
+StoneAge 2.5 GameWorld February-2002 adjacent-token preservation probe — R1
+SCOPE|inferred-token-only|DiscMaster+IA-metadata|no-disc-payload
+KNOWN_CONTROL|GAMEWORLD200201.iso|month=2002-01|status=independently-preserved
+HYPOTHESIS_TOKEN|GAMEWORLD200202.iso|month=2002-02|status=search-only-not-fact
+DISCM_QUERY|query=GAMEWORLD200202|status=200|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|rows=0|hits=0|final=https://discmaster.textfiles.com/search?q=%22GAMEWORLD200202%22&qfields=t&mode=deep&dedup=dedup&limit=100&outputAs=json&showItemName=showItemName&tsMin=2000&tsMax=2004
+IA_QUERY|query=GAMEWORLD200202|status=200|bytes=318|sha256=44df04dcfc75d3ecbc2ac87246bd8a09c9d39cdc48f780edb98a0aa278d06ed6|items=0|hits=0|final=https://archive.org/advancedsearch.php?q=%22GAMEWORLD200202%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&rows=100&page=1&output=json
+DISCM_QUERY|query=GAMEWORLD200202.iso|status=200|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|rows=0|hits=0|final=https://discmaster.textfiles.com/search?q=%22GAMEWORLD200202.iso%22&qfields=t&mode=deep&dedup=dedup&limit=100&outputAs=json&showItemName=showItemName&tsMin=2000&tsMax=2004
+IA_QUERY|query=GAMEWORLD200202.iso|status=200|bytes=334|sha256=1c76449d55ce3c9e60a977d5a83aee397981f0cddffe4bae5d4194c43972013b|items=0|hits=0|final=https://archive.org/advancedsearch.php?q=%22GAMEWORLD200202.iso%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&rows=100&page=1&output=json
+DISCM_QUERY|query=电脑报配套光盘之游戏世界200202|status=200|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|rows=0|hits=0|final=https://discmaster.textfiles.com/search?q=%22%E7%94%B5%E8%84%91%E6%8A%A5%E9%85%8D%E5%A5%97%E5%85%89%E7%9B%98%E4%B9%8B%E6%B8%B8%E6%88%8F%E4%B8%96%E7%95%8C200202%22&qfields=t&mode=deep&dedup=dedup&limit=100&outputAs=json&showItemName=showItemName&tsMin=2000&tsMax=2004
+IA_QUERY|query=电脑报配套光盘之游戏世界200202|status=200|bytes=569|sha256=4d48a0260b02b16fadaed04eac29e2d50fd8f546cd8ea80b919716eddcc1969a|items=0|hits=0|final=https://archive.org/advancedsearch.php?q=%22%E7%94%B5%E8%84%91%E6%8A%A5%E9%85%8D%E5%A5%97%E5%85%89%E7%9B%98%E4%B9%8B%E6%B8%B8%E6%88%8F%E4%B8%96%E7%95%8C200202%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&rows=100&page=1&output=json
+DISCM_QUERY|query=电脑报 游戏世界 2002年2月|status=200|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|rows=0|hits=0|final=https://discmaster.textfiles.com/search?q=%22%E7%94%B5%E8%84%91%E6%8A%A5+%E6%B8%B8%E6%88%8F%E4%B8%96%E7%95%8C+2002%E5%B9%B42%E6%9C%88%22&qfields=t&mode=deep&dedup=dedup&limit=100&outputAs=json&showItemName=showItemName&tsMin=2000&tsMax=2004
+IA_QUERY|query=电脑报 游戏世界 2002年2月|status=200|bytes=538|sha256=d33e712b99ee42c55da453751a485470f34bdcea1e2624ea2304d05498b48865|items=0|hits=0|final=https://archive.org/advancedsearch.php?q=%22%E7%94%B5%E8%84%91%E6%8A%A5+%E6%B8%B8%E6%88%8F%E4%B8%96%E7%95%8C+2002%E5%B9%B42%E6%9C%88%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&rows=100&page=1&output=json
+COUNT|discm_hits|0
+COUNT|ia_items|0
+COUNT|ia_candidate_files|0
+COUNT|errors|0
+RESOLUTION|NO_ADJACENT_TOKEN_HIT|bound inferred GAMEWORLD200202 token on tested indexes
+EVIDENCE_BOUNDARY|GAMEWORLD200202 is inferred from the independently preserved January filename pattern; a zero result does not prove loss, and a hit would still require exact February-issue provenance.
