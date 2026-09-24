@@ -1,0 +1,11 @@
+StoneAge Sina-labelled 1.82 client archive probe — R1
+SCOPE|TARGET-B-exact-filename+archive-indexes|metadata-only|no-client-payload
+TARGET|url=ftp://211.90.133.5/dowload/sa/sa1.82.exe|basename=sa1.82.exe|version_claim=UNVERIFIED_UNTIL_BYTES
+ERROR|scope=cdx:exact-ftp|kind=HTTPError|message=HTTP Error 503: Service Unavailable
+ERROR|scope=cdx:ftp-directory|kind=HTTPError|message=HTTP Error 503: Service Unavailable
+CDX|label=host-filename|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|rows=0|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2F211.90.133.5%2Fdowload%2Fsa%2Fsa1.82.exe&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&collapse=digest&limit=200
+IA_QUERY|status=200|bytes=279|sha256=649db7b8da1ae752562777c9ccfecfd946e0ede02cac655519e25f1ae0d01bd7|items=0|final=https://archive.org/advancedsearch.php?q=%22sa1.82.exe%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=mediatype&rows=100&page=1&output=json
+DISCMASTER|status=200|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|exact_rows=0|final=https://discmaster.textfiles.com/search?q=%22sa1.82.exe%22&qfields=name&mode=deep&dedup=dedup&limit=100&outputAs=json&showItemName=showItemName
+COUNT|hits|0
+COUNT|errors|2
+RESOLUTION|PARTIAL_NO_HIT|tested surfaces incomplete
