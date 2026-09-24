@@ -1,0 +1,49 @@
+name: Probe Japan 2004 StoneAge Redump index
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_japan2004_redump_probe.py
+      - tests/test_stoneage_japan2004_redump_probe.py
+      - .github/workflows/probe-stoneage-japan2004-redump.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-japan2004-redump
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Redump probe
+        run: python3 -m unittest tests.test_stoneage_japan2004_redump_probe -v
+      - name: Probe Redump public index
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_japan2004_redump_probe \
+            > research/recovered/STONEAGE-JAPAN-2004-REDUMP-PROBE-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-JAPAN-2004-REDUMP-PROBE-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Japan 2004 StoneAge Redump index'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_japan2004_redump_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe Japan 2004 StoneAge Redump index'
+          fi
+          git push
