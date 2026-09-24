@@ -488,13 +488,38 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - `research/recovered/STONEAGE-FTP-RESOURCE-AVAILABILITY-R1.txt`.
 - Status: **TARGET-D / BOUNDED — do not repeat the same guessed resource-path set; reopen only from a new contemporaneous filename/path token, mirror record, cache, installer reference or recovered media tree.**
 
+## TARGET-E / OPEN — 《轰炸鸡》 / “哇靠轰炸鸡” StoneAge 2.5 cross-promotion carrier
+
+- Contemporaneous 2002 Sina/17173 StoneAge 2.5 upgrade instructions name **《轰炸鸡》游戏** among the media through which existing users could obtain either the 2.5 full package or the **8.25 MB** updater.
+- Independent Beijing-Waei 2003 StoneAge 6.0 product records later bundle an **《轰炸鸡》 game disc** with StoneAge, so the carrier identity is independently tied to Waei's StoneAge retail/distribution channel.
+- Later collector-catalogue search tokens:
+  - `哇靠轰炸鸡完美中文版`;
+  - catalogue-local ID `2001C226`;
+  - literal catalogue publisher string `华议国际`.
+- Evidence boundary:
+  - the later collector catalogue is not contemporaneous Beijing-Waei provenance;
+  - `华议国际` is preserved literally and is not silently normalized to `华义国际`;
+  - modern community association with `Chicken Shoot` / `射鸡英雄传1` is a search hypothesis only;
+  - foreign `Chicken Shoot` media are controls and cannot qualify as StoneAge provenance without an independent Waei/StoneAge association.
+- Refined DiscMaster + Internet Archive metadata probe:
+  - total exact source-named carrier set: **20 targets**;
+  - `bombing-chicken-game` search set: eight DiscMaster + eight IA queries covering `轰炸鸡`, Waei/StoneAge associations, `哇靠轰炸鸡`, `华议国际`, `2001C226`, and English association tokens;
+  - generic IA `轰炸鸡` query: **18 metadata items**, **0 strict**;
+  - all other target-specific IA queries: 0 strict;
+  - DiscMaster: **0 strict**;
+  - run-wide result: **0 strict DiscMaster hits / 0 strict IA items / 0 interesting IA carrier files / 0 errors**.
+- Derived records:
+  - `research/clients/STONEAGE-SA25-BOMBING-CHICKEN-CARRIER-R1.md`;
+  - `research/recovered/STONEAGE-SA25-EXACT-CARRIERS-R1.txt`.
+- Status: **TARGET-E / OPEN, PUBLIC-INDEX-NEGATIVE AT TESTED SURFACE — do not repeat the same DiscMaster/IA exact metadata pass; next useful evidence is a Chinese/Waei package/disc scan, catalogue with independent publisher identity, file tree, checksum, installer filename or independent repost.**
+
 ## Current recovery order
 
 1. **Korean Inium 2000 public client:** recover the original installer filename/path/bytes through the Inium site, Hananet/GamePlus, CNET and period offline/software archives. It is now the strongest operational early bridge because operator-era free distribution and massive replication are directly attested.
 2. **JSS 1999 beta/retail/launcher:** continue in parallel as the historical origin target; do not lower its evidentiary importance merely because Korean 2000 may be easier to recover.
 3. Recover **GameTime `onlStoneAge.zip`** from the exact migrated payload path `http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip`; archived 302 headers bind it to `GW_IDX=9`, while legacy `num=9` identifies the historical StoneAge Beta record. The current IA/Wayback/Arquivo metadata routes are exhausted for this exact object; Common Crawl remains service-inconclusive.
 4. Recover the **Korean retail/package StoneAge game CD** independently attested by 2001 Electronic Times and GameMeca reporting; search public disc-preservation/catalog/photo/checksum surfaces and keep it distinct from the GameTime guide bonus CD until media evidence proves equality.
-5. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge.
+5. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge. In parallel, keep the newly restored **《轰炸鸡》 / `哇靠轰炸鸡` cross-promotion carrier** OPEN for a Chinese/Waei disc image, package scan, file tree, checksum or independent repost; its current DiscMaster/IA exact metadata surface is negative and should not be repeated without a new token.
 6. Continue recovery of the **Korean 1.74** exact-version operator-era installer identity/bytes.
 7. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
 8. Treat the recovered mixed 2.5 bundle as a **resource-format bridge only**; the 2026 public 2.5 archive is closed as a **descendant/community control**, the 2009 `YSA2.5.8.rar` exact mirror is currently public-index-negative, and the tested Beijing-Waei FTP resource path/Availability route is bounded with no recovered 200 payload. None should receive further primary clean-client recovery effort unless an independent mirror, new historical path token or stronger provenance appears.
