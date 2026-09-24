@@ -35,6 +35,13 @@ MFC_NETWORK_ORDINALS={
     5808:"CHttpFile::SendRequest",
 }
 
+# Candidate boundaries are derived from local E8 targets in this exact binary.
+# They are analytical slices, not source-level symbol claims.
+CANDIDATE_SLICES=(
+    ("manifest-wrapper",0x2880,0x2960),
+    ("http-download-core",0x2960,0x2cb0),
+)
+
 
 def clean(v,limit=1200):
     s=" ".join(str(v if v is not None else "").split())
@@ -213,7 +220,49 @@ def main():
                 f"target=0x{target:x}|relation={relation}"
             )
 
-    # Strong topology facts that do not require exact function-boundary recovery.
+    # Bound the two call-target slices that bridge the manifest setup to HTTP.
+    for label,start,end in CANDIDATE_SLICES:
+        local_in=[(site,target) for site,target in local_calls if start<=site<end]
+        imports_in=[call for call in calls if start<=call[0]<end]
+        print(
+            f"CANDIDATE_SLICE|label={label}|start=0x{start:x}|end=0x{end:x}|"
+            f"local_calls={len(local_in)}|import_calls={len(imports_in)}"
+        )
+        for site,target in local_in:
+            print(f"SLICE_LOCAL_CALL|label={label}|site=0x{site:x}|target=0x{target:x}")
+        for rva,dll,name,mode in imports_in:
+            print(
+                f"SLICE_IMPORT_CALL|label={label}|site=0x{rva:x}|dll={clean(dll)}|"
+                f"symbol={clean(mapped_name(dll,name))}|raw={clean(name)}|mode={mode}"
+            )
+
+    manifest_bridge = any(
+        site==0x2902 and target==0x2960
+        for site,target in local_calls
+    )
+    manifest_to_wrapper = any(
+        site==0x157b and target==0x2880
+        for site,target in local_calls
+    )
+    core_http = {
+        mapped_name(dll,name)
+        for rva,dll,name,mode in calls
+        if 0x2960<=rva<0x2cb0 and dll.lower()=="mfc42.dll"
+    }
+    required_http={
+        "CInternetSession::CInternetSession",
+        "CInternetSession::GetHttpConnection",
+        "CHttpConnection::OpenRequest",
+        "CHttpFile::SendRequest",
+        "CHttpFile::QueryInfoStatusCode",
+    }
+    print(
+        "MANIFEST_HTTP_BRIDGE|"
+        f"setup_to_wrapper={int(manifest_to_wrapper)}|wrapper_to_core={int(manifest_bridge)}|"
+        f"required_http_methods_in_core={int(required_http.issubset(core_http))}"
+    )
+
+    # Strong topology facts that do not require exact source-level symbol recovery.
     manifest_refs=[rva for label,rva in string_refs if label=="/~stoneage/newest.txt"]
     payload_refs=[rva for label,rva in string_refs if label=="/~stoneage/%s"]
     print(

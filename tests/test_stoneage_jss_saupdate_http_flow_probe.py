@@ -2,6 +2,7 @@ import struct
 import unittest
 
 from tools.stoneage_jss_saupdate_http_flow_probe import (
+    CANDIDATE_SLICES,
     import_call_sites,
     import_thunks,
     local_call_sites,
@@ -51,6 +52,11 @@ class JssSaUpdateHttpFlowProbeTests(unittest.TestCase):
         data[0x210]=0xe8
         struct.pack_into("<i",data,0x211,rel)
         self.assertIn((0x1010,0x1050),local_call_sites(bytes(data),self.layout()))
+
+    def test_candidate_slices_do_not_overlap(self):
+        self.assertEqual(CANDIDATE_SLICES[0][2],CANDIDATE_SLICES[1][1])
+        self.assertLess(CANDIDATE_SLICES[0][1],CANDIDATE_SLICES[0][2])
+        self.assertLess(CANDIDATE_SLICES[1][1],CANDIDATE_SLICES[1][2])
 
 
 if __name__=="__main__":
