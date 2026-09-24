@@ -2,32 +2,62 @@ StoneAge JSS SaUpdate token-helper emulation probe — R1
 SCOPE|exact-no-import-helper|bounded-x86-emulation|synthetic-inputs|derived-output-only
 FETCH|status=206|bytes=217088|sha256=6795d9349168f77aa025d7c4ea05d005c5bbfe33dd4b227eb7731802fa7eb82b|final=https://web.archive.org/web/20010503013834id_/http://www.titan.co.jp/stoneage/stoneage.exe
 FUNCTION|rva=0x3c60|image_base=0x400000|external_calls=0
-CASE_BOUNDED|case=1|field=1|input=alpha beta gamma|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
-CASE_BOUNDED|case=1|field=2|input=alpha beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=1|field=3|input=alpha beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=1|field=4|input=alpha beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=2|field=1|input=alpha:beta:gamma|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
-CASE_BOUNDED|case=2|field=2|input=alpha:beta:gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=2|field=3|input=alpha:beta:gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=2|field=4|input=alpha:beta:gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=3|field=1|input=alpha beta gamma|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
-CASE_BOUNDED|case=3|field=2|input=alpha beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=3|field=3|input=alpha beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=3|field=4|input=alpha beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=4|field=1|input=alpha : beta gamma|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
-CASE_BOUNDED|case=4|field=2|input=alpha : beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=4|field=3|input=alpha : beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=4|field=4|input=alpha : beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=5|field=1|input=realbin:12|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
-CASE_BOUNDED|case=5|field=2|input=realbin:12|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=5|field=3|input=realbin:12|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=5|field=4|input=realbin:12|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=6|field=1|input=one::three|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
-CASE_BOUNDED|case=6|field=2|input=one::three|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=6|field=3|input=one::three|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=6|field=4|input=one::three|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=7|field=1|input=one two|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
-CASE_BOUNDED|case=7|field=2|input=one two|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=7|field=3|input=one two|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-CASE_BOUNDED|case=7|field=4|input=one two|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
-RESOLUTION|TOKEN_HELPER_EMULATED|successes=0|failures=28|binary-not-committed
+ARG_LAYOUT|name=dest-first
+CASE_BOUNDED|layout=dest-first|case=1|field=1|input=alpha beta gamma|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=1|field=2|input=alpha beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=1|field=3|input=alpha beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=1|field=4|input=alpha beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=2|field=1|input=alpha:beta:gamma|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=2|field=2|input=alpha:beta:gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=2|field=3|input=alpha:beta:gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=2|field=4|input=alpha:beta:gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=3|field=1|input=alpha beta gamma|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=3|field=2|input=alpha beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=3|field=3|input=alpha beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=3|field=4|input=alpha beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=4|field=1|input=alpha : beta gamma|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=4|field=2|input=alpha : beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=4|field=3|input=alpha : beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=4|field=4|input=alpha : beta gamma|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=5|field=1|input=realbin:12|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=5|field=2|input=realbin:12|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=5|field=3|input=realbin:12|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=5|field=4|input=realbin:12|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=6|field=1|input=one::three|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=6|field=2|input=one::three|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=6|field=3|input=one::three|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=6|field=4|input=one::three|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=7|field=1|input=one two|eip=0x403cf4|eax=0xcc|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=7|field=2|input=one two|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=7|field=3|input=one two|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+CASE_BOUNDED|layout=dest-first|case=7|field=4|input=one two|eip=0x403c9f|eax=0x63|instructions=2000|returned=0
+ARG_LAYOUT|name=source-first
+CASE|layout=source-first|case=1|field=1|input=alpha beta gamma|output=alpha|eax=0x20|instructions=105|returned=1
+CASE|layout=source-first|case=1|field=2|input=alpha beta gamma|output=beta|eax=0x20|instructions=210|returned=1
+CASE|layout=source-first|case=1|field=3|input=alpha beta gamma|output=gamma|eax=0x0|instructions=319|returned=1
+CASE|layout=source-first|case=1|field=4|input=alpha beta gamma|output=|eax=0x20000100|instructions=330|returned=1
+CASE|layout=source-first|case=2|field=1|input=alpha:beta:gamma|output=alpha|eax=0x3a|instructions=109|returned=1
+CASE|layout=source-first|case=2|field=2|input=alpha:beta:gamma|output=beta|eax=0x3a|instructions=226|returned=1
+CASE|layout=source-first|case=2|field=3|input=alpha:beta:gamma|output=gamma|eax=0x0|instructions=343|returned=1
+CASE|layout=source-first|case=2|field=4|input=alpha:beta:gamma|output=|eax=0x20000100|instructions=354|returned=1
+CASE|layout=source-first|case=3|field=1|input=alpha beta gamma|output=alpha|eax=0x9|instructions=107|returned=1
+CASE|layout=source-first|case=3|field=2|input=alpha beta gamma|output=beta|eax=0x9|instructions=218|returned=1
+CASE|layout=source-first|case=3|field=3|input=alpha beta gamma|output=gamma|eax=0x0|instructions=331|returned=1
+CASE|layout=source-first|case=3|field=4|input=alpha beta gamma|output=|eax=0x20000100|instructions=342|returned=1
+CASE|layout=source-first|case=4|field=1|input=alpha : beta gamma|output=alpha|eax=0x20|instructions=129|returned=1
+CASE|layout=source-first|case=4|field=2|input=alpha : beta gamma|output=beta|eax=0x9|instructions=268|returned=1
+CASE|layout=source-first|case=4|field=3|input=alpha : beta gamma|output=gamma|eax=0x20|instructions=383|returned=1
+CASE|layout=source-first|case=4|field=4|input=alpha : beta gamma|output=|eax=0x20000100|instructions=423|returned=1
+CASE|layout=source-first|case=5|field=1|input=realbin:12|output=realbin|eax=0x3a|instructions=135|returned=1
+CASE|layout=source-first|case=5|field=2|input=realbin:12|output=12|eax=0x0|instructions=234|returned=1
+CASE|layout=source-first|case=5|field=3|input=realbin:12|output=|eax=0x20000100|instructions=224|returned=1
+CASE|layout=source-first|case=5|field=4|input=realbin:12|output=|eax=0x20000100|instructions=224|returned=1
+CASE|layout=source-first|case=6|field=1|input=one::three|output=one|eax=0x3a|instructions=83|returned=1
+CASE|layout=source-first|case=6|field=2|input=one::three|output=three|eax=0x0|instructions=213|returned=1
+CASE|layout=source-first|case=6|field=3|input=one::three|output=|eax=0x20000100|instructions=224|returned=1
+CASE|layout=source-first|case=6|field=4|input=one::three|output=|eax=0x20000100|instructions=224|returned=1
+CASE|layout=source-first|case=7|field=1|input=one two|output=one|eax=0x20|instructions=79|returned=1
+CASE|layout=source-first|case=7|field=2|input=one two|output=two|eax=0x0|instructions=155|returned=1
+CASE|layout=source-first|case=7|field=3|input=one two|output=|eax=0x20000100|instructions=152|returned=1
+CASE|layout=source-first|case=7|field=4|input=one two|output=|eax=0x20000100|instructions=152|returned=1
+RESOLUTION|TOKEN_HELPER_EMULATED|successes=28|failures=28|binary-not-committed
