@@ -18,6 +18,7 @@ import urllib.request
 
 UA="stoneage-rebuild-archaeology/1.0"
 CDX="https://web.archive.org/cdx/search/cdx"
+AVAIL="https://archive.org/wayback/available"
 SOURCE_URL="http://games.sina.com.cn/downgames/updatex/11084599.shtml"
 CGI_PREFIX="http://games1.sina.com.cn/cgi-bin/games/downgames/download.pl"
 AID="61620"
@@ -44,6 +45,19 @@ def parse_cdx(body):
         return ()
     header=data[0]
     return tuple(dict(zip(header,row)) for row in data[1:] if isinstance(row,list))
+
+def availability(date):
+    endpoint=AVAIL+"?"+urllib.parse.urlencode({"url":SOURCE_URL,"timestamp":date})
+    status,final,body=fetch_bytes(endpoint,timeout=25)
+    data=json.loads(body.decode("utf-8"))
+    closest=data.get("archived_snapshots",{}).get("closest")
+    if not isinstance(closest,dict) or not closest.get("available"):
+        return status,final,None
+    return status,final,{
+        "timestamp":str(closest.get("timestamp") or ""),
+        "url":str(closest.get("url") or ""),
+        "status":str(closest.get("status") or ""),
+    }
 
 def source_cdx_url():
     params=[
@@ -127,6 +141,35 @@ def main():
     except Exception as exc:
         errors.append(("source-cdx",type(exc).__name__,str(exc)))
 
+    availability_hits={}
+    for date in ("20021108","20021201","20030101","20040101"):
+        try:
+            astatus,afinal,closest=availability(date)
+            print(
+                f"SOURCE_AVAIL|date={date}|status={astatus}|hit={int(closest is not None)}|"
+                f"timestamp={clean(closest['timestamp'] if closest else '')}|"
+                f"capture={clean(closest['url'] if closest else '')}|final={clean(afinal)}"
+            )
+            if closest and closest["timestamp"]:
+                availability_hits[(closest["timestamp"],closest["url"])]=closest
+        except Exception as exc:
+            errors.append((f"source-availability:{date}",type(exc).__name__,str(exc)))
+
+    for (ts,capture),closest in sorted(availability_hits.items()):
+        try:
+            replay=archived_html_url(ts,SOURCE_URL)
+            rstatus,rfinal,rbody=fetch_bytes(replay,timeout=30)
+            hrefs=href_candidates(rbody)
+            print(
+                f"SOURCE_AVAIL_REPLAY|timestamp={clean(ts)}|status={rstatus}|bytes={len(rbody)}|"
+                f"sha256={hashlib.sha256(rbody).hexdigest()}|candidate_hrefs={len(hrefs)}|final={clean(rfinal)}"
+            )
+            for href in hrefs:
+                source_hrefs.append((ts,href))
+                print(f"SOURCE_HREF|timestamp={clean(ts)}|href={clean(href)}")
+        except Exception as exc:
+            errors.append((f"source-availability-replay:{ts}",type(exc).__name__,str(exc)))
+
     cgi_hits=[]
     for label,start,end in WINDOWS:
         try:
@@ -155,6 +198,7 @@ def main():
     unique_hrefs=tuple(dict.fromkeys(href for _,href in source_hrefs))
     unique_cgi=tuple(dict.fromkeys(str(row.get("original") or "") for _,row in cgi_hits))
     print(f"COUNT|source_captures|{len(source_rows)}")
+    print(f"COUNT|source_availability_captures|{len(availability_hits)}")
     print(f"COUNT|source_candidate_hrefs|{len(unique_hrefs)}")
     print(f"COUNT|cgi_relevant_urls|{len(unique_cgi)}")
     print(f"COUNT|errors|{len(errors)}")
