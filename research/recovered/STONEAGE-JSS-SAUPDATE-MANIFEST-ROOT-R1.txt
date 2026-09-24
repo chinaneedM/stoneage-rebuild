@@ -6,12 +6,22 @@ STRING_LOCATION|label=manifest-host|file_off=28728|rva=0x7038|raw_pointer_hits=1
 XREF|label=manifest-host|rva=0x13f2|mnemonic=mov|function_start_rva=0x13f2|function_end_rva=0x1470|operand_count=2
 OPERAND|label=manifest-host|xref_rva=0x13f2|index=1|shape=reg:edi
 OPERAND|label=manifest-host|xref_rva=0x13f2|index=2|shape=string:update.gamersdream.ne.jp
+EDI_FLOW|label=manifest-host|xref_rva=0x13f2|events=4
+EDI_USE|label=manifest-host|xref_rva=0x13f2|order=1|rva=0x13fc|mnemonic=repne scasb|operands=2:mem:edi::+0x0:scale=1
+EDI_USE|label=manifest-host|xref_rva=0x13f2|order=2|rva=0x1400|mnemonic=sub|operands=1:reg:edi
+EDI_USE|label=manifest-host|xref_rva=0x13f2|order=3|rva=0x1404|mnemonic=mov|operands=2:reg:edi
+EDI_USE|label=manifest-host|xref_rva=0x13f2|order=4|rva=0x1406|mnemonic=mov|operands=1:reg:edi
 NEAR_ABSOLUTE|label=manifest-host|xref_rva=0x13f2|ins_rva=0x13d0|mnemonic=mov|operand_index=1|va=0x405190|text=
 TARGET|label=manifest-path|text=/~stoneage/newest.txt|locations=1
 STRING_LOCATION|label=manifest-path|file_off=28704|rva=0x7020|raw_pointer_hits=1|decoded_xrefs=1
 XREF|label=manifest-path|rva=0x1419|mnemonic=mov|function_start_rva=0x1419|function_end_rva=0x1470|operand_count=2
 OPERAND|label=manifest-path|xref_rva=0x1419|index=1|shape=reg:edi
 OPERAND|label=manifest-path|xref_rva=0x1419|index=2|shape=string:/~stoneage/newest.txt
+EDI_FLOW|label=manifest-path|xref_rva=0x1419|events=4
+EDI_USE|label=manifest-path|xref_rva=0x1419|order=1|rva=0x1421|mnemonic=repne scasb|operands=2:mem:edi::+0x0:scale=1
+EDI_USE|label=manifest-path|xref_rva=0x1419|order=2|rva=0x1425|mnemonic=sub|operands=1:reg:edi
+EDI_USE|label=manifest-path|xref_rva=0x1419|order=3|rva=0x1429|mnemonic=mov|operands=2:reg:edi
+EDI_USE|label=manifest-path|xref_rva=0x1419|order=4|rva=0x142b|mnemonic=mov|operands=1:reg:edi
 NEAR_ABSOLUTE|label=manifest-path|xref_rva=0x1419|ins_rva=0x1440|mnemonic=mov|operand_index=0|va=0x85bdf8|text=
 ROOT_FUNCTION|rva=0x13f2|direct_callers=0|caller_rvas=
 ROOT_FUNCTION|rva=0x1419|direct_callers=0|caller_rvas=
