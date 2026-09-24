@@ -19,11 +19,12 @@ def main():
     print("StoneAge Taiwan v1 Internet Archive timeout retry — R1")
     print("SCOPE|single-item-metadata-retry|completes-installed-tree-scan-boundary|no-payload-download")
     data=None
+    metadata_url=""
     errors=[]
     for attempt in range(1,ATTEMPTS+1):
         try:
-            data=metadata(TARGET)
-            print(f"ATTEMPT|n={attempt}|status=success")
+            metadata_url,data=metadata(TARGET)
+            print(f"ATTEMPT|n={attempt}|status=success|endpoint=archive.org/metadata")
             break
         except Exception as exc:
             errors.append((type(exc).__name__,str(exc)))
