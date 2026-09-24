@@ -22,6 +22,8 @@ ARRAY_TEXT_START=0x407C50
 ARRAY_META_START=0x407D50
 ARRAY_META_END=0x857D50
 CHECKSUM_RVA=0x3F20
+FLAG_SELECT_RANGE=(0x2530,0x2568)
+MAX_GENERATION_RANGE=(0x2570,0x25C8)
 WINDOW=34
 
 
@@ -87,6 +89,64 @@ def emit_window(label,idx,insns,base,strings):
         print(f"CONTEXT|label={label}|anchor_rva=0x{anchor:x}|relative={j-idx:+d}|"+abstract(insns[j],base,strings))
 
 
+def emit_slice(label,start_rva,end_rva,insns,base,strings):
+    rows=[ins for ins in insns if start_rva<=ins.address-base<end_rva]
+    print(f"FUNCTION_SLICE|label={label}|start_rva=0x{start_rva:x}|end_rva=0x{end_rva:x}|instructions={len(rows)}")
+    for ins in rows:
+        print(f"FUNCTION_INSN|label={label}|"+abstract(ins,base,strings))
+
+
+def exact_shape(by_rva,rva,base,strings):
+    ins=by_rva.get(rva)
+    return abstract(ins,base,strings) if ins is not None else ""
+
+
+def derive_selection_semantics(insns,base,strings):
+    by_rva={ins.address-base:ins for ins in insns}
+    required=(
+        (0x2530,"mnemonic=mov","mem:esp::+0x8"),
+        (0x2535,"mnemonic=mov","mem:esp::+0x10"),
+        (0x253a,"mnemonic=mov","mem:esp::+0xc"),
+        (0x253e,"mnemonic=mov","va-rva:0x7d5c"),
+        (0x2543,"mnemonic=cmp","mem:eax::-0xc"),
+        (0x2548,"mnemonic=mov","mem:eax::+0x0"),
+        (0x254a,"mnemonic=cmp","reg:edx"),
+        (0x254e,"mnemonic=cmp","reg:esi"),
+        (0x2552,"mnemonic=mov","mem:eax::+0x4","imm:0x1"),
+        (0x257b,"mnemonic=mov","va-rva:0x7c50"),
+        (0x2580,"mnemonic=cmp","mem:esi::+0x100"),
+        (0x2597,"mnemonic=call","va-rva:0x2060"),
+        (0x259f,"mnemonic=cmp","reg:ebx"),
+        (0x25a3,"mnemonic=mov","reg:ebx","reg:eax"),
+        (0x25b9,"mnemonic=mov","reg:eax","reg:ebx"),
+    )
+    ok=True
+    for row in required:
+        rva,*need=row
+        shape=exact_shape(by_rva,rva,base,strings)
+        hit=bool(shape) and all(token in shape for token in need)
+        print(
+            f"SEMANTIC_CHECK|rva=0x{rva:x}|match={int(hit)}|"
+            f"expect={clean(';'.join(need))}|observed={clean(shape,1800)}"
+        )
+        ok &= hit
+    if ok:
+        print(
+            "FLAG_SELECT_HELPER|rva=0x2530|args=1:selector;2:min_generation;3:max_generation|"
+            "range=inclusive|action=record+0x110=1"
+        )
+        print(
+            "MAX_GENERATION_HELPER|rva=0x2570|arg=selector|"
+            "source=record-filename-via-rva-0x2060|return=max-generation|empty=-1"
+        )
+        print(
+            "FLAG_SEMANTIC|record_offset=0x110|meaning=selected-for-update/download|"
+            "basis=selector+inclusive-generation-range"
+        )
+    else:
+        print("FLAG_SEMANTIC|resolution=PATTERN_MISMATCH")
+
+
 def main():
     print("StoneAge JSS SaUpdate manifest-record consumer probe — R1")
     print("SCOPE|record-stride+array-anchors+checksum-call-context|derived-only|no-bytes-no-raw-disassembly")
@@ -128,6 +188,10 @@ def main():
     print(f"ANCHORS|count={len(anchors)}")
     for label,idx in anchors:
         emit_window(label,idx,insns,base,strings)
+
+    emit_slice("flag-select-helper",*FLAG_SELECT_RANGE,insns,base,strings)
+    emit_slice("max-generation-helper",*MAX_GENERATION_RANGE,insns,base,strings)
+    derive_selection_semantics(insns,base,strings)
 
     print(f"RESOLUTION|MANIFEST_RECORD_CONSUMERS_DERIVED|anchors={len(anchors)}|binary-not-committed")
 
