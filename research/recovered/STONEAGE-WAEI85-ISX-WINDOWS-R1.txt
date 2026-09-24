@@ -1,0 +1,58 @@
+StoneAge Waei ISx native extraction — R1
+SCOPE|verified-2012-six-part-mirror|pinned-ISx-Windows-native|derived-metadata-only
+INSTALLER_SHA256|971780abc65ed29a6a7aeb1a528c7db2ef07b11a188e56deaef90a54986609f5
+AUTHENTICODE_SIGNER|WAYI INTERNATIONAL DIGITAL ENTERTAINMENT CO., LTD.
+AUTHENTICODE_TIMESTAMP|2007-02-15T05:56:59Z
+ISX_REPO|Coldblackice/InstallShield-installer-extractor-ISx
+ISX_COMMIT|3c4177ddd0519244490ff8e78d380110c8dacdc8
+ISX_EXIT|0
+ISX_STDOUT_BEGIN
+C:\sa85\STONEAGE20060616.exe
+0x0003E000
+Dir: "C:\sa85\out\"
+0x00000000     253952 "STONEAGE20060616_sfx.exe" ...   Y
+Files total: 8
+Extracting:
+0x0003E166       3771 "0x0404.ini"
+                      [b] * Y
+0x0003F159    2003176 "instmsi30.exe"
+                      [b] * Y
+0x00228379    1822520 "instmsiw.exe"
+                      [b] * Y
+0x003E53E9    1708856 "instmsia.exe"
+                      [b] * Y
+0x00586859     993792 "ISScript1050.Msi"
+                      [b] * Y
+0x00679391 1138631680 "StoneAge85.msi"
+                      [b] * Y
+0x4445B8C9       2048 "Setup.ini"
+                      [b] * Y
+0x4445C201      36416 "setup.isn"
+                      [b] * Y
+Extra data:
+0x44465041       6431 "STONEAGE20060616_ext.bin" ...   Y
+ISX_STDOUT_END
+ISX_STDERR_BEGIN
+ISX_STDERR_END
+ISX_TREE|files=10|bytes=1145462642
+ISX_FILE|path=0x0404.ini|bytes=3771|sha256=b9dd818ed60bb5e5a65be6f9f0f6ed75eba094f108519bb07267d196633187df
+ISX_TEXT|path=0x0404.ini|encoding=utf-8|value=LATERVERSIONINSTALLED=ww˸s '%s'Cw˵Lk~C
+ISX_FILE|path=instmsi30.exe|bytes=2003176|sha256=2c297c11c818a411c238421dc1509ea7d41ade02c8e303721de00fb539697630
+ISX_FILE|path=instmsia.exe|bytes=1708856|sha256=267304efcc831e35927c1f25d610d36fb64121d108a6f4ff0168c53df01e2b16
+ISX_FILE|path=instmsiw.exe|bytes=1822520|sha256=b93fdcd1136faa9a8cb73a329b2f1f5f430a150ddcec35de916e3a1539f09351
+ISX_FILE|path=ISScript1050.Msi|bytes=993792|sha256=604c9de4b005c4fcd8d0fdd451c865b83f3d38fb90ceb0669f033ed5a96bbe52
+ISX_FILE|path=Setup.ini|bytes=2048|sha256=9c8d696ac109ae8abfbf24ded1ef28e7f7085695768c4adda692875616f0b412
+ISX_TEXT|path=Setup.ini|encoding=utf-8|value=Version=1.00.000
+ISX_TEXT|path=Setup.ini|encoding=utf-8|value=Product=۾ɥN ]j_I
+ISX_TEXT|path=Setup.ini|encoding=utf-8|value=PackageName=StoneAge85.msi
+ISX_TEXT|path=Setup.ini|encoding=utf-8|value=ProductCode={1FE1F8C7-4D74-4989-90E3-5B9C0F144E42}
+ISX_TEXT|path=Setup.ini|encoding=utf-8|value=ProductVersion=8.50.0000
+ISX_TEXT|path=Setup.ini|encoding=utf-8|value=[MsiVersion]
+ISX_TEXT|path=Setup.ini|encoding=utf-8|value=[StoneAge85.msi]
+ISX_TEXT|path=Setup.ini|encoding=utf-8|value=Location=StoneAge85.msi
+ISX_FILE|path=setup.isn|bytes=36416|sha256=ad3c74e73699c593c003565d2e8732c77256ab0f7731aeeb61a84829fbc4262d
+ISX_FILE|path=STONEAGE20060616_ext.bin|bytes=6431|sha256=0bdb195bd6a4928d05c8a4ca98e01ae4bd8d72256d56c17848f7c679c570cc45
+ISX_FILE|path=STONEAGE20060616_sfx.exe|bytes=253952|sha256=26a9df46ea10ca290c21d728abeafd6486d81547b62e462c5597c8c07c5fc07f
+ISX_FILE|path=StoneAge85.msi|bytes=1138631680|sha256=8f99ceb13eb91fa9231bf1b6ee2c7052df97d59425171c03103732f8795a4bdc
+RESULT|ISX_NATIVE_EXTRACTION_COMPLETED
+EVIDENCE_BOUNDARY|Authenticode identity supports operator origin of the signed wrapper; exact game version still requires internal payload evidence.
