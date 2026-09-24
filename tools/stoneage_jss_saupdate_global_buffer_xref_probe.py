@@ -27,6 +27,9 @@ from tools.stoneage_tw10_mapcache_binary_probe import referenced_absolute_values
 from tools.stoneage_tw10_technical_probe import pe_sections
 
 TARGETS=(
+    (0x85BC78,"manifest-host-buffer"),
+    (0x85BCF8,"manifest-path-buffer"),
+    (0x85BDF8,"manifest-port-80"),
     (0x4070C0,"download-folder-created-message"),
     (0x4070E8,"notice-caption"),
     (0x85E6FC,"sa-executable-buffer"),
