@@ -1,0 +1,73 @@
+StoneAge historical FTP resource-path probe — R1
+SCOPE|client-embedded-ftp-host|2000-2002-CDX-resource-paths|transient-replay-small-hits
+ANCHOR_URL|http://ftp.stoneage.com.cn:80/battlemap/battle218.sab|CDX-2001-05-16-404
+QUERY_ERROR|url=http://ftp.stoneage.com.cn/Setup.ini|match=exact|kind=TimeoutError|message=The read operation timed out
+QUERY|url=http://ftp.stoneage.com.cn/StoneAge.exe|match=exact|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|rows=0
+QUERY|url=http://ftp.stoneage.com.cn/adrn_1.bin|match=exact|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|rows=0
+QUERY_ERROR|url=http://ftp.stoneage.com.cn/battle_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY|url=http://ftp.stoneage.com.cn/battlemap/|match=prefix|status=200|bytes=204|sha256=11364641899854ddf123d264f1938e80e0b0b058b3c169617d961785c3693461|rows=1
+QUERY_ERROR|url=http://ftp.stoneage.com.cn/battlemap/battle218.sab|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=http://ftp.stoneage.com.cn/battletxt_1.txt|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY|url=http://ftp.stoneage.com.cn/data/|match=prefix|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|rows=0
+QUERY_ERROR|url=http://ftp.stoneage.com.cn/data/adrn_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=http://ftp.stoneage.com.cn/data/battle_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=http://ftp.stoneage.com.cn/data/real_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=http://ftp.stoneage.com.cn/data/spr_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=http://ftp.stoneage.com.cn/data/spradrn_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY|url=http://ftp.stoneage.com.cn/map/|match=prefix|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|rows=0
+QUERY_ERROR|url=http://ftp.stoneage.com.cn/real_1.bin|match=exact|kind=TimeoutError|message=The read operation timed out
+QUERY|url=http://ftp.stoneage.com.cn/sa_3.exe|match=exact|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|rows=0
+QUERY|url=http://ftp.stoneage.com.cn/saupdate/|match=prefix|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|rows=0
+QUERY_ERROR|url=http://ftp.stoneage.com.cn/soundaddr_1.txt|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY|url=http://ftp.stoneage.com.cn/spr_1.bin|match=exact|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|rows=0
+QUERY_ERROR|url=http://ftp.stoneage.com.cn/spradrn_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=https://ftp.stoneage.com.cn/Setup.ini|match=exact|kind=TimeoutError|message=The read operation timed out
+QUERY_ERROR|url=https://ftp.stoneage.com.cn/StoneAge.exe|match=exact|kind=TimeoutError|message=The read operation timed out
+QUERY|url=https://ftp.stoneage.com.cn/adrn_1.bin|match=exact|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|rows=0
+QUERY_ERROR|url=https://ftp.stoneage.com.cn/battle_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=https://ftp.stoneage.com.cn/battlemap/battle218.sab|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=https://ftp.stoneage.com.cn/battletxt_1.txt|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=https://ftp.stoneage.com.cn/data/adrn_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=https://ftp.stoneage.com.cn/data/battle_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=https://ftp.stoneage.com.cn/data/real_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=https://ftp.stoneage.com.cn/data/spr_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=https://ftp.stoneage.com.cn/data/spradrn_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY|url=https://ftp.stoneage.com.cn/real_1.bin|match=exact|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|rows=0
+QUERY|url=https://ftp.stoneage.com.cn/sa_3.exe|match=exact|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|rows=0
+QUERY_ERROR|url=https://ftp.stoneage.com.cn/soundaddr_1.txt|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=https://ftp.stoneage.com.cn/spr_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|url=https://ftp.stoneage.com.cn/spradrn_1.bin|match=exact|kind=URLError|message=<urlopen error timed out>
+ROW|timestamp=20010516134242|original=http://ftp.stoneage.com.cn:80/battlemap/battle218.sab|statuscode=404|mimetype=text/html|digest=VRU3JILC2FG7IOOHOBNWJF3Z57YUYCPJ|length=399
+ERROR|scope=http://ftp.stoneage.com.cn/Setup.ini|kind=TimeoutError|message=The read operation timed out
+ERROR|scope=http://ftp.stoneage.com.cn/battle_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=http://ftp.stoneage.com.cn/battlemap/battle218.sab|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=http://ftp.stoneage.com.cn/battletxt_1.txt|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=http://ftp.stoneage.com.cn/data/adrn_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=http://ftp.stoneage.com.cn/data/battle_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=http://ftp.stoneage.com.cn/data/real_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=http://ftp.stoneage.com.cn/data/spr_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=http://ftp.stoneage.com.cn/data/spradrn_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=http://ftp.stoneage.com.cn/real_1.bin|kind=TimeoutError|message=The read operation timed out
+ERROR|scope=http://ftp.stoneage.com.cn/soundaddr_1.txt|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=http://ftp.stoneage.com.cn/spradrn_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=https://ftp.stoneage.com.cn/Setup.ini|kind=TimeoutError|message=The read operation timed out
+ERROR|scope=https://ftp.stoneage.com.cn/StoneAge.exe|kind=TimeoutError|message=The read operation timed out
+ERROR|scope=https://ftp.stoneage.com.cn/battle_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=https://ftp.stoneage.com.cn/battlemap/battle218.sab|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=https://ftp.stoneage.com.cn/battletxt_1.txt|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=https://ftp.stoneage.com.cn/data/adrn_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=https://ftp.stoneage.com.cn/data/battle_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=https://ftp.stoneage.com.cn/data/real_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=https://ftp.stoneage.com.cn/data/spr_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=https://ftp.stoneage.com.cn/data/spradrn_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=https://ftp.stoneage.com.cn/soundaddr_1.txt|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=https://ftp.stoneage.com.cn/spr_1.bin|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=https://ftp.stoneage.com.cn/spradrn_1.bin|kind=URLError|message=<urlopen error timed out>
+COUNT|unique_rows|1
+COUNT|interesting_rows|1
+COUNT|status200_interesting|0
+COUNT|map_rows|0
+COUNT|replayed_small_200|0
+COUNT|errors|25
+RESOLUTION|RESOURCE_PATHS_INDEXED_NO_200_BYTES|topology only; no recovered payload
+EVIDENCE_BOUNDARY|404/index rows are topology evidence only. Only successful replay bytes receive hashes; no recovered payload is committed.
