@@ -169,8 +169,11 @@ def cdx_query(target):
 
 
 def ia_search(name):
+    query=f'"{name}"'
+    if name.lower()=="map.exe":
+        query='("map.exe") AND (StoneAge OR "Stone Age" OR "石器时代")'
     params=[
-        ("q",f'"{name}"'),("fl[]","identifier"),("fl[]","title"),
+        ("q",query),("fl[]","identifier"),("fl[]","title"),
         ("fl[]","date"),("fl[]","mediatype"),
         ("rows","50"),("page","1"),("output","json"),
     ]
@@ -241,12 +244,17 @@ def main():
 
     ia_hits=0
     for name,qurl,result,docs in sorted(ia_results,key=lambda row:row[0]):
-        ia_hits+=len(docs)
+        relevant=[]
+        for doc in docs:
+            hay=" ".join(str(doc.get(k,"")) for k in ("identifier","title","date","mediatype")).lower()
+            if name.lower()!="map.exe" or "stoneage" in hay or "stone age" in hay or "石器时代" in hay:
+                relevant.append(doc)
+        ia_hits+=len(relevant)
         print(
             f"IA_QUERY|basename={clean(name)}|status={result['status']}|"
-            f"bytes={len(result['body'])}|items={len(docs)}"
+            f"bytes={len(result['body'])}|items={len(docs)}|relevant_items={len(relevant)}"
         )
-        for doc in docs:
+        for doc in relevant:
             print(
                 f"IA_HIT|basename={clean(name)}|identifier={clean(doc.get('identifier'))}|"
                 f"title={clean(doc.get('title'))}|date={clean(doc.get('date'))}|"
