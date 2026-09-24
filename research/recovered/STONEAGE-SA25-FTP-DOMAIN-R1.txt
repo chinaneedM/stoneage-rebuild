@@ -1,0 +1,20 @@
+StoneAge historical FTP/domain payload-index probe — R1
+SCOPE|client-embedded-ftp.stoneage.com.cn+stoneage.com.cn|2001-2003-CDX-metadata|no-payload-download
+ANCHOR|StoneAge.exe embeds ftp.stoneage.com.cn and operator-era Waei URLs
+QUERY|prefix=ftp://ftp.stoneage.com.cn/|status=200|bytes=438|sha256=d909fef7481c952c730bd711afd8f6dfe69e4ed339c4984d84043e74d6e9cdce|rows=3|final=https://web.archive.org/cdx/search/cdx?url=ftp%3A%2F%2Fftp.stoneage.com.cn%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=2001&to=2003&collapse=urlkey&limit=5000
+QUERY|prefix=http://ftp.stoneage.com.cn/|status=200|bytes=438|sha256=d909fef7481c952c730bd711afd8f6dfe69e4ed339c4984d84043e74d6e9cdce|rows=3|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fftp.stoneage.com.cn%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=2001&to=2003&collapse=urlkey&limit=5000
+QUERY|prefix=https://ftp.stoneage.com.cn/|status=200|bytes=438|sha256=d909fef7481c952c730bd711afd8f6dfe69e4ed339c4984d84043e74d6e9cdce|rows=3|final=https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fftp.stoneage.com.cn%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=2001&to=2003&collapse=urlkey&limit=5000
+QUERY_ERROR|prefix=http://stoneage.com.cn/|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|prefix=http://www.stoneage.com.cn/|kind=URLError|message=<urlopen error timed out>
+LEXICAL_ROW|timestamp=20010516134242|original=http://ftp.stoneage.com.cn:80/battlemap/battle218.sab|statuscode=404|mimetype=text/html|digest=VRU3JILC2FG7IOOHOBNWJF3Z57YUYCPJ|length=399
+LEXICAL_ROW|timestamp=20010516134242|original=http://ftp.stoneage.com.cn:80/robots.txt|statuscode=404|mimetype=text/html|digest=MCFQAB47WFYYDFXSWKAJBW7I6LVY73HU|length=389
+LEXICAL_ROW|timestamp=20010517052322|original=http://ftp.stoneage.com.cn:80/|statuscode=403|mimetype=text/html|digest=EUBT73FYJN4X2UKZHJ2WNRPI5E4UWKYA|length=384
+ERROR|scope=http://stoneage.com.cn/|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=http://www.stoneage.com.cn/|kind=URLError|message=<urlopen error timed out>
+COUNT|unique_rows|3
+COUNT|payload_rows|0
+COUNT|lexical_nonpayload_rows|3
+COUNT|strict_25_candidates|0
+COUNT|errors|2
+RESOLUTION|DOMAIN_INDEXED_NO_PAYLOAD_URLS|tested 2001-2003 CDX surface contains no binary/archive URLs
+EVIDENCE_BOUNDARY|CDX URL metadata does not prove file identity or availability; no payload bytes are downloaded.
