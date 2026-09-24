@@ -28,14 +28,14 @@ TERMS = (
 )
 PAYLOAD_EXTS = (".exe", ".zip", ".rar", ".cab", ".msi", ".001", ".002", ".iso")
 URL_HINTS = ("download", "down", "update", "upgrade", "patch", "setup", "client", "sa25", "2.5")
-MAX_REPLAYS_PER_SEED = 12
+MAX_REPLAYS_PER_SEED = 3
 
 
 def clean(value: object, limit: int = 2400) -> str:
     return " ".join(str(value or "").split()).replace("|", "%7C")[:limit]
 
 
-def fetch_bytes(url: str, timeout: int = 30) -> tuple[int, str, bytes]:
+def fetch_bytes(url: str, timeout: int = 12) -> tuple[int, str, bytes]:
     req = urllib.request.Request(
         url,
         headers={
