@@ -1,0 +1,193 @@
+name: Static-extract verified StoneAge 8.5 MSI
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/extract-stoneage-waei85-lessmsi.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei85-lessmsi
+  cancel-in-progress: true
+
+jobs:
+  extract:
+    runs-on: windows-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Recover verified wrapper
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path C:\sa85l\parts | Out-Null
+          @'
+          import hashlib,html,http.cookiejar,json,re,urllib.parse,urllib.request
+          from pathlib import Path
+          keys=[
+            ('l5i274801ov19w7','057f9e825a77f33e853eb44772ca2c22b917bb12b6eddc0fc445b5d2ed97256e'),
+            ('g9b3g3hjmwwttg3','4e5f8e40e6cd166a3790391cbe4e05035ec24aae8fb01d595efe3dcee4c8c579'),
+            ('e859n1nm1tk12j8','2b08c6a17b6e051676ed6b82e0e1a5857b2ba1bb3a321a58b8240494fa2ceb0a'),
+            ('69vrzm3nox8f0v9','f3b9a97f02ba331e7543a801d5b10c88a99ba1da597d50310dc57aa081e9e2df'),
+            ('clbwjkcqqhxq6k9','8c2000d61100377dba024c28bedc66af34831ebb75a245324d457e0dd8f6f04b'),
+            ('42uy5b9abbcu4qr','5d812f7437f9db0a272cbed08de64a569fe3962a5d121ba239a4c5e84ed0827b'),
+          ]
+          ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124 Safari/537.36'
+          cj=http.cookiejar.CookieJar()
+          op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+          op.addheaders=[('User-Agent',ua)]
+          for key,expected in keys:
+            data=urllib.parse.urlencode({'quick_key':key,'response_format':'json'}).encode()
+            req=urllib.request.Request('https://www.mediafire.com/api/1.5/file/get_info.php',data=data,headers={'User-Agent':ua})
+            with op.open(req,timeout=60) as r: info=json.load(r)['response']['file_info']
+            req=urllib.request.Request(info['links']['normal_download'],headers={'User-Agent':ua})
+            with op.open(req,timeout=60) as r:
+              page=r.read().decode('utf-8','replace'); referer=r.geturl()
+            m=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S)
+            if not m: m=re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+            if not m: raise SystemExit('no direct link '+key)
+            dest=Path(r'C:\sa85l\parts')/str(info['filename'])
+            h=hashlib.sha256()
+            req=urllib.request.Request(html.unescape(m.group(1)),headers={'User-Agent':ua,'Referer':referer})
+            with op.open(req,timeout=420) as r,dest.open('wb') as out:
+              for b in iter(lambda:r.read(1024*1024),b''):
+                out.write(b); h.update(b)
+            if h.hexdigest()!=expected: raise SystemExit('part hash mismatch '+key)
+          wrapper=Path(r'C:\sa85l\STONEAGE20060616.exe')
+          with wrapper.open('wb') as out:
+            for i in range(1,7):
+              p=Path(r'C:\sa85l\parts')/f'STONEAGE20060616.exe.{i:03d}'
+              with p.open('rb') as f:
+                for b in iter(lambda:f.read(1024*1024),b''): out.write(b)
+          h=hashlib.sha256()
+          with wrapper.open('rb') as f:
+            for b in iter(lambda:f.read(1024*1024),b''): h.update(b)
+          if h.hexdigest()!='971780abc65ed29a6a7aeb1a528c7db2ef07b11a188e56deaef90a54986609f5':
+            raise SystemExit('wrapper hash mismatch')
+          '@ | Set-Content -Encoding UTF8 C:\sa85l\recover.py
+          python C:\sa85l\recover.py
+
+      - name: Build pinned ISx and extract MSI
+        shell: pwsh
+        run: |
+          git clone -q https://github.com/Coldblackice/InstallShield-installer-extractor-ISx.git C:\sa85l\ISx
+          Set-Location C:\sa85l\ISx
+          git checkout -q 3c4177ddd0519244490ff8e78d380110c8dacdc8
+          if ((git rev-parse HEAD).Trim() -ne '3c4177ddd0519244490ff8e78d380110c8dacdc8') { throw 'ISx pin mismatch' }
+          $vswhere='C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe'
+          $vsroot=(& $vswhere -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath).Trim()
+          $vcvars=Join-Path $vsroot 'VC\Auxiliary\Build\vcvars64.bat'
+          $cmd='call "'+$vcvars+'" && cl /nologo /O2 /DNO_INFLATE /Fe:ISx.exe ISx.c'
+          cmd /c $cmd
+          New-Item -ItemType Directory -Force -Path C:\sa85l\isx | Out-Null
+          $p=Start-Process -FilePath C:\sa85l\ISx\ISx.exe -ArgumentList @('C:\sa85l\STONEAGE20060616.exe','C:\sa85l\isx') -Wait -PassThru -NoNewWindow
+          if ($p.ExitCode -ne 0) { throw "ISx failed $($p.ExitCode)" }
+          $msi=Join-Path 'C:\sa85l\isx' 'StoneAge85.msi'
+          if (!(Test-Path $msi)) { throw 'StoneAge85.msi missing' }
+          $got=(Get-FileHash -Algorithm SHA256 $msi).Hash.ToLowerInvariant()
+          if ($got -ne '8f99ceb13eb91fa9231bf1b6ee2c7052df97d59425171c03103732f8795a4bdc') { throw 'MSI hash mismatch' }
+
+      - name: Download pinned lessmsi and static extract
+        shell: pwsh
+        run: |
+          $zip='C:\sa85l\lessmsi.zip'
+          Invoke-WebRequest -UseBasicParsing -Uri 'https://github.com/activescott/lessmsi/releases/download/v2.12.9/lessmsi-v2.12.9.zip' -OutFile $zip
+          $got=(Get-FileHash -Algorithm SHA256 $zip).Hash.ToLowerInvariant()
+          if ($got -ne '5b4e187e74b184ad3a63ccf06c3d17dae2b8c4b6c298a996dbd51a9f6db29d21') { throw "lessmsi hash mismatch $got" }
+          Expand-Archive -Path $zip -DestinationPath C:\sa85l\lessmsi -Force
+          $exe=Get-ChildItem -Path C:\sa85l\lessmsi -Recurse -File -Filter lessmsi.exe | Select-Object -First 1
+          if (!$exe) { throw 'lessmsi.exe missing' }
+          New-Item -ItemType Directory -Force -Path C:\sa85l\game | Out-Null
+          & $exe.FullName x C:\sa85l\isx\StoneAge85.msi C:\sa85l\game
+          if ($LASTEXITCODE -ne 0) { throw "lessmsi exit $LASTEXITCODE" }
+
+      - name: Inventory extracted client
+        shell: pwsh
+        run: |
+          $report=Join-Path $env:GITHUB_WORKSPACE 'research\recovered\STONEAGE-WAEI85-LESSMSI-CLIENT-R1.txt'
+          New-Item -ItemType Directory -Force -Path (Split-Path $report) | Out-Null
+          @(
+            'StoneAge Waei 8.5 static MSI client extraction — R1',
+            'SCOPE|verified-official-signed-wrapper|StoneAge85.msi|pinned-lessmsi-static-extraction|derived-only',
+            'WRAPPER_SHA256|971780abc65ed29a6a7aeb1a528c7db2ef07b11a188e56deaef90a54986609f5',
+            'MSI_SHA256|8f99ceb13eb91fa9231bf1b6ee2c7052df97d59425171c03103732f8795a4bdc',
+            'MSI_PRODUCT|石器時代 魔域大冒險',
+            'MSI_PRODUCT_VERSION|8.50.0000',
+            'MSI_MANUFACTURER|華義國際',
+            'LESSMSI_VERSION|v2.12.9',
+            'LESSMSI_ZIP_SHA256|5b4e187e74b184ad3a63ccf06c3d17dae2b8c4b6c298a996dbd51a9f6db29d21'
+          ) | Set-Content -Encoding UTF8 $report
+          @'
+          import hashlib,subprocess,sys
+          from pathlib import Path
+          root=Path(r'C:\sa85l\game'); report=Path(sys.argv[1])
+          def sha(p):
+            h=hashlib.sha256()
+            with p.open('rb') as f:
+              for b in iter(lambda:f.read(1024*1024),b''): h.update(b)
+            return h.hexdigest()
+          rows=[]
+          for p in root.rglob('*'):
+            if p.is_file(): rows.append((p.relative_to(root).as_posix(),p.stat().st_size,sha(p),p))
+          rows.sort(key=lambda x:x[0].lower())
+          with report.open('a',encoding='utf-8') as out:
+            out.write(f'CLIENT_TREE|files={len(rows)}|bytes={sum(x[1] for x in rows)}\n')
+            out.write(f'MAP_DAT_COUNT|{sum(1 for x in rows if x[0].lower().endswith(".dat") and "/map/" in "/"+x[0].lower())}\n')
+            out.write(f'MAP_FILE_COUNT|{sum(1 for x in rows if x[0].lower().endswith(".map") and "/map/" in "/"+x[0].lower())}\n')
+            for rel,size,d,p in rows:
+              low=rel.lower()
+              if low.endswith(('.exe','.dll')) or any(k in low for k in ('real_','adrn_','spr_','spradrn_','stoneage','startup','setup')):
+                out.write(f'CORE|path={rel}|bytes={size}|sha256={d}\n')
+            for rel,size,d,p in rows:
+              if rel.lower().endswith(('.exe','.dll')):
+                out.write(f'PE|path={rel}|bytes={size}|sha256={d}\n')
+                try:
+                  ps=subprocess.run(['powershell','-NoProfile','-Command','(Get-AuthenticodeSignature -FilePath "'+str(p)+'").SignerCertificate.Subject'],
+                    capture_output=True,text=True,errors='replace',timeout=30)
+                  val=(ps.stdout or '').strip()
+                  if val: out.write(f'SIGNER|path={rel}|value={val.replace("|","%7C")[:1200]}\n')
+                except Exception: pass
+                try:
+                  s=subprocess.run(['strings','-a','-n','5',str(p)],capture_output=True,text=True,errors='replace',timeout=30).stdout
+                except Exception: s=''
+                for line in s.splitlines():
+                  if any(k in line.lower() for k in ('stoneage','waei','wayi','8.5','8.0','2006','2007','www.wayi','www.waei')):
+                    out.write(f'STRING|path={rel}|value={line.replace("|","%7C")[:1000]}\n')
+            for rel,size,d,p in rows:
+              out.write(f'FILE|path={rel}|bytes={size}|sha256={d}\n')
+            out.write('RESULT|STATIC_MSI_EXTRACTION_SUCCEEDED\n')
+            out.write('EVIDENCE_BOUNDARY|This is a later official 8.5 control client. It must not be used to back-project earlier 1.0/2.5 map or resource contents.\n')
+          '@ | Set-Content -Encoding UTF8 C:\sa85l\inventory.py
+          python C:\sa85l\inventory.py $report
+
+      - name: Delete transient proprietary payloads
+        if: always()
+        shell: pwsh
+        run: Remove-Item -Recurse -Force C:\sa85l -ErrorAction SilentlyContinue
+
+      - name: Commit derived report
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          R='research/recovered/STONEAGE-WAEI85-LESSMSI-CLIENT-R1.txt'
+          test -f "$R" || exit 0
+          cp "$R" /tmp/report.txt
+          echo 'DERIVED_REPORT_BEGIN'; cat "$R"; echo 'DERIVED_REPORT_END'
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: extract official StoneAge 8.5 client tree'
+          for n in 1 2 3 4 5; do
+            git push && exit 0
+            sleep $((n*3))
+          done
+          exit 1
