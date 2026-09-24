@@ -2,6 +2,13 @@ StoneAge JSS SaUpdate call-argument probe — R1
 SCOPE|focused-callsite-argument-sources|heuristic-dataflow|derived-only|no-disassembly-retained
 FETCH|status=206|bytes=217088|sha256=6795d9349168f77aa025d7c4ea05d005c5bbfe33dd4b227eb7731802fa7eb82b|final=https://web.archive.org/web/20010503013834id_/http://www.titan.co.jp/stoneage/stoneage.exe
 PE|image_base=0x400000|instructions=5995|strings=19718
+CALLSITE|rva=0x1577|label=manifest-global-prep-call|decoded=1|identity=internal-or-indirect|stack_args=4|nearby_strings=2
+STACK_ARG|call_rva=0x1577|index=1|push_rva=0x1575|source=null
+STACK_ARG|call_rva=0x1577|index=2|push_rva=0x1570|source=imm:0x4070c0
+STACK_ARG|call_rva=0x1577|index=3|push_rva=0x156b|source=imm:0x4070e8
+STACK_ARG|call_rva=0x1577|index=4|push_rva=0x1566|source=imm:0x1000
+NEAR_STRING|call_rva=0x1577|order=1|ins_rva=0x154e|text=data\download
+NEAR_STRING|call_rva=0x1577|order=2|ins_rva=0x1559|text=b_
 CALLSITE|rva=0x157b|label=manifest-wrapper-dispatch|decoded=1|identity=internal-or-indirect|stack_args=4|nearby_strings=2
 STACK_ARG|call_rva=0x157b|index=1|push_rva=0x1575|source=null
 STACK_ARG|call_rva=0x157b|index=2|push_rva=0x1570|source=imm:0x4070c0
@@ -251,4 +258,4 @@ STACK_ARG|call_rva=0x3f00|index=10|push_rva=0x3ed1|source=null
 NEAR_STRING|call_rva=0x3f00|order=1|ins_rva=0x3ec2|text=adrnbin:%d
 NEAR_STRING|call_rva=0x3f00|order=2|ins_rva=0x3ef1|text=updated
 LAUNCH_VECTOR|call_rva=0x3f00|args=1:global:sa-executable-buffer@0x85e6fc;2:global:sa-executable-buffer@0x85e6fc;3:string:updated;4:global:realbin-state-buffer@0x85e2fc;5:global:adrnbin-state-buffer@0x85d6fc;6:global:sprbin-state-buffer@0x85d2fc;7:global:spradrnbin-state-buffer@0x85cefc;8:imm:0x85c2fc;9:imm:0x85befc;10:null
-RESOLUTION|CALL_ARGUMENT_SOURCES_DERIVED|decoded_sites=43|focus_sites=43|heuristic=1|binary-not-committed
+RESOLUTION|CALL_ARGUMENT_SOURCES_DERIVED|decoded_sites=44|focus_sites=44|heuristic=1|binary-not-committed
