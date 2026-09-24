@@ -39,8 +39,8 @@ jobs:
           UNMERGED=COLLECTION+"/=+= 未加入汇总BT的内容 =+=.txt"
           DOC="10老光盘群(群号854318908)群友分享汇总 2019年9月/2019-09-13/俞某某/藏經閣电脑游戏总目录（001-710）.doc"
           CHM="10老光盘群(群号854318908)群友分享汇总 2019年9月/2019-09-13/俞某某/藏经阁1-490目录.chm"
-          TARGETS=("2001C226","哇靠轰炸鸡","NEW GAME 093","总第280期","藏经阁-东方狂龙","藏经阁")
-          OUT="research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R2.txt"
+          TARGETS=("2001C226","哇靠轰炸鸡","NEW GAME 093","总第280期","藏经阁-东方狂龙","藏经阁","石器时代","石器時代","精灵王传说","精靈王傳說","StoneAge","华义","華義","万方","萬方","2.5")
+          OUT="research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R3.txt"
 
           def url_for(path):
               return BASE+urllib.parse.quote(path,safe="/()=+")
@@ -102,7 +102,7 @@ jobs:
           from pathlib import Path
           p=Path('/tmp/sa25cat/catalog-doc.txt')
           s=p.read_text('utf-8','ignore') if p.exists() else ''
-          toks=("2001C226","哇靠轰炸鸡","NEW GAME 093","总第280期")
+          toks=("2001C226","哇靠轰炸鸡","NEW GAME 093","总第280期","石器时代","石器時代","精灵王传说","精靈王傳說","StoneAge","华义","華義","万方","萬方","2.5")
           def clean(x,n=2600): return " ".join(x.split()).replace("|","%7C")[:n]
           for t in toks:
               start=0; n=0
@@ -119,7 +119,7 @@ jobs:
               echo "DOC_EXTRACT_ERROR|$(tr '\n' ' ' </tmp/sa25cat/antiword.err | head -c 1200)"
             fi
             echo "DOC_TEXT_END"
-          } >> research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R2.txt
+          } >> research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R3.txt
 
           {
             echo "CHM_TEXT_BEGIN"
@@ -155,15 +155,15 @@ jobs:
               echo "CHM_EXTRACT_ERROR|$(tr '\n' ' ' </tmp/sa25cat/7z.log | head -c 1200)"
             fi
             echo "CHM_TEXT_END"
-          } >> research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R2.txt
+          } >> research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R3.txt
 
-          echo "EVIDENCE_BOUNDARY|Collector catalogues and share summaries are later preservation metadata. Catalogue IDs and links remain search/recovery leads, not contemporaneous Waei provenance." >> research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R2.txt
+          echo "EVIDENCE_BOUNDARY|Collector catalogues and share summaries are later preservation metadata. Catalogue IDs and links remain search/recovery leads, not contemporaneous Waei provenance." >> research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R3.txt
           rm -rf /tmp/sa25cat
       - name: Commit derived report only
         shell: bash
         run: |
           set -euo pipefail
-          R='research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R2.txt'
+          R='research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R3.txt'
           cp "$R" /tmp/report.txt
           echo 'DERIVED_REPORT_BEGIN'; cat "$R"; echo 'DERIVED_REPORT_END'
           git config user.name stoneage-recovery-bot
@@ -174,7 +174,7 @@ jobs:
           cp /tmp/report.txt "$R"
           git add "$R"
           git diff --cached --quiet && exit 0
-          git commit -m 'research: extract StoneAge 2.5 old-disc catalog metadata'
+          git commit -m 'research: scan old-disc catalog for StoneAge identities'
           for n in 1 2 3 4 5; do
             git push && exit 0
             sleep $((n * 3))
