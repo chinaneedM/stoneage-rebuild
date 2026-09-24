@@ -230,3 +230,30 @@ The remaining gap is no longer merely whether a second disc probably existed. Th
   - byte identity between any photographed discs;
   - the Wanfang disc's carrier class;
   - filesystem contents, hashes, mastering/matrix identifiers, or whether a secondary carrier contains the 575/580 MB full client versus the 8.25 MB updater.
+
+
+## SRC-CN-2026-SA25-PHYSICAL-IMAGE-LINEAGE-01
+
+- Source type: derived visual-fingerprint analysis over public marketplace/collector photographs; image bodies read transiently, metrics only retained.
+- Retrieval/research date: 2026-09-24.
+- Derived report: `research/recovered/STONEAGE-SA25-PHYSICAL-IMAGE-FINGERPRINTS-R2.txt`.
+- Canonical interpretation: `research/clients/STONEAGE-SA25-PHYSICAL-IMAGE-LINEAGE-R1.md`.
+- Evidence set:
+  - Ruten boxed/new-user-package item `22632305238624` — 9 full-size images;
+  - Ruten standalone-disc items `21926883918096`, `22242541948520` — 1 full-size image each;
+  - Wanfang collector page `https://www.shiqi.me/pt_17.htm` — 3 large recoverable images.
+- Strong deduplication result:
+  - standalone Ruten item images have different file hashes but match at **1,605 ORB / 1,538 good<=64 / 743 RANSAC inliers / 0.4831 inlier ratio**;
+  - operational classification: **one visual-source cluster**, not two independent physical-media observations.
+- Other tested relations:
+  - best boxed-vs-standalone whole-frame match: **50 inliers / 0.0472**;
+  - best Ruten-vs-Wanfang whole-frame match: **27 inliers / 0.0322**.
+- Evidence boundary:
+  - a weak whole-frame match cannot prove different disc artwork because packaging/crop/occlusion can suppress feature overlap;
+  - a strong photograph-level match does not prove byte identity or that two sellers held the same physical object;
+  - Wanfang remains OPEN / UNCLASSIFIED-CARRIER;
+  - the known mainland unified-client reference was not recoverable during R2 and therefore has no match conclusion.
+- Archaeology consequence:
+  - marketplace URLs must be deduplicated by visual-source lineage before being counted as independent survival evidence;
+  - next visual step is crop/local-region comparison and restoration of a usable official/mainland collector reference.
+
