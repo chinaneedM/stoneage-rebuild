@@ -133,6 +133,27 @@ def main():
             except Exception as exc:
                 errors.append((f"availability:{target}:{date}",type(exc).__name__,str(exc)))
 
+    # Availability can expose captures missing from CDX. Promote each unique hit
+    # into the replay queue using the original archived URL encoded by Wayback.
+    for (ts,capture_url),closest in sorted(availability_hits.items()):
+        original=""
+        m=re.search(r"/web/\\d{14}(?:[a-z_]+)?/(https?://.*)$",capture_url,re.I)
+        if m:
+            original=m.group(1)
+        if not original:
+            original=TARGETS[0]
+        key=(ts,original,"availability")
+        if key not in captures:
+            captures[key]={
+                "timestamp":ts,
+                "original":original,
+                "digest":"availability",
+                "statuscode":str(closest.get("status") or ""),
+                "mimetype":"",
+                "length":"",
+            }
+        print(f"AVAIL_REPLAY_SEED|timestamp={clean(ts)}|original={clean(original)}|capture={clean(capture_url)}")
+
     all_hrefs={}
     success=0
     for (ts,orig,digest),row in sorted(captures.items()):
