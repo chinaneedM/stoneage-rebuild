@@ -4,6 +4,13 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 from tools.stoneage_jss_saupdate_call_args_probe import imm_desc, stack_args
 
 class JssSaUpdateCallArgsProbeTests(unittest.TestCase):
+    def test_manifest_http_focus_sites_are_pinned(self):
+        labels=dict(FOCUS_SITES)
+        self.assertEqual(labels[0x157B],"manifest-wrapper-dispatch")
+        self.assertEqual(labels[0x2902],"wrapper-to-http-core")
+        self.assertEqual(labels[0x2A28],"get-http-connection")
+        self.assertEqual(labels[0x2D9B],"per-file-http-core-reentry")
+
     def decode(self,blob,va=0x401000):
         md=Cs(CS_ARCH_X86,CS_MODE_32); md.detail=True
         return list(md.disasm(blob,va))
