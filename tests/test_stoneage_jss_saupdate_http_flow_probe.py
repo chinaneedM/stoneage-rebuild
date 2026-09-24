@@ -4,6 +4,7 @@ import unittest
 from tools.stoneage_jss_saupdate_http_flow_probe import (
     import_call_sites,
     import_thunks,
+    local_call_sites,
     mapped_name,
 )
 
@@ -43,6 +44,13 @@ class JssSaUpdateHttpFlowProbeTests(unittest.TestCase):
         iat={iat_va:("MSVCRT.dll","fopen")}
         calls=import_call_sites(bytes(data),self.layout(),iat,{})
         self.assertIn((0x1030,"MSVCRT.dll","fopen","ff15"),calls)
+
+    def test_local_call_site(self):
+        data=bytearray(0x400)
+        rel=0x1050-(0x1010+5)
+        data[0x210]=0xe8
+        struct.pack_into("<i",data,0x211,rel)
+        self.assertIn((0x1010,0x1050),local_call_sites(bytes(data),self.layout()))
 
 
 if __name__=="__main__":

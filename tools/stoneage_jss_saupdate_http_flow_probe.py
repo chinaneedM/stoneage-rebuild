@@ -88,6 +88,26 @@ def import_call_sites(data,layout,iat_map,thunks):
     return tuple(sorted(out))
 
 
+def local_call_sites(data,layout):
+    """Return direct E8 calls whose targets remain inside executable sections."""
+    ranges=[
+        (sec["vaddr"],sec["vaddr"]+max(sec["vsize"],sec["raw_size"]))
+        for sec in executable_sections(layout)
+    ]
+    out=[]
+    for sec in executable_sections(layout):
+        blob=section_blob(data,sec)
+        base=sec["vaddr"]
+        for pos in range(max(0,len(blob)-5)):
+            if blob[pos]!=0xe8:
+                continue
+            rel=struct.unpack_from("<i",blob,pos+1)[0]
+            target=base+pos+5+rel
+            if any(lo<=target<hi for lo,hi in ranges):
+                out.append((base+pos,target))
+    return tuple(sorted(set(out)))
+
+
 def mapped_name(dll,name):
     if dll.lower()=="mfc42.dll" and name.startswith("ordinal:"):
         try:
@@ -134,6 +154,8 @@ def main():
     print(f"COUNT|import_thunks|{len(thunks)}")
     print(f"COUNT|import_call_sites|{len(calls)}")
     print(f"COUNT|mapped_mfc_network_calls|{len(network)}")
+    local_calls=local_call_sites(data,layout)
+    print(f"COUNT|local_call_sites|{len(local_calls)}")
 
     # Summarize imported network methods and exact call RVAs.
     grouped={}
@@ -171,7 +193,27 @@ def main():
                 f"dll={clean(dll)}|symbol={clean(symbol)}|raw={clean(raw_name)}|mode={mode}"
             )
 
-    # Strong topology facts that do not require function-boundary guessing.
+    # Local-call topology: expose only RVA edges, never instruction text.
+    network_lo=(min((rva for rva,_,_,_ in network),default=0)-0x300)
+    network_hi=(max((rva for rva,_,_,_ in network),default=0)+0x300)
+    if network:
+        for site,target in local_calls:
+            if network_lo<=target<=network_hi:
+                print(f"NETWORK_REGION_CALLER|site=0x{site:x}|target=0x{target:x}")
+    for label,xref in sorted(string_refs,key=lambda x:x[1]):
+        edges=[
+            (site,target) for site,target in local_calls
+            if abs(site-xref)<=0x300
+        ]
+        print(f"LOCAL_FLOW_ANCHOR|string={clean(label)}|xref=0x{xref:x}|local_calls={len(edges)}")
+        for site,target in edges[:40]:
+            relation="network-region" if network and network_lo<=target<=network_hi else "local"
+            print(
+                f"LOCAL_FLOW_CALL|string={clean(label)}|xref=0x{xref:x}|site=0x{site:x}|"
+                f"target=0x{target:x}|relation={relation}"
+            )
+
+    # Strong topology facts that do not require exact function-boundary recovery.
     manifest_refs=[rva for label,rva in string_refs if label=="/~stoneage/newest.txt"]
     payload_refs=[rva for label,rva in string_refs if label=="/~stoneage/%s"]
     print(
