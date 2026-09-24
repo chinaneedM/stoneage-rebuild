@@ -12,7 +12,7 @@ import hashlib
 import struct
 from collections import defaultdict
 
-from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_OP_REG, X86_REG_INVALID
+from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_OP_REG, X86_REG_INVALID, X86_REG_EDI
 
 from tools.stoneage_jss_launcher_archive_probe import ORIGINAL,get_bounded,replay_url
 from tools.stoneage_jss_launcher_deep_probe import KNOWN_SHA256,TIMESTAMP,parse_pe_layout
@@ -57,6 +57,46 @@ def operand_shape(ins,op,image_base,strings):
             return f"absolute:0x{disp&0xffffffff:x}"
         return f"mem:{base}:{index}:{disp:+#x}:scale={mem.scale}"
     return "other"
+
+
+def edi_flow(insns,start_idx,image_base,strings,limit=48):
+    rows=[]
+    for j in range(start_idx+1,min(len(insns),start_idx+1+limit)):
+        ins=insns[j]
+        uses=[]
+        for op_index,op in enumerate(ins.operands,1):
+            hit=False
+            if op.type==X86_OP_REG and op.reg==X86_REG_EDI:
+                hit=True
+            elif op.type==X86_OP_MEM and (
+                op.mem.base==X86_REG_EDI or op.mem.index==X86_REG_EDI
+            ):
+                hit=True
+            if hit:
+                uses.append((op_index,operand_shape(ins,op,image_base,strings)))
+        if uses:
+            rows.append((
+                ins.address-image_base,
+                ins.mnemonic,
+                tuple(uses),
+            ))
+        # Stop when EDI is overwritten by a new non-EDI source.
+        if (
+            ins.mnemonic in {"mov","lea"}
+            and ins.operands
+            and ins.operands[0].type==X86_OP_REG
+            and ins.operands[0].reg==X86_REG_EDI
+        ):
+            src_edi=(
+                len(ins.operands)>1
+                and ins.operands[1].type==X86_OP_REG
+                and ins.operands[1].reg==X86_REG_EDI
+            )
+            if not src_edi:
+                break
+        if ins.mnemonic.startswith("ret"):
+            break
+    return tuple(rows)
 
 
 def direct_callers(insns,image_base,target_va):
@@ -154,6 +194,16 @@ def main():
                     print(
                         f"OPERAND|label={label}|xref_rva=0x{ref_rva:x}|index={n}|"
                         f"shape={clean(operand_shape(ins,op,base,strings))}"
+                    )
+                flow=edi_flow(insns,idx,base,strings)
+                print(
+                    f"EDI_FLOW|label={label}|xref_rva=0x{ref_rva:x}|events={len(flow)}"
+                )
+                for order,(flow_rva,mnemonic,uses) in enumerate(flow,1):
+                    print(
+                        f"EDI_USE|label={label}|xref_rva=0x{ref_rva:x}|order={order}|"
+                        f"rva=0x{flow_rva:x}|mnemonic={clean(mnemonic)}|"
+                        f"operands={';'.join(f'{n}:{shape}' for n,shape in uses)}"
                     )
                 for rrva,mnemonic,op_index,va,text_value in absolute_refs_near(
                     insns,idx,base,strings
