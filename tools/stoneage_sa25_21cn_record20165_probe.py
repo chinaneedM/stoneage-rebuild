@@ -4,7 +4,7 @@
 HTML/CDX metadata only. The probe does not follow or download historical game payloads.
 """
 from __future__ import annotations
-import hashlib, html, json, re, time, urllib.parse, urllib.request
+import concurrent.futures, hashlib, html, json, re, time, urllib.parse, urllib.request
 from tools.stoneage_sa25_host_identity_probe import declared_charset, decode, title, visible
 
 UA="stoneage-rebuild-archaeology/1.0"
@@ -103,54 +103,66 @@ def main():
         except Exception as e:
             errors.append((label,type(e).__name__,str(e)))
 
-    # Prefer earliest captures, but try enough independent captures to survive replay gaps.
-    seen=set(); replayed=0
-    for r in sorted(listrows,key=lambda x:(str(x.get("timestamp") or ""),str(x.get("original") or "")))[:16]:
+    # Prefer earliest captures and replay them concurrently with strict bounds.
+    seen=set(); selected=[]
+    for r in sorted(listrows,key=lambda x:(str(x.get("timestamp") or ""),str(x.get("original") or ""))):
         key=(str(r.get("timestamp") or ""),str(r.get("original") or ""))
         if key in seen: continue
-        seen.add(key)
+        seen.add(key); selected.append(r)
+        if len(selected)>=10: break
+
+    def inspect(r):
+        key=(str(r.get("timestamp") or ""),str(r.get("original") or ""))
         try:
-            st,final,hdr,b=fetch(replay(r),30,2_000_000,3)
+            st,final,hdr,b=fetch(replay(r),18,2_000_000,2)
             enc,text=decode(b,declared_charset(b)); hits=token_hits(b,text); aa=relevant_attrs(text)
+            return r,st,final,b,enc,text,hits,aa,None
+        except Exception as e:
+            return r,None,None,None,None,None,(),(),(type(e).__name__,str(e))
+
+    replayed=0
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as ex:
+        for r,st,final,b,enc,text,hits,aa,error in ex.map(inspect,selected):
+            ts=str(r.get("timestamp") or "")
+            if error:
+                errors.append((f"replay:{ts}",error[0],error[1])); continue
             replayed+=1
             print(
-                f"PAGE|timestamp={clean(r.get('timestamp'))}|original={clean(r.get('original'))}|status={st}|"
+                f"PAGE|timestamp={clean(ts)}|original={clean(r.get('original'))}|status={st}|"
                 f"bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|encoding={clean(enc)}|"
                 f"title={clean(title(text),1800)}|tokens={clean(','.join(hits))}|attrs={len(aa)}|final={clean(final)}"
             )
-            print(f"CONTEXT|timestamp={clean(r.get('timestamp'))}|value={clean(context(text,hits),7000)}")
+            print(f"CONTEXT|timestamp={clean(ts)}|value={clean(context(text,hits),7000)}")
             for n,a in enumerate(aa[:100],1):
-                print(f"ATTR|timestamp={clean(r.get('timestamp'))}|order={n}|value={clean(a,2400)}")
-        except Exception as e:
-            errors.append((f"replay:{key[0]}",type(e).__name__,str(e)))
+                print(f"ATTR|timestamp={clean(ts)}|order={n}|value={clean(a,2400)}")
 
-    # CDX only for download topology; never replay downit.
-    for host in HOSTS:
-        label=f"downit-{host}"
-        url=f"http://{host}/downit.php?id={ID}"
-        try:
-            st,final,hdr,b=fetch(cdx_url(url,"prefix",1000),35,3_000_000,2)
-            rr=parse(b); emit_rows(label,rr)
-            print(f"CDX_QUERY|label={label}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|final={clean(final)}")
-        except Exception as e:
-            errors.append((label,type(e).__name__,str(e)))
-
-    # Source-derived exact/sibling metadata targets only.
-    targets=(
+    # CDX-only metadata queries; run concurrently and never replay downit.
+    targets=[
+        (f"downit-{host}",f"http://{host}/downit.php?id={ID}","prefix")
+        for host in HOSTS
+    ] + [
         ("host-sa25up-jpg","http://download.21cn.com/file/game/maoxian/sa25up.jpg","exact"),
         ("host-sa25up-zip","http://download.21cn.com/file/game/maoxian/sa25up.zip","exact"),
         ("ip-sa25up-jpg","http://202.104.32.168/file/game/maoxian/sa25up.jpg","exact"),
         ("ip-sa25up-zip","http://202.104.32.168/file/game/maoxian/sa25up.zip","exact"),
         ("host-id-dir",f"http://download.21cn.com/file/game/maoxian/{ID}/","prefix"),
         ("ip-id-dir",f"http://202.104.32.168/file/game/maoxian/{ID}/","prefix"),
-    )
-    for label,url,match in targets:
+    ]
+
+    def query_target(entry):
+        label,url,match=entry
         try:
-            st,final,hdr,b=fetch(cdx_url(url,match,1000),35,3_000_000,2)
-            rr=parse(b); emit_rows(label,rr)
-            print(f"CDX_QUERY|label={label}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|final={clean(final)}")
+            st,final,hdr,b=fetch(cdx_url(url,match,1000),18,3_000_000,2)
+            return label,st,final,b,parse(b),None
         except Exception as e:
-            errors.append((label,type(e).__name__,str(e)))
+            return label,None,None,None,(),(type(e).__name__,str(e))
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
+        for label,st,final,b,rr,error in ex.map(query_target,targets):
+            if error:
+                errors.append((label,error[0],error[1])); continue
+            emit_rows(label,rr)
+            print(f"CDX_QUERY|label={label}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|final={clean(final)}")
 
     for scope,kind,msg in errors:
         print(f"ERROR|scope={clean(scope)}|kind={clean(kind)}|message={clean(msg)}")
