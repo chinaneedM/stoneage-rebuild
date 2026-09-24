@@ -410,6 +410,36 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - no early Korean clean-client bytes are recovered by these negative controls.
 - Status: **CONTROL-A/B + TARGET-A payload recovery — broad public-media surfaces narrowed; GameTime record-9 payload filename/path is resolved as `onlStoneAge.zip`, but bytes remain unrecovered.**
 
+## CONTROL-C — modern public StoneAge 2.5 descendant/community distribution
+
+- Current source page: `https://99ds.com/`
+- Direct Windows candidate: `https://99ds.com/downloads/windows/Stoneage2.5-Windows.rar`
+- Source-page claim: presented as an “original/unmodified” 2.5 client. This is **not accepted as provenance** without byte-level and historical-carrier corroboration.
+- Transient recovery / archive fingerprint:
+  - HTTP response filename: `SA2.5-20260823.rar`
+  - bytes: **553,320,338**
+  - SHA-256: `0e157c0fcfe2bcf91826907d580d4403138d86fab9488aa39cd9494af17449ae`
+  - MD5: `dae0984866719260ba0ba45064dfe1c7`
+  - archive format: RAR v5
+  - extracted corpus: **5,009 files / 1,421,974,641 bytes**
+- Cleanliness/provenance controls:
+  - includes `SACH-MX0.30`;
+  - includes a **113,106,052-byte x86-64 `OnlineUpdater-自动更新.exe` with PE timestamp 2026-06-16**;
+  - therefore this package cannot be treated as an untouched 2002 operator distribution merely from the source-page label.
+- Direct comparison with the known mixed 2.5 bridge:
+  - normalized client tree: **2,299 shared paths / 2,286 exact / 13 changed / 170 candidate-only / 3 bridge-only**;
+  - `real_15.bin`, `adrn_15.bin`, `spr_4.bin`, and `spradrn_5.bin` each contain the known bridge file as an **exact byte prefix**;
+  - `StoneAge.exe` is byte-identical to the bridge copy (SHA-256 `e258bc1ba166e30962b57ff34b216d86889cb2adac12d4e27acd8c8cbb5b000c`);
+  - the client DAT corpus has the same **1,011 IDs**, with **1,009 exact** and only `2000.DAT` / `3000.dat` changed.
+- Archaeology consequence:
+  - this candidate is strong evidence of **descendant/common-corpus ancestry**, not an independent clean-client recovery;
+  - it contributes no earlier field-map provenance and should not displace the physical-disc / contemporaneous installed-tree recovery tracks;
+  - it remains useful as a resource-generation and modern-repack negative/control specimen.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-PUBLIC-CANDIDATE-R1.txt`;
+  - `research/recovered/STONEAGE-SA25-PUBLIC-VS-BRIDGE-R1.txt`.
+- Status: **CONTROL-C / DESCENDANT — clean-client lead closed; keep only for lineage/diff work**.
+
 ## Current recovery order
 
 1. **Korean Inium 2000 public client:** recover the original installer filename/path/bytes through the Inium site, Hananet/GamePlus, CNET and period offline/software archives. It is now the strongest operational early bridge because operator-era free distribution and massive replication are directly attested.
@@ -419,7 +449,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 5. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge.
 6. Continue recovery of the **Korean 1.74** exact-version operator-era installer identity/bytes.
 7. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
-8. Treat the recovered mixed 2.5 bundle as a **resource-format bridge only**; do not spend primary recovery effort extending its modified runtime surface while earlier clean-client targets remain open.
-8. Recover the Sina "1.82" href/bytes only as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
-9. Keep the Wayi official 8.5 package and `NetmarbleStoneAge120` as later controls, not substitutes for an early clean baseline.
-10. For any newly recovered candidate bytes, stop broad searching immediately and perform the clean-client acceptance test plus first full inventory.
+8. Treat the recovered mixed 2.5 bundle as a **resource-format bridge only**; the 2026 public 2.5 archive is now closed as a **descendant/community control** and should not receive further primary clean-client recovery effort unless independent provenance appears.
+9. Recover the Sina "1.82" href/bytes only as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
+10. Keep the Wayi official 8.5 package and `NetmarbleStoneAge120` as later controls, not substitutes for an early clean baseline.
+11. For any newly recovered candidate bytes, stop broad searching immediately and perform the clean-client acceptance test plus first full inventory.
