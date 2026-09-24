@@ -29,12 +29,17 @@ def clean(v, n=3200):
 
 
 def canonical_period(s):
-    n = norm(s)
-    n = re.sub(r"2002年0?2月", "200202", n)
-    n = re.sub(r"2002第0?2期", "200202", n)
-    n = re.sub(r"2002年0?1月", "200201", n)
-    n = re.sub(r"2002第0?1期", "200201", n)
-    return n
+    """Normalize only explicit 2002 month/issue spellings; do not infer a month from title alone."""
+    raw = re.sub(r"\\s+", "", str(s or "").lower())
+    patterns = (
+        (r"2002(?:年)?(?:第)?0?2(?:月|期|号)", "period200202"),
+        (r"2002[-._/]0?2(?:月|期|号)?", "period200202"),
+        (r"2002(?:年)?(?:第)?0?1(?:月|期|号)", "period200201"),
+        (r"2002[-._/]0?1(?:月|期|号)?", "period200201"),
+    )
+    for pattern, replacement in patterns:
+        raw = re.sub(pattern, replacement, raw)
+    return norm(raw).replace("period200202", "200202").replace("period200201", "200201")
 
 
 FLEX_PERIODICALS = {
@@ -75,7 +80,16 @@ def classify_path(path):
     search_only = []
     low = norm(path)
     for label, queries, kind in TARGETS:
-        if strict_match(label, queries, kind, path) or flexible_periodical_match(label, path):
+        # Periodical provenance is issue-specific. The generic exact-carrier matcher
+        # intentionally ignores date fragments for preservation-index recall, so it
+        # is too permissive here: torrent-path promotion requires the named title
+        # AND the source-attested Jan/Feb-2002 issue.
+        is_strict = (
+            flexible_periodical_match(label, path)
+            if kind == "periodical"
+            else strict_match(label, queries, kind, path)
+        )
+        if is_strict:
             strict.append((label, kind))
             continue
         # Preserve useful lexical carrier leads without silently promoting them.
