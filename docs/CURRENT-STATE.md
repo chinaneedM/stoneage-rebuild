@@ -1520,6 +1520,17 @@ Supplemental source ledgers:
 
 - The archived first-party replacement path `http://www.titan.co.jp/stoneage/stoneage.exe` is no longer metadata-only. Wayback CDX exposes captures at **2001-05-03 01:38:34 UTC** and **2001-07-09 04:19:51 UTC** with one archive digest; bounded transient replay recovers the same **217,088-byte** PE from both.
 - Verified hashes: MD5 `8a5dc8b64f57574ffdd139a762a41aaa`, SHA-1 `43d4f038aca05d055b0f59cac26fd7fae4dbc099`, SHA-256 `6795d9349168f77aa025d7c4ea05d005c5bbfe33dd4b227eb7731802fa7eb82b`. PE timestamp: **2000-02-10 07:58:33 UTC**. The executable itself is **not committed**; only derived metadata is retained.
+- Deep PE/resource analysis refines the artifact's identity:
+  - VERSION CompanyName: **`日本システムサプライ株式会社`**;
+  - FileVersion and ProductVersion: **`1.0.0.1`**;
+  - FileDescription: **`SaUpdate`**;
+  - OriginalFilename: **`SaUpdate.EXE`**;
+  - copyright string: **`Copyright (C) 1999`**;
+  - dialog title: **`ＳＴＯＮＥＡＧＥ 起動プログラム Ver 1.01`**;
+  - UI actions include **`アップデートして起動`** and **`中断/キャンセル`**;
+  - resource string ID 103 reports **`Windows ｿｹｯﾄの初期化に失敗しました。`**, directly confirming socket/network initialization belongs to this updater/startup program.
+- Therefore the archived object should be described precisely as the **JSS StoneAge SaUpdate startup/update program distributed under the replacement path `stoneage.exe`**, not as proven game-client main executable bytes. The external replacement filename and the internal original filename are distinct facts.
+- Resource-tree analysis finds six ordinary resource types (bitmap, dialog, icon, group icon, string table, VERSION), no embedded PE/CAB/ZIP payload, no overlay and no known packer marker. The very large zero-filled `.data` tail alone is **not** evidence of packing/self-extraction.
 - First-party binary strings directly confirm:
   - updater host `update.gamersdream.ne.jp`;
   - manifest path `/~stoneage/newest.txt`;
@@ -1533,8 +1544,10 @@ Supplemental source ledgers:
 - Evidence boundary: the zero-row archive-index result does **not** disprove the historical updater paths exposed by the launcher. It only means the tested Wayback CDX surface currently provides no manifest/resource capture to replay.
 - Derived reports:
   - `research/recovered/STONEAGE-JSS-LAUNCHER-ARCHIVE-PROBE-R1.txt`;
+  - `research/recovered/STONEAGE-JSS-LAUNCHER-DEEP-PROBE-R1.txt`;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-SEMANTIC-R1.txt`;
   - `research/recovered/STONEAGE-JSS-UPDATE-ARCHIVE-PROBE-R1.txt`.
-- Validation: launcher workflow **35781291855** — success; updater-path workflow **35781723407** — success after the parser-test correction.
+- Validation: launcher workflow **35781291855** — success; deep-structure workflow **35948368684** — success; SaUpdate semantic workflow **35948545627** — success; updater-path workflow **35781723407** — success after the parser-test correction.
 
 ## Korean 1.74 archive-recovery evidence boundary — 2026-09-22
 

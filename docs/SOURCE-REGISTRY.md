@@ -318,6 +318,10 @@ This is the canonical ledger for historical sources. Entries should record prove
     - SHA-1 `43d4f038aca05d055b0f59cac26fd7fae4dbc099`
     - SHA-256 `6795d9349168f77aa025d7c4ea05d005c5bbfe33dd4b227eb7731802fa7eb82b`;
   - PE linker timestamp is **2000-02-10 07:58:33 UTC**, entry RVA `0x43b2`, image base `0x400000`, subsystem 2, with four sections `.text/.rdata/.data/.rsrc`;
+  - VERSION metadata identifies the internal artifact as **`SaUpdate.EXE`**, FileDescription **`SaUpdate`**, CompanyName **`日本システムサプライ株式会社`**, FileVersion/ProductVersion **`1.0.0.1`**, with `Copyright (C) 1999`;
+  - dialog resources title the program **`ＳＴＯＮＥＡＧＥ 起動プログラム Ver 1.01`** and expose the actions **`アップデートして起動`** / **`中断/キャンセル`**;
+  - string-table resource ID 103 contains **`Windows ｿｹｯﾄの初期化に失敗しました。`**, directly confirming socket initialization in the updater/startup program;
+  - the archived path filename `stoneage.exe` and internal OriginalFilename `SaUpdate.EXE` are therefore recorded separately; the recovered bytes are not promoted to the game-client main executable;
   - the outer PE statically imports only `KERNEL32.dll`, `MSVCRT.dll`, and `USER32.dll`;
   - original binary strings directly expose `update.gamersdream.ne.jp`, `/~stoneage/newest.txt`, `/~stoneage/%s`, `data\\download\\%s`, `(cksum:%u : File : %s)`, `sa_*.exe`, `sa_%d.exe`, and `updated`;
   - generation-numbered resource families for `real`, `adrn`, `spr`, `spradrn`, `battle`, `battletxt`, `sound`, and `soundaddr` are embedded in the same binary.
@@ -327,14 +331,16 @@ This is the canonical ledger for historical sources. Entries should record prove
 - Still OPEN:
   - whether this 2001 archived replacement is byte-identical to any 1999 launcher state;
   - `newest.txt` content grammar and checksum algorithm;
-  - transport/network implementation at the outer-vs-embedded-resource boundary;
-  - version-resource fields and the role of the unusually large **184,320-byte `.rsrc`** section.
+  - transport/network implementation and `newest.txt` parser/checksum semantics;
+  - whether the socket layer is imported dynamically, manually resolved, or reached through another runtime mechanism.
 - Follow-on archive-index boundary:
   - exact `newest.txt` queries and prefix queries for `update.gamersdream.ne.jp/~stoneage/`, plus the separately labeled source-derived `www.titan.co.jp/~stoneage/` candidate, were tested for 1999–2002;
   - all 6 queries completed with **0 errors**, **0 saturation** and **0 CDX rows**;
   - this does not contradict the updater host/path strings recovered from the binary; it only means no matching Wayback CDX capture is currently indexed on those tested paths.
 - Derived reports:
   - `research/recovered/STONEAGE-JSS-LAUNCHER-ARCHIVE-PROBE-R1.txt`; workflow run **35781291855** — success;
+  - `research/recovered/STONEAGE-JSS-LAUNCHER-DEEP-PROBE-R1.txt`; workflow run **35948368684** — success;
+  - `research/recovered/STONEAGE-JSS-SAUPDATE-SEMANTIC-R1.txt`; workflow run **35948545627** — success;
   - `research/recovered/STONEAGE-JSS-UPDATE-ARCHIVE-PROBE-R1.txt`; workflow run **35781723407** — success after parser-test correction.
 - Repository safety:
   - executable bytes existed only in the CI runner temporary directory; the workflow's no-EXE retention check passed.
