@@ -1,0 +1,49 @@
+name: Replay Beijing Waei StoneAge2 key pages
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_sa25_keypage_probe.py
+      - tests/test_stoneage_waei_sa25_keypage_probe.py
+      - .github/workflows/probe-stoneage-waei-sa25-keypages.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-sa25-keypages
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate key-page replay probe
+        run: python3 -m unittest tests.test_stoneage_waei_sa25_keypage_probe -v
+      - name: Replay official rollout pages
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_sa25_keypage_probe \
+            > research/recovered/STONEAGE-WAEI-SA25-KEYPAGES-R1.txt
+      - name: Commit derived page evidence only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-WAEI-SA25-KEYPAGES-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: replay official StoneAge2 rollout pages'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_waei_sa25_keypage_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: replay official StoneAge2 rollout pages'
+          fi
+          git push
