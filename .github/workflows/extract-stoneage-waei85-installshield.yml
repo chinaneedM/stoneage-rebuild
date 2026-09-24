@@ -1,0 +1,198 @@
+name: Extract Waei StoneAge installer with pinned InstallShield tool
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/extract-stoneage-waei85-installshield.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei85-installshield
+  cancel-in-progress: true
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install extraction tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq gcc make unshield file binutils osslsigncode
+
+      - name: Recover verified six-part installer
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/waei85x/parts
+          python3 - <<'PY'
+          import hashlib,html,http.cookiejar,json,re,urllib.parse,urllib.request
+          from pathlib import Path
+          keys=[
+            ('l5i274801ov19w7','057f9e825a77f33e853eb44772ca2c22b917bb12b6eddc0fc445b5d2ed97256e'),
+            ('g9b3g3hjmwwttg3','4e5f8e40e6cd166a3790391cbe4e05035ec24aae8fb01d595efe3dcee4c8c579'),
+            ('e859n1nm1tk12j8','2b08c6a17b6e051676ed6b82e0e1a5857b2ba1bb3a321a58b8240494fa2ceb0a'),
+            ('69vrzm3nox8f0v9','f3b9a97f02ba331e7543a801d5b10c88a99ba1da597d50310dc57aa081e9e2df'),
+            ('clbwjkcqqhxq6k9','8c2000d61100377dba024c28bedc66af34831ebb75a245324d457e0dd8f6f04b'),
+            ('42uy5b9abbcu4qr','5d812f7437f9db0a272cbed08de64a569fe3962a5d121ba239a4c5e84ed0827b'),
+          ]
+          ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124 Safari/537.36'
+          cj=http.cookiejar.CookieJar(); op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+          op.addheaders=[('User-Agent',ua),('Accept-Language','zh-TW,zh;q=0.9,en;q=0.7')]
+          for key,expected in keys:
+            data=urllib.parse.urlencode({'quick_key':key,'response_format':'json'}).encode()
+            req=urllib.request.Request('https://www.mediafire.com/api/1.5/file/get_info.php',data=data,headers={'User-Agent':ua})
+            with op.open(req,timeout=60) as r: info=json.load(r)['response']['file_info']
+            name=str(info['filename'])
+            req=urllib.request.Request(info['links']['normal_download'],headers={'User-Agent':ua})
+            with op.open(req,timeout=60) as r:
+              page=r.read().decode('utf-8','replace'); referer=r.geturl()
+            m=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S)
+            if not m: m=re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+            if not m: raise SystemExit('no direct link '+key)
+            dest=Path('/tmp/waei85x/parts')/name
+            h=hashlib.sha256()
+            req=urllib.request.Request(html.unescape(m.group(1)),headers={'User-Agent':ua,'Referer':referer})
+            with op.open(req,timeout=420) as r,dest.open('wb') as out:
+              while True:
+                b=r.read(1024*1024)
+                if not b: break
+                out.write(b); h.update(b)
+            if h.hexdigest()!=expected: raise SystemExit('hash mismatch '+key)
+          PY
+          cat /tmp/waei85x/parts/STONEAGE20060616.exe.00{1,2,3,4,5,6} > /tmp/waei85x/STONEAGE20060616.exe
+          test "$(sha256sum /tmp/waei85x/STONEAGE20060616.exe | awk '{print $1}')" = \
+            '971780abc65ed29a6a7aeb1a528c7db2ef07b11a188e56deaef90a54986609f5'
+
+      - name: Build pinned InstallShield extractor
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone -q https://github.com/hifi/iss_extract.git /tmp/waei85x/iss_extract
+          cd /tmp/waei85x/iss_extract
+          git checkout -q 01232146c9284a86958817817849f320e77f5fb7
+          test "$(git rev-parse HEAD)" = "01232146c9284a86958817817849f320e77f5fb7"
+          gcc -std=c99 -Wall -O2 -o iss_extract iss_extract.c
+
+      - name: Extract InstallShield stream and cabinets
+        shell: bash
+        run: |
+          set -euo pipefail
+          R='research/recovered/STONEAGE-WAEI85-INSTALLSHIELD-EXTRACT-R1.txt'
+          EXE='/tmp/waei85x/STONEAGE20060616.exe'
+          TOOL='/tmp/waei85x/iss_extract/iss_extract'
+          mkdir -p research/recovered /tmp/waei85x/sfx /tmp/waei85x/game
+          {
+            echo 'StoneAge Waei InstallShield extraction — R1'
+            echo 'SCOPE|verified-2012-six-part-mirror|pinned-hifi-iss_extract|unshield|derived-metadata-only'
+            echo 'SOURCE_THREAD|https://www.lab.welovesa.com/viewthread.php?action=printable&tid=1654'
+            echo 'INSTALLER_SHA256|971780abc65ed29a6a7aeb1a528c7db2ef07b11a188e56deaef90a54986609f5'
+            echo 'EXTRACTOR_REPO|hifi/iss_extract'
+            echo 'EXTRACTOR_COMMIT|01232146c9284a86958817817849f320e77f5fb7'
+            echo 'INSTALLER_SIGNATURE_BEGIN'
+            osslsigncode verify "$EXE" 2>&1 || true
+            echo 'INSTALLER_SIGNATURE_END'
+            echo 'ISS_LIST_BEGIN'
+            "$TOOL" l "$EXE" 2>&1 || true
+            echo 'ISS_LIST_END'
+          } > "$R"
+
+          (
+            cd /tmp/waei85x/sfx
+            "$TOOL" x "$EXE" > /tmp/waei85x/iss-extract.stdout 2>/tmp/waei85x/iss-extract.stderr
+          )
+          {
+            echo "SFX_FILES|$(find /tmp/waei85x/sfx -type f | wc -l)"
+            echo 'SFX_TREE_BEGIN'
+            find /tmp/waei85x/sfx -type f -printf '%P|%s\n' | LC_ALL=C sort
+            echo 'SFX_TREE_END'
+            echo 'SFX_TEXT_SIGNALS_BEGIN'
+            find /tmp/waei85x/sfx -type f \( -iname '*.ini' -o -iname '*.txt' -o -iname '*.iss' -o -iname '*.inx' \) -print0 |
+            while IFS= read -r -d '' f; do
+              rel="$(realpath --relative-to=/tmp/waei85x/sfx "$f")"
+              strings -a -n 4 "$f" 2>/dev/null | grep -Eai 'stoneage|華義|华义|wayi|waei|8\.5|8\.0|魔域|冒險|冒险|version|product|company|2006' |
+                head -n 200 | sed "s#^#SFX_TEXT|$rel|#" || true
+            done
+            echo 'SFX_TEXT_SIGNALS_END'
+          } >> "$R"
+
+          CAB="$(find /tmp/waei85x/sfx -type f -iname 'data1.cab' -print -quit)"
+          if [ -n "$CAB" ]; then
+            {
+              echo "DATA1_CAB|path=$(realpath --relative-to=/tmp/waei85x/sfx "$CAB")|bytes=$(stat -c %s "$CAB")|sha256=$(sha256sum "$CAB" | awk '{print $1}')"
+              echo 'UNSHIELD_LIST_BEGIN'
+              unshield l "$CAB" 2>&1 || true
+              echo 'UNSHIELD_LIST_END'
+            } >> "$R"
+            unshield -d /tmp/waei85x/game x "$CAB" >/tmp/waei85x/unshield.stdout 2>/tmp/waei85x/unshield.stderr || true
+          else
+            echo 'DATA1_CAB|missing' >> "$R"
+          fi
+
+          python3 - "$R" <<'PY'
+          import hashlib,subprocess,sys
+          from pathlib import Path
+          report=Path(sys.argv[1]); root=Path('/tmp/waei85x/game')
+          def sha(p):
+            h=hashlib.sha256()
+            with p.open('rb') as f:
+              for b in iter(lambda:f.read(1024*1024),b''): h.update(b)
+            return h.hexdigest()
+          rows=[]
+          for p in root.rglob('*'):
+            if p.is_file():
+              rows.append((p.relative_to(root).as_posix(),p.stat().st_size,sha(p),p))
+          rows.sort(key=lambda x:x[0].lower())
+          with report.open('a',encoding='utf-8') as out:
+            out.write(f'GAME_TREE|files={len(rows)}|bytes={sum(x[1] for x in rows)}\n')
+            out.write(f'GAME_MAP_DAT_COUNT|{sum(1 for x in rows if x[0].lower().endswith(".dat") and "/map/" in "/"+x[0].lower())}\n')
+            for rel,size,d,p in rows:
+              low=rel.lower()
+              if low.endswith(('.exe','.dll')) or any(k in low for k in ('real_','adrn_','spr_','spradrn_','stoneage','startup','setup')):
+                out.write(f'GAME_CORE|path={rel}|bytes={size}|sha256={d}\n')
+            for rel,size,d,p in rows:
+              if rel.lower().endswith(('.exe','.dll')):
+                out.write(f'GAME_PE|path={rel}|bytes={size}|sha256={d}\n')
+                try:
+                  sig=subprocess.run(['osslsigncode','verify',str(p)],capture_output=True,text=True,errors='replace',timeout=40)
+                  for line in (sig.stdout+'\\n'+sig.stderr).splitlines():
+                    if any(k in line.lower() for k in ('subject:','issuer:','signed time','timestamp','message digest','signature verification')):
+                      out.write(f'GAME_SIGNATURE|path={rel}|value={line.replace("|","%7C")[:1000]}\n')
+                except Exception: pass
+                try:
+                  s=subprocess.run(['strings','-a','-n','5',str(p)],capture_output=True,text=True,errors='replace',timeout=40).stdout
+                except Exception: s=''
+                for line in s.splitlines():
+                  if any(k in line.lower() for k in ('stoneage','waei','wayi','8.5','8.0','2006','魔域')):
+                    out.write(f'GAME_STRING|path={rel}|value={line.replace("|","%7C")[:1000]}\n')
+            for rel,size,d,p in rows:
+              out.write(f'GAME_FILE|path={rel}|bytes={size}|sha256={d}\n')
+            out.write('RESULT|INSTALLSHIELD_STREAM_AND_CAB_ANALYSIS_COMPLETED\n')
+            out.write('EVIDENCE_BOUNDARY|Community mirror provenance remains secondary until installer identity/signature/resource bytes are cross-checked against independent operator-era evidence.\n')
+          PY
+
+      - name: Delete transient payloads and extractor
+        if: always()
+        run: rm -rf /tmp/waei85x
+
+      - name: Commit derived report only
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          R='research/recovered/STONEAGE-WAEI85-INSTALLSHIELD-EXTRACT-R1.txt'
+          test -f "$R" || exit 0
+          cp "$R" /tmp/STONEAGE-WAEI85-INSTALLSHIELD-EXTRACT-R1.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/STONEAGE-WAEI85-INSTALLSHIELD-EXTRACT-R1.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: extract Waei StoneAge InstallShield payload'
+          git push
