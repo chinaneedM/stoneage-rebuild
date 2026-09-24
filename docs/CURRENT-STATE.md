@@ -1836,27 +1836,6 @@ Supplemental source ledgers:
 
 
 
-## StoneAge 2.5 native 21CN catalogue record `20165` — 2026-09-25
-
-- Two independent anchor extractors recovered the same native 21CN catalogue ID from archived category-ranking links: **`list.php?id=20165`** for `石器时代2.5-精…`. Four separate archived pages from 2003-03 through 2003-08 reproduce that mapping.
-- The exact 21CN record has **14 archived HTTP-200 captures** beginning **2002-02-12 01:05:02 UTC**. The earliest successfully replayed page is a native 21CN download detail page titled **`石器时代2.5—精灵王传说`**.
-- The page directly identifies the item as:
-  - software version: **`客户端升级包`**;
-  - category: **冒险角色**;
-  - nature: **共享**;
-  -整理 date: **2002-01-31**;
-  - file size: **`8473 k`** on early captures, later rendered as **`8.27M`**;
-  - supported systems: Win9x / WinME / WinNT / Win2000 / WinXP;
-  - software company: **北京华义**.
-- Most importantly, the 2002-02-12 page directly links **`http://download.21cn.com/file/game/maoxian/sa25up.zip`** and the same-stem **`sa25up.jpg`**. Later captures preserve the same catalogue identity while the file host/path migrates to `file1/` and `dg.download.21cn.com`.
-- Therefore the earlier ambiguity is closed at the catalogue-description level: **`sa25up.zip` is the 21CN-distributed StoneAge 2.5 client upgrade package, not the 575/580 MB full client package.**
-- The contemporaneous 17173/Sina records describe the official updater as **8.25 MB**, while 21CN records the mirrored package as **8473 k / 8.27M**. This is retained as a small source/measurement difference. Without recovered ZIP bytes, do **not** assert byte identity between the 21CN mirror and the operator-referenced 8.25 MB updater.
-- `downit.php?id=20165&num=0` has archived 2002/2003 records, including later HTTP 302 captures. The next highest-value step is to recover their Location headers / mirror target topology without downloading the historical payload.
-- Derived evidence: `research/recovered/STONEAGE-SA25-21CN-RANK-LINK-R1.txt`, `research/recovered/STONEAGE-SA25-21CN-RANKING-ID-R1.txt`, and `research/recovered/STONEAGE-SA25-21CN-RECORD-20165-R1.txt`.
-- Canonical source record: `SRC-CN-2002-21CN-SA25-CATALOG-20165-01`.
-
-
-
 ## StoneAge 2.5 native 21CN record 20165 resolves `sa25up.zip` identity — 2026-09-25
 
 - **FACT:** 21CN native catalogue record `list.php?id=20165` is preserved from **2002-02-12 01:05:02 UTC** onward. The earliest replayed page is HTTP 200, 36,495 bytes, SHA-256 `962145dbcd7b8e4c7e627be3787455aa554de7f2ab4d39592255d1a4d19d5d28`, and is titled **`石器时代2.5—精灵王传说 - 下载 - 21CN.COM`**.
@@ -1872,11 +1851,15 @@ Supplemental source ledgers:
 - **OPEN / byte-provenance boundary:** the ZIP bytes themselves remain unrecovered. We still do not have its cryptographic hash, archive members, resource delta, or proof that the bytes on 21CN were byte-identical to the operator-distributed updater. Thus this resolves **package identity and expected size**, not clean-byte provenance.
 - `id=22318` is a separate **564K** Beijing-Waei/华义 update for a Beijing Netcom 9 free-test server, dated by the page to 2002-07-17; it is not `sa25up.zip`.
 - `id=8831`, previously identified only by crawl proximity to `sa25up.jpg`, has been replayed and is **Quick Heal antivirus**; it is closed as a false discovery candidate.
-- The next recovery gate is now sharply bounded: probe only the evidence-derived 21CN mirror generations for a recoverable `sa25up.zip` object; if bytes are recovered, inventory/hash them transiently and test whether the 8.27M updater contains map/resource data capable of moving the field-map provenance anchor earlier than June 2003.
+- The 21CN router/mirror recovery pass is now also bounded. The **2002-10-17** archived `downit.php?id=20165&num=0` wrapper explicitly executes `window.open("http://images.21cn.com/download/file/game/maoxian/sa25up.zip")`. Later native pages expose `file1/`, `dg.download.21cn.com/file1_21cn/`, `file1xjy/`, and `file1xzm/` generations. Seven evidence-derived exact ZIP URLs were queried in Wayback: **0 HTTP-200 ZIP captures / 0 recoverable ZIP bodies / 0 probe errors**; the `images.21cn.com` URL has only two December-2005 HTTP-404 rows. Arquivo returns 0 rows; the supplemental Common Crawl pass is partial because five tested indexes returned 504, while the successful indexes returned 0 rows.
+- Therefore the 21CN updater branch is **RESOLVED FOR IDENTITY / BOUNDED FOR BYTES**. Reopen it only from a new exact mirror, archive, hash, P2P token, or preservation corpus. Highest information gain returns to provenance-preserving **full-client/physical-disc reads and contemporaneous installed-tree backups**, because those can actually move the field-map provenance anchor earlier than June 2003.
 - Canonical reports:
   - `research/recovered/STONEAGE-SA25-21CN-RANKING-ID-R1.txt`
   - `research/recovered/STONEAGE-SA25-21CN-RECORD-20165-R1.txt`
   - `research/recovered/STONEAGE-SA25-21CN-DOWNIT-20165-R1.txt`
+  - `research/recovered/STONEAGE-SA25-21CN-REDIRECT-HEADERS-R1.txt`
+  - `research/recovered/STONEAGE-SA25-21CN-MIRROR-RECOVERY-R1.txt`
+  - `research/recovered/STONEAGE-SA25-21CN-IMAGES-MIRROR-R1.txt`
   - `research/recovered/STONEAGE-SA25-21CN-JPG-R1.txt`
 - Canonical source: `SRC-CN-2002-21CN-SA25-UPDATER-01`.
 
