@@ -1462,3 +1462,55 @@ Every substantial source should record:
 - Derived reports:
   - `research/recovered/STONEAGE-SA25-SHIQICLUB-PACKAGE-MIRROR-R1.txt`
   - `research/recovered/STONEAGE-SA25-SHIQICLUB-BODY-IMAGES-R1.txt`.
+
+
+### SRC-CN-2020-BAHAMUT-SA25-CLIENT-PACKAGE-01
+
+- Title: `石器時代周邊收藏，石器用戶端禮包篇（六）2.5精靈王傳說版用戶端產包`
+- Author/account: **寂寞如風 / stoneage2017**
+- Publication timestamp shown by live page: **2020-09-21 11:13:04**
+- Retrieval/research date: **2026-09-25**
+- URL: https://forum.gamer.com.tw/C.php?bsn=1571&snA=81400
+- Source type: modern collector article documenting surviving StoneAge 2.5 client packages; not a contemporaneous 2002 primary source and not a disc dump.
+- Literal package observations:
+  - the author describes many 2.5 new-user-package cover variants;
+  - the 2.5 period is described as having a **green WGS gift box**, contrasted with an orange WGS gift box in 2.0;
+  - a **simplified client package** is separately mentioned.
+- Mirror/control:
+  - `https://www.shiqi.club/shiqi2712.html` preserves substantially the same package text and exposes 11 article-body package photographs under the 2020/11 upload path;
+  - derived body-image mapping is recorded without treating the photograph bytes as disc contents.
+- Confidence: **A for the literal live-page text/title/author/timestamp and mirror URLs; B for collector classification of surviving package forms; OPEN for original package-to-disc chain and disc bytes**.
+- Supports:
+  - visual/product-family identification of surviving 2.5 package variants;
+  - prioritizing complete boxed media and simplified client packages as physical recovery targets.
+- Does not support:
+  - disc filesystem, ISO/hash, mastering/matrix/IFPI identity, clean-client status or byte equality among packages.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-BAHAMUT-CLIENT-PACKAGE-R1.txt`
+  - `research/recovered/STONEAGE-SA25-SHIQICLUB-PACKAGE-MIRROR-R1.txt`
+  - `research/recovered/STONEAGE-SA25-SHIQICLUB-BODY-IMAGES-R1.txt`.
+
+
+### SRC-CN-2013-XUNLEI-SA25-CLIENT-LEAD-01
+
+- Surviving source page: `https://www.7chaowan.com/55833.html`
+- Original-post context shown by surviving page: **2013-08**, with a later `elize.ini` edit dated **2013-08-23**
+- Retrieval/research date: **2026-09-25**
+- Exact client URL: `http://kuai.xunlei.com/d/DX1fAAJeiQBWT-tR9ee`
+- Source type: later community/private-server distribution lead, explicitly separating a StoneAge 2.5 **client download** from the server download.
+- Important source caveat:
+  - the poster states that the client's `elize.ini` had been modified for a LAN/internal-network address and later supplied a 127.0.0.1 replacement;
+  - therefore even recovered bytes would be a **descendant/private-server client specimen**, not authenticated 2002 retail-disc bytes.
+- Preservation probe:
+  - Wayback exact CDX: **0 rows**;
+  - Wayback prefix CDX: **0 rows**;
+  - Wayback Availability at 2013-08-01, 2013-08-23, 2013-12-31 and 2014-12-31: **no available snapshots**;
+  - Arquivo.pt exact URL: **0 rows**;
+  - CI retrieval of the present source page: HTTP 403.
+- Operational status: **EXACT TOKEN RECORDED / TESTED ARCHIVE ROUTE BOUNDED**. Reopen only from a new mirror/re-upload, filename, checksum, archived redirect or preservation corpus.
+- Confidence: **B for the literal surviving source-page description and exact URL as independently visible on the public web; A for the tested archive-index negative result; OPEN for payload filename, size, hash and contents**.
+- Does not support:
+  - original Waei distribution provenance;
+  - clean-client status;
+  - byte equality with the 2002 575/580 MB full package or any physical-disc carrier.
+- Derived report: `research/recovered/STONEAGE-SA25-XUNLEI-CLIENT-R1.txt`.
