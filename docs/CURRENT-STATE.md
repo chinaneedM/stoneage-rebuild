@@ -1784,7 +1784,7 @@ Supplemental source ledgers:
 
 ## StoneAge 2.5 exact historical download token: `sa25up.zip` — 2026-09-25
 
-- A surviving third-party software-link mirror explicitly labels **`石器時代2.5—精靈王傳說`** and points it to the exact historical-looking URL **`http://202.104.32.168/file/game/maoxian/sa25up.zip`**. The mirror itself states it was copied from `http://pcpc.idv.tw/soft/soft.htm`; its original publication date and the payload's operator provenance are not established.
+- A surviving third-party software-link mirror explicitly labels **`石器時代2.5—精靈王傳說`** and points it to the exact historical-looking URL **`http://202.104.32.168/file/game/maoxian/sa25up.zip`**. The mirror itself states it was copied from `http://pcpc.idv.tw/soft/soft.htm`; its original publication date and the payload's operator provenance are not established; the historical IP host is now identified separately as 21CN.COM download infrastructure.
 - This exact filename/path is a legitimate new recovery token because it was not previously present in the repository and it is independently sourced rather than guessed from the 575/580 MB full-package or 8.25 MB updater descriptions.
 - A bounded metadata-only preservation probe checked Wayback Availability at four period anchors, Arquivo.pt exact-URL CDX, eight Common Crawl index generations, DiscMaster exact filename search, and Internet Archive item/file metadata. Result: **0 preservation hits / 0 errors**.
 - Therefore the current exact-URL/file-index route is **BOUNDED**. Reopen it only from a new hostname/IP mapping, mirror URL, directory/file token, capture identifier, or preservation source.
@@ -1812,6 +1812,16 @@ Supplemental source ledgers:
 - All three distinctive resource names returned **0 exact DiscMaster rows**. Generic names produced many unrelated weak rows but **0 candidate carriers / 0 strong carriers / 0 errors**.
 - Therefore the current DiscMaster “hidden client tree by verified filename” route is **BOUNDED**. Reopen only from a new distinctive verified filename/hash, exact carrier identity, or materially changed preservation index.
 - Derived report: `research/recovered/STONEAGE-SA25-DISCMASTER-SIGNATURE-CARRIERS-R1.txt`.
+
+
+
+## StoneAge 2.5 `sa25up.zip` historical host identity — 2026-09-25
+
+- Archived pages from **2001-12-27** and **2002-02-01** establish that historical IP `202.104.32.168` served the **21CN.COM download site**. The archived root is titled `21CN.COM - 下载`; archived software-detail pages expose `download.21cn.com`, license string `粤ICP证010001`, and the copyright notice `世纪龙信息网络有限责任公司版权所有`.
+- Therefore the host identity is no longer OPEN: the IP behind `/file/game/maoxian/sa25up.zip` belongs to the 21CN software-download infrastructure in the relevant period, **not to a demonstrated Beijing-Waei operator host**.
+- This improves provenance classification but does **not** authenticate the StoneAge payload. 21CN is a third-party download/distribution surface relative to Beijing Waei; the project still lacks a successful archived payload response, byte hash, size, file tree, or operator-to-mirror chain.
+- The same host's CDX neighborhood contains more than one thousand archived `list.php?id=...` software-detail pages and dozens of `downit.php` records. The next high-information step is to locate any 21CN-native StoneAge/2.5 detail record and recover its date, description, size, and download topology.
+- Derived reports: `research/recovered/STONEAGE-SA25-HOST-IDENTITY-R1.txt`, `research/recovered/STONEAGE-SA25-HOST-NEIGHBORHOOD-R1.txt`.
 
 
 ## Immediate next actions
