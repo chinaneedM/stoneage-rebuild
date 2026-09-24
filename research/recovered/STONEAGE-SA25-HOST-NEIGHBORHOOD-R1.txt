@@ -205,8 +205,9 @@ IDENTITY_HTML|query=host-200|timestamp=20020714121446|original=http://202.104.32
 IDENTITY_HTML|query=host-200|timestamp=20020201193448|original=http://202.104.32.168:80/list.php?id=127|status=200|mime=text/html|length=5578|digest=OLXG2I6JI277J6D5UIQVKVOJ6LHJZ4HL
 IDENTITY_HTML|query=host-200|timestamp=20020906191118|original=http://202.104.32.168:80/list.php?id=128|status=200|mime=text/html|length=5619|digest=BSJSP6MXT4A36XJ2PS6K4E5KDCZTR4AH
 IDENTITY_HTML|query=host-200|timestamp=20030401164827|original=http://202.104.32.168:80/list.php?id=12910|status=200|mime=text/html|length=5501|digest=2NZLUWC7PSF43NGP3VLXHWEXDMBVWMUR
-CDX|label=file-200|prefix=http://202.104.32.168/file/|status=200|bytes=8147|sha256=b979462c753d6c823fd477e5328caf4ddeea07718067e972e0642d8a98b0f5a9|rows=52|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2F202.104.32.168%2Ffile%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=2001&to=2004&collapse=urlkey&limit=3000&filter=statuscode%3A200
 CDX|label=game-200|prefix=http://202.104.32.168/file/game/|status=200|bytes=364|sha256=48f9587abb69faf21fd9ca8e81e52f714d3398be11554f529f6bee6341c13490|rows=2|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2F202.104.32.168%2Ffile%2Fgame%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=2001&to=2004&collapse=urlkey&limit=3000&filter=statuscode%3A200
+GAME200|timestamp=20020628144726|original=http://202.104.32.168:80/file/game/yizhi/20124/1.jpg|status=200|mime=image/jpeg|length=13975|digest=IVUTN4KDCDKZJB5MSYTBUHD7FVBCKOQL|redirect=
+GAME200|timestamp=20020429012638|original=http://202.104.32.168:80/file/game/yizhi/20320/1.jpg|status=200|mime=image/jpeg|length=17476|digest=JT3UNLOXPIA5ITFUQ5H4KGJTUU6OB25R|redirect=
 PATH_BUCKET|path=/list.php|count=1129
 PATH_BUCKET|path=/second.php|count=66
 PATH_BUCKET|path=/downit.php|count=45
@@ -253,9 +254,10 @@ PATH_BUCKET|path=/robots.txt|count=1
 FOCUSED|timestamp=20020712031403|original=http://202.104.32.168:80/file/game/maoxian/sa25up.zip+|status=404|mime=text/html|length=397|digest=RLPURBY75H4NG3ANL2NCAIEX4CFGRIMT|redirect=
 FOCUSED|timestamp=20020929101430|original=http://202.104.32.168:80/file/game/maoxian/sa25up.zip&nbsp|status=404|mime=text/html|length=407|digest=IG32DJYQ6J2B523PKUTBWOQ73H4ISQUV|redirect=
 FOCUSED|timestamp=20030623115144|original=http://202.104.32.168:80/file/game/maoxian/sa25up.zip%20|status=404|mime=text/html|length=400|digest=G5CL2NB2USDSKWVPFMD34BH2FDI22BR7|redirect=
+ERROR|scope=cdx:file-200|kind=URLError|message=<urlopen error timed out>
 COUNT|source_same_host_links|1
 COUNT|unique_cdx_rows|1372
 COUNT|focused_rows|3
-COUNT|errors|0
+COUNT|errors|1
 RESOLUTION|HOST_NEIGHBORHOOD_MAPPED|use sibling link labels and HTML root candidates to identify host/mirror lineage
 EVIDENCE_BOUNDARY|same-host links and CDX rows map a historical download neighborhood only; they do not establish ownership, official StoneAge distribution, or payload identity.
