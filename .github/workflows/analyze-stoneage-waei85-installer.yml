@@ -1,0 +1,206 @@
+name: Analyze Waei StoneAge 8.5 installer payload
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/analyze-stoneage-waei85-installer.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei85-installer
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install analysis tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq 7zip unar file binutils cabextract
+
+      - name: Recover verified split installer
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/waei85i/parts research/recovered
+          python3 - <<'PY'
+          import hashlib,html,http.cookiejar,json,re,urllib.parse,urllib.request
+          from pathlib import Path
+          keys=[
+            ('l5i274801ov19w7','057f9e825a77f33e853eb44772ca2c22b917bb12b6eddc0fc445b5d2ed97256e'),
+            ('g9b3g3hjmwwttg3','4e5f8e40e6cd166a3790391cbe4e05035ec24aae8fb01d595efe3dcee4c8c579'),
+            ('e859n1nm1tk12j8','2b08c6a17b6e051676ed6b82e0e1a5857b2ba1bb3a321a58b8240494fa2ceb0a'),
+            ('69vrzm3nox8f0v9','f3b9a97f02ba331e7543a801d5b10c88a99ba1da597d50310dc57aa081e9e2df'),
+            ('clbwjkcqqhxq6k9','8c2000d61100377dba024c28bedc66af34831ebb75a245324d457e0dd8f6f04b'),
+            ('42uy5b9abbcu4qr','5d812f7437f9db0a272cbed08de64a569fe3962a5d121ba239a4c5e84ed0827b'),
+          ]
+          ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124 Safari/537.36'
+          cj=http.cookiejar.CookieJar(); op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+          op.addheaders=[('User-Agent',ua),('Accept-Language','zh-TW,zh;q=0.9,en;q=0.7')]
+          for idx,(key,expected) in enumerate(keys,1):
+            data=urllib.parse.urlencode({'quick_key':key,'response_format':'json'}).encode()
+            req=urllib.request.Request('https://www.mediafire.com/api/1.5/file/get_info.php',data=data,headers={'User-Agent':ua})
+            with op.open(req,timeout=60) as r: info=json.load(r)['response']['file_info']
+            name=str(info['filename'])
+            req=urllib.request.Request(info['links']['normal_download'],headers={'User-Agent':ua})
+            with op.open(req,timeout=60) as r:
+              page=r.read().decode('utf-8','replace'); referer=r.geturl()
+            m=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S)
+            if not m: m=re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+            if not m: raise SystemExit('no direct link '+key)
+            dest=Path('/tmp/waei85i/parts')/name
+            h=hashlib.sha256()
+            req=urllib.request.Request(html.unescape(m.group(1)),headers={'User-Agent':ua,'Referer':referer})
+            with op.open(req,timeout=420) as r,dest.open('wb') as out:
+              while True:
+                b=r.read(1024*1024)
+                if not b: break
+                out.write(b); h.update(b)
+            if h.hexdigest()!=expected: raise SystemExit('hash mismatch '+key)
+          PY
+          cat /tmp/waei85i/parts/STONEAGE20060616.exe.00{1,2,3,4,5,6} > /tmp/waei85i/STONEAGE20060616.exe
+
+      - name: Fingerprint wrapper and peel installer layers
+        shell: bash
+        run: |
+          set -euo pipefail
+          R='research/recovered/STONEAGE-WAEI85-INSTALLER-ANALYSIS-R1.txt'
+          EXE='/tmp/waei85i/STONEAGE20060616.exe'
+          mkdir -p /tmp/waei85i/stage1 /tmp/waei85i/stage2 /tmp/waei85i/stage3
+          {
+            echo 'StoneAge Waei installer layered analysis — R1'
+            echo 'SCOPE|verified-six-part-2012-mirror|reassembled-installer|transient-bytes|derived-metadata-only'
+            echo 'SOURCE_THREAD|https://www.lab.welovesa.com/viewthread.php?action=printable&tid=1654'
+            echo "WRAPPER_BYTES|$(stat -c %s "$EXE")"
+            echo "WRAPPER_SHA256|$(sha256sum "$EXE" | awk '{print $1}')"
+            echo "WRAPPER_MD5|$(md5sum "$EXE" | awk '{print $1}')"
+            file "$EXE" | sed 's#^#WRAPPER_FILE|#'
+            echo 'WRAPPER_PE_METADATA_BEGIN'
+            objdump -p "$EXE" 2>/dev/null | grep -E '^(Time/Date|ImageBase|Subsystem|DLL Name:)' | head -n 120 || true
+            echo 'WRAPPER_PE_METADATA_END'
+            echo 'WRAPPER_VERSION_STRINGS_BEGIN'
+            strings -a -el "$EXE" 2>/dev/null | grep -Eai 'stoneage|華義|华义|wayi|waei|8\.5|8\.0|魔域|冒險|冒险|product|version|copyright|company|2006' | head -n 300 || true
+            strings -a -n 5 "$EXE" 2>/dev/null | grep -Eai 'stoneage|wayi|waei|8\.5|8\.0|2006|installshield|wise|nsis|inno|7-zip' | head -n 300 || true
+            echo 'WRAPPER_VERSION_STRINGS_END'
+            echo 'WRAPPER_7Z_LIST_BEGIN'
+            7z l -slt "$EXE" 2>&1 | head -n 500 || true
+            echo 'WRAPPER_7Z_LIST_END'
+          } > "$R"
+
+          7z x -y -o/tmp/waei85i/stage1 "$EXE" >/tmp/waei85i/stage1.log 2>&1 || true
+          PAY='/tmp/waei85i/stage1/[0]'
+          {
+            echo "STAGE1_FILES|$(find /tmp/waei85i/stage1 -type f | wc -l)"
+            if [ -f "$PAY" ]; then
+              echo "PAYLOAD_BYTES|$(stat -c %s "$PAY")"
+              echo "PAYLOAD_SHA256|$(sha256sum "$PAY" | awk '{print $1}')"
+              file "$PAY" | sed 's#^#PAYLOAD_FILE|#'
+              echo -n 'PAYLOAD_HEAD_HEX|'
+              od -An -tx1 -N64 "$PAY" | tr -d '\n ' ; echo
+              echo 'PAYLOAD_7Z_LIST_BEGIN'
+              7z l -slt "$PAY" 2>&1 | head -n 500 || true
+              echo 'PAYLOAD_7Z_LIST_END'
+            else
+              echo 'PAYLOAD_MISSING|1'
+            fi
+          } >> "$R"
+
+          STAGE2='none'
+          if [ -f "$PAY" ]; then
+            if 7z x -y -o/tmp/waei85i/stage2 "$PAY" >/tmp/waei85i/stage2.log 2>&1; then
+              STAGE2='7z'
+            elif unar -f -o /tmp/waei85i/stage2 "$PAY" >/tmp/waei85i/stage2.log 2>&1; then
+              STAGE2='unar'
+            elif cabextract -d /tmp/waei85i/stage2 "$PAY" >/tmp/waei85i/stage2.log 2>&1; then
+              STAGE2='cabextract'
+            fi
+          fi
+          echo "STAGE2_EXTRACTOR|$STAGE2" >> "$R"
+          echo "STAGE2_FILES|$(find /tmp/waei85i/stage2 -type f | wc -l)" >> "$R"
+
+          BIG="$(find /tmp/waei85i/stage2 -type f -printf '%s %p\n' | sort -nr | head -n1 | cut -d' ' -f2- || true)"
+          STAGE3='none'
+          if [ -n "$BIG" ]; then
+            SZ="$(stat -c %s "$BIG")"
+            REL_BIG="$(realpath --relative-to=/tmp/waei85i/stage2 "$BIG")"
+            echo "STAGE2_LARGEST|path=$REL_BIG|bytes=$SZ" >> "$R"
+            if [ "$SZ" -gt 100000000 ]; then
+              if 7z x -y -o/tmp/waei85i/stage3 "$BIG" >/tmp/waei85i/stage3.log 2>&1; then
+                STAGE3='7z'
+              elif unar -f -o /tmp/waei85i/stage3 "$BIG" >/tmp/waei85i/stage3.log 2>&1; then
+                STAGE3='unar'
+              fi
+            fi
+          fi
+          echo "STAGE3_EXTRACTOR|$STAGE3" >> "$R"
+          echo "STAGE3_FILES|$(find /tmp/waei85i/stage3 -type f | wc -l)" >> "$R"
+
+          python3 - "$R" <<'PY'
+          import hashlib,subprocess,sys
+          from pathlib import Path
+          report=Path(sys.argv[1])
+          roots=[]
+          for name in ('stage2','stage3'):
+            p=Path('/tmp/waei85i')/name
+            if any(x.is_file() for x in p.rglob('*')): roots.append((name,p))
+          def sha(p):
+            h=hashlib.sha256()
+            with p.open('rb') as f:
+              for b in iter(lambda:f.read(1024*1024),b''): h.update(b)
+            return h.hexdigest()
+          with report.open('a',encoding='utf-8') as out:
+            for label,root in roots:
+              rows=[]
+              for p in root.rglob('*'):
+                if p.is_file():
+                  rel=p.relative_to(root).as_posix(); rows.append((rel,p.stat().st_size,sha(p),p))
+              rows.sort(key=lambda x:x[0].lower())
+              out.write(f'{label.upper()}_TREE|files={len(rows)}|bytes={sum(x[1] for x in rows)}\n')
+              map_dat=sum(1 for x in rows if x[0].lower().endswith('.dat') and '/map/' in '/'+x[0].lower())
+              out.write(f'{label.upper()}_MAP_DAT_COUNT|{map_dat}\n')
+              for rel,size,d,p in rows:
+                low=rel.lower()
+                if low.endswith(('.exe','.dll','.msi','.cab')) or any(k in low for k in ('real_','adrn_','spr_','spradrn_','stoneage','startup','setup')):
+                  out.write(f'{label.upper()}_CORE|path={rel}|bytes={size}|sha256={d}\n')
+              for rel,size,d,p in rows:
+                if rel.lower().endswith(('.exe','.dll')):
+                  out.write(f'{label.upper()}_PE|path={rel}|bytes={size}|sha256={d}\n')
+                  try:
+                    s=subprocess.run(['strings','-a','-n','5',str(p)],capture_output=True,text=True,errors='replace',timeout=40).stdout
+                  except Exception: s=''
+                  for line in s.splitlines():
+                    if any(t in line.lower() for t in ('stoneage','waei','wayi','8.5','8.0','2006','魔域')):
+                      out.write(f'{label.upper()}_STRING|path={rel}|value={line.replace("|","%7C")[:800]}\n')
+              for rel,size,d,p in rows:
+                out.write(f'{label.upper()}_FILE|path={rel}|bytes={size}|sha256={d}\n')
+            out.write('RESULT|LAYERED_INSTALLER_ANALYSIS_COMPLETED\n')
+            out.write('EVIDENCE_BOUNDARY|A 2012 community mirror can preserve an authentic installer but cannot by itself prove operator-master provenance. Wrapper/product metadata and payload bytes must be cross-checked independently.\n')
+          PY
+
+      - name: Delete transient payloads
+        if: always()
+        run: rm -rf /tmp/waei85i
+
+      - name: Commit derived analysis only
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          R='research/recovered/STONEAGE-WAEI85-INSTALLER-ANALYSIS-R1.txt'
+          test -f "$R" || exit 0
+          cp "$R" /tmp/STONEAGE-WAEI85-INSTALLER-ANALYSIS-R1.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/STONEAGE-WAEI85-INSTALLER-ANALYSIS-R1.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: analyze Waei StoneAge installer layers'
+          git push
