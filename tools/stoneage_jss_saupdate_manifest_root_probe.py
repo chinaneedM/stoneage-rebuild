@@ -75,10 +75,15 @@ def edi_flow(insns,start_idx,image_base,strings,limit=48):
             if hit:
                 uses.append((op_index,operand_shape(ins,op,image_base,strings)))
         if uses:
+            all_shapes=tuple(
+                (n,operand_shape(ins,op,image_base,strings))
+                for n,op in enumerate(ins.operands,1)
+            )
             rows.append((
                 ins.address-image_base,
                 ins.mnemonic,
                 tuple(uses),
+                all_shapes,
             ))
         # Stop when EDI is overwritten by a new non-EDI source.
         if (
@@ -128,9 +133,13 @@ def absolute_refs_near(insns,idx,image_base,strings):
             if key in seen:
                 continue
             seen.add(key)
+            all_shapes=tuple(
+                (n,operand_shape(ins,x,image_base,strings))
+                for n,x in enumerate(ins.operands,1)
+            )
             rows.append((
                 ins.address-image_base,ins.mnemonic,op_index,va,
-                strings.get(va,""),
+                strings.get(va,""),all_shapes,
             ))
     return tuple(rows)
 
@@ -199,19 +208,21 @@ def main():
                 print(
                     f"EDI_FLOW|label={label}|xref_rva=0x{ref_rva:x}|events={len(flow)}"
                 )
-                for order,(flow_rva,mnemonic,uses) in enumerate(flow,1):
+                for order,(flow_rva,mnemonic,uses,all_shapes) in enumerate(flow,1):
                     print(
                         f"EDI_USE|label={label}|xref_rva=0x{ref_rva:x}|order={order}|"
                         f"rva=0x{flow_rva:x}|mnemonic={clean(mnemonic)}|"
-                        f"operands={';'.join(f'{n}:{shape}' for n,shape in uses)}"
+                        f"edi_operands={';'.join(f'{n}:{shape}' for n,shape in uses)}|"
+                        f"all_operands={';'.join(f'{n}:{shape}' for n,shape in all_shapes)}"
                     )
-                for rrva,mnemonic,op_index,va,text_value in absolute_refs_near(
+                for rrva,mnemonic,op_index,va,text_value,all_shapes in absolute_refs_near(
                     insns,idx,base,strings
                 ):
                     print(
                         f"NEAR_ABSOLUTE|label={label}|xref_rva=0x{ref_rva:x}|"
                         f"ins_rva=0x{rrva:x}|mnemonic={clean(mnemonic)}|operand_index={op_index}|"
-                        f"va=0x{va:x}|text={clean(text_value)}"
+                        f"va=0x{va:x}|text={clean(text_value)}|"
+                        f"all_operands={';'.join(f'{n}:{shape}' for n,shape in all_shapes)}"
                     )
 
     for root_rva in sorted(roots):
