@@ -1,0 +1,44 @@
+name: Probe archived JSS SaUpdate semantics
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_jss_saupdate_semantic_probe.py
+      - tests/test_stoneage_jss_saupdate_semantic_probe.py
+      - .github/workflows/probe-stoneage-jss-saupdate-semantics.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-jss-saupdate-semantics
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate SaUpdate semantic probe
+        run: python3 -m unittest tests.test_stoneage_jss_saupdate_semantic_probe -v
+      - name: Recover version and UI semantics transiently
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_jss_saupdate_semantic_probe \
+            > research/recovered/STONEAGE-JSS-SAUPDATE-SEMANTIC-R1.txt
+      - name: Verify no executable or binary resource was retained
+        run: |
+          set -euo pipefail
+          ! find research tools tests -type f \( -iname '*.exe' -o -iname '*.bin' -o -iname '*.cab' -o -iname '*.zip' \) -print -quit | grep -q .
+      - name: Commit derived semantic metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-JSS-SAUPDATE-SEMANTIC-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: identify archived JSS SaUpdate semantics'
+          git pull --rebase origin main
+          git push
