@@ -1581,3 +1581,36 @@ Every substantial source should record:
 - Derived reports:
   - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-PHYSICAL-R1.txt`
   - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-DISC-PHOTO-R1.txt`.
+
+
+### SRC-TW-2026-RUTEN-SA25-PHYSICAL-01
+
+- Retrieval/research date: **2026-09-25**
+- Surface: Ruten public search plus public product/detail JSON metadata and public seller photographs.
+- Source type: modern marketplace survival evidence; **not** a contemporaneous 2002 source, **not** a disc read, and **not** clean-client byte provenance.
+- Concrete surviving 2.5 carrier controls:
+  - product `22632305238624`: title begins `石器時代2.5精靈王傳說新手報到包，原包裝盒完整。遊戲光碟保...`; seller `ki7yey`; public metadata exposes 9 full-size photographs (18 URLs including thumbnails); raw post_time `1785842525` = **2026-08-04 11:22:05 UTC**;
+  - product `21926883918096`: `遊戲光碟–石器時代2.5版 精靈王傳說`; seller `lein0711`; public full-size image `https://gcs.rimg.com.tw/g2/0/41/10/21926883918096_419.JPG`; raw post_time `1561718548` = **2019-06-28 10:42:28 UTC**;
+  - product `22242541948520`: `遊戲光碟–石器時代2.5版 精靈王傳說 PC GAME 電腦遊戲`; seller `alixson7`; public full-size image `https://gcs.rimg.com.tw/g2/3/0e/68/22242541948520_496.JPG`; raw post_time `1666119492` = **2022-10-18 18:58:12 UTC**.
+- Public metadata probe result:
+  - all three detail endpoints returned rows;
+  - **22** image URLs were resolved across full-size images and thumbnails;
+  - all tested image HEAD requests returned HTTP 200;
+  - `COUNT|errors|0`.
+- Cross-control with the corrected Yan-Nian exact photograph:
+  - boxed product `22632305238624`, full-size image index 3, `https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_322.jpg`, is the strongest tested Ruten local-feature comparison at **112 RANSAC inliers / 0.1181 inlier ratio**;
+  - treat this as a visual-priority signal only. It does **not** establish same disc, same pressing, same mastering, same package origin, or byte equality.
+- Current indexed-web control:
+  - Ruten search results still expose the boxed 2.5 new-user package and loose 2.5 精靈王傳說 discs as of the research date.
+- Preservation/public-byte search:
+  - exact Yan-Nian photo basename/hash, Ruten product IDs, product titles, and exact StoneAge 2.5/精靈王傳說 terms were searched on general indexes;
+  - targeted `archive.org/details` and DiscMaster queries for exact StoneAge 2.5 / 精靈王傳說 identities returned no indexed hit in this pass.
+- Evidence boundary:
+  - photographs and seller metadata prove only a present-day survival lead;
+  - no filesystem listing, ISO/raw image, optical-disc checksum, volume label, matrix/IFPI, installer hash, or clean-client bytes were exposed.
+- Operational consequence:
+  - these three product IDs and their exact public image URLs are visual identity keys for future preservation/dump discovery;
+  - do **not** require purchase, seller contact, shipping, or manual media dumping by the user.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-RUTEN-PHYSICAL-R1.txt`
+  - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-DISC-PHOTO-R1.txt`.
