@@ -159,7 +159,11 @@ def main():
             if error:
                 errors.append((f"search:{label}",error[0],error[1]))
                 continue
-            print(f"QUERY|label={clean(label)}|results={len(rows)}|url={clean(url)}")
+            query_sha=hashlib.sha256(query.encode("utf-8")).hexdigest()
+            print(
+                f"QUERY|label={clean(label)}|results={len(rows)}|"
+                f"query_sha256={query_sha}|endpoint=archive.org/advancedsearch"
+            )
             for doc in rows:
                 identifier=str(doc.get("identifier","")).strip()
                 if identifier:
