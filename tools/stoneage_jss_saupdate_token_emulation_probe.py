@@ -12,7 +12,7 @@ import hashlib
 import struct
 
 from unicorn import Uc, UC_ARCH_X86, UC_MODE_32, UC_HOOK_CODE
-from unicorn.x86_const import UC_X86_REG_ESP, UC_X86_REG_EAX
+from unicorn.x86_const import UC_X86_REG_ESP, UC_X86_REG_EAX, UC_X86_REG_EIP
 
 from tools.stoneage_jss_launcher_archive_probe import ORIGINAL, get_bounded, replay_url
 from tools.stoneage_jss_launcher_deep_probe import KNOWN_SHA256, TIMESTAMP, parse_pe_layout
@@ -101,11 +101,14 @@ def emulate_case(data, layout, image_base, text, field_index, max_len=0x400):
     uc.hook_add(UC_HOOK_CODE, hook_code)
 
     uc.emu_start(image_base + FUNC_RVA, SENTINEL, count=MAX_INSNS)
+    eip = uc.reg_read(UC_X86_REG_EIP) & 0xFFFFFFFF
     out = c_string(uc.mem_read(dest, 0x400))
     eax = uc.reg_read(UC_X86_REG_EAX) & 0xFFFFFFFF
     return {
         "out": out.decode("ascii", "replace"),
         "eax": eax,
+        "eip": eip,
+        "returned": eip == SENTINEL,
         "instructions": counter["n"],
     }
 
@@ -145,11 +148,19 @@ def main():
                     f"kind={type(exc).__name__}|message={clean(exc)}"
                 )
                 continue
+            if not result["returned"]:
+                failures += 1
+                print(
+                    f"CASE_BOUNDED|case={case_no}|field={field}|input={clean(text)}|"
+                    f"eip=0x{result['eip']:x}|eax=0x{result['eax']:x}|"
+                    f"instructions={result['instructions']}|returned=0"
+                )
+                continue
             successes += 1
             print(
                 f"CASE|case={case_no}|field={field}|input={clean(text)}|"
                 f"output={clean(result['out'])}|eax=0x{result['eax']:x}|"
-                f"instructions={result['instructions']}"
+                f"instructions={result['instructions']}|returned=1"
             )
 
     print(
