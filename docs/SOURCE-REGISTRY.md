@@ -1559,6 +1559,17 @@ Every substantial source should record:
 - Name-normalization warning: preserve each source's literal form (`益壽` / `益寿` / `益兽`); spelling variation is not byte provenance.
 - Public-byte search status:
   - exact package/title/article-token queries combined with ISO / 光盘镜像 / 光碟 / 客户端 / 下载 returned collector/retrospective material but no verifiable ISO, raw disc image, complete file tree or hash tied to this exact specimen in this pass.
+- Corrected exact article-body disc-photo recovery:
+  - the initial broad-context forum probe produced a false association with an `延伸閱讀` thumbnail and is **superseded**;
+  - R2 restricts extraction to the HTML interval between `2.5時期的光碟` and `2.5版本的說明書`, preferring the Bahamut creator page with forum fallback;
+  - both pages resolve the same exact source-labelled photo: `https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG`;
+  - recovered photograph: **160,151 bytes**, **1128×774**, SHA-256 `385071cb52f3e9af540823ff8a1833cfba4dad04ee8ab2ee9beebfa67dadea6a`, dHash `f070e0606068a1c0`;
+  - this checksum identifies the **photograph body only**, not the CD/ISO/client bytes.
+- Cross-source visual controls:
+  - best tested Ruten comparison: carrier `22632305238624` image 3, **112 RANSAC inliers / 0.1181 inlier ratio**;
+  - independent SMZDM article-order 2.5 candidate: **10 RANSAC inliers / 0.0111 inlier ratio**;
+  - these metrics rank visual follow-up only and do not prove disc identity, pressing/mastering identity, or byte equality.
+- Provenance hygiene: do not reuse the superseded extension-thumbnail URL as the 延年益壽 2.5 disc image.
 - Confidence:
   - **A for current-page title/author/timestamps and literal collector labels**;
   - **B for physical-carrier classification when cross-read with contemporaneous 2.5 product material**;
@@ -1567,4 +1578,6 @@ Every substantial source should record:
   - treat this article/specimen as a high-value surviving-physical-carrier identity control;
   - prioritize any future public read/listing/dump that can connect this carrier to a disc file tree and cryptographic hashes;
   - do not infer field-map dates or clean-client bytes from the photographs alone.
-- Derived report: `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-PHYSICAL-R1.txt`.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-PHYSICAL-R1.txt`
+  - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-DISC-PHOTO-R1.txt`.
