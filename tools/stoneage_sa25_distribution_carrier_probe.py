@@ -146,8 +146,9 @@ def strict_ia_candidate(label,row):
     term=carrier_terms.get(label)
     if not term:
         return False
+    carrier_blob=" ".join(str(row.get(k) or "") for k in ("title","identifier"))
     year=str(row.get("year") or row.get("date") or "")
-    return term.lower() in blob.lower() and year.startswith("2002")
+    return term.lower() in carrier_blob.lower() and year.startswith("2002")
 
 def main():
     print("StoneAge 2.5 contemporaneous distribution carrier probe — R1")
