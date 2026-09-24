@@ -1,5 +1,5 @@
 import json, unittest, urllib.parse
-from tools.stoneage_waei_sa25_upgrade_page_probe import TARGETS,extract,cdx_url,parse_cdx
+from tools.stoneage_waei_sa25_upgrade_page_probe import TARGETS,extract,structural_refs,cdx_url,parse_cdx
 class T(unittest.TestCase):
     def test_target(self):
         self.assertTrue(all(x.lower().endswith("/stoneage2/tyro/upgrade.asp") for x in TARGETS))
@@ -14,6 +14,19 @@ class T(unittest.TestCase):
         source=Path("tools/stoneage_waei_sa25_upgrade_page_probe.py").read_text()
         self.assertIn("AVAIL_REPLAY_SEED|",source)
         self.assertIn('"availability"',source)
+
+    def test_structural_refs_filters_self_and_finds_script_payload(self):
+        base=TARGETS[0]
+        b=(
+            '<a href="#">self</a>'
+            '<form action="/download/get.asp"><input value="x"></form>'
+            '<script>window.open("http://files.example/sa25patch.exe")</script>'
+        ).encode()
+        refs=structural_refs(b,base)
+        urls={absolute for _,absolute in refs}
+        self.assertIn("http://www.waei.com.cn/download/get.asp",urls)
+        self.assertIn("http://files.example/sa25patch.exe",urls)
+        self.assertNotIn(base,urls)
 
     def test_extract(self):
         b='<body>石器时代2.5 完整升级版580兆 <a href="http://x/sa25.exe">下载</a></body>'.encode("gb18030")
