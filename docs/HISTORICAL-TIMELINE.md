@@ -183,6 +183,16 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 **RESEARCH CONSEQUENCE:** The later Geocities/PIXNET copies are no longer the earliest evidence for this token. Recovery should now use the dated 2003 source page and the 2002 404 URL-index traces to search for alternate mirrors/host mappings or independent copies, while avoiding any claim that the 8.25 MB updater or 575/580 MB full package has been identified.
 
 
+
+### 2001-12-27 / 2002-02-01 — `sa25up.zip` IP host identified as 21CN download infrastructure
+
+**FACT / dated archived host pages:** The historical IP `202.104.32.168`, later used by the surviving `/file/game/maoxian/sa25up.zip` URL, replays as the **21CN.COM download site**. The 2001-12-27 root is titled `21CN.COM - 下载`; 2002-02-01 software-detail pages expose `download.21cn.com`, `粤ICP证010001`, and `世纪龙信息网络有限责任公司版权所有`. [`SRC-CN-2001-2002-21CN-DOWNLOAD-HOST-01`]
+
+**EVIDENCE CONSEQUENCE:** The payload host should be classified as third-party 21CN download infrastructure, not as a demonstrated Beijing-Waei host. This does not establish whether the mirrored StoneAge file was official, unmodified, complete, or even successfully downloadable at the surviving archive timestamps.
+
+**RECOVERY CONSEQUENCE:** The useful next surface is 21CN's own archived `list.php?id=...` / `downit.php` software catalogue. A StoneAge-native detail record could recover publication date, file size, description, and mirror topology even when the payload bytes themselves are absent.
+
+
 ### 2003-06-23 — first recoverable full-map snapshot
 
 **FACT / dated preserved binary:** The StoneAge map mirror `http://www.wuxitianlong.com/sa/map.exe`, independently exposed by contemporaneous Sina StoneAge download-hub material, has a replayable Wayback capture timestamped **2003-06-23 23:44:51 UTC**. The recovered package is hash-locked as SHA-256 `372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e`. [`SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-01`]
