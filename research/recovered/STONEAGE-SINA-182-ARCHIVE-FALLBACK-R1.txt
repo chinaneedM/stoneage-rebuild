@@ -1,0 +1,28 @@
+StoneAge Sina-labelled 1.82 archive fallback probe — R1
+SCOPE|TARGET-B|Wayback-Availability+Memento-TimeMap+Arquivo-CDX|metadata-only|no-client-payload
+KEY_DATES|20010110,20010123,20010601,20010908,20020101,20020420,20030101,20030403,20030601
+AVAIL|label=ftp-original|date=20010110|status=200|hit=0|timestamp=|capture=
+AVAIL|label=ftp-original|date=20010123|status=200|hit=0|timestamp=|capture=
+AVAIL|label=ftp-original|date=20010601|status=200|hit=0|timestamp=|capture=
+AVAIL|label=ftp-original|date=20010908|status=200|hit=0|timestamp=|capture=
+AVAIL|label=ftp-original|date=20020101|status=200|hit=0|timestamp=|capture=
+AVAIL|label=ftp-original|date=20020420|status=200|hit=0|timestamp=|capture=
+AVAIL|label=ftp-original|date=20030101|status=200|hit=0|timestamp=|capture=
+AVAIL|label=ftp-original|date=20030403|status=200|hit=0|timestamp=|capture=
+AVAIL|label=ftp-original|date=20030601|status=200|hit=0|timestamp=|capture=
+TIMEMAP|label=ftp-original|status=200|rows=0|final=https://web.archive.org/web/timemap/link/ftp://211.90.133.5/dowload/sa/sa1.82.exe
+ARQUIVO|label=ftp-original|status=200|rows=0|final=https://arquivo.pt/wayback/cdx?url=ftp%3A%2F%2F211.90.133.5%2Fdowload%2Fsa%2Fsa1.82.exe&output=json&filter=statuscode%3A200&collapse=digest
+AVAIL|label=http-equivalent|date=20010110|status=200|hit=0|timestamp=|capture=
+AVAIL|label=http-equivalent|date=20010123|status=200|hit=0|timestamp=|capture=
+AVAIL|label=http-equivalent|date=20010601|status=200|hit=0|timestamp=|capture=
+AVAIL|label=http-equivalent|date=20010908|status=200|hit=0|timestamp=|capture=
+AVAIL|label=http-equivalent|date=20020101|status=200|hit=0|timestamp=|capture=
+AVAIL|label=http-equivalent|date=20020420|status=200|hit=0|timestamp=|capture=
+AVAIL|label=http-equivalent|date=20030101|status=200|hit=0|timestamp=|capture=
+AVAIL|label=http-equivalent|date=20030403|status=200|hit=0|timestamp=|capture=
+AVAIL|label=http-equivalent|date=20030601|status=200|hit=0|timestamp=|capture=
+ERROR|scope=timemap:http-equivalent|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=arquivo:http-equivalent|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
+COUNT|raw_surface_hits|0
+COUNT|errors|2
+RESOLUTION|PARTIAL_NO_HIT|fallback archive surfaces incomplete
