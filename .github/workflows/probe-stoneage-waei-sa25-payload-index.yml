@@ -1,0 +1,49 @@
+name: Probe Beijing Waei StoneAge2 payload index
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_sa25_payload_index_probe.py
+      - tests/test_stoneage_waei_sa25_payload_index_probe.py
+      - .github/workflows/probe-stoneage-waei-sa25-payload-index.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-sa25-payload-index
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate payload-index probe
+        run: python3 -m unittest tests.test_stoneage_waei_sa25_payload_index_probe -v
+      - name: Probe official StoneAge2 CDX metadata
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_sa25_payload_index_probe \
+            > research/recovered/STONEAGE-WAEI-SA25-PAYLOAD-INDEX-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-WAEI-SA25-PAYLOAD-INDEX-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe official StoneAge2 payload index'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_waei_sa25_payload_index_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe official StoneAge2 payload index'
+          fi
+          git push
