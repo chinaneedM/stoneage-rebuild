@@ -1,0 +1,180 @@
+name: Probe public StoneAge 2.5 client candidate
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/probe-stoneage-sa25-public-candidate.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-public-candidate
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install archive and PE inspection tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq unar 7zip file binutils
+
+      - name: Download, extract and fingerprint candidate
+        shell: bash
+        run: |
+          set -uo pipefail
+          URL='https://99ds.com/downloads/windows/Stoneage2.5-Windows.rar'
+          PAGE='https://99ds.com/'
+          WORK='/tmp/sa25-public'
+          OUT="$WORK/out"
+          REPORT='research/recovered/STONEAGE-SA25-PUBLIC-CANDIDATE-R1.txt'
+          mkdir -p "$OUT" research/recovered
+          {
+            echo 'StoneAge 2.5 public client candidate fingerprint — R1'
+            echo 'SCOPE|modern-public-download-candidate|transient-payload|derived-metadata-only'
+            echo "SOURCE_PAGE|$PAGE"
+            echo "SOURCE_URL|$URL"
+            echo "SOURCE_CLAIM|site describes its 2.5 client as original/unmodified; claim is not accepted as provenance"
+          } > "$REPORT"
+
+          set +e
+          curl -L --fail --retry 3 --retry-delay 2 --connect-timeout 20 --max-time 1200 \
+            -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36' \
+            -D "$WORK/headers.txt" \
+            -o "$WORK/candidate.rar" "$URL"
+          RC=$?
+          set -e
+          {
+            echo "CURL_EXIT|$RC"
+            echo 'HTTP_HEADERS_SANITIZED_BEGIN'
+            grep -Eai '^(HTTP/|content-type:|content-length:|last-modified:|etag:|content-disposition:|location:)' "$WORK/headers.txt" 2>/dev/null || true
+            echo 'HTTP_HEADERS_SANITIZED_END'
+          } >> "$REPORT"
+
+          if [ "$RC" -ne 0 ] || [ ! -s "$WORK/candidate.rar" ]; then
+            echo 'RESULT|DOWNLOAD_FAILED' >> "$REPORT"
+          else
+            {
+              echo "ARCHIVE_BYTES|$(stat -c %s "$WORK/candidate.rar")"
+              echo "ARCHIVE_SHA256|$(sha256sum "$WORK/candidate.rar" | awk '{print $1}')"
+              echo "ARCHIVE_MD5|$(md5sum "$WORK/candidate.rar" | awk '{print $1}')"
+              file "$WORK/candidate.rar" | sed 's#^#ARCHIVE_FILE|#'
+            } >> "$REPORT"
+
+            EXTRACTOR='none'
+            if unar -f -o "$OUT" "$WORK/candidate.rar" >"$WORK/extract.log" 2>&1; then
+              EXTRACTOR='unar'
+            else
+              rm -rf "$OUT" && mkdir -p "$OUT"
+              if 7z x -y -o"$OUT" "$WORK/candidate.rar" >"$WORK/extract.log" 2>&1; then
+                EXTRACTOR='7z'
+              fi
+            fi
+            echo "EXTRACTOR|$EXTRACTOR" >> "$REPORT"
+
+            if [ "$EXTRACTOR" = 'none' ]; then
+              echo 'EXTRACT_LOG_BEGIN' >> "$REPORT"
+              tail -n 120 "$WORK/extract.log" >> "$REPORT" || true
+              echo 'EXTRACT_LOG_END' >> "$REPORT"
+              echo 'RESULT|DOWNLOAD_SUCCEEDED_EXTRACTION_FAILED' >> "$REPORT"
+            else
+              python3 - "$OUT" "$WORK/candidate.rar" \
+                research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt \
+                "$URL" >> "$REPORT" <<'PY'
+          import hashlib, re, sys
+          from pathlib import Path
+
+          root=Path(sys.argv[1]); archive=Path(sys.argv[2]); bridge=Path(sys.argv[3])
+          sha_re=re.compile(r'^([0-9a-fA-F]{64})\s+(.+)$')
+          marker='/SA2.5主程式/stoneage2.5/'
+
+          def hfile(p):
+              h=hashlib.sha256()
+              with p.open('rb') as f:
+                  for b in iter(lambda:f.read(1024*1024),b''):
+                      h.update(b)
+              return h.hexdigest()
+
+          bridge_by_rel={}; bridge_hashes=set()
+          for line in bridge.read_text(encoding='utf-8',errors='replace').splitlines():
+              m=sha_re.match(line.strip())
+              if not m: continue
+              d,p=m.group(1).lower(),m.group(2).replace('\\','/')
+              bridge_hashes.add(d)
+              if marker in p: bridge_by_rel[p.split(marker,1)[1].lower()]=d
+
+          rows=[]; signals=[]; exes=[]; cores=[]
+          dat_count=dat_match=exact_count=exact_bytes=aligned_count=aligned_bytes=total_bytes=0
+          signal_tokens=('sach','脚本','script','登入器','登录器','login','launcher','私服','server','gmsv','saac','gmtool','gm工具','外挂','外掛','patcher')
+          core_names={'stoneage.exe','startup.exe','sa_2903.exe','sa_2903网通.exe','real_15.bin','adrn_15.bin','spr_4.bin','spradrn_5.bin'}
+
+          for p in sorted((x for x in root.rglob('*') if x.is_file()), key=lambda x:str(x.relative_to(root)).lower()):
+              rel=str(p.relative_to(root)).replace('\\','/'); low=rel.lower()
+              size=p.stat().st_size; d=hfile(p); total_bytes += size
+              hm=d in bridge_hashes; al=bridge_by_rel.get(low)==d
+              if hm: exact_count += 1; exact_bytes += size
+              if al: aligned_count += 1; aligned_bytes += size
+              if low.endswith('.dat') and ('/map/' in '/'+low or low.startswith('map/')):
+                  dat_count += 1
+                  if hm: dat_match += 1
+              if p.name.lower() in core_names: cores.append((rel,size,d,hm,al))
+              if low.endswith(('.exe','.dll')): exes.append((rel,size,d,hm,al))
+              toks=[t for t in signal_tokens if t in low]
+              if toks: signals.append((rel,','.join(toks)))
+              rows.append((rel,size,d,hm,al))
+
+          print(f'ARCHIVE|bytes={archive.stat().st_size}|sha256={hfile(archive)}')
+          print(f'EXTRACTED|files={len(rows)}|bytes={total_bytes}')
+          print(f'BRIDGE_COMPARE|bridge_path_records={len(bridge_by_rel)}|bridge_hashes={len(bridge_hashes)}|exact_hash_files={exact_count}|exact_hash_bytes={exact_bytes}|path_aligned_files={aligned_count}|path_aligned_bytes={aligned_bytes}')
+          print(f'MAP_DAT_COMPARE|candidate_dat={dat_count}|hash_matches_in_bridge={dat_match}')
+          print('CORE_FILES|path|bytes|sha256|hash_seen_in_bridge|same_relative_path_and_hash')
+          for r in cores: print('CORE|%s|%s|%s|%d|%d' % (r[0],r[1],r[2],r[3],r[4]))
+          print('EXECUTABLES|path|bytes|sha256|hash_seen_in_bridge|same_relative_path_and_hash')
+          for r in exes: print('EXE|%s|%s|%s|%d|%d' % (r[0],r[1],r[2],r[3],r[4]))
+          print('CONTAMINATION_SIGNALS|path|matched_tokens')
+          for rel,toks in signals[:500]: print(f'SIGNAL|{rel}|{toks}')
+          if len(signals)>500: print(f'SIGNAL_TRUNCATED|shown=500|total={len(signals)}')
+          print('FILE_TREE|path|bytes|sha256|hash_seen_in_bridge|same_relative_path_and_hash')
+          for r in rows: print('FILE|%s|%s|%s|%d|%d' % (r[0],r[1],r[2],r[3],r[4]))
+          if not rows: resolution='EMPTY_EXTRACTION'
+          elif exact_count==len(rows): resolution='BYTE_SUBSET_OF_KNOWN_BRIDGE'
+          elif aligned_count>=100 or (dat_count and dat_match/dat_count>=0.8): resolution='STRONGLY_RELATED_TO_KNOWN_BRIDGE'
+          elif exact_count: resolution='PARTIAL_BYTE_RELATION_TO_KNOWN_BRIDGE'
+          else: resolution='NO_BYTE_RELATION_TO_KNOWN_BRIDGE_DETECTED'
+          print(f'RESOLUTION|{resolution}')
+          print("EVIDENCE_BOUNDARY|Modern-site 'original/unmodified' wording is a source claim only; clean-client provenance requires independent operator-era or physical-media attribution.")
+          PY
+
+              {
+                echo 'PE_METADATA_BEGIN'
+                while IFS= read -r -d '' f; do
+                  rel="$(realpath --relative-to="$OUT" "$f")"
+                  echo "PE|$rel"
+                  file "$f" || true
+                  objdump -p "$f" 2>/dev/null | grep -E '^(Time/Date|ImageBase|Subsystem|DLL Name:)' | head -n 80 || true
+                  strings -a -n 5 "$f" 2>/dev/null | grep -Eai 'https?://|www\.|ftp\.|[0-9]{1,3}(\.[0-9]{1,3}){3}|wgs|waei|login|launcher|server|stoneage|sach|cary|12345678' | head -n 100 || true
+                done < <(find "$OUT" -type f \( -iname '*.exe' -o -iname '*.dll' \) -print0)
+                echo 'PE_METADATA_END'
+                echo 'RESULT|DOWNLOAD_EXTRACTION_FINGERPRINT_SUCCEEDED'
+              } >> "$REPORT"
+            fi
+          fi
+
+      - name: Delete transient proprietary payloads
+        if: always()
+        run: rm -rf /tmp/sa25-public
+
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-SA25-PUBLIC-CANDIDATE-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: fingerprint public StoneAge 2.5 client candidate'
+          git pull --rebase origin main
+          git push
