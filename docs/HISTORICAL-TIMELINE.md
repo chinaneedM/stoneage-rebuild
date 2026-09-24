@@ -154,15 +154,26 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 
 ## 2003 — Mainland historical map-cache bridge
 
-### 2003-06-23 — recoverable full-map package
+### 2003-06-23 — first recoverable full-map snapshot
 
 **FACT / dated preserved binary:** The StoneAge map mirror `http://www.wuxitianlong.com/sa/map.exe`, independently exposed by contemporaneous Sina StoneAge download-hub material, has a replayable Wayback capture timestamped **2003-06-23 23:44:51 UTC**. The recovered package is hash-locked as SHA-256 `372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e`. [`SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-01`]
 
-**FACT / byte comparison:** Its 1,008 numeric DAT map IDs exactly match the numeric-ID set in the preserved mixed 2.5 bridge corpus; **993 files are byte-identical and 15 differ**, with no numeric IDs unique to either corpus. This establishes strong byte-level continuity between the dated 2003 map package and most of the later-preserved map directory. [`SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-01`]
+**FACT / map corpus:** It contains 1,008 numeric DAT IDs, 995 strict three-plane-valid maps and 13 parser-invalid numeric DATs. The same 1,008 IDs exist in the separately preserved 2.5 bridge corpus; 993 are byte-identical and 15 differ. Direct Taiwan-v1 ADRN necessary-condition classification yields 773 compatible / 222 incompatible among the 995 parseable maps. [`SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-01`]
 
-**IMPORTANT LIMIT:** This is a dated Mainland descendant corpus, not Taiwan-v1 evidence. Direct ADRN-profile classification leaves 773/995 parseable maps resource-compatible with Taiwan v1, but compatibility alone cannot establish v1 membership, layout identity, or event-plane identity.
+### 2003-12-10 — second recoverable full-map snapshot
 
-**RESEARCH CONSEQUENCE:** The 2003 package replaces the mixed 2.5 map directory as the preferred dated descendant map-diff anchor. Taiwan-v1 field-map reconstruction remains blocked on a pre-/near-v1 cache, installed-tree backup, server capture, or other provenance-preserving earlier branch.
+**FACT / dated preserved binary:** A second Wayback capture of the same mirror is byte-recoverable at **2003-12-10 09:24:26 UTC**, SHA-256 `5f7f58e0d26d596e926a7d551d7c24e8a9a27824d5bdc53be3955b19b0e13abc`. It contains 1,011 numeric DAT maps, including three IDs absent from June: `8008`, `8100`, `8101`. Of the 1,008 common IDs, 698 are byte-identical and 310 differ. [`SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-02`]
+
+**FACT / file-metadata stratum:** The archive preserves per-file modification times rather than one flattened package timestamp. A large batch of **337 maps** is stamped `2003-10-20`, including maps 1000, 2000, 3000 and 4000. However, some entries have dates as early as 1997; therefore these mtimes are useful internal stratification metadata but are **not** treated as literal StoneAge release/creation dates. [`SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-02`]
+
+### Three-state lineage correction
+
+**FACT / byte-lineage comparison:** Across the 1,008 IDs common to June 2003, December 2003 and the separately preserved 2.5 map directory, the byte lineage is: **698 stable in all three; 295 June=preserved-2.5 with December alone divergent; 15 three-distinct**. No common map falls into a simple “June=December, then changed only in preserved 2.5” category. [`SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-01`, `SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-02`]
+
+**FACT / resource-compatibility patterns:** Taiwan-v1 necessary-condition states over those same common IDs are **768 C→C→C, 4 C→C→I, 1 C→I→C, 222 I→I→I, 13 X→X→X**. The C→C→I maps are 1000/2000/3000/4000; map 60306 is C→I→C and the December state alone references absent-v1 resource ID `10940`.
+
+**RESEARCH CONSEQUENCE:** The dated December package and the separately preserved 2.5 map directory are not placed on one assumed linear successor chain. They are treated as distinct descendant states/branches whose byte relationships can constrain archaeology. Taiwan-v1 field-map reconstruction still requires a pre-/near-v1 provenance anchor; neither old mtimes nor descendant resource compatibility can substitute for it.
+
 
 ## 2001–2003 — Korean 1.74 lineage control
 
