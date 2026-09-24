@@ -33,9 +33,11 @@ def index_numeric_maps(root:Path):
             cache=parse_stoneage_dat_map_cache(raw)
             valid=True
             dims=(cache.width,cache.height)
+            planes=(cache.tile,cache.parts,cache.event)
         except Exception:
             valid=False
             dims=None
+            planes=None
         row={
             "id":map_id,
             "path":str(path.relative_to(root)).replace("\\","/"),
@@ -43,6 +45,7 @@ def index_numeric_maps(root:Path):
             "sha256":sha,
             "valid":valid,
             "dims":dims,
+            "planes":planes,
         }
         if map_id in rows:
             duplicates.append((map_id,rows[map_id],row))
@@ -95,10 +98,20 @@ def emit(a_root:Path,b_root:Path):
     if result["different"]:
         for mid in result["different"]:
             ar=a[mid]; br=b[mid]
+            plane_text=""
+            if ar["planes"] is not None and br["planes"] is not None and ar["dims"]==br["dims"]:
+                names=("tile","parts","event")
+                pieces=[]
+                total=0
+                for name,ap,bp in zip(names,ar["planes"],br["planes"]):
+                    diff=sum(x!=y for x,y in zip(ap,bp))
+                    total+=diff
+                    pieces.append(f"{name}_diff={diff}")
+                plane_text="|"+("|".join(pieces))+f"|cell_value_diffs={total}"
             print(
                 f"DIFF|id={mid}|a_bytes={ar['bytes']}|b_bytes={br['bytes']}|"
                 f"a_sha256={ar['sha256']}|b_sha256={br['sha256']}|"
-                f"a_dims={ar['dims']}|b_dims={br['dims']}"
+                f"a_dims={ar['dims']}|b_dims={br['dims']}{plane_text}"
             )
     if result["only_a"]:
         print("ONLY_HISTORICAL|ids="+",".join(map(str,result["only_a"])))
