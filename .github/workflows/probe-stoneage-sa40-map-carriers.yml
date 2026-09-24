@@ -1,0 +1,52 @@
+name: Probe StoneAge 4.0 map preservation carriers
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa40_map_carrier_probe.py
+      - tests/test_stoneage_sa40_map_carrier_probe.py
+      - .github/workflows/probe-stoneage-sa40-map-carriers.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa40-map-carriers
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate preservation-carrier probe
+        run: python3 -m unittest tests.test_stoneage_sa40_map_carrier_probe -v
+
+      - name: Probe public preservation indexes
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa40_map_carrier_probe \
+            > research/recovered/STONEAGE-SA40-MAP-CARRIER-R1.txt
+
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-SA40-MAP-CARRIER-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe 4.0 map preservation carriers'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_sa40_map_carrier_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe 4.0 map preservation carriers'
+          fi
+          git push
