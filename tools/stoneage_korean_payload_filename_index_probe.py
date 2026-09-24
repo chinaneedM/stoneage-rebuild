@@ -65,7 +65,8 @@ def parse_size(v):
 
 def has_context(blob):
     n = norm(blob)
-    return any(norm(x) in n for x in CONTEXT)
+    tokens = tuple(t for x in CONTEXT if (t := norm(x)))
+    return any(t in n for t in tokens)
 
 
 def strict_candidate(target_name, mode, *, filename="", size=None, context=""):
