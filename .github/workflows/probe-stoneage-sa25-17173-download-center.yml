@@ -1,0 +1,194 @@
+name: Probe StoneAge 2.5 17173 download center
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/probe-stoneage-sa25-17173-download-center.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-17173-download-center
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay historical 17173 download center
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 - > research/recovered/STONEAGE-SA25-17173-DOWNLOAD-CENTER-R1.txt <<'PY'
+          import concurrent.futures,hashlib,html,json,re,urllib.parse,urllib.request
+
+          UA='stoneage-rebuild-archaeology/1.0'
+          AV='https://archive.org/wayback/available'
+          HOST='stoneage.17173.com'
+          SEEDS=('/xiazai/xiazai.htm','/xiazai/index.htm','/xiazai/')
+          DATES=('20020201','20020801','20030101','20040101','20041201')
+          EXT=('.exe','.zip','.rar','.cab','.msi','.001','.002','.iso','.bin','.cue')
+          NOISE=('javascript:','mailto:','comment.cgi','/comment/')
+
+          def clean(v,n=2200):
+              return ' '.join(str(v or '').split()).replace('|','%7C')[:n]
+
+          def fetch(url,timeout=12):
+              req=urllib.request.Request(url,headers={'User-Agent':UA,'Accept':'application/json,text/html,*/*'})
+              with urllib.request.urlopen(req,timeout=timeout) as r:
+                  b=r.read()
+                  return int(getattr(r,'status',r.getcode())),r.geturl(),b
+
+          def decode(b):
+              h=b[:16384].lower()
+              m=re.search(br"""charset\s*=\s*["']?\s*([a-z0-9._-]+)""",h)
+              declared=m.group(1).decode('ascii','ignore') if m else ''
+              aliases={'gb2312':'gb18030','gbk':'gb18030','utf8':'utf-8','utf-8':'utf-8','big5':'big5'}
+              encs=[]
+              if declared: encs.append(aliases.get(declared,declared))
+              for e in ('gb18030','utf-8','big5'):
+                  if e not in encs: encs.append(e)
+              best=None
+              for e in encs:
+                  try:s=b.decode(e,'replace')
+                  except:continue
+                  score=s.count('\ufffd')
+                  if best is None or score<best[0]: best=(score,e,s)
+              return (best[2],best[1]) if best else (b.decode('latin1','replace'),'latin1')
+
+          def available(path,date):
+              original='http://'+HOST+path
+              url=AV+'?'+urllib.parse.urlencode({'url':original,'timestamp':date})
+              try:
+                  st,final,b=fetch(url)
+                  c=(json.loads(b.decode('utf-8','replace')).get('archived_snapshots') or {}).get('closest') or {}
+                  return path,date,st,b,c,None
+              except Exception as e:
+                  return path,date,None,b'',{},(type(e).__name__,str(e))
+
+          def classify(base,href):
+              absolute=urllib.parse.urljoin(base,html.unescape(href).strip())
+              low=urllib.parse.unquote_plus(absolute).lower()
+              if any(x in low for x in NOISE): return absolute,'noise'
+              p=urllib.parse.urlsplit(low)
+              if any(p.path.endswith(e) for e in EXT): return absolute,'payload'
+              if p.netloc.endswith('17173.com') and ('/xiazai/' in p.path or '/download/' in p.path):
+                  return absolute,'download_route'
+              if p.netloc and not p.netloc.endswith('17173.com') and p.scheme in ('http','https','ftp'):
+                  if any(k in p.netloc+p.path for k in ('down','download','ftp','soft','file','patch','update','client','stoneage','sa')):
+                      return absolute,'external_candidate'
+                  return absolute,'external'
+              return absolute,'other'
+
+          print('StoneAge 2.5 17173 historical download-center probe — R1')
+          print('SCOPE|17173-/xiazai/|2002-2004-Availability+replay|one-hop-download-topology|no-payload-download')
+          rows=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+              rows=[f.result() for f in concurrent.futures.as_completed([ex.submit(available,p,d) for p in SEEDS for d in DATES])]
+          captures={}
+          errors=[]
+          for path,date,st,b,c,err in sorted(rows):
+              if err:
+                  errors.append((path+':'+date,*err))
+                  print(f'AVAIL_ERROR|path={path}|requested={date}|kind={clean(err[0])}|message={clean(err[1])}')
+                  continue
+              ts=str(c.get('timestamp') or ''); url=str(c.get('url') or ''); status=str(c.get('status') or '')
+              bounded=bool(ts and ts[:4] in ('2002','2003','2004'))
+              print(f'AVAIL|path={path}|requested={date}|available={int(bool(c.get("available")))}|capture_ts={ts}|capture_status={status}|bounded={int(bounded)}|capture_url={clean(url)}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}')
+              if c.get('available') and status=='200' and bounded:
+                  m=re.search(r'/web/\d+(?:id_)?/(.+)$',url)
+                  orig=m.group(1) if m else 'http://'+HOST+path
+                  captures[(ts,orig)]=path
+
+          onehop=set(); payloads=set(); externals=set()
+          def replay(ts,orig,label):
+              try:
+                  st,final,b=fetch(f'https://web.archive.org/web/{ts}id_/{orig}',15)
+                  raw,enc=decode(b)
+                  hrefs=re.findall(r"""(?is)href\s*=\s*["']([^"']+)["']""",raw)
+                  kinds={}
+                  for href in hrefs:
+                      absolute,kind=classify(orig,href)
+                      kinds[kind]=kinds.get(kind,0)+1
+                      if kind=='download_route': onehop.add(absolute)
+                      elif kind=='payload': payloads.add(absolute)
+                      elif kind=='external_candidate': externals.add(absolute)
+                      if kind in ('download_route','payload','external_candidate'):
+                          print(f'{kind.upper()}|source={clean(orig)}|timestamp={ts}|href={clean(href)}|absolute={clean(absolute)}')
+                  plain=' '.join(html.unescape(re.sub(r'(?s)<[^>]+>',' ',raw)).split())
+                  for term in ('石器时代','石器時代','2.5','客户端','客戶端','升级','升級','下载','下載'):
+                      i=plain.find(term)
+                      if i>=0:
+                          print(f'TEXT|source={clean(orig)}|timestamp={ts}|term={term}|value={clean(plain[max(0,i-180):i+700])}')
+                          break
+                  print(f'REPLAY|label={label}|timestamp={ts}|source={clean(orig)}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|encoding={enc}|hrefs={len(hrefs)}|download_routes={kinds.get("download_route",0)}|payloads={kinds.get("payload",0)}|external_candidates={kinds.get("external_candidate",0)}|final={clean(final)}')
+              except Exception as e:
+                  errors.append((label+':'+ts,type(e).__name__,str(e)))
+                  print(f'REPLAY_ERROR|label={label}|timestamp={ts}|source={clean(orig)}|kind={type(e).__name__}|message={clean(e)}')
+
+          for (ts,orig),path in sorted(captures.items()):
+              replay(ts,orig,'seed')
+
+          # Resolve one-hop same-site download pages near 2002/2003/2004.
+          hop_rows=[]
+          hop_paths=set()
+          for u in onehop:
+              p=urllib.parse.urlsplit(u)
+              if p.netloc.endswith('17173.com'):
+                  hop_paths.add(p.path + (('?'+p.query) if p.query else ''))
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+              futs=[ex.submit(available,p,d) for p in sorted(hop_paths) for d in ('20020201','20030101','20040101')]
+              hop_rows=[f.result() for f in concurrent.futures.as_completed(futs)]
+          hopcaps={}
+          for path,date,st,b,c,err in sorted(hop_rows):
+              if err:
+                  errors.append((path+':'+date,*err)); continue
+              ts=str(c.get('timestamp') or ''); status=str(c.get('status') or ''); url=str(c.get('url') or '')
+              if c.get('available') and status=='200' and ts[:4] in ('2002','2003','2004'):
+                  m=re.search(r'/web/\d+(?:id_)?/(.+)$',url)
+                  orig=m.group(1) if m else 'http://'+HOST+path
+                  hopcaps[(ts,orig)]=path
+          for (ts,orig),path in sorted(hopcaps.items()):
+              replay(ts,orig,'onehop')
+
+          print(f'COUNT|seed_captures|{len(captures)}')
+          print(f'COUNT|download_routes|{len(onehop)}')
+          print(f'COUNT|onehop_captures|{len(hopcaps)}')
+          print(f'COUNT|payload_urls|{len(payloads)}')
+          print(f'COUNT|external_candidates|{len(externals)}')
+          print(f'COUNT|errors|{len(errors)}')
+          for u in sorted(payloads): print('PAYLOAD_URL|'+clean(u))
+          for u in sorted(externals): print('EXTERNAL_CANDIDATE_URL|'+clean(u))
+          if payloads:
+              print('RESOLUTION|EXACT_PAYLOAD_URL_FOUND|validate archive capture and bytes next')
+          elif externals:
+              print('RESOLUTION|EXTERNAL_DOWNLOAD_TARGETS_FOUND|classify and probe exact targets next')
+          elif captures:
+              print('RESOLUTION|DOWNLOAD_CENTER_RECOVERED_NO_PAYLOAD_URL|tested 2002-2004 topology contains no direct payload URL')
+          elif errors:
+              print('RESOLUTION|PARTIAL_ARCHIVE_FAILURE|do not interpret as negative')
+          else:
+              print('RESOLUTION|NO_BOUNDED_DOWNLOAD_CENTER_CAPTURE')
+          print('EVIDENCE_BOUNDARY|Only replayed historical hrefs count as topology evidence; no client payload is downloaded by this probe.')
+          PY
+
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          R='research/recovered/STONEAGE-SA25-17173-DOWNLOAD-CENTER-R1.txt'
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe 17173 StoneAge download center'
+          git push
