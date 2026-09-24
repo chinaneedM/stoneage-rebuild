@@ -154,6 +154,23 @@ def main():
             }
         print(f"AVAIL_REPLAY_SEED|timestamp={clean(ts)}|original={clean(original)}|capture={clean(capture_url)}")
 
+    for (ats,acapture),closest in sorted(availability_hits.items()):
+        match=re.search(r"/web/(\\d{14})/(https?://.*)$",acapture)
+        if not match:
+            print(f"AVAIL_CAPTURE_SEED|timestamp={clean(ats)}|capture={clean(acapture)}|parsed=0")
+            continue
+        ts,orig=match.group(1),match.group(2)
+        key=(ts,orig,"availability")
+        captures.setdefault(key,{
+            "timestamp":ts,
+            "original":orig,
+            "statuscode":str(closest.get("status") or ""),
+            "mimetype":"",
+            "digest":"availability",
+            "length":"",
+        })
+        print(f"AVAIL_CAPTURE_SEED|timestamp={clean(ts)}|capture={clean(acapture)}|parsed=1|original={clean(orig)}")
+
     all_hrefs={}
     success=0
     for (ts,orig,digest),row in sorted(captures.items()):
