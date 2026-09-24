@@ -1,0 +1,49 @@
+name: Probe historical StoneAge map-package archive fallbacks
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_historical_map_pack_archive_fallback_probe.py
+      - tests/test_stoneage_historical_map_pack_archive_fallback_probe.py
+      - .github/workflows/probe-stoneage-historical-map-packs-fallback.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-historical-map-packs-fallback
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate map-package fallback probe
+        run: python3 -m unittest tests.test_stoneage_historical_map_pack_archive_fallback_probe -v
+      - name: Probe independent archive indexes
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_historical_map_pack_archive_fallback_probe \
+            > research/recovered/STONEAGE-HISTORICAL-MAP-PACK-ARCHIVE-FALLBACK-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-HISTORICAL-MAP-PACK-ARCHIVE-FALLBACK-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe historical map-package archive fallbacks'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_historical_map_pack_archive_fallback_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe historical map-package archive fallbacks'
+          fi
+          git push
