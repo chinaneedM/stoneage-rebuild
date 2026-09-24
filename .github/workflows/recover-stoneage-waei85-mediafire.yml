@@ -1,0 +1,284 @@
+name: Recover Waei StoneAge 8.5 MediaFire candidate
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/recover-stoneage-waei85-mediafire.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei85-mediafire
+  cancel-in-progress: true
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install archive and PE tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq unar 7zip file binutils
+
+      - name: Recover and fingerprint six-part candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/waei85/parts /tmp/waei85/out research/recovered
+          REPORT='research/recovered/STONEAGE-WAEI85-MEDIAFIRE-CANDIDATE-R1.txt'
+          python3 - "$REPORT" <<'PY'
+          import hashlib, html, http.cookiejar, json, re, sys, urllib.parse, urllib.request
+          from pathlib import Path
+
+          report=Path(sys.argv[1])
+          work=Path('/tmp/waei85/parts')
+          keys=[
+              'l5i274801ov19w7',
+              'g9b3g3hjmwwttg3',
+              'e859n1nm1tk12j8',
+              '69vrzm3nox8f0v9',
+              'clbwjkcqqhxq6k9',
+              '42uy5b9abbcu4qr',
+          ]
+          ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124 Safari/537.36'
+          cj=http.cookiejar.CookieJar()
+          op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+          op.addheaders=[('User-Agent',ua),('Accept-Language','zh-TW,zh;q=0.9,en;q=0.7')]
+
+          def clean(v):
+              return ' '.join(str(v or '').split()).replace('|','%7C')
+
+          def sha256_file(path):
+              h=hashlib.sha256()
+              with path.open('rb') as f:
+                  for b in iter(lambda:f.read(1024*1024),b''):
+                      h.update(b)
+              return h.hexdigest()
+
+          rows=[]
+          lines=[
+              'StoneAge Waei main-program MediaFire candidate — R1',
+              'SCOPE|2012-WeLoveSA-six-part-MediaFire|transient-recovery|derived-metadata-only',
+              'SOURCE_THREAD|https://www.lab.welovesa.com/viewthread.php?action=printable&tid=1654',
+              'SOURCE_TITLE|華義石器時代主程式安裝檔',
+              'SOURCE_DATE|2012-04-14',
+              'SOURCE_CLAIM|poster says install it yourself as a clean main program; later replies identify 8.5, but those labels are not accepted as provenance',
+          ]
+          for idx,key in enumerate(keys,1):
+              api='https://www.mediafire.com/api/1.5/file/get_info.php'
+              data=urllib.parse.urlencode({'quick_key':key,'response_format':'json'}).encode()
+              try:
+                  req=urllib.request.Request(api,data=data,headers={'User-Agent':ua})
+                  with op.open(req,timeout=60) as r:
+                      payload=json.load(r)
+                  info=payload.get('response',{}).get('file_info') or {}
+                  filename=str(info.get('filename') or '')
+                  size=int(info.get('size') or 0)
+                  service_hash=str(info.get('hash') or '').lower()
+                  created=str(info.get('created') or '')
+                  normal=(info.get('links') or {}).get('normal_download')
+                  lines.append(
+                      f'MEDIAFIRE_INFO|index={idx}|key={key}|filename={clean(filename)}|size={size}|'
+                      f'hash={clean(service_hash)}|created={clean(created)}|normal_download={clean(normal)}'
+                  )
+                  if not normal:
+                      rows.append({'index':idx,'key':key,'ok':False,'reason':'no-normal-download','filename':filename})
+                      continue
+                  req=urllib.request.Request(normal,headers={'User-Agent':ua})
+                  with op.open(req,timeout=60) as r:
+                      page=r.read().decode('utf-8','replace')
+                      referer=r.geturl()
+                  m=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S)
+                  if not m:
+                      m=re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+                  if not m:
+                      rows.append({'index':idx,'key':key,'ok':False,'reason':'no-direct-link','filename':filename})
+                      lines.append(f'DOWNLOAD_FAIL|index={idx}|key={key}|reason=no-direct-link')
+                      continue
+                  url=html.unescape(m.group(1))
+                  safe_name=filename or f'part-{idx}'
+                  dest=work/safe_name
+                  if dest.exists():
+                      dest=work/f'{idx:02d}-{safe_name}'
+                  h=hashlib.sha256()
+                  req=urllib.request.Request(url,headers={'User-Agent':ua,'Referer':referer})
+                  with op.open(req,timeout=420) as r, dest.open('wb') as out:
+                      while True:
+                          b=r.read(1024*1024)
+                          if not b: break
+                          out.write(b); h.update(b)
+                  digest=h.hexdigest()
+                  ok_size=(not size or dest.stat().st_size==size)
+                  ok_hash=(len(service_hash)!=64 or digest==service_hash)
+                  lines.append(
+                      f'DOWNLOADED|index={idx}|key={key}|path={clean(dest.name)}|bytes={dest.stat().st_size}|'
+                      f'sha256={digest}|size_match={int(ok_size)}|service_hash_match={int(ok_hash)}'
+                  )
+                  rows.append({
+                      'index':idx,'key':key,'ok':True,'filename':filename,'path':str(dest),
+                      'size':dest.stat().st_size,'sha256':digest,'service_hash':service_hash,
+                  })
+              except Exception as e:
+                  lines.append(f'ERROR|index={idx}|key={key}|kind={type(e).__name__}|message={clean(e)}')
+                  rows.append({'index':idx,'key':key,'ok':False,'reason':type(e).__name__,'filename':''})
+
+          report.write_text('\n'.join(lines)+'\n',encoding='utf-8')
+          Path('/tmp/waei85/rows.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
+          if sum(1 for r in rows if r.get('ok')) != len(keys):
+              raise SystemExit(17)
+          PY
+
+      - name: Reassemble/extract and fingerprint
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          REPORT='research/recovered/STONEAGE-WAEI85-MEDIAFIRE-CANDIDATE-R1.txt'
+          python3 - >> "$REPORT" <<'PY'
+          import json, re
+          from pathlib import Path
+          rows=json.loads(Path('/tmp/waei85/rows.json').read_text(encoding='utf-8'))
+          for r in rows:
+              print(f"PART_ORDER|index={r['index']}|filename={r.get('filename','')}|path={Path(r['path']).name}|bytes={r.get('size','')}|sha256={r.get('sha256','')}")
+          PY
+
+          FIRST="$(python3 - <<'PY'
+          import json
+          from pathlib import Path
+          rows=json.loads(Path('/tmp/waei85/rows.json').read_text())
+          rows=sorted(rows,key=lambda x:x['index'])
+          print(rows[0]['path'])
+          PY
+          )"
+
+          EXTRACTOR='none'
+          rm -rf /tmp/waei85/out && mkdir -p /tmp/waei85/out
+
+          # First try opening the first part directly; 7z handles many split-RAR / .001 schemes.
+          if 7z x -y -o/tmp/waei85/out "$FIRST" >/tmp/waei85/extract.log 2>&1; then
+            EXTRACTOR='7z-first-part'
+          else
+            rm -rf /tmp/waei85/out && mkdir -p /tmp/waei85/out
+            python3 - <<'PY'
+          import json
+          from pathlib import Path
+          rows=sorted(json.loads(Path('/tmp/waei85/rows.json').read_text()),key=lambda x:x['index'])
+          with open('/tmp/waei85/combined.bin','wb') as out:
+              for r in rows:
+                  with open(r['path'],'rb') as f:
+                      while True:
+                          b=f.read(1024*1024)
+                          if not b: break
+                          out.write(b)
+          PY
+            if 7z x -y -o/tmp/waei85/out /tmp/waei85/combined.bin >/tmp/waei85/extract.log 2>&1; then
+              EXTRACTOR='7z-concatenated'
+            elif unar -f -o /tmp/waei85/out /tmp/waei85/combined.bin >/tmp/waei85/extract.log 2>&1; then
+              EXTRACTOR='unar-concatenated'
+            fi
+          fi
+
+          {
+            echo "EXTRACTOR|$EXTRACTOR"
+            if [ "$EXTRACTOR" = 'none' ]; then
+              echo 'EXTRACT_LOG_BEGIN'
+              tail -n 160 /tmp/waei85/extract.log || true
+              echo 'EXTRACT_LOG_END'
+              echo 'RESULT|SIX_PARTS_RECOVERED_EXTRACTION_FAILED'
+            fi
+          } >> "$REPORT"
+
+          if [ "$EXTRACTOR" = 'none' ]; then
+            exit 0
+          fi
+
+          python3 - "$REPORT" <<'PY'
+          import hashlib, os, re, subprocess, sys
+          from pathlib import Path
+
+          report=Path(sys.argv[1])
+          root=Path('/tmp/waei85/out')
+
+          def sha(p):
+              h=hashlib.sha256()
+              with p.open('rb') as f:
+                  for b in iter(lambda:f.read(1024*1024),b''):
+                      h.update(b)
+              return h.hexdigest()
+
+          rows=[]
+          core=[]
+          exes=[]
+          version_signals=[]
+          total=0
+          for p in sorted((x for x in root.rglob('*') if x.is_file()),key=lambda x:str(x.relative_to(root)).lower()):
+              rel=p.relative_to(root).as_posix()
+              size=p.stat().st_size
+              d=sha(p)
+              total+=size
+              rows.append((rel,size,d))
+              low=rel.lower()
+              if p.suffix.lower() in ('.exe','.dll','.msi','.cab'):
+                  exes.append((rel,size,d))
+              if any(x in low for x in ('real_','adrn_','spr_','spradrn_','stoneage','startup','setup','install')):
+                  core.append((rel,size,d))
+
+          with report.open('a',encoding='utf-8') as out:
+              out.write(f'EXTRACTED|files={len(rows)}|bytes={total}\n')
+              out.write('CORE_FILES|path|bytes|sha256\n')
+              for rel,size,d in core[:1000]:
+                  out.write(f'CORE|{rel}|{size}|{d}\n')
+              out.write('EXECUTABLES|path|bytes|sha256\n')
+              for rel,size,d in exes[:500]:
+                  out.write(f'EXE|{rel}|{size}|{d}\n')
+              out.write('FILE_TREE|path|bytes|sha256\n')
+              for rel,size,d in rows:
+                  out.write(f'FILE|{rel}|{size}|{d}\n')
+
+          # PE/string clues, deliberately bounded to version/operator/distribution markers.
+          with report.open('a',encoding='utf-8') as out:
+              out.write('VERSION_OPERATOR_SIGNALS_BEGIN\n')
+              for rel,size,d in exes[:100]:
+                  p=root/rel
+                  out.write(f'PE|{rel}|bytes={size}|sha256={d}\n')
+                  try:
+                      s=subprocess.run(['strings','-a','-n','5',str(p)],capture_output=True,text=True,errors='replace',timeout=60).stdout
+                  except Exception:
+                      s=''
+                  for line in s.splitlines():
+                      low=line.lower()
+                      if any(tok in low for tok in (
+                          '8.5','8.0','7.5','stoneage','waei','wayi','華義','华义',
+                          'www.waei','www.wayi','gamania','魔域','冒險','冒险','version','版本'
+                      )):
+                          out.write('STRING|'+rel+'|'+line.replace('|','%7C')[:1000]+'\n')
+              out.write('VERSION_OPERATOR_SIGNALS_END\n')
+              out.write('RESULT|SIX_PARTS_RECOVERED_EXTRACTED_FINGERPRINTED\n')
+              out.write('EVIDENCE_BOUNDARY|Community labels and replies are leads only. Promotion requires byte-level identity/provenance against operator-era media or independently verified official packages.\n')
+          PY
+
+      - name: Delete transient proprietary payloads
+        if: always()
+        run: rm -rf /tmp/waei85
+
+      - name: Commit derived metadata only
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          REPORT='research/recovered/STONEAGE-WAEI85-MEDIAFIRE-CANDIDATE-R1.txt'
+          test -f "$REPORT" || exit 0
+          cp "$REPORT" /tmp/STONEAGE-WAEI85-MEDIAFIRE-CANDIDATE-R1.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/STONEAGE-WAEI85-MEDIAFIRE-CANDIDATE-R1.txt "$REPORT"
+          git add "$REPORT"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: recover Waei StoneAge main-program candidate'
+          git push
