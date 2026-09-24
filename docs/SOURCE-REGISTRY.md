@@ -1086,3 +1086,26 @@ Every substantial source should record:
   - Taiwan-v1 field-map provenance.
 - Current lead report:
   - `research/recovered/STONEAGE-SA25-LIVE-PHYSICAL-LEADS-R1.md`.
+
+
+### SRC-CN-SA25-SA25UP-LINK-MIRROR-01
+
+- Title/context: surviving software-download link mirror containing `[下載]石器時代2.5—精靈王傳說`
+- Retrieval date: **2026-09-25**
+- Language/region: Traditional Chinese / cross-strait player-web download-link ecosystem
+- Source type: later-surviving third-party software-link mirror; page header states `from http://pcpc.idv.tw/soft/soft.htm`
+- URL: https://www.geocities.ws/kk00000099/link.html
+- Exact StoneAge target exposed by the page: `http://202.104.32.168/file/game/maoxian/sa25up.zip`
+- Confidence: **C+ for the literal surviving link text; OPEN for original publication date, host ownership, payload size/content and operator provenance**
+- Supports:
+  - an independently sourced exact filename/path token, `sa25up.zip`, circulated as a StoneAge 2.5 download link;
+  - reopening bounded preservation indexes once for this precise token rather than inventing installer/updater filenames.
+- Does not support:
+  - that `sa25up.zip` is the documented 8.25 MB updater merely because the filename contains `up`;
+  - that it is the 575/580 MB complete package;
+  - that the IP host was Beijing Waei or another official operator;
+  - clean-client status, file size, hash, archive members, or byte identity with any preserved 2.5 corpus.
+- Follow-up result:
+  - metadata-only exact-token probe found **0 hits / 0 errors** across Wayback Availability period anchors, Arquivo.pt exact URL, eight Common Crawl index generations, DiscMaster exact filename indexing and Internet Archive metadata/file lists;
+  - tested exact preservation-index route is therefore **BOUNDED** pending a new mirror/hostname/capture/file token.
+- Derived report: `research/recovered/STONEAGE-SA25-SA25UP-EXACT-R1.txt`.
