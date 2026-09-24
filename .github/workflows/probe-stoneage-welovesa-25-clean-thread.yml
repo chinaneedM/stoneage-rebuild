@@ -43,6 +43,7 @@ jobs:
           URL_RE=re.compile(r'(?i)\b(?:https?|ftp)://[^\s"\'<>]+')
           ATT_RE=re.compile(r'(?i)(?:attachment|attach|aid|file|filename|mediafire|rayfile|115|xunlei|pan\.baidu|mega|dropbox|drive\.google|\.rar|\.zip|\.7z|\.exe|\.iso|\.bin|\.cue)')
           TITLE_TOKENS=('2.5','纯净','純淨','石器客户端','石器客戶端')
+          GATE_RE=re.compile(r'(?i)(石币|石幣|售价|售價|购买|購買|付费|付費|閱讀權限|阅读权限|readperm|price|pay|trade|本主題|本主题|本帖|postmessage)')
 
           def clean(s,limit=1200):
               s=html.unescape(str(s or '')).replace('\x00',' ')
@@ -70,6 +71,21 @@ jobs:
                   return {'ok':False,'status':e.code,'url':url,'error':'HTTPError','body':body}
               except Exception as e:
                   return {'ok':False,'url':url,'error':type(e).__name__+': '+str(e),'body':''}
+
+          def gate_rows(body):
+              x=re.sub(r'(?is)<script.*?</script>|<style.*?</style>',' ',body)
+              x=re.sub(r'(?i)<br\s*/?>|</p>|</div>|</td>|</tr>|</li>','\n',x)
+              x=re.sub(r'<[^>]+>',' ',x)
+              x=html.unescape(x)
+              out=[]
+              for raw in x.splitlines():
+                  t=clean(raw,1800)
+                  if t and (GATE_RE.search(t) or ('2.5' in t and ('纯净' in t or '純淨' in t))):
+                      out.append(t)
+              seen=[]
+              for t in out:
+                  if t not in seen: seen.append(t)
+              return seen[:80]
 
           def candidates(body):
               out=[]
@@ -101,9 +117,11 @@ jobs:
                       r=fetch(url)
                       body=r.get('body','')
                       title_hit=all(tok.lower() in body.lower() for tok in ('2.5','石器')) and ('纯净' in body or '純淨' in body)
-                      cs=candidates(body)
-                      print(f"LIVE|url={clean(url)}|ok={int(r.get('ok',False))}|status={r.get('status','')}|bytes={r.get('bytes','')}|sha256={r.get('sha256','')}|final={clean(r.get('url',''))}|title_hit={int(title_hit)}|candidate_rows={len(cs)}|error={clean(r.get('error',''))}")
+                      cs=candidates(body); gates=gate_rows(body)
+                      print(f"LIVE|url={clean(url)}|ok={int(r.get('ok',False))}|status={r.get('status','')}|bytes={r.get('bytes','')}|sha256={r.get('sha256','')}|final={clean(r.get('url',''))}|title_hit={int(title_hit)}|candidate_rows={len(cs)}|gate_rows={len(gates)}|error={clean(r.get('error',''))}")
                       if title_hit: live_hits+=1
+                      for g in gates:
+                          print(f'LIVE_GATE|source={clean(url)}|value={clean(g,2000)}')
                       for kind,val in cs:
                           print(f'LIVE_{kind}|source={clean(url)}|value={clean(val,2000)}')
 
@@ -162,9 +180,11 @@ jobs:
               r=fetch(u,max_bytes=8_000_000)
               body=r.get('body','')
               title_hit=('2.5' in body and ('纯净' in body or '純淨' in body) and ('石器' in body))
-              cs=candidates(body)
-              print(f"REPLAY|timestamp={ts}|original={clean(orig)}|ok={int(r.get('ok',False))}|status={r.get('status','')}|bytes={r.get('bytes','')}|sha256={r.get('sha256','')}|title_hit={int(title_hit)}|candidate_rows={len(cs)}|error={clean(r.get('error',''))}")
+              cs=candidates(body); gates=gate_rows(body)
+              print(f"REPLAY|timestamp={ts}|original={clean(orig)}|ok={int(r.get('ok',False))}|status={r.get('status','')}|bytes={r.get('bytes','')}|sha256={r.get('sha256','')}|title_hit={int(title_hit)}|candidate_rows={len(cs)}|gate_rows={len(gates)}|error={clean(r.get('error',''))}")
               if title_hit: replay_hits+=1
+              for g in gates:
+                  print(f'REPLAY_GATE|timestamp={ts}|value={clean(g,2000)}')
               for kind,val in cs:
                   print(f'REPLAY_{kind}|timestamp={ts}|value={clean(val,2000)}')
 
