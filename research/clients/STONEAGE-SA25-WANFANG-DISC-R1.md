@@ -77,3 +77,17 @@ The next decisive question is no longer merely “does the disc say StoneAge 2.5
 3. if it is a secondary carrier, does a read-only file tree show an unchanged official full client installer or only the 8.25 MB updater / multimedia material.
 
 A secondary carrier can still be technically valuable, but it must not inherit official Beijing-Waei provenance by implication.
+
+
+## Visual-source lineage update — 2026-09-24
+
+R2 transient visual fingerprinting recovered three large images from the Wanfang collector page and compared them against all 11 full-size Ruten physical-media images.
+
+- No Ruten-vs-Wanfang pair approaches the strong near-duplicate signal observed between the two standalone Ruten listings.
+- Strongest Ruten-vs-Wanfang pair: **27 RANSAC inliers / 0.0322 inlier ratio**.
+- By contrast, the two standalone Ruten disc images produce **743 inliers / 0.4831**, showing what a strong shared visual-source signal looks like in the same run.
+
+**Interpretation:** the Wanfang photograph set is currently treated as an **independent visual-source cluster**. This does not establish different disc bytes, different build, or different carrier artwork. Wanfang remains **OPEN / UNCLASSIFIED-CARRIER** until readable carrier linkage or file-level evidence resolves it.
+
+Derived analysis: `research/clients/STONEAGE-SA25-PHYSICAL-IMAGE-LINEAGE-R1.md`.
+
