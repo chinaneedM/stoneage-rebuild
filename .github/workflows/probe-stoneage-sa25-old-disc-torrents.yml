@@ -23,11 +23,11 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p research/recovered
-          python3 -m tools.stoneage_sa25_old_disc_torrent_probe > research/recovered/STONEAGE-SA25-OLD-DISC-TORRENTS-R1.txt
+          python3 -m tools.stoneage_sa25_old_disc_torrent_probe > research/recovered/STONEAGE-SA25-OLD-DISC-TORRENTS-R2.txt
       - name: Commit derived metadata only
         run: |
           set -euo pipefail
-          R='research/recovered/STONEAGE-SA25-OLD-DISC-TORRENTS-R1.txt'
+          R='research/recovered/STONEAGE-SA25-OLD-DISC-TORRENTS-R2.txt'
           cp "$R" /tmp/report.txt
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
@@ -37,7 +37,7 @@ jobs:
           cp /tmp/report.txt "$R"
           git add "$R"
           git diff --cached --quiet && exit 0
-          git commit -m 'research: probe StoneAge 2.5 old-disc torrent metadata'
+          git commit -m 'research: refine StoneAge 2.5 old-disc torrent metadata'
           for n in 1 2 3 4 5; do
             git push && exit 0
             sleep $((n * 3))

@@ -1,5 +1,5 @@
 import hashlib, unittest
-from tools.stoneage_sa25_old_disc_torrent_probe import bdecode,root_info_span,torrent_paths,interesting
+from tools.stoneage_sa25_old_disc_torrent_probe import bdecode,root_info_span,torrent_paths,interesting,relevant_paths
 
 class TorrentProbeTests(unittest.TestCase):
     def test_bdecode_and_info_span(self):

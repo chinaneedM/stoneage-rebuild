@@ -108,7 +108,7 @@ def fetch():
         return int(getattr(r,"status",r.getcode())),r.geturl(),dict(r.headers.items()),b
 
 def main():
-    print("StoneAge 2.5 old-disc torrent metadata probe — R1")
+    print("StoneAge 2.5 old-disc torrent metadata probe — R2")
     print("SCOPE|public-allseeds.zip|torrent-metadata-only|no-disc-payload")
     st,final,h,b=fetch()
     print(f"ZIP|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|content_type={clean(h.get('Content-Type'))}|last_modified={clean(h.get('Last-Modified'))}|final={clean(final)}")
@@ -138,10 +138,8 @@ def main():
                 if strong: strong_hits+=1
                 else: weak_hits+=1
                 print(f"TORRENT_{kind}|entry={clean(zn)}|bytes={len(raw)}|sha256={hashlib.sha256(raw).hexdigest()}|infohash={infohash}|strong={clean(','.join(strong))}|weak={clean(','.join(weak))}|paths={len(paths)}")
-                for p in paths[:1000]:
-                    low=p.lower()
-                    if strong or any(t.lower() in low for t in WEAK):
-                        print(f"PATH|entry={clean(zn)}|value={clean(p,3000)}")
+                for p in relevant_paths(paths,strong,weak)[:100]:
+                    print(f"PATH|entry={clean(zn)}|value={clean(p,3000)}")
             except Exception as e:
                 errors+=1
                 print(f"ERROR|entry={clean(zn)}|kind={type(e).__name__}|message={clean(e)}")
@@ -150,9 +148,9 @@ def main():
     print(f"COUNT|weak_hits|{weak_hits}")
     print(f"COUNT|errors|{errors}")
     if strong_hits:
-        print("RESOLUTION|TARGET_TORRENT_METADATA_FOUND|inspect exact image/path identity before any payload recovery")
+        print("RESOLUTION|EXACT_TARGET_TORRENT_METADATA_FOUND|inspect exact image/path identity before any payload recovery")
     elif weak_hits:
-        print("RESOLUTION|WEAK_CATALOG_NEIGHBORHOOD_ONLY|inspect weak period/disc-number candidates without promoting provenance")
+        print("RESOLUTION|WEAK_CATALOG_NEIGHBORHOOD_ONLY|generic issue/catalog tokens only; do not promote as target media")
     else:
         print("RESOLUTION|NO_TARGET_TORRENT_METADATA|public allseeds metadata has no tested target tokens")
     print("EVIDENCE_BOUNDARY|torrent metadata proves a preserved file-tree/index reference only; it does not prove StoneAge carriage or Waei provenance until exact media contents are verified.")
