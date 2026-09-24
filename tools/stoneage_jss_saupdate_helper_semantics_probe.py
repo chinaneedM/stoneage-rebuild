@@ -34,10 +34,14 @@ from tools.stoneage_tw10_mapcache_binary_probe import referenced_absolute_values
 from tools.stoneage_tw10_technical_probe import pe_sections
 
 HELPERS = (
+    (0x24A0, "http-core-status-helper"),
     (0x25D0, "resource-generation-scan"),
     (0x31B0, "launch-control-prep"),
+    (0x3410, "http-core-helper-3410"),
+    (0x3500, "http-core-helper-3500"),
     (0x3610, "post-download-state"),
     (0x3C60, "update-state-sequence"),
+    (0x3F20, "launch-tail"),
 )
 
 MAX_ARGS = 12
