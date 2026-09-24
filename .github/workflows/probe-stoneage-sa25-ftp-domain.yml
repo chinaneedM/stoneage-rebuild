@@ -1,0 +1,137 @@
+name: Probe historical StoneAge FTP payload index
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/probe-stoneage-sa25-ftp-domain.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-ftp-domain
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enumerate archived FTP/domain payload URLs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 - > research/recovered/STONEAGE-SA25-FTP-DOMAIN-R1.txt <<'PY'
+          import hashlib,json,re,urllib.parse,urllib.request
+
+          UA='stoneage-rebuild-archaeology/1.0'
+          CDX='https://web.archive.org/cdx/search/cdx'
+          PREFIXES=(
+            'ftp://ftp.stoneage.com.cn/',
+            'http://ftp.stoneage.com.cn/',
+            'https://ftp.stoneage.com.cn/',
+            'http://stoneage.com.cn/',
+            'http://www.stoneage.com.cn/',
+          )
+          EXTS=('.exe','.zip','.rar','.cab','.msi','.001','.002','.iso','.bin','.cue','.patch')
+          KEYWORDS=('stoneage','shiqi','sa25','sa2.5','2.5','update','upgrade','patch','setup','client','full')
+
+          def clean(v,n=2400):
+            return ' '.join(str(v or '').split()).replace('|','%7C')[:n]
+
+          def fetch(url,timeout=20):
+            req=urllib.request.Request(url,headers={'User-Agent':UA,'Accept':'application/json,*/*'})
+            with urllib.request.urlopen(req,timeout=timeout) as r:
+              b=r.read()
+              return int(getattr(r,'status',r.getcode())),r.geturl(),b
+
+          def cdx(prefix):
+            q=[
+              ('url',prefix),('matchType','prefix'),('output','json'),
+              ('fl','timestamp,original,statuscode,mimetype,digest,length'),
+              ('from','2001'),('to','2003'),('collapse','urlkey'),('limit','5000')
+            ]
+            return CDX+'?'+urllib.parse.urlencode(q)
+
+          print('StoneAge historical FTP/domain payload-index probe — R1')
+          print('SCOPE|client-embedded-ftp.stoneage.com.cn+stoneage.com.cn|2001-2003-CDX-metadata|no-payload-download')
+          print('ANCHOR|StoneAge.exe embeds ftp.stoneage.com.cn and operator-era Waei URLs')
+          all_rows={}
+          errors=[]
+          for prefix in PREFIXES:
+            try:
+              st,final,b=fetch(cdx(prefix),25)
+              data=json.loads(b.decode('utf-8','replace'))
+              rows=[]
+              if isinstance(data,list) and data:
+                hdr=data[0]
+                rows=[dict(zip(hdr,x)) for x in data[1:] if isinstance(x,list)]
+              print(f'QUERY|prefix={clean(prefix)}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|rows={len(rows)}|final={clean(final)}')
+              for d in rows:
+                key=(str(d.get('timestamp','')),str(d.get('original','')),str(d.get('digest','')))
+                all_rows[key]=d
+            except Exception as e:
+              errors.append((prefix,type(e).__name__,str(e)))
+              print(f'QUERY_ERROR|prefix={clean(prefix)}|kind={type(e).__name__}|message={clean(e)}')
+
+          payload=[]
+          lexical=[]
+          for d in sorted(all_rows.values(),key=lambda x:(x.get('timestamp',''),x.get('original',''))):
+            u=str(d.get('original') or '')
+            low=urllib.parse.unquote_plus(u).lower()
+            path=urllib.parse.urlsplit(low).path
+            is_payload=any(path.endswith(e) for e in EXTS)
+            is_lex=any(k in low for k in KEYWORDS)
+            if is_payload:
+              payload.append(d)
+              print('PAYLOAD_ROW|'+'|'.join(f'{k}={clean(d.get(k,""))}' for k in ('timestamp','original','statuscode','mimetype','digest','length')))
+            elif is_lex:
+              lexical.append(d)
+              print('LEXICAL_ROW|'+'|'.join(f'{k}={clean(d.get(k,""))}' for k in ('timestamp','original','statuscode','mimetype','digest','length')))
+
+          strict=[]
+          for d in payload:
+            u=urllib.parse.unquote_plus(str(d.get('original') or '')).lower()
+            if any(k in u for k in ('sa25','sa2.5','2.5','stoneage25','stoneage2.5')) or (
+                any(k in u for k in ('update','upgrade','patch','setup','client','full')) and 'stoneage' in u
+            ):
+              strict.append(d)
+              print('STRICT_CANDIDATE|'+'|'.join(f'{k}={clean(d.get(k,""))}' for k in ('timestamp','original','statuscode','mimetype','digest','length')))
+
+          for p,k,m in errors:
+            print(f'ERROR|scope={clean(p)}|kind={clean(k)}|message={clean(m)}')
+          print(f'COUNT|unique_rows|{len(all_rows)}')
+          print(f'COUNT|payload_rows|{len(payload)}')
+          print(f'COUNT|lexical_nonpayload_rows|{len(lexical)}')
+          print(f'COUNT|strict_25_candidates|{len(strict)}')
+          print(f'COUNT|errors|{len(errors)}')
+          if strict:
+            print('RESOLUTION|STRICT_25_PAYLOAD_URLS_FOUND|probe exact captures and hashes next')
+          elif payload:
+            print('RESOLUTION|PAYLOAD_URLS_FOUND_NO_STRICT_25_IDENTITY|classify dated files before recovery')
+          elif all_rows:
+            print('RESOLUTION|DOMAIN_INDEXED_NO_PAYLOAD_URLS|tested 2001-2003 CDX surface contains no binary/archive URLs')
+          elif errors:
+            print('RESOLUTION|PARTIAL_ARCHIVE_FAILURE|do not interpret as negative')
+          else:
+            print('RESOLUTION|NO_ARCHIVED_DOMAIN_ROWS_ON_TESTED_PREFIXES')
+          print('EVIDENCE_BOUNDARY|CDX URL metadata does not prove file identity or availability; no payload bytes are downloaded.')
+          PY
+      - name: Commit derived report only
+        run: |
+          set -euo pipefail
+          R='research/recovered/STONEAGE-SA25-FTP-DOMAIN-R1.txt'
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe StoneAge historical FTP payload index'
+          git push
