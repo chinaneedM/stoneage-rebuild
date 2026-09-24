@@ -16,6 +16,7 @@ import urllib.request
 
 UA="stoneage-rebuild-archaeology/1.0 (+https://github.com/chinaneedM/stoneage-rebuild)"
 BASES=("https://redump.org","https://redump.info")
+MODERN_DISC_URL="https://redump.info/discs?region=jp"
 TARGETS=(
     ("title-latin","/discs/quicksearch/StoneAge/"),
     ("title-space","/discs/quicksearch/Stone%20Age/"),
@@ -79,13 +80,43 @@ def result_count(vis):
     return None
 
 
+def form_fields(body):
+    text=body.decode("utf-8","replace")
+    names=set()
+    for tag in re.findall(r"(?is)<(?:input|select|textarea)\\b[^>]*>",text):
+        m=re.search(r"""(?is)\\bname\\s*=\\s*["']?([^"'\\s>]+)""",tag)
+        if m:names.add(html.unescape(m.group(1)))
+    forms=[]
+    for tag in re.findall(r"(?is)<form\\b[^>]*>",text):
+        action=re.search(r"""(?is)\\baction\\s*=\\s*["']?([^"'\\s>]+)""",tag)
+        method=re.search(r"""(?is)\\bmethod\\s*=\\s*["']?([^"'\\s>]+)""",tag)
+        forms.append((html.unescape(action.group(1)) if action else "", (method.group(1) if method else "").upper()))
+    return tuple(sorted(names)),tuple(forms)
+
+
 def main():
-    print("StoneAge Japan 2004 Redump index probe — R1")
+    print("StoneAge Japan 2004 Redump index probe — R2")
     print("SCOPE|public-disc-index-html-only|title+model+barcode|no-disc-download")
     print("ANCHOR|model=WR-04156|jan=4988609011565|package=two-game-CD-ROMs")
     errors=0
     hits=0
     completed=0
+
+    try:
+        modern=fetch(MODERN_DISC_URL)
+        fields,forms=form_fields(modern["body"])
+        print(
+            f"MODERN_DISCOVERY|status={modern['status']}|bytes={len(modern['body'])}|"
+            f"sha256={hashlib.sha256(modern['body']).hexdigest()}|"
+            f"fields={','.join(clean(x,100) for x in fields)}|forms={len(forms)}|"
+            f"final={clean(modern['final'])}"
+        )
+        for action,method in forms:
+            print(f"FORM|method={clean(method)}|action={clean(action)}")
+    except Exception as exc:
+        errors+=1
+        print(f"ERROR|base=https://redump.info|query=modern-discovery|kind={type(exc).__name__}|message={clean(exc)}")
+
     for base in BASES:
         for label,path in TARGETS:
             url=base+path
