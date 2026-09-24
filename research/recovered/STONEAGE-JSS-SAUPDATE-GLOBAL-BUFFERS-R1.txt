@@ -1,6 +1,29 @@
 StoneAge JSS SaUpdate global-buffer xref probe — R1
 SCOPE|exact-global-pointer-xrefs+nearby-strings+next-call|derived-only|no-disassembly-retained
 FETCH|status=206|bytes=217088|sha256=6795d9349168f77aa025d7c4ea05d005c5bbfe33dd4b227eb7731802fa7eb82b|final=https://web.archive.org/web/20010503013834id_/http://www.titan.co.jp/stoneage/stoneage.exe
+BUFFER|label=manifest-host-buffer|va=0x85bc78|xrefs=5
+XREF|label=manifest-host-buffer|rva=0x1406|mnemonic=mov|role=move-reference|nearby_strings=2|next_call=0
+NEAR_STRING|label=manifest-host-buffer|xref_rva=0x1406|order=1|ins_rva=0x13f2|text=update.gamersdream.ne.jp
+NEAR_STRING|label=manifest-host-buffer|xref_rva=0x1406|order=2|ins_rva=0x1419|text=/~stoneage/newest.txt
+XREF|label=manifest-host-buffer|rva=0x145d|mnemonic=mov|role=move-reference|nearby_strings=1|next_call=0
+NEAR_STRING|label=manifest-host-buffer|xref_rva=0x145d|order=1|ins_rva=0x1419|text=/~stoneage/newest.txt
+XREF|label=manifest-host-buffer|rva=0x28ef|mnemonic=push|role=pointer-pass|nearby_strings=1|next_call=1
+NEAR_STRING|label=manifest-host-buffer|xref_rva=0x28ef|order=1|ins_rva=0x2928|text=b_
+NEXT_CALL|label=manifest-host-buffer|xref_rva=0x28ef|call_rva=0x28f4|kind=import|dll=MFC42.DLL|target=CString::CString(char const*)
+XREF|label=manifest-host-buffer|rva=0x2d80|mnemonic=push|role=pointer-pass|nearby_strings=2|next_call=1
+NEAR_STRING|label=manifest-host-buffer|xref_rva=0x2d80|order=1|ins_rva=0x2d25|text=/~stoneage/%s
+NEAR_STRING|label=manifest-host-buffer|xref_rva=0x2d80|order=2|ins_rva=0x2d39|text=data\download\%s
+NEXT_CALL|label=manifest-host-buffer|xref_rva=0x2d80|call_rva=0x2d85|kind=import|dll=MFC42.DLL|target=CString::CString(char const*)
+XREF|label=manifest-host-buffer|rva=0x2ddb|mnemonic=push|role=pointer-pass|nearby_strings=0|next_call=1
+NEXT_CALL|label=manifest-host-buffer|xref_rva=0x2ddb|call_rva=0x2ded|kind=indirect|dll=|target=
+BUFFER|label=manifest-path-buffer|va=0x85bcf8|xrefs=2
+XREF|label=manifest-path-buffer|rva=0x142b|mnemonic=mov|role=move-reference|nearby_strings=2|next_call=0
+NEAR_STRING|label=manifest-path-buffer|xref_rva=0x142b|order=1|ins_rva=0x13f2|text=update.gamersdream.ne.jp
+NEAR_STRING|label=manifest-path-buffer|xref_rva=0x142b|order=2|ins_rva=0x1419|text=/~stoneage/newest.txt
+XREF|label=manifest-path-buffer|rva=0x28d3|mnemonic=push|role=pointer-pass|nearby_strings=1|next_call=1
+NEAR_STRING|label=manifest-path-buffer|xref_rva=0x28d3|order=1|ins_rva=0x2928|text=b_
+NEXT_CALL|label=manifest-path-buffer|xref_rva=0x28d3|call_rva=0x28d8|kind=import|dll=MFC42.DLL|target=CString::CString(char const*)
+BUFFER|label=manifest-port-80|va=0x85bdf8|xrefs=0
 BUFFER|label=download-folder-created-message|va=0x4070c0|xrefs=1
 STATIC_TEXT|label=download-folder-created-message|section=.data|encoding=shift_jis|text=ダウンロード用フォルダを作成しました。
 XREF|label=download-folder-created-message|rva=0x1570|mnemonic=push|role=pointer-pass|nearby_strings=2|next_call=1
@@ -213,4 +236,4 @@ UNKNOWN_CALL|function_rva=0x1e61|order=2|call_rva=0x1f48|kind=internal|dll=|targ
 UNKNOWN_FUNCTION|start_rva=0x3ed3|end_rva=0x3f1c|boundary=bounded|instructions=21|strings=1|calls=1
 UNKNOWN_STRING|function_rva=0x3ed3|order=1|ins_rva=0x3ef1|text=updated
 UNKNOWN_CALL|function_rva=0x3ed3|order=1|call_rva=0x3f00|kind=import|dll=MSVCRT.dll|target=_execl
-RESOLUTION|GLOBAL_BUFFER_XREFS_DERIVED|targets=11|xrefs=34|unknown_functions=5|binary-not-committed
+RESOLUTION|GLOBAL_BUFFER_XREFS_DERIVED|targets=14|xrefs=41|unknown_functions=5|binary-not-committed
