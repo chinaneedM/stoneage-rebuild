@@ -6,6 +6,7 @@ Metadata/search results only. This does not fetch indexed file payloads.
 
 from __future__ import annotations
 
+import concurrent.futures
 import hashlib
 import json
 import urllib.parse
@@ -90,13 +91,24 @@ def main():
     positive=0
     total_candidates=0
 
-    for label,field,query,extra in TARGETS:
+    def run_target(target):
+        label,field,query,extra=target
         url=query_url(field,query,extra)
         try:
-            result=fetch(url)
+            return target,fetch(url,timeout=25),None
         except Exception as exc:
+            return target,None,(type(exc).__name__,str(exc))
+
+    results={}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+        for target,result,error in executor.map(run_target,TARGETS):
+            results[target[0]]=(target,result,error)
+
+    for label,field,query,extra in TARGETS:
+        target,result,error=results[label]
+        if error is not None:
             errors+=1
-            print(f"ERROR|label={label}|kind={type(exc).__name__}|message={clean(exc)}")
+            print(f"ERROR|label={label}|kind={clean(error[0])}|message={clean(error[1])}")
             continue
         completed+=1
         body=result["body"]
