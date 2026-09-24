@@ -525,6 +525,19 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - `research/recovered/STONEAGE-OLD-DISC-TORRENT-SIGNATURES-R1.txt`.
 - Status refinement: **TARGET-E remains OPEN, while the tested 老光盘群 torrent-metadata snapshot is BOUNDED for direct client recovery.** Reopen only for a materially newer upstream metadata set or a new independently sourced exact disc/file token.
 
+
+### Source-named Jan/Feb-2002 carrier torrent boundary — 2026-09-24
+
+- Contemporary Sina and 17173 StoneAge 2.5 upgrade pages agree on the issue-specific carrier boundary: eleven named periodicals are **2002-02**, `计算机与航空` is **2002-01**, and `中学生电脑` is the **2002 攻略特刊**.
+- The 89-entry public 老光盘群 torrent-metadata snapshot was re-scanned with those exact issue/date constraints.
+- Result: **0 strict torrents / 0 strict paths / 0 strict labels / 12 lexical-neighborhood torrents / 37 lexical-neighborhood paths / 0 errors**.
+- The visible `电脑报配套光盘之游戏世界200201.iso` is explicitly rejected as a StoneAge carrier because the source-attested issue is **2002-02**, not 2002-01.
+- Generic `游戏王`, wrong-month `家庭电脑世界`, and other title-only neighbors likewise remain search leads only.
+- Exact public-web searches for the source-attested issue names plus ISO/disc terms did not surface an inspectable exact carrier on the tested search surface.
+- Canonical interpretation: `research/clients/STONEAGE-SA25-NAMED-CARRIER-TORRENT-BOUNDARY-R1.md`.
+- Derived report: `research/recovered/STONEAGE-SA25-NAMED-CARRIER-TORRENTS-R1.txt`.
+- Status: **current old-disc torrent snapshot BOUNDED; global carrier recovery remains OPEN**.
+
 ## Current recovery order
 
 1. **Korean Inium 2000 public client:** recover the original installer filename/path/bytes through the Inium site, Hananet/GamePlus, CNET and period offline/software archives. It is now the strongest operational early bridge because operator-era free distribution and massive replication are directly attested.
