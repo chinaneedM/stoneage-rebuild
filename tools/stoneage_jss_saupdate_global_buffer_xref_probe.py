@@ -9,6 +9,7 @@ only; no executable bytes or disassembly text are retained.
 from __future__ import annotations
 
 import hashlib
+import struct
 
 from tools.stoneage_jss_launcher_archive_probe import ORIGINAL, get_bounded, replay_url
 from tools.stoneage_jss_launcher_deep_probe import KNOWN_SHA256, TIMESTAMP, parse_pe_layout
@@ -45,6 +46,53 @@ NEXT_CALL=18
 def clean(v,limit=1000):
     s=" ".join(str(v if v is not None else "").split())
     return "".join(c for c in s if c>=" " and c!="\x7f").replace("|","%7C")[:limit]
+
+
+def va_to_offset(layout,image_base,va):
+    rva=va-image_base
+    for sec in layout["sections"]:
+        span=max(sec["vsize"],sec["raw_size"])
+        if sec["vaddr"]<=rva<sec["vaddr"]+span:
+            rel=rva-sec["vaddr"]
+            if rel>=sec["raw_size"]:
+                return None,sec["name"]
+            return sec["raw_ptr"]+rel,sec["name"]
+    return None,""
+
+
+def ascii_at(data,off,limit=256):
+    if off is None or off<0 or off>=len(data):
+        return ""
+    end=data.find(b"\0",off,min(len(data),off+limit))
+    if end<0:
+        end=min(len(data),off+limit)
+    raw=data[off:end]
+    if not raw or any(b<0x20 or b>0x7e for b in raw):
+        return ""
+    return raw.decode("ascii","replace")
+
+
+def manifest_object_dwords(data,layout,image_base,target_va,size=0x28):
+    off,section=va_to_offset(layout,image_base,target_va)
+    if off is None:
+        return section,()
+    rows=[]
+    for rel in range(0,size,4):
+        if off+rel+4>len(data):
+            break
+        value=struct.unpack_from("<I",data,off+rel)[0]
+        pointee_off,pointee_section=va_to_offset(layout,image_base,value)
+        text=ascii_at(data,pointee_off) if pointee_off is not None else ""
+        if value==0:
+            kind="zero"
+        elif pointee_off is not None and text:
+            kind="ascii-pointer"
+        elif pointee_off is not None:
+            kind="image-pointer"
+        else:
+            kind="scalar"
+        rows.append((rel,value,kind,pointee_section,text))
+    return section,tuple(rows)
 
 
 def xref_role(ins,target_va):
@@ -123,6 +171,20 @@ def main():
         rows=sorted({(ins.address,idx):(ins,idx) for ins,idx in rows}.values(),key=lambda x:x[0].address)
         total+=len(rows)
         print(f"BUFFER|label={label}|va=0x{target_va:x}|xrefs={len(rows)}")
+        if label.startswith("manifest-global-"):
+            section,static_rows=manifest_object_dwords(
+                data,layout,image_base,target_va
+            )
+            print(
+                f"STATIC_OBJECT|label={label}|section={clean(section)}|"
+                f"bytes=40|dwords={len(static_rows)}"
+            )
+            for rel,value,kind,pointee_section,text_value in static_rows:
+                print(
+                    f"STATIC_DWORD|label={label}|offset=0x{rel:x}|value=0x{value:08x}|"
+                    f"kind={kind}|pointee_section={clean(pointee_section)}|"
+                    f"text={clean(text_value)}"
+                )
         for ins,idx in rows:
             near=nearby_strings(instructions,idx,strings,image_base)
             call=next_call(instructions,idx,image_base,imports,thunks)
