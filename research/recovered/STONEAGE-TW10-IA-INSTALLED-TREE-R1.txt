@@ -1,0 +1,25 @@
+StoneAge Taiwan v1 Internet Archive installed-tree probe — R1
+SCOPE|advancedsearch+item-filelist-metadata|tw1-signatures+map-cache|no-payload-download
+QUERY|n=1|results=100|q="sa_3.exe"|url=https://archive.org/advancedsearch.php?q=%22sa_3.exe%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=mediatype&fl%5B%5D=collection&rows=100&page=1&output=json
+QUERY|n=2|results=1|q="adrn_1.bin"|url=https://archive.org/advancedsearch.php?q=%22adrn_1.bin%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=mediatype&fl%5B%5D=collection&rows=100&page=1&output=json
+QUERY|n=3|results=0|q="spradrn_1.bin"|url=https://archive.org/advancedsearch.php?q=%22spradrn_1.bin%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=mediatype&fl%5B%5D=collection&rows=100&page=1&output=json
+QUERY|n=4|results=0|q="battletxt_1.txt"|url=https://archive.org/advancedsearch.php?q=%22battletxt_1.txt%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=mediatype&fl%5B%5D=collection&rows=100&page=1&output=json
+QUERY|n=5|results=0|q="soundaddr_1.txt"|url=https://archive.org/advancedsearch.php?q=%22soundaddr_1.txt%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=mediatype&fl%5B%5D=collection&rows=100&page=1&output=json
+QUERY|n=6|results=0|q="waei.bin"|url=https://archive.org/advancedsearch.php?q=%22waei.bin%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=mediatype&fl%5B%5D=collection&rows=100&page=1&output=json
+QUERY|n=7|results=53|q="StoneAge" AND mediatype:software|url=https://archive.org/advancedsearch.php?q=%22StoneAge%22+AND+mediatype%3Asoftware&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=mediatype&fl%5B%5D=collection&rows=100&page=1&output=json
+QUERY|n=8|results=100|q="Stone Age" AND mediatype:software|url=https://archive.org/advancedsearch.php?q=%22Stone+Age%22+AND+mediatype%3Asoftware&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=mediatype&fl%5B%5D=collection&rows=100&page=1&output=json
+QUERY|n=9|results=5|q="石器時代" AND mediatype:software|url=https://archive.org/advancedsearch.php?q=%22%E7%9F%B3%E5%99%A8%E6%99%82%E4%BB%A3%22+AND+mediatype%3Asoftware&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=mediatype&fl%5B%5D=collection&rows=100&page=1&output=json
+QUERY|n=10|results=100|q="石器时代" AND mediatype:software|url=https://archive.org/advancedsearch.php?q=%22%E7%9F%B3%E5%99%A8%E6%97%B6%E4%BB%A3%22+AND+mediatype%3Asoftware&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=mediatype&fl%5B%5D=collection&rows=100&page=1&output=json
+QUERY|n=11|results=100|q="華義" AND "石器時代"|url=https://archive.org/advancedsearch.php?q=%22%E8%8F%AF%E7%BE%A9%22+AND+%22%E7%9F%B3%E5%99%A8%E6%99%82%E4%BB%A3%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=mediatype&fl%5B%5D=collection&rows=100&page=1&output=json
+QUERY|n=12|results=1|q="Waei" AND "StoneAge"|url=https://archive.org/advancedsearch.php?q=%22Waei%22+AND+%22StoneAge%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=mediatype&fl%5B%5D=collection&rows=100&page=1&output=json
+ERROR|scope=metadata:NPWK19720801|kind=TimeoutError|message=The read operation timed out
+COUNT|queries|12
+COUNT|unique_items|454
+COUNT|metadata_fetched|453
+COUNT|errors|1
+COUNT|carriers_with_signature_or_map|0
+COUNT|multi_signature_carriers|0
+COUNT|map_carriers|0
+COUNT|map_dat_rows|0
+COUNT|qualified_signature_plus_map_carriers|0
+RESOLUTION|INCONCLUSIVE|Internet Archive metadata surface partially failed
