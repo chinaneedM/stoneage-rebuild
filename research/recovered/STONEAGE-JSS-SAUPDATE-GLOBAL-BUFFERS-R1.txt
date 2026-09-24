@@ -1,6 +1,16 @@
 StoneAge JSS SaUpdate global-buffer xref probe — R1
 SCOPE|exact-global-pointer-xrefs+nearby-strings+next-call|derived-only|no-disassembly-retained
 FETCH|status=206|bytes=217088|sha256=6795d9349168f77aa025d7c4ea05d005c5bbfe33dd4b227eb7731802fa7eb82b|final=https://web.archive.org/web/20010503013834id_/http://www.titan.co.jp/stoneage/stoneage.exe
+BUFFER|label=manifest-global-4070c0|va=0x4070c0|xrefs=1
+XREF|label=manifest-global-4070c0|rva=0x1570|mnemonic=push|role=pointer-pass|nearby_strings=2|next_call=1
+NEAR_STRING|label=manifest-global-4070c0|xref_rva=0x1570|order=1|ins_rva=0x154e|text=data\download
+NEAR_STRING|label=manifest-global-4070c0|xref_rva=0x1570|order=2|ins_rva=0x1559|text=b_
+NEXT_CALL|label=manifest-global-4070c0|xref_rva=0x1570|call_rva=0x1577|kind=indirect|dll=|target=
+BUFFER|label=manifest-global-4070e8|va=0x4070e8|xrefs=1
+XREF|label=manifest-global-4070e8|rva=0x156b|mnemonic=push|role=pointer-pass|nearby_strings=2|next_call=1
+NEAR_STRING|label=manifest-global-4070e8|xref_rva=0x156b|order=1|ins_rva=0x154e|text=data\download
+NEAR_STRING|label=manifest-global-4070e8|xref_rva=0x156b|order=2|ins_rva=0x1559|text=b_
+NEXT_CALL|label=manifest-global-4070e8|xref_rva=0x156b|call_rva=0x1577|kind=indirect|dll=|target=
 BUFFER|label=sa-executable-buffer|va=0x85e6fc|xrefs=5
 XREF|label=sa-executable-buffer|rva=0x30c0|mnemonic=mov|role=move-reference|nearby_strings=0|next_call=1
 NEXT_CALL|label=sa-executable-buffer|xref_rva=0x30c0|call_rva=0x30eb|kind=internal|dll=|target=0x31b0
@@ -201,4 +211,4 @@ UNKNOWN_CALL|function_rva=0x1e61|order=2|call_rva=0x1f48|kind=internal|dll=|targ
 UNKNOWN_FUNCTION|start_rva=0x3ed3|end_rva=0x3f1c|boundary=bounded|instructions=21|strings=1|calls=1
 UNKNOWN_STRING|function_rva=0x3ed3|order=1|ins_rva=0x3ef1|text=updated
 UNKNOWN_CALL|function_rva=0x3ed3|order=1|call_rva=0x3f00|kind=import|dll=MSVCRT.dll|target=_execl
-RESOLUTION|GLOBAL_BUFFER_XREFS_DERIVED|targets=9|xrefs=32|unknown_functions=5|binary-not-committed
+RESOLUTION|GLOBAL_BUFFER_XREFS_DERIVED|targets=11|xrefs=34|unknown_functions=5|binary-not-committed
