@@ -23,7 +23,7 @@ jobs:
         shell: bash
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq antiword p7zip-full >/dev/null
+          sudo apt-get install -y -qq antiword p7zip-full unrtf >/dev/null
       - name: Probe catalogue text and compiled help
         shell: bash
         run: |
@@ -40,7 +40,7 @@ jobs:
           DOC="10老光盘群(群号854318908)群友分享汇总 2019年9月/2019-09-13/俞某某/藏經閣电脑游戏总目录（001-710）.doc"
           CHM="10老光盘群(群号854318908)群友分享汇总 2019年9月/2019-09-13/俞某某/藏经阁1-490目录.chm"
           TARGETS=("2001C226","哇靠轰炸鸡","NEW GAME 093","总第280期","藏经阁-东方狂龙","藏经阁","石器时代","石器時代","精灵王传说","精靈王傳說","StoneAge","华义","華義","万方","萬方","2.5")
-          OUT="research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R3.txt"
+          OUT="research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R4.txt"
 
           def url_for(path):
               return BASE+urllib.parse.quote(path,safe="/()=+")
@@ -116,10 +116,32 @@ jobs:
           print(f"DOC_TEXT_BYTES|{len(s.encode('utf-8'))}")
           PY
             else
-              echo "DOC_EXTRACT_ERROR|$(tr '\n' ' ' </tmp/sa25cat/antiword.err | head -c 1200)"
+              if unrtf --text /tmp/sa25cat/catalog.doc >/tmp/sa25cat/catalog-doc.txt 2>/tmp/sa25cat/unrtf.err; then
+                python3 - <<'PY'
+          from pathlib import Path
+          p=Path('/tmp/sa25cat/catalog-doc.txt')
+          s=p.read_text('utf-8','ignore') if p.exists() else ''
+          toks=("2001C226","哇靠轰炸鸡","NEW GAME 093","总第280期","石器时代","石器時代","精灵王传说","精靈王傳說","StoneAge","华义","華義","万方","萬方","2.5")
+          def clean(x,n=3200): return " ".join(str(x).split()).replace("|","%7C")[:n]
+          hits=0
+          for t in toks:
+              start=0; n=0
+              while True:
+                  i=s.lower().find(t.lower(),start)
+                  if i<0: break
+                  n+=1; hits+=1
+                  print(f"DOC_RTF_MATCH|token={clean(t)}|n={n}|context={clean(s[max(0,i-1000):i+len(t)+1500])}")
+                  start=i+len(t)
+                  if n>=20: break
+          print(f"DOC_RTF_MATCH_COUNT|{hits}")
+          print(f"DOC_RTF_TEXT_BYTES|{len(s.encode('utf-8'))}")
+          PY
+              else
+                echo "DOC_EXTRACT_ERROR|antiword=$(tr '\n' ' ' </tmp/sa25cat/antiword.err | head -c 600)|unrtf=$(tr '\n' ' ' </tmp/sa25cat/unrtf.err | head -c 600)"
+              fi
             fi
             echo "DOC_TEXT_END"
-          } >> research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R3.txt
+          } >> research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R4.txt
 
           {
             echo "CHM_TEXT_BEGIN"
@@ -155,15 +177,15 @@ jobs:
               echo "CHM_EXTRACT_ERROR|$(tr '\n' ' ' </tmp/sa25cat/7z.log | head -c 1200)"
             fi
             echo "CHM_TEXT_END"
-          } >> research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R3.txt
+          } >> research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R4.txt
 
-          echo "EVIDENCE_BOUNDARY|Collector catalogues and share summaries are later preservation metadata. Catalogue IDs and links remain search/recovery leads, not contemporaneous Waei provenance." >> research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R3.txt
+          echo "EVIDENCE_BOUNDARY|Collector catalogues and share summaries are later preservation metadata. Catalogue IDs and links remain search/recovery leads, not contemporaneous Waei provenance." >> research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R4.txt
           rm -rf /tmp/sa25cat
       - name: Commit derived report only
         shell: bash
         run: |
           set -euo pipefail
-          R='research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R3.txt'
+          R='research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R4.txt'
           cp "$R" /tmp/report.txt
           echo 'DERIVED_REPORT_BEGIN'; cat "$R"; echo 'DERIVED_REPORT_END'
           git config user.name stoneage-recovery-bot
@@ -174,7 +196,7 @@ jobs:
           cp /tmp/report.txt "$R"
           git add "$R"
           git diff --cached --quiet && exit 0
-          git commit -m 'research: scan old-disc catalog for StoneAge identities'
+          git commit -m 'research: scan full old-disc catalog RTF for StoneAge'
           for n in 1 2 3 4 5; do
             git push && exit 0
             sleep $((n * 3))
