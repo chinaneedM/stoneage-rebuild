@@ -1229,6 +1229,56 @@ Every substantial source should record:
   - `research/clients/STONEAGE-SA25-21CN-SA25UP-JPG-VISUAL-R1.md`
 
 
+
+### SRC-CN-2002-21CN-SA25-UPDATER-01
+
+- Native catalogue URL: `http://download.21cn.com/list.php?id=20165`
+- Earliest currently recovered archive capture: **2002-02-12 01:05:02 UTC**, HTTP 200
+- Earliest replay body: **36,495 bytes**
+- Earliest replay SHA-256: `962145dbcd7b8e4c7e627be3787455aa554de7f2ab4d39592255d1a4d19d5d28`
+- Catalogue title: **`石器时代2.5—精灵王传说`**
+- Catalogue fields:
+  - 软件版本: **客户端升级包**
+  - 软件类别: 冒险角色
+  - 软件性质: 共享 — 21CN catalogue classification only
+  - 整理日期: **2002-01-31** — catalogue metadata, not archive timestamp
+  - 文件大小: **8473K** in early captures; later **8.27M**
+  - 系统平台: Win9x/WinME/WinNT/Win2000/WinXP
+  - 软件公司: **北京华义**
+- Exact early asset links:
+  - `http://download.21cn.com/file/game/maoxian/sa25up.zip`
+  - `http://download.21cn.com/file/game/maoxian/sa25up.jpg`
+- Preservation depth:
+  - **14** archived HTTP-200 catalogue rows from 2002-02-12 through 2005;
+  - final bounded probe replayed **10** selected catalogue captures with **0 errors**;
+  - 2002-06-13 and 2002-08-12 preserve the same StoneAge 2.5/updater identity;
+  - later pages normalize the size to **8.27M**.
+- Delivery/router evidence:
+  - `downit.php?id=20165&num=0` is archived;
+  - **2002-10-17** router replay contains `http://images.21cn.com/download/file/game/maoxian/sa25up.zip`;
+  - later pages/router surfaces expose `download.21cn.com/file1/game/maoxian/sa25up.zip`, `dg.download.21cn.com/file1/game/maoxian/sa25up.zip`, `dg.download.21cn.com/file1_21cn/game/maoxian/sa25up.zip`, `dg.download.21cn.com/file1xjy/game/maoxian/sa25up.zip`, and `dg.download.21cn.com/file1xzm/game/maoxian/sa25up.zip`.
+- Confidence:
+  - **A for literal native 21CN catalogue fields, capture timestamps, exact page links and router references**;
+  - **A for classifying the historical token as the 2.5《精灵王传说》客户端升级包 on 21CN**;
+  - **OPEN for ZIP bytes/hash/archive members and byte-identical equivalence to an operator-origin master**.
+- Supports:
+  - `sa25up.zip` is the ~8.27 MB StoneAge 2.5 Spirit King client updater mirrored by 21CN;
+  - the updater is distinct from the separately documented 575/580 MB full client package;
+  - Beijing Waei is the software company named on the native catalogue entry.
+- Does not support:
+  - that 21CN's bytes were unmodified relative to an operator master;
+  - any ZIP checksum or internal file tree;
+  - any particular field-map/resource delta until the payload bytes are actually recovered.
+- Negative controls / disambiguation:
+  - 21CN record `22318` is a separate 564K update for a Beijing Netcom 9 free-test server, with page整理日期 2002-07-17;
+  - record `8831` is Quick Heal antivirus and is closed as a false crawl-proximity candidate.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-21CN-RANKING-ID-R1.txt`
+  - `research/recovered/STONEAGE-SA25-21CN-RECORD-20165-R1.txt`
+  - `research/recovered/STONEAGE-SA25-21CN-DOWNIT-20165-R1.txt`
+  - `research/recovered/STONEAGE-SA25-21CN-JPG-R1.txt`
+
+
 ### SRC-CN-2003-PCPC-SA25UP-SOURCE-ARCHIVE-01
 
 - Title/context: archived legacy software/game download-link page `/soft/soft.htm`
