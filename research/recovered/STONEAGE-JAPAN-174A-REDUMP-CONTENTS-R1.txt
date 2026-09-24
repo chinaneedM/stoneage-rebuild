@@ -1,0 +1,18 @@
+StoneAge Japan 1.74a Redump contents-index probe — R1
+SCOPE|modern-redump-metadata|contents-filter|coverdiscs+demos|no-disc-download
+QUERY_SCHEMA|source=superg/vgindex@main|field=contents|categories=Coverdiscs,Demos
+QUERY|label=jp-pc-coverdisc-latin|status=200|bytes=60591|sha256=6d46f5635b7bc170739451bcb3872a67fd887733d6dbc92403de3d599ca5db1e|database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?region=jp&system=PC&category=Coverdiscs&contents=StoneAge
+QUERY|label=jp-pc-coverdisc-space|status=200|bytes=60700|sha256=fdcc57322609a572f4cd2a643363e6c785c27c20445e95cadba6ce13de238a9a|database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?region=jp&system=PC&category=Coverdiscs&contents=Stone+Age
+QUERY|label=jp-pc-coverdisc-japanese|status=200|bytes=62584|sha256=c0a1a6187b8d476dc7aa7a5359c468a90f04f60413cb33096d9bbe784b33dbca|database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?region=jp&system=PC&category=Coverdiscs&contents=%E3%82%B9%E3%83%88%E3%83%BC%E3%83%B3%E3%82%A8%E3%82%A4%E3%82%B8
+QUERY|label=jp-pc-coverdisc-filename|status=200|bytes=60702|sha256=7bc7fece243629065ba1c1d9c107a80aabe4ba78668d0742ac403b5b4ea558fd|database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?region=jp&system=PC&category=Coverdiscs&contents=sa174hg.exe
+QUERY|label=jp-pc-demo-latin|status=200|bytes=60411|sha256=d0c508f043d427c8053a0aa5cd04b355eed56b062d0c1ba46f0304a6450ee444|database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?region=jp&system=PC&category=Demos&contents=StoneAge
+QUERY|label=jp-pc-any-filename|status=200|bytes=59830|sha256=e08ae8019fdbb741962b8ca8410d104007c295c2bc73d2617a5958af52c76e95|database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?region=jp&system=PC&contents=sa174hg.exe
+QUERY|label=global-pc-coverdisc-filename|status=200|bytes=60190|sha256=cec6c9cb3357bdecc92d484b5332d87dcced79bc0cefc3447bf3dfbbcd0f0f1b|database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?system=PC&category=Coverdiscs&contents=sa174hg.exe
+QUERY|label=global-pc-any-filename|status=200|bytes=59318|sha256=231802f9dcb70e91861933ea19ce2bb36018afaf065ce9ad8f7c5c451608c02c|database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?system=PC&contents=sa174hg.exe
+COUNT|queries|8
+COUNT|completed|8
+COUNT|errors|0
+COUNT|conclusive|8
+COUNT|positive_queries|0
+COUNT|matching_rows|0
+RESOLUTION|REDUMP_CONTENTS_NO_HIT|no indexed StoneAge/sa174hg contents match in tested coverdisc/demo surfaces
