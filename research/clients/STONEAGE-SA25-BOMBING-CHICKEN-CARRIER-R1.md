@@ -96,3 +96,25 @@ The exact-carrier probe was rerun after adding the catalogue-only aliases and re
 A modern Bilibili search surface labels a video **“经典射鸡老游戏：哇靠轰炸鸡中文版(射鸡英雄传1)”**, while modern game databases use `射鸡英雄传` for `Chicken Shoot`. This is useful only as a search alias/hypothesis because later GBA/Wii releases reuse the same title family and can easily create false positives.
 
 **Operational boundary:** the DiscMaster/IA exact metadata route is now bounded for this carrier. Reopen it only when a new independently sourced Chinese/Waei package identity, installer filename, disc label, checksum, file tree or repost token appears.
+
+
+## Old-disc torrent/catalog cross-check — 2026-09-24
+
+The public 老光盘群 preservation metadata surface was checked specifically to determine whether the catalogue-local `2001 NEW GAME 093（总第280期）2CD` / `2001C226` clue exposes a directly recoverable StoneAge-bearing disc image.
+
+Results:
+
+- `allseeds.zip` contained **89 torrent metadata entries** at the tested snapshot.
+- The dedicated StoneAge signature scan found **0 exact client-signature paths** for `stoneage.exe`, early REAL/ADRN/SPR/SPRADRN/BATTLE generation files, `sa_2903.exe`, or the known 2.5 resource-generation filenames.
+- Only **5 lexical StoneAge-title paths** were found across **4 torrents**; the game-relevant one was a later `大软石器时代特刊纪念册.pdf`, not a client/disc image.
+- The earlier 2.5 catalogue-neighborhood scan also found **0 strong target hits**. Its `总第280期` / `NEW GAME` / `藏经阁` matches resolve to catalogues and unrelated issue-number noise rather than a direct StoneAge 2.5 payload.
+- Public catalogue text does bind `2001 NEW GAME 093（总第280期）2CD` to `2001C226 哇靠轰炸鸡完美中文版`; however this establishes only the contents of a later collector/pirate-compilation catalogue, not an original Beijing-Waei 《轰炸鸡》 carrier.
+
+**EVIDENCE BOUNDARY:** even if the exact 藏经阁 issue image is later recovered, it is not automatically a provenance-preserving StoneAge carrier. It may be useful as a secondary search/control surface or to expose copied filenames/readme tokens, but it cannot be promoted to the clean-client baseline without an independently attributable original Waei/StoneAge source.
+
+Derived metadata reports:
+
+- `research/recovered/STONEAGE-SA25-OLD-DISC-TORRENTS-R2.txt`
+- `research/recovered/STONEAGE-OLD-DISC-TORRENT-SIGNATURES-R1.txt`
+
+**Operational consequence:** the tested 老光盘群 torrent-metadata snapshot is **BOUNDED** for direct StoneAge 2.5 client recovery. Do not repeat the same 89-torrent path scan unless the upstream metadata snapshot changes materially or a new exact filename/disc identity supplies a targeted query.
