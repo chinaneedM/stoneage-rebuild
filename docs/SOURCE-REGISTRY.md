@@ -944,3 +944,30 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-SINA-182-ARCHIVE-R1.txt`;
   - `research/recovered/STONEAGE-SINA-182-ARCHIVE-FALLBACK-R1.txt`;
   - `research/recovered/STONEAGE-HISTORICAL-MAP-PACK-ARCHIVE-R1.txt`.
+
+
+### SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-01
+
+- Title/filename: archived `map.exe` full-map package
+- Original/archive timestamp: **2003-06-23 23:44:51 UTC**
+- Retrieval date: 2026-09-24
+- Language/region: Simplified Chinese / Mainland China StoneAge ecosystem
+- Source type: preserved historical binary from a contemporaneously linked StoneAge map-download mirror
+- Historical URL: `http://www.wuxitianlong.com/sa/map.exe`
+- Archive replay: Wayback timestamp `20030623234451`
+- SHA-256: `372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e`
+- Confidence: **A/S-derived** — the dated mirror relationship is anchored by contemporaneous Sina download pages; the recovered archive bytes themselves are hash-locked preservation evidence, but this is not an original Taiwan-v1/operator-disc artifact.
+- Supports:
+  - a complete historical StoneAge map-cache package is byte-recoverable from a 2003-06 archive capture of the exact mirror URL exposed by the contemporaneous download hub;
+  - the package contains **1,008 numeric DAT map IDs**, of which **995** parse under the strict three-plane map-cache model;
+  - comparison with the preserved 2.5 map directory finds the same 1,008 numeric IDs, **993 byte-identical** files, **15 changed** files and no one-sided numeric IDs;
+  - direct Taiwan-v1 resource-profile classification of the 995 parseable historical maps yields **773 compatible / 222 incompatible** under the necessary-condition ADRN rule.
+- Does not support:
+  - that the package is a Taiwan-v1 map corpus;
+  - that any asset-compatible map existed unchanged in Taiwan v1;
+  - that the historical package is byte-identical to every 5.0/6.0 download endpoint merely because those pages share a filename or mirror path;
+  - that the preserved mixed 2.5 client/server bundle is clean as a whole.
+- Derived reports:
+  - `research/recovered/STONEAGE-HISTORICAL-MAP-CAPTURE-R1.txt`;
+  - `research/recovered/STONEAGE-2003-MAP-VS-25-R1.txt`;
+  - `research/recovered/STONEAGE-TW10-2003-FIELDMAP-COMPAT-R1.txt`.
