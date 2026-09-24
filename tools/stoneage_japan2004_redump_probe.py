@@ -15,14 +15,22 @@ import urllib.parse
 import urllib.request
 
 UA="stoneage-rebuild-archaeology/1.0 (+https://github.com/chinaneedM/stoneage-rebuild)"
-BASES=("https://redump.org","https://redump.info")
-MODERN_DISC_URL="https://redump.info/discs?region=jp"
-TARGETS=(
+LEGACY_BASE="https://redump.org"
+MODERN_BASE="https://redump.info/discs"
+MODERN_DISC_URL=MODERN_BASE+"?region=jp"
+LEGACY_TARGETS=(
     ("title-latin","/discs/quicksearch/StoneAge/"),
-    ("title-space","/discs/quicksearch/Stone%20Age/"),
-    ("title-japanese","/discs/quicksearch/%E3%82%B9%E3%83%88%E3%83%BC%E3%83%B3%E3%82%A8%E3%82%A4%E3%82%B8/"),
     ("model","/discs/quicksearch/WR-04156/"),
     ("barcode","/discs/barcode/4988609011565/"),
+)
+MODERN_TARGETS=(
+    ("q-latin", {"region":"jp","system":"PC","q":"StoneAge"}),
+    ("q-japanese", {"region":"jp","system":"PC","q":"ストーンエイジ"}),
+    ("title-latin", {"region":"jp","system":"PC","title":"StoneAge"}),
+    ("title-space", {"region":"jp","system":"PC","title":"Stone Age"}),
+    ("title-japanese", {"region":"jp","system":"PC","title":"ストーンエイジ"}),
+    ("serial-model", {"region":"jp","system":"PC","serial":"WR-04156","serial_exact":"1"}),
+    ("barcode-jan", {"region":"jp","system":"PC","barcode":"4988609011565","barcode_exact":"1"}),
 )
 PINNED=("stoneage","stone age","ストーンエイジ","wr-04156","4988609011565")
 MAX_BODY=2*1024*1024
@@ -76,6 +84,8 @@ def result_count(vis):
     m=re.search(r"Displaying\s+results\s+\d+\s*-\s*\d+\s+of\s+(\d+)",vis,re.I)
     if m:return int(m.group(1))
     if re.search(r"Displaying\s+results\s+0",vis,re.I):return 0
+    m=re.search(r"([0-9][0-9,]*)\s+discs?\s+found",vis,re.I)
+    if m:return int(m.group(1).replace(",",""))
     if re.search(r"No\s+(?:results|discs)",vis,re.I):return 0
     return None
 
@@ -94,63 +104,84 @@ def form_fields(body):
     return tuple(sorted(names)),tuple(forms)
 
 
-def main():
-    print("StoneAge Japan 2004 Redump index probe — R2")
-    print("SCOPE|public-disc-index-html-only|title+model+barcode|no-disc-download")
-    print("ANCHOR|model=WR-04156|jan=4988609011565|package=two-game-CD-ROMs")
-    errors=0
-    hits=0
-    completed=0
+def modern_url(params):
+    return MODERN_BASE+"?"+urllib.parse.urlencode(params)
 
+
+def main():
+    print("StoneAge Japan 2004 Redump index probe — R3")
+    print("SCOPE|public-disc-index-html-only|modern-title+serial+barcode|no-disc-download")
+    print("ANCHOR|model=WR-04156|jan=4988609011565|package=two-game-CD-ROMs")
+    print("QUERY_SCHEMA|source=superg/vgindex@main|fields=q,title,title_foreign,serial,barcode|exact=*_exact")
+
+    discovery_error=0
     try:
         modern=fetch(MODERN_DISC_URL)
         fields,forms=form_fields(modern["body"])
+        vis=visible_text(modern["body"])
         print(
             f"MODERN_DISCOVERY|status={modern['status']}|bytes={len(modern['body'])}|"
             f"sha256={hashlib.sha256(modern['body']).hexdigest()}|"
             f"fields={','.join(clean(x,100) for x in fields)}|forms={len(forms)}|"
+            f"disc_database_marker={int('Disc Database' in vis)}|"
             f"final={clean(modern['final'])}"
         )
-        for action,method in forms:
-            print(f"FORM|method={clean(method)}|action={clean(action)}")
     except Exception as exc:
-        errors+=1
-        print(f"ERROR|base=https://redump.info|query=modern-discovery|kind={type(exc).__name__}|message={clean(exc)}")
+        discovery_error=1
+        print(f"ERROR|surface=modern-discovery|kind={type(exc).__name__}|message={clean(exc)}")
 
-    for base in BASES:
-        for label,path in TARGETS:
-            url=base+path
-            try:
-                result=fetch(url)
-            except Exception as exc:
-                errors+=1
-                print(f"ERROR|base={clean(base)}|query={label}|kind={type(exc).__name__}|message={clean(exc)}")
-                continue
-            completed+=1
-            body=result["body"]
-            vis=visible_text(body)
-            rows=matching_rows(body)
-            count=result_count(vis)
-            hits+=len(rows)
+    legacy_errors=0
+    for label,path in LEGACY_TARGETS:
+        try:
+            result=fetch(LEGACY_BASE+path)
             print(
-                f"QUERY|base={clean(base)}|label={label}|status={result['status']}|"
-                f"bytes={len(body)}|truncated={int(result['truncated'])}|"
-                f"sha256={hashlib.sha256(body).hexdigest()}|"
-                f"result_count={'' if count is None else count}|matching_rows={len(rows)}|"
-                f"final={clean(result['final'])}"
+                f"LEGACY_QUERY|label={label}|status={result['status']}|"
+                f"bytes={len(result['body'])}|final={clean(result['final'])}"
             )
-            for row in rows:
-                print(f"MATCH|base={clean(base)}|label={label}|row={clean(row,1800)}")
-    print(f"COUNT|completed_queries|{completed}")
-    print(f"COUNT|errors|{errors}")
+        except Exception as exc:
+            legacy_errors+=1
+            print(f"LEGACY_ERROR|label={label}|kind={type(exc).__name__}|message={clean(exc)}")
+
+    modern_errors=0
+    modern_completed=0
+    hits=0
+    conclusive=0
+    for label,params in MODERN_TARGETS:
+        url=modern_url(params)
+        try:
+            result=fetch(url)
+        except Exception as exc:
+            modern_errors+=1
+            print(f"ERROR|surface=modern|query={label}|kind={type(exc).__name__}|message={clean(exc)}")
+            continue
+        modern_completed+=1
+        body=result["body"]
+        vis=visible_text(body)
+        rows=matching_rows(body)
+        count=result_count(vis)
+        database_marker="Disc Database" in vis
+        if count is not None and database_marker:
+            conclusive+=1
+        hits+=len(rows)
+        print(
+            f"MODERN_QUERY|label={label}|status={result['status']}|bytes={len(body)}|"
+            f"truncated={int(result['truncated'])}|sha256={hashlib.sha256(body).hexdigest()}|"
+            f"disc_database_marker={int(database_marker)}|"
+            f"result_count={'' if count is None else count}|matching_rows={len(rows)}|"
+            f"final={clean(result['final'])}"
+        )
+        for row in rows:
+            print(f"MATCH|query={label}|row={clean(row,1800)}")
+
+    print(f"COUNT|modern_completed|{modern_completed}")
+    print(f"COUNT|modern_errors|{modern_errors}")
+    print(f"COUNT|modern_conclusive_queries|{conclusive}")
     print(f"COUNT|matching_rows|{hits}")
+    print(f"COUNT|legacy_errors|{legacy_errors}")
     if hits:
         print("RESOLUTION|REDUMP_CANDIDATE_ROWS_FOUND|inspect disc records before any identity claim")
-    elif completed==len(BASES)*len(TARGETS) and errors==0:
-        print("RESOLUTION|REDUMP_NO_IDENTIFIER_HIT|no indexed row matched pinned title/model/barcode searches")
+    elif conclusive==len(MODERN_TARGETS) and modern_errors==0 and discovery_error==0:
+        print("RESOLUTION|REDUMP_NO_IDENTIFIER_HIT|modern Redump returned no StoneAge row for pinned Japan-PC title/model/barcode searches")
     else:
-        print("RESOLUTION|INCONCLUSIVE|Redump query surface incomplete")
+        print("RESOLUTION|INCONCLUSIVE|modern Redump query surface incomplete")
 
-
-if __name__=="__main__":
-    main()
