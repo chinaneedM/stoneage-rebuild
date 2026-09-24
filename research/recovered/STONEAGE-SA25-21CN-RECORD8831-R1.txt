@@ -1,0 +1,10 @@
+StoneAge 2.5 21CN record 8831 trace — R1
+SCOPE|nearest-crawl-detail-page|html+cdx-only|no-linked-software-payload
+CDX|host=202.104.32.168|status=200|bytes=209|sha256=669b5bba53f8ab150081ca3b002d9e998580313fece5aefeef5d170b6859305e|rows=1|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2F202.104.32.168%2Flist.php%3Fid%3D8831&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=2001&to=2004&limit=300
+CDX_ROW|timestamp=20020517231252|original=http://202.104.32.168:80/list.php?id=8831|status=200|mime=text/html|length=5423|digest=53V26DOWPLNPSGUBBXONGZP2IHOT2TSH|redirect=
+ERROR|scope=cdx:download.21cn.com|kind=TimeoutError|message=The read operation timed out
+ERROR|scope=replay:20020517231252|kind=URLError|message=<urlopen error timed out>
+COUNT|archive_rows|1
+COUNT|errors|2
+RESOLUTION|RECORD_8831_TRACED|accept relation to sa25up only if page/path evidence explicitly connects them
+EVIDENCE_BOUNDARY|crawl proximity alone is not parent-child evidence.
