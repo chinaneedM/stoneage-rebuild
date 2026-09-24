@@ -9,6 +9,12 @@ class T(unittest.TestCase):
     def test_parse(self):
         b=json.dumps([["timestamp","original"],["20020201","x"]]).encode()
         self.assertEqual(parse_cdx(b)[0]["timestamp"],"20020201")
+    def test_availability_replay_seed_logic_present(self):
+        from pathlib import Path
+        source=Path("tools/stoneage_waei_sa25_upgrade_page_probe.py").read_text()
+        self.assertIn("AVAIL_REPLAY_SEED|",source)
+        self.assertIn('"availability"',source)
+
     def test_extract(self):
         b='<body>石器时代2.5 完整升级版580兆 <a href="http://x/sa25.exe">下载</a></body>'.encode("gb18030")
         terms,hrefs,ex=extract(b,TARGETS[0])
