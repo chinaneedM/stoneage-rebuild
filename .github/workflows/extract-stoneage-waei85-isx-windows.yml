@@ -77,9 +77,12 @@ jobs:
           Set-Location C:\sa85\ISx
           git checkout -q 3c4177ddd0519244490ff8e78d380110c8dacdc8
           if ((git rev-parse HEAD).Trim() -ne '3c4177ddd0519244490ff8e78d380110c8dacdc8') { throw 'pin mismatch' }
-          $vcvars='C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
-          if (!(Test-Path $vcvars)) { $vcvars='C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat' }
-          if (!(Test-Path $vcvars)) { throw 'vcvars64 not found' }
+          $vswhere=Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio\Installer\vswhere.exe'
+          if (!(Test-Path $vswhere)) { throw 'vswhere not found' }
+          $vsroot=(& $vswhere -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath).Trim()
+          if (!$vsroot) { throw 'Visual Studio C++ toolchain not found' }
+          $vcvars=Join-Path $vsroot 'VC\Auxiliary\Build\vcvars64.bat'
+          if (!(Test-Path $vcvars)) { throw ('vcvars64 not found at '+$vcvars) }
           $cmd='call "'+$vcvars+'" && cl /nologo /O2 /DNO_INFLATE /Fe:ISx.exe ISx.c'
           cmd /c $cmd
           if (!(Test-Path C:\sa85\ISx\ISx.exe)) { throw 'build failed' }
