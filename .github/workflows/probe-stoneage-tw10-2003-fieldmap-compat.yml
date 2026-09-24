@@ -1,0 +1,114 @@
+name: Classify archived 2003 maps against Taiwan v1 assets
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_25_fieldmap_compat_probe.py
+      - .github/workflows/probe-stoneage-tw10-2003-fieldmap-compat.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-tw10-2003-fieldmap-compat
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate compatibility classifier
+        run: python3 -m unittest tests.test_stoneage_tw10_25_fieldmap_compat_probe -v
+
+      - name: Install archive tools
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip unar
+
+      - name: Recover archived 2003-06 map package transiently
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa-map-2003/out
+          python3 - <<'PY'
+          import hashlib, urllib.request
+          from pathlib import Path
+
+          url = 'https://web.archive.org/web/20030623234451id_/http://www.wuxitianlong.com:80/sa/map.exe'
+          expected = '372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e'
+          req = urllib.request.Request(
+              url,
+              headers={'User-Agent': 'stoneage-rebuild-archaeology/1.0'},
+          )
+          dest = Path('/tmp/sa-map-2003/map.exe')
+          h = hashlib.sha256()
+          with urllib.request.urlopen(req, timeout=60) as r, dest.open('wb') as out:
+              while True:
+                  chunk = r.read(1024 * 1024)
+                  if not chunk:
+                      break
+                  out.write(chunk)
+                  h.update(chunk)
+          actual = h.hexdigest()
+          if actual != expected:
+              raise SystemExit(f'historical map package hash mismatch: {actual}')
+          PY
+
+          if ! 7z x -y -o/tmp/sa-map-2003/out /tmp/sa-map-2003/map.exe >/tmp/sa-map-2003/7z.log 2>&1; then
+            rm -rf /tmp/sa-map-2003/out
+            mkdir -p /tmp/sa-map-2003/out
+            unar -f -o /tmp/sa-map-2003/out /tmp/sa-map-2003/map.exe >/tmp/sa-map-2003/unar.log 2>&1
+          fi
+
+      - name: Classify historical DAT maps
+        run: |
+          set -euo pipefail
+          MAPDIR="$(find /tmp/sa-map-2003/out -type d -name map -print -quit)"
+          test -n "$MAPDIR"
+          mkdir -p research/recovered
+          {
+            echo 'SOURCE_ARCHIVE_TIMESTAMP|20030623234451'
+            echo 'SOURCE_URL|http://www.wuxitianlong.com:80/sa/map.exe'
+            echo 'SOURCE_SHA256|372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e'
+            echo
+            python3 -m tools.stoneage_tw10_25_fieldmap_compat_probe \
+              --map-root "$MAPDIR" \
+              --profile research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz
+          } > research/recovered/STONEAGE-TW10-2003-FIELDMAP-COMPAT-R1.txt
+
+      - name: Verify proprietary payloads were not retained
+        run: |
+          set -euo pipefail
+          ! find research tools tests -type f \( -iname 'map.exe' -o -regex '.*/map/[0-9]+\\.dat' \) -print -quit | grep -q .
+
+      - name: Commit derived compatibility report only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-TW10-2003-FIELDMAP-COMPAT-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: classify archived 2003 maps against Taiwan v1 assets'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            MAPDIR="$(find /tmp/sa-map-2003/out -type d -name map -print -quit)"
+            {
+              echo 'SOURCE_ARCHIVE_TIMESTAMP|20030623234451'
+              echo 'SOURCE_URL|http://www.wuxitianlong.com:80/sa/map.exe'
+              echo 'SOURCE_SHA256|372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e'
+              echo
+              python3 -m tools.stoneage_tw10_25_fieldmap_compat_probe \
+                --map-root "$MAPDIR" \
+                --profile research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz
+            } > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: classify archived 2003 maps against Taiwan v1 assets'
+          fi
+          git push
