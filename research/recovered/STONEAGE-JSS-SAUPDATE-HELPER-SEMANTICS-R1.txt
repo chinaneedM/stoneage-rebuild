@@ -359,6 +359,14 @@ CALL_ARG|helper=update-state-sequence|call_rva=0x3ad8|index=1|push_rva=0x3ad5|so
 CALL_ARG|helper=update-state-sequence|call_rva=0x3ad8|index=2|push_rva=0x3ad3|source=imm:0x3
 CALL_ARG|helper=update-state-sequence|call_rva=0x3ad8|index=3|push_rva=0x3ad2|source=stack:+0x52c
 CALL_ARG|helper=update-state-sequence|call_rva=0x3ad8|index=4|push_rva=0x3acd|source=imm:0x400
+RAW_ESP_SLOTS|helper=update-state-sequence|unique=3|values=+0x10,+0x14,+0x18
+RAW_ESP_SLOT|helper=update-state-sequence|disp=+0x10|accesses=1
+RAW_ESP_USE|helper=update-state-sequence|disp=+0x10|rva=0x3c71|mnemonic=mov|operand_index=1
+RAW_ESP_SLOT|helper=update-state-sequence|disp=+0x14|accesses=2
+RAW_ESP_USE|helper=update-state-sequence|disp=+0x14|rva=0x3c61|mnemonic=mov|operand_index=1
+RAW_ESP_USE|helper=update-state-sequence|disp=+0x14|rva=0x3c7c|mnemonic=mov|operand_index=1
+RAW_ESP_SLOT|helper=update-state-sequence|disp=+0x18|accesses=1
+RAW_ESP_USE|helper=update-state-sequence|disp=+0x18|rva=0x3cc9|mnemonic=mov|operand_index=1
 BRANCH_FACT|helper=update-state-sequence|rva=0x3c77|op=cmp|param_slots=|immediates=0x0|registers=|branch=je|target_rva=0x3cc9
 BRANCH_FACT|helper=update-state-sequence|rva=0x3c88|op=cmp|param_slots=|immediates=0x20|registers=cl|branch=je|target_rva=0x3ca9
 BRANCH_FACT|helper=update-state-sequence|rva=0x3c8d|op=cmp|param_slots=|immediates=0x9|registers=cl|branch=je|target_rva=0x3ca9
