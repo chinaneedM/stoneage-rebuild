@@ -327,6 +327,41 @@ def main():
                 f"kind={kind}|dll={clean(dll)}|target={clean(name)}"
             )
 
+    # Bind the two literal manifest endpoint strings to nearby .data globals.
+    data_sec=next((s for s in layout["sections"] if s["name"]==".data"),None)
+    if data_sec is not None:
+        data_lo=image_base+data_sec["vaddr"]
+        data_hi=data_lo+data_sec["vsize"]
+        manifest_literals={
+            "host":image_base+0x7038,
+            "path":image_base+0x7020,
+        }
+        for label,va in manifest_literals.items():
+            refs=[
+                i for i,ins in enumerate(instructions)
+                if va in referenced_absolute_values(ins)
+            ]
+            for idx in refs:
+                nearby=[]
+                for j in range(max(0,idx-6),min(len(instructions),idx+7)):
+                    for candidate in referenced_absolute_values(instructions[j]):
+                        if data_lo<=candidate<data_hi and candidate!=va:
+                            nearby.append((instructions[j].address-image_base,candidate-image_base))
+                dedup=[]
+                seen=set()
+                for pair in nearby:
+                    if pair not in seen:
+                        seen.add(pair); dedup.append(pair)
+                print(
+                    f"MANIFEST_LITERAL_BINDING|kind={label}|xref_rva=0x{instructions[idx].address-image_base:x}|"
+                    f"near_data_refs={len(dedup)}"
+                )
+                for ins_rva,target_rva in dedup[:24]:
+                    print(
+                        f"MANIFEST_NEAR_DATA|kind={label}|xref_rva=0x{instructions[idx].address-image_base:x}|"
+                        f"ins_rva=0x{ins_rva:x}|target_rva=0x{target_rva:x}"
+                    )
+
     # Inspect selected exact local call targets independently of string anchoring.
     for role,rva in SEEDED_FUNCTION_RVAS:
         idx=by_addr.get(image_base+rva)
