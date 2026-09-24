@@ -883,6 +883,9 @@ MANIFEST_CALL|rva=0x1b0d|kind=indirect|dll=|target=
 MANIFEST_CALL|rva=0x1b1a|kind=indirect|dll=|target=
 MANIFEST_CALL|rva=0x1f14|kind=import|dll=MFC42.DLL|target=CWnd::SetWindowTextA
 MANIFEST_CALL|rva=0x1f48|kind=internal|dll=|target=0x1f80
+FIELD5_STACK_WINDOW|refs=1|extract_dest_refs=1|post_extract_refs=0
+FIELD5_STACK_REF|rva=0x1aad|disp=0x141c|phase=extract|insn=rva=0x1aad%7Cmnemonic=lea%7Cops=1:reg:ecx;2:stack:+0x141c
+FIELD5_SEMANTIC|parser_behavior=extracted-but-not-consumed|persistent-record-member=none-recovered|historical-producer-meaning=unknown
 CONTROL_CHECK|rva=0x1a46|match=1|expect=imm:0x1|observed=rva=0x1a46%7Cmnemonic=push%7Cops=1:imm:0x1
 CONTROL_CHECK|rva=0x1a48|match=1|expect=imm:0x3a|observed=rva=0x1a48%7Cmnemonic=push%7Cops=1:imm:0x3a
 CONTROL_CHECK|rva=0x1d74|match=1|expect=string:IP|observed=rva=0x1d74%7Cmnemonic=mov%7Cops=1:reg:esi;2:string:IP
