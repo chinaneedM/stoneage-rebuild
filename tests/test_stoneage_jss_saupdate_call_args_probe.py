@@ -7,6 +7,9 @@ class JssSaUpdateCallArgsProbeTests(unittest.TestCase):
     def test_manifest_http_focus_sites_are_pinned(self):
         labels=dict(FOCUS_SITES)
         self.assertEqual(labels[0x157B],"manifest-wrapper-dispatch")
+        self.assertEqual(labels[0x1A0B],"manifest-field-helper-1")
+        self.assertEqual(labels[0x1AFD],"manifest-load-helper")
+        self.assertEqual(labels[0x1F48],"manifest-field-helper-tail")
         self.assertEqual(labels[0x2902],"wrapper-to-http-core")
         self.assertEqual(labels[0x2A28],"get-http-connection")
         self.assertEqual(labels[0x2D9B],"per-file-http-core-reentry")
