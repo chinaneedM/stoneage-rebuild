@@ -93,6 +93,45 @@ def raw_esp_slots(insns, start_idx, end_idx):
     return rows, examples
 
 
+def normalized_esp_slots(insns, start_idx, end_idx):
+    """Normalize ESP-relative memory operands back to function-entry ESP.
+
+    Positive delta means the current ESP is below entry ESP by that many bytes.
+    This leaf helper has no calls, so a linear push/pop/sub/add accounting is
+    sufficient to recover its entry argument slots.
+    """
+    delta = 0
+    rows = collections.Counter()
+    examples = collections.defaultdict(list)
+    for idx in range(start_idx, end_idx + 1):
+        ins = insns[idx]
+        for op_index, op in enumerate(ins.operands):
+            if op.type == X86_OP_MEM and op.mem.base == X86_REG_ESP:
+                raw_disp = int(op.mem.disp)
+                entry_disp = raw_disp - delta
+                rows[entry_disp] += 1
+                if len(examples[entry_disp]) < 12:
+                    examples[entry_disp].append(
+                        (ins.address, ins.mnemonic, op_index, raw_disp, delta)
+                    )
+
+        # Update the model after the current instruction's memory operands.
+        if ins.mnemonic == "push":
+            delta += 4
+        elif ins.mnemonic == "pop":
+            delta -= 4
+        elif (
+            ins.mnemonic in {"sub", "add"}
+            and len(ins.operands) >= 2
+            and ins.operands[0].type == X86_OP_REG
+            and ins.operands[0].reg == X86_REG_ESP
+            and ins.operands[1].type == X86_OP_IMM
+        ):
+            amount = int(ins.operands[1].imm)
+            delta += amount if ins.mnemonic == "sub" else -amount
+    return rows, examples
+
+
 def helper_branches(insns, start_idx, end_idx, image_base):
     """Emit only compare/test/branch metadata, never operand text."""
     out = []
@@ -276,6 +315,26 @@ def main():
                     print(
                         f"RAW_ESP_USE|helper={label}|disp={disp:+#x}|"
                         f"rva=0x{rva_va-image_base:x}|mnemonic={clean(mnemonic)}|operand_index={op_index}"
+                    )
+
+            norm_rows, norm_examples = normalized_esp_slots(
+                insns, start_idx, end_idx
+            )
+            print(
+                f"ENTRY_ESP_SLOTS|helper={label}|unique={len(norm_rows)}|"
+                f"values={','.join(f'{x:+#x}' for x in sorted(norm_rows))}"
+            )
+            for disp, count in sorted(norm_rows.items()):
+                arg_index = disp // 4 if disp >= 4 and disp % 4 == 0 else -1
+                print(
+                    f"ENTRY_ESP_SLOT|helper={label}|disp={disp:+#x}|"
+                    f"arg_index={arg_index}|accesses={count}"
+                )
+                for rva_va, mnemonic, op_index, raw_disp, delta in norm_examples[disp]:
+                    print(
+                        f"ENTRY_ESP_USE|helper={label}|disp={disp:+#x}|"
+                        f"rva=0x{rva_va-image_base:x}|mnemonic={clean(mnemonic)}|"
+                        f"operand_index={op_index}|raw_disp={raw_disp:+#x}|stack_delta={delta}"
                     )
 
         for row in branches:
