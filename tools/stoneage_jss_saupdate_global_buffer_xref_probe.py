@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Trace exact global-buffer references in archived JSS SaUpdate.
 
-Purpose: identify the two currently unnamed global buffers passed to _execl,
-using exact pointer references and nearby string/call context. Derived metadata
-only; no executable bytes or disassembly text are retained.
+Purpose: trace selected static strings/global buffers in the archived launcher,
+including the two unnamed _execl buffers and the download-folder notice strings.
+Derived metadata only; no executable bytes or disassembly text are retained.
 """
 
 from __future__ import annotations
@@ -27,8 +27,8 @@ from tools.stoneage_tw10_mapcache_binary_probe import referenced_absolute_values
 from tools.stoneage_tw10_technical_probe import pe_sections
 
 TARGETS=(
-    (0x4070C0,"manifest-global-4070c0"),
-    (0x4070E8,"manifest-global-4070e8"),
+    (0x4070C0,"download-folder-created-message"),
+    (0x4070E8,"notice-caption"),
     (0x85E6FC,"sa-executable-buffer"),
     (0x85E2FC,"realbin-state-buffer"),
     (0x85DEFC,"soundbin-state-buffer"),
@@ -72,27 +72,17 @@ def ascii_at(data,off,limit=256):
     return raw.decode("ascii","replace")
 
 
-def manifest_object_dwords(data,layout,image_base,target_va,size=0x28):
-    off,section=va_to_offset(layout,image_base,target_va)
-    if off is None:
-        return section,()
-    rows=[]
-    for rel in range(0,size,4):
-        if off+rel+4>len(data):
-            break
-        value=struct.unpack_from("<I",data,off+rel)[0]
-        pointee_off,pointee_section=va_to_offset(layout,image_base,value)
-        text=ascii_at(data,pointee_off) if pointee_off is not None else ""
-        if value==0:
-            kind="zero"
-        elif pointee_off is not None and text:
-            kind="ascii-pointer"
-        elif pointee_off is not None:
-            kind="image-pointer"
-        else:
-            kind="scalar"
-        rows.append((rel,value,kind,pointee_section,text))
-    return section,tuple(rows)
+def shift_jis_at(data,off,limit=512):
+    if off is None or off<0 or off>=len(data):
+        return ""
+    end=data.find(b"\0",off,min(len(data),off+limit))
+    if end<0:
+        end=min(len(data),off+limit)
+    raw=data[off:end]
+    try:
+        return raw.decode("shift_jis")
+    except UnicodeDecodeError:
+        return ""
 
 
 def xref_role(ins,target_va):
@@ -171,20 +161,13 @@ def main():
         rows=sorted({(ins.address,idx):(ins,idx) for ins,idx in rows}.values(),key=lambda x:x[0].address)
         total+=len(rows)
         print(f"BUFFER|label={label}|va=0x{target_va:x}|xrefs={len(rows)}")
-        if label.startswith("manifest-global-"):
-            section,static_rows=manifest_object_dwords(
-                data,layout,image_base,target_va
-            )
+        if label in {"download-folder-created-message","notice-caption"}:
+            off,section=va_to_offset(layout,image_base,target_va)
+            text_value=shift_jis_at(data,off)
             print(
-                f"STATIC_OBJECT|label={label}|section={clean(section)}|"
-                f"bytes=40|dwords={len(static_rows)}"
+                f"STATIC_TEXT|label={label}|section={clean(section)}|"
+                f"encoding=shift_jis|text={clean(text_value)}"
             )
-            for rel,value,kind,pointee_section,text_value in static_rows:
-                print(
-                    f"STATIC_DWORD|label={label}|offset=0x{rel:x}|value=0x{value:08x}|"
-                    f"kind={kind}|pointee_section={clean(pointee_section)}|"
-                    f"text={clean(text_value)}"
-                )
         for ins,idx in rows:
             near=nearby_strings(instructions,idx,strings,image_base)
             call=next_call(instructions,idx,image_base,imports,thunks)
