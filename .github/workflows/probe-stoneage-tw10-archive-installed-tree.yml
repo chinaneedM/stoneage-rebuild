@@ -1,0 +1,49 @@
+name: Probe Taiwan v1 installed trees in Internet Archive
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_archive_installed_tree_probe.py
+      - tests/test_stoneage_tw10_archive_installed_tree_probe.py
+      - .github/workflows/probe-stoneage-tw10-archive-installed-tree.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-tw10-archive-installed-tree
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Taiwan v1 Archive probe
+        run: python3 -m unittest tests.test_stoneage_tw10_archive_installed_tree_probe -v
+      - name: Probe installed-tree metadata
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_tw10_archive_installed_tree_probe \
+            > research/recovered/STONEAGE-TW10-IA-INSTALLED-TREE-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-TW10-IA-INSTALLED-TREE-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Taiwan v1 IA installed trees'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_tw10_archive_installed_tree_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe Taiwan v1 IA installed trees'
+          fi
+          git push
