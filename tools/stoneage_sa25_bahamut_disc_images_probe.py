@@ -30,9 +30,14 @@ def fetch_html(url=PAGE):
         if len(b)>3_000_000: raise ValueError("page-too-large")
         return int(getattr(r,"status",r.getcode())),r.geturl(),dict(r.headers.items()),b
 
+ANCHOR="今天分享光碟第二彈內容"
+
 def image_sequence(text):
+    start=text.find(ANCHOR)
+    if start<0:
+        start=0
     out=[]; seen=set()
-    for m in CONTENT_RE.finditer(text):
+    for m in CONTENT_RE.finditer(text,start):
         u=html.unescape(m.group(0))
         if u not in seen:
             seen.add(u); out.append((m.start(),u))
@@ -40,6 +45,16 @@ def image_sequence(text):
 
 def local_context(text,pos,radius=1800):
     return visible(text[max(0,pos-radius):min(len(text),pos+radius)])
+
+def preceding_segments(text,seq):
+    start=text.find(ANCHOR)
+    if start<0:
+        start=0
+    out=[]; prev=start
+    for pos,u in seq:
+        out.append((u,visible(text[prev:pos])))
+        prev=pos+len(u)
+    return tuple(out)
 
 def main():
     print("StoneAge 2.5 Bahamut disc-image mapping and Ruten comparison — R1")
@@ -49,8 +64,10 @@ def main():
     enc,text=decode(b,declared_charset(b))
     seq=image_sequence(text)
     print(f"PAGE|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|encoding={clean(enc)}|images={len(seq)}|final={clean(final)}")
+    segments=preceding_segments(text,seq)
     for i,(pos,u) in enumerate(seq,1):
         print(f"ARTICLE_IMAGE_URL|order={i}|url={clean(u)}")
+        print(f"ARTICLE_IMAGE_PRECEDING|order={i}|value={clean(segments[i-1][1],10000)}")
         print(f"ARTICLE_IMAGE_CONTEXT|order={i}|value={clean(local_context(text,pos),10000)}")
 
     article=[]
