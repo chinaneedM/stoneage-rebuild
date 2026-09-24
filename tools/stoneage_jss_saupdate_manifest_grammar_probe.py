@@ -93,6 +93,64 @@ def field_vas(strings):
     return out
 
 
+def semantic_shape(by_rva,rva,base,strings):
+    ins=by_rva.get(rva)
+    return abstract_instruction(ins,base,strings) if ins is not None else ""
+
+
+def derive_control_semantics(insns,base,strings,imports,thunks):
+    by_rva={ins.address-base:ins for ins in insns}
+    checks=(
+        (0x1a46,"imm:0x1"),
+        (0x1a48,"imm:0x3a"),
+        (0x1d74,"string:IP"),
+        (0x1daa,"stack:+0x10"),
+        (0x1db2,"stack:+0x41c"),
+        (0x1dc6,"va-rva:0x45c2fc"),
+        (0x1de5,"imm:0x1"),
+        (0x1dea,"stack:+0x41c"),
+        (0x1e00,"va-rva:0x45befc"),
+        (0x1e11,"stack:+0x10"),
+        (0x1e1a,"string:IP:1"),
+        (0x1e77,"string:MESSAGE"),
+        (0x1ead,"stack:+0x81c"),
+        (0x1ec6,"va-rva:0x457c74"),
+    )
+    ok=True
+    for rva,needle in checks:
+        observed=semantic_shape(by_rva,rva,base,strings)
+        hit=needle in observed
+        ok &= hit
+        print(
+            f"CONTROL_CHECK|rva=0x{rva:x}|match={int(hit)}|"
+            f"expect={clean(needle)}|observed={clean(observed,1800)}"
+        )
+    call=by_rva.get(0x1f14)
+    resolved=resolve_call(call,base,imports,thunks) if call is not None else None
+    call_ok=resolved==("import","MFC42.DLL","CWnd::SetWindowTextA")
+    print(
+        f"CONTROL_CHECK|rva=0x1f14|match={int(call_ok)}|expect=MFC42.DLL!CWnd::SetWindowTextA|"
+        f"observed={clean(resolved)}"
+    )
+    ok &= call_ok
+    if ok:
+        print(
+            "IP_CONTROL|key=IP|source=full-manifest-line|first_buffer=0x85c2fc|"
+            "second_buffer=0x85befc|counter=0-based|copies=first-two-lines|"
+            "launch_args=execl-8-and-9"
+        )
+        print(
+            "MESSAGE_CONTROL|key=MESSAGE|source=colon-field-2|"
+            "presentation=CWnd::SetWindowTextA|launch_control_buffer=0"
+        )
+        print(
+            "IP1_REACHABILITY|literal_compare=present|normal_colon-field1=IP-for-IP:1-prefix|"
+            "direct-record-key-reachability=not-demonstrated"
+        )
+    else:
+        print("CONTROL_SEMANTICS|resolution=PATTERN_MISMATCH")
+
+
 def main():
     print("StoneAge JSS SaUpdate manifest grammar probe — R1")
     print("SCOPE|newest-field-xrefs+normalized-context+helper-instruction-roles+call-graph|derived-only|no-bytes-no-raw-disassembly")
@@ -232,6 +290,8 @@ def main():
             f"MANIFEST_CALL|rva=0x{ins.address-base:x}|kind={kind}|"
             f"dll={clean(dll)}|target={clean(target)}"
         )
+
+    derive_control_semantics(insns,base,strings,imports,thunks)
 
     print(
         f"RESOLUTION|MANIFEST_GRAMMAR_DERIVED|fields={len(FIELDS)}|"
