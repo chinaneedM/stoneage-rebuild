@@ -1,7 +1,7 @@
 import unittest
 
 from tools.stoneage_sa25_pcpc_source_replay_probe import (
-    TARGETS, interesting_hrefs, normalized_visible, replay_url, token_context
+    TARGETS, decode_body, interesting_hrefs, normalized_visible, replay_url, token_context
 )
 
 
@@ -28,6 +28,13 @@ class SA25PcpcSourceReplayProbeTests(unittest.TestCase):
         self.assertIn("石器時代2.5",visible)
         self.assertIn("sa25up.zip",visible)
         self.assertIn("sa25up.zip",token_context(visible,"sa25up.zip"))
+
+    def test_big5_label_guides_decode(self):
+        body='[下載] 石器時代2.5—精靈王傳說 http://x/sa25up.zip'.encode('big5')
+        enc,text=decode_body(body)
+        self.assertIn(enc,('big5','cp950'))
+        self.assertIn('石器時代2.5',text)
+        self.assertIn('精靈王傳說',text)
 
 
 if __name__=="__main__":
