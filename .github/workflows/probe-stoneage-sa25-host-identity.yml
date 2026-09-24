@@ -1,0 +1,46 @@
+name: Probe StoneAge 2.5 historical host identity
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa25_host_identity_probe.py
+      - tests/test_stoneage_sa25_host_identity_probe.py
+      - .github/workflows/probe-stoneage-sa25-host-identity.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-host-identity
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate identity probe
+        run: python3 -m unittest tests.test_stoneage_sa25_host_identity_probe -v
+      - name: Replay historical host pages
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa25_host_identity_probe \
+            > research/recovered/STONEAGE-SA25-HOST-IDENTITY-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          R='research/recovered/STONEAGE-SA25-HOST-IDENTITY-R1.txt'
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: identify sa25up historical host'
+          git push
