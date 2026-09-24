@@ -34,11 +34,6 @@ jobs:
           HOSTS=('lab.welovesa.com',)
           PATHS=(
               '/viewthread.php?tid=2132',
-              '/forum.php?mod=viewthread&tid=2132',
-              '/archiver/tid-2132.html',
-              '/archiver/index.php?action=tid&value=2132',
-              '/wap/index.php?action=thread&tid=2132',
-              '/viewthread.php?action=printable&tid=2132',
           )
           URL_RE=re.compile(r'(?i)\b(?:https?|ftp)://[^\s"\'<>]+')
           ATT_RE=re.compile(r'(?i)(?:attachment|attach|aid|file|filename|mediafire|rayfile|115|xunlei|pan\.baidu|mega|dropbox|drive\.google|\.rar|\.zip|\.7z|\.exe|\.iso|\.bin|\.cue)')
@@ -110,7 +105,7 @@ jobs:
           print('THREAD_ID|2132')
           print('INDEX_SURFACE|forumdisplay fid=40 currently exposes title, author rayrix, date 2012-09-26, paid/read-restricted thread')
           live_hits=0
-          for scheme in ('https','http'):
+          for scheme in ('https',):
               for host in HOSTS:
                   for path in PATHS:
                       url=f'{scheme}://{host}{path}'
@@ -127,12 +122,7 @@ jobs:
 
           # Wayback exact and prefix metadata around the thread paths.
           cdx='https://web.archive.org/cdx/search/cdx'
-          cdx_targets=(
-              'http://lab.welovesa.com/viewthread.php?tid=2132',
-              'https://lab.welovesa.com/viewthread.php?tid=2132',
-              'http://lab.welovesa.com/viewthread.php',
-              'http://lab.welovesa.com/archiver/',
-          )
+          cdx_targets=()
           captures=[]
           for target in cdx_targets:
               is_prefix=target.endswith('viewthread.php') or target.endswith('/archiver/')
