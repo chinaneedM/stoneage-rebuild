@@ -7,6 +7,7 @@ from tools.stoneage_sa40_sina_aid_probe import (
     BASENAME,
     CGI_PREFIX,
     SOURCE_URL,
+    availability,
     cgi_cdx_url,
     href_candidates,
     relevant_cgi,
@@ -18,6 +19,9 @@ class SA40SinaAidProbeTests(unittest.TestCase):
         self.assertEqual(BASENAME,"shiqi4updatex_02_11_08.zip")
         self.assertTrue(SOURCE_URL.endswith("11084599.shtml"))
         self.assertTrue(CGI_PREFIX.endswith("/download.pl"))
+
+    def test_availability_symbol_is_callable(self):
+        self.assertTrue(callable(availability))
 
     def test_cgi_probe_is_prefix_scoped(self):
         parsed=urllib.parse.urlparse(cgi_cdx_url("20021108","20021231"))
