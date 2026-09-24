@@ -17,11 +17,12 @@ from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_OP_REG, X86_REG_INVALID
 from tools.stoneage_jss_launcher_archive_probe import ORIGINAL,get_bounded,replay_url
 from tools.stoneage_jss_launcher_deep_probe import KNOWN_SHA256,TIMESTAMP,parse_pe_layout
 from tools.stoneage_jss_saupdate_xref_probe import (
-    find_string_locations,find_va_refs,parse_imports,
+    find_string_locations,parse_imports,
 )
 from tools.stoneage_jss_saupdate_http_flow_probe import import_thunks
 from tools.stoneage_jss_saupdate_function_flow_probe import (
     ascii_strings,disassemble_text,function_summary,resolve_call,
+    raw_pointer_hits,recover_xref_instruction,
 )
 from tools.stoneage_tw10_mapcache_binary_probe import referenced_absolute_values
 from tools.stoneage_tw10_technical_probe import pe_sections
@@ -122,17 +123,26 @@ def main():
         locs=find_string_locations(data,layout,token)
         print(f"TARGET|label={label}|text={clean(token.decode('ascii'))}|locations={len(locs)}")
         for file_off,rva in locs:
-            refs=find_va_refs(data,layout,base,rva)
+            ptr_offsets=raw_pointer_hits(data,layout,base,rva)
+            decoded=[]
+            for ptr_off in ptr_offsets:
+                ins=recover_xref_instruction(data,layout,base,rva,ptr_off)
+                if ins is not None:
+                    decoded.append(ins)
+            decoded=sorted(
+                {ins.address:ins for ins in decoded}.values(),
+                key=lambda ins:ins.address,
+            )
             print(
                 f"STRING_LOCATION|label={label}|file_off={file_off}|rva=0x{rva:x}|"
-                f"xrefs={len(refs)}"
+                f"raw_pointer_hits={len(ptr_offsets)}|decoded_xrefs={len(decoded)}"
             )
-            for ref_rva in refs:
+            for ins in decoded:
                 total_refs+=1
-                idx=by_addr.get(base+ref_rva)
+                ref_rva=ins.address-base
+                idx=by_addr.get(ins.address)
                 if idx is None:
                     continue
-                ins=insns[idx]
                 f=function_summary(insns,idx,base,imports,thunks,strings)
                 roots.add(f["start_rva"])
                 print(
