@@ -76,3 +76,22 @@ Derived scanner output:
 - `research/recovered/STONEAGE-SA25-NAMED-CARRIER-TORRENTS-R1.txt`
 
 Status: **BOUNDED ON CURRENT OLD-DISC TORRENT SNAPSHOT / OPEN GLOBALLY.**
+
+
+## Adjacent preserved issue anchor
+
+A modern preservation/catalog surface independently exposes the immediately preceding issue:
+
+- title: `电脑报配套光盘之游戏世界 2002 年01月 (配套光盘)`
+- preserved filename: **`GAMEWORLD200201.iso`**
+- size: **657,821,696 bytes (627.3 MB)**
+- SHA1: **`6241658796F0DF05199F39154E2F4E8D18330837`**
+- public metadata page: https://www.shopmsdn.com/detail-%E7%94%B5%E8%84%91%E6%8A%A5%E9%85%8D%E5%A5%97%E5%85%89%E7%9B%98%E4%B9%8B%E6%B8%B8%E6%88%8F%E4%B8%96%E7%95%8C2002%E5%B9%B401%E6%9C%88%28%E9%85%8D%E5%A5%97%E5%85%89%E7%9B%98%29-4210.html
+
+This independently corroborates the old-disc torrent path `电脑报配套光盘之游戏世界200201.iso` as a real preserved January-2002 issue family.
+
+### Inferred search token only
+
+Because the verified January image uses `GAMEWORLD200201.iso`, the adjacent February token **`GAMEWORLD200202.iso`** is a high-value *search hypothesis*. It is **not** promoted to a historical filename fact until an independent February issue record or carrier exposes that filename.
+
+Operational consequence: the generic 89-torrent rescan remains closed, but exact preservation-index searches may be reopened once for `GAMEWORLD200202` / the compact February issue token. If those exact searches are negative, do not continue generating month/filename guesses without new evidence.
