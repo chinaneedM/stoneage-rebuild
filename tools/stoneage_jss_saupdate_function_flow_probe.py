@@ -43,7 +43,8 @@ MAX_CALLS_PER_FUNCTION=120
 # Exact internal E8 targets observed in the recovered SaUpdate binary.
 # Labels are analytical roles to be tested, not original source symbols.
 SEEDED_FUNCTION_RVAS=(
-    ("update-controller",0x1270),
+    ("dialog-init",0x1270),
+    ("manifest-control",0x13F0),
     ("resource-generation-scan",0x25D0),
     ("manifest-wrapper",0x2880),
     ("post-download-state",0x3610),
