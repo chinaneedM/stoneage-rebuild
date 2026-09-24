@@ -95,3 +95,24 @@ This independently corroborates the old-disc torrent path `电脑报配套光盘
 Because the verified January image uses `GAMEWORLD200201.iso`, the adjacent February token **`GAMEWORLD200202.iso`** is a high-value *search hypothesis*. It is **not** promoted to a historical filename fact until an independent February issue record or carrier exposes that filename.
 
 Operational consequence: the generic 89-torrent rescan remains closed, but exact preservation-index searches may be reopened once for `GAMEWORLD200202` / the compact February issue token. If those exact searches are negative, do not continue generating month/filename guesses without new evidence.
+
+
+### Adjacent-token preservation-index closure
+
+A bounded metadata-only probe tested the inferred February token family against DiscMaster and Internet Archive:
+
+- `GAMEWORLD200202`
+- `GAMEWORLD200202.iso`
+- `电脑报配套光盘之游戏世界200202`
+- `电脑报 游戏世界 2002年2月`
+
+Result:
+
+- DiscMaster candidate hits: **0**
+- Internet Archive metadata items: **0**
+- Internet Archive candidate files: **0**
+- errors: **0**
+
+Derived report: `research/recovered/STONEAGE-SA25-GAMEWORLD-200202-PROBE-R1.txt`.
+
+**Operational boundary:** `GAMEWORLD200202.iso` remains an inferred search token only. Do not continue generating adjacent filename guesses (for example `GAMECD0202`) without an independent source that supplies a new exact token. Reopen only from an exact February-2002 issue record, checksum, file listing, disc photograph, mirror URL, or preserved media entry.
