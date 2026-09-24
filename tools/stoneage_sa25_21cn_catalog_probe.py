@@ -13,6 +13,7 @@ import hashlib
 import html
 import json
 import re
+import time
 import urllib.parse
 import urllib.request
 
@@ -53,13 +54,21 @@ def cdx_url():
     return CDX+"?"+urllib.parse.urlencode(p)
 
 
-def fetch_bytes(url,timeout=40,max_bytes=8_000_000):
-    req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/json,text/html,*/*"})
-    with urllib.request.urlopen(req,timeout=timeout) as r:
-        body=r.read(max_bytes+1)
-        if len(body)>max_bytes:
-            raise ValueError("response-too-large")
-        return int(getattr(r,"status",r.getcode())),r.geturl(),body
+def fetch_bytes(url,timeout=40,max_bytes=8_000_000,attempts=1):
+    last=None
+    for attempt in range(attempts):
+        try:
+            req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/json,text/html,*/*"})
+            with urllib.request.urlopen(req,timeout=timeout) as r:
+                body=r.read(max_bytes+1)
+                if len(body)>max_bytes:
+                    raise ValueError("response-too-large")
+                return int(getattr(r,"status",r.getcode())),r.geturl(),body
+        except Exception as exc:
+            last=exc
+            if attempt+1<attempts:
+                time.sleep(0.8*(attempt+1))
+    raise last
 
 
 def parse_cdx(body):
@@ -144,7 +153,7 @@ def interesting_hrefs(text):
 
 def inspect(row):
     try:
-        st,final,body=fetch_bytes(replay_url(row),timeout=22,max_bytes=1_500_000)
+        st,final,body=fetch_bytes(replay_url(row),timeout=20,max_bytes=1_500_000,attempts=3)
         declared=declared_charset(body)
         enc,text=decode(body,declared)
         raw=body.decode("latin1","ignore")
@@ -169,12 +178,30 @@ def main():
         print(f"FATAL|scope=cdx|kind={type(e).__name__}|message={clean(e)}")
         return
 
+    # Scan likely 2.5-era captures first, then the remaining catalogue.
+    # Low concurrency is intentional: Wayback rejects burst replay traffic.
+    rows=tuple(sorted(
+        rows,
+        key=lambda r:(
+            0 if str(r.get("timestamp") or "").startswith("2002") else
+            1 if str(r.get("timestamp") or "").startswith("2003") else 2,
+            str(r.get("timestamp") or ""),
+            str(r.get("original") or ""),
+        ),
+    ))
+    years={}
+    for row in rows:
+        y=str(row.get("timestamp") or "")[:4]
+        years[y]=years.get(y,0)+1
+    for y,count in sorted(years.items()):
+        print(f"YEAR|year={clean(y)}|rows={count}")
+
     hits=[]
     completed=0
-    with concurrent.futures.ThreadPoolExecutor(max_workers=14) as ex:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as ex:
         for row,st,final,pbody,enc,text,hit,error in ex.map(inspect,rows):
             if error:
-                errors.append((page_id(str(row.get("original") or "")),type(error).__name__,str(error)))
+                errors.append((page_id(str(row.get("original") or "")),error[0],error[1]))
                 continue
             completed+=1
             if not hit:
