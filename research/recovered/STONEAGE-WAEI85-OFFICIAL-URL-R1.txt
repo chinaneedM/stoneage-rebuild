@@ -1,0 +1,13 @@
+StoneAge Wayi 8.5 official URL preservation probe — R1
+SCOPE|exact-official-download-url|2006-2008-archive-metadata|no-payload-download
+TARGET_URL|http://download.wayi.com.tw/download/STONEAGE20060616.exe
+RECOVERED_MIRROR_WRAPPER|bytes=1145465184|sha256=971780abc65ed29a6a7aeb1a528c7db2ef07b11a188e56deaef90a54986609f5|filename=STONEAGE20060616.exe
+CDX_ERROR|kind=TimeoutError|message=The read operation timed out
+AVAIL|requested=20060616|status=200|available=0|capture_ts=|capture_status=|capture_url=|bytes=119|sha256=3a0870e1aa5fdbb8e5df3f59d6b581de2b6a499cb3437696a2b973a653cf4c47
+AVAIL|requested=20070215|status=200|available=1|capture_ts=20071207034405|capture_status=200|capture_url=http://web.archive.org/web/20071207034405/http://download.wayi.com.tw/download/STONEAGE20060616.exe|bytes=307|sha256=58a0f9db4c633e886f21b9ee127a9faa75ab937754017ff814e220b00b3161e5
+AVAIL|requested=20080216|status=200|available=1|capture_ts=20071207034405|capture_status=200|capture_url=http://web.archive.org/web/20071207034405/http://download.wayi.com.tw/download/STONEAGE20060616.exe|bytes=307|sha256=1f6436824a039773ef101598c967e35766f278a208321a0a1ea192803041e67d
+COUNT|cdx_rows|0
+COUNT|exact_length_matches|0
+COUNT|errors|1
+RESOLUTION|PARTIAL_ARCHIVE_FAILURE|do not interpret as negative
+EVIDENCE_BOUNDARY|Forum-era references plus Authenticode/MSI evidence establish the recovery chain; archive URL metadata is corroboration, not required identity by itself.
