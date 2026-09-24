@@ -1,0 +1,161 @@
+name: Probe StoneAge FTP resource paths
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/probe-stoneage-ftp-resource-paths.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-ftp-resource-paths
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe resource-level archive paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 - > research/recovered/STONEAGE-FTP-RESOURCE-PATHS-R1.txt <<'PY'
+          import concurrent.futures,hashlib,json,re,urllib.parse,urllib.request
+
+          UA='stoneage-rebuild-archaeology/1.0'
+          CDX='https://web.archive.org/cdx/search/cdx'
+          HOST='http://ftp.stoneage.com.cn/'
+          DIRS=('battlemap/','map/','data/','saupdate/')
+          FILES=(
+            'StoneAge.exe','sa_3.exe','Setup.ini',
+            'real_1.bin','adrn_1.bin','spr_1.bin','spradrn_1.bin','battle_1.bin',
+            'data/real_1.bin','data/adrn_1.bin','data/spr_1.bin','data/spradrn_1.bin','data/battle_1.bin',
+            'battlemap/battle218.sab','battletxt_1.txt','soundaddr_1.txt'
+          )
+          INTEREST_EXT=('.dat','.map','.sab','.bin','.exe','.txt','.ini','.zip','.cab','.rar')
+
+          def clean(v,n=2200):
+            return ' '.join(str(v or '').split()).replace('|','%7C')[:n]
+
+          def fetch(url,timeout=18,max_bytes=None):
+            req=urllib.request.Request(url,headers={'User-Agent':UA,'Accept':'application/json,*/*'})
+            with urllib.request.urlopen(req,timeout=timeout) as r:
+              if max_bytes is None:
+                b=r.read()
+              else:
+                b=r.read(max_bytes+1)
+                if len(b)>max_bytes: raise ValueError('response-too-large')
+              return int(getattr(r,'status',r.getcode())),r.geturl(),b
+
+          def query(url,match='exact'):
+            q=[('url',url),('output','json'),('fl','timestamp,original,statuscode,mimetype,digest,length'),
+               ('from','2000'),('to','2002'),('collapse','digest'),('limit','3000')]
+            if match!='exact': q.append(('matchType',match))
+            u=CDX+'?'+urllib.parse.urlencode(q)
+            try:
+              st,final,b=fetch(u,20)
+              data=json.loads(b.decode('utf-8','replace'))
+              rows=[]
+              if isinstance(data,list) and data:
+                hdr=data[0]; rows=[dict(zip(hdr,x)) for x in data[1:] if isinstance(x,list)]
+              return url,match,st,b,rows,None
+            except Exception as e:
+              return url,match,None,b'',[],(type(e).__name__,str(e))
+
+          tasks=[(HOST+d,'prefix') for d in DIRS]
+          for f in FILES:
+            tasks.append((HOST+f,'exact'))
+            tasks.append(('https://ftp.stoneage.com.cn/'+f,'exact'))
+
+          print('StoneAge historical FTP resource-path probe — R1')
+          print('SCOPE|client-embedded-ftp-host|2000-2002-CDX-resource-paths|transient-replay-small-hits')
+          print('ANCHOR_URL|http://ftp.stoneage.com.cn:80/battlemap/battle218.sab|CDX-2001-05-16-404')
+          allrows={}
+          errors=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+            results=[f.result() for f in concurrent.futures.as_completed([ex.submit(query,*t) for t in tasks])]
+          for url,match,st,b,rows,err in sorted(results):
+            if err:
+              errors.append((url,err[0],err[1]))
+              print(f'QUERY_ERROR|url={clean(url)}|match={match}|kind={err[0]}|message={clean(err[1])}')
+              continue
+            print(f'QUERY|url={clean(url)}|match={match}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|rows={len(rows)}')
+            for d in rows:
+              key=(d.get('timestamp',''),d.get('original',''),d.get('digest',''))
+              allrows[key]=d
+
+          interesting=[]
+          maprows=[]
+          success=[]
+          for d in sorted(allrows.values(),key=lambda x:(x.get('timestamp',''),x.get('original',''))):
+            u=str(d.get('original') or '')
+            low=urllib.parse.unquote_plus(u).lower()
+            path=urllib.parse.urlsplit(low).path
+            status=str(d.get('statuscode') or '')
+            if path.endswith(INTEREST_EXT):
+              interesting.append(d)
+              if '/map/' in path and path.endswith(('.dat','.map')): maprows.append(d)
+              if status=='200': success.append(d)
+              print('ROW|'+'|'.join(f'{k}={clean(d.get(k,""))}' for k in ('timestamp','original','statuscode','mimetype','digest','length')))
+
+          replayed=0
+          for d in success:
+            try:
+              length=int(d.get('length') or 0)
+            except: length=0
+            if length and length>25_000_000: continue
+            ts=str(d.get('timestamp') or ''); orig=str(d.get('original') or '')
+            if not ts or not orig: continue
+            try:
+              st,final,b=fetch(f'https://web.archive.org/web/{ts}id_/{orig}',20,25_000_000)
+              replayed+=1
+              print(f'REPLAY|timestamp={ts}|original={clean(orig)}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|final={clean(final)}')
+            except Exception as e:
+              print(f'REPLAY_ERROR|timestamp={ts}|original={clean(orig)}|kind={type(e).__name__}|message={clean(e)}')
+
+          for u,k,m in errors:
+            print(f'ERROR|scope={clean(u)}|kind={k}|message={clean(m)}')
+          print(f'COUNT|unique_rows|{len(allrows)}')
+          print(f'COUNT|interesting_rows|{len(interesting)}')
+          print(f'COUNT|status200_interesting|{len(success)}')
+          print(f'COUNT|map_rows|{len(maprows)}')
+          print(f'COUNT|replayed_small_200|{replayed}')
+          print(f'COUNT|errors|{len(errors)}')
+          if any(str(d.get('statuscode'))=='200' for d in maprows):
+            print('RESOLUTION|EARLY_MAP_RESOURCE_CAPTURE_FOUND|evaluate provenance and DAT/MAP format immediately')
+          elif success:
+            print('RESOLUTION|EARLY_RESOURCE_CAPTURES_FOUND|compare hashes against Taiwan-v1 and later branches')
+          elif interesting:
+            print('RESOLUTION|RESOURCE_PATHS_INDEXED_NO_200_BYTES|topology only; no recovered payload')
+          elif errors:
+            print('RESOLUTION|PARTIAL_ARCHIVE_FAILURE|do not interpret as negative')
+          else:
+            print('RESOLUTION|NO_RESOURCE_PATH_ROWS_ON_TESTED_SURFACE')
+          print('EVIDENCE_BOUNDARY|404/index rows are topology evidence only. Only successful replay bytes receive hashes; no recovered payload is committed.')
+          PY
+      - name: Commit derived report only
+        shell: bash
+        run: |
+          set -euo pipefail
+          R='research/recovered/STONEAGE-FTP-RESOURCE-PATHS-R1.txt'
+          cp "$R" /tmp/report.txt
+          echo 'DERIVED_REPORT_BEGIN'; cat "$R"; echo 'DERIVED_REPORT_END'
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe StoneAge FTP resource paths'
+          for n in 1 2 3 4 5; do
+            git push && exit 0
+            sleep $((n * 3))
+          done
+          exit 1
