@@ -47,6 +47,7 @@ SEEDED_FUNCTION_RVAS=(
     ("manifest-control",0x13F0),
     ("resource-generation-scan",0x25D0),
     ("manifest-wrapper",0x2880),
+    ("manifest-post-download",0x19D0),
     ("post-download-state",0x3610),
     ("update-state-sequence",0x3C60),
     ("launch-tail",0x3F20),

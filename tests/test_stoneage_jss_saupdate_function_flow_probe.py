@@ -42,6 +42,7 @@ class JssSaUpdateFunctionFlowProbeTests(unittest.TestCase):
         rvas=[rva for _,rva in SEEDED_FUNCTION_RVAS]
         self.assertEqual(len(roles),len(set(roles)))
         self.assertEqual(len(rvas),len(set(rvas)))
+        self.assertIn(("manifest-post-download",0x19D0),SEEDED_FUNCTION_RVAS)
 
     def test_parser_sites_are_unique(self):
         rvas=[rva for _,rva in PARSER_SITE_RVAS]
