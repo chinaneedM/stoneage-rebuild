@@ -51,19 +51,27 @@ def fetch(url,timeout=35):
         )
 
 
+RAW_TEXT_TOKENS=(
+    "下載",
+    "石器時代2.5",
+    "精靈王傳說",
+)
+
+
 def decode_body(body):
-    # The legacy page may be Big5/CP950 or another Chinese encoding.
-    # Score by replacement count, then prefer encodings common to the source ecosystem.
+    # Replacement-count alone is unsafe: GB18030 can decode Big5 bytes into
+    # mojibake without errors. Prefer encodings reproducing known neighboring
+    # labels at the raw-byte level, then minimize replacement characters.
     candidates=[]
-    for enc in ("big5","cp950","utf-8","gb18030","latin1"):
+    order=("big5","cp950","utf-8","gb18030","latin1")
+    for enc in order:
         try:
-            text=body.decode(enc)
-            candidates.append((text.count("\ufffd"),enc,text))
+            byte_hits=sum(1 for token in RAW_TEXT_TOKENS if token.encode(enc) in body)
         except Exception:
-            continue
-    if not candidates:
-        return "binary",""
-    _,enc,text=min(candidates,key=lambda x:(x[0],("big5","cp950","utf-8","gb18030","latin1").index(x[1])))
+            byte_hits=0
+        text=body.decode(enc,errors="replace")
+        candidates.append((-byte_hits,text.count("\ufffd"),order.index(enc),enc,text))
+    _,_,_,enc,text=min(candidates)
     return enc,text
 
 
@@ -131,6 +139,15 @@ def main():
                 f"sa25up={1 if exact else 0}|interesting_hrefs={len(hrefs)}"
             )
             print(f"TOKENS|label={label}|values={clean(','.join(token_hits))}")
+            for probe_enc in ("big5","cp950","utf-8","gb18030"):
+                raw_hits=[]
+                for raw_token in RAW_TEXT_TOKENS:
+                    try:
+                        if raw_token.encode(probe_enc) in body:
+                            raw_hits.append(raw_token)
+                    except Exception:
+                        pass
+                print(f"BYTE_TEXT|label={label}|encoding={probe_enc}|hits={clean(','.join(raw_hits))}")
             for n,href in enumerate(hrefs[:50],1):
                 print(f"HREF|label={label}|order={n}|value={clean(href,1800)}")
             for token in ("sa25up.zip","202.104.32.168"):
