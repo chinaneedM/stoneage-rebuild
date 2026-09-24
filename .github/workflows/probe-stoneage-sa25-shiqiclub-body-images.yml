@@ -1,0 +1,43 @@
+name: Map shiqi.club StoneAge 2.5 article body images
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa25_shiqiclub_body_images_probe.py
+      - tests/test_stoneage_sa25_shiqiclub_body_images_probe.py
+      - .github/workflows/probe-stoneage-sa25-shiqiclub-body-images.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-shiqiclub-body-images
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_sa25_shiqiclub_body_images_probe -v
+      - name: Map article body images
+        run: |
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa25_shiqiclub_body_images_probe > research/recovered/STONEAGE-SA25-SHIQICLUB-BODY-IMAGES-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-SA25-SHIQICLUB-BODY-IMAGES-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: map StoneAge 2.5 package article images'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
