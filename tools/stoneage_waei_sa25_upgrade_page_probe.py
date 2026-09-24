@@ -84,6 +84,37 @@ def extract(body,base):
         if i>=0: excerpts.append(plain[max(0,i-250):i+650])
     return terms,tuple(dict.fromkeys(hrefs)),tuple(dict.fromkeys(excerpts))
 
+def structural_refs(body,base):
+    raw=decode(body)
+    refs=[]
+    attr_re=re.compile(r'''(?is)\b(?:href|src|action|data|codebase)\s*=\s*["']([^"']+)["']''')
+    for value in attr_re.findall(raw):
+        refs.append(html.unescape(value).strip())
+    # Catch quoted payload/download-like strings used by JavaScript handlers.
+    for value in re.findall(r'''(?is)["']([^"'<>]{1,500})["']''',raw):
+        decoded=urllib.parse.unquote_plus(value).lower()
+        if (
+            any(ext in decoded for ext in PAYLOAD_EXTS)
+            or any(token in decoded for token in ("download","down/","update","upgrade","patch","setup","client","sa25","2.5"))
+        ):
+            refs.append(html.unescape(value).strip())
+    out=[]
+    seen=set()
+    base_norm=base.split("#",1)[0].lower()
+    for value in refs:
+        if not value or value.startswith("#") or value.lower().startswith(("javascript:","mailto:")):
+            continue
+        absolute=urllib.parse.urljoin(base,value)
+        low=urllib.parse.unquote_plus(absolute).lower()
+        if "web.archive.org/" in low:
+            continue
+        if absolute.split("#",1)[0].lower()==base_norm:
+            continue
+        if absolute not in seen:
+            seen.add(absolute)
+            out.append((value,absolute))
+    return tuple(out)
+
 def replay_urls(ts,orig):
     return (
         ("id",f"https://web.archive.org/web/{ts}id_/{orig}"),
@@ -178,13 +209,21 @@ def main():
             try:
                 st,final,body=fetch(u)
                 terms,hrefs,excerpts=extract(body,orig)
+                refs=structural_refs(body,orig)
                 success+=1
-                print(f"REPLAY|timestamp={ts}|mode={mode}|original={clean(orig)}|status={st}|bytes={len(body)}|sha256={hashlib.sha256(body).hexdigest()}|terms={clean(','.join(terms))}|hrefs={len(hrefs)}|final={clean(final)}")
+                print(f"REPLAY|timestamp={ts}|mode={mode}|original={clean(orig)}|status={st}|bytes={len(body)}|sha256={hashlib.sha256(body).hexdigest()}|terms={clean(','.join(terms))}|hrefs={len(hrefs)}|structural_refs={len(refs)}|final={clean(final)}")
                 for ex in excerpts[:20]:
                     print(f"EXCERPT|timestamp={ts}|text={clean(ex)}")
                 for href,absu in hrefs:
+                    if absu.split("#",1)[0].lower()==orig.split("#",1)[0].lower():
+                        continue
+                    if "web.archive.org/" in absu.lower():
+                        continue
                     all_hrefs[absu]=(ts,orig,href)
                     print(f"HREF|timestamp={ts}|source={clean(orig)}|href={clean(href)}|absolute={clean(absu)}")
+                for ref,absu in refs:
+                    all_hrefs.setdefault(absu,(ts,orig,ref))
+                    print(f"STRUCT_REF|timestamp={ts}|source={clean(orig)}|ref={clean(ref)}|absolute={clean(absu)}")
                 break
             except Exception as exc:
                 errors.append((f"replay:{ts}:{mode}",type(exc).__name__,str(exc)))
@@ -194,7 +233,7 @@ def main():
     strong=[]
     for absu,(ts,src,href) in all_hrefs.items():
         low=urllib.parse.unquote_plus(absu).lower()
-        if any(ext in low for ext in PAYLOAD_EXTS) or any(x in low for x in ("setup","client","update","upgrade","2.5","sa25")):
+        if any(ext in low for ext in PAYLOAD_EXTS) or any(x in low for x in ("setup","client","download","patch","sa25")):
             strong.append((absu,ts,src,href))
     for absu,ts,src,href in strong:
         print(f"STRONG_HREF|timestamp={ts}|source={clean(src)}|href={clean(href)}|absolute={clean(absu)}")
