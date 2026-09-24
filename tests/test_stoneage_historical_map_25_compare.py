@@ -3,7 +3,10 @@ import struct
 import unittest
 from pathlib import Path
 
-from tools.stoneage_historical_map_25_compare import (\n    compare,\n    compatibility_against_profile,\n)
+from tools.stoneage_historical_map_25_compare import (
+    compare,
+    compatibility_against_profile,
+)
 
 
 def dat(width=1,height=1,base=1):
