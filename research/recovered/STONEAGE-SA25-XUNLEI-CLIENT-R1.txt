@@ -1,0 +1,16 @@
+StoneAge 2.5 2013 Xunlei standalone-client preservation probe — R1
+SCOPE|exact-source+exact-xunlei-url|archive-metadata-only|no-payload-download
+SOURCE_PAGE|https://www.7chaowan.com/55833.html
+TARGET|http://kuai.xunlei.com/d/DX1fAAJeiQBWT-tR9ee
+WAYBACK_CDX|match=exact|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|rows=0|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fkuai.xunlei.com%2Fd%2FDX1fAAJeiQBWT-tR9ee&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=2013&to=2018&limit=500
+WAYBACK_CDX|match=prefix|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|rows=0|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fkuai.xunlei.com%2Fd%2FDX1fAAJeiQBWT-tR9ee&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=2013&to=2018&limit=500
+WAYBACK_AVAILABLE|requested=20130801|status=200|bytes=106|sha256=69a0ebd2177436c04895f39257d6fdebc4e12111ab2453efb8d291c79adfab0a|available=0|closest_ts=|closest_status=|closest_url=
+WAYBACK_AVAILABLE|requested=20130823|status=200|bytes=106|sha256=1f23b26b98991366366ac5a4314625c4948686069b9b1f5b9b40b76afdaff139|available=0|closest_ts=|closest_status=|closest_url=
+WAYBACK_AVAILABLE|requested=20131231|status=200|bytes=106|sha256=a450fbd091e998b994aa1c0ce606839c1034a0c4305ff9f3f0f8c3cfd3ec47bb|available=0|closest_ts=|closest_status=|closest_url=
+WAYBACK_AVAILABLE|requested=20141231|status=200|bytes=106|sha256=b6ee6809b3019769135fc7b628de9e8a4223eec31c30c9d238d2b557328f0ab2|available=0|closest_ts=|closest_status=|closest_url=
+ARQUIVO|bytes=0|sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855|rows=0
+ERROR|scope=source|kind=HTTPError|message=HTTP Error 403: Forbidden
+COUNT|hits|0
+COUNT|errors|1
+RESOLUTION|PARTIAL_XUNLEI_INDEX_FAILURE|retry only failed surfaces
+EVIDENCE_BOUNDARY|the 2013 source identifies a standalone client download and states local elize.ini modification; even recovered bytes would be descendant/private-server evidence, not original 2002 disc provenance.
