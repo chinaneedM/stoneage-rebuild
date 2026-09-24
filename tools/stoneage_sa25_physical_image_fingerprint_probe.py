@@ -27,7 +27,7 @@ COLLECTOR_INDEXES = (
     ("https://blog.shiqi.so/author1.htm", ("回忆石器时代2.5游戏光盘",)),
     ("https://www.soshiqi.com/category-sqxc.html", ("2.5客户端礼包精灵王传说版", "2.5精灵王传说版用戶端產包")),
 )
-INSECURE_TLS_HOSTS = {"www.shiqi.me", "shiqi.me"}
+INSECURE_TLS_HOSTS = {"www.shiqi.me", "shiqi.me", "blog.shiqi.so", "www.soshiqi.com", "soshiqi.com"}
 MAX_IMAGE_BYTES = 12 * 1024 * 1024
 
 
@@ -301,11 +301,11 @@ def metric_line(kind, left, right, m):
 
 
 def main():
-    print("StoneAge 2.5 physical-media transient visual fingerprint probe — R2")
+    print("StoneAge 2.5 physical-media transient visual fingerprint probe — R3")
     print("SCOPE|public-image-read-transient|derived-metrics-only|no-login|no-purchase|no-image-commit")
     print(f"OFFICIAL_REFERENCE|{OFFICIAL_MAINLAND_REFERENCE}")
     print(f"WANFANG_PAGE|{WANFANG_PAGE}")
-    print("WANFANG_TLS_MODE|verification-disabled-only-for-known-expired-shiqi.me-host")
+    print("TLS_EXCEPTION_MODE|verification-disabled-only-for-known-expired-collector-hosts")
     errors = []
 
     ruten_meta = []
