@@ -367,6 +367,15 @@ RAW_ESP_USE|helper=update-state-sequence|disp=+0x14|rva=0x3c61|mnemonic=mov|oper
 RAW_ESP_USE|helper=update-state-sequence|disp=+0x14|rva=0x3c7c|mnemonic=mov|operand_index=1
 RAW_ESP_SLOT|helper=update-state-sequence|disp=+0x18|accesses=1
 RAW_ESP_USE|helper=update-state-sequence|disp=+0x18|rva=0x3cc9|mnemonic=mov|operand_index=1
+ENTRY_ESP_SLOTS|helper=update-state-sequence|unique=4|values=+0x4,+0x8,+0xc,+0x10
+ENTRY_ESP_SLOT|helper=update-state-sequence|disp=+0x4|arg_index=1|accesses=1
+ENTRY_ESP_USE|helper=update-state-sequence|disp=+0x4|rva=0x3c71|mnemonic=mov|operand_index=1|raw_disp=+0x10|stack_delta=12
+ENTRY_ESP_SLOT|helper=update-state-sequence|disp=+0x8|arg_index=2|accesses=1
+ENTRY_ESP_USE|helper=update-state-sequence|disp=+0x8|rva=0x3c7c|mnemonic=mov|operand_index=1|raw_disp=+0x14|stack_delta=12
+ENTRY_ESP_SLOT|helper=update-state-sequence|disp=+0xc|arg_index=3|accesses=1
+ENTRY_ESP_USE|helper=update-state-sequence|disp=+0xc|rva=0x3cc9|mnemonic=mov|operand_index=1|raw_disp=+0x18|stack_delta=12
+ENTRY_ESP_SLOT|helper=update-state-sequence|disp=+0x10|arg_index=4|accesses=1
+ENTRY_ESP_USE|helper=update-state-sequence|disp=+0x10|rva=0x3c61|mnemonic=mov|operand_index=1|raw_disp=+0x14|stack_delta=4
 BRANCH_FACT|helper=update-state-sequence|rva=0x3c77|op=cmp|param_slots=|immediates=0x0|registers=|branch=je|target_rva=0x3cc9
 BRANCH_FACT|helper=update-state-sequence|rva=0x3c88|op=cmp|param_slots=|immediates=0x20|registers=cl|branch=je|target_rva=0x3ca9
 BRANCH_FACT|helper=update-state-sequence|rva=0x3c8d|op=cmp|param_slots=|immediates=0x9|registers=cl|branch=je|target_rva=0x3ca9
