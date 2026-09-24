@@ -1,0 +1,46 @@
+StoneAge Sina historical download-target probe — R1
+SCOPE|2003-media-hub-link-recovery+bounded-target-prefix|no-large-payload-retained
+PAGE|status=200|bytes=53648|sha256=135b75a67e97491e3ae97076e70dbffbb1cca6ef18e3d7aec8eb6e1566761f00|encoding=gb18030|final=https://games.sina.com.cn/zhqu/sta/download.shtml
+ANCHOR|label=70-installed-full-map|text_occurrences=1|near_hrefs=6
+NEAR_HREF|label=70-installed-full-map|order=1|delta_chars=110|url=ftp://211.90.133.5/dowload/sa/stoneage7.0/stoneage7.0.exe
+NEAR_HREF|label=70-installed-full-map|order=2|delta_chars=-411|url=ftp://211.90.133.5/dowload/sa/stoneage7.0/sa7setup.exe
+NEAR_HREF|label=70-installed-full-map|order=3|delta_chars=-928|url=ftp://211.90.133.5/dowload/sa/stoneage7.0/sa7_2.vcd
+NEAR_HREF|label=70-installed-full-map|order=4|delta_chars=1175|url=ftp://211.90.133.5/dowload/sa/sa6setup.exe
+NEAR_HREF|label=70-installed-full-map|order=5|delta_chars=-1443|url=ftp://211.90.133.5/dowload/sa/stoneage7.0/sa7_1.vcd
+NEAR_HREF|label=70-installed-full-map|order=6|delta_chars=1693|url=ftp://211.90.133.5/dowload/sa/stoneage6.exe
+ANCHOR|label=60-full-map|text_occurrences=1|near_hrefs=8
+NEAR_HREF|label=60-full-map|order=1|delta_chars=102|url=ftp://211.90.133.5/dowload/sa/map.exe
+NEAR_HREF|label=60-full-map|order=2|delta_chars=-303|url=http://www.wanbosheng.com.cn/sa/saold.exe
+NEAR_HREF|label=60-full-map|order=3|delta_chars=363|url=http://www.wuxitianlong.com/sa/map.exe
+NEAR_HREF|label=60-full-map|order=4|delta_chars=-566|url=ftp://211.90.133.5/dowload/sa/saold.exe
+NEAR_HREF|label=60-full-map|order=5|delta_chars=972|url=ftp://211.90.133.5/dowload/sa/sa1.82.exe
+NEAR_HREF|label=60-full-map|order=6|delta_chars=-977|url=http://www.wuxitianlong.com/sa/sanew.exe
+NEAR_HREF|label=60-full-map|order=7|delta_chars=-1228|url=ftp://211.90.133.5/dowload/sa/sanew.exe
+NEAR_HREF|label=60-full-map|order=8|delta_chars=1696|url=ftp://211.90.133.5/dowload/sa/wga2setup.exe
+ANCHOR|label=182-client|text_occurrences=2|near_hrefs=8
+NEAR_HREF|label=182-client|order=1|delta_chars=107|url=ftp://211.90.133.5/dowload/sa/sa1.82.exe
+NEAR_HREF|label=182-client|order=2|delta_chars=-246|url=http://www.wuxitianlong.com/sa/map.exe
+NEAR_HREF|label=182-client|order=3|delta_chars=363|url=ftp://211.90.133.5/dowload/sa/sa1.82.exe
+NEAR_HREF|label=182-client|order=4|delta_chars=-502|url=http://www.wuxitianlong.com/sa/map.exe
+NEAR_HREF|label=182-client|order=5|delta_chars=-507|url=ftp://211.90.133.5/dowload/sa/map.exe
+NEAR_HREF|label=182-client|order=6|delta_chars=-763|url=ftp://211.90.133.5/dowload/sa/map.exe
+NEAR_HREF|label=182-client|order=7|delta_chars=831|url=ftp://211.90.133.5/dowload/sa/wga2setup.exe
+NEAR_HREF|label=182-client|order=8|delta_chars=-912|url=http://www.wanbosheng.com.cn/sa/saold.exe
+TARGET_SKIP|labels=182-client,60-full-map|url=ftp://211.90.133.5/dowload/sa/map.exe|reason=non-http
+TARGET_SKIP|labels=182-client,60-full-map|url=ftp://211.90.133.5/dowload/sa/sa1.82.exe|reason=non-http
+TARGET_SKIP|labels=70-installed-full-map|url=ftp://211.90.133.5/dowload/sa/sa6setup.exe|reason=non-http
+TARGET_SKIP|labels=60-full-map|url=ftp://211.90.133.5/dowload/sa/sanew.exe|reason=non-http
+TARGET_SKIP|labels=60-full-map|url=ftp://211.90.133.5/dowload/sa/saold.exe|reason=non-http
+TARGET_SKIP|labels=70-installed-full-map|url=ftp://211.90.133.5/dowload/sa/stoneage6.exe|reason=non-http
+TARGET_SKIP|labels=70-installed-full-map|url=ftp://211.90.133.5/dowload/sa/stoneage7.0/sa7_1.vcd|reason=non-http
+TARGET_SKIP|labels=70-installed-full-map|url=ftp://211.90.133.5/dowload/sa/stoneage7.0/sa7_2.vcd|reason=non-http
+TARGET_SKIP|labels=70-installed-full-map|url=ftp://211.90.133.5/dowload/sa/stoneage7.0/sa7setup.exe|reason=non-http
+TARGET_SKIP|labels=70-installed-full-map|url=ftp://211.90.133.5/dowload/sa/stoneage7.0/stoneage7.0.exe|reason=non-http
+TARGET_SKIP|labels=182-client,60-full-map|url=ftp://211.90.133.5/dowload/sa/wga2setup.exe|reason=non-http
+TARGET|labels=182-client,60-full-map|status=0|prefix_bytes=0|prefix_sha256=|content_type=|content_length=|content_range=|final=http://www.wanbosheng.com.cn/sa/saold.exe|error=URLError:<urlopen error [Errno -2] Name or service not known>
+TARGET|labels=182-client,60-full-map|status=0|prefix_bytes=0|prefix_sha256=|content_type=|content_length=|content_range=|final=http://www.wuxitianlong.com/sa/map.exe|error=URLError:<urlopen error timed out>
+TARGET|labels=60-full-map|status=0|prefix_bytes=0|prefix_sha256=|content_type=|content_length=|content_range=|final=http://www.wuxitianlong.com/sa/sanew.exe|error=URLError:<urlopen error timed out>
+COUNT|targets|3
+COUNT|labels_with_near_hrefs|3
+COUNT|unique_near_urls|14
+RESOLUTION|SINA_DOWNLOAD_TARGETS_DERIVED|classify exact hrefs before any payload recovery
