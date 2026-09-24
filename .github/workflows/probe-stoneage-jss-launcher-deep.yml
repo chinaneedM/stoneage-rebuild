@@ -1,0 +1,44 @@
+name: Probe archived JSS launcher deep structure
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_jss_launcher_deep_probe.py
+      - tests/test_stoneage_jss_launcher_deep_probe.py
+      - .github/workflows/probe-stoneage-jss-launcher-deep.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-jss-launcher-deep
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate deep launcher probe
+        run: python3 -m unittest tests.test_stoneage_jss_launcher_deep_probe -v
+      - name: Analyze archived launcher transiently
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_jss_launcher_deep_probe \
+            > research/recovered/STONEAGE-JSS-LAUNCHER-DEEP-PROBE-R1.txt
+      - name: Verify no executable or binary resource was retained
+        run: |
+          set -euo pipefail
+          ! find research tools tests -type f \( -iname '*.exe' -o -iname '*.bin' -o -iname '*.cab' -o -iname '*.zip' \) -print -quit | grep -q .
+      - name: Commit derived deep metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-JSS-LAUNCHER-DEEP-PROBE-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: analyze JSS launcher deep structure'
+          git pull --rebase origin main
+          git push
