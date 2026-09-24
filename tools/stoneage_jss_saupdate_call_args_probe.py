@@ -26,6 +26,14 @@ MAX_ARGS=8
 
 # Exact code sites already established by prior derived probes.
 FOCUS_SITES=(
+    (0x157B,"manifest-wrapper-dispatch"),
+    (0x2902,"wrapper-to-http-core"),
+    (0x299E,"internet-session-ctor"),
+    (0x2A28,"get-http-connection"),
+    (0x2A44,"open-http-request"),
+    (0x2A54,"send-http-request"),
+    (0x2A5F,"query-http-status"),
+    (0x2D9B,"per-file-http-core-reentry"),
     (0x3D54,"sa-name-format-or-helper"),
     (0x3D71,"sa-name-followup"),
     (0x3D78,"unlink-old-sa"),
