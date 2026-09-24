@@ -26,6 +26,8 @@ from tools.stoneage_tw10_mapcache_binary_probe import referenced_absolute_values
 from tools.stoneage_tw10_technical_probe import pe_sections
 
 TARGETS=(
+    (0x4070C0,"manifest-global-4070c0"),
+    (0x4070E8,"manifest-global-4070e8"),
     (0x85E6FC,"sa-executable-buffer"),
     (0x85E2FC,"realbin-state-buffer"),
     (0x85DEFC,"soundbin-state-buffer"),
