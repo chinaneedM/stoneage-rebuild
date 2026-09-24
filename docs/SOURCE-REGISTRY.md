@@ -906,14 +906,14 @@ Every substantial source should record:
   - the Sina local-download link exposes the source-derived filename `shiqi4updatex_02_11_08.zip` and download record id `aid=61620`.
 - Archaeology significance:
   - independently corroborates that complete map-cache packages were distributed in the historical client ecosystem;
-  - provides a dated descendant map corpus target suitable for controlled diffing if bytes are recovered.
+  - provides a dated descendant map corpus target suitable for controlled diffing if bytes are recovered;\n  - exact filename/stem preservation-carrier searches currently find no DiscMaster/Internet Archive carrier, and 2,149 archived Sina CGI URLs contain no `aid=61620` / basename variant; this is negative search evidence, not proof the package is lost.
 - Does not support:
   - Taiwan v1.0 map-byte provenance;
   - byte identity between the 4.0 map pack and any earlier v1/1.82/2.x cache;
   - any map IDs, dimensions, hashes or package contents until the archive itself is recovered.
 - Derived archive-index reports:
   - `research/recovered/STONEAGE-HISTORICAL-MAP-PACK-ARCHIVE-R1.txt`;
-  - `research/recovered/STONEAGE-HISTORICAL-MAP-PACK-ARCHIVE-FALLBACK-R1.txt` when available.
+  - `research/recovered/STONEAGE-HISTORICAL-MAP-PACK-ARCHIVE-FALLBACK-R1.txt`;\n  - `research/recovered/STONEAGE-SA40-MAP-FILENAME-ARCHIVE-R1.txt`;\n  - `research/recovered/STONEAGE-SA40-MAP-CARRIER-R1.txt`;\n  - `research/recovered/STONEAGE-SA40-SINA-AID-61620-R1.txt`.
 
 ### SRC-CN-2003-SINA-SA-DOWNLOAD-HUB-01
 
@@ -960,7 +960,7 @@ Every substantial source should record:
 - Supports:
   - a complete historical StoneAge map-cache package is byte-recoverable from a 2003-06 archive capture of the exact mirror URL exposed by the contemporaneous download hub;
   - the package contains **1,008 numeric DAT map IDs**, of which **995** parse under the strict three-plane map-cache model;
-  - comparison with the preserved 2.5 map directory finds the same 1,008 numeric IDs, **993 byte-identical** files, **15 changed** files and no one-sided numeric IDs;
+  - comparison with the separately preserved 2.5 map directory finds the same 1,008 numeric IDs, **993 byte-identical** files, **15 changed** files and no one-sided numeric IDs;\n  - a later 2003-12 capture of the same mirror proves that the preserved 2.5 directory is not a simple chronological successor: 295 common maps are June=preserved-2.5 while December alone diverges;
   - direct Taiwan-v1 resource-profile classification of the 995 parseable historical maps yields **773 compatible / 222 incompatible** under the necessary-condition ADRN rule.
 - Does not support:
   - that the package is a Taiwan-v1 map corpus;
@@ -970,4 +970,30 @@ Every substantial source should record:
 - Derived reports:
   - `research/recovered/STONEAGE-HISTORICAL-MAP-CAPTURE-R1.txt`;
   - `research/recovered/STONEAGE-2003-MAP-VS-25-R1.txt`;
-  - `research/recovered/STONEAGE-TW10-2003-FIELDMAP-COMPAT-R1.txt`.
+  - `research/recovered/STONEAGE-TW10-2003-FIELDMAP-COMPAT-R1.txt`;\n  - `research/recovered/STONEAGE-2003-MAP-TIMELINE-R1.txt`.
+
+
+### SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-02
+
+- Title/filename: archived `map.exe` full-map package, second preserved state
+- Original/archive timestamp: **2003-12-10 09:24:26 UTC**
+- Retrieval date: 2026-09-24
+- Language/region: Simplified Chinese / Mainland China StoneAge ecosystem
+- Source type: preserved historical binary from the same contemporaneously linked StoneAge map-download mirror
+- Historical URL: `http://www.wuxitianlong.com/sa/map.exe`
+- Archive replay: Wayback timestamp `20031210092426`
+- SHA-256: `5f7f58e0d26d596e926a7d551d7c24e8a9a27824d5bdc53be3955b19b0e13abc`
+- Confidence: **A/S-derived** for the captured bytes and archive timestamp; not Taiwan-v1/operator-disc provenance
+- Supports:
+  - the second capture extracts to **1,011 numeric DAT maps**, **998** strict three-plane valid plus **13** parser-invalid;
+  - against the June capture, the same 1,008 IDs are shared, **698** are byte-identical, **310** differ, and December adds `8008`, `8100`, `8101`;
+  - Taiwan-v1 ADRN necessary-condition classification of parseable December maps is **772 compatible / 226 incompatible**;
+  - archive mtimes are preserved at file level; **337** entries carry `2003-10-20` modification dates, including maps 1000/2000/3000/4000;
+  - three-corpus comparison shows **698 STABLE_ALL**, **295 DEC_ONLY_DIVERGENCE**, and **15 THREE_DISTINCT** among IDs common to June, December and the separately preserved 2.5 corpus.
+- Important limits:
+  - archive `Modified` timestamps are filesystem metadata, not guaranteed creation/release dates; values as early as 1997 demonstrate why they cannot be read literally as StoneAge map publication dates;
+  - the separately preserved 2.5 map directory is not assigned a chronological position after this December capture merely because it was preserved later;
+  - none of these descendant states proves Taiwan-v1 field-map membership.
+- Derived reports:
+  - `research/recovered/STONEAGE-HISTORICAL-MAP-CAPTURE-R1.txt`;
+  - `research/recovered/STONEAGE-2003-MAP-TIMELINE-R1.txt`.
