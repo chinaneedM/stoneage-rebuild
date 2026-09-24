@@ -1,0 +1,41 @@
+name: Retry Taiwan v1 IA timeout item
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_archive_timeout_retry_probe.py
+      - tests/test_stoneage_tw10_archive_timeout_retry_probe.py
+      - .github/workflows/probe-stoneage-tw10-archive-timeout-retry.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-tw10-archive-timeout-retry
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate timeout retry probe
+        run: python3 -m unittest tests.test_stoneage_tw10_archive_timeout_retry_probe -v
+      - name: Retry timed-out metadata item
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_tw10_archive_timeout_retry_probe \
+            > research/recovered/STONEAGE-TW10-IA-INSTALLED-TREE-TIMEOUT-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-TW10-IA-INSTALLED-TREE-TIMEOUT-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: resolve Taiwan v1 IA timeout item'
+          git pull --rebase origin main
+          git push
