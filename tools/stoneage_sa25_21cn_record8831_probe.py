@@ -4,7 +4,7 @@
 HTML/archive metadata only. No linked software payload is fetched.
 """
 from __future__ import annotations
-import hashlib, html, json, re, urllib.parse, urllib.request
+import hashlib, html, json, re, time, urllib.parse, urllib.request
 from tools.stoneage_sa25_host_identity_probe import declared_charset, decode, title, visible
 
 UA="stoneage-rebuild-archaeology/1.0"
@@ -17,12 +17,20 @@ ATTR_RE=re.compile(r"""(?is)(?:href|src)\s*=\s*["']?([^"'\s>]+)""")
 def clean(v,limit=2400):
     return " ".join(str(v or "").split()).replace("|","%7C")[:limit]
 
-def fetch(url,timeout=30,max_bytes=2_000_000):
-    req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/json,text/html,*/*"})
-    with urllib.request.urlopen(req,timeout=timeout) as r:
-        b=r.read(max_bytes+1)
-        if len(b)>max_bytes: raise ValueError("response-too-large")
-        return int(getattr(r,"status",r.getcode())),r.geturl(),dict(r.headers.items()),b
+def fetch(url,timeout=30,max_bytes=2_000_000,attempts=1):
+    last=None
+    for attempt in range(attempts):
+        try:
+            req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/json,text/html,*/*"})
+            with urllib.request.urlopen(req,timeout=timeout) as r:
+                b=r.read(max_bytes+1)
+                if len(b)>max_bytes: raise ValueError("response-too-large")
+                return int(getattr(r,"status",r.getcode())),r.geturl(),dict(r.headers.items()),b
+        except Exception as exc:
+            last=exc
+            if attempt+1<attempts:
+                time.sleep(1.5*(attempt+1))
+    raise last
 
 def cdx_url(url,match="exact",limit=300):
     p=[("url",url),("matchType",match),("output","json"),
@@ -73,7 +81,7 @@ def main():
     for host in HOSTS:
         url=f"http://{host}/list.php?id={ID}"
         try:
-            st,final,hdr,b=fetch(cdx_url(url),30)
+            st,final,hdr,b=fetch(cdx_url(url),30,2_000_000,2)
             rr=parse(b)
             print(f"CDX|host={host}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|rows={len(rr)}|final={clean(final)}")
             for r in rr:
@@ -88,7 +96,7 @@ def main():
         if key in seen: continue
         seen.add(key)
         try:
-            st,final,hdr,b=fetch(replay(r),25,1_500_000)
+            st,final,hdr,b=fetch(replay(r),30,1_500_000,4)
             enc,text=decode(b,declared_charset(b)); hits=token_hits(b,text); aa=attrs(text)
             print(f"PAGE|timestamp={clean(r.get('timestamp'))}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|encoding={clean(enc)}|title={clean(title(text),1400)}|tokens={clean(','.join(hits))}|attrs={len(aa)}|final={clean(final)}")
             print(f"CONTEXT|timestamp={clean(r.get('timestamp'))}|value={clean(context(text,hits),3600)}")
