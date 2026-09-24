@@ -1899,6 +1899,16 @@ Supplemental source ledgers:
 
 
 
+## StoneAge 2.5 independent install-disc photo order resolved — 2026-09-25
+
+- The existing SMZDM 2016 survivor source now has a generated HTML-order report. The source itself states that the author had preserved **2.5, 3.0, 4.0, 5.0 and 疯狂原始人 installation discs**, after separately describing the first pictured disc as the 2.0 new-user-package disc.
+- The recovered install-disc section contains **6** image URLs. Photo 1 is tied to the 2.0 description; five later photos follow the literal version list. On that article-order basis, photo 2 — `https://am.zdmimg.com/201606/16/5762764a03643.jpg_e1080.jpg` — becomes the current **high-confidence visual candidate for the 2.5 installation disc**.
+- **EVIDENCE BOUNDARY:** this is an HTML/text/order association, not disc-byte provenance. It does not establish the disc filesystem, installer filename, volume label, matrix/mastering/IFPI, clean-client status or equality with another 2.5 distribution.
+- The earlier SMZDM recovery already hash-locked all six photo bodies; the new order report adds positional attribution without downloading game payloads.
+- Operational consequence: use the second-photo visual identity as another exact comparison target for future public disc listings/dumps, alongside the Bahamut Mainland 2.5 unified-disc control and the 延年益壽 package specimen.
+- Canonical source: `SRC-CN-2016-SMZDM-SA25-INSTALL-DISCS-01`.
+- Derived order report: `research/recovered/STONEAGE-SA25-SMZDM-DISC-ORDER-R1.txt`.
+
 ## StoneAge 2.5 延年益壽包 surviving-disc control — 2026-09-25
 
 - A dedicated Bahamut collector article (`snA=81388`, **2020-09-01**) now provides a more specific surviving-physical-carrier control than the generic 2.5 package-family page: the author identifies the package as **延年益壽包**, labels one photographed object as a **2.5-era disc**, and labels the following object as a **2.5 manual**.
