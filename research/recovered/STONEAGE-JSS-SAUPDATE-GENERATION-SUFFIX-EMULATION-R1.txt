@@ -1,0 +1,15 @@
+StoneAge JSS SaUpdate generation-suffix helper emulation — R1
+SCOPE|rva-0x2060|synthetic-filenames|atoi-stub|bounded-x86-emulation|derived-output-only
+FETCH|status=206|bytes=217088|sha256=6795d9349168f77aa025d7c4ea05d005c5bbfe33dd4b227eb7731802fa7eb82b|final=https://web.archive.org/web/20010503013834id_/http://www.titan.co.jp/stoneage/stoneage.exe
+FUNCTION|rva=0x2060|image_base=0x400000|atoi_iat_rva=0x5264
+CASE|label=extension-generation|input=real.bin_12|expected=12|value=0|eax=0x0|atoi_calls=0|atoi_input=|instructions=120|returned=1|match=0
+CASE|label=leading-zero|input=spr.bin_0017|expected=17|value=0|eax=0x0|atoi_calls=0|atoi_input=|instructions=126|returned=1|match=0
+CASE|label=trailing-text|input=battle.dat_42extra|expected=42|value=0|eax=0x0|atoi_calls=0|atoi_input=|instructions=180|returned=1|match=0
+CASE|label=negative|input=sound.bin_-3|expected=-3|value=0|eax=0x0|atoi_calls=0|atoi_input=|instructions=130|returned=1|match=0
+CASE|label=underscore-before-dot|input=real_12.bin|expected=0|value=12|eax=0xc|atoi_calls=1|atoi_input=12.bin|instructions=92|returned=1|match=0
+CASE|label=dot-no-underscore|input=real.bin|expected=0|value=0|eax=0x0|atoi_calls=0|atoi_input=|instructions=96|returned=1|match=1
+CASE|label=no-dot|input=real_12|expected=0|value=0|eax=0x0|atoi_calls=0|atoi_input=|instructions=78|returned=1|match=1
+CASE|label=nondigit-suffix|input=real.bin_beta|expected=0|value=0|eax=0x0|atoi_calls=0|atoi_input=|instructions=136|returned=1|match=1
+CASE|label=first-underscore-wins|input=real.bin_beta_9|expected=0|value=0|eax=0x0|atoi_calls=0|atoi_input=|instructions=152|returned=1|match=1
+CASE|label=nested-dot|input=foo.bar.baz_27|expected=27|value=0|eax=0x0|atoi_calls=0|atoi_input=|instructions=150|returned=1|match=0
+RESOLUTION|GENERATION_SUFFIX_HELPER_EMULATED|successes=4|failures=6|binary-not-committed
