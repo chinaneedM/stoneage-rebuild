@@ -1,0 +1,21 @@
+StoneAge Japan 2004 Redump index probe — R3
+SCOPE|public-disc-index-html-only|modern-title+serial+barcode|no-disc-download
+ANCHOR|model=WR-04156|jan=4988609011565|package=two-game-CD-ROMs
+QUERY_SCHEMA|source=superg/vgindex@main|fields=q,title,title_foreign,serial,barcode|exact=*_exact
+MODERN_DISCOVERY|status=200|bytes=176608|sha256=9a190d0cf03fd85cb0f1521ad7c5801fdb332732d7474afe50b06b3c9e6f7b7c|fields=additional_mould,advanced,barcode,barcode_exact,category,comments,contents,dumper,edc,edition,edition_exact,errors_max,errors_min,language,letter,mastering_code,mastering_sid,media,mould_sid,offset,order,page,protection,q,region,serial,serial_exact,sort,status,system,title,title_exact,title_foreign,title_foreign_exact,toolstamp,tracks_max,tracks_min,universal_hash|forms=4|disc_database_marker=1|final=https://redump.info/discs?region=jp
+LEGACY_ERROR|label=title-latin|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+LEGACY_ERROR|label=model|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+LEGACY_ERROR|label=barcode|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+MODERN_QUERY|label=q-latin|status=200|bytes=59467|truncated=0|sha256=695e0d4e9177a7223939867dddaa9a3d8fbe469e536fda77f02724aa25829f8b|disc_database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?region=jp&system=PC&q=StoneAge
+MODERN_QUERY|label=q-japanese|status=200|bytes=61460|truncated=0|sha256=387211064271a64ab5ca85ae65b5b3fa84c9b34b2f194844c50d2b5e8763615f|disc_database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?region=jp&system=PC&q=%E3%82%B9%E3%83%88%E3%83%BC%E3%83%B3%E3%82%A8%E3%82%A4%E3%82%B8
+MODERN_QUERY|label=title-latin|status=200|bytes=59611|truncated=0|sha256=09332448614dbe039eb6013424df8623ccd602f4a64a9af18f48bd95d5411f40|disc_database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?region=jp&system=PC&title=StoneAge
+MODERN_QUERY|label=title-space|status=200|bytes=59720|truncated=0|sha256=0310a9c98e46db2ace0ff0906dae2213e47b38da52fe83b29ffc5a90da06be6c|disc_database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?region=jp&system=PC&title=Stone+Age
+MODERN_QUERY|label=title-japanese|status=200|bytes=61604|truncated=0|sha256=59b85124c4a454fa4bd17eed1ab96babf8b030aea3784f3712467b6c9e4d02e0|disc_database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?region=jp&system=PC&title=%E3%82%B9%E3%83%88%E3%83%BC%E3%83%B3%E3%82%A8%E3%82%A4%E3%82%B8
+MODERN_QUERY|label=serial-model|status=200|bytes=60338|truncated=0|sha256=5facf169a56d4df3dc8e3f2470e1aa51050766822a5052bd5d0dcf7d6cef8bba|disc_database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?region=jp&system=PC&serial=WR-04156&serial_exact=1
+MODERN_QUERY|label=barcode-jan|status=200|bytes=60595|truncated=0|sha256=6324d73bedee406998a3e94881b074fdc19f7a1ecbcc37c8eb714250065f43df|disc_database_marker=1|result_count=0|matching_rows=0|final=https://redump.info/discs?region=jp&system=PC&barcode=4988609011565&barcode_exact=1
+COUNT|modern_completed|7
+COUNT|modern_errors|0
+COUNT|modern_conclusive_queries|7
+COUNT|matching_rows|0
+COUNT|legacy_errors|3
+RESOLUTION|REDUMP_NO_IDENTIFIER_HIT|modern Redump returned no StoneAge row for pinned Japan-PC title/model/barcode searches
