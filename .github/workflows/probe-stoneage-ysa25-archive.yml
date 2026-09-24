@@ -1,0 +1,248 @@
+name: Probe YSA StoneAge 2.5 historical client mirror
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/probe-stoneage-ysa25-archive.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-ysa25-archive
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install archive tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq unar 7zip file
+
+      - name: Probe exact historical URL and preservation indexes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/ysa25 research/recovered
+          python3 - > /tmp/ysa25/probe.json <<'PY'
+          import hashlib, json, urllib.parse, urllib.request
+
+          UA='stoneage-rebuild-archaeology/1.0'
+          TARGET='http://download1.92ysa.com/YSA2.5.8.rar'
+
+          def fetch(url,timeout=60,max_bytes=25_000_000):
+              req=urllib.request.Request(url,headers={'User-Agent':UA,'Accept':'application/json,text/plain,*/*'})
+              try:
+                  with urllib.request.urlopen(req,timeout=timeout) as r:
+                      b=r.read(max_bytes+1)
+                      if len(b)>max_bytes:
+                          return {'ok':False,'error':'response-too-large','url':r.geturl(),'status':getattr(r,'status',r.getcode())}
+                      return {'ok':True,'url':r.geturl(),'status':getattr(r,'status',r.getcode()),'body':b.decode('utf-8','replace'),'sha256':hashlib.sha256(b).hexdigest(),'bytes':len(b)}
+              except Exception as e:
+                  return {'ok':False,'url':url,'error':type(e).__name__+': '+str(e)}
+
+          queries=[]
+          cdx='https://web.archive.org/cdx/search/cdx'
+          for q,match in [
+              (TARGET,'exact'),
+              ('https://download1.92ysa.com/YSA2.5.8.rar','exact'),
+              ('http://download1.92ysa.com/YSA2.5.8','prefix'),
+              ('http://download1.92ysa.com/','prefix'),
+          ]:
+              params=[
+                  ('url',q),('output','json'),
+                  ('fl','timestamp,original,statuscode,mimetype,digest,length'),
+                  ('filter','statuscode:200'),('collapse','digest'),('limit','200')
+              ]
+              if match!='exact': params.append(('matchType',match))
+              u=cdx+'?'+urllib.parse.urlencode(params)
+              queries.append({'kind':'wayback-cdx','query':q,'match':match,'result':fetch(u)})
+
+          avail='https://archive.org/wayback/available?'+urllib.parse.urlencode({'url':TARGET})
+          queries.append({'kind':'wayback-availability','query':TARGET,'result':fetch(avail)})
+
+          ia='https://archive.org/advancedsearch.php?'+urllib.parse.urlencode([
+              ('q','"YSA2.5.8.rar"'),('fl[]','identifier'),('fl[]','title'),
+              ('fl[]','date'),('fl[]','description'),('rows','100'),('output','json')])
+          queries.append({'kind':'internet-archive-search','query':'YSA2.5.8.rar','result':fetch(ia)})
+
+          dm='https://discmaster.textfiles.com/search?'+urllib.parse.urlencode([
+              ('q','"YSA2.5.8.rar"'),('qfields','t'),('mode','deep'),('dedup','dedup'),
+              ('limit','100'),('outputAs','json'),('showItemName','showItemName')])
+          queries.append({'kind':'discmaster','query':'YSA2.5.8.rar','result':fetch(dm)})
+
+          print(json.dumps({'target':TARGET,'queries':queries},ensure_ascii=False,indent=2))
+          PY
+
+          python3 - /tmp/ysa25/probe.json > research/recovered/STONEAGE-YSA25-ARCHIVE-PROBE-R1.txt <<'PY'
+          import ast, hashlib, json, sys
+          from pathlib import Path
+
+          obj=json.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))
+          print('StoneAge YSA 2.5 historical mirror preservation probe — R1')
+          print('SCOPE|2009-exact-client-url|metadata-first|payload-only-if-captured')
+          print('SOURCE_THREAD|https://www.iopq.net/thread-16615099-1-1.html')
+          print('SOURCE_DATE|2009-12-17')
+          print('SOURCE_REPORTED_SIZE|about-420MB')
+          print('TARGET_URL|'+obj['target'])
+
+          capture_rows=[]
+          ia_items=[]
+          dm_rows=0
+          for q in obj['queries']:
+              r=q['result']
+              print(f"QUERY|kind={q['kind']}|query={q['query']}|ok={int(r.get('ok',False))}|status={r.get('status','')}|bytes={r.get('bytes','')}|sha256={r.get('sha256','')}|error={str(r.get('error','')).replace('|','%7C')}")
+              if not r.get('ok'): continue
+              body=r.get('body','')
+              if q['kind']=='wayback-cdx':
+                  try:
+                      rows=json.loads(body)
+                      if isinstance(rows,list) and rows:
+                          header=rows[0]
+                          for row in rows[1:]:
+                              d=dict(zip(header,row))
+                              capture_rows.append(d)
+                              print('CDX_HIT|'+'|'.join(f"{k}={str(d.get(k,'' )).replace('|','%7C')}" for k in header))
+                  except Exception as e:
+                      print('PARSE_ERROR|wayback-cdx|'+type(e).__name__)
+              elif q['kind']=='wayback-availability':
+                  try:
+                      a=json.loads(body).get('archived_snapshots',{}).get('closest',{})
+                      if a:
+                          print('AVAILABILITY_HIT|'+'|'.join(f"{k}={str(v).replace('|','%7C')}" for k,v in a.items()))
+                  except Exception as e:
+                      print('PARSE_ERROR|wayback-availability|'+type(e).__name__)
+              elif q['kind']=='internet-archive-search':
+                  try:
+                      docs=json.loads(body).get('response',{}).get('docs',[])
+                      ia_items=docs
+                      for d in docs:
+                          print(f"IA_HIT|identifier={str(d.get('identifier','')).replace('|','%7C')}|title={str(d.get('title','')).replace('|','%7C')}|date={str(d.get('date','')).replace('|','%7C')}")
+                  except Exception:
+                      pass
+              elif q['kind']=='discmaster':
+                  try:
+                      data=json.loads(body)
+                      def walk(x):
+                          nonlocal_box[0]+=0
+                          if isinstance(x,dict):
+                              if 'itemid' in x or 'itemName' in x:
+                                  if 'fileid' in x or 'filename' in x or 'href' in x:
+                                      hits.append(x)
+                              for v in x.values(): walk(v)
+                          elif isinstance(x,list):
+                              for v in x: walk(v)
+                      hits=[]; nonlocal_box=[0]; walk(data)
+                      dm_rows=len(hits)
+                      for d in hits[:100]:
+                          print(f"DISCM_HIT|itemid={str(d.get('itemid','')).replace('|','%7C')}|itemName={str(d.get('itemName','')).replace('|','%7C')}|filename={str(d.get('filename','')).replace('|','%7C')}|href={str(d.get('href','')).replace('|','%7C')}")
+                  except Exception:
+                      pass
+
+          uniq={}
+          for d in capture_rows:
+              k=(d.get('timestamp',''),d.get('original',''),d.get('digest',''))
+              uniq[k]=d
+          captures=sorted(uniq.values(),key=lambda d:d.get('timestamp',''))
+          print(f'COUNT|wayback_unique_200_captures|{len(captures)}')
+          print(f'COUNT|ia_search_items|{len(ia_items)}')
+          print(f'COUNT|discmaster_rows|{dm_rows}')
+          if captures:
+              c=captures[0]
+              print(f"RECOVERY_CANDIDATE|timestamp={c.get('timestamp','')}|original={c.get('original','')}|mimetype={c.get('mimetype','')}|digest={c.get('digest','')}|length={c.get('length','')}")
+              print('RESOLUTION|WAYBACK_CAPTURE_METADATA_FOUND')
+          elif ia_items or dm_rows:
+              print('RESOLUTION|SECONDARY_PRESERVATION_METADATA_FOUND')
+          else:
+              print('RESOLUTION|NO_PUBLIC_PRESERVATION_HIT_ON_TESTED_INDEXES')
+          PY
+
+      - name: Attempt Wayback payload recovery if exact capture exists
+        shell: bash
+        run: |
+          set -euo pipefail
+          REPORT='research/recovered/STONEAGE-YSA25-ARCHIVE-PROBE-R1.txt'
+          LINE="$(grep '^RECOVERY_CANDIDATE|' "$REPORT" | head -n1 || true)"
+          if [ -z "$LINE" ]; then
+            echo 'PAYLOAD_RECOVERY|not-attempted-no-capture' >> "$REPORT"
+            exit 0
+          fi
+          TS="$(printf '%s\n' "$LINE" | sed -n 's/.*timestamp=\([^|]*\).*/\1/p')"
+          ORIG="$(printf '%s\n' "$LINE" | sed -n 's/.*original=\([^|]*\).*/\1/p')"
+          URL="https://web.archive.org/web/$TS""id_/$ORIG"
+          set +e
+          curl -L --fail --retry 2 --retry-delay 3 --connect-timeout 20 --max-time 1200 \
+            -A 'stoneage-rebuild-archaeology/1.0' -o /tmp/ysa25/candidate.bin "$URL"
+          RC=$?
+          set -e
+          echo "PAYLOAD_RECOVERY|curl_exit=$RC|url=$URL" >> "$REPORT"
+          if [ "$RC" -ne 0 ] || [ ! -s /tmp/ysa25/candidate.bin ]; then
+            echo 'PAYLOAD_RESULT|capture-metadata-present-but-replay-failed' >> "$REPORT"
+            exit 0
+          fi
+          BYTES="$(stat -c %s /tmp/ysa25/candidate.bin)"
+          if [ "$BYTES" -gt 900000000 ]; then
+            echo "PAYLOAD_RESULT|oversize-aborted|bytes=$BYTES" >> "$REPORT"
+            exit 0
+          fi
+          {
+            echo "PAYLOAD_BYTES|$BYTES"
+            echo "PAYLOAD_SHA256|$(sha256sum /tmp/ysa25/candidate.bin | awk '{print $1}')"
+            echo "PAYLOAD_MD5|$(md5sum /tmp/ysa25/candidate.bin | awk '{print $1}')"
+            file /tmp/ysa25/candidate.bin | sed 's#^#PAYLOAD_FILE|#'
+          } >> "$REPORT"
+
+          rm -rf /tmp/ysa25/out && mkdir -p /tmp/ysa25/out
+          EX='none'
+          if unar -f -o /tmp/ysa25/out /tmp/ysa25/candidate.bin >/tmp/ysa25/extract.log 2>&1; then
+            EX='unar'
+          elif 7z x -y -o/tmp/ysa25/out /tmp/ysa25/candidate.bin >/tmp/ysa25/extract.log 2>&1; then
+            EX='7z'
+          fi
+          echo "PAYLOAD_EXTRACTOR|$EX" >> "$REPORT"
+          if [ "$EX" = 'none' ]; then
+            echo 'PAYLOAD_RESULT|recovered-but-extraction-failed' >> "$REPORT"
+            exit 0
+          fi
+
+          python3 - /tmp/ysa25/out research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt >> "$REPORT" <<'PY'
+          import hashlib,re,sys
+          from pathlib import Path
+          root=Path(sys.argv[1]); inv=Path(sys.argv[2])
+          rex=re.compile(r'^([0-9a-fA-F]{64})\s+(.+)$')
+          known=set()
+          for line in inv.read_text(encoding='utf-8',errors='replace').splitlines():
+              m=rex.match(line.strip())
+              if m: known.add(m.group(1).lower())
+          def sha(p):
+              h=hashlib.sha256()
+              with p.open('rb') as f:
+                  for b in iter(lambda:f.read(1024*1024),b''): h.update(b)
+              return h.hexdigest()
+          rows=[]
+          for p in root.rglob('*'):
+              if p.is_file():
+                  d=sha(p); rows.append((p.relative_to(root).as_posix(),p.stat().st_size,d,d in known))
+          print(f'PAYLOAD_TREE|files={len(rows)}|bytes={sum(x[1] for x in rows)}|known_bridge_hash_matches={sum(1 for x in rows if x[3])}')
+          for rel,size,d,match in sorted(rows,key=lambda x:x[0].lower()):
+              print(f'PAYLOAD_FILE_ROW|path={rel}|bytes={size}|sha256={d}|known_bridge_hash={int(match)}')
+          print('PAYLOAD_RESULT|recovered-extracted-fingerprinted')
+          PY
+
+      - name: Delete transient payload
+        if: always()
+        run: rm -rf /tmp/ysa25
+
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-YSA25-ARCHIVE-PROBE-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe archived YSA StoneAge 2.5 client mirror'
+          git pull --rebase origin main
+          git push
