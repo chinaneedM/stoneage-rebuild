@@ -866,3 +866,26 @@ Every substantial source should record:
 - exact claims supported
 - exact claims not supported
 - notes on alterations/repacking
+
+
+### SRC-CN-2001-17173-CLIENT-DIRECTORY-01
+
+- Title: `石器游戏目录的秘密`
+- Original date: **2001-07-09**
+- Retrieval date: 2026-09-24
+- Language/region: Simplified Chinese / Mainland China StoneAge community
+- Source type: contemporaneous 17173 game-portal technical/player article
+- URL: https://news.17173.com/z/stoneage/content/2001-7-9/n653_569161.html
+- Confidence: **A** for the contemporaneous client-directory observation; not first-party executable/media evidence
+- Supports:
+  - the period Waei StoneAge installation path is described as `C:\\Program Files\\Waei\\石器时代\\`;
+  - the client `map\\` directory is explicitly described as holding map-display files for areas the player has already traversed;
+  - the same period installation is described as containing `data\\`, `data\\bgm\\`, `data\\se\\` and `screenshot\\` client directories.
+- Archaeology significance:
+  - independently corroborates the Taiwan-v1 binary-derived model in which ordinary field maps are runtime-acquired/local cache material rather than a complete retail-disc field corpus;
+  - motivates recovery of contemporaneous installed-directory backups and historical “fully-open map” packs as potential map-cache evidence.
+- Does not support:
+  - byte identity with the accepted Taiwan Waei/JSS v1.0 Redump disc;
+  - the exact version/build of every file present in the article author's installation;
+  - any specific `map/<n>.dat` bytes, hashes, dimensions, or map IDs;
+  - treating later full-map packs as v1 evidence without independent dating/version provenance.
