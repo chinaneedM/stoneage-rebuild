@@ -1819,8 +1819,8 @@ Supplemental source ledgers:
 
 - Archived pages from **2001-12-27** and **2002-02-01** establish that historical IP `202.104.32.168` served the **21CN.COM download site**. The archived root is titled `21CN.COM - 下载`; archived software-detail pages expose `download.21cn.com`, license string `粤ICP证010001`, and the copyright notice `世纪龙信息网络有限责任公司版权所有`.
 - Therefore the host identity is no longer OPEN: the IP behind `/file/game/maoxian/sa25up.zip` belongs to the 21CN software-download infrastructure in the relevant period, **not to a demonstrated Beijing-Waei operator host**.
-- This improves provenance classification but does **not** authenticate the StoneAge payload. 21CN is a third-party download/distribution surface relative to Beijing Waei; the project still lacks a successful archived payload response, byte hash, size, file tree, or operator-to-mirror chain.
-- The same host's CDX neighborhood contains more than one thousand archived `list.php?id=...` software-detail pages and dozens of `downit.php` records. The next high-information step is to locate any 21CN-native StoneAge/2.5 detail record and recover its date, description, size, and download topology.
+- This improves provenance classification. Native record 20165 now resolves the mirrored object's catalogue identity, Beijing-Waei attribution and expected size, but 21CN remains a third-party distribution surface; the project still lacks the ZIP bytes, byte hash, archive tree and proof of operator-to-mirror byte identity.
+- The native StoneAge 2.5 detail record has now been located as `list.php?id=20165`; its catalogue metadata and delivery topology are recovered. The next high-information step is exact recovery of one of its evidence-derived ZIP mirror generations.
 - Derived reports: `research/recovered/STONEAGE-SA25-HOST-IDENTITY-R1.txt`, `research/recovered/STONEAGE-SA25-HOST-NEIGHBORHOOD-R1.txt`.
 
 
@@ -1831,7 +1831,7 @@ Supplemental source ledgers:
 - The JPEG body is directly replayable: **9,312 bytes**, SHA-256 `7b475f1b3613d87e4e5747bb98d68ac186da265518359ac819b97c19b3b8b80e`, 120×169, 8-bit / 3-component JPEG. Its metadata contains the comment `ACD Systems Digital Imaging`.
 - A transient visual inspection shows a small full-colour illustrated game-art panel with multiple stylised human figures and dinosaur / prehistoric-fantasy creatures. At 120×169 there is **no reliably readable edition title, version number, publisher/operator mark or product code**.
 - This is the strongest surviving **21CN-native same-stem evidence** for the `sa25up` object family and moves the recoverable provenance surface back to May 2002. It does **not** recover or authenticate `sa25up.zip`; all current archived ZIP-path records remain 404 or absent.
-- The crawl-time neighborhood identifies `list.php?id=8831` at 2002-05-17 23:12:52 as the nearest currently indexed detail-page candidate in the same crawl window, but crawl proximity is only a discovery heuristic. Its first replay attempt timed out and must not be treated as a parent-page relation without explicit page/path evidence.
+- The former crawl-proximity candidate `list.php?id=8831` has now been replayed and identified as Quick Heal antivirus, so it is closed as unrelated. Native record `20165` explicitly embeds both `sa25up.jpg` and `sa25up.zip`, directly resolving the sidecar-to-StoneAge-2.5 catalogue relationship.
 - Canonical reports: `research/recovered/STONEAGE-SA25-21CN-JPG-R1.txt`, `research/recovered/STONEAGE-SA25-21CN-CRAWL-NEIGHBORHOOD-R1.txt`, and `research/clients/STONEAGE-SA25-21CN-SA25UP-JPG-VISUAL-R1.md`.
 
 
@@ -1854,6 +1854,31 @@ Supplemental source ledgers:
 - `downit.php?id=20165&num=0` has archived 2002/2003 records, including later HTTP 302 captures. The next highest-value step is to recover their Location headers / mirror target topology without downloading the historical payload.
 - Derived evidence: `research/recovered/STONEAGE-SA25-21CN-RANK-LINK-R1.txt`, `research/recovered/STONEAGE-SA25-21CN-RANKING-ID-R1.txt`, and `research/recovered/STONEAGE-SA25-21CN-RECORD-20165-R1.txt`.
 - Canonical source record: `SRC-CN-2002-21CN-SA25-CATALOG-20165-01`.
+
+
+
+## StoneAge 2.5 native 21CN record 20165 resolves `sa25up.zip` identity — 2026-09-25
+
+- **FACT:** 21CN native catalogue record `list.php?id=20165` is preserved from **2002-02-12 01:05:02 UTC** onward. The earliest replayed page is HTTP 200, 36,495 bytes, SHA-256 `962145dbcd7b8e4c7e627be3787455aa554de7f2ab4d39592255d1a4d19d5d28`, and is titled **`石器时代2.5—精灵王传说 - 下载 - 21CN.COM`**.
+- The same native page explicitly identifies:
+  - 软件版本：**客户端升级包**
+  - 整理日期：**2002-01-31** — catalogue metadata, not an archive-capture timestamp
+  - 文件大小：**8473K** in early pages; later normalized as **8.27M**
+  - 软件公司：**北京华义**
+  - exact ZIP: `http://download.21cn.com/file/game/maoxian/sa25up.zip`
+  - exact sidecar: `http://download.21cn.com/file/game/maoxian/sa25up.jpg`
+- Therefore `sa25up.zip` is no longer merely a filename hypothesis: it is directly identified by a contemporaneous 21CN native catalogue page as the **StoneAge 2.5《精灵王传说》客户端升级包**. It is **not** the documented 575/580 MB complete client package.
+- The archived delivery topology later moved through `downit.php?id=20165&num=0`; a **2002-10-17** router replay explicitly references `http://images.21cn.com/download/file/game/maoxian/sa25up.zip`. Later 2004 router/pages expose additional `dg.download.21cn.com/file1_21cn/`, `file1xzm/`, `file1/` and `file1xjy/` variants.
+- **OPEN / byte-provenance boundary:** the ZIP bytes themselves remain unrecovered. We still do not have its cryptographic hash, archive members, resource delta, or proof that the bytes on 21CN were byte-identical to the operator-distributed updater. Thus this resolves **package identity and expected size**, not clean-byte provenance.
+- `id=22318` is a separate **564K** Beijing-Waei/华义 update for a Beijing Netcom 9 free-test server, dated by the page to 2002-07-17; it is not `sa25up.zip`.
+- `id=8831`, previously identified only by crawl proximity to `sa25up.jpg`, has been replayed and is **Quick Heal antivirus**; it is closed as a false discovery candidate.
+- The next recovery gate is now sharply bounded: probe only the evidence-derived 21CN mirror generations for a recoverable `sa25up.zip` object; if bytes are recovered, inventory/hash them transiently and test whether the 8.27M updater contains map/resource data capable of moving the field-map provenance anchor earlier than June 2003.
+- Canonical reports:
+  - `research/recovered/STONEAGE-SA25-21CN-RANKING-ID-R1.txt`
+  - `research/recovered/STONEAGE-SA25-21CN-RECORD-20165-R1.txt`
+  - `research/recovered/STONEAGE-SA25-21CN-DOWNIT-20165-R1.txt`
+  - `research/recovered/STONEAGE-SA25-21CN-JPG-R1.txt`
+- Canonical source: `SRC-CN-2002-21CN-SA25-UPDATER-01`.
 
 
 ## Immediate next actions
