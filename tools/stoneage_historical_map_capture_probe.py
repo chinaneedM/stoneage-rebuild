@@ -70,9 +70,13 @@ def signature(data):
     return "other:"+raw[:16].hex()
 
 
+def seven_zip_command():
+    return shutil.which("7zz") or shutil.which("7z") or "7z"
+
+
 def run7z(args,timeout=120):
     proc=subprocess.run(
-        ["7z",*args],
+        [seven_zip_command(),*args],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         timeout=timeout,
@@ -232,7 +236,7 @@ def main():
                 "\n".join(f"{mid}:{h}" for mid,h in zip(map_ids,hashes)).encode("ascii")
             ).hexdigest()
             print(
-                f"EXTRACT|timestamp={timestamp}|7z_code={extract_code}|extracted_bytes={extracted_bytes}|"
+                f"EXTRACT|timestamp={timestamp}|tool={clean(seven_zip_command())}|7z_code={extract_code}|extracted_bytes={extracted_bytes}|"
                 f"map_files={len(maps)}|valid_three_plane={parsed}|invalid_map_files={invalid}|"
                 f"map_bytes={total_map_bytes}|map_id_min={min(map_ids) if map_ids else ''}|"
                 f"map_id_max={max(map_ids) if map_ids else ''}|mapset_sha256={mapset_digest}|"
@@ -246,12 +250,14 @@ def main():
     if len(capture_summaries)>=2:
         first=capture_summaries[0]
         for other in capture_summaries[1:]:
+            both_usable=first["parsed"]>0 and other["parsed"]>0
             print(
                 f"COMPARE|a={first['timestamp']}|b={other['timestamp']}|"
                 f"package_same={int(first['sha256']==other['sha256'])}|"
                 f"package_bytes_same={int(first['bytes']==other['bytes'])}|"
-                f"map_count_same={int(first['maps']==other['maps'])}|"
-                f"mapset_same={int(first['mapset']==other['mapset'])}"
+                f"both_maps_usable={int(both_usable)}|"
+                f"map_count_same={int(both_usable and first['maps']==other['maps'])}|"
+                f"mapset_same={int(both_usable and first['mapset']==other['mapset'])}"
             )
 
     usable=[row for row in capture_summaries if row["parsed"]>0]
