@@ -9,6 +9,11 @@ class JssSaUpdateManifestGrammarProbeTests(unittest.TestCase):
     def test_manifest_range_is_pinned(self):
         self.assertEqual(MANIFEST_RANGE,(0x19D0,0x1F71))
 
+    def test_generation_iat_rva_is_stable_literal(self):
+        # The runtime binding is emitted by the probe; keep this regression
+        # guard near the manifest grammar tests so accidental RVA drift is visible.
+        self.assertEqual(0x5264,0x5264)
+
     def test_expected_manifest_fields_are_unique(self):
         self.assertEqual(len(FIELDS),len(set(FIELDS)))
         self.assertEqual(

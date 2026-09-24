@@ -116,6 +116,17 @@ def main():
     by_addr={ins.address:i for i,ins in enumerate(insns)}
     fvas=field_vas(strings)
 
+    for target_rva in (0x5264,):
+        binding=imports.get(base+target_rva)
+        if binding is None:
+            print(f"IAT_BINDING|rva=0x{target_rva:x}|found=0|dll=|name=")
+        else:
+            dll,name=binding
+            print(
+                f"IAT_BINDING|rva=0x{target_rva:x}|found=1|"
+                f"dll={clean(dll)}|name={clean(name)}"
+            )
+
     print(
         f"PE|image_base=0x{base:x}|instructions={len(insns)}|"
         f"ascii_strings={len(strings)}|fields_found={len(fvas)}"
