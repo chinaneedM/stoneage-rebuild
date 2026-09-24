@@ -12,7 +12,7 @@ import hashlib
 from pathlib import Path
 import re
 
-from tools.stoneage_tw10_hit_map_model import parse_stoneage_dat_map_cache
+from tools.stoneage_tw10_hit_map_model import (\n    load_taiwan_v10_collision_profile,\n    parse_stoneage_dat_map_cache,\n)\nfrom tools.stoneage_tw10_25_fieldmap_compat_probe import requires_profile
 
 NUMERIC_DAT=re.compile(r"^(\d+)\.dat$",re.I)
 
@@ -54,6 +54,20 @@ def index_numeric_maps(root:Path):
     return rows,duplicates
 
 
+
+def compatibility_against_profile(row,profile_ids:set[int]):
+    """Return (compatible, missing_ids) for a parsed map row, or (None, [])."""
+    if row["planes"] is None:
+        return None,[]
+    missing=set()
+    for plane in row["planes"][:2]:
+        for value in plane:
+            value=int(value)
+            if requires_profile(value) and value not in profile_ids:
+                missing.add(value)
+    missing_ids=sorted(missing)
+    return not missing_ids,missing_ids
+
 def mapset_digest(rows):
     text="\n".join(f"{mid}:{rows[mid]['sha256']}" for mid in sorted(rows))
     return hashlib.sha256(text.encode("ascii")).hexdigest()
@@ -73,7 +87,7 @@ def compare(a_root:Path,b_root:Path):
     }
 
 
-def emit(a_root:Path,b_root:Path):
+def emit(a_root:Path,b_root:Path,profile_path:Path|None=None):
     result=compare(a_root,b_root)
     a=result["a"]; b=result["b"]
     print("StoneAge 2003-06 historical map pack vs preserved 2.5 map corpus — R1")
@@ -95,6 +109,18 @@ def emit(a_root:Path,b_root:Path):
     print(f"COUNT|only_preserved25|{len(result['only_b'])}")
     print(f"COUNT|historical_duplicate_ids|{len(result['a_dups'])}")
     print(f"COUNT|preserved25_duplicate_ids|{len(result['b_dups'])}")
+    profile_ids=None
+    if profile_path is not None:
+        profile=load_taiwan_v10_collision_profile(profile_path)
+        profile_ids=set(profile.by_map_number)
+        transitions=[]
+        for mid in result["different"]:
+            ac,_=compatibility_against_profile(a[mid],profile_ids)
+            bc,_=compatibility_against_profile(b[mid],profile_ids)
+            if ac is not None and bc is not None and ac!=bc:
+                transitions.append(mid)
+        print(f"TW1_PROFILE|map_numbers={len(profile_ids)}|min={min(profile_ids)}|max={max(profile_ids)}")
+        print(f"COUNT|tw1_compatibility_transitions|{len(transitions)}")
     if result["different"]:
         for mid in result["different"]:
             ar=a[mid]; br=b[mid]
@@ -112,6 +138,19 @@ def emit(a_root:Path,b_root:Path):
                 f"DIFF|id={mid}|a_bytes={ar['bytes']}|b_bytes={br['bytes']}|"
                 f"a_sha256={ar['sha256']}|b_sha256={br['sha256']}|"
                 f"a_dims={ar['dims']}|b_dims={br['dims']}{plane_text}"
+                + (
+                    (
+                        lambda av,bv:
+                            f"|a_tw1_compatible={str(av[0]).lower()}|b_tw1_compatible={str(bv[0]).lower()}|"
+                            f"a_missing_ids={len(av[1])}|b_missing_ids={len(bv[1])}|"
+                            f"a_first_missing={','.join(map(str,av[1][:20]))}|"
+                            f"b_first_missing={','.join(map(str,bv[1][:20]))}"
+                    )(
+                        compatibility_against_profile(ar,profile_ids),
+                        compatibility_against_profile(br,profile_ids),
+                    )
+                    if profile_ids is not None else ""
+                )
             )
     if result["only_a"]:
         print("ONLY_HISTORICAL|ids="+",".join(map(str,result["only_a"])))
