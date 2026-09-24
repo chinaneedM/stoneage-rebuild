@@ -1,0 +1,56 @@
+StoneAge DiscMaster search-schema probe — R1
+SCOPE|public-search-form-metadata|parameter-discovery|no-file-payload
+FETCH|status=200|bytes=543814|sha256=256d8691d077261b008bd441353fdb7fecbc9dcea071e08dad5bde18f510739f|final=https://discmaster.textfiles.com/search
+COUNT|forms|3
+FORM|index=1|method=post|action=https://discmaster.textfiles.com/searchByImage|inputs=1|selects=0
+INPUT|form=1|name=file|type=file|value=|checked=0|placeholder=
+FORM|index=2|method=post|action=https://discmaster.textfiles.com/searchByAudio|inputs=1|selects=0
+INPUT|form=2|name=file|type=file|value=|checked=0|placeholder=
+FORM|index=3|method=get|action=https://discmaster.textfiles.com/search|inputs=39|selects=6
+INPUT|form=3|name=q|type=text|value=|checked=0|placeholder=
+INPUT|form=3|name=qfields|type=checkbox|value=name|checked=1|placeholder=
+INPUT|form=3|name=qfields|type=checkbox|value=t|checked=0|placeholder=
+INPUT|form=3|name=mode|type=radio|value=quick|checked=1|placeholder=
+INPUT|form=3|name=mode|type=radio|value=deep|checked=0|placeholder=
+INPUT|form=3|name=extension|type=text|value=|checked=0|placeholder=.ext
+INPUT|form=3|name=visual|type=text|value=|checked=0|placeholder=describe the image
+INPUT|form=3|name=auditory|type=text|value=|checked=0|placeholder=describe the audio
+INPUT|form=3|name=sizeMin|type=text|value=|checked=0|placeholder=
+INPUT|form=3|name=sizeMax|type=text|value=|checked=0|placeholder=
+INPUT|form=3|name=durationMin|type=text|value=|checked=0|placeholder=
+INPUT|form=3|name=durationMax|type=text|value=|checked=0|placeholder=
+INPUT|form=3|name=widthMin|type=text|value=|checked=0|placeholder=
+INPUT|form=3|name=heightMin|type=text|value=|checked=0|placeholder=
+INPUT|form=3|name=widthMax|type=text|value=|checked=0|placeholder=
+INPUT|form=3|name=heightMax|type=text|value=|checked=0|placeholder=
+INPUT|form=3|name=tsMin|type=text|value=|checked=0|placeholder=YYYYMMDD
+INPUT|form=3|name=tsMax|type=text|value=|checked=0|placeholder=YYYYMMDD
+INPUT|form=3|name=addedAfter|type=text|value=|checked=0|placeholder=YYYYMMDD or # days ago
+INPUT|form=3|name=detection|type=text|value=|checked=0|placeholder=
+INPUT|form=3|name=nsfw|type=radio|value=2|checked=1|placeholder=
+INPUT|form=3|name=nsfw|type=radio|value=1|checked=0|placeholder=
+INPUT|form=3|name=nsfw|type=radio|value=0|checked=0|placeholder=
+INPUT|form=3|name=nsfwOnly|type=radio|value=0|checked=1|placeholder=
+INPUT|form=3|name=nsfwOnly|type=radio|value=1|checked=0|placeholder=
+INPUT|form=3|name=nsfwOnly|type=radio|value=2|checked=0|placeholder=
+INPUT|form=3|name=animated|type=radio|value=|checked=1|placeholder=
+INPUT|form=3|name=animated|type=radio|value=true|checked=0|placeholder=
+INPUT|form=3|name=animated|type=radio|value=false|checked=0|placeholder=
+INPUT|form=3|name=unsupported|type=radio|value=|checked=1|placeholder=
+INPUT|form=3|name=unsupported|type=radio|value=false|checked=0|placeholder=
+INPUT|form=3|name=unsupported|type=radio|value=true|checked=0|placeholder=
+INPUT|form=3|name=dedup|type=checkbox|value=dedup|checked=0|placeholder=
+INPUT|form=3|name=sortOrderDesc|type=checkbox|value=desc|checked=0|placeholder=
+INPUT|form=3|name=limit|type=text|value=100|checked=0|placeholder=
+INPUT|form=3|name=showItemName|type=checkbox|value=showItemName|checked=0|placeholder=
+INPUT|form=3|name=showWhenAdded|type=checkbox|value=showWhenAdded|checked=0|placeholder=
+INPUT|form=3|name=|type=button|value=reset|checked=0|placeholder=
+INPUT|form=3|name=|type=submit|value=< SEARCH >|checked=0|placeholder=
+SELECT|form=3|name=family|multiple=1|options=13|values=archive,audio,directory,document,executable,font,image,music,other,poly,text,unknown,video
+SELECT|form=3|name=format|multiple=1|options=6521|values=a2gs320x,a2gsPreferred,a2gsSHStar,aac,aai,aaruDiskImage,abackupDiskImage,abbyLingvoDictionary,abbyyFinereaderLanguageData,abcFlowCharterChart,abcFlowCharterDocument,abcFlowCharterShapesPalette,abcFlowCharterTemplate,abcNotation,abcSnapGraphicsPalette,abcSnapGraphixGraph,abcSnapGraphixWorkspace,abeEncoded,abiWord,abletonAnimationData,abletonFont,abletonSkin,abletonSoundData,abletonWarpAnalysis,abracadataDrawing,absoluteDatabaseFile,absoluteMagicResourceData,absSpreadsheet,abuseDemoData,abuseLevel,abyssEngineImageFormat,ac1dPacker,ac3,ac3d,accelPrintedCircuitBoard,accentDemoMakerSequence,accentShowSequence,accessDatabase,accessSoftwareAP,acclaimSkeletonFile,accWareDataDictionary,ace,acegrFitDescriptionFile,aceNotesPIMData,aceTexture,aceTracker,aciddrawCOM,acidSong,acornDraw,acornReplayAudio,acornReplayVideo,acornSpark,acornSprite,acrobatDistillerJobOptions,acrobatFormsData,acrossCrosswordPuzzle,actContactLayoutV30,actContactMapV30,actDataBaseBlobV30,actEnvelopeLabel,actGroupLayoutV30,actionamics,actionPresentation,actionTemplate,activeMARKProtectedArchive,activeMime,activeXLicensePackageFile,actorImageSnapshot,actorLibraryDefinitionLanguage,actorObjectGraphic,actPhoneQuickList,actPrinterDriver,actrDocument,actReportV30,actWordProcessorDocument,acuCOBOLIndex,adbArchive,adblockPlusRulesFile,addictCompiledDictionary,addictThesaurus,addictUserDictionary,adelineXCF,adfExtended,adfFFS,adfOFS,adLibInstrumentBank,adlibMUS,adobeAfterEffectsProject,adobeBrush,adobeCaptureDocument,adobeCMaps,adobeColorSettingsFile,adobeDownloadManager,adobeDuotoneOptions,adobeEncoreProject,adobeFontList,adobeHyphenationDictionary,adobeIllustrator,adobeIllustratorAction,adobeImageStylerFile,adobeInDesignDocument,adobeInDesignPrintingInstructionsReport,adobeMultipleMasterMetrics,adobePhotoParade,adobe
+SELECT|form=3|name=genre|multiple=1|options=30|values=Animation,Application,Audio,Books, Documents & Magazines,Calendar,Compilation,Driver,Education & Reference,Font,Game,Game - Add-Ons, Levels & Tools,Image,Image - Animated,Image - Clipart,Image - Kodak Photo CD,Image - NSFW,Image - Photo,Interactive,Magazine - Coverdisc,Magazine - Digital,Music,Operating System,Other,Press Kit - Game,Press Kit - Movie & TV,Programming,Screensaver,Shareware & Freeware,Video,Video - NSFW
+SELECT|form=3|name=itemid|multiple=1|options=0|values=
+SELECT|form=3|name=sortBy|multiple=0|options=13|values=ts,duration,family,name.keyword,fileid,format,height,itemid,b3sum,*relevance,size,width,addts
+SELECT|form=3|name=outputAs|multiple=0|options=3|values=html,json,rss
+COUNT|named_fields|45
+RESOLUTION|DISCMaster_SEARCH_SCHEMA_DERIVED|use exact field names for follow-on searches
