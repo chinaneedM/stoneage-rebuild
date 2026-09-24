@@ -30,6 +30,8 @@ class PhysicalImageFingerprintProbeTests(unittest.TestCase):
     def test_tls_exception_is_host_limited(self):
         self.assertTrue(insecure_tls_allowed("https://www.shiqi.me/pt_17.htm"))
         self.assertTrue(insecure_tls_allowed("https://shiqi.me/x"))
+        self.assertTrue(insecure_tls_allowed("https://blog.shiqi.so/author1.htm"))
+        self.assertTrue(insecure_tls_allowed("https://www.soshiqi.com/category-sqxc.html"))
         self.assertFalse(insecure_tls_allowed("https://a.rimg.com.tw/x.jpg"))
         self.assertFalse(insecure_tls_allowed("https://example.com/x"))
 
