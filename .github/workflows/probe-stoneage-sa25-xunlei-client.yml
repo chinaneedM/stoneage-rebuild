@@ -1,0 +1,43 @@
+name: Probe StoneAge 2.5 Xunlei standalone client
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa25_xunlei_client_probe.py
+      - tests/test_stoneage_sa25_xunlei_client_probe.py
+      - .github/workflows/probe-stoneage-sa25-xunlei-client.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-xunlei-client
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_sa25_xunlei_client_probe -v
+      - name: Probe exact Xunlei client token
+        run: |
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa25_xunlei_client_probe > research/recovered/STONEAGE-SA25-XUNLEI-CLIENT-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-SA25-XUNLEI-CLIENT-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe StoneAge 2.5 Xunlei client token'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
