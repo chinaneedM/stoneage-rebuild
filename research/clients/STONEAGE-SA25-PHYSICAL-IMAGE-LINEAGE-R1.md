@@ -83,3 +83,60 @@ It does **not** prove different disc contents, different client builds, or even 
 2. Add crop/local-region matching for boxed seller photographs so a disc occupying only part of a frame can be compared against standalone-disc references.
 3. Preserve evidence independence: multiple marketplace URLs must not be counted as multiple specimens when their images collapse into the same visual-source cluster.
 4. If any actual disc/file-tree bytes become publicly recoverable, stop image archaeology and perform file-level provenance/hashing immediately.
+
+
+## Local-region disc matching — 2026-09-24
+
+A second transient image-analysis pass was run specifically to avoid the whole-frame bias of package photographs. The two standalone Ruten disc images are used as query templates; SIFT ratio-test matches are filtered through RANSAC homography, and only derived geometry is retained.
+
+### Positive control
+
+The two standalone Ruten disc listings remain the calibration control:
+
+- query `21926883918096` -> `22242541948520`;
+- **290** Lowe-ratio good matches;
+- **231 RANSAC inliers**;
+- **0.7966 inlier ratio**;
+- query inlier coverage **0.3706**;
+- target inlier coverage **0.4850**;
+- sane projected quadrilateral.
+
+This establishes the scale of a genuine strong shared-image/artwork relation in the same algorithm/run.
+
+### Boxed new-user package vs standalone-disc cluster
+
+The strongest region-level boxed comparison is:
+
+- standalone `22242541948520` -> boxed image `22632305238624:3`;
+- **103** good matches;
+- **32 RANSAC inliers**;
+- **0.3107 inlier ratio**;
+- query coverage **0.0747**;
+- target coverage **0.0394**;
+- sane projected quadrilateral.
+
+A second direction (`21926883918096` -> boxed image 3) yields **22 inliers / 0.2619**, with broader query/target coverage (**0.2493 / 0.2118**) and a sane projected quadrilateral.
+
+**Interpretation:** there are reproducible shared local visual elements between the standalone-disc cluster and at least one boxed-package image, but the signal is far below the positive control and is not sufficient to classify the boxed disc as the same artwork or same physical carrier. Packaging, perspective, crop and reflections remain plausible causes of reduced overlap.
+
+### Wanfang relation
+
+The best standalone -> Wanfang result reaches **21 RANSAC inliers / 0.2727**, but query coverage is only **0.0030** and the projected homography is geometrically invalid/exploded. Other Wanfang pairs are similarly weak/unstable.
+
+**Interpretation:** no robust local-region evidence currently links the Wanfang photographed disc to the standalone Ruten disc cluster. Wanfang remains **OPEN / UNCLASSIFIED-CARRIER**.
+
+### Collector-mirror false-positive guard
+
+Some collector-mirror pairs superficially produced **95–99 inliers**, but target coverage collapses to ~0–0.02 and the projected quadrilateral is invalid/degenerate. Those rows are rejected as local repeated-texture/text/logo matches rather than disc-artwork identity.
+
+### Evidence boundary
+
+Local visual homography supports only artwork/source-family hypotheses. It does not establish:
+
+- disc byte identity;
+- mastering/pressing identity;
+- official Beijing-Waei provenance;
+- filesystem contents;
+- clean-client status.
+
+Derived report: `research/recovered/STONEAGE-SA25-DISC-REGION-MATCH-R1.txt`.
