@@ -1926,6 +1926,22 @@ Supplemental source ledgers:
   - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-PHYSICAL-R1.txt`
   - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-DISC-PHOTO-R1.txt`.
 
+## StoneAge 2.5 public surviving-disc set — Ruten control — 2026-09-25
+
+- The current public marketplace surface now contributes **three concrete surviving StoneAge 2.5 physical-media controls** rather than a generic “old discs may exist” lead:
+  - `22632305238624`: boxed **2.5 精靈王傳說新手報到包** with original packaging and game-disc wording, 9 full-size public photos;
+  - `21926883918096`: loose **2.5版 精靈王傳說** game disc;
+  - `22242541948520`: another independent loose **2.5版 精靈王傳說** PC game disc.
+- The existing Ruten metadata probe resolved **22** full/thumbnail image URLs with **0 metadata-probe errors**, and all tested public image HEAD requests returned 200.
+- The corrected Yan-Nian exact-disc photograph has its strongest tested Ruten visual comparison against boxed carrier `22632305238624` image 3: **112 RANSAC inliers / 0.1181**. This is only a visual-priority signal, not proof that the discs, pressings or client bytes are identical.
+- Current indexed Ruten search results still expose the boxed 2.5 new-user package and loose 2.5 精靈王傳說 discs.
+- Exact photo basename/hash, the three product IDs/titles, and targeted Archive.org/DiscMaster StoneAge-2.5 queries yielded **no public ISO/file-tree payload hit in this pass**.
+- **EVIDENCE BOUNDARY:** this establishes three independently addressable surviving physical-media controls with public photos. It does not recover any optical-disc bytes and therefore **does not move the field-map byte-provenance anchor earlier than June 2003**.
+- Operational consequence: keep these IDs/photos as exact matching keys for future public preservation reads/dumps; no purchase, seller contact or user-performed dump is required.
+- Canonical source: `SRC-TW-2026-RUTEN-SA25-PHYSICAL-01`.
+- Derived report: `research/recovered/STONEAGE-SA25-RUTEN-PHYSICAL-R1.txt`.
+
+
 ## Immediate next actions
 
 1. **Continue moving the field-map provenance anchor earlier than June 2003 without back-projecting descendant bytes.** The direct Waei 2.5 web/binary surface, the 2002-11-08 4.0 package surface, the exact public-index pass over 20 named carrier identities, the six-name Korean payload file/index pass, the DiscMaster bridge-signature file pass, the exact `sa25up.zip` preservation+archive-neighborhood pass, the access-gated WeLoveSA `tid=2132` public/reply surface, the 2009 `YSA2.5.8.rar` mirror path, the tested `ftp.stoneage.com.cn` domain/resource/Availability surface, the newly restored 《轰炸鸡》/`哇靠轰炸鸡` cross-promotion carrier metadata surface, the photographed Wanfang ISBN/barcode surface, the old-disc CHM/RTF+torrent metadata/signature surface, and the newly fingerprinted 2026 public 2.5 archive are now bounded at their tested surfaces: the FTP route produced no 200 payload on the known/predicted path set and must only be reopened from a new historical path token; the 20-carrier DiscMaster/IA pass now completes with zero strict hits and 《轰炸鸡》 should only be reopened there from a new independently sourced package/disc identity or file token; the Wanfang identifier pass has zero strict preservation hits, while the old-disc torrent passes have zero exact target hits and zero exact client/resource signature paths, so those routes likewise reopen only from a new precise media/file token; the 2009 exact mirror has no hit on the tested public preservation indexes; the 2026 archive is a direct descendant/common-corpus control and does not provide independent 2002 provenance. Highest information gain now comes from **publicly recoverable provenance-preserving reads/dumps of surviving 2.5 physical discs** (boxed new-user/gift-pack media already identify the carrier classes), followed by independently preserved contemporaneous installed-tree backups, mirror copies or server-captured caches with provenance. The project does not require the user to purchase or manually dump media. Treat the 2001-12-04 `tyro/upgrade.asp` capture only as a StoneAge 2.0 level-up-guide/topology source; do not reinterpret it as a software-upgrade page. Use June/December mtime+CRC strata only for candidate prioritization, never as release dates.
