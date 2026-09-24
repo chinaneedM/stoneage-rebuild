@@ -6,8 +6,13 @@ CGI_CDX|window=2003|from=20030101|to=20031231|status=200|bytes=158057|sha256=2dd
 CGI_CDX|window=2004|from=20040101|to=20041231|status=200|bytes=212684|sha256=9a9f705880a3ebca0abc419701a57cbdb6aebbe2f7c52eabd917fb6bcc0b28e1|rows=842|relevant=0|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgames1.sina.com.cn%2Fcgi-bin%2Fgames%2Fdowngames%2Fdownload.pl&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20040101&to=20041231&filter=statuscode%3A200&collapse=urlkey&limit=2000
 CGI_CDX|window=2005|from=20050101|to=20051231|status=200|bytes=180792|sha256=23fca7f8b9727e9440b1d0704be19d9353b353429570f78e847e4cdd9a50a80c|rows=485|relevant=0|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgames1.sina.com.cn%2Fcgi-bin%2Fgames%2Fdowngames%2Fdownload.pl&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20050101&to=20051231&filter=statuscode%3A200&collapse=urlkey&limit=2000
 ERROR|scope=source-cdx|kind=TimeoutError|message=The read operation timed out
+ERROR|scope=source-availability:20021108|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|scope=source-availability:20021201|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|scope=source-availability:20030101|kind=HTTPError|message=HTTP Error 429: Too Many Requests
+ERROR|scope=source-availability:20040101|kind=HTTPError|message=HTTP Error 429: Too Many Requests
 COUNT|source_captures|0
+COUNT|source_availability_captures|0
 COUNT|source_candidate_hrefs|0
 COUNT|cgi_relevant_urls|0
-COUNT|errors|1
+COUNT|errors|5
 RESOLUTION|PARTIAL_NO_HIT|one or more narrowly scoped Wayback surfaces unavailable
