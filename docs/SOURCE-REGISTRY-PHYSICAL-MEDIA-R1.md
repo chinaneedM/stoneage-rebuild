@@ -204,3 +204,29 @@ The remaining gap is no longer merely whether a second disc probably existed. Th
   - `research/recovered/STONEAGE-SA25-OLD-DISC-CATALOG-NEIGHBORHOOD-R4.txt`
   - `research/recovered/STONEAGE-SA25-OLD-DISC-TORRENTS-R2.txt`
   - `research/recovered/STONEAGE-OLD-DISC-TORRENT-SIGNATURES-R1.txt`
+
+## SRC-CN-COLLECTOR-SA25-DISC-CLASSIFICATION-01
+
+- Source family: StoneAge collector posts by `stoneage2017 / 寂寞如風`, preserving photographs and source-type descriptions for mainland/Taiwan client, magazine and guide-book discs.
+- Primary pages:
+  - `https://forum.gamer.com.tw/C.php?bsn=1571&snA=81429` — `石器時代華義國際石器周邊收藏光碟篇（二）`, 2021-01-07;
+  - `https://forum.gamer.com.tw/C.php?bsn=1571&snA=81428` — `光碟篇（三）`, 2021-01-07;
+  - `https://forum.gamer.com.tw/C.php?bsn=1571&snA=81388` — `延年益壽包`, 2020 collector post;
+  - `https://forum.gamer.com.tw/C.php?bsn=1571&snA=81400` — `2.5精靈王傳說版用戶端產包`, 2020-09-21.
+- Source type: later specialist collector photography + first-hand collection classification, not contemporaneous operator documentation.
+- Confidence: **C+ for collector source-type classification; B for literal claims tied to the photographed items as described; not S/A provenance for client bytes.**
+- Supports:
+  - the collector explicitly separates StoneAge optical media into **official client discs, magazine-gift discs and strategy-book-gift discs**, with mainland/Taiwan variants;
+  - for the **2.5 精靈王傳說** segment, the collector identifies the upper pictured disc as the **mainland client unified-artwork disc** and the lower pictured disc as the Taiwan version;
+  - the collector states mainland versions generally reused a standardized client-disc presentation, with 2.0 as a noted exception in that collection;
+  - the `延年益壽包` post independently shows/labels a **2.5-period disc** and a 2.5 manual;
+  - the 2.5 client-package post records multiple Waei-era new-user-package cover variants plus the `延年益壽包` and `春滿乾坤包` families;
+  - a separate collector post states some mainland strategy-book discs are still simply **client installer packages**, while retaining a different provenance class from official boxed-client media.
+- Archaeology consequence:
+  - physical-media recovery now requires a **carrier-class field** before clean-client promotion: official boxed client / magazine-gift / strategy-book-gift / other publisher / unknown;
+  - non-official carrier class does **not** make the bytes technically useless: a magazine/guide disc may still preserve an unmodified installer, but its provenance grade is lower and must be compared against an official/operator anchor before promotion;
+  - the Wanfang ISBN/barcode disc cannot be called an official Beijing-Waei 2.5 client merely from its 2.5 title. Its artwork/carrier relation must be matched against the collector's mainland unified-client-disc baseline or tied independently to a specific Waei package.
+- Does not establish:
+  - byte identity between any photographed discs;
+  - the Wanfang disc's carrier class;
+  - filesystem contents, hashes, mastering/matrix identifiers, or whether a secondary carrier contains the 575/580 MB full client versus the 8.25 MB updater.
