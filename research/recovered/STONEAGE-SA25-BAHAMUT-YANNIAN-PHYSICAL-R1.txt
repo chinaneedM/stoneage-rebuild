@@ -60,3 +60,24 @@ RESEARCH CONSEQUENCE
 
 CANONICAL SOURCE ID
 SRC-CN-2020-BAHAMUT-SA25-YANNIAN-PHYSICAL-01
+
+
+CORRECTED EXACT DISC-PHOTO RECOVERY — R2
+- The first automated forum-page association was rejected because its broad preceding-context window could bind an "延伸閱讀" thumbnail to the earlier "2.5時期的光碟" phrase.
+- The probe was corrected to prefer the Bahamut creator page and to extract only image tags physically located between the literal labels "2.5時期的光碟" and "2.5版本的說明書", with the forum page retained as a fallback.
+- Both corrected pages independently resolve the same single article-body image URL:
+  https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG
+- The exact public photo body was recovered transiently:
+  bytes: 160151
+  SHA-256: 385071cb52f3e9af540823ff8a1833cfba4dad04ee8ab2ee9beebfa67dadea6a
+  dimensions: 1128x774
+  dHash: f070e0606068a1c0
+- This is a hash of the COLLECTOR PHOTOGRAPH, not a hash of any StoneAge CD/ISO/client payload.
+- Cross-source local-feature controls:
+  - best tested Ruten control: carrier 22632305238624 image 3, 112 RANSAC inliers / 0.1181 inlier ratio;
+  - SMZDM article-order 2.5 candidate: 10 RANSAC inliers / 0.0111 inlier ratio.
+- These visual metrics are discovery/ranking controls only. Neither score proves identical discs, identical artwork, the same pressing, or common client bytes.
+- Corrected derived report:
+  research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-DISC-PHOTO-R1.txt
+- Provenance hygiene: the superseded extension-thumbnail association must not be cited or reused as evidence.
+- Status remains: exact surviving physical-disc photograph recovered; NO disc filesystem, ISO/client payload, disc checksum, volume label, matrix/mastering/IFPI identity, or clean-byte provenance recovered.
