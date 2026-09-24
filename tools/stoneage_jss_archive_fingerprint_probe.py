@@ -142,11 +142,23 @@ def main():
     docs={}
     query_hits={}
     errors=[]
-    for number,query in enumerate(QUERIES,1):
+
+    def search_one(job):
+        number,query=job
         try:
-            rows=search(query)
+            return number,query,search(query),None
         except Exception as exc:
-            errors.append(("search",str(number),type(exc).__name__,str(exc)))
+            return number,query,[],(type(exc).__name__,str(exc))
+
+    search_jobs=list(enumerate(QUERIES,1))
+    search_results=[]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
+        for result in ex.map(search_one,search_jobs):
+            search_results.append(result)
+
+    for number,query,rows,error in sorted(search_results,key=lambda x:x[0]):
+        if error:
+            errors.append(("search",str(number),error[0],error[1]))
             print(f"QUERY|n={number}|results=ERROR|q={clean(query)}")
             continue
         print(f"QUERY|n={number}|results={len(rows)}|q={clean(query)}")
