@@ -1,7 +1,7 @@
 import struct
 import unittest
 from capstone import Cs, CS_ARCH_X86, CS_MODE_32
-from tools.stoneage_jss_saupdate_call_args_probe import imm_desc, stack_args
+from tools.stoneage_jss_saupdate_call_args_probe import FOCUS_SITES, imm_desc, stack_args
 
 class JssSaUpdateCallArgsProbeTests(unittest.TestCase):
     def test_manifest_http_focus_sites_are_pinned(self):
