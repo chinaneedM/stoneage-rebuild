@@ -1,0 +1,46 @@
+name: Probe StoneAge 2.5 17173 topology
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa25_17173_topology_probe.py
+      - tests/test_stoneage_sa25_17173_topology_probe.py
+      - .github/workflows/probe-stoneage-sa25-17173-topology.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-17173-topology
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_sa25_17173_topology_probe -v
+      - name: Probe historical 17173 page family
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa25_17173_topology_probe \
+            > research/recovered/STONEAGE-SA25-17173-TOPOLOGY-R3.txt
+      - name: Commit derived metadata only
+        shell: bash
+        run: |
+          set -euo pipefail
+          report='research/recovered/STONEAGE-SA25-17173-TOPOLOGY-R3.txt'
+          cp "$report" /tmp/STONEAGE-SA25-17173-TOPOLOGY-R3.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/STONEAGE-SA25-17173-TOPOLOGY-R3.txt "$report"
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe historical 17173 StoneAge 2.5 topology'
+          git push
