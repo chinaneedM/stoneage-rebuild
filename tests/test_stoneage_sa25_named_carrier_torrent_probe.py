@@ -37,6 +37,20 @@ class NamedCarrierTorrentProbeTests(unittest.TestCase):
             )
         )
 
+    def test_compact_yyyymm_variant(self):
+        self.assertTrue(
+            flexible_periodical_match(
+                "computer-news-gameworld",
+                "电脑报配套光盘之游戏世界200202.iso",
+            )
+        )
+        self.assertFalse(
+            flexible_periodical_match(
+                "computer-news-gameworld",
+                "电脑报配套光盘之游戏世界200201.iso",
+            )
+        )
+
     def test_crosspromo_is_lead_without_association(self):
         strict, lead = classify_path("游戏/哇靠轰炸鸡完美中文版.iso")
         self.assertNotIn(("bombing-chicken-game", "crosspromo"), strict)
