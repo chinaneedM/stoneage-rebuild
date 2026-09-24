@@ -1,0 +1,49 @@
+name: Probe StoneAge 2.5 distribution carriers
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa25_distribution_carrier_probe.py
+      - tests/test_stoneage_sa25_distribution_carrier_probe.py
+      - .github/workflows/probe-stoneage-sa25-distribution-carriers.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-distribution-carriers
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate carrier probe
+        run: python3 -m unittest tests.test_stoneage_sa25_distribution_carrier_probe -v
+      - name: Probe preservation indexes
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa25_distribution_carrier_probe \
+            > research/recovered/STONEAGE-SA25-DISTRIBUTION-CARRIERS-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-SA25-DISTRIBUTION-CARRIERS-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe StoneAge 2.5 distribution carriers'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_sa25_distribution_carrier_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe StoneAge 2.5 distribution carriers'
+          fi
+          git push
