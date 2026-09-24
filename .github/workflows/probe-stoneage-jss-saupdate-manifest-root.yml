@@ -1,0 +1,55 @@
+name: Probe archived JSS SaUpdate manifest root
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_jss_saupdate_manifest_root_probe.py
+      - tests/test_stoneage_jss_saupdate_manifest_root_probe.py
+      - .github/workflows/probe-stoneage-jss-saupdate-manifest-root.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-jss-saupdate-manifest-root
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install analysis dependencies
+        run: pip install --quiet pefile capstone
+      - name: Validate manifest-root probe
+        run: python3 -m unittest tests.test_stoneage_jss_saupdate_manifest_root_probe -v
+      - name: Derive manifest-root dataflow
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_jss_saupdate_manifest_root_probe \
+            > research/recovered/STONEAGE-JSS-SAUPDATE-MANIFEST-ROOT-R1.txt
+      - name: Verify no executable payload was retained
+        run: |
+          set -euo pipefail
+          ! find research tools tests -type f -iname '*.exe' -print -quit | grep -q .
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-JSS-SAUPDATE-MANIFEST-ROOT-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: derive JSS SaUpdate manifest root'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_jss_saupdate_manifest_root_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: derive JSS SaUpdate manifest root'
+          fi
+          git push
