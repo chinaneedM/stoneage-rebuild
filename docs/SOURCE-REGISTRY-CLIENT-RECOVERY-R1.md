@@ -469,6 +469,25 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - `research/recovered/STONEAGE-SA25-PUBLIC-VS-BRIDGE-R1.txt`.
 - Status: **CONTROL-C / DESCENDANT — clean-client lead closed; keep only for lineage/diff work**.
 
+## TARGET-D / BOUNDED — Beijing-Waei historical FTP resource surface
+
+- Historical host: `ftp.stoneage.com.cn`.
+- CDX/domain-level result:
+  - the tested 2000–2002 domain/resource index exposes one early resource-like topology row: `http://ftp.stoneage.com.cn:80/battlemap/battle218.sab` at **2001-05-16**;
+  - that archived row is HTTP **404** and therefore is topology evidence only, not recovered payload bytes.
+- Exact/prefix resource probe:
+  - tested `StoneAge.exe`, `sa_3.exe`, `Setup.ini`, the known `real_1.bin` / `adrn_1.bin` / `spr_1.bin` / `spradrn_1.bin` / `battle_1.bin` family, `data/` variants, `battlemap/battle218.sab`, `battletxt_1.txt`, `soundaddr_1.txt`, plus selected directory prefixes;
+  - **0 status-200 interesting payload rows** and **0 replayed payload bytes** were recovered.
+- Wayback Availability control:
+  - **128** HTTP/HTTPS URL×date queries across 2000-12-31, 2001-05-16, 2001-12-31 and 2002-02-28;
+  - **0 bounded status-200 captures** and **0 replayed small payloads**;
+  - **28** queries were rate-limited/erroring, so this remains a tested-surface negative rather than a global negative on every historical FTP object.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-FTP-DOMAIN-R1.txt`;
+  - `research/recovered/STONEAGE-FTP-RESOURCE-PATHS-R1.txt`;
+  - `research/recovered/STONEAGE-FTP-RESOURCE-AVAILABILITY-R1.txt`.
+- Status: **TARGET-D / BOUNDED — do not repeat the same guessed resource-path set; reopen only from a new contemporaneous filename/path token, mirror record, cache, installer reference or recovered media tree.**
+
 ## Current recovery order
 
 1. **Korean Inium 2000 public client:** recover the original installer filename/path/bytes through the Inium site, Hananet/GamePlus, CNET and period offline/software archives. It is now the strongest operational early bridge because operator-era free distribution and massive replication are directly attested.
@@ -478,7 +497,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 5. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge.
 6. Continue recovery of the **Korean 1.74** exact-version operator-era installer identity/bytes.
 7. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
-8. Treat the recovered mixed 2.5 bundle as a **resource-format bridge only**; the 2026 public 2.5 archive is closed as a **descendant/community control**, and the 2009 `YSA2.5.8.rar` exact mirror is currently public-index-negative. Neither should receive further primary clean-client recovery effort unless an independent mirror or stronger provenance appears.
+8. Treat the recovered mixed 2.5 bundle as a **resource-format bridge only**; the 2026 public 2.5 archive is closed as a **descendant/community control**, the 2009 `YSA2.5.8.rar` exact mirror is currently public-index-negative, and the tested Beijing-Waei FTP resource path/Availability route is bounded with no recovered 200 payload. None should receive further primary clean-client recovery effort unless an independent mirror, new historical path token or stronger provenance appears.
 9. Recover the Sina "1.82" href/bytes only as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
 10. Keep the Wayi official 8.5 package and `NetmarbleStoneAge120` as later controls, not substitutes for an early clean baseline.
 11. For any newly recovered candidate bytes, stop broad searching immediately and perform the clean-client acceptance test plus first full inventory.
