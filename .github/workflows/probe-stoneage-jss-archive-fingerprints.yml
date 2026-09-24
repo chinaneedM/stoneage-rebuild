@@ -1,0 +1,49 @@
+name: Scan JSS StoneAge Archive fingerprints
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_jss_archive_fingerprint_probe.py
+      - tests/test_stoneage_jss_archive_fingerprint_probe.py
+      - .github/workflows/probe-stoneage-jss-archive-fingerprints.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-jss-archive-fingerprints
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSS Archive fingerprint probe
+        run: python3 -m unittest tests.test_stoneage_jss_archive_fingerprint_probe -v
+      - name: Scan Internet Archive metadata
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_jss_archive_fingerprint_probe \
+            > research/recovered/STONEAGE-JSS-ARCHIVE-FINGERPRINT-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-JSS-ARCHIVE-FINGERPRINT-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: scan JSS Archive fingerprints'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_jss_archive_fingerprint_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: scan JSS Archive fingerprints'
+          fi
+          git push
