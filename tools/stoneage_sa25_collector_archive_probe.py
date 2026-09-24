@@ -5,7 +5,7 @@ Known collector article image URLs only. Image bodies are read transiently from
 Wayback; the report stores URLs, hashes, dimensions and visual match metrics only.
 """
 from __future__ import annotations
-import hashlib, json, urllib.parse, urllib.request
+import concurrent.futures, hashlib, json, urllib.parse, urllib.request
 
 from tools.stoneage_sa25_physical_image_fingerprint_probe import (
     collector_reference_images, decode_features, fetch, load_image,
@@ -58,11 +58,23 @@ def main():
     page_rows,meta=collector_reference_images()
     print(f"TARGETS|count={len(meta)}")
     recovered=[]
-    for row in meta:
+    def query_meta(row):
         label=str(row.get("label") or "")
         target=str(row.get("url") or "")
         try:
             body,rows=cdx_fetch(target)
+            return row,body,rows,None
+        except Exception as e:
+            return row,None,(),(type(e).__name__,str(e))
+
+    cdx_results=[]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+        for row,body,rows,error in ex.map(query_meta,meta):
+            label=str(row.get("label") or "")
+            target=str(row.get("url") or "")
+            if error:
+                errors.append((f"cdx:{label}",error[0],error[1]))
+                continue
             ok=[r for r in rows if str(r.get("statuscode") or "")=="200" and "image" in str(r.get("mimetype") or "").lower()]
             print(
                 f"CDX|label={clean(label)}|target={clean(target)}|bytes={len(body)}|"
@@ -81,20 +93,28 @@ def main():
                     continue
                 if dg:
                     seen_digest.add(dg)
-                try:
-                    f=archived_image(r,f"archive:{label}:{r.get('timestamp')}")
-                    recovered.append(f)
-                    print(
-                        f"ARCHIVE_IMAGE|source_label={clean(label)}|timestamp={clean(r.get('timestamp'))}|"
-                        f"bytes={f['bytes']}|sha256={f['sha256']}|size={f['width']}x{f['height']}|"
-                        f"dhash={f['dhash']}|keypoints={len(f['kp'])}|url={clean(f['url'])}"
-                    )
-                except Exception as e:
-                    errors.append((f"replay:{label}:{r.get('timestamp')}",type(e).__name__,str(e)))
+                cdx_results.append((label,r))
                 if len(seen_digest)>=3:
                     break
+
+    def replay_one(entry):
+        label,r=entry
+        try:
+            return label,r,archived_image(r,f"archive:{label}:{r.get('timestamp')}"),None
         except Exception as e:
-            errors.append((f"cdx:{label}",type(e).__name__,str(e)))
+            return label,r,None,(type(e).__name__,str(e))
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
+        for label,r,f,error in ex.map(replay_one,cdx_results):
+            if error:
+                errors.append((f"replay:{label}:{r.get('timestamp')}",error[0],error[1]))
+                continue
+            recovered.append(f)
+            print(
+                f"ARCHIVE_IMAGE|source_label={clean(label)}|timestamp={clean(r.get('timestamp'))}|"
+                f"bytes={f['bytes']}|sha256={f['sha256']}|size={f['width']}x{f['height']}|"
+                f"dhash={f['dhash']}|keypoints={len(f['kp'])}|url={clean(f['url'])}"
+            )
 
     ruten=[]
     try:
