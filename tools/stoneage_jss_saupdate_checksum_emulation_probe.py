@@ -76,6 +76,7 @@ def candidate_values(payload):
         xor8 ^= b
     return {
         "sum32":sum(payload)&0xffffffff,
+        "indexed_sum32":sum((b+i) for i,b in enumerate(payload))&0xffffffff,
         "xor8":xor8,
         "crc32":zlib.crc32(payload)&0xffffffff,
         "adler32":zlib.adler32(payload)&0xffffffff,
