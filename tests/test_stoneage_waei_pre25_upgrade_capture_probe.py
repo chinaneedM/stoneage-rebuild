@@ -1,5 +1,5 @@
 import unittest
-from tools.stoneage_waei_pre25_upgrade_capture_probe import TIMESTAMP,ORIGINAL,extract,urls
+from tools.stoneage_waei_pre25_upgrade_capture_probe import TIMESTAMP,ORIGINAL,extract,structural_refs,urls
 class T(unittest.TestCase):
     def test_anchor(self):
         self.assertEqual(TIMESTAMP,"20011204165711"); self.assertIn("upgrade.asp",ORIGINAL)
