@@ -1,0 +1,34 @@
+StoneAge JSS SaUpdate newest.txt grammar synthesis — R1
+SCOPE|first-party-SaUpdate-derived|manifest-parser+bounded-helper-emulation|no-original-payload-retained
+
+FACT|manifest_source|The archived JSS SaUpdate program references update.gamersdream.ne.jp and /~stoneage/newest.txt and dispatches the downloaded manifest into the parser at RVA 0x19d0.
+FACT|line_helper|RVA 0x1f80 is a delimiter-driven 1-based field extractor. Bounded x86 emulation succeeds for 21/21 synthetic cases.
+FACT|line_split|The manifest parser calls RVA 0x1f80 with delimiter 0x0a to select successive lines.
+FACT|field_split|For each non-empty selected line, the parser calls RVA 0x1f80 with delimiter 0x3a for field indexes 1,2,3,4,5.
+FACT|empty_fields|Consecutive delimiters preserve an empty field: A::C yields field2="" and field3="C".
+FACT|whitespace|The helper does not trim spaces inside a field.
+FACT|crlf|Splitting CRLF text on 0x0a leaves the preceding 0x0d in the selected field.
+FACT|max_len|The fourth helper argument is not an effective copy bound in the tested helper path: max_len 1,4,8 all return the full 10-character first field in a safely oversized destination.
+FACT|dispatch_key|The parser compares colon field 1 against EXE, SPRBIN, SPRADRNBIN, REALBIN, ADRNBIN, SOUNDBIN, SOUNDADDRTXT, BATTLEBIN, BATTLETXT, IP, IP:1 and MESSAGE string constants.
+FACT|selector|EXE=1
+FACT|selector|REALBIN=2
+FACT|selector|SOUNDBIN=3
+FACT|selector|SPRBIN=4
+FACT|selector|SPRADRNBIN=5
+FACT|selector|ADRNBIN=6
+FACT|selector|SOUNDADDRTXT=7
+FACT|selector|BATTLEBIN=8
+FACT|selector|BATTLETXT=9
+FACT|selector_alignment|The nine manifest dispatch values exactly match the independently recovered local resource-generation selector map 1..9.
+FACT|record_preprocess|Before key dispatch, colon field 2 is copied into per-record working storage and passed to helper RVA 0x2060; colon fields 3 and 4 are each passed through the same indirect numeric-conversion call and stored as integers.
+HYPOTHESIS|field2_role|Colon field 2 is likely a filename or payload/resource name, because the per-file download path is /~stoneage/%s and the local staging path is data\\download\\%s. Direct field2-to-download-format dataflow remains to be closed before promotion.
+OPEN|field3_field4|The exact semantic ordering of colon fields 3 and 4 (for example generation/version/checksum/size/update state) is not yet proven.
+OPEN|field5|The exact meaning and per-key use of colon field 5 is not yet proven.
+OPEN|ip1_reachability|A literal IP:1 dispatch constant exists, but a naive manifest line beginning IP:1:... would be split by 0x3a into field1=IP. Therefore IP:1 must not yet be described as a proven literal record key; it may be legacy/dead logic or depend on a transformed representation not yet recovered.
+OPEN|message_ip_semantics|IP, IP:1 and MESSAGE control-line semantics and their exact relationship to the two final _execl control buffers remain unresolved.
+
+EVIDENCE|manifest_grammar_report=research/recovered/STONEAGE-JSS-SAUPDATE-MANIFEST-GRAMMAR-R1.txt
+EVIDENCE|line_helper_report=research/recovered/STONEAGE-JSS-SAUPDATE-MANIFEST-LINE-EMULATION-R1.txt
+VALIDATION|manifest_grammar_run=35954056510|conclusion=success
+VALIDATION|manifest_line_emulation_run=35954129823|conclusion=success
+RESOLUTION|NEWEST_GRAMMAR_PARTIALLY_CLOSED|line-and-colon-structure=FACT|resource-key-selector-map=FACT|field2-5-semantics=PARTIAL|binary-not-committed
