@@ -125,6 +125,9 @@ def main():
                 blob=" ".join(str(row.get(k) or "") for k in ("itemName","fileid","filename","href","text","title"))
                 if strict_match(blob): strict.append(row)
             print(f"DISCM_QUERY|query={clean(q)}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|rows={len(rows)}|strict={len(strict)}|final={clean(final)}")
+            if q=="7-900096-07-8":
+                for row in rows:
+                    print("DISCM_RAW_LEAD|"+"|".join(f"{k}={clean(row.get(k))}" for k in ("itemid","itemName","fileid","filename","href","size","ts","b3sum","text","title")))
             for row in strict:
                 key=(str(row.get("itemid","")),str(row.get("fileid","")))
                 strict_d[key]=row
