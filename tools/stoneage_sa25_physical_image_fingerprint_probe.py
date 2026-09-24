@@ -9,6 +9,7 @@ from __future__ import annotations
 import hashlib
 import html.parser
 import json
+import ssl
 import statistics
 import time
 import urllib.parse
@@ -22,6 +23,11 @@ OFFICIAL_MAINLAND_REFERENCE = (
     "5fe128952732d.jpg"
 )
 WANFANG_PAGE = "https://www.shiqi.me/pt_17.htm"
+COLLECTOR_INDEXES = (
+    ("https://blog.shiqi.so/author1.htm", ("回忆石器时代2.5游戏光盘",)),
+    ("https://www.soshiqi.com/category-sqxc.html", ("2.5客户端礼包精灵王传说版", "2.5精灵王传说版用戶端產包")),
+)
+INSECURE_TLS_HOSTS = {"www.shiqi.me", "shiqi.me"}
 MAX_IMAGE_BYTES = 12 * 1024 * 1024
 
 
@@ -33,11 +39,15 @@ class ImageParser(html.parser.HTMLParser):
     def __init__(self):
         super().__init__()
         self.rows = []
+        self.links = []
+        self._anchor = None
 
     def handle_starttag(self, tag, attrs):
+        d = dict(attrs)
+        if tag.lower() == "a" and d.get("href"):
+            self._anchor = {"href": d.get("href"), "text": []}
         if tag.lower() != "img":
             return
-        d = dict(attrs)
         for key in ("src", "data-src", "data-original", "data-lazy-src"):
             u = d.get(key)
             if u:
@@ -49,6 +59,22 @@ class ImageParser(html.parser.HTMLParser):
                     }
                 )
 
+    def handle_data(self, data):
+        if self._anchor is not None:
+            self._anchor["text"].append(data)
+
+    def handle_endtag(self, tag):
+        if tag.lower() == "a" and self._anchor is not None:
+            self.links.append({
+                "href": self._anchor["href"],
+                "text": " ".join("".join(self._anchor["text"]).split()),
+            })
+            self._anchor = None
+
+
+def insecure_tls_allowed(url):
+    return urllib.parse.urlsplit(url).hostname in INSECURE_TLS_HOSTS
+
 
 def fetch(url, *, accept="*/*", referer=None, timeout=35, attempts=3, limit=None):
     last = None
@@ -58,7 +84,8 @@ def fetch(url, *, accept="*/*", referer=None, timeout=35, attempts=3, limit=None
             if referer:
                 headers["Referer"] = referer
             req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=timeout) as r:
+            ctx = ssl._create_unverified_context() if insecure_tls_allowed(url) else None
+            with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
                 if limit is None:
                     body = r.read()
                 else:
@@ -133,6 +160,46 @@ def wanfang_page_images():
             }
         )
     return st, final, out
+
+
+def collector_reference_images():
+    """Resolve mirrored collector article pages and return their public image candidates."""
+    out = []
+    seen = set()
+    page_rows = []
+    for index_url, needles in COLLECTOR_INDEXES:
+        try:
+            st, final, h, body = fetch(index_url, accept="text/html,*/*")
+            p = ImageParser()
+            p.feed(body.decode("utf-8", "replace"))
+            links = []
+            for row in p.links:
+                text = row.get("text", "")
+                if any(n in text for n in needles):
+                    links.append(normalize_image_url(final, row.get("href")))
+            page_rows.append((index_url, st, tuple(links)))
+            for article_url in links[:6]:
+                ast, afinal, ah, abody = fetch(article_url, accept="text/html,*/*", referer=index_url)
+                ap = ImageParser()
+                ap.feed(abody.decode("utf-8", "replace"))
+                for i, img in enumerate(ap.rows):
+                    u = normalize_image_url(afinal, img.get("url"))
+                    if not u.startswith(("http://", "https://")) or u in seen:
+                        continue
+                    path = urllib.parse.urlsplit(u).path.lower()
+                    if not any(path.endswith(ext) for ext in (".jpg", ".jpeg", ".png", ".webp", ".gif")):
+                        continue
+                    seen.add(u)
+                    out.append({
+                        "label": f"collector-mirror:{len(out)}",
+                        "url": u,
+                        "article": afinal,
+                        "alt": img.get("alt", ""),
+                        "title": img.get("title", ""),
+                    })
+        except Exception as e:
+            page_rows.append((index_url, "ERROR", (type(e).__name__ + ":" + str(e),)))
+    return page_rows, out
 
 
 def decode_features(body):
@@ -234,10 +301,11 @@ def metric_line(kind, left, right, m):
 
 
 def main():
-    print("StoneAge 2.5 physical-media transient visual fingerprint probe — R1")
+    print("StoneAge 2.5 physical-media transient visual fingerprint probe — R2")
     print("SCOPE|public-image-read-transient|derived-metrics-only|no-login|no-purchase|no-image-commit")
     print(f"OFFICIAL_REFERENCE|{OFFICIAL_MAINLAND_REFERENCE}")
     print(f"WANFANG_PAGE|{WANFANG_PAGE}")
+    print("WANFANG_TLS_MODE|verification-disabled-only-for-known-expired-shiqi.me-host")
     errors = []
 
     ruten_meta = []
@@ -259,6 +327,17 @@ def main():
         wan_meta = []
         errors.append(("wanfang-page", type(e).__name__, str(e)))
 
+    try:
+        collector_pages, collector_meta = collector_reference_images()
+        for index_url, status, links in collector_pages:
+            print(f"COLLECTOR_INDEX|url={clean(index_url)}|status={clean(status)}|matched_links={len(links)}")
+            for link in links:
+                print(f"COLLECTOR_ARTICLE|index={clean(index_url)}|value={clean(link)}")
+        print(f"COLLECTOR_IMAGE_TARGETS|count={len(collector_meta)}")
+    except Exception as e:
+        collector_meta = []
+        errors.append(("collector-mirror", type(e).__name__, str(e)))
+
     loaded = {}
     try:
         ref = load_image("official-mainland-2.5-collector-reference", OFFICIAL_MAINLAND_REFERENCE)
@@ -275,6 +354,7 @@ def main():
     for row in ruten_meta:
         try:
             f = load_image(row["label"], row["url"], referer="https://www.ruten.com.tw/")
+            f["carrier"] = row["carrier"]
             loaded[f["label"]] = f
             ruten.append(f)
             print(
@@ -300,7 +380,29 @@ def main():
         except Exception as e:
             errors.append((row["label"], type(e).__name__, str(e)))
 
+    collector = []
+    for row in collector_meta[:100]:
+        try:
+            f = load_image(row["label"], row["url"], referer=row.get("article"))
+            if max(f["width"], f["height"]) < 300:
+                continue
+            loaded[f["label"]] = f
+            collector.append(f)
+            print(
+                f"IMAGE|label={clean(f['label'])}|bytes={f['bytes']}|sha256={f['sha256']}|"
+                f"size={f['width']}x{f['height']}|dhash={f['dhash']}|keypoints={len(f['kp'])}|url={clean(f['url'])}"
+            )
+        except Exception as e:
+            errors.append((row["label"], type(e).__name__, str(e)))
+
     rows = []
+    # Cross-listing Ruten comparison is independent of external collector mirrors.
+    for i, x in enumerate(ruten):
+        for y in ruten[i + 1:]:
+            if x.get("carrier") == y.get("carrier"):
+                continue
+            m = match_features(x, y)
+            rows.append((m["inliers"], m["good"], -hamming_hex(x["dhash"], y["dhash"]), "ruten-cross-listing", x, y, m))
     if ref:
         for x in ruten:
             m = match_features(x, ref)
@@ -313,6 +415,15 @@ def main():
             m = match_features(x, y)
             rows.append((m["inliers"], m["good"], -hamming_hex(x["dhash"], y["dhash"]), "ruten-vs-wanfang", x, y, m))
 
+    for x in ruten:
+        for y in collector:
+            m = match_features(x, y)
+            rows.append((m["inliers"], m["good"], -hamming_hex(x["dhash"], y["dhash"]), "ruten-vs-collector", x, y, m))
+    for x in wanfang:
+        for y in collector:
+            m = match_features(x, y)
+            rows.append((m["inliers"], m["good"], -hamming_hex(x["dhash"], y["dhash"]), "wanfang-vs-collector", x, y, m))
+
     rows.sort(key=lambda z: (z[0], z[1], z[2]), reverse=True)
     print(f"PAIR_COUNT|{len(rows)}")
     for _, _, _, kind, left, right, m in rows[:80]:
@@ -322,6 +433,7 @@ def main():
         print(f"ERROR|scope={clean(scope)}|kind={clean(kind)}|message={clean(msg)}")
     print(f"COUNT|ruten_loaded|{len(ruten)}")
     print(f"COUNT|wanfang_large_loaded|{len(wanfang)}")
+    print(f"COUNT|collector_large_loaded|{len(collector)}")
     print(f"COUNT|errors|{len(errors)}")
     if rows:
         print("RESOLUTION|DERIVED_VISUAL_MATCH_METRICS_AVAILABLE|manual evidentiary interpretation required")
