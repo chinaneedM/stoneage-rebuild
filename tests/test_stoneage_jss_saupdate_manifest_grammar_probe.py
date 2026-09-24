@@ -23,7 +23,7 @@ class JssSaUpdateManifestGrammarProbeTests(unittest.TestCase):
         roles=[x[0] for x in HELPER_RANGES]
         self.assertEqual(len(roles),len(set(roles)))
         self.assertEqual(HELPER_RANGES[0],("manifest-line-helper",0x1F80,0x1FDF))
-        self.assertEqual(HELPER_RANGES[1],("manifest-load-helper",0x2060,0x2094))
+        self.assertEqual(HELPER_RANGES[1],("manifest-load-helper",0x2060,0x209B))
         self.assertLess(HELPER_RANGES[0][2],HELPER_RANGES[1][1])
 
 

@@ -29,7 +29,7 @@ from tools.stoneage_tw10_technical_probe import pe_sections
 MANIFEST_RANGE=(0x19D0,0x1F71)
 HELPER_RANGES=(
     ("manifest-line-helper",0x1F80,0x1FDF),
-    ("manifest-load-helper",0x2060,0x2094),
+    ("manifest-load-helper",0x2060,0x209B),
 )
 FIELDS=(
     "EXE","SPRBIN","SPRADRNBIN","REALBIN","ADRNBIN","SOUNDBIN",
@@ -136,6 +136,8 @@ def main():
         f"MANIFEST_FUNCTION|start_rva=0x{mstart:x}|end_rva=0x{mend:x}|"
         f"instructions={len(manifest_idxs)}"
     )
+    for i in manifest_idxs:
+        print("MANIFEST_INSN|"+abstract_instruction(insns[i],base,strings))
 
     total_xrefs=0
     for field in FIELDS:
