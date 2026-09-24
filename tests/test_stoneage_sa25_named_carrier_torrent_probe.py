@@ -22,6 +22,20 @@ class NamedCarrierTorrentProbeTests(unittest.TestCase):
     def test_wrong_month_not_strict(self):
         strict, lead = classify_path("ISO/家庭电脑世界 2002年3月号.iso")
         self.assertNotIn(("home-computer-world", "periodical"), strict)
+        self.assertIn(("home-computer-world", "periodical"), lead)
+
+    def test_title_without_issue_is_lead_only(self):
+        strict, lead = classify_path("ISO/家庭电脑世界/合集.iso")
+        self.assertNotIn(("home-computer-world", "periodical"), strict)
+        self.assertIn(("home-computer-world", "periodical"), lead)
+
+    def test_numeric_month_variant(self):
+        self.assertTrue(
+            flexible_periodical_match(
+                "home-computer-world",
+                "家庭电脑世界/2002-02.iso",
+            )
+        )
 
     def test_crosspromo_is_lead_without_association(self):
         strict, lead = classify_path("游戏/哇靠轰炸鸡完美中文版.iso")
