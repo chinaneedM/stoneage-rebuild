@@ -60,6 +60,32 @@ def extract(body):
         if i>=0:excerpts.append(plain[max(0,i-300):i+800])
     return terms,tuple(dict.fromkeys(hrefs)),tuple(dict.fromkeys(excerpts))
 
+def structural_refs(body):
+    raw=decode(body)
+    refs=[]
+    for value in re.findall(r'''(?is)\b(?:href|src|action|data|codebase)\s*=\s*["']([^"']+)["']''',raw):
+        refs.append(html.unescape(value).strip())
+    for value in re.findall(r'''(?is)["']([^"'<>]{1,500})["']''',raw):
+        low=urllib.parse.unquote_plus(value).lower()
+        if any(ext in low for ext in PAYLOAD_EXTS) or any(
+            token in low for token in ("download","down/","update","upgrade","patch","setup","client","sa25","2.5")
+        ):
+            refs.append(html.unescape(value).strip())
+    out=[]
+    seen=set()
+    base_norm=ORIGINAL.split("#",1)[0].lower()
+    for value in refs:
+        if not value or value.startswith("#") or value.lower().startswith(("javascript:","mailto:")):
+            continue
+        absolute=urllib.parse.urljoin(ORIGINAL,value)
+        low=urllib.parse.unquote_plus(absolute).lower()
+        if "web.archive.org/" in low or absolute.split("#",1)[0].lower()==base_norm:
+            continue
+        if absolute not in seen:
+            seen.add(absolute)
+            out.append((value,absolute))
+    return tuple(out)
+
 def main():
     print("StoneAge Waei pre-2.5 upgrade.asp preserved-capture replay — R1")
     print("SCOPE|single-Availability-confirmed-capture|2001-12-04|text+href-only|no-payload")
@@ -69,17 +95,26 @@ def main():
         try:
             st,final,body=fetch(u)
             terms,hrefs,excerpts=extract(body)
-            print(f"REPLAY|mode={mode}|status={st}|bytes={len(body)}|sha256={hashlib.sha256(body).hexdigest()}|terms={clean(','.join(terms))}|hrefs={len(hrefs)}|final={clean(final)}")
+            refs=structural_refs(body)
+            print(f"REPLAY|mode={mode}|status={st}|bytes={len(body)}|sha256={hashlib.sha256(body).hexdigest()}|terms={clean(','.join(terms))}|hrefs={len(hrefs)}|structural_refs={len(refs)}|final={clean(final)}")
             for ex in excerpts[:20]:print(f"EXCERPT|mode={mode}|text={clean(ex)}")
-            strong=0
+            merged={}
             for href,absolute in hrefs:
                 low=urllib.parse.unquote_plus(absolute).lower()
-                is_strong=any(ext in low for ext in PAYLOAD_EXTS) or any(x in low for x in ("setup","client","update","upgrade","patch"))
+                if absolute.split("#",1)[0].lower()==ORIGINAL.split("#",1)[0].lower() or "web.archive.org/" in low:
+                    continue
+                merged[absolute]=href
+            for ref,absolute in refs:
+                merged.setdefault(absolute,ref)
+            strong=0
+            for absolute,raw_ref in merged.items():
+                low=urllib.parse.unquote_plus(absolute).lower()
+                is_strong=any(ext in low for ext in PAYLOAD_EXTS) or any(x in low for x in ("setup","client","download","patch","sa25"))
                 strong+=int(is_strong)
-                print(f"HREF|mode={mode}|strong={int(is_strong)}|href={clean(href)}|absolute={clean(absolute)}")
-            print(f"COUNT|candidate_hrefs|{len(hrefs)}")
-            print(f"COUNT|strong_hrefs|{strong}")
-            print("RESOLUTION|PRE25_UPGRADE_CAPTURE_RECOVERED|classify download targets and compare to 2002 rollout topology")
+                print(f"REF|mode={mode}|strong={int(is_strong)}|ref={clean(raw_ref)}|absolute={clean(absolute)}")
+            print(f"COUNT|candidate_refs|{len(merged)}")
+            print(f"COUNT|strong_refs|{strong}")
+            print("RESOLUTION|PRE25_UPGRADE_CAPTURE_RECOVERED|use only surviving structural refs as topology evidence; do not project them into 2.5")
             return
         except Exception as exc:
             errors.append((mode,type(exc).__name__,str(exc)))
