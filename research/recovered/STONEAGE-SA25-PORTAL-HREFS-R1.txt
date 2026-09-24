@@ -1,0 +1,22 @@
+StoneAge 2.5 historical portal href probe — R1
+SCOPE|Sina+17173|2002-2004-Wayback|HTML-href-recovery|no-client-payload
+CDX_ERROR|label=sina-sa25-upgrade|kind=TimeoutError|message=The read operation timed out
+CDX|label=sina-sa25-upgrade-https|original=https://games.sina.com.cn/newgames/0202/02057854.shtml|status=200|bytes=1320|sha256=2751d14a2bc4c13ee9ad2960483cd37a6a7f8d2b366f22e0eb9132a6822197af|rows=9|final=https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fgames.sina.com.cn%2Fnewgames%2F0202%2F02057854.shtml&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode%3A200&from=2002&to=2004&collapse=digest&limit=100
+REPLAY|label=sina-sa25-upgrade-https|timestamp=20020525225603|source=http://games.sina.com.cn:80/newgames/0202/02057854.shtml|status=200|bytes=22617|sha256=d7a5a5b7897f1d7ca3fbb48e3e99633aafa834b0077a4d645fddb2e5934e0e70|hrefs=0|contexts=0|anchor_contexts=0|final=https://web.archive.org/web/20020525225603id_/http://games.sina.com.cn:80/newgames/0202/02057854.shtml
+REPLAY|label=sina-sa25-upgrade-https|timestamp=20020605215349|source=http://games.sina.com.cn:80/newgames/0202/02057854.shtml|status=200|bytes=22967|sha256=62ad13590bde21ad426bff09c4a67fd4d5efcea798af2fa6f120e539dbde5f4e|hrefs=0|contexts=0|anchor_contexts=0|final=https://web.archive.org/web/20020605215349id_/http://games.sina.com.cn:80/newgames/0202/02057854.shtml
+REPLAY|label=sina-sa25-upgrade-https|timestamp=20021225075310|source=http://games.sina.com.cn:80/newgames/0202/02057854.shtml|status=200|bytes=26814|sha256=ae9f150136bea9740d5436f83a9b5f2a0d77bd91957dff1ce4b3e5c0caae721e|hrefs=1|contexts=0|anchor_contexts=0|final=https://web.archive.org/web/20021225075310id_/http://games.sina.com.cn:80/newgames/0202/02057854.shtml
+HREF|label=sina-sa25-upgrade-https|timestamp=20021225075310|source=http://games.sina.com.cn:80/newgames/0202/02057854.shtml|href=http://games1.sina.com.cn/cgi-bin/comment/comment.cgi?title=%A1%B6%CA%AF%C6%F7%CA%B1%B4%FA2.5%A1%B7%C9%FD%BC%B6%B7%BD%B7%A8&url=/newgames/0202/02057854.shtml&col=%D3%CE%CF%B7%D0%C2%CE%C5|absolute=http://games1.sina.com.cn/cgi-bin/comment/comment.cgi?title=%A1%B6%CA%AF%C6%F7%CA%B1%B4%FA2.5%A1%B7%C9%FD%BC%B6%B7%BD%B7%A8&url=/newgames/0202/02057854.shtml&col=%D3%CE%CF%B7%D0%C2%CE%C5
+CDX_ERROR|label=17173-stoneage-subdomain|kind=TimeoutError|message=The read operation timed out
+CDX_ERROR|label=17173-www-path|kind=URLError|message=<urlopen error timed out>
+CDX_ERROR|label=17173-news-path|kind=HTTPError|message=HTTP Error 503: Service Unavailable
+STRONG_HREF|label=sina-sa25-upgrade-https|timestamp=20021225075310|source=http://games.sina.com.cn:80/newgames/0202/02057854.shtml|href=http://games1.sina.com.cn/cgi-bin/comment/comment.cgi?title=%A1%B6%CA%AF%C6%F7%CA%B1%B4%FA2.5%A1%B7%C9%FD%BC%B6%B7%BD%B7%A8&url=/newgames/0202/02057854.shtml&col=%D3%CE%CF%B7%D0%C2%CE%C5|absolute=http://games1.sina.com.cn/cgi-bin/comment/comment.cgi?title=%A1%B6%CA%AF%C6%F7%CA%B1%B4%FA2.5%A1%B7%C9%FD%BC%B6%B7%BD%B7%A8&url=/newgames/0202/02057854.shtml&col=%D3%CE%CF%B7%D0%C2%CE%C5
+ERROR|scope=sina-sa25-upgrade:cdx|kind=TimeoutError|message=The read operation timed out
+ERROR|scope=17173-stoneage-subdomain:cdx|kind=TimeoutError|message=The read operation timed out
+ERROR|scope=17173-www-path:cdx|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=17173-news-path:cdx|kind=HTTPError|message=HTTP Error 503: Service Unavailable
+COUNT|seeds|5
+COUNT|replays|3
+COUNT|unique_relevant_hrefs|1
+COUNT|strong_hrefs|1
+COUNT|errors|4
+RESOLUTION|PORTAL_HREF_TARGETS_FOUND|classify exact historical targets before any payload attempt
