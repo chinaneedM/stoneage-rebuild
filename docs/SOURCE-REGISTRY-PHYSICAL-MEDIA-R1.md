@@ -257,3 +257,26 @@ The remaining gap is no longer merely whether a second disc probably existed. Th
   - marketplace URLs must be deduplicated by visual-source lineage before being counted as independent survival evidence;
   - next visual step is crop/local-region comparison and restoration of a usable official/mainland collector reference.
 
+
+
+## SRC-CN-2026-SA25-DISC-REGION-MATCH-01
+
+- Source type: derived local-region visual comparison over public Ruten/Wanfang/collector photographs; image bodies transient only.
+- Research date: 2026-09-24.
+- Derived report: `research/recovered/STONEAGE-SA25-DISC-REGION-MATCH-R1.txt`.
+- Positive-control relation:
+  - the two standalone Ruten disc images yield **231 SIFT/RANSAC inliers / 0.7966 inlier ratio**, with broad inlier coverage and a sane homography.
+- Boxed-package relation:
+  - strongest standalone-to-boxed image pair yields **32 inliers / 0.3107**, but only **0.0747** query coverage / **0.0394** target coverage;
+  - another query direction yields **22 inliers / 0.2619** with broader coverage.
+  - classification: **shared local visual features, insufficient for same-disc-artwork promotion**.
+- Wanfang relation:
+  - best standalone-to-Wanfang row reaches **21 inliers / 0.2727**, but query coverage is **0.0030** with an invalid/exploded projected homography;
+  - classification: **no robust local artwork linkage established**.
+- Collector false-positive guard:
+  - apparent 95–99-inlier rows with near-zero target coverage and invalid quadrilaterals are explicitly rejected as degenerate local-feature matches.
+- Archaeology consequence:
+  - whole-frame and local-region metrics agree that the two standalone listings are one visual cluster;
+  - the boxed new-user package cannot yet be promoted into that cluster;
+  - Wanfang remains an independent visual-source / unclassified-carrier lead.
+- Does not establish disc-byte identity, mastering identity, exact carrier provenance, filesystem contents or clean-client status.
