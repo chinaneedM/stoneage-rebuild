@@ -1,0 +1,29 @@
+StoneAge JSS SaUpdate manifest-line helper emulation — R1
+SCOPE|rva-0x1f80|synthetic-line-tokenization|bounded-x86-emulation|derived-output-only
+FETCH|status=206|bytes=217088|sha256=6795d9349168f77aa025d7c4ea05d005c5bbfe33dd4b227eb7731802fa7eb82b|final=https://web.archive.org/web/20010503013834id_/http://www.titan.co.jp/stoneage/stoneage.exe
+FUNCTION|rva=0x1f80|image_base=0x400000|external_calls=0
+CASE|label=colon-five|delimiter=0x3a|index=1|input=EXE:12:file.exe:1234:tail|output=EXE|eax=0x21004003|instructions=71|returned=1
+CASE|label=colon-five|delimiter=0x3a|index=2|input=EXE:12:file.exe:1234:tail|output=12|eax=0x21004006|instructions=92|returned=1
+CASE|label=colon-five|delimiter=0x3a|index=3|input=EXE:12:file.exe:1234:tail|output=file.exe|eax=0x2100400f|instructions=173|returned=1
+CASE|label=colon-five|delimiter=0x3a|index=4|input=EXE:12:file.exe:1234:tail|output=1234|eax=0x21004014|instructions=212|returned=1
+CASE|label=colon-five|delimiter=0x3a|index=5|input=EXE:12:file.exe:1234:tail|output=tail|eax=0x21004019|instructions=258|returned=1
+CASE|label=colon-five|delimiter=0x3a|index=6|input=EXE:12:file.exe:1234:tail|output=|eax=0x1|instructions=244|returned=1
+CASE|label=colon-empty|delimiter=0x3a|index=1|input=A::C|output=A|eax=0x21004001|instructions=53|returned=1
+CASE|label=colon-empty|delimiter=0x3a|index=2|input=A::C|output=|eax=0x21004002|instructions=56|returned=1
+CASE|label=colon-empty|delimiter=0x3a|index=3|input=A::C|output=C|eax=0x21004004|instructions=81|returned=1
+CASE|label=colon-empty|delimiter=0x3a|index=4|input=A::C|output=|eax=0x1|instructions=70|returned=1
+CASE|label=colon-spaces|delimiter=0x3a|index=1|input=MESSAGE:hello world:with spaces|output=MESSAGE|eax=0x21004007|instructions=107|returned=1
+CASE|label=colon-spaces|delimiter=0x3a|index=2|input=MESSAGE:hello world:with spaces|output=hello world|eax=0x21004013|instructions=205|returned=1
+CASE|label=colon-spaces|delimiter=0x3a|index=3|input=MESSAGE:hello world:with spaces|output=with spaces|eax=0x2100401f|instructions=307|returned=1
+CASE|label=colon-spaces|delimiter=0x3a|index=4|input=MESSAGE:hello world:with spaces|output=|eax=0x1|instructions=286|returned=1
+CASE|label=lf-three|delimiter=0x0a|index=1|input=line1\nline2\nline3|output=line1|eax=0x21004005|instructions=89|returned=1
+CASE|label=lf-three|delimiter=0x0a|index=2|input=line1\nline2\nline3|output=line2|eax=0x2100400b|instructions=135|returned=1
+CASE|label=lf-three|delimiter=0x0a|index=3|input=line1\nline2\nline3|output=line3|eax=0x21004011|instructions=189|returned=1
+CASE|label=lf-three|delimiter=0x0a|index=4|input=line1\nline2\nline3|output=|eax=0x1|instructions=174|returned=1
+CASE|label=crlf-three|delimiter=0x0a|index=1|input=line1\r\nline2\r\nline3|output=line1\r|eax=0x21004006|instructions=98|returned=1
+CASE|label=crlf-three|delimiter=0x0a|index=2|input=line1\r\nline2\r\nline3|output=line2\r|eax=0x2100400d|instructions=152|returned=1
+CASE|label=crlf-three|delimiter=0x0a|index=3|input=line1\r\nline2\r\nline3|output=line3|eax=0x21004013|instructions=205|returned=1
+MAXLEN_CASE|max_len=1|input=ABCDEFGHIJ:tail|output=ABCDEFGHIJ|returned=1
+MAXLEN_CASE|max_len=4|input=ABCDEFGHIJ:tail|output=ABCDEFGHIJ|returned=1
+MAXLEN_CASE|max_len=8|input=ABCDEFGHIJ:tail|output=ABCDEFGHIJ|returned=1
+RESOLUTION|MANIFEST_LINE_HELPER_EMULATED|successes=21|failures=0|binary-not-committed
