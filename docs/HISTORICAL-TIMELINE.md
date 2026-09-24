@@ -151,6 +151,19 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 
 **OPEN:** Determine exact relationship between JSS/Taiwan version numbering and Mainland 1.82; avoid assuming a single linear version-number tree until evidence proves it.
 
+
+## 2003 — Mainland historical map-cache bridge
+
+### 2003-06-23 — recoverable full-map package
+
+**FACT / dated preserved binary:** The StoneAge map mirror `http://www.wuxitianlong.com/sa/map.exe`, independently exposed by contemporaneous Sina StoneAge download-hub material, has a replayable Wayback capture timestamped **2003-06-23 23:44:51 UTC**. The recovered package is hash-locked as SHA-256 `372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e`. [`SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-01`]
+
+**FACT / byte comparison:** Its 1,008 numeric DAT map IDs exactly match the numeric-ID set in the preserved mixed 2.5 bridge corpus; **993 files are byte-identical and 15 differ**, with no numeric IDs unique to either corpus. This establishes strong byte-level continuity between the dated 2003 map package and most of the later-preserved map directory. [`SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-01`]
+
+**IMPORTANT LIMIT:** This is a dated Mainland descendant corpus, not Taiwan-v1 evidence. Direct ADRN-profile classification leaves 773/995 parseable maps resource-compatible with Taiwan v1, but compatibility alone cannot establish v1 membership, layout identity, or event-plane identity.
+
+**RESEARCH CONSEQUENCE:** The 2003 package replaces the mixed 2.5 map directory as the preferred dated descendant map-diff anchor. Taiwan-v1 field-map reconstruction remains blocked on a pre-/near-v1 cache, installed-tree backup, server capture, or other provenance-preserving earlier branch.
+
 ## 2001–2003 — Korean 1.74 lineage control
 
 **PRESERVED VERSION TRANSITION / C-B level:** Later preservation of dated Inium-era material identifies the Korean service state before its 2.0 family/riding preview as **1.74**. This is useful as a version-lineage clue but is not treated as original JSS version proof. [`SRC-KR-2001-INIUM-174-TO-20-PRESERVED-01`]
