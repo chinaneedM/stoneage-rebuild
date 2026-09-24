@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Probe exact 2002 StoneAge 2.5 physical/disc carrier identities.
 
-Contemporaneous 17173/Sina records name Jan/Feb-2002 magazine/guide carriers,
-while the 2.5 product page states that specific Waei retail gift packs contain a
-2.5 client CD. This probe searches public preservation indexes by those exact
-carrier identities and inspects IA file lists only for strict candidate items.
+Contemporaneous 17173/Sina records name Jan/Feb-2002 magazine/guide carriers
+and the standalone game 《轰炸鸡》, while the 2.5 product page states that
+specific Waei retail gift packs contain a 2.5 client CD. This probe searches
+public preservation indexes by those exact carrier identities and inspects IA
+file lists only for strict candidate items.
 Metadata only; no disc/client payload is downloaded.
 """
 from __future__ import annotations
@@ -18,6 +19,7 @@ DISC_EXTS=(".iso",".bin",".cue",".img",".nrg",".mdf",".mds",".ccd",".sub",".toas
 ARCHIVE_EXTS=(".zip",".7z",".rar",".exe",".cab")
 
 TARGETS=(
+ ("bombing-chicken-game",("轰炸鸡","轰炸鸡 华义","轰炸鸡 石器时代2.5","Chicken Shoot Waei","Chicken Shoot StoneAge"),"crosspromo"),
  ("newbie-pack",("石器时代2.5新手报到包","石器时代 2.5 新手报到包"),"product"),
  ("spring-pack",("石器时代2.5春满钱坤包","春满钱坤包","春满乾坤包"),"product"),
  ("longevity-pack",("石器时代2.5延年益兽包","延年益兽包"),"product"),
@@ -94,6 +96,17 @@ def target_tokens(q):
 
 def strict_match(label,queries,kind,blob):
     nb=norm(blob)
+    if kind=="crosspromo":
+        # 《轰炸鸡》 is source-named as a 2.5 distribution carrier. Because the
+        # base Chicken Shoot title also circulated internationally, require an
+        # explicit Waei/StoneAge association before promoting an index row to a
+        # strict StoneAge-carrier hit.
+        if label=="bombing-chicken-game":
+            chinese = norm("轰炸鸡") in nb
+            english = norm("Chicken Shoot") in nb
+            association = any(norm(x) in nb for x in ("华义","石器时代","StoneAge","Wayi","Waei"))
+            return (chinese or english) and association
+        return False
     if kind=="product":
         anchors={
           "newbie-pack":("新手报到包","石器时代"),
@@ -140,7 +153,7 @@ def one_target(entry):
 
 def main():
     print("StoneAge 2.5 exact physical/disc carrier probe — R1")
-    print("SCOPE|source-named-retail-packs+Jan-Feb-2002-periodical-guide-carriers|DiscMaster+IA-metadata|no-payload")
+    print("SCOPE|source-named-retail-packs+Jan-Feb-2002-periodical-guide+crosspromo-carriers|DiscMaster+IA-metadata|no-payload")
     errors=[]; strict_discm={}; strict_ia={}
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
         futs={ex.submit(one_target,t):t for t in TARGETS}
