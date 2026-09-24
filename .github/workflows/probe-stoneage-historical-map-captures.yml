@@ -23,11 +23,13 @@ jobs:
       - name: Ensure modern 7-Zip is available
         run: |
           set -euo pipefail
-          if ! command -v 7zz >/dev/null; then
-            sudo apt-get update -qq
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar
+          if ! command -v 7zz >/dev/null && ! command -v 7z >/dev/null; then
             sudo apt-get install -y -qq 7zip || sudo apt-get install -y -qq p7zip-full
           fi
           command -v 7zz || command -v 7z
+          command -v unar
       - name: Validate capture probe
         run: python3 -m unittest tests.test_stoneage_historical_map_capture_probe -v
       - name: Analyze archived map packages transiently
