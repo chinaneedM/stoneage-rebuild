@@ -1,0 +1,39 @@
+StoneAge JSS SaUpdate xref/import probe — R1
+SCOPE|selected-string-xrefs+import-directories+nearby-IAT-calls|derived-only|no-disassembly-retained
+FETCH|status=206|bytes=217088|sha256=6795d9349168f77aa025d7c4ea05d005c5bbfe33dd4b227eb7731802fa7eb82b|final=https://web.archive.org/web/20010503013834id_/http://www.titan.co.jp/stoneage/stoneage.exe
+DIRECTORY|index=1|name=IMPORT|rva=0x5a40|size=100
+DIRECTORY|index=2|name=RESOURCE|rva=0x45f000|size=182680
+DIRECTORY|index=12|name=IAT|rva=0x5000|size=708
+IMPORT_MAP|entries=173|dlls=4|values=KERNEL32.dll,MFC42.DLL,MSVCRT.dll,USER32.dll
+IMPORT_DLL|dll=KERNEL32.dll|count=4|functions=FindClose,FindFirstFileA,GetModuleHandleA,GetStartupInfoA
+IMPORT_DLL|dll=MFC42.DLL|count=124|functions=ordinal:1088,ordinal:1089,ordinal:1134,ordinal:1146,ordinal:1168,ordinal:1199,ordinal:1247,ordinal:1576,ordinal:1727,ordinal:1771,ordinal:1775,ordinal:1776,ordinal:1988,ordinal:2024,ordinal:2055,ordinal:2122,ordinal:2124,ordinal:2302,ordinal:2379,ordinal:2385,ordinal:2396,ordinal:2413,ordinal:2446,ordinal:2512,ordinal:2514,ordinal:2554,ordinal:2581,ordinal:2621,ordinal:2642,ordinal:2648,ordinal:2725,ordinal:2864,ordinal:2976,ordinal:2982,ordinal:2985,ordinal:3079,ordinal:3081,ordinal:3092,ordinal:3136,ordinal:3147,ordinal:3229,ordinal:324,ordinal:3259,ordinal:3262,ordinal:3346,ordinal:3402,ordinal:3597,ordinal:3610,ordinal:3639,ordinal:3698,ordinal:3721,ordinal:3738,ordinal:3749,ordinal:3798,ordinal:3825,ordinal:3830,ordinal:3831,ordinal:389,ordinal:3922,ordinal:4047,ordinal:4078,ordinal:4079,ordinal:4080,ordinal:4219,ordinal:4234,ordinal:4274,ordinal:4353,ordinal:4376,ordinal:4401,ordinal:4407,ordinal:4424,ordinal:4425,ordinal:4441,ordinal:4465,ordinal:4486,ordinal:4622,ordinal:4627,ordinal:4673,ordinal:4698,ordinal:470,ordinal:4710,ordinal:4837,ordinal:4853,ordinal:4998,ordinal:5065,ordinal:5163,ordinal:5199,ordinal:5204,ordinal:5241,ordinal:5261,ordinal:5265,ordinal:5277,ordinal:5280,ordinal:5289,ordinal:5290,ordinal:5300,ordinal:5302,ordinal:5307,ordinal:5356,ordinal:537,ordinal:556,ordinal:561,ordinal:567,ordinal:5714,ordinal:5731,ordinal:5808,ordinal:6052,ordinal:6055,ordinal:6199,ordinal:6366,ordinal:6374,ordinal:6375,ordinal:6376,ordinal:641,ordinal:656,ordinal:690,ordinal:692,ordinal:755,ordinal:765,ordinal:795,ordinal:800,ordinal:809,ordinal:815,ordinal:825
+IMPORT_DLL|dll=MSVCRT.dll|count=33|functions=??1type_info@@UAE@XZ,_XcptFilter,__CxxFrameHandler,__dllonexit,__getmainargs,__p__commode,__p__fmode,__set_app_type,__setusermatherr,_acmdln,_adjust_fdiv,_controlfp,_except_handler3,_execl,_exit,_ftol,_initterm,_mkdir,_onexit,_setmbcp,_unlink,atoi,exit,fclose,fgetc,fgets,fopen,fread,fseek,fwrite,rename,sprintf,strncmp
+IMPORT_DLL|dll=USER32.dll|count=12|functions=DispatchMessageA,DrawIcon,EnableWindow,GetClientRect,GetSystemMetrics,IsIconic,LoadIconA,MessageBoxA,PeekMessageA,SendMessageA,SetActiveWindow,TranslateMessage
+DYNAMIC_API_STRING_HITS|count=1
+DYNAMIC_API_STRING|name=send|file_off=24434
+STRING_TARGET|text=update.gamersdream.ne.jp|locations=1
+STRING_LOCATION|text=update.gamersdream.ne.jp|file_off=28728|rva=0x7038|xref_count=1
+XREF|text=update.gamersdream.ne.jp|code_rva=0x13f3|nearby_direct_imports=USER32.dll!LoadIconA
+STRING_TARGET|text=/~stoneage/newest.txt|locations=1
+STRING_LOCATION|text=/~stoneage/newest.txt|file_off=28704|rva=0x7020|xref_count=1
+XREF|text=/~stoneage/newest.txt|code_rva=0x141a|nearby_direct_imports=MSVCRT.dll!_mkdir;USER32.dll!LoadIconA
+STRING_TARGET|text=/~stoneage/%s|locations=1
+STRING_LOCATION|text=/~stoneage/%s|file_off=31036|rva=0x793c|xref_count=1
+XREF|text=/~stoneage/%s|code_rva=0x2d26|nearby_direct_imports=MSVCRT.dll!fclose
+STRING_TARGET|text=data\download\%s|locations=1
+STRING_LOCATION|text=data\download\%s|file_off=31016|rva=0x7928|xref_count=3
+XREF|text=data\download\%s|code_rva=0x2d3a|nearby_direct_imports=MSVCRT.dll!fclose
+XREF|text=data\download\%s|code_rva=0x2fb2|nearby_direct_imports=
+XREF|text=data\download\%s|code_rva=0x32a2|nearby_direct_imports=MSVCRT.dll!rename;USER32.dll!MessageBoxA
+STRING_TARGET|text=(cksum:%u : File : %s)|locations=1
+STRING_LOCATION|text=(cksum:%u : File : %s)|file_off=30668|rva=0x77cc|xref_count=0
+STRING_TARGET|text=sa_%d.exe|locations=1
+STRING_LOCATION|text=sa_%d.exe|file_off=31572|rva=0x7b54|xref_count=2
+XREF|text=sa_%d.exe|code_rva=0x3d4b|nearby_direct_imports=MSVCRT.dll!_unlink;MSVCRT.dll!fgets
+XREF|text=sa_%d.exe|code_rva=0x3d6c|nearby_direct_imports=MSVCRT.dll!_unlink
+STRING_TARGET|text=updated|locations=1
+STRING_LOCATION|text=updated|file_off=31564|rva=0x7b4c|xref_count=1
+XREF|text=updated|code_rva=0x3ef2|nearby_direct_imports=MSVCRT.dll!_execl;MSVCRT.dll!fclose;MSVCRT.dll!fgetc;MSVCRT.dll!fopen;USER32.dll!EnableWindow
+STRING_TARGET|text=MFC42.DLL|locations=1
+STRING_LOCATION|text=MFC42.DLL|file_off=23912|rva=0x5d68|xref_count=0
+RESOLUTION|XREF_MAP_DERIVED|selected_string_refs=9|delay_import_directory=0|dynamic_api_name_strings=1|binary-not-committed
