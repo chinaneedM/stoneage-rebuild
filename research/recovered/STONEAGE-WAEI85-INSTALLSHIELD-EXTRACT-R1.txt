@@ -1,0 +1,176 @@
+StoneAge Waei InstallShield extraction — R1
+SCOPE|verified-2012-six-part-mirror|pinned-hifi-iss_extract|unshield|derived-metadata-only
+SOURCE_THREAD|https://www.lab.welovesa.com/viewthread.php?action=printable&tid=1654
+INSTALLER_SHA256|971780abc65ed29a6a7aeb1a528c7db2ef07b11a188e56deaef90a54986609f5
+EXTRACTOR_REPO|hifi/iss_extract
+EXTRACTOR_COMMIT|01232146c9284a86958817817849f320e77f5fb7
+INSTALLER_SIGNATURE_BEGIN
+PE checksum   : 44469275
+
+
+Signature Index: 0  (Primary Signature)
+
+Message digest algorithm  : SHA1
+Current message digest    : CD039439BBBB16379C9616A6C7962ACCC8EDD870 
+Calculated message digest : CD039439BBBB16379C9616A6C7962ACCC8EDD870 
+
+Signer's certificate:
+	------------------
+	Signer #0:
+		Subject: /C=TW/ST=Taiwan/L=Taipei/O=WAYI INTERNATIONAL DIGITAL ENTERTAINMENT CO., LTD./OU=Digital ID Class 3 - Microsoft Software Validation v2/OU=WAYI/CN=WAYI INTERNATIONAL DIGITAL ENTERTAINMENT CO., LTD.
+		Issuer : /C=US/O=VeriSign, Inc./OU=VeriSign Trust Network/OU=Terms of use at https:\/\/www.verisign.com\/rpa (c)04/CN=VeriSign Class 3 Code Signing 2004 CA
+		Serial : 055AF720C2DCFC339CFBCE5426F915D1
+		Certificate expiration date:
+			notBefore : Feb 14 00:00:00 2007 GMT
+			notAfter : Feb 28 23:59:59 2008 GMT
+
+Message digest algorithm: SHA1
+
+Authenticated attributes:
+	Microsoft Individual Code Signing purpose
+	Message digest: 6770009E7D449F04123ACA540D7D4F6DCBF53066 
+	URL description: http://www.wayi.com.tw
+	Text description: WAYI INTERNATIONAL DIGITAL ENTERTAINMENT CO., LTD.
+
+Countersignatures:
+	Timestamp time: Feb 15 05:56:59 2007 GMT
+	Signing time: Feb 15 05:56:59 2007 GMT
+	Hash Algorithm: md5
+	Issuer: /C=US/O=VeriSign, Inc./CN=VeriSign Time Stamping Services CA
+	Serial: 0DE92BF0D4D82988183205095E9A7688
+
+CAfile: /etc/ssl/certs/ca-certificates.crt
+TSA's certificates file: /etc/ssl/certs/ca-certificates.crt
+
+Timestamp verified using:
+	------------------
+	Signer #1:
+		Subject: /C=US/O=VeriSign, Inc./CN=VeriSign Time Stamping Services CA
+		Issuer : /C=ZA/ST=Western Cape/L=Durbanville/O=Thawte/OU=Thawte Certification/CN=Thawte Timestamping CA
+		Serial : 47BF1995DF8D524643F7DB6D480D31A4
+		Certificate expiration date:
+			notBefore : Dec  4 00:00:00 2003 GMT
+			notAfter : Dec  3 23:59:59 2013 GMT
+
+	Error: unable to get local issuer certificate
+
+CMS_verify error
+
+Failed timestamp certificate chain retrieved from the signature:
+	------------------
+	Signer #0:
+		Subject: /C=US/O=VeriSign, Inc./OU=Class 3 Public Primary Certification Authority
+		Issuer : /C=US/O=VeriSign, Inc./OU=Class 3 Public Primary Certification Authority
+		Serial : 70BAE41D10D92934B638CA7B03CCBABF
+		Certificate expiration date:
+			notBefore : Jan 29 00:00:00 1996 GMT
+			notAfter : Aug  1 23:59:59 2028 GMT
+
+	------------------
+	Signer #1:
+		Subject: /C=US/O=VeriSign, Inc./CN=VeriSign Time Stamping Services CA
+		Issuer : /C=ZA/ST=Western Cape/L=Durbanville/O=Thawte/OU=Thawte Certification/CN=Thawte Timestamping CA
+		Serial : 47BF1995DF8D524643F7DB6D480D31A4
+		Certificate expiration date:
+			notBefore : Dec  4 00:00:00 2003 GMT
+			notAfter : Dec  3 23:59:59 2013 GMT
+
+	------------------
+	Signer #2:
+		Subject: /C=US/O=VeriSign, Inc./CN=VeriSign Time Stamping Services Signer
+		Issuer : /C=US/O=VeriSign, Inc./CN=VeriSign Time Stamping Services CA
+		Serial : 0DE92BF0D4D82988183205095E9A7688
+		Certificate expiration date:
+			notBefore : Dec  4 00:00:00 2003 GMT
+			notAfter : Dec  3 23:59:59 2008 GMT
+
+	------------------
+	Signer #3:
+		Subject: /C=US/O=VeriSign, Inc./OU=VeriSign Trust Network/OU=Terms of use at https:\/\/www.verisign.com\/rpa (c)04/CN=VeriSign Class 3 Code Signing 2004 CA
+		Issuer : /C=US/O=VeriSign, Inc./OU=Class 3 Public Primary Certification Authority
+		Serial : 4191A15A3978DFCF496566381D4C75C2
+		Certificate expiration date:
+			notBefore : Jul 16 00:00:00 2004 GMT
+			notAfter : Jul 15 23:59:59 2014 GMT
+
+	------------------
+	Signer #4:
+		Subject: /C=TW/ST=Taiwan/L=Taipei/O=WAYI INTERNATIONAL DIGITAL ENTERTAINMENT CO., LTD./OU=Digital ID Class 3 - Microsoft Software Validation v2/OU=WAYI/CN=WAYI INTERNATIONAL DIGITAL ENTERTAINMENT CO., LTD.
+		Issuer : /C=US/O=VeriSign, Inc./OU=VeriSign Trust Network/OU=Terms of use at https:\/\/www.verisign.com\/rpa (c)04/CN=VeriSign Class 3 Code Signing 2004 CA
+		Serial : 055AF720C2DCFC339CFBCE5426F915D1
+		Certificate expiration date:
+			notBefore : Feb 14 00:00:00 2007 GMT
+			notAfter : Feb 28 23:59:59 2008 GMT
+
+403901FCD07F0000:error:17000064:CMS routines:cms_signerinfo_verify_cert:certificate verify error:../crypto/cms/cms_smime.c:289:Verify error: unable to get local issuer certificate
+Timestamp Server Signature verification: failed
+Signing certificate chain verified using:
+	------------------
+	Signer #2:
+		Subject: /C=US/O=VeriSign, Inc./OU=Class 3 Public Primary Certification Authority
+		Issuer : /C=US/O=VeriSign, Inc./OU=Class 3 Public Primary Certification Authority
+		Serial : 70BAE41D10D92934B638CA7B03CCBABF
+		Certificate expiration date:
+			notBefore : Jan 29 00:00:00 1996 GMT
+			notAfter : Aug  1 23:59:59 2028 GMT
+
+	Error: self-signed certificate in certificate chain
+
+PKCS7_verify error
+
+Failed signing certificate chain retrieved from the signature:
+	------------------
+	Signer #0:
+		Subject: /C=US/O=VeriSign, Inc./OU=Class 3 Public Primary Certification Authority
+		Issuer : /C=US/O=VeriSign, Inc./OU=Class 3 Public Primary Certification Authority
+		Serial : 70BAE41D10D92934B638CA7B03CCBABF
+		Certificate expiration date:
+			notBefore : Jan 29 00:00:00 1996 GMT
+			notAfter : Aug  1 23:59:59 2028 GMT
+
+	------------------
+	Signer #1:
+		Subject: /C=US/O=VeriSign, Inc./CN=VeriSign Time Stamping Services CA
+		Issuer : /C=ZA/ST=Western Cape/L=Durbanville/O=Thawte/OU=Thawte Certification/CN=Thawte Timestamping CA
+		Serial : 47BF1995DF8D524643F7DB6D480D31A4
+		Certificate expiration date:
+			notBefore : Dec  4 00:00:00 2003 GMT
+			notAfter : Dec  3 23:59:59 2013 GMT
+
+	------------------
+	Signer #2:
+		Subject: /C=US/O=VeriSign, Inc./CN=VeriSign Time Stamping Services Signer
+		Issuer : /C=US/O=VeriSign, Inc./CN=VeriSign Time Stamping Services CA
+		Serial : 0DE92BF0D4D82988183205095E9A7688
+		Certificate expiration date:
+			notBefore : Dec  4 00:00:00 2003 GMT
+			notAfter : Dec  3 23:59:59 2008 GMT
+
+	------------------
+	Signer #3:
+		Subject: /C=US/O=VeriSign, Inc./OU=VeriSign Trust Network/OU=Terms of use at https:\/\/www.verisign.com\/rpa (c)04/CN=VeriSign Class 3 Code Signing 2004 CA
+		Issuer : /C=US/O=VeriSign, Inc./OU=Class 3 Public Primary Certification Authority
+		Serial : 4191A15A3978DFCF496566381D4C75C2
+		Certificate expiration date:
+			notBefore : Jul 16 00:00:00 2004 GMT
+			notAfter : Jul 15 23:59:59 2014 GMT
+
+	------------------
+	Signer #4:
+		Subject: /C=TW/ST=Taiwan/L=Taipei/O=WAYI INTERNATIONAL DIGITAL ENTERTAINMENT CO., LTD./OU=Digital ID Class 3 - Microsoft Software Validation v2/OU=WAYI/CN=WAYI INTERNATIONAL DIGITAL ENTERTAINMENT CO., LTD.
+		Issuer : /C=US/O=VeriSign, Inc./OU=VeriSign Trust Network/OU=Terms of use at https:\/\/www.verisign.com\/rpa (c)04/CN=VeriSign Class 3 Code Signing 2004 CA
+		Serial : 055AF720C2DCFC339CFBCE5426F915D1
+		Certificate expiration date:
+			notBefore : Feb 14 00:00:00 2007 GMT
+			notAfter : Feb 28 23:59:59 2008 GMT
+
+403901FCD07F0000:error:10800075:PKCS7 routines:PKCS7_verify:certificate verify error:../crypto/pkcs7/pk7_smime.c:296:Verify error: self-signed certificate in certificate chain
+Signature verification: failed
+
+Number of verified signatures: 1
+Failed
+INSTALLER_SIGNATURE_END
+ISS_LIST_BEGIN
+InstallShield Setup Extract / Copyright (c) 2014 Toni Spets <toni.spets@iki.fi>
+
+ISS_LIST_END
