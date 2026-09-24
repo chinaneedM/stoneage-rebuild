@@ -16,6 +16,7 @@ from pathlib import Path
 import re
 import struct
 import subprocess
+import shutil
 import tempfile
 import urllib.request
 
