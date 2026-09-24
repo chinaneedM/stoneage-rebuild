@@ -8,6 +8,8 @@ from tools.stoneage_sa25_distribution_carrier_probe import (
     discmaster_url,
     ia_docs,
     likely_stoneage,
+    strict_game_candidate,
+    strict_ia_candidate,
 )
 
 class SA25DistributionCarrierProbeTests(unittest.TestCase):
@@ -33,6 +35,22 @@ class SA25DistributionCarrierProbeTests(unittest.TestCase):
         self.assertEqual(len(rows),2)
         self.assertTrue(likely_stoneage(rows[0]))
         self.assertFalse(likely_stoneage(rows[1]))
+
+    def test_strict_filter_rejects_word_collision(self):
+        false_row={"itemName":"Amiga Plus","fileid":"Games/StoneAge/StoneAge25.game"}
+        true_row={"itemName":"Chinese cover disc","fileid":"games/StoneAge2.5/setup.exe"}
+        self.assertFalse(strict_game_candidate(false_row))
+        self.assertTrue(strict_game_candidate(true_row))
+
+    def test_strict_ia_carrier_requires_named_periodical(self):
+        self.assertFalse(strict_ia_candidate(
+            "popular-software-2002",
+            {"title":"Unrelated disc","description":"大众软件","year":2002},
+        ))
+        self.assertTrue(strict_ia_candidate(
+            "popular-software-2002",
+            {"title":"大众软件CD 2002","year":2002},
+        ))
 
     def test_ia_docs(self):
         docs=ia_docs({"response":{"docs":[{"identifier":"x"}]}})
