@@ -141,6 +141,67 @@ jobs:
           '@ | Set-Content -Encoding UTF8 C:\sa85\inventory.py
           python C:\sa85\inventory.py $report
 
+      - name: Administrative extract StoneAge85 MSI
+        shell: pwsh
+        run: |
+          $report=Join-Path $env:GITHUB_WORKSPACE 'research\recovered\STONEAGE-WAEI85-ISX-WINDOWS-R1.txt'
+          $msi=Get-ChildItem -Path C:\sa85\out -Recurse -File -Filter StoneAge85.msi | Select-Object -First 1
+          if (!$msi) {
+            Add-Content $report 'MSI_ADMIN|missing'
+            exit 0
+          }
+          New-Item -ItemType Directory -Force -Path C:\sa85\msi-out | Out-Null
+          $args=@('/a',$msi.FullName,'/qn','TARGETDIR=C:\sa85\msi-out','/l*v','C:\sa85\msi-admin.log')
+          $p=Start-Process -FilePath msiexec.exe -ArgumentList $args -Wait -PassThru
+          Add-Content $report "MSI_ADMIN_EXIT|$($p.ExitCode)"
+          if ($p.ExitCode -ne 0) {
+            Add-Content $report 'MSI_ADMIN_LOG_TAIL_BEGIN'
+            Get-Content C:\sa85\msi-admin.log -Tail 160 -ErrorAction SilentlyContinue | Add-Content $report
+            Add-Content $report 'MSI_ADMIN_LOG_TAIL_END'
+            exit 0
+          }
+          @'
+          import hashlib,subprocess,sys
+          from pathlib import Path
+          root=Path(r'C:\sa85\msi-out'); report=Path(sys.argv[1])
+          def sha(p):
+            h=hashlib.sha256()
+            with p.open('rb') as f:
+              for b in iter(lambda:f.read(1024*1024),b''): h.update(b)
+            return h.hexdigest()
+          rows=[]
+          for p in root.rglob('*'):
+            if p.is_file(): rows.append((p.relative_to(root).as_posix(),p.stat().st_size,sha(p),p))
+          rows.sort(key=lambda x:x[0].lower())
+          with report.open('a',encoding='utf-8') as out:
+            out.write(f'MSI_TREE|files={len(rows)}|bytes={sum(x[1] for x in rows)}\n')
+            out.write(f'MSI_MAP_DAT_COUNT|{sum(1 for x in rows if x[0].lower().endswith(".dat") and "/map/" in "/"+x[0].lower())}\n')
+            for rel,size,d,p in rows:
+              low=rel.lower()
+              if low.endswith(('.exe','.dll')) or any(k in low for k in ('real_','adrn_','spr_','spradrn_','stoneage','startup','map/')):
+                out.write(f'MSI_CORE|path={rel}|bytes={size}|sha256={d}\n')
+            for rel,size,d,p in rows:
+              if rel.lower().endswith(('.exe','.dll')):
+                out.write(f'MSI_PE|path={rel}|bytes={size}|sha256={d}\n')
+                try:
+                  ps=subprocess.run(['powershell','-NoProfile','-Command',
+                    '(Get-AuthenticodeSignature -FilePath "'+str(p)+'").SignerCertificate.Subject'],
+                    capture_output=True,text=True,errors='replace',timeout=30)
+                  val=(ps.stdout or '').strip()
+                  if val: out.write(f'MSI_SIGNER|path={rel}|value={val.replace("|","%7C")[:1200]}\n')
+                except Exception: pass
+                try:
+                  s=subprocess.run(['strings','-a','-n','5',str(p)],capture_output=True,text=True,errors='replace',timeout=30).stdout
+                except Exception: s=''
+                for line in s.splitlines():
+                  if any(k in line.lower() for k in ('stoneage','waei','wayi','8.5','8.0','2007','www.wayi','www.waei')):
+                    out.write(f'MSI_STRING|path={rel}|value={line.replace("|","%7C")[:1000]}\n')
+            for rel,size,d,p in rows:
+              out.write(f'MSI_FILE|path={rel}|bytes={size}|sha256={d}\n')
+            out.write('RESULT_MSI|ADMINISTRATIVE_EXTRACTION_COMPLETED\n')
+          '@ | Set-Content -Encoding UTF8 C:\sa85\msi_inventory.py
+          python C:\sa85\msi_inventory.py $report
+
       - name: Delete transient payloads
         if: always()
         shell: pwsh
