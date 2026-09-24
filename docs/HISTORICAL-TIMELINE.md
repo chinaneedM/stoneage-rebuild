@@ -173,6 +173,16 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 
 ## 2003 — Mainland historical map-cache bridge
 
+
+### 2003-06-05 — dated StoneAge 2.5 `sa25up.zip` link survives
+
+**FACT / dated archived third-party page:** A raw Wayback replay of `http://pcpc.idv.tw/soft/soft.htm` at **2003-06-05 10:48:51 UTC** contains the literal Big5/CP950 text **`[下載]石器時代2.5—精靈王傳說`** and the exact href `http://202.104.32.168/file/game/maoxian/sa25up.zip`. The replay is hash-locked as SHA-256 `604304bd2c931c463ccb575f3920dd096a340441825a58274d9f6e897dc966c5`. [`SRC-CN-2003-PCPC-SA25UP-SOURCE-ARCHIVE-01`]
+
+**IMPORTANT LIMIT:** This establishes a terminus-ante-quem for the **link text and URL on the archived page**, not for live payload availability or official/operator provenance. Separate Wayback records for the payload path are HTTP 404, including malformed/suffixed URL forms indexed in 2002. The filename therefore remains an artifact-recovery clue rather than authenticated client/update bytes.
+
+**RESEARCH CONSEQUENCE:** The later Geocities/PIXNET copies are no longer the earliest evidence for this token. Recovery should now use the dated 2003 source page and the 2002 404 URL-index traces to search for alternate mirrors/host mappings or independent copies, while avoiding any claim that the 8.25 MB updater or 575/580 MB full package has been identified.
+
+
 ### 2003-06-23 — first recoverable full-map snapshot
 
 **FACT / dated preserved binary:** The StoneAge map mirror `http://www.wuxitianlong.com/sa/map.exe`, independently exposed by contemporaneous Sina StoneAge download-hub material, has a replayable Wayback capture timestamped **2003-06-23 23:44:51 UTC**. The recovered package is hash-locked as SHA-256 `372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e`. [`SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-01`]
