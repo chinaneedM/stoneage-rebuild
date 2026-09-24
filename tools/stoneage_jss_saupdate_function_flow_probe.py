@@ -43,11 +43,20 @@ MAX_CALLS_PER_FUNCTION=120
 # Exact internal E8 targets observed in the recovered SaUpdate binary.
 # Labels are analytical roles to be tested, not original source symbols.
 SEEDED_FUNCTION_RVAS=(
-    ("state-key-helper",0x25D0),
+    ("resource-generation-scan",0x25D0),
     ("manifest-wrapper",0x2880),
     ("post-download-state",0x3610),
     ("update-state-sequence",0x3C60),
     ("launch-tail",0x3F20),
+)
+
+# Probe instructions known from the import-call map; function_summary walks
+# backward to the nearest old-MSVC prologue and forward to return.
+PARSER_SITE_RVAS=(
+    ("fgets-3798",0x3798),
+    ("fgets-3903",0x3903),
+    ("fgets-3a34",0x3A34),
+    ("fgets-3c15",0x3C15),
 )
 
 MFC_EXTRA_ORDINALS={
@@ -300,6 +309,38 @@ def main():
         for order,(call_rva,kind,dll,name) in enumerate(f["calls"],1):
             print(
                 f"SEEDED_CALL|role={role}|order={order}|call_rva=0x{call_rva:x}|"
+                f"kind={kind}|dll={clean(dll)}|target={clean(name)}"
+            )
+
+    # Recover containing functions for parser-like stdio call sites.
+    parser_functions={}
+    for role,rva in PARSER_SITE_RVAS:
+        idx=by_addr.get(image_base+rva)
+        if idx is None:
+            print(f"PARSER_SITE|role={role}|rva=0x{rva:x}|decoded=0")
+            continue
+        f=function_summary(instructions,idx,image_base,imports,thunks,strings)
+        parser_functions.setdefault(f["start_rva"],f)
+        print(
+            f"PARSER_SITE|role={role}|rva=0x{rva:x}|decoded=1|"
+            f"function_start_rva=0x{f['start_rva']:x}|function_end_rva=0x{f['end_rva']:x}|"
+            f"boundary={f['boundary']}|strings={f['string_total']}|calls={f['call_total']}"
+        )
+    for start_rva in sorted(parser_functions):
+        f=parser_functions[start_rva]
+        print(
+            f"PARSER_FUNCTION|start_rva=0x{f['start_rva']:x}|end_rva=0x{f['end_rva']:x}|"
+            f"boundary={f['boundary']}|instructions={f['instructions']}|"
+            f"strings={f['string_total']}|calls={f['call_total']}"
+        )
+        for order,(ins_rva,string_rva,text_value) in enumerate(f["strings"],1):
+            print(
+                f"PARSER_STRING|function_rva=0x{start_rva:x}|order={order}|"
+                f"ins_rva=0x{ins_rva:x}|string_rva=0x{string_rva:x}|text={clean(text_value)}"
+            )
+        for order,(call_rva,kind,dll,name) in enumerate(f["calls"],1):
+            print(
+                f"PARSER_CALL|function_rva=0x{start_rva:x}|order={order}|call_rva=0x{call_rva:x}|"
                 f"kind={kind}|dll={clean(dll)}|target={clean(name)}"
             )
 

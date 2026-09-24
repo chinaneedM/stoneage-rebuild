@@ -2,6 +2,7 @@ import struct
 import unittest
 
 from tools.stoneage_jss_saupdate_function_flow_probe import (
+    PARSER_SITE_RVAS,
     SEEDED_FUNCTION_RVAS,
     ascii_strings,
     mapped_import,
@@ -40,6 +41,11 @@ class JssSaUpdateFunctionFlowProbeTests(unittest.TestCase):
         rvas=[rva for _,rva in SEEDED_FUNCTION_RVAS]
         self.assertEqual(len(roles),len(set(roles)))
         self.assertEqual(len(rvas),len(set(rvas)))
+
+    def test_parser_sites_are_unique(self):
+        rvas=[rva for _,rva in PARSER_SITE_RVAS]
+        self.assertEqual(len(rvas),len(set(rvas)))
+        self.assertTrue(all(0x3700 <= rva < 0x3d00 for rva in rvas))
 
     def test_known_mfc_mapping(self):
         self.assertEqual(
