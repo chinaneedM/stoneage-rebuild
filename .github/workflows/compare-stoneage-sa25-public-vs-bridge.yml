@@ -1,0 +1,236 @@
+name: Compare public StoneAge 2.5 candidate vs known bridge
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/compare-stoneage-sa25-public-vs-bridge.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-public-vs-bridge
+  cancel-in-progress: true
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install archive tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq unar 7zip
+
+      - name: Recover public candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25cmp/candidate
+          curl -L --fail --retry 3 --retry-delay 2 --connect-timeout 20 --max-time 1200 \
+            -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36' \
+            -o /tmp/sa25cmp/candidate.rar \
+            'https://99ds.com/downloads/windows/Stoneage2.5-Windows.rar'
+          test "$(sha256sum /tmp/sa25cmp/candidate.rar | awk '{print $1}')" = \
+            '0e157c0fcfe2bcf91826907d580d4403138d86fab9488aa39cd9494af17449ae'
+          7z x -y -o/tmp/sa25cmp/candidate /tmp/sa25cmp/candidate.rar >/tmp/sa25cmp/candidate-extract.log
+
+      - name: Recover known mixed bridge
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25cmp/bridge
+          python3 - <<'PY'
+          import hashlib, html, http.cookiejar, json, re, urllib.parse, urllib.request
+          from pathlib import Path
+
+          ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124 Safari/537.36'
+          expected={
+            'ev7l29fw77891go':'7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5',
+            'ytaa168o5jih0lx':'567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb',
+          }
+          cj=http.cookiejar.CookieJar()
+          op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+          op.addheaders=[('User-Agent',ua),('Accept-Language','en-US,en;q=0.9')]
+          for key,suffix in [('ev7l29fw77891go','001'),('ytaa168o5jih0lx','002')]:
+              data=urllib.parse.urlencode({'quick_key':key,'response_format':'json'}).encode()
+              req=urllib.request.Request(
+                  'https://www.mediafire.com/api/1.5/file/get_info.php',
+                  data=data, headers={'User-Agent':ua})
+              with op.open(req,timeout=60) as r:
+                  info=json.load(r)['response']['file_info']
+              if str(info.get('hash') or '').lower()!=expected[key]:
+                  raise SystemExit('MediaFire metadata hash changed')
+              req=urllib.request.Request(info['links']['normal_download'],headers={'User-Agent':ua})
+              with op.open(req,timeout=60) as r:
+                  page=r.read().decode('utf-8','replace')
+                  referer=r.geturl()
+              m=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S)
+              if not m:
+                  m=re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+              if not m:
+                  raise SystemExit('No direct MediaFire link')
+              dest=Path('/tmp/sa25cmp')/f'bridge.{suffix}'
+              h=hashlib.sha256()
+              req=urllib.request.Request(html.unescape(m.group(1)),headers={'User-Agent':ua,'Referer':referer})
+              with op.open(req,timeout=300) as r, dest.open('wb') as out:
+                  while True:
+                      b=r.read(1024*1024)
+                      if not b: break
+                      out.write(b); h.update(b)
+              if h.hexdigest()!=expected[key]:
+                  raise SystemExit('MediaFire part hash mismatch')
+          PY
+          cat /tmp/sa25cmp/bridge.001 /tmp/sa25cmp/bridge.002 > /tmp/sa25cmp/bridge.rar
+          test "$(sha256sum /tmp/sa25cmp/bridge.rar | awk '{print $1}')" = \
+            'd71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5'
+          unar -f -o /tmp/sa25cmp/bridge /tmp/sa25cmp/bridge.rar >/tmp/sa25cmp/bridge-extract.log 2>&1
+
+      - name: Compute normalized subtree diff
+        shell: bash
+        run: |
+          set -euo pipefail
+          CROOT="$(find /tmp/sa25cmp/candidate -type d -path '*/SA2.5/stoneage2.5' -print -quit)"
+          BROOT="$(find /tmp/sa25cmp/bridge -type d -path '*/SA2.5主程式/stoneage2.5' -print -quit)"
+          CSACH="$(find /tmp/sa25cmp/candidate -type d -path '*/SA2.5/SACH-MX0.30' -print -quit)"
+          BSACH="$(find /tmp/sa25cmp/bridge -type d -path '*/SA2.5主程式/SACH-MX0.30' -print -quit)"
+          test -n "$CROOT" && test -n "$BROOT"
+          mkdir -p research/recovered
+          python3 - "$CROOT" "$BROOT" "$CSACH" "$BSACH" > research/recovered/STONEAGE-SA25-PUBLIC-VS-BRIDGE-R1.txt <<'PY'
+          import hashlib, sys
+          from pathlib import Path
+
+          croot=Path(sys.argv[1]); broot=Path(sys.argv[2])
+          csach=Path(sys.argv[3]) if sys.argv[3] else None
+          bsach=Path(sys.argv[4]) if sys.argv[4] else None
+          BLOCK=1024*1024
+
+          def sha(p, limit=None):
+              h=hashlib.sha256(); remain=limit
+              with p.open('rb') as f:
+                  while True:
+                      n=BLOCK if remain is None else min(BLOCK,remain)
+                      if n<=0: break
+                      b=f.read(n)
+                      if not b: break
+                      h.update(b)
+                      if remain is not None: remain-=len(b)
+              return h.hexdigest()
+
+          def index(root):
+              out={}
+              collisions=[]
+              for p in root.rglob('*'):
+                  if not p.is_file(): continue
+                  rel=p.relative_to(root).as_posix()
+                  key=rel.lower()
+                  if key in out: collisions.append((key,out[key][0],rel))
+                  out[key]=(rel,p.stat().st_size,p,sha(p))
+              return out,collisions
+
+          def prefix_relation(cp,bp,cs,bs,ch,bh):
+              if cs==bs:
+                  return 'SAME_SIZE_DIFFERENT'
+              if cs>bs and sha(cp,bs)==bh:
+                  return 'BRIDGE_PREFIX_OF_CANDIDATE'
+              if bs>cs and sha(bp,cs)==ch:
+                  return 'CANDIDATE_PREFIX_OF_BRIDGE'
+              return 'DIFFERENT'
+
+          def summarize(label, ci, bi):
+              shared=sorted(set(ci)&set(bi))
+              conly=sorted(set(ci)-set(bi)); bonly=sorted(set(bi)-set(ci))
+              exact=[]; changed=[]
+              for k in shared:
+                  c=ci[k]; b=bi[k]
+                  if c[3]==b[3]: exact.append(k)
+                  else:
+                      rel=prefix_relation(c[2],b[2],c[1],b[1],c[3],b[3])
+                      changed.append((k,c,b,rel))
+              print(f'{label}_SUMMARY|candidate_files={len(ci)}|bridge_files={len(bi)}|shared_paths={len(shared)}|exact_same={len(exact)}|changed_same_path={len(changed)}|candidate_only={len(conly)}|bridge_only={len(bonly)}')
+              return shared,exact,changed,conly,bonly
+
+          ci,cc=index(croot); bi,bc=index(broot)
+          print('StoneAge 2.5 public candidate vs known mixed bridge — R1')
+          print('SCOPE|normalized-client-subtree|verified-transient-bytes|derived-diff-only')
+          print(f'CANDIDATE_ROOT|{croot}')
+          print(f'BRIDGE_ROOT|{broot}')
+          print(f'CASE_COLLISIONS|candidate={len(cc)}|bridge={len(bc)}')
+          shared,exact,changed,conly,bonly=summarize('CLIENT',ci,bi)
+
+          cdat={k:v for k,v in ci.items() if k.startswith('map/') and k.endswith('.dat')}
+          bdat={k:v for k,v in bi.items() if k.startswith('map/') and k.endswith('.dat')}
+          dshared,dexact,dchanged,dconly,dbonly=summarize('MAP_DAT',cdat,bdat)
+          for k,c,b,rel in dchanged:
+              print(f'MAP_DAT_CHANGED|path={c[0]}|candidate_bytes={c[1]}|bridge_bytes={b[1]}|candidate_sha256={c[3]}|bridge_sha256={b[3]}|relation={rel}')
+          for k in dconly:
+              c=cdat[k]
+              print(f'MAP_DAT_CANDIDATE_ONLY|path={c[0]}|bytes={c[1]}|sha256={c[3]}')
+          for k in dbonly:
+              b=bdat[k]
+              print(f'MAP_DAT_BRIDGE_ONLY|path={b[0]}|bytes={b[1]}|sha256={b[3]}')
+
+          core=('data/real_15.bin','data/adrn_15.bin','data/spr_4.bin','data/spradrn_5.bin',
+                'stoneage.exe','sa_2903.exe','sa_2903网通.exe','startup.exe')
+          for raw in core:
+              k=raw.lower()
+              c=ci.get(k); b=bi.get(k)
+              if c and b:
+                  rel='EXACT' if c[3]==b[3] else prefix_relation(c[2],b[2],c[1],b[1],c[3],b[3])
+                  print(f'CORE_DIFF|path={c[0]}|candidate_bytes={c[1]}|bridge_bytes={b[1]}|candidate_sha256={c[3]}|bridge_sha256={b[3]}|relation={rel}')
+              elif c:
+                  print(f'CORE_DIFF|path={c[0]}|candidate_only=1|bytes={c[1]}|sha256={c[3]}')
+              elif b:
+                  print(f'CORE_DIFF|path={b[0]}|bridge_only=1|bytes={b[1]}|sha256={b[3]}')
+
+          for k,c,b,rel in changed:
+              if k.startswith('data/') and not k.startswith('data/battlemap/'):
+                  print(f'DATA_CHANGED|path={c[0]}|candidate_bytes={c[1]}|bridge_bytes={b[1]}|relation={rel}|candidate_sha256={c[3]}|bridge_sha256={b[3]}')
+          for k in conly:
+              c=ci[k]
+              print(f'CLIENT_CANDIDATE_ONLY|path={c[0]}|bytes={c[1]}|sha256={c[3]}')
+          for k in bonly:
+              b=bi[k]
+              print(f'CLIENT_BRIDGE_ONLY|path={b[0]}|bytes={b[1]}|sha256={b[3]}')
+
+          if csach and bsach and csach.exists() and bsach.exists():
+              csi,ccc=index(csach); bsi,bcc=index(bsach)
+              summarize('SACH',csi,bsi)
+          else:
+              print('SACH_SUMMARY|missing_subtree=1')
+
+          core_rel=[]
+          for raw in ('data/real_15.bin','data/adrn_15.bin','data/spr_4.bin','data/spradrn_5.bin'):
+              k=raw.lower(); c=ci.get(k); b=bi.get(k)
+              if c and b:
+                  core_rel.append('EXACT' if c[3]==b[3] else prefix_relation(c[2],b[2],c[1],b[1],c[3],b[3]))
+          if core_rel and all(x=='BRIDGE_PREFIX_OF_CANDIDATE' for x in core_rel):
+              print('RESOURCE_GENERATION|KNOWN_BRIDGE_CORE_IS_EXACT_BYTE_PREFIX_OF_PUBLIC_CANDIDATE')
+          else:
+              print('RESOURCE_GENERATION|NO_UNIFORM_PREFIX_RELATION')
+
+          if len(dchanged)==0 and not dconly and not dbonly:
+              print('MAP_RELATION|CLIENT_DAT_CORPUS_BYTE_IDENTICAL')
+          elif not dconly and not dbonly:
+              print(f'MAP_RELATION|SAME_DAT_ID_SET_WITH_{len(dchanged)}_CHANGED_FILES')
+          else:
+              print('MAP_RELATION|DAT_ID_SET_DIFFERS')
+
+          print('EVIDENCE_BOUNDARY|The modern public archive is a descendant/community distribution candidate. Byte ancestry does not establish 2002 operator-disc provenance.')
+          PY
+
+      - name: Delete transient proprietary payloads
+        if: always()
+        run: rm -rf /tmp/sa25cmp
+
+      - name: Commit derived diff only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-SA25-PUBLIC-VS-BRIDGE-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: diff public 2.5 candidate against known bridge'
+          git pull --rebase origin main
+          git push
