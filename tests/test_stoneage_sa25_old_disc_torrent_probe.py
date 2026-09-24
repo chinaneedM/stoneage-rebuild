@@ -14,11 +14,17 @@ class TorrentProbeTests(unittest.TestCase):
         strong,weak=interesting(torrent_paths(meta),b"")
         self.assertIn("NEW GAME 093",strong)
 
-    def test_weak_only(self):
-        meta={b"info":{b"name":b"collection 280"}}
+    def test_generic_issue_280_is_not_target(self):
+        meta={b"info":{b"name":"读者 2002年第11期（总第280期）".encode()}}
         strong,weak=interesting(torrent_paths(meta),b"")
         self.assertFalse(strong)
-        self.assertIn("280",weak)
+
+    def test_contextual_issue_280_requires_catalog_token(self):
+        meta={b"info":{b"files":[
+            {b"path":["藏经阁".encode(),"2001 NEW GAME 093（总第280期）2CD".encode()]}
+        ]}}
+        strong,weak=interesting(torrent_paths(meta),b"")
+        self.assertTrue(any("总第280期" in x for x in strong))
 
 if __name__=="__main__":
     unittest.main()
