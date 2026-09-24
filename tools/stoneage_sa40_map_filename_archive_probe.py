@@ -9,6 +9,7 @@ indexes for that exact basename. Metadata only; no package payload is fetched.
 
 from __future__ import annotations
 
+import concurrent.futures
 import json
 import urllib.parse
 import urllib.request
@@ -17,8 +18,12 @@ UA="stoneage-rebuild-archaeology/1.0"
 CDX="https://web.archive.org/cdx/search/cdx"
 BASENAME="shiqi4updatex_02_11_08.zip"
 PUBLISHED_DATE="20021108"
-WINDOW_FROM="2002"
-WINDOW_TO="2005"
+WINDOWS=(
+    ("2002-post","20021108","20021231"),
+    ("2003","20030101","20031231"),
+    ("2004","20040101","20041231"),
+    ("2005","20050101","20051231"),
+)
 
 # Both scopes are directly grounded in the historical Sina download surface.
 # games.sina.com.cn domain matching also covers archived dN.games.sina.com.cn
@@ -62,18 +67,18 @@ def parse_cdx_json(body):
     return tuple(rows)
 
 
-def cdx_url(domain):
+def cdx_url(domain,date_from,date_to):
     filters=[
         "statuscode:200",
-        r"original:.*"+BASENAME.replace(".","\\.")+r"(?:\\?.*)?$",
+        "original:.*shiqi4updatex_02_11_08[.]zip.*",
     ]
     params=[
         ("url",domain),
         ("matchType","domain"),
         ("output","json"),
         ("fl","timestamp,original,statuscode,mimetype,digest,length"),
-        ("from",WINDOW_FROM),
-        ("to",WINDOW_TO),
+        ("from",date_from),
+        ("to",date_to),
         ("collapse","digest"),
         ("limit","500"),
     ]
@@ -81,13 +86,16 @@ def cdx_url(domain):
     return CDX+"?"+urllib.parse.urlencode(params)
 
 
-def probe_scope(label,domain):
-    endpoint=cdx_url(domain)
-    status,final,body=fetch_bytes(endpoint)
+def probe_scope(label,domain,window_label,date_from,date_to):
+    endpoint=cdx_url(domain,date_from,date_to)
+    status,final,body=fetch_bytes(endpoint,timeout=20)
     rows=parse_cdx_json(body)
     return {
         "label":label,
         "domain":domain,
+        "window_label":window_label,
+        "date_from":date_from,
+        "date_to":date_to,
         "endpoint":endpoint,
         "status":status,
         "final":final,
@@ -99,37 +107,50 @@ def probe_scope(label,domain):
 def main():
     print("StoneAge 4.0 full-map patch filename archive-domain probe — R1")
     print("SCOPE|source-derived-exact-basename+Sina-domain-CDX|metadata-only|no-payload-download")
-    print(f"TARGET|published_date={PUBLISHED_DATE}|basename={BASENAME}|window={WINDOW_FROM}-{WINDOW_TO}")
+    print(f"TARGET|published_date={PUBLISHED_DATE}|basename={BASENAME}|windows={len(WINDOWS)}")
 
     errors=[]
     hits=[]
-    for label,domain in SCOPES:
-        try:
-            result=probe_scope(label,domain)
-            print(
-                f"CDX|label={label}|domain={domain}|status={result['status']}|"
-                f"body_bytes={result['body_bytes']}|rows={len(result['rows'])}|final={clean(result['final'])}"
-            )
-            for row in result["rows"]:
-                original=str(row.get("original") or "")
-                if BASENAME.lower() not in original.lower():
-                    continue
-                key=(str(row.get("timestamp") or ""),original,str(row.get("digest") or ""))
-                if key not in hits:
-                    hits.append(key)
-                print(
-                    f"CDX_HIT|label={label}|timestamp={clean(row.get('timestamp'))}|"
-                    f"original={clean(original)}|statuscode={clean(row.get('statuscode'))}|"
-                    f"mimetype={clean(row.get('mimetype'))}|digest={clean(row.get('digest'))}|"
-                    f"length={clean(row.get('length'))}"
-                )
-        except Exception as exc:
-            errors.append((label,type(exc).__name__,str(exc)))
+    results=[]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+        futures={}
+        for label,domain in SCOPES:
+            for window_label,date_from,date_to in WINDOWS:
+                future=executor.submit(probe_scope,label,domain,window_label,date_from,date_to)
+                futures[future]=(label,domain,window_label,date_from,date_to)
+        for future in concurrent.futures.as_completed(futures):
+            label,domain,window_label,date_from,date_to=futures[future]
+            try:
+                results.append(future.result())
+            except Exception as exc:
+                errors.append((f"{label}:{window_label}",type(exc).__name__,str(exc)))
 
-    for label,kind,message in errors:
+    for result in sorted(results,key=lambda row:(row["label"],row["date_from"])):
+        label=result["label"]
+        print(
+            f"CDX|label={label}|domain={result['domain']}|window={result['window_label']}|"
+            f"from={result['date_from']}|to={result['date_to']}|status={result['status']}|"
+            f"body_bytes={result['body_bytes']}|rows={len(result['rows'])}|final={clean(result['final'])}"
+        )
+        for row in result["rows"]:
+            original=str(row.get("original") or "")
+            if BASENAME.lower() not in original.lower():
+                continue
+            key=(str(row.get("timestamp") or ""),original,str(row.get("digest") or ""))
+            if key not in hits:
+                hits.append(key)
+            print(
+                f"CDX_HIT|label={label}|window={result['window_label']}|timestamp={clean(row.get('timestamp'))}|"
+                f"original={clean(original)}|statuscode={clean(row.get('statuscode'))}|"
+                f"mimetype={clean(row.get('mimetype'))}|digest={clean(row.get('digest'))}|"
+                f"length={clean(row.get('length'))}"
+            )
+
+    for label,kind,message in sorted(errors):
         print(f"ERROR|scope={clean(label)}|kind={clean(kind)}|message={clean(message)}")
 
     print(f"COUNT|scopes|{len(SCOPES)}")
+    print(f"COUNT|windows|{len(WINDOWS)}")
     print(f"COUNT|unique_hits|{len(hits)}")
     print(f"COUNT|errors|{len(errors)}")
     if hits:
