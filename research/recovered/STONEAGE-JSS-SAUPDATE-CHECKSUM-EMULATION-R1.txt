@@ -1,0 +1,17 @@
+StoneAge JSS SaUpdate checksum-helper emulation probe — R1
+SCOPE|exact-file-helper|stubbed-CRT-I/O|synthetic-bytes|derived-output-only
+FETCH|status=206|bytes=217088|sha256=6795d9349168f77aa025d7c4ea05d005c5bbfe33dd4b227eb7731802fa7eb82b|final=https://web.archive.org/web/20010503013834id_/http://www.titan.co.jp/stoneage/stoneage.exe
+FUNCTION|rva=0x3f20|role=file-byte-checksum-candidate
+CASE|label=empty|bytes=0|return=0|return_hex=0x00000000|fopen=1|fgetc=1|fclose=1|candidate_matches=crc32,len,sum32,xor8
+CASE|label=zero|bytes=1|return=0|return_hex=0x00000000|fopen=1|fgetc=2|fclose=1|candidate_matches=sum32,xor8
+CASE|label=one|bytes=1|return=1|return_hex=0x00000001|fopen=1|fgetc=2|fclose=1|candidate_matches=len,sum32,xor8
+CASE|label=ff|bytes=1|return=255|return_hex=0x000000ff|fopen=1|fgetc=2|fclose=1|candidate_matches=sum32,xor8
+CASE|label=abc|bytes=3|return=297|return_hex=0x00000129|fopen=1|fgetc=4|fclose=1|candidate_matches=
+CASE|label=010203|bytes=3|return=9|return_hex=0x00000009|fopen=1|fgetc=4|fclose=1|candidate_matches=
+CASE|label=range16|bytes=16|return=240|return_hex=0x000000f0|fopen=1|fgetc=17|fclose=1|candidate_matches=
+CASE|label=stoneage|bytes=8|return=818|return_hex=0x00000332|fopen=1|fgetc=9|fclose=1|candidate_matches=
+CANDIDATE_MATCH_COUNT|name=crc32|cases=1
+CANDIDATE_MATCH_COUNT|name=len|cases=2
+CANDIDATE_MATCH_COUNT|name=sum32|cases=4
+CANDIDATE_MATCH_COUNT|name=xor8|cases=4
+RESOLUTION|CHECKSUM_HELPER_EMULATED|successes=8|failures=0|full_candidate_matches=|binary-not-committed
