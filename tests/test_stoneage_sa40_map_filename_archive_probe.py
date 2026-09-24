@@ -6,6 +6,7 @@ from tools.stoneage_sa40_map_filename_archive_probe import (
     BASENAME,
     PUBLISHED_DATE,
     SCOPES,
+    WINDOWS,
     cdx_url,
     parse_cdx_json,
 )
@@ -25,12 +26,18 @@ class SA40MapFilenameArchiveProbeTests(unittest.TestCase):
             },
         )
 
+    def test_windows_partition_the_archive_period(self):
+        self.assertEqual(WINDOWS[0],("2002-post","20021108","20021231"))
+        self.assertEqual(WINDOWS[-1],("2005","20050101","20051231"))
+
     def test_cdx_query_uses_domain_match_and_exact_basename_filter(self):
-        parsed=urllib.parse.urlparse(cdx_url("games1.sina.com.cn"))
+        parsed=urllib.parse.urlparse(cdx_url("games1.sina.com.cn","20021108","20021231"))
         query=urllib.parse.parse_qs(parsed.query)
         self.assertEqual(query["matchType"],["domain"])
         self.assertEqual(query["url"],["games1.sina.com.cn"])
-        self.assertTrue(any(BASENAME.replace(".","\\.") in value for value in query["filter"]))
+        self.assertEqual(query["from"],["20021108"])
+        self.assertEqual(query["to"],["20021231"])
+        self.assertTrue(any("shiqi4updatex_02_11_08[.]zip" in value for value in query["filter"]))
 
     def test_parse_cdx_json(self):
         body=json.dumps([
