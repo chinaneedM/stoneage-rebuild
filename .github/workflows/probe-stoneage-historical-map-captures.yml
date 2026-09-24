@@ -1,0 +1,60 @@
+name: Analyze archived StoneAge map.exe captures
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_historical_map_capture_probe.py
+      - tests/test_stoneage_historical_map_capture_probe.py
+      - .github/workflows/probe-stoneage-historical-map-captures.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-historical-map-captures
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure 7-Zip is available
+        run: |
+          set -euo pipefail
+          command -v 7z >/dev/null || {
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq p7zip-full
+          }
+      - name: Validate capture probe
+        run: python3 -m unittest tests.test_stoneage_historical_map_capture_probe -v
+      - name: Analyze archived map packages transiently
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_historical_map_capture_probe \
+            > research/recovered/STONEAGE-HISTORICAL-MAP-CAPTURE-R1.txt
+      - name: Verify proprietary payloads were not retained
+        run: |
+          set -euo pipefail
+          ! find research tools tests -type f \( -iname 'map.exe' -o -regex '.*/map/[0-9]+\.dat' \) -print -quit | grep -q .
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-HISTORICAL-MAP-CAPTURE-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: analyze archived StoneAge map packages'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_historical_map_capture_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: analyze archived StoneAge map packages'
+          fi
+          git push
