@@ -1,0 +1,49 @@
+name: Probe StoneAge 4.0 Sina aid 61620
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa40_sina_aid_probe.py
+      - tests/test_stoneage_sa40_sina_aid_probe.py
+      - .github/workflows/probe-stoneage-sa40-sina-aid.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa40-sina-aid
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Sina aid probe
+        run: python3 -m unittest tests.test_stoneage_sa40_sina_aid_probe -v
+      - name: Probe archived source and CGI variants
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa40_sina_aid_probe \
+            > research/recovered/STONEAGE-SA40-SINA-AID-61620-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-SA40-SINA-AID-61620-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Sina aid 61620 archive variants'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_sa40_sina_aid_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe Sina aid 61620 archive variants'
+          fi
+          git push
