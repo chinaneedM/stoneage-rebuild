@@ -1394,3 +1394,71 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-SA25-BAHAMUT-DISC-IMAGES-R1.txt`
   - `research/recovered/STONEAGE-SA25-COLLECTOR-ARCHIVE-R1.txt`
 
+
+
+### SRC-CN-2020-BAHAMUT-SA25-CLIENT-PACKAGES-01
+
+- Title: `石器時代周邊收藏，石器用戶端禮包篇（六）2.5精靈王傳說版用戶端產包`
+- Author/account: **寂寞如風 / stoneage2017**
+- Publication timestamp shown by live page: **2020-09-21 11:13:04**
+- Retrieval/research date: **2026-09-25**
+- URL: `https://forum.gamer.com.tw/C.php?bsn=1571&snA=81400`
+- Source type: modern collector article documenting surviving StoneAge 2.5 client-package forms; **not** a contemporaneous 2002 primary source and **not** a disc dump.
+- Live-page recovery:
+  - HTTP 200;
+  - body explicitly states that the 2.5 period had many different-cover **新手包**;
+  - separately names **延年益壽包** and **春滿乾坤包** as 2.5-period package lines;
+  - states the 2.0 WGS gift box was orange and the 2.5 WGS gift box was **green**;
+  - explicitly states there was also a **簡裝版的用戶端包裝**.
+- Confidence:
+  - **A for literal current page title/author/timestamp/text**;
+  - **B for collector identification of the surviving packaging forms**;
+  - **OPEN for package-to-disc chain, pressing/mastering identity, filesystem and client bytes**.
+- Supports:
+  - separating several physical carrier classes within the Mainland 2.5 family rather than treating every 2.5 disc/package photograph as one edition;
+  - exact-search tokens `2.5 新手包`, `2.5 綠色 WGS 禮盒`, and `2.5 簡裝版用戶端包裝`.
+- Does not support:
+  - that all packages contained byte-identical discs;
+  - any disc label, matrix/IFPI code, ISO checksum, installer filename, or clean-client status.
+- Derived report: `research/recovered/STONEAGE-SA25-BAHAMUT-CLIENT-PACKAGE-R1.txt`.
+
+
+### SRC-CN-2020-SHIQICLUB-SA25-CLIENT-PACKAGE-MIRROR-01
+
+- Current mirror URL: `https://www.shiqi.club/shiqi2712.html`
+- Mirror title: `石器周边收藏客户端礼包篇（六）2.5精灵王传说版`
+- Page date shown by current/archived mirror: **2020-07-06**
+- Retrieval/research date: **2026-09-25**
+- Source type: later independent web mirror/repost of the same collector text, useful for redundant text/image preservation; **not** original 2002 evidence.
+- Current live page: HTTP 200 and reproduces the same substantive package wording: many-cover 2.5 new-user packages, the 2.5 green WGS gift box, and simplified client packaging.
+- Wayback exact-URL preservation:
+  - **2022-01-21 08:08:53 UTC** — HTTP 200, replay body 31,620 bytes, SHA-256 `48874043e3621052fd81fe938dee81522f643f0d30372b12dd45b110b0be1ca6`;
+  - additional HTTP-200 rows survive at 2023-02-01, 2023-06-10 and 2023-12-04.
+- Article-body image mapping:
+  - the article contains **11 verified package photographs** under the contiguous upload family `/zb_users/upload/2020/11/202011152141*.jpg`;
+  - the first **7** occur before the literal transition `以上就是2,5时期的新手包了`, so they form the article's 2.5 new-user-package photo group;
+  - the next **2** occur before `这俩都介绍过了，不再赘述啦`, corresponding to the two previously discussed 2.5 package examples in article order;
+  - the next image follows the orange-2.0 / green-2.5 WGS gift-box statement;
+  - the final image follows `同时还有简装版的客户端包装`.
+- Exact body-image URLs:
+  - `https://www.shiqi.club/zb_users/upload/2020/11/20201115214120_55326.jpg`
+  - `https://www.shiqi.club/zb_users/upload/2020/11/20201115214121_50470.jpg`
+  - `https://www.shiqi.club/zb_users/upload/2020/11/20201115214122_56010.jpg`
+  - `https://www.shiqi.club/zb_users/upload/2020/11/20201115214123_96322.jpg`
+  - `https://www.shiqi.club/zb_users/upload/2020/11/20201115214123_30074.jpg`
+  - `https://www.shiqi.club/zb_users/upload/2020/11/20201115214124_63308.jpg`
+  - `https://www.shiqi.club/zb_users/upload/2020/11/20201115214125_59487.jpg`
+  - `https://www.shiqi.club/zb_users/upload/2020/11/20201115214125_40259.jpg`
+  - `https://www.shiqi.club/zb_users/upload/2020/11/20201115214126_94169.jpg`
+  - `https://www.shiqi.club/zb_users/upload/2020/11/20201115214127_96292.jpg`
+  - `https://www.shiqi.club/zb_users/upload/2020/11/20201115214128_85742.jpg`
+- Confidence:
+  - **A for literal mirror text, exact Wayback rows and exact article-body image URLs/order**;
+  - **B for package-category association by immediate article-text ordering**;
+  - **OPEN for what is printed on each photograph until image bodies are separately inspected/hash-locked**.
+- Evidence boundary:
+  - this source materially improves **physical-package visual provenance and search-token precision**;
+  - it does **not** establish disc contents, original package-to-disc chain, installer bytes, mastering identity or clean-client provenance.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-SHIQICLUB-PACKAGE-MIRROR-R1.txt`
+  - `research/recovered/STONEAGE-SA25-SHIQICLUB-BODY-IMAGES-R1.txt`.
