@@ -26,6 +26,7 @@ MAX_ARGS=16
 
 # Exact code sites already established by prior derived probes.
 FOCUS_SITES=(
+    (0x1577,"manifest-global-prep-call"),
     (0x157B,"manifest-wrapper-dispatch"),
     (0x2902,"wrapper-to-http-core"),
     (0x2E94,"http-core-to-launch-tail"),
