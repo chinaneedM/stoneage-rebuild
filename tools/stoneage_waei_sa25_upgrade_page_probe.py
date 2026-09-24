@@ -12,7 +12,7 @@ from __future__ import annotations
 import hashlib, html, json, re, urllib.parse, urllib.request
 
 UA="stoneage-rebuild-archaeology/1.0"
-CDX="https://web.archive.org/cdx/search/cdx"
+CDX="https://web.archive.org/cdx/search/cdx"\nAVAIL="https://archive.org/wayback/available"
 TARGETS=(
     "http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/upgrade.asp",
     "http://www.waei.com.cn/zhuanqu/stoneage2/tyro/upgrade.asp",
@@ -37,6 +37,15 @@ def cdx_url(target):
     p=[("url",target),("output","json"),("fl","timestamp,original,statuscode,mimetype,digest,length"),
        ("from",DATE_FROM),("to",DATE_TO),("filter","statuscode:200"),("collapse","digest"),("limit","100")]
     return CDX+"?"+urllib.parse.urlencode(p)
+
+def cdx_all_status_url(target):
+    p=[("url",target),("matchType","prefix"),("output","json"),
+       ("fl","timestamp,original,statuscode,mimetype,digest,length"),
+       ("from","2002"),("to","2005"),("collapse","urlkey"),("limit","1000")]
+    return CDX+"?"+urllib.parse.urlencode(p)
+
+def availability_url(target,date):
+    return AVAIL+"?"+urllib.parse.urlencode({"url":target,"timestamp":date})
 
 def parse_cdx(body):
     d=json.loads(body.decode("utf-8"))
@@ -97,6 +106,32 @@ def main():
         except Exception as exc:
             errors.append((f"cdx:{target}",type(exc).__name__,str(exc)))
 
+    for target in TARGETS:
+        try:
+            u=cdx_all_status_url(target); st,final,body=fetch(u,timeout=45)
+            rows=parse_cdx(body)
+            print(f"ALL_STATUS_CDX|target={clean(target)}|status={st}|bytes={len(body)}|sha256={hashlib.sha256(body).hexdigest()}|rows={len(rows)}|final={clean(final)}")
+            for row in rows:
+                key=(str(row.get("timestamp") or ""),str(row.get("original") or target),str(row.get("digest") or ""))
+                captures[key]=row
+                print(f"ALL_STATUS_CAPTURE|timestamp={clean(row.get('timestamp'))}|original={clean(row.get('original'))}|statuscode={clean(row.get('statuscode'))}|digest={clean(row.get('digest'))}|length={clean(row.get('length'))}|mimetype={clean(row.get('mimetype'))}")
+        except Exception as exc:
+            errors.append((f"all-status-cdx:{target}",type(exc).__name__,str(exc)))
+
+    availability_hits={}
+    for target in TARGETS:
+        for date in ("20020201","20020204","20020215","20020301","20030101"):
+            try:
+                u=availability_url(target,date); st,final,body=fetch(u,timeout=25)
+                data=json.loads(body.decode("utf-8"))
+                closest=data.get("archived_snapshots",{}).get("closest") if isinstance(data,dict) else None
+                hit=isinstance(closest,dict) and bool(closest.get("available"))
+                print(f"AVAIL|target={clean(target)}|date={date}|status={st}|hit={int(hit)}|timestamp={clean(closest.get('timestamp') if hit else '')}|capture={clean(closest.get('url') if hit else '')}|final={clean(final)}")
+                if hit:
+                    availability_hits[(str(closest.get("timestamp") or ""),str(closest.get("url") or ""))]=closest
+            except Exception as exc:
+                errors.append((f"availability:{target}:{date}",type(exc).__name__,str(exc)))
+
     all_hrefs={}
     success=0
     for (ts,orig,digest),row in sorted(captures.items()):
@@ -125,6 +160,7 @@ def main():
     for absu,ts,src,href in strong:
         print(f"STRONG_HREF|timestamp={ts}|source={clean(src)}|href={clean(href)}|absolute={clean(absu)}")
     print(f"COUNT|captures|{len(captures)}")
+    print(f"COUNT|availability_hits|{len(availability_hits)}")
     print(f"COUNT|successful_replays|{success}")
     print(f"COUNT|unique_candidate_hrefs|{len(all_hrefs)}")
     print(f"COUNT|strong_hrefs|{len(strong)}")
