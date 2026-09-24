@@ -1,0 +1,49 @@
+name: Probe DiscMaster search schema
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_discmaster_search_schema_probe.py
+      - tests/test_stoneage_discmaster_search_schema_probe.py
+      - .github/workflows/probe-stoneage-discmaster-search-schema.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-discmaster-search-schema
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate DiscMaster schema probe
+        run: python3 -m unittest tests.test_stoneage_discmaster_search_schema_probe -v
+      - name: Derive DiscMaster search schema
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_discmaster_search_schema_probe \
+            > research/recovered/STONEAGE-DISCMASTER-SEARCH-SCHEMA-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report='research/recovered/STONEAGE-DISCMASTER-SEARCH-SCHEMA-R1.txt'
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: derive DiscMaster search schema'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_discmaster_search_schema_probe > "$report"
+            git add "$report"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: derive DiscMaster search schema'
+          fi
+          git push
