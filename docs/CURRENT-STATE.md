@@ -1725,6 +1725,17 @@ Supplemental source ledgers:
 - Canonical derived analysis: `research/clients/STONEAGE-SA25-PHYSICAL-IMAGE-LINEAGE-R1.md`; raw derived metrics: `research/recovered/STONEAGE-SA25-PHYSICAL-IMAGE-FINGERPRINTS-R2.txt`.
 
 
+
+## StoneAge 2.5 local disc-region comparison — 2026-09-24
+
+- A new SIFT+RANSAC local-region probe removes the main weakness of prior whole-frame comparison by treating the standalone Ruten disc photographs as query templates and searching for local artwork inside boxed-package / Wanfang / collector images.
+- Positive control remains strong: standalone Ruten disc `21926883918096` -> `22242541948520` gives **290 good matches / 231 RANSAC inliers / 0.7966 inlier ratio**, with broad query/target coverage and a sane homography.
+- The best boxed-new-user-package relation is materially weaker: **32 inliers / 0.3107**, covering only **7.47%** of the standalone query and **3.94%** of the boxed target. A second query direction yields **22 inliers / 0.2619** with broader coverage. This supports shared local visual elements but does **not** prove that the boxed package contains the same disc artwork as the standalone listings.
+- Wanfang remains unlinked: its best nominal row reaches **21 inliers / 0.2727**, but only **0.3%** query coverage and an invalid/exploded homography. No robust local-region evidence ties Wanfang to the standalone disc cluster.
+- Collector-mirror rows with superficially high **95–99** inlier counts are rejected because target coverage collapses to near zero and the projected quadrilateral is invalid; they are treated as repeated-text/logo false positives.
+- Therefore the physical-media evidence model remains: **one deduplicated standalone-disc visual cluster + one boxed new-user-package lead + one independent Wanfang visual-source lead**, with no byte-level equivalence claim between them.
+- Canonical interpretation: `research/clients/STONEAGE-SA25-PHYSICAL-IMAGE-LINEAGE-R1.md`; derived metrics: `research/recovered/STONEAGE-SA25-DISC-REGION-MATCH-R1.txt`.
+
 ## 2002–2003 field-map lineage bridge — 2026-09-24
 
 - The contemporaneous Sina **2002-11-08 StoneAge 4.0 map patch** remains the earliest concrete complete-map package target currently identified: download record `aid=61620`, source-derived basename `shiqi4updatex_02_11_08.zip`, stated size 3440K. Its bytes are **not recovered**. Exact filename/stem searches found **0** carriers in DiscMaster and Internet Archive, and a bounded Wayback scan of **2,149** archived Sina `download.pl` URLs from 2002-11 through 2005 found **0** rows containing `aid=61620` or the target basename. Source-page Availability replay is currently rate-limited (HTTP 429), so this target remains OPEN rather than declared lost.
