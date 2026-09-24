@@ -1,0 +1,17 @@
+StoneAge Japan 2004 Redump index probe — R1
+SCOPE|public-disc-index-html-only|title+model+barcode|no-disc-download
+ANCHOR|model=WR-04156|jan=4988609011565|package=two-game-CD-ROMs
+ERROR|base=https://redump.org|query=title-latin|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|base=https://redump.org|query=title-space|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|base=https://redump.org|query=title-japanese|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|base=https://redump.org|query=model|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|base=https://redump.org|query=barcode|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|base=https://redump.info|query=title-latin|kind=HTTPError|message=HTTP Error 404: Not Found
+ERROR|base=https://redump.info|query=title-space|kind=HTTPError|message=HTTP Error 404: Not Found
+ERROR|base=https://redump.info|query=title-japanese|kind=HTTPError|message=HTTP Error 404: Not Found
+ERROR|base=https://redump.info|query=model|kind=HTTPError|message=HTTP Error 404: Not Found
+ERROR|base=https://redump.info|query=barcode|kind=HTTPError|message=HTTP Error 404: Not Found
+COUNT|completed_queries|0
+COUNT|errors|10
+COUNT|matching_rows|0
+RESOLUTION|INCONCLUSIVE|Redump query surface incomplete
