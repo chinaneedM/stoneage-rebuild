@@ -1,6 +1,6 @@
 # Current State
 
-Last updated: 2026-09-24
+Last updated: 2026-09-25
 
 ## Current phase
 
@@ -1778,6 +1778,18 @@ Supplemental source ledgers:
 - Embedded PE timestamps are also heterogeneous: `Startup.exe` **2001-07-13**, operator-looking `StoneAge.exe` **2002-01-11**, contaminated `sa_2903.exe` **2002-04-10**. These timestamps are lineage metadata only, not authenticated release dates.
 - Operational classification: treat the subtree as an **installed/deployed client directory later repackaged**, not as the original January-2002 installer-media layout. Therefore stop using this bridge to guess the original 575/580 MB full-package filename or 8.25 MB updater filename.
 - Canonical interpretation: `research/clients/STONEAGE-SA25-BRIDGE-INSTALL-RESIDUE-R1.md`.
+
+
+## StoneAge 2.5 exact historical download token: `sa25up.zip` — 2026-09-25
+
+- A surviving third-party software-link mirror explicitly labels **`石器時代2.5—精靈王傳說`** and points it to the exact historical-looking URL **`http://202.104.32.168/file/game/maoxian/sa25up.zip`**. The mirror itself states it was copied from `http://pcpc.idv.tw/soft/soft.htm`; its original publication date and the payload's operator provenance are not established.
+- This exact filename/path is a legitimate new recovery token because it was not previously present in the repository and it is independently sourced rather than guessed from the 575/580 MB full-package or 8.25 MB updater descriptions.
+- A bounded metadata-only preservation probe checked Wayback Availability at four period anchors, Arquivo.pt exact-URL CDX, eight Common Crawl index generations, DiscMaster exact filename search, and Internet Archive item/file metadata. Result: **0 preservation hits / 0 errors**.
+- Therefore the current exact-URL/file-index route is **BOUNDED**. Reopen it only from a new hostname/IP mapping, mirror URL, directory/file token, capture identifier, or preservation source.
+- **EVIDENCE BOUNDARY:** `sa25up.zip` is a filename/path lead only. The `up` suffix must not be interpreted as proof that it is the documented **8.25 MB updater**; it also does not establish identity with the **575/580 MB complete package** or prove clean/operator-distributed provenance.
+- Derived report: `research/recovered/STONEAGE-SA25-SA25UP-EXACT-R1.txt`.
+- Canonical source record: `SRC-CN-SA25-SA25UP-LINK-MIRROR-01` in `docs/SOURCE-REGISTRY.md`.
+
 
 ## Immediate next actions
 
