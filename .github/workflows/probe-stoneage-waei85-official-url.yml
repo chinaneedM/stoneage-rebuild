@@ -1,0 +1,89 @@
+name: Probe official Wayi StoneAge 8.5 installer URL
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/probe-stoneage-waei85-official-url.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe exact official installer URL
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 - > research/recovered/STONEAGE-WAEI85-OFFICIAL-URL-R1.txt <<'PY'
+          import hashlib,json,urllib.parse,urllib.request
+          URL='http://download.wayi.com.tw/download/STONEAGE20060616.exe'
+          UA='stoneage-rebuild-archaeology/1.0'
+          def get(url,timeout=20):
+            req=urllib.request.Request(url,headers={'User-Agent':UA,'Accept':'application/json,*/*'})
+            with urllib.request.urlopen(req,timeout=timeout) as r:
+              b=r.read()
+              return int(getattr(r,'status',r.getcode())),r.geturl(),b
+          print('StoneAge Wayi 8.5 official URL preservation probe — R1')
+          print('SCOPE|exact-official-download-url|2006-2008-archive-metadata|no-payload-download')
+          print('TARGET_URL|'+URL)
+          print('RECOVERED_MIRROR_WRAPPER|bytes=1145465184|sha256=971780abc65ed29a6a7aeb1a528c7db2ef07b11a188e56deaef90a54986609f5|filename=STONEAGE20060616.exe')
+          errors=0
+          rows=[]
+          q=[('url',URL),('output','json'),('fl','timestamp,original,statuscode,mimetype,digest,length'),
+             ('from','2006'),('to','2008'),('collapse','digest'),('limit','100')]
+          try:
+            st,final,b=get('https://web.archive.org/cdx/search/cdx?'+urllib.parse.urlencode(q),25)
+            data=json.loads(b.decode('utf-8','replace'))
+            if isinstance(data,list) and data:
+              hdr=data[0]; rows=[dict(zip(hdr,x)) for x in data[1:] if isinstance(x,list)]
+            print(f'CDX|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|rows={len(rows)}|final={final}')
+            for d in rows:
+              print('CDX_ROW|'+'|'.join(f'{k}={str(d.get(k,"")).replace("|","%7C")}' for k in hdr))
+          except Exception as e:
+            errors+=1; print(f'CDX_ERROR|kind={type(e).__name__}|message={str(e).replace("|","%7C")}')
+          for date in ('20060616','20070215','20080216'):
+            try:
+              u='https://archive.org/wayback/available?'+urllib.parse.urlencode({'url':URL,'timestamp':date})
+              st,final,b=get(u,15)
+              c=(json.loads(b.decode('utf-8','replace')).get('archived_snapshots') or {}).get('closest') or {}
+              print(f'AVAIL|requested={date}|status={st}|available={int(bool(c.get("available")))}|capture_ts={c.get("timestamp","")}|capture_status={c.get("status","")}|capture_url={str(c.get("url","")).replace("|","%7C")}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}')
+            except Exception as e:
+              errors+=1; print(f'AVAIL_ERROR|requested={date}|kind={type(e).__name__}|message={str(e).replace("|","%7C")}')
+          size_matches=[d for d in rows if str(d.get('length',''))=='1145465184']
+          print(f'COUNT|cdx_rows|{len(rows)}')
+          print(f'COUNT|exact_length_matches|{len(size_matches)}')
+          print(f'COUNT|errors|{errors}')
+          if size_matches:
+            print('RESOLUTION|ARCHIVE_METADATA_SIZE_MATCH|historical official URL metadata matches recovered wrapper length')
+          elif rows:
+            print('RESOLUTION|OFFICIAL_URL_ARCHIVED_METADATA_FOUND|compare archive length/digest with mirror when possible')
+          elif errors:
+            print('RESOLUTION|PARTIAL_ARCHIVE_FAILURE|do not interpret as negative')
+          else:
+            print('RESOLUTION|NO_ARCHIVED_METADATA_ON_TESTED_SURFACE')
+          print('EVIDENCE_BOUNDARY|Forum-era references plus Authenticode/MSI evidence establish the recovery chain; archive URL metadata is corroboration, not required identity by itself.')
+          PY
+      - name: Commit derived report
+        shell: bash
+        run: |
+          set -euo pipefail
+          R='research/recovered/STONEAGE-WAEI85-OFFICIAL-URL-R1.txt'
+          cp "$R" /tmp/report.txt
+          echo 'DERIVED_REPORT_BEGIN'; cat "$R"; echo 'DERIVED_REPORT_END'
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe official Wayi StoneAge 8.5 URL'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
