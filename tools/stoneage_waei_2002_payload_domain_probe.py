@@ -16,7 +16,7 @@ DOMAIN="waei.com.cn"
 WINDOWS=(("jan","20020101","20020131"),("feb","20020201","20020228"),("mar","20020301","20020331"))
 EXTENSIONS=("exe","zip","cab","rar")
 PROJECT_HINTS=("stoneage","stone_age","stone-age","sa25","sa2.5","2.5","jlw","jingling","spirit")
-NOISE_HINTS=("qqskin","passwordtable","record.zip","bonus.zip","series-pwd","rwmcxgxys")
+NOISE_HINTS=("qqskin","passwordtable","record.zip","bonus.zip","series-pwd","rwmcxgxys","/stoneage2/stpic/flash/")
 
 def clean(v,limit=2500):
     s=" ".join(str(v if v is not None else "").split())
