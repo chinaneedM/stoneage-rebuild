@@ -135,6 +135,8 @@ FUNCTION|start_rva=0x3ef1|end_rva=0x3f1c|boundary=bounded|instructions=15|anchor
 ANCHOR|function_rva=0x3ef1|xref_rva=0x3ef1|string_rva=0x7b4c|text=updated
 STRING_REF|function_rva=0x3ef1|order=1|ins_rva=0x3ef1|string_rva=0x7b4c|text=updated
 CALL|function_rva=0x3ef1|order=1|call_rva=0x3f00|kind=import|dll=MSVCRT.dll|target=_execl
+MANIFEST_LITERAL_BINDING|kind=host|xref_rva=0x13f2|near_data_refs=0
+MANIFEST_LITERAL_BINDING|kind=path|xref_rva=0x1419|near_data_refs=0
 SEEDED_FUNCTION|role=dialog-init|rva=0x1270|decoded=1|start_rva=0x1270|end_rva=0x134a|boundary=bounded|instructions=54|strings=4|calls=9
 SEEDED_STRING|role=dialog-init|order=1|ins_rva=0x12c4|string_rva=0x5698|text=lA@
 SEEDED_STRING|role=dialog-init|order=2|ins_rva=0x12dc|string_rva=0x55d8|text=rA@
