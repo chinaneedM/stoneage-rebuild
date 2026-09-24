@@ -10,6 +10,6 @@ CASE|label=underscore-after-dot|input=real.bin_12|expected=0|value=0|eax=0x0|ato
 CASE|label=dot-no-underscore|input=real.bin|expected=0|value=0|eax=0x0|atoi_calls=0|atoi_input=|instructions=96|returned=1|match=1
 CASE|label=no-dot|input=real_12|expected=0|value=0|eax=0x0|atoi_calls=0|atoi_input=|instructions=78|returned=1|match=1
 CASE|label=nondigit-suffix|input=real_beta.bin|expected=0|value=0|eax=0x0|atoi_calls=1|atoi_input=beta.bin|instructions=112|returned=1|match=1
-CASE|label=first-underscore-wins|input=real_beta_9.bin|expected=0|value=9|eax=0x9|atoi_calls=1|atoi_input=9.bin|instructions=87|returned=1|match=0
+CASE|label=last-underscore-before-dot|input=real_beta_9.bin|expected=9|value=9|eax=0x9|atoi_calls=1|atoi_input=9.bin|instructions=87|returned=1|match=1
 CASE|label=nested-extension|input=foo_27.bar.baz|expected=27|value=27|eax=0x1b|atoi_calls=1|atoi_input=27.bar.baz|instructions=131|returned=1|match=1
-RESOLUTION|GENERATION_SUFFIX_HELPER_EMULATED|successes=9|failures=1|binary-not-committed
+RESOLUTION|GENERATION_SUFFIX_HELPER_EMULATED|successes=10|failures=0|binary-not-committed
