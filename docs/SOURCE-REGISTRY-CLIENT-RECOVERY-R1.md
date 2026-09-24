@@ -538,6 +538,16 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Derived report: `research/recovered/STONEAGE-SA25-NAMED-CARRIER-TORRENTS-R1.txt`.
 - Status: **current old-disc torrent snapshot BOUNDED; global carrier recovery remains OPEN**.
 
+
+### StoneAge 2.5 bridge installation-residue boundary — 2026-09-24
+
+- The recovered mixed 2.5 bundle's `stoneage2.5/` root is a fully expanded runtime/resource tree containing `UNWISE.EXE`, but no client-root `INSTALL.LOG`, `SETUP.EXE`, `SETUP.INI`, `AUTORUN.INF`, CAB/MSI/HDR/INX/ISS package layer or other obvious original installer-media components.
+- PE metadata in the same derived inventory is heterogeneous: `Startup.exe` = **2001-07-13**, operator-looking `StoneAge.exe` = **2002-01-11**, and contaminated `sa_2903.exe` = **2002-04-10**. These are embedded PE timestamps, not release-date proof.
+- Classification: the subtree is best treated as an **installed/deployed directory later repackaged into the mixed engineering bundle**, not a preserved January-2002 installer-media layout.
+- Consequence: it must **not** be used to infer the original 575/580 MB package filename, 8.25 MB updater filename, disc volume label or setup package structure.
+- Canonical note: `research/clients/STONEAGE-SA25-BRIDGE-INSTALL-RESIDUE-R1.md`.
+- Status: **installer-filename inference BOUNDED; resource-format bridge remains valid**.
+
 ## Current recovery order
 
 1. **Korean Inium 2000 public client:** recover the original installer filename/path/bytes through the Inium site, Hananet/GamePlus, CNET and period offline/software archives. It is now the strongest operational early bridge because operator-era free distribution and massive replication are directly attested.
