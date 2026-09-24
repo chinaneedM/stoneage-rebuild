@@ -1,0 +1,18 @@
+StoneAge YSA 2.5 historical mirror preservation probe — R1
+SCOPE|2009-exact-client-url|metadata-first|payload-only-if-captured
+SOURCE_THREAD|https://www.iopq.net/thread-16615099-1-1.html
+SOURCE_DATE|2009-12-17
+SOURCE_REPORTED_SIZE|about-420MB
+TARGET_URL|http://download1.92ysa.com/YSA2.5.8.rar
+QUERY|kind=wayback-cdx|query=http://download1.92ysa.com/YSA2.5.8.rar|ok=1|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|error=
+QUERY|kind=wayback-cdx|query=https://download1.92ysa.com/YSA2.5.8.rar|ok=1|status=200|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|error=
+QUERY|kind=wayback-cdx|query=http://download1.92ysa.com/YSA2.5.8|ok=0|status=|bytes=|sha256=|error=URLError: <urlopen error [Errno 111] Connection refused>
+QUERY|kind=wayback-cdx|query=http://download1.92ysa.com/|ok=0|status=|bytes=|sha256=|error=URLError: <urlopen error [Errno 111] Connection refused>
+QUERY|kind=wayback-availability|query=http://download1.92ysa.com/YSA2.5.8.rar|ok=1|status=200|bytes=76|sha256=e16fede93ec6dd4d6466a28ad7b5811c009d794d27b710f1dc05651d10849c45|error=
+QUERY|kind=internet-archive-search|query=YSA2.5.8.rar|ok=1|status=200|bytes=290|sha256=ffa9ea3d80a676fdc8ec4f64083d50202e17a9fea9bc12468fcad2dedc984a85|error=
+QUERY|kind=discmaster|query=YSA2.5.8.rar|ok=1|status=200|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|error=
+COUNT|wayback_unique_200_captures|0
+COUNT|ia_search_items|0
+COUNT|discmaster_rows|0
+RESOLUTION|NO_PUBLIC_PRESERVATION_HIT_ON_TESTED_INDEXES
+PAYLOAD_RECOVERY|not-attempted-no-capture
