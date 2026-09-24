@@ -1909,16 +1909,22 @@ Supplemental source ledgers:
 - Canonical source: `SRC-CN-2016-SMZDM-SA25-INSTALL-DISCS-01`.
 - Derived order report: `research/recovered/STONEAGE-SA25-SMZDM-DISC-ORDER-R1.txt`.
 
-## StoneAge 2.5 延年益壽包 surviving-disc control — 2026-09-25
+## StoneAge 2.5 延年益壽包 exact surviving-disc photo locked — 2026-09-25
 
-- A dedicated Bahamut collector article (`snA=81388`, **2020-09-01**) now provides a more specific surviving-physical-carrier control than the generic 2.5 package-family page: the author identifies the package as **延年益壽包**, labels one photographed object as a **2.5-era disc**, and labels the following object as a **2.5 manual**.
+- A dedicated Bahamut collector article (`snA=81388`, **2020-09-01**) identifies the package as **延年益壽包**, labels a photographed object as **`2.5時期的光碟`**, and labels the following object as **`2.5版本的說明書`**.
+- The first automated forum-page probe was found to be too permissive: its context window could associate an **延伸閱讀** thumbnail with the earlier disc label. That result is **superseded**. The corrected R2 probe restricts extraction to the HTML interval physically between the disc label and manual label, preferring the Bahamut creator page and using the forum page as a fallback.
+- Both corrected pages resolve the same one article-body image URL: `https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG`.
+- The exact public photograph body is now recovered and fingerprinted: **160,151 bytes**, **1128×774**, photo SHA-256 `385071cb52f3e9af540823ff8a1833cfba4dad04ee8ab2ee9beebfa67dadea6a`, dHash `f070e0606068a1c0`.
 - This aligns with contemporaneous 2.5 rollout evidence: 17173 names the early-February **春满钱坤包 / 延年益兽包** acquisition route and the 580 MB complete client upgrade, while a Sina Technology interview dated **2002-02-08** states that a limited **石器时代延年益寿包** would be issued on **2002-02-09**.
-- **EVIDENCE BOUNDARY:** the modern article proves a publicly identifiable surviving physical specimen and strengthens carrier classification; it does **not** provide ISO bytes, disc filesystem, installer filename, hash, volume label, matrix/mastering/IFPI identity, or proof of byte equality with the 575/580 MB complete-client distribution.
-- An exact indexed-web pass combining the package/article identifiers with **ISO / 光盘镜像 / 光碟 / 客户端 / 下载** exposed no verifiable byte-bearing artifact tied to this specimen. This is a bounded result for the tested queries, not a claim that no dump exists anywhere.
-- The three literal name forms **益壽 / 益寿 / 益兽** are now retained as separate search tokens rather than silently normalized.
-- Operational consequence: future public disc reads, preservation-corpus entries, installed-tree backups or listings matching this package should be prioritized for file-tree/hash recovery. Do not back-project field-map dates from package photographs.
+- Cross-source visual ranking now has a stronger candidate: the exact Yan-Nian disc photograph versus Ruten carrier `22632305238624` image 3 yields **112 RANSAC inliers / 0.1181 inlier ratio**. Against the independent SMZDM article-order 2.5 candidate it yields only **10 / 0.0111**. These are visual discovery metrics only; they are not proof of identical discs or bytes.
+- **EVIDENCE BOUNDARY:** the SHA-256 above hashes the **photograph**, not a CD/ISO/client payload. We still lack the disc filesystem, installer filename, ISO/client hash, volume label, matrix/mastering/IFPI identity and proof of equality with the 575/580 MB complete-client distribution.
+- An exact indexed-web pass combining the package/article identifiers with **ISO / 光盘镜像 / 光碟 / 客户端 / 下载** exposed no verifiable byte-bearing artifact tied to this specimen. This is bounded only for the tested surfaces.
+- The literal name forms **益壽 / 益寿 / 益兽** remain separate recovery tokens.
+- Operational consequence: the exact source-labelled photo is now a high-value visual identity key for any future public disc listing/read/dump. Near-duplicate or matching media should be prioritized for file-tree/hash recovery, but this **does not yet move the field-map byte-provenance anchor earlier than June 2003**.
 - Canonical source: `SRC-CN-2020-BAHAMUT-SA25-YANNIAN-PHYSICAL-01`.
-- Derived report: `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-PHYSICAL-R1.txt`.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-PHYSICAL-R1.txt`
+  - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-DISC-PHOTO-R1.txt`.
 
 ## Immediate next actions
 
