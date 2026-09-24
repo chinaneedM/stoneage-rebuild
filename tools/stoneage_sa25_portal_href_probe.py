@@ -27,7 +27,8 @@ TERMS = (
     "575兆", "580兆", "8.25兆", "石器时代2.5", "石器2.5",
 )
 PAYLOAD_EXTS = (".exe", ".zip", ".rar", ".cab", ".msi", ".001", ".002", ".iso")
-URL_HINTS = ("download", "down", "update", "upgrade", "patch", "setup", "client", "sa25", "2.5")
+URL_HINTS = ("download", "down", "update", "upgrade", "patch", "setup", "client", "sa25")
+NOISE_HINTS = ("/cgi-bin/comment/", "/comment/", "comment.cgi", "javascript:", "mailto:")
 MAX_REPLAYS_PER_SEED = 3
 
 
@@ -46,6 +47,50 @@ def fetch_bytes(url: str, timeout: int = 12) -> tuple[int, str, bytes]:
     )
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return int(getattr(r, "status", r.getcode())), r.geturl(), r.read()
+
+
+def decode_html(body: bytes) -> tuple[str, str]:
+    """Decode preserved Chinese portal HTML using its declared legacy charset."""
+    head = body[:16384].lower()
+    m = re.search(br"""charset\s*=\s*["']?\s*([a-z0-9._-]+)""", head)
+    declared = m.group(1).decode("ascii", "ignore") if m else ""
+    aliases = {
+        "gb2312": "gb18030", "gbk": "gb18030", "gb_2312-80": "gb18030",
+        "utf8": "utf-8", "utf-8": "utf-8", "big5": "big5", "big-5": "big5",
+    }
+    candidates = []
+    if declared:
+        candidates.append(aliases.get(declared, declared))
+    for enc in ("utf-8", "gb18030", "big5"):
+        if enc not in candidates:
+            candidates.append(enc)
+    best = None
+    for enc in candidates:
+        try:
+            text = body.decode(enc, "replace")
+        except LookupError:
+            continue
+        score = text.count("\ufffd")
+        if best is None or score < best[0]:
+            best = (score, enc, text)
+        if score == 0 and declared:
+            break
+    if best is None:
+        return body.decode("latin1", "replace"), "latin1"
+    return best[2], best[1]
+
+
+def is_candidate_url(absolute: str) -> bool:
+    low = urllib.parse.unquote_plus(absolute).lower()
+    if any(noise in low for noise in NOISE_HINTS):
+        return False
+    parsed = urllib.parse.urlsplit(low)
+    pathish = parsed.netloc + parsed.path
+    return (
+        "waei.com.cn" in parsed.netloc
+        or any(ext in parsed.path for ext in PAYLOAD_EXTS)
+        or any(hint in pathish for hint in URL_HINTS)
+    )
 
 
 def cdx_url(original: str) -> str:
@@ -79,14 +124,37 @@ def extract_hrefs(raw: str, base: str) -> list[tuple[str, str]]:
     for raw_href in re.findall(r"""(?is)href\s*=\s*["']([^"']+)["']""", raw):
         href = html.unescape(raw_href).strip()
         absolute = urllib.parse.urljoin(base, href)
-        low = urllib.parse.unquote_plus(absolute).lower()
-        if (
-            "waei.com.cn" in low
-            or any(ext in low for ext in PAYLOAD_EXTS)
-            or any(hint in low for hint in URL_HINTS)
-        ):
+        if is_candidate_url(absolute):
             out.append((href, absolute))
     return list(dict.fromkeys(out))
+
+
+def anchor_hrefs(raw: str, base: str) -> list[tuple[str, str, str]]:
+    """Return hrefs attached to or immediately surrounded by 2.5 distribution wording."""
+    out: list[tuple[str, str, str]] = []
+    anchor_re = re.compile(
+        r"""(?is)<a\b[^>]*href\s*=\s*["']([^"']+)["'][^>]*>(.*?)</a>"""
+    )
+    for m in anchor_re.finditer(raw):
+        href = html.unescape(m.group(1)).strip()
+        absolute = urllib.parse.urljoin(base, href)
+        if any(noise in urllib.parse.unquote_plus(absolute).lower() for noise in NOISE_HINTS):
+            continue
+        inner = html.unescape(re.sub(r"(?s)<[^>]+>", " ", m.group(2)))
+        around = raw[max(0, m.start() - 360): min(len(raw), m.end() + 520)]
+        context = html.unescape(re.sub(r"(?s)<[^>]+>", " ", around))
+        context = " ".join(context.split())
+        probe = inner + " " + context
+        if any(term.lower() in probe.lower() for term in TERMS):
+            out.append((href, absolute, context))
+    seen = set()
+    dedup = []
+    for row in out:
+        key = row[1]
+        if key not in seen:
+            seen.add(key)
+            dedup.append(row)
+    return dedup
 
 
 def text_contexts(raw: str) -> list[str]:
@@ -117,6 +185,7 @@ def main() -> None:
     print("SCOPE|Sina+17173|2002-2004-Wayback|HTML-href-recovery|no-client-payload")
     errors: list[tuple[str, str, str]] = []
     all_hrefs: dict[str, tuple[str, str, str, str]] = {}
+    anchor_targets: set[str] = set()
     replay_count = 0
 
     for label, original in SEEDS:
@@ -141,20 +210,25 @@ def main() -> None:
             try:
                 status, final, body = fetch_bytes(replay_url(ts, src))
                 replay_count += 1
-                raw = body.decode("utf-8", "replace")
+                raw, encoding = decode_html(body)
                 hrefs = extract_hrefs(raw, src)
+                direct = anchor_hrefs(raw, src)
                 contexts = text_contexts(raw)
                 anchors = anchor_contexts(raw)
                 print(
                     f"REPLAY|label={label}|timestamp={ts}|source={clean(src)}|"
                     f"status={status}|bytes={len(body)}|sha256={hashlib.sha256(body).hexdigest()}|"
-                    f"hrefs={len(hrefs)}|contexts={len(contexts)}|anchor_contexts={len(anchors)}|"
+                    f"encoding={encoding}|hrefs={len(hrefs)}|anchor_hrefs={len(direct)}|contexts={len(contexts)}|anchor_contexts={len(anchors)}|"
                     f"final={clean(final)}"
                 )
                 for ctx in contexts[:12]:
                     print(f"TEXT_CONTEXT|label={label}|timestamp={ts}|text={clean(ctx)}")
                 for frag in anchors[:8]:
                     print(f"ANCHOR_CONTEXT|label={label}|timestamp={ts}|html={clean(frag, 4000)}")
+                for href, absolute, context in direct:
+                    anchor_targets.add(absolute)
+                    all_hrefs[absolute] = (label, ts, src, href)
+                    print(f"ANCHOR_HREF|label={label}|timestamp={ts}|href={clean(href)}|absolute={clean(absolute)}|context={clean(context, 3000)}")
                 for href, absolute in hrefs:
                     all_hrefs[absolute] = (label, ts, src, href)
                     print(
@@ -171,12 +245,15 @@ def main() -> None:
     strong = []
     for absolute, meta in all_hrefs.items():
         low = urllib.parse.unquote_plus(absolute).lower()
+        parsed = urllib.parse.urlsplit(low)
         if (
-            "waei.com.cn" in low
-            or any(ext in low for ext in PAYLOAD_EXTS)
-            or any(hint in low for hint in URL_HINTS)
+            absolute in anchor_targets
+            or "waei.com.cn" in parsed.netloc
+            or any(ext in parsed.path for ext in PAYLOAD_EXTS)
+            or any(hint in (parsed.netloc + parsed.path) for hint in URL_HINTS)
         ):
-            strong.append((absolute, meta))
+            if not any(noise in low for noise in NOISE_HINTS):
+                strong.append((absolute, meta))
 
     for absolute, (label, ts, src, href) in sorted(strong):
         print(
