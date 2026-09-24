@@ -1355,3 +1355,42 @@ Every substantial source should record:
   - bridge filenames can locate related trees but cannot authenticate a carrier as original/clean even if found;
   - generic runtime/uninstaller filenames are not StoneAge evidence by themselves.
 - Consequence: the current DiscMaster filename-signature route is **BOUNDED**; reopen only if a new distinctive verified filename, hash, carrier identity or materially changed index becomes available.
+
+### SRC-CN-2021-BAHAMUT-SA25-DISC-COLLECTOR-01
+
+- Title: `石器時代華義國際石器周邊收藏光碟篇（二）`
+- Author/account: **寂寞如風 / stoneage2017**
+- Publication timestamp shown by live page: **2021-01-07 10:50:13**
+- Retrieval/research date: **2026-09-25**
+- URL: https://forum.gamer.com.tw/C.php?bsn=1571&snA=81429
+- Source type: modern collector article showing/describing surviving StoneAge physical discs; **not** a contemporaneous 2002 primary source and **not** a disc dump.
+- Live-page recovery:
+  - HTTP 200;
+  - exact article title and author recoverable;
+  - body explicitly discusses Mainland/Taiwan 2.0 discs, the Mainland `養羊得益包` disc, a Taiwan magazine disc, and then the StoneAge **2.5《精靈王傳說》** disc pair.
+- Literal 2.5 collector description:
+  - Mainland: `大陸版用戶端統一圖案的光碟`;
+  - Taiwan: `臺版盤`, described as having a laser/reflective appearance.
+- Exact 2.5 comparison-image URL by article body order:
+  - `https://cos.stoneage.cn/uploads/article/minisnsimg/20201222/5fe128b2e6b0a.jpg`.
+- Image-recovery status:
+  - the `cos.stoneage.cn` image body is currently unreachable from the CI environment;
+  - the corresponding older 2020-12 collector-image mirror family was tested with exact Wayback CDX and produced no recoverable 2.5 photograph body;
+  - therefore no image-body hash or pixel-level disc match is claimed.
+- Confidence:
+  - **A for the literal current Bahamut page title, author, timestamp, text and embedded image URL/order**;
+  - **B for the collector's physical-carrier identification as modern collector evidence**;
+  - **OPEN for original disc mastering, matrix/IFPI, package-to-disc provenance and bytes**.
+- Supports:
+  - a modern visual/textual control separating the Mainland 2.5 unified client-disc artwork from the Taiwan 2.5 disc artwork;
+  - keeping the Mainland 2.0 exception and `養羊得益包` special disc distinct from the normal Mainland 2.5 disc family;
+  - precise future comparison of newly exposed physical-media photographs against a source-labelled collector reference.
+- Does not support:
+  - disc filesystem contents, ISO/hash, installer build, clean-client status or byte identity;
+  - that every surviving disc using similar artwork belongs to the same pressing/master;
+  - attribution of a photographed loose disc to a specific retail/gift package without an independent package-to-disc chain.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-BAHAMUT-DISC-PART2-R1.txt`
+  - `research/recovered/STONEAGE-SA25-BAHAMUT-DISC-IMAGES-R1.txt`
+  - `research/recovered/STONEAGE-SA25-COLLECTOR-ARCHIVE-R1.txt`
+
