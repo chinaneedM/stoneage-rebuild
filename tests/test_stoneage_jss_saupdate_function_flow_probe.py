@@ -7,6 +7,7 @@ from tools.stoneage_jss_saupdate_function_flow_probe import (
     ascii_strings,
     mapped_import,
     recover_xref_instruction,
+    return_bounded_summary,
 )
 
 
@@ -46,6 +47,9 @@ class JssSaUpdateFunctionFlowProbeTests(unittest.TestCase):
         rvas=[rva for _,rva in PARSER_SITE_RVAS]
         self.assertEqual(len(rvas),len(set(rvas)))
         self.assertTrue(all(0x3700 <= rva < 0x3d00 for rva in rvas))
+
+    def test_return_bounded_summary_is_exported(self):
+        self.assertTrue(callable(return_bounded_summary))
 
     def test_known_mfc_mapping(self):
         self.assertEqual(

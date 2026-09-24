@@ -197,6 +197,43 @@ def target_xrefs(data,layout,image_base):
     return tuple(sorted(set(rows),key=lambda x:(x[2],x[0])))
 
 
+def return_bounded_summary(instructions,idx,image_base,imports,thunks,string_map):
+    """Bound a function by adjacent RETs when frame-prologue recovery is unsuitable."""
+    start=idx
+    for j in range(idx-1,-1,-1):
+        if instructions[idx].address-instructions[j].address>0x1000:
+            break
+        if instructions[j].mnemonic.startswith("ret"):
+            start=j+1
+            break
+    end=idx
+    for j in range(idx+1,len(instructions)):
+        if instructions[j].address-instructions[idx].address>0x1800:
+            break
+        end=j
+        if instructions[j].mnemonic.startswith("ret"):
+            break
+    strings=[]; calls=[]; seen_strings=set()
+    for ins in instructions[start:end+1]:
+        for va in referenced_absolute_values(ins):
+            text=string_map.get(va)
+            if text is not None and (va,text) not in seen_strings:
+                seen_strings.add((va,text))
+                strings.append((ins.address-image_base,va-image_base,text))
+        call=resolve_call(ins,image_base,imports,thunks)
+        if call is not None:
+            calls.append((ins.address-image_base,*call))
+    return {
+        "start_idx":start,"end_idx":end,
+        "start_rva":instructions[start].address-image_base,
+        "end_rva":instructions[end].address-image_base,
+        "boundary":"prev-next-ret","instructions":end-start+1,
+        "strings":tuple(strings[:MAX_STRINGS_PER_FUNCTION]),
+        "calls":tuple(calls[:MAX_CALLS_PER_FUNCTION]),
+        "string_total":len(strings),"call_total":len(calls),
+    }
+
+
 def function_summary(instructions,idx,image_base,imports,thunks,string_map):
     start,end,boundary=likely_function_window(instructions,idx)
     strings=[]
@@ -312,6 +349,26 @@ def main():
             print(
                 f"SEEDED_CALL|role={role}|order={order}|call_rva=0x{call_rva:x}|"
                 f"kind={kind}|dll={clean(dll)}|target={clean(name)}"
+            )
+
+    # Bound the function containing the observed manifest-wrapper call by adjacent RETs.
+    dispatch_idx=by_addr.get(image_base+0x157B)
+    if dispatch_idx is not None:
+        f=return_bounded_summary(instructions,dispatch_idx,image_base,imports,thunks,strings)
+        print(
+            f"DISPATCH_FUNCTION|site_rva=0x157b|start_rva=0x{f['start_rva']:x}|"
+            f"end_rva=0x{f['end_rva']:x}|boundary={f['boundary']}|"
+            f"instructions={f['instructions']}|strings={f['string_total']}|calls={f['call_total']}"
+        )
+        for order,(ins_rva,string_rva,text_value) in enumerate(f["strings"],1):
+            print(
+                f"DISPATCH_STRING|order={order}|ins_rva=0x{ins_rva:x}|"
+                f"string_rva=0x{string_rva:x}|text={clean(text_value)}"
+            )
+        for order,(call_rva,kind,dll,name) in enumerate(f["calls"],1):
+            print(
+                f"DISPATCH_CALL|order={order}|call_rva=0x{call_rva:x}|kind={kind}|"
+                f"dll={clean(dll)}|target={clean(name)}"
             )
 
     # Recover containing functions for parser-like stdio call sites.
