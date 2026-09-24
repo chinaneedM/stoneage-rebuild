@@ -19,6 +19,7 @@ import subprocess
 import shutil
 import tempfile
 import urllib.request
+from collections import Counter
 
 UA="stoneage-rebuild-archaeology/1.0"
 MAX_PACKAGE=64*1024*1024
@@ -101,6 +102,45 @@ def archive_entries(path):
             current[key.strip()]=value.strip()
     return code,tuple(rows),err
 
+
+
+def map_entry_index(entries):
+    rows={}
+    duplicates=[]
+    for row in entries:
+        path=str(row.get("Path",""))
+        m=MAP_RE.search(path)
+        if not m:
+            continue
+        map_id=int(m.group(1))
+        rec={
+            "id":map_id,
+            "path":path,
+            "size":str(row.get("Size","")),
+            "packed":str(row.get("Packed Size","")),
+            "crc":str(row.get("CRC","")),
+            "method":str(row.get("Method","")),
+            "modified":str(row.get("Modified","")),
+            "created":str(row.get("Created","")),
+        }
+        if map_id in rows:
+            duplicates.append((map_id,rows[map_id],rec))
+        else:
+            rows[map_id]=rec
+    return rows,tuple(duplicates)
+
+def map_manifest_digest(rows):
+    material="\n".join(
+        f"{mid}:{rows[mid]['size']}:{rows[mid]['crc']}:{rows[mid]['modified']}"
+        for mid in sorted(rows)
+    )
+    return hashlib.sha256(material.encode("utf-8")).hexdigest()
+
+def mtime_day(value):
+    text=str(value or "").strip()
+    if len(text)>=10 and text[4]=="-" and text[7]=="-":
+        return text[:10]
+    return ""
 
 def parse_map_dat(data):
     raw=bytes(data)
@@ -208,19 +248,25 @@ def main():
 
             list_code,entries,list_err=archive_entries(archive)
             file_entries=[row for row in entries if row.get("Folder","-")!="+"]
-            map_entry_count=sum(1 for row in file_entries if MAP_RE.search(str(row.get("Path",""))))
+            archive_maps,archive_dups=map_entry_index(file_entries)
+            map_entry_count=len(archive_maps)
+            manifest_digest=map_manifest_digest(archive_maps)
             print(
                 f"ARCHIVE|timestamp={timestamp}|7z_code={list_code}|entries={len(file_entries)}|"
-                f"map_entries={map_entry_count}|error={clean(list_err)}"
+                f"map_entries={map_entry_count}|map_duplicate_ids={len(archive_dups)}|"
+                f"map_manifest_sha256={manifest_digest}|error={clean(list_err)}"
             )
-            for row in file_entries:
-                p=str(row.get("Path",""))
-                if MAP_RE.search(p):
-                    print(
-                        f"ARCHIVE_MAP_ENTRY|timestamp={timestamp}|path={clean(p)}|"
-                        f"size={clean(row.get('Size'))}|packed={clean(row.get('Packed Size'))}|"
-                        f"crc={clean(row.get('CRC'))}|method={clean(row.get('Method'))}"
-                    )
+            mtime_counts=Counter(mtime_day(row.get("modified")) for row in archive_maps.values())
+            for day,count in sorted(mtime_counts.items(),key=lambda kv:(kv[0]=="",kv[0])):
+                print(f"ARCHIVE_MTIME|timestamp={timestamp}|day={clean(day)}|map_entries={count}")
+            for row in archive_maps.values():
+                p=str(row.get("path",""))
+                print(
+                    f"ARCHIVE_MAP_ENTRY|timestamp={timestamp}|id={row['id']}|path={clean(p)}|"
+                    f"size={clean(row.get('size'))}|packed={clean(row.get('packed'))}|"
+                    f"crc={clean(row.get('crc'))}|method={clean(row.get('method'))}|"
+                    f"modified={clean(row.get('modified'))}|created={clean(row.get('created'))}"
+                )
 
             extract_dir=work/f"extract-{timestamp}"
             extract_dir.mkdir()
@@ -266,11 +312,38 @@ def main():
             capture_summaries.append({
                 "timestamp":timestamp,"sha256":sha,"bytes":len(data),
                 "maps":len(maps),"parsed":parsed,"mapset":mapset_digest,
+                "archive_maps":archive_maps,"archive_manifest":manifest_digest,
             })
 
     if len(capture_summaries)>=2:
         first=capture_summaries[0]
         for other in capture_summaries[1:]:
+            a=first["archive_maps"]; b=other["archive_maps"]
+            common=sorted(set(a)&set(b))
+            same=[
+                mid for mid in common
+                if a[mid]["size"]==b[mid]["size"] and a[mid]["crc"]==b[mid]["crc"]
+            ]
+            different=[mid for mid in common if mid not in set(same)]
+            only_a=sorted(set(a)-set(b))
+            only_b=sorted(set(b)-set(a))
+            print(
+                f"ARCHIVE_COMPARE|a={first['timestamp']}|b={other['timestamp']}|"
+                f"a_maps={len(a)}|b_maps={len(b)}|common={len(common)}|"
+                f"same_size_crc={len(same)}|different_size_crc={len(different)}|"
+                f"only_a={len(only_a)}|only_b={len(only_b)}|"
+                f"manifest_same={int(first['archive_manifest']==other['archive_manifest'])}"
+            )
+            if only_a:
+                print("ARCHIVE_ONLY_A|ids="+",".join(map(str,only_a)))
+            if only_b:
+                print("ARCHIVE_ONLY_B|ids="+",".join(map(str,only_b)))
+            for mid in different[:100]:
+                print(
+                    f"ARCHIVE_DIFF|id={mid}|a_size={clean(a[mid]['size'])}|b_size={clean(b[mid]['size'])}|"
+                    f"a_crc={clean(a[mid]['crc'])}|b_crc={clean(b[mid]['crc'])}|"
+                    f"a_modified={clean(a[mid]['modified'])}|b_modified={clean(b[mid]['modified'])}"
+                )
             both_usable=first["parsed"]>0 and other["parsed"]>0
             print(
                 f"COMPARE|a={first['timestamp']}|b={other['timestamp']}|"
