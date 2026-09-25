@@ -80,7 +80,7 @@ def targetish_text(s):
     ))
 
 def main():
-    print("StoneAge 2.0 CHIP 新电脑 November-2001 carrier probe — R1")
+    print("StoneAge 2.0 CHIP 新电脑 November-2001 carrier probe — R2")
     print("SCOPE|Internet Archive metadata + DiscMaster filename index|carrier-level|no-payload")
     print("TARGET|carrier=CHIP 新电脑 11月号|period=2001-11|client=StoneAge 2.0 complete upgrade")
     errors=[];ia_seen={};dm_seen={}
@@ -92,7 +92,7 @@ def main():
             for d in rr:
                 ident=str(d.get("identifier") or "")
                 ia_seen[ident]=d
-                relevant=int(targetish_text(" ".join(str(d.get(k) or "") for k in ("title","description","identifier"))))
+                relevant=int(ia_candidate(d))
                 print(
                   f"IA_HIT|label={clean(label)}|relevant={relevant}|identifier={clean(ident)}|"
                   f"title={clean(d.get('title'))}|date={clean(d.get('date'))}|year={clean(d.get('year'))}|"
@@ -111,7 +111,7 @@ def main():
                 path=path_of(r)
                 key=(str(r.get("itemid") or ""),path,str(r.get("b3sum") or ""))
                 dm_seen[key]=r
-                relevant=int(targetish_text((r.get("itemName") or "")+" "+path))
+                relevant=int(dm_candidate(r))
                 print(
                   f"DM_HIT|q={clean(q)}|relevant={relevant}|itemid={clean(r.get('itemid'))}|"
                   f"itemName={clean(r.get('itemName'))}|path={clean(path)}|size={clean(r.get('size'))}|"
