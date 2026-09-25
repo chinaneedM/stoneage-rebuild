@@ -1,0 +1,23 @@
+StoneAge Beijing-Waei Q4-2001 payload-domain census — R1
+SCOPE|waei.com.cn domain family|2001-10..12|EXE+ZIP+CAB+RAR|CDX-metadata-only|no-payload
+TOPOLOGY|2001-08=/zhuanqu/stoneage/|2001-12-04=/ZHUANQU/stoneage2/
+CDX|window=oct|ext=exe|from=20011001|to=20011031|status=200|rows=5|bytes=913|sha256=0e231ffa77b76243eef078fb44ff70d507819f368006f5f5bc7bca1acdc4ecce|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011001&to=20011031&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dexe%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=oct|ext=zip|from=20011001|to=20011031|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011001&to=20011031&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dzip%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=oct|ext=cab|from=20011001|to=20011031|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011001&to=20011031&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dcab%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=nov|ext=zip|from=20011101|to=20011130|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011101&to=20011130&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dzip%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=dec|ext=zip|from=20011201|to=20011231|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011201&to=20011231&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dzip%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=dec|ext=cab|from=20011201|to=20011231|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011201&to=20011231&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dcab%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=dec|ext=rar|from=20011201|to=20011231|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011201&to=20011231&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Drar%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+COUNT|queries|12
+COUNT|completed_queries|7
+COUNT|unique_payload_urls|5
+COUNT|stoneage_candidates|0
+COUNT|exact_sina_filename_urls|0
+ERROR|scope=oct:rar|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=nov:exe|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=nov:cab|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=nov:rar|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=dec:exe|kind=URLError|message=<urlopen error timed out>
+COUNT|errors|5
+RESOLUTION|WAEI_Q4_SURFACE_INCOMPLETE|do not close official download topology
+EVIDENCE_BOUNDARY|CDX rows prove archived URL metadata only; filenames/routes do not prove payload identity or operator-distributed client bytes.
