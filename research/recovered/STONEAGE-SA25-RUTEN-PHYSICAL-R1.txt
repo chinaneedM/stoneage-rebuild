@@ -1,11 +1,13 @@
 StoneAge 2.5 Ruten physical-media public metadata probe — R1
 SCOPE|public-Ruten-JSON+image-HEAD-metadata|no-login|no-purchase|no-image-body
-TARGETS|22632305238624,21926883918096,22242541948520
-PROD_QUERY|status=200|bytes=1939|sha256=bdcf4e7f1399f4c0819eed4856e9098719742b017e1aff43f7167f41f443ee45|final=https://rtapi.ruten.com.tw/api/prod/v2/index.php/prod?id=22632305238624%2C21926883918096%2C22242541948520
+TARGETS|22632305238624,21926883918096,22242541948520,22615474551866,22445165101247
+PROD_QUERY|status=200|bytes=3261|sha256=d68dbcb1b89ecbeb698fc11fadb8ab256cc2b52868624df51237cebc939aeaa7|final=https://rtapi.ruten.com.tw/api/prod/v2/index.php/prod?id=22632305238624%2C21926883918096%2C22242541948520%2C22615474551866%2C22445165101247
 PROD_ROW|id=22632305238624|name=石器時代2.5精靈王傳說新手報到包，原包裝盒完整。遊戲光碟保|image=/c1/0b8/5a7/ki7yey/6/60/22632305238624_180_m.jpg|stock=2|sold=|seller=19017651
 PROD_ROW|id=21926883918096|name=遊戲光碟–石器時代2.5版 精靈王傳說|image=https://gcs.rimg.com.tw/g2/0/41/10/21926883918096_419.JPG|stock=4|sold=3|seller=2570349
 PROD_ROW|id=22242541948520|name=遊戲光碟–石器時代2.5版 精靈王傳說 PC GAME 電腦遊戲|image=https://gcs.rimg.com.tw/g2/3/0e/68/22242541948520_496.JPG|stock=4|sold=1|seller=6094377
-DETAIL_QUERY|id=22632305238624|status=200|bytes=3531|sha256=89e6b0cdc0ff3f5178a48812499cba0e8731e0e60048811ab7d515dd208a47a9|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22632305238624&level=simple
+PROD_ROW|id=22615474551866|name=【紅甘蔗的家】精靈王傳說 石器時代2.5版 遊戲片+外盒|image=/g2/f/08/3a/22615474551866_647_m.jpg|stock=1|sold=1|seller=1650814
+PROD_ROW|id=22445165101247|name=遊戲光碟 石器時代 2.5版 精靈王傳說 全新完整版 PC GAME 電腦遊戲 D80|image=/g1/d/30/bf/22445165101247_815_m.jpg|stock=2|sold=|seller=6094377
+DETAIL_QUERY|id=22632305238624|status=200|bytes=3531|sha256=c89b9ad3e0ff1b5c0091caf7c69c9c343bf24d94212cc625069e2792d1774a14|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22632305238624&level=simple
 DETAIL_COUNT|id=22632305238624|rows=1
 DETAIL_ROW|id=22632305238624|name=石器時代2.5精靈王傳說新手報到包，原包裝盒完整。遊戲光碟保|user=ki7yey|num=2|goods_no=|post_time=1785842525|image_count=18
 IMAGE_URL|id=22632305238624|index=0|url=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_180.jpg
@@ -26,16 +28,30 @@ IMAGE_URL|id=22632305238624|index=14|url=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey
 IMAGE_URL|id=22632305238624|index=15|url=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_243_m.jpg
 IMAGE_URL|id=22632305238624|index=16|url=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_453_m.jpg
 IMAGE_URL|id=22632305238624|index=17|url=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_507_m.jpg
-DETAIL_QUERY|id=21926883918096|status=200|bytes=1866|sha256=3ec71f3e7d962a9218b2939d68970b5a369c8148c0f9b2b6168b580318e6df09|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=21926883918096&level=simple
+DETAIL_QUERY|id=21926883918096|status=200|bytes=1867|sha256=7b82c5f82d7dc89e43c302dd120a697b29060f12b4832af73e55533d6e521de4|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=21926883918096&level=simple
 DETAIL_COUNT|id=21926883918096|rows=1
 DETAIL_ROW|id=21926883918096|name=遊戲光碟–石器時代2.5版 精靈王傳說|user=lein0711|num=1|goods_no=|post_time=1561718548|image_count=2
 IMAGE_URL|id=21926883918096|index=0|url=https://gcs.rimg.com.tw/g2/0/41/10/21926883918096_419.JPG
 IMAGE_URL|id=21926883918096|index=1|url=https://gcs.rimg.com.tw/g2/0/41/10/21926883918096_419_m.JPG
-DETAIL_QUERY|id=22242541948520|status=200|bytes=2124|sha256=a9204e78b16468a02b293b04faf507f586e465f0421b4198d52bd9220bdbeec5|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22242541948520&level=simple
+DETAIL_QUERY|id=22242541948520|status=200|bytes=2125|sha256=4b5bed5d92b61f373be08a35be95179cd9d81e451414e849bef34c55bc73d4cc|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22242541948520&level=simple
 DETAIL_COUNT|id=22242541948520|rows=1
 DETAIL_ROW|id=22242541948520|name=遊戲光碟–石器時代2.5版 精靈王傳說 PC GAME 電腦遊戲|user=alixson7|num=3|goods_no=|post_time=1666119492|image_count=2
 IMAGE_URL|id=22242541948520|index=0|url=https://gcs.rimg.com.tw/g2/3/0e/68/22242541948520_496.JPG
 IMAGE_URL|id=22242541948520|index=1|url=https://gcs.rimg.com.tw/g2/3/0e/68/22242541948520_496_m.JPG
+DETAIL_QUERY|id=22615474551866|status=200|bytes=2223|sha256=5e7d1f22a3f90d716870be1e9c7bb32f39b52939d779b5d07114a62d77bca230|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22615474551866&level=simple
+DETAIL_COUNT|id=22615474551866|rows=1
+DETAIL_ROW|id=22615474551866|name=【紅甘蔗的家】精靈王傳說 石器時代2.5版 遊戲片+外盒|user=jmsgmkimo|num=|goods_no=|post_time=1775909060|image_count=6
+IMAGE_URL|id=22615474551866|index=0|url=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_647.jpg
+IMAGE_URL|id=22615474551866|index=1|url=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_438.jpg
+IMAGE_URL|id=22615474551866|index=2|url=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_740.jpg
+IMAGE_URL|id=22615474551866|index=3|url=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_647_m.jpg
+IMAGE_URL|id=22615474551866|index=4|url=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_438_m.jpg
+IMAGE_URL|id=22615474551866|index=5|url=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_740_m.jpg
+DETAIL_QUERY|id=22445165101247|status=200|bytes=2194|sha256=56286d8301f4cbda887ffd01fa726e53fe46ab6685f66d2c121ffa4c32356aad|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22445165101247&level=simple
+DETAIL_COUNT|id=22445165101247|rows=1
+DETAIL_ROW|id=22445165101247|name=遊戲光碟 石器時代 2.5版 精靈王傳說 全新完整版 PC GAME 電腦遊戲 D80|user=alixson7|num=2|goods_no=|post_time=1731002663|image_count=2
+IMAGE_URL|id=22445165101247|index=0|url=https://gcs.rimg.com.tw/g1/d/30/bf/22445165101247_815.jpg
+IMAGE_URL|id=22445165101247|index=1|url=https://gcs.rimg.com.tw/g1/d/30/bf/22445165101247_815_m.jpg
 IMAGE_HEAD|id=22632305238624|index=0|status=200|content_type=image/jpeg|content_length=96332|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_180.jpg
 IMAGE_HEAD|id=22632305238624|index=1|status=200|content_type=image/jpeg|content_length=84708|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_718.jpg
 IMAGE_HEAD|id=22632305238624|index=2|status=200|content_type=image/jpeg|content_length=71474|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_886.jpg
@@ -45,21 +61,29 @@ IMAGE_HEAD|id=22632305238624|index=5|status=200|content_type=image/jpeg|content_
 IMAGE_HEAD|id=22632305238624|index=6|status=200|content_type=image/jpeg|content_length=95644|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_243.jpg
 IMAGE_HEAD|id=22632305238624|index=7|status=200|content_type=image/jpeg|content_length=81259|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_453.jpg
 IMAGE_HEAD|id=22632305238624|index=8|status=200|content_type=image/jpeg|content_length=75089|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_507.jpg
-IMAGE_HEAD|id=22632305238624|index=9|status=200|content_type=image/jpeg|content_length=13027|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_180_m.jpg
-IMAGE_HEAD|id=22632305238624|index=10|status=200|content_type=image/jpeg|content_length=10914|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_718_m.jpg
-IMAGE_HEAD|id=22632305238624|index=11|status=200|content_type=image/jpeg|content_length=10219|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_886_m.jpg
-IMAGE_HEAD|id=22632305238624|index=12|status=200|content_type=image/jpeg|content_length=13362|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_322_m.jpg
-IMAGE_HEAD|id=22632305238624|index=13|status=200|content_type=image/jpeg|content_length=11870|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_881_m.jpg
-IMAGE_HEAD|id=22632305238624|index=14|status=200|content_type=image/jpeg|content_length=11591|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_691_m.jpg
-IMAGE_HEAD|id=22632305238624|index=15|status=200|content_type=image/jpeg|content_length=11190|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_243_m.jpg
-IMAGE_HEAD|id=22632305238624|index=16|status=200|content_type=image/jpeg|content_length=10862|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_453_m.jpg
-IMAGE_HEAD|id=22632305238624|index=17|status=200|content_type=image/jpeg|content_length=10013|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_507_m.jpg
-IMAGE_HEAD|id=21926883918096|index=0|status=200|content_type=image/jpeg|content_length=73069|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/0/41/10/21926883918096_419.JPG
-IMAGE_HEAD|id=21926883918096|index=1|status=200|content_type=image/jpeg|content_length=11335|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/0/41/10/21926883918096_419_m.JPG
-IMAGE_HEAD|id=22242541948520|index=0|status=200|content_type=image/jpeg|content_length=68987|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/3/0e/68/22242541948520_496.JPG
-IMAGE_HEAD|id=22242541948520|index=1|status=200|content_type=image/jpeg|content_length=10840|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/3/0e/68/22242541948520_496_m.JPG
-COUNT|targets|3
-COUNT|image_urls|22
+IMAGE_HEAD|id=22632305238624|index=9|status=200|content_type=image/jpeg|content_length=12686|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_180_m.jpg
+IMAGE_HEAD|id=22632305238624|index=10|status=200|content_type=image/jpeg|content_length=10633|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_718_m.jpg
+IMAGE_HEAD|id=22632305238624|index=11|status=200|content_type=image/jpeg|content_length=9996|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_886_m.jpg
+IMAGE_HEAD|id=22632305238624|index=12|status=200|content_type=image/jpeg|content_length=12931|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_322_m.jpg
+IMAGE_HEAD|id=22632305238624|index=13|status=200|content_type=image/jpeg|content_length=11561|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_881_m.jpg
+IMAGE_HEAD|id=22632305238624|index=14|status=200|content_type=image/jpeg|content_length=11290|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_691_m.jpg
+IMAGE_HEAD|id=22632305238624|index=15|status=200|content_type=image/jpeg|content_length=10909|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_243_m.jpg
+IMAGE_HEAD|id=22632305238624|index=16|status=200|content_type=image/jpeg|content_length=10625|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_453_m.jpg
+IMAGE_HEAD|id=22632305238624|index=17|status=200|content_type=image/jpeg|content_length=9718|etag=|last_modified=|final=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_507_m.jpg
+IMAGE_HEAD|id=21926883918096|index=0|status=200|content_type=image/jpeg|content_length=70441|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/0/41/10/21926883918096_419.JPG
+IMAGE_HEAD|id=21926883918096|index=1|status=200|content_type=image/jpeg|content_length=10969|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/0/41/10/21926883918096_419_m.JPG
+IMAGE_HEAD|id=22242541948520|index=0|status=200|content_type=image/jpeg|content_length=66295|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/3/0e/68/22242541948520_496.JPG
+IMAGE_HEAD|id=22242541948520|index=1|status=200|content_type=image/jpeg|content_length=10507|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/3/0e/68/22242541948520_496_m.JPG
+IMAGE_HEAD|id=22615474551866|index=0|status=200|content_type=image/jpeg|content_length=95954|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_647.jpg
+IMAGE_HEAD|id=22615474551866|index=1|status=200|content_type=image/jpeg|content_length=54431|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_438.jpg
+IMAGE_HEAD|id=22615474551866|index=2|status=200|content_type=image/jpeg|content_length=71815|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_740.jpg
+IMAGE_HEAD|id=22615474551866|index=3|status=200|content_type=image/jpeg|content_length=9639|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_647_m.jpg
+IMAGE_HEAD|id=22615474551866|index=4|status=200|content_type=image/jpeg|content_length=9953|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_438_m.jpg
+IMAGE_HEAD|id=22615474551866|index=5|status=200|content_type=image/jpeg|content_length=8734|etag=|last_modified=|final=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_740_m.jpg
+IMAGE_HEAD|id=22445165101247|index=0|status=200|content_type=image/jpeg|content_length=70351|etag=|last_modified=|final=https://gcs.rimg.com.tw/g1/d/30/bf/22445165101247_815.jpg
+IMAGE_HEAD|id=22445165101247|index=1|status=200|content_type=image/jpeg|content_length=12317|etag=|last_modified=|final=https://gcs.rimg.com.tw/g1/d/30/bf/22445165101247_815_m.jpg
+COUNT|targets|5
+COUNT|image_urls|30
 COUNT|errors|0
 RESOLUTION|PUBLIC_IMAGE_SET_RESOLVED|inspect image faces for exact carrier identifiers
 EVIDENCE_BOUNDARY|seller listing metadata and photographs are survival/recovery leads only; they do not establish disc byte provenance or clean-client identity.
