@@ -1,0 +1,92 @@
+name: Diff Jun10 map.exe DAT layers
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_mapexe_sa25_layer_compare.py
+      - tests/test_stoneage_mapexe_sa25_layer_compare.py
+      - .github/workflows/diff-stoneage-mapexe-sa25-layers.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-mapexe-sa25-layer-diff
+  cancel-in-progress: true
+
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate layer comparer
+        run: python3 -m unittest tests.test_stoneage_mapexe_sa25_layer_compare -v
+      - name: Install extractors
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar p7zip-full
+      - name: Recover historical Jun10 map package
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_mapexe_full_probe --recover /tmp/map.exe >/tmp/map-recover.txt
+          mkdir -p /tmp/mapx
+          7z x -y -o/tmp/mapx /tmp/map.exe >/dev/null
+      - name: Recover hash-verified mixed 2.5 bundle
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25
+          python3 - <<'PY'
+          import hashlib,html,json,re,http.cookiejar,urllib.parse,urllib.request
+          from pathlib import Path
+          ua='Mozilla/5.0'
+          hashes={'ev7l29fw77891go':'7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5','ytaa168o5jih0lx':'567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb'}
+          op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+          def get(k,s):
+              data=urllib.parse.urlencode({'quick_key':k,'response_format':'json'}).encode()
+              req=urllib.request.Request('https://www.mediafire.com/api/1.5/file/get_info.php',data=data,headers={'User-Agent':ua})
+              with op.open(req,timeout=60) as r: info=json.load(r)['response']['file_info']
+              if str(info.get('hash','')).lower()!=hashes[k]: raise SystemExit('metadata hash changed')
+              with op.open(urllib.request.Request(info['links']['normal_download'],headers={'User-Agent':ua}),timeout=60) as r:
+                  page=r.read().decode('utf-8','replace'); ref=r.geturl()
+              m=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S) or re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+              if not m: raise SystemExit('no direct link')
+              p=Path('/tmp/sa25')/('part.'+s); h=hashlib.sha256()
+              with op.open(urllib.request.Request(html.unescape(m.group(1)),headers={'User-Agent':ua,'Referer':ref}),timeout=300) as r,p.open('wb') as o:
+                  while True:
+                      b=r.read(1048576)
+                      if not b: break
+                      o.write(b); h.update(b)
+              if h.hexdigest()!=hashes[k]: raise SystemExit('hash mismatch')
+          get('ev7l29fw77891go','001'); get('ytaa168o5jih0lx','002')
+          PY
+          cat /tmp/sa25/part.001 /tmp/sa25/part.002 >/tmp/sa25/bundle.rar
+          test "$(sha256sum /tmp/sa25/bundle.rar|awk '{print $1}')" = "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+          mkdir -p /tmp/sa25/out; ulimit -c 0
+          unar -f -o /tmp/sa25/out /tmp/sa25/bundle.rar >/dev/null 2>&1
+      - name: Compare differing DAT layers
+        run: |
+          set -euo pipefail
+          H="$(find /tmp/mapx -type d -name map -print -quit)"
+          M="$(find /tmp/sa25/out -type d -path '*/SA2.5主程式/stoneage2.5/map' -print -quit)"
+          test -n "$H" && test -n "$M"
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_mapexe_sa25_layer_compare             --historical-map "$H" --mixed-map "$M"             > research/recovered/STONEAGE-HISTORICAL-MAPEXE-SA25-LAYER-DIFF-R1.txt
+          rm -rf /tmp/mapx /tmp/map.exe /tmp/sa25 /tmp/map-recover.txt
+      - name: Commit derived layer comparison only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-HISTORICAL-MAPEXE-SA25-LAYER-DIFF-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: diff Jun10 map.exe DAT layers'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
