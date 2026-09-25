@@ -1,0 +1,14 @@
+StoneAge 2001 DiscMaster estoneage diagnostic — R1
+SCOPE|DiscMaster non-strict estoneage rows + bounded metadata context|no-payload
+TARGET|filename=Estoneage2.0map_1127.exe
+QUERY|q=estoneage|status=200|rows=3|bytes=9901|sha256=f5192b3508841e4835858ae1abbfd6dc1bcba1224e30e137cd06fbd6e795db7e
+ROW|q=estoneage|strict=0|itemid=38574|itemName=Complete RPG Maker XP - 41 Games (CD-ROM)|path=tg esp 48 rpg maker.iso/Resources/Music.exe/Music/console/nintendo/nes/Chapter2-TheStoneAge.mid|size=9842|ts=2006-01-11|b3sum=fd992b7ec446036078b9261012cec93dc5039426045da5ad1f0273804dfefba1
+ROW|q=estoneage|strict=0|itemid=19299|itemName=PlayStation 2 Monthly Artwork 2006 April (CD-ROM)|path=PlayStation 2 Monthly Artwork Disc - April 2006 (Europe).iso/PS2/SingStar Rocks!/Screenshots/_European/Screenshots_International.zip/INT_QueensOfTheStoneAge.jpg|size=309688|ts=2006-02-06|b3sum=33348b8947808e7c7b9ff47f89300019dc86040cd3d0dcab72bcc7f4e427233f
+ROW|q=estoneage|strict=0|itemid=19328|itemName=PlayStation 2 Monthly Artwork 2006 March (CD-ROM)|path=PlayStation 2 Monthly Artwork Disc 2 - March 2006 (Europe).iso/March MAD 06/PS2/SingStar Rocks!/Screenshots/_European/Screenshots_International.zip/INT_QueensOfTheStoneAge.jpg|size=309688|ts=2006-02-06|b3sum=33348b8947808e7c7b9ff47f89300019dc86040cd3d0dcab72bcc7f4e427233f
+QUERY|q=Estoneage2.0map|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+QUERY|q=Estoneage2.0map_1127|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+COUNT|unique_rows|3
+COUNT|strict_rows|0
+COUNT|errors|0
+RESOLUTION|NONSTRICT_ROWS_ONLY|classify rows as possible naming/directory controls; do not promote to target
+EVIDENCE_BOUNDARY|DiscMaster index rows are discovery metadata; similar names do not establish StoneAge target identity.
