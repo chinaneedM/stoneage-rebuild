@@ -1,14 +1,26 @@
 StoneAge Sina download CGI topology census — R1
 SCOPE|Wayback download.pl prefix census + bounded small-response replay|metadata/html-only|no-payload
 TARGET|aid=23223|filename=samap_1220.zip
-COUNT|all_rows|0
-COUNT|map_rows|0
-COUNT|replay_sample|0
-COUNT|directish_unique|0
-ERROR|scope=cdx:2000|kind=AttributeError|message=module 'urllib.request' has no attribute 'open'
-ERROR|scope=cdx:2001|kind=AttributeError|message=module 'urllib.request' has no attribute 'open'
-ERROR|scope=cdx:2002|kind=AttributeError|message=module 'urllib.request' has no attribute 'open'
-ERROR|scope=cdx:2003|kind=AttributeError|message=module 'urllib.request' has no attribute 'open'
-COUNT|errors|4
-RESOLUTION|NO_MAP_CGI_CORPUS|no archived col=map rows recovered
+CDX_WINDOW|label=2000|status=200|rows=0|map_rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX_WINDOW|label=2001|status=200|rows=0|map_rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX_WINDOW|label=2002|status=200|rows=906|map_rows=0|bytes=234324|sha256=a00aa788cbb7f6f0926344f658477b9e8256c2646ab57e9a9dbe71490a5d73b9
+CDX_WINDOW|label=2003|status=200|rows=1746|map_rows=3|bytes=450749|sha256=2520191bb97bfec6df9ab3764b68bdf5e858f3f924cb89673fd850436b6f4804
+COUNT|all_rows|2652
+COUNT|map_rows|3
+STATUS_COUNT|statuscode=200|rows=3
+NEAR_ROW|distance=46289|aid=69512|timestamp=20030428205046|statuscode=200|filename=|size=|redirect=|length=4850
+NEAR_ROW|distance=46289|aid=69512|timestamp=20030609063307|statuscode=200|filename=|size=|redirect=|length=4588
+NEAR_ROW|distance=1000000000000|aid=|timestamp=20031226145441|statuscode=200|filename=|size=|redirect=|length=3652
+COUNT|replay_sample|3
+REPLAY|index=1|aid=69512|filename=|timestamp=20030428205046|status=200|bytes=19182|location=|body_links=1
+TOPOLOGY_LINK|index=1|kind=gateway|url=http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash
+REPLAY|index=2|aid=69512|filename=|timestamp=20030609063307|status=200|bytes=18115|location=|body_links=0
+REPLAY|index=3|aid=|filename=|timestamp=20031226145441|status=200|bytes=10788|location=|body_links=3
+TOPOLOGY_LINK|index=3|kind=gateway|url=http://668.sina.com.cn/down/
+TOPOLOGY_LINK|index=3|kind=direct|url=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0
+TOPOLOGY_LINK|index=3|kind=gateway|url=http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash
+COUNT|directish_unique|1
+DIRECTISH|index=1|aid=|filename=|url=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0
+COUNT|errors|0
+RESOLUTION|DIRECT_FILE_TOPOLOGY_FOUND|inspect host/path families and test target substitutions only as hypotheses
 EVIDENCE_BOUNDARY|recovered redirects/body links establish Sina CGI topology only; filename substitution never proves target payload identity.
