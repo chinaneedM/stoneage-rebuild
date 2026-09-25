@@ -21,6 +21,7 @@ IA_QUERIES=(
  ("map2002-stem",'"shiqi4updatex_02_11_08" AND mediatype:software'),
  ("community-map",'("游民部落" AND "石器时代" AND "地图") AND mediatype:software'),
 )
+TOKENS=("xinhaonanhai","estoneage2.0map_1127","shiqi4updatex_02_11_08")
 DM_QUERIES=(
  "xinhaonanhai",
  "Estoneage2.0map_1127.exe",
@@ -52,6 +53,11 @@ def ia_docs(body):
     obj=json.loads(body.decode("utf-8"))
     return tuple(((obj.get("response") or {}).get("docs") or []))
 
+def ia_relevant(d):
+    fields=("identifier","title","creator","uploader","description")
+    text=" ".join(str(d.get(k) or "") for k in fields).lower()
+    return any(t in text for t in TOKENS)
+
 def dm_url(q,limit=500):
     p=[("q",q),("qfields","name"),("mode","deep"),("limit",str(limit)),("outputAs","json"),("showItemName","showItemName")]
     return DISCM+"?"+urllib.parse.urlencode(p)
@@ -80,10 +86,10 @@ def strict_leaf(path):
     return next((t for t in TARGETS if leaf==t.lower()),"")
 
 def main():
-    print("StoneAge xinhaonanhai carrier census — R1")
+    print("StoneAge xinhaonanhai carrier census — R2")
     print("SCOPE|IA metadata + DiscMaster filename index|same-contributor/two-generation map package discovery|no-payload")
     print("TARGET|2001=Estoneage2.0map_1127.exe|2002=shiqi4updatex_02_11_08.zip|alias=xinhaonanhai")
-    errors=[]; ia_seen={}; dm_seen={}
+    errors=[]; ia_seen={}; ia_rel={}; dm_seen={}
     for label,q in IA_QUERIES:
         try:
             st,final,h,b=fetch(ia_url(q))
@@ -92,8 +98,10 @@ def main():
             for d in rows:
                 ident=str(d.get("identifier") or "")
                 ia_seen[ident]=d
+                rel=ia_relevant(d)
+                if rel: ia_rel[ident]=d
                 print(
-                  f"IA_HIT|label={label}|identifier={clean(ident)}|title={clean(d.get('title'))}|"
+                  f"IA_HIT|label={label}|relevant={int(rel)}|identifier={clean(ident)}|title={clean(d.get('title'))}|"
                   f"date={clean(d.get('date'))}|year={clean(d.get('year'))}|creator={clean(d.get('creator'))}|"
                   f"uploader={clean(d.get('uploader'))}|collection={clean(d.get('collection'))}|"
                   f"description={clean(d.get('description'),1000)}"
@@ -120,7 +128,8 @@ def main():
     for r in dm_seen.values():
         t=strict_leaf(dm_path(r))
         if t: strict.append((t,r))
-    print(f"COUNT|ia_unique_items|{len(ia_seen)}")
+    print(f"COUNT|ia_raw_unique_items|{len(ia_seen)}")
+    print(f"COUNT|ia_relevant_items|{len(ia_rel)}")
     print(f"COUNT|dm_unique_rows|{len(dm_seen)}")
     print(f"COUNT|strict_filename_rows|{len(strict)}")
     for s,k,m in errors:
@@ -128,10 +137,10 @@ def main():
     print(f"COUNT|errors|{len(errors)}")
     if strict:
         print("RESOLUTION|STRICT_CARRIER_ROW_FOUND|inspect carrier metadata/filesystem before any payload recovery or provenance promotion")
-    elif ia_seen or dm_seen:
-        print("RESOLUTION|NONSTRICT_CANDIDATES_ONLY|classify alias/stem hits; do not promote without exact carrier linkage")
+    elif ia_rel or dm_seen:
+        print("RESOLUTION|NONSTRICT_RELEVANT_CANDIDATES_ONLY|classify alias/stem hits; do not promote without exact carrier linkage")
     else:
-        print("RESOLUTION|NO_CONTRIBUTOR_CARRIER_HIT|tested IA/DiscMaster alias+two-generation package surface exposes no candidate")
+        print("RESOLUTION|NO_CONTRIBUTOR_CARRIER_HIT|tested IA/DiscMaster alias+two-generation package surface exposes no relevant candidate; broad Chinese-query rows were filtered as unrelated noise")
     print("EVIDENCE_BOUNDARY|index metadata is discovery evidence only; alias continuity does not prove byte ancestry or operator originality.")
 
 if __name__=="__main__":
