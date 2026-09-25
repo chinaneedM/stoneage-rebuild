@@ -89,7 +89,7 @@ def main():
     print(f"SCOPE|official stoneage2 prefix|selected archived HTML pages|max_pages={MAX_PAGES}|link extraction only|no-payload")
     errors=[]
     try:
-        st,final,b=fetch(cdx_url(),max_bytes=8*1024*1024)
+        st,final,h,b=fetch(cdx_url(),max_bytes=8*1024*1024)
         rr=rows(b)
         print(f"CDX|status={st}|rows={len(rr)}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|final={clean(final)}")
     except Exception as e:
