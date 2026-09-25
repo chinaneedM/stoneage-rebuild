@@ -18,6 +18,9 @@ class SinaDownloadTopologyCensusTests(unittest.TestCase):
         self.assertTrue(directish("http://down.example.com/maps/foo.zip"))
         self.assertTrue(directish("ftp://ftp.example.com/foo.exe"))
 
+    def test_directish_excludes_plugin_assets(self):
+        self.assertFalse(directish("http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab"))
+
     def test_body_links(self):
         b=b'<a href="http://down.example.com/maps/foo.zip">x</a><a href="/help.html">h</a>'
         self.assertEqual(body_links(b,"http://games.sina.com.cn/"),("http://down.example.com/maps/foo.zip",))
