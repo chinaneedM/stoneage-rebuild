@@ -8,7 +8,7 @@ game payloads. Exact image SHA comparison is used only to detect byte-identical
 reuse of the already locked SMZDM 2.0 newbie-disc photograph.
 """
 from __future__ import annotations
-import hashlib,html,re,urllib.parse,urllib.request
+import hashlib,html,re,ssl,urllib.error,urllib.parse,urllib.request
 
 UA="stoneage-rebuild-archaeology/1.0"
 INDEX="https://blog.shiqi.so/sqcy4.htm"
@@ -21,10 +21,21 @@ def clean(v,n=5000):
 
 def fetch(url,timeout=40,max_bytes=8*1024*1024,accept="text/html,*/*;q=0.5"):
     req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":accept,"Accept-Encoding":"identity","Referer":INDEX})
-    with urllib.request.urlopen(req,timeout=timeout) as r:
+    tls_unverified=0
+    try:
+        r=urllib.request.urlopen(req,timeout=timeout)
+    except urllib.error.URLError as e:
+        if "CERTIFICATE_VERIFY_FAILED" not in str(e):
+            raise
+        tls_unverified=1
+        ctx=ssl._create_unverified_context()
+        r=urllib.request.urlopen(req,timeout=timeout,context=ctx)
+    with r:
         b=r.read(max_bytes+1)
         if len(b)>max_bytes: raise ValueError(f"response-too-large:{len(b)}")
-        return int(getattr(r,"status",r.getcode())),r.geturl(),dict(r.headers.items()),b
+        h=dict(r.headers.items())
+        h["X-Probe-TLS-Unverified"]=str(tls_unverified)
+        return int(getattr(r,"status",r.getcode())),r.geturl(),h,b
 
 def decode(b):
     for enc in ("utf-8","gb18030","big5","latin1"):
@@ -72,7 +83,7 @@ def main():
         st,final,h,b=fetch(INDEX)
         ih=decode(b)
         articles=discover_article(ih,final)
-        print(f"INDEX|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|final={clean(final)}|article_candidates={len(articles)}")
+        print(f"INDEX|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|final={clean(final)}|tls_unverified={clean(h.get('X-Probe-TLS-Unverified'))}|article_candidates={len(articles)}")
     except Exception as e:
         errors.append(("index",type(e).__name__,str(e)));articles=()
     print(f"COUNT|article_candidates|{len(articles)}")
@@ -83,7 +94,7 @@ def main():
             ah=decode(b)
             texts=relevant_text(ah)
             imgs=image_urls(ah,final)
-            print(f"ARTICLE|index={i}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|url={clean(final)}|text_hits={len(texts)}|images={len(imgs)}")
+            print(f"ARTICLE|index={i}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|url={clean(final)}|tls_unverified={clean(h.get('X-Probe-TLS-Unverified'))}|text_hits={len(texts)}|images={len(imgs)}")
             for j,t in enumerate(texts[:80],1):
                 print(f"TEXT_HIT|article={i}|index={j}|text={clean(t,1800)}")
             for j,img in enumerate(imgs,1):
@@ -92,7 +103,7 @@ def main():
                     sha=hashlib.sha256(bb).hexdigest()
                     same=int(sha==SMZDM_SHA256)
                     images_total+=1;exact_smzdm+=same
-                    print(f"IMAGE|article={i}|index={j}|status={ist}|bytes={len(bb)}|sha256={sha}|exact_smzdm_2.0={same}|url={clean(ifinal)}")
+                    print(f"IMAGE|article={i}|index={j}|status={ist}|bytes={len(bb)}|sha256={sha}|exact_smzdm_2.0={same}|tls_unverified={clean(hh.get('X-Probe-TLS-Unverified'))}|url={clean(ifinal)}")
                 except Exception as e:
                     errors.append((f"image:{i}:{j}:{img}",type(e).__name__,str(e)))
         except Exception as e:
@@ -110,7 +121,7 @@ def main():
         print("RESOLUTION|COLLECTOR_SOURCE_INCOMPLETE|do not promote physical-disc claims")
     else:
         print("RESOLUTION|ARTICLE_NOT_DISCOVERED|current index surface does not expose the expected article href")
-    print("EVIDENCE_BOUNDARY|collector pages/photos prove only current physical-survival/label evidence; they do not establish optical filesystem, pressing, installer identity or historical byte provenance.")
+    print("EVIDENCE_BOUNDARY|collector pages/photos prove only current physical-survival/label evidence; TLS-unverified fallback is transport-only and does not strengthen source authenticity; photos do not establish optical filesystem, pressing, installer identity or historical byte provenance.")
 
 if __name__=="__main__":
     main()
