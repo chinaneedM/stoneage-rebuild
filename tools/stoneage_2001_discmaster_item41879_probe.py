@@ -60,10 +60,10 @@ def classify_paths(items):
     return bare,descendants,exact
 
 def main():
-    print("StoneAge 2.0 DiscMaster item 41879 topology — R2")
+    print("StoneAge 2.0 DiscMaster item 41879 topology — R3")
     print("SCOPE|DiscMaster item-local search + browse HTML|metadata-only|no-payload")
     print("TARGET|itemid=41879|itemName=350 PC Games (CD-ROM)|discovered_path=STONEAGE2")
-    errors=[]; seen={}
+    errors=[]; seen={}; exact_browse=[]
     for q in QUERIES:
         try:
             st,final,h,b=fetch(search_url(q))
@@ -76,9 +76,13 @@ def main():
                     print(f"ROW_KEYS|q={clean(q)}|keys={clean(','.join(sorted(str(k) for k in r.keys())))}")
                     for k,v in scalar_fields(r):
                         print(f"ROW_FIELD|q={clean(q)}|key={clean(k)}|value={clean(v,1800)}")
+                    href=str(r.get("href") or "").strip()
+                    if href:
+                        exact_browse.append(urllib.parse.urljoin(BASE,href))
         except Exception as e:
             errors.append(("query:"+q,type(e).__name__,str(e)))
-    for u in BROWSE:
+    browse_urls=tuple(dict.fromkeys(BROWSE+tuple(exact_browse)))
+    for u in browse_urls:
         try:
             st,final,h,b=fetch(u,max_bytes=3*1024*1024)
             text=b.decode("utf-8","replace")
@@ -104,6 +108,7 @@ def main():
         if "stoneage2" in low or ("stoneage" in low and any(x in low for x in ("setup","install",".exe","readme"))):
             relevant.append(r)
     bare,descendants,exact=classify_paths(tuple(seen.values()))
+    print(f"COUNT|exact_index_browse_urls|{len(tuple(dict.fromkeys(exact_browse)))}")
     print(f"COUNT|unique_rows|{len(seen)}")
     print(f"COUNT|relevant_rows|{len(relevant)}")
     print(f"COUNT|bare_stoneage2_nodes|{len(bare)}")
