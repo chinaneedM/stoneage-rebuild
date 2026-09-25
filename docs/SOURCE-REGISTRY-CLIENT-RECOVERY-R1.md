@@ -535,6 +535,32 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Derived report: `research/recovered/STONEAGE-YSA25-ARCHIVE-PROBE-R1.txt`
 - Status: **TARGET-C / BOUNDED — retain exact URL token; do not repeat the same public-index route unless a new mirror/repost appears**.
 
+
+## LINEAGE CONTROL — 2011 115.com one-click derivative
+
+- Source: `https://www.iopq.net/thread-16731619-1-1.html`, posted **2011-07-21** by `5615918`.
+- The author explicitly credits `love198959`'s earlier post but describes this package as a newly assembled one-click install. This establishes a **post-level derivation relationship, not byte continuity**.
+- Exact token/file:
+  - `http://u.115.com/file/clnrsbsc` / `http://115.com/file/clnrsbsc#`;
+  - token **`clnrsbsc`**;
+  - filename **`石器时代2.5精灵王的传说一键.zip`**.
+- Explicit engineering traits:
+  - `石器时代WIN版服务端管理器.exe`;
+  - `SACH-MX0.30/STW0.30.exe`;
+  - `D:/csa/gmsv/stoneage2.5/sa_2903.exe`;
+  - bundled single-player server behavior.
+- Same-thread integrity warning: a user reports the package lacked `GMSV.EXE` and copied that server executable from another source before running it.
+- Archive-index probe run **36092086106** succeeded:
+  - Wayback successful exact/prefix surfaces: 0 HTTP-200 rows;
+  - Arquivo successful exact surfaces: 0 rows;
+  - IA exact token/filename: 0 docs;
+  - two Wayback variants timed out and remain inconclusive.
+- Consequence:
+  - this materially dates the **SACH/sa_2903 descendant engineering ecosystem** to 2011, but does not date its client/resource bytes;
+  - do not infer that it is byte-identical to the 2009 `YSA2.5.8.rar`, the recovered 2012 MediaFire bridge, or a 2002 client.
+- Canonical analysis: `research/clients/STONEAGE-SA25-2009-2011-DESCENDANT-LINEAGE-R1.md`.
+- Status: **CONTROL / DESCENDANT — bounded unless a new public payload/hash/file tree appears**.
+
 ## CONTROL-C — modern public StoneAge 2.5 descendant/community distribution
 
 - Current source page: `https://99ds.com/`
