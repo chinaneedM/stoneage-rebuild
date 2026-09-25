@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - tools/stoneage_sa25_baidu_share_metadata_probe.py
+      - tests/test_stoneage_sa25_baidu_share_metadata_probe.py
       - .github/workflows/probe-stoneage-sa25-baidu-share-metadata.yml
 
 permissions:
