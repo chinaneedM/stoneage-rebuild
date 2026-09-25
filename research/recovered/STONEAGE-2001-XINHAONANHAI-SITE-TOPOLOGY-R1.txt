@@ -1,0 +1,14 @@
+StoneAge 2001 xinhaonanhai site-topology probe — R1
+SCOPE|2001-12-03 root capture + bounded same-domain HTML BFS depth<=2|no-binary
+TARGET|filename=Estoneage2.0map_1127.exe|root=http://www.xinhaonanhai.com/|timestamp=20011203002610
+PAGE|depth=0|status=200|bytes=1946|sha256=dfc5fda7b0ad2c5ef7beb8118276d8fd96d2adcf45d7c35aa5683f1ebb7c17c8|orig=http://www.xinhaonanhai.com/|links=5
+LINK|depth=0|relation=external|targetish=0|url=http://www.17173.com
+LINK|depth=0|relation=external|targetish=0|url=http://www.namezero.com
+LINK|depth=0|relation=external|targetish=0|url=http://rstrip.namezero.com/navbar/strip.jsp?name=xinhaonanhai.com&viewsize=full_ad&product=1&badword=False
+LINK|depth=0|relation=external|targetish=0|url=http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd
+LINK|depth=0|relation=external|targetish=0|url=http://www.w3.org/1999/xhtml
+COUNT|pages_replayed|1
+COUNT|interesting_links|0
+COUNT|errors|0
+RESOLUTION|NO_RELEVANT_SITE_PATH|root/linked HTML exposes no usable StoneAge/download route at tested depth
+EVIDENCE_BOUNDARY|same-domain navigation proves site topology only; package identity requires exact archived bytes.
