@@ -11,6 +11,7 @@ UA="stoneage-rebuild-archaeology/1.0 (+https://github.com/chinaneedM/stoneage-re
 FILENAME="samap_1220.zip"
 SOURCE="http://games.sina.com.cn/downgames/map/1220492.shtml"
 CGI="http://games1.sina.com.cn/cgi-bin/games/downgames/download.pl?col=map&aid=23223&title=%CA%AF%C6%F7%CA%B1%B4%FA%A1%AA%C8%AB%B5%D8%CD%BC&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=samap_1220.zip&size=1410"
+DIRECT="http://202.106.184.193/downfiles/map_1212/samap_1220.zip"
 ARQ_TEXT="https://arquivo.pt/textsearch"
 ARQ_CDX="https://arquivo.pt/wayback/cdx"
 CC_COLL="https://index.commoncrawl.org/collinfo.json"
@@ -90,7 +91,7 @@ def emit_arq(label,obj):
 def main():
     print("StoneAge 2000 independent archive probe — R1")
     print("SCOPE|Arquivo.pt full-text/version/CDX + Common Crawl exact URL indexes|metadata-only|no-payload")
-    print(f"TARGET|filename={FILENAME}|aid=23223|source={SOURCE}")
+    print(f"TARGET|filename={FILENAME}|aid=23223|source={SOURCE}|direct={DIRECT}")
     errors=[];arq_rows=0;cc_rows=0
     for q in (FILENAME,"samap_1220",'"石器时代" "全地图"','"StoneAge" "samap"'):
         try:
@@ -98,7 +99,7 @@ def main():
             print(f"ARQUIVO_TEXT|q={clean(q)}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|json={int(obj is not None)}")
             if obj is not None:arq_rows+=emit_arq("text:"+q,obj)
         except Exception as e:errors.append(("arquivo-text:"+q,type(e).__name__,str(e)))
-    for label,u0 in (("source",SOURCE),("cgi",CGI)):
+    for label,u0 in (("source",SOURCE),("cgi",CGI),("direct",DIRECT)):
         for mode,builder in (("version",arq_version_url),("cdx",arq_cdx_url)):
             try:
                 u=builder(u0);st,final,h,b=fetch(u);obj=parse_json(b)
@@ -110,7 +111,7 @@ def main():
         ids=();errors.append(("cc-index-list",type(e).__name__,str(e)))
     print(f"COMMONCRAWL_INDEX_COUNT|count={len(ids)}")
     for cid in ids:
-        for label,u0 in (("filename","*"+FILENAME+"*"),("source",SOURCE),("cgi",CGI)):
+        for label,u0 in (("filename","*"+FILENAME+"*"),("source",SOURCE),("cgi",CGI),("direct",DIRECT)):
             try:
                 ep,rr=cc_query(cid,u0)
                 if rr:print(f"COMMONCRAWL_HIT|index={clean(cid)}|label={label}|rows={len(rr)}|endpoint={clean(ep)}")
