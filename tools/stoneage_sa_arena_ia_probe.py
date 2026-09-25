@@ -7,6 +7,7 @@ directory metadata. HTTP Range must be honored or sector parsing stops.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import re
@@ -21,6 +22,9 @@ DOWNLOAD=f"https://archive.org/download/{IDENTIFIER}/"
 SECTOR=2048
 MAX_DIR_BYTES=262144
 MAX_SMALL_BYTES=65536
+MAX_EXE_PREFIX=524288
+TEXT_NAMES={"AUTORUN.INF","README.TXT"}
+STRING_KEY_RE=re.compile(r"(?i)(stone\s*age|stoneage|sa[_ -]?arena|arena|waei|wgs|installshield|install|setup|version|product|client|www\\.|https?://|2\\.5|3\\.0|4\\.0)")
 IMAGE_EXTS=(".iso",".img",".bin",".nrg",".mdf",".ccd",".cue")
 CUE_FILE_RE=re.compile(r'^FILE\s+"([^"]+)"\s+(\S+)',re.I)
 CUE_TRACK_RE=re.compile(r"^TRACK\s+(\d+)\s+(\S+)",re.I)
@@ -195,6 +199,134 @@ def capped_sector_count(size):
     return max(0,min(math.ceil(int(size)/SECTOR),math.ceil(MAX_DIR_BYTES/SECTOR)))
 
 
+def read_extent_prefix(url,entry,limit,track_start_frames,mode):
+    want=min(int(entry["size"]),int(limit))
+    if want<=0:
+        return b""
+    count=math.ceil(want/SECTOR)
+    status,cr,data,honored=logical_sector_read(
+        url,int(entry["extent"]),count,track_start_frames,mode
+    )
+    print(
+        f"RANGE_FILE|name={clean(entry['name'])}|status={status}|honored={int(honored)}|"
+        f"requested={want}|bytes={len(data)}|content_range={clean(cr)}"
+    )
+    if not honored:
+        return b""
+    return data[:want]
+
+
+def decode_text(data):
+    best=""
+    best_enc=""
+    for enc in ("utf-8","gb18030","big5","cp949","latin1"):
+        try:
+            text=data.decode(enc)
+        except Exception:
+            continue
+        score=sum(ch.isprintable() or ch in "\r\n\t" for ch in text)
+        if score>len(best):
+            best=text
+            best_enc=enc
+    return best_enc,best
+
+
+def evidence_lines(text,limit=40):
+    out=[]; seen=set()
+    for line in text.replace("\x00"," ").splitlines():
+        line=" ".join(line.split())
+        if not line or not (
+            STRING_KEY_RE.search(line)
+            or re.search(r"[石器時代华華义義精靈灵王傳传說说版本客戶用户戶端安裝装疯狂原始]",line)
+        ):
+            continue
+        line=clean(line,500)
+        if line and line not in seen:
+            seen.add(line); out.append(line)
+        if len(out)>=limit:
+            break
+    return tuple(out)
+
+
+def binary_strings(data,limit=80):
+    values=[]
+    for m in re.finditer(rb"[\x20-\x7e]{6,}",data):
+        values.append(m.group(0).decode("ascii","replace"))
+    for m in re.finditer(rb"(?:[\x20-\x7e]\x00){6,}",data):
+        values.append(m.group(0).decode("utf-16le","replace"))
+    out=[]; seen=set()
+    for value in values:
+        value=" ".join(value.split())
+        if STRING_KEY_RE.search(value) and value not in seen:
+            seen.add(value); out.append(clean(value,700))
+        if len(out)>=limit:
+            break
+    return tuple(out)
+
+
+def pe_summary(data):
+    if len(data)<0x40 or data[:2]!=b"MZ":
+        return None
+    peoff=struct.unpack_from("<I",data,0x3c)[0]
+    if peoff+92>len(data) or data[peoff:peoff+4]!=b"PE\x00\x00":
+        return {"mz":1,"pe_offset":peoff,"pe_complete":0}
+    machine,sections,timestamp=struct.unpack_from("<HHI",data,peoff+4)
+    opt=peoff+24
+    magic=struct.unpack_from("<H",data,opt)[0]
+    subsystem=struct.unpack_from("<H",data,opt+68)[0] if opt+70<=len(data) else -1
+    return {
+        "mz":1,"pe_offset":peoff,"pe_complete":1,"machine":machine,
+        "sections":sections,"timestamp":timestamp,"optional_magic":magic,
+        "subsystem":subsystem,
+    }
+
+
+def probe_root_files(index,url,entries,track,errors):
+    for entry in entries:
+        name=str(entry["name"]).upper()
+        if entry["is_dir"]:
+            continue
+        if name in TEXT_NAMES and int(entry["size"])<=MAX_SMALL_BYTES:
+            try:
+                data=read_extent_prefix(
+                    url,entry,MAX_SMALL_BYTES,track["index_frames"],track["mode"]
+                )
+                if not data:
+                    continue
+                enc,text=decode_text(data)
+                print(
+                    f"TEXT_FILE|index={index}|name={clean(entry['name'])}|size={entry['size']}|"
+                    f"sha256={hashlib.sha256(data).hexdigest()}|encoding={clean(enc)}"
+                )
+                rows=evidence_lines(text)
+                print(f"COUNT|index={index}|name={clean(entry['name'])}|evidence_lines={len(rows)}")
+                for n,line in enumerate(rows,1):
+                    print(f"TEXT_EVIDENCE|index={index}|name={clean(entry['name'])}|line={n}|value={line}")
+            except Exception as exc:
+                errors.append((f"file:{entry['name']}",type(exc).__name__,str(exc)))
+        elif name.endswith(".EXE"):
+            try:
+                data=read_extent_prefix(
+                    url,entry,MAX_EXE_PREFIX,track["index_frames"],track["mode"]
+                )
+                if not data:
+                    continue
+                pe=pe_summary(data)
+                print(
+                    f"EXE_PREFIX|index={index}|name={clean(entry['name'])}|file_size={entry['size']}|"
+                    f"prefix_bytes={len(data)}|prefix_sha256={hashlib.sha256(data).hexdigest()}"
+                )
+                if pe:
+                    print("PE|index="+str(index)+"|name="+clean(entry["name"])+"|"+
+                          "|".join(f"{k}={clean(v)}" for k,v in pe.items()))
+                rows=binary_strings(data)
+                print(f"COUNT|index={index}|name={clean(entry['name'])}|key_strings={len(rows)}")
+                for n,value in enumerate(rows,1):
+                    print(f"EXE_STRING|index={index}|name={clean(entry['name'])}|n={n}|value={value}")
+            except Exception as exc:
+                errors.append((f"exe:{entry['name']}",type(exc).__name__,str(exc)))
+
+
 def emit_tree(index,url,track,errors):
     mode=track["mode"]
     start_frames=track["index_frames"]
@@ -229,6 +361,7 @@ def emit_tree(index,url,track,errors):
         )
         if e["is_dir"] and e["name"] not in (".",".."):
             subdirs.append(e)
+    probe_root_files(index,url,entries,track,errors)
     for e in subdirs[:24]:
         count=capped_sector_count(e["size"])
         if not count:
@@ -254,8 +387,8 @@ def emit_tree(index,url,track,errors):
 
 
 def main():
-    print("StoneAge sa-arena Internet Archive optical-carrier probe — R2")
-    print("SCOPE|IA-metadata+CUE+bounded-raw-sector-ISO9660-reads|no-full-disc-download|no-payload-commit")
+    print("StoneAge sa-arena Internet Archive optical-carrier probe — R3")
+    print("SCOPE|IA-metadata+CUE+bounded-raw-sector-filesystem+small-text+EXE-prefix-reads|no-full-disc-download|no-payload-commit")
     errors=[]
     try:
         meta=get_json(META)
