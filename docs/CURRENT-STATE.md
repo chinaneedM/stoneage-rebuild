@@ -2203,6 +2203,8 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - exact Sina token: `col=demo`, `aid=41967`, `filename=stoneage2.0setup.exe`, `size=524377`;
   - current exact Wayback / IA / DiscMaster probes expose no verified payload carrier.
   - For the 2001 client target, a dual-host `col=demo` neighborhood probe replays one archived neighbor (`monkeybrain.exe`, aid=25443) to `http://202.108.44.24/demo_1118/monkeybrain.exe`. Substituting `stoneage2.0setup.exe` into that directory yields **zero CDX rows**. This establishes a historical Sina demo-server family only; it does not establish the StoneAge 2.0 installer path.
+  - A preserved 17173 2.0 upgrade guide independently expands the client-recovery surface: it states that the **完整升级版** was downloadable from Beijing Waei and was also distributed free with **13 named November-2001 magazine/book/disc carriers** (`PC任我行`, `大众软件CD`, `电脑`, `电脑爱好者—玩游戏`, `电脑报—游戏世界`, `电脑校园`, `晶合秘藏Ⅱ之红宝石`, `少年电世界`, `网上俱乐部—游戏吧`, `新游戏人`, `游戏原动力`, plus two StoneAge guide-book discs). This is now a concrete carrier route independent of the missing Sina payload.
+  - Carrier census R1 produced 86 noisy IA full-text rows and zero DiscMaster rows; R2 restricted IA to title/software metadata and found **no direct 2001-11 carrier** and zero global `石器时代2.0` / `StoneAge 2.0` software item. However, `大众软件CD` exposes an authentic preserved **Popsoft CD identifier family** with 18 older 1997–1998 objects (`popsoftcd-YYYY-MM` pattern). That namespace is now the next bounded carrier-preservation lead and is being enumerated directly for 1999–2001 continuation.
 - **Priority consequence:** the 2000-12-20 `samap_1220.zip` target remains chronologically first. Once its currently known Sina/Wayback surfaces are bounded, `Estoneage2.0map_1127.exe` is the next highest-information executable field-map target because its contemporaneous page explicitly brackets the package to the **1.X / 2.0** client family. The 2002-11-08 `shiqi4updatex_02_11_08.zip` target remains valuable but is later.
 - **Evidence boundary:** the Sina record proves that this named package was advertised/distributed on 2001-11-27 with a 1.X/2.0 compatibility claim. It does not by itself prove the contents are operator-original, unchanged, or identical to Taiwan v1.0 caches. The executable must be recovered and its extracted DAT bytes compared before any field-map provenance gate can be closed.
 - Derived reports:
@@ -2215,3 +2217,5 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - `research/recovered/STONEAGE-2001-SINA-SAMEBATCH-R1.txt`
   - `research/recovered/STONEAGE-2001-SINA-SAMEBATCH-ROUTE-R1.txt`
   - `research/recovered/STONEAGE-2001-DISCMASTER-ESTONEAGE-R1.txt`
+  - `research/recovered/STONEAGE-2001-SA20-COVERDISC-CENSUS-R1.txt`
+  - `research/recovered/STONEAGE-2001-SA20-COVERDISC-CENSUS-R2.txt`
