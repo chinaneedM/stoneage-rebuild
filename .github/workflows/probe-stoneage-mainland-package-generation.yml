@@ -1,0 +1,53 @@
+name: Match Mainland StoneAge package generations
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_mainland_package_generation_match_probe.py
+      - tests/test_stoneage_mainland_package_generation_match_probe.py
+      - .github/workflows/probe-stoneage-mainland-package-generation.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-mainland-package-generation
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install transient image-analysis dependencies
+        run: python3 -m pip install --disable-pip-version-check --quiet numpy opencv-python-headless
+      - name: Validate focused probe
+        run: python3 -m unittest tests.test_stoneage_mainland_package_generation_match_probe -v
+      - name: Compare source-labelled package references
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_mainland_package_generation_match_probe > research/recovered/STONEAGE-MAINLAND-PACKAGE-GENERATION-MATCH-R1.txt
+      - name: Commit derived metrics only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-MAINLAND-PACKAGE-GENERATION-MATCH-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: match Mainland StoneAge package generations'
+          for n in 1 2 3 4 5; do
+            git push && exit 0
+            sleep $((n * 3))
+            git fetch origin main
+            git rebase origin/main || exit 1
+          done
+          exit 1
