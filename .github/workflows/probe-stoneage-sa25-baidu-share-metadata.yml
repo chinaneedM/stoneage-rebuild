@@ -1,0 +1,50 @@
+name: Probe StoneAge 2.5 Baidu share metadata
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/probe-stoneage-sa25-baidu-share-metadata.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-baidu-share-metadata
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run focused tests
+        run: python -m unittest tests.test_stoneage_sa25_baidu_share_metadata_probe
+
+      - name: Probe public share metadata only
+        run: |
+          mkdir -p research/recovered
+          python tools/stoneage_sa25_baidu_share_metadata_probe.py             > research/recovered/STONEAGE-SA25-BAIDU-SHARE-METADATA-R1.txt
+
+      - name: Verify no payload files were retained
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find . -type f \( -iname '*.rar' -o -iname '*.zip' -o -iname '*.7z' -o -iname '*.exe' -o -iname '*.bin' \)              -not -path './.git/*' | grep -q .; then
+            echo 'Unexpected payload-like file retained by metadata-only workflow.'
+            find . -type f \( -iname '*.rar' -o -iname '*.zip' -o -iname '*.7z' -o -iname '*.exe' -o -iname '*.bin' \)               -not -path './.git/*'
+            exit 1
+          fi
+
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-SA25-BAIDU-SHARE-METADATA-R1.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe StoneAge 2.5 Baidu share metadata'
+          git pull --rebase origin main
+          git push
