@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - tools/stoneage_sa25_yannian_disc_photo_probe.py
+      - tools/stoneage_sa25_ruten_physical_probe.py
       - tests/test_stoneage_sa25_yannian_disc_photo_probe.py
       - .github/workflows/probe-stoneage-sa25-yannian-disc-photo.yml
 
