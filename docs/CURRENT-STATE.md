@@ -2115,7 +2115,8 @@ Supplemental source ledgers:
 - The source page is still reachable and has historical Wayback availability, but no indexed exact CGI response/payload body has yet been recovered on the tested route.
 - The surviving source description says to **unzip the package into the installed client's `map` subdirectory**, after which maps become fully visible in-game. This classifies the target as a field-map/cache-content distribution rather than a full client installer; the exact internal file list still requires recovered bytes.
 - Attribution has been tightened: `游民部落` is a Sina game-community/editorial label on contemporaneous pages. Unlike the 2001 package, the 2000 author token contains no `xinhaonanhai` link, so a 2000→xinhaonanhai provenance claim is unsupported. The bounded xinhaonanhai archive test remains discovery-only and produced no matching contributor URL.
-- A same-backend topology control is now known eight days later: the 2000-12-28 `石器时代—南岛详细地图指南` uses `aid=23681`, `filename=southisland_1228.zip`, `size=202`. A dedicated neighborhood probe now tests the target plus the 2000-12-28 north/south-island pages for archived Sina redirect/file-server topology.
+- Same-backend controls are now known eight days later: `northisland_1228.zip` (aid=23680) and `southisland_1228.zip` (aid=23681). The south-island CGI has a preserved 2005-11-03 HTTP 302.
+- The preserved 302 has now been replayed with redirects disabled: its `Location` is **only a Sina login gateway** at `login.games.sina.com.cn/index.php?reurl=...`, with the original CGI embedded in `reurl`. It exposes no historical ZIP/file-server path, so this branch is bounded and must not be treated as payload-topology evidence.
 - Independent public-archive coverage has been added with a bounded Arquivo.pt + Common Crawl metadata probe for the exact filename/source/CGI token; no package body is fetched.
 - Exact Internet Archive filename/stem searches expose no carrier. DiscMaster broad `samap` searches produce large unrelated result sets; the recovery probe has therefore been tightened so only an **exact leaf filename `samap_1220.zip`** (or an independently verified exact filename/stem carrier in another preservation index) can promote the result to a preservation candidate.
 - **Priority consequence:** this 2000 package now precedes the 2001-11-27 `Estoneage2.0map_1127.exe` package in the field-map recovery queue. If bytes are recovered, extract/hash first and compare against Taiwan v1.0, June-2003 and mixed-2.5 corpora before making any historical-equivalence claim.
@@ -2124,7 +2125,8 @@ Supplemental source ledgers:
   - `research/recovered/STONEAGE-2000-FULLMAP-PRESERVATION-R1.txt`;
   - `research/recovered/STONEAGE-2000-SINA-AID-23223-R1.txt`;
   - `research/recovered/STONEAGE-2000-INDEPENDENT-ARCHIVES-R1.txt`;
-  - `research/recovered/STONEAGE-2000-SINA-MAP-NEIGHBORHOOD-R1.txt`.
+  - `research/recovered/STONEAGE-2000-SINA-MAP-NEIGHBORHOOD-R1.txt`;
+  - `research/recovered/STONEAGE-2000-SINA-ARCHIVED302-R1.txt`.
 
 ## Immediate next actions
 
