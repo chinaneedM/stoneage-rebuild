@@ -96,6 +96,15 @@ def main():
                 rows=parse_cdx(b);rr=[r for r in rows if relevant(r)]
                 maprows=[r for r in rows if str(params(r.get("original") or "").get("col") or "").lower()=="map"]
                 print(f"CDX|host={host}|window={label}|status={st}|rows={len(rows)}|map_rows={len(maprows)}|relevant={len(rr)}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}")
+                ranked=[]
+                for mr in maprows:
+                    mp=params(mr.get("original") or "")
+                    aid=str(mp.get("aid") or "")
+                    dist=abs(int(aid)-int(TARGET_AID)) if aid.isdigit() else 999999999
+                    ranked.append((dist,aid,mr,mp))
+                ranked.sort(key=lambda x:(x[0],x[1],str(x[2].get("timestamp") or "")))
+                for dist,aid,mr,mp in ranked:
+                    print(f"MAP_ROW|host={host}|window={label}|distance={dist}|aid={clean(aid)}|timestamp={clean(mr.get('timestamp'))}|filename={clean(mp.get('filename'))}|size={clean(mp.get('size'))}|statuscode={clean(mr.get('statuscode'))}|original={clean(mr.get('original'))}")
                 for r in rr:
                     hits.append((host,r))
                     print(f"HIT|host={host}|timestamp={clean(r.get('timestamp'))}|original={clean(r.get('original'))}|statuscode={clean(r.get('statuscode'))}|mimetype={clean(r.get('mimetype'))}|digest={clean(r.get('digest'))}|length={clean(r.get('length'))}|redirect={clean(r.get('redirect'))}")
