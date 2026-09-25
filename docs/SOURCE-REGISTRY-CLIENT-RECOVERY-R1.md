@@ -697,3 +697,14 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 - Important negative for the current highest-priority search: the MSI's 413 destination files include no field-cache .DAT or single-layer .MAP files. This carrier closes a battle-resource lineage milestone but does not close the pre-June-2003 field-map byte anchor.
 - Next use: treat this object as a boundedly recoverable Mainland 5.0 comparison carrier and pivot the field-map hunt to the contemporaneous separate 完整地图档下载 package / installed caches / other physical media.
 - Derived reports: STONEAGE-STONEAGE5-IA-OPTICAL-R1.txt, STONEAGE-STONEAGE5-MSI-INVENTORY-R1.txt, STONEAGE-STONEAGE5-CAB-DIRECTORY-R1.txt, STONEAGE-STONEAGE5-BATTLE-LINEAGE-R1.txt.
+
+## Historical June-2003 field-map comparison refinement
+
+- Historical object: Wuxitianlong/Sina-linked `map.exe`, Wayback observation 2003-06-23, archived origin Last-Modified **2003-06-10 10:01:06 GMT**, size 4,223,728, SHA-256 `372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e`.
+- Complete inventory: **1,011 DAT names**. The mixed-2.5 client map directory has exactly the same 1,011 names.
+- Exact whole-file overlap: **995/1,011**; differences: **16/1,011**. Numeric-only overlap is the previously recorded **993/1,008 exact**, 15 different.
+- Among 15 differing normal DATs, only **5** event cells change low-12 semantic payload while **4,588** event cells differ only in high read/see flags. This is direct evidence that runtime cache state explains much of the event-layer divergence between the two preserved corpora.
+- `1021.DAT` and `817.dat` are each exact whole-file matches to the historical package. Therefore:
+  - `1021` remains semantically anomalous but is no longer classified primarily as a later private-server/mixed-bundle mutation;
+  - `817`'s missing graphic references against `adrn_15.bin` are a resource-generation mismatch, not a map-file provenance failure.
+- Recovery classification consequence: the mixed 2.5 **runtime executables remain RECOVERED-C/contaminated**, but its DAT map directory now has very strong independent historical byte corroboration at the June-2003 state. This does not elevate it to clean 2.5 release provenance and does not close the pre-June field-map gate.

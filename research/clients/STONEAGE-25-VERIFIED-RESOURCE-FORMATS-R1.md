@@ -201,7 +201,7 @@ Descendant client/server source additionally resolves the runtime roles:
 - client `writeMap` adds `MAP_READ_FLAG=0x8000` and `MAP_SEE_FLAG=0x4000` to event values
 - client collision is derived at runtime from tile/parts graphic attributes and event occupancy; no fourth DAT hit layer is serialized
 
-Recovered event bytes strongly corroborate the descendant enum: **994 of the 995 valid DAT files contain no low-12 event values outside 0–8**. The sole outlier, `1021.DAT`, contains all **43,952** non-enum low-12 values and is quarantined as a separate corruption/version/private-server anomaly rather than used to expand the canonical event model.
+Recovered event bytes strongly corroborate the descendant enum: **994 of the 995 valid DAT files contain no low-12 event values outside 0–8**. The sole outlier, `1021.DAT`, contains all **43,952** non-enum low-12 values. Exact whole-file equality with the independently archived 2003-06-10/23 historical map package rules out later mutation inside the recovered mixed bundle as its primary origin; the file remains semantically exceptional and is not used to expand the canonical event model.
 
 Detailed analysis:
 
@@ -214,7 +214,7 @@ A same-bundle DAT↔server crosscheck adds direct static-layer corroboration:
 - tile exact: **421**
 - parts/object exact: **361**
 
-The exceptional `1021.DAT` is not event-only: against the same-ID 407×144 server map, **39,456 tile cells** and **32,706 parts/object cells** differ in addition to its **43,952** non-enum event cells. It is therefore quarantined as a mixed revision/source anomaly rather than used to expand the event schema.
+The exceptional `1021.DAT` is not event-only: against the same-ID 407×144 server map, **39,456 tile cells** and **32,706 parts/object cells** differ in addition to its **43,952** non-enum event cells. Its exact match to the dated June-2003 historical map package shows the anomalous state is historically reproduced; it remains a revision/source anomaly rather than evidence for expanding the event schema.
 
 Crosscheck report:
 
@@ -228,7 +228,7 @@ Graphic-ID gap localization adds an important resource-provenance boundary:
 - bundled server LS2MAP corpus has **no map ID 817**
 - descendant source places 817 in later conditional water-world / animated-map systems
 
-These missing IDs are therefore treated as **cross-revision/mixed-package resource skew**, not as evidence that DAT accepts a second hidden graphic-index format.
+These missing IDs are therefore treated as **cross-revision map/resource skew**, not as evidence that DAT accepts a second hidden graphic-index format. The strongest control is `817.dat`: it is byte-identical to the dated June-2003 historical map-package copy, so its missing references against `adrn_15.bin` cannot be attributed to later mutation of the mixed-bundle DAT.
 
 ## 8. `.MAP` is NOT a direct copy of any DAT layer — verified negative result
 
@@ -302,3 +302,16 @@ For recovered StoneAge 2.5 resource corpus:
 - MAP == DAT tile/parts/event: **disproved for all 995 valid paired files**
 - MAP cell semantics: **OPEN**
 - SPR/SPRADRN 12-byte index + animation/frame stream: **verified across all 847 records**
+
+## Historical package crosscheck refinement — 2026-09-25
+
+The 2003-06-10/23 historical `map.exe` package and the recovered mixed-2.5 map directory have the same **1,011 DAT filenames**. Whole-file SHA-256 comparison yields **995 exact / 16 different**; numeric-only accounting is **993 exact / 15 different** across 1,008 IDs.
+
+For the 15 differing normal three-layer DATs, changed-cell totals are **11,500 tile**, **678 parts**, and **4,593 event**. Only **5** event cells change low-12 payload; **4,588** change high read/see flags. This is direct byte-level corroboration of the runtime-cache flag model.
+
+Exact controls:
+
+- `1021.DAT`: SHA-256 `92abd0a38c5e876d985c33437a252358d1aaa812ce1da99f18752d0a97c81197`, exact in both corpora.
+- `817.dat`: SHA-256 `ca29cdf04f9f750712ef9afffe14aebfd571a0c6011eac2c7eff67dfde8cc380`, exact in both corpora.
+
+These controls improve provenance interpretation but do not date either file to the 2.5 release or to Taiwan v1.

@@ -201,7 +201,7 @@ The client checksum path masks event values with `0x0fff` before comparison. The
 
 High bits must not be modeled as server event-type bits.
 
-## 7. Recovered event data strongly validates the enum, with one quarantined outlier
+## 7. Recovered event data strongly validates the enum, with one historically reproduced outlier
 
 Across all **8,354,525** cells:
 
@@ -222,7 +222,7 @@ Therefore the evidence is not “the event layer generally contains thousands of
 The stronger current reading is:
 
 - **994 of the 995 structurally valid DAT caches have no low-12 event values outside the descendant 0–8 enum**;
-- `1021.DAT` is a single exceptional cache and must be quarantined for separate corruption/version/private-server analysis.
+- `1021.DAT` is a single exceptional cache. Exact whole-file equality with the independently archived 2003-06-10/23 historical `map.exe` package rules out later mutation inside the recovered mixed bundle as the origin of this anomaly. Its semantics remain unresolved, so it is still excluded from the canonical event model rather than used to expand the event enum.
 
 Until that outlier is explained, its unknown values must not be promoted into the canonical event model.
 
@@ -374,3 +374,41 @@ This is strong evidence of **cross-revision / mixed-package resource skew**, but
 - unresolved graphic IDs as in-domain ADRN gaps dominated by map 817: **FACT for this recovered corpus**
 - interpretation as cross-revision/mixed-package resource skew: **strong working conclusion; exact source revision OPEN**
 - exact equivalence to 1999 JSS behavior: **OPEN**
+
+## 13. Historical June-2003 DAT cross-corpus control — 2026-09-25
+
+A newly repeated full extraction of the dated Wuxitianlong/Sina-linked `map.exe` object provides an independent historical control for the mixed-bundle DAT directory.
+
+Historical object facts:
+
+- origin response `Last-Modified`: **2003-06-10 10:01:06 GMT**;
+- Wayback observation: **2003-06-23 23:44:51 UTC**;
+- `map.exe` SHA-256: `372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e`;
+- 1,011 DAT files total, with the same complete case-insensitive filename set as the recovered mixed-2.5 map directory.
+
+Whole-file results:
+
+- exact SHA-256 matches: **995**;
+- differences: **16**;
+- no one-sided DAT names.
+- Numeric-only: **993 exact / 15 changed** across 1,008 IDs.
+
+Layer-level results for the 15 normal DAT differences:
+
+- tile changed cells: **11,500**;
+- parts changed cells: **678**;
+- raw event changed cells: **4,593**;
+- low-12 event payload changes: **5**;
+- high read/see-flag changes: **4,588**.
+
+This directly validates the earlier source-derived interpretation that event high bits are local cache state: almost all event-layer differences between the two corpora are high-bit changes, not event-type changes.
+
+Two important controls:
+
+- `1021.DAT` is exact in both corpora (SHA-256 `92abd0a38c5e876d985c33437a252358d1aaa812ce1da99f18752d0a97c81197`). Its 43,952 non-enum low-12 values therefore cannot be explained as later private-server/runtime mutation introduced only into the mixed bundle. The file remains semantically exceptional and excluded from the canonical event enum.
+- `817.dat` is exact in both corpora (SHA-256 `ca29cdf04f9f750712ef9afffe14aebfd571a0c6011eac2c7eff67dfde8cc380`). Its missing graphics against `adrn_15.bin` therefore demonstrate map/resource-generation skew rather than later mutation of the DAT itself.
+
+Derived evidence:
+
+- `research/recovered/STONEAGE-HISTORICAL-MAPEXE-SA25-LINEAGE-R1.txt`
+- `research/recovered/STONEAGE-HISTORICAL-MAPEXE-SA25-LAYER-DIFF-R1.txt`

@@ -2079,3 +2079,38 @@ Every substantial source should record:
   - research/recovered/STONEAGE-STONEAGE5-MSI-INVENTORY-R1.txt
   - research/recovered/STONEAGE-STONEAGE5-CAB-DIRECTORY-R1.txt
   - research/recovered/STONEAGE-STONEAGE5-BATTLE-LINEAGE-R1.txt
+
+#### 2026-09-25 refinement — SRC-CN-2003-WUXITIANLONG-MAP-PACK-ARCHIVE-01
+
+- Preserved HTTP metadata from the exact replay now adds:
+  - original content length: **4,223,728 bytes**;
+  - origin `Last-Modified: Tue, 10 Jun 2003 10:01:06 GMT`;
+  - Wayback memento observation: **2003-06-23 23:44:51 UTC**.
+- Full transient extraction identifies the object as a PE32/UPX/RAR SFX containing one `map/` directory and **1,011 DAT files**:
+  - 1,008 numeric DATs;
+  - BGM0.DAT, BGM1.DAT, BGM2.DAT;
+  - 995 strict three-plane-valid normal DATs;
+  - 16 special/invalid normal-parser entries.
+- Whole-file comparison against the recovered mixed-2.5 map directory:
+  - same-name files: **1,011 / 1,011**;
+  - one-sided files: **0 / 0**;
+  - exact SHA-256 matches: **995**;
+  - different whole files: **16**;
+  - numeric-only accounting remains **993 exact / 15 different**.
+- Layer-level comparison of the 15 differing normal DATs:
+  - tile changed cells: **11,500**;
+  - parts changed cells: **678**;
+  - event changed cells: **4,593**;
+  - event low-12 payload changes: **5**;
+  - event high read/see-flag changes: **4,588**.
+- Independent anomaly controls:
+  - `1021.DAT` is exact across both corpora, SHA-256 `92abd0a38c5e876d985c33437a252358d1aaa812ce1da99f18752d0a97c81197`;
+  - `817.dat` is exact, SHA-256 `ca29cdf04f9f750712ef9afffe14aebfd571a0c6011eac2c7eff67dfde8cc380`.
+- Interpretation boundary:
+  - the archived origin Last-Modified materially dates this particular surviving object to June 10, but does not prove identical bytes were served on the earlier 5.0 page;
+  - exact `1021` / `817` equality rules out later mutation inside the recovered mixed bundle as their primary anomaly source, but does not establish first historical appearance.
+- Additional derived reports:
+  - `research/recovered/STONEAGE-HISTORICAL-MAPEXE-WAYBACK-R1.txt`;
+  - `research/recovered/STONEAGE-HISTORICAL-MAPEXE-INVENTORY-R1.txt`;
+  - `research/recovered/STONEAGE-HISTORICAL-MAPEXE-SA25-LINEAGE-R1.txt`;
+  - `research/recovered/STONEAGE-HISTORICAL-MAPEXE-SA25-LAYER-DIFF-R1.txt`.
