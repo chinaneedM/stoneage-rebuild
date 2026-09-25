@@ -21,6 +21,7 @@ UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/153 Sa
 
 TARGETS = (
     ("judingwan-25", "1nu7DLcX", "ylru"),
+    ("judingwan-25-legacy", "1eS9MzOe", "qnsv"),
     ("246sa-25", "1cHlV27B0rckWGC2cH21dGg", "7ck4"),
     ("cangbaowan-25", "1a2cOmPxo5GjFPFfU5Mj2Ug", ""),
 )
