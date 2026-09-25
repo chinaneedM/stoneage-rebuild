@@ -1,0 +1,45 @@
+name: Probe Sina 2000 download host aliases
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_2000_sina_host_alias_probe.py
+      - tests/test_stoneage_2000_sina_host_alias_probe.py
+      - .github/workflows/probe-stoneage-2000-sina-host-alias.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-2000-sina-host-alias
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_2000_sina_host_alias_probe -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_2000_sina_host_alias_probe \
+            > research/recovered/STONEAGE-2000-SINA-HOST-ALIAS-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-2000-SINA-HOST-ALIAS-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Sina 2000 download host aliases'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
