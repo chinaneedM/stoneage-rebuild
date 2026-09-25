@@ -2,7 +2,7 @@ import struct
 import unittest
 
 from tools.stoneage_sa_arena_ia_probe import (
-    SECTOR, capped_sector_count, mode_layout, optical_candidates,
+    SECTOR, capped_sector_count, decode_text, mode_layout, optical_candidates,
     parse_cue, parse_directory, parse_pvd
 )
 
@@ -73,6 +73,12 @@ class SaArenaIAProbeTests(unittest.TestCase):
         self.assertEqual(mode_layout("MODE1/2352"),(2352,16,2048))
         self.assertEqual(mode_layout("MODE2/2352"),(2352,24,2048))
         self.assertEqual(mode_layout("MODE1/2048"),(2048,0,2048))
+
+    def test_gb18030_readme_decoding_beats_latin1_mojibake(self):
+        raw="《疯狂原始人》是一款架构于WGS游戏收费系统的网络游戏。".encode("gb18030")
+        enc,text=decode_text(raw)
+        self.assertEqual(enc,"gb18030")
+        self.assertIn("疯狂原始人",text)
 
     def test_sector_count_is_capped(self):
         self.assertEqual(capped_sector_count(4096),2)
