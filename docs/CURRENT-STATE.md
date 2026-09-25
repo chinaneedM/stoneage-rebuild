@@ -2196,12 +2196,17 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - surviving source page and exact CGI parameter set are recovered;
   - current Wayback exact/predicted-path queries, Internet Archive item search and DiscMaster filename searches expose **no exact payload carrier yet**;
   - the contributor domain `xinhaonanhai.com` has Wayback root captures at **2001-12-03** and **2002-07-19**, but the currently indexed/replayed surface exposes no package URL.
+  - For the 2001 map target, the recovered Sina host-alias census finds **56 `col=map` rows** on `games.sina.com.cn` in 2001 but no exact aid/filename row. Small replays of the nearest usable records recover the older direct map topology `http://202.106.184.193/downfiles/map_1212/`; substituting `Estoneage2.0map_1127.exe` into that directory yields **zero CDX rows**. Therefore `map_1212` is only an early-2001 topology control, not the proven 2001-11 target route.
 - **2001-11-02 client target:** Sina separately records `石器时代2.0客户端`, stated size **524377K**, described as an upgrade client for existing StoneAge users.
   - exact Sina token: `col=demo`, `aid=41967`, `filename=stoneage2.0setup.exe`, `size=524377`;
   - current exact Wayback / IA / DiscMaster probes expose no verified payload carrier.
-- **Priority consequence:** `Estoneage2.0map_1127.exe` is now the highest-information field-map recovery target because its contemporaneous page explicitly brackets the package to the **1.X / 2.0** client family. The 2002-11-08 `shiqi4updatex_02_11_08.zip` target remains valuable but is no longer the earliest concrete map-package target.
+  - For the 2001 client target, a dual-host `col=demo` neighborhood probe replays one archived neighbor (`monkeybrain.exe`, aid=25443) to `http://202.108.44.24/demo_1118/monkeybrain.exe`. Substituting `stoneage2.0setup.exe` into that directory yields **zero CDX rows**. This establishes a historical Sina demo-server family only; it does not establish the StoneAge 2.0 installer path.
+- **Priority consequence:** the 2000-12-20 `samap_1220.zip` target remains chronologically first. Once its currently known Sina/Wayback surfaces are bounded, `Estoneage2.0map_1127.exe` is the next highest-information executable field-map target because its contemporaneous page explicitly brackets the package to the **1.X / 2.0** client family. The 2002-11-08 `shiqi4updatex_02_11_08.zip` target remains valuable but is later.
 - **Evidence boundary:** the Sina record proves that this named package was advertised/distributed on 2001-11-27 with a 1.X/2.0 compatibility claim. It does not by itself prove the contents are operator-original, unchanged, or identical to Taiwan v1.0 caches. The executable must be recovered and its extracted DAT bytes compared before any field-map provenance gate can be closed.
 - Derived reports:
   - `research/recovered/STONEAGE-2001-FULLMAP-PRESERVATION-R1.txt`
   - `research/recovered/STONEAGE-2001-CLIENT-PRESERVATION-R1.txt`
   - `research/recovered/STONEAGE-XINHAONANHAI-ARCHIVE-R1.txt`
+  - `research/recovered/STONEAGE-2001-SINA-HOST-ALIAS-R1.txt`
+  - `research/recovered/STONEAGE-2001-SINA-MAP-TOPOLOGY-R1.txt`
+  - `research/recovered/STONEAGE-2001-SINA-CLIENT-TOPOLOGY-R1.txt`
