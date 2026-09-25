@@ -7,7 +7,9 @@ are emitted. This supplements the primary collector host when its image CDN refu
 from __future__ import annotations
 
 import hashlib
+import html
 import json
+import re
 import urllib.parse
 
 from tools.stoneage_ruten_early_carrier_probe import DETAIL, detail_rows, image_urls
@@ -20,6 +22,8 @@ DIRECT_MIRRORS=(
 DISCOVERY_MIRRORS=(
     ("mirror-1x","https://shiqi.ws/page_35.html","石器时代182时期的端游客户端新手礼包"),
 )
+RAW_IMAGE_RE=re.compile(r'''(?i)(?:https?:)?//[^\"'<>\\\s)]+?\.(?:jpe?g|png|gif|webp)(?:\?[^\"'<>\\\s)]*)?|(?:\.\.?/|/)[^\"'<>\\\s)]+?\.(?:jpe?g|png|gif|webp)(?:\?[^\"'<>\\\s)]*)?''')
+
 RUTEN_TARGETS=(
     ("22636573895893","mainland-retail-box"),
     ("22638643800877","mainland-boxed-disc"),
@@ -40,6 +44,17 @@ def discover_article(html_text,base,needle):
                 seen.add(u); out.append(u)
     return tuple(out)
 
+def raw_image_urls(html_text,base):
+    cooked=html.unescape(html_text).replace("\\/","/")
+    out=[]; seen=set()
+    for raw in RAW_IMAGE_RE.findall(cooked):
+        u=normalize_image_url(base,raw)
+        if not u.startswith(("http://","https://")):
+            continue
+        if u not in seen:
+            seen.add(u); out.append(u)
+    return tuple(out)
+
 def page_images(html_text,base):
     p=ImageParser(); p.feed(html_text)
     out=[]; seen=set()
@@ -54,6 +69,11 @@ def page_images(html_text,base):
             continue
         seen.add(u)
         out.append({"index":idx,"url":u,"alt":row.get("alt",""),"title":row.get("title","")})
+    for n,u in enumerate(raw_image_urls(html_text,base)):
+        if u in seen:
+            continue
+        seen.add(u)
+        out.append({"index":f"raw{n}","url":u,"alt":"","title":""})
     return tuple(out)
 
 def ruten_meta():
@@ -68,7 +88,7 @@ def ruten_meta():
     return tuple(out)
 
 def main():
-    print("StoneAge Mainland package mirror visual match — R1")
+    print("StoneAge Mainland package mirror visual match — R2")
     print("SCOPE|public-mirror-images-transient|source-labelled-1.x-vs-2.0|SIFT+RANSAC|no-image-commit")
     errors=[]
     pages=list(DIRECT_MIRRORS)
