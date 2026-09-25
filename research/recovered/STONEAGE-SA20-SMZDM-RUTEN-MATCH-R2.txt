@@ -1,0 +1,27 @@
+StoneAge 2.0 SMZDM-to-Ruten physical-carrier visual cross-check — R2
+SCOPE|source-mapped-2.0-disc-photo+public-early-mainland-controls|SIFT+RANSAC|transient-images|no-payload
+REFERENCE|role=smzdm-2.0-newbie-disc|url=https://am.zdmimg.com/201606/16/576276487bf54.jpg_e1080.jpg|expected_sha256=98ad75b6eb5fa5aca6fa7e37095bd207779321ea4991ccf0754117cfaf3884c3
+REFERENCE_IMAGE|size=1080x607|sha256=98ad75b6eb5fa5aca6fa7e37095bd207779321ea4991ccf0754117cfaf3884c3|keypoints=2454|hash_expected=1
+CONTROL|carrier=22636573895893|scope=mainland-retail-box|label=ruten:22636573895893:0|size=600x800|sha256=d92f101a9a84e36bbd53f326b4fa69cb3463f0da90400a65f612f45bbe9e35fe|keypoints=7022|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_659.jpg
+CONTROL|carrier=22636573895893|scope=mainland-retail-box|label=ruten:22636573895893:1|size=600x800|sha256=e33589cc9696a95179acb8251aacffe50c0bdad1be542b4562f04e55572e18d7|keypoints=8000|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_719.jpg
+CONTROL|carrier=22636573895893|scope=mainland-retail-box|label=ruten:22636573895893:2|size=600x800|sha256=eaf89650c5e92aac187cda3b699a629ec00f1d5730b6dce117e62d51292a15e5|keypoints=2937|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_870.jpg
+CONTROL|carrier=22636573895893|scope=mainland-retail-box|label=ruten:22636573895893:3|size=600x800|sha256=ed9ab0029b0d5517e8d2a11be18106a5d77f52ce5c0482dca87039a0f8523b3e|keypoints=4257|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_576.jpg
+CONTROL|carrier=22638643800877|scope=mainland-boxed-disc|label=ruten:22638643800877:0|size=800x800|sha256=14d1a8a05126f4127649929c6cb9926a5fdff8cf130933a21c4ac4bd6fef1c48|keypoints=2901|url=https://a.rimg.com.tw/c1/001/56d/srvs/f/2d/22638643800877_771.jpg
+CONTROL|carrier=22631284715652|scope=beijing-waei-newbie-control|label=ruten:22631284715652:0|size=800x600|sha256=fe45544663b656cea1f3fd05857fdf8aa8107b171b50b12ea17e919fde0ffb75|keypoints=5403|url=https://a.rimg.com.tw/c1/599/44a/dilan888/4/84/22631284715652_576.jpg
+CONTROL|carrier=22631284715652|scope=beijing-waei-newbie-control|label=ruten:22631284715652:1|size=800x600|sha256=bd54247d584888a4acb95dd6185f30362578e16a354a2eef09499410053e3682|keypoints=4740|url=https://a.rimg.com.tw/c1/599/44a/dilan888/4/84/22631284715652_533.jpg
+CONTROL|carrier=22631284715652|scope=beijing-waei-newbie-control|label=ruten:22631284715652:2|size=800x600|sha256=30839a263f0d56d8bd0a8ea607fd6161756a75bbfb9a9c0446bcbf2b1fb114ec|keypoints=4817|url=https://a.rimg.com.tw/c1/599/44a/dilan888/4/84/22631284715652_766.jpg
+CONTROL|carrier=22631284715652|scope=beijing-waei-newbie-control|label=ruten:22631284715652:3|size=800x600|sha256=8247a278d3fbabd747db89a04172dcb58df93d7ad4a5044ee7ddc7ea602b2cca|keypoints=4603|url=https://a.rimg.com.tw/c1/599/44a/dilan888/4/84/22631284715652_775.jpg
+MATCH|control=ruten:22631284715652:1|carrier=22631284715652|scope=beijing-waei-newbie-control|good075=164|ransac_inliers=64|inlier_ratio=0.3902|query_coverage=0.1231|target_coverage=0.3189|quad_ok=1|quad_area_ratio=1.2880
+MATCH|control=ruten:22631284715652:0|carrier=22631284715652|scope=beijing-waei-newbie-control|good075=148|ransac_inliers=64|inlier_ratio=0.4324|query_coverage=0.1431|target_coverage=0.3551|quad_ok=1|quad_area_ratio=1.1332
+MATCH|control=ruten:22636573895893:0|carrier=22636573895893|scope=mainland-retail-box|good075=113|ransac_inliers=38|inlier_ratio=0.3363|query_coverage=0.7824|target_coverage=0.1575|quad_ok=0|quad_area_ratio=0.0000
+MATCH|control=ruten:22636573895893:1|carrier=22636573895893|scope=mainland-retail-box|good075=101|ransac_inliers=29|inlier_ratio=0.2871|query_coverage=0.0363|target_coverage=0.0000|quad_ok=0|quad_area_ratio=0.0000
+MATCH|control=ruten:22631284715652:2|carrier=22631284715652|scope=beijing-waei-newbie-control|good075=111|ransac_inliers=23|inlier_ratio=0.2072|query_coverage=0.1076|target_coverage=0.2640|quad_ok=1|quad_area_ratio=1.2973
+MATCH|control=ruten:22638643800877:0|carrier=22638643800877|scope=mainland-boxed-disc|good075=42|ransac_inliers=12|inlier_ratio=0.2857|query_coverage=0.3291|target_coverage=0.2187|quad_ok=1|quad_area_ratio=0.0171
+MATCH|control=ruten:22636573895893:3|carrier=22636573895893|scope=mainland-retail-box|good075=47|ransac_inliers=8|inlier_ratio=0.1702|query_coverage=0.5622|target_coverage=0.0047|quad_ok=0|quad_area_ratio=0.0000
+MATCH|control=ruten:22631284715652:3|carrier=22631284715652|scope=beijing-waei-newbie-control|good075=48|ransac_inliers=7|inlier_ratio=0.1458|query_coverage=0.5772|target_coverage=0.0782|quad_ok=0|quad_area_ratio=0.0000
+MATCH|control=ruten:22636573895893:2|carrier=22636573895893|scope=mainland-retail-box|good075=23|ransac_inliers=6|inlier_ratio=0.2609|query_coverage=0.1222|target_coverage=0.1016|quad_ok=0|quad_area_ratio=0.0000
+COUNT|controls_loaded|9
+COUNT|pairs|9
+COUNT|errors|0
+RESOLUTION|NO_STRONG_VISUAL_CLOSURE|retain SMZDM photo as independent 2.0 physical-survival control only
+EVIDENCE_BOUNDARY|visual overlap cannot establish optical pressing, filesystem, installer build, same physical disc, or byte provenance.
