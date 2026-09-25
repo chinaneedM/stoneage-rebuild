@@ -372,7 +372,34 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - do **not** repeat the same anonymous forum/Wayback route;
   - pursue independent reposts/mirrors, contemporaneous installed-tree backups, FTP/CDN mirrors and physical-disc preservation by exact 2.5 carrier identity;
   - if bytes are found, run the clean-client acceptance test before promotion.
-- Status: **TARGET-A/B / PUBLIC SURFACE BOUNDED — high-value lead, no public payload token yet**.
+- Refresh 2026-09-25:
+  - the public index still exposes the thread and now shows **45 replies / 991 views**, last reply **2026-09-16 01:02** by `mh713`;
+  - exact title/`tid=2132`/author/Discuz-archiver/WAP/file-host searches still expose **no public payload filename, share ID, checksum or file size**;
+  - the lead is therefore still alive but its anonymous public surface remains bounded.
+- Status: **TARGET-A/B / LIVE ACCESS-GATED LEAD — public payload token still unrecovered**.
+
+## TARGET-C — CangBaoWan 2025 StoneAge 2.5 Baidu-share lead
+
+- Public post: `https://www.cangbaowan.vip/thread-9642-1-1.html`
+- Title: **`石器时代2.5版，网盘里翻出来的`**
+- Author: **`saiya141`**
+- Public timestamp: **2025-09-26 09:11:13**
+- Exact publicly visible Baidu share URL: **`https://pan.baidu.com/s/1a2cOmPxo5GjFPFfU5Mj2Ug`**
+- Exact share ID: **`1a2cOmPxo5GjFPFfU5Mj2Ug`**
+- Access boundary:
+  - the public page shows the Baidu URL but does **not** expose the extraction code;
+  - the remaining topic body requires 50 forum coins;
+  - no paid access, login, code guessing or bypass was attempted.
+- Exact-token search:
+  - share ID, full Baidu URL, exact title and title+author searches currently return the source post/listing but no independent public repost containing extraction code, filename, size, hash or file tree.
+- Provenance boundary:
+  - this is a modern community/cloud-drive lead, not an operator-era 2002 distribution artifact;
+  - “2.5版” in the title is not sufficient to classify the payload as clean or historically original.
+- Recovery rule:
+  - reopen immediately if the exact share ID appears with a public extraction code, mirror, file metadata or checksum;
+  - if bytes become legitimately public, fingerprint and compare first against the recovered MediaFire mixed bridge and 99ds descendant control.
+- Derived report: `research/recovered/STONEAGE-SA25-PUBLIC-CLEAN-LEADS-REFRESH-R1.txt`.
+- Status: **TARGET-C / EXACT CLOUD-SHARE TOKEN RECOVERED — payload metadata and bytes still inaccessible**.
 
 ## CLEAN-CLIENT CONTROL — version/login fingerprints are multi-factor, not single-key proof
 
@@ -585,7 +612,7 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 2. **JSS 1999 beta/retail/launcher:** continue in parallel as the historical origin target; do not lower its evidentiary importance merely because Korean 2000 may be easier to recover.
 3. Recover **GameTime `onlStoneAge.zip`** from the exact migrated payload path `http://www.gametime.co.kr/images/Online/pds/2001/02/onlStoneAge.zip`; archived 302 headers bind it to `GW_IDX=9`, while legacy `num=9` identifies the historical StoneAge Beta record. The current IA/Wayback/Arquivo metadata routes are exhausted for this exact object; Common Crawl remains service-inconclusive.
 4. Recover the **Korean retail/package StoneAge game CD** independently attested by 2001 Electronic Times and GameMeca reporting; search public disc-preservation/catalog/photo/checksum surfaces and keep it distinct from the GameTime guide bonus CD until media evidence proves equality.
-5. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; compare any recovered bytes against the mixed 2.5 resource bridge. In parallel, keep the newly restored **《轰炸鸡》 / `哇靠轰炸鸡` cross-promotion carrier** OPEN for a Chinese/Waei disc image, package scan, file tree, checksum or independent repost; its current DiscMaster/IA exact metadata surface is negative and should not be repeated without a new token.
+5. Continue recovery of the dedicated **`〖2.5纯净〗` thread** behind `tid=2132`; its public index remains live through 2026-09-16 but still exposes no payload token. In parallel, monitor exact Baidu share ID **`1a2cOmPxo5GjFPFfU5Mj2Ug`** from CangBaoWan thread 9642 for a public extraction code/mirror/filename/hash, and keep the restored **《轰炸鸡》 / `哇靠轰炸鸡` cross-promotion carrier** OPEN for a Chinese/Waei disc image, package scan, file tree, checksum or independent repost. Do not repeat bounded broad searches without a new token.
 6. Continue recovery of the **Korean 1.74** exact-version operator-era installer identity/bytes.
 7. Continue recovery of the **Japanese 1.74a** official/free beta installer identity/bytes from archived operator/Hangame/software mirrors.
 8. Treat the recovered mixed 2.5 bundle as a **resource-format bridge only**; the 2026 public 2.5 archive is closed as a **descendant/community control**, the 2009 `YSA2.5.8.rar` exact mirror is currently public-index-negative, and the tested Beijing-Waei FTP resource path/Availability route is bounded with no recovered 200 payload. None should receive further primary clean-client recovery effort unless an independent mirror, new historical path token or stronger provenance appears.
