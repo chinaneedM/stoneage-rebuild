@@ -1511,6 +1511,16 @@ Every substantial source should record:
 - Derived reports:
   - `research/recovered/STONEAGE-SA25-SMZDM-DISC-R1.txt`
   - `research/recovered/STONEAGE-SA25-SMZDM-DISC-ORDER-R1.txt`.
+- 2.0 photo-1 cross-check refinement — 2026-09-25:
+  - HTML order maps photo 1 directly after the author's `2.0新手报到包` statement; the transient body replays with the previously locked SHA-256 `98ad75b6eb5fa5aca6fa7e37095bd207779321ea4991ccf0754117cfaf3884c3`;
+  - a dedicated R2 SIFT/RANSAC pass loaded **9/9** early Mainland Ruten controls with **0 errors**;
+  - the top two coherent matches are both from Beijing-Waei/new-user control `22631284715652`: **64 inliers / 0.3902 ratio** and **64 / 0.4324**, both with valid quadrilateral geometry;
+  - these signals are stronger than the other tested controls but remain below the project's promotion threshold, so they are recorded as **visual-family evidence only**, not same-disc/same-package proof.
+- Supersession note:
+  - `STONEAGE-SA20-SMZDM-RUTEN-MATCH-R1.txt` is an environment-failure record (OpenCV absent) and carries no negative historical conclusion;
+  - R2 supersedes it for visual-analysis results.
+- Derived report:
+  - `research/recovered/STONEAGE-SA20-SMZDM-RUTEN-MATCH-R2.txt`
 
 ### SRC-CN-2013-XUNLEI-SA25-CLIENT-LEAD-01
 
