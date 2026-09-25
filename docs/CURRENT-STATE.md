@@ -2197,6 +2197,7 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - current Wayback exact/predicted-path queries, Internet Archive item search and DiscMaster filename searches expose **no exact payload carrier yet**;
   - the contributor domain `xinhaonanhai.com` has Wayback root captures at **2001-12-03** and **2002-07-19**, but the currently indexed/replayed surface exposes no package URL.
   - For the 2001 map target, the recovered Sina host-alias census finds **56 `col=map` rows** on `games.sina.com.cn` in 2001 but no exact aid/filename row. Small replays of the nearest usable records recover the older direct map topology `http://202.106.184.193/downfiles/map_1212/`; substituting `Estoneage2.0map_1127.exe` into that directory yields **zero CDX rows**. Therefore `map_1212` is only an early-2001 topology control, not the proven 2001-11 target route.
+  - A bounded live numeric-neighborhood scan around source page `11271899.shtml` checked **73 page IDs** and found only five map records: the target plus four immediately preceding Delta Force map packages (`aid=43124/43127/43129/43130`, filenames ending `_1119.zip`). A dedicated dual-host Wayback prefix replay then found **zero archived CGI rows for all four sibling tokens** on both `games1.sina.com.cn` and `games.sina.com.cn`. Consequently the same-page batch is useful as a bounded control but does **not** recover a late-November-2001 binary host/directory template.
 - **2001-11-02 client target:** Sina separately records `石器时代2.0客户端`, stated size **524377K**, described as an upgrade client for existing StoneAge users.
   - exact Sina token: `col=demo`, `aid=41967`, `filename=stoneage2.0setup.exe`, `size=524377`;
   - current exact Wayback / IA / DiscMaster probes expose no verified payload carrier.
@@ -2210,3 +2211,5 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - `research/recovered/STONEAGE-2001-SINA-HOST-ALIAS-R1.txt`
   - `research/recovered/STONEAGE-2001-SINA-MAP-TOPOLOGY-R1.txt`
   - `research/recovered/STONEAGE-2001-SINA-CLIENT-TOPOLOGY-R1.txt`
+  - `research/recovered/STONEAGE-2001-SINA-SAMEBATCH-R1.txt`
+  - `research/recovered/STONEAGE-2001-SINA-SAMEBATCH-ROUTE-R1.txt`
