@@ -1640,6 +1640,19 @@ Every substantial source should record:
   - that `gm` and `hg` packages are byte-identical.
 - Derived note: `research/clients/STONEAGE-JAPAN-SA174GM-GAMANIA-RECOVERY-R1.md`.
 
+- Exact/prefix public-preservation probe — R2:
+  - Wayback exact HTTP and HTTPS queries normalize to the same single indexed object: **2013-02-10 10:10:13 UTC**, HTTP **503**, MIME `text/html`, length **399**, digest `CSYD2PXMVLZFP376UJSTVBBFRCMOCGUL`; this is not a client payload;
+  - Wayback Availability at **2003-12-11**, **2003-12-12**, **2004-01-01** and **2008-01-01** returns no closest snapshot for either exact target;
+  - Wayback prefix query for `file2.gamania.co.jp/sa/*`: **0 rows**, therefore no neighboring `sa174gm` capture was exposed on that tested prefix surface;
+  - Arquivo.pt exact HTTP query: **0 rows**;
+  - Arquivo.pt exact HTTPS query: **0 rows**;
+  - Internet Archive advanced search for `sa174gm.exe / sa174gm`: **0 documents**;
+  - current direct host lookup failed DNS in the CI runner and is not treated as archival absence;
+  - exact/prefix HTTP-200 payload candidates: **0**; no client bytes, hash or file tree recovered.
+- Operational status: **IDENTITY RESOLVED / TESTED WAYBACK+ARQUIVO+IA SURFACE BOUNDED FOR BYTES**. Reopen this exact branch only from a new mirror, corpus, checksum, upload token, physical carrier or independently sourced URL/path.
+- Derived archive report: `research/recovered/STONEAGE-JAPAN-174A-GAMANIA-MIRROR-R1.txt`.
+- Probe resolution: `GAMANIA_SA174GM_PUBLIC_INDEX_SURFACE_BOUNDED`.
+
 ### SRC-CN-2020-SHIQILA-SA174GM-ATTACHMENT-01
 
 - Page: `https://shiqi.la/forum.php?mod=viewthread&tid=16671`
@@ -1651,6 +1664,10 @@ Every substantial source should record:
 - Public attachment metadata:
   - installer archive: `sa174gm[解压密码www.shiqi.la].rar`, **194.24 MB**, stable Discuz attachment-id component **675**, displayed upload time **2020-06-05 08:13**, displayed price **10 石币**;
   - installed/portable archive: `Stoneage.rar`, **174.72 MB**, stable attachment-id component **676**, displayed upload time **2020-06-05 08:15**, displayed price **15 石币**.
+- Discuz-token stability correction:
+  - repeated public page fetches changed the encoded token's embedded hash/timestamp fields;
+  - only numeric attachment IDs **675** and **676** are treated as stable attachment identities;
+  - the full encoded or decoded Discuz token must not be recorded as a permanent download locator.
 - Access boundary:
   - anonymous attachment requests return HTTP 403;
   - no login/payment/access-control bypass is attempted.
