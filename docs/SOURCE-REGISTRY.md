@@ -1916,3 +1916,50 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-SA25-115-LINEAGE-PROBE-R1.txt`;
   - `research/clients/STONEAGE-SA25-2009-2011-DESCENDANT-LINEAGE-R1.md`.
 - Status: **DESCENDANT LINEAGE CONTROL / TESTED PUBLIC PRESERVATION SURFACE BOUNDED**.
+
+### SRC-TW-2026-RUTEN-EARLY-REGIONAL-CARRIERS-01
+
+- Retrieval/research date: **2026-09-25**
+- Source type: current public Ruten marketplace photographs/item metadata used as **surviving physical-carrier evidence**, not as operator-era publication evidence or byte provenance.
+- Primary public item IDs:
+  - `22625938996449` — Taiwan Traditional-Chinese StoneAge client/package listing; six public images;
+  - `22631285251243` — Taiwan client/package control; five public images;
+  - `22631285248430` — `晴界包` package control;
+  - `22631284715652` — Beijing-Waei/new-user-package control;
+  - `22636573895893` — photographed Mainland WAEI/WGS StoneAge retail box;
+  - `22638643800877` — photographed boxed StoneAge disc/package.
+- Taiwan package evidence:
+  - `22625938996449` visibly uses Traditional Chinese and carries a WGS support/billing sticker;
+  - the sticker states that StoneAge supports the **WGS billing system** and advertises WGS point-card availability through convenience stores, 3C retailers and chain bookstores;
+  - `22631285251243` does **not** add five independent photographs: all five corresponding dHashes are identical, with **3,609–4,702 RANSAC inliers / 0.9904–1.0000**; one pair is SHA-256 byte-identical;
+  - therefore those two pages form one reused-photo family for the shared five images.
+- Taiwan v1.0 comparison boundary:
+  - accepted Redump 104630 remains independently anchored by `P-RPG-0008`, barcode `4710739350098`, and its mastering-ring evidence;
+  - no exact `P-RPG-0008` / `4710739350098` identifier has yet been recovered from these Ruten package photographs;
+  - no same-edition or same-disc claim is made.
+- Mainland package evidence:
+  - `22636573895893` visibly carries WAEI/WGS StoneAge branding;
+  - its photographed back panel exposes exact **ISBN `7-900032-57-0`** and barcode **`9787900032570`**;
+  - `22638643800877` visibly exposes **`www.waei.com.cn`** on the disc face.
+- Exact preservation pass for `7-900032-57-0 / 9787900032570`:
+  - GitHub Actions run **36096287039**, attempt 2 — **success**;
+  - queries covered the exact ISBN, compact ISBN, barcode and Waei/StoneAge title/operator variants;
+  - strict DiscMaster hits: **0**;
+  - strict Internet Archive items: **0**;
+  - errors: **0**;
+  - the single raw DiscMaster row returned by the hyphenated ISBN query did not pass the strict StoneAge/operator match and is not a candidate.
+- Confidence:
+  - **A for current public Ruten item IDs, image availability/hashes and exact duplicate-photo metrics**;
+  - **A for the identifiers visibly readable in the cited current photographs**;
+  - **OPEN for original release version, disc matrix/IFPI, filesystem, installer hashes and byte relationship to recovered clients**.
+- Operational consequence:
+  - retain ISBN `7-900032-57-0` and barcode `9787900032570` as exact Mainland carrier search keys;
+  - do not repeat the same DiscMaster/IA exact pass absent a new corpus or token;
+  - count the two Taiwan listing pages conservatively as one shared photographic source family;
+  - prioritize a public read/dump/file tree, matrix/volume label or installer checksum tied to one of these physical carriers.
+- Canonical note: `research/clients/STONEAGE-EARLY-RUTEN-REGIONAL-CARRIERS-R1.md`.
+- Derived reports:
+  - `research/recovered/STONEAGE-EARLY-RUTEN-CARRIERS-R1.txt`;
+  - `research/recovered/STONEAGE-EARLY-RUTEN-CARRIER-FINGERPRINTS-R1.txt`;
+  - `research/recovered/STONEAGE-MAINLAND-RETAIL-ISBN-PROBE-R1.txt`.
+
