@@ -1,0 +1,23 @@
+StoneAge 2000 Sina host-wide filename probe — R1
+SCOPE|202.106.184.193/downfiles prefix + server-side filename filters|metadata-only
+TARGET|filename=samap_1220.zip|hostroot=http://202.106.184.193/downfiles/
+CDX|label=exact-stem|window=2000-2001|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|label=exact-stem|window=2002-2003|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|label=exact-stem|window=2004-2006|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|label=samap|window=2000-2001|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|label=samap|window=2004-2006|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|label=1220|window=2002-2003|status=200|rows=2|relevant=2|bytes=385|sha256=47cc2229cb3035871bccf4ff035c3463df98d68f1ab94e4cf313d98c3b96e773
+ROW|label=1220|window=2002-2003|timestamp=20020306070109|original=http://202.106.184.193:80/downfiles/map_1212/RA2MAPPACK1_1220.EXE|statuscode=404|mimetype=text/html|digest=7H6E5MNWWD3O66UPDLTT4P6NLATZ27PT|length=347|redirect=
+ROW|label=1220|window=2002-2003|timestamp=20020621174109|original=http://202.106.184.193:80/downfiles/updatex_1212/cm00_388_1220.exe|statuscode=404|mimetype=text/html|digest=ZRMG7XLZTJUEQED6BCA6O5QZ7PX6O6RZ|length=345|redirect=
+CDX|label=1220|window=2004-2006|status=200|rows=1|relevant=1|bytes=233|sha256=c42af3e4a9e01545e28db4629d9d8580155a166f9d4b1c608ea445422a5a566a
+ROW|label=1220|window=2004-2006|timestamp=20040413010451|original=http://202.106.184.193:80/downfiles/updatex_1212/cm00_388_1220.exe|statuscode=404|mimetype=text/html|digest=ZRMG7XLZTJUEQED6BCA6O5QZ7PX6O6RZ|length=351|redirect=
+CDX|label=stoneage|window=2000-2001|status=200|rows=1|relevant=1|bytes=237|sha256=186b0515f983c4cb69f796f49fdccb2cd6783a9cd682610d10541986b313a7c3
+ROW|label=stoneage|window=2000-2001|timestamp=20010608065830|original=http://202.106.184.193:80/downfiles/desktop_1212/stoneage_800_1219.zip|statuscode=404|mimetype=text/html|digest=S3AENG5WAXRJVBRREH3GBDCH22HGRAB7|length=348|redirect=
+CDX|label=stoneage|window=2002-2003|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|label=stoneage|window=2004-2006|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+COUNT|unique_relevant_urls|3
+ERROR|scope=samap:2002-2003|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=1220:2000-2001|kind=URLError|message=<urlopen error _ssl.c:983: The handshake operation timed out>
+COUNT|errors|2
+RESOLUTION|HOSTWIDE_RELATED_URLS_FOUND|use related URLs only as directory/mirror topology evidence
+EVIDENCE_BOUNDARY|host-wide filename rows are discovery metadata; only exact recovered bytes can establish target package identity.
