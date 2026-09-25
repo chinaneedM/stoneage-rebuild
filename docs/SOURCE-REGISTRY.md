@@ -2359,3 +2359,25 @@ Every substantial source should record:
   - DiscMaster item `31124` / `新电脑0508.iso` is a **2005 August** Chinese CHIP disc and is a negative date control, not the target.
 - Derived report:
   - `research/recovered/STONEAGE-2001-CHIP-NEWCOMPUTER-CARRIER-R2.txt`
+
+
+### SRC-CN-2001-17173-SA20-PRODUCT-01
+
+- Title: `石器时代2.0-家族开拓史 / 产品介绍`
+- Product date stated by page: **2001-11-01**
+- Retrieval/research date: 2026-09-25
+- Language/region: Simplified Chinese / Mainland China
+- Source type: surviving 17173 StoneAge version/product page preserving period product specifications
+- URL: `https://news.17173.com/z/stoneage/banben/sa20-cq.htm`
+- Confidence: **A** for the preserved product-page statements; this source does not itself provide disc bytes or mastering provenance.
+- Supports:
+  - `石器时代2.0新手报到包` is stated to contain a **《石器时代2.0》客户端光盘** plus a 300-point WGS serial;
+  - `石器时代2.0老手削暴包` is independently stated to contain a **《石器时代2.0》客户端光盘** plus the listed WGS/red-T-rex physical extras;
+  - both product entries state **2001-11-01** as launch date on this preserved product surface;
+  - therefore the new-user and old-user packages are two exact physical-carrier classes for recovery of a period 2.0 client disc.
+- Does not support:
+  - that both packages necessarily contain byte-identical pressings;
+  - that either optical disc is byte-identical to Sina's `stoneage2.0setup.exe`;
+  - exact volume label, matrix/IFPI, installer name, filesystem or clean-client hash.
+- Related physical-survival control:
+  - the 2016 SMZDM collector source maps its first install-disc photo directly to a `2.0新手报到包`; see `SRC-CN-2016-SMZDM-SA25-INSTALL-DISCS-01`.
