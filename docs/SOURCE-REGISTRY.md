@@ -2019,4 +2019,63 @@ Every substantial source should record:
 - Derived report: `research/recovered/STONEAGE-SA-ARENA-IA-OPTICAL-R1.txt`.
 - GitHub Actions verification: run **36098498332** — success.
 
+### SRC-CN-2003-17173-STA5-LAUNCH-01
 
+- Title: 《石器时代5.0:宠物进化史》全新上市
+- Original date: 2003-01-16
+- Retrieval date: 2026-09-25
+- Language/region: Simplified Chinese / Mainland China
+- Source type: contemporaneous 17173 game-news / distribution announcement
+- URL: https://news.17173.com/content/2003-1-16/n470_387077.html
+- Confidence: A for the dated public-distribution claim; it does not identify the hash of the surviving IA disc
+- Supports:
+  - 石器时代ONLINE宠物进化史 was publicly described as newly on sale by 2003-01-16;
+  - the advertised starter pack explicitly included a 完整版客户端;
+  - the pet-fusion/egg description matches the product identity exposed by the recovered 5.0 installer and README.
+- Does not support:
+  - byte identity between the advertised pack and IA item Stoneage-5;
+  - a mastering/pressing date for that preserved BIN;
+  - DAT/MAP field-cache contents.
+- Cross-check: contemporaneous Sina source SRC-CN-2003-SINA-SA-DOWNLOAD-HUB-01 exposes 5.0 client downloads on 2003-04-03.
+
+### SRC-CN-2003-WAEI-STA5-IA-OPTICAL-01
+
+- Title: preserved Stoneage-5 / 石器时代Online 宠物进化史 CD-ROM
+- Retrieval date: 2026-09-25
+- Language/region: Simplified Chinese / Mainland China
+- Source type: preserved optical-image object plus bounded ISO9660/MSI/CAB byte inspection
+- Internet Archive identifier: Stoneage-5
+- Confidence: A for byte-derived identity and internal structure; B for original pressing/mastering provenance because no independent Redump/ring-code identity is linked yet
+- Preserved carrier:
+  - CD [STA5].bin: 733,057,248 bytes; MD5 61a8b9f2e7db18c3e3e95c6c12e3674b; SHA1 6053dce3df2723250ddb52a98b3e8cf2552cd791; CRC32 98d6ee68;
+  - CD [STA5].cue: 295 bytes; MD5 8cd5e5427248427175392d9632b37bc3; SHA1 4b667f113add8d1ad20dc4ae0eff10a8b97a1203;
+  - ISO9660 volume label STA5.
+- Installer:
+  - STA5.MSI: 782,908 bytes; SHA-256 0ed62503861d4fc3f715c060402d101150020d54e5d294af40a8412232ba4f63;
+  - ProductName=石器时代宠物进化史; ProductVersion=5.00.0000; Manufacturer=北京华义联合软件开发有限公司;
+  - install root Program Files\Waei\stoneage5.0; 413 MSI File rows.
+- Cabinet:
+  - DATA1.CAB: 612,584,670 bytes; CAB v1.3; 26 LZX folders / 413 cabinet files;
+  - only bounded prefixes and selected early files were read; no full cabinet or proprietary payload was committed.
+- Exact battle lineage:
+  - 5.0 battle_2.bin: 187,500 bytes; SHA-256 1046a66cbf34088a15f99146263f166be68991c9e01b48dcbbc81d82d1569642;
+  - first 185,892 bytes exactly equal Taiwan v1.0 battle_1.bin SHA-256 d99be6475982cf6098b90ff5dfd81ab275ec8c9271fa83daceb95e3fd4bb8859;
+  - 1,608-byte tail is exactly two 804-byte records;
+  - 5.0 battletxt_2.txt: 5,844 bytes; SHA-256 4f0f1c2f703a2fba95e9966cd7a760ebe168591d89057ddeb2b645ac08942057;
+  - first 5,792 bytes exactly equal v1.0 battletxt_1.txt; appended rows are battle218.sab and battle219.sab.
+- Internal time evidence:
+  - battle_2.bin / battletxt_2.txt: 2001-06-25;
+  - real_31.bin / adrn_31.bin: 2002-12-25;
+  - sa_5000.exe: 2002-12-26;
+  - INSTALL.EXE PE timestamp: 2002-12-27 02:21:08 UTC.
+- Boundary:
+  - internal timestamps are not independent release-date proof;
+  - IA catalogue date/creator remain uploader metadata unless independently corroborated;
+  - exact surviving BIN is not independently tied to a pressing/ring-code record;
+  - MSI contains no client field-cache .DAT / single-layer .MAP rows, so field-map byte provenance remains open.
+- Derived reports:
+  - research/recovered/STONEAGE-STONEAGE5-IA-METADATA-R1.txt
+  - research/recovered/STONEAGE-STONEAGE5-IA-OPTICAL-R1.txt
+  - research/recovered/STONEAGE-STONEAGE5-MSI-INVENTORY-R1.txt
+  - research/recovered/STONEAGE-STONEAGE5-CAB-DIRECTORY-R1.txt
+  - research/recovered/STONEAGE-STONEAGE5-BATTLE-LINEAGE-R1.txt

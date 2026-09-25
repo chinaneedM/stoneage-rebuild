@@ -683,3 +683,17 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 9. Recover the Sina "1.82" href/bytes only as an **unverified version-label candidate** and identify its actual build from the bytes rather than the page label.
 10. Keep the Wayi official 8.5 package and `NetmarbleStoneAge120` as later controls, not substitutes for an early clean baseline.
 11. For any newly recovered candidate bytes, stop broad searching immediately and perform the clean-client acceptance test plus first full inventory.
+
+## RECOVERED-A — Mainland 5.0 宠物进化史 preserved optical carrier
+
+- Preserved object: Internet Archive Stoneage-5, one-track MODE1/2352 BIN/CUE; BIN SHA1 6053dce3df2723250ddb52a98b3e8cf2552cd791, ISO volume STA5.
+- Classification: RECOVERED-A for byte-derived client-carrier/resource archaeology; pressing provenance remains OPEN. The object is internally coherent and identifies itself through MSI/package structure as Beijing-Waei 石器时代宠物进化史 v5.00.0000, but no second independent disc fingerprint/ring-code record currently establishes S-level media identity.
+- Contemporaneous distribution bracket:
+  - 17173, 2003-01-16: product newly on sale; starter pack includes a complete client;
+  - Sina, 2003-04-03: explicit 5.0 client download hub.
+  These prove the version was publicly distributed before June 2003 while remaining separate from exact archived-disc pressing identity.
+- Resource generation: real_31.bin 1,102,755,808 bytes; adrn_31.bin 24,255,760; spr_17.bin 7,145,946; spradrn_17.bin 14,220; plus battle_2.bin / battletxt_2.txt.
+- Exact inherited-battle proof: the first 185,892 bytes of 5.0 battle_2.bin are byte-identical to the complete accepted Taiwan v1.0 battle_1.bin; 5.0 then adds exactly two 804-byte records. The 5.0 text address table independently preserves the complete v1.0 table as an exact prefix and appends battle218.sab and battle219.sab.
+- Important negative for the current highest-priority search: the MSI's 413 destination files include no field-cache .DAT or single-layer .MAP files. This carrier closes a battle-resource lineage milestone but does not close the pre-June-2003 field-map byte anchor.
+- Next use: treat this object as a boundedly recoverable Mainland 5.0 comparison carrier and pivot the field-map hunt to the contemporaneous separate 完整地图档下载 package / installed caches / other physical media.
+- Derived reports: STONEAGE-STONEAGE5-IA-OPTICAL-R1.txt, STONEAGE-STONEAGE5-MSI-INVENTORY-R1.txt, STONEAGE-STONEAGE5-CAB-DIRECTORY-R1.txt, STONEAGE-STONEAGE5-BATTLE-LINEAGE-R1.txt.
