@@ -3,11 +3,16 @@
 
 R1 completed 7/12 month+extension queries. The missing combinations include
 the highest-value November EXE surface. R2 splits only those failed
-month/extension combinations into smaller date windows to reduce CDX timeout
-risk. Metadata only; no archived payload is downloaded.
+month/extension combinations into smaller date windows and applies bounded
+retries for transient archive failures. Metadata only; no archived payload is
+downloaded.
+
+Candidate scoring is deliberately gated by a StoneAge-specific URL marker.
+Generic Waei URLs containing words such as "download" or "setup" are controls,
+not StoneAge candidates.
 """
 from __future__ import annotations
-import hashlib,json,re,urllib.parse,urllib.request
+import hashlib,json,re,time,urllib.parse,urllib.request
 
 UA="stoneage-rebuild-archaeology/1.0"
 CDX="https://web.archive.org/cdx/search/cdx"
@@ -32,12 +37,23 @@ WINDOWS=(
 def clean(v,n=5000):
     return " ".join(str(v if v is not None else "").split()).replace("|","%7C")[:n]
 
-def fetch(url,timeout=45,max_bytes=6*1024*1024):
+def fetch_once(url,timeout=30,max_bytes=6*1024*1024):
     req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/json,text/plain,*/*;q=0.5","Accept-Encoding":"identity"})
     with urllib.request.urlopen(req,timeout=timeout) as r:
         b=r.read(max_bytes+1)
         if len(b)>max_bytes: raise ValueError(f"response-too-large:{len(b)}")
         return int(getattr(r,"status",r.getcode())),r.geturl(),b
+
+def fetch(url,attempts=2):
+    last=None
+    for attempt in range(1,attempts+1):
+        try:
+            return (*fetch_once(url),attempt)
+        except Exception as e:
+            last=e
+            if attempt<attempts:
+                time.sleep(attempt*2)
+    raise last
 
 def cdx_url(start,end,ext):
     p=[
@@ -54,9 +70,17 @@ def rows(body):
     h=obj[0]
     return tuple(dict(zip(h,r)) for r in obj[1:] if isinstance(r,list))
 
+def stoneage_marker(url):
+    low=urllib.parse.unquote_plus(str(url or "")).lower()
+    if "stoneage" in low:
+        return True
+    return bool(re.search(r"(?:^|[/_.-])sa(?:20|2)[^/]*[.](?:exe|zip|cab|rar)(?:[?]|$)",low))
+
 def score(url):
     low=urllib.parse.unquote_plus(str(url or "")).lower()
-    s=0
+    if not stoneage_marker(low):
+        return 0
+    s=6
     if "stoneage2" in low:s+=8
     elif "stoneage" in low:s+=6
     if "2.0" in low or "20" in low:s+=2
@@ -68,30 +92,36 @@ def score(url):
 
 def main():
     print("StoneAge Beijing-Waei Q4-2001 payload-domain residual census — R2")
-    print("SCOPE|failed R1 month/extensions split into smaller windows|CDX-metadata-only|no-payload")
+    print("SCOPE|failed R1 month/extensions split into smaller windows|bounded retries|StoneAge-gated candidate scoring|CDX-metadata-only|no-payload")
     errors=[];seen={};completed=0
     for label,start,end,ext in WINDOWS:
         try:
-            st,final,b=fetch(cdx_url(start,end,ext))
+            st,final,b,attempt=fetch(cdx_url(start,end,ext))
             rr=rows(b);completed+=1
-            print(f"CDX|window={label}|ext={ext}|from={start}|to={end}|status={st}|rows={len(rr)}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|final={clean(final)}")
+            print(f"CDX|window={label}|ext={ext}|from={start}|to={end}|status={st}|rows={len(rr)}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|attempt={attempt}|final={clean(final)}")
             for r in rr:
                 u=str(r.get("original") or "")
                 seen[(u,str(r.get("digest") or ""))]=r
         except Exception as e:
             errors.append((f"{label}:{ext}:{start}-{end}",type(e).__name__,str(e)))
     cand=[]
+    controls=[]
     for r in seen.values():
         u=str(r.get("original") or "");s=score(u)
         if s>0:cand.append((s,u,r))
+        elif any(k in urllib.parse.unquote_plus(u).lower() for k in ("download","setup","client","upgrade","update","patch")):
+            controls.append((u,r))
     cand.sort(key=lambda x:(x[0],x[1]),reverse=True)
     for s,u,r in cand:
         print(f"CANDIDATE|score={s}|timestamp={clean(r.get('timestamp'))}|original={clean(u)}|statuscode={clean(r.get('statuscode'))}|mimetype={clean(r.get('mimetype'))}|digest={clean(r.get('digest'))}|length={clean(r.get('length'))}")
+    for u,r in controls[:50]:
+        print(f"NONSTONEAGE_CONTROL|timestamp={clean(r.get('timestamp'))}|original={clean(u)}|reason=generic-download-or-setup-without-stoneage-marker")
     exact=[x for x in cand if "stoneage2.0setup" in urllib.parse.unquote_plus(x[1]).lower()]
     print(f"COUNT|queries|{len(WINDOWS)}")
     print(f"COUNT|completed_queries|{completed}")
     print(f"COUNT|unique_payload_urls|{len(seen)}")
     print(f"COUNT|stoneage_candidates|{len(cand)}")
+    print(f"COUNT|nonstoneage_controls|{len(controls)}")
     print(f"COUNT|exact_sina_filename_urls|{len(exact)}")
     for s,k,m in errors:
         print(f"ERROR|scope={clean(s)}|kind={clean(k)}|message={clean(m)}")
