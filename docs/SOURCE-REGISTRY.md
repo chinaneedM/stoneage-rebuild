@@ -1942,21 +1942,19 @@ Every substantial source should record:
   - its small photographed identifier area was initially transcribed as **`7-900032-57-0` / `9787900032570`**, but both fail their ISBN-10/EAN-13 checksums; if the preceding digits are correct, checksum-consistent final-digit hypotheses are **`7-900032-57-6` / `9787900032577`**;
   - neither final digit is independently confirmed from the current photograph, so the printed identifier remains **OPEN**;
   - `22638643800877` visibly exposes **`www.waei.com.cn`** on the disc face.
-- Preservation pass for the initial transcription strings:
-  - GitHub Actions run **36096287039**, attempt 2 — **success**;
-  - queries covered the initial transcription strings, compact form and Waei/StoneAge title/operator variants;
-  - strict DiscMaster hits: **0**;
-  - strict Internet Archive items: **0**;
-  - errors: **0**;
-  - the single raw DiscMaster row returned by the hyphenated ISBN query did not pass the strict StoneAge/operator match and is not a candidate.
+- Preservation passes:
+  - R1 GitHub Actions run **36096287039**, attempt 2 — **success** — tested the initial transcription strings and context variants;
+  - R2 GitHub Actions run **36097696696** — **success** — separately tested checksum-consistent hypotheses `7-900032-57-6` / `7900032576` / `9787900032577` while retaining them as hypotheses only;
+  - R2 aggregate across eight initial/hypothesis/context queries: **0 strict DiscMaster hits / 0 strict Internet Archive items / 0 errors**;
+  - the hyphenated initial and hypothetical ISBN queries each returned one raw DiscMaster row, but neither passed the strict StoneAge/operator filter and neither is a candidate.
 - Confidence:
   - **A for current public Ruten item IDs, image availability/hashes and exact duplicate-photo metrics**;
   - **A for the visible WAEI/WGS branding and other clearly readable current-photo details**;
   - **OPEN for the printed identifier final digit, original release version, disc matrix/IFPI, filesystem, installer hashes and byte relationship to recovered clients**.
 - Operational consequence:
   - retain the initial transcription only as a tested photo-reading record, not as a confirmed identifier;
-  - test checksum-consistent hypotheses separately and label them as hypotheses unless a clearer photograph or independent catalogue source confirms them;
-  - do not repeat the same DiscMaster/IA pass for the already-tested initial strings absent a new corpus or token;
+  - checksum-consistent hypotheses have now been tested separately and remain hypotheses only;
+  - do not repeat the same DiscMaster/IA passes for either the initial strings or checksum hypotheses absent a new corpus or token;
   - count the two Taiwan listing pages conservatively as one shared photographic source family;
   - prioritize a public read/dump/file tree, matrix/volume label or installer checksum tied to one of these physical carriers.
 - Canonical note: `research/clients/STONEAGE-EARLY-RUTEN-REGIONAL-CARRIERS-R1.md`.
