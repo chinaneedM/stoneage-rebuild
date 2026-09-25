@@ -6,7 +6,7 @@ games1.sina.com.cn for the same /cgi-bin/games/downgames/download.pl route.
 This metadata-only probe checks both aliases without downloading payloads.
 """
 from __future__ import annotations
-import hashlib,json,urllib.parse,urllib.request
+import hashlib,html,json,re,urllib.parse,urllib.request
 
 UA="stoneage-rebuild-archaeology/1.0"
 CDX="https://web.archive.org/cdx/search/cdx"
@@ -46,6 +46,50 @@ def relevant(row):
     p=params(row.get("original") or "")
     return str(p.get("aid") or "")==TARGET_AID or str(p.get("filename") or "").lower()==TARGET_FILENAME.lower()
 
+def replay_url(ts,orig):
+    return f"https://web.archive.org/web/{ts}id_/{orig}"
+
+def decode_html(body):
+    for enc in ("gb18030","utf-8","latin1"):
+        try:return body.decode(enc)
+        except UnicodeDecodeError:pass
+    return body.decode("latin1","replace")
+
+def extract_route_values(body,base):
+    text=decode_html(body)
+    vals=[]
+    patterns=(
+      r'(?is)href\s*=\s*["\']([^"\']+)["\']',
+      r'(?is)src\s*=\s*["\']([^"\']+)["\']',
+      r'(?is)action\s*=\s*["\']([^"\']+)["\']',
+      r'(?is)value\s*=\s*["\']([^"\']+)["\']',
+      r'(?i)(?:https?|ftp)://[^\s"\'<>]+',
+    )
+    for pat in patterns: vals.extend(re.findall(pat,text))
+    out=[]
+    for raw in vals:
+        raw=html.unescape(str(raw)).strip()
+        if not raw: continue
+        u=urllib.parse.urljoin(base,raw)
+        low=urllib.parse.unquote_plus(u).lower()
+        if (
+          TARGET_FILENAME.lower() in low or
+          any(ext in low for ext in (".zip",".exe",".rar",".cab")) or
+          any(k in low for k in ("download","down/","ftp","map"))
+        ):
+            out.append(u)
+    return tuple(dict.fromkeys(out))
+
+def relevant_text_lines(body):
+    text=decode_html(body)
+    out=[]
+    for line in re.split(r'[\r\n]+',text):
+        s=" ".join(line.split())
+        low=urllib.parse.unquote_plus(s).lower()
+        if TARGET_FILENAME.lower() in low or any(k in low for k in ("download","ftp","location","window.","document.","href","form")):
+            out.append(s[:1500])
+    return tuple(dict.fromkeys(out))[:40]
+
 def availability(url,date):
     q=AVAIL+"?"+urllib.parse.urlencode({"url":url,"timestamp":date})
     st,final,h,b=fetch(q,timeout=25,max_bytes=512*1024)
@@ -78,11 +122,27 @@ def main():
             except Exception as e:
                 errors.append((f"avail:{host}:{date}",type(e).__name__,str(e)))
     print(f"COUNT|relevant_hits|{len(hits)}")
+    replayed=0
+    for host,row in hits:
+        ts=str(row.get("timestamp") or "");orig=str(row.get("original") or "")
+        if not ts or not orig: continue
+        try:
+            st,final,h,b=fetch(replay_url(ts,orig),timeout=45,max_bytes=256*1024)
+            replayed+=1
+            vals=extract_route_values(b,orig);lines=relevant_text_lines(b)
+            print(f"REPLAY|host={host}|timestamp={clean(ts)}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|final={clean(final)}|route_values={len(vals)}|relevant_lines={len(lines)}")
+            for u in vals:
+                print(f"ROUTE_VALUE|host={host}|timestamp={clean(ts)}|url={clean(u)}")
+            for line in lines:
+                print(f"BODY_LINE|host={host}|timestamp={clean(ts)}|text={clean(line,1500)}")
+        except Exception as e:
+            errors.append((f"replay:{host}:{ts}",type(e).__name__,str(e)))
+    print(f"COUNT|replayed_hits|{replayed}")
     for s,k,m in errors:
         print(f"ERROR|scope={clean(s)}|kind={clean(k)}|message={clean(m)}")
     print(f"COUNT|errors|{len(errors)}")
     if hits:
-        print("RESOLUTION|HOST_ALIAS_TARGET_ROW_FOUND|replay only the exact historical response before considering payload recovery")
+        print("RESOLUTION|HOST_ALIAS_TARGET_ROW_FOUND|exact historical response replayed when available; inspect ROUTE_VALUE/BODY_LINE before payload recovery")
     else:
         print("RESOLUTION|NO_TARGET_ROW_ON_TESTED_HOST_ALIASES|games/games1 aliases bounded on tested Wayback prefix surfaces")
     print("EVIDENCE_BOUNDARY|host-alias rows are route evidence only; payload identity still requires recovered bytes.")
