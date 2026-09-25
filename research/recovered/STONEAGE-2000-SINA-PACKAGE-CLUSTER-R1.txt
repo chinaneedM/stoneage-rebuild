@@ -1,34 +1,36 @@
 StoneAge 2000 Sina package-cluster preservation probe — R1
 SCOPE|7 exact Sina package tokens + IA/DiscMaster/Arquivo public indexes|metadata-only|no-payload
 TOKEN|role=map-display|date=2000-08-07|aid=16654|filename=0969-5_807.zip|size_kib=925
-IA|role=map-display|status=200|items=0|bytes=322|sha256=e182a8f61720de66c29485e2e945f484b98d0298b06f8f04d0647f7cb0b7042f
+IA|role=map-display|status=200|items=0|bytes=321|sha256=9b301c70521ae955b72425f895d44532d2627f1abbf57bdfe54b7626519ab47f
 DISCM|role=map-display|status=200|strict_rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 ARQUIVO|role=map-display|status=200|rows=0|bytes=249|sha256=6f25315d7b234208f68bcb28fb831499c1202565f2a94cc9d27ad1280f8a7c45
 TOKEN|role=speed|date=2000-08-07|aid=16653|filename=0969-4_807.zip|size_kib=106
-IA|role=speed|status=200|items=0|bytes=321|sha256=6dd410eaf5dd66177edddc025b267ef8c3ce6df710d7f6f5f945ef2f380c9e53
+IA|role=speed|status=200|items=0|bytes=322|sha256=e89b18f4ba8a4aad63fdcc2b283d5aa58766ce7c353bd65b3e8eabb92bd22adf
 DISCM|role=speed|status=200|strict_rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 ARQUIVO|role=speed|status=200|rows=0|bytes=249|sha256=4846f7c5278fac8c9ff789f7dd86175350cb1f012543d7f34de696bffd3beedd
 TOKEN|role=speed-teleport|date=2000-08-07|aid=16652|filename=0969-6_807.zip|size_kib=33
-IA|role=speed-teleport|status=200|items=0|bytes=321|sha256=c7eaa98f45f475da8cb4dddb6887522fe6c5d58a802999215d9358aba0bb3a84
+IA|role=speed-teleport|status=200|items=0|bytes=322|sha256=68907d3e98177e33aab3acd701bb60ad148faac7b80250fe413392a26ed2103c
 DISCM|role=speed-teleport|status=200|strict_rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 TOKEN|role=screensaver|date=2000-12-19|aid=23186|filename=stoneage_800_1219.zip|size_kib=2220
-IA|role=screensaver|status=200|items=0|bytes=313|sha256=dbea9c7b1f548fec38f9b357f96511f00922247b41a5fefa58e9fbe380f15a54
+IA|role=screensaver|status=200|items=0|bytes=314|sha256=98ab5392bbe53e81f5f12c2d6eb378bf63d019ba096de5e48d74ac77b72d120c
 DISCM|role=screensaver|status=200|strict_rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 TOKEN|role=full-map|date=2000-12-20|aid=23223|filename=samap_1220.zip|size_kib=1410
-IA|role=full-map|status=200|items=0|bytes=287|sha256=3493a3f247ba45df8358611182638584a7c2135c329c94f29a6fc4ee97361165
+IA|role=full-map|status=200|items=0|bytes=285|sha256=6d1d2133cae5ce11c64d3fa8af19876096df3901f83d1816d732b5a0d01bda8d
 DISCM|role=full-map|status=200|strict_rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+ARQUIVO|role=full-map|status=200|rows=0|bytes=249|sha256=df2964f880aa865efb76f5f7b0d7582283fd4fb696d98d99d3598e9698f3d1b0
 TOKEN|role=north-island|date=2000-12-28|aid=23680|filename=northisland_1228.zip|size_kib=134
-IA|role=north-island|status=200|items=0|bytes=309|sha256=1599035e9321304707a6f2c4bcde56ae9344d5550951bf6a335db2288ee5ecd6
+IA|role=north-island|status=200|items=0|bytes=309|sha256=6bfa0b17d0e3f3d3376c5dbc7062d8b1c64f3395b71cbd662c0410c5ebe0f6b9
 DISCM|role=north-island|status=200|strict_rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+ARQUIVO|role=north-island|status=200|rows=0|bytes=255|sha256=6e161ceea3f0a566563712113bd9a3f5b3a5c972184a7dbf78ddaee1290610cb
 TOKEN|role=south-island|date=2000-12-28|aid=23681|filename=southisland_1228.zip|size_kib=202
-IA|role=south-island|status=200|items=0|bytes=309|sha256=322d5df594674ebd5beb35b3c933a2867eba19184b0157d86a6fe16376bfcccb
+IA|role=south-island|status=200|items=0|bytes=309|sha256=29f4d940d7f7b18382ef87dcc2c74361ea625559759c1634575fb0fad81726db
 DISCM|role=south-island|status=200|strict_rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 COUNT|strict_index_hits|0
+COUNT|arquivo_success|4
+COUNT|arquivo_fail|3
 ERROR|scope=arquivo:speed-teleport|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
 ERROR|scope=arquivo:screensaver|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
-ERROR|scope=arquivo:full-map|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
-ERROR|scope=arquivo:north-island|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
 ERROR|scope=arquivo:south-island|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
-COUNT|errors|5
-RESOLUTION|NO_CLUSTER_CARRIER_ON_TESTED_INDEXES|seven-token early-Sina carrier cluster is bounded on tested public indexes
+COUNT|errors|3
+RESOLUTION|NO_CLUSTER_CARRIER_ON_COMPLETED_INDEXES|IA+DiscMaster strict exact-name searches are zero for all seven tokens; Arquivo coverage is incomplete because some queries failed
 EVIDENCE_BOUNDARY|an index hit is a carrier lead only; package identity requires exact filename/size and recovered bytes.
