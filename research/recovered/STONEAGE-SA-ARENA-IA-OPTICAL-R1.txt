@@ -1,5 +1,5 @@
-StoneAge sa-arena Internet Archive optical-carrier probe — R2
-SCOPE|IA-metadata+CUE+bounded-raw-sector-ISO9660-reads|no-full-disc-download|no-payload-commit
+StoneAge sa-arena Internet Archive optical-carrier probe — R3
+SCOPE|IA-metadata+CUE+bounded-raw-sector-filesystem+small-text+EXE-prefix-reads|no-full-disc-download|no-payload-commit
 ITEM|identifier=sa-arena|title=疯狂原始人 Stoneage Arena Online CD-ROM 2002|date=2002-05-29|creator=北京华义联合软件开发有限公司|mediatype=software|collection=cdrom_contributions|description=《疯狂原始人（石器时代）》（英语：StoneAge）是由网石株式会社(Netmarble Corporation)作为其IP所有人的2DMMORPG网络游戏，最早于1999年发行。
 COUNT|optical_candidates|2
 OPTICAL|index=1|name=CD [SA_ARENA].bin|size=721431312|md5=f4e7b6ec2b27282d67f6b3982310cc2e|sha1=f21da5f459db55cc5e09fccadc09f00a7b115177|crc32=bcf893b0|source=original|format=Unknown
@@ -17,6 +17,48 @@ ROOT|index=1|name=DIRECTX8|dir=1|extent=20|size=2048|flags=2
 ROOT|index=1|name=README.TXT|dir=0|extent=13690|size=22009|flags=0
 ROOT|index=1|name=SAARENA.EXE|dir=0|extent=13703|size=599802752|flags=0
 ROOT|index=1|name=SA_ARENA.ICO|dir=0|extent=13701|size=2238|flags=0
+RANGE_FILE|name=AUTORUN.INF|status=206|honored=1|requested=48|bytes=2048|content_range=bytes 32196528-32198879/721431312
+TEXT_FILE|index=1|name=AUTORUN.INF|size=48|sha256=5249a555ab91845294983c384da2d204527922eddbf86880b0a5e8b1d7c8ac7f|encoding=utf-8
+COUNT|index=1|name=AUTORUN.INF|evidence_lines=2
+TEXT_EVIDENCE|index=1|name=AUTORUN.INF|line=1|value=open=SaArena.exe
+TEXT_EVIDENCE|index=1|name=AUTORUN.INF|line=2|value=icon=sa_arena.ico
+RANGE_FILE|name=README.TXT|status=206|honored=1|requested=22009|bytes=22528|content_range=bytes 32198880-32224751/721431312
+TEXT_FILE|index=1|name=README.TXT|size=22009|sha256=b4a7145830418692f73030e8b6f6561458bbe272252f23178ec538e107cdd3ab|encoding=latin1
+COUNT|index=1|name=README.TXT|evidence_lines=19
+TEXT_EVIDENCE|index=1|name=README.TXT|line=1|value=ÆäËü²úÆ·ÄÚÈÝÏê¼û±±¾©»ªÒåÓÎÏ·Íø£ºhttp://www.waei.com.cn¡£
+TEXT_EVIDENCE|index=1|name=README.TXT|line=2|value=1.È·¶¨Á¬ÉÏÍøÂçºó£¬´ò¿ªä¯ÀÀÆ÷£¬½øÈë¡°±±¾©»ªÒåÓÎÏ·ÍøWGS»áÔ±×¨Çø£¨http://www.wgs.com.cn£©¡±Ê×Ò³£¬²¢µã»÷»­Ãæ×óÉÏ·½µÄ¡°¼ÓÈë»ªÒåÓÎÏ·»áÔ±¡±Ñ¡Ïî¡£
+TEXT_EVIDENCE|index=1|name=README.TXT|line=3|value=Èý¡¢WGSµãÊý¿ª¿¨´¢Öµ
+TEXT_EVIDENCE|index=1|name=README.TXT|line=4|value=¡¶·è¿ñÔ­Ê¼ÈË¡·ÊÇÒ»¿î¼Ü¹¹ÓÚWGSÓÎÏ·ÊÕ·ÑÏµÍ³µÄÍøÂçÓÎÏ·£¬Ã¿´ÎÄúÉÏÏß½øÐÐ±¾ÓÎÏ·Ê±£¬ÎÒÃÇ¶¼»á¼ÆËãÄúËù»¨·ÑµÄÓÎÏ·Ê±¼ä£¬¿Û³ýÄú»áÔ±ÕÊ»§ÄÚµÄWGSÓÎÏ·µãÊý¡£µ±²úÆ·ÄÚº¬µÄ10Ìì10Ò¹µÄÃâ·ÑÓÎÏ·Ê±ÊýÏûºÄÍêºó£¬ÄúÐèÒª¹ºÂòWGSµãÊý¿¨½øÐÐ³äÖµ¡£ÄúËùµÃµ½µÄWGSµãÊý»á´¢´æÔÚÄúµÄ±±¾©»ªÒåÓÎÏ·Íø»áÔ±ÕÊºÅÖÐ£¬¿ÉÒÔÓÃÓÚ¡¶Ê¯Æ÷Ê±´ú¡·¡¢¡¶´ó·¨Ê¦¡·¡¢¡¶·è¿ñÔ­Ê¼ÈË¡·µÈËùÓÐ»ùÓÚWGSÓÎÏ·ÊÕ·ÑÏµÍ³µÄÓÎÏ·¡£
+TEXT_EVIDENCE|index=1|name=README.TXT|line=5|value=1.ÔÚ»áÔ±×¨Çø£¬µã»÷¡°WGSµãÊý¿ª¿¨´¢Öµ¡±£¬ÊäÈëÄúµÄ±±¾©»ªÒåÓÎÏ·Íø¡°»áÔ±ÕÊºÅ¡±¡¢¡°»áÔ±ÃÜÂë¡±¡¢WGS¿¨ºÅºÍÃÜÂëºó£¬°´¡°ËÍ³ö×ÊÁÏ¡±Å¥¡££¨×¢Òâ£º´Ë´¦µÄ»áÔ±ÃÜÂëÎªÄú¼ÓÈë±±¾©»ªÒåÓÎÏ·ÍøÏßÉÏ»áÔ±Ê±£¬Ëù×Ô¶¨µÄ»áÔ±ÃÜÂë¡££©
+TEXT_EVIDENCE|index=1|name=README.TXT|line=6|value=2.ÈôÄúËùÊäÈëµÄ±±¾©»ªÒåÓÎÏ·Íø¡°»áÔ±ÕÊºÅ¡±Óë¡°»áÔ±ÃÜÂë¡±ÕýÈ·ÎÞÎó£¬¶øÇÒÏµÍ³¼ì²éÄúµÄWGS¿¨ºÅÓëÃÜÂëÕýÈ·µÄ»°£¬½«»á×Ô¶¯ÎªÄú²¹³äWGSµãÊý¡£Èç¹ûÄúÊäÈëµÄ¡°»áÔ±ÕÊºÅ¡±Óë¡°¼¤»îÃÜÂë¡±ÎÞ·¨ÕýÊ½Æô¶¯£¬¿ÉÄÜÊÇÓÉÓÚÄúµÄÌîÐ´ÓÐ´íÎó£¬Çë×ÐÏ¸ºË¶ÔÒ»ÏÂ¡£Èç¹ûÓÐÎÊÌâ£¬ÇëÖ±½ÓÖÂµç±¾¹«Ë¾¿Í»§·þÎñ²¿¿Í»§·þÎñ×¨Ïß£¬ÓÉ¿Í»§ÈËÔ±ÎªÄú´¦Àí¡£
+TEXT_EVIDENCE|index=1|name=README.TXT|line=7|value=ËÄ¡¢²éÑ¯È·ÈÏWGSµãÊý
+TEXT_EVIDENCE|index=1|name=README.TXT|line=8|value=Íæ¼Ò¿ÉÒÔ¶àÈË¹²ÓÃÒ»¸öÓÎÏ·WGSµãÊý¿¨ºÅ¼°ÃÜÂë£¬Èç¹ûÄúÏë²éÑ¯ÄúµÄWGSµãÊý¿¨µãÊýÓà¶î£¬¿ÉÒÔµ½±±¾©»ªÒåÓÎÏ·Íø»áÔ±×¨ÇøµÄ¡°WGS²éÑ¯µãÊý¡±Ò³Ãæ²éÑ¯¡£
+TEXT_EVIDENCE|index=1|name=README.TXT|line=9|value=Îå¡¢WGSµÄÁ¬Ïß¹¦ÄÜÓëÊÕ·Ñ·½·¨
+TEXT_EVIDENCE|index=1|name=README.TXT|line=10|value=»ªÒå¶À´´µÄ¡°WGSµãÊý¿¨¡±ÊÕ·Ñ·½Ê½£¬Íæ¼ÒÍæÓÎÏ·Ê±ÒÔ¿ÛµãµÄ·½Ê½¸¶·Ñ£¬²»ÍæÊ±µãÊýÒÀÈ»´æÔÚ£¬ÏëÍæ¾ÍÍæ²»±Ø¿¼ÂÇÊ±¼ä³¤¶Ì£¬ÎÞÊ±¼äÊ§Ð§ÎÊÌâ£¬ÇÒÁ¬ÏßÒÔÊ±¶Î¼Æ·Ñ£¬ÈÃÍæ¼Ò¸üÄÜÒÔ¾­¼ÃÄÜÁ¦ºâÁ¿Ê¹ÓÃÊ±¼ä£¬ÓÐÐ§½â¾öÊ¹ÓÃÆÚÊ§Ð§¿ÉÄÜ´øÀ´µÄ¾À·×¼°²»±ã£¬ÇÒÈÃÍæ¼ÒÎÞÊ±¼ä²îµÄÊ¹ÓÃ£¬¶ÔÍæ¼ÒÀ´Ëµ¾ø¶ÔÊÇ¸üÎªÊ¡Ç®µÄ¡£
+TEXT_EVIDENCE|index=1|name=README.TXT|line=11|value=±±¾©»ªÒåÌá¹©µÄËùÓÐÍøÂçÓÎÏ·¾ù²ÉÓÃWGSµãÊý¸¶·Ñ·½Ê½£¬Íæ¼Ò¿ÉÒÔÏíÊÜ¶àÖÖÓÎÏ·Ñ¡Ôñ£¬ÏëÍæÄÄÌ×¾ÍÁ¬ÄÄÌ×£¬²»±ØÌ×Ì×ÓÎÏ·¶¼½»ÔÂ·Ñ£¬Ö»Òª¹ºÂòWGSµãÊý¿¨£¬½«¿ÉÍ¨ÓÃËùÓÐÖ§³ÖWGSÊÕ·ÑÏµÍ³µÄÍøÂçÓÎÏ·£¬ÇÒµãÊýÓÀ²»Ê§Ð§£¬ÏëºÎÊ±Íæ¾ÍºÎÊ±Íæ£¬²»ÓÃÅÂÊ§È¥Ê±Ð§¡£
+TEXT_EVIDENCE|index=1|name=README.TXT|line=12|value=WGSÓÎÏ·µãÊý¿¨µÄÏúÊÛ¼Û¸ñºÍ¡¶·è¿ñÔ­Ê¼ÈË¡·µÄ¿Ûµã·½Ê½£¬ÒÔ±±¾©»ªÒåÓÎÏ·ÍøµÄ¹«¸æÎªÖ÷¡£
+TEXT_EVIDENCE|index=1|name=README.TXT|line=13|value=Áù¡¢WGSµãÊý¿¨¹ºÂò·½·¨
+TEXT_EVIDENCE|index=1|name=README.TXT|line=14|value=1.Íæ¼Ò¿ÉÒÔµ½È«¹ú¸÷µØÈí¼þ×¨Âôµê¡¢ÊéÍ¤¼°±¨Ì¯Ö±½Ó¹ºÂòWGSµãÊý¿¨£¬µãÊý¿¨¹Î³ýºóÈ¡µÃWGS¿¨µÄÃÜÂë¡£¾ßÌå¹ºÂòµØµãºÍÁªÏµ·½·¨£¬Çë²Î¼û±±¾©»ªÒåÓÎÏ·Íø¡°µãÊý¿¨ÌØÔ¼¾­ÏúÉÌ¡±¡£
+TEXT_EVIDENCE|index=1|name=README.TXT|line=15|value=2.Íæ¼Ò¿ÉÒÔ»ã¿îÖÂ±±¾©»ªÒåÓÎÏ·ÍøÉÏÖ±½Ó¹ºÂòWGSµãÊý¿¨£¬ÔÚÊÕµ½»ã¿îºóÏµÍ³»á½«µãÊýÐ´ÈëÄúµÄ¸öÈËÕÊºÅÖÐ£¬ÎÞÐë¿ª¿¨³ÌÐò¡£Èç¹ûÄúÏëÖ±½ÓÏò±±¾©»ªÒå¹ºÂòWGSµãÊý¿¨£¬ÇëÍ¨¹ýÓÊ¾Ö»ã¿î¸ø±±¾©»ªÒåÏàÓ¦·ÑÓÃ£¨ÇëÎð½«ÏÖ½ð¼ÐÔÚÆ½ÐÅÖÐ·¢³ö£©£¬¾ßÌå·ÑÓÃÇë²Î¼Ó±±¾©»ªÒåÓÎÏ·Íø¹«²¼µÄWGS¿¨¼Û¸ñ£¬Í¬Ê±ÔÚ¸½ÑÔÀ¸×¢Ã÷¡°¹ºÂòWGSµãÊý¡±×ÖÑù£¬²¢Ð´ÇåÄúµÄWGSÕÊºÅ£¨×¢ÒâÇø±ð´óÐ¡Ð´£©ºÍÁªÏµµç»°£¨Èç¹ûÓÐµÄ»°£©¡£ÇëÐ´ÇåÄúµÄÍ¨ÐÅµØÖ·¡¢ÓÊÕþ±àÂëºÍÊÕ¼þÈËÐÕÃû£¬ÇÐ¼Ç²»Òª½«»áÔ±ÃÜÂëÐ´ÔÚ»ã¿îµ¥ÖÐ¡£
+TEXT_EVIDENCE|index=1|name=README.TXT|line=16|value=×ÉÑ¯ÐÅÏä£ºtiki@waei.com.cn
+TEXT_EVIDENCE|index=1|name=README.TXT|line=17|value=1.Çë½«ÓÎÏ·¹âÅÌ·ÅÈë¹âÇý£¬ÏµÍ³»á×Ô¶¯Æô¶¯ÓÎÏ·°²×°³ÌÐò¡£Èç¹ûÃ»ÓÐ×Ô¶¯Æô¶¯ÓÎÏ·°²×°³ÌÐò£¬Çëµ½¹âÇýÄ¿Â¼ÏÂÖ´ÐÐSETUP.EXE¡£
+TEXT_EVIDENCE|index=1|name=README.TXT|line=18|value=2.ÓÎÏ·µÄ°²×°Ä¿Â¼½«×Ô¶¯ÉèÖÃÎªC:\Program Files\Waei\·è¿ñÔ­Ê¼ÈË\£¬Èç¹ûÄúÏë¸ü¸Ä°²×°µÄÄ¿Â¼£¬ÇëÖ±½ÓÑ¡ÔñÄúÏëÒª°²×°µÄÎÄ¼þ¼Ð£¬»òÕßÉ¾³ýÔ­°²×°Â·¾¶£¬ÔÙÊäÈëÐÂµÄ°²×°Â·¾¶½øÐÐ°²×°¡£
+TEXT_EVIDENCE|index=1|name=README.TXT|line=19|value=½«ÓÎÏ·´óÌüÓÒ·½ÇÐ»»ÖÁ¡®¼òÑ¶¡¯¹¦ÄÜ£¬ÊäÈëÄãÒª´«µÄÄÚÈÝÒÔ¼°¶Ô·½µÄÊÖ»úºÅÂë£¬ÔÙ°´´«ËÍ¼´¿É£¨Ò»Í¨¿Û3µãWGSµãÊý£©¡£
+RANGE_FILE|name=SAARENA.EXE|status=206|honored=1|requested=524288|bytes=524288|content_range=bytes 32229456-32831567/721431312
+EXE_PREFIX|index=1|name=SAARENA.EXE|file_size=599802752|prefix_bytes=524288|prefix_sha256=1144fe338a01f785520fca6fed4003d9f1767f22f9ec552e209bb79268ec638e
+PE|index=1|name=SAARENA.EXE|mz=1|pe_offset=216|pe_complete=1|machine=332|sections=4|timestamp=956673432|optional_magic=267|subsystem=2
+COUNT|index=1|name=SAARENA.EXE|key_strings=11
+EXE_STRING|index=1|name=SAARENA.EXE|n=1|value=GetVersionExA
+EXE_STRING|index=1|name=SAARENA.EXE|n=2|value=GetClientRect
+EXE_STRING|index=1|name=SAARENA.EXE|n=3|value=GLBSInstall
+EXE_STRING|index=1|name=SAARENA.EXE|n=4|value=Demo installations only run on the computer they were created on.
+EXE_STRING|index=1|name=SAARENA.EXE|n=5|value=Install
+EXE_STRING|index=1|name=SAARENA.EXE|n=6|value=Could not initialize installation.
+EXE_STRING|index=1|name=SAARENA.EXE|n=7|value=Installation
+EXE_STRING|index=1|name=SAARENA.EXE|n=8|value=Initializing Wise Installation Wizard...
+EXE_STRING|index=1|name=SAARENA.EXE|n=9|value=WgSDDDK+
+EXE_STRING|index=1|name=SAARENA.EXE|n=10|value=VS_VERSION_INFO
+EXE_STRING|index=1|name=SAARENA.EXE|n=11|value=FileVersion
 RANGE_DIR|index=1|dir=DIRECTX8|status=206|honored=1|bytes=2048|content_range=bytes 47040-49391/721431312
 COUNT|index=1|dir=DIRECTX8|entries=11
 ENTRY|index=1|parent=DIRECTX8|name=.|dir=1|extent=20|size=2048|flags=2
