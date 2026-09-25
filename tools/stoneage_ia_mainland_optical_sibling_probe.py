@@ -36,17 +36,33 @@ def get_json(url,timeout=30):
         return json.load(r)
 
 
-def search(q,rows=200):
+def search(q,rows=200,page=1):
     params=[
         ("q",q),
         ("fl[]","identifier"),("fl[]","title"),("fl[]","creator"),
         ("fl[]","date"),("fl[]","year"),("fl[]","collection"),
         ("fl[]","description"),("fl[]","mediatype"),
-        ("rows",str(rows)),("page","1"),("output","json"),
+        ("rows",str(rows)),("page",str(page)),("output","json"),
     ]
     url=ADV+"?"+urllib.parse.urlencode(params)
     data=get_json(url)
-    return url,data.get("response",{}).get("docs",[])
+    response=data.get("response",{})
+    return url,int(response.get("numFound") or 0),response.get("docs",[])
+
+
+def search_all(q,rows=200,max_pages=25):
+    first_url,total,first=search(q,rows=rows,page=1)
+    pages=max(1,min(max_pages,(total+rows-1)//rows))
+    all_rows=list(first)
+    urls=[first_url]
+    for page in range(2,pages+1):
+        url,_,batch=search(q,rows=rows,page=page)
+        urls.append(url)
+        all_rows.extend(batch)
+        if not batch:
+            break
+    complete=len(all_rows)>=total
+    return urls,total,all_rows,complete
 
 
 def metadata(identifier):
@@ -77,7 +93,7 @@ def relevant_doc(doc):
 
 
 def main():
-    print("StoneAge Mainland Internet Archive optical-sibling discovery — R2")
+    print("StoneAge Mainland Internet Archive optical-sibling discovery — R3")
     print("SCOPE|advancedsearch+item-filelist-metadata|no-disc-download|no-game-payload-read")
 
     docs={}
@@ -115,8 +131,19 @@ def main():
 
     for qi,q in enumerate(queries,1):
         try:
-            url,rows=search(q)
-            print(f"QUERY|n={qi}|results={len(rows)}|q={clean(q)}|url={clean(url,2200)}")
+            if q.startswith('uploader:'):
+                urls,total,rows,complete=search_all(q)
+                print(
+                    f"QUERY|n={qi}|results={len(rows)}|total={total}|pages={len(urls)}|"
+                    f"complete={int(complete)}|q={clean(q)}|url={clean(urls[0],2200)}"
+                )
+            else:
+                url,total,rows=search(q)
+                complete=len(rows)>=total
+                print(
+                    f"QUERY|n={qi}|results={len(rows)}|total={total}|pages=1|"
+                    f"complete={int(complete)}|q={clean(q)}|url={clean(url,2200)}"
+                )
         except Exception as exc:
             errors.append(("search",str(qi),type(exc).__name__,str(exc)))
             continue
