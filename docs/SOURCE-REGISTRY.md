@@ -1595,7 +1595,7 @@ Every substantial source should record:
   - `22615474551866`: **`精靈王傳說 石器時代2.5版 遊戲片+外盒`**; listed **2026-04-11**; used-condition metadata, Taiwan/Kaohsiung, sold quantity 1 / current stock 0; three full-size public image filenames `22615474551866_647.jpg`, `_438.jpg`, `_740.jpg`.
 - Important independence boundary:
   - separate listing IDs, dates and sellers make these separately addressable marketplace provenance chains;
-  - they do **not** by themselves prove four independently surviving physical discs, because image reuse/resale/common-source photography remains possible.
+  - they do **not** by themselves prove seven independently surviving physical discs, because image reuse/resale/common-source photography remains possible.
 - Visual-fingerprint controls:
   - the two loose-disc listing photographs `21926883918096:0` and `22242541948520:0` have a very strong cross-listing match: **743 RANSAC inliers / 0.4831 inlier ratio**. This may reflect the same disc-face artwork, closely related photography, or reused imagery; it is **not** proof of two independent physical specimens.
   - new disc+box image `22615474551866:1` (`_438.jpg`) matches those two loose-disc images at **266 / 0.2323** and **253 / 0.2202** respectively, placing the three images in a strong visual family.
@@ -1614,7 +1614,7 @@ Every substantial source should record:
   - no matrix/IFPI, volume label, filesystem, installer hash, ISO/raw image, optical-disc checksum or clean-client bytes are exposed by these listings;
   - exact product IDs/titles and targeted preservation-index searches have not yielded a public disc dump/file tree so far.
 - Operational consequence:
-  - use all four listing IDs, exact full-size photograph URLs/filenames and derived image hashes as matching keys for future public preservation reads/dumps;
+  - use all seven listing IDs, exact full-size photograph URLs/filenames and derived image hashes as matching keys for future public preservation reads/dumps;
   - prioritize a future dump only when it can be linked to one of these carriers or another provenance-bearing original disc;
   - do **not** require purchase, seller contact, shipping, or user-performed dumping.
 - Derived reports:
@@ -1634,8 +1634,20 @@ Every substantial source should record:
   - `21926883918096:0` vs `22445165101247:0`: **977 / 0.5586**;
   - these are far stronger than ordinary cross-listing background overlap and establish a very tight shared photographic/artwork family, but still do not prove the same physical disc.
 - Independence consequence:
-  - the Ruten control surface now has **five separately addressable listing IDs, not five independently proven physical specimens**;
+  - the Ruten control surface now has **seven separately addressable listing IDs, not seven independently proven physical specimens**;
   - because `22445165101247` and `22242541948520` share the same seller and extremely strong visual overlap, the newer/alternate listing is treated as a **same-seller duplicate-family control**, not additive independent-disc evidence.
+
+- Sixth/seventh public carrier expansion:
+  - `22637629794063`: exact listing title **`石器時代2.5，精靈王傳說`**, one full-size public image `22637629794063_117.jpg`, 600×800, SHA-256 `c6d6e985acadb0b9ce1e9f1aad48522b386015d57a17918e8fb8511e48570abe`;
+  - `22625938678558`: literal Taiwan collection title **`臺版 石器時代 精靈王傳說 瑪蕾菲雅許願盒 家族開拓史 電腦遊戲光碟 合集（20張不分）收藏`**, with seven full-size public photographs.
+- Current visual-fingerprint rerun:
+  - the new single-disc image `22637629794063:0` has only low-strength overlap with the previously identified duplicate-family controls (for example **25 / 0.0248** against `22632305238624:0`, **24 / 0.0221** against `22242541948520:0`); it is therefore kept as a **separate visual candidate**, not merged into the old high-overlap cluster;
+  - collection image `22625938678558:3` (`_730.jpg`) overlaps `22445165101247:0` at **136 RANSAC inliers / 0.1339**, `22242541948520:0` at **74 / 0.0729**, and `21926883918096:0` at **37 / 0.0364**. This is consistent with the collection photograph containing a carrier/artwork object related to the known loose-disc family, but it does **not** prove the same physical disc, pressing or mastering.
+  - all **23** full-size Ruten targets in the expanded seven-listing set loaded successfully; the two visual-probe errors were only the already-known unreachable external source-labelled comparison/collector bodies, not Ruten images.
+- CI confirmation:
+  - provenance metadata run **36094031445** — success;
+  - Ruten physical-media run **36094173065** — success;
+  - visual-fingerprint run **36094173076** — success.
 
 ### SRC-JP-2008-IPVE-SA174GM-MIRROR-01
 
