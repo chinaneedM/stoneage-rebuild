@@ -2343,3 +2343,9 @@ Every substantial source should record:
   - client cleanliness/provenance until an actual disc filesystem/package is inspected.
 - Canonical note:
   - `research/clients/STONEAGE-SA20-CHIP-NEWCOMPUTER-CARRIER-R1.md`
+- Preservation follow-up:
+  - targeted R2 Internet Archive + DiscMaster carrier probe returned **0 relevant Chinese November-2001 CHIP items**, **0 relevant DiscMaster rows**, and **0 errors**;
+  - foreign-language CHIP 2001-11 coverdiscs were explicitly excluded;
+  - DiscMaster item `31124` / `新电脑0508.iso` is a **2005 August** Chinese CHIP disc and is a negative date control, not the target.
+- Derived report:
+  - `research/recovered/STONEAGE-2001-CHIP-NEWCOMPUTER-CARRIER-R2.txt`
