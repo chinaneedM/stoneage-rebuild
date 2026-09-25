@@ -1859,3 +1859,48 @@ Every substantial source should record:
 - Operational consequence:
   - preserve the two exact source-labelled comparison-image URLs as visual recovery keys;
   - do not substitute sidebar images or infer Mainland/Taiwan assignment for the current Ruten visual cluster until one of these exact image bodies is publicly recoverable.
+
+
+### SRC-CN-2011-CANGBAOWAN-SA25-ONECLICK-115-01
+
+- Source thread: `https://www.iopq.net/thread-16731619-1-1.html`
+- Author: **5615918**
+- Posted: **2011-07-21 08:55:58**
+- Edited: **2011-08-04 10:21**
+- Retrieval/research date: **2026-09-25**
+- Source type: community single-player/private-server engineering distribution; **not** operator-era client provenance.
+- Explicit lineage statement:
+  - the author thanks **love198959** for the earlier StoneAge 2.5 post, then describes this as a newly assembled one-click installation;
+  - the earlier 2009 `love198959` post separately exposes client URL `http://download1.92ysa.com/YSA2.5.8.rar` and separately packaged server/login tooling.
+- 2011 engineering layout explicitly names:
+  - `石器时代WIN版服务端管理器.exe`;
+  - `SACH-MX0.30/STW0.30.exe`;
+  - `D:/csa/gmsv/stoneage2.5/sa_2903.exe`.
+- Exact public recovery token:
+  - `http://u.115.com/file/clnrsbsc`;
+  - later `http://115.com/file/clnrsbsc#`;
+  - token **`clnrsbsc`**;
+  - filename **`石器时代2.5精灵王的传说一键.zip`**.
+- Purity/integrity warning:
+  - a source-thread reply states that the extracted `GMSV` directory lacked `GMSV.EXE` and that the user copied a 2.5 Windows server executable from another site;
+  - the package therefore has direct same-period evidence of incomplete/mixed engineering use and cannot be promoted as a clean client.
+- Preservation probe:
+  - GitHub Actions run **36092086106** — success;
+  - successful Wayback exact/prefix queries: **0 HTTP-200 rows**;
+  - successful Arquivo.pt exact queries: **0 rows**;
+  - Internet Archive exact token/filename searches: **0 documents**;
+  - two Wayback variants timed out and remain inconclusive;
+  - no payload bytes, checksum or file tree recovered.
+- Current mirror:
+  - `https://www.7chaowan.com/52247.html` preserves the same 2011 instructions and 115 token but exposes no independent payload hash or new host.
+- Confidence:
+  - **A for current source-page text, timestamps, exact 115 token/filename and explicit author credit**;
+  - **B for broad descendant-lineage relationship to the earlier community distribution**;
+  - **OPEN for byte identity among the 2009 YSA client, 2011 ZIP, recovered 2012 MediaFire bridge or later descendant corpora**.
+- Evidence boundary:
+  - source relationship is not byte relationship;
+  - no claim of original Beijing-Waei disc provenance, clean-client status or pre-2003 map provenance is supported.
+- Derived records:
+  - `research/recovered/STONEAGE-SA25-115-LINEAGE-PROBE-R1.txt`;
+  - `research/clients/STONEAGE-SA25-2009-2011-DESCENDANT-LINEAGE-R1.md`.
+- Status: **DESCENDANT LINEAGE CONTROL / TESTED PUBLIC PRESERVATION SURFACE BOUNDED**.
