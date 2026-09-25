@@ -3,17 +3,23 @@ SCOPE|Arquivo.pt full-text/version/CDX + Common Crawl exact URL indexes|metadata
 TARGET|filename=samap_1220.zip|aid=23223|source=http://games.sina.com.cn/downgames/map/1220492.shtml
 ARQUIVO_TEXT|q=samap_1220|status=200|bytes=287|sha256=45e25fef6e86e2a7b55e04b34e70017eeb4d5ef497c8399fda8d967acb21acdc|json=1
 ARQUIVO_COUNT|label=text:samap_1220|rows=0
-ARQUIVO_TEXT|q="StoneAge" "samap"|status=200|bytes=299|sha256=4239dbf54bff5ecaefc144001de552aee837107eb3ab3f799483822aa29e6caf|json=1
-ARQUIVO_COUNT|label=text:"StoneAge" "samap"|rows=0
-COMMONCRAWL_INDEX_COUNT|count=0
+ARQUIVO_TEXT|q="石器时代" "全地图"|status=200|bytes=307|sha256=3be0d291e0f318f53542d8cd172e1b6ed6141046df3d6d79c77a3cb49f5bb949|json=1
+ARQUIVO_COUNT|label=text:"石器时代" "全地图"|rows=0
+COMMONCRAWL_INDEX_COUNT|count=15
 ERROR|scope=arquivo-text:samap_1220.zip|kind=HTTPError|message=HTTP Error 400: Bad Request
-ERROR|scope=arquivo-text:"石器时代" "全地图"|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
+ERROR|scope=arquivo-text:"StoneAge" "samap"|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
 ERROR|scope=arquivo-version:source|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
 ERROR|scope=arquivo-cdx:source|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
 ERROR|scope=arquivo-version:cgi|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
 ERROR|scope=arquivo-cdx:cgi|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
+ERROR|scope=cc:CC-MAIN-2009-2010:filename|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+ERROR|scope=cc:CC-MAIN-2013-20:filename|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+ERROR|scope=cc:CC-MAIN-2016-50:filename|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+ERROR|scope=cc:CC-MAIN-2017-04:filename|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+ERROR|scope=cc:CC-MAIN-2017-51:filename|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+ERROR|scope=cc:CC-MAIN-2017-51:source|kind=HTTPError|message=HTTP Error 502: Bad Gateway
 COUNT|arquivo_rows|0
 COUNT|commoncrawl_rows|0
-COUNT|errors|6
+COUNT|errors|12
 RESOLUTION|NO_INDEPENDENT_ARCHIVE_ROW|tested independent public archive indexes expose no indexed target row
 EVIDENCE_BOUNDARY|archive index/search rows are discovery metadata only; no returned historical binary body is downloaded.
