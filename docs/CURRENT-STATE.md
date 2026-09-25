@@ -1958,9 +1958,11 @@ Supplemental source ledgers:
 - This improves the Japanese bridge recovery surface but **does not supersede the project's primary 2.5 pre-June-2003 field-map provenance objective**.
 
 
-- Exact public-archive pass R1 is now complete for `sa174gm.exe`: Wayback contains only a **2013-02-10 10:10:13 UTC HTTP 503 / 399-byte HTML** record; four launch/early-era Availability anchors return no snapshot; Arquivo HTTP returns 0 rows; IA exact search returns 0 documents. The HTTPS Arquivo call suffered a transport failure and is not counted as negative evidence.
-- Therefore this new branch improves **identity and recovery vocabulary**, not byte provenance. No `sa174gm.exe` bytes, checksum or file tree have been recovered.
+- Exact/prefix public-archive pass **R2** is complete for `sa174gm.exe`: Wayback exact HTTP/HTTPS exposes only a **2013-02-10 10:10:13 UTC HTTP 503 / 399-byte HTML** object; four launch/early-era Availability anchors return no snapshot; the entire tested `file2.gamania.co.jp/sa/*` Wayback prefix returns **0 rows**; Arquivo HTTP and HTTPS both return **0 rows**; IA exact search returns **0 documents**.
+- Exact/prefix HTTP-200 payload candidates are **0**. Therefore this branch improves **identity and recovery vocabulary**, not byte provenance: no `sa174gm.exe` bytes, checksum or file tree have been recovered.
+- Current Gamania host DNS failure in CI is recorded only as a live-host transport fact and is not interpreted as historical loss.
 - Discuz attachment-token correction: only attachment IDs **675/676** are stable; embedded token hash/time fields vary across requests and must not be recorded as permanent identifiers.
+- R2 workflow run **36089113796** completed successfully; canonical derived report: `research/recovered/STONEAGE-JAPAN-174A-GAMANIA-MIRROR-R1.txt`.
 
 ## Immediate next actions
 
