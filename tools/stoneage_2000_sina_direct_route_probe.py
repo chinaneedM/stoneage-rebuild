@@ -92,6 +92,8 @@ def main():
         st,final,h,b=fetch(cdx_url(droot,"prefix"),timeout=60)
         rows=parse_cdx(b); rr=relevant(rows); hits.extend(rr)
         print(f"DIR_CDX|status={st}|rows={len(rows)}|relevant={len(rr)}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|target={droot}")
+        for r in rows:
+            print(f"DIR_ANY|timestamp={clean(r.get('timestamp'))}|original={clean(r.get('original'))}|statuscode={clean(r.get('statuscode'))}|mimetype={clean(r.get('mimetype'))}|digest={clean(r.get('digest'))}|length={clean(r.get('length'))}|redirect={clean(r.get('redirect'))}")
         for r in rr:
             print(f"DIR_ROW|timestamp={clean(r.get('timestamp'))}|original={clean(r.get('original'))}|statuscode={clean(r.get('statuscode'))}|mimetype={clean(r.get('mimetype'))}|digest={clean(r.get('digest'))}|length={clean(r.get('length'))}|redirect={clean(r.get('redirect'))}")
     except Exception as e:
