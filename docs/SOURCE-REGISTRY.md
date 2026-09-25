@@ -2381,3 +2381,12 @@ Every substantial source should record:
   - exact volume label, matrix/IFPI, installer name, filesystem or clean-client hash.
 - Related physical-survival control:
   - the 2016 SMZDM collector source maps its first install-disc photo directly to a `2.0新手报到包`; see `SRC-CN-2016-SMZDM-SA25-INSTALL-DISCS-01`.
+- Public-preservation follow-up — 2026-09-25:
+  - exact/short product names, the literal client-disc wording and Sina setup filename/stem were probed against Internet Archive metadata and DiscMaster filename indexes;
+  - the raw R1 census contains **312 unique IA metadata items**, **0 strict IA candidates**, **0 DiscMaster rows** and **0 strict DiscMaster candidates**; one overly broad `老手削暴包` IA query exceeded the bounded JSON body and is not treated as a completed negative query;
+  - a fielded R2 residual pass then tested `老手削暴包`, the full `石器时代2.0老手削暴包` name and `stoneage2.0setup` across title/description/identifier software fields: **0 unique items, 0 strict items, 0 errors**;
+  - therefore the currently tested **IA/DiscMaster exact retail-package / setup-name surface is bounded with no preserved client-disc candidate**. This does not prove the discs no longer survive elsewhere.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA20-RETAIL-CARRIER-CENSUS-R1.txt` (large raw diagnostic);
+  - `research/recovered/STONEAGE-SA20-RETAIL-CARRIER-CENSUS-SUMMARY-R1.txt`;
+  - `research/recovered/STONEAGE-SA20-RETAIL-CARRIER-RESIDUAL-R2.txt`.
