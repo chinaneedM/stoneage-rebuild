@@ -1,0 +1,46 @@
+name: Probe Sina 4.0 map aid neighborhood
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa40_sina_neighborhood_probe.py
+      - tests/test_stoneage_sa40_sina_neighborhood_probe.py
+      - .github/workflows/probe-stoneage-sa40-sina-neighborhood.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa40-sina-neighborhood
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate neighborhood parser
+        run: python3 -m unittest tests.test_stoneage_sa40_sina_neighborhood_probe -v
+      - name: Probe historical download topology
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa40_sina_neighborhood_probe             > research/recovered/STONEAGE-SA40-SINA-AID-NEIGHBORHOOD-R1.txt
+      - name: Commit derived topology only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-SA40-SINA-AID-NEIGHBORHOOD-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: recover Sina download topology near aid 61620'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
