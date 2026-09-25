@@ -1,0 +1,23 @@
+SPARSE_CAB|path=/tmp/DATA1.cab|logical_size=612584670|fetched_prefix=8388608|status=206|content_range=bytes 65856-9699647/733057248|allocated_hint=8388608
+StoneAge Stoneage-5 bounded battle-payload analysis — R1
+SCOPE|8MiB-CAB-prefix+sparse-cab+selected-early-files|no-full-cab-download|derived-hashes-and-structure-only
+TARGET|name=soundaddr_3.txt|size=691|sha256=5afc6a80352d5254c926129e4acdd023cabdc9e67e5f8cf5bf824520ea2be5e7
+TARGET|name=battle_2.bin|size=187500|sha256=1046a66cbf34088a15f99146263f166be68991c9e01b48dcbbc81d82d1569642
+V1_PREFIX|name=battle_2.bin|reference_size=185892|reference_sha256=d99be6475982cf6098b90ff5dfd81ab275ec8c9271fa83daceb95e3fd4bb8859|prefix_sha256=d99be6475982cf6098b90ff5dfd81ab275ec8c9271fa83daceb95e3fd4bb8859|exact_match=1|tail_bytes=1608|tail_sha256=e7eb741151782109d71de4ad62f33f43b6db2fbebb4ebdc0743cdf32d4631659
+TAIL_RECORDS|name=battle_2.bin|record_size=804|count=2
+TARGET|name=data_1.bin|size=4|sha256=9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08
+TARGET|name=battletxt_2.txt|size=5844|sha256=4f0f1c2f703a2fba95e9966cd7a760ebe168591d89057ddeb2b645ac08942057
+V1_PREFIX|name=battletxt_2.txt|reference_size=5792|reference_sha256=5c4a38cc7c1f039e232611b5eac33514f67c4d8badbaf638ae9b852440237fc4|prefix_sha256=5c4a38cc7c1f039e232611b5eac33514f67c4d8badbaf638ae9b852440237fc4|exact_match=1|tail_bytes=52|tail_sha256=9b844690780ea620d24a6db80bb176b5c30241e88e1efafdaab67cd37658fdbd
+BATTLETXT|encoding=utf-8|entries=235
+BATTLE_ROW|index=0|offset=0|size=804|file=battle00.sab
+BATTLE_ROW|index=1|offset=804|size=804|file=battle01.sab
+BATTLE_ROW|index=2|offset=1608|size=804|file=battle02.sab
+BATTLE_ROW|index=3|offset=2412|size=804|file=battle03.sab
+BATTLE_ROW|index=229|offset=182676|size=804|file=battle214.sab
+BATTLE_ROW|index=230|offset=183480|size=804|file=battle215.sab
+BATTLE_ROW|index=231|offset=184284|size=804|file=battle216.sab
+BATTLE_ROW|index=232|offset=185088|size=804|file=battle217.sab
+BATTLE_ROW|index=233|offset=185892|size=804|file=battle218.sab
+BATTLE_ROW|index=234|offset=186696|size=804|file=battle219.sab
+BATTLE_TABLE|contiguous=1|declared_end=187500|battle_bin_size=187500
+EVIDENCE_BOUNDARY|selected extracted bytes are transient and deleted by CI; the committed report contains only hashes, sizes, prefix-comparison results and parsed text-table structure.
