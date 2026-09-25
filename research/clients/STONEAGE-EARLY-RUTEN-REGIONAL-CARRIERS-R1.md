@@ -64,7 +64,7 @@ The geometry is not treated as proof of the same physical box or same photograph
 - **FACT:** the current Ruten `22631284715652` photo family strongly overlaps the package pictured by a later source explicitly labelled as a 2.0-version gift box;
 - **HYPOTHESIS / BOUNDARY:** this increases the plausibility that the surviving package belongs to the 2.0-era package family, but does **not** independently prove its original release version, disc contents, pressing, installer bytes or clean-client status.
 
-The current 1.x comparison mirror at `https://shiqi.ws/post/10248.html` is publicly readable in CI but exposed no standard `<img>` rows in the first pass. A follow-up raw/CSS/lazy-image discovery pass is active so that the 2.0 relationship can be tested against an actual 1.x visual control rather than accepted one-sidedly.
+The current 1.x comparison mirror at `https://shiqi.ws/post/10248.html` is publicly readable in CI but still does not expose a usable package photograph. Follow-up run **36097423535** completed successfully after adding raw HTML/CSS/escaped-URL discovery; it found only `https://shiqi.ws//zb_users/plugin/MoreLinksGame/img/dh_bg.jpg`, a **1×31** plugin background that was correctly skipped. Therefore the tested current page surface is **bounded for usable 1.x package images**. Reopen this visual-control route only from an alternate mirror, explicit article-image URL, archived page body, or another source-labelled 1.x package photograph.
 
 ## Preservation probe for the initial photo transcription
 
