@@ -72,12 +72,12 @@ def optical_rows(files):
 
 
 def relevant_doc(doc):
-    text=" ".join(str(doc.get(k) or "") for k in ("identifier","title","creator","description")).lower()
-    return any(k in text for k in ("stoneage","stone age","石器时代","石器時代","华义","華義","sa_arena"))
+    text=" ".join(str(doc.get(k) or "") for k in ("identifier","title","description")).lower()
+    return any(k in text for k in ("stoneage","stone age","石器时代","石器時代","sa_arena"))
 
 
 def main():
-    print("StoneAge Mainland Internet Archive optical-sibling discovery — R1")
+    print("StoneAge Mainland Internet Archive optical-sibling discovery — R2")
     print("SCOPE|advancedsearch+item-filelist-metadata|no-disc-download|no-game-payload-read")
 
     docs={}
