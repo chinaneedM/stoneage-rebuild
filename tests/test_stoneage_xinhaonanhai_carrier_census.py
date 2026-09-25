@@ -1,5 +1,5 @@
 import unittest
-from tools.stoneage_xinhaonanhai_carrier_census import IA_QUERIES, DM_QUERIES, TARGETS, strict_leaf
+from tools.stoneage_xinhaonanhai_carrier_census import IA_QUERIES, DM_QUERIES, TARGETS, strict_leaf, ia_relevant
 
 class XinhaonanhaiCarrierCensusTests(unittest.TestCase):
     def test_alias_and_both_generations_are_covered(self):
@@ -7,6 +7,11 @@ class XinhaonanhaiCarrierCensusTests(unittest.TestCase):
         self.assertIn("xinhaonanhai",joined)
         self.assertIn("Estoneage2.0map_1127",joined)
         self.assertIn("shiqi4updatex_02_11_08",joined)
+
+    def test_ia_relevance_filters_broad_query_noise(self):
+        self.assertTrue(ia_relevant({"title":"mirror Estoneage2.0map_1127 package"}))
+        self.assertTrue(ia_relevant({"description":"contributor xinhaonanhai"}))
+        self.assertFalse(ia_relevant({"title":"unrelated Python tutorial","description":"地图 example"}))
 
     def test_strict_leaf_requires_exact_target_filename(self):
         self.assertEqual(strict_leaf("/x/Estoneage2.0map_1127.exe"),TARGETS[0])
