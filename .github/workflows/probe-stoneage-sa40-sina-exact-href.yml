@@ -1,0 +1,46 @@
+name: Probe exact Sina 4.0 map href
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa40_sina_exact_href_probe.py
+      - tests/test_stoneage_sa40_sina_exact_href_probe.py
+      - .github/workflows/probe-stoneage-sa40-sina-exact-href.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa40-sina-exact-href
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate exact-href parser
+        run: python3 -m unittest tests.test_stoneage_sa40_sina_exact_href_probe -v
+      - name: Probe exact historical href and redirects
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa40_sina_exact_href_probe             > research/recovered/STONEAGE-SA40-SINA-EXACT-HREF-R2.txt
+      - name: Commit derived redirect evidence only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-SA40-SINA-EXACT-HREF-R2.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: recover exact Sina 4.0 map href'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
