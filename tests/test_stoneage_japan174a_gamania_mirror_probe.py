@@ -5,7 +5,7 @@ from tools.stoneage_japan174a_gamania_mirror_probe import (
 
 class T(unittest.TestCase):
     def test_exact_gamania_target(self):
-        self.assertEqual(GM_HTTP, "http://file2.gamania.co.jp/sa/sa174gm.exe")
+        self.assertEqual(GM_HTTP, "http://file2.gamania.co.jp/sa/sa174gm.exe")\n        self.assertEqual(GM_HTTPS, "https://file2.gamania.co.jp/sa/sa174gm.exe")
 
     def test_discuz_aid_decode(self):
         href=("forum.php?aid=Njc1fGE2NjQ3M2Q2fDE3OTAxMzU3Mzd8MHwxNjY3MQ%3D%3D"
