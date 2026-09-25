@@ -1988,4 +1988,35 @@ Every substantial source should record:
 - Canonical note: `research/clients/STONEAGE-EARLY-RUTEN-REGIONAL-CARRIERS-R1.md`.
 - Derived report: `research/recovered/STONEAGE-MAINLAND-PACKAGE-MIRROR-MATCH-R1.txt`.
 
+### SRC-CN-IA-SA-ARENA-OPTICAL-01
+
+- Public preservation item: Internet Archive identifier `sa-arena`.
+- Current catalogue title: `疯狂原始人 Stoneage Arena Online CD-ROM 2002`.
+- Retrieval/research date: **2026-09-25**.
+- Source type: **publicly preserved full optical BIN/CUE object plus current IA catalogue metadata**.
+- Catalogue-boundary warning:
+  - current IA `date=2002-05-29` and creator `北京华义联合软件开发有限公司` are uploader/catalog fields;
+  - this probe does **not** promote those fields to independently verified contemporaneous publication facts.
+- Preserved optical object:
+  - `CD [SA_ARENA].bin`: **721,431,312 bytes**, MD5 `f4e7b6ec2b27282d67f6b3982310cc2e`, SHA-1 `f21da5f459db55cc5e09fccadc09f00a7b115177`, CRC32 `bcf893b0`;
+  - `CD [SA_ARENA].cue`: **299 bytes**, MD5 `3b6ddb5cf3de1760273d5bd75cc6d7e4`, SHA-1 `5928bffc95d34be28fcce802cced0b2769f625b4`, CRC32 `2d33121f`;
+  - one `MODE1/2352` track;
+  - ISO9660 volume label **`SA_ARENA`**;
+  - root includes `AUTORUN.INF`, `README.TXT`, `SAARENA.EXE`, `SA_ARENA.ICO`, and `DIRECTX8/`.
+- Byte-derived product classification:
+  - `README.TXT` is **22,009 bytes**, SHA-256 `b4a7145830418692f73030e8b6f6561458bbe272252f23178ec538e107cdd3ab`, decoded as GB18030;
+  - it repeatedly identifies the product as **`疯狂原始人`**, including product registration and default installation directory `C:\Program Files\Waei\疯狂原始人\`;
+  - it gives WGS/Beijing-Waei URLs and contact identity;
+  - critically, it says WGS points may be used for **`《石器时代》、《大法师》、《疯狂原始人》`**, treating StoneAge and 疯狂原始人 as distinct products.
+- Classification: **SAME-OPERATOR / SAME-WGS-ECOSYSTEM NEGATIVE CONTROL — NOT A STONEAGE 2.5 CLIENT CANDIDATE**.
+- Cross-source consistency:
+  - the independent SMZDM survivor list also separately names `2.5 / 3.0 / 4.0 / 5.0 / 疯狂原始人`, consistent with the byte-derived product distinction.
+- Operational consequence:
+  - remove `sa-arena` from the StoneAge 2.5 recovery candidate queue;
+  - retain it only as a Beijing-Waei/WGS optical-layout and vocabulary control;
+  - no deeper read of the **599,802,752-byte** `SAARENA.EXE` is justified for the current 2.5 objective.
+- Canonical note: `research/clients/STONEAGE-SA-ARENA-NEGATIVE-CONTROL-R1.md`.
+- Derived report: `research/recovered/STONEAGE-SA-ARENA-IA-OPTICAL-R1.txt`.
+- GitHub Actions verification: run **36098498332** — success.
+
 
