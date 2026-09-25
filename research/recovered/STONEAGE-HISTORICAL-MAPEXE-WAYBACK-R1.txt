@@ -1,0 +1,17 @@
+StoneAge historical map.exe Wayback replay probe — R1
+SCOPE|exact-Sina-derived-mirror+Wayback-capture+bounded-prefix|no-full-payload-download
+TARGET|url=http://www.wuxitianlong.com:80/sa/map.exe|capture=20030623234451|replay=https://web.archive.org/web/20030623234451id_/http://www.wuxitianlong.com:80/sa/map.exe
+AVAIL|date=20030101|status=200|available=1|timestamp=20030623234451|capture=http://web.archive.org/web/20030623234451/http://www.wuxitianlong.com:80/sa/map.exe|http_status=200|final=https://archive.org/wayback/available?url=http%3A%2F%2Fwww.wuxitianlong.com%3A80%2Fsa%2Fmap.exe&timestamp=20030101
+AVAIL|date=20030403|status=200|available=0|timestamp=|capture=|http_status=|final=https://archive.org/wayback/available?url=http%3A%2F%2Fwww.wuxitianlong.com%3A80%2Fsa%2Fmap.exe&timestamp=20030403
+AVAIL|date=20030601|status=200|available=1|timestamp=20030623234451|capture=http://web.archive.org/web/20030623234451/http://www.wuxitianlong.com:80/sa/map.exe|http_status=200|final=https://archive.org/wayback/available?url=http%3A%2F%2Fwww.wuxitianlong.com%3A80%2Fsa%2Fmap.exe&timestamp=20030601
+AVAIL|date=20030623|status=200|available=0|timestamp=|capture=|http_status=|final=https://archive.org/wayback/available?url=http%3A%2F%2Fwww.wuxitianlong.com%3A80%2Fsa%2Fmap.exe&timestamp=20030623
+AVAIL|date=20030701|status=200|available=1|timestamp=20030623234451|capture=http://web.archive.org/web/20030623234451/http://www.wuxitianlong.com:80/sa/map.exe|http_status=200|final=https://archive.org/wayback/available?url=http%3A%2F%2Fwww.wuxitianlong.com%3A80%2Fsa%2Fmap.exe&timestamp=20030701
+REPLAY|status=206|final=https://web.archive.org/web/20030623234451id_/http://www.wuxitianlong.com:80/sa/map.exe|bytes_read=262144|truncated=0|sha256_prefix=d097f02a2688e482145fe8a0d67f2ae65b8daf7edbb11acb1e26a30caa92968a|content_type=application/octet-stream|content_length=262144|content_range=|orig_length=|orig_type=|orig_last_modified=|orig_etag=|memento=
+MAGIC|hex=4d5a50000200000004000f00ffff0000b80000000000000040001a0000000000
+PE|mz=1|pe=1|peoff=512|machine=332|sections=3|timestamp=999877944
+COUNT|interesting_strings|3
+STRING|index=1|value=eLibraryG
+STRING|index=2|value=LoadLibraryA
+STRING|index=3|value=map\100.DAT
+COUNT|errors|0
+EVIDENCE_BOUNDARY|capture timestamp proves archival observation time only; internal executable metadata may predate capture but does not alone prove the exact bytes were served on the earlier 5.0-page date.
