@@ -1,0 +1,13 @@
+StoneAge Beijing-Waei Q4-2001 official-prefix topology census — R1
+SCOPE|two evidence-anchored official prefixes|2001-10..12|CDX URL metadata|no-payload
+CDX|label=stoneage-old|prefix=http://www.waei.com.cn/zhuanqu/stoneage/|status=200|rows=2898|bytes=447127|sha256=2b0aa4bad266a6420b3973637358a72eba2ebf196aa009e99d7909df79f579d4|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.waei.com.cn%2Fzhuanqu%2Fstoneage%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20011001&to=20011231&collapse=urlkey&limit=20000
+CDX|label=stoneage2|prefix=http://www.waei.com.cn/ZHUANQU/stoneage2/|status=200|rows=1540|bytes=239712|sha256=3492839adb623f5a1bca7947303df78b8d8330fca8c7a6891b55219611a4597d|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.waei.com.cn%2FZHUANQU%2Fstoneage2%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20011001&to=20011231&collapse=urlkey&limit=20000
+TOPOLOGY_HIT|label=stoneage2|timestamp=20011204165711|original=http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/upgrade.asp|statuscode=200|mimetype=text/html|digest=IQU4LIUMPIAA267LDBOLZKC6SLLLKC54|length=6678|redirect=
+COUNT|prefixes|2
+COUNT|completed_prefixes|2
+COUNT|unique_rows|2898
+COUNT|topology_hits|1
+COUNT|exact_sina_filename_hits|0
+COUNT|errors|0
+RESOLUTION|OFFICIAL_Q4_DOWNLOAD_TOPOLOGY_FOUND|replay bounded HTML/redirect candidates next
+EVIDENCE_BOUNDARY|CDX URL rows are routing metadata only and do not establish binary identity, cleanliness or completeness.
