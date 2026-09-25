@@ -1,0 +1,22 @@
+StoneAge 2000 Sina direct-route preservation probe — R1
+SCOPE|exact recovered IP path + bounded host-directory archive metadata|no-payload
+TARGET|url=http://202.106.184.193/downfiles/map_1212/samap_1220.zip|filename=samap_1220.zip
+CDX|variant=1|match=exact|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|target=http://202.106.184.193/downfiles/map_1212/samap_1220.zip
+CDX|variant=1|match=prefix|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|target=http://202.106.184.193/downfiles/map_1212/samap_1220.zip
+CDX|variant=2|match=exact|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|target=http://202.106.184.193:80/downfiles/map_1212/samap_1220.zip
+CDX|variant=2|match=prefix|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|target=http://202.106.184.193:80/downfiles/map_1212/samap_1220.zip
+CDX|variant=3|match=exact|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|target=https://202.106.184.193/downfiles/map_1212/samap_1220.zip
+CDX|variant=3|match=prefix|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|target=https://202.106.184.193/downfiles/map_1212/samap_1220.zip
+DIR_CDX|status=200|rows=76|relevant=0|bytes=11416|sha256=91a4912e20ab014f3536850d863207c6136179c4756092995ff564ef6458c582|target=http://202.106.184.193/downfiles/map_1212/
+AVAIL|date=20001220|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|date=20010101|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|date=20010126|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|date=20011220|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|date=20020101|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|date=20051103|status=200|hit=0|timestamp=|capture=|http_status=
+COUNT|relevant_unique|0
+ERROR|scope=cdx:4:exact|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=cdx:4:prefix|kind=URLError|message=<urlopen error timed out>
+COUNT|errors|2
+RESOLUTION|NO_DIRECT_ROUTE_ARCHIVE_HIT|retain exact IP/path as primary mirror token and search independent caches/carriers
+EVIDENCE_BOUNDARY|the CGI proves this was the historical Sina download route; archive metadata still does not establish package bytes until an exact object is recovered.
