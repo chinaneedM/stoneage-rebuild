@@ -44,6 +44,12 @@ def rows(node):
 def path_of(r):
     return str(r.get("fileid") or r.get("path") or r.get("filename") or r.get("name") or "")
 
+def browse_url(href):
+    u=urllib.parse.urljoin(BASE,str(href or ""))
+    parts=urllib.parse.urlsplit(u)
+    path=urllib.parse.quote(urllib.parse.unquote(parts.path),safe="/:@")
+    return urllib.parse.urlunsplit((parts.scheme,parts.netloc,path,parts.query,parts.fragment))
+
 def scalar_fields(r):
     out=[]
     for k in sorted(r):
@@ -60,7 +66,7 @@ def classify_paths(items):
     return bare,descendants,exact
 
 def main():
-    print("StoneAge 2.0 DiscMaster item 41879 topology — R3")
+    print("StoneAge 2.0 DiscMaster item 41879 topology — R4")
     print("SCOPE|DiscMaster item-local search + browse HTML|metadata-only|no-payload")
     print("TARGET|itemid=41879|itemName=350 PC Games (CD-ROM)|discovered_path=STONEAGE2")
     errors=[]; seen={}; exact_browse=[]
@@ -78,7 +84,7 @@ def main():
                         print(f"ROW_FIELD|q={clean(q)}|key={clean(k)}|value={clean(v,1800)}")
                     href=str(r.get("href") or "").strip()
                     if href:
-                        exact_browse.append(urllib.parse.urljoin(BASE,href))
+                        exact_browse.append(browse_url(href))
         except Exception as e:
             errors.append(("query:"+q,type(e).__name__,str(e)))
     browse_urls=tuple(dict.fromkeys(BROWSE+tuple(exact_browse)))
