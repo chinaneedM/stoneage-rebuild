@@ -1,0 +1,21 @@
+StoneAge 2001 independent archive probe — R2
+SCOPE|bounded Arquivo.pt text/CDX + four early Common Crawl indexes|metadata-only|no-payload
+TARGET|filename=Estoneage2.0map_1127.exe|aid=43172|source=http://games.sina.com.cn/downgames/map/11271899.shtml
+COMMONCRAWL_INDEX_COUNT|count=4
+ERROR|scope=arquivo-text:Estoneage2.0map_1127.exe|kind=HTTPError|message=HTTP Error 400: Bad Request
+ERROR|scope=arquivo-text:Estoneage2.0map_1127|kind=TimeoutError|message=The read operation timed out
+ERROR|scope=arquivo-text:"石器时代" "全地图"|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
+ERROR|scope=arquivo-cdx:source|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
+ERROR|scope=arquivo-cdx:cgi|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
+ERROR|scope=cc:CC-MAIN-2009-2010:source|kind=HTTPError|message=HTTP Error 503: Service Temporarily Unavailable
+ERROR|scope=cc:CC-MAIN-2012:filename|kind=HTTPError|message=HTTP Error 503: Service Temporarily Unavailable
+ERROR|scope=cc:CC-MAIN-2012:source|kind=HTTPError|message=HTTP Error 503: Service Temporarily Unavailable
+ERROR|scope=cc:CC-MAIN-2013-20:filename|kind=HTTPError|message=HTTP Error 503: Service Temporarily Unavailable
+ERROR|scope=cc:CC-MAIN-2013-20:source|kind=HTTPError|message=HTTP Error 503: Service Temporarily Unavailable
+ERROR|scope=cc:CC-MAIN-2015-06:filename|kind=HTTPError|message=HTTP Error 503: Service Temporarily Unavailable
+ERROR|scope=cc:CC-MAIN-2015-06:source|kind=HTTPError|message=HTTP Error 503: Service Temporarily Unavailable
+COUNT|arquivo_rows|0
+COUNT|commoncrawl_rows|0
+COUNT|errors|12
+RESOLUTION|NO_INDEPENDENT_ARCHIVE_ROW|tested independent public archive indexes expose no indexed target row
+EVIDENCE_BOUNDARY|archive index/search rows are discovery metadata only; no returned historical binary body is downloaded.
