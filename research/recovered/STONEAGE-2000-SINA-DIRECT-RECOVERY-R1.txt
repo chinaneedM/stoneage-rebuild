@@ -1,0 +1,14 @@
+StoneAge 2000 Sina direct-route transient recovery — R1
+SCOPE|exact archived URL availability + bounded transient body + hash/ZIP inventory|payload-not-retained
+TARGET|url=http://202.106.184.193/downfiles/map_1212/samap_1220.zip|stated_size_kib=1410|max_bytes=4194304
+AVAIL|date=20001220|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|date=20010101|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|date=20010126|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|date=20010201|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|date=20011220|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|date=20020101|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|date=20051103|status=200|hit=0|timestamp=|capture=|http_status=
+COUNT|unique_captures|0
+RESOLUTION|NO_EXACT_ARCHIVED_OBJECT|continue independent mirror/cache search from recovered direct route
+COUNT|errors|0
+EVIDENCE_BOUNDARY|only an exact recovered ZIP body can establish package contents; derived hashes/inventory may be committed, payload bytes may not.
