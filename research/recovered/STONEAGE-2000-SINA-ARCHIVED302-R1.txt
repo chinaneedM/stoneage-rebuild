@@ -1,0 +1,16 @@
+StoneAge 2000 Sina archived-302 topology probe — R1
+SCOPE|exact control CGI CDX + no-follow Wayback replay headers + target filename substitution|small-response-only|no-payload
+CDX|label=north|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|label=south|status=200|rows=1|bytes=405|sha256=0464a8f539c765d4b480bea705e8098d22d3ceeca373fa99c55f135b284520e9
+ROW|label=south|timestamp=20051103130625|statuscode=302|redirect=|digest=KCPQQOFS6AMGEGVZLK5LHRTPAWGIU3TA|length=600
+REPLAY|label=south|timestamp=20051103130625|mode=id_|status=302|bytes=500|sha256=8ae7bc64325610f4159683a0d5982825fb843514e68db3e46c500a39916a1e54|location=https://web.archive.org/web/20051103130625id_/http://login.games.sina.com.cn/index.php?reurl=http%3A%2F%2Fgames1.sina.com.cn%2Fcgi-bin%2Fgames%2Fdowngames%2Fdownload.pl%3Fcol%3Dmap%26aid%3D23681%26title%3D%CA%AF%C6%F7%CA%B1%B4%FA%A1%AA%C4%CF%B5%BA%CF%EA%CF%B8%B5%D8%CD%BC%D6%B8%C4%CF%26author%3D%D3%CE%C3%F1%B2%BF%C2%E4%26filename%3Dsouthisland_1228.zip%26size%3D202|final=https://web.archive.org/web/20051103130625id_/http://games1.sina.com.cn/cgi-bin/games/downgames/download.pl?col=map&aid=23681&title=%CA%AF%C6%F7%CA%B1%B4%FA%A1%AA%C4%CF%B5%BA%CF%EA%CF%B8%B5%D8%CD%BC%D6%B8%C4%CF&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=southisland_1228.zip&size=202
+REPLAY|label=south|timestamp=20051103130625|mode=if_|status=302|bytes=500|sha256=8ae7bc64325610f4159683a0d5982825fb843514e68db3e46c500a39916a1e54|location=https://web.archive.org/web/20051103130625if_/http://login.games.sina.com.cn/index.php?reurl=http%3A%2F%2Fgames1.sina.com.cn%2Fcgi-bin%2Fgames%2Fdowngames%2Fdownload.pl%3Fcol%3Dmap%26aid%3D23681%26title%3D%CA%AF%C6%F7%CA%B1%B4%FA%A1%AA%C4%CF%B5%BA%CF%EA%CF%B8%B5%D8%CD%BC%D6%B8%C4%CF%26author%3D%D3%CE%C3%F1%B2%BF%C2%E4%26filename%3Dsouthisland_1228.zip%26size%3D202|final=https://web.archive.org/web/20051103130625if_/http://games1.sina.com.cn/cgi-bin/games/downgames/download.pl?col=map&aid=23681&title=%CA%AF%C6%F7%CA%B1%B4%FA%A1%AA%C4%CF%B5%BA%CF%EA%CF%B8%B5%D8%CD%BC%D6%B8%C4%CF&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=southisland_1228.zip&size=202
+COUNT|locations|2
+COUNT|synthesized_target_urls|2
+SYNTH|index=1|url=https://web.archive.org/web/20051103130625id_/http://login.games.sina.com.cn/index.php?reurl=http%3A%2F%2Fgames1.sina.com.cn%2Fcgi-bin%2Fgames%2Fdowngames%2Fdownload.pl%3Fcol%3Dmap%26aid%3D23681%26title%3D%CA%AF%C6%F7%CA%B1%B4%FA%A1%AA%C4%CF%B5%BA%CF%EA%CF%B8%B5%D8%CD%BC%D6%B8%C4%CF%26author%3D%D3%CE%C3%F1%B2%BF%C2%E4%26filename%3Dsamap_1220.zip%26size%3D202
+SYNTH_CDX|index=1|status=200|rows=0|bytes=3
+SYNTH|index=2|url=https://web.archive.org/web/20051103130625if_/http://login.games.sina.com.cn/index.php?reurl=http%3A%2F%2Fgames1.sina.com.cn%2Fcgi-bin%2Fgames%2Fdowngames%2Fdownload.pl%3Fcol%3Dmap%26aid%3D23681%26title%3D%CA%AF%C6%F7%CA%B1%B4%FA%A1%AA%C4%CF%B5%BA%CF%EA%CF%B8%B5%D8%CD%BC%D6%B8%C4%CF%26author%3D%D3%CE%C3%F1%B2%BF%C2%E4%26filename%3Dsamap_1220.zip%26size%3D202
+SYNTH_CDX|index=2|status=200|rows=0|bytes=3
+COUNT|errors|0
+RESOLUTION|ARCHIVED_302_LOCATION_RECOVERED|evaluate synthesized target CDX rows; location establishes control topology only
+EVIDENCE_BOUNDARY|a recovered control Location proves only historical Sina download topology; substituted target URLs remain hypotheses until independently archived.
