@@ -1962,4 +1962,29 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-EARLY-RUTEN-CARRIERS-R1.txt`;
   - `research/recovered/STONEAGE-EARLY-RUTEN-CARRIER-FINGERPRINTS-R1.txt`;
   - `research/recovered/STONEAGE-MAINLAND-RETAIL-ISBN-PROBE-R1.txt`.
+### SRC-CN-2020-SA85-SA20-PACKAGE-MIRROR-01
+
+- Current public mirror: `https://www.sa85.com.cn/shiqi2710.html`
+- Mirror title: **`石器时代周边收藏客户端礼包篇（五）2.0版本礼盒`**
+- Retrieval/research date: **2026-09-25**
+- Source type: later collector mirror preserving package photographs and a literal 2.0-version label; **not** contemporaneous operator publication and **not** byte provenance.
+- Recovered visual relationship:
+  - collector article image `mirror-20:2` SHA-256 `bf736ab3ba6d860c0faece641ae8a199a35ed5e6616ddc883ad001b5301e6c6f`;
+  - Ruten item `22631284715652` images 0–3 produce **400 / 328 / 317 / 129 RANSAC inliers** against that reference;
+  - first-three inlier ratios: **0.8403 / 0.8059 / 0.8212**;
+  - first-three collector-reference target coverage: **0.9070 / 0.9054 / 0.8793**.
+- Interpretation:
+  - the overlap is far stronger than ordinary shared StoneAge logo/artwork signal and establishes a **strong shared package/photo-artwork family** relationship;
+  - homography sanity remains imperfect (`quad_ok=0` for the four strongest rows, with large projected-area ratios), so the evidence does not prove the same physical box or identical photograph;
+  - the mirror's `2.0` label materially narrows the surviving package family but does not independently prove release version, optical-disc contents, pressing/mastering, installer identity or clean-client status.
+- 1.x control boundary:
+  - public mirror `https://shiqi.ws/post/10248.html` is indexed under `石器时代182时期的端游客户端新手礼包`;
+  - the first parser pass recovered the page but no standard image rows, so a raw/CSS/lazy-image recovery pass was added before any one-sided generation assignment is accepted.
+- Confidence:
+  - **A for current mirror title, recoverable image hash and computed cross-image metrics**;
+  - **B for using the later collector title as a package-generation attribution**;
+  - **OPEN for exact original release version and all byte-level relationships**.
+- Canonical note: `research/clients/STONEAGE-EARLY-RUTEN-REGIONAL-CARRIERS-R1.md`.
+- Derived report: `research/recovered/STONEAGE-MAINLAND-PACKAGE-MIRROR-MATCH-R1.txt`.
+
 
