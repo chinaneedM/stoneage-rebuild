@@ -2118,6 +2118,7 @@ Supplemental source ledgers:
 - Same-backend controls are now known eight days later: `northisland_1228.zip` (aid=23680) and `southisland_1228.zip` (aid=23681). The south-island CGI has a preserved 2005-11-03 HTTP 302.
 - The preserved 302 has now been replayed with redirects disabled: its `Location` is **only a Sina login gateway** at `login.games.sina.com.cn/index.php?reurl=...`, with the original CGI embedded in `reurl`. It exposes no historical ZIP/file-server path, so this branch is bounded and must not be treated as payload-topology evidence.
 - Independent public-archive coverage has been added with a bounded Arquivo.pt + Common Crawl metadata probe for the exact filename/source/CGI token; no package body is fetched.
+- A full bounded Wayback census of the Sina `download.pl` prefix across 2000–2003 is now complete for topology purposes: 2000/2001 expose zero prefix rows on the tested index; 2002 exposes **906** rows but **zero `col=map`** rows; 2003 exposes **1,746** rows with only **3 `col=map`** rows. Replaying the bounded map sample recovered no direct binary URL. The earlier apparent direct hit was only a Macromedia Flash CAB and has been explicitly excluded/regression-tested. **Conclusion:** broad `download.pl` corpus mining does not currently expose a usable late-2000 StoneAge file-server template and should not be repeated without a new exact token or archive surface.
 - Exact Internet Archive filename/stem searches expose no carrier. DiscMaster broad `samap` searches produce large unrelated result sets; the recovery probe has therefore been tightened so only an **exact leaf filename `samap_1220.zip`** (or an independently verified exact filename/stem carrier in another preservation index) can promote the result to a preservation candidate.
 - **Priority consequence:** this 2000 package now precedes the 2001-11-27 `Estoneage2.0map_1127.exe` package in the field-map recovery queue. If bytes are recovered, extract/hash first and compare against Taiwan v1.0, June-2003 and mixed-2.5 corpora before making any historical-equivalence claim.
 - Canonical source: `SRC-CN-2000-SINA-FULLMAP-01`.
@@ -2126,7 +2127,8 @@ Supplemental source ledgers:
   - `research/recovered/STONEAGE-2000-SINA-AID-23223-R1.txt`;
   - `research/recovered/STONEAGE-2000-INDEPENDENT-ARCHIVES-R1.txt`;
   - `research/recovered/STONEAGE-2000-SINA-MAP-NEIGHBORHOOD-R1.txt`;
-  - `research/recovered/STONEAGE-2000-SINA-ARCHIVED302-R1.txt`.
+  - `research/recovered/STONEAGE-2000-SINA-ARCHIVED302-R1.txt`;
+  - `research/recovered/STONEAGE-SINA-DOWNLOAD-CGI-TOPOLOGY-R1.txt`.
 
 ## Immediate next actions
 
