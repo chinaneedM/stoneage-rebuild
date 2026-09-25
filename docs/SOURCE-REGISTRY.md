@@ -1728,26 +1728,84 @@ Every substantial source should record:
 - Public post timestamp: **2025-09-26 09:11:13**
 - Retrieval/research date: **2026-09-25**
 - Public post URL: `https://www.cangbaowan.vip/thread-9642-1-1.html`
-- Current public metadata observed:
-  - **596 views / 7 replies**;
-  - the unauthenticated post exposes an exact Baidu share URL before the paid-topic boundary.
 - Exact public Baidu share:
   - URL: `https://pan.baidu.com/s/1a2cOmPxo5GjFPFfU5Mj2Ug`
   - share ID: **`1a2cOmPxo5GjFPFfU5Mj2Ug`**
 - Access boundary:
-  - the extraction-code field is not exposed on the public page;
-  - the remaining topic body states that **50 forum coins** are required;
-  - no purchase, login, extraction-code guessing or access-control bypass was attempted.
+  - the extraction-code field is behind the forum's 50-coin topic boundary;
+  - no purchase, login, code guessing or access-control bypass was attempted.
+- Current public-share result:
+  - direct anonymous Baidu landing returns HTTP 200 with title **`百度网盘-链接不存在`** and explicit missing/invalid-state text;
+  - corrected probe resolution: **`PUBLIC_BAIDU_SHARE_DEAD_OR_MISSING`**;
+  - successful Wayback exact/prefix checks on the tested share forms return **0 rows**; one trailing-slash exact request timed out and is not counted as negative evidence;
+  - Internet Archive exact share-ID search returns **0 documents**.
 - Exact-token public search:
   - the share ID, complete Baidu URL, exact post title and title+author combinations were searched;
-  - current indexed results lead back to the source post/forum listing but expose **no independent repost with extraction code, archive filename, size, checksum or file tree**.
+  - no independent public repost with extraction code, archive filename, size, checksum or file tree was found.
 - Source classification:
-  - modern community/cloud-drive recovery lead;
-  - **not** operator-era 2002 provenance and **not** proof of a clean client.
+  - modern community/cloud-drive recovery lead whose **current direct Baidu route is dead/missing**;
+  - not operator-era 2002 provenance and not proof of a clean client.
 - Confidence:
-  - **A for public post title/author/timestamp and exact Baidu share ID**;
-  - **OPEN for share liveness, extraction code, payload metadata, payload bytes, cleanliness and relation to known 2.5 corpora**.
+  - **A for public post identity, exact share ID and current Baidu missing-link state**;
+  - **A for bounded zero-row results on the successful tested archive-index calls**;
+  - **OPEN for former payload identity/bytes, cleanliness and relation to known 2.5 corpora**.
 - Operational consequence:
-  - promote `1a2cOmPxo5GjFPFfU5Mj2Ug`, thread `9642` and author `saiya141` to exact recovery tokens;
-  - if publicly accessible bytes or metadata appear later, compare immediately against the recovered MediaFire mixed bridge and 99ds descendant control before assigning provenance.
-- Derived report: `research/recovered/STONEAGE-SA25-PUBLIC-CLEAN-LEADS-REFRESH-R1.txt`.
+  - retain `1a2cOmPxo5GjFPFfU5Mj2Ug`, thread `9642` and author `saiya141` only as mirror/repost recovery keys;
+  - do not spend primary recovery effort on the dead direct Baidu route unless a new mirror, extraction-code repost, filename, checksum or file-tree token appears.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-PUBLIC-CLEAN-LEADS-REFRESH-R1.txt`
+  - `research/recovered/STONEAGE-SA25-CANGBAOWAN-BAIDU-R1.txt`.
+
+### SRC-CN-2017-JUDINGWAN-SA25-ONECLICK-01
+
+- Source chain:
+  - 2017-01-03 public repost: `https://www.80give.com/forum.php?extra=&mod=viewthread&ordertype=1&page=3&tid=1422`
+  - later public reposts include the 2022 "最新某宝 所有网游单机版" lists.
+- Literal package label: **`〖飓鼎玩〗石器时代 v2.5版`**
+- Legacy public share/code: `https://pan.baidu.com/s/1eS9MzOe` / `qnsv`.
+- Later public share/code: `https://pan.baidu.com/s/1nu7DLcX` / `ylru`.
+- Source-list context:
+  - the 2017 list separately labels **`〖飓鼎玩赠品〗石器时代2.5GM工具全套`**;
+  - the same distributor list supplies a generic extraction-password marker `http://www.judwan.com` for the package group.
+- Public-code verification, no login and no payload download:
+  - both the legacy and later share codes verify successfully through Baidu's normal public share flow;
+  - both expose the same main object name **`石器时代v2.5一键端.exe`**;
+  - both expose the same size **441,183,848 bytes**;
+  - both expose the same Baidu file identifier **`fs_id=146116179281676`**;
+  - the later share additionally exposes **`【飓鼎玩】石器时代2.5安装教程.rar`**, **17,963,524 bytes**, `fs_id=802517119665785`.
+- Interpretation:
+  - filename + byte size + identical Baidu `fs_id` across the two share generations establish a stable platform-level identity for the main one-click object across the tested repost chain;
+  - this is **not a cryptographic payload hash** and does not establish equality to any original 2002 disc/client.
+- Exact public filename/`fs_id`/size search:
+  - no operator-era source, original-disc attribution, checksum, or stronger historical mirror was surfaced in this pass.
+- Classification:
+  - **DESCENDANT / ONE-CLICK INTEGRATION CONTROL**;
+  - the one-click EXE packaging, separate installation tutorial and separately distributed GM tools are inconsistent with treating this as an untouched 2002 operator client merely from its "v2.5" label.
+- Operational consequence:
+  - retain exact filename, sizes, two share IDs and `fs_id` values as descendant/common-corpus comparison tokens;
+  - do not spend primary clean-client recovery effort downloading the 441 MB one-click payload unless independent provenance emerges.
+- Derived report: `research/recovered/STONEAGE-SA25-BAIDU-SHARE-METADATA-R1.txt`.
+
+### SRC-CN-2022-246SA-SA25-ONECLICK-01
+
+- Source post: `https://www.iopq.net/forum.php?mod=viewthread&tid=17113443`
+- Title: `分享一下大神去验证的246SA一键端石器时代2.5大屏版`
+- Original post timestamp: **2022-06-09 14:10:07**
+- Public source description:
+  - explicitly states **客户端与服务端全套**;
+  - states that the de-verification modification involves replacing `gmsv`;
+  - thread replies discuss one-click/server behavior and note encrypted Lua in the bundle.
+- Exact public Baidu share/code:
+  - `https://pan.baidu.com/s/1cHlV27B0rckWGC2cH21dGg?pwd=7ck4`
+  - code `7ck4`.
+- Current public-share result:
+  - direct Baidu landing now returns **`百度网盘-链接不存在`**;
+  - corrected generic metadata probe classifies it **MISSING**;
+  - no file name, size, hash or file tree was recovered before the current dead-link boundary.
+- Classification:
+  - modern client+server one-click/private-server bundle;
+  - descendant engineering control only, not a clean/operator 2.5 client lead.
+- Operational consequence:
+  - retain the exact share ID/title as a repost search token;
+  - current direct share route is bounded/dead and should not receive primary recovery effort without a new mirror.
+- Derived report: `research/recovered/STONEAGE-SA25-BAIDU-SHARE-METADATA-R1.txt`.
