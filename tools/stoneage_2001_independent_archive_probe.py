@@ -19,7 +19,7 @@ CC_COLL="https://index.commoncrawl.org/collinfo.json"
 def clean(v,n=6000):
     return " ".join(str(v if v is not None else "").split()).replace("|","%7C")[:n]
 
-def fetch(url,timeout=40,max_bytes=8*1024*1024):
+def fetch(url,timeout=15,max_bytes=4*1024*1024):
     req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/json,text/plain,*/*;q=0.5","Accept-Encoding":"identity"})
     with urllib.request.urlopen(req,timeout=timeout) as r:
         b=r.read(max_bytes+1)
@@ -36,33 +36,32 @@ def arq_items(obj):
     return obj if isinstance(obj,list) else []
 
 def arq_text_url(q):
-    return ARQ_TEXT+"?"+urllib.parse.urlencode({"q":q,"maxItems":"500","from":"20010101000000","to":"20151231235959"})
+    return ARQ_TEXT+"?"+urllib.parse.urlencode({"q":q,"maxItems":"100","from":"20010101000000","to":"20151231235959"})
 
 def arq_version_url(u):
     return ARQ_TEXT+"?"+urllib.parse.urlencode({"versionHistory":u,"maxItems":"500"})
 
 def arq_cdx_url(u):
-    return ARQ_CDX+"?"+urllib.parse.urlencode({"url":u,"output":"json","limit":"5000"})
+    return ARQ_CDX+"?"+urllib.parse.urlencode({"url":u,"output":"json","limit":"500"})
 
 def cc_indexes():
-    st,final,h,b=fetch(CC_COLL,timeout=30,max_bytes=2*1024*1024)
+    st,final,h,b=fetch(CC_COLL,timeout=12,max_bytes=2*1024*1024)
     d=json.loads(b.decode("utf-8"));by_year={}
     for x in d:
         cid=str(x.get("id") or "")
         m=re.search(r"CC-MAIN-(\d{4})",cid)
         if not m:continue
         y=int(m.group(1))
-        if 2008<=y<=2018:by_year.setdefault(y,[]).append(cid)
+        by_year.setdefault(y,[]).append(cid)
     out=[]
-    for y in sorted(by_year):
-        vals=sorted(set(by_year[y]))
-        out.append(vals[0])
-        if vals[-1]!=vals[0]:out.append(vals[-1])
+    for y in (2009,2012,2013,2015):
+        vals=sorted(set(by_year.get(y,())))
+        if vals:out.append(vals[0])
     return tuple(out)
 
 def cc_query(cid,u):
     ep=f"https://index.commoncrawl.org/{cid}-index?"+urllib.parse.urlencode({"url":u,"output":"json"})
-    try: st,final,h,b=fetch(ep,timeout=20,max_bytes=2*1024*1024)
+    try: st,final,h,b=fetch(ep,timeout=8,max_bytes=1024*1024)
     except urllib.error.HTTPError as e:
         if e.code in (400,404):return ep,()
         raise
@@ -77,7 +76,7 @@ def cc_query(cid,u):
 def emit_arq(label,obj):
     rr=arq_items(obj)
     print(f"ARQUIVO_COUNT|label={clean(label)}|rows={len(rr)}")
-    for i,x in enumerate(rr[:500],1):
+    for i,x in enumerate(rr[:100],1):
         if not isinstance(x,dict):continue
         low={str(k).lower():v for k,v in x.items()}
         def f(*names):
@@ -88,23 +87,22 @@ def emit_arq(label,obj):
     return len(rr)
 
 def main():
-    print("StoneAge 2001 independent archive probe — R1")
-    print("SCOPE|Arquivo.pt full-text/version/CDX + Common Crawl filename/source/CGI indexes|metadata-only|no-payload")
+    print("StoneAge 2001 independent archive probe — R2")
+    print("SCOPE|bounded Arquivo.pt text/CDX + four early Common Crawl indexes|metadata-only|no-payload")
     print(f"TARGET|filename={FILENAME}|aid=43172|source={SOURCE}")
     errors=[];arq_rows=0;cc_rows=0
-    for q in (FILENAME,STEM,"Estoneage2.0map",'"石器时代" "全地图"',"xinhaonanhai stoneage map"):
+    for q in (FILENAME,STEM,'"石器时代" "全地图"'):
         try:
             u=arq_text_url(q);st,final,h,b=fetch(u);obj=parse_json(b)
             print(f"ARQUIVO_TEXT|q={clean(q)}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|json={int(obj is not None)}")
             if obj is not None:arq_rows+=emit_arq("text:"+q,obj)
         except Exception as e:errors.append(("arquivo-text:"+q,type(e).__name__,str(e)))
     for label,u0 in (("source",SOURCE),("cgi",CGI)):
-        for mode,builder in (("version",arq_version_url),("cdx",arq_cdx_url)):
-            try:
-                u=builder(u0);st,final,h,b=fetch(u);obj=parse_json(b)
-                print(f"ARQUIVO_{mode.upper()}|label={label}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|json={int(obj is not None)}")
-                if obj is not None:arq_rows+=emit_arq(mode+":"+label,obj)
-            except Exception as e:errors.append((f"arquivo-{mode}:{label}",type(e).__name__,str(e)))
+        try:
+            u=arq_cdx_url(u0);st,final,h,b=fetch(u,timeout=15);obj=parse_json(b)
+            print(f"ARQUIVO_CDX|label={label}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|json={int(obj is not None)}")
+            if obj is not None:arq_rows+=emit_arq("cdx:"+label,obj)
+        except Exception as e:errors.append((f"arquivo-cdx:{label}",type(e).__name__,str(e)))
     try: ids=cc_indexes()
     except Exception as e:
         ids=();errors.append(("cc-index-list",type(e).__name__,str(e)))
@@ -112,9 +110,7 @@ def main():
     for cid in ids:
         for label,u0 in (
             ("filename","*"+FILENAME+"*"),
-            ("stem","*"+STEM+"*"),
             ("source",SOURCE),
-            ("cgi",CGI),
         ):
             try:
                 ep,rr=cc_query(cid,u0)
