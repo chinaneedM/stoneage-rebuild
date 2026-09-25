@@ -66,7 +66,7 @@ The geometry is not treated as proof of the same physical box or same photograph
 
 The current 1.x comparison mirror at `https://shiqi.ws/post/10248.html` is publicly readable in CI but still does not expose a usable package photograph. Follow-up run **36097423535** completed successfully after adding raw HTML/CSS/escaped-URL discovery; it found only `https://shiqi.ws//zb_users/plugin/MoreLinksGame/img/dh_bg.jpg`, a **1×31** plugin background that was correctly skipped. Therefore the tested current page surface is **bounded for usable 1.x package images**. Reopen this visual-control route only from an alternate mirror, explicit article-image URL, archived page body, or another source-labelled 1.x package photograph.
 
-## Preservation probe for the initial photo transcription
+## Preservation probe for the initial transcription and checksum-consistent hypotheses
 
 GitHub Actions run `36096287039`, attempt 2, completed successfully.
 
@@ -88,7 +88,15 @@ Result:
 
 The one raw DiscMaster row returned for the hyphenated ISBN failed the strict StoneAge/operator identifier test and is not promoted as a candidate.
 
-Operational consequence: the R1 DiscMaster/IA surface is **bounded only for the initial transcription strings**. A separate R2 pass should test the checksum-consistent hypotheses while keeping them explicitly hypothetical; the route should then reopen only from a clearer photograph, independent catalogue record, new preservation corpus, disc/file token, checksum, volume label, or public media dump.
+R2 then tested the checksum-consistent hypotheses **`7-900032-57-6` / `7900032576` / `9787900032577`** separately. GitHub Actions run **36097696696** completed successfully. Across all eight R2 queries (initial transcriptions, checksum hypotheses and Waei/StoneAge context):
+
+- strict DiscMaster hits: **0**
+- strict Internet Archive items: **0**
+- probe errors: **0**
+
+The hyphenated initial and hypothetical ISBN strings each produced one raw DiscMaster row, but neither row passed the strict StoneAge/operator filter and neither is a candidate.
+
+Operational consequence: the tested DiscMaster/IA surfaces are now **bounded for both the initial transcription and the checksum-consistent hypotheses**. Neither string family is promoted as the printed identifier. Reopen this identifier-reading route only from a clearer photograph, independent catalogue record, new preservation corpus, disc/file token, checksum, volume label, or public media dump.
 
 ## Visual-evidence boundary
 
