@@ -3,7 +3,7 @@ SCOPE|public-image-read-transient|derived-metrics-only|no-login|no-purchase|no-i
 OFFICIAL_REFERENCE|https://cos.stoneage.cn/uploads/article/minisnsimg/20201222/5fe128952732d.jpg
 WANFANG_PAGE|https://www.shiqi.me/pt_17.htm
 TLS_EXCEPTION_MODE|verification-disabled-only-for-known-expired-collector-hosts
-RUTEN_IMAGE_TARGETS|count=14
+RUTEN_IMAGE_TARGETS|count=15
 WANFANG_PAGE_IMAGES|status=200|count=0|final=https://wanwang.aliyun.com/hosting/expire/
 COLLECTOR_INDEX|url=https://blog.shiqi.so/author1.htm|status=200|matched_links=1
 COLLECTOR_ARTICLE|index=https://blog.shiqi.so/author1.htm|value=https://blog.shiqi.so/shiqi273.htm
@@ -24,19 +24,28 @@ IMAGE|label=ruten:22242541948520:0|bytes=66295|sha256=d3bdc123fa2495f2fa7f278cf1
 IMAGE|label=ruten:22615474551866:0|bytes=95954|sha256=b41a2520b3e90e4ee9f922e010c2357af21c0c89c96f1c24e12933b9b18ba4b9|size=800x600|dhash=f0f0f4e4e0f0f0f0|keypoints=5000|url=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_647.jpg
 IMAGE|label=ruten:22615474551866:1|bytes=54431|sha256=7ce2c9984cfa0e136019ea9cce8491a46897ec1c9e47b69a278631b31cbb2cd4|size=800x600|dhash=e0e0a85870a0e4f0|keypoints=5000|url=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_438.jpg
 IMAGE|label=ruten:22615474551866:2|bytes=71815|sha256=e35db6e8db2ad2cacdd1f643e480252c968e0d51bc255e39ac395c19b42d9dd8|size=800x600|dhash=f8e0e8e8e8e0fcf0|keypoints=5000|url=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_740.jpg
+IMAGE|label=ruten:22445165101247:0|bytes=67565|sha256=f7835bb1c544ee3de89578f5161f5169edc2ee1e495de0368161f8d0dfb9fc78|size=800x600|dhash=2b61c99d8ea97122|keypoints=5000|url=https://gcs.rimg.com.tw/g1/d/30/bf/22445165101247_815.jpg
 IMAGE|label=collector-mirror:6|bytes=343260|sha256=df7ffe3287d117f8dfc7ee069ee372cb3bc3d41fdf85428425f9286bc3f974ce|size=635x477|dhash=dc5ed9d3d33a0c13|keypoints=5000|url=https://blog.shiqi.so/zb_users/upload/2020/11/202011071604750915232707.png
 IMAGE|label=collector-mirror:7|bytes=64217|sha256=c93d3279626dc2c10a35551d8379d338576faebe9ac912dc44f76e00b1997520|size=500x375|dhash=7052122c4dd446e0|keypoints=4267|url=https://t.shiqi.me/so/lishi/t/sa182.png
 IMAGE|label=collector-mirror:12|bytes=161997|sha256=6a6cef2ebefb488fae2a09e5b0fafb7a94477f2fb0572b68f25197f7e776f0f8|size=302x397|dhash=9a6c709a96567969|keypoints=4023|url=https://blog.shiqi.so/zb_users/upload/2018/03/201803211521612100507822.png
 IMAGE|label=collector-mirror:13|bytes=496297|sha256=75bd067538bdaf2038ddd7cd7be6ba10589544a2aa33fe8b40019b2db446ce49|size=683x513|dhash=c9999d9595959488|keypoints=5000|url=https://blog.shiqi.so/zb_users/upload/2018/07/201807261532566647333790.png
-PAIR_COUNT|108
+PAIR_COUNT|126
+MATCH|kind=ruten-cross-listing|left=ruten:22242541948520:0|right=ruten:22445165101247:0|dhash_hamming=34|orb_matches=2146|good_le64=2096|median_top50=16.0|ransac_inliers=1581|inlier_ratio=0.7543
+MATCH|kind=ruten-cross-listing|left=ruten:21926883918096:0|right=ruten:22445165101247:0|dhash_hamming=28|orb_matches=1785|good_le64=1749|median_top50=24.0|ransac_inliers=977|inlier_ratio=0.5586
 MATCH|kind=ruten-cross-listing|left=ruten:21926883918096:0|right=ruten:22242541948520:0|dhash_hamming=30|orb_matches=1605|good_le64=1538|median_top50=24.0|ransac_inliers=743|inlier_ratio=0.4831
 MATCH|kind=ruten-cross-listing|left=ruten:22242541948520:0|right=ruten:22615474551866:1|dhash_hamming=33|orb_matches=1284|good_le64=1145|median_top50=32.0|ransac_inliers=266|inlier_ratio=0.2323
 MATCH|kind=ruten-cross-listing|left=ruten:21926883918096:0|right=ruten:22615474551866:1|dhash_hamming=23|orb_matches=1250|good_le64=1149|median_top50=30.0|ransac_inliers=253|inlier_ratio=0.2202
+MATCH|kind=ruten-cross-listing|left=ruten:22615474551866:1|right=ruten:22445165101247:0|dhash_hamming=31|orb_matches=1286|good_le64=1157|median_top50=29.5|ransac_inliers=221|inlier_ratio=0.1910
+MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:3|right=ruten:22445165101247:0|dhash_hamming=32|orb_matches=1242|good_le64=1066|median_top50=33.0|ransac_inliers=128|inlier_ratio=0.1201
 MATCH|kind=ruten-cross-listing|left=ruten:21926883918096:0|right=ruten:22615474551866:0|dhash_hamming=34|orb_matches=1069|good_le64=911|median_top50=26.0|ransac_inliers=108|inlier_ratio=0.1186
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:7|right=ruten:22615474551866:2|dhash_hamming=30|orb_matches=1205|good_le64=1041|median_top50=32.0|ransac_inliers=87|inlier_ratio=0.0836
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:6|right=ruten:22615474551866:2|dhash_hamming=17|orb_matches=1154|good_le64=1009|median_top50=34.0|ransac_inliers=82|inlier_ratio=0.0813
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:5|right=ruten:22615474551866:2|dhash_hamming=20|orb_matches=1137|good_le64=981|median_top50=30.0|ransac_inliers=64|inlier_ratio=0.0652
+MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:2|right=ruten:22445165101247:0|dhash_hamming=35|orb_matches=1178|good_le64=1060|median_top50=34.0|ransac_inliers=52|inlier_ratio=0.0491
+MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:0|right=ruten:22445165101247:0|dhash_hamming=37|orb_matches=1193|good_le64=988|median_top50=34.0|ransac_inliers=51|inlier_ratio=0.0516
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:3|right=ruten:21926883918096:0|dhash_hamming=32|orb_matches=1232|good_le64=1059|median_top50=36.0|ransac_inliers=50|inlier_ratio=0.0472
+MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:1|right=ruten:22445165101247:0|dhash_hamming=36|orb_matches=1198|good_le64=1039|median_top50=35.0|ransac_inliers=50|inlier_ratio=0.0481
+MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:7|right=ruten:22445165101247:0|dhash_hamming=39|orb_matches=1156|good_le64=1023|median_top50=33.0|ransac_inliers=42|inlier_ratio=0.0411
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:3|right=ruten:22242541948520:0|dhash_hamming=38|orb_matches=1270|good_le64=1038|median_top50=35.0|ransac_inliers=40|inlier_ratio=0.0385
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:4|right=ruten:22242541948520:0|dhash_hamming=28|orb_matches=1262|good_le64=992|median_top50=41.0|ransac_inliers=40|inlier_ratio=0.0403
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:1|right=ruten:22242541948520:0|dhash_hamming=30|orb_matches=1218|good_le64=1033|median_top50=37.5|ransac_inliers=39|inlier_ratio=0.0378
@@ -44,10 +53,12 @@ MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:1|right=ruten:226154745
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:7|right=ruten:22242541948520:0|dhash_hamming=37|orb_matches=1212|good_le64=1041|median_top50=35.0|ransac_inliers=38|inlier_ratio=0.0365
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:2|right=ruten:21926883918096:0|dhash_hamming=29|orb_matches=1254|good_le64=1112|median_top50=37.0|ransac_inliers=37|inlier_ratio=0.0333
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:0|right=ruten:22242541948520:0|dhash_hamming=39|orb_matches=1261|good_le64=994|median_top50=36.5|ransac_inliers=35|inlier_ratio=0.0352
+MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:4|right=ruten:22445165101247:0|dhash_hamming=36|orb_matches=1223|good_le64=997|median_top50=36.0|ransac_inliers=31|inlier_ratio=0.0311
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:2|right=ruten:22615474551866:1|dhash_hamming=20|orb_matches=1172|good_le64=1040|median_top50=38.0|ransac_inliers=30|inlier_ratio=0.0288
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:0|right=ruten:21926883918096:0|dhash_hamming=33|orb_matches=1183|good_le64=979|median_top50=38.0|ransac_inliers=30|inlier_ratio=0.0306
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:0|right=ruten:22615474551866:1|dhash_hamming=26|orb_matches=1131|good_le64=890|median_top50=36.0|ransac_inliers=29|inlier_ratio=0.0326
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:3|right=ruten:22615474551866:1|dhash_hamming=31|orb_matches=1191|good_le64=958|median_top50=37.0|ransac_inliers=26|inlier_ratio=0.0271
+MATCH|kind=ruten-cross-listing|left=ruten:22615474551866:0|right=ruten:22445165101247:0|dhash_hamming=34|orb_matches=1113|good_le64=921|median_top50=34.0|ransac_inliers=26|inlier_ratio=0.0282
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:1|right=ruten:21926883918096:0|dhash_hamming=30|orb_matches=1214|good_le64=1077|median_top50=37.5|ransac_inliers=23|inlier_ratio=0.0214
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:1|right=ruten:22615474551866:2|dhash_hamming=19|orb_matches=1159|good_le64=948|median_top50=38.0|ransac_inliers=22|inlier_ratio=0.0232
 MATCH|kind=ruten-cross-listing|left=ruten:22242541948520:0|right=ruten:22615474551866:0|dhash_hamming=34|orb_matches=1114|good_le64=889|median_top50=36.5|ransac_inliers=21|inlier_ratio=0.0236
@@ -58,6 +69,8 @@ MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:3|right=ruten:226154745
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:8|right=ruten:22615474551866:1|dhash_hamming=25|orb_matches=1026|good_le64=892|median_top50=37.0|ransac_inliers=17|inlier_ratio=0.0191
 MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:0|right=collector-mirror:12|dhash_hamming=31|orb_matches=1083|good_le64=718|median_top50=43.0|ransac_inliers=17|inlier_ratio=0.0237
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:0|right=ruten:22615474551866:2|dhash_hamming=26|orb_matches=1188|good_le64=910|median_top50=39.0|ransac_inliers=16|inlier_ratio=0.0176
+MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:5|right=ruten:22445165101247:0|dhash_hamming=35|orb_matches=1145|good_le64=1005|median_top50=37.0|ransac_inliers=15|inlier_ratio=0.0149
+MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:8|right=ruten:22445165101247:0|dhash_hamming=32|orb_matches=1098|good_le64=989|median_top50=36.5|ransac_inliers=15|inlier_ratio=0.0152
 MATCH|kind=ruten-vs-collector|left=ruten:21926883918096:0|right=collector-mirror:12|dhash_hamming=34|orb_matches=1038|good_le64=873|median_top50=38.0|ransac_inliers=15|inlier_ratio=0.0172
 MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:3|right=collector-mirror:6|dhash_hamming=32|orb_matches=1310|good_le64=814|median_top50=47.0|ransac_inliers=15|inlier_ratio=0.0184
 MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:3|right=collector-mirror:12|dhash_hamming=30|orb_matches=1007|good_le64=680|median_top50=42.5|ransac_inliers=15|inlier_ratio=0.0221
@@ -68,6 +81,7 @@ MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:5|right=collector-mirror
 MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:6|right=collector-mirror:12|dhash_hamming=32|orb_matches=1033|good_le64=874|median_top50=37.5|ransac_inliers=14|inlier_ratio=0.0160
 MATCH|kind=ruten-vs-collector|left=ruten:22242541948520:0|right=collector-mirror:12|dhash_hamming=32|orb_matches=1093|good_le64=854|median_top50=40.0|ransac_inliers=14|inlier_ratio=0.0164
 MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:8|right=collector-mirror:12|dhash_hamming=28|orb_matches=1034|good_le64=846|median_top50=39.0|ransac_inliers=14|inlier_ratio=0.0165
+MATCH|kind=ruten-vs-collector|left=ruten:22445165101247:0|right=collector-mirror:6|dhash_hamming=36|orb_matches=1191|good_le64=838|median_top50=44.0|ransac_inliers=14|inlier_ratio=0.0167
 MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:6|right=collector-mirror:6|dhash_hamming=32|orb_matches=1130|good_le64=818|median_top50=45.0|ransac_inliers=14|inlier_ratio=0.0171
 MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:1|right=collector-mirror:6|dhash_hamming=28|orb_matches=1226|good_le64=791|median_top50=47.0|ransac_inliers=14|inlier_ratio=0.0177
 MATCH|kind=ruten-vs-collector|left=ruten:22615474551866:1|right=collector-mirror:6|dhash_hamming=35|orb_matches=1117|good_le64=771|median_top50=42.0|ransac_inliers=14|inlier_ratio=0.0182
@@ -83,32 +97,19 @@ MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:8|right=ruten:226154745
 MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:2|right=collector-mirror:12|dhash_hamming=35|orb_matches=1002|good_le64=752|median_top50=41.0|ransac_inliers=13|inlier_ratio=0.0173
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:2|right=ruten:22615474551866:2|dhash_hamming=20|orb_matches=1198|good_le64=1019|median_top50=40.0|ransac_inliers=12|inlier_ratio=0.0118
 MATCH|kind=ruten-cross-listing|left=ruten:21926883918096:0|right=ruten:22615474551866:2|dhash_hamming=31|orb_matches=1161|good_le64=1006|median_top50=38.5|ransac_inliers=12|inlier_ratio=0.0119
+MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:6|right=ruten:22445165101247:0|dhash_hamming=36|orb_matches=1127|good_le64=1005|median_top50=37.5|ransac_inliers=12|inlier_ratio=0.0119
+MATCH|kind=ruten-cross-listing|left=ruten:22615474551866:2|right=ruten:22445165101247:0|dhash_hamming=29|orb_matches=1150|good_le64=994|median_top50=36.5|ransac_inliers=12|inlier_ratio=0.0121
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:5|right=ruten:22615474551866:1|dhash_hamming=18|orb_matches=1064|good_le64=919|median_top50=33.0|ransac_inliers=12|inlier_ratio=0.0131
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:8|right=ruten:22615474551866:2|dhash_hamming=17|orb_matches=1055|good_le64=889|median_top50=40.0|ransac_inliers=12|inlier_ratio=0.0135
 MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:3|right=collector-mirror:13|dhash_hamming=28|orb_matches=1029|good_le64=876|median_top50=41.0|ransac_inliers=12|inlier_ratio=0.0137
 MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:5|right=collector-mirror:6|dhash_hamming=27|orb_matches=1185|good_le64=849|median_top50=42.5|ransac_inliers=12|inlier_ratio=0.0141
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:3|right=ruten:22615474551866:0|dhash_hamming=28|orb_matches=1095|good_le64=847|median_top50=37.0|ransac_inliers=12|inlier_ratio=0.0142
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:0|right=ruten:22615474551866:0|dhash_hamming=27|orb_matches=1137|good_le64=842|median_top50=39.0|ransac_inliers=12|inlier_ratio=0.0143
+MATCH|kind=ruten-vs-collector|left=ruten:22445165101247:0|right=collector-mirror:12|dhash_hamming=30|orb_matches=1050|good_le64=832|median_top50=40.0|ransac_inliers=12|inlier_ratio=0.0144
 MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:7|right=ruten:22615474551866:0|dhash_hamming=29|orb_matches=1062|good_le64=829|median_top50=37.0|ransac_inliers=12|inlier_ratio=0.0145
 MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:2|right=collector-mirror:6|dhash_hamming=31|orb_matches=1172|good_le64=802|median_top50=45.0|ransac_inliers=12|inlier_ratio=0.0150
 MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:6|right=collector-mirror:7|dhash_hamming=25|orb_matches=949|good_le64=751|median_top50=38.0|ransac_inliers=12|inlier_ratio=0.0160
 MATCH|kind=ruten-vs-collector|left=ruten:22242541948520:0|right=collector-mirror:7|dhash_hamming=33|orb_matches=969|good_le64=730|median_top50=38.0|ransac_inliers=12|inlier_ratio=0.0164
-MATCH|kind=ruten-vs-collector|left=ruten:22615474551866:0|right=collector-mirror:12|dhash_hamming=32|orb_matches=963|good_le64=677|median_top50=44.0|ransac_inliers=12|inlier_ratio=0.0177
-MATCH|kind=ruten-vs-collector|left=ruten:22615474551866:0|right=collector-mirror:7|dhash_hamming=25|orb_matches=861|good_le64=560|median_top50=44.0|ransac_inliers=12|inlier_ratio=0.0214
-MATCH|kind=ruten-vs-collector|left=ruten:21926883918096:0|right=collector-mirror:13|dhash_hamming=28|orb_matches=1154|good_le64=1074|median_top50=37.5|ransac_inliers=11|inlier_ratio=0.0102
-MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:7|right=collector-mirror:13|dhash_hamming=27|orb_matches=1156|good_le64=1067|median_top50=36.0|ransac_inliers=11|inlier_ratio=0.0103
-MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:1|right=ruten:22615474551866:0|dhash_hamming=20|orb_matches=1077|good_le64=881|median_top50=38.0|ransac_inliers=11|inlier_ratio=0.0125
-MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:0|right=collector-mirror:13|dhash_hamming=37|orb_matches=1023|good_le64=849|median_top50=41.0|ransac_inliers=11|inlier_ratio=0.0130
-MATCH|kind=ruten-cross-listing|left=ruten:22632305238624:4|right=ruten:22615474551866:0|dhash_hamming=26|orb_matches=1160|good_le64=846|median_top50=39.5|ransac_inliers=11|inlier_ratio=0.0130
-MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:5|right=collector-mirror:7|dhash_hamming=30|orb_matches=928|good_le64=754|median_top50=36.0|ransac_inliers=11|inlier_ratio=0.0146
-MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:7|right=collector-mirror:7|dhash_hamming=28|orb_matches=939|good_le64=748|median_top50=36.0|ransac_inliers=11|inlier_ratio=0.0147
-MATCH|kind=ruten-vs-collector|left=ruten:21926883918096:0|right=collector-mirror:7|dhash_hamming=29|orb_matches=939|good_le64=722|median_top50=39.0|ransac_inliers=11|inlier_ratio=0.0152
-MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:1|right=collector-mirror:12|dhash_hamming=28|orb_matches=982|good_le64=710|median_top50=42.0|ransac_inliers=11|inlier_ratio=0.0155
-MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:2|right=collector-mirror:7|dhash_hamming=34|orb_matches=897|good_le64=696|median_top50=43.0|ransac_inliers=11|inlier_ratio=0.0158
-MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:0|right=collector-mirror:7|dhash_hamming=38|orb_matches=982|good_le64=672|median_top50=42.0|ransac_inliers=11|inlier_ratio=0.0164
-MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:1|right=collector-mirror:7|dhash_hamming=33|orb_matches=885|good_le64=646|median_top50=43.0|ransac_inliers=11|inlier_ratio=0.0170
-MATCH|kind=ruten-vs-collector|left=ruten:22615474551866:1|right=collector-mirror:7|dhash_hamming=28|orb_matches=811|good_le64=572|median_top50=41.0|ransac_inliers=11|inlier_ratio=0.0192
-MATCH|kind=ruten-vs-collector|left=ruten:22632305238624:6|right=collector-mirror:13|dhash_hamming=34|orb_matches=1125|good_le64=1057|median_top50=35.0|ransac_inliers=10|inlier_ratio=0.0095
 ERROR|scope=official-reference|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
 ERROR|scope=collector-mirror:0|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
 ERROR|scope=collector-mirror:1|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
@@ -125,7 +126,7 @@ ERROR|scope=collector-mirror:20|kind=URLError|message=<urlopen error [Errno 111]
 ERROR|scope=collector-mirror:21|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
 ERROR|scope=collector-mirror:22|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
 ERROR|scope=collector-mirror:23|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-COUNT|ruten_loaded|14
+COUNT|ruten_loaded|15
 COUNT|wanfang_large_loaded|0
 COUNT|collector_large_loaded|4
 COUNT|errors|16
