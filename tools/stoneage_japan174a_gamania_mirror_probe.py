@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
-"""Probe the newly recovered Japanese StoneAge sa174gm.exe Gamania mirror.
+"""Probe public preservation indexes for Japanese StoneAge sa174gm.exe.
 
-This tool records public index/page metadata only. If an exact Wayback payload
-capture is publicly replayable, it may stream that one object transiently to
-compute a size/hash/magic fingerprint; payload bytes are never committed.
+The historical/source identity is documented elsewhere in the repository.
+This probe focuses on exact/prefix preservation metadata. It never executes a
+client and never commits payload bytes. If one exact public Wayback HTTP-200
+object is replayable, it may be streamed transiently only to derive size/hash
+and magic bytes, under a 400 MiB cap.
 """
 from __future__ import annotations
 
-import base64
+import concurrent.futures
 import hashlib
-import html
 import json
-import re
-import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -20,84 +19,66 @@ import urllib.request
 UA = "stoneage-rebuild-archaeology/1.0"
 GM_HTTP = "http://file2.gamania.co.jp/sa/sa174gm.exe"
 GM_HTTPS = "https://file2.gamania.co.jp/sa/sa174gm.exe"
-IPVE = "https://www.ipve.com/bbs/viewthread.php?extra=&page=5&tid=84383"
-SHIQILA = "https://shiqi.la/forum.php?mod=viewthread&tid=16671"
+GM_PREFIX = "file2.gamania.co.jp/sa/*"
 CDX = "https://web.archive.org/cdx/search/cdx"
-WAYBACK = "https://web.archive.org/web/{timestamp}id_/{original}"
 AVAIL = "https://archive.org/wayback/available"
 ARQUIVO = "https://arquivo.pt/wayback/cdx"
 IA_SEARCH = "https://archive.org/advancedsearch.php"
+WAYBACK = "https://web.archive.org/web/{timestamp}id_/{original}"
 MAX_REPLAY = 400 * 1024 * 1024
 
-URL_RE = re.compile(r"https?://[^\s\"'<>]+", re.I)
-ATTACH_RE = re.compile(
-    r"""href=[\"']([^\"']*mod=attachment[^\"']*)[\"'][^>]*>(.*?)</a>""",
-    re.I | re.S,
-)
-TAG_RE = re.compile(r"<[^>]+>", re.S)
+
+def clean(value, limit=1600):
+    value = "" if value is None else str(value)
+    value = " ".join(value.replace("\x00", " ").split())
+    return value.replace("|", "%7C")[:limit]
 
 
-def clean(v, n=1200):
-    v = html.unescape(str(v if v is not None else "")).replace("\x00", " ")
-    v = " ".join(v.split()).replace("|", "%7C")
-    return v[:n]
-
-
-def request(url, *, timeout=35, max_bytes=8_000_000, method=None):
+def fetch(url, *, timeout=14, max_bytes=12_000_000, method=None):
     req = urllib.request.Request(
         url,
         headers={
             "User-Agent": UA,
-            "Accept": "text/html,application/json,text/plain,*/*",
-            "Accept-Language": "ja,zh-CN,zh;q=0.8,en;q=0.5",
+            "Accept": "application/json,text/plain,text/html,*/*",
         },
         method=method,
     )
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            body = b"" if method == "HEAD" else r.read(max_bytes + 1)
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            body = b"" if method == "HEAD" else response.read(max_bytes + 1)
             return {
                 "ok": True,
-                "status": int(getattr(r, "status", r.getcode())),
-                "final": r.geturl(),
-                "headers": dict(r.headers.items()),
+                "status": int(getattr(response, "status", response.getcode())),
+                "final": response.geturl(),
+                "headers": dict(response.headers.items()),
                 "body": body[:max_bytes],
                 "truncated": len(body) > max_bytes,
             }
-    except urllib.error.HTTPError as e:
+    except urllib.error.HTTPError as exc:
         try:
-            body = e.read(min(max_bytes, 500_000))
+            body = exc.read(min(max_bytes, 500_000))
         except Exception:
             body = b""
         return {
             "ok": False,
-            "status": e.code,
+            "status": exc.code,
             "final": url,
-            "headers": dict(e.headers.items()) if e.headers else {},
+            "headers": dict(exc.headers.items()) if exc.headers else {},
             "body": body,
             "error": "HTTPError",
         }
-    except Exception as e:
+    except Exception as exc:
         return {
             "ok": False,
             "status": "",
             "final": url,
             "headers": {},
             "body": b"",
-            "error": type(e).__name__ + ": " + str(e),
+            "error": type(exc).__name__ + ": " + str(exc),
         }
 
 
-def decode_text(body):
-    for enc in ("utf-8", "cp932", "shift_jis", "big5", "gb18030"):
-        try:
-            return body.decode(enc)
-        except UnicodeDecodeError:
-            pass
-    return body.decode("utf-8", "replace")
-
-
-def parse_cdx(body):
+def parse_json_rows(body):
     text = body.decode("utf-8", "replace").strip()
     if not text:
         return []
@@ -105,29 +86,34 @@ def parse_cdx(body):
         obj = json.loads(text)
     except json.JSONDecodeError:
         return []
-    if not isinstance(obj, list) or not obj:
-        return []
-    if isinstance(obj[0], list):
-        hdr = obj[0]
-        return [dict(zip(hdr, row)) for row in obj[1:] if isinstance(row, list)]
-    return [x for x in obj if isinstance(x, dict)]
+    if isinstance(obj, list):
+        if obj and isinstance(obj[0], list):
+            header = obj[0]
+            return [dict(zip(header, row)) for row in obj[1:] if isinstance(row, list)]
+        return [row for row in obj if isinstance(row, dict)]
+    if isinstance(obj, dict):
+        for key in ("results", "captures", "items", "response"):
+            rows = obj.get(key)
+            if isinstance(rows, list):
+                return [row for row in rows if isinstance(row, dict)]
+    return []
 
 
-def wayback_rows(target):
+def wayback_url(target, *, prefix=False):
     params = [
         ("url", target),
         ("output", "json"),
         ("fl", "timestamp,original,statuscode,mimetype,digest,length,redirect"),
         ("from", "2003"),
         ("to", "2026"),
-        ("limit", "500"),
+        ("limit", "2000" if prefix else "500"),
     ]
-    u = CDX + "?" + urllib.parse.urlencode(params)
-    r = request(u, timeout=45, max_bytes=12_000_000)
-    return u, r, parse_cdx(r["body"]) if r.get("ok") else []
+    if prefix:
+        params.append(("matchType", "prefix"))
+    return CDX + "?" + urllib.parse.urlencode(params)
 
 
-def arquivo_rows(target):
+def arquivo_url(target):
     params = {
         "url": target,
         "from": "2003",
@@ -135,39 +121,16 @@ def arquivo_rows(target):
         "output": "json",
         "limit": "500",
     }
-    u = ARQUIVO + "?" + urllib.parse.urlencode(params)
-    r = request(u, timeout=35, max_bytes=8_000_000)
-    rows = []
-    if r.get("ok"):
-        text = r["body"].decode("utf-8", "replace").strip()
-        try:
-            obj = json.loads(text)
-        except json.JSONDecodeError:
-            obj = None
-        if isinstance(obj, list):
-            if obj and isinstance(obj[0], list):
-                hdr = obj[0]
-                rows = [dict(zip(hdr, x)) for x in obj[1:] if isinstance(x, list)]
-            else:
-                rows = [x for x in obj if isinstance(x, dict)]
-        elif isinstance(obj, dict):
-            for key in ("results", "captures", "response", "items"):
-                if isinstance(obj.get(key), list):
-                    rows = [x for x in obj[key] if isinstance(x, dict)]
-                    break
-    return u, r, rows
+    return ARQUIVO + "?" + urllib.parse.urlencode(params)
 
 
-def availability(target, stamp):
-    u = AVAIL + "?" + urllib.parse.urlencode({"url": target, "timestamp": stamp})
-    r = request(u, timeout=30, max_bytes=1_000_000)
-    return u, r
+def availability_url(target, stamp):
+    return AVAIL + "?" + urllib.parse.urlencode({"url": target, "timestamp": stamp})
 
 
-def ia_search():
-    query = '"sa174gm.exe" OR "sa174gm"'
+def ia_url():
     params = [
-        ("q", query),
+        ("q", '"sa174gm.exe" OR "sa174gm"'),
         ("fl[]", "identifier"),
         ("fl[]", "title"),
         ("fl[]", "description"),
@@ -175,44 +138,73 @@ def ia_search():
         ("page", "1"),
         ("output", "json"),
     ]
-    u = IA_SEARCH + "?" + urllib.parse.urlencode(params)
-    r = request(u, timeout=35, max_bytes=8_000_000)
-    docs = []
-    if r.get("ok"):
+    return IA_SEARCH + "?" + urllib.parse.urlencode(params)
+
+
+def live_head(target):
+    return ("LIVE_HEAD", target, fetch(target, timeout=10, max_bytes=0, method="HEAD"))
+
+
+def wayback_exact(target):
+    url = wayback_url(target)
+    response = fetch(url, timeout=16)
+    rows = parse_json_rows(response["body"]) if response.get("ok") else []
+    return ("WAYBACK_CDX", target, response, rows)
+
+
+def wayback_prefix():
+    url = wayback_url(GM_PREFIX, prefix=True)
+    response = fetch(url, timeout=18)
+    rows = parse_json_rows(response["body"]) if response.get("ok") else []
+    return ("WAYBACK_PREFIX", GM_PREFIX, response, rows)
+
+
+def availability(target, stamp):
+    url = availability_url(target, stamp)
+    response = fetch(url, timeout=12, max_bytes=1_000_000)
+    closest = {}
+    if response.get("ok"):
         try:
-            obj = json.loads(r["body"].decode("utf-8", "replace"))
+            obj = json.loads(response["body"].decode("utf-8", "replace"))
+            closest = obj.get("archived_snapshots", {}).get("closest", {})
+        except Exception:
+            closest = {}
+    return ("WAYBACK_AVAIL", target, stamp, response, closest)
+
+
+def arquivo(target):
+    url = arquivo_url(target)
+    response = fetch(url, timeout=14)
+    rows = parse_json_rows(response["body"]) if response.get("ok") else []
+    return ("ARQUIVO_CDX", target, response, rows)
+
+
+def ia_search():
+    response = fetch(ia_url(), timeout=16)
+    docs = []
+    if response.get("ok"):
+        try:
+            obj = json.loads(response["body"].decode("utf-8", "replace"))
             docs = obj.get("response", {}).get("docs", []) if isinstance(obj, dict) else []
         except Exception:
-            pass
-    return u, r, docs
-
-
-def decode_discuz_aid(href):
-    q = urllib.parse.parse_qs(urllib.parse.urlsplit(html.unescape(href)).query)
-    token = (q.get("aid") or [""])[0]
-    if not token:
-        return ""
-    try:
-        raw = base64.b64decode(token + ("=" * (-len(token) % 4))).decode("ascii", "replace")
-    except Exception:
-        return ""
-    return raw
+            docs = []
+    return ("IA_SEARCH", response, docs)
 
 
 def stream_wayback(timestamp, original):
-    u = WAYBACK.format(timestamp=timestamp, original=original)
-    req = urllib.request.Request(
-        u,
+    url = WAYBACK.format(timestamp=timestamp, original=original)
+    request = urllib.request.Request(
+        url,
         headers={"User-Agent": UA, "Accept": "application/octet-stream,*/*"},
     )
-    h = hashlib.sha256()
+    digest = hashlib.sha256()
     total = 0
     prefix = b""
-    with urllib.request.urlopen(req, timeout=60) as r:
-        final = r.geturl()
-        headers = dict(r.headers.items())
+    with urllib.request.urlopen(request, timeout=60) as response:
+        final = response.geturl()
+        headers = dict(response.headers.items())
         while True:
-            chunk = r.read(1024 * 1024)
+            chunk = response.read(1024 * 1024)
             if not chunk:
                 break
             if total < 64:
@@ -220,143 +212,164 @@ def stream_wayback(timestamp, original):
             total += len(chunk)
             if total > MAX_REPLAY:
                 raise ValueError("replay exceeds 400 MiB safety cap")
-            h.update(chunk)
+            digest.update(chunk)
     return {
-        "url": u,
         "final": final,
         "bytes": total,
-        "sha256": h.hexdigest(),
-        "prefix": prefix.hex(),
+        "sha256": digest.hexdigest(),
+        "prefix_hex": prefix.hex(),
         "headers": headers,
     }
 
 
 def main():
-    print("StoneAge Japan sa174gm Gamania mirror probe — R1")
-    print("SCOPE|public-source+archive-index+optional-public-wayback-stream-hash|no-payload-commit")
+    print("StoneAge Japan sa174gm Gamania mirror probe — R2")
+    print("SCOPE|exact+prefix-public-preservation-index|optional-one-object-transient-hash|no-payload-commit")
     print(f"TARGET|gamania_http={GM_HTTP}")
     print(f"TARGET|gamania_https={GM_HTTPS}")
-    print("EVIDENCE_RULE|sa174gm and sa174hg remain separate identities until byte comparison")
+    print(f"TARGET|gamania_prefix={GM_PREFIX}")
+    print("SOURCE_ANCHOR|2008-community-post=http://file2.gamania.co.jp/sa/sa174gm.exe")
+    print("SOURCE_ANCHOR|2020-survival-carrier=sa174gm[password-www.shiqi.la].rar|visible_size=194.24MB|attachment_id=675")
+    print("EVIDENCE_RULE|sa174gm and first-party sa174hg remain separate identities until byte comparison")
 
-    # Public source pages that independently expose the token/carrier.
-    for label, url in (("ipve-2008", IPVE), ("shiqila-2020", SHIQILA)):
-        r = request(url, timeout=40, max_bytes=4_000_000)
-        text = decode_text(r.get("body", b""))
-        print(
-            f"PAGE|label={label}|ok={int(r.get('ok',False))}|status={r.get('status','')}|"
-            f"bytes={len(r.get('body',b''))}|sha256={hashlib.sha256(r.get('body',b'')).hexdigest() if r.get('body') else ''}|"
-            f"final={clean(r.get('final',''))}|gm_token={int('sa174gm.exe' in text.lower())}|"
-            f"official_url={int(GM_HTTP.lower() in text.lower())}|error={clean(r.get('error',''))}"
-        )
-        if label == "shiqila-2020" and text:
-            for href, anchor_html in ATTACH_RE.findall(text):
-                anchor = clean(TAG_RE.sub(" ", anchor_html), 1000)
-                if "sa174gm" in anchor.lower() or "Stoneage.rar" in anchor:
-                    print(
-                        f"ATTACHMENT|name={anchor}|href={clean(href,1800)}|"
-                        f"decoded_aid={clean(decode_discuz_aid(href),600)}"
-                    )
-            for needle in (
-                "sa174gm[解压密码www.shiqi.la].rar",
-                "Stoneage.rar",
-                "194.24 MB",
-                "174.72 MB",
-                "2003年12月11日",
-            ):
-                print(f"PAGE_TOKEN|label={label}|token={clean(needle)}|count={text.count(needle)}")
+    tasks = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=12) as executor:
+        for target in (GM_HTTP, GM_HTTPS):
+            tasks.append(executor.submit(live_head, target))
+            tasks.append(executor.submit(wayback_exact, target))
+            tasks.append(executor.submit(arquivo, target))
+            for stamp in ("20031211", "20031212", "20040101", "20080101"):
+                tasks.append(executor.submit(availability, target, stamp))
+        tasks.append(executor.submit(wayback_prefix))
+        tasks.append(executor.submit(ia_search))
+        results = [future.result() for future in tasks]
 
-    # Present-day direct endpoint metadata only.
-    for target in (GM_HTTP, GM_HTTPS):
-        r = request(target, timeout=20, max_bytes=1024, method="HEAD")
-        h = r.get("headers", {})
-        print(
-            f"LIVE_HEAD|target={clean(target)}|ok={int(r.get('ok',False))}|status={r.get('status','')}|"
-            f"final={clean(r.get('final',''))}|content_length={clean(h.get('Content-Length'))}|"
-            f"content_type={clean(h.get('Content-Type'))}|last_modified={clean(h.get('Last-Modified'))}|"
-            f"location={clean(h.get('Location'))}|error={clean(r.get('error',''))}"
-        )
-
-    all_rows = []
-    for target in (GM_HTTP, GM_HTTPS):
-        _, r, rows = wayback_rows(target)
-        print(
-            f"WAYBACK_CDX|target={clean(target)}|ok={int(r.get('ok',False))}|status={r.get('status','')}|"
-            f"rows={len(rows)}|error={clean(r.get('error',''))}"
-        )
-        for row in rows:
-            normalized = {
-                "timestamp": row.get("timestamp", ""),
-                "original": row.get("original", ""),
-                "statuscode": row.get("statuscode", ""),
-                "mimetype": row.get("mimetype", ""),
-                "digest": row.get("digest", ""),
-                "length": row.get("length", ""),
-                "redirect": row.get("redirect", ""),
-            }
-            all_rows.append(normalized)
-            print("WAYBACK_ROW|" + "|".join(f"{k}={clean(v)}" for k, v in normalized.items()))
-
-        for stamp in ("20031211", "20031212", "20040101", "20080101"):
-            _, ar = availability(target, stamp)
-            snap = ""
-            if ar.get("ok"):
-                try:
-                    obj = json.loads(ar["body"].decode("utf-8", "replace"))
-                    closest = obj.get("archived_snapshots", {}).get("closest", {})
-                    snap = json.dumps(closest, ensure_ascii=False, sort_keys=True)
-                except Exception:
-                    pass
+    exact_rows = []
+    prefix_rows = []
+    errors = 0
+    for result in results:
+        kind = result[0]
+        if kind == "LIVE_HEAD":
+            _, target, response = result
+            h = response.get("headers", {})
+            if not response.get("ok"):
+                errors += 1
             print(
-                f"WAYBACK_AVAIL|target={clean(target)}|timestamp={stamp}|ok={int(ar.get('ok',False))}|"
-                f"status={ar.get('status','')}|closest={clean(snap,1600)}|error={clean(ar.get('error',''))}"
+                f"LIVE_HEAD|target={clean(target)}|ok={int(response.get('ok',False))}|"
+                f"status={response.get('status','')}|final={clean(response.get('final',''))}|"
+                f"content_length={clean(h.get('Content-Length'))}|content_type={clean(h.get('Content-Type'))}|"
+                f"last_modified={clean(h.get('Last-Modified'))}|location={clean(h.get('Location'))}|"
+                f"error={clean(response.get('error',''))}"
             )
+        elif kind == "WAYBACK_CDX":
+            _, target, response, rows = result
+            if not response.get("ok"):
+                errors += 1
+            exact_rows.extend(rows)
+            print(
+                f"WAYBACK_CDX|target={clean(target)}|ok={int(response.get('ok',False))}|"
+                f"status={response.get('status','')}|rows={len(rows)}|error={clean(response.get('error',''))}"
+            )
+            for row in rows:
+                print("WAYBACK_ROW|" + "|".join(
+                    f"{key}={clean(row.get(key,''))}"
+                    for key in ("timestamp","original","statuscode","mimetype","digest","length","redirect")
+                ))
+        elif kind == "WAYBACK_PREFIX":
+            _, target, response, rows = result
+            if not response.get("ok"):
+                errors += 1
+            prefix_rows.extend(rows)
+            gm_rows = [
+                row for row in rows
+                if "sa174gm" in str(row.get("original","")).lower()
+            ]
+            print(
+                f"WAYBACK_PREFIX|target={clean(target)}|ok={int(response.get('ok',False))}|"
+                f"status={response.get('status','')}|rows={len(rows)}|gm_rows={len(gm_rows)}|"
+                f"error={clean(response.get('error',''))}"
+            )
+            for row in gm_rows:
+                print("WAYBACK_PREFIX_GM|" + "|".join(
+                    f"{key}={clean(row.get(key,''))}"
+                    for key in ("timestamp","original","statuscode","mimetype","digest","length","redirect")
+                ))
+        elif kind == "WAYBACK_AVAIL":
+            _, target, stamp, response, closest = result
+            if not response.get("ok"):
+                errors += 1
+            print(
+                f"WAYBACK_AVAIL|target={clean(target)}|timestamp={stamp}|"
+                f"ok={int(response.get('ok',False))}|status={response.get('status','')}|"
+                f"closest={clean(json.dumps(closest,ensure_ascii=False,sort_keys=True),1800)}|"
+                f"error={clean(response.get('error',''))}"
+            )
+        elif kind == "ARQUIVO_CDX":
+            _, target, response, rows = result
+            if not response.get("ok"):
+                errors += 1
+            print(
+                f"ARQUIVO_CDX|target={clean(target)}|ok={int(response.get('ok',False))}|"
+                f"status={response.get('status','')}|rows={len(rows)}|error={clean(response.get('error',''))}"
+            )
+            for row in rows[:100]:
+                print(f"ARQUIVO_ROW|target={clean(target)}|value={clean(json.dumps(row,ensure_ascii=False,sort_keys=True),2400)}")
+        elif kind == "IA_SEARCH":
+            _, response, docs = result
+            if not response.get("ok"):
+                errors += 1
+            print(
+                f"IA_SEARCH|ok={int(response.get('ok',False))}|status={response.get('status','')}|"
+                f"docs={len(docs)}|error={clean(response.get('error',''))}"
+            )
+            for doc in docs:
+                print(f"IA_DOC|{clean(json.dumps(doc,ensure_ascii=False,sort_keys=True),2400)}")
 
-        _, rr, arows = arquivo_rows(target)
-        print(
-            f"ARQUIVO_CDX|target={clean(target)}|ok={int(rr.get('ok',False))}|status={rr.get('status','')}|"
-            f"rows={len(arows)}|error={clean(rr.get('error',''))}"
-        )
-        for row in arows[:100]:
-            print(f"ARQUIVO_ROW|target={clean(target)}|value={clean(json.dumps(row,ensure_ascii=False,sort_keys=True),2400)}")
+    # Deduplicate exact rows, and replay at most the earliest exact HTTP-200 object.
+    candidates = {}
+    for row in exact_rows + prefix_rows:
+        original = str(row.get("original",""))
+        if "sa174gm.exe" not in original.lower():
+            continue
+        if str(row.get("statuscode","")) != "200":
+            continue
+        key = (str(row.get("timestamp","")), original, str(row.get("digest","")))
+        candidates[key] = row
 
-    _, ia, docs = ia_search()
-    print(
-        f"IA_SEARCH|ok={int(ia.get('ok',False))}|status={ia.get('status','')}|docs={len(docs)}|"
-        f"error={clean(ia.get('error',''))}"
-    )
-    for doc in docs[:100]:
-        print(f"IA_DOC|{clean(json.dumps(doc,ensure_ascii=False,sort_keys=True),2400)}")
+    ordered = [candidates[key] for key in sorted(candidates)]
+    print(f"COUNT|exact_or_prefix_http200_candidates|{len(ordered)}")
+    print(f"COUNT|probe_errors|{errors}")
 
-    # If Wayback indexes a 200 response for the exact object, try the earliest
-    # public replay once and emit hash/size only.
-    exact_200 = [
-        row for row in all_rows
-        if str(row.get("statuscode")) == "200"
-        and str(row.get("original", "")).lower().rstrip("/") == GM_HTTP.lower()
-    ]
-    seen = set()
-    exact_200 = [
-        x for x in sorted(exact_200, key=lambda y: str(y.get("timestamp", "")))
-        if not ((str(x.get("timestamp","")), str(x.get("digest",""))) in seen
-                or seen.add((str(x.get("timestamp","")), str(x.get("digest","")))))
-    ]
-    if exact_200:
-        row = exact_200[0]
+    if ordered:
+        row = ordered[0]
         try:
-            fp = stream_wayback(str(row["timestamp"]), str(row["original"]))
-            print(
-                f"PAYLOAD_REPLAY|timestamp={clean(row['timestamp'])}|bytes={fp['bytes']}|"
-                f"sha256={fp['sha256']}|prefix_hex={clean(fp['prefix'])}|final={clean(fp['final'],1800)}|"
-                f"content_type={clean(fp['headers'].get('Content-Type'))}"
+            fingerprint = stream_wayback(
+                str(row.get("timestamp","")),
+                str(row.get("original","")),
             )
-            print("RESOLUTION|PUBLIC_WAYBACK_PAYLOAD_RECOVERED|compare against sa174hg only at byte level")
-        except Exception as e:
-            print(f"PAYLOAD_REPLAY_ERROR|kind={type(e).__name__}|message={clean(e,1600)}")
-            print("RESOLUTION|EXACT_GAMANIA_IDENTITY_FOUND_PAYLOAD_REPLAY_FAILED")
+            prefix = fingerprint["prefix_hex"].lower()
+            signature = "mz" if prefix.startswith("4d5a") else (
+                "html" if prefix.startswith("3c") else "other"
+            )
+            print(
+                f"PAYLOAD_REPLAY|timestamp={clean(row.get('timestamp',''))}|"
+                f"original={clean(row.get('original',''))}|bytes={fingerprint['bytes']}|"
+                f"sha256={fingerprint['sha256']}|signature={signature}|"
+                f"prefix_hex={clean(fingerprint['prefix_hex'])}|final={clean(fingerprint['final'])}|"
+                f"content_type={clean(fingerprint['headers'].get('Content-Type'))}"
+            )
+            if signature == "mz":
+                print("RESOLUTION|PUBLIC_WAYBACK_EXECUTABLE_RECOVERED|requires separate clean-client and installer inventory analysis")
+            else:
+                print("RESOLUTION|PUBLIC_WAYBACK_OBJECT_REPLAYED_NOT_CONFIRMED_EXECUTABLE|do not promote to client bytes")
+        except Exception as exc:
+            print(f"PAYLOAD_REPLAY_ERROR|kind={type(exc).__name__}|message={clean(exc,1800)}")
+            print("RESOLUTION|EXACT_GAMANIA_ARCHIVE_IDENTITY_FOUND_REPLAY_UNRESOLVED")
     else:
-        print("RESOLUTION|EXACT_GAMANIA_MIRROR_IDENTITY_EXPANDED|payload bytes not recovered from tested public indexes")
+        print("RESOLUTION|GAMANIA_SA174GM_PUBLIC_INDEX_SURFACE_BOUNDED|no exact HTTP-200 payload in tested indexes")
 
-    print("EVIDENCE_BOUNDARY|2008/2020 community sources corroborate the sa174gm identity; only first-party bytes or independently preserved payload can establish build identity or equality with sa174hg.")
+    print("EVIDENCE_BOUNDARY|community sources establish the historical sa174gm identity; only recovered provenance-preserving bytes can establish build/version/date or equality with sa174hg.")
+
 
 if __name__ == "__main__":
     main()
