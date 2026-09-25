@@ -1,0 +1,19 @@
+StoneAge 2001 Sina same-batch route probe — R1
+SCOPE|adjacent map CGI CDX/replay + direct-binary extraction + target substitution|small-response-only|no-payload
+TARGET|filename=Estoneage2.0map_1127.exe|aid=43172
+PREFIX|host=games1.sina.com.cn|status=200|rows=2641|bytes=682104|sha256=e2fc184e5c9662205345c52b70973b07a7db4df3a2024c4add409882bf02fed2
+SIBLING|host=games1.sina.com.cn|aid=43124|filename=dflwaztekspride_1119.zip|rows=0
+SIBLING|host=games1.sina.com.cn|aid=43127|filename=dflwbootcamp1_1119.zip|rows=0
+SIBLING|host=games1.sina.com.cn|aid=43129|filename=dflwdangerzone1_1119.zip|rows=0
+SIBLING|host=games1.sina.com.cn|aid=43130|filename=dflwdesertterror_1119.zip|rows=0
+PREFIX|host=games.sina.com.cn|status=200|rows=1336|bytes=365822|sha256=ad370d0856d5ba43ac719e8eaaa380c7e95467400cb791cef95e03e26c6ac9f0
+SIBLING|host=games.sina.com.cn|aid=43124|filename=dflwaztekspride_1119.zip|rows=0
+SIBLING|host=games.sina.com.cn|aid=43127|filename=dflwbootcamp1_1119.zip|rows=0
+SIBLING|host=games.sina.com.cn|aid=43129|filename=dflwdangerzone1_1119.zip|rows=0
+SIBLING|host=games.sina.com.cn|aid=43130|filename=dflwdesertterror_1119.zip|rows=0
+COUNT|sibling_rows|0
+COUNT|direct_links|0
+COUNT|synthesized_target_urls|0
+COUNT|errors|0
+RESOLUTION|NO_SIBLING_CGI_CAPTURE|same-batch live tokens are known but not indexed on tested Wayback prefix
+EVIDENCE_BOUNDARY|adjacent Sina records can establish late-2001 delivery topology only; target bytes require an exact archived row or recovered payload.
