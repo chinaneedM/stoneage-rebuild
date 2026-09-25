@@ -2140,6 +2140,7 @@ Every substantial source should record:
   - DiscMaster exact/stem search: no exact carrier;
   - contributor-domain Wayback root captures exist at 2001-12-03 and 2002-07-19, but no relevant package href is exposed by the current indexed/replayed surface.
   - The Sina host-alias census exposes **56 archived `col=map` rows** on `games.sina.com.cn` in 2001 but no exact `aid=43172` / `Estoneage2.0map_1127.exe` row. Replayed early-2001 neighbors consistently expose `http://202.106.184.193/downfiles/map_1212/`, but the target filename substituted into that directory has zero CDX rows. This is an early map-server topology control, not a proven November 2001 target path.
+  - A bounded scan of **73 live map-page IDs** around `11271899.shtml` recovered the target plus four immediately preceding map records (`aid=43124/43127/43129/43130`). All four are Delta Force packages with `_1119.zip` filenames. A dedicated Wayback prefix/replay pass across both `games1.sina.com.cn` and `games.sina.com.cn` finds **zero archived CGI rows for all four sibling tokens**, so this same-page batch does not currently reveal a late-November-2001 binary directory.
 - Supports:
   - existence of a specifically named full-map distribution package in late 2001;
   - a contemporaneous claim that the package was usable by both 1.X and 2.0 client families;
@@ -2152,7 +2153,9 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-2001-FULLMAP-PRESERVATION-R1.txt`;
   - `research/recovered/STONEAGE-XINHAONANHAI-ARCHIVE-R1.txt`;
   - `research/recovered/STONEAGE-2001-SINA-HOST-ALIAS-R1.txt`;
-  - `research/recovered/STONEAGE-2001-SINA-MAP-TOPOLOGY-R1.txt`.
+  - `research/recovered/STONEAGE-2001-SINA-MAP-TOPOLOGY-R1.txt`;
+  - `research/recovered/STONEAGE-2001-SINA-SAMEBATCH-R1.txt`;
+  - `research/recovered/STONEAGE-2001-SINA-SAMEBATCH-ROUTE-R1.txt`.
 
 ### SRC-CN-2001-SINA-SA20-CLIENT-01
 
