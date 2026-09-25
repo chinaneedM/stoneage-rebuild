@@ -2314,3 +2314,32 @@ Every substantial source should record:
   - any map bytes, hashes or file ancestry until payloads are recovered.
 - Canonical interpretation note:
   - `research/clients/STONEAGE-2001-XINHAONANHAI-CONTRIBUTOR-LINEAGE-R1.md`
+
+
+### SRC-CN-2001-POPSOFT-SA20-CARRIER-LIST-01
+
+- Title: `大众软件 2001 年 11 月 B / 2001 第 22 期` — StoneAge 2.0 upgrade-distribution notice
+- Original period: **November 2001**
+- Retrieval date: 2026-09-25
+- Language/region: Simplified Chinese / Mainland China
+- Source type: contemporaneous magazine scan preserved as searchable full text
+- Preserved source:
+  - Internet Archive item family: `popsoft-magazine_202403`
+  - issue text path: `2001/大众软件-2001年11月B_djvu.txt`
+  - URL: `https://archive.org/stream/popsoft-magazine_202403/2001/%E5%A4%A7%E4%BC%97%E8%BD%AF%E4%BB%B6-2001%E5%B9%B411%E6%9C%88B_djvu.txt`
+- Confidence: **A** for the carrier-list text as preserved in the contemporaneous magazine; optical-disc contents remain unrecovered.
+- Supports:
+  - existing StoneAge 1.X users could obtain a StoneAge 2.0 `完整升级版` through a list of magazines/media;
+  - the preserved list includes the previously known November carrier set but additionally names **`《CHIP 新电脑》11月号`**;
+  - this creates a new exact carrier identity for the 2001-11-02 client-recovery route;
+  - the issue separately corrects an earlier advertisement concerning `《晶合秘藏Ⅱ之红宝石》`, distinguishing an upgrade version from a formally activated retail version, which reinforces the need to separate client bytes from activation entitlement.
+- Source-difference note:
+  - the currently preserved 17173 upgrade guide lists the same distribution context but omits `《CHIP 新电脑》11月号`;
+  - preserve this difference rather than flattening the two lists into one assumed master list.
+- Does not support:
+  - that a public image of the CHIP November-2001 coverdisc currently survives;
+  - that its StoneAge package used the Sina filename `stoneage2.0setup.exe`;
+  - byte identity between any magazine-disc package and Sina's labelled client;
+  - client cleanliness/provenance until an actual disc filesystem/package is inspected.
+- Canonical note:
+  - `research/clients/STONEAGE-SA20-CHIP-NEWCOMPUTER-CARRIER-R1.md`
