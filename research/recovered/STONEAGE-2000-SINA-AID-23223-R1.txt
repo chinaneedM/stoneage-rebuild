@@ -1,0 +1,17 @@
+StoneAge 2000 Sina aid=23223 variant probe — R1
+SCOPE|CGI-prefix-query-variants+historical-source-replay|metadata+small-html-only|no-payload
+TARGET|aid=23223|filename=samap_1220.zip|source=http://games.sina.com.cn/downgames/map/1220492.shtml
+CGI_CDX|window=2000-q4|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CGI_CDX|window=2001-h1|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CGI_CDX|window=2001-h2|status=200|rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CGI_CDX|window=2002|status=200|rows=906|relevant=0|bytes=234324|sha256=a00aa788cbb7f6f0926344f658477b9e8256c2646ab57e9a9dbe71490a5d73b9
+SOURCE_AVAIL|date=20001220|status=200|hit=1|timestamp=20010124001200|capture=http://web.archive.org/web/20010124001200/http://games.sina.com.cn:80/downgames/map/1220492.shtml
+SOURCE_AVAIL|date=20010101|status=200|hit=1|timestamp=20010124001200|capture=http://web.archive.org/web/20010124001200/http://games.sina.com.cn:80/downgames/map/1220492.shtml
+SOURCE_AVAIL|date=20011220|status=200|hit=1|timestamp=20011105111326|capture=http://web.archive.org/web/20011105111326/http://games.sina.com.cn:80/downgames/map/1220492.shtml
+SOURCE_AVAIL|date=20020101|status=200|hit=0|timestamp=|capture=
+COUNT|cgi_relevant_unique|0
+COUNT|source_captures|0
+ERROR|scope=source-cdx|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+COUNT|errors|1
+RESOLUTION|NO_VARIANT_CAPTURE|retain exact aid/filename for independent mirror search
+EVIDENCE_BOUNDARY|query-variant matches are route evidence only; payload identity requires recovered bytes.
