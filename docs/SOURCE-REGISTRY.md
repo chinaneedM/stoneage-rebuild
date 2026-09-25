@@ -2206,6 +2206,12 @@ Every substantial source should record:
   - Sina's 2000-12-28 `石器时代—北岛详细地图指南` uses the same local-download backend with `aid=23680`, `filename=northisland_1228.zip`, `size=134`;
   - Sina's 2000-12-28 `石器时代—南岛详细地图指南` likewise uses `aid=23681`, `filename=southisland_1228.zip`, `size=202`;
   - these immediately adjacent StoneAge packages are topology controls for reconstructing the late-2000 Sina redirect/file-server path even if `aid=23223` itself has no archived CGI response; public exact-filename web searches exposed no direct mirror for either control package on the tested search surface.
+- Direct historical delivery route recovered from the archived Sina CGI response:
+  - archived CGI timestamp: **2001-01-26 07:46:00 UTC**;
+  - exact route: `http://202.106.184.193/downfiles/map_1212/samap_1220.zip`;
+  - the archived HTML labels the link `石器时代—全地图下载` and repeats the displayed **1410K** size;
+  - this is first-party routing evidence from Sina's own archived download CGI, not a synthesized filename/path guess;
+  - route proof does **not** establish that a recoverable ZIP snapshot exists or that later bytes at the same URL are identical.
 - Preservation status:
   - exact/predicted Wayback payload-path probes: no verified payload capture on the tested surfaces;
   - exact Internet Archive filename/stem searches: no exact carrier;
