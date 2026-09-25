@@ -1,13 +1,123 @@
-StoneAge 2001 Sina map-download topology probe — R1
-SCOPE|same-col-map-neighbors+small-CGI-replays+body-link-extraction+target-path-synthesis|no-payload
+StoneAge 2001 Sina map-download topology probe — R2
+SCOPE|games+games1 same-col-map neighbors + small CGI replays + body-link extraction + target-path synthesis|no-payload
 TARGET|aid=43172|filename=Estoneage2.0map_1127.exe
-CDX_WINDOW|label=2001-q4|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
-CDX_WINDOW|label=2002-q1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
-COUNT|all_rows|0
-COUNT|col_map_rows|0
-COUNT|col_map_unique_aids|0
-COUNT|body_links|0
-COUNT|synthesized_target_urls|0
-COUNT|errors|0
-RESOLUTION|NO_DOWNLOAD_BODY_TOPOLOGY|same-column CGI replays expose no usable file-server links
+CDX_WINDOW|host=games.sina.com.cn|label=2001|status=200|rows=893|map_rows=55|bytes=248408|sha256=cef654565bf72bdf540c61b5718ae45571895434e9c9bf0cb22478f525a652e5
+CDX_WINDOW|host=games.sina.com.cn|label=2002-q1|status=200|rows=24|map_rows=1|bytes=5810|sha256=498eafbeedd4cc61c7abb48a827854106069f8a69f379e462873bbc7df0bb3ae
+CDX_WINDOW|host=games1.sina.com.cn|label=2001|status=200|rows=0|map_rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX_WINDOW|host=games1.sina.com.cn|label=2002-q1|status=200|rows=0|map_rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+COUNT|all_rows|917
+COUNT|col_map_rows|28
+COUNT|col_map_unique_aids|28
+NEIGHBOR|rank=1|distance=2063|aid=45235|timestamp=20020213160228|filename=|size=|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=map&aid=45235&title=%A1%B6%B7%B4%BF%D6%BE%AB%D3%A2%A1%B
+REPLAY|aid=45235|timestamp=20020213160228|status=200|bytes=668|sha256=ca35f78a29885a0b2bee3b612dcee9de3ebc7ab333f21138e73398e291a8d9b6|links=2
+BODY_LINK|aid=45235|source_filename=|url=http://games.sina.com.cn/istyle.css
+BODY_LINK|aid=45235|source_filename=|url=http://games.sina.com.cn/head.htm
+NEIGHBOR|rank=2|distance=18268|aid=24904|timestamp=20010126143300|filename=(6)6vs1-2_0120.zip|size=77|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=map&aid=24904&title=%D0%C7%BC%CA%D5%F9%B0%D4%A1%AA%D0%C7%BC%CA%B5%D8%CD%BC:+6vs1%C9%F1%D7%E5%CC%D8%B1%F0%B0%E6%A2%F2&author=%D3%CE%C3%F1%B2%BF%C2%E4%CD%F8%D3%D1%3ca+href%3d%22mailto:sccjj@citiz.net%22+target%3d%22_blank%22%3e%B4%F3%BA%D3%D5%BD%BD%A2%3c/a%3e%CC%E1%B9%A9&filename=(6)6vs1-2_0120.zip&size=77
+NEIGHBOR|rank=3|distance=18351|aid=24821|timestamp=20010126140300|filename=map_0119.exe|size=943|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=map&aid=24821&title=%CA%AF%C6%F7%CA%B1%B4%FA%A1%AA%CB%C4%B4%F3%B5%BA%CD%EA%D5%FB%B5%D8%CD%BC&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=map_0119.exe&size=943
+NEIGHBOR|rank=4|distance=18424|aid=24748|timestamp=20010126134300|filename=Europe_0118.scn|size=33|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=map&aid=24748&title=%B5%DB%B9%FA%CA%B1%B4%FA2%A1%AA%C5%B7%D6%DE&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=Europe_0118.scn&size=33
+REPLAY|aid=24748|timestamp=20010126134300|status=200|bytes=6664|sha256=12f0999b0a402832bda77c50e88857a1a895acbfdf78688f7462e7d7c68b03bd|links=13
+BODY_LINK|aid=24748|source_filename=Europe_0118.scn|url=http://games.sina.com.cn:80/istyle.css
+BODY_LINK|aid=24748|source_filename=Europe_0118.scn|url=http://ad.cn.doubleclick.net/jump/games.sina.com.cn/;abr=!ie;num=64127405546789064
+BODY_LINK|aid=24748|source_filename=Europe_0118.scn|url=http://202.106.184.193/downfiles/map_1212/Europe_0118.scn
+BODY_LINK|aid=24748|source_filename=Europe_0118.scn|url=http://ad.cn.doubleclick.net/adi/games.sina.com.cn/;num=64127405546789064
+BODY_LINK|aid=24748|source_filename=Europe_0118.scn|url=http://ad.cn.doubleclick.net/ad/games.sina.com.cn/;abr=!ie;num=64127405546789064
+BODY_LINK|aid=24748|source_filename=Europe_0118.scn|url=http://games.sina.com.cn/zhuanqu/winwin2000/
+BODY_LINK|aid=24748|source_filename=Europe_0118.scn|url=http://games.sina.com.cn/
+BODY_LINK|aid=24748|source_filename=Europe_0118.scn|url=http://games.sina.com.cn/newgames/
+BODY_LINK|aid=24748|source_filename=Europe_0118.scn|url=http://games.sina.com.cn/downgames/littlegame/
+BODY_LINK|aid=24748|source_filename=Europe_0118.scn|url=http://games.sina.com.cn/downgames/
+BODY_LINK|aid=24748|source_filename=Europe_0118.scn|url=http://games.sina.com.cn/handbook/
+BODY_LINK|aid=24748|source_filename=Europe_0118.scn|url=http://games.sina.com.cn/zhuanti/
+BODY_LINK|aid=24748|source_filename=Europe_0118.scn|url=http://202.106.184.193/downfiles/map_1212
+NEIGHBOR|rank=5|distance=18426|aid=24746|timestamp=20010126131600|filename=unknown_0118.zip|size=34|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=map&aid=24746&title=%B5%DB%B9%FA%CA%B1%B4%FA2%A3%BA%D5%F7%B7%FE%D5%DF%A1%AA%CE%DE%C3%FB&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=unknown_0118.zip&size=34
+NEIGHBOR|rank=6|distance=18725|aid=24447|timestamp=20010126124300|filename=yztq-1_0112.scx|size=60|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=map&aid=24447&title=%D0%C7%BC%CA%D5%F9%B0%D4%A1%AA%D2%EC%BE%FC%CD%BB%C6%F0-1+&author=%D3%CE%C3%F1%B2%BF%C2%E4%CD%F8%D3%D1%3ca+href%3d%22mailto:jxyhome@elong.com%22+target%3d%22_blank%22%3e%CC%EC%D1%C4%C0%CB%D7%D3%3c/a%3e%CC%E1%B9%A9&filename=yztq-1_0112.scx&size=60
+NEIGHBOR|rank=7|distance=18839|aid=24333|timestamp=20010126120700|filename=dflwbiohazzard_0111.zip|size=4|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=map&aid=24333&title=%A1%B6%C8%FD%BD%C7%D6%DE%B2%BF%B6%D3%A3%BA%B4%F3%B5%D8%D3%C2%CA%BF%A1%B7%B6%D4%D5%BD%B5%D8%CD%BC%D6%AE%A1%B0%C9%FA%BB%AF%CE%A3%BB%FA%A1%B1&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=dflwbiohazzard_0111.zip&size=4
+NEIGHBOR|rank=8|distance=18915|aid=24257|timestamp=20010126114700|filename=dflwoperationcrack_0110.zip|size=15|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=map&aid=24257&title=%A1%B6%C8%FD%BD%C7%D6%DE%B2%BF%B6%D3%A3%BA%B4%F3%B5%D8%D3%C2%CA%BF%A1%B7%D0%C2%B1%E0%C8%CE%CE%F1%D6%AE%A1%B0%BD%CB%B7%CB%D0%D0%B6%AF%A1%B1&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=dflwoperationcrack_0110.zip&size=15
+REPLAY|aid=24257|timestamp=20010126114700|status=200|bytes=6707|sha256=5be23757b62a121c1bc5b205454f56c3552170c770f3d3b6335c5269fe5b07e1|links=13
+BODY_LINK|aid=24257|source_filename=dflwoperationcrack_0110.zip|url=http://games.sina.com.cn:80/istyle.css
+BODY_LINK|aid=24257|source_filename=dflwoperationcrack_0110.zip|url=http://ad.cn.doubleclick.net/jump/games.sina.com.cn/;abr=!ie;num=64127405546789064
+BODY_LINK|aid=24257|source_filename=dflwoperationcrack_0110.zip|url=http://202.106.184.193/downfiles/map_1212/dflwoperationcrack_0110.zip
+BODY_LINK|aid=24257|source_filename=dflwoperationcrack_0110.zip|url=http://ad.cn.doubleclick.net/adi/games.sina.com.cn/;num=64127405546789064
+BODY_LINK|aid=24257|source_filename=dflwoperationcrack_0110.zip|url=http://ad.cn.doubleclick.net/ad/games.sina.com.cn/;abr=!ie;num=64127405546789064
+BODY_LINK|aid=24257|source_filename=dflwoperationcrack_0110.zip|url=http://games.sina.com.cn/zhuanqu/winwin2000/
+BODY_LINK|aid=24257|source_filename=dflwoperationcrack_0110.zip|url=http://games.sina.com.cn/
+BODY_LINK|aid=24257|source_filename=dflwoperationcrack_0110.zip|url=http://games.sina.com.cn/newgames/
+BODY_LINK|aid=24257|source_filename=dflwoperationcrack_0110.zip|url=http://games.sina.com.cn/downgames/littlegame/
+BODY_LINK|aid=24257|source_filename=dflwoperationcrack_0110.zip|url=http://games.sina.com.cn/downgames/
+BODY_LINK|aid=24257|source_filename=dflwoperationcrack_0110.zip|url=http://games.sina.com.cn/handbook/
+BODY_LINK|aid=24257|source_filename=dflwoperationcrack_0110.zip|url=http://games.sina.com.cn/zhuanti/
+BODY_LINK|aid=24257|source_filename=dflwoperationcrack_0110.zip|url=http://202.106.184.193/downfiles/map_1212
+NEIGHBOR|rank=9|distance=18917|aid=24255|timestamp=20010126110700|filename=dflwoperationpicnic_0110.zip|size=5|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=map&aid=24255&title=%A1%B6%C8%FD%BD%C7%D6%DE%B2%BF%B6%D3%A3%BA%B4%F3%B5%D8%D3%C2%CA%BF%A1%B7%D0%C2%B1%E0%C8%CE%CE%F1%D6%AE%A1%B0%D2%B0%B2%CD%D0%D0%B6%AF%A1%B1&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=dflwoperationpicnic_0110.zip&size=5
+REPLAY|aid=24255|timestamp=20010126110700|status=200|bytes=6707|sha256=1ef3dd887625846df2887187688f388e4286b64f503eba54002a529f6b3702df|links=13
+BODY_LINK|aid=24255|source_filename=dflwoperationpicnic_0110.zip|url=http://games.sina.com.cn:80/istyle.css
+BODY_LINK|aid=24255|source_filename=dflwoperationpicnic_0110.zip|url=http://ad.cn.doubleclick.net/jump/games.sina.com.cn/;abr=!ie;num=64127405546789064
+BODY_LINK|aid=24255|source_filename=dflwoperationpicnic_0110.zip|url=http://202.106.184.193/downfiles/map_1212/dflwoperationpicnic_0110.zip
+BODY_LINK|aid=24255|source_filename=dflwoperationpicnic_0110.zip|url=http://ad.cn.doubleclick.net/adi/games.sina.com.cn/;num=64127405546789064
+BODY_LINK|aid=24255|source_filename=dflwoperationpicnic_0110.zip|url=http://ad.cn.doubleclick.net/ad/games.sina.com.cn/;abr=!ie;num=64127405546789064
+BODY_LINK|aid=24255|source_filename=dflwoperationpicnic_0110.zip|url=http://games.sina.com.cn/zhuanqu/winwin2000/
+BODY_LINK|aid=24255|source_filename=dflwoperationpicnic_0110.zip|url=http://games.sina.com.cn/
+BODY_LINK|aid=24255|source_filename=dflwoperationpicnic_0110.zip|url=http://games.sina.com.cn/newgames/
+BODY_LINK|aid=24255|source_filename=dflwoperationpicnic_0110.zip|url=http://games.sina.com.cn/downgames/littlegame/
+BODY_LINK|aid=24255|source_filename=dflwoperationpicnic_0110.zip|url=http://games.sina.com.cn/downgames/
+BODY_LINK|aid=24255|source_filename=dflwoperationpicnic_0110.zip|url=http://games.sina.com.cn/handbook/
+BODY_LINK|aid=24255|source_filename=dflwoperationpicnic_0110.zip|url=http://games.sina.com.cn/zhuanti/
+BODY_LINK|aid=24255|source_filename=dflwoperationpicnic_0110.zip|url=http://202.106.184.193/downfiles/map_1212
+NEIGHBOR|rank=10|distance=18921|aid=24251|timestamp=20010126103700|filename=dflwsargo_0110.zip|size=14|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=map&aid=24251&title=%A1%B6%C8%FD%BD%C7%D6%DE%B2%BF%B6%D3%A3%BA%B4%F3%B5%D8%D3%C2%CA%BF%A1%B7%D0%C2%B1%E0%C8%CE%CE%F1%D6%AE%A1%B0%D5%FC%BE%C8%BC%C6%BB%AE%A1%B1&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=dflwsargo_0110.zip&size=14
+REPLAY|aid=24251|timestamp=20010126103700|status=200|bytes=6698|sha256=bec0caf81f4a45c53f3b195775695d5e1d1462357ec576c7dd1c155bc273b8f3|links=13
+BODY_LINK|aid=24251|source_filename=dflwsargo_0110.zip|url=http://games.sina.com.cn:80/istyle.css
+BODY_LINK|aid=24251|source_filename=dflwsargo_0110.zip|url=http://ad.cn.doubleclick.net/jump/games.sina.com.cn/;abr=!ie;num=64127405546789064
+BODY_LINK|aid=24251|source_filename=dflwsargo_0110.zip|url=http://202.106.184.193/downfiles/map_1212/dflwsargo_0110.zip
+BODY_LINK|aid=24251|source_filename=dflwsargo_0110.zip|url=http://ad.cn.doubleclick.net/adi/games.sina.com.cn/;num=64127405546789064
+BODY_LINK|aid=24251|source_filename=dflwsargo_0110.zip|url=http://ad.cn.doubleclick.net/ad/games.sina.com.cn/;abr=!ie;num=64127405546789064
+BODY_LINK|aid=24251|source_filename=dflwsargo_0110.zip|url=http://games.sina.com.cn/zhuanqu/winwin2000/
+BODY_LINK|aid=24251|source_filename=dflwsargo_0110.zip|url=http://games.sina.com.cn/
+BODY_LINK|aid=24251|source_filename=dflwsargo_0110.zip|url=http://games.sina.com.cn/newgames/
+BODY_LINK|aid=24251|source_filename=dflwsargo_0110.zip|url=http://games.sina.com.cn/downgames/littlegame/
+BODY_LINK|aid=24251|source_filename=dflwsargo_0110.zip|url=http://games.sina.com.cn/downgames/
+BODY_LINK|aid=24251|source_filename=dflwsargo_0110.zip|url=http://games.sina.com.cn/handbook/
+BODY_LINK|aid=24251|source_filename=dflwsargo_0110.zip|url=http://games.sina.com.cn/zhuanti/
+BODY_LINK|aid=24251|source_filename=dflwsargo_0110.zip|url=http://202.106.184.193/downfiles/map_1212
+NEIGHBOR|rank=11|distance=18957|aid=24215|timestamp=20010126100900|filename=sw3_0109.zip|size=526|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=map&aid=24215&title=%D0%F9%D4%AF%BD%A33%A3%BA%CC%EC%D6%AE%BA%DB%A1%AA%CB%F9%D3%D0%C3%D4%B9%AC%B5%D8%CD%BC&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=sw3_0109.zip&size=526
+REPLAY|aid=24215|timestamp=20010126100900|status=200|bytes=6676|sha256=7927f7747faf4a46e72b1f52131fb3aca4a2aaba6f6de14c5bf132ef520a94ac|links=13
+BODY_LINK|aid=24215|source_filename=sw3_0109.zip|url=http://games.sina.com.cn:80/istyle.css
+BODY_LINK|aid=24215|source_filename=sw3_0109.zip|url=http://ad.cn.doubleclick.net/jump/games.sina.com.cn/;abr=!ie;num=64127405546789064
+BODY_LINK|aid=24215|source_filename=sw3_0109.zip|url=http://202.106.184.193/downfiles/map_1212/sw3_0109.zip
+BODY_LINK|aid=24215|source_filename=sw3_0109.zip|url=http://ad.cn.doubleclick.net/adi/games.sina.com.cn/;num=64127405546789064
+BODY_LINK|aid=24215|source_filename=sw3_0109.zip|url=http://ad.cn.doubleclick.net/ad/games.sina.com.cn/;abr=!ie;num=64127405546789064
+BODY_LINK|aid=24215|source_filename=sw3_0109.zip|url=http://games.sina.com.cn/zhuanqu/winwin2000/
+BODY_LINK|aid=24215|source_filename=sw3_0109.zip|url=http://games.sina.com.cn/
+BODY_LINK|aid=24215|source_filename=sw3_0109.zip|url=http://games.sina.com.cn/newgames/
+BODY_LINK|aid=24215|source_filename=sw3_0109.zip|url=http://games.sina.com.cn/downgames/littlegame/
+BODY_LINK|aid=24215|source_filename=sw3_0109.zip|url=http://games.sina.com.cn/downgames/
+BODY_LINK|aid=24215|source_filename=sw3_0109.zip|url=http://games.sina.com.cn/handbook/
+BODY_LINK|aid=24215|source_filename=sw3_0109.zip|url=http://games.sina.com.cn/zhuanti/
+BODY_LINK|aid=24215|source_filename=sw3_0109.zip|url=http://202.106.184.193/downfiles/map_1212
+NEIGHBOR|rank=12|distance=19043|aid=24129|timestamp=20010126091000|filename=dflwsnipertomb_0108.zip|size=3|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=map&aid=24129&title=%A1%B6%C8%FD%BD%C7%D6%DE%B2%BF%B6%D3%A3%BA%B4%F3%B5%D8%D3%C2%CA%BF%A1%B7%B6%D4%D5%BD%B5%D8%CD%BC%D6%AE%A1%B0%CC%D8%D6%D6%B1%F8%B5%C4%B7%D8%C4%B9%A1%B1&author=%D3%CE%C3%F1%B2%BF%C2%E4%CD%F8%D3%D1%C2%D2%B2%A8&filename=dflwsnipertomb_0108.zip&size=3
+REPLAY|aid=24129|timestamp=20010126091000|status=200|bytes=6706|sha256=8699f08dc0f5b463df88215461ca67c32099537dca9f1d3a3e429cbcdab78cc9|links=13
+BODY_LINK|aid=24129|source_filename=dflwsnipertomb_0108.zip|url=http://games.sina.com.cn:80/istyle.css
+BODY_LINK|aid=24129|source_filename=dflwsnipertomb_0108.zip|url=http://ad.cn.doubleclick.net/jump/games.sina.com.cn/;abr=!ie;num=64127405546789064
+BODY_LINK|aid=24129|source_filename=dflwsnipertomb_0108.zip|url=http://202.106.184.193/downfiles/map_1212/dflwsnipertomb_0108.zip
+BODY_LINK|aid=24129|source_filename=dflwsnipertomb_0108.zip|url=http://ad.cn.doubleclick.net/adi/games.sina.com.cn/;num=64127405546789064
+BODY_LINK|aid=24129|source_filename=dflwsnipertomb_0108.zip|url=http://ad.cn.doubleclick.net/ad/games.sina.com.cn/;abr=!ie;num=64127405546789064
+BODY_LINK|aid=24129|source_filename=dflwsnipertomb_0108.zip|url=http://games.sina.com.cn/zhuanqu/winwin2000/
+BODY_LINK|aid=24129|source_filename=dflwsnipertomb_0108.zip|url=http://games.sina.com.cn/
+BODY_LINK|aid=24129|source_filename=dflwsnipertomb_0108.zip|url=http://games.sina.com.cn/newgames/
+BODY_LINK|aid=24129|source_filename=dflwsnipertomb_0108.zip|url=http://games.sina.com.cn/downgames/littlegame/
+BODY_LINK|aid=24129|source_filename=dflwsnipertomb_0108.zip|url=http://games.sina.com.cn/downgames/
+BODY_LINK|aid=24129|source_filename=dflwsnipertomb_0108.zip|url=http://games.sina.com.cn/handbook/
+BODY_LINK|aid=24129|source_filename=dflwsnipertomb_0108.zip|url=http://games.sina.com.cn/zhuanti/
+BODY_LINK|aid=24129|source_filename=dflwsnipertomb_0108.zip|url=http://202.106.184.193/downfiles/map_1212
+COUNT|body_links|80
+COUNT|synthesized_target_urls|2
+SYNTH|index=1|url=http://202.106.184.193/downfiles/map_1212/Estoneage2.0map_1127.exe
+SYNTH_CDX|index=1|status=200|rows=0|bytes=3
+SYNTH|index=2|url=http://202.106.184.193/downfiles/map_1212/estoneage2.0map_1127.exe
+ERROR|scope=replay:24904:20010126143300|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=replay:24821:20010126140300|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=replay:24746:20010126131600|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=replay:24447:20010126124300|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=replay:24333:20010126120700|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=synth:2|kind=URLError|message=<urlopen error timed out>
+COUNT|errors|6
+RESOLUTION|SINA_2001_DOWNLOAD_TOPOLOGY_RECOVERED|evaluate synthesized target CDX rows above
 EVIDENCE_BOUNDARY|neighbor CGI body links establish historical download topology only; synthesized target paths are hypotheses until the exact filename is independently archived.
