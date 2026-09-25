@@ -2276,6 +2276,13 @@ Every substantial source should record:
 - Recovery consequence:
   - these are concrete **carrier identities** for the Mainland 2.0 complete-upgrade client and are independent of the missing Sina `stoneage2.0setup.exe` payload route;
   - a preserved coverdisc/book-disc may contain the client under a different path or filename, so carrier-level filesystem inspection has higher value than exact-filename-only searching once candidates are identified.
+- Preservation census — 2026-09-25:
+  - an initial unfielded IA metadata census produced **86 rows**, but manual/refined classification shows those rows were dominated by unrelated description/full-text noise; DiscMaster returned **zero rows** for all 13 carrier search phrases;
+  - a refined IA pass restricted to title-field + software-media searches. None of the 13 listed **2001-11** carrier identities was recovered directly, and global `石器时代2.0` / `StoneAge 2.0` software-metadata searches returned zero;
+  - `大众软件CD` did expose an authentic preservation namespace of **18 older Popsoft CD items**, all from 1997–1998, with predictable identifiers such as `popsoftcd-1997-12` and `popsoftcd-1998-11`. This creates a concrete preservation-family lead; the namespace is now being enumerated directly for possible 1999–2001 continuation rather than treating older discs as target carriers.
+- Derived reports:
+  - `research/recovered/STONEAGE-2001-SA20-COVERDISC-CENSUS-R1.txt` (broad/noisy discovery pass);
+  - `research/recovered/STONEAGE-2001-SA20-COVERDISC-CENSUS-R2.txt` (title/software refinement).
 - Does not support:
   - that every listed carrier contains byte-identical media;
   - that the file on any listed disc is named `stoneage2.0setup.exe`;
