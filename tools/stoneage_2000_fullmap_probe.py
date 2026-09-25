@@ -48,6 +48,10 @@ def discm_url(q):
     p=[("q",q),("qfields","name"),("mode","deep"),("limit","500"),("outputAs","json"),("showItemName","showItemName")]
     return DISCM+"?"+urllib.parse.urlencode(p)
 
+def strict_disc_candidate(path):
+    leaf=str(path).replace("\\","/").rsplit("/",1)[-1].lower()
+    return leaf==FILENAME.lower()
+
 def rows_walk(d):
     out=[]
     def w(x):
@@ -62,7 +66,7 @@ def main():
     print("StoneAge 2000-12-20 full-map preservation probe — R1")
     print("SCOPE|Sina-source+Wayback+IA+DiscMaster|metadata-only|no-payload")
     print(f"TARGET|date=2000-12-20|aid={AID}|filename={FILENAME}|size_kib=1410")
-    errors=[];hrefs=();cdx_rows=[];ia_docs=0;disc_hits=[]
+    errors=[];hrefs=();cdx_rows=[];ia_docs=0;ia_candidate_docs=0;disc_hits=[]
     try:
         st,final,b=fetch(SOURCE)
         print(f"SOURCE|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|final={clean(final)}")
@@ -97,7 +101,7 @@ def main():
             except Exception as e: errors.append((f"avail:{i}:{date}",type(e).__name__,str(e)))
     for label,q in (("exact",f'"{FILENAME}"'),("stem",f'"{STEM}"'),("samap",'"samap" AND stoneage')):
         try:
-            st,final,b=fetch(ia_url(q),timeout=35);d=json.loads(b.decode("utf-8"));docs=((d.get("response") or {}).get("docs") or []);ia_docs+=len(docs)
+            st,final,b=fetch(ia_url(q),timeout=35);d=json.loads(b.decode("utf-8"));docs=((d.get("response") or {}).get("docs") or []);ia_docs+=len(docs);ia_candidate_docs+=len(docs) if label in ("exact","stem") else 0
             print(f"IA|label={label}|status={st}|items={len(docs)}|bytes={len(b)}")
             for x in docs[:100]:
                 print(f"IA_HIT|identifier={clean(x.get('identifier'))}|title={clean(x.get('title'))}|date={clean(x.get('date'))}|description={clean(x.get('description'))}")
@@ -110,17 +114,18 @@ def main():
                 path=str(r.get("fileid") or r.get("path") or r.get("filename") or r.get("name") or "")
                 leaf=path.replace("\\","/").rsplit("/",1)[-1].lower()
                 low=path.lower()
-                if "samap" in low or leaf==FILENAME.lower() or (leaf.endswith(".zip") and "1220" in leaf):
+                if strict_disc_candidate(path):
                     disc_hits.append(r)
                     print(f"DISCM_HIT|q={clean(q)}|itemid={clean(r.get('itemid'))}|itemName={clean(r.get('itemName'))}|path={clean(path)}|size={clean(r.get('size'))}|ts={clean(r.get('ts'))}|b3sum={clean(r.get('b3sum'))}")
         except Exception as e: errors.append((f"discm:{q}",type(e).__name__,str(e)))
     print(f"COUNT|cdx_rows|{len(cdx_rows)}")
     print(f"COUNT|ia_docs|{ia_docs}")
-    print(f"COUNT|discm_candidate_rows|{len(disc_hits)}")
+    print(f"COUNT|ia_candidate_docs|{ia_candidate_docs}")
+    print(f"COUNT|discm_strict_candidate_rows|{len(disc_hits)}")
     for scope,kind,msg in errors: print(f"ERROR|scope={clean(scope)}|kind={clean(kind)}|message={clean(msg)}")
     print(f"COUNT|errors|{len(errors)}")
     if cdx_rows: print("RESOLUTION|WAYBACK_CANDIDATE_FOUND|verify exact package response before payload recovery")
-    elif ia_docs or disc_hits: print("RESOLUTION|PRESERVATION_CANDIDATE_FOUND|verify filename/size before payload recovery")
+    elif ia_candidate_docs or disc_hits: print("RESOLUTION|PRESERVATION_CANDIDATE_FOUND|strict filename/stem carrier found; verify filename/size before payload recovery")
     else: print("RESOLUTION|NO_PAYLOAD_CARRIER_YET|exact 2000 recovery token established")
     print("EVIDENCE_BOUNDARY|the surviving Sina page proves the named 2000 distribution record; exact package bytes remain unverified until a carrier is recovered.")
 
