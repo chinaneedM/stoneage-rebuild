@@ -11,10 +11,10 @@ import hashlib, json, re, urllib.parse, urllib.request
 
 UA="stoneage-rebuild-archaeology/1.0"
 CDX="https://web.archive.org/cdx/search/cdx"
-PREFIX="http://games1.sina.com.cn/cgi-bin/games/downgames/download.pl"
+PREFIXES=("http://games.sina.com.cn/cgi-bin/games/downgames/download.pl","http://games1.sina.com.cn/cgi-bin/games/downgames/download.pl")
 TARGET_AID=43172
 TARGET_FILENAME="Estoneage2.0map_1127.exe"
-WINDOWS=(("2001-q4","20011001","20011231"),("2002-q1","20020101","20020331"))
+WINDOWS=(("2001","20010101","20011231"),("2002-q1","20020101","20020331"))
 
 def clean(v,limit=6000):
     s=" ".join(str(v if v is not None else "").split())
@@ -25,9 +25,9 @@ def fetch(url,timeout=45,max_bytes=2*1024*1024):
     with urllib.request.urlopen(req,timeout=timeout) as r:
         return int(getattr(r,"status",r.getcode())),r.geturl(),dict(r.headers.items()),r.read(max_bytes)
 
-def cdx_url(start,end):
+def cdx_url(prefix,start,end):
     p=[
-      ("url",PREFIX),("matchType","prefix"),("output","json"),
+      ("url",prefix),("matchType","prefix"),("output","json"),
       ("fl","timestamp,original,statuscode,mimetype,digest,length"),
       ("from",start),("to",end),("filter","statuscode:200"),
       ("collapse","urlkey"),("limit","10000")
@@ -96,17 +96,23 @@ def exact_cdx(url):
     return CDX+"?"+urllib.parse.urlencode(p)
 
 def main():
-    print("StoneAge 2001 Sina map-download topology probe — R1")
-    print("SCOPE|same-col-map-neighbors+small-CGI-replays+body-link-extraction+target-path-synthesis|no-payload")
+    print("StoneAge 2001 Sina map-download topology probe — R2")
+    print("SCOPE|games+games1 same-col-map neighbors + small CGI replays + body-link extraction + target-path synthesis|no-payload")
     print(f"TARGET|aid={TARGET_AID}|filename={TARGET_FILENAME}")
     errors=[]; rows=[]
-    for label,start,end in WINDOWS:
-        try:
-            st,final,h,b=fetch(cdx_url(start,end),timeout=55)
-            part=parse_cdx(b); rows.extend(part)
-            print(f"CDX_WINDOW|label={label}|status={st}|rows={len(part)}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}")
-        except Exception as e:
-            errors.append((f"cdx:{label}",type(e).__name__,str(e)))
+    for prefix in PREFIXES:
+        host=urllib.parse.urlsplit(prefix).netloc
+        for label,start,end in WINDOWS:
+            try:
+                st,final,h,b=fetch(cdx_url(prefix,start,end),timeout=60)
+                part=parse_cdx(b); rows.extend(part)
+                mapcount=0
+                for rr in part:
+                    pp=params(str(rr.get("original") or ""))
+                    if pp.get("col","").lower()=="map": mapcount+=1
+                print(f"CDX_WINDOW|host={host}|label={label}|status={st}|rows={len(part)}|map_rows={mapcount}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}")
+            except Exception as e:
+                errors.append((f"cdx:{host}:{label}",type(e).__name__,str(e)))
     mapped=[]
     for r in rows:
         p=params(str(r.get("original") or ""))
