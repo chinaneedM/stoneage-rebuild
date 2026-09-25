@@ -1,0 +1,62 @@
+name: Inventory Stoneage-5 MSI
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_stoneage5_msi_probe.py
+      - tests/test_stoneage_stoneage5_msi_probe.py
+      - .github/workflows/inventory-stoneage-stoneage5-msi.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-stoneage5-msi
+  cancel-in-progress: true
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate bounded MSI bridge
+        run: python3 -m unittest tests.test_stoneage_stoneage5_msi_probe -v
+      - name: Install MSI table reader
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq msitools
+      - name: Recover MSI and export installer database
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          R=research/recovered/STONEAGE-STONEAGE5-MSI-INVENTORY-R1.txt
+          python3 -m tools.stoneage_stoneage5_msi_probe --output-msi /tmp/STA5.MSI > "$R"
+          {
+            echo "MSI_TABLES_BEGIN"
+            msiinfo tables /tmp/STA5.MSI | sed 's/^/MSI_TABLE|/'
+            echo "MSI_TABLES_END"
+            for T in Property Directory Component File Media Feature FeatureComponents; do
+              echo "MSI_EXPORT_BEGIN|table=$T"
+              msiinfo export /tmp/STA5.MSI "$T" || true
+              echo "MSI_EXPORT_END|table=$T"
+            done
+          } >> "$R"
+          rm -f /tmp/STA5.MSI
+      - name: Commit derived inventory only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-STONEAGE5-MSI-INVENTORY-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: inventory Stoneage-5 MSI'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
