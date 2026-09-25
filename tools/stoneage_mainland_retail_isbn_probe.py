@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Exact preservation-index probe for a photographed Mainland StoneAge retail box.
+"""Preservation-index probe for a photographed Mainland StoneAge retail box.
 
-Anchor recovered from a public Ruten package photograph:
-ISBN 7-900032-57-0, barcode 9787900032570.
-Metadata search only: DiscMaster + Internet Archive. No candidate payload download.
+The small printed identifier is not yet readable with enough confidence for a FACT.
+This probe preserves the initial transcription separately from checksum-consistent
+final-digit hypotheses. Metadata search only: DiscMaster + Internet Archive.
+No candidate payload download.
 """
 from __future__ import annotations
 
@@ -18,13 +19,28 @@ import urllib.request
 UA="stoneage-rebuild-archaeology/1.0"
 DISCM="https://discmaster.textfiles.com/search"
 IA="https://archive.org/advancedsearch.php"
-QUERIES=(
+TRANSCRIBED_QUERIES=(
     "7-900032-57-0",
     "7900032570",
     "9787900032570",
+)
+HYPOTHESIS_QUERIES=(
+    "7-900032-57-6",
+    "7900032576",
+    "9787900032577",
+)
+CONTEXT_QUERIES=(
     "石器时代 网络游戏 华义",
     "StoneAge 北京华义 WAEI",
 )
+QUERIES=TRANSCRIBED_QUERIES+HYPOTHESIS_QUERIES+CONTEXT_QUERIES
+
+def query_kind(q):
+    if q in TRANSCRIBED_QUERIES:
+        return "initial-photo-transcription"
+    if q in HYPOTHESIS_QUERIES:
+        return "checksum-consistent-hypothesis"
+    return "context"
 
 def clean(v,n=1800):
     return " ".join(str(v if v is not None else "").split()).replace("|","%7C")[:n]
@@ -84,7 +100,7 @@ def ia_docs(v):
 
 def strict_match(blob):
     n=norm(blob)
-    exact=any(norm(x) in n for x in ("7-900032-57-0","7900032570","9787900032570"))
+    exact=any(norm(x) in n for x in TRANSCRIBED_QUERIES+HYPOTHESIS_QUERIES)
     title=norm("石器时代") in n or norm("StoneAge") in n
     operator=norm("华义") in n or norm("WAEI") in n
     return exact or (title and operator)
@@ -102,14 +118,16 @@ def query_one(q):
     return out
 
 def main():
-    print("StoneAge Mainland photographed retail-box preservation probe — R1")
-    print("SCOPE|exact-photographed-identifier|DiscMaster+IA-metadata|no-payload")
-    print("ANCHOR|ruten=22636573895893|isbn=7-900032-57-0|barcode=9787900032570|visible_context=WAEI+WGS+StoneAge")
+    print("StoneAge Mainland photographed retail-box preservation probe — R2")
+    print("SCOPE|initial-photo-transcription+checksum-hypotheses|DiscMaster+IA-metadata|no-payload")
+    print("ANCHOR|ruten=22636573895893|initial=7-900032-57-0,9787900032570|hypothesis=7-900032-57-6,9787900032577|visible_context=WAEI+WGS+StoneAge")
+    print("IDENTIFIER_BOUNDARY|initial transcription fails ISBN-10/EAN-13 checksum; checksum-consistent final digits are hypotheses only, not confirmed photograph readings")
     errors=[]; strict_d={}; strict_i={}
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as ex:
         results=list(ex.map(query_one,QUERIES))
     for res in results:
         q=res["q"]
+        print(f"QUERY_KIND|query={clean(q)}|kind={query_kind(q)}")
         for scope,kind,msg in res["errors"]:
             errors.append((scope+":"+q,kind,msg))
         if "discm" in res:
@@ -145,8 +163,8 @@ def main():
     elif errors:
         print("RESOLUTION|PARTIAL_NO_STRICT_HIT|retry failed exact surfaces only")
     else:
-        print("RESOLUTION|NO_STRICT_PRESERVATION_HIT|tested exact identifier surface is bounded")
-    print("EVIDENCE_BOUNDARY|the photographed package identifier establishes a searchable carrier identity, not disc contents, mastering, release version, or byte relationship to any recovered client.")
+        print("RESOLUTION|NO_STRICT_PRESERVATION_HIT|tested initial-transcription and checksum-hypothesis surfaces are bounded")
+    print("EVIDENCE_BOUNDARY|neither the initial transcription nor checksum-consistent hypotheses are confirmed printed identifiers; preservation-index matches would be search leads only, not disc contents, mastering, release version, or byte relationship to any recovered client.")
 
 if __name__=="__main__":
     main()
