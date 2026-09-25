@@ -19,6 +19,8 @@ IDS=(
     "22242541948520",  # 2.5 disc listing
     "22615474551866",  # 2.5 game disc + box listing
     "22445165101247",  # 2.5 Spirit King full-version disc listing
+    "22637629794063",  # newly indexed 2.5 Spirit King disc listing
+    "22625938678558",  # Taiwan multi-disc collection explicitly including Spirit King
 )
 PROD="https://rtapi.ruten.com.tw/api/prod/v2/index.php/prod"
 DETAIL="https://rapi.ruten.com.tw/api/items/v2/list"
