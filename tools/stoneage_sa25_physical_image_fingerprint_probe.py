@@ -18,10 +18,13 @@ import urllib.request
 from tools.stoneage_sa25_ruten_physical_probe import IDS, DETAIL, detail_rows, image_urls
 
 UA = "stoneage-rebuild-archaeology/1.0"
-OFFICIAL_MAINLAND_REFERENCE = (
+SOURCE_LABELLED_COMPARISON_REFERENCE = (
     "https://cos.stoneage.cn/uploads/article/minisnsimg/20201222/"
-    "5fe128952732d.jpg"
+    "5fe128b2e6b0a.jpg"
 )
+QUALIFIED_COLLECTOR_BODY_URLS = {
+    "https://shiqifabu.fszye.com/zb_users/upload/2020/12/20201222082537160859673711005.jpg",
+}
 WANFANG_PAGE = "https://www.shiqi.me/pt_17.htm"
 COLLECTOR_INDEXES = (
     ("https://blog.shiqi.so/author1.htm", ("回忆石器时代2.5游戏光盘",)),
@@ -117,6 +120,10 @@ def normalize_image_url(base, url):
     return urllib.parse.urljoin(base, str(url).strip())
 
 
+def is_qualified_collector_body_url(url):
+    return normalize_image_url("", url) in QUALIFIED_COLLECTOR_BODY_URLS
+
+
 def ruten_full_images():
     out = []
     seen = set()
@@ -189,9 +196,11 @@ def collector_reference_images():
                     path = urllib.parse.urlsplit(u).path.lower()
                     if not any(path.endswith(ext) for ext in (".jpg", ".jpeg", ".png", ".webp", ".gif")):
                         continue
+                    if not is_qualified_collector_body_url(u):
+                        continue
                     seen.add(u)
                     out.append({
-                        "label": f"collector-mirror:{len(out)}",
+                        "label": f"collector-body-reference:{len(out)}",
                         "url": u,
                         "article": afinal,
                         "alt": img.get("alt", ""),
@@ -303,9 +312,9 @@ def metric_line(kind, left, right, m):
 
 
 def main():
-    print("StoneAge 2.5 physical-media transient visual fingerprint probe — R4")
-    print("SCOPE|public-image-read-transient|derived-metrics-only|no-login|no-purchase|no-image-commit")
-    print(f"OFFICIAL_REFERENCE|{OFFICIAL_MAINLAND_REFERENCE}")
+    print("StoneAge 2.5 physical-media transient visual fingerprint probe — R5")
+    print("SCOPE|public-image-read-transient|source-qualified-comparison-images-only|derived-metrics-only|no-login|no-purchase|no-image-commit")
+    print(f"SOURCE_LABELLED_COMPARISON_REFERENCE|{SOURCE_LABELLED_COMPARISON_REFERENCE}")
     print(f"WANFANG_PAGE|{WANFANG_PAGE}")
     print("TLS_EXCEPTION_MODE|verification-disabled-only-for-known-expired-collector-hosts")
     errors = []
@@ -342,7 +351,7 @@ def main():
 
     loaded = {}
     try:
-        ref = load_image("official-mainland-2.5-collector-reference", OFFICIAL_MAINLAND_REFERENCE)
+        ref = load_image("source-labelled-mainland-taiwan-2.5-comparison", SOURCE_LABELLED_COMPARISON_REFERENCE)
         loaded[ref["label"]] = ref
         print(
             f"IMAGE|label={clean(ref['label'])}|bytes={ref['bytes']}|sha256={ref['sha256']}|"
@@ -350,7 +359,7 @@ def main():
         )
     except Exception as e:
         ref = None
-        errors.append(("official-reference", type(e).__name__, str(e)))
+        errors.append(("source-labelled-comparison-reference", type(e).__name__, str(e)))
 
     ruten = []
     for row in ruten_meta:
@@ -408,10 +417,10 @@ def main():
     if ref:
         for x in ruten:
             m = match_features(x, ref)
-            rows.append((m["inliers"], m["good"], -hamming_hex(x["dhash"], ref["dhash"]), "ruten-vs-official", x, ref, m))
+            rows.append((m["inliers"], m["good"], -hamming_hex(x["dhash"], ref["dhash"]), "ruten-vs-source-labelled-comparison", x, ref, m))
         for x in wanfang:
             m = match_features(x, ref)
-            rows.append((m["inliers"], m["good"], -hamming_hex(x["dhash"], ref["dhash"]), "wanfang-vs-official", x, ref, m))
+            rows.append((m["inliers"], m["good"], -hamming_hex(x["dhash"], ref["dhash"]), "wanfang-vs-source-labelled-comparison", x, ref, m))
     for x in ruten:
         for y in wanfang:
             m = match_features(x, y)
