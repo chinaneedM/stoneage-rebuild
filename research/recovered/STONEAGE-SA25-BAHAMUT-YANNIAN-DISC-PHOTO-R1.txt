@@ -1,9 +1,9 @@
 StoneAge 2.5 Yan-Nian surviving-disc exact-photo probe — R2
 SCOPE|Bahamut-creator-body-window+forum-fallback|exact-disc-photo+derived-metrics-only|no-image-commit|no-game-payload
-PAGE|label=home|status=200|bytes=106687|sha256=cddd73401b9bf95d57cf8919c128390e8eba2050b04027e760ddc776a54ed041|encoding=utf-8|target_window_start=53765|target_window_end=54008|target_urls=1|final=https://home.gamer.com.tw/artwork.php?sn=4902119
+PAGE|label=home|status=200|bytes=106687|sha256=1b9343eed86f98794c214e0bc34ece5d177b3c3b8ff13970bb04c8a1003c86fe|encoding=utf-8|target_window_start=53765|target_window_end=54008|target_urls=1|final=https://home.gamer.com.tw/artwork.php?sn=4902119
 TARGET_WINDOW|label=home|value=2.5時期的光碟
 TARGET_IMAGE_URL|page=home|order=1|url=https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG
-PAGE|label=forum|status=200|bytes=100543|sha256=276d1e6551f87e7e5f9a43b8088f60a9297ea99bfd814b8cd1f28a64c0ae0edc|encoding=utf-8|target_window_start=32596|target_window_end=33144|target_urls=1|final=https://forum.gamer.com.tw/C.php?bsn=1571&snA=81388
+PAGE|label=forum|status=200|bytes=100406|sha256=62696e031262d38b8324664d8284df2c516250b5bff247c0289c8474f48567da|encoding=utf-8|target_window_start=32596|target_window_end=33144|target_urls=1|final=https://forum.gamer.com.tw/C.php?bsn=1571&snA=81388
 TARGET_WINDOW|label=forum|value=2.5時期的光碟
 TARGET_IMAGE_URL|page=forum|order=1|url=https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG
 TARGET_IMAGE|order=1|bytes=160151|sha256=385071cb52f3e9af540823ff8a1833cfba4dad04ee8ab2ee9beebfa67dadea6a|size=1128x774|dhash=f070e0606068a1c0|keypoints=5000|url=https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG
@@ -11,6 +11,7 @@ CONTROL_IMAGE|label=smzdm:2.5-sequence|bytes=143443|sha256=7e3a7d614f86fbe719ff2
 MATCH|target=yannian:1|control=ruten:22632305238624:3|orb_matches=1239|good_le64=948|ransac_inliers=112|inlier_ratio=0.1181|target_url=https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG|control_url=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_322.jpg
 MATCH|target=yannian:1|control=ruten:22632305238624:0|orb_matches=1216|good_le64=907|ransac_inliers=69|inlier_ratio=0.0761|target_url=https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG|control_url=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_180.jpg
 MATCH|target=yannian:1|control=ruten:22632305238624:2|orb_matches=1204|good_le64=1021|ransac_inliers=54|inlier_ratio=0.0529|target_url=https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG|control_url=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_886.jpg
+MATCH|target=yannian:1|control=ruten:22445165101247:0|orb_matches=1258|good_le64=1105|ransac_inliers=33|inlier_ratio=0.0299|target_url=https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG|control_url=https://gcs.rimg.com.tw/g1/d/30/bf/22445165101247_815.jpg
 MATCH|target=yannian:1|control=ruten:22632305238624:1|orb_matches=1214|good_le64=964|ransac_inliers=32|inlier_ratio=0.0332|target_url=https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG|control_url=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_718.jpg
 MATCH|target=yannian:1|control=ruten:22242541948520:0|orb_matches=1274|good_le64=1055|ransac_inliers=30|inlier_ratio=0.0284|target_url=https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG|control_url=https://gcs.rimg.com.tw/g2/3/0e/68/22242541948520_496.JPG
 MATCH|target=yannian:1|control=ruten:22632305238624:4|orb_matches=1176|good_le64=861|ransac_inliers=20|inlier_ratio=0.0232|target_url=https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG|control_url=https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_881.jpg
@@ -25,7 +26,7 @@ MATCH|target=yannian:1|control=smzdm:2.5-sequence|orb_matches=1122|good_le64=903
 MATCH|target=yannian:1|control=ruten:22615474551866:0|orb_matches=1084|good_le64=768|ransac_inliers=7|inlier_ratio=0.0091|target_url=https://truth.bahamut.com.tw/s01/202009/1eabce5c4adf3b26366bebea7d788c74.JPG|control_url=https://gcs.rimg.com.tw/g2/f/08/3a/22615474551866_647.jpg
 COUNT|target_urls|1
 COUNT|target_images_loaded|1
-COUNT|controls_loaded|15
+COUNT|controls_loaded|16
 COUNT|errors|0
 RESOLUTION|EXACT_YANNIAN_25_DISC_PHOTO_RECOVERED|source-body-window association; use as physical carrier control only
 EVIDENCE_BOUNDARY|source-labelled photograph can establish physical-carrier identification only; it cannot establish disc filesystem, mastering, installer build, ISO/hash or clean-client provenance.
