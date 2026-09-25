@@ -1,0 +1,28 @@
+StoneAge 2001 Sina server-family probe — R1
+SCOPE|late-2001 candidate Sina download IPs + map/demo directory-family CDX metadata|no-payload
+CDX|host=202.106.184.242|label=map-dir|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|host=202.106.184.242|label=demo-dir|status=200|rows=9|bytes=1351|sha256=bb7ebf23bcc984f506d9b05e6c29c6ab93bc2b03364e8b3c9dc288e13e1b7478
+CDX|host=202.106.184.242|label=estoneage|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|host=202.106.184.242|label=stoneage|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|host=202.106.184.193|label=map-dir|status=200|rows=15|bytes=2338|sha256=ac5151a321da97a9cff53981f856c543960747b82fcdcf7fe3527e6692090cf4
+CDX|host=202.106.184.193|label=demo-dir|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+DIRECTORY|host=202.106.184.193|path=/downfiles/map_0826/|rows=2
+DIRECTORY|host=202.106.184.193|path=/downfiles/map_1212/|rows=13
+DIRECTORY|host=202.106.184.242|path=/demo_1004/|rows=8
+DIRECTORY|host=202.106.184.242|path=/demo_1219/|rows=1
+SYNTH|role=map|url=http://202.106.184.193/downfiles/map_1212/Estoneage2.0map_1127.exe|status=200|rows=0|directory_evidence_rows=13
+SYNTH|role=demo|url=http://202.106.184.242/demo_1004/stoneage2.0setup.exe|status=200|rows=0|directory_evidence_rows=8
+SYNTH|role=demo|url=http://202.106.184.242/demo_1219/stoneage2.0setup.exe|status=200|rows=0|directory_evidence_rows=1
+COUNT|directory_families|4
+COUNT|target_rows|0
+COUNT|synthesized_exact_urls|4
+ERROR|scope=202.106.184.193:estoneage|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=202.106.184.193:stoneage|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=202.106.185.221:map-dir|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=202.106.185.221:demo-dir|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=202.106.185.221:estoneage|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=202.106.185.221:stoneage|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=synth:http://202.106.184.193/downfiles/map_0826/Estoneage2.0map_1127.exe|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+COUNT|errors|7
+RESOLUTION|SERVER_DIRECTORY_FAMILIES_RECOVERED|use observed map/demo directories only as bounded target hypotheses
+EVIDENCE_BOUNDARY|directory-family coexistence does not prove a target package used that directory; exact target rows or recovered bytes are required.
