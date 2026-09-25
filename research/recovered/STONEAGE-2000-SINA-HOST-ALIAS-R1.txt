@@ -1,0 +1,22 @@
+StoneAge 2000 Sina download-host alias probe — R1
+SCOPE|games + games1 download.pl aliases|Wayback metadata-only|no-payload
+TARGET|aid=23223|filename=samap_1220.zip
+CDX|host=games.sina.com.cn|window=2000|status=200|rows=2251|map_rows=86|relevant=0|bytes=672682|sha256=e8255661170897d7cde22b18ff5a71fd32fa5be0edb17acaa4e56ec8220db0b8
+CDX|host=games.sina.com.cn|window=2001|status=200|rows=1310|map_rows=56|relevant=1|bytes=359631|sha256=cf1f2677ed9ab81a8c3a1827256ba355a72f439d41afd8e03604b2c5d0bf379a
+HIT|host=games.sina.com.cn|timestamp=20010126074600|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=map&aid=23223&title=%CA%AF%C6%F7%CA%B1%B4%FA%A1%AA%C8%AB%B5%D8%CD%BC&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=samap_1220.zip&size=1410|statuscode=200|mimetype=text/html|digest=CVSWYL227AZFS6FVXL3JHUVL4EUHQICU|length=2500|redirect=
+CDX|host=games.sina.com.cn|window=2002|status=200|rows=32|map_rows=1|relevant=0|bytes=7463|sha256=bfba4ec218dc84ebd5adf35337ac3acc6cd3e78d7fac5a4edf99f88a9546f977
+AVAIL|host=games.sina.com.cn|date=20001220|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|host=games.sina.com.cn|date=20010124|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|host=games.sina.com.cn|date=20011220|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|host=games.sina.com.cn|date=20020101|status=200|hit=0|timestamp=|capture=|http_status=
+CDX|host=games1.sina.com.cn|window=2001|status=200|rows=0|map_rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+AVAIL|host=games1.sina.com.cn|date=20001220|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|host=games1.sina.com.cn|date=20010124|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|host=games1.sina.com.cn|date=20011220|status=200|hit=0|timestamp=|capture=|http_status=
+AVAIL|host=games1.sina.com.cn|date=20020101|status=200|hit=0|timestamp=|capture=|http_status=
+COUNT|relevant_hits|1
+ERROR|scope=cdx:games1.sina.com.cn:2000|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=cdx:games1.sina.com.cn:2002|kind=URLError|message=<urlopen error timed out>
+COUNT|errors|2
+RESOLUTION|HOST_ALIAS_TARGET_ROW_FOUND|replay only the exact historical response before considering payload recovery
+EVIDENCE_BOUNDARY|host-alias rows are route evidence only; payload identity still requires recovered bytes.
