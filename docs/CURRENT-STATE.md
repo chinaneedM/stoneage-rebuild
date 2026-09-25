@@ -1928,12 +1928,14 @@ Supplemental source ledgers:
 
 ## StoneAge 2.5 public surviving-disc set — Ruten control — 2026-09-25
 
-- The public marketplace control set now contains **five separately addressable StoneAge 2.5 listing IDs**, but they must not be counted as five independently proven physical specimens:
+- The public marketplace control set now contains **seven separately addressable StoneAge 2.5 listing IDs**, but they must not be counted as seven independently proven physical specimens:
   - `22632305238624`: boxed **2.5 精靈王傳說新手報到包**, original-package/game-disc wording, 9 full-size photos;
   - `21926883918096`: loose **2.5版 精靈王傳說** disc, listed 2019-06-28;
   - `22242541948520`: separate loose **2.5版 精靈王傳說 PC GAME** listing, listed 2022-10-19;
   - `22615474551866`: **`精靈王傳說 石器時代2.5版 遊戲片+外盒`**, listed 2026-04-11, sold quantity 1 / stock 0, with three full-size photos `_647.jpg / _438.jpg / _740.jpg`;
-  - `22445165101247`: **`石器時代 2.5版 精靈王傳說 全新完整版`**, same seller account `alixson7` as `22242541948520`, one full-size photo `_815.jpg`.
+  - `22445165101247`: **`石器時代 2.5版 精靈王傳說 全新完整版`**, same seller account `alixson7` as `22242541948520`, one full-size photo `_815.jpg`;
+  - `22637629794063`: exact **`石器時代2.5，精靈王傳說`** listing, one full-size photo `_117.jpg`, 600×800, SHA-256 `c6d6e985acadb0b9ce1e9f1aad48522b386015d57a17918e8fb8511e48570abe`;
+  - `22625938678558`: literal Taiwan multi-disc collection **`臺版 石器時代 精靈王傳說 瑪蕾菲雅許願盒 家族開拓史 電腦遊戲光碟 合集（20張不分）收藏`**, seven full-size public photos.
 - **Independence correction:** separate listing IDs/dates do not prove independent physical discs. The fifth listing makes this concrete: `22445165101247` and `22242541948520` use the same seller account, so they are one seller/listing lineage unless physical evidence proves otherwise.
 - Updated R4 visual fingerprinting materially tightens the duplicate-family boundary:
   - `22242541948520:0` vs `22445165101247:0`: **1,581 RANSAC inliers / 0.7543**;
@@ -1946,6 +1948,10 @@ Supplemental source ledgers:
 - Taken together, the high-overlap listings support a **shared disc-face/artwork/photographic family** and reduce the defensible independent-specimen count. They do not establish same physical disc, same pressing or same mastering.
 - The exact source-labelled Yan-Nian disc photograph gives an important negative separator: new `22615474551866` images score only **11 / 0.0118**, **11 / 0.0120** and **7 / 0.0091** against it. By contrast the existing `22632305238624` image 3 remains the strongest Yan-Nian Ruten comparison at **112 / 0.1181**.
 - Consequence: **do not merge the new disc+box/loose-disc visual cluster with the Yan-Nian source-labelled disc family.** Collector evidence says Mainland/Taiwan 2.5 disc artwork differed, but current image metrics are not enough to assign the new cluster to a region or pressing.
+- Expanded seven-listing visual rerun adds two useful controls:
+  - `22637629794063:0` shows only low-strength overlap with the old high-overlap family (maximum cited comparisons **25 / 0.0248** and **24 / 0.0221**), so it remains a **separate visual candidate** rather than being collapsed into that duplicate family;
+  - collection image `22625938678558:3` (`_730.jpg`) matches `22445165101247:0` at **136 / 0.1339**, `22242541948520:0` at **74 / 0.0729**, and `21926883918096:0` at **37 / 0.0364**. This supports a related carrier/artwork object being present in the collection photograph, not same-disc/pressing/mastering identity.
+- The expanded Ruten run resolved **23 full-size images**; all Ruten targets loaded. Provenance run **36094031445**, physical-media run **36094173065**, and visual-fingerprint run **36094173076** all completed **successfully**.
 - Current Ruten/provenance reports still expose **no matrix/IFPI, volume label, filesystem, installer hash, disc image or payload checksum**. Therefore this materially improves carrier-family discrimination but **does not move the field-map byte-provenance anchor earlier than June 2003**.
 - Operational next gate: a public read/dump/file tree tied to one of these exact carrier IDs/photos, or another original 2.5 disc with comparable provenance. No purchase, seller contact or user-side dump is required.
 - Canonical source: `SRC-TW-2026-RUTEN-SA25-PHYSICAL-01`.
