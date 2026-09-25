@@ -1683,3 +1683,62 @@ Every substantial source should record:
   - equality with the official Hangame `sa174hg.exe` package;
   - use of the compressed RAR size as a comparison against Hangame's 248 MB display-size token.
 - Derived note: `research/clients/STONEAGE-JAPAN-SA174GM-GAMANIA-RECOVERY-R1.md`.
+
+
+### SRC-CN-2012-WELOVESA-SA25-CLEAN-TID2132-REFRESH-01
+
+- Source surface: WeLoveSA `客戶端程式/工具` public forum index.
+- Thread title: `〖2.5纯净〗石器客户端`
+- Thread ID: **2132**
+- Author: **rayrix**
+- Original indexed date: **2012-09-26**
+- Refresh/research date: **2026-09-25**
+- Public index URL: `https://lab.welovesa.com/forumdisplay.php?fid=40`
+- Current public-index state observed:
+  - **45 replies / 991 views**;
+  - last reply shown as **2026-09-16 01:02** by **mh713**;
+  - thread remains labelled `售價 石幣 5`.
+- Refresh search:
+  - exact title, author, `tid=2132`, page-number, Discuz archiver/WAP forms, and common file-host terms were tested on current public indexes;
+  - no publicly indexed client filename, archive filename, download URL, attachment ID, cloud-share ID, size or checksum was recovered in this pass.
+- Access boundary:
+  - no login, forum-coin purchase, paid-topic access, cookie reuse, or access-control bypass was attempted;
+  - `纯净` remains a **source title**, not a verified clean-client conclusion.
+- Confidence:
+  - **A for current public index title/author/date/reply-view/latest-reply metadata**;
+  - **OPEN for payload identity, present payload availability, cleanliness and provenance**.
+- Operational consequence:
+  - the thread is still an active/live high-value lead but its anonymous public surface remains bounded;
+  - reopen only from an independently public repost/mirror, exact filename, share ID, checksum, file-tree evidence, or other new payload token.
+- Derived refresh report: `research/recovered/STONEAGE-SA25-PUBLIC-CLEAN-LEADS-REFRESH-R1.txt`.
+
+### SRC-CN-2025-CANGBAOWAN-SA25-BAIDU-01
+
+- Title: `石器时代2.5版，网盘里翻出来的`
+- Author: **saiya141**
+- Public post timestamp: **2025-09-26 09:11:13**
+- Retrieval/research date: **2026-09-25**
+- Public post URL: `https://www.cangbaowan.vip/thread-9642-1-1.html`
+- Current public metadata observed:
+  - **596 views / 7 replies**;
+  - the unauthenticated post exposes an exact Baidu share URL before the paid-topic boundary.
+- Exact public Baidu share:
+  - URL: `https://pan.baidu.com/s/1a2cOmPxo5GjFPFfU5Mj2Ug`
+  - share ID: **`1a2cOmPxo5GjFPFfU5Mj2Ug`**
+- Access boundary:
+  - the extraction-code field is not exposed on the public page;
+  - the remaining topic body states that **50 forum coins** are required;
+  - no purchase, login, extraction-code guessing or access-control bypass was attempted.
+- Exact-token public search:
+  - the share ID, complete Baidu URL, exact post title and title+author combinations were searched;
+  - current indexed results lead back to the source post/forum listing but expose **no independent repost with extraction code, archive filename, size, checksum or file tree**.
+- Source classification:
+  - modern community/cloud-drive recovery lead;
+  - **not** operator-era 2002 provenance and **not** proof of a clean client.
+- Confidence:
+  - **A for public post title/author/timestamp and exact Baidu share ID**;
+  - **OPEN for share liveness, extraction code, payload metadata, payload bytes, cleanliness and relation to known 2.5 corpora**.
+- Operational consequence:
+  - promote `1a2cOmPxo5GjFPFfU5Mj2Ug`, thread `9642` and author `saiya141` to exact recovery tokens;
+  - if publicly accessible bytes or metadata appear later, compare immediately against the recovered MediaFire mixed bridge and 99ds descendant control before assigning provenance.
+- Derived report: `research/recovered/STONEAGE-SA25-PUBLIC-CLEAN-LEADS-REFRESH-R1.txt`.
