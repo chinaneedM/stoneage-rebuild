@@ -117,7 +117,7 @@ def main():
         errors.append(("smzdm-control",type(e).__name__,str(e)))
     try:
         for row in ruten_full_images():
-            if str(row.get("carrier")) not in {"21926883918096","22242541948520","22632305238624","22615474551866"}: continue
+            if str(row.get("carrier")) not in {"21926883918096","22242541948520","22632305238624","22615474551866","22445165101247"}: continue
             try:
                 controls.append(load_image(row["label"],row["url"],referer="https://www.ruten.com.tw/",timeout=18,attempts=1))
             except Exception as e:
