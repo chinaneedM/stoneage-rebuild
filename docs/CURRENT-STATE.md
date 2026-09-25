@@ -2083,6 +2083,26 @@ Supplemental source ledgers:
 - **EVIDENCE BOUNDARY:** this narrows physical-package lineage only. It does not move the pre-June-2003 field-map byte-provenance anchor.
 
 
+
+## `sa-arena` full optical false-positive eliminated — 2026-09-25
+
+- The generic Internet Archive candidate scan had surfaced item `sa-arena` because its current catalogue title is **`疯狂原始人 Stoneage Arena Online CD-ROM 2002`** and the current creator field names 北京华义.
+- A dedicated bounded optical probe now reaches the archived object itself without downloading the full disc:
+  - original `CD [SA_ARENA].bin`: **721,431,312 bytes**, MD5 `f4e7b6ec2b27282d67f6b3982310cc2e`, SHA-1 `f21da5f459db55cc5e09fccadc09f00a7b115177`;
+  - original `CD [SA_ARENA].cue`: **299 bytes**, one `MODE1/2352` track;
+  - ISO9660 volume label **`SA_ARENA`**;
+  - root includes `AUTORUN.INF`, `README.TXT`, `SAARENA.EXE` and `DIRECTX8/`.
+- The preserved 22,009-byte README (SHA-256 `b4a7145830418692f73030e8b6f6561458bbe272252f23178ec538e107cdd3ab`) decodes cleanly as GB18030 and identifies the product as **`疯狂原始人`**. It gives default installation directory `C:\Program Files\Waei\疯狂原始人\`, Beijing-Waei/WGS URLs and registration/charging instructions.
+- The decisive product-separation line says WGS points can be used for **`《石器时代》、《大法师》、《疯狂原始人》`**. Therefore the preserved bytes themselves treat StoneAge and 疯狂原始人 as distinct WGS products. This independently agrees with the SMZDM survivor list that separately names `2.5 / 3.0 / 4.0 / 5.0 / 疯狂原始人`.
+- **CLASSIFICATION:** `sa-arena` is a **same-operator / same-WGS-ecosystem negative control**, **not** a StoneAge 2.5 client candidate. It is removed from the 2.5 recovery queue; no deeper extraction of its 599,802,752-byte Wise installer is justified for the current objective.
+- The current IA `date=2002-05-29` and creator fields remain **catalogue/uploader metadata**, not independently verified contemporaneous publication facts.
+- Actions run **36098498332** completed successfully after the Chinese README decoder was regression-tested.
+- Canonical source: `SRC-CN-IA-SA-ARENA-OPTICAL-01`.
+- Canonical note: `research/clients/STONEAGE-SA-ARENA-NEGATIVE-CONTROL-R1.md`.
+- Derived report: `research/recovered/STONEAGE-SA-ARENA-IA-OPTICAL-R1.txt`.
+- **PROVENANCE CONSEQUENCE:** useful false-positive elimination and WGS control only; the StoneAge 2.5 pre-June-2003 field-map byte anchor is unchanged.
+
+
 ## Immediate next actions
 
 1. **Continue moving the field-map provenance anchor earlier than June 2003 without back-projecting descendant bytes.** The direct Waei 2.5 web/binary surface, the 2002-11-08 4.0 package surface, the exact public-index pass over 20 named carrier identities, the six-name Korean payload file/index pass, the DiscMaster bridge-signature file pass, the exact `sa25up.zip` preservation+archive-neighborhood pass, the access-gated WeLoveSA `tid=2132` public/reply surface; the CangBaoWan and 246SA Baidu routes are now confirmed dead/missing and Judingwan is classified as a descendant one-click control, the 2009 `YSA2.5.8.rar` mirror path plus the 2011 `clnrsbsc` one-click descendant lineage, the tested `ftp.stoneage.com.cn` domain/resource/Availability surface, the newly restored 《轰炸鸡》/`哇靠轰炸鸡` cross-promotion carrier metadata surface, the photographed Wanfang ISBN/barcode surface, the old-disc CHM/RTF+torrent metadata/signature surface, and the newly fingerprinted 2026 public 2.5 archive are now bounded at their tested surfaces: the FTP route produced no 200 payload on the known/predicted path set and must only be reopened from a new historical path token; the 20-carrier DiscMaster/IA pass now completes with zero strict hits and 《轰炸鸡》 should only be reopened there from a new independently sourced package/disc identity or file token; the Wanfang identifier pass has zero strict preservation hits, while the old-disc torrent passes have zero exact target hits and zero exact client/resource signature paths, so those routes likewise reopen only from a new precise media/file token; the 2009 exact mirror has no hit on the tested public preservation indexes; the 2026 archive is a direct descendant/common-corpus control and does not provide independent 2002 provenance. Highest information gain now comes from **publicly recoverable provenance-preserving reads/dumps of surviving 2.5 physical discs** (boxed new-user/gift-pack media already identify the carrier classes), followed by independently preserved contemporaneous installed-tree backups, mirror copies or server-captured caches with provenance. The project does not require the user to purchase or manually dump media. Treat the 2001-12-04 `tyro/upgrade.asp` capture only as a StoneAge 2.0 level-up-guide/topology source; do not reinterpret it as a software-upgrade page. Use June/December mtime+CRC strata only for candidate prioritization, never as release dates.
