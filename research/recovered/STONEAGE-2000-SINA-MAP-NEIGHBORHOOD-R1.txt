@@ -1,0 +1,38 @@
+StoneAge 2000 Sina map neighborhood topology probe — R1
+SCOPE|live same-week StoneAge map pages + Wayback/Arquivo CGI metadata|no-payload
+PAGE|role=target|url=https://games.sina.com.cn/downgames/map/1220492.shtml|status=200|bytes=28422|sha256=70a8521fb94417e240bc82ac128f9f1e943ebb16bf284df446e8dc580d9a66f4|cgis=1
+CGI|role=target|aid=23223|filename=samap_1220.zip|size=1410|col=map|url=http://games1.sina.com.cn/cgi-bin/games/downgames/download.pl?col=map&aid=23223&title=%CA%AF%C6%F7%CA%B1%B4%FA%A1%AA%C8%AB%B5%D8%CD%BC&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=samap_1220.zip&size=1410
+PAGE|role=neighbor|url=https://games.sina.com.cn/downgames/map/1228507.shtml|status=200|bytes=27948|sha256=8e41a6ad9f5a67e5bfcb804e625b331f92e36c23154779d37b686399d6a368de|cgis=1
+CGI|role=neighbor|aid=23680|filename=northisland_1228.zip|size=134|col=map|url=http://games1.sina.com.cn/cgi-bin/games/downgames/download.pl?col=map&aid=23680&title=%CA%AF%C6%F7%CA%B1%B4%FA%A1%AA%B1%B1%B5%BA%CF%EA%CF%B8%B5%D8%CD%BC%D6%B8%C4%CF&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=northisland_1228.zip&size=134
+PAGE|role=neighbor|url=https://games.sina.com.cn/downgames/map/1228508.shtml|status=200|bytes=27947|sha256=1f3614fcd679f86b4da35af924f193536088057628cabcd9733fe0c4cf860286|cgis=1
+CGI|role=neighbor|aid=23681|filename=southisland_1228.zip|size=202|col=map|url=http://games1.sina.com.cn/cgi-bin/games/downgames/download.pl?col=map&aid=23681&title=%CA%AF%C6%F7%CA%B1%B4%FA%A1%AA%C4%CF%B5%BA%CF%EA%CF%B8%B5%D8%CD%BC%D6%B8%C4%CF&author=%D3%CE%C3%F1%B2%BF%C2%E4&filename=southisland_1228.zip&size=202
+WAYBACK_AVAIL|role=target|aid=23223|date=20001220|status=200|hit=0|timestamp=|capture=
+WAYBACK_AVAIL|role=target|aid=23223|date=20001228|status=200|hit=0|timestamp=|capture=
+WAYBACK_AVAIL|role=target|aid=23223|date=20010124|status=200|hit=0|timestamp=|capture=
+WAYBACK_AVAIL|role=target|aid=23223|date=20011127|status=200|hit=0|timestamp=|capture=
+WAYBACK_AVAIL|role=target|aid=23223|date=20020101|status=200|hit=0|timestamp=|capture=
+WAYBACK_CDX|role=target|aid=23223|filename=samap_1220.zip|status=200|rows=0|bytes=3
+ARQUIVO|mode=version|role=target|aid=23223|status=200|rows=0|bytes=536
+WAYBACK_AVAIL|role=neighbor|aid=23680|date=20001220|status=200|hit=0|timestamp=|capture=
+WAYBACK_AVAIL|role=neighbor|aid=23680|date=20001228|status=200|hit=0|timestamp=|capture=
+WAYBACK_AVAIL|role=neighbor|aid=23680|date=20010124|status=200|hit=0|timestamp=|capture=
+WAYBACK_AVAIL|role=neighbor|aid=23680|date=20011127|status=200|hit=0|timestamp=|capture=
+WAYBACK_AVAIL|role=neighbor|aid=23680|date=20020101|status=200|hit=0|timestamp=|capture=
+WAYBACK_AVAIL|role=neighbor|aid=23681|date=20001220|status=200|hit=0|timestamp=|capture=
+WAYBACK_AVAIL|role=neighbor|aid=23681|date=20001228|status=200|hit=0|timestamp=|capture=
+WAYBACK_AVAIL|role=neighbor|aid=23681|date=20010124|status=200|hit=0|timestamp=|capture=
+WAYBACK_AVAIL|role=neighbor|aid=23681|date=20011127|status=200|hit=0|timestamp=|capture=
+WAYBACK_AVAIL|role=neighbor|aid=23681|date=20020101|status=200|hit=0|timestamp=|capture=
+WAYBACK_CDX|role=neighbor|aid=23681|filename=southisland_1228.zip|status=200|rows=1|bytes=405
+WAYBACK_ROW|role=neighbor|aid=23681|timestamp=20051103130625|statuscode=302|mimetype=text/html|redirect=|digest=KCPQQOFS6AMGEGVZLK5LHRTPAWGIU3TA|length=600
+ARQUIVO|mode=version|role=neighbor|aid=23681|status=200|rows=0|bytes=591
+COUNT|tokens|3
+COUNT|neighbor_redirects|0
+ERROR|scope=arquivo:cdx:23223|kind=JSONDecodeError|message=Expecting value: line 1 column 1 (char 0)
+ERROR|scope=cdx:23680|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=arquivo:version:23680|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
+ERROR|scope=arquivo:cdx:23680|kind=URLError|message=<urlopen error _ssl.c:983: The handshake operation timed out>
+ERROR|scope=arquivo:cdx:23681|kind=JSONDecodeError|message=Expecting value: line 1 column 1 (char 0)
+COUNT|errors|5
+RESOLUTION|NO_NEIGHBOR_REDIRECT_TOPOLOGY|same-week controls expose no archived redirect on tested indexes
+EVIDENCE_BOUNDARY|neighbor packages are topology controls only; they do not prove target payload identity or direct-file location.
