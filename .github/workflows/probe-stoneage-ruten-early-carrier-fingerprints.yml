@@ -1,0 +1,51 @@
+name: Fingerprint early Ruten StoneAge carriers
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_ruten_early_carrier_fingerprint_probe.py
+      - tests/test_stoneage_ruten_early_carrier_fingerprint_probe.py
+      - .github/workflows/probe-stoneage-ruten-early-carrier-fingerprints.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-ruten-early-carrier-fingerprints
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install transient image-analysis dependencies
+        run: python3 -m pip install --disable-pip-version-check --quiet numpy opencv-python-headless
+      - name: Validate focused probe
+        run: python3 -m unittest tests.test_stoneage_ruten_early_carrier_fingerprint_probe -v
+      - name: Fingerprint public images transiently
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_ruten_early_carrier_fingerprint_probe > research/recovered/STONEAGE-EARLY-RUTEN-CARRIER-FINGERPRINTS-R1.txt
+      - name: Commit derived metrics only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-EARLY-RUTEN-CARRIER-FINGERPRINTS-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: fingerprint early Ruten StoneAge carriers'
+          for n in 1 2 3 4 5; do
+            git push && exit 0
+            sleep $((n * 3))
+          done
+          exit 1
