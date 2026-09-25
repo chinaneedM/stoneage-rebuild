@@ -18,8 +18,8 @@ ITEM_RE=re.compile(r'https?://www\.ruten\.com\.tw/item/(\d{12,16})/?',re.I)
 ITEM_PATH_RE=re.compile(r'(?:"|\')/item/(\d{12,16})/?(?:"|\')',re.I)
 TEXT_ITEM_RE=re.compile(r'(\d{12,16})')
 TITLE_RE=re.compile(r'(?is)<title[^>]*>(.*?)</title>')
-URL_RE=re.compile(r'''(?i)(?:https?:)?//[^"'<>\\s]+|/[^"'<>\\s]+''')
-SCRIPT_RE=re.compile(r'''(?is)<script\\b[^>]*?src=["']([^"']+)["']''')
+URL_RE=re.compile(r'''(?i)(?:https?:)?//[^"'<>\s]+|/[^"'<>\s]+''')
+SCRIPT_RE=re.compile(r'''(?is)<script\b[^>]*?src=["']([^"']+)["']''')
 TAG_RE=re.compile(r'(?is)<[^>]+>')
 
 def clean(v,n=1800):
