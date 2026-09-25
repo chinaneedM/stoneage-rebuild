@@ -21,7 +21,7 @@ from tools.stoneage_sa25_physical_image_fingerprint_probe import (
     wanfang_page_images,
 )
 
-STANDALONE = {"21926883918096", "22242541948520"}
+STANDALONE = {"21926883918096", "22242541948520", "22637629794063"}
 BOXED = "22632305238624"
 
 
