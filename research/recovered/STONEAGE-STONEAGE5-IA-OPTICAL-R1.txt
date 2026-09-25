@@ -1,0 +1,268 @@
+StoneAge Stoneage-5 Internet Archive optical-carrier probe — R1
+SCOPE|IA-metadata+CUE+bounded-raw-sector-filesystem+small-text+EXE-prefix-reads|no-full-disc-download|no-payload-commit
+ITEM|identifier=Stoneage-5|title=石器时代Online 宠物进化史 CD-ROM|date=2002-12-27|creator=北京华义联合软件开发有限公司|uploader=994467746@qq.com|mediatype=software|collection=cdrom_contributions|description=《石器时代》（英语：StoneAge）是由网石株式会社(Netmarble Corporation)作为其IP所有人的2DMMORPG网络游戏，最早于1999年发行。以远古时代为游戏背景，游戏玩家常被称为原始人，最大特色在于其宠物系统，玩家可以携带不同的宠物协助战斗，亦可用作骑乘以提升人物战斗能力。
+COUNT|optical_candidates|2
+OPTICAL|index=1|name=CD [STA5].bin|size=733057248|md5=61a8b9f2e7db18c3e3e95c6c12e3674b|sha1=6053dce3df2723250ddb52a98b3e8cf2552cd791|crc32=98d6ee68|source=original|format=Unknown
+OPTICAL|index=2|name=CD [STA5].cue|size=295|md5=8cd5e5427248427175392d9632b37bc3|sha1=4b667f113add8d1ad20dc4ae0eff10a8b97a1203|crc32=9c673076|source=original|format=Cue Sheet
+CUE|index=1|name=CD [STA5].cue|status=200|bytes=295|tracks=1
+TRACK|cue=1|number=1|mode=MODE1/2352|file=CD [STA5].bin|index_frames=0
+RANGE_PVD|index=1|track=1|mode=MODE1/2352|track_start_frames=0|status=206|honored=1|content_range=bytes 37632-39983/733057248
+ISO9660|index=1|track=1|mode=MODE1/2352|volume_id=STA5|system_id=|volume_sectors=311674|volume_bytes=638308352|root_extent=19|root_size=2048
+RANGE_ROOT|index=1|status=206|honored=1|bytes=2048|content_range=bytes 44688-47039/733057248
+COUNT|index=1|root_entries|17
+ROOT|index=1|name=.|dir=1|extent=19|size=2048|flags=2
+ROOT|index=1|name=..|dir=1|extent=19|size=2048|flags=2
+ROOT|index=1|name=0X0804.INI|dir=0|extent=25|size=2939|flags=0
+ROOT|index=1|name=AUTORUN.INF|dir=0|extent=27|size=46|flags=0
+ROOT|index=1|name=DATA1.CAB|dir=0|extent=28|size=612584670|flags=0
+ROOT|index=1|name=DPSETUP.EXE|dir=0|extent=299142|size=380662|flags=0
+ROOT|index=1|name=DX81CHS.EXE|dir=0|extent=299328|size=11954544|flags=0
+ROOT|index=1|name=DX81NTC.EXE|dir=0|extent=305166|size=7773552|flags=0
+ROOT|index=1|name=INSTALL.EXE|dir=0|extent=308962|size=24576|flags=0
+ROOT|index=1|name=INSTMSIA.EXE|dir=0|extent=308974|size=1708856|flags=0
+ROOT|index=1|name=INSTMSIW.EXE|dir=0|extent=309809|size=1822520|flags=0
+ROOT|index=1|name=ISSCRIPT.MSI|dir=0|extent=310699|size=633856|flags=0
+ROOT|index=1|name=README.TXT|dir=0|extent=311009|size=33846|flags=0
+ROOT|index=1|name=SETUP.EXE|dir=0|extent=311026|size=217088|flags=0
+ROOT|index=1|name=SETUP.INI|dir=0|extent=311132|size=1157|flags=0
+ROOT|index=1|name=STA5.MSI|dir=0|extent=311133|size=782908|flags=0
+ROOT|index=1|name=STONEAGE.ICO|dir=0|extent=311516|size=766|flags=0
+RANGE_FILE|name=AUTORUN.INF|status=206|honored=1|requested=46|bytes=2048|content_range=bytes 63504-65855/733057248
+TEXT_FILE|index=1|name=AUTORUN.INF|size=46|sha256=221ed98b44b602c918e3471df5a77eae846f4da7fc8a500fb7b533d251441078|encoding=utf-8
+COUNT|index=1|name=AUTORUN.INF|evidence_lines=2
+TEXT_EVIDENCE|index=1|name=AUTORUN.INF|line=1|value=OPEN=install.exe
+TEXT_EVIDENCE|index=1|name=AUTORUN.INF|line=2|value=ICON=StoneAge.ico
+RANGE_FILE|name=DPSETUP.EXE|status=206|honored=1|requested=380662|bytes=380928|content_range=bytes 703581984-704019455/733057248
+EXE_PREFIX|index=1|name=DPSETUP.EXE|file_size=380662|prefix_bytes=380662|prefix_sha256=71c06c0c1e6c4dae0c919eaa2965a33e82d0de20843d6e35b48c596a7131b2c2
+PE|index=1|name=DPSETUP.EXE|mz=1|pe_offset=208|pe_complete=1|machine=332|sections=4|timestamp=997722818|optional_magic=267|subsystem=2
+COUNT|index=1|name=DPSETUP.EXE|key_strings=10
+EXE_STRING|index=1|name=DPSETUP.EXE|n=1|value=GetVersionExA
+EXE_STRING|index=1|name=DPSETUP.EXE|n=2|value=GetClientRect
+EXE_STRING|index=1|name=DPSETUP.EXE|n=3|value=GLBSInstall
+EXE_STRING|index=1|name=DPSETUP.EXE|n=4|value=Demo installations only run on the computer they were created on.
+EXE_STRING|index=1|name=DPSETUP.EXE|n=5|value=Install
+EXE_STRING|index=1|name=DPSETUP.EXE|n=6|value=Could not initialize installation.
+EXE_STRING|index=1|name=DPSETUP.EXE|n=7|value=Installation
+EXE_STRING|index=1|name=DPSETUP.EXE|n=8|value=Initializing Wise Installation Wizard...
+EXE_STRING|index=1|name=DPSETUP.EXE|n=9|value=VS_VERSION_INFO
+EXE_STRING|index=1|name=DPSETUP.EXE|n=10|value=FileVersion
+RANGE_FILE|name=DX81CHS.EXE|status=206|honored=1|requested=524288|bytes=524288|content_range=bytes 704019456-704621567/733057248
+EXE_PREFIX|index=1|name=DX81CHS.EXE|file_size=11954544|prefix_bytes=524288|prefix_sha256=d96de2f279f2d5fa02bca8e36cfae8a24b4ccae57744b6c2346b4077806dce4c
+PE|index=1|name=DX81CHS.EXE|mz=1|pe_offset=208|pe_complete=1|machine=332|sections=3|timestamp=960324236|optional_magic=267|subsystem=2
+COUNT|index=1|name=DX81CHS.EXE|key_strings=18
+EXE_STRING|index=1|name=DX81CHS.EXE|n=1|value=setupapi.dll
+EXE_STRING|index=1|name=DX81CHS.EXE|n=2|value=setupx.dll
+EXE_STRING|index=1|name=DX81CHS.EXE|n=3|value=Version
+EXE_STRING|index=1|name=DX81CHS.EXE|n=4|value=Software\Microsoft\Windows\CurrentVersion\App Paths
+EXE_STRING|index=1|name=DX81CHS.EXE|n=5|value=GetVersionExA
+EXE_STRING|index=1|name=DX81CHS.EXE|n=6|value=GetFileVersionInfoA
+EXE_STRING|index=1|name=DX81CHS.EXE|n=7|value=GetFileVersionInfoSizeA
+EXE_STRING|index=1|name=DX81CHS.EXE|n=8|value=VERSION.dll
+EXE_STRING|index=1|name=DX81CHS.EXE|n=9|value=rundll32.exe %s,InstallHinfSection %s 128 %s
+EXE_STRING|index=1|name=DX81CHS.EXE|n=10|value=DefaultInstall
+EXE_STRING|index=1|name=DX81CHS.EXE|n=11|value=DoInfInstall
+EXE_STRING|index=1|name=DX81CHS.EXE|n=12|value=Software\Microsoft\Windows\CurrentVersion\RunOnce
+EXE_STRING|index=1|name=DX81CHS.EXE|n=13|value=dsetup.inf
+EXE_STRING|index=1|name=DX81CHS.EXE|n=14|value=dxsetup.exe
+EXE_STRING|index=1|name=DX81CHS.EXE|n=15|value=DSETUP.dll
+EXE_STRING|index=1|name=DX81CHS.EXE|n=16|value=dsetup32.dll
+EXE_STRING|index=1|name=DX81CHS.EXE|n=17|value=dpvsetup.exe
+EXE_STRING|index=1|name=DX81CHS.EXE|n=18|value=kssetup.inf
+RANGE_FILE|name=DX81NTC.EXE|status=206|honored=1|requested=524288|bytes=524288|content_range=bytes 717750432-718352543/733057248
+EXE_PREFIX|index=1|name=DX81NTC.EXE|file_size=7773552|prefix_bytes=524288|prefix_sha256=fff7146b2c470f7da1706db4c398f01e8d10de8b31bca3d214af9dd29307ecfb
+PE|index=1|name=DX81NTC.EXE|mz=1|pe_offset=208|pe_complete=1|machine=332|sections=3|timestamp=960324236|optional_magic=267|subsystem=2
+COUNT|index=1|name=DX81NTC.EXE|key_strings=17
+EXE_STRING|index=1|name=DX81NTC.EXE|n=1|value=setupapi.dll
+EXE_STRING|index=1|name=DX81NTC.EXE|n=2|value=setupx.dll
+EXE_STRING|index=1|name=DX81NTC.EXE|n=3|value=Version
+EXE_STRING|index=1|name=DX81NTC.EXE|n=4|value=Software\Microsoft\Windows\CurrentVersion\App Paths
+EXE_STRING|index=1|name=DX81NTC.EXE|n=5|value=GetVersionExA
+EXE_STRING|index=1|name=DX81NTC.EXE|n=6|value=GetFileVersionInfoA
+EXE_STRING|index=1|name=DX81NTC.EXE|n=7|value=GetFileVersionInfoSizeA
+EXE_STRING|index=1|name=DX81NTC.EXE|n=8|value=VERSION.dll
+EXE_STRING|index=1|name=DX81NTC.EXE|n=9|value=rundll32.exe %s,InstallHinfSection %s 128 %s
+EXE_STRING|index=1|name=DX81NTC.EXE|n=10|value=DefaultInstall
+EXE_STRING|index=1|name=DX81NTC.EXE|n=11|value=DoInfInstall
+EXE_STRING|index=1|name=DX81NTC.EXE|n=12|value=Software\Microsoft\Windows\CurrentVersion\RunOnce
+EXE_STRING|index=1|name=DX81NTC.EXE|n=13|value=dpvsetup.exe
+EXE_STRING|index=1|name=DX81NTC.EXE|n=14|value=dxsetup.exe
+EXE_STRING|index=1|name=DX81NTC.EXE|n=15|value=dsetup.dll
+EXE_STRING|index=1|name=DX81NTC.EXE|n=16|value=dsetup32.dll
+EXE_STRING|index=1|name=DX81NTC.EXE|n=17|value=kssetup.inf
+RANGE_FILE|name=INSTALL.EXE|status=206|honored=1|requested=24576|bytes=24576|content_range=bytes 726678624-726706847/733057248
+EXE_PREFIX|index=1|name=INSTALL.EXE|file_size=24576|prefix_bytes=24576|prefix_sha256=3a341d225720867506ef810dad467a9384fc926c9f99b3084c082d52b33fd221
+PE|index=1|name=INSTALL.EXE|mz=1|pe_offset=216|pe_complete=1|machine=332|sections=3|timestamp=1040955668|optional_magic=267|subsystem=2
+COUNT|index=1|name=INSTALL.EXE|key_strings=4
+EXE_STRING|index=1|name=INSTALL.EXE|n=1|value=GetVersion
+EXE_STRING|index=1|name=INSTALL.EXE|n=2|value=setup.exe
+EXE_STRING|index=1|name=INSTALL.EXE|n=3|value=Installation
+EXE_STRING|index=1|name=INSTALL.EXE|n=4|value=DPSetup.exe
+RANGE_FILE|name=INSTMSIA.EXE|status=206|honored=1|requested=524288|bytes=524288|content_range=bytes 726706848-727308959/733057248
+EXE_PREFIX|index=1|name=INSTMSIA.EXE|file_size=1708856|prefix_bytes=524288|prefix_sha256=4418efcdf53308b8bce1f80ea7ed7c16f264309e8ce7e65225fae0452162db38
+PE|index=1|name=INSTMSIA.EXE|mz=1|pe_offset=208|pe_complete=1|machine=332|sections=3|timestamp=983483792|optional_magic=267|subsystem=2
+COUNT|index=1|name=INSTMSIA.EXE|key_strings=24
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=1|value=Software\Microsoft\Windows\CurrentVersion\App Paths
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=2|value=setupapi.dll
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=3|value=setupx.dll
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=4|value=Version
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=5|value=e\setup\iexpress\wextract\obj\i386\wextract.pdb
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=6|value=GetVersionExA
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=7|value=GetFileVersionInfoA
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=8|value=GetFileVersionInfoSizeA
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=9|value=VERSION.dll
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=10|value=rundll32.exe %s,InstallHinfSection %s 128 %s
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=11|value=DefaultInstall
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=12|value=DoInfInstall
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=13|value=Software\Microsoft\Windows\CurrentVersion\RunOnce
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=14|value=Do you accept all of the terms of the preceding License Agreement? If you choose No, Install will close. To install you must accept this agreement.
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=15|value=8Unable to retrieve operating system version information.!Memory allocation request failed.
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=16|value=Setup could not find a drive with %s KB free disk space to install the program. Please free up some space first and press RETRY or press CANCEL to exit setup.KThat folder is invalid. Please make sure the folder exists and is writable.IYou must specify a folder with fully qualified pathname or choose Cancel.!Could not update folder edit box.5Could not load functions required for browser dialog.7Could not load Shell32.dll required for browser dialog.
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=17|value=(Error creating process <%s>. Reason: %s1The cluster size in this system is not supported.,A required resource appears to be corrupted.QWindows 95 or Windows NT 4.0 Beta 2 or greater is required for this installation.
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=18|value=Error loading %shGetProcAddress() failed on function '%s'. Possible reason: incorrect version of advpack.dll being used./Windows 95 or Windows NT is required to install
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=19|value=To install this program, you need %s KB disk space on drive %s. It is recommended that you free up the required disk space before you continue.
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=20|value=$NT Shutdown: OpenProcessToken error.)NT Shutdown: AdjustTokenPrivileges error.!NT Shutdown: ExitWindowsEx error.}Extracting file failed. It is most likely caused by low memory (low disk space for swapping file) or corrupted Cabinet file.aThe setup program could not retrieve the volume information for drive (%s) .
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=21|value=System message: %s.xSetup could not find a drive with %s KB free disk space to install the program. Please free up some space and try again.eThe installation program appears to be damaged or corrupted. Contact the vendor of this application.
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=22|value=/C:<Cmd> -- Override Install Command defined by author.
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=23|value=You do not have administrator privileges on this machine. Some installations cannot be completed correctly unless they are run by an administrator.
+EXE_STRING|index=1|name=INSTMSIA.EXE|n=24|value=:The folder '%s' does not exist. Do you want to create it?hAnother copy of the '%s' package is already running on your system. You can only run one copy at a time.OThe '%s' package is not compatible with the version of Windows you are running.SThe '%s' package is not compatible with the version of the file: %s on your system.
+RANGE_FILE|name=INSTMSIW.EXE|status=206|honored=1|requested=524288|bytes=524288|content_range=bytes 728670768-729272879/733057248
+EXE_PREFIX|index=1|name=INSTMSIW.EXE|file_size=1822520|prefix_bytes=524288|prefix_sha256=72269e8dbd5743793144c0f5f1c0850c63102db144f31ab595e7b0e0c9347eaf
+PE|index=1|name=INSTMSIW.EXE|mz=1|pe_offset=208|pe_complete=1|machine=332|sections=3|timestamp=983483792|optional_magic=267|subsystem=2
+COUNT|index=1|name=INSTMSIW.EXE|key_strings=24
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=1|value=Software\Microsoft\Windows\CurrentVersion\App Paths
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=2|value=setupapi.dll
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=3|value=setupx.dll
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=4|value=Version
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=5|value=e\setup\iexpress\wextract\obj\i386\wextract.pdb
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=6|value=GetVersionExA
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=7|value=GetFileVersionInfoA
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=8|value=GetFileVersionInfoSizeA
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=9|value=VERSION.dll
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=10|value=rundll32.exe %s,InstallHinfSection %s 128 %s
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=11|value=DefaultInstall
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=12|value=DoInfInstall
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=13|value=Software\Microsoft\Windows\CurrentVersion\RunOnce
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=14|value=Do you accept all of the terms of the preceding License Agreement? If you choose No, Install will close. To install you must accept this agreement.
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=15|value=8Unable to retrieve operating system version information.!Memory allocation request failed.
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=16|value=Setup could not find a drive with %s KB free disk space to install the program. Please free up some space first and press RETRY or press CANCEL to exit setup.KThat folder is invalid. Please make sure the folder exists and is writable.IYou must specify a folder with fully qualified pathname or choose Cancel.!Could not update folder edit box.5Could not load functions required for browser dialog.7Could not load Shell32.dll required for browser dialog.
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=17|value=(Error creating process <%s>. Reason: %s1The cluster size in this system is not supported.,A required resource appears to be corrupted.QWindows 95 or Windows NT 4.0 Beta 2 or greater is required for this installation.
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=18|value=Error loading %shGetProcAddress() failed on function '%s'. Possible reason: incorrect version of advpack.dll being used./Windows 95 or Windows NT is required to install
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=19|value=To install this program, you need %s KB disk space on drive %s. It is recommended that you free up the required disk space before you continue.
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=20|value=$NT Shutdown: OpenProcessToken error.)NT Shutdown: AdjustTokenPrivileges error.!NT Shutdown: ExitWindowsEx error.}Extracting file failed. It is most likely caused by low memory (low disk space for swapping file) or corrupted Cabinet file.aThe setup program could not retrieve the volume information for drive (%s) .
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=21|value=System message: %s.xSetup could not find a drive with %s KB free disk space to install the program. Please free up some space and try again.eThe installation program appears to be damaged or corrupted. Contact the vendor of this application.
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=22|value=/C:<Cmd> -- Override Install Command defined by author.
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=23|value=You do not have administrator privileges on this machine. Some installations cannot be completed correctly unless they are run by an administrator.
+EXE_STRING|index=1|name=INSTMSIW.EXE|n=24|value=:The folder '%s' does not exist. Do you want to create it?hAnother copy of the '%s' package is already running on your system. You can only run one copy at a time.OThe '%s' package is not compatible with the version of Windows you are running.SThe '%s' package is not compatible with the version of the file: %s on your system.
+RANGE_FILE|name=README.TXT|status=206|honored=1|requested=33846|bytes=34816|content_range=bytes 731493168-731533151/733057248
+TEXT_FILE|index=1|name=README.TXT|size=33846|sha256=bda176919bab8cddca5b542d177fc8aeb5bc1728a11fe6380f2ed85c3980911e|encoding=gb18030
+COUNT|index=1|name=README.TXT|evidence_lines=40
+TEXT_EVIDENCE|index=1|name=README.TXT|line=1|value=石器时代ONLINE宠物进化史
+TEXT_EVIDENCE|index=1|name=README.TXT|line=2|value=谣传魔族即将大举入侵伊甸大陆，恐龙博士的优秀弟子们，决定要以神秘的恐龙融合法，将恐龙进化为更强悍，更能抵抗大敌的新品种。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=3|value=宠物融合分成两阶段，第一阶段是宠物融合成蛋，此阶段决定宠物蛋的属性、外型、技能、基本能力值，第二阶段为饲养宠物蛋，主要决定未来宠物诞生时的附加数值。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=4|value=4. 蛋喂养的等级跟其本身等级无关，且蛋战斗所提升的等级对成长率没有加成的功用，蛋只可练至六十级。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=5|value=6. 饲养营养剂的来源，主要是打怪物身上取得材料，再利用npc帮助磨药，组合两种材料来取得。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=6|value=10. 融合完之宠物不得转生，但转生宠可用来融合
+TEXT_EVIDENCE|index=1|name=README.TXT|line=7|value=11. 融合之宠物最多以三只为限，第一只称为主体，余皆称客体。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=8|value=1. 蛋的饲养，有设定孵化时间，（以40小时为限，以宠物蛋在玩家身上线时间计算），在孵化期间，玩家可用药剂喂养，有次数限制，最多为40次。主要是针对四种能力（体防攻敏），各有四类药可以增加能力值，每一种药又分为五级，等级越高的药，加的数值就越多。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=9|value=2. 饲养药剂的来源，主要是打怪物身上取得材料，再利用npc磨药，组合两种材料来取得。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=10|value=一级药剂名 生命的白药粉 强化的白药丸 力量的白药汤 精力的白药丹
+TEXT_EVIDENCE|index=1|name=README.TXT|line=11|value=二级药剂名 生命的黄药粉 强化的黄药丸 力量的黄药汤 精力的黄药丹
+TEXT_EVIDENCE|index=1|name=README.TXT|line=12|value=三级药剂名 生命的绿药粉 强化的绿药丸 力量的绿药汤 精力的绿药丹
+TEXT_EVIDENCE|index=1|name=README.TXT|line=13|value=四级药剂名 生命的黑药粉 强化的黑药丸 力量的黑药汤 精力的黑药丹
+TEXT_EVIDENCE|index=1|name=README.TXT|line=14|value=五级药剂名 生命的红药粉 强化的红药丸 力量的红药汤 精力的红药丹
+TEXT_EVIDENCE|index=1|name=README.TXT|line=15|value=一、注册成为北京华义游戏网免费会员
+TEXT_EVIDENCE|index=1|name=README.TXT|line=16|value=注意：如果您已经加入过北京华义游戏网的线上会员，请直接跳至下个步骤——开启《石器时代ONLINE宠物进化史》游戏。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=17|value=1.感谢您购买北京华义联合软件开发有限公司的产品。您使用的是北京华义的“快速注册流程”，可快速注册并开启游戏。确定连上网络后，打开浏览器，进入“北京华义游戏网（http://www.waei.com.cn）”首页，并点击画面左上方的“快速注册”选项。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=18|value=2.开始填写您的基本资料，请按画面所要求的格式填写即可。请务必填写正确的电子邮件地址，否则将无法收到确认信。全部填写完成后请点击“送出资料”如果注册成功您的电子邮件信箱里就会收取到“华义游戏网－ 快速注册信”，信中会告知您已注册成功的“会员帐号和会员密码”。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=19|value=3.现在只需在您想要开启的游戏前打勾并送出资料便可进行游戏。如果有的游戏选项前为灰色且无法点选，则说明您已经开启了该游戏的使用权限。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=20|value=4.请到您的电子邮件信箱收取“华义游戏网－ 游戏开启成功信”，信中会告知您所注册游戏的序列号。此序列号是您修改会员资料的凭证，请您牢记！
+TEXT_EVIDENCE|index=1|name=README.TXT|line=21|value=二、开启《石器时代ONLINE宠物进化史》
+TEXT_EVIDENCE|index=1|name=README.TXT|line=22|value=1.确定连上网络后，打开浏览器，进入“北京华义游戏网（http://www.waei.com.cn）”首页，并点击画面左上方的“快速开启”选项。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=23|value=4.请到您的电子邮件信箱收取“北京华义游戏网－ 游戏开启成功信”，信中会告知您所注册游戏的序列号。此序列号是您修改会员资料的凭证，请您切勿牢记！
+TEXT_EVIDENCE|index=1|name=README.TXT|line=24|value=5.如果您的开启正确无误的话，您便完成了加入北京华义游戏网游戏开启的程序。非常感谢您对北京华义联合软件开发有限公司产品的支持！
+TEXT_EVIDENCE|index=1|name=README.TXT|line=25|value=三、WGS点数开卡储值
+TEXT_EVIDENCE|index=1|name=README.TXT|line=26|value=《石器时代ONLINE宠物进化史》是一款架构于WGS游戏收费系统的网络游戏，每次您上线进行本游戏时，我们都会计算您所花费的游戏时间，扣除您会员帐户内的WGS游戏点数。当产品的WGS点数消耗完后，您需要购买WGS点数卡进行充值。您所得到的WGS点数会储存在您的北京华义游戏网会员帐号中，可以用于《石器时代》、《大法师》、《石器时代ONLINE宠物进化史》等所有基于WGS游戏收费系统的游戏。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=27|value=1.在会员专区，点击“WGS点数开卡储值”，输入您的北京华义游戏网“会员帐号”、“会员密码”、WGS卡号和密码后，按“送出资料”钮。（注意：此处的会员密码为您加入北京华义游戏网线上会员时，所自定的会员密码。）
+TEXT_EVIDENCE|index=1|name=README.TXT|line=28|value=2.若您所输入的北京华义游戏网“会员帐号”与“会员密码”正确无误，而且系统检查您的WGS卡号与密码正确的话，将会自动为您补充WGS点数。如果您输入的“会员帐号”与“会员密码”无法正式启动，可能是由于您的填写有错误，请仔细核对一下。如果有问题，请直接致电本公司客户服务部，由客服人员为您处理。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=29|value=四、查询确认WGS点数
+TEXT_EVIDENCE|index=1|name=README.TXT|line=30|value=如果您想查询您的WGS点数余额，可以到北京华义游戏网会员专区的“WGS查询点数”页面查询。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=31|value=五、WGS的连线功能与收费方法
+TEXT_EVIDENCE|index=1|name=README.TXT|line=32|value=由于网络游戏制作公司必须负担庞大的频宽费用及后续游戏的维护成本，而后必须向玩家收取少许的主机服务费用。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=33|value=华义独创的“WGS点数卡”收费方式，玩家玩游戏时以扣点的方式付费，不玩时点数依然存在，想玩就玩不必考虑时间长短，无时间失效问题，且连线以时段计费，让玩家更能以经济能力衡量使用时间，有效解决使用期失效可能带来的纠纷及不便，且让玩家无时间差的使用，对玩家来说绝对是更为省钱的。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=34|value=北京华义提供的所有网络游戏均采用WGS点数付费方式，玩家可以享受多种游戏选择，想玩哪套就连哪套，不必每套游戏都交月费，只要购买WGS点数卡，将可通用所有支持WGS收费系统的网络游戏，且点数永不失效，想何时玩就何时玩，不用怕失去时效。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=35|value=WGS游戏点数卡的销售价格和《石器时代4.0》的扣点方式，以北京华义游戏网的公告为主。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=36|value=六、WGS点数卡购买方法
+TEXT_EVIDENCE|index=1|name=README.TXT|line=37|value=1.玩家可以到全国各地软件专卖店、书亭及报摊直接购买WGS点数卡，点数卡刮除后取得WGS卡的密码。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=38|value=2.玩家可以汇款致北京华义游戏网上直接购买WGS点数卡，在收到汇款后系统会将点数写入您的个人帐号中，无须开卡程序。如果您想直接向北京华义购买WGS点数卡，请通过邮局汇款给北京华义相应费用（请勿将现金夹在平信中发出），具体费用请参加北京华义游戏网公布的WGS卡价格，同时在附言栏注明“购买WGS点数”字样，并写清您的WGS帐号（注意区别大小写）和联系电话（如果有的话）。请写清您的通信地址、邮政编码和收件人姓名，切记不要将会员密码写在汇款单中。
+TEXT_EVIDENCE|index=1|name=README.TXT|line=39|value=邮购地址：北京市朝阳区北三环东路8号静安中心9072室
+TEXT_EVIDENCE|index=1|name=README.TXT|line=40|value=收件人：北京华义联合软件开发有限公司
+RANGE_FILE|name=SETUP.EXE|status=206|honored=1|requested=217088|bytes=217088|content_range=bytes 731533152-731782463/733057248
+EXE_PREFIX|index=1|name=SETUP.EXE|file_size=217088|prefix_bytes=217088|prefix_sha256=cbbf14634ebd232d4b05d49ccfb7346a6ec71273ea93868de54eb843ba0c62db
+PE|index=1|name=SETUP.EXE|mz=1|pe_offset=264|pe_complete=1|machine=332|sections=4|timestamp=1024942951|optional_magic=267|subsystem=2
+COUNT|index=1|name=SETUP.EXE|key_strings=60
+EXE_STRING|index=1|name=SETUP.EXE|n=1|value=GetFileVersionInfoA
+EXE_STRING|index=1|name=SETUP.EXE|n=2|value=GetFileVersionInfoSizeA
+EXE_STRING|index=1|name=SETUP.EXE|n=3|value=VERSION.dll
+EXE_STRING|index=1|name=SETUP.EXE|n=4|value=GetVersionExA
+EXE_STRING|index=1|name=SETUP.EXE|n=5|value=ClientToScreen
+EXE_STRING|index=1|name=SETUP.EXE|n=6|value=GetClientRect
+EXE_STRING|index=1|name=SETUP.EXE|n=7|value=GetVersion
+EXE_STRING|index=1|name=SETUP.EXE|n=8|value=InstallShieldMSIDelete10
+EXE_STRING|index=1|name=SETUP.EXE|n=9|value=MsiVersion
+EXE_STRING|index=1|name=SETUP.EXE|n=10|value=Product
+EXE_STRING|index=1|name=SETUP.EXE|n=11|value=https://
+EXE_STRING|index=1|name=SETUP.EXE|n=12|value=http://
+EXE_STRING|index=1|name=SETUP.EXE|n=13|value=Setup.iss
+EXE_STRING|index=1|name=SETUP.EXE|n=14|value=This Setup was created with an EVALUATION VERSION of InstallShield Developer
+EXE_STRING|index=1|name=SETUP.EXE|n=15|value=ISSetup
+EXE_STRING|index=1|name=SETUP.EXE|n=16|value=Software\Microsoft\Windows\CurrentVersion\Run
+EXE_STRING|index=1|name=SETUP.EXE|n=17|value=Software\Microsoft\Windows\CurrentVersion
+EXE_STRING|index=1|name=SETUP.EXE|n=18|value=SetupLogFileName
+EXE_STRING|index=1|name=SETUP.EXE|n=19|value=Software\InstallShield\ISWI\7.0\SetupExeLog
+EXE_STRING|index=1|name=SETUP.EXE|n=20|value=DotNetOptionalInstallIfSilent
+EXE_STRING|index=1|name=SETUP.EXE|n=21|value=SETUPEXEDIR
+EXE_STRING|index=1|name=SETUP.EXE|n=22|value=ProductCode
+EXE_STRING|index=1|name=SETUP.EXE|n=23|value=Version
+EXE_STRING|index=1|name=SETUP.EXE|n=24|value=InstallerLocation
+EXE_STRING|index=1|name=SETUP.EXE|n=25|value=Software\Microsoft\Windows\CurrentVersion\Installer
+EXE_STRING|index=1|name=SETUP.EXE|n=26|value=/q:a /c:"install /q"
+EXE_STRING|index=1|name=SETUP.EXE|n=27|value=Software\Microsoft\Windows\CurrentVersion\RunOnce
+EXE_STRING|index=1|name=SETUP.EXE|n=28|value=Software\Microsoft\Windows\CurrentVersion\RunOnceEx
+EXE_STRING|index=1|name=SETUP.EXE|n=29|value=SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\RunOnceEntries
+EXE_STRING|index=1|name=SETUP.EXE|n=30|value=CSDVersion
+EXE_STRING|index=1|name=SETUP.EXE|n=31|value=MsiInstallProductA
+EXE_STRING|index=1|name=SETUP.EXE|n=32|value=Software\Microsoft\Windows\CurrentVersion\Uninstall\%s
+EXE_STRING|index=1|name=SETUP.EXE|n=33|value=DotNetVersion
+EXE_STRING|index=1|name=SETUP.EXE|n=34|value=DataCabInSetupExe
+EXE_STRING|index=1|name=SETUP.EXE|n=35|value=Setup.INI
+EXE_STRING|index=1|name=SETUP.EXE|n=36|value=Setup.bmp
+EXE_STRING|index=1|name=SETUP.EXE|n=37|value=InstalledProductName
+EXE_STRING|index=1|name=SETUP.EXE|n=38|value=MsiGetProductInfoA
+EXE_STRING|index=1|name=SETUP.EXE|n=39|value=REINSTALLMODE=vomus
+EXE_STRING|index=1|name=SETUP.EXE|n=40|value=REINSTALLMODE
+EXE_STRING|index=1|name=SETUP.EXE|n=41|value=REINSTALL=ALL
+EXE_STRING|index=1|name=SETUP.EXE|n=42|value=REINSTALL
+EXE_STRING|index=1|name=SETUP.EXE|n=43|value=SetupBitmapWin
+EXE_STRING|index=1|name=SETUP.EXE|n=44|value=SetupBitmapCls
+EXE_STRING|index=1|name=SETUP.EXE|n=45|value=InstallShield
+EXE_STRING|index=1|name=SETUP.EXE|n=46|value=Software\Microsoft\Windows\CurrentVersion\Internet Settings
+EXE_STRING|index=1|name=SETUP.EXE|n=47|value=<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+EXE_STRING|index=1|name=SETUP.EXE|n=48|value=<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+EXE_STRING|index=1|name=SETUP.EXE|n=49|value=version="1.0.0.0"
+EXE_STRING|index=1|name=SETUP.EXE|n=50|value=name="InstallShield.Setup"
+EXE_STRING|index=1|name=SETUP.EXE|n=51|value=<description>InstallShield.Setup</description>
+EXE_STRING|index=1|name=SETUP.EXE|n=52|value=version="6.0.0.0"
+EXE_STRING|index=1|name=SETUP.EXE|n=53|value=Software\Microsoft\Active Setup\Installed Components\%s
+EXE_STRING|index=1|name=SETUP.EXE|n=54|value=VS_VERSION_INFO
+EXE_STRING|index=1|name=SETUP.EXE|n=55|value=Setup Launcher
+EXE_STRING|index=1|name=SETUP.EXE|n=56|value=FileVersion
+EXE_STRING|index=1|name=SETUP.EXE|n=57|value=ProductName
+EXE_STRING|index=1|name=SETUP.EXE|n=58|value=ProductVersion
+EXE_STRING|index=1|name=SETUP.EXE|n=59|value=Setup Initialization Error
+EXE_STRING|index=1|name=SETUP.EXE|n=60|value=/Error extracting '%s' to the temporary location'Error reading setup initialization file
+COUNT|cue_candidates|1
+COUNT|iso_candidates|0
+COUNT|filesystem_tracks_parsed|1
+COUNT|errors|0
+RESOLUTION|OPTICAL_FILESYSTEM_METADATA_RECOVERED|classify carrier/version from volume, directory, text and executable traits
+EVIDENCE_BOUNDARY|IA title/date/creator are uploader metadata unless independently sourced; preserved BIN/CUE hashes and filesystem structures describe the archived object but do not alone prove original pressing/mastering, historical release date, or clean-client version.
