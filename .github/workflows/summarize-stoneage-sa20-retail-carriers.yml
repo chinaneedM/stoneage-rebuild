@@ -1,0 +1,43 @@
+name: Summarize StoneAge 2.0 retail client census
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa20_retail_carrier_summary.py
+      - tests/test_stoneage_sa20_retail_carrier_summary.py
+      - .github/workflows/summarize-stoneage-sa20-retail-carriers.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa20-retail-carrier-summary
+  cancel-in-progress: true
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_sa20_retail_carrier_summary -v
+      - run: |
+          set -euo pipefail
+          test -s research/recovered/STONEAGE-SA20-RETAIL-CARRIER-CENSUS-R1.txt
+          python3 -m tools.stoneage_sa20_retail_carrier_summary > research/recovered/STONEAGE-SA20-RETAIL-CARRIER-CENSUS-SUMMARY-R1.txt
+      - name: Commit derived summary
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-SA20-RETAIL-CARRIER-CENSUS-SUMMARY-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: summarize StoneAge 2.0 retail client census'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
