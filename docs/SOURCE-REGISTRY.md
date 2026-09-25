@@ -2203,8 +2203,9 @@ Every substantial source should record:
   - the stated effect is that in-game maps become fully visible without manual exploration;
   - this strongly classifies the distribution as a field-map/cache-content package rather than a full client installer, while still not proving the exact file list until bytes are recovered.
 - Same-pipeline control discovered:
-  - Sina's 2000-12-28 `石器时代—南岛详细地图指南` uses the same local-download backend with `aid=23681`, `filename=southisland_1228.zip`, `size=202`;
-  - this adjacent StoneAge package is useful as a topology control for reconstructing the late-2000 Sina redirect/file-server path even if `aid=23223` itself has no archived CGI response.
+  - Sina's 2000-12-28 `石器时代—北岛详细地图指南` uses the same local-download backend with `aid=23680`, `filename=northisland_1228.zip`, `size=134`;
+  - Sina's 2000-12-28 `石器时代—南岛详细地图指南` likewise uses `aid=23681`, `filename=southisland_1228.zip`, `size=202`;
+  - these immediately adjacent StoneAge packages are topology controls for reconstructing the late-2000 Sina redirect/file-server path even if `aid=23223` itself has no archived CGI response; public exact-filename web searches exposed no direct mirror for either control package on the tested search surface.
 - Preservation status:
   - exact/predicted Wayback payload-path probes: no verified payload capture on the tested surfaces;
   - exact Internet Archive filename/stem searches: no exact carrier;
