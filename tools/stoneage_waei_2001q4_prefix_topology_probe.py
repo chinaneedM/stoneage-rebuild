@@ -5,6 +5,10 @@ Contemporaneous evidence anchors /zhuanqu/stoneage/ by 2001-08 and a preserved
 official capture anchors /ZHUANQU/stoneage2/ by 2001-12-04. This probe queries
 only those two prefixes for 2001-10..12 and emits URL rows whose path/query
 contains download/client/update/setup/patch semantics. Metadata only.
+
+The preserved /tyro/upgrade.asp page is a level-up guide, not a software
+upgrade page. It is retained as a known negative topology control so the word
+"upgrade" alone cannot promote that URL into a software-download lead.
 """
 from __future__ import annotations
 import hashlib,json,urllib.parse,urllib.request
@@ -16,6 +20,7 @@ PREFIXES=(
  ("stoneage2","http://www.waei.com.cn/ZHUANQU/stoneage2/"),
 )
 TOKENS=("download","down/","/down","setup","client","upgrade","update","patch","install","soft","software","stoneage2.0setup")
+KNOWN_NONSOFTWARE_PATHS=("/zhuanqu/stoneage2/tyro/upgrade.asp",)
 
 def clean(v,n=5000):
     return " ".join(str(v if v is not None else "").split()).replace("|","%7C")[:n]
@@ -41,13 +46,19 @@ def rows(body):
     head=obj[0]
     return tuple(dict(zip(head,r)) for r in obj[1:] if isinstance(r,list))
 
+def known_nonsoftware(url):
+    path=urllib.parse.urlsplit(urllib.parse.unquote_plus(str(url or ""))).path.lower()
+    return any(path.endswith(p) for p in KNOWN_NONSOFTWARE_PATHS)
+
 def targetish(url):
+    if known_nonsoftware(url):
+        return False
     low=urllib.parse.unquote_plus(str(url or "")).lower()
     return any(t in low for t in TOKENS)
 
 def main():
-    print("StoneAge Beijing-Waei Q4-2001 official-prefix topology census — R1")
-    print("SCOPE|two evidence-anchored official prefixes|2001-10..12|CDX URL metadata|no-payload")
+    print("StoneAge Beijing-Waei Q4-2001 official-prefix topology census — R2")
+    print("SCOPE|two evidence-anchored official prefixes|2001-10..12|CDX URL metadata|known tyro guide excluded|no-payload")
     errors=[];seen={};completed=0
     for label,prefix in PREFIXES:
         try:
@@ -59,22 +70,32 @@ def main():
                 seen[(u,str(r.get("digest") or ""))]=(label,r)
         except Exception as e:
             errors.append((label,type(e).__name__,str(e)))
-    hits=[]
-    for (label,r) in seen.values():
+    hits=[];controls=[]
+    for label,r in seen.values():
         u=str(r.get("original") or "")
-        if targetish(u):hits.append((label,u,r))
+        if known_nonsoftware(u):
+            controls.append((label,u,r))
+        elif targetish(u):
+            hits.append((label,u,r))
     hits.sort(key=lambda x:(x[0],x[1]))
+    controls.sort(key=lambda x:(x[0],x[1]))
     for label,u,r in hits:
         print(
           f"TOPOLOGY_HIT|label={label}|timestamp={clean(r.get('timestamp'))}|original={clean(u)}|"
           f"statuscode={clean(r.get('statuscode'))}|mimetype={clean(r.get('mimetype'))}|"
           f"digest={clean(r.get('digest'))}|length={clean(r.get('length'))}|redirect={clean(r.get('redirect'))}"
         )
+    for label,u,r in controls:
+        print(
+          f"KNOWN_NONSOFTWARE_CONTROL|label={label}|timestamp={clean(r.get('timestamp'))}|"
+          f"original={clean(u)}|reason=tyro-level-up-guide-not-software-upgrade"
+        )
     exact=[h for h in hits if "stoneage2.0setup" in urllib.parse.unquote_plus(h[1]).lower()]
     print(f"COUNT|prefixes|{len(PREFIXES)}")
     print(f"COUNT|completed_prefixes|{completed}")
     print(f"COUNT|unique_rows|{len(seen)}")
     print(f"COUNT|topology_hits|{len(hits)}")
+    print(f"COUNT|known_nonsoftware_controls|{len(controls)}")
     print(f"COUNT|exact_sina_filename_hits|{len(exact)}")
     for s,k,m in errors:
         print(f"ERROR|scope={clean(s)}|kind={clean(k)}|message={clean(m)}")
@@ -86,7 +107,7 @@ def main():
     elif errors:
         print("RESOLUTION|OFFICIAL_Q4_PREFIX_SURFACE_INCOMPLETE|do not close topology")
     else:
-        print("RESOLUTION|NO_OFFICIAL_Q4_DOWNLOAD_TOPOLOGY_ROW|tested evidence-anchored prefixes expose no URL-name download clue")
+        print("RESOLUTION|NO_USABLE_OFFICIAL_Q4_DOWNLOAD_TOPOLOGY_ROW|tested prefixes expose no software-download URL clue after excluding the known tyro guide")
     print("EVIDENCE_BOUNDARY|CDX URL rows are routing metadata only and do not establish binary identity, cleanliness or completeness.")
 
 if __name__=="__main__":
