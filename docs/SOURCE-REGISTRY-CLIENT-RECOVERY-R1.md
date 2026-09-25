@@ -255,12 +255,15 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - dedicated probe: `tools/stoneage_japan174a_gamania_mirror_probe.py`;
   - workflow: `.github/workflows/probe-stoneage-japan174a-gamania-mirror.yml`;
   - source note: `research/clients/STONEAGE-JAPAN-SA174GM-GAMANIA-RECOVERY-R1.md`.
-- Exact `sa174gm.exe` public-archive boundary — 2026-09-25:
-  - Wayback exact HTTP/HTTPS queries resolve only one canonical indexed response: **2013-02-10 10:10:13 UTC**, HTTP **503**, 399-byte HTML; this is not a client payload;
-  - Availability at 2003-12-11, 2003-12-12, 2004-01-01 and 2008-01-01 returns no snapshot;
-  - Arquivo.pt exact HTTP query: **0 rows**; HTTPS attempt had a transport failure and remains inconclusive;
+- Exact/prefix `sa174gm.exe` public-archive boundary R2 — 2026-09-25:
+  - Wayback exact HTTP/HTTPS queries expose only one canonical indexed response: **2013-02-10 10:10:13 UTC**, HTTP **503**, 399-byte HTML; not a client payload;
+  - Wayback Availability at 2003-12-11, 2003-12-12, 2004-01-01 and 2008-01-01 returns no snapshot;
+  - Wayback prefix query for `file2.gamania.co.jp/sa/*`: **0 rows**;
+  - Arquivo.pt exact HTTP: **0 rows**; exact HTTPS: **0 rows**;
   - Internet Archive advanced search: **0 exact documents**;
-  - therefore no `sa174gm.exe` payload bytes, hash or file tree are recovered from the tested exact public-index surface.
+  - exact/prefix HTTP-200 payload candidates: **0**;
+  - current host DNS failure in CI is treated only as a live-host transport result, not proof of historical absence;
+  - therefore no `sa174gm.exe` payload bytes, checksum or file tree are recovered from the tested public-index surface.
 - Derived report: `research/recovered/STONEAGE-JAPAN-174A-GAMANIA-MIRROR-R1.txt`.
 - Current blocker:
   - no provenance-preserving bytes, checksum or complete file tree has yet been recovered for either `sa174hg.exe` or `sa174gm.exe`.
