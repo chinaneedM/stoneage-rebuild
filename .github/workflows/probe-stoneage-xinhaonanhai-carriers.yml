@@ -25,11 +25,11 @@ jobs:
       - run: |
           set -euo pipefail
           mkdir -p research/recovered
-          python3 -m tools.stoneage_xinhaonanhai_carrier_census > research/recovered/STONEAGE-XINHAONANHAI-CARRIER-CENSUS-R1.txt
+          python3 -m tools.stoneage_xinhaonanhai_carrier_census > research/recovered/STONEAGE-XINHAONANHAI-CARRIER-CENSUS-R2.txt
       - name: Commit derived metadata only
         run: |
           set -euo pipefail
-          R=research/recovered/STONEAGE-XINHAONANHAI-CARRIER-CENSUS-R1.txt
+          R=research/recovered/STONEAGE-XINHAONANHAI-CARRIER-CENSUS-R2.txt
           cp "$R" /tmp/report.txt
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
@@ -39,6 +39,6 @@ jobs:
           cp /tmp/report.txt "$R"
           git add "$R"
           git diff --cached --quiet && exit 0
-          git commit -m 'research: census xinhaonanhai map carriers'
+          git commit -m 'research: census xinhaonanhai map carriers R2'
           for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
           exit 1
