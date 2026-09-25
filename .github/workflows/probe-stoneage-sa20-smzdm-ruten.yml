@@ -21,15 +21,17 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - name: Install transient image-analysis dependencies
+        run: python3 -m pip install --disable-pip-version-check --quiet numpy opencv-python-headless
       - run: python3 -m unittest tests.test_stoneage_sa20_smzdm_ruten_match_probe -v
       - run: |
           set -euo pipefail
           mkdir -p research/recovered
-          python3 -m tools.stoneage_sa20_smzdm_ruten_match_probe > research/recovered/STONEAGE-SA20-SMZDM-RUTEN-MATCH-R1.txt
+          python3 -m tools.stoneage_sa20_smzdm_ruten_match_probe > research/recovered/STONEAGE-SA20-SMZDM-RUTEN-MATCH-R2.txt
       - name: Commit derived metadata only
         run: |
           set -euo pipefail
-          R=research/recovered/STONEAGE-SA20-SMZDM-RUTEN-MATCH-R1.txt
+          R=research/recovered/STONEAGE-SA20-SMZDM-RUTEN-MATCH-R2.txt
           cp "$R" /tmp/report.txt
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
@@ -39,6 +41,6 @@ jobs:
           cp /tmp/report.txt "$R"
           git add "$R"
           git diff --cached --quiet && exit 0
-          git commit -m 'research: cross-check StoneAge 2.0 disc visuals'
+          git commit -m 'research: cross-check StoneAge 2.0 disc visuals R2'
           for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
           exit 1
