@@ -2212,6 +2212,7 @@ Every substantial source should record:
   - DiscMaster broad `samap` searches return many unrelated files; these are diagnostic noise and are **not** preservation candidates unless the leaf filename exactly matches `samap_1220.zip`;
   - the Sina source page itself has historical Wayback availability, but no indexed `aid=23223` CGI response body has yet been recovered;
   - the archived 2005-11-03 HTTP 302 for the `southisland_1228.zip` control has now been replayed with redirects disabled. Its `Location` points only to `login.games.sina.com.cn/index.php?reurl=...`, wrapping the original download CGI rather than exposing a file-server URL. This is a login-gateway control, not a payload carrier or direct-file topology proof.
+  - a bounded Wayback prefix census of the same Sina `download.pl` backend across 2000–2003 recovered 2,652 rows total: **906 in 2002 and 1,746 in 2003**, but no 2000/2001 prefix rows on the tested index. Of those 2,652 rows, only **3** are `col=map`, all in 2003; bounded replay exposes no direct binary URL. This closes broad CGI-corpus mining as a useful route unless a new exact historical token/archive surface appears.
 - Supports:
   - existence of a specifically named Mainland StoneAge full-map distribution package by late 2000;
   - an exact recovery token that predates the 2001-11 `Estoneage2.0map_1127.exe` target;
@@ -2224,5 +2225,6 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-2000-FULLMAP-PRESERVATION-R1.txt`;
   - `research/recovered/STONEAGE-2000-SINA-AID-23223-R1.txt`;
   - `research/recovered/STONEAGE-2000-SINA-ARCHIVED302-R1.txt`;
+  - `research/recovered/STONEAGE-SINA-DOWNLOAD-CGI-TOPOLOGY-R1.txt`;
   - `research/recovered/STONEAGE-2000-INDEPENDENT-ARCHIVES-R1.txt` (generated when the independent-archive workflow yields a changed report).
 
