@@ -74,7 +74,7 @@ def arquivo_rows(data):
 def main():
     print("StoneAge 2000 Sina package-cluster preservation probe — R1")
     print("SCOPE|7 exact Sina package tokens + IA/DiscMaster/Arquivo public indexes|metadata-only|no-payload")
-    errors=[];strict=[]
+    errors=[];strict=[];arquivo_ok=0;arquivo_fail=0
     for role,fn,aid,size,date in TOKENS:
         print(f"TOKEN|role={role}|date={date}|aid={aid}|filename={fn}|size_kib={size}")
         try:
@@ -98,21 +98,26 @@ def main():
 
         try:
             st,final,h,b=fetch(arquivo_url(fn),timeout=35)
-            d=json.loads(b.decode("utf-8"));rr=arquivo_rows(d)
+            d=json.loads(b.decode("utf-8"));rr=arquivo_rows(d);arquivo_ok+=1
             print(f"ARQUIVO|role={role}|status={st}|rows={len(rr)}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}")
             for x in rr[:50]:
                 print(f"ARQUIVO_HIT|role={role}|url={clean(x.get('originalURL') or x.get('url'))}|title={clean(x.get('title'))}|tstamp={clean(x.get('tstamp') or x.get('timestamp'))}")
                 strict.append(("arquivo",role,fn,x))
-        except Exception as e: errors.append((f"arquivo:{role}",type(e).__name__,str(e)))
+        except Exception as e:
+            arquivo_fail+=1;errors.append((f"arquivo:{role}",type(e).__name__,str(e)))
 
     print(f"COUNT|strict_index_hits|{len(strict)}")
+    print(f"COUNT|arquivo_success|{arquivo_ok}")
+    print(f"COUNT|arquivo_fail|{arquivo_fail}")
     for s,k,m in errors[:200]:
         print(f"ERROR|scope={clean(s)}|kind={clean(k)}|message={clean(m)}")
     print(f"COUNT|errors|{len(errors)}")
     if strict:
         print("RESOLUTION|CLUSTER_CARRIER_LEAD_FOUND|inspect exact hit provenance and neighboring files before any payload recovery")
+    elif arquivo_fail:
+        print("RESOLUTION|NO_CLUSTER_CARRIER_ON_COMPLETED_INDEXES|IA+DiscMaster strict exact-name searches are zero for all seven tokens; Arquivo coverage is incomplete because some queries failed")
     else:
-        print("RESOLUTION|NO_CLUSTER_CARRIER_ON_TESTED_INDEXES|seven-token early-Sina carrier cluster is bounded on tested public indexes")
+        print("RESOLUTION|NO_CLUSTER_CARRIER_ON_TESTED_INDEXES|seven-token early-Sina carrier cluster is bounded on all three tested public indexes")
     print("EVIDENCE_BOUNDARY|an index hit is a carrier lead only; package identity requires exact filename/size and recovered bytes.")
 
 if __name__=="__main__":
