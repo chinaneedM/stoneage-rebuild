@@ -39,6 +39,10 @@ STATE_PHRASES=(
     "请输入提取码","请输入密码","提取码","分享的文件已经被取消","分享的文件已被取消",
     "分享已过期","链接不存在","页面不存在","文件不存在","分享的文件不存在","失效",
 )
+DEAD_PHRASES=(
+    "链接不存在","页面不存在","文件不存在","分享的文件不存在",
+    "分享的文件已经被取消","分享的文件已被取消","分享已过期","失效",
+)
 
 
 def clean(v,n=2200):
@@ -123,7 +127,7 @@ def ia_search():
 
 
 def main():
-    print("StoneAge 2.5 CangBaoWan Baidu public-share probe — R2")
+    print("StoneAge 2.5 CangBaoWan Baidu public-share probe — R3")
     print("SCOPE|anonymous-public-landing+public-archive-index|no-code-guess|no-login|no-bypass|no-payload")
     print(f"SOURCE|{SOURCE}")
     print(f"SHARE|id={SHARE_ID}|url={SHARE}")
@@ -191,7 +195,9 @@ def main():
     for doc in docs:
         print(f"IA_DOC|value={clean(json.dumps(doc,ensure_ascii=False,sort_keys=True),2200)}")
 
-    if seen:
+    if any(p in text for p in DEAD_PHRASES):
+        print("RESOLUTION|PUBLIC_BAIDU_SHARE_DEAD_OR_MISSING|exact share token retained for mirror/repost search")
+    elif seen:
         print("RESOLUTION|PUBLIC_BAIDU_FILE_METADATA_EXPOSED|metadata requires comparison; no payload access attempted")
     elif any(p in text for p in ("提取码","请输入密码","请输入提取码")):
         print("RESOLUTION|PUBLIC_SHARE_LANDING_REQUIRES_EXTRACTION_CODE|do not guess or bypass")
