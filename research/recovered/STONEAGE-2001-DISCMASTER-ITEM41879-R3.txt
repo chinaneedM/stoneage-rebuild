@@ -1,4 +1,4 @@
-StoneAge 2.0 DiscMaster item 41879 topology — R3
+StoneAge 2.0 DiscMaster item 41879 topology — R4
 SCOPE|DiscMaster item-local search + browse HTML|metadata-only|no-payload
 TARGET|itemid=41879|itemName=350 PC Games (CD-ROM)|discovered_path=STONEAGE2
 QUERY|q=STONEAGE2|status=200|rows=1|bytes=509|sha256=e2f955235639965a29f094f7cc1e193dd62b4406c8958372925d24a2680dc831
@@ -114,6 +114,17 @@ ROW|q=readme|itemid=41879|itemName=350 PC Games (CD-ROM)|path=jetfighter v.iso/D
 ROW|q=readme|itemid=41879|itemName=350 PC Games (CD-ROM)|path=jetfighter v.iso/Jetfighter_V/DirectX9/DirectX.cab/gmreadme.txt|size=576|ts=1999-01-08|b3sum=0d742ae1dbfc000552a218742ca7fff56772b47dd722d714477f3db435850892
 ROW|q=readme|itemid=41879|itemName=350 PC Games (CD-ROM)|path=jetfighter v.iso/Redist/directx7/directx.cab/gmreadme.txt|size=576|ts=1999-01-08|b3sum=0d742ae1dbfc000552a218742ca7fff56772b47dd722d714477f3db435850892
 BROWSE|url=https://discmaster.textfiles.com/browse/41879|status=200|bytes=5044|sha256=341580a612ed01aa15932b7647d88c179d5d8f180843b54a77bb9cb2adc117b3|final=https://discmaster.textfiles.com/browse/41879
+BROWSE|url=https://discmaster.textfiles.com/browse/41879/jetfighter%20v.iso/333/images/anims/STONEAGE2|status=200|bytes=5618|sha256=2c72865cebb9b6fb5de3f8257993c36b3934da5b83f7f34c91dd9c5ebeba93a4|final=https://discmaster.textfiles.com/browse/41879/jetfighter%20v.iso/333/images/anims/STONEAGE2
+BROWSE_LINK|url=https://discmaster.textfiles.com/browse/41879/jetfighter%20v.iso/333/images/anims/STONEAGE2?details
+BROWSE_LINK|url=https://discmaster.textfiles.com/dl/41879/jetfighter%20v.iso/333/images/anims/STONEAGE2
+BROWSE_LINK|url=https://discmaster.textfiles.com/view/41879/jetfighter v.iso/333/images/anims/STONEAGE2/csapda.png
+BROWSE_LINK|url=https://discmaster.textfiles.com/view/41879/jetfighter v.iso/333/images/anims/STONEAGE2/elolap01.png
+BROWSE_LINK|url=https://discmaster.textfiles.com/view/41879/jetfighter v.iso/333/images/anims/STONEAGE2/elolap02.png
+BROWSE_LINK|url=https://discmaster.textfiles.com/view/41879/jetfighter v.iso/333/images/anims/STONEAGE2/hatter.JPG
+BROWSE_LINK|url=https://discmaster.textfiles.com/view/41879/jetfighter v.iso/333/images/anims/STONEAGE2/manus_walk.png
+BROWSE_LINK|url=https://discmaster.textfiles.com/view/41879/jetfighter v.iso/333/images/anims/STONEAGE2/stone.png
+BROWSE_TEXT|text=/ jetfighter v.iso / 333 / images / anims / STONEAGE2 &nbsp;&nbsp;&nbsp; download all originals (max 1&nbsp;GiB ) Images (6)
+BROWSE_TEXT|text=hatter.JPG stone.png
 COUNT|exact_index_browse_urls|1
 COUNT|unique_rows|85
 COUNT|relevant_rows|1
@@ -121,7 +132,6 @@ COUNT|bare_stoneage2_nodes|1
 COUNT|stoneage2_descendants|0
 COUNT|client_identity_rows|0
 ERROR|scope=browse:https://discmaster.textfiles.com/browse/41879/STONEAGE2|kind=HTTPError|message=HTTP Error 404: Not Found
-ERROR|scope=browse:https://discmaster.textfiles.com/browse/41879/jetfighter v.iso/333/images/anims/STONEAGE2|kind=InvalidURL|message=URL can't contain control characters. '/browse/41879/jetfighter v.iso/333/images/anims/STONEAGE2' (found at least ' ')
-COUNT|errors|2
+COUNT|errors|1
 RESOLUTION|BARE_STONEAGE2_INDEX_NODE_ONLY|item exposes a bare STONEAGE2 index node but no descendant or client-identifying row on tested metadata surfaces
 EVIDENCE_BOUNDARY|DiscMaster item metadata/directory HTML is carrier-discovery evidence only; no file is accepted as the 2001 Mainland client without exact identity and provenance.
