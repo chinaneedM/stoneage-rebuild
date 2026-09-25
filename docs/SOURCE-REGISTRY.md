@@ -1821,3 +1821,41 @@ Every substantial source should record:
   - retain the exact share ID/title as a repost search token;
   - current direct share route is bounded/dead and should not receive primary recovery effort without a new mirror.
 - Derived report: `research/recovered/STONEAGE-SA25-BAIDU-SHARE-METADATA-R1.txt`.
+
+
+### SRC-CN-2020-SHIQIBLOG-SA25-DISC-MIRROR-01
+
+- Title: `回忆石器时代2.5游戏光盘`
+- Current mirror/source page: `https://blog.shiqi.so/shiqi273.htm`
+- Page timestamp shown: **2020-12-22 08:38**
+- Retrieval/research date: **2026-09-25**
+- Source type: modern collector mirror/article preserving StoneAge disc photographs and literal Mainland/Taiwan labels; **not** a 2002 operator source and **not** a disc dump.
+- Literal 2.5 wording:
+  - `到2.5精灵王传说版本啦`;
+  - `上面是大陆版客户端统一图案的光盘`;
+  - `下面是台版盘，有点镭射反光的感觉，很好看`.
+- Exact article-order mapping from the R2 between-image parser:
+  - image 3: `https://shiqifabu.fszye.com/zb_users/upload/2020/12/20201222082536160859673637393.jpg`;
+  - the literal 2.5 Mainland/Taiwan label block occurs **between image 3 and image 4**;
+  - image 4 immediately following the label block: `https://shiqifabu.fszye.com/zb_users/upload/2020/12/20201222082537160859673711005.jpg`;
+  - the next between-image segment begins the article closing text, so image 4 is the article-order **source-labelled 2.5 Mainland/Taiwan comparison image**.
+- Important association boundary:
+  - the article-order/text relationship establishes image 4 as the comparison image;
+  - without a recoverable image body, the project does **not** independently inspect/verify the pixel-level upper/lower disc arrangement.
+- Image-body recovery result:
+  - direct CI read of image 4: connection refused;
+  - exact Wayback CDX for both HTTPS and HTTP image-4 URLs: **0 rows**, successful CDX responses;
+  - corresponding Bahamut/COS exact 2.5 comparison-image URL `https://cos.stoneage.cn/uploads/article/minisnsimg/20201222/5fe128b2e6b0a.jpg`: direct read connection refused; tested CDX requests also failed transport and are therefore **inconclusive**, not negative archive evidence.
+- Visual-fingerprint hygiene:
+  - R5 now allows only source-qualified collector body images; sidebar/recommendation images are rejected as comparison references;
+  - because neither source-labelled comparison image body was recovered, **no Ruten listing is assigned Mainland/Taiwan identity from pixel similarity**.
+- Workflow/result:
+  - source-labelled recovery run **36091418849** completed successfully;
+  - report: `research/recovered/STONEAGE-SA25-SOURCE-LABELLED-COMPARISON-IMAGE-R1.txt`;
+  - context report: `research/recovered/STONEAGE-SA25-COLLECTOR-MIRROR-CONTEXT-R1.txt`.
+- Confidence:
+  - **A for live article text, exact image URL/order and exact between-image association**;
+  - **OPEN for image-body hash/pixels, optical-disc pressing/mastering and byte provenance**.
+- Operational consequence:
+  - preserve the two exact source-labelled comparison-image URLs as visual recovery keys;
+  - do not substitute sidebar images or infer Mainland/Taiwan assignment for the current Ruten visual cluster until one of these exact image bodies is publicly recoverable.
