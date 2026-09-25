@@ -2139,6 +2139,7 @@ Every substantial source should record:
   - Internet Archive exact/stem item search: no exact item;
   - DiscMaster exact/stem search: no exact carrier;
   - contributor-domain Wayback root captures exist at 2001-12-03 and 2002-07-19, but no relevant package href is exposed by the current indexed/replayed surface.
+  - The Sina host-alias census exposes **56 archived `col=map` rows** on `games.sina.com.cn` in 2001 but no exact `aid=43172` / `Estoneage2.0map_1127.exe` row. Replayed early-2001 neighbors consistently expose `http://202.106.184.193/downfiles/map_1212/`, but the target filename substituted into that directory has zero CDX rows. This is an early map-server topology control, not a proven November 2001 target path.
 - Supports:
   - existence of a specifically named full-map distribution package in late 2001;
   - a contemporaneous claim that the package was usable by both 1.X and 2.0 client families;
@@ -2149,7 +2150,9 @@ Every substantial source should record:
   - any map ID/hash/content until the executable itself is recovered.
 - Derived reports:
   - `research/recovered/STONEAGE-2001-FULLMAP-PRESERVATION-R1.txt`;
-  - `research/recovered/STONEAGE-XINHAONANHAI-ARCHIVE-R1.txt`.
+  - `research/recovered/STONEAGE-XINHAONANHAI-ARCHIVE-R1.txt`;
+  - `research/recovered/STONEAGE-2001-SINA-HOST-ALIAS-R1.txt`;
+  - `research/recovered/STONEAGE-2001-SINA-MAP-TOPOLOGY-R1.txt`.
 
 ### SRC-CN-2001-SINA-SA20-CLIENT-01
 
@@ -2170,13 +2173,16 @@ Every substantial source should record:
   - `size=524377`.
 - Preservation status:
   - current exact Wayback, Internet Archive and DiscMaster probes expose no verified payload body.
+  - A dual-host `col=demo` topology probe recovers one archived neighboring executable route, `http://202.108.44.24/demo_1118/monkeybrain.exe` (aid=25443). Substituting `stoneage2.0setup.exe` into that directory has zero CDX rows; the route is only a Sina demo-server control, not target-path proof.
 - Supports:
   - an exact historical client filename and download-record identity for the Mainland 2.0 era.
 - Does not support:
   - a clean-client classification until recovered bytes are inspected;
   - byte identity with Taiwan/JSS/Korean branches;
   - treating the displayed version label as executable build provenance without binary inspection.
-- Derived report: `research/recovered/STONEAGE-2001-CLIENT-PRESERVATION-R1.txt`.
+- Derived reports:
+  - `research/recovered/STONEAGE-2001-CLIENT-PRESERVATION-R1.txt`;
+  - `research/recovered/STONEAGE-2001-SINA-CLIENT-TOPOLOGY-R1.txt`.
 
 ### SRC-CN-2000-SINA-FULLMAP-01
 
