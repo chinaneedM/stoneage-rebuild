@@ -1624,6 +1624,19 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-DISC-PHOTO-R1.txt`.
 
 
+- Fifth addressable listing / independence correction:
+  - product `22445165101247`: `遊戲光碟 石器時代 2.5版 精靈王傳說 全新完整版 PC GAME 電腦遊戲 D80`;
+  - same Ruten seller account as `22242541948520` (`alixson7`);
+  - raw `post_time=1731002663` and one full-size public image `https://gcs.rimg.com.tw/g1/d/30/bf/22445165101247_815.jpg`;
+  - image body: **67,565 bytes**, **800×600**, SHA-256 `f7835bb1c544ee3de89578f5161f5169edc2ee1e495de0368161f8d0dfb9fc78`.
+- R4 cross-listing visual result:
+  - `22242541948520:0` vs `22445165101247:0`: **1,581 RANSAC inliers / 0.7543 inlier ratio**;
+  - `21926883918096:0` vs `22445165101247:0`: **977 / 0.5586**;
+  - these are far stronger than ordinary cross-listing background overlap and establish a very tight shared photographic/artwork family, but still do not prove the same physical disc.
+- Independence consequence:
+  - the Ruten control surface now has **five separately addressable listing IDs, not five independently proven physical specimens**;
+  - because `22445165101247` and `22242541948520` share the same seller and extremely strong visual overlap, the newer/alternate listing is treated as a **same-seller duplicate-family control**, not additive independent-disc evidence.
+
 ### SRC-JP-2008-IPVE-SA174GM-MIRROR-01
 
 - Page: `https://www.ipve.com/bbs/viewthread.php?extra=&page=5&tid=84383`
