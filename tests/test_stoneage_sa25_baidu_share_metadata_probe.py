@@ -32,6 +32,12 @@ class BaiduShareProbeTests(unittest.TestCase):
     def test_missing_share(self):
         self.assertEqual(classify("啊哦，你来晚了，分享的文件已经被取消", ()), "MISSING")
 
+    def test_link_not_found(self):
+        self.assertEqual(classify("百度网盘-链接不存在", ()), "MISSING")
+
+    def test_expired_precedes_code_noise(self):
+        self.assertEqual(classify("分享链接已过期 提取码", ()), "EXPIRED")
+
 
 if __name__ == "__main__":
     unittest.main()
