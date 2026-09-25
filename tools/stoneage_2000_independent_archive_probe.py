@@ -49,7 +49,7 @@ def cc_indexes():
     for x in d:
         cid=str(x.get("id") or "")
         import re
-        m=re.search(r"CC-MAIN-(\\d{4})",cid)
+        m=re.search(r"CC-MAIN-(\d{4})",cid)
         if not m:continue
         y=int(m.group(1))
         if 2008<=y<=2018:by_year.setdefault(y,[]).append(cid)
