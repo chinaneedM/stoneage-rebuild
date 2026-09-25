@@ -1928,24 +1928,25 @@ Supplemental source ledgers:
 
 ## StoneAge 2.5 public surviving-disc set — Ruten control — 2026-09-25
 
-- The current public marketplace surface now contributes **three concrete surviving StoneAge 2.5 physical-media controls** rather than a generic “old discs may exist” lead:
-  - `22632305238624`: boxed **2.5 精靈王傳說新手報到包** with original packaging and game-disc wording, 9 full-size public photos;
-  - `21926883918096`: loose **2.5版 精靈王傳說** game disc;
-  - `22242541948520`: another independent loose **2.5版 精靈王傳說** PC game disc.
-- The existing Ruten metadata probe resolved **22** full/thumbnail image URLs with **0 metadata-probe errors**, and all tested public image HEAD requests returned 200.
-- The corrected Yan-Nian exact-disc photograph has its strongest tested Ruten visual comparison against boxed carrier `22632305238624` image 3: **112 RANSAC inliers / 0.1181**. This is only a visual-priority signal, not proof that the discs, pressings or client bytes are identical.
-- Current indexed Ruten search results still expose the boxed 2.5 new-user package and loose 2.5 精靈王傳說 discs.
-- Exact photo basename/hash, the three product IDs/titles, and targeted Archive.org/DiscMaster StoneAge-2.5 queries yielded **no public ISO/file-tree payload hit in this pass**.
-- A new public provenance-metadata pass adds independent listing-chain context:
-  - `21926883918096`: listed **2019-06-28**, separate seller, used-condition metadata, Taiwan/Kaohsiung, and literal marketplace tag **`#公司貨`**;
-  - `22242541948520`: listed **2022-10-19** under another seller/listing chain;
-  - `22632305238624`: boxed new-user package listed **2026-08-04** with `全新` condition and 9 full-size public image filenames.
-- These fields strengthen survival/provenance discrimination between the three modern physical controls but remain marketplace claims. They add **no disc matrix/IFPI, filesystem, volume label or payload checksum**.
-- Derived provenance report: `research/recovered/STONEAGE-SA25-RUTEN-PROVENANCE-METADATA-R1.txt`.
-- **EVIDENCE BOUNDARY:** this establishes three independently addressable surviving physical-media controls with public photos. It does not recover any optical-disc bytes and therefore **does not move the field-map byte-provenance anchor earlier than June 2003**.
-- Operational consequence: keep these IDs/photos as exact matching keys for future public preservation reads/dumps; no purchase, seller contact or user-performed dump is required.
+- The public marketplace control set has expanded from three to **four separately addressable StoneAge 2.5 listing chains**:
+  - `22632305238624`: boxed **2.5 精靈王傳說新手報到包**, original-package/game-disc wording, 9 full-size photos;
+  - `21926883918096`: loose **2.5版 精靈王傳說** disc, listed 2019-06-28;
+  - `22242541948520`: separate loose **2.5版 精靈王傳說 PC GAME** listing, listed 2022-10-19;
+  - `22615474551866`: **`精靈王傳說 石器時代2.5版 遊戲片+外盒`**, listed 2026-04-11, sold quantity 1 / stock 0, with three full-size photos `_647.jpg / _438.jpg / _740.jpg`.
+- **Independence correction:** separate listing IDs/sellers/dates do not prove four independent physical discs. Reused seller photography, resale or a common photo source remain possible and must be tested rather than assumed.
+- New R4 visual fingerprinting produces a strong visual cluster:
+  - `21926883918096:0` vs `22242541948520:0`: **743 RANSAC inliers / 0.4831**;
+  - new disc+box `22615474551866:1` (`_438.jpg`) vs those two loose-disc images: **266 / 0.2323** and **253 / 0.2202**.
+- Those scores support a **shared disc-face/artwork/photographic family** for the three images, but do not establish same physical disc, same pressing, same mastering or independent-specimen count.
+- The exact source-labelled Yan-Nian disc photograph gives an important negative separator: new `22615474551866` images score only **11 / 0.0118**, **11 / 0.0120** and **7 / 0.0091** against it. By contrast the existing `22632305238624` image 3 remains the strongest Yan-Nian Ruten comparison at **112 / 0.1181**.
+- Consequence: **do not merge the new disc+box/loose-disc visual cluster with the Yan-Nian source-labelled disc family.** Collector evidence says Mainland/Taiwan 2.5 disc artwork differed, but current image metrics are not enough to assign the new cluster to a region or pressing.
+- Current Ruten/provenance reports still expose **no matrix/IFPI, volume label, filesystem, installer hash, disc image or payload checksum**. Therefore this materially improves carrier-family discrimination but **does not move the field-map byte-provenance anchor earlier than June 2003**.
+- Operational next gate: a public read/dump/file tree tied to one of these exact carrier IDs/photos, or another original 2.5 disc with comparable provenance. No purchase, seller contact or user-side dump is required.
 - Canonical source: `SRC-TW-2026-RUTEN-SA25-PHYSICAL-01`.
-- Derived report: `research/recovered/STONEAGE-SA25-RUTEN-PHYSICAL-R1.txt`.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-RUTEN-PROVENANCE-METADATA-R1.txt`
+  - `research/recovered/STONEAGE-SA25-PHYSICAL-IMAGE-FINGERPRINTS-R4.txt`
+  - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-DISC-PHOTO-R1.txt`.
 
 
 ## Japanese 1.74a recovery gains a second exact client identity — 2026-09-25
