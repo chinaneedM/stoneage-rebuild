@@ -2194,6 +2194,10 @@ Every substantial source should record:
   - `size=1410`;
   - title parameter decodes to `石器时代！全地图`;
   - author parameter decodes to `游民部落`.
+- Attribution boundary:
+  - contemporaneous Sina pages use `游民部落` as a Sina game-community/editorial label, so this value alone does **not** identify a separate uploader domain or the later user/site `xinhaonanhai`;
+  - the 2001-11 package is materially different: its author field explicitly says `游民部落网友` and embeds `http://www.xinhaonanhai.com` around the name `xinhaonanhai`;
+  - therefore any 2000→xinhaonanhai lineage remains only a tested weak hypothesis and must not be used as provenance without an independent path/token match.
 - Preservation status:
   - exact/predicted Wayback payload-path probes: no verified payload capture on the tested surfaces;
   - exact Internet Archive filename/stem searches: no exact carrier;
@@ -2209,5 +2213,6 @@ Every substantial source should record:
   - any map ID/hash/content claim until the ZIP bytes are recovered and extracted.
 - Derived reports:
   - `research/recovered/STONEAGE-2000-FULLMAP-PRESERVATION-R1.txt`;
-  - `research/recovered/STONEAGE-2000-SINA-AID-23223-R1.txt`.
+  - `research/recovered/STONEAGE-2000-SINA-AID-23223-R1.txt`;
+  - `research/recovered/STONEAGE-2000-INDEPENDENT-ARCHIVES-R1.txt` (generated when the independent-archive workflow yields a changed report).
 
