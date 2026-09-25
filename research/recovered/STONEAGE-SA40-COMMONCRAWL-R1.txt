@@ -1,0 +1,27 @@
+StoneAge 4.0 Common Crawl CGI redirect probe — R1
+SCOPE|exact-Sina-CGI+neighbor-CGI+historical-CC-indexes+small-WARC-header-only|no-payload
+CGI|aid=61620|url=http://games1.sina.com.cn/cgi-bin/games/downgames/download.pl?col=updatex&aid=61620&title=%A1%B6%CA%AF%C6%F7%CA%B1%B4%FA4.0%A1%B7%D7%EE%D0%C2%B5%D8%CD%BC%B2%B9%B6%A1&author=%D3%CE%C3%F1%B2%BF%C2%E4%CD%F8xinhaonanhai&filename=shiqi4updatex_02_11_08.zip&size=3440
+CGI|aid=61619|url=http://games1.sina.com.cn/cgi-bin/games/downgames/download.pl?col=updatex&aid=61619&title=%A1%B6%B4%F3%B8%BB%CE%CC6%A1%B7CD%A3%ADkey%C9%FA%B3%C9%C6%F7&author=%D3%CE%C3%F1%B2%BF%C2%E4%CD%F8%D3%D1%D1%EF%D2%BB%B7%B2&filename=rich6updatex_02_11_08.zip&size=162
+COUNT|historical_indexes|56
+ERROR|scope=CC-MAIN-2018-43:target|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|scope=CC-MAIN-2018-39:target|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|scope=CC-MAIN-2018-17:target|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+ERROR|scope=CC-MAIN-2018-13:source|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+ERROR|scope=CC-MAIN-2016-30:neighbor|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|scope=CC-MAIN-2016-26:target|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+ERROR|scope=CC-MAIN-2016-26:source|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|scope=CC-MAIN-2016-18:neighbor|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+ERROR|scope=CC-MAIN-2016-07:neighbor|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|scope=CC-MAIN-2015-35:target|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|scope=CC-MAIN-2015-35:neighbor|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|scope=CC-MAIN-2015-27:source|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|scope=CC-MAIN-2015-22:target|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+ERROR|scope=CC-MAIN-2015-06:target|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+ERROR|scope=CC-MAIN-2014-52:target|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+ERROR|scope=CC-MAIN-2014-10:neighbor|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|scope=CC-MAIN-2012:neighbor|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+COUNT|index_rows|0
+COUNT|historical_locations|0
+COUNT|errors|17
+RESOLUTION|NO_COMMONCRAWL_EXACT_CGI_ROW|tested historical indexes expose no exact CGI capture
+EVIDENCE_BOUNDARY|only exact URL index rows and bounded WARC response headers are inspected; large response records and payload bodies are not fetched.
