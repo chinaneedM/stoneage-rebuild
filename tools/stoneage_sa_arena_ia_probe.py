@@ -216,18 +216,28 @@ def read_extent_prefix(url,entry,limit,track_start_frames,mode):
     return data[:want]
 
 
+def text_score(text):
+    printable=sum(ch.isprintable() or ch in "\r\n\t" for ch in text)
+    han=sum("\\u3400"<=ch<="\\u9fff" for ch in text)
+    replacement=text.count("\\ufffd")
+    mojibake=sum(ch in "ÆäËü²úÆ·ÄÚÈÝÏê¼û±±¾©»ªÒåÓÎÏ·Íø£º¡¶·è¿ñÔ­Ê¼ÈË" for ch in text)
+    return printable + han*8 - replacement*20 - mojibake*3
+
+
 def decode_text(data):
     best=""
     best_enc=""
+    best_score=-10**9
     for enc in ("utf-8","gb18030","big5","cp949","latin1"):
         try:
             text=data.decode(enc)
         except Exception:
             continue
-        score=sum(ch.isprintable() or ch in "\r\n\t" for ch in text)
-        if score>len(best):
+        score=text_score(text)
+        if score>best_score:
             best=text
             best_enc=enc
+            best_score=score
     return best_enc,best
 
 
@@ -387,7 +397,7 @@ def emit_tree(index,url,track,errors):
 
 
 def main():
-    print("StoneAge sa-arena Internet Archive optical-carrier probe — R3")
+    print("StoneAge sa-arena Internet Archive optical-carrier probe — R4")
     print("SCOPE|IA-metadata+CUE+bounded-raw-sector-filesystem+small-text+EXE-prefix-reads|no-full-disc-download|no-payload-commit")
     errors=[]
     try:
