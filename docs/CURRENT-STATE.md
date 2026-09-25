@@ -1942,6 +1942,22 @@ Supplemental source ledgers:
 - Derived report: `research/recovered/STONEAGE-SA25-RUTEN-PHYSICAL-R1.txt`.
 
 
+## Japanese 1.74a recovery gains a second exact client identity — 2026-09-25
+
+- The Japanese bridge track now has a second exact filename/path in addition to first-party Hangame `sa174hg.exe`: a 2008 public Japanese-service repost gives `http://file2.gamania.co.jp/sa/sa174gm.exe`.
+- This token has independent survival corroboration: a 2017 Japanese-player thread refers to an old-HDD client as `SA174gm` and an indexed post offers to upload `sa174gm.exe`.
+- A 2020 shiqi.la preservation thread exposes an access-controlled installer archive `sa174gm[解压密码www.shiqi.la].rar` (**194.24 MB**, attachment-id **675**) and installed-tree archive `Stoneage.rar` (**174.72 MB**, attachment-id **676**). The project does not bypass its points/access controls.
+- **EVIDENCE BOUNDARY:** official launch-window Hangame `sa174hg.exe` remains separately proven by first-party archived HTML. `sa174gm.exe` is a historical Gamania-hosted recovery token, but its exact build/version and original introduction date remain OPEN.
+- The 2020 title's **2003-12-11** date is retained only as a later-source claim until independently confirmed.
+- The suffix interpretation `hg=Hangame`, `gm=Gamania` is a working HYPOTHESIS, not a historical fact; no equality claim is permitted without recovered bytes.
+- A dedicated exact-URL public-archive probe and CI workflow have been added. No client payload is committed; any public Wayback object is only transiently streamed for derived hash/size under a 400 MiB cap.
+- Canonical sources:
+  - `SRC-JP-2008-IPVE-SA174GM-MIRROR-01`
+  - `SRC-CN-2020-SHIQILA-SA174GM-ATTACHMENT-01`.
+- Canonical note: `research/clients/STONEAGE-JAPAN-SA174GM-GAMANIA-RECOVERY-R1.md`.
+- This improves the Japanese bridge recovery surface but **does not supersede the project's primary 2.5 pre-June-2003 field-map provenance objective**.
+
+
 ## Immediate next actions
 
 1. **Continue moving the field-map provenance anchor earlier than June 2003 without back-projecting descendant bytes.** The direct Waei 2.5 web/binary surface, the 2002-11-08 4.0 package surface, the exact public-index pass over 20 named carrier identities, the six-name Korean payload file/index pass, the DiscMaster bridge-signature file pass, the exact `sa25up.zip` preservation+archive-neighborhood pass, the access-gated WeLoveSA `tid=2132` public/reply surface, the 2009 `YSA2.5.8.rar` mirror path, the tested `ftp.stoneage.com.cn` domain/resource/Availability surface, the newly restored 《轰炸鸡》/`哇靠轰炸鸡` cross-promotion carrier metadata surface, the photographed Wanfang ISBN/barcode surface, the old-disc CHM/RTF+torrent metadata/signature surface, and the newly fingerprinted 2026 public 2.5 archive are now bounded at their tested surfaces: the FTP route produced no 200 payload on the known/predicted path set and must only be reopened from a new historical path token; the 20-carrier DiscMaster/IA pass now completes with zero strict hits and 《轰炸鸡》 should only be reopened there from a new independently sourced package/disc identity or file token; the Wanfang identifier pass has zero strict preservation hits, while the old-disc torrent passes have zero exact target hits and zero exact client/resource signature paths, so those routes likewise reopen only from a new precise media/file token; the 2009 exact mirror has no hit on the tested public preservation indexes; the 2026 archive is a direct descendant/common-corpus control and does not provide independent 2002 provenance. Highest information gain now comes from **publicly recoverable provenance-preserving reads/dumps of surviving 2.5 physical discs** (boxed new-user/gift-pack media already identify the carrier classes), followed by independently preserved contemporaneous installed-tree backups, mirror copies or server-captured caches with provenance. The project does not require the user to purchase or manually dump media. Treat the 2001-12-04 `tyro/upgrade.asp` capture only as a StoneAge 2.0 level-up-guide/topology source; do not reinterpret it as a software-upgrade page. Use June/December mtime+CRC strata only for candidate prioritization, never as release dates.
