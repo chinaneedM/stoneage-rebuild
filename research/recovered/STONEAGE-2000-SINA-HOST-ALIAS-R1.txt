@@ -9,14 +9,16 @@ AVAIL|host=games.sina.com.cn|date=20001220|status=200|hit=0|timestamp=|capture=|
 AVAIL|host=games.sina.com.cn|date=20010124|status=200|hit=0|timestamp=|capture=|http_status=
 AVAIL|host=games.sina.com.cn|date=20011220|status=200|hit=0|timestamp=|capture=|http_status=
 AVAIL|host=games.sina.com.cn|date=20020101|status=200|hit=0|timestamp=|capture=|http_status=
+CDX|host=games1.sina.com.cn|window=2000|status=200|rows=0|map_rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
 CDX|host=games1.sina.com.cn|window=2001|status=200|rows=0|map_rows=0|relevant=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|host=games1.sina.com.cn|window=2002|status=200|rows=906|map_rows=0|relevant=0|bytes=234324|sha256=a00aa788cbb7f6f0926344f658477b9e8256c2646ab57e9a9dbe71490a5d73b9
 AVAIL|host=games1.sina.com.cn|date=20001220|status=200|hit=0|timestamp=|capture=|http_status=
 AVAIL|host=games1.sina.com.cn|date=20010124|status=200|hit=0|timestamp=|capture=|http_status=
 AVAIL|host=games1.sina.com.cn|date=20011220|status=200|hit=0|timestamp=|capture=|http_status=
 AVAIL|host=games1.sina.com.cn|date=20020101|status=200|hit=0|timestamp=|capture=|http_status=
 COUNT|relevant_hits|1
-ERROR|scope=cdx:games1.sina.com.cn:2000|kind=URLError|message=<urlopen error timed out>
-ERROR|scope=cdx:games1.sina.com.cn:2002|kind=URLError|message=<urlopen error timed out>
-COUNT|errors|2
-RESOLUTION|HOST_ALIAS_TARGET_ROW_FOUND|replay only the exact historical response before considering payload recovery
+COUNT|replayed_hits|0
+ERROR|scope=replay:games.sina.com.cn:20010126074600|kind=URLError|message=<urlopen error timed out>
+COUNT|errors|1
+RESOLUTION|HOST_ALIAS_TARGET_ROW_FOUND|exact historical response replayed when available; inspect ROUTE_VALUE/BODY_LINE before payload recovery
 EVIDENCE_BOUNDARY|host-alias rows are route evidence only; payload identity still requires recovered bytes.
