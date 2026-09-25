@@ -79,11 +79,15 @@ def extract_direct_binary_links(body,base):
 def replay(ts,orig):
     return f"https://web.archive.org/web/{ts}id_/{orig}"
 
+def binary_filename(name):
+    low=str(name or "").lower()
+    return any(low.endswith(ext) for ext in (".exe",".zip",".rar",".cab",".gz",".tar"))
+
 def rank_neighbors(rows,target_aid,limit=12):
     vals=[];seen=set()
     for r in rows:
         p=params(r.get("original") or "");aid=str(p.get("aid") or "")
-        if not aid.isdigit():continue
+        if not aid.isdigit() or not binary_filename(p.get("filename")):continue
         n=int(aid)
         key=(n,str(p.get("filename") or ""),str(p.get("col") or ""))
         if key in seen:continue
@@ -94,7 +98,7 @@ def rank_neighbors(rows,target_aid,limit=12):
 
 def main():
     print("StoneAge 2001 Sina aid-neighborhood topology probe — R1")
-    print("SCOPE|all download.pl columns + nearest numeric aid records + small CGI replay|no-target-payload")
+    print("SCOPE|all download.pl columns + nearest numeric aid records with binary filenames + small CGI replay|no-target-payload")
     errors=[];rows=[]
     for prefix in PREFIXES:
         host=urllib.parse.urlsplit(prefix).netloc
