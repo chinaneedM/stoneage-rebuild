@@ -1,6 +1,7 @@
 import unittest
 
 from tools.stoneage_sa25_disc_region_match_probe import (
+    STANDALONE,
     bbox_coverage,
     polygon_area,
     sane_quad,
