@@ -1,0 +1,14 @@
+StoneAge 2.0 retail client-disc residual census — R2
+SCOPE|fielded IA residual queries|老手削暴包 + Sina setup stem|metadata-only|no-payload
+QUERY|label=veteran-title|status=200|rows=0|bytes=354|sha256=b02fe129de308a1ae52bb46c3e855b113b3d207f7b826528d0b18b842fc0c785|q=title:"老手削暴包" AND mediatype:software
+QUERY|label=veteran-description|status=200|rows=0|bytes=366|sha256=cdc8c89039891b17ef1b346b8c6096928f5e47eb0a1cc6e9a68786dba364fe0b|q=description:"老手削暴包" AND mediatype:software
+QUERY|label=veteran-full-title|status=200|rows=0|bytes=409|sha256=87a7cfc2272621683f372356203599ef28dda066282a8a4a432df96cf524615d|q=title:"石器时代2.0老手削暴包" AND mediatype:software
+QUERY|label=veteran-full-description|status=200|rows=0|bytes=420|sha256=0b933b8e0434139ccd9981102b486f34de971b4522db46ee79976852faeb5e4d|q=description:"石器时代2.0老手削暴包" AND mediatype:software
+QUERY|label=sina-title|status=200|rows=0|bytes=327|sha256=1f457c0fb46abd2520c6ed2a37175d47077b1cdbb01c318f3e4177d151445ef2|q=title:"stoneage2.0setup" AND mediatype:software
+QUERY|label=sina-description|status=200|rows=0|bytes=338|sha256=e1158f154b3027b7265cca4d55a0b3f010e8ce08587e2b1f53310d6977a99a76|q=description:"stoneage2.0setup" AND mediatype:software
+QUERY|label=sina-identifier|status=200|rows=0|bytes=318|sha256=d9a0862a1ec561d37cd8441498f3e45048a768820913a73c29d07123b37d014e|q=identifier:*stoneage2.0setup* AND mediatype:software
+COUNT|unique_items|0
+COUNT|strict_items|0
+COUNT|errors|0
+RESOLUTION|NO_STRICT_RESIDUAL_HIT|fielded residual IA surface is bounded with no preserved retail-client candidate
+EVIDENCE_BOUNDARY|metadata search is discovery evidence only; zero rows do not prove no physical disc survives elsewhere.
