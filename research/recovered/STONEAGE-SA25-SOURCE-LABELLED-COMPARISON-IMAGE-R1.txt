@@ -1,0 +1,20 @@
+StoneAge 2.5 source-labelled comparison-image recovery probe — R1
+SCOPE|exact-source-labelled-images|direct+Wayback-CDX/replay|transient-image-body|derived-metadata-only|no-image-commit
+TARGET|label=blog-mainland-taiwan-25|url=https://shiqifabu.fszye.com/zb_users/upload/2020/12/20201222082537160859673711005.jpg|referer=https://blog.shiqi.so/shiqi273.htm
+DIRECT_ERROR|label=blog-mainland-taiwan-25|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+CDX|label=blog-mainland-taiwan-25|query=https://shiqifabu.fszye.com/zb_users/upload/2020/12/20201222082537160859673711005.jpg|status=200|bytes=3|rows=0|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|label=blog-mainland-taiwan-25|query=http://shiqifabu.fszye.com/zb_users/upload/2020/12/20201222082537160859673711005.jpg|status=200|bytes=3|rows=0|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+TARGET|label=bahamut-mainland-taiwan-25|url=https://cos.stoneage.cn/uploads/article/minisnsimg/20201222/5fe128b2e6b0a.jpg|referer=https://forum.gamer.com.tw/C.php?bsn=1571&snA=81429
+DIRECT_ERROR|label=bahamut-mainland-taiwan-25|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+CDX_ERROR|label=bahamut-mainland-taiwan-25|query=https://cos.stoneage.cn/uploads/article/minisnsimg/20201222/5fe128b2e6b0a.jpg|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+CDX_ERROR|label=bahamut-mainland-taiwan-25|query=http://cos.stoneage.cn/uploads/article/minisnsimg/20201222/5fe128b2e6b0a.jpg|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=blog-mainland-taiwan-25:direct|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=bahamut-mainland-taiwan-25:direct|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=bahamut-mainland-taiwan-25:cdx:https://cos.stoneage.cn/uploads/article/minisnsimg/20201222/5fe128b2e6b0a.jpg|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=bahamut-mainland-taiwan-25:cdx:http://cos.stoneage.cn/uploads/article/minisnsimg/20201222/5fe128b2e6b0a.jpg|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+COUNT|targets|2
+COUNT|unique_recovered_images|0
+COUNT|ruten_controls|15
+COUNT|errors|4
+RESOLUTION|SOURCE_LABELLED_COMPARISON_IMAGE_BODY_UNRECOVERED|retain exact URLs and source-text mapping; do not use sidebar images as substitutes
+EVIDENCE_BOUNDARY|collector comparison imagery can distinguish artwork families but cannot establish pressing/mastering, disc bytes, filesystem contents, package-to-disc chain or clean-client provenance.
