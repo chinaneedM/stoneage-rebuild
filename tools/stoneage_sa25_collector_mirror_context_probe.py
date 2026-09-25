@@ -74,12 +74,33 @@ def rows(text,base):
             "title":attrs.get("title",""),
             "pre":pre,
             "post":post,
+            "start":m.start(),
+            "end":m.end(),
+        })
+    return tuple(out)
+
+def between_rows(text, rr):
+    """Return literal visible text between consecutive retained image tags.
+
+    This is deliberately narrower than the broad pre/post context. It lets us
+    determine whether a label belongs before, between, or after specific
+    article images without inferring from distant prose.
+    """
+    out=[]
+    for left,right in zip(rr,rr[1:]):
+        raw=text[left["end"]:right["start"]]
+        out.append({
+            "left_index":left["index"],
+            "right_index":right["index"],
+            "left_url":left["url"],
+            "right_url":right["url"],
+            "text":visible(raw),
         })
     return tuple(out)
 
 def main():
-    print("StoneAge 2.5 collector-mirror image-context probe — R1")
-    print("SCOPE|public-html-only|image-url+nearby-text|no-image-body|no-login|no-purchase")
+    print("StoneAge 2.5 collector-mirror image-context probe — R2")
+    print("SCOPE|public-html-only|image-url+nearby-text+exact-between-image-text|no-image-body|no-login|no-purchase")
     errors=[]
     total=0
     for label,url in PAGES:
@@ -87,6 +108,7 @@ def main():
             st,final,h,b=fetch(url)
             text=b.decode("utf-8","replace")
             rr=rows(text,final)
+            bb=between_rows(text,rr)
             total += len(rr)
             print(f"PAGE|label={label}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|images={len(rr)}|final={clean(final)}")
             print(f"PAGE_TEXT|label={label}|value={clean(visible(text),9000)}")
@@ -94,6 +116,13 @@ def main():
                 print(f"IMAGE|page={label}|order={n}|source_index={row['index']}|url={clean(row['url'],5000)}|alt={clean(row['alt'],1500)}|title={clean(row['title'],1500)}")
                 print(f"IMAGE_PRE|page={label}|order={n}|value={clean(row['pre'],5000)}")
                 print(f"IMAGE_POST|page={label}|order={n}|value={clean(row['post'],5000)}")
+            for n,row in enumerate(bb):
+                print(
+                    f"BETWEEN|page={label}|order={n}|"
+                    f"left_source_index={row['left_index']}|right_source_index={row['right_index']}|"
+                    f"left_url={clean(row['left_url'],3000)}|right_url={clean(row['right_url'],3000)}|"
+                    f"value={clean(row['text'],6000)}"
+                )
         except Exception as e:
             errors.append((label,type(e).__name__,str(e)))
     for label,kind,msg in errors:
@@ -102,10 +131,10 @@ def main():
     print(f"COUNT|images|{total}")
     print(f"COUNT|errors|{len(errors)}")
     if total:
-        print("RESOLUTION|COLLECTOR_IMAGE_CONTEXT_MAPPED|use only literal nearby-text associations")
+        print("RESOLUTION|COLLECTOR_IMAGE_CONTEXT_MAPPED|prefer exact BETWEEN segments over broad pre/post context for image-label binding")
     else:
         print("RESOLUTION|COLLECTOR_IMAGE_CONTEXT_UNRESOLVED|do not assign regional/artwork labels")
-    print("EVIDENCE_BOUNDARY|nearby article text can label collector photographs but cannot establish pressing/mastering, disc bytes, package-to-disc chain or clean-client provenance.")
+    print("EVIDENCE_BOUNDARY|exact between-image text can establish article-order label association only; it cannot establish pressing/mastering, disc bytes, package-to-disc chain or clean-client provenance.")
 
 if __name__=="__main__":
     main()
