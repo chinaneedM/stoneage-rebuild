@@ -1,0 +1,17 @@
+StoneAge 4.0 Arquivo.pt independent archive probe — R1
+SCOPE|full-text+versionHistory+CDX|exact-filename+source+full-CGI|metadata-only|no-payload
+TEXTSEARCH|q=shiqi4updatex|status=200|bytes=290|sha256=3b811dfc313a9f3a36baa397c88113a4fad7670b64aa816c8954146fa56c8efb|json=1|final=https://arquivo.pt/textsearch?q=shiqi4updatex&maxItems=500&from=20020101000000&to=20151231235959
+RESULT_COUNT|label=text:shiqi4updatex|count=0
+VERSION|label=source|status=200|bytes=292|sha256=1300f9af0cee18dd3f20ea7072f715fabad211f2aa3168c7155df39f53cffb53|json=1|final=https://arquivo.pt/textsearch?versionHistory=http%3A%2F%2Fgames.sina.com.cn%2Fdowngames%2Fupdatex%2F11084599.shtml&maxItems=500
+RESULT_COUNT|label=version:source|count=0
+CDX|label=source|status=200|bytes=0|sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855|json=0|final=https://arquivo.pt/wayback/cdx?url=http%3A%2F%2Fgames.sina.com.cn%2Fdowngames%2Fupdatex%2F11084599.shtml&output=json&limit=5000
+BODY|label=cdx:source|value=
+ERROR|scope=text:shiqi4updatex_02_11_08.zip|kind=HTTPError|message=HTTP Error 400: Bad Request
+ERROR|scope=text:"石器时代4.0" "地图补丁"|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
+ERROR|scope=text:"xinhaonanhai" "石器时代"|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
+ERROR|scope=version:cgi|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
+ERROR|scope=cdx:cgi|kind=URLError|message=<urlopen error [Errno 101] Network is unreachable>
+COUNT|reported_rows|0
+COUNT|errors|5
+RESOLUTION|NO_ARQUIVO_ROW|independent archive exposed no indexed row on tested surfaces
+EVIDENCE_BOUNDARY|Arquivo.pt search/version/CDX rows are archive discovery metadata; no returned original-file payload is fetched by this probe.
