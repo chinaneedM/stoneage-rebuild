@@ -17,6 +17,7 @@ IDS=(
     "22632305238624",  # boxed 2.5 newbie package
     "21926883918096",  # 2.5 disc listing
     "22242541948520",  # 2.5 disc listing
+    "22615474551866",  # 2.5 game disc + box listing
 )
 PROD="https://rtapi.ruten.com.tw/api/prod/v2/index.php/prod"
 DETAIL="https://rapi.ruten.com.tw/api/items/v2/list"
