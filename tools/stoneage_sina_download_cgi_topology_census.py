@@ -25,9 +25,10 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 def fetch(url,timeout=50,max_bytes=2*1024*1024,no_redirect=False):
     req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/json,text/html,text/plain,*/*;q=0.5","Accept-Encoding":"identity"})
-    opener=urllib.request.build_opener(NoRedirect) if no_redirect else urllib.request
+    opener=urllib.request.build_opener(NoRedirect) if no_redirect else None
     try:
-        with opener.open(req,timeout=timeout) as r:
+        call=opener.open if opener is not None else urllib.request.urlopen
+        with call(req,timeout=timeout) as r:
             return int(getattr(r,"status",r.getcode())),r.geturl(),dict(r.headers.items()),r.read(max_bytes)
     except urllib.error.HTTPError as e:
         return int(e.code),e.geturl(),dict(e.headers.items()),e.read(max_bytes)
