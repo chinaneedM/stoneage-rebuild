@@ -1,0 +1,11 @@
+StoneAge 2.0 retail client-disc preservation census — R1
+SCOPE|Internet Archive metadata + DiscMaster filename index|exact retail carrier/client tokens|no-payload
+TARGET|newbie=石器时代2.0新手报到包|veteran=石器时代2.0老手削暴包|sina=stoneage2.0setup.exe
+COUNT|ia_unique_items|312
+COUNT|ia_strict_items|0
+COUNT|dm_unique_rows|0
+COUNT|dm_strict_rows|0
+ERROR|scope=ia:veteran-short|kind=JSONDecodeError|message=Invalid \uXXXX escape: line 1 column 8388608 (char 8388607)
+COUNT|errors|1
+RESOLUTION|NO_STRICT_RETAIL_CARRIER_HIT|tested IA/DiscMaster exact retail/client token surface exposes no preserved client-disc candidate
+EVIDENCE_BOUNDARY|index metadata is discovery evidence only; package-name matches do not establish optical pressing or client-byte identity.
