@@ -1,0 +1,33 @@
+StoneAge Japan sa174gm Gamania mirror probe — R1
+SCOPE|public-source+archive-index+optional-public-wayback-stream-hash|no-payload-commit
+TARGET|gamania_http=http://file2.gamania.co.jp/sa/sa174gm.exe
+TARGET|gamania_https=https://file2.gamania.co.jp/sa/sa174gm.exe
+EVIDENCE_RULE|sa174gm and sa174hg remain separate identities until byte comparison
+PAGE|label=ipve-2008|ok=1|status=200|bytes=73002|sha256=968203c79a4beb63f8ddc13ac2c96d0a74d701b512a3ef3c1d9d86060efa25ce|final=https://www.ipve.com/bbs/viewthread.php?extra=&page=5&tid=84383|gm_token=1|official_url=1|error=
+PAGE|label=shiqila-2020|ok=1|status=200|bytes=44918|sha256=f12e245c1e9ca0969f392a9b05079daefc48a5be073222c4feb0e856d5e68f83|final=https://shiqi.la/forum.php?mod=viewthread&tid=16671|gm_token=1|official_url=0|error=
+ATTACHMENT|name=sa174gm[解压密码www.shiqi.la].rar|href=forum.php?mod=attachment&aid=Njc1fGY3NjBiZGY5fDE3OTAzMDU1MTh8MHwxNjY3MQ%3D%3D|decoded_aid=675%7Cf760bdf9%7C1790305518%7C0%7C16671
+ATTACHMENT|name=Stoneage.rar|href=forum.php?mod=attachment&aid=Njc2fGM5ODhhNWZifDE3OTAzMDU1MTh8MHwxNjY3MQ%3D%3D|decoded_aid=676%7Cc988a5fb%7C1790305518%7C0%7C16671
+PAGE_TOKEN|label=shiqila-2020|token=sa174gm[解压密码www.shiqi.la].rar|count=1
+PAGE_TOKEN|label=shiqila-2020|token=Stoneage.rar|count=1
+PAGE_TOKEN|label=shiqila-2020|token=194.24 MB|count=1
+PAGE_TOKEN|label=shiqila-2020|token=174.72 MB|count=1
+PAGE_TOKEN|label=shiqila-2020|token=2003年12月11日|count=5
+LIVE_HEAD|target=http://file2.gamania.co.jp/sa/sa174gm.exe|ok=0|status=|final=http://file2.gamania.co.jp/sa/sa174gm.exe|content_length=|content_type=|last_modified=|location=|error=URLError: <urlopen error [Errno -2] Name or service not known>
+LIVE_HEAD|target=https://file2.gamania.co.jp/sa/sa174gm.exe|ok=0|status=|final=https://file2.gamania.co.jp/sa/sa174gm.exe|content_length=|content_type=|last_modified=|location=|error=URLError: <urlopen error [Errno -2] Name or service not known>
+WAYBACK_CDX|target=http://file2.gamania.co.jp/sa/sa174gm.exe|ok=1|status=200|rows=1|error=
+WAYBACK_ROW|timestamp=20130210101013|original=http://file2.gamania.co.jp/sa/sa174gm.exe|statuscode=503|mimetype=text/html|digest=CSYD2PXMVLZFP376UJSTVBBFRCMOCGUL|length=399|redirect=
+WAYBACK_AVAIL|target=http://file2.gamania.co.jp/sa/sa174gm.exe|timestamp=20031211|ok=1|status=200|closest={}|error=
+WAYBACK_AVAIL|target=http://file2.gamania.co.jp/sa/sa174gm.exe|timestamp=20031212|ok=1|status=200|closest={}|error=
+WAYBACK_AVAIL|target=http://file2.gamania.co.jp/sa/sa174gm.exe|timestamp=20040101|ok=1|status=200|closest={}|error=
+WAYBACK_AVAIL|target=http://file2.gamania.co.jp/sa/sa174gm.exe|timestamp=20080101|ok=1|status=200|closest={}|error=
+ARQUIVO_CDX|target=http://file2.gamania.co.jp/sa/sa174gm.exe|ok=1|status=200|rows=0|error=
+WAYBACK_CDX|target=https://file2.gamania.co.jp/sa/sa174gm.exe|ok=1|status=200|rows=1|error=
+WAYBACK_ROW|timestamp=20130210101013|original=http://file2.gamania.co.jp/sa/sa174gm.exe|statuscode=503|mimetype=text/html|digest=CSYD2PXMVLZFP376UJSTVBBFRCMOCGUL|length=399|redirect=
+WAYBACK_AVAIL|target=https://file2.gamania.co.jp/sa/sa174gm.exe|timestamp=20031211|ok=1|status=200|closest={}|error=
+WAYBACK_AVAIL|target=https://file2.gamania.co.jp/sa/sa174gm.exe|timestamp=20031212|ok=1|status=200|closest={}|error=
+WAYBACK_AVAIL|target=https://file2.gamania.co.jp/sa/sa174gm.exe|timestamp=20040101|ok=1|status=200|closest={}|error=
+WAYBACK_AVAIL|target=https://file2.gamania.co.jp/sa/sa174gm.exe|timestamp=20080101|ok=1|status=200|closest={}|error=
+ARQUIVO_CDX|target=https://file2.gamania.co.jp/sa/sa174gm.exe|ok=0|status=|rows=0|error=URLError: <urlopen error [Errno 101] Network is unreachable>
+IA_SEARCH|ok=1|status=200|docs=0|error=
+RESOLUTION|EXACT_GAMANIA_MIRROR_IDENTITY_EXPANDED|payload bytes not recovered from tested public indexes
+EVIDENCE_BOUNDARY|2008/2020 community sources corroborate the sa174gm identity; only first-party bytes or independently preserved payload can establish build identity or equality with sa174hg.
