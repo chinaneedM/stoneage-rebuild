@@ -1,0 +1,14 @@
+StoneAge Sina download CGI topology census — R1
+SCOPE|Wayback download.pl prefix census + bounded small-response replay|metadata/html-only|no-payload
+TARGET|aid=23223|filename=samap_1220.zip
+COUNT|all_rows|0
+COUNT|map_rows|0
+COUNT|replay_sample|0
+COUNT|directish_unique|0
+ERROR|scope=cdx:2000|kind=AttributeError|message=module 'urllib.request' has no attribute 'open'
+ERROR|scope=cdx:2001|kind=AttributeError|message=module 'urllib.request' has no attribute 'open'
+ERROR|scope=cdx:2002|kind=AttributeError|message=module 'urllib.request' has no attribute 'open'
+ERROR|scope=cdx:2003|kind=AttributeError|message=module 'urllib.request' has no attribute 'open'
+COUNT|errors|4
+RESOLUTION|NO_MAP_CGI_CORPUS|no archived col=map rows recovered
+EVIDENCE_BOUNDARY|recovered redirects/body links establish Sina CGI topology only; filename substitution never proves target payload identity.
