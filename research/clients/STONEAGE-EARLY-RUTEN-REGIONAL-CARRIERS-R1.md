@@ -9,6 +9,7 @@ Canonical derived reports:
 - `research/recovered/STONEAGE-EARLY-RUTEN-CARRIERS-R1.txt`
 - `research/recovered/STONEAGE-EARLY-RUTEN-CARRIER-FINGERPRINTS-R1.txt`
 - `research/recovered/STONEAGE-MAINLAND-RETAIL-ISBN-PROBE-R1.txt`
+- `research/recovered/STONEAGE-MAINLAND-PACKAGE-MIRROR-MATCH-R1.txt`
 
 ## FACT — Taiwan package control
 
@@ -42,6 +43,26 @@ This identifier is separate from the previously recorded Wanfang StoneAge 2.5 di
 Ruten item `22638643800877` exposes a boxed StoneAge disc/package photograph whose disc face visibly includes **`www.waei.com.cn`**. This is useful Mainland/Beijing-Waei carrier context, but the photograph does not establish disc filesystem contents, mastering, or version.
 
 Item `22631284715652` is retained as a Beijing-Waei/new-user-package visual control only. Marketplace wording such as “正版”, “原版軟體”, “新手包” or “全版本” remains a seller claim unless independently authenticated.
+
+## FACT — 2.0-labelled mirror relationship for the Beijing-Waei newbie control
+
+A later public collector mirror at `https://www.sa85.com.cn/shiqi2710.html` is explicitly titled **`石器时代周边收藏客户端礼包篇（五）2.0版本礼盒`**. It is a later collector source, not contemporaneous operator evidence.
+
+Its first article-body package photograph (`mirror-20:2`, SHA-256 `bf736ab3ba6d860c0faece641ae8a199a35ed5e6616ddc883ad001b5301e6c6f`) produces unusually strong SIFT/RANSAC overlap against all four photographs from Ruten item `22631284715652`:
+
+- image 0: **400 inliers / 0.8403**, target coverage **0.9070**;
+- image 1: **328 / 0.8059**, target coverage **0.9054**;
+- image 2: **317 / 0.8212**, target coverage **0.8793**;
+- image 3: **129 / 0.6386**, target coverage **0.2838**.
+
+The first three matches cover almost the full collector reference image while occupying only a smaller region of the larger Ruten photographs. This is materially stronger than ordinary shared-logo/artwork overlap and supports a **strong shared package/photo-artwork family** relationship.
+
+The geometry is not treated as proof of the same physical box or same photograph: the homography sanity flag is false for these four rows and the projected area ratios are large, consistent with crop/embedding/perspective differences. Therefore the correct historical status is:
+
+- **FACT:** the current Ruten `22631284715652` photo family strongly overlaps the package pictured by a later source explicitly labelled as a 2.0-version gift box;
+- **HYPOTHESIS / BOUNDARY:** this increases the plausibility that the surviving package belongs to the 2.0-era package family, but does **not** independently prove its original release version, disc contents, pressing, installer bytes or clean-client status.
+
+The current 1.x comparison mirror at `https://shiqi.ws/post/10248.html` is publicly readable in CI but exposed no standard `<img>` rows in the first pass. A follow-up raw/CSS/lazy-image discovery pass is active so that the 2.0 relationship can be tested against an actual 1.x visual control rather than accepted one-sidedly.
 
 ## Exact preservation probe for 7-900032-57-0
 
