@@ -33,12 +33,14 @@ No exact `P-RPG-0008` or `4710739350098` identifier has yet been recovered from 
 
 ## FACT — Mainland package controls
 
-Ruten item `22636573895893` exposes a Simplified-Chinese StoneAge retail box with visible WAEI/WGS branding. Its photographed back panel provides a new exact physical-package identifier:
+Ruten item `22636573895893` exposes a Simplified-Chinese StoneAge retail box with visible WAEI/WGS branding. The small photographed back-panel identifier area was initially transcribed as **`7-900032-57-0` / `9787900032570`**, but that reading is now explicitly **UNCONFIRMED**:
 
-- ISBN: **`7-900032-57-0`**
-- barcode: **`9787900032570`**
+- the transcribed 10-digit value fails the ISBN-10 checksum;
+- the transcribed 13-digit value fails the EAN-13 checksum;
+- if the preceding photographed digits were read correctly, checksum-consistent final-digit hypotheses would be **`7-900032-57-6` / `9787900032577`**;
+- neither final digit is independently readable/confirmed enough from the current photograph to promote either pair as FACT.
 
-This identifier is separate from the previously recorded Wanfang StoneAge 2.5 disc ISBN/barcode and must not be conflated with it.
+Therefore the printed identifier remains an **OPEN photo-reading question**, not an exact package identity. This candidate is separate from the previously recorded Wanfang StoneAge 2.5 disc ISBN/barcode and must not be conflated with it.
 
 Ruten item `22638643800877` exposes a boxed StoneAge disc/package photograph whose disc face visibly includes **`www.waei.com.cn`**. This is useful Mainland/Beijing-Waei carrier context, but the photograph does not establish disc filesystem contents, mastering, or version.
 
@@ -64,11 +66,11 @@ The geometry is not treated as proof of the same physical box or same photograph
 
 The current 1.x comparison mirror at `https://shiqi.ws/post/10248.html` is publicly readable in CI but exposed no standard `<img>` rows in the first pass. A follow-up raw/CSS/lazy-image discovery pass is active so that the 2.0 relationship can be tested against an actual 1.x visual control rather than accepted one-sidedly.
 
-## Exact preservation probe for 7-900032-57-0
+## Preservation probe for the initial photo transcription
 
 GitHub Actions run `36096287039`, attempt 2, completed successfully.
 
-The probe tested:
+The R1 probe tested the **initial photo transcription**:
 
 - `7-900032-57-0`
 - `7900032570`
@@ -76,7 +78,7 @@ The probe tested:
 - `石器时代 网络游戏 华义`
 - `StoneAge 北京华义 WAEI`
 
-against DiscMaster and Internet Archive metadata.
+against DiscMaster and Internet Archive metadata. These queries remain valid records of what was tested, but the first three strings must not be described as confirmed printed identifiers.
 
 Result:
 
@@ -86,7 +88,7 @@ Result:
 
 The one raw DiscMaster row returned for the hyphenated ISBN failed the strict StoneAge/operator identifier test and is not promoted as a candidate.
 
-Operational consequence: the tested DiscMaster/IA exact-identifier surface is **bounded**. Reopen this ISBN route only from a new preservation corpus, independent catalogue record, disc/file token, checksum, volume label, or public media dump.
+Operational consequence: the R1 DiscMaster/IA surface is **bounded only for the initial transcription strings**. A separate R2 pass should test the checksum-consistent hypotheses while keeping them explicitly hypothetical; the route should then reopen only from a clearer photograph, independent catalogue record, new preservation corpus, disc/file token, checksum, volume label, or public media dump.
 
 ## Visual-evidence boundary
 
@@ -104,6 +106,6 @@ No current visual result establishes:
 
 ## Status
 
-**ACTIVE REGIONAL CARRIER CONTROL SET / EXACT MAINLAND ISBN SURFACE BOUNDED.**
+**ACTIVE REGIONAL CARRIER CONTROL SET / MAINLAND PRINTED IDENTIFIER FINAL DIGIT OPEN.**
 
 Next high-value evidence remains a provenance-preserving public read/dump/file tree or exact matrix/volume/installer identifier tied to one of the surviving physical carriers.
