@@ -85,7 +85,7 @@ def body_links(body,base):
 def directish(url):
     low=urllib.parse.unquote_plus(str(url)).lower()
     if not low: return False
-    if "login.games.sina.com.cn" in low: return False
+    if any(host in low for host in ("login.games.sina.com.cn","macromedia.com","adobe.com")): return False
     return any(ext in low for ext in (".zip",".exe",".rar",".cab")) or low.startswith("ftp://")
 
 def distance(item):
@@ -110,6 +110,14 @@ def main():
         except Exception as e:
             errors.append((f"cdx:{label}",type(e).__name__,str(e)))
     print(f"COUNT|all_rows|{len(all_rows)}")
+    col_counts=collections.Counter()
+    for r in all_rows:
+        p=params(str(r.get("original") or ""))
+        col_counts[str(p.get("col") or "<none>").lower()]+=1
+    for col,n in col_counts.most_common(30):
+        print(f"COL_COUNT|col={clean(col)}|rows={n}")
+    for i,r in enumerate(all_rows[:30],1):
+        print(f"RAW_SAMPLE|index={i}|timestamp={clean(r.get('timestamp'))}|statuscode={clean(r.get('statuscode'))}|original={clean(r.get('original'))}")
     print(f"COUNT|map_rows|{len(maps)}")
     counts=collections.Counter(str(x["row"].get("statuscode") or "") for x in maps)
     for sc,n in sorted(counts.items()):
