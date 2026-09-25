@@ -1928,16 +1928,22 @@ Supplemental source ledgers:
 
 ## StoneAge 2.5 public surviving-disc set — Ruten control — 2026-09-25
 
-- The public marketplace control set has expanded from three to **four separately addressable StoneAge 2.5 listing chains**:
+- The public marketplace control set now contains **five separately addressable StoneAge 2.5 listing IDs**, but they must not be counted as five independently proven physical specimens:
   - `22632305238624`: boxed **2.5 精靈王傳說新手報到包**, original-package/game-disc wording, 9 full-size photos;
   - `21926883918096`: loose **2.5版 精靈王傳說** disc, listed 2019-06-28;
   - `22242541948520`: separate loose **2.5版 精靈王傳說 PC GAME** listing, listed 2022-10-19;
-  - `22615474551866`: **`精靈王傳說 石器時代2.5版 遊戲片+外盒`**, listed 2026-04-11, sold quantity 1 / stock 0, with three full-size photos `_647.jpg / _438.jpg / _740.jpg`.
-- **Independence correction:** separate listing IDs/sellers/dates do not prove four independent physical discs. Reused seller photography, resale or a common photo source remain possible and must be tested rather than assumed.
-- New R4 visual fingerprinting produces a strong visual cluster:
+  - `22615474551866`: **`精靈王傳說 石器時代2.5版 遊戲片+外盒`**, listed 2026-04-11, sold quantity 1 / stock 0, with three full-size photos `_647.jpg / _438.jpg / _740.jpg`;
+  - `22445165101247`: **`石器時代 2.5版 精靈王傳說 全新完整版`**, same seller account `alixson7` as `22242541948520`, one full-size photo `_815.jpg`.
+- **Independence correction:** separate listing IDs/dates do not prove independent physical discs. The fifth listing makes this concrete: `22445165101247` and `22242541948520` use the same seller account, so they are one seller/listing lineage unless physical evidence proves otherwise.
+- Updated R4 visual fingerprinting materially tightens the duplicate-family boundary:
+  - `22242541948520:0` vs `22445165101247:0`: **1,581 RANSAC inliers / 0.7543**;
+  - `21926883918096:0` vs `22445165101247:0`: **977 / 0.5586**;
+  - `22445165101247:0` photograph SHA-256: `f7835bb1c544ee3de89578f5161f5169edc2ee1e495de0368161f8d0dfb9fc78`;
+  - these values make `22445165101247` a **same-seller/near-duplicate visual control**, not a fifth independent specimen.
+- The previously identified R4 visual cluster also remains:
   - `21926883918096:0` vs `22242541948520:0`: **743 RANSAC inliers / 0.4831**;
   - new disc+box `22615474551866:1` (`_438.jpg`) vs those two loose-disc images: **266 / 0.2323** and **253 / 0.2202**.
-- Those scores support a **shared disc-face/artwork/photographic family** for the three images, but do not establish same physical disc, same pressing, same mastering or independent-specimen count.
+- Taken together, the high-overlap listings support a **shared disc-face/artwork/photographic family** and reduce the defensible independent-specimen count. They do not establish same physical disc, same pressing or same mastering.
 - The exact source-labelled Yan-Nian disc photograph gives an important negative separator: new `22615474551866` images score only **11 / 0.0118**, **11 / 0.0120** and **7 / 0.0091** against it. By contrast the existing `22632305238624` image 3 remains the strongest Yan-Nian Ruten comparison at **112 / 0.1181**.
 - Consequence: **do not merge the new disc+box/loose-disc visual cluster with the Yan-Nian source-labelled disc family.** Collector evidence says Mainland/Taiwan 2.5 disc artwork differed, but current image metrics are not enough to assign the new cluster to a region or pressing.
 - Current Ruten/provenance reports still expose **no matrix/IFPI, volume label, filesystem, installer hash, disc image or payload checksum**. Therefore this materially improves carrier-family discrimination but **does not move the field-map byte-provenance anchor earlier than June 2003**.
