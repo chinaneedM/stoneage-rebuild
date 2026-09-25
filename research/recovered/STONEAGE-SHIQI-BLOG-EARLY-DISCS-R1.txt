@@ -1,0 +1,9 @@
+StoneAge early-client-disc collector article probe — R1
+SCOPE|blog.shiqi.so collector article discovery+text+transient image hashes|no-image-commit|no-payload
+COUNT|article_candidates|0
+COUNT|images_hashed|0
+COUNT|exact_smzdm_image_reuse|0
+ERROR|scope=index|kind=URLError|message=<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1000)>
+COUNT|errors|1
+RESOLUTION|COLLECTOR_SOURCE_INCOMPLETE|do not promote physical-disc claims
+EVIDENCE_BOUNDARY|collector pages/photos prove only current physical-survival/label evidence; they do not establish optical filesystem, pressing, installer identity or historical byte provenance.
