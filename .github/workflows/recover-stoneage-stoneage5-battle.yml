@@ -1,0 +1,70 @@
+name: Recover Stoneage-5 battle container
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_stoneage5_battle_extract_probe.py
+      - tests/test_stoneage_stoneage5_battle_extract_probe.py
+      - .github/workflows/recover-stoneage-stoneage5-battle.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-stoneage5-battle
+  cancel-in-progress: true
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate bounded battle recovery
+        run: python3 -m unittest tests.test_stoneage_stoneage5_battle_extract_probe -v
+      - name: Install CAB decoder
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cabextract
+      - name: Fetch bounded CAB prefix into sparse transient file
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_stoneage5_battle_extract_probe \
+            --output-cab /tmp/DATA1.cab \
+            --prefix-bytes 8388608 \
+            > /tmp/prep.txt
+          cat /tmp/prep.txt
+      - name: Extract selected early battle payloads only
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sta5battle
+          for F in soundaddr_3.txt battle_2.bin data_1.bin battletxt_2.txt; do
+            cabextract -q -F "$F" -d /tmp/sta5battle /tmp/DATA1.cab
+          done
+          ls -l /tmp/sta5battle
+      - name: Analyze and delete transient payloads
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          R=research/recovered/STONEAGE-STONEAGE5-BATTLE-LINEAGE-R1.txt
+          cat /tmp/prep.txt > "$R"
+          python3 -m tools.stoneage_stoneage5_battle_extract_probe \
+            --analyze-dir /tmp/sta5battle >> "$R"
+          rm -rf /tmp/sta5battle /tmp/DATA1.cab /tmp/prep.txt
+      - name: Commit derived battle-lineage evidence only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-STONEAGE5-BATTLE-LINEAGE-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: recover Stoneage-5 battle lineage'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
