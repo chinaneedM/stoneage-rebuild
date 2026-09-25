@@ -1,0 +1,44 @@
+name: Probe StoneAge 2001 DiscMaster estoneage
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_2001_discmaster_estoneage_probe.py
+      - tests/test_stoneage_2001_discmaster_estoneage_probe.py
+      - .github/workflows/probe-stoneage-2001-discmaster-estoneage.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-2001-discmaster-estoneage
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_2001_discmaster_estoneage_probe -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_2001_discmaster_estoneage_probe > research/recovered/STONEAGE-2001-DISCMASTER-ESTONEAGE-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-2001-DISCMASTER-ESTONEAGE-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: inspect DiscMaster estoneage rows'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
