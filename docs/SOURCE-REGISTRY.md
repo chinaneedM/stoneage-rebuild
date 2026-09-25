@@ -2288,3 +2288,28 @@ Every substantial source should record:
   - that the file on any listed disc is named `stoneage2.0setup.exe`;
   - that any later re-upload is clean without file-level provenance checks.
 
+
+
+### SRC-CN-2002-SINA-XINHAONANHAI-COMMUNITY-01
+
+- Title: Sina StoneAge community pages identifying `xinhaonanhai` as an active community member/moderator
+- Content time anchors: **2002-09 through 2002-11** (page content dates/events)
+- Retrieval date: 2026-09-25
+- Language/region: Simplified Chinese / Mainland China
+- Source type: contemporaneous Sina Games StoneAge forum/award pages
+- URLs:
+  - `https://games.sina.com.cn/zhuanqu/stoneage3/zhongjiang0816.shtml`
+  - `https://games.sina.com.cn/zhuanqu/stoneage3/mingdan10.shtml`
+  - `https://games.sina.com.cn/zhuanqu/stoneage3/mingdan11.shtml`
+- Confidence: **A** for the alias occurring on Sina's StoneAge community surface and being explicitly called `斑竹xinhaonanhai` in the November event text; **not identity evidence** beyond the screen name.
+- Supports:
+  - `xinhaonanhai` was not merely an isolated download-record string; the alias was active on Sina's StoneAge community surface during 2002;
+  - November 2002 event text explicitly tells winners to contact `斑竹xinhaonanhai`, establishing a moderator role for that alias on the Sina StoneAge forum surface by then;
+  - together with `SRC-CN-2002-SINA-SA40-FULL-MAP-PATCH-01`, the same alias is independently tied to a later StoneAge full-map package of the same functional class as the 2001 target.
+- Does not support:
+  - civil/legal identity of the person behind the alias;
+  - that the 2001 and 2002 packages are byte descendants of one another;
+  - operator originality of either community-contributed map package;
+  - any map bytes, hashes or file ancestry until payloads are recovered.
+- Canonical interpretation note:
+  - `research/clients/STONEAGE-2001-XINHAONANHAI-CONTRIBUTOR-LINEAGE-R1.md`
