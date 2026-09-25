@@ -1,26 +1,28 @@
 StoneAge Beijing-Waei Q4-2001 payload-domain residual census — R2
-SCOPE|failed R1 month/extensions split into smaller windows|CDX-metadata-only|no-payload
-CDX|window=oct-a|ext=rar|from=20011001|to=20011015|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011001&to=20011015&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Drar%28%3F%3A%5B%3F%5D.%2A%29%3F%24
-CDX|window=oct-b|ext=rar|from=20011016|to=20011031|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011016&to=20011031&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Drar%28%3F%3A%5B%3F%5D.%2A%29%3F%24
-CDX|window=nov-a|ext=exe|from=20011101|to=20011110|status=200|rows=2|bytes=418|sha256=4dce36ceb81a78cc716dacfcd453131c80c8c4bafd99f0aabf696d1ec7aa1422|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011101&to=20011110&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dexe%28%3F%3A%5B%3F%5D.%2A%29%3F%24
-CDX|window=nov-b|ext=exe|from=20011111|to=20011120|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011111&to=20011120&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dexe%28%3F%3A%5B%3F%5D.%2A%29%3F%24
-CDX|window=dec-b|ext=exe|from=20011211|to=20011220|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011211&to=20011220&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dexe%28%3F%3A%5B%3F%5D.%2A%29%3F%24
-CDX|window=dec-c|ext=exe|from=20011221|to=20011231|status=200|rows=5|bytes=933|sha256=bd5366633d31ea9d1ddaa07aca438435cb97f0a4a3e8a716215ee91491e9b5f0|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011221&to=20011231&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dexe%28%3F%3A%5B%3F%5D.%2A%29%3F%24
-CANDIDATE|score=7|timestamp=20011230044855|original=http://www.waei.com.cn:80/zhuanqu/t4c/download/screen-saver/Setup_800.exe|statuscode=200|mimetype=application/octet-stream|digest=W3Y6EWDXZ35724665VTCA7SAJITILCEI|length=1202335
-CANDIDATE|score=7|timestamp=20011230045455|original=http://www.waei.com.cn:80/zhuanqu/t4c/download/screen-saver/Setup_1024.exe|statuscode=200|mimetype=application/octet-stream|digest=W3RR6YUIUSAK4SG2QSHILEUPBDFMJK2M|length=1354655
+SCOPE|failed R1 month/extensions split into smaller windows|bounded retries|StoneAge-gated candidate scoring|CDX-metadata-only|no-payload
+CDX|window=oct-a|ext=rar|from=20011001|to=20011015|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|attempt=1|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011001&to=20011015&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Drar%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=oct-b|ext=rar|from=20011016|to=20011031|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|attempt=1|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011016&to=20011031&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Drar%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=nov-a|ext=exe|from=20011101|to=20011110|status=200|rows=2|bytes=418|sha256=4dce36ceb81a78cc716dacfcd453131c80c8c4bafd99f0aabf696d1ec7aa1422|attempt=1|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011101&to=20011110&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dexe%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=nov-b|ext=exe|from=20011111|to=20011120|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|attempt=1|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011111&to=20011120&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dexe%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=nov-c|ext=exe|from=20011121|to=20011130|status=200|rows=1|bytes=228|sha256=ecd21552eefae77ff79d25dee5fe29e080d650a99f0177368c348f711ecc9348|attempt=1|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011121&to=20011130&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dexe%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=nov-a|ext=rar|from=20011101|to=20011110|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|attempt=2|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011101&to=20011110&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Drar%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=nov-b|ext=rar|from=20011111|to=20011120|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|attempt=1|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011111&to=20011120&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Drar%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=nov-c|ext=rar|from=20011121|to=20011130|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|attempt=1|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011121&to=20011130&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Drar%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+CDX|window=dec-a|ext=exe|from=20011201|to=20011210|status=200|rows=1|bytes=198|sha256=7d13a1974e5e0763ca6552e76c40c9442244271183df8f25f07dd71fd3c8e4b4|attempt=1|final=https://web.archive.org/cdx/search/cdx?url=waei.com.cn&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20011201&to=20011210&collapse=urlkey&limit=10000&filter=original%3A.%2A%5B.%5Dexe%28%3F%3A%5B%3F%5D.%2A%29%3F%24
+NONSTONEAGE_CONTROL|timestamp=20011104234919|original=http://www.waei.com.cn:80/zhuanqu/t4c/download/screen-saver/Setup_1024.exe|reason=generic-download-or-setup-without-stoneage-marker
+NONSTONEAGE_CONTROL|timestamp=20011104235114|original=http://www.waei.com.cn:80/zhuanqu/t4c/download/screen-saver/Setup_800.exe|reason=generic-download-or-setup-without-stoneage-marker
+NONSTONEAGE_CONTROL|timestamp=20011123195224|original=http://www.waei.com.cn:80/zhuanqu/the4thcoming/img/screenshot/Setup_1024.exe|reason=generic-download-or-setup-without-stoneage-marker
 COUNT|queries|14
-COUNT|completed_queries|6
-COUNT|unique_payload_urls|5
-COUNT|stoneage_candidates|2
+COUNT|completed_queries|9
+COUNT|unique_payload_urls|4
+COUNT|stoneage_candidates|0
+COUNT|nonstoneage_controls|3
 COUNT|exact_sina_filename_urls|0
-ERROR|scope=nov-c:exe:20011121-20011130|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
 ERROR|scope=nov-a:cab:20011101-20011110|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
 ERROR|scope=nov-b:cab:20011111-20011120|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
 ERROR|scope=nov-c:cab:20011121-20011130|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|scope=nov-a:rar:20011101-20011110|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|scope=nov-b:rar:20011111-20011120|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
-ERROR|scope=nov-c:rar:20011121-20011130|kind=URLError|message=<urlopen error _ssl.c:983: The handshake operation timed out>
-ERROR|scope=dec-a:exe:20011201-20011210|kind=URLError|message=<urlopen error _ssl.c:983: The handshake operation timed out>
-COUNT|errors|8
-RESOLUTION|WAEI_Q4_STONEAGE_PAYLOAD_TOKENS_FOUND|classify candidates against 2.0 client/update semantics
+ERROR|scope=dec-b:exe:20011211-20011220|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=dec-c:exe:20011221-20011231|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+COUNT|errors|5
+RESOLUTION|WAEI_Q4_RESIDUAL_INCOMPLETE|do not close official payload-domain surface
 EVIDENCE_BOUNDARY|CDX rows are archive URL metadata only; absence on tested indexes does not prove historical nonexistence.
