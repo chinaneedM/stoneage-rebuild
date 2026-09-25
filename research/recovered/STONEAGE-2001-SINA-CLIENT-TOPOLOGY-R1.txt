@@ -1,0 +1,17 @@
+StoneAge 2001 Sina client-download topology probe — R1
+SCOPE|games+games1 col=demo neighbors + nearest CGI replay + target-path synthesis|no-client-payload
+TARGET|aid=41967|filename=stoneage2.0setup.exe|col=demo
+CDX|host=games.sina.com.cn|status=200|rows=908|col_rows=43|bytes=256596|sha256=c7bde26454ff70ee9f8b4e2eeef993347f75ab30f1283561abd208a1b655f7f2
+CDX|host=games1.sina.com.cn|status=200|rows=0|col_rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+COUNT|col_rows|1
+COUNT|unique_aids|1
+NEIGHBOR|rank=1|distance=16524|aid=25443|timestamp=20010418022323|filename=monkeybrain.exe|size=15964|original=http://games.sina.com.cn:80/cgi-bin/games/downgames/download.pl?col=demo&aid=25443&title=%A1%B6%BA%EF%C4%D4%A1%B7%D3%CE%CF%B7%CA%D4%CD%E6&filename=monkeybrain.exe&size=15964
+REPLAY|aid=25443|timestamp=20010418022323|status=200|bytes=6584|sha256=3dfc7da7f04d10d7c540ad004980a3d30f7060a1b6e3058248125cb0b0723b92|links=1
+BODY_LINK|aid=25443|source_filename=monkeybrain.exe|url=http://202.108.44.24/demo_1118/monkeybrain.exe
+COUNT|body_links|1
+COUNT|synthesized_target_urls|1
+SYNTH|index=1|url=http://202.108.44.24/demo_1118/stoneage2.0setup.exe
+SYNTH_CDX|index=1|status=200|rows=0|bytes=3
+COUNT|errors|0
+RESOLUTION|CLIENT_DOWNLOAD_TOPOLOGY_RECOVERED|evaluate synthesized exact target rows
+EVIDENCE_BOUNDARY|neighbor routes establish download topology only; target client identity requires an exact recovered installer.
