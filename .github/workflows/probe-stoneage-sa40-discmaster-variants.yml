@@ -1,0 +1,45 @@
+name: Probe StoneAge 4.0 DiscMaster variants
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa40_discmaster_variant_probe.py
+      - tests/test_stoneage_sa40_discmaster_variant_probe.py
+      - .github/workflows/probe-stoneage-sa40-discmaster-variants.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa40-discmaster-variants
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate variant ranking
+        run: python3 -m unittest tests.test_stoneage_sa40_discmaster_variant_probe -v
+      - name: Search file-level preservation index
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa40_discmaster_variant_probe             > research/recovered/STONEAGE-SA40-DISCMASTER-VARIANTS-R2.txt
+      - name: Commit derived search evidence only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-SA40-DISCMASTER-VARIANTS-R2.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe StoneAge 4.0 filename variants'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
