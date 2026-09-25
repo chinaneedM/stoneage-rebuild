@@ -44,8 +44,23 @@ def rows(node):
 def path_of(r):
     return str(r.get("fileid") or r.get("path") or r.get("filename") or r.get("name") or "")
 
+def scalar_fields(r):
+    out=[]
+    for k in sorted(r):
+        v=r.get(k)
+        if isinstance(v,(str,int,float,bool)) or v is None:
+            out.append((str(k),v))
+    return tuple(out)
+
+def classify_paths(items):
+    normalized=[path_of(r).replace("\\","/").lower() for r in items]
+    bare=[p for p in normalized if p.rstrip("/").endswith("stoneage2") and "/stoneage2/" not in p]
+    descendants=[p for p in normalized if "/stoneage2/" in p or p.startswith("stoneage2/")]
+    exact=[p for p in normalized if p.rsplit("/",1)[-1] in ("stoneage2.0setup.exe","stoneage.exe","sa.exe")]
+    return bare,descendants,exact
+
 def main():
-    print("StoneAge 2.0 DiscMaster item 41879 topology — R1")
+    print("StoneAge 2.0 DiscMaster item 41879 topology — R2")
     print("SCOPE|DiscMaster item-local search + browse HTML|metadata-only|no-payload")
     print("TARGET|itemid=41879|itemName=350 PC Games (CD-ROM)|discovered_path=STONEAGE2")
     errors=[]; seen={}
@@ -57,6 +72,10 @@ def main():
             for r in rr:
                 p=path_of(r); seen[(str(r.get("itemid") or ""),p)]=r
                 print(f"ROW|q={clean(q)}|itemid={clean(r.get('itemid'))}|itemName={clean(r.get('itemName'))}|path={clean(p)}|size={clean(r.get('size'))}|ts={clean(r.get('ts'))}|b3sum={clean(r.get('b3sum'))}")
+                if "stoneage" in p.lower():
+                    print(f"ROW_KEYS|q={clean(q)}|keys={clean(','.join(sorted(str(k) for k in r.keys())))}")
+                    for k,v in scalar_fields(r):
+                        print(f"ROW_FIELD|q={clean(q)}|key={clean(k)}|value={clean(v,1800)}")
         except Exception as e:
             errors.append(("query:"+q,type(e).__name__,str(e)))
     for u in BROWSE:
@@ -84,16 +103,22 @@ def main():
         p=path_of(r).replace("\\","/"); low=p.lower()
         if "stoneage2" in low or ("stoneage" in low and any(x in low for x in ("setup","install",".exe","readme"))):
             relevant.append(r)
+    bare,descendants,exact=classify_paths(tuple(seen.values()))
     print(f"COUNT|unique_rows|{len(seen)}")
     print(f"COUNT|relevant_rows|{len(relevant)}")
+    print(f"COUNT|bare_stoneage2_nodes|{len(bare)}")
+    print(f"COUNT|stoneage2_descendants|{len(descendants)}")
+    print(f"COUNT|client_identity_rows|{len(exact)}")
     for s,k,m in errors: print(f"ERROR|scope={clean(s)}|kind={clean(k)}|message={clean(m)}")
     print(f"COUNT|errors|{len(errors)}")
-    if any("stoneage2.0setup.exe" in path_of(r).lower() for r in relevant):
-        print("RESOLUTION|EXACT_CLIENT_FILENAME_IN_ITEM|inspect carrier provenance before any payload recovery")
-    elif relevant:
-        print("RESOLUTION|STONEAGE2_ITEM_NEIGHBORHOOD_FOUND|classify directory contents/version identity before promotion")
+    if exact:
+        print("RESOLUTION|EXACT_CLIENT_IDENTITY_IN_ITEM|inspect carrier provenance before any payload recovery")
+    elif descendants:
+        print("RESOLUTION|STONEAGE2_DESCENDANTS_FOUND|classify descendant files/version identity before promotion")
+    elif bare:
+        print("RESOLUTION|BARE_STONEAGE2_INDEX_NODE_ONLY|item exposes a bare STONEAGE2 index node but no descendant or client-identifying row on tested metadata surfaces")
     else:
-        print("RESOLUTION|STONEAGE2_DIRECTORY_ONLY_OR_FALSE_POSITIVE|item does not expose a client-identifying neighbor on tested metadata surfaces")
+        print("RESOLUTION|STONEAGE2_FALSE_POSITIVE|item does not expose a StoneAge 2 client-identifying row on tested metadata surfaces")
     print("EVIDENCE_BOUNDARY|DiscMaster item metadata/directory HTML is carrier-discovery evidence only; no file is accepted as the 2001 Mainland client without exact identity and provenance.")
 
 if __name__=="__main__":
