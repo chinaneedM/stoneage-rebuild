@@ -1,5 +1,5 @@
 import unittest
-from tools.stoneage_2000_sina_host_alias_probe import HOSTS, relevant, params
+from tools.stoneage_2000_sina_host_alias_probe import HOSTS, relevant, params, extract_route_values, relevant_text_lines
 
 class HostAliasProbeTests(unittest.TestCase):
     def test_hosts(self):
@@ -15,6 +15,14 @@ class HostAliasProbeTests(unittest.TestCase):
     def test_params(self):
         p=params("http://x/download.pl?aid=1&col=map")
         self.assertEqual(p["col"],"map")
+
+    def test_extract_route_values(self):
+        body=b'<a href="http://down.example.com/map/samap_1220.zip">download</a>'
+        self.assertEqual(extract_route_values(body,"http://games.sina.com.cn/"),("http://down.example.com/map/samap_1220.zip",))
+
+    def test_relevant_text_lines(self):
+        body=b'<script>window.location="http://down.example.com/a.zip";</script>'
+        self.assertTrue(relevant_text_lines(body))
 
 if __name__=="__main__":
     unittest.main()
