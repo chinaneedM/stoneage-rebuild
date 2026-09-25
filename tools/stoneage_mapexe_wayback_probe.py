@@ -49,6 +49,14 @@ def fetch_prefix(url,limit=MAX_PREFIX,timeout=60):
         return int(getattr(r,"status",r.getcode())),r.geturl(),dict(r.headers.items()),body
 
 
+def hget(headers,name):
+    want=name.lower()
+    for key,value in headers.items():
+        if str(key).lower()==want:
+            return value
+    return ""
+
+
 def pe_info(data):
     if len(data)<64 or data[:2]!=b"MZ":
         return None
@@ -96,13 +104,13 @@ def main():
         print(
             f"REPLAY|status={status}|final={clean(final)}|bytes_read={len(body)}|"
             f"truncated={int(len(body)>MAX_PREFIX)}|sha256_prefix={hashlib.sha256(body[:MAX_PREFIX]).hexdigest()}|"
-            f"content_type={clean(headers.get('Content-Type'))}|content_length={clean(headers.get('Content-Length'))}|"
-            f"content_range={clean(headers.get('Content-Range'))}|"
-            f"orig_length={clean(headers.get('X-Archive-Orig-Content-Length'))}|"
-            f"orig_type={clean(headers.get('X-Archive-Orig-Content-Type'))}|"
-            f"orig_last_modified={clean(headers.get('X-Archive-Orig-Last-Modified'))}|"
-            f"orig_etag={clean(headers.get('X-Archive-Orig-Etag'))}|"
-            f"memento={clean(headers.get('Memento-Datetime'))}"
+            f"content_type={clean(hget(headers,'Content-Type'))}|content_length={clean(hget(headers,'Content-Length'))}|"
+            f"content_range={clean(hget(headers,'Content-Range'))}|"
+            f"orig_length={clean(hget(headers,'X-Archive-Orig-Content-Length'))}|"
+            f"orig_type={clean(hget(headers,'X-Archive-Orig-Content-Type'))}|"
+            f"orig_last_modified={clean(hget(headers,'X-Archive-Orig-Last-Modified'))}|"
+            f"orig_etag={clean(hget(headers,'X-Archive-Orig-Etag'))}|"
+            f"memento={clean(hget(headers,'Memento-Datetime'))}"
         )
         sample=body[:MAX_PREFIX]
         print(f"MAGIC|hex={sample[:32].hex()}")

@@ -1,13 +1,17 @@
 import struct
 import unittest
 
-from tools.stoneage_mapexe_wayback_probe import CAPTURE_TS, TARGET, pe_info
+from tools.stoneage_mapexe_wayback_probe import CAPTURE_TS, TARGET, hget, pe_info
 
 
 class MapExeWaybackProbeTests(unittest.TestCase):
     def test_exact_target_and_capture(self):
         self.assertEqual(TARGET,"http://www.wuxitianlong.com:80/sa/map.exe")
         self.assertEqual(CAPTURE_TS,"20030623234451")
+
+    def test_header_lookup_is_case_insensitive(self):
+        self.assertEqual(hget({"Content-range":"bytes 0-9/100"},"Content-Range"),"bytes 0-9/100")
+        self.assertEqual(hget({"X-archive-orig-content-length":"123"},"X-Archive-Orig-Content-Length"),"123")
 
     def test_pe_parser(self):
         b=bytearray(256)
