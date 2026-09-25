@@ -25,7 +25,7 @@ jobs:
       - run: |
           set -euo pipefail
           mkdir -p research/recovered
-          python3 -m tools.stoneage_2001_chip_newcomputer_carrier_probe > research/recovered/STONEAGE-2001-CHIP-NEWCOMPUTER-CARRIER-R1.txt
+          python3 -m tools.stoneage_2001_chip_newcomputer_carrier_probe > research/recovered/STONEAGE-2001-CHIP-NEWCOMPUTER-CARRIER-R2.txt
       - name: Commit derived metadata only
         run: |
           set -euo pipefail
@@ -39,6 +39,6 @@ jobs:
           cp /tmp/report.txt "$R"
           git add "$R"
           git diff --cached --quiet && exit 0
-          git commit -m 'research: probe CHIP 2001 StoneAge carrier'
+          git commit -m 'research: probe CHIP 2001 StoneAge carrier R2'
           for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
           exit 1
