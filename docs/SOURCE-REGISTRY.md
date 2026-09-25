@@ -2198,6 +2198,13 @@ Every substantial source should record:
   - contemporaneous Sina pages use `游民部落` as a Sina game-community/editorial label, so this value alone does **not** identify a separate uploader domain or the later user/site `xinhaonanhai`;
   - the 2001-11 package is materially different: its author field explicitly says `游民部落网友` and embeds `http://www.xinhaonanhai.com` around the name `xinhaonanhai`;
   - therefore any 2000→xinhaonanhai lineage remains only a tested weak hypothesis and must not be used as provenance without an independent path/token match.
+- Package-content clue from the surviving page:
+  - the instructions say to **unzip the package and copy its contents into the StoneAge installation's `map` subdirectory**;
+  - the stated effect is that in-game maps become fully visible without manual exploration;
+  - this strongly classifies the distribution as a field-map/cache-content package rather than a full client installer, while still not proving the exact file list until bytes are recovered.
+- Same-pipeline control discovered:
+  - Sina's 2000-12-28 `石器时代—南岛详细地图指南` uses the same local-download backend with `aid=23681`, `filename=southisland_1228.zip`, `size=202`;
+  - this adjacent StoneAge package is useful as a topology control for reconstructing the late-2000 Sina redirect/file-server path even if `aid=23223` itself has no archived CGI response.
 - Preservation status:
   - exact/predicted Wayback payload-path probes: no verified payload capture on the tested surfaces;
   - exact Internet Archive filename/stem searches: no exact carrier;
