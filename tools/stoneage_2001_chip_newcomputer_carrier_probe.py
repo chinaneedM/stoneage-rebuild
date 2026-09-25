@@ -66,18 +66,41 @@ def dm_rows(node):
     walk(node)
     uniq={}
     for r in out:
-        path=str(r.get("fileid") or r.get("path") or r.get("filename") or r.get("name") or "")
-        uniq[(str(r.get("itemid") or ""),path,str(r.get("b3sum") or ""))]=r
+        p=path_of(r)
+        uniq[(str(r.get("itemid") or ""),p,str(r.get("b3sum") or ""))]=r
     return tuple(uniq.values())
 
 def path_of(r):
     return str(r.get("fileid") or r.get("path") or r.get("filename") or r.get("name") or "")
 
-def targetish_text(s):
-    low=urllib.parse.unquote_plus(str(s or "")).lower().replace(" ","")
-    return any(k in low for k in (
-      "chip新电脑","新电脑","stoneage2.0setup","石器时代2.0","stoneage2"
-    ))
+def norm(s):
+    return urllib.parse.unquote_plus(str(s or "")).lower().replace(" ","")
+
+def exact_client_text(s):
+    low=norm(s)
+    return "stoneage2.0setup" in low or "石器时代2.0" in low
+
+def chinese_chip_text(s):
+    low=norm(s)
+    return "chip新电脑" in low or "新电脑" in low
+
+def period_2001_11(s):
+    low=norm(s)
+    return any(k in low for k in ("2001-11","200111","2001_11","11/2001","0111"))
+
+def ia_candidate(d):
+    text=" ".join(str(d.get(k) or "") for k in ("title","description","identifier"))
+    year=str(d.get("year") or "")
+    date=str(d.get("date") or "")
+    return exact_client_text(text) or (
+        chinese_chip_text(text)
+        and year=="2001"
+        and (date.startswith("2001-11") or period_2001_11(text))
+    )
+
+def dm_candidate(r):
+    text=(r.get("itemName") or "")+" "+path_of(r)
+    return exact_client_text(text) or (chinese_chip_text(text) and period_2001_11(text))
 
 def main():
     print("StoneAge 2.0 CHIP 新电脑 November-2001 carrier probe — R2")
@@ -108,19 +131,19 @@ def main():
             rr=dm_rows(json.loads(b.decode("utf-8")))
             print(f"DM_QUERY|q={clean(q)}|status={st}|rows={len(rr)}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}")
             for r in rr:
-                path=path_of(r)
-                key=(str(r.get("itemid") or ""),path,str(r.get("b3sum") or ""))
+                p=path_of(r)
+                key=(str(r.get("itemid") or ""),p,str(r.get("b3sum") or ""))
                 dm_seen[key]=r
                 relevant=int(dm_candidate(r))
                 print(
                   f"DM_HIT|q={clean(q)}|relevant={relevant}|itemid={clean(r.get('itemid'))}|"
-                  f"itemName={clean(r.get('itemName'))}|path={clean(path)}|size={clean(r.get('size'))}|"
+                  f"itemName={clean(r.get('itemName'))}|path={clean(p)}|size={clean(r.get('size'))}|"
                   f"ts={clean(r.get('ts'))}|b3sum={clean(r.get('b3sum'))}"
                 )
         except Exception as e:
             errors.append(("dm:"+q,type(e).__name__,str(e)))
-    ia_rel=[d for d in ia_seen.values() if targetish_text(" ".join(str(d.get(k) or "") for k in ("title","description","identifier")))]
-    dm_rel=[r for r in dm_seen.values() if targetish_text((r.get("itemName") or "")+" "+path_of(r))]
+    ia_rel=[d for d in ia_seen.values() if ia_candidate(d)]
+    dm_rel=[r for r in dm_seen.values() if dm_candidate(r)]
     print(f"COUNT|ia_unique_items|{len(ia_seen)}")
     print(f"COUNT|ia_relevant_items|{len(ia_rel)}")
     print(f"COUNT|dm_unique_rows|{len(dm_seen)}")
@@ -131,7 +154,7 @@ def main():
     if ia_rel or dm_rel:
         print("RESOLUTION|CARRIER_CANDIDATE_FOUND|classify exact issue/disc date and filesystem before any client provenance promotion")
     else:
-        print("RESOLUTION|NO_CHIP_2001_CARRIER_HIT|tested public IA/DiscMaster surfaces expose no relevant preserved carrier")
+        print("RESOLUTION|NO_CHIP_2001_CARRIER_HIT|tested public IA/DiscMaster surfaces expose no relevant preserved Chinese November-2001 carrier")
     print("EVIDENCE_BOUNDARY|carrier/index metadata is discovery evidence only; no client byte identity is inferred from magazine title or month.")
 
 if __name__=="__main__":
