@@ -1955,6 +1955,27 @@ Supplemental source ledgers:
   - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-DISC-PHOTO-R1.txt`.
 
 
+
+## StoneAge 2.5 Mainland/Taiwan source-labelled comparison image bounded — 2026-09-25
+
+- The collector-mirror context is now mapped at **exact between-image granularity**, removing the earlier broad-context ambiguity.
+- On `https://blog.shiqi.so/shiqi273.htm`, the segment between article-body image 3 and image 4 reads literally: **`到2.5精灵王传说版本啦 上面是大陆版客户端统一图案的光盘 下面是台版盘，有点镭射反光的感觉，很好看`**.
+- Therefore image 4 — `https://shiqifabu.fszye.com/zb_users/upload/2020/12/20201222082537160859673711005.jpg` — is the article-order **source-labelled 2.5 Mainland/Taiwan comparison image**. The next interval is already the article closing text.
+- The corresponding Bahamut collector source independently exposes `https://cos.stoneage.cn/uploads/article/minisnsimg/20201222/5fe128b2e6b0a.jpg` for the same Mainland/Taiwan 2.5 comparison context.
+- Dedicated recovery run **36091418849** completed successfully, but recovered **0 image bodies**:
+  - blog image direct read: connection refused;
+  - blog image exact Wayback HTTP/HTTPS CDX: **0 rows**;
+  - Bahamut/COS direct read: connection refused;
+  - Bahamut/COS CDX requests failed transport, so that archive path remains **inconclusive**, not negative.
+- R5 visual fingerprinting now rejects unqualified collector/sidebar images and retains only source-qualified body references. Since the exact source-labelled bodies remain unavailable, the current Ruten disc cluster is **not assigned to Mainland or Taiwan by visual inference**.
+- **EVIDENCE BOUNDARY:** text/order association is now strong; pixel-level inspection, pressing/mastering identity, filesystem and optical-disc bytes remain unrecovered. This does not move the pre-June-2003 byte provenance anchor.
+- Canonical source: `SRC-CN-2020-SHIQIBLOG-SA25-DISC-MIRROR-01`.
+- Derived reports:
+  - `research/recovered/STONEAGE-SA25-COLLECTOR-MIRROR-CONTEXT-R1.txt`
+  - `research/recovered/STONEAGE-SA25-SOURCE-LABELLED-COMPARISON-IMAGE-R1.txt`
+  - `research/recovered/STONEAGE-SA25-PHYSICAL-IMAGE-FINGERPRINTS-R4.txt`.
+
+
 ## Japanese 1.74a recovery gains a second exact client identity — 2026-09-25
 
 - The Japanese bridge track now has a second exact filename/path in addition to first-party Hangame `sa174hg.exe`: a 2008 public Japanese-service repost gives `http://file2.gamania.co.jp/sa/sa174gm.exe`.
