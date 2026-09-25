@@ -1,0 +1,28 @@
+StoneAge early collector primary-image archive probe — R1
+SCOPE|five exact shiqifabu.fszye.com article-image URLs|Wayback exact CDX+availability+transient image hash|no-image-commit
+CDX|index=1|scheme=http|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|url=http://shiqifabu.fszye.com/zb_users/upload/2020/12/20201218135732160827105240814.jpg
+AVAIL|index=1|scheme=http|status=200|available=0|timestamp=|capture=|http_status=
+CDX|index=1|scheme=https|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|url=https://shiqifabu.fszye.com/zb_users/upload/2020/12/20201218135732160827105240814.jpg
+AVAIL|index=1|scheme=https|status=200|available=0|timestamp=|capture=|http_status=
+CDX|index=2|scheme=http|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|url=http://shiqifabu.fszye.com/zb_users/upload/2020/12/20201218135732160827105231744.jpg
+AVAIL|index=2|scheme=http|status=200|available=0|timestamp=|capture=|http_status=
+AVAIL|index=2|scheme=https|status=200|available=0|timestamp=|capture=|http_status=
+AVAIL|index=3|scheme=http|status=200|available=0|timestamp=|capture=|http_status=
+AVAIL|index=3|scheme=https|status=200|available=0|timestamp=|capture=|http_status=
+AVAIL|index=4|scheme=http|status=200|available=0|timestamp=|capture=|http_status=
+AVAIL|index=4|scheme=https|status=200|available=0|timestamp=|capture=|http_status=
+CDX|index=5|scheme=http|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|url=http://shiqifabu.fszye.com/zb_users/upload/2020/12/20201218135734160827105464241.jpg
+AVAIL|index=5|scheme=http|status=200|available=0|timestamp=|capture=|http_status=
+CDX|index=5|scheme=https|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|url=https://shiqifabu.fszye.com/zb_users/upload/2020/12/20201218135734160827105464241.jpg
+AVAIL|index=5|scheme=https|status=200|available=0|timestamp=|capture=|http_status=
+COUNT|target_images|5
+COUNT|cdx_rows|0
+COUNT|images_replayed|0
+ERROR|scope=cdx:2:https|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:3:http|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:3:https|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:4:http|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:4:https|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+COUNT|errors|5
+RESOLUTION|PRIMARY_IMAGE_ARCHIVE_SURFACE_INCOMPLETE|do not declare images unpreserved
+EVIDENCE_BOUNDARY|archived photograph bytes establish only photographic evidence; they cannot establish disc filesystem, mastering, installer hash or historical client-byte identity.
