@@ -2177,3 +2177,37 @@ Every substantial source should record:
   - byte identity with Taiwan/JSS/Korean branches;
   - treating the displayed version label as executable build provenance without binary inspection.
 - Derived report: `research/recovered/STONEAGE-2001-CLIENT-PRESERVATION-R1.txt`.
+
+### SRC-CN-2000-SINA-FULLMAP-01
+
+- Title: `石器时代！全地图` (decoded from the surviving Sina download-link title parameter)
+- Record date: **2000-12-20**
+- Retrieval date: 2026-09-25
+- Language/region: Simplified Chinese / Mainland China
+- Source type: surviving contemporaneous Sina game-download record with exact local-download href
+- Source page: `https://games.sina.com.cn/downgames/map/1220492.shtml`
+- Confidence: **A** for the surviving page, exact download token, filename and stated size; payload identity remains unrecovered
+- Exact local-download token recovered from the source:
+  - `col=map`;
+  - `aid=23223`;
+  - `filename=samap_1220.zip`;
+  - `size=1410`;
+  - title parameter decodes to `石器时代！全地图`;
+  - author parameter decodes to `游民部落`.
+- Preservation status:
+  - exact/predicted Wayback payload-path probes: no verified payload capture on the tested surfaces;
+  - exact Internet Archive filename/stem searches: no exact carrier;
+  - DiscMaster broad `samap` searches return many unrelated files; these are diagnostic noise and are **not** preservation candidates unless the leaf filename exactly matches `samap_1220.zip`;
+  - the Sina source page itself has historical Wayback availability, but no indexed `aid=23223` CGI response body has yet been recovered.
+- Supports:
+  - existence of a specifically named Mainland StoneAge full-map distribution package by late 2000;
+  - an exact recovery token that predates the 2001-11 `Estoneage2.0map_1127.exe` target;
+  - a higher-priority route for moving the field-map byte-provenance anchor earlier.
+- Does not support:
+  - operator originality or clean-byte status of the ZIP;
+  - byte identity with Taiwan v1.0 or later map corpora;
+  - any map ID/hash/content claim until the ZIP bytes are recovered and extracted.
+- Derived reports:
+  - `research/recovered/STONEAGE-2000-FULLMAP-PRESERVATION-R1.txt`;
+  - `research/recovered/STONEAGE-2000-SINA-AID-23223-R1.txt`.
+
