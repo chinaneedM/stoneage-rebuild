@@ -1,6 +1,7 @@
 import unittest
 
 from tools.stoneage_sa25_ruten_provenance_metadata_probe import (
+    IDS,
     flatten,
     key_allowed,
     keyword_snippets,
@@ -23,6 +24,11 @@ class T(unittest.TestCase):
         rows=keyword_snippets(text,80)
         self.assertTrue(rows)
         self.assertIn("原包裝",rows[0])
+
+    def test_target_ids_include_new_public_carrier_leads(self):
+        self.assertEqual(len(IDS),len(set(IDS)))
+        self.assertIn("22637629794063",IDS)
+        self.assertIn("22625938678558",IDS)
 
 
 if __name__=="__main__":
