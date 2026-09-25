@@ -1614,3 +1614,55 @@ Every substantial source should record:
 - Derived reports:
   - `research/recovered/STONEAGE-SA25-RUTEN-PHYSICAL-R1.txt`
   - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-DISC-PHOTO-R1.txt`.
+
+
+### SRC-JP-2008-IPVE-SA174GM-MIRROR-01
+
+- Page: `https://www.ipve.com/bbs/viewthread.php?extra=&page=5&tid=84383`
+- Post timestamp shown: **2008-08-07 21:10**
+- Author shown: `SmileBoy`
+- Retrieval/research date: **2026-09-25**
+- Source type: later community repost preserving a Japanese StoneAge service/download URL; not a 2003 first-party launch source.
+- Literal identifiers:
+  - Japanese official-site label: `http://www.stoneage.to`;
+  - exact download URL: `http://file2.gamania.co.jp/sa/sa174gm.exe`;
+  - account-registration URL under `stoneage.to`;
+  - attribution line says the material was reposted from `石器的天空`.
+- Confidence:
+  - **A for the literal current page timestamp/text/URL**;
+  - **B for this being a historical Japanese-service distribution pointer in 2008**;
+  - **OPEN for original introduction date, payload bytes, version/build and equality with `sa174hg.exe`**.
+- Supports:
+  - treating `sa174gm.exe` and exact `file2.gamania.co.jp/sa/` path as a new precise Japanese-client recovery token.
+- Does not support:
+  - that the file was unchanged since 2003;
+  - that the file was version 1.74a;
+  - that `gm` and `hg` packages are byte-identical.
+- Derived note: `research/clients/STONEAGE-JAPAN-SA174GM-GAMANIA-RECOVERY-R1.md`.
+
+### SRC-CN-2020-SHIQILA-SA174GM-ATTACHMENT-01
+
+- Page: `https://shiqi.la/forum.php?mod=viewthread&tid=16671`
+- Title: `sa174gm.exe日版石器时代主程式安装档2003年12月11日`
+- Post timestamp shown: **2020-06-05 08:16:13**
+- Author shown: `shiqila`
+- Retrieval/research date: **2026-09-25**
+- Source type: later community preservation/re-upload carrier; not a first-party 2003 source.
+- Public attachment metadata:
+  - installer archive: `sa174gm[解压密码www.shiqi.la].rar`, **194.24 MB**, stable Discuz attachment-id component **675**, displayed upload time **2020-06-05 08:13**, displayed price **10 石币**;
+  - installed/portable archive: `Stoneage.rar`, **174.72 MB**, stable attachment-id component **676**, displayed upload time **2020-06-05 08:15**, displayed price **15 石币**.
+- Access boundary:
+  - anonymous attachment requests return HTTP 403;
+  - no login/payment/access-control bypass is attempted.
+- Date boundary:
+  - `2003年12月11日` is part of a **2020 thread title**;
+  - until independently confirmed by period evidence or authenticated file metadata, it remains an attributed later claim rather than FACT.
+- Confidence:
+  - **A for visible current page metadata, attachment names/sizes and stable attachment-id components**;
+  - **B/C for the uploader's “日本原版” / date attribution**;
+  - **OPEN for archive bytes, hashes, members, installer metadata and clean provenance**.
+- Does not support:
+  - direct version-1.74a attribution;
+  - equality with the official Hangame `sa174hg.exe` package;
+  - use of the compressed RAR size as a comparison against Hangame's 248 MB display-size token.
+- Derived note: `research/clients/STONEAGE-JAPAN-SA174GM-GAMANIA-RECOVERY-R1.md`.
