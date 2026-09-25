@@ -2249,3 +2249,35 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-SINA-DOWNLOAD-CGI-TOPOLOGY-R1.txt`;
   - `research/recovered/STONEAGE-2000-INDEPENDENT-ARCHIVES-R1.txt`.
 
+### SRC-CN-2001-17173-SA20-DISTRIBUTION-01
+
+- Title: `石器时代2.0-家族开拓史 / 升级方法`
+- URL: `https://news.17173.com/z/stoneage/banben/sa20-up.htm`
+- Retrieval date: 2026-09-25
+- Language/region: Simplified Chinese / Mainland China
+- Source type: preserved 17173 StoneAge version/upgrade guide
+- Dating boundary: the surviving page does not expose an independent publication timestamp in the current HTML, but its operational text is explicitly anchored to the Mainland 2.0 transition beginning **2001-11-01**, the **2001-11-01 to 2001-12-01** compatibility window, and a trial-serial deadline of **2001-12-31**. Treat it as strong period distribution evidence while keeping the exact page-publication timestamp unresolved.
+- Distribution statement:
+  - Beijing Waei's website offered the `石器时代2.0` **完整升级版** for download;
+  - the guide separately states that the same complete upgrade could be obtained free with the following magazines/books/discs:
+    1. `PC任我行` 11月号;
+    2. `大众软件CD` 11月号;
+    3. `电脑` 11月号;
+    4. `电脑爱好者光盘――玩游戏` 11月号;
+    5. `电脑报――游戏世界` 11月号;
+    6. `电脑校园` 11月号;
+    7. `晶合秘藏Ⅱ之红宝石`;
+    8. `少年电世界` 11月号（光盘版）;
+    9. `网上俱乐部――游戏吧` 11月号;
+    10. `新游戏人` 11月号;
+    11. `游戏原动力` 11月号;
+    12. 圣比尔 `石器时代2.0攻略`;
+    13. 腾图 `石器时代攻略全集`.
+- Recovery consequence:
+  - these are concrete **carrier identities** for the Mainland 2.0 complete-upgrade client and are independent of the missing Sina `stoneage2.0setup.exe` payload route;
+  - a preserved coverdisc/book-disc may contain the client under a different path or filename, so carrier-level filesystem inspection has higher value than exact-filename-only searching once candidates are identified.
+- Does not support:
+  - that every listed carrier contains byte-identical media;
+  - that the file on any listed disc is named `stoneage2.0setup.exe`;
+  - that any later re-upload is clean without file-level provenance checks.
+
