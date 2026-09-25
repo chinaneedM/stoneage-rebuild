@@ -22,7 +22,7 @@ TARGET_CARRIERS={
 }
 
 def main():
-    print("StoneAge 2.0 SMZDM-to-Ruten physical-carrier visual cross-check — R1")
+    print("StoneAge 2.0 SMZDM-to-Ruten physical-carrier visual cross-check — R2")
     print("SCOPE|source-mapped-2.0-disc-photo+public-early-mainland-controls|SIFT+RANSAC|transient-images|no-payload")
     print(f"REFERENCE|role=smzdm-2.0-newbie-disc|url={SMZDM_20_IMAGE}|expected_sha256={SMZDM_20_SHA256}")
     errors=[]
