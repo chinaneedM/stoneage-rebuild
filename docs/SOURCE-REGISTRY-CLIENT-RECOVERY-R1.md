@@ -229,17 +229,38 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - supported Windows 98/Me/2000/XP;
   - downloads were available from the operator's official `stoneage.to` site and Hangame.
 - Independent contemporary corroboration:
-  - 4Gamer's 2003-12-12 report says client **先行ダウンロード** began that day on the official site before the open beta, and that Hangame would also provide the client;
-  - source: https://www.4gamer.net/news/history/2003.12/20031212000000detail.html
+  - 4Gamer's 2003-12-12 report says client **先行ダウンロード** began that day on the official site before the open beta, and that Hangame would also provide the client.
+- **First-party launch-window Hangame identity now resolved**:
+  - archived official Hangame `sadl.asp` snapshot at **2003-12-14 05:10:53 UTC** directly references
+    `http://hangame.gamania.co.jp/stoneage/sa174hg.exe`;
+  - the same page exposes a **248 MB** display-size token;
+  - the payload bytes/hash/file tree remain unrecovered.
+- **New Gamania-hosted identity — 2026-09-25 recovery**:
+  - a 2008 public repost preserving Japanese-service instructions gives exact URL
+    `http://file2.gamania.co.jp/sa/sa174gm.exe`;
+  - a 2017 Japanese-player thread independently remembers/stores the client as `SA174gm` and contains an indexed offer to upload `sa174gm.exe`;
+  - a 2020 shiqi.la preservation thread exposes a surviving `sa174gm` installer archive as
+    `sa174gm[解压密码www.shiqi.la].rar` (**194.24 MB**, attachment-id **675**) plus an installed-tree `Stoneage.rar` (**174.72 MB**, attachment-id **676**);
+  - those shiqi.la attachments are access-controlled and are **not** bypassed or treated as recovered bytes.
+- Important identity boundary:
+  - `sa174hg.exe` and `sa174gm.exe` are now two separate exact recovery targets;
+  - a plausible `hg=Hangame / gm=Gamania` naming interpretation is **HYPOTHESIS only**;
+  - no equality, rename relationship, same-build claim, or version equality may be made before byte comparison.
+- Date boundary:
+  - the shiqi.la title says `2003年12月11日`, but this is a 2020 attribution and is **not yet independently established as FACT**.
 - Operational value:
-  - this is direct period evidence of a freely distributed client and therefore a strong clean-client recovery target;
-  - it is a useful near-descendant bridge even though it is not a 1999 JSS build.
+  - this remains a strong clean-client bridge target because first-party contemporaneous evidence proves the Japanese 1.74a free-beta distribution;
+  - the new `sa174gm.exe` branch adds an exact historical Gamania URL and a later surviving attachment carrier, materially improving recovery vocabulary.
+- Public-preservation action:
+  - dedicated probe: `tools/stoneage_japan174a_gamania_mirror_probe.py`;
+  - workflow: `.github/workflows/probe-stoneage-japan174a-gamania-mirror.yml`;
+  - source note: `research/clients/STONEAGE-JAPAN-SA174GM-GAMANIA-RECOVERY-R1.md`.
 - Current blocker:
-  - no surviving installer filename, file size, checksum, mirror body or complete file tree has yet been recovered;
-  - current search confirms distribution, not bytes.
+  - no provenance-preserving bytes, checksum or complete file tree has yet been recovered for either `sa174hg.exe` or `sa174gm.exe`.
 - Next action:
-  - recover archived `stoneage.to` / Hangame download-page paths, old software-catalog mirrors, magazine-CD indexes, or preserved installer references.
-- Status: **TARGET-A**.
+  - search/replay the exact Gamania URL independently from the Hangame URL;
+  - if either payload appears, hash and inventory it transiently and compare the two identities only at byte/file-tree level.
+- Status: **TARGET-A overall; `sa174hg.exe` first-party launch identity / `sa174gm.exe` historical mirror+survival target; bytes not yet recovered**.
 
 ## TARGET-A — Korean StoneAge 1.74 — Netmarble service baseline
 
