@@ -2210,7 +2210,8 @@ Every substantial source should record:
   - exact/predicted Wayback payload-path probes: no verified payload capture on the tested surfaces;
   - exact Internet Archive filename/stem searches: no exact carrier;
   - DiscMaster broad `samap` searches return many unrelated files; these are diagnostic noise and are **not** preservation candidates unless the leaf filename exactly matches `samap_1220.zip`;
-  - the Sina source page itself has historical Wayback availability, but no indexed `aid=23223` CGI response body has yet been recovered.
+  - the Sina source page itself has historical Wayback availability, but no indexed `aid=23223` CGI response body has yet been recovered;
+  - the archived 2005-11-03 HTTP 302 for the `southisland_1228.zip` control has now been replayed with redirects disabled. Its `Location` points only to `login.games.sina.com.cn/index.php?reurl=...`, wrapping the original download CGI rather than exposing a file-server URL. This is a login-gateway control, not a payload carrier or direct-file topology proof.
 - Supports:
   - existence of a specifically named Mainland StoneAge full-map distribution package by late 2000;
   - an exact recovery token that predates the 2001-11 `Estoneage2.0map_1127.exe` target;
@@ -2222,5 +2223,6 @@ Every substantial source should record:
 - Derived reports:
   - `research/recovered/STONEAGE-2000-FULLMAP-PRESERVATION-R1.txt`;
   - `research/recovered/STONEAGE-2000-SINA-AID-23223-R1.txt`;
+  - `research/recovered/STONEAGE-2000-SINA-ARCHIVED302-R1.txt`;
   - `research/recovered/STONEAGE-2000-INDEPENDENT-ARCHIVES-R1.txt` (generated when the independent-archive workflow yields a changed report).
 
