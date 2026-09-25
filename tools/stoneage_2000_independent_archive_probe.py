@@ -111,7 +111,7 @@ def main():
         ids=();errors.append(("cc-index-list",type(e).__name__,str(e)))
     print(f"COMMONCRAWL_INDEX_COUNT|count={len(ids)}")
     for cid in ids:
-        for label,u0 in (("filename","*"+FILENAME+"*"),("source",SOURCE),("cgi",CGI),("direct",DIRECT)):
+        for label,u0 in (("filename","*"+FILENAME+"*"),("direct",DIRECT)):
             try:
                 ep,rr=cc_query(cid,u0)
                 if rr:print(f"COMMONCRAWL_HIT|index={clean(cid)}|label={label}|rows={len(rr)}|endpoint={clean(ep)}")
