@@ -2222,9 +2222,12 @@ Every substantial source should record:
   - exact/predicted Wayback payload-path probes: no verified payload capture on the tested surfaces;
   - exact Internet Archive filename/stem searches: no exact carrier;
   - DiscMaster broad `samap` searches return many unrelated files; these are diagnostic noise and are **not** preservation candidates unless the leaf filename exactly matches `samap_1220.zip`;
-  - the Sina source page itself has historical Wayback availability, but no indexed `aid=23223` CGI response body has yet been recovered;
+  - the Sina source page itself has historical Wayback availability, and the `aid=23223` CGI body **has now been recovered** from the `games.sina.com.cn` host alias at timestamp `20010126074600`; that replay is the source of the exact direct IP route above;
   - the archived 2005-11-03 HTTP 302 for the `southisland_1228.zip` control has now been replayed with redirects disabled. Its `Location` points only to `login.games.sina.com.cn/index.php?reurl=...`, wrapping the original download CGI rather than exposing a file-server URL. This is a login-gateway control, not a payload carrier or direct-file topology proof.
   - a bounded Wayback prefix census of the same Sina `download.pl` backend across 2000–2003 recovered 2,652 rows total: **906 in 2002 and 1,746 in 2003**, but no 2000/2001 prefix rows on the tested index. Of those 2,652 rows, only **3** are `col=map`, all in 2003; bounded replay exposes no direct binary URL. This closes broad CGI-corpus mining as a useful route unless a new exact historical token/archive surface appears.
+  - The exact direct ZIP URL has **zero Wayback availability** across the tested 2000-12-20 through 2005-11-03 dates and zero exact/prefix CDX rows. Its parent `map_1212` directory is archived with 76 rows, but `samap_1220.zip` is absent and `southisland_1228.zip` survives only as a later 404.
+  - A host-wide `202.106.184.193/downfiles/` filename census found no `samap_1220` alias. Related `stoneage`/`1220` rows are sibling topology controls only and are preserved as later 404s.
+  - Common Crawl exposes zero target rows on the tested exact filename/direct-URL indexes. Arquivo.pt text searches expose zero rows where reachable; its exact version/CDX endpoints encountered transient network-unreachable errors, so this is recorded as **no current independent-archive hit**, not a proof that every Arquivo surface is permanently empty.
 - Supports:
   - existence of a specifically named Mainland StoneAge full-map distribution package by late 2000;
   - an exact recovery token that predates the 2001-11 `Estoneage2.0map_1127.exe` target;
@@ -2237,6 +2240,9 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-2000-FULLMAP-PRESERVATION-R1.txt`;
   - `research/recovered/STONEAGE-2000-SINA-AID-23223-R1.txt`;
   - `research/recovered/STONEAGE-2000-SINA-ARCHIVED302-R1.txt`;
+  - `research/recovered/STONEAGE-2000-SINA-DIRECT-ROUTE-R1.txt`;
+  - `research/recovered/STONEAGE-2000-SINA-DIRECT-RECOVERY-R1.txt`;
+  - `research/recovered/STONEAGE-2000-SINA-HOSTWIDE-R1.txt`;
   - `research/recovered/STONEAGE-SINA-DOWNLOAD-CGI-TOPOLOGY-R1.txt`;
-  - `research/recovered/STONEAGE-2000-INDEPENDENT-ARCHIVES-R1.txt` (generated when the independent-archive workflow yields a changed report).
+  - `research/recovered/STONEAGE-2000-INDEPENDENT-ARCHIVES-R1.txt`.
 
