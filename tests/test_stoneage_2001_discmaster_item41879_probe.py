@@ -1,5 +1,5 @@
 import unittest
-from tools.stoneage_2001_discmaster_item41879_probe import ITEM, QUERIES, search_url, classify_paths
+from tools.stoneage_2001_discmaster_item41879_probe import ITEM, QUERIES, search_url, classify_paths, browse_url
 
 class DiscMaster41879Tests(unittest.TestCase):
     def test_item_is_pinned(self):
@@ -7,6 +7,11 @@ class DiscMaster41879Tests(unittest.TestCase):
         u=search_url("setup.exe")
         self.assertIn("itemid=41879",u)
         self.assertIn("mode=deep",u)
+
+    def test_browse_url_encodes_spaces(self):
+        u=browse_url("/browse/41879/jetfighter v.iso/333/images/anims/STONEAGE2")
+        self.assertIn("jetfighter%20v.iso",u)
+        self.assertNotIn(" ",u)
 
     def test_bare_node_is_not_promoted_to_client(self):
         rows=[{"fileid":"STONEAGE2"}]
