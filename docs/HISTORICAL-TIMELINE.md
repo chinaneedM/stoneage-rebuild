@@ -348,6 +348,8 @@ IMPORTANT LIMIT: this closes a battle-map inheritance chain. It is not evidence 
 
 **FACT / surviving download record:** Sina's surviving StoneAge map-download page exposes an exact local-download href for a package identified by `aid=23223`, `filename=samap_1220.zip` and stated size **1410K**. The encoded title parameter decodes to `石器时代！全地图`; the encoded author parameter decodes to `游民部落`. The record is dated **2000-12-20**. [SRC-CN-2000-SINA-FULLMAP-01]
 
+**FACT / archived routing page:** a Wayback replay of Sina's exact download CGI at **2001-01-26 07:46:00 UTC** exposes the direct binary route `http://202.106.184.193/downfiles/map_1212/samap_1220.zip`. The archived HTML labels it `石器时代—全地图下载` and repeats the **1410K** size. This upgrades the target from an exact CGI token to an exact historical delivery URL; it still does not prove that the ZIP body itself survives in a public archive.
+
 **RECOVERY STATUS:** the source page survives and historical page captures are known, but the exact CGI response/payload body is not indexed on the tested Wayback route. Exact Internet Archive filename/stem searches expose no carrier. DiscMaster broad `samap` hits are overwhelmingly unrelated; only an exact leaf-name match to `samap_1220.zip` is now allowed to count as a strict preservation candidate.
 
 **RESEARCH CONSEQUENCE:** this target is earlier than the 2001-11-27 `Estoneage2.0map_1127.exe` package and therefore becomes the first recovery attempt for moving the field-map byte-provenance anchor earlier. If recovered, its archive contents must be hashed and compared directly against Taiwan v1.0, the 2001 package if later recovered, the June-2003 historical corpus, and the mixed-2.5 corpus before any equivalence claim is made.
