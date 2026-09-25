@@ -2114,7 +2114,8 @@ Supplemental source ledgers:
   - encoded author parameter decodes to `游民部落`.
 - The source page is still reachable and has historical Wayback availability, but no indexed exact CGI response/payload body has yet been recovered on the tested route.
 - **Major routing breakthrough:** an archived replay of the exact Sina download CGI at **2001-01-26 07:46:00 UTC** exposes the historical direct file URL `http://202.106.184.193/downfiles/map_1212/samap_1220.zip`. The archived page labels it `石器时代—全地图下载` and repeats the **1410K** size. This is now the primary recovery token; it is direct first-party routing evidence, not a synthesized path.
-- A dedicated exact-route archive probe and a bounded transient recovery workflow are now active. They may recover/hash/inventory the ZIP in CI if an exact snapshot exists, but must never commit the proprietary payload itself.
+- The dedicated exact-route archive probe and bounded transient recovery workflow both completed successfully. Wayback availability returned **zero exact snapshots** for the direct ZIP URL across the tested 2000-12-20 through 2005-11-03 dates, and exact/prefix CDX queries likewise returned zero target rows. No ZIP bytes were recovered.
+- The parent directory `http://202.106.184.193/downfiles/map_1212/` is nevertheless archived with **76 CDX rows**, proving that this download directory itself was crawled. Its rows are mostly unrelated game-map files plus later 404s; `southisland_1228.zip` appears as a 2001-06-28 **404**, while `samap_1220.zip` is absent. This bounds the exact Wayback route but leaves host-wide aliases and independent archives open.
 - The surviving source description says to **unzip the package into the installed client's `map` subdirectory**, after which maps become fully visible in-game. This classifies the target as a field-map/cache-content distribution rather than a full client installer; the exact internal file list still requires recovered bytes.
 - Attribution has been tightened: `游民部落` is a Sina game-community/editorial label on contemporaneous pages. Unlike the 2001 package, the 2000 author token contains no `xinhaonanhai` link, so a 2000→xinhaonanhai provenance claim is unsupported. The bounded xinhaonanhai archive test remains discovery-only and produced no matching contributor URL.
 - Same-backend controls are now known eight days later: `northisland_1228.zip` (aid=23680) and `southisland_1228.zip` (aid=23681). The south-island CGI has a preserved 2005-11-03 HTTP 302.
@@ -2130,6 +2131,8 @@ Supplemental source ledgers:
   - `research/recovered/STONEAGE-2000-INDEPENDENT-ARCHIVES-R1.txt`;
   - `research/recovered/STONEAGE-2000-SINA-MAP-NEIGHBORHOOD-R1.txt`;
   - `research/recovered/STONEAGE-2000-SINA-ARCHIVED302-R1.txt`;
+  - `research/recovered/STONEAGE-2000-SINA-DIRECT-ROUTE-R1.txt`;
+  - `research/recovered/STONEAGE-2000-SINA-DIRECT-RECOVERY-R1.txt`;
   - `research/recovered/STONEAGE-SINA-DOWNLOAD-CGI-TOPOLOGY-R1.txt`.
 
 ## Immediate next actions
