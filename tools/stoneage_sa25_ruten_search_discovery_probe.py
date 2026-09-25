@@ -18,6 +18,8 @@ ITEM_RE=re.compile(r'https?://www\.ruten\.com\.tw/item/(\d{12,16})/?',re.I)
 ITEM_PATH_RE=re.compile(r'(?:"|\')/item/(\d{12,16})/?(?:"|\')',re.I)
 TEXT_ITEM_RE=re.compile(r'(\d{12,16})')
 TITLE_RE=re.compile(r'(?is)<title[^>]*>(.*?)</title>')
+URL_RE=re.compile(r'''(?i)(?:https?:)?//[^"'<>\\s]+|/[^"'<>\\s]+''')
+SCRIPT_RE=re.compile(r'''(?is)<script\\b[^>]*?src=["']([^"']+)["']''')
 TAG_RE=re.compile(r'(?is)<[^>]+>')
 
 def clean(v,n=1800):
@@ -46,6 +48,25 @@ def ids_from_html(text):
                 seen.add(pid); out.append(pid)
     return tuple(out)
 
+def discovery_urls(text,base):
+    out=[]; seen=set()
+    for raw in URL_RE.findall(text):
+        u=html.unescape(raw).replace("\\/","/")
+        if u.startswith("//"): u="https:"+u
+        elif u.startswith("/"): u=urllib.parse.urljoin(base,u)
+        low=u.lower()
+        if not any(k in low for k in ("api","search","prod","item","query")):
+            continue
+        if u not in seen:
+            seen.add(u); out.append(u)
+    for raw in SCRIPT_RE.findall(text):
+        u=html.unescape(raw)
+        if u.startswith("//"): u="https:"+u
+        else: u=urllib.parse.urljoin(base,u)
+        if u not in seen:
+            seen.add(u); out.append(u)
+    return tuple(out)
+
 def relevant_contexts(text,pids):
     out=[]
     for pid in pids:
@@ -58,7 +79,7 @@ def relevant_contexts(text,pids):
     return tuple(out)
 
 def main():
-    print("StoneAge 2.5 Ruten public-search listing discovery — R1")
+    print("StoneAge 2.5 Ruten public-search listing discovery — R2")
     print("SCOPE|public-search-html-only|ids+nearby-title-context|no-login|no-purchase|no-seller-contact|no-image-body")
     all_ids={}
     errors=[]
@@ -69,12 +90,15 @@ def main():
             text=b.decode("utf-8","replace")
             ids=ids_from_html(text)
             ctx=relevant_contexts(text,ids)
+            du=discovery_urls(text,final)
             tm=TITLE_RE.search(text)
             title=visible(tm.group(1)) if tm else ""
-            print(f"QUERY|index={qi}|q={clean(q)}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|title={clean(title)}|ids={len(ids)}|relevant={len(ctx)}|final={clean(final,3000)}")
+            print(f"QUERY|index={qi}|q={clean(q)}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|title={clean(title)}|ids={len(ids)}|relevant={len(ctx)}|discovery_urls={len(du)}|final={clean(final,3000)}")
             for pid,vis in ctx:
                 all_ids.setdefault(pid,[]).append((qi,vis))
                 print(f"CANDIDATE|query={qi}|id={pid}|context={clean(vis,4000)}|url=https://www.ruten.com.tw/item/{pid}/")
+            for n,u in enumerate(du[:250],1):
+                print(f"DISCOVERY_URL|query={qi}|index={n}|url={clean(u,4000)}")
         except Exception as e:
             errors.append((qi,q,type(e).__name__,str(e)))
     for qi,q,kind,msg in errors:
@@ -88,7 +112,7 @@ def main():
     elif errors==len(QUERIES):
         print("RESOLUTION|RUTEN_SEARCH_TRANSPORT_BLOCKED|do not infer no listings")
     else:
-        print("RESOLUTION|NO_IDS_EXPOSED_IN_TESTED_SEARCH_HTML|search engine indexed variants may still exist")
+        print("RESOLUTION|NO_IDS_EXPOSED_IN_TESTED_SEARCH_HTML|inspect DISCOVERY_URL rows for a public frontend search API; search-engine indexed variants may still exist")
     print("EVIDENCE_BOUNDARY|Search-result IDs and titles are discovery metadata only; they do not establish physical independence, disc contents, pressing/mastering or historical provenance.")
 
 if __name__=="__main__":
