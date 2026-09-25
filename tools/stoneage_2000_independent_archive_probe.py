@@ -45,10 +45,19 @@ def arq_cdx_url(u):
 
 def cc_indexes():
     st,final,h,b=fetch(CC_COLL,timeout=30,max_bytes=2*1024*1024)
-    d=json.loads(b.decode("utf-8"));out=[]
+    d=json.loads(b.decode("utf-8"));by_year={}
     for x in d:
         cid=str(x.get("id") or "")
-        if cid:out.append(cid)
+        import re
+        m=re.search(r"CC-MAIN-(\\d{4})",cid)
+        if not m:continue
+        y=int(m.group(1))
+        if 2008<=y<=2018:by_year.setdefault(y,[]).append(cid)
+    out=[]
+    for y in sorted(by_year):
+        vals=sorted(set(by_year[y]))
+        out.append(vals[0])
+        if vals[-1]!=vals[0]:out.append(vals[-1])
     return tuple(out)
 
 def cc_query(cid,u):
