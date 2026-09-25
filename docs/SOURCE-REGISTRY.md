@@ -1602,6 +1602,15 @@ Every substantial source should record:
   - treat this as a visual-priority signal only. It does **not** establish same disc, same pressing, same mastering, same package origin, or byte equality.
 - Current indexed-web control:
   - Ruten search results still expose the boxed 2.5 new-user package and loose 2.5 精靈王傳說 discs as of the research date.
+- Public provenance-metadata refresh:
+  - product `21926883918096` is independently rendered by Ruten as `遊戲光碟–石器時代2.5版 精靈王傳說`, first listed **2019-06-28**, item condition `使用一到二年`, Taiwan/Kaohsiung, with the page metadata tag **`#公司貨`**;
+  - product `22242541948520` is rendered as `遊戲光碟–石器時代2.5版 精靈王傳說 PC GAME 電腦遊戲`, first listed **2022-10-19**, with a separate seller/listing chain;
+  - boxed product `22632305238624` is rendered as `石器時代2.5精靈王傳說新手報到包，原包裝盒完整。遊戲光碟保...`, first listed **2026-08-04**, item condition `全新`, and exposes 9 full-size photograph filenames.
+- Provenance interpretation:
+  - these independent listing dates/sellers/condition fields strengthen the case that multiple separately addressable physical 2.5 carriers survive;
+  - the literal `#公司貨` marketplace tag is retained as a seller/platform claim only and is **not** promoted to operator-disc authentication;
+  - no matrix/IFPI, volume label, filesystem, installer hash or disc image is exposed by the public metadata.
+- Derived provenance report: `research/recovered/STONEAGE-SA25-RUTEN-PROVENANCE-METADATA-R1.txt`.
 - Preservation/public-byte search:
   - exact Yan-Nian photo basename/hash, Ruten product IDs, product titles, and exact StoneAge 2.5/精靈王傳說 terms were searched on general indexes;
   - targeted `archive.org/details` and DiscMaster queries for exact StoneAge 2.5 / 精靈王傳說 identities returned no indexed hit in this pass.
