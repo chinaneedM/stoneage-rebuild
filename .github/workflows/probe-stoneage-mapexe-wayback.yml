@@ -1,0 +1,47 @@
+name: Probe historical map.exe Wayback capture
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_mapexe_wayback_probe.py
+      - tests/test_stoneage_mapexe_wayback_probe.py
+      - .github/workflows/probe-stoneage-mapexe-wayback.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-mapexe-wayback
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate replay parser
+        run: python3 -m unittest tests.test_stoneage_mapexe_wayback_probe -v
+      - name: Probe bounded historical payload prefix
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_mapexe_wayback_probe \
+            > research/recovered/STONEAGE-HISTORICAL-MAPEXE-WAYBACK-R1.txt
+      - name: Commit derived replay metadata only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-HISTORICAL-MAPEXE-WAYBACK-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe historical map.exe capture'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
