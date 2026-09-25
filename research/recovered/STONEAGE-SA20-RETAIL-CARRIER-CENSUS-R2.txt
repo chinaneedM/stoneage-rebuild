@@ -1,0 +1,25 @@
+StoneAge 2.0 retail client-disc preservation census — R2
+SCOPE|IA refined year/title/description metadata + DiscMaster exact label/filename index|no-payload
+TARGET|newbie=石器时代2.0新手报到包|veteran=石器时代2.0老手削暴包|label=家族开拓史|sina=stoneage2.0setup.exe
+IA_QUERY|label=newbie-title-2001|status=200|rows=0|bytes=571|sha256=a039d560d53ab4942061373d66f25819f8d5d502559a29b243328743e4cba0c1|q=title:("石器时代2.0新手报到包" OR "石器时代2.0 新手报到包") AND year:2001
+IA_QUERY|label=veteran-title-2001|status=200|rows=0|bytes=570|sha256=ed3d2a42d8f5e38c0019cd870ac74f2ecff00a0199151d1c63895592e9e4bfe1|q=title:("石器时代2.0老手削暴包" OR "石器时代2.0 老手削暴包") AND year:2001
+IA_QUERY|label=newbie-desc-2001|status=200|rows=0|bytes=377|sha256=19d4133ac0e10d36f6a89091f7dcf2dfbf4e48a56144618631918f7d4deffb08|q=description:"新手报到包" AND year:2001
+IA_QUERY|label=veteran-desc-2001|status=200|rows=0|bytes=377|sha256=051b3c982ee2d4b444517278bfb01f0c3ec4c3c47bcfb2d581a785b77f540232|q=description:"老手削暴包" AND year:2001
+IA_QUERY|label=family-history-title|status=200|rows=0|bytes=364|sha256=f7ef823b9b43bc9da33445655674e23a6afdbc2d0601c59e4bc44a0bee7cbef3|q=title:"家族开拓史" AND year:2001
+IA_QUERY|label=client-disc-desc|status=200|rows=0|bytes=469|sha256=de963bb39f07d913ca097d1f20621033ab8aa2aa2b12aa0e73099d69f8a0611b|q=description:("石器时代2.0" AND "客户端光盘") AND year:2001
+IA_QUERY|label=sina-filename|status=200|rows=0|bytes=365|sha256=02b3af9c061ebafb7b1d6fc20f18594e6ced4889dde6a2c9eae45759ea80d324|q="stoneage2.0setup.exe"
+IA_QUERY|label=sina-stem|status=200|rows=0|bytes=349|sha256=ba06b8c5eb35027b83448fe91444e9b6894c654915edc7d3b9fcb10ba4554850|q="stoneage2.0setup"
+DM_QUERY|q=石器时代2.0新手报到包|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+DM_QUERY|q=石器时代2.0老手削暴包|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+DM_QUERY|q=新手报到包|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+DM_QUERY|q=老手削暴包|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+DM_QUERY|q=家族开拓史|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+DM_QUERY|q=stoneage2.0setup.exe|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+DM_QUERY|q=stoneage2.0setup|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+COUNT|ia_unique_items|0
+COUNT|ia_strict_items|0
+COUNT|dm_unique_rows|0
+COUNT|dm_strict_rows|0
+COUNT|errors|0
+RESOLUTION|NO_STRICT_RETAIL_CARRIER_HIT|refined IA/DiscMaster retail/client-label surface exposes no preserved client-disc candidate
+EVIDENCE_BOUNDARY|index metadata is discovery evidence only; package/label matches do not establish optical pressing or client-byte identity.
