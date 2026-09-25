@@ -129,8 +129,8 @@ def main():
         seen.add(aid);unique_aids.append((d,aid,r,p))
     print(f"COUNT|col_map_unique_aids|{len(unique_aids)}")
     extracted=[]
-    # Replay up to 40 nearest same-column records.
-    for rank,(dist,aid,r,p) in enumerate(unique_aids[:40],1):
+    # Replay the 12 nearest unique same-column records; broader scans are lower-yield.
+    for rank,(dist,aid,r,p) in enumerate(unique_aids[:12],1):
         ts=str(r.get("timestamp") or ""); orig=str(r.get("original") or "")
         print(
           f"NEIGHBOR|rank={rank}|distance={dist}|aid={aid}|timestamp={clean(ts)}|"
@@ -138,7 +138,7 @@ def main():
         )
         if not ts: continue
         try:
-            st,final,h,b=fetch(replay(ts,orig),timeout=35,max_bytes=512*1024)
+            st,final,h,b=fetch(replay(ts,orig),timeout=20,max_bytes=512*1024)
             links=extract_links(b,orig)
             print(f"REPLAY|aid={aid}|timestamp={ts}|status={st}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}|links={len(links)}")
             for u in links:
