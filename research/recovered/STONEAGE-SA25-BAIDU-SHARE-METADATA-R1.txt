@@ -1,25 +1,41 @@
-StoneAge 2.5 public Baidu-share metadata probe — R1
-SCOPE|public-GET-only|published-codes-only|no-login|no-code-guessing|no-payload-download
+StoneAge 2.5 public Baidu-share metadata probe — R2
+SCOPE|public-share-page+normal-published-code-verification|no-login|no-code-guessing|no-payload-download
 HTTP|label=judingwan-25|status=200|content_type=text/html; charset=utf-8|content_length=
 SHARE|label=judingwan-25|id=1nu7DLcX|pwd_known=1|final=https://pan.baidu.com/share/init?surl=nu7DLcX&pwd=ylru
-PAGE|label=judingwan-25|bytes=16022|sha256=74a2c321f49ec2eea70f33d5297c441ffecee186075088c77478e18d02cce945|title=百度网盘 请输入提取码
+PAGE|label=judingwan-25|bytes=16022|sha256=93c6c85330f5cad81c21e742b76d67005f9d9d9e7f403c41288f0cace2616ef9|title=百度网盘 请输入提取码
 STATUS|label=judingwan-25|value=NEEDS_CODE|names=0|sizes=0|fsids=0|shareids=1|uks=1
 SHARE_ID_META|label=judingwan-25|index=1|value=4078322794
 UK_META|label=judingwan-25|index=1|value=0
+VERIFY|label=judingwan-25|published_code=1|errno=0|has_randsk=1
+VERIFIED_HTTP|label=judingwan-25|status=200|content_type=text/html; charset=utf-8|content_length=
+SHARE|label=judingwan-25:verified|id=1nu7DLcX|pwd_known=1|final=https://pan.baidu.com/s/1nu7DLcX
+PAGE|label=judingwan-25:verified|bytes=74172|sha256=812245475a44af97744638f00bf4ad306d4d461ba96054f9c83438965ff1ee4b|title=石器时代v2.5一键端.exe_免费高速下载%7C百度网盘-分享无限制
+STATUS|label=judingwan-25:verified|value=PUBLIC_METADATA_EXPOSED|names=5|sizes=2|fsids=2|shareids=1|uks=1
+NAME|label=judingwan-25:verified|index=1|value=石器时代v2.5一键端.exe
+NAME|label=judingwan-25:verified|index=2|value=【飓鼎玩】石器时代2.5安装教程.rar
+NAME|label=judingwan-25:verified|index=3|value=!/
+NAME|label=judingwan-25:verified|index=4|value=/sharelink5662153-146116179281676/石器时代v2.5一键端.exe
+NAME|label=judingwan-25:verified|index=5|value=/01【飓鼎玩】店铺单机/013【飓鼎玩】石器时代 v2.5版/【飓鼎玩】石器时代2.5安装教程.rar
+SIZE|label=judingwan-25:verified|index=1|value=441183848
+SIZE|label=judingwan-25:verified|index=2|value=17963524
+FS_ID|label=judingwan-25:verified|index=1|value=146116179281676
+FS_ID|label=judingwan-25:verified|index=2|value=802517119665785
+SHARE_ID_META|label=judingwan-25:verified|index=1|value=4078322794
+UK_META|label=judingwan-25:verified|index=1|value=0
 HTTP|label=246sa-25|status=200|content_type=text/html; charset=utf-8|content_length=
 SHARE|label=246sa-25|id=1cHlV27B0rckWGC2cH21dGg|pwd_known=1|final=https://pan.baidu.com/s/1cHlV27B0rckWGC2cH21dGg?pwd=7ck4
-PAGE|label=246sa-25|bytes=13156|sha256=0fff9699bd928c70766b9a710b1e6be6aa436270c7a2da233e4411d81ccbed93|title=百度网盘-链接不存在
-STATUS|label=246sa-25|value=PAGE_RETRIEVED_METADATA_UNRESOLVED|names=0|sizes=0|fsids=0|shareids=1|uks=1
+PAGE|label=246sa-25|bytes=13156|sha256=a5d9f04a96c640ea3725d9c63a70bf655377973e6448d2c87a6d7caba7eece4b|title=百度网盘-链接不存在
+STATUS|label=246sa-25|value=MISSING|names=0|sizes=0|fsids=0|shareids=1|uks=1
 SHARE_ID_META|label=246sa-25|index=1|value=37387199564
 UK_META|label=246sa-25|index=1|value=0
 HTTP|label=cangbaowan-25|status=200|content_type=text/html; charset=utf-8|content_length=
 SHARE|label=cangbaowan-25|id=1a2cOmPxo5GjFPFfU5Mj2Ug|pwd_known=0|final=https://pan.baidu.com/s/1a2cOmPxo5GjFPFfU5Mj2Ug
-PAGE|label=cangbaowan-25|bytes=13144|sha256=9ea2f50dd9178015505f65b71e5d137e8a7238089d90a05a32b54a0daef9215d|title=百度网盘-链接不存在
-STATUS|label=cangbaowan-25|value=PAGE_RETRIEVED_METADATA_UNRESOLVED|names=0|sizes=0|fsids=0|shareids=1|uks=1
+PAGE|label=cangbaowan-25|bytes=13144|sha256=34539bdcbfffed43ae38f8bb518f6b71eccaa63c94811e21c2923b2e59978351|title=百度网盘-链接不存在
+STATUS|label=cangbaowan-25|value=MISSING|names=0|sizes=0|fsids=0|shareids=1|uks=1
 SHARE_ID_META|label=cangbaowan-25|index=1|value=27500918723
 UK_META|label=cangbaowan-25|index=1|value=0
 COUNT|targets|3
-COUNT|metadata_exposed|0
+COUNT|metadata_exposed|1
 COUNT|errors|0
-RESOLUTION|PUBLIC_SHARE_PAGES_RETRIEVED_NO_FILE_METADATA|retain exact share IDs and published codes
+RESOLUTION|PUBLIC_SHARE_METADATA_RECOVERED|compare exposed names/sizes before any byte-level follow-up
 EVIDENCE_BOUNDARY|Modern Baidu shares are descendant/community recovery leads only; page metadata cannot establish 2002 operator provenance or clean-client status.
