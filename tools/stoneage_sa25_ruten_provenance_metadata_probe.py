@@ -25,6 +25,7 @@ IDS=(
     "22632305238624",
     "21926883918096",
     "22242541948520",
+    "22615474551866",
 )
 DETAIL="https://rapi.ruten.com.tw/api/items/v2/list"
 ITEM="https://www.ruten.com.tw/item/show?{}"
