@@ -4,6 +4,7 @@ from tools.stoneage_sa25_physical_image_fingerprint_probe import (
     ImageParser,
     hamming_hex,
     insecure_tls_allowed,
+    is_qualified_collector_body_url,
     is_thumbnail,
     normalize_image_url,
 )
@@ -26,6 +27,14 @@ class PhysicalImageFingerprintProbeTests(unittest.TestCase):
             normalize_image_url("https://example.com/p/q.html", "../a.jpg"),
             "https://example.com/a.jpg",
         )
+
+    def test_only_source_bound_collector_body_url_is_qualified(self):
+        self.assertTrue(is_qualified_collector_body_url(
+            "https://shiqifabu.fszye.com/zb_users/upload/2020/12/20201222082537160859673711005.jpg"
+        ))
+        self.assertFalse(is_qualified_collector_body_url(
+            "https://blog.shiqi.so/zb_users/upload/2018/03/sidebar.png"
+        ))
 
     def test_tls_exception_is_host_limited(self):
         self.assertTrue(insecure_tls_allowed("https://www.shiqi.me/pt_17.htm"))
