@@ -1,0 +1,46 @@
+name: Discover public Ruten StoneAge 2.5 listings
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sa25_ruten_search_discovery_probe.py
+      - tests/test_stoneage_sa25_ruten_search_discovery_probe.py
+      - .github/workflows/probe-stoneage-sa25-ruten-search-discovery.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-sa25-ruten-search-discovery
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run focused tests
+        run: python3 -m unittest tests.test_stoneage_sa25_ruten_search_discovery_probe -v
+      - name: Probe public search HTML
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_sa25_ruten_search_discovery_probe             > research/recovered/STONEAGE-SA25-RUTEN-SEARCH-DISCOVERY-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-SA25-RUTEN-SEARCH-DISCOVERY-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: discover public Ruten StoneAge 2.5 listings'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
