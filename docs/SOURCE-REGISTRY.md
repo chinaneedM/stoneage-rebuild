@@ -1586,42 +1586,41 @@ Every substantial source should record:
 ### SRC-TW-2026-RUTEN-SA25-PHYSICAL-01
 
 - Retrieval/research date: **2026-09-25**
-- Surface: Ruten public search plus public product/detail JSON metadata and public seller photographs.
+- Surface: Ruten public search, public product/detail JSON metadata, public item HTML and public seller photographs.
 - Source type: modern marketplace survival evidence; **not** a contemporaneous 2002 source, **not** a disc read, and **not** clean-client byte provenance.
-- Concrete surviving 2.5 carrier controls:
-  - product `22632305238624`: title begins `石器時代2.5精靈王傳說新手報到包，原包裝盒完整。遊戲光碟保...`; seller `ki7yey`; public metadata exposes 9 full-size photographs (18 URLs including thumbnails); raw post_time `1785842525` = **2026-08-04 11:22:05 UTC**;
-  - product `21926883918096`: `遊戲光碟–石器時代2.5版 精靈王傳說`; seller `lein0711`; public full-size image `https://gcs.rimg.com.tw/g2/0/41/10/21926883918096_419.JPG`; raw post_time `1561718548` = **2019-06-28 10:42:28 UTC**;
-  - product `22242541948520`: `遊戲光碟–石器時代2.5版 精靈王傳說 PC GAME 電腦遊戲`; seller `alixson7`; public full-size image `https://gcs.rimg.com.tw/g2/3/0e/68/22242541948520_496.JPG`; raw post_time `1666119492` = **2022-10-18 18:58:12 UTC**.
-- Public metadata probe result:
-  - all three detail endpoints returned rows;
-  - **22** image URLs were resolved across full-size images and thumbnails;
-  - all tested image HEAD requests returned HTTP 200;
-  - `COUNT|errors|0`.
-- Cross-control with the corrected Yan-Nian exact photograph:
-  - boxed product `22632305238624`, full-size image index 3, `https://a.rimg.com.tw/c1/0b8/5a7/ki7yey/6/60/22632305238624_322.jpg`, is the strongest tested Ruten local-feature comparison at **112 RANSAC inliers / 0.1181 inlier ratio**;
-  - treat this as a visual-priority signal only. It does **not** establish same disc, same pressing, same mastering, same package origin, or byte equality.
-- Current indexed-web control:
-  - Ruten search results still expose the boxed 2.5 new-user package and loose 2.5 精靈王傳說 discs as of the research date.
-- Public provenance-metadata refresh:
-  - product `21926883918096` is independently rendered by Ruten as `遊戲光碟–石器時代2.5版 精靈王傳說`, first listed **2019-06-28**, item condition `使用一到二年`, Taiwan/Kaohsiung, with the page metadata tag **`#公司貨`**;
-  - product `22242541948520` is rendered as `遊戲光碟–石器時代2.5版 精靈王傳說 PC GAME 電腦遊戲`, first listed **2022-10-19**, with a separate seller/listing chain;
-  - boxed product `22632305238624` is rendered as `石器時代2.5精靈王傳說新手報到包，原包裝盒完整。遊戲光碟保...`, first listed **2026-08-04**, item condition `全新`, and exposes 9 full-size photograph filenames.
-- Provenance interpretation:
-  - these independent listing dates/sellers/condition fields strengthen the case that multiple separately addressable physical 2.5 carriers survive;
-  - the literal `#公司貨` marketplace tag is retained as a seller/platform claim only and is **not** promoted to operator-disc authentication;
-  - no matrix/IFPI, volume label, filesystem, installer hash or disc image is exposed by the public metadata.
-- Derived provenance report: `research/recovered/STONEAGE-SA25-RUTEN-PROVENANCE-METADATA-R1.txt`.
-- Preservation/public-byte search:
-  - exact Yan-Nian photo basename/hash, Ruten product IDs, product titles, and exact StoneAge 2.5/精靈王傳說 terms were searched on general indexes;
-  - targeted `archive.org/details` and DiscMaster queries for exact StoneAge 2.5 / 精靈王傳說 identities returned no indexed hit in this pass.
-- Evidence boundary:
-  - photographs and seller metadata prove only a present-day survival lead;
-  - no filesystem listing, ISO/raw image, optical-disc checksum, volume label, matrix/IFPI, installer hash, or clean-client bytes were exposed.
+- Separately addressable StoneAge 2.5 listing controls:
+  - `22632305238624`: boxed **2.5 精靈王傳說新手報到包** with original-package/game-disc wording; listed **2026-08-04**; public metadata exposes **9 full-size photographs**;
+  - `21926883918096`: loose **2.5版 精靈王傳說** game-disc listing; listed **2019-06-28**; public page shows used-condition metadata, Taiwan/Kaohsiung and literal tag **`#公司貨`**;
+  - `22242541948520`: separate loose **2.5版 精靈王傳說 PC GAME** listing; listed **2022-10-19**;
+  - `22615474551866`: **`精靈王傳說 石器時代2.5版 遊戲片+外盒`**; listed **2026-04-11**; used-condition metadata, Taiwan/Kaohsiung, sold quantity 1 / current stock 0; three full-size public image filenames `22615474551866_647.jpg`, `_438.jpg`, `_740.jpg`.
+- Important independence boundary:
+  - separate listing IDs, dates and sellers make these separately addressable marketplace provenance chains;
+  - they do **not** by themselves prove four independently surviving physical discs, because image reuse/resale/common-source photography remains possible.
+- Visual-fingerprint controls:
+  - the two loose-disc listing photographs `21926883918096:0` and `22242541948520:0` have a very strong cross-listing match: **743 RANSAC inliers / 0.4831 inlier ratio**. This may reflect the same disc-face artwork, closely related photography, or reused imagery; it is **not** proof of two independent physical specimens.
+  - new disc+box image `22615474551866:1` (`_438.jpg`) matches those two loose-disc images at **266 / 0.2323** and **253 / 0.2202** respectively, placing the three images in a strong visual family.
+  - other images from the new disc+box listing show weaker but nonzero cross-listing relationships; use them only for carrier-family ranking.
+- Corrected Yan-Nian source-labelled disc cross-control:
+  - exact Bahamut Yan-Nian disc photograph remains SHA-256 `385071cb52f3e9af540823ff8a1833cfba4dad04ee8ab2ee9beebfa67dadea6a`;
+  - its strongest previously tested Ruten match remains boxed carrier `22632305238624` image 3 at **112 / 0.1181**;
+  - against the new `22615474551866` images, results are only **11 / 0.0118** (`_438.jpg`), **11 / 0.0120** (`_740.jpg`) and **7 / 0.0091** (`_647.jpg`);
+  - therefore the new disc+box visual family must **not** be merged with the Yan-Nian source-labelled disc family on current evidence.
+- Regional/artwork interpretation boundary:
+  - collector sources independently describe Mainland and Taiwan 2.5 disc artwork as distinct;
+  - the visual clustering above is compatible with multiple disc-art families but is **insufficient to label the new Ruten cluster Mainland/Taiwan, identify a pressing, or infer package origin**.
+- Marketplace-claim boundary:
+  - literal tags such as `#公司貨`, condition fields and seller titles are retained as marketplace claims only and are not operator-disc authentication.
+- Public-byte status:
+  - no matrix/IFPI, volume label, filesystem, installer hash, ISO/raw image, optical-disc checksum or clean-client bytes are exposed by these listings;
+  - exact product IDs/titles and targeted preservation-index searches have not yielded a public disc dump/file tree so far.
 - Operational consequence:
-  - these three product IDs and their exact public image URLs are visual identity keys for future preservation/dump discovery;
-  - do **not** require purchase, seller contact, shipping, or manual media dumping by the user.
+  - use all four listing IDs, exact full-size photograph URLs/filenames and derived image hashes as matching keys for future public preservation reads/dumps;
+  - prioritize a future dump only when it can be linked to one of these carriers or another provenance-bearing original disc;
+  - do **not** require purchase, seller contact, shipping, or user-performed dumping.
 - Derived reports:
   - `research/recovered/STONEAGE-SA25-RUTEN-PHYSICAL-R1.txt`
+  - `research/recovered/STONEAGE-SA25-RUTEN-PROVENANCE-METADATA-R1.txt`
+  - `research/recovered/STONEAGE-SA25-PHYSICAL-IMAGE-FINGERPRINTS-R4.txt`
   - `research/recovered/STONEAGE-SA25-BAHAMUT-YANNIAN-DISC-PHOTO-R1.txt`.
 
 
