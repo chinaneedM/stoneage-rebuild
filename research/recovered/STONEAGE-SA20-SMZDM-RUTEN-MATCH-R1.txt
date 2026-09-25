@@ -1,0 +1,18 @@
+StoneAge 2.0 SMZDM-to-Ruten physical-carrier visual cross-check — R1
+SCOPE|source-mapped-2.0-disc-photo+public-early-mainland-controls|SIFT+RANSAC|transient-images|no-payload
+REFERENCE|role=smzdm-2.0-newbie-disc|url=https://am.zdmimg.com/201606/16/576276487bf54.jpg_e1080.jpg|expected_sha256=98ad75b6eb5fa5aca6fa7e37095bd207779321ea4991ccf0754117cfaf3884c3
+ERROR|scope=smzdm-reference|kind=ModuleNotFoundError|message=No module named 'cv2'
+ERROR|scope=ruten:22636573895893:0|kind=ModuleNotFoundError|message=No module named 'cv2'
+ERROR|scope=ruten:22636573895893:1|kind=ModuleNotFoundError|message=No module named 'cv2'
+ERROR|scope=ruten:22636573895893:2|kind=ModuleNotFoundError|message=No module named 'cv2'
+ERROR|scope=ruten:22636573895893:3|kind=ModuleNotFoundError|message=No module named 'cv2'
+ERROR|scope=ruten:22638643800877:0|kind=ModuleNotFoundError|message=No module named 'cv2'
+ERROR|scope=ruten:22631284715652:0|kind=ModuleNotFoundError|message=No module named 'cv2'
+ERROR|scope=ruten:22631284715652:1|kind=ModuleNotFoundError|message=No module named 'cv2'
+ERROR|scope=ruten:22631284715652:2|kind=ModuleNotFoundError|message=No module named 'cv2'
+ERROR|scope=ruten:22631284715652:3|kind=ModuleNotFoundError|message=No module named 'cv2'
+COUNT|controls_loaded|0
+COUNT|pairs|0
+COUNT|errors|10
+RESOLUTION|VISUAL_CROSSCHECK_UNAVAILABLE|retain source-mapped 2.0 photo identity and retry only on new control
+EVIDENCE_BOUNDARY|visual overlap cannot establish optical pressing, filesystem, installer build, same physical disc, or byte provenance.
