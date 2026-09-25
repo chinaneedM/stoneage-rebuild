@@ -2114,3 +2114,66 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-HISTORICAL-MAPEXE-INVENTORY-R1.txt`;
   - `research/recovered/STONEAGE-HISTORICAL-MAPEXE-SA25-LINEAGE-R1.txt`;
   - `research/recovered/STONEAGE-HISTORICAL-MAPEXE-SA25-LAYER-DIFF-R1.txt`.
+
+### SRC-CN-2001-SINA-FULLMAP-01
+
+- Title: `《石器时代》全地图`
+- Original date: **2001-11-27**
+- Retrieval date: 2026-09-25
+- Language/region: Simplified Chinese / Mainland China
+- Source type: contemporaneous Sina game-download record with surviving local-download href
+- Source page: `https://games.sina.com.cn/downgames/map/11271899.shtml`
+- Confidence: **A** for the dated record, displayed size, contributor and compatibility statement; payload identity remains unrecovered
+- Surviving record facts:
+  - stated size: **1911K**;
+  - contributor: `xinhaonanhai`;
+  - deployment instruction: unpack into the StoneAge directory;
+  - compatibility statement: **“1.X，2.0通用”**.
+- Exact local-download token recovered from the source:
+  - `col=map`;
+  - `aid=43172`;
+  - `filename=Estoneage2.0map_1127.exe`;
+  - `size=1911`.
+- Preservation status:
+  - exact/predicted Wayback URL probes: no payload capture found on tested surfaces;
+  - Internet Archive exact/stem item search: no exact item;
+  - DiscMaster exact/stem search: no exact carrier;
+  - contributor-domain Wayback root captures exist at 2001-12-03 and 2002-07-19, but no relevant package href is exposed by the current indexed/replayed surface.
+- Supports:
+  - existence of a specifically named full-map distribution package in late 2001;
+  - a contemporaneous claim that the package was usable by both 1.X and 2.0 client families;
+  - an exact high-value recovery token for pre-2002 field-map archaeology.
+- Does not support:
+  - operator originality or clean-byte status of the package;
+  - byte identity with Taiwan v1.0 maps;
+  - any map ID/hash/content until the executable itself is recovered.
+- Derived reports:
+  - `research/recovered/STONEAGE-2001-FULLMAP-PRESERVATION-R1.txt`;
+  - `research/recovered/STONEAGE-XINHAONANHAI-ARCHIVE-R1.txt`.
+
+### SRC-CN-2001-SINA-SA20-CLIENT-01
+
+- Title: `石器时代2.0客户端`
+- Original date: **2001-11-02**
+- Retrieval date: 2026-09-25
+- Language/region: Simplified Chinese / Mainland China
+- Source type: contemporaneous Sina game-client download record
+- Source page: `https://games.sina.com.cn/downgames/demo/1102970.shtml`
+- Confidence: **A** for the dated Sina label/record and exact download token; build bytes remain unrecovered
+- Surviving record facts:
+  - stated size: **524377K**;
+  - description identifies it as an upgraded StoneAge client for existing StoneAge users.
+- Exact local-download token:
+  - `col=demo`;
+  - `aid=41967`;
+  - `filename=stoneage2.0setup.exe`;
+  - `size=524377`.
+- Preservation status:
+  - current exact Wayback, Internet Archive and DiscMaster probes expose no verified payload body.
+- Supports:
+  - an exact historical client filename and download-record identity for the Mainland 2.0 era.
+- Does not support:
+  - a clean-client classification until recovered bytes are inspected;
+  - byte identity with Taiwan/JSS/Korean branches;
+  - treating the displayed version label as executable build provenance without binary inspection.
+- Derived report: `research/recovered/STONEAGE-2001-CLIENT-PRESERVATION-R1.txt`.

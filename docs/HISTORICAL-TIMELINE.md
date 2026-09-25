@@ -343,3 +343,13 @@ IMPORTANT LIMIT: this closes a battle-map inheritance chain. It is not evidence 
 **FACT / anomaly controls:** `1021.DAT` (407×144, SHA-256 `92abd0a38c5e876d985c33437a252358d1aaa812ce1da99f18752d0a97c81197`) and `817.dat` (400×600, SHA-256 `ca29cdf04f9f750712ef9afffe14aebfd571a0c6011eac2c7eff67dfde8cc380`) are each byte-identical between the dated historical package and the mixed-2.5 corpus. Consequently their previously observed anomalies cannot be attributed primarily to later mutation inside the mixed bundle.
 
 **LIMIT:** this strengthens the June-2003 field-map anchor and the interpretation of the recovered 2.5 map corpus, but does not move the provenance boundary before June 2003. The 2002-11-08 4.0 map package and earlier installed-cache/physical-media routes remain open.
+
+## 2001-11 — Mainland Sina full-map and 2.0-client recovery tokens
+
+**FACT / 2001-11-02 client record:** Sina's surviving download page identifies `石器时代2.0客户端`, dated **2001-11-02**, with stated size **524377K** and text describing it as an upgraded StoneAge client for existing users. The surviving local-download href resolves to the exact token `col=demo&aid=41967&filename=stoneage2.0setup.exe&size=524377`. [SRC-CN-2001-SINA-SA20-CLIENT-01]
+
+**FACT / 2001-11-27 complete-map record:** Sina's surviving page identifies `《石器时代》全地图`, dated **2001-11-27**, size **1911K**, contributed by `xinhaonanhai`. It instructs users to place the unpacked files under the StoneAge directory and explicitly states **“1.X，2.0通用”**. The surviving download href resolves to `col=map&aid=43172&filename=Estoneage2.0map_1127.exe&size=1911`. [SRC-CN-2001-SINA-FULLMAP-01]
+
+**RECOVERY STATUS:** the exact filenames and CGI identities are now recovered, but no verified payload body has yet been found in tested Wayback, Internet Archive, DiscMaster, or contributor-domain surfaces. Therefore this is a precise **TARGET-A recovery token**, not yet a byte-provenance anchor.
+
+**RESEARCH CONSEQUENCE:** this 2001 full-map target supersedes the 2002-11-08 4.0 map package as the earliest concrete complete-map recovery lead. If recovered, its DAT corpus must be compared directly against Taiwan v1.0, June-2003 and mixed-2.5 states before any historical equivalence is asserted.

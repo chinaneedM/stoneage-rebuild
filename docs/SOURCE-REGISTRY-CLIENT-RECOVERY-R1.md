@@ -708,3 +708,22 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
   - `1021` remains semantically anomalous but is no longer classified primarily as a later private-server/mixed-bundle mutation;
   - `817`'s missing graphic references against `adrn_15.bin` are a resource-generation mismatch, not a map-file provenance failure.
 - Recovery classification consequence: the mixed 2.5 **runtime executables remain RECOVERED-C/contaminated**, but its DAT map directory now has very strong independent historical byte corroboration at the June-2003 state. This does not elevate it to clean 2.5 release provenance and does not close the pre-June field-map gate.
+
+## TARGET-A — 2001-11 Mainland full-map package
+
+- Historical record: Sina `《石器时代》全地图`, 2001-11-27.
+- Exact recovery token: `Estoneage2.0map_1127.exe`, `aid=43172`, `col=map`, stated **1911K**.
+- Source compatibility claim: **1.X / 2.0 compatible**.
+- Contributor label: `xinhaonanhai`; its historical domain has surviving Wayback root captures but no currently exposed package path.
+- Current classification: **TARGET-A / payload OPEN**. No exact payload body has been recovered from tested Wayback, IA or DiscMaster surfaces.
+- Priority: **highest current field-map recovery target**, earlier and more directly version-bracketed than the 2002-11-08 4.0 package.
+- Acceptance rule if recovered: hash executable, extract transiently, inventory every DAT and internal timestamp, validate three-layer structure, and perform whole-file/layer-level comparisons against Taiwan v1.0 and the dated June-2003 corpus before assigning lineage.
+
+## TARGET-A — 2001-11 Mainland StoneAge 2.0 client
+
+- Historical record: Sina `石器时代2.0客户端`, 2001-11-02.
+- Exact recovery token: `stoneage2.0setup.exe`, `aid=41967`, `col=demo`, stated **524377K**.
+- Source description: upgrade client for existing StoneAge users.
+- Current classification: **TARGET-A / payload OPEN**. Exact token is strong; no verified binary carrier is currently recovered.
+- Recovery value: executable/build metadata, installer structure, resource-generation files and possible installed map/cache behavior from the 2.0 era.
+- Clean-client rule: the Sina version label is not sufficient. Any surviving copy must be hash-locked and inspected for repack/private-server modifications before promotion.
