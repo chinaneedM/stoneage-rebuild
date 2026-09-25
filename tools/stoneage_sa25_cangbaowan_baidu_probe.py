@@ -7,6 +7,7 @@ the anonymous response, and public archive-index metadata.
 """
 from __future__ import annotations
 
+import concurrent.futures
 import hashlib
 import html
 import json
@@ -88,7 +89,7 @@ def cdx(target,match_type="exact"):
     if match_type!="exact":
         params.append(("matchType",match_type))
     u=CDX+"?"+urllib.parse.urlencode(params)
-    r=fetch(u,timeout=35)
+    r=fetch(u,timeout=16)
     rows=[]
     if r.get("ok"):
         try:
@@ -110,7 +111,7 @@ def ia_search():
         ("fl[]","identifier"),("fl[]","title"),("fl[]","description"),
         ("rows","100"),("output","json"),
     ]
-    r=fetch(IA+"?"+urllib.parse.urlencode(params),timeout=30)
+    r=fetch(IA+"?"+urllib.parse.urlencode(params),timeout=16)
     docs=[]
     if r.get("ok"):
         try:
@@ -122,7 +123,7 @@ def ia_search():
 
 
 def main():
-    print("StoneAge 2.5 CangBaoWan Baidu public-share probe — R1")
+    print("StoneAge 2.5 CangBaoWan Baidu public-share probe — R2")
     print("SCOPE|anonymous-public-landing+public-archive-index|no-code-guess|no-login|no-bypass|no-payload")
     print(f"SOURCE|{SOURCE}")
     print(f"SHARE|id={SHARE_ID}|url={SHARE}")
@@ -160,20 +161,29 @@ def main():
             seen.add((label,value))
             print(f"BAIDU_PUBLIC_FIELD|kind={label}|value={value}")
 
-    for target in (SHARE,SHARE+"/"):
-        for mode in ("exact","prefix"):
-            rr,rows=cdx(target,mode)
-            print(
-                f"WAYBACK|target={clean(target)}|mode={mode}|ok={int(rr.get('ok',False))}|"
-                f"status={rr.get('status','')}|rows={len(rows)}|error={clean(rr.get('error',''))}"
-            )
-            for row in rows[:100]:
-                print("WAYBACK_ROW|"+"|".join(
-                    f"{k}={clean(row.get(k,''))}"
-                    for k in ("timestamp","original","statuscode","mimetype","digest","length","redirect")
-                ))
+    archive_results=[]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        futures=[]
+        for target in (SHARE,SHARE+"/"):
+            for mode in ("exact","prefix"):
+                futures.append(("wayback",target,mode,executor.submit(cdx,target,mode)))
+        ia_future=executor.submit(ia_search)
+        for kind,target,mode,future in futures:
+            rr,rows=future.result()
+            archive_results.append((kind,target,mode,rr,rows))
+        ir,docs=ia_future.result()
 
-    ir,docs=ia_search()
+    for _,target,mode,rr,rows in archive_results:
+        print(
+            f"WAYBACK|target={clean(target)}|mode={mode}|ok={int(rr.get('ok',False))}|"
+            f"status={rr.get('status','')}|rows={len(rows)}|error={clean(rr.get('error',''))}"
+        )
+        for row in rows[:100]:
+            print("WAYBACK_ROW|"+"|".join(
+                f"{k}={clean(row.get(k,''))}"
+                for k in ("timestamp","original","statuscode","mimetype","digest","length","redirect")
+            ))
+
     print(
         f"IA_SEARCH|ok={int(ir.get('ok',False))}|status={ir.get('status','')}|docs={len(docs)}|"
         f"error={clean(ir.get('error',''))}"
