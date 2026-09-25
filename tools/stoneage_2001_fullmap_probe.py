@@ -86,6 +86,9 @@ def walk_rows(node):
 def row_path(r):
     return str(r.get("fileid") or r.get("path") or r.get("filename") or r.get("name") or "")
 
+def strict_disc_candidate(r):
+    return row_path(r).replace("\\","/").rsplit("/",1)[-1].lower()==FILENAME.lower()
+
 def main():
     print("StoneAge 2001 full-map preservation probe — R1")
     print("SCOPE|Sina-source+Wayback+IA+DiscMaster|metadata-only|no-payload")
@@ -164,32 +167,33 @@ def main():
         except Exception as e:
             errors.append((f"ia:{label}",type(e).__name__,str(e)))
 
-    disc_rows=[]
+    disc_rows=[];disc_strict=[]
     for q in (FILENAME,STEM,"Estoneage2.0map","estoneage","1127.exe","estone~1.exe"):
         try:
             st,final,h,b=fetch(discm_url(q),timeout=40)
             obj=json.loads(b.decode("utf-8")); rows=walk_rows(obj); disc_rows.extend(rows)
-            print(f"DISCM|q={clean(q)}|status={st}|rows={len(rows)}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}")
-            for r in rows[:100]:
+            strict=[x for x in rows if strict_disc_candidate(x)];disc_strict.extend(strict)
+            print(f"DISCM|q={clean(q)}|status={st}|rows={len(rows)}|strict_rows={len(strict)}|bytes={len(b)}|sha256={hashlib.sha256(b).hexdigest()}")
+            for r in strict:
                 path=row_path(r)
-                low=path.lower()
-                if ("estoneage" in low or "1127" in low or FILENAME.lower()==path.rsplit("/",1)[-1].lower()):
-                    print(f"DISCM_HIT|q={clean(q)}|itemid={clean(r.get('itemid'))}|itemName={clean(r.get('itemName'))}|path={clean(path)}|size={clean(r.get('size'))}|ts={clean(r.get('ts'))}|b3sum={clean(r.get('b3sum'))}")
+                print(f"DISCM_HIT|q={clean(q)}|itemid={clean(r.get('itemid'))}|itemName={clean(r.get('itemName'))}|path={clean(path)}|size={clean(r.get('size'))}|ts={clean(r.get('ts'))}|b3sum={clean(r.get('b3sum'))}")
         except Exception as e:
             errors.append((f"discm:{q}",type(e).__name__,str(e)))
 
     uniq_cdx={(str(r.get("timestamp","")),str(r.get("original","")),str(r.get("digest",""))) for r in seen_rows}
     uniq_disc={(str(r.get("itemid","")),row_path(r)) for r in disc_rows}
+    uniq_disc_strict={(str(r.get("itemid","")),row_path(r)) for r in disc_strict}
     print(f"COUNT|cdx_unique_rows|{len(uniq_cdx)}")
     print(f"COUNT|ia_docs|{ia_docs}")
     print(f"COUNT|discm_unique_rows|{len(uniq_disc)}")
+    print(f"COUNT|discm_strict_rows|{len(uniq_disc_strict)}")
     for scope,kind,msg in errors:
         print(f"ERROR|scope={clean(scope)}|kind={clean(kind)}|message={clean(msg)}")
     print(f"COUNT|errors|{len(errors)}")
     if uniq_cdx:
         print("RESOLUTION|WAYBACK_CANDIDATE_FOUND|inspect candidate response before payload recovery")
-    elif ia_docs or uniq_disc:
-        print("RESOLUTION|PRESERVATION_CANDIDATE_FOUND|verify exact filename/size identity before payload recovery")
+    elif ia_docs or uniq_disc_strict:
+        print("RESOLUTION|PRESERVATION_CANDIDATE_FOUND|strict exact-name carrier found; verify filename/size identity before payload recovery")
     else:
         print("RESOLUTION|NO_PAYLOAD_CARRIER_YET|exact 2001 recovery token established; expand independent archive/mirror search")
     print("EVIDENCE_BOUNDARY|the surviving Sina page proves the 2001 package record and compatibility claim; archive/index hits must be byte-verified separately before being promoted to the package itself.")
