@@ -1,11 +1,38 @@
-StoneAge sa-arena Internet Archive optical-carrier probe — R1
-SCOPE|IA-metadata+bounded-ISO9660-range-reads|no-full-disc-download|no-payload-commit
+StoneAge sa-arena Internet Archive optical-carrier probe — R2
+SCOPE|IA-metadata+CUE+bounded-raw-sector-ISO9660-reads|no-full-disc-download|no-payload-commit
 ITEM|identifier=sa-arena|title=疯狂原始人 Stoneage Arena Online CD-ROM 2002|date=2002-05-29|creator=北京华义联合软件开发有限公司|mediatype=software|collection=cdrom_contributions|description=《疯狂原始人（石器时代）》（英语：StoneAge）是由网石株式会社(Netmarble Corporation)作为其IP所有人的2DMMORPG网络游戏，最早于1999年发行。
 COUNT|optical_candidates|2
 OPTICAL|index=1|name=CD [SA_ARENA].bin|size=721431312|md5=f4e7b6ec2b27282d67f6b3982310cc2e|sha1=f21da5f459db55cc5e09fccadc09f00a7b115177|crc32=bcf893b0|source=original|format=Unknown
 OPTICAL|index=2|name=CD [SA_ARENA].cue|size=299|md5=3b6ddb5cf3de1760273d5bd75cc6d7e4|sha1=5928bffc95d34be28fcce802cced0b2769f625b4|crc32=2d33121f|source=original|format=Cue Sheet
+CUE|index=1|name=CD [SA_ARENA].cue|status=200|bytes=299|tracks=1
+TRACK|cue=1|number=1|mode=MODE1/2352|file=CD [SA_ARENA].bin|index_frames=0
+RANGE_PVD|index=1|track=1|mode=MODE1/2352|track_start_frames=0|status=206|honored=1|content_range=bytes 37632-39983/721431312
+ISO9660|index=1|track=1|mode=MODE1/2352|volume_id=SA_ARENA|system_id=|volume_sectors=306731|volume_bytes=628185088|root_extent=19|root_size=2048
+RANGE_ROOT|index=1|status=206|honored=1|bytes=2048|content_range=bytes 44688-47039/721431312
+COUNT|index=1|root_entries|7
+ROOT|index=1|name=.|dir=1|extent=19|size=2048|flags=2
+ROOT|index=1|name=..|dir=1|extent=19|size=2048|flags=2
+ROOT|index=1|name=AUTORUN.INF|dir=0|extent=13689|size=48|flags=0
+ROOT|index=1|name=DIRECTX8|dir=1|extent=20|size=2048|flags=2
+ROOT|index=1|name=README.TXT|dir=0|extent=13690|size=22009|flags=0
+ROOT|index=1|name=SAARENA.EXE|dir=0|extent=13703|size=599802752|flags=0
+ROOT|index=1|name=SA_ARENA.ICO|dir=0|extent=13701|size=2238|flags=0
+RANGE_DIR|index=1|dir=DIRECTX8|status=206|honored=1|bytes=2048|content_range=bytes 47040-49391/721431312
+COUNT|index=1|dir=DIRECTX8|entries=11
+ENTRY|index=1|parent=DIRECTX8|name=.|dir=1|extent=20|size=2048|flags=2
+ENTRY|index=1|parent=DIRECTX8|name=..|dir=1|extent=19|size=2048|flags=2
+ENTRY|index=1|parent=DIRECTX8|name=BDA.CAB|dir=0|extent=27|size=562501|flags=0
+ENTRY|index=1|parent=DIRECTX8|name=BDANT.CAB|dir=0|extent=302|size=561157|flags=0
+ENTRY|index=1|parent=DIRECTX8|name=CFGMGR32.DLL|dir=0|extent=577|size=41984|flags=0
+ENTRY|index=1|parent=DIRECTX8|name=DIRECTX.CAB|dir=0|extent=598|size=14446832|flags=0
+ENTRY|index=1|parent=DIRECTX8|name=DSETUP.DLL|dir=0|extent=7653|size=44544|flags=0
+ENTRY|index=1|parent=DIRECTX8|name=DSETUP32.DLL|dir=0|extent=7675|size=1772544|flags=0
+ENTRY|index=1|parent=DIRECTX8|name=DXNT.CAB|dir=0|extent=8541|size=10051971|flags=0
+ENTRY|index=1|parent=DIRECTX8|name=DXSETUP.EXE|dir=0|extent=13450|size=147456|flags=0
+ENTRY|index=1|parent=DIRECTX8|name=SETUPAPI.DLL|dir=0|extent=13522|size=341264|flags=0
+COUNT|cue_candidates|1
 COUNT|iso_candidates|0
-COUNT|iso9660_parsed|0
+COUNT|filesystem_tracks_parsed|1
 COUNT|errors|0
-RESOLUTION|OPTICAL_METADATA_ONLY|range/format surface did not yield ISO9660 metadata
-EVIDENCE_BOUNDARY|IA title/date/creator are uploader metadata unless independently sourced; optical-file hashes and ISO9660 structures describe the preserved object but do not by themselves prove original pressing/mastering or StoneAge version.
+RESOLUTION|OPTICAL_FILESYSTEM_METADATA_RECOVERED|classify carrier/version from volume and directory traits before deeper reads
+EVIDENCE_BOUNDARY|IA title/date/creator are uploader metadata unless independently sourced; preserved BIN/CUE hashes and filesystem structures describe the archived object but do not alone prove original pressing/mastering or historical StoneAge version.
