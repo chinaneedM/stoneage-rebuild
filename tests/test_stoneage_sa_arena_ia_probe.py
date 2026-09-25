@@ -2,7 +2,8 @@ import struct
 import unittest
 
 from tools.stoneage_sa_arena_ia_probe import (
-    SECTOR, dir_range, optical_candidates, parse_directory, parse_pvd
+    SECTOR, capped_sector_count, mode_layout, optical_candidates,
+    parse_cue, parse_directory, parse_pvd
 )
 
 
@@ -25,8 +26,12 @@ class SaArenaIAProbeTests(unittest.TestCase):
             {"name":"disc.iso","source":"original"},
             {"name":"cover.jpg"},
             {"name":"track.bin"},
+            {"name":"track.cue"},
         ]
-        self.assertEqual([r["name"] for r in optical_candidates(rows)],["disc.iso","track.bin"])
+        self.assertEqual(
+            [r["name"] for r in optical_candidates(rows)],
+            ["disc.iso","track.bin","track.cue"],
+        )
 
     def test_parse_pvd(self):
         b=bytearray(SECTOR)
@@ -53,10 +58,25 @@ class SaArenaIAProbeTests(unittest.TestCase):
         self.assertEqual(rows[1]["name"],"SETUP.EXE")
         self.assertFalse(rows[1]["is_dir"])
 
-    def test_dir_range_is_capped(self):
-        start,end=dir_range(10,9999999)
-        self.assertEqual(start,10*SECTOR)
-        self.assertLessEqual(end-start+1,262144)
+    def test_cue_parser(self):
+        cue='''FILE "CD [SA_ARENA].bin" BINARY
+  TRACK 01 MODE2/2352
+    INDEX 01 00:02:00
+'''
+        tracks=parse_cue(cue)
+        self.assertEqual(len(tracks),1)
+        self.assertEqual(tracks[0]["file"],"CD [SA_ARENA].bin")
+        self.assertEqual(tracks[0]["mode"],"MODE2/2352")
+        self.assertEqual(tracks[0]["index_frames"],150)
+
+    def test_mode_layouts(self):
+        self.assertEqual(mode_layout("MODE1/2352"),(2352,16,2048))
+        self.assertEqual(mode_layout("MODE2/2352"),(2352,24,2048))
+        self.assertEqual(mode_layout("MODE1/2048"),(2048,0,2048))
+
+    def test_sector_count_is_capped(self):
+        self.assertEqual(capped_sector_count(4096),2)
+        self.assertLessEqual(capped_sector_count(9999999)*SECTOR,262144)
 
 
 if __name__=="__main__":
