@@ -27,6 +27,7 @@ from tools.stoneage_encount_chain_probe import (
     setup_values as encounter_setup_values,
 )
 from tools.stoneage_npc_world_graph_probe import (
+    collect_server_map_ids,
     iter_blocks,
     magic_kind,
 )
@@ -419,6 +420,7 @@ def analyze_world_geometry(
     lineage_report: Path,
     npc_dir: Path,
     data_dir: Path,
+    map_dir: Path,
     setup: Path | None = None,
 ) -> WorldGeometry:
     manifest = parse_stable_later_map_manifest(
@@ -427,9 +429,13 @@ def analyze_world_geometry(
     stable_floor_ids = {
         candidate.floor_id for candidate in manifest.candidates
     }
+    server_map_ids, _map_files = collect_server_map_ids(map_dir)
+    if not server_map_ids:
+        raise ValueError("recovered server map set is empty")
+    effective_stable_floor_ids = stable_floor_ids & server_map_ids
     placements, warps = _parse_create_geometry(
         npc_dir,
-        stable_floor_ids,
+        effective_stable_floor_ids,
     )
     encounters = _parse_encounter_geometry(
         data_dir,
@@ -530,6 +536,7 @@ def main() -> None:
     parser.add_argument("--lineage-report", type=Path, required=True)
     parser.add_argument("--npc-dir", type=Path, required=True)
     parser.add_argument("--data-dir", type=Path, required=True)
+    parser.add_argument("--map-dir", type=Path, required=True)
     parser.add_argument("--setup", type=Path)
     args = parser.parse_args()
 
@@ -537,6 +544,7 @@ def main() -> None:
         lineage_report=args.lineage_report,
         npc_dir=args.npc_dir,
         data_dir=args.data_dir,
+        map_dir=args.map_dir,
         setup=args.setup,
     )
     emit(
