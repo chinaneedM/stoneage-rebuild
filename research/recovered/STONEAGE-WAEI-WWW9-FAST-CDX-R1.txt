@@ -1,0 +1,19 @@
+StoneAge Waei www9 fast CDX timeline census — R1
+SCOPE|CDX-only|window=20001201..20010112|no replay|no payload|no collapse
+QUERY|label=trial|kind=exact|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%2Fdownload.php%3FDcat_ID%3D2&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=50000
+QUERY|label=trial80|kind=exact|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%3A80%2Fdownload.php%3FDcat_ID%3D2&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=50000
+QUERY|label=root|kind=exact|status=200|rows=1|bytes=204|sha256=3574a6c87e45c21424f1d033c414369ead6755f65db374fc8704cba7330ae97c|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%2Fdownload.php&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=50000
+QUERY|label=root80|kind=exact|status=200|rows=1|bytes=204|sha256=3574a6c87e45c21424f1d033c414369ead6755f65db374fc8704cba7330ae97c|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%3A80%2Fdownload.php&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=50000
+QUERY|label=router|kind=prefix|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%2Fdownload%2Fdownloading.php%3FID%3D&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=50000
+QUERY|label=router80|kind=prefix|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%3A80%2Fdownload%2Fdownloading.php%3FID%3D&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=50000
+ROOT_CAPTURE|label=root|timestamp=20001206135100|status=200|mime=text/html|length=6102|digest=LTBP6SDEIJMUUFHAAKKFJ4OBNU55VM4I|redirect=|original=http://www9.waei.net:80/download.php
+COUNT|trial_captures|0
+COUNT|trial_unique_timestamps|0
+COUNT|trial_post_dec6|0
+COUNT|root_captures|1
+ROOT_TIMESTAMPS|20001206135100
+COUNT|router_rows|0
+COUNT|router_ids|0
+COUNT|errors|0
+RESOLUTION|NO_POST_DEC6_TRIAL_OR_ROUTER_INDEX|switch to external mirrors/other Waei surfaces
+EVIDENCE_BOUNDARY|CDX metadata establishes capture/routing topology only; no title or payload identity is inferred.
