@@ -21,8 +21,8 @@ PREFIX = "http://www.waei.com.cn/ZHUANQU/stoneage2/"
 FROM = "20011024"
 TO = "20011112"
 TARGET_TS = "20011102"
-MAX_PAGES = 72
-MAX_CHILDREN = 32
+MAX_PAGES = 40
+MAX_CHILDREN = 12
 
 PATH_HINTS = (
     "stnews", "stbulletin", "news", "bulletin", "notice", "announce",
@@ -52,7 +52,7 @@ def clean(v, n=5000):
     return " ".join(str(v if v is not None else "").split()).replace("|", "%7C")[:n]
 
 
-def fetch(url, timeout=35, max_bytes=1024 * 1024):
+def fetch(url, timeout=18, max_bytes=1024 * 1024):
     req = urllib.request.Request(
         url,
         headers={
@@ -221,7 +221,7 @@ def main():
         errors.append(("cdx", type(e).__name__, str(e)))
         rr = ()
 
-    candidates = [r for r in rr if is_html_candidate(r)]
+    candidates = [r for r in rr if is_html_candidate(r) and not noisy_url(str(r.get("original") or ""))]
     candidates.sort(key=lambda r: (score_page(r), str(r.get("timestamp") or "")), reverse=True)
     selected = candidates[:MAX_PAGES]
     print(f"COUNT|html_candidates|{len(candidates)}")
