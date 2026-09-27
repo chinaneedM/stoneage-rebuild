@@ -1,0 +1,42 @@
+name: Probe China.com StoneAge source routes
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_china2000_zhcn_shiqi_download_probe.py
+      - tests/test_stoneage_china2000_zhcn_shiqi_download_probe.py
+      - .github/workflows/probe-stoneage-china2000-zhcn-routes.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-china2000-zhcn-routes
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate source-route probe
+        run: python3 -m unittest tests.test_stoneage_china2000_zhcn_shiqi_download_probe -v
+      - name: Probe archived China.com StoneAge/download routes
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_china2000_zhcn_shiqi_download_probe \
+            > research/recovered/STONEAGE-CHINA2000-ZHCN-SHIQI-DOWNLOAD-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-CHINA2000-ZHCN-SHIQI-DOWNLOAD-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe China.com StoneAge source routes'
+          git pull --rebase origin main
+          git push
