@@ -1,0 +1,34 @@
+name: Census Popsoft StoneAge launch portal
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_popsoft_game_portal_census.py
+      - tests/test_stoneage_popsoft_game_portal_census.py
+      - .github/workflows/census-stoneage-popsoft-game-portal.yml
+permissions:
+  contents: write
+concurrency:
+  group: stoneage-popsoft-game-portal-census
+  cancel-in-progress: true
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_popsoft_game_portal_census -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_popsoft_game_portal_census > research/recovered/STONEAGE-POPSOFT-GAME-PORTAL-CDX-R1.txt
+      - run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-POPSOFT-GAME-PORTAL-CDX-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: census Popsoft StoneAge launch portal'
+          git pull --rebase origin main
+          git push
