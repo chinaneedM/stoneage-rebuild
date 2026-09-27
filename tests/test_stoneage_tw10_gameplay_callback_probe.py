@@ -6,7 +6,7 @@ from tools.stoneage_tw10_gameplay_callback_probe import find_ascii_rvas, image_c
 class TaiwanGameplayCallbackProbeTests(unittest.TestCase):
 
     def test_image_c_string_reads_ascii_at_image_rva(self):
-        data = b"HEADER" + b"%X|%X\\0" + b"TAIL"
+        data = b"HEADER" + b"%X|%X" + bytes([0]) + b"TAIL"
         sections = [{
             "name": ".data",
             "rva": 0x1000,
@@ -18,7 +18,7 @@ class TaiwanGameplayCallbackProbeTests(unittest.TestCase):
         self.assertIsNone(image_c_string(data, sections, 0x5000))
 
     def test_find_ascii_rvas_maps_raw_offsets_back_to_image_rvas(self):
-        data = b"HEAD%X|%X\\0TAIL%X|%X\\0"
+        data = b"HEAD%X|%X" + bytes([0]) + b"TAIL%X|%X" + bytes([0])
         sections = [{
             "name": ".data",
             "rva": 0x2000,
