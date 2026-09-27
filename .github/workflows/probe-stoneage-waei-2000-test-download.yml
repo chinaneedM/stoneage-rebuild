@@ -1,0 +1,50 @@
+name: Probe StoneAge Waei 2000 trial download archive
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_2000_test_download_probe.py
+      - tests/test_stoneage_waei_2000_test_download_probe.py
+      - .github/workflows/probe-stoneage-waei-2000-test-download.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-2000-test-download
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate early Waei archive probe
+        run: python3 -m unittest tests.test_stoneage_waei_2000_test_download_probe -v
+      - name: Probe early Waei trial-download topology
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_2000_test_download_probe \
+            > research/recovered/STONEAGE-WAEI-2000-TEST-DOWNLOAD-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-WAEI-2000-TEST-DOWNLOAD-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe early Waei StoneAge trial download'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_waei_2000_test_download_probe > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe early Waei StoneAge trial download'
+          fi
+          git push
