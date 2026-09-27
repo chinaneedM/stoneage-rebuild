@@ -307,20 +307,42 @@ The remaining gap is no longer merely whether a second disc probably existed. Th
 
 - Source type: current institutional catalogue/search-index lead on the official domain of 湖南石油化工职业技术学院.
 - Research date: **2026-09-27**.
-- School-domain indexed catalogue rows observed for title `中学生电脑`, publisher `课堂内外杂志社出版`:
-  - `TP3-794/12.2`
-  - `TP3-794/12.3`
-  - `TP3-794/12.5`
-  - `TP3-794/12.12`
-  - `TP3-794/12.14`
+- Same-title electronic-media holdings publicly observed for `中学生电脑` / publisher `课堂内外杂志社出版` include at least:
+  - `TP3-794/12.2`, `.3`, `.5`, `.8`, `.9`, `.10`, `.12`, `.13`, `.14`.
+- The catalogue publication-date field for these observed rows is **blank / `.`**.
+- Call-number correction:
+  - the decimal suffix is not a recovered month/issue number;
+  - a neighboring same-class record `TP3-794/20.14` is explicitly `《电脑迷》2009年第7月号下配刊光盘` with publication date `2009.7`, proving a suffix such as `.14` cannot be read directly as a calendar month.
 - Contemporary relevance:
   - 17173/Sina's 2002 StoneAge 2.5 distribution list names **`《中学生电脑》2002年攻略特刊`** as a possible complete-package/updater carrier.
-- Confidence: **B for literal public search-index catalogue rows and institution identity; OPEN for date/issue/media identity**.
-- Important boundary:
-  - the indexed rows currently expose no year/issue mapping;
-  - the underlying PDF was not replayable in the current web environment;
-  - therefore none of the call numbers may be called the StoneAge 2.5 carrier yet.
+- Confidence: **B for literal public catalogue rows; OPEN for year/issue/media identity of the target special**.
 - Recovery consequence:
-  - retain the exact `TP3-794/12.*` tokens as a public catalogue-resolution route;
-  - next step is public OPAC/catalogue metadata resolution, not physical acquisition.
+  - retain `TP3-794/12.*` only as institutional catalogue tokens;
+  - do **not** infer 2002 or issue chronology from the suffix.
+- Public old-disc Directory-Lister cross-check:
+  - **5,173** directory pages / **97,708** links / **38,826** file links inspected;
+  - **0** `中学生电脑` matches, **0** StoneAge target-name matches, **0** errors, **0** frontier remaining;
+  - classification: **current public filename/path route BOUNDED**.
+- Reopen only from an exact OPAC/accession join, issue/disc photo, optical image/file tree/checksum, torrent/archive-member record or independent mirror.
 - Canonical note: `research/clients/STONEAGE-SA25-ZHONGXUESHENGDIANNAO-LIBRARY-LEAD-R1.md`.
+- Derived directory report: `research/recovered/STONEAGE-SA25-OLD-DISC-DIRECTORY-R1.txt`.
+
+
+## SRC-CN-2026-OLD-DISC-DIRECTORY-SA25-NAME-SWEEP-01
+
+- Surface: public Directory Lister `https://oddownload.nuduseng.com/`, limited to top-level roots whose names contain `老光盘群`.
+- Research date: **2026-09-27**.
+- Method: bounded concurrent traversal of directory HTML and file names only; **no optical/archive executable payload bodies downloaded**.
+- Completed R2 inventory:
+  - 29 old-disc roots;
+  - 5,173 pages;
+  - 97,708 links;
+  - 38,190 directory links;
+  - 38,826 file links;
+  - 0 target matches;
+  - 0 errors;
+  - 0 remaining frontier.
+- Search identities included `中学生电脑`, `课堂内外`, `攻略特刊`, `石器时代2.5`, `精灵王传说` and orthographic/English variants.
+- Classification: **BOUNDED for current public path/filename metadata**.
+- Important limit: zero filename/path matches do not prove absence of a target object hidden behind generic filenames or outside this current public directory tree.
+- Derived report: `research/recovered/STONEAGE-SA25-OLD-DISC-DIRECTORY-R1.txt`.

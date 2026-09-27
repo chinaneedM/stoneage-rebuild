@@ -2338,3 +2338,14 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - This is **OPEN / catalogue-level only**. The indexed rows do not expose year/issue mapping, and the source PDF was not replayable in the current web environment. None of the five holdings may be identified as the 2002攻略特刊 or StoneAge carrier without another metadata join.
 - Priority consequence: resolve the `TP3-794/12.*` sequence through public institutional catalogue/OPAC/export metadata. If a call number maps to the 2002攻略特刊, use that exact catalogue identity to reopen optical-preservation searches. No purchase/manual acquisition is required.
 - Canonical note: `research/clients/STONEAGE-SA25-ZHONGXUESHENGDIANNAO-LIBRARY-LEAD-R1.md`.
+
+
+## StoneAge 2.5 institutional-call-number correction and old-disc directory closure — 2026-09-27
+
+- The 湖南石油化工职业技术学院 catalogue route has been corrected: multiple `中学生电脑` / `课堂内外杂志社出版` electronic-media rows exist under `TP3-794/12.*`, but their publication-date field is blank. Observed suffixes include at least **.2/.3/.5/.8/.9/.10/.12/.13/.14**.
+- **Do not interpret those suffixes as months or issue numbers.** A neighboring record in the same electronic-media class, `TP3-794/20.14`, is explicitly `《电脑迷》2009年第7月号下配刊光盘` with date `2009.7`; therefore a trailing `.14` is a local holding/item sequence, not a direct calendar encoding.
+- The institutional holdings remain an OPEN catalogue lead because no public row currently binds a `TP3-794/12.*` item to **`《中学生电脑》2002年攻略特刊`**.
+- The live public 老光盘群 Directory Lister route is now fully bounded at path/filename level: **29 roots / 5,173 pages / 97,708 links / 38,826 file links / 0 target-name matches / 0 errors / 0 remaining frontier**. No file body was downloaded.
+- Operational consequence: stop rescanning this current Directory-Lister tree and stop trying to decode the school call-number suffix. Reopen only from a new exact accession/issue token, readable disc/package photo, optical image/file tree/checksum, torrent member, preservation catalogue or mirror.
+- Canonical note: `research/clients/STONEAGE-SA25-ZHONGXUESHENGDIANNAO-LIBRARY-LEAD-R1.md`.
+- Derived report: `research/recovered/STONEAGE-SA25-OLD-DISC-DIRECTORY-R1.txt`.
