@@ -1,0 +1,42 @@
+name: Recover China.com Jan-2001 StoneAge article
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_china2001_jan5_mailorder_route_probe.py
+      - tests/test_stoneage_china2001_jan5_mailorder_route_probe.py
+      - .github/workflows/recover-stoneage-china2001-jan5-mailorder.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-china2001-jan5-mailorder
+  cancel-in-progress: true
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate route recovery
+        run: python3 -m unittest tests.test_stoneage_china2001_jan5_mailorder_route_probe -v
+      - name: Recover proven China.com date neighborhood
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_china2001_jan5_mailorder_route_probe \
+            > research/recovered/STONEAGE-CHINA2001-JAN5-MAILORDER-ROUTE-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-CHINA2001-JAN5-MAILORDER-ROUTE-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: recover China.com Jan-2001 StoneAge article'
+          git pull --rebase origin main
+          git push
