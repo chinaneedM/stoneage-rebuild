@@ -2872,3 +2872,23 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Regression coverage pins active layering, terminal emission, slot-order normalization, turn-drift rejection and invalid-command-identity rejection.
 - **BATTLE_TYPED_EVENT_STATE_CONTRACT_R1 = IMPLEMENTED.**
 - Next implementation seam: expose this transition directly through the single-player runtime battle-loop API, then define the first deterministic presentation/replay consumer above the contract without feeding presentation concerns back into battle rules.
+
+
+## Phase 1 battle runtime typed handoff + replay consumer — 2026-09-28
+
+- `SinglePlayerHistoricalRuntime.resolve_persistent_battle_transition()` now exposes the typed battle contract directly above the existing persistent round resolver.
+- The new runtime API delegates to `resolve_persistent_battle_round()` first and only then converts its `PersistentRoundResult`; successful-capture persistence and all existing combat semantics therefore remain in the established rule path.
+- Existing callers remain compatible because `resolve_persistent_battle_round()` is unchanged.
+- Runtime handoff regression coverage added in `tests/test_stoneage_singleplayer_battle_transition_runtime.py`.
+- First downstream deterministic consumer added in `tools/stoneage_battle_replay.py`:
+  - immutable transition timeline;
+  - strict before/after authoritative-state continuity;
+  - no append after terminal state;
+  - stable event-order flattening;
+  - no damage/target/state recalculation and no historical protocol decoding.
+- Replay regression coverage added in `tests/test_stoneage_battle_replay.py`.
+- Contract record updated: `research/mechanics/STONEAGE-BATTLE-EVENT-CONTRACT-R1.md`.
+- **BATTLE_RUNTIME_TYPED_HANDOFF_R1 = IMPLEMENTED.**
+- **BATTLE_REPLAY_CONSUMER_R1 = IMPLEMENTED.**
+- Presentation-specific animation/audio/UI mapping now stays downstream of typed events and is not allowed to become a second combat-rule layer.
+- Next technical priority: perform a fresh Phase-1 deterministic-gap audit against the accepted foundation baseline and current engine-neutral models, then close the highest-value remaining gameplay/world semantic gap rather than continuing network-era transport reconstruction.
