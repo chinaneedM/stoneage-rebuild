@@ -1,0 +1,12 @@
+StoneAge Waei-vs-Taiwan spr_1.bin structural diff — R1
+SCOPE|accepted TW v1.0 + archived Waei 2001-06-05 spr_1.bin|transient bytes|derived metadata only
+INPUT|tw_layout=mode1-2352|tw_joliet=1|tw_bytes=2889630|tw_sha256=53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a|waei_bytes=2889630|waei_sha256=864fa3f6aaeb7d8d2dc9bdee46cecdc7dcee1af0c8f1ed949e09c0526e6aa17e|index_bytes=5568
+VERIFY|tw_expected_hash=1|waei_expected_hash=1|same_size=1|same_bytes=0
+TW_PARSE|groups=464|animations=39065|frames=242085|closed=1
+WAEI_PARSE_WITH_TW_INDEX|groups=464|animations=39065|frames=242085|closed=1
+BYTE_DIFF|changed_bytes=16|unchanged_bytes=2889614|changed_pct=0.000554|runs=4|max_run=4|first_diff=754432|last_diff=754499
+BLOCK_DIFF|block_bytes=4096|blocks=706|changed_blocks=1|unchanged_blocks=705
+GROUP_DIFF|groups=464|changed_groups=1|unchanged_groups=463
+CHANGED_GROUP|index=102|spr_no=100102|offset=749616|end=755584|bytes=5968|animations=104|frames=472|changed_bytes=16|tw_sha256=132117e8215071f7ec71dac8e24239cbf322537db77ed8384e3b1d670a991640|waei_sha256=51ac32b0c2dd2a3a71e13eb71d2a674f37989c0cc4d0432b3cf9a7ca0884458b
+RESOLUTION|SAME_STONEAGE_SPR_CONTAINER_GEOMETRY|Waei file parses exactly under accepted TW v1.0 spradrn index; classify as strong StoneAge-lineage resource evidence pending download-title binding
+EVIDENCE_BOUNDARY|Structural compatibility establishes resource-lineage evidence, not by itself the exact Mainland client version or official package build.
