@@ -1,0 +1,34 @@
+name: Replay Waei early StoneAge identity pages
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_early_identity_replay.py
+      - tests/test_stoneage_waei_early_identity_replay.py
+      - .github/workflows/replay-stoneage-waei-early-identity.yml
+permissions:
+  contents: write
+concurrency:
+  group: stoneage-waei-early-identity
+  cancel-in-progress: true
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_waei_early_identity_replay -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_early_identity_replay > research/recovered/STONEAGE-WAEI-EARLY-IDENTITY-R1.txt
+      - run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-WAEI-EARLY-IDENTITY-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: replay Waei early StoneAge identity pages'
+          git pull --rebase origin main
+          git push
