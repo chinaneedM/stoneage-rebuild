@@ -1,0 +1,50 @@
+StoneAge Waei early fileid 30..40 crosswalk — R1
+SCOPE|central download exact fileids|2000-12..2001-06|CDX + no-follow redirect headers|no target payload
+CDX|fileid=30|port80=0|status=200|rows=1|bytes=222|sha256=c90d47f14ed0c33d8208f8923a273f5a58b22ca216f2b2388a7159eb24ccea0c
+CDX|fileid=30|port80=1|status=200|rows=1|bytes=222|sha256=c90d47f14ed0c33d8208f8923a273f5a58b22ca216f2b2388a7159eb24ccea0c
+CDX|fileid=31|port80=0|status=200|rows=2|bytes=364|sha256=5cbe0bed8d3824cd4bfba1839ba07f0f0b781ec48ba719ccd89655fd15205f82
+CDX|fileid=31|port80=1|status=200|rows=2|bytes=364|sha256=5cbe0bed8d3824cd4bfba1839ba07f0f0b781ec48ba719ccd89655fd15205f82
+CDX|fileid=32|port80=0|status=200|rows=2|bytes=364|sha256=1955270422560a253e42b17550683ad3571849feb69b58072b3e94d9ef41af36
+CDX|fileid=34|port80=1|status=200|rows=1|bytes=222|sha256=88d4d2f42ee31bb623426aced472a533add0eb97f561c2931b2e07a4fe95ef20
+CDX|fileid=35|port80=0|status=200|rows=2|bytes=365|sha256=13547a8bc45fe1fce60fff998b36e7782a4f9bba3a931eacfb9b900c7b736273
+CDX|fileid=35|port80=1|status=200|rows=2|bytes=365|sha256=13547a8bc45fe1fce60fff998b36e7782a4f9bba3a931eacfb9b900c7b736273
+CDX|fileid=36|port80=0|status=200|rows=1|bytes=222|sha256=2e0e1e6de0c457529c1a76636d83576f1fa8a8e6b0f53c48b2f65243c6eb6404
+CDX|fileid=36|port80=1|status=200|rows=1|bytes=222|sha256=2e0e1e6de0c457529c1a76636d83576f1fa8a8e6b0f53c48b2f65243c6eb6404
+CDX|fileid=37|port80=0|status=200|rows=2|bytes=364|sha256=82cd5b34040abb994914a25d2928e09d7613d73e764e7353f7eebf5501a34219
+CDX|fileid=37|port80=1|status=200|rows=2|bytes=364|sha256=82cd5b34040abb994914a25d2928e09d7613d73e764e7353f7eebf5501a34219
+CDX|fileid=39|port80=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|fileid=40|port80=0|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|fileid=40|port80=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+ROW|fileid=30|timestamp=20010421084334|status=302|mime=text/html|length=452|digest=WHMWRY7MU2LOPVCT3BBB6ILQINDQOGLB|redirect_meta=|original=http://www7.waei.net:80/download/download.asp?fileid=30
+HEADER|fileid=30|timestamp=20010421084334|status=302|location=|content_type=text/html|content_length=208
+ROW|fileid=31|timestamp=20010417210451|status=302|mime=text/html|length=454|digest=CXDNUKT7HQIR4ZWIO7QVLA2ROXXLY3TS|redirect_meta=|original=http://www7.waei.net:80/download/download.asp?fileid=31
+HEADER|fileid=31|timestamp=20010417210451|status=302|location=|content_type=text/html|content_length=212
+ROW|fileid=31|timestamp=20010619163126|status=302|mime=text/html|length=455|digest=CXDNUKT7HQIR4ZWIO7QVLA2ROXXLY3TS|redirect_meta=|original=http://www7.waei.net:80/download/download.asp?fileid=31
+HEADER|fileid=31|timestamp=20010619163126|status=302|location=|content_type=text/html|content_length=212
+ROW|fileid=32|timestamp=20010417230923|status=302|mime=text/html|length=456|digest=LG2Y5DDSBUHVF2J7RQX4AQ2AL7ACW75H|redirect_meta=|original=http://www7.waei.net:80/download/download.asp?fileid=32
+HEADER|fileid=32|timestamp=20010417230923|status=302|location=|content_type=text/html|content_length=215
+ROW|fileid=32|timestamp=20010619163625|status=302|mime=text/html|length=457|digest=LG2Y5DDSBUHVF2J7RQX4AQ2AL7ACW75H|redirect_meta=|original=http://www7.waei.net:80/download/download.asp?fileid=32
+HEADER|fileid=32|timestamp=20010619163625|status=302|location=|content_type=text/html|content_length=215
+ROW|fileid=34|timestamp=20010622230742|status=302|mime=text/html|length=461|digest=GEE3XMG324EKINQXLX5MZ7TZ56XI4XVO|redirect_meta=|original=http://www7.waei.net:80/download/download.asp?fileid=34
+HEADER|fileid=34|timestamp=20010622230742|status=302|location=|content_type=text/html|content_length=218
+ROW|fileid=35|timestamp=20010417155603|status=500|mime=text/html|length=409|digest=K7OPPEEY4PVZKQ3DLWFNF3AOPP2WFXXK|redirect_meta=|original=http://www7.waei.net:80/download/download.asp?fileid=35
+ROW|fileid=35|timestamp=20010629124207|status=500|mime=text/html|length=2053|digest=FHZCF6LSRJ3LKFG756SEIX3XIZ4ANTFC|redirect_meta=|original=http://www7.waei.net:80/download/download.asp?fileid=35
+ROW|fileid=36|timestamp=20010419110959|status=302|mime=text/html|length=461|digest=W6PB6KXP35J53V52FIRPT2E23I2XU45O|redirect_meta=|original=http://www7.waei.net:80/download/download.asp?fileid=36
+HEADER|fileid=36|timestamp=20010419110959|status=302|location=|content_type=text/html|content_length=217
+ROW|fileid=37|timestamp=20010419111443|status=302|mime=text/html|length=463|digest=6AVAIQG2H7HPZ7DKYVALON6SKVPV5JV2|redirect_meta=|original=http://www7.waei.net:80/download/download.asp?fileid=37
+HEADER|fileid=37|timestamp=20010419111443|status=302|location=|content_type=text/html|content_length=216
+ROW|fileid=37|timestamp=20010605192430|status=302|mime=text/html|length=464|digest=6AVAIQG2H7HPZ7DKYVALON6SKVPV5JV2|redirect_meta=|original=http://www7.waei.net:80/download/download.asp?fileid=37
+HEADER|fileid=37|timestamp=20010605192430|status=302|location=|content_type=text/html|content_length=216
+ERROR|scope=cdx:32:1|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=cdx:33:0|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=cdx:33:1|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=cdx:34:0|kind=URLError|message=<urlopen error _ssl.c:983: The handshake operation timed out>
+ERROR|scope=cdx:38:0|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=cdx:38:1|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=cdx:39:0|kind=URLError|message=<urlopen error timed out>
+COUNT|rows|11
+COUNT|ids_with_rows|7
+IDS_WITH_ROWS|30,31,32,34,35,36,37
+COUNT|errors|7
+RESOLUTION|FILEID35_ARCHIVE_ROW_FOUND|classify redirect target against StoneAge trial/client semantics
+EVIDENCE_BOUNDARY|Sequential IDs are only a search heuristic; adjacency never proves StoneAge identity. Redirect target bodies are not fetched.
