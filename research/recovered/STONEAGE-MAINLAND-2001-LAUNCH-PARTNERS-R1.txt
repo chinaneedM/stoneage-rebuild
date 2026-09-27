@@ -1,0 +1,32 @@
+StoneAge Mainland Jan-2001 launch-partner CDX census — R1
+SCOPE|confirmed launch-partner domains|window=20010115..20010119|CDX metadata only|collapse=urlkey|no replay|no payload
+SOURCE_ANCHOR|contemporaneous Sina launch report names ten cooperating portals and Jan-16..18 coordinated StoneAge coverage
+DOMAIN_BOUNDARY|Pulse/M-WEB is omitted here because its exact historical domain is not asserted without a source-derived mapping
+QUERY_ERROR|portal=21cn|domain=21cn.com|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+QUERY|portal=21vianet|domain=21vianet.com|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=21vianet.com&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20010115&to=20010119&limit=30000&collapse=urlkey
+COUNT_PORTAL|portal=21vianet|rows=0|candidates=0
+QUERY_ERROR|portal=china|domain=china.com|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+QUERY_ERROR|portal=elong|domain=elong.com|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+QUERY_ERROR|portal=enet|domain=enet.com.cn|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+QUERY_ERROR|portal=netease|domain=163.com|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+QUERY_ERROR|portal=sina|domain=sina.com.cn|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+QUERY_ERROR|portal=sohu|domain=sohu.com|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+QUERY_ERROR|portal=yesky|domain=yesky.com|kind=JSONDecodeError|message=Expecting value: line 1 column 1 (char 0)
+ERROR|portal=21cn|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|portal=china|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|portal=elong|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|portal=enet|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|portal=netease|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|portal=sina|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|portal=sohu|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|portal=yesky|kind=JSONDecodeError|message=Expecting value: line 1 column 1 (char 0)
+COUNT|portals=9
+COUNT|queries_completed=1
+COUNT|total_rows=0
+COUNT|candidate_rows=0
+COUNT|strong_rows=0
+COUNT|stone_token_rows=0
+COUNT|binary_rows=0
+COUNT|errors=8
+RESOLUTION|LAUNCH_PARTNER_WINDOW_CENSUSED_NO_EXACT_STONE_TOKEN|use portal-specific game-route tokens only if newly source-derived
+EVIDENCE_BOUNDARY|Portal cooperation and archived URL topology do not identify client bytes. No archived body or software payload is fetched.
