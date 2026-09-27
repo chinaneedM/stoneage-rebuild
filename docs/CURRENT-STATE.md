@@ -2601,3 +2601,29 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - `research/recovered/STONEAGE-WAEI-FILEID133-ROUTE-R1.txt`;
   - `research/recovered/STONEAGE-WAEI-FILEID133-HEADER-R1.txt`.
 - Full-client recovery remains higher priority than further analysis of this patch: the unresolved primary target is still the ~274 MB Jan-2001 Waei trial client and/or the Dec-2000 Mainland official test-CD bytes.
+
+## Jinghe/Yegame StoneAge retail-catalog binding — 2026-09-27
+
+- A source-grounded archive chain now connects the proven Mainland test-CD distributor **晶合时代 / JHPOP** to its historical commerce site:
+  - the archived **2000-12-04** `www.jhpop.com` root directly redirects to `http://www.yegame.com`;
+  - archived Yegame pages identify the site as **晶合软商网 / 晶合商机网** and expose a dedicated `/product/game/` catalog.
+- The recovered **2001-04-06** Yegame network-game category page directly lists:
+  - product name: **石器时代**;
+  - product code/link: **`EN0ZGKJ0002`** -> `product/detail.asp?prodencode=EN0ZGKJ0002`;
+  - product medium: **`1-CD`**;
+  - catalog **更新日期: 2001-1-16**;
+  - retail price: **¥29.00**;
+  - wholesale price: **¥26.00**.
+- The same catalog independently exposes **石器时代-WGS620点会员卡**, product code **`EZ0JHSD0003`**.
+- Evidence classification:
+  - **FACT:** by 2001-04-06 the historical Jinghe/Yegame catalog represented Mainland `石器时代` as a **1-CD** product under exact catalog key `EN0ZGKJ0002`;
+  - **FACT:** the catalog recorded `2001-1-16` in its **更新日期** field and ¥29/¥26 retail/wholesale values;
+  - **BOUNDARY:** `2001-1-16` is a catalog update field, **not automatically a release date**;
+  - **BOUNDARY:** this retail-catalog record does **not** identify or authenticate the earlier **2000-12 Mainland official test CD**, nor does it recover retail bytes.
+- Cross-source consequence: the **1-CD** catalog medium coheres with the already recovered China.com formal-product record `载体：1 CD-ROM`, providing an independent commerce-channel carrier check.
+- Recovery consequence: the exact product code `EN0ZGKJ0002` is now a high-value search token for archived detail pages, cover images, catalog mirrors and physical-media listings. Full-client recovery still outranks price/package archaeology.
+- Derived reports:
+  - `research/recovered/STONEAGE-JHPOP-2000-ROOT-REPLAY-R2.txt`;
+  - `research/recovered/STONEAGE-YEGAME-2000-TEST-CD-ARCHIVE-R1.txt`;
+  - `research/recovered/STONEAGE-YEGAME-EXACT-PAGE-REPLAY-R1.txt`;
+  - `research/recovered/STONEAGE-YEGAME-GAME-CATALOG-R1.txt`.

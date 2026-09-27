@@ -3004,3 +3004,36 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
   - `research/recovered/STONEAGE-WAEI-ID1-PATCH-CONTROLS-R1.txt`;
   - `research/recovered/STONEAGE-WAEI-FILEID133-ROUTE-R1.txt`;
   - `research/recovered/STONEAGE-WAEI-FILEID133-HEADER-R1.txt`.
+
+### SRC-CN-2001-YEGAME-SA-PRODUCT-CATALOG-01
+
+- Source chain:
+  - archived `www.jhpop.com` root, capture **2000-12-04 16:03:00 UTC**, directly redirects to `http://www.yegame.com`;
+  - archived Yegame pages identify the commerce surface as **晶合软商网 / 晶合商机网**;
+  - dedicated historical game catalog path: `/product/game/`.
+- Key archive capture: **2001-04-06 01:45:44 UTC**.
+- Historical page: `http://yegame.com:80/product/game/prod_secshow.asp?prod_secid=N`.
+- Retrieval/analysis date: **2026-09-27**.
+- Source type: archived historical commerce catalog HTML.
+- Confidence: **A-/B+ for literal catalog fields and product-code association; not client-byte provenance**.
+- Directly supports:
+  - category: network games;
+  - product name: **石器时代**;
+  - product detail key: **`EN0ZGKJ0002`**;
+  - product medium: **`1-CD`**;
+  - catalog field **更新日期: 2001-1-16**;
+  - retail price: **¥29.00**;
+  - wholesale price: **¥26.00**;
+  - separate product **石器时代-WGS620点会员卡**, detail key **`EZ0JHSD0003`**.
+- Cross-source interpretation:
+  - the **1-CD** medium independently corroborates the surviving China.com formal-product record `载体：1 CD-ROM`;
+  - the product code provides a new exact recovery token for cover images, catalog/detail mirrors, and physical-media provenance.
+- Critical limits:
+  - **do not interpret `2001-1-16` as a release date** without separate evidence; the field is explicitly the catalog's `更新日期`;
+  - this does not identify the **2000-12 official test CD**, prove identity with a magazine-insert copy, or recover any executable/disc bytes;
+  - retail/wholesale values are catalog metadata and are secondary to artifact recovery.
+- Derived evidence:
+  - `research/recovered/STONEAGE-JHPOP-2000-ROOT-REPLAY-R2.txt`;
+  - `research/recovered/STONEAGE-YEGAME-2000-TEST-CD-ARCHIVE-R1.txt`;
+  - `research/recovered/STONEAGE-YEGAME-EXACT-PAGE-REPLAY-R1.txt`;
+  - `research/recovered/STONEAGE-YEGAME-GAME-CATALOG-R1.txt`.
