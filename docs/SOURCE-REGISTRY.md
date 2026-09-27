@@ -2566,3 +2566,68 @@ Every substantial source should record:
 - Classification remains:
   - **OPEN / secondary-carrier or publisher-bundle candidate** until file-level evidence or independent package documentation resolves its payload and provenance.
 
+
+
+### SRC-CN-2020-SOHU-EARLY-MAINLAND-DISC-MIRROR-01
+
+- Title: `发一下留下的石器时代回忆`
+- Publication date: **2020-07-07**
+- Retrieval date: **2026-09-27**
+- Source type: later repost/mirror of the same physical-disc photograph family already preserved by SHIQI.ME; **not an independent physical specimen**
+- Page: https://www.sohu.com/a/406234981_120099894
+- Direct first-disc image: https://p3.itc.cn/q_70/images03/20200707/0b5a52c6c1ce40fea0c95c7662d3cc5b.jpeg
+- Visible/retrospective context:
+  - the page labels the first photographed disc as `石器时代1.82的客户端`;
+  - the image visibly carries StoneAge, Beijing Waei/WAEI and 广西金海湾电子音像出版社 identity.
+- **PROVISIONAL VISUAL TRANSCRIPTION** from the publication-number line:
+  - `ISBN 7-900323-57-0/TP·026`.
+- Confidence:
+  - **B for the plainly visible publisher/operator identity and the `7-900323` prefix**;
+  - **C+/PROVISIONAL for the full suffix `57-0/TP·026` until independently reproduced by a bibliographic/catalogue record or a higher-resolution package/disc scan**.
+- Integrity checks on the provisional number:
+  - `7-900323-57-0` passes the ISBN-10 Mod-11 checksum;
+  - the corresponding ISBN-13 candidate `978-7-900323-57-6` passes the ISBN-13 checksum.
+- Critical limits:
+  - checksum validity only shows that the transcription is structurally plausible; it does not independently prove the photograph's small-print suffix;
+  - the Sohu page is a mirror/repost, so it must not be counted as a second independent physical observation;
+  - the retrospective `1.82客户端` caption remains a source classification, not byte-level build proof.
+- Derived probe:
+  - `research/recovered/STONEAGE-EARLY-MAINLAND-PROVISIONAL-ISBN-R1.txt`.
+
+### SRC-CN-MCSC-JINHAIWAN-ISBN-PREFIX-01
+
+- Title/context: `ISBN国际标准图书编号` — appendix of electronic-publication publisher codes
+- Retrieval date: **2026-09-27**
+- Source: 中国音乐著作权协会
+- URL: https://www.mcsc.com.cn/knowledge/classroom_16.html
+- Confidence: **A- for the literal publisher-code table**
+- Supports:
+  - `金海湾电子音像出版社 | ISBN 7-900323`.
+- Archaeology significance:
+  - independently confirms that the publisher prefix visually present on the early Mainland StoneAge disc is consistent with the historically documented Guangxi-Jinhaiwan publisher;
+  - materially strengthens the first seven digits of the disc-number transcription without independently validating the item suffix `57-0/TP·026`.
+- Does not support:
+  - the exact StoneAge title/item number;
+  - release date, edition, package variant, disc byte identity or client build.
+
+### SRC-CN-2020-SHIQISO-SA182-NEWBIE-PACK-01
+
+- Title: `石器时代1.82时期的客户端新手礼包`
+- Publication date shown by the site index: **2020-09-16**
+- Retrieval date: **2026-09-27**
+- Source type: later specialist collector article/index excerpt
+- Indexed source surfaces:
+  - https://blog.shiqi.so/page2.htm
+  - https://blog.shiqi.so/sqcy4_2.htm
+- Confidence: **C+/B- for later collector composition evidence; not contemporaneous launch documentation**
+- Indexed excerpt supports:
+  - the 1.82-era new-user package is described as containing a CDK on the back of the manual plus **one installation disc**;
+  - the excerpt then begins `下面这四款是最普...`, indicating a set of four commonly shown package variants on that collector surface.
+- Cross-source relation:
+  - contemporaneous Sina independently states that the Mainland launch had **four different package designs/variants**;
+  - the numerical agreement is useful corroboration but **does not prove that the collector's four pictured/common variants are exactly the same four January-2001 launch packages**.
+- Does not support:
+  - byte identity of the installation discs across the four packages;
+  - exact ISBN/ISRC/catalogue number;
+  - treating the later `1.82` label as an independently verified executable build/version.
+

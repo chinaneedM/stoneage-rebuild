@@ -463,3 +463,30 @@ The remaining gap is no longer merely whether a second disc probably existed. Th
   - zero indexed preservation hits do not negate the direct photographed physical-media survival evidence;
   - reopen from new exact ISBN/ISRC/catalogue/matrix/disc-image/file-tree tokens rather than repeating these same broad identity combinations.
 
+
+
+## SRC-CN-2026-EARLY-MAINLAND-PROVISIONAL-PUBLICATION-ID-01
+
+- Research date: **2026-09-27**.
+- Physical target: the same early Mainland Waei/Jinhaiwan client disc photographed in `SRC-CN-2016-SHIQIME-EARLY-MAINLAND-CLIENT-DISC-PHOTOS-01`.
+- Higher-clarity mirror/control:
+  - Sohu page: https://www.sohu.com/a/406234981_120099894
+  - image: https://p3.itc.cn/q_70/images03/20200707/0b5a52c6c1ce40fea0c95c7662d3cc5b.jpeg
+- **Provisional visual transcription:** `ISBN 7-900323-57-0/TP·026`.
+- Independently confirmed component:
+  - 中国音乐著作权协会 publisher-code table assigns **`ISBN 7-900323` to 金海湾电子音像出版社**.
+- Structural validation:
+  - candidate ISBN-10 `7-900323-57-0` passes Mod-11;
+  - derived ISBN-13 `978-7-900323-57-6` passes its checksum.
+- Preservation-index follow-up:
+  - exact IA/DiscMaster probe over `7-900323-57-0`, compact ISBN-10, ISBN-13, StoneAge/publisher combinations and `TP026` returned **0 strict IA items / 0 strict DiscMaster hits / 0 errors**.
+- Classification:
+  - **publisher prefix = independently corroborated FACT**;
+  - **full item suffix `57-0/TP·026` = PROVISIONAL VISUAL TRANSCRIPTION**, not yet promoted to bibliographic fact.
+- Reopen/promotion trigger:
+  - an independent library/CIP/catalogue record;
+  - higher-resolution disc/package back with unambiguous number;
+  - another independent physical specimen exposing the same number;
+  - public optical image/file tree tied to the number.
+- Derived report: `research/recovered/STONEAGE-EARLY-MAINLAND-PROVISIONAL-ISBN-R1.txt`.
+

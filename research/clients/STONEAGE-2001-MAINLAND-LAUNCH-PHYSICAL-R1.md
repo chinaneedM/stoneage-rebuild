@@ -113,3 +113,68 @@ The dedicated exact IA/DiscMaster probe over five Guangxi-Jinhaiwan/Waei/StoneAg
 
 Therefore generic preservation-index search is now bounded. The next route must use a **new exact artifact token** from the photographed disc/package (ISBN/ISRC/catalogue number, matrix, high-resolution label, or optical filename) rather than repeating the same name queries.
 
+
+
+## Provisional publication identifier — 2026-09-27
+
+A clearer Sohu mirror of the same first-disc photograph makes the small publication-number line substantially more legible:
+
+- page: `https://www.sohu.com/a/406234981_120099894`
+- image: `https://p3.itc.cn/q_70/images03/20200707/0b5a52c6c1ce40fea0c95c7662d3cc5b.jpeg`
+
+Current **provisional visual transcription**:
+
+- `ISBN 7-900323-57-0/TP·026`
+
+This full string is **not yet promoted to FACT** because the suffix/item number has not been independently recovered from a catalogue, package back, second physical specimen or optical metadata.
+
+### Independent prefix control
+
+中国音乐著作权协会's electronic-publication publisher-code table explicitly gives:
+
+- `金海湾电子音像出版社 | ISBN 7-900323`
+
+Source:
+- `https://www.mcsc.com.cn/knowledge/classroom_16.html`
+
+This independently corroborates the photographed publisher-prefix component.
+
+### Checksum control
+
+The provisional ISBN item number is structurally valid:
+
+- ISBN-10 `7-900323-57-0` passes Mod-11;
+- converted ISBN-13 `978-7-900323-57-6` passes the ISBN-13 checksum.
+
+Checksum validity increases transcription plausibility but cannot authenticate the suffix.
+
+### Exact-index probe
+
+The corrected metadata-only probe tested:
+
+- `7-900323-57-0`;
+- `7900323570`;
+- `9787900323576`;
+- `978-7-900323-57-6`;
+- ISBN + `石器时代`;
+- ISBN + `广西金海湾`;
+- `TP026 广西金海湾 石器时代`.
+
+Result:
+
+- **0 strict Internet Archive items**;
+- **0 strict DiscMaster hits**;
+- **0 errors**.
+
+Therefore the current public preservation-index route is bounded for this provisional identifier. Reopen only from a new independent token/evidence surface.
+
+## Later collector package-composition control
+
+The 2020 collector index for `石器时代1.82时期的客户端新手礼包` describes the package as:
+
+- CDK on the back of the manual;
+- **one installation disc**;
+- followed by a reference to **four common package variants**.
+
+This later collector record aligns numerically with the contemporaneous Sina report of four Mainland package designs. It is useful corroboration, but not sufficient to assert that the collector's four are exactly the January-2001 four or that all four used byte-identical discs.
+

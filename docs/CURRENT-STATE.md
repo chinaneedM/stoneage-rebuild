@@ -2389,3 +2389,21 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - New source records: `SRC-CN-2016-SHIQIME-MAINLAND-CLIENT-DISCS-01`, `SRC-CN-2016-SHIQIME-WANFANG-SA25-DISC-01`.
 - Derived report: `research/recovered/STONEAGE-2001-MAINLAND-JINHAIWAN-PRESERVATION-R1.txt`.
 
+
+
+## Early Mainland disc publication-number refinement — 2026-09-27
+
+- The same early Mainland Waei/Jinhaiwan client-disc photograph has a clearer Sohu mirror. Its small publication-number line can now be **provisionally transcribed** as **`ISBN 7-900323-57-0/TP·026`**.
+- The transcription is deliberately split into confidence layers:
+  - **FACT / independently corroborated:** 中国音乐著作权协会's electronic-publication publisher-code table assigns **`ISBN 7-900323` to 金海湾电子音像出版社**;
+  - **PROVISIONAL VISUAL TRANSCRIPTION:** the photographed item suffix **`57-0/TP·026`** still lacks an independent bibliographic/catalogue record.
+- Internal consistency is strong but not dispositive: `7-900323-57-0` passes ISBN-10 Mod-11, and the corresponding `978-7-900323-57-6` passes ISBN-13 checksum validation.
+- The corrected exact-token probe now includes **`TP026`** rather than the earlier conservative `P026` placeholder and completed with **7 query identities / 0 strict IA items / 0 strict DiscMaster hits / 0 errors**. The current exact preservation-index route is therefore BOUNDED for this provisional identifier.
+- A separate 2020 specialist collector index describes the `1.82时期的客户端新手礼包` as containing the CDK on the manual back plus **one installation disc**, and references **four common package variants**. This is consistent with contemporaneous Sina's statement that the Mainland launch used four package designs, but exact one-to-one identity between those two sets remains OPEN.
+- Operational consequence: stop guessing further ISBN suffixes. Highest-value evidence is now an **independent catalogue/CIP record or higher-resolution package/disc image** that confirms or rejects `57-0/TP·026`. Until then, keep the whole number as a search token only.
+- New source records:
+  - `SRC-CN-2020-SOHU-EARLY-MAINLAND-DISC-MIRROR-01`;
+  - `SRC-CN-MCSC-JINHAIWAN-ISBN-PREFIX-01`;
+  - `SRC-CN-2020-SHIQISO-SA182-NEWBIE-PACK-01`.
+- Derived evidence: `research/recovered/STONEAGE-EARLY-MAINLAND-PROVISIONAL-ISBN-R1.txt`.
+

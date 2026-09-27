@@ -155,6 +155,8 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 
 **CURRENT SURVIVAL LEAD / NOT AUTHENTICATION:** modern public indexes contain second-hand title strings naming StoneAge together with 广西金海湾 and, separately, 北京华义. These establish a concrete public search surface for surviving physical material but do not identify a specific first pressing. [`SRC-CN-2026-JD-STONEAGE-JINHAIWAN-SURVIVAL-LEAD-01`]
 
+**PHYSICAL-ID REFINEMENT / 2026-09-27:** a clearer mirror of the surviving early Mainland client-disc photograph exposes a publication-number line provisionally read as `ISBN 7-900323-57-0/TP·026`. The publisher prefix `7-900323` is independently assigned to 金海湾电子音像出版社 by a publisher-code table. The full item suffix remains provisional pending independent bibliographic or higher-resolution physical confirmation; exact IA/DiscMaster searches for the provisional ISBN return zero hits. [`SRC-CN-2020-SOHU-EARLY-MAINLAND-DISC-MIRROR-01`] [`SRC-CN-MCSC-JINHAIWAN-ISBN-PREFIX-01`]
+
 **RECOVERY PRIORITY:** resolve readable package/disc identifiers or a public optical image/file tree. Because this is the initial Mainland official publication chain, a verified specimen would outrank later 2.5 secondary carriers for early Mainland byte provenance.
 
 
