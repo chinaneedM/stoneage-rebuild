@@ -239,3 +239,45 @@ Validation:
 - gameplay model Actions run **36333478060 = PASS**.
 
 **WORLD_MAP_PROVENANCE_CONTRACT_R1 = IMPLEMENTED.**
+
+
+## 9. Versioned world geometry and safe executable subset — 2026-09-28
+
+The provenance-safe map library is now joined to recovered later world geometry
+without collapsing version boundaries.
+
+Derived metadata:
+
+- `research/recovered/STONEAGE-25-STABLE-WORLD-GEOMETRY-R1.txt`
+
+Engine-side contract:
+
+- `tools/stoneage_versioned_world_geometry.py`
+
+Current recovered-2.5 geometry over the 761 stable later-map candidates:
+
+- effective NPC placement blocks: **3,856**;
+- classic overlap-Warp geometry rows: **2,264**;
+- encounter areas: **402**.
+
+All 2,264 classic Warp sources are single-cell regions. Five retain an
+unresolved historical time condition. 1,909 target stable-map candidates; the
+non-conditional stable-target subset has fully valid source/destination
+coordinates.
+
+The runtime may automatically project a later classic Warp into an executable
+`LegacyWarpEdge` only if its source cell is unique, its time condition is
+absent, and both endpoints are valid positions in the provenance-bearing
+topology. Under that rule the current safe executable subset is **1,784**
+edges.
+
+There are **52** ambiguous source cells in the otherwise eligible set,
+covering **120** edges. These remain explicit later-version semantic
+ambiguities. The engine must not choose one destination by file order.
+
+`WarpMan`, `FMWarpMan`, payment/condition/script transports and time-gated
+classic Warp behavior remain separately versioned mechanics. They are not
+normalized into ordinary overlap edges merely to increase connectivity.
+
+This is a reconstruction/runtime usability result, not evidence that the
+concrete map or transport population existed unchanged in Taiwan v1.
