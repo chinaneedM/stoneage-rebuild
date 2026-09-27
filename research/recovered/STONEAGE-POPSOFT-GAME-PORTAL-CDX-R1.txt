@@ -1,0 +1,18 @@
+StoneAge Popsoft game-portal launch-window CDX census — R1
+SOURCE_CHAIN|archived Jinghe/Yegame business page -> http://game.popsoft.com.cn/
+SCOPE|Wayback CDX unique HTTP-200 URL topology|20001101..20010228|metadata-only|no HTML/payload
+QUERY|label=host|status=200|rows=6|bytes=828|sha256=dcd4d7a5accd699c065248f4be0c3184947466d74f7acc0f3187a1aa3a751e5a|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame.popsoft.com.cn%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001101&to=20010228&filter=statuscode%3A200&limit=50000&collapse=urlkey
+QUERY|label=host80|status=200|rows=6|bytes=828|sha256=dcd4d7a5accd699c065248f4be0c3184947466d74f7acc0f3187a1aa3a751e5a|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame.popsoft.com.cn%3A80%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001101&to=20010228&filter=statuscode%3A200&limit=50000&collapse=urlkey
+ROW|timestamp=20001110122600|score=0|binary=0|ext=|mime=text/html|length=4576|digest=NSCYTZGM66TAIGINI76PLALH7AFCHWXX|original=http://game.popsoft.com.cn:80/
+ROW|timestamp=20010124064900|score=0|binary=0|ext=|mime=text/html|length=5111|digest=7A7CVT255Z4E7G7ROIEVBRVGWR44VFWH|original=http://game.popsoft.com.cn:80/Guide/
+ROW|timestamp=20010124065900|score=0|binary=0|ext=|mime=text/html|length=5277|digest=YHCC2TYWABEBWMN4JHFZ4QKWMDBJ3T6D|original=http://game.popsoft.com.cn:80/Na/
+ROW|timestamp=20010124070400|score=0|binary=0|ext=|mime=text/html|length=5449|digest=EDTGW44BFVR2HEW2MMP3HQFFDJWBBBVM|original=http://game.popsoft.com.cn:80/New/
+ROW|timestamp=20010124070500|score=0|binary=0|ext=|mime=text/html|length=5406|digest=MODG3TFEY57ABFU4EWCA3AIFYTFEPTKA|original=http://game.popsoft.com.cn:80/Review/
+ROW|timestamp=20010215020858|score=0|binary=0|ext=.asp|mime=text/html|length=339|digest=DWABWKBT2N4TRCV2DTCQT7DCHENY77WT|original=http://game.popsoft.com.cn:80/Search/FastSearch.asp
+EXT_COUNT|ext=.asp|rows=1
+COUNT|unique_rows|6
+COUNT|candidate_rows|0
+COUNT|binary_rows|0
+COUNT|errors|0
+RESOLUTION|POPSOFT_PORTAL_ARCHIVED_NO_URL_HINT|replay bounded root/navigation captures for text-level StoneAge/download links
+EVIDENCE_BOUNDARY|URL index topology only; no client or page body is fetched.
