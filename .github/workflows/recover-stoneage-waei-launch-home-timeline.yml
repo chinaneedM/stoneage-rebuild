@@ -1,0 +1,40 @@
+name: Recover Waei StoneAge launch homepage timeline
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_launch_home_timeline.py
+      - tests/test_stoneage_waei_launch_home_timeline.py
+      - .github/workflows/recover-stoneage-waei-launch-home-timeline.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-launch-home-timeline
+  cancel-in-progress: true
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_waei_launch_home_timeline -v
+      - name: Recover bounded launch HTML timeline
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_launch_home_timeline > research/recovered/STONEAGE-WAEI-LAUNCH-HOME-TIMELINE-R1.txt
+      - name: Commit derived report
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-WAEI-LAUNCH-HOME-TIMELINE-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: recover Waei StoneAge launch homepage timeline'
+          git pull --rebase origin main
+          git push
