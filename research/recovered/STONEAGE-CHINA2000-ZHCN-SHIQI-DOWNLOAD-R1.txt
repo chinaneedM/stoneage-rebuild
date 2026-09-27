@@ -1,0 +1,21 @@
+StoneAge China.com source-derived shiqi/download route probe — R1
+SCOPE|archived first-party links from 63271|window=20001201..20010120|exact+prefix CDX|bounded HTML replay|no payload
+ANCHOR|/zh_cn/hotspot/shiqi/index.html + /zh_cn/download/index.html are directly present on archived China.com StoneAge giveaway-results page
+QUERY|label=download-exact|kind=exact|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame.china.com%2Fzh_cn%2Fdownload%2Findex.html&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010120&limit=10000
+QUERY|label=download-exact80|kind=exact|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame.china.com%3A80%2Fzh_cn%2Fdownload%2Findex.html&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010120&limit=10000
+QUERY|label=download-prefix|kind=prefix|status=200|rows=1|bytes=220|sha256=0b49a3db3a769f404350adbfab7fa97d38851f8b6548a8a12b1e31a84a320b69|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame.china.com%2Fzh_cn%2Fdownload%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010120&limit=10000
+QUERY|label=download-prefix80|kind=prefix|status=200|rows=1|bytes=220|sha256=0b49a3db3a769f404350adbfab7fa97d38851f8b6548a8a12b1e31a84a320b69|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame.china.com%3A80%2Fzh_cn%2Fdownload%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010120&limit=10000
+QUERY|label=shiqi-exact|kind=exact|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame.china.com%2Fzh_cn%2Fhotspot%2Fshiqi%2Findex.html&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010120&limit=10000
+QUERY|label=shiqi-exact80|kind=exact|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame.china.com%3A80%2Fzh_cn%2Fhotspot%2Fshiqi%2Findex.html&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010120&limit=10000
+QUERY|label=shiqi-prefix|kind=prefix|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame.china.com%2Fzh_cn%2Fhotspot%2Fshiqi%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010120&limit=10000
+QUERY|label=shiqi-prefix80|kind=prefix|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame.china.com%3A80%2Fzh_cn%2Fhotspot%2Fshiqi%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010120&limit=10000
+COUNT|unique_rows|1
+ROW|timestamp=20001219123000|status=200|mime=text/html|length=1346|digest=JPKFE7J3W6MP3GI7ON6X2PQ5GWGDAAOZ|redirect=|original=http://game.china.com:80/zh_cn/download/pic/a_1.html
+COUNT|selected_replays|1
+ERROR|scope=replay:20001219123000:http://game.china.com:80/zh_cn/download/pic/a_1.html|kind=URLError|message=<urlopen error timed out>
+COUNT|pages_with_signal|0
+COUNT|payload_links|0
+COUNT|route_links|0
+COUNT|errors|1
+RESOLUTION|CHINACOM_SOURCE_PATHS_RECOVERED_NO_STONEAGE_DOWNLOAD_SIGNAL|bound this route family
+EVIDENCE_BOUNDARY|Archive routing/HTML evidence does not authenticate a client build; no candidate binary body is fetched.
