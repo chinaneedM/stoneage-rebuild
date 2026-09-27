@@ -1,0 +1,44 @@
+name: Probe matched carrier ASCII identifiers
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_yegame_matched_carrier_ascii_ocr.py
+      - tests/test_stoneage_yegame_matched_carrier_ascii_ocr.py
+      - .github/workflows/probe-stoneage-yegame-matched-carrier-ascii.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-yegame-matched-carrier-ascii
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check text recognizer
+        run: tesseract --version
+      - name: Validate identifier probe
+        run: python3 -m unittest tests.test_stoneage_yegame_matched_carrier_ascii_ocr -v
+      - name: Inspect four known images
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_yegame_matched_carrier_ascii_ocr \
+            > research/recovered/STONEAGE-YEGAME-MATCHED-CARRIER-ASCII-OCR-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-YEGAME-MATCHED-CARRIER-ASCII-OCR-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: inspect matched Mainland carrier identifiers'
+          git pull --rebase origin main
+          git push
