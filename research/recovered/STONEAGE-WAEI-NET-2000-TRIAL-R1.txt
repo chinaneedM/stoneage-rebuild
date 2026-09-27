@@ -1,0 +1,21 @@
+StoneAge Waei.net 2000/2001 trial-download archive probe — R1
+SCOPE|official-www7+stoneage-host+waei.net-domain|window=20001201..20010112|CDX+HTML-links|no-binary-payload
+EVIDENCE_ANCHOR|official-site=http://www7.waei.net/wgs/stoneage/|client-host=stoneage.waei.net|17173-2001-01-04-trial~274MB
+CDX|label=prefix:official-www7|url=http://www7.waei.net/wgs/stoneage/|match=prefix|status=200|rows=1|bytes=235|sha256=5535d6cb3919b893f4b64f63d0cd8b6eed97aa18df706824a294895d3c486619|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww7.waei.net%2Fwgs%2Fstoneage%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=30000&collapse=urlkey
+CDX|label=prefix:client-host|url=http://stoneage.waei.net/|match=prefix|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fstoneage.waei.net%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=30000&collapse=urlkey
+CDX|label=domain|url=waei.net|match=domain|status=200|rows=161|bytes=22038|sha256=c5a3115aace63c615108b3e0964efbd00fb4b551951584be8b353af43a23ed1f|final=https://web.archive.org/cdx/search/cdx?url=waei.net&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=30000&collapse=urlkey
+COUNT|queries_completed|3
+COUNT|unique_rows|161
+COUNT|relevant_rows|1
+COUNT|binary_rows|0
+ROW|score=23|source=domain|timestamp=20001207211100|original=http://www7.waei.net:80/wgs/stoneage/content/bad_list/badlist-3.htm|status=200|mime=text/html|length=5928|digest=LJ4JN5S6JEELSXFR4OEAVTJXHKBQIFSV|redirect=|binary=0
+COUNT|selected_html|1
+COUNT|pages_replayed|0
+COUNT|semantic_pages|0
+COUNT|size274_pages|0
+COUNT|unique_target_links|0
+COUNT|binary_link_hits|0
+ERROR|scope=page:1:http://www7.waei.net:80/wgs/stoneage/content/bad_list/badlist-3.htm|kind=URLError|message=<urlopen error timed out>
+COUNT|errors|1
+RESOLUTION|EARLY_WAEI_NET_TOPOLOGY_FOUND|follow exact source-derived paths/captures next
+EVIDENCE_BOUNDARY|URL and archived-HTML evidence cannot prove client bytes/build. Candidate binaries are not downloaded by this probe.
