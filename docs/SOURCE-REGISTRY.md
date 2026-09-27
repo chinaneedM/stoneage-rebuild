@@ -2631,3 +2631,44 @@ Every substantial source should record:
   - exact ISBN/ISRC/catalogue number;
   - treating the later `1.82` label as an independently verified executable build/version.
 
+
+
+### SRC-CN-2020-GAMER-SA182-PACKAGE-COLLECTOR-01
+
+- Title: `石器時代周邊收藏，石器用戶端禮包篇（四）1.82石器新手用戶端包`
+- Publication date: **2020-09-17**
+- Retrieval date: **2026-09-27**
+- Source: Bahamut StoneAge forum; later physical-media collector post
+- URL: https://forum.gamer.com.tw/C.php?bsn=1571&snA=81396
+- Confidence: **C+/B- for literal package-composition and same-collection observations; not contemporaneous launch evidence and not byte provenance**
+- Supports:
+  - the collector describes the 1.82 new-user package as carrying the CDK on the manual back plus **one installation disc**;
+  - four common 1.82 package-front variants are shown/described;
+  - the collector states that the **backs of those four common packages are identical**;
+  - a separate `上网包` variant is distinguished and described as including an internet-access card.
+- Archaeology significance:
+  - materially increases the value of finding a readable back from **any** of the four ordinary packages, because it may represent a shared back template;
+  - requires the `上网包` to remain a separate physical-carrier branch.
+- Critical limits:
+  - the post is from 2020 and does not authenticate a January-2001 first pressing;
+  - it does not prove that the four pictured/common packages are exactly the four launch designs reported by Sina;
+  - identical backs do not prove identical optical discs or byte-identical payloads.
+
+### SRC-CN-2021-GAMER-SA182-DISC-COLLECTOR-01
+
+- Title: `石器時代華義國際石器周邊收藏光碟篇（一）`
+- Publication date: **2021-01-07**
+- Retrieval date: **2026-09-27**
+- Source: Bahamut StoneAge forum; later optical-media collector inventory
+- URL: https://forum.gamer.com.tw/C.php?bsn=1571&snA=81430
+- Confidence: **C+/B- for the collector's physical-disc family classification; not byte provenance**
+- Supports:
+  - the collector identifies the familiar Beijing-Waei 1.82 client disc as the standard/unified disc used across ordinary Mainland package variants;
+  - the collector separately identifies a less-common Mainland `上网包` disc.
+- Archaeology significance:
+  - supports treating ordinary 1.82 outer-package variation and common disc artwork as separable layers;
+  - gives a concrete reason to search package backs and common disc faces across multiple box-front variants rather than assuming each box requires a unique disc identity.
+- Critical limits:
+  - same artwork/family classification does not prove byte identity across physical specimens;
+  - the post does not establish exact manufacturing date, matrix/IFPI, optical file tree, hashes or first-press identity;
+  - this source and `SRC-CN-2020-GAMER-SA182-PACKAGE-COLLECTOR-01` are by the same collector and therefore must **not** be counted as independent corroboration.

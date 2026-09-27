@@ -178,3 +178,23 @@ The 2020 collector index for `石器时代1.82时期的客户端新手礼包` de
 
 This later collector record aligns numerically with the contemporaneous Sina report of four Mainland package designs. It is useful corroboration, but not sufficient to assert that the collector's four are exactly the January-2001 four or that all four used byte-identical discs.
 
+
+
+## Package/disc family narrowing from later collector material — 2026-09-27
+
+Two later Bahamut posts by the same physical-media collector provide a useful carrier-family control.
+
+The 2020 1.82 package post shows/describes four common new-user package-front variants and states that their **backs are identical**. It also describes the package composition as CDK on the manual back plus one installation disc, and separates a distinct `上网包` variant.
+
+The collector's 2021 optical-media inventory then describes the familiar Beijing-Waei 1.82 client disc as the **standard/unified disc used across ordinary Mainland package variants**, while separately identifying a less-common `上网包` disc.
+
+This narrows the public-image search surface but does not close provenance:
+
+- a readable back from any of the four ordinary packages may expose a shared publication template;
+- ordinary package-front variation does not imply distinct disc artwork or bytes;
+- the `上网包` must remain a separate carrier branch;
+- the two posts are by the same collector, so they are not independent corroboration;
+- none of this proves that the collector's four common packages are exactly the four designs reported by Sina for the 2001-01-10 launch;
+- none of this proves that the provisional `ISBN 7-900323-57-0/TP·026` appears on every ordinary package or that all discs are byte-identical.
+
+Canonical detail: `research/clients/STONEAGE-2001-MAINLAND-PACKAGE-FAMILY-R1.md`.

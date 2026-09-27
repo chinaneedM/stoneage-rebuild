@@ -2407,3 +2407,17 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - `SRC-CN-2020-SHIQISO-SA182-NEWBIE-PACK-01`.
 - Derived evidence: `research/recovered/STONEAGE-EARLY-MAINLAND-PROVISIONAL-ISBN-R1.txt`.
 
+
+
+## Early Mainland 1.82 package/disc family narrowed — 2026-09-27
+
+- A later physical-media collector provides a useful **same-collection control** for the current Mainland carrier hunt.
+- In a 2020 1.82 package post, the collector shows four common new-user package-front variants and states that **their backs are identical**; the package composition is described as CDK on the manual back plus one installation disc. A separate `上网包` variant is distinguished.
+- In a 2021 optical-media inventory, the same collector describes the familiar Beijing-Waei 1.82 client disc as the **standard/unified disc across ordinary Mainland package variants**, while separately identifying a less-common `上网包` disc.
+- This does **not** prove byte identity, January-2001 first-press identity, or that the collector's four packages are exactly Sina's four launch designs. Because both posts come from the same collector, they are not independent corroboration of each other.
+- Search consequence: a readable **package back from any of the four ordinary 1.82 packages** is now a high-value target because it may expose the shared template/publication identity; keep the `上网包` as a separate carrier branch.
+- A fresh public-web pass over the exact provisional ISBN-10/ISBN-13/`TP026` tokens still exposed **no independent StoneAge bibliographic/CIP record** in this pass, so the full `7-900323-57-0/TP·026` remains provisional.
+- New source records:
+  - `SRC-CN-2020-GAMER-SA182-PACKAGE-COLLECTOR-01`;
+  - `SRC-CN-2021-GAMER-SA182-DISC-COLLECTOR-01`.
+- Canonical note: `research/clients/STONEAGE-2001-MAINLAND-PACKAGE-FAMILY-R1.md`.
