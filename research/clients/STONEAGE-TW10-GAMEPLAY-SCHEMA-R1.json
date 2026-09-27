@@ -1131,6 +1131,76 @@
         }
       ],
       "note": "Top-level v1 builder shape is 12 integers plus one string; positions here follow the early generated semantic signature."
+    },
+    "battle_receive": {
+      "transport": {
+        "protocol": "B",
+        "callback_rva": "0x32c70",
+        "wire_fields": [
+          {
+            "position": 1,
+            "name": "command",
+            "wire_type": "escaped_string",
+            "position_evidence": "V1_DIRECT"
+          }
+        ]
+      },
+      "discriminator": {
+        "byte_offset": 1,
+        "evidence": "V1_DIRECT",
+        "branches": {
+          "C": {
+            "direct_behavior": "copy_full_command_to_status_ring",
+            "ring_slots": 4,
+            "slot_bytes": 4096,
+            "write_index_mask": 3,
+            "behavior_evidence": "V1_DIRECT",
+            "semantic_name": "battle_status_queue",
+            "semantic_evidence": "EARLY_LINEAGE"
+          },
+          "P": {
+            "direct_behavior": "parse_three_outputs_from_command_plus_3",
+            "parsed_outputs": 3,
+            "behavior_evidence": "V1_DIRECT",
+            "semantic_fields": [
+              "battle_my_no",
+              "battle_bp_flag",
+              "battle_my_mp"
+            ],
+            "semantic_evidence": "EARLY_LINEAGE"
+          },
+          "A": {
+            "direct_behavior": "parse_two_outputs_from_command_plus_3_then_conditionally_sync_second_output_and_clear_receive_flag",
+            "parsed_outputs": 2,
+            "behavior_evidence": "V1_DIRECT",
+            "semantic_fields": [
+              "battle_anim_flag",
+              "battle_server_turn_no"
+            ],
+            "conditional_state": {
+              "receive_flag_semantic": "battle_turn_receive_flag",
+              "destination_semantic": "battle_client_turn_no",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          },
+          "U": {
+            "direct_behavior": "set_global_flag_to_1",
+            "behavior_evidence": "V1_DIRECT",
+            "semantic_name": "battle_escape_flag",
+            "semantic_evidence": "EARLY_LINEAGE"
+          },
+          "default": {
+            "direct_behavior": "copy_full_command_to_battle_command_ring",
+            "ring_slots": 4,
+            "slot_bytes": 4096,
+            "write_index_mask": 3,
+            "behavior_evidence": "V1_DIRECT",
+            "semantic_name": "battle_command_queue",
+            "semantic_evidence": "EARLY_LINEAGE"
+          }
+        }
+      },
+      "evidence_document": "research/clients/STONEAGE-TW10-BATTLE-RECEIVE-STATE-R1.md"
     }
   },
   "direct_version_exclusions": [
@@ -1143,7 +1213,8 @@
     "C character record token 13 POPUPNAMECOLOR and later appended fields",
     "S:I durability/damage string and later item fields",
     "I durability/damage string and later item fields",
-    "item pile/alchemy/pet-item/jigsaw/upgrade/countdown extensions"
+    "item pile/alchemy/pet-item/jigsaw/upgrade/countdown extensions",
+    "later descendant B receive subcommands Z/F/O are not v1-direct"
   ],
   "server_bridge_policy": {
     "statement": "Runtime IDs and client-visible state are not automatically server template IDs.",
