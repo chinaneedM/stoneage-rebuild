@@ -1,0 +1,18 @@
+StoneAge early bare-disc public carrier probe — R1
+SCOPE|public-ruten-json+transient-images|derived-metadata+visual-metrics-only|no-login|no-purchase|no-contact|no-image-commit
+TARGET|id=22111215616086|role=early-bare-disc
+DETAIL|id=22111215616086|role=early-bare-disc|status=200|bytes=2135|rows=1|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22111215616086&level=simple
+ITEM|id=22111215616086|role=early-bare-disc|name=二手電腦遊戲 PC GAME 華義 石器時代《 STONEAGE 》PC版/中文版：線上遊戲 <Z150>|post_time=1616035579|sold=0|stock=1|image_count=1
+CONTROL_DETAIL|id=22625938996449|role=taiwan-client-box|status=200|bytes=3141|rows=1|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22625938996449&level=simple
+CONTROL_DETAIL|id=22631284715652|role=beijing-waei-newbie-control|status=200|bytes=2659|rows=1|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22631284715652&level=simple
+CONTROL_DETAIL|id=22636573895893|role=mainland-retail-box|status=200|bytes=2640|rows=1|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22636573895893&level=simple
+ERROR|id=22111215616086|scope=target|kind=ModuleNotFoundError|message=No module named 'cv2'
+ERROR|id=22625938996449|scope=control|kind=ModuleNotFoundError|message=No module named 'cv2'
+ERROR|id=22631284715652|scope=control|kind=ModuleNotFoundError|message=No module named 'cv2'
+ERROR|id=22636573895893|scope=control|kind=ModuleNotFoundError|message=No module named 'cv2'
+COUNT|target_images=0
+COUNT|control_images=0
+COUNT|pairs=0
+COUNT|errors=4
+RESOLUTION|BARE_DISC_TARGET_UNAVAILABLE|retry exact public item only
+EVIDENCE_BOUNDARY|Marketplace titles and artwork are carrier evidence only; visual similarity cannot establish disc-byte identity, version, release date, or clean-client status.
