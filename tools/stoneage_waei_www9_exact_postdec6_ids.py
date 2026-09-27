@@ -15,6 +15,7 @@ Metadata/redirect headers only. Candidate payload bodies are never fetched.
 """
 from __future__ import annotations
 
+import concurrent.futures
 import hashlib
 import json
 import urllib.error
@@ -26,13 +27,14 @@ CDX = "https://web.archive.org/cdx/search/cdx"
 FROM = "20001207"
 TO = "20010112"
 IDS = range(35, 61)
+WORKERS = 6
 
 
 def clean(v, n=3000):
     return " ".join(str(v if v is not None else "").split()).replace("|", "%7C")[:n]
 
 
-def fetch(url, timeout=30, max_bytes=1024 * 1024):
+def fetch(url, timeout=18, max_bytes=1024 * 1024):
     req = urllib.request.Request(
         url,
         headers={
@@ -53,7 +55,7 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         return None
 
 
-def nofollow(url, timeout=30):
+def nofollow(url, timeout=18):
     opener = urllib.request.build_opener(NoRedirect)
     req = urllib.request.Request(
         url,
@@ -97,11 +99,16 @@ def replay_url(ts, orig):
     return f"https://web.archive.org/web/{ts}id_/{orig}"
 
 
+def query_id(fid):
+    status, final, headers, body = fetch(cdx_url(fid))
+    return fid, status, final, body, rows(body)
+
+
 def main():
     print("StoneAge Waei www9 exact post-Dec6 download-ID probe — R1")
     print(
         f"SCOPE|exact downloading.php IDs {min(IDS)}..{max(IDS)}|window={FROM}..{TO}|"
-        "CDX + no-follow redirect headers|no target payload"
+        f"parallel={WORKERS}|CDX + no-follow redirect headers|no target payload"
     )
     print("ANCHOR|2000-12-06 preserved trial catalogue uses IDs 33,34; StoneAge Mainland download confirmed by first-party 2001-01-04 report")
     print("SEARCH_RATIONALE|prefix-ID CDX was zero; exact dynamic query-string URLs remain untested")
@@ -109,26 +116,34 @@ def main():
     errors = []
     all_rows = {}
     completed = 0
+    results = {}
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
+        futures = {pool.submit(query_id, fid): fid for fid in IDS}
+        for future in concurrent.futures.as_completed(futures):
+            fid = futures[future]
+            try:
+                results[fid] = future.result()
+            except Exception as exc:
+                errors.append((f"cdx:{fid}", type(exc).__name__, str(exc)))
 
     for fid in IDS:
-        try:
-            status, final, headers, body = fetch(cdx_url(fid), timeout=35)
-            rr = rows(body)
-            completed += 1
-            print(
-                f"CDX|id={fid}|status={status}|rows={len(rr)}|bytes={len(body)}|"
-                f"sha256={hashlib.sha256(body).hexdigest()}|final={clean(final)}"
+        if fid not in results:
+            continue
+        _, status, final, body, rr = results[fid]
+        completed += 1
+        print(
+            f"CDX|id={fid}|status={status}|rows={len(rr)}|bytes={len(body)}|"
+            f"sha256={hashlib.sha256(body).hexdigest()}|final={clean(final)}"
+        )
+        for r in rr:
+            key = (
+                fid,
+                str(r.get("timestamp") or ""),
+                str(r.get("original") or ""),
+                str(r.get("digest") or ""),
             )
-            for r in rr:
-                key = (
-                    fid,
-                    str(r.get("timestamp") or ""),
-                    str(r.get("original") or ""),
-                    str(r.get("digest") or ""),
-                )
-                all_rows[key] = r
-        except Exception as exc:
-            errors.append((f"cdx:{fid}", type(exc).__name__, str(exc)))
+            all_rows[key] = r
 
     redirects = 0
     locations = []
@@ -142,7 +157,7 @@ def main():
         if status in ("301", "302", "303", "307", "308"):
             redirects += 1
             try:
-                st, hdrs, final = nofollow(replay_url(ts, orig), timeout=35)
+                st, hdrs, final = nofollow(replay_url(ts, orig))
                 loc = hdrs.get("Location") or hdrs.get("location") or ""
                 if loc:
                     locations.append((fid, ts, loc))
@@ -154,7 +169,7 @@ def main():
             except Exception as exc:
                 errors.append((f"header:{fid}:{ts}", type(exc).__name__, str(exc)))
 
-    for scope, kind, msg in errors:
+    for scope, kind, msg in sorted(errors):
         print(f"ERROR|scope={clean(scope)}|kind={clean(kind)}|message={clean(msg)}")
 
     ids_with_rows = sorted({key[0] for key in all_rows})
