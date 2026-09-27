@@ -59,12 +59,12 @@ def cc_indexes():
         if any(y in cid for y in ("2008","2009","2010","2011","2012","2013","2014")):
             chosen.append(cid)
     # Sort oldest first and cap to avoid broad modern crawl work.
-    return tuple(sorted(set(chosen),reverse=False)[:16])
+    return tuple(sorted(set(chosen),reverse=False)[:6])
 
 def cc_query(cid,u):
     ep=f"https://index.commoncrawl.org/{cid}-index?"+urllib.parse.urlencode({"url":u,"output":"json"})
     try:
-        st,final,h,b=fetch(ep,timeout=18,max_bytes=512*1024)
+        st,final,h,b=fetch(ep,timeout=12,max_bytes=512*1024)
     except urllib.error.HTTPError as e:
         if e.code in (400,404):return ep,()
         raise
