@@ -1,0 +1,24 @@
+StoneAge Waei first-party subdomain launch/update CDX census — R1
+SOURCE|Taiwan-v1 StoneAge.exe strings|host=stoneage.waei.net|paths=/saupdate/newest.txt,/saupdate/%s
+SCOPE|launch=20001201..20010112|update=20000101..20011231|CDX metadata only|no body/payload
+QUERY|label=launch-host|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fstoneage.waei.net%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=50000&filter=statuscode%3A200&collapse=urlkey
+QUERY|label=launch-host80|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fstoneage.waei.net%3A80%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=50000&filter=statuscode%3A200&collapse=urlkey
+QUERY|label=update-prefix|status=200|rows=4|bytes=643|sha256=fc31aa67ffa1d3589a3807bdea7ae01ed07ffae5910cd4d779b35996b6fd1d25|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fstoneage.waei.net%2Fsaupdate%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20000101&to=20011231&limit=50000
+QUERY|label=update-prefix80|status=200|rows=4|bytes=643|sha256=fc31aa67ffa1d3589a3807bdea7ae01ed07ffae5910cd4d779b35996b6fd1d25|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fstoneage.waei.net%3A80%2Fsaupdate%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20000101&to=20011231&limit=50000
+QUERY|label=newest|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fstoneage.waei.net%2Fsaupdate%2Fnewest.txt&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20000101&to=20011231&limit=50000
+QUERY|label=newest80|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fstoneage.waei.net%3A80%2Fsaupdate%2Fnewest.txt&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20000101&to=20011231&limit=50000
+ROW|labels=update-prefix,update-prefix80|timestamp=20010530234248|status=200|score=3|binary=0|ext=|mime=text/html|length=358|digest=ADVLH5XSMH2DFGWGYYXWGALHEXUGLH3Q|redirect=|original=http://stoneage.waei.net:80/saupdate/?M=D
+ROW|labels=update-prefix,update-prefix80|timestamp=20010814031544|status=404|score=4|binary=1|ext=.exe|mime=text/html|length=341|digest=SWHMBVUYD22XCWXMZDH6S3IJIDZLAWTD|redirect=|original=http://stoneage.waei.net:80/saupdate/sa_23.exe
+ROW|labels=update-prefix,update-prefix80|timestamp=20011031155747|status=200|score=4|binary=1|ext=.exe|mime=application/octet-stream|length=241923|digest=N2X37GUIMAQSSHG6C234TOXSEGJLVYZK|redirect=|original=http://stoneage.waei.net:80/saupdate/sa_40.exe
+ROW|labels=update-prefix,update-prefix80|timestamp=20011206183120|status=200|score=4|binary=1|ext=.exe|mime=application/octet-stream|length=253901|digest=IWYPBI66JUCJMHGQUQ6D24BATU2QRFZE|redirect=|original=http://stoneage.waei.net:80/saupdate/sa_42.exe
+CANDIDATE|score=4|binary=1|labels=update-prefix,update-prefix80|timestamp=20010814031544|status=404|mime=text/html|length=341|digest=SWHMBVUYD22XCWXMZDH6S3IJIDZLAWTD|redirect=|original=http://stoneage.waei.net:80/saupdate/sa_23.exe
+CANDIDATE|score=4|binary=1|labels=update-prefix,update-prefix80|timestamp=20011031155747|status=200|mime=application/octet-stream|length=241923|digest=N2X37GUIMAQSSHG6C234TOXSEGJLVYZK|redirect=|original=http://stoneage.waei.net:80/saupdate/sa_40.exe
+CANDIDATE|score=4|binary=1|labels=update-prefix,update-prefix80|timestamp=20011206183120|status=200|mime=application/octet-stream|length=253901|digest=IWYPBI66JUCJMHGQUQ6D24BATU2QRFZE|redirect=|original=http://stoneage.waei.net:80/saupdate/sa_42.exe
+CANDIDATE|score=3|binary=0|labels=update-prefix,update-prefix80|timestamp=20010530234248|status=200|mime=text/html|length=358|digest=ADVLH5XSMH2DFGWGYYXWGALHEXUGLH3Q|redirect=|original=http://stoneage.waei.net:80/saupdate/?M=D
+COUNT|unique_rows|4
+COUNT|candidate_rows|4
+COUNT|binary_like_rows|3
+COUNT|newest_rows|0
+COUNT|errors|0
+RESOLUTION|WAEI_SUBDOMAIN_BINARY_ROWS_FOUND|classify exact launch/update artifacts next
+EVIDENCE_BOUNDARY|CDX metadata only; no historical page, manifest or client payload is downloaded.
