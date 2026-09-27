@@ -1,0 +1,42 @@
+name: Probe early StoneAge DiscMaster internal strings
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_early_client_discmaster_internal_string_probe.py
+      - tests/test_stoneage_early_client_discmaster_internal_string_probe.py
+      - .github/workflows/probe-stoneage-early-client-discmaster-internal-strings.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-early-client-discmaster-internal-strings
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate internal-string probe
+        run: python3 -m unittest tests.test_stoneage_early_client_discmaster_internal_string_probe -v
+      - name: Search DiscMaster full text
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_early_client_discmaster_internal_string_probe \
+            > research/recovered/STONEAGE-EARLY-CLIENT-DISCMASTER-INTERNAL-STRINGS-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-EARLY-CLIENT-DISCMASTER-INTERNAL-STRINGS-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe early-client internal strings'
+          git pull --rebase origin main
+          git push
