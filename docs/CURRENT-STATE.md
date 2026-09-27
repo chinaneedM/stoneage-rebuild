@@ -2766,3 +2766,15 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - This means large future changes are expected and acceptable. The goal is a modern reconstruction informed by official StoneAge history, not a cumulative museum clone of every official release.
 - Operational consequence: once the current earliest usable official clean baseline is confirmed complete enough, research effort should shift decisively from open-ended client hunting into technical recovery and specification. Newer official versions can then be brought in later as structured comparison/input sources.
 - Governing decision: docs/DESIGN-DECISIONS.md DD-012.
+
+
+## Product architecture clarification — private single-player delivery, MMORPG-style play — 2026-09-27
+
+- Current product/deployment boundary: develop for **private single-player use**, not as an unauthorized public online service.
+- Gameplay direction remains intentionally **MMORPG-like**: persistent long-form progression, pet collection/growth, repeatable combat, large-world exploration, economy-like loops, quests/unlocks, convenience/automation and other systems may preserve the feel and depth of an online RPG even though execution is local/single-player.
+- `Single-player` therefore describes the deployment/access model, not a requirement to turn StoneAge into a short or linear conventional standalone RPG.
+- Architecture should preserve future optionality without prematurely building an MMO backend: separate deterministic core rules/data from UI and transport; use explicit world/player/pet/item/combat state models; keep local persistence authoritative now; avoid unnecessary coupling that would make a future authorized client/server split difficult.
+- No current requirement exists for accounts, public servers, live ops, multiplayer sync, anti-cheat or social-service infrastructure.
+- Historical network/server analysis remains valid only where it helps recover original rules, state boundaries or data behavior.
+- Long-term possibility: if the project becomes mature enough, it may someday be presented to or discussed with the relevant StoneAge rights-holder as a prototype/foundation for an officially authorized product. This is future optionality only; the project currently makes no claim of authorization or official status.
+- Governing decision: docs/DESIGN-DECISIONS.md DD-013.
