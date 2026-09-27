@@ -1,4 +1,5 @@
 import unittest
+from pathlib import Path
 
 from tools.stoneage_singleplayer_domain import SinglePlayerHistoricalDomain
 from tools.stoneage_singleplayer_world import (
@@ -228,6 +229,48 @@ class VersionedEncounterRuntimeAdapterTests(unittest.TestCase):
                 groups={7: _group()},
                 enemies={700: _enemy()},
             )
+
+    def test_real_stable_world_encounter_audit_boundary(self):
+        path = Path(
+            "research/recovered/STONEAGE-25-STABLE-ENCOUNTER-RUNTIME-R1.txt"
+        )
+        self.assertTrue(path.is_file())
+        counts = {}
+        defects = []
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.startswith("COUNT|"):
+                _prefix, name, value = line.split("|")
+                counts[name] = int(value)
+            elif line.startswith("SPECIMEN_DEFECT_AREA|"):
+                fields = dict(
+                    part.split("=", 1)
+                    for part in line.split("|")[1:]
+                )
+                defects.append(fields)
+
+        self.assertEqual(counts["stable_encounter_areas"], 402)
+        self.assertEqual(
+            counts["stable_unresolved_positive_group_refs"],
+            23,
+        )
+        self.assertEqual(
+            counts["stable_affected_encounter_areas"],
+            19,
+        )
+        self.assertEqual(counts["stable_referenced_groups"], 469)
+        self.assertEqual(
+            counts["stable_referenced_group_missing_enemy_refs"],
+            0,
+        )
+        self.assertEqual(
+            counts["stable_referenced_groups_affected_by_missing_enemy"],
+            0,
+        )
+        self.assertEqual(len(defects), 19)
+        self.assertEqual(
+            sum(int(row["unresolved_positive_group_refs"]) for row in defects),
+            23,
+        )
 
     def test_missing_or_extra_stable_area_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "do not match versioned geometry"):
