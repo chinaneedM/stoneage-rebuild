@@ -1,0 +1,16 @@
+StoneAge 4.0 synthesized direct-route independent-archive probe — R1
+SCOPE|exact direct URL + :80 variant|Arquivo.pt + bounded early Common Crawl|metadata/header-only|no-payload
+ARQUIVO|target=1|kind=cdx|status=200|json=0|rows=0|bytes=0|final=https://arquivo.pt/wayback/cdx?url=http%3A%2F%2F202.106.185.223%2Fupdatex_1024%2Fshiqi4updatex_02_11_08.zip&output=json&limit=5000
+ARQUIVO|target=1|kind=version|status=200|json=1|rows=0|bytes=295|final=https://arquivo.pt/textsearch?versionHistory=http%3A%2F%2F202.106.185.223%2Fupdatex_1024%2Fshiqi4updatex_02_11_08.zip&maxItems=500
+ARQUIVO|target=2|kind=cdx|status=200|json=0|rows=0|bytes=0|final=https://arquivo.pt/wayback/cdx?url=http%3A%2F%2F202.106.185.223%3A80%2Fupdatex_1024%2Fshiqi4updatex_02_11_08.zip&output=json&limit=5000
+ARQUIVO|target=2|kind=version|status=200|json=1|rows=0|bytes=300|final=https://arquivo.pt/textsearch?versionHistory=http%3A%2F%2F202.106.185.223%3A80%2Fupdatex_1024%2Fshiqi4updatex_02_11_08.zip&maxItems=500
+COUNT|cc_indexes|6
+COUNT|arquivo_rows|0
+COUNT|commoncrawl_rows|0
+ERROR|scope=cc:CC-MAIN-2008-2009:1|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|scope=cc:CC-MAIN-2008-2009:2|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+ERROR|scope=cc:CC-MAIN-2012:1|kind=HTTPError|message=HTTP Error 504: Gateway Time-out
+ERROR|scope=cc:CC-MAIN-2013-20:2|kind=HTTPError|message=HTTP Error 502: Bad Gateway
+COUNT|errors|4
+RESOLUTION|NO_INDEPENDENT_DIRECT_ROUTE_HIT|direct network-recovery route is bounded on tested archives
+EVIDENCE_BOUNDARY|Zero archive-index rows mean no indexed capture on tested services; they do not prove the historical file never existed.
