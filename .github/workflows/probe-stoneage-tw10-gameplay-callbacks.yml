@@ -49,6 +49,9 @@ jobs:
           grep -F 'CALLBACK|name=C|rva=0x31260|' "$report"
           grep -F 'CALLBACK|name=I|rva=0x325f0|' "$report"
           grep -F 'CALLBACK|name=WN|rva=0x328c0|' "$report"
+          grep -F 'CALLBACK|name=PME|rva=0x328f0|' "$report"
+          grep -F 'CALLBACK|name=B|rva=0x32c70|' "$report"
+          grep -F 'CALLBACK|name=D|rva=0x33070|' "$report"
           grep -F 'SHARED_DIRECT|' "$report"
       - name: Delete transient proprietary payloads
         if: always()
