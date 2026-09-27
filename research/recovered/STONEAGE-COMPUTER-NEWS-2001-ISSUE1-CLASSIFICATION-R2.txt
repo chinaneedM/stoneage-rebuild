@@ -1,0 +1,35 @@
+StoneAge Computer Newspaper 2001/01 article classification — R2
+PARENT|STONEAGE-COMPUTER-NEWS-2001-ISSUE1-ARTICLE-R1.txt
+SCOPE|semantic correction/classification only|no new network fetch
+
+SOURCE|
+- publication: 《电脑报》2001年第1期
+- article: 《进军石器时代》
+- author: 疾风之龙
+- preserved mirror target: /电脑报/2001/01/63220.html
+
+DIRECT_TEXT_FACTS|
+- The author says that after mid-December, when asked for a current game recommendation, his answer had become “去玩石器时代”.
+- The author says that after getting StoneAge, he spent two days playing until about 05:00 before leaving the server.
+- The article says editors from “游戏广场”和“游戏世界” were also actively playing.
+- It explicitly prints: 制作：日本JSS株式会社.
+- It explicitly prints: 发行：北京华义.
+- It prints a system requirement including 400MB hard-disk space and Internet access.
+
+SEMANTIC_CORRECTION|
+- R1 resolution CONTEMPORANEOUS_DISTRIBUTION_SIGNAL_FOUND is REJECTED.
+- The word “试玩” occurs in ordinary prose meaning “try/play the game personally”.
+- The article does NOT state “试玩版”, does NOT describe a client download, does NOT identify a filename, does NOT say that a CD was bundled with this issue, and does NOT identify any giveaway/download route.
+- Therefore “试玩” must not be promoted into trial-client distribution evidence.
+
+CLASSIFICATION|
+- FACT: contemporaneous Mainland editorial users had practical access to and were actively playing StoneAge around the Dec-2000 / Jan-2001 transition.
+- FACT: this article independently labels JSS as producer and Beijing Waei as distributor/publisher.
+- FACT: the printed local-storage requirement is 400MB.
+- OPEN: how the author/editorial team obtained the client.
+- OPEN: whether their client came from the official Dec-2000 test CD, an online trial download, an editorial/promotional copy, or another route.
+- NOT EVIDENCE: this article does not identify the collector-reported magazine giveaway carrier.
+
+RESOLUTION|CONTEMPORANEOUS_EDITORIAL_ACCESS_CONFIRMED_NO_CARRIER_ROUTE
+NEXT|Use the article as launch-window chronology/configuration control only. Continue full-client recovery from exact magazine issue/disc index, volume label, file tree, filename, physical-media identifier or another source-derived carrier token.
+EVIDENCE_BOUNDARY|A later public archive/mirror preserves contemporaneous print text; it is not client-byte provenance.
