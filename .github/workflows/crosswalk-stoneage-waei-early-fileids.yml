@@ -1,0 +1,39 @@
+name: Crosswalk Waei early file IDs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_early_fileid_crosswalk.py
+      - tests/test_stoneage_waei_early_fileid_crosswalk.py
+      - .github/workflows/crosswalk-stoneage-waei-early-fileids.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-early-fileids
+  cancel-in-progress: true
+
+jobs:
+  crosswalk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_waei_early_fileid_crosswalk -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_early_fileid_crosswalk > research/recovered/STONEAGE-WAEI-EARLY-FILEID-CROSSWALK-R1.txt
+      - name: Commit derived metadata
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-WAEI-EARLY-FILEID-CROSSWALK-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: crosswalk Waei early file IDs'
+          git pull --rebase origin main
+          git push
