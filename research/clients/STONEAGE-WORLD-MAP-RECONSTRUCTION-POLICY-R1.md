@@ -176,3 +176,66 @@ This label means **strong later-lineage persistence + early-asset compatibility*
 The 15 changed maps are especially valuable controlled-diff targets because their dimensions remain directly comparable while concrete map bytes evolved. They should be retained as explicit version deltas rather than normalized away.
 
 Operational consequence: world reconstruction should prioritize the 761 stable candidates for names/warps/NPC/encounter/provenance binding before spending effort on later-only or changed maps.
+
+
+## 8. Engine-neutral provenance enforcement — 2026-09-28
+
+The policy above is now enforced by executable reconstruction code rather than
+remaining documentation-only.
+
+Implementation:
+
+- `tools/stoneage_singleplayer_world.py`
+- `tools/stoneage_world_map_library.py`
+- `tests/test_stoneage_world_map_library.py`
+
+Concrete map provenance is represented by `WorldMapProvenance` with separate
+axes for:
+
+- content role:
+  - `EARLY_MEMBERSHIP_PROVEN`;
+  - `LATER_RECOVERED`;
+  - `DESIGN_RECONSTRUCTED`;
+- resource relation:
+  - `V1_RESOURCE_COMPATIBLE`;
+  - `LATER_ONLY_RESOURCE_DEPENDENCY`;
+  - `RESOURCE_RELATION_UNKNOWN`;
+- optional qualifiers such as `STABLE_LATER_MAP_CANDIDATE`;
+- explicit source-version labels;
+- explicit evidence references;
+- concrete payload SHA-256 where historical recovered bytes are claimed.
+
+The following invariants are executable:
+
+1. `EARLY_MEMBERSHIP_PROVEN` and `LATER_RECOVERED` concrete maps require
+   source-version evidence, evidence references and a payload SHA-256.
+2. `STABLE_LATER_MAP_CANDIDATE` may only be attached to
+   `LATER_RECOVERED + V1_RESOURCE_COMPATIBLE` content with at least two source
+   versions.
+3. A stable later candidate therefore cannot be silently promoted to
+   `EARLY_MEMBERSHIP_PROVEN`.
+4. `HistoricalWorldTopology.from_provenance_maps()` is the strict modern-world
+   entry point and rejects map definitions carrying only an ambiguous free-text
+   evidence label.
+5. Legacy low-level topology construction remains available for older tests and
+   already-reconstructed mechanics, but new world-content ingestion must use
+   the strict provenance-bearing path.
+
+The complete derived lineage report is parsed by
+`parse_stable_later_map_manifest()`. The parser rejects sample-limited reports
+whose emitted detail rows do not match their declared counts.
+
+Current repository manifest assertions:
+
+- shared later paths: **995**;
+- byte-identical later paths: **980**;
+- full stable candidate details: **761**;
+- changed path details: **15**;
+- strict topology produced from stable candidates: **761 maps**;
+- every stable candidate remains `LATER_RECOVERED`, never v1 membership.
+
+Validation:
+
+- gameplay model Actions run **36333478060 = PASS**.
+
+**WORLD_MAP_PROVENANCE_CONTRACT_R1 = IMPLEMENTED.**
