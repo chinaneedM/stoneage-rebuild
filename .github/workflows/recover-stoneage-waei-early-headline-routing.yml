@@ -1,0 +1,39 @@
+name: Recover Waei early headline routing
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_early_headline_routing.py
+      - tests/test_stoneage_waei_early_headline_routing.py
+      - .github/workflows/recover-stoneage-waei-early-headline-routing.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-early-headline-routing
+  cancel-in-progress: true
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_waei_early_headline_routing -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_early_headline_routing > research/recovered/STONEAGE-WAEI-EARLY-HEADLINE-ROUTING-R1.txt
+      - name: Commit derived report
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-WAEI-EARLY-HEADLINE-ROUTING-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: recover Waei early headline routing'
+          git pull --rebase origin main
+          git push
