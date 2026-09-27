@@ -1,0 +1,42 @@
+name: Census China.com legacy StoneAge URLs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_china2000_legacy_shiqi_url_census.py
+      - tests/test_stoneage_china2000_legacy_shiqi_url_census.py
+      - .github/workflows/census-stoneage-china2000-legacy-shiqi-urls.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-china2000-legacy-shiqi-url-census
+  cancel-in-progress: true
+
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate URL census
+        run: python3 -m unittest tests.test_stoneage_china2000_legacy_shiqi_url_census -v
+      - name: Census archived legacy StoneAge tree
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_china2000_legacy_shiqi_url_census \
+            > research/recovered/STONEAGE-CHINA2000-LEGACY-SHIQI-URL-CENSUS-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-CHINA2000-LEGACY-SHIQI-URL-CENSUS-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: census China.com legacy StoneAge URLs'
+          git pull --rebase origin main
+          git push
