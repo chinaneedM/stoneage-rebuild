@@ -65,8 +65,13 @@ def canonical_first_party(raw):
     if host not in FIRST_PARTY:
         return None
     scheme=p.scheme if p.scheme in ("http","https") else "http"
-    # Strip queries/fragments; only non-personal path topology is retained.
-    return urllib.parse.urlunsplit((scheme,p.netloc,p.path or "/", "", ""))
+    port=p.port
+    netloc=host
+    if port and not ((scheme=="http" and port==80) or (scheme=="https" and port==443)):
+        netloc=f"{host}:{port}"
+    # Strip queries/fragments and normalize default ports; only non-personal
+    # path topology is retained.
+    return urllib.parse.urlunsplit((scheme,netloc,p.path or "/", "", ""))
 
 
 class AssetParser(HTMLParser):
