@@ -91,3 +91,80 @@ R2 transient visual fingerprinting recovered three large images from the Wanfang
 
 Derived analysis: `research/clients/STONEAGE-SA25-PHYSICAL-IMAGE-LINEAGE-R1.md`.
 
+
+
+## Publisher / secondary-carrier context update — 2026-09-27
+
+### FACT — Wanfang's `7-900096-*` range was used on game electronic publications
+
+A 2005 新闻出版总署 enforcement list reproduced by Sina records:
+
+- `战神3000`;
+- publisher field: **万方数据电子出版社**;
+- ISBN **`7-900096-34-5`**;
+- code `N402`.
+
+This does **not** identify the StoneAge disc, but it establishes that the same publisher prefix visible on `7-900096-07-8` was used by Wanfang for game/electronic publication material.
+
+Source:
+- https://news.sina.com.cn/c/2005-01-26/15295676769.shtml
+
+### SEARCH LEAD — Wanfang and StoneAge guide publishing
+
+A current JD aggregation/index page exposes the seller-generated title string:
+
+- `石器时代3.0攻略宝典年甸新大陆 万方数据电子出版`
+
+and also lists multiple other Wanfang game/strategy-guide titles. This is a **modern marketplace/index clue only**. It is not accepted as a period bibliographic record and the literal wording is not normalized.
+
+Source:
+- https://www.jd.com/jiage/137657b3435d5fce82139.html
+
+### CONTEMPORANEOUS PROVENANCE CONTROL — a client-bearing guide disc need not be an official Waei disc
+
+On 2003-01-28, 17173 carried Beijing Waei's warning about a different product titled `石器时代5.0官方攻略宝典`. The warning said the publisher was not authorized by Waei and that the bundled `石器时代ONLINE宠物进化史` client CD was a **network-download version**, not an official Waei product disc.
+
+Sources:
+- https://news.17173.com/content/2003-1-28/n408_324318.html
+- https://news.17173.com/content/2003-1-28/n970_886620.html
+
+This creates an important archaeology rule:
+
+> **client payload present ≠ official physical-client carrier**
+
+A secondary book/guide/publisher disc may still preserve technically useful client bytes. If so, payload ancestry must be analyzed independently from carrier provenance.
+
+### Exact ISBN/title search result
+
+A fresh exact public-web pass over:
+
+- `7-900096-07-8`
+- `7-900096-07-8/Z.03`
+- `7900096078`
+- `9787900096074`
+- `永远的石器时代 2.5 精灵王传说`
+
+did not recover an independent exact bibliographic/CIP record. Additional exact-ISBN searches on currently indexed WorldCat/Google Books/Douban/Bookschina/Dangdang/JD/Tmall surfaces also returned no exact record in this pass.
+
+This is **not evidence that the publication record never existed**. It only means the current indexed exact-ISBN route remains unresolved.
+
+## Updated classification
+
+**OPEN / UNCLASSIFIED-CARRIER.**
+
+The evidence now makes a **secondary publication / strategy-guide / publisher-bundle carrier** a materially stronger hypothesis to test, but it is not a fact.
+
+Do not promote the Wanfang disc to:
+
+- official Beijing-Waei client disc;
+- strategy-book gift disc;
+- full 575/580 MB client;
+- 8.25 MB updater;
+
+until independent carrier documentation or file-level evidence resolves those questions.
+
+The two-dimensional classification is now mandatory:
+
+1. **carrier provenance** — official boxed client / magazine / strategy guide / publisher bundle / unknown;
+2. **payload identity** — official installer bytes / network-downloaded installer / updater / multimedia / mixed / unknown.
+

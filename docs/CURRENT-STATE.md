@@ -2349,3 +2349,16 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Operational consequence: stop rescanning this current Directory-Lister tree and stop trying to decode the school call-number suffix. Reopen only from a new exact accession/issue token, readable disc/package photo, optical image/file tree/checksum, torrent member, preservation catalogue or mirror.
 - Canonical note: `research/clients/STONEAGE-SA25-ZHONGXUESHENGDIANNAO-LIBRARY-LEAD-R1.md`.
 - Derived report: `research/recovered/STONEAGE-SA25-OLD-DISC-DIRECTORY-R1.txt`.
+
+
+## StoneAge 2.5 Wanfang disc carrier-provenance refinement — 2026-09-27
+
+- The exact photographed Wanfang disc remains **OPEN / UNCLASSIFIED-CARRIER**: `永远的石器时代 2.5 精灵王传说`, 万方数据电子出版社, ISBN `7-900096-07-8/Z.03`, barcode `9787900096074`.
+- New publisher-family evidence: a 2005 新闻出版总署 enforcement list records 万方数据电子出版社 on game/electronic publication `战神3000`, ISBN **`7-900096-34-5`**. This proves Wanfang used the `7-900096-*` range for game/electronic publications but does not identify `07-8`.
+- A current second-hand index also exposes a seller-generated Wanfang title string for a `石器时代3.0攻略宝典...` item. Treat this only as a **search lead** suggesting a Wanfang StoneAge guide/publication line; it is not period bibliographic proof.
+- More importantly, a contemporaneous 2003 Beijing-Waei warning about a different StoneAge 5.0 guide product states that its bundled client CD was a **network-download version and not an official Waei product disc**. This closes a methodological ambiguity: **payload content and physical-carrier provenance must be graded independently**.
+- Exact public-web searches for the Wanfang 2.5 ISBN/barcode/title recovered no independent exact bibliographic/CIP record in this pass. The bibliographic route remains OPEN, not disproven.
+- Operational consequence: the secondary-publication/guide hypothesis is now higher-value, but not promoted to fact. Next decisive evidence is an exact catalogue/CIP record, a package/book-to-disc photo chain, or a read-only optical image/file tree with hashes.
+- Canonical analysis: `research/clients/STONEAGE-SA25-WANFANG-DISC-R1.md`.
+- New source controls: `SRC-CN-2003-WAEI-SECONDARY-GUIDE-CLIENT-CD-WARNING-01` and `SRC-CN-2005-GAPP-WANFANG-GAME-PUBLICATION-01`.
+

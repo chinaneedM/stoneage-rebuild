@@ -2422,3 +2422,52 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-SA20-RETAIL-CARRIER-CENSUS-R1.txt` (large raw diagnostic);
   - `research/recovered/STONEAGE-SA20-RETAIL-CARRIER-CENSUS-SUMMARY-R1.txt`;
   - `research/recovered/STONEAGE-SA20-RETAIL-CARRIER-RESIDUAL-R2.txt`.
+
+
+### SRC-CN-2003-WAEI-SECONDARY-GUIDE-CLIENT-CD-WARNING-01
+
+- Title: `《石器时代5.0》假攻略悄然上市` / `石器假攻略悄然上市 众玩家擦亮双眼`
+- Original date: **2003-01-28**
+- Retrieval date: **2026-09-27**
+- Language/region: Simplified Chinese / Mainland China
+- Source type: contemporaneous 17173 news item relaying an explicit Beijing-Waei warning
+- URLs:
+  - https://news.17173.com/content/2003-1-28/n408_324318.html
+  - https://news.17173.com/content/2003-1-28/n970_886620.html
+- Confidence: **A- for the reported Beijing-Waei warning and literal carrier distinction; not evidence about the separate Wanfang 2.5 disc**
+- Supports:
+  - a Guangdong publisher was selling a product titled `石器时代5.0官方攻略宝典` bundled with a `石器时代ONLINE宠物进化史` client CD and a card;
+  - Beijing Waei stated it had **not authorized** the publisher's StoneAge publication/products;
+  - Waei stated the bundled client disc was a **network-download version**, **not an official Waei product disc**.
+- Archaeology significance:
+  - **payload identity and physical-carrier provenance are separate dimensions**;
+  - a secondary guide/book carrier can contain a technically usable client while still failing official physical-media provenance;
+  - therefore the presence of a StoneAge client on a disc cannot by itself promote that disc to official Beijing-Waei retail/client-media status.
+- Does not support:
+  - that the Wanfang StoneAge 2.5 disc was unauthorized;
+  - that the Wanfang disc used network-downloaded bytes;
+  - byte identity between any secondary-carrier disc and an official Waei client.
+
+### SRC-CN-2005-GAPP-WANFANG-GAME-PUBLICATION-01
+
+- Title/context: 新闻出版总署 2005 illegal/unapproved electronic-game-publication inspection list, reproduced by Sina
+- Original date: **2005-01-26**
+- Retrieval date: **2026-09-27**
+- Source type: government-origin enforcement list reproduced by a contemporary major portal
+- URL: https://news.sina.com.cn/c/2005-01-26/15295676769.shtml
+- Confidence: **A for the literal listed publisher/title/ISBN fields; not a legitimacy endorsement**
+- Relevant row:
+  - title: `战神3000`
+  - publisher field: **万方数据电子出版社**
+  - ISBN: **`7-900096-34-5`**
+  - code: `N402`
+  - foreign rights field: `INFOGRAMES`
+  - domestic-agent field: `北京爱可互动数码科技发展有限公司`
+- Supports:
+  - 万方数据电子出版社 demonstrably used the **`7-900096-*`** ISBN publisher range on a game/electronic publication;
+  - the Wanfang StoneAge 2.5 disc's `7-900096-07-8` number therefore belongs to a publisher-number family that was used for game-related electronic products.
+- Critical boundary:
+  - the source is an enforcement list for unapproved imported games, so it does **not** authenticate or legitimize the StoneAge item;
+  - `7-900096-34-5` does not identify or date `7-900096-07-8`;
+  - shared publisher prefix does not establish shared content, carrier class, mastering, or distribution channel.
+

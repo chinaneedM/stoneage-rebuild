@@ -346,3 +346,37 @@ The remaining gap is no longer merely whether a second disc probably existed. Th
 - Classification: **BOUNDED for current public path/filename metadata**.
 - Important limit: zero filename/path matches do not prove absence of a target object hidden behind generic filenames or outside this current public directory tree.
 - Derived report: `research/recovered/STONEAGE-SA25-OLD-DISC-DIRECTORY-R1.txt`.
+
+
+## SRC-CN-2026-SA25-WANFANG-CARRIER-CONTEXT-01
+
+- Research date: **2026-09-27**.
+- Target remains the photographed disc:
+  - `永远的石器时代 2.5 精灵王传说`;
+  - `万方数据电子出版社出版`;
+  - ISBN `7-900096-07-8/Z.03`;
+  - barcode `9787900096074`.
+- New publisher-context evidence:
+  - a 2005 新闻出版总署 enforcement list records **万方数据电子出版社** on the game/electronic publication `战神3000`, ISBN **`7-900096-34-5`**;
+  - this proves that `7-900096-*` was a Wanfang game/electronic-publication number family, but does not identify the `07-8` item.
+- Current-market search lead only:
+  - a current JD index exposes a seller-generated title string `石器时代3.0攻略宝典年甸新大陆 万方数据电子出版`, alongside other Wanfang game-guide/strategy titles;
+  - this is **not bibliographic authority** and the literal seller text is retained without silently correcting its wording.
+- Contemporaneous provenance control:
+  - Beijing Waei's 2003 warning about a different StoneAge 5.0 strategy-guide product states that its bundled client CD was a **network-download version rather than an official Waei product disc**.
+- Classification consequence:
+  - the Wanfang 2.5 object remains **OPEN / UNCLASSIFIED-CARRIER**;
+  - the **secondary publication / guide / publisher-bundle hypothesis is strengthened as a search direction, not promoted to fact**;
+  - even if future file-tree evidence shows a complete client installer, the disc must keep a separate carrier-provenance grade until an operator/official package chain is established.
+- Exact bibliographic search boundary:
+  - the 2026-09-27 targeted public-web pass over exact forms `7-900096-07-8`, `7-900096-07-8/Z.03`, `7900096078`, `9787900096074` and the exact visible title recovered **no exact independent bibliographic record**;
+  - targeted searches across major indexed bibliographic/commercial surfaces likewise yielded no exact ISBN hit;
+  - this is a search-result boundary only, not proof that no catalogue record exists.
+- Next decisive evidence:
+  - exact CIP/library catalogue record for `7-900096-07-8/Z.03`;
+  - package/book/disc photographs linking the ISBN to a guide or Waei product;
+  - read-only optical image/file tree with hashes.
+- Canonical analysis: `research/clients/STONEAGE-SA25-WANFANG-DISC-R1.md`.
+- Related provenance control: `SRC-CN-2003-WAEI-SECONDARY-GUIDE-CLIENT-CD-WARNING-01`.
+- Publisher-family control: `SRC-CN-2005-GAPP-WANFANG-GAME-PUBLICATION-01`.
+
