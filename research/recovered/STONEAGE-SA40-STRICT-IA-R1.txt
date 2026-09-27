@@ -1,0 +1,14 @@
+StoneAge 4.0 strict IA preservation search — R1
+SCOPE|period-bounded exact metadata queries|strict candidate file lists only|no-payload
+QUERY|label=exact-file|total=0|rows=0|url=https://archive.org/advancedsearch.php?q=%22shiqi4updatex_02_11_08.zip%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=mediatype&rows=100&page=1&output=json
+QUERY|label=exact-stem|total=0|rows=0|url=https://archive.org/advancedsearch.php?q=%22shiqi4updatex_02_11_08%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=mediatype&rows=100&page=1&output=json
+QUERY|label=title-40|total=0|rows=0|url=https://archive.org/advancedsearch.php?q=title%3A%28%22%E7%9F%B3%E5%99%A8%E6%97%B6%E4%BB%A34.0%22+OR+%22%E7%9F%B3%E5%99%A8%E6%97%B6%E4%BB%A3+4.0%22+OR+%22StoneAge+4.0%22+OR+%22Stone+Age+4.0%22%29+AND+mediatype%3Asoftware+AND+year%3A%5B2002+TO+2004%5D&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=mediatype&rows=100&page=1&output=json
+QUERY|label=new-nine|total=0|rows=0|url=https://archive.org/advancedsearch.php?q=%22%E6%96%B0%E4%B9%9D%E5%A4%A7%E5%AE%B6%E6%97%8F%22+AND+mediatype%3Asoftware+AND+year%3A%5B2002+TO+2004%5D&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=mediatype&rows=100&page=1&output=json
+QUERY|label=satisfied|total=1|rows=1|url=https://archive.org/advancedsearch.php?q=%28%22%E6%96%B0%E6%BB%A1%E6%84%8F%E8%B6%B3%22+OR+%22%E6%96%B0%E6%BB%BF%E6%84%8F%E8%B6%B3%22%29+AND+mediatype%3Asoftware+AND+year%3A%5B2002+TO+2004%5D&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=mediatype&rows=100&page=1&output=json
+QUERY|label=happy|total=0|rows=0|url=https://archive.org/advancedsearch.php?q=%22%E6%96%B0%E9%AB%98%E9%87%87%E7%83%88%22+AND+mediatype%3Asoftware+AND+year%3A%5B2002+TO+2004%5D&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=mediatype&rows=100&page=1&output=json
+QUERY|label=contributor|total=0|rows=0|url=https://archive.org/advancedsearch.php?q=%22xinhaonanhai%22+AND+mediatype%3Asoftware+AND+year%3A%5B2001+TO+2004%5D&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=creator&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=mediatype&rows=100&page=1&output=json
+COUNT|strict_items|0
+COUNT|candidate_files|0
+COUNT|errors|0
+RESOLUTION|NO_STRICT_IA_CANDIDATE|bounded 2002-2004 software metadata surface has no matching preservation item
+EVIDENCE_BOUNDARY|IA metadata/file-list search is discovery evidence; absence from this bounded index is not proof that no physical or private copy survives.
