@@ -1,0 +1,40 @@
+name: Close Yegame product-code filename residual
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_yegame_product_code_filename_residual.py
+      - tests/test_stoneage_yegame_product_code_filename_residual.py
+      - .github/workflows/close-stoneage-yegame-product-code-filename.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-yegame-product-code-filename
+  cancel-in-progress: true
+
+jobs:
+  lookup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_yegame_product_code_filename_residual -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_yegame_product_code_filename_residual \
+            > research/recovered/STONEAGE-YEGAME-PRODUCT-CODE-FILENAME-RESIDUAL-R2.txt
+      - name: Commit derived metadata
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-YEGAME-PRODUCT-CODE-FILENAME-RESIDUAL-R2.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: close Yegame product-code filename residual'
+          git pull --rebase origin main
+          git push
