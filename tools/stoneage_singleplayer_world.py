@@ -26,12 +26,131 @@ from tools.stoneage_warp_transition_model import (
 )
 
 
+EARLY_MEMBERSHIP_PROVEN = "EARLY_MEMBERSHIP_PROVEN"
+LATER_RECOVERED = "LATER_RECOVERED"
+DESIGN_RECONSTRUCTED = "DESIGN_RECONSTRUCTED"
+
+V1_RESOURCE_COMPATIBLE = "V1_RESOURCE_COMPATIBLE"
+LATER_ONLY_RESOURCE_DEPENDENCY = "LATER_ONLY_RESOURCE_DEPENDENCY"
+RESOURCE_RELATION_UNKNOWN = "RESOURCE_RELATION_UNKNOWN"
+
+STABLE_LATER_MAP_CANDIDATE = "STABLE_LATER_MAP_CANDIDATE"
+
+_CONTENT_ROLES = frozenset({
+    EARLY_MEMBERSHIP_PROVEN,
+    LATER_RECOVERED,
+    DESIGN_RECONSTRUCTED,
+})
+_RESOURCE_ROLES = frozenset({
+    V1_RESOURCE_COMPATIBLE,
+    LATER_ONLY_RESOURCE_DEPENDENCY,
+    RESOURCE_RELATION_UNKNOWN,
+})
+_QUALIFIERS = frozenset({STABLE_LATER_MAP_CANDIDATE})
+
+
+@dataclass(frozen=True)
+class WorldMapProvenance:
+    """Structured concrete-map provenance for the modern reconstruction.
+
+    The v1-direct map/cache *format* is a separate runtime fact. This object
+    classifies concrete world content and prevents compatibility or later
+    persistence from being silently promoted into Taiwan-v1 membership.
+    """
+
+    content_role: str
+    resource_role: str = RESOURCE_RELATION_UNKNOWN
+    source_versions: tuple[str, ...] = ()
+    evidence_refs: tuple[str, ...] = ()
+    payload_sha256: str | None = None
+    qualifiers: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        content_role = str(self.content_role)
+        resource_role = str(self.resource_role)
+        if content_role not in _CONTENT_ROLES:
+            raise ValueError(f"unknown world-map content role: {content_role}")
+        if resource_role not in _RESOURCE_ROLES:
+            raise ValueError(f"unknown world-map resource role: {resource_role}")
+
+        source_versions = tuple(str(v).strip() for v in self.source_versions)
+        evidence_refs = tuple(str(v).strip() for v in self.evidence_refs)
+        qualifiers = tuple(str(v).strip() for v in self.qualifiers)
+        if any(not value for value in source_versions):
+            raise ValueError("world-map source versions cannot contain blanks")
+        if any(not value for value in evidence_refs):
+            raise ValueError("world-map evidence refs cannot contain blanks")
+        if any(not value for value in qualifiers):
+            raise ValueError("world-map qualifiers cannot contain blanks")
+        if len(source_versions) != len(set(source_versions)):
+            raise ValueError("world-map source versions cannot contain duplicates")
+        if len(evidence_refs) != len(set(evidence_refs)):
+            raise ValueError("world-map evidence refs cannot contain duplicates")
+        if len(qualifiers) != len(set(qualifiers)):
+            raise ValueError("world-map qualifiers cannot contain duplicates")
+        unknown_qualifiers = sorted(set(qualifiers) - _QUALIFIERS)
+        if unknown_qualifiers:
+            raise ValueError(
+                f"unknown world-map provenance qualifiers: {unknown_qualifiers}"
+            )
+
+        payload_sha256 = self.payload_sha256
+        if payload_sha256 is not None:
+            payload_sha256 = str(payload_sha256).lower()
+            if (
+                len(payload_sha256) != 64
+                or any(ch not in "0123456789abcdef" for ch in payload_sha256)
+            ):
+                raise ValueError("world-map payload_sha256 must be 64 hex digits")
+
+        if content_role in {EARLY_MEMBERSHIP_PROVEN, LATER_RECOVERED}:
+            if not source_versions:
+                raise ValueError(
+                    f"{content_role} world maps require source_versions"
+                )
+            if not evidence_refs:
+                raise ValueError(
+                    f"{content_role} world maps require evidence_refs"
+                )
+            if payload_sha256 is None:
+                raise ValueError(
+                    f"{content_role} concrete world maps require payload_sha256"
+                )
+
+        stable = STABLE_LATER_MAP_CANDIDATE in qualifiers
+        if stable:
+            if content_role != LATER_RECOVERED:
+                raise ValueError(
+                    "stable later candidate must remain LATER_RECOVERED"
+                )
+            if resource_role != V1_RESOURCE_COMPATIBLE:
+                raise ValueError(
+                    "stable later candidate must be V1_RESOURCE_COMPATIBLE"
+                )
+            if len(source_versions) < 2:
+                raise ValueError(
+                    "stable later candidate requires at least two source versions"
+                )
+
+        object.__setattr__(self, "content_role", content_role)
+        object.__setattr__(self, "resource_role", resource_role)
+        object.__setattr__(self, "source_versions", source_versions)
+        object.__setattr__(self, "evidence_refs", evidence_refs)
+        object.__setattr__(self, "payload_sha256", payload_sha256)
+        object.__setattr__(self, "qualifiers", qualifiers)
+
+    @property
+    def claims_early_membership(self) -> bool:
+        return self.content_role == EARLY_MEMBERSHIP_PROVEN
+
+
 @dataclass(frozen=True)
 class HistoricalMapDefinition:
     floor_id: int
     width: int
     height: int
     evidence: str = "RECOVERED_MAP_DIMENSIONS"
+    provenance: WorldMapProvenance | None = None
 
     def __post_init__(self) -> None:
         floor_id = int(self.floor_id)
@@ -39,6 +158,11 @@ class HistoricalMapDefinition:
         height = int(self.height)
         if width <= 0 or height <= 0:
             raise ValueError("map width and height must be positive")
+        provenance = self.provenance
+        if provenance is not None and not isinstance(
+            provenance, WorldMapProvenance
+        ):
+            raise TypeError("map provenance must be WorldMapProvenance or None")
         object.__setattr__(self, "floor_id", floor_id)
         object.__setattr__(self, "width", width)
         object.__setattr__(self, "height", height)
@@ -88,6 +212,21 @@ class LegacyWarpEdge:
 class HistoricalWorldTopology:
     maps: Mapping[int, HistoricalMapDefinition]
     legacy_warps: tuple[LegacyWarpEdge, ...] = ()
+    require_structured_provenance: bool = False
+
+    @classmethod
+    def from_provenance_maps(
+        cls,
+        maps: Mapping[int, HistoricalMapDefinition],
+        *,
+        legacy_warps: tuple[LegacyWarpEdge, ...] = (),
+    ) -> "HistoricalWorldTopology":
+        """Strict modern-world entry point requiring structured provenance."""
+        return cls(
+            maps=maps,
+            legacy_warps=legacy_warps,
+            require_structured_provenance=True,
+        )
 
     def __post_init__(self) -> None:
         normalized = {int(key): value for key, value in self.maps.items()}
@@ -96,7 +235,19 @@ class HistoricalWorldTopology:
                 raise ValueError(
                     f"map key {key} does not match floor {definition.floor_id}"
                 )
+            if (
+                bool(self.require_structured_provenance)
+                and definition.provenance is None
+            ):
+                raise ValueError(
+                    f"map {key} lacks structured world-map provenance"
+                )
         object.__setattr__(self, "maps", MappingProxyType(normalized))
+        object.__setattr__(
+            self,
+            "require_structured_provenance",
+            bool(self.require_structured_provenance),
+        )
         object.__setattr__(self, "legacy_warps", tuple(self.legacy_warps))
 
         seen_active_sources: set[MapPosition] = set()
@@ -124,6 +275,12 @@ class HistoricalWorldTopology:
             if edge.active and edge.source == position:
                 return edge
         return None
+
+    def provenance_for_floor(self, floor_id: int) -> WorldMapProvenance | None:
+        definition = self.maps.get(int(floor_id))
+        if definition is None:
+            return None
+        return definition.provenance
 
 
 @dataclass(frozen=True)
