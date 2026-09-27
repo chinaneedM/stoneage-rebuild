@@ -18,6 +18,8 @@ QUERIES=(
   '"新滿意足"',
   '"新高采烈"',
   'identifier:(Stoneage4* OR Stoneage-4* OR StoneAge4* OR STA4*)',
+  '"shiqi4updatex_02_11_08"',
+  '"xinhaonanhai" AND ("StoneAge" OR "石器时代")',
 )
 OPT=(".iso",".bin",".cue",".img",".ccd",".nrg",".mdf",".mds")
 
