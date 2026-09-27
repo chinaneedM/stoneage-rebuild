@@ -1,0 +1,45 @@
+name: Probe StoneAge 2001 Mainland launch carrier
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_2001_mainland_jinhaiwan_probe.py
+      - tests/test_stoneage_2001_mainland_jinhaiwan_probe.py
+      - .github/workflows/probe-stoneage-2001-mainland-jinhaiwan.yml
+permissions:
+  contents: write
+concurrency:
+  group: stoneage-2001-mainland-jinhaiwan
+  cancel-in-progress: true
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate exact carrier probe
+        run: python3 -m unittest tests.test_stoneage_2001_mainland_jinhaiwan_probe -v
+      - name: Probe public preservation metadata
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_2001_mainland_jinhaiwan_probe > research/recovered/STONEAGE-2001-MAINLAND-JINHAIWAN-PRESERVATION-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-2001-MAINLAND-JINHAIWAN-PRESERVATION-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe 2001 Mainland launch carrier'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_2001_mainland_jinhaiwan_probe > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe 2001 Mainland launch carrier'
+          fi
+          git push
