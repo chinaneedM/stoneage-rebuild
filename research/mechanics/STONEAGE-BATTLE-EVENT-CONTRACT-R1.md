@@ -185,7 +185,51 @@ rules or reviving the original `B` protocol internally.
 
 **BATTLE_TYPED_EVENT_STATE_CONTRACT_R1 = IMPLEMENTED**
 
-Next implementation seam: connect this transition contract to the
-single-player runtime-facing battle loop/presentation handoff, then define the
-first deterministic presentation/replay consumer without coupling it back to
-historical network serialization.
+## 8. Single-player runtime handoff
+
+`SinglePlayerHistoricalRuntime.resolve_persistent_battle_transition()` now
+exposes the contract directly above the existing persistent round path.
+
+The method deliberately delegates first to
+`resolve_persistent_battle_round()`, including the existing successful-capture
+persistence checks, and only then calls `build_battle_round_transition()`.
+
+This preserves backward compatibility:
+
+- existing callers may continue receiving `PersistentRoundResult`;
+- engine/presentation callers may consume `BattleRoundTransition`;
+- no combat or persistence rule is duplicated in the contract layer.
+
+Regression coverage:
+
+- `tests/test_stoneage_singleplayer_battle_transition_runtime.py`.
+
+## 9. First deterministic replay consumer
+
+`tools/stoneage_battle_replay.py` adds an immutable `BattleReplay` consumer
+above the contract.
+
+It:
+
+- accepts only typed `BattleRoundTransition` values;
+- requires each transition's before-state to equal the previous authoritative
+  after-state;
+- forbids transitions after a terminal transition;
+- exposes the current authoritative snapshot;
+- flattens execution events without changing their deterministic order.
+
+It does not calculate damage, select targets, mutate persistent state, or
+decode historical protocol strings.
+
+Regression coverage:
+
+- `tests/test_stoneage_battle_replay.py`.
+
+**BATTLE_RUNTIME_TYPED_HANDOFF_R1 = IMPLEMENTED**
+
+**BATTLE_REPLAY_CONSUMER_R1 = IMPLEMENTED**
+
+Next reconstruction step: keep presentation-specific animation/audio/UI
+projection downstream of the typed event stream, while returning the technical
+critical path to remaining deterministic gameplay/world specification gaps
+rather than rebuilding historical network transport.
