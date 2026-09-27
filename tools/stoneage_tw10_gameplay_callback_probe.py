@@ -427,6 +427,20 @@ def bounded_instruction_window(base, cfg, start_rva, end_rva):
     return rows
 
 
+def image_c_string(data, sections, rva, limit=128):
+    off = rva_to_offset(sections, rva)
+    if off is None:
+        return None
+    end = data.find(b"\\0", off, min(len(data), off + limit))
+    if end < 0:
+        end = min(len(data), off + limit)
+    raw = data[off:end]
+    try:
+        return raw.decode("ascii")
+    except UnicodeDecodeError:
+        return None
+
+
 def shared_direct_targets(cfgs):
     memberships = collections.defaultdict(dict)
     for label, cfg in cfgs.items():
@@ -603,6 +617,14 @@ def main():
                     f"PARSE_WINDOW|name={label}|instruction_rva=0x{irva:x}|"
                     f"mnemonic={mnemonic}|ops={clean(ops)}"
                 )
+
+        # Direct v1 format strings consumed by the B/P and B/A parser calls.
+        # These are short derived protocol grammar tokens, not payload data.
+        for format_rva in (0x5C984, 0x5C98C):
+            value = image_c_string(data, sections, format_rva)
+            print(
+                f"B_FORMAT|rva=0x{format_rva:x}|text={clean(value or '')}"
+            )
 
         wn_cfg = cfgs["WN"]
         for call_rva, seq in call_prelude(base, wn_cfg, base + 0x12930):
