@@ -431,7 +431,7 @@ def image_c_string(data, sections, rva, limit=128):
     off = rva_to_offset(sections, rva)
     if off is None:
         return None
-    end = data.find(b"\\0", off, min(len(data), off + limit))
+    end = data.find(b"\\x00", off, min(len(data), off + limit))
     if end < 0:
         end = min(len(data), off + limit)
     raw = data[off:end]
