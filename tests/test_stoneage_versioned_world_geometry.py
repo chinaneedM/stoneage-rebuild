@@ -1,4 +1,5 @@
 import unittest
+from pathlib import Path
 
 from tools.stoneage_singleplayer_world import (
     HistoricalMapDefinition,
@@ -12,9 +13,15 @@ from tools.stoneage_versioned_world_geometry import (
     parse_versioned_world_geometry,
 )
 from tools.stoneage_versioned_world_manifest import (
+    COVERAGE_REPORT_REF,
     VersionedWorldFloor,
     VersionedWorldManifest,
     VersionedWorldSemanticCoverage,
+    build_versioned_world_manifest,
+)
+from tools.stoneage_world_map_library import (
+    LINEAGE_REPORT_REF,
+    parse_stable_later_map_manifest,
 )
 
 
@@ -158,6 +165,46 @@ class VersionedWorldGeometryTests(unittest.TestCase):
                 world=_world(),
                 text=drifted,
             )
+
+    def test_real_repository_geometry_closes_full_world_join(self):
+        lineage_text = Path(LINEAGE_REPORT_REF).read_text(encoding="utf-8")
+        coverage_text = Path(COVERAGE_REPORT_REF).read_text(encoding="utf-8")
+        geometry_text = Path(
+            "research/recovered/STONEAGE-25-STABLE-WORLD-GEOMETRY-R1.txt"
+        ).read_text(encoding="utf-8")
+
+        maps = parse_stable_later_map_manifest(lineage_text)
+        world = build_versioned_world_manifest(
+            maps=maps,
+            coverage_text=coverage_text,
+        )
+        geometry = parse_versioned_world_geometry(
+            world=world,
+            text=geometry_text,
+        )
+
+        self.assertEqual(len(geometry.world.floors), 761)
+        self.assertEqual(len(geometry.placements), 3856)
+        self.assertEqual(len(geometry.classic_warps), 2264)
+        self.assertEqual(len(geometry.encounters), 402)
+        self.assertEqual(
+            sum(warp.conditional_time for warp in geometry.classic_warps),
+            5,
+        )
+        self.assertEqual(
+            sum(
+                warp.destination_is_stable_candidate
+                for warp in geometry.classic_warps
+            ),
+            1909,
+        )
+
+        edges = geometry.projectable_legacy_warp_edges()
+        self.assertEqual(len(edges), 1784)
+        topology = geometry.topology_with_projectable_legacy_warps()
+        self.assertEqual(len(topology.maps), 761)
+        self.assertEqual(len(topology.legacy_warps), 1784)
+        self.assertTrue(topology.require_structured_provenance)
 
     def test_placement_floor_cannot_escape_world_manifest(self):
         drifted = _geometry().replace(
