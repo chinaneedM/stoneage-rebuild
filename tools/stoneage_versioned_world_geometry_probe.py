@@ -60,18 +60,21 @@ def _int(value: bytes | None, default: int = 0) -> int:
 
 
 def _four_ints(value: bytes) -> tuple[int, int, int, int]:
-    pieces = [
-        piece for piece in re.split(rb"[,\s]+", value.strip()) if piece
-    ]
-    if len(pieces) != 4:
+    """Mirror descendant getFourIntsFromString(): missing comma fields -> 0."""
+    pieces = [piece.strip() for piece in value.strip().split(b",")]
+    if len(pieces) > 4:
         raise ValueError(
-            f"expected four integer fields, got {len(pieces)}"
+            f"expected at most four integer fields, got {len(pieces)}"
         )
+    out: list[int] = []
     try:
-        return tuple(int(piece, 10) for piece in pieces)  # type: ignore[return-value]
+        for piece in pieces:
+            out.append(int(piece, 10) if piece else 0)
     except ValueError as exc:
         raise ValueError("invalid four-integer NPC geometry") from exc
-
+    while len(out) < 4:
+        out.append(0)
+    return tuple(out)  # type: ignore[return-value]
 
 def _rect_from_fields(
     fields: dict[bytes, bytes],
