@@ -1,0 +1,88 @@
+StoneAge Waei sa40/sa42 runtime-lineage probe — R1
+CONTROL|accepted Taiwan-v1 runtime=sa_3.exe|size=425984|sha256=cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a
+CONTROL|Taiwan-v1 sa_3.exe imports=DDRAW,DINPUT,DSOUND,GDI32,IMM32,KERNEL32,USER32,WINMM,WSOCK32
+CONTROL|Taiwan-v1 runtime strings include ClientLogin,CharLogin,PPASSWORD,yStoneAge.exe,data resource generations and wgs@mail.hwaei.com.tw
+PAYLOAD|label=sa40|bytes=528384|sha256=d54a6c109644dd4842f61bdd42a95362fda7a16f5e9b9dbd829d6b97c678fde1|pe_timestamp=1001579487|pe_timestamp_utc=2001-09-27T08:31:27+00:00|ascii_strings=3452|paths=375|battle_ids=220|battle_min=0|battle_max=219
+IMPORTS|label=sa40|dlls=7|functions=153|dll_values=DDRAW.dll,DINPUT.dll,GDI32.dll,IMM32.dll,KERNEL32.dll,USER32.dll,WINMM.dll
+MARKER|label=sa40|name=CheckForUpdate|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=updated|ascii_count=1|utf16_count=0
+MARKER|label=sa40|name=StoneAge.exe|ascii_count=1|utf16_count=0
+MARKER|label=sa40|name=stoneage.exe|ascii_count=1|utf16_count=0
+MARKER|label=sa40|name=sa.exe|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=sa_3.exe|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=ClientLogin|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=CharLogin|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=PPASSWORD|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=yStoneAge.exe|ascii_count=1|utf16_count=0
+MARKER|label=sa40|name=wgs@mail.hwaei.com.tw|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=stoneage.waei.net|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=/saupdate/newest.txt|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=/saupdate/%s|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=SaUpdate|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=SaUpdate.EXE|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=ttttttttt|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=20041215|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=HASH___________@@@@@@@@|ascii_count=0|utf16_count=0
+MARKER|label=sa40|name=FileVersion|ascii_count=0|utf16_count=1
+MARKER|label=sa40|name=ProductVersion|ascii_count=0|utf16_count=1
+MARKER|label=sa40|name=ProductName|ascii_count=0|utf16_count=1
+MARKER|label=sa40|name=FileDescription|ascii_count=0|utf16_count=1
+MARKER|label=sa40|name=OriginalFilename|ascii_count=0|utf16_count=1
+MARKER|label=sa40|name=InternalName|ascii_count=0|utf16_count=1
+MARKER|label=sa40|name=CompanyName|ascii_count=0|utf16_count=1
+MARKER|label=sa40|name=VS_VERSION_INFO|ascii_count=0|utf16_count=1
+VERSION_RESOURCE_NEAR|label=sa40|key=FileVersion|offset=526918|strings=VS_VERSION_INFO %7C%7C StringFileInfo %7C%7C 040404b0 %7C%7C Comments %7C%7C CompanyName %7C%7C Waei %7C%7C FileDescription %7C%7C SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+VERSION_RESOURCE_NEAR|label=sa40|key=ProductVersion|offset=527278|strings=SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+VERSION_RESOURCE_NEAR|label=sa40|key=ProductName|offset=527222|strings=CompanyName %7C%7C Waei %7C%7C FileDescription %7C%7C SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+VERSION_RESOURCE_NEAR|label=sa40|key=FileDescription|offset=526866|strings=VS_VERSION_INFO %7C%7C StringFileInfo %7C%7C 040404b0 %7C%7C Comments %7C%7C CompanyName %7C%7C Waei %7C%7C FileDescription %7C%7C SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+VERSION_RESOURCE_NEAR|label=sa40|key=OriginalFilename|offset=527130|strings=StringFileInfo %7C%7C 040404b0 %7C%7C Comments %7C%7C CompanyName %7C%7C Waei %7C%7C FileDescription %7C%7C SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+VERSION_RESOURCE_NEAR|label=sa40|key=InternalName|offset=526974|strings=VS_VERSION_INFO %7C%7C StringFileInfo %7C%7C 040404b0 %7C%7C Comments %7C%7C CompanyName %7C%7C Waei %7C%7C FileDescription %7C%7C SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+VERSION_RESOURCE_NEAR|label=sa40|key=CompanyName|offset=526822|strings=VS_VERSION_INFO %7C%7C StringFileInfo %7C%7C 040404b0 %7C%7C Comments %7C%7C CompanyName %7C%7C Waei %7C%7C FileDescription %7C%7C SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+PATH_SIGNAL|label=sa40|path=data\battleMap\battle218.sab
+PATH_SIGNAL|label=sa40|path=data\battleMap\battle219.sab
+PAYLOAD|label=sa42|bytes=557056|sha256=744fc0557f024930f351ef31b6adac0dbe41968625105d5f0eba45be1a048df6|pe_timestamp=1004583269|pe_timestamp_utc=2001-11-01T02:54:29+00:00|ascii_strings=4092|paths=377|battle_ids=220|battle_min=0|battle_max=219
+IMPORTS|label=sa42|dlls=7|functions=153|dll_values=DDRAW.dll,DINPUT.dll,GDI32.dll,IMM32.dll,KERNEL32.dll,USER32.dll,WINMM.dll
+MARKER|label=sa42|name=CheckForUpdate|ascii_count=0|utf16_count=0
+MARKER|label=sa42|name=updated|ascii_count=1|utf16_count=0
+MARKER|label=sa42|name=StoneAge.exe|ascii_count=1|utf16_count=0
+MARKER|label=sa42|name=stoneage.exe|ascii_count=1|utf16_count=0
+MARKER|label=sa42|name=sa.exe|ascii_count=0|utf16_count=0
+MARKER|label=sa42|name=sa_3.exe|ascii_count=0|utf16_count=0
+MARKER|label=sa42|name=ClientLogin|ascii_count=1|utf16_count=0
+MARKER|label=sa42|name=CharLogin|ascii_count=1|utf16_count=0
+MARKER|label=sa42|name=PPASSWORD|ascii_count=0|utf16_count=0
+MARKER|label=sa42|name=yStoneAge.exe|ascii_count=1|utf16_count=0
+MARKER|label=sa42|name=wgs@mail.hwaei.com.tw|ascii_count=0|utf16_count=0
+MARKER|label=sa42|name=stoneage.waei.net|ascii_count=0|utf16_count=0
+MARKER|label=sa42|name=/saupdate/newest.txt|ascii_count=0|utf16_count=0
+MARKER|label=sa42|name=/saupdate/%s|ascii_count=0|utf16_count=0
+MARKER|label=sa42|name=SaUpdate|ascii_count=0|utf16_count=0
+MARKER|label=sa42|name=SaUpdate.EXE|ascii_count=0|utf16_count=0
+MARKER|label=sa42|name=ttttttttt|ascii_count=0|utf16_count=0
+MARKER|label=sa42|name=20041215|ascii_count=0|utf16_count=0
+MARKER|label=sa42|name=HASH___________@@@@@@@@|ascii_count=0|utf16_count=0
+MARKER|label=sa42|name=FileVersion|ascii_count=0|utf16_count=1
+MARKER|label=sa42|name=ProductVersion|ascii_count=0|utf16_count=1
+MARKER|label=sa42|name=ProductName|ascii_count=0|utf16_count=1
+MARKER|label=sa42|name=FileDescription|ascii_count=0|utf16_count=1
+MARKER|label=sa42|name=OriginalFilename|ascii_count=0|utf16_count=1
+MARKER|label=sa42|name=InternalName|ascii_count=0|utf16_count=1
+MARKER|label=sa42|name=CompanyName|ascii_count=0|utf16_count=1
+MARKER|label=sa42|name=VS_VERSION_INFO|ascii_count=0|utf16_count=1
+VERSION_RESOURCE_NEAR|label=sa42|key=FileVersion|offset=555590|strings=VS_VERSION_INFO %7C%7C StringFileInfo %7C%7C 040404b0 %7C%7C Comments %7C%7C CompanyName %7C%7C Waei %7C%7C FileDescription %7C%7C SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+VERSION_RESOURCE_NEAR|label=sa42|key=ProductVersion|offset=555950|strings=SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+VERSION_RESOURCE_NEAR|label=sa42|key=ProductName|offset=555894|strings=CompanyName %7C%7C Waei %7C%7C FileDescription %7C%7C SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+VERSION_RESOURCE_NEAR|label=sa42|key=FileDescription|offset=555538|strings=VS_VERSION_INFO %7C%7C StringFileInfo %7C%7C 040404b0 %7C%7C Comments %7C%7C CompanyName %7C%7C Waei %7C%7C FileDescription %7C%7C SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+VERSION_RESOURCE_NEAR|label=sa42|key=OriginalFilename|offset=555802|strings=StringFileInfo %7C%7C 040404b0 %7C%7C Comments %7C%7C CompanyName %7C%7C Waei %7C%7C FileDescription %7C%7C SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+VERSION_RESOURCE_NEAR|label=sa42|key=InternalName|offset=555646|strings=VS_VERSION_INFO %7C%7C StringFileInfo %7C%7C 040404b0 %7C%7C Comments %7C%7C CompanyName %7C%7C Waei %7C%7C FileDescription %7C%7C SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+VERSION_RESOURCE_NEAR|label=sa42|key=CompanyName|offset=555494|strings=VS_VERSION_INFO %7C%7C StringFileInfo %7C%7C 040404b0 %7C%7C Comments %7C%7C CompanyName %7C%7C Waei %7C%7C FileDescription %7C%7C SaDeb %7C%7C FileVersion %7C%7C 1, 0, 0, 1 %7C%7C InternalName %7C%7C SaDeb %7C%7C LegalCopyright %7C%7C Copyright c 2001 %7C%7C LegalTrademarks %7C%7C OriginalFilename %7C%7C SaDeb.exe %7C%7C PrivateBuild %7C%7C ProductName %7C%7C Waei SaDeb %7C%7C ProductVersion %7C%7C 1, 0, 0, 1 %7C%7C SpecialBuild %7C%7C VarFileInfo %7C%7C Translation
+PATH_SIGNAL|label=sa42|path=data\AISetting.dat
+PATH_SIGNAL|label=sa42|path=data\battleMap\battle218.sab
+PATH_SIGNAL|label=sa42|path=data\battleMap\battle219.sab
+PATH_DIFF|common=375|only_sa40=0|only_sa42=2
+PATH_ONLY|label=sa42|path=data\AISetting.dat
+PATH_ONLY|label=sa42|path=data\album_2.dat
+IMPORT_DIFF|common=153|only_sa40=0|only_sa42=0
+COUNT|errors|0
+RESOLUTION|RUNTIME_LINEAGE_SIGNALS_BOUND|interpret version-resource strings and TW10 continuity next
+EVIDENCE_BOUNDARY|filename sa_40/sa_42 is not by itself a version proof; classification must agree with byte structure and contemporaneous chronology.
