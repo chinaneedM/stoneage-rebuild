@@ -19,9 +19,9 @@ import urllib.request
 
 BASE = "https://oddownload.nuduseng.com/"
 UA = "stoneage-rebuild-archaeology/1.0"
-MAX_PAGES = 5000
+MAX_PAGES = 8000
 MAX_LINKS = 300000
-MAX_BODY = 2_000_000
+MAX_BODY = 8_000_000
 TIMEOUT = 15
 RETRIES = 1
 WORKERS = 16
