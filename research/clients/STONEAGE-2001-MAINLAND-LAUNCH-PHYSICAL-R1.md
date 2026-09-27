@@ -76,3 +76,40 @@ No purchasing or manual acquisition is required.
 - current survival-index surfaces:
   - https://www.jd.com/book/670a5d579c7edcad77f.html
   - https://www.jd.com/zuozhe/171326824345d6c79c30.html
+
+
+## Direct photographed early Mainland client-disc survival — 2026-09-27
+
+A 2016 first-person preservation post at `https://www.shiqi.me/pt_51.htm` materially upgrades this route from current-market title strings to **direct physical-disc photographs**.
+
+The author explicitly labels the first image as a `石器时代1.82的客户端`. The photographed disc visibly contains:
+
+- StoneAge branding;
+- **北京华义联合软件开发有限公司**;
+- **广西金海湾电子音像出版社**;
+- operator/service logos;
+- a physical serial-label sticker.
+
+Direct image:
+- `https://www.shiqi.me/zb_users/upload/2016/05/201605041462372233975831.jpg`
+
+This does **not** prove that the disc is the January-2001 first pressing, and the exact small-print publication number is not transcribed from the current 600×450 public image. It does prove that a photographed early Mainland Waei/Jinhaiwan client-disc lineage survives publicly.
+
+The same page also provides direct 2.0 and 2.5 client-disc photographs:
+
+- 2.0 `家族开拓史`: `https://www.shiqi.me/zb_users/upload/2016/05/201605041462372263129465.jpg`;
+- 2.5 `精灵王传说`: `https://www.shiqi.me/zb_users/upload/2016/05/201605041462372351521932.jpg`.
+
+The author says the 2.0 disc came from an `老手削暴包`, consistent with the contemporaneous 17173 product record that this pack contained a 2.0 client disc.
+
+### Preservation-index result
+
+The dedicated exact IA/DiscMaster probe over five Guangxi-Jinhaiwan/Waei/StoneAge identity combinations completed with:
+
+- 0 strict IA items;
+- 0 strict DiscMaster hits;
+- 0 interesting media files;
+- 0 errors.
+
+Therefore generic preservation-index search is now bounded. The next route must use a **new exact artifact token** from the photographed disc/package (ISBN/ISRC/catalogue number, matrix, high-resolution label, or optical filename) rather than repeating the same name queries.
+

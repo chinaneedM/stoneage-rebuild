@@ -2512,3 +2512,57 @@ Every substantial source should record:
 - Does not support:
   - package contents, ISBN, disc identity, installer bytes, or exact optical pressing.
 
+
+
+### SRC-CN-2016-SHIQIME-MAINLAND-CLIENT-DISCS-01
+
+- Title: `我也跟风发一下石器时代留下的回忆`
+- Publication date: **2016-05-04**
+- Retrieval date: **2026-09-27**
+- Source type: later first-person player preservation post with direct photographs of retained physical media
+- Page: https://www.shiqi.me/pt_51.htm
+- Direct image URLs:
+  - early/1.82-labelled client disc: https://www.shiqi.me/zb_users/upload/2016/05/201605041462372233975831.jpg
+  - StoneAge 2.0 `家族开拓史` client disc: https://www.shiqi.me/zb_users/upload/2016/05/201605041462372263129465.jpg
+  - StoneAge 2.5 `精灵王传说` client disc: https://www.shiqi.me/zb_users/upload/2016/05/201605041462372351521932.jpg
+- Confidence:
+  - **B for literal visible disc-face fields/logos and direct photograph survival**;
+  - **C+/B- for the author's retrospective version/package classification**;
+  - **not byte provenance**.
+- Supports:
+  - the author explicitly labels the first photographed disc as a `石器时代1.82的客户端`;
+  - the first disc photograph visibly carries StoneAge branding, **北京华义联合软件开发有限公司**, and **广西金海湾电子音像出版社** text, plus operator/service logos and a physical serial-label sticker;
+  - the author explicitly labels the second disc as a StoneAge 2.0 client and states it came from a purchased **老手削暴包**;
+  - the second disc face visibly reads **`石器时代2.0 家族开拓史`**;
+  - the third disc face visibly reads **`石器时代2.5 精灵王传说`** and carries Waei/operator branding.
+- Critical limits:
+  - the first disc's exact ISBN/ISRC/catalogue-number small print is **not transcribed** here because the current public image resolution is insufficient for error-free reading;
+  - the post does not establish when or where each disc was manufactured, nor byte identity with a January-2001 first pressing;
+  - later first-person recollection can mislabel version/package context and therefore must be cross-checked against contemporaneous product records.
+- Archaeology significance:
+  - independently confirms surviving photographed **Mainland Waei/Jinhaiwan client-disc material** for the early 1.x/1.82 line;
+  - provides a direct photographed 2.0 client-disc control consistent with the contemporaneous 17173 statement that `老手削暴包` contained a 2.0 client disc;
+  - provides a direct 2.5 client-disc visual control whose printed artwork/operator branding is plainly different from the separately photographed Wanfang `7-900096-07-8/Z.03` disc.
+- Does not support:
+  - optical volume label, filesystem contents, hashes, matrix/IFPI, installer identity or clean-byte provenance;
+  - treating the Wanfang 2.5 disc as byte-different solely because its printed artwork differs.
+
+### SRC-CN-2016-SHIQIME-WANFANG-SA25-DISC-01
+
+- Title/context: `哈哈，找到了这个：石器时代2.5精灵王的传说光碟和点卡`
+- Publication date: **2016-02-03**
+- Retrieval date: **2026-09-27**
+- Page: https://www.shiqi.me/pt_17.htm
+- Direct disc image: https://www.shiqi.me/zb_users/upload/2016/02/201602031454475577106602.jpg
+- Confidence: **B for visible disc-face fields; not client-byte provenance**
+- Visible fields:
+  - `永远的石器时代 2.5 精灵王传说`;
+  - **万方数据电子出版社出版**;
+  - ISBN **`7-900096-07-8/Z.03`**;
+  - barcode **`9787900096074`**.
+- Comparative significance:
+  - the printed artwork/publisher identity is visibly different from the Waei-branded 2.5 client disc photographed in `SRC-CN-2016-SHIQIME-MAINLAND-CLIENT-DISCS-01`;
+  - this establishes **different physical carrier identity/artwork**, not different client bytes.
+- Classification remains:
+  - **OPEN / secondary-carrier or publisher-bundle candidate** until file-level evidence or independent package documentation resolves its payload and provenance.
+

@@ -2375,3 +2375,17 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Canonical analysis: `research/clients/STONEAGE-2001-MAINLAND-LAUNCH-PHYSICAL-R1.md`.
 - Source records: `SRC-CN-2001-SINA-STONEAGE-MAINLAND-LAUNCH-01`, `SRC-CN-2002-PKU-STONEAGE-MAINLAND-DISTRIBUTION-01`, `SRC-CN-2026-JD-STONEAGE-JINHAIWAN-SURVIVAL-LEAD-01`.
 
+
+
+## Early Mainland client-disc photographs recovered; exact preservation index bounded — 2026-09-27
+
+- The exact Guangxi-Jinhaiwan preservation-index probe completed successfully: **5 source-derived query identities / 0 strict IA items / 0 strict DiscMaster hits / 0 interesting media files / 0 errors**. The tested generic publisher-title index route is now BOUNDED.
+- A substantially stronger public physical-survival source was then recovered: the 2016 SHIQI.ME first-person preservation page `pt_51.htm` directly photographs retained **1.x/1.82, 2.0 and 2.5 client discs**.
+- The author labels the first disc as a **`石器时代1.82的客户端`**. Its photograph visibly carries **北京华义联合软件开发有限公司** and **广西金海湾电子音像出版社** text and a physical serial-label sticker. This is now the project's strongest direct visual lead for an early Mainland Waei/Jinhaiwan client carrier, though it is still later-photo evidence rather than byte provenance.
+- The same page labels the second disc as a **2.0 client** and states it was obtained with an **老手削暴包**; the disc face reads `石器时代2.0 家族开拓史`. This independently coheres with the contemporaneous 17173 product record that the old-user pack contained a 2.0 client disc.
+- The third disc face reads **`石器时代2.5 精灵王传说`** and carries Waei/operator branding. This provides a concrete Mainland client-disc visual control against the separately photographed Wanfang disc.
+- **Wanfang classification refinement:** the Wanfang `7-900096-07-8/Z.03` disc and the Waei-branded 2.5 client disc are now proven to be **different physical printed-carrier identities/artworks**. This does not prove different payload bytes, but it materially strengthens the Wanfang disc's classification as a secondary/publisher-bundle candidate rather than the same official client pressing.
+- Priority consequence: stop repeating generic `石器时代 + 广西金海湾` preservation searches. Highest-information next step is to recover a **higher-resolution 1.x/1.82 disc/package-back image** yielding an exact ISBN/ISRC/catalogue number, or a public optical image/file tree keyed from that artifact.
+- New source records: `SRC-CN-2016-SHIQIME-MAINLAND-CLIENT-DISCS-01`, `SRC-CN-2016-SHIQIME-WANFANG-SA25-DISC-01`.
+- Derived report: `research/recovered/STONEAGE-2001-MAINLAND-JINHAIWAN-PRESERVATION-R1.txt`.
+

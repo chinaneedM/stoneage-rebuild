@@ -168,3 +168,38 @@ The two-dimensional classification is now mandatory:
 1. **carrier provenance** — official boxed client / magazine / strategy guide / publisher bundle / unknown;
 2. **payload identity** — official installer bytes / network-downloaded installer / updater / multimedia / mixed / unknown.
 
+
+
+## Direct Waei 2.5 client-disc visual control — 2026-09-27
+
+The 2016 SHIQI.ME preservation page `pt_51.htm` provides a direct photograph of an author-labelled **StoneAge 2.5 client disc**:
+
+- https://www.shiqi.me/zb_users/upload/2016/05/201605041462372351521932.jpg
+
+The disc face visibly reads `石器时代2.5 精灵王传说` and carries Waei/operator branding. This provides a direct Mainland client-disc visual control independent of the later collector taxonomy.
+
+The Wanfang disc photograph remains:
+
+- https://www.shiqi.me/zb_users/upload/2016/02/201602031454475577106602.jpg
+- `永远的石器时代2.5 精灵王传说`;
+- `万方数据电子出版社出版`;
+- ISBN `7-900096-07-8/Z.03`.
+
+### Revised visual classification
+
+These two discs are **plainly different printed physical-carrier identities/artworks**.
+
+This supports:
+
+- Wanfang disc ≠ same printed Waei-client disc pressing/artwork;
+- Wanfang remains a secondary-carrier / publisher-bundle candidate;
+- direct client-disc visual comparison no longer depends only on the specialist collector's textual classification.
+
+It still does **not** establish:
+
+- different payload bytes;
+- whether Wanfang contains a full client, updater or multimedia;
+- whether either disc's filesystem is clean/unmodified.
+
+Payload identity remains OPEN until bytes/file trees are recovered.
+

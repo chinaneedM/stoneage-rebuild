@@ -412,3 +412,54 @@ The remaining gap is no longer merely whether a second disc probably existed. Th
   - publicly obtainable read-only optical image/file tree with hashes.
 - Canonical research note: `research/clients/STONEAGE-2001-MAINLAND-LAUNCH-PHYSICAL-R1.md`.
 
+
+
+## SRC-CN-2016-SHIQIME-EARLY-MAINLAND-CLIENT-DISC-PHOTOS-01
+
+- Page: https://www.shiqi.me/pt_51.htm
+- Research date: **2026-09-27**.
+- Source class: later first-person player preservation photographs.
+- Direct photographed sequence:
+  1. author-labelled `石器时代1.82的客户端`:
+     - https://www.shiqi.me/zb_users/upload/2016/05/201605041462372233975831.jpg
+     - disc visibly carries **北京华义联合软件开发有限公司** and **广西金海湾电子音像出版社** text;
+     - a physical serial-label sticker is present on the disc face;
+     - exact small-print ISBN/ISRC is not transcribed at current image resolution.
+  2. author-labelled `石器时代2.0客户端`, stated by the author to have been bought in an **老手削暴包**:
+     - https://www.shiqi.me/zb_users/upload/2016/05/201605041462372263129465.jpg
+     - disc face visibly reads **`石器时代2.0 家族开拓史`**.
+  3. author-labelled `石器时代2.5客户端`:
+     - https://www.shiqi.me/zb_users/upload/2016/05/201605041462372351521932.jpg
+     - disc face visibly reads **`石器时代2.5 精灵王传说`** and carries Waei/operator branding.
+- Cross-source control:
+  - contemporaneous 17173 independently states that `石器时代2.0老手削暴包` contained a **2.0 client disc**, making the author's package recollection coherent with a period product description.
+- Archaeology consequence:
+  - this closes the question of whether **photographed early Mainland Waei/Jinhaiwan client-disc material survives publicly**: yes, at photograph level;
+  - it does **not** close byte recovery.
+- Priority:
+  - the 1.x/1.82 photographed disc is now a **HIGH-value exact visual carrier lead** for an early Mainland specimen;
+  - next target is a higher-resolution disc/package back image exposing exact ISBN/ISRC/catalogue identifiers, followed by public optical-image/file-tree recovery.
+- Byte boundary:
+  - no ISO/BIN/CUE/file tree, matrix/IFPI, volume label or hash is established by these photographs.
+
+## SRC-CN-2026-MAINLAND-JINHAIWAN-PRESERVATION-INDEX-BOUNDARY-01
+
+- Derived report: `research/recovered/STONEAGE-2001-MAINLAND-JINHAIWAN-PRESERVATION-R1.txt`.
+- Research date: **2026-09-27**.
+- Scope: exact Internet Archive + DiscMaster metadata queries over five source-derived combinations of:
+  - `石器时代`;
+  - `广西金海湾电子音像出版社`;
+  - `北京华义`;
+  - `STONEAGE`;
+  - `石器时代网络游戏`.
+- Result:
+  - **5 query identities**;
+  - **0 strict Internet Archive items**;
+  - **0 strict DiscMaster hits**;
+  - **0 interesting IA media files**;
+  - **0 errors**.
+- Classification: **tested exact IA/DiscMaster publisher-title route BOUNDED**.
+- Important limit:
+  - zero indexed preservation hits do not negate the direct photographed physical-media survival evidence;
+  - reopen from new exact ISBN/ISRC/catalogue/matrix/disc-image/file-tree tokens rather than repeating these same broad identity combinations.
+
