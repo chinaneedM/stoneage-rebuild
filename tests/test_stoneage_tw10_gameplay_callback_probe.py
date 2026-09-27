@@ -26,7 +26,7 @@ class TaiwanGameplayCallbackProbeTests(unittest.TestCase):
             "raw_size": len(data),
             "raw": 0,
         }]
-        self.assertEqual(find_ascii_rvas(data, sections, "%X|%X"), [0x2004, 0x2010])
+        self.assertEqual(find_ascii_rvas(data, sections, "%X|%X"), [0x2004, 0x200e])
 
     def test_shared_direct_targets(self):
         cfgs = {
