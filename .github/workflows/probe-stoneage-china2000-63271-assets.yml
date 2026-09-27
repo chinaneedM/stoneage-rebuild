@@ -1,0 +1,50 @@
+name: Probe StoneAge China.com 63271 asset topology
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_china2000_63271_asset_probe.py
+      - tests/test_stoneage_china2000_63271_asset_probe.py
+      - .github/workflows/probe-stoneage-china2000-63271-assets.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-china2000-63271-assets
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate asset-topology probe
+        run: python3 -m unittest tests.test_stoneage_china2000_63271_asset_probe -v
+      - name: Probe archived page assets
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_china2000_63271_asset_probe \
+            > research/recovered/STONEAGE-CHINA2000-63271-ASSET-TOPOLOGY-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-CHINA2000-63271-ASSET-TOPOLOGY-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe China.com StoneAge giveaway page assets'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_china2000_63271_asset_probe > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe China.com StoneAge giveaway page assets'
+          fi
+          git push
