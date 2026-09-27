@@ -280,3 +280,24 @@ The remaining gap is no longer merely whether a second disc probably existed. Th
   - the boxed new-user package cannot yet be promoted into that cluster;
   - Wanfang remains an independent visual-source / unclassified-carrier lead.
 - Does not establish disc-byte identity, mastering identity, exact carrier provenance, filesystem contents or clean-client status.
+
+
+## SRC-CN-2002-POPSOFT-SA25-COVERDISC-BOUNDARY-01
+
+- Contemporaneous named carrier: **`《大众软件CD——大众游戏》2002年2月号`**, from the surviving 17173 StoneAge 2.5 upgrade/distribution page.
+- Public preservation object inspected: Internet Archive `popsoft-magazine_202403`.
+- Research date: **2026-09-27**.
+- Classification: **SCAN-ONLY / OPTICAL-RESIDUAL-BOUNDED**.
+- Preserved evidence:
+  - February 2002 A/B magazine PDFs are present with fixed IA metadata hashes;
+  - February-A OCR has five StoneAge-2.5/Spirit-King proximity hits under the project's bounded detector;
+  - the item exposes **0 optical-image files**, so no cover-disc filesystem or client bytes are present on this current IA file surface.
+- Rejected false positive:
+  - IA's only broad 2002 `大众软件` software result is `start-modem-5600d`; its `START_MODEM.iso` is a Fujian Start/实达 modem driver CD and is unrelated to the target carrier.
+- Critical limit:
+  - the existence/content of the paper magazine does not identify which A/B issue or disc pressing supplied StoneAge 2.5;
+  - no inference from magazine OCR to disc-byte identity is permitted.
+- Reopen trigger:
+  - exact `大众游戏` February-2002 disc identifier/image, disc-face scan, ISO/BIN/CUE/file tree, checksum, torrent/archive member list, or independent mirror.
+- Canonical detail: `research/clients/STONEAGE-SA25-POPSOFT-2002-CARRIER-BOUNDARY-R1.md`.
+- Derived report: `research/recovered/STONEAGE-SA25-POPSOFT-2002-RESIDUAL-R1.txt`.

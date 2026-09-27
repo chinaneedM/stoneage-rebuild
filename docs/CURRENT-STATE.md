@@ -2316,3 +2316,16 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - `research/recovered/STONEAGE-2001-SA20-COVERDISC-CENSUS-R1.txt`
   - `research/recovered/STONEAGE-2001-SA20-COVERDISC-CENSUS-R2.txt`
   - `research/recovered/STONEAGE-2001-POPSOFT-PRESERVATION-R1.txt`
+
+
+## StoneAge 2.5 Popsoft February-2002 carrier residual bounded — 2026-09-27
+
+- The contemporaneous 17173 upgrade guide names **`《大众软件CD——大众游戏》2002年2月号`** as one of the physical distribution channels for the 2.5 complete package/updater. A dedicated residual probe now expands the Internet Archive surfaces that the earlier broad carrier census left unresolved.
+- The single IA software item returned by broad `"大众软件" AND year:2002` metadata search is **not a target**: `start-modem-5600d` is a Fujian Start/实达 5600D modem driver disc. Its `START_MODEM.iso` is therefore an unrelated lexical/description collision and is explicitly blocked from promotion.
+- The genuine Popsoft preservation family `popsoft-magazine_202403` contains original scans for **2002年02月A** and **2002年02月B**. Current IA metadata exposes **6,809 files / 990 originals / 0 optical images**, with 26 February-2002 A/B files.
+- Transient OCR-only inspection finds **5** StoneAge-2.5/Spirit-King proximity hits in the February-A scan and **0** in February-B under the same detector. This corroborates surviving 2.5-period editorial content, but **does not prove which issue or physical disc carried the client**.
+- Operational conclusion: this route is **SCAN-ONLY / OPTICAL-RESIDUAL-BOUNDED**. Do not treat magazine PDF/EPUB/OCR files as cover-disc evidence. Reopen only from a new exact optical identifier, disc photograph/label, ISO/BIN/CUE/file tree, checksum, torrent/archive member list or independent mirror.
+- Separately, the surviving contemporaneous 17173 2.5 product page still exposes exact new-user-package visual asset names **`sa03.gif`**, **`st25_new_02.jpg`**, and **`st25_new_03.jpg`** in the three-package-variant block. Retain these as visual/package-search tokens only; they are not disc filenames or client payload identities.
+- New derived evidence:
+  - `research/recovered/STONEAGE-SA25-POPSOFT-2002-RESIDUAL-R1.txt`;
+  - `research/clients/STONEAGE-SA25-POPSOFT-2002-CARRIER-BOUNDARY-R1.md`.

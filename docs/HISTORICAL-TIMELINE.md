@@ -169,6 +169,8 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 
 **FACT / distribution topology:** Both records say the complete package/updater could be obtained from Beijing Waei and enumerate multiple Jan/Feb-2002 magazine/guide cover-disc channels. Current public DiscMaster/Internet Archive carrier searches return no strict 2.5 carrier, and a bounded Waei-domain Q1-2002 binary-index scan likewise yields no strict 2.5 installer/updater candidate after false-positive filtering.
 
+**PRESERVATION REFINEMENT / 2026-09-27:** one named carrier, `《大众软件CD——大众游戏》2002年2月号`, now has a surviving paper-magazine preservation control: IA item `popsoft-magazine_202403` contains original February-2002 A/B scans, and bounded OCR confirms 2.5-related text in issue A. The same IA item exposes **no optical-disc image**. The only broad 2002 `大众软件` software hit is an unrelated 实达 modem ISO and is rejected. This narrows the unresolved object to the actual cover-disc/optical carrier rather than the magazine issue itself. [`SRC-CN-2002-POPSOFT-SA25-FEB-SCAN-01`]
+
 **RESEARCH CONSEQUENCE:** Exact named cover-disc issues and contemporaneous installed-tree/cache backups now outrank broad Waei-domain filename searches as the next Mainland 2001–2002 recovery surface.
 
 

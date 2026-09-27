@@ -1066,6 +1066,37 @@ Every substantial source should record:
   - `research/recovered/STONEAGE-WAEI-2002-PAYLOAD-DOMAIN-R1.txt`.
 
 
+
+### SRC-CN-2002-POPSOFT-SA25-FEB-SCAN-01
+
+- Contemporary distribution anchor: 17173's surviving `《石器2.5--精灵王传说》升级办法` explicitly names **`《大众软件CD——大众游戏》2002年2月号`** among media from which users could obtain the complete StoneAge 2.5 package or updater.
+- Preserved scan-family item: Internet Archive identifier **`popsoft-magazine_202403`**, title `Popsoft 大众软件`.
+- Retrieval/research date: **2026-09-27**.
+- Source type: public preservation metadata plus original magazine-scan files and transient OCR text; **not a preserved cover-disc image**.
+- Exact February-2002 original scan files exposed by IA metadata:
+  - `2002/大众软件-2002年02月A.pdf` — 213,906,834 bytes, MD5 `f81361daf9f1998213e191facfd110bc`, SHA-1 `95ce835b9475bfc91bded8f169828d271453cb0e`;
+  - `2002/大众软件-2002年02月B.pdf` — 216,402,608 bytes, MD5 `2312310bf26764a76ede6f229abec66a`, SHA-1 `76915aaff249e54a0e5d090ed10172542c015072`.
+- File-list boundary:
+  - IA metadata exposes **6,809 files** in the scan-family item, including **26** February-2002 A/B derivatives/originals;
+  - it exposes **0 optical-image files** for the Popsoft item: no ISO/BIN/CUE/IMG/MDF/MDS/NRG/CCD/SUB object is present in the current file list.
+- Transient OCR cross-check:
+  - February-A `_djvu.txt` is 784,590 bytes, SHA-256 `71b56a151f692558f022c4e460ab21f1eac9b4f30579e69db8f1fff7d6043c63`, with **5** bounded StoneAge-2.5/Spirit-King proximity hits;
+  - February-B `_djvu.txt` is 870,256 bytes, SHA-256 `9614393a5280c27558f7dbc5f017964f318a251cf786ccc2413fbf70dfae3810`, with **0** such strong hits under the same detector.
+- False-positive correction:
+  - broad IA query `"大众软件" AND year:2002` returns item `start-modem-5600d`, which contains `START_MODEM.iso`;
+  - its title/creator identify a **福建实达 5600D modem driver disc**, so its optical image is an unrelated metadata-description collision and must not be promoted as a StoneAge/Popsoft carrier.
+- Confidence: **S-derived for the IA file-list/hash/OCR-count observations; A- for the separate contemporaneous 17173 carrier statement; OPEN for the physical February-2002 Popsoft cover-disc bytes**.
+- Evidence boundary:
+  - the magazine scan proves that the February 2002 paper issues survive publicly and that issue A contains StoneAge-2.5-related text;
+  - it does **not** establish that the A issue, rather than B or another `大众游戏` carrier configuration, physically carried the target disc;
+  - magazine/PDF bytes are not cover-disc/client bytes and cannot establish installer filename, volume label, file tree, checksum or clean-client provenance.
+- Recovery consequence:
+  - classify this IA route as **SCAN-ONLY / OPTICAL-RESIDUAL-BOUNDED**;
+  - reopen only from an exact cover-disc identifier, disc-face photograph, file listing, checksum, archive/torrent identity or independent preserved `大众游戏` February-2002 optical object.
+- Derived evidence:
+  - `research/recovered/STONEAGE-SA25-POPSOFT-2002-RESIDUAL-R1.txt`;
+  - `research/clients/STONEAGE-SA25-POPSOFT-2002-CARRIER-BOUNDARY-R1.md`.
+
 ### SRC-CN-2002-17173-SA25-PRODUCT-01
 
 - Title: `《石器2.5--精灵王传说》产品介绍`
@@ -1077,7 +1108,8 @@ Every substantial source should record:
 - Supports:
   - `石器时代2.5延年益兽包` is described as including a **StoneAge 2.5 client CD** plus WGS/physical extras;
   - `石器时代2.5春满钱坤包` is likewise described as including a **StoneAge 2.5 client CD**;
-  - `石器时代2.5新手报到包` existed in three package variants.
+  - `石器时代2.5新手报到包` existed in three package variants;
+  - the surviving page still references three contemporaneous new-user-package-block image assets under the 17173 StoneAge 2.5 tree: `sa03.gif`, `st25_new_02.jpg`, and `st25_new_03.jpg`. Treat these as exact visual-search tokens, not disc identifiers.
 - Archaeology significance:
   - identifies official product families that physically carried a 2.5 client disc and can therefore serve as provenance-preserving recovery targets.
 - Does not support:
