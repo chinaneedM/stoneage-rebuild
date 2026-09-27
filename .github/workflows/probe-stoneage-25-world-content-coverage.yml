@@ -1,0 +1,161 @@
+name: Build versioned StoneAge world-content coverage
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_world_content_coverage_probe.py
+      - tests/test_stoneage_world_content_coverage_probe.py
+      - tools/stoneage_world_map_library.py
+      - research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
+      - .github/workflows/probe-stoneage-25-world-content-coverage.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-25-world-content-coverage
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate world-content coverage classifier
+        run: python3 -m unittest tests.test_stoneage_world_content_coverage_probe -v
+
+      - name: Install archive tools
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar
+
+      - name: Recover verified 2.5 preservation bundle transiently
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25
+          python3 - <<'PY'
+          import hashlib, html, json, re, http.cookiejar, urllib.parse, urllib.request
+          from pathlib import Path
+
+          ua='Mozilla/5.0'
+          expected={
+              'ev7l29fw77891go':'7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5',
+              'ytaa168o5jih0lx':'567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb',
+          }
+          opener=urllib.request.build_opener(
+              urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar())
+          )
+          opener.addheaders=[('User-Agent',ua)]
+
+          def get(key,suffix):
+              data=urllib.parse.urlencode({
+                  'quick_key':key,
+                  'response_format':'json',
+              }).encode()
+              req=urllib.request.Request(
+                  'https://www.mediafire.com/api/1.5/file/get_info.php',
+                  data=data,
+                  headers={'User-Agent':ua},
+              )
+              with opener.open(req,timeout=60) as response:
+                  info=json.load(response)['response']['file_info']
+              if str(info.get('hash') or '').lower()!=expected[key]:
+                  raise SystemExit('MediaFire metadata hash changed')
+              req=urllib.request.Request(
+                  info['links']['normal_download'],
+                  headers={'User-Agent':ua},
+              )
+              with opener.open(req,timeout=60) as response:
+                  page=response.read().decode('utf-8','replace')
+                  referer=response.geturl()
+              match=(
+                  re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S)
+                  or re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+              )
+              if not match:
+                  raise SystemExit('No direct MediaFire link')
+              dest=Path('/tmp/sa25')/f'part.{suffix}'
+              digest=hashlib.sha256()
+              request=urllib.request.Request(
+                  html.unescape(match.group(1)),
+                  headers={'User-Agent':ua,'Referer':referer},
+              )
+              with opener.open(request,timeout=300) as response,dest.open('wb') as out:
+                  while True:
+                      block=response.read(1024*1024)
+                      if not block:
+                          break
+                      out.write(block)
+                      digest.update(block)
+              if digest.hexdigest()!=expected[key]:
+                  raise SystemExit('MediaFire payload hash mismatch')
+
+          get('ev7l29fw77891go','001')
+          get('ytaa168o5jih0lx','002')
+          PY
+          cat /tmp/sa25/part.001 /tmp/sa25/part.002 > /tmp/sa25/bundle.rar
+          test "$(sha256sum /tmp/sa25/bundle.rar | awk '{print $1}')" = "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+          mkdir -p /tmp/sa25/out
+          ulimit -c 0
+          unar -f -o /tmp/sa25/out /tmp/sa25/bundle.rar >/tmp/sa25/unar.log 2>&1
+
+      - name: Build floor-level versioned coverage
+        run: |
+          set -euo pipefail
+          N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          M="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
+          test -n "$N" && test -n "$D" && test -n "$M"
+
+          report=research/recovered/STONEAGE-25-STABLE-WORLD-CONTENT-COVERAGE-R1.txt
+          {
+            echo 'SOURCE_BUNDLE_SHA256|d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5'
+            if [ -n "$C" ]; then
+              python3 -m tools.stoneage_world_content_coverage_probe \
+                --lineage-report research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt \
+                --npc-dir "$N" \
+                --data-dir "$D" \
+                --map-dir "$M" \
+                --setup "$C"
+            else
+              python3 -m tools.stoneage_world_content_coverage_probe \
+                --lineage-report research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt \
+                --npc-dir "$N" \
+                --data-dir "$D" \
+                --map-dir "$M"
+            fi
+          } > "$report"
+
+      - name: Verify derived coverage report
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-25-STABLE-WORLD-CONTENT-COVERAGE-R1.txt
+          test -s "$report"
+          grep -F 'SEMANTIC_SOURCE_VERSION|recovered25' "$report"
+          grep -F 'COUNT|stable_floor_candidates|761' "$report"
+          test "$(grep -c '^FLOOR|' "$report")" = "761"
+          grep -F 'RESOLUTION|VERSIONED_WORLD_CONTENT_COVERAGE_CLASSIFIED' "$report"
+
+      - name: Delete transient proprietary payloads
+        if: always()
+        run: rm -rf /tmp/sa25
+
+      - name: Commit derived floor-level metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report=research/recovered/STONEAGE-25-STABLE-WORLD-CONTENT-COVERAGE-R1.txt
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: classify stable map world-content coverage'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            exit 1
+          fi
+          git push
