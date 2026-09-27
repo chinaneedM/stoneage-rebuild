@@ -2718,3 +2718,21 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Derived closure: `research/recovered/STONEAGE-EARLY-CLIENT-DISCMASTER-CLOSURE-R3.txt`.
 - This is a preservation-index negative only. It does **not** negate the documented Dec-2000 Mainland test CD or the Jan-2001 ~274 MB Waei trial download.
 - Full-client recovery remains highest priority; next work should seek a new exact token from historical page routing, independent mirrors/carriers or physical-media provenance.
+
+## China.com Jan-2001 mail-order route correction — 2026-09-27
+
+- A later preserved historical text identifies a **2001-01-05** article titled `中华网游戏频道 特别推出《石器时代》的邮购服务`, but mirror-rewritten links are not accepted as historical href provenance.
+- The proven first-party China.com `news1/444/YYYYMMDD/<id>.html` namespace was tested for **2001-01-04..06**:
+  - Jan-05 prefix: **0 indexed rows**;
+  - Jan-04: IDs `78771 / 78775 / 78779 / 78782`;
+  - Jan-06: ID `80570`.
+- R1 initially overclassified three Jan-04 pages because their **global site footer** contains `游戏《石器时代》专题` and `下载指南`. That is not article-body evidence.
+- R2 retried every failed neighbor capture with a strict rule requiring `邮购 / 试玩版 / 赠送活动 / 注册名单` semantics:
+  - 3 / 3 residual pages replayed;
+  - strict matches **0**;
+  - errors **0**.
+- Correction: R1 `CHINACOM_JAN5_STONEAGE_ARTICLE_RECOVERED` is **REJECTED** as a footer-derived false positive.
+- A complete launch-window Wayback prefix census of `game.china.com/hotspot/shiqi/` also returns **0 indexed rows**. Current/live legacy China.com StoneAge pages may survive, but they cannot be assigned a 2001 archive timestamp without a historical capture.
+- Classification: **original Jan-05 China.com article URL/hrefs remain UNRECOVERED**. Do not repeat Jan4–6 `news1/444` or legacy `/hotspot/shiqi/` Wayback-prefix searches unless a new exact article ID/path appears.
+- Derived classification: `research/recovered/STONEAGE-CHINA2001-JAN5-MAILORDER-CLASSIFICATION-R3.txt`.
+- Priority remains **FULL-CLIENT RECOVERY** through contemporaneous independent mirrors/carriers or newly recovered first-party binary/path tokens.
