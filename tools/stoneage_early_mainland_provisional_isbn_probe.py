@@ -11,6 +11,7 @@ It searches public preservation metadata only; no media payload is downloaded.
 """
 from __future__ import annotations
 
+import concurrent.futures
 import hashlib
 import json
 import re
@@ -53,7 +54,7 @@ def isbn13_valid(value):
         return False
     return sum((1 if i%2==0 else 3)*int(d) for i,d in enumerate(digits)) % 10 == 0
 
-def fetch_json(url, timeout=45):
+def fetch_json(url, timeout=30):
     req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/json"})
     with urllib.request.urlopen(req,timeout=timeout) as r:
         body=r.read()
@@ -107,29 +108,40 @@ def main():
     print("PUBLISHER_PREFIX_CONTROL|7-900323|Guangxi-Jinhaiwan|independently-published-prefix-table")
     errors=[]; ia_hits={}; dm_hits={}
 
-    for label,q in QUERIES:
-        try:
-            st,final,body,data=fetch_json(ia_url(q))
-            docs=ia_docs(data)
-            hits=[row for row in docs if exact_candidate_hit(row)]
-            print(f"IA_QUERY|label={label}|query={clean(q)}|status={st}|bytes={len(body)}|sha256={hashlib.sha256(body).hexdigest()}|items={len(docs)}|exact_candidate_hits={len(hits)}|final={clean(final)}")
+    def one(kind, label, q):
+        url = ia_url(q) if kind == "ia" else discm_url(q)
+        st, final, body, data = fetch_json(url)
+        if kind == "ia":
+            rows = ia_docs(data)
+        else:
+            rows = discm_rows(data)
+        hits = [row for row in rows if exact_candidate_hit(row)]
+        return kind, label, q, st, final, body, rows, hits
+
+    jobs=[(kind,label,q) for label,q in QUERIES for kind in ("ia","discm")]
+    results=[]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+        futs={ex.submit(one,*job):job for job in jobs}
+        for fut in concurrent.futures.as_completed(futs):
+            kind,label,q=futs[fut]
+            try:
+                results.append(fut.result())
+            except Exception as exc:
+                errors.append((f"{kind}:{label}",type(exc).__name__,str(exc)))
+
+    for kind,label,q,st,final,body,rows,hits in sorted(results,key=lambda x:(x[1],x[0])):
+        if kind=="ia":
+            print(f"IA_QUERY|label={label}|query={clean(q)}|status={st}|bytes={len(body)}|sha256={hashlib.sha256(body).hexdigest()}|items={len(rows)}|exact_candidate_hits={len(hits)}|final={clean(final)}")
             for row in hits:
                 ident=str(row.get("identifier") or "")
                 ia_hits[ident]=row
                 print(f"IA_HIT|identifier={clean(ident)}|title={clean(row.get('title'))}|date={clean(row.get('date'))}|year={clean(row.get('year'))}|mediatype={clean(row.get('mediatype'))}|collection={clean(row.get('collection'))}")
-        except Exception as exc:
-            errors.append((f"ia:{label}",type(exc).__name__,str(exc)))
-        try:
-            st,final,body,data=fetch_json(discm_url(q))
-            rows=discm_rows(data)
-            hits=[row for row in rows if exact_candidate_hit(row)]
+        else:
             print(f"DISCM_QUERY|label={label}|query={clean(q)}|status={st}|bytes={len(body)}|sha256={hashlib.sha256(body).hexdigest()}|rows={len(rows)}|exact_candidate_hits={len(hits)}|final={clean(final)}")
             for row in hits:
                 key=(str(row.get("itemid","")),str(row.get("fileid","")))
                 dm_hits[key]=row
                 print(f"DISCM_HIT|itemid={clean(row.get('itemid'))}|itemName={clean(row.get('itemName'))}|fileid={clean(row.get('fileid'))}|filename={clean(row.get('filename'))}|size={clean(row.get('size'))}|ts={clean(row.get('ts'))}|b3sum={clean(row.get('b3sum'))}")
-        except Exception as exc:
-            errors.append((f"discm:{label}",type(exc).__name__,str(exc)))
 
     for scope,kind,msg in errors:
         print(f"ERROR|scope={clean(scope)}|kind={clean(kind)}|message={clean(msg)}")
