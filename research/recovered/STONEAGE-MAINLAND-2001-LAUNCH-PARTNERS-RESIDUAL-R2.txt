@@ -1,0 +1,26 @@
+StoneAge Mainland Jan-2001 launch-partner narrow-host residual — R2
+PARENT|STONEAGE-MAINLAND-2001-LAUNCH-PARTNERS-R1|R1 had 8/9 failed broad-domain queries
+SCOPE|narrow game/download hosts|window=20010115..20010119|CDX metadata only|no replay|no payload
+QUERY_ERROR|surface=21cn-download|basis=repo-confirmed historical download host|kind=URLError|message=<urlopen error timed out>
+QUERY_ERROR|surface=china-game|basis=repo-confirmed historical game host|kind=TimeoutError|message=The read operation timed out
+QUERY|surface=netease-game|basis=NetEase game host tied to 2001 game division|status=200|rows=232|bytes=32770|sha256=69f8978286f037b36c59356aa1a3680a2641a04c1a6693c9e9ba5b182e097db2|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgame.163.com%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20010115&to=20010119&limit=15000&collapse=urlkey
+COUNT_SURFACE|surface=netease-game|rows=232|candidates=0
+QUERY_ERROR|surface=sina-games|basis=repo-confirmed historical game host|kind=IncompleteRead|message=IncompleteRead(313411 bytes read)
+QUERY|surface=sina-games1|basis=repo-confirmed historical download CGI host|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgames1.sina.com.cn%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20010115&to=20010119&limit=15000&collapse=urlkey
+COUNT_SURFACE|surface=sina-games1|rows=0|candidates=0
+QUERY|surface=sohu-games|basis=documented active game host in Apr-2001|status=200|rows=38|bytes=5436|sha256=abec19c301d24e0a2d624b2b445ea735b85419d247aeffc8db9ad1df3faaa00d|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgames.sohu.com%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20010115&to=20010119&limit=15000&collapse=urlkey
+COUNT_SURFACE|surface=sohu-games|rows=38|candidates=0
+ERROR|surface=21cn-download|kind=URLError|message=<urlopen error timed out>
+ERROR|surface=china-game|kind=TimeoutError|message=The read operation timed out
+ERROR|surface=sina-games|kind=IncompleteRead|message=IncompleteRead(313411 bytes read)
+COUNT|surfaces=6
+COUNT|completed=3
+COUNT|failed=3
+COUNT|rows=270
+COUNT|candidate_rows=0
+COUNT|strong_rows=0
+COUNT|stone_rows=0
+COUNT|binary_rows=0
+RESOLUTION|NARROW_LAUNCH_PARTNER_PARTIAL|do not infer absence; retry failed narrow hosts or use newly source-derived paths
+CORRECTION|R1 no-token resolution is superseded by this residual classification; broad-domain failures were not negative evidence
+EVIDENCE_BOUNDARY|Archived URL topology cannot authenticate client bytes; no page or binary body is fetched.
