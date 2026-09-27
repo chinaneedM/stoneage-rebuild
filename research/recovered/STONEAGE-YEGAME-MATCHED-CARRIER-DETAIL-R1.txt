@@ -1,0 +1,42 @@
+StoneAge Yegame-matched Mainland carrier public-detail probe — R1
+TARGET|ruten_id=22636573895893|role=mainland-retail-box|visual_anchor=EN0ZGKJ0002
+SCOPE|public product metadata only|seller/contact fields excluded|no login|no purchase|no image persistence
+API|level=simple|status=200|bytes=2640|sha256=d7fad36c17c594d9094533467ffb1fa1664d63e61ee75f936e39c577ea822a6a|content_type=application/json|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22636573895893&level=simple
+FIELD|level=simple|path=data[0].name|value=正版電腦遊戲光碟 石器時代
+FIELD|level=simple|path=data[0].images.filename|value=22636573895893_659.jpg,22636573895893_719.jpg,22636573895893_870.jpg,22636573895893_576.jpg
+FIELD|level=simple|path=data[0].images.url[0]|value=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_659.jpg
+FIELD|level=simple|path=data[0].images.url[1]|value=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_719.jpg
+FIELD|level=simple|path=data[0].images.url[2]|value=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_870.jpg
+FIELD|level=simple|path=data[0].images.url[3]|value=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_576.jpg
+FIELD|level=simple|path=data[0].images.m_url[0]|value=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_659_m.jpg
+FIELD|level=simple|path=data[0].images.m_url[1]|value=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_719_m.jpg
+FIELD|level=simple|path=data[0].images.m_url[2]|value=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_870_m.jpg
+FIELD|level=simple|path=data[0].images.m_url[3]|value=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_576_m.jpg
+FIELD|level=simple|path=data[0].spec_type|value=N
+FIELD|level=simple|path=data[0].title_style|value=0
+FIELD|level=simple|path=data[0].item_remaining_time|value=355368124
+API|level=detail|status=200|bytes=3827|sha256=53464f726162bbedacaf59df5558f206840bac9befd1a763d2d650ce90e6e15e|content_type=application/json|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22636573895893&level=detail
+FIELD|level=detail|path=data[0].item_remaining_time|value=355367862
+FIELD|level=detail|path=data[0].description_url|value=https://www.ruten.com.tw/item/goods_comments.php?id=22636573895893&k=16578a07&o=1788605633
+API|level=normal|status=200|bytes=2640|sha256=af34425539a9e55020bb287edfa49f973130455df688757c92f2ec7ae0e487c5|content_type=application/json|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22636573895893&level=normal
+FIELD|level=normal|path=data[0].item_remaining_time|value=355367861
+API|level=full|status=200|bytes=2640|sha256=af34425539a9e55020bb287edfa49f973130455df688757c92f2ec7ae0e487c5|content_type=application/json|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22636573895893&level=full
+EXACT_TOKEN|value=1788605633
+EXACT_TOKEN|value=22636573895893
+EXACT_TOKEN|value=355367861
+EXACT_TOKEN|value=355367862
+EXACT_TOKEN|value=355368124
+EXACT_TOKEN|value=comments
+EXACT_TOKEN|value=goods
+EXACT_TOKEN|value=https
+EXACT_TOKEN|value=item
+EXACT_TOKEN|value=rimg
+EXACT_TOKEN|value=ruten
+EXACT_TOKEN|value=schwartzbertie213
+COUNT|levels_attempted=4
+COUNT|levels_successful=4
+COUNT|public_fields=16
+COUNT|exact_tokens=12
+COUNT|errors=0
+RESOLUTION|MATCHED_CARRIER_EXACT_PRODUCT_TOKENS_FOUND|cross-search independent preservation indexes next
+EVIDENCE_BOUNDARY|Current public listing metadata can support carrier attribution but cannot authenticate historical disc bytes or release date.
