@@ -1,0 +1,50 @@
+name: Fast census Waei www9 trial CDX
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_www9_fast_cdx_probe.py
+      - tests/test_stoneage_waei_www9_fast_cdx_probe.py
+      - .github/workflows/probe-stoneage-waei-www9-fast-cdx.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-www9-fast-cdx
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate fast CDX probe
+        run: python3 -m unittest tests.test_stoneage_waei_www9_fast_cdx_probe -v
+      - name: Run fast CDX census
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_www9_fast_cdx_probe \
+            > research/recovered/STONEAGE-WAEI-WWW9-FAST-CDX-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-WAEI-WWW9-FAST-CDX-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: census unc-ollapsed Waei www9 CDX'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_waei_www9_fast_cdx_probe > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: census unc-ollapsed Waei www9 CDX'
+          fi
+          git push
