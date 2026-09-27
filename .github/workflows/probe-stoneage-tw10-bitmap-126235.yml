@@ -1,0 +1,36 @@
+name: Check StoneAge TW v1 bitmap IDs 126235-126238
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_bitmap_id_lookup.py
+      - tests/test_stoneage_bitmap_id_lookup.py
+      - .github/workflows/probe-stoneage-tw10-bitmap-126235.yml
+permissions:
+  contents: write
+concurrency:
+  group: stoneage-tw10-bitmap-126235
+  cancel-in-progress: true
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate lookup
+        run: python3 -m unittest tests.test_stoneage_bitmap_id_lookup -v
+      - name: Lookup bitmap IDs
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_bitmap_id_lookup             --adrn research/recovered/tw10-resource-metadata/ADRN-R1.tsv.gz             --ids 126235 126236 126237 126238             > research/recovered/STONEAGE-TW10-BITMAP-126235-126238-R1.txt
+      - name: Commit derived metadata
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-TW10-BITMAP-126235-126238-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: check TW v1 bitmap ids 126235-126238'
+          git pull --rebase origin main
+          git push
