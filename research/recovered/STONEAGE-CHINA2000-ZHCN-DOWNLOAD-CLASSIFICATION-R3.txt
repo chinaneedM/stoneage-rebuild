@@ -1,0 +1,15 @@
+StoneAge China.com /zh_cn/ route classification — R3
+PARENT|STONEAGE-CHINA2000-ZHCN-SHIQI-DOWNLOAD-R1 + STONEAGE-CHINA2000-ZHCN-DOWNLOAD-RESIDUAL-R2
+SCOPE|classification of the sole preserved launch-window /zh_cn/download/ row|no new network fetch
+
+FACT|launch-window prefix census found exactly one preserved URL|timestamp=20001219123000|url=http://game.china.com:80/zh_cn/download/pic/a_1.html
+FACT|residual replay succeeded|bytes=3200|sha256=bdfa94a1ce1699af4dc7abf15f41128dbf166546d7ffa03273c820fbb654f360
+FACT|visible title/context=中华网_游戏天地 / 下载指南 / 图片库字母A类
+FACT|listed object=艾尔达传奇|displayed_size=824K|format=JPG|description=9 images
+FACT|only relevant href=http://game.china.com:80/zh_cn/download/pic/ws2000.zip
+FACT|StoneAge semantic tokens=0
+
+CLASSIFICATION|UNRELATED|The sole preserved /zh_cn/download/ launch-window object is an 艾尔达传奇 image archive, not StoneAge and not a game-client payload.
+RESOLUTION|CHINACOM_ZHCN_SOURCE_ROUTES_BOUNDED_FOR_LAUNCH_WINDOW|/zh_cn/hotspot/shiqi/ exposes zero indexed rows and /zh_cn/download/ exposes only the unrelated image-page object above for 2000-12-01..2001-01-20.
+NEXT|Do not repeat these China.com /zh_cn/ CDX routes unless a new exact filename/path token appears. Continue full-client recovery through independent mirrors, physical test-CD provenance, or a newly recovered Beijing-Waei path/filename.
+EVIDENCE_BOUNDARY|This closes only the tested archived China.com route family. It does not negate the documented Mainland trial download or physical test-CD distribution.
