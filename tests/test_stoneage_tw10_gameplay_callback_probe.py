@@ -1,9 +1,22 @@
 import unittest
 
-from tools.stoneage_tw10_gameplay_callback_probe import shared_direct_targets
+from tools.stoneage_tw10_gameplay_callback_probe import image_c_string, shared_direct_targets
 
 
 class TaiwanGameplayCallbackProbeTests(unittest.TestCase):
+
+    def test_image_c_string_reads_ascii_at_image_rva(self):
+        data = b"HEADER" + b"%X|%X\\0" + b"TAIL"
+        sections = [{
+            "name": ".data",
+            "rva": 0x1000,
+            "vsize": len(data),
+            "raw_size": len(data),
+            "raw": 0,
+        }]
+        self.assertEqual(image_c_string(data, sections, 0x1006), "%X|%X")
+        self.assertIsNone(image_c_string(data, sections, 0x5000))
+
     def test_shared_direct_targets(self):
         cfgs = {
             "S": {"direct_calls": {0x1000: 9, 0x2000: 2}},
