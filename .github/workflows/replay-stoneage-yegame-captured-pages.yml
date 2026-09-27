@@ -1,0 +1,50 @@
+name: Replay historical Yegame captured pages
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_yegame_exact_page_replay.py
+      - tests/test_stoneage_yegame_exact_page_replay.py
+      - .github/workflows/replay-stoneage-yegame-captured-pages.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-yegame-exact-page-replay
+  cancel-in-progress: true
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate exact-page replay
+        run: python3 -m unittest tests.test_stoneage_yegame_exact_page_replay -v
+      - name: Replay exact historical Yegame pages
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_yegame_exact_page_replay \
+            > research/recovered/STONEAGE-YEGAME-EXACT-PAGE-REPLAY-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-YEGAME-EXACT-PAGE-REPLAY-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: replay historical Yegame pages'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_yegame_exact_page_replay > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: replay historical Yegame pages'
+          fi
+          git push
