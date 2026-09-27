@@ -2924,3 +2924,24 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - `STABLE_LATER_MAP_CANDIDATE` therefore now has a complete path/dimension/hash metadata manifest for all 761 candidates rather than a 100-row sample.
 - Evidence boundary is unchanged: stable later-lineage byte identity + Taiwan-v1 resource compatibility is **not** Taiwan-v1 historical membership.
 - Next implementation seam: enforce the world-map provenance policy in engine-neutral code so later recovered maps, early-membership-proven maps, later-only resource maps and DESIGN reconstructed maps cannot be admitted to runtime topology under an ambiguous free-text evidence label.
+
+
+## Phase 1 world-map provenance contract — 2026-09-28
+
+- World-map provenance policy is now enforced in engine-neutral code:
+  - `WorldMapProvenance` added to `tools/stoneage_singleplayer_world.py`;
+  - complete lineage ingestion added in `tools/stoneage_world_map_library.py`;
+  - regression coverage added in `tests/test_stoneage_world_map_library.py`.
+- Concrete map content now has separate, validated axes for historical/content role and resource compatibility. In particular, `STABLE_LATER_MAP_CANDIDATE` is permitted only for `LATER_RECOVERED + V1_RESOURCE_COMPATIBLE` content supported by at least two source versions and a concrete payload SHA-256.
+- Stable later candidates cannot be labeled `EARLY_MEMBERSHIP_PROVEN`; this directly encodes the project rule that later persistence + v1 asset compatibility does not prove Taiwan-v1 map membership.
+- `HistoricalWorldTopology.from_provenance_maps()` is the strict modern-world ingestion boundary and rejects maps carrying only free-text evidence.
+- The complete derived report parser rejects truncated/sample manifests whose emitted rows do not match declared counts.
+- Repository-level regression reads the real committed lineage report and verifies:
+  - **761** stable candidates;
+  - **15** changed paths;
+  - **761** strict topology maps;
+  - zero implicit early-membership promotion.
+- Gameplay-model Actions run **36333478060 = PASS** on the provenance-library CI integration.
+- `research/clients/STONEAGE-WORLD-MAP-RECONSTRUCTION-POLICY-R1.md` now records the executable enforcement boundary.
+- **WORLD_MAP_PROVENANCE_CONTRACT_R1 = IMPLEMENTED.**
+- Next world-content seam: bind the provenance-safe map library to versioned world semantics (names, warps, NPC placements and encounter areas) without assuming that a later server/master-data row proves Taiwan-v1 membership. Prefer a deterministic cross-domain world-content manifest over ad hoc direct joins.
