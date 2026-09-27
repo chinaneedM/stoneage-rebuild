@@ -1,0 +1,14 @@
+StoneAge early-client DiscMaster internal-string residual — R2
+PARENT|STONEAGE-EARLY-CLIENT-DISCMASTER-INTERNAL-STRINGS-R1|failed-terms-only
+SCOPE|four timed-out exact full-text terms|sequential bounded retries|1999..2002|metadata-only|no payload
+QUERY|label=update-manifest|term=/saupdate/newest.txt|kind=anchor|attempt=1|status=200|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|rows=0|final=https://discmaster.textfiles.com/search?q=%22%2Fsaupdate%2Fnewest.txt%22&qfields=t&mode=deep&dedup=dedup&limit=300&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2002
+QUERY|label=spradrn|term=spradrn_1.bin|kind=distinctive|attempt=1|status=200|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|rows=0|final=https://discmaster.textfiles.com/search?q=%22spradrn_1.bin%22&qfields=t&mode=deep&dedup=dedup&limit=300&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2002
+QUERY|label=battle-index|term=battletxt_1.txt|kind=distinctive|attempt=1|status=200|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|rows=0|final=https://discmaster.textfiles.com/search?q=%22battletxt_1.txt%22&qfields=t&mode=deep&dedup=dedup&limit=300&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2002
+QUERY|label=sound-index|term=soundaddr_1.txt|kind=distinctive|attempt=1|status=200|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|rows=0|final=https://discmaster.textfiles.com/search?q=%22soundaddr_1.txt%22&qfields=t&mode=deep&dedup=dedup&limit=300&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2002
+COUNT|terms|4
+COUNT|completed|4
+COUNT|errors|0
+COUNT|unique_carriers|0
+COUNT|update_manifest_rows|0
+RESOLUTION|INTERNAL_STRING_RESIDUAL_BOUNDED|all R1 timeout terms completed with zero indexed carriers
+EVIDENCE_BOUNDARY|Zero full-text rows bound only the tested DiscMaster index; they do not negate historical client existence.
