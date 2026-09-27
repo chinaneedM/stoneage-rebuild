@@ -2967,3 +2967,36 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Full recovered-2.5 geometry extraction is still being validated separately before its counts are promoted to project facts.
 - **VERSIONED_WORLD_CONTENT_MANIFEST_R1 = IMPLEMENTED.**
 - Current highest-priority seam remains the full derived world-geometry closure: numeric NPC placement regions, classic overlap-Warp geometry and encounter rectangles, with WarpMan/FMWarpMan conditional/script behavior kept separate rather than flattened.
+
+
+## Phase 1 versioned world-geometry closure — 2026-09-28
+
+- Full recovered-2.5 numeric world geometry is now derived only from verified transient source bytes and committed as metadata in `research/recovered/STONEAGE-25-STABLE-WORLD-GEOMETRY-R1.txt`.
+- Extraction deliberately excludes NPC names, template names, dialogue, arbitrary NPC arguments and map payload bytes. It retains only reconstruction-relevant numeric structure:
+  - effective NPC create birth/move regions and basic spawn controls;
+  - classic `functionset=Warp` source-region -> destination geometry;
+  - encounter rectangles and numeric encounter envelope.
+- NPC create geometry is accepted only when its floor exists in the recovered server-map set and is one of the 761 provenance-safe stable map candidates.
+- Historical `getFourIntsFromString()` behavior was recovered and pinned: missing 3rd/4th `borncenter` fields are zero, so two-field `borncenter=x,y` means a single-cell region rather than malformed data.
+- Full derived counts:
+  - stable map candidates = **761**;
+  - effective NPC placement blocks = **3,856**;
+  - classic Warp edges = **2,264**;
+  - classic Warp single-cell sources = **2,264**;
+  - classic Warp edges with time condition = **5**;
+  - classic Warp destinations inside stable candidates = **1,909**;
+  - encounter areas = **402**.
+- `WarpMan` / `FMWarpMan` and other conditional/scripted transport families are intentionally **not** flattened into classic overlap Warp edges.
+- The typed engine-side parser `tools/stoneage_versioned_world_geometry.py` cross-checks geometry against the 761-map `VersionedWorldManifest` and requires per-floor NPC/encounter detail counts to match the recovered coverage manifest.
+- Conservative executable classic-Warp projection:
+  1. source must be a single cell;
+  2. no unresolved time condition;
+  3. destination must be in the stable candidate world;
+  4. source and destination coordinates must be in bounds;
+  5. source cell must have exactly one eligible edge.
+- Of the 1,909 stable-destination classic Warp edges, **5** are time-conditional. The remaining **1,904** have valid source/destination coordinates. **52** source cells are ambiguous, covering **120** edges. Therefore **1,784** edges are currently safe for automatic deterministic projection into `HistoricalWorldTopology`.
+- Full geometry derivation Actions run **36335051269 = PASS** and committed derived metadata only; transient proprietary payloads were deleted by the workflow.
+- Main gameplay-model real-report integration run **36335179673 = PASS**; it rebuilds the 761-map versioned world manifest, parses all 3,856 placements / 2,264 classic warps / 402 encounter areas and constructs the 1,784-edge strict topology.
+- Every concrete map and recovered semantic row remains versioned `LATER_RECOVERED`; none is promoted to Taiwan-v1 historical membership.
+- **VERSIONED_WORLD_GEOMETRY_R1 = CLOSED.**
+- Next deterministic world seam: bind the recovered encounter rectangles to the already reconstructed encounter/group/enemy resolver through an explicit versioned runtime adapter, while preserving the known recovered-2.5 dangling group-reference specimen defects as hard errors rather than silently repairing them.
