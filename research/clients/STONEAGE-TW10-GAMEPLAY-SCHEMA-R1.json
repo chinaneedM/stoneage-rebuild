@@ -1131,7 +1131,31 @@
         }
       ],
       "note": "Top-level v1 builder shape is 12 integers plus one string; positions here follow the early generated semantic signature."
-    },
+    }
+  },
+  "direct_version_exclusions": [
+    "S:P tokens after 26 in later descendants (transmigration/ride/base-graphic and later extensions)",
+    "S:K tokens after 21 in later descendants (pet transmigration/fusion/ride/bless and later extensions)",
+    "S category G profession cooldown implementation",
+    "S category S profession-skill implementation",
+    "S category B pet-item implementation",
+    "S category X ride-related implementation",
+    "C character record token 13 POPUPNAMECOLOR and later appended fields",
+    "S:I durability/damage string and later item fields",
+    "I durability/damage string and later item fields",
+    "item pile/alchemy/pet-item/jigsaw/upgrade/countdown extensions",
+    "later descendant B receive subcommands Z/F/O are not v1-direct"
+  ],
+  "server_bridge_policy": {
+    "statement": "Runtime IDs and client-visible state are not automatically server template IDs.",
+    "bridges": {
+      "pet_template": "2.5 enemybase.txt is BRIDGE_2_5 only",
+      "pet_skill_template": "2.5 petskill.txt is BRIDGE_2_5 only",
+      "item_template": "2.5 itemset.txt is BRIDGE_2_5 only",
+      "npc_world": "2.5 NPC world graph is BRIDGE_2_5 only"
+    }
+  },
+  "protocol_state_machines": {
     "battle_receive": {
       "transport": {
         "protocol": "B",
@@ -1201,28 +1225,6 @@
         }
       },
       "evidence_document": "research/clients/STONEAGE-TW10-BATTLE-RECEIVE-STATE-R1.md"
-    }
-  },
-  "direct_version_exclusions": [
-    "S:P tokens after 26 in later descendants (transmigration/ride/base-graphic and later extensions)",
-    "S:K tokens after 21 in later descendants (pet transmigration/fusion/ride/bless and later extensions)",
-    "S category G profession cooldown implementation",
-    "S category S profession-skill implementation",
-    "S category B pet-item implementation",
-    "S category X ride-related implementation",
-    "C character record token 13 POPUPNAMECOLOR and later appended fields",
-    "S:I durability/damage string and later item fields",
-    "I durability/damage string and later item fields",
-    "item pile/alchemy/pet-item/jigsaw/upgrade/countdown extensions",
-    "later descendant B receive subcommands Z/F/O are not v1-direct"
-  ],
-  "server_bridge_policy": {
-    "statement": "Runtime IDs and client-visible state are not automatically server template IDs.",
-    "bridges": {
-      "pet_template": "2.5 enemybase.txt is BRIDGE_2_5 only",
-      "pet_skill_template": "2.5 petskill.txt is BRIDGE_2_5 only",
-      "item_template": "2.5 itemset.txt is BRIDGE_2_5 only",
-      "npc_world": "2.5 NPC world graph is BRIDGE_2_5 only"
     }
   }
 }
