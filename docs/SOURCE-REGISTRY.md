@@ -2975,12 +2975,22 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
 - Semantic delta:
   - four `bmp_no` fields change from Taiwan sentinel `0xFFFFFFFF` to **126235, 126236, 126237, 126238**;
   - all four IDs are absent from Taiwan v1.0's `adrn_1.bin`.
+- Direct catalogue/route binding:
+  - Waei central-download **ID=1** is the `修補程式` category;
+  - preserved catalogue title: **`石器隱形人無所遁形修正檔`**;
+  - displayed date: **2001/4/26**;
+  - displayed size: **2,822 KB**;
+  - catalogue instruction: place the file in the StoneAge execution directory, e.g. `C:\\Program Files\\Waei\\石器時代\\data`, overwriting the existing file;
+  - download control: **`download.asp?fileid=133`**;
+  - archived fileid=133 capture at **20010605174213** returns HTTP 302 with historical target `/download/file/<Big5 修補程式>/spr_1.bin`;
+  - the preserved target is captured at **20010605174550** and its recovered **2,889,630 bytes = 2,821.904 KiB**, consistent with the catalogue's rounded 2,822-KB value.
 - Classification:
-  - **A-/strong byte-level StoneAge resource-lineage evidence**;
-  - **OPEN for exact client/version/region binding**.
+  - **A / direct official Waei StoneAge patch provenance + byte-verified payload**;
+  - **FACT:** `spr_1.bin` is the payload of Waei fileid 133 / `石器隱形人無所遁形修正檔`;
+  - **OPEN:** exact client version/build and regional branch binding.
 - Critical source-quality note:
-  - archived Waei detail pages contain StoneAge site/news navigation, but the current extraction does not yet bind this specific file to a human-readable StoneAge download title;
-  - classification as StoneAge lineage rests on the exact container geometry and 99.999446% byte relationship to the accepted StoneAge v1.0 resource, not on generic site-navigation text.
+  - the human-readable StoneAge title association is now direct and no longer rests on generic site-navigation text or container similarity alone;
+  - container geometry and the Taiwan-v1 controlled diff remain independent technical corroboration, not the sole basis for product identity.
 - Companion-file boundary:
   - exact same-directory archive checks find no captured `spradrn_1.bin`, `adrn_1.bin`, or `real_1.bin`;
   - a companion image-resource update is a strong inference, not a recovered fact.
@@ -2989,4 +2999,8 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
   - `research/recovered/STONEAGE-WAEI-SPR1-BYTE-METADATA-R2.txt`;
   - `research/recovered/STONEAGE-WAEI-VS-TW10-SPR1-DIFF-R1.txt`;
   - `research/recovered/STONEAGE-WAEI-VS-TW10-SPR1-FIELD-DIFF-R2.txt`;
-  - `research/recovered/STONEAGE-TW10-BITMAP-126235-126238-R1.txt`.
+  - `research/recovered/STONEAGE-TW10-BITMAP-126235-126238-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-DOWNLOAD-ID12-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-ID1-PATCH-CONTROLS-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-FILEID133-ROUTE-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-FILEID133-HEADER-R1.txt`.

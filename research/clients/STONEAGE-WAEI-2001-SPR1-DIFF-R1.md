@@ -1,7 +1,7 @@
 # StoneAge Waei.net 2001 spr_1.bin Diff — R1
 
 Date: 2026-09-27  
-Status: **BYTE-VERIFIED RESOURCE-LINEAGE ANCHOR / EXACT BRANCH OPEN**
+Status: **BYTE-VERIFIED OFFICIAL WAEI STONEAGE PATCH / EXACT CLIENT BRANCH OPEN**
 
 ## Artifact
 
@@ -55,7 +55,9 @@ All four target bitmap IDs are absent from the accepted Taiwan v1.0 `adrn_1.bin`
 
 **STRONG HYPOTHESIS:** a companion image-resource update (ADRN/REAL lineage) supplied those four bitmap IDs. The currently indexed same-directory archive has no exact `adrn_1.bin`, `real_1.bin` or `spradrn_1.bin` capture, so the image bytes themselves remain missing.
 
-**OPEN:** exact version, region, download-title binding and relation to the Mainland Dec-2000/Jan-2001 client line.
+**FACT / download-title binding:** archived Waei catalogue HTML identifies fileid **133** as `石器隱形人無所遁形修正檔`, dated **2001/4/26**, displayed as **2,822 KB**, with instructions to overwrite a file under the StoneAge `data` directory. The archived `download.asp?fileid=133` response at **2001-06-05 17:42:13 UTC** is a 302 whose historical `Location` points directly to the preserved `修補程式/spr_1.bin` URL. The target capture follows at **17:45:50 UTC**. Its recovered 2,889,630 bytes equal **2,821.904 KiB**, matching the catalogue's rounded size.
+
+**OPEN:** exact client version/build, regional branch, and relation to the Mainland Dec-2000/Jan-2001 client line.
 
 ## Trial-client relation
 
@@ -68,3 +70,31 @@ A 17173 diary published 2001-06-13 recalls a **2001-01-04** Waei-homepage StoneA
 - `research/recovered/STONEAGE-WAEI-VS-TW10-SPR1-DIFF-R1.txt`
 - `research/recovered/STONEAGE-WAEI-VS-TW10-SPR1-FIELD-DIFF-R2.txt`
 - `research/recovered/STONEAGE-TW10-BITMAP-126235-126238-R1.txt`
+
+
+## Direct Waei catalogue binding — 2026-09-27
+
+The original R1 classification deliberately left the human-readable download title OPEN. That gap is now closed.
+
+Preserved Waei central-download HTML for category ID=1 (`修補程式`) records:
+
+- title: `石器隱形人無所遁形修正檔`;
+- date: 2001/4/26;
+- displayed size: 2,822 KB;
+- instruction: place the file into the StoneAge execution directory (example `C:\\Program Files\\Waei\\石器時代\\data`) and overwrite the existing file;
+- download route: `download.asp?fileid=133`.
+
+Wayback's exact capture of that route at 20010605174213 returns HTTP 302 and exposes the historical redirect target directly as the same `修補程式/spr_1.bin` URL whose bytes are preserved at 20010605174550.
+
+Therefore the artifact identity is now:
+
+**Waei official catalogue `石器隱形人無所遁形修正檔` -> fileid 133 -> `spr_1.bin` -> byte-verified archived payload.**
+
+This closes **download-title/product-purpose provenance**. It does not close the exact StoneAge client version or regional branch that consumed the patch.
+
+Additional reports:
+
+- `research/recovered/STONEAGE-WAEI-DOWNLOAD-ID12-R1.txt`
+- `research/recovered/STONEAGE-WAEI-ID1-PATCH-CONTROLS-R1.txt`
+- `research/recovered/STONEAGE-WAEI-FILEID133-ROUTE-R1.txt`
+- `research/recovered/STONEAGE-WAEI-FILEID133-HEADER-R1.txt`

@@ -2574,3 +2574,30 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - `research/recovered/STONEAGE-TW10-BITMAP-126235-126238-R1.txt`.
 - Canonical technical note: `research/clients/STONEAGE-WAEI-2001-SPR1-DIFF-R1.md`.
 - Priority after recording this milestone returns to **full-client recovery**: resolve the ~274 MB Jan-2001 Waei trial-download filename/route or the Dec-2000 Mainland official test-CD bytes, while using this `spr_1.bin` as an early resource-diff control.
+
+
+## Waei `spr_1.bin` official patch-title binding closed — 2026-09-27
+
+- The previously OPEN human-readable title association for the archived Waei `spr_1.bin` is now **directly closed by archived Waei catalogue and redirect evidence**.
+- Waei central-download category **ID=1 = 修補程式**. Its preserved 2001-06 catalogue page explicitly lists:
+  - title: **`石器隱形人無所遁形修正檔`**;
+  - displayed date: **2001/4/26**;
+  - instructions: save into the StoneAge execution directory, e.g. `C:\\Program Files\\Waei\\石器時代\\data`, and overwrite the existing file;
+  - displayed size: **2,822 KB**;
+  - download control: **`download.asp?fileid=133`**.
+- Wayback preserves `download.asp?fileid=133` at **2001-06-05 17:42:13 UTC** as an HTTP 302. A no-follow replay recovers the historical `Location` target directly as:
+  - `http://www7.waei.net/download/file/<Big5 修補程式>/spr_1.bin`.
+- The target `spr_1.bin` is independently preserved three minutes later at **17:45:50 UTC** and transiently recovers to:
+  - **2,889,630 bytes = 2,821.904 KiB**, consistent with the catalogue's rounded **2,822 KB** display;
+  - SHA-256 `864fa3f6aaeb7d8d2dc9bdee46cecdc7dcee1af0c8f1ed949e09c0526e6aa17e`.
+- Classification upgrade:
+  - **FACT:** this exact byte artifact is the payload served by Waei fileid 133 for the named StoneAge patch `石器隱形人無所遁形修正檔`;
+  - **FACT:** official Waei StoneAge patch provenance is now direct, no longer inferred only from container geometry;
+  - **OPEN:** exact client version/build and regional branch to which the patch was intended to apply.
+- Regional boundary remains unchanged: the source is **Waei.net / Big5**. Do not relabel it as Beijing-Waei/Mainland test or retail media without explicit regional evidence.
+- New derived evidence:
+  - `research/recovered/STONEAGE-WAEI-DOWNLOAD-ID12-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-ID1-PATCH-CONTROLS-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-FILEID133-ROUTE-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-FILEID133-HEADER-R1.txt`.
+- Full-client recovery remains higher priority than further analysis of this patch: the unresolved primary target is still the ~274 MB Jan-2001 Waei trial client and/or the Dec-2000 Mainland official test-CD bytes.

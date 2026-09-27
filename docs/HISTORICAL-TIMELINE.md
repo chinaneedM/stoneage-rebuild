@@ -468,3 +468,6 @@ IMPORTANT LIMIT: this closes a battle-map inheritance chain. It is not evidence 
 **HYPOTHESIS / companion-resource implication:** the four newly referenced bitmap IDs strongly imply a corresponding later image-resource addition in an `ADRN/REAL` lineage, but same-directory exact archive probes currently expose no `adrn_1.bin`, `real_1.bin` or `spradrn_1.bin` companion. Do not invent those missing bytes.
 
 **REGIONAL LIMIT:** this is a Waei.net / Big5-hosted artifact. It must not be relabelled as an authenticated Mainland retail/test build without an explicit regional/version binding.
+
+
+**PATCH-TITLE / ROUTE CLOSURE — 2026-09-27:** archived Waei central-download HTML directly identifies fileid **133** as `石器隱形人無所遁形修正檔` (display date **2001/4/26**, **2,822 KB**) and instructs users to overwrite a file in `C:\\Program Files\\Waei\\石器時代\\data`. Wayback preserves `download.asp?fileid=133` at **2001-06-05 17:42:13 UTC**; its historical 302 `Location` directly targets the archived `修補程式/spr_1.bin` URL captured at 17:45:50. The transiently recovered 2,889,630-byte payload is 2,821.904 KiB, matching the catalogue's rounded size. This upgrades the artifact from resource-lineage inference to **direct official Waei StoneAge patch provenance**. Exact client-version/region binding remains OPEN. [`SRC-WAEI-2001-SPR1-ARCHIVE-01`]
