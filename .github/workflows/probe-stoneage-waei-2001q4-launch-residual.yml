@@ -1,0 +1,44 @@
+name: Close Waei 2.0 launch residual pages
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_2001q4_launch_residual_probe.py
+      - tests/test_stoneage_waei_2001q4_launch_residual_probe.py
+      - .github/workflows/probe-stoneage-waei-2001q4-launch-residual.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-2001q4-launch-residual
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_waei_2001q4_launch_residual_probe -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_2001q4_launch_residual_probe > research/recovered/STONEAGE-WAEI-2001Q4-LAUNCH-RESIDUAL-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-WAEI-2001Q4-LAUNCH-RESIDUAL-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: close Waei 2.0 launch residual pages'
+          for n in 1 2 3 4 5; do git push && exit 0; sleep $((n*3)); done
+          exit 1
