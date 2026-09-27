@@ -1,0 +1,20 @@
+StoneAge Jinghe exact-token preservation-index probe — R1
+SCOPE|Internet Archive advanced metadata search + DiscMaster name/full-text|exact source-grounded tokens|no payload
+IA|label=client-code|token=EN0ZGKJ0002|status=200|docs=0|strict=0|bytes=295|sha256=abd8a0c17a4f26b235d5c5ee688e6228ab93546a64c43f6ab2d1f06ca676f7c3|final=https://archive.org/advancedsearch.php?q=%22EN0ZGKJ0002%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=date&fl%5B%5D=mediatype&rows=100&page=1&output=json
+DM|label=client-code|scope=name|token=EN0ZGKJ0002|status=200|rows=0|strict=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|final=https://discmaster.textfiles.com/search?q=%22EN0ZGKJ0002%22&qfields=name&mode=deep&dedup=dedup&limit=200&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2010
+DM|label=client-code|scope=text|token=EN0ZGKJ0002|status=200|rows=0|strict=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|final=https://discmaster.textfiles.com/search?q=%22EN0ZGKJ0002%22&qfields=t&mode=deep&dedup=dedup&limit=200&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2010
+IA|label=wgs-code|token=EZ0JHSD0003|status=200|docs=0|strict=0|bytes=295|sha256=5b03cf1c44d6e81314567e5b5ea212cdc8e4684a361584283c85e43a63a822e3|final=https://archive.org/advancedsearch.php?q=%22EZ0JHSD0003%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=date&fl%5B%5D=mediatype&rows=100&page=1&output=json
+DM|label=wgs-code|scope=name|token=EZ0JHSD0003|status=200|rows=0|strict=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|final=https://discmaster.textfiles.com/search?q=%22EZ0JHSD0003%22&qfields=name&mode=deep&dedup=dedup&limit=200&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2010
+DM|label=wgs-code|scope=text|token=EZ0JHSD0003|status=200|rows=0|strict=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|final=https://discmaster.textfiles.com/search?q=%22EZ0JHSD0003%22&qfields=t&mode=deep&dedup=dedup&limit=200&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2010
+IA|label=cover-md5|token=980e7d3336fa7557c166f2ff8ba3957c|status=200|docs=0|strict=0|bytes=379|sha256=5bc64d85102caf8baed409e676f315ba37044e5bf052fd52ce437392cf0da845|final=https://archive.org/advancedsearch.php?q=%22980e7d3336fa7557c166f2ff8ba3957c%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=date&fl%5B%5D=mediatype&rows=100&page=1&output=json
+DM|label=cover-md5|scope=name|token=980e7d3336fa7557c166f2ff8ba3957c|status=200|rows=0|strict=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|final=https://discmaster.textfiles.com/search?q=%22980e7d3336fa7557c166f2ff8ba3957c%22&qfields=name&mode=deep&dedup=dedup&limit=200&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2010
+ERROR|label=cover-md5|scope=dm-text|kind=TimeoutError|message=The read operation timed out
+IA|label=cover-sha1|token=95ae12136e77355bac09aee8d7490a29a073e969|status=200|docs=0|strict=0|bytes=411|sha256=eddd6fa16a04aaf7c037f6eae9ea74a75f9bd5d64f69c79871994bbd9a4acd36|final=https://archive.org/advancedsearch.php?q=%2295ae12136e77355bac09aee8d7490a29a073e969%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=date&fl%5B%5D=mediatype&rows=100&page=1&output=json
+DM|label=cover-sha1|scope=name|token=95ae12136e77355bac09aee8d7490a29a073e969|status=200|rows=0|strict=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|final=https://discmaster.textfiles.com/search?q=%2295ae12136e77355bac09aee8d7490a29a073e969%22&qfields=name&mode=deep&dedup=dedup&limit=200&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2010
+ERROR|label=cover-sha1|scope=dm-text|kind=TimeoutError|message=The read operation timed out
+COUNT|tokens|4
+COUNT|surfaces_attempted|12
+COUNT|strict_hits|0
+COUNT|errors|2
+RESOLUTION|PARTIAL_EXACT_TOKEN_SEARCH|retry only failed index surfaces
+EVIDENCE_BOUNDARY|zero index hits cannot negate documented physical/online clients; no payload is downloaded.
