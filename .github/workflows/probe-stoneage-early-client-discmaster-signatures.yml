@@ -1,0 +1,42 @@
+name: Probe early StoneAge DiscMaster signatures
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_early_client_discmaster_signature_probe.py
+      - tests/test_stoneage_early_client_discmaster_signature_probe.py
+      - .github/workflows/probe-stoneage-early-client-discmaster-signatures.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-early-client-discmaster-signatures
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate signature probe
+        run: python3 -m unittest tests.test_stoneage_early_client_discmaster_signature_probe -v
+      - name: Search DiscMaster by internal client filenames
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_early_client_discmaster_signature_probe \
+            > research/recovered/STONEAGE-EARLY-CLIENT-DISCMASTER-SIGNATURES-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-EARLY-CLIENT-DISCMASTER-SIGNATURES-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe early-client DiscMaster signatures'
+          git pull --rebase origin main
+          git push
