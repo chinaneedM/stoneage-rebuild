@@ -2627,3 +2627,33 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - `research/recovered/STONEAGE-YEGAME-2000-TEST-CD-ARCHIVE-R1.txt`;
   - `research/recovered/STONEAGE-YEGAME-EXACT-PAGE-REPLAY-R1.txt`;
   - `research/recovered/STONEAGE-YEGAME-GAME-CATALOG-R1.txt`.
+
+## Jinghe/Yegame StoneAge product-detail closure — 2026-09-27
+
+- The exact Yegame product route for **`EN0ZGKJ0002 = 石器时代`** is now archive-bound by **three HTTP-200 captures**:
+  - 2001-04-15 16:23:00 UTC;
+  - 2001-07-17 23:54:14 UTC;
+  - 2001-08-16 20:35:29 UTC.
+- The 2001-08-16 capture replayed successfully and directly preserves the historical product-detail body:
+  - title/product: **石器时代**;
+  - code: **`EN0ZGKJ0002`**;
+  - medium: **`1-CD`**;
+  - retail: **¥29.00**;
+  - preferential price: **¥26.00**;
+  - promotional statement: **随游戏赠送45小时免费时间，2001年1月至2月期间贺岁免费畅游**;
+  - catalog copy also describes pet capture/growth, more than 100 creatures, 12 base character designs x 4 colors, and 12 expressive character actions.
+- The detail page carries a historical product-image reference:
+  - **`/product_images/EN0ZGKJ0002.jpg`**.
+  Its exact image CDX query failed transiently in this run, so image preservation remains **OPEN**.
+- The same probe binds **`EZ0JHSD0003 = 石器时代-WGS620点会员卡`** by three HTTP-200 captures. The replayed page states:
+  - **620 points**;
+  - medium **单卡**;
+  - retail **¥30.00**;
+  - preferential price **¥27.00**;
+  - usable for games under WGS, with billing depending on period/game type.
+- Evidence boundary:
+  - this is direct historical commerce/catalog evidence from Jinghe's Yegame surface;
+  - it is **not** client-byte provenance and does not identify the Dec-2000 official test CD;
+  - the detail page's printed minimum-configuration values are preserved as catalog text and must not override byte/manual-derived technical facts if they conflict.
+- Recovery consequence: `EN0ZGKJ0002` and `product_images/EN0ZGKJ0002.jpg` are now exact physical-media/cover search tokens. After one bounded cover-image archive probe, priority returns to **full-client byte recovery**.
+- Derived report: `research/recovered/STONEAGE-YEGAME-STONEAGE-PRODUCT-DETAIL-R1.txt`.

@@ -3037,3 +3037,38 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
   - `research/recovered/STONEAGE-YEGAME-2000-TEST-CD-ARCHIVE-R1.txt`;
   - `research/recovered/STONEAGE-YEGAME-EXACT-PAGE-REPLAY-R1.txt`;
   - `research/recovered/STONEAGE-YEGAME-GAME-CATALOG-R1.txt`.
+
+### SRC-CN-2001-YEGAME-SA-PRODUCT-DETAIL-01
+
+- Title/surface: Yegame / 晶合商机网 StoneAge product-detail pages.
+- Retrieval/analysis date: **2026-09-27**.
+- Source type: archived historical commerce HTML + Wayback capture metadata.
+- Confidence: **A-/B+ for literal product-detail text and catalog fields; not binary provenance**.
+- StoneAge product route:
+  - exact key: **`EN0ZGKJ0002`**;
+  - route: `product/detail.asp?prodencode=EN0ZGKJ0002`;
+  - preserved HTTP-200 captures: **20010415162300**, **20010717235414**, **20010816203529**;
+  - successfully replayed capture: **20010816203529**.
+- Direct replay supports:
+  - product name **石器时代**;
+  - code **`EN0ZGKJ0002`**;
+  - medium **`1-CD`**;
+  - retail **¥29.00**, preferential **¥26.00**;
+  - promotional text: **随游戏赠送45小时免费时间，2001年1月至2月期间贺岁免费畅游**;
+  - gameplay marketing copy describing capture/growth of pets, more than 100 creatures, 12 base character designs in four colors, and 12 expressive actions;
+  - referenced product-image path **`/product_images/EN0ZGKJ0002.jpg`**.
+- Minimum-configuration text preserved on the catalog page includes DirectX 6.1 support, 2 MB display memory, 32 MB RAM, 400 MB disk, 33.6k modem and Internet access. The CPU/OS strings contain apparent catalog/transcription oddities, so this page is not promoted over manuals/client evidence for technical requirements.
+- WGS-card route:
+  - exact key: **`EZ0JHSD0003`**;
+  - three HTTP-200 captures: **20010406121011**, **20010616204348**, **20010830173408**;
+  - direct text identifies **石器时代-WGS620点会员卡**, **620 points**, medium **单卡**, retail **¥30.00**, preferential **¥27.00**.
+- Image preservation boundary:
+  - the detail HTML directly references `product_images/EN0ZGKJ0002.jpg` and `product_images/EZ0JHSD0003.jpg`;
+  - exact CDX requests for these product images encountered transient connection failures in this run;
+  - image existence in HTML is FACT; archived image-body availability remains OPEN.
+- Does not support:
+  - identity with the **2000-12 Mainland official test CD**;
+  - retail-disc hashes/file tree;
+  - equivalence with the ~274 MB Waei online trial client;
+  - interpreting catalog copy as higher authority than original media/manual bytes.
+- Derived report: `research/recovered/STONEAGE-YEGAME-STONEAGE-PRODUCT-DETAIL-R1.txt`.
