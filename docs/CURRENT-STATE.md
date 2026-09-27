@@ -2754,3 +2754,15 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   4. integrate earlier artifacts later if/when online-recoverable bytes surface.
 - Any magazine/periodical/physical-carrier census started before this correction is non-blocking and must not spawn further speculative expansion unless it yields a direct downloadable-byte lead.
 - Governing decision: docs/DESIGN-DECISIONS.md DD-011.
+
+
+## Reconstruction scope clarification — early baseline + selective later-version integration — 2026-09-27
+
+- The project does **not** need an absolute-earliest historical client before reconstruction can begin.
+- A sufficiently early, official, clean, complete and technically usable client may serve as the reconstruction foundation baseline.
+- The baseline is used to recover the original game's core architecture, data organization, rules, systems and experiential DNA; it is **not** a requirement that the final game remain locked to that historical version.
+- Later official StoneAge releases should be studied as a **content/system library and evolutionary record**. Maps, pets, quests, mechanics, convenience features, progression ideas and world content may be selectively reused, adapted, merged, redesigned or rejected.
+- Final inclusion criterion is project coherence: single-player suitability, world consistency, pacing, system quality, emotional milestones and technical cleanliness—not historical chronology alone.
+- This means large future changes are expected and acceptable. The goal is a modern reconstruction informed by official StoneAge history, not a cumulative museum clone of every official release.
+- Operational consequence: once the current earliest usable official clean baseline is confirmed complete enough, research effort should shift decisively from open-ended client hunting into technical recovery and specification. Newer official versions can then be brought in later as structured comparison/input sources.
+- Governing decision: docs/DESIGN-DECISIONS.md DD-012.
