@@ -96,11 +96,12 @@ def visible(raw):
     return re.sub(r"\s+"," ",html.unescape(re.sub(r"(?s)<[^>]+>"," ",raw))).strip()
 
 def main():
-    print("StoneAge early bare-disc public identity probe — R2")
+    print("StoneAge early bare-disc public identity probe — R3")
     print(f"TARGET|ruten_id={TARGET}|role=early-bare-disc")
-    print("PARENT|STONEAGE-RUTEN-EARLY-BARE-DISC-R1|visual carrier-family candidate")
+    print("PARENT|STONEAGE-RUTEN-EARLY-BARE-DISC-R1 + R2 identity probe|visual carrier-family candidate; R2 marketplace-ID false positive corrected")
     print("SCOPE|public product detail+description|strict identity fields only|no OCR|no contact data|no payload")
     errors=[];fields=[];tokens=set()
+    excluded_tokens={TARGET}
 
     try:
         st,final,h,b=fetch(detail_url("detail"))
@@ -114,7 +115,10 @@ def main():
             seen.add(k);fields.append(k)
             print(f"FIELD|path={clean(path,1200)}|value={clean(val,10000)}")
             for pat in CODE_PATTERNS:
-                for m in pat.finditer(val):tokens.add(m.group(0))
+                for m in pat.finditer(val):
+                    token=m.group(0)
+                    if token not in excluded_tokens:
+                        tokens.add(token)
     except Exception as e:
         durl=""
         errors.append(("detail",type(e).__name__,str(e)))
@@ -134,10 +138,16 @@ def main():
                     s=clean(plain[max(0,pos-220):pos+520],1200)
                     if s not in seen:
                         seen.add(s);snippets.append((word,s))
-                        print(f"SNIPPET|needle={clean(word)}|text={s}")
+                        # Do not persist marketplace boilerplate/contact context.
+                        low_s=s.lower()
+                        if not any(x in low_s for x in ("電話", "电话", "匯款", "汇款", "面交", "詐騙", "诈骗", "賣場", "卖场")):
+                            print(f"SNIPPET|needle={clean(word)}|text={s}")
                     start=pos+max(1,len(word))
             for pat in CODE_PATTERNS:
-                for m in pat.finditer(plain):tokens.add(m.group(0))
+                for m in pat.finditer(plain):
+                    token=m.group(0)
+                    if token not in excluded_tokens:
+                        tokens.add(token)
         except Exception as e:
             errors.append(("description",type(e).__name__,str(e)))
 
