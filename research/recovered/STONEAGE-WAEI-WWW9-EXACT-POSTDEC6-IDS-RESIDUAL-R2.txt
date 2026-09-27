@@ -1,0 +1,23 @@
+StoneAge Waei www9 exact post-Dec6 download-ID residual — R2
+PARENT|STONEAGE-WAEI-WWW9-EXACT-POSTDEC6-IDS-R1|retry failed IDs only
+SCOPE|exact IDs=50,55,56,57,58,59,60|attempts=2|serial bounded retry|no target payload
+RETRY_ERROR|id=59|attempt=1|kind=URLError|message=<urlopen error timed out>
+RETRY_ERROR|id=59|attempt=2|kind=URLError|message=<urlopen error timed out>
+RETRY_ERROR|id=60|attempt=1|kind=URLError|message=<urlopen error timed out>
+RETRY_ERROR|id=60|attempt=2|kind=URLError|message=<urlopen error timed out>
+CDX|id=50|attempt=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%3A80%2Fdownload%2Fdownloading.php%3FID%3D50&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001207&to=20010112&limit=5000
+CDX|id=55|attempt=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%3A80%2Fdownload%2Fdownloading.php%3FID%3D55&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001207&to=20010112&limit=5000
+CDX|id=56|attempt=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%3A80%2Fdownload%2Fdownloading.php%3FID%3D56&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001207&to=20010112&limit=5000
+CDX|id=57|attempt=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%3A80%2Fdownload%2Fdownloading.php%3FID%3D57&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001207&to=20010112&limit=5000
+CDX|id=58|attempt=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%3A80%2Fdownload%2Fdownloading.php%3FID%3D58&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001207&to=20010112&limit=5000
+ERROR|id=59|kind=URLError|message=<urlopen error timed out>
+ERROR|id=60|kind=URLError|message=<urlopen error timed out>
+COUNT|ids_tested|7
+COUNT|queries_completed|5
+COUNT|rows|0
+COUNT|ids_with_rows|0
+IDS_WITH_ROWS|
+COUNT|locations_recovered|0
+COUNT|errors|2
+RESOLUTION|EXACT_WWW9_RESIDUAL_PARTIAL|retain only still-failed IDs as open
+EVIDENCE_BOUNDARY|Zero indexed rows bound this exact Wayback route only; they do not negate the documented Jan-2001 trial download.
