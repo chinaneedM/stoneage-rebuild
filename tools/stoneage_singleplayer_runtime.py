@@ -57,6 +57,10 @@ from tools.stoneage_battle_state_model import (
     resolve_persistent_capture_transition,
     resolve_persistent_ordinary_round,
 )
+from tools.stoneage_battle_event_contract import (
+    BattleRoundTransition,
+    build_battle_round_transition,
+)
 from tools.stoneage_enemy_spawn_model import (
     EnemyBirthRolls,
     SpawnedEnemy,
@@ -648,6 +652,49 @@ class SinglePlayerHistoricalRuntime:
             self.domain.persistent.pets.clear()
             self.domain.persistent.pets.update(staged)
         return result
+
+    def resolve_persistent_battle_transition(
+        self,
+        state: PersistentBattleState,
+        *,
+        commands: Mapping[str, BattleCommand],
+        initiative_random_subtracts: Mapping[str, int],
+        profiles: Mapping[str, BattleCombatProfile],
+        attack_rolls: Mapping[str, OrdinaryAttackRolls],
+        defense_profile: str,
+        capture_contexts: Mapping[str,OrdinaryCaptureContext] | None = None,
+        capture_rolls: Mapping[str,OrdinaryCaptureRolls] | None = None,
+        escape_contexts: Mapping[str,OrdinaryEscapeContext] | None = None,
+        escape_rolls: Mapping[str,OrdinaryEscapeRolls] | None = None,
+        no_risk: bool = False,
+        captured_pets_by_target_id: Mapping[str,PetActor] | None = None,
+        drop_rolls_by_enemy_id: Mapping[
+            str,Sequence[DropAllocationRoll]
+        ] | None = None,
+        field_attr: str = "none",
+        field_power: int = 0,
+        tie_break_order: Sequence[str] | None = None,
+    ) -> BattleRoundTransition:
+        """Advance one round and expose only the typed engine-facing transition."""
+        result=self.resolve_persistent_battle_round(
+            state,
+            commands=commands,
+            initiative_random_subtracts=initiative_random_subtracts,
+            profiles=profiles,
+            attack_rolls=attack_rolls,
+            defense_profile=defense_profile,
+            capture_contexts=capture_contexts,
+            capture_rolls=capture_rolls,
+            escape_contexts=escape_contexts,
+            escape_rolls=escape_rolls,
+            no_risk=no_risk,
+            captured_pets_by_target_id=captured_pets_by_target_id,
+            drop_rolls_by_enemy_id=drop_rolls_by_enemy_id,
+            field_attr=field_attr,
+            field_power=field_power,
+            tie_break_order=tie_break_order,
+        )
+        return build_battle_round_transition(result)
 
     def _player_ultimate_exited(
         self,
