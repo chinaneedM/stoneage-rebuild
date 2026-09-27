@@ -140,3 +140,24 @@ A physical-media or publication lead may be reopened only when it creates a dire
 The project will not buy, bid on, ship, borrow, request seller dumps of, or otherwise depend on physical media. This rule tightens DD-008 and operationalizes DD-009: **client-byte recovery and technical reverse engineering outrank physical provenance archaeology.**
 
 Because an accepted Taiwan/Waei v1.0 clean baseline already exists, the project must not stall while waiting for an unrecoverable Mainland Dec-2000 physical test CD. If no earlier downloadable client can currently be recovered, work proceeds on the accepted v1.0 baseline: file-tree inventory, executable/runtime analysis, resource/container decoding, maps, characters, pets, items, skills, combat, data tables, UI, updater/network behavior and controlled version diffing. Earlier artifacts are integrated later when they become digitally recoverable.
+
+
+## DD-012 — Early clean baseline as foundation; later official versions as a design library
+
+**Status:** Accepted
+
+The reconstruction project does not aim to freeze the final game at one historical StoneAge version. A sufficiently early, official, clean and technically complete client is used as the **foundation baseline** for understanding the original game's core architecture, data model, rules, content organization and player experience.
+
+Later official StoneAge releases are then treated as a **design/content library**, not as mandatory cumulative upgrades. Their maps, pets, systems, quests, mechanics, convenience features, progression structures, world-building ideas and other content may be studied and selectively incorporated.
+
+Every later-version element must be evaluated before inclusion. It may be:
+
+- retained substantially as-is if it remains coherent and useful;
+- adapted to fit the project's single-player architecture and modern pacing;
+- redesigned to better fit the reconstructed world, progression and systems;
+- merged with earlier concepts where that produces a cleaner design;
+- omitted if it creates redundancy, incoherence, excessive grind, technical baggage or conflicts with the intended experience.
+
+Therefore the final game is not defined as a strict clone of v1.0, 1.82 or any later official release. The historical baseline provides **ground truth and design DNA**; later official versions provide **validated source material and evolutionary evidence**; the final implementation is an independently designed modern StoneAge reconstruction guided by project principles.
+
+This decision complements DD-003 and DD-011: recover enough trustworthy official material to understand the game deeply, then use historical versions as inputs to deliberate design rather than as immutable specifications.
