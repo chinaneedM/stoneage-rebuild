@@ -589,6 +589,10 @@ def main():
             ("I", cfgs["I"], 0x32650, 0x328C0),
             ("S:I", s_branch_cfgs.get("S:I"), 0x30922, 0x30B4F),
             ("S:W", s_branch_cfgs.get("S:W"), 0x30B4F, 0x30CCB),
+            # Battle receive callback: preserve a bounded original-v1 control
+            # window so C/P/A/U subcommand semantics can be derived from
+            # direct branch/write/call evidence instead of descendant names.
+            ("B", cfgs.get("B"), 0x32C70, 0x32E40),
         ):
             if cfg is None:
                 continue
