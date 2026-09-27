@@ -1,0 +1,34 @@
+name: Retry Waei StoneAge sa25 generation
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_sa25_generation_retry.py
+      - tests/test_stoneage_waei_sa25_generation_retry.py
+      - .github/workflows/retry-stoneage-waei-sa25-generation.yml
+permissions:
+  contents: write
+concurrency:
+  group: stoneage-waei-sa25-generation
+  cancel-in-progress: true
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_waei_sa25_generation_retry -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_sa25_generation_retry > research/recovered/STONEAGE-WAEI-SA25-GENERATION-RESIDUAL-R1.txt
+      - run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-WAEI-SA25-GENERATION-RESIDUAL-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: close Waei sa25 generation residual'
+          git pull --rebase origin main
+          git push
