@@ -1,0 +1,42 @@
+name: Probe early StoneAge bare disc
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_ruten_early_bare_disc_probe.py
+      - tests/test_stoneage_ruten_early_bare_disc_probe.py
+      - .github/workflows/probe-stoneage-ruten-early-bare-disc.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-ruten-early-bare-disc
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate bare-disc probe
+        run: python3 -m unittest tests.test_stoneage_ruten_early_bare_disc_probe -v
+      - name: Probe bare-disc carrier
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_ruten_early_bare_disc_probe \
+            > research/recovered/STONEAGE-RUTEN-EARLY-BARE-DISC-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-RUTEN-EARLY-BARE-DISC-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe early StoneAge bare disc'
+          git pull --rebase origin main
+          git push
