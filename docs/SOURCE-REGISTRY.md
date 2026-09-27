@@ -2762,3 +2762,82 @@ Every substantial source should record:
   - it materially strengthens the hypothesis that the erroneous first-print statement involved **600 points / 100 hours**.
 - Critical limit:
   - do not promote that exact first-print wording to FACT until a manual scan/photo or contemporaneous report quotes it directly.
+
+
+## 2026-09-27 source-survival correction: direct China.com legacy pages recovered
+
+The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `SRC-CN-2001-WAEI-SA-MANUAL-ERRATA-MIRROR-01` remain preserved as fallback mirrors/transcriptions. They are **superseded for source quality**, not deleted: direct legacy China.com StoneAge pages are still live and now provide a closer contemporaneous source surface.
+
+### SRC-CN-2000-CHINADOTCOM-SA-TEST-CD-GIVEAWAY-01
+
+- Title/body heading: **`石器时代游戏测试光盘免费大赠送`**
+- Original period: **December 2000**
+- Retrieval date: **2026-09-27**
+- Surviving legacy page: https://game.china.com/hotspot/shiqi/answer/index.html
+- Source type: **still-live legacy China.com / 中华网游戏频道 StoneAge activity page**
+- Confidence: **A-/B+ for the literal distribution terms and dates shown on the legacy page**
+- Supports:
+  - the giveaway object is explicitly a **游戏测试光盘**, not merely a generic trial entitlement;
+  - Beijing-external participants answered questions and supplied detailed address information to receive the **disc free**, while supplies lasted;
+  - **Beijing participants were instructed to collect the disc at 晶合软件 sales points**;
+  - activity deadline: **2000-12-31**;
+  - official test period: **2000-12-15 through 2001-01-10**.
+- Archaeology significance:
+  - proves a pre-retail Mainland physical optical carrier existed;
+  - creates the earliest currently source-defined Mainland client-disc recovery target;
+  - gives a concrete distribution-channel token: **晶合软件**.
+- Does not support:
+  - exact disc artwork, volume label, filesystem, executable version, publication number, matrix/IFPI or hashes;
+  - byte identity with Taiwan v1.0;
+  - byte or physical identity with the collector-described magazine-insert test manual/disc.
+
+### SRC-CN-2001-CHINADOTCOM-SA-LEGACY-PRODUCT-01
+
+- Title/context: China.com legacy StoneAge formal product / launch page
+- Retrieval date: **2026-09-27**
+- URL: https://game.china.com/hotspot/shiqi/news/1.html
+- Source type: still-live legacy China.com game-channel page preserving contemporary product information
+- Confidence: **A-/B+ for literal product fields**
+- Supports:
+  - Mainland formal product release: **2001-01-12**;
+  - retail price: RMB 29;
+  - language: Simplified Chinese;
+  - **carrier: 1 CD-ROM**;
+  - JSS production, Beijing Waei authorization, Zhiguan Beijing general agency, Guangxi-Jinhaiwan publication/distribution;
+  - four different Mainland package designs and a contemporaneous **45-hour** launch-time statement.
+- Archaeology significance:
+  - gives a direct formal-retail optical-carrier control immediately after the test-CD period;
+  - supports treating the December-2000 test CD and January-2001 retail CD as separate recovery objects until byte evidence proves otherwise.
+
+### SRC-CN-2001-CHINADOTCOM-SA-LEGACY-NEWS-ARCHIVE-01
+
+- Context: surviving China.com StoneAge legacy news archive
+- Retrieval date: **2026-09-27**
+- URL: https://game.china.com/hotspot/shiqi/news/2.html
+- Source type: still-live legacy portal archive preserving contemporary China.com and Beijing-Waei notices
+- Confidence: **A-/B+ for literal dated notices on the legacy page**
+- Supports:
+  - **2001-01-11** mail-order follow-up: participants in the earlier StoneAge trial-version giveaway received a discounted formal copy;
+  - **2001-02-26** charging notice: 300 points = 50 hours, 600 points = 100 hours, product registration grants 300 points / 50 hours;
+  - **2001-03-12** Beijing-Waei manual-errata apology: second-batch printed manuals would be corrected, first-batch manuals would receive web errata, and eligible existing registrants received an additional 300 points = 50 hours.
+- Source correction:
+  - this page materially upgrades the source surface behind the project's earlier later-mirror records;
+  - the garbled character rendering in some modern crawlers is an encoding/replay issue; the dates, numeric tables and page/link structure remain recoverable, while clean secondary mirrors remain useful for Chinese-text control.
+- Does not by itself expose the exact erroneous first-print manual line.
+
+### SRC-CN-EARLY-JINGHE-SA-TEST-DISTRIBUTION-01
+
+- Title/context: `晶合软件` / Beijing Jinghe Era Software corporate profile
+- Retrieval date: **2026-09-27**
+- URL: https://www.ourgame.com/subject/globallink/jinhe.html
+- Source type: surviving early corporate/channel profile; exact publication date not exposed on the current page
+- Confidence: **B for the literal corporate-history statement**
+- Supports:
+  - 晶合时代 operated a broad software-sales chain;
+  - the company profile explicitly says it organized **`《石器时代》测试版软件的免费发放`**;
+  - the same profile identifies close institutional/business ties between Jinghe and `《大众软件》`.
+- Cross-source significance:
+  - independently coheres with China.com's instruction that Beijing players collect StoneAge test discs from **晶合软件销售点**.
+- Critical limit:
+  - Jinghe's connection to `《大众软件》` does **not** prove that the collector-described magazine-insert Mainland 1.0 test disc came from a specific Popsoft issue;
+  - no exact 2000 Popsoft issue/disc carrier has been resolved in this pass.

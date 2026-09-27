@@ -2441,3 +2441,26 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   2. first-batch and/or second-batch retail manual page containing the registration-time claim;
   3. package-to-manual-to-disc photo chain, publication number, matrix/IFPI, ISO/file tree or hashes.
 - New canonical note: `research/clients/STONEAGE-MAINLAND-SA10-TEST-CARRIER-AND-MANUAL-R1.md`.
+
+
+## Mainland official test CD confirmed on surviving China.com legacy site — 2026-09-27
+
+- **CORRECTION / EVIDENCE PROMOTION:** the earlier record only established a generic pre-retail trial-copy giveaway from later mirrors. A still-live legacy **China.com / 中华网游戏频道** StoneAge page now preserves the original activity page itself: `https://game.china.com/hotspot/shiqi/answer/index.html`.
+- The page title/body explicitly says **`石器时代游戏测试光盘免费大赠送`**. This promotes the existence of a pre-retail Mainland **physical test CD** from OPEN to **FACT / surviving contemporaneous portal page**.
+- The activity page states:
+  - outside Beijing, players completed the questionnaire and supplied a detailed mailing address to receive the **disc for free while supplies lasted**;
+  - Beijing players were instructed to collect it at **晶合软件销售点**;
+  - activity deadline: **2000-12-31**;
+  - official test period: **2000-12-15 through 2001-01-10**.
+- A separate still-live China.com legacy product page, `https://game.china.com/hotspot/shiqi/news/1.html`, identifies the formal Mainland retail product as **载体：1 CD-ROM**, nationwide release **2001-01-12**, and gives the JSS -> Beijing Waei -> Zhiguan -> Guangxi-Jinhaiwan publication chain.
+- The legacy news archive `https://game.china.com/hotspot/shiqi/news/2.html` also directly preserves the January mail-order/trial-participant discount notices and the March manual-errata/charging announcements. The previous modern mirror sources remain useful fallbacks, but are no longer the best surviving surface.
+- Independent channel corroboration: a surviving 晶合时代 corporate profile on OurGame says the company organized the **free distribution of StoneAge test-version software** and operated the 晶合 software retail chain. This coheres with China.com's instruction that Beijing users collect test discs from 晶合 outlets.
+- **Priority change:** the **2000-12 Mainland official test CD** now outranks ordinary 2001 retail package archaeology as the earliest Mainland physical-client recovery target. The 2001 retail disc remains the next provenance anchor and comparison target.
+- The 2020 collector's separate statement that a Mainland 1.0 test manual+disc was bundled with a magazine remains **OPEN**. Current evidence does not prove that his magazine-insert specimen is identical to the China.com/Jinghe giveaway disc.
+- A constrained search of `大众软件` + StoneAge + 2000/test-disc combinations found **no direct issue/disc record tying the collector's magazine insert to 《大众软件》**. Jinghe's close corporate/media relationship with 《大众软件》 is therefore only a search hypothesis, not a carrier identification.
+- Immediate target is now a public photograph, file tree, ISO/BIN/CUE, volume label, matrix/IFPI, hash, or exact magazine/disc catalogue identity for the **2000-12 test CD**.
+- New source records:
+  - `SRC-CN-2000-CHINADOTCOM-SA-TEST-CD-GIVEAWAY-01`;
+  - `SRC-CN-2001-CHINADOTCOM-SA-LEGACY-PRODUCT-01`;
+  - `SRC-CN-2001-CHINADOTCOM-SA-LEGACY-NEWS-ARCHIVE-01`;
+  - `SRC-CN-EARLY-JINGHE-SA-TEST-DISTRIBUTION-01`.

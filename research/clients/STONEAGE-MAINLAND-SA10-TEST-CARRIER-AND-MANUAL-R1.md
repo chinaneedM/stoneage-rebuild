@@ -98,3 +98,62 @@ The priority order is now:
   https://forum.gamer.com.tw/C.php?bsn=1571&snA=81396
 - Sina launch report already registered by the project:
   https://games.sina.com.cn/newgames/0101/01113641.shtml
+
+
+## 6. Direct-source promotion: the official test CD is now FACT — 2026-09-27
+
+The earlier version of this note correctly treated the pre-retail giveaway carrier as unresolved because only modern mirrors had been used. That limitation is now superseded.
+
+A still-live China.com legacy page survives at:
+
+- https://game.china.com/hotspot/shiqi/answer/index.html
+
+Its heading is **`石器时代游戏测试光盘免费大赠送`** and the activity terms explicitly identify a physical test disc.
+
+The page states:
+
+- outside Beijing: answer the questionnaire, provide a detailed address and receive the **disc free**, while supplies lasted;
+- Beijing: obtain it at **晶合软件销售点**;
+- giveaway deadline: **2000-12-31**;
+- official test window: **2000-12-15 to 2001-01-10**.
+
+Accordingly:
+
+- **existence of a Mainland pre-retail physical test CD = FACT**;
+- **its exact bytes/build/artwork = OPEN**;
+- **identity with the collector's magazine-insert test manual/disc = OPEN**.
+
+### Formal-retail control
+
+China.com's legacy formal-product page survives at:
+
+- https://game.china.com/hotspot/shiqi/news/1.html
+
+It identifies the January formal product as **1 CD-ROM** with release date **2001-01-12**.
+
+This creates a clean chronological recovery pair:
+
+1. **2000-12-15 to 2001-01-10 official test-CD lineage**;
+2. **2001-01-12 formal Mainland retail CD lineage**.
+
+No byte identity between the two is assumed.
+
+### Jinghe channel corroboration
+
+OurGame preserves an early 晶合时代 profile at:
+
+- https://www.ourgame.com/subject/globallink/jinhe.html
+
+It explicitly credits Jinghe with organizing the **free distribution of StoneAge test-version software**, independently matching the China.com Beijing pickup route.
+
+Jinghe also had close ties to `《大众软件》`, which makes Popsoft a rational magazine-search surface for the collector-described magazine-insert specimen. However, no direct 2000 issue/disc record was found in this pass. Therefore:
+
+- `《大众软件》 as the collector's exact magazine carrier` = **HYPOTHESIS / search lead only**.
+
+### Updated recovery priority
+
+1. recover any surviving photograph/listing/catalogue/scan identifying the **2000-12 official test CD**;
+2. search public optical-preservation indexes for that disc once an exact label/file/token is obtained;
+3. independently resolve the collector's **test manual + magazine-insert disc** and determine whether it is the same distribution lineage;
+4. retain the 2001-01 formal retail CD as the immediate post-test diff anchor;
+5. if test-CD bytes appear, stop historical package research and perform hashes, file-tree inventory and controlled diff against Taiwan v1.0 and the January Mainland retail lineage.

@@ -420,3 +420,20 @@ IMPORTANT LIMIT: this closes a battle-map inheritance chain. It is not evidence 
 **HYPOTHESIS / later player recollection:** a 2003 17173 player retrospective says the previously stated **600 points** became **300 points** when charging began. Combined with the official 50-hour errata dispute, this makes `first-print manual = 600 points / 100 hours` a strong working hypothesis, **not FACT** until a first-print page or contemporaneous quotation is recovered. [`SRC-CN-2003-17173-SA-600-TO-300-RECOLLECTION-01`]
 
 **CONFLICT CONTROL:** contemporaneous Sina launch coverage says the four Mainland packages came with **45 hours** of free time. Do not silently equate that launch-promotion number with either the corrected 300-point/50-hour registration standard or the hypothesized first-print 600-point/100-hour statement. [`SRC-CN-2001-SINA-STONEAGE-MAINLAND-LAUNCH-01`]
+
+
+### 2000-12-15 to 2001-01-10 — Mainland official test CD
+
+**FACT / surviving contemporaneous portal page:** China.com's still-live legacy StoneAge activity page is titled **`石器时代游戏测试光盘免费大赠送`** and explicitly distributes a physical test disc. Outside Beijing, participants supplied an address after completing a questionnaire and received the disc free while supplies lasted; Beijing participants were directed to **晶合软件销售点**. The activity closed **2000-12-31**, while the page explicitly brackets the official test period as **2000-12-15 through 2001-01-10**. [`SRC-CN-2000-CHINADOTCOM-SA-TEST-CD-GIVEAWAY-01`]
+
+**INDEPENDENT CHANNEL CORROBORATION:** a surviving 晶合时代 profile states that the company organized the **free distribution of the StoneAge test-version software**, consistent with China.com's Beijing pickup instruction. [`SRC-CN-EARLY-JINGHE-SA-TEST-DISTRIBUTION-01`]
+
+**RECOVERY CONSEQUENCE:** a surviving authenticated copy of this test CD would predate the January-2001 formal retail carrier and is now the highest-priority Mainland physical-client target. Its relationship to Taiwan v1.0, the January retail disc and later 1.82-labelled media must be established by bytes, not version-label assumptions.
+
+**OPEN / separate carrier possibility:** a 2020 collector says a Mainland 1.0 test manual+disc existed as a magazine insert. No direct evidence currently binds that specimen to the China.com/Jinghe giveaway, and no exact magazine issue has been resolved. Do not merge the two carrier routes yet. [`SRC-CN-2020-GAMER-MAINLAND-SA10-TEST-CARRIER-LEAD-01`]
+
+### 2001-01-12 — formal Mainland retail carrier control
+
+**FACT / surviving China.com legacy product page:** the formal product information identifies **载体：1 CD-ROM**, release date **2001-01-12**, price RMB 29, Simplified Chinese, and the JSS / Beijing-Waei / Zhiguan / Guangxi-Jinhaiwan chain. This gives a direct physical-media control immediately after the official test period. [`SRC-CN-2001-CHINADOTCOM-SA-LEGACY-PRODUCT-01`]
+
+**SOURCE-SURVIVAL CORRECTION:** China.com's legacy StoneAge news pages remain live under `game.china.com/hotspot/shiqi/`. They directly preserve the Jan-2001 trial-participant/mail-order notices and the Mar-2001 charging/manual-errata announcements previously known to the project mainly through later mirrors. [`SRC-CN-2001-CHINADOTCOM-SA-LEGACY-NEWS-ARCHIVE-01`]
