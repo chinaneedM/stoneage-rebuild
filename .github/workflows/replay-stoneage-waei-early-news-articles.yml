@@ -1,0 +1,39 @@
+name: Replay Waei StoneAge early news articles
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_early_news_article_probe.py
+      - tests/test_stoneage_waei_early_news_article_probe.py
+      - .github/workflows/replay-stoneage-waei-early-news-articles.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-early-news-articles
+  cancel-in-progress: true
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_waei_early_news_article_probe -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_early_news_article_probe > research/recovered/STONEAGE-WAEI-EARLY-NEWS-ARTICLES-R1.txt
+      - name: Commit derived report
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-WAEI-EARLY-NEWS-ARTICLES-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: replay Waei StoneAge early news articles'
+          git pull --rebase origin main
+          git push
