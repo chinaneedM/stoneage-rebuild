@@ -92,6 +92,16 @@ def targets(text, base=ORIGINAL):
         mm = re.search(r"(?i)url\s*=\s*(.+)$", content)
         if mm:
             found.append(("meta-refresh", urllib.parse.urljoin(base, mm.group(1).strip(" \"'"))))
+    # Script-only launch stubs were common on period sites; capture direct
+    # JavaScript navigation and absolute URLs without executing script.
+    for m in re.finditer(
+        r"(?is)(?:window\\.)?(?:location(?:\\.href)?|open)\\s*(?:=|\\()\\s*[\\\"']([^\\\"']+)[\\\"']",
+        text,
+    ):
+        found.append(("js-nav", urllib.parse.urljoin(base, html.unescape(m.group(1)).strip())))
+    for m in re.finditer(r"(?i)https?://[^\\s\\\"'<>]+", text):
+        found.append(("absolute-url", html.unescape(m.group(0)).rstrip(");,.")))
+
     # Handle reversed meta attribute order.
     for m in re.finditer(
         r"(?is)<meta\b[^>]*content\s*=\s*[\"']([^\"']+)[\"'][^>]*http-equiv\s*=\s*[\"']?refresh[\"']?",
@@ -116,7 +126,7 @@ def token_hits(text):
 
 
 def main():
-    print("StoneAge Jinghe/JHPOP Dec-2000 root replay — R1")
+    print("StoneAge Jinghe/JHPOP Dec-2000 root replay — R2")
     print(f"TARGET|timestamp={TIMESTAMP}|original={ORIGINAL}|exact-single-capture|no software payload")
     try:
         status, final, body = fetch(replay_url())
@@ -134,6 +144,7 @@ def main():
             print(f"TARGET_LINK|kind={clean(kind)}|url={clean(url)}")
         if body_text:
             print(f"TEXT|{clean(body_text, 2000)}")
+        print(f"RAW_HTML|{clean(text, 2000)}")
         print(f"COUNT|targets|{len(nav)}")
         print(f"COUNT|token_hits|{len(hits)}")
         if nav:

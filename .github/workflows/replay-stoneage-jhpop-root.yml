@@ -28,7 +28,7 @@ jobs:
           set -euo pipefail
           mkdir -p research/recovered
           python3 -m tools.stoneage_jhpop_root_replay \
-            > research/recovered/STONEAGE-JHPOP-2000-ROOT-REPLAY-R1.txt
+            > research/recovered/STONEAGE-JHPOP-2000-ROOT-REPLAY-R2.txt
       - name: Commit derived evidence
         run: |
           set -euo pipefail
@@ -37,7 +37,7 @@ jobs:
           R='research/recovered/STONEAGE-JHPOP-2000-ROOT-REPLAY-R1.txt'
           git add "$R"
           git diff --cached --quiet && exit 0
-          git commit -m 'research: replay Jinghe JHPOP Dec-2000 root'
+          git commit -m 'research: decode Jinghe JHPOP Dec-2000 root'
           if ! git pull --rebase origin main; then
             git rebase --abort || true
             git fetch origin main

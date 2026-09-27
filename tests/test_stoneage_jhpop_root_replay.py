@@ -25,6 +25,13 @@ class JHPOPRootReplayTests(unittest.TestCase):
         self.assertIn(("frame", "http://www.jhpop.com:80/top.htm"), got)
         self.assertIn(("frame", "http://www.jhpop.com:80/body.asp"), got)
 
+    def test_extracts_javascript_navigation(self):
+        html = """<script>window.location='http://game.jhpop.com/'; window.open('/shop/default.asp')</script>"""
+        got = set(targets(html))
+        self.assertIn(("js-nav", "http://game.jhpop.com/"), got)
+        self.assertIn(("absolute-url", "http://game.jhpop.com/"), got)
+        self.assertIn(("js-nav", "http://www.jhpop.com:80/shop/default.asp"), got)
+
     def test_semantic_tokens(self):
         hits = token_hits("欢迎进入石器时代 WGS download")
         self.assertIn("石器时代", hits)
