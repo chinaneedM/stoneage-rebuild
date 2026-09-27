@@ -1,0 +1,19 @@
+StoneAge Jinghe/JHPOP launch-window Wayback namespace census — R1
+SCOPE|CDX metadata only|launch=20001115..20010228|root-control=20010101..20020331|all statuses|collapse=urlkey|no archived-body|no software payload
+QUERY|label=launch-domain|scope=launch|status=200|rows=1|bytes=191|sha256=671439c195b58b49d9b617615e57d52e8e09a2800e35d2334d491740da8bebcc|final=https://web.archive.org/cdx/search/cdx?url=jhpop.com&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001115&to=20010228&limit=50000&collapse=urlkey
+QUERY|label=launch-www-prefix|scope=launch|status=200|rows=1|bytes=191|sha256=671439c195b58b49d9b617615e57d52e8e09a2800e35d2334d491740da8bebcc|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.jhpop.com%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001115&to=20010228&limit=50000&collapse=urlkey
+QUERY|label=root-control|scope=control|status=200|rows=1|bytes=193|sha256=6b54a3fca1763f14dd560bf04ada963603a07c2a49813a07fd250694c0c9a8a9|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.jhpop.com%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20010101&to=20020331&limit=50000&collapse=urlkey
+ROW|timestamp=20001204160300|status=200|score=0|tokens=|basename=|mime=text/html|length=410|redirect=|original=http://www.jhpop.com:80/
+TOPDIR|name=/|count=1
+STATUS_COUNT|status=200|count=1
+QUERY_COUNT|label=launch-domain|count=1
+QUERY_COUNT|label=launch-www-prefix|count=1
+QUERY_COUNT|label=root-control|count=1
+COUNT|unique_rows|2
+COUNT|launch_rows|1
+COUNT|candidate_rows|0
+COUNT|binary_rows|0
+COUNT|root_control_rows|1
+COUNT|errors|0
+RESOLUTION|JHPOP_LAUNCH_NAMESPACE_FOUND_NO_STRONG_TOKEN|use recovered directory/page topology for targeted replay
+EVIDENCE_BOUNDARY|URL metadata can establish historical site topology only; it cannot authenticate a StoneAge disc/client or byte identity.
