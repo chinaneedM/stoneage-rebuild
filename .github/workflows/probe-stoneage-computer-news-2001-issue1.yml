@@ -1,0 +1,50 @@
+name: Probe 2001 Computer Newspaper StoneAge article
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_computer_news_2001_issue1_article_probe.py
+      - tests/test_stoneage_computer_news_2001_issue1_article_probe.py
+      - .github/workflows/probe-stoneage-computer-news-2001-issue1.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-computer-news-2001-issue1
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate article probe
+        run: python3 -m unittest tests.test_stoneage_computer_news_2001_issue1_article_probe -v
+      - name: Replay exact article
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_computer_news_2001_issue1_article_probe \
+            > research/recovered/STONEAGE-COMPUTER-NEWS-2001-ISSUE1-ARTICLE-R1.txt
+      - name: Commit derived text evidence
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-COMPUTER-NEWS-2001-ISSUE1-ARTICLE-R1.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: replay 2001 Computer Newspaper StoneAge article'
+          for n in 1 2 3 4 5; do
+            git push && exit 0
+            sleep $((n * 3))
+          done
+          exit 1
