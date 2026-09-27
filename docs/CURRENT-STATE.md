@@ -2675,3 +2675,34 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Regional boundary: these binaries are Taiwan/Waei first-party `stoneage.waei.net` artifacts. Do not relabel them as Beijing-Waei/Mainland test or retail binaries.
 - Priority remains FULL-CLIENT RECOVERY: use this recovered filename/runtime grammar as a control while pursuing the ~274 MB Jan-2001 Waei trial client and Dec-2000 Mainland official test-CD bytes. Reopen missing `SA_N` generations only when a new first-party manifest/page/filename token appears.
 - Derived reports: `STONEAGE-WAEI-SUBDOMAIN-LAUNCH-CDX-R1.txt`, `STONEAGE-WAEI-SA40-SA42-PAYLOAD-CLASSIFIER-R1.txt`, `STONEAGE-WAEI-SA40-SA42-LINEAGE-R1.txt`, `STONEAGE-WAEI-SAUPDATE-DIRECTORY-R1.txt`, `STONEAGE-WAEI-RUNTIME-GENERATIONS-R1.txt`, `STONEAGE-WAEI-SA25-GENERATION-RESIDUAL-R1.txt`.
+
+## Launch-window download-route residuals bounded — 2026-09-27
+
+- The source-derived Waei www9 dynamic-download hypothesis is now operationally **BOUNDED**:
+  - preserved 2000-12-06 Waei download catalogue uses trial-category IDs 33 and 34;
+  - exact launch-window probes covered downloading.php?ID=35..60;
+  - R1/R2/R3 provide at least one successful exact CDX query for every ID in that range, including final port80/noport recovery of IDs 59/60;
+  - **0 archived rows / 0 redirect targets / 0 filename tokens** were recovered.
+- Consequence: do **not** continue expanding sequential www9 IDs without a new first-party filename, route, category or manifest token. ID adjacency was only a search heuristic and produced no StoneAge evidence.
+- Derived reports:
+  - research/recovered/STONEAGE-WAEI-WWW9-EXACT-POSTDEC6-IDS-R1.txt;
+  - research/recovered/STONEAGE-WAEI-WWW9-EXACT-POSTDEC6-IDS-RESIDUAL-R2.txt;
+  - research/recovered/STONEAGE-WAEI-WWW9-EXACT-POSTDEC6-IDS-FINAL-R3.txt.
+
+- The archived China.com giveaway-results page directly exposed two historical first-party paths, /zh_cn/hotspot/shiqi/index.html and /zh_cn/download/index.html, so those route families were tested separately for **2000-12-01..2001-01-20**.
+- Result:
+  - /zh_cn/hotspot/shiqi/ exposes **0 indexed rows** in the tested launch window;
+  - /zh_cn/download/ exposes exactly **one** preserved row, 2000-12-19 /zh_cn/download/pic/a_1.html;
+  - residual replay identifies that page as an **艾尔达传奇** image-download page: displayed size **824K**, format **JPG**, description **9 images**, with link /zh_cn/download/pic/ws2000.zip;
+  - the page contains **0 StoneAge semantic tokens**.
+- Classification: the sole China.com /zh_cn/download/ launch-window object is **UNRELATED** to StoneAge. The tested /zh_cn/ StoneAge/download route family is therefore **BOUNDED** unless a new exact historical path or filename appears.
+- Derived reports:
+  - research/recovered/STONEAGE-CHINA2000-ZHCN-SHIQI-DOWNLOAD-R1.txt;
+  - research/recovered/STONEAGE-CHINA2000-ZHCN-DOWNLOAD-RESIDUAL-R2.txt;
+  - research/recovered/STONEAGE-CHINA2000-ZHCN-DOWNLOAD-CLASSIFICATION-R3.txt.
+
+- A separate 17173 launch-download archive probe produced **0 rows** on its completed exact routes and no payload/link recovery; several prefix/metadata requests failed transiently. It is not promoted over the first-party Waei/China.com evidence and remains a low-priority residual unless a source-derived 17173 filename/path appears.
+- **Priority remains FULL-CLIENT RECOVERY.** The unresolved high-value targets are still:
+  1. the exact filename/route or preserved mirror of the **~274 MB Jan-2001 Waei StoneAge trial client**;
+  2. byte-level recovery of the **Dec-2000 Mainland official test CD** (ISO/BIN/CUE, file tree, volume label, matrix/IFPI, checksum or an installed-tree copy).
+- Next-search rule: prefer **independent mirror/carrier evidence or newly recovered exact tokens**. Do not repeat the bounded Waei-ID or China.com /zh_cn/ surfaces.
