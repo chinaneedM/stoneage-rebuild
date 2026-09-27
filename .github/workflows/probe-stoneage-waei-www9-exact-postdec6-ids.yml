@@ -1,0 +1,42 @@
+name: Probe exact Waei www9 launch IDs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_www9_exact_postdec6_ids.py
+      - tests/test_stoneage_waei_www9_exact_postdec6_ids.py
+      - .github/workflows/probe-stoneage-waei-www9-exact-postdec6-ids.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-www9-exact-postdec6-ids
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate exact-ID probe
+        run: python3 -m unittest tests.test_stoneage_waei_www9_exact_postdec6_ids -v
+      - name: Probe exact post-Dec6 download IDs
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_www9_exact_postdec6_ids \
+            > research/recovered/STONEAGE-WAEI-WWW9-EXACT-POSTDEC6-IDS-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-WAEI-WWW9-EXACT-POSTDEC6-IDS-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe exact Waei www9 launch IDs'
+          git pull --rebase origin main
+          git push
