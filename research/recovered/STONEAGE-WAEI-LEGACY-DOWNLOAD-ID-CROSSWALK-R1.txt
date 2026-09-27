@@ -1,0 +1,30 @@
+StoneAge Waei legacy www9 download-ID 30..40 crosswalk — R1
+SCOPE|www9 downloading.php IDs|2000-12..2001-06|CDX + no-follow redirect header only|no payload
+CDX|id=30|port80=0|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|id=30|port80=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|id=31|port80=0|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|id=31|port80=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|id=36|port80=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|id=37|port80=0|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|id=37|port80=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|id=38|port80=0|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+CDX|id=38|port80=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+ERROR|scope=cdx:32:0|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:32:1|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:33:0|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:33:1|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:34:0|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:34:1|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:35:0|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:35:1|kind=URLError|message=<urlopen error _ssl.c:983: The handshake operation timed out>
+ERROR|scope=cdx:36:0|kind=URLError|message=<urlopen error _ssl.c:983: The handshake operation timed out>
+ERROR|scope=cdx:39:0|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:39:1|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:40:0|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:40:1|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+COUNT|rows|0
+COUNT|ids_with_rows|0
+IDS_WITH_ROWS|
+COUNT|errors|13
+RESOLUTION|LEGACY_CROSSWALK_PARTIAL|retry failed exact IDs only
+EVIDENCE_BOUNDARY|Legacy www9 IDs and later www7 fileids are distinct namespaces unless direct evidence binds them; no payload is fetched.
