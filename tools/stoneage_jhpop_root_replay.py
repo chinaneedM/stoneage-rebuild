@@ -95,11 +95,11 @@ def targets(text, base=ORIGINAL):
     # Script-only launch stubs were common on period sites; capture direct
     # JavaScript navigation and absolute URLs without executing script.
     for m in re.finditer(
-        r"(?is)(?:window\\.)?(?:location(?:\\.href)?|open)\\s*(?:=|\\()\\s*[\\\"']([^\\\"']+)[\\\"']",
+        r"(?is)(?:window\.)?(?:location(?:\.href)?|open)\s*(?:=|\()\s*[\"']([^\"']+)[\"']",
         text,
     ):
         found.append(("js-nav", urllib.parse.urljoin(base, html.unescape(m.group(1)).strip())))
-    for m in re.finditer(r"(?i)https?://[^\\s\\\"'<>]+", text):
+    for m in re.finditer(r"(?i)https?://[^\s\"'<>]+", text):
         found.append(("absolute-url", html.unescape(m.group(0)).rstrip(");,.")))
 
     # Handle reversed meta attribute order.
