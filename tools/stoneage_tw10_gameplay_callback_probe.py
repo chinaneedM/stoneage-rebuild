@@ -441,6 +441,28 @@ def image_c_string(data, sections, rva, limit=128):
         return None
 
 
+def offset_to_image_rva(sections, offset):
+    for sec in sections:
+        if sec["raw"] <= offset < sec["raw"] + sec["raw_size"]:
+            return sec["rva"] + (offset - sec["raw"])
+    return None
+
+
+def find_ascii_rvas(data, sections, token):
+    token = token.encode("ascii")
+    out = []
+    start = 0
+    while True:
+        off = data.find(token, start)
+        if off < 0:
+            break
+        rva = offset_to_image_rva(sections, off)
+        if rva is not None:
+            out.append(rva)
+        start = off + 1
+    return out
+
+
 def shared_direct_targets(cfgs):
     memberships = collections.defaultdict(dict)
     for label, cfg in cfgs.items():
@@ -624,6 +646,12 @@ def main():
             value = image_c_string(data, sections, format_rva)
             print(
                 f"B_FORMAT|rva=0x{format_rva:x}|text={clean(value or '')}"
+            )
+        for token in ("%X|%X", "%X|%X|%X", "%x|%x", "%x|%x|%x"):
+            rvas = find_ascii_rvas(data, sections, token)
+            print(
+                f"B_FORMAT_SCAN|token={clean(token)}|count={len(rvas)}|"
+                f"rvas={','.join(hex(rva) for rva in rvas[:32])}"
             )
 
         wn_cfg = cfgs["WN"]
