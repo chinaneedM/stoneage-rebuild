@@ -128,7 +128,7 @@ jobs:
               --profile research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz \
               --label-a recovered25 \
               --label-b archived2003 \
-              --sample-limit 100
+              --sample-limit 1000
           } > research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
 
       - name: Verify derived lineage report
@@ -136,9 +136,12 @@ jobs:
           set -euo pipefail
           report=research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
           test -s "$report"
-          grep -F 'COUNT|shared_paths|' "$report"
-          grep -F 'COUNT|same_path_same_sha256|' "$report"
-          grep -F 'COUNT|same_sha256_and_tw1_compatible_both|' "$report"
+          grep -F 'COUNT|shared_paths|995' "$report"
+          grep -F 'COUNT|same_path_same_sha256|980' "$report"
+          grep -F 'COUNT|same_path_changed_sha256|15' "$report"
+          grep -F 'COUNT|same_sha256_and_tw1_compatible_both|761' "$report"
+          test "$(grep -c '^STABLE_COMPATIBLE|' "$report")" = "761"
+          test "$(grep -c '^CHANGED|' "$report")" = "15"
           grep -F 'RESOLUTION|LATER_FIELDMAP_LINEAGE_CLASSIFIED' "$report"
 
       - name: Delete transient proprietary payloads
