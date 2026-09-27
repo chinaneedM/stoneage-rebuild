@@ -2815,3 +2815,38 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Boundary: this still does **not** prove concrete Taiwan-v1 map membership. Resource compatibility and later persistence cannot be promoted to v1 historical membership without independent early evidence.
 - The 15 changed maps are controlled map-evolution diff targets and must remain version-tagged rather than normalized.
 - Operational consequence: the project no longer depends on recovering the historical v1 map server before building the modern world. V1 supplies the map/cache runtime foundation; stable later maps supply a versioned content library; DESIGN reconstruction fills remaining gaps.
+
+
+## Phase 1 Taiwan v1 battle-receive closure — 2026-09-27
+
+- Direct Taiwan-v1 battle receive-state reconstruction is now recorded in:
+  - `research/clients/STONEAGE-TW10-BATTLE-RECEIVE-STATE-R1.md`;
+  - `research/recovered/STONEAGE-TW10-GAMEPLAY-CALLBACKS-R1.txt`;
+  - `research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json` under `protocol_state_machines.battle_receive`.
+- The v1 generated receive dispatcher directly proves `B(string command) -> callback RVA 0x32c70`.
+- The original `sa_3.exe` callback directly discriminates command byte 1 as:
+  - `C`;
+  - `P`;
+  - `A`;
+  - `U`;
+  - default/fallthrough.
+- `C` directly writes the full command into a **4-slot × 4096-byte** status ring; write index wraps with mask `3`.
+- Default/fallthrough directly writes the full command into a second **4-slot × 4096-byte** battle-command ring; write index also wraps with mask `3`.
+- `P` directly parses three hexadecimal fields from `command + 3`; original v1 format literal is **`%X|%X|%X`** at RVA `0x5c98c`.
+- `A` directly parses two hexadecimal fields from `command + 3`; original v1 format literal is **`%X|%X`** at RVA `0x5c984`, followed by conditional turn-number synchronization and clearing of the one-shot receive flag.
+- `U` directly sets one battle-state global to `1`; pinned descendant lineage corroborates its semantic role as the battle escape flag.
+- Pinned descendant source remains semantic corroboration for human variable names only. The command discriminator, queue geometry, parse arities, parser formats and state mutations are now **V1_DIRECT**.
+- Later descendant conditional `Z/F/O` receive branches are explicitly excluded from v1-direct baseline evidence.
+- Important architecture distinction:
+  - existing player command model = **player -> authoritative resolver/server intent**;
+  - v1 `B` receive state = **authoritative result -> client state/presentation stream**.
+  They are not conflated archaeologically.
+- Reconstruction consequence: the modern local-first engine should replace historical string/network queues with typed deterministic boundaries:
+  `BattleIntent -> resolver -> BattleStateSnapshot / BattleEvent -> presentation`.
+- The machine-readable battle state machine was deliberately placed under top-level `protocol_state_machines`, not `records`, preserving the invariant that `records` contains only dense fixed-position record layouts.
+- Validation after integration is clean:
+  - gameplay schema run **36331944401 = PASS**;
+  - gameplay model run **36331944395 = PASS**;
+  - v1↔2.5 bridge run **36331944375 = PASS**.
+- **TW10_BATTLE_RECEIVE_STATE_R1 = CLOSED.**
+- Next battle implementation seam: define the engine-neutral typed event/state contract that preserves the proven v1 separation between submitted intent, authoritative battle state, execution/animation events, turn synchronization and battle termination, without retaining the original online string protocol as an internal dependency.
