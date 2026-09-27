@@ -1,0 +1,20 @@
+StoneAge Waei www9 exact-ID final residual — R3
+PARENT|STONEAGE-WAEI-WWW9-EXACT-POSTDEC6-IDS-RESIDUAL-R2|IDs 59,60 timeout only
+SCOPE|ids=59,60|variants=port80,noport|window=20001207..20010112|CDX metadata only
+RETRY_ERROR|id=60|variant=port80|attempt=1|kind=URLError|message=<urlopen error timed out>
+RETRY_ERROR|id=60|variant=port80|attempt=2|kind=URLError|message=<urlopen error timed out>
+RETRY_ERROR|id=60|variant=noport|attempt=1|kind=URLError|message=<urlopen error timed out>
+CDX|id=59|variant=port80|attempt=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%3A80%2Fdownload%2Fdownloading.php%3FID%3D59&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001207&to=20010112&limit=5000
+CDX|id=59|variant=noport|attempt=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%2Fdownload%2Fdownloading.php%3FID%3D59&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001207&to=20010112&limit=5000
+CDX|id=60|variant=noport|attempt=2|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%2Fdownload%2Fdownloading.php%3FID%3D60&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001207&to=20010112&limit=5000
+ERROR|id=60|variant=port80|kind=URLError|message=<urlopen error timed out>
+COUNT|queries_planned|4
+COUNT|queries_completed|3
+COUNT|ids_completed|2
+IDS_COMPLETED|59,60
+COUNT|rows|0
+COUNT|ids_with_rows|0
+IDS_WITH_ROWS|
+COUNT|errors|1
+RESOLUTION|EXACT_WWW9_IDS35_60_BOUNDED|R1+R2+R3 provide successful exact-query coverage for every ID 35..60 with zero rows
+EVIDENCE_BOUNDARY|This closes only the tested Wayback exact-ID surface; it does not negate the independently documented Jan-2001 trial download.
