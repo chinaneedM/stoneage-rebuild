@@ -2945,3 +2945,25 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - `research/clients/STONEAGE-WORLD-MAP-RECONSTRUCTION-POLICY-R1.md` now records the executable enforcement boundary.
 - **WORLD_MAP_PROVENANCE_CONTRACT_R1 = IMPLEMENTED.**
 - Next world-content seam: bind the provenance-safe map library to versioned world semantics (names, warps, NPC placements and encounter areas) without assuming that a later server/master-data row proves Taiwan-v1 membership. Prefer a deterministic cross-domain world-content manifest over ad hoc direct joins.
+
+
+## Phase 1 versioned world-content manifest — 2026-09-28
+
+- The complete 761-map stable-later library is now joined to the derived recovered-2.5 floor-level world-semantic coverage through `tools/stoneage_versioned_world_manifest.py`.
+- The join is strict and engine-neutral:
+  - map path, dimensions and payload SHA-256 must match the provenance-safe stable map manifest exactly;
+  - per-floor world semantic coverage is tagged `source_version=recovered25` and `LATER_RECOVERED`;
+  - recovered 2.5 NPC/warp/encounter coverage cannot promote any map to Taiwan-v1 membership;
+  - a floor with zero recovered NPC and encounter rows is classified as a **semantic gap**, not asserted to be an historically empty map.
+- Repository-level regression reads the real committed lineage and coverage reports and verifies the current recovered-2.5 coverage over 761 stable candidates:
+  - stable with recovered server map = **572**;
+  - stable with NPC semantics = **553**;
+  - stable with Warp/WarpMan/FMWarpMan functionset presence = **544**;
+  - stable with encounter semantics = **361**;
+  - stable with both NPC and encounter semantics = **359**;
+  - stable with neither currently recovered NPC nor encounter semantics = **206**.
+- Main gameplay-model Actions run **36334349824 = PASS** for the real-report cross-domain manifest.
+- `tools/stoneage_versioned_world_geometry.py` now defines the downstream typed geometry boundary and a conservative classic-Warp projection policy. Main gameplay-model Actions run **36334787061 = PASS** for that typed layer using deterministic fixtures.
+- Full recovered-2.5 geometry extraction is still being validated separately before its counts are promoted to project facts.
+- **VERSIONED_WORLD_CONTENT_MANIFEST_R1 = IMPLEMENTED.**
+- Current highest-priority seam remains the full derived world-geometry closure: numeric NPC placement regions, classic overlap-Warp geometry and encounter rectangles, with WarpMan/FMWarpMan conditional/script behavior kept separate rather than flattened.
