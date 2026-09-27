@@ -1,0 +1,22 @@
+StoneAge Popsoft Dec-2000 exact companion-disc preservation probe — R1
+SCOPE|exact ISO filename+SHA1|InternetArchive+DiscMaster metadata only|no ISO payload
+HYPOTHESIS_BOUNDARY|Popsoft is a candidate only; collector magazine-carrier claim does not name Popsoft.
+ANCHOR|label=cd1|filename=popcd2k12_a.iso|size=725613168|sha1=1D674459E1EC61706A688AA73C94DFDC1802C074
+ANCHOR|label=cd2|filename=popcd2k12_b.iso|size=722513232|sha1=97CF4340916C39D9AA56278C6B86615E8D486DEC
+DISCM_QUERY|label=cd1|basis=filename|field=name|term=popcd2k12_a.iso|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|final=https://discmaster.textfiles.com/search?q=%22popcd2k12_a.iso%22&qfields=name&mode=deep&dedup=dedup&limit=200&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2002
+DISCM_QUERY|label=cd1|basis=filename-text|field=t|term=popcd2k12_a.iso|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|final=https://discmaster.textfiles.com/search?q=%22popcd2k12_a.iso%22&qfields=t&mode=deep&dedup=dedup&limit=200&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2002
+IA_QUERY|label=cd1|basis=filename|term=popcd2k12_a.iso|status=200|rows=0|bytes=329|sha256=6a61a80db612338efe1b547d0cdd7d34a1d61c1d6cfdc6889eb46ca6800462fd|final=https://archive.org/advancedsearch.php?q=%22popcd2k12_a.iso%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&fl%5B%5D=mediatype&rows=100&page=1&output=json
+IA_QUERY|label=cd1|basis=sha1|term=1D674459E1EC61706A688AA73C94DFDC1802C074|status=200|rows=0|bytes=429|sha256=d5e2966774e9153bad9f9c0f1b070fcc1478dbcb7f8562bdaca021c7580b2e8e|final=https://archive.org/advancedsearch.php?q=%221D674459E1EC61706A688AA73C94DFDC1802C074%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&fl%5B%5D=mediatype&rows=100&page=1&output=json
+DISCM_QUERY|label=cd2|basis=filename|field=name|term=popcd2k12_b.iso|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|final=https://discmaster.textfiles.com/search?q=%22popcd2k12_b.iso%22&qfields=name&mode=deep&dedup=dedup&limit=200&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2002
+DISCM_QUERY|label=cd2|basis=filename-text|field=t|term=popcd2k12_b.iso|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|final=https://discmaster.textfiles.com/search?q=%22popcd2k12_b.iso%22&qfields=t&mode=deep&dedup=dedup&limit=200&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2002
+IA_QUERY|label=cd2|basis=filename|term=popcd2k12_b.iso|status=200|rows=0|bytes=329|sha256=824d6c1ede5eebc5b6b836db4f8f897edfecacc3e43a79f38dfeac02a0b0b9f1|final=https://archive.org/advancedsearch.php?q=%22popcd2k12_b.iso%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&fl%5B%5D=mediatype&rows=100&page=1&output=json
+IA_QUERY|label=cd2|basis=sha1|term=97CF4340916C39D9AA56278C6B86615E8D486DEC|status=200|rows=0|bytes=428|sha256=81700ae72ed90ff50b9635a866fbc30ab32e7d6f6f1e8e835728eb5fc702228f|final=https://archive.org/advancedsearch.php?q=%2297CF4340916C39D9AA56278C6B86615E8D486DEC%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=year&fl%5B%5D=description&fl%5B%5D=collection&fl%5B%5D=mediatype&rows=100&page=1&output=json
+ERROR|scope=discm:cd1:sha1|kind=TimeoutError|message=The read operation timed out
+ERROR|scope=discm:cd2:sha1|kind=TimeoutError|message=The read operation timed out
+COUNT|queries_planned=10
+COUNT|queries_completed=8
+COUNT|ia_hits=0
+COUNT|discm_hits=0
+COUNT|errors=2
+RESOLUTION|POPSOFT_DEC2000_EXACT_IMAGE_PARTIAL|retry only failed exact filename/hash surfaces
+EVIDENCE_BOUNDARY|Index absence does not prove disc contents; surviving catalogue content list and magazine OCR remain separate evidence. No ISO bytes are fetched.
