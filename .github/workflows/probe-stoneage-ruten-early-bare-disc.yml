@@ -18,9 +18,14 @@ concurrency:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install transient image-analysis dependencies
+        run: python -m pip install --disable-pip-version-check --no-input opencv-python-headless numpy
       - name: Validate bare-disc probe
         run: python3 -m unittest tests.test_stoneage_ruten_early_bare_disc_probe -v
       - name: Probe bare-disc carrier
@@ -32,11 +37,19 @@ jobs:
       - name: Commit derived metadata only
         run: |
           set -euo pipefail
+          R=research/recovered/STONEAGE-RUTEN-EARLY-BARE-DISC-R1.txt
+          cp "$R" /tmp/report.txt
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
-          R=research/recovered/STONEAGE-RUTEN-EARLY-BARE-DISC-R1.txt
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
           git add "$R"
           git diff --cached --quiet && exit 0
           git commit -m 'research: probe early StoneAge bare disc'
-          git pull --rebase origin main
-          git push
+          for n in 1 2 3 4 5; do
+            git push && exit 0
+            sleep $((n * 3))
+          done
+          exit 1
