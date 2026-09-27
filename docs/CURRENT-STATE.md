@@ -2778,3 +2778,24 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Historical network/server analysis remains valid only where it helps recover original rules, state boundaries or data behavior.
 - Long-term possibility: if the project becomes mature enough, it may someday be presented to or discussed with the relevant StoneAge rights-holder as a prototype/foundation for an officially authorized product. This is future optionality only; the project currently makes no claim of authorization or official status.
 - Governing decision: docs/DESIGN-DECISIONS.md DD-013.
+
+
+## Foundation baseline acceptance and phase transition — 2026-09-27
+
+- Formal acceptance record added: `research/clients/STONEAGE-TW10-FOUNDATION-BASELINE-ACCEPTANCE-R1.md`.
+- **TAIWAN_V1_FOUNDATION_BASELINE_R1 = ACCEPTED.** The accepted Taiwan Waei/JSS v1.0 retail-disc specimen (Redump 104630) is sufficient to anchor technical reconstruction and the future independent single-player implementation.
+- Deterministic client boundary now established at 411 filesystem files / 383 core StoneAge files / 373,564,663 core-client bytes, with SHA-256 provenance anchors for every core file.
+- Major baseline domains already have reconstruction-grade evidence: graphics/ADRN+REAL, animation/SPR+SPRADRN, battle SAB/palette corpus, indexed/loose audio, launcher/runtime split, gameplay protocol/state surfaces, map-cache receive/write behavior and controlled v1↔2.5 gameplay/master-data bridges.
+- Important boundary: this is a **complete-enough historical foundation client**, not a claim that the retail disc contains the original MMO's complete server/world/master-data corpus. Ordinary field maps were runtime/server delivered; no obvious standalone v1 pet/item/NPC/quest master tables exist on disc. These are known architectural boundaries, not specimen failures.
+- The recovered 2.5 server/master-data corpus remains a version-tagged bridge only. Later fields/data must not be silently projected backward into Taiwan v1.0 FACT.
+- The v1 `data/savedata.dat` R1 probe recovered the exact 128-byte seed identity and runtime pathname; direct text xrefs are absent, so pointer/table indirection remains a non-blocking reverse-engineering detail. A follow-up pointer-trace workflow has already been added to the technical track.
+- **Critical-path correction:** older statements in this file saying `FULL-CLIENT RECOVERY remains highest priority` are superseded by this dated milestone and DD-011/DD-012. Open-ended earliest-client hunting is now NON-BLOCKING.
+- The ~274 MB Jan-2001 Waei online trial client remains a valuable opportunistic diff target, but the project must not delay reconstruction while searching for it.
+- Physical-only test-CD / magazine / packaging work remains outside the primary path unless it directly produces digitally retrievable bytes.
+- README phase advanced to **Phase 1 — Foundation Baseline Technical Reconstruction & Specification**.
+- Current highest-priority work is now:
+  1. close remaining v1 runtime/gameplay semantics that materially affect deterministic game rules;
+  2. consolidate character/pet/item/skill/NPC/battle/encounter/world state into engine-neutral specifications;
+  3. reconstruct/version-tag field-map and server-authoritative world content from recoverable official/later evidence;
+  4. explicitly mark DESIGN substitutions where exact early server content cannot be recovered;
+  5. prepare a local-first single-player implementation architecture with MMORPG-style systems, without building premature public-server/live-service infrastructure.
