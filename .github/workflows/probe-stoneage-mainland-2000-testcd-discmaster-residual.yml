@@ -1,0 +1,50 @@
+name: Probe StoneAge Mainland 2000 test CD DiscMaster residual
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_mainland_2000_testcd_discmaster_residual.py
+      - tests/test_stoneage_mainland_2000_testcd_discmaster_residual.py
+      - .github/workflows/probe-stoneage-mainland-2000-testcd-discmaster-residual.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-mainland-2000-testcd-discmaster-residual
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate residual probe
+        run: python3 -m unittest tests.test_stoneage_mainland_2000_testcd_discmaster_residual -v
+      - name: Probe only R1 DiscMaster English residuals
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_mainland_2000_testcd_discmaster_residual \
+            > research/recovered/STONEAGE-MAINLAND-2000-TEST-CD-DISCMASTER-RESIDUAL-R2.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-MAINLAND-2000-TEST-CD-DISCMASTER-RESIDUAL-R2.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: close Mainland 2000 test-CD DiscMaster residual'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_mainland_2000_testcd_discmaster_residual > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: close Mainland 2000 test-CD DiscMaster residual'
+          fi
+          git push
