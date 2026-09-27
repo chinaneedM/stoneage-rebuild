@@ -132,9 +132,18 @@ if (BattleTurnReceiveFlag == TRUE) {
 }
 ```
 
+Original v1 format-string recovery now directly binds the parser call to:
+
+```text
+%X|%X
+```
+
+at RVA `0x5c984` / VA `0x45c984`, exactly the pointer pushed by the `A` branch.
+
 Classification:
 
-- two-output parse + conditional second-value copy + one-shot flag clear: **V1_DIRECT**
+- two-output hexadecimal grammar `%X|%X`: **V1_DIRECT**
+- conditional second-value copy + one-shot flag clear: **V1_DIRECT**
 - `BattleAnimFlag / BattleSvTurnNo / BattleTurnReceiveFlag / BattleCliTurnNo` names: **PINNED_DESCENDANT_CORROBORATION**
 
 ## 6. BU escape flag — V1_DIRECT write; lineage semantic name
@@ -234,12 +243,12 @@ Later `Z/F/O` branches seen under descendant conditional compilation are **not**
 
 **TW10_BATTLE_COMMAND_RING_4x4096 = V1_DIRECT**
 
-**TW10_BP_PARSE_ARITY_3 = V1_DIRECT**
+**TW10_BP_PARSE_ARITY_3_AND_HEX_GRAMMAR = V1_DIRECT**
 
-**TW10_BA_PARSE_ARITY_2_AND_TURN_FLAG_SYNC = V1_DIRECT**
+**TW10_BA_PARSE_ARITY_2_HEX_GRAMMAR_AND_TURN_FLAG_SYNC = V1_DIRECT**
 
 **TW10_BU_FLAG_WRITE = V1_DIRECT**
 
 **DESCENDANT_SYMBOL_NAMES = CORROBORATION_ONLY**
 
-Next closure seam: recover the two original v1 parser format strings and then bind the receive-state concepts into the engine-neutral gameplay schema.
+Parser-format closure is complete: the original v1 binary directly yields `%X|%X|%X` for `P` and `%X|%X` for `A`. The receive-state machine is also bound into the engine-neutral gameplay schema under `protocol_state_machines.battle_receive`.
