@@ -2907,3 +2907,20 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Validation run **36332961344 = PASS** on commit `e982d01fcaccf65e0ba0243afa37aa1aa1cd8182`.
 - This closes the typed battle contract milestone at implementation + regression + CI level.
 - Fresh deterministic-gap audit indicates battle transport/presentation should now leave the critical path. The strongest next Phase-1 implementation target is the **version/provenance-safe world-map content boundary**: the project already has a v1-direct map runtime format and 761 stable later-map candidates, but runtime map definitions still need an explicit engine-neutral provenance/version contract before later map content is admitted into the modern world.
+
+
+## Phase 1 complete stable-later field-map lineage manifest — 2026-09-28
+
+- The earlier derived `STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt` was intentionally sample-limited to 100 `STABLE_COMPATIBLE` detail rows even though its aggregate count declared 761 stable candidates. That sample was sufficient for research classification but was **not** a complete engine-ingestible candidate manifest.
+- `.github/workflows/probe-stoneage-tw10-fieldmap-lineage.yml` now emits the full derived metadata surface and hard-validates the expected corpus closure:
+  - shared valid paths = **995**;
+  - same path + same SHA-256 = **980**;
+  - changed SHA-256 = **15**;
+  - same SHA-256 + Taiwan-v1 resource compatibility in both corpora = **761**;
+  - emitted `STABLE_COMPATIBLE` detail rows = **761**;
+  - emitted `CHANGED` rows = **15**.
+- Actions run **36333127087 = PASS**. It recovered both already-verified source corpora transiently, compared them, validated the full counts, deleted transient proprietary payloads, and committed **derived metadata only**.
+- Bot commit `93a0ff2c0e74b076bb8e6f7cb7e98f56c944a4f8` regenerated `research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt`; direct post-run inspection confirms the file itself contains **761** `STABLE_COMPATIBLE` rows and **15** `CHANGED` rows.
+- `STABLE_LATER_MAP_CANDIDATE` therefore now has a complete path/dimension/hash metadata manifest for all 761 candidates rather than a 100-row sample.
+- Evidence boundary is unchanged: stable later-lineage byte identity + Taiwan-v1 resource compatibility is **not** Taiwan-v1 historical membership.
+- Next implementation seam: enforce the world-map provenance policy in engine-neutral code so later recovered maps, early-membership-proven maps, later-only resource maps and DESIGN reconstructed maps cannot be admitted to runtime topology under an ambiguous free-text evidence label.
