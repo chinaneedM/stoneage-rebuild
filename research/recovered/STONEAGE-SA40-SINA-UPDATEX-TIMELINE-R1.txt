@@ -1,0 +1,15 @@
+StoneAge Sina 2002 updatex route timeline — R1
+SCOPE|calendar-2002 download.pl|col=updatex only|archived HTML routing|no-linked-payload
+TARGET|date=20021108|aid=61620|filename=shiqi4updatex_02_11_08.zip
+CDX|label=h1|status=200|rows=350|bytes=89055|sha256=44011151aca9f9a03f91f2878b174c2a0d8e17e320a3a42ceea8a7db3a7de128|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgames1.sina.com.cn%2Fcgi-bin%2Fgames%2Fdowngames%2Fdownload.pl&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20020101&to=20020630&limit=20000&filter=statuscode%3A200
+CDX|label=q3|status=200|rows=224|bytes=56866|sha256=b97bc5657a6de3623fb4fffb1122087849acc3123a5cccef5d10eb69f6864c39|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgames1.sina.com.cn%2Fcgi-bin%2Fgames%2Fdowngames%2Fdownload.pl&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&from=20020701&to=20020930&limit=20000&filter=statuscode%3A200
+COUNT|updatex_filename_rows|0
+WINDOW|label=before|mapped_rows=0
+WINDOW|label=target_to_1116|mapped_rows=0
+WINDOW|label=after|mapped_rows=0
+COUNT|same_base_before_target|0
+COUNT|same_base_target_to_1116|0
+ERROR|scope=cdx:q4|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+COUNT|errors|1
+RESOLUTION|UPDATE_X_TIMELINE_INCOMPLETE|retry failed same-category rows only
+EVIDENCE_BOUNDARY|A category base observed near the target date strengthens routing inference but does not prove the missing target URL existed or carried the advertised package.
