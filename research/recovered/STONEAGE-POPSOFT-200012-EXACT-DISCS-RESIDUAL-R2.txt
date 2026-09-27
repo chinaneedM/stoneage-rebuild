@@ -1,0 +1,10 @@
+StoneAge Popsoft Dec-2000 exact-disc SHA1 residual — R2
+PARENT|STONEAGE-POPSOFT-200012-EXACT-DISCS-R1.txt|two DiscMaster SHA1 timeouts only
+SCOPE|DiscMaster full-text exact SHA1|serial bounded retry|no payload
+QUERY|label=cd1|attempt=1|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|final=https://discmaster.textfiles.com/search?q=%221D674459E1EC61706A688AA73C94DFDC1802C074%22&qfields=t&mode=deep&dedup=dedup&limit=200&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2002
+QUERY|label=cd2|attempt=1|status=200|rows=0|bytes=2|sha256=4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945|final=https://discmaster.textfiles.com/search?q=%2297CF4340916C39D9AA56278C6B86615E8D486DEC%22&qfields=t&mode=deep&dedup=dedup&limit=200&outputAs=json&showItemName=showItemName&tsMin=1999&tsMax=2002
+COUNT|hashes=2
+COUNT|hits=0
+COUNT|errors=0
+RESOLUTION|POPSOFT_DEC2000_EXACT_IMAGE_INDEX_BOUNDED|all exact filename/hash surfaces completed with zero hits
+EVIDENCE_BOUNDARY|Zero preservation-index hits do not prove disc contents; no ISO payload is fetched.
