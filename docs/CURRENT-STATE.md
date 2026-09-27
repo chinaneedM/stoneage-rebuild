@@ -2706,3 +2706,15 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   1. the exact filename/route or preserved mirror of the **~274 MB Jan-2001 Waei StoneAge trial client**;
   2. byte-level recovery of the **Dec-2000 Mainland official test CD** (ISO/BIN/CUE, file tree, volume label, matrix/IFPI, checksum or an installed-tree copy).
 - Next-search rule: prefer **independent mirror/carrier evidence or newly recovered exact tokens**. Do not repeat the bounded Waei-ID or China.com /zh_cn/ surfaces.
+
+## DiscMaster early-client signature surface bounded — 2026-09-27
+
+- DiscMaster public indexing was tested against the accepted Taiwan v1.0 client in two complementary modes for the early **1999..2002** window:
+  1. filename signatures: `real_1.bin`, `adrn_1.bin`, `spr_1.bin`, `spradrn_1.bin`, `battletxt_1.txt`, `soundaddr_1.txt`, with `sa_3.exe`, `StoneAge.exe` and `setup.inx` as supporting signals;
+  2. full-text/internal strings: `stoneage.waei.net`, `/saupdate/newest.txt`, `spradrn_1.bin`, `battletxt_1.txt`, `soundaddr_1.txt`, plus supporting `StoneAge.exe`.
+- All filename queries completed. No multi-signal early-client carrier was found; generic `setup.inx` hits are InstallShield noise and have no StoneAge-resource co-occurrence.
+- Full-text R1 initially timed out on four terms; R2 retried only those residuals sequentially. All completed with **0 rows / 0 carriers / 0 errors**. The updater anchors `stoneage.waei.net` and `/saupdate/newest.txt` both expose zero indexed rows.
+- Classification: **DiscMaster early-client filename + full-text signature surface = BOUNDED**. Do not repeat equivalent queries without a new exact filename, hash, archive-member path, volume label or installer token.
+- Derived closure: `research/recovered/STONEAGE-EARLY-CLIENT-DISCMASTER-CLOSURE-R3.txt`.
+- This is a preservation-index negative only. It does **not** negate the documented Dec-2000 Mainland test CD or the Jan-2001 ~274 MB Waei trial download.
+- Full-client recovery remains highest priority; next work should seek a new exact token from historical page routing, independent mirrors/carriers or physical-media provenance.
