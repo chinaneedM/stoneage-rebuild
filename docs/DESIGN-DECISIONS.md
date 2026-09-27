@@ -110,3 +110,33 @@ Project consequences:
 - Final choices should be made only after recovered client/data analysis exposes the real combat timing, experience curve, encounter frequency, travel friction and progression structure.
 
 No decision is made yet to ship an external-style addon, script engine, auto-combat system, or altered experience curve. The purpose of this decision is to ensure future reconstruction does not optimize away a major part of the historical play experience before it is understood.
+
+
+## DD-011 — Online-recoverable bytes gate
+
+**Status:** Accepted
+
+The archaeology/recovery program is now constrained by a hard practical rule: **primary recovery work must target artifacts that can be obtained digitally over the internet at no cost and can be inspected or reproduced without requiring the user to acquire physical media.**
+
+Preferred recovery targets are, in order:
+
+1. complete client installers/archives that are directly downloadable;
+2. publicly preserved ISO/BIN/CUE/IMG or equivalent optical-media images;
+3. downloadable installed-client trees or independently preserved file sets;
+4. first-party or preservation-hosted patches/runtime/resource files that can be byte-recovered;
+5. exact filenames, historical download URLs, archive identifiers, hashes/checksums or file manifests that directly lead to one of the above.
+
+Physical-only evidence is **non-primary**. Magazines, newspaper articles, auction listings, packaging photographs, disc photographs, product art and collector descriptions must not become open-ended research tracks merely to prove that an object existed, looked a certain way, or was once distributed.
+
+A physical-media or publication lead may be reopened only when it creates a direct bridge to digitally retrievable bytes, for example:
+
+- an exact downloadable filename or URL;
+- a public preservation identifier;
+- a freely accessible disc image;
+- a checksum/hash that locates a public copy;
+- a file tree or volume label that identifies a retrievable archive;
+- an online mirror/carrier that exposes the client or disc contents.
+
+The project will not buy, bid on, ship, borrow, request seller dumps of, or otherwise depend on physical media. This rule tightens DD-008 and operationalizes DD-009: **client-byte recovery and technical reverse engineering outrank physical provenance archaeology.**
+
+Because an accepted Taiwan/Waei v1.0 clean baseline already exists, the project must not stall while waiting for an unrecoverable Mainland Dec-2000 physical test CD. If no earlier downloadable client can currently be recovered, work proceeds on the accepted v1.0 baseline: file-tree inventory, executable/runtime analysis, resource/container decoding, maps, characters, pets, items, skills, combat, data tables, UI, updater/network behavior and controlled version diffing. Earlier artifacts are integrated later when they become digitally recoverable.
