@@ -1,6 +1,6 @@
 import unittest
 
-from tools.stoneage_tw10_gameplay_callback_probe import image_c_string, shared_direct_targets
+from tools.stoneage_tw10_gameplay_callback_probe import find_ascii_rvas, image_c_string, shared_direct_targets
 
 
 class TaiwanGameplayCallbackProbeTests(unittest.TestCase):
@@ -16,6 +16,17 @@ class TaiwanGameplayCallbackProbeTests(unittest.TestCase):
         }]
         self.assertEqual(image_c_string(data, sections, 0x1006), "%X|%X")
         self.assertIsNone(image_c_string(data, sections, 0x5000))
+
+    def test_find_ascii_rvas_maps_raw_offsets_back_to_image_rvas(self):
+        data = b"HEAD%X|%X\\0TAIL%X|%X\\0"
+        sections = [{
+            "name": ".data",
+            "rva": 0x2000,
+            "vsize": len(data),
+            "raw_size": len(data),
+            "raw": 0,
+        }]
+        self.assertEqual(find_ascii_rvas(data, sections, "%X|%X"), [0x2004, 0x2010])
 
     def test_shared_direct_targets(self):
         cfgs = {
