@@ -1,0 +1,14 @@
+StoneAge Waei down_loan fileid 35/36/37 binding — R1
+SCOPE|known first-party 2001-02-26 HTML + exact CDX status|no linked payload
+PAGE|status=200|bytes=17103|sha256=bef4b43a105da43d027cecf6f333d50aec1f38b81e57c66edc029f381eb90b89|encoding=big5|anchors=34|final=https://web.archive.org/web/20010226191900id_/http://www7.waei.net:80/wgs/stoneage/content/down_loan.htm
+ANCHOR|order=19|fileid=37|text=800 x 600|url=http://www7.waei.net/download/download.asp?fileid=37|context=ight="10"> 螢幕保護程式： [ 800 x 600 ]•[ 1024 x 768 ] 桌布下載：
+ANCHOR|order=20|fileid=36|text=1024 x 768|url=http://www7.waei.net/download/download.asp?fileid=36|context=09" border="0" cellspacing="1" cellpadding="2" bgcolor="#A0D068"> 螢幕保護程式： [ 800 x 600 ]•[ 1024 x 768 ] 桌布下載：
+ROW|fileid=35|timestamp=20010417155603|status=500|mime=text/html|length=409|digest=K7OPPEEY4PVZKQ3DLWFNF3AOPP2WFXXK|original=http://www7.waei.net:80/download/download.asp?fileid=35
+ROW|fileid=35|timestamp=20010629124207|status=500|mime=text/html|length=2053|digest=FHZCF6LSRJ3LKFG756SEIX3XIZ4ANTFC|original=http://www7.waei.net:80/download/download.asp?fileid=35
+ROW|fileid=36|timestamp=20010419110959|status=302|mime=text/html|length=461|digest=W6PB6KXP35J53V52FIRPT2E23I2XU45O|original=http://www7.waei.net:80/download/download.asp?fileid=36
+ROW|fileid=37|timestamp=20010419111443|status=302|mime=text/html|length=463|digest=6AVAIQG2H7HPZ7DKYVALON6SKVPV5JV2|original=http://www7.waei.net:80/download/download.asp?fileid=37
+ROW|fileid=37|timestamp=20010605192430|status=302|mime=text/html|length=464|digest=6AVAIQG2H7HPZ7DKYVALON6SKVPV5JV2|original=http://www7.waei.net:80/download/download.asp?fileid=37
+CLASS|fileid35_only_http500=1|fileid36_has_redirect_status=1|fileid37_has_redirect_status=1
+COUNT|errors|0
+RESOLUTION|FILEID35_EXCLUDED_36_37_SCREEN_SAVER_CONTROLS|remove 35 adjacency heuristic from full-client recovery queue
+EVIDENCE_BOUNDARY|Page DOM can bind controls to visible labels; it does not identify unarchived target bytes. HTTP 500 rows are not download-payload evidence.
