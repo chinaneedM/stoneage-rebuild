@@ -1,0 +1,49 @@
+name: Census StoneAge Waei central download index 2001
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_download_center_index_census.py
+      - tests/test_stoneage_waei_download_center_index_census.py
+      - .github/workflows/census-stoneage-waei-download-center-index-2001.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-download-center-index-2001
+  cancel-in-progress: true
+
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Waei central-download index census
+        run: python3 -m unittest tests.test_stoneage_waei_download_center_index_census -v
+      - name: Census Waei central-download CDX metadata
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_download_center_index_census             > research/recovered/STONEAGE-WAEI-DOWNLOAD-CENTER-INDEX-CENSUS-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-WAEI-DOWNLOAD-CENTER-INDEX-CENSUS-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: census Waei central download index'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_waei_download_center_index_census > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: census Waei central download index'
+          fi
+          git push
