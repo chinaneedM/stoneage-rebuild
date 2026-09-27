@@ -1,0 +1,19 @@
+StoneAge Waei www9 unc-ollapsed trial-download timeline — R1
+SCOPE|all captures|window=20001201..20010112|trial category + root HTML|downloading-ID CDX|no binary payload
+CDX|label=trial-cat|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%2Fdownload.php%3FDcat_ID%3D2&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=20000
+CDX|label=trial-cat-port80|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%3A80%2Fdownload.php%3FDcat_ID%3D2&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=20000
+CDX|label=root|status=200|rows=1|bytes=204|sha256=3574a6c87e45c21424f1d033c414369ead6755f65db374fc8704cba7330ae97c|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%2Fdownload.php&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=20000
+CAPTURE|label=root|timestamp=20001206135100|status=200|mime=text/html|length=6102|digest=LTBP6SDEIJMUUFHAAKKFJ4OBNU55VM4I|redirect=|original=http://www9.waei.net:80/download.php
+ID_CDX|label=id-prefix|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%2Fdownload%2Fdownloading.php%3FID%3D&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=50000
+ID_CDX|label=id-prefix-port80|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww9.waei.net%3A80%2Fdownload%2Fdownloading.php%3FID%3D&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010112&limit=50000
+ERROR|scope=cdx:root-port80|kind=URLError|message=<urlopen error timed out>
+ERROR|scope=replay:root:20001206135100:http://www9.waei.net:80/download.php|kind=URLError|message=<urlopen error timed out>
+COUNT|unique_listing_captures|1
+COUNT|pages_replayed|0
+COUNT|stone_pages|0
+COUNT|size274_pages|0
+COUNT|archived_router_rows|0
+COUNT|archived_router_ids|0
+COUNT|errors|2
+RESOLUTION|PARTIAL_TIMELINE|retry only failed archive surfaces
+EVIDENCE_BOUNDARY|Listing HTML and CDX router metadata establish catalogue/routing only; no candidate game payload is downloaded or authenticated.
