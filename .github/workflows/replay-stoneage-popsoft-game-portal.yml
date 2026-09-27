@@ -1,0 +1,34 @@
+name: Replay Popsoft StoneAge launch pages
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_popsoft_game_portal_replay.py
+      - tests/test_stoneage_popsoft_game_portal_replay.py
+      - .github/workflows/replay-stoneage-popsoft-game-portal.yml
+permissions:
+  contents: write
+concurrency:
+  group: stoneage-popsoft-game-portal-replay
+  cancel-in-progress: true
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_popsoft_game_portal_replay -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_popsoft_game_portal_replay > research/recovered/STONEAGE-POPSOFT-GAME-PORTAL-REPLAY-R1.txt
+      - run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-POPSOFT-GAME-PORTAL-REPLAY-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: replay Popsoft StoneAge launch pages'
+          git pull --rebase origin main
+          git push
