@@ -1,0 +1,50 @@
+name: Replay StoneAge China.com article 63271 safely
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_china2000_63271_replay_probe.py
+      - tests/test_stoneage_china2000_63271_replay_probe.py
+      - .github/workflows/replay-stoneage-china2000-63271.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-china2000-63271-replay
+  cancel-in-progress: true
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate privacy-safe replay probe
+        run: python3 -m unittest tests.test_stoneage_china2000_63271_replay_probe -v
+      - name: Replay earliest surviving article capture
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_china2000_63271_replay_probe \
+            > research/recovered/STONEAGE-CHINA2000-63271-REPLAY-R1.txt
+      - name: Commit privacy-safe derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-CHINA2000-63271-REPLAY-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: replay China.com StoneAge giveaway result safely'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_china2000_63271_replay_probe > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: replay China.com StoneAge giveaway result safely'
+          fi
+          git push
