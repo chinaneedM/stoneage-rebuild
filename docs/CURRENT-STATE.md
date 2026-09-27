@@ -2850,3 +2850,25 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - v1↔2.5 bridge run **36331944375 = PASS**.
 - **TW10_BATTLE_RECEIVE_STATE_R1 = CLOSED.**
 - Next battle implementation seam: define the engine-neutral typed event/state contract that preserves the proven v1 separation between submitted intent, authoritative battle state, execution/animation events, turn synchronization and battle termination, without retaining the original online string protocol as an internal dependency.
+
+
+## Phase 1 typed battle event/state contract — 2026-09-28
+
+- Engine-neutral battle transition contract added:
+  - `tools/stoneage_battle_event_contract.py`;
+  - `tests/test_stoneage_battle_event_contract.py`;
+  - `research/mechanics/STONEAGE-BATTLE-EVENT-CONTRACT-R1.md`.
+- This is a **DESIGN / implementation layer** grounded in the closed Taiwan-v1 battle-receive evidence; it is not promoted as an original historical packet or server-memory layout.
+- The contract preserves the proven conceptual separation without retaining the historical `B` string protocol:
+  - submitted `BattleIntent`;
+  - authoritative `BattleStateSnapshot` wrapping the existing immutable `PersistentBattleState`;
+  - ordered `BattleExecutionEvent` stream wrapping existing typed `OrdinaryRoundEvent` values;
+  - `BattleTurnSync` requiring exactly one authoritative turn of progress;
+  - optional `BattleTermination` that must exactly match the terminal authoritative state.
+- `build_battle_round_transition(PersistentRoundResult)` is an adapter only. It does not recalculate combat. Existing `battle_*_model.py` code remains the sole rule authority.
+- Submitted intents are normalized by historical battle-slot order rather than mapping insertion order; command identities absent from the before-state slot map are rejected.
+- Active transitions cannot emit termination; finished transitions cannot omit it. Terminal result/winning-side/turn must match the after-state.
+- Historical BC/default-command/BA/BU network-era mechanisms now have explicit typed local equivalents without recreating the online queue/string transport internally.
+- Regression coverage pins active layering, terminal emission, slot-order normalization, turn-drift rejection and invalid-command-identity rejection.
+- **BATTLE_TYPED_EVENT_STATE_CONTRACT_R1 = IMPLEMENTED.**
+- Next implementation seam: expose this transition directly through the single-player runtime battle-loop API, then define the first deterministic presentation/replay consumer above the contract without feeding presentation concerns back into battle rules.
