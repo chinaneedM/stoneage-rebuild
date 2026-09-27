@@ -177,6 +177,35 @@ class VersionedEncounterRuntimeAdapterTests(unittest.TestCase):
         with self.assertRaisesRegex(KeyError, "unresolved group 999"):
             domain.request_encounter_group(group_roll=0)
 
+    def test_defect_inventory_is_order_independent_across_source_slots(self):
+        area = EncounterAreaBridge.from_encount({
+            "INDEX": 21,
+            "FLOOR": 100,
+            "X1": 0,
+            "Y1": 0,
+            "X2": 19,
+            "Y2": 19,
+            "PROB_MIN": 10,
+            "PROB_MAX": 20,
+            "ENEMY_MAX": 3,
+            "ZORDER": 1,
+            "GROUP_ID1": 999,
+            "GROUP_PROB1": 40,
+            "GROUP_ID2": 998,
+            "GROUP_PROB2": 60,
+        })
+        adapter = build_versioned_encounter_runtime_adapter(
+            world_geometry=_world_geometry(positive_group_refs=2),
+            all_encounter_areas=(area,),
+            groups={},
+            enemies={},
+        )
+        self.assertEqual(
+            {d.group_id for d in adapter.unresolved_positive_group_refs},
+            {998, 999},
+        )
+        self.assertEqual(adapter.specimen_defect_area_indices, (21,))
+
     def test_geometry_mismatch_is_rejected_before_runtime(self):
         bad_area = EncounterAreaBridge.from_encount({
             "INDEX": 21,
