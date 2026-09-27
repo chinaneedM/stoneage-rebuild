@@ -1,0 +1,40 @@
+name: Retry strict China.com Jan-2001 article residual
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_china2001_jan5_mailorder_residual.py
+      - tests/test_stoneage_china2001_jan5_mailorder_residual.py
+      - .github/workflows/retry-stoneage-china2001-jan5-mailorder-residual.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-china2001-jan5-mailorder-residual
+  cancel-in-progress: true
+
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_china2001_jan5_mailorder_residual -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_china2001_jan5_mailorder_residual \
+            > research/recovered/STONEAGE-CHINA2001-JAN5-MAILORDER-RESIDUAL-R2.txt
+      - name: Commit derived report
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-CHINA2001-JAN5-MAILORDER-RESIDUAL-R2.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: retry China.com Jan-2001 article residual'
+          git pull --rebase origin main
+          git push
