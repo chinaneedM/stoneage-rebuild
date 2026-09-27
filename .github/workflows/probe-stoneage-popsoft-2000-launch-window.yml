@@ -1,0 +1,50 @@
+name: Probe StoneAge Popsoft 2000 launch window
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_popsoft_2000_launch_window_probe.py
+      - tests/test_stoneage_popsoft_2000_launch_window_probe.py
+      - .github/workflows/probe-stoneage-popsoft-2000-launch-window.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-popsoft-2000-launch-window
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate launch-window probe
+        run: python3 -m unittest tests.test_stoneage_popsoft_2000_launch_window_probe -v
+      - name: Probe Popsoft launch-window OCR
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_popsoft_2000_launch_window_probe \
+            > research/recovered/STONEAGE-POPSOFT-2000-LAUNCH-WINDOW-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-POPSOFT-2000-LAUNCH-WINDOW-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Popsoft 2000 StoneAge launch window'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_popsoft_2000_launch_window_probe > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe Popsoft 2000 StoneAge launch window'
+          fi
+          git push
