@@ -1,0 +1,22 @@
+StoneAge Taiwan v1.0 savedata.dat runtime probe — R1
+SCOPE|accepted-clean-disc|transient-bytes|derived-xref-callgraph-layout-only|no-payload-commit
+FILESYSTEM|layout=mode1-2352|joliet=1|missing=0
+SAVEDATA|size=128|sha256=5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9|md5=687a81a29dd0276aea3e99c2656baac6|zero_bytes=7|nonzero_bytes=121|unique_byte_values=15|entropy_bits_per_byte=3.227867|zero_runs=7|longest_zero_run=1
+SAVEDATA_SPAN|first_nonzero=0|last_nonzero=127|nonzero_span=128
+ZERO_RUN|start=14|length=1
+ZERO_RUN|start=28|length=1
+ZERO_RUN|start=42|length=1
+ZERO_RUN|start=70|length=1
+ZERO_RUN|start=84|length=1
+ZERO_RUN|start=98|length=1
+ZERO_RUN|start=112|length=1
+RUNTIME|size=425984|sha256=cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a|image_base=0x400000|text_rva=0x1000|text_bytes=331776|writable_sections=1
+STRING_COUNT|needle=data\savedata.dat|occurrences=1
+STRING|n=1|file_offset=0x63634|rva=0x63634|section=.data|xrefs=0
+COUNT|string_occurrences=1
+COUNT|string_xrefs=0
+COUNT|file_api_kinds=0
+COUNT|writable_ref_sites=0
+SIZE128_CALLGRAPH_OCCURRENCES|0
+RESOLUTION|SAVEDATA_STRING_PRESENT_NO_TEXT_XREF|use pointer/table indirection analysis next
+EVIDENCE_BOUNDARY|Default savedata bytes are hashed/summarized only. Static writable references are candidate state storage, not field semantics until access patterns are recovered.
