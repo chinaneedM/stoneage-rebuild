@@ -1,0 +1,56 @@
+name: Diff StoneAge Waei spr1 vs Taiwan v1
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_tw10_spr_diff.py
+      - tests/test_stoneage_waei_tw10_spr_diff.py
+      - .github/workflows/diff-stoneage-waei-spr1-vs-tw10.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-spr1-vs-tw10
+  cancel-in-progress: true
+
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate structural diff
+        run: python3 -m unittest tests.test_stoneage_waei_tw10_spr_diff -v
+      - name: Download accepted Taiwan preservation archive
+        run: |
+          set -euo pipefail
+          curl -L --fail --retry 3 --retry-delay 2 --silent --show-error             -o /tmp/CD_DIC.rar 'https://archive.org/download/stoneage_tw_2000_win/CD_DIC.rar'
+          7z x -y -o/tmp/tw10 /tmp/CD_DIC.rar 'STONEAGE.bin' >/dev/null
+          test "$(stat -c %s /tmp/tw10/STONEAGE.bin)" = "523449360"
+      - name: Diff archived Waei spr against Taiwan v1
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_tw10_spr_diff --tw-bin /tmp/tw10/STONEAGE.bin             > research/recovered/STONEAGE-WAEI-VS-TW10-SPR1-DIFF-R1.txt
+          rm -f /tmp/CD_DIC.rar /tmp/tw10/STONEAGE.bin
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-WAEI-VS-TW10-SPR1-DIFF-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: diff Waei spr1 against Taiwan v1'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_waei_tw10_spr_diff --tw-bin /tmp/tw10/STONEAGE.bin > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: diff Waei spr1 against Taiwan v1'
+          fi
+          git push
