@@ -1,0 +1,50 @@
+name: Replay Jinghe JHPOP Dec-2000 root
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_jhpop_root_replay.py
+      - tests/test_stoneage_jhpop_root_replay.py
+      - .github/workflows/replay-stoneage-jhpop-root.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-jhpop-root-replay
+  cancel-in-progress: true
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate exact-root replay parser
+        run: python3 -m unittest tests.test_stoneage_jhpop_root_replay -v
+      - name: Replay exact archived JHPOP root
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_jhpop_root_replay \
+            > research/recovered/STONEAGE-JHPOP-2000-ROOT-REPLAY-R1.txt
+      - name: Commit derived evidence
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-JHPOP-2000-ROOT-REPLAY-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: replay Jinghe JHPOP Dec-2000 root'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_jhpop_root_replay > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: replay Jinghe JHPOP Dec-2000 root'
+          fi
+          git push
