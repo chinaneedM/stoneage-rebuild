@@ -1,0 +1,46 @@
+StoneAge Taiwan v1.0 savedata pointer/table probe — R2
+PARENT|STONEAGE-TW10-SAVEDATA-R1.txt|direct string xrefs=0
+SCOPE|accepted-clean-disc|pointer-slot+neighbor-global xrefs|derived metadata only|no payload
+TARGET|string_rva=0x63634|section=.data|savedata_size=128|savedata_sha256=5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9
+COUNT|pointer_slots=4
+POINTER_SLOT|n=1|slot_rva=0x40065|section=.text|target_string_rva=0x63634|text_xrefs=0
+POINTER_SLOT|n=2|slot_rva=0x400e5|section=.text|target_string_rva=0x63634|text_xrefs=0
+POINTER_SLOT|n=3|slot_rva=0x40116|section=.text|target_string_rva=0x63634|text_xrefs=0
+POINTER_SLOT|n=4|slot_rva=0x402a1|section=.text|target_string_rva=0x63634|text_xrefs=0
+NEIGHBORHOOD|radius=0x800|raw_refs=3|unique_values=2
+NEIGHBOR_REF|distance=24|direction=after|target_section_offset=0xf64c|xref_rva=0xd48b
+ROOT|label=neighbor_p18|xref_rva=0xd48b|function_start_rva=0xd48b|function_end_rva=0xd4b5|boundary=bounded|nodes=9
+ROOT_SIZE|label=neighbor_p18|value=1|count=8
+ROOT_SIZE|label=neighbor_p18|value=2|count=2
+ROOT_SIZE|label=neighbor_p18|value=4|count=6
+ROOT_SIZE|label=neighbor_p18|value=8|count=10
+ROOT_SIZE|label=neighbor_p18|value=16|count=9
+ROOT_SIZE|label=neighbor_p18|value=36|count=1
+NEIGHBOR_REF|distance=24|direction=after|target_section_offset=0xf64c|xref_rva=0xd497
+ROOT|label=neighbor_p18|xref_rva=0xd497|function_start_rva=0xd497|function_end_rva=0xd4b5|boundary=bounded|nodes=9
+ROOT_SIZE|label=neighbor_p18|value=1|count=8
+ROOT_SIZE|label=neighbor_p18|value=2|count=2
+ROOT_SIZE|label=neighbor_p18|value=4|count=6
+ROOT_SIZE|label=neighbor_p18|value=8|count=10
+ROOT_SIZE|label=neighbor_p18|value=16|count=9
+ROOT_SIZE|label=neighbor_p18|value=36|count=1
+NEIGHBOR_REF|distance=712|direction=after|target_section_offset=0xf8fc|xref_rva=0xd250
+ROOT|label=neighbor_p2c8|xref_rva=0xd250|function_start_rva=0xd250|function_end_rva=0xd4b5|boundary=bounded|nodes=18
+ROOT_API|label=neighbor_p2c8|dll=KERNEL32.dll|api=CreateFileA|calls=1
+ROOT_SIZE|label=neighbor_p2c8|value=1|count=14
+ROOT_SIZE|label=neighbor_p2c8|value=2|count=8
+ROOT_SIZE|label=neighbor_p2c8|value=4|count=19
+ROOT_SIZE|label=neighbor_p2c8|value=8|count=19
+ROOT_SIZE|label=neighbor_p2c8|value=16|count=18
+ROOT_SIZE|label=neighbor_p2c8|value=32|count=1
+ROOT_SIZE|label=neighbor_p2c8|value=36|count=2
+ROOT_SIZE|label=neighbor_p2c8|value=64|count=2
+ROOT_SIZE|label=neighbor_p2c8|value=80|count=1
+ROOT_SIZE|label=neighbor_p2c8|value=128|count=5
+ROOT_SIZE|label=neighbor_p2c8|value=256|count=2
+ROOT_SIZE|label=neighbor_p2c8|value=1024|count=1
+COUNT|neighbor_refs_emitted=3
+COUNT|root_functions=3
+AGG_FILE_API|dll=KERNEL32.dll|api=CreateFileA|calls=1
+RESOLUTION|SAVEDATA_NEIGHBOR_GLOBAL_REFERENCE_SURFACE_RECOVERED|file_io_in_reachable_graph=1
+EVIDENCE_BOUNDARY|Neighbor-global proximity is a discovery aid only. No nearby global is assigned savedata semantics without a code path linking it to file I/O.
