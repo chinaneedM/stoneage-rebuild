@@ -2892,3 +2892,18 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **BATTLE_REPLAY_CONSUMER_R1 = IMPLEMENTED.**
 - Presentation-specific animation/audio/UI mapping now stays downstream of typed events and is not allowed to become a second combat-rule layer.
 - Next technical priority: perform a fresh Phase-1 deterministic-gap audit against the accepted foundation baseline and current engine-neutral models, then close the highest-value remaining gameplay/world semantic gap rather than continuing network-era transport reconstruction.
+
+
+## Phase 1 typed battle contract CI closure — 2026-09-28
+
+- Gameplay CI workflow `.github/workflows/validate-stoneage-tw10-gameplay-model.yml` now watches:
+  - `tools/stoneage_battle_event_contract.py`;
+  - `tools/stoneage_battle_replay.py`;
+  - the three new contract/runtime-handoff/replay regression modules.
+- The workflow's `python3 -m unittest` matrix now executes:
+  - `tests.test_stoneage_battle_event_contract`;
+  - `tests.test_stoneage_singleplayer_battle_transition_runtime`;
+  - `tests.test_stoneage_battle_replay`.
+- Validation run **36332961344 = PASS** on commit `e982d01fcaccf65e0ba0243afa37aa1aa1cd8182`.
+- This closes the typed battle contract milestone at implementation + regression + CI level.
+- Fresh deterministic-gap audit indicates battle transport/presentation should now leave the critical path. The strongest next Phase-1 implementation target is the **version/provenance-safe world-map content boundary**: the project already has a v1-direct map runtime format and 761 stable later-map candidates, but runtime map definitions still need an explicit engine-neutral provenance/version contract before later map content is admitted into the modern world.
