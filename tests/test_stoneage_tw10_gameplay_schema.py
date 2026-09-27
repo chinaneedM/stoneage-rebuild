@@ -97,6 +97,34 @@ class TaiwanGameplaySchemaTests(unittest.TestCase):
         self.assertEqual(record["transport"]["callback_rva"], "0x328c0")
         self.assertEqual(record["transport"]["forward_target_rva"], "0x12930")
 
+    def test_battle_receive_protocol_state_machine(self):
+        machine = self.schema["protocol_state_machines"]["battle_receive"]
+        self.assertEqual(machine["transport"]["protocol"], "B")
+        self.assertEqual(machine["transport"]["callback_rva"], "0x32c70")
+        self.assertEqual(len(machine["transport"]["wire_fields"]), 1)
+        self.assertEqual(machine["transport"]["wire_fields"][0]["position_evidence"], "V1_DIRECT")
+        self.assertEqual(machine["discriminator"]["byte_offset"], 1)
+        self.assertEqual(machine["discriminator"]["evidence"], "V1_DIRECT")
+
+        branches = machine["discriminator"]["branches"]
+        self.assertEqual(set(branches), {"C", "P", "A", "U", "default"})
+        self.assertEqual(branches["C"]["ring_slots"], 4)
+        self.assertEqual(branches["C"]["slot_bytes"], 4096)
+        self.assertEqual(branches["C"]["write_index_mask"], 3)
+        self.assertEqual(branches["P"]["parsed_outputs"], 3)
+        self.assertEqual(branches["A"]["parsed_outputs"], 2)
+        self.assertEqual(branches["U"]["direct_behavior"], "set_global_flag_to_1")
+        self.assertEqual(branches["default"]["ring_slots"], 4)
+        self.assertEqual(branches["default"]["slot_bytes"], 4096)
+        self.assertEqual(branches["default"]["write_index_mask"], 3)
+        for branch in branches.values():
+            self.assertEqual(branch["behavior_evidence"], "V1_DIRECT")
+
+        self.assertIn(
+            "later descendant B receive subcommands Z/F/O are not v1-direct",
+            self.schema["direct_version_exclusions"],
+        )
+
     def test_later_item_extensions_are_quarantined(self):
         excluded = "\n".join(self.schema["direct_version_exclusions"]).lower()
         for token in ("durability", "pile", "alchemy", "jigsaw", "countdown"):
