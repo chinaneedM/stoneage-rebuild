@@ -27,6 +27,12 @@ CALLBACKS = {
     "C": 0x31260,
     "I": 0x325F0,
     "WN": 0x328C0,
+    # Direct receive-dispatch targets recovered by the v1 protocol probe.
+    # These close the highest-value gameplay surfaces that were previously
+    # bounded only at their transport envelope.
+    "PME": 0x328F0,
+    "B": 0x32C70,
+    "D": 0x33070,
 }
 
 MAX_BLOCKS = 700
