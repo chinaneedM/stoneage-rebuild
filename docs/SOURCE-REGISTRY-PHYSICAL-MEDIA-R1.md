@@ -380,3 +380,35 @@ The remaining gap is no longer merely whether a second disc probably existed. Th
 - Related provenance control: `SRC-CN-2003-WAEI-SECONDARY-GUIDE-CLIENT-CD-WARNING-01`.
 - Publisher-family control: `SRC-CN-2005-GAPP-WANFANG-GAME-PUBLICATION-01`.
 
+
+
+## SRC-CN-2026-JD-STONEAGE-JINHAIWAN-SURVIVAL-LEAD-01
+
+- Research date: **2026-09-27**.
+- Source type: current public shopping/search-index title strings; survival/search lead only, not authenticated provenance.
+- Current indexed title strings include:
+  - `二手9成新 石器时代网络游戏 广西金海湾电子音像出版社`;
+  - `STONEAGE 石器时代 北京华义联合软件开发有限公司 广西金海湾电子音像...`.
+- Public index surfaces:
+  - https://www.jd.com/book/670a5d579c7edcad77f.html
+  - https://www.jd.com/zuozhe/171326824345d6c79c30.html
+- Historical control:
+  - contemporaneous Sina identifies 广西金海湾电子音像出版社 as the publication/distribution party for the **2001-01-10 Mainland launch** and states that four package variants were issued;
+  - an independent 2002 Peking University paper corroborates the 2001-01-10 publication relationship.
+- Confidence: **C for the current seller/index strings; A-/B+ for the separate historical role/date controls**.
+- Supports:
+  - physical material labelled with the historically correct Mainland launch publisher identity appears to survive in the present secondary-market index;
+  - the literal title strings create new exact search tokens for public scans, mirrors, preservation catalogues and cached images.
+- Does not establish:
+  - that any current listing is an original January-2001 first pressing;
+  - which of the four launch package variants it represents;
+  - ISBN/ISRC/catalogue number, disc-face identity, mastering, file tree or client bytes;
+  - seller wording such as `正版` as an authentication result.
+- Priority:
+  - **HIGH / EARLY MAINLAND OFFICIAL-CARRIER ROUTE** because successful public recovery could provide an operator-era Mainland specimen chronologically much closer to the JSS/Taiwan baseline than the 2.5 Wanfang carrier.
+- Reopen/promote only from:
+  - readable package/disc photos;
+  - exact publisher/catalogue/ISBN/ISRC identifier;
+  - publicly obtainable read-only optical image/file tree with hashes.
+- Canonical research note: `research/clients/STONEAGE-2001-MAINLAND-LAUNCH-PHYSICAL-R1.md`.
+

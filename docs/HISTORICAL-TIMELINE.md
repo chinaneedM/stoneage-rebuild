@@ -147,6 +147,17 @@ This timeline intentionally distinguishes confirmed evidence from unresolved int
 
 ## 2001 — Mainland China early era
 
+### 2001-01-10 — Mainland launch publication chain
+
+**FACT / contemporaneous launch report:** Sina records the Beijing launch on **2001-01-10** and identifies JSS as producer, Beijing Waei as authorizer, Zhiguan Electronics (Beijing) as agent, and **广西金海湾电子音像出版社** as publisher/distributor. The same report states that **four different package variants** were issued. [`SRC-CN-2001-SINA-STONEAGE-MAINLAND-LAUNCH-01`]
+
+**INDEPENDENT CORROBORATION:** a 2002 Peking University paper independently states that 广西金海湾音像出版社 formally issued StoneAge on **2001-01-10**, with Zhiguan providing technical support and Waei handling sales/service. [`SRC-CN-2002-PKU-STONEAGE-MAINLAND-DISTRIBUTION-01`]
+
+**CURRENT SURVIVAL LEAD / NOT AUTHENTICATION:** modern public indexes contain second-hand title strings naming StoneAge together with 广西金海湾 and, separately, 北京华义. These establish a concrete public search surface for surviving physical material but do not identify a specific first pressing. [`SRC-CN-2026-JD-STONEAGE-JINHAIWAN-SURVIVAL-LEAD-01`]
+
+**RECOVERY PRIORITY:** resolve readable package/disc identifiers or a public optical image/file tree. Because this is the initial Mainland official publication chain, a verified specimen would outrank later 2.5 secondary carriers for early Mainland byte provenance.
+
+
 **FACT (working):** Mainland operation followed, with 1.82 becoming an important early/classic reference point for Chinese players.
 
 **OPEN:** Determine exact relationship between JSS/Taiwan version numbering and Mainland 1.82; avoid assuming a single linear version-number tree until evidence proves it.

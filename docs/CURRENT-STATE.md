@@ -2362,3 +2362,16 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Canonical analysis: `research/clients/STONEAGE-SA25-WANFANG-DISC-R1.md`.
 - New source controls: `SRC-CN-2003-WAEI-SECONDARY-GUIDE-CLIENT-CD-WARNING-01` and `SRC-CN-2005-GAPP-WANFANG-GAME-PUBLICATION-01`.
 
+
+
+## Early Mainland official physical-carrier priority upgrade — 2026-09-27
+
+- A new high-information recovery branch is now registered for the **2001-01-10 Mainland launch carrier**.
+- Contemporaneous Sina identifies the chain as **JSS production -> Beijing Waei authorization -> Zhiguan Electronics (Beijing) agency -> 广西金海湾电子音像出版社 publication/distribution**, and explicitly states that the Mainland release used **four different package variants**.
+- A 2002 Peking University paper independently corroborates the **2001-01-10** Guangxi-Jinhaiwan publication relationship and separates Zhiguan technical-support / Waei sales-service roles.
+- Current public JD indexes expose surviving second-hand title strings `石器时代网络游戏 广西金海湾电子音像出版社` and `STONEAGE 石器时代 北京华义联合软件开发有限公司 广西金海湾电子音像...`. These are **modern survival leads only**, not authenticated first-pressing evidence.
+- Priority consequence: this route now **outranks the Wanfang 2.5 carrier for early-client recovery**, because an authenticated public Guangxi-Jinhaiwan optical object would be tied to the initial Mainland official publication chain and could materially move the Mainland client/map/resource provenance anchor earlier.
+- Immediate target: recover a public package-back/disc-face image, exact ISBN/ISRC/catalogue number, or read-only ISO/file tree. Do not purchase or ask the user to acquire an object.
+- Canonical analysis: `research/clients/STONEAGE-2001-MAINLAND-LAUNCH-PHYSICAL-R1.md`.
+- Source records: `SRC-CN-2001-SINA-STONEAGE-MAINLAND-LAUNCH-01`, `SRC-CN-2002-PKU-STONEAGE-MAINLAND-DISTRIBUTION-01`, `SRC-CN-2026-JD-STONEAGE-JINHAIWAN-SURVIVAL-LEAD-01`.
+

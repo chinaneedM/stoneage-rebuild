@@ -2471,3 +2471,44 @@ Every substantial source should record:
   - `7-900096-34-5` does not identify or date `7-900096-07-8`;
   - shared publisher prefix does not establish shared content, carrier class, mastering, or distribution channel.
 
+
+
+### SRC-CN-2001-SINA-STONEAGE-MAINLAND-LAUNCH-01
+
+- Title: `《石器时代》火爆上市`
+- Source date/context: January 2001 Mainland launch coverage
+- Retrieval date: **2026-09-27**
+- Language/region: Simplified Chinese / Mainland China
+- Source type: contemporaneous Sina Games launch report
+- URL: https://games.sina.com.cn/newgames/0101/01113641.shtml
+- Confidence: **A- for the contemporaneous launch/distribution statements; not physical-disc byte evidence**
+- Supports:
+  - Mainland Simplified-Chinese `Stone Age` launched in Beijing on **2001-01-10**;
+  - the article identifies the role chain as **Japan JSS production -> Beijing Waei authorization -> Soft-World/Zhiguan Electronics (Beijing) agency -> Guangxi Jinhaiwan Electronic Audio-Visual Publishing House publication/distribution**;
+  - the Mainland launch used **four different package designs/variants**;
+  - the launch package included 45 hours of free play time.
+- Archaeology significance:
+  - identifies **广西金海湾电子音像出版社** as a contemporaneous official Mainland publication/distribution identity for the earliest launch period;
+  - the four-package statement means package artwork alone cannot be assumed to identify a unique optical pressing.
+- Does not support:
+  - exact ISBN/ISRC/catalogue number;
+  - optical-disc label, volume ID, file tree or hashes;
+  - byte identity with Taiwan v1.0, JSS 1999 retail, or any later Mainland client.
+
+### SRC-CN-2002-PKU-STONEAGE-MAINLAND-DISTRIBUTION-01
+
+- Title: `“石器时代”的规则`, 《经济学（季刊）》Vol.1 No.3 (2002)
+- Retrieval date: **2026-09-27**
+- Source type: academic paper based on contemporaneous Mainland StoneAge observation
+- Public PDF: https://www.nsd.pku.edu.cn/attachments/5dd8a996f6b542d1a6c23e18602423e9.pdf
+- Confidence: **B+/A- for independent near-contemporaneous corroboration of the distribution roles/date**
+- Supports:
+  - JSS development;
+  - Beijing Zhiguan agency and Waei authorization;
+  - **广西金海湾音像出版社正式发行 on 2001-01-10**;
+  - Zhiguan technical support and Waei sales/service roles.
+- Archaeology significance:
+  - independently corroborates the Sina launch chain and date from a different source class.
+- Does not support:
+  - package contents, ISBN, disc identity, installer bytes, or exact optical pressing.
+
