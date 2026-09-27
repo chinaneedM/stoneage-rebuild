@@ -3072,3 +3072,45 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
   - equivalence with the ~274 MB Waei online trial client;
   - interpreting catalog copy as higher authority than original media/manual bytes.
 - Derived report: `research/recovered/STONEAGE-YEGAME-STONEAGE-PRODUCT-DETAIL-R1.txt`.
+
+### SRC-TW-2001-WAEI-SAUPDATE-RUNTIME-BYTES-01
+
+- Historical first-party host: `stoneage.waei.net`.
+- Surface: `/saupdate/`, independently embedded in the accepted Taiwan v1.0 `StoneAge.exe` launcher as `/saupdate/newest.txt` and `/saupdate/%s`.
+- Retrieval/research date: 2026-09-27.
+- Source type: Wayback-preserved first-party Waei update executable payloads, transiently replayed and hashed; raw executables are not committed.
+- Confidence: S/A+ for exact archived bytes, hashes and PE metadata; OPEN for exact marketing-build assignment.
+- `sa_40.exe`: earliest recovered HTTP-200 capture 2001-10-31 15:57:47 UTC; 528,384 bytes; SHA-256 `d54a6c109644dd4842f61bdd42a95362fda7a16f5e9b9dbd829d6b97c678fde1`; SHA-1 `6eafbf9a886021291cde16b7c9baf22192bae32a`; MD5 `9b9820b6e3e4578a93c20ba34309bd21`; PE timestamp 2001-09-27 08:31:27 UTC.
+- `sa_42.exe`: earliest recovered HTTP-200 capture 2001-12-06 18:31:20 UTC; 557,056 bytes; SHA-256 `744fc0557f024930f351ef31b6adac0dbe41968625105d5f0eba45be1a048df6`; SHA-1 `45b0f0a3de4d04961cd0a43c3d70209d35089724`; MD5 `608f5b92c5de42496e839d59d23ad12d`; PE timestamp 2001-11-01 02:54:29 UTC.
+- Both are normal PE game runtimes, not installer/SFX wrappers. Version resources identify CompanyName=Waei, FileDescription/InternalName=SaDeb, OriginalFilename=SaDeb.exe, ProductName=Waei SaDeb, version 1.0.0.1.
+- Both contain `updated`, `StoneAge.exe` and `yStoneAge.exe`, while updater host/path strings reside in the separate launcher.
+- Evolution: both contain battle-map paths through battle219; accepted Taiwan v1.0 `sa_3.exe` reaches battle217; `sa_42` adds `data\\AISetting.dat` and `data\\album_2.dat` relative to `sa_40`.
+- Exact first-party generation census: `sa_3` 0 rows; `sa_23` 404 only; `sa_24` 0 rows; `sa_25` 0 rows after dedicated retry; `sa_40` repeated HTTP-200 stable digest; `sa_41` 404 only; `sa_42` repeated HTTP-200 stable digest.
+- Critical boundary: filenames `sa_40/sa_42` are not proof of marketing StoneAge 4.0/4.2; use SRC-TW-2003-WAYI-PROSPECTUS-PRODUCT-CHRONOLOGY-01 for the corporate marketing-version chronology.
+- Derived reports: `research/recovered/STONEAGE-WAEI-SUBDOMAIN-LAUNCH-CDX-R1.txt`; `research/recovered/STONEAGE-WAEI-SA40-SA42-PAYLOAD-CLASSIFIER-R1.txt`; `research/recovered/STONEAGE-WAEI-SA40-SA42-LINEAGE-R1.txt`; `research/recovered/STONEAGE-WAEI-SAUPDATE-DIRECTORY-R1.txt`; `research/recovered/STONEAGE-WAEI-RUNTIME-GENERATIONS-R1.txt`; `research/recovered/STONEAGE-WAEI-SA25-GENERATION-RESIDUAL-R1.txt`.
+
+### SRC-TW-2003-WAYI-PROSPECTUS-PRODUCT-CHRONOLOGY-01
+
+- Title: `華義國際數位娛樂股份有限公司 公開說明書（股票初次申請為櫃檯買賣用稿本）`.
+- Publisher/issuer: 華義國際數位娛樂股份有限公司 / WAYI INTERNATIONAL DIGITAL ENTERTAINMENT CO., LTD.
+- Printed date in document: ROC 92-05-20 = 2003-05-20.
+- First-party URL: `https://www.wayi.net/service/files/d00074a14a8ff1f472056ede383e7a0f.pdf`.
+- Relevant location: PDF page 39, table `開發成功之技術及產品`.
+- Retrieval/research date: 2026-09-27.
+- Source type: first-party corporate public prospectus.
+- Confidence: A+/S for the literal corporate product/date table.
+- Directly supports: StoneAge 2.0 家族開拓史 = 2001-08-01; StoneAge 2.5 精靈王傳說 = 2001-11-01; StoneAge 3.0 伊甸新大陸 = 2002-03-01; StoneAge 4.0 新九大家族 = 2002-07-01.
+- Archaeology consequence: `sa_40.exe` compiled in September 2001 cannot denote marketing StoneAge 4.0, which Waei dates to July 2002. `sa_42.exe` has a PE timestamp of 2001-11-01, coinciding with Waei's table date for 2.5; this is strong temporal alignment only, because the prospectus does not name `sa_42.exe`.
+- Boundary: corporate release dates do not authenticate a client binary; PE linker timestamps are byte metadata, not independent release-date statements.
+
+### SRC-TW-COMMUNITY-SA24-CHRONOLOGY-01
+
+- Context: later StoneAge community chronology preserved by We Love SA and the Bahamut StoneAge archive.
+- URLs: `https://www.lab.welovesa.com/viewthread.php?extra=page%3D1&tid=38`; `https://forum.gamer.com.tw/G2.php?bsn=1571&sn=1958`.
+- Retrieval/research date: 2026-09-27.
+- Source type: later community chronology / historical recollection compilation; not first-party Waei documentation.
+- Confidence: B-/C+ for the literal preserved chronology wording; secondary evidence only for 2001 operator events.
+- Key literal entry: 2001-04-24 — `更新 SA_24 中增加了交易系統`.
+- The We Love SA page also preserves a retrospective topic label `sa_25 全螢幕時代!?`, supporting use of `SA_N` as update/runtime-generation vocabulary.
+- Significance: `SA_24` in April 2001 predates Waei's first-party 2.0 marketing date of 2001-08-01, so the suffix cannot be read as a marketing major/minor version. This is consistent with byte-recovered first-party `sa_40/sa_42` representing later runtime generations.
+- Limits: no `sa_24.exe` or `sa_25.exe` bytes are preserved by this source; exact first-party Wayback probes currently expose 0 rows for both paths.

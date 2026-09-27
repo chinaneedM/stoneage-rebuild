@@ -2657,3 +2657,21 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - the detail page's printed minimum-configuration values are preserved as catalog text and must not override byte/manual-derived technical facts if they conflict.
 - Recovery consequence: `EN0ZGKJ0002` and `product_images/EN0ZGKJ0002.jpg` are now exact physical-media/cover search tokens. After one bounded cover-image archive probe, priority returns to **full-client byte recovery**.
 - Derived report: `research/recovered/STONEAGE-YEGAME-STONEAGE-PRODUCT-DETAIL-R1.txt`.
+
+## Waei first-party runtime-generation byte chain — 2026-09-27
+
+- Accepted Taiwan v1.0 already establishes the first-party updater/runtime split: launcher `StoneAge.exe` embeds `stoneage.waei.net`, `/saupdate/newest.txt`, `/saupdate/%s` and child token `updated`; its runtime is `sa_3.exe` (425,984 bytes, SHA-256 `cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a`).
+- Wayback now yields two byte-recoverable first-party Waei runtime executables:
+  - `sa_40.exe`: 528,384 bytes; SHA-256 `d54a6c109644dd4842f61bdd42a95362fda7a16f5e9b9dbd829d6b97c678fde1`; SHA-1 `6eafbf9a886021291cde16b7c9baf22192bae32a`; MD5 `9b9820b6e3e4578a93c20ba34309bd21`; PE timestamp 2001-09-27 08:31:27 UTC.
+  - `sa_42.exe`: 557,056 bytes; SHA-256 `744fc0557f024930f351ef31b6adac0dbe41968625105d5f0eba45be1a048df6`; SHA-1 `45b0f0a3de4d04961cd0a43c3d70209d35089724`; MD5 `608f5b92c5de42496e839d59d23ad12d`; PE timestamp 2001-11-01 02:54:29 UTC.
+- Both are ordinary Win32 PE game runtimes, not installer/SFX wrappers. Their version resources identify `CompanyName=Waei`, `FileDescription/InternalName=SaDeb`, `OriginalFilename=SaDeb.exe`, `ProductName=Waei SaDeb`, version `1.0.0.1`.
+- Both contain `updated`, `StoneAge.exe` and `yStoneAge.exe` but not the update-host URL strings, directly reinforcing the launcher -> child-runtime architecture already present in Taiwan v1.0.
+- Runtime evolution: both later runtimes reference battle maps through `battle219` whereas accepted Taiwan v1.0 `sa_3.exe` stops at `battle217`; `sa_42` retains the `sa_40` path set and adds `data\\AISetting.dat` and `data\\album_2.dat`.
+- Critical version-number correction: Waei's own 2003 public prospectus dates marketing releases as 2.0=2001-08-01, 2.5=2001-11-01, 3.0=2002-03-01, 4.0=2002-07-01. Therefore filenames `sa_40.exe` / `sa_42.exe` do NOT mean marketing StoneAge 4.0 / 4.2.
+- A later community chronology explicitly records `SA_24` on 2001-04-24 as the update that added trading, independently supporting `SA_N` as an internal update/runtime-generation naming series rather than a marketing-version series.
+- `sa_42`'s PE timestamp falls on 2001-11-01, exactly Waei's corporate date for StoneAge 2.5. Classification: STRONG TEMPORAL 2.5-ERA ANCHOR, but exact 2.5 launch/base-runtime identity remains OPEN because no first-party manifest names `sa_42` as the 2.5 base executable.
+- Exact first-party generation census, 2000-2002: `sa_3` 0 rows; `sa_23` 404 only; `sa_24` 0 rows; `sa_25` 0 rows after dedicated retry; `sa_40` repeated HTTP-200 captures with stable digest; `sa_41` 404 only; `sa_42` repeated HTTP-200 captures with stable digest.
+- The archived 2001-05-30 `/saupdate/?M=D` page contains only `石器時代更新專用目錄` and no file links; it cannot recover the missing generation list.
+- Regional boundary: these binaries are Taiwan/Waei first-party `stoneage.waei.net` artifacts. Do not relabel them as Beijing-Waei/Mainland test or retail binaries.
+- Priority remains FULL-CLIENT RECOVERY: use this recovered filename/runtime grammar as a control while pursuing the ~274 MB Jan-2001 Waei trial client and Dec-2000 Mainland official test-CD bytes. Reopen missing `SA_N` generations only when a new first-party manifest/page/filename token appears.
+- Derived reports: `STONEAGE-WAEI-SUBDOMAIN-LAUNCH-CDX-R1.txt`, `STONEAGE-WAEI-SA40-SA42-PAYLOAD-CLASSIFIER-R1.txt`, `STONEAGE-WAEI-SA40-SA42-LINEAGE-R1.txt`, `STONEAGE-WAEI-SAUPDATE-DIRECTORY-R1.txt`, `STONEAGE-WAEI-RUNTIME-GENERATIONS-R1.txt`, `STONEAGE-WAEI-SA25-GENERATION-RESIDUAL-R1.txt`.
