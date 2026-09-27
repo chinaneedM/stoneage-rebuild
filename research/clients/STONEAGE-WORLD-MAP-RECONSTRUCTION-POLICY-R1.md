@@ -142,3 +142,37 @@ The final local-first game may then build a coherent world from:
 - independently redesigned/recreated maps where appropriate.
 
 This is consistent with DD-012 and DD-013: historical evidence defines the design DNA and technical boundaries; it does not freeze the final world to one retail-client timestamp.
+
+
+## 7. Cross-version persistence result — 2.5 bridge vs archived 2003 corpus
+
+A complete path/hash comparison of the two recovered later map corpora is now available in:
+
+- `research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt`.
+
+Results:
+
+- shared valid map paths: **995 / 995**;
+- same path + identical SHA-256: **980**;
+- same path + changed SHA-256: **15**;
+- identical across both corpora **and** Taiwan-v1 resource-compatible in both: **761**;
+- changed between corpora but Taiwan-v1 resource-compatible in both: **8**;
+- map paths unique to either corpus: **0**.
+
+This materially strengthens the reconstruction value of the later map surface.
+
+### STABLE_LATER_MAP_CANDIDATE
+
+A map may be tagged `STABLE_LATER_MAP_CANDIDATE` when:
+
+1. the same map path exists in both recovered later corpora;
+2. the full payload SHA-256 is identical across both;
+3. the payload is asset-compatible with the accepted Taiwan-v1 graphics/profile.
+
+There are **761** such candidates in the current comparison.
+
+This label means **strong later-lineage persistence + early-asset compatibility**. It still does **not** mean the concrete layout existed in Taiwan v1.
+
+The 15 changed maps are especially valuable controlled-diff targets because their dimensions remain directly comparable while concrete map bytes evolved. They should be retained as explicit version deltas rather than normalized away.
+
+Operational consequence: world reconstruction should prioritize the 761 stable candidates for names/warps/NPC/encounter/provenance binding before spending effort on later-only or changed maps.
