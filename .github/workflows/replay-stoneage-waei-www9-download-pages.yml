@@ -1,0 +1,31 @@
+name: Replay Waei www9 preserved download pages
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_www9_download_pages.py
+      - tests/test_stoneage_waei_www9_download_pages.py
+      - .github/workflows/replay-stoneage-waei-www9-download-pages.yml
+permissions:
+  contents: write
+concurrency:
+  group: stoneage-waei-www9-download-pages
+  cancel-in-progress: true
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_waei_www9_download_pages -v
+      - run: python3 -m tools.stoneage_waei_www9_download_pages > research/recovered/STONEAGE-WAEI-WWW9-DOWNLOAD-PAGES-R1.txt
+      - run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-WAEI-WWW9-DOWNLOAD-PAGES-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: replay Waei www9 download pages'
+          git pull --rebase origin main
+          git push
