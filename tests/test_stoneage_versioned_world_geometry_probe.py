@@ -208,8 +208,9 @@ enemy=ConditionalTransport|WARP=200,2,3|MONEY=999
             root = Path(td)
             npc_dir = root / "npc"
             data_dir = root / "data"
+            map_dir = data_dir / "map"
             npc_dir.mkdir()
-            data_dir.mkdir()
+            map_dir.mkdir(parents=True)
             lineage = root / "lineage.txt"
             lineage.write_text(lineage_text(), encoding="utf-8")
 
