@@ -2490,3 +2490,40 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - `research/recovered/STONEAGE-MAINLAND-2000-TEST-CD-PRESERVATION-R1.txt`;
   - `research/recovered/STONEAGE-MAINLAND-2000-TEST-CD-DISCMASTER-RESIDUAL-R2.txt`.
 - New source record: `SRC-CN-2002-17173-SA-TEST-CD-BURNED-COPY-RECOLLECTION-01`.
+
+
+## China.com giveaway-result archive recovered; Popsoft carrier candidate downgraded — 2026-09-27
+
+- The live China.com test-CD giveaway page's post-activity link has now been archive-resolved to exact historical article **`63271`**:
+  - original URL: `http://game.china.com/zh_cn/news/news1/444/20001220/63271.html`;
+  - Wayback exposes **8 HTTP-200 text/html captures** from 2001-03-09 through 2003-09-01;
+  - earliest capture timestamp: **2001-03-09 22:31:37 UTC**.
+- A privacy-safe replay of that earliest capture succeeded:
+  - raw replay body: **44,048 bytes**, SHA-256 `a26933f2cdcf2d5e2fcd6c808000ae8c37af4c9999bcb17bda04feac3c68d403`;
+  - decoded as GB18030;
+  - page-level archaeology tokens include **`石器时代`**, **`赠送`**, **`名单`**, and **`光盘`**;
+  - the page also contains historical participant contact fields, so raw HTML and participant rows are intentionally **not committed or reproduced**.
+- Classification: **FACT / archived giveaway-results page**. It confirms the live activity page's “名单地址” target and the giveaway-result topology, but does not expose a disc filename, volume label, serial, matrix, ISO, or other optical identity.
+- Asset-topology follow-up:
+  - parsed **11 first-party image/background paths**;
+  - **9 replayed successfully**, all small generic China.com logos/navigation/UI assets;
+  - **0 large/page-specific candidate assets**;
+  - the two unreplayed paths are generic UI filenames `close.gif` and `chinacom_logo.gif`;
+  - therefore the current `63271` HTML/image surface yields **no StoneAge/test-CD-specific artifact token** and is operationally bounded unless a different capture/source exposes additional assets.
+- The source-driven `《大众软件》` carrier hypothesis was separately tested against the preserved IA scan family `popsoft-magazine_202403`:
+  - six OCR files covering **2000-11 A/B, 2000-12 A/B, 2001-01 A/B** were inspected;
+  - the scan family exposes **0 optical-image files**;
+  - only **one StoneAge anchor** appears across the six issues: `Stone Age` once in **2000-12A**;
+  - that occurrence has **0 nearby carrier/test-context flags**;
+  - result: **EDITORIAL-ONLY / NO CARRIER SIGNAL** for the tested launch window.
+- Consequence: do **not** continue treating `《大众软件》` as the leading test-disc magazine carrier merely because of Jinghe's corporate relationship. It remains a weak ecosystem lead only.
+- Current highest-value OPEN targets remain:
+  1. an independent public photo/scan of the collector-described Mainland 1.0 **test manual + disc**;
+  2. the exact magazine title/issue that carried it;
+  3. any official/burned test-client file tree, installer filename, volume label, matrix/IFPI or checksum;
+  4. a first-print retail manual page resolving the 600→300 point misprint hypothesis.
+- Derived evidence:
+  - `research/recovered/STONEAGE-CHINA2000-TEST-CD-LEGACY-ARCHIVE-R1.txt`;
+  - `research/recovered/STONEAGE-CHINA2000-63271-REPLAY-R1.txt`;
+  - `research/recovered/STONEAGE-CHINA2000-63271-ASSET-TOPOLOGY-R1.txt`;
+  - `research/recovered/STONEAGE-POPSOFT-2000-LAUNCH-WINDOW-R1.txt`.

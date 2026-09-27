@@ -2864,3 +2864,64 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
   - byte identity with Taiwan v1.0 or the January-2001 Mainland retail CD.
 - Operational rule:
   - authenticate **payload lineage** and **physical-carrier lineage** separately for every future test-client specimen.
+
+
+### SRC-CN-2000-CHINADOTCOM-SA-GIVEAWAY-RESULT-ARCHIVE-01
+
+- Historical target: China.com article **`63271`**, linked directly from the still-live StoneAge test-CD giveaway page as the post-activity list/results address.
+- Original URL: `http://game.china.com/zh_cn/news/news1/444/20001220/63271.html`
+- Retrieval/recovery date: **2026-09-27**
+- Source type: Wayback CDX + privacy-safe archived HTML replay
+- Confidence: **A-/B+ for archive identity and page role**
+- Archive metadata:
+  - **8 HTTP-200 text/html captures** from 2001-03-09 through 2003-09-01;
+  - earliest capture: **20010309223137**;
+  - earliest replay body: **44,048 bytes**;
+  - replay SHA-256: `a26933f2cdcf2d5e2fcd6c808000ae8c37af4c9999bcb17bda04feac3c68d403`;
+  - decoded as GB18030.
+- Privacy-safe page-level supports:
+  - visible-text token counts include `石器时代` (2), `赠送` (1), `名单` (3), `光盘` (1);
+  - the page contains fields consistent with a recipient/contact list.
+- Privacy boundary:
+  - **participant names, addresses, telephone numbers, email addresses and raw archived HTML are not committed or reproduced**;
+  - only page-level classification, hashes, aggregate marker counts and sanitized first-party path topology are retained.
+- Asset follow-up:
+  - 11 first-party image/background paths parsed;
+  - 9 successfully replayed assets are small generic China.com logo/navigation/UI files;
+  - 0 large/page-specific candidate image assets;
+  - unreplayed residual names are `close.gif` and `chinacom_logo.gif`, both generic UI identities.
+- Supports:
+  - the live giveaway page's results/list link is historically real and archived;
+  - the archived target is a StoneAge test-CD giveaway-results page.
+- Does not support:
+  - disc artwork, filename, volume label, matrix/IFPI, publication number, filesystem, hashes or build identity.
+- Derived reports:
+  - `research/recovered/STONEAGE-CHINA2000-TEST-CD-LEGACY-ARCHIVE-R1.txt`;
+  - `research/recovered/STONEAGE-CHINA2000-63271-REPLAY-R1.txt`;
+  - `research/recovered/STONEAGE-CHINA2000-63271-ASSET-TOPOLOGY-R1.txt`.
+
+### SRC-CN-IA-POPSOFT-2000-LAUNCH-WINDOW-01
+
+- Preservation item: Internet Archive `popsoft-magazine_202403`
+- Retrieval date: **2026-09-27**
+- Source type: preserved `大众软件 / Popsoft` magazine scan family + transient OCR derivatives
+- Confidence: **S/A for the preserved scan metadata; negative/limited for carrier inference**
+- Candidate rationale:
+  - contemporaneous Jinghe distribution evidence plus Jinghe's institutional relationship with `《大众软件》` made Popsoft a source-driven magazine candidate;
+  - a later collector independently says a Mainland 1.0 test manual+disc was distributed with an unspecified magazine.
+- Probe scope:
+  - OCR derivatives for **2000-11A/B, 2000-12A/B, 2001-01A/B**;
+  - no magazine PDF/image body committed;
+  - no game/optical payload downloaded.
+- Result:
+  - **6 OCR issue files** inspected;
+  - **0 optical-image files** exposed by current IA metadata;
+  - **1 StoneAge anchor** across the six issues: literal `Stone Age` in 2000-12A;
+  - **0 strong carrier-context hits** around StoneAge anchors.
+- Classification:
+  - **EDITORIAL-ONLY SIGNAL / NO TEST-CD CARRIER EVIDENCE in the tested OCR window**.
+- Critical limit:
+  - OCR can miss stylized text, advertisements or image-only inserts;
+  - this does not prove no Popsoft-related carrier ever existed;
+  - it is sufficient to stop treating Popsoft as the default/leading magazine identity without a new exact token.
+- Derived report: `research/recovered/STONEAGE-POPSOFT-2000-LAUNCH-WINDOW-R1.txt`.

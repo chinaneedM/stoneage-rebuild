@@ -204,3 +204,61 @@ For any future candidate, record independently:
 2. optical-carrier/manufacturing/distribution provenance.
 
 The current highest-value target remains the official Dec-2000 test-CD artifact identity, but a player-burned copy with a complete file tree would still be technically valuable as a candidate byte bridge if its content can be controlled against other clean specimens.
+
+
+## 8. China.com result-page route and Popsoft candidate status — 2026-09-27
+
+### 8.1 Article 63271 recovered safely
+
+The live giveaway page's “名单地址” link resolves to historical China.com article `63271`. Wayback metadata exposes eight successful text/html captures, with the earliest at **2001-03-09 22:31:37 UTC**.
+
+A privacy-safe replay of that earliest capture recovered:
+
+- 44,048-byte HTML response;
+- SHA-256 `a26933f2cdcf2d5e2fcd6c808000ae8c37af4c9999bcb17bda04feac3c68d403`;
+- GB18030 decoding;
+- page role: **giveaway results / recipient list**;
+- page-level archaeology tokens: `石器时代`, `赠送`, `名单`, `光盘`.
+
+The page contains historical personal contact fields. Raw HTML, names, addresses, phone numbers and email values are intentionally excluded.
+
+This closes an important provenance question: the link on the still-live China.com activity page was a genuine StoneAge test-CD giveaway result/list page. It does **not** reveal the disc's manufacturing or byte identity.
+
+### 8.2 Asset topology yields no test-CD artwork token
+
+The earliest archived page exposes 11 first-party image/background paths.
+
+- 9 replay successfully;
+- all 9 are small China.com logo/navigation/UI graphics;
+- 0 large/page-specific candidate assets;
+- two replay failures are generic UI filenames: `close.gif` and `chinacom_logo.gif`.
+
+Therefore the current archived result-page image surface is **BOUNDED for test-CD artifact discovery**. Do not keep re-mining the same page unless a materially different capture or external asset index appears.
+
+### 8.3 Popsoft is no longer the leading magazine hypothesis
+
+Because China.com sent Beijing recipients through Jinghe and Jinghe had a real institutional relationship with `《大众软件》`, Popsoft was a justified candidate to test.
+
+The preserved IA scan family provides six launch-window OCR files:
+
+- 2000-11 A/B;
+- 2000-12 A/B;
+- 2001-01 A/B.
+
+Across all six:
+
+- one literal `Stone Age` occurrence appears in 2000-12A;
+- it has **no nearby test/disc/Jinghe/Waei/giveaway carrier context**;
+- the IA scan family exposes no optical-image files.
+
+Conclusion: **Popsoft remains ecosystem context, not a supported carrier identity**. Do not infer that the collector's unspecified magazine was `《大众软件》` unless new evidence names an issue, disc, cover, article or catalogue record.
+
+### 8.4 Updated next action
+
+The source-driven web/index routes currently tested are now bounded. Reopen from **new artifact-bearing evidence**, prioritizing:
+
+1. the collector's actual Mainland 1.0 test manual/disc photographs or later post;
+2. exact magazine title/issue;
+3. surviving burned-copy client file tree with enough provenance to compare payload lineage;
+4. official test-disc photo/label, installer filename, volume label, matrix/IFPI or checksum;
+5. first-print manual scan resolving the 600-point wording.
