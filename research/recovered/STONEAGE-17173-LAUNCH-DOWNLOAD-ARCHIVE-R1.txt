@@ -1,0 +1,18 @@
+StoneAge 17173 launch-window download-page archive probe — R1
+SCOPE|17173 StoneAge download HTML/routing only|window=20001201..20010228|no installer/client payload
+ANCHOR|historical 17173 StoneAge专区 download path later cited as www.17173.com/shiqi/xiazai/xiazai.htm
+CDX|kind=exact|index=1|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|query=http://www.17173.com/shiqi/xiazai/xiazai.htm
+CDX|kind=exact|index=2|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|query=http://www.17173.com/shiqi/xiazai/
+CDX|kind=exact|index=3|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|query=http://stoneage.17173.com/xiazai/xiazai.htm
+CDX|kind=exact|index=4|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|query=http://stoneage.17173.com/xiazai/
+CDX|kind=exact|index=5|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|query=http://www.17173.com/stoneage/xiazai/xiazai.htm
+COUNT|unique_rows|0
+ERROR|scope=cdx:exact:6|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:prefix:1|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:prefix:2|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+ERROR|scope=cdx:prefix:3|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+COUNT|pages_replayed|0
+COUNT|relevant_links|0
+COUNT|errors|4
+RESOLUTION|17173_LAUNCH_PROBE_PARTIAL|retry failed archive metadata surfaces only
+EVIDENCE_BOUNDARY|A recovered page/link is routing evidence only; client identity requires preserved filename/size/hash or bytes.
