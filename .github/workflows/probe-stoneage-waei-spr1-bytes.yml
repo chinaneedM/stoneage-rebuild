@@ -1,0 +1,49 @@
+name: Probe StoneAge Waei spr1 archived bytes
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_spr1_byte_probe.py
+      - tests/test_stoneage_waei_spr1_byte_probe.py
+      - .github/workflows/probe-stoneage-waei-spr1-bytes.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-spr1-bytes
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate byte-metadata probe
+        run: python3 -m unittest tests.test_stoneage_waei_spr1_byte_probe -v
+      - name: Recover derived byte metadata only
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_spr1_byte_probe             > research/recovered/STONEAGE-WAEI-SPR1-BYTE-METADATA-R2.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-WAEI-SPR1-BYTE-METADATA-R2.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: hash archived Waei spr1 bytes'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_waei_spr1_byte_probe > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: hash archived Waei spr1 bytes'
+          fi
+          git push
