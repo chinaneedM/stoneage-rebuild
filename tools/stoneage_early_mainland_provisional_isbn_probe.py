@@ -2,7 +2,7 @@
 """Probe a provisional visual transcription from the photographed early Mainland StoneAge disc.
 
 The public Sohu mirror exposes a clearer copy of the 2016 disc photograph. The
-disc line appears consistent with ISBN 7-900323-57-0 and a trailing P·026-style
+disc line appears consistent with ISBN 7-900323-57-0 and a trailing TP·026-style
 publication token. The publisher prefix 7-900323 is independently assigned to
 Guangxi Jinhaiwan Electronic Audio-Visual Publishing House.
 
@@ -26,7 +26,7 @@ ISBN10="7900323570"
 ISBN10_HYPHEN="7-900323-57-0"
 ISBN13="9787900323576"
 ISBN13_HYPHEN="978-7-900323-57-6"
-AUX=("P·026","P.026","P026")
+AUX=("TP·026","TP.026","TP026")
 
 QUERIES=(
     ("isbn10", ISBN10_HYPHEN),
@@ -35,7 +35,7 @@ QUERIES=(
     ("isbn13-hyphen", ISBN13_HYPHEN),
     ("isbn10-stoneage", f"{ISBN10_HYPHEN} 石器时代"),
     ("isbn10-publisher", f"{ISBN10_HYPHEN} 广西金海湾"),
-    ("aux-p026-publisher", "P026 广西金海湾 石器时代"),
+    ("aux-tp026-publisher", "TP026 广西金海湾 石器时代"),
 )
 
 def clean(v, n=2400):
