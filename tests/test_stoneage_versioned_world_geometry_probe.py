@@ -45,8 +45,9 @@ class VersionedWorldGeometryProbeTests(unittest.TestCase):
             root = Path(td)
             npc_dir = root / "npc"
             data_dir = root / "data"
+            map_dir = data_dir / "map"
             npc_dir.mkdir()
-            data_dir.mkdir()
+            map_dir.mkdir(parents=True)
             lineage = root / "lineage.txt"
             lineage.write_text(lineage_text(), encoding="utf-8")
 
@@ -97,6 +98,10 @@ enemy=WarpTemplateSecret|100|1|1
 """,
                 encoding="utf-8",
             )
+            for floor in (100, 200):
+                (map_dir / f"{floor}.map").write_bytes(
+                    b"LS2MAP" + int(floor).to_bytes(2, "big")
+                )
             (data_dir / "encount.txt").write_text(
                 encount_row(100) + "\n" + encount_row(999, index=2) + "\n",
                 encoding="utf-8",
@@ -106,6 +111,7 @@ enemy=WarpTemplateSecret|100|1|1
                 lineage_report=lineage,
                 npc_dir=npc_dir,
                 data_dir=data_dir,
+                map_dir=map_dir,
             )
 
             self.assertEqual(len(geometry.placements), 3)
@@ -178,6 +184,10 @@ enemy=ConditionalTransport|WARP=200,2,3|MONEY=999
 """,
                 encoding="utf-8",
             )
+            for floor in (100, 200):
+                (map_dir / f"{floor}.map").write_bytes(
+                    b"LS2MAP" + int(floor).to_bytes(2, "big")
+                )
             (data_dir / "encount.txt").write_text(
                 encount_row(100) + "\n",
                 encoding="utf-8",
@@ -187,6 +197,7 @@ enemy=ConditionalTransport|WARP=200,2,3|MONEY=999
                 lineage_report=lineage,
                 npc_dir=npc_dir,
                 data_dir=data_dir,
+                map_dir=map_dir,
             )
             self.assertEqual(len(geometry.placements), 1)
             self.assertEqual(len(geometry.classic_warps), 0)
@@ -220,6 +231,10 @@ enemy=WarpX|100|1|1
 """,
                 encoding="utf-8",
             )
+            for floor in (100, 200):
+                (map_dir / f"{floor}.map").write_bytes(
+                    b"LS2MAP" + int(floor).to_bytes(2, "big")
+                )
             (data_dir / "encount.txt").write_text(
                 encount_row(999) + "\n",
                 encoding="utf-8",
@@ -229,6 +244,7 @@ enemy=WarpX|100|1|1
                 lineage_report=lineage,
                 npc_dir=npc_dir,
                 data_dir=data_dir,
+                map_dir=map_dir,
             )
             self.assertEqual(geometry.placements, ())
             self.assertEqual(geometry.classic_warps, ())
