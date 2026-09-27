@@ -1,0 +1,50 @@
+name: Probe historical Yegame StoneAge launch window
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_yegame_2000_testcd_archive_probe.py
+      - tests/test_stoneage_yegame_2000_testcd_archive_probe.py
+      - .github/workflows/probe-stoneage-yegame-2000-testcd-archive.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-yegame-2000-testcd-archive
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Yegame archive probe
+        run: python3 -m unittest tests.test_stoneage_yegame_2000_testcd_archive_probe -v
+      - name: Census historical Yegame launch-window namespace
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_yegame_2000_testcd_archive_probe \
+            > research/recovered/STONEAGE-YEGAME-2000-TEST-CD-ARCHIVE-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-YEGAME-2000-TEST-CD-ARCHIVE-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: census historical Yegame launch window'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_yegame_2000_testcd_archive_probe > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: census historical Yegame launch window'
+          fi
+          git push
