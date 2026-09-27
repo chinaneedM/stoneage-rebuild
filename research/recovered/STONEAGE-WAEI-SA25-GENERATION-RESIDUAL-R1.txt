@@ -1,0 +1,9 @@
+StoneAge Waei sa_25 exact CDX residual — R1
+PARENT|STONEAGE-WAEI-RUNTIME-GENERATIONS-R1|generation=25-timeouts-only
+SCOPE|exact Wayback metadata retry|2000..2002|no payload
+QUERY|status=200|attempt=1|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fstoneage.waei.net%2Fsaupdate%2Fsa_25.exe&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20000101&to=20021231&limit=5000
+COUNT|rows|0
+COUNT|http200_octet|0
+COUNT|errors|0
+RESOLUTION|SA25_EXACT_ROUTE_BOUNDED|no indexed executable payload on tested first-party path
+EVIDENCE_BOUNDARY|SA_25 label is a historical update-generation token, not marketing version 2.5 by itself.
