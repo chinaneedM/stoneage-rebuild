@@ -2329,3 +2329,12 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - New derived evidence:
   - `research/recovered/STONEAGE-SA25-POPSOFT-2002-RESIDUAL-R1.txt`;
   - `research/clients/STONEAGE-SA25-POPSOFT-2002-CARRIER-BOUNDARY-R1.md`.
+
+
+## StoneAge 2.5 `中学生电脑 2002攻略特刊` institutional-catalogue lead — 2026-09-27
+
+- After bounding the Popsoft scan-only route, a new independent carrier-resolution lead was found for another exact contemporaneous 2.5 distribution identity: **`《中学生电脑》2002年攻略特刊`**.
+- Public search indexing of a catalogue PDF on the official 湖南石油化工职业技术学院 domain exposes at least five records titled `中学生电脑`, publisher `课堂内外杂志社出版`, under exact call-number tokens **`TP3-794/12.2`**, **`.3`**, **`.5`**, **`.12`**, and **`.14`**.
+- This is **OPEN / catalogue-level only**. The indexed rows do not expose year/issue mapping, and the source PDF was not replayable in the current web environment. None of the five holdings may be identified as the 2002攻略特刊 or StoneAge carrier without another metadata join.
+- Priority consequence: resolve the `TP3-794/12.*` sequence through public institutional catalogue/OPAC/export metadata. If a call number maps to the 2002攻略特刊, use that exact catalogue identity to reopen optical-preservation searches. No purchase/manual acquisition is required.
+- Canonical note: `research/clients/STONEAGE-SA25-ZHONGXUESHENGDIANNAO-LIBRARY-LEAD-R1.md`.

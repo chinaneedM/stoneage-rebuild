@@ -301,3 +301,26 @@ The remaining gap is no longer merely whether a second disc probably existed. Th
   - exact `大众游戏` February-2002 disc identifier/image, disc-face scan, ISO/BIN/CUE/file tree, checksum, torrent/archive member list, or independent mirror.
 - Canonical detail: `research/clients/STONEAGE-SA25-POPSOFT-2002-CARRIER-BOUNDARY-R1.md`.
 - Derived report: `research/recovered/STONEAGE-SA25-POPSOFT-2002-RESIDUAL-R1.txt`.
+
+
+## SRC-CN-2026-HNSHZY-ZHONGXUESHENGDIANNAO-CATALOGUE-01
+
+- Source type: current institutional catalogue/search-index lead on the official domain of 湖南石油化工职业技术学院.
+- Research date: **2026-09-27**.
+- School-domain indexed catalogue rows observed for title `中学生电脑`, publisher `课堂内外杂志社出版`:
+  - `TP3-794/12.2`
+  - `TP3-794/12.3`
+  - `TP3-794/12.5`
+  - `TP3-794/12.12`
+  - `TP3-794/12.14`
+- Contemporary relevance:
+  - 17173/Sina's 2002 StoneAge 2.5 distribution list names **`《中学生电脑》2002年攻略特刊`** as a possible complete-package/updater carrier.
+- Confidence: **B for literal public search-index catalogue rows and institution identity; OPEN for date/issue/media identity**.
+- Important boundary:
+  - the indexed rows currently expose no year/issue mapping;
+  - the underlying PDF was not replayable in the current web environment;
+  - therefore none of the call numbers may be called the StoneAge 2.5 carrier yet.
+- Recovery consequence:
+  - retain the exact `TP3-794/12.*` tokens as a public catalogue-resolution route;
+  - next step is public OPAC/catalogue metadata resolution, not physical acquisition.
+- Canonical note: `research/clients/STONEAGE-SA25-ZHONGXUESHENGDIANNAO-LIBRARY-LEAD-R1.md`.
