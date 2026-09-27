@@ -1,0 +1,39 @@
+name: Bind Waei StoneAge downloan file IDs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_downloan_fileid_binding.py
+      - tests/test_stoneage_waei_downloan_fileid_binding.py
+      - .github/workflows/bind-stoneage-waei-downloan-fileids.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-downloan-fileids
+  cancel-in-progress: true
+
+jobs:
+  bind:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_waei_downloan_fileid_binding -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_downloan_fileid_binding > research/recovered/STONEAGE-WAEI-DOWNLOAN-FILEID-BINDING-R1.txt
+      - name: Commit derived report
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-WAEI-DOWNLOAN-FILEID-BINDING-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: bind Waei StoneAge downloan file IDs'
+          git pull --rebase origin main
+          git push
