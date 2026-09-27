@@ -1,0 +1,12 @@
+StoneAge Yegame-matched Mainland carrier description probe — R2
+TARGET|ruten_id=22636573895893|visual_anchor=EN0ZGKJ0002|role=mainland-retail-box
+CORRECTION|R1 generic exact-token output contained marketplace/system tokens and is NOT provenance evidence
+SCOPE|public item description only|identity snippets+codes+image URLs|no OCR|no image body|no contact extraction
+DETAIL|status=200|bytes=3827|sha256=53464f726162bbedacaf59df5558f206840bac9befd1a763d2d650ce90e6e15e|description_url_present=1
+DESCRIPTION|status=200|bytes=5721|sha256=7f4c239587cafc32e1e203bf8fad98ce650873cbefae782aacbd0b1b3fc0228b|encoding=utf-8|visible_chars=143|images=0|final_host=www.ruten.com.tw
+SNIPPET|needle=石器|text=露天市集 %7C 全台最大的網路購物市集 有的是中古商品下單前諮詢，商品詳情細節及數量 （ 正常標價是單個的價格） 認準賣場連結：https://www.ruten.com.tw/store/schwartzbertie213/ 正版電腦遊戲光盤 石器時代感興趣的話點“我想要”和我私聊吧～
+COUNT|identity_snippets=1
+COUNT|identity_tokens=0
+COUNT|description_images=0
+RESOLUTION|MATCHED_CARRIER_DESCRIPTION_CONTEXT_FOUND|classify version/publisher wording; seek disc-side identifier if absent
+EVIDENCE_BOUNDARY|Marketplace description is secondary carrier evidence; it cannot authenticate historical disc bytes or release date.
