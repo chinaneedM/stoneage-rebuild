@@ -155,6 +155,56 @@ enemy=WarpTemplateSecret|100|1|1
             self.assertNotIn("DIALOGUE-LIKE-ARG", text)
             self.assertNotIn("WARP=200,4,5", text)
 
+    def test_two_field_borncenter_uses_source_zero_defaults(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            npc_dir = root / "npc"
+            data_dir = root / "data"
+            map_dir = data_dir / "map"
+            npc_dir.mkdir()
+            map_dir.mkdir(parents=True)
+            lineage = root / "lineage.txt"
+            lineage.write_text(lineage_text(), encoding="utf-8")
+
+            (npc_dir / "base.template").write_text(
+                """NPCTEMPLATE
+{
+templatename=PointNpc
+functionset=TownPeople
+}
+""",
+                encoding="utf-8",
+            )
+            (npc_dir / "base.create").write_text(
+                """NPCCREATE
+{
+floorid=100
+borncenter=7,9
+enemy=PointNpc
+}
+""",
+                encoding="utf-8",
+            )
+            for floor in (100, 200):
+                (map_dir / f"{floor}.map").write_bytes(
+                    b"LS2MAP" + int(floor).to_bytes(2, "big")
+                )
+            (data_dir / "encount.txt").write_text(
+                encount_row(100) + "\n",
+                encoding="utf-8",
+            )
+
+            geometry = analyze_world_geometry(
+                lineage_report=lineage,
+                npc_dir=npc_dir,
+                data_dir=data_dir,
+                map_dir=map_dir,
+            )
+
+        self.assertEqual(len(geometry.placements), 1)
+        self.assertEqual(geometry.placements[0].birth_rect, (7, 9, 7, 9))
+        self.assertEqual(geometry.placements[0].move_rect, (7, 9, 7, 9))
+
     def test_warpman_is_not_flattened_into_classic_warp(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)
