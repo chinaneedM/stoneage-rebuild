@@ -1,0 +1,34 @@
+name: Deep probe Waei StoneAge runtime lineage
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_saupdate_lineage_probe.py
+      - tests/test_stoneage_waei_saupdate_lineage_probe.py
+      - .github/workflows/probe-stoneage-waei-saupdate-lineage.yml
+permissions:
+  contents: write
+concurrency:
+  group: stoneage-waei-saupdate-lineage
+  cancel-in-progress: true
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_waei_saupdate_lineage_probe -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_saupdate_lineage_probe > research/recovered/STONEAGE-WAEI-SA40-SA42-LINEAGE-R1.txt
+      - run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-WAEI-SA40-SA42-LINEAGE-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Waei sa40 sa42 runtime lineage'
+          git pull --rebase origin main
+          git push
