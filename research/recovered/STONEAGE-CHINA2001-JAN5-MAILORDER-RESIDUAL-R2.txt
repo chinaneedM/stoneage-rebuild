@@ -1,0 +1,12 @@
+StoneAge China.com Jan-2001 article strict residual — R2
+PARENT|STONEAGE-CHINA2001-JAN5-MAILORDER-ROUTE-R1|failed-replays-only + false-positive correction
+STRICT_RULE|StoneAge footer alone is noise; target requires mailorder/trial-giveaway semantic token
+PAGE|label=jan6-80570|attempt=1|status=200|bytes=22299|sha256=631c83ae63601830c384ce46e8679497aa34e87778c1a7eab1e2a9ca007dfe27|encoding=gb18030|strict=|context=|final=https://web.archive.org/web/20010211062656id_/http://game.china.com:80/zh_cn/news/news1/444/20010106/80570.html
+PAGE|label=jan4-78775-alt|attempt=1|status=200|bytes=19001|sha256=a7c29b6a5ad10636f643a087888baf7398c07e4fb0dedf35e7fbacfb0ab3a0f1|encoding=gb18030|strict=|context=|final=https://web.archive.org/web/20010309011418id_/http://game.china.com:80/zh_cn/news/news1/444/20010104/78775.html
+PAGE|label=jan4-78782|attempt=1|status=200|bytes=19301|sha256=2808d4ba6639b2ccccb63e16b4817268f1d7ab2d67fa891cd21fbb5d1609fe03|encoding=gb18030|strict=|context=|final=https://web.archive.org/web/20010309093437id_/http://game.china.com:80/zh_cn/news/news1/444/20010104/78782.html
+COUNT|targets|3
+COUNT|completed|3
+COUNT|strict_matches|0
+COUNT|errors|0
+RESOLUTION|JAN4_6_NEIGHBOR_RESIDUAL_BOUNDED|no mailorder/trial semantics; R1 StoneAge-footer matches are false positives
+CORRECTION|R1 ARTICLE_RECOVERED resolution is not accepted unless strict target semantics are present.
