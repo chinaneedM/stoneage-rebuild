@@ -1,0 +1,50 @@
+name: Map Waei central download detail IDs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_download_detail_map_probe.py
+      - tests/test_stoneage_waei_download_detail_map_probe.py
+      - .github/workflows/probe-stoneage-waei-download-detail-map.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-download-detail-map
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate detail-map probe
+        run: python3 -m unittest tests.test_stoneage_waei_download_detail_map_probe -v
+      - name: Map detail IDs and file links
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_download_detail_map_probe \
+            > research/recovered/STONEAGE-WAEI-DOWNLOAD-DETAIL-MAP-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-WAEI-DOWNLOAD-DETAIL-MAP-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: map Waei central download detail IDs'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_waei_download_detail_map_probe > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: map Waei central download detail IDs'
+          fi
+          git push
