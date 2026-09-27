@@ -2799,3 +2799,19 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   3. reconstruct/version-tag field-map and server-authoritative world content from recoverable official/later evidence;
   4. explicitly mark DESIGN substitutions where exact early server content cannot be recovered;
   5. prepare a local-first single-player implementation architecture with MMORPG-style systems, without building premature public-server/live-service infrastructure.
+
+
+## Phase 1 world-map lineage closure — 2026-09-27
+
+- World reconstruction policy added: `research/clients/STONEAGE-WORLD-MAP-RECONSTRUCTION-POLICY-R1.md`.
+- A complete cross-version comparison of the recovered 2.5 map corpus and the archived 2003 map package is now recorded in `research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt`.
+- Both later corpora expose the same **995 valid map paths**.
+- **980 / 995** paths have byte-identical payloads (same SHA-256) across both corpora; only **15** changed.
+- **761** maps are simultaneously:
+  1. same path in both later corpora;
+  2. byte-identical across both;
+  3. fully renderable through the accepted Taiwan-v1 ADRN/resource profile.
+- New reconstruction label: **STABLE_LATER_MAP_CANDIDATE**. These 761 maps are high-priority world-content candidates because they combine later-lineage persistence with v1 asset compatibility.
+- Boundary: this still does **not** prove concrete Taiwan-v1 map membership. Resource compatibility and later persistence cannot be promoted to v1 historical membership without independent early evidence.
+- The 15 changed maps are controlled map-evolution diff targets and must remain version-tagged rather than normalized.
+- Operational consequence: the project no longer depends on recovering the historical v1 map server before building the modern world. V1 supplies the map/cache runtime foundation; stable later maps supply a versioned content library; DESIGN reconstruction fills remaining gaps.
