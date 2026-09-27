@@ -1,0 +1,50 @@
+name: Bind Yegame StoneAge product details
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_yegame_stoneage_product_detail_probe.py
+      - tests/test_stoneage_yegame_stoneage_product_detail_probe.py
+      - .github/workflows/probe-stoneage-yegame-product-details.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-yegame-product-details
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate product-detail probe
+        run: python3 -m unittest tests.test_stoneage_yegame_stoneage_product_detail_probe -v
+      - name: Bind StoneAge product detail metadata
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_yegame_stoneage_product_detail_probe \
+            > research/recovered/STONEAGE-YEGAME-STONEAGE-PRODUCT-DETAIL-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-YEGAME-STONEAGE-PRODUCT-DETAIL-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: bind Yegame StoneAge product details'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_yegame_stoneage_product_detail_probe > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: bind Yegame StoneAge product details'
+          fi
+          git push
