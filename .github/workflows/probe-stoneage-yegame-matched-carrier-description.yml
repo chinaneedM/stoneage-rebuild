@@ -1,0 +1,42 @@
+name: Probe Yegame-matched carrier description
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_yegame_matched_carrier_description_probe.py
+      - tests/test_stoneage_yegame_matched_carrier_description_probe.py
+      - .github/workflows/probe-stoneage-yegame-matched-carrier-description.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-yegame-matched-carrier-description
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate description probe
+        run: python3 -m unittest tests.test_stoneage_yegame_matched_carrier_description_probe -v
+      - name: Probe public matched-carrier description
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_yegame_matched_carrier_description_probe \
+            > research/recovered/STONEAGE-YEGAME-MATCHED-CARRIER-DESCRIPTION-R2.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-YEGAME-MATCHED-CARRIER-DESCRIPTION-R2.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe matched Mainland carrier description'
+          git pull --rebase origin main
+          git push
