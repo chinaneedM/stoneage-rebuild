@@ -959,6 +959,101 @@ PARSE_WINDOW|name=S:W|instruction_rva=0x30cbb|mnemonic=add|ops=eax, 5
 PARSE_WINDOW|name=S:W|instruction_rva=0x30cbe|mnemonic=cmp|ops=eax, 0x24
 PARSE_WINDOW|name=S:W|instruction_rva=0x30cc1|mnemonic=mov|ops=dword ptr [esp + 0x14], eax
 PARSE_WINDOW|name=S:W|instruction_rva=0x30cc5|mnemonic=jl|ops=0x430b8a
+PARSE_WINDOW|name=B|instruction_rva=0x32c70|mnemonic=push|ops=ebx
+PARSE_WINDOW|name=B|instruction_rva=0x32c71|mnemonic=push|ops=esi
+PARSE_WINDOW|name=B|instruction_rva=0x32c72|mnemonic=push|ops=edi
+PARSE_WINDOW|name=B|instruction_rva=0x32c73|mnemonic=mov|ops=edi, dword ptr [esp + 0x14]
+PARSE_WINDOW|name=B|instruction_rva=0x32c77|mnemonic=mov|ops=al, byte ptr [edi + 1]
+PARSE_WINDOW|name=B|instruction_rva=0x32c7a|mnemonic=cmp|ops=al, 0x43
+PARSE_WINDOW|name=B|instruction_rva=0x32c7c|mnemonic=jne|ops=0x432cba
+PARSE_WINDOW|name=B|instruction_rva=0x32c7e|mnemonic=mov|ops=edx, dword ptr [0x46f270]
+PARSE_WINDOW|name=B|instruction_rva=0x32c84|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=B|instruction_rva=0x32c87|mnemonic=mov|ops=ebx, edx
+PARSE_WINDOW|name=B|instruction_rva=0x32c89|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=B|instruction_rva=0x32c8b|mnemonic=shl|ops=ebx, 0xc
+PARSE_WINDOW|name=B|instruction_rva=0x32c8e|mnemonic=add|ops=ebx, 0x46a21c
+PARSE_WINDOW|name=B|instruction_rva=0x32c94|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=B|instruction_rva=0x32c96|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=B|instruction_rva=0x32c98|mnemonic=sub|ops=edi, ecx
+PARSE_WINDOW|name=B|instruction_rva=0x32c9a|mnemonic=mov|ops=eax, ecx
+PARSE_WINDOW|name=B|instruction_rva=0x32c9c|mnemonic=mov|ops=esi, edi
+PARSE_WINDOW|name=B|instruction_rva=0x32c9e|mnemonic=mov|ops=edi, ebx
+PARSE_WINDOW|name=B|instruction_rva=0x32ca0|mnemonic=shr|ops=ecx, 2
+PARSE_WINDOW|name=B|instruction_rva=0x32ca3|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+PARSE_WINDOW|name=B|instruction_rva=0x32ca5|mnemonic=mov|ops=ecx, eax
+PARSE_WINDOW|name=B|instruction_rva=0x32ca7|mnemonic=and|ops=ecx, 3
+PARSE_WINDOW|name=B|instruction_rva=0x32caa|mnemonic=inc|ops=edx
+PARSE_WINDOW|name=B|instruction_rva=0x32cab|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+PARSE_WINDOW|name=B|instruction_rva=0x32cad|mnemonic=and|ops=edx, 3
+PARSE_WINDOW|name=B|instruction_rva=0x32cb0|mnemonic=pop|ops=edi
+PARSE_WINDOW|name=B|instruction_rva=0x32cb1|mnemonic=pop|ops=esi
+PARSE_WINDOW|name=B|instruction_rva=0x32cb2|mnemonic=mov|ops=dword ptr [0x46f270], edx
+PARSE_WINDOW|name=B|instruction_rva=0x32cb8|mnemonic=pop|ops=ebx
+PARSE_WINDOW|name=B|instruction_rva=0x32cb9|mnemonic=ret|ops=
+PARSE_WINDOW|name=B|instruction_rva=0x32cba|mnemonic=cmp|ops=al, 0x50
+PARSE_WINDOW|name=B|instruction_rva=0x32cbc|mnemonic=jne|ops=0x432ce2
+PARSE_WINDOW|name=B|instruction_rva=0x32cbe|mnemonic=push|ops=0x4661f8
+PARSE_WINDOW|name=B|instruction_rva=0x32cc3|mnemonic=push|ops=0x46f2a0
+PARSE_WINDOW|name=B|instruction_rva=0x32cc8|mnemonic=push|ops=0x46f298
+PARSE_WINDOW|name=B|instruction_rva=0x32ccd|mnemonic=add|ops=edi, 3
+PARSE_WINDOW|name=B|instruction_rva=0x32cd0|mnemonic=push|ops=0x45c98c
+PARSE_WINDOW|name=B|instruction_rva=0x32cd5|mnemonic=push|ops=edi
+PARSE_WINDOW|name=B|instruction_rva=0x32cd6|mnemonic=call|ops=0x449120
+PARSE_WINDOW|name=B|instruction_rva=0x32cdb|mnemonic=add|ops=esp, 0x14
+PARSE_WINDOW|name=B|instruction_rva=0x32cde|mnemonic=pop|ops=edi
+PARSE_WINDOW|name=B|instruction_rva=0x32cdf|mnemonic=pop|ops=esi
+PARSE_WINDOW|name=B|instruction_rva=0x32ce0|mnemonic=pop|ops=ebx
+PARSE_WINDOW|name=B|instruction_rva=0x32ce1|mnemonic=ret|ops=
+PARSE_WINDOW|name=B|instruction_rva=0x32ce2|mnemonic=cmp|ops=al, 0x41
+PARSE_WINDOW|name=B|instruction_rva=0x32ce4|mnemonic=jne|ops=0x432d25
+PARSE_WINDOW|name=B|instruction_rva=0x32ce6|mnemonic=push|ops=0x4661e8
+PARSE_WINDOW|name=B|instruction_rva=0x32ceb|mnemonic=push|ops=0x46a214
+PARSE_WINDOW|name=B|instruction_rva=0x32cf0|mnemonic=add|ops=edi, 3
+PARSE_WINDOW|name=B|instruction_rva=0x32cf3|mnemonic=push|ops=0x45c984
+PARSE_WINDOW|name=B|instruction_rva=0x32cf8|mnemonic=push|ops=edi
+PARSE_WINDOW|name=B|instruction_rva=0x32cf9|mnemonic=call|ops=0x449120
+PARSE_WINDOW|name=B|instruction_rva=0x32cfe|mnemonic=mov|ops=eax, dword ptr [0x46f27c]
+PARSE_WINDOW|name=B|instruction_rva=0x32d03|mnemonic=add|ops=esp, 0x10
+PARSE_WINDOW|name=B|instruction_rva=0x32d06|mnemonic=cmp|ops=eax, 1
+PARSE_WINDOW|name=B|instruction_rva=0x32d09|mnemonic=jne|ops=0x432d6f
+PARSE_WINDOW|name=B|instruction_rva=0x32d0b|mnemonic=mov|ops=ecx, dword ptr [0x4661e8]
+PARSE_WINDOW|name=B|instruction_rva=0x32d11|mnemonic=pop|ops=edi
+PARSE_WINDOW|name=B|instruction_rva=0x32d12|mnemonic=pop|ops=esi
+PARSE_WINDOW|name=B|instruction_rva=0x32d13|mnemonic=mov|ops=dword ptr [0x46e248], ecx
+PARSE_WINDOW|name=B|instruction_rva=0x32d19|mnemonic=mov|ops=dword ptr [0x46f27c], 0
+PARSE_WINDOW|name=B|instruction_rva=0x32d23|mnemonic=pop|ops=ebx
+PARSE_WINDOW|name=B|instruction_rva=0x32d24|mnemonic=ret|ops=
+PARSE_WINDOW|name=B|instruction_rva=0x32d25|mnemonic=cmp|ops=al, 0x55
+PARSE_WINDOW|name=B|instruction_rva=0x32d27|mnemonic=jne|ops=0x432d37
+PARSE_WINDOW|name=B|instruction_rva=0x32d29|mnemonic=pop|ops=edi
+PARSE_WINDOW|name=B|instruction_rva=0x32d2a|mnemonic=pop|ops=esi
+PARSE_WINDOW|name=B|instruction_rva=0x32d2b|mnemonic=mov|ops=dword ptr [0x46f29c], 1
+PARSE_WINDOW|name=B|instruction_rva=0x32d35|mnemonic=pop|ops=ebx
+PARSE_WINDOW|name=B|instruction_rva=0x32d36|mnemonic=ret|ops=
+PARSE_WINDOW|name=B|instruction_rva=0x32d37|mnemonic=mov|ops=edx, dword ptr [0x46f250]
+PARSE_WINDOW|name=B|instruction_rva=0x32d3d|mnemonic=or|ops=ecx, 0xffffffff
+PARSE_WINDOW|name=B|instruction_rva=0x32d40|mnemonic=mov|ops=ebx, edx
+PARSE_WINDOW|name=B|instruction_rva=0x32d42|mnemonic=xor|ops=eax, eax
+PARSE_WINDOW|name=B|instruction_rva=0x32d44|mnemonic=shl|ops=ebx, 0xc
+PARSE_WINDOW|name=B|instruction_rva=0x32d47|mnemonic=add|ops=ebx, 0x466214
+PARSE_WINDOW|name=B|instruction_rva=0x32d4d|mnemonic=repne scasb|ops=al, byte ptr es:[edi]
+PARSE_WINDOW|name=B|instruction_rva=0x32d4f|mnemonic=not|ops=ecx
+PARSE_WINDOW|name=B|instruction_rva=0x32d51|mnemonic=sub|ops=edi, ecx
+PARSE_WINDOW|name=B|instruction_rva=0x32d53|mnemonic=mov|ops=eax, ecx
+PARSE_WINDOW|name=B|instruction_rva=0x32d55|mnemonic=mov|ops=esi, edi
+PARSE_WINDOW|name=B|instruction_rva=0x32d57|mnemonic=mov|ops=edi, ebx
+PARSE_WINDOW|name=B|instruction_rva=0x32d59|mnemonic=shr|ops=ecx, 2
+PARSE_WINDOW|name=B|instruction_rva=0x32d5c|mnemonic=rep movsd|ops=dword ptr es:[edi], dword ptr [esi]
+PARSE_WINDOW|name=B|instruction_rva=0x32d5e|mnemonic=mov|ops=ecx, eax
+PARSE_WINDOW|name=B|instruction_rva=0x32d60|mnemonic=and|ops=ecx, 3
+PARSE_WINDOW|name=B|instruction_rva=0x32d63|mnemonic=inc|ops=edx
+PARSE_WINDOW|name=B|instruction_rva=0x32d64|mnemonic=and|ops=edx, 3
+PARSE_WINDOW|name=B|instruction_rva=0x32d67|mnemonic=rep movsb|ops=byte ptr es:[edi], byte ptr [esi]
+PARSE_WINDOW|name=B|instruction_rva=0x32d69|mnemonic=mov|ops=dword ptr [0x46f250], edx
+PARSE_WINDOW|name=B|instruction_rva=0x32d6f|mnemonic=pop|ops=edi
+PARSE_WINDOW|name=B|instruction_rva=0x32d70|mnemonic=pop|ops=esi
+PARSE_WINDOW|name=B|instruction_rva=0x32d71|mnemonic=pop|ops=ebx
+PARSE_WINDOW|name=B|instruction_rva=0x32d72|mnemonic=ret|ops=
 WN_FORWARD|callsite_rva=0x328e2|target_rva=0x12930|prelude_instructions=10
 WN_FORWARD_PRELUDE|order=1|instruction_rva=0x328c9|mnemonic=mov|ops=eax, dword ptr [esp + 0x18]
 WN_FORWARD_PRELUDE|order=2|instruction_rva=0x328cd|mnemonic=mov|ops=ecx, dword ptr [esp + 0x14]
