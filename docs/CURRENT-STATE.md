@@ -2464,3 +2464,29 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - `SRC-CN-2001-CHINADOTCOM-SA-LEGACY-PRODUCT-01`;
   - `SRC-CN-2001-CHINADOTCOM-SA-LEGACY-NEWS-ARCHIVE-01`;
   - `SRC-CN-EARLY-JINGHE-SA-TEST-DISTRIBUTION-01`.
+
+
+## Mainland 2000 official test-CD preservation-index route bounded — 2026-09-27
+
+- The dedicated **metadata-only** preservation probe for the now-confirmed December-2000 Mainland official test CD has completed.
+- R1 used **10 source-derived query identities** across Internet Archive and DiscMaster:
+  - Chinese identities: `石器时代 测试光盘`, `测试版 光盘`, `试玩版 光盘`, `晶合 测试`, `晶合`;
+  - English/channel identities: `StoneAge test CD`, `StoneAge beta Waei`, `StoneAge trial Waei`, `StoneAge Jinghe`, `StoneAge jhpop`.
+- R1 results:
+  - **0 strict Internet Archive items** across all ten identities;
+  - **0 strict DiscMaster hits** on the five Chinese identities;
+  - the five English DiscMaster full-text searches timed out under the original parallel run and were therefore deliberately left OPEN rather than misreported as zero.
+- R2 retried **only those five English DiscMaster residual identities**, sequentially and in two distinct scopes:
+  - filename/name index;
+  - full-text deep index.
+- R2 completed **10 / 10 surfaces, 0 strict hits, 0 errors**.
+- Therefore the currently tested direct preservation-index identity route is now **BOUNDED**. Do not repeat these same IA/DiscMaster query combinations unless a new artifact token appears.
+- This negative index result does **not** negate the contemporaneously documented physical test CD. Highest-value reopen tokens are now: disc-face text/photo, magazine identity, exact filename, volume label, matrix/IFPI, catalogue/publication number, ISO/BIN/CUE/file tree, or checksum.
+- Provenance-control refinement: a 2002 17173 first-person retrospective states that on Christmas during the Mainland test period the author began playing from a **disc burned/copied by a friend**. This is useful evidence that player-made copies circulated during testing, but is not evidence of an official pressing.
+- Consequence for future recovery: classify any found test client independently on two axes:
+  1. **payload lineage** — does the client/file tree match the Dec-2000 test build?;
+  2. **physical carrier provenance** — official China.com/Jinghe giveaway original, magazine carrier, or player-burned copy.
+- Derived reports:
+  - `research/recovered/STONEAGE-MAINLAND-2000-TEST-CD-PRESERVATION-R1.txt`;
+  - `research/recovered/STONEAGE-MAINLAND-2000-TEST-CD-DISCMASTER-RESIDUAL-R2.txt`.
+- New source record: `SRC-CN-2002-17173-SA-TEST-CD-BURNED-COPY-RECOLLECTION-01`.

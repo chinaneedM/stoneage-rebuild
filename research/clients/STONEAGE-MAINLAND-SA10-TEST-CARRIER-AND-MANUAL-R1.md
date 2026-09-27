@@ -157,3 +157,50 @@ Jinghe also had close ties to `《大众软件》`, which makes Popsoft a ration
 3. independently resolve the collector's **test manual + magazine-insert disc** and determine whether it is the same distribution lineage;
 4. retain the 2001-01 formal retail CD as the immediate post-test diff anchor;
 5. if test-CD bytes appear, stop historical package research and perform hashes, file-tree inventory and controlled diff against Taiwan v1.0 and the January Mainland retail lineage.
+
+
+## 7. Preservation-index result and copy-provenance split — 2026-09-27
+
+The direct index route for the official test CD has now been tested and bounded without downloading any proprietary payload.
+
+### R1
+
+`STONEAGE-MAINLAND-2000-TEST-CD-PRESERVATION-R1.txt` tested ten source-derived identities against Internet Archive and DiscMaster.
+
+Result:
+
+- Internet Archive: **0 strict items** for all ten identities;
+- DiscMaster: **0 strict hits** for the five Chinese identities;
+- five English DiscMaster full-text queries timed out during the parallel run and were explicitly left unresolved.
+
+### R2 residual
+
+`STONEAGE-MAINLAND-2000-TEST-CD-DISCMASTER-RESIDUAL-R2.txt` retried only those five English identities, sequentially, in both:
+
+- filename/name index;
+- full-text deep index.
+
+Result:
+
+- **10 surfaces completed**;
+- **0 strict hits**;
+- **0 errors**.
+
+Therefore the tested IA/DiscMaster identity route is now **BOUNDED**. Repeating the same generic names has low information value. Reopen only from a new exact token such as a disc label, exact filename, magazine issue, volume label, matrix/IFPI, catalogue identifier, file tree or checksum.
+
+### Official original versus player-burned copy
+
+A 2002 17173 first-person retrospective provides a separate provenance control. The author recalls beginning the Mainland test during Christmas using a **disc burned by a friend**.
+
+This changes our future authentication model:
+
+- an early test client can be historically correct at the **payload** level while surviving only on a non-original burned carrier;
+- an official China.com/Jinghe giveaway disc can be authentic at the **physical carrier** level even before its byte identity is known;
+- these two grades must never be collapsed.
+
+For any future candidate, record independently:
+
+1. client/build/file-tree provenance;
+2. optical-carrier/manufacturing/distribution provenance.
+
+The current highest-value target remains the official Dec-2000 test-CD artifact identity, but a player-burned copy with a complete file tree would still be technically valuable as a candidate byte bridge if its content can be controlled against other clean specimens.

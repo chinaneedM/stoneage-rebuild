@@ -2841,3 +2841,26 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
 - Critical limit:
   - Jinghe's connection to `《大众软件》` does **not** prove that the collector-described magazine-insert Mainland 1.0 test disc came from a specific Popsoft issue;
   - no exact 2000 Popsoft issue/disc carrier has been resolved in this pass.
+
+
+### SRC-CN-2002-17173-SA-TEST-CD-BURNED-COPY-RECOLLECTION-01
+
+- Title: `回首往事，我们从外挂中走来~`
+- Publication date: **2002-08-19**
+- Retrieval date: **2026-09-27**
+- Source: 17173 StoneAge player-history article
+- URL: https://news.17173.com/z/stoneage/content/2002-8-19/n337_253594.html
+- Source type: near-period first-person player retrospective; **not official documentation**
+- Confidence: **B-/C+ for the author's own access path; not physical-original provenance**
+- Supports:
+  - the author explicitly places Mainland public testing in **December 2000**;
+  - the author recalls the test-version Christmas period and says he began playing using a **disc burned/copied by a friend**.
+- Archaeology significance:
+  - independently demonstrates a plausible **player-burned-copy survival class** during the test period;
+  - warns that a recovered early disc can carry historically correct test payload while lacking official physical-carrier provenance.
+- Does not support:
+  - the artwork, label, matrix, volume label or hashes of the official China.com/Jinghe giveaway disc;
+  - identity between the friend's burned copy and any later collector-described magazine-insert test disc;
+  - byte identity with Taiwan v1.0 or the January-2001 Mainland retail CD.
+- Operational rule:
+  - authenticate **payload lineage** and **physical-carrier lineage** separately for every future test-client specimen.
