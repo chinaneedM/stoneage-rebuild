@@ -1,0 +1,50 @@
+name: Probe StoneAge Mainland 2000 official test CD
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_mainland_2000_testcd_probe.py
+      - tests/test_stoneage_mainland_2000_testcd_probe.py
+      - .github/workflows/probe-stoneage-mainland-2000-testcd.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-mainland-2000-testcd
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate test-CD preservation probe
+        run: python3 -m unittest tests.test_stoneage_mainland_2000_testcd_probe -v
+      - name: Probe public preservation metadata
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_mainland_2000_testcd_probe \
+            > research/recovered/STONEAGE-MAINLAND-2000-TEST-CD-PRESERVATION-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-MAINLAND-2000-TEST-CD-PRESERVATION-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe Mainland 2000 official test CD'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m tools.stoneage_mainland_2000_testcd_probe > "$R"
+            git add "$R"
+            git diff --cached --quiet && exit 0
+            git commit -m 'research: probe Mainland 2000 official test CD'
+          fi
+          git push
