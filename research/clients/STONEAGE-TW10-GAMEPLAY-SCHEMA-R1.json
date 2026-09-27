@@ -1191,7 +1191,10 @@
               "battle_bp_flag",
               "battle_my_mp"
             ],
-            "semantic_evidence": "EARLY_LINEAGE"
+            "semantic_evidence": "EARLY_LINEAGE",
+            "parser_format": "%X|%X|%X",
+            "parser_format_evidence": "V1_DIRECT",
+            "parser_format_rva": "0x5c98c"
           },
           "A": {
             "direct_behavior": "parse_two_outputs_from_command_plus_3_then_conditionally_sync_second_output_and_clear_receive_flag",
@@ -1205,7 +1208,10 @@
               "receive_flag_semantic": "battle_turn_receive_flag",
               "destination_semantic": "battle_client_turn_no",
               "semantic_evidence": "EARLY_LINEAGE"
-            }
+            },
+            "parser_format": "%X|%X",
+            "parser_format_evidence": "V1_DIRECT",
+            "parser_format_rva": "0x5c984"
           },
           "U": {
             "direct_behavior": "set_global_flag_to_1",
