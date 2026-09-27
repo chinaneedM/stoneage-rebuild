@@ -1,0 +1,50 @@
+name: Retry Popsoft Dec-2000 exact-disc SHA1
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_popsoft_200012_exact_disc_residual.py
+      - tests/test_stoneage_popsoft_200012_exact_disc_residual.py
+      - .github/workflows/retry-stoneage-popsoft-200012-exact-disc-sha1.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-popsoft-200012-exact-disc-sha1
+  cancel-in-progress: true
+
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate residual
+        run: python3 -m unittest tests.test_stoneage_popsoft_200012_exact_disc_residual -v
+      - name: Retry SHA1 surfaces
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_popsoft_200012_exact_disc_residual \
+            > research/recovered/STONEAGE-POPSOFT-200012-EXACT-DISCS-RESIDUAL-R2.txt
+      - name: Commit residual metadata
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-POPSOFT-200012-EXACT-DISCS-RESIDUAL-R2.txt
+          cp "$R" /tmp/report.txt
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p research/recovered
+          cp /tmp/report.txt "$R"
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: close Popsoft Dec-2000 exact-disc residual'
+          for n in 1 2 3 4 5; do
+            git push && exit 0
+            sleep $((n*3))
+          done
+          exit 1
