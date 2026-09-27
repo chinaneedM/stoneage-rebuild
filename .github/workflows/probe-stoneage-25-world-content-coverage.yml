@@ -153,12 +153,14 @@ jobs:
                 --lineage-report research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt \
                 --npc-dir "$N" \
                 --data-dir "$D" \
+                --map-dir "$M" \
                 --setup "$C"
             else
               python3 -m tools.stoneage_versioned_world_geometry_probe \
                 --lineage-report research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt \
                 --npc-dir "$N" \
-                --data-dir "$D"
+                --data-dir "$D" \
+                --map-dir "$M"
             fi
           } > "$report"
 
