@@ -1,0 +1,42 @@
+name: Close failed Mainland launch hosts
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_mainland_2001_launch_partner_failed_hosts.py
+      - tests/test_stoneage_mainland_2001_launch_partner_failed_hosts.py
+      - .github/workflows/close-stoneage-mainland-2001-launch-partner-failed-hosts.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-mainland-2001-launch-partner-failed-hosts
+  cancel-in-progress: true
+
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate failed-host residual
+        run: python3 -m unittest tests.test_stoneage_mainland_2001_launch_partner_failed_hosts -v
+      - name: Query failed hosts day by day
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_mainland_2001_launch_partner_failed_hosts \
+            > research/recovered/STONEAGE-MAINLAND-2001-LAUNCH-PARTNERS-FAILED-HOSTS-R3.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-MAINLAND-2001-LAUNCH-PARTNERS-FAILED-HOSTS-R3.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: close failed Mainland launch hosts'
+          git pull --rebase origin main
+          git push
