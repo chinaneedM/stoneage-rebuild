@@ -1,0 +1,42 @@
+name: Retry Waei www9 exact launch IDs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_www9_exact_postdec6_residual.py
+      - tests/test_stoneage_waei_www9_exact_postdec6_residual.py
+      - .github/workflows/retry-stoneage-waei-www9-exact-postdec6-residual.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-www9-exact-postdec6-residual
+  cancel-in-progress: true
+
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate residual probe
+        run: python3 -m unittest tests.test_stoneage_waei_www9_exact_postdec6_residual -v
+      - name: Retry failed exact IDs only
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_www9_exact_postdec6_residual \
+            > research/recovered/STONEAGE-WAEI-WWW9-EXACT-POSTDEC6-IDS-RESIDUAL-R2.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-WAEI-WWW9-EXACT-POSTDEC6-IDS-RESIDUAL-R2.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: close Waei www9 exact-ID residual'
+          git pull --rebase origin main
+          git push
