@@ -1,6 +1,6 @@
 StoneAge 2.5 old-disc Directory Lister carrier-name crawl — R2
 SCOPE|public-directory-html-only|old-disc-roots|metadata-only|no-file-bodies
-LIMITS|max_pages=5000|max_links=300000|max_html_bytes=2000000|workers=16|batch=96
+LIMITS|max_pages=8000|max_links=300000|max_html_bytes=8000000|workers=16|batch=96
 ROOT|status=200|bytes=44422|sha256=18ae7466d054be2550272a3061688f3e50059c6ead75221e9e1137923ef32c40|final=https://oddownload.nuduseng.com/
 COUNT|old_disc_roots|29
 ROOT_DIR|value=10老光盘群(群号854318908)群友分享汇总 2019年9月
@@ -32,15 +32,14 @@ ROOT_DIR|value=6老光盘群(群号854318908)群友分享汇总 2019年6月21日
 ROOT_DIR|value=7老光盘群(群号854318908)群友分享汇总 2019年7月
 ROOT_DIR|value=8老光盘群(群号854318908)群友分享汇总 2019年8月
 ROOT_DIR|value=老光盘群(群号854318908)群友分享汇总 2019.2.16-2019.3.8
-COUNT|pages_visited|5000
-COUNT|links_seen|92797
-COUNT|directory_links|36685
-COUNT|file_links|36116
+COUNT|pages_visited|5173
+COUNT|links_seen|97708
+COUNT|directory_links|38190
+COUNT|file_links|38826
 COUNT|matches|0
 COUNT|middle_school_computer_matches|0
 COUNT|stoneage_name_matches|0
-COUNT|errors|1
-COUNT|frontier_remaining|83
-ERROR|scope=13老光盘群(群号854318908)群友分享汇总 2019年12月1日至10日/2019-12-09/fy/fy中华百科藏书/15 法律与经济|kind=ValueError|message=directory-html-too-large
-RESOLUTION|CRAWL_LIMIT_REACHED|increase only if new metadata justifies a wider pass
+COUNT|errors|0
+COUNT|frontier_remaining|0
+RESOLUTION|NO_TARGET_NAME_ON_CURRENT_DIRECTORY_TREE|current public listing has no indexed middle-school-computer carrier name
 EVIDENCE_BOUNDARY|directory/file names identify only public preservation leads; they do not prove 2002 issue identity, disc contents, clean-client status or byte provenance.
