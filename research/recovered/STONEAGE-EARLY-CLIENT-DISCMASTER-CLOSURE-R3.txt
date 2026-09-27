@@ -1,0 +1,25 @@
+StoneAge early-client DiscMaster recovery surface closure — R3
+PARENTS|STONEAGE-TW10-DISCMASTER-MAPCACHE-R1.txt|STONEAGE-EARLY-CLIENT-DISCMASTER-SIGNATURES-R1.txt|STONEAGE-EARLY-CLIENT-DISCMASTER-INTERNAL-STRINGS-R1.txt|STONEAGE-EARLY-CLIENT-DISCMASTER-INTERNAL-STRINGS-RESIDUAL-R2.txt
+SCOPE|1999..2002 DiscMaster public filename + full-text index|accepted Taiwan-v1.0 structural signatures|metadata only
+
+FILENAME_SURFACE|
+- prior TW-v1 probe: sa_3.exe / adrn_1.bin / spradrn_1.bin / battletxt_1.txt / soundaddr_1.txt / waei.bin -> 0 multi-signature carriers.
+- expanded R1: real_1.bin / adrn_1.bin / spr_1.bin / spradrn_1.bin / battletxt_1.txt / soundaddr_1.txt + supporting sa_3.exe / StoneAge.exe / setup.inx.
+- all 9 expanded queries completed with 0 errors.
+- distinctive early-client filenames yielded 0 exact carrier intersections.
+- setup.inx yielded generic InstallShield noise only; no StoneAge resource co-occurrence.
+- result: 0 candidate carriers / 0 strong carriers.
+
+FULLTEXT_SURFACE|
+- anchor stoneage.waei.net -> 0 rows.
+- anchor /saupdate/newest.txt -> 0 rows.
+- spradrn_1.bin -> 0 rows.
+- battletxt_1.txt -> 0 rows.
+- soundaddr_1.txt -> 0 rows.
+- supporting StoneAge.exe -> 0 rows in the 1999..2002 full-text window.
+- R1 timeout residuals were retried sequentially in R2; all four completed, 0 errors, 0 carriers.
+
+RESOLUTION|DISCMaster_EARLY_CLIENT_SIGNATURE_SURFACE_BOUNDED
+NEXT|Do not repeat equivalent DiscMaster filename/full-text searches unless a new exact filename, hash, archive member path, volume label, or installer token is recovered from another source.
+PRIORITY|Continue full-client recovery through first/secondary historical page routing, independent mirrors/carriers, test-CD physical provenance, or a newly recovered exact binary token.
+EVIDENCE_BOUNDARY|This bounds only the tested DiscMaster public index. It does not imply that the Dec-2000 Mainland test CD or Jan-2001 ~274 MB Waei trial client did not exist or were not distributed.
