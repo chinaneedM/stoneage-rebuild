@@ -1,0 +1,34 @@
+StoneAge historical yegame.com launch-window Wayback census — R1
+SOURCE_CHAIN|JHPOP root 20001204160300 -> http://www.yegame.com|launch=20001115..20010228|root-control=20001201..20010131
+SCOPE|CDX metadata only|all statuses|collapse=urlkey|no archived-body|no software payload
+PROVENANCE_BOUNDARY|Only timestamped historical captures are in scope; modern yegame.com identity is not inferred.
+QUERY|label=launch-domain|scope=launch|status=200|rows=7|bytes=996|sha256=811592fbf2de36286eee5164e52d808ad136b42ce38e4b3fd6825c8fc730ea2b|final=https://web.archive.org/cdx/search/cdx?url=yegame.com&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001115&to=20010228&limit=50000&collapse=urlkey
+QUERY|label=launch-www-prefix|scope=launch|status=200|rows=7|bytes=996|sha256=811592fbf2de36286eee5164e52d808ad136b42ce38e4b3fd6825c8fc730ea2b|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.yegame.com%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001115&to=20010228&limit=50000&collapse=urlkey
+QUERY|label=launch-bare-prefix|scope=launch|status=200|rows=7|bytes=996|sha256=811592fbf2de36286eee5164e52d808ad136b42ce38e4b3fd6825c8fc730ea2b|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fyegame.com%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001115&to=20010228&limit=50000&collapse=urlkey
+QUERY|label=root-www|scope=control|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.yegame.com%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001201&to=20010131&limit=50000&collapse=urlkey
+ROW|timestamp=20010202023100|status=200|score=0|tokens=|basename=|mime=text/html|length=2361|digest=PJ72ATQ5RWSNJCDFH4P5D6VJRBTW4KIO|redirect=|original=http://www.yegame.com:80/
+ROW|timestamp=20010205004600|status=200|score=0|tokens=|basename=login.asp|mime=text/html|length=2677|digest=Z6PEY4CXXFL5XG3ECYDZYN4PX4H3JFPO|redirect=|original=http://www.yegame.com:80/business/login.asp
+ROW|timestamp=20010207160624|status=200|score=0|tokens=|basename=default.htm|mime=text/html|length=2331|digest=2GQWKXCYGGFHP6LRSA2C567BXG3JVPMI|redirect=|original=http://www.yegame.com:80/default.htm
+ROW|timestamp=20010207164059|status=200|score=3|tokens=product|basename=index.asp|mime=text/html|length=5116|digest=UUJ4RZBY6J2K4LWUJ4ZSLHFWXG7VGR5P|redirect=|original=http://www.yegame.com:80/product/empolder/index.asp
+ROW|timestamp=20010207201258|status=200|score=3|tokens=product|basename=index.asp|mime=text/html|length=4731|digest=HUTCI6RBBVOT7DF5TWCLKM3KK7EF3VCW|redirect=|original=http://www.yegame.com:80/product/study/index.asp
+ROW|timestamp=20010207202054|status=200|score=3|tokens=product|basename=index.asp|mime=text/html|length=5214|digest=UV6CL33JRPLRSXUBO4I34S6ZAKOLOAN4|redirect=|original=http://www.yegame.com:80/product/tools/index.asp
+ROW|timestamp=20010207202723|status=200|score=3|tokens=product|basename=index.asp|mime=text/html|length=4932|digest=3VPAHQ2T5APUV6WOKB34LMFDRV6CWK63|redirect=|original=http://www.yegame.com:80/product/system/index.asp
+TOPDIR|name=product|count=4
+TOPDIR|name=/|count=1
+TOPDIR|name=business|count=1
+TOPDIR|name=default.htm|count=1
+STATUS_COUNT|status=200|count=7
+QUERY_COUNT|label=launch-bare-prefix|count=7
+QUERY_COUNT|label=launch-domain|count=7
+QUERY_COUNT|label=launch-www-prefix|count=7
+QUERY_COUNT|label=root-www|count=0
+COUNT|unique_rows|7
+COUNT|launch_rows|7
+COUNT|root_control_rows|0
+COUNT|candidate_rows|4
+COUNT|strong_candidate_rows|0
+COUNT|binary_rows|0
+ERROR|label=root-bare|scope=control|kind=URLError|message=<urlopen error [Errno 111] Connection refused>
+COUNT|errors|1
+RESOLUTION|YEGAME_LAUNCH_NAMESPACE_FOUND|inspect root/topdirs and exact captures next
+EVIDENCE_BOUNDARY|CDX metadata proves archival URL topology only; it cannot authenticate StoneAge client bytes or physical test-CD provenance.
