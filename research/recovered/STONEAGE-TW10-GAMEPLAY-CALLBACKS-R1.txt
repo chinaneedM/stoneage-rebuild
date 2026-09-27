@@ -1054,8 +1054,12 @@ PARSE_WINDOW|name=B|instruction_rva=0x32d6f|mnemonic=pop|ops=edi
 PARSE_WINDOW|name=B|instruction_rva=0x32d70|mnemonic=pop|ops=esi
 PARSE_WINDOW|name=B|instruction_rva=0x32d71|mnemonic=pop|ops=ebx
 PARSE_WINDOW|name=B|instruction_rva=0x32d72|mnemonic=ret|ops=
-B_FORMAT|rva=0x5c984|text=
-B_FORMAT|rva=0x5c98c|text=
+B_FORMAT|rva=0x5c984|text=%X%7C%X
+B_FORMAT|rva=0x5c98c|text=%X%7C%X%7C%X
+B_FORMAT_SCAN|token=%X%7C%X|count=6|rvas=0x55f9a,0x55fc2,0x55fca,0x5c984,0x5c98c,0x5c98f
+B_FORMAT_SCAN|token=%X%7C%X%7C%X|count=1|rvas=0x5c98c
+B_FORMAT_SCAN|token=%x%7C%x|count=0|rvas=
+B_FORMAT_SCAN|token=%x%7C%x%7C%x|count=0|rvas=
 WN_FORWARD|callsite_rva=0x328e2|target_rva=0x12930|prelude_instructions=10
 WN_FORWARD_PRELUDE|order=1|instruction_rva=0x328c9|mnemonic=mov|ops=eax, dword ptr [esp + 0x18]
 WN_FORWARD_PRELUDE|order=2|instruction_rva=0x328cd|mnemonic=mov|ops=ecx, dword ptr [esp + 0x14]
