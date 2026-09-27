@@ -1,0 +1,42 @@
+name: Classify Waei StoneAge first-party updates
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_saupdate_payload_classifier.py
+      - tests/test_stoneage_waei_saupdate_payload_classifier.py
+      - .github/workflows/classify-stoneage-waei-saupdate-payloads.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-saupdate-payloads
+  cancel-in-progress: true
+
+jobs:
+  classify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate classifier
+        run: python3 -m unittest tests.test_stoneage_waei_saupdate_payload_classifier -v
+      - name: Classify exact archived payloads transiently
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_saupdate_payload_classifier \
+            > research/recovered/STONEAGE-WAEI-SA40-SA42-PAYLOAD-CLASSIFIER-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-WAEI-SA40-SA42-PAYLOAD-CLASSIFIER-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: classify Waei sa40 sa42 update payloads'
+          git pull --rebase origin main
+          git push
