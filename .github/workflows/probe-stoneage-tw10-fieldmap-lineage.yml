@@ -1,0 +1,161 @@
+name: Compare recovered field-map lineage
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_fieldmap_lineage_probe.py
+      - tests/test_stoneage_tw10_fieldmap_lineage_probe.py
+      - .github/workflows/probe-stoneage-tw10-fieldmap-lineage.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-tw10-fieldmap-lineage
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate lineage classifier
+        run: python3 -m unittest tests.test_stoneage_tw10_fieldmap_lineage_probe -v
+
+      - name: Install archive tools
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip unar
+
+      - name: Recover preserved 2.5 map corpus transiently
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25
+          python3 - <<'PY'
+          import hashlib, html, json, re, http.cookiejar, urllib.parse, urllib.request
+          from pathlib import Path
+
+          ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124 Safari/537.36'
+          cj=http.cookiejar.CookieJar()
+          op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+          op.addheaders=[('User-Agent',ua),('Accept-Language','en-US,en;q=0.9')]
+          expected={
+              'ev7l29fw77891go':'7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5',
+              'ytaa168o5jih0lx':'567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb',
+          }
+          def get(key,suffix):
+              api='https://www.mediafire.com/api/1.5/file/get_info.php'
+              data=urllib.parse.urlencode({'quick_key':key,'response_format':'json'}).encode()
+              req=urllib.request.Request(api,data=data,headers={'User-Agent':ua})
+              with op.open(req,timeout=60) as r:
+                  info=json.load(r)['response']['file_info']
+              if str(info.get('hash') or '').lower()!=expected[key]:
+                  raise SystemExit('MediaFire metadata hash changed')
+              req=urllib.request.Request(info['links']['normal_download'],headers={'User-Agent':ua})
+              with op.open(req,timeout=60) as r:
+                  page=r.read().decode('utf-8','replace'); referer=r.geturl()
+              m=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S)
+              if not m:
+                  m=re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+              if not m:
+                  raise SystemExit('No direct link')
+              dest=Path('/tmp/sa25')/f'part.{suffix}'
+              h=hashlib.sha256()
+              req=urllib.request.Request(html.unescape(m.group(1)),headers={'User-Agent':ua,'Referer':referer})
+              with op.open(req,timeout=300) as r, dest.open('wb') as out:
+                  while True:
+                      chunk=r.read(1024*1024)
+                      if not chunk:
+                          break
+                      out.write(chunk); h.update(chunk)
+              if h.hexdigest()!=expected[key]:
+                  raise SystemExit('Hash mismatch')
+          get('ev7l29fw77891go','001')
+          get('ytaa168o5jih0lx','002')
+          PY
+          cat /tmp/sa25/part.001 /tmp/sa25/part.002 > /tmp/sa25/bundle.rar
+          test "$(sha256sum /tmp/sa25/bundle.rar | awk '{print $1}')" = "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+          mkdir -p /tmp/sa25/out
+          ulimit -c 0
+          unar -f -o /tmp/sa25/out /tmp/sa25/bundle.rar >/tmp/sa25/unar.log 2>&1
+
+      - name: Recover archived 2003 map corpus transiently
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa03/out
+          python3 - <<'PY'
+          import hashlib, urllib.request
+          from pathlib import Path
+
+          url='https://web.archive.org/web/20030623234451id_/http://www.wuxitianlong.com:80/sa/map.exe'
+          expected='372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e'
+          req=urllib.request.Request(url,headers={'User-Agent':'stoneage-rebuild-archaeology/1.0'})
+          dest=Path('/tmp/sa03/map.exe')
+          h=hashlib.sha256()
+          with urllib.request.urlopen(req,timeout=60) as r, dest.open('wb') as out:
+              while True:
+                  chunk=r.read(1024*1024)
+                  if not chunk:
+                      break
+                  out.write(chunk); h.update(chunk)
+          if h.hexdigest()!=expected:
+              raise SystemExit(f'historical map package hash mismatch: {h.hexdigest()}')
+          PY
+          if ! 7z x -y -o/tmp/sa03/out /tmp/sa03/map.exe >/tmp/sa03/7z.log 2>&1; then
+            rm -rf /tmp/sa03/out
+            mkdir -p /tmp/sa03/out
+            unar -f -o /tmp/sa03/out /tmp/sa03/map.exe >/tmp/sa03/unar.log 2>&1
+          fi
+
+      - name: Compare complete map corpora
+        run: |
+          set -euo pipefail
+          MAP25="$(find /tmp/sa25/out -type d -path '*/SA2.5主程式/stoneage2.5/map' -print -quit)"
+          MAP03="$(find /tmp/sa03/out -type d -name map -print -quit)"
+          test -n "$MAP25"
+          test -n "$MAP03"
+          {
+            echo 'SOURCE_A_SHA256|d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5'
+            echo 'SOURCE_B_SHA256|372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e'
+            echo
+            python3 -m tools.stoneage_tw10_fieldmap_lineage_probe \
+              --root-a "$MAP25" \
+              --root-b "$MAP03" \
+              --profile research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz \
+              --label-a recovered25 \
+              --label-b archived2003 \
+              --sample-limit 100
+          } > research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
+
+      - name: Verify derived lineage report
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
+          test -s "$report"
+          grep -F 'COUNT|shared_paths|' "$report"
+          grep -F 'COUNT|same_path_same_sha256|' "$report"
+          grep -F 'COUNT|same_sha256_and_tw1_compatible_both|' "$report"
+          grep -F 'RESOLUTION|LATER_FIELDMAP_LINEAGE_CLASSIFIED' "$report"
+
+      - name: Delete transient proprietary payloads
+        if: always()
+        run: rm -rf /tmp/sa25 /tmp/sa03
+
+      - name: Commit derived lineage metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report=research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: compare recovered field-map lineage'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            exit 1
+          fi
+          git push
