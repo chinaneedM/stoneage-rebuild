@@ -1,0 +1,29 @@
+StoneAge China.com Jan-2001 mail-order route classification — R3
+PARENTS|STONEAGE-CHINA2001-JAN5-MAILORDER-ROUTE-R1.txt|STONEAGE-CHINA2001-JAN5-MAILORDER-RESIDUAL-R2.txt|STONEAGE-CHINA2000-LEGACY-SHIQI-URL-CENSUS-R1.txt
+SCOPE|classification/correction of China.com Jan-2001 original-article recovery|no new network fetch
+
+SOURCE_TEXT_CONTROL|
+- later historical mirrors preserve a 2001-01-05 text titled "中华网游戏频道 特别推出《石器时代》的邮购服务".
+- mirror text is useful for exact title/date wording only; modern rewritten hrefs are not historical routing evidence.
+
+FIRST_PARTY_ROUTE_TEST|
+- proven China.com article family: /zh_cn/news/news1/444/YYYYMMDD/<numeric-id>.html.
+- Jan-05 prefix under game.china.com and tested aliases: 0 indexed rows.
+- Jan-04 prefix: recovered IDs 78771 / 78775 / 78779 / 78782.
+- Jan-06 prefix: recovered ID 80570.
+- R1 replay of some Jan-04 neighbors saw "游戏《石器时代》专题" and "下载指南" in the GLOBAL SITE FOOTER and incorrectly promoted the run to ARTICLE_RECOVERED.
+
+STRICT_CORRECTION|
+- R2 retried all three failed captures: Jan-06 80570, alternate Jan-04 78775, Jan-04 78782.
+- all 3 replayed successfully.
+- strict target semantics required 邮购 / 試玩版 or 试玩版 / 赠送活动 / registered-list wording.
+- strict matches: 0.
+- therefore R1 resolution CHINACOM_JAN5_STONEAGE_ARTICLE_RECOVERED is REJECTED as a footer-derived false positive.
+
+LEGACY_TOPIC_ARCHIVE|
+- complete Wayback prefix census for http://game.china.com/hotspot/shiqi/ and :80 variant, 2000-12-01..2001-03-31: 0 indexed rows.
+- current/live legacy China.com StoneAge pages may survive outside the launch-window Wayback index; they must not be assigned a 2001 archive timestamp without a historical capture.
+
+RESOLUTION|CHINACOM_JAN5_ORIGINAL_ROUTE_UNRECOVERED
+BOUNDARY|The Jan-05 mail-order/trial-giveaway article remains textually attested by later mirrors, but its original China.com URL/hrefs are not recovered by the tested first-party archive namespaces.
+NEXT|Do not repeat Jan4-6 news1/444 or legacy hotspot/shiqi Wayback prefix queries without a new exact article ID/path. Continue full-client recovery through contemporaneous independent mirrors/carriers or newly recovered first-party tokens.
