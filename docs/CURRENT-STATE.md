@@ -2736,3 +2736,21 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Classification: **original Jan-05 China.com article URL/hrefs remain UNRECOVERED**. Do not repeat Jan4–6 `news1/444` or legacy `/hotspot/shiqi/` Wayback-prefix searches unless a new exact article ID/path appears.
 - Derived classification: `research/recovered/STONEAGE-CHINA2001-JAN5-MAILORDER-CLASSIFICATION-R3.txt`.
 - Priority remains **FULL-CLIENT RECOVERY** through contemporaneous independent mirrors/carriers or newly recovered first-party binary/path tokens.
+
+
+## Recovery strategy correction — online-recoverable bytes first — 2026-09-27
+
+- User direction: the project is not trying to build a museum-grade catalogue of physical StoneAge media. The practical goal is to recover game/client data that can actually be obtained online and used for reverse engineering and reconstruction.
+- **New hard gate:** primary recovery work must target digitally retrievable artifacts: downloadable installers/archives, public disc images, installed-client trees/file sets, byte-recoverable first-party files, or exact filenames/URLs/archive identifiers/hashes/manifests that directly lead to such bytes.
+- **Physical-only archaeology is downgraded:** magazines, newspaper articles, package photos, disc photos, auction listings and collector descriptions are supporting context only. Do not expand these tracks merely to identify packaging, publication title, artwork, distribution anecdotes or physical provenance.
+- Reopen a physical/publication lead only if it produces a direct online acquisition bridge such as an exact filename, downloadable URL, public archive ID, freely accessible ISO/BIN/CUE/IMG, checksum, volume label/file tree tied to a retrievable copy, or a mirror that exposes actual client contents.
+- The Dec-2000 Mainland official test CD remains historically documented but is **no longer a blocking primary target if only physical provenance survives**. Do not spend further cycles identifying its magazine, package or disc appearance unless that information directly locates online bytes.
+- The ~274 MB Jan-2001 Waei trial client remains high-value specifically because it was an **online download**. Continue seeking its exact filename, historical URL, preservation mirror or surviving downloadable copy.
+- The project already has an accepted Taiwan/Waei v1.0 clean baseline. Therefore, if no earlier downloadable client is presently recoverable, immediately continue technical reverse engineering of that baseline rather than stalling on physical-media archaeology.
+- Current technical priority order:
+  1. recover any earlier or parallel clean client that is directly downloadable online;
+  2. otherwise deepen Taiwan/Waei v1.0 reverse engineering: complete file tree, executables/runtime/updater, resource containers/indexes, maps, characters, pets, items, skills, combat, UI/text/data tables and network/update behavior;
+  3. use recovered first-party patches/runtime/resources as controlled version-diff anchors;
+  4. integrate earlier artifacts later if/when online-recoverable bytes surface.
+- Any magazine/periodical/physical-carrier census started before this correction is non-blocking and must not spawn further speculative expansion unless it yields a direct downloadable-byte lead.
+- Governing decision: docs/DESIGN-DECISIONS.md DD-011.
