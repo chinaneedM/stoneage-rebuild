@@ -2672,3 +2672,93 @@ Every substantial source should record:
   - same artwork/family classification does not prove byte identity across physical specimens;
   - the post does not establish exact manufacturing date, matrix/IFPI, optical file tree, hashes or first-press identity;
   - this source and `SRC-CN-2020-GAMER-SA182-PACKAGE-COLLECTOR-01` are by the same collector and therefore must **not** be counted as independent corroboration.
+
+
+### SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01
+
+- Original context/date: 中华网游戏频道, `特别推出《石器时代》的邮购服务`, **2001-01-05** with a follow-up notice preserved for **2001-01-11**.
+- Retrieval date: **2026-09-27**
+- Surviving mirror: https://www.shiqim.com/shiqi5924.html
+- Additional preserved compilation: https://www.shiqi.me/pt_25.htm
+- Source type: later mirror/transcription of contemporaneous China.com channel content; original live China.com page not recovered in this pass.
+- Confidence: **B- for the literal preserved notice; carrier details remain OPEN**
+- Supports:
+  - the formal retail release was advertised for 2001-01-12 at RMB 29 on this channel;
+  - registered users who had participated in an earlier **`《石器时代》试玩版赠送活动`** were offered the formal version for RMB 26 / approximately 10% off;
+  - therefore a pre-retail trial-copy giveaway existed on the China.com community/distribution surface.
+- Does not support:
+  - that the giveaway copy was optical rather than download-only;
+  - magazine identity;
+  - executable version, file tree, hashes or byte identity;
+  - identity with the collector's later-described Mainland 1.0 magazine-insert test manual/disc.
+
+### SRC-CN-2020-GAMER-MAINLAND-SA10-TEST-CARRIER-LEAD-01
+
+- Title/context: `石器時代周邊收藏，石器用戶端禮包篇（四）1.82石器新手用戶端包`
+- Publication date: **2020-09-17**
+- Retrieval date: **2026-09-27**
+- Source: Bahamut StoneAge forum; physical-media collector `stoneage2017 / 寂寞如風`
+- URL: https://forum.gamer.com.tw/C.php?bsn=1571&snA=81396
+- Confidence: **C+/OPEN for the test-carrier identity; later first-person ownership claim**
+- Supports:
+  - after distinguishing a rumored boxed 1.0 image as unverified, the collector states that the Mainland 1.0 test item he knows/obtained was a **test manual carrying a disc, distributed with a magazine, without a retail box**.
+- Archaeology significance:
+  - if authenticated, this could predate the ordinary 1.82/Jinhaiwan retail-disc family and become the earliest Mainland physical client bridge.
+- Critical limits:
+  - no contemporaneous magazine title/issue is named in the text;
+  - no public file tree, hashes, matrix, publication number or byte provenance is supplied;
+  - the claim must not be merged with the separate China.com trial-giveaway notice without evidence that they refer to the same distribution event.
+
+### SRC-CN-2001-WAEI-SA-MANUAL-ERRATA-MIRROR-01
+
+- Original announcement date: **2001-03-12**
+- Original issuer: 北京华义联合软件开发有限公司
+- Preserved title: `北京华义对笔误事件的道歉启事及最终处理办法`
+- Retrieval date: **2026-09-27**
+- Preserved transcription: https://www.shiqi.me/pt_25.htm
+- Source type: later preservation/transcription of an official Beijing-Waei announcement.
+- Confidence: **B for the literal preserved announcement; exact original manual line still unresolved**
+- Supports:
+  - Waei attributes the dispute to a **manual editing error**;
+  - players believed 50 hours of game time had been removed;
+  - **second-batch newly printed manuals would be corrected**;
+  - **first-batch manuals would only receive a web erratum**;
+  - products registered before 2001-03-13 09:00 were to receive an additional **300 points = 50 hours**.
+- Archaeology significance:
+  - proves that first- and second-batch Mainland manuals contain a potentially diagnostic textual difference;
+  - creates a physical-print discriminator independent of outer package artwork.
+- Does not support:
+  - the exact erroneous printed number by itself;
+  - disc-byte differences between first and second printings.
+
+### SRC-CN-2001-17173-SA10-CHARGING-01
+
+- Title/context: surviving 17173 StoneAge 1.0 charging page
+- Retrieval date: **2026-09-27**
+- URL: https://news.17173.com/z/stoneage/banben/sa10/01.htm
+- Source type: surviving contemporaneous portal/version page.
+- Confidence: **A-/B+ for the displayed charging table**
+- Supports:
+  - 0.1 WGS point/minute, 6 points/hour;
+  - 300 points = 50 hours; 600 points = 100 hours;
+  - the displayed product-registration rule is **300 points / 50 hours**.
+- Use:
+  - independent control for the corrected post-errata registration standard.
+- Does not support:
+  - what the first-print manual itself said before correction.
+
+### SRC-CN-2003-17173-SA-600-TO-300-RECOLLECTION-01
+
+- Title: `服7-…虎暴族，永恒的回忆`
+- Publication date: **2003-03-24**
+- Retrieval date: **2026-09-27**
+- Source: 17173 player retrospective
+- URL: https://news.17173.com/z/stoneage/content/2003-3-24/n496_412682.html
+- Confidence: **C+/B- as a near-period first-person recollection; not official documentation**
+- Supports:
+  - the author recalls buying StoneAge around the start of charging and says that the previously stated **600 points became 300 points**.
+- Cross-source interpretation:
+  - this is consistent with Waei's official 50-hour manual-error dispute and the corrected 300-point/50-hour standard;
+  - it materially strengthens the hypothesis that the erroneous first-print statement involved **600 points / 100 hours**.
+- Critical limit:
+  - do not promote that exact first-print wording to FACT until a manual scan/photo or contemporaneous report quotes it directly.

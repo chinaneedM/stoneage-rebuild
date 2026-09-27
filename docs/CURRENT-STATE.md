@@ -2421,3 +2421,23 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - `SRC-CN-2020-GAMER-SA182-PACKAGE-COLLECTOR-01`;
   - `SRC-CN-2021-GAMER-SA182-DISC-COLLECTOR-01`.
 - Canonical note: `research/clients/STONEAGE-2001-MAINLAND-PACKAGE-FAMILY-R1.md`.
+
+
+## Mainland pre-release/test carrier and manual-print discriminator — 2026-09-27
+
+- The early-Mainland recovery surface has moved earlier than the ordinary 1.82 package family.
+- A preserved mirror of a **2001-01-05 China.com / 中华网游戏频道** mail-order notice explicitly says registered users who had participated in the site's **`《石器时代》试玩版赠送活动`** could buy the formal retail release at a discounted price. This independently establishes that a pre-retail trial-copy giveaway existed before the 2001-01-12 nationwide formal-sale date; the surviving notice does **not** identify the trial carrier format or magazine.
+- Separately, the same 2020 physical-media collector who documented the 1.82 package family states that the **Mainland 1.0 test package** he obtained was not boxed: it consisted of a **test manual carrying a disc and was distributed as a magazine insert**. This is a later first-person collector claim and remains **OPEN / UNAUTHENTICATED** until the manual/disc is photographed with provenance or its magazine identity is independently resolved.
+- This route now deserves independent tracking because an authenticated trial disc could predate the ordinary Mainland retail carrier and become the earliest known Mainland byte-diff anchor against Taiwan v1.0.
+- A second new physical discriminator comes from a preserved transcription of Beijing Waei's **2001-03-12 manual-errata apology**. Waei says a manual editing error caused players to believe 50 hours had been removed, that **second-batch newly printed manuals would be corrected**, and that **first-batch manuals would only receive a web erratum**. Users registered before 2001-03-13 09:00 were granted an extra **300 points = 50 hours**.
+- A surviving 17173 StoneAge 1.0 charging page independently preserves the corrected rule: product registration grants **300 points = 50 hours**.
+- A 2003 17173 first-person player retrospective explicitly recalls that what had previously been stated as **600 points became 300 points**. This strongly supports, but does not yet prove from a first-batch manual itself, the working hypothesis that the first printing advertised **600 points / 100 hours** and the corrected printing used **300 points / 50 hours**.
+- Keep a three-way evidence distinction:
+  - contemporaneous Sina launch copy says the package included **45 hours** of free time;
+  - the corrected charging standard is **300 points / 50 hours**;
+  - **600 points / 100 hours as the first-print manual wording remains HYPOTHESIS** pending a scan/photo or contemporaneous source that quotes the printed line directly.
+- Highest-value next evidence:
+  1. photograph/scan of the pre-release Mainland test manual and disc, plus the magazine identity;
+  2. first-batch and/or second-batch retail manual page containing the registration-time claim;
+  3. package-to-manual-to-disc photo chain, publication number, matrix/IFPI, ISO/file tree or hashes.
+- New canonical note: `research/clients/STONEAGE-MAINLAND-SA10-TEST-CARRIER-AND-MANUAL-R1.md`.

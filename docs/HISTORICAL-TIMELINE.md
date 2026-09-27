@@ -403,3 +403,20 @@ IMPORTANT LIMIT: this closes a battle-map inheritance chain. It is not evidence 
 
 
 **LATER COLLECTOR CONTROL / 2026-09-27:** a 2020 physical-media collector post shows four common Mainland 1.82 new-user package variants and states that their backs are identical; a 2021 disc inventory by the same collector describes the familiar Beijing-Waei 1.82 disc as the standard/unified disc across ordinary Mainland package variants, while treating an `上网包` disc separately. This narrows the package/disc-family search surface but does not prove byte identity, first-press identity, or that the collector's four packages are exactly Sina's four January-2001 designs. [`SRC-CN-2020-GAMER-SA182-PACKAGE-COLLECTOR-01`] [`SRC-CN-2021-GAMER-SA182-DISC-COLLECTOR-01`]
+
+
+### 2000-12 / pre-retail Mainland testing — trial-copy distribution lead
+
+**FACT / preserved contemporaneous-channel mirror:** a preserved copy of a 2001-01-05 China.com / 中华网游戏频道 mail-order notice says that registered users who had participated in the site's earlier `《石器时代》试玩版赠送活动` were entitled to a discounted formal copy. This establishes a pre-retail trial-copy giveaway surface, but the surviving notice does not identify the physical carrier or magazine. [`SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01`]
+
+**OPEN / later first-person collector lead:** a 2020 StoneAge physical-media collector states that a Mainland 1.0 test item in his collection was a **test manual with a disc, distributed as a magazine insert and without a retail box**. The claim is high-value because it could identify an earlier Mainland client carrier, but it is not authenticated by a contemporaneous magazine record or public disc/manual photographs yet. [`SRC-CN-2020-GAMER-MAINLAND-SA10-TEST-CARRIER-LEAD-01`]
+
+### 2001-03 — Mainland first/second manual-print split
+
+**FACT / preserved official-announcement transcription:** Beijing Waei's 2001-03-12 apology states that a manual editing error caused a 50-hour dispute, that **second-batch newly printed manuals would be corrected**, and that **first-batch manuals would only be corrected by the website erratum**. Pre-deadline registrants were granted an additional 300 points, explicitly equated to 50 hours. [`SRC-CN-2001-WAEI-SA-MANUAL-ERRATA-MIRROR-01`]
+
+**INDEPENDENT CORRECTED-STANDARD CONTROL:** 17173's surviving StoneAge 1.0 charging page records the corrected registration benefit as **300 points / 50 hours**. [`SRC-CN-2001-17173-SA10-CHARGING-01`]
+
+**HYPOTHESIS / later player recollection:** a 2003 17173 player retrospective says the previously stated **600 points** became **300 points** when charging began. Combined with the official 50-hour errata dispute, this makes `first-print manual = 600 points / 100 hours` a strong working hypothesis, **not FACT** until a first-print page or contemporaneous quotation is recovered. [`SRC-CN-2003-17173-SA-600-TO-300-RECOLLECTION-01`]
+
+**CONFLICT CONTROL:** contemporaneous Sina launch coverage says the four Mainland packages came with **45 hours** of free time. Do not silently equate that launch-promotion number with either the corrected 300-point/50-hour registration standard or the hypothesized first-print 600-point/100-hour statement. [`SRC-CN-2001-SINA-STONEAGE-MAINLAND-LAUNCH-01`]

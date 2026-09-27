@@ -198,3 +198,32 @@ This narrows the public-image search surface but does not close provenance:
 - none of this proves that the provisional `ISBN 7-900323-57-0/TP·026` appears on every ordinary package or that all discs are byte-identical.
 
 Canonical detail: `research/clients/STONEAGE-2001-MAINLAND-PACKAGE-FAMILY-R1.md`.
+
+
+## Pre-retail test carrier and manual-print discriminator — 2026-09-27
+
+The early Mainland route now contains two additional provenance handles.
+
+### Pre-retail trial material
+
+A preserved China.com / 中华网游戏频道 mail-order notice for the 2001-01-12 formal release says users registered in an earlier **StoneAge trial-version giveaway** could buy the retail copy at a discount. This confirms a pre-retail trial-distribution surface but does not identify the medium.
+
+The 2020 collector who documented the ordinary 1.82 package family separately states that the Mainland 1.0 test item he obtained was **a test manual carrying a disc, distributed as a magazine insert, with no retail box**. Keep this as an OPEN collector lead until the magazine/manual/disc chain is publicly resolved. Do not assume it is the same object as China.com's giveaway.
+
+Because a genuine test disc could predate the ordinary retail family, its recovery would outrank further cosmetic package-variant work.
+
+### First-batch vs second-batch retail manual
+
+A preserved transcription of Beijing Waei's 2001-03-12 apology explicitly states that the **second print batch of manuals would be corrected**, while the **first batch would only be corrected online**. This creates a strong physical-print discriminator.
+
+The corrected registration standard is independently preserved by 17173 as **300 points = 50 hours**. A 2003 player retrospective says the earlier statement was **600 points** before becoming 300. The natural reading is a likely `600 points / 100 hours` first-print error, but this remains HYPOTHESIS until the actual page is recovered.
+
+Contemporaneous Sina launch copy separately advertises **45 hours** bundled with the launch package. Keep 45h, corrected 50h, and hypothesized erroneous 100h as distinct evidence statements until their commercial/time-window relationship is resolved.
+
+### Immediate recovery targets
+
+1. exact magazine/issue that carried the Mainland test manual + disc;
+2. public photograph/scan of that test manual and disc;
+3. first-print manual page containing the disputed time/points statement;
+4. corrected second-print equivalent page;
+5. any optical image, file tree, matrix/IFPI, volume label or hashes tied to either carrier.
