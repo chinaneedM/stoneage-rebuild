@@ -34,7 +34,7 @@ jobs:
           set -euo pipefail
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
-          R='research/recovered/STONEAGE-JHPOP-2000-ROOT-REPLAY-R1.txt'
+          R='research/recovered/STONEAGE-JHPOP-2000-ROOT-REPLAY-R2.txt'
           git add "$R"
           git diff --cached --quiet && exit 0
           git commit -m 'research: decode Jinghe JHPOP Dec-2000 root'
@@ -45,6 +45,6 @@ jobs:
             python3 -m tools.stoneage_jhpop_root_replay > "$R"
             git add "$R"
             git diff --cached --quiet && exit 0
-            git commit -m 'research: replay Jinghe JHPOP Dec-2000 root'
+            git commit -m 'research: decode Jinghe JHPOP Dec-2000 root'
           fi
           git push
