@@ -449,3 +449,22 @@ IMPORTANT LIMIT: this closes a battle-map inheritance chain. It is not evidence 
 **ASSET-SURFACE BOUNDARY:** eleven first-party image/background paths are present in the earliest archived result page. Nine replayable assets are generic China.com logos/navigation/UI images and there are zero large/page-specific image candidates; the two unreplayed paths are generic UI names. The current archived result-page asset route therefore provides no StoneAge-specific physical-media token.
 
 **MAGAZINE-CANDIDATE CORRECTION:** because Jinghe had close ties to `《大众软件》`, the preserved Popsoft scan family was tested across 2000-11, 2000-12 and 2001-01 A/B issues. Only one editorial `Stone Age` mention appears (2000-12A), with no nearby test/disc/Jinghe/Waei/giveaway context and no optical files in the scan item. This does not disprove a separate magazine-insert carrier, but it **downgrades Popsoft as the leading candidate** absent a new exact issue/disc token. [`SRC-CN-IA-POPSOFT-2000-LAUNCH-WINDOW-01`]
+
+
+### 2001-01-04 — Waei homepage trial-download recollection
+
+**NEAR-PERIOD FIRST-PERSON EVIDENCE:** a 17173 player diary published on 2001-06-13 explicitly dates an entry to **2001-01-04** and recalls seeing a `石器时代试玩版` on the Waei homepage. The author's download manager reported a size of **“274多兆”** before the download was abandoned because of dial-up telephone cost. This supports an official-homepage online trial distribution surface, but it does not preserve a filename, exact byte count or download URL. [`SRC-CN-2001-17173-WAEI-TRIAL-DOWNLOAD-RECOLLECTION-01`]
+
+**BOUNDARY:** do not equate this online trial payload automatically with the China.com/Jinghe physical test CD, the collector-described magazine-insert test disc, or the January-2001 formal retail CD. They are separate candidate carriers until bytes prove identity.
+
+### 2001-06-05 — Waei.net StoneAge sprite-resource byte anchor
+
+**FACT / archived bytes:** Wayback preserves `spr_1.bin` under Waei.net's Big5 `修補程式` download directory at capture timestamp **2001-06-05 17:45:50 UTC**. Transient recovery produces a **2,889,630-byte** binary with SHA-256 `864fa3f6aaeb7d8d2dc9bdee46cecdc7dcee1af0c8f1ed949e09c0526e6aa17e`; its SHA-1-derived Base32 digest exactly matches the Wayback CDX record. [`SRC-WAEI-2001-SPR1-ARCHIVE-01`]
+
+**FACT / StoneAge resource-lineage closure:** the archived file has exactly the same size as the accepted Taiwan v1.0 `spr_1.bin` and parses perfectly using Taiwan v1.0's `spradrn_1.bin`: **464 groups, 39,065 animations and 242,085 frames** with all group spans closing. Only **16 bytes** differ, all within `spr_no=100102`. [`SRC-WAEI-2001-SPR1-ARCHIVE-01`]
+
+**FACT / semantic delta:** four Taiwan-v1 sentinel bitmap references (`0xFFFFFFFF`) become bitmap IDs **126235–126238** in animations 82–84. Those four bitmap IDs are absent from the accepted Taiwan v1.0 `adrn_1.bin`.
+
+**HYPOTHESIS / companion-resource implication:** the four newly referenced bitmap IDs strongly imply a corresponding later image-resource addition in an `ADRN/REAL` lineage, but same-directory exact archive probes currently expose no `adrn_1.bin`, `real_1.bin` or `spradrn_1.bin` companion. Do not invent those missing bytes.
+
+**REGIONAL LIMIT:** this is a Waei.net / Big5-hosted artifact. It must not be relabelled as an authenticated Mainland retail/test build without an explicit regional/version binding.

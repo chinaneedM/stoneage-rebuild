@@ -2527,3 +2527,50 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - `research/recovered/STONEAGE-CHINA2000-63271-REPLAY-R1.txt`;
   - `research/recovered/STONEAGE-CHINA2000-63271-ASSET-TOPOLOGY-R1.txt`;
   - `research/recovered/STONEAGE-POPSOFT-2000-LAUNCH-WINDOW-R1.txt`.
+
+
+## Waei.net archived StoneAge `spr_1.bin` byte anchor — 2026-09-27
+
+- The early Waei download investigation has produced the project's first newly recovered **byte-level StoneAge resource artifact** from the 2001 Waei.net central-download archive.
+- A fast Wayback CDX census over `http://www7.waei.net/download/` for 2000-12 through 2001-06 recovered **119 unique URL rows**, including **69 `/download/file/` rows**, **57 binary-extension rows**, and detail-page IDs **1–6**.
+- Among those rows is:
+  - capture: **2001-06-05 17:45:50 UTC**;
+  - archived path: `/download/file/<Big5 修補程式>/spr_1.bin`;
+  - MIME: `application/octet-stream`;
+  - Wayback CDX digest: `5ADTXXSBOAQLKL7URZHYKWOJHDEQ7SOM`.
+- **Important correction:** the CDX `length=391581` is not the original payload size. A privacy/copyright-safe transient replay recovered the binary only long enough to hash it, yielding:
+  - bytes: **2,889,630**;
+  - SHA-256: `864fa3f6aaeb7d8d2dc9bdee46cecdc7dcee1af0c8f1ed949e09c0526e6aa17e`;
+  - SHA-1: `e8073bde417020b52ff48e4f8559c938c90fc9cc`;
+  - MD5: `7b40970c8f2a11a523f4a314c78b459e`;
+  - recovered SHA-1/Base32 matches the Wayback CDX digest exactly.
+- Comparison against the accepted Taiwan v1.0 retail client's `StoneAge/data/spr_1.bin`:
+  - both files are **exactly 2,889,630 bytes**;
+  - hashes differ;
+  - the Waei file parses **perfectly under Taiwan v1.0's unchanged `spradrn_1.bin` index geometry**: **464 groups / 39,065 animations / 242,085 frames / full span closure**.
+- The byte difference is exceptionally small and structured:
+  - **16 changed bytes / 2,889,630 = 0.000554%**;
+  - four 4-byte runs, all inside **group 102 / `spr_no=100102`**;
+  - **463 / 464 groups are byte-identical**.
+- Semantic field mapping shows the only changes are four frame `bmp_no` values:
+  - anim 82 frame 0: `0xFFFFFFFF -> 126235`;
+  - anim 83 frame 0: `0xFFFFFFFF -> 126236`;
+  - anim 83 frame 1: `0xFFFFFFFF -> 126237`;
+  - anim 84 frame 1: `0xFFFFFFFF -> 126238`.
+  All coordinates, sound IDs, animation counts, frame counts and all other bytes remain unchanged.
+- A lookup against the accepted Taiwan v1.0 `adrn_1.bin` derived metadata finds **none of bitmap IDs 126235–126238**. Therefore the Waei `spr_1.bin` activates four image references that are not present in the Taiwan v1.0 image-address table.
+- **Strong inference / not yet direct artifact recovery:** this resource change likely belonged with additional `ADRN/REAL` image-resource additions. Exact CDX probes for same-directory `spradrn_1.bin`, `adrn_1.bin` and `real_1.bin` currently return zero rows, so those companion bytes are not recovered.
+- Evidence classification:
+  - **FACT / strong byte-level StoneAge resource-lineage evidence:** same exact container length, same Taiwan v1.0 sprite index geometry, 99.999446% byte identity, coherent four-frame bitmap-reference delta, Waei.net `修補程式` archive provenance;
+  - **OPEN:** exact product/version label, region/client branch, download-detail title, and whether this artifact was part of a Mainland client update.
+- Regional boundary: `www7.waei.net` is the Waei International / Big5 web surface. Do **not** silently relabel this 2001-06 archive as Beijing-Waei/Mainland media. It is a Waei-hosted StoneAge resource anchor whose branch binding remains OPEN.
+- Separately, a near-period 17173 player diary published 2001-06-13 recalls that on **2001-01-04** the author visited the Waei homepage and saw a **StoneAge trial download of roughly 274 MB**. This supports an online trial-client distribution route in addition to the confirmed Mainland physical test-CD giveaway, but supplies no filename or byte identity.
+- The failed broad Waei central-download replay is explicitly **not a negative result**: it was cancelled after the 15-minute runner limit while replaying many pages. The replacement metadata census succeeded and should be the basis for targeted probes.
+- Derived evidence:
+  - `research/recovered/STONEAGE-WAEI-DOWNLOAD-CENTER-INDEX-CENSUS-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-SPR1-BYTE-METADATA-R2.txt`;
+  - `research/recovered/STONEAGE-WAEI-VS-TW10-SPR1-DIFF-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-VS-TW10-SPR1-FIELD-DIFF-R2.txt`;
+  - `research/recovered/STONEAGE-TW10-BITMAP-126235-126238-R1.txt`.
+- Canonical technical note: `research/clients/STONEAGE-WAEI-2001-SPR1-DIFF-R1.md`.
+- Priority after recording this milestone returns to **full-client recovery**: resolve the ~274 MB Jan-2001 Waei trial-download filename/route or the Dec-2000 Mainland official test-CD bytes, while using this `spr_1.bin` as an early resource-diff control.

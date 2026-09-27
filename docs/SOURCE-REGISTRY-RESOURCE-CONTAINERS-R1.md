@@ -229,3 +229,44 @@ The LIFESTORM II side currently supplies matching filename roles from a later Ta
 Therefore the shared JSS resource-pipeline theory remains **HYPOTHESIS / high-value technical lineage lead**, with a concrete free-data validation plan documented in:
 
 `research/clients/JSS-RESOURCE-CONTAINER-LINEAGE-R1.md`
+
+
+## SRC-WAEI-2001-SPR1-ARCHIVE-01 — Waei.net archived `spr_1.bin`
+
+Date recovered: **2026-09-27**
+
+Classification: **strong byte-level StoneAge sprite-resource lineage; exact branch/version OPEN**.
+
+Wayback preserves a Waei.net central-download artifact captured on **2001-06-05** under the Big5 `修補程式` directory:
+
+- filename: `spr_1.bin`;
+- actual recovered payload size: **2,889,630 bytes**;
+- SHA-256: `864fa3f6aaeb7d8d2dc9bdee46cecdc7dcee1af0c8f1ed949e09c0526e6aa17e`;
+- SHA-1: `e8073bde417020b52ff48e4f8559c938c90fc9cc`;
+- MD5: `7b40970c8f2a11a523f4a314c78b459e`;
+- Wayback CDX digest matches the recovered SHA-1/Base32.
+
+The accepted Taiwan v1.0 resource is also **2,889,630 bytes** but has SHA-256 `53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a`.
+
+Using the accepted Taiwan v1.0 `spradrn_1.bin` as a controlled index:
+
+- both files close exactly under the same **464 sprite groups**;
+- both expose **39,065 animations / 242,085 frames**;
+- **463 groups are byte-identical**;
+- only `spr_no=100102` differs;
+- total delta is **16 bytes**.
+
+All four changes are parsed frame `bmp_no` fields:
+
+- `0xFFFFFFFF -> 126235`;
+- `0xFFFFFFFF -> 126236`;
+- `0xFFFFFFFF -> 126237`;
+- `0xFFFFFFFF -> 126238`.
+
+None of these bitmap IDs exists in the accepted Taiwan v1.0 `adrn_1.bin`.
+
+Interpretation boundary:
+
+- this is direct evidence of a StoneAge-compatible sprite-resource generation later/different from the accepted Taiwan v1.0 disc;
+- a companion image-resource addition is strongly implied but not recovered;
+- do not infer exact regional branch, patch number or client build from the filename/path alone.

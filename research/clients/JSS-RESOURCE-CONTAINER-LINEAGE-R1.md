@@ -493,3 +493,56 @@ Promote the shared-resource-pipeline hypothesis only if free/public historical b
 Until then, the proper label remains:
 
 **HYPOTHESIS / HIGH-VALUE TECHNICAL LINEAGE LEAD.**
+
+
+## 11. Waei.net 2001 `spr_1.bin` — byte-level micro-delta from Taiwan v1.0
+
+A Wayback capture from Waei.net's Big5 `修補程式` download namespace preserves a complete `spr_1.bin` at **2001-06-05 17:45:50 UTC**.
+
+The artifact is especially informative because it is not merely format-compatible with the accepted Taiwan v1.0 resource. It is the **same exact byte length** and shares the same complete sprite-index geometry:
+
+| Property | Taiwan v1.0 | Waei.net 2001-06 |
+|---|---:|---:|
+| `spr_1.bin` bytes | 2,889,630 | 2,889,630 |
+| SHA-256 | `53d5b2d4...ae31a` | `864fa3f6...aa17e` |
+| groups under TW `spradrn_1.bin` | 464 | 464 |
+| animations | 39,065 | 39,065 |
+| frames | 242,085 | 242,085 |
+| parse/span closure | exact | exact |
+
+Only **16 bytes** differ across the entire file. All changes occur in one group:
+
+- group index: **102**;
+- `spr_no`: **100102**;
+- group span: 5,968 bytes;
+- animations: 104;
+- frames: 472.
+
+The four semantic changes are:
+
+- animation 82 frame 0: `bmp_no 0xFFFFFFFF -> 126235`;
+- animation 83 frame 0: `bmp_no 0xFFFFFFFF -> 126236`;
+- animation 83 frame 1: `bmp_no 0xFFFFFFFF -> 126237`;
+- animation 84 frame 1: `bmp_no 0xFFFFFFFF -> 126238`.
+
+No other frame field, animation header, group geometry or byte changes.
+
+A lookup of the accepted Taiwan v1.0 ADRN metadata finds **0 / 4** of bitmap IDs 126235–126238. Thus this Waei sprite generation refers to image resources not present in the accepted Taiwan-v1 image-address table.
+
+### What this proves
+
+**FACT:**
+
+- Waei.net preserved a `spr_1.bin` that belongs to the same StoneAge sprite-container lineage as the accepted Taiwan v1.0 client;
+- it is an extremely small deterministic evolution of that resource rather than an unrelated same-name file;
+- by 2001-06-05, at least one Waei-hosted StoneAge sprite-resource generation had four additional bitmap references in `spr_no=100102`.
+
+### What remains open
+
+- exact patch/client version;
+- whether this artifact belongs to Taiwan, Mainland, or another Waei-served operational branch;
+- the human-readable download-item title;
+- the missing companion image bytes required by bitmap IDs 126235–126238;
+- whether the resource was incorporated into the 2001-01 Mainland retail client or only a later update.
+
+This evidence must therefore be used as an **early resource-diff anchor**, not as a substitute for recovery of the full Dec-2000/Jan-2001 clients.

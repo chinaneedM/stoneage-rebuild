@@ -2925,3 +2925,68 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
   - this does not prove no Popsoft-related carrier ever existed;
   - it is sufficient to stop treating Popsoft as the default/leading magazine identity without a new exact token.
 - Derived report: `research/recovered/STONEAGE-POPSOFT-2000-LAUNCH-WINDOW-R1.txt`.
+
+
+### SRC-CN-2001-17173-WAEI-TRIAL-DOWNLOAD-RECOLLECTION-01
+
+- Title: `我活在石器`
+- Publication date: **2001-06-13**
+- Source: 17173 StoneAge player diary / first-person chronology
+- URL: https://news.17173.com/z/stoneage/content/2001-6-13/n987_903725.html
+- Retrieval date: **2026-09-27**
+- Confidence: **B-/C+ for the author's own access experience; not preserved payload provenance**
+- Supports:
+  - diary entry explicitly dated **2001-01-04 18:00**;
+  - before the Jan-12 formal release, the author visited the **Waei homepage** and saw a **StoneAge trial version** available for download;
+  - the author's download manager reported **“274多兆”** before the author abandoned the download because of telephone cost.
+- Archaeology significance:
+  - independently establishes an early **online trial-client distribution route** alongside the separately proven physical test-CD route;
+  - supplies a useful approximate-size constraint for future filename/archive matching.
+- Does not support:
+  - exact filename or exact byte length;
+  - exact Waei host/path;
+  - identity with the China.com/Jinghe test CD, magazine-insert carrier or retail disc;
+  - clean-byte provenance.
+
+### SRC-WAEI-2001-SPR1-ARCHIVE-01
+
+- Artifact: `spr_1.bin`
+- Historical archive path: Waei.net central download, Big5 `修補程式` directory
+- Wayback capture: **20010605174550**
+- Retrieval/analysis date: **2026-09-27**
+- Source type: archived binary + accepted Taiwan v1.0 controlled structural diff
+- Raw original bytes: **transiently analyzed only; not committed**
+- Waei archived artifact:
+  - bytes: **2,889,630**;
+  - SHA-256: `864fa3f6aaeb7d8d2dc9bdee46cecdc7dcee1af0c8f1ed949e09c0526e6aa17e`;
+  - SHA-1: `e8073bde417020b52ff48e4f8559c938c90fc9cc`;
+  - MD5: `7b40970c8f2a11a523f4a314c78b459e`;
+  - Wayback CDX digest `5ADTXXSBOAQLKL7URZHYKWOJHDEQ7SOM` matches the recovered SHA-1/Base32 exactly.
+- Accepted Taiwan-v1 control:
+  - same filename and **same 2,889,630-byte length**;
+  - Taiwan SHA-256 `53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a`;
+  - bytes are not identical.
+- Structural proof:
+  - Waei file parses exactly under the accepted Taiwan v1.0 `spradrn_1.bin`;
+  - **464 groups / 39,065 animations / 242,085 frames**;
+  - **463 groups are byte-identical**;
+  - only group 102 / `spr_no=100102` differs;
+  - total difference: **16 bytes in four 4-byte runs**.
+- Semantic delta:
+  - four `bmp_no` fields change from Taiwan sentinel `0xFFFFFFFF` to **126235, 126236, 126237, 126238**;
+  - all four IDs are absent from Taiwan v1.0's `adrn_1.bin`.
+- Classification:
+  - **A-/strong byte-level StoneAge resource-lineage evidence**;
+  - **OPEN for exact client/version/region binding**.
+- Critical source-quality note:
+  - archived Waei detail pages contain StoneAge site/news navigation, but the current extraction does not yet bind this specific file to a human-readable StoneAge download title;
+  - classification as StoneAge lineage rests on the exact container geometry and 99.999446% byte relationship to the accepted StoneAge v1.0 resource, not on generic site-navigation text.
+- Companion-file boundary:
+  - exact same-directory archive checks find no captured `spradrn_1.bin`, `adrn_1.bin`, or `real_1.bin`;
+  - a companion image-resource update is a strong inference, not a recovered fact.
+- Derived reports:
+  - `research/recovered/STONEAGE-WAEI-DOWNLOAD-CENTER-INDEX-CENSUS-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-SPR1-BYTE-METADATA-R2.txt`;
+  - `research/recovered/STONEAGE-WAEI-VS-TW10-SPR1-DIFF-R1.txt`;
+  - `research/recovered/STONEAGE-WAEI-VS-TW10-SPR1-FIELD-DIFF-R2.txt`;
+  - `research/recovered/STONEAGE-TW10-BITMAP-126235-126238-R1.txt`.
