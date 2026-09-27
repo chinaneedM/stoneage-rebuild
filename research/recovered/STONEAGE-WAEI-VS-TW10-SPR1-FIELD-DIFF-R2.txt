@@ -1,0 +1,12 @@
+StoneAge Waei-vs-Taiwan spr_1.bin semantic field diff — R2
+INPUT|tw_sha256=53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a|waei_sha256=864fa3f6aaeb7d8d2dc9bdee46cecdc7dcee1af0c8f1ed949e09c0526e6aa17e|bytes=2889630|runs=4
+RUN|index=1|start=754432|end=754436|bytes=4|tw_hex=ffffffff|waei_hex=1bed0100|records=1
+RECORD|kind=frame|group=102|spr_no=100102|anim=82|frame=0|offset=754432|changed=bmp_no|tw={'bmp_no': 4294967295, 'pos_x': 0, 'pos_y': 0, 'sound_no': 0}|waei={'bmp_no': 126235, 'pos_x': 0, 'pos_y': 0, 'sound_no': 0}
+RUN|index=2|start=754454|end=754458|bytes=4|tw_hex=ffffffff|waei_hex=1ced0100|records=1
+RECORD|kind=frame|group=102|spr_no=100102|anim=83|frame=0|offset=754454|changed=bmp_no|tw={'bmp_no': 4294967295, 'pos_x': 0, 'pos_y': 0, 'sound_no': 0}|waei={'bmp_no': 126236, 'pos_x': 0, 'pos_y': 0, 'sound_no': 0}
+RUN|index=3|start=754464|end=754468|bytes=4|tw_hex=ffffffff|waei_hex=1ded0100|records=1
+RECORD|kind=frame|group=102|spr_no=100102|anim=83|frame=1|offset=754464|changed=bmp_no|tw={'bmp_no': 4294967295, 'pos_x': 0, 'pos_y': 0, 'sound_no': 0}|waei={'bmp_no': 126237, 'pos_x': 0, 'pos_y': 0, 'sound_no': 0}
+RUN|index=4|start=754496|end=754500|bytes=4|tw_hex=ffffffff|waei_hex=1eed0100|records=1
+RECORD|kind=frame|group=102|spr_no=100102|anim=84|frame=1|offset=754496|changed=bmp_no|tw={'bmp_no': 4294967295, 'pos_x': 0, 'pos_y': 0, 'sound_no': 0}|waei={'bmp_no': 126238, 'pos_x': 0, 'pos_y': 0, 'sound_no': 0}
+RESOLUTION|SEMANTIC_DIFF_MAPPED|interpret changed parsed fields within StoneAge sprite lineage
+EVIDENCE_BOUNDARY|Field-level differences describe resource content only; they do not identify the exact Mainland client build without download-page/version binding.
