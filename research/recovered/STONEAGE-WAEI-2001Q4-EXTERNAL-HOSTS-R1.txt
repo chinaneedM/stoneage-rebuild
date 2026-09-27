@@ -1,0 +1,14 @@
+StoneAge Waei evidence-linked external-host topology census — R1
+SCOPE|games+product Waei roots|window=20011024..20011112|CDX URL metadata only|no-payload
+CDX|label=games|prefix=http://games.waei.com.cn/|status=200|rows=112|bytes=16368|sha256=1a107e7fc76a24f0b4d51d9692060830d20d51f8e0ee1eae7eb143d8b14b7a5f|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgames.waei.com.cn%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20011024&to=20011112&collapse=urlkey&limit=20000
+CDX|label=product|prefix=http://product.waei.com.cn/|status=200|rows=22|bytes=3283|sha256=85041b2ac36452e45b453d0cd5e3c897edad026ea9ced3468cdb1588ab0e3aa6|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fproduct.waei.com.cn%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20011024&to=20011112&collapse=urlkey&limit=20000
+TOPOLOGY_HIT|score=7|label=games|timestamp=20011101031830|original=http://games.waei.com.cn:80/adv_img/other/zixun/stoneage.GIF|statuscode=200|mimetype=image/gif|digest=GWXXSJDR5OMWVHSZRDBZRU6ZYJVWOMOO|length=7324|redirect=
+COUNT|hosts|2
+COUNT|completed_hosts|2
+COUNT|topology_hits|1
+COUNT|strong_hits|0
+COUNT|binary_hits|0
+COUNT|exact_setup_hits|0
+COUNT|errors|0
+RESOLUTION|WEAK_EXTERNAL_HOST_TOPOLOGY_ONLY|do not promote without page/content corroboration
+EVIDENCE_BOUNDARY|CDX URL rows are routing metadata only and do not establish client identity, cleanliness or completeness.
