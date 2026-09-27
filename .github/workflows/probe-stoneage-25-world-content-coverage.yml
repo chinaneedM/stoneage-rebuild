@@ -141,8 +141,9 @@ jobs:
           set -euo pipefail
           N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
           D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          M="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
           C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
-          test -n "$N" && test -n "$D"
+          test -n "$N" && test -n "$D" && test -n "$M"
 
           report=research/recovered/STONEAGE-25-STABLE-WORLD-GEOMETRY-R1.txt
           {
