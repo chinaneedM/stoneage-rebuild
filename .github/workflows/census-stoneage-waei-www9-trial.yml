@@ -1,0 +1,33 @@
+name: Census StoneAge Waei www9 trial window
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_www9_cdx_census.py
+      - tests/test_stoneage_waei_www9_cdx_census.py
+      - .github/workflows/census-stoneage-waei-www9-trial.yml
+permissions:
+  contents: write
+concurrency:
+  group: stoneage-waei-www9-trial-census
+  cancel-in-progress: true
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_waei_www9_cdx_census -v
+      - run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_waei_www9_cdx_census > research/recovered/STONEAGE-WAEI-WWW9-CDX-CENSUS-R1.txt
+      - run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-WAEI-WWW9-CDX-CENSUS-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: census Waei www9 trial window'
+          git pull --rebase origin main
+          git push
