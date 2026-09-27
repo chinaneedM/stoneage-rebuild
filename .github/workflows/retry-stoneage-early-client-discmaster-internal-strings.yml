@@ -1,0 +1,42 @@
+name: Retry early StoneAge DiscMaster internal strings
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_early_client_discmaster_internal_string_residual.py
+      - tests/test_stoneage_early_client_discmaster_internal_string_residual.py
+      - .github/workflows/retry-stoneage-early-client-discmaster-internal-strings.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-early-client-discmaster-internal-strings-residual
+  cancel-in-progress: true
+
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate residual probe
+        run: python3 -m unittest tests.test_stoneage_early_client_discmaster_internal_string_residual -v
+      - name: Retry timed-out exact terms
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_early_client_discmaster_internal_string_residual \
+            > research/recovered/STONEAGE-EARLY-CLIENT-DISCMASTER-INTERNAL-STRINGS-RESIDUAL-R2.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-EARLY-CLIENT-DISCMASTER-INTERNAL-STRINGS-RESIDUAL-R2.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: retry early-client internal strings'
+          git pull --rebase origin main
+          git push
