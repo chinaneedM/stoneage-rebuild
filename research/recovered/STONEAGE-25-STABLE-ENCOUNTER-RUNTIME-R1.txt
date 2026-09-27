@@ -1,0 +1,31 @@
+StoneAge recovered-2.5 stable-world encounter runtime audit — R1
+SCOPE|derived-encounter-integrity-only|no-original-rows|no-names|no-dialogue|no-map-payload
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+COUNT|stable_encounter_areas|402
+COUNT|stable_unresolved_positive_group_refs|23
+COUNT|stable_affected_encounter_areas|19
+COUNT|stable_referenced_groups|469
+COUNT|stable_referenced_group_missing_enemy_refs|0
+COUNT|stable_referenced_groups_affected_by_missing_enemy|0
+SPECIMEN_DEFECT_AREA|index=74|floor=10003|unresolved_positive_group_refs=2
+SPECIMEN_DEFECT_AREA|index=78|floor=10006|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=205|floor=10203|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=212|floor=20102|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=214|floor=20104|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=237|floor=10601|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=238|floor=10602|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=322|floor=31101|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=361|floor=31806|unresolved_positive_group_refs=2
+SPECIMEN_DEFECT_AREA|index=362|floor=31806|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=363|floor=31806|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=382|floor=400|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=383|floor=400|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=386|floor=30203|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=463|floor=30508|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=497|floor=20303|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=500|floor=20306|unresolved_positive_group_refs=1
+SPECIMEN_DEFECT_AREA|index=569|floor=30305|unresolved_positive_group_refs=2
+SPECIMEN_DEFECT_AREA|index=570|floor=30305|unresolved_positive_group_refs=2
+RULE|positive-weight missing group/enemy references remain hard errors; no synthetic group/enemy is created
+RESOLUTION|VERSIONED_ENCOUNTER_RUNTIME_AUDITED
