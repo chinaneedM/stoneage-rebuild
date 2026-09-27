@@ -161,3 +161,26 @@ Every later-version element must be evaluated before inclusion. It may be:
 Therefore the final game is not defined as a strict clone of v1.0, 1.82 or any later official release. The historical baseline provides **ground truth and design DNA**; later official versions provide **validated source material and evolutionary evidence**; the final implementation is an independently designed modern StoneAge reconstruction guided by project principles.
 
 This decision complements DD-003 and DD-011: recover enough trustworthy official material to understand the game deeply, then use historical versions as inputs to deliberate design rather than as immutable specifications.
+
+
+## DD-013 — Single-player delivery with MMORPG-style systems and future rights-holder optionality
+
+**Status:** Accepted
+
+The project is developed and used as a **single-player/private game**, not as an unauthorized public online service. This is an intentional product boundary, especially while the work remains an independent reconstruction inspired by historical StoneAge material and before any rights-holder authorization exists.
+
+However, the **gameplay model may deliberately preserve MMORPG-style design**. The single-player implementation may include persistent-character progression, long-form world progression, large content surfaces, repeatable combat, pet collection/growth, economy-like systems, quest chains, staged unlocks, travel friction, equipment/item loops, automation/convenience systems and other mechanics historically associated with an online RPG.
+
+Therefore `single-player` describes the current **deployment and access model**, not a requirement to redesign the game into a short, linear conventional standalone RPG.
+
+Architecture consequences:
+
+- Core deterministic game rules should be separated from presentation and transport/network layers.
+- World state, player state, NPC/pet/item data, progression and combat logic should use explicit data models rather than being tightly bound to one local UI process.
+- Single-player persistence should be authoritative locally, while internal interfaces should avoid assumptions that make a future authorized client/server split unnecessarily difficult.
+- Networking, account services, social systems, anti-cheat, live operations and multiplayer synchronization are **not current implementation requirements** and must not add premature complexity.
+- Historical server/network research remains useful where it reveals original rules, authoritative state boundaries, protocol-driven content or data ownership, but the initial reconstructed product remains local-first.
+
+Future optionality: if the project ever reaches a point where the relevant StoneAge rights-holder is willing to discuss authorization, licensing, collaboration or adoption, the reconstructed design and technical specifications should be capable of serving as a credible prototype/foundation for an officially authorized product. This is a possible future path, not an assumption or current claim of authorization.
+
+Until such authorization exists, the project must not present itself as official, imply affiliation, or depend on public operation using protected StoneAge assets/branding. Production code and newly created/recreated assets should continue to follow DD-007's copyright-aware boundary.
