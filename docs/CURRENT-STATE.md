@@ -3000,3 +3000,30 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Every concrete map and recovered semantic row remains versioned `LATER_RECOVERED`; none is promoted to Taiwan-v1 historical membership.
 - **VERSIONED_WORLD_GEOMETRY_R1 = CLOSED.**
 - Next deterministic world seam: bind the recovered encounter rectangles to the already reconstructed encounter/group/enemy resolver through an explicit versioned runtime adapter, while preserving the known recovered-2.5 dangling group-reference specimen defects as hard errors rather than silently repairing them.
+
+
+## Phase 1 versioned encounter-runtime adapter — 2026-09-28
+
+- `tools/stoneage_versioned_encounter_runtime.py` now binds the versioned stable-world encounter geometry to the existing strict `EncounterAreaBridge -> GroupBridge -> EnemyVariantBridge` resolver without duplicating encounter selection rules.
+- The adapter requires every one of the **402** stable-world encounter rows to match recovered master data exactly on:
+  - encounter index/floor;
+  - rectangle;
+  - encounter probability min/max;
+  - enemy maximum;
+  - z-order;
+  - count of positively weighted group references.
+- Recovered master semantics remain `source_version=recovered25 / LATER_RECOVERED`; the join does not promote server rows or concrete world population to Taiwan-v1 facts.
+- Positive-weight missing group references are not dropped, reweighted or synthesized. They are retained as `UnresolvedPositiveGroupReference` specimen defects, and the existing resolver still raises a hard `KeyError` if runtime reaches an affected area.
+- Full transient-source audit is committed as `research/recovered/STONEAGE-25-STABLE-ENCOUNTER-RUNTIME-R1.txt`.
+- Stable-world integrity result:
+  - stable encounter areas = **402**;
+  - positively weighted unresolved group refs = **23**;
+  - affected stable encounter areas = **19**;
+  - distinct positively referenced groups = **469**;
+  - missing enemy refs inside those existing referenced groups = **0**;
+  - referenced groups affected by missing enemy refs = **0**.
+- Thus the full recovered-2.5 specimen has 39 unresolved positive group refs across 32 rows, but the provenance-safe 761-map stable-world subset contains **23 refs across 19 encounter rows**. The remaining stable-world referenced group→enemy chain is complete at this integrity boundary.
+- Adapter unit/integration behavior is locked in the main gameplay suite, including order-independent defect inventory and proof that an affected area hard-fails through the existing resolver rather than being repaired.
+- Full source audit Actions run **36335679946 = PASS**; main gameplay real-report boundary run **36335789340 = PASS**.
+- **VERSIONED_ENCOUNTER_RUNTIME_ADAPTER_R1 = CLOSED.**
+- Next deterministic world seam: promote recovered NPC placement geometry into an engine-neutral versioned spawn catalogue (placement identity/region/count/direction only), while keeping NPC template behavior, dialogue and conditional function logic as separately versioned layers.
