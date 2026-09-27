@@ -1,0 +1,47 @@
+name: Match Yegame StoneAge early carrier
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_yegame_early_carrier_visual_match.py
+      - tests/test_stoneage_yegame_early_carrier_visual_match.py
+      - .github/workflows/match-stoneage-yegame-early-carrier.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-yegame-early-carrier
+  cancel-in-progress: true
+
+jobs:
+  match:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install visual dependencies
+        run: python -m pip install --disable-pip-version-check --no-input opencv-python-headless numpy
+      - name: Validate visual-match probe
+        run: python3 -m unittest tests.test_stoneage_yegame_early_carrier_visual_match -v
+      - name: Match archived product image to early carriers
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_yegame_early_carrier_visual_match \
+            > research/recovered/STONEAGE-YEGAME-EARLY-CARRIER-VISUAL-MATCH-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-YEGAME-EARLY-CARRIER-VISUAL-MATCH-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: match Yegame early physical carrier'
+          git pull --rebase origin main
+          git push
