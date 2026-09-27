@@ -1,0 +1,38 @@
+name: Inspect Waei fileid 133 redirect
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_fileid133_header_probe.py
+      - tests/test_stoneage_waei_fileid133_header_probe.py
+      - .github/workflows/probe-stoneage-waei-fileid133-header.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate header probe
+        run: python3 -m unittest tests.test_stoneage_waei_fileid133_header_probe -v
+      - name: Inspect archived redirect
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_fileid133_header_probe \
+            > research/recovered/STONEAGE-WAEI-FILEID133-HEADER-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R='research/recovered/STONEAGE-WAEI-FILEID133-HEADER-R1.txt'
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: inspect Waei fileid 133 redirect'
+          git pull --rebase origin main
+          git push
