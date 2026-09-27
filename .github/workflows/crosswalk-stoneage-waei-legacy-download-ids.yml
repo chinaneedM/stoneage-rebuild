@@ -1,0 +1,39 @@
+name: Crosswalk Waei legacy download IDs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_waei_legacy_download_id_crosswalk.py
+      - tests/test_stoneage_waei_legacy_download_id_crosswalk.py
+      - .github/workflows/crosswalk-stoneage-waei-legacy-download-ids.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-waei-legacy-download-ids
+  cancel-in-progress: true
+
+jobs:
+  crosswalk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_waei_legacy_download_id_crosswalk -v
+      - run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_waei_legacy_download_id_crosswalk > research/recovered/STONEAGE-WAEI-LEGACY-DOWNLOAD-ID-CROSSWALK-R1.txt
+      - name: Commit derived metadata
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-WAEI-LEGACY-DOWNLOAD-ID-CROSSWALK-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: crosswalk Waei legacy download IDs'
+          git pull --rebase origin main
+          git push
