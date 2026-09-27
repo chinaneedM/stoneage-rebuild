@@ -6,13 +6,45 @@ ITEM|id=22111215616086|role=early-bare-disc|name=二手電腦遊戲 PC GAME 華�
 CONTROL_DETAIL|id=22625938996449|role=taiwan-client-box|status=200|bytes=3141|rows=1|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22625938996449&level=simple
 CONTROL_DETAIL|id=22631284715652|role=beijing-waei-newbie-control|status=200|bytes=2659|rows=1|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22631284715652&level=simple
 CONTROL_DETAIL|id=22636573895893|role=mainland-retail-box|status=200|bytes=2640|rows=1|final=https://rapi.ruten.com.tw/api/items/v2/list?gno=22636573895893&level=simple
-ERROR|id=22111215616086|scope=target|kind=ModuleNotFoundError|message=No module named 'cv2'
-ERROR|id=22625938996449|scope=control|kind=ModuleNotFoundError|message=No module named 'cv2'
-ERROR|id=22631284715652|scope=control|kind=ModuleNotFoundError|message=No module named 'cv2'
-ERROR|id=22636573895893|scope=control|kind=ModuleNotFoundError|message=No module named 'cv2'
-COUNT|target_images=0
-COUNT|control_images=0
-COUNT|pairs=0
-COUNT|errors=4
-RESOLUTION|BARE_DISC_TARGET_UNAVAILABLE|retry exact public item only
+TARGET_IMAGE|label=ruten:22111215616086:0|bytes=76946|sha256=4367723cdfca509e7c6392543285a056531c4f0f51242ce38b1b390d370a41a6|size=600x800|dhash=7bf3e8caaaecf19f|keypoints=5000|url=https://gcs.rimg.com.tw/g2/4/d4/56/22111215616086_291.JPG
+CONTROL_IMAGE|label=ruten:22625938996449:0|carrier=22625938996449|role=taiwan-client-box|bytes=95473|sha256=a65a57d73e3a495906190aed6e43a1df4e3e8b318830c65cddd7de5e30f81f1c|size=800x800|dhash=7c7c647462627a7e|keypoints=5000|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/4/e1/22625938996449_168.jpg
+CONTROL_IMAGE|label=ruten:22625938996449:1|carrier=22625938996449|role=taiwan-client-box|bytes=100270|sha256=e168f1282cce0433714b5637156d0e023ee7c52d39578b04c029385c8ab091f2|size=800x800|dhash=7373c78dc7ffbb5d|keypoints=5000|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/4/e1/22625938996449_957.jpg
+CONTROL_IMAGE|label=ruten:22625938996449:2|carrier=22625938996449|role=taiwan-client-box|bytes=135159|sha256=1fe36340639d6922af0d756b08cd417d1715ac45435d3ae9226c699da317abd4|size=800x800|dhash=78727a7a68767e66|keypoints=5000|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/4/e1/22625938996449_621.jpg
+CONTROL_IMAGE|label=ruten:22625938996449:3|carrier=22625938996449|role=taiwan-client-box|bytes=38712|sha256=699f40399b5f3c87d3e407592d73f31ecfc54b83e37cf31ce5476c1c665e43eb|size=800x800|dhash=fadffdd3f9f7dcda|keypoints=4595|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/4/e1/22625938996449_453.jpg
+CONTROL_IMAGE|label=ruten:22625938996449:4|carrier=22625938996449|role=taiwan-client-box|bytes=62919|sha256=b5b1de50bee08049fe33d57076fadee34c294b6977355b0e2cc08678693d84d9|size=800x800|dhash=cbe0e0e060606067|keypoints=5000|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/4/e1/22625938996449_448.jpg
+CONTROL_IMAGE|label=ruten:22625938996449:5|carrier=22625938996449|role=taiwan-client-box|bytes=61676|sha256=def06d31969a280d88da023cc6da5578fe9cfac74a04438468574f4533a4c10b|size=800x800|dhash=fcdad8ccacca7a7a|keypoints=5000|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/4/e1/22625938996449_226.jpg
+CONTROL_IMAGE|label=ruten:22631284715652:0|carrier=22631284715652|role=beijing-waei-newbie-control|bytes=99546|sha256=fe45544663b656cea1f3fd05857fdf8aa8107b171b50b12ea17e919fde0ffb75|size=800x600|dhash=d4e4c6d4d0d4d4c1|keypoints=5000|url=https://a.rimg.com.tw/c1/599/44a/dilan888/4/84/22631284715652_576.jpg
+CONTROL_IMAGE|label=ruten:22631284715652:1|carrier=22631284715652|role=beijing-waei-newbie-control|bytes=102428|sha256=bd54247d584888a4acb95dd6185f30362578e16a354a2eef09499410053e3682|size=800x600|dhash=f4d4e4d4d0d0c4c0|keypoints=5000|url=https://a.rimg.com.tw/c1/599/44a/dilan888/4/84/22631284715652_533.jpg
+CONTROL_IMAGE|label=ruten:22631284715652:2|carrier=22631284715652|role=beijing-waei-newbie-control|bytes=94532|sha256=30839a263f0d56d8bd0a8ea607fd6161756a75bbfb9a9c0446bcbf2b1fb114ec|size=800x600|dhash=e0d4e4d6d4d4d6ca|keypoints=5000|url=https://a.rimg.com.tw/c1/599/44a/dilan888/4/84/22631284715652_766.jpg
+CONTROL_IMAGE|label=ruten:22631284715652:3|carrier=22631284715652|role=beijing-waei-newbie-control|bytes=92849|sha256=8247a278d3fbabd747db89a04172dcb58df93d7ad4a5044ee7ddc7ea602b2cca|size=800x600|dhash=d0f2d2d2cbd2d2d2|keypoints=5000|url=https://a.rimg.com.tw/c1/599/44a/dilan888/4/84/22631284715652_775.jpg
+CONTROL_IMAGE|label=ruten:22636573895893:0|carrier=22636573895893|role=mainland-retail-box|bytes=94146|sha256=d92f101a9a84e36bbd53f326b4fa69cb3463f0da90400a65f612f45bbe9e35fe|size=600x800|dhash=8fecbcacc44c5caf|keypoints=5000|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_659.jpg
+CONTROL_IMAGE|label=ruten:22636573895893:1|carrier=22636573895893|role=mainland-retail-box|bytes=118476|sha256=e33589cc9696a95179acb8251aacffe50c0bdad1be542b4562f04e55572e18d7|size=600x800|dhash=96a8b3b0f4697c8e|keypoints=5000|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_719.jpg
+CONTROL_IMAGE|label=ruten:22636573895893:2|carrier=22636573895893|role=mainland-retail-box|bytes=53670|sha256=eaf89650c5e92aac187cda3b699a629ec00f1d5730b6dce117e62d51292a15e5|size=600x800|dhash=53589e343c3c3a5e|keypoints=5000|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_870.jpg
+CONTROL_IMAGE|label=ruten:22636573895893:3|carrier=22636573895893|role=mainland-retail-box|bytes=82828|sha256=ed9ab0029b0d5517e8d2a11be18106a5d77f52ce5c0482dca87039a0f8523b3e|size=600x800|dhash=6d3931396b69ed97|keypoints=5000|url=https://a.rimg.com.tw/c1/a1e/c69/schwartzbertie213/0/d5/22636573895893_576.jpg
+MATCH|target=ruten:22111215616086:0|control=ruten:22625938996449:0|control_carrier=22625938996449|control_role=taiwan-client-box|dhash_hamming=32|orb_matches=2070|good_le64=1901|median_top50=17.0|ransac_inliers=1396|inlier_ratio=0.7344
+MATCH|target=ruten:22111215616086:0|control=ruten:22636573895893:0|control_carrier=22636573895893|control_role=mainland-retail-box|dhash_hamming=31|orb_matches=1609|good_le64=1353|median_top50=30.5|ransac_inliers=656|inlier_ratio=0.4848
+MATCH|target=ruten:22111215616086:0|control=ruten:22625938996449:2|control_carrier=22625938996449|control_role=taiwan-client-box|dhash_hamming=28|orb_matches=1622|good_le64=1316|median_top50=24.0|ransac_inliers=512|inlier_ratio=0.3891
+MATCH|target=ruten:22111215616086:0|control=ruten:22625938996449:5|control_carrier=22625938996449|control_role=taiwan-client-box|dhash_hamming=25|orb_matches=1600|good_le64=1335|median_top50=23.0|ransac_inliers=428|inlier_ratio=0.3206
+MATCH|target=ruten:22111215616086:0|control=ruten:22636573895893:1|control_carrier=22636573895893|control_role=mainland-retail-box|dhash_hamming=35|orb_matches=1573|good_le64=1212|median_top50=32.0|ransac_inliers=407|inlier_ratio=0.3358
+MATCH|target=ruten:22111215616086:0|control=ruten:22631284715652:3|control_carrier=22631284715652|control_role=beijing-waei-newbie-control|dhash_hamming=27|orb_matches=1647|good_le64=1402|median_top50=24.0|ransac_inliers=404|inlier_ratio=0.2882
+MATCH|target=ruten:22111215616086:0|control=ruten:22636573895893:3|control_carrier=22636573895893|control_role=mainland-retail-box|dhash_hamming=28|orb_matches=1441|good_le64=1110|median_top50=35.0|ransac_inliers=267|inlier_ratio=0.2405
+MATCH|target=ruten:22111215616086:0|control=ruten:22631284715652:0|control_carrier=22631284715652|control_role=beijing-waei-newbie-control|dhash_hamming=34|orb_matches=1585|good_le64=1276|median_top50=26.5|ransac_inliers=254|inlier_ratio=0.1991
+MATCH|target=ruten:22111215616086:0|control=ruten:22631284715652:2|control_carrier=22631284715652|control_role=beijing-waei-newbie-control|dhash_hamming=31|orb_matches=1620|good_le64=1293|median_top50=34.0|ransac_inliers=222|inlier_ratio=0.1717
+MATCH|target=ruten:22111215616086:0|control=ruten:22631284715652:1|control_carrier=22631284715652|control_role=beijing-waei-newbie-control|dhash_hamming=34|orb_matches=1503|good_le64=1198|median_top50=28.0|ransac_inliers=141|inlier_ratio=0.1177
+MATCH|target=ruten:22111215616086:0|control=ruten:22625938996449:1|control_carrier=22625938996449|control_role=taiwan-client-box|dhash_hamming=25|orb_matches=1258|good_le64=872|median_top50=31.5|ransac_inliers=75|inlier_ratio=0.0860
+MATCH|target=ruten:22111215616086:0|control=ruten:22636573895893:2|control_carrier=22636573895893|control_role=mainland-retail-box|dhash_hamming=34|orb_matches=1467|good_le64=1039|median_top50=41.0|ransac_inliers=40|inlier_ratio=0.0385
+MATCH|target=ruten:22111215616086:0|control=ruten:22625938996449:4|control_carrier=22625938996449|control_role=taiwan-client-box|dhash_hamming=25|orb_matches=1398|good_le64=1024|median_top50=42.0|ransac_inliers=16|inlier_ratio=0.0156
+MATCH|target=ruten:22111215616086:0|control=ruten:22625938996449:3|control_carrier=22625938996449|control_role=taiwan-client-box|dhash_hamming=26|orb_matches=1154|good_le64=927|median_top50=40.0|ransac_inliers=13|inlier_ratio=0.0140
+COUNT|target_images=1
+COUNT|control_images=14
+COUNT|pairs=14
+COUNT|errors=0
+RESOLUTION|BARE_DISC_CARRIER_FAMILY_MATCH_CANDIDATE|inspect top control role and disc-side identifiers before provenance upgrade
+STRONG|control_carrier=22625938996449|control_role=taiwan-client-box|control=ruten:22625938996449:0|inliers=1396|ratio=0.7344
+STRONG|control_carrier=22636573895893|control_role=mainland-retail-box|control=ruten:22636573895893:0|inliers=656|ratio=0.4848
+STRONG|control_carrier=22625938996449|control_role=taiwan-client-box|control=ruten:22625938996449:2|inliers=512|ratio=0.3891
+STRONG|control_carrier=22625938996449|control_role=taiwan-client-box|control=ruten:22625938996449:5|inliers=428|ratio=0.3206
+STRONG|control_carrier=22636573895893|control_role=mainland-retail-box|control=ruten:22636573895893:1|inliers=407|ratio=0.3358
+STRONG|control_carrier=22631284715652|control_role=beijing-waei-newbie-control|control=ruten:22631284715652:3|inliers=404|ratio=0.2882
+STRONG|control_carrier=22636573895893|control_role=mainland-retail-box|control=ruten:22636573895893:3|inliers=267|ratio=0.2405
 EVIDENCE_BOUNDARY|Marketplace titles and artwork are carrier evidence only; visual similarity cannot establish disc-byte identity, version, release date, or clean-client status.
