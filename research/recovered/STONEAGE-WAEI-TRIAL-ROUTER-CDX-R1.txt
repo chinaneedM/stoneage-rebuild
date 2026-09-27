@@ -1,0 +1,32 @@
+StoneAge Waei early central-download redirect census — R1
+SCOPE|Wayback CDX metadata only|early=20001215..20010228|control=20010601..20010610|all statuses|no urlkey collapse|no archived-body|no binary payload
+QUERY|label=detail-id2|scope=early|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww7.waei.net%2Fdownload%2Fdldetial.asp%3FID%3D2&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001215&to=20010228&limit=50000
+QUERY|label=detail-id2-port80|scope=early|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww7.waei.net%3A80%2Fdownload%2Fdldetial.asp%3FID%3D2&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001215&to=20010228&limit=50000
+QUERY|label=router|scope=early|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww7.waei.net%2Fdownload%2Fdownload.asp&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001215&to=20010228&limit=50000
+QUERY|label=router-port80|scope=early|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww7.waei.net%3A80%2Fdownload%2Fdownload.asp&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001215&to=20010228&limit=50000
+QUERY|label=file-prefix|scope=early|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww7.waei.net%2Fdownload%2Ffile%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001215&to=20010228&limit=50000
+QUERY|label=file-prefix-port80|scope=early|status=200|rows=0|bytes=3|sha256=37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww7.waei.net%3A80%2Fdownload%2Ffile%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20001215&to=20010228&limit=50000
+QUERY|label=control-fileid133|scope=control|status=200|rows=1|bytes=223|sha256=56b49379698461654a8db708d88aac894b1b4f68b89a9661f4f34f767b3e97eb|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww7.waei.net%2Fdownload%2Fdownload.asp%3Ffileid%3D133&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20010601&to=20010610&limit=50000
+QUERY|label=control-fileid133-port80|scope=control|status=200|rows=1|bytes=223|sha256=56b49379698461654a8db708d88aac894b1b4f68b89a9661f4f34f767b3e97eb|final=https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww7.waei.net%3A80%2Fdownload%2Fdownload.asp%3Ffileid%3D133&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength%2Credirect&from=20010601&to=20010610&limit=50000
+ROW|scope=control|labels=control-fileid133,control-fileid133-port80|timestamp=20010605174213|status=302|fileid=133|stone_hint=0|basename=download.asp|mime=text/html|length=449|digest=6QE4QTAOCIC7BJUCW6L4X6U2N35I7MAW|redirect=|original=http://www7.waei.net:80/download/download.asp?fileid=133
+STATUS_COUNT|status=302|count=1
+QUERY_COUNT|label=control-fileid133|count=1
+QUERY_COUNT|label=control-fileid133-port80|count=1
+QUERY_COUNT|label=detail-id2|count=0
+QUERY_COUNT|label=detail-id2-port80|count=0
+QUERY_COUNT|label=file-prefix|count=0
+QUERY_COUNT|label=file-prefix-port80|count=0
+QUERY_COUNT|label=router|count=0
+QUERY_COUNT|label=router-port80|count=0
+COUNT|unique_rows|1
+COUNT|early_rows|0
+COUNT|early_router_rows|0
+COUNT|early_redirect_rows|0
+COUNT|early_file_rows|0
+COUNT|stone_hint_rows|0
+COUNT|control_rows|1
+COUNT|control_fileid133_rows|1
+COUNT|control_fileid133_redirect_rows|1
+COUNT|errors|0
+RESOLUTION|EARLY_ROUTER_ROUTE_BOUNDED|known 302 control is visible but no early router/file row is indexed in tested window
+EVIDENCE_BOUNDARY|CDX length is archive-record metadata, not asserted original payload size; no archived body or game binary is fetched.
