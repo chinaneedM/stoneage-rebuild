@@ -6,6 +6,8 @@ on:
     paths:
       - tools/stoneage_world_content_coverage_probe.py
       - tests/test_stoneage_world_content_coverage_probe.py
+      - tools/stoneage_versioned_world_geometry_probe.py
+      - tests/test_stoneage_versioned_world_geometry_probe.py
       - tools/stoneage_world_map_library.py
       - research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
       - .github/workflows/probe-stoneage-25-world-content-coverage.yml
@@ -24,8 +26,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate world-content coverage classifier
-        run: python3 -m unittest tests.test_stoneage_world_content_coverage_probe -v
+      - name: Validate world-content classifiers
+        run: |
+          python3 -m unittest \
+            tests.test_stoneage_world_content_coverage_probe \
+            tests.test_stoneage_versioned_world_geometry_probe -v
 
       - name: Install archive tools
         run: |
@@ -131,6 +136,31 @@ jobs:
             fi
           } > "$report"
 
+      - name: Build versioned numeric world geometry
+        run: |
+          set -euo pipefail
+          N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
+          test -n "$N" && test -n "$D"
+
+          report=research/recovered/STONEAGE-25-STABLE-WORLD-GEOMETRY-R1.txt
+          {
+            echo 'SOURCE_BUNDLE_SHA256|d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5'
+            if [ -n "$C" ]; then
+              python3 -m tools.stoneage_versioned_world_geometry_probe \
+                --lineage-report research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt \
+                --npc-dir "$N" \
+                --data-dir "$D" \
+                --setup "$C"
+            else
+              python3 -m tools.stoneage_versioned_world_geometry_probe \
+                --lineage-report research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt \
+                --npc-dir "$N" \
+                --data-dir "$D"
+            fi
+          } > "$report"
+
       - name: Verify derived coverage report
         run: |
           set -euo pipefail
@@ -141,6 +171,17 @@ jobs:
           test "$(grep -c '^FLOOR|' "$report")" = "761"
           grep -F 'RESOLUTION|VERSIONED_WORLD_CONTENT_COVERAGE_CLASSIFIED' "$report"
 
+      - name: Verify derived world geometry report
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-25-STABLE-WORLD-GEOMETRY-R1.txt
+          test -s "$report"
+          grep -F 'SEMANTIC_SOURCE_VERSION|recovered25' "$report"
+          grep -F 'EVIDENCE_ROLE|LATER_RECOVERED' "$report"
+          grep -F 'COUNT|stable_floor_candidates|761' "$report"
+          grep -F 'WARP_RULE|only classic functionset=Warp' "$report"
+          grep -F 'RESOLUTION|VERSIONED_WORLD_GEOMETRY_CLASSIFIED' "$report"
+
       - name: Delete transient proprietary payloads
         if: always()
         run: rm -rf /tmp/sa25
@@ -150,10 +191,11 @@ jobs:
           set -euo pipefail
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
-          report=research/recovered/STONEAGE-25-STABLE-WORLD-CONTENT-COVERAGE-R1.txt
-          git add "$report"
+          coverage=research/recovered/STONEAGE-25-STABLE-WORLD-CONTENT-COVERAGE-R1.txt
+          geometry=research/recovered/STONEAGE-25-STABLE-WORLD-GEOMETRY-R1.txt
+          git add "$coverage" "$geometry"
           git diff --cached --quiet && exit 0
-          git commit -m 'research: classify stable map world-content coverage'
+          git commit -m 'research: classify stable map world geometry'
           if ! git pull --rebase origin main; then
             git rebase --abort || true
             exit 1
