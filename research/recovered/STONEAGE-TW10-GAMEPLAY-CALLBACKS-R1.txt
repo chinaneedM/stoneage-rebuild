@@ -152,6 +152,26 @@ INDEX_ARITH|name=I|instruction_rva=0x32672|kind=lea|dst=edx|base=eax|index=eax|s
 INDEX_ARITH|name=I|instruction_rva=0x32697|kind=lea|dst=ebx|base=ebx|index=ebx|scale=4|disp=0
 CALLBACK|name=WN|rva=0x328c0|blocks=3|instructions=16|direct_targets=1|import_targets=0|indirect_jumps=0
 DIRECT|name=WN|target_rva=0x12930|calls=1
+CALLBACK|name=PME|rva=0x328f0|blocks=16|instructions=228|direct_targets=8|import_targets=0|indirect_jumps=0
+DIRECT|name=PME|target_rva=0x46c70|calls=10
+DIRECT|name=PME|target_rva=0x49566|calls=7
+DIRECT|name=PME|target_rva=0x8540|calls=2
+DIRECT|name=PME|target_rva=0x46da0|calls=2
+DIRECT|name=PME|target_rva=0x46ff0|calls=2
+DIRECT|name=PME|target_rva=0x71f0|calls=1
+DIRECT|name=PME|target_rva=0x46df0|calls=1
+DIRECT|name=PME|target_rva=0x49160|calls=1
+ASCII_IMM|name=PME|instruction_rva=0x329e7|mnemonic=add|value=80|char=P|ops=esp, 0x50
+ASCII_IMM|name=PME|instruction_rva=0x32a5c|mnemonic=add|value=72|char=H|ops=esp, 0x48
+ASCII_IMM|name=PME|instruction_rva=0x32ac3|mnemonic=add|value=64|char=@|ops=esp, 0x40
+ASCII_IMM|name=PME|instruction_rva=0x32b3d|mnemonic=add|value=96|char=`|ops=esp, 0x60
+CALLBACK|name=B|rva=0x32c70|blocks=11|instructions=95|direct_targets=1|import_targets=0|indirect_jumps=0
+DIRECT|name=B|target_rva=0x49120|calls=2
+ASCII_IMM|name=B|instruction_rva=0x32c7a|mnemonic=cmp|value=67|char=C|ops=al, 0x43
+ASCII_IMM|name=B|instruction_rva=0x32cba|mnemonic=cmp|value=80|char=P|ops=al, 0x50
+ASCII_IMM|name=B|instruction_rva=0x32ce2|mnemonic=cmp|value=65|char=A|ops=al, 0x41
+ASCII_IMM|name=B|instruction_rva=0x32d25|mnemonic=cmp|value=85|char=U|ops=al, 0x55
+CALLBACK|name=D|rva=0x33070|blocks=1|instructions=1|direct_targets=0|import_targets=0|indirect_jumps=0
 TOKEN_PRELUDE|name=I|helper_rva=0x46c70|callsite_rva=0x3262f|instructions=7
 TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x3262f|order=1|instruction_rva=0x3261c|mnemonic=mov|ops=dword ptr [esp + 0x18], eax
 TOKEN_PRELUDE_INSN|name=I|helper_rva=0x46c70|callsite_rva=0x3262f|order=2|instruction_rva=0x32620|mnemonic=lea|ops=eax, [esp + 0x20]
@@ -1008,6 +1028,17 @@ HELPER_CALLSITE|callback=I|helper_rva=0x46c70|callsite_rva=0x3262f|cleanup_bytes
 HELPER_CALLSITE|callback=I|helper_rva=0x46c70|callsite_rva=0x326f5|cleanup_bytes=|immediate_pushes=0xff,0x7c
 HELPER_CALLSITE|callback=I|helper_rva=0x46c70|callsite_rva=0x32783|cleanup_bytes=|immediate_pushes=0xff,0x7c
 HELPER_CALLSITE|callback=I|helper_rva=0x46c70|callsite_rva=0x32899|cleanup_bytes=32|immediate_pushes=0xff,0x7c
+HELPER_CALLS|callback=PME|helper_rva=0x46c70|calls=10|cleanup_bytes=none:8,72:1,80:1
+HELPER_CALLSITE|callback=PME|helper_rva=0x46c70|callsite_rva=0x329a0|cleanup_bytes=|immediate_pushes=0x7ff,0x2,0x7c
+HELPER_CALLSITE|callback=PME|helper_rva=0x46c70|callsite_rva=0x329c2|cleanup_bytes=|immediate_pushes=0x7ff,0x3,0x7c
+HELPER_CALLSITE|callback=PME|helper_rva=0x46c70|callsite_rva=0x329e2|cleanup_bytes=80|immediate_pushes=0x7ff,0x4,0x7c
+HELPER_CALLSITE|callback=PME|helper_rva=0x46c70|callsite_rva=0x32a05|cleanup_bytes=|immediate_pushes=0x7ff,0x5,0x7c
+HELPER_CALLSITE|callback=PME|helper_rva=0x46c70|callsite_rva=0x32a35|cleanup_bytes=|immediate_pushes=0x7ff,0x6,0x7c
+HELPER_CALLSITE|callback=PME|helper_rva=0x46c70|callsite_rva=0x32a57|cleanup_bytes=72|immediate_pushes=0x7ff,0x7,0x7c
+HELPER_CALLSITE|callback=PME|helper_rva=0x46c70|callsite_rva=0x32a8d|cleanup_bytes=|immediate_pushes=0x7ff,0x9,0x7c
+HELPER_CALLSITE|callback=PME|helper_rva=0x46c70|callsite_rva=0x32ab1|cleanup_bytes=|immediate_pushes=0x7ff,0xa,0x7c
+HELPER_CALLSITE|callback=PME|helper_rva=0x46c70|callsite_rva=0x32ad5|cleanup_bytes=|immediate_pushes=0x7ff,0xb,0x7c
+HELPER_CALLSITE|callback=PME|helper_rva=0x46c70|callsite_rva=0x32af7|cleanup_bytes=|immediate_pushes=0x7ff,0xc,0x7c
 HELPER_CALLS|callback=S:P|helper_rva=0x46c70|calls=4|cleanup_bytes=none:3,80:1
 HELPER_CALLSITE|callback=S:P|helper_rva=0x46c70|callsite_rva=0x2f97f|cleanup_bytes=80|immediate_pushes=0xff,0x19,0x7c
 HELPER_CALLSITE|callback=S:P|helper_rva=0x46c70|callsite_rva=0x2f9e1|cleanup_bytes=|immediate_pushes=0xff,0x1a,0x7c
@@ -1049,6 +1080,9 @@ HELPER_CALLSITE|callback=I|helper_rva=0x46da0|callsite_rva=0x32806|cleanup_bytes
 HELPER_CALLSITE|callback=I|helper_rva=0x46da0|callsite_rva=0x32848|cleanup_bytes=|immediate_pushes=0x7c
 HELPER_CALLSITE|callback=I|helper_rva=0x46da0|callsite_rva=0x3285a|cleanup_bytes=|immediate_pushes=0x7c
 HELPER_CALLSITE|callback=I|helper_rva=0x46da0|callsite_rva=0x32882|cleanup_bytes=|immediate_pushes=0x7c
+HELPER_CALLS|callback=PME|helper_rva=0x46da0|calls=2|cleanup_bytes=none:2
+HELPER_CALLSITE|callback=PME|helper_rva=0x46da0|callsite_rva=0x32988|cleanup_bytes=|immediate_pushes=0x1,0x7c
+HELPER_CALLSITE|callback=PME|helper_rva=0x46da0|callsite_rva=0x32a72|cleanup_bytes=|immediate_pushes=0x8,0x7c
 HELPER_CALLS|callback=S:C|helper_rva=0x46da0|calls=5|cleanup_bytes=none:5
 HELPER_CALLSITE|callback=S:C|helper_rva=0x46da0|callsite_rva=0x2f70a|cleanup_bytes=|immediate_pushes=0x7c
 HELPER_CALLSITE|callback=S:C|helper_rva=0x46da0|callsite_rva=0x2f716|cleanup_bytes=|immediate_pushes=0x2,0x7c
@@ -1198,6 +1232,9 @@ HELPER_CALLS|callback=I|helper_rva=0x46ff0|calls=3|cleanup_bytes=none:3
 HELPER_CALLSITE|callback=I|helper_rva=0x46ff0|callsite_rva=0x32656|cleanup_bytes=|immediate_pushes=
 HELPER_CALLSITE|callback=I|helper_rva=0x46ff0|callsite_rva=0x32702|cleanup_bytes=|immediate_pushes=
 HELPER_CALLSITE|callback=I|helper_rva=0x46ff0|callsite_rva=0x32790|cleanup_bytes=|immediate_pushes=
+HELPER_CALLS|callback=PME|helper_rva=0x46ff0|calls=2|cleanup_bytes=none:1,64:1
+HELPER_CALLSITE|callback=PME|helper_rva=0x46ff0|callsite_rva=0x32a9a|cleanup_bytes=|immediate_pushes=
+HELPER_CALLSITE|callback=PME|helper_rva=0x46ff0|callsite_rva=0x32abe|cleanup_bytes=64|immediate_pushes=
 HELPER_CALLS|callback=S:P|helper_rva=0x46ff0|calls=4|cleanup_bytes=none:4
 HELPER_CALLSITE|callback=S:P|helper_rva=0x46ff0|callsite_rva=0x2f98f|cleanup_bytes=|immediate_pushes=
 HELPER_CALLSITE|callback=S:P|helper_rva=0x46ff0|callsite_rva=0x2f9eb|cleanup_bytes=|immediate_pushes=
@@ -1221,6 +1258,9 @@ HELPER_CALLSITE|callback=S:I|helper_rva=0x46ff0|callsite_rva=0x30a55|cleanup_byt
 HELPER_CALLS|callback=S:W|helper_rva=0x46ff0|calls=2|cleanup_bytes=none:2
 HELPER_CALLSITE|callback=S:W|helper_rva=0x46ff0|callsite_rva=0x30ba5|cleanup_bytes=|immediate_pushes=
 HELPER_CALLSITE|callback=S:W|helper_rva=0x46ff0|callsite_rva=0x30c68|cleanup_bytes=|immediate_pushes=
-SHARED_DIRECT|target_rva=0x46c70|callbacks=2|calls=C:24,I:4|total=28
-SHARED_DIRECT|target_rva=0x46da0|callbacks=2|calls=C:3,I:8|total=11
-SHARED_DIRECT|target_rva=0x46ff0|callbacks=2|calls=C:3,I:3|total=6
+SHARED_DIRECT|target_rva=0x46c70|callbacks=3|calls=C:24,I:4,PME:10|total=38
+SHARED_DIRECT|target_rva=0x49566|callbacks=2|calls=C:13,PME:7|total=20
+SHARED_DIRECT|target_rva=0x46da0|callbacks=3|calls=C:3,I:8,PME:2|total=13
+SHARED_DIRECT|target_rva=0x46ff0|callbacks=3|calls=C:3,I:3,PME:2|total=8
+SHARED_DIRECT|target_rva=0x46df0|callbacks=2|calls=C:3,PME:1|total=4
+SHARED_DIRECT|target_rva=0x49160|callbacks=2|calls=C:1,PME:1|total=2
