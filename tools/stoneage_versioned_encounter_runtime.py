@@ -124,13 +124,19 @@ class VersionedEncounterRuntimeAdapter:
                         )
                     )
 
+        defect_key = lambda d: (
+            int(d.area_index),
+            int(d.floor_id),
+            int(d.group_id),
+            int(d.weight),
+        )
         actual_key = tuple(
-            (d.area_index, d.floor_id, d.group_id, d.weight)
-            for d in actual_defects
+            defect_key(d)
+            for d in sorted(actual_defects, key=defect_key)
         )
         supplied_key = tuple(
-            (d.area_index, d.floor_id, d.group_id, d.weight)
-            for d in defects
+            defect_key(d)
+            for d in sorted(defects, key=defect_key)
         )
         if actual_key != supplied_key:
             raise ValueError(
