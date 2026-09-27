@@ -1,0 +1,42 @@
+name: Probe 17173 StoneAge launch download archive
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_17173_launch_download_archive_probe.py
+      - tests/test_stoneage_17173_launch_download_archive_probe.py
+      - .github/workflows/probe-stoneage-17173-launch-download-archive.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-17173-launch-download-archive
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate launch-download probe
+        run: python3 -m unittest tests.test_stoneage_17173_launch_download_archive_probe -v
+      - name: Probe archived 17173 launch download pages
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python3 -m tools.stoneage_17173_launch_download_archive_probe \
+            > research/recovered/STONEAGE-17173-LAUNCH-DOWNLOAD-ARCHIVE-R1.txt
+      - name: Commit derived metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          R=research/recovered/STONEAGE-17173-LAUNCH-DOWNLOAD-ARCHIVE-R1.txt
+          git add "$R"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: probe 17173 StoneAge launch download archive'
+          git pull --rebase origin main
+          git push
