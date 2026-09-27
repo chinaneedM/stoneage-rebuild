@@ -8,25 +8,27 @@ This project is **not** a binary patch, private-server repack, or direct copy of
 
 The development goal is to:
 
-1. Recover the **earliest freely/publicly obtainable clean StoneAge client** (or the earliest trustworthy bridge client if the absolute original is unavailable).
-2. Verify provenance and inventory the real client at file level.
-3. Reverse engineer its executable/runtime structure, resource formats, maps, characters, pets, attributes, skills, items, UI, text/data tables and other deterministic systems.
-4. Diff additional clean versions to reconstruct how the game evolved across JSS, Taiwan, Korea, Mainland China and later branches.
-5. Reimplement the resulting specifications with a modern engine, modern rendering/input/save architecture, and independently created/recreated production assets.
-6. Preserve the emotional milestones of the original experience while integrating later systems coherently rather than copying a single historical build blindly.
+1. Use the accepted **Taiwan Waei/JSS v1.0 clean retail client** as the historical foundation baseline for reconstruction.
+2. Preserve provenance and inventory the baseline at file level, then recover its executable/runtime structure, resource formats and deterministic gameplay state.
+3. Reconstruct maps, characters, pets, attributes, skills, items, NPC/world systems, UI, text/data tables and other game rules using version-tagged evidence; original server-only content is reconstructed rather than assumed to be present on the retail disc.
+4. Diff earlier/later clean official versions when available to reconstruct evolution across JSS, Taiwan, Korea, Mainland China and later branches; later releases are a design/content library rather than mandatory cumulative upgrades.
+5. Reimplement the resulting specifications as a private/local-first single-player game with MMORPG-style depth, modern rendering/input/save architecture, and independently created/recreated production assets.
+6. Preserve the emotional milestones and core StoneAge design DNA while deliberately redesigning pacing, systems and content where the modern project requires it.
 
 ## Current phase
 
-**Phase 0 — Earliest Clean Client Recovery & Reverse Engineering**
+**Phase 1 — Foundation Baseline Technical Reconstruction & Specification**
+
+The Taiwan Waei/JSS v1.0 retail client is accepted as the R1 historical foundation baseline. Open-ended hunting for an absolute-earliest client is no longer on the critical path.
 
 Primary targets:
 
-- recover the earliest trustworthy client/installer/file tree available at zero acquisition cost;
-- reject private-server repacks and modified clients through provenance and file-level checks;
-- create hashes and full inventories;
-- reverse engineer resource/container formats and deterministic game data;
-- use additional clean versions as controlled diff anchors;
-- keep historical research secondary unless it directly helps artifact recovery or technical interpretation.
+- close the remaining v1.0 runtime/gameplay semantics that materially affect reconstruction;
+- convert recovered graphics, animation, battle, audio, protocol and state evidence into engine-neutral deterministic specifications;
+- reconstruct world/map and server-authoritative content from version-tagged evidence without falsely projecting later data into v1.0;
+- use later official versions and recovered server/master data as controlled bridges and a future design/content library;
+- keep earlier-client discovery opportunistic and non-blocking;
+- prepare the local-first single-player architecture without prematurely building MMO services.
 
 See [`docs/CURRENT-STATE.md`](docs/CURRENT-STATE.md).
 
