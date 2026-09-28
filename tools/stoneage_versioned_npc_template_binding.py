@@ -101,6 +101,11 @@ class AnonymousNpcTemplateIdentity:
         return self.variant_count == 1
 
     @property
+    def runtime_variants_are_byte_equivalent(self) -> bool:
+        """True when duplicate source definitions have one normalized block hash."""
+        return self.variant_fingerprint_count == 1
+
+    @property
     def functionset_is_consensus(self) -> bool:
         return (
             self.functionset_variant_count == 1
@@ -279,11 +284,43 @@ class VersionedNpcTemplateBindingManifest:
     def direct_spawn_with_identity_eligible(
         self,
     ) -> tuple[VersionedNpcTemplateBinding, ...]:
+        """Strict source-identity gate: duplicate names remain non-unique."""
         spawn_by_id = self.spawn_catalogue.by_id
         return tuple(
             binding for binding in self.bindings
             if (
                 binding.concrete_template_binding_is_unique
+                and spawn_by_id[binding.placement_id]
+                    .direct_projection_eligible(
+                        self.spawn_catalogue.world_geometry
+                    )
+            )
+        )
+
+    @property
+    def runtime_equivalent_bindings(
+        self,
+    ) -> tuple[VersionedNpcTemplateBinding, ...]:
+        """Bindings whose referenced duplicate definitions are byte-equivalent."""
+        return tuple(
+            binding for binding in self.bindings
+            if self.identities[
+                binding.template_key
+            ].runtime_variants_are_byte_equivalent
+        )
+
+    @property
+    def direct_spawn_with_runtime_equivalent_identity_eligible(
+        self,
+    ) -> tuple[VersionedNpcTemplateBinding, ...]:
+        """Runtime gate allowing duplicate source definitions only when identical."""
+        spawn_by_id = self.spawn_catalogue.by_id
+        return tuple(
+            binding for binding in self.bindings
+            if (
+                self.identities[
+                    binding.template_key
+                ].runtime_variants_are_byte_equivalent
                 and spawn_by_id[binding.placement_id]
                     .direct_projection_eligible(
                         self.spawn_catalogue.world_geometry
