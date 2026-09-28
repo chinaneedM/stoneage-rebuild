@@ -300,6 +300,10 @@ jobs:
           grep -F 'SEMANTIC_SOURCE_VERSION|recovered25' "$report"
           grep -F 'EVIDENCE_ROLE|LATER_RECOVERED' "$report"
           grep -F 'COUNT|opaque_token_identities|4' "$report"
+          grep -F 'COUNT|runtime_mapping_files|0' "$report"
+          grep -F 'COUNT|status:RECOVERED25_MAPPING_ABSENT|4' "$report"
+          grep -F 'COUNT|graphic_placements_total|880' "$report"
+          grep -F 'COUNT|type_placements_total|89' "$report"
           grep -F 'RESOLUTION|RECOVERED25_RUNTIME_GRAPHIC_MAPPING_AUDITED' "$report"
 
       - name: Build stable-world encounter runtime audit
