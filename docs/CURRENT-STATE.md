@@ -3102,3 +3102,39 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - All identities, bindings and functionset consensus remain `recovered25 / LATER_RECOVERED`; none implies Taiwan-v1 content membership.
 - **ANONYMOUS_NPC_TEMPLATE_IDENTITY_R1 = CLOSED.**
 - Next deterministic NPC seam: derive anonymous **non-text template runtime profiles** keyed by the 73 identities (type/graphic/stat ranges/generation flags/loop timing and similar structural fields), while keeping display names, dialogue, opaque arguments and function-specific secondary content excluded and keeping duplicate concrete variants explicit.
+
+
+## Phase 1 anonymous NPC template runtime profiles — 2026-09-28
+
+- `tools/stoneage_versioned_npc_template_profile_probe.py` now derives non-text runtime structure for every anonymous template identity referenced by the 3,856 stable-world spawn placements.
+- Committed derived metadata: `research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-PROFILES-R1.txt`.
+- Engine-side parser/contract: `tools/stoneage_versioned_npc_template_profile.py`.
+- The profile layer deliberately excludes template names, NPC display names, dialogue, callback names, create arguments, item payload rows and original recovered source rows.
+- Fixed-descendant template semantics were revalidated:
+  - `hp/mp/str/tough=a,b` is represented as normalized min/max because the loader stores the lower value plus an absolute random width;
+  - `makeatnobody`, `makeatnosee`, `fly` and `loopfunctime` are direct structural values;
+  - missing `graphicname` retains the template default zero;
+  - missing `type` is normalized by the fixed loader to `SPR_pet001` at block close;
+  - numeric graphic/type tokens are direct integers;
+  - symbolic graphic/type tokens are kept as opaque SHA-256 identities in R1 rather than assuming one descendant source's conversion table is canonical for the recovered 2.5 data.
+- Real stable-world profile result:
+  - referenced anonymous identities = **73**;
+  - recovered source profile rows = **79**;
+  - identities with multiple source definitions = **3**;
+  - distinct normalized source-block fingerprints = **73**;
+  - direct callback override count = **0 on all 79 profiles**;
+  - graphic resolution: **49 default-zero**, **7 numeric**, **23 opaque-symbolic**;
+  - type resolution: **32 default-SPR_pet001**, **40 numeric**, **7 opaque-symbolic**;
+  - profiles with any symbolic graphic/type token = **30**;
+  - all **79** have `makeatnobody=1`, `makeatnosee=1`, and `fly=0`;
+  - loop interval distribution = **76 × -1**, **3 × 4000 ms**.
+- The three duplicate-name identities are source/provenance duplicates but **runtime-byte-equivalent**:
+  - Quiz: 4 source variants, one block fingerprint;
+  - transmigration: 3 source variants, one block fingerprint;
+  - TranserMan: 2 source variants, one block fingerprint.
+  The project therefore preserves the duplicate-name provenance fact while permitting a runtime-equivalent profile representative; no load-order-dependent behavioral difference is asserted where the source bytes are identical.
+- With runtime-equivalent duplicate handling, **all 3,856 template bindings have an unambiguous generic runtime profile**. Combined with the spawn-catalogue geometry/direction gate, **3,852 / 3,856** placements are eligible for generic runtime projection; only the four previously quarantined spawn rows remain blocked.
+- Full transient-source profile derivation Actions run **36363004589 = PASS**; main gameplay real-report parser/integration run **36363313244 = PASS**.
+- All profile data remains `recovered25 / LATER_RECOVERED`; no template profile is promoted to Taiwan-v1 historical membership.
+- **ANONYMOUS_NPC_TEMPLATE_RUNTIME_PROFILE_R1 = CLOSED.**
+- Next deterministic NPC seam: compose spawn placement + anonymous runtime-equivalent template profile into an engine-neutral **generic NPC spawn intent** that can feed the existing in-process NPC runtime boundary without importing display text or executing function-specific secondary content. Symbolic graphic/type tokens must remain unresolved/quarantined until a provenance-safe token resolver exists.
