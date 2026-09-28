@@ -13,6 +13,7 @@ on:
       - tools/stoneage_versioned_world_manifest.py
       - tools/stoneage_versioned_world_geometry.py
       - tools/stoneage_versioned_encounter_runtime.py
+      - tools/stoneage_versioned_npc_spawn_catalogue.py
       - tools/stoneage_map_collision_model.py
       - tools/stoneage_tw10_hit_map_model.py
       - tools/stoneage_encounter_frequency_model.py
@@ -48,6 +49,7 @@ on:
       - tests/test_stoneage_versioned_world_manifest.py
       - tests/test_stoneage_versioned_world_geometry.py
       - tests/test_stoneage_versioned_encounter_runtime.py
+      - tests/test_stoneage_versioned_npc_spawn_catalogue.py
       - tests/test_stoneage_map_collision_model.py
       - tests/test_stoneage_tw10_hit_map_model.py
       - tests/test_stoneage_encounter_frequency_model.py
@@ -87,6 +89,7 @@ jobs:
             tests.test_stoneage_versioned_world_manifest \
             tests.test_stoneage_versioned_world_geometry \
             tests.test_stoneage_versioned_encounter_runtime \
+            tests.test_stoneage_versioned_npc_spawn_catalogue \
             tests.test_stoneage_map_collision_model \
             tests.test_stoneage_tw10_hit_map_model \
             tests.test_stoneage_encounter_frequency_model \
