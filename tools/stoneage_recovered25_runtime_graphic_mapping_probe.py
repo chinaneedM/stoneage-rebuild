@@ -19,11 +19,116 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
-from tools.stoneage_symbolic_graphic_resolver_probe import (
-    TokenUse,
-    parse_opaque_uses,
-    parse_v1_spr_ids,
-)
+@dataclass(frozen=True)
+class TokenUse:
+    token_key: str
+    graphic_identity_count: int
+    type_identity_count: int
+    graphic_placement_count: int
+    type_placement_count: int
+
+    @property
+    def surfaces(self) -> tuple[str, ...]:
+        out = []
+        if self.graphic_identity_count:
+            out.append("graphic")
+        if self.type_identity_count:
+            out.append("type")
+        return tuple(out)
+
+
+def _report_fields(line: str, prefix: str) -> dict[str, str]:
+    parts = line.split("|")
+    if not parts or parts[0] != prefix:
+        raise ValueError(f"expected {prefix} record")
+    out = {}
+    for part in parts[1:]:
+        if "=" not in part:
+            raise ValueError(f"malformed {prefix} field: {part}")
+        key, value = part.split("=", 1)
+        out[key] = value
+    return out
+
+
+def parse_opaque_uses(
+    *,
+    profile_report: Path,
+    binding_report: Path,
+) -> dict[str, TokenUse]:
+    identity_tokens: dict[str, dict[str, set[str]]] = defaultdict(
+        lambda: {"graphic": set(), "type": set()}
+    )
+    for raw in profile_report.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line.startswith("TEMPLATE_PROFILE|"):
+            continue
+        fields = _report_fields(line, "TEMPLATE_PROFILE")
+        template_key = fields["template_key"]
+        if fields["graphic_resolution"] == "OPAQUE_SYMBOL":
+            key = fields["graphic_token_key"]
+            if not key:
+                raise ValueError("opaque graphic profile lacks token key")
+            identity_tokens[template_key]["graphic"].add(key)
+        if fields["type_resolution"] == "OPAQUE_SYMBOL":
+            key = fields["type_token_key"]
+            if not key:
+                raise ValueError("opaque type profile lacks token key")
+            identity_tokens[template_key]["type"].add(key)
+
+    for template_key, surfaces in identity_tokens.items():
+        for surface, keys in surfaces.items():
+            if len(keys) > 1:
+                raise ValueError(
+                    f"template {template_key} has multiple opaque {surface} tokens"
+                )
+
+    placement_counts = Counter()
+    for raw in binding_report.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line.startswith("PLACEMENT_TEMPLATE|"):
+            continue
+        fields = _report_fields(line, "PLACEMENT_TEMPLATE")
+        placement_counts[fields["template_key"]] += 1
+
+    aggregate: dict[str, dict[str, int]] = defaultdict(
+        lambda: {
+            "graphic_identity_count": 0,
+            "type_identity_count": 0,
+            "graphic_placement_count": 0,
+            "type_placement_count": 0,
+        }
+    )
+    for template_key, surfaces in identity_tokens.items():
+        placements = int(placement_counts[template_key])
+        for surface in ("graphic", "type"):
+            keys = surfaces[surface]
+            if not keys:
+                continue
+            key = next(iter(keys))
+            aggregate[key][f"{surface}_identity_count"] += 1
+            aggregate[key][f"{surface}_placement_count"] += placements
+
+    return {
+        key: TokenUse(token_key=key, **values)
+        for key, values in aggregate.items()
+    }
+
+
+def parse_v1_spr_ids(path: Path) -> set[int]:
+    values: set[int] = set()
+    with gzip.open(path, "rt", encoding="utf-8", newline="") as handle:
+        header = handle.readline().rstrip("\n").split("\t")
+        if "spr_no" not in header:
+            raise ValueError("SPR group metadata lacks spr_no column")
+        column = header.index("spr_no")
+        for raw in handle:
+            parts = raw.rstrip("\n").split("\t")
+            if len(parts) <= column:
+                raise ValueError("malformed SPR group metadata row")
+            values.add(int(parts[column]))
+    if not values:
+        raise ValueError("Taiwan-v1 SPR group metadata is empty")
+    return values
 
 
 RECOVERED25_V1_RESOURCE = "RECOVERED25_MAPPING_V1_RESOURCE_COMPATIBLE"
