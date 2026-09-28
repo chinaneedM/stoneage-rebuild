@@ -3027,3 +3027,44 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Full source audit Actions run **36335679946 = PASS**; main gameplay real-report boundary run **36335789340 = PASS**.
 - **VERSIONED_ENCOUNTER_RUNTIME_ADAPTER_R1 = CLOSED.**
 - Next deterministic world seam: promote recovered NPC placement geometry into an engine-neutral versioned spawn catalogue (placement identity/region/count/direction only), while keeping NPC template behavior, dialogue and conditional function logic as separately versioned layers.
+
+
+## Phase 1 versioned NPC spawn catalogue — 2026-09-28
+
+- `tools/stoneage_versioned_npc_spawn_catalogue.py` now promotes the **3,856** recovered stable-world NPC create placements into an engine-neutral, provenance-bearing spawn catalogue.
+- The catalogue intentionally contains only create-layer semantics:
+  - floor + placement identity;
+  - inclusive birth rectangle;
+  - movement rectangle;
+  - simultaneous population cap (`createnum`);
+  - raw direction plus the fixed-descendant `VALIDATEDIR` modulo-8 projection;
+  - respawn delay in milliseconds;
+  - boundary flag;
+  - invincible-area spawn override.
+- NPC template identity/behavior, names, dialogue, arbitrary arguments and functionset logic remain outside this catalogue and are not silently imported.
+- Fixed descendant source semantics were revalidated:
+  - `createnum` is the maximum simultaneously alive population for a create block;
+  - `time` is compared as milliseconds in the spawn throttle;
+  - birth point selection is random within the inclusive born rectangle and is separately checked for map walkability/invincible-area conditions;
+  - the generated character records its source `NPCCREATEINDEX`;
+  - `VALIDATEDIR(x)` normalizes directional consumers to modulo 8, but create loading/generation first preserves the raw `dir` value in `CHAR_DIR`.
+- Real recovered stable-world placement distribution:
+  - placements = **3,856** across **553** stable-map floors;
+  - every placement has `createnum=1`;
+  - every placement has `boundary=1`;
+  - all **3,856** birth rectangles are single-cell;
+  - respawn delay distribution = **3,199 × 0 ms**, **642 × 60,000 ms**, **15 × 200,000 ms**;
+  - `ignore_invincible=1` on **3,040**, `0` on **816**;
+  - **3,854** birth points are inside the admitted stable-map dimensions;
+  - **2** birth points are outside those current stable-map dimensions and are quarantined rather than repaired;
+  - **3,772** movement rectangles lie fully inside map bounds, while **84** extend outside; this is retained as raw movement-bound metadata and is **not** treated as a spawn defect because actual movement remains map/collision constrained;
+  - **2** raw direction values are outside 0..7 (`46` and `8`); both are preserved and quarantined for direct projection rather than normalized in-place.
+- Direct modern-runtime projection policy blocks only:
+  - birth rectangles outside the admitted stable map;
+  - non-octant raw directions;
+  - create rows whose population cap/respawn gate disables generation.
+- Current result: **3,852 / 3,856** placements are direct-projection eligible; **4** are quarantined with explicit issue codes. No source row is deleted or modified.
+- Main gameplay-model Actions run **36362411761 = PASS** over the real lineage + coverage + geometry reports.
+- Every placement remains `source_version=recovered25 / LATER_RECOVERED`; none is promoted to Taiwan-v1 historical membership.
+- **VERSIONED_NPC_SPAWN_CATALOGUE_R1 = CLOSED.**
+- Next deterministic NPC seam: bind spawn placements to an anonymous/versioned NPC template identity layer without importing dialogue or assuming later template behavior existed unchanged in Taiwan v1. The identity join must preserve template/functionset provenance and keep conditional behavior as a separate layer.
