@@ -1,0 +1,87 @@
+name: Audit StoneAge symbolic graphic resolver
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_symbolic_graphic_resolver_probe.py
+      - tests/test_stoneage_symbolic_graphic_resolver_probe.py
+      - research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt
+      - research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-PROFILES-R1.txt
+      - research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz
+      - .github/workflows/audit-stoneage-symbolic-graphic-resolver.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stoneage-symbolic-graphic-resolver
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate resolver classifier
+        run: python3 -m unittest tests.test_stoneage_symbolic_graphic_resolver_probe -v
+
+      - name: Fetch pinned descendant animation tables
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/stoneage-symbols
+          curl -L --fail --silent --show-error \
+            -o /tmp/stoneage-symbols/gavin.h \
+            'https://raw.githubusercontent.com/gavinlinasd/StoneAge/1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56/gmsv/src/include/anim_tbl.h'
+          curl -L --fail --silent --show-error \
+            -o /tmp/stoneage-symbols/iriselia.h \
+            'https://raw.githubusercontent.com/iriselia/StoneAge/9e6c8ce2cd8ed532a7157773acd1c61582c178b5/Source/gmsv/include/anim_tbl.h'
+          curl -L --fail --silent --show-error \
+            -o /tmp/stoneage-symbols/bismarck.h \
+            'https://raw.githubusercontent.com/BismarckDD/Stoneage/2f736808ff4361f5429ee919b718c88fabb60346/server/gmsv/include/anim_tbl.h'
+          test -s /tmp/stoneage-symbols/gavin.h
+          test -s /tmp/stoneage-symbols/iriselia.h
+          test -s /tmp/stoneage-symbols/bismarck.h
+
+      - name: Build anonymous symbolic resolver audit
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_symbolic_graphic_resolver_probe \
+            --profile-report research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-PROFILES-R1.txt \
+            --binding-report research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt \
+            --gavin-anim /tmp/stoneage-symbols/gavin.h \
+            --iriselia-anim /tmp/stoneage-symbols/iriselia.h \
+            --bismarck-anim /tmp/stoneage-symbols/bismarck.h \
+            --tw10-spr-groups research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz \
+            > research/recovered/STONEAGE-SYMBOLIC-GRAPHIC-RESOLVER-R1.txt
+
+      - name: Verify derived resolver audit
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-SYMBOLIC-GRAPHIC-RESOLVER-R1.txt
+          test -s "$report"
+          grep -F 'SOURCE_REF|gavin|gavinlinasd/StoneAge@1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56' "$report"
+          grep -F 'SOURCE_REF|iriselia|iriselia/StoneAge@9e6c8ce2cd8ed532a7157773acd1c61582c178b5' "$report"
+          grep -F 'SOURCE_REF|bismarck|BismarckDD/Stoneage@2f736808ff4361f5429ee919b718c88fabb60346' "$report"
+          grep -F 'RESOLUTION|SYMBOLIC_GRAPHIC_TYPE_RESOLVER_AUDITED' "$report"
+
+      - name: Delete transient public source copies
+        if: always()
+        run: rm -rf /tmp/stoneage-symbols
+
+      - name: Commit derived resolver metadata only
+        run: |
+          set -euo pipefail
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          report=research/recovered/STONEAGE-SYMBOLIC-GRAPHIC-RESOLVER-R1.txt
+          git add "$report"
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: audit symbolic graphic resolver'
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            exit 1
+          fi
+          git push
