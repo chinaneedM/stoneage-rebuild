@@ -20,6 +20,8 @@ on:
       - tests/test_stoneage_recovered25_runtime_graphic_mapping_probe.py
       - tools/stoneage_stable_map_name_encoding_probe.py
       - tests/test_stoneage_stable_map_name_encoding_probe.py
+      - tools/stoneage_stable_map_name_decode_probe.py
+      - tests/test_stoneage_stable_map_name_decode_probe.py
       - tools/stoneage_world_map_library.py
       - research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
       - research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz
@@ -48,7 +50,8 @@ jobs:
             tests.test_stoneage_versioned_npc_template_profile_probe \
             tests.test_stoneage_versioned_npc_symbol_resolver_probe \
             tests.test_stoneage_recovered25_runtime_graphic_mapping_probe \
-            tests.test_stoneage_stable_map_name_encoding_probe -v
+            tests.test_stoneage_stable_map_name_encoding_probe \
+            tests.test_stoneage_stable_map_name_decode_probe -v
 
       - name: Install archive tools
         run: |
@@ -202,6 +205,28 @@ jobs:
           grep -F 'EVIDENCE_ROLE|LATER_RECOVERED' "$report"
           grep -F 'COUNT|stable_floor_candidates|761' "$report"
           grep -F 'RESOLUTION|STABLE_SERVER_MAP_NAME_ENCODING_AUDITED' "$report"
+
+      - name: Decode stable server-map names
+        run: |
+          set -euo pipefail
+          M="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
+          test -n "$M"
+          report=research/recovered/STONEAGE-25-STABLE-MAP-NAMES-R1.txt
+          python3 -m tools.stoneage_stable_map_name_decode_probe \
+            --lineage-report research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt \
+            --server-map-root "$M" \
+            > "$report"
+
+      - name: Verify decoded stable server-map names
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-25-STABLE-MAP-NAMES-R1.txt
+          test -s "$report"
+          grep -F 'SEMANTIC_SOURCE_VERSION|recovered25' "$report"
+          grep -F 'EVIDENCE_ROLE|LATER_RECOVERED' "$report"
+          grep -F 'COUNT|stable_floor_candidates|761' "$report"
+          grep -F 'COUNT|stable_with_dimension_matched_server_name|572' "$report"
+          grep -F 'RESOLUTION|STABLE_SERVER_MAP_NAMES_DECODED' "$report"
 
       - name: Build anonymous stable-world NPC template bindings
         run: |
@@ -401,7 +426,8 @@ jobs:
           npc_symbol_resolution=research/recovered/STONEAGE-25-STABLE-NPC-SYMBOL-RESOLUTION-R1.txt
           npc_runtime_graphics=research/recovered/STONEAGE-25-RUNTIME-GRAPHIC-MAPPING-R1.txt
           map_name_encoding=research/recovered/STONEAGE-25-STABLE-MAP-NAME-ENCODING-R1.txt
-          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding"
+          map_names=research/recovered/STONEAGE-25-STABLE-MAP-NAMES-R1.txt
+          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding" "$map_names"
           git diff --cached --quiet && exit 0
           git commit -m 'research: classify stable map world geometry'
           if ! git pull --rebase origin main; then
