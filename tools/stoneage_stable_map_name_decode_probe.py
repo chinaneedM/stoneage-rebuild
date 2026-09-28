@@ -34,10 +34,11 @@ EMPTY = "EMPTY_SERVER_NAME"
 def _safe_text(value: str) -> str:
     return (
         str(value)
-        .replace("\\", "\\\\")
-        .replace("|", "\\|")
-        .replace("\n", "\\n")
-        .replace("\r", "\\r")
+        .replace("%", "%25")
+        .replace("|", "%7C")
+        .replace(";", "%3B")
+        .replace("\n", "%0A")
+        .replace("\r", "%0D")
     )
 
 
