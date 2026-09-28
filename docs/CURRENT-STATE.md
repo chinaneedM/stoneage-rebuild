@@ -3175,3 +3175,44 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - full real-report generic spawn projection **36363581367 = PASS**.
 - **GENERIC_VERSIONED_NPC_RUNTIME_SPAWN_PROJECTION_R1 = CLOSED.**
 - Next deterministic NPC seam: build a provenance-safe resolver for the small recovered symbolic graphic/type token set. First compare token-to-ID mappings across fixed descendant source families and recovered client/resource evidence; only mappings that are stable enough for the intended version boundary may be promoted. Otherwise retain the opaque token and require explicit design/runtime resolution.
+
+
+## Phase 1 symbolic NPC graphic/type provenance audit — 2026-09-28
+
+- The generic NPC runtime projection has only **4 distinct anonymous symbolic graphic/type token identities** left:
+  - 3 graphic-token identities covering **880** placement uses;
+  - 1 type-token identity covering **89** placement uses.
+- The repository now contains two independent provenance checks:
+  - `research/recovered/STONEAGE-25-STABLE-NPC-SYMBOL-RESOLUTION-R1.txt`: raw recovered token strings are used transiently and compared against the project's pinned fixed descendant animation tables; only anonymous SHA-256 token identities and numeric mapping evidence are retained.
+  - `research/recovered/STONEAGE-25-RUNTIME-GRAPHIC-MAPPING-R1.txt`: the verified recovered-2.5 preservation bundle is scanned for an actual runtime `ls2data.dat` count + name/id mapping file, again retaining only anonymous token hashes and numeric IDs.
+- Fixed-source symbol audit result: none of the four recovered opaque token identities obtains a safe fixed-source bridge under the current pinned source evidence.
+- Verified recovered-bundle runtime result:
+  - parseable runtime mapping files = **0**;
+  - opaque token identities = **4**;
+  - `RECOVERED25_MAPPING_ABSENT` = **4**;
+  - unresolved graphic placement uses = **880**;
+  - unresolved type placement uses = **89**.
+- This explicitly distinguishes **missing preservation evidence** from an invalid token. The project does not coerce these aliases to guessed SPR IDs.
+- Taiwan-v1 SPR metadata remains a resource-compatibility validator only; numeric resource presence by itself would not prove that a recovered-2.5 symbolic token name belonged to Taiwan v1.
+- Full symbol-provenance world-content workflow **36364230560 = PASS**.
+- Full recovered-runtime-mapping audit workflow **36364479121 = PASS**.
+- The evidence boundary is hard-locked in workflow **36364806935 = PASS**: the current verified bundle must continue to report 0 runtime mapping files and all 4 token identities unresolved, so newly recovered mapping evidence cannot change the result silently.
+- **SYMBOLIC_NPC_GRAPHIC_TYPE_PROVENANCE_AUDIT_R1 = CLOSED_WITH_EXPLICIT_EVIDENCE_GAP.**
+- Runtime policy remains unchanged: opaque graphic placements require an explicit provenance-resolved `resolved_graphic_id`; no guessed mapping is admitted.
+
+## Phase 1 placement-weighted NPC behavior coverage — 2026-09-28
+
+- `tools/stoneage_versioned_npc_behavior_coverage.py` now projects the **3,856** stable-world NPC placements onto the project's existing NPC-core closure/defer registry.
+- This is a coverage layer only: it does not reimplement functionsets, execute secondary argument content, or promote recovered-2.5 behavior to Taiwan-v1 membership.
+- Stable-world placement-weighted result:
+  - **3,710** placements -> `CLOSED_ORDINARY_CORE`;
+  - **84** placements -> `NO_DISPATCH_PROFILE`;
+  - **62** placements -> `DEFERRED_VERSIONED_PACKAGE`;
+  - **0** placements -> `UNCLASSIFIED`.
+- The 84 `<none>` functionset placements are not assumed inert from the token alone. Their anonymous runtime profiles are cross-checked and all have **zero direct callback overrides**, so they are explicitly classified as no-dispatch generic profiles.
+- The 62 deferred placements are confined to already-deferred family/later/versioned classes:
+  `Familyman`, `FmDengon`, `FmHealer`, `FmLetter`, `FMPKCallMan`, `FMPKMan`, `FMWarpMan`, `Raceman`, `Scheduleman`, and `TranserMan`.
+- Therefore **3,794 / 3,856** recovered stable-world placements are now covered by either an already reconstructed ordinary core or an explicitly verified no-dispatch profile. The remaining 62 are known deferred packages rather than unidentified behavior holes.
+- Main gameplay-model integration run **36364968527 = PASS**.
+- **VERSIONED_NPC_BEHAVIOR_COVERAGE_R1 = CLOSED.**
+- Priority consequence: ordinary NPC-core archaeology is no longer the critical path. Keep the four symbolic graphic/type aliases and 62 later/family placements explicit, but return primary effort to provenance-safe client/world-content reconstruction instead of reopening already closed NPC mechanics.
