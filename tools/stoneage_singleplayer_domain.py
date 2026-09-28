@@ -46,6 +46,16 @@ def _template_id(ref: TemplateRef, namespace: str) -> int | str:
     return ref.template_id
 
 
+def _npc_template_id(ref: TemplateRef) -> str:
+    """Accept historical template names or the anonymous recovered identity."""
+    if ref.namespace not in {"npc.templatename", "npc.template.sha256"}:
+        raise ValueError(
+            "expected NPC template namespace npc.templatename or "
+            f"npc.template.sha256, got {ref.namespace}"
+        )
+    return str(ref.template_id)
+
+
 @dataclass(frozen=True, order=True)
 class RuntimeObjectId:
     value: int
@@ -317,10 +327,10 @@ def adapt_pet_state(
 
 
 def adapt_npc_runtime(state: NpcRuntimeState) -> WorldNpc:
-    template_id = _template_id(state.template_ref, "npc.templatename")
+    template_id = _npc_template_id(state.template_ref)
     return WorldNpc(
         RuntimeObjectId(state.runtime_object_id),
-        NpcTemplateId(str(template_id)),
+        NpcTemplateId(template_id),
         MapPosition(state.floor_id, state.x, state.y),
         MappingProxyType(state.v1_world_character_fields()),
     )
