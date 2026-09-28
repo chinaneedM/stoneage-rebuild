@@ -254,6 +254,33 @@ class VersionedNpcTemplateRuntimeProfiles:
             raise ValueError("unique binding does not resolve one profile")
         return profiles[0]
 
+    def runtime_equivalent_profile_for_placement(
+        self, placement_id: int
+    ) -> AnonymousNpcTemplateRuntimeProfile:
+        """Return one profile when all duplicate source variants are byte-identical."""
+        binding = self.bindings.by_placement[int(placement_id)]
+        identity = self.bindings.identities[binding.template_key]
+        if not identity.runtime_variants_are_byte_equivalent:
+            raise ValueError(
+                f"placement {placement_id} has non-equivalent template variants"
+            )
+        profiles = self.profiles_by_identity[binding.template_key]
+        if not profiles:
+            raise ValueError("runtime-equivalent binding has no profile")
+        fingerprints = {
+            profile.variant_fingerprint for profile in profiles
+        }
+        if len(fingerprints) != 1:
+            raise ValueError(
+                "byte-equivalent identity unexpectedly has multiple fingerprints"
+            )
+        first = profiles[0]
+        if any(profile != first for profile in profiles[1:]):
+            raise ValueError(
+                "same template fingerprint produced divergent runtime profiles"
+            )
+        return first
+
 
 def parse_versioned_npc_template_profiles(
     *,
