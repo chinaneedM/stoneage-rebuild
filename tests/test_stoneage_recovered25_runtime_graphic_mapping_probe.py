@@ -1,4 +1,5 @@
 import gzip
+import hashlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -11,7 +12,8 @@ from tools.stoneage_recovered25_runtime_graphic_mapping_probe import (
     analyze,
     parse_runtime_ls2data,
 )
-from tools.stoneage_symbolic_graphic_resolver_probe import token_key
+def token_key(value: str) -> str:
+    return hashlib.sha256(value.strip().lower().encode("ascii")).hexdigest()
 
 
 _TEMPLATE_KEY = "1" * 64
