@@ -16,6 +16,7 @@ on:
       - tools/stoneage_versioned_npc_spawn_catalogue.py
       - tools/stoneage_versioned_npc_template_binding.py
       - tools/stoneage_versioned_npc_template_profile.py
+      - tools/stoneage_versioned_npc_runtime_projection.py
       - tools/stoneage_map_collision_model.py
       - tools/stoneage_tw10_hit_map_model.py
       - tools/stoneage_encounter_frequency_model.py
@@ -56,6 +57,7 @@ on:
       - tests/test_stoneage_versioned_npc_spawn_catalogue.py
       - tests/test_stoneage_versioned_npc_template_binding.py
       - tests/test_stoneage_versioned_npc_template_profile.py
+      - tests/test_stoneage_versioned_npc_runtime_projection.py
       - tests/test_stoneage_map_collision_model.py
       - tests/test_stoneage_tw10_hit_map_model.py
       - tests/test_stoneage_encounter_frequency_model.py
@@ -98,6 +100,7 @@ jobs:
             tests.test_stoneage_versioned_npc_spawn_catalogue \
             tests.test_stoneage_versioned_npc_template_binding \
             tests.test_stoneage_versioned_npc_template_profile \
+            tests.test_stoneage_versioned_npc_runtime_projection \
             tests.test_stoneage_map_collision_model \
             tests.test_stoneage_tw10_hit_map_model \
             tests.test_stoneage_encounter_frequency_model \
