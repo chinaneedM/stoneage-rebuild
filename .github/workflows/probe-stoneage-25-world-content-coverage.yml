@@ -12,6 +12,8 @@ on:
       - tools/stoneage_versioned_encounter_runtime_probe.py
       - tools/stoneage_versioned_npc_template_binding_probe.py
       - tests/test_stoneage_versioned_npc_template_binding_probe.py
+      - tools/stoneage_versioned_npc_template_profile_probe.py
+      - tests/test_stoneage_versioned_npc_template_profile_probe.py
       - tools/stoneage_world_map_library.py
       - research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
       - .github/workflows/probe-stoneage-25-world-content-coverage.yml
@@ -35,7 +37,8 @@ jobs:
           python3 -m unittest \
             tests.test_stoneage_world_content_coverage_probe \
             tests.test_stoneage_versioned_world_geometry_probe \
-            tests.test_stoneage_versioned_npc_template_binding_probe -v
+            tests.test_stoneage_versioned_npc_template_binding_probe \
+            tests.test_stoneage_versioned_npc_template_profile_probe -v
 
       - name: Install archive tools
         run: |
@@ -197,6 +200,30 @@ jobs:
           test "$(grep -c '^PLACEMENT_TEMPLATE|' "$report")" = "3856"
           grep -F 'RESOLUTION|ANONYMOUS_NPC_TEMPLATE_BINDINGS_CLASSIFIED' "$report"
 
+      - name: Build anonymous stable-world NPC template runtime profiles
+        run: |
+          set -euo pipefail
+          N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
+          test -n "$N"
+
+          report=research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-PROFILES-R1.txt
+          {
+            echo 'SOURCE_BUNDLE_SHA256|d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5'
+            python3 -m tools.stoneage_versioned_npc_template_profile_probe \
+              --binding-report research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt \
+              --npc-dir "$N"
+          } > "$report"
+
+      - name: Verify anonymous NPC template runtime profiles
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-PROFILES-R1.txt
+          test -s "$report"
+          grep -F 'SEMANTIC_SOURCE_VERSION|recovered25' "$report"
+          grep -F 'EVIDENCE_ROLE|LATER_RECOVERED' "$report"
+          grep -F 'COUNT|referenced_template_identities|73' "$report"
+          grep -F 'RESOLUTION|ANONYMOUS_NPC_TEMPLATE_RUNTIME_PROFILES_CLASSIFIED' "$report"
+
       - name: Build stable-world encounter runtime audit
         run: |
           set -euo pipefail
@@ -264,7 +291,8 @@ jobs:
           geometry=research/recovered/STONEAGE-25-STABLE-WORLD-GEOMETRY-R1.txt
           encounter_runtime=research/recovered/STONEAGE-25-STABLE-ENCOUNTER-RUNTIME-R1.txt
           npc_template_bindings=research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt
-          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings"
+          npc_template_profiles=research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-PROFILES-R1.txt
+          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles"
           git diff --cached --quiet && exit 0
           git commit -m 'research: classify stable map world geometry'
           if ! git pull --rebase origin main; then
