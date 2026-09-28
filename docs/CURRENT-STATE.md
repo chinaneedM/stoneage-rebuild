@@ -3068,3 +3068,37 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Every placement remains `source_version=recovered25 / LATER_RECOVERED`; none is promoted to Taiwan-v1 historical membership.
 - **VERSIONED_NPC_SPAWN_CATALOGUE_R1 = CLOSED.**
 - Next deterministic NPC seam: bind spawn placements to an anonymous/versioned NPC template identity layer without importing dialogue or assuming later template behavior existed unchanged in Taiwan v1. The identity join must preserve template/functionset provenance and keep conditional behavior as a separate layer.
+
+
+## Phase 1 anonymous/versioned NPC template identity — 2026-09-28
+
+- Stable-world NPC spawn placements are now joined to an **anonymous recovered template-name identity namespace** without publishing template names, NPC names, dialogue, concrete arguments or original source rows.
+- Transient-source derivation:
+  - `tools/stoneage_versioned_npc_template_binding_probe.py`;
+  - `research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt`.
+- Engine-side contract:
+  - `tools/stoneage_versioned_npc_template_binding.py`.
+- Anonymous identity key is a deterministic SHA-256 over the case-normalized template-name namespace. It is an opaque join key, not a published template name.
+- Duplicate template-name definitions remain **load-order ambiguous**. The reconstruction does not select a concrete duplicate block merely because the analysis traversal happens to encounter one first.
+- Real stable-world result:
+  - placement bindings = **3,856**;
+  - unique referenced anonymous template identities = **73**;
+  - placements whose template name is unique = **3,853**;
+  - placements referencing duplicate template-name identities = **3**;
+  - referenced duplicate anonymous identities = **3**;
+  - placements with functionset ambiguity across duplicate variants = **0**.
+- The 3 duplicate-name placement bindings are:
+  - placement **2512**: 4 concrete variants, common functionset `Quiz`;
+  - placement **3539**: 3 concrete variants, common functionset `transmigration`;
+  - placement **3634**: 2 concrete variants, common functionset `TranserMan`.
+  Functionset agreement does **not** make the concrete template block unique; these remain duplicate-name identity ambiguities.
+- Classic Warp integrity cross-check:
+  - classic-Warp geometry placements = **2,264**;
+  - all **2,264** have `Warp` as the template-name identity's functionset consensus;
+  - duplicate-template ambiguity affects **0** classic-Warp placements;
+  - therefore the previously closed classic-Warp geometry/runtime projection is not contaminated by recovered duplicate-template load-order ambiguity.
+- Combining the spawn-catalogue quarantine with concrete-template uniqueness leaves **3,850 / 3,856** placements eligible for direct spawn + concrete anonymous identity projection. Six unique placement IDs are held back across the two independent integrity gates.
+- Full transient-source binding workflow **36362658876 = PASS**; main gameplay real-report parser/integration run **36362804605 = PASS**.
+- All identities, bindings and functionset consensus remain `recovered25 / LATER_RECOVERED`; none implies Taiwan-v1 content membership.
+- **ANONYMOUS_NPC_TEMPLATE_IDENTITY_R1 = CLOSED.**
+- Next deterministic NPC seam: derive anonymous **non-text template runtime profiles** keyed by the 73 identities (type/graphic/stat ranges/generation flags/loop timing and similar structural fields), while keeping display names, dialogue, opaque arguments and function-specific secondary content excluded and keeping duplicate concrete variants explicit.
