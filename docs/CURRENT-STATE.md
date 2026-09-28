@@ -3138,3 +3138,40 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - All profile data remains `recovered25 / LATER_RECOVERED`; no template profile is promoted to Taiwan-v1 historical membership.
 - **ANONYMOUS_NPC_TEMPLATE_RUNTIME_PROFILE_R1 = CLOSED.**
 - Next deterministic NPC seam: compose spawn placement + anonymous runtime-equivalent template profile into an engine-neutral **generic NPC spawn intent** that can feed the existing in-process NPC runtime boundary without importing display text or executing function-specific secondary content. Symbolic graphic/type tokens must remain unresolved/quarantined until a provenance-safe token resolver exists.
+
+
+## Phase 1 generic versioned NPC runtime spawn projection — 2026-09-28
+
+- `tools/stoneage_versioned_npc_runtime_projection.py` now composes the recovered-later NPC layers into one engine-neutral generic runtime intent:
+  `spawn placement -> anonymous template identity -> runtime-equivalent template profile -> generic spawn intent`.
+- The intent remains deliberately earlier than function-specific INITFUNC behavior and presentation:
+  - it does **not** invent NPC display names;
+  - it does **not** execute functionset-specific secondary content;
+  - it does **not** infer the post-INITFUNC world object type;
+  - it does **not** coerce opaque graphic/type tokens into guessed numeric IDs.
+- Every one of the **3,856** stable-world placements now has a generic runtime intent. All current recovered born rectangles are single-cell, so every intent has a deterministic recovered birth coordinate before collision/invincible-area acceptance.
+- Spawn integrity remains independently enforced:
+  - **3,852 / 3,856** intents pass the existing stable-map birth/direction/generation gate;
+  - the same four source rows remain quarantined and are not repaired.
+- Graphic resolution weighted by actual placements:
+  - intrinsically resolved graphic (default zero or numeric) = **2,976 / 3,856**;
+  - spawn-safe + intrinsically resolved graphic = **2,974**;
+  - opaque symbolic graphic = **880** total / **878** spawn-safe.
+- Type selector weighted by actual placements:
+  - opaque symbolic type = **89**;
+  - the remainder are either numeric or the recovered template default semantic `SPR_pet001`.
+- Symbolic graphic or type affects **969** placements total / **967** spawn-safe placements. These stay explicitly unresolved until a provenance-safe token resolver exists.
+- The in-process historical domain now accepts both:
+  - legacy `npc.templatename` identities; and
+  - anonymous `npc.template.sha256` identities.
+  This lets a generic intent feed the existing `NpcRuntimeState -> WorldNpc -> SinglePlayerHistoricalDomain.place_npc()` boundary after the caller explicitly supplies:
+  - display text from a presentation layer;
+  - functionset/INITFUNC-dependent object type;
+  - and, only when needed, a provenance-resolved graphic ID.
+- A symbolic graphic cannot materialize silently: `resolved_graphic_id` is mandatory. Quarantined spawn rows cannot materialize at all.
+- Anonymous template SHA identities remain visible only as reconstruction identifiers; they are not claimed to be historical template-name strings.
+- Main gameplay integration Actions:
+  - anonymous-namespace domain compatibility **36363544440 = PASS**;
+  - full real-report generic spawn projection **36363581367 = PASS**.
+- **GENERIC_VERSIONED_NPC_RUNTIME_SPAWN_PROJECTION_R1 = CLOSED.**
+- Next deterministic NPC seam: build a provenance-safe resolver for the small recovered symbolic graphic/type token set. First compare token-to-ID mappings across fixed descendant source families and recovered client/resource evidence; only mappings that are stable enough for the intended version boundary may be promoted. Otherwise retain the opaque token and require explicit design/runtime resolution.
