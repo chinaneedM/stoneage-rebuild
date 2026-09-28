@@ -16,6 +16,8 @@ on:
       - tests/test_stoneage_versioned_npc_template_profile_probe.py
       - tools/stoneage_versioned_npc_symbol_resolver_probe.py
       - tests/test_stoneage_versioned_npc_symbol_resolver_probe.py
+      - tools/stoneage_recovered25_runtime_graphic_mapping_probe.py
+      - tests/test_stoneage_recovered25_runtime_graphic_mapping_probe.py
       - tools/stoneage_world_map_library.py
       - research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
       - research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz
@@ -42,7 +44,8 @@ jobs:
             tests.test_stoneage_versioned_world_geometry_probe \
             tests.test_stoneage_versioned_npc_template_binding_probe \
             tests.test_stoneage_versioned_npc_template_profile_probe \
-            tests.test_stoneage_versioned_npc_symbol_resolver_probe -v
+            tests.test_stoneage_versioned_npc_symbol_resolver_probe \
+            tests.test_stoneage_recovered25_runtime_graphic_mapping_probe -v
 
       - name: Install archive tools
         run: |
@@ -278,6 +281,27 @@ jobs:
           grep -F 'RESOLUTION|ANONYMOUS_NPC_SYMBOL_RESOLUTION_AUDITED' "$report"
           test "$(grep -c '^SYMBOL_TOKEN|' "$report")" -ge 1
 
+      - name: Audit recovered runtime graphic mapping files
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-25-RUNTIME-GRAPHIC-MAPPING-R1.txt
+          python3 -m tools.stoneage_recovered25_runtime_graphic_mapping_probe \
+            --profile-report research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-PROFILES-R1.txt \
+            --binding-report research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt \
+            --recovered-root /tmp/sa25/out \
+            --tw10-spr-groups research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz \
+            > "$report"
+
+      - name: Verify recovered runtime graphic mapping audit
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-25-RUNTIME-GRAPHIC-MAPPING-R1.txt
+          test -s "$report"
+          grep -F 'SEMANTIC_SOURCE_VERSION|recovered25' "$report"
+          grep -F 'EVIDENCE_ROLE|LATER_RECOVERED' "$report"
+          grep -F 'COUNT|opaque_token_identities|4' "$report"
+          grep -F 'RESOLUTION|RECOVERED25_RUNTIME_GRAPHIC_MAPPING_AUDITED' "$report"
+
       - name: Build stable-world encounter runtime audit
         run: |
           set -euo pipefail
@@ -347,7 +371,8 @@ jobs:
           npc_template_bindings=research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt
           npc_template_profiles=research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-PROFILES-R1.txt
           npc_symbol_resolution=research/recovered/STONEAGE-25-STABLE-NPC-SYMBOL-RESOLUTION-R1.txt
-          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution"
+          npc_runtime_graphics=research/recovered/STONEAGE-25-RUNTIME-GRAPHIC-MAPPING-R1.txt
+          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics"
           git diff --cached --quiet && exit 0
           git commit -m 'research: classify stable map world geometry'
           if ! git pull --rebase origin main; then
