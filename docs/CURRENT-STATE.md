@@ -3471,3 +3471,32 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_SUPPLEMENTAL_WORLD_MANIFEST_R1 = CLOSED.**
 - Next deterministic seam: resolve or intentionally preserve the floor-130 duplicate-copy conflict. Stable descendant server code is last-loaded-wins for duplicate floor IDs, but recursive file enumeration uses unsorted `readdir()`; path-name ordering therefore cannot establish the historical active copy. Compare both recovered server copies directly against recovered25 client `130.dat` / client-map surfaces and floor-130 runtime content before selecting either candidate.
 
+## Phase 1 floor-130 duplicate-copy arbitration — 2026-09-29
+
+- Floor **130** is no longer an unexplained duplicate: two focused derived audits establish a genuine version fork while deliberately preserving `selected_path = NONE`.
+- Recovered25 candidate audit (world-content run **36596045127 = PASS**):
+  - client `130.dat` = 60x60, SHA-256 `85d710a270c6b945de21de53c9257ebaf38647cb54e77071db194cf5c5e203f3`;
+  - `extra/130`: DAT tile diffs **1,067**, parts/object diffs **60**;
+  - `family/130`: DAT tile diffs **1,733**, parts/object diffs **53**;
+  - neither candidate is an exact client-DAT static-layer match;
+  - candidate-to-candidate difference = **2,800 tile cells + 113 object cells**.
+- The recovered25 classic-Warp geometry supplies an independent runtime discriminator:
+  - two reachable Warp destinations enter floor 130 and two classic Warp sources leave it;
+  - `family/130`: all **2/2 incoming destination points + 2/2 outgoing Warp source cells** are statically walkable under the recovered25 mapset;
+  - `extra/130`: all corresponding **4/4** diagnostic points are statically blocked.
+- Archived-2003 -> recovered25 DAT lineage audit (run **36596552717 = PASS**) shows an exact temporal split on every changed static cell:
+  - DAT generations differ at **1,186 tile cells + 53 parts cells**; event plane difference = **0**;
+  - `family/130` matches the archived-2003 value on **all 1,186 + 53 changed cells**, and the recovered25 value on none;
+  - `extra/130` matches the recovered25 value on **all 1,186 + 53 changed cells**, and the archived-2003 value on none;
+  - neither server copy is a whole-map exact static match to either DAT generation.
+- Stable descendant loader behavior is last-loaded-wins for duplicate floor IDs, but recursive discovery is unsorted `readdir()`; therefore filesystem/path-name ordering cannot prove which copy was active historically.
+- `tools/stoneage_floor130_arbitration.py` encodes the only provenance-safe conclusion:
+  - `family/130 = ARCHIVED2003_ALIGNED + WARP_RUNTIME_CONSISTENT`;
+  - `extra/130 = RECOVERED25_ALIGNED + WARP_RUNTIME_CONFLICTING`;
+  - resolution = `PRESERVE_VERSION_FORK`;
+  - default selected payload = **none**.
+- The arbitration intentionally refuses to convert “runtime-consistent” or “temporally newer” into a hidden winner. If later evidence creates an exact static match or changes either diagnostic relation, regression requires re-arbitration.
+- Full gameplay-model regression locking the fork: GitHub Actions **36597019931 = PASS**.
+- **FLOOR_130_VERSION_FORK_ARBITRATION_R1 = CLOSED.**
+- Next deterministic seam: construct the strict **826-floor materializable recovered runtime geometry/topology** while quarantining floor 130 and all edges touching it. Preserve full classic-Warp source rectangles first; only collapse to a single `MapPosition` when the recovered source geometry is actually a single cell.
+
