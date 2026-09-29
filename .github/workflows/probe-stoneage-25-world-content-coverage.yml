@@ -565,7 +565,7 @@ jobs:
           grep -F 'EVIDENCE_ROLE|LATER_RECOVERED' "$report"
           grep -F 'COUNT|stable_seed_floors|761' "$report"
           grep -Eq '^COUNT\\|supplemental_floor_ids\\|[1-9][0-9]*$' "$report"
-          grep -F 'RESOLUTION|RECOVERED_CLASSIC_WARP_REACHABILITY_CLOSED' "$report"
+          grep -F 'RESOLUTION|RECOVERED_RUNTIME_CLASSIC_WARP_REACHABILITY_CLOSED' "$report"
 
       - name: Delete transient proprietary payloads
         if: always()
