@@ -1,0 +1,19 @@
+StoneAge state-gated recovered25 runtime world reachability — R1
+SCOPE|ordered active classic Warp graph + validated existential state-gated transport witnesses
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|classic-only reachability remains separately reported; gated transport is not promoted to an unconditional map edge
+RULE|state-gated reachability means at least one legal player state can traverse the edge; it is not a fresh-character progression proof
+COUNT|classic_reachable_floor_ids|815
+COUNT|classic_reachable_resolved_supplemental_floors|54
+COUNT|materializable_floor_ids|826
+COUNT|newly_reachable_floor_ids|11
+COUNT|remaining_unreachable_floor_ids|0
+COUNT|resolved_supplemental_floor_ids|65
+COUNT|state_gated_reachable_floor_ids|826
+COUNT|state_gated_reachable_resolved_supplemental_floors|65
+COUNT|state_gated_transport_edges|1
+GATED_TRANSPORT|source_floor=811|destination_floor=820|progression_witness=1
+NEWLY_REACHABLE|floors=820,821,822,823,824,825,826,827,828,829,831
+REMAINING_UNREACHABLE|floors=NONE
+RESOLUTION|STATE_GATED_RUNTIME_WORLD_REACHABILITY_CLOSED
