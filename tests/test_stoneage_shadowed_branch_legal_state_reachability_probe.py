@@ -9,6 +9,7 @@ from tools.stoneage_shadowed_branch_legal_state_reachability_probe import (
     ReachabilityChainAudit,
     WarpGate,
     _distance,
+    _event_gate_domain_satisfiable,
     _eventno_class,
     _reachable,
     _reward_units,
@@ -24,7 +25,7 @@ class LegalStateReachabilityProbeTests(unittest.TestCase):
         self.assertEqual(_distance(graph,5,1),-1)
         self.assertEqual(_reachable(graph,2),{2,3,4,5})
 
-    def test_eventno_class_requires_nonnegative_flag_for_strong_witness(self):
+    def test_eventno_class_preserves_ungated_negative_sentinel(self):
         self.assertEqual(
             _eventno_class(b"TYPE:ACCEPT|EventNo:12|GetItem:20"),
             "NONNEGATIVE_FLAG",
@@ -32,6 +33,15 @@ class LegalStateReachabilityProbeTests(unittest.TestCase):
         self.assertEqual(
             _eventno_class(b"TYPE:ACCEPT|EventNo:-1|GetItem:20"),
             "NEGATIVE_SENTINEL",
+        )
+        self.assertTrue(
+            _event_gate_domain_satisfiable("NEGATIVE_SENTINEL")
+        )
+        self.assertTrue(
+            _event_gate_domain_satisfiable("NONNEGATIVE_FLAG")
+        )
+        self.assertFalse(
+            _event_gate_domain_satisfiable("MISSING_OR_MULTIPLE")
         )
 
     def test_reward_units_counts_target_quantity_only(self):
