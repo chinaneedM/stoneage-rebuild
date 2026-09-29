@@ -11,6 +11,8 @@ on:
       - tests/test_stoneage_transport_usage_probe.py
       - tools/stoneage_shadowed_branch_transport_probe.py
       - tests/test_stoneage_shadowed_branch_transport_probe.py
+      - tools/stoneage_shadowed_branch_warpman_gate_probe.py
+      - tests/test_stoneage_shadowed_branch_warpman_gate_probe.py
       - tools/stoneage_ordered_runtime_world_reachability_probe.py
       - tools/stoneage_ordered_runtime_world_topology.py
       - research/recovered/STONEAGE-25-AMBIGUOUS-WARP-CREATE-ORDER-R1.txt
@@ -24,7 +26,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -m unittest tests.test_stoneage_transport_usage_probe tests.test_stoneage_shadowed_branch_transport_probe -v
+      - run: python3 -m unittest tests.test_stoneage_transport_usage_probe tests.test_stoneage_shadowed_branch_transport_probe tests.test_stoneage_shadowed_branch_warpman_gate_probe -v
       - run: sudo apt-get update && sudo apt-get install -y unar
       - name: Recover verified preservation bundle
         run: |
@@ -117,11 +119,23 @@ jobs:
           grep -F 'COUNT|bus_cross_floor_edges|0' "$R"
           grep -F 'RESOLUTION|SHADOWED_BRANCH_NONCLASSIC_INGRESS_AUDITED' "$R"
 
+      - name: Classify shadowed-branch WarpMan gating
+        run: |
+          set -euo pipefail
+          N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
+          test -n "$N"
+          R=research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-GATING-R1.txt
+          python3 -m tools.stoneage_shadowed_branch_warpman_gate_probe --npc-dir "$N" > "$R"
+          test -s "$R"
+          grep -F 'COUNT|target_orphan_floors|11' "$R"
+          grep -F 'COUNT|warpman_ingress_rows|1' "$R"
+          grep -F 'RESOLUTION|SHADOWED_BRANCH_WARPMAN_GATING_AUDITED' "$R"
+
       - name: Commit derived report only
         run: |
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
-          git add research/recovered/STONEAGE-25-BUS-AIR-USAGE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-NONCLASSIC-INGRESS-R1.txt
+          git add research/recovered/STONEAGE-25-BUS-AIR-USAGE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-NONCLASSIC-INGRESS-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-GATING-R1.txt
           git commit -m 'research: measure recovered transport ingress'
           git pull --rebase origin main
           git push
