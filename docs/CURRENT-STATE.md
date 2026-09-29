@@ -3322,3 +3322,26 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **SERVER_AUTHORITY_RUNTIME_MAP_MATERIALIZATION_R1 = CLOSED.**
 - Next deterministic world-content seam: audit gameplay/content coverage **inside the four server-only floors**. Their terrain can now be materialized, but they must not enter the reconstructed world as dead-end geometry if their NPC, classic Warp, encounter or exit content was excluded by the current 761-floor stable-world filter.
 
+## Phase 1 server-only floor gameplay closure — 2026-09-29
+
+- The four recovered `SERVER_MAP_ONLY` warp targets are now audited directly against the full recovered-2.5 NPC/create and active encounter corpora by `tools/stoneage_server_only_floor_gameplay_probe.py`.
+- Corrected end-to-end world-content run **36505538394 = PASS**. An earlier run (**36505383481**) failed only in the new unit-test stage because absent encounter counts were indexed as a normal dict instead of defaulting to zero; no preservation payload was downloaded in that failed attempt. The probe was corrected so an absent encounter-floor entry is explicitly `0`.
+- All four floors have recovered gameplay semantics:
+  - **20002**: 2 effective NPC creates, both classic Warp; exits to `20001 @ 11,40` and `20003 @ 34,25`;
+  - **20004**: 2 effective NPC creates, both classic Warp; exits to `20003 @ 57,44` and `20005 @ 27,3`;
+  - **20006**: 2 effective NPC creates, both classic Warp; exits to `20005 @ 56,85` and `20007 @ 74,6`;
+  - **20009**: 2 effective NPC creates, both classic Warp; exits to `20008 @ 69,37` and `20010 @ 6,59`.
+- Aggregate coverage:
+  - target floors = **4**;
+  - effective NPC creates = **8**;
+  - Warp-functionset creates = **8**;
+  - parsed classic Warp edges = **8**;
+  - floors with NPC semantics = **4/4**;
+  - floors with classic Warp semantics = **4/4**;
+  - encounter rows = **0**;
+  - active encounter rows = **0**.
+- This closes the concern that materializing the server-only floors would create topology-only dead ends. They are recovered transit floors with bidirectional/adjacent-floor portal semantics and no recovered random-encounter rows.
+- The evidence remains `SEMANTIC_SOURCE_VERSION=recovered25` / `LATER_RECOVERED`; none of these four floors is promoted into Taiwan-v1 historical membership.
+- **SERVER_ONLY_FLOOR_GAMEPLAY_COVERAGE_R1 = CLOSED.**
+- Next deterministic seam: decode the four LS2MAP payloads into an engine-neutral map representation suitable for the local single-player world. Reuse the already established client/server map relation and collision semantics; preserve original server-map hashes/metadata, but commit only derived non-proprietary structure needed for validation.
+
