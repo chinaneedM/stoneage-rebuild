@@ -1,0 +1,19 @@
+StoneAge shadowed-branch WarpMan FREE grammar audit — R1
+SCOPE|WarpMan ingress into ordered classic-Warp orphan branch|condition keys/operators/boolean structure only
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|condition operands and original FREE expressions are not emitted
+COUNT|and_clauses|1
+COUNT|free_atoms|3
+COUNT|free_or_clauses|1
+COUNT|ingress_rows|1
+COUNT|key:ITEM:rows|1
+COUNT|key:LV:rows|1
+COUNT|missing_argument_files|0
+COUNT|operator:<:rows|1
+COUNT|operator:=:rows|1
+COUNT|operator:>:rows|1
+COUNT|unparseable_free_rows|0
+COUNT|unsupported_condition_keys|0
+WARPMAN_FREE_GRAMMAR|source_floor=811|target_floor=820|or_clauses=1|atoms=3|keys=ITEM,LV|operators=<,=,>|and_clauses=1|special_reduce=NONE|unsupported_keys=NONE
+RESOLUTION|SHADOWED_BRANCH_WARPMAN_FREE_GRAMMAR_AUDITED
