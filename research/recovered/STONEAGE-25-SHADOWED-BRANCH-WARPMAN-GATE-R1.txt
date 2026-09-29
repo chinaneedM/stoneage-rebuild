@@ -1,0 +1,20 @@
+StoneAge shadowed-branch WarpMan gate audit — R1
+SCOPE|reachable recovered25 WarpMan instances targeting the 11-floor classic-Warp shadowed branch|structural gates only
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|raw FREE/event/payment expressions and proprietary argument content are not emitted
+COUNT|WarpMan:missing_args|0
+COUNT|WarpMan:refs|178
+COUNT|WarpMan:resolved_args|178
+COUNT|classification:DIALOGUE_OR_PAYMENT:instances|1
+COUNT|classification:FREE_CONDITION_DIALOGUE:instances|0
+COUNT|classification:NEW_EVENT_GATED_DIALOGUE:instances|0
+COUNT|classification:PLAIN_ALLFREE_DIALOGUE:instances|0
+COUNT|classification:STRUCTURALLY_UNCLASSIFIED:instances|0
+COUNT|classification:TIME_GATED_DIALOGUE:instances|0
+COUNT|matching_source_floors|1
+COUNT|matching_target_floors|1
+COUNT|matching_warpman_instances|1
+COUNT|shadowed_branch_floor_ids|11
+WARPMAN_INGRESS_GATE|source_floor=811|target_floor=820|classification=DIALOGUE_OR_PAYMENT|target_candidate_count=1|total_warp_candidates=1|new_warpman=0|newtime_present=0|free_present=1|allfree_present=0|payment_path_present=1|money_present=1|checkparty_present=0|checkparty_explicit_false=0|talk_event_present=0|warp_msg_present=0|over_marker_present=0
+RESOLUTION|SHADOWED_BRANCH_WARPMAN_GATE_AUDITED
