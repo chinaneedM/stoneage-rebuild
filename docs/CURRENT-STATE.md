@@ -3699,3 +3699,28 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Validation: legal-state workflow GitHub Actions **36610271589 = PASS**; state-gated world workflow **36610480622 = PASS**; derived world report commit **71ac195a0c1ef9b8aa3063cd75e6c74612ea8433**.
 - **STATE_GATED_MATERIALIZABLE_WORLD_REACHABILITY_R1 = CLOSED.**
 - Next deterministic seam: floor-level world reachability is exhausted. Audit **coordinate-level accessibility of the two critical state-gated interaction points** (the reachable ExChangeMan award NPC and WarpMan 811 ingress) against the recovered map/collision/path topology. Keep floor-level reachability and same-floor walkability distinct; if the necessary collision plane is not provenance-safe for those floors, record that boundary rather than synthesizing a path.
+
+
+## Phase 1 shadowed-branch static coordinate accessibility closure — 2026-09-30
+
+- Floor-level progression was tightened to recovered25 **coordinate-level static accessibility** using the server-authoritative LS2MAP tile/object planes plus the recovered `mapset.txt` WALKABLE/HAVEHEIGHT metadata. Taiwan-v1 ADRN substitution was not used for this recovered25 proof.
+- Exact progression records were rebound rather than searched by loose item-number occurrence: the coordinate audit consumes the same closed ExChangeMan award records and the same unique `811 -> 820` WarpMan ingress already validated by the progression probes.
+- Fixed-descendant interaction distance was revalidated as Chebyshev distance `max(|dx|,|dy|) <= 2` for both ExChangeMan and WarpMan.
+- Recovered25 result:
+  - award placements = **2**;
+  - gated WarpMan placements = **1**;
+  - active classic hops from the award floor to the ingress floor = **2**;
+  - statically walkable award-interaction cells = **24**;
+  - statically walkable WarpMan-interaction cells = **16**;
+  - award-floor server-map copy status = **UNIQUE**;
+  - ingress-floor server-map copy status = **UNIQUE**;
+  - missing recovered mapset metadata = **0 / 0**;
+  - shortest static path from a valid award interaction cell to a qualifying classic-Warp source = **4 steps**;
+  - shortest static path from the corresponding classic-Warp landing coordinate to a valid WarpMan interaction cell = **7 steps**;
+  - `STATIC_COORDINATE_CHAIN|witness=1`.
+- Movement uses the recovered descendant eight-direction rule, including diagonal corner rejection when either orthogonal side cell is statically blocked.
+- Dynamic transient occupants remain a separate runtime layer. This milestone proves a static coordinate route through recovered25 authoritative map/collision data; it does not assert that every instantaneous live-object arrangement is obstruction-free.
+- Artifact: `tools/stoneage_shadowed_branch_coordinate_access_probe.py`; `tests/test_stoneage_shadowed_branch_coordinate_access_probe.py`; `research/recovered/STONEAGE-25-SHADOWED-BRANCH-COORDINATE-ACCESS-R1.txt`.
+- Validation: GitHub Actions **36611860401 = PASS**; derived report commit **88ce0f15fa31a13251eae52e7d71d7d955ccad3b**. CI is further tightened to require `STATIC_COORDINATE_CHAIN|witness=1` on future runs.
+- **SHADOWED_BRANCH_STATIC_COORDINATE_ACCESS_R1 = CLOSED.**
+- Next deterministic seam: audit the **dynamic-object occupancy boundary** along this critical coordinate chain. Distinguish fixed/non-overable recovered NPC or item occupants from transient/moving occupants, and verify that at least one static route remains executable without inventing despawn/movement assumptions. If fixed occupant overability cannot be resolved from recovered25 data, record that exact boundary rather than treating static walkability as full live-world reachability.
