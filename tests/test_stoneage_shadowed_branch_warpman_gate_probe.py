@@ -7,6 +7,7 @@ from tools.stoneage_shadowed_branch_warpman_gate_probe import (
     CONDITION_DEPENDENT,
     PAYABLE,
     UNCONDITIONALLY_FREE,
+    _free_structure,
     analyze,
 )
 
@@ -59,6 +60,9 @@ class ShadowedBranchWarpManGateProbeTests(unittest.TestCase):
             self.assertEqual(row.ordinary_route_class, UNCONDITIONALLY_FREE)
             self.assertTrue(row.free_allfree)
             self.assertFalse(row.warp_msg_required)
+            self.assertEqual(row.free_or_groups, 1)
+            self.assertEqual(row.free_condition_atoms, 1)
+            self.assertEqual(row.free_condition_kinds, ("OTHER",))
 
     @patch(
         "tools.stoneage_shadowed_branch_warpman_gate_probe."
@@ -89,6 +93,14 @@ class ShadowedBranchWarpManGateProbeTests(unittest.TestCase):
                 audit.rows[0].ordinary_route_class,
                 CONDITION_DEPENDENT,
             )
+
+    def test_free_structure_exposes_only_semantic_condition_kinds(self):
+        groups, atoms, kinds = _free_structure(
+            b"FREE:ITEM>123&ENDEV=456,LV>10|WARP:820,1,1"
+        )
+        self.assertEqual(groups, 2)
+        self.assertEqual(atoms, 3)
+        self.assertEqual(kinds, ("EVENT_END", "ITEM", "LEVEL"))
 
     @patch(
         "tools.stoneage_shadowed_branch_warpman_gate_probe."
