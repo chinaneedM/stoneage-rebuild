@@ -1,0 +1,14 @@
+StoneAge shadowed-branch key-item reachable NPC reference census — R1
+SCOPE|unique WarpMan ITEM equality target|classic-reachable recovered NPC create arguments
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|target item ID, NPC/template names, filenames, dialogue, coordinates and raw argument values are not emitted
+RULE|a technical FunctionSet/field reference is a discovery lead, not an acquisition proof until its runtime semantics and gate are closed
+COUNT|matching_create_rows|3
+COUNT|matching_field_occurrences|4
+COUNT|missing_argument_files|15
+COUNT|reference_classes|3
+NPC_KEY_ITEM_REFERENCE|function=ExChangeMan|field=GetItem|create_rows=2|source_floors=1
+NPC_KEY_ITEM_REFERENCE|function=WarpMan|field=DelItem|create_rows=1|source_floors=1
+NPC_KEY_ITEM_REFERENCE|function=WarpMan|field=FREE|create_rows=1|source_floors=1
+RESOLUTION|SHADOWED_BRANCH_KEY_ITEM_NPC_REFERENCE_CENSUS_AUDITED
