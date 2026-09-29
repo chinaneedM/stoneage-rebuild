@@ -3345,3 +3345,36 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **SERVER_ONLY_FLOOR_GAMEPLAY_COVERAGE_R1 = CLOSED.**
 - Next deterministic seam: decode the four LS2MAP payloads into an engine-neutral map representation suitable for the local single-player world. Reuse the already established client/server map relation and collision semantics; preserve original server-map hashes/metadata, but commit only derived non-proprietary structure needed for validation.
 
+## Phase 1 server-only static map materialization — 2026-09-29
+
+- The four first-wave `SERVER_MAP_ONLY` warp targets are now decoded into the engine-neutral static collision boundary by `tools/stoneage_server_static_map.py`.
+- Direct recovered LS2MAP format used by the model:
+  - 44-byte header;
+  - embedded 16-bit floor ID;
+  - 16-bit width/height;
+  - full big-endian 16-bit tile plane;
+  - full big-endian 16-bit object plane.
+- The recovered server `mapset.txt` is parsed with the stable descendant loader's relevant column semantics: image ID at token 1, `WALKABLE` at token 4, `HAVEHEIGHT` at token 5, source defaults when omitted, and last-definition-wins duplicate behavior. Missing image metadata is never guessed.
+- Corrected end-to-end world-content run **36507457038 = PASS**.
+- Recovered `mapset.txt` identity and coverage:
+  - SHA-256 = `efc0b793c901509e6387697c6b2c2a706bd7b9a2af09f1260b592566299cc7a6`;
+  - rows = **20,157**;
+  - unique image IDs = **20,157**;
+  - duplicate image IDs = **0**.
+- Across the four server-only maps:
+  - total cells = **24,600**;
+  - floors with missing image metadata = **0/4**;
+  - ordinary walkable cells = **7,534**;
+  - ordinary blocked cells = **17,066**;
+  - flying walkable cells = **24,600**;
+  - flying blocked cells = **0**.
+- Floor identities are now hash-locked:
+  - 20002 — 50x100, ordinary walkable 1,675 / 5,000, SHA-256 `c18dc72b8cb3e3d0e5ad2b881905f4709ea5a854ec480ac49cfd53c2dcfb6948`;
+  - 20004 — 80x80, ordinary walkable 2,132 / 6,400, SHA-256 `7b7c401c64125556fe9037a207a42c54bb6d3880d969ee692305ca9354a326d9`;
+  - 20006 — 80x40, ordinary walkable 1,053 / 3,200, SHA-256 `cdc77c1896ef42dbd7e0b681840b2709381cac41e218c42017c7bab6176fc360`;
+  - 20009 — 100x100, ordinary walkable 2,674 / 10,000, SHA-256 `5779c3b8cf102130e187c008af5f63eadaad70bec2e7ff40ca295cd1fe7e66cb`.
+- The recovered server loader itself rejects LS2MAP tile/object IDs absent from its map-image metadata table; the project's zero-missing-metadata gate therefore preserves an original validity condition rather than inventing a new one.
+- All content remains `recovered25 / LATER_RECOVERED`; static materializability does not prove Taiwan-v1 membership.
+- **SERVER_ONLY_STATIC_MAP_MATERIALIZATION_R1 = CLOSED.**
+- New topology consequence: first-wave supplemental floors expose destinations **20003, 20007, 20008**, which are not in the current stable-world manifest. The next priority is a recursive reachable-world closure, not a fixed four-floor patch.
+
