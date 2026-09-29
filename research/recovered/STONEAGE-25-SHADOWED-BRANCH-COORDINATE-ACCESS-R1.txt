@@ -1,0 +1,20 @@
+StoneAge shadowed-branch static coordinate accessibility — R1
+SCOPE|recovered25 LS2MAP + mapset static collision|award interaction -> classic hop -> WarpMan interaction
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|NPC/item identities, raw coordinates, map payloads and argument payloads are not emitted
+RULE|interaction target cells use fixed descendant Chebyshev distance <=2; NPC-occupied cells themselves are excluded
+RULE|dynamic transient blockers are outside this static-coordinate audit
+COUNT|award_placements|2
+COUNT|warpman_placements|1
+COUNT|classic_hops|2
+COUNT|award_interaction_cells|24
+COUNT|warpman_interaction_cells|16
+COUNT|award_map_missing_metadata|0
+COUNT|ingress_map_missing_metadata|0
+MAP_COPY|award_floor|UNIQUE
+MAP_COPY|ingress_floor|UNIQUE
+PATH|award_interaction_to_classic_hop|reachable=1|steps=4
+PATH|classic_landing_to_warpman_interaction|reachable=1|steps=7
+STATIC_COORDINATE_CHAIN|witness=1
+RESOLUTION|SHADOWED_BRANCH_STATIC_COORDINATE_ACCESS_CLOSED
