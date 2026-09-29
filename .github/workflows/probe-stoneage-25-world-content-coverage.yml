@@ -22,6 +22,8 @@ on:
       - tests/test_stoneage_stable_map_name_encoding_probe.py
       - tools/stoneage_stable_map_name_decode_probe.py
       - tests/test_stoneage_stable_map_name_decode_probe.py
+      - tools/stoneage_warp_destination_corpus_probe.py
+      - tests/test_stoneage_warp_destination_corpus_probe.py
       - tools/stoneage_world_map_library.py
       - research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
       - research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz
@@ -51,7 +53,8 @@ jobs:
             tests.test_stoneage_versioned_npc_symbol_resolver_probe \
             tests.test_stoneage_recovered25_runtime_graphic_mapping_probe \
             tests.test_stoneage_stable_map_name_encoding_probe \
-            tests.test_stoneage_stable_map_name_decode_probe -v
+            tests.test_stoneage_stable_map_name_decode_probe \
+            tests.test_stoneage_warp_destination_corpus_probe -v
 
       - name: Install archive tools
         run: |
@@ -409,6 +412,31 @@ jobs:
           grep -F 'WARP_RULE|only classic functionset=Warp' "$report"
           grep -F 'RESOLUTION|VERSIONED_WORLD_GEOMETRY_CLASSIFIED' "$report"
 
+      - name: Classify outside-stable classic-warp destinations
+        run: |
+          set -euo pipefail
+          MAP_ROOT="$(find /tmp/sa25/out -type d -path '*/SA2.5主程式/stoneage2.5/map' -print -quit)"
+          test -n "$MAP_ROOT"
+          report=research/recovered/STONEAGE-25-OUTSIDE-STABLE-WARP-DESTINATIONS-R1.txt
+          python3 -m tools.stoneage_warp_destination_corpus_probe \
+            --geometry-report research/recovered/STONEAGE-25-STABLE-WORLD-GEOMETRY-R1.txt \
+            --lineage-report research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt \
+            --map-root "$MAP_ROOT" \
+            --profile research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz \
+            > "$report"
+
+      - name: Verify outside-stable warp destination audit
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-25-OUTSIDE-STABLE-WARP-DESTINATIONS-R1.txt
+          test -s "$report"
+          grep -F 'EVIDENCE_ROLE|LATER_RECOVERED' "$report"
+          grep -F 'COUNT|classic_warp_edges|2264' "$report"
+          grep -F 'COUNT|outside_stable_edges|355' "$report"
+          grep -F 'COUNT|outside_stable_destination_ids|30' "$report"
+          ! grep -Eq 'COUNT\\|status:(CLIENT_DAT_MISSING|CLIENT_DAT_DUPLICATE|CLIENT_DAT_INVALID):ids\\|[1-9]' "$report"
+          grep -F 'RESOLUTION|OUTSIDE_STABLE_WARP_DESTINATIONS_CLASSIFIED' "$report"
+
       - name: Delete transient proprietary payloads
         if: always()
         run: rm -rf /tmp/sa25
@@ -427,7 +455,8 @@ jobs:
           npc_runtime_graphics=research/recovered/STONEAGE-25-RUNTIME-GRAPHIC-MAPPING-R1.txt
           map_name_encoding=research/recovered/STONEAGE-25-STABLE-MAP-NAME-ENCODING-R1.txt
           map_names=research/recovered/STONEAGE-25-STABLE-MAP-NAMES-R1.txt
-          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding" "$map_names"
+          outside_warp_destinations=research/recovered/STONEAGE-25-OUTSIDE-STABLE-WARP-DESTINATIONS-R1.txt
+          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding" "$map_names" "$outside_warp_destinations"
           git diff --cached --quiet && exit 0
           git commit -m 'research: classify stable map world geometry'
           if ! git pull --rebase origin main; then
