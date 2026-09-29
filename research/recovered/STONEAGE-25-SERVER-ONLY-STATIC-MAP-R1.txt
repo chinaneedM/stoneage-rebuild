@@ -1,0 +1,21 @@
+StoneAge server-only static map materialization audit — R1
+SCOPE|server-only recovered25 floors|LS2MAP tile/object + mapset WALKABLE/HAVEHEIGHT|derived counts/hashes only
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+MAPSET_SHA256|efc0b793c901509e6387697c6b2c2a706bd7b9a2af09f1260b592566299cc7a6
+COUNT|floors_with_missing_image_metadata|0
+COUNT|flying_blocked_cells|0
+COUNT|flying_walkable_cells|24600
+COUNT|mapset_duplicate_ids|0
+COUNT|mapset_rows|20157
+COUNT|mapset_unique_images|20157
+COUNT|missing_image_id_references_unique_floor_sum|0
+COUNT|ordinary_blocked_cells|17066
+COUNT|ordinary_walkable_cells|7534
+COUNT|target_floors|4
+COUNT|total_cells|24600
+FLOOR|floor=20002|width=50|height=100|cells=5000|unique_tile_ids=33|unique_object_ids=43|used_image_ids=76|missing_image_ids=0|duplicate_mapset_ids_used=0|ordinary_walkable_cells=1675|flying_walkable_cells=5000|server_map_sha256=c18dc72b8cb3e3d0e5ad2b881905f4709ea5a854ec480ac49cfd53c2dcfb6948
+FLOOR|floor=20004|width=80|height=80|cells=6400|unique_tile_ids=52|unique_object_ids=30|used_image_ids=82|missing_image_ids=0|duplicate_mapset_ids_used=0|ordinary_walkable_cells=2132|flying_walkable_cells=6400|server_map_sha256=7b7c401c64125556fe9037a207a42c54bb6d3880d969ee692305ca9354a326d9
+FLOOR|floor=20006|width=80|height=40|cells=3200|unique_tile_ids=42|unique_object_ids=39|used_image_ids=81|missing_image_ids=0|duplicate_mapset_ids_used=0|ordinary_walkable_cells=1053|flying_walkable_cells=3200|server_map_sha256=cdc77c1896ef42dbd7e0b681840b2709381cac41e218c42017c7bab6176fc360
+FLOOR|floor=20009|width=100|height=100|cells=10000|unique_tile_ids=53|unique_object_ids=37|used_image_ids=90|missing_image_ids=0|duplicate_mapset_ids_used=0|ordinary_walkable_cells=2674|flying_walkable_cells=10000|server_map_sha256=5779c3b8cf102130e187c008af5f63eadaad70bec2e7ff40ca295cd1fe7e66cb
+RESOLUTION|SERVER_ONLY_STATIC_MAPS_MATERIALIZABLE
