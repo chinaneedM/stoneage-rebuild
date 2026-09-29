@@ -51,6 +51,8 @@ from tools.stoneage_shadowed_branch_progression_witness_probe import (
 from tools.stoneage_shadowed_branch_warpman_satisfiability_probe import (
     _assigned_data,
     _configured_maxlevel,
+    _field,
+    _warp_floors,
 )
 from tools.stoneage_transport_usage_probe import iter_blocks, magic_kind
 from tools.stoneage_versioned_world_geometry_probe import _rect_from_fields
