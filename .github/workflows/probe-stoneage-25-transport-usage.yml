@@ -291,6 +291,10 @@ jobs:
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
           git add research/recovered/STONEAGE-25-BUS-AIR-USAGE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-NONCLASSIC-INGRESS-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-GATING-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-FREE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-SATISFIABILITY-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-SHOP-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-NPC-REFERENCES-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-NONSHOP-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-EXCHANGE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-PROGRESSION-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-LEGAL-STATE-REACHABILITY-R1.txt research/recovered/STONEAGE-25-STATE-GATED-RUNTIME-WORLD-REACHABILITY-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-COORDINATE-ACCESS-R1.txt
-          git commit -m 'research: measure recovered transport ingress'
-          git pull --rebase origin main
-          git push
+          if git diff --cached --quiet; then
+            echo 'Derived reports unchanged; nothing to commit.'
+          else
+            git commit -m 'research: measure recovered transport ingress'
+            git pull --rebase origin main
+            git push
+          fi
