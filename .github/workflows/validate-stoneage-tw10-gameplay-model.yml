@@ -15,6 +15,7 @@ on:
       - tools/stoneage_floor130_arbitration.py
       - tools/stoneage_supplemental_world_fork_binding.py
       - tools/stoneage_materializable_world_topology.py
+      - tools/stoneage_ordered_warp_runtime.py
       - tools/stoneage_ordered_runtime_world_topology.py
       - tools/stoneage_versioned_world_names.py
       - tools/stoneage_versioned_world_warp_names.py
@@ -73,6 +74,7 @@ on:
       - tests/test_stoneage_floor130_arbitration.py
       - tests/test_stoneage_supplemental_world_fork_binding.py
       - tests/test_stoneage_materializable_world_topology.py
+      - tests/test_stoneage_ordered_warp_runtime.py
       - tests/test_stoneage_ordered_runtime_world_topology.py
       - tests/test_stoneage_versioned_world_names.py
       - tests/test_stoneage_versioned_world_warp_names.py
@@ -125,6 +127,7 @@ jobs:
             tests.test_stoneage_floor130_arbitration \
             tests.test_stoneage_supplemental_world_fork_binding \
             tests.test_stoneage_materializable_world_topology \
+            tests.test_stoneage_ordered_warp_runtime \
             tests.test_stoneage_ordered_runtime_world_topology \
             tests.test_stoneage_versioned_world_names \
             tests.test_stoneage_versioned_world_warp_names \
