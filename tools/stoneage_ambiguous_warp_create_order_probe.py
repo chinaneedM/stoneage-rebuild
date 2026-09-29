@@ -30,6 +30,7 @@ from tools.stoneage_versioned_world_geometry_probe import (
     _template_functionsets,
 )
 from tools.stoneage_warp_transition_model import parse_legacy_warp_arg
+from tools.stoneage_warp_destination_corpus_probe import parse_later_lineage
 
 
 GEOMETRY_RESOLUTION = (
@@ -363,32 +364,27 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--geometry-report", type=Path, required=True)
     parser.add_argument("--npc-dir", type=Path, required=True)
-    parser.add_argument(
-        "--represented-floor",
-        type=int,
-        action="append",
-        default=[],
-    )
-    parser.add_argument("--reachability-report", type=Path)
+    parser.add_argument("--lineage-report", type=Path, required=True)
+    parser.add_argument("--reachability-report", type=Path, required=True)
     args = parser.parse_args()
 
-    represented = set(int(v) for v in args.represented_floor)
-    if args.reachability_report is not None:
-        for raw in args.reachability_report.read_text(
-            encoding="utf-8"
-        ).splitlines():
-            line = raw.strip()
-            if line.startswith("SUPPLEMENTAL_FLOOR|"):
-                fields = _fields(line, "SUPPLEMENTAL_FLOOR")
-                represented.add(int(fields["floor"]))
+    stable, _changed, _counts = parse_later_lineage(
+        args.lineage_report.read_text(encoding="utf-8")
+    )
+    represented = set(int(v) for v in stable)
+    for raw in args.reachability_report.read_text(
+        encoding="utf-8"
+    ).splitlines():
+        line = raw.strip()
+        if line.startswith("SUPPLEMENTAL_FLOOR|"):
+            fields = _fields(line, "SUPPLEMENTAL_FLOOR")
+            represented.add(int(fields["floor"]))
 
-    # Geometry placement IDs were generated over all represented floor IDs.
-    # The stable 761 floor IDs are recoverable from the materializable geometry
-    # itself only as source/destination coverage incompletely, so callers should
-    # pass the complete represented set. CLI workflow supplies it through a
-    # dedicated plain numeric file when available; unit tests call analyze().
-    if not represented:
-        raise ValueError("represented floor set cannot be empty")
+    if len(represented) != 827:
+        raise ValueError(
+            "represented floor-set drift for geometry placement IDs: "
+            f"{len(represented)}"
+        )
 
     emit(
         analyze(
