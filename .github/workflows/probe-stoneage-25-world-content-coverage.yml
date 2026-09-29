@@ -448,7 +448,8 @@ jobs:
           grep -F 'COUNT|recovered25_tw1_asset_compatible:0:ids|20' "$report"
           grep -F 'COUNT|recovered25_tw1_asset_compatible:0:edges|253' "$report"
           test "$(grep -c '^DESTINATION|' "$report")" = "30"
-          ! grep -Eq '^DESTINATION\\|.*status=(CLIENT_DAT_DUPLICATE|CLIENT_DAT_INVALID)(\\||$)' "$report"
+          ! grep -F 'status=CLIENT_DAT_DUPLICATE' "$report"
+          ! grep -F 'status=CLIENT_DAT_INVALID' "$report"
           grep -F 'RESOLUTION|OUTSIDE_STABLE_WARP_DESTINATIONS_CLASSIFIED' "$report"
 
       - name: Audit missing-DAT warp destination payload surfaces
