@@ -22,6 +22,7 @@ from tools.stoneage_shadowed_branch_item_shop_acquisition_probe import (
 )
 from tools.stoneage_shadowed_branch_warpman_satisfiability_probe import (
     _assigned_data,
+    _configured_maxlevel,
     _int_prefix,
 )
 from tools.stoneage_transport_usage_probe import (
@@ -32,6 +33,7 @@ from tools.stoneage_transport_usage_probe import (
 
 
 OUTPUT_RESOLUTION = "RESOLUTION|SHADOWED_BRANCH_KEY_ITEM_EXCHANGE_AWARD_AUDITED"
+FIXED_DESCENDANT_ZERO_TRANS_MAX_GOLD = 1_000_000
 
 
 def _safe_key(value: bytes) -> str:
@@ -92,6 +94,79 @@ def _event_atom(raw: bytes) -> tuple[str,str,int|None]:
     return (_safe_key(token),"?",None)
 
 
+
+def _compare(value:int,operator:str,operand:int)->bool:
+    if operator=="=": return value==operand
+    if operator=="!=": return value!=operand
+    if operator=="<": return value<operand
+    if operator==">": return value>operand
+    return False
+
+
+def _level_witnesses(record:bytes,maxlevel:int)->tuple[int,...]:
+    event_values=_values(record,b"EVENT")
+    if not event_values:
+        return tuple(range(1,maxlevel+1))
+    witnesses=set()
+    for value in event_values:
+        for clause in value.split(b","):
+            raw_atoms=[a for a in clause.split(b"&") if a.strip()]
+            if not raw_atoms:
+                continue
+            parsed=[_event_atom(a) for a in raw_atoms]
+            if any(key!="LV" or op=="?" or operand is None for key,op,operand in parsed):
+                continue
+            for level in range(1,maxlevel+1):
+                if all(_compare(level,op,int(operand)) for _key,op,operand in parsed):
+                    witnesses.add(level)
+    return tuple(sorted(witnesses))
+
+
+def _event_is_lv_only(record:bytes)->bool:
+    vals=_values(record,b"EVENT")
+    if not vals:
+        return True
+    atoms=[]
+    for value in vals:
+        for clause in value.split(b","):
+            atoms.extend(a for a in clause.split(b"&") if a.strip())
+    return bool(atoms) and all(_event_atom(a)[0]=="LV" for a in atoms)
+
+
+def _delstone_cost(value:bytes,level:int)->int|None:
+    raw=value.strip()
+    if not raw:
+        return None
+    if b"LV" in raw.upper():
+        if b"*" not in raw:
+            return None
+        _left,right=raw.split(b"*",1)
+        factor=_int_prefix(right)
+        if factor is None:
+            return None
+        return int(level)*int(factor)
+    parsed=_int_prefix(raw)
+    return None if parsed is None else int(parsed)
+
+
+def _economic_domain(record:bytes,maxlevel:int)->tuple[bool,bool,str]:
+    levels=_level_witnesses(record,maxlevel)
+    level_ok=bool(levels) and _event_is_lv_only(record)
+    delstone=_values(record,b"DelStone")
+    if not delstone:
+        return level_ok,level_ok,"NONE"
+    value=delstone[0]
+    cost_class="LEVEL_SCALED" if b"LV" in value.upper() else "CONSTANT"
+    affordable=False
+    if level_ok:
+        for level in levels:
+            cost=_delstone_cost(value,level)
+            if cost is not None and 0 <= cost <= FIXED_DESCENDANT_ZERO_TRANS_MAX_GOLD:
+                affordable=True
+                break
+    return level_ok,affordable,cost_class
+
+
 @dataclass(frozen=True)
 class ExchangeAward:
     floor_id:int
@@ -108,6 +183,9 @@ class ExchangeAward:
     delstone_present:bool
     delpet_present:bool
     eventno_present:bool
+    level_domain_satisfiable:bool
+    delstone_affordable_zero_trans:bool
+    delstone_cost_class:str
 
 
 @dataclass(frozen=True)
@@ -128,6 +206,13 @@ class ExchangeAudit:
             "records_with_other_item_prerequisites":sum(x.other_item_prerequisite_refs>0 for x in self.awards),
             "records_with_delstone":sum(x.delstone_present for x in self.awards),
             "records_with_delpet":sum(x.delpet_present for x in self.awards),
+            "level_domain_satisfiable_records":sum(x.level_domain_satisfiable for x in self.awards),
+            "zero_trans_affordable_records":sum(x.delstone_affordable_zero_trans for x in self.awards),
+            "state_domain_satisfiable_records":sum(
+                x.level_domain_satisfiable and x.delstone_affordable_zero_trans
+                and not x.target_required_by_event and not x.target_deleted
+                for x in self.awards
+            ),
         })
         for row in self.awards:
             out[f"type:{row.type_class}:records"]+=1
@@ -143,7 +228,7 @@ def _event_records(data:bytes)->tuple[bytes,...]:
     return tuple(part.strip() for part in parts if part.strip())
 
 
-def _record_award(record:bytes,target:int,floor:int)->ExchangeAward|None:
+def _record_award(record:bytes,target:int,floor:int,maxlevel:int)->ExchangeAward|None:
     getitems=_values(record,b"GetItem")
     if not getitems:
         return None
@@ -185,6 +270,7 @@ def _record_award(record:bytes,target:int,floor:int)->ExchangeAward|None:
     type_values=_values(record,b"TYPE")
     type_class=_safe_key(type_values[0]) if type_values else "UNSPECIFIED"
     keys=tuple(sorted({_safe_key(key) for key,_v in _fields(record)}))
+    level_ok,affordable,cost_class=_economic_domain(record,maxlevel)
     return ExchangeAward(
         floor_id=floor,
         type_class=type_class,
@@ -200,11 +286,15 @@ def _record_award(record:bytes,target:int,floor:int)->ExchangeAward|None:
         delstone_present=bool(_values(record,b"DelStone")),
         delpet_present=bool(_values(record,b"DelPet")),
         eventno_present=bool(_values(record,b"EventNo")),
+        level_domain_satisfiable=level_ok,
+        delstone_affordable_zero_trans=affordable,
+        delstone_cost_class=cost_class,
     )
 
 
-def analyze(npc_dir:Path)->ExchangeAudit:
+def analyze(npc_dir:Path,setup:Path)->ExchangeAudit:
     target,missing=_locate_key_item(npc_dir)
+    maxlevel=_configured_maxlevel(setup)
     reached=set(load_ordered_runtime_reachability().reached_floor_ids)
     files=sorted((p for p in npc_dir.rglob("*") if p.is_file()),key=lambda p:str(p).lower())
     templates=template_map([p for p in files if magic_kind(p)=="template"])
@@ -232,7 +322,7 @@ def analyze(npc_dir:Path)->ExchangeAudit:
                     missing+=1;continue
                 local=[]
                 for record in _event_records(data):
-                    row=_record_award(record,target,floor)
+                    row=_record_award(record,target,floor,maxlevel)
                     if row is not None:
                         local.append(row)
                 if local:
@@ -253,6 +343,7 @@ def emit(audit:ExchangeAudit)->None:
     print("EVIDENCE_ROLE|LATER_RECOVERED")
     print("RULE|all item IDs, event numbers, gold values, pet IDs, dialogue, NPC names, coordinates and raw arguments are withheld")
     print("RULE|fixed descendant NPC_AcceptDel executes DelItem/DelStone/etc then GetItem -> NPC_EventAddItem")
+    print("RULE|economic witness uses recovered MAXLEVEL and pinned fixed-descendant _FIX_MAX_GOLD zero-trans cap=1000000; raw threshold/cost operands remain withheld")
     for key in sorted(audit.counts):
         print(f"COUNT|{key}|{audit.counts[key]}")
     for index,row in enumerate(audit.awards,1):
@@ -269,14 +360,19 @@ def emit(audit:ExchangeAudit)->None:
             f"delstone_present={int(row.delstone_present)}|"
             f"delpet_present={int(row.delpet_present)}|"
             f"eventno_present={int(row.eventno_present)}|"
+            f"level_domain_satisfiable={int(row.level_domain_satisfiable)}|"
+            f"delstone_cost_class={row.delstone_cost_class}|"
+            f"delstone_affordable_zero_trans={int(row.delstone_affordable_zero_trans)}|"
             f"field_keys={','.join(row.field_keys)}"
         )
     print(OUTPUT_RESOLUTION)
 
 
 def main()->None:
-    ap=argparse.ArgumentParser();ap.add_argument("--npc-dir",type=Path,required=True)
-    args=ap.parse_args();emit(analyze(args.npc_dir))
+    ap=argparse.ArgumentParser()
+    ap.add_argument("--npc-dir",type=Path,required=True)
+    ap.add_argument("--setup",type=Path,required=True)
+    args=ap.parse_args();emit(analyze(args.npc_dir,args.setup))
 
 
 if __name__=="__main__":main()
