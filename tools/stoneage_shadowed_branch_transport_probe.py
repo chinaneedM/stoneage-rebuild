@@ -26,8 +26,8 @@ import collections
 from dataclasses import dataclass
 from pathlib import Path
 
-from tools.stoneage_ordered_warp_runtime import (
-    load_ordered_materializable_runtime,
+from tools.stoneage_ordered_runtime_world_reachability_probe import (
+    load_ordered_runtime_reachability,
 )
 from tools.stoneage_transport_usage_probe import (
     assigned_file,
@@ -211,9 +211,11 @@ class NonClassicIngressAudit:
 
 
 def analyze(npc_dir: Path) -> NonClassicIngressAudit:
-    runtime = load_ordered_materializable_runtime()
-    reached = runtime.reachable_floor_ids
-    shadowed = tuple(runtime.unreachable_resolved_supplemental_ids)
+    reachability = load_ordered_runtime_reachability()
+    reached = reachability.reached_floor_ids
+    shadowed = tuple(
+        row.floor_id for row in reachability.orphan_rows
+    )
     shadowed_set = set(shadowed)
 
     files = sorted(
