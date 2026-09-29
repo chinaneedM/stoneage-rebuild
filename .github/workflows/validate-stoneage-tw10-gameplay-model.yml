@@ -11,6 +11,7 @@ on:
       - tools/stoneage_singleplayer_world.py
       - tools/stoneage_world_map_library.py
       - tools/stoneage_versioned_world_manifest.py
+      - tools/stoneage_versioned_world_names.py
       - tools/stoneage_versioned_world_geometry.py
       - tools/stoneage_versioned_encounter_runtime.py
       - tools/stoneage_versioned_npc_spawn_catalogue.py
@@ -37,6 +38,7 @@ on:
       - research/mechanics/STONEAGE-MAP-COLLISION-OVERABILITY-R1.md
       - research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
       - research/recovered/STONEAGE-25-STABLE-WORLD-CONTENT-COVERAGE-R1.txt
+      - research/recovered/STONEAGE-25-STABLE-MAP-NAMES-R1.txt
       - research/recovered/STONEAGE-25-STABLE-WORLD-GEOMETRY-R1.txt
       - research/recovered/STONEAGE-25-STABLE-ENCOUNTER-RUNTIME-R1.txt
       - research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt
@@ -53,6 +55,7 @@ on:
       - tests/test_stoneage_singleplayer_world.py
       - tests/test_stoneage_world_map_library.py
       - tests/test_stoneage_versioned_world_manifest.py
+      - tests/test_stoneage_versioned_world_names.py
       - tests/test_stoneage_versioned_world_geometry.py
       - tests/test_stoneage_versioned_encounter_runtime.py
       - tests/test_stoneage_versioned_npc_spawn_catalogue.py
@@ -97,6 +100,7 @@ jobs:
             tests.test_stoneage_singleplayer_world \
             tests.test_stoneage_world_map_library \
             tests.test_stoneage_versioned_world_manifest \
+            tests.test_stoneage_versioned_world_names \
             tests.test_stoneage_versioned_world_geometry \
             tests.test_stoneage_versioned_encounter_runtime \
             tests.test_stoneage_versioned_npc_spawn_catalogue \
