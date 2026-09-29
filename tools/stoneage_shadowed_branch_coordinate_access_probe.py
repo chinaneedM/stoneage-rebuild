@@ -44,14 +44,13 @@ from tools.stoneage_shadowed_branch_key_item_exchange_probe import (
     _values,
 )
 from tools.stoneage_shadowed_branch_progression_witness_probe import (
+    _award_records,
+    _locate_ingress_gate,
     _template_names,
 )
 from tools.stoneage_shadowed_branch_warpman_satisfiability_probe import (
     _assigned_data,
-    ITEM,
-    _field,
-    _warp_floors,
-    parse_free_predicates,
+    _configured_maxlevel,
 )
 from tools.stoneage_transport_usage_probe import iter_blocks, magic_kind
 from tools.stoneage_versioned_world_geometry_probe import _rect_from_fields
@@ -252,7 +251,7 @@ def _interaction_cells(
 
 def _matching_award_placements(
     npc_dir:Path,
-    target_item:int,
+    accepted_records:set[tuple[int,bytes]],
 )->tuple[InteractionPlacement,...]:
     exchange_names=_template_names(npc_dir,b"ExChangeMan")
     files=sorted(
@@ -280,31 +279,19 @@ def _matching_award_placements(
                 data=_assigned_data(npc_dir,arg if sep else b"")
                 if data is None:
                     continue
-                matched=False
-                for record in _event_records(data):
-                    types={
-                        value.strip().upper()
-                        for value in _values(record,b"TYPE")
-                    }
-                    if types != {b"ACCEPT"}:
-                        continue
-                    rewards={
-                        item
-                        for value in _values(record,b"GetItem")
-                        for item,_qty in _item_terms(value)
-                    }
-                    if target_item in rewards:
-                        matched=True
-                        break
-                if matched:
+                if any(
+                    (floor,record) in accepted_records
+                    for record in _event_records(data)
+                ):
                     out.append(InteractionPlacement(floor,birth))
     return tuple(out)
 
-
 def _matching_warpman_placements(
     npc_dir:Path,
-    target_item:int,
-    branch_ids:set[int],
+    *,
+    ingress_source_floor:int,
+    ingress_destination_floor:int,
+    ingress_free:bytes,
 )->tuple[InteractionPlacement,...]:
     warpman_names=_template_names(npc_dir,b"WarpMan")
     files=sorted(
@@ -320,6 +307,8 @@ def _matching_warpman_placements(
                 else: fields[key]=value
             try: floor=int(fields.get(b"floorid",b"0"))
             except ValueError: continue
+            if floor != int(ingress_source_floor):
+                continue
             birth=_rect_from_fields(
                 fields,center_key=b"borncenter",corner_key=b"borncorner"
             )
@@ -332,24 +321,12 @@ def _matching_warpman_placements(
                 data=_assigned_data(npc_dir,arg if sep else b"")
                 if data is None:
                     continue
-                if not (set(_warp_floors(data)) & branch_ids):
+                if int(ingress_destination_floor) not in set(_warp_floors(data)):
                     continue
-                free=_field(data,b"FREE")
-                if free is None:
-                    continue
-                clauses=parse_free_predicates(free)
-                if not any(
-                    atom is not None
-                    and atom.key==ITEM
-                    and atom.operator=="="
-                    and atom.operand==target_item
-                    for clause in clauses
-                    for atom in clause
-                ):
+                if (_field(data,b"FREE") or b"") != ingress_free:
                     continue
                 out.append(InteractionPlacement(floor,birth))
     return tuple(out)
-
 
 def _classic_hops(runtime,source_floor:int,destination_floor:int)->tuple[ClassicHop,...]:
     rows=[]
@@ -372,19 +349,40 @@ def _classic_hops(runtime,source_floor:int,destination_floor:int)->tuple[Classic
 def analyze(
     *,
     npc_dir:Path,
+    setup_path:Path,
     server_map_root:Path,
     mapset_path:Path,
 )->CoordinateAccessAudit:
     target_item,_missing=_locate_key_item(npc_dir)
     runtime_audit=load_ordered_runtime_reachability()
+    reached=set(runtime_audit.reached_floor_ids)
     branch_ids={row.floor_id for row in runtime_audit.orphan_rows}
-    awards=_matching_award_placements(npc_dir,target_item)
-    warpmen=_matching_warpman_placements(npc_dir,target_item,branch_ids)
+    maxlevel=_configured_maxlevel(setup_path)
+
+    ingress,_ingress_missing=_locate_ingress_gate(
+        npc_dir,
+        reached=reached,
+        orphan_ids=branch_ids,
+    )
+    accepted=_award_records(
+        npc_dir,
+        target_item=target_item,
+        maxlevel=maxlevel,
+        reached=reached,
+    )
+    accepted_records={(int(floor),record) for floor,record,_levels in accepted}
+    awards=_matching_award_placements(npc_dir,accepted_records)
+    warpmen=_matching_warpman_placements(
+        npc_dir,
+        ingress_source_floor=ingress.source_floor,
+        ingress_destination_floor=ingress.destination_floor,
+        ingress_free=ingress.free,
+    )
     if not awards or not warpmen:
         raise ValueError("critical state-gated interaction placements missing")
 
-    award_floors={x.floor_id for x in awards}
-    ingress_floors={x.floor_id for x in warpmen}
+    award_floors={int(floor) for floor,_record,_levels in accepted}
+    ingress_floors={int(ingress.source_floor)}
     if len(award_floors)!=1 or len(ingress_floors)!=1:
         raise ValueError("critical interaction floor identity is not unique")
     award_floor=next(iter(award_floors))
@@ -512,11 +510,13 @@ def emit(audit:CoordinateAccessAudit)->None:
 def main()->None:
     parser=argparse.ArgumentParser()
     parser.add_argument("--npc-dir",type=Path,required=True)
+    parser.add_argument("--setup",type=Path,required=True)
     parser.add_argument("--server-map-root",type=Path,required=True)
     parser.add_argument("--mapset",type=Path,required=True)
     args=parser.parse_args()
     emit(analyze(
         npc_dir=args.npc_dir,
+        setup_path=args.setup,
         server_map_root=args.server_map_root,
         mapset_path=args.mapset,
     ))
