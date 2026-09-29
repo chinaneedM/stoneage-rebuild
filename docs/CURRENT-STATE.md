@@ -3664,3 +3664,22 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Validation: GitHub Actions **36605691297 = PASS**; derived report commit **2fb4c13987f6bb6692b46552818969ffc7be0dda**.
 - **SHADOWED_BRANCH_KEY_ITEM_SHOP_R1 = CLOSED / NO_WITNESS.**
 - Next deterministic seam: test the same withheld item identity against reachable NPC/event AddItem rewards and reachable encounter enemy drop slots before making any claim about full player reachability of floor 820 and the 11-floor branch.
+
+
+## Phase 1 shadowed branch joined progression closure — 2026-09-30
+
+- The previously isolated 11-floor resolved supplemental branch is now closed through a state-gated runtime progression witness rather than being treated as dead/orphan content.
+- Key-item acquisition is concrete in recovered25: **2 reachable ExChangeMan ACCEPT records on floor 2020** call the fixed-source GetItem -> NPC_EventAddItem path and award the withheld key item.
+- Both award records have only a level gate plus DelStone payment; they require **no other item**, **no pet**, do **not** require the target item itself, and do **not** delete the target item as a prerequisite.
+- Recovered MAXLEVEL plus fixed-descendant zero-trans carried-gold cap produce legal state witnesses for both records: **2/2 level-domain satisfiable, 2/2 zero-trans affordable, 2/2 combined state-domain satisfiable**. Exact level/cost operands remain withheld.
+- Ordinary alternative acquisition paths were separately excluded in this specimen: reachable ItemShop witness **0**, reachable positive battle-drop witness **0**, ordinary fixed-source-covered AddItem reward witness **0**.
+- Directed progression ordering is now joined: after acquisition on floor **2020**, the classic Warp graph reaches the WarpMan source floor **811** in **1 floor-level hop**.
+- The acquisition level domain and the 811 WarpMan level window have both **same-level** and **non-decreasing-level** witnesses; therefore independent satisfiability is no longer being mistaken for an ordered progression.
+- With the withheld key item carried, WarpMan **811 -> 820** has a combined state progression witness.
+- Starting from **820**, the active classic Warp graph reaches **all 11 / 11** formerly orphaned floors: **820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 831**.
+- The post-ingress branch has classic maximum floor-level depth **23** and contains a classic return path into the pre-existing reachable world; it is a connected gated branch, not a one-way dead end.
+- Artifact: research/recovered/STONEAGE-25-SHADOWED-BRANCH-PROGRESSION-R1.txt; tool: tools/stoneage_shadowed_branch_progression_witness_probe.py; tests: tests/test_stoneage_shadowed_branch_progression_witness_probe.py.
+- Validation: transport/progression workflow GitHub Actions **36609564588 = PASS**; derived report commit **8146bbbd4fc98be7861526226b71f05ccda2f751**.
+- **SHADOWED_BRANCH_STATE_GATED_RUNTIME_R1 = CLOSED.**
+- Important scope boundary: this proves existence of a legal player state with enough carried stone, not a fresh-character economic earning route for the fee. Economic provenance remains separate and must not be silently folded into map reachability.
+- Next deterministic seam: recompute the complete materializable world reachability with this validated state-gated WarpMan edge included, measure any remaining floor-level gaps, and only then choose the next unresolved world-content seam.
