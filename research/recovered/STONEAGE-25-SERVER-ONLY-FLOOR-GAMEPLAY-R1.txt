@@ -1,0 +1,30 @@
+StoneAge server-only floor gameplay coverage audit — R1
+SCOPE|server-only recovered25 warp destinations|derived NPC/warp/encounter coverage only
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|coverage does not promote recovered25 floors into Taiwan-v1 membership
+ACTIVE_ENCOUNT_FILE|encount.txt
+COUNT|active_encounter_rows|0
+COUNT|classic_warp_edges|8
+COUNT|encounter_rows|0
+COUNT|floors_with_active_encounter|0
+COUNT|floors_with_classic_warp|4
+COUNT|floors_with_encounter|0
+COUNT|floors_with_npc|4
+COUNT|floors_with_warp_functionset|4
+COUNT|npc_create_count|8
+COUNT|target_floors|4
+COUNT|warp_create_count|8
+FLOOR|floor=20002|npc_create_count=2|warp_create_count=2|classic_warp_edges=2|encounter_rows=0|active_encounter_rows=0
+CLASSIC_WARP|source_floor=20002|destination_floor=20001|destination_x=11|destination_y=40
+CLASSIC_WARP|source_floor=20002|destination_floor=20003|destination_x=34|destination_y=25
+FLOOR|floor=20004|npc_create_count=2|warp_create_count=2|classic_warp_edges=2|encounter_rows=0|active_encounter_rows=0
+CLASSIC_WARP|source_floor=20004|destination_floor=20003|destination_x=57|destination_y=44
+CLASSIC_WARP|source_floor=20004|destination_floor=20005|destination_x=27|destination_y=3
+FLOOR|floor=20006|npc_create_count=2|warp_create_count=2|classic_warp_edges=2|encounter_rows=0|active_encounter_rows=0
+CLASSIC_WARP|source_floor=20006|destination_floor=20005|destination_x=56|destination_y=85
+CLASSIC_WARP|source_floor=20006|destination_floor=20007|destination_x=74|destination_y=6
+FLOOR|floor=20009|npc_create_count=2|warp_create_count=2|classic_warp_edges=2|encounter_rows=0|active_encounter_rows=0
+CLASSIC_WARP|source_floor=20009|destination_floor=20008|destination_x=69|destination_y=37
+CLASSIC_WARP|source_floor=20009|destination_floor=20010|destination_x=6|destination_y=59
+RESOLUTION|SERVER_ONLY_FLOOR_GAMEPLAY_COVERAGE_CLASSIFIED
