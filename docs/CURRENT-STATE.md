@@ -3635,3 +3635,20 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **CREATE_ORDER_RESOLVED_CLASSIC_WARP_RUNTIME_R1 = CLOSED.**
 - Next deterministic seam: audit all recovered non-classic player-transport semantics for the 11-floor shadowed branch, especially `WarpMan` and `FMWarpMan`, before deciding whether those floors are truly unreachable or only absent from the classic-Warp closure.
 
+
+
+## Phase 1 shadowed-branch non-classic ingress gate closure — 2026-09-30
+
+- Revalidated the 11-floor branch outside the active ordered classic-Warp closure: **820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 831**.
+- Recovered non-classic transport audit over the currently reconstructed transport families finds exactly **one** potential ingress from a classic-reachable floor into that branch: **WarpMan 811 -> 820**.
+- FMWarpMan contributes **0** such ingress edges; Airplane contributes **0**; recovered Bus route data is x/y-only and contributes **0** cross-floor edges.
+- The sole WarpMan route is not an unconditional classic-style portal. Its ordinary payment route is disabled by the recovered negative-money configuration and its remaining route is condition-dependent.
+- The recovered FREE expression is structurally one OR-clause containing one three-atom AND group: **2 level predicates + 1 item predicate**; operators present are one each of >, <, and =.
+- Fixed-descendant runtime semantics were rechecked: comma is OR, & is AND; all LV atoms share the same player level, while ITEM predicates scan carried item IDs existentially.
+- New privacy-preserving domain audit uses the recovered server's configured MAXLEVEL plus the configured active itemset catalog transiently while withholding raw operands and item IDs from committed output.
+- Real recovered25 result: ingress rows = **1**; atoms = **3**; atoms with a domain witness = **3 / 3**; satisfiable clauses = **1 / 1**; domain-satisfiable ingress rows = **1 / 1**; unsupported atoms = **0**.
+- Therefore **811 -> 820 is configuration-domain satisfiable** in recovered25. This is stronger than a merely syntactic candidate, but it is still **not yet a full gameplay-reachability proof**: the matching item definition existing in the active item catalog does not prove that a player can legitimately acquire that item, retain it, and present it at the WarpMan.
+- New deterministic artifacts: tools/stoneage_shadowed_branch_warpman_satisfiability_probe.py; tests/test_stoneage_shadowed_branch_warpman_satisfiability_probe.py; research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-SATISFIABILITY-R1.txt.
+- Validation: relevant transport/domain unit suite **18 tests PASS**; real preservation-bundle workflow GitHub Actions **36604872593 = PASS**; derived report commit **7c481beefd158ca6dc1359550c8b868a97a00f23**.
+- **SHADOWED_BRANCH_WARPMAN_FREE_DOMAIN_R1 = CLOSED.**
+- Next deterministic seam: resolve the required ITEM predicate against legitimate recovered gameplay acquisition surfaces (shop inventory, NPC/event reward, battle/drop or other item-grant paths) without committing the proprietary item ID. Only after an acquisition path is proven should the 11-floor branch be promoted from “condition-gated ingress with catalog witness” to player-reachable runtime content.
