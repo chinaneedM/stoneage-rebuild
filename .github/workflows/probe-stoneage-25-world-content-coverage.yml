@@ -44,6 +44,8 @@ on:
       - tests/test_stoneage_materializable_world_reachability_probe.py
       - tools/stoneage_ambiguous_warp_create_order_probe.py
       - tests/test_stoneage_ambiguous_warp_create_order_probe.py
+      - tools/stoneage_shadowed_branch_transport_probe.py
+      - tests/test_stoneage_shadowed_branch_transport_probe.py
       - tools/stoneage_ordered_runtime_world_topology.py
       - tests/test_stoneage_ordered_runtime_world_topology.py
       - tools/stoneage_ordered_runtime_world_reachability_probe.py
@@ -90,7 +92,8 @@ jobs:
             tests.test_stoneage_materializable_world_reachability_probe \
             tests.test_stoneage_ambiguous_warp_create_order_probe \
             tests.test_stoneage_ordered_runtime_world_topology \
-            tests.test_stoneage_ordered_runtime_world_reachability_probe -v
+            tests.test_stoneage_ordered_runtime_world_reachability_probe \
+            tests.test_stoneage_shadowed_branch_transport_probe -v
 
       - name: Install archive tools
         run: |
@@ -754,6 +757,29 @@ jobs:
           ! grep -q '^ORPHAN_RESOLVED_SUPPLEMENTAL|' "$report"
           grep -F 'RESOLUTION|MATERIALIZABLE_WORLD_REACHABILITY_CLOSED' "$report"
 
+      - name: Audit nonclassic ingress into shadowed branch
+        run: |
+          set -euo pipefail
+          N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
+          test -n "$N"
+          report=research/recovered/STONEAGE-25-SHADOWED-BRANCH-NONCLASSIC-INGRESS-R1.txt
+          python3 -m tools.stoneage_shadowed_branch_transport_probe \
+            --npc-dir "$N" \
+            > "$report"
+
+      - name: Verify nonclassic shadowed-branch ingress audit
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-25-SHADOWED-BRANCH-NONCLASSIC-INGRESS-R1.txt
+          test -s "$report"
+          grep -F 'SEMANTIC_SOURCE_VERSION|recovered25' "$report"
+          grep -F 'EVIDENCE_ROLE|LATER_RECOVERED' "$report"
+          grep -F 'COUNT|classic_reachable_floor_ids|815' "$report"
+          grep -F 'COUNT|shadowed_branch_floor_ids|11' "$report"
+          grep -F 'COUNT|bus_cross_floor_edges|0' "$report"
+          grep -F 'SHADOWED_BRANCH|floors=820,821,822,823,824,825,826,827,828,829,831' "$report"
+          grep -F 'RESOLUTION|SHADOWED_BRANCH_NONCLASSIC_INGRESS_AUDITED' "$report"
+
       - name: Delete transient proprietary payloads
         if: always()
         run: rm -rf /tmp/sa25
@@ -783,7 +809,8 @@ jobs:
           materializable_world_reachability=research/recovered/STONEAGE-25-MATERIALIZABLE-WORLD-REACHABILITY-R1.txt
           ambiguous_warp_create_order=research/recovered/STONEAGE-25-AMBIGUOUS-WARP-CREATE-ORDER-R1.txt
           ordered_runtime_world_reachability=research/recovered/STONEAGE-25-ORDERED-RUNTIME-WORLD-REACHABILITY-R1.txt
-          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding" "$map_names" "$outside_warp_destinations" "$missing_warp_destination_payloads" "$server_only_floor_gameplay" "$server_only_static_map" "$recovered_world_reachability" "$supplemental_world_audit" "$floor_130_candidate_audit" "$materializable_warp_geometry" "$materializable_world_reachability" "$ambiguous_warp_create_order" "$ordered_runtime_world_reachability"
+          shadowed_branch_nonclassic_ingress=research/recovered/STONEAGE-25-SHADOWED-BRANCH-NONCLASSIC-INGRESS-R1.txt
+          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding" "$map_names" "$outside_warp_destinations" "$missing_warp_destination_payloads" "$server_only_floor_gameplay" "$server_only_static_map" "$recovered_world_reachability" "$supplemental_world_audit" "$floor_130_candidate_audit" "$materializable_warp_geometry" "$materializable_world_reachability" "$ambiguous_warp_create_order" "$ordered_runtime_world_reachability" "$shadowed_branch_nonclassic_ingress"
           git diff --cached --quiet && exit 0
           git commit -m 'research: classify stable map world geometry'
           if ! git pull --rebase origin main; then
