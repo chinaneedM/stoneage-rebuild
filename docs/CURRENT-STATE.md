@@ -3683,3 +3683,19 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **SHADOWED_BRANCH_STATE_GATED_RUNTIME_R1 = CLOSED.**
 - Important scope boundary: this proves existence of a legal player state with enough carried stone, not a fresh-character economic earning route for the fee. Economic provenance remains separate and must not be silently folded into map reachability.
 - Next deterministic seam: recompute the complete materializable world reachability with this validated state-gated WarpMan edge included, measure any remaining floor-level gaps, and only then choose the next unresolved world-content seam.
+
+
+## Phase 1 state-gated materializable world reachability closure — 2026-09-30
+
+- Corrected the auxiliary legal-state probe after fixed-descendant source revalidation: `EventNo=-1` is an explicit **ungated event sentinel**. `NPC_EventCheckFlg(...,-1)` returns FALSE and event setters ignore `-1`; it must not be treated as a failed event prerequisite.
+- Recovered25 legal-state join now reports **2 / 2** reachable ExChangeMan key-item award records as state-domain satisfiable; each awards one withheld target item, has no keyword gate, shares **20** legal level values with the WarpMan gate, and reaches floor 811 in one directed classic-Warp floor hop.
+- The world-level reachability model now preserves two separate layers instead of flattening the gate:
+  - **classic-only ordered Warp reachability = 815 / 826 materializable floors**;
+  - **existential state-gated runtime reachability = 826 / 826 materializable floors**.
+- The single validated state-gated transport edge is **811 -> 820**. It makes exactly the previously isolated **11** floors newly reachable: **820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 831**.
+- Resolved supplemental coverage therefore changes from **54 / 65 classic-only** to **65 / 65 state-gated**. Remaining materializable floor-level gaps = **0**.
+- This is an existential legal-player-state statement, not an unconditional portal statement and not a fresh-character economic progression proof. The classic-only 815 count remains a first-class invariant.
+- Artifacts: `tools/stoneage_state_gated_runtime_world_reachability_probe.py`; `tests/test_stoneage_state_gated_runtime_world_reachability_probe.py`; `research/recovered/STONEAGE-25-STATE-GATED-RUNTIME-WORLD-REACHABILITY-R1.txt`; corrected `research/recovered/STONEAGE-25-SHADOWED-BRANCH-LEGAL-STATE-REACHABILITY-R1.txt`.
+- Validation: legal-state workflow GitHub Actions **36610271589 = PASS**; state-gated world workflow **36610480622 = PASS**; derived world report commit **71ac195a0c1ef9b8aa3063cd75e6c74612ea8433**.
+- **STATE_GATED_MATERIALIZABLE_WORLD_REACHABILITY_R1 = CLOSED.**
+- Next deterministic seam: floor-level world reachability is exhausted. Audit **coordinate-level accessibility of the two critical state-gated interaction points** (the reachable ExChangeMan award NPC and WarpMan 811 ingress) against the recovered map/collision/path topology. Keep floor-level reachability and same-floor walkability distinct; if the necessary collision plane is not provenance-safe for those floors, record that boundary rather than synthesizing a path.
