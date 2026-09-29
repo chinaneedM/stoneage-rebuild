@@ -1,0 +1,18 @@
+StoneAge shadowed-branch key-item non-shop acquisition audit — R1
+SCOPE|withheld key-item identity|reachable encounter drops + reachable NPC AddItem actions
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|target item ID, enemy/group IDs, NPC/template names, raw arguments, coordinates and filenames are not emitted
+RULE|drop witness requires reachable floor + positive encounter group weight + positive group enemy weight + positive target ITEMPROB
+RULE|NPC AddItem token presence is separated from fixed-descendant Action_RunDoEventAction function-set coverage
+COUNT|drop_source_floors|0
+COUNT|drop_witnesses|0
+COUNT|missing_argument_files|15
+COUNT|npc_action_run_covered_witnesses|0
+COUNT|npc_additem_token_hits|0
+COUNT|npc_reward_source_floors|0
+COUNT|npc_reward_witnesses|0
+COUNT|strong_drop_witnesses|0
+COUNT|fixed_source_covered_reward_witnesses|0
+ACQUISITION_SURFACE|battle_drop=0|npc_reward=0|item_id_withheld=1
+RESOLUTION|SHADOWED_BRANCH_KEY_ITEM_NONSHOP_ACQUISITION_AUDITED
