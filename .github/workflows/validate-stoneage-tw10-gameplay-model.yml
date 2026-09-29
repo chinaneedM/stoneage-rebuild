@@ -14,6 +14,7 @@ on:
       - tools/stoneage_supplemental_world_manifest.py
       - tools/stoneage_floor130_arbitration.py
       - tools/stoneage_supplemental_world_fork_binding.py
+      - tools/stoneage_materializable_world_topology.py
       - tools/stoneage_versioned_world_names.py
       - tools/stoneage_versioned_world_warp_names.py
       - tools/stoneage_versioned_world_geometry.py
@@ -45,6 +46,7 @@ on:
       - research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
       - research/recovered/STONEAGE-25-STABLE-WORLD-CONTENT-COVERAGE-R1.txt
       - research/recovered/STONEAGE-25-SUPPLEMENTAL-WORLD-AUDIT-R1.txt
+      - research/recovered/STONEAGE-25-MATERIALIZABLE-WORLD-WARP-GEOMETRY-R1.txt
       - research/recovered/STONEAGE-25-FLOOR-130-CANDIDATE-AUDIT-R1.txt
       - research/recovered/STONEAGE-2003-25-FLOOR-130-CANDIDATE-LINEAGE-R1.txt
       - research/recovered/STONEAGE-25-STABLE-MAP-NAMES-R1.txt
@@ -68,6 +70,7 @@ on:
       - tests/test_stoneage_supplemental_world_manifest.py
       - tests/test_stoneage_floor130_arbitration.py
       - tests/test_stoneage_supplemental_world_fork_binding.py
+      - tests/test_stoneage_materializable_world_topology.py
       - tests/test_stoneage_versioned_world_names.py
       - tests/test_stoneage_versioned_world_warp_names.py
       - tests/test_stoneage_versioned_world_geometry.py
@@ -118,6 +121,7 @@ jobs:
             tests.test_stoneage_supplemental_world_manifest \
             tests.test_stoneage_floor130_arbitration \
             tests.test_stoneage_supplemental_world_fork_binding \
+            tests.test_stoneage_materializable_world_topology \
             tests.test_stoneage_versioned_world_names \
             tests.test_stoneage_versioned_world_warp_names \
             tests.test_stoneage_versioned_world_geometry \
