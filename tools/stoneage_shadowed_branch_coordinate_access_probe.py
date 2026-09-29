@@ -48,8 +48,10 @@ from tools.stoneage_shadowed_branch_progression_witness_probe import (
 )
 from tools.stoneage_shadowed_branch_warpman_satisfiability_probe import (
     _assigned_data,
+    ITEM,
     _field,
     _warp_floors,
+    parse_free_predicates,
 )
 from tools.stoneage_transport_usage_probe import iter_blocks, magic_kind
 from tools.stoneage_versioned_world_geometry_probe import _rect_from_fields
@@ -280,6 +282,12 @@ def _matching_award_placements(
                     continue
                 matched=False
                 for record in _event_records(data):
+                    types={
+                        value.strip().upper()
+                        for value in _values(record,b"TYPE")
+                    }
+                    if types != {b"ACCEPT"}:
+                        continue
                     rewards={
                         item
                         for value in _values(record,b"GetItem")
@@ -326,8 +334,18 @@ def _matching_warpman_placements(
                     continue
                 if not (set(_warp_floors(data)) & branch_ids):
                     continue
-                free=_field(data,b"FREE") or b""
-                if str(target_item).encode("ascii") not in free:
+                free=_field(data,b"FREE")
+                if free is None:
+                    continue
+                clauses=parse_free_predicates(free)
+                if not any(
+                    atom is not None
+                    and atom.key==ITEM
+                    and atom.operator=="="
+                    and atom.operand==target_item
+                    for clause in clauses
+                    for atom in clause
+                ):
                     continue
                 out.append(InteractionPlacement(floor,birth))
     return tuple(out)
