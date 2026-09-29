@@ -1,0 +1,17 @@
+StoneAge shadowed-branch key-item reachable ItemShop audit — R1
+SCOPE|unique WarpMan ITEM equality predicate|classic-reachable recovered ItemShop inventory
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|target item ID, ItemList payloads, NPC names, filenames, coordinates and raw arguments are not emitted
+RULE|visibility reproduces fixed descendant ItemShop ItemList range expansion, undefined-item skip and MAXSHOPITEM=33 truncation
+RULE|shop visibility proves a normal purchase surface exists; it does not by itself prove economic affordability or prerequisite dialogue
+COUNT|buy_rate:DEFAULT_ONE:shops|32
+COUNT|buy_rate:POSITIVE:shops|180
+COUNT|candidate_shops|212
+COUNT|missing_argument_files|0
+COUNT|target_listed_shops|0
+COUNT|target_predicate_count|1
+COUNT|target_visible_shops|0
+COUNT|target_visible_source_floors|0
+TARGET_ITEM_SHOP_WITNESS|reachable_source_floors=0|item_id_withheld=1|normal_purchase_surface=0
+RESOLUTION|SHADOWED_BRANCH_KEY_ITEM_REACHABLE_SHOP_AUDITED
