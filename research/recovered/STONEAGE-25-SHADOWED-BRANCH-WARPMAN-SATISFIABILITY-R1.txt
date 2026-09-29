@@ -1,0 +1,29 @@
+StoneAge shadowed-branch WarpMan FREE domain audit — R1
+SCOPE|reachable WarpMan ingress into ordered classic-Warp orphan branch|level-domain + active-item-catalog witness only
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|raw FREE operands, item IDs, argument payloads, dialogue, NPC names, coordinates and filenames are not emitted
+RULE|catalog witness proves a matching configured item definition exists; it does not prove gameplay acquisition or co-obtainability
+RULE|multiple ITEM atoms are independent existential carried-item checks; LV atoms share one player-level value
+COUNT|atoms|3
+COUNT|atoms_with_domain_witness|3
+COUNT|atoms_without_domain_witness|0
+COUNT|clauses|1
+COUNT|configured_itemset_files|1
+COUNT|domain_satisfiable_clauses|1
+COUNT|domain_satisfiable_rows|1
+COUNT|ingress_rows|1
+COUNT|item_catalog_nonempty|1
+COUNT|key:ITEM:atoms|1
+COUNT|key:LV:atoms|2
+COUNT|maxlevel_configured|1
+COUNT|missing_argument_files|0
+COUNT|operator:<:atoms|1
+COUNT|operator:=:atoms|1
+COUNT|operator:>:atoms|1
+COUNT|unsupported_atoms|0
+WARPMAN_FREE_DOMAIN|source_floor=811|target_floor=820|clauses=1|atoms=3|domain_satisfiable=1|reachability_proof=NO_CATALOG_WITNESS_ONLY
+ATOM_DOMAIN|source_floor=811|target_floor=820|clause=1|atom=1|key=LV|operator=>|domain=RECOVERED_LEVEL_DOMAIN|witness=1
+ATOM_DOMAIN|source_floor=811|target_floor=820|clause=1|atom=2|key=LV|operator=<|domain=RECOVERED_LEVEL_DOMAIN|witness=1
+ATOM_DOMAIN|source_floor=811|target_floor=820|clause=1|atom=3|key=ITEM|operator==|domain=ACTIVE_ITEM_CATALOG|witness=1
+RESOLUTION|SHADOWED_BRANCH_WARPMAN_FREE_DOMAIN_AUDITED
