@@ -110,6 +110,7 @@ class MissingWarpDestinationPayload:
     client_map_sha256: tuple[str, ...]
     server_map_paths: tuple[str, ...]
     server_map_dimensions: tuple[tuple[int, int], ...]
+    server_map_sha256: tuple[str, ...]
 
     @property
     def client_map_present(self) -> bool:
@@ -180,6 +181,10 @@ def classify(
             (int(entry["width"]), int(entry["height"]))
             for entry in server_entries
         )
+        server_hashes = tuple(
+            hashlib.sha256(entry["path"].read_bytes()).hexdigest()
+            for entry in server_entries
+        )
 
         has_client = bool(client_paths)
         has_server = bool(server_entries)
@@ -205,6 +210,7 @@ def classify(
                 client_map_sha256=tuple(client_hashes),
                 server_map_paths=server_paths,
                 server_map_dimensions=server_dims,
+                server_map_sha256=server_hashes,
             )
         )
 
@@ -237,7 +243,8 @@ def emit(audit: MissingWarpDestinationPayloadAudit) -> None:
             f"client_map_dimensions={_dims(row.client_map_dimensions)}|"
             f"client_map_sha256={','.join(row.client_map_sha256)}|"
             f"server_map_paths={','.join(row.server_map_paths)}|"
-            f"server_map_dimensions={_dims(row.server_map_dimensions)}"
+            f"server_map_dimensions={_dims(row.server_map_dimensions)}|"
+            f"server_map_sha256={','.join(row.server_map_sha256)}"
         )
     print("RESOLUTION|MISSING_DAT_WARP_DESTINATION_PAYLOADS_CLASSIFIED")
 
