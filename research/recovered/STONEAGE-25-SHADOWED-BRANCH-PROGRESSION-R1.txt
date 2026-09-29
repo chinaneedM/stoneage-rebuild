@@ -1,0 +1,22 @@
+StoneAge shadowed-branch joined progression witness — R1
+SCOPE|reachable exchange award -> directed classic Warp travel -> WarpMan gate -> post-ingress classic closure
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|item IDs, level thresholds, exact witness levels, stone costs, NPC names, coordinates, dialogue and raw arguments are withheld
+RULE|player level is treated as non-decreasing between acquisition and WarpMan use; a same-level witness is reported separately
+RULE|stone affordability proves a legal carried-gold state under the pinned zero-trans cap; how a fresh character earns that fee is outside this probe
+COUNT|award_records|2
+COUNT|award_records_with_affordable_level_state|2
+COUNT|award_records_with_classic_path_to_ingress|2
+COUNT|award_records_with_nondecreasing_level_witness|2
+COUNT|award_records_with_same_level_witness|2
+COUNT|branch_full_orphan_closure|1
+COUNT|branch_orphan_floors_reached|11
+COUNT|branch_orphan_floors_total|11
+COUNT|branch_returns_to_preexisting_reached|1
+COUNT|combined_progression_witness|1
+COUNT|missing_argument_files|0
+COUNT|warp_level_witness_states|20
+PROGRESSION_WITNESS|acquisition_source_floors=1|ingress_source_floor=811|ingress_target_floor=820|classic_path_after_acquisition=1|min_classic_hops=1|same_level_witness=1|nondecreasing_level_witness=1|combined_state_progression_witness=1
+POST_INGRESS_CLASSIC_CLOSURE|ingress_floor=820|orphan_reached=11|orphan_total=11|max_depth=23|returns_to_preexisting_reached=1|floors=820,821,822,823,824,825,826,827,828,829,831
+RESOLUTION|SHADOWED_BRANCH_PROGRESSION_WITNESS_CLOSED
