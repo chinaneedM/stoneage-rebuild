@@ -283,6 +283,7 @@ jobs:
           R=research/recovered/STONEAGE-25-SHADOWED-BRANCH-COORDINATE-ACCESS-R1.txt
           python3 -m tools.stoneage_shadowed_branch_coordinate_access_probe --npc-dir "$N" --setup "$C" --server-map-root "$SERVER_MAP_ROOT" --mapset "$MAPSET" > "$R"
           test -s "$R"
+          grep -F 'STATIC_COORDINATE_CHAIN|witness=1' "$R"
           grep -F 'RESOLUTION|SHADOWED_BRANCH_STATIC_COORDINATE_ACCESS_CLOSED' "$R"
 
       - name: Commit derived report only
