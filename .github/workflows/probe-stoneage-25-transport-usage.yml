@@ -25,6 +25,8 @@ on:
       - tests/test_stoneage_shadowed_branch_key_item_nonshop_probe.py
       - tools/stoneage_shadowed_branch_key_item_exchange_probe.py
       - tests/test_stoneage_shadowed_branch_key_item_exchange_probe.py
+      - tools/stoneage_shadowed_branch_legal_state_reachability_probe.py
+      - tests/test_stoneage_shadowed_branch_legal_state_reachability_probe.py
       - tools/stoneage_shadowed_branch_progression_witness_probe.py
       - tests/test_stoneage_shadowed_branch_progression_witness_probe.py
       - tools/stoneage_ordered_runtime_world_reachability_probe.py
@@ -236,11 +238,23 @@ jobs:
           grep -F 'COUNT|combined_progression_witness|1' "$R"
           grep -F 'RESOLUTION|SHADOWED_BRANCH_PROGRESSION_WITNESS_CLOSED' "$R"
 
+      - name: Join legal-state reachability into shadowed branch
+        run: |
+          set -euo pipefail
+          N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
+          test -n "$N"
+          test -n "$C"
+          R=research/recovered/STONEAGE-25-SHADOWED-BRANCH-LEGAL-STATE-REACHABILITY-R1.txt
+          python3 -m tools.stoneage_shadowed_branch_legal_state_reachability_probe --npc-dir "$N" --setup "$C" > "$R"
+          test -s "$R"
+          grep -F 'RESOLUTION|SHADOWED_BRANCH_LEGAL_STATE_REACHABILITY_AUDITED' "$R"
+
       - name: Commit derived report only
         run: |
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
-          git add research/recovered/STONEAGE-25-BUS-AIR-USAGE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-NONCLASSIC-INGRESS-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-GATING-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-FREE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-SATISFIABILITY-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-SHOP-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-NPC-REFERENCES-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-NONSHOP-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-EXCHANGE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-PROGRESSION-R1.txt
+          git add research/recovered/STONEAGE-25-BUS-AIR-USAGE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-NONCLASSIC-INGRESS-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-GATING-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-FREE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-SATISFIABILITY-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-SHOP-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-NPC-REFERENCES-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-NONSHOP-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-EXCHANGE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-PROGRESSION-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-LEGAL-STATE-REACHABILITY-R1.txt
           git commit -m 'research: measure recovered transport ingress'
           git pull --rebase origin main
           git push
