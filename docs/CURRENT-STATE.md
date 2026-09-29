@@ -3575,3 +3575,38 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **MATERIALIZABLE_RECOVERED_WORLD_WARP_GEOMETRY_R1 = CLOSED.**
 - Next deterministic seam: construct a strict 826-map `HistoricalWorldTopology` with only unambiguous unconditional Warp edges active. Collapse exact duplicate definitions, retain 32 multi-destination source groups as explicit unresolved candidates, and retain the 14 conditional-time edges as deferred/inactive evidence until their original time tokens and condition semantics are bound.
 
+## Phase 1 strict materializable runtime topology and Warp create-order closure — 2026-09-29
+
+- The default recovered runtime world now has three distinct topology layers that must not be conflated:
+  1. **materializable geometry evidence** = 2,826 classic-Warp records across 826 maps;
+  2. **strict unambiguous/unconditional runtime topology** = 2,692 active Warp edges;
+  3. deferred evidence = 32 multi-destination source groups + 14 conditional-time Warp records, with 8 non-materializable/quarantined records outside the default topology.
+- Materializable-world reachability over all 2,826 bounds-valid geometry records is closed by `research/recovered/STONEAGE-25-MATERIALIZABLE-WORLD-REACHABILITY-R1.txt`:
+  - materializable floor IDs = **826**;
+  - reachable floor IDs = **826**;
+  - resolved supplemental floors = **65/65 reachable**;
+  - orphan resolved supplemental floors = **0**;
+  - maximum supplemental depth = **23**.
+- `tools/stoneage_materializable_world_topology.py` then applies the stricter executable boundary:
+  - active unconditional/unambiguous Warp edges = **2,692**;
+  - exact-equivalent duplicate source groups = **39**, safely collapsed;
+  - multi-destination ambiguous source groups = **32**;
+  - conditional-time Warp records = **14**, retained as deferred evidence;
+  - unresolved floor 130 and its touching edges remain quarantined;
+  - active runtime sources are unique and no active edge carries an uninterpreted time token.
+- Full gameplay-model regression for the strict topology: GitHub Actions **36598302387 = PASS**.
+- A dedicated recovered create-order audit, `research/recovered/STONEAGE-25-AMBIGUOUS-WARP-CREATE-ORDER-R1.txt`, then closes the relative ordering question for all 32 ambiguous source cells:
+  - ambiguous sources = **32**;
+  - candidate records = **69**;
+  - **32/32 = SAME_FILE_ORDERED**;
+  - **0/32 = CROSS_FILE_UNORDERED**.
+- Pinned descendant controls support the ordering mechanism: map objects are tail-appended, overlap-event dispatch scans from the list head and stops at the first matching event object, and NPC generation processes create indices in ascending order. Because each competing group is in one create file, relative block order is deterministic even though cross-file discovery uses unsorted `readdir()`.
+- Critical 810 gateway:
+  - source `810,28,27`: first placement **3139** -> `809,18,13` at `genout/quiz.create` block **71**; later placement **3197** -> `829,18,13` at block **132**;
+  - source `810,29,27`: first placement **3141** -> `809,19,13` at block **73**; later placement **3199** -> `829,19,13` at block **134**.
+- End-to-end world-content run generating the create-order report: GitHub Actions **36599414334 = PASS**.
+- **MATERIALIZABLE_WORLD_REACHABILITY_R1 = CLOSED.**
+- **STRICT_MATERIALIZABLE_RUNTIME_TOPOLOGY_R1 = CLOSED.**
+- **AMBIGUOUS_WARP_CREATE_ORDER_R1 = CLOSED.**
+- Next deterministic seam: apply same-file first-match ordering to the 32 ambiguous source groups as an explicit runtime arbitration layer. Activate exactly one first candidate per ordered source, retain the other **37** candidate records as shadowed evidence, keep all 14 conditional-time records deferred, and recompute stable-seed reachability. Do not delete or rewrite shadowed Warp definitions.
+
