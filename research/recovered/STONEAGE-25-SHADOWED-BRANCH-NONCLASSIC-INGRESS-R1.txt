@@ -1,0 +1,31 @@
+StoneAge shadowed-branch non-classic transport ingress audit — R1
+SCOPE|ordered classic-Warp shadowed branch|WarpMan+FMWarpMan+Airplane floor-level ingress only
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|interactive/conditional transport edges are evidence of possible player ingress, not unconditional classic-Warp edges
+EXCLUSION|Bus|recovered route points are x,y only and do not create cross-floor transport edges
+COUNT|Airplane:derived_edges|16
+COUNT|Airplane:missing_args|0
+COUNT|Airplane:potential_ingress_edges|0
+COUNT|Airplane:refs|5
+COUNT|Airplane:resolved_args|5
+COUNT|Bus:refs|7
+COUNT|FMWarpMan:derived_edges|18
+COUNT|FMWarpMan:missing_args|0
+COUNT|FMWarpMan:potential_ingress_edges|0
+COUNT|FMWarpMan:refs|9
+COUNT|FMWarpMan:resolved_args|9
+COUNT|WarpMan:derived_edges|160
+COUNT|WarpMan:missing_args|0
+COUNT|WarpMan:potential_ingress_edges|1
+COUNT|WarpMan:refs|202
+COUNT|WarpMan:resolved_args|202
+COUNT|bus_cross_floor_edges|0
+COUNT|classic_reachable_floor_ids|815
+COUNT|derived_nonclassic_floor_edges|194
+COUNT|potential_ingress_destination_floors|1
+COUNT|potential_ingress_edges|1
+COUNT|shadowed_branch_floor_ids|11
+SHADOWED_BRANCH|floors=820,821,822,823,824,825,826,827,828,829,831
+POTENTIAL_INGRESS|kind=WarpMan|source_floor=811|destination_floor=820|condition=INTERACTIVE_DIALOGUE
+RESOLUTION|SHADOWED_BRANCH_NONCLASSIC_INGRESS_AUDITED
