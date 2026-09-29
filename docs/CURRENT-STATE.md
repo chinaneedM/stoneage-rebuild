@@ -3547,3 +3547,31 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_MATERIALIZABLE_WARP_GEOMETRY_R1 = CLOSED.**
 - Next deterministic seam: recompute reachability using only the 2,826 materializable Warp edges and the 761 stable seeds. Prove whether all **65** resolved supplemental floors remain reachable when floor 130 and the four floor-40 edges are quarantined; any orphaned supplemental floor must be reported rather than assumed reachable.
 
+## Phase 1 strict 826-floor materializable Warp geometry — 2026-09-29
+
+- `tools/stoneage_materializable_world_geometry_probe.py` now joins the immutable 761-floor stable manifest with the 65 resolved supplemental maps and audits classic-Warp geometry against the resulting **826 materializable maps** while preserving floor 130 as unresolved.
+- End-to-end world-content run **36597563574 = PASS** and committed `research/recovered/STONEAGE-25-MATERIALIZABLE-WORLD-WARP-GEOMETRY-R1.txt`.
+- Represented world = **827** floor IDs:
+  - stable = **761**;
+  - resolved supplemental = **65**;
+  - unresolved supplemental = **1** (floor 130).
+- Classic Warp records from represented source floors = **2,834**:
+  - materializable/bounds-valid records = **2,826**;
+  - quarantined records = **8**;
+  - non-single source rectangles = **0**;
+  - source out-of-bounds = **0**;
+  - destination out-of-bounds = **0**.
+- The eight quarantined records are fully explained:
+  - **4** edges target floor 40, which is outside the represented runtime world because no recovered server map supports that destination;
+  - **2** edges originate on unresolved floor 130;
+  - **2** edges target unresolved floor 130.
+- Materializable Warp geometry contains **14** conditional-time records. Their condition presence is retained but not interpreted.
+- Source-cell multiplicity audit over the 2,826 materializable records:
+  - unique source cells = **2,738**;
+  - duplicate source cells = **71**;
+  - **39** source cells contain only exact-equivalent duplicate definitions (**90 raw records**) and are safe to deduplicate;
+  - **32** source cells have genuinely different destinations (**69 raw records**) and cannot be converted into one active Warp without additional arbitration;
+  - none of the 71 duplicate-source groups contains a conditional-time Warp.
+- **MATERIALIZABLE_RECOVERED_WORLD_WARP_GEOMETRY_R1 = CLOSED.**
+- Next deterministic seam: construct a strict 826-map `HistoricalWorldTopology` with only unambiguous unconditional Warp edges active. Collapse exact duplicate definitions, retain 32 multi-destination source groups as explicit unresolved candidates, and retain the 14 conditional-time edges as deferred/inactive evidence until their original time tokens and condition semantics are bound.
+
