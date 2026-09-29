@@ -274,7 +274,15 @@ class DomainAudit:
 
     @property
     def counts(self) -> dict[str, int]:
-        out = collections.Counter()
+        out = collections.Counter({
+            "unsupported_atoms": 0,
+            "atoms_with_domain_witness": 0,
+            "atoms_without_domain_witness": 0,
+            "domain_satisfiable_rows": 0,
+            "domain_satisfiable_clauses": 0,
+            "atoms": 0,
+            "clauses": 0,
+        })
         out["ingress_rows"] = len(self.rows)
         out["missing_argument_files"] = int(self.missing_argument_files)
         out["configured_itemset_files"] = int(self.configured_itemset_files)
