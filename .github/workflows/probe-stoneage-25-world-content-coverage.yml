@@ -38,6 +38,8 @@ on:
       - tests/test_stoneage_supplemental_world_audit_probe.py
       - tools/stoneage_duplicate_floor_candidate_probe.py
       - tests/test_stoneage_duplicate_floor_candidate_probe.py
+      - tools/stoneage_materializable_world_geometry_probe.py
+      - tests/test_stoneage_materializable_world_geometry_probe.py
       - tools/stoneage_world_map_library.py
       - research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
       - research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz
@@ -75,7 +77,8 @@ jobs:
             tests.test_stoneage_server_only_static_map_probe \
             tests.test_stoneage_recovered_world_reachability_probe \
             tests.test_stoneage_supplemental_world_audit_probe \
-            tests.test_stoneage_duplicate_floor_candidate_probe -v
+            tests.test_stoneage_duplicate_floor_candidate_probe \
+            tests.test_stoneage_materializable_world_geometry_probe -v
 
       - name: Install archive tools
         run: |
@@ -634,6 +637,31 @@ jobs:
           test "$(grep -c '^CANDIDATE|' "$report")" = "2"
           grep -F 'RESOLUTION|' "$report"
 
+      - name: Build strict materializable recovered Warp geometry
+        run: |
+          set -euo pipefail
+          N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
+          test -n "$N"
+          report=research/recovered/STONEAGE-25-MATERIALIZABLE-WORLD-WARP-GEOMETRY-R1.txt
+          python3 -m tools.stoneage_materializable_world_geometry_probe \
+            --lineage-report research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt \
+            --coverage-report research/recovered/STONEAGE-25-STABLE-WORLD-CONTENT-COVERAGE-R1.txt \
+            --supplemental-audit research/recovered/STONEAGE-25-SUPPLEMENTAL-WORLD-AUDIT-R1.txt \
+            --npc-dir "$N" \
+            > "$report"
+
+      - name: Verify materializable recovered Warp geometry
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-25-MATERIALIZABLE-WORLD-WARP-GEOMETRY-R1.txt
+          test -s "$report"
+          grep -F 'COUNT|stable_floor_ids|761' "$report"
+          grep -F 'COUNT|resolved_supplemental_floor_ids|65' "$report"
+          grep -F 'COUNT|unresolved_supplemental_floor_ids|1' "$report"
+          grep -F 'COUNT|materializable_floor_ids|826' "$report"
+          test "$(grep -c '^MATERIALIZABLE_WARP|' "$report")" -gt 0
+          grep -F 'RESOLUTION|MATERIALIZABLE_RECOVERED_WORLD_WARP_GEOMETRY_CLOSED' "$report"
+
       - name: Delete transient proprietary payloads
         if: always()
         run: rm -rf /tmp/sa25
@@ -659,7 +687,8 @@ jobs:
           recovered_world_reachability=research/recovered/STONEAGE-25-RECOVERED-WORLD-REACHABILITY-R1.txt
           supplemental_world_audit=research/recovered/STONEAGE-25-SUPPLEMENTAL-WORLD-AUDIT-R1.txt
           floor_130_candidate_audit=research/recovered/STONEAGE-25-FLOOR-130-CANDIDATE-AUDIT-R1.txt
-          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding" "$map_names" "$outside_warp_destinations" "$missing_warp_destination_payloads" "$server_only_floor_gameplay" "$server_only_static_map" "$recovered_world_reachability" "$supplemental_world_audit" "$floor_130_candidate_audit"
+          materializable_warp_geometry=research/recovered/STONEAGE-25-MATERIALIZABLE-WORLD-WARP-GEOMETRY-R1.txt
+          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding" "$map_names" "$outside_warp_destinations" "$missing_warp_destination_payloads" "$server_only_floor_gameplay" "$server_only_static_map" "$recovered_world_reachability" "$supplemental_world_audit" "$floor_130_candidate_audit" "$materializable_warp_geometry"
           git diff --cached --quiet && exit 0
           git commit -m 'research: classify stable map world geometry'
           if ! git pull --rebase origin main; then
