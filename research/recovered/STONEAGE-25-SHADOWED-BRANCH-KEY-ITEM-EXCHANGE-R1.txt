@@ -4,7 +4,9 @@ SEMANTIC_SOURCE_VERSION|recovered25
 EVIDENCE_ROLE|LATER_RECOVERED
 RULE|all item IDs, event numbers, gold values, pet IDs, dialogue, NPC names, coordinates and raw arguments are withheld
 RULE|fixed descendant NPC_AcceptDel executes DelItem/DelStone/etc then GetItem -> NPC_EventAddItem
+RULE|economic witness uses recovered MAXLEVEL and pinned fixed-descendant _FIX_MAX_GOLD zero-trans cap=1000000; raw threshold/cost operands remain withheld
 COUNT|event_key:LV:records|2
+COUNT|level_domain_satisfiable_records|2
 COUNT|matching_award_records|2
 COUNT|matching_create_rows|2
 COUNT|missing_argument_files|0
@@ -12,9 +14,11 @@ COUNT|records_with_delpet|0
 COUNT|records_with_delstone|2
 COUNT|records_with_other_item_prerequisites|0
 COUNT|source_floors|1
+COUNT|state_domain_satisfiable_records|2
 COUNT|target_deleted_records|0
 COUNT|target_required_by_event_records|0
 COUNT|type:ACCEPT:records|2
-EXCHANGE_AWARD|ordinal=1|floor=2020|type=ACCEPT|event_or_clauses=1|event_atoms=1|event_keys=LV|event_operators=>|target_required_by_event=0|target_deleted=0|other_item_prerequisite_refs=0|other_item_reward_refs=0|delstone_present=1|delpet_present=0|eventno_present=1|field_keys=ACCEPTMSG,DELSTONE,EVENT,EVENTNO,GETITEM,ITEMFULLMSG,STONELESSMSG,THANKSMSG,TYPE
-EXCHANGE_AWARD|ordinal=2|floor=2020|type=ACCEPT|event_or_clauses=1|event_atoms=1|event_keys=LV|event_operators=>|target_required_by_event=0|target_deleted=0|other_item_prerequisite_refs=0|other_item_reward_refs=0|delstone_present=1|delpet_present=0|eventno_present=1|field_keys=ACCEPTMSG,DELSTONE,EVENT,EVENTNO,GETITEM,ITEMFULLMSG,STONELESSMSG,THANKSMSG,TYPE
+COUNT|zero_trans_affordable_records|2
+EXCHANGE_AWARD|ordinal=1|floor=2020|type=ACCEPT|event_or_clauses=1|event_atoms=1|event_keys=LV|event_operators=>|target_required_by_event=0|target_deleted=0|other_item_prerequisite_refs=0|other_item_reward_refs=0|delstone_present=1|delpet_present=0|eventno_present=1|level_domain_satisfiable=1|delstone_cost_class=LEVEL_SCALED|delstone_affordable_zero_trans=1|field_keys=ACCEPTMSG,DELSTONE,EVENT,EVENTNO,GETITEM,ITEMFULLMSG,STONELESSMSG,THANKSMSG,TYPE
+EXCHANGE_AWARD|ordinal=2|floor=2020|type=ACCEPT|event_or_clauses=1|event_atoms=1|event_keys=LV|event_operators=>|target_required_by_event=0|target_deleted=0|other_item_prerequisite_refs=0|other_item_reward_refs=0|delstone_present=1|delpet_present=0|eventno_present=1|level_domain_satisfiable=1|delstone_cost_class=LEVEL_SCALED|delstone_affordable_zero_trans=1|field_keys=ACCEPTMSG,DELSTONE,EVENT,EVENTNO,GETITEM,ITEMFULLMSG,STONELESSMSG,THANKSMSG,TYPE
 RESOLUTION|SHADOWED_BRANCH_KEY_ITEM_EXCHANGE_AWARD_AUDITED
