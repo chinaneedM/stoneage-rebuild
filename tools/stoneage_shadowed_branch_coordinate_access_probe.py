@@ -54,7 +54,7 @@ from tools.stoneage_shadowed_branch_warpman_satisfiability_probe import (
     _field,
     _warp_floors,
 )
-from tools.stoneage_transport_usage_probe import iter_blocks, magic_kind
+from tools.stoneage_transport_usage_probe import iter_blocks, magic_kind, template_map
 from tools.stoneage_versioned_world_geometry_probe import _rect_from_fields
 
 
@@ -106,6 +106,10 @@ class CoordinateAccessAudit:
     ingress_map_copy_status:str
     award_map_missing_metadata:int
     ingress_map_missing_metadata:int
+    award_conservative_blocker_cells:int
+    ingress_conservative_blocker_cells:int
+    award_to_hop_conservative_steps:int|None
+    landing_to_warpman_conservative_steps:int|None
 
     @property
     def closed(self)->bool:
@@ -119,6 +123,14 @@ class CoordinateAccessAudit:
             and self.landing_to_warpman_steps is not None
             and self.award_map_missing_metadata == 0
             and self.ingress_map_missing_metadata == 0
+        )
+
+    @property
+    def conservative_npc_birth_occupancy_closed(self)->bool:
+        return (
+            self.closed
+            and self.award_to_hop_conservative_steps is not None
+            and self.landing_to_warpman_conservative_steps is not None
         )
 
 
@@ -176,18 +188,25 @@ def _neighbors(
     static_map:SelectedStaticMap,
     x:int,
     y:int,
+    blocked:frozenset[tuple[int,int]]=frozenset(),
 ):
     for dx in (-1,0,1):
         for dy in (-1,0,1):
             if dx==0 and dy==0:
                 continue
             nx,ny=x+dx,y+dy
-            if not static_map.allowed(nx,ny):
+            if not static_map.allowed(nx,ny) or (nx,ny) in blocked:
                 continue
             if dx and dy:
-                if not static_map.allowed(x+dx,y):
+                if (
+                    not static_map.allowed(x+dx,y)
+                    or (x+dx,y) in blocked
+                ):
                     continue
-                if not static_map.allowed(x,y+dy):
+                if (
+                    not static_map.allowed(x,y+dy)
+                    or (x,y+dy) in blocked
+                ):
                     continue
             yield nx,ny
 
@@ -196,15 +215,19 @@ def _distance_to_any(
     static_map:SelectedStaticMap,
     starts:set[tuple[int,int]],
     goals:set[tuple[int,int]],
+    *,
+    blocked:frozenset[tuple[int,int]]=frozenset(),
 )->int|None:
     starts={
         (int(x),int(y)) for x,y in starts
         if 0 <= int(x) < static_map.width
         and 0 <= int(y) < static_map.height
+        and (int(x),int(y)) not in blocked
     }
     goals={
         (int(x),int(y)) for x,y in goals
         if static_map.allowed(int(x),int(y))
+        and (int(x),int(y)) not in blocked
     }
     if not starts or not goals:
         return None
@@ -215,7 +238,7 @@ def _distance_to_any(
     seen=set(starts)
     while queue:
         (x,y),depth=queue.popleft()
-        for point in _neighbors(static_map,x,y):
+        for point in _neighbors(static_map,x,y,blocked):
             if point in seen:
                 continue
             if point in goals:
@@ -249,6 +272,66 @@ def _interaction_cells(
                     if static_map.allowed(*point):
                         goals.add(point)
     return goals
+
+
+def _conservative_npc_birth_blockers(
+    npc_dir:Path,
+    *,
+    floor_ids:set[int],
+)->dict[int,frozenset[tuple[int,int]]]:
+    """Treat every recovered NPC birth region as blocking except classic Warp.
+
+    Fixed descendant npc_warp.c explicitly sets CHAR_ISOVERED=1. All other
+    recovered NPC placements are conservatively treated as non-overable here,
+    even when their real runtime profile may be less restrictive.
+    """
+    files=sorted(
+        (p for p in npc_dir.rglob("*") if p.is_file()),
+        key=lambda p:str(p).lower(),
+    )
+    templates=template_map([
+        p for p in files if magic_kind(p)=="template"
+    ])
+    function_by_template={
+        name:defs[0].strip().lower()
+        for name,defs in templates.items()
+        if len(defs)==1
+    }
+    blocked={int(floor):set() for floor in floor_ids}
+    for create in (p for p in files if magic_kind(p)=="create"):
+        for entries in iter_blocks(create):
+            fields={}; enemies=[]
+            for key,value in entries:
+                if key==b"enemy":
+                    enemies.append(value)
+                else:
+                    fields[key]=value
+            try:
+                floor=int(fields.get(b"floorid",b"0"))
+            except ValueError:
+                continue
+            if floor not in blocked:
+                continue
+            birth=_rect_from_fields(
+                fields,center_key=b"borncenter",corner_key=b"borncorner"
+            )
+            if birth is None:
+                continue
+            for enemy in enemies:
+                name,_sep,_arg=enemy.partition(b"|")
+                functionset=function_by_template.get(name.strip(),b"")
+                if functionset==b"warp":
+                    continue
+                x1,y1,x2,y2=birth
+                blocked[floor].update(
+                    (x,y)
+                    for x in range(x1,x2+1)
+                    for y in range(y1,y2+1)
+                )
+    return {
+        floor:frozenset(cells)
+        for floor,cells in blocked.items()
+    }
 
 
 def _matching_award_placements(
@@ -421,13 +504,25 @@ def analyze(
             ),
             award_map_missing_metadata=max(0,award_missing),
             ingress_map_missing_metadata=max(0,ingress_missing),
+            award_conservative_blocker_cells=0,
+            ingress_conservative_blocker_cells=0,
+            award_to_hop_conservative_steps=None,
+            landing_to_warpman_conservative_steps=None,
         )
 
     award_goals=_interaction_cells(award_map,awards)
     warpman_goals=_interaction_cells(ingress_map,warpmen)
+    blockers=_conservative_npc_birth_blockers(
+        npc_dir,
+        floor_ids={award_floor,ingress_floor},
+    )
+    award_blocked=blockers.get(award_floor,frozenset())
+    ingress_blocked=blockers.get(ingress_floor,frozenset())
 
     best_award=None
     best_ingress=None
+    best_award_conservative=None
+    best_ingress_conservative=None
     for hop in hops:
         award_distance=_distance_to_any(
             award_map,
@@ -438,6 +533,18 @@ def analyze(
             ingress_map,
             starts={(hop.destination_x,hop.destination_y)},
             goals=warpman_goals,
+        )
+        award_conservative=_distance_to_any(
+            award_map,
+            starts=award_goals,
+            goals={(hop.source_x,hop.source_y)},
+            blocked=award_blocked,
+        )
+        ingress_conservative=_distance_to_any(
+            ingress_map,
+            starts={(hop.destination_x,hop.destination_y)},
+            goals=warpman_goals,
+            blocked=ingress_blocked,
         )
         if award_distance is not None:
             best_award=(
@@ -450,6 +557,18 @@ def analyze(
                 ingress_distance
                 if best_ingress is None
                 else min(best_ingress,ingress_distance)
+            )
+        if award_conservative is not None:
+            best_award_conservative=(
+                award_conservative
+                if best_award_conservative is None
+                else min(best_award_conservative,award_conservative)
+            )
+        if ingress_conservative is not None:
+            best_ingress_conservative=(
+                ingress_conservative
+                if best_ingress_conservative is None
+                else min(best_ingress_conservative,ingress_conservative)
             )
 
     return CoordinateAccessAudit(
@@ -464,6 +583,10 @@ def analyze(
         ingress_map_copy_status=ingress_map.copy_status,
         award_map_missing_metadata=award_missing,
         ingress_map_missing_metadata=ingress_missing,
+        award_conservative_blocker_cells=len(award_blocked),
+        ingress_conservative_blocker_cells=len(ingress_blocked),
+        award_to_hop_conservative_steps=best_award_conservative,
+        landing_to_warpman_conservative_steps=best_ingress_conservative,
     )
 
 
@@ -493,6 +616,8 @@ def emit(audit:CoordinateAccessAudit)->None:
     print(f"COUNT|warpman_interaction_cells|{audit.warpman_interaction_cells}")
     print(f"COUNT|award_map_missing_metadata|{audit.award_map_missing_metadata}")
     print(f"COUNT|ingress_map_missing_metadata|{audit.ingress_map_missing_metadata}")
+    print(f"COUNT|award_conservative_npc_birth_blocker_cells|{audit.award_conservative_blocker_cells}")
+    print(f"COUNT|ingress_conservative_npc_birth_blocker_cells|{audit.ingress_conservative_blocker_cells}")
     print(f"MAP_COPY|award_floor|{audit.award_map_copy_status}")
     print(f"MAP_COPY|ingress_floor|{audit.ingress_map_copy_status}")
     print(
@@ -506,6 +631,20 @@ def emit(audit:CoordinateAccessAudit)->None:
         f"steps={audit.landing_to_warpman_steps if audit.landing_to_warpman_steps is not None else -1}"
     )
     print(f"STATIC_COORDINATE_CHAIN|witness={int(audit.closed)}")
+    print(
+        "PATH|award_interaction_to_classic_hop_with_conservative_npc_birth_blockers|"
+        f"reachable={int(audit.award_to_hop_conservative_steps is not None)}|"
+        f"steps={audit.award_to_hop_conservative_steps if audit.award_to_hop_conservative_steps is not None else -1}"
+    )
+    print(
+        "PATH|classic_landing_to_warpman_interaction_with_conservative_npc_birth_blockers|"
+        f"reachable={int(audit.landing_to_warpman_conservative_steps is not None)}|"
+        f"steps={audit.landing_to_warpman_conservative_steps if audit.landing_to_warpman_conservative_steps is not None else -1}"
+    )
+    print(
+        "CONSERVATIVE_NPC_BIRTH_OCCUPANCY_CHAIN|"
+        f"witness={int(audit.conservative_npc_birth_occupancy_closed)}"
+    )
     print(OUTPUT_RESOLUTION)
 
 
