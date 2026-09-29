@@ -71,6 +71,8 @@ class MissingWarpDestinationPayloadProbeTests(unittest.TestCase):
             )
             self.assertEqual(by_id[20002].client_map_dimensions, ((1, 1),))
             self.assertEqual(by_id[20002].server_map_dimensions, ((1, 1),))
+            self.assertEqual(len(by_id[20002].server_map_sha256), 1)
+            self.assertEqual(len(by_id[20002].server_map_sha256[0]), 64)
 
             self.assertEqual(by_id[20004].status, CLIENT_MAP_ONLY)
             self.assertTrue(by_id[20004].client_map_present)
