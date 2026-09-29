@@ -1,6 +1,6 @@
 # Current State
 
-Last updated: 2026-09-27
+Last updated: 2026-09-29
 
 ## Current phase
 
@@ -3216,3 +3216,22 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Main gameplay-model integration run **36364968527 = PASS**.
 - **VERSIONED_NPC_BEHAVIOR_COVERAGE_R1 = CLOSED.**
 - Priority consequence: ordinary NPC-core archaeology is no longer the critical path. Keep the four symbolic graphic/type aliases and 62 later/family placements explicit, but return primary effort to provenance-safe client/world-content reconstruction instead of reopening already closed NPC mechanics.
+
+## Phase 1 versioned-world recovered-name overlay — 2026-09-29
+
+- The stable-world map-name decode report is now consumed by an engine-neutral, provenance-safe semantic overlay: `tools/stoneage_versioned_world_names.py`.
+- The overlay binds name evidence only after cross-domain validation against the existing `VersionedWorldManifest`:
+  - stable world floors = **761**;
+  - floors with dimension-matched recovered server-map name evidence = **572**;
+  - conflict-free recovered name-text rows = **571**;
+  - unresolved name rows = **1**;
+  - floors with no recovered name evidence = **189**;
+  - floors without a conflict-free recovered name = **190**.
+- The evidence-floor set is required to equal the manifest's existing `server_map_present` floor set exactly. Unknown floors, missing server-map floors, extra name floors, count drift, source-version drift and truncated reports are rejected rather than tolerated.
+- Floor **31001** remains explicitly unresolved because the recovered server copies disagree between `加特洛的洞窟１樓|0` and `加都洛的洞窟１樓|0`. No candidate is selected automatically.
+- Recovered strings such as `薩姆吉爾的武器店|0` intentionally preserve the legacy `|0` suffix. The project currently treats this as **recovered name text**, not a presentation-cleaned display label; stripping/interpreting the suffix would require separate evidence.
+- Every name row remains `SEMANTIC_SOURCE_VERSION=recovered25` / `LATER_RECOVERED`. The overlay cannot promote recovered-2.5 text into Taiwan-v1 membership or naming evidence.
+- Full gameplay-model regression including the new overlay tests: GitHub Actions **36503374942 = PASS**.
+- **VERSIONED_WORLD_RECOVERED_NAME_OVERLAY_R1 = CLOSED.**
+- Next deterministic world-content seam: use the conflict-free recovered name text to annotate world/warp diagnostics and graph inspection while preserving source-version provenance. Do **not** turn these strings into canonical UI labels or Taiwan-v1 names until earlier-version/client evidence independently supports that promotion.
+
