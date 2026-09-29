@@ -3286,3 +3286,39 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **MISSING_DAT_WARP_DESTINATION_PAYLOAD_SURFACES_R1 = CLOSED.**
 - Next deterministic seam: determine how the classic client enters/renders these **server-only LS2MAP** floors. Audit the client/server map-transfer and map-transition protocol before deciding how the single-player reconstruction should materialize them. Do not synthesize client DAT/MAP payloads merely because the server copy exists.
 
+## Phase 1 server-authoritative runtime map materialization — 2026-09-29
+
+- The classic map-delivery seam is now closed across direct Taiwan-v1 client evidence and a fixed descendant server control, with the evidence classes kept separate in `research/mechanics/STONEAGE-MAP-DELIVERY-MATERIALIZATION-R1.md`.
+- **Taiwan-v1 direct runtime FACT**:
+  - the accepted retail-disc tree contains no ordinary preinstalled field-map/cache files;
+  - the v1 runtime has create/read/write/update paths for `map\\%d.dat`;
+  - client -> server `M` is a floor + rectangle request;
+  - server -> client `M` is floor + rectangle + map payload;
+  - server -> client `MC` adds tile/object/event checksum/control fields;
+  - v1 `M` receive reaches the writable cache path and v1 `MC` reaches the read/check/create-if-missing path.
+- **Pinned descendant CONTROL** (`BismarckDD/Stoneage@999ffdf1d220ec6666eb65339180689c9caf1876`) closes the server-side semantic loop without being promoted to launch-era proof:
+  - `GmsvServer_M_recv` accepts the requested rectangle and calls `MAP_getdataFromRECT`;
+  - `MAP_getdataFromRECT` clips against the authoritative server floor and serializes map display data plus tile/object/event planes;
+  - `GmsvServer_M_send` returns that rectangle;
+  - descendant `MC` sends region checksum/control data, and the client requests `M` when its cache disagrees;
+  - descendant walking code incrementally checks newly exposed map strips rather than requiring one monolithic preinstalled client map.
+- Therefore the durable reconstruction boundary is **authoritative map state -> runtime map materialization**, not the historical socket transport.
+- `tools/stoneage_map_delivery_model.py` now models the transport-independent semantic contract:
+  - MC/check match -> accept cached/internal region;
+  - MC/check mismatch -> request/materialize the same region;
+  - M/payload -> materialize the rectangle;
+  - server-only recovered floors -> local engine-neutral materialization plans with no network requirement and no fabricated historical client-file claim.
+- The real four-floor payload report is regression-bound into that model:
+  - 20002 = 50x100;
+  - 20004 = 80x80;
+  - 20006 = 80x40;
+  - 20009 = 100x100;
+  - all remain `LATER_RECOVERED`;
+  - all materialize under `SERVER_AUTHORITY_INTERNAL_MAP`;
+  - no legacy cache file is required by the modern single-player runtime.
+- A provenance-promotion regression test explicitly rejects an input that relabels these rows as `EARLY_MEMBERSHIP_PROVEN`.
+- DD-014 records the production rule: preserve the authoritative-map/materialization semantics, but do not reproduce obsolete networking merely to emulate historical transport. Any future legacy `map\\%d.dat` compatibility cache must be labeled derived/transient rather than original evidence.
+- Full gameplay-model regression including the materialization model: GitHub Actions **36505111919 = PASS**.
+- **SERVER_AUTHORITY_RUNTIME_MAP_MATERIALIZATION_R1 = CLOSED.**
+- Next deterministic world-content seam: audit gameplay/content coverage **inside the four server-only floors**. Their terrain can now be materialized, but they must not enter the reconstructed world as dead-end geometry if their NPC, classic Warp, encounter or exit content was excluded by the current 761-floor stable-world filter.
+
