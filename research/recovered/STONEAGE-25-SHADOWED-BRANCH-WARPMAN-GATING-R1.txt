@@ -11,5 +11,5 @@ COUNT|target_orphan_floors|11
 COUNT|unique_ingress_destination_floors|1
 COUNT|warp_msg_required:0|1
 COUNT|warpman_ingress_rows|1
-WARPMAN_INGRESS_GATE|source_floor=811|destination_floor=820|destination_count=1|target_occurrences=1|newwarpman=0|warp_msg_required=0|checkparty_present=0|checkparty_explicit_false=0|free_present=1|free_allfree=0|paymsg_present=1|normalmsg_present=0|money_class=NEGATIVE_DISABLED|newtime_present=0|ordinary_route=CONDITION_DEPENDENT
+WARPMAN_INGRESS_GATE|source_floor=811|destination_floor=820|destination_count=1|target_occurrences=1|newwarpman=0|warp_msg_required=0|checkparty_present=0|checkparty_explicit_false=0|free_present=1|free_allfree=0|paymsg_present=1|normalmsg_present=0|money_class=NEGATIVE_DISABLED|newtime_present=0|free_or_groups=1|free_condition_atoms=3|free_condition_kinds=ITEM,LEVEL|ordinary_route=CONDITION_DEPENDENT
 RESOLUTION|SHADOWED_BRANCH_WARPMAN_GATING_AUDITED
