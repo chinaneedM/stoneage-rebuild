@@ -3413,3 +3413,35 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_RUNTIME_CLASSIC_WARP_REACHABILITY_R1 = CLOSED.**
 - Next deterministic seam: construct a provenance-safe **supplemental world extension** for the 66 runtime-reachable later floors while leaving the 761-floor stable manifest unchanged. First audit server-map copy uniqueness, payload hashes/dimensions, mapset collision closure, and floor-level gameplay coverage for all 66 nodes; do not select among divergent duplicate server copies without evidence.
 
+## Phase 1 runtime-reachable supplemental world audit — 2026-09-29
+
+- The **66** recovered25 floors reached beyond the 761-floor stable seed manifest are now audited as an independent supplemental layer by `tools/stoneage_supplemental_world_audit_probe.py`.
+- End-to-end world-content run **36594645500 = PASS** and committed `research/recovered/STONEAGE-25-SUPPLEMENTAL-WORLD-AUDIT-R1.txt`.
+- Server-map copy identity:
+  - **65** supplemental floors have exactly one recovered server-map copy;
+  - **0** have multiple byte-identical copies;
+  - **1** has divergent duplicate server copies: floor **130**.
+- Floor **130** is deliberately unresolved:
+  - `extra/130`, 60x60, SHA-256 `b62fca539743b5ac91f38b344e34e4655a287d4e71582d8e3547c83fc0ee8fa2`;
+  - `family/130`, 60x60, SHA-256 `8f6e5e1983830694f090decbb32417ea1b6ba3ac0f61953495a910d513e2fe7d`;
+  - both share the same embedded floor ID and dimensions but differ in payload bytes;
+  - no copy is selected automatically, so its static collision/materialization fields remain unknown.
+- Static map closure for the other **65** floors:
+  - static-materializable floors = **65**;
+  - unresolved floors = **1**;
+  - floors with missing mapset image metadata among materialized floors = **0**;
+  - materialized cells = **2,972,075**;
+  - ordinary walkable cells = **885,753**;
+  - flying walkable cells = **2,972,075**.
+- Supplemental gameplay coverage is substantial rather than topology-only:
+  - floors with effective NPC semantics = **66/66**;
+  - floors with Warp-functionset semantics = **66/66**;
+  - effective NPC creates = **1,042**;
+  - Warp-functionset creates = **668**;
+  - floors with encounter rows = **50/66**;
+  - floors with active encounter rows = **50/66**;
+  - encounter rows = **247**, all **247** active.
+- The audit preserves each floor's reachability depth/status plus recovered server path, SHA-256, dimensions, collision closure, and derived gameplay counts, while retaining `recovered25 / LATER_RECOVERED`.
+- **RECOVERED25_SUPPLEMENTAL_WORLD_AUDIT_R1 = CLOSED.**
+- Next deterministic seam: construct an engine-neutral supplemental-world manifest that references the 761-floor stable manifest without mutating it. The extension may expose **65 resolved/materializable supplemental floors** plus **1 unresolved duplicate-copy floor (130)**, but must never silently select a floor-130 payload or promote any supplemental floor into Taiwan-v1 membership.
+
