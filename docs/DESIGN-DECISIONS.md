@@ -184,3 +184,23 @@ Architecture consequences:
 Future optionality: if the project ever reaches a point where the relevant StoneAge rights-holder is willing to discuss authorization, licensing, collaboration or adoption, the reconstructed design and technical specifications should be capable of serving as a credible prototype/foundation for an officially authorized product. This is a possible future path, not an assumption or current claim of authorization.
 
 Until such authorization exists, the project must not present itself as official, imply affiliation, or depend on public operation using protected StoneAge assets/branding. Production code and newly created/recreated assets should continue to follow DD-007's copyright-aware boundary.
+
+## DD-014 — Preserve server-authoritative runtime map materialization semantics without reproducing legacy networking
+
+**Status:** Accepted
+
+The accepted Taiwan/Waei v1.0 runtime proves that ordinary field-map content may be created and updated in a local `map\\%d.dat` cache at runtime through the map `M` / `MC` protocol path rather than being required as preinstalled retail-disc files. Fixed descendant source is consistent with the same semantic boundary: the server owns map tile/object/event state, sends region checks/control, and supplies requested region payloads when the client cache is absent or stale.
+
+The modern reconstruction must preserve this **authoritative map state -> runtime materialization** boundary while following DD-013's local-first deployment model.
+
+Consequences:
+
+- The single-player runtime does **not** need to reproduce sockets, LSSPROTO transport, account services, or a separate online map server merely to preserve historical map behavior.
+- Engine-neutral local world data is authoritative at runtime. Historical map-delivery packets are evidence about data ownership and update semantics, not a mandatory production transport architecture.
+- A recovered map that exists only on a preserved server surface may be decoded into the internal world-map representation when its provenance and format are sufficiently validated.
+- Such content retains its actual provenance. In particular, recovered-2.5 server-only maps remain `LATER_RECOVERED`; the fact that the Taiwan-v1 runtime could download maps does **not** prove that a specific later map existed in Taiwan v1.
+- The reconstruction must not fabricate a historical client DAT/MAP artifact in order to make a server-only map look client-native. Any compatibility cache generated for testing or emulation must be explicitly labeled derived/transient rather than original evidence.
+- Map delivery should be modeled semantically as region validation, region request, and region materialization so the same deterministic world layer can support the current in-process single-player runtime and a possible future authorized client/server split without changing map provenance.
+
+Evidence closure: `research/mechanics/STONEAGE-MAP-DELIVERY-MATERIALIZATION-R1.md`.
+
