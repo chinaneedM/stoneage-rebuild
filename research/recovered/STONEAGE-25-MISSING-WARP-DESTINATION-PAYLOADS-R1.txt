@@ -1,0 +1,17 @@
+StoneAge missing-DAT warp destination payload audit — R1
+SCOPE|outside-stable classic-Warp destinations with no recovered25 client DAT|client-MAP+server-LS2MAP-presence
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|payload presence on recovered25 surfaces does not prove Taiwan-v1 historical membership
+COUNT|client_map_present:0:edges|4
+COUNT|client_map_present:0:ids|4
+COUNT|missing_dat_destination_ids|4
+COUNT|missing_dat_edges|4
+COUNT|server_map_present:1:edges|4
+COUNT|server_map_present:1:ids|4
+COUNT|status:SERVER_MAP_ONLY:edges|4
+COUNT|status:SERVER_MAP_ONLY:ids|4
+MISSING_DAT_DESTINATION|floor=20002|edge_refs=1|status=SERVER_MAP_ONLY|client_map_paths=|client_map_dimensions=|client_map_sha256=|server_map_paths=jyaruga/dungeon/dan_2-00-02|server_map_dimensions=50x100
+MISSING_DAT_DESTINATION|floor=20004|edge_refs=1|status=SERVER_MAP_ONLY|client_map_paths=|client_map_dimensions=|client_map_sha256=|server_map_paths=jyaruga/dungeon/dan_2-00-04|server_map_dimensions=80x80
+MISSING_DAT_DESTINATION|floor=20006|edge_refs=1|status=SERVER_MAP_ONLY|client_map_paths=|client_map_dimensions=|client_map_sha256=|server_map_paths=jyaruga/dungeon/dan_2-00-06|server_map_dimensions=80x40
+MISSING_DAT_DESTINATION|floor=20009|edge_refs=1|status=SERVER_MAP_ONLY|client_map_paths=|client_map_dimensions=|client_map_sha256=|server_map_paths=jyaruga/dungeon/dan_2-00-09|server_map_dimensions=100x100
+RESOLUTION|MISSING_DAT_WARP_DESTINATION_PAYLOADS_CLASSIFIED
