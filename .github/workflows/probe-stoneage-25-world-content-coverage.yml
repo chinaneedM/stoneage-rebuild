@@ -24,6 +24,8 @@ on:
       - tests/test_stoneage_stable_map_name_decode_probe.py
       - tools/stoneage_warp_destination_corpus_probe.py
       - tests/test_stoneage_warp_destination_corpus_probe.py
+      - tools/stoneage_missing_warp_destination_payload_probe.py
+      - tests/test_stoneage_missing_warp_destination_payload_probe.py
       - tools/stoneage_world_map_library.py
       - research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
       - research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz
@@ -54,7 +56,8 @@ jobs:
             tests.test_stoneage_recovered25_runtime_graphic_mapping_probe \
             tests.test_stoneage_stable_map_name_encoding_probe \
             tests.test_stoneage_stable_map_name_decode_probe \
-            tests.test_stoneage_warp_destination_corpus_probe -v
+            tests.test_stoneage_warp_destination_corpus_probe \
+            tests.test_stoneage_missing_warp_destination_payload_probe -v
 
       - name: Install archive tools
         run: |
@@ -434,8 +437,43 @@ jobs:
           grep -F 'COUNT|classic_warp_edges|2264' "$report"
           grep -F 'COUNT|outside_stable_edges|355' "$report"
           grep -F 'COUNT|outside_stable_destination_ids|30' "$report"
-          ! grep -Eq 'COUNT\\|status:(CLIENT_DAT_MISSING|CLIENT_DAT_DUPLICATE|CLIENT_DAT_INVALID):ids\\|[1-9]' "$report"
+          grep -F 'COUNT|status:CHANGED:ids|13' "$report"
+          grep -F 'COUNT|status:CHANGED:edges|283' "$report"
+          grep -F 'COUNT|status:SAME_SHA_NONSTABLE:ids|13' "$report"
+          grep -F 'COUNT|status:SAME_SHA_NONSTABLE:edges|68' "$report"
+          grep -F 'COUNT|status:CLIENT_DAT_MISSING:ids|4' "$report"
+          grep -F 'COUNT|status:CLIENT_DAT_MISSING:edges|4' "$report"
+          grep -F 'COUNT|recovered25_tw1_asset_compatible:1:ids|6' "$report"
+          grep -F 'COUNT|recovered25_tw1_asset_compatible:1:edges|98' "$report"
+          grep -F 'COUNT|recovered25_tw1_asset_compatible:0:ids|20' "$report"
+          grep -F 'COUNT|recovered25_tw1_asset_compatible:0:edges|253' "$report"
+          test "$(grep -c '^DESTINATION|' "$report")" = "30"
+          ! grep -Eq '^DESTINATION\\|.*status=(CLIENT_DAT_DUPLICATE|CLIENT_DAT_INVALID)(\\||$)' "$report"
           grep -F 'RESOLUTION|OUTSIDE_STABLE_WARP_DESTINATIONS_CLASSIFIED' "$report"
+
+      - name: Audit missing-DAT warp destination payload surfaces
+        run: |
+          set -euo pipefail
+          CLIENT_MAP_ROOT="$(find /tmp/sa25/out -type d -path '*/SA2.5主程式/stoneage2.5/map' -print -quit)"
+          SERVER_MAP_ROOT="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
+          test -n "$CLIENT_MAP_ROOT" && test -n "$SERVER_MAP_ROOT"
+          report=research/recovered/STONEAGE-25-MISSING-WARP-DESTINATION-PAYLOADS-R1.txt
+          python3 -m tools.stoneage_missing_warp_destination_payload_probe \
+            --first-stage-report research/recovered/STONEAGE-25-OUTSIDE-STABLE-WARP-DESTINATIONS-R1.txt \
+            --client-map-root "$CLIENT_MAP_ROOT" \
+            --server-map-root "$SERVER_MAP_ROOT" \
+            > "$report"
+
+      - name: Verify missing-DAT warp destination payload audit
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-25-MISSING-WARP-DESTINATION-PAYLOADS-R1.txt
+          test -s "$report"
+          grep -F 'EVIDENCE_ROLE|LATER_RECOVERED' "$report"
+          grep -F 'COUNT|missing_dat_destination_ids|4' "$report"
+          grep -F 'COUNT|missing_dat_edges|4' "$report"
+          test "$(grep -c '^MISSING_DAT_DESTINATION|' "$report")" = "4"
+          grep -F 'RESOLUTION|MISSING_DAT_WARP_DESTINATION_PAYLOADS_CLASSIFIED' "$report"
 
       - name: Delete transient proprietary payloads
         if: always()
@@ -456,7 +494,8 @@ jobs:
           map_name_encoding=research/recovered/STONEAGE-25-STABLE-MAP-NAME-ENCODING-R1.txt
           map_names=research/recovered/STONEAGE-25-STABLE-MAP-NAMES-R1.txt
           outside_warp_destinations=research/recovered/STONEAGE-25-OUTSIDE-STABLE-WARP-DESTINATIONS-R1.txt
-          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding" "$map_names" "$outside_warp_destinations"
+          missing_warp_destination_payloads=research/recovered/STONEAGE-25-MISSING-WARP-DESTINATION-PAYLOADS-R1.txt
+          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding" "$map_names" "$outside_warp_destinations" "$missing_warp_destination_payloads"
           git diff --cached --quiet && exit 0
           git commit -m 'research: classify stable map world geometry'
           if ! git pull --rebase origin main; then
