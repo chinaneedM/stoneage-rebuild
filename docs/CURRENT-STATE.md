@@ -3500,3 +3500,27 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **FLOOR_130_VERSION_FORK_ARBITRATION_R1 = CLOSED.**
 - Next deterministic seam: construct the strict **826-floor materializable recovered runtime geometry/topology** while quarantining floor 130 and all edges touching it. Preserve full classic-Warp source rectangles first; only collapse to a single `MapPosition` when the recovered source geometry is actually a single cell.
 
+## Phase 1 floor-130 duplicate-copy version-fork arbitration — 2026-09-29
+
+- The sole unresolved supplemental floor, **130**, has now been compared directly across recovered25 client/server surfaces and an archived-2003 -> recovered25 DAT lineage.
+- Recovered25 candidate audit `research/recovered/STONEAGE-25-FLOOR-130-CANDIDATE-AUDIT-R1.txt`:
+  - client DAT = 60x60, SHA-256 `85d710a270c6b945de21de53c9257ebaf38647cb54e77071db194cf5c5e203f3`;
+  - two server candidates remain byte-divergent;
+  - neither server candidate is an exact tile+parts match to the recovered25 DAT;
+  - `family/130` is walkable at all 2 incoming classic-Warp destinations and both outgoing Warp source cells;
+  - `extra/130` blocks all four corresponding Warp diagnostic cells;
+  - automatic candidate selection remains `NONE`.
+- Archived-2003 -> recovered25 DAT lineage audit `research/recovered/STONEAGE-2003-25-FLOOR-130-CANDIDATE-LINEAGE-R1.txt`:
+  - DAT static change = **1,186 tile cells + 53 parts cells**; event plane change = **0**;
+  - on every changed tile/parts cell, `family/130` matches the archived-2003 side and never the recovered25 side;
+  - on every changed tile/parts cell, `extra/130` matches the recovered25 side and never the archived-2003 side;
+  - neither candidate is a complete exact static match to either DAT generation.
+- `tools/stoneage_floor130_arbitration.py` therefore records two independent dimensions rather than collapsing them into a synthetic winner:
+  - `family/130` = `ARCHIVED2003_ALIGNED` + `WARP_RUNTIME_CONSISTENT`;
+  - `extra/130` = `RECOVERED25_ALIGNED` + `WARP_RUNTIME_CONFLICTING`.
+- Resolution is deliberately **`PRESERVE_VERSION_FORK`** with `selected_path=None`. Temporal alignment is evidence of version evolution; Warp consistency is a separate runtime-consistency signal. Neither is sufficient to silently replace the other.
+- Stable descendant duplicate-floor loading remains last-loaded-wins, but its recursive directory enumeration is unsorted `readdir()`; filesystem enumeration order cannot establish a historical canonical candidate.
+- Full gameplay-model regression with the arbitration lock: GitHub Actions **36597019931 = PASS**.
+- **RECOVERED25_FLOOR130_VERSION_FORK_R1 = CLOSED.**
+- Next deterministic seam: bind the explicit floor-130 arbitration into the supplemental-world extension so unresolved floor 130 carries its two named version candidates and evidence dimensions as structured data, while retaining **no default materialization choice**.
+
