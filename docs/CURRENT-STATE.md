@@ -3445,3 +3445,29 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_SUPPLEMENTAL_WORLD_AUDIT_R1 = CLOSED.**
 - Next deterministic seam: construct an engine-neutral supplemental-world manifest that references the 761-floor stable manifest without mutating it. The extension may expose **65 resolved/materializable supplemental floors** plus **1 unresolved duplicate-copy floor (130)**, but must never silently select a floor-130 payload or promote any supplemental floor into Taiwan-v1 membership.
 
+## Phase 1 provenance-safe supplemental world manifest — 2026-09-29
+
+- `tools/stoneage_supplemental_world_manifest.py` now consumes the closed 66-floor supplemental audit as a separate engine-neutral extension over the existing stable `VersionedWorldManifest`.
+- The stable manifest remains immutable in scope:
+  - stable floors = **761** before and after extension construction;
+  - no supplemental floor may overlap or replace a stable floor ID.
+- Supplemental state is represented explicitly as:
+  - resolved/materializable supplemental floors = **65**;
+  - unresolved supplemental floors = **1** (floor **130**);
+  - total runtime-reachable floor IDs represented = **827**;
+  - map definitions safe to materialize today = **826**.
+- Every resolved supplemental map definition:
+  - remains `LATER_RECOVERED`;
+  - uses `RESOURCE_RELATION_UNKNOWN` rather than claiming Taiwan-v1 resource compatibility;
+  - carries only recovered25 as its source version;
+  - binds the server LS2MAP SHA-256 from the supplemental audit;
+  - cannot claim early historical membership.
+- Floor 130 is represented as an unresolved candidate set, not a map definition. Its two server paths, dimensions and divergent SHA-256 values are preserved, and `materializable_map_topology()` excludes it.
+- Regression tests explicitly reject:
+  - promotion of the supplemental audit to `EARLY_MEMBERSHIP_PROVEN`;
+  - silent materialization of a `DUPLICATE_DIVERGENT` floor;
+  - any overlap that would replace a stable-world map.
+- Full gameplay-model regression including the supplemental manifest: GitHub Actions **36595225971 = PASS**.
+- **RECOVERED25_SUPPLEMENTAL_WORLD_MANIFEST_R1 = CLOSED.**
+- Next deterministic seam: resolve or intentionally preserve the floor-130 duplicate-copy conflict. Stable descendant server code is last-loaded-wins for duplicate floor IDs, but recursive file enumeration uses unsorted `readdir()`; path-name ordering therefore cannot establish the historical active copy. Compare both recovered server copies directly against recovered25 client `130.dat` / client-map surfaces and floor-130 runtime content before selecting either candidate.
+
