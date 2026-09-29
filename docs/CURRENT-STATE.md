@@ -3235,3 +3235,26 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **VERSIONED_WORLD_RECOVERED_NAME_OVERLAY_R1 = CLOSED.**
 - Next deterministic world-content seam: use the conflict-free recovered name text to annotate world/warp diagnostics and graph inspection while preserving source-version provenance. Do **not** turn these strings into canonical UI labels or Taiwan-v1 names until earlier-version/client evidence independently supports that promotion.
 
+## Phase 1 recovered-name warp-graph diagnostics — 2026-09-29
+
+- The 2,264 recovered classic `Warp` edges are now joined read-only to the provenance-safe recovered-name overlay in `tools/stoneage_versioned_world_warp_names.py`.
+- This layer does **not** modify warp behavior, clean recovered text into UI labels, select conflicting names, or promote recovered-2.5 semantics into Taiwan-v1 evidence.
+- Placement-weighted classic-warp name coverage:
+  - total classic warp edges = **2,264**;
+  - source name resolved = **2,261**;
+  - source name unresolved = **3**;
+  - destination name resolved = **1,908**;
+  - destination name unresolved = **1**;
+  - destination outside the current 761-floor stable-world candidate set = **355**;
+  - resolved -> resolved edges = **1,907**;
+  - resolved -> outside-stable-world edges = **353**;
+  - unresolved -> outside-stable-world edges = **2**;
+  - unresolved -> resolved edges = **1**;
+  - resolved -> unresolved edges = **1**;
+  - distinct source/destination floor pairs = **985**.
+- Example only as recovered diagnostic text: the heavily repeated `3021 -> 3022` edge can now be inspected as `百人聯手道場|0 -> 加加的道場醫務室|0` while retaining both floor IDs and recovered25 provenance.
+- Floor **31001** remains conflict-preserving: any warp touching it reports the corresponding name state as unresolved and exposes no selected text.
+- Full gameplay-model regression including the new warp/name diagnostic tests: GitHub Actions **36503610189 = PASS**.
+- **VERSIONED_WORLD_WARP_NAME_DIAGNOSTICS_R1 = CLOSED.**
+- Next deterministic world-topology seam: classify the **355 classic-warp edges whose destinations are outside the current 761 stable map candidates**. Determine whether those destination floors are present in other recovered map generations/corpora, later-only content, duplicate/changed map rows, or genuinely missing payloads. Do not synthesize destination maps or assume absence means invalid warp.
+
