@@ -4,6 +4,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from tools.stoneage_shadowed_branch_key_item_exchange_probe import (
+    _economic_domain,
     _event_atom,
     _item_terms,
     _record_award,
@@ -29,13 +30,26 @@ class ExchangeProbeTests(unittest.TestCase):
             b"TYPE:ACCEPT|EVENT:LV>10&ITEM=30*2|"
             b"DelItem:40*1|GetItem:20,50|EventNo:9|ThanksMsg:x"
         )
-        row=_record_award(record,20,100)
+        row=_record_award(record,20,100,140)
         self.assertIsNotNone(row)
         self.assertFalse(row.target_required_by_event)
         self.assertFalse(row.target_deleted)
         self.assertEqual(row.other_item_prerequisite_refs,2)
         self.assertEqual(row.other_item_reward_refs,1)
         self.assertEqual(row.event_keys,("ITEM","LV"))
+
+    def test_economic_domain_finds_level_and_zero_trans_gold_witness(self):
+        record=b"EVENT:LV>10|DelStone:LV*100|GetItem:20"
+        level_ok,affordable,cost_class=_economic_domain(record,140)
+        self.assertTrue(level_ok)
+        self.assertTrue(affordable)
+        self.assertEqual(cost_class,"LEVEL_SCALED")
+
+    def test_economic_domain_rejects_threshold_above_maxlevel(self):
+        record=b"EVENT:LV>200|DelStone:100|GetItem:20"
+        level_ok,affordable,_cost_class=_economic_domain(record,140)
+        self.assertFalse(level_ok)
+        self.assertFalse(affordable)
 
     @patch(
         "tools.stoneage_shadowed_branch_key_item_exchange_probe."
@@ -60,10 +74,11 @@ class ExchangeProbeTests(unittest.TestCase):
                 b"Enemy=X|file:x.arg\n}\n"
             )
             (npc/"x.arg").write_bytes(
-                b"EventEnd|TYPE:ACCEPT|EVENT:LV>1|GetItem:20|"
+                b"EventEnd|TYPE:ACCEPT|EVENT:LV>1|DelStone:100|GetItem:20|"
                 b"EventNo:1|ThanksMsg:x|EventEnd"
             )
-            audit=analyze(npc)
+            (root/"setup.cf").write_text("MAXLEVEL=140\n",encoding="ascii")
+            audit=analyze(npc,root/"setup.cf")
             self.assertEqual(audit.matching_create_rows,1)
             self.assertEqual(len(audit.awards),1)
             self.assertEqual(audit.awards[0].floor_id,100)
