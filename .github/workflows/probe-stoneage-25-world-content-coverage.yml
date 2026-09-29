@@ -28,6 +28,10 @@ on:
       - tests/test_stoneage_missing_warp_destination_payload_probe.py
       - tools/stoneage_server_only_floor_gameplay_probe.py
       - tests/test_stoneage_server_only_floor_gameplay_probe.py
+      - tools/stoneage_server_static_map.py
+      - tests/test_stoneage_server_static_map.py
+      - tools/stoneage_server_only_static_map_probe.py
+      - tests/test_stoneage_server_only_static_map_probe.py
       - tools/stoneage_world_map_library.py
       - research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
       - research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz
@@ -60,7 +64,9 @@ jobs:
             tests.test_stoneage_stable_map_name_decode_probe \
             tests.test_stoneage_warp_destination_corpus_probe \
             tests.test_stoneage_missing_warp_destination_payload_probe \
-            tests.test_stoneage_server_only_floor_gameplay_probe -v
+            tests.test_stoneage_server_only_floor_gameplay_probe \
+            tests.test_stoneage_server_static_map \
+            tests.test_stoneage_server_only_static_map_probe -v
 
       - name: Install archive tools
         run: |
@@ -505,6 +511,33 @@ jobs:
           test "$(grep -c '^FLOOR|' "$report")" = "4"
           grep -F 'RESOLUTION|SERVER_ONLY_FLOOR_GAMEPLAY_COVERAGE_CLASSIFIED' "$report"
 
+      - name: Audit static collision materialization on server-only floors
+        run: |
+          set -euo pipefail
+          SERVER_MAP_ROOT="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
+          MAPSET="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/data/map/mapset.txt' -print -quit)"
+          test -n "$SERVER_MAP_ROOT" && test -n "$MAPSET"
+          report=research/recovered/STONEAGE-25-SERVER-ONLY-STATIC-MAP-R1.txt
+          python3 -m tools.stoneage_server_only_static_map_probe \
+            --payload-report research/recovered/STONEAGE-25-MISSING-WARP-DESTINATION-PAYLOADS-R1.txt \
+            --server-map-root "$SERVER_MAP_ROOT" \
+            --mapset "$MAPSET" \
+            > "$report"
+
+      - name: Verify server-only static map audit
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-25-SERVER-ONLY-STATIC-MAP-R1.txt
+          test -s "$report"
+          grep -F 'SEMANTIC_SOURCE_VERSION|recovered25' "$report"
+          grep -F 'EVIDENCE_ROLE|LATER_RECOVERED' "$report"
+          grep -F 'COUNT|target_floors|4' "$report"
+          grep -F 'COUNT|floors_with_missing_image_metadata|0' "$report"
+          test "$(grep -c '^FLOOR|' "$report")" = "4"
+          ! grep -F 'ordinary_walkable_cells=UNKNOWN' "$report"
+          ! grep -F 'flying_walkable_cells=UNKNOWN' "$report"
+          grep -F 'RESOLUTION|SERVER_ONLY_STATIC_MAPS_MATERIALIZABLE' "$report"
+
       - name: Delete transient proprietary payloads
         if: always()
         run: rm -rf /tmp/sa25
@@ -526,7 +559,8 @@ jobs:
           outside_warp_destinations=research/recovered/STONEAGE-25-OUTSIDE-STABLE-WARP-DESTINATIONS-R1.txt
           missing_warp_destination_payloads=research/recovered/STONEAGE-25-MISSING-WARP-DESTINATION-PAYLOADS-R1.txt
           server_only_floor_gameplay=research/recovered/STONEAGE-25-SERVER-ONLY-FLOOR-GAMEPLAY-R1.txt
-          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding" "$map_names" "$outside_warp_destinations" "$missing_warp_destination_payloads" "$server_only_floor_gameplay"
+          server_only_static_map=research/recovered/STONEAGE-25-SERVER-ONLY-STATIC-MAP-R1.txt
+          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding" "$map_names" "$outside_warp_destinations" "$missing_warp_destination_payloads" "$server_only_floor_gameplay" "$server_only_static_map"
           git diff --cached --quiet && exit 0
           git commit -m 'research: classify stable map world geometry'
           if ! git pull --rebase origin main; then
