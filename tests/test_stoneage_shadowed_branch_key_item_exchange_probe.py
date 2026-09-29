@@ -63,7 +63,8 @@ class ExchangeProbeTests(unittest.TestCase):
     )
     def test_analyze_finds_reachable_exchange_award(self,_reach,_key):
         with tempfile.TemporaryDirectory() as td:
-            npc=Path(td)
+            root=Path(td)
+            npc=root
             (npc/"templates").write_bytes(
                 b"NPCTEMPLATE\n"
                 b"{\nTemplateName=X\nFunctionSet=ExChangeMan\n}\n"
@@ -82,6 +83,8 @@ class ExchangeProbeTests(unittest.TestCase):
             self.assertEqual(audit.matching_create_rows,1)
             self.assertEqual(len(audit.awards),1)
             self.assertEqual(audit.awards[0].floor_id,100)
+            self.assertTrue(audit.awards[0].level_domain_satisfiable)
+            self.assertTrue(audit.awards[0].delstone_affordable_zero_trans)
 
 
 if __name__=="__main__":
