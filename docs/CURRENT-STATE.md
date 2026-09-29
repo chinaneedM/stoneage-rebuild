@@ -3378,3 +3378,38 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **SERVER_ONLY_STATIC_MAP_MATERIALIZATION_R1 = CLOSED.**
 - New topology consequence: first-wave supplemental floors expose destinations **20003, 20007, 20008**, which are not in the current stable-world manifest. The next priority is a recursive reachable-world closure, not a fixed four-floor patch.
 
+## Phase 1 runtime-valid recovered world reachability closure — 2026-09-29
+
+- The recovered-2.5 classic-Warp graph is now expanded recursively from all **761** stable later-map candidates by `tools/stoneage_recovered_world_reachability_probe.py`.
+- The first syntax-only pass produced 67 supplemental floors, including floor 40. That was intentionally **not** accepted as the runtime result because the already-closed classic Warp rule requires `MAP_IsValidCoordinate(floor,x,y)` during initialization and again before execution.
+- The probe was tightened so a Warp edge is traversable only when:
+  - the destination floor has a recovered server LS2MAP; and
+  - the destination coordinate is inside at least one recovered server-map copy for that floor.
+- Corrected runtime-valid world-content run **36508451472 = PASS**.
+- Runtime-valid closure:
+  - stable seed floors = **761**;
+  - reachable floor IDs including seeds = **827**;
+  - supplemental reachable floor IDs = **66**;
+  - maximum supplemental depth = **23**;
+  - syntactically parseable classic Warp edges from server-backed sources = **2,903**;
+  - runtime-valid server-source classic Warp edges = **2,899**;
+  - runtime-valid Warp edges encountered from the reachable closure = **2,830**.
+- Supplemental floor provenance/status:
+  - **14** = `CHANGED`;
+  - **45** = `CLIENT_DAT_PRESENT_NONSTABLE`;
+  - **7** = `SERVER_ONLY`;
+  - **0** runtime-reachable supplemental floors lack a server map.
+- The seven recursively reachable server-only floors are exactly:
+  **20002, 20003, 20004, 20006, 20007, 20008, 20009**.
+  The first four discovered earlier were therefore only the first wave; the recursive closure correctly adds 20003/20007/20008.
+- Floor 40 is **not** runtime reachable under the recovered server state. Four syntactic Warp rows target it:
+  - 6000 -> 40 @ 6,3;
+  - 31301 -> 40 @ 12,1;
+  - 31401 -> 40 @ 1,9;
+  - 31501 -> 40 @ 11,18.
+  All four are classified `NO_SERVER_MAP` and excluded from BFS traversal.
+- The long supplemental chains around floors 800–831 and 840–850 account for the deep **23-hop** reachability and demonstrate why one-hop outside-stable classification was insufficient.
+- Every supplemental node remains `recovered25 / LATER_RECOVERED`. Runtime reachability does not promote a floor into Taiwan-v1 membership.
+- **RECOVERED25_RUNTIME_CLASSIC_WARP_REACHABILITY_R1 = CLOSED.**
+- Next deterministic seam: construct a provenance-safe **supplemental world extension** for the 66 runtime-reachable later floors while leaving the 761-floor stable manifest unchanged. First audit server-map copy uniqueness, payload hashes/dimensions, mapset collision closure, and floor-level gameplay coverage for all 66 nodes; do not select among divergent duplicate server copies without evidence.
+
