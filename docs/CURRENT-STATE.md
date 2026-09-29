@@ -3610,3 +3610,28 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **AMBIGUOUS_WARP_CREATE_ORDER_R1 = CLOSED.**
 - Next deterministic seam: apply same-file first-match ordering to the 32 ambiguous source groups as an explicit runtime arbitration layer. Activate exactly one first candidate per ordered source, retain the other **37** candidate records as shadowed evidence, keep all 14 conditional-time records deferred, and recompute stable-seed reachability. Do not delete or rewrite shadowed Warp definitions.
 
+## Phase 1 create-order-resolved classic-Warp runtime — 2026-09-29
+
+- The recovered same-file create-order evidence is now applied to the default 826-map runtime by `tools/stoneage_ordered_warp_runtime.py`.
+- Runtime arbitration results:
+  - strict unambiguous active Warp edges = **2,692**;
+  - same-file ambiguous source groups resolved by first-create/first-match order = **32**;
+  - cross-file ambiguous source groups remaining unresolved = **0**;
+  - later candidates retained as shadowed evidence = **37** records;
+  - deferred conditional-time Warp records = **14**;
+  - total active classic-Warp edges after ordering = **2,724**.
+- The critical quiz gateway resolves deterministically under the recovered create order:
+  - `810,28,27` activates placement **3139 -> 809,18,13** and shadows placement **3197 -> 829,18,13**;
+  - `810,29,27` activates placement **3141 -> 809,19,13** and shadows placement **3199 -> 829,19,13**.
+- Active classic-Warp reachability from all 761 stable seeds is therefore:
+  - reachable maps = **815 / 826**;
+  - reachable resolved supplemental maps = **54 / 65**;
+  - resolved supplemental maps outside the active classic-Warp closure = **11**:
+    **820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 831**.
+- These eleven maps are not empty or internally disconnected: each has active incoming and outgoing classic-Warp edges inside the branch. The missing active ingress is localized to the two shadowed `810 -> 829` candidates above.
+- The eleven floors remain materializable recovered25 content; “outside the active classic-Warp closure” must **not** yet be promoted to “unreachable in the full game”, because non-classic transport functions such as `WarpMan` / `FMWarpMan` and other scripted movement have not yet been folded into this reachability calculation.
+- Full gameplay-model validation for create-order-resolved runtime: GitHub Actions **36599963621 = PASS**.
+- End-to-end world-content report generation: GitHub Actions **36600092879 = PASS**, report `research/recovered/STONEAGE-25-ORDERED-WARP-RUNTIME-R1.txt`.
+- **CREATE_ORDER_RESOLVED_CLASSIC_WARP_RUNTIME_R1 = CLOSED.**
+- Next deterministic seam: audit all recovered non-classic player-transport semantics for the 11-floor shadowed branch, especially `WarpMan` and `FMWarpMan`, before deciding whether those floors are truly unreachable or only absent from the classic-Warp closure.
+
