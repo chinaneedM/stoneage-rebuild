@@ -32,6 +32,8 @@ on:
       - tests/test_stoneage_server_static_map.py
       - tools/stoneage_server_only_static_map_probe.py
       - tests/test_stoneage_server_only_static_map_probe.py
+      - tools/stoneage_recovered_world_reachability_probe.py
+      - tests/test_stoneage_recovered_world_reachability_probe.py
       - tools/stoneage_world_map_library.py
       - research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt
       - research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz
@@ -66,7 +68,8 @@ jobs:
             tests.test_stoneage_missing_warp_destination_payload_probe \
             tests.test_stoneage_server_only_floor_gameplay_probe \
             tests.test_stoneage_server_static_map \
-            tests.test_stoneage_server_only_static_map_probe -v
+            tests.test_stoneage_server_only_static_map_probe \
+            tests.test_stoneage_recovered_world_reachability_probe -v
 
       - name: Install archive tools
         run: |
@@ -538,6 +541,32 @@ jobs:
           ! grep -F 'flying_walkable_cells=UNKNOWN' "$report"
           grep -F 'RESOLUTION|SERVER_ONLY_STATIC_MAPS_MATERIALIZABLE' "$report"
 
+      - name: Build recursive recovered classic-warp world closure
+        run: |
+          set -euo pipefail
+          N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
+          SERVER_MAP_ROOT="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
+          CLIENT_MAP_ROOT="$(find /tmp/sa25/out -type d -path '*/SA2.5主程式/stoneage2.5/map' -print -quit)"
+          test -n "$N" && test -n "$SERVER_MAP_ROOT" && test -n "$CLIENT_MAP_ROOT"
+          report=research/recovered/STONEAGE-25-RECOVERED-WORLD-REACHABILITY-R1.txt
+          python3 -m tools.stoneage_recovered_world_reachability_probe \
+            --lineage-report research/recovered/STONEAGE-TW10-FIELDMAP-LINEAGE-R1.txt \
+            --npc-dir "$N" \
+            --server-map-root "$SERVER_MAP_ROOT" \
+            --client-map-root "$CLIENT_MAP_ROOT" \
+            > "$report"
+
+      - name: Verify recursive recovered world closure
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-25-RECOVERED-WORLD-REACHABILITY-R1.txt
+          test -s "$report"
+          grep -F 'SEMANTIC_SOURCE_VERSION|recovered25' "$report"
+          grep -F 'EVIDENCE_ROLE|LATER_RECOVERED' "$report"
+          grep -F 'COUNT|stable_seed_floors|761' "$report"
+          grep -Eq '^COUNT\\|supplemental_floor_ids\\|[1-9][0-9]*$' "$report"
+          grep -F 'RESOLUTION|RECOVERED_CLASSIC_WARP_REACHABILITY_CLOSED' "$report"
+
       - name: Delete transient proprietary payloads
         if: always()
         run: rm -rf /tmp/sa25
@@ -560,7 +589,8 @@ jobs:
           missing_warp_destination_payloads=research/recovered/STONEAGE-25-MISSING-WARP-DESTINATION-PAYLOADS-R1.txt
           server_only_floor_gameplay=research/recovered/STONEAGE-25-SERVER-ONLY-FLOOR-GAMEPLAY-R1.txt
           server_only_static_map=research/recovered/STONEAGE-25-SERVER-ONLY-STATIC-MAP-R1.txt
-          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding" "$map_names" "$outside_warp_destinations" "$missing_warp_destination_payloads" "$server_only_floor_gameplay" "$server_only_static_map"
+          recovered_world_reachability=research/recovered/STONEAGE-25-RECOVERED-WORLD-REACHABILITY-R1.txt
+          git add "$coverage" "$geometry" "$encounter_runtime" "$npc_template_bindings" "$npc_template_profiles" "$npc_symbol_resolution" "$npc_runtime_graphics" "$map_name_encoding" "$map_names" "$outside_warp_destinations" "$missing_warp_destination_payloads" "$server_only_floor_gameplay" "$server_only_static_map" "$recovered_world_reachability"
           git diff --cached --quiet && exit 0
           git commit -m 'research: classify stable map world geometry'
           if ! git pull --rebase origin main; then
