@@ -212,10 +212,13 @@ jobs:
         run: |
           set -euo pipefail
           N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
           test -n "$N"
+          test -n "$C"
           R=research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-EXCHANGE-R1.txt
-          python3 -m tools.stoneage_shadowed_branch_key_item_exchange_probe --npc-dir "$N" > "$R"
+          python3 -m tools.stoneage_shadowed_branch_key_item_exchange_probe --npc-dir "$N" --setup "$C" > "$R"
           test -s "$R"
+          grep -F 'COUNT|state_domain_satisfiable_records|' "$R"
           grep -F 'RESOLUTION|SHADOWED_BRANCH_KEY_ITEM_EXCHANGE_AWARD_AUDITED' "$R"
 
       - name: Commit derived report only
