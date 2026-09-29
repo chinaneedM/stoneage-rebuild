@@ -3524,3 +3524,26 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_FLOOR130_VERSION_FORK_R1 = CLOSED.**
 - Next deterministic seam: bind the explicit floor-130 arbitration into the supplemental-world extension so unresolved floor 130 carries its two named version candidates and evidence dimensions as structured data, while retaining **no default materialization choice**.
 
+## Phase 1 materializable recovered Warp geometry — 2026-09-29
+
+- `tools/stoneage_materializable_world_geometry_probe.py` now projects recovered25 classic-Warp geometry across the represented **827-floor** world while quarantining unresolved or invalid edges.
+- End-to-end world-content run **36597563574 = PASS** and committed `research/recovered/STONEAGE-25-MATERIALIZABLE-WORLD-WARP-GEOMETRY-R1.txt`.
+- Represented/map boundary:
+  - stable floors = **761**;
+  - resolved supplemental floors = **65**;
+  - unresolved supplemental floors = **1** (floor 130);
+  - represented floor IDs = **827**;
+  - default materializable floor IDs = **826**.
+- Classic-Warp geometry:
+  - classic Warps from represented sources = **2,834**;
+  - materializable classic Warps = **2,826**;
+  - quarantined classic Warps = **8**;
+  - conditional-time tokens preserved on **14** materializable Warps but still not interpreted.
+- The eight quarantined edges are fully classified:
+  - **4** = `OUTSIDE_REPRESENTED_WORLD`, all targeting floor **40**, which remains excluded because no recovered server map exists;
+  - **2** = `UNRESOLVED_SOURCE`, both floor **130 -> 141**;
+  - **2** = `UNRESOLVED_DESTINATION`, both floor **141 -> 130**.
+- Therefore the floor-130 fork is topologically localized to its two reciprocal portal pairs with floor 141; it does not silently enter default materializable Warp geometry.
+- **RECOVERED25_MATERIALIZABLE_WARP_GEOMETRY_R1 = CLOSED.**
+- Next deterministic seam: recompute reachability using only the 2,826 materializable Warp edges and the 761 stable seeds. Prove whether all **65** resolved supplemental floors remain reachable when floor 130 and the four floor-40 edges are quarantined; any orphaned supplemental floor must be reported rather than assumed reachable.
+
