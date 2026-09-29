@@ -42,7 +42,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -m unittest tests.test_stoneage_transport_usage_probe tests.test_stoneage_shadowed_branch_transport_probe tests.test_stoneage_shadowed_branch_warpman_gate_probe tests.test_stoneage_shadowed_branch_warpman_free_probe tests.test_stoneage_shadowed_branch_warpman_satisfiability_probe tests.test_stoneage_shadowed_branch_item_shop_acquisition_probe tests.test_stoneage_shadowed_branch_item_npc_reference_probe tests.test_stoneage_shadowed_branch_key_item_nonshop_probe tests.test_stoneage_shadowed_branch_key_item_exchange_probe tests.test_stoneage_shadowed_branch_progression_witness_probe -v
+      - run: python3 -m unittest tests.test_stoneage_transport_usage_probe tests.test_stoneage_shadowed_branch_transport_probe tests.test_stoneage_shadowed_branch_warpman_gate_probe tests.test_stoneage_shadowed_branch_warpman_free_probe tests.test_stoneage_shadowed_branch_warpman_satisfiability_probe tests.test_stoneage_shadowed_branch_item_shop_acquisition_probe tests.test_stoneage_shadowed_branch_item_npc_reference_probe tests.test_stoneage_shadowed_branch_key_item_nonshop_probe tests.test_stoneage_shadowed_branch_key_item_exchange_probe tests.test_stoneage_shadowed_branch_progression_witness_probe tests.test_stoneage_shadowed_branch_legal_state_reachability_probe -v
       - run: sudo apt-get update && sudo apt-get install -y unar
       - name: Recover verified preservation bundle
         run: |
@@ -248,6 +248,7 @@ jobs:
           R=research/recovered/STONEAGE-25-SHADOWED-BRANCH-LEGAL-STATE-REACHABILITY-R1.txt
           python3 -m tools.stoneage_shadowed_branch_legal_state_reachability_probe --npc-dir "$N" --setup "$C" > "$R"
           test -s "$R"
+          grep -F 'LEGAL_STATE_CHAIN|witness=1' "$R"
           grep -F 'RESOLUTION|SHADOWED_BRANCH_LEGAL_STATE_REACHABILITY_AUDITED' "$R"
 
       - name: Commit derived report only
