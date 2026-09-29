@@ -96,6 +96,84 @@ def _assigned_data(npc_dir: Path, arg: bytes) -> bytes | None:
     return merge_file(path)
 
 
+def _free_condition_kind(atom: bytes) -> str:
+    text = atom.strip().upper()
+    if not text:
+        return "OTHER"
+    for operator in (b"!=", b"<", b">", b"="):
+        if operator in text:
+            text = text.split(operator, 1)[0].strip()
+            break
+    mapping = {
+        b"LV": "LEVEL",
+        b"GOLD": "GOLD",
+        b"TRANS": "TRANSFORMATION",
+        b"GTIME": "TIME",
+        b"TIME": "TIME",
+        b"YEAR": "TIME",
+        b"MON": "TIME",
+        b"DAY": "TIME",
+        b"HOUR": "TIME",
+        b"MIN": "TIME",
+        b"SEC": "TIME",
+        b"BOUNDTIME": "TIME",
+        b"PET": "PET",
+        b"REPET": "PET",
+        b"ITEM": "ITEM",
+        b"REITEM": "ITEM",
+        b"EQUIT": "EQUIPMENT",
+        b"ENDEV": "EVENT_END",
+        b"EVEND": "EVENT_END",
+        b"NOWEV": "EVENT_NOW",
+        b"EVNOW": "EVENT_NOW",
+        b"PARTY": "PARTY",
+        b"PARTYCOUNT": "PARTY",
+        b"MANCOUNT": "PARTY",
+        b"WOMANCOUNT": "PARTY",
+        b"FM": "FAMILY",
+        b"MANOR": "FAMILY",
+        b"FAME": "FAME",
+        b"VIPPOINT": "VIP",
+        b"VIP": "VIP",
+        b"GLORY": "GLORY",
+        b"DR": "DR",
+        b"DP": "DP",
+        b"CLASS": "CLASS",
+        b"SKILL": "SKILL",
+        b"SKNUM": "SKILL",
+        b"SKCP": "SKILL",
+        b"BOX": "BOX",
+        b"MT": "MISSION_TRAIN",
+        b"DIYMAP": "DIY_MAP",
+        b"ANGEL_NOW": "ANGEL_HERO",
+        b"HERO_NOW": "ANGEL_HERO",
+        b"ANGEL_OVER": "ANGEL_HERO",
+        b"HERO_OVER": "ANGEL_HERO",
+        b"ANGEL_OUT": "ANGEL_HERO",
+        b"HERO_OUT": "ANGEL_HERO",
+        b"ANGEL_I_NOW": "ANGEL_HERO",
+        b"HERO_I_NOW": "ANGEL_HERO",
+        b"ANGEL_I_OVER": "ANGEL_HERO",
+        b"HERO_I_OVER": "ANGEL_HERO",
+        b"ANGEL_I_OUT": "ANGEL_HERO",
+        b"HERO_I_OUT": "ANGEL_HERO",
+        b"HEROCNT": "ANGEL_HERO",
+    }
+    return mapping.get(text, "OTHER")
+
+
+def _free_structure(data: bytes) -> tuple[int, int, tuple[str, ...]]:
+    value = _field(data, b"FREE")
+    if value is None:
+        return 0, 0, ()
+    groups = tuple(part.strip() for part in value.split(b",") if part.strip())
+    atoms = []
+    for group in groups:
+        atoms.extend(part.strip() for part in group.split(b"&") if part.strip())
+    kinds = tuple(sorted({_free_condition_kind(atom) for atom in atoms}))
+    return len(groups), len(atoms), kinds
+
+
 def _money_class(data: bytes) -> str:
     value = _field(data, b"MONEY")
     if value is None:
@@ -127,6 +205,9 @@ class WarpManIngressGate:
     normalmsg_present: bool
     money_class: str
     newtime_present: bool
+    free_or_groups: int
+    free_condition_atoms: int
+    free_condition_kinds: tuple[str, ...]
     ordinary_route_class: str
 
     def __post_init__(self) -> None:
@@ -147,6 +228,15 @@ class WarpManIngressGate:
             raise ValueError("invalid WarpMan money class")
         if int(self.destination_count) <= 0:
             raise ValueError("WarpMan ingress requires destination evidence")
+        if int(self.free_or_groups) < 0 or int(self.free_condition_atoms) < 0:
+            raise ValueError("WarpMan FREE structure counts cannot be negative")
+        if self.free_present and self.free_condition_atoms <= 0:
+            raise ValueError("present FREE expression lacks classified atoms")
+        object.__setattr__(
+            self,
+            "free_condition_kinds",
+            tuple(sorted(set(self.free_condition_kinds))),
+        )
         if int(self.target_occurrences) <= 0:
             raise ValueError("WarpMan ingress target must occur in WARP set")
 
@@ -253,6 +343,9 @@ def analyze(npc_dir: Path) -> WarpManGateAudit:
 
                 checkparty = _field(data, b"CHECKPARTY")
                 free = _field(data, b"FREE")
+                free_or_groups, free_condition_atoms, free_condition_kinds = (
+                    _free_structure(data)
+                )
                 upper_all = data.upper()
                 for destination_floor, occurrences in sorted(hits.items()):
                     rows.append(
@@ -282,6 +375,9 @@ def analyze(npc_dir: Path) -> WarpManGateAudit:
                             ),
                             money_class=_money_class(data),
                             newtime_present=_field(data, b"NEWTIME") is not None,
+                            free_or_groups=free_or_groups,
+                            free_condition_atoms=free_condition_atoms,
+                            free_condition_kinds=free_condition_kinds,
                             ordinary_route_class=_ordinary_route_class(data),
                         )
                     )
@@ -327,6 +423,9 @@ def emit(audit: WarpManGateAudit) -> None:
             f"normalmsg_present={int(row.normalmsg_present)}|"
             f"money_class={row.money_class}|"
             f"newtime_present={int(row.newtime_present)}|"
+            f"free_or_groups={row.free_or_groups}|"
+            f"free_condition_atoms={row.free_condition_atoms}|"
+            f"free_condition_kinds={','.join(row.free_condition_kinds)}|"
             f"ordinary_route={row.ordinary_route_class}"
         )
     print(OUTPUT_RESOLUTION)
