@@ -3258,3 +3258,31 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **VERSIONED_WORLD_WARP_NAME_DIAGNOSTICS_R1 = CLOSED.**
 - Next deterministic world-topology seam: classify the **355 classic-warp edges whose destinations are outside the current 761 stable map candidates**. Determine whether those destination floors are present in other recovered map generations/corpora, later-only content, duplicate/changed map rows, or genuinely missing payloads. Do not synthesize destination maps or assume absence means invalid warp.
 
+## Phase 1 outside-stable warp destination corpus closure — 2026-09-29
+
+- The **355** classic-`Warp` edges whose destinations fall outside the 761-floor stable-world candidate set are now classified directly against the hash-verified recovered-2.5 client DAT corpus by `tools/stoneage_warp_destination_corpus_probe.py`.
+- Those 355 edges reference only **30 distinct destination floor IDs**:
+  - **13 IDs / 283 edges** are `CHANGED`: the same map path exists in recovered-2.5 and archived-2003 but the bytes differ across those later corpora;
+  - **13 IDs / 68 edges** are `SAME_SHA_NONSTABLE`: the recovered-2.5 DAT exists and persists byte-identically across the later lineage, but it is not in the provenance-safe Taiwan-v1-compatible stable subset;
+  - **4 IDs / 4 edges** are `CLIENT_DAT_MISSING`: floors **20002, 20004, 20006, 20009**.
+- Among the 26 destination IDs with recovered-2.5 DAT payloads, **6 IDs / 98 edges** are Taiwan-v1 resource-ID compatible and **20 IDs / 253 edges** are not. This remains necessary-not-sufficient asset compatibility only and is **not** Taiwan-v1 membership evidence.
+- The four missing-DAT IDs form one coherent recovered warp cluster rather than unrelated errors:
+  - `20001 -> 20002`;
+  - `20005 -> 20004`;
+  - `20005 -> 20006`;
+  - `20010 -> 20009`.
+  Their source recovered texts are `拉多拉山嶺洞窟１樓|0`, `拉多拉山嶺洞窟５樓|0`, and `拉多拉山嶺洞窟１０樓|0`.
+- Independent historical-map evidence agrees with the client-DAT gap: the archived 2003 `map.exe` inventory contains `20001.dat`, `20005.dat`, and `20010.DAT`, but not 20002/20004/20006/20009.
+- A second direct payload-surface audit, `tools/stoneage_missing_warp_destination_payload_probe.py`, closes the four apparent gaps:
+  - all **4 IDs / 4 edges** are `SERVER_MAP_ONLY`;
+  - recovered-2.5 client `.MAP` present = **0/4**;
+  - recovered-2.5 server LS2MAP present = **4/4**;
+  - floor 20002: `jyaruga/dungeon/dan_2-00-02`, **50x100**;
+  - floor 20004: `jyaruga/dungeon/dan_2-00-04`, **80x80**;
+  - floor 20006: `jyaruga/dungeon/dan_2-00-06`, **80x40**;
+  - floor 20009: `jyaruga/dungeon/dan_2-00-09`, **100x100**.
+- The first verification initially used an incorrectly escaped regex and therefore did not reject the unexpected four DAT-missing rows. That verification defect was corrected to exact evidence locks plus literal guards; the corrected end-to-end world-content run **36504358575 = PASS** and generated the committed second-stage report.
+- **OUTSIDE_STABLE_WARP_DESTINATION_CORPUS_R1 = CLOSED.**
+- **MISSING_DAT_WARP_DESTINATION_PAYLOAD_SURFACES_R1 = CLOSED.**
+- Next deterministic seam: determine how the classic client enters/renders these **server-only LS2MAP** floors. Audit the client/server map-transfer and map-transition protocol before deciding how the single-player reconstruction should materialize them. Do not synthesize client DAT/MAP payloads merely because the server copy exists.
+
