@@ -14,9 +14,14 @@ from tools.stoneage_shadowed_branch_transport_probe import (
 )
 
 
-class _Runtime:
-    reachable_floor_ids = frozenset({100, 810})
-    unreachable_resolved_supplemental_ids = (829, 831)
+class _Orphan:
+    def __init__(self, floor_id):
+        self.floor_id = floor_id
+
+
+class _Reachability:
+    reached_floor_ids = frozenset({100, 810})
+    orphan_rows = (_Orphan(829), _Orphan(831))
 
 
 class ShadowedBranchTransportProbeTests(unittest.TestCase):
@@ -44,8 +49,8 @@ class ShadowedBranchTransportProbeTests(unittest.TestCase):
 
     @patch(
         "tools.stoneage_shadowed_branch_transport_probe."
-        "load_ordered_materializable_runtime",
-        return_value=_Runtime(),
+        "load_ordered_runtime_reachability",
+        return_value=_Reachability(),
     )
     def test_realistic_npc_fixture_finds_only_reachable_to_shadowed_ingress(
         self,
