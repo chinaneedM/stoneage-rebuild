@@ -275,6 +275,17 @@ def _eventno_class(record: bytes) -> str:
     return "NONNEGATIVE_FLAG" if value >= 0 else "NEGATIVE_SENTINEL"
 
 
+def _event_gate_domain_satisfiable(event_class: str) -> bool:
+    """Whether EventNo admits at least one legal player event-flag state.
+
+    Fixed descendant npcutil.c treats shiftbit == -1 as an explicit ungated
+    sentinel: NPC_EventCheckFlg returns FALSE and event setters ignore it.
+    A nonnegative event flag likewise admits the ordinary "not completed yet"
+    state.  Malformed/missing event numbers remain unsupported here.
+    """
+    return event_class in {"NEGATIVE_SENTINEL", "NONNEGATIVE_FLAG"}
+
+
 def _reward_units(record: bytes, target: int) -> int:
     total = 0
     for value in _values(record, b"GetItem"):
@@ -367,7 +378,7 @@ def _matching_exchange_records(
                         and award.other_item_prerequisite_refs == 0
                         and not award.delpet_present
                         and 0 < reward_units <= CARRIED_ITEM_CAPACITY
-                        and event_class == "NONNEGATIVE_FLAG"
+                        and _event_gate_domain_satisfiable(event_class)
                         and distance >= 0
                     )
                     rows.append(
