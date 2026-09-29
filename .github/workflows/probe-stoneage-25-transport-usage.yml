@@ -17,6 +17,8 @@ on:
       - tests/test_stoneage_shadowed_branch_warpman_free_probe.py
       - tools/stoneage_shadowed_branch_warpman_satisfiability_probe.py
       - tests/test_stoneage_shadowed_branch_warpman_satisfiability_probe.py
+      - tools/stoneage_shadowed_branch_item_shop_acquisition_probe.py
+      - tests/test_stoneage_shadowed_branch_item_shop_acquisition_probe.py
       - tools/stoneage_ordered_runtime_world_reachability_probe.py
       - tools/stoneage_ordered_runtime_world_topology.py
       - research/recovered/STONEAGE-25-AMBIGUOUS-WARP-CREATE-ORDER-R1.txt
@@ -30,7 +32,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -m unittest tests.test_stoneage_transport_usage_probe tests.test_stoneage_shadowed_branch_transport_probe tests.test_stoneage_shadowed_branch_warpman_gate_probe tests.test_stoneage_shadowed_branch_warpman_free_probe tests.test_stoneage_shadowed_branch_warpman_satisfiability_probe -v
+      - run: python3 -m unittest tests.test_stoneage_transport_usage_probe tests.test_stoneage_shadowed_branch_transport_probe tests.test_stoneage_shadowed_branch_warpman_gate_probe tests.test_stoneage_shadowed_branch_warpman_free_probe tests.test_stoneage_shadowed_branch_warpman_satisfiability_probe tests.test_stoneage_shadowed_branch_item_shop_acquisition_probe -v
       - run: sudo apt-get update && sudo apt-get install -y unar
       - name: Recover verified preservation bundle
         run: |
@@ -162,6 +164,21 @@ jobs:
           grep -F 'COUNT|ingress_rows|1' "$R"
           grep -F 'COUNT|unsupported_atoms|0' "$R"
           grep -F 'RESOLUTION|SHADOWED_BRANCH_WARPMAN_FREE_DOMAIN_AUDITED' "$R"
+
+      - name: Audit reachable ItemShop acquisition of shadowed-branch key item
+        run: |
+          set -euo pipefail
+          N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
+          test -n "$N"
+          test -n "$D"
+          test -n "$C"
+          R=research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-SHOP-R1.txt
+          python3 -m tools.stoneage_shadowed_branch_item_shop_acquisition_probe --npc-dir "$N" --setup "$C" --data-dir "$D" > "$R"
+          test -s "$R"
+          grep -F 'COUNT|target_predicate_count|1' "$R"
+          grep -F 'RESOLUTION|SHADOWED_BRANCH_KEY_ITEM_REACHABLE_SHOP_AUDITED' "$R"
 
       - name: Commit derived report only
         run: |
