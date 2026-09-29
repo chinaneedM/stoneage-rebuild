@@ -5,6 +5,8 @@ on:
     paths:
       - tools/stoneage_historical_map_25_compare.py
       - tests/test_stoneage_historical_map_25_compare.py
+      - tools/stoneage_duplicate_floor_lineage_probe.py
+      - tests/test_stoneage_duplicate_floor_lineage_probe.py
       - .github/workflows/compare-stoneage-2003-map-pack-vs-25.yml
 
 permissions:
@@ -26,7 +28,10 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq 7zip unar
       - name: Validate comparator
-        run: python3 -m unittest tests.test_stoneage_historical_map_25_compare -v
+        run: |
+          python3 -m unittest \
+            tests.test_stoneage_historical_map_25_compare \
+            tests.test_stoneage_duplicate_floor_lineage_probe -v
       - name: Recover archived 2003-06 map package transiently
         run: |
           set -euo pipefail
@@ -103,6 +108,31 @@ jobs:
           test -n "$PRES"
           mkdir -p research/recovered
           python3 -m tools.stoneage_historical_map_25_compare --historical-root "$HIST" --preserved-root "$PRES" --profile research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz > research/recovered/STONEAGE-2003-MAP-VS-25-R1.txt
+      - name: Compare floor 130 candidates across 2003 and recovered25 DAT lineage
+        run: |
+          set -euo pipefail
+          HIST="$(find /tmp/sa-map-2003/out -type d -name map -print -quit)"
+          PRES="$(find /tmp/sa25/out -type d -path '*/SA2.5主程式/stoneage2.5/map' -print -quit)"
+          SERVER_MAP_ROOT="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
+          test -n "$HIST" && test -n "$PRES" && test -n "$SERVER_MAP_ROOT"
+          report=research/recovered/STONEAGE-2003-25-FLOOR-130-CANDIDATE-LINEAGE-R1.txt
+          python3 -m tools.stoneage_duplicate_floor_lineage_probe \
+            --floor 130 \
+            --historical-root "$HIST" \
+            --recovered25-root "$PRES" \
+            --server-map-root "$SERVER_MAP_ROOT" \
+            > "$report"
+
+      - name: Verify floor 130 lineage audit
+        run: |
+          set -euo pipefail
+          report=research/recovered/STONEAGE-2003-25-FLOOR-130-CANDIDATE-LINEAGE-R1.txt
+          test -s "$report"
+          grep -F 'FLOOR|130' "$report"
+          grep -F 'COUNT|server_candidates|2' "$report"
+          test "$(grep -c '^CANDIDATE_LINEAGE|' "$report")" = "2"
+          grep -F 'RESOLUTION|DUPLICATE_FLOOR_LINEAGE_COMPARED|' "$report"
+
       - name: Verify proprietary payloads were not retained
         run: |
           set -euo pipefail
@@ -113,7 +143,8 @@ jobs:
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
           report='research/recovered/STONEAGE-2003-MAP-VS-25-R1.txt'
-          git add "$report"
+          floor130='research/recovered/STONEAGE-2003-25-FLOOR-130-CANDIDATE-LINEAGE-R1.txt'
+          git add "$report" "$floor130"
           git diff --cached --quiet && exit 0
           git commit -m 'research: compare archived 2003 maps with 2.5 corpus'
           if ! git pull --rebase origin main; then
@@ -123,7 +154,14 @@ jobs:
             HIST="$(find /tmp/sa-map-2003/out -type d -name map -print -quit)"
             PRES="$(find /tmp/sa25/out -type d -path '*/SA2.5主程式/stoneage2.5/map' -print -quit)"
             python3 -m tools.stoneage_historical_map_25_compare --historical-root "$HIST" --preserved-root "$PRES" --profile research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz > "$report"
-            git add "$report"
+            SERVER_MAP_ROOT="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
+            python3 -m tools.stoneage_duplicate_floor_lineage_probe \
+              --floor 130 \
+              --historical-root "$HIST" \
+              --recovered25-root "$PRES" \
+              --server-map-root "$SERVER_MAP_ROOT" \
+              > "$floor130"
+            git add "$report" "$floor130"
             git diff --cached --quiet && exit 0
             git commit -m 'research: compare archived 2003 maps with 2.5 corpus'
           fi
