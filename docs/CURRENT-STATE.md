@@ -3652,3 +3652,15 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Validation: relevant transport/domain unit suite **18 tests PASS**; real preservation-bundle workflow GitHub Actions **36604872593 = PASS**; derived report commit **7c481beefd158ca6dc1359550c8b868a97a00f23**.
 - **SHADOWED_BRANCH_WARPMAN_FREE_DOMAIN_R1 = CLOSED.**
 - Next deterministic seam: resolve the required ITEM predicate against legitimate recovered gameplay acquisition surfaces (shop inventory, NPC/event reward, battle/drop or other item-grant paths) without committing the proprietary item ID. Only after an acquisition path is proven should the 11-floor branch be promoted from “condition-gated ingress with catalog witness” to player-reachable runtime content.
+
+
+## Phase 1 shadowed-branch key-item ordinary-shop audit — 2026-09-30
+
+- The unique ITEM equality predicate required by the condition-gated WarpMan ingress was resolved transiently against every recovered ItemShop placed on a floor in the ordered classic-Warp reachable set.
+- Fixed-descendant ItemShop semantics were reproduced for screening: ItemList supports IDs/ranges, undefined item IDs are skipped, and only the first 33 valid entries are exposed.
+- Recovered25 result: **212** candidate reachable ItemShop instances; **0** list the target item; **0** expose it after the 33-entry truncation; missing argument files = **0**.
+- Therefore the required key item has **no ordinary reachable ItemShop acquisition path** in the recovered specimen.
+- Artifact: research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-SHOP-R1.txt.
+- Validation: GitHub Actions **36605691297 = PASS**; derived report commit **2fb4c13987f6bb6692b46552818969ffc7be0dda**.
+- **SHADOWED_BRANCH_KEY_ITEM_SHOP_R1 = CLOSED / NO_WITNESS.**
+- Next deterministic seam: test the same withheld item identity against reachable NPC/event AddItem rewards and reachable encounter enemy drop slots before making any claim about full player reachability of floor 820 and the 11-floor branch.
