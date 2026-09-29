@@ -12,9 +12,14 @@ COUNT|award_interaction_cells|24
 COUNT|warpman_interaction_cells|16
 COUNT|award_map_missing_metadata|0
 COUNT|ingress_map_missing_metadata|0
+COUNT|award_conservative_npc_birth_blocker_cells|2
+COUNT|ingress_conservative_npc_birth_blocker_cells|4
 MAP_COPY|award_floor|UNIQUE
 MAP_COPY|ingress_floor|UNIQUE
 PATH|award_interaction_to_classic_hop|reachable=1|steps=4
 PATH|classic_landing_to_warpman_interaction|reachable=1|steps=7
 STATIC_COORDINATE_CHAIN|witness=1
+PATH|award_interaction_to_classic_hop_with_conservative_npc_birth_blockers|reachable=1|steps=4
+PATH|classic_landing_to_warpman_interaction_with_conservative_npc_birth_blockers|reachable=1|steps=7
+CONSERVATIVE_NPC_BIRTH_OCCUPANCY_CHAIN|witness=1
 RESOLUTION|SHADOWED_BRANCH_STATIC_COORDINATE_ACCESS_CLOSED
