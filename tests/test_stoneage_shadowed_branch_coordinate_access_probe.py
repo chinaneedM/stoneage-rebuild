@@ -64,5 +64,18 @@ class ShadowedBranchCoordinateAccessTests(unittest.TestCase):
         )
 
 
+    def test_conservative_dynamic_blocker_cells_are_respected(self):
+        static=_map(5,3)
+        blockers=frozenset({(2,0),(2,1),(2,2)})
+        self.assertIsNone(
+            _distance_to_any(
+                static,
+                {(0,1)},
+                {(4,1)},
+                blocked=blockers,
+            )
+        )
+
+
 if __name__=="__main__":
     unittest.main()
