@@ -205,8 +205,8 @@ def analyze(
             npc_create_count=npc_counts[floor_id],
             warp_create_count=warp_counts[floor_id],
             classic_warp_edges=tuple(classic_edges[floor_id]),
-            encounter_row_count=encounter_counts[floor_id],
-            active_encounter_row_count=active_encounter_counts[floor_id],
+            encounter_row_count=int(encounter_counts.get(floor_id, 0)),
+            active_encounter_row_count=int(active_encounter_counts.get(floor_id, 0)),
         )
         for floor_id in sorted(targets)
     )
