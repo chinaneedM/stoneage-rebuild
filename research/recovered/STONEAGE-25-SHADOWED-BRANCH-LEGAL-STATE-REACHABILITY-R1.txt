@@ -1,0 +1,26 @@
+StoneAge shadowed-branch legal-state reachability audit — R1
+SCOPE|reachable ExChangeMan key-item award -> ordered classic-Warp floor path -> gated WarpMan -> branch classic-Warp closure
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|all key-item IDs, level thresholds, Stone costs, event numbers, NPC names, coordinates, filenames and raw arguments are withheld
+RULE|this is legal-state reachability, not a new-character progression proof; Stone is witnessed inside the legal carry domain rather than derived from an initial wallet
+RULE|floor paths use ordered active classic-Warp connectivity; same-floor collision/pathfinding to individual NPC cells is not proven
+WARP_GATE|source_floor=811|entry_floor=820|legal_level_values=20
+COUNT|branch_floor_ids|11
+COUNT|branch_reached_from_entry|11
+COUNT|branch_unreached_from_entry|0
+COUNT|eventno:NEGATIVE_SENTINEL:witnesses|2
+COUNT|exchange_source_floors|1
+COUNT|exchange_witnesses|2
+COUNT|floor_path_witnesses|2
+COUNT|inventory_domain_satisfiable_witnesses|2
+COUNT|joint_level_exchange_witnesses|2
+COUNT|keyword_present_witnesses|0
+COUNT|missing_argument_files|0
+COUNT|state_domain_satisfiable_exchange_witnesses|0
+COUNT|warp_joint_level_values|20
+EXCHANGE_CHAIN_WITNESS|ordinal=1|source_floor=2020|joint_level_values=20|reward_units=1|keyword_present=0|eventno_class=NEGATIVE_SENTINEL|classic_warp_hops_to_gate=1|state_domain_satisfiable=0
+EXCHANGE_CHAIN_WITNESS|ordinal=2|source_floor=2020|joint_level_values=20|reward_units=1|keyword_present=0|eventno_class=NEGATIVE_SENTINEL|classic_warp_hops_to_gate=1|state_domain_satisfiable=0
+BRANCH_CLOSURE|entry_floor=820|target_floors=11|reachable_target_floors=11|all_target_floors_reachable=1
+LEGAL_STATE_CHAIN|witness=0|gold_cap_domain=1000000|item_id_withheld=1
+RESOLUTION|SHADOWED_BRANCH_LEGAL_STATE_REACHABILITY_AUDITED
