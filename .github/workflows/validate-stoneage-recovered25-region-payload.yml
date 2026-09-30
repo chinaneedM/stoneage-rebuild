@@ -20,6 +20,8 @@ on:
       - tools/stoneage_recovered25_server_collision_provider.py
       - tools/stoneage_recovered25_server_collision_smoke.py
       - tests/test_stoneage_recovered25_server_collision_provider.py
+      - tools/stoneage_recovered25_client_adrn_collision_coverage_probe.py
+      - tests/test_stoneage_recovered25_client_adrn_collision_coverage_probe.py
       - tools/stoneage_local_runtime_session_coordinator.py
       - tests/test_stoneage_local_runtime_session_coordinator.py
       - tools/stoneage_server_static_map.py
@@ -44,6 +46,7 @@ jobs:
             tests.test_stoneage_recovered25_local_runtime_stack \
             tests.test_stoneage_recovered25_server_collision_coverage_probe \
             tests.test_stoneage_recovered25_server_collision_provider \
+            tests.test_stoneage_recovered25_client_adrn_collision_coverage_probe \
             tests.test_stoneage_local_runtime_session_coordinator -v
       - name: Install extractor
         run: sudo apt-get update && sudo apt-get install -y unar
@@ -179,11 +182,29 @@ jobs:
           grep -F 'SERVER_BACKED_MOVEMENT_WITNESS|1' "$R"
           grep -F 'UNCOVERED_FAIL_CLOSED_WITNESS|1' "$R"
           grep -F 'RESOLUTION|RECOVERED25_SERVER_COLLISION_PROVIDER_CLOSED_WITH_GAPS' "$R"
+      - name: Audit recovered25 client ADRN collision coverage
+        run: |
+          set -euo pipefail
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5主程式/stoneage2.5/map' -print -quit)"
+          S="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
+          M="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/data/map/mapset.txt' -print -quit)"
+          A="$(find /tmp/sa25/out -type f -iname 'adrn_15.bin' -print -quit)"
+          test -n "$D"; test -n "$S"; test -n "$M"; test -n "$A"
+          R=research/recovered/STONEAGE-25-CLIENT-ADRN-COLLISION-COVERAGE-R1.txt
+          python3 -m tools.stoneage_recovered25_client_adrn_collision_coverage_probe \
+            --client-dat-dir "$D" \
+            --server-map-root "$S" \
+            --mapset "$M" \
+            --adrn "$A" > "$R"
+          test -s "$R"
+          grep -F 'COUNT|server_uncovered_floors|191' "$R"
+          grep -F 'COUNT|adrn_records|234564' "$R"
+          grep -F 'RESOLUTION|RECOVERED25_CLIENT_ADRN_COLLISION_COVERAGE_AUDITED' "$R"
       - name: Commit derived aggregate reports
         run: |
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
-          git add research/recovered/STONEAGE-25-REGION-PAYLOAD-SOURCE-R1.txt research/recovered/STONEAGE-25-LOCAL-RUNTIME-STACK-R1.txt research/recovered/STONEAGE-25-SERVER-COLLISION-COVERAGE-R1.txt research/recovered/STONEAGE-25-SERVER-COLLISION-PROVIDER-R1.txt
+          git add research/recovered/STONEAGE-25-REGION-PAYLOAD-SOURCE-R1.txt research/recovered/STONEAGE-25-LOCAL-RUNTIME-STACK-R1.txt research/recovered/STONEAGE-25-SERVER-COLLISION-COVERAGE-R1.txt research/recovered/STONEAGE-25-SERVER-COLLISION-PROVIDER-R1.txt research/recovered/STONEAGE-25-CLIENT-ADRN-COLLISION-COVERAGE-R1.txt
           if git diff --cached --quiet; then
             echo 'Derived region report unchanged; nothing to commit.'
           else
