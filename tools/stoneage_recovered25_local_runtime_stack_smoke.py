@@ -486,9 +486,43 @@ def main() -> None:
         if int(skill_id) > 0
     }
     print(f"COUNT|petskill_entries|{len(stack.petskill_runtime.skills)}")
+    referenced_skill_entries = tuple(
+        stack.petskill_runtime.skills[skill_id]
+        for skill_id in sorted(report_referenced_skill_ids)
+    )
+    basic_ai_callbacks = {
+        "PETSKILL_NormalAttack",
+        "PETSKILL_NormalGuard",
+    }
     print(
         "COUNT|enemybase_referenced_petskill_ids|"
         f"{len(report_referenced_skill_ids)}"
+    )
+    print(
+        "COUNT|enemybase_referenced_common_petskill_ids|"
+        f"{sum(1 for entry in referenced_skill_entries if entry.stable_common_callback)}"
+    )
+    print(
+        "COUNT|enemybase_referenced_basic_ai_petskill_ids|"
+        f"{sum(1 for entry in referenced_skill_entries if entry.function_name in basic_ai_callbacks)}"
+    )
+    all_skill_slot_ids = tuple(
+        int(skill_id)
+        for template in stack.enemybase_runtime.templates.values()
+        for skill_id in (
+            template.skill_slot_ids
+            if template.skill_slot_ids
+            else template.skill_ids
+        )
+        if int(skill_id) > 0
+    )
+    print(
+        "COUNT|enemybase_positive_petskill_slot_uses|"
+        f"{len(all_skill_slot_ids)}"
+    )
+    print(
+        "COUNT|enemybase_basic_ai_petskill_slot_uses|"
+        f"{sum(1 for skill_id in all_skill_slot_ids if stack.petskill_runtime.skills[skill_id].function_name in basic_ai_callbacks)}"
     )
     print(
         "COUNT|enemybase_unresolved_petskill_ids|"
