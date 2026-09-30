@@ -950,6 +950,7 @@ class LocalRuntimeSessionCoordinator:
         allow_basic_skill: bool = False,
         allow_statuschange_skill: bool = False,
         allow_powerbalance_skill: bool = False,
+        allow_mighty_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1104,6 +1105,7 @@ class LocalRuntimeSessionCoordinator:
                 bool(allow_basic_skill)
                 or bool(allow_statuschange_skill)
                 or bool(allow_powerbalance_skill)
+                or bool(allow_mighty_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1118,6 +1120,7 @@ class LocalRuntimeSessionCoordinator:
                     petskill_runtime=petskill_runtime,
                     allow_status_change=bool(allow_statuschange_skill),
                     allow_power_balance=bool(allow_powerbalance_skill),
+                    allow_mighty=bool(allow_mighty_skill),
                 )
                 commands[enemy_id] = bridged.command
                 if bridged.setup_effects != BattleCommandSetupEffects():
@@ -1132,6 +1135,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("StatusChange")
             if bool(allow_powerbalance_skill):
                 allowed_parts.append("PowerBalance")
+            if bool(allow_mighty_skill):
+                allowed_parts.append("Mighty")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1162,6 +1167,7 @@ class LocalRuntimeSessionCoordinator:
             allow_basic_skill=allow_basic_skill,
             allow_statuschange_skill=False,
             allow_powerbalance_skill=False,
+            allow_mighty_skill=False,
         ).commands
 
     def build_persistent_enemy_attack_guard_commands(
@@ -1359,6 +1365,7 @@ class LocalRuntimeSessionCoordinator:
             allow_basic_skill=True,
             allow_statuschange_skill=True,
             allow_powerbalance_skill=True,
+            allow_mighty_skill=False,
         )
         enemy_commands = enemy_batch.commands
         escaping_enemy_ids = {
