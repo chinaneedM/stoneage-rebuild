@@ -136,27 +136,6 @@ class Recovered25PetSkillEntry:
             )
         return cp950
 
-    def consensus_big5_option(self) -> str:
-        """Return text only when CP950 and Big5 strict decoders agree exactly.
-
-        Recovered25 uses legacy Traditional-Chinese byte data, while the exact
-        runtime codec provenance is not globally closed. For execution-facing
-        OPTION parsing we therefore accept non-ASCII text only when the two
-        plausible fixed-descendant codecs produce identical Unicode text.
-        """
-
-        try:
-            cp950_text = self.option_bytes.decode("cp950", "strict")
-            big5_text = self.option_bytes.decode("big5", "strict")
-        except UnicodeDecodeError as exc:
-            raise ValueError(
-                "pet-skill OPTION lacks CP950/Big5 strict decode consensus"
-            ) from exc
-        if cp950_text != big5_text:
-            raise ValueError(
-                "pet-skill OPTION CP950/Big5 decode is ambiguous"
-            )
-        return cp950_text
 
 
 @dataclass(frozen=True)
