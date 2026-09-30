@@ -637,6 +637,23 @@ def main() -> None:
         f"defense_marker_ids={powerbalance_defense}|"
         f"dex_extension_marker_ids={powerbalance_dex_extension}"
     )
+    mighty_entries = tuple(
+        entry
+        for entry in referenced_skill_entries
+        if entry.function_name == "PETSKILL_Mighty"
+    )
+    mighty_multiplier = 0
+    mighty_dodge = 0
+    for entry in mighty_entries:
+        option_text = entry.unambiguous_cp950_big5_option()
+        mighty_multiplier += int("倍" in option_text)
+        mighty_dodge += int("避" in option_text)
+    print(
+        "PETSKILL_MIGHTY_MARKERS|"
+        f"unique_ids={len(mighty_entries)}|"
+        f"multiplier_marker_ids={mighty_multiplier}|"
+        f"dodge_marker_ids={mighty_dodge}"
+    )
     print(
         "COUNT|enemybase_unresolved_petskill_ids|"
         f"{len(stack.petskill_runtime.unresolved_skill_ids(report_referenced_skill_ids))}"
