@@ -264,3 +264,24 @@ Raw recovered bundles should be transformed by audited Python tooling into versi
 Any C# replacement must demonstrate parity against versioned cross-language golden fixtures before the corresponding Python reference semantics are considered reproduced.
 
 Architecture record: `docs/PRODUCTION-RUNTIME-LANGUAGE-HOSTING-R1.md`.
+
+
+## DD-018 — Reconstruction acceptance precedes production-engine selection and redesigned content
+
+**Status:** Accepted
+
+The project follows a strict two-stage product sequence.
+
+Stage A is historical/gameplay reconstruction: recover and validate enough of the original StoneAge client/server/world/gameplay behavior to understand the game as a coherent system, with explicit provenance and explicit unknowns.
+
+Stage B begins only after an agreed reconstruction acceptance point. At that time the project owner and implementation work may choose the final production engine, decide which historical systems/content to retain or redesign, and begin building the new private single-player StoneAge derivative.
+
+Consequences:
+
+- current Godot/C#/engine research is retained as non-binding technical groundwork;
+- no production port or engine scene work is on the active critical path while core restoration gaps remain;
+- restoration runtime integration is preferred over speculative architecture work;
+- later content/design decisions must not be silently mixed into historical reconstruction evidence;
+- the recovered25 bridge remains version-tagged and cannot be promoted to Taiwan-v1 historical membership without evidence.
+
+Current restoration integration target: connect the already reconstructed encounter/battle path into the recovered25 local runtime composition before resuming production-language migration.

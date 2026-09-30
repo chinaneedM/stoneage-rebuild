@@ -4418,3 +4418,16 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Architecture record: `docs/PRODUCTION-RUNTIME-LANGUAGE-HOSTING-R1.md`.
 - **PRODUCTION_RUNTIME_LANGUAGE_HOSTING_R1 = CLOSED.**
 - Next Phase-1 priority: implement `STONEAGE_RUNTIME_GOLDEN_CONTRACT_R1`, a copyright-safe versioned semantic fixture set generated/verified by the Python reference and designed to be consumed unchanged by future standalone C# parity tests. Cover session serialization, movement/Classic Warp, dynamic occupancy/save delta and semantic intent sequencing without depending on proprietary recovered bundle bytes.
+
+
+## Restoration-first priority lock — 2026-10-01
+
+- Project sequencing is now explicitly locked: **finish historical/gameplay reconstruction first; discuss and choose the new StoneAge production engine/content redesign only after reconstruction reaches an agreed acceptance point.**
+- The completed Godot/C#/golden-contract work remains valid architecture research and migration protection, but it is **not the active development critical path**.
+- Do not create a standalone C# production port, Godot scenes, final UI/assets, or redesigned gameplay while the restoration backlog still contains material core-game gaps.
+- Current restoration evidence is already broad: the accepted Taiwan-v1 foundation client anchors direct client behavior, while recovered25 and pinned descendant source provide explicitly version-tagged bridge evidence for world/master/server semantics.
+- Placement-weighted recovered NPC audit currently classifies **3,856** stable-world placements: **3,710 CLOSED_ORDINARY_CORE**, **84 NO_DISPATCH_PROFILE**, **62 DEFERRED_VERSIONED_PACKAGE**, **0 unclassified**. This means the priority is runtime integration of already-closed semantics, not another broad NPC archaeology sweep.
+- The current recovered25 local runtime stack already composes: world materialization, provenance-safe static collision routing, Classic Warp/state-gated WarpMan, 3,852 seedable live NPC occupancy rows, local save/continue, and presentation-neutral application boundaries.
+- The largest immediate gameplay restoration gap is that the already reconstructed **encounter -> enemy group spawn -> battle -> settlement** path still lives beside, rather than inside, the recovered25 local runtime stack/coordinator.
+- **ACTIVE RESTORATION PRIORITY:** integrate versioned encounter data into the recovered25 runtime composition, then bridge movement-triggered encounter requests into the existing deterministic single-player battle shell without inventing RNG/AI/content. Preserve the known 39 positive missing-group specimen defects as fail-closed evidence defects.
+- Production-engine/C# migration remains deferred until restoration acceptance.
