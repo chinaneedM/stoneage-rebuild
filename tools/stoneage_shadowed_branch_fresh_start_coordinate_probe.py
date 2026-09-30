@@ -210,7 +210,15 @@ class SpawnCoordinateWitness:
 class FreshStartCoordinateAudit:
     award_floor:int
     award_interaction_cells:int
+    static_only_witnesses:tuple[SpawnCoordinateWitness,...]
     witnesses:tuple[SpawnCoordinateWitness,...]
+
+    @property
+    def static_only_closed(self)->bool:
+        return (
+            len(self.static_only_witnesses)==len(NORMAL_HOMETOWN_SPAWNS)
+            and all(row.reachable for row in self.static_only_witnesses)
+        )
 
     @property
     def closed(self)->bool:
@@ -375,6 +383,19 @@ def analyze(
         floor_ids=floor_ids,
     )
 
+    static_only_witnesses=tuple(
+        _one_spawn(
+            ordinal=ordinal,
+            spawn=spawn,
+            award_floor=award_floor,
+            award_goals=award_goals,
+            warps_by_floor=frozen_warps,
+            catalog=catalog,
+            mapset=mapset,
+            blockers={},
+        )
+        for ordinal,spawn in enumerate(NORMAL_HOMETOWN_SPAWNS,1)
+    )
     witnesses=tuple(
         _one_spawn(
             ordinal=ordinal,
@@ -391,6 +412,7 @@ def analyze(
     return FreshStartCoordinateAudit(
         award_floor=award_floor,
         award_interaction_cells=len(award_goals),
+        static_only_witnesses=static_only_witnesses,
         witnesses=witnesses,
     )
 
@@ -418,8 +440,21 @@ def emit(audit:FreshStartCoordinateAudit)->None:
         "cells receive no such exception"
     )
     print(f"COUNT|normal_hometown_candidates|{len(audit.witnesses)}")
+    print(
+        "COUNT|normal_hometown_static_only_reachable|"
+        f"{sum(x.reachable for x in audit.static_only_witnesses)}"
+    )
     print(f"COUNT|normal_hometown_coordinate_reachable|{sum(x.reachable for x in audit.witnesses)}")
     print(f"COUNT|award_interaction_cells|{audit.award_interaction_cells}")
+    for row in audit.static_only_witnesses:
+        print(
+            "FRESH_START_STATIC_ONLY_WITNESS|"
+            f"ordinal={row.ordinal}|reachable={int(row.reachable)}|"
+            f"warp_hops={row.warp_hops if row.warp_hops is not None else -1}|"
+            f"traversed_floors={row.traversed_floors}|"
+            f"unresolved_map_floors={row.unresolved_map_floors}|"
+            "route_details_withheld=1"
+        )
     for row in audit.witnesses:
         print(
             "FRESH_START_COORDINATE_WITNESS|"
@@ -429,6 +464,10 @@ def emit(audit:FreshStartCoordinateAudit)->None:
             f"unresolved_map_floors={row.unresolved_map_floors}|"
             "route_details_withheld=1"
         )
+    print(
+        "FRESH_START_STATIC_ONLY_COORDINATE_CHAIN|witness="
+        f"{int(audit.static_only_closed)}"
+    )
     print(f"FRESH_START_COORDINATE_CHAIN|witness={int(audit.closed)}")
     print(OUTPUT_RESOLUTION)
 
