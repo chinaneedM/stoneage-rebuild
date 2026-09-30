@@ -1,0 +1,17 @@
+StoneAge shadowed-branch fresh-start leveling-source audit — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+PINNED_SOURCE_FACT|defeated_enemy_exp_level_difference_floor=1|computed_enemy_exp_valid_level_floor=1
+RULE|birth/target levels, EXP values, enemy/group ids, encounter coordinates and route floor ids are withheld
+RULE|qualifying encounter source must be coordinate-reachable, have positive encounter/group/enemy weights, use an effective loaded group, require no appear/not-appear item gate, and resolve to a positive-EXP enemy variant
+RULE|this closes reward-source mechanics only; it does not yet prove that the fresh character can win a qualifying battle
+COUNT|repeatable_positive_exp_sources|308
+COUNT|sources_with_enemy_spawn_at_or_below_birth_level|34
+COUNT|source_hometowns|4
+COUNT|unresolved_map_floors|0
+LEVEL_TARGET|above_birth=1|exp_rows_complete=1|exp_rows_positive=0|values_withheld=1
+REPEATABLE_POSITIVE_EXP_SOURCE|witness=1
+BIRTH_LEVEL_OR_LOWER_ENEMY_SOURCE|witness=1
+FRESH_START_LEVELING_REWARD_CHAIN|witness=0
+COMBAT_VICTORY_FEASIBILITY|closed=0|reason=positive_exp_source_does_not_by_itself_prove_winnable_battle
+RESOLUTION|SHADOWED_BRANCH_FRESH_START_LEVELING_SOURCE_AUDITED
