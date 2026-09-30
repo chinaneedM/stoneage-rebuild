@@ -4381,5 +4381,23 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - The adapter owns only the active immutable session reference needed for presentation flow. New game/continue replace it; movement/interaction replace it with the canonical result returned from the core. Save/refresh/move/interaction fail closed when no active session exists.
 - Dependency boundary is enforced by regression: this module imports neither recovered25-specific modules nor Godot/Unity/input/rendering frameworks.
 - Design record: `docs/LOCAL-ENGINE-ADAPTER-CONTRACT-R1.md`.
-- **LOCAL_ENGINE_ADAPTER_CONTRACT_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
-- Next Phase-1 priority after CI closure: perform a **presentation-engine requirements audit** against the now-stable facade/adapter boundary. Compare candidate engines only on concrete project requirements (2D tile/sprite rendering, deterministic command integration, desktop packaging, save path handling, animation/audio tooling, scripting ergonomics and long-term maintainability). This is an evaluation/documentation step first; do not bind production runtime code to an engine until the audit is recorded.
+- Remote validation: local runtime session coordinator GitHub Actions **36738656157 = PASS**.
+- **LOCAL_ENGINE_ADAPTER_CONTRACT_R1 = CLOSED.**
+- The presentation-engine requirements audit was completed immediately after semantic-adapter closure; see the following section.
+
+
+## Phase 1 presentation-engine requirements audit — 2026-09-30
+
+- Current official engine/toolchain evidence was re-checked on 2026-09-30 rather than relying on old assumptions.
+- Audit candidates: Godot 4.7.2 stable, Unity 6.3 LTS/current Unity 6 update stream, Defold 1.13.x, MonoGame 3.8.5.1.
+- All four can technically deliver a Windows 2D single-player game. The decisive differences are editor/tooling burden, licensing/autonomy, runtime language fit and how much infrastructure the project must own.
+- **Godot 4.7.2 is the primary presentation spike candidate**, not yet a production lock-in:
+  - dedicated 2D renderer/tooling, tile maps, sprites and animation;
+  - first-class Windows builds;
+  - MIT engine license;
+  - Standard and .NET builds, preserving a possible C# production-core route;
+  - low pressure to move deterministic authority into the renderer because the semantic facade/adapter is already closed.
+- Defold is retained as the lightweight secondary candidate; Unity as the mature proprietary/C# fallback; MonoGame as the high-control/high-tooling-burden baseline rather than the first presentation choice.
+- Full evidence, requirement matrix and official-source snapshot: `docs/PRESENTATION-ENGINE-REQUIREMENTS-AUDIT-R1.md`.
+- **PRESENTATION_ENGINE_REQUIREMENTS_AUDIT_R1 = CLOSED.**
+- Next Phase-1 priority: close the **production runtime language/hosting boundary** before writing engine-specific scenes. Determine which Python modules remain reconstruction/reference tooling and define a parity-safe path for a production deterministic core. Explicitly evaluate a standalone C# core because Godot .NET, Unity and MonoGame can all host it, while preserving Python as an executable oracle through versioned golden fixtures. Do not embed Python in the shipped runtime by default and do not start a Godot production port until this boundary is documented.

@@ -224,3 +224,23 @@ Architecture consequences:
 - contradictory evidence produces a new/superseding contract version rather than silently changing provenance labels.
 
 R1 implementation contract: `docs/RUNTIME-BOOTSTRAP-CONTRACT-R1.md` and `game/RUNTIME-BOOTSTRAP-RECOVERED25-R1.json`.
+
+
+## DD-016 — Keep presentation replaceable; use Godot as the first spike candidate, not as runtime authority
+
+**Status:** Accepted
+
+The reconstructed runtime now has a closed semantic boundary above authoritative game state: runtime stack -> session coordinator -> local application facade -> semantic engine adapter. Presentation technology must remain downstream of that boundary.
+
+As of the 2026-09-30 engine requirements audit, Godot 4.7.2 is the **primary presentation spike candidate** because its dedicated 2D tooling, Windows export path, MIT license and .NET option align strongly with this project's requirements. This is an evaluation priority, not a claim that Godot is already the permanent production engine.
+
+Consequences:
+
+- no renderer may become authoritative for world state, collision, save schema, recovered NPC/transition rules or provenance;
+- engine code consumes semantic intents/views/results rather than recovered25 raw arguments or coordinates;
+- classic Warp, dynamic occupancy and state-gated transition semantics remain in the deterministic runtime below presentation;
+- Defold remains a lightweight secondary candidate, Unity a mature C# fallback and MonoGame a high-control baseline;
+- engine-specific production work waits until the production runtime language/hosting boundary is closed;
+- the Python reconstruction remains an executable evidence/reference surface unless and until a parity-tested production core supersedes individual modules.
+
+Audit record: `docs/PRESENTATION-ENGINE-REQUIREMENTS-AUDIT-R1.md`.
