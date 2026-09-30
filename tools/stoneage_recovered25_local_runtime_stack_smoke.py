@@ -43,6 +43,7 @@ from tools.stoneage_singleplayer_domain import (
     InventoryItem,
     InventorySlot,
     ItemTemplateId,
+    MapPosition,
     PersistentPlayerState,
     PlayerState,
 )
