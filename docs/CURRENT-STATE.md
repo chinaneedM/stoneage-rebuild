@@ -4033,3 +4033,24 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_REGION_PAYLOAD_SOURCE_R1 = CLOSED.**
 - This closure does not establish Taiwan-v1 membership for recovered25 maps. It only supplies concrete later-recovered payloads behind the already engine-neutral local runtime boundary.
 - Current primary seam remains the recovered25 world-profile adapter's **latest bundle-backed state-gated transition smoke** on the current remote HEAD. Only after that run passes should the adapter itself be marked CLOSED.
+
+
+## Phase 1 recovered25 world-profile adapter closure — 2026-09-30
+
+- The previously pending bundle-backed adapter seam is now closed on the verified recovered25 preservation bundle.
+- GitHub Actions **36711569243 = PASS** completed the full recovered transport workflow, including the dedicated `Smoke recovered25 local runtime adapter` step.
+- The derived aggregate report is committed as `research/recovered/STONEAGE-25-LOCAL-RUNTIME-ADAPTER-SMOKE-R1.txt`.
+- Closed runtime-adapter facts:
+  - materializable floors = **826**;
+  - active ordered classic Warp edges = **2724**;
+  - deferred conditional classic Warp records = **14**;
+  - dynamic recovered FREE-gate bindings = **3**;
+  - state-gated bindings = **3**;
+  - fresh-start seeds = **4**;
+  - provenance-bearing region descriptors materialized in the adapter smoke = **4**;
+  - state-gated allow decisions from legal current-player witnesses = **3 / 3**;
+  - local runtime-session encode/decode round-trip = **closed**.
+- Provenance separation remains enforced: Taiwan/Waei v1.0 is the historical foundation, while recovered25 remains `LATER_RECOVERED` and is not promoted to Taiwan-v1 membership.
+- **RECOVERED25_WORLD_PROFILE_ADAPTER_R1 = CLOSED.**
+- The concrete recovered25 map-plane source is already independently closed as `RECOVERED25_REGION_PAYLOAD_SOURCE_R1`.
+- Next Phase-1 priority: compose these two closed layers into a single engine-neutral **recovered25 local runtime stack**. The stack must use the concrete DAT/LS2MAP region provider rather than descriptor-only materialization, retain all three dynamic state-gated transition bindings, expose all four fresh starts, and pass one bundle-backed bootstrap -> fresh-start -> concrete region -> gate evaluation -> local save/load smoke. Do not choose a rendering engine and do not recreate legacy MMO services.
