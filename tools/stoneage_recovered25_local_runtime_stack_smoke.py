@@ -9,6 +9,7 @@ arguments and dialogue are not emitted.
 from __future__ import annotations
 
 import argparse
+import re
 from pathlib import Path
 from types import MappingProxyType
 
@@ -644,22 +645,33 @@ def main() -> None:
     )
     mighty_multiplier = 0
     mighty_dodge = 0
+    mighty_numeric_parse = 0
     for entry in mighty_entries:
         option_text = entry.unambiguous_cp950_big5_option()
+        multiplier_match = re.search(
+            r"倍\s*[+-]?(?:\d+(?:\.\d*)?|\.\d+)",
+            option_text,
+        )
+        dodge_match = re.search(r"避\s*[+-]?\d+", option_text)
         mighty_multiplier += int("倍" in option_text)
         mighty_dodge += int("避" in option_text)
+        mighty_numeric_parse += int(
+            multiplier_match is not None and dodge_match is not None
+        )
     if (
         mighty_multiplier != len(mighty_entries)
         or mighty_dodge != len(mighty_entries)
+        or mighty_numeric_parse != len(mighty_entries)
     ):
         raise ValueError(
-            "recovered25 Mighty OPTION marker grammar is not fully closed"
+            "recovered25 Mighty OPTION marker/numeric grammar is not fully closed"
         )
     print(
         "PETSKILL_MIGHTY_MARKERS|"
         f"unique_ids={len(mighty_entries)}|"
         f"multiplier_marker_ids={mighty_multiplier}|"
-        f"dodge_marker_ids={mighty_dodge}"
+        f"dodge_marker_ids={mighty_dodge}|"
+        f"numeric_parse_ids={mighty_numeric_parse}"
     )
     print(
         "COUNT|enemybase_unresolved_petskill_ids|"
