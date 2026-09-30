@@ -469,23 +469,48 @@ The handler parses and packs:
 
 The counter token is a simplified/traditional text variant across lineages; the packing algorithm is the same.
 
-### Dead-parameter behavior
+### Own-turn NoAction, cross-action COM3 effects
 
-The stable battle execution switch for `BATTLE_COM_S_NOGUARD` only calls:
+The stable `battle.c` command switch for `BATTLE_COM_S_NOGUARD` does call:
 
 ```
 BATTLE_NoAction(...)
 ```
 
-No other fixed common execution occurrence consumes those packed dodge/counter/critical values.
+for the actor's own command turn. However, that does **not** make the packed
+parameters dead. All three pinned lineages also read the still-selected
+`S_NOGUARD` command in `battle_event.c`:
 
-R1 therefore records the parsed values but marks them as unused by this old execution path.
+- when the NoGuard actor is the defender, `HIGH(COM3)` is added to the dodge
+  probability before the 1..10000 dodge roll;
+- when the NoGuard actor participates in the counter path, the upper byte of
+  `LOW(COM3)` is added to the counter probability;
+- `BATTLE_Counter` explicitly admits both ordinary ATTACK and S_NOGUARD as
+  counter-capable command states.
+
+The byte modifier uses the fixed-source quirk:
+
+```
+if (value > 127) value *= -1;
+```
+
+rather than a conventional signed-byte conversion.
+
+The lower byte of LOW(COM3), nominally the critical modifier, is read by a
+`BATTLE_CriticalCheckPet` helper present identically in the pinned lineages,
+but that helper is enclosed in `#if 0`; the active common critical path calls
+`BATTLE_CriticalCheckPlayer` instead. R1 therefore records the packed critical
+byte as a **disabled-path** value, not as an active modifier.
+
+This corrects the earlier R1 statement that NoGuard COM3 parameters had no
+other fixed common consumers.
 
 ### High-half residue
 
 The handler only writes HIGH(COM3) when the dodge marker exists.
 
-Without it, the previous high half remains.
+Without it, the previous high half remains and therefore can directly affect
+the later defending dodge calculation.
 
 LOW is always overwritten by the packed counter/critical value.
 
