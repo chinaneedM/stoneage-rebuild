@@ -4649,3 +4649,17 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Exact commercial `battle defeat -> core_Dying` invocation and death-screen / return-to-record-point choreography remain OPEN.
 - **LOCAL_RUNTIME_CORE_DYING_RESURRECTION_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
 - Next after CI: audit authoritative equipment/party/local hidden-player-state containers before applying the remaining core_Dying mutations. If those containers are not ready, move to the already recovered player/pet EXP progression settlement rather than inventing death-flow persistence.
+
+
+## Phase 1 death-state container audit and explicit progression coordinator bridge — 2026-10-01
+
+- Remote HEAD `3afd0301595e0cca1a2a241a3032725b6256ee05` was revalidated before continuation; its three relevant workflows were green: runtime golden contract **36755288378**, local runtime session coordinator **36755288256**, and recovered25 region payload **36755288531**. This closes the prior `LOCAL_RUNTIME_CORE_DYING_RESURRECTION_R1` remote-CI condition.
+- The authoritative local persistent domain was audited before applying the remaining `core_Dying` effects. `PersistentPlayerState` currently owns only character, inventory, pets and dead-pet count. Party formation and equipment use/equip are reconstructed as separate reference models, but neither is yet an authoritative local-session persistence container; there is also no dedicated hidden player death/status container.
+- Therefore party discharge, equipped-item drop mutation and hidden player-death/status counters remain semantic/world-action requests. They are **not** fabricated into unrelated persistent fields.
+- Per the previous branch condition, restoration priority moved to the already-closed EXP progression settlement rather than expanding the save schema speculatively.
+- New coordinator entry: `settle_persistent_group_battle_with_progression(...)`. It composes the existing atomic `SinglePlayerHistoricalRuntime.finish_persistent_battle_with_progression()` path into the authoritative local-session transaction boundary.
+- Player EXP profile, future player thresholds, pet EXP profile, per-pet future thresholds and every pet growth-roll bundle remain explicit caller inputs. The coordinator owns no threshold table and generates no RNG.
+- Implementation commit: `4b08287d3f4eabd3baca41ac1561c4948f6e2fe8`.
+- **LOCAL_RUNTIME_DEATH_CONTAINER_AUDIT_R1 = CLOSED_NO_AUTHORITATIVE_CONTAINER.**
+- **LOCAL_RUNTIME_BATTLE_PROGRESSION_COORDINATOR_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Next after CI: add/extend coordinator regression for a real terminal victory whose pending EXP crosses the player threshold, proving atomic level/EXP/max-EXP/free-point/charm/duel-state mutation while the original pre-battle session remains unchanged. Then cover pet threshold crossing only with explicit hidden growth identity and explicit growth rolls; do not infer the JSS-1999 threshold table.
