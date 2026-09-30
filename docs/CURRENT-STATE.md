@@ -4431,3 +4431,30 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - The largest immediate gameplay restoration gap is that the already reconstructed **encounter -> enemy group spawn -> battle -> settlement** path still lives beside, rather than inside, the recovered25 local runtime stack/coordinator.
 - **ACTIVE RESTORATION PRIORITY:** integrate versioned encounter data into the recovered25 runtime composition, then bridge movement-triggered encounter requests into the existing deterministic single-player battle shell without inventing RNG/AI/content. Preserve the known 39 positive missing-group specimen defects as fail-closed evidence defects.
 - Production-engine/C# migration remains deferred until restoration acceptance.
+
+
+## Cross-language golden contract CI closure — 2026-10-01
+
+- The auxiliary migration-safety contract `stoneage.runtime-golden.r1` is now remotely validated.
+- GitHub Actions **36741335484 = PASS** at commit `1e7a751a0a84d18e5529ca65511d1d454ca332c1`.
+- The previous failed run **36741219902** was a CI invocation-path defect only: both unittest cases passed, while direct file execution lacked the repository module root. The workflow was corrected to execute the verifier with `python3 -m tools.stoneage_runtime_golden_contract`.
+- **STONEAGE_RUNTIME_GOLDEN_CONTRACT_R1 = CLOSED.**
+- Under DD-018 this remains migration protection only; C# production-port work is deferred while restoration gaps remain.
+
+
+## Phase 1 recovered25 encounter runtime composition — 2026-10-01
+
+- Restoration priority has moved from presentation/production architecture back to original-gameplay integration.
+- New loader: `tools/stoneage_recovered25_encounter_runtime.py`.
+- It composes the already verified stable-later map lineage + versioned world geometry with the active recovered25 `encount/group/enemy` files selected by `setup.cf`.
+- `Recovered25LocalRuntimeStack.from_verified_bundle()` now requires the verified server data directory and carries a `VersionedEncounterRuntimeAdapter` alongside map/collision/Warp/NPC occupancy services.
+- New stack-level deterministic encounter calls:
+  - `historical_domain_for_session()`;
+  - `request_encounter_group(..., group_roll)`;
+  - `request_encounter(..., group_roll, enemy_roll, level_roll)`.
+- No RNG is generated internally and no missing content is synthesized.
+- The known stable-world specimen defects remain fail-closed: **402** encounter areas, **23** positive unresolved group references, **19** affected encounter areas.
+- Bundle-backed runtime smoke now requires both a legal group-resolution witness and a legal enemy-variant/level-resolution witness.
+- Design record: `docs/RECOVERED25-ENCOUNTER-RUNTIME-R1.md`.
+- **RECOVERED25_ENCOUNTER_RUNTIME_R1 = IMPLEMENTED_PENDING_REMOTE_BUNDLE_CI.**
+- Next restoration priority after CI closure: connect the already reconstructed movement-side encounter frequency/CEP loop to the local session coordinator, preserving explicit deterministic rolls and Classic-Warp encounter suppression. Then attach the existing battle shell; do not invent AI/RNG or redesign content.

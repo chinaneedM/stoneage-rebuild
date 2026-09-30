@@ -75,6 +75,7 @@ def run(
     client_dat_dir: Path,
     npc_dir: Path,
     setup: Path,
+    server_data_dir: Path,
     server_map_root: Path,
     mapset_path: Path,
     client_adrn_path: Path,
@@ -89,6 +90,7 @@ def run(
         client_dat_dir=client_dat_dir,
         npc_dir=npc_dir,
         setup=setup,
+        server_data_dir=server_data_dir,
         server_map_root=server_map_root,
         mapset_path=mapset_path,
         client_adrn_path=client_adrn_path,
@@ -232,6 +234,63 @@ def run(
         and restored.world_flags == saved.world_flags
     )
 
+    if stack.encounter_runtime is None:
+        raise ValueError("runtime stack lacks encounter runtime")
+    encounter_adapter = stack.encounter_runtime
+    if len(encounter_adapter.encounter_areas) != 402:
+        raise ValueError("unexpected stable encounter-area count")
+    if len(encounter_adapter.unresolved_positive_group_refs) != 23:
+        raise ValueError("unexpected unresolved encounter-group defect count")
+    if len(encounter_adapter.specimen_defect_area_indices) != 19:
+        raise ValueError("unexpected affected encounter-area defect count")
+
+    encounter_witness = None
+    defect_areas = set(encounter_adapter.specimen_defect_area_indices)
+    for area in encounter_adapter.encounter_areas:
+        if area.index in defect_areas:
+            continue
+        choices = tuple(
+            (group, weight)
+            for group, weight in area.resolved_group_choices(
+                encounter_adapter.groups,
+                (),
+            )
+            if int(weight) > 0
+        )
+        if not choices:
+            continue
+        witness_state = _player_state(1)
+        witness_session = LocalRuntimeSessionState(
+            contract_id=profile.contract_id,
+            world_profile=profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(
+                int(area.floor),
+                int(area.min_x),
+                int(area.min_y),
+            ),
+            player_state=witness_state,
+        )
+        try:
+            group_request = stack.request_encounter_group(
+                witness_session,
+                group_roll=0,
+            )
+            encounter_request = stack.request_encounter(
+                witness_session,
+                group_roll=0,
+                enemy_roll=0,
+                level_roll=0,
+            )
+        except (KeyError, ValueError):
+            continue
+        if group_request is None or encounter_request is None:
+            continue
+        encounter_witness = (group_request, encounter_request)
+        break
+    if encounter_witness is None:
+        raise ValueError("no legal recovered25 encounter runtime witness found")
+
     if stack.client_collision_provider is None or stack.collision_router is None:
         raise ValueError("runtime stack lacks full collision composition")
     client_witness = None
@@ -279,6 +338,7 @@ def run(
         allowed,
         roundtrip,
         client_witness,
+        encounter_witness,
     )
 
 
@@ -287,6 +347,7 @@ def main() -> None:
     ap.add_argument("--client-dat-dir", type=Path, required=True)
     ap.add_argument("--npc-dir", type=Path, required=True)
     ap.add_argument("--setup", type=Path, required=True)
+    ap.add_argument("--server-data-dir", type=Path, required=True)
     ap.add_argument("--server-map-root", type=Path, required=True)
     ap.add_argument("--mapset", type=Path, required=True)
     ap.add_argument("--client-adrn", type=Path, required=True)
@@ -300,10 +361,12 @@ def main() -> None:
         allowed,
         roundtrip,
         client_witness,
+        encounter_witness,
     ) = run(
         client_dat_dir=a.client_dat_dir,
         npc_dir=a.npc_dir,
         setup=a.setup,
+        server_data_dir=a.server_data_dir,
         server_map_root=a.server_map_root,
         mapset_path=a.mapset,
         client_adrn_path=a.client_adrn,
@@ -339,6 +402,17 @@ def main() -> None:
         f"exact_recovered25_binary_proof={int(bool(client_witness.route.exact_recovered25_binary_proof))}"
     )
     print("CLIENT_COLLISION_MOVEMENT_WITNESS|1")
+    print(f"COUNT|stable_encounter_areas|{len(stack.encounter_runtime.encounter_areas)}")
+    print(
+        "COUNT|stable_unresolved_positive_group_refs|"
+        f"{len(stack.encounter_runtime.unresolved_positive_group_refs)}"
+    )
+    print(
+        "COUNT|stable_affected_encounter_areas|"
+        f"{len(stack.encounter_runtime.specimen_defect_area_indices)}"
+    )
+    print("ENCOUNTER_GROUP_RUNTIME_WITNESS|1")
+    print("ENCOUNTER_VARIANT_RUNTIME_WITNESS|1")
     print(
         "PROVENANCE_SEPARATION|historical_foundation="
         f"{profile.historical_foundation}|runtime_world={profile.runtime_world_profile}|"

@@ -14,9 +14,19 @@ from tools.stoneage_recovered25_local_runtime_stack import (
     Recovered25LocalRuntimeStack,
 )
 from tools.stoneage_singleplayer_domain import (
+    HistoricalStaticData,
     MapPosition,
     PersistentPlayerState,
     PlayerState,
+)
+from tools.stoneage_singleplayer_world import (
+    HistoricalMapDefinition,
+    HistoricalWorldTopology,
+)
+from tools.stoneage_tw10_25_encounter_bridge import (
+    EncounterAreaBridge,
+    EnemyVariantBridge,
+    GroupBridge,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -83,6 +93,11 @@ class _Evaluator:
 class _WorldAdapter:
     def __init__(self, profile):
         self.profile = profile
+        self.topology = HistoricalWorldTopology(
+            maps={
+                1006: HistoricalMapDefinition(1006, 10, 10),
+            }
+        )
 
 
 class Recovered25LocalRuntimeStackTests(unittest.TestCase):
@@ -134,6 +149,85 @@ class Recovered25LocalRuntimeStackTests(unittest.TestCase):
             ),
             (1006, 3, 4, 3, 4),
         )
+
+    def test_versioned_encounter_runtime_can_resolve_group_and_enemy(self):
+        area = EncounterAreaBridge.from_encount({
+            "INDEX": 21,
+            "FLOOR": 1006,
+            "X1": 0,
+            "Y1": 0,
+            "X2": 9,
+            "Y2": 9,
+            "PROB_MIN": 10,
+            "PROB_MAX": 20,
+            "ENEMY_MAX": 2,
+            "ZORDER": 1,
+            "GROUP_ID1": 7,
+            "GROUP_PROB1": 100,
+        })
+        group = GroupBridge.from_group({
+            "GROUP_ID": 7,
+            "ENEMY_ID1": 700,
+            "CREATE_PROB1": 100,
+        })
+        enemy = EnemyVariantBridge.from_enemy({
+            "ID": 700,
+            "TEMPNO": 88,
+            "LV_MIN": 3,
+            "LV_MAX": 5,
+            "CREATEMAXNUM": 2,
+            "CREATEMINNUM": 1,
+            "TACTICS": 1,
+            "EXP": 100,
+            "DUELPOINT": 0,
+            "STYLE": 0,
+            "PETFLG": 1,
+        })
+        encounter_runtime = type("EncounterRuntime", (), {
+            "source_version": "recovered25",
+            "encounter_areas": (area,),
+            "unresolved_positive_group_refs": (),
+            "specimen_defect_area_indices": (),
+            "static_data": HistoricalStaticData(
+                encounter_areas=(area,),
+                encounter_groups={7: group},
+                enemy_variants={700: enemy},
+            ),
+        })()
+        stack = Recovered25LocalRuntimeStack(
+            profile=self.profile,
+            world_adapter=_WorldAdapter(self.profile),
+            region_provider=_RegionProvider(self.profile),
+            transition_resolver=_Resolver(self.profile),
+            transition_evaluator=_Evaluator(),
+            fresh_start_factory=_Factory(self.profile),
+            encounter_runtime=encounter_runtime,
+        )
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1006, 1, 1),
+            player_state=_state(),
+        )
+        group_request = stack.request_encounter_group(
+            session,
+            group_roll=0,
+        )
+        self.assertIsNotNone(group_request)
+        self.assertEqual(group_request.group_id, 7)
+
+        request = stack.request_encounter(
+            session,
+            group_roll=0,
+            enemy_roll=0,
+            level_roll=1,
+        )
+        self.assertIsNotNone(request)
+        self.assertEqual(request.group_id, 7)
+        self.assertEqual(request.enemy_variant_id.value, 700)
+        self.assertEqual(request.pet_template_id.value, 88)
+        self.assertEqual(request.level, 4)
 
     def test_transition_lookup_and_evaluation_remain_contract_bound(self):
         transition_id = next(iter(self.profile.transitions))

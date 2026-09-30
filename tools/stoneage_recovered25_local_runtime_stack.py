@@ -39,6 +39,9 @@ from tools.stoneage_recovered25_npc_initial_occupancy import (
     Recovered25NpcInitialOccupancyManifest,
     load_recovered25_npc_initial_occupancy_manifest,
 )
+from tools.stoneage_recovered25_encounter_runtime import (
+    load_recovered25_encounter_runtime,
+)
 from tools.stoneage_recovered25_server_collision_provider import (
     Recovered25ServerCollisionProvider,
 )
@@ -49,7 +52,15 @@ from tools.stoneage_recovered25_world_profile_adapter import (
     Recovered25WorldProfileAdapter,
     derive_recovered25_transition_bindings,
 )
-from tools.stoneage_singleplayer_domain import PersistentPlayerState
+from tools.stoneage_singleplayer_domain import (
+    EncounterRequest,
+    GroupEncounterRequest,
+    PersistentPlayerState,
+    SinglePlayerHistoricalDomain,
+)
+from tools.stoneage_versioned_encounter_runtime import (
+    VersionedEncounterRuntimeAdapter,
+)
 
 
 @dataclass(frozen=True)
@@ -64,6 +75,7 @@ class Recovered25LocalRuntimeStack:
     client_collision_provider: Recovered25ClientCollisionProvider | None = None
     collision_router: Recovered25CollisionRouter | None = None
     npc_initial_occupancy: Recovered25NpcInitialOccupancyManifest | None = None
+    encounter_runtime: VersionedEncounterRuntimeAdapter | None = None
 
     @classmethod
     def from_verified_bundle(
@@ -74,6 +86,7 @@ class Recovered25LocalRuntimeStack:
         client_dat_dir: Path,
         npc_dir: Path,
         setup: Path,
+        server_data_dir: Path,
         server_map_root: Path,
         mapset_path: Path,
         client_adrn_path: Path | None = None,
@@ -128,6 +141,10 @@ class Recovered25LocalRuntimeStack:
         npc_initial_occupancy = (
             load_recovered25_npc_initial_occupancy_manifest()
         )
+        encounter_runtime = load_recovered25_encounter_runtime(
+            data_dir=server_data_dir,
+            setup=setup,
+        )
         stack = cls(
             profile=profile,
             world_adapter=adapter,
@@ -139,6 +156,7 @@ class Recovered25LocalRuntimeStack:
             client_collision_provider=client_collision_provider,
             collision_router=collision_router,
             npc_initial_occupancy=npc_initial_occupancy,
+            encounter_runtime=encounter_runtime,
         )
         stack._validate()
         return stack
@@ -195,6 +213,23 @@ class Recovered25LocalRuntimeStack:
             if invalid_seed_positions:
                 raise ValueError(
                     "runtime stack NPC occupancy contains invalid seed positions"
+                )
+        if self.encounter_runtime is not None:
+            encounter = self.encounter_runtime
+            if encounter.source_version != "recovered25":
+                raise ValueError(
+                    "runtime stack encounter source-version drift"
+                )
+            invalid_encounter_floors = tuple(
+                sorted({
+                    int(area.floor)
+                    for area in encounter.encounter_areas
+                    if int(area.floor) not in self.world_adapter.topology.maps
+                })
+            )
+            if invalid_encounter_floors:
+                raise ValueError(
+                    "runtime stack encounter areas lie outside topology"
                 )
 
     def create_fresh_start(self, hometown_ordinal: int) -> FreshStartSeed:
@@ -258,4 +293,64 @@ class Recovered25LocalRuntimeStack:
             contract,
             binding,
             session,
+        )
+
+    def historical_domain_for_session(
+        self,
+        session: LocalRuntimeSessionState,
+    ) -> SinglePlayerHistoricalDomain:
+        """Compose current session state with versioned encounter data."""
+
+        if session.contract_id != self.profile.contract_id:
+            raise ValueError("runtime stack session contract mismatch")
+        if session.world_profile != self.profile.runtime_world_profile:
+            raise ValueError("runtime stack session world-profile mismatch")
+        if not self.world_adapter.topology.is_valid_position(
+            session.player_position
+        ):
+            raise ValueError("runtime stack session position outside topology")
+        if self.encounter_runtime is None:
+            raise ValueError("runtime stack has no encounter runtime")
+
+        domain = SinglePlayerHistoricalDomain(
+            static=self.encounter_runtime.static_data,
+            persistent=session.player_state,
+        )
+        domain.move_player(
+            floor_id=session.player_position.floor_id,
+            x=session.player_position.x,
+            y=session.player_position.y,
+        )
+        return domain
+
+    def request_encounter_group(
+        self,
+        session: LocalRuntimeSessionState,
+        *,
+        group_roll: int,
+    ) -> GroupEncounterRequest | None:
+        """Resolve one explicit group roll at the current world position."""
+
+        return self.historical_domain_for_session(
+            session
+        ).request_encounter_group(
+            group_roll=int(group_roll),
+        )
+
+    def request_encounter(
+        self,
+        session: LocalRuntimeSessionState,
+        *,
+        group_roll: int,
+        enemy_roll: int,
+        level_roll: int,
+    ) -> EncounterRequest | None:
+        """Resolve explicit group/enemy/level rolls without inventing RNG."""
+
+        return self.historical_domain_for_session(
+            session
+        ).request_encounter(
+            group_roll=int(group_roll),
+            enemy_roll=int(enemy_roll),
+            level_roll=int(level_roll),
         )
