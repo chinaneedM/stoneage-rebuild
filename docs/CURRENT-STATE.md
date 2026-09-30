@@ -4175,3 +4175,28 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - This closes the **resource/metadata availability** question only. It does not yet assert that Taiwan-v1 `readHitMap/checkHitMap` behavior is byte-identical to recovered25 runtime behavior.
 - **RECOVERED25_CLIENT_ADRN_COLLISION_RESOURCE_COVERAGE_R1 = CLOSED.**
 - Next Phase-1 priority: establish a version-appropriate **recovered25 client hit-map algorithm provenance**. Use the recovered runtime binary/source-lineage evidence to decide whether the long-lived client `readHitMap/checkHitMap` algorithm can be promoted for recovered25. Keep this separate from the already closed resource coverage. If direct recovered25 proof remains unavailable, record the algorithm as an explicit descendant-stable reconstruction profile rather than silently claiming exact 2.5 binary semantics.
+
+
+## Phase 1 recovered25 client hit-map algorithm provenance — 2026-09-30
+
+- The remaining client-collision algorithm question has been audited against **three pinned public StoneAge client source lineages** at immutable Git commits:
+  - BismarckDD/Stoneage `2f736808...`;
+  - Signally190/sking-sacli `40cb67ef...`;
+  - anson1788/stoneage `1997fc20...`.
+- Automated audit: `tools/stoneage_client_hitmap_lineage_probe.py`; GitHub Actions **36720265401 = PASS**; derived report `research/recovered/STONEAGE-CLIENT-HITMAP-LINEAGE-R1.txt`.
+- All **3 / 3** lineages expose one identical audited semantic feature signature for the active client `readHitMap/checkHitMap` family:
+  - tile ADRN lookup for IDs > 99 plus the 60..79 exception;
+  - small-code block set 1/2/5/6/9/10 and override code 4;
+  - hit=0 block while preserving override, hit=2 override;
+  - parts collision footprints;
+  - the 15680..15732 hit=1 origin-only special case;
+  - final EVENT_NPC blocking;
+  - `checkHitMap` blocks value 1.
+- All **3 / 3** also expose one identical audited `ADRNBIN/MAP_ATTR` structural feature signature. **2 / 3** pinned lineages explicitly retain an `_SA_VERSION_25` compile-time marker in the same client resource header family.
+- This aligns with direct recovered25 resource evidence already closed in this repository: three-plane client DAT caches plus same-bundle 80-byte `adrn_15.bin`, whose collision-required IDs resolve for **191 / 191** server-gap floors.
+- Evidence classification is deliberately bounded:
+  - reconstruction profile = `RECOVERED25_DESCENDANT_STABLE_CLIENT_HITMAP_R1`;
+  - status = **SUPPORTED_FOR_RECONSTRUCTION**;
+  - exact recovered25 `sa_2903.exe` machine-code identity proof = **not established**.
+- **RECOVERED25_CLIENT_HITMAP_ALGORITHM_PROVENANCE_R1 = CLOSED_AS_DESCENDANT_STABLE_RECONSTRUCTION_PROFILE.**
+- Next Phase-1 priority: implement a recovered25 client-DAT collision provider for the **191** server-uncovered floors using this explicitly versioned descendant-stable profile and the same-bundle `adrn_15.bin`. Keep its provenance distinct from the exact server LS2MAP provider. Then compose a unified collision router that yields a verdict for all **826** materializable floors without silently changing evidence class.
