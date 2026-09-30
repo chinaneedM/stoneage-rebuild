@@ -52,6 +52,10 @@ from tools.stoneage_recovered25_enemybase_runtime import (
     Recovered25EnemybaseRuntime,
     load_recovered25_enemybase_runtime,
 )
+from tools.stoneage_recovered25_petskill_runtime import (
+    Recovered25PetSkillRuntime,
+    load_recovered25_petskill_runtime,
+)
 from tools.stoneage_recovered25_server_collision_provider import (
     Recovered25ServerCollisionProvider,
 )
@@ -87,6 +91,7 @@ class Recovered25LocalRuntimeStack:
     npc_initial_occupancy: Recovered25NpcInitialOccupancyManifest | None = None
     encounter_runtime: VersionedEncounterRuntimeAdapter | None = None
     enemybase_runtime: Recovered25EnemybaseRuntime | None = None
+    petskill_runtime: Recovered25PetSkillRuntime | None = None
 
     @classmethod
     def from_verified_bundle(
@@ -168,6 +173,14 @@ class Recovered25LocalRuntimeStack:
                 setup=setup,
             )
         )
+        petskill_runtime = (
+            None
+            if server_data_dir is None
+            else load_recovered25_petskill_runtime(
+                data_dir=server_data_dir,
+                setup=setup,
+            )
+        )
         stack = cls(
             profile=profile,
             world_adapter=adapter,
@@ -181,6 +194,7 @@ class Recovered25LocalRuntimeStack:
             npc_initial_occupancy=npc_initial_occupancy,
             encounter_runtime=encounter_runtime,
             enemybase_runtime=enemybase_runtime,
+            petskill_runtime=petskill_runtime,
         )
         stack._validate()
         return stack
@@ -272,6 +286,34 @@ class Recovered25LocalRuntimeStack:
                 raise ValueError(
                     "runtime stack stable encounter template gaps: "
                     + ",".join(str(x) for x in unresolved_templates[:10])
+                )
+        if self.petskill_runtime is not None:
+            petskill = self.petskill_runtime
+            if petskill.source_version != "recovered25":
+                raise ValueError(
+                    "runtime stack pet-skill source-version drift"
+                )
+            if self.enemybase_runtime is None:
+                raise ValueError(
+                    "runtime stack pet-skill index requires enemybase runtime"
+                )
+            referenced_skill_ids = {
+                int(skill_id)
+                for template in self.enemybase_runtime.templates.values()
+                for skill_id in (
+                    template.skill_slot_ids
+                    if template.skill_slot_ids
+                    else template.skill_ids
+                )
+                if int(skill_id) > 0
+            }
+            unresolved_skill_ids = petskill.unresolved_skill_ids(
+                referenced_skill_ids
+            )
+            if unresolved_skill_ids:
+                raise ValueError(
+                    "runtime stack enemybase pet-skill gaps: "
+                    + ",".join(str(x) for x in unresolved_skill_ids[:10])
                 )
 
     def create_fresh_start(self, hometown_ordinal: int) -> FreshStartSeed:
