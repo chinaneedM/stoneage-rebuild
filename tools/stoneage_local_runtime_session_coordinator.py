@@ -23,6 +23,9 @@ from tools.stoneage_map_collision_model import (
     CollisionDecision,
     DynamicOccupant,
 )
+from tools.stoneage_runtime_dynamic_occupancy import (
+    resolve_runtime_collision_with_occupancy,
+)
 from tools.stoneage_local_runtime_core import (
     LocalPersistenceStore,
     LocalRuntimeSessionState,
@@ -51,6 +54,10 @@ class LocalRuntimeWalkResult:
     collision_evidence_class: str | None = None
     collision_semantic_profile: str | None = None
     collision_exact_binary_proof: bool | None = None
+    static_collision: CollisionDecision | None = None
+    dynamic_collision: CollisionDecision | None = None
+    dynamic_occupancy_profile: str | None = None
+    dynamic_occupancy_evidence_class: str | None = None
 
 
 @dataclass(frozen=True)
@@ -233,33 +240,41 @@ class LocalRuntimeSessionCoordinator:
         session: LocalRuntimeSessionState,
         *,
         destination: MapPosition,
+        destination_occupants: Sequence[DynamicOccupant] = (),
         map_objmove_ok: bool = True,
     ) -> LocalRuntimeWalkResult:
-        """Resolve one ordinary step through the provenance-bearing router."""
+        """Resolve static routed collision, then independent live occupancy."""
         session = self._validate_session(session)
         router = getattr(self.stack, "collision_router", None)
         if router is None:
             raise ValueError("runtime stack has no unified collision router")
-        routed = router.routed_step_verdict(
+        layered = resolve_runtime_collision_with_occupancy(
+            router=router,
             origin=session.player_position,
             destination=destination,
+            destination_occupants=tuple(destination_occupants),
         )
+        routed = layered.static
         result = self.walk_one_cell(
             session,
             destination=destination,
-            entry_allowed=routed.decision.allowed,
+            entry_allowed=layered.decision.allowed,
             map_objmove_ok=bool(map_objmove_ok),
         )
         return LocalRuntimeWalkResult(
             session=result.session,
             resolution=result.resolution,
-            collision=routed.decision,
+            collision=layered.decision,
             collision_provider_kind=routed.route.provider_kind,
             collision_evidence_class=routed.route.evidence_class,
             collision_semantic_profile=routed.route.semantic_profile,
             collision_exact_binary_proof=(
                 routed.route.exact_recovered25_binary_proof
             ),
+            static_collision=routed.decision,
+            dynamic_collision=layered.dynamic,
+            dynamic_occupancy_profile=layered.dynamic_profile,
+            dynamic_occupancy_evidence_class=layered.dynamic_evidence_class,
         )
 
     @staticmethod
