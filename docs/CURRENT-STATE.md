@@ -4676,3 +4676,46 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **LOCAL_RUNTIME_BATTLE_PROGRESSION_COORDINATOR_R1 = CLOSED.**
 - Restoration priority now returns to the deferred **enemy AI / enemy-command selection evidence boundary** identified after persistent ATTACK/WAIT closure. Audit the already recovered descendant enemy command-selection semantics and recovered25 `enemy.TACTICS` bridge before generating any enemy command in the coordinator. Keep caller-supplied enemy commands authoritative until that evidence boundary is explicitly versioned and tested.
 
+## Phase 1 recovered enemy AI command-selection/runtime bridge — 2026-10-01
+
+- The deferred enemy-command boundary identified after persistent ATTACK/WAIT closure has now been audited against the fixed stable-descendant source and the recovered25 `enemy.TACTICS/TACTICSOPTION` data path.
+- The coordinator still generates no hidden randomness. Enemy AI mode rolls, target rolls, initiative inputs, ordinary attack rolls, escape rolls and ABIO inputs remain explicit caller inputs.
+- `TACTICS == 1` common-normal AI is the only admitted enemy selector. Unsupported TACTICS modes and unresolved decision paths fail closed.
+- ATTACK/GUARD closure:
+  - recovered `at/gu` selection is converted to existing `BattleCommand` values;
+  - GUARD execution is routed through the ordinary persistent-round resolver;
+  - the source-shaped guard damage check continues to consume explicit `OrdinaryAttackRolls.guard_roll_1_100`;
+  - coordinator validation after the RNG fixture correction: **36760656396 = PASS**.
+- Enemy ESCAPE closure:
+  - recovered `enemybase.RARE` is now preserved as numeric provenance in `PetTemplateBridge`;
+  - fixed-source lineage confirms enemy creation writes enemybase RARE to `CHAR_RARE`, and the ordinary escape check reads that value;
+  - enemy escape requires explicit `OrdinaryEscapeRolls` plus exact living-opponent ABIO coverage;
+  - missing RARE, missing/extra escape rolls or incomplete ABIO mappings fail closed;
+  - successful enemy escape removes the enemy without creating normal kill EXP;
+  - coordinator validation: **36761759048 = PASS**.
+- Recovered pet-skill runtime index:
+  - new `tools/stoneage_recovered25_petskill_runtime.py` keeps only execution-facing ID/FIELD/TARGET/COST/ILLEGAL, callback and raw OPTION bytes; display name/comment strings are not retained;
+  - fixed-source `petskillfile1/petskillfile2` ambiguity is fail-closed if the two configured paths resolve to different existing files;
+  - hash-pinned recovered25 full-stack validation proves **147 active pet-skill entries**, **111 enemybase-referenced positive skill IDs**, and **0 unresolved referenced skill IDs**;
+  - the full stack remains **RESOLUTION|RECOVERED25_LOCAL_RUNTIME_STACK_CLOSED**.
+- Enemy skill-slot identity audit found that compacting positive `PETSKILL1..7` values is semantically unsafe:
+  - active `enemybase.txt` contains **15 rows with positive skills after an empty earlier slot**;
+  - sparse masks include cases where only slot 2, only slot 3, slots 3-7, or slots 2-7 are populated;
+  - `PetTemplateBridge.skill_slot_ids` now preserves all seven positional IDs, while legacy `skill_ids` remains only a compact compatibility projection.
+- Basic `wa` execution bridge:
+  - AI `wa[0..6]` is interpreted as the exact seven-slot index, never as an index into compacted positive skill IDs;
+  - `PETSKILL_NormalAttack` -> source-shaped ATTACK(target);
+  - `PETSKILL_NormalGuard` -> source-shaped GUARD(target);
+  - `PETSKILL_None` -> source-shaped `BATTLE_COM_NONE` with the selected target retained in COM2;
+  - `BATTLE_COM_NONE` is now admitted by the ordinary resolver as an explicit no-action command rather than being rewritten to WAIT;
+  - every other callback, empty selected slot, unresolved skill ID and missing recovered pet-skill runtime remains fail-closed.
+- Relevant remote validation:
+  - basic wa coordinator bridge **36763034120 = PASS**;
+  - explicit NONE battle-core validation **36763545262 = PASS**;
+  - standalone NONE pet-skill bridge **36763591375 = PASS**;
+  - final coordinator import-fix validation **36763738745 = PASS**;
+  - the prior **36763641544** failure was a test-only missing `BATTLE_COM_NONE` import, not a runtime defect.
+- **LOCAL_RUNTIME_ENEMY_AI_ATTACK_GUARD_ESCAPE_BASIC_WA_R1 = CLOSED.**
+- Remaining enemy-AI work is deliberately narrower than “implement all pet skills”: quantify which of the 111 recovered enemy-used skill IDs/slot uses map to the 15 already reconstructed common callbacks, then extend only callbacks whose command setup + ordinary-round execution contracts are already evidence-closed. OPTION encoding-dependent or stateful callbacks remain OPEN until their exact data/runtime requirements are carried explicitly.
+- Immediate next priority: use the hash-pinned recovered25 aggregate coverage to choose the highest-impact next common callback. Reuse existing reconstructed Guardian/StatusChange/etc. seams where complete; do not invent generalized skill execution or silently downgrade unsupported skills to ATTACK/WAIT.
+
