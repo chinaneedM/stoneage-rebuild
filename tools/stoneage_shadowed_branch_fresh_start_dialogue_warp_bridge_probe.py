@@ -70,6 +70,7 @@ class DialogueWarp:
     destination_floor:int
     destination_x:int
     destination_y:int
+    argument_data:bytes|None=None
 
     def __post_init__(self):
         if self.kind not in {WARPMAN,FMWARPMAN}:
@@ -81,6 +82,7 @@ class SearchResult:
     reachable:bool
     nonclassic_edges:int|None
     kind_sequence:tuple[str,...]
+    edge_sequence:tuple[DialogueWarp,...]=()
 
 
 @dataclass(frozen=True)
@@ -189,6 +191,7 @@ def _collect_dialogue_warps(
                             destination_floor=floor,
                             destination_x=x,
                             destination_y=y,
+                            argument_data=data,
                         ))
                         counts[f"{kind}:candidate_edges"]+=1
     out.sort(key=lambda row:(
@@ -306,21 +309,22 @@ def _search(
             new=distance[state]+1
             if new < distance.get(nxt,10**9):
                 distance[nxt]=new
-                parent[nxt]=(state,edge.kind)
+                parent[nxt]=(state,edge)
                 queue.append(nxt)
 
     if final is None:
         return SearchResult(False,None,())
 
-    kinds=[]
+    edges=[]
     cursor=final
     while cursor!=start:
-        prev,kind=parent[cursor]
-        if kind is not None:
-            kinds.append(kind)
+        prev,edge=parent[cursor]
+        if edge is not None:
+            edges.append(edge)
         cursor=prev
-    kinds.reverse()
-    return SearchResult(True,distance[final],tuple(kinds))
+    edges.reverse()
+    kinds=tuple(edge.kind for edge in edges)
+    return SearchResult(True,distance[final],kinds,tuple(edges))
 
 
 def analyze(
