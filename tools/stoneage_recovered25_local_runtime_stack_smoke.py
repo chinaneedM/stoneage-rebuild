@@ -12,6 +12,8 @@ import argparse
 from pathlib import Path
 from types import MappingProxyType
 
+from tools.stoneage_enemy_spawn_model import EnemyBirthRolls
+
 from tools.stoneage_local_runtime_core import (
     LocalRuntimeSessionState,
     WorldRegionRequest,
@@ -263,6 +265,7 @@ def run(
         raise ValueError("unexpected affected encounter-area defect count")
 
     encounter_witness = None
+    spawn_witness = None
     defect_areas = set(encounter_adapter.specimen_defect_area_indices)
     for area in encounter_adapter.encounter_areas:
         if area.index in defect_areas:
@@ -304,10 +307,32 @@ def run(
             continue
         if group_request is None or encounter_request is None:
             continue
+        try:
+            spawned = stack.spawn_group_enemies(
+                group_request,
+                entry_count_roll=1,
+                selection_rolls=(0,) * 100,
+                birth_rolls=(
+                    EnemyBirthRolls(
+                        level_roll=0,
+                        birth_offsets=(0, 0, 0, 0),
+                        spawn_allocation_rolls=(
+                            0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                        ),
+                    ),
+                ),
+            )
+        except (KeyError, ValueError):
+            continue
+        if len(spawned) != 1:
+            continue
         encounter_witness = (group_request, encounter_request)
+        spawn_witness = spawned
         break
     if encounter_witness is None:
         raise ValueError("no legal recovered25 encounter runtime witness found")
+    if spawn_witness is None:
+        raise ValueError("no legal recovered25 spawn/birth runtime witness found")
 
     if stack.client_collision_provider is None or stack.collision_router is None:
         raise ValueError("runtime stack lacks full collision composition")
@@ -357,6 +382,7 @@ def run(
         roundtrip,
         client_witness,
         encounter_witness,
+        spawn_witness,
     )
 
 
@@ -380,6 +406,7 @@ def main() -> None:
         roundtrip,
         client_witness,
         encounter_witness,
+        spawn_witness,
     ) = run(
         client_dat_dir=a.client_dat_dir,
         npc_dir=a.npc_dir,
@@ -420,14 +447,20 @@ def main() -> None:
         f"exact_recovered25_binary_proof={int(bool(client_witness.route.exact_recovered25_binary_proof))}"
     )
     print("CLIENT_COLLISION_MOVEMENT_WITNESS|1")
+    report_referenced_template_ids = stack.enemybase_runtime.referenced_template_ids(
+        stack.encounter_runtime
+    )
+    report_unresolved_template_ids = stack.enemybase_runtime.unresolved_template_ids(
+        stack.encounter_runtime
+    )
     print(f"COUNT|enemybase_templates|{len(stack.enemybase_runtime.templates)}")
     print(
         "COUNT|stable_referenced_enemybase_templates|"
-        f"{len(referenced_template_ids)}"
+        f"{len(report_referenced_template_ids)}"
     )
     print(
         "COUNT|stable_unresolved_enemybase_templates|"
-        f"{len(unresolved_template_ids)}"
+        f"{len(report_unresolved_template_ids)}"
     )
     print(
         "ENEMYBASE_NAME_ENCODING_STATUS|"
@@ -444,6 +477,7 @@ def main() -> None:
     )
     print("ENCOUNTER_GROUP_RUNTIME_WITNESS|1")
     print("ENCOUNTER_VARIANT_RUNTIME_WITNESS|1")
+    print("ENEMY_SPAWN_BIRTH_RUNTIME_WITNESS|1")
     print(
         "PROVENANCE_SEPARATION|historical_foundation="
         f"{profile.historical_foundation}|runtime_world={profile.runtime_world_profile}|"

@@ -52,7 +52,7 @@ class BattleParticipant:
     attack: int
     defense: int
     quick: int
-    name: str
+    name: str | None
     fixed_vital: int | None = None
     source_variant_id: int | None = None
     source_template_id: int | None = None
@@ -161,8 +161,6 @@ def enemy_participant_from_spawn_state(
         raise ValueError("enemy birth uses unexpected template namespace")
     if int(birth.template_ref.template_id) != template.tempno:
         raise ValueError("enemy birth template does not match enemy template")
-    if template.name is None:
-        raise ValueError("enemy battle participant requires template name")
     reward_items=tuple(reward_items)
     if len(reward_items) > 10:
         raise ValueError("enemy reward items exceed ten source item slots")
@@ -180,7 +178,7 @@ def enemy_participant_from_spawn_state(
         attack=int(projection["attack"]),
         defense=int(projection["defense"]),
         quick=int(projection["quick"]),
-        name=str(template.name),
+        name=(None if template.name is None else str(template.name)),
         fixed_vital=int(birth.internal_vital),
         source_variant_id=variant.enemy_id,
         source_template_id=template.tempno,

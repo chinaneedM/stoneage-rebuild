@@ -166,6 +166,53 @@ class SinglePlayerBattleLifecycleTests(unittest.TestCase):
         self.assertGreater(enemy.hp, 0)
         self.assertGreater(enemy.attack, 0)
 
+    def test_enemy_display_name_can_remain_unresolved_without_affecting_mechanics(self):
+        request = encounter()
+        variant = enemy_variant()
+        template = PetTemplateBridge.from_enemybase(
+            {
+                "NAME": None,
+                "TEMPNO": 88,
+                "INITNUM": 100,
+                "LVUPPOINT": 5,
+                "BASEVITAL": 20,
+                "BASESTR": 20,
+                "BASETGH": 20,
+                "BASEDEX": 20,
+                "IMGNUMBER": 10123,
+                "MODAI": 4,
+                "EARTHAT": 50,
+                "WATERAT": 50,
+                "FIREAT": 0,
+                "WINDAT": 0,
+                "SLOT": 4,
+            }
+        )
+        birth = build_pet_birth_bridge(
+            template,
+            level=4,
+            birth_offsets=(0, 0, 0, 0),
+            spawn_allocation_rolls=(0, 0, 0, 1, 1, 2, 2, 2, 3, 3),
+        )
+        enemy = enemy_participant_from_birth(
+            request,
+            variant,
+            template,
+            birth,
+            spawn_index=0,
+        )
+        self.assertIsNone(enemy.name)
+        self.assertGreater(enemy.hp, 0)
+        self.assertGreater(enemy.attack, 0)
+
+        session = begin_battle(
+            domain_for_battle(),
+            request,
+            enemies=(enemy,),
+        )
+        self.assertIsNone(session.enemies[0].name)
+        self.assertEqual(session.player.name, "Hero")
+
     def test_battle_session_requires_explicit_enemy_spawns_and_allied_pet_selection(self):
         domain = domain_for_battle()
         request = encounter()

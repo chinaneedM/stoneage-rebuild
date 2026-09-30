@@ -4507,5 +4507,25 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - The full recovered25 stack now carries `enemybase_runtime` whenever `server_data_dir` is supplied.
 - Bundle smoke requires **988** loaded enemybase templates and **0** unresolved enemybase template identities across the stable encounter runtime.
 - Enemy names remain a presentation-layer OPEN issue until the two CP950/Big5 divergent rows are independently disambiguated.
-- **RECOVERED25_NUMERIC_ENEMYBASE_RUNTIME_R1 = IMPLEMENTED_PENDING_REMOTE_BUNDLE_CI.**
+- First bundle run **36749082734** reached the completed stack execution without any template-gap exception; it failed only in the final reporter because a run-local template-count variable was referenced from `main()`. The reporter scope bug is corrected in the next validation.
+- **RECOVERED25_NUMERIC_ENEMYBASE_RUNTIME_R1 = IMPLEMENTED_PENDING_REPORTER_FIX_CI.**
 - If the template join closes, proceed to group spawn/birth materialization and battle-shell integration with names nullable for enemy-side participants only; player and owned-pet names remain mandatory.
+
+
+## Phase 1 recovered25 group spawn/birth bridge — 2026-10-01
+
+- The next restoration seam now composes the existing closed models rather than inventing new combat behavior:
+  `GroupEncounterRequest -> plan_enemy_spawns -> recovered25 enemybase template -> build_pet_birth_bridge -> SpawnedEnemy/BattleParticipant`.
+- New stack entry point: `spawn_group_enemies(...)`.
+- All random values remain explicit inputs:
+  - requested enemy count;
+  - weighted enemy-variant selection rolls;
+  - per-enemy level roll;
+  - four birth offsets;
+  - ten spawn-allocation rolls.
+- The bridge validates encounter area identity, position, group identity, enemy-count boundary and enemybase TEMPNO before materialization.
+- Because enemybase name decoding still has a two-row CP950/Big5 ambiguity, enemy-side `BattleParticipant.name` is now allowed to remain `None`. Player and owned-pet names are still mandatory through the existing `_require_name()` path.
+- No synthetic/fallback enemy name is emitted.
+- Bundle smoke is extended to require a real stable-world one-enemy spawn/birth witness using the hash-pinned recovered25 specimen.
+- **RECOVERED25_GROUP_SPAWN_BIRTH_BRIDGE_R1 = IMPLEMENTED_PENDING_REMOTE_BUNDLE_CI.**
+- After closure, connect the spawned participants to `begin_group_battle()` in the local session coordinator, then return explicit battle settlement into a newly cloned persistent session state.

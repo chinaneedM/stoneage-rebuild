@@ -17,7 +17,10 @@ on:
       - tools/stoneage_recovered25_encounter_runtime.py
       - tools/stoneage_versioned_encounter_runtime.py
       - tools/stoneage_recovered25_enemybase_runtime.py
+      - tools/stoneage_enemy_spawn_model.py
+      - tools/stoneage_singleplayer_battle.py
       - tests/test_stoneage_recovered25_enemybase_runtime.py
+      - tests/test_stoneage_singleplayer_battle.py
       - tools/stoneage_enemybase_probe.py
       - tools/stoneage_encounter_chain_probe.py
       - tests/test_stoneage_recovered25_local_runtime_stack.py
@@ -61,6 +64,7 @@ jobs:
             tests.test_stoneage_recovered25_world_profile_adapter \
             tests.test_stoneage_recovered25_local_runtime_stack \
             tests.test_stoneage_recovered25_enemybase_runtime \
+            tests.test_stoneage_singleplayer_battle \
             tests.test_stoneage_recovered25_server_collision_coverage_probe \
             tests.test_stoneage_recovered25_server_collision_provider \
             tests.test_stoneage_recovered25_client_adrn_collision_coverage_probe \
@@ -181,6 +185,7 @@ jobs:
           grep -F 'COUNT|stable_affected_encounter_areas|19' "$R"
           grep -F 'ENCOUNTER_GROUP_RUNTIME_WITNESS|1' "$R"
           grep -F 'ENCOUNTER_VARIANT_RUNTIME_WITNESS|1' "$R"
+          grep -F 'ENEMY_SPAWN_BIRTH_RUNTIME_WITNESS|1' "$R"
           grep -F 'RESOLUTION|RECOVERED25_LOCAL_RUNTIME_STACK_CLOSED' "$R"
       - name: Audit recovered25 server-backed collision coverage
         run: |

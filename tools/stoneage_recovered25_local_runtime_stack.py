@@ -14,8 +14,14 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable
+from typing import Callable, Sequence
 
+from tools.stoneage_enemy_spawn_model import (
+    EnemyBirthRolls,
+    SpawnedEnemy,
+    materialize_spawn_plan,
+    plan_enemy_spawns,
+)
 from tools.stoneage_local_runtime_core import (
     FreshStartSeed,
     LocalRuntimeSessionState,
@@ -389,4 +395,63 @@ class Recovered25LocalRuntimeStack:
             group_roll=int(group_roll),
             enemy_roll=int(enemy_roll),
             level_roll=int(level_roll),
+        )
+
+
+    def spawn_group_enemies(
+        self,
+        encounter: GroupEncounterRequest,
+        *,
+        entry_count_roll: int,
+        selection_rolls: Sequence[int],
+        birth_rolls: Sequence[EnemyBirthRolls],
+    ) -> tuple[SpawnedEnemy, ...]:
+        """Materialize explicit recovered group-spawn/birth rolls.
+
+        Enemy-count selection, weighted variant selection and birth randoms
+        remain explicit. This method does not choose AI commands or outcomes.
+        """
+        if self.encounter_runtime is None:
+            raise ValueError("runtime stack has no encounter runtime")
+        if self.enemybase_runtime is None:
+            raise ValueError("runtime stack has no enemybase runtime")
+
+        areas = tuple(
+            area
+            for area in self.encounter_runtime.encounter_areas
+            if int(area.index) == int(encounter.area_index)
+        )
+        if len(areas) != 1:
+            raise ValueError(
+                f"group encounter area {encounter.area_index} is not uniquely loaded"
+            )
+        area = areas[0]
+        position = encounter.position
+        if int(area.floor) != int(position.floor_id):
+            raise ValueError("group encounter floor does not match encounter area")
+        if not (
+            int(area.min_x) <= int(position.x) <= int(area.max_x)
+            and int(area.min_y) <= int(position.y) <= int(area.max_y)
+        ):
+            raise ValueError("group encounter position lies outside encounter area")
+        if int(encounter.max_enemy_count) != int(area.enemy_max_num):
+            raise ValueError("group encounter enemy-count boundary drift")
+        group_id = int(encounter.group_id)
+        if group_id not in self.encounter_runtime.groups:
+            raise KeyError(f"group encounter references missing group {group_id}")
+
+        plan = plan_enemy_spawns(
+            area,
+            self.encounter_runtime.groups[group_id],
+            self.encounter_runtime.enemies,
+            self.enemybase_runtime.templates,
+            entry_count_roll=int(entry_count_roll),
+            selection_rolls=tuple(int(x) for x in selection_rolls),
+        )
+        if plan.actual_count > int(encounter.max_enemy_count):
+            raise ValueError("spawn plan exceeds GroupEncounterRequest boundary")
+        return materialize_spawn_plan(
+            plan,
+            self.enemybase_runtime.templates,
+            birth_rolls=tuple(birth_rolls),
         )

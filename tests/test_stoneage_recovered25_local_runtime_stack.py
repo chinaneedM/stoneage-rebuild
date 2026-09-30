@@ -1,4 +1,6 @@
 import unittest
+
+from tools.stoneage_enemy_spawn_model import EnemyBirthRolls
 from pathlib import Path
 from types import MappingProxyType
 
@@ -9,6 +11,9 @@ from tools.stoneage_local_runtime_core import (
     TransitionGateDecision,
     WorldRegionRequest,
     load_runtime_bootstrap_file,
+)
+from tools.stoneage_recovered25_enemybase_runtime import (
+    Recovered25EnemybaseRuntime,
 )
 from tools.stoneage_recovered25_local_runtime_stack import (
     Recovered25LocalRuntimeStack,
@@ -23,6 +28,7 @@ from tools.stoneage_singleplayer_world import (
     HistoricalMapDefinition,
     HistoricalWorldTopology,
 )
+from tools.stoneage_tw10_25_bridge_model import PetTemplateBridge
 from tools.stoneage_tw10_25_encounter_bridge import (
     EncounterAreaBridge,
     EnemyVariantBridge,
@@ -186,6 +192,8 @@ class Recovered25LocalRuntimeStackTests(unittest.TestCase):
         encounter_runtime = type("EncounterRuntime", (), {
             "source_version": "recovered25",
             "encounter_areas": (area,),
+            "groups": MappingProxyType({7: group}),
+            "enemies": MappingProxyType({700: enemy}),
             "unresolved_positive_group_refs": (),
             "specimen_defect_area_indices": (),
             "static_data": HistoricalStaticData(
@@ -194,6 +202,28 @@ class Recovered25LocalRuntimeStackTests(unittest.TestCase):
                 enemy_variants={700: enemy},
             ),
         })()
+        template = PetTemplateBridge.from_enemybase({
+            "NAME": None,
+            "TEMPNO": 88,
+            "INITNUM": 10,
+            "LVUPPOINT": 5,
+            "BASEVITAL": 20,
+            "BASESTR": 20,
+            "BASETGH": 20,
+            "BASEDEX": 20,
+            "IMGNUMBER": 10123,
+            "MODAI": 4,
+            "GET": 0,
+            "EARTHAT": 50,
+            "WATERAT": 50,
+            "FIREAT": 0,
+            "WINDAT": 0,
+            "SLOT": 4,
+            "SIZE": 0,
+        })
+        enemybase_runtime = Recovered25EnemybaseRuntime(
+            templates={88: template},
+        )
         stack = Recovered25LocalRuntimeStack(
             profile=self.profile,
             world_adapter=_WorldAdapter(self.profile),
@@ -202,6 +232,7 @@ class Recovered25LocalRuntimeStackTests(unittest.TestCase):
             transition_evaluator=_Evaluator(),
             fresh_start_factory=_Factory(self.profile),
             encounter_runtime=encounter_runtime,
+            enemybase_runtime=enemybase_runtime,
         )
         session = LocalRuntimeSessionState(
             contract_id=self.profile.contract_id,
@@ -228,6 +259,25 @@ class Recovered25LocalRuntimeStackTests(unittest.TestCase):
         self.assertEqual(request.enemy_variant_id.value, 700)
         self.assertEqual(request.pet_template_id.value, 88)
         self.assertEqual(request.level, 4)
+
+        spawned = stack.spawn_group_enemies(
+            group_request,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(0, 1, 2, 3, 0, 1, 2, 3, 0, 1),
+                ),
+            ),
+        )
+        self.assertEqual(len(spawned), 1)
+        self.assertEqual(spawned[0].variant.enemy_id, 700)
+        self.assertEqual(spawned[0].template.tempno, 88)
+        self.assertIsNone(spawned[0].participant.name)
+        self.assertEqual(spawned[0].participant.level, 4)
+        self.assertGreater(spawned[0].participant.hp, 0)
 
     def test_transition_lookup_and_evaluation_remain_contract_bound(self):
         transition_id = next(iter(self.profile.transitions))
