@@ -36,6 +36,7 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
                 "PETSKILL5": 0,
                 "PETSKILL6": 0,
                 "PETSKILL7": 0,
+                "RARE": 2,
                 "BASEVITAL": 20,
                 "BASESTR": 18,
                 "BASETGH": 19,
@@ -56,6 +57,7 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
             },
         )
         self.assertEqual(pet.skill_ids, (1, 2, 41))
+        self.assertEqual(pet.rare, 2)
         self.assertEqual(pet.template_ref.namespace, "enemybase.TEMPNO")
         self.assertNotIn("hp", pet.directly_bridgeable_pet_state())
         self.assertEqual(pet.growth_inputs()["BASEVITAL"], 20)
