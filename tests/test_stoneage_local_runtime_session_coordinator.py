@@ -2,7 +2,12 @@ import unittest
 from pathlib import Path
 from types import MappingProxyType, SimpleNamespace
 
-from tools.stoneage_map_collision_model import CollisionDecision
+from tools.stoneage_map_collision_model import (
+    CHARACTER,
+    GOLD,
+    CollisionDecision,
+    DynamicOccupant,
+)
 from tools.stoneage_local_runtime_core import (
     FreshStartSeed,
     LocalRuntimeSessionState,
@@ -242,6 +247,88 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                 session,
                 destination=MapPosition(1, 0, 1),
             )
+
+    def test_unified_runtime_collision_layers_dynamic_occupancy_after_static(self):
+        session = self.coordinator.new_game(1)
+        self.stack.collision_router = SimpleNamespace(
+            routed_step_verdict=lambda **_kwargs: SimpleNamespace(
+                decision=CollisionDecision(True, "static_allowed"),
+                route=SimpleNamespace(
+                    provider_kind="RECOVERED25_SERVER_COLLISION",
+                    evidence_class="LATER_RECOVERED_SERVER_PAYLOAD_AND_MAPSET",
+                    semantic_profile="RECOVERED25_SERVER_LS2MAP_MAPSET_R1",
+                    exact_recovered25_binary_proof=None,
+                ),
+            )
+        )
+
+        blocked = self.coordinator.walk_one_cell_with_runtime_collision(
+            session,
+            destination=MapPosition(1, 0, 1),
+            destination_occupants=(
+                DynamicOccupant(kind=CHARACTER, overable=False),
+            ),
+        )
+        self.assertFalse(blocked.resolution.moved)
+        self.assertFalse(blocked.collision.allowed)
+        self.assertEqual(blocked.collision.reason, "non_overable_character")
+        self.assertTrue(blocked.static_collision.allowed)
+        self.assertFalse(blocked.dynamic_collision.allowed)
+        self.assertEqual(
+            blocked.collision_provider_kind,
+            "RECOVERED25_SERVER_COLLISION",
+        )
+        self.assertEqual(
+            blocked.dynamic_occupancy_profile,
+            "STONEAGE_DESCENDANT_LIVE_OBJECT_OVERABILITY_R1",
+        )
+
+        allowed = self.coordinator.walk_one_cell_with_runtime_collision(
+            session,
+            destination=MapPosition(1, 0, 1),
+            destination_occupants=(
+                DynamicOccupant(kind=GOLD, overable=False),
+            ),
+        )
+        self.assertTrue(allowed.resolution.moved)
+        self.assertTrue(allowed.collision.allowed)
+        self.assertTrue(allowed.static_collision.allowed)
+        self.assertTrue(allowed.dynamic_collision.allowed)
+
+    def test_dynamic_occupancy_cannot_override_static_denial(self):
+        session = self.coordinator.new_game(1)
+        self.stack.collision_router = SimpleNamespace(
+            routed_step_verdict=lambda **_kwargs: SimpleNamespace(
+                decision=CollisionDecision(False, "client_hitmap_blocked"),
+                route=SimpleNamespace(
+                    provider_kind="RECOVERED25_CLIENT_HITMAP_RECONSTRUCTION",
+                    evidence_class=(
+                        "LATER_RECOVERED_PLUS_PINNED_DESCENDANT_STABLE_ALGORITHM"
+                    ),
+                    semantic_profile=(
+                        "RECOVERED25_DESCENDANT_STABLE_CLIENT_HITMAP_R1"
+                    ),
+                    exact_recovered25_binary_proof=False,
+                ),
+            )
+        )
+        result = self.coordinator.walk_one_cell_with_runtime_collision(
+            session,
+            destination=MapPosition(1, 0, 1),
+            destination_occupants=(
+                DynamicOccupant(kind=GOLD, overable=True),
+            ),
+        )
+        self.assertFalse(result.resolution.moved)
+        self.assertEqual(result.collision.reason, "client_hitmap_blocked")
+        self.assertEqual(
+            result.dynamic_collision.reason,
+            "dynamic_occupancy_not_evaluated_static_denied",
+        )
+        self.assertEqual(
+            result.collision_semantic_profile,
+            "RECOVERED25_DESCENDANT_STABLE_CLIENT_HITMAP_R1",
+        )
 
     def test_classic_overlap_warp_is_reused_not_reimplemented(self):
         session = self.coordinator.new_game(1)
