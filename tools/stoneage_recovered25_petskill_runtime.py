@@ -114,6 +114,28 @@ class Recovered25PetSkillEntry:
                 "pet-skill OPTION is not ASCII; encoding-dependent parser required"
             ) from exc
 
+    def unambiguous_cp950_big5_option(self) -> str:
+        """Decode OPTION only when both plausible recovered codecs agree.
+
+        The recovered25 bundle still contains unresolved CP950/Big5 text
+        provenance. Mechanics may consume OPTION text only when strict decoding
+        succeeds under both codecs and yields exactly the same Unicode string.
+        """
+
+        try:
+            cp950 = self.option_bytes.decode("cp950", "strict")
+            big5 = self.option_bytes.decode("big5", "strict")
+        except UnicodeDecodeError as exc:
+            raise ValueError(
+                "pet-skill OPTION cannot be decoded strictly by both CP950 "
+                "and Big5"
+            ) from exc
+        if cp950 != big5:
+            raise ValueError(
+                "pet-skill OPTION has unresolved CP950/Big5 decoding divergence"
+            )
+        return cp950
+
     def consensus_big5_option(self) -> str:
         """Return text only when CP950 and Big5 strict decoders agree exactly.
 
