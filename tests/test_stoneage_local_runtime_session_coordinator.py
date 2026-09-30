@@ -213,6 +213,7 @@ class _FakeStack:
                 "RARE": 0,
                 "PETSKILL1": 10,
                 "PETSKILL2": 20,
+                "PETSKILL3": 30,
                 "EARTHAT": 50,
                 "WATERAT": 50,
                 "FIREAT": 0,
@@ -240,6 +241,15 @@ class _FakeStack:
                     cost=2,
                     illegal=0,
                     function_name="PETSKILL_NormalGuard",
+                    option_bytes=b"",
+                ),
+                30: Recovered25PetSkillEntry(
+                    skill_id=30,
+                    field=1,
+                    target=3,
+                    cost=2,
+                    illegal=0,
+                    function_name="PETSKILL_None",
                     option_bytes=b"",
                 ),
             },
@@ -1959,6 +1969,31 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         )
         self.assertEqual(guard[enemy_id].command1, BATTLE_COM_GUARD)
         self.assertEqual(guard[enemy_id].command2, 0)
+
+        none_context = replace(
+            context,
+            spawned_enemies=(
+                replace(
+                    context.spawned_enemies[0],
+                    variant=replace(
+                        context.spawned_enemies[0].variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:0;0;1;0;0;0;0"
+                        ),
+                    ),
+                ),
+            ),
+        )
+        none = self.coordinator.build_persistent_enemy_common_commands(
+            none_context,
+            mode_rolls_by_enemy_id={enemy_id: 0},
+            target_rolls_by_enemy_id={enemy_id: 0},
+            allow_escape=True,
+            allow_basic_skill=True,
+        )
+        self.assertEqual(none[enemy_id].command1, BATTLE_COM_NONE)
+        self.assertEqual(none[enemy_id].command2, 0)
 
     def test_recovered_enemy_ai_escape_uses_template_rare_and_explicit_abio_rng(self):
         session = LocalRuntimeSessionState(
