@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Fail-closed bridge from enemy-AI wa slot selection to battle commands.
 
-Only the two stable descendant pet-skill handlers whose command encoding is
+Only the three stable descendant pet-skill handlers whose command encoding is
 fully state-free are admitted here:
+- PETSKILL_None         -> BATTLE_COM_NONE(target)
 - PETSKILL_NormalAttack -> BATTLE_COM_ATTACK(target)
 - PETSKILL_NormalGuard  -> BATTLE_COM_GUARD(target)
 
@@ -19,6 +20,7 @@ from dataclasses import dataclass
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_GUARD,
+    BATTLE_COM_NONE,
     BattleCommand,
 )
 from tools.stoneage_enemy_spawn_model import SpawnedEnemy
@@ -28,9 +30,10 @@ from tools.stoneage_recovered25_petskill_runtime import (
 )
 
 
+NONE = "PETSKILL_None"
 NORMAL_ATTACK = "PETSKILL_NormalAttack"
 NORMAL_GUARD = "PETSKILL_NormalGuard"
-BASIC_AI_CALLBACKS = frozenset({NORMAL_ATTACK, NORMAL_GUARD})
+BASIC_AI_CALLBACKS = frozenset({NONE, NORMAL_ATTACK, NORMAL_GUARD})
 
 
 @dataclass(frozen=True)
@@ -74,7 +77,12 @@ def resolve_enemy_ai_basic_petskill_command(
         )
 
     entry: Recovered25PetSkillEntry = petskill_runtime.skills[skill_id]
-    if entry.function_name == NORMAL_ATTACK:
+    if entry.function_name == NONE:
+        command = BattleCommand(
+            BATTLE_COM_NONE,
+            command2=target_slot,
+        )
+    elif entry.function_name == NORMAL_ATTACK:
         command = BattleCommand(
             BATTLE_COM_ATTACK,
             command2=target_slot,
