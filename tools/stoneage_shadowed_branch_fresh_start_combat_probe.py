@@ -235,6 +235,7 @@ def analyze(
     server_map_root:Path,
     mapset_path:Path,
     coordinate_report_text:str,
+    preserve_spawn_identity:bool=False,
 )->CombatAudit:
     valid_ordinals=_coordinate_valid_ordinals(coordinate_report_text)
     if not valid_ordinals:
@@ -272,16 +273,23 @@ def analyze(
 
     unique_variants={}
     for source in sources:
-        unique_variants.setdefault(
-            (source.enemy_id,source.tempno,source.enemy_min_level),
-            source,
+        key=(
+            (int(source.spawn_ordinal),)
+            if preserve_spawn_identity else ()
+        )+(
+            int(source.enemy_id),
+            int(source.tempno),
+            int(source.enemy_min_level),
         )
+        unique_variants.setdefault(key,source)
 
     player_profiles=tuple(_player_profiles())
     witnesses=[]
     ordinary_attack_candidates=0
 
-    for (_enemy_id,tempno,min_level),source in unique_variants.items():
+    for source in unique_variants.values():
+        tempno=int(source.tempno)
+        min_level=int(source.enemy_min_level)
         raw_template=base_by_tempno.get(int(tempno))
         if raw_template is None:
             continue
