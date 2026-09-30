@@ -14,6 +14,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_COMBO,
     BATTLE_COM_ESCAPE,
     BATTLE_COM_GUARD,
+    BATTLE_COM_NONE,
     BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_GUARDIAN_GUARD,
     BATTLE_COM_S_STATUSCHANGE,
@@ -105,6 +106,34 @@ class BattleRoundModelTests(unittest.TestCase):
                 commands,
                 {"a": 20, "b": 0},
             )
+
+    def test_explicit_none_is_source_shaped_no_action(self):
+        player=actor("player","player","player",quick=100)
+        enemy=actor("enemy","enemy","enemy",quick=20)
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_NONE,command2=0),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+        )
+        enemy_events=[
+            event for event in result.events
+            if event.participant_id=="enemy"
+        ]
+        self.assertEqual(len(enemy_events),1)
+        self.assertEqual(enemy_events[0].command1,BATTLE_COM_NONE)
+        self.assertEqual(enemy_events[0].result,"status_no_action")
+        self.assertEqual(result.hp_by_participant_id["player"],100)
+        self.assertEqual(result.hp_by_participant_id["enemy"],100)
 
     def test_base_combo_rewrite_groups_sorted_contiguous_same_target_attacks(self):
         p1=actor("p1","player","player",quick=100)
