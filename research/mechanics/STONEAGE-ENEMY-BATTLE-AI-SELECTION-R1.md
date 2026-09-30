@@ -2,7 +2,7 @@
 
 Date: 2026-10-01
 
-Status: **stable-descendant command-selection core closed; recovered25 profile coverage pending bundle CI; coordinator generation not yet enabled**
+Status: **stable-descendant command-selection core closed; recovered25 common profile/runtime bridge partially enabled with fail-closed skill expansion**
 
 ## Purpose
 
@@ -190,22 +190,56 @@ Implementation chain:
 - `ac2892b44db2b1fd8f8523c69ddec185cd8753b2` — recovered25 loader propagation;
 - `4052042d9b7634c7d44882925056b6abbb1be915` — bridge regression.
 
+## 9. Recovered25 runtime integration status
+
+The deferred runtime boundary is now partially closed without changing the
+explicit-RNG rule.
+
+- `tools/stoneage_enemy_ai_model.py` implements the common normal selector
+  with explicit mode and target rolls.
+- Only `TACTICS == 1` is admitted by the local coordinator. Other tactics
+  modes remain fail-closed.
+- ATTACK and GUARD are generated directly from the recovered profile and
+  execute through the persistent ordinary-round runtime.
+- ESCAPE is generated only through the dedicated escape seam using recovered
+  `enemybase.RARE` plus explicit escape RAND and opponent-ABIO inputs.
+- `wa[0..6]` is interpreted as the exact seven-slot pet-skill index. This is
+  materially important because recovered25 `enemybase.txt` contains sparse
+  skill-slot layouts; positive skill IDs cannot be compacted safely.
+- The recovered25 pet-skill runtime resolves every positive enemybase skill
+  reference: 147 active skill rows, 111 referenced skill IDs, 0 unresolved.
+- The first executable `wa` subset is intentionally limited to
+  `PETSKILL_None`, `PETSKILL_NormalAttack` and
+  `PETSKILL_NormalGuard`. Empty slots, unresolved IDs and every other
+  callback fail closed.
+- `BATTLE_COM_NONE` is preserved as its own source-shaped no-action command;
+  it is not rewritten to WAIT.
+- Recovered25 aggregate runtime validation remains
+  `RESOLUTION|RECOVERED25_LOCAL_RUNTIME_STACK_CLOSED`.
+
+The common AI source uses the same opposing-target selection path for ATTACK
+and `wa` skill modes. The runtime therefore preserves that behavior instead
+of attempting to infer skill-specific friendly-target policy.
+
 ## Reconstruction rule
 
-Until the recovered25 aggregate profile run is green and a deterministic AI
-model is added:
+Current rule:
 
-- enemy commands remain explicit caller inputs to the coordinator;
-- the coordinator must not synthesize ATTACK/WAIT merely because
-  `TACTICS == 1`;
-- no `wa` skill command may be generated without the corresponding recovered
-  skill-execution seam;
+- caller-supplied enemy commands remain valid at the low-level explicit-command
+  coordinator seam;
+- automatic common-normal generation is permitted only for the evidence-closed
+  ATTACK/GUARD/ESCAPE/basic-`wa` subset described above;
+- an unsupported selected `wa` callback is an error, never an implicit ATTACK,
+  GUARD, NONE or WAIT fallback;
+- a selected `ma` path still resolves to no common decision, matching the
+  inspected source branch;
 - no compile-gated `_ENEMY_ATTACK_AI` behavior may be assumed for recovered25.
 
 ## Next seam
 
-Use the recovered25 aggregate report to classify the active profile surface.
-Then implement a pure, explicit-RNG normal-AI decision model for the closed
-common subset. Integrate only command forms already executable by the battle
-runtime; unsupported selected modes must fail closed rather than being replaced
-with ATTACK or WAIT.
+Use hash-pinned recovered25 aggregate callback/slot-use coverage to prioritize
+the remaining stable-common `wa` callbacks. Prefer callbacks whose OPTION
+bytes can be interpreted without an unresolved encoding choice and whose
+handler-side command setup plus downstream battle execution are both already
+closed. Add new state/RNG inputs explicitly when required; do not generalize a
+pet-skill executor ahead of evidence.
