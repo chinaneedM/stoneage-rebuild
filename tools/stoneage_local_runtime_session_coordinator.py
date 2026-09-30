@@ -30,12 +30,22 @@ from tools.stoneage_runtime_occupancy_registry import (
     RuntimeDynamicOccupancyRegistry,
 )
 from tools.stoneage_local_runtime_core import (
+    LOCAL_SESSION_SCHEMA,
     LocalPersistenceStore,
     LocalRuntimeSessionState,
     MaterializedWorldRegion,
     TransitionGateDecision,
     decode_local_runtime_session,
-    encode_local_runtime_session,
+)
+from tools.stoneage_local_runtime_save import (
+    LOCAL_RUNTIME_SAVE_SCHEMA,
+    LocalRuntimeSaveSnapshot,
+    build_initial_occupancy_registry,
+    build_local_runtime_occupancy_delta,
+    decode_local_runtime_save,
+    encode_local_runtime_save,
+    local_runtime_payload_schema,
+    restore_local_runtime_occupancy_registry,
 )
 from tools.stoneage_singleplayer_domain import (
     MapPosition,
@@ -109,13 +119,35 @@ class LocalRuntimeSessionCoordinator:
     )
 
     def __post_init__(self) -> None:
-        initial_occupancy = getattr(
-            self.stack,
-            "npc_initial_occupancy",
-            None,
-        )
+        initial_occupancy = self._initial_occupancy()
         if initial_occupancy is not None:
             initial_occupancy.populate_registry(self.occupancy_registry)
+
+    def _initial_occupancy(self):
+        return getattr(self.stack, "npc_initial_occupancy", None)
+
+    def _validate_occupancy_registry(
+        self,
+        registry: RuntimeDynamicOccupancyRegistry,
+    ) -> RuntimeDynamicOccupancyRegistry:
+        if not isinstance(registry, RuntimeDynamicOccupancyRegistry):
+            raise TypeError("session coordinator occupancy registry type mismatch")
+        invalid = tuple(
+            obj.object_id
+            for obj in registry.objects.values()
+            if not self.topology.is_valid_position(obj.position)
+        )
+        if invalid:
+            raise ValueError(
+                "session coordinator occupancy object outside topology: "
+                + ",".join(invalid[:5])
+            )
+        return registry
+
+    def _reset_occupancy_to_initial(self) -> None:
+        self.occupancy_registry = self._validate_occupancy_registry(
+            build_initial_occupancy_registry(self._initial_occupancy())
+        )
 
     @property
     def profile(self):
@@ -146,7 +178,9 @@ class LocalRuntimeSessionCoordinator:
             player_position=seed.position,
             player_state=seed.player_state,
         )
-        return self._validate_session(session)
+        session = self._validate_session(session)
+        self._reset_occupancy_to_initial()
+        return session
 
     def save_game(
         self,
@@ -154,21 +188,50 @@ class LocalRuntimeSessionCoordinator:
         session: LocalRuntimeSessionState,
     ) -> None:
         session = self._validate_session(session)
+        self._validate_occupancy_registry(self.occupancy_registry)
+        snapshot = LocalRuntimeSaveSnapshot(
+            session=session,
+            occupancy=build_local_runtime_occupancy_delta(
+                registry=self.occupancy_registry,
+                initial_occupancy=self._initial_occupancy(),
+            ),
+        )
         self.persistence.save(
             _nonempty_key(key),
-            encode_local_runtime_session(session),
+            encode_local_runtime_save(snapshot),
         )
 
     def continue_game(self, key: str) -> LocalRuntimeSessionState:
         payload = self.persistence.load(_nonempty_key(key))
         if payload is None:
             raise KeyError(f"local save does not exist: {key}")
-        session = decode_local_runtime_session(
-            payload,
-            expected_contract_id=self.profile.contract_id,
-            expected_world_profile=self.profile.runtime_world_profile,
-        )
-        return self._validate_session(session)
+
+        schema = local_runtime_payload_schema(payload)
+        if schema == LOCAL_RUNTIME_SAVE_SCHEMA:
+            snapshot = decode_local_runtime_save(
+                payload,
+                expected_contract_id=self.profile.contract_id,
+                expected_world_profile=self.profile.runtime_world_profile,
+            )
+            session = self._validate_session(snapshot.session)
+            restored = restore_local_runtime_occupancy_registry(
+                delta=snapshot.occupancy,
+                initial_occupancy=self._initial_occupancy(),
+            )
+            self.occupancy_registry = self._validate_occupancy_registry(restored)
+            return session
+
+        if schema == LOCAL_SESSION_SCHEMA:
+            session = decode_local_runtime_session(
+                payload,
+                expected_contract_id=self.profile.contract_id,
+                expected_world_profile=self.profile.runtime_world_profile,
+            )
+            session = self._validate_session(session)
+            self._reset_occupancy_to_initial()
+            return session
+
+        raise ValueError(f"unsupported local persistence schema: {schema}")
 
     def materialize_current_region(
         self,
