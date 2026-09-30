@@ -107,6 +107,7 @@ BATTLE_COM_WAIT = 11
 # Stable unguarded pet-skill command sequence begins at 1000.
 BATTLE_COM_S_GUARDIAN_ATTACK = 1003
 BATTLE_COM_S_GUARDIAN_GUARD = 1004  # enum-only in pinned common Guardian handler
+BATTLE_COM_S_MIGHTY = 1006
 BATTLE_COM_S_POWERBALANCE = 1007
 BATTLE_COM_S_STATUSCHANGE = 1008
 
@@ -140,6 +141,7 @@ BASE_COMMAND_CODES = frozenset(
         BATTLE_COM_WAIT,
         BATTLE_COM_S_GUARDIAN_ATTACK,
         BATTLE_COM_S_GUARDIAN_GUARD,
+        BATTLE_COM_S_MIGHTY,
         BATTLE_COM_S_POWERBALANCE,
         BATTLE_COM_S_STATUSCHANGE,
     }
@@ -496,6 +498,7 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_COMBO,
         BATTLE_COM_WAIT,
         BATTLE_COM_S_GUARDIAN_ATTACK,
+        BATTLE_COM_S_MIGHTY,
         BATTLE_COM_S_POWERBALANCE,
         BATTLE_COM_S_STATUSCHANGE,
     }
@@ -3241,6 +3244,7 @@ def resolve_ordinary_round(
         attack_command_code=int(command.command1)
         if attack_command_code in {
             BATTLE_COM_S_GUARDIAN_ATTACK,
+            BATTLE_COM_S_MIGHTY,
             BATTLE_COM_S_POWERBALANCE,
             BATTLE_COM_S_STATUSCHANGE,
         }:
@@ -3322,6 +3326,11 @@ def resolve_ordinary_round(
                 defender_luck=_source_luck(defender, defender_profile),
                 attacker_type=_participant_battle_kind(participant),
                 defender_type=_participant_battle_kind(defender),
+                extra_percent_points=(
+                    battle_command3_high(command.command3)
+                    if attack_command_code == BATTLE_COM_S_MIGHTY
+                    else 0
+                ),
             )
             if dodge_roll <= dodge_probability:
                 events.append(
@@ -3479,6 +3488,12 @@ def resolve_ordinary_round(
             )
         else:
             result = "critical" if is_critical else "normal"
+
+        if attack_command_code == BATTLE_COM_S_MIGHTY:
+            damage = int(
+                int(damage)
+                * (battle_command3_low(command.command3) * 0.01)
+            )
 
         reaction_defender=defender
         reaction_defender_id=str(defender_id)
