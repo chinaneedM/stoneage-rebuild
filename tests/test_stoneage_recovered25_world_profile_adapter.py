@@ -11,7 +11,6 @@ from tools.stoneage_local_runtime_core import (
 from tools.stoneage_recovered25_world_profile_adapter import (
     HOMETOWN_TRANSITION_IDS,
     SHADOWED_BRANCH_TRANSITION_ID,
-    SHADOWED_BRANCH_UNLOCK_FLAG,
     Recovered25FreshStartFactory,
     Recovered25TransitionGateEvaluator,
     Recovered25WorldProfileAdapter,
@@ -113,7 +112,11 @@ class Recovered25WorldProfileAdapterTests(unittest.TestCase):
             transition_id=contract.transition_id,
             source=self.adapter.hometown_positions()[3],
             destination=self.adapter.hometown_positions()[1],
-            predicate_payload={"gate_kind":"ITEM_EQ","item_template_id":12345},
+            predicate_payload={
+                "gate_kind":"FREE_CLAUSES",
+                "free_clauses":(({"key":"ITEM","operator":"=","operand":12345},),),
+                "item_template_id":12345,
+            },
             provenance={"source_profile":"recovered25"},
         )
         state=_state(3)
@@ -133,36 +136,54 @@ class Recovered25WorldProfileAdapterTests(unittest.TestCase):
         )
         self.assertTrue(evaluator.evaluate_transition(contract,binding,session).allowed)
 
-    def test_progression_gate_evaluator_uses_explicit_world_flag(self):
+    def test_progression_gate_rechecks_current_level_and_item(self):
         contract=self.profile.transitions[SHADOWED_BRANCH_TRANSITION_ID]
         binding=ResolvedTransitionBinding(
             transition_id=contract.transition_id,
             source=MapPosition(811,0,0),
             destination=MapPosition(820,0,0),
             predicate_payload={
-                "gate_kind":"WORLD_FLAG",
-                "required_world_flag":SHADOWED_BRANCH_UNLOCK_FLAG,
+                "gate_kind":"FREE_CLAUSES",
+                "free_clauses":((
+                    {"key":"LV","operator":">","operand":10},
+                    {"key":"LV","operator":"<","operand":20},
+                    {"key":"ITEM","operator":"=","operand":12345},
+                ),),
             },
             provenance={"source_profile":"recovered25"},
         )
         evaluator=Recovered25TransitionGateEvaluator(self.profile)
+
+        missing_item=PersistentPlayerState(
+            character=PlayerState(MappingProxyType({"level":15}))
+        )
         denied=LocalRuntimeSessionState(
             contract_id=self.profile.contract_id,
             world_profile="recovered25",
             hometown_ordinal=1,
             player_position=self.adapter.hometown_positions()[1],
-            player_state=_state(1),
+            player_state=missing_item,
         )
         self.assertFalse(evaluator.evaluate_transition(contract,binding,denied).allowed)
-        allowed=LocalRuntimeSessionState(
+
+        slot=InventorySlot(0)
+        missing_item.inventory[slot]=InventoryItem(
+            slot=slot,template_id=ItemTemplateId(12345),view=MappingProxyType({})
+        )
+        self.assertTrue(evaluator.evaluate_transition(contract,binding,denied).allowed)
+
+        too_high=PersistentPlayerState(
+            character=PlayerState(MappingProxyType({"level":25})),
+            inventory=dict(missing_item.inventory),
+        )
+        high_session=LocalRuntimeSessionState(
             contract_id=self.profile.contract_id,
             world_profile="recovered25",
             hometown_ordinal=1,
             player_position=self.adapter.hometown_positions()[1],
-            player_state=_state(1),
-            world_flags=frozenset({SHADOWED_BRANCH_UNLOCK_FLAG}),
+            player_state=too_high,
         )
-        self.assertTrue(evaluator.evaluate_transition(contract,binding,allowed).allowed)
+        self.assertFalse(evaluator.evaluate_transition(contract,binding,high_session).allowed)
 
 
 if __name__=="__main__":
