@@ -83,14 +83,37 @@ def analyze(data_dir,setup=None):
     for p in files:
         rows,fc,bad,raw_rows,profiles=parse_file(p)
         skills=collections.Counter()
+        skill_slot_positive=collections.Counter()
+        skill_slot_masks=collections.Counter()
+        skill_slot_gap_rows=0
         for r in rows:
-            for n in ("PETSKILL1","PETSKILL2","PETSKILL3","PETSKILL4","PETSKILL5","PETSKILL6","PETSKILL7"):
-                if r[n]>0:skills[r[n]]+=1
+            slots=tuple(
+                int(r[f"PETSKILL{i}"])
+                for i in range(1,8)
+            )
+            mask=0
+            seen_empty=False
+            has_gap=False
+            for index,skill_id in enumerate(slots,1):
+                if skill_id>0:
+                    skills[skill_id]+=1
+                    skill_slot_positive[index]+=1
+                    mask |= 1 << (index-1)
+                    if seen_empty:
+                        has_gap=True
+                else:
+                    seen_empty=True
+            skill_slot_masks[mask]+=1
+            skill_slot_gap_rows+=int(has_gap)
         elem_sums=collections.Counter(r["EARTHAT"]+r["WATERAT"]+r["FIREAT"]+r["WINDAT"] for r in rows)
         out.append({
             "name":p.name,"sha":sha256(p),"bytes":p.stat().st_size,"rows":rows,
             "field_counts":fc,"malformed":bad,"raw_row_count":len(raw_rows),"profiles":profiles,
-            "skills":skills,"elem_sums":elem_sums,
+            "skills":skills,
+            "skill_slot_positive":skill_slot_positive,
+            "skill_slot_masks":skill_slot_masks,
+            "skill_slot_gap_rows":skill_slot_gap_rows,
+            "elem_sums":elem_sums,
             "active": bool(active and Path(active.replace("\\","/")).name.lower()==p.name.lower())
         })
     return active,out
@@ -119,6 +142,20 @@ def emit(data_dir,setup=None):
             lo,hi,uniq=stat(rows,name)
             if lo is not None: print(f"STAT|{f['name']}|{name}|min={lo}|max={hi}|unique={uniq}")
         print(f"UNIQUE_PETSKILL_IDS|{f['name']}|{len(f['skills'])}")
+        print(
+            f"PETSKILL_SLOT_GAP_ROWS|{f['name']}|"
+            f"{f['skill_slot_gap_rows']}"
+        )
+        for slot,count in sorted(f["skill_slot_positive"].items()):
+            print(
+                f"PETSKILL_SLOT_POSITIVE|{f['name']}|"
+                f"slot={slot}|rows={count}"
+            )
+        for mask,count in sorted(f["skill_slot_masks"].items()):
+            print(
+                f"PETSKILL_SLOT_MASK|{f['name']}|"
+                f"mask={mask:07b}|rows={count}"
+            )
         for v,n in f["skills"].most_common(15):
             print(f"PETSKILL_USAGE|{f['name']}|{v}|{n}")
         for total,n in sorted(f["elem_sums"].items()):
