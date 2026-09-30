@@ -4447,7 +4447,7 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Restoration priority has moved from presentation/production architecture back to original-gameplay integration.
 - New loader: `tools/stoneage_recovered25_encounter_runtime.py`.
 - It composes the already verified stable-later map lineage + versioned world geometry with the active recovered25 `encount/group/enemy` files selected by `setup.cf`.
-- `Recovered25LocalRuntimeStack.from_verified_bundle()` now requires the verified server data directory and carries a `VersionedEncounterRuntimeAdapter` alongside map/collision/Warp/NPC occupancy services.
+- The full recovered25 local-runtime composition supplies the verified server data directory and carries a `VersionedEncounterRuntimeAdapter` alongside map/collision/Warp/NPC occupancy services; subsystem-only stack smokes may omit encounter composition.
 - New stack-level deterministic encounter calls:
   - `historical_domain_for_session()`;
   - `request_encounter_group(..., group_roll)`;
@@ -4456,5 +4456,27 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - The known stable-world specimen defects remain fail-closed: **402** encounter areas, **23** positive unresolved group references, **19** affected encounter areas.
 - Bundle-backed runtime smoke now requires both a legal group-resolution witness and a legal enemy-variant/level-resolution witness.
 - Design record: `docs/RECOVERED25-ENCOUNTER-RUNTIME-R1.md`.
-- **RECOVERED25_ENCOUNTER_RUNTIME_R1 = IMPLEMENTED_PENDING_REMOTE_BUNDLE_CI.**
+- Remote bundle validation: GitHub Actions **36745555249 = PASS**. The real stack smoke proved **402** stable encounter areas, **23** positive unresolved group refs across **19** affected areas, plus legal group and enemy-variant/level runtime witnesses.
+- **RECOVERED25_ENCOUNTER_RUNTIME_R1 = CLOSED.**
 - Next restoration priority after CI closure: connect the already reconstructed movement-side encounter frequency/CEP loop to the local session coordinator, preserving explicit deterministic rolls and Classic-Warp encounter suppression. Then attach the existing battle shell; do not invent AI/RNG or redesign content.
+
+
+## Phase 1 movement-side CEP integration — 2026-10-01
+
+- The recovered encounter content layer is now joined to the local movement coordinator through the separately reconstructed descendant **CEP (Current Encounter Probability)** loop.
+- New coordinator result: `LocalRuntimeEncounterWalkResult`, containing the canonical walk result plus CEP decision and optional resolved group/enemy encounter requests.
+- New deterministic coordinator entry point: `walk_one_cell_with_runtime_collision_and_encounter_frequency()`.
+- Ordering is preserved from the closed descendant model:
+  - static + live-occupancy movement resolves first;
+  - blocked movement does not advance CEP;
+  - after a successful step, encounter min/max is refreshed from the **departure coordinate** when an encounter area exists;
+  - CEP clamps before the explicit `0..119` roll;
+  - ordinary Classic Warp still performs the CEP roll but suppresses encounter dispatch;
+  - a miss increments toward max;
+  - an actual unsuppressed hit resets CEP to min and resolves group/enemy/level using explicit caller-supplied rolls.
+- CEP remains **transient runtime/connection state**. It is not added to `stoneage.local-runtime-session.r1` or `stoneage.local-runtime-save.r1`; new-game and continue-game runtime establishment reset CEP to zero.
+- This does not promote CEP to Taiwan-v1/JSS launch fact. Exact CEP provenance remains strong stable-descendant evidence with earliest-commercial presence still open.
+- No RNG is generated inside the coordinator; frequency/group/enemy/level rolls remain explicit deterministic inputs.
+- Regression coverage includes miss→increment, hit→reset+encounter, Classic-Warp suppression, blocked-walk no-op, and save/continue exclusion/reset of CEP.
+- **LOCAL_RUNTIME_CEP_ENCOUNTER_BRIDGE_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Next restoration priority after CI closure: connect the resolved encounter request to the existing deterministic enemy-spawn/battle shell, preserving explicit birth/spawn/AI/round rolls and returning battle settlement to the authoritative local session without inventing new combat rules.

@@ -4,6 +4,9 @@ import unittest
 from pathlib import Path
 from types import MappingProxyType, SimpleNamespace
 
+from tools.stoneage_encounter_frequency_model import (
+    EncounterFrequencyState,
+)
 from tools.stoneage_map_collision_model import (
     CHARACTER,
     GOLD,
@@ -28,14 +31,22 @@ from tools.stoneage_local_runtime_session_coordinator import (
     LocalRuntimeSessionCoordinator,
 )
 from tools.stoneage_singleplayer_domain import (
+    EncounterRolls,
+    HistoricalStaticData,
     MapPosition,
     PersistentPlayerState,
     PlayerState,
+    SinglePlayerHistoricalDomain,
 )
 from tools.stoneage_singleplayer_world import (
     HistoricalMapDefinition,
     HistoricalWorldTopology,
     LegacyWarpEdge,
+)
+from tools.stoneage_tw10_25_encounter_bridge import (
+    EncounterAreaBridge,
+    EnemyVariantBridge,
+    GroupBridge,
 )
 
 
@@ -82,6 +93,46 @@ class _FakeStack:
             )
             for transition_id in profile.transitions
         }
+        area = EncounterAreaBridge.from_encount({
+            "INDEX": 21,
+            "FLOOR": 1,
+            "X1": 0,
+            "Y1": 0,
+            "X2": 2,
+            "Y2": 2,
+            "PROB_MIN": 10,
+            "PROB_MAX": 20,
+            "ENEMY_MAX": 2,
+            "ZORDER": 1,
+            "GROUP_ID1": 7,
+            "GROUP_PROB1": 100,
+        })
+        group = GroupBridge.from_group({
+            "GROUP_ID": 7,
+            "ENEMY_ID1": 700,
+            "CREATE_PROB1": 100,
+        })
+        enemy = EnemyVariantBridge.from_enemy({
+            "ID": 700,
+            "TEMPNO": 88,
+            "LV_MIN": 3,
+            "LV_MAX": 5,
+            "CREATEMAXNUM": 2,
+            "CREATEMINNUM": 1,
+            "TACTICS": 1,
+            "EXP": 100,
+            "DUELPOINT": 0,
+            "STYLE": 0,
+            "PETFLG": 1,
+        })
+        self.encounter_runtime = SimpleNamespace(
+            encounter_areas=(area,),
+            static_data=HistoricalStaticData(
+                encounter_areas=(area,),
+                encounter_groups={7: group},
+                enemy_variants={700: enemy},
+            ),
+        )
 
     def create_fresh_start(self, ordinal):
         return FreshStartSeed(
@@ -117,6 +168,37 @@ class _FakeStack:
             allowed=self.allow,
             reason=("test gate allowed" if self.allow else "test gate denied"),
             consumed_state={},
+        )
+
+    def _encounter_domain(self, session):
+        domain = SinglePlayerHistoricalDomain(
+            static=self.encounter_runtime.static_data,
+            persistent=session.player_state,
+        )
+        domain.move_player(
+            floor_id=session.player_position.floor_id,
+            x=session.player_position.x,
+            y=session.player_position.y,
+        )
+        return domain
+
+    def request_encounter_group(self, session, *, group_roll):
+        return self._encounter_domain(session).request_encounter_group(
+            group_roll=group_roll,
+        )
+
+    def request_encounter(
+        self,
+        session,
+        *,
+        group_roll,
+        enemy_roll,
+        level_roll,
+    ):
+        return self._encounter_domain(session).request_encounter(
+            group_roll=group_roll,
+            enemy_roll=enemy_roll,
+            level_roll=level_roll,
         )
 
 
@@ -594,6 +676,145 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         self.assertEqual(
             result.collision_semantic_profile,
             "RECOVERED25_DESCENDANT_STABLE_CLIENT_HITMAP_R1",
+        )
+
+    def test_runtime_collision_frequency_miss_then_hit_requests_encounter(self):
+        session = self.coordinator.new_game(1)
+        self.stack.collision_router = SimpleNamespace(
+            routed_step_verdict=lambda **_kwargs: SimpleNamespace(
+                decision=CollisionDecision(True, "static_allowed"),
+                route=SimpleNamespace(
+                    provider_kind="TEST_STATIC",
+                    evidence_class="TEST",
+                    semantic_profile="TEST_STATIC_R1",
+                    exact_recovered25_binary_proof=False,
+                ),
+            )
+        )
+
+        miss = (
+            self.coordinator
+            .walk_one_cell_with_runtime_collision_and_encounter_frequency(
+                session,
+                destination=MapPosition(1, 0, 1),
+                frequency_roll=119,
+                encounter_rolls=EncounterRolls(0, 0, 0),
+            )
+        )
+        self.assertTrue(miss.walk.resolution.moved)
+        self.assertIsNotNone(miss.frequency)
+        self.assertEqual(miss.frequency.clamped_current, 10)
+        self.assertFalse(miss.frequency.roll_hit)
+        self.assertEqual(self.coordinator.encounter_frequency.current, 11)
+        self.assertIsNone(miss.group_encounter)
+        self.assertIsNone(miss.encounter)
+
+        hit = (
+            self.coordinator
+            .walk_one_cell_with_runtime_collision_and_encounter_frequency(
+                miss.session,
+                destination=MapPosition(1, 0, 2),
+                frequency_roll=10,
+                encounter_rolls=EncounterRolls(0, 0, 1),
+            )
+        )
+        self.assertTrue(hit.frequency.roll_hit)
+        self.assertTrue(hit.frequency.encounter_triggered)
+        self.assertEqual(self.coordinator.encounter_frequency.current, 10)
+        self.assertIsNotNone(hit.group_encounter)
+        self.assertEqual(hit.group_encounter.group_id, 7)
+        self.assertIsNotNone(hit.encounter)
+        self.assertEqual(hit.encounter.enemy_variant_id.value, 700)
+        self.assertEqual(hit.encounter.pet_template_id.value, 88)
+        self.assertEqual(hit.encounter.level, 4)
+
+    def test_classic_warp_suppresses_hit_but_preserves_cep_clamp(self):
+        session = self.coordinator.new_game(1)
+        self.stack.collision_router = SimpleNamespace(
+            routed_step_verdict=lambda **_kwargs: SimpleNamespace(
+                decision=CollisionDecision(True, "static_allowed"),
+                route=SimpleNamespace(
+                    provider_kind="TEST_STATIC",
+                    evidence_class="TEST",
+                    semantic_profile="TEST_STATIC_R1",
+                    exact_recovered25_binary_proof=False,
+                ),
+            )
+        )
+        result = (
+            self.coordinator
+            .walk_one_cell_with_runtime_collision_and_encounter_frequency(
+                session,
+                destination=MapPosition(1, 1, 0),
+                frequency_roll=0,
+                encounter_rolls=EncounterRolls(0, 0, 0),
+            )
+        )
+        self.assertTrue(result.walk.resolution.warp_triggered)
+        self.assertTrue(result.walk.resolution.encounter_suppressed)
+        self.assertTrue(result.frequency.roll_hit)
+        self.assertTrue(result.frequency.encounter_suppressed)
+        self.assertFalse(result.frequency.encounter_triggered)
+        self.assertEqual(self.coordinator.encounter_frequency.current, 10)
+        self.assertIsNone(result.group_encounter)
+        self.assertIsNone(result.encounter)
+        self.assertEqual(result.session.player_position, MapPosition(2, 2, 2))
+
+    def test_blocked_walk_does_not_advance_cep(self):
+        session = self.coordinator.new_game(1)
+        self.stack.collision_router = SimpleNamespace(
+            routed_step_verdict=lambda **_kwargs: SimpleNamespace(
+                decision=CollisionDecision(False, "static_blocked"),
+                route=SimpleNamespace(
+                    provider_kind="TEST_STATIC",
+                    evidence_class="TEST",
+                    semantic_profile="TEST_STATIC_R1",
+                    exact_recovered25_binary_proof=False,
+                ),
+            )
+        )
+        result = (
+            self.coordinator
+            .walk_one_cell_with_runtime_collision_and_encounter_frequency(
+                session,
+                destination=MapPosition(1, 0, 1),
+                frequency_roll=0,
+                encounter_rolls=EncounterRolls(0, 0, 0),
+            )
+        )
+        self.assertFalse(result.walk.resolution.moved)
+        self.assertIsNone(result.frequency)
+        self.assertEqual(
+            self.coordinator.encounter_frequency,
+            EncounterFrequencyState(),
+        )
+
+    def test_cep_is_transient_runtime_state_not_save_payload(self):
+        session = self.coordinator.new_game(1)
+        self.coordinator.encounter_frequency = EncounterFrequencyState(
+            current=17,
+            minimum=10,
+            maximum=20,
+        )
+        self.coordinator.save_game("cep-slot", session)
+        self.assertNotIn("encounter_frequency", self.store.rows["cep-slot"])
+
+        restored = self.coordinator.continue_game("cep-slot")
+        self.assertEqual(restored.player_position, session.player_position)
+        self.assertEqual(
+            self.coordinator.encounter_frequency,
+            EncounterFrequencyState(),
+        )
+
+        self.coordinator.encounter_frequency = EncounterFrequencyState(
+            current=15,
+            minimum=10,
+            maximum=20,
+        )
+        self.coordinator.new_game(1)
+        self.assertEqual(
+            self.coordinator.encounter_frequency,
+            EncounterFrequencyState(),
         )
 
     def test_classic_overlap_warp_is_reused_not_reimplemented(self):

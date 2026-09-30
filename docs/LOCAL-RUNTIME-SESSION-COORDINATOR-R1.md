@@ -108,6 +108,41 @@ The discovery call is non-mutating. It may evaluate current recovered predicates
 
 Classic overlap-Warp remains part of ordinary movement and is not duplicated in the interaction-discovery surface.
 
+
+## 2D. Movement-side encounter frequency / CEP
+
+The coordinator carries `EncounterFrequencyState` as **transient runtime state**.
+This follows the stable-descendant evidence in which CEP is stored on the
+connection/runtime object and a new connection initializes it to zero.
+
+CEP is therefore intentionally **not** added to
+`stoneage.local-runtime-session.r1` or `stoneage.local-runtime-save.r1`.
+`new_game()` and `continue_game()` establish a fresh runtime CEP state at
+zero. This is a reconstruction boundary, not a claim about an original retail
+save-file field.
+
+`walk_one_cell_with_runtime_collision_and_encounter_frequency()` composes only
+already reconstructed layers:
+
+1. unified static + live-occupancy movement;
+2. successful-walk check;
+3. departure-coordinate encounter-zone lookup;
+4. CEP min/max refresh and clamp;
+5. caller-supplied explicit roll in the reconstructed modulo-120 domain;
+6. Classic-Warp encounter suppression using the canonical walk result;
+7. on a real hit, caller-supplied group/enemy/level rolls through the
+   versioned encounter runtime.
+
+Blocked movement does not advance CEP. A Classic Warp still performs the CEP
+roll: a miss increments toward max; a hit is suppressed without encounter
+dispatch and without the normal miss increment. This preserves the
+stable-descendant ordering already documented in
+`research/mechanics/STONEAGE-ENCOUNTER-FREQUENCY-CEP-R1.md`.
+
+The coordinator does not create RNG and does not infer battle/encounter rolls.
+The exact CEP mechanism remains strong descendant evidence; its presence in
+JSS 1999 / Taiwan v1.0 is still open and must not be promoted.
+
 ## 3. State-gated dialogue transitions
 
 The three current recovered25 conditional transitions remain outside the unconditional classic-Warp graph.

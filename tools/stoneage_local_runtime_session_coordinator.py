@@ -19,6 +19,12 @@ from dataclasses import dataclass, field, replace
 from types import MappingProxyType
 from typing import Any, Mapping, Sequence
 
+from tools.stoneage_encounter_frequency_model import (
+    EncounterFrequencyDecision,
+    EncounterFrequencyState,
+    refresh_frequency_bounds,
+    resolve_frequency_step,
+)
 from tools.stoneage_map_collision_model import (
     CollisionDecision,
     DynamicOccupant,
@@ -48,6 +54,9 @@ from tools.stoneage_local_runtime_save import (
     restore_local_runtime_occupancy_registry,
 )
 from tools.stoneage_singleplayer_domain import (
+    EncounterRequest,
+    EncounterRolls,
+    GroupEncounterRequest,
     MapPosition,
     SinglePlayerHistoricalDomain,
 )
@@ -55,6 +64,9 @@ from tools.stoneage_singleplayer_world import (
     WalkResolution,
     place_player_on_topology,
     resolve_player_walk,
+)
+from tools.stoneage_tw10_25_encounter_bridge import (
+    active_encounter_area,
 )
 
 
@@ -74,6 +86,20 @@ class LocalRuntimeWalkResult:
     live_occupancy_registry_profile: str | None = None
     live_occupancy_object_ids: tuple[str, ...] = ()
     live_occupancy_provenance: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
+class LocalRuntimeEncounterWalkResult:
+    """One ordinary movement result plus descendant CEP/encounter resolution."""
+
+    walk: LocalRuntimeWalkResult
+    frequency: EncounterFrequencyDecision | None
+    group_encounter: GroupEncounterRequest | None = None
+    encounter: EncounterRequest | None = None
+
+    @property
+    def session(self) -> LocalRuntimeSessionState:
+        return self.walk.session
 
 
 @dataclass(frozen=True)
@@ -154,6 +180,9 @@ class LocalRuntimeSessionCoordinator:
     occupancy_registry: RuntimeDynamicOccupancyRegistry = field(
         default_factory=RuntimeDynamicOccupancyRegistry
     )
+    encounter_frequency: EncounterFrequencyState = field(
+        default_factory=EncounterFrequencyState
+    )
 
     def __post_init__(self) -> None:
         initial_occupancy = self._initial_occupancy()
@@ -186,6 +215,10 @@ class LocalRuntimeSessionCoordinator:
             build_initial_occupancy_registry(self._initial_occupancy())
         )
 
+    def _reset_encounter_frequency(self) -> None:
+        # CEP is stable-descendant connection/runtime state, not player save data.
+        self.encounter_frequency = EncounterFrequencyState()
+
     @property
     def profile(self):
         return self.stack.profile
@@ -217,6 +250,7 @@ class LocalRuntimeSessionCoordinator:
         )
         session = self._validate_session(session)
         self._reset_occupancy_to_initial()
+        self._reset_encounter_frequency()
         return session
 
     def save_game(
@@ -256,6 +290,7 @@ class LocalRuntimeSessionCoordinator:
                 initial_occupancy=self._initial_occupancy(),
             )
             self.occupancy_registry = self._validate_occupancy_registry(restored)
+            self._reset_encounter_frequency()
             return session
 
         if schema == LOCAL_SESSION_SCHEMA:
@@ -266,6 +301,7 @@ class LocalRuntimeSessionCoordinator:
             )
             session = self._validate_session(session)
             self._reset_occupancy_to_initial()
+            self._reset_encounter_frequency()
             return session
 
         raise ValueError(f"unsupported local persistence schema: {schema}")
@@ -399,6 +435,82 @@ class LocalRuntimeSessionCoordinator:
             live_occupancy_registry_profile=self.occupancy_registry.profile_id,
             live_occupancy_object_ids=live_query.object_ids,
             live_occupancy_provenance=live_query.provenances,
+        )
+
+    def walk_one_cell_with_runtime_collision_and_encounter_frequency(
+        self,
+        session: LocalRuntimeSessionState,
+        *,
+        destination: MapPosition,
+        frequency_roll: int | None,
+        encounter_rolls: EncounterRolls,
+        destination_occupants: Sequence[DynamicOccupant] = (),
+        map_objmove_ok: bool = True,
+        encounter_eligible: bool = True,
+    ) -> LocalRuntimeEncounterWalkResult:
+        """Compose ordinary movement with the reconstructed descendant CEP loop.
+
+        Random values remain explicit caller inputs. CEP is transient runtime
+        state and is not serialized into the local player/session save.
+        """
+
+        session = self._validate_session(session)
+        encounter_runtime = getattr(self.stack, "encounter_runtime", None)
+        if encounter_runtime is None:
+            raise ValueError("runtime stack has no encounter runtime")
+        if not isinstance(encounter_rolls, EncounterRolls):
+            raise TypeError("encounter_rolls must be EncounterRolls")
+
+        origin = session.player_position
+        walk = self.walk_one_cell_with_runtime_collision(
+            session,
+            destination=destination,
+            destination_occupants=destination_occupants,
+            map_objmove_ok=bool(map_objmove_ok),
+        )
+        if not walk.resolution.moved:
+            return LocalRuntimeEncounterWalkResult(
+                walk=walk,
+                frequency=None,
+            )
+
+        source_area = active_encounter_area(
+            encounter_runtime.encounter_areas,
+            floor=origin.floor_id,
+            x=origin.x,
+            y=origin.y,
+        )
+        refreshed = refresh_frequency_bounds(
+            self.encounter_frequency,
+            source_area,
+        )
+        frequency = resolve_frequency_step(
+            refreshed,
+            roll=frequency_roll,
+            encounter_enabled=not walk.resolution.encounter_suppressed,
+            eligible=bool(encounter_eligible),
+        )
+        self.encounter_frequency = frequency.after
+
+        group_encounter = None
+        encounter = None
+        if frequency.encounter_triggered:
+            group_encounter = self.stack.request_encounter_group(
+                walk.session,
+                group_roll=encounter_rolls.group_roll,
+            )
+            encounter = self.stack.request_encounter(
+                walk.session,
+                group_roll=encounter_rolls.group_roll,
+                enemy_roll=encounter_rolls.enemy_roll,
+                level_roll=encounter_rolls.level_roll,
+            )
+
+        return LocalRuntimeEncounterWalkResult(
+            walk=walk,
+            frequency=frequency,
+            group_encounter=group_encounter,
+            encounter=encounter,
         )
 
     @staticmethod

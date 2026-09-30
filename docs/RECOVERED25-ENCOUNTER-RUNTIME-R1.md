@@ -2,7 +2,7 @@
 
 ## Status
 
-**IMPLEMENTED / PENDING REMOTE BUNDLE CI.**
+**CLOSED / REMOTE BUNDLE VALIDATED.**
 
 This integration closes the composition gap between the already reconstructed
 versioned encounter/master-data model and the concrete recovered25 local
@@ -39,10 +39,11 @@ invented.
 
 ## Stack contract
 
-`Recovered25LocalRuntimeStack.from_verified_bundle()` now requires the
-verified server data directory and loads the encounter adapter as part of the
-same concrete composition that already supplies maps, collision, Warp,
-state-gated WarpMan and initial NPC occupancy.
+The full `Recovered25LocalRuntimeStack.from_verified_bundle()` composition may
+supply the verified server data directory and then loads the encounter adapter
+alongside maps, collision, Warp, state-gated WarpMan and initial NPC occupancy.
+Subsystem-only smokes may omit `server_data_dir`; in that case encounter runtime
+is intentionally absent rather than synthesized.
 
 The stack exposes:
 
@@ -91,3 +92,12 @@ versioned encounter request using explicit deterministic rolls.
 Only after that bridge is closed should the existing deterministic battle shell
 be attached to the coordinator. Battle AI/RNG remains explicit and must not be
 invented during this restoration step.
+
+
+## Remote closure
+
+GitHub Actions `36745555249` completed successfully against the hash-pinned
+preservation bundle. The concrete local-runtime smoke proved the 402/23/19
+encounter boundary and produced both group-resolution and enemy-variant/level
+runtime witnesses while the existing server/client collision validations also
+remained green.
