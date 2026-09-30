@@ -3724,3 +3724,27 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Validation: GitHub Actions **36611860401 = PASS**; derived report commit **88ce0f15fa31a13251eae52e7d71d7d955ccad3b**. CI is further tightened to require `STATIC_COORDINATE_CHAIN|witness=1` on future runs.
 - **SHADOWED_BRANCH_STATIC_COORDINATE_ACCESS_R1 = CLOSED.**
 - Next deterministic seam: audit the **dynamic-object occupancy boundary** along this critical coordinate chain. Distinguish fixed/non-overable recovered NPC or item occupants from transient/moving occupants, and verify that at least one static route remains executable without inventing despawn/movement assumptions. If fixed occupant overability cannot be resolved from recovered25 data, record that exact boundary rather than treating static walkability as full live-world reachability.
+
+
+## Phase 1 shadowed-branch deterministic dynamic occupancy closure — 2026-09-30
+
+- The coordinate-level progression witness is now extended through the deterministic dynamic-object boundary instead of assuming an empty live map.
+- Fixed-descendant movement semantics were revalidated and kept explicit:
+  - classic Warp characters are overable;
+  - `OBJTYPE_GOLD` does **not** block `CHAR_walk`;
+  - `OBJTYPE_ITEM` blocks only when `ITEM_ISOVERED == false`;
+  - item default `ITEM_ISOVERED` is true, but per-item data may override it;
+  - legacy normal ground-object persistence restores only the exact file `itemgold`; `itemgold_extra` is an emergency non-normal-save filename.
+- Recovered25 preservation-bundle census finds:
+  - normal `itemgold` files = **0**;
+  - `itemgold_extra` files = **0**;
+  - persisted critical-floor ITEM rows = **0**;
+  - persisted critical-floor GOLD rows = **0**;
+  - persisted critical-floor CHAR rows = **0**.
+- The prerequisite coordinate audit already treats every recovered **non-Warp NPC birth cell as blocking**, yet both critical local paths remain reachable at the same shortest lengths (**4 steps** and **7 steps**). Thus fixed recovered NPC placement does not require any movement/despawn assumption.
+- Result: `DETERMINISTIC_INITIAL_DYNAMIC_OCCUPANCY_CHAIN|witness=1` and `PERSISTED_CRITICAL_BLOCKER_FREE|witness=1`.
+- Scope boundary remains explicit: arbitrary later live-session states can introduce moving characters/pets or non-overable dropped items, so **universal reachability across every possible live state is intentionally not claimed**. Those objects are transient session state, not deterministic recovered static-world content.
+- Artifact: `tools/stoneage_shadowed_branch_dynamic_occupancy_probe.py`; tests: `tests/test_stoneage_shadowed_branch_dynamic_occupancy_probe.py`; derived report: `research/recovered/STONEAGE-25-SHADOWED-BRANCH-DYNAMIC-OCCUPANCY-R1.txt`.
+- Validation: transport workflow GitHub Actions **36676771400 = PASS**; derived report commit **4b11a1be9afd8aedd998192746f1a9c98ad4241e**.
+- **SHADOWED_BRANCH_DETERMINISTIC_DYNAMIC_OCCUPANCY_R1 = CLOSED.**
+- Next deterministic seam: close the remaining **fresh-character economic provenance** for the gated branch. The current progression proves only that the exchange fee fits inside the legal carried-Stone domain. Audit whether a newly initialized single-player character can legally acquire the required Stone through recovered gameplay sources before claiming the branch is fresh-start reachable; preserve the existing legal-state witness independently if a complete earning chain cannot be proven.
