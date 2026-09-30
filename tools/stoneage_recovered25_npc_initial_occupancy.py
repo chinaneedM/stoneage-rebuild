@@ -18,6 +18,7 @@ from pathlib import Path
 from types import MappingProxyType
 from typing import Mapping
 
+from tools.stoneage_map_collision_model import CHARACTER
 from tools.stoneage_runtime_occupancy_registry import (
     RuntimeDynamicOccupancyRegistry,
 )
@@ -188,7 +189,8 @@ class Recovered25NpcInitialOccupancyManifest:
             current = existing.get(object_id)
             if current is not None:
                 if (
-                    current.position != row.position
+                    current.kind != CHARACTER
+                    or current.position != row.position
                     or current.overable != row.overable
                     or current.provenance != row.provenance
                 ):
