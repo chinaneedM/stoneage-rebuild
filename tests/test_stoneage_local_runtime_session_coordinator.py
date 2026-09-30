@@ -1143,7 +1143,6 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                 captured_pets_by_target_id={},
                 defense_profile="newpower_70pct",
             )
-        )
         self.assertIsNone(context.working_persistent_state_payload)
         self.assertEqual(session.player_state.pets, {})
 
