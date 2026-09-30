@@ -338,6 +338,52 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         self.assertTrue(allowed.resolution.moved)
         self.assertTrue(allowed.dynamic_collision.allowed)
 
+    def test_coordinator_seeds_stack_initial_npc_occupancy(self):
+        self.stack.npc_initial_occupancy = SimpleNamespace(
+            populate_registry=lambda registry: registry.register_character(
+                object_id="npc-placement:42",
+                position=MapPosition(1, 0, 1),
+                overable=True,
+                provenance=(
+                    "recovered25:npc-placement:42:"
+                    "overability:INHERITED_DEFAULT_OVERABLE"
+                ),
+            )
+        )
+        coordinator = LocalRuntimeSessionCoordinator(
+            stack=self.stack,
+            persistence=InMemoryLocalPersistenceStore(),
+        )
+        self.stack.collision_router = SimpleNamespace(
+            routed_step_verdict=lambda **_kwargs: SimpleNamespace(
+                decision=CollisionDecision(True, "static_allowed"),
+                route=SimpleNamespace(
+                    provider_kind="RECOVERED25_SERVER_COLLISION",
+                    evidence_class="LATER_RECOVERED_SERVER_PAYLOAD_AND_MAPSET",
+                    semantic_profile="RECOVERED25_SERVER_LS2MAP_MAPSET_R1",
+                    exact_recovered25_binary_proof=None,
+                ),
+            )
+        )
+        session = coordinator.new_game(1)
+        result = coordinator.walk_one_cell_with_runtime_collision(
+            session,
+            destination=MapPosition(1, 0, 1),
+        )
+        self.assertTrue(result.resolution.moved)
+        self.assertEqual(
+            result.live_occupancy_object_ids,
+            ("npc-placement:42",),
+        )
+        self.assertTrue(result.dynamic_collision.allowed)
+        self.assertEqual(
+            result.live_occupancy_provenance,
+            (
+                "recovered25:npc-placement:42:"
+                "overability:INHERITED_DEFAULT_OVERABLE",
+            ),
+        )
+
     def test_dynamic_occupancy_cannot_override_static_denial(self):
         session = self.coordinator.new_game(1)
         self.stack.collision_router = SimpleNamespace(
