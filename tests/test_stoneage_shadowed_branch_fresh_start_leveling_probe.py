@@ -3,6 +3,7 @@ import unittest
 from tools.stoneage_shadowed_branch_fresh_start_leveling_probe import (
     _normalized_level_range,
     _positive_exp_mode,
+    _required_exp_values,
 )
 
 
@@ -40,6 +41,23 @@ class FreshStartLevelingProbeTests(unittest.TestCase):
             "exp":-1,
         }
         self.assertEqual(_normalized_level_range(enemy),(7,7))
+
+
+    def test_required_exp_values_use_next_level_indices(self):
+        # LoadEXP stores these as NeedLevelUpTbls[1..3].  A level-1
+        # character reaching level 3 must consume indices 2 and 3 only.
+        self.assertEqual(
+            _required_exp_values([0,10,20],1,3),
+            (10,20),
+        )
+
+    def test_birth_row_zero_does_not_invalidate_leveling(self):
+        required=_required_exp_values([0,10,20],1,3)
+        self.assertIsNotNone(required)
+        self.assertTrue(all(value>0 for value in required))
+
+    def test_required_exp_values_detect_missing_target_row(self):
+        self.assertIsNone(_required_exp_values([0,10],1,3))
 
 
 if __name__=="__main__":
