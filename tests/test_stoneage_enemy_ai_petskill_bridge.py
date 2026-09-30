@@ -2,6 +2,7 @@ import unittest
 
 from tools.stoneage_enemy_ai_petskill_bridge import (
     resolve_enemy_ai_basic_petskill_command,
+    resolve_enemy_ai_powerbalance_petskill_command,
     resolve_enemy_ai_statuschange_petskill_command,
 )
 from tools.stoneage_enemy_spawn_model import SpawnedEnemy
@@ -19,6 +20,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_GUARD,
     BATTLE_COM_NONE,
+    BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
     battle_command3_high,
     battle_command3_low,
@@ -160,6 +162,53 @@ class EnemyAiPetSkillBridgeTests(unittest.TestCase):
         self.assertEqual(resolved.skill_id, 30)
         self.assertEqual(resolved.command.command1, BATTLE_COM_NONE)
         self.assertEqual(resolved.command.command2, 4)
+
+    def test_powerbalance_uses_recovered_option_birth_fix_stats_and_round_bridge(self):
+        spawned = spawned_with_slots((50, 0, 0, 0, 0, 0, 0))
+        option = "攻%25 防%-35".encode("cp950")
+        runtime = Recovered25PetSkillRuntime(
+            skills={
+                50: entry(50, "PETSKILL_PowerBalance", option),
+            },
+            source_file="petskill.txt",
+        )
+        resolved = resolve_enemy_ai_powerbalance_petskill_command(
+            spawned,
+            skill_slot=0,
+            target_slot=3,
+            petskill_runtime=runtime,
+        )
+        projection = spawned.birth.combat_projection()
+        self.assertEqual(resolved.command.command1, BATTLE_COM_S_POWERBALANCE)
+        self.assertEqual(resolved.command.command2, 3)
+        self.assertEqual(
+            resolved.setup_effects.attack_power,
+            projection["attack"] + int(projection["attack"] * 25 / 100),
+        )
+        self.assertEqual(
+            resolved.setup_effects.defense_power,
+            projection["defense"] + int(projection["defense"] * -35 / 100),
+        )
+
+    def test_powerbalance_rejects_unclosed_dex_extension_marker(self):
+        spawned = spawned_with_slots((50, 0, 0, 0, 0, 0, 0))
+        runtime = Recovered25PetSkillRuntime(
+            skills={
+                50: entry(
+                    50,
+                    "PETSKILL_PowerBalance",
+                    "攻%25 防%-35 敏%10".encode("cp950"),
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        with self.assertRaisesRegex(ValueError, "outside closed"):
+            resolve_enemy_ai_powerbalance_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=0,
+                petskill_runtime=runtime,
+            )
 
     def test_statuschange_uses_recovered_option_birth_fix_stats_and_round_bridge(self):
         spawned = spawned_with_slots((40, 0, 0, 0, 0, 0, 0))
