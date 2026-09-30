@@ -39,6 +39,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_CAPTURE,
     BATTLE_COM_ESCAPE,
     BATTLE_COM_GUARD,
+    BATTLE_COM_S_CHARGE,
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
@@ -992,13 +993,30 @@ class LocalRuntimeSessionCoordinator:
             for enemy in state.session.enemies
             if str(enemy.participant_id) in living
         )
+        carried_enemy_ids={
+            enemy_id
+            for enemy_id in living_enemy_ids
+            if (
+                enemy_id in state.carried_commands_by_participant_id
+                and int(
+                    state.carried_commands_by_participant_id[
+                        enemy_id
+                    ].command1
+                ) == BATTLE_COM_S_CHARGE
+            )
+        }
+        ai_enemy_ids=tuple(
+            enemy_id
+            for enemy_id in living_enemy_ids
+            if enemy_id not in carried_enemy_ids
+        )
         supplied_mode_ids = {str(key) for key in mode_rolls_by_enemy_id}
-        if supplied_mode_ids != set(living_enemy_ids):
-            missing = sorted(set(living_enemy_ids) - supplied_mode_ids)
-            extra = sorted(supplied_mode_ids - set(living_enemy_ids))
+        if supplied_mode_ids != set(ai_enemy_ids):
+            missing = sorted(set(ai_enemy_ids) - supplied_mode_ids)
+            extra = sorted(supplied_mode_ids - set(ai_enemy_ids))
             raise ValueError(
-                "enemy AI mode rolls must cover exactly living enemies; "
-                f"missing={missing}, extra={extra}"
+                "enemy AI mode rolls must cover exactly non-carried living "
+                f"enemies; missing={missing}, extra={extra}"
             )
 
         target_rolls = {
@@ -1006,11 +1024,11 @@ class LocalRuntimeSessionCoordinator:
             for key, value in (target_rolls_by_enemy_id or {}).items()
         }
         unknown_target_rolls = sorted(
-            set(target_rolls) - set(living_enemy_ids)
+            set(target_rolls) - set(ai_enemy_ids)
         )
         if unknown_target_rolls:
             raise ValueError(
-                "enemy AI target rolls reference non-living enemies: "
+                "enemy AI target rolls reference non-AI enemies: "
                 + ",".join(unknown_target_rolls)
             )
 
@@ -1059,9 +1077,15 @@ class LocalRuntimeSessionCoordinator:
                 )
             )
 
-        commands = {}
-        setup_effects = {}
-        for enemy_id in living_enemy_ids:
+        commands = {
+            enemy_id:state.carried_commands_by_participant_id[enemy_id]
+            for enemy_id in carried_enemy_ids
+        }
+        setup_effects = {
+            enemy_id:state.carried_setup_effects_by_participant_id[enemy_id]
+            for enemy_id in carried_enemy_ids
+        }
+        for enemy_id in ai_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
                 raise ValueError(
                     "living enemy lacks recovered spawn provenance: "
