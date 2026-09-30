@@ -37,7 +37,10 @@
     "materializable_floor_count": 826,
     "fresh_start_state_gated_reachable_floor_count": 826,
     "remaining_unreachable_floor_count": 0,
-    "full_materializable_world_closed": true
+    "full_materializable_world_closed": true,
+    "active_classic_warp_count": 2724,
+    "deferred_conditional_classic_warp_count": 14,
+    "unresolved_cross_file_classic_warp_sources": 0
   },
   "fresh_start": {
     "normal_hometown_count": 4,
@@ -116,8 +119,14 @@
       "source_floor": 811,
       "destination_floor": 820,
       "unconditional": false,
-      "gate": "CLOSED_PROGRESSION_WITNESS",
-      "source_profile": "recovered25"
+      "gate": "DERIVED_RECOVERED25_FREE_PREDICATES",
+      "source_profile": "recovered25",
+      "predicate_shape": [
+        "LV_GT",
+        "LV_LT",
+        "ITEM_EQ"
+      ],
+      "progression_witness_closed": true
     },
     {
       "id": "fresh_start_hometown_3_bridge",
