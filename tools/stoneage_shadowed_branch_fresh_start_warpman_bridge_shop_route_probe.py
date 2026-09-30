@@ -201,9 +201,10 @@ def _starter_inventory(setup:Path)->tuple[int,int,int]:
         index=int(suffix)
         if not 1<=index<=STARTER_ITEM_CONFIG_SLOTS:
             continue
-        parsed=_int_prefix(value)
+        raw_value=value.strip()
+        parsed=0 if not raw_value else _int_prefix(raw_value)
         if parsed is None:
-            raise ValueError("starter ITEM value is not parseable")
+            raise ValueError("nonempty starter ITEM value is not parseable")
         if index in values and values[index]!=int(parsed):
             raise ValueError("conflicting starter ITEM values")
         values[index]=int(parsed)

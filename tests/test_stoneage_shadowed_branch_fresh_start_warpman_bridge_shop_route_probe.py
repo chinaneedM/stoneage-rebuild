@@ -43,6 +43,15 @@ class FreshStartWarpManBridgeShopRouteProbeTests(unittest.TestCase):
             )
             self.assertEqual(_starter_inventory(setup),(15,1,14))
 
+            setup.write_text(
+                "\n".join(
+                    f"ITEM{i}={101 if i==1 else ''}"
+                    for i in range(1,16)
+                )+"\n",
+                encoding="utf-8",
+            )
+            self.assertEqual(_starter_inventory(setup),(15,1,14))
+
             setup.write_text("ITEM1=101\n",encoding="utf-8")
             self.assertEqual(_starter_inventory(setup),(1,1,0))
 
