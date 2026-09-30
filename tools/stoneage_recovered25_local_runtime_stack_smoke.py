@@ -242,6 +242,27 @@ def run(
         raise ValueError("runtime stack lacks enemybase runtime")
     if len(stack.enemybase_runtime.templates) != 988:
         raise ValueError("unexpected recovered25 enemybase template count")
+    if stack.petskill_runtime is None:
+        raise ValueError("runtime stack lacks pet-skill runtime")
+    if len(stack.petskill_runtime.skills) != 147:
+        raise ValueError("unexpected recovered25 pet-skill count")
+    referenced_skill_ids = {
+        int(skill_id)
+        for template in stack.enemybase_runtime.templates.values()
+        for skill_id in (
+            template.skill_slot_ids
+            if template.skill_slot_ids
+            else template.skill_ids
+        )
+        if int(skill_id) > 0
+    }
+    unresolved_skill_ids = stack.petskill_runtime.unresolved_skill_ids(
+        referenced_skill_ids
+    )
+    if unresolved_skill_ids:
+        raise ValueError(
+            "recovered25 enemybase references unresolved pet-skill IDs"
+        )
     referenced_template_ids = (
         stack.enemybase_runtime.referenced_template_ids(
             stack.encounter_runtime
@@ -454,6 +475,25 @@ def main() -> None:
         stack.encounter_runtime
     )
     print(f"COUNT|enemybase_templates|{len(stack.enemybase_runtime.templates)}")
+    report_referenced_skill_ids = {
+        int(skill_id)
+        for template in stack.enemybase_runtime.templates.values()
+        for skill_id in (
+            template.skill_slot_ids
+            if template.skill_slot_ids
+            else template.skill_ids
+        )
+        if int(skill_id) > 0
+    }
+    print(f"COUNT|petskill_entries|{len(stack.petskill_runtime.skills)}")
+    print(
+        "COUNT|enemybase_referenced_petskill_ids|"
+        f"{len(report_referenced_skill_ids)}"
+    )
+    print(
+        "COUNT|enemybase_unresolved_petskill_ids|"
+        f"{len(stack.petskill_runtime.unresolved_skill_ids(report_referenced_skill_ids))}"
+    )
     print(
         "COUNT|stable_referenced_enemybase_templates|"
         f"{len(report_referenced_template_ids)}"
