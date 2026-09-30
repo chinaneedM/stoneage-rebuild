@@ -143,6 +143,47 @@ The coordinator does not create RNG and does not infer battle/encounter rolls.
 The exact CEP mechanism remains strong descendant evidence; its presence in
 JSS 1999 / Taiwan v1.0 is still open and must not be promoted.
 
+## 2E. Transactional local group battle context
+
+The coordinator now owns a transient battle transaction boundary without making
+battle state part of the local save contract.
+
+`start_group_battle()` requires an authoritative
+`LocalRuntimeSessionState`, a resolved `GroupEncounterRequest`, and explicit
+enemy-count/selection/birth rolls. It serializes the current
+`PersistentPlayerState` through the existing versioned persistence codec and
+immediately decodes that payload into a working clone. The battle domain is
+therefore isolated from the caller-owned session state.
+
+Enemy materialization is delegated to the recovered25 stack's
+`spawn_group_enemies()` bridge. The coordinator then calls the existing
+`begin_group_battle()` shell. It does not choose AI, commands, initiative
+randomness, attack rolls, escape/capture rolls, drops, EXP thresholds, or a
+battle result.
+
+The returned `LocalRuntimeBattleContext` is transient. It keeps:
+
+- bootstrap/world profile identity;
+- hometown ordinal and origin position;
+- world flags;
+- the versioned persistent-state snapshot;
+- the immutable battle shell;
+- the concrete spawned-enemy provenance records.
+
+`settle_group_battle()` takes only that context plus an explicit
+`BattleOutcome`. It reconstructs a fresh working persistent state from the
+snapshot, applies the already validated battle-outcome adapter, and returns a
+**new** `LocalRuntimeSessionState` at the same world position. The input
+session is never mutated in place.
+
+This boundary is deliberate: active battle state is transient simulation state,
+while only the resulting player-owned state becomes eligible for the existing
+local save contract after settlement.
+
+Enemy display names may remain unresolved while the recovered25 enemybase
+CP950/Big5 two-row ambiguity is open. That affects presentation only; player
+and owned-pet names remain mandatory, and no synthetic enemy name is created.
+
 ## 3. State-gated dialogue transitions
 
 The three current recovered25 conditional transitions remain outside the unconditional classic-Warp graph.

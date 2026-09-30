@@ -19,6 +19,10 @@ from dataclasses import dataclass, field, replace
 from types import MappingProxyType
 from typing import Any, Mapping, Sequence
 
+from tools.stoneage_enemy_spawn_model import (
+    EnemyBirthRolls,
+    SpawnedEnemy,
+)
 from tools.stoneage_encounter_frequency_model import (
     EncounterFrequencyDecision,
     EncounterFrequencyState,
@@ -53,12 +57,22 @@ from tools.stoneage_local_runtime_save import (
     local_runtime_payload_schema,
     restore_local_runtime_occupancy_registry,
 )
+from tools.stoneage_singleplayer_battle import (
+    BattleOutcome,
+    BattleSession,
+    apply_battle_outcome,
+    begin_group_battle,
+)
 from tools.stoneage_singleplayer_domain import (
     EncounterRequest,
     EncounterRolls,
     GroupEncounterRequest,
     MapPosition,
     SinglePlayerHistoricalDomain,
+)
+from tools.stoneage_singleplayer_persistence import (
+    decode_persistent_state,
+    encode_persistent_state,
 )
 from tools.stoneage_singleplayer_world import (
     WalkResolution,
@@ -100,6 +114,40 @@ class LocalRuntimeEncounterWalkResult:
     @property
     def session(self) -> LocalRuntimeSessionState:
         return self.walk.session
+
+
+@dataclass(frozen=True)
+class LocalRuntimeBattleContext:
+    """Transient local battle shell over a cloned persistent-state snapshot."""
+
+    contract_id: str
+    world_profile: str
+    hometown_ordinal: int
+    origin_position: MapPosition
+    world_flags: frozenset[str]
+    persistent_state_payload: str
+    battle: BattleSession
+    spawned_enemies: tuple[SpawnedEnemy, ...]
+
+    def __post_init__(self) -> None:
+        if not str(self.contract_id).strip():
+            raise ValueError("battle context contract_id must be non-empty")
+        if not str(self.world_profile).strip():
+            raise ValueError("battle context world_profile must be non-empty")
+        if int(self.hometown_ordinal) not in {1, 2, 3, 4}:
+            raise ValueError("battle context hometown ordinal must be 1..4")
+        if self.battle.origin_position != self.origin_position:
+            raise ValueError("battle context origin/battle position drift")
+        object.__setattr__(
+            self,
+            "world_flags",
+            frozenset(str(x) for x in self.world_flags),
+        )
+        object.__setattr__(
+            self,
+            "spawned_enemies",
+            tuple(self.spawned_enemies),
+        )
 
 
 @dataclass(frozen=True)
@@ -512,6 +560,113 @@ class LocalRuntimeSessionCoordinator:
             group_encounter=group_encounter,
             encounter=encounter,
         )
+
+    def start_group_battle(
+        self,
+        session: LocalRuntimeSessionState,
+        encounter: GroupEncounterRequest,
+        *,
+        entry_count_roll: int,
+        selection_rolls: Sequence[int],
+        birth_rolls: Sequence[EnemyBirthRolls],
+        allied_pet_slots: Sequence[int] = (),
+        ride_pet_slot: int | None = None,
+    ) -> LocalRuntimeBattleContext:
+        """Start a transient group battle from explicit recovered spawn rolls."""
+
+        session = self._validate_session(session)
+        if encounter.position != session.player_position:
+            raise ValueError(
+                "group encounter position does not match authoritative session"
+            )
+        encounter_runtime = getattr(self.stack, "encounter_runtime", None)
+        if encounter_runtime is None:
+            raise ValueError("runtime stack has no encounter runtime")
+
+        persistent_payload = encode_persistent_state(session.player_state)
+        working_state = decode_persistent_state(persistent_payload)
+        domain = SinglePlayerHistoricalDomain(
+            static=encounter_runtime.static_data,
+            persistent=working_state,
+        )
+        domain.move_player(
+            floor_id=session.player_position.floor_id,
+            x=session.player_position.x,
+            y=session.player_position.y,
+        )
+
+        spawned = tuple(
+            self.stack.spawn_group_enemies(
+                encounter,
+                entry_count_roll=int(entry_count_roll),
+                selection_rolls=tuple(int(x) for x in selection_rolls),
+                birth_rolls=tuple(birth_rolls),
+            )
+        )
+        battle = begin_group_battle(
+            domain,
+            encounter,
+            enemies=tuple(row.participant for row in spawned),
+            allied_pet_slots=tuple(int(x) for x in allied_pet_slots),
+            ride_pet_slot=(
+                None if ride_pet_slot is None else int(ride_pet_slot)
+            ),
+        )
+        return LocalRuntimeBattleContext(
+            contract_id=session.contract_id,
+            world_profile=session.world_profile,
+            hometown_ordinal=session.hometown_ordinal,
+            origin_position=session.player_position,
+            world_flags=session.world_flags,
+            persistent_state_payload=persistent_payload,
+            battle=battle,
+            spawned_enemies=spawned,
+        )
+
+    def settle_group_battle(
+        self,
+        context: LocalRuntimeBattleContext,
+        outcome: BattleOutcome,
+    ) -> LocalRuntimeSessionState:
+        """Apply one explicit outcome to the battle snapshot and return a new session."""
+
+        if context.contract_id != self.profile.contract_id:
+            raise ValueError("battle context bootstrap contract mismatch")
+        if context.world_profile != self.profile.runtime_world_profile:
+            raise ValueError("battle context world-profile mismatch")
+        if not self.topology.is_valid_position(context.origin_position):
+            raise ValueError("battle context origin is outside topology")
+
+        encounter_runtime = getattr(self.stack, "encounter_runtime", None)
+        if encounter_runtime is None:
+            raise ValueError("runtime stack has no encounter runtime")
+
+        working_state = decode_persistent_state(
+            context.persistent_state_payload
+        )
+        domain = SinglePlayerHistoricalDomain(
+            static=encounter_runtime.static_data,
+            persistent=working_state,
+        )
+        domain.move_player(
+            floor_id=context.origin_position.floor_id,
+            x=context.origin_position.x,
+            y=context.origin_position.y,
+        )
+        apply_battle_outcome(
+            domain,
+            context.battle,
+            outcome,
+        )
+        updated = LocalRuntimeSessionState(
+            contract_id=context.contract_id,
+            world_profile=context.world_profile,
+            hometown_ordinal=context.hometown_ordinal,
+            player_position=context.origin_position,
+            player_state=domain.persistent,
+            world_flags=context.world_flags,
+        )
+        return self._validate_session(updated)
 
     @staticmethod
     def _binding_source_rect(binding) -> tuple[int, int, int, int]:

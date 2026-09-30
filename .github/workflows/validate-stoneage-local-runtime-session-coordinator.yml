@@ -22,6 +22,12 @@ on:
       - tools/stoneage_local_runtime_core.py
       - tools/stoneage_singleplayer_world.py
       - tools/stoneage_singleplayer_domain.py
+      - tools/stoneage_singleplayer_persistence.py
+      - tools/stoneage_singleplayer_battle.py
+      - tools/stoneage_enemy_spawn_model.py
+      - tools/stoneage_recovered25_enemybase_runtime.py
+      - tests/test_stoneage_singleplayer_battle.py
+      - tests/test_stoneage_enemy_spawn_model.py
       - tools/stoneage_recovered25_local_runtime_stack.py
       - tools/stoneage_recovered25_npc_initial_occupancy.py
       - tools/stoneage_versioned_npc_overability_profile.py
@@ -52,4 +58,6 @@ jobs:
             tests.test_stoneage_runtime_occupancy_registry \
             tests.test_stoneage_recovered25_npc_initial_occupancy \
             tests.test_stoneage_local_runtime_core \
-            tests.test_stoneage_singleplayer_world -v
+            tests.test_stoneage_singleplayer_world \
+            tests.test_stoneage_singleplayer_battle \
+            tests.test_stoneage_enemy_spawn_model -v

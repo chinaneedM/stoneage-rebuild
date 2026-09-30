@@ -4,6 +4,11 @@ import unittest
 from pathlib import Path
 from types import MappingProxyType, SimpleNamespace
 
+from tools.stoneage_enemy_spawn_model import (
+    EnemyBirthRolls,
+    materialize_spawn_plan,
+    plan_enemy_spawns,
+)
 from tools.stoneage_encounter_frequency_model import (
     EncounterFrequencyState,
 )
@@ -30,6 +35,7 @@ from tools.stoneage_local_runtime_session_coordinator import (
     InMemoryLocalPersistenceStore,
     LocalRuntimeSessionCoordinator,
 )
+from tools.stoneage_singleplayer_battle import BattleOutcome
 from tools.stoneage_singleplayer_domain import (
     EncounterRolls,
     HistoricalStaticData,
@@ -43,6 +49,7 @@ from tools.stoneage_singleplayer_world import (
     HistoricalWorldTopology,
     LegacyWarpEdge,
 )
+from tools.stoneage_tw10_25_bridge_model import PetTemplateBridge
 from tools.stoneage_tw10_25_encounter_bridge import (
     EncounterAreaBridge,
     EnemyVariantBridge,
@@ -57,6 +64,26 @@ def _player_state() -> PersistentPlayerState:
     return PersistentPlayerState(
         character=PlayerState(
             MappingProxyType({"name": "coordinator-test", "level": 1})
+        )
+    )
+
+
+def _battle_player_state() -> PersistentPlayerState:
+    return PersistentPlayerState(
+        character=PlayerState(
+            MappingProxyType(
+                {
+                    "name": "battle-player",
+                    "level": 5,
+                    "hp": 100,
+                    "max_hp": 100,
+                    "attack": 80,
+                    "defense": 60,
+                    "quick": 50,
+                    "exp": 0,
+                    "max_exp": 1000,
+                }
+            )
         )
     )
 
@@ -127,12 +154,36 @@ class _FakeStack:
         })
         self.encounter_runtime = SimpleNamespace(
             encounter_areas=(area,),
+            groups={7: group},
+            enemies={700: enemy},
             static_data=HistoricalStaticData(
                 encounter_areas=(area,),
                 encounter_groups={7: group},
                 enemy_variants={700: enemy},
             ),
         )
+        template = PetTemplateBridge.from_enemybase(
+            {
+                "NAME": None,
+                "TEMPNO": 88,
+                "INITNUM": 10,
+                "LVUPPOINT": 5,
+                "BASEVITAL": 20,
+                "BASESTR": 20,
+                "BASETGH": 20,
+                "BASEDEX": 20,
+                "IMGNUMBER": 10123,
+                "MODAI": 4,
+                "GET": 0,
+                "EARTHAT": 50,
+                "WATERAT": 50,
+                "FIREAT": 0,
+                "WINDAT": 0,
+                "SLOT": 4,
+                "SIZE": 0,
+            }
+        )
+        self.enemybase_runtime = SimpleNamespace(templates={88: template})
 
     def create_fresh_start(self, ordinal):
         return FreshStartSeed(
@@ -199,6 +250,35 @@ class _FakeStack:
             group_roll=group_roll,
             enemy_roll=enemy_roll,
             level_roll=level_roll,
+        )
+
+
+    def spawn_group_enemies(
+        self,
+        encounter,
+        *,
+        entry_count_roll,
+        selection_rolls,
+        birth_rolls,
+    ):
+        area = next(
+            row
+            for row in self.encounter_runtime.encounter_areas
+            if row.index == encounter.area_index
+        )
+        group = self.encounter_runtime.groups[encounter.group_id]
+        plan = plan_enemy_spawns(
+            area,
+            group,
+            self.encounter_runtime.enemies,
+            self.enemybase_runtime.templates,
+            entry_count_roll=entry_count_roll,
+            selection_rolls=selection_rolls,
+        )
+        return materialize_spawn_plan(
+            plan,
+            self.enemybase_runtime.templates,
+            birth_rolls=birth_rolls,
         )
 
 
@@ -816,6 +896,69 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             self.coordinator.encounter_frequency,
             EncounterFrequencyState(),
         )
+
+    def test_group_battle_context_clones_state_and_settlement_returns_new_session(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"battle-route"}),
+        )
+        group = self.stack.request_encounter_group(
+            session,
+            group_roll=0,
+        )
+        self.assertIsNotNone(group)
+
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(0, 1, 2, 3, 0, 1, 2, 3, 0, 1),
+                ),
+            ),
+        )
+        self.assertEqual(len(context.spawned_enemies), 1)
+        self.assertIsNone(context.battle.enemies[0].name)
+        self.assertEqual(context.origin_position, session.player_position)
+
+        settled = self.coordinator.settle_group_battle(
+            context,
+            BattleOutcome(
+                result="victory",
+                player_updates={"hp": 70, "exp": 100},
+                pet_updates={},
+            ),
+        )
+        self.assertEqual(
+            session.player_state.character.fields["hp"],
+            100,
+        )
+        self.assertEqual(
+            session.player_state.character.fields["exp"],
+            0,
+        )
+        self.assertEqual(
+            settled.player_state.character.fields["hp"],
+            70,
+        )
+        self.assertEqual(
+            settled.player_state.character.fields["exp"],
+            100,
+        )
+        self.assertIsNot(
+            settled.player_state,
+            session.player_state,
+        )
+        self.assertEqual(settled.player_position, session.player_position)
+        self.assertEqual(settled.world_flags, session.world_flags)
 
     def test_classic_overlap_warp_is_reused_not_reimplemented(self):
         session = self.coordinator.new_game(1)

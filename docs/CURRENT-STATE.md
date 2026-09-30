@@ -4508,7 +4508,8 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Bundle smoke requires **988** loaded enemybase templates and **0** unresolved enemybase template identities across the stable encounter runtime.
 - Enemy names remain a presentation-layer OPEN issue until the two CP950/Big5 divergent rows are independently disambiguated.
 - First bundle run **36749082734** reached the completed stack execution without any template-gap exception; it failed only in the final reporter because a run-local template-count variable was referenced from `main()`. The reporter scope bug is corrected in the next validation.
-- **RECOVERED25_NUMERIC_ENEMYBASE_RUNTIME_R1 = IMPLEMENTED_PENDING_REPORTER_FIX_CI.**
+- Corrected bundle validation **36750049192 = PASS**. The stack smoke proves **988** loaded enemybase templates and **0** unresolved enemybase TEMPNO identities across the stable encounter runtime.
+- **RECOVERED25_NUMERIC_ENEMYBASE_RUNTIME_R1 = CLOSED.**
 - If the template join closes, proceed to group spawn/birth materialization and battle-shell integration with names nullable for enemy-side participants only; player and owned-pet names remain mandatory.
 
 
@@ -4527,5 +4528,25 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Because enemybase name decoding still has a two-row CP950/Big5 ambiguity, enemy-side `BattleParticipant.name` is now allowed to remain `None`. Player and owned-pet names are still mandatory through the existing `_require_name()` path.
 - No synthetic/fallback enemy name is emitted.
 - Bundle smoke is extended to require a real stable-world one-enemy spawn/birth witness using the hash-pinned recovered25 specimen.
-- **RECOVERED25_GROUP_SPAWN_BIRTH_BRIDGE_R1 = IMPLEMENTED_PENDING_REMOTE_BUNDLE_CI.**
+- Remote validation: gameplay model **36750049233 = PASS**, coordinator regression **36750049393 = PASS**, and full hash-pinned bundle validation **36750049192 = PASS**. The concrete stack smoke produced a real `ENEMY_SPAWN_BIRTH_RUNTIME_WITNESS`.
+- **RECOVERED25_GROUP_SPAWN_BIRTH_BRIDGE_R1 = CLOSED.**
 - After closure, connect the spawned participants to `begin_group_battle()` in the local session coordinator, then return explicit battle settlement into a newly cloned persistent session state.
+
+
+## Phase 1 transactional local group battle context — 2026-10-01
+
+- The recovered movement/encounter/spawn chain is now connected to the existing group-battle shell at the authoritative local-session boundary.
+- New transient contract: `LocalRuntimeBattleContext`.
+- `start_group_battle()`:
+  - validates current session and encounter position;
+  - snapshots persistent player-owned state through the existing versioned persistence codec;
+  - works on a decoded clone rather than the caller's session object;
+  - delegates explicit group spawn/birth rolls to `stack.spawn_group_enemies()`;
+  - enters the existing `begin_group_battle()` shell.
+- `settle_group_battle()` accepts only the transient context plus an explicit `BattleOutcome`; it reapplies the snapshot to a fresh domain and returns a **new** local session.
+- The original input session remains unchanged, so incomplete/aborted battle work cannot silently mutate the authoritative save state.
+- Active battle state remains transient and is not added to `stoneage.local-runtime-save.r1`.
+- No AI, commands, initiative randomness, attack rolls, capture/escape rolls, drops or outcome are generated here.
+- Coordinator CI is widened so enemy-spawn, battle, persistence and numeric enemybase changes rerun this integration boundary.
+- **LOCAL_RUNTIME_GROUP_BATTLE_CONTEXT_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Next restoration priority after CI closure: attach the already reconstructed persistent ordinary-round battle state to this context using explicit commands/initiative/attack rolls, then return its validated terminal settlement through the same cloned-session transaction boundary. Do not invent enemy AI.
