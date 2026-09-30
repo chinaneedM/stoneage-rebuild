@@ -39,6 +39,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_CAPTURE,
     BATTLE_COM_ESCAPE,
     BATTLE_COM_GUARD,
+    BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
@@ -48,6 +49,10 @@ from tools.stoneage_battle_round_model import (
     OrdinaryCaptureRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
+)
+from tools.stoneage_battle_status_model import (
+    BaseStatusCombatProfile,
+    BaseStatusTurnRolls,
 )
 from tools.stoneage_battle_state_model import (
     PersistentBattleState,
@@ -1263,6 +1268,13 @@ class LocalRuntimeSessionCoordinator:
         profiles: Mapping[str, BattleCombatProfile],
         attack_rolls: Mapping[str, OrdinaryAttackRolls],
         defense_profile: str,
+        base_status_rolls_by_participant_id: Mapping[
+            str, BaseStatusTurnRolls
+        ] | None = None,
+        base_status_combat_profiles_by_participant_id: Mapping[
+            str, BaseStatusCombatProfile
+        ] | None = None,
+        status_application_rolls_by_attack_id: Mapping[str, int] | None = None,
         no_risk: bool = False,
         field_attr: str = "none",
         field_power: int = 0,
@@ -1271,9 +1283,10 @@ class LocalRuntimeSessionCoordinator:
         """Advance the currently executable common enemy-AI round.
 
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
-        explicit RAND/ABIO inputs. A wa slot may resolve only through the
-        recovered NormalAttack/NormalGuard pet-skill bridge. Other callbacks
-        remain fail-closed.
+        explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
+        plus recovered StatusChange. StatusChange keeps setup effects and all
+        status/application RNG explicit; every other callback remains
+        fail-closed.
         """
 
         state = context.persistent_battle_state
@@ -1330,18 +1343,41 @@ class LocalRuntimeSessionCoordinator:
                 + ",".join(invalid_player_commands)
             )
 
-        enemy_commands = self.build_persistent_enemy_common_commands(
+        enemy_batch = self._build_persistent_enemy_common_batch(
             context,
             mode_rolls_by_enemy_id=enemy_mode_rolls,
             target_rolls_by_enemy_id=enemy_target_rolls,
             allow_escape=True,
             allow_basic_skill=True,
+            allow_statuschange_skill=True,
         )
+        enemy_commands = enemy_batch.commands
         escaping_enemy_ids = {
             str(participant_id)
             for participant_id, command in enemy_commands.items()
             if int(command.command1) == BATTLE_COM_ESCAPE
         }
+
+        statuschange_enemy_ids = {
+            str(participant_id)
+            for participant_id, command in enemy_commands.items()
+            if int(command.command1) == BATTLE_COM_S_STATUSCHANGE
+        }
+        normalized_status_application_rolls = {
+            str(key): int(value)
+            for key, value in (
+                status_application_rolls_by_attack_id or {}
+            ).items()
+        }
+        extra_status_rolls = sorted(
+            set(normalized_status_application_rolls)
+            - statuschange_enemy_ids
+        )
+        if extra_status_rolls:
+            raise ValueError(
+                "enemy StatusChange RNG references non-StatusChange actors: "
+                + ",".join(extra_status_rolls)
+            )
 
         normalized_escape_rolls = {
             str(key): value
@@ -1428,6 +1464,18 @@ class LocalRuntimeSessionCoordinator:
             attack_rolls=attack_rolls,
             escape_contexts=escape_contexts,
             escape_rolls=normalized_escape_rolls,
+            base_status_rolls_by_participant_id=(
+                base_status_rolls_by_participant_id
+            ),
+            base_status_combat_profiles_by_participant_id=(
+                base_status_combat_profiles_by_participant_id
+            ),
+            status_application_rolls_by_attack_id=(
+                normalized_status_application_rolls
+            ),
+            command_setup_effects_by_participant_id=(
+                enemy_batch.setup_effects
+            ),
             defense_profile=str(defense_profile),
             no_risk=bool(no_risk),
             field_attr=str(field_attr),
