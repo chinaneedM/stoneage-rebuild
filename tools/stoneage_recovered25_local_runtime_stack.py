@@ -35,6 +35,10 @@ from tools.stoneage_recovered25_client_collision_provider import (
 from tools.stoneage_recovered25_collision_router import (
     Recovered25CollisionRouter,
 )
+from tools.stoneage_recovered25_npc_initial_occupancy import (
+    Recovered25NpcInitialOccupancyManifest,
+    load_recovered25_npc_initial_occupancy_manifest,
+)
 from tools.stoneage_recovered25_server_collision_provider import (
     Recovered25ServerCollisionProvider,
 )
@@ -59,6 +63,7 @@ class Recovered25LocalRuntimeStack:
     collision_provider: Recovered25ServerCollisionProvider | None = None
     client_collision_provider: Recovered25ClientCollisionProvider | None = None
     collision_router: Recovered25CollisionRouter | None = None
+    npc_initial_occupancy: Recovered25NpcInitialOccupancyManifest | None = None
 
     @classmethod
     def from_verified_bundle(
@@ -120,6 +125,9 @@ class Recovered25LocalRuntimeStack:
                 client_provider=client_collision_provider,
             )
         )
+        npc_initial_occupancy = (
+            load_recovered25_npc_initial_occupancy_manifest()
+        )
         stack = cls(
             profile=profile,
             world_adapter=adapter,
@@ -130,6 +138,7 @@ class Recovered25LocalRuntimeStack:
             collision_provider=collision_provider,
             client_collision_provider=client_collision_provider,
             collision_router=collision_router,
+            npc_initial_occupancy=npc_initial_occupancy,
         )
         stack._validate()
         return stack
@@ -174,6 +183,19 @@ class Recovered25LocalRuntimeStack:
             raise ValueError(
                 "collision router requires client collision provider"
             )
+        if self.npc_initial_occupancy is not None:
+            manifest = self.npc_initial_occupancy
+            if manifest.source_version != "recovered25":
+                raise ValueError("runtime stack NPC occupancy source-version drift")
+            invalid_seed_positions = tuple(
+                row.placement_id
+                for row in manifest.seedable_rows
+                if not self.world_adapter.topology.is_valid_position(row.position)
+            )
+            if invalid_seed_positions:
+                raise ValueError(
+                    "runtime stack NPC occupancy contains invalid seed positions"
+                )
 
     def create_fresh_start(self, hometown_ordinal: int) -> FreshStartSeed:
         return self.fresh_start_factory.create_fresh_start(
