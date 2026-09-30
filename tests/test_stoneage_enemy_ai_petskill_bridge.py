@@ -14,6 +14,7 @@ from tools.stoneage_tw10_25_encounter_bridge import EnemyVariantBridge
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_GUARD,
+    BATTLE_COM_NONE,
 )
 
 
@@ -127,6 +128,24 @@ class EnemyAiPetSkillBridgeTests(unittest.TestCase):
         self.assertEqual(guard.skill_id, 20)
         self.assertEqual(guard.command.command1, BATTLE_COM_GUARD)
         self.assertEqual(guard.command.command2, 4)
+
+    def test_none_skill_keeps_source_no_action_command(self):
+        spawned = spawned_with_slots((30, 0, 0, 0, 0, 0, 0))
+        runtime = Recovered25PetSkillRuntime(
+            skills={
+                30: entry(30, "PETSKILL_None"),
+            },
+            source_file="petskill.txt",
+        )
+        resolved = resolve_enemy_ai_basic_petskill_command(
+            spawned,
+            skill_slot=0,
+            target_slot=4,
+            petskill_runtime=runtime,
+        )
+        self.assertEqual(resolved.skill_id, 30)
+        self.assertEqual(resolved.command.command1, BATTLE_COM_NONE)
+        self.assertEqual(resolved.command.command2, 4)
 
     def test_non_basic_stable_callback_fails_closed(self):
         spawned = spawned_with_slots((30, 0, 0, 0, 0, 0, 0))
