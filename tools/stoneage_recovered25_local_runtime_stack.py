@@ -32,6 +32,9 @@ from tools.stoneage_recovered25_region_payload import (
 from tools.stoneage_recovered25_client_collision_provider import (
     Recovered25ClientCollisionProvider,
 )
+from tools.stoneage_recovered25_collision_router import (
+    Recovered25CollisionRouter,
+)
 from tools.stoneage_recovered25_server_collision_provider import (
     Recovered25ServerCollisionProvider,
 )
@@ -55,6 +58,7 @@ class Recovered25LocalRuntimeStack:
     fresh_start_factory: Recovered25FreshStartFactory
     collision_provider: Recovered25ServerCollisionProvider | None = None
     client_collision_provider: Recovered25ClientCollisionProvider | None = None
+    collision_router: Recovered25CollisionRouter | None = None
 
     @classmethod
     def from_verified_bundle(
@@ -107,6 +111,15 @@ class Recovered25LocalRuntimeStack:
                 client_adrn_path=client_adrn_path,
             )
         )
+        collision_router = (
+            None
+            if client_collision_provider is None
+            else Recovered25CollisionRouter(
+                adapter=adapter,
+                server_provider=collision_provider,
+                client_provider=client_collision_provider,
+            )
+        )
         stack = cls(
             profile=profile,
             world_adapter=adapter,
@@ -116,6 +129,7 @@ class Recovered25LocalRuntimeStack:
             fresh_start_factory=factory,
             collision_provider=collision_provider,
             client_collision_provider=client_collision_provider,
+            collision_router=collision_router,
         )
         stack._validate()
         return stack
@@ -150,6 +164,16 @@ class Recovered25LocalRuntimeStack:
                 raise ValueError(
                     "server/client collision floor sets do not close topology"
                 )
+            if self.collision_router is None:
+                raise ValueError(
+                    "client collision provider requires collision router"
+                )
+            if self.collision_router.floor_ids != topology:
+                raise ValueError("collision router/topology floor-set drift")
+        elif self.collision_router is not None:
+            raise ValueError(
+                "collision router requires client collision provider"
+            )
 
     def create_fresh_start(self, hometown_ordinal: int) -> FreshStartSeed:
         return self.fresh_start_factory.create_fresh_start(
