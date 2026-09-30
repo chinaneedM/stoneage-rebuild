@@ -29,6 +29,9 @@ from tools.stoneage_local_runtime_core import (
 from tools.stoneage_recovered25_region_payload import (
     Recovered25RegionPayloadSource,
 )
+from tools.stoneage_recovered25_client_collision_provider import (
+    Recovered25ClientCollisionProvider,
+)
 from tools.stoneage_recovered25_server_collision_provider import (
     Recovered25ServerCollisionProvider,
 )
@@ -51,6 +54,7 @@ class Recovered25LocalRuntimeStack:
     transition_evaluator: Recovered25TransitionGateEvaluator
     fresh_start_factory: Recovered25FreshStartFactory
     collision_provider: Recovered25ServerCollisionProvider | None = None
+    client_collision_provider: Recovered25ClientCollisionProvider | None = None
 
     @classmethod
     def from_verified_bundle(
@@ -63,6 +67,7 @@ class Recovered25LocalRuntimeStack:
         setup: Path,
         server_map_root: Path,
         mapset_path: Path,
+        client_adrn_path: Path | None = None,
     ) -> "Recovered25LocalRuntimeStack":
         adapter = Recovered25WorldProfileAdapter.from_repository(profile)
         region_provider = Recovered25RegionPayloadSource(
@@ -91,6 +96,17 @@ class Recovered25LocalRuntimeStack:
             server_map_root=server_map_root,
             mapset_path=mapset_path,
         )
+        client_collision_provider = (
+            None
+            if client_adrn_path is None
+            else Recovered25ClientCollisionProvider(
+                profile=profile,
+                adapter=adapter,
+                region_provider=region_provider,
+                fallback_floor_ids=collision_provider.unsupported_floor_ids,
+                client_adrn_path=client_adrn_path,
+            )
+        )
         stack = cls(
             profile=profile,
             world_adapter=adapter,
@@ -99,6 +115,7 @@ class Recovered25LocalRuntimeStack:
             transition_evaluator=evaluator,
             fresh_start_factory=factory,
             collision_provider=collision_provider,
+            client_collision_provider=client_collision_provider,
         )
         stack._validate()
         return stack
@@ -119,6 +136,20 @@ class Recovered25LocalRuntimeStack:
                 self.world_adapter.topology.maps
             ):
                 raise ValueError("runtime stack collision/topology floor-set drift")
+        if self.client_collision_provider is not None:
+            if self.collision_provider is None:
+                raise ValueError(
+                    "client collision provider requires server collision provider"
+                )
+            server = self.collision_provider.supported_floor_ids
+            client = self.client_collision_provider.supported_floor_ids
+            topology = frozenset(self.world_adapter.topology.maps)
+            if server & client:
+                raise ValueError("server/client collision floor sets overlap")
+            if server | client != topology:
+                raise ValueError(
+                    "server/client collision floor sets do not close topology"
+                )
 
     def create_fresh_start(self, hometown_ordinal: int) -> FreshStartSeed:
         return self.fresh_start_factory.create_fresh_start(
