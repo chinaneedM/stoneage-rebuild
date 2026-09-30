@@ -57,6 +57,7 @@ class PetTemplateBridge:
     wind: int
     skill_slots: int
     skill_ids: tuple[int, ...]
+    skill_slot_ids: tuple[int, ...] = ()
     init_num: int | None = None
     base_vital: int | None = None
     base_strength: int | None = None
@@ -69,10 +70,14 @@ class PetTemplateBridge:
 
     @classmethod
     def from_enemybase(cls, row: Mapping[str, Any]) -> "PetTemplateBridge":
-        skills = tuple(
+        skill_slot_ids = tuple(
             int(row.get(f"PETSKILL{i}", 0))
             for i in range(1, 8)
-            if int(row.get(f"PETSKILL{i}", 0)) > 0
+        )
+        skills = tuple(
+            skill_id
+            for skill_id in skill_slot_ids
+            if skill_id > 0
         )
         slot_count = int(_required(row, "SLOT"))
         if not 0 <= len(skills) <= 7:
@@ -90,6 +95,7 @@ class PetTemplateBridge:
             wind=int(_required(row, "WINDAT")),
             skill_slots=slot_count,
             skill_ids=skills,
+            skill_slot_ids=skill_slot_ids,
             init_num=c_atoi(row["INITNUM"]) if row.get("INITNUM") is not None else None,
             base_vital=c_atoi(row["BASEVITAL"]) if row.get("BASEVITAL") is not None else None,
             base_strength=c_atoi(row["BASESTR"]) if row.get("BASESTR") is not None else None,
