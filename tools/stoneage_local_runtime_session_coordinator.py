@@ -24,7 +24,7 @@ from tools.stoneage_enemy_spawn_model import (
     SpawnedEnemy,
 )
 from tools.stoneage_enemy_ai_petskill_bridge import (
-    resolve_enemy_ai_basic_petskill_command,
+    resolve_enemy_ai_supported_petskill_command,
 )
 from tools.stoneage_enemy_ai_model import (
     ATTACK as ENEMY_AI_ATTACK,
@@ -42,6 +42,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
+    BattleCommandSetupEffects,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
@@ -303,6 +304,34 @@ def _nonempty_key(value: str) -> str:
     if not key:
         raise ValueError("local save key must be non-empty")
     return key
+
+
+@dataclass(frozen=True)
+class EnemyAiCommonCommandBatch:
+    commands: Mapping[str, BattleCommand]
+    setup_effects: Mapping[str, BattleCommandSetupEffects]
+
+    def __post_init__(self) -> None:
+        object.__setattr__(
+            self,
+            "commands",
+            MappingProxyType({
+                str(key): value for key, value in self.commands.items()
+            }),
+        )
+        object.__setattr__(
+            self,
+            "setup_effects",
+            MappingProxyType({
+                str(key): value for key, value in self.setup_effects.items()
+            }),
+        )
+        unknown = sorted(set(self.setup_effects) - set(self.commands))
+        if unknown:
+            raise ValueError(
+                "enemy AI setup effects lack matching command actors: "
+                + ",".join(unknown)
+            )
 
 
 @dataclass
@@ -906,7 +935,7 @@ class LocalRuntimeSessionCoordinator:
             persistent_battle_state=state,
         )
 
-    def build_persistent_enemy_common_commands(
+    def _build_persistent_enemy_common_batch(
         self,
         context: LocalRuntimeBattleContext,
         *,
@@ -914,16 +943,17 @@ class LocalRuntimeSessionCoordinator:
         target_rolls_by_enemy_id: Mapping[str, int] | None = None,
         allow_escape: bool = False,
         allow_basic_skill: bool = False,
-    ) -> Mapping[str, BattleCommand]:
+        allow_statuschange_skill: bool = False,
+    ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
         ATTACK/GUARD are always available here. ESCAPE is emitted only when the
         caller explicitly opens that execution seam; its probability context
         and RAND(1,100) input are handled separately by the round coordinator.
-        A selected wa slot is admitted only when the caller opens the basic
-        pet-skill seam and the recovered skill resolves to NormalAttack or
-        NormalGuard. All other skill, magic-failure and extension paths remain
-        fail-closed.
+        A selected wa slot is admitted only when its explicitly enabled
+        pet-skill execution seam is closed. Command-submission setup effects
+        remain separate from COM1/COM2/COM3 and are returned in the batch.
+        All other skill, magic-failure and extension paths remain fail-closed.
         """
 
         state = context.persistent_battle_state
@@ -1022,6 +1052,7 @@ class LocalRuntimeSessionCoordinator:
             )
 
         commands = {}
+        setup_effects = {}
         for enemy_id in living_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
                 raise ValueError(
@@ -1063,33 +1094,63 @@ class LocalRuntimeSessionCoordinator:
             if decision.kind == ENEMY_AI_ESCAPE and bool(allow_escape):
                 commands[enemy_id] = BattleCommand(BATTLE_COM_ESCAPE)
                 continue
-            if decision.kind == ENEMY_AI_SKILL and bool(allow_basic_skill):
+            if decision.kind == ENEMY_AI_SKILL and (
+                bool(allow_basic_skill) or bool(allow_statuschange_skill)
+            ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
                     raise ValueError(
                         "enemy AI pet-skill selection requires recovered "
                         "pet-skill runtime"
                     )
-                bridged = resolve_enemy_ai_basic_petskill_command(
+                bridged = resolve_enemy_ai_supported_petskill_command(
                     spawned,
                     skill_slot=int(decision.skill_slot),
                     target_slot=int(decision.target_slot),
                     petskill_runtime=petskill_runtime,
+                    allow_status_change=bool(allow_statuschange_skill),
                 )
                 commands[enemy_id] = bridged.command
+                if bridged.setup_effects != BattleCommandSetupEffects():
+                    setup_effects[enemy_id] = bridged.setup_effects
                 continue
             allowed_parts = ["ATTACK", "GUARD"]
             if bool(allow_escape):
                 allowed_parts.append("ESCAPE")
             if bool(allow_basic_skill):
                 allowed_parts.append("basic-petskill")
+            if bool(allow_statuschange_skill):
+                allowed_parts.append("StatusChange")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
                 f"{allowed} subset: {enemy_id}:{decision.kind}"
             )
 
-        return MappingProxyType(commands)
+        return EnemyAiCommonCommandBatch(
+            commands=commands,
+            setup_effects=setup_effects,
+        )
+
+    def build_persistent_enemy_common_commands(
+        self,
+        context: LocalRuntimeBattleContext,
+        *,
+        mode_rolls_by_enemy_id: Mapping[str, int],
+        target_rolls_by_enemy_id: Mapping[str, int] | None = None,
+        allow_escape: bool = False,
+        allow_basic_skill: bool = False,
+    ) -> Mapping[str, BattleCommand]:
+        """Backward-compatible commands-only view of the common AI batch."""
+
+        return self._build_persistent_enemy_common_batch(
+            context,
+            mode_rolls_by_enemy_id=mode_rolls_by_enemy_id,
+            target_rolls_by_enemy_id=target_rolls_by_enemy_id,
+            allow_escape=allow_escape,
+            allow_basic_skill=allow_basic_skill,
+            allow_statuschange_skill=False,
+        ).commands
 
     def build_persistent_enemy_attack_guard_commands(
         self,
