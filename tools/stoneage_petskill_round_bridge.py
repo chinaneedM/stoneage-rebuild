@@ -15,6 +15,7 @@ from typing import Mapping, Any
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_GUARD,
     BATTLE_COM_S_GUARDIAN_ATTACK,
+    BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
     BattleCommand,
     BattleCommandSetupEffects,
@@ -36,9 +37,10 @@ def bridge_stable_pet_skill_command(
 ) -> StablePetSkillRoundSubmission:
     """Convert supported stable pet-skill command-handler output.
 
-    Supported common handlers are the two branches currently executed by the
+    Supported common handlers are the branches currently executed by the
     reconstructed ordinary physical round:
     - PETSKILL_Guardian -> S_GUARDIAN_ATTACK or ordinary GUARD + registration
+    - PETSKILL_PowerBalance -> S_POWERBALANCE + immediate work attack/defense
     - PETSKILL_StatusChange -> S_STATUSCHANGE with LOW=status/HIGH=turn
     """
     if not isinstance(payload,Mapping):
@@ -59,6 +61,11 @@ def bridge_stable_pet_skill_command(
         # BATTLE_COM_GUARD, leaving the guardian registration outside COM1.
         battle_command=BattleCommand(
             BATTLE_COM_GUARD,
+            command2=target,
+        )
+    elif source_command=="S_POWERBALANCE":
+        battle_command=BattleCommand(
+            BATTLE_COM_S_POWERBALANCE,
             command2=target,
         )
     elif source_command=="S_STATUSCHANGE":
