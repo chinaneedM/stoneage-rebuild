@@ -18,6 +18,7 @@ All other stable-common and macro-gated callbacks remain fail-closed.
 from __future__ import annotations
 
 from dataclasses import dataclass
+import re
 
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
@@ -216,10 +217,18 @@ def resolve_enemy_ai_mighty_petskill_command(
         )
 
     option_text = entry.unambiguous_cp950_big5_option()
-    if "倍" not in option_text or "避" not in option_text:
+    if (
+        "倍" not in option_text
+        or "避" not in option_text
+        or re.search(
+            r"倍\s*[+-]?(?:\d+(?:\.\d*)?|\.\d+)",
+            option_text,
+        ) is None
+        or re.search(r"避\s*[+-]?\d+", option_text) is None
+    ):
         raise ValueError(
             "recovered Mighty OPTION is outside closed multiplier/dodge "
-            "marker grammar"
+            "numeric grammar"
         )
 
     payload = mighty_command(target_slot, option_text)
