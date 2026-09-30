@@ -4229,3 +4229,36 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Duplicate implementation seams introduced during parallel composition were removed: one neutral client hit-map core, one unified router, one canonical unified coordinator movement method remain.
 - **RECOVERED25_UNIFIED_COLLISION_ROUTING_R1 = CLOSED.**
 - Next Phase-1 priority: close the **dynamic occupancy / overability seam** above static collision routing. The unified router currently selects authoritative/reconstruction static collision by floor, while runtime characters/items/NPCs are a separate live-object layer. Audit the already recovered runtime placement/object model against the established character/item overability rules, then compose destination occupancy into unified movement without relabelling client static hit-map semantics as server semantics. Keep static collision provenance and dynamic object-overlap provenance separately inspectable.
+
+## Phase 1 recovered25 initial NPC occupancy composition — 2026-09-30
+
+- The runtime dynamic-occupancy seam above unified static collision routing now has a deterministic recovered25 **initial NPC population source** instead of starting from an empty live-object registry.
+- Static and dynamic evidence remain separate:
+  - static floor-entry collision is still routed across **635** recovered server LS2MAP/mapset floors plus **191** recovered client-DAT/ADRN descendant-stable reconstruction floors = **826 / 826**;
+  - NPC destination overlap remains a live CHARACTER occupancy decision using the independently audited CHAR_ISOVERED lineage.
+- The recovered25 NPC overability audit closes the initial state for all **3,856** stable-world placements across **33** functionsets:
+  - Warp = **2,264** placements, STATIC_OVERABLE;
+  - remaining **1,592** placements across 32 functionsets = INHERITED_DEFAULT_OVERABLE;
+  - STATIC_BLOCKING = **0** placements;
+  - DYNAMIC / UNRESOLVED / LINEAGE_DIVERGENT = **0** placements;
+  - descendant default CHAR_ISOVERED = 1 is stable across all **3** pinned lineages;
+  - direct template callback overability overrides = **0**.
+- New canonical composition layer: tools/stoneage_recovered25_npc_initial_occupancy.py.
+  - It composes the already-versioned recovered25 placement/template projection with tools/stoneage_versioned_npc_overability_profile.py.
+  - Every row keeps recovered25 / LATER_RECOVERED placement provenance plus the separate pinned-descendant overability classification.
+  - Stable runtime object identity is npc-placement:<placement_id>.
+- Existing spawn-integrity policy is preserved rather than bypassed:
+  - recovered placement rows = **3,856**;
+  - deterministic initial occupancy rows with closed overability = **3,856 / 3,856**;
+  - registry-seedable rows = **3,852 / 3,856**;
+  - existing spawn quarantines = **4** (the previously recorded geometry/direction integrity cases);
+  - all four quarantined rows still have closed overability; they are omitted only because their existing spawn projection is not runtime-admissible, not because occupancy semantics are unknown.
+- Recovered25LocalRuntimeStack.from_verified_bundle() now composes the initial NPC occupancy manifest, and LocalRuntimeSessionCoordinator seeds it automatically into RuntimeDynamicOccupancyRegistry.
+- Unified movement already queries that registry on every destination cell. Current recovered25 initial NPC rows are overable, so they remain inspectable live occupants without becoming invented blockers. Runtime mutations such as moved characters or future non-overable objects still update the registry explicitly.
+- Validation:
+  - local runtime session coordinator GitHub Actions **36733347708 = PASS**;
+  - NPC overability lineage/runtime-composition GitHub Actions **36733353261 = PASS**;
+  - full preservation-bundle region/runtime-stack regression GitHub Actions **36733284202 = PASS**, including deterministic runtime-stack tests, concrete bundle stack construction, **826-floor** region payload validation and collision-provider regressions.
+- **RECOVERED25_INITIAL_NPC_OCCUPANCY_R1 = CLOSED_WITH_EXISTING_4_SPAWN_QUARANTINES.**
+- Next Phase-1 priority: close the **live dynamic-occupancy lifecycle and persistence boundary**. The current stoneage.local-runtime-session.r1 save envelope serializes player/session state but not the mutable occupancy registry. Define a versioned, provenance-bearing way to rehydrate deterministic initial NPC seeds and persist only explicit live mutations that must survive save/load (for example moved characters, overability changes and future dropped non-overable items), without serializing static collision as dynamic state or inventing behavior-driven NPC movement/despawn semantics.
+
