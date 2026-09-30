@@ -43,6 +43,8 @@ on:
       - tests/test_stoneage_shadowed_branch_fresh_start_coordinate_probe.py
       - tools/stoneage_shadowed_branch_fresh_start_level_probe.py
       - tests/test_stoneage_shadowed_branch_fresh_start_level_probe.py
+      - tools/stoneage_shadowed_branch_fresh_start_leveling_probe.py
+      - tests/test_stoneage_shadowed_branch_fresh_start_leveling_probe.py
       - tools/stoneage_ordered_runtime_world_reachability_probe.py
       - tools/stoneage_ordered_runtime_world_topology.py
       - research/recovered/STONEAGE-25-AMBIGUOUS-WARP-CREATE-ORDER-R1.txt
@@ -56,7 +58,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -m unittest tests.test_stoneage_transport_usage_probe tests.test_stoneage_shadowed_branch_transport_probe tests.test_stoneage_shadowed_branch_warpman_gate_probe tests.test_stoneage_shadowed_branch_warpman_free_probe tests.test_stoneage_shadowed_branch_warpman_satisfiability_probe tests.test_stoneage_shadowed_branch_item_shop_acquisition_probe tests.test_stoneage_shadowed_branch_item_npc_reference_probe tests.test_stoneage_shadowed_branch_key_item_nonshop_probe tests.test_stoneage_shadowed_branch_key_item_exchange_probe tests.test_stoneage_shadowed_branch_progression_witness_probe tests.test_stoneage_shadowed_branch_legal_state_reachability_probe tests.test_stoneage_state_gated_runtime_world_reachability_probe tests.test_stoneage_shadowed_branch_coordinate_access_probe tests.test_stoneage_shadowed_branch_dynamic_occupancy_probe tests.test_stoneage_shadowed_branch_fresh_start_stone_probe tests.test_stoneage_shadowed_branch_fresh_start_spatial_probe tests.test_stoneage_shadowed_branch_fresh_start_coordinate_probe tests.test_stoneage_shadowed_branch_fresh_start_level_probe -v
+      - run: python3 -m unittest tests.test_stoneage_transport_usage_probe tests.test_stoneage_shadowed_branch_transport_probe tests.test_stoneage_shadowed_branch_warpman_gate_probe tests.test_stoneage_shadowed_branch_warpman_free_probe tests.test_stoneage_shadowed_branch_warpman_satisfiability_probe tests.test_stoneage_shadowed_branch_item_shop_acquisition_probe tests.test_stoneage_shadowed_branch_item_npc_reference_probe tests.test_stoneage_shadowed_branch_key_item_nonshop_probe tests.test_stoneage_shadowed_branch_key_item_exchange_probe tests.test_stoneage_shadowed_branch_progression_witness_probe tests.test_stoneage_shadowed_branch_legal_state_reachability_probe tests.test_stoneage_state_gated_runtime_world_reachability_probe tests.test_stoneage_shadowed_branch_coordinate_access_probe tests.test_stoneage_shadowed_branch_dynamic_occupancy_probe tests.test_stoneage_shadowed_branch_fresh_start_stone_probe tests.test_stoneage_shadowed_branch_fresh_start_spatial_probe tests.test_stoneage_shadowed_branch_fresh_start_coordinate_probe tests.test_stoneage_shadowed_branch_fresh_start_level_probe tests.test_stoneage_shadowed_branch_fresh_start_leveling_probe -v
       - run: sudo apt-get update && sudo apt-get install -y unar
       - name: Recover verified preservation bundle
         run: |
@@ -362,11 +364,29 @@ jobs:
           test -s "$R"
           grep -F 'RESOLUTION|SHADOWED_BRANCH_FRESH_START_LEVEL_AUDITED' "$R"
 
+      - name: Audit fresh-start repeatable leveling source
+        run: |
+          set -euo pipefail
+          N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
+          SERVER_MAP_ROOT="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
+          MAPSET="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/data/map/mapset.txt' -print -quit)"
+          test -n "$N"
+          test -n "$D"
+          test -n "$C"
+          test -n "$SERVER_MAP_ROOT"
+          test -n "$MAPSET"
+          R=research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-R1.txt
+          python3 -m tools.stoneage_shadowed_branch_fresh_start_leveling_probe --npc-dir "$N" --data-dir "$D" --setup "$C" --server-map-root "$SERVER_MAP_ROOT" --mapset "$MAPSET" > "$R"
+          test -s "$R"
+          grep -F 'RESOLUTION|SHADOWED_BRANCH_FRESH_START_LEVELING_SOURCE_AUDITED' "$R"
+
       - name: Commit derived report only
         run: |
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
-          git add research/recovered/STONEAGE-25-BUS-AIR-USAGE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-NONCLASSIC-INGRESS-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-GATING-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-FREE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-SATISFIABILITY-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-SHOP-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-NPC-REFERENCES-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-NONSHOP-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-EXCHANGE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-PROGRESSION-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-LEGAL-STATE-REACHABILITY-R1.txt research/recovered/STONEAGE-25-STATE-GATED-RUNTIME-WORLD-REACHABILITY-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-COORDINATE-ACCESS-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-DYNAMIC-OCCUPANCY-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-STONE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-SPATIAL-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVEL-R1.txt
+          git add research/recovered/STONEAGE-25-BUS-AIR-USAGE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-NONCLASSIC-INGRESS-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-GATING-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-FREE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-SATISFIABILITY-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-SHOP-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-NPC-REFERENCES-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-NONSHOP-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-EXCHANGE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-PROGRESSION-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-LEGAL-STATE-REACHABILITY-R1.txt research/recovered/STONEAGE-25-STATE-GATED-RUNTIME-WORLD-REACHABILITY-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-COORDINATE-ACCESS-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-DYNAMIC-OCCUPANCY-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-STONE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-SPATIAL-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVEL-R1.txt research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-R1.txt
           if git diff --cached --quiet; then
             echo 'Derived reports unchanged; nothing to commit.'
           else
