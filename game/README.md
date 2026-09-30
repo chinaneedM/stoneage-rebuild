@@ -24,3 +24,10 @@ Recovered25 concrete profile adapter:
 - `../tools/stoneage_recovered25_world_profile_adapter.py`
 
 It loads the closed 826-floor provenance-bearing topology, exposes the four hometown starts, and binds state-gated WarpMan transitions only from a verified recovered25 evidence bundle. Raw binding operands are not promoted into the public bootstrap contract.
+
+Concrete recovered25 region payload source:
+
+- `../docs/RECOVERED25-REGION-PAYLOAD-SOURCE-R1.md`
+- `../tools/stoneage_recovered25_region_payload.py`
+
+It preserves the real format split: 761 client DAT three-plane floors and 65 supplemental server LS2MAP two-plane floors. Server-only event planes remain absent rather than being synthesized.

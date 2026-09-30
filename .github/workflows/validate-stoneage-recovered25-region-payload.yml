@@ -1,0 +1,108 @@
+name: Validate StoneAge recovered25 region payload source
+
+concurrency:
+  group: stoneage-recovered25-region-payload
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-recovered25-region-payload.yml
+      - tools/stoneage_recovered25_region_payload.py
+      - tools/stoneage_recovered25_region_payload_smoke.py
+      - tests/test_stoneage_recovered25_region_payload.py
+      - docs/RECOVERED25-REGION-PAYLOAD-SOURCE-R1.md
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deterministic region-payload tests
+        run: python3 -m unittest tests.test_stoneage_recovered25_region_payload -v
+      - name: Install extractor
+        run: sudo apt-get update && sudo apt-get install -y unar
+      - name: Recover verified preservation bundle
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25
+          python3 - <<'PY'
+          import hashlib,html,json,re,http.cookiejar,urllib.parse,urllib.request
+          from pathlib import Path
+          ua='Mozilla/5.0'
+          expected={
+            'ev7l29fw77891go':'7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5',
+            'ytaa168o5jih0lx':'567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb',
+          }
+          op=urllib.request.build_opener(
+            urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar())
+          )
+          def get(key,suffix):
+            data=urllib.parse.urlencode({'quick_key':key,'response_format':'json'}).encode()
+            req=urllib.request.Request(
+              'https://www.mediafire.com/api/1.5/file/get_info.php',
+              data=data,headers={'User-Agent':ua}
+            )
+            with op.open(req,timeout=60) as r:
+              info=json.load(r)['response']['file_info']
+            if str(info.get('hash','')).lower()!=expected[key]:
+              raise SystemExit('metadata hash changed')
+            with op.open(
+              urllib.request.Request(info['links']['normal_download'],headers={'User-Agent':ua}),
+              timeout=60
+            ) as r:
+              page=r.read().decode('utf-8','replace'); ref=r.geturl()
+            m=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S) or re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+            if not m:
+              raise SystemExit('no direct link')
+            path=Path('/tmp/sa25')/('part.'+suffix); h=hashlib.sha256()
+            request=urllib.request.Request(
+              html.unescape(m.group(1)),headers={'User-Agent':ua,'Referer':ref}
+            )
+            with op.open(request,timeout=300) as r,path.open('wb') as out:
+              while True:
+                block=r.read(1048576)
+                if not block: break
+                out.write(block); h.update(block)
+            if h.hexdigest()!=expected[key]:
+              raise SystemExit('hash mismatch')
+          get('ev7l29fw77891go','001')
+          get('ytaa168o5jih0lx','002')
+          PY
+          cat /tmp/sa25/part.001 /tmp/sa25/part.002 >/tmp/sa25/bundle.rar
+          test "$(sha256sum /tmp/sa25/bundle.rar|awk '{print $1}')" = "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+          mkdir -p /tmp/sa25/out
+          ulimit -c 0
+          unar -f -o /tmp/sa25/out /tmp/sa25/bundle.rar >/dev/null 2>&1
+      - name: Validate all materializable recovered25 map payloads
+        run: |
+          set -euo pipefail
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5主程式/stoneage2.5/map' -print -quit)"
+          S="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
+          test -n "$D"; test -n "$S"
+          R=research/recovered/STONEAGE-25-REGION-PAYLOAD-SOURCE-R1.txt
+          python3 -m tools.stoneage_recovered25_region_payload_smoke --client-dat-dir "$D" --server-map-root "$S" > "$R"
+          test -s "$R"
+          grep -F 'COUNT|materializable_floors|826' "$R"
+          grep -F 'COUNT|client_dat_three_plane_floors|761' "$R"
+          grep -F 'COUNT|server_ls2map_two_plane_floors|65' "$R"
+          grep -F 'COUNT|event_plane_present_floors|761' "$R"
+          grep -F 'COUNT|event_plane_separate_floors|65' "$R"
+          grep -F 'RESOLUTION|RECOVERED25_REGION_PAYLOAD_SOURCE_CLOSED' "$R"
+      - name: Commit derived aggregate report only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-25-REGION-PAYLOAD-SOURCE-R1.txt
+          if git diff --cached --quiet; then
+            echo 'Derived region report unchanged; nothing to commit.'
+          else
+            git commit -m 'research: validate recovered25 region payload source'
+            git pull --rebase origin main
+            git push
+          fi
