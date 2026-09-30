@@ -1,0 +1,33 @@
+name: Validate StoneAge recovered25 world-profile adapter
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - game/RUNTIME-BOOTSTRAP-RECOVERED25-R1.json
+      - docs/RECOVERED25-WORLD-PROFILE-ADAPTER-R1.md
+      - tools/stoneage_recovered25_world_profile_adapter.py
+      - tools/stoneage_local_runtime_core.py
+      - tools/stoneage_ordered_runtime_world_topology.py
+      - tools/stoneage_materializable_world_topology.py
+      - tools/stoneage_supplemental_world_manifest.py
+      - tools/stoneage_versioned_world_manifest.py
+      - tools/stoneage_world_map_library.py
+      - tests/test_stoneage_recovered25_world_profile_adapter.py
+      - .github/workflows/validate-stoneage-recovered25-world-profile-adapter.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate recovered25 world-profile adapter
+        run: |
+          python3 -m unittest \
+            tests.test_stoneage_recovered25_world_profile_adapter \
+            tests.test_stoneage_ordered_runtime_world_topology \
+            tests.test_stoneage_materializable_world_topology \
+            tests.test_stoneage_local_runtime_core -v
