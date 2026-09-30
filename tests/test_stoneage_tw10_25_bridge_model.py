@@ -30,9 +30,9 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
                 "WINDAT": 0,
                 "SLOT": 4,
                 "PETSKILL1": 1,
-                "PETSKILL2": 2,
+                "PETSKILL2": 0,
                 "PETSKILL3": 41,
-                "PETSKILL4": 0,
+                "PETSKILL4": 2,
                 "PETSKILL5": 0,
                 "PETSKILL6": 0,
                 "PETSKILL7": 0,
@@ -56,7 +56,11 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
                 "max_skill_slots": 4,
             },
         )
-        self.assertEqual(pet.skill_ids, (1, 2, 41))
+        self.assertEqual(pet.skill_ids, (1, 41, 2))
+        self.assertEqual(
+            pet.skill_slot_ids,
+            (1, 0, 41, 2, 0, 0, 0),
+        )
         self.assertEqual(pet.rare, 2)
         self.assertEqual(pet.template_ref.namespace, "enemybase.TEMPNO")
         self.assertNotIn("hp", pet.directly_bridgeable_pet_state())
