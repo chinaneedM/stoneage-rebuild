@@ -15,7 +15,7 @@ evaluator is consulted.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, replace
+from dataclasses import dataclass, field, replace
 from types import MappingProxyType
 from typing import Mapping, Sequence
 
@@ -25,6 +25,9 @@ from tools.stoneage_map_collision_model import (
 )
 from tools.stoneage_runtime_dynamic_occupancy import (
     resolve_runtime_collision_with_occupancy,
+)
+from tools.stoneage_runtime_occupancy_registry import (
+    RuntimeDynamicOccupancyRegistry,
 )
 from tools.stoneage_local_runtime_core import (
     LocalPersistenceStore,
@@ -58,6 +61,9 @@ class LocalRuntimeWalkResult:
     dynamic_collision: CollisionDecision | None = None
     dynamic_occupancy_profile: str | None = None
     dynamic_occupancy_evidence_class: str | None = None
+    live_occupancy_registry_profile: str | None = None
+    live_occupancy_object_ids: tuple[str, ...] = ()
+    live_occupancy_provenance: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -98,6 +104,9 @@ class LocalRuntimeSessionCoordinator:
 
     stack: object
     persistence: LocalPersistenceStore
+    occupancy_registry: RuntimeDynamicOccupancyRegistry = field(
+        default_factory=RuntimeDynamicOccupancyRegistry
+    )
 
     @property
     def profile(self):
@@ -248,11 +257,14 @@ class LocalRuntimeSessionCoordinator:
         router = getattr(self.stack, "collision_router", None)
         if router is None:
             raise ValueError("runtime stack has no unified collision router")
+        live_query = self.occupancy_registry.query(destination)
         layered = resolve_runtime_collision_with_occupancy(
             router=router,
             origin=session.player_position,
             destination=destination,
-            destination_occupants=tuple(destination_occupants),
+            destination_occupants=(
+                live_query.occupants + tuple(destination_occupants)
+            ),
         )
         routed = layered.static
         result = self.walk_one_cell(
@@ -275,6 +287,9 @@ class LocalRuntimeSessionCoordinator:
             dynamic_collision=layered.dynamic,
             dynamic_occupancy_profile=layered.dynamic_profile,
             dynamic_occupancy_evidence_class=layered.dynamic_evidence_class,
+            live_occupancy_registry_profile=self.occupancy_registry.profile_id,
+            live_occupancy_object_ids=live_query.object_ids,
+            live_occupancy_provenance=live_query.provenances,
         )
 
     @staticmethod
