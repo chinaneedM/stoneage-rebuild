@@ -31,3 +31,20 @@ Concrete recovered25 region payload source:
 - `../tools/stoneage_recovered25_region_payload.py`
 
 It preserves the real format split: 761 client DAT three-plane floors and 65 supplemental server LS2MAP two-plane floors. Server-only event planes remain absent rather than being synthesized.
+
+
+Concrete recovered25 local runtime stack:
+
+- `../tools/stoneage_recovered25_local_runtime_stack.py`
+- `../tools/stoneage_recovered25_local_runtime_stack_smoke.py`
+
+This composes the closed profile adapter with the real recovered DAT/LS2MAP payload source, all four fresh starts, the three current dynamic state-gated transition bindings and the local session envelope.
+
+Local runtime session coordinator:
+
+- `../docs/LOCAL-RUNTIME-SESSION-COORDINATOR-R1.md`
+- `../tools/stoneage_local_runtime_session_coordinator.py`
+
+The coordinator is the intended engine-facing application boundary for new game, continue/save, current-region materialization, ordinary one-cell movement, classic overlap Warp and recovered state-gated dialogue transitions. Ordinary movement still requires an explicit verdict from a validated collision provider; raw recovered map IDs are never treated as self-describing collision metadata.
+
+Current implementation seam: audit and then bind provenance-safe recovered25 collision verdict coverage for the 826-floor materializable runtime world. Rendering-engine selection remains deferred.
