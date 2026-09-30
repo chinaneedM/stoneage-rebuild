@@ -30,6 +30,8 @@ on:
       - tests/test_stoneage_recovered25_collision_router.py
       - tools/stoneage_local_runtime_session_coordinator.py
       - tests/test_stoneage_local_runtime_session_coordinator.py
+      - tools/stoneage_runtime_dynamic_occupancy.py
+      - tests/test_stoneage_runtime_dynamic_occupancy.py
       - tools/stoneage_server_static_map.py
       - tools/stoneage_recovered25_world_profile_adapter.py
       - game/RUNTIME-BOOTSTRAP-RECOVERED25-R1.json
@@ -56,6 +58,7 @@ jobs:
             tests.test_stoneage_client_hitmap_core \
             tests.test_stoneage_recovered25_client_collision_provider \
             tests.test_stoneage_recovered25_collision_router \
+            tests.test_stoneage_runtime_dynamic_occupancy \
             tests.test_stoneage_local_runtime_session_coordinator -v
       - name: Install extractor
         run: sudo apt-get update && sudo apt-get install -y unar
