@@ -17,6 +17,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_NONE,
     BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_GUARDIAN_GUARD,
+    BATTLE_COM_S_MIGHTY,
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
@@ -1769,6 +1770,74 @@ class BattleRoundModelTests(unittest.TestCase):
         )
         self.assertTrue(result.events[0].guardian_redirected)
         self.assertFalse(any(event.is_counter for event in result.events))
+
+    def test_mighty_dodge_modifier_adds_percent_points_before_physical_hit(self):
+        pet=actor("pet","player","pet",attack=100,quick=100)
+        enemy=actor("enemy","enemy","enemy",hp=300,quick=20)
+        prepared=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(
+                    BATTLE_COM_S_MIGHTY,
+                    command2=10,
+                    command3=pack_battle_command3(low=200,high=30),
+                ),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(dex=100),"enemy":profile(dex=100)},
+            attack_rolls={
+                "pet":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=2000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        event=result.events[0]
+        self.assertEqual(event.command1,BATTLE_COM_S_MIGHTY)
+        self.assertEqual(event.result,"dodge")
+        self.assertEqual(event.damage,0)
+        self.assertEqual(result.hp_by_participant_id["enemy"],300)
+
+    def test_mighty_damage_multiplier_applies_after_ordinary_damage_chain(self):
+        pet=actor("pet","player","pet",attack=100,quick=100)
+        enemy=actor("enemy","enemy","enemy",hp=300,defense=70,quick=20)
+        prepared=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(
+                    BATTLE_COM_S_MIGHTY,
+                    command2=10,
+                    command3=pack_battle_command3(low=200,high=30),
+                ),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(dex=100),"enemy":profile(dex=100)},
+            attack_rolls={
+                "pet":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        event=result.events[0]
+        self.assertEqual(event.command1,BATTLE_COM_S_MIGHTY)
+        self.assertEqual(event.result,"normal")
+        self.assertEqual(event.damage,130)
+        self.assertEqual(result.hp_by_participant_id["enemy"],170)
 
     def test_statuschange_command_runs_ordinary_attack_then_applies_status(self):
         pet=actor("pet","player","pet",attack=100,quick=100,level=20)
