@@ -4627,5 +4627,25 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - This closes only the battle/BATTLE_Exit defeat boundary.
 - Separate `core_Dying` field/player death behavior remains its own reconstruction seam: party discharge, equipment/gold drop requests, death count/status flags and resurrection are modeled, but exact launch-era client death-screen / return-to-record-point choreography remains OPEN.
 - Coordinator CI now watches/runs the player death/revival core.
-- **LOCAL_RUNTIME_BATTLE_DEFEAT_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Remote validation after correcting the fixture below the Ultimate threshold: coordinator **36754751074 = PASS**; the earlier **36754415152** failure used attack=10000 and therefore exercised Ultimate/overkill rather than normal death.
+- **LOCAL_RUNTIME_BATTLE_DEFEAT_R1 = CLOSED.**
 - Next after CI: integrate the closed `core_Dying` transition as a separate field-death transaction without inventing automatic savepoint movement; keep return-to-record-point as an explicit/open presentation/world-flow choice until direct evidence closes it.
+
+
+## Phase 1 explicit core_Dying / resurrection boundary — 2026-10-01
+
+- Battle defeat and field/player death remain separate operations; no automatic chaining is asserted.
+- New coordinator result contracts:
+  - `LocalRuntimePlayerDeathPlan`;
+  - `LocalRuntimePlayerResurrectionResult`.
+- New explicit methods:
+  - `plan_player_core_dying(...)`;
+  - `resurrect_player_in_place(...)`.
+- `plan_player_core_dying()` delegates the convergent descendant `death_transition()` model using explicit attacker class, equipped slots and prior hidden death count.
+- The current local persistent model has no authoritative party/equipment container and no dedicated hidden player-death/status structure. Therefore those core_Dying effects are returned as semantic/world-action requests instead of being fabricated into unrelated fields.
+- The Taiwan-v1 direct player `gold` field **is** representable. Death planning clones the persistent state, requests half carried gold for ground placement, and sets carried gold to **0** even if the world-drop request later cannot be placed.
+- Regression fixture: gold 101 -> requested ground gold 50 -> carried gold 0; enemy death requests all explicit equipped slots; hidden dead count 7 -> 8; six stable statuses are reported cleared.
+- `resurrect_player_in_place()` applies only the recovered HP clamp/image/death-flag semantics that can be represented safely: requested HP <=0 -> HP 1, same position, MP unchanged. Hidden image/dead/attacked/overed flags are returned semantically rather than silently added to the save schema.
+- Exact commercial `battle defeat -> core_Dying` invocation and death-screen / return-to-record-point choreography remain OPEN.
+- **LOCAL_RUNTIME_CORE_DYING_RESURRECTION_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Next after CI: audit authoritative equipment/party/local hidden-player-state containers before applying the remaining core_Dying mutations. If those containers are not ready, move to the already recovered player/pet EXP progression settlement rather than inventing death-flow persistence.

@@ -101,6 +101,9 @@ def _battle_player_state() -> PersistentPlayerState:
                     "exp": 0,
                     "max_exp": 1000,
                     "charm": 5,
+                    "gold": 101,
+                    "mp": 40,
+                    "max_mp": 50,
                 }
             )
         )
@@ -978,6 +981,84 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         )
         self.assertEqual(settled.player_position, session.player_position)
         self.assertEqual(settled.world_flags, session.world_flags)
+
+    def test_core_dying_plan_zeroes_gold_but_keeps_world_actions_explicit(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"death-plan"}),
+        )
+        plan = self.coordinator.plan_player_core_dying(
+            session,
+            attacker_class="enemy",
+            equipped_slots=(0, 2, 4),
+            dead_count_before=7,
+        )
+        self.assertTrue(plan.party_discharged)
+        self.assertEqual(plan.item_drop_mode, "all_equipped")
+        self.assertEqual(plan.requested_item_drop_slots, (0, 2, 4))
+        self.assertEqual(plan.random_item_drop_candidates, ())
+        self.assertEqual(plan.random_item_drop_count, 0)
+        self.assertEqual(plan.requested_ground_gold, 50)
+        self.assertEqual(plan.final_carried_gold, 0)
+        self.assertEqual(plan.dead_count_after, 8)
+        self.assertEqual(
+            plan.cleared_statuses,
+            (
+                "paralysis",
+                "sleep",
+                "stone",
+                "drunk",
+                "confusion",
+                "poison",
+            ),
+        )
+        self.assertTrue(plan.is_dead)
+        self.assertFalse(plan.is_attacked)
+        self.assertEqual(
+            plan.session.player_state.character.fields["gold"],
+            0,
+        )
+        self.assertEqual(
+            session.player_state.character.fields["gold"],
+            101,
+        )
+        self.assertEqual(plan.session.player_position, session.player_position)
+
+    def test_resurrection_is_in_place_hp_only_and_does_not_refill_mp(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 2, 1),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"resurrection"}),
+        )
+        result = self.coordinator.resurrect_player_in_place(
+            session,
+            requested_hp=0,
+        )
+        fields = result.session.player_state.character.fields
+        self.assertEqual(fields["hp"], 1)
+        self.assertEqual(fields["mp"], 40)
+        self.assertEqual(result.session.player_position, MapPosition(1, 2, 1))
+        self.assertTrue(result.base_image_restored)
+        self.assertFalse(result.is_dead)
+        self.assertTrue(result.is_attacked)
+        self.assertFalse(result.is_overed)
+        self.assertTrue(result.mp_unchanged)
+        self.assertTrue(result.location_unchanged)
+        self.assertEqual(
+            session.player_state.character.fields["hp"],
+            100,
+        )
+        self.assertEqual(
+            session.player_state.character.fields["mp"],
+            40,
+        )
 
     def test_enemy_attack_can_reach_defeat_and_settle_death_hp_charm_without_exp(self):
         session = LocalRuntimeSessionState(

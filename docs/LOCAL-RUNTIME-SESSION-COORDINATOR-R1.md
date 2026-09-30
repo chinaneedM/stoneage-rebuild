@@ -317,6 +317,47 @@ flags and an independently reconstructed resurrection helper. The exact client
 death-screen / return-to-record-point choreography remains OPEN and is not
 invented here.
 
+## 2J. Explicit core_Dying plan and in-place resurrection
+
+The stable player death callback is exposed separately from battle defeat.
+
+`plan_player_core_dying()` requires:
+
+- an authoritative local session;
+- explicit attacker classification: enemy / non_enemy / unknown;
+- explicit equipped-slot identities, because the current local persistent model
+  does not yet contain an authoritative equipment container;
+- explicit prior player death count, because that hidden server field is not
+  currently part of `PersistentPlayerState`.
+
+The method delegates the already-validated `death_transition()` model. It
+returns a `LocalRuntimePlayerDeathPlan` containing:
+
+- party-discharge requirement;
+- equipment-drop mode and requested/candidate slots;
+- requested half-gold world drop;
+- next hidden death count;
+- the six cleared-status identities;
+- dead/attacked flag results.
+
+Only one mutation is currently representable in the authoritative local
+player state without inventing a new schema: Taiwan-v1's directly observed
+`gold` field. A cloned session is returned with carried gold set to zero.
+Equipment placement/removal, party discharge and hidden server flags remain
+explicit external actions until their authoritative local containers exist.
+
+`resurrect_player_in_place()` independently applies the reconstructed
+`CHAR_playerresurrect` HP clamp to a cloned session. It keeps world position
+and MP unchanged and returns the other recovered semantic flags
+(base-image-restored, dead cleared, attacked set, overed cleared) as an
+explicit result rather than inventing hidden persistence fields.
+
+No method automatically chains:
+
+`battle defeat -> core_Dying -> resurrection -> return-to-record-point`.
+
+That client/world choreography is still historically OPEN.
+
 ## 3. State-gated dialogue transitions
 
 The three current recovered25 conditional transitions remain outside the unconditional classic-Warp graph.

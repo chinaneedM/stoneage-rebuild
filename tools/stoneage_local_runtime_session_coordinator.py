@@ -52,6 +52,10 @@ from tools.stoneage_map_collision_model import (
     CollisionDecision,
     DynamicOccupant,
 )
+from tools.stoneage_player_death_model import (
+    death_transition,
+    resurrect_transition,
+)
 from tools.stoneage_runtime_dynamic_occupancy import (
     resolve_runtime_collision_with_occupancy,
 )
@@ -187,6 +191,37 @@ class LocalRuntimeBattleContext:
         if self.working_persistent_state_payload is not None:
             if not str(self.working_persistent_state_payload).strip():
                 raise ValueError("working persistent payload must be non-empty")
+
+
+@dataclass(frozen=True)
+class LocalRuntimePlayerDeathPlan:
+    """Explicit core_Dying plan; world drop/party actions remain external."""
+
+    session: LocalRuntimeSessionState
+    party_discharged: bool
+    item_drop_mode: str
+    requested_item_drop_slots: tuple[int, ...]
+    random_item_drop_candidates: tuple[int, ...]
+    random_item_drop_count: int
+    requested_ground_gold: int
+    final_carried_gold: int
+    dead_count_after: int
+    cleared_statuses: tuple[str, ...]
+    is_dead: bool
+    is_attacked: bool
+
+
+@dataclass(frozen=True)
+class LocalRuntimePlayerResurrectionResult:
+    """In-place CHAR_playerresurrect projection without warp or MP refill."""
+
+    session: LocalRuntimeSessionState
+    base_image_restored: bool
+    is_dead: bool
+    is_attacked: bool
+    is_overed: bool
+    mp_unchanged: bool
+    location_unchanged: bool
 
 
 @dataclass(frozen=True)
@@ -392,6 +427,129 @@ class LocalRuntimeSessionCoordinator:
             return session
 
         raise ValueError(f"unsupported local persistence schema: {schema}")
+
+    def plan_player_core_dying(
+        self,
+        session: LocalRuntimeSessionState,
+        *,
+        attacker_class: str,
+        equipped_slots: Sequence[int],
+        dead_count_before: int,
+    ) -> LocalRuntimePlayerDeathPlan:
+        """Apply only representable core_Dying persistence and return world actions.
+
+        The historical callback's party discharge, equipment-drop requests,
+        hidden death/status flags and dead-count mutation are returned
+        semantically because the current local session has no authoritative
+        party/equipment/hidden-player-state container. The v1-direct carried
+        gold field is representable and is set to zero on a cloned session.
+        """
+
+        session = self._validate_session(session)
+        if session.player_state.character is None:
+            raise ValueError("player death requires persistent character state")
+        fields = dict(session.player_state.character.fields)
+        if "gold" not in fields:
+            raise ValueError("player death requires v1-direct gold field")
+
+        transition = death_transition(
+            int(fields["gold"]),
+            tuple(int(x) for x in equipped_slots),
+            str(attacker_class),
+            dead_count=int(dead_count_before),
+        )
+
+        working = decode_persistent_state(
+            encode_persistent_state(session.player_state)
+        )
+        if working.character is None:
+            raise ValueError("player death clone lost character state")
+        next_fields = dict(working.character.fields)
+        next_fields["gold"] = int(transition["final_carried_gold"])
+        working.character = replace(
+            working.character,
+            fields=MappingProxyType(next_fields),
+        )
+        updated = replace(
+            session,
+            player_state=working,
+        )
+        self._validate_session(updated)
+
+        return LocalRuntimePlayerDeathPlan(
+            session=updated,
+            party_discharged=bool(transition["party_discharged"]),
+            item_drop_mode=str(transition["item_drop_mode"]),
+            requested_item_drop_slots=tuple(
+                int(x) for x in transition["requested_item_drop_slots"]
+            ),
+            random_item_drop_candidates=tuple(
+                int(x) for x in transition["random_item_drop_candidates"]
+            ),
+            random_item_drop_count=int(
+                transition["random_item_drop_count"]
+            ),
+            requested_ground_gold=int(
+                transition["requested_ground_gold"]
+            ),
+            final_carried_gold=int(transition["final_carried_gold"]),
+            dead_count_after=int(transition["dead_count"]),
+            cleared_statuses=tuple(
+                str(x) for x in transition["cleared_statuses"]
+            ),
+            is_dead=bool(transition["is_dead"]),
+            is_attacked=bool(transition["is_attacked"]),
+        )
+
+    def resurrect_player_in_place(
+        self,
+        session: LocalRuntimeSessionState,
+        *,
+        requested_hp: int,
+    ) -> LocalRuntimePlayerResurrectionResult:
+        """Apply explicit in-place CHAR_playerresurrect HP semantics only."""
+
+        session = self._validate_session(session)
+        if session.player_state.character is None:
+            raise ValueError("player resurrection requires character state")
+        fields = dict(session.player_state.character.fields)
+        if "max_hp" not in fields or "hp" not in fields:
+            raise ValueError("player resurrection requires hp/max_hp fields")
+
+        transition = resurrect_transition(
+            int(requested_hp),
+            int(fields["max_hp"]),
+        )
+        working = decode_persistent_state(
+            encode_persistent_state(session.player_state)
+        )
+        if working.character is None:
+            raise ValueError("player resurrection clone lost character state")
+        next_fields = dict(working.character.fields)
+        next_fields["hp"] = int(transition["hp"])
+        working.character = replace(
+            working.character,
+            fields=MappingProxyType(next_fields),
+        )
+        updated = replace(
+            session,
+            player_state=working,
+        )
+        self._validate_session(updated)
+
+        return LocalRuntimePlayerResurrectionResult(
+            session=updated,
+            base_image_restored=bool(
+                transition["base_image_restored"]
+            ),
+            is_dead=bool(transition["is_dead"]),
+            is_attacked=bool(transition["is_attacked"]),
+            is_overed=bool(transition["is_overed"]),
+            mp_unchanged=bool(transition["mp_unchanged"]),
+            location_unchanged=bool(
+                transition["location_unchanged"]
+            ),
+        )
 
     def materialize_current_region(
         self,
