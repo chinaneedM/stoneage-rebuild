@@ -1260,6 +1260,65 @@ class LocalRuntimeSessionCoordinator:
         )
         return self._validate_session(updated)
 
+    def settle_persistent_group_battle_with_progression(
+        self,
+        context: LocalRuntimeBattleContext,
+        *,
+        player_exp_profile: str,
+        next_player_max_exp_by_level: Mapping[int, int],
+        pet_exp_profile: str | None = None,
+        next_pet_max_exp_by_slot: Mapping[int, Mapping[int, int]] | None = None,
+        pet_level_growth_rolls_by_slot: Mapping[int, Sequence[Any]] | None = None,
+    ) -> LocalRuntimeSessionState:
+        """Settle terminal battle EXP through the closed explicit progression seam.
+
+        The coordinator owns no threshold table and generates no pet growth RNG.
+        Profiles, future thresholds and every pet level-growth roll remain explicit
+        caller inputs so unresolved launch-era progression cannot be invented here.
+        """
+
+        state = context.persistent_battle_state
+        if state is None:
+            raise ValueError("battle context has no persistent battle state")
+
+        encounter_runtime = getattr(self.stack, "encounter_runtime", None)
+        if encounter_runtime is None:
+            raise ValueError("runtime stack has no encounter runtime")
+
+        working_state = decode_persistent_state(
+            self._battle_working_persistent_payload(context)
+        )
+        domain = SinglePlayerHistoricalDomain(
+            static=encounter_runtime.static_data,
+            persistent=working_state,
+        )
+        domain.move_player(
+            floor_id=context.origin_position.floor_id,
+            x=context.origin_position.x,
+            y=context.origin_position.y,
+        )
+        runtime = SinglePlayerHistoricalRuntime(
+            domain=domain,
+            topology=self.topology,
+        )
+        returned = runtime.finish_persistent_battle_with_progression(
+            state,
+            player_exp_profile=player_exp_profile,
+            next_player_max_exp_by_level=next_player_max_exp_by_level,
+            pet_exp_profile=pet_exp_profile,
+            next_pet_max_exp_by_slot=next_pet_max_exp_by_slot,
+            pet_level_growth_rolls_by_slot=pet_level_growth_rolls_by_slot,
+        )
+        updated = LocalRuntimeSessionState(
+            contract_id=context.contract_id,
+            world_profile=context.world_profile,
+            hometown_ordinal=context.hometown_ordinal,
+            player_position=returned.world_position,
+            player_state=domain.persistent,
+            world_flags=context.world_flags,
+        )
+        return self._validate_session(updated)
+
     @staticmethod
     def _binding_source_rect(binding) -> tuple[int, int, int, int]:
         if binding.predicate_payload.get("interaction_kind") != "DIALOGUE_WARPMAN":
