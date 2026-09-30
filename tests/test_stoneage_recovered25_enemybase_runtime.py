@@ -23,6 +23,7 @@ def _enemybase_row(tempno: int) -> str:
     vals[3:7] = [10, 20, 30, 40]
     vals[7] = 4
     vals[9:13] = [50, 50, 0, 0]
+    vals[26] = 2
     vals[29] = 4
     vals[30] = 1234
     vals[31] = 1
@@ -55,6 +56,7 @@ class Recovered25EnemybaseRuntimeTests(unittest.TestCase):
             self.assertIsNone(template.name)
             self.assertEqual(template.tempno, 88)
             self.assertEqual(template.level_up_point, 5)
+            self.assertEqual(template.rare, 2)
             self.assertEqual(template.size_class, 0)
             self.assertEqual(runtime.name_encoding_status, NAME_ENCODING_STATUS)
 
