@@ -4478,5 +4478,19 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - This does not promote CEP to Taiwan-v1/JSS launch fact. Exact CEP provenance remains strong stable-descendant evidence with earliest-commercial presence still open.
 - No RNG is generated inside the coordinator; frequency/group/enemy/level rolls remain explicit deterministic inputs.
 - Regression coverage includes miss→increment, hit→reset+encounter, Classic-Warp suppression, blocked-walk no-op, and save/continue exclusion/reset of CEP.
-- **LOCAL_RUNTIME_CEP_ENCOUNTER_BRIDGE_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Remote validation: GitHub Actions **36746339200 = PASS**, **36746339083 = PASS**, and full bundle-backed recovered25 validation **36746339177 = PASS**.
+- **LOCAL_RUNTIME_CEP_ENCOUNTER_BRIDGE_R1 = CLOSED.**
 - Next restoration priority after CI closure: connect the resolved encounter request to the existing deterministic enemy-spawn/battle shell, preserving explicit birth/spawn/AI/round rolls and returning battle settlement to the authoritative local session without inventing new combat rules.
+
+
+## Phase 1 enemybase text-encoding audit — 2026-10-01
+
+- The next battle-integration seam requires concrete recovered25 `enemybase` templates because enemy spawn materialization depends on template identity, SIZE, growth bases, elements, skill slots and the real enemy/pet display name.
+- Numeric identity is already structurally strong: active `enemybase.txt` contains **988 rows and 988 unique TEMPNO values** in the committed probe.
+- The first of six string columns is already treated as NAME by the executable enemybase fixture/model, but runtime decoding must not be guessed from locale.
+- Existing stable-map header audit independently shows all 572 admitted recovered25 server-map names are strictly decodable as both CP950 and Big5, but this evidence is **not automatically promoted** to enemybase.
+- New anonymous audit: `tools/stoneage_enemybase_name_encoding_probe.py`.
+- It records only row counts, strict-decoding counts, raw-name hashes and CP950-vs-Big5 equivalence; it emits no raw or decoded names.
+- Closure rule for runtime use: all 988 active names must decode strictly under CP950 and Big5, and the decoded text must be identical row-for-row. Otherwise enemybase runtime naming remains OPEN.
+- **RECOVERED25_ENEMYBASE_NAME_ENCODING_R1 = IMPLEMENTED_PENDING_REMOTE_BUNDLE_CI.**
+- If closed, next restoration step is a version-tagged enemybase template loader feeding the existing enemy-spawn/birth/battle shell. No placeholder enemy names may be invented.

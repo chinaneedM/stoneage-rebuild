@@ -9,6 +9,8 @@ on:
       - .github/workflows/probe-stoneage-25-enemybase.yml
       - tools/stoneage_enemybase_probe.py
       - tests/test_stoneage_enemybase_probe.py
+      - tools/stoneage_enemybase_name_encoding_probe.py
+      - tests/test_stoneage_enemybase_name_encoding_probe.py
 permissions:
   contents: write
 jobs:
@@ -17,7 +19,10 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -m unittest tests.test_stoneage_enemybase_probe -v
+      - run: |
+          python3 -m unittest \
+            tests.test_stoneage_enemybase_probe \
+            tests.test_stoneage_enemybase_name_encoding_probe -v
       - run: sudo apt-get update && sudo apt-get install -y unar
       - name: Recover verified preservation bundle
         run: |
@@ -58,11 +63,26 @@ jobs:
           else
             python3 -m tools.stoneage_enemybase_probe --data-dir "$D" > research/recovered/STONEAGE-25-ENEMYBASE-PROBE-R1.txt
           fi
+      - name: Probe enemybase name encoding
+        run: |
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
+          test -n "$D"
+          R=research/recovered/STONEAGE-25-ENEMYBASE-NAME-ENCODING-R1.txt
+          if [ -n "$C" ]; then
+            python3 -m tools.stoneage_enemybase_name_encoding_probe --data-dir "$D" --setup "$C" > "$R"
+          else
+            python3 -m tools.stoneage_enemybase_name_encoding_probe --data-dir "$D" > "$R"
+          fi
+          test -s "$R"
+          grep -F 'COUNT|rows|988' "$R"
+          grep -F 'COUNT|nonempty_names|988' "$R"
+
       - name: Commit derived report only
         run: |
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
-          git add research/recovered/STONEAGE-25-ENEMYBASE-PROBE-R1.txt
+          git add research/recovered/STONEAGE-25-ENEMYBASE-PROBE-R1.txt research/recovered/STONEAGE-25-ENEMYBASE-NAME-ENCODING-R1.txt
           git commit -m 'research: analyze StoneAge pet templates'
           git pull --rebase origin main
           git push
