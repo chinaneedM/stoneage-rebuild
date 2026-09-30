@@ -32,4 +32,4 @@ jobs:
       - name: Verify cross-language runtime golden contract
         run: |
           python3 -m unittest tests.test_stoneage_runtime_golden_contract -v
-          python3 tools/stoneage_runtime_golden_contract.py
+          python3 -m tools.stoneage_runtime_golden_contract
