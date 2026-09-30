@@ -1297,10 +1297,11 @@ class LocalRuntimeSessionCoordinator:
 
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
         explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
-        plus recovered PowerBalance and StatusChange. PowerBalance carries
-        immediate work attack/defense setup effects into the ordinary physical
-        attack path; StatusChange keeps setup effects and all status/application
-        RNG explicit. Every other callback remains fail-closed.
+        plus recovered Mighty, PowerBalance and StatusChange. Mighty preserves
+        its packed damage-multiplier/dodge modifiers inside the ordinary
+        physical path; PowerBalance carries immediate work attack/defense setup
+        effects; StatusChange keeps setup effects and all status/application RNG
+        explicit. Every other callback remains fail-closed.
         """
 
         state = context.persistent_battle_state
@@ -1365,7 +1366,7 @@ class LocalRuntimeSessionCoordinator:
             allow_basic_skill=True,
             allow_statuschange_skill=True,
             allow_powerbalance_skill=True,
-            allow_mighty_skill=False,
+            allow_mighty_skill=True,
         )
         enemy_commands = enemy_batch.commands
         escaping_enemy_ids = {
