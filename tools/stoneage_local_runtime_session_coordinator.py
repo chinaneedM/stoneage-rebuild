@@ -108,6 +108,15 @@ class LocalRuntimeSessionCoordinator:
         default_factory=RuntimeDynamicOccupancyRegistry
     )
 
+    def __post_init__(self) -> None:
+        initial_occupancy = getattr(
+            self.stack,
+            "npc_initial_occupancy",
+            None,
+        )
+        if initial_occupancy is not None:
+            initial_occupancy.populate_registry(self.occupancy_registry)
+
     @property
     def profile(self):
         return self.stack.profile
