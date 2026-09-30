@@ -951,6 +951,7 @@ class LocalRuntimeSessionCoordinator:
         allow_statuschange_skill: bool = False,
         allow_powerbalance_skill: bool = False,
         allow_mighty_skill: bool = False,
+        allow_guardbreak_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1106,6 +1107,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_statuschange_skill)
                 or bool(allow_powerbalance_skill)
                 or bool(allow_mighty_skill)
+                or bool(allow_guardbreak_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1121,6 +1123,7 @@ class LocalRuntimeSessionCoordinator:
                     allow_status_change=bool(allow_statuschange_skill),
                     allow_power_balance=bool(allow_powerbalance_skill),
                     allow_mighty=bool(allow_mighty_skill),
+                    allow_guard_break=bool(allow_guardbreak_skill),
                 )
                 commands[enemy_id] = bridged.command
                 if bridged.setup_effects != BattleCommandSetupEffects():
@@ -1137,6 +1140,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PowerBalance")
             if bool(allow_mighty_skill):
                 allowed_parts.append("Mighty")
+            if bool(allow_guardbreak_skill):
+                allowed_parts.append("GuardBreak")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1168,6 +1173,7 @@ class LocalRuntimeSessionCoordinator:
             allow_statuschange_skill=False,
             allow_powerbalance_skill=False,
             allow_mighty_skill=False,
+            allow_guardbreak_skill=False,
         ).commands
 
     def build_persistent_enemy_attack_guard_commands(
@@ -1297,11 +1303,13 @@ class LocalRuntimeSessionCoordinator:
 
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
         explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
-        plus recovered Mighty, PowerBalance and StatusChange. Mighty preserves
-        its packed damage-multiplier/dodge modifiers inside the ordinary
-        physical path; PowerBalance carries immediate work attack/defense setup
-        effects; StatusChange keeps setup effects and all status/application RNG
-        explicit. Every other callback remains fail-closed.
+        plus recovered GuardBreak, Mighty, PowerBalance and StatusChange.
+        GuardBreak preserves its dedicated guard-only hit gate and source-shaped
+        Guardian settlement quirk; Mighty preserves packed damage-multiplier /
+        dodge modifiers inside the ordinary physical path; PowerBalance carries
+        immediate work attack/defense setup effects; StatusChange keeps setup
+        effects and all status/application RNG explicit. Every other callback
+        remains fail-closed.
         """
 
         state = context.persistent_battle_state
@@ -1367,6 +1375,7 @@ class LocalRuntimeSessionCoordinator:
             allow_statuschange_skill=True,
             allow_powerbalance_skill=True,
             allow_mighty_skill=True,
+            allow_guardbreak_skill=True,
         )
         enemy_commands = enemy_batch.commands
         escaping_enemy_ids = {
