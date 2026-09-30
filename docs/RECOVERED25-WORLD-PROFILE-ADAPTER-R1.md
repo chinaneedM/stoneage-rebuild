@@ -18,6 +18,7 @@ Repository-derived facts used directly:
 
 - materializable map definitions: **826**;
 - ordered active classic Warp edges: **2724**;
+- deferred conditional-time classic Warp records kept outside the active graph: **14**;
 - every concrete map definition carries structured provenance;
 - every current recovered25 map remains `LATER_RECOVERED`;
 - unresolved floor-130 version fork remains outside the default 826-floor materializable set.
@@ -69,25 +70,21 @@ Raw coordinates, item IDs, filenames, arguments and dialogue are not emitted by 
 
 ## 5. Gate evaluation
 
-R1 supports two implementation-level gate forms.
+The runtime does **not** replace recovered WarpMan FREE checks with a permanent unlock flag.
 
-### ITEM_EQ
+Every current state-gated binding carries normalized FREE predicates derived in memory from the verified recovered25 bundle. The evaluator rechecks the authoritative **current player state on every use**.
 
-Used by the two fresh-start bridge WarpMan transitions.
+For the two fresh-start bridges, the closed shape is one `ITEM = ...` predicate.
 
-The evaluator checks the authoritative local player's inventory template identities.
+For the 811→820 shadowed-branch ingress, the recovered shape is one AND clause containing:
 
-The check does not consume the item because the selected recovered WarpMan action stage is already proven inert and no item-removal side effect is promoted.
+- `LV > ...`;
+- `LV < ...`;
+- `ITEM = ...`.
 
-### WORLD_FLAG
+Operands remain withheld. The important runtime consequence is that the required item must still be carried at traversal time; previously satisfying the progression chain is not by itself a permanent bypass.
 
-Used by the 811→820 shadowed-branch ingress at this orchestration layer.
-
-The historical/recovered progression proof is already closed separately. The local runtime represents completion of that compound progression state with an explicit persistent world flag:
-
-`transition:shadowed_branch_ingress:progression_unlocked`
-
-This does not erase the underlying historical prerequisites; it is the local product's durable state projection of the closed compound witness.
+The evaluator does not consume an item merely for checking the gate. Any state mutation must come from separately recovered action-stage semantics; the currently selected hometown bridge action stages are already proven inert.
 
 ## 6. Smoke-test chain
 
@@ -98,7 +95,7 @@ The bundle-backed smoke test exercises:
 3. expose all four fresh-start seeds;
 4. materialize provenance-bearing region descriptors;
 5. derive all three current gated transition bindings from the verified bundle;
-6. evaluate the two item gates and the progression flag gate;
+6. evaluate all three recovered FREE gates against constructed legal current-player witnesses;
 7. encode and decode the local runtime-session envelope.
 
 Its committed report contains only aggregate counts and provenance labels.
