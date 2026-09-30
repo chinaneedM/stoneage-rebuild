@@ -129,6 +129,7 @@ def parse_tactics_option(text):
     values={}
     unknown=[]
     malformed=False
+    malformed_tags=[]
     for raw in text.split("|"):
         raw=raw.strip()
         if not raw:
@@ -154,6 +155,7 @@ def parse_tactics_option(text):
             continue
         if len(parts)<arity:
             malformed=True
+            malformed_tags.append(tag)
             continue
         values[tag]=tuple(_c_atoi(part) for part in parts[:arity])
     positive=[]
@@ -168,6 +170,7 @@ def parse_tactics_option(text):
         "valid":not malformed,
         "tags":tuple(sorted(values)),
         "unknown_tags":tuple(sorted(set(unknown))),
+        "malformed_tags":tuple(sorted(set(malformed_tags))),
         "positive_actions":tuple(positive),
     }
 
@@ -286,6 +289,9 @@ def analyze(data_dir,setup=None):
     tactics_unknown_tags=collections.Counter(
         tag for p in tactics_profiles for tag in p["unknown_tags"]
     )
+    tactics_malformed_tags=collections.Counter(
+        tag for p in tactics_profiles for tag in p["malformed_tags"]
+    )
     tactics_action_signatures=collections.Counter(
         "+".join(p["positive_actions"]) if p["positive_actions"] else "none"
         for p in tactics_profiles
@@ -355,6 +361,7 @@ def analyze(data_dir,setup=None):
         "tactics_valid":tactics_valid,
         "tactics_tag_presence":tactics_tag_presence,
         "tactics_unknown_tags":tactics_unknown_tags,
+        "tactics_malformed_tags":tactics_malformed_tags,
         "tactics_action_signatures":tactics_action_signatures,
         "tactics_action_condition_nonempty":tactics_action_condition_nonempty,
         "all_group_residual":sorted(enc_group_set-all_group_ids),
@@ -398,6 +405,8 @@ def emit(data_dir,setup=None):
         print(f"ENEMY_AI_TAG_PRESENCE|{tag}|{count}")
     for tag,count in sorted(r["tactics_unknown_tags"].items()):
         print(f"ENEMY_AI_UNKNOWN_TAG|{tag}|{count}")
+    for tag,count in sorted(r["tactics_malformed_tags"].items()):
+        print(f"ENEMY_AI_MALFORMED_TAG|{tag}|{count}")
     for signature,count in sorted(r["tactics_action_signatures"].items()):
         print(f"ENEMY_AI_POSITIVE_ACTIONS|{signature}|{count}")
 
