@@ -1,0 +1,12 @@
+StoneAge recovered25 server collision runtime provider — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|recovered server LS2MAP + recovered mapset only; uncovered floors fail closed
+COUNT|materializable_floors|826
+COUNT|server_collision_closed|635
+COUNT|server_collision_uncovered|191
+COUNT|status:NO_SERVER_MAP|189
+COUNT|status:DIVERGENT_SERVER_DUPLICATE|2
+SERVER_BACKED_MOVEMENT_WITNESS|1
+UNCOVERED_FAIL_CLOSED_WITNESS|1
+RESOLUTION|RECOVERED25_SERVER_COLLISION_PROVIDER_CLOSED_WITH_GAPS
