@@ -27,6 +27,7 @@ OUTPUT_RESOLUTION = "RESOLUTION|RECOVERED25_NPC_OVERABILITY_LINEAGE_AUDITED"
 
 STATIC_BLOCKING = "STATIC_BLOCKING"
 STATIC_OVERABLE = "STATIC_OVERABLE"
+INHERITED_DEFAULT_OVERABLE = "INHERITED_DEFAULT_OVERABLE"
 DYNAMIC = "DYNAMIC"
 UNRESOLVED = "UNRESOLVED"
 LINEAGE_DIVERGENT = "LINEAGE_DIVERGENT"
@@ -39,6 +40,10 @@ class SourceSpec:
     commit: str
     npc_prefix: str
     template_path: str
+    default_player_path: str
+    char_base_path: str
+    char_data_path: str
+    npcgen_path: str
 
     def raw_url(self, path: str) -> str:
         quoted = "/".join(
@@ -57,6 +62,10 @@ SOURCES = (
         "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
         "gmsv/src/npc",
         "gmsv/src/npc/npctemplate.c",
+        "gmsv/src/char/defaultPlayer.h",
+        "gmsv/src/include/char_base.h",
+        "gmsv/src/char/char_data.c",
+        "gmsv/src/npc/npcgen.c",
     ),
     SourceSpec(
         "iris",
@@ -64,6 +73,10 @@ SOURCES = (
         "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
         "Source/gmsv/npc",
         "Source/gmsv/npc/npctemplate.c",
+        "Source/gmsv/char/defaultPlayer.h",
+        "Source/gmsv/include/char_base.h",
+        "Source/gmsv/char/char_data.c",
+        "Source/gmsv/npc/npcgen.c",
     ),
     SourceSpec(
         "bismarck",
@@ -71,6 +84,10 @@ SOURCES = (
         "2f736808ff4361f5429ee919b718c88fabb60346",
         "server/gmsv/npc",
         "server/gmsv/npc/npctemplate.c",
+        "server/gmsv/include/defaultPlayer.h",
+        "server/gmsv/include/char_base.h",
+        "server/gmsv/char/char_data.c",
+        "server/gmsv/npc/npcgen.c",
     ),
 )
 
@@ -164,6 +181,85 @@ def classify_init_and_file(
     raise AssertionError("unexpected CHAR_ISOVERED value")
 
 
+def default_player_overable_value(
+    *,
+    default_player_source: str,
+    char_base_source: str,
+) -> int:
+    base = _strip_comments(char_base_source)
+    sequence = re.search(
+        r"CHAR_ISATTACK\s*,\s*CHAR_ISATTACKED\s*,\s*"
+        r"CHAR_ISOVER\s*,\s*CHAR_ISOVERED\s*,",
+        base,
+        re.S,
+    )
+    if not sequence:
+        raise ValueError("CHAR_ISOVERED flag order is not lineage-compatible")
+
+    player = _strip_comments(default_player_source)
+    match = re.search(
+        r"static\s+Char\s+player\s*=.*?"
+        r"SETFLG\s*\(\s*([01])\s*,\s*([01])\s*,\s*"
+        r"([01])\s*,\s*([01])\s*,\s*([01])\s*,\s*"
+        r"([01])\s*,\s*([01])\s*,\s*([01])\s*\)",
+        player,
+        re.S,
+    )
+    if not match:
+        raise ValueError("default player SETFLG row was not parsed")
+    return int(match.group(4))
+
+
+def default_chain_closed(*, char_data_source: str, npcgen_source: str) -> bool:
+    char_data = _strip_comments(char_data_source)
+    array_match = re.search(
+        r"static\s+defaultCharacterGet\s+CHAR_defaultCharacterGet\s*\[\s*\]"
+        r"\s*=\s*\{(.*?)\};",
+        char_data,
+        re.S,
+    )
+    if not array_match:
+        raise ValueError("CHAR_defaultCharacterGet array was not parsed")
+    array_body = array_match.group(1)
+    refs = set(re.findall(r"&([A-Za-z_][A-Za-z0-9_]*)", array_body))
+    data_refs = {value for value in refs if not value.startswith("lv")}
+    if data_refs != {"player"}:
+        raise ValueError(
+            "default character array no longer resolves exclusively to player"
+        )
+    get_default = _function_body(char_data, "CHAR_getDefaultChar")
+    if "nc->flg[j] = defaultchar->flg[j]" not in re.sub(r"\s+", " ", get_default):
+        compact = re.sub(r"\s+", "", get_default)
+        if "nc->flg[j]=defaultchar->flg[j]" not in compact:
+            raise ValueError("CHAR_getDefaultChar no longer copies default flags")
+
+    npcgen = _strip_comments(npcgen_source)
+    body = _function_body(npcgen, "NPC_generateNPC")
+    positions = [
+        body.find("CHAR_getDefaultChar"),
+        body.find("NPC_copyFunctionSetToChar"),
+        body.find("CHAR_initCharOneArray"),
+    ]
+    if any(value < 0 for value in positions):
+        raise ValueError("NPC generation initialization chain is incomplete")
+    return positions[0] < positions[1] < positions[2]
+
+
+def _template_direct_override_count(path: Path) -> int:
+    counts = {}
+    for raw in Path(path).read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if line.startswith("COUNT|direct_override_count:"):
+            parts = line.split("|")
+            if len(parts) != 3:
+                raise ValueError("malformed template direct-override count")
+            key = parts[1].split(":", 1)[1]
+            counts[int(key)] = int(parts[2])
+    if not counts:
+        raise ValueError("template profile report lacks direct-override counts")
+    return sum(key * count for key, count in counts.items())
+
+
 def _binding_counts(path: Path) -> Counter:
     counts = Counter()
     for raw in Path(path).read_text(encoding="utf-8").splitlines():
@@ -197,8 +293,32 @@ def _source_path(functionset: str, spec: SourceSpec) -> str:
     return f"{spec.npc_prefix}/npc_{functionset.lower()}.c"
 
 
-def analyze(binding_report: Path) -> tuple[LineageFunctionsetResult, ...]:
+def analyze(
+    binding_report: Path,
+    template_profile_report: Path,
+) -> tuple[LineageFunctionsetResult, ...]:
     counts = _binding_counts(binding_report)
+    if _template_direct_override_count(template_profile_report) != 0:
+        raise ValueError(
+            "recovered template profiles contain direct callback overrides"
+        )
+
+    default_values = {}
+    default_chains = {}
+    for spec in SOURCES:
+        default_values[spec.label] = default_player_overable_value(
+            default_player_source=_fetch(spec.raw_url(spec.default_player_path)),
+            char_base_source=_fetch(spec.raw_url(spec.char_base_path)),
+        )
+        default_chains[spec.label] = default_chain_closed(
+            char_data_source=_fetch(spec.raw_url(spec.char_data_path)),
+            npcgen_source=_fetch(spec.raw_url(spec.npcgen_path)),
+        )
+    if set(default_values.values()) != {1}:
+        raise ValueError(f"lineages disagree on default CHAR_ISOVERED: {default_values}")
+    if not all(default_chains.values()):
+        raise ValueError("one or more NPC default initialization chains are open")
+
     template_maps = {
         spec.label: parse_functionset_init_map(_fetch(spec.raw_url(spec.template_path)))
         for spec in SOURCES
@@ -271,7 +391,10 @@ def analyze(binding_report: Path) -> tuple[LineageFunctionsetResult, ...]:
         classes = {value for _label, value in per_lineage}
         resolved = {value for value in classes if value != UNRESOLVED}
         if not resolved:
-            final = UNRESOLVED
+            # All audited lineages inherit default CHAR_ISOVERED=1 and the
+            # recovered template layer has zero direct callback overrides.
+            # No same-file setter was found for these functionsets.
+            final = INHERITED_DEFAULT_OVERABLE
         elif len(resolved) == 1 and classes <= (resolved | {UNRESOLVED}):
             final = next(iter(resolved))
         else:
@@ -301,6 +424,9 @@ def emit(rows: tuple[LineageFunctionsetResult, ...]) -> None:
         print(
             f"SOURCE_REVISION|{spec.repository}|{spec.commit}"
         )
+    print("DEFAULT_CHAR_ISOVERED|value=1|lineages=3")
+    print("NPC_DEFAULT_CHAIN|CHAR_getDefaultChar->functionset->CHAR_initCharOneArray|lineages=3")
+    print("TEMPLATE_DIRECT_CALLBACK_OVERRIDES|count=0")
 
     placement_counts = Counter()
     functionset_counts = Counter()
@@ -313,6 +439,7 @@ def emit(rows: tuple[LineageFunctionsetResult, ...]) -> None:
     for classification in (
         STATIC_BLOCKING,
         STATIC_OVERABLE,
+        INHERITED_DEFAULT_OVERABLE,
         DYNAMIC,
         UNRESOLVED,
         LINEAGE_DIVERGENT,
@@ -342,8 +469,13 @@ def emit(rows: tuple[LineageFunctionsetResult, ...]) -> None:
         )
 
     print(
-        "RULE|UNRESOLVED means no direct INITFUNC setter was proven; "
-        "no default CHAR flag value is guessed"
+        "RULE|INHERITED_DEFAULT_OVERABLE means no direct INITFUNC or same-file "
+        "setter was found, template direct overrides are zero, and all three "
+        "lineages inherit default CHAR_ISOVERED=1 before INITFUNC"
+    )
+    print(
+        "RULE|UNRESOLVED remains reserved for a source/mapping gap; "
+        "no default is guessed when the default chain is not closed"
     )
     print(
         "RULE|DYNAMIC means same source file contains both CHAR_ISOVERED=0 "
@@ -355,8 +487,14 @@ def emit(rows: tuple[LineageFunctionsetResult, ...]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--binding-report", type=Path, required=True)
+    parser.add_argument("--template-profile-report", type=Path, required=True)
     args = parser.parse_args()
-    emit(analyze(args.binding_report))
+    emit(
+        analyze(
+            args.binding_report,
+            args.template_profile_report,
+        )
+    )
 
 
 if __name__ == "__main__":
