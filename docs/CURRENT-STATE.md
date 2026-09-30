@@ -4719,3 +4719,19 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Remaining enemy-AI work is deliberately narrower than “implement all pet skills”: quantify which of the 111 recovered enemy-used skill IDs/slot uses map to the 15 already reconstructed common callbacks, then extend only callbacks whose command setup + ordinary-round execution contracts are already evidence-closed. OPTION encoding-dependent or stateful callbacks remain OPEN until their exact data/runtime requirements are carried explicitly.
 - Immediate next priority: use the hash-pinned recovered25 aggregate coverage to choose the highest-impact next common callback. Reuse existing reconstructed Guardian/StatusChange/etc. seams where complete; do not invent generalized skill execution or silently downgrade unsupported skills to ATTACK/WAIT.
 
+## Stable pet-skill NoGuard cross-action correction — 2026-10-01
+
+- A continuation audit found that the earlier `STONEAGE-PETSKILL-CORE-R1.md` claim that NoGuard's packed COM3 parameters had no fixed common consumer was incorrect.
+- All three pinned descendant lineages agree on the active cross-action behavior:
+  - the NoGuard actor's own `BATTLE_COM_S_NOGUARD` turn still resolves through `BATTLE_NoAction`;
+  - while defending, `HIGH(COM3)` is added to the dodge probability;
+  - in the counter path, the upper byte of `LOW(COM3)` is added to counter probability;
+  - `BATTLE_Counter` explicitly admits S_NOGUARD alongside ordinary ATTACK;
+  - the lower-byte critical modifier is only read inside a `#if 0` disabled `BATTLE_CriticalCheckPet` helper, so it is not active in the pinned common execution path.
+- The odd source sign rule is preserved exactly: extracted byte values above 127 are multiplied by -1 rather than converted as conventional signed bytes.
+- `tools/stoneage_petskill_core_model.py`, its regression tests and `research/mechanics/STONEAGE-PETSKILL-CORE-R1.md` were corrected.
+- Dedicated stable pet-skill validation **36764551385 = PASS**. The earlier **36764484553** failure was the expected intermediate commit where the corrected model preceded the updated regression expectation.
+- NoGuard remains **not admitted** to the recovered enemy-AI runtime bridge because exact recovered OPTION parsing and its cross-action round integration have not yet been closed. It must not be downgraded to ordinary WAIT/NONE.
+- **PETSKILL_NOGUARD_DEAD_PARAMETER_CLAIM = SUPERSEDED.**
+- **PETSKILL_NOGUARD_CROSS_ACTION_SEMANTICS_R1 = CLOSED_REFERENCE_MODEL_ONLY.**
+
