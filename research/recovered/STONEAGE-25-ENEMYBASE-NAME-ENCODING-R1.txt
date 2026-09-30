@@ -1,0 +1,21 @@
+StoneAge recovered25 enemybase name encoding audit — R1
+SCOPE|active-enemybase-first-string-field|no-raw-name-bytes|no-decoded-names
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+ACTIVE_FILE|enemybase.txt
+COUNT|rows|988
+COUNT|nonempty_names|988
+COUNT|distinct_name_hashes|662
+COUNT|strict_decodable:ascii|0
+COUNT|strict_decodable:cp950|988
+COUNT|strict_decodable:big5|988
+COUNT|strict_decodable:gbk|252
+COUNT|strict_decodable:gb18030|988
+COUNT|strict_decodable:shift_jis|657
+COUNT|strict_decodable:utf-8|0
+COUNT|cp950_big5_both_decodable|988
+COUNT|cp950_big5_same_text|986
+COUNT|cp950_big5_different_text|2
+AGGREGATE_NAME_SHA256|ee7c88693f2bfbbaa38ecfaa1d0020648e6af0645acf4fdd45c65063f6821c03
+RUNTIME_TEXT_DECODER|UNRESOLVED
+RESOLUTION|RECOVERED25_ENEMYBASE_NAME_ENCODING_OPEN
