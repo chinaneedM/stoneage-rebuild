@@ -3,6 +3,9 @@ import unittest
 from tools.stoneage_runtime_occupancy_registry import (
     RuntimeDynamicOccupancyRegistry,
 )
+from tools.stoneage_local_runtime_save import (
+    build_local_runtime_occupancy_delta,
+)
 from tools.stoneage_versioned_npc_overability_profile import (
     INHERITED_DEFAULT_OVERABLE,
     STATIC_OVERABLE,
@@ -80,6 +83,38 @@ class Recovered25NpcInitialOccupancyTests(unittest.TestCase):
             "overability:STATIC_OVERABLE",
             seeded.provenance,
         )
+
+    def test_real_initial_baseline_serializes_as_zero_delta(self):
+        registry = RuntimeDynamicOccupancyRegistry()
+        self.manifest.populate_registry(registry)
+        delta = build_local_runtime_occupancy_delta(
+            registry=registry,
+            initial_occupancy=self.manifest,
+        )
+        self.assertEqual(
+            delta.base_profile_id,
+            "RECOVERED25_INITIAL_NPC_OCCUPANCY_R1",
+        )
+        self.assertEqual(delta.removed_base_object_ids, ())
+        self.assertEqual(delta.upserts, ())
+
+        row = self.manifest.seedable_rows[0]
+        registry.move(
+            row.object_id,
+            type(row.position)(
+                row.position.floor_id,
+                row.position.x,
+                row.position.y,
+            ),
+        )
+        registry.set_overable(row.object_id, not row.overable)
+        changed = build_local_runtime_occupancy_delta(
+            registry=registry,
+            initial_occupancy=self.manifest,
+        )
+        self.assertEqual(changed.removed_base_object_ids, ())
+        self.assertEqual(len(changed.upserts), 1)
+        self.assertEqual(changed.upserts[0].object_id, row.object_id)
 
     def test_population_is_idempotent_but_rejects_conflicting_seed(self):
         registry = RuntimeDynamicOccupancyRegistry()
