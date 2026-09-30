@@ -4080,3 +4080,26 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Provenance boundary remains unchanged: historical foundation = Taiwan/Waei v1.0; runtime world = recovered25; recovered25 evidence role = `LATER_RECOVERED`.
 - **RECOVERED25_LOCAL_RUNTIME_STACK_R1 = CLOSED.**
 - Next Phase-1 priority: add a minimal engine-neutral **local runtime session coordinator** above this stack. It should provide new-game/continue/save boundaries, materialize the current concrete region, execute ordinary one-cell movement only from an explicit collision verdict, preserve existing classic overlap-Warp semantics, and execute a state-gated dialogue transition only when the current coordinate lies inside its recovered source rectangle and the live gate evaluator allows it. Do not invent collision metadata, renderer behavior, UI, network services or account services.
+
+
+## Phase 1 local runtime session coordinator — 2026-09-30
+
+- A minimal engine-neutral application-service layer now sits above the closed recovered25 local runtime stack:
+  - `tools/stoneage_local_runtime_session_coordinator.py`;
+  - `tests/test_stoneage_local_runtime_session_coordinator.py`;
+  - `docs/LOCAL-RUNTIME-SESSION-COORDINATOR-R1.md`.
+- The authoritative state remains `stoneage.local-runtime-session.r1`; the coordinator provides:
+  - new game from one of the four versioned hometown seeds;
+  - save/continue through the existing `LocalPersistenceStore` port;
+  - concrete current-region materialization;
+  - same-floor non-zero one-cell walk commands;
+  - reuse of the existing classic overlap-Warp implementation;
+  - state-gated dialogue transition execution.
+- Collision remains evidence-safe: ordinary walking requires an explicit `entry_allowed` verdict from a validated collision layer. The coordinator does **not** guess WALKABLE/HAVEHEIGHT semantics from raw DAT/LS2MAP IDs.
+- State-gated dialogue transitions now require two independent conditions:
+  1. current player coordinate lies inside the recovered binding source rectangle on the correct floor;
+  2. the live transition evaluator allows the current player state.
+- A future gate that reports non-empty `consumed_state` is rejected until its mutation semantics are implemented explicitly; no item/state consumption can be silently discarded.
+- Validation: GitHub Actions **36715358875 = PASS**.
+- **LOCAL_RUNTIME_SESSION_COORDINATOR_R1 = CLOSED.**
+- Next Phase-1 priority: close the concrete **recovered25 collision-verdict coverage** needed by the coordinator. First audit all 826 materializable floors against recovered server LS2MAP + recovered `mapset.txt`, distinguishing uniquely resolvable server collision, no-server-map floors, divergent duplicate server copies and missing image metadata. Do not substitute Taiwan-v1 ADRN values or guess collision for uncovered recovered25 floors. Use the audit to decide whether a server-backed provider is sufficient or a separate recovered-client collision bridge is still required.
