@@ -2,6 +2,7 @@ import unittest
 
 from tools.stoneage_enemy_ai_petskill_bridge import (
     resolve_enemy_ai_basic_petskill_command,
+    resolve_enemy_ai_statuschange_petskill_command,
 )
 from tools.stoneage_enemy_spawn_model import SpawnedEnemy
 from tools.stoneage_recovered25_petskill_runtime import (
@@ -9,12 +10,18 @@ from tools.stoneage_recovered25_petskill_runtime import (
     Recovered25PetSkillRuntime,
 )
 from tools.stoneage_singleplayer_battle import BattleParticipant
-from tools.stoneage_tw10_25_bridge_model import PetTemplateBridge
+from tools.stoneage_tw10_25_bridge_model import (
+    PetTemplateBridge,
+    build_pet_birth_bridge,
+)
 from tools.stoneage_tw10_25_encounter_bridge import EnemyVariantBridge
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_GUARD,
     BATTLE_COM_NONE,
+    BATTLE_COM_S_STATUSCHANGE,
+    battle_command3_high,
+    battle_command3_low,
 )
 
 
@@ -58,28 +65,35 @@ def spawned_with_slots(slots):
             "PETFLG": 1,
         }
     )
+    birth = build_pet_birth_bridge(
+        template,
+        level=5,
+        birth_offsets=(0, 0, 0, 0),
+        spawn_allocation_rolls=(0, 1, 2, 3, 0, 1, 2, 3, 0, 1),
+    )
+    projection = birth.combat_projection()
     participant = BattleParticipant(
         participant_id="enemy:0",
         side="enemy",
         kind="enemy",
         level=5,
-        hp=100,
-        max_hp=100,
-        attack=20,
-        defense=20,
-        quick=20,
+        hp=projection["hp"],
+        max_hp=projection["max_hp"],
+        attack=projection["attack"],
+        defense=projection["defense"],
+        quick=projection["quick"],
         name=None,
     )
     return SpawnedEnemy(
         spawn_index=0,
         variant=variant,
         template=template,
-        birth=object(),
+        birth=birth,
         participant=participant,
     )
 
 
-def entry(skill_id, callback):
+def entry(skill_id, callback, option=b""):
     return Recovered25PetSkillEntry(
         skill_id=skill_id,
         field=1,
@@ -87,7 +101,7 @@ def entry(skill_id, callback):
         cost=2,
         illegal=0,
         function_name=callback,
-        option_bytes=b"",
+        option_bytes=option,
     )
 
 
@@ -146,6 +160,75 @@ class EnemyAiPetSkillBridgeTests(unittest.TestCase):
         self.assertEqual(resolved.skill_id, 30)
         self.assertEqual(resolved.command.command1, BATTLE_COM_NONE)
         self.assertEqual(resolved.command.command2, 4)
+
+    def test_statuschange_uses_recovered_option_birth_fix_stats_and_round_bridge(self):
+        spawned = spawned_with_slots((40, 0, 0, 0, 0, 0, 0))
+        option = "毒turn4 攻%25 防%-10".encode("cp950")
+        runtime = Recovered25PetSkillRuntime(
+            skills={
+                40: entry(40, "PETSKILL_StatusChange", option),
+            },
+            source_file="petskill.txt",
+        )
+        resolved = resolve_enemy_ai_statuschange_petskill_command(
+            spawned,
+            skill_slot=0,
+            target_slot=3,
+            petskill_runtime=runtime,
+        )
+        projection = spawned.birth.combat_projection()
+        self.assertEqual(resolved.command.command1, BATTLE_COM_S_STATUSCHANGE)
+        self.assertEqual(resolved.command.command2, 3)
+        self.assertEqual(battle_command3_low(resolved.command.command3), 1)
+        self.assertEqual(battle_command3_high(resolved.command.command3), 4)
+        self.assertEqual(
+            resolved.setup_effects.attack_power,
+            projection["attack"] + int(projection["attack"] * 25 / 100),
+        )
+        self.assertEqual(
+            resolved.setup_effects.defense_power,
+            projection["defense"] + int(projection["defense"] * -10 / 100),
+        )
+
+    def test_statuschange_rejects_ambiguous_option_codec(self):
+        spawned = spawned_with_slots((40, 0, 0, 0, 0, 0, 0))
+        runtime = Recovered25PetSkillRuntime(
+            skills={
+                40: entry(
+                    40,
+                    "PETSKILL_StatusChange",
+                    b"\xA1\x45",
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        with self.assertRaisesRegex(ValueError, "decoding divergence"):
+            resolve_enemy_ai_statuschange_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=0,
+                petskill_runtime=runtime,
+            )
+
+    def test_statuschange_rejects_unmatched_status_grammar(self):
+        spawned = spawned_with_slots((40, 0, 0, 0, 0, 0, 0))
+        runtime = Recovered25PetSkillRuntime(
+            skills={
+                40: entry(
+                    40,
+                    "PETSKILL_StatusChange",
+                    b"turn4",
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        with self.assertRaisesRegex(ValueError, "does not match"):
+            resolve_enemy_ai_statuschange_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=0,
+                petskill_runtime=runtime,
+            )
 
     def test_non_basic_stable_callback_fails_closed(self):
         spawned = spawned_with_slots((30, 0, 0, 0, 0, 0, 0))
