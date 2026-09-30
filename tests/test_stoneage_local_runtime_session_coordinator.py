@@ -1088,7 +1088,7 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         self.assertEqual(terminal.phase, "finished")
         self.assertEqual(terminal.result, "victory")
         self.assertGreater(terminal.turn, 1)
-        self.assertNotIn(enemy_id, terminal.hp_by_participant_id)
+        self.assertEqual(terminal.hp_by_participant_id[enemy_id], 0)
         self.assertEqual(
             terminal.pending_exp_by_participant_id["player"],
             100,
