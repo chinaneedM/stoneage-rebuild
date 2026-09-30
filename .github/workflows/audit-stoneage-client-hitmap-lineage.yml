@@ -1,0 +1,47 @@
+name: Audit StoneAge client hit-map lineage
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/audit-stoneage-client-hitmap-lineage.yml
+      - tools/stoneage_client_hitmap_lineage_probe.py
+      - tests/test_stoneage_client_hitmap_lineage_probe.py
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deterministic lineage parser tests
+        run: python3 -m unittest tests.test_stoneage_client_hitmap_lineage_probe -v
+      - name: Audit pinned public client lineages
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-CLIENT-HITMAP-LINEAGE-R1.txt
+          python3 -m tools.stoneage_client_hitmap_lineage_probe > "$R"
+          test -s "$R"
+          grep -F 'COUNT|lineages|3' "$R"
+          grep -F 'COUNT|algorithm_closed_lineages|3' "$R"
+          grep -F 'COUNT|header_closed_lineages|3' "$R"
+          grep -F 'COUNT|explicit_sa25_marker_lineages|2' "$R"
+          grep -F 'COUNT|algorithm_feature_signatures|1' "$R"
+          grep -F 'COUNT|header_feature_signatures|1' "$R"
+          grep -F 'PROFILE|RECOVERED25_DESCENDANT_STABLE_CLIENT_HITMAP_R1|status=SUPPORTED_FOR_RECONSTRUCTION|exact_recovered25_binary_proof=0' "$R"
+          grep -F 'RESOLUTION|STONEAGE_CLIENT_HITMAP_DESCENDANT_STABLE_PROFILE_AUDITED' "$R"
+      - name: Commit derived provenance report
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-CLIENT-HITMAP-LINEAGE-R1.txt
+          if git diff --cached --quiet; then
+            echo 'Derived lineage report unchanged; nothing to commit.'
+          else
+            git commit -m 'research: audit client hit-map lineage'
+            git pull --rebase origin main
+            git push
+          fi
