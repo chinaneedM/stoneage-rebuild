@@ -1,0 +1,21 @@
+StoneAge fresh-start WarpMan bridge ItemShop route audit — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+PINNED_SOURCE_FACT|ItemShop purchase price=int(item_base_cost*buy_rate)|purchase_requires_available_inventory_slot=1
+RULE|required item ID, base/purchase prices, starting Stone, award fee, shop/NPC identities, coordinates and route floor IDs are withheld
+RULE|normal purchase means recovered ItemList visibility plus a fixed-descendant normal buy invocation path; LIMITSHOP-only behavior is not promoted as a purchase witness
+RULE|shop and WarpMan interaction endpoints use adjacent walkable cells (Chebyshev distance 1), so the route does not depend on the NPC facing the player at distance 2
+COUNT|failed_classic_hometowns|2
+COUNT|warpman_bridged_hometowns|2
+COUNT|unique_required_items|1
+COUNT|target_visible_shop_placements|2
+COUNT|normal_purchase_shop_placements|2
+STARTING_STONE|positive=1|amount_withheld=1
+AWARD_FEE|available=1|amount_withheld=1
+FRESH_START_BRIDGE_SHOP|ordinal=3|ordered_shops=1|affordable_ordered_shops=1|combined_budget_ordered_shops=1|unresolved_map_floors=0|amounts_and_route_withheld=1
+FRESH_START_BRIDGE_SHOP|ordinal=4|ordered_shops=1|affordable_ordered_shops=1|combined_budget_ordered_shops=1|unresolved_map_floors=0|amounts_and_route_withheld=1
+FRESH_START_ALL_FAILED_HOMETOWNS_ORDERED_SHOP_TO_WARPMAN|witness=1
+FRESH_START_ALL_FAILED_HOMETOWNS_AFFORDABLE_BRIDGE_ITEM|witness=1
+FRESH_START_ALL_FAILED_HOMETOWNS_STARTING_STONE_COVERS_SHOP_AND_AWARD|witness=1
+INVENTORY_CAPACITY_FOR_PURCHASE|closed=0|reason=fresh_start_empty_slot_count_not_joined_here
+RESOLUTION|SHADOWED_BRANCH_FRESH_START_WARPMAN_BRIDGE_SHOP_ROUTE_AUDITED
