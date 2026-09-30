@@ -15,6 +15,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_ESCAPE,
     BATTLE_COM_GUARD,
     BATTLE_COM_NONE,
+    BATTLE_COM_S_GBREAK,
     BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_GUARDIAN_GUARD,
     BATTLE_COM_S_MIGHTY,
@@ -1770,6 +1771,162 @@ class BattleRoundModelTests(unittest.TestCase):
         )
         self.assertTrue(result.events[0].guardian_redirected)
         self.assertFalse(any(event.is_counter for event in result.events))
+
+    def test_guardbreak_hits_guard_without_ordinary_guard_reduction(self):
+        pet=actor("pet","player","pet",attack=100,quick=100)
+        enemy=actor("enemy","enemy","enemy",hp=300,defense=70,quick=20)
+        guardbreak=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(BATTLE_COM_S_GBREAK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_GUARD),
+            },
+            {"pet":0,"enemy":0},
+        )
+        gb=resolve_ordinary_round(
+            guardbreak,
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(),"enemy":profile()},
+            attack_rolls={
+                "pet":OrdinaryAttackRolls(
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        ordinary=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_GUARD),
+            },
+            {"pet":0,"enemy":0},
+        )
+        normal=resolve_ordinary_round(
+            ordinary,
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(),"enemy":profile()},
+            attack_rolls={
+                "pet":OrdinaryAttackRolls(
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                    guard_roll_1_100=50,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        gb_event=gb.events[0]
+        normal_event=normal.events[0]
+        self.assertEqual(gb_event.command1,BATTLE_COM_S_GBREAK)
+        self.assertGreater(gb_event.damage,0)
+        self.assertGreater(gb_event.damage,normal_event.damage)
+
+    def test_guardbreak_non_guard_target_forces_miss_after_attackseq(self):
+        pet=actor("pet","player","pet",attack=100,quick=100)
+        enemy=actor("enemy","enemy","enemy",hp=300,quick=20)
+        prepared=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(BATTLE_COM_S_GBREAK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(),"enemy":profile()},
+            attack_rolls={
+                "pet":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        event=result.events[0]
+        self.assertEqual(event.result,"miss")
+        self.assertEqual(event.damage,0)
+        self.assertEqual(result.hp_by_participant_id["enemy"],300)
+
+    def test_guardbreak_confused_guard_forces_miss(self):
+        pet=actor("pet","player","pet",attack=100,quick=100)
+        enemy=actor("enemy","enemy","enemy",hp=300,quick=20)
+        prepared=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(BATTLE_COM_S_GBREAK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_GUARD),
+            },
+            {"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(),"enemy":profile()},
+            attack_rolls={
+                "pet":OrdinaryAttackRolls(
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            base_status_runtime_by_participant_id={
+                "pet":BaseBattleStatusRuntime(work_quick=100),
+                "enemy":BaseBattleStatusRuntime(
+                    status=BaseBattleStatusState(confusion=2),
+                    work_quick=20,
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        event=next(e for e in result.events if e.participant_id=="pet")
+        self.assertEqual(event.result,"miss")
+        self.assertEqual(event.damage,0)
+        self.assertEqual(result.hp_by_participant_id["enemy"],300)
+
+    def test_guardbreak_guardian_calculates_on_guardian_but_settles_original_guard(self):
+        pet=actor("pet","player","pet",attack=100,quick=100)
+        target=actor("target","enemy","enemy",hp=300,defense=70,quick=20)
+        guardian=actor(
+            "guardian","enemy","enemy",
+            hp=300,defense=20,quick=10,
+        )
+        prepared=prepare_battle_round(
+            (pet,target,guardian),
+            {
+                "pet":BattleCommand(BATTLE_COM_S_GBREAK,command2=10),
+                "target":BattleCommand(BATTLE_COM_GUARD),
+                "guardian":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"pet":0,"target":0,"guardian":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"pet":0,"target":10,"guardian":11},
+            profiles={
+                "pet":profile(),
+                "target":profile(),
+                "guardian":profile(),
+            },
+            attack_rolls={
+                "pet":OrdinaryAttackRolls(
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            guardian_registrations_by_defender_slot={
+                10:GuardianRegistration(guardian_slot=11)
+            },
+            defense_profile="newpower_70pct",
+        )
+        event=result.events[0]
+        self.assertTrue(event.guardian_redirected)
+        self.assertEqual(event.guardian_slot,11)
+        self.assertEqual(event.resolved_target_slot,10)
+        self.assertLess(result.hp_by_participant_id["target"],300)
+        self.assertEqual(result.hp_by_participant_id["guardian"],300)
 
     def test_mighty_dodge_modifier_adds_percent_points_before_physical_hit(self):
         pet=actor("pet","player","pet",attack=100,quick=100)
