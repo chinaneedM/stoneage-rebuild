@@ -1,6 +1,6 @@
 import contextlib,io,tempfile,unittest
 from pathlib import Path
-from tools.stoneage_encount_chain_probe import analyze,emit
+from tools.stoneage_encount_chain_probe import analyze,emit,parse_tactics_option
 from tools.stoneage_itemset_schema_probe import SCHEMA as ITEM_SCHEMA,INDEX as ITEM_INDEX
 
 def enemybase_row(tempno):
@@ -37,6 +37,19 @@ def encount_row(groupid):
     return ",".join(str(x) if x!=-1 else "" for x in vals)
 
 class EncountChainProbeTests(unittest.TestCase):
+    def test_tactics_parser_mirrors_permissive_wa_and_c_atoi(self):
+        parsed=parse_tactics_option(
+            "at:10;1;1;999|gu:1|es:1|wa:5;bogus"
+        )
+        self.assertTrue(parsed["valid"])
+        self.assertEqual(parsed["tags"],("at","es","gu","wa"))
+        self.assertEqual(parsed["positive_actions"],("at","gu","es","wa"))
+
+    def test_tactics_parser_rejects_missing_required_attack_suboption(self):
+        parsed=parse_tactics_option("at:10;1|wa:1")
+        self.assertFalse(parsed["valid"])
+        self.assertEqual(parsed["positive_actions"],("wa",))
+
     def test_full_chain(self):
         with tempfile.TemporaryDirectory() as td:
             root=Path(td);d=root/"data";d.mkdir()
