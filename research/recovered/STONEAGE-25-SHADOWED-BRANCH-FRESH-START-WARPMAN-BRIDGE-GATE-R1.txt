@@ -1,0 +1,18 @@
+StoneAge fresh-start WarpMan bridge gate-shape audit — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|only WarpMan edges selected by the coordinate bridge search are classified; raw operands, dialogue, coordinates, filenames and NPC identities are withheld
+RULE|gate shape is not a legal fresh-start proof; FREE predicates, fee sufficiency, dialogue/facing/action semantics and any party/time requirements remain separate until explicitly joined
+COUNT|checkparty_present:0|2
+COUNT|failed_classic_hometowns|2
+COUNT|free_kind:ITEM:edges|2
+COUNT|missing_argument_payloads|0
+COUNT|money_class:NEGATIVE_DISABLED|2
+COUNT|newtime_present:0|2
+COUNT|ordinary_route:CONDITION_DEPENDENT|2
+COUNT|selected_warpman_edges|2
+COUNT|warp_msg_required:0|2
+COUNT|warpman_bridged_hometowns|2
+FRESH_START_WARPMAN_BRIDGE_GATE|ordinal=3|path_edge_index=1|ordinary_route=CONDITION_DEPENDENT|newwarpman=0|warp_msg_required=0|checkparty_present=0|checkparty_explicit_false=0|free_present=1|free_allfree=0|paymsg_present=1|normalmsg_present=0|money_class=NEGATIVE_DISABLED|newtime_present=0|free_or_groups=1|free_condition_atoms=1|free_condition_kinds=ITEM
+FRESH_START_WARPMAN_BRIDGE_GATE|ordinal=4|path_edge_index=1|ordinary_route=CONDITION_DEPENDENT|newwarpman=0|warp_msg_required=0|checkparty_present=0|checkparty_explicit_false=0|free_present=1|free_allfree=0|paymsg_present=1|normalmsg_present=0|money_class=NEGATIVE_DISABLED|newtime_present=0|free_or_groups=1|free_condition_atoms=1|free_condition_kinds=ITEM
+RESOLUTION|SHADOWED_BRANCH_FRESH_START_WARPMAN_BRIDGE_GATE_SHAPE_AUDITED
