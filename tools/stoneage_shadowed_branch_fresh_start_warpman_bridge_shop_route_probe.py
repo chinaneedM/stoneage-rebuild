@@ -70,6 +70,25 @@ OUTPUT_RESOLUTION=(
     "RESOLUTION|SHADOWED_BRANCH_FRESH_START_WARPMAN_BRIDGE_SHOP_ROUTE_AUDITED"
 )
 
+FRESH_ITEM_CAPACITY=15
+STARTER_ITEM_CONFIG_SLOTS=15
+EVENT_ACTION_FIELDS=frozenset({
+    "ADDGOLD","DELGOLD","DELITEM","ADDITEM","DELPET","NEWDELPET","ADDPET",
+    "EVEND","EVNOW","EVENT_END","EVENT_NOW","EVCLR","CHANGEBBI",
+    "SETLASTTALKELDER","TOXICATION","GMACTION","SHOWGMQUE","DELGMQUEPET",
+    "GETGMPRIZE","CLEANGMQUE","CHECKNEWPLAYER","GETRANDITEM","ABULLSCORE",
+    "CHECKSCORE","ADDPFSKILLPOINT","CLEANPROFESSION","PROFESSION",
+    "TREASURE_EVENT","SETLEVEL","ADDEXPS","ADDSKILLPOINT","SETRIDETYPE",
+    "NPC_POINT","WARPPOINT",
+})
+
+
+@dataclass(frozen=True)
+class BridgeExecutionProfile:
+    ordinal:int
+    free_msg_present:bool
+    event_action_fields:tuple[str,...]
+
 
 @dataclass(frozen=True)
 class ShopPlacement:
@@ -113,6 +132,10 @@ class ShopRouteAudit:
     normal_purchase_shop_placements:int
     starting_stone_positive:bool
     award_fee_available:bool
+    starter_item_config_keys_present:int
+    starter_positive_item_configs:int
+    guaranteed_empty_item_slots:int
+    execution_profiles:tuple[BridgeExecutionProfile,...]
     witnesses:tuple[SpawnShopWitness,...]
 
     @property
@@ -126,6 +149,91 @@ class ShopRouteAudit:
     @property
     def all_combined_budget(self)->bool:
         return bool(self.witnesses) and all(row.combined_budget for row in self.witnesses)
+
+    @property
+    def inventory_slot_witness(self)->bool:
+        return (
+            self.starter_item_config_keys_present==STARTER_ITEM_CONFIG_SLOTS
+            and self.guaranteed_empty_item_slots>0
+        )
+
+    @property
+    def all_free_msg(self)->bool:
+        return (
+            len(self.execution_profiles)==self.warpman_bridged_hometowns
+            and bool(self.execution_profiles)
+            and all(row.free_msg_present for row in self.execution_profiles)
+        )
+
+    @property
+    def action_stage_inert(self)->bool:
+        return (
+            len(self.execution_profiles)==self.warpman_bridged_hometowns
+            and bool(self.execution_profiles)
+            and all(not row.event_action_fields for row in self.execution_profiles)
+        )
+
+    @property
+    def execution_prerequisites(self)->bool:
+        return (
+            self.all_ordered
+            and self.all_affordable
+            and self.all_combined_budget
+            and self.inventory_slot_witness
+            and self.all_free_msg
+            and self.action_stage_inert
+        )
+
+
+def _starter_inventory(setup:Path)->tuple[int,int,int]:
+    values={}
+    for raw in setup.read_bytes().splitlines():
+        line=raw.split(b"#",1)[0].strip()
+        if not line or b"=" not in line:
+            continue
+        key,value=line.split(b"=",1)
+        name=key.strip().upper()
+        if not name.startswith(b"ITEM"):
+            continue
+        suffix=name[4:]
+        if not suffix.isdigit():
+            continue
+        index=int(suffix)
+        if not 1<=index<=STARTER_ITEM_CONFIG_SLOTS:
+            continue
+        parsed=_int_prefix(value)
+        if parsed is None:
+            raise ValueError("starter ITEM value is not parseable")
+        if index in values and values[index]!=int(parsed):
+            raise ValueError("conflicting starter ITEM values")
+        values[index]=int(parsed)
+    present=len(values)
+    positive=sum(value>0 for value in values.values())
+    guaranteed=(
+        max(0,FRESH_ITEM_CAPACITY-positive)
+        if present==STARTER_ITEM_CONFIG_SLOTS
+        else 0
+    )
+    return present,positive,guaranteed
+
+
+def _bridge_execution_profile(
+    ordinal:int,
+    data:bytes,
+)->BridgeExecutionProfile:
+    keys=set()
+    for token in data.split(b"|"):
+        token=token.strip()
+        if b":" not in token:
+            continue
+        key,_value=token.split(b":",1)
+        keys.add(key.strip().decode("ascii","replace").upper())
+    actions=tuple(sorted(keys & EVENT_ACTION_FIELDS))
+    return BridgeExecutionProfile(
+        ordinal=int(ordinal),
+        free_msg_present=(_field(data,b"FreeMsg") is not None),
+        event_action_fields=actions,
+    )
 
 
 def _target_item_cost(paths:tuple[Path,...],target_item:int)->int:
@@ -412,6 +520,14 @@ def analyze(
         raise ValueError("bridge requirements are not one shared ITEM equality")
     target_item=next(iter(item_ids))
 
+    starter_present,starter_positive,guaranteed_empty=_starter_inventory(setup)
+    execution_profiles=[]
+    for ordinal in sorted(edge_by_ordinal):
+        data=edge_by_ordinal[ordinal].argument_data
+        if data is None:
+            raise ValueError("selected WarpMan edge lacks argument data")
+        execution_profiles.append(_bridge_execution_profile(ordinal,data))
+
     item_paths=_configured_itemset_paths(setup,data_dir)
     active_item_ids=_item_ids(item_paths)
     if target_item not in active_item_ids:
@@ -525,6 +641,10 @@ def analyze(
         normal_purchase_shop_placements=len(normal_shops),
         starting_stone_positive=initial_stone>0,
         award_fee_available=award_fee is not None,
+        starter_item_config_keys_present=starter_present,
+        starter_positive_item_configs=starter_positive,
+        guaranteed_empty_item_slots=guaranteed_empty,
+        execution_profiles=tuple(execution_profiles),
         witnesses=tuple(witnesses),
     )
 
@@ -536,6 +656,14 @@ def emit(audit:ShopRouteAudit)->None:
     print(
         "PINNED_SOURCE_FACT|ItemShop purchase price=int(item_base_cost*buy_rate)|"
         "purchase_requires_available_inventory_slot=1"
+    )
+    print(
+        "PINNED_SOURCE_FACT|fresh_item_capacity=15|starter_item_config_slots=15|"
+        "fresh_inventory_initially_empty=1|starter_loop_adds_at_most_one_item_per_slot=1"
+    )
+    print(
+        "PINNED_SOURCE_FACT|fresh_login_party_mode=NONE|ordinary_WarpMan_FREE_is_rechecked="
+        "1|ordinary_WarpMan_FREE_success_requires_FreeMsg=1"
     )
     print(
         "RULE|required item ID, base/purchase prices, starting Stone, award fee, "
@@ -564,6 +692,21 @@ def emit(audit:ShopRouteAudit)->None:
     )
     print(f"STARTING_STONE|positive={int(audit.starting_stone_positive)}|amount_withheld=1")
     print(f"AWARD_FEE|available={int(audit.award_fee_available)}|amount_withheld=1")
+    print(
+        "STARTER_INVENTORY|"
+        f"config_keys_present={audit.starter_item_config_keys_present}|"
+        f"positive_item_configs={audit.starter_positive_item_configs}|"
+        f"guaranteed_empty_slots={audit.guaranteed_empty_item_slots}|"
+        "item_ids_withheld=1"
+    )
+    for row in audit.execution_profiles:
+        print(
+            "FRESH_START_BRIDGE_EXECUTION|"
+            f"ordinal={row.ordinal}|"
+            f"free_msg_present={int(row.free_msg_present)}|"
+            f"event_action_fields={len(row.event_action_fields)}|"
+            f"event_action_kinds={','.join(row.event_action_fields) if row.event_action_fields else 'NONE'}"
+        )
     for row in audit.witnesses:
         print(
             "FRESH_START_BRIDGE_SHOP|"
@@ -587,8 +730,24 @@ def emit(audit:ShopRouteAudit)->None:
         f"{int(audit.all_combined_budget)}"
     )
     print(
-        "INVENTORY_CAPACITY_FOR_PURCHASE|closed=0|"
-        "reason=fresh_start_empty_slot_count_not_joined_here"
+        "FRESH_START_PURCHASE_INVENTORY_SLOT|witness="
+        f"{int(audit.inventory_slot_witness)}"
+    )
+    print(
+        "FRESH_START_SELECTED_WARPMAN_FREE_MSG|witness="
+        f"{int(audit.all_free_msg)}"
+    )
+    print(
+        "FRESH_START_SELECTED_WARPMAN_ACTION_STAGE_INERT|witness="
+        f"{int(audit.action_stage_inert)}"
+    )
+    print(
+        "FRESH_START_ALL_FAILED_HOMETOWNS_WARPMAN_EXECUTION_PREREQUISITES|witness="
+        f"{int(audit.execution_prerequisites)}"
+    )
+    print(
+        "RULE|execution prerequisite witness remains existential with respect to "
+        "any recovered random WARP destination choice; it is not a guaranteed-RNG claim"
     )
     print(OUTPUT_RESOLUTION)
 
