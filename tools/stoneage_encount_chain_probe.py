@@ -101,7 +101,30 @@ def choose_enemy_prefix(rows):
 AI_OPTION_ARITY={"at":3,"gu":1,"ma":1,"es":1,"wa":7,"rn":1}
 AI_ACTION_TAGS=("at","gu","ma","es","wa")
 
+def _c_atoi(text):
+    text=str(text).lstrip()
+    if not text:
+        return 0
+    sign=1
+    if text[0] in "+-":
+        if text[0]=="-":
+            sign=-1
+        text=text[1:]
+    digits=[]
+    for ch in text:
+        if not ch.isdigit():
+            break
+        digits.append(ch)
+    return sign*int("".join(digits),10) if digits else 0
+
 def parse_tactics_option(text):
+    """Parse only the option reads performed by stable BATTLE_ai_normal.
+
+    at/gu/ma/es require every source-read suboption to exist. wa is different:
+    the C loop explicitly tolerates missing suboptions and leaves those weights
+    at zero. Extra delimited values are ignored because the source never reads
+    them. atoi semantics are mirrored for the consumed fields.
+    """
     text=str(text)
     values={}
     unknown=[]
@@ -111,7 +134,7 @@ def parse_tactics_option(text):
         if not raw:
             continue
         if ":" not in raw:
-            malformed=True
+            unknown.append(raw)
             continue
         tag,payload=raw.split(":",1)
         tag=tag.strip()
@@ -121,13 +144,18 @@ def parse_tactics_option(text):
         if tag not in AI_OPTION_ARITY:
             unknown.append(tag)
             continue
-        if len(parts)!=AI_OPTION_ARITY[tag]:
+        arity=AI_OPTION_ARITY[tag]
+        if tag=="wa":
+            consumed=parts[:arity]
+            values[tag]=tuple(
+                [_c_atoi(part) for part in consumed]
+                + [0]*(arity-len(consumed))
+            )
+            continue
+        if len(parts)<arity:
             malformed=True
             continue
-        try:
-            values[tag]=tuple(int(part or "0",10) for part in parts)
-        except ValueError:
-            malformed=True
+        values[tag]=tuple(_c_atoi(part) for part in parts[:arity])
     positive=[]
     for tag in AI_ACTION_TAGS:
         vals=values.get(tag,())
@@ -137,7 +165,7 @@ def parse_tactics_option(text):
         if weight>0:
             positive.append(tag)
     return {
-        "valid":not malformed and not unknown,
+        "valid":not malformed,
         "tags":tuple(sorted(values)),
         "unknown_tags":tuple(sorted(set(unknown))),
         "positive_actions":tuple(positive),
