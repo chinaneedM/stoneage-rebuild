@@ -5,8 +5,8 @@ PINNED_SOURCE_FACT|defeated_enemy_exp_level_difference_floor=1|computed_enemy_ex
 RULE|birth/target levels, EXP values, enemy/group ids, encounter coordinates and route floor ids are withheld
 RULE|qualifying encounter source must be coordinate-reachable, have positive encounter/group/enemy weights, use an effective loaded group, require no appear/not-appear item gate, and resolve to a positive-EXP enemy variant
 RULE|this closes reward-source mechanics only; it does not yet prove that the fresh character can win a qualifying battle
-COUNT|repeatable_positive_exp_sources|308
-COUNT|sources_with_enemy_spawn_at_or_below_birth_level|34
+COUNT|repeatable_positive_exp_sources|2022
+COUNT|sources_with_enemy_spawn_at_or_below_birth_level|106
 COUNT|source_hometowns|4
 COUNT|unresolved_map_floors|0
 LEVEL_TARGET|above_birth=1|exp_rows_complete=1|exp_rows_positive=1|values_withheld=1
