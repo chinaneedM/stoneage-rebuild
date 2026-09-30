@@ -35,6 +35,37 @@ This preserves the evidence boundary already established by the collision models
 
 After that verdict is supplied, classic overlap-Warp behavior is delegated to the existing `resolve_player_walk` historical world implementation. The coordinator does not create a second Warp implementation.
 
+
+
+## 2A. Unified recovered25 collision and live occupancy
+
+The canonical recovered25 movement entry point is `walk_one_cell_with_runtime_collision()`.
+
+It preserves two independent gates and their provenance:
+
+1. **static routed collision** — selected per floor by the recovered25 collision router:
+   - recovered server LS2MAP + recovered mapset where that evidence is closed;
+   - recovered client DAT + ADRN under the explicitly labelled descendant-stable reconstruction profile for server gaps;
+2. **dynamic live-object occupancy** — evaluated only after static entry succeeds using the stable-descendant target-cell overability rule.
+
+The live occupancy gate accepts explicit `DynamicOccupant` values for the destination cell:
+
+- non-overable character -> blocked;
+- non-overable item -> blocked;
+- gold -> does not block in the inspected switch;
+- overable character/item -> does not block.
+
+A dynamic occupant can never override a static collision denial. Conversely, static walkability does not imply that the destination is free of live blockers.
+
+The returned `LocalRuntimeWalkResult` retains both evidence surfaces separately:
+
+- static collision provider kind / evidence class / semantic profile / exact-binary-proof flag;
+- static collision decision;
+- dynamic collision decision;
+- dynamic occupancy profile and evidence class.
+
+This keeps recovered client hit-map semantics distinct from descendant live-object overlap semantics rather than merging them into a synthetic collision model.
+
 ## 3. State-gated dialogue transitions
 
 The three current recovered25 conditional transitions remain outside the unconditional classic-Warp graph.
