@@ -21,6 +21,7 @@ def enemy_row(enemy_id, tempno, *, lv_min=1, lv_max=1, create_max=1, petflg=1):
         "CREATEMAXNUM": create_max,
         "CREATEMINNUM": 1,
         "TACTICS": 1,
+        "TACTICSOPTION": "at:10;1;1|gu:1|es:1",
         "EXP": -1,
         "DUELPOINT": 0,
         "STYLE": 0,
@@ -42,6 +43,14 @@ class Taiwan25EncounterBridgeTests(unittest.TestCase):
         self.assertEqual(enemy.choose_level(2), 5)
         with self.assertRaises(ValueError):
             enemy.choose_level(3)
+
+    def test_enemy_variant_preserves_tactics_option_for_ai_boundary(self):
+        enemy = EnemyVariantBridge.from_enemy(enemy_row(700, 88))
+        self.assertEqual(enemy.tactics, 1)
+        self.assertEqual(
+            enemy.tactics_option,
+            "at:10;1;1|gu:1|es:1",
+        )
 
     def test_enemy_variant_preserves_ten_item_probability_slots(self):
         row=enemy_row(700,88)
