@@ -25,7 +25,10 @@ jobs:
         run: |
           set -euo pipefail
           R=research/recovered/STONEAGE-25-NPC-OVERABILITY-LINEAGE-R1.txt
-          python3 -m tools.stoneage_npc_overability_lineage_probe             --binding-report research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt             > "$R"
+          python3 -m tools.stoneage_npc_overability_lineage_probe \
+            --binding-report research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt \
+            --template-profile-report research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-PROFILES-R1.txt \
+            > "$R"
           test -s "$R"
           grep -F 'COUNT|placements|3856' "$R"
           grep -F 'COUNT|placements:STATIC_OVERABLE|2264' "$R"
