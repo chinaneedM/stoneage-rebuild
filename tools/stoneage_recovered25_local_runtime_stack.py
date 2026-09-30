@@ -35,9 +35,6 @@ from tools.stoneage_recovered25_client_collision_provider import (
 from tools.stoneage_recovered25_collision_router import (
     Recovered25CollisionRouter,
 )
-from tools.stoneage_recovered25_collision_router import (
-    Recovered25CollisionRouter,
-)
 from tools.stoneage_recovered25_server_collision_provider import (
     Recovered25ServerCollisionProvider,
 )
@@ -61,7 +58,6 @@ class Recovered25LocalRuntimeStack:
     fresh_start_factory: Recovered25FreshStartFactory
     collision_provider: Recovered25ServerCollisionProvider | None = None
     client_collision_provider: Recovered25ClientCollisionProvider | None = None
-    collision_router: Recovered25CollisionRouter | None = None
     collision_router: Recovered25CollisionRouter | None = None
 
     @classmethod
@@ -168,12 +164,6 @@ class Recovered25LocalRuntimeStack:
                 raise ValueError(
                     "server/client collision floor sets do not close topology"
                 )
-            if self.collision_router is None:
-                raise ValueError(
-                    "closed server/client collision providers require router"
-                )
-            if self.collision_router.floor_ids != topology:
-                raise ValueError("collision router/topology floor-set drift")
             if self.collision_router is None:
                 raise ValueError(
                     "client collision provider requires collision router"
