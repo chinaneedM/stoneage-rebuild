@@ -4054,3 +4054,29 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_WORLD_PROFILE_ADAPTER_R1 = CLOSED.**
 - The concrete recovered25 map-plane source is already independently closed as `RECOVERED25_REGION_PAYLOAD_SOURCE_R1`.
 - Next Phase-1 priority: compose these two closed layers into a single engine-neutral **recovered25 local runtime stack**. The stack must use the concrete DAT/LS2MAP region provider rather than descriptor-only materialization, retain all three dynamic state-gated transition bindings, expose all four fresh starts, and pass one bundle-backed bootstrap -> fresh-start -> concrete region -> gate evaluation -> local save/load smoke. Do not choose a rendering engine and do not recreate legacy MMO services.
+
+
+## Phase 1 concrete recovered25 local runtime stack — 2026-09-30
+
+- The closed runtime-bootstrap contract, recovered25 world-profile adapter and concrete DAT/LS2MAP region source are now composed behind one engine-neutral implementation entry point:
+  - `tools/stoneage_recovered25_local_runtime_stack.py`;
+  - `tools/stoneage_recovered25_local_runtime_stack_smoke.py`;
+  - `tests/test_stoneage_recovered25_local_runtime_stack.py`.
+- The stack owns no renderer and recreates no legacy MMO/account transport. It composes:
+  - the version-tagged `recovered25` bootstrap profile;
+  - the provenance-bearing **826-floor** topology;
+  - the concrete recovered map-plane provider;
+  - all **4** fresh-start seeds;
+  - all **3** current recovered dynamic state-gated transition bindings/evaluations;
+  - the versioned local runtime-session envelope.
+- Bundle-backed validation uses the hash-pinned preservation bundle and exercises actual recovered data rather than descriptor-only fixtures:
+  - fresh-start concrete regions materialized = **4 / 4**;
+  - representative recovered payload formats exercised = **2 / 2** (client DAT three-plane + server LS2MAP two-plane);
+  - state-gated legal witness decisions = **3 / 3**;
+  - local session encode/decode round-trip = **closed**;
+  - materializable floors remain **826**.
+- Derived aggregate report: `research/recovered/STONEAGE-25-LOCAL-RUNTIME-STACK-R1.txt`.
+- Validation: GitHub Actions **36714435213 = PASS**; derived-report commit = `4a497ae24006f217fffda07ce8ac839700682d81`.
+- Provenance boundary remains unchanged: historical foundation = Taiwan/Waei v1.0; runtime world = recovered25; recovered25 evidence role = `LATER_RECOVERED`.
+- **RECOVERED25_LOCAL_RUNTIME_STACK_R1 = CLOSED.**
+- Next Phase-1 priority: add a minimal engine-neutral **local runtime session coordinator** above this stack. It should provide new-game/continue/save boundaries, materialize the current concrete region, execute ordinary one-cell movement only from an explicit collision verdict, preserve existing classic overlap-Warp semantics, and execute a state-gated dialogue transition only when the current coordinate lies inside its recovered source rectangle and the live gate evaluator allows it. Do not invent collision metadata, renderer behavior, UI, network services or account services.
