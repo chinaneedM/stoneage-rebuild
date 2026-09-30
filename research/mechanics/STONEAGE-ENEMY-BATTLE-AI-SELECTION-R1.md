@@ -208,10 +208,14 @@ explicit-RNG rule.
   skill-slot layouts; positive skill IDs cannot be compacted safely.
 - The recovered25 pet-skill runtime resolves every positive enemybase skill
   reference: 147 active skill rows, 111 referenced skill IDs, 0 unresolved.
-- The first executable `wa` subset is intentionally limited to
-  `PETSKILL_None`, `PETSKILL_NormalAttack` and
-  `PETSKILL_NormalGuard`. Empty slots, unresolved IDs and every other
-  callback fail closed.
+- The first executable `wa` subset admitted `PETSKILL_None`,
+  `PETSKILL_NormalAttack` and `PETSKILL_NormalGuard`.
+- `PETSKILL_StatusChange` is now additionally admitted after hash-pinned
+  recovered25 proof that all six referenced OPTION rows have CP950/Big5 decode
+  consensus and match the fixed ordinary-status grammar.
+- StatusChange carries recovered command-setup effects and uses only explicit
+  target status profiles / status RNG. Empty slots, unresolved IDs and every
+  other callback continue to fail closed.
 - `BATTLE_COM_NONE` is preserved as its own source-shaped no-action command;
   it is not rewritten to WAIT.
 - Recovered25 aggregate runtime validation remains
@@ -228,7 +232,7 @@ Current rule:
 - caller-supplied enemy commands remain valid at the low-level explicit-command
   coordinator seam;
 - automatic common-normal generation is permitted only for the evidence-closed
-  ATTACK/GUARD/ESCAPE/basic-`wa` subset described above;
+  ATTACK/GUARD/ESCAPE/basic-`wa`/StatusChange subset described above;
 - an unsupported selected `wa` callback is an error, never an implicit ATTACK,
   GUARD, NONE or WAIT fallback;
 - a selected `ma` path still resolves to no common decision, matching the
