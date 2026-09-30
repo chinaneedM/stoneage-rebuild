@@ -29,6 +29,9 @@ from tools.stoneage_local_runtime_core import (
 from tools.stoneage_recovered25_region_payload import (
     Recovered25RegionPayloadSource,
 )
+from tools.stoneage_recovered25_server_collision_provider import (
+    Recovered25ServerCollisionProvider,
+)
 from tools.stoneage_recovered25_world_profile_adapter import (
     Recovered25FreshStartFactory,
     Recovered25TransitionBindingResolver,
@@ -47,6 +50,7 @@ class Recovered25LocalRuntimeStack:
     transition_resolver: Recovered25TransitionBindingResolver
     transition_evaluator: Recovered25TransitionGateEvaluator
     fresh_start_factory: Recovered25FreshStartFactory
+    collision_provider: Recovered25ServerCollisionProvider | None = None
 
     @classmethod
     def from_verified_bundle(
@@ -81,6 +85,12 @@ class Recovered25LocalRuntimeStack:
         )
         evaluator = Recovered25TransitionGateEvaluator(profile)
         factory = Recovered25FreshStartFactory(adapter, player_state_factory)
+        collision_provider = Recovered25ServerCollisionProvider(
+            profile=profile,
+            adapter=adapter,
+            server_map_root=server_map_root,
+            mapset_path=mapset_path,
+        )
         stack = cls(
             profile=profile,
             world_adapter=adapter,
@@ -88,6 +98,7 @@ class Recovered25LocalRuntimeStack:
             transition_resolver=resolver,
             transition_evaluator=evaluator,
             fresh_start_factory=factory,
+            collision_provider=collision_provider,
         )
         stack._validate()
         return stack
@@ -101,6 +112,13 @@ class Recovered25LocalRuntimeStack:
             raise ValueError("runtime stack transition-set drift")
         if self.region_provider.plan.floor_ids != frozenset(self.world_adapter.topology.maps):
             raise ValueError("runtime stack payload/topology floor-set drift")
+        if self.collision_provider is not None:
+            if self.collision_provider.profile.contract_id != self.profile.contract_id:
+                raise ValueError("runtime stack collision-provider contract drift")
+            if frozenset(self.collision_provider.floors) != frozenset(
+                self.world_adapter.topology.maps
+            ):
+                raise ValueError("runtime stack collision/topology floor-set drift")
 
     def create_fresh_start(self, hometown_ordinal: int) -> FreshStartSeed:
         return self.fresh_start_factory.create_fresh_start(
