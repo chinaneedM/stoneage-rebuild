@@ -1,0 +1,12 @@
+StoneAge recovered25 region payload source audit — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|raw map planes are transient and are not written to this report
+RULE|server LS2MAP has tile/object planes only; event semantics remain a separate world layer and are never fabricated as zero cells
+COUNT|client_dat_three_plane_floors|761
+COUNT|event_plane_present_floors|761
+COUNT|event_plane_separate_floors|65
+COUNT|materializable_floors|826
+COUNT|server_ls2map_two_plane_floors|65
+SAMPLE_SOURCE_KINDS|client_dat=1|server_ls2map=1
+RESOLUTION|RECOVERED25_REGION_PAYLOAD_SOURCE_CLOSED
