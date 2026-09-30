@@ -10,6 +10,8 @@ from tools.stoneage_local_application_facade import (
 from tools.stoneage_local_runtime_core import (
     LocalRuntimeSessionState,
     MaterializedWorldRegion,
+    ResolvedTransitionBinding,
+    TransitionGateDecision,
     WorldRegionRequest,
     load_runtime_bootstrap_file,
 )
@@ -51,6 +53,19 @@ class _Stack:
                 ),
             )
         )
+        self.bindings = {
+            transition_id: ResolvedTransitionBinding(
+                transition_id=transition_id,
+                source=MapPosition(1, 2, 2),
+                destination=MapPosition(1, 2, 1),
+                predicate_payload={
+                    "interaction_kind": "DIALOGUE_WARPMAN",
+                    "source_rect": (2, 2, 2, 2),
+                },
+                provenance={"source_profile": "test"},
+            )
+            for transition_id in profile.transitions
+        }
 
     def create_fresh_start(self, ordinal):
         return SimpleNamespace(
@@ -81,10 +96,14 @@ class _Stack:
         )
 
     def resolve_transition(self, transition_id):
-        raise AssertionError("no interaction expected in facade base smoke")
+        return self.bindings[str(transition_id)]
 
     def evaluate_transition(self, transition_id, session):
-        raise AssertionError("no interaction expected in facade base smoke")
+        return TransitionGateDecision(
+            allowed=True,
+            reason="test gate allowed",
+            consumed_state={},
+        )
 
 
 class LocalApplicationFacadeTests(unittest.TestCase):
