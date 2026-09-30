@@ -80,20 +80,21 @@ class LocalRuntimeOccupancyDelta:
         if registry_profile_id != LIVE_OCCUPANCY_STATE_PROFILE:
             raise ValueError("occupancy registry profile drift")
 
-        removed = tuple(
-            sorted(
-                {
-                    _nonempty(value, "removed occupancy object id")
-                    for value in self.removed_base_object_ids
-                }
-            )
+        removed_raw = tuple(
+            _nonempty(value, "removed occupancy object id")
+            for value in self.removed_base_object_ids
         )
-        upserts = tuple(sorted(tuple(self.upserts), key=lambda row: row.object_id))
-        if any(not isinstance(row, LiveRuntimeObject) for row in upserts):
+        if len(removed_raw) != len(set(removed_raw)):
+            raise ValueError("duplicate removed occupancy object id")
+        removed = tuple(sorted(removed_raw))
+
+        upserts_raw = tuple(self.upserts)
+        if any(not isinstance(row, LiveRuntimeObject) for row in upserts_raw):
             raise TypeError("occupancy upserts must be LiveRuntimeObject values")
-        ids = [row.object_id for row in upserts]
+        ids = [row.object_id for row in upserts_raw]
         if len(ids) != len(set(ids)):
             raise ValueError("duplicate occupancy upsert object id")
+        upserts = tuple(sorted(upserts_raw, key=lambda row: row.object_id))
         if set(removed) & set(ids):
             raise ValueError("occupancy object cannot be both removed and upserted")
 
