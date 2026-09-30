@@ -8,6 +8,7 @@ on:
       - tools/stoneage_npc_overability_lineage_probe.py
       - tests/test_stoneage_npc_overability_lineage_probe.py
       - research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt
+      - research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-PROFILES-R1.txt
 
 permissions:
   contents: write
@@ -27,6 +28,11 @@ jobs:
           python3 -m tools.stoneage_npc_overability_lineage_probe             --binding-report research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt             > "$R"
           test -s "$R"
           grep -F 'COUNT|placements|3856' "$R"
+          grep -F 'COUNT|placements:STATIC_OVERABLE|2264' "$R"
+          grep -F 'COUNT|placements:INHERITED_DEFAULT_OVERABLE|1592' "$R"
+          grep -F 'COUNT|placements:UNRESOLVED|0' "$R"
+          grep -F 'DEFAULT_CHAR_ISOVERED|value=1|lineages=3' "$R"
+          grep -F 'TEMPLATE_DIRECT_CALLBACK_OVERRIDES|count=0' "$R"
           grep -F 'RESOLUTION|RECOVERED25_NPC_OVERABILITY_LINEAGE_AUDITED' "$R"
       - name: Commit derived overability report
         run: |
