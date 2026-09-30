@@ -1771,6 +1771,7 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                         dodge_roll_1_10000=10000,
                         critical_roll_1_10000=10000,
                         damage_roll=0,
+                        guard_roll_1_100=1,
                         minimum_damage_roll_0_1=1,
                     )
                 },
