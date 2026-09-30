@@ -3,6 +3,7 @@ import unittest
 from tools.stoneage_shadowed_branch_fresh_start_combat_probe import (
     _coordinate_valid_ordinals,
     _max_physical_damage,
+    _normal_ai_attack_weight,
     _player_profiles,
 )
 
@@ -16,6 +17,12 @@ FRESH_START_COORDINATE_WITNESS|ordinal=2|reachable=0|warp_hops=-1
 FRESH_START_COORDINATE_WITNESS|ordinal=3|reachable=1|warp_hops=2
 """
         self.assertEqual(_coordinate_valid_ordinals(text),frozenset({1,3}))
+
+    def test_normal_ai_attack_weight_reads_fixed_tactics_grammar(self):
+        self.assertEqual(_normal_ai_attack_weight(b"at:10;1;1|gu:1|es:1"),10)
+        self.assertEqual(_normal_ai_attack_weight("gu:1|at:0;1;1|wa:5;0;0"),0)
+        self.assertEqual(_normal_ai_attack_weight("gu:1|wa:5;0;0"),0)
+        self.assertEqual(_normal_ai_attack_weight("at:not-a-number;1;1|gu:1"),0)
 
     def test_max_physical_damage_uses_legal_top_roll(self):
         # Below defense, source RAND(0,1) permits one point.

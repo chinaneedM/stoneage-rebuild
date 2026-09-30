@@ -20,10 +20,13 @@ combat solver.  A qualifying witness must use:
 - one successful ordinary hit whose fixed-descendant damage is at least the
   enemy's full HP.
 
-Because fixed-descendant ordinary dodge is capped below 100% for an enemy with
-no passive pet skills, a successful hit is a legal RNG outcome.  This proves
-existence of a fresh-character battle victory path, not guaranteed victory or
-balance quality.
+Fixed-descendant normal enemy AI chooses among weighted attack/guard/magic/
+escape/skill branches.  A template merely having skills does not force their
+use: a positive `at` weight makes ordinary attack a legal command outcome.
+A one-hit kill also suppresses the later counter chain because the defender is
+already dead.  Ordinary dodge remains below 100%, so a successful hit is a
+legal RNG outcome.  This proves existence of a fresh-character battle victory
+path, not guaranteed victory or balance quality.
 """
 
 from __future__ import annotations
@@ -43,6 +46,9 @@ from tools.stoneage_battle_core_model import (
     physical_base_damage,
 )
 from tools.stoneage_encount_chain_probe import (
+    ENEMY_INT_COUNT,
+    choose_enemy_prefix,
+    clean_rows,
     configured_file,
     setup_values,
 )
@@ -81,6 +87,41 @@ def _coordinate_valid_ordinals(text:str)->frozenset[int]:
         if fields.get("reachable")=="1":
             out.add(int(fields["ordinal"]))
     return frozenset(out)
+
+
+def _normal_ai_attack_weight(option:bytes|str)->int:
+    """Return the fixed-descendant normal-AI `at` branch weight."""
+    if isinstance(option,bytes):
+        text=option.decode("utf-8","replace")
+    else:
+        text=str(option)
+    for segment in text.split("|"):
+        key,sep,payload=segment.partition(":")
+        if sep and key.strip()=="at":
+            head=payload.split(";",1)[0].strip()
+            try:
+                return max(0,int(head or "0"))
+            except ValueError:
+                return 0
+    return 0
+
+
+def _normal_ai_profiles(enemy_path:Path)->dict[int,tuple[int,int]]:
+    """Map enemy id -> (WORKTACTICS mode, ordinary-attack branch weight)."""
+    rows=clean_rows(enemy_path)
+    prefix=choose_enemy_prefix(rows)
+    expected=prefix+ENEMY_INT_COUNT
+    out={}
+    for row in rows:
+        if len(row)!=expected:
+            continue
+        try:
+            enemy_id=int(row[prefix].strip() or b"0",10)
+            tactics_mode=int(row[prefix+6].strip() or b"0",10)
+        except ValueError:
+            continue
+        out[enemy_id]=(tactics_mode,_normal_ai_attack_weight(row[1]))
+    return out
 
 
 def _template_from_row(row:dict)->PetTemplateBridge:
@@ -156,7 +197,7 @@ class CombatAudit:
     coordinate_valid_hometowns:int
     low_level_source_rows:int
     unique_candidate_variants:int
-    skill_free_candidate_variants:int
+    ordinary_attack_candidate_variants:int
     one_hit_witnesses:tuple[OneHitWitness,...]
 
     @property
@@ -211,11 +252,15 @@ def analyze(
     ]
 
     config=setup_values(setup)
+    enemy_path=configured_file(data_dir,config,"enemyfile",["enemy*.txt"])
     enemybase_path=configured_file(
         data_dir,config,"enemybasefile",["enemybase*.txt"]
     )
+    if enemy_path is None:
+        raise ValueError("active enemy file missing")
     if enemybase_path is None:
         raise ValueError("active enemybase file missing")
+    normal_ai_by_enemy=_normal_ai_profiles(enemy_path)
     base_rows,_fc,_bad,_raw,_profiles=parse_enemybase_file(enemybase_path)
     base_by_tempno={int(row["TEMPNO"]):row for row in base_rows}
 
@@ -228,18 +273,22 @@ def analyze(
 
     player_profiles=tuple(_player_profiles())
     witnesses=[]
-    skill_free=0
+    ordinary_attack_candidates=0
 
     for (_enemy_id,tempno,min_level),source in unique_variants.items():
         raw_template=base_by_tempno.get(int(tempno))
         if raw_template is None:
             continue
         template=_template_from_row(raw_template)
-        # Remove pet-skill/automatic-counter complications from this strong
-        # sufficient witness.  Plenty of candidates may remain.
-        if template.skill_ids or int(raw_template["COUNTER"])!=0:
+        # Fixed battle_ai normal mode selects actions by weights in the enemy
+        # TACTICSOPTION string.  Skill inventory is only consulted if a wa
+        # branch wins that draw.  Counter cannot fire after a lethal first hit.
+        tactics_mode,attack_weight=normal_ai_by_enemy.get(
+            int(source.enemy_id),(-1,0)
+        )
+        if tactics_mode!=1 or attack_weight<=0:
             continue
-        skill_free+=1
+        ordinary_attack_candidates+=1
 
         best=None
         for rolls in _allocation_roll_sequences():
@@ -317,7 +366,7 @@ def analyze(
         coordinate_valid_hometowns=len(valid_ordinals),
         low_level_source_rows=len(sources),
         unique_candidate_variants=len(unique_variants),
-        skill_free_candidate_variants=skill_free,
+        ordinary_attack_candidate_variants=ordinary_attack_candidates,
         one_hit_witnesses=tuple(witnesses),
     )
 
@@ -328,7 +377,8 @@ def emit(audit:CombatAudit)->None:
     print("EVIDENCE_ROLE|LATER_RECOVERED")
     print(
         "PINNED_SOURCE_CONTROL|battle_newpower_enabled=1|"
-        "npcenemy_addpower_enabled=1|ordinary_dodge_cap_percent=75"
+        "npcenemy_addpower_enabled=1|ordinary_dodge_cap_percent=75|"
+        "normal_enemy_ai_weighted_actions=1|counter_requires_surviving_target=1"
     )
     print(
         "RULE|enemy/group/template ids, levels, stats, coordinates, player "
@@ -350,8 +400,8 @@ def emit(audit:CombatAudit)->None:
     print(f"COUNT|low_level_source_rows|{audit.low_level_source_rows}")
     print(f"COUNT|unique_candidate_variants|{audit.unique_candidate_variants}")
     print(
-        "COUNT|skill_free_counter_free_candidate_variants|"
-        f"{audit.skill_free_candidate_variants}"
+        "COUNT|ordinary_attack_ai_candidate_variants|"
+        f"{audit.ordinary_attack_candidate_variants}"
     )
     print(f"COUNT|one_hit_witness_variants|{len(audit.one_hit_witnesses)}")
     print(
