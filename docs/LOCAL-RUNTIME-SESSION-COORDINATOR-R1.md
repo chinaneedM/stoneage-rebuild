@@ -88,7 +88,7 @@ Recovered25LocalRuntimeStack carries this manifest, and LocalRuntimeSessionCoord
 
 This does not merge NPC occupancy into static collision. The movement result continues to expose static routing provenance separately from dynamic occupancy provenance.
 
-Current persistence limit: stoneage.local-runtime-session.r1 does not serialize the mutable occupancy registry. Deterministic initial NPC seeds can therefore be reconstructed from the stack, but live occupancy mutations are not yet a durable save-state contract. That lifecycle/persistence seam is the next implementation boundary.
+The live occupancy lifecycle is now persisted by the separate `stoneage.local-runtime-save.r1` wrapper. Deterministic initial NPC seeds are reconstructed from the versioned runtime stack and only explicit differences from that baseline are serialized. Static collision remains outside mutable save state.
 
 ## 3. State-gated dialogue transitions
 
@@ -109,9 +109,11 @@ Current R1 recovered gates report no consumed-state mutation. The coordinator re
 
 ## 4. Persistence boundary
 
-`save_game` and `continue_game` use the existing versioned `stoneage.local-runtime-session.r1` envelope and a caller-supplied `LocalPersistenceStore`.
+`save_game` and `continue_game` now use the versioned `stoneage.local-runtime-save.r1` envelope documented in `docs/LOCAL-RUNTIME-SAVE-R1.md`. It embeds the existing `stoneage.local-runtime-session.r1` payload and adds only baseline-relative live-occupancy deltas.
 
-An in-memory store is included only as a deterministic composition/test implementation. Durable filesystem storage remains a separate implementation seam.
+`continue_game` remains backward compatible with legacy standalone `stoneage.local-runtime-session.r1` payloads; those rehydrate the current deterministic initial occupancy baseline and contain no invented live mutations.
+
+Persistence transport remains a caller-supplied `LocalPersistenceStore`. The existing in-memory store is only a deterministic composition/test implementation. Durable filesystem storage is the next implementation seam.
 
 ## 5. Engine boundary
 

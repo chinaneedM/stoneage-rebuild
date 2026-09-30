@@ -1,6 +1,6 @@
 # Current State
 
-Last updated: 2026-09-29
+Last updated: 2026-09-30
 
 ## Current phase
 
@@ -4262,3 +4262,36 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_INITIAL_NPC_OCCUPANCY_R1 = CLOSED_WITH_EXISTING_4_SPAWN_QUARANTINES.**
 - Next Phase-1 priority: close the **live dynamic-occupancy lifecycle and persistence boundary**. The current stoneage.local-runtime-session.r1 save envelope serializes player/session state but not the mutable occupancy registry. Define a versioned, provenance-bearing way to rehydrate deterministic initial NPC seeds and persist only explicit live mutations that must survive save/load (for example moved characters, overability changes and future dropped non-overable items), without serializing static collision as dynamic state or inventing behavior-driven NPC movement/despawn semantics.
 
+
+
+## Phase 1 live dynamic-occupancy save lifecycle — 2026-09-30
+
+- The mutable live-object layer now has a versioned local-save contract instead of being lost across save/load.
+- New canonical envelope: `stoneage.local-runtime-save.r1`, implemented by `tools/stoneage_local_runtime_save.py`.
+- The existing `stoneage.local-runtime-session.r1` player/session payload remains embedded unchanged as the authoritative session sub-envelope; the new wrapper adds only dynamic-occupancy deltas.
+- Occupancy persistence is baseline-relative and provenance-bearing:
+  - deterministic recovered25 initial NPC occupancy is rehydrated from `RECOVERED25_INITIAL_NPC_OCCUPANCY_R1` rather than serialized wholesale;
+  - unchanged initial occupancy produces **zero** removed IDs and **zero** upserts;
+  - moved objects, explicit overability changes, removed baseline objects and newly created live objects are persisted as explicit deltas;
+  - each upsert retains object identity, kind, position, overability and provenance;
+  - the save records both the deterministic base-profile id and the live-registry semantic profile.
+- Static collision is intentionally excluded from the save schema. The 635-server / 191-client-reconstruction collision routing remains reconstructed from the runtime stack, not copied into mutable session state.
+- Restore is fail-closed:
+  - base-profile drift is rejected;
+  - live-registry profile drift is rejected;
+  - duplicate removed IDs and duplicate upsert identities are rejected;
+  - an object cannot be both removed and upserted;
+  - removal of an ID absent from the deterministic base is rejected;
+  - restored live positions are revalidated against the runtime topology before the coordinator accepts them.
+- Coordinator lifecycle is now explicit:
+  - `new_game()` resets occupancy to the deterministic initial baseline;
+  - `save_game()` writes the session plus occupancy delta;
+  - `continue_game()` rebuilds the deterministic baseline and reapplies the saved delta;
+  - legacy `stoneage.local-runtime-session.r1` saves remain readable and rehydrate the current deterministic initial baseline with no invented live mutations.
+- Recovered25 integration test proves the real **3,852-object** seedable initial NPC registry serializes as an empty occupancy delta, while an explicit mutation produces exactly the corresponding upsert.
+- Validation on remote main:
+  - local runtime session coordinator GitHub Actions **36735552707 = PASS**;
+  - NPC overability / recovered25 initial-occupancy regression GitHub Actions **36735552760 = PASS**.
+- Contract document: `docs/LOCAL-RUNTIME-SAVE-R1.md`.
+- **LOCAL_RUNTIME_DYNAMIC_OCCUPANCY_SAVE_R1 = CLOSED.**
+- Next Phase-1 priority: implement a minimal durable **filesystem-backed LocalPersistenceStore** for the single-player runtime. It must be engine-neutral, UTF-8 exact, atomic-replace on save, path-traversal safe, deterministic by logical save key, and schema-transparent so both current and legacy versioned payloads remain coordinator concerns rather than storage concerns. Do not add cloud sync, accounts, network services or renderer dependencies.
