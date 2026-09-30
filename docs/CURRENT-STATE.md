@@ -3964,3 +3964,40 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - contract commit = `b8cfa017dd7fcac1d86e2d23f2d0f6dc175ba14f`.
 - **RUNTIME_BOOTSTRAP_CONTRACT_R1 = CLOSED.**
 - Next Phase-1 priority: define the **minimal engine-neutral local runtime core interfaces/data model** that consume the bootstrap contract. Required boundaries should cover versioned world-profile loading, authoritative world/player state, region materialization, unconditional vs state-gated transition evaluation, fresh-start creation, deterministic progression/economy mutation and local persistence. Do not choose a rendering engine and do not recreate legacy MMO services.
+
+
+## Phase 1 minimal engine-neutral local runtime core interfaces — 2026-09-30
+
+- The runtime-bootstrap contract now has an executable engine-neutral consumer boundary instead of remaining documentation-only.
+- Existing deterministic historical runtime modules were reused rather than replaced:
+  - `tools/stoneage_singleplayer_domain.py`;
+  - `tools/stoneage_singleplayer_world.py`;
+  - `tools/stoneage_singleplayer_runtime.py`;
+  - `tools/stoneage_singleplayer_persistence.py`.
+- New interface/data-model layer: `tools/stoneage_local_runtime_core.py`.
+- New specification: `docs/RUNTIME-CORE-INTERFACES-R1.md`.
+- R1 adds:
+  - strict typed loading of `stoneage.runtime-bootstrap.r1`;
+  - executable provenance guards that reject recovered25→Taiwan-v1 promotion;
+  - `VersionedWorldProfileProvider` region-materialization port;
+  - `TransitionBindingResolver` for raw/versioned state-gated edge binding;
+  - `TransitionGateEvaluator` for conditional traversal decisions;
+  - `FreshStartFactory` for the four preserved hometown choices;
+  - `LocalPersistenceStore` backend boundary;
+  - `ResolvedTransitionBinding`, `TransitionGateDecision`, `FreshStartSeed` and region request/materialization records.
+- A modern local session envelope is now defined as `stoneage.local-runtime-session.r1`:
+  - persists bootstrap contract/profile identity;
+  - selected hometown ordinal;
+  - current map position;
+  - persistent local world/progression flags;
+  - the existing R3 player-owned persistence payload;
+  - does **not** persist runtime object IDs, active NPC sessions, battle sessions, renderer state, account/network state or other transient objects.
+- This local session envelope is a **DESIGN** persistence layer and does not overwrite the documented historical SAAC save/logout behavior.
+- State-gated transition topology remains separate from `HistoricalWorldTopology.legacy_warps`; the new interfaces deliberately require an explicit resolver/evaluator rather than silently flattening conditional edges into classic Warp.
+- RNG remains explicit input at the mechanics boundary; the engine may own a seeded RNG service later, but deterministic mechanics continue to receive concrete rolls/decisions.
+- Validation:
+  - GitHub Actions **36708875326 = PASS** (bootstrap contract);
+  - GitHub Actions **36708875386 = PASS** (local runtime core + existing world/persistence/runtime regression suite);
+  - implementation commit = `aa1ca51702a0c7a6e5d0080fea495edacdd9f552`.
+- **LOCAL_RUNTIME_CORE_INTERFACES_R1 = CLOSED.**
+- Next Phase-1 priority: implement a provenance-bearing **recovered25 world-profile adapter** behind these interfaces. It must materialize the closed 826-floor manifest into engine-neutral topology/region inputs, keep each concrete map's provenance, bind the three current state-gated transition contracts (hometown 3, hometown 4, 811→820), expose all four fresh-start seeds, and support an in-process bootstrap→fresh-start→materialize→transition→save/load smoke test. Raw recovered identifiers must remain version-bound; do not claim Taiwan-v1 membership.
