@@ -4,6 +4,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_GUARD,
     BATTLE_COM_S_GBREAK,
     BATTLE_COM_S_GUARDIAN_ATTACK,
+    BATTLE_COM_S_CHARGE,
     BATTLE_COM_S_MIGHTY,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
@@ -11,6 +12,7 @@ from tools.stoneage_battle_round_model import (
     battle_command3_low,
 )
 from tools.stoneage_petskill_core_model import (
+    charge_attack_command,
     guard_break_command,
     guardian_command,
     mighty_command,
@@ -60,6 +62,21 @@ class PetSkillRoundBridgeTests(unittest.TestCase):
         self.assertEqual(submission.battle_command.command2,3)
         self.assertEqual(submission.setup_effects.defense_power,960)
         self.assertEqual(submission.setup_effects.guardian_for_slot,3)
+
+    def test_chargeattack_packs_wait_percent_and_latent_ready_power(self):
+        payload=dict(charge_attack_command(10,"1 攻%50"))
+        payload["charge_ready_attack_power"]=150
+        submission=bridge_stable_pet_skill_command(payload)
+        command=submission.battle_command
+        self.assertEqual(command.command1,BATTLE_COM_S_CHARGE)
+        self.assertEqual(command.command2,10)
+        self.assertEqual(battle_command3_low(command.command3),1)
+        self.assertEqual(battle_command3_high(command.command3),50)
+        self.assertIsNone(submission.setup_effects.attack_power)
+        self.assertEqual(
+            submission.setup_effects.charge_ready_attack_power,
+            150,
+        )
 
     def test_guardbreak_carries_fixed_attack_setup_into_round(self):
         payload=guard_break_command(
