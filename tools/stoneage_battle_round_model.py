@@ -105,6 +105,7 @@ BATTLE_COM_COMBOEND = 10
 BATTLE_COM_WAIT = 11
 
 # Stable unguarded pet-skill command sequence begins at 1000.
+BATTLE_COM_S_GBREAK = 1002
 BATTLE_COM_S_GUARDIAN_ATTACK = 1003
 BATTLE_COM_S_GUARDIAN_GUARD = 1004  # enum-only in pinned common Guardian handler
 BATTLE_COM_S_MIGHTY = 1006
@@ -139,6 +140,7 @@ BASE_COMMAND_CODES = frozenset(
         BATTLE_COM_COMBO,
         BATTLE_COM_COMBOEND,
         BATTLE_COM_WAIT,
+        BATTLE_COM_S_GBREAK,
         BATTLE_COM_S_GUARDIAN_ATTACK,
         BATTLE_COM_S_GUARDIAN_GUARD,
         BATTLE_COM_S_MIGHTY,
@@ -497,6 +499,7 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_ESCAPE,
         BATTLE_COM_COMBO,
         BATTLE_COM_WAIT,
+        BATTLE_COM_S_GBREAK,
         BATTLE_COM_S_GUARDIAN_ATTACK,
         BATTLE_COM_S_MIGHTY,
         BATTLE_COM_S_POWERBALANCE,
@@ -3243,6 +3246,7 @@ def resolve_ordinary_round(
             raise KeyError(f"missing ordinary attack rolls for {participant_id}")
         attack_command_code=int(command.command1)
         if attack_command_code in {
+            BATTLE_COM_S_GBREAK,
             BATTLE_COM_S_GUARDIAN_ATTACK,
             BATTLE_COM_S_MIGHTY,
             BATTLE_COM_S_POWERBALANCE,
@@ -3304,6 +3308,13 @@ def resolve_ordinary_round(
         attacker_profile = profiles[participant_id]
         defender_profile = profiles[defender_id]
         before = hp_by_slot[target]
+        guardbreak_eligible=bool(
+            attack_command_code == BATTLE_COM_S_GBREAK
+            and int(target) in guarding
+            and int(
+                status_runtime[str(defender_id)].status.confusion
+            ) <= 0
+        )
         continuation_blocked_by_reaction=(
             base_damage_react_blocks_main_continuation(
                 damage_react_state[str(participant_id)],
@@ -3459,7 +3470,10 @@ def resolve_ordinary_round(
                 defender.level,
             )
 
-        if damage_target_slot in guarding:
+        if (
+            damage_target_slot in guarding
+            and attack_command_code != BATTLE_COM_S_GBREAK
+        ):
             guard_roll = _validated_roll(
                 rolls.guard_roll_1_100,
                 1,
@@ -3495,14 +3509,30 @@ def resolve_ordinary_round(
                 * (battle_command3_low(command.command3) * 0.01)
             )
 
+        reaction_target_slot=int(damage_target_slot)
         reaction_defender=defender
         reaction_defender_id=str(defender_id)
+        reaction_defender_work_defense=int(defender_work_defense)
+        if attack_command_code == BATTLE_COM_S_GBREAK:
+            if not guardbreak_eligible:
+                damage=0
+                result="miss"
+            # Fixed BATTLE_S_GBreak passes the original defindex into
+            # BATTLE_DamageSub even when BATTLE_AttackSeq used Guardian
+            # as its local damage-calculation defender.
+            reaction_target_slot=int(target)
+            reaction_defender=by_slot[reaction_target_slot]
+            reaction_defender_id=str(reaction_defender.participant_id)
+            reaction_defender_work_defense=_effective_defense_power(
+                reaction_defender,setup_effects
+            )
+
         reaction_resolution=resolve_base_damage_react(
             damage_react_state[reaction_defender_id],
             raw_damage=int(damage),
             attacker_hp=int(hp_by_slot[slot]),
             attacker_max_hp=int(participant.max_hp),
-            defender_hp=int(hp_by_slot[damage_target_slot]),
+            defender_hp=int(hp_by_slot[reaction_target_slot]),
             defender_max_hp=int(reaction_defender.max_hp),
             attacker_uses_throwing_weapon=counter_weapon_blocks_counter(
                 attacker_profile.counter_weapon_type
@@ -3522,7 +3552,7 @@ def resolve_ordinary_round(
             ):
                 ride_split=immediate_reaction_ride_split(
                     int(damage),
-                    rider_defense_power=int(defender_work_defense),
+                    rider_defense_power=int(reaction_defender_work_defense),
                     pet_defense_power=int(ride_runtime.defense_power),
                     pet_hp=int(ride_runtime.hp),
                 )
@@ -3592,7 +3622,7 @@ def resolve_ordinary_round(
             ):
                 ride_split=ordinary_ride_damage_split(
                     int(damage),
-                    rider_defense_power=int(defender_work_defense),
+                    rider_defense_power=int(reaction_defender_work_defense),
                     pet_defense_power=int(ride_runtime.defense_power),
                     pet_hp=int(ride_runtime.hp),
                 )
@@ -3630,7 +3660,7 @@ def resolve_ordinary_round(
         hp_by_id[str(participant_id)]=int(
             reaction_resolution.attacker_hp_after
         )
-        hp_by_slot[damage_target_slot]=int(
+        hp_by_slot[reaction_target_slot]=int(
             reaction_resolution.defender_hp_after
         )
         hp_by_id[reaction_defender_id]=int(
@@ -3644,11 +3674,11 @@ def resolve_ordinary_round(
             after=int(reaction_resolution.attacker_hp_after)
             status_target_slot=int(slot)
         else:
-            resolved_damage_slot=int(damage_target_slot)
+            resolved_damage_slot=int(reaction_target_slot)
             resolved_damage_id=reaction_defender_id
             before=int(reaction_resolution.defender_hp_before)
             after=int(reaction_resolution.defender_hp_after)
-            status_target_slot=int(damage_target_slot)
+            status_target_slot=int(reaction_target_slot)
 
         ultimate_damage_resolution=None
         death_ultimate_resolution=None
