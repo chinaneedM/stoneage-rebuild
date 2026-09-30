@@ -4152,3 +4152,26 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Derived report: `research/recovered/STONEAGE-25-SERVER-COLLISION-PROVIDER-R1.txt`.
 - **RECOVERED25_SERVER_COLLISION_PROVIDER_R1 = CLOSED_WITH_EXPLICIT_GAPS.**
 - Next Phase-1 priority: audit the **191 server-uncovered stable DAT floors** against the same recovered25 client's `adrn_15.bin` collision attributes. Establish whether every tile/parts id that requires ADRN lookup is resolvable from recovered25 resources. This is a provenance/coverage audit only: do not yet declare Taiwan-v1 `readHitMap` semantics to be the recovered25 runtime algorithm unless version-appropriate algorithm evidence is separately established.
+
+
+## Phase 1 recovered25 client ADRN collision-resource coverage — 2026-09-30
+
+- The **191** materializable floors not covered by the unambiguous recovered server collision provider have now been audited against the **same recovered25 client's** `adrn_15.bin` rather than against Taiwan-v1 metadata.
+- Bundle-backed validation: GitHub Actions **36718602902 = PASS**.
+- Verified recovered25 ADRN surface used by the audit:
+  - SHA-256 = `92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74`;
+  - bytes = **18,765,120**;
+  - 80-byte records = **234,564**;
+  - final map-number index size = **10,159**;
+  - duplicate nonzero map-number assignments retained by source-order last-write behavior = **514**.
+- Coverage result over the 191 server-uncovered stable DAT floors:
+  - client-ADRN collision-resource closed floors = **191 / 191**;
+  - unresolved floors = **0**;
+  - tile references requiring ADRN lookup = **501,781**;
+  - parts references requiring ADRN lookup = **16,179**;
+  - unresolved unique-id floor sum = **0**.
+- Derived report: `research/recovered/STONEAGE-25-CLIENT-ADRN-COLLISION-COVERAGE-R1.txt`.
+- The earlier unintegrated duplicate probe `stoneage_recovered25_client_collision_metadata_probe.py` was removed after this richer audited implementation superseded it; one canonical coverage path remains.
+- This closes the **resource/metadata availability** question only. It does not yet assert that Taiwan-v1 `readHitMap/checkHitMap` behavior is byte-identical to recovered25 runtime behavior.
+- **RECOVERED25_CLIENT_ADRN_COLLISION_RESOURCE_COVERAGE_R1 = CLOSED.**
+- Next Phase-1 priority: establish a version-appropriate **recovered25 client hit-map algorithm provenance**. Use the recovered runtime binary/source-lineage evidence to decide whether the long-lived client `readHitMap/checkHitMap` algorithm can be promoted for recovered25. Keep this separate from the already closed resource coverage. If direct recovered25 proof remains unavailable, record the algorithm as an explicit descendant-stable reconstruction profile rather than silently claiming exact 2.5 binary semantics.
