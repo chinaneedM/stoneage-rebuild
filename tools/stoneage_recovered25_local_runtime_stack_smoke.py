@@ -617,6 +617,26 @@ def main() -> None:
         f"attack_modifier_ids={status_attack_mod}|"
         f"defense_modifier_ids={status_defense_mod}"
     )
+    powerbalance_entries = tuple(
+        entry
+        for entry in referenced_skill_entries
+        if entry.function_name == "PETSKILL_PowerBalance"
+    )
+    powerbalance_attack = 0
+    powerbalance_defense = 0
+    powerbalance_dex_extension = 0
+    for entry in powerbalance_entries:
+        option_text = entry.unambiguous_cp950_big5_option()
+        powerbalance_attack += int("攻%" in option_text)
+        powerbalance_defense += int("防%" in option_text)
+        powerbalance_dex_extension += int("敏%" in option_text)
+    print(
+        "PETSKILL_POWERBALANCE_MARKERS|"
+        f"unique_ids={len(powerbalance_entries)}|"
+        f"attack_marker_ids={powerbalance_attack}|"
+        f"defense_marker_ids={powerbalance_defense}|"
+        f"dex_extension_marker_ids={powerbalance_dex_extension}"
+    )
     print(
         "COUNT|enemybase_unresolved_petskill_ids|"
         f"{len(stack.petskill_runtime.unresolved_skill_ids(report_referenced_skill_ids))}"
