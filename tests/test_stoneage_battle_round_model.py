@@ -1879,6 +1879,11 @@ class BattleRoundModelTests(unittest.TestCase):
                     work_quick=20,
                 ),
             },
+            base_status_rolls_by_participant_id={
+                "enemy":BaseStatusTurnRolls(
+                    confusion_action_roll_1_100=100,
+                )
+            },
             defense_profile="newpower_70pct",
         )
         event=next(e for e in result.events if e.participant_id=="pet")
