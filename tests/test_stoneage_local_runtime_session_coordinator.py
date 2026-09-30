@@ -206,6 +206,7 @@ class _FakeStack:
                 "IMGNUMBER": 10123,
                 "MODAI": 4,
                 "GET": 0,
+                "RARE": 0,
                 "EARTHAT": 50,
                 "WATERAT": 50,
                 "FIREAT": 0,
@@ -1847,6 +1848,223 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                 context,
                 mode_rolls_by_enemy_id={enemy_id: 0},
                 target_rolls_by_enemy_id={enemy_id: 0},
+            )
+
+    def test_recovered_enemy_ai_escape_uses_template_rare_and_explicit_abio_rng(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-escape"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        enemy_id = context.battle.enemies[0].participant_id
+        escape_variant = replace(
+            context.spawned_enemies[0].variant,
+            tactics_option=(
+                "at:0;1;1|gu:0|es:1|wa:0;0;0;0;0;0;0"
+            ),
+        )
+        context = replace(
+            context,
+            spawned_enemies=(
+                replace(
+                    context.spawned_enemies[0],
+                    variant=escape_variant,
+                ),
+            ),
+        )
+        context = self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player": 0, enemy_id: 10},
+        )
+
+        result_context, round_result = (
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player": BattleCommand(BATTLE_COM_WAIT),
+                },
+                enemy_mode_rolls={enemy_id: 0},
+                enemy_target_rolls=None,
+                enemy_escape_rolls={
+                    enemy_id: OrdinaryEscapeRolls(
+                        escape_roll_1_100=1,
+                    )
+                },
+                opponent_abio_by_participant_id={"player": False},
+                initiative_random_subtracts={
+                    "player": 0,
+                    enemy_id: 0,
+                },
+                profiles={
+                    "player": BattleCombatProfile(
+                        fixed_dex=10,
+                        fixed_luck=0,
+                        earth=0,
+                        water=0,
+                        fire=0,
+                        wind=0,
+                    ),
+                    enemy_id: BattleCombatProfile(
+                        fixed_dex=10,
+                        fixed_luck=0,
+                        earth=0,
+                        water=0,
+                        fire=0,
+                        wind=0,
+                    ),
+                },
+                attack_rolls={},
+                defense_profile="newpower_70pct",
+            )
+        )
+        terminal = round_result.after
+        self.assertEqual(terminal.phase, "finished")
+        self.assertEqual(terminal.result, "victory")
+        self.assertNotIn(enemy_id, terminal.hp_by_participant_id)
+        self.assertNotIn(enemy_id, terminal.slots)
+        self.assertEqual(
+            terminal.pending_exp_by_participant_id["player"],
+            0,
+        )
+        escape_events = tuple(
+            event
+            for event in round_result.round.events
+            if event.participant_id == enemy_id
+        )
+        self.assertEqual(len(escape_events), 1)
+        self.assertEqual(escape_events[0].result, "escape_success")
+        self.assertIsNotNone(escape_events[0].escape_resolution)
+        self.assertEqual(
+            escape_events[0].escape_resolution.effective_luck,
+            1,
+        )
+        self.assertEqual(
+            escape_events[0].escape_resolution.stored_escape_count_after,
+            1,
+        )
+        self.assertEqual(
+            result_context.persistent_battle_state,
+            terminal,
+        )
+        self.assertEqual(
+            session.player_state.character.fields["exp"],
+            0,
+        )
+
+    def test_recovered_enemy_ai_escape_fails_closed_without_rare_provenance(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-escape-rare"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        enemy_id = context.battle.enemies[0].participant_id
+        spawned = context.spawned_enemies[0]
+        context = replace(
+            context,
+            spawned_enemies=(
+                replace(
+                    spawned,
+                    variant=replace(
+                        spawned.variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:1|"
+                            "wa:0;0;0;0;0;0;0"
+                        ),
+                    ),
+                    template=replace(
+                        spawned.template,
+                        rare=None,
+                    ),
+                ),
+            ),
+        )
+        context = self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player": 0, enemy_id: 10},
+        )
+        with self.assertRaisesRegex(
+            ValueError,
+            "enemybase RARE provenance",
+        ):
+            (
+                self.coordinator
+                .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                    context,
+                    player_side_commands={
+                        "player": BattleCommand(BATTLE_COM_WAIT),
+                    },
+                    enemy_mode_rolls={enemy_id: 0},
+                    enemy_target_rolls=None,
+                    enemy_escape_rolls={
+                        enemy_id: OrdinaryEscapeRolls(
+                            escape_roll_1_100=1,
+                        )
+                    },
+                    opponent_abio_by_participant_id={"player": False},
+                    initiative_random_subtracts={
+                        "player": 0,
+                        enemy_id: 0,
+                    },
+                    profiles={
+                        "player": BattleCombatProfile(
+                            fixed_dex=10,
+                            fixed_luck=0,
+                            earth=0,
+                            water=0,
+                            fire=0,
+                            wind=0,
+                        ),
+                        enemy_id: BattleCombatProfile(
+                            fixed_dex=10,
+                            fixed_luck=0,
+                            earth=0,
+                            water=0,
+                            fire=0,
+                            wind=0,
+                        ),
+                    },
+                    attack_rolls={},
+                    defense_profile="newpower_70pct",
+                )
             )
 
     def test_terminal_victory_crosses_player_exp_threshold_atomically(self):
