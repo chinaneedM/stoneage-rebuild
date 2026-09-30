@@ -4103,3 +4103,27 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Validation: GitHub Actions **36715358875 = PASS**.
 - **LOCAL_RUNTIME_SESSION_COORDINATOR_R1 = CLOSED.**
 - Next Phase-1 priority: close the concrete **recovered25 collision-verdict coverage** needed by the coordinator. First audit all 826 materializable floors against recovered server LS2MAP + recovered `mapset.txt`, distinguishing uniquely resolvable server collision, no-server-map floors, divergent duplicate server copies and missing image metadata. Do not substitute Taiwan-v1 ADRN values or guess collision for uncovered recovered25 floors. Use the audit to decide whether a server-backed provider is sufficient or a separate recovered-client collision bridge is still required.
+
+
+## Phase 1 recovered25 server collision coverage census — 2026-09-30
+
+- The coordinator's collision seam has now been measured against the full **826-floor** materializable recovered25 runtime world using only recovered server LS2MAP + recovered `mapset.txt` WALKABLE/HAVEHEIGHT metadata.
+- Bundle-backed validation: GitHub Actions **36715881079 = PASS**.
+- Derived report: `research/recovered/STONEAGE-25-SERVER-COLLISION-COVERAGE-R1.txt`.
+- Coverage:
+  - materializable floors = **826**;
+  - server-collision closed floors = **635**;
+  - uncovered floors = **191**;
+  - stable floors = **761**, of which **570** are server-collision closed;
+  - supplemental floors = **65**, and **65 / 65** are server-collision closed;
+  - server-collision closed cells = **5,042,761**;
+  - ordinary walkable cells in those closed maps = **1,520,277**.
+- Explicit uncovered classes:
+  - **189** floors = `NO_SERVER_MAP`;
+  - **2** floors = `DIVERGENT_SERVER_DUPLICATE`: **5540** and **31001**;
+  - **0** = server dimension mismatch;
+  - **0** = missing recovered mapset metadata.
+- The two divergent duplicate floors are not silently selected. The 189 no-server floors are not assigned Taiwan-v1 ADRN collision semantics merely because they have client DAT payloads.
+- The census therefore proves that a server-only collision provider can safely cover **635 / 826** floors, but cannot close the runtime-wide movement seam by itself.
+- **RECOVERED25_SERVER_COLLISION_COVERAGE_R1 = CLOSED_WITH_EXPLICIT_GAPS.**
+- Next Phase-1 priority: implement a provenance-safe recovered25 **server-backed collision provider** for exactly the 635 closed floors and bind it as an optional movement-verdict source above the local runtime stack/coordinator. It must fail closed on all 191 uncovered floors and on any future dimension/hash/metadata drift. After that provider passes bundle-backed movement smoke, investigate a separately versioned recovered-client collision bridge for the remaining client-DAT floors; do not substitute Taiwan-v1 ADRN data without direct recovered25 provenance.
