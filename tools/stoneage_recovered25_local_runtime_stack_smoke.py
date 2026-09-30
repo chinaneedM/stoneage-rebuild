@@ -604,6 +604,10 @@ def main() -> None:
             status_attack_mod += 1
         if parsed["defense_percent"] is not None:
             status_defense_mod += 1
+    if status_matched != len(status_entries):
+        raise ValueError(
+            "recovered25 StatusChange OPTION grammar is not fully closed"
+        )
     print(
         "PETSKILL_STATUSCHANGE_PARSE|"
         f"unique_ids={len(status_entries)}|"
