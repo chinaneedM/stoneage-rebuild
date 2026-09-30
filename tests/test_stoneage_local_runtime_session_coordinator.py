@@ -1013,7 +1013,7 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         )
         enemy = replace(
             context.battle.enemies[0],
-            attack=10000,
+            attack=60,
             quick=200,
         )
         context = replace(
