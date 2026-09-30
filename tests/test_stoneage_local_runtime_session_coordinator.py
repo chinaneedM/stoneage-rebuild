@@ -46,6 +46,10 @@ from tools.stoneage_local_runtime_core import (
     encode_local_runtime_session,
     load_runtime_bootstrap_file,
 )
+from tools.stoneage_recovered25_petskill_runtime import (
+    Recovered25PetSkillEntry,
+    Recovered25PetSkillRuntime,
+)
 from tools.stoneage_local_runtime_session_coordinator import (
     InMemoryLocalPersistenceStore,
     LocalRuntimeSessionCoordinator,
@@ -207,6 +211,8 @@ class _FakeStack:
                 "MODAI": 4,
                 "GET": 0,
                 "RARE": 0,
+                "PETSKILL1": 10,
+                "PETSKILL2": 20,
                 "EARTHAT": 50,
                 "WATERAT": 50,
                 "FIREAT": 0,
@@ -216,6 +222,29 @@ class _FakeStack:
             }
         )
         self.enemybase_runtime = SimpleNamespace(templates={88: template})
+        self.petskill_runtime = Recovered25PetSkillRuntime(
+            skills={
+                10: Recovered25PetSkillEntry(
+                    skill_id=10,
+                    field=1,
+                    target=3,
+                    cost=2,
+                    illegal=0,
+                    function_name="PETSKILL_NormalAttack",
+                    option_bytes=b"",
+                ),
+                20: Recovered25PetSkillEntry(
+                    skill_id=20,
+                    field=1,
+                    target=3,
+                    cost=2,
+                    illegal=0,
+                    function_name="PETSKILL_NormalGuard",
+                    option_bytes=b"",
+                ),
+            },
+            source_file="petskill.txt",
+        )
 
     def create_fresh_start(self, ordinal):
         return FreshStartSeed(
@@ -1849,6 +1878,87 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                 mode_rolls_by_enemy_id={enemy_id: 0},
                 target_rolls_by_enemy_id={enemy_id: 0},
             )
+
+    def test_recovered_enemy_ai_wa_resolves_exact_skill_slots(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-wa"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        enemy_id = context.battle.enemies[0].participant_id
+        context = self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player": 0, enemy_id: 10},
+        )
+
+        attack_context = replace(
+            context,
+            spawned_enemies=(
+                replace(
+                    context.spawned_enemies[0],
+                    variant=replace(
+                        context.spawned_enemies[0].variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:1;0;0;0;0;0;0"
+                        ),
+                    ),
+                ),
+            ),
+        )
+        attack = self.coordinator.build_persistent_enemy_common_commands(
+            attack_context,
+            mode_rolls_by_enemy_id={enemy_id: 0},
+            target_rolls_by_enemy_id={enemy_id: 0},
+            allow_escape=True,
+            allow_basic_skill=True,
+        )
+        self.assertEqual(attack[enemy_id].command1, BATTLE_COM_ATTACK)
+        self.assertEqual(attack[enemy_id].command2, 0)
+
+        guard_context = replace(
+            context,
+            spawned_enemies=(
+                replace(
+                    context.spawned_enemies[0],
+                    variant=replace(
+                        context.spawned_enemies[0].variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:0;1;0;0;0;0;0"
+                        ),
+                    ),
+                ),
+            ),
+        )
+        guard = self.coordinator.build_persistent_enemy_common_commands(
+            guard_context,
+            mode_rolls_by_enemy_id={enemy_id: 0},
+            target_rolls_by_enemy_id={enemy_id: 0},
+            allow_escape=True,
+            allow_basic_skill=True,
+        )
+        self.assertEqual(guard[enemy_id].command1, BATTLE_COM_GUARD)
+        self.assertEqual(guard[enemy_id].command2, 0)
 
     def test_recovered_enemy_ai_escape_uses_template_rare_and_explicit_abio_rng(self):
         session = LocalRuntimeSessionState(
