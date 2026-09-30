@@ -1,0 +1,15 @@
+StoneAge shadowed-branch fresh-start combat victory audit — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+PINNED_SOURCE_CONTROL|battle_newpower_enabled=1|npcenemy_addpower_enabled=1|ordinary_dodge_cap_percent=75
+RULE|enemy/group/template ids, levels, stats, coordinates, player allocation values and damage values are withheld
+RULE|witness requires a coordinate-valid fresh-start hometown, positive-EXP low-level source, one-enemy legal encounter outcome, skill-free/counter-free enemy template, legal enemy birth rolls, legal 20-point new-character allocation, player-first legal initiative and ordinary one-hit KO without equipment/pet/item/critical/skill
+RULE|NPCENEMY_ADDPOWER minimum legal defense adjustment is zero under the fixed-descendant integer expression; no favorable negative modifier is invented
+COUNT|coordinate_valid_hometowns|2
+COUNT|low_level_source_rows|44
+COUNT|unique_candidate_variants|16
+COUNT|skill_free_counter_free_candidate_variants|0
+COUNT|one_hit_witness_variants|0
+FRESH_START_EXISTENTIAL_COMBAT_VICTORY|witness=0
+UNIVERSAL_OR_GUARANTEED_COMBAT_VICTORY|closed=0|reason=existential_rng_and_build_witness_only
+RESOLUTION|SHADOWED_BRANCH_FRESH_START_COMBAT_VICTORY_AUDITED
