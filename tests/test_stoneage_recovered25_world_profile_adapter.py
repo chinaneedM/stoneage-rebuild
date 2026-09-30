@@ -128,13 +128,17 @@ class Recovered25WorldProfileAdapterTests(unittest.TestCase):
             player_state=state,
         )
         evaluator=Recovered25TransitionGateEvaluator(self.profile)
-        self.assertFalse(evaluator.evaluate_transition(contract,binding,session).allowed)
+        denied_decision=evaluator.evaluate_transition(contract,binding,session)
+        self.assertFalse(denied_decision.allowed)
+        self.assertEqual(dict(denied_decision.consumed_state),{})
         state.inventory[InventorySlot(0)]=InventoryItem(
             slot=InventorySlot(0),
             template_id=ItemTemplateId(12345),
             view=MappingProxyType({}),
         )
-        self.assertTrue(evaluator.evaluate_transition(contract,binding,session).allowed)
+        allowed_decision=evaluator.evaluate_transition(contract,binding,session)
+        self.assertTrue(allowed_decision.allowed)
+        self.assertEqual(dict(allowed_decision.consumed_state),{})
 
     def test_progression_gate_rechecks_current_level_and_item(self):
         contract=self.profile.transitions[SHADOWED_BRANCH_TRANSITION_ID]
@@ -164,13 +168,17 @@ class Recovered25WorldProfileAdapterTests(unittest.TestCase):
             player_position=self.adapter.hometown_positions()[1],
             player_state=missing_item,
         )
-        self.assertFalse(evaluator.evaluate_transition(contract,binding,denied).allowed)
+        denied_decision=evaluator.evaluate_transition(contract,binding,denied)
+        self.assertFalse(denied_decision.allowed)
+        self.assertEqual(dict(denied_decision.consumed_state),{})
 
         slot=InventorySlot(0)
         missing_item.inventory[slot]=InventoryItem(
             slot=slot,template_id=ItemTemplateId(12345),view=MappingProxyType({})
         )
-        self.assertTrue(evaluator.evaluate_transition(contract,binding,denied).allowed)
+        allowed_decision=evaluator.evaluate_transition(contract,binding,denied)
+        self.assertTrue(allowed_decision.allowed)
+        self.assertEqual(dict(allowed_decision.consumed_state),{})
 
         too_high=PersistentPlayerState(
             character=PlayerState(MappingProxyType({"level":25})),
@@ -183,7 +191,9 @@ class Recovered25WorldProfileAdapterTests(unittest.TestCase):
             player_position=self.adapter.hometown_positions()[1],
             player_state=too_high,
         )
-        self.assertFalse(evaluator.evaluate_transition(contract,binding,high_session).allowed)
+        high_decision=evaluator.evaluate_transition(contract,binding,high_session)
+        self.assertFalse(high_decision.allowed)
+        self.assertEqual(dict(high_decision.consumed_state),{})
 
 
 if __name__=="__main__":

@@ -1,4 +1,5 @@
 import json
+import tempfile
 import unittest
 from pathlib import Path
 from types import MappingProxyType, SimpleNamespace
@@ -8,6 +9,9 @@ from tools.stoneage_map_collision_model import (
     GOLD,
     CollisionDecision,
     DynamicOccupant,
+)
+from tools.stoneage_local_filesystem_persistence import (
+    LocalFilesystemPersistenceStore,
 )
 from tools.stoneage_local_runtime_core import (
     FreshStartSeed,
@@ -222,6 +226,68 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         self.assertFalse(
             coordinator.occupancy_registry.objects["item:drop:9"].overable
         )
+
+    def test_filesystem_store_survives_coordinator_reconstruction(self):
+        initial = SimpleNamespace(
+            profile_id="TEST_INITIAL_OCCUPANCY_R1",
+            populate_registry=lambda registry: registry.register_character(
+                object_id="npc-placement:42",
+                position=MapPosition(1, 0, 1),
+                overable=True,
+                provenance="test:initial-npc",
+            ),
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp) / "saves"
+            stack_a = _FakeStack(self.profile)
+            stack_a.npc_initial_occupancy = initial
+            first = LocalRuntimeSessionCoordinator(
+                stack=stack_a,
+                persistence=LocalFilesystemPersistenceStore(root),
+            )
+            session = first.new_game(1)
+            session = LocalRuntimeSessionState(
+                contract_id=session.contract_id,
+                world_profile=session.world_profile,
+                hometown_ordinal=session.hometown_ordinal,
+                player_position=session.player_position,
+                player_state=session.player_state,
+                world_flags=frozenset({"restart-proof"}),
+            )
+            first.occupancy_registry.move(
+                "npc-placement:42",
+                MapPosition(1, 1, 1),
+            )
+            first.occupancy_registry.register_item(
+                object_id="item:drop:restart",
+                position=MapPosition(1, 2, 1),
+                overable=False,
+                provenance="test:restart-drop",
+            )
+            first.save_game("restart-slot", session)
+
+            stack_b = _FakeStack(self.profile)
+            stack_b.npc_initial_occupancy = initial
+            second = LocalRuntimeSessionCoordinator(
+                stack=stack_b,
+                persistence=LocalFilesystemPersistenceStore(root),
+            )
+            restored = second.continue_game("restart-slot")
+
+            self.assertEqual(restored.world_flags, frozenset({"restart-proof"}))
+            self.assertEqual(
+                second.occupancy_registry.objects["npc-placement:42"].position,
+                MapPosition(1, 1, 1),
+            )
+            self.assertIn(
+                "item:drop:restart",
+                second.occupancy_registry.objects,
+            )
+            self.assertFalse(
+                second.occupancy_registry.objects[
+                    "item:drop:restart"
+                ].overable
+            )
 
     def test_legacy_session_save_rehydrates_initial_occupancy_without_delta(self):
         initial = SimpleNamespace(

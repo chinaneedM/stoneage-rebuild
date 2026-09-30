@@ -105,7 +105,7 @@ Only then is the existing state-gate evaluator invoked against the current playe
 
 If the gate is denied, position is unchanged. If allowed, the binding destination must still be inside the loaded topology before the position is changed.
 
-Current R1 recovered gates report no consumed-state mutation. The coordinator rejects any future non-empty `consumed_state` result instead of silently ignoring it; action-stage mutation must be implemented explicitly before such a transition can execute.
+Current R1 recovered gates report no consumed-state mutation. The current set has exactly three recovered dialogue WarpMan transitions; all are `FREE`-predicate eligibility gates, and the two hometown bridges additionally carry `event_action_side_effect_fields = 0`. Regression tests assert that both allowed and denied evaluator decisions keep `consumed_state` empty. The coordinator rejects any future non-empty `consumed_state` result instead of silently ignoring it; action-stage mutation must be implemented explicitly only if a later recovered binding actually requires it.
 
 ## 4. Persistence boundary
 
@@ -113,7 +113,7 @@ Current R1 recovered gates report no consumed-state mutation. The coordinator re
 
 `continue_game` remains backward compatible with legacy standalone `stoneage.local-runtime-session.r1` payloads; those rehydrate the current deterministic initial occupancy baseline and contain no invented live mutations.
 
-Persistence transport remains a caller-supplied `LocalPersistenceStore`. The existing in-memory store remains a deterministic composition/test implementation. Durable single-player storage is now provided by `LocalFilesystemPersistenceStore` (`tools/stoneage_local_filesystem_persistence.py`): logical keys are SHA-256-mapped inside one configured root, payloads are stored as exact UTF-8 bytes, writes use same-directory temporary files plus `os.replace`, and the storage layer never parses or rewrites the versioned save schema.
+Persistence transport remains a caller-supplied `LocalPersistenceStore`. The existing in-memory store remains a deterministic composition/test implementation. Durable single-player storage is now provided by `LocalFilesystemPersistenceStore` (`tools/stoneage_local_filesystem_persistence.py`): logical keys are SHA-256-mapped inside one configured root, payloads are stored as exact UTF-8 bytes, writes use same-directory temporary files plus `os.replace`, and the storage layer never parses or rewrites the versioned save schema. Regression coverage reconstructs a second coordinator against the same filesystem root and verifies that both session state and live occupancy deltas survive the process-object boundary.
 
 ## 5. Engine boundary
 

@@ -4312,5 +4312,19 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Deterministic tests cover protocol conformance, exact Unicode/newline round-trip, overwrite semantics, distinct logical keys, path-traversal resistance, missing slots and invalid input.
 - Validation is wired into `.github/workflows/validate-stoneage-local-runtime-session-coordinator.yml`.
 - Design record: `docs/LOCAL-FILESYSTEM-PERSISTENCE-R1.md`.
-- **LOCAL_FILESYSTEM_PERSISTENCE_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
-- Next Phase-1 priority after CI closure: close the next application-state mutation seam above the coordinator. Audit the existing recovered state-gated transition contracts for any action-stage mutations (item/Stone/flag consumption or grants) and implement only the mutation types directly required by recovered bindings. Keep pure eligibility evaluation separate from committed state mutation; do not invent quest logic, NPC schedules, combat loops, renderer/UI behavior or online services.
+- Remote validation: local runtime session coordinator GitHub Actions **36736500216 = PASS**.
+- **LOCAL_FILESYSTEM_PERSISTENCE_R1 = CLOSED.**
+- The next application-state mutation seam was audited immediately after filesystem closure; see the following section.
+
+
+## Phase 1 current state-gated transition mutation audit and restart persistence smoke — 2026-09-30
+
+- The current recovered25 runtime bootstrap contains exactly **3** state-gated dialogue WarpMan transitions: the shadowed-branch ingress plus the two fresh-start hometown bridge transitions.
+- All three are eligibility gates over normalized recovered `FREE` predicates. The runtime evaluator reads only current player level and held item template identities and returns an empty `consumed_state` map for both allowed and denied decisions.
+- The two fresh-start hometown bridge bindings additionally carry explicit recovered audit metadata `event_action_side_effect_fields = 0`; their bootstrap records also keep money gating disabled and schedule/party gates absent.
+- No current binding therefore requires item consumption, Stone deduction, flag mutation or grant mutation at transition execution time. Implementing a generic mutation engine here would be speculative infrastructure, not recovery-driven work.
+- The coordinator's existing rejection of future non-empty `consumed_state` remains intentionally fail-closed. If a later recovered binding proves an action-stage mutation, that exact mutation type must be modeled before execution is enabled.
+- Regression coverage now asserts empty `consumed_state` on the current recovered25 item and level+item gate evaluator paths.
+- Durable persistence is also tested across **coordinator reconstruction**, not merely within one process object: a first coordinator writes `stoneage.local-runtime-save.r1` through `LocalFilesystemPersistenceStore`; a newly constructed stack/coordinator reads the same disk slot and restores both session flags and live occupancy delta.
+- **CURRENT_RECOVERED25_TRANSITION_MUTATION_REQUIREMENT_R1 = CLOSED_NO_MUTATION_REQUIRED.**
+- Next Phase-1 priority: add an engine-neutral **interaction discovery/dispatch boundary** above the coordinator. A presentation layer should be able to ask which recovered state-gated dialogue interactions are spatially available at the current player coordinate, inspect their provenance/eligibility, and execute a selected transition without hard-coding raw recovered coordinates or legacy NPC arguments in UI code. Keep discovery separate from execution, keep unconditional classic overlap-Warp movement unchanged, and do not choose a rendering engine yet.

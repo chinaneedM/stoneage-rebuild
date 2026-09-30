@@ -59,3 +59,8 @@ Non-regular or symbolic-link destination slots are rejected on load. Invalid UTF
 This component is purely reconstruction infrastructure. It makes no claim about historical StoneAge save-file formats and does not reproduce a legacy client/server persistence mechanism.
 
 Historical/recovered provenance remains inside the versioned runtime and save-state contracts above this storage adapter.
+
+
+## 6. Integration smoke
+
+The durable store is exercised through the real coordinator save/continue boundary across two separately constructed coordinator instances sharing only the filesystem root. The smoke preserves a session world flag, a moved baseline NPC and a newly created non-overable live item, proving that disk persistence composes with the versioned occupancy-delta contract rather than merely round-tripping opaque strings in isolation.
