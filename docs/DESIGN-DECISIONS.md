@@ -244,3 +244,23 @@ Consequences:
 - the Python reconstruction remains an executable evidence/reference surface unless and until a parity-tested production core supersedes individual modules.
 
 Audit record: `docs/PRESENTATION-ENGINE-REQUIREMENTS-AUDIT-R1.md`.
+
+
+## DD-017 — Separate Python reconstruction/oracle tooling from the future standalone C# production core
+
+**Status:** Accepted
+
+The repository's Python environment is primarily an evidence-recovery and executable-specification system. It must not be treated as a requirement to ship the whole reconstruction toolchain inside the final game.
+
+The durable language boundary is:
+
+- Python remains authoritative for archaeology, extraction, provenance audits and build-time normalization;
+- closed Python deterministic models/tests remain the migration oracle;
+- the preferred future production deterministic core is a standalone engine-neutral C# library;
+- presentation engines consume that core through semantic facade/adapter boundaries and never become authoritative for recovered rules/state.
+
+Raw recovered bundles should be transformed by audited Python tooling into versioned provenance-bearing runtime artifacts before gameplay. Python embedding is not the default shipping strategy.
+
+Any C# replacement must demonstrate parity against versioned cross-language golden fixtures before the corresponding Python reference semantics are considered reproduced.
+
+Architecture record: `docs/PRODUCTION-RUNTIME-LANGUAGE-HOSTING-R1.md`.

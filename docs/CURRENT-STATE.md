@@ -4401,3 +4401,20 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Full evidence, requirement matrix and official-source snapshot: `docs/PRESENTATION-ENGINE-REQUIREMENTS-AUDIT-R1.md`.
 - **PRESENTATION_ENGINE_REQUIREMENTS_AUDIT_R1 = CLOSED.**
 - Next Phase-1 priority: close the **production runtime language/hosting boundary** before writing engine-specific scenes. Determine which Python modules remain reconstruction/reference tooling and define a parity-safe path for a production deterministic core. Explicitly evaluate a standalone C# core because Godot .NET, Unity and MonoGame can all host it, while preserving Python as an executable oracle through versioned golden fixtures. Do not embed Python in the shipped runtime by default and do not start a Godot production port until this boundary is documented.
+
+
+## Phase 1 production runtime language/hosting boundary — 2026-09-30
+
+- Repository composition confirms that Python is primarily the reconstruction/evidence laboratory, not a sensible monolithic shipping runtime: approximately **1,093** Python files at this snapshot, including **546** tests and roughly **404** probe/scan/audit/extract-style tools by filename; only a small subset is direct local/runtime infrastructure.
+- The language boundary is now explicit:
+  - **Python archaeology/build-time tooling remains Python**;
+  - closed Python deterministic models remain the **executable reference oracle** during migration;
+  - the preferred production deterministic target is a **standalone engine-agnostic C# core**;
+  - a future concrete presentation engine stays downstream of that core/facade.
+- C# is preferred because the current primary spike candidate (Godot .NET), Unity fallback and MonoGame control baseline can all host the same language/core, preserving engine optionality.
+- Raw recovered StoneAge bundles/probe parsers are not intended gameplay-runtime dependencies. Production consumes normalized versioned artifacts generated/audited at build time with provenance intact.
+- Embedding Python in the shipped game is **not** the default architecture; it requires a future measured justification if ever reconsidered.
+- No big-bang rewrite: each production subsystem must pass cross-language golden semantic fixtures before it supersedes its Python reference counterpart.
+- Architecture record: `docs/PRODUCTION-RUNTIME-LANGUAGE-HOSTING-R1.md`.
+- **PRODUCTION_RUNTIME_LANGUAGE_HOSTING_R1 = CLOSED.**
+- Next Phase-1 priority: implement `STONEAGE_RUNTIME_GOLDEN_CONTRACT_R1`, a copyright-safe versioned semantic fixture set generated/verified by the Python reference and designed to be consumed unchanged by future standalone C# parity tests. Cover session serialization, movement/Classic Warp, dynamic occupancy/save delta and semantic intent sequencing without depending on proprietary recovered bundle bytes.
