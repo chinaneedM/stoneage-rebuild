@@ -2,6 +2,7 @@ import unittest
 
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_GUARD,
+    BATTLE_COM_S_GBREAK,
     BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_MIGHTY,
     BATTLE_COM_S_POWERBALANCE,
@@ -10,6 +11,7 @@ from tools.stoneage_battle_round_model import (
     battle_command3_low,
 )
 from tools.stoneage_petskill_core_model import (
+    guard_break_command,
     guardian_command,
     mighty_command,
     power_balance_command,
@@ -58,6 +60,20 @@ class PetSkillRoundBridgeTests(unittest.TestCase):
         self.assertEqual(submission.battle_command.command2,3)
         self.assertEqual(submission.setup_effects.defense_power,960)
         self.assertEqual(submission.setup_effects.guardian_for_slot,3)
+
+    def test_guardbreak_carries_fixed_attack_setup_into_round(self):
+        payload=guard_break_command(
+            10,
+            "ascii-only-option",
+            fixed_attack=123,
+        )
+        submission=bridge_stable_pet_skill_command(payload)
+        self.assertEqual(
+            submission.battle_command.command1,
+            BATTLE_COM_S_GBREAK,
+        )
+        self.assertEqual(submission.battle_command.command2,10)
+        self.assertEqual(submission.setup_effects.attack_power,123)
 
     def test_mighty_packs_damage_multiplier_and_dodge_modifier(self):
         payload=mighty_command(10, "倍2.5 回避20")
