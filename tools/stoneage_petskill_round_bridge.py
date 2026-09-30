@@ -15,6 +15,7 @@ from typing import Mapping, Any
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_GUARD,
     BATTLE_COM_S_GUARDIAN_ATTACK,
+    BATTLE_COM_S_MIGHTY,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
     BattleCommand,
@@ -40,6 +41,7 @@ def bridge_stable_pet_skill_command(
     Supported common handlers are the branches currently executed by the
     reconstructed ordinary physical round:
     - PETSKILL_Guardian -> S_GUARDIAN_ATTACK or ordinary GUARD + registration
+    - PETSKILL_Mighty -> S_MIGHTY with LOW=damage x100 / HIGH=dodge modifier
     - PETSKILL_PowerBalance -> S_POWERBALANCE + immediate work attack/defense
     - PETSKILL_StatusChange -> S_STATUSCHANGE with LOW=status/HIGH=turn
     """
@@ -62,6 +64,17 @@ def bridge_stable_pet_skill_command(
         battle_command=BattleCommand(
             BATTLE_COM_GUARD,
             command2=target,
+        )
+    elif source_command=="S_MIGHTY":
+        if "low" not in payload or "high" not in payload:
+            raise ValueError("Mighty payload lacks packed COM3 halves")
+        battle_command=BattleCommand(
+            BATTLE_COM_S_MIGHTY,
+            command2=target,
+            command3=pack_battle_command3(
+                low=int(payload["low"]),
+                high=int(payload["high"]),
+            ),
         )
     elif source_command=="S_POWERBALANCE":
         battle_command=BattleCommand(
