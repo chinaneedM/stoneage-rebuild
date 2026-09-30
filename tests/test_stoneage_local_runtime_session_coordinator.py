@@ -2,6 +2,7 @@ import unittest
 from pathlib import Path
 from types import MappingProxyType, SimpleNamespace
 
+from tools.stoneage_map_collision_model import CollisionDecision
 from tools.stoneage_local_runtime_core import (
     FreshStartSeed,
     LocalRuntimeSessionState,
@@ -177,6 +178,30 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                 session,
                 destination=MapPosition(2, 0, 0),
                 entry_allowed=True,
+            )
+
+    def test_server_collision_provider_can_drive_one_cell_walk(self):
+        session = self.coordinator.new_game(1)
+        self.stack.collision_provider = SimpleNamespace(
+            ordinary_step_verdict=lambda **_kwargs: CollisionDecision(
+                True,
+                "server_static_allowed",
+            )
+        )
+        result = self.coordinator.walk_one_cell_with_server_collision(
+            session,
+            destination=MapPosition(1, 0, 1),
+        )
+        self.assertTrue(result.resolution.moved)
+        self.assertIsNotNone(result.collision)
+        self.assertTrue(result.collision.allowed)
+        self.assertEqual(result.session.player_position, MapPosition(1, 0, 1))
+
+        self.stack.collision_provider = None
+        with self.assertRaisesRegex(ValueError, "no server collision provider"):
+            self.coordinator.walk_one_cell_with_server_collision(
+                session,
+                destination=MapPosition(1, 0, 1),
             )
 
     def test_classic_overlap_warp_is_reused_not_reimplemented(self):
