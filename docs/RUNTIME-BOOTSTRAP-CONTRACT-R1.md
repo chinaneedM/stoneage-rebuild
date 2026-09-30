@@ -193,3 +193,13 @@ The machine-readable contract and CI must keep these invariants true:
 - legacy networking remains optional implementation detail, not a rule dependency.
 
 If later evidence contradicts these facts, the contract is superseded by a new version rather than silently edited into a different historical claim.
+
+
+## 12. Runtime-core interface binding
+
+The engine-neutral ports and local session envelope that consume this contract are defined in:
+
+- `docs/RUNTIME-CORE-INTERFACES-R1.md`
+- `tools/stoneage_local_runtime_core.py`
+
+The bootstrap contract remains data/provenance policy; concrete recovered content binding is performed by a versioned adapter behind those interfaces.
