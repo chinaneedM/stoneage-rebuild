@@ -1,0 +1,15 @@
+StoneAge all-hometown ordered fresh-start progression audit — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|coordinates, item/enemy/NPC identities and raw route details are withheld
+RULE|COMBAT is a coordinate-reachable repeatable positive-EXP source with a legal one-hit existential victory witness; finite repetition to the closed joint target uses the already-pinned leveling argument
+RULE|bridge hometowns require COMBAT and SHOP before the selected WarpMan transition; direct hometowns require COMBAT before award interaction
+RULE|combat and WarpMan destination outcomes remain existential legal RNG witnesses, not guarantee or pacing claims
+PREREQUISITE|bridge_shop_execution=1|leveling_reward_chain=1|downstream_progression=1|materializable_world_closed=1
+ALL_HOMETOWN_ORDERED_ROUTE|ordinal=1|combat_witnesses=16|requires_shop=0|requires_warpman=0|ordered=1|milestones=COMBAT|visited_states=107|unresolved_map_floors=0
+ALL_HOMETOWN_ORDERED_ROUTE|ordinal=2|combat_witnesses=16|requires_shop=0|requires_warpman=0|ordered=1|milestones=COMBAT|visited_states=107|unresolved_map_floors=0
+ALL_HOMETOWN_ORDERED_ROUTE|ordinal=3|combat_witnesses=28|requires_shop=1|requires_warpman=1|ordered=1|milestones=COMBAT>SHOP>WARPMAN|visited_states=446|unresolved_map_floors=0
+ALL_HOMETOWN_ORDERED_ROUTE|ordinal=4|combat_witnesses=28|requires_shop=1|requires_warpman=1|ordered=1|milestones=SHOP>COMBAT>WARPMAN|visited_states=442|unresolved_map_floors=0
+FRESH_START_ALL_HOMETOWNS_ORDERED_PROGRESSION|witness=1
+ALL_HOMETOWNS_FULL_WORLD|closed=1
+RESOLUTION|SHADOWED_BRANCH_FRESH_START_ALL_HOMETOWN_PROGRESSION_AUDITED
