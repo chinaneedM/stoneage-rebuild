@@ -1,3 +1,4 @@
+import json
 import unittest
 from pathlib import Path
 from types import MappingProxyType, SimpleNamespace
@@ -15,6 +16,7 @@ from tools.stoneage_local_runtime_core import (
     ResolvedTransitionBinding,
     TransitionGateDecision,
     WorldRegionRequest,
+    encode_local_runtime_session,
     load_runtime_bootstrap_file,
 )
 from tools.stoneage_local_runtime_session_coordinator import (
@@ -153,6 +155,115 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         self.assertIn("slot-1", self.store.rows)
         with self.assertRaises(KeyError):
             self.coordinator.continue_game("missing")
+
+    def test_save_continue_persists_live_occupancy_delta_and_new_game_resets(self):
+        initial = SimpleNamespace(
+            profile_id="TEST_INITIAL_OCCUPANCY_R1",
+            populate_registry=lambda registry: registry.register_character(
+                object_id="npc-placement:42",
+                position=MapPosition(1, 0, 1),
+                overable=True,
+                provenance="test:initial-npc",
+            ),
+        )
+        self.stack.npc_initial_occupancy = initial
+        coordinator = LocalRuntimeSessionCoordinator(
+            stack=self.stack,
+            persistence=self.store,
+        )
+        session = coordinator.new_game(1)
+        coordinator.occupancy_registry.move(
+            "npc-placement:42",
+            MapPosition(1, 1, 1),
+        )
+        coordinator.occupancy_registry.set_overable(
+            "npc-placement:42",
+            False,
+        )
+        coordinator.occupancy_registry.register_item(
+            object_id="item:drop:9",
+            position=MapPosition(1, 2, 1),
+            overable=False,
+            provenance="test:dropped-item",
+        )
+
+        coordinator.save_game("slot-occupancy", session)
+        payload = json.loads(self.store.rows["slot-occupancy"])
+        self.assertEqual(payload["schema"], "stoneage.local-runtime-save.r1")
+        self.assertEqual(
+            payload["occupancy"]["base_profile_id"],
+            "TEST_INITIAL_OCCUPANCY_R1",
+        )
+        self.assertEqual(len(payload["occupancy"]["upserts"]), 2)
+
+        coordinator.new_game(1)
+        self.assertEqual(
+            set(coordinator.occupancy_registry.objects),
+            {"npc-placement:42"},
+        )
+        self.assertEqual(
+            coordinator.occupancy_registry.objects["npc-placement:42"].position,
+            MapPosition(1, 0, 1),
+        )
+        self.assertTrue(
+            coordinator.occupancy_registry.objects["npc-placement:42"].overable
+        )
+
+        restored = coordinator.continue_game("slot-occupancy")
+        self.assertEqual(restored.player_position, session.player_position)
+        self.assertEqual(
+            coordinator.occupancy_registry.objects["npc-placement:42"].position,
+            MapPosition(1, 1, 1),
+        )
+        self.assertFalse(
+            coordinator.occupancy_registry.objects["npc-placement:42"].overable
+        )
+        self.assertIn("item:drop:9", coordinator.occupancy_registry.objects)
+        self.assertFalse(
+            coordinator.occupancy_registry.objects["item:drop:9"].overable
+        )
+
+    def test_legacy_session_save_rehydrates_initial_occupancy_without_delta(self):
+        initial = SimpleNamespace(
+            profile_id="TEST_INITIAL_OCCUPANCY_R1",
+            populate_registry=lambda registry: registry.register_character(
+                object_id="npc-placement:42",
+                position=MapPosition(1, 0, 1),
+                overable=True,
+                provenance="test:initial-npc",
+            ),
+        )
+        self.stack.npc_initial_occupancy = initial
+        coordinator = LocalRuntimeSessionCoordinator(
+            stack=self.stack,
+            persistence=self.store,
+        )
+        session = coordinator.new_game(1)
+        coordinator.occupancy_registry.move(
+            "npc-placement:42",
+            MapPosition(1, 1, 1),
+        )
+        coordinator.occupancy_registry.register_item(
+            object_id="item:transient",
+            position=MapPosition(1, 2, 1),
+            overable=False,
+            provenance="test:transient",
+        )
+        self.store.save("legacy", encode_local_runtime_session(session))
+
+        restored = coordinator.continue_game("legacy")
+        self.assertEqual(restored.player_position, session.player_position)
+        self.assertEqual(
+            set(coordinator.occupancy_registry.objects),
+            {"npc-placement:42"},
+        )
+        self.assertEqual(
+            coordinator.occupancy_registry.objects["npc-placement:42"].position,
+            MapPosition(1, 0, 1),
+        )
+        self.assertTrue(
+            coordinator.occupancy_registry.objects["npc-placement:42"].overable
+        )
 
     def test_explicit_collision_verdict_controls_one_cell_walk(self):
         session = self.coordinator.new_game(1)
