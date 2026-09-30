@@ -9,6 +9,8 @@ on:
       - tests/test_stoneage_local_runtime_session_coordinator.py
       - tools/stoneage_local_application_facade.py
       - tests/test_stoneage_local_application_facade.py
+      - tools/stoneage_local_engine_adapter.py
+      - tests/test_stoneage_local_engine_adapter.py
       - tools/stoneage_local_runtime_save.py
       - tests/test_stoneage_local_runtime_save.py
       - tools/stoneage_local_filesystem_persistence.py
@@ -43,6 +45,7 @@ jobs:
           python3 -m unittest \
             tests.test_stoneage_local_runtime_session_coordinator \
             tests.test_stoneage_local_application_facade \
+            tests.test_stoneage_local_engine_adapter \
             tests.test_stoneage_local_runtime_save \
             tests.test_stoneage_local_filesystem_persistence \
             tests.test_stoneage_runtime_dynamic_occupancy \

@@ -4367,5 +4367,19 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - The facade exposes no raw recovered source rectangle, NPC argument string, collision decoder or direct mutable runtime registry.
 - No renderer, window toolkit, scene graph, input library, audio layer or asset pipeline has been selected.
 - Design record: `docs/LOCAL-APPLICATION-FACADE-R1.md`.
-- **LOCAL_APPLICATION_FACADE_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
-- Next Phase-1 priority after CI closure: define the first **engine-adapter contract** at the semantic command/event level (input intents in; facade results/view-model updates out) while remaining engine-agnostic. Do not select a renderer yet; first make the adapter boundary testable so later Godot/Unity evaluation is an implementation choice rather than a core-runtime dependency.
+- Remote validation: local runtime session coordinator GitHub Actions **36738166002 = PASS**.
+- **LOCAL_APPLICATION_FACADE_R1 = CLOSED.**
+- The semantic engine-adapter contract was implemented immediately after facade closure; see the following section.
+
+
+## Phase 1 semantic engine-adapter contract — 2026-09-30
+
+- The first presentation/input contract is now implemented without selecting an engine: `tools/stoneage_local_engine_adapter.py`.
+- Semantic input intents are limited to: new game, continue, save, one-cell directional move, interaction dispatch and view refresh.
+- `MoveIntent(dx,dy)` is a one-cell direction intent, **not** an authoritative destination write. The adapter derives the destination from the current authoritative session and delegates movement to the application facade's unified-collision path.
+- Every accepted intent yields `LocalEngineUpdate`: semantic event kind + fresh `LocalApplicationView`, with walk/transition result details attached only when relevant.
+- The adapter owns only the active immutable session reference needed for presentation flow. New game/continue replace it; movement/interaction replace it with the canonical result returned from the core. Save/refresh/move/interaction fail closed when no active session exists.
+- Dependency boundary is enforced by regression: this module imports neither recovered25-specific modules nor Godot/Unity/input/rendering frameworks.
+- Design record: `docs/LOCAL-ENGINE-ADAPTER-CONTRACT-R1.md`.
+- **LOCAL_ENGINE_ADAPTER_CONTRACT_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Next Phase-1 priority after CI closure: perform a **presentation-engine requirements audit** against the now-stable facade/adapter boundary. Compare candidate engines only on concrete project requirements (2D tile/sprite rendering, deterministic command integration, desktop packaging, save path handling, animation/audio tooling, scripting ergonomics and long-term maintainability). This is an evaluation/documentation step first; do not bind production runtime code to an engine until the audit is recorded.
