@@ -17,8 +17,12 @@ from __future__ import annotations
 
 from dataclasses import dataclass, replace
 from types import MappingProxyType
-from typing import Mapping
+from typing import Mapping, Sequence
 
+from tools.stoneage_map_collision_model import (
+    CollisionDecision,
+    DynamicOccupant,
+)
 from tools.stoneage_local_runtime_core import (
     LocalPersistenceStore,
     LocalRuntimeSessionState,
@@ -42,6 +46,7 @@ from tools.stoneage_singleplayer_world import (
 class LocalRuntimeWalkResult:
     session: LocalRuntimeSessionState
     resolution: WalkResolution
+    collision: CollisionDecision | None = None
 
 
 @dataclass(frozen=True)
@@ -185,6 +190,38 @@ class LocalRuntimeSessionCoordinator:
         return LocalRuntimeWalkResult(
             session=updated,
             resolution=resolution,
+        )
+
+    def walk_one_cell_with_server_collision(
+        self,
+        session: LocalRuntimeSessionState,
+        *,
+        destination: MapPosition,
+        destination_occupants: Sequence[DynamicOccupant] = (),
+        is_flying: bool = False,
+        map_objmove_ok: bool = True,
+    ) -> LocalRuntimeWalkResult:
+        """Resolve one step through the stack's provenance-safe server provider."""
+        session = self._validate_session(session)
+        provider = getattr(self.stack, "collision_provider", None)
+        if provider is None:
+            raise ValueError("runtime stack has no server collision provider")
+        verdict = provider.ordinary_step_verdict(
+            origin=session.player_position,
+            destination=destination,
+            destination_occupants=tuple(destination_occupants),
+            is_flying=bool(is_flying),
+        )
+        result = self.walk_one_cell(
+            session,
+            destination=destination,
+            entry_allowed=verdict.allowed,
+            map_objmove_ok=bool(map_objmove_ok),
+        )
+        return LocalRuntimeWalkResult(
+            session=result.session,
+            resolution=result.resolution,
+            collision=verdict,
         )
 
     @staticmethod
