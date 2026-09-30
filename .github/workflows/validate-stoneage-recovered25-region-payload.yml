@@ -17,6 +17,11 @@ on:
       - tests/test_stoneage_recovered25_local_runtime_stack.py
       - tools/stoneage_recovered25_server_collision_coverage_probe.py
       - tests/test_stoneage_recovered25_server_collision_coverage_probe.py
+      - tools/stoneage_recovered25_server_collision_provider.py
+      - tools/stoneage_recovered25_server_collision_smoke.py
+      - tests/test_stoneage_recovered25_server_collision_provider.py
+      - tools/stoneage_local_runtime_session_coordinator.py
+      - tests/test_stoneage_local_runtime_session_coordinator.py
       - tools/stoneage_server_static_map.py
       - tools/stoneage_recovered25_world_profile_adapter.py
       - game/RUNTIME-BOOTSTRAP-RECOVERED25-R1.json
@@ -37,7 +42,9 @@ jobs:
             tests.test_stoneage_recovered25_region_payload \
             tests.test_stoneage_recovered25_world_profile_adapter \
             tests.test_stoneage_recovered25_local_runtime_stack \
-            tests.test_stoneage_recovered25_server_collision_coverage_probe -v
+            tests.test_stoneage_recovered25_server_collision_coverage_probe \
+            tests.test_stoneage_recovered25_server_collision_provider \
+            tests.test_stoneage_local_runtime_session_coordinator -v
       - name: Install extractor
         run: sudo apt-get update && sudo apt-get install -y unar
       - name: Recover verified preservation bundle
@@ -138,7 +145,7 @@ jobs:
           S="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
           M="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/data/map/mapset.txt' -print -quit)"
           test -n "$S"; test -n "$M"
-          R=research/recovered/STONEAGE-25-SERVER-COLLISION-COVERAGE-R1.txt
+          R=research/recovered/STONEAGE-25-SERVER-COLLISION-COVERAGE-R1.txt research/recovered/STONEAGE-25-SERVER-COLLISION-PROVIDER-R1.txt
           python3 -m tools.stoneage_recovered25_server_collision_coverage_probe \
             --server-map-root "$S" \
             --mapset "$M" > "$R"
@@ -147,6 +154,31 @@ jobs:
           grep -F 'COUNT|supplemental_floors|65' "$R"
           grep -F 'COUNT|stable_floors|761' "$R"
           grep -F 'RESOLUTION|RECOVERED25_SERVER_COLLISION_COVERAGE_AUDITED' "$R"
+      - name: Validate recovered25 server collision runtime provider
+        run: |
+          set -euo pipefail
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5主程式/stoneage2.5/map' -print -quit)"
+          N="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/npc' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
+          S="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
+          M="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/data/map/mapset.txt' -print -quit)"
+          test -n "$D"; test -n "$N"; test -n "$C"; test -n "$S"; test -n "$M"
+          R=research/recovered/STONEAGE-25-SERVER-COLLISION-PROVIDER-R1.txt
+          python3 -m tools.stoneage_recovered25_server_collision_smoke \
+            --client-dat-dir "$D" \
+            --npc-dir "$N" \
+            --setup "$C" \
+            --server-map-root "$S" \
+            --mapset "$M" > "$R"
+          test -s "$R"
+          grep -F 'COUNT|materializable_floors|826' "$R"
+          grep -F 'COUNT|server_collision_closed|635' "$R"
+          grep -F 'COUNT|server_collision_uncovered|191' "$R"
+          grep -F 'COUNT|status:NO_SERVER_MAP|189' "$R"
+          grep -F 'COUNT|status:DIVERGENT_SERVER_DUPLICATE|2' "$R"
+          grep -F 'SERVER_BACKED_MOVEMENT_WITNESS|1' "$R"
+          grep -F 'UNCOVERED_FAIL_CLOSED_WITNESS|1' "$R"
+          grep -F 'RESOLUTION|RECOVERED25_SERVER_COLLISION_PROVIDER_CLOSED_WITH_GAPS' "$R"
       - name: Commit derived aggregate reports
         run: |
           git config user.name stoneage-recovery-bot
