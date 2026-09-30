@@ -4779,3 +4779,36 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **LOCAL_RUNTIME_ENEMY_AI_STATUSCHANGE_R1 = CLOSED.**
 - Next priority: rank the remaining stable-common callbacks by recovered25 slot-use impact and execution-gap size. Current leading candidates are ContinuationAttack (**139** uses), Mighty (**120**), ChargeAttack (**90**), NoGuard (**74**), PowerBalance (**62**) and GuardBreak (**60**). Do not choose by count alone: Continuation requires multi-hit/retarget/counter-loop closure; NoGuard requires cross-action dodge/counter COM3 integration.
 
+## Phase 1 recovered PowerBalance + Mighty enemy-AI execution — 2026-10-01
+
+- Recovered25 aggregate evidence now closes two additional stable-common enemy `wa` callbacks.
+- `PETSKILL_PowerBalance`:
+  - **3** referenced skill IDs and **62** positive enemybase skill-slot uses;
+  - all **3/3** OPTION rows have strict CP950/Big5 decode consensus;
+  - all **3/3** contain both `攻%` and `防%`;
+  - **0/3** contain the later/unclosed `敏%` extension marker;
+  - recovered enemy birth projection supplies the FIXSTR/FIXTOUGH-equivalent attack/defense basis;
+  - `BATTLE_COM_S_POWERBALANCE=1007` executes through the ordinary physical attack path with immediate work attack/defense mutations carried as explicit setup effects.
+- `PETSKILL_Mighty`:
+  - **2** referenced skill IDs and **120** positive enemybase skill-slot uses;
+  - both OPTION rows have strict CP950/Big5 decode consensus;
+  - **2/2** contain the fixed `倍` multiplier marker and **2/2** contain the `避` dodge marker;
+  - **2/2** pass the strict numeric grammar probe for both multiplier and dodge values;
+  - `BATTLE_COM_S_MIGHTY=1006` preserves LOW(COM3)=damage multiplier x100 and HIGH(COM3)=dodge modifier;
+  - dodge modification is applied before the original-target dodge check; damage multiplication is applied after ordinary damage/guard/minimum-damage handling and before damage reaction / ride sharing;
+  - counter execution does not inherit Mighty modifiers.
+- Runtime OPTION handling is fail-closed:
+  - PowerBalance rejects rows outside the proven attack/defense marker grammar;
+  - Mighty rejects missing or malformed multiplier/dodge numeric grammar instead of falling back to old handler defaults.
+- End-to-end recovered enemy AI now admits:
+  `None + NormalAttack + NormalGuard + StatusChange + PowerBalance + Mighty`.
+- Validation:
+  - corrected Mighty physical baseline comparison: battle core **36771733005 = PASS**, Taiwan v1.0 gameplay **36771733178 = PASS**;
+  - enabled Mighty runtime: golden contract **36772731716 = PASS**;
+  - final end-to-end coordinator on HEAD `3a6858fa30528c76be8b662746369b7359c1110e`: **36772788312 = PASS**;
+  - final hash-pinned recovered25 region/runtime-stack workflow: **36772788450 = PASS**.
+- The earlier Mighty exact-damage assertion failure (**36771562662 / 36771562742**) was a test expectation error: the fixture's ordinary physical baseline was 95, so x2 correctly produced 190; implementation order was unchanged and the corrected baseline-relative regression passed.
+- Executable recovered stable-common pet-skill slot-use coverage is now **1711 / 2486 = ~68.8%** when counting NormalAttack + NormalGuard + StatusChange + PowerBalance + Mighty. This remains a skill-slot semantic coverage metric, not an encounter-frequency/action-probability estimate.
+- **LOCAL_RUNTIME_ENEMY_AI_POWERBALANCE_R1 = CLOSED.**
+- **LOCAL_RUNTIME_ENEMY_AI_MIGHTY_R1 = CLOSED.**
+- Next priority: `PETSKILL_GuardBreak` (**1 referenced ID / 60 slot uses**). Its recovered OPTION is ASCII-only, while the fixed common handler's only data marker is non-ASCII `攻%`, so recovered25 cannot trigger that optional attack-percent rewrite. The remaining closure is the dedicated GuardBreak execution contract: command 1002, guard-only hit gate, no ordinary GUARD damage reduction, and fail/miss when the resolved target is not actively guarding or is confused. ChargeAttack/ContinuationAttack remain deferred because they require cross-turn or multi-hit state/execution closure.

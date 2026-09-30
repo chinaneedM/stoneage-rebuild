@@ -292,6 +292,15 @@ The fixed physical executor also pins the application order:
 
 This makes Mighty a single-hit ordinary physical specialization, not a multi-hit or persistent-status mechanic.
 
+Recovered25 runtime closure further proves:
+
+- **2** enemy-referenced Mighty skill IDs account for **120** positive enemybase skill-slot uses;
+- both OPTION rows decode identically under strict CP950 and Big5;
+- **2/2** contain the `倍` multiplier marker and **2/2** contain the `避` dodge marker;
+- **2/2** pass strict numeric parsing for both values;
+- recovered enemy execution rejects missing/malformed marker or numeric grammar rather than relying on the handler's old default quirk;
+- `BATTLE_COM_S_MIGHTY=1006` is now carried end-to-end through the ordinary physical round without leaking its modifiers into counters.
+
 ## Ordinary status-change attack
 
 The handler:
