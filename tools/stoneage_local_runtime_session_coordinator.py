@@ -25,6 +25,7 @@ from tools.stoneage_enemy_spawn_model import (
 )
 from tools.stoneage_enemy_ai_model import (
     ATTACK as ENEMY_AI_ATTACK,
+    ESCAPE as ENEMY_AI_ESCAPE,
     GUARD as ENEMY_AI_GUARD,
     EnemyAiTarget,
     resolve_common_normal_enemy_ai,
@@ -901,19 +902,20 @@ class LocalRuntimeSessionCoordinator:
             persistent_battle_state=state,
         )
 
-    def build_persistent_enemy_attack_guard_commands(
+    def build_persistent_enemy_common_commands(
         self,
         context: LocalRuntimeBattleContext,
         *,
         mode_rolls_by_enemy_id: Mapping[str, int],
         target_rolls_by_enemy_id: Mapping[str, int] | None = None,
+        allow_escape: bool = False,
     ) -> Mapping[str, BattleCommand]:
-        """Derive the currently executable common enemy-AI subset.
+        """Derive the evidence-closed common enemy-AI command subset.
 
-        The stable descendant AI may choose ATTACK, GUARD, ESCAPE, a pet-skill
-        slot, or a path that returns no decision. This coordinator exposes only
-        ATTACK/GUARD because those commands are already closed by the ordinary
-        persistent-round runtime. Every other selected mode fails closed.
+        ATTACK/GUARD are always available here. ESCAPE is emitted only when the
+        caller explicitly opens that execution seam; its probability context
+        and RAND(1,100) input are handled separately by the round coordinator.
+        Skill, magic-failure and unresolved extension paths remain fail-closed.
         """
 
         state = context.persistent_battle_state
@@ -1050,12 +1052,36 @@ class LocalRuntimeSessionCoordinator:
             if decision.kind == ENEMY_AI_GUARD:
                 commands[enemy_id] = BattleCommand(BATTLE_COM_GUARD)
                 continue
+            if decision.kind == ENEMY_AI_ESCAPE and bool(allow_escape):
+                commands[enemy_id] = BattleCommand(BATTLE_COM_ESCAPE)
+                continue
+            allowed = (
+                "ATTACK/GUARD/ESCAPE"
+                if bool(allow_escape)
+                else "ATTACK/GUARD"
+            )
             raise ValueError(
                 "enemy AI selected command outside coordinator "
-                f"ATTACK/GUARD subset: {enemy_id}:{decision.kind}"
+                f"{allowed} subset: {enemy_id}:{decision.kind}"
             )
 
         return MappingProxyType(commands)
+
+    def build_persistent_enemy_attack_guard_commands(
+        self,
+        context: LocalRuntimeBattleContext,
+        *,
+        mode_rolls_by_enemy_id: Mapping[str, int],
+        target_rolls_by_enemy_id: Mapping[str, int] | None = None,
+    ) -> Mapping[str, BattleCommand]:
+        """Backward-compatible ATTACK/GUARD-only enemy-AI boundary."""
+
+        return self.build_persistent_enemy_common_commands(
+            context,
+            mode_rolls_by_enemy_id=mode_rolls_by_enemy_id,
+            target_rolls_by_enemy_id=target_rolls_by_enemy_id,
+            allow_escape=False,
+        )
 
     def resolve_persistent_attack_guard_wait_round_with_enemy_ai(
         self,
@@ -1136,6 +1162,200 @@ class LocalRuntimeSessionCoordinator:
             field_attr=field_attr,
             field_power=field_power,
             tie_break_order=tie_break_order,
+        )
+
+    def resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+        self,
+        context: LocalRuntimeBattleContext,
+        *,
+        player_side_commands: Mapping[str, BattleCommand],
+        enemy_mode_rolls: Mapping[str, int],
+        enemy_target_rolls: Mapping[str, int] | None,
+        enemy_escape_rolls: Mapping[str, OrdinaryEscapeRolls],
+        opponent_abio_by_participant_id: Mapping[str, bool],
+        initiative_random_subtracts: Mapping[str, int],
+        profiles: Mapping[str, BattleCombatProfile],
+        attack_rolls: Mapping[str, OrdinaryAttackRolls],
+        defense_profile: str,
+        no_risk: bool = False,
+        field_attr: str = "none",
+        field_power: int = 0,
+        tie_break_order: Sequence[str] | None = None,
+    ) -> tuple[LocalRuntimeBattleContext, PersistentRoundResult]:
+        """Advance a common enemy-AI round including source-shaped ESCAPE.
+
+        Enemy RARE comes from the recovered enemybase template. Escape RAND and
+        opponent ABIO state remain explicit caller inputs because neither RNG nor
+        an authoritative ABIO container belongs to this coordinator.
+        """
+
+        state = context.persistent_battle_state
+        if state is None:
+            raise ValueError("battle context has no persistent battle state")
+        if state.phase != "active":
+            raise ValueError("cannot execute another round after battle termination")
+
+        living_player_side_ids = {
+            str(participant.participant_id)
+            for participant in (
+                state.session.player,
+                *state.session.allied_pets,
+            )
+            if (
+                str(participant.participant_id)
+                in state.hp_by_participant_id
+                and int(
+                    state.hp_by_participant_id[
+                        str(participant.participant_id)
+                    ]
+                ) > 0
+            )
+        }
+        normalized_player_commands = {
+            str(key): value
+            for key, value in player_side_commands.items()
+        }
+        if set(normalized_player_commands) != living_player_side_ids:
+            missing = sorted(
+                living_player_side_ids - set(normalized_player_commands)
+            )
+            extra = sorted(
+                set(normalized_player_commands) - living_player_side_ids
+            )
+            raise ValueError(
+                "player-side commands must cover exactly living player-side "
+                f"actors; missing={missing}, extra={extra}"
+            )
+        invalid_player_commands = tuple(
+            sorted(
+                participant_id
+                for participant_id, command
+                in normalized_player_commands.items()
+                if not isinstance(command, BattleCommand)
+                or int(command.command1)
+                not in {BATTLE_COM_ATTACK, BATTLE_COM_GUARD, BATTLE_COM_WAIT}
+            )
+        )
+        if invalid_player_commands:
+            raise ValueError(
+                "enemy-AI escape round accepts player-side "
+                "ATTACK/GUARD/WAIT only: "
+                + ",".join(invalid_player_commands)
+            )
+
+        enemy_commands = self.build_persistent_enemy_common_commands(
+            context,
+            mode_rolls_by_enemy_id=enemy_mode_rolls,
+            target_rolls_by_enemy_id=enemy_target_rolls,
+            allow_escape=True,
+        )
+        escaping_enemy_ids = {
+            str(participant_id)
+            for participant_id, command in enemy_commands.items()
+            if int(command.command1) == BATTLE_COM_ESCAPE
+        }
+
+        normalized_escape_rolls = {
+            str(key): value
+            for key, value in enemy_escape_rolls.items()
+        }
+        if set(normalized_escape_rolls) != escaping_enemy_ids:
+            missing = sorted(
+                escaping_enemy_ids - set(normalized_escape_rolls)
+            )
+            extra = sorted(
+                set(normalized_escape_rolls) - escaping_enemy_ids
+            )
+            raise ValueError(
+                "enemy escape rolls must cover exactly AI-selected escaping "
+                f"enemies; missing={missing}, extra={extra}"
+            )
+        for enemy_id, rolls in normalized_escape_rolls.items():
+            if not isinstance(rolls, OrdinaryEscapeRolls):
+                raise TypeError(
+                    f"enemy escape rolls for {enemy_id} must be "
+                    "OrdinaryEscapeRolls"
+                )
+
+        normalized_abio = {
+            str(key): bool(value)
+            for key, value in opponent_abio_by_participant_id.items()
+        }
+        expected_abio_ids = (
+            living_player_side_ids if escaping_enemy_ids else set()
+        )
+        if set(normalized_abio) != expected_abio_ids:
+            missing = sorted(expected_abio_ids - set(normalized_abio))
+            extra = sorted(set(normalized_abio) - expected_abio_ids)
+            raise ValueError(
+                "enemy escape ABIO inputs must cover exactly current living "
+                f"opponents when ESCAPE is selected; missing={missing}, "
+                f"extra={extra}"
+            )
+
+        spawn_by_participant_id = {
+            str(spawned.participant.participant_id): spawned
+            for spawned in context.spawned_enemies
+        }
+        escape_contexts = {}
+        for enemy_id in escaping_enemy_ids:
+            if enemy_id not in spawn_by_participant_id:
+                raise ValueError(
+                    "escaping enemy lacks recovered spawn provenance: "
+                    + enemy_id
+                )
+            spawned = spawn_by_participant_id[enemy_id]
+            if spawned.template.rare is None:
+                raise ValueError(
+                    "escaping enemy lacks enemybase RARE provenance: "
+                    + enemy_id
+                )
+            if enemy_id not in state.escape_count_by_participant_id:
+                raise ValueError(
+                    "escaping enemy lacks persistent escape counter: "
+                    + enemy_id
+                )
+            escape_contexts[enemy_id] = OrdinaryEscapeContext(
+                stored_escape_count_before=int(
+                    state.escape_count_by_participant_id[enemy_id]
+                ),
+                actor_rare=int(spawned.template.rare),
+                opponent_abio_by_participant_id=normalized_abio,
+                pvp=False,
+                forced_exit=False,
+            )
+
+        commands = {
+            **normalized_player_commands,
+            **dict(enemy_commands),
+        }
+        result = resolve_persistent_ordinary_round(
+            state,
+            commands=commands,
+            initiative_random_subtracts={
+                str(key): int(value)
+                for key, value in initiative_random_subtracts.items()
+            },
+            profiles=profiles,
+            attack_rolls=attack_rolls,
+            escape_contexts=escape_contexts,
+            escape_rolls=normalized_escape_rolls,
+            defense_profile=str(defense_profile),
+            no_risk=bool(no_risk),
+            field_attr=str(field_attr),
+            field_power=int(field_power),
+            tie_break_order=(
+                None
+                if tie_break_order is None
+                else tuple(str(x) for x in tie_break_order)
+            ),
+        )
+        return (
+            replace(
+                context,
+                persistent_battle_state=result.after,
+            ),
+            result,
         )
 
     def resolve_persistent_attack_wait_round(
