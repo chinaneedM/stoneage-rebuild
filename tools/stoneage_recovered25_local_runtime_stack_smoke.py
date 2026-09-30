@@ -23,6 +23,7 @@ from tools.stoneage_player_creation_model import build_creation_state
 from tools.stoneage_recovered25_local_runtime_stack import (
     Recovered25LocalRuntimeStack,
 )
+from tools.stoneage_recovered25_collision_router import CLIENT_PROVIDER_KIND
 from tools.stoneage_recovered25_region_payload import (
     CLIENT_DAT_THREE_PLANE,
     SERVER_LS2MAP_TWO_PLANE,
@@ -75,6 +76,7 @@ def run(
     setup: Path,
     server_map_root: Path,
     mapset_path: Path,
+    client_adrn_path: Path,
 ):
     root = Path(__file__).resolve().parents[1]
     profile = load_runtime_bootstrap_file(
@@ -88,6 +90,7 @@ def run(
         setup=setup,
         server_map_root=server_map_root,
         mapset_path=mapset_path,
+        client_adrn_path=client_adrn_path,
     )
 
     seeds = {ordinal: stack.create_fresh_start(ordinal) for ordinal in range(1, 5)}
@@ -227,6 +230,45 @@ def run(
         and restored.player_position == saved.player_position
         and restored.world_flags == saved.world_flags
     )
+
+    if stack.client_collision_provider is None or stack.collision_router is None:
+        raise ValueError("runtime stack lacks full collision composition")
+    client_witness = None
+    for floor_id in sorted(stack.client_collision_provider.supported_floor_ids):
+        hit_map = stack.client_collision_provider._hit_map(floor_id)
+        found = False
+        for y in range(hit_map.height):
+            for x in range(hit_map.width):
+                if hit_map.blocked_at(x, y):
+                    continue
+                for dx, dy in ((1, 0), (0, 1), (-1, 0), (0, -1)):
+                    nx, ny = x + dx, y + dy
+                    if not (0 <= nx < hit_map.width and 0 <= ny < hit_map.height):
+                        continue
+                    if hit_map.blocked_at(nx, ny):
+                        continue
+                    origin = MapPosition(floor_id, x, y)
+                    destination = MapPosition(floor_id, nx, ny)
+                    routed = stack.collision_router.routed_step_verdict(
+                        origin=origin,
+                        destination=destination,
+                    )
+                    if (
+                        routed.route.provider_kind == CLIENT_PROVIDER_KIND
+                        and routed.decision.allowed
+                    ):
+                        client_witness = routed
+                        found = True
+                        break
+                if found:
+                    break
+            if found:
+                break
+        if client_witness is not None:
+            break
+    if client_witness is None:
+        raise ValueError("no legal client collision movement witness found")
+
     return (
         profile,
         stack,
@@ -235,6 +277,7 @@ def run(
         representative_regions,
         allowed,
         roundtrip,
+        client_witness,
     )
 
 
@@ -245,13 +288,24 @@ def main() -> None:
     ap.add_argument("--setup", type=Path, required=True)
     ap.add_argument("--server-map-root", type=Path, required=True)
     ap.add_argument("--mapset", type=Path, required=True)
+    ap.add_argument("--client-adrn", type=Path, required=True)
     a = ap.parse_args()
-    profile, stack, seeds, start_regions, reps, allowed, roundtrip = run(
+    (
+        profile,
+        stack,
+        seeds,
+        start_regions,
+        reps,
+        allowed,
+        roundtrip,
+        client_witness,
+    ) = run(
         client_dat_dir=a.client_dat_dir,
         npc_dir=a.npc_dir,
         setup=a.setup,
         server_map_root=a.server_map_root,
         mapset_path=a.mapset,
+        client_adrn_path=a.client_adrn,
     )
     print("StoneAge recovered25 concrete local runtime stack — R1")
     print("SEMANTIC_SOURCE_VERSION|recovered25")
@@ -267,6 +321,23 @@ def main() -> None:
     print(f"COUNT|representative_payload_formats|{len({r.payload.source_kind for r in reps})}")
     print(f"COUNT|state_gated_allow_decisions|{allowed}")
     print(f"LOCAL_SESSION_ROUNDTRIP|witness={int(roundtrip)}")
+    coverage = stack.collision_router.coverage_counts()
+    print(f"COUNT|collision_server_routed_floors|{coverage['server_routed_floors']}")
+    print(
+        "COUNT|collision_client_reconstruction_routed_floors|"
+        f"{coverage['client_reconstruction_routed_floors']}"
+    )
+    print(
+        "COUNT|collision_routed_floors|"
+        f"{coverage['server_routed_floors'] + coverage['client_reconstruction_routed_floors']}"
+    )
+    print(f"COUNT|collision_unrouted_floors|{coverage['unrouted_floors']}")
+    print(
+        "CLIENT_COLLISION_PROFILE|"
+        f"{client_witness.route.semantic_profile}|"
+        f"exact_recovered25_binary_proof={int(bool(client_witness.route.exact_recovered25_binary_proof))}"
+    )
+    print("CLIENT_COLLISION_MOVEMENT_WITNESS|1")
     print(
         "PROVENANCE_SEPARATION|historical_foundation="
         f"{profile.historical_foundation}|runtime_world={profile.runtime_world_profile}|"
