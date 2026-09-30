@@ -85,6 +85,10 @@ class ExpSource:
     enemy_max_level:int
     enemy_exp_mode:str
     enemy_can_spawn_at_or_below_birth:bool
+    enemy_id:int=-1
+    tempno:int=-1
+    group_id:int=-1
+    encounter_index:int=-1
 
 
 @dataclass(frozen=True)
@@ -416,6 +420,10 @@ def analyze(
                         enemy_max_level=hi,
                         enemy_exp_mode=mode,
                         enemy_can_spawn_at_or_below_birth=(lo<=birth),
+                        enemy_id=int(enemy_id),
+                        tempno=int(enemy["tempno"]),
+                        group_id=int(group_id),
+                        encounter_index=int(area["index"]),
                     ))
 
     # Deduplicate while preserving only derived characteristics.
@@ -424,6 +432,7 @@ def analyze(
         key=(
             row.spawn_ordinal,row.floor,row.enemy_min_level,row.enemy_max_level,
             row.enemy_exp_mode,row.enemy_can_spawn_at_or_below_birth,
+            row.enemy_id,row.tempno,row.group_id,row.encounter_index,
         )
         unique.setdefault(key,row)
 
