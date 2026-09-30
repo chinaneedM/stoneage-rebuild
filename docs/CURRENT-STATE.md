@@ -3921,3 +3921,46 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **ALL_HOMETOWNS_FULL_WORLD = CLOSED.**
 - Next Phase-1 priority: stop extending this transport proof unless contradictory evidence appears. Promote the now-closed recovered world + four-hometown start/progression semantics into a single engine-neutral, version-tagged runtime bootstrap contract suitable for the local-first single-player implementation. Keep Taiwan-v1 historical membership separate from recovered25/later bridge content and preserve every state-gated transition explicitly.
 
+
+
+## Phase 1 engine-neutral runtime bootstrap contract — 2026-09-30
+
+- The closed recovered25 world + four-hometown progression proof is now promoted into a single engine-neutral implementation-facing contract without changing historical provenance.
+- New machine-readable contract: `game/RUNTIME-BOOTSTRAP-RECOVERED25-R1.json`.
+- Human-readable specification: `docs/RUNTIME-BOOTSTRAP-CONTRACT-R1.md`.
+- Provenance boundary is explicit and machine-validated:
+  - historical foundation = **Taiwan/Waei v1.0**;
+  - runtime world profile = **recovered25**;
+  - recovered25 evidence role = **LATER_RECOVERED**;
+  - recovered25 membership in Taiwan v1.0 = **UNPROVEN**;
+  - later recovered content may supply reconstruction bootstrap semantics but may **not** be relabelled as Taiwan-v1 historical content.
+- Local-first architecture boundary is fixed:
+  - authoritative state = local world model;
+  - legacy network transport = not required;
+  - account service = not required;
+  - engine binding = none;
+  - historical map delivery is preserved as authoritative region materialization semantics, not mandatory socket/protocol topology.
+- Contracted recovered25 runtime surface:
+  - materializable floors = **826**;
+  - fresh-start state-gated reachable floors = **826**;
+  - remaining unreachable floors = **0**;
+  - normal fresh-start hometowns = **4**;
+  - classic direct hometown routes = **2**;
+  - state-gated WarpMan hometown routes = **2**;
+  - all four ordered progression routes = **closed**.
+- State-gated topology is preserved explicitly:
+  - shadowed-branch ingress `811 -> 820` remains conditional;
+  - hometown 3/4 selected WarpMan bridges remain conditional ITEM-gated transitions;
+  - no gated edge is promoted into the unconditional classic world graph.
+- Starter runtime constraints are versioned in the contract:
+  - inventory capacity = **15**;
+  - positive configured starter items = **13**;
+  - guaranteed empty slots = **2**;
+  - starting Stone covers the closed award fee and, for bridged starts, bridge-item purchase + award fee.
+- New architecture decision: **DD-015** requires version-tagged bootstrap contracts, provenance-preserving adapters and explicit conditional transitions.
+- `game/README.md` now points implementation work at the bootstrap contract while keeping production engine selection deferred.
+- Validation:
+  - GitHub Actions **36708333152 = PASS**;
+  - contract commit = `b8cfa017dd7fcac1d86e2d23f2d0f6dc175ba14f`.
+- **RUNTIME_BOOTSTRAP_CONTRACT_R1 = CLOSED.**
+- Next Phase-1 priority: define the **minimal engine-neutral local runtime core interfaces/data model** that consume the bootstrap contract. Required boundaries should cover versioned world-profile loading, authoritative world/player state, region materialization, unconditional vs state-gated transition evaluation, fresh-start creation, deterministic progression/economy mutation and local persistence. Do not choose a rendering engine and do not recreate legacy MMO services.
