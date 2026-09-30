@@ -3,12 +3,14 @@ import unittest
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_GUARD,
     BATTLE_COM_S_GUARDIAN_ATTACK,
+    BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
     battle_command3_high,
     battle_command3_low,
 )
 from tools.stoneage_petskill_core_model import (
     guardian_command,
+    power_balance_command,
     status_change_command,
 )
 from tools.stoneage_petskill_round_bridge import (
@@ -54,6 +56,22 @@ class PetSkillRoundBridgeTests(unittest.TestCase):
         self.assertEqual(submission.battle_command.command2,3)
         self.assertEqual(submission.setup_effects.defense_power,960)
         self.assertEqual(submission.setup_effects.guardian_for_slot,3)
+
+    def test_powerbalance_carries_work_attack_and_defense_into_round(self):
+        payload=power_balance_command(
+            10,
+            "攻%25 防%-35",
+            fixed_attack=1000,
+            fixed_defense=800,
+        )
+        submission=bridge_stable_pet_skill_command(payload)
+        self.assertEqual(
+            submission.battle_command.command1,
+            BATTLE_COM_S_POWERBALANCE,
+        )
+        self.assertEqual(submission.battle_command.command2,10)
+        self.assertEqual(submission.setup_effects.attack_power,1250)
+        self.assertEqual(submission.setup_effects.defense_power,520)
 
     def test_statuschange_packs_low_status_and_high_turn_exactly(self):
         payload=status_change_command(
