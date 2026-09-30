@@ -214,11 +214,19 @@ class FreshStartCoordinateAudit:
     witnesses:tuple[SpawnCoordinateWitness,...]
 
     @property
+    def static_only_exists(self)->bool:
+        return any(row.reachable for row in self.static_only_witnesses)
+
+    @property
     def static_only_closed(self)->bool:
         return (
             len(self.static_only_witnesses)==len(NORMAL_HOMETOWN_SPAWNS)
             and all(row.reachable for row in self.static_only_witnesses)
         )
+
+    @property
+    def exists(self)->bool:
+        return any(row.reachable for row in self.witnesses)
 
     @property
     def closed(self)->bool:
@@ -465,10 +473,21 @@ def emit(audit:FreshStartCoordinateAudit)->None:
             "route_details_withheld=1"
         )
     print(
-        "FRESH_START_STATIC_ONLY_COORDINATE_CHAIN|witness="
+        "FRESH_START_STATIC_ONLY_EXISTENTIAL_COORDINATE_CHAIN|witness="
+        f"{int(audit.static_only_exists)}"
+    )
+    print(
+        "FRESH_START_STATIC_ONLY_ALL_HOMETOWNS_COORDINATE_CHAIN|witness="
         f"{int(audit.static_only_closed)}"
     )
-    print(f"FRESH_START_COORDINATE_CHAIN|witness={int(audit.closed)}")
+    print(
+        "FRESH_START_EXISTENTIAL_COORDINATE_CHAIN|witness="
+        f"{int(audit.exists)}"
+    )
+    print(
+        "FRESH_START_ALL_HOMETOWNS_COORDINATE_CHAIN|witness="
+        f"{int(audit.closed)}"
+    )
     print(OUTPUT_RESOLUTION)
 
 
