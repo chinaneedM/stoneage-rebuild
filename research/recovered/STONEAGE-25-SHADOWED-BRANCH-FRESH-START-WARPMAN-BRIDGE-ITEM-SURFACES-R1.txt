@@ -1,0 +1,26 @@
+StoneAge fresh-start WarpMan bridge ITEM surface audit — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|required item IDs, raw operands, NPC identities, filenames, dialogue and coordinates are withheld
+RULE|reachable-floor sources are discovery evidence only; fresh-start coordinate ordering remains unproven
+COUNT|catalog_witness_requirements|2
+COUNT|covered_additem_requirements|0
+COUNT|failed_classic_hometowns|2
+COUNT|missing_argument_files|60
+COUNT|operator:=:requirements|2
+COUNT|reference:ItemShop:ItemList:requirements|2
+COUNT|reference:ItemShop:LimitItemNo:requirements|2
+COUNT|reference:WarpMan:FREE:requirements|2
+COUNT|requirements|2
+COUNT|strong_drop_requirements|0
+COUNT|unique_required_items|1
+COUNT|warpman_bridged_hometowns|2
+FRESH_START_BRIDGE_ITEM|ordinal=3|edge=1|operator==|catalog=1|strong_drop_rows=0|strong_drop_floors=0|covered_additem_rows=0|covered_additem_floors=0|reference_classes=3|item_id_withheld=1
+FRESH_START_BRIDGE_ITEM_REFERENCE|ordinal=3|function=ItemShop|field=ItemList
+FRESH_START_BRIDGE_ITEM_REFERENCE|ordinal=3|function=ItemShop|field=LimitItemNo
+FRESH_START_BRIDGE_ITEM_REFERENCE|ordinal=3|function=WarpMan|field=FREE
+FRESH_START_BRIDGE_ITEM|ordinal=4|edge=1|operator==|catalog=1|strong_drop_rows=0|strong_drop_floors=0|covered_additem_rows=0|covered_additem_floors=0|reference_classes=3|item_id_withheld=1
+FRESH_START_BRIDGE_ITEM_REFERENCE|ordinal=4|function=ItemShop|field=ItemList
+FRESH_START_BRIDGE_ITEM_REFERENCE|ordinal=4|function=ItemShop|field=LimitItemNo
+FRESH_START_BRIDGE_ITEM_REFERENCE|ordinal=4|function=WarpMan|field=FREE
+RESOLUTION|SHADOWED_BRANCH_FRESH_START_WARPMAN_BRIDGE_ITEM_SURFACES_AUDITED
