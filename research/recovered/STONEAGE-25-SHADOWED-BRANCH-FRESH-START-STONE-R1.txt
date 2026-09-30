@@ -1,0 +1,12 @@
+StoneAge shadowed-branch fresh-start Stone audit — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|exact Stone amounts, item IDs, level thresholds, NPC names and raw arguments are withheld
+RULE|new-character Stone is read from recovered setup.cf GOLD, matching the fixed-descendant new-player initialization path
+RULE|fee sufficiency is tested only over already-valid award level states; optional player spending is not treated as mandatory
+COUNT|matching_award_records|2
+COUNT|valid_fee_records|2
+COUNT|initial_stone_sufficient_records|2
+FRESH_START_STONE|positive=1|covers_minimum_valid_fee=1|amounts_withheld=1
+FRESH_START_ECONOMIC_CHAIN|witness=1
+RESOLUTION|SHADOWED_BRANCH_FRESH_START_STONE_AUDITED
