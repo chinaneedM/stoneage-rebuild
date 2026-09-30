@@ -277,6 +277,24 @@ def _positive_exp_mode(enemy:dict)->str|None:
     return None
 
 
+def _required_exp_values(
+    exp_values:list[int],
+    birth_level:int,
+    target_level:int,
+)->tuple[int,...]|None:
+    """Mirror CHAR_LevelUpCheck -> CHAR_GetLevelExp(level+1) indexing.
+
+    LoadEXP stores the first parsed row at NeedLevelUpTbls[1].  Therefore a
+    character at level L needs table index L+1 to reach L+1.
+    """
+    if target_level <= birth_level:
+        return ()
+    required_levels=range(birth_level+1,target_level+1)
+    if any(level<1 or level>len(exp_values) for level in required_levels):
+        return None
+    return tuple(exp_values[level-1] for level in required_levels)
+
+
 def analyze(
     *,
     npc_dir:Path,
@@ -303,11 +321,9 @@ def analyze(
     complete=False
     positive=False
     if target is not None and target>birth:
-        # CHAR_LevelUpCheck requests the next-level threshold.  Require every
-        # row from birth through target-1 to exist and be positive.
-        needed=list(range(max(1,birth),target))
-        complete=bool(needed) and all(level<=len(exp_values) for level in needed)
-        positive=complete and all(exp_values[level-1]>0 for level in needed)
+        required=_required_exp_values(exp_values,birth,target)
+        complete=required is not None and bool(required)
+        positive=complete and all(value>0 for value in required)
 
     ep=configured_file(data_dir,config,"encountfile",["encount*.txt"])
     gp=configured_file(data_dir,config,"groupfile",["group*.txt"])
