@@ -2,6 +2,7 @@ import unittest
 
 from tools.stoneage_enemy_ai_petskill_bridge import (
     resolve_enemy_ai_basic_petskill_command,
+    resolve_enemy_ai_guardbreak_petskill_command,
     resolve_enemy_ai_mighty_petskill_command,
     resolve_enemy_ai_powerbalance_petskill_command,
     resolve_enemy_ai_statuschange_petskill_command,
@@ -21,6 +22,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_GUARD,
     BATTLE_COM_NONE,
+    BATTLE_COM_S_GBREAK,
     BATTLE_COM_S_MIGHTY,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
@@ -164,6 +166,52 @@ class EnemyAiPetSkillBridgeTests(unittest.TestCase):
         self.assertEqual(resolved.skill_id, 30)
         self.assertEqual(resolved.command.command1, BATTLE_COM_NONE)
         self.assertEqual(resolved.command.command2, 4)
+
+    def test_guardbreak_uses_ascii_option_and_fixed_birth_attack(self):
+        spawned = spawned_with_slots((70, 0, 0, 0, 0, 0, 0))
+        runtime = Recovered25PetSkillRuntime(
+            skills={
+                70: entry(
+                    70,
+                    "PETSKILL_GuardBreak",
+                    b"recovered-ascii-option",
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        resolved = resolve_enemy_ai_guardbreak_petskill_command(
+            spawned,
+            skill_slot=0,
+            target_slot=3,
+            petskill_runtime=runtime,
+        )
+        projection = spawned.birth.combat_projection()
+        self.assertEqual(resolved.command.command1, BATTLE_COM_S_GBREAK)
+        self.assertEqual(resolved.command.command2, 3)
+        self.assertEqual(
+            resolved.setup_effects.attack_power,
+            projection["attack"],
+        )
+
+    def test_guardbreak_rejects_nonascii_option_outside_recovered_subset(self):
+        spawned = spawned_with_slots((70, 0, 0, 0, 0, 0, 0))
+        runtime = Recovered25PetSkillRuntime(
+            skills={
+                70: entry(
+                    70,
+                    "PETSKILL_GuardBreak",
+                    "攻%25".encode("cp950"),
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        with self.assertRaisesRegex(ValueError, "ASCII-only"):
+            resolve_enemy_ai_guardbreak_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=0,
+                petskill_runtime=runtime,
+            )
 
     def test_mighty_uses_recovered_option_and_round_bridge(self):
         spawned = spawned_with_slots((60, 0, 0, 0, 0, 0, 0))
