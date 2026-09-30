@@ -98,7 +98,7 @@ def choose_enemy_prefix(rows):
     score3=counts[3+ENEMY_INT_COUNT]
     return 3 if score3>score2 else 2
 
-AI_OPTION_ARITY={"at":3,"gu":1,"ma":1,"es":1,"wa":7,"rn":1}
+AI_OPTION_ARITY={"at":3,"gu":1,"ma":1,"es":1,"wa":7}
 AI_ACTION_TAGS=("at","gu","ma","es","wa")
 
 def _c_atoi(text):
@@ -130,6 +130,8 @@ def parse_tactics_option(text):
     unknown=[]
     malformed=False
     malformed_tags=[]
+    rn_present=False
+    rn_nonempty=False
     for raw in text.split("|"):
         raw=raw.strip()
         if not raw:
@@ -142,6 +144,12 @@ def parse_tactics_option(text):
         parts=[part.strip() for part in payload.split(";")]
         while parts and parts[-1]=="":
             parts.pop()
+        if tag=="rn":
+            # Compile-gated _ENEMY_ATTACK_AI extension. Keep its presence
+            # separate from validity of the convergent common AI profile.
+            rn_present=True
+            rn_nonempty=bool(parts)
+            continue
         if tag not in AI_OPTION_ARITY:
             unknown.append(tag)
             continue
@@ -171,6 +179,8 @@ def parse_tactics_option(text):
         "tags":tuple(sorted(values)),
         "unknown_tags":tuple(sorted(set(unknown))),
         "malformed_tags":tuple(sorted(set(malformed_tags))),
+        "rn_present":rn_present,
+        "rn_nonempty":rn_nonempty,
         "positive_actions":tuple(positive),
     }
 
@@ -292,6 +302,8 @@ def analyze(data_dir,setup=None):
     tactics_malformed_tags=collections.Counter(
         tag for p in tactics_profiles for tag in p["malformed_tags"]
     )
+    tactics_rn_present=sum(1 for p in tactics_profiles if p["rn_present"])
+    tactics_rn_nonempty=sum(1 for p in tactics_profiles if p["rn_nonempty"])
     tactics_action_signatures=collections.Counter(
         "+".join(p["positive_actions"]) if p["positive_actions"] else "none"
         for p in tactics_profiles
@@ -362,6 +374,8 @@ def analyze(data_dir,setup=None):
         "tactics_tag_presence":tactics_tag_presence,
         "tactics_unknown_tags":tactics_unknown_tags,
         "tactics_malformed_tags":tactics_malformed_tags,
+        "tactics_rn_present":tactics_rn_present,
+        "tactics_rn_nonempty":tactics_rn_nonempty,
         "tactics_action_signatures":tactics_action_signatures,
         "tactics_action_condition_nonempty":tactics_action_condition_nonempty,
         "all_group_residual":sorted(enc_group_set-all_group_ids),
@@ -407,6 +421,11 @@ def emit(data_dir,setup=None):
         print(f"ENEMY_AI_UNKNOWN_TAG|{tag}|{count}")
     for tag,count in sorted(r["tactics_malformed_tags"].items()):
         print(f"ENEMY_AI_MALFORMED_TAG|{tag}|{count}")
+    print(
+        f"ENEMY_AI_RN_EXTENSION|present={r['tactics_rn_present']}|"
+        f"nonempty={r['tactics_rn_nonempty']}|"
+        f"empty={r['tactics_rn_present']-r['tactics_rn_nonempty']}"
+    )
     for signature,count in sorted(r["tactics_action_signatures"].items()):
         print(f"ENEMY_AI_POSITIVE_ACTIONS|{signature}|{count}")
 
