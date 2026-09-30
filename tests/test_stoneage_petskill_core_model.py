@@ -21,6 +21,7 @@ from tools.stoneage_petskill_core_model import (
     mighty_command,
     mighty_execution,
     no_guard_command,
+    no_guard_cross_action_modifiers,
     no_guard_execution,
     parse_status_skill,
     power_balance_command,
@@ -651,10 +652,39 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
         self.assertEqual(r["high"], 20)
         self.assertEqual(r["low"], (30 << 8) + 40)
 
-    def test_no_guard_execution_is_no_action_and_drops_parameters(self):
+    def test_no_guard_own_turn_is_no_action_but_cross_action_parameters_survive(self):
+        command = no_guard_command(
+            12,
+            "避%20 击%30 心%40",
+        )
         self.assertEqual(
-            no_guard_execution(),
-            {"no_action": True, "parsed_parameters_consumed": False},
+            no_guard_execution(
+                packed_low=command["low"],
+                packed_high=command["high"],
+            ),
+            {
+                "no_action": True,
+                "dodge_modifier_when_defending": 20,
+                "counter_modifier_when_countering": 30,
+                "critical_modifier_disabled_path": 40,
+                "critical_modifier_active": False,
+            },
+        )
+
+    def test_no_guard_source_byte_sign_quirk_is_preserved(self):
+        # Fixed source multiplies byte values >127 by -1 rather than doing a
+        # conventional signed-byte conversion.
+        self.assertEqual(
+            no_guard_cross_action_modifiers(
+                packed_low=(200 << 8) + 201,
+                packed_high=-7,
+            ),
+            {
+                "dodge_modifier_when_defending": -7,
+                "counter_modifier_when_countering": -200,
+                "critical_modifier_disabled_path": -201,
+                "critical_modifier_active": False,
+            },
         )
 
 
