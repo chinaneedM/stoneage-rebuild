@@ -120,6 +120,60 @@ class Recovered25PetSkillRuntimeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "decode is ambiguous"):
             entry.consensus_big5_option()
 
+    def test_cp950_big5_option_decode_requires_exact_agreement(self):
+        with tempfile.TemporaryDirectory() as td:
+            data = Path(td)
+            # U+653B 攻 is encoded identically in CP950 and Big5.
+            option = "攻%25".encode("cp950")
+            payload = (
+                b"Display,Comment,PETSKILL_Guardian,"
+                + option
+                + b",FREE,KIND,41,1,3,2,0,tail\n"
+            )
+            (data / "petskill.txt").write_bytes(payload)
+            runtime = load_recovered25_petskill_runtime(data_dir=data)
+            self.assertEqual(
+                runtime.skills[41].unambiguous_cp950_big5_option(),
+                "攻%25",
+            )
+
+    def test_cp950_big5_option_divergence_fails_closed(self):
+        entry = type(
+            "Entry",
+            (),
+            {},
+        )
+        # Locate one two-byte sequence that both codecs accept differently.
+        divergent = None
+        for lead in range(0x81, 0xFF):
+            for trail in range(0x40, 0xFF):
+                raw = bytes((lead, trail))
+                try:
+                    cp950 = raw.decode("cp950", "strict")
+                    big5 = raw.decode("big5", "strict")
+                except UnicodeDecodeError:
+                    continue
+                if cp950 != big5:
+                    divergent = raw
+                    break
+            if divergent is not None:
+                break
+        self.assertIsNotNone(divergent)
+        from tools.stoneage_recovered25_petskill_runtime import (
+            Recovered25PetSkillEntry,
+        )
+        skill = Recovered25PetSkillEntry(
+            skill_id=99,
+            field=1,
+            target=3,
+            cost=0,
+            illegal=0,
+            function_name="PETSKILL_Guardian",
+            option_bytes=divergent,
+        )
+        with self.assertRaisesRegex(ValueError, "decoding divergence"):
+            skill.unambiguous_cp950_big5_option()
+
     def test_conflicting_compile_time_file_keys_fail_closed(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)
