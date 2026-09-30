@@ -3861,3 +3861,16 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **FRESH_START_STATE_GATED_RUNTIME_WORLD_REACHABILITY_R1 = CLOSED.**
 - Next deterministic seam: resolve the **all-hometowns coordinate viability gap** without reopening the existential closure. The two failing normal hometowns already fail under the static-only coordinate model, so do not blame conservative NPC occupancy. Classify whether their missing award route is caused by a genuinely disconnected recovered coordinate component, a required non-classic transport/interaction omitted from the classic-Warp graph, or another recovered movement/transition semantic. Only promote all-hometown reachability if an explicit recovered path exists.
 
+## Phase 1 all-hometowns coordinate-gap classification — 2026-09-30
+
+- The two failed normal hometowns are now classified from recovered25 coordinate topology rather than floor-only reachability.
+- Both fail for the same reason under conservative-NPC and static-only models: `CLASSIC_WARP_SOURCE_COMPONENT_DISCONNECTED`.
+- At each failed start's closest coordinate-reachable frontier, the award remains **5 classic floor hops** away; exactly **1** progressive classic-Warp source component is disconnected, while invalid progressive destinations = **0** and usable progressive edges from the reached component = **0**.
+- Because the static-only result is identical, conservative NPC birth occupancy is not the cause.
+- Fixed-descendant Bus route movement was rechecked: it advances through `CHAR_walk(...,0)`, whose movement path enforces `MAP_walkAble` and diagonal corner checks. Bus therefore cannot be treated as a bypass across a genuinely disconnected static walk component.
+- Artifact: `tools/stoneage_shadowed_branch_fresh_start_coordinate_gap_probe.py`; test: `tests/test_stoneage_shadowed_branch_fresh_start_coordinate_gap_probe.py`; report: `research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-GAP-R1.txt`.
+- Validation: the test-fixture mismatch on the first classification commit was corrected without changing probe semantics; GitHub Actions **36686985711 = PASS**.
+- **FRESH_START_ALL_HOMETOWNS_COORDINATE_GAP_CLASSIFICATION_R1 = CLOSED.**
+- **ALL_HOMETOWNS_FULL_WORLD remains OPEN.**
+- Next deterministic seam: audit coordinate-level recovered **WarpMan/FMWarpMan spatial bridge candidates** from the actually reachable fresh-start components. Dialogue facing, FREE/action/fee, family and schedule gates remain separate; a spatial candidate must not be promoted to a legal fresh-start route until those gates are proven. If no dialogue-warp bridge exists, advance to Airplane boarding/route component geometry.
+
