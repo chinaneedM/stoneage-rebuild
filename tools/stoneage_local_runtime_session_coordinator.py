@@ -50,6 +50,10 @@ class LocalRuntimeWalkResult:
     session: LocalRuntimeSessionState
     resolution: WalkResolution
     collision: CollisionDecision | None = None
+    collision_provider_kind: str | None = None
+    collision_evidence_class: str | None = None
+    collision_semantic_profile: str | None = None
+    collision_exact_binary_proof: bool | None = None
     collision_route: Recovered25CollisionRoute | None = None
 
 
@@ -255,6 +259,40 @@ class LocalRuntimeSessionCoordinator:
             resolution=result.resolution,
             collision=routed.decision,
             collision_route=routed.route,
+        )
+
+    def walk_one_cell_with_runtime_collision(
+        self,
+        session: LocalRuntimeSessionState,
+        *,
+        destination: MapPosition,
+        map_objmove_ok: bool = True,
+    ) -> LocalRuntimeWalkResult:
+        """Resolve one ordinary step through the provenance-bearing router."""
+        session = self._validate_session(session)
+        router = getattr(self.stack, "collision_router", None)
+        if router is None:
+            raise ValueError("runtime stack has no unified collision router")
+        routed = router.routed_step_verdict(
+            origin=session.player_position,
+            destination=destination,
+        )
+        result = self.walk_one_cell(
+            session,
+            destination=destination,
+            entry_allowed=routed.decision.allowed,
+            map_objmove_ok=bool(map_objmove_ok),
+        )
+        return LocalRuntimeWalkResult(
+            session=result.session,
+            resolution=result.resolution,
+            collision=routed.decision,
+            collision_provider_kind=routed.route.provider_kind,
+            collision_evidence_class=routed.route.evidence_class,
+            collision_semantic_profile=routed.route.semantic_profile,
+            collision_exact_binary_proof=(
+                routed.route.exact_recovered25_binary_proof
+            ),
         )
 
     @staticmethod
