@@ -4295,3 +4295,22 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Contract document: `docs/LOCAL-RUNTIME-SAVE-R1.md`.
 - **LOCAL_RUNTIME_DYNAMIC_OCCUPANCY_SAVE_R1 = CLOSED.**
 - Next Phase-1 priority: implement a minimal durable **filesystem-backed LocalPersistenceStore** for the single-player runtime. It must be engine-neutral, UTF-8 exact, atomic-replace on save, path-traversal safe, deterministic by logical save key, and schema-transparent so both current and legacy versioned payloads remain coordinator concerns rather than storage concerns. Do not add cloud sync, accounts, network services or renderer dependencies.
+
+
+## Phase 1 durable local filesystem persistence — 2026-09-30
+
+- The engine-neutral persistence port now has a durable local implementation: `tools/stoneage_local_filesystem_persistence.py`.
+- `LocalFilesystemPersistenceStore` remains deliberately schema-transparent. It stores and returns opaque UTF-8 text; `stoneage.local-runtime-save.r1` versus legacy `stoneage.local-runtime-session.r1` dispatch remains owned by `LocalRuntimeSessionCoordinator`.
+- Logical save keys are never inserted into a path. The normalized logical key is SHA-256 mapped to a fixed `<digest>.save.json` filename inside the configured root, so path-like keys cannot traverse outside that root.
+- Save replacement is crash-resistant at the storage boundary:
+  - write a same-directory temporary file;
+  - flush and `fsync` the file;
+  - atomically replace the destination with `os.replace`;
+  - best-effort directory `fsync` where the platform permits it;
+  - failed writes clean up their temporary file.
+- Load behavior is fail-closed for non-regular/symlink slots and invalid UTF-8. Missing slots return `None`, matching the existing `LocalPersistenceStore` protocol.
+- Deterministic tests cover protocol conformance, exact Unicode/newline round-trip, overwrite semantics, distinct logical keys, path-traversal resistance, missing slots and invalid input.
+- Validation is wired into `.github/workflows/validate-stoneage-local-runtime-session-coordinator.yml`.
+- Design record: `docs/LOCAL-FILESYSTEM-PERSISTENCE-R1.md`.
+- **LOCAL_FILESYSTEM_PERSISTENCE_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Next Phase-1 priority after CI closure: close the next application-state mutation seam above the coordinator. Audit the existing recovered state-gated transition contracts for any action-stage mutations (item/Stone/flag consumption or grants) and implement only the mutation types directly required by recovered bindings. Keep pure eligibility evaluation separate from committed state mutation; do not invent quest logic, NPC schedules, combat loops, renderer/UI behavior or online services.

@@ -113,7 +113,7 @@ Current R1 recovered gates report no consumed-state mutation. The coordinator re
 
 `continue_game` remains backward compatible with legacy standalone `stoneage.local-runtime-session.r1` payloads; those rehydrate the current deterministic initial occupancy baseline and contain no invented live mutations.
 
-Persistence transport remains a caller-supplied `LocalPersistenceStore`. The existing in-memory store is only a deterministic composition/test implementation. Durable filesystem storage is the next implementation seam.
+Persistence transport remains a caller-supplied `LocalPersistenceStore`. The existing in-memory store remains a deterministic composition/test implementation. Durable single-player storage is now provided by `LocalFilesystemPersistenceStore` (`tools/stoneage_local_filesystem_persistence.py`): logical keys are SHA-256-mapped inside one configured root, payloads are stored as exact UTF-8 bytes, writes use same-directory temporary files plus `os.replace`, and the storage layer never parses or rewrites the versioned save schema.
 
 ## 5. Engine boundary
 
