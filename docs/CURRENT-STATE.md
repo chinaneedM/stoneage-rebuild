@@ -4127,3 +4127,28 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - The census therefore proves that a server-only collision provider can safely cover **635 / 826** floors, but cannot close the runtime-wide movement seam by itself.
 - **RECOVERED25_SERVER_COLLISION_COVERAGE_R1 = CLOSED_WITH_EXPLICIT_GAPS.**
 - Next Phase-1 priority: implement a provenance-safe recovered25 **server-backed collision provider** for exactly the 635 closed floors and bind it as an optional movement-verdict source above the local runtime stack/coordinator. It must fail closed on all 191 uncovered floors and on any future dimension/hash/metadata drift. After that provider passes bundle-backed movement smoke, investigate a separately versioned recovered-client collision bridge for the remaining client-DAT floors; do not substitute Taiwan-v1 ADRN data without direct recovered25 provenance.
+
+
+## Phase 1 recovered25 server-backed collision provider — 2026-09-30
+
+- The 635-floor server-collision closure is now executable at runtime through `tools/stoneage_recovered25_server_collision_provider.py`.
+- The provider is composed into `Recovered25LocalRuntimeStack` and exposed to the application layer through `LocalRuntimeSessionCoordinator.walk_one_cell_with_server_collision()`.
+- Runtime policy is strict:
+  - only `SERVER_COLLISION_CLOSED` floors are accepted;
+  - recovered LS2MAP bytes are SHA-verified again at use time;
+  - topology dimensions must remain identical;
+  - recovered `mapset.txt` must resolve every used image id;
+  - divergent duplicate server maps and no-server-map floors fail closed;
+  - dynamic character/item overability remains an explicit runtime input rather than being assumed absent.
+- Bundle-backed provider validation:
+  - materializable floors = **826**;
+  - server-backed collision floors = **635**;
+  - uncovered floors = **191**;
+  - `NO_SERVER_MAP` = **189**;
+  - `DIVERGENT_SERVER_DUPLICATE` = **2**;
+  - coordinator server-backed movement witness = **PASS**;
+  - uncovered-floor hard-reject witness = **PASS**.
+- GitHub Actions **36717025634 = PASS**.
+- Derived report: `research/recovered/STONEAGE-25-SERVER-COLLISION-PROVIDER-R1.txt`.
+- **RECOVERED25_SERVER_COLLISION_PROVIDER_R1 = CLOSED_WITH_EXPLICIT_GAPS.**
+- Next Phase-1 priority: audit the **191 server-uncovered stable DAT floors** against the same recovered25 client's `adrn_15.bin` collision attributes. Establish whether every tile/parts id that requires ADRN lookup is resolvable from recovered25 resources. This is a provenance/coverage audit only: do not yet declare Taiwan-v1 `readHitMap` semantics to be the recovered25 runtime algorithm unless version-appropriate algorithm evidence is separately established.
