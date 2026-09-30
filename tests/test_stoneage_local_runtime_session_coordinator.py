@@ -1635,6 +1635,129 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                 defense_profile="newpower_70pct",
             )
 
+    def test_terminal_victory_crosses_player_exp_threshold_atomically(self):
+        player_state = _battle_player_state()
+        player_state.character = PlayerState(
+            MappingProxyType(
+                {
+                    **dict(player_state.character.fields),
+                    "exp": 950,
+                    "max_exp": 1000,
+                    "free_stat_points": 4,
+                    "duel_point_like_state": 12,
+                }
+            )
+        )
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=player_state,
+            world_flags=frozenset({"progression-battle"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        enemy = replace(
+            context.battle.enemies[0],
+            hp=1,
+            max_hp=1,
+            defense=0,
+            quick=10,
+        )
+        context = replace(
+            context,
+            battle=replace(context.battle, enemies=(enemy,)),
+        )
+        enemy_id = enemy.participant_id
+        context = self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player": 0, enemy_id: 10},
+        )
+        context, round_result = (
+            self.coordinator.resolve_persistent_attack_wait_round(
+                context,
+                commands={
+                    "player": BattleCommand(BATTLE_COM_ATTACK, command2=10),
+                    enemy_id: BattleCommand(BATTLE_COM_WAIT),
+                },
+                initiative_random_subtracts={
+                    "player": 0,
+                    enemy_id: 0,
+                },
+                profiles={
+                    "player": BattleCombatProfile(
+                        fixed_dex=100,
+                        fixed_luck=0,
+                        earth=0,
+                        water=0,
+                        fire=0,
+                        wind=0,
+                    ),
+                    enemy_id: BattleCombatProfile(
+                        fixed_dex=10,
+                        fixed_luck=0,
+                        earth=0,
+                        water=0,
+                        fire=0,
+                        wind=0,
+                    ),
+                },
+                attack_rolls={
+                    "player": OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                        minimum_damage_roll_0_1=1,
+                    )
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        terminal = round_result.after
+        self.assertEqual(terminal.phase, "finished")
+        self.assertEqual(terminal.result, "victory")
+        self.assertEqual(
+            terminal.pending_exp_by_participant_id["player"],
+            100,
+        )
+
+        settled = self.coordinator.settle_persistent_group_battle_with_progression(
+            context,
+            player_exp_profile="legacy_cumulative",
+            next_player_max_exp_by_level={6: 1500},
+        )
+        original = session.player_state.character.fields
+        updated = settled.player_state.character.fields
+        self.assertEqual(original["level"], 5)
+        self.assertEqual(original["exp"], 950)
+        self.assertEqual(original["max_exp"], 1000)
+        self.assertEqual(original["free_stat_points"], 4)
+        self.assertEqual(original["charm"], 5)
+        self.assertEqual(original["duel_point_like_state"], 12)
+        self.assertEqual(updated["level"], 6)
+        self.assertEqual(updated["exp"], 1050)
+        self.assertEqual(updated["max_exp"], 1500)
+        self.assertEqual(updated["free_stat_points"], 7)
+        self.assertEqual(updated["charm"], 7)
+        self.assertEqual(updated["duel_point_like_state"], 72)
+        self.assertEqual(settled.player_position, session.player_position)
+        self.assertEqual(settled.world_flags, session.world_flags)
+
     def test_classic_overlap_warp_is_reused_not_reimplemented(self):
         session = self.coordinator.new_game(1)
         result = self.coordinator.walk_one_cell(
