@@ -43,6 +43,13 @@ from tools.stoneage_shadowed_branch_fresh_start_dialogue_warp_bridge_probe impor
 from tools.stoneage_shadowed_branch_fresh_start_warpman_bridge_item_surface_probe import (
     _requirements,
 )
+from tools.stoneage_shadowed_branch_warpman_satisfiability_probe import (
+    ITEM,
+    LEVEL,
+    _compare,
+    _field,
+    parse_free_predicates,
+)
 from tools.stoneage_state_gated_runtime_world_reachability_probe import (
     PROGRESSION_REPORT_REF,
     parse_progression_witness,
@@ -64,11 +71,6 @@ HOMETOWN_TRANSITION_IDS={
     3:"fresh_start_hometown_3_bridge",
     4:"fresh_start_hometown_4_bridge",
 }
-SHADOWED_BRANCH_UNLOCK_FLAG=(
-    "transition:shadowed_branch_ingress:progression_unlocked"
-)
-
-
 @dataclass(frozen=True)
 class Recovered25RegionDescriptor:
     floor_id:int
@@ -118,6 +120,15 @@ class Recovered25WorldProfileAdapter:
             raise ValueError("bootstrap/materializable map count drift")
         if set(topology.maps)!=set(self.runtime.base.extension.materializable_floor_ids):
             raise ValueError("runtime topology/materializable floor-set drift")
+        world=self.profile.raw.get("world",{})
+        if len(topology.legacy_warps)!=int(world.get("active_classic_warp_count",-1)):
+            raise ValueError("bootstrap/active classic Warp count drift")
+        if len(self.runtime.base.deferred_conditional_warps)!=int(
+            world.get("deferred_conditional_classic_warp_count",-1)
+        ):
+            raise ValueError("bootstrap/deferred conditional Warp count drift")
+        if self.runtime.unresolved_cross_file_sources:
+            raise ValueError("ordered runtime topology has unresolved cross-file sources")
         for floor_id,definition in topology.maps.items():
             provenance=definition.provenance
             if provenance is None:
@@ -245,6 +256,34 @@ def _binding_provenance(kind:str)->Mapping[str,Any]:
     }
 
 
+def _normalized_free_clauses(edge:DialogueWarp):
+    if edge.argument_data is None:
+        raise ValueError("WarpMan binding lacks recovered argument data")
+    raw=_field(edge.argument_data,b"FREE")
+    if raw is None:
+        raise ValueError("WarpMan binding lacks FREE")
+    clauses=parse_free_predicates(raw)
+    if not clauses:
+        raise ValueError("WarpMan FREE has no parsed predicates")
+    out=[]
+    for clause in clauses:
+        atoms=[]
+        for atom in clause:
+            if atom is None:
+                raise ValueError("WarpMan FREE contains an unsupported atom")
+            if atom.key not in {LEVEL,ITEM}:
+                raise ValueError(f"R1 runtime evaluator does not support FREE key {atom.key}")
+            if atom.operator not in {"=","<",">"}:
+                raise ValueError(f"R1 runtime evaluator does not support FREE operator {atom.operator}")
+            atoms.append(MappingProxyType({
+                "key":atom.key,
+                "operator":atom.operator,
+                "operand":int(atom.operand),
+            }))
+        out.append(tuple(atoms))
+    return tuple(out)
+
+
 def _dialogue_binding(
     *,
     transition_id:str,
@@ -317,7 +356,8 @@ def derive_recovered25_transition_bindings(
             transition_id=transition_id,
             edge=edges[0],
             predicate_payload={
-                "gate_kind":"ITEM_EQ",
+                "gate_kind":"FREE_CLAUSES",
+                "free_clauses":_normalized_free_clauses(edges[0]),
                 "item_template_id":int(req.item_id),
                 "operator":req.operator,
                 "event_action_side_effect_fields":0,
@@ -370,9 +410,10 @@ def derive_recovered25_transition_bindings(
         transition_id=SHADOWED_BRANCH_TRANSITION_ID,
         edge=unique[0],
         predicate_payload={
-            "gate_kind":"WORLD_FLAG",
-            "required_world_flag":SHADOWED_BRANCH_UNLOCK_FLAG,
+            "gate_kind":"FREE_CLAUSES",
+            "free_clauses":_normalized_free_clauses(unique[0]),
             "progression_witness_closed":True,
+            "predicate_scope":"CURRENT_PLAYER_STATE",
         },
         binding_kind="SHADOWED_BRANCH_PROGRESSION_WARPMAN",
     )
@@ -441,34 +482,42 @@ class Recovered25TransitionGateEvaluator:
             raise ValueError("state-gated transition cannot be unconditional")
 
         gate_kind=str(binding.predicate_payload.get("gate_kind",""))
-        if gate_kind=="ITEM_EQ":
-            required=int(binding.predicate_payload["item_template_id"])
-            held={
-                int(item.template_id.value)
-                for item in session.player_state.inventory.values()
-            }
-            allowed=required in held
-            return TransitionGateDecision(
-                allowed=allowed,
-                reason=(
-                    "required recovered25 bridge item is carried"
-                    if allowed
-                    else "required recovered25 bridge item is absent"
-                ),
-                consumed_state={},
-            )
+        if gate_kind!="FREE_CLAUSES":
+            raise ValueError(f"unsupported recovered25 transition gate kind: {gate_kind}")
 
-        if gate_kind=="WORLD_FLAG":
-            flag=str(binding.predicate_payload["required_world_flag"])
-            allowed=flag in session.world_flags
-            return TransitionGateDecision(
-                allowed=allowed,
-                reason=(
-                    "closed progression state flag is present"
-                    if allowed
-                    else "closed progression state flag is absent"
-                ),
-                consumed_state={},
-            )
+        character=session.player_state.character
+        if character is None or "level" not in character.fields:
+            return TransitionGateDecision(False,"player level is unavailable",{})
 
-        raise ValueError(f"unsupported recovered25 transition gate kind: {gate_kind}")
+        level=int(character.fields["level"])
+        held=tuple(
+            int(item.template_id.value)
+            for item in session.player_state.inventory.values()
+        )
+
+        def atom_satisfied(atom)->bool:
+            key=str(atom["key"])
+            operator=str(atom["operator"])
+            operand=int(atom["operand"])
+            if key==LEVEL:
+                return _compare(level,operator,operand)
+            if key==ITEM:
+                return any(_compare(item_id,operator,operand) for item_id in held)
+            raise ValueError(f"unsupported recovered25 FREE key: {key}")
+
+        clauses=binding.predicate_payload.get("free_clauses")
+        if not isinstance(clauses,tuple) or not clauses:
+            raise ValueError("FREE_CLAUSES binding lacks normalized clauses")
+        allowed=any(
+            clause and all(atom_satisfied(atom) for atom in clause)
+            for clause in clauses
+        )
+        return TransitionGateDecision(
+            allowed=bool(allowed),
+            reason=(
+                "recovered25 FREE predicates are satisfied by current player state"
+                if allowed
+                else "recovered25 FREE predicates are not satisfied by current player state"
+            ),
+            consumed_state={},
+        )
