@@ -4328,3 +4328,21 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Durable persistence is also tested across **coordinator reconstruction**, not merely within one process object: a first coordinator writes `stoneage.local-runtime-save.r1` through `LocalFilesystemPersistenceStore`; a newly constructed stack/coordinator reads the same disk slot and restores both session flags and live occupancy delta.
 - **CURRENT_RECOVERED25_TRANSITION_MUTATION_REQUIREMENT_R1 = CLOSED_NO_MUTATION_REQUIRED.**
 - Next Phase-1 priority: add an engine-neutral **interaction discovery/dispatch boundary** above the coordinator. A presentation layer should be able to ask which recovered state-gated dialogue interactions are spatially available at the current player coordinate, inspect their provenance/eligibility, and execute a selected transition without hard-coding raw recovered coordinates or legacy NPC arguments in UI code. Keep discovery separate from execution, keep unconditional classic overlap-Warp movement unchanged, and do not choose a rendering engine yet.
+
+
+## Phase 1 engine-neutral interaction discovery/dispatch — 2026-09-30
+
+- The local runtime coordinator now exposes a presentation-safe discovery surface for recovered state-gated dialogue interactions without leaking recovered NPC argument strings or raw coordinate rectangles into UI code.
+- `discover_state_gated_interactions(session)`:
+  - validates the authoritative session first;
+  - resolves the versioned recovered binding for each declared state-gated transition;
+  - returns only bindings whose recovered source rectangle contains the current player coordinate;
+  - evaluates the current live gate state without mutating player/session state;
+  - returns semantic transition id, interaction kind, eligibility/reason, binding provenance and an `execution_supported` flag;
+  - intentionally omits source rectangles, destinations and legacy NPC argument payloads from the presentation-facing object.
+- `dispatch_state_gated_interaction(session, transition_id)` delegates to the existing canonical executor, which **repeats** spatial and live-gate checks. Discovery is therefore not an authorization token and cannot become stale permission.
+- A future allowed gate with non-empty `consumed_state` may still be discovered but is marked `execution_supported = false`; canonical execution continues to fail closed until that exact recovered mutation semantics is implemented.
+- Classic overlap-Warp remains exclusively in ordinary movement; no second unconditional Warp path was introduced.
+- Deterministic tests cover: no interaction outside source geometry, semantic/provenance-only discovery inside source geometry, denied/allowed eligibility, non-mutation during discovery, dispatch through the canonical executor, and future-mutation unsupported signaling.
+- **LOCAL_RUNTIME_INTERACTION_DISCOVERY_DISPATCH_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Next Phase-1 priority after CI closure: define the minimal **application command/result facade** needed by a future renderer/input adapter to drive new game, continue, save, current-region read, one-cell movement and discovered interaction dispatch without importing recovered25-specific modules. Keep the facade engine-neutral and do not select Godot/Unity or create UI assets yet.

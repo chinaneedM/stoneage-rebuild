@@ -90,6 +90,24 @@ This does not merge NPC occupancy into static collision. The movement result con
 
 The live occupancy lifecycle is now persisted by the separate `stoneage.local-runtime-save.r1` wrapper. Deterministic initial NPC seeds are reconstructed from the versioned runtime stack and only explicit differences from that baseline are serialized. Static collision remains outside mutable save state.
 
+## 2C. Interaction discovery and dispatch
+
+Presentation code does not need recovered NPC argument strings or raw source rectangles to discover interactions. `discover_state_gated_interactions()` returns only interactions whose recovered source area contains the current player coordinate.
+
+Each returned `LocalRuntimeInteraction` contains:
+
+- stable semantic `transition_id`;
+- interaction kind;
+- current live eligibility and reason;
+- version/evidence provenance already carried by the recovered binding;
+- `execution_supported`, which is false if a future gate reports a state mutation the coordinator does not yet implement.
+
+The discovery call is non-mutating. It may evaluate current recovered predicates, but it does not move the player or modify inventory/Stone/flags. It deliberately does not expose source rectangles, destinations or legacy NPC argument data as part of its presentation-facing contract.
+
+`dispatch_state_gated_interaction()` accepts the semantic transition id and delegates to the canonical `execute_state_gated_transition()` path. That path independently repeats spatial and live-gate validation, so discovery cannot be used as a stale authorization token.
+
+Classic overlap-Warp remains part of ordinary movement and is not duplicated in the interaction-discovery surface.
+
 ## 3. State-gated dialogue transitions
 
 The three current recovered25 conditional transitions remain outside the unconditional classic-Warp graph.

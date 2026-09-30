@@ -607,6 +607,83 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         self.assertTrue(result.resolution.encounter_suppressed)
         self.assertEqual(result.session.player_position, MapPosition(2, 2, 2))
 
+    def test_interaction_discovery_is_spatial_semantic_and_non_mutating(self):
+        session = self.coordinator.new_game(1)
+        self.assertEqual(
+            self.coordinator.discover_state_gated_interactions(session),
+            (),
+        )
+        self.assertEqual(self.stack.evaluation_calls, 0)
+
+        at_gate = LocalRuntimeSessionState(
+            contract_id=session.contract_id,
+            world_profile=session.world_profile,
+            hometown_ordinal=session.hometown_ordinal,
+            player_position=MapPosition(2, 2, 2),
+            player_state=session.player_state,
+        )
+        self.stack.allow = False
+        denied = self.coordinator.discover_state_gated_interactions(at_gate)
+        self.assertEqual(
+            tuple(row.transition_id for row in denied),
+            tuple(sorted(self.profile.transitions)),
+        )
+        self.assertTrue(all(row.interaction_kind == "DIALOGUE_WARPMAN" for row in denied))
+        self.assertTrue(all(not row.allowed for row in denied))
+        self.assertTrue(all(row.execution_supported for row in denied))
+        self.assertTrue(
+            all(row.provenance["source_profile"] == "recovered25" for row in denied)
+        )
+        self.assertEqual(
+            self.stack.evaluation_calls,
+            len(self.profile.transitions),
+        )
+        self.assertEqual(at_gate.player_position, MapPosition(2, 2, 2))
+        self.assertFalse(
+            any(
+                hasattr(row, attr)
+                for row in denied
+                for attr in ("source_rect", "destination", "argument_data")
+            )
+        )
+
+        self.stack.allow = True
+        allowed = self.coordinator.discover_state_gated_interactions(at_gate)
+        self.assertTrue(all(row.allowed for row in allowed))
+        first = allowed[0]
+        dispatched = self.coordinator.dispatch_state_gated_interaction(
+            at_gate,
+            first.transition_id,
+        )
+        self.assertTrue(dispatched.decision.allowed)
+        self.assertEqual(
+            dispatched.session.player_position,
+            MapPosition(1, 2, 2),
+        )
+
+    def test_interaction_discovery_surfaces_future_mutation_as_unsupported(self):
+        session = self.coordinator.new_game(1)
+        at_gate = LocalRuntimeSessionState(
+            contract_id=session.contract_id,
+            world_profile=session.world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(2, 2, 2),
+            player_state=session.player_state,
+        )
+
+        def evaluate_with_consumption(_transition_id, _session):
+            return TransitionGateDecision(
+                allowed=True,
+                reason="future mutation",
+                consumed_state={"item": 1},
+            )
+
+        self.stack.evaluate_transition = evaluate_with_consumption
+        rows = self.coordinator.discover_state_gated_interactions(at_gate)
+        self.assertTrue(rows)
+        self.assertTrue(all(row.allowed for row in rows))
+        self.assertTrue(all(not row.execution_supported for row in rows))
+
     def test_state_gated_transition_requires_spatial_and_live_gate_checks(self):
         transition_id = next(iter(self.profile.transitions))
         session = self.coordinator.new_game(1)

@@ -17,7 +17,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field, replace
 from types import MappingProxyType
-from typing import Mapping, Sequence
+from typing import Any, Mapping, Sequence
 
 from tools.stoneage_map_collision_model import (
     CollisionDecision,
@@ -80,6 +80,43 @@ class LocalRuntimeWalkResult:
 class LocalRuntimeTransitionResult:
     session: LocalRuntimeSessionState
     decision: TransitionGateDecision
+
+
+@dataclass(frozen=True)
+class LocalRuntimeInteraction:
+    """Presentation-safe view of one spatially available recovered interaction."""
+
+    transition_id: str
+    interaction_kind: str
+    allowed: bool
+    reason: str
+    provenance: Mapping[str, Any]
+    execution_supported: bool
+
+    def __post_init__(self) -> None:
+        transition_id = str(self.transition_id).strip()
+        interaction_kind = str(self.interaction_kind).strip()
+        reason = str(self.reason).strip()
+        if not transition_id:
+            raise ValueError("runtime interaction transition_id must be non-empty")
+        if not interaction_kind:
+            raise ValueError("runtime interaction kind must be non-empty")
+        if not reason:
+            raise ValueError("runtime interaction reason must be non-empty")
+        object.__setattr__(self, "transition_id", transition_id)
+        object.__setattr__(self, "interaction_kind", interaction_kind)
+        object.__setattr__(self, "allowed", bool(self.allowed))
+        object.__setattr__(self, "reason", reason)
+        object.__setattr__(
+            self,
+            "provenance",
+            MappingProxyType(dict(self.provenance)),
+        )
+        object.__setattr__(
+            self,
+            "execution_supported",
+            bool(self.execution_supported),
+        )
 
 
 class InMemoryLocalPersistenceStore:
@@ -374,6 +411,71 @@ class LocalRuntimeSessionCoordinator:
         x1, y1, x2, y2 = (int(v) for v in raw)
         return min(x1, x2), min(y1, y2), max(x1, x2), max(y1, y2)
 
+    @staticmethod
+    def _position_in_binding_source(
+        position: MapPosition,
+        binding,
+    ) -> bool:
+        x1, y1, x2, y2 = LocalRuntimeSessionCoordinator._binding_source_rect(
+            binding
+        )
+        return (
+            int(position.floor_id) == int(binding.source.floor_id)
+            and x1 <= int(position.x) <= x2
+            and y1 <= int(position.y) <= y2
+        )
+
+    def discover_state_gated_interactions(
+        self,
+        session: LocalRuntimeSessionState,
+    ) -> tuple[LocalRuntimeInteraction, ...]:
+        """Return semantic interaction views available at the current coordinate.
+
+        Raw recovered source rectangles and legacy NPC argument strings remain
+        inside the binding layer; presentation code receives only stable
+        transition identity, live eligibility, and provenance.
+        """
+
+        session = self._validate_session(session)
+        rows = []
+        for transition_id in sorted(self.profile.transitions):
+            binding = self.stack.resolve_transition(str(transition_id))
+            self._binding_source_rect(binding)
+            if not self._position_in_binding_source(
+                session.player_position,
+                binding,
+            ):
+                continue
+            decision = self.stack.evaluate_transition(
+                str(transition_id),
+                session,
+            )
+            rows.append(
+                LocalRuntimeInteraction(
+                    transition_id=str(transition_id),
+                    interaction_kind=str(
+                        binding.predicate_payload["interaction_kind"]
+                    ),
+                    allowed=bool(decision.allowed),
+                    reason=decision.reason,
+                    provenance=binding.provenance,
+                    execution_supported=not bool(decision.consumed_state),
+                )
+            )
+        return tuple(rows)
+
+    def dispatch_state_gated_interaction(
+        self,
+        session: LocalRuntimeSessionState,
+        transition_id: str,
+    ) -> LocalRuntimeTransitionResult:
+        """Dispatch a semantic interaction id through the canonical executor."""
+
+        return self.execute_state_gated_transition(
+            session,
+            str(transition_id),
+        )
+
     def execute_state_gated_transition(
         self,
         session: LocalRuntimeSessionState,
@@ -383,12 +485,9 @@ class LocalRuntimeSessionCoordinator:
 
         session = self._validate_session(session)
         binding = self.stack.resolve_transition(str(transition_id))
-        x1, y1, x2, y2 = self._binding_source_rect(binding)
-        p = session.player_position
-        spatially_eligible = (
-            int(p.floor_id) == int(binding.source.floor_id)
-            and x1 <= int(p.x) <= x2
-            and y1 <= int(p.y) <= y2
+        spatially_eligible = self._position_in_binding_source(
+            session.player_position,
+            binding,
         )
         if not spatially_eligible:
             return LocalRuntimeTransitionResult(
