@@ -136,6 +136,42 @@ def resolve_enemy_ai_basic_petskill_command(
     )
 
 
+def resolve_enemy_ai_supported_petskill_command(
+    spawned: SpawnedEnemy,
+    *,
+    skill_slot: int,
+    target_slot: int,
+    petskill_runtime: Recovered25PetSkillRuntime,
+    allow_status_change: bool = False,
+) -> EnemyAiPetSkillCommand:
+    """Dispatch only callbacks whose full execution boundary is admitted."""
+
+    _, _, entry = _resolved_entry(
+        spawned,
+        skill_slot=skill_slot,
+        target_slot=target_slot,
+        petskill_runtime=petskill_runtime,
+    )
+    if entry.function_name in BASIC_AI_CALLBACKS:
+        return resolve_enemy_ai_basic_petskill_command(
+            spawned,
+            skill_slot=skill_slot,
+            target_slot=target_slot,
+            petskill_runtime=petskill_runtime,
+        )
+    if entry.function_name == STATUS_CHANGE and bool(allow_status_change):
+        return resolve_enemy_ai_statuschange_petskill_command(
+            spawned,
+            skill_slot=skill_slot,
+            target_slot=target_slot,
+            petskill_runtime=petskill_runtime,
+        )
+    raise ValueError(
+        "enemy AI selected pet-skill callback outside admitted execution "
+        f"subset: {entry.function_name}"
+    )
+
+
 def _status_tokens_for_option(option_text: str) -> tuple[str, ...]:
     for tokens in (STATUS_TOKENS_TRADITIONAL, STATUS_TOKENS_SIMPLIFIED):
         parsed = parse_status_skill(option_text, tokens)
