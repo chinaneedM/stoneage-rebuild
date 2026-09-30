@@ -1,0 +1,16 @@
+StoneAge shadowed-branch fresh-start coordinate reachability — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+PINNED_SOURCE_CONTROL|normal_hometowns=4|delbornplace_define_enabled=0|museum_define_enabled=0
+RULE|spawn floors/coordinates, item ids, NPC names and intermediate route coordinates/floor ids are withheld
+RULE|recovered25 LS2MAP + mapset collision, diagonal corner checks, active classic Warp coordinates and conservative non-Warp NPC birth blockers are all enforced
+RULE|only each character's exact initialized spawn cell is admitted despite a possible conservative birth-mask overlap; later entered cells receive no such exception
+COUNT|normal_hometown_candidates|4
+COUNT|normal_hometown_coordinate_reachable|2
+COUNT|award_interaction_cells|24
+FRESH_START_COORDINATE_WITNESS|ordinal=1|reachable=1|warp_hops=4|traversed_floors=50|unresolved_map_floors=0|route_details_withheld=1
+FRESH_START_COORDINATE_WITNESS|ordinal=2|reachable=1|warp_hops=2|traversed_floors=11|unresolved_map_floors=0|route_details_withheld=1
+FRESH_START_COORDINATE_WITNESS|ordinal=3|reachable=0|warp_hops=-1|traversed_floors=98|unresolved_map_floors=0|route_details_withheld=1
+FRESH_START_COORDINATE_WITNESS|ordinal=4|reachable=0|warp_hops=-1|traversed_floors=98|unresolved_map_floors=0|route_details_withheld=1
+FRESH_START_COORDINATE_CHAIN|witness=0
+RESOLUTION|SHADOWED_BRANCH_FRESH_START_COORDINATE_REACHABILITY_CLOSED
