@@ -22,12 +22,17 @@ from tools.stoneage_player_creation_model import build_creation_state
 from tools.stoneage_recovered25_world_profile_adapter import (
     HOMETOWN_TRANSITION_IDS,
     SHADOWED_BRANCH_TRANSITION_ID,
-    SHADOWED_BRANCH_UNLOCK_FLAG,
     Recovered25FreshStartFactory,
     Recovered25TransitionBindingResolver,
     Recovered25TransitionGateEvaluator,
     Recovered25WorldProfileAdapter,
     derive_recovered25_transition_bindings,
+)
+from tools.stoneage_shadowed_branch_warpman_satisfiability_probe import (
+    ITEM,
+    LEVEL,
+    _compare,
+    _configured_maxlevel,
 )
 from tools.stoneage_singleplayer_domain import (
     InventoryItem,
@@ -114,14 +119,53 @@ def run(
 
     ingress_contract=profile.transitions[SHADOWED_BRANCH_TRANSITION_ID]
     ingress_binding=resolver.resolve_transition(ingress_contract)
-    seed=seeds[1]
+    clauses=ingress_binding.predicate_payload["free_clauses"]
+    maxlevel=_configured_maxlevel(setup)
+    chosen_level=None
+    chosen_items=[]
+    for clause in clauses:
+        level_atoms=[atom for atom in clause if atom["key"]==LEVEL]
+        for level in range(1,maxlevel+1):
+            if all(_compare(level,str(atom["operator"]),int(atom["operand"])) for atom in level_atoms):
+                candidate_items=[]
+                supported=True
+                for atom in clause:
+                    if atom["key"]!=ITEM:
+                        continue
+                    op=str(atom["operator"]); operand=int(atom["operand"])
+                    if op=="=":
+                        candidate_items.append(operand)
+                    elif op==">":
+                        candidate_items.append(operand+1)
+                    elif op=="<" and operand>0:
+                        candidate_items.append(operand-1)
+                    else:
+                        supported=False
+                        break
+                if supported:
+                    chosen_level=level
+                    chosen_items=candidate_items
+                    break
+        if chosen_level is not None:
+            break
+    if chosen_level is None:
+        raise ValueError("cannot construct a legal in-memory FREE witness")
+
+    ingress_state=_player_state(1)
+    fields=dict(ingress_state.character.fields)
+    fields["level"]=chosen_level
+    ingress_state.character=PlayerState(MappingProxyType(fields))
+    for slot,item_id in enumerate(chosen_items):
+        s=InventorySlot(slot)
+        ingress_state.inventory[s]=InventoryItem(
+            slot=s,template_id=ItemTemplateId(item_id),view=MappingProxyType({})
+        )
     ingress_session=LocalRuntimeSessionState(
         contract_id=profile.contract_id,
         world_profile=profile.runtime_world_profile,
         hometown_ordinal=1,
-        player_position=seed.position,
-        player_state=seed.player_state,
-        world_flags=frozenset({SHADOWED_BRANCH_UNLOCK_FLAG}),
+        player_position=seeds[1].position,
+        player_state=ingress_state,
     )
     allowed+=int(
         evaluator.evaluate_transition(
@@ -169,6 +213,8 @@ def main()->None:
     print("RULE|raw transition coordinates, item identities, argument payloads and dialogue are transient and withheld")
     print(f"COUNT|materializable_floors|{len(adapter.topology.maps)}")
     print(f"COUNT|active_ordered_classic_warps|{len(adapter.topology.legacy_warps)}")
+    print(f"COUNT|deferred_conditional_classic_warps|{len(adapter.runtime.base.deferred_conditional_warps)}")
+    print(f"COUNT|dynamic_free_gate_bindings|{sum(binding.predicate_payload.get('gate_kind')=='FREE_CLAUSES' for binding in bindings.values())}")
     print(f"COUNT|state_gated_bindings|{len(bindings)}")
     print(f"COUNT|fresh_start_seeds|{len(seeds)}")
     print(f"COUNT|region_descriptors_materialized|{len(regions)}")
