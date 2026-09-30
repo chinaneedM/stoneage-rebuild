@@ -102,6 +102,7 @@ def _enemy(row: dict) -> EnemyVariantBridge:
                 row["itemids"], row["itemprobs"]
             )
         ),
+        tactics_option=str(row["tactics_option"]),
     )
 
 
