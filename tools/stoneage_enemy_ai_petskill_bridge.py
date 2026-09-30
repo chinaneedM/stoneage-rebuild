@@ -8,6 +8,7 @@ Currently supported:
 - PETSKILL_None
 - PETSKILL_NormalAttack
 - PETSKILL_NormalGuard
+- PETSKILL_GuardBreak (explicit opt-in dispatcher branch)
 - PETSKILL_Mighty (explicit opt-in dispatcher branch)
 - PETSKILL_PowerBalance (explicit opt-in dispatcher branch)
 - PETSKILL_StatusChange (explicit opt-in dispatcher branch)
@@ -29,6 +30,7 @@ from tools.stoneage_battle_round_model import (
 )
 from tools.stoneage_enemy_spawn_model import SpawnedEnemy
 from tools.stoneage_petskill_core_model import (
+    guard_break_command,
     mighty_command,
     parse_status_skill,
     power_balance_command,
@@ -46,6 +48,7 @@ from tools.stoneage_recovered25_petskill_runtime import (
 NONE = "PETSKILL_None"
 NORMAL_ATTACK = "PETSKILL_NormalAttack"
 NORMAL_GUARD = "PETSKILL_NormalGuard"
+GUARD_BREAK = "PETSKILL_GuardBreak"
 MIGHTY = "PETSKILL_Mighty"
 POWER_BALANCE = "PETSKILL_PowerBalance"
 STATUS_CHANGE = "PETSKILL_StatusChange"
@@ -152,6 +155,7 @@ def resolve_enemy_ai_supported_petskill_command(
     allow_status_change: bool = False,
     allow_power_balance: bool = False,
     allow_mighty: bool = False,
+    allow_guard_break: bool = False,
 ) -> EnemyAiPetSkillCommand:
     """Dispatch only callbacks whose full execution boundary is admitted."""
 
@@ -163,6 +167,13 @@ def resolve_enemy_ai_supported_petskill_command(
     )
     if entry.function_name in BASIC_AI_CALLBACKS:
         return resolve_enemy_ai_basic_petskill_command(
+            spawned,
+            skill_slot=skill_slot,
+            target_slot=target_slot,
+            petskill_runtime=petskill_runtime,
+        )
+    if entry.function_name == GUARD_BREAK and bool(allow_guard_break):
+        return resolve_enemy_ai_guardbreak_petskill_command(
             spawned,
             skill_slot=skill_slot,
             target_slot=target_slot,
@@ -192,6 +203,62 @@ def resolve_enemy_ai_supported_petskill_command(
     raise ValueError(
         "enemy AI selected pet-skill callback outside admitted execution "
         f"subset: {entry.function_name}"
+    )
+
+
+def resolve_enemy_ai_guardbreak_petskill_command(
+    spawned: SpawnedEnemy,
+    *,
+    skill_slot: int,
+    target_slot: int,
+    petskill_runtime: Recovered25PetSkillRuntime,
+) -> EnemyAiPetSkillCommand:
+    """Resolve recovered PETSKILL_GuardBreak into its dedicated physical seam."""
+
+    skill_slot, target_slot, entry = _resolved_entry(
+        spawned,
+        skill_slot=skill_slot,
+        target_slot=target_slot,
+        petskill_runtime=petskill_runtime,
+    )
+    if entry.function_name != GUARD_BREAK:
+        raise ValueError(
+            "enemy AI selected pet-skill callback outside GuardBreak "
+            f"execution subset: {entry.function_name}"
+        )
+
+    if not entry.option_bytes.isascii():
+        raise ValueError(
+            "recovered GuardBreak OPTION is outside proven ASCII-only subset"
+        )
+    option_text=entry.option_bytes.decode("ascii")
+    if "攻%" in option_text:
+        raise ValueError(
+            "ASCII-only GuardBreak subset unexpectedly contains attack marker"
+        )
+
+    projection_fn=getattr(spawned.birth,"combat_projection",None)
+    if not callable(projection_fn):
+        raise ValueError(
+            "GuardBreak execution requires recovered enemy birth projection"
+        )
+    projection=projection_fn()
+    if "attack" not in projection:
+        raise ValueError("enemy birth projection lacks fixed attack value")
+
+    payload=guard_break_command(
+        target_slot,
+        option_text,
+        fixed_attack=int(projection["attack"]),
+    )
+    submission=bridge_stable_pet_skill_command(payload)
+    return EnemyAiPetSkillCommand(
+        participant_id=str(spawned.participant.participant_id),
+        skill_slot=skill_slot,
+        skill_id=int(entry.skill_id),
+        callback=entry.function_name,
+        command=submission.battle_command,
+        setup_effects=submission.setup_effects,
     )
 
 
