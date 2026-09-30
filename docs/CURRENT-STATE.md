@@ -4735,3 +4735,47 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **PETSKILL_NOGUARD_DEAD_PARAMETER_CLAIM = SUPERSEDED.**
 - **PETSKILL_NOGUARD_CROSS_ACTION_SEMANTICS_R1 = CLOSED_REFERENCE_MODEL_ONLY.**
 
+## Phase 1 recovered StatusChange enemy-AI execution — 2026-10-01
+
+- Hash-pinned recovered25 aggregate evidence selected `PETSKILL_StatusChange` as the highest-impact remaining stable-common callback whose ordinary-round execution seam was already closed:
+  - **6** referenced StatusChange skill IDs;
+  - **174** positive enemybase skill-slot uses;
+  - all **6/6** OPTION byte strings decode identically under strict CP950 and Big5;
+  - **0** codec divergences and **0** strict-decode failures.
+- The bundle-backed grammar probe now proves:
+  - `unique_ids=6`;
+  - `matched_status_ids=6`;
+  - recovered source turn values span **3..5**;
+  - all **6** rows carry attack-power modifiers;
+  - **0** carry defense-power modifiers.
+- This 6/6 grammar closure is now a hard runtime-stack/CI condition rather than a descriptive report only.
+- Recovered OPTION text remains fail-closed: non-ASCII mechanics may consume it only through `unambiguous_cp950_big5_option()`; decoder disagreement is an execution error.
+- New StatusChange enemy-skill bridge:
+  - preserves the exact seven-slot `wa[n]` identity;
+  - derives FIXSTR/FIXTOUGH-equivalent attack/defense values from the already preserved enemy birth projection rather than adding duplicate battle-participant fields;
+  - parses only the fixed common ordinary status token set;
+  - delegates command formation to the existing stable pet-skill model and round bridge;
+  - emits `BATTLE_COM_S_STATUSCHANGE`, packed COM3 status/turn, and explicit command-setup effects.
+- The common enemy-AI round now carries command setup effects separately from commands and admits recovered StatusChange in addition to None/NormalAttack/NormalGuard.
+- Status application remains fully explicit:
+  - target VITAL/STR/TOUGH/DEX and status resistances are caller-supplied `BaseStatusCombatProfile` values;
+  - eligible `RAND(1,100)` status application is caller-supplied;
+  - existing-status turn RNG remains caller-supplied when needed;
+  - the battle core consumes no status RNG on dodge/zero-damage/ineligible status paths.
+- Fixed-source `PETSKILL_Use` was re-audited before enabling the callback:
+  - it resolves the selected pet-skill slot and callback;
+  - it does **not** consume `FIELD`, `TARGET`, `COST` or MP before dispatch;
+  - the common `ILLEGAL` check rejects `CHAR_TYPEPET` only, not `CHAR_TYPEENEMY`;
+  - therefore no enemy MP/cost model is required or invented for this closure.
+- End-to-end coordinator regression proves recovered AI selection -> StatusChange command -> positive physical hit -> explicit status check -> persistent poison state, and separately proves an eligible check without explicit RAND fails closed.
+- Remote validation:
+  - StatusChange bridge implementation **36766286297 = PASS**;
+  - bridge regression **36766349167 = PASS**;
+  - command/setup batch refactor coordinator **36766665030 = PASS** and golden contract **36766664730 = PASS**;
+  - full hash-pinned recovered25 validation **36766665111 = PASS**;
+  - integrated runtime commit coordinator **36767747307 = PASS** and golden contract **36767747363 = PASS**;
+  - end-to-end StatusChange coordinator regression **36767877345 = PASS**.
+- Executable recovered stable-common pet-skill slot-use coverage is now **1529 / 2486 = ~61.5%** when counting NormalAttack + NormalGuard + StatusChange slot uses. This is a skill-slot semantic coverage metric, **not** an encounter-frequency or action-probability estimate.
+- **LOCAL_RUNTIME_ENEMY_AI_STATUSCHANGE_R1 = CLOSED.**
+- Next priority: rank the remaining stable-common callbacks by recovered25 slot-use impact and execution-gap size. Current leading candidates are ContinuationAttack (**139** uses), Mighty (**120**), ChargeAttack (**90**), NoGuard (**74**), PowerBalance (**62**) and GuardBreak (**60**). Do not choose by count alone: Continuation requires multi-hit/retarget/counter-loop closure; NoGuard requires cross-action dodge/counter COM3 integration.
+
