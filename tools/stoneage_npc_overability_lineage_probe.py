@@ -248,9 +248,14 @@ def analyze(binding_report: Path) -> tuple[LineageFunctionsetResult, ...]:
                     continue
                 raise
 
-            try:
-                body = _function_body(source, initfunc)
-            except ValueError:
+            body = None
+            for symbol in (initfunc, f"NPC_{initfunc}"):
+                try:
+                    body = _function_body(source, symbol)
+                    break
+                except ValueError:
+                    continue
+            if body is None:
                 per_lineage.append((spec.label, UNRESOLVED))
                 continue
             init_values = overability_setter_values(body)
