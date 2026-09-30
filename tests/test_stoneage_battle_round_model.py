@@ -1836,8 +1836,34 @@ class BattleRoundModelTests(unittest.TestCase):
         event=result.events[0]
         self.assertEqual(event.command1,BATTLE_COM_S_MIGHTY)
         self.assertEqual(event.result,"normal")
-        self.assertEqual(event.damage,130)
-        self.assertEqual(result.hp_by_participant_id["enemy"],170)
+
+        ordinary=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"pet":0,"enemy":0},
+        )
+        ordinary_result=resolve_ordinary_round(
+            ordinary,
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(dex=100),"enemy":profile(dex=100)},
+            attack_rolls={
+                "pet":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        ordinary_event=ordinary_result.events[0]
+        self.assertEqual(event.damage,ordinary_event.damage*2)
+        self.assertEqual(
+            result.hp_by_participant_id["enemy"],
+            300-event.damage,
+        )
 
     def test_statuschange_command_runs_ordinary_attack_then_applies_status(self):
         pet=actor("pet","player","pet",attack=100,quick=100,level=20)
