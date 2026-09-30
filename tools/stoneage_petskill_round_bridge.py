@@ -16,6 +16,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_GUARD,
     BATTLE_COM_S_GBREAK,
     BATTLE_COM_S_GUARDIAN_ATTACK,
+    BATTLE_COM_S_CHARGE,
     BATTLE_COM_S_MIGHTY,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
@@ -43,6 +44,8 @@ def bridge_stable_pet_skill_command(
     reconstructed ordinary physical round:
     - PETSKILL_GuardBreak -> S_GBREAK + immediate work attack
     - PETSKILL_Guardian -> S_GUARDIAN_ATTACK or ordinary GUARD + registration
+    - PETSKILL_ChargeAttack -> S_CHARGE with LOW=wait/HIGH=attack percent and
+      explicit latent ready attack power
     - PETSKILL_Mighty -> S_MIGHTY with LOW=damage x100 / HIGH=dodge modifier
     - PETSKILL_PowerBalance -> S_POWERBALANCE + immediate work attack/defense
     - PETSKILL_StatusChange -> S_STATUSCHANGE with LOW=status/HIGH=turn
@@ -71,6 +74,23 @@ def bridge_stable_pet_skill_command(
         battle_command=BattleCommand(
             BATTLE_COM_GUARD,
             command2=target,
+        )
+    elif source_command=="S_CHARGE":
+        if (
+            "low" not in payload
+            or "high" not in payload
+            or payload.get("charge_ready_attack_power") is None
+        ):
+            raise ValueError(
+                "ChargeAttack payload lacks COM3 or latent ready power"
+            )
+        battle_command=BattleCommand(
+            BATTLE_COM_S_CHARGE,
+            command2=target,
+            command3=pack_battle_command3(
+                low=int(payload["low"]),
+                high=int(payload["high"]),
+            ),
         )
     elif source_command=="S_MIGHTY":
         if "low" not in payload or "high" not in payload:
@@ -135,6 +155,11 @@ def bridge_stable_pet_skill_command(
             None
             if payload.get("defense_power") is None
             else int(payload["defense_power"])
+        ),
+        charge_ready_attack_power=(
+            None
+            if payload.get("charge_ready_attack_power") is None
+            else int(payload["charge_ready_attack_power"])
         ),
         guardian_flag=guardian_flag,
         guardian_for_slot=guardian_for_slot,
