@@ -86,9 +86,9 @@ class Recovered25LocalRuntimeStack:
         client_dat_dir: Path,
         npc_dir: Path,
         setup: Path,
-        server_data_dir: Path,
         server_map_root: Path,
         mapset_path: Path,
+        server_data_dir: Path | None = None,
         client_adrn_path: Path | None = None,
     ) -> "Recovered25LocalRuntimeStack":
         adapter = Recovered25WorldProfileAdapter.from_repository(profile)
@@ -141,9 +141,13 @@ class Recovered25LocalRuntimeStack:
         npc_initial_occupancy = (
             load_recovered25_npc_initial_occupancy_manifest()
         )
-        encounter_runtime = load_recovered25_encounter_runtime(
-            data_dir=server_data_dir,
-            setup=setup,
+        encounter_runtime = (
+            None
+            if server_data_dir is None
+            else load_recovered25_encounter_runtime(
+                data_dir=server_data_dir,
+                setup=setup,
+            )
         )
         stack = cls(
             profile=profile,
