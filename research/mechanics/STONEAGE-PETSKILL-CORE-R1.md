@@ -419,16 +419,27 @@ R1 preserves this historical state-residue behavior rather than clearing COM3 de
 
 ## Guard break
 
-GuardBreak selects `BATTLE_COM_S_GBREAK` and can immediately raise/lower attack power via an attack-percent option.
+GuardBreak selects `BATTLE_COM_S_GBREAK=1002` and can immediately raise/lower attack power via an optional attack-percent marker.
 
-Execution target-adjusts and invokes `BATTLE_S_GBreak`.
+Execution target-adjusts and invokes `BATTLE_S_GBreak`. The fixed order is unusual:
 
-The stable old logic only resolves damage when the target:
+1. `BATTLE_AttackSeq` performs dodge / Guardian / critical / base-damage work first;
+2. GuardBreak bypasses ordinary GUARD damage reduction inside AttackSeq;
+3. `BATTLE_S_GBreak` then checks the **original target**;
+4. damage is kept only if that target is using ordinary GUARD and is not confused;
+5. otherwise damage is forced to zero and the result becomes MISS.
 
-- is currently using ordinary guard;
-- is not confused.
+A fixed-source Guardian quirk is preserved: AttackSeq can calculate damage
+against the redirected Guardian, but `BATTLE_S_GBreak` still passes the
+original guarded target into `BATTLE_DamageSub`, so HP/reaction settlement
+belongs to that original target.
 
-Otherwise damage is forced to zero and the attack result becomes miss.
+Recovered25 narrows this further:
+
+- **1** enemy-referenced GuardBreak skill ID accounts for **60** skill-slot uses;
+- the OPTION bytes are **1/1 ASCII-only**;
+- the fixed handler's optional marker `攻%` is non-ASCII, so **0/1** recovered rows can activate the attack-percent rewrite;
+- recovered execution therefore uses the preserved enemy birth FIXSTR-equivalent attack projection unchanged and fails closed outside this proven ASCII-only subset.
 
 This makes the ordinary GuardBreak family a conditional anti-guard strike, not a general armor-piercing attack.
 

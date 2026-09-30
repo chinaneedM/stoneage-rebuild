@@ -4812,3 +4812,26 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **LOCAL_RUNTIME_ENEMY_AI_POWERBALANCE_R1 = CLOSED.**
 - **LOCAL_RUNTIME_ENEMY_AI_MIGHTY_R1 = CLOSED.**
 - Next priority: `PETSKILL_GuardBreak` (**1 referenced ID / 60 slot uses**). Its recovered OPTION is ASCII-only, while the fixed common handler's only data marker is non-ASCII `攻%`, so recovered25 cannot trigger that optional attack-percent rewrite. The remaining closure is the dedicated GuardBreak execution contract: command 1002, guard-only hit gate, no ordinary GUARD damage reduction, and fail/miss when the resolved target is not actively guarding or is confused. ChargeAttack/ContinuationAttack remain deferred because they require cross-turn or multi-hit state/execution closure.
+## Phase 1 recovered GuardBreak enemy-AI execution — 2026-10-01
+
+- `PETSKILL_GuardBreak` is now closed for recovered25 enemy AI:
+  - **1** referenced GuardBreak skill ID;
+  - **60** positive enemybase skill-slot uses;
+  - bundle-backed hard probe proves **1/1 ASCII OPTION** and **0** recovered `攻%` markers;
+  - therefore the fixed handler's optional attack-percent rewrite cannot activate for this recovered row, and attack setup remains the recovered FIXSTR-equivalent birth projection.
+- `BATTLE_COM_S_GBREAK=1002` now has a dedicated ordinary-round execution path preserving the fixed source behavior:
+  - `BATTLE_AttackSeq`-shaped dodge / Guardian / critical / base-damage work occurs first;
+  - damage is retained only when the original target is using ordinary GUARD and is not confused;
+  - GuardBreak bypasses ordinary GUARD damage reduction;
+  - otherwise final damage is forced to zero and the result becomes MISS;
+  - if Guardian redirects inside AttackSeq, damage calculation can use the Guardian while `BATTLE_DamageSub` / HP settlement still applies to the original guarded target, matching the fixed old implementation.
+- Recovered runtime bridge is fail-closed outside the proven ASCII-only subset.
+- Validation:
+  - dedicated GuardBreak source-quirk battle tests: battle core **36774405578 = PASS**, Taiwan v1.0 gameplay **36774405611 = PASS**;
+  - recovered GuardBreak bridge/coordinator enablement: coordinator **36774519456 = PASS**, golden contract **36774519705 = PASS**;
+  - end-to-end recovered `wa[6]` -> GuardBreak -> guarded player round: coordinator **36774570763 = PASS**;
+  - bundle-backed GuardBreak OPTION closure: recovered25 workflow **36774689850**, concrete local runtime-stack step = **PASS**.
+- The earlier **36774283411 / 36774283327** and inherited **36774315248** red runs were test-fixture errors: the new confused-GUARD regression omitted the already-required explicit confusion action RNG. Runtime logic was unchanged; the corrected explicit-RNG fixture passed.
+- Executable recovered stable-common pet-skill slot-use coverage is now **1771 / 2486 = ~71.2%** when counting NormalAttack + NormalGuard + StatusChange + PowerBalance + Mighty + GuardBreak.
+- **LOCAL_RUNTIME_ENEMY_AI_GUARDBREAK_R1 = CLOSED.**
+- Next priority: `PETSKILL_ChargeAttack` (**3 referenced IDs / 90 slot uses**). The fixed command encoding and one-step `BATTLE_Charge` model already exist, but runtime admission remains OPEN because charge state must persist COM1/COM3 across rounds. Current persistent battle state stores submitted `last_commands`, while each new round still requires fresh commands; it does not yet preserve the decremented LOW(COM3) / S_CHARGE -> S_CHARGE_OK transition. Reconstruct that persistent command-state seam before enabling recovered ChargeAttack. ContinuationAttack remains deferred behind its multi-hit/divisor/retarget/counter-loop closure.

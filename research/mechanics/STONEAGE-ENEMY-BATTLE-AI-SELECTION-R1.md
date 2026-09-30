@@ -219,11 +219,16 @@ explicit-RNG rule.
 - `PETSKILL_Mighty` is admitted after bundle-backed proof that both referenced
   OPTION rows decode identically under CP950/Big5, both contain `倍` and `避`,
   and both pass strict multiplier/dodge numeric grammar.
+- `PETSKILL_GuardBreak` is admitted after bundle-backed proof of exactly one
+  referenced row whose OPTION is ASCII-only. The fixed handler's only optional
+  data marker is non-ASCII `攻%`, so recovered25 cannot activate that attack
+  percentage rewrite.
 - StatusChange carries recovered command-setup effects and uses only explicit
   target status profiles / status RNG. PowerBalance carries handler-side work
   attack/defense mutations into the ordinary physical attack path. Mighty
-  preserves its packed damage multiplier and dodge modifier at their fixed
-  execution points. Neither PowerBalance nor Mighty introduces hidden RNG.
+  preserves its packed damage multiplier and dodge modifier. GuardBreak uses
+  the dedicated command-1002 guard-only gate and fixed Guardian settlement
+  shape. No admitted callback introduces hidden RNG.
 - Empty slots, unresolved IDs and every other callback continue to fail closed.
 - `BATTLE_COM_NONE` is preserved as its own source-shaped no-action command;
   it is not rewritten to WAIT.
@@ -241,7 +246,7 @@ Current rule:
 - caller-supplied enemy commands remain valid at the low-level explicit-command
   coordinator seam;
 - automatic common-normal generation is permitted only for the evidence-closed
-  ATTACK/GUARD/ESCAPE/basic-`wa`/StatusChange/PowerBalance/Mighty subset described above;
+  ATTACK/GUARD/ESCAPE/basic-`wa`/StatusChange/PowerBalance/Mighty/GuardBreak subset described above;
 - an unsupported selected `wa` callback is an error, never an implicit ATTACK,
   GUARD, NONE or WAIT fallback;
 - a selected `ma` path still resolves to no common decision, matching the
@@ -251,12 +256,12 @@ Current rule:
 ## Next seam
 
 Use hash-pinned recovered25 aggregate callback/slot-use coverage to prioritize
-the remaining stable-common `wa` callbacks. PowerBalance and Mighty are now
-closed. Audit GuardBreak next: recovered25 has one referenced GuardBreak ID with
-60 slot uses and an ASCII-only OPTION, while the fixed handler's only optional
-data marker is non-ASCII `攻%`, so no recovered attack-percent rewrite can
-apply. The remaining work is its dedicated command-1002 guard-only execution
-gate and downstream damage/reaction ordering. Keep ChargeAttack and
-ContinuationAttack deferred until their cross-turn/multi-hit contracts are
-explicitly reconstructed. Add new state/RNG inputs when required; do not
-generalize a pet-skill executor ahead of evidence.
+the remaining stable-common `wa` callbacks. GuardBreak is now closed. Audit
+ChargeAttack next: three referenced IDs account for 90 slot uses and the fixed
+handler/execution model is already reconstructed, but the runtime must first
+persist S_CHARGE command state and decremented LOW(COM3) across rounds until
+S_CHARGE_OK fires. Current persistent rounds save submitted commands rather than
+the mutated post-execution charge command state, so enabling ChargeAttack before
+that seam exists would lose the countdown. Keep ContinuationAttack deferred
+behind its multi-hit/divisor/retarget/counter-loop closure. Add new state/RNG
+inputs when required; do not generalize a pet-skill executor ahead of evidence.
