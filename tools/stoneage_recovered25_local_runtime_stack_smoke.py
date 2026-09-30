@@ -648,6 +648,13 @@ def main() -> None:
         option_text = entry.unambiguous_cp950_big5_option()
         mighty_multiplier += int("倍" in option_text)
         mighty_dodge += int("避" in option_text)
+    if (
+        mighty_multiplier != len(mighty_entries)
+        or mighty_dodge != len(mighty_entries)
+    ):
+        raise ValueError(
+            "recovered25 Mighty OPTION marker grammar is not fully closed"
+        )
     print(
         "PETSKILL_MIGHTY_MARKERS|"
         f"unique_ids={len(mighty_entries)}|"
