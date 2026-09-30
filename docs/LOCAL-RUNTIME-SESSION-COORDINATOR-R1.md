@@ -184,6 +184,43 @@ Enemy display names may remain unresolved while the recovered25 enemybase
 CP950/Big5 two-row ambiguity is open. That affects presentation only; player
 and owned-pet names remain mandatory, and no synthetic enemy name is created.
 
+## 2F. Persistent ATTACK/WAIT multi-round battle state
+
+The local battle transaction now exposes a deliberately narrow persistent-round
+seam before capture/escape/skill/AI integration.
+
+`begin_persistent_group_battle()` promotes a transient
+`LocalRuntimeBattleContext` into the existing
+`PersistentBattleState` using an explicit participant-to-slot mapping.
+
+`resolve_persistent_attack_wait_round()` accepts only explicit
+`BattleCommand` values whose command code is ATTACK or WAIT. The caller must
+also provide:
+
+- initiative random subtracts for every living actor;
+- combat profiles;
+- attack rolls for attacking actors;
+- defense profile;
+- optional field attribute/power and tie-break order.
+
+The coordinator delegates the round to the already recovered
+`resolve_persistent_ordinary_round()` model. HP, pending EXP, turn number,
+status runtime, enemy removal and terminal victory/defeat determination persist
+inside the returned immutable battle state. The method returns a new battle
+context plus the concrete `PersistentRoundResult`.
+
+No enemy command is synthesized. An enemy WAIT is a caller decision just like a
+player ATTACK. Capture, escape, item, skill, guard/combo and automatic AI
+commands are rejected at this R1 coordinator seam rather than guessed.
+
+`settle_persistent_group_battle_without_level_crossing()` reconstructs the
+original player-owned persistent-state snapshot, runs the existing terminal
+battle settlement, and returns a new `LocalRuntimeSessionState`. Below-threshold
+EXP and already-buffered battle profit may settle; an unresolved level-up
+threshold remains fail-closed and must use the separate progression seam.
+
+The original pre-battle session remains unchanged throughout the transaction.
+
 ## 3. State-gated dialogue transitions
 
 The three current recovered25 conditional transitions remain outside the unconditional classic-Warp graph.

@@ -23,6 +23,19 @@ from tools.stoneage_enemy_spawn_model import (
     EnemyBirthRolls,
     SpawnedEnemy,
 )
+from tools.stoneage_battle_round_model import (
+    BATTLE_COM_ATTACK,
+    BATTLE_COM_WAIT,
+    BattleCombatProfile,
+    BattleCommand,
+    OrdinaryAttackRolls,
+)
+from tools.stoneage_battle_state_model import (
+    PersistentBattleState,
+    PersistentRoundResult,
+    begin_persistent_battle,
+    resolve_persistent_ordinary_round,
+)
 from tools.stoneage_encounter_frequency_model import (
     EncounterFrequencyDecision,
     EncounterFrequencyState,
@@ -69,6 +82,9 @@ from tools.stoneage_singleplayer_domain import (
     GroupEncounterRequest,
     MapPosition,
     SinglePlayerHistoricalDomain,
+)
+from tools.stoneage_singleplayer_runtime import (
+    SinglePlayerHistoricalRuntime,
 )
 from tools.stoneage_singleplayer_persistence import (
     decode_persistent_state,
@@ -128,6 +144,7 @@ class LocalRuntimeBattleContext:
     persistent_state_payload: str
     battle: BattleSession
     spawned_enemies: tuple[SpawnedEnemy, ...]
+    persistent_battle_state: PersistentBattleState | None = None
 
     def __post_init__(self) -> None:
         if not str(self.contract_id).strip():
@@ -148,6 +165,17 @@ class LocalRuntimeBattleContext:
             "spawned_enemies",
             tuple(self.spawned_enemies),
         )
+        if self.persistent_battle_state is not None:
+            if (
+                self.persistent_battle_state.session.origin_position
+                != self.origin_position
+            ):
+                raise ValueError("persistent battle origin drift")
+            if (
+                self.persistent_battle_state.session.player.participant_id
+                != self.battle.player.participant_id
+            ):
+                raise ValueError("persistent battle player identity drift")
 
 
 @dataclass(frozen=True)
@@ -663,6 +691,139 @@ class LocalRuntimeSessionCoordinator:
             world_profile=context.world_profile,
             hometown_ordinal=context.hometown_ordinal,
             player_position=context.origin_position,
+            player_state=domain.persistent,
+            world_flags=context.world_flags,
+        )
+        return self._validate_session(updated)
+
+    def begin_persistent_group_battle(
+        self,
+        context: LocalRuntimeBattleContext,
+        *,
+        slots: Mapping[str, int],
+    ) -> LocalRuntimeBattleContext:
+        """Promote a transient group battle shell into multi-round state."""
+
+        if context.persistent_battle_state is not None:
+            raise ValueError("battle context already has persistent state")
+        state = begin_persistent_battle(
+            context.battle,
+            slots={str(key): int(value) for key, value in slots.items()},
+        )
+        return replace(
+            context,
+            persistent_battle_state=state,
+        )
+
+    def resolve_persistent_attack_wait_round(
+        self,
+        context: LocalRuntimeBattleContext,
+        *,
+        commands: Mapping[str, BattleCommand],
+        initiative_random_subtracts: Mapping[str, int],
+        profiles: Mapping[str, BattleCombatProfile],
+        attack_rolls: Mapping[str, OrdinaryAttackRolls],
+        defense_profile: str,
+        no_risk: bool = False,
+        field_attr: str = "none",
+        field_power: int = 0,
+        tie_break_order: Sequence[str] | None = None,
+    ) -> tuple[LocalRuntimeBattleContext, PersistentRoundResult]:
+        """Advance one explicit ordinary ATTACK/WAIT round.
+
+        Capture, escape, item, skill, guard/combo and enemy-AI selection remain
+        outside this coordinator seam until their dedicated runtime contracts
+        are connected explicitly.
+        """
+
+        state = context.persistent_battle_state
+        if state is None:
+            raise ValueError("battle context has no persistent battle state")
+
+        normalized_commands = {
+            str(key): value
+            for key, value in commands.items()
+        }
+        invalid_commands = tuple(
+            sorted(
+                participant_id
+                for participant_id, command in normalized_commands.items()
+                if not isinstance(command, BattleCommand)
+                or int(command.command1)
+                not in {BATTLE_COM_ATTACK, BATTLE_COM_WAIT}
+            )
+        )
+        if invalid_commands:
+            raise ValueError(
+                "persistent coordinator R1 accepts ATTACK/WAIT only: "
+                + ",".join(invalid_commands)
+            )
+
+        result = resolve_persistent_ordinary_round(
+            state,
+            commands=normalized_commands,
+            initiative_random_subtracts={
+                str(key): int(value)
+                for key, value in initiative_random_subtracts.items()
+            },
+            profiles=profiles,
+            attack_rolls=attack_rolls,
+            defense_profile=str(defense_profile),
+            no_risk=bool(no_risk),
+            field_attr=str(field_attr),
+            field_power=int(field_power),
+            tie_break_order=(
+                None
+                if tie_break_order is None
+                else tuple(str(x) for x in tie_break_order)
+            ),
+        )
+        return (
+            replace(
+                context,
+                persistent_battle_state=result.after,
+            ),
+            result,
+        )
+
+    def settle_persistent_group_battle_without_level_crossing(
+        self,
+        context: LocalRuntimeBattleContext,
+    ) -> LocalRuntimeSessionState:
+        """Settle a terminal persistent battle into a new authoritative session."""
+
+        state = context.persistent_battle_state
+        if state is None:
+            raise ValueError("battle context has no persistent battle state")
+
+        encounter_runtime = getattr(self.stack, "encounter_runtime", None)
+        if encounter_runtime is None:
+            raise ValueError("runtime stack has no encounter runtime")
+
+        working_state = decode_persistent_state(
+            context.persistent_state_payload
+        )
+        domain = SinglePlayerHistoricalDomain(
+            static=encounter_runtime.static_data,
+            persistent=working_state,
+        )
+        domain.move_player(
+            floor_id=context.origin_position.floor_id,
+            x=context.origin_position.x,
+            y=context.origin_position.y,
+        )
+        runtime = SinglePlayerHistoricalRuntime(
+            domain=domain,
+            topology=self.topology,
+        )
+        returned = runtime.finish_persistent_battle_without_level_crossing(
+            state
+        )
+        updated = LocalRuntimeSessionState(
+            contract_id=context.contract_id,
+            world_profile=context.world_profile,
+            hometown_ordinal=context.hometown_ordinal,
+            player_position=returned.world_position,
             player_state=domain.persistent,
             world_flags=context.world_flags,
         )

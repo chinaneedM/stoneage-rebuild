@@ -1,4 +1,5 @@
 import json
+from dataclasses import replace
 import tempfile
 import unittest
 from pathlib import Path
@@ -8,6 +9,13 @@ from tools.stoneage_enemy_spawn_model import (
     EnemyBirthRolls,
     materialize_spawn_plan,
     plan_enemy_spawns,
+)
+from tools.stoneage_battle_round_model import (
+    BATTLE_COM_ATTACK,
+    BATTLE_COM_WAIT,
+    BattleCombatProfile,
+    BattleCommand,
+    OrdinaryAttackRolls,
 )
 from tools.stoneage_encounter_frequency_model import (
     EncounterFrequencyState,
@@ -959,6 +967,166 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         )
         self.assertEqual(settled.player_position, session.player_position)
         self.assertEqual(settled.world_flags, session.world_flags)
+
+    def test_persistent_attack_wait_rounds_carry_hp_to_terminal_and_settle_clone(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"persistent-battle"}),
+        )
+        group = self.stack.request_encounter_group(
+            session,
+            group_roll=0,
+        )
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        enemy = replace(
+            context.battle.enemies[0],
+            hp=1000,
+            max_hp=1000,
+            defense=0,
+            quick=10,
+        )
+        context = replace(
+            context,
+            battle=replace(context.battle, enemies=(enemy,)),
+        )
+        enemy_id = enemy.participant_id
+        context = self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player": 0, enemy_id: 10},
+        )
+
+        profiles = {
+            "player": BattleCombatProfile(
+                fixed_dex=100,
+                fixed_luck=0,
+                earth=0,
+                water=0,
+                fire=0,
+                wind=0,
+            ),
+            enemy_id: BattleCombatProfile(
+                fixed_dex=10,
+                fixed_luck=0,
+                earth=0,
+                water=0,
+                fire=0,
+                wind=0,
+            ),
+        }
+        commands = {
+            "player": BattleCommand(BATTLE_COM_ATTACK, command2=10),
+            enemy_id: BattleCommand(BATTLE_COM_WAIT),
+        }
+        initiative = {"player": 0, enemy_id: 0}
+        attack_rolls = {
+            "player": OrdinaryAttackRolls(
+                dodge_roll_1_10000=10000,
+                critical_roll_1_10000=10000,
+                damage_roll=0,
+                minimum_damage_roll_0_1=1,
+            )
+        }
+
+        first_context, first = (
+            self.coordinator.resolve_persistent_attack_wait_round(
+                context,
+                commands=commands,
+                initiative_random_subtracts=initiative,
+                profiles=profiles,
+                attack_rolls=attack_rolls,
+                defense_profile="newpower_70pct",
+            )
+        )
+        self.assertEqual(first.after.turn, 1)
+        self.assertGreater(first.after.hp_by_participant_id[enemy_id], 0)
+        self.assertLess(first.after.hp_by_participant_id[enemy_id], 1000)
+
+        current = first_context
+        for _ in range(40):
+            if current.persistent_battle_state.phase == "finished":
+                break
+            current, _round = (
+                self.coordinator.resolve_persistent_attack_wait_round(
+                    current,
+                    commands={
+                        participant_id: command
+                        for participant_id, command in commands.items()
+                        if participant_id
+                        in current.persistent_battle_state.hp_by_participant_id
+                    },
+                    initiative_random_subtracts={
+                        participant_id: value
+                        for participant_id, value in initiative.items()
+                        if participant_id
+                        in current.persistent_battle_state.hp_by_participant_id
+                    },
+                    profiles=profiles,
+                    attack_rolls=attack_rolls,
+                    defense_profile="newpower_70pct",
+                )
+            )
+
+        terminal = current.persistent_battle_state
+        self.assertEqual(terminal.phase, "finished")
+        self.assertEqual(terminal.result, "victory")
+        self.assertGreater(terminal.turn, 1)
+        self.assertNotIn(enemy_id, terminal.hp_by_participant_id)
+        self.assertEqual(
+            terminal.pending_exp_by_participant_id["player"],
+            100,
+        )
+
+        settled = (
+            self.coordinator
+            .settle_persistent_group_battle_without_level_crossing(
+                current
+            )
+        )
+        self.assertEqual(
+            session.player_state.character.fields["hp"],
+            100,
+        )
+        self.assertEqual(
+            session.player_state.character.fields["exp"],
+            0,
+        )
+        self.assertEqual(
+            settled.player_state.character.fields["exp"],
+            100,
+        )
+        self.assertEqual(settled.player_position, session.player_position)
+        self.assertEqual(settled.world_flags, session.world_flags)
+
+        with self.assertRaisesRegex(ValueError, "ATTACK/WAIT only"):
+            self.coordinator.resolve_persistent_attack_wait_round(
+                context,
+                commands={
+                    "player": BattleCommand(2),
+                    enemy_id: BattleCommand(BATTLE_COM_WAIT),
+                },
+                initiative_random_subtracts=initiative,
+                profiles=profiles,
+                attack_rolls=attack_rolls,
+                defense_profile="newpower_70pct",
+            )
 
     def test_classic_overlap_warp_is_reused_not_reimplemented(self):
         session = self.coordinator.new_game(1)
