@@ -25,11 +25,14 @@ from tools.stoneage_enemy_spawn_model import (
 )
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
+    BATTLE_COM_CAPTURE,
     BATTLE_COM_ESCAPE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
     OrdinaryAttackRolls,
+    OrdinaryCaptureContext,
+    OrdinaryCaptureRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
 )
@@ -84,6 +87,7 @@ from tools.stoneage_singleplayer_domain import (
     EncounterRolls,
     GroupEncounterRequest,
     MapPosition,
+    PetActor,
     SinglePlayerHistoricalDomain,
 )
 from tools.stoneage_singleplayer_runtime import (
@@ -148,6 +152,7 @@ class LocalRuntimeBattleContext:
     battle: BattleSession
     spawned_enemies: tuple[SpawnedEnemy, ...]
     persistent_battle_state: PersistentBattleState | None = None
+    working_persistent_state_payload: str | None = None
 
     def __post_init__(self) -> None:
         if not str(self.contract_id).strip():
@@ -179,6 +184,9 @@ class LocalRuntimeBattleContext:
                 != self.battle.player.participant_id
             ):
                 raise ValueError("persistent battle player identity drift")
+        if self.working_persistent_state_payload is not None:
+            if not str(self.working_persistent_state_payload).strip():
+                raise ValueError("working persistent payload must be non-empty")
 
 
 @dataclass(frozen=True)
@@ -592,6 +600,16 @@ class LocalRuntimeSessionCoordinator:
             encounter=encounter,
         )
 
+    @staticmethod
+    def _battle_working_persistent_payload(
+        context: LocalRuntimeBattleContext,
+    ) -> str:
+        return (
+            context.persistent_state_payload
+            if context.working_persistent_state_payload is None
+            else context.working_persistent_state_payload
+        )
+
     def start_group_battle(
         self,
         session: LocalRuntimeSessionState,
@@ -673,7 +691,7 @@ class LocalRuntimeSessionCoordinator:
             raise ValueError("runtime stack has no encounter runtime")
 
         working_state = decode_persistent_state(
-            context.persistent_state_payload
+            self._battle_working_persistent_payload(context)
         )
         domain = SinglePlayerHistoricalDomain(
             static=encounter_runtime.static_data,
@@ -789,6 +807,118 @@ class LocalRuntimeSessionCoordinator:
             result,
         )
 
+    def resolve_persistent_capture_round(
+        self,
+        context: LocalRuntimeBattleContext,
+        *,
+        commands: Mapping[str, BattleCommand],
+        initiative_random_subtracts: Mapping[str, int],
+        profiles: Mapping[str, BattleCombatProfile],
+        attack_rolls: Mapping[str, OrdinaryAttackRolls],
+        capture_context: OrdinaryCaptureContext,
+        capture_rolls: OrdinaryCaptureRolls,
+        captured_pets_by_target_id: Mapping[str, PetActor],
+        defense_profile: str,
+        no_risk: bool = False,
+        field_attr: str = "none",
+        field_power: int = 0,
+        tie_break_order: Sequence[str] | None = None,
+    ) -> tuple[LocalRuntimeBattleContext, PersistentRoundResult]:
+        """Advance one explicit player-capture round transactionally."""
+
+        state = context.persistent_battle_state
+        if state is None:
+            raise ValueError("battle context has no persistent battle state")
+
+        player_id = str(state.session.player.participant_id)
+        normalized_commands = {
+            str(key): value
+            for key, value in commands.items()
+        }
+        if player_id not in normalized_commands:
+            raise ValueError("capture round requires an explicit player command")
+        if int(normalized_commands[player_id].command1) != BATTLE_COM_CAPTURE:
+            raise ValueError("capture round requires player CAPTURE command")
+
+        invalid_commands = tuple(
+            sorted(
+                participant_id
+                for participant_id, command in normalized_commands.items()
+                if not isinstance(command, BattleCommand)
+                or int(command.command1)
+                not in {BATTLE_COM_ATTACK, BATTLE_COM_WAIT, BATTLE_COM_CAPTURE}
+                or (
+                    int(command.command1) == BATTLE_COM_CAPTURE
+                    and participant_id != player_id
+                )
+            )
+        )
+        if invalid_commands:
+            raise ValueError(
+                "capture coordinator accepts player CAPTURE and ATTACK/WAIT only: "
+                + ",".join(invalid_commands)
+            )
+        if not isinstance(capture_context, OrdinaryCaptureContext):
+            raise TypeError("capture_context must be OrdinaryCaptureContext")
+        if not isinstance(capture_rolls, OrdinaryCaptureRolls):
+            raise TypeError("capture_rolls must be OrdinaryCaptureRolls")
+
+        encounter_runtime = getattr(self.stack, "encounter_runtime", None)
+        if encounter_runtime is None:
+            raise ValueError("runtime stack has no encounter runtime")
+
+        working_state = decode_persistent_state(
+            self._battle_working_persistent_payload(context)
+        )
+        domain = SinglePlayerHistoricalDomain(
+            static=encounter_runtime.static_data,
+            persistent=working_state,
+        )
+        domain.move_player(
+            floor_id=context.origin_position.floor_id,
+            x=context.origin_position.x,
+            y=context.origin_position.y,
+        )
+        runtime = SinglePlayerHistoricalRuntime(
+            domain=domain,
+            topology=self.topology,
+        )
+        result = runtime.resolve_persistent_battle_round(
+            state,
+            commands=normalized_commands,
+            initiative_random_subtracts={
+                str(key): int(value)
+                for key, value in initiative_random_subtracts.items()
+            },
+            profiles=profiles,
+            attack_rolls=attack_rolls,
+            capture_contexts={player_id: capture_context},
+            capture_rolls={player_id: capture_rolls},
+            captured_pets_by_target_id={
+                str(key): value
+                for key, value in captured_pets_by_target_id.items()
+            },
+            defense_profile=str(defense_profile),
+            no_risk=bool(no_risk),
+            field_attr=str(field_attr),
+            field_power=int(field_power),
+            tie_break_order=(
+                None
+                if tie_break_order is None
+                else tuple(str(x) for x in tie_break_order)
+            ),
+        )
+        return (
+            replace(
+                context,
+                persistent_battle_state=result.after,
+                working_persistent_state_payload=encode_persistent_state(
+                    domain.persistent
+                ),
+            ),
+            result,
+        )
+
     def resolve_persistent_escape_round(
         self,
         context: LocalRuntimeBattleContext,
@@ -888,7 +1018,7 @@ class LocalRuntimeSessionCoordinator:
             raise ValueError("runtime stack has no encounter runtime")
 
         working_state = decode_persistent_state(
-            context.persistent_state_payload
+            self._battle_working_persistent_payload(context)
         )
         domain = SinglePlayerHistoricalDomain(
             static=encounter_runtime.static_data,
@@ -929,7 +1059,7 @@ class LocalRuntimeSessionCoordinator:
             raise ValueError("runtime stack has no encounter runtime")
 
         working_state = decode_persistent_state(
-            context.persistent_state_payload
+            self._battle_working_persistent_payload(context)
         )
         domain = SinglePlayerHistoricalDomain(
             static=encounter_runtime.static_data,

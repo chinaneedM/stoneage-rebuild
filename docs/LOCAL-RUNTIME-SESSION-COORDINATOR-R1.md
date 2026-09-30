@@ -252,6 +252,43 @@ item profit, matching the recovered BATTLE_Exit/BATTLE_Finish ordering.
 
 The input pre-battle session remains unchanged.
 
+## 2H. Transactional player capture round
+
+The coordinator connects the already reconstructed capture command/formula to
+the local battle transaction without creating incomplete pets.
+
+`resolve_persistent_capture_round()` requires:
+
+- an existing persistent battle context;
+- an explicit player `BATTLE_COM_CAPTURE` command;
+- explicit ATTACK/WAIT commands for every other living actor;
+- caller-supplied capture context and capture roll;
+- a caller-supplied mapping of successful target ids to complete
+  provenance-bearing `PetActor` objects.
+
+The method reconstructs the current battle working copy from the versioned
+persistent-state payload and delegates to
+`SinglePlayerHistoricalRuntime.resolve_persistent_battle_round()`. The
+existing runtime remains authoritative for target adjustment, capture gates,
+first-empty five-pet-slot ordering, source probability math, enemy exit and the
+rule that capture is not a kill.
+
+Successful capture may mutate the working pet roster. Therefore
+`LocalRuntimeBattleContext` now carries an optional
+`working_persistent_state_payload`. Failed capture validation leaves the
+original context and pre-battle session untouched; successful capture stores a
+new encoded working copy.
+
+All settlement paths read the working payload when present. This ensures a
+captured pet survives terminal battle settlement instead of being lost when the
+original pre-battle snapshot is restored.
+
+The coordinator does **not** construct the captured `PetActor`. MP, max MP,
+skills, copied status values, EXP threshold, display name and other fields that
+are not fully derivable from the current recovered25 runtime must be supplied by
+a provenance-bearing adapter. Missing or mismatched successful-capture payloads
+fail atomically.
+
 ## 3. State-gated dialogue transitions
 
 The three current recovered25 conditional transitions remain outside the unconditional classic-Warp graph.

@@ -4584,5 +4584,22 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Successful escape produces terminal result `escape` and uses the existing dedicated escape settlement, which does **not** award normal pending EXP or item profit.
 - The original pre-battle local session remains immutable; settlement returns a new session.
 - Enemy escape remains outside this local R1 boundary until AI/behavior evidence is connected.
-- **LOCAL_RUNTIME_PLAYER_ESCAPE_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Remote validation: coordinator **36753012126 = PASS** and golden contract **36753012150 = PASS**.
+- **LOCAL_RUNTIME_PLAYER_ESCAPE_R1 = CLOSED.**
 - Next after CI: connect capture as a separate transaction because successful capture requires a complete provenance-bearing `PetActor`; do not fabricate MP, skills, name, EXP threshold or visible-AI/compliance fields.
+
+
+## Phase 1 transactional player capture round — 2026-10-01
+
+- Capture is connected after escape because the stable-descendant capture equation, target/slot ordering and persistent-pet install path are already closed, while complete captured-pet data must still remain caller/provenance supplied.
+- `LocalRuntimeBattleContext` gains optional `working_persistent_state_payload` so battle-time persistent mutations such as successful capture survive later settlement without modifying the original pre-battle session.
+- New coordinator entry: `resolve_persistent_capture_round(...)`.
+- R1 requires an explicit player `BATTLE_COM_CAPTURE`; all other living actors remain caller-supplied ATTACK/WAIT commands.
+- Capture context, capture roll, combat profiles and any attack rolls remain explicit inputs.
+- A successful capture requires `captured_pets_by_target_id` containing the complete source-identified `PetActor`; the existing runtime verifies first-empty slot, source variant/template identity and copied level/current HP/max HP before installing it.
+- Missing/extra captured-pet mappings fail atomically. The original local session and the input battle context remain unchanged.
+- All coordinator battle settlement paths now use the working persistent payload when one exists, so successful captures survive battle completion.
+- No placeholder MP, skill list, EXP threshold, display name or AI/compliance state is fabricated.
+- Coordinator CI now watches/runs the standalone capture model and capture research seams in addition to the persistent group-battle regression.
+- **LOCAL_RUNTIME_PLAYER_CAPTURE_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Next after CI: audit whether the existing capture-to-owned-pet adapter can be populated from recovered25 enemy/birth/petskill/EXP data without guessing fields; if not, keep complete captured-pet construction outside runtime and move to explicit defeat/death recovery integration.

@@ -12,11 +12,14 @@ from tools.stoneage_enemy_spawn_model import (
 )
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
+    BATTLE_COM_CAPTURE,
     BATTLE_COM_ESCAPE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
     OrdinaryAttackRolls,
+    OrdinaryCaptureContext,
+    OrdinaryCaptureRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
 )
@@ -49,8 +52,12 @@ from tools.stoneage_local_runtime_session_coordinator import (
 from tools.stoneage_singleplayer_battle import BattleOutcome
 from tools.stoneage_singleplayer_domain import (
     EncounterRolls,
+    EnemyVariantId,
     HistoricalStaticData,
     MapPosition,
+    PetActor,
+    PetSlot,
+    PetTemplateId,
     PersistentPlayerState,
     PlayerState,
     SinglePlayerHistoricalDomain,
@@ -970,6 +977,175 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         )
         self.assertEqual(settled.player_position, session.player_position)
         self.assertEqual(settled.world_flags, session.world_flags)
+
+    def test_capture_round_persists_complete_pet_in_working_snapshot_and_settlement(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"capture-route"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        enemy = replace(
+            context.battle.enemies[0],
+            hp=10,
+            max_hp=100,
+            quick=20,
+            capturable=True,
+            capture_default=99,
+        )
+        context = replace(
+            context,
+            battle=replace(context.battle, enemies=(enemy,)),
+        )
+        enemy_id = enemy.participant_id
+        context = self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player": 0, enemy_id: 10},
+        )
+        captured = PetActor(
+            slot=PetSlot(0),
+            variant_id=EnemyVariantId(enemy.source_variant_id),
+            template_id=PetTemplateId(enemy.source_template_id),
+            runtime_object_id=None,
+            state=MappingProxyType(
+                {
+                    "level": enemy.level,
+                    "hp": 10,
+                    "max_hp": 100,
+                    "exp": 0,
+                    "max_exp": 500,
+                    "attack": enemy.attack,
+                    "defense": enemy.defense,
+                    "quick": enemy.quick,
+                    "name": "captured-test",
+                }
+            ),
+            skills=(),
+            growth=None,
+        )
+        profiles = {
+            "player": BattleCombatProfile(
+                fixed_dex=100,
+                fixed_luck=7,
+                earth=0,
+                water=0,
+                fire=0,
+                wind=0,
+            ),
+            enemy_id: BattleCombatProfile(
+                fixed_dex=20,
+                fixed_luck=0,
+                earth=0,
+                water=0,
+                fire=0,
+                wind=0,
+            ),
+        }
+
+        captured_context, result = (
+            self.coordinator.resolve_persistent_capture_round(
+                context,
+                commands={
+                    "player": BattleCommand(
+                        BATTLE_COM_CAPTURE,
+                        command2=10,
+                    ),
+                    enemy_id: BattleCommand(BATTLE_COM_WAIT),
+                },
+                initiative_random_subtracts={
+                    "player": 0,
+                    enemy_id: 0,
+                },
+                profiles=profiles,
+                attack_rolls={},
+                capture_context=OrdinaryCaptureContext(
+                    attacker_charm=100,
+                    occupied_pet_slots=(),
+                ),
+                capture_rolls=OrdinaryCaptureRolls(
+                    capture_roll_1_100=1,
+                ),
+                captured_pets_by_target_id={
+                    enemy_id: captured,
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        self.assertEqual(result.after.phase, "finished")
+        self.assertEqual(result.after.result, "victory")
+        self.assertEqual(result.round.exited_participant_ids, (enemy_id,))
+        self.assertEqual(
+            result.after.pending_exp_by_participant_id["player"],
+            0,
+        )
+        self.assertIsNotNone(
+            captured_context.working_persistent_state_payload
+        )
+
+        settled = (
+            self.coordinator
+            .settle_persistent_group_battle_without_level_crossing(
+                captured_context
+            )
+        )
+        self.assertEqual(session.player_state.pets, {})
+        self.assertIn(PetSlot(0), settled.player_state.pets)
+        pet = settled.player_state.pets[PetSlot(0)]
+        self.assertEqual(pet.variant_id.value, enemy.source_variant_id)
+        self.assertEqual(pet.template_id.value, enemy.source_template_id)
+        self.assertEqual(pet.state["hp"], 10)
+        self.assertEqual(settled.player_state.character.fields["exp"], 0)
+
+        with self.assertRaisesRegex(
+            ValueError,
+            "captured pet mapping mismatch",
+        ):
+            self.coordinator.resolve_persistent_capture_round(
+                context,
+                commands={
+                    "player": BattleCommand(
+                        BATTLE_COM_CAPTURE,
+                        command2=10,
+                    ),
+                    enemy_id: BattleCommand(BATTLE_COM_WAIT),
+                },
+                initiative_random_subtracts={
+                    "player": 0,
+                    enemy_id: 0,
+                },
+                profiles=profiles,
+                attack_rolls={},
+                capture_context=OrdinaryCaptureContext(
+                    attacker_charm=100,
+                    occupied_pet_slots=(),
+                ),
+                capture_rolls=OrdinaryCaptureRolls(
+                    capture_roll_1_100=1,
+                ),
+                captured_pets_by_target_id={},
+                defense_profile="newpower_70pct",
+            )
+        )
+        self.assertIsNone(context.working_persistent_state_payload)
+        self.assertEqual(session.player_state.pets, {})
 
     def test_player_escape_round_is_explicit_terminal_and_discards_profit(self):
         session = LocalRuntimeSessionState(
