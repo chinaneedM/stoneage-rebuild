@@ -180,6 +180,11 @@ def _max_physical_damage(attack:int,effective_defense:float)->int:
 @dataclass(frozen=True)
 class OneHitWitness:
     spawn_ordinal:int
+    source_floor:int
+    source_enemy_id:int
+    source_tempno:int
+    source_group_id:int
+    source_encounter_index:int
     enemy_level:int
     player_strength:int
     player_dexterity:int
@@ -196,6 +201,7 @@ class OneHitWitness:
 class CombatAudit:
     coordinate_valid_hometowns:int
     low_level_source_rows:int
+    leveling_reward_chain:bool
     unique_candidate_variants:int
     ordinary_attack_candidate_variants:int
     one_hit_witnesses:tuple[OneHitWitness,...]
@@ -340,6 +346,11 @@ def analyze(
                     continue
                 candidate=OneHitWitness(
                     spawn_ordinal=int(source.spawn_ordinal),
+                    source_floor=int(source.floor),
+                    source_enemy_id=int(source.enemy_id),
+                    source_tempno=int(source.tempno),
+                    source_group_id=int(source.group_id),
+                    source_encounter_index=int(source.encounter_index),
                     enemy_level=int(min_level),
                     player_strength=int(strength),
                     player_dexterity=int(dexterity),
@@ -365,6 +376,7 @@ def analyze(
     return CombatAudit(
         coordinate_valid_hometowns=len(valid_ordinals),
         low_level_source_rows=len(sources),
+        leveling_reward_chain=bool(leveling.leveling_reward_chain),
         unique_candidate_variants=len(unique_variants),
         ordinary_attack_candidate_variants=ordinary_attack_candidates,
         one_hit_witnesses=tuple(witnesses),
@@ -387,8 +399,9 @@ def emit(audit:CombatAudit)->None:
     print(
         "RULE|witness requires a coordinate-valid fresh-start hometown, "
         "positive-EXP low-level source, one-enemy legal encounter outcome, "
-        "skill-free/counter-free enemy template, legal enemy birth rolls, "
-        "legal 20-point new-character allocation, player-first legal initiative "
+        "fixed-descendant normal enemy AI with a positive ordinary-attack "
+        "branch weight, legal enemy birth rolls, legal 20-point new-character "
+        "allocation, player-first legal initiative "
         "and ordinary one-hit KO without equipment/pet/item/critical/skill"
     )
     print(
@@ -398,6 +411,10 @@ def emit(audit:CombatAudit)->None:
     )
     print(f"COUNT|coordinate_valid_hometowns|{audit.coordinate_valid_hometowns}")
     print(f"COUNT|low_level_source_rows|{audit.low_level_source_rows}")
+    print(
+        "PREREQUISITE_LEVELING_REWARD_CHAIN|witness="
+        f"{int(audit.leveling_reward_chain)}"
+    )
     print(f"COUNT|unique_candidate_variants|{audit.unique_candidate_variants}")
     print(
         "COUNT|ordinary_attack_ai_candidate_variants|"
