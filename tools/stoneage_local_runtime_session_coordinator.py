@@ -23,10 +23,17 @@ from tools.stoneage_enemy_spawn_model import (
     EnemyBirthRolls,
     SpawnedEnemy,
 )
+from tools.stoneage_enemy_ai_model import (
+    ATTACK as ENEMY_AI_ATTACK,
+    GUARD as ENEMY_AI_GUARD,
+    EnemyAiTarget,
+    resolve_common_normal_enemy_ai,
+)
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_CAPTURE,
     BATTLE_COM_ESCAPE,
+    BATTLE_COM_GUARD,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
@@ -894,6 +901,243 @@ class LocalRuntimeSessionCoordinator:
             persistent_battle_state=state,
         )
 
+    def build_persistent_enemy_attack_guard_commands(
+        self,
+        context: LocalRuntimeBattleContext,
+        *,
+        mode_rolls_by_enemy_id: Mapping[str, int],
+        target_rolls_by_enemy_id: Mapping[str, int] | None = None,
+    ) -> Mapping[str, BattleCommand]:
+        """Derive the currently executable common enemy-AI subset.
+
+        The stable descendant AI may choose ATTACK, GUARD, ESCAPE, a pet-skill
+        slot, or a path that returns no decision. This coordinator exposes only
+        ATTACK/GUARD because those commands are already closed by the ordinary
+        persistent-round runtime. Every other selected mode fails closed.
+        """
+
+        state = context.persistent_battle_state
+        if state is None:
+            raise ValueError("battle context has no persistent battle state")
+        if state.phase != "active":
+            raise ValueError("cannot derive enemy AI after battle termination")
+
+        participants = (
+            state.session.player,
+            *state.session.allied_pets,
+            *state.session.enemies,
+        )
+        living = {
+            str(participant.participant_id): participant
+            for participant in participants
+            if (
+                str(participant.participant_id) in state.hp_by_participant_id
+                and int(
+                    state.hp_by_participant_id[
+                        str(participant.participant_id)
+                    ]
+                ) > 0
+            )
+        }
+        living_enemy_ids = tuple(
+            str(enemy.participant_id)
+            for enemy in state.session.enemies
+            if str(enemy.participant_id) in living
+        )
+        supplied_mode_ids = {str(key) for key in mode_rolls_by_enemy_id}
+        if supplied_mode_ids != set(living_enemy_ids):
+            missing = sorted(set(living_enemy_ids) - supplied_mode_ids)
+            extra = sorted(supplied_mode_ids - set(living_enemy_ids))
+            raise ValueError(
+                "enemy AI mode rolls must cover exactly living enemies; "
+                f"missing={missing}, extra={extra}"
+            )
+
+        target_rolls = {
+            str(key): int(value)
+            for key, value in (target_rolls_by_enemy_id or {}).items()
+        }
+        unknown_target_rolls = sorted(
+            set(target_rolls) - set(living_enemy_ids)
+        )
+        if unknown_target_rolls:
+            raise ValueError(
+                "enemy AI target rolls reference non-living enemies: "
+                + ",".join(unknown_target_rolls)
+            )
+
+        spawn_by_participant_id = {}
+        for spawned in context.spawned_enemies:
+            participant_id = str(spawned.participant.participant_id)
+            if participant_id in spawn_by_participant_id:
+                raise ValueError(
+                    "duplicate spawned-enemy participant identity: "
+                    + participant_id
+                )
+            spawn_by_participant_id[participant_id] = spawned
+
+        targets = []
+        for participant in (
+            state.session.player,
+            *state.session.allied_pets,
+        ):
+            participant_id = str(participant.participant_id)
+            if participant_id not in living:
+                continue
+            if participant_id not in state.slots:
+                raise ValueError(
+                    "living enemy-AI target lacks battle slot: "
+                    + participant_id
+                )
+            slot = int(state.slots[participant_id])
+            if not 0 <= slot < 10:
+                raise ValueError(
+                    "enemy-AI opposing target is outside player-side slots: "
+                    + participant_id
+                )
+            kind = (
+                participant.kind
+                if participant.kind in {"player", "pet"}
+                else "other"
+            )
+            targets.append(
+                EnemyAiTarget(
+                    slot=slot,
+                    participant_id=participant_id,
+                    kind=kind,
+                    hp=int(state.hp_by_participant_id[participant_id]),
+                    alive=True,
+                    rescue_mode=False,
+                )
+            )
+
+        commands = {}
+        for enemy_id in living_enemy_ids:
+            if enemy_id not in spawn_by_participant_id:
+                raise ValueError(
+                    "living enemy lacks recovered spawn provenance: "
+                    + enemy_id
+                )
+            spawned = spawn_by_participant_id[enemy_id]
+            variant = spawned.variant
+            if int(variant.tactics) != 1:
+                raise ValueError(
+                    f"enemy {enemy_id} uses unsupported TACTICS mode "
+                    f"{variant.tactics}"
+                )
+            if not str(variant.tactics_option):
+                raise ValueError(
+                    "enemy lacks TACTICSOPTION provenance: " + enemy_id
+                )
+
+            decision = resolve_common_normal_enemy_ai(
+                str(variant.tactics_option),
+                tuple(targets),
+                mode_roll=int(mode_rolls_by_enemy_id[enemy_id]),
+                target_roll=target_rolls.get(enemy_id),
+            )
+            if decision is None:
+                raise ValueError(
+                    "enemy AI produced no executable common decision: "
+                    + enemy_id
+                )
+            if decision.kind == ENEMY_AI_ATTACK:
+                commands[enemy_id] = BattleCommand(
+                    BATTLE_COM_ATTACK,
+                    command2=int(decision.target_slot),
+                )
+                continue
+            if decision.kind == ENEMY_AI_GUARD:
+                commands[enemy_id] = BattleCommand(BATTLE_COM_GUARD)
+                continue
+            raise ValueError(
+                "enemy AI selected command outside coordinator "
+                f"ATTACK/GUARD subset: {enemy_id}:{decision.kind}"
+            )
+
+        return MappingProxyType(commands)
+
+    def resolve_persistent_attack_guard_wait_round_with_enemy_ai(
+        self,
+        context: LocalRuntimeBattleContext,
+        *,
+        player_side_commands: Mapping[str, BattleCommand],
+        enemy_mode_rolls: Mapping[str, int],
+        enemy_target_rolls: Mapping[str, int] | None,
+        initiative_random_subtracts: Mapping[str, int],
+        profiles: Mapping[str, BattleCombatProfile],
+        attack_rolls: Mapping[str, OrdinaryAttackRolls],
+        defense_profile: str,
+        no_risk: bool = False,
+        field_attr: str = "none",
+        field_power: int = 0,
+        tie_break_order: Sequence[str] | None = None,
+    ) -> tuple[LocalRuntimeBattleContext, PersistentRoundResult]:
+        """Advance one ATTACK/GUARD/WAIT round with recovered enemy AI.
+
+        Player-side commands remain explicit. Enemy commands are derived from
+        each spawned variant's recovered TACTICS/TACTICSOPTION with explicit
+        caller-provided AI rolls.
+        """
+
+        state = context.persistent_battle_state
+        if state is None:
+            raise ValueError("battle context has no persistent battle state")
+
+        living_player_side_ids = {
+            str(participant.participant_id)
+            for participant in (
+                state.session.player,
+                *state.session.allied_pets,
+            )
+            if (
+                str(participant.participant_id)
+                in state.hp_by_participant_id
+                and int(
+                    state.hp_by_participant_id[
+                        str(participant.participant_id)
+                    ]
+                ) > 0
+            )
+        }
+        normalized_player_commands = {
+            str(key): value
+            for key, value in player_side_commands.items()
+        }
+        if set(normalized_player_commands) != living_player_side_ids:
+            missing = sorted(
+                living_player_side_ids - set(normalized_player_commands)
+            )
+            extra = sorted(
+                set(normalized_player_commands) - living_player_side_ids
+            )
+            raise ValueError(
+                "player-side commands must cover exactly living player-side "
+                f"actors; missing={missing}, extra={extra}"
+            )
+
+        enemy_commands = self.build_persistent_enemy_attack_guard_commands(
+            context,
+            mode_rolls_by_enemy_id=enemy_mode_rolls,
+            target_rolls_by_enemy_id=enemy_target_rolls,
+        )
+        commands = {
+            **normalized_player_commands,
+            **dict(enemy_commands),
+        }
+        return self.resolve_persistent_attack_wait_round(
+            context,
+            commands=commands,
+            initiative_random_subtracts=initiative_random_subtracts,
+            profiles=profiles,
+            attack_rolls=attack_rolls,
+            defense_profile=defense_profile,
+            no_risk=no_risk,
+            field_attr=field_attr,
+            field_power=field_power,
+            tie_break_order=tie_break_order,
+        )
+
     def resolve_persistent_attack_wait_round(
         self,
         context: LocalRuntimeBattleContext,
@@ -908,11 +1152,11 @@ class LocalRuntimeSessionCoordinator:
         field_power: int = 0,
         tie_break_order: Sequence[str] | None = None,
     ) -> tuple[LocalRuntimeBattleContext, PersistentRoundResult]:
-        """Advance one explicit ordinary ATTACK/WAIT round.
+        """Advance one explicit ordinary ATTACK/GUARD/WAIT round.
 
-        Capture, escape, item, skill, guard/combo and enemy-AI selection remain
-        outside this coordinator seam until their dedicated runtime contracts
-        are connected explicitly.
+        Capture, escape, item, skill/combo and automatic enemy-AI selection
+        remain outside this low-level coordinator seam. The dedicated AI bridge
+        above may generate only ATTACK/GUARD before entering this method.
         """
 
         state = context.persistent_battle_state
@@ -929,12 +1173,12 @@ class LocalRuntimeSessionCoordinator:
                 for participant_id, command in normalized_commands.items()
                 if not isinstance(command, BattleCommand)
                 or int(command.command1)
-                not in {BATTLE_COM_ATTACK, BATTLE_COM_WAIT}
+                not in {BATTLE_COM_ATTACK, BATTLE_COM_GUARD, BATTLE_COM_WAIT}
             )
         )
         if invalid_commands:
             raise ValueError(
-                "persistent coordinator R1 accepts ATTACK/WAIT only: "
+                "persistent coordinator R1 accepts ATTACK/GUARD/WAIT only: "
                 + ",".join(invalid_commands)
             )
 
