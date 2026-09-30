@@ -17,6 +17,8 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_NONE,
     BATTLE_COM_S_GBREAK,
     BATTLE_COM_S_GUARDIAN_ATTACK,
+    BATTLE_COM_S_CHARGE,
+    BATTLE_COM_S_CHARGE_OK,
     BATTLE_COM_S_GUARDIAN_GUARD,
     BATTLE_COM_S_MIGHTY,
     BATTLE_COM_S_STATUSCHANGE,
@@ -1771,6 +1773,118 @@ class BattleRoundModelTests(unittest.TestCase):
         )
         self.assertTrue(result.events[0].guardian_redirected)
         self.assertFalse(any(event.is_counter for event in result.events))
+
+    def test_charge_wait_carries_decremented_command_and_latent_power(self):
+        pet=actor("pet","player","pet",attack=100,quick=100)
+        enemy=actor("enemy","enemy","enemy",hp=300,quick=20)
+        command=BattleCommand(
+            BATTLE_COM_S_CHARGE,
+            command2=10,
+            command3=pack_battle_command3(low=1,high=50),
+        )
+        prepared=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":command,
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"pet":0,"enemy":0},
+        )
+        effects=BattleCommandSetupEffects(
+            charge_ready_attack_power=150,
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(),"enemy":profile()},
+            attack_rolls={},
+            command_setup_effects_by_participant_id={"pet":effects},
+            defense_profile="newpower_70pct",
+        )
+        event=result.events[0]
+        self.assertEqual(event.command1,BATTLE_COM_S_CHARGE)
+        self.assertEqual(event.result,"charge_wait")
+        self.assertEqual(result.hp_by_participant_id["enemy"],300)
+        carried=result.carried_commands_by_participant_id["pet"]
+        self.assertEqual(carried.command1,BATTLE_COM_S_CHARGE)
+        self.assertEqual(battle_command3_low(carried.command3),0)
+        self.assertEqual(battle_command3_high(carried.command3),50)
+        self.assertEqual(
+            result.carried_setup_effects_by_participant_id[
+                "pet"
+            ].charge_ready_attack_power,
+            150,
+        )
+
+    def test_charge_ready_promotes_to_charge_ok_and_clears_carried_state(self):
+        pet=actor("pet","player","pet",attack=100,quick=100)
+        enemy=actor("enemy","enemy","enemy",hp=400,defense=70,quick=20)
+        command=BattleCommand(
+            BATTLE_COM_S_CHARGE,
+            command2=10,
+            command3=pack_battle_command3(low=0,high=50),
+        )
+        prepared=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":command,
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(),"enemy":profile()},
+            attack_rolls={
+                "pet":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            command_setup_effects_by_participant_id={
+                "pet":BattleCommandSetupEffects(
+                    charge_ready_attack_power=150,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        event=result.events[0]
+        self.assertEqual(event.command1,BATTLE_COM_S_CHARGE_OK)
+        self.assertGreater(event.damage,0)
+        self.assertEqual(
+            dict(result.carried_commands_by_participant_id),
+            {},
+        )
+        self.assertEqual(
+            dict(result.carried_setup_effects_by_participant_id),
+            {},
+        )
+
+    def test_charge_requires_explicit_latent_ready_attack_power(self):
+        pet=actor("pet","player","pet",attack=100,quick=100)
+        enemy=actor("enemy","enemy","enemy",hp=300,quick=20)
+        prepared=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(
+                    BATTLE_COM_S_CHARGE,
+                    command2=10,
+                    command3=pack_battle_command3(low=1,high=20),
+                ),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"pet":0,"enemy":0},
+        )
+        with self.assertRaisesRegex(ValueError,"latent ready attack power"):
+            resolve_ordinary_round(
+                prepared,
+                slots={"pet":0,"enemy":10},
+                profiles={"pet":profile(),"enemy":profile()},
+                attack_rolls={},
+                defense_profile="newpower_70pct",
+            )
 
     def test_guardbreak_hits_guard_without_ordinary_guard_reduction(self):
         pet=actor("pet","player","pet",attack=100,quick=100)
