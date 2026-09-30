@@ -1,0 +1,13 @@
+StoneAge shadowed-branch fresh-start level audit — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+PINNED_SOURCE_CONTROL|new_player_cf_enabled=1|CHAR_LV_initialized_from=getNewplayerlv
+RULE|recovered setup.cf LV is evaluated after fixed-descendant getNewplayerlv cap semantics; exact birth level and gate/award threshold operands are withheld
+RULE|direct witness requires the same birth-level value to satisfy both a reachable key-item award level domain and the unique WarpMan gate level domain
+COUNT|matching_award_records|2
+COUNT|joint_domain_records|2
+COUNT|birth_level_joint_records|0
+COUNT|gate_legal_level_values|20
+FRESH_START_LEVEL|positive=1|direct_joint_domain_witness=0|value_withheld=1
+FRESH_START_DIRECT_LEVEL_CHAIN|witness=0
+RESOLUTION|SHADOWED_BRANCH_FRESH_START_LEVEL_AUDITED
