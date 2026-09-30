@@ -50,12 +50,17 @@ from tools.stoneage_local_runtime_session_coordinator import (
     LocalRuntimeSessionCoordinator,
 )
 from tools.stoneage_singleplayer_battle import BattleOutcome
+from tools.stoneage_pet_growth_model import (
+    PetLevelGrowthRolls,
+    pack_growth_base,
+)
 from tools.stoneage_singleplayer_domain import (
     EncounterRolls,
     EnemyVariantId,
     HistoricalStaticData,
     MapPosition,
     PetActor,
+    PetGrowthState,
     PetSlot,
     PetTemplateId,
     PersistentPlayerState,
@@ -1755,6 +1760,179 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         self.assertEqual(updated["free_stat_points"], 7)
         self.assertEqual(updated["charm"], 7)
         self.assertEqual(updated["duel_point_like_state"], 72)
+        self.assertEqual(settled.player_position, session.player_position)
+        self.assertEqual(settled.world_flags, session.world_flags)
+
+    def test_reward_only_ride_pet_crosses_exp_threshold_with_explicit_growth(self):
+        player_state = _battle_player_state()
+        pet = PetActor(
+            slot=PetSlot(0),
+            variant_id=EnemyVariantId(700),
+            template_id=PetTemplateId(88),
+            runtime_object_id=None,
+            state=MappingProxyType(
+                {
+                    "name": "ride-progression-test",
+                    "level": 5,
+                    "hp": 100,
+                    "max_hp": 100,
+                    "attack": 20,
+                    "defense": 20,
+                    "quick": 20,
+                    "exp": 950,
+                    "max_exp": 1000,
+                }
+            ),
+            skills=(),
+            growth=PetGrowthState(
+                pet_rank=0,
+                alloc_point=pack_growth_base(20, 20, 20, 20),
+                internal_vital=2000,
+                internal_strength=2000,
+                internal_toughness=2000,
+                internal_dexterity=2000,
+                variable_ai=0,
+            ),
+        )
+        player_state.pets[PetSlot(0)] = pet
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=player_state,
+            world_flags=frozenset({"ride-pet-progression"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+            ride_pet_slot=0,
+        )
+        enemy = replace(
+            context.battle.enemies[0],
+            hp=1,
+            max_hp=1,
+            defense=0,
+            quick=10,
+        )
+        context = replace(
+            context,
+            battle=replace(context.battle, enemies=(enemy,)),
+        )
+        enemy_id = enemy.participant_id
+        context = self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player": 0, enemy_id: 10},
+        )
+        context, round_result = (
+            self.coordinator.resolve_persistent_attack_wait_round(
+                context,
+                commands={
+                    "player": BattleCommand(BATTLE_COM_ATTACK, command2=10),
+                    enemy_id: BattleCommand(BATTLE_COM_WAIT),
+                },
+                initiative_random_subtracts={
+                    "player": 0,
+                    enemy_id: 0,
+                },
+                profiles={
+                    "player": BattleCombatProfile(
+                        fixed_dex=100,
+                        fixed_luck=0,
+                        earth=0,
+                        water=0,
+                        fire=0,
+                        wind=0,
+                    ),
+                    enemy_id: BattleCombatProfile(
+                        fixed_dex=10,
+                        fixed_luck=0,
+                        earth=0,
+                        water=0,
+                        fire=0,
+                        wind=0,
+                    ),
+                },
+                attack_rolls={
+                    "player": OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                        minimum_damage_roll_0_1=1,
+                    )
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        terminal = round_result.after
+        self.assertEqual(terminal.phase, "finished")
+        self.assertEqual(terminal.result, "victory")
+        self.assertEqual(
+            terminal.pending_exp_by_participant_id["player"],
+            100,
+        )
+        self.assertEqual(
+            terminal.pending_exp_by_participant_id["pet:0"],
+            60,
+        )
+
+        settled = self.coordinator.settle_persistent_group_battle_with_progression(
+            context,
+            player_exp_profile="legacy_cumulative",
+            next_player_max_exp_by_level={},
+            pet_exp_profile="legacy_cumulative",
+            next_pet_max_exp_by_slot={0: {6: 1500}},
+            pet_level_growth_rolls_by_slot={
+                0: (
+                    PetLevelGrowthRolls(
+                        (0, 0, 0, 1, 1, 2, 2, 2, 3, 3),
+                        500,
+                    ),
+                )
+            },
+        )
+        original_pet = session.player_state.pets[PetSlot(0)]
+        updated_pet = settled.player_state.pets[PetSlot(0)]
+        self.assertEqual(original_pet.state["level"], 5)
+        self.assertEqual(original_pet.state["exp"], 950)
+        self.assertEqual(original_pet.state["max_exp"], 1000)
+        self.assertEqual(original_pet.growth.internal_vital, 2000)
+        self.assertEqual(original_pet.growth.variable_ai, 0)
+
+        self.assertEqual(
+            settled.player_state.character.fields["exp"],
+            100,
+        )
+        self.assertEqual(updated_pet.state["level"], 6)
+        self.assertEqual(updated_pet.state["exp"], 1010)
+        self.assertEqual(updated_pet.state["max_exp"], 1500)
+        self.assertEqual(updated_pet.state["hp"], 100)
+        self.assertEqual(updated_pet.state["max_hp"], 147)
+        self.assertEqual(updated_pet.state["attack"], 26)
+        self.assertEqual(updated_pet.state["defense"], 26)
+        self.assertEqual(updated_pet.state["quick"], 21)
+        self.assertEqual(updated_pet.growth.pet_rank, 0)
+        self.assertEqual(
+            updated_pet.growth.alloc_point,
+            original_pet.growth.alloc_point,
+        )
+        self.assertEqual(updated_pet.growth.internal_vital, 2115)
+        self.assertEqual(updated_pet.growth.internal_strength, 2110)
+        self.assertEqual(updated_pet.growth.internal_toughness, 2115)
+        self.assertEqual(updated_pet.growth.internal_dexterity, 2110)
+        self.assertEqual(updated_pet.growth.variable_ai, 500)
         self.assertEqual(settled.player_position, session.player_position)
         self.assertEqual(settled.world_flags, session.world_flags)
 
