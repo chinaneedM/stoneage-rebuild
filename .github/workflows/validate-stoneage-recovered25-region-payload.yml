@@ -22,6 +22,12 @@ on:
       - tests/test_stoneage_recovered25_server_collision_provider.py
       - tools/stoneage_recovered25_client_adrn_collision_coverage_probe.py
       - tests/test_stoneage_recovered25_client_adrn_collision_coverage_probe.py
+      - tools/stoneage_client_hitmap_core.py
+      - tests/test_stoneage_client_hitmap_core.py
+      - tools/stoneage_recovered25_client_collision_provider.py
+      - tests/test_stoneage_recovered25_client_collision_provider.py
+      - tools/stoneage_recovered25_collision_router.py
+      - tests/test_stoneage_recovered25_collision_router.py
       - tools/stoneage_local_runtime_session_coordinator.py
       - tests/test_stoneage_local_runtime_session_coordinator.py
       - tools/stoneage_server_static_map.py
@@ -47,6 +53,9 @@ jobs:
             tests.test_stoneage_recovered25_server_collision_coverage_probe \
             tests.test_stoneage_recovered25_server_collision_provider \
             tests.test_stoneage_recovered25_client_adrn_collision_coverage_probe \
+            tests.test_stoneage_client_hitmap_core \
+            tests.test_stoneage_recovered25_client_collision_provider \
+            tests.test_stoneage_recovered25_collision_router \
             tests.test_stoneage_local_runtime_session_coordinator -v
       - name: Install extractor
         run: sudo apt-get update && sudo apt-get install -y unar
@@ -125,14 +134,16 @@ jobs:
           C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
           S="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data/map' -print -quit)"
           M="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/data/map/mapset.txt' -print -quit)"
-          test -n "$D"; test -n "$N"; test -n "$C"; test -n "$S"; test -n "$M"
+          A="$(find /tmp/sa25/out -type f -iname 'adrn_15.bin' -print -quit)"
+          test -n "$D"; test -n "$N"; test -n "$C"; test -n "$S"; test -n "$M"; test -n "$A"
           R=research/recovered/STONEAGE-25-LOCAL-RUNTIME-STACK-R1.txt
           python3 -m tools.stoneage_recovered25_local_runtime_stack_smoke \
             --client-dat-dir "$D" \
             --npc-dir "$N" \
             --setup "$C" \
             --server-map-root "$S" \
-            --mapset "$M" > "$R"
+            --mapset "$M" \
+            --client-adrn "$A" > "$R"
           test -s "$R"
           grep -F 'COUNT|materializable_floors|826' "$R"
           grep -F 'COUNT|state_gated_bindings|3' "$R"
@@ -141,6 +152,12 @@ jobs:
           grep -F 'COUNT|representative_payload_formats|2' "$R"
           grep -F 'COUNT|state_gated_allow_decisions|3' "$R"
           grep -F 'LOCAL_SESSION_ROUNDTRIP|witness=1' "$R"
+          grep -F 'COUNT|collision_server_routed_floors|635' "$R"
+          grep -F 'COUNT|collision_client_reconstruction_routed_floors|191' "$R"
+          grep -F 'COUNT|collision_routed_floors|826' "$R"
+          grep -F 'COUNT|collision_unrouted_floors|0' "$R"
+          grep -F 'CLIENT_COLLISION_PROFILE|RECOVERED25_DESCENDANT_STABLE_CLIENT_HITMAP_R1|exact_recovered25_binary_proof=0' "$R"
+          grep -F 'CLIENT_COLLISION_MOVEMENT_WITNESS|1' "$R"
           grep -F 'RESOLUTION|RECOVERED25_LOCAL_RUNTIME_STACK_CLOSED' "$R"
       - name: Audit recovered25 server-backed collision coverage
         run: |
