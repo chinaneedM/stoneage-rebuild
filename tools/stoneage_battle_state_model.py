@@ -43,6 +43,7 @@ from tools.stoneage_battle_round_model import (
     BattleCombatProfile,
     BattleCommand,
     BattleCommandSetupEffects,
+    BATTLE_COM_S_CHARGE,
     ComboExecutionRolls,
     CounterAttemptRolls,
     OrdinaryAttackRolls,
@@ -91,6 +92,14 @@ class PersistentBattleState:
     result: str | None = None
     winning_side: int | None = None
     last_commands: Mapping[str, BattleCommand] | None = None
+    # Commands preserved by fixed BATTLE_AllCharaCWaitSet across rounds.
+    # R1 currently admits only stable S_CHARGE into this carried seam.
+    carried_commands_by_participant_id: Mapping[
+        str,BattleCommand
+    ] | None = None
+    carried_setup_effects_by_participant_id: Mapping[
+        str,BattleCommandSetupEffects
+    ] | None = None
     escape_count_by_participant_id: Mapping[str,int] | None = None
     base_status_runtime_by_participant_id: Mapping[
         str,BaseBattleStatusRuntime
@@ -141,6 +150,72 @@ class PersistentBattleState:
             "ultimate_exited_participant_ids",
             normalized_ultimate_exits,
         )
+
+        if self.carried_commands_by_participant_id is None:
+            object.__setattr__(
+                self,
+                "carried_commands_by_participant_id",
+                _freeze_mapping({}),
+            )
+        else:
+            carried_commands={
+                str(pid):command
+                for pid,command in self.carried_commands_by_participant_id.items()
+            }
+            unknown=sorted(set(carried_commands)-set(participants))
+            if unknown:
+                raise ValueError(
+                    f"carried commands reference unknown participants: {unknown}"
+                )
+            for pid,command in carried_commands.items():
+                if not isinstance(command,BattleCommand):
+                    raise TypeError(
+                        f"carried command for {pid} has wrong type"
+                    )
+                if int(command.command1) != BATTLE_COM_S_CHARGE:
+                    raise ValueError(
+                        "persistent carried-command seam currently admits "
+                        "S_CHARGE only"
+                    )
+            object.__setattr__(
+                self,
+                "carried_commands_by_participant_id",
+                _freeze_mapping(carried_commands),
+            )
+
+        if self.carried_setup_effects_by_participant_id is None:
+            object.__setattr__(
+                self,
+                "carried_setup_effects_by_participant_id",
+                _freeze_mapping({}),
+            )
+        else:
+            carried_effects={
+                str(pid):effects
+                for pid,effects in (
+                    self.carried_setup_effects_by_participant_id.items()
+                )
+            }
+            if set(carried_effects) != set(
+                self.carried_commands_by_participant_id
+            ):
+                raise ValueError(
+                    "carried setup effects must match carried command IDs"
+                )
+            for pid,effects in carried_effects.items():
+                if not isinstance(effects,BattleCommandSetupEffects):
+                    raise TypeError(
+                        f"carried setup effects for {pid} have wrong type"
+                    )
+                if effects.charge_ready_attack_power is None:
+                    raise ValueError(
+                        f"carried S_CHARGE lacks ready attack power: {pid}"
+                    )
+            object.__setattr__(
+                self,
+                "carried_setup_effects_by_participant_id",
+                _freeze_mapping(carried_effects),
+            )
 
         expected_status_ids=set(participants)
         if self.base_status_runtime_by_participant_id is None:
@@ -736,6 +811,18 @@ def resolve_persistent_capture_transition(
         result=None,
         winning_side=None,
         last_commands=state.last_commands,
+        carried_commands_by_participant_id=_freeze_mapping({
+            pid:command
+            for pid,command in state.carried_commands_by_participant_id.items()
+            if pid != target_id
+        }),
+        carried_setup_effects_by_participant_id=_freeze_mapping({
+            pid:effects
+            for pid,effects in (
+                state.carried_setup_effects_by_participant_id.items()
+            )
+            if pid != target_id
+        }),
         escape_count_by_participant_id=_freeze_mapping({
             pid:count
             for pid,count in state.escape_count_by_participant_id.items()
@@ -1118,9 +1205,16 @@ def resolve_persistent_ordinary_round(
                 f"state={expected}, context={context.stored_escape_count_before}"
             )
 
+    effective_commands=dict(commands)
+    for participant_id,carried in (
+        state.carried_commands_by_participant_id.items()
+    ):
+        if participant_id in living_ids:
+            effective_commands[participant_id]=carried
+
     prepared = prepare_battle_round(
         participants,
-        commands,
+        effective_commands,
         initiative_random_subtracts,
         tie_break_order=tie_break_order,
     )
@@ -1174,9 +1268,21 @@ def resolve_persistent_ordinary_round(
         guardian_registrations_by_defender_slot=(
             guardian_registrations_by_defender_slot
         ),
-        command_setup_effects_by_participant_id=(
-            command_setup_effects_by_participant_id
-        ),
+        command_setup_effects_by_participant_id={
+            **{
+                str(pid):effects
+                for pid,effects in (
+                    command_setup_effects_by_participant_id or {}
+                ).items()
+            },
+            **{
+                str(pid):effects
+                for pid,effects in (
+                    state.carried_setup_effects_by_participant_id.items()
+                )
+                if pid in living_ids
+            },
+        },
         base_damage_react_state_by_participant_id=_freeze_mapping({
             participant_id:
                 state.base_damage_react_state_by_participant_id[participant_id]
@@ -1317,6 +1423,20 @@ def resolve_persistent_ordinary_round(
         result=None,
         winning_side=None,
         last_commands=_freeze_mapping(commands),
+        carried_commands_by_participant_id=_freeze_mapping({
+            pid:command
+            for pid,command in (
+                round_result.carried_commands_by_participant_id or {}
+            ).items()
+            if pid in next_slots
+        }),
+        carried_setup_effects_by_participant_id=_freeze_mapping({
+            pid:effects
+            for pid,effects in (
+                round_result.carried_setup_effects_by_participant_id or {}
+            ).items()
+            if pid in next_slots
+        }),
         escape_count_by_participant_id=_freeze_mapping(escape_counts),
         base_status_runtime_by_participant_id=_freeze_mapping(
             next_status_runtime
