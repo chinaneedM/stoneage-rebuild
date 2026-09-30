@@ -15,6 +15,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_CAPTURE,
     BATTLE_COM_ESCAPE,
     BATTLE_COM_GUARD,
+    BATTLE_COM_NONE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
