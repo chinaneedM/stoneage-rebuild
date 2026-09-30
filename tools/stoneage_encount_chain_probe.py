@@ -98,11 +98,60 @@ def choose_enemy_prefix(rows):
     score3=counts[3+ENEMY_INT_COUNT]
     return 3 if score3>score2 else 2
 
+AI_OPTION_ARITY={"at":3,"gu":1,"ma":1,"es":1,"wa":7,"rn":1}
+AI_ACTION_TAGS=("at","gu","ma","es","wa")
+
+def parse_tactics_option(text):
+    text=str(text)
+    values={}
+    unknown=[]
+    malformed=False
+    for raw in text.split("|"):
+        raw=raw.strip()
+        if not raw:
+            continue
+        if ":" not in raw:
+            malformed=True
+            continue
+        tag,payload=raw.split(":",1)
+        tag=tag.strip()
+        parts=[part.strip() for part in payload.split(";")]
+        while parts and parts[-1]=="":
+            parts.pop()
+        if tag not in AI_OPTION_ARITY:
+            unknown.append(tag)
+            continue
+        if len(parts)!=AI_OPTION_ARITY[tag]:
+            malformed=True
+            continue
+        try:
+            values[tag]=tuple(int(part or "0",10) for part in parts)
+        except ValueError:
+            malformed=True
+    positive=[]
+    for tag in AI_ACTION_TAGS:
+        vals=values.get(tag,())
+        if not vals:
+            continue
+        weight=vals[0] if tag!="wa" else sum(max(0,v) for v in vals)
+        if weight>0:
+            positive.append(tag)
+    return {
+        "valid":not malformed and not unknown,
+        "tags":tuple(sorted(values)),
+        "unknown_tags":tuple(sorted(set(unknown))),
+        "positive_actions":tuple(positive),
+    }
+
 def parse_enemy(path):
     rows=clean_rows(path); prefix=choose_enemy_prefix(rows); expected=prefix+ENEMY_INT_COUNT
     parsed=[];bad=0;widths=collections.Counter(map(len,rows))
     for r in rows:
         if len(r)!=expected:
+            bad+=1;continue
+        try:
+            tactics_option=r[1].decode("ascii","strict")
+        except UnicodeDecodeError:
             bad+=1;continue
         nums=[];ok=True
         for v in r[prefix:]:
@@ -116,6 +165,8 @@ def parse_enemy(path):
             "create_max":nums[4],"create_min":nums[5],"tactics":nums[6],"exp":nums[7],
             "duelpoint":nums[8],"style":nums[9],"petflg":nums[10],
             "itemids":nums[11:21],"itemprobs":nums[21:31],
+            "tactics_option":tactics_option,
+            "act_condition_nonempty":bool(prefix==3 and r[2].strip()),
         })
     return rows,parsed,bad,widths,prefix
 
@@ -198,6 +249,23 @@ def analyze(data_dir,setup=None):
     temp_refs=[r["tempno"] for r in enemies if r["tempno"]>=0]
     temp_set=set(temp_refs)
 
+    tactics_mode_counts=collections.Counter(r["tactics"] for r in enemies)
+    tactics_profiles=[parse_tactics_option(r["tactics_option"]) for r in enemies]
+    tactics_valid=sum(1 for p in tactics_profiles if p["valid"])
+    tactics_tag_presence=collections.Counter(
+        tag for p in tactics_profiles for tag in p["tags"]
+    )
+    tactics_unknown_tags=collections.Counter(
+        tag for p in tactics_profiles for tag in p["unknown_tags"]
+    )
+    tactics_action_signatures=collections.Counter(
+        "+".join(p["positive_actions"]) if p["positive_actions"] else "none"
+        for p in tactics_profiles
+    )
+    tactics_action_condition_nonempty=sum(
+        1 for r in enemies if r["act_condition_nonempty"]
+    )
+
     drop_refs=[v for r in enemies for v in r["itemids"] if v>0]
     drop_set=set(drop_refs)
     cond_refs=[v for r in groups for v in (r["appear_item"],r["notappear_item"]) if v>0]
@@ -255,6 +323,12 @@ def analyze(data_dir,setup=None):
         "floors":floors,"pmins":pmins,"pmaxs":pmaxs,"zorder":z,"enemymax":enemymax,
         "group_prob_sums":group_prob_sums,"enemy_prob_sums":enemy_prob_sums,
         "group_cover":group_cover,"enemy_cover":enemy_cover,"item_cover":item_cover,
+        "tactics_mode_counts":tactics_mode_counts,
+        "tactics_valid":tactics_valid,
+        "tactics_tag_presence":tactics_tag_presence,
+        "tactics_unknown_tags":tactics_unknown_tags,
+        "tactics_action_signatures":tactics_action_signatures,
+        "tactics_action_condition_nonempty":tactics_action_condition_nonempty,
         "all_group_residual":sorted(enc_group_set-all_group_ids),
         "all_enemy_residual":sorted(group_enemy_set-all_enemy_ids),
         "all_drop_residual":sorted(drop_set-all_item_ids),
@@ -284,6 +358,20 @@ def emit(data_dir,setup=None):
     for n,c in sorted(r["group_widths"].items()):print(f"GROUP_FIELD_COUNT|{n}|{c}")
     print(f"ENEMY_ROWS|raw={r['enemy_raw']}|parsed={len(r['enemies'])}|malformed={r['enemy_bad']}|duplicate_ids={r['enemy_id_dup']}|text_prefix={r['enemy_prefix']}")
     for n,c in sorted(r["enemy_widths"].items()):print(f"ENEMY_FIELD_COUNT|{n}|{c}")
+    print(
+        f"ENEMY_AI_OPTION_PARSE|rows={len(r['enemies'])}|"
+        f"valid={r['tactics_valid']}|"
+        f"invalid={len(r['enemies'])-r['tactics_valid']}|"
+        f"action_condition_nonempty={r['tactics_action_condition_nonempty']}"
+    )
+    for mode,count in sorted(r["tactics_mode_counts"].items()):
+        print(f"ENEMY_AI_TACTICS_MODE|{mode}|{count}")
+    for tag,count in sorted(r["tactics_tag_presence"].items()):
+        print(f"ENEMY_AI_TAG_PRESENCE|{tag}|{count}")
+    for tag,count in sorted(r["tactics_unknown_tags"].items()):
+        print(f"ENEMY_AI_UNKNOWN_TAG|{tag}|{count}")
+    for signature,count in sorted(r["tactics_action_signatures"].items()):
+        print(f"ENEMY_AI_POSITIVE_ACTIONS|{signature}|{count}")
 
     for name,vals in (("FLOOR",r["floors"]),("ENCOUNT_MIN",r["pmins"]),("ENCOUNT_MAX",r["pmaxs"]),("ZORDER",r["zorder"]),("ENEMYMAX",r["enemymax"]),("ENCOUNT_GROUP_PROB_SUM",r["group_prob_sums"]),("GROUP_ENEMY_PROB_SUM",r["enemy_prob_sums"])):
         lo,hi,uniq=stats(vals);print(f"STAT|{name}|min={lo}|max={hi}|unique={uniq}")
