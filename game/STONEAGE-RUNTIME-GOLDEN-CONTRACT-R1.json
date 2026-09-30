@@ -1,0 +1,439 @@
+{
+  "schema": "stoneage.runtime-golden.r1",
+  "contract_id": "STONEAGE_RUNTIME_GOLDEN_SYNTHETIC_R1",
+  "purpose": "copyright-safe cross-language semantic parity fixture",
+  "world": {
+    "start": [
+      1,
+      0,
+      0
+    ],
+    "maps": [
+      {
+        "floor_id": 1,
+        "width": 4,
+        "height": 4
+      },
+      {
+        "floor_id": 2,
+        "width": 4,
+        "height": 4
+      }
+    ],
+    "classic_warps": [
+      {
+        "source": [
+          1,
+          1,
+          0
+        ],
+        "destination": [
+          2,
+          0,
+          0
+        ]
+      }
+    ],
+    "static_denied_positions": [
+      [
+        1,
+        0,
+        1
+      ]
+    ],
+    "initial_occupancy_profile": "STONEAGE_GOLDEN_INITIAL_OCCUPANCY_R1",
+    "initial_occupancy": [
+      {
+        "object_id": "char:blocker",
+        "kind": "character",
+        "position": [
+          1,
+          1,
+          1
+        ],
+        "overable": false,
+        "provenance": "synthetic:initial:blocker"
+      }
+    ]
+  },
+  "transition": {
+    "transition_id": "synthetic-gate",
+    "interaction_kind": "DIALOGUE_WARPMAN",
+    "source": [
+      2,
+      0,
+      0
+    ],
+    "source_rect": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "destination": [
+      1,
+      3,
+      3
+    ],
+    "allowed": true,
+    "reason": "synthetic_gate_allowed",
+    "provenance": {
+      "source_profile": "synthetic-golden",
+      "evidence_role": "DESIGN_FIXTURE"
+    }
+  },
+  "scenarios": [
+    {
+      "id": "static-block",
+      "intents": [
+        {
+          "kind": "new_game",
+          "hometown_ordinal": 1
+        },
+        {
+          "kind": "move",
+          "dx": 0,
+          "dy": 1
+        }
+      ],
+      "expected_updates": [
+        {
+          "event_kind": "NEW_GAME",
+          "position": [
+            1,
+            0,
+            0
+          ],
+          "interaction_ids": [],
+          "eligible_interaction_ids": []
+        },
+        {
+          "event_kind": "MOVE",
+          "position": [
+            1,
+            0,
+            0
+          ],
+          "interaction_ids": [],
+          "eligible_interaction_ids": [],
+          "walk": {
+            "moved": false,
+            "blocked_reason": "entry_rejected_by_collision_layer",
+            "warp_triggered": false,
+            "collision_allowed": false,
+            "collision_reason": "synthetic_static_blocked",
+            "static_reason": "synthetic_static_blocked",
+            "dynamic_reason": "dynamic_occupancy_not_evaluated_static_denied",
+            "live_object_ids": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "dynamic-block",
+      "intents": [
+        {
+          "kind": "new_game",
+          "hometown_ordinal": 1
+        },
+        {
+          "kind": "move",
+          "dx": 1,
+          "dy": 1
+        }
+      ],
+      "expected_updates": [
+        {
+          "event_kind": "NEW_GAME",
+          "position": [
+            1,
+            0,
+            0
+          ],
+          "interaction_ids": [],
+          "eligible_interaction_ids": []
+        },
+        {
+          "event_kind": "MOVE",
+          "position": [
+            1,
+            0,
+            0
+          ],
+          "interaction_ids": [],
+          "eligible_interaction_ids": [],
+          "walk": {
+            "moved": false,
+            "blocked_reason": "entry_rejected_by_collision_layer",
+            "warp_triggered": false,
+            "collision_allowed": false,
+            "collision_reason": "non_overable_character",
+            "static_reason": "synthetic_static_allowed",
+            "dynamic_reason": "non_overable_character",
+            "live_object_ids": [
+              "char:blocker"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "classic-warp-and-dialogue-dispatch",
+      "intents": [
+        {
+          "kind": "new_game",
+          "hometown_ordinal": 1
+        },
+        {
+          "kind": "move",
+          "dx": 1,
+          "dy": 0
+        },
+        {
+          "kind": "dispatch_interaction",
+          "transition_id": "synthetic-gate"
+        }
+      ],
+      "expected_updates": [
+        {
+          "event_kind": "NEW_GAME",
+          "position": [
+            1,
+            0,
+            0
+          ],
+          "interaction_ids": [],
+          "eligible_interaction_ids": []
+        },
+        {
+          "event_kind": "MOVE",
+          "position": [
+            2,
+            0,
+            0
+          ],
+          "interaction_ids": [
+            "synthetic-gate"
+          ],
+          "eligible_interaction_ids": [
+            "synthetic-gate"
+          ],
+          "walk": {
+            "moved": true,
+            "blocked_reason": null,
+            "warp_triggered": true,
+            "collision_allowed": true,
+            "collision_reason": null,
+            "static_reason": "synthetic_static_allowed",
+            "dynamic_reason": null,
+            "live_object_ids": []
+          }
+        },
+        {
+          "event_kind": "INTERACTION",
+          "position": [
+            1,
+            3,
+            3
+          ],
+          "interaction_ids": [],
+          "eligible_interaction_ids": [],
+          "transition": {
+            "allowed": true,
+            "reason": "synthetic_gate_allowed",
+            "execution_supported": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "save-continue-restores-authoritative-session",
+      "intents": [
+        {
+          "kind": "new_game",
+          "hometown_ordinal": 1
+        },
+        {
+          "kind": "move",
+          "dx": 1,
+          "dy": 0
+        },
+        {
+          "kind": "save",
+          "save_key": "golden-slot"
+        },
+        {
+          "kind": "dispatch_interaction",
+          "transition_id": "synthetic-gate"
+        },
+        {
+          "kind": "continue",
+          "save_key": "golden-slot"
+        }
+      ],
+      "expected_updates": [
+        {
+          "event_kind": "NEW_GAME",
+          "position": [
+            1,
+            0,
+            0
+          ],
+          "interaction_ids": [],
+          "eligible_interaction_ids": []
+        },
+        {
+          "event_kind": "MOVE",
+          "position": [
+            2,
+            0,
+            0
+          ],
+          "interaction_ids": [
+            "synthetic-gate"
+          ],
+          "eligible_interaction_ids": [
+            "synthetic-gate"
+          ],
+          "walk": {
+            "moved": true,
+            "blocked_reason": null,
+            "warp_triggered": true,
+            "collision_allowed": true,
+            "collision_reason": null,
+            "static_reason": "synthetic_static_allowed",
+            "dynamic_reason": null,
+            "live_object_ids": []
+          }
+        },
+        {
+          "event_kind": "SAVE_GAME",
+          "position": [
+            2,
+            0,
+            0
+          ],
+          "interaction_ids": [
+            "synthetic-gate"
+          ],
+          "eligible_interaction_ids": [
+            "synthetic-gate"
+          ],
+          "save_key": "golden-slot"
+        },
+        {
+          "event_kind": "INTERACTION",
+          "position": [
+            1,
+            3,
+            3
+          ],
+          "interaction_ids": [],
+          "eligible_interaction_ids": [],
+          "transition": {
+            "allowed": true,
+            "reason": "synthetic_gate_allowed",
+            "execution_supported": true
+          }
+        },
+        {
+          "event_kind": "CONTINUE_GAME",
+          "position": [
+            2,
+            0,
+            0
+          ],
+          "interaction_ids": [
+            "synthetic-gate"
+          ],
+          "eligible_interaction_ids": [
+            "synthetic-gate"
+          ],
+          "save_key": "golden-slot"
+        }
+      ]
+    }
+  ],
+  "session_serialization": {
+    "session": {
+      "hometown_ordinal": 1,
+      "position": [
+        1,
+        2,
+        3
+      ],
+      "world_flags": [
+        "alpha",
+        "beta"
+      ],
+      "character": {
+        "name": "石器-golden",
+        "level": 7
+      }
+    },
+    "expected_encoded": "{\"contract_id\":\"STONEAGE_RUNTIME_GOLDEN_SYNTHETIC_R1\",\"hometown_ordinal\":1,\"player_position\":{\"floor_id\":1,\"x\":2,\"y\":3},\"player_state\":{\"character\":{\"level\":7,\"name\":\"石器-golden\"},\"inventory\":[],\"pets\":[],\"schema\":\"stoneage.singleplayer.persistence.r3\"},\"schema\":\"stoneage.local-runtime-session.r1\",\"world_flags\":[\"alpha\",\"beta\"],\"world_profile\":\"recovered25\"}"
+  },
+  "occupancy_delta": {
+    "mutations": [
+      {
+        "kind": "move",
+        "object_id": "char:blocker",
+        "position": [
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "kind": "register_item",
+        "object_id": "item:drop",
+        "position": [
+          1,
+          2,
+          2
+        ],
+        "overable": false,
+        "provenance": "synthetic:drop"
+      }
+    ],
+    "expected": {
+      "base_profile_id": "STONEAGE_GOLDEN_INITIAL_OCCUPANCY_R1",
+      "registry_profile_id": "STONEAGE_LOCAL_LIVE_OCCUPANCY_STATE_R1",
+      "removed_base_object_ids": [],
+      "upserts": [
+        {
+          "object_id": "char:blocker",
+          "kind": "character",
+          "position": {
+            "floor_id": 1,
+            "x": 2,
+            "y": 1
+          },
+          "overable": false,
+          "provenance": "synthetic:initial:blocker"
+        },
+        {
+          "object_id": "item:drop",
+          "kind": "item",
+          "position": {
+            "floor_id": 1,
+            "x": 2,
+            "y": 2
+          },
+          "overable": false,
+          "provenance": "synthetic:drop"
+        }
+      ]
+    }
+  },
+  "fail_closed": [
+    {
+      "id": "wrong-session-contract",
+      "expected_error": "local runtime session contract mismatch"
+    },
+    {
+      "id": "zero-length-move-intent",
+      "expected_error": "move intent cannot be zero-length"
+    }
+  ]
+}

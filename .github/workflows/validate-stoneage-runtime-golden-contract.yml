@@ -1,0 +1,35 @@
+name: Validate StoneAge runtime golden contract
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - game/STONEAGE-RUNTIME-GOLDEN-CONTRACT-R1.json
+      - tools/stoneage_runtime_golden_contract.py
+      - tests/test_stoneage_runtime_golden_contract.py
+      - tools/stoneage_local_application_facade.py
+      - tools/stoneage_local_engine_adapter.py
+      - tools/stoneage_local_runtime_core.py
+      - tools/stoneage_local_runtime_save.py
+      - tools/stoneage_local_runtime_session_coordinator.py
+      - tools/stoneage_runtime_dynamic_occupancy.py
+      - tools/stoneage_runtime_occupancy_registry.py
+      - tools/stoneage_singleplayer_domain.py
+      - tools/stoneage_singleplayer_persistence.py
+      - tools/stoneage_singleplayer_world.py
+      - tools/stoneage_map_collision_model.py
+      - docs/RUNTIME-GOLDEN-CONTRACT-R1.md
+      - .github/workflows/validate-stoneage-runtime-golden-contract.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify cross-language runtime golden contract
+        run: |
+          python3 -m unittest tests.test_stoneage_runtime_golden_contract -v
+          python3 tools/stoneage_runtime_golden_contract.py
