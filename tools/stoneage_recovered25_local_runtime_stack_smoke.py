@@ -525,6 +525,37 @@ def main() -> None:
         "COUNT|enemybase_basic_ai_petskill_slot_uses|"
         f"{sum(1 for skill_id in all_skill_slot_ids if stack.petskill_runtime.skills[skill_id].function_name in basic_ai_callbacks)}"
     )
+    common_callbacks = sorted(
+        {
+            entry.function_name
+            for entry in referenced_skill_entries
+            if entry.stable_common_callback
+        }
+    )
+    for callback in common_callbacks:
+        callback_ids = {
+            int(entry.skill_id)
+            for entry in referenced_skill_entries
+            if entry.function_name == callback
+        }
+        slot_uses = sum(
+            1
+            for skill_id in all_skill_slot_ids
+            if int(skill_id) in callback_ids
+        )
+        ascii_ids = sum(
+            1
+            for skill_id in callback_ids
+            if all(byte < 128 for byte in stack.petskill_runtime.skills[skill_id].option_bytes)
+        )
+        print(
+            "PETSKILL_CALLBACK_COVERAGE|"
+            f"callback={callback}|"
+            f"unique_ids={len(callback_ids)}|"
+            f"slot_uses={slot_uses}|"
+            f"ascii_option_ids={ascii_ids}|"
+            f"nonascii_option_ids={len(callback_ids)-ascii_ids}"
+        )
     print(
         "COUNT|enemybase_unresolved_petskill_ids|"
         f"{len(stack.petskill_runtime.unresolved_skill_ids(report_referenced_skill_ids))}"
