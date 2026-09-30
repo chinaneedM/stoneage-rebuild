@@ -66,6 +66,10 @@ jobs:
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
           git add research/recovered/STONEAGE-25-ENCOUNT-CHAIN-R1.txt
+          if git diff --cached --quiet; then
+            echo 'Derived encounter report unchanged; nothing to commit.'
+            exit 0
+          fi
           git commit -m 'research: validate StoneAge encounter chain'
           git pull --rebase origin main
           git push
