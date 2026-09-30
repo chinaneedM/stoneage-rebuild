@@ -585,7 +585,7 @@ def main() -> None:
     status_attack_mod = 0
     status_defense_mod = 0
     for entry in status_entries:
-        option_text = entry.consensus_big5_option()
+        option_text = entry.unambiguous_cp950_big5_option()
         parsed = parse_status_skill(
             option_text,
             ("全", "毒", "麻", "眠", "石", "醉", "亂"),
