@@ -89,6 +89,37 @@ class Recovered25PetSkillRuntimeTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "not ASCII"):
                 entry.ascii_option()
 
+    def test_consensus_big5_option_accepts_identical_cp950_big5_decode(self):
+        entry = __import__(
+            "tools.stoneage_recovered25_petskill_runtime",
+            fromlist=["Recovered25PetSkillEntry"],
+        ).Recovered25PetSkillEntry(
+            skill_id=50,
+            field=1,
+            target=3,
+            cost=2,
+            illegal=0,
+            function_name="PETSKILL_Guardian",
+            option_bytes="攻%20".encode("cp950"),
+        )
+        self.assertEqual(entry.consensus_big5_option(), "攻%20")
+
+    def test_consensus_big5_option_rejects_cp950_big5_divergence(self):
+        entry = __import__(
+            "tools.stoneage_recovered25_petskill_runtime",
+            fromlist=["Recovered25PetSkillEntry"],
+        ).Recovered25PetSkillEntry(
+            skill_id=51,
+            field=1,
+            target=3,
+            cost=2,
+            illegal=0,
+            function_name="PETSKILL_Guardian",
+            option_bytes=b"\xA1\x45",
+        )
+        with self.assertRaisesRegex(ValueError, "decode is ambiguous"):
+            entry.consensus_big5_option()
+
     def test_conflicting_compile_time_file_keys_fail_closed(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)
