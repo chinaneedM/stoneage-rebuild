@@ -614,9 +614,39 @@ def no_guard_command(
     return _command("S_NOGUARD", target, low=packed_low, high=dodge)
 
 
-def no_guard_execution():
-    """Fixed old battle switch consumes S_NOGUARD only as BATTLE_NoAction."""
+def no_guard_cross_action_modifiers(*, packed_low, packed_high):
+    """Recover the active fixed-source NoGuard cross-action modifiers.
+
+    The actor's own S_NOGUARD command resolves through BATTLE_NoAction, but
+    battle_event.c still reads COM3 while that command remains selected:
+    HIGH(COM3) modifies dodge while defending, and the upper byte of
+    LOW(COM3) modifies counter probability when countering. The lower byte
+    critical modifier exists only in a disabled #if 0 critical helper in the
+    three pinned lineages.
+    """
+
+    low = int(packed_low) & 0xFFFF
+    counter = (low >> 8) & 0xFF
+    if counter > 127:
+        counter *= -1
+    critical = low & 0xFF
+    if critical > 127:
+        critical *= -1
+    return {
+        "dodge_modifier_when_defending": int(packed_high),
+        "counter_modifier_when_countering": int(counter),
+        "critical_modifier_disabled_path": int(critical),
+        "critical_modifier_active": False,
+    }
+
+
+def no_guard_execution(*, packed_low=0, packed_high=0):
+    """Return own-turn NoAction plus the still-live cross-action COM3 effects."""
+
     return {
         "no_action": True,
-        "parsed_parameters_consumed": False,
+        **no_guard_cross_action_modifiers(
+            packed_low=packed_low,
+            packed_high=packed_high,
+        ),
     }
