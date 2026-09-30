@@ -4001,3 +4001,35 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - implementation commit = `aa1ca51702a0c7a6e5d0080fea495edacdd9f552`.
 - **LOCAL_RUNTIME_CORE_INTERFACES_R1 = CLOSED.**
 - Next Phase-1 priority: implement a provenance-bearing **recovered25 world-profile adapter** behind these interfaces. It must materialize the closed 826-floor manifest into engine-neutral topology/region inputs, keep each concrete map's provenance, bind the three current state-gated transition contracts (hometown 3, hometown 4, 811→820), expose all four fresh-start seeds, and support an in-process bootstrap→fresh-start→materialize→transition→save/load smoke test. Raw recovered identifiers must remain version-bound; do not claim Taiwan-v1 membership.
+
+
+## Phase 1 recovered25 concrete region payload source — 2026-09-30
+
+- A concrete engine-neutral recovered25 region payload source now sits behind the versioned world/profile layer:
+  - `tools/stoneage_recovered25_region_payload.py`;
+  - `tools/stoneage_recovered25_region_payload_smoke.py`;
+  - `docs/RECOVERED25-REGION-PAYLOAD-SOURCE-R1.md`.
+- The default 826-floor materializable world is deliberately split by authentic recovered format rather than flattened:
+  - **761** stable floors -> recovered client DAT **three-plane** payloads (tile + object/parts + event);
+  - **65** resolved supplemental floors -> recovered server LS2MAP **two-plane** payloads (tile + object);
+  - unresolved floor **130** remains outside the default materializable profile.
+- Every concrete payload is checked against the committed materializable manifest for floor identity, dimensions and SHA-256.
+- Critical event-layer boundary:
+  - client DAT floors preserve their recovered event plane;
+  - server LS2MAP floors expose `event_ids = None`;
+  - the runtime must **not** synthesize an all-zero event plane for LS2MAP merely to make formats uniform;
+  - NPC/warp/encounter/event semantics remain a separate authoritative world-content layer.
+- The region API returns inclusive row-major tile/object/event slices plus source kind, event-plane status, payload SHA and the existing structured `LATER_RECOVERED` provenance.
+- No raw map plane bytes are retained in the repository report.
+- Bundle-backed validation:
+  - materializable floors = **826**;
+  - client DAT three-plane floors = **761**;
+  - server LS2MAP two-plane floors = **65**;
+  - event-plane-present floors = **761**;
+  - event-layer-separate floors = **65**;
+  - `RESOLUTION|RECOVERED25_REGION_PAYLOAD_SOURCE_CLOSED`.
+- Validation workflow: GitHub Actions **36711418355 = PASS**.
+- Derived report: `research/recovered/STONEAGE-25-REGION-PAYLOAD-SOURCE-R1.txt`.
+- **RECOVERED25_REGION_PAYLOAD_SOURCE_R1 = CLOSED.**
+- This closure does not establish Taiwan-v1 membership for recovered25 maps. It only supplies concrete later-recovered payloads behind the already engine-neutral local runtime boundary.
+- Current primary seam remains the recovered25 world-profile adapter's **latest bundle-backed state-gated transition smoke** on the current remote HEAD. Only after that run passes should the adapter itself be marked CLOSED.
