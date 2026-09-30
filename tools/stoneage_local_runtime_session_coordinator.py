@@ -23,6 +23,9 @@ from tools.stoneage_map_collision_model import (
     CollisionDecision,
     DynamicOccupant,
 )
+from tools.stoneage_recovered25_collision_router import (
+    Recovered25CollisionRoute,
+)
 from tools.stoneage_local_runtime_core import (
     LocalPersistenceStore,
     LocalRuntimeSessionState,
@@ -47,6 +50,7 @@ class LocalRuntimeWalkResult:
     session: LocalRuntimeSessionState
     resolution: WalkResolution
     collision: CollisionDecision | None = None
+    collision_route: Recovered25CollisionRoute | None = None
 
 
 @dataclass(frozen=True)
@@ -222,6 +226,35 @@ class LocalRuntimeSessionCoordinator:
             session=result.session,
             resolution=result.resolution,
             collision=verdict,
+        )
+
+    def walk_one_cell_with_recovered25_collision(
+        self,
+        session: LocalRuntimeSessionState,
+        *,
+        destination: MapPosition,
+        map_objmove_ok: bool = True,
+    ) -> LocalRuntimeWalkResult:
+        """Resolve one step through the stack's provenance-bearing router."""
+        session = self._validate_session(session)
+        router = getattr(self.stack, "collision_router", None)
+        if router is None:
+            raise ValueError("runtime stack has no recovered25 collision router")
+        routed = router.routed_step_verdict(
+            origin=session.player_position,
+            destination=destination,
+        )
+        result = self.walk_one_cell(
+            session,
+            destination=destination,
+            entry_allowed=routed.decision.allowed,
+            map_objmove_ok=bool(map_objmove_ok),
+        )
+        return LocalRuntimeWalkResult(
+            session=result.session,
+            resolution=result.resolution,
+            collision=routed.decision,
+            collision_route=routed.route,
         )
 
     @staticmethod
