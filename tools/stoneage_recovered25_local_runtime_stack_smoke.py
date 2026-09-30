@@ -673,6 +673,32 @@ def main() -> None:
         f"dodge_marker_ids={mighty_dodge}|"
         f"numeric_parse_ids={mighty_numeric_parse}"
     )
+    guardbreak_entries = tuple(
+        entry
+        for entry in referenced_skill_entries
+        if entry.function_name == "PETSKILL_GuardBreak"
+    )
+    guardbreak_ascii = 0
+    guardbreak_attack_marker = 0
+    for entry in guardbreak_entries:
+        guardbreak_ascii += int(entry.option_bytes.isascii())
+        if entry.option_bytes.isascii():
+            option_text = entry.option_bytes.decode("ascii")
+            guardbreak_attack_marker += int("攻%" in option_text)
+    if (
+        len(guardbreak_entries) != 1
+        or guardbreak_ascii != len(guardbreak_entries)
+        or guardbreak_attack_marker != 0
+    ):
+        raise ValueError(
+            "recovered25 GuardBreak OPTION is outside closed ASCII/no-attack-marker subset"
+        )
+    print(
+        "PETSKILL_GUARDBREAK_OPTION|"
+        f"unique_ids={len(guardbreak_entries)}|"
+        f"ascii_ids={guardbreak_ascii}|"
+        f"attack_marker_ids={guardbreak_attack_marker}"
+    )
     print(
         "COUNT|enemybase_unresolved_petskill_ids|"
         f"{len(stack.petskill_runtime.unresolved_skill_ids(report_referenced_skill_ids))}"
