@@ -3799,3 +3799,65 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Artifact: `tools/stoneage_shadowed_branch_fresh_start_level_probe.py`; report: `research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVEL-R1.txt`.
 - Validation: GitHub Actions **36679638307 = PASS**; derived report commit **28a961dad0b7d65a858486ae28f6ab204d6d12a3**.
 - Next deterministic seam: prove **fresh-start leveling provenance**. Reuse recovered EXP, encounter, group and enemy data plus fixed-descendant battle EXP semantics. Prefer an existential repeatable positive-EXP route from one of the two coordinate-valid hometown starts; preserve combat-victory feasibility as a separate boundary if the data only proves reward mechanics rather than a winnable encounter.
+
+## Phase 1 fresh-start leveling, combat, ordered award continuation and full-world promotion closure — 2026-09-30
+
+- The previously open fresh-start leveling provenance seam is now closed end-to-end as an **existential recovered25 progression witness**, while keeping guarantee/balance/all-hometown claims separate.
+- Repeatable reward-source audit:
+  - coordinate-reachable positive-EXP encounter sources = **2022**;
+  - sources able to spawn an enemy at or below recovered birth level = **106**;
+  - recovered EXP rows from birth to the minimum joint ExChangeMan/WarpMan legal level are complete and strictly positive;
+  - fixed-descendant battle settlement keeps defeated-enemy EXP at **at least 1** after level-gap reduction.
+- Combat-feasibility audit was tightened against fixed-descendant enemy AI rather than treating every template with skills as unusable:
+  - coordinate-valid hometown low-level source rows = **44**;
+  - unique low-level candidate variants = **16**;
+  - candidates whose normal AI has a positive ordinary-attack branch = **16 / 16**;
+  - legal fresh-character player-first ordinary one-hit-KO witnesses = **16 / 16**;
+  - `FRESH_START_EXISTENTIAL_COMBAT_VICTORY|witness=1`.
+  - The report now correctly records that merely having pet skills does not force skill use; a lethal first hit also ends the target before the counter chain.
+- Ordered leveling-to-award sequencing is separately proven rather than joining unrelated reachability facts:
+  - each combat witness is bound to a concrete walkable recovered encounter cell;
+  - that exact cell must be coordinate-reachable from the same normal hometown **and** lie in a component with a directed recovered classic-Warp continuation to a valid key-item award interaction cell;
+  - ordered source-to-award witnesses = **16 / 16**;
+  - ordered witness hometowns = **1**;
+  - ambiguous encounter keys = **0**;
+  - unresolved reverse-map floors = **0**;
+  - `FRESH_START_LEVELING_TO_TARGET|witness=1`.
+- Repetition remains an existential proof, not a pacing claim:
+  - the same legal one-enemy / weak-enemy-roll / player-first / successful-hit outcome may recur for a finite sequence;
+  - every qualifying kill remains positive EXP;
+  - level-up grants free allocation points without forcing them to be spent, so leaving them unspent preserves the STR/DEX values used by the one-hit witness;
+  - ordinary PvE battle preserves the world position used for the encounter source.
+- The fresh-start chain is now joined with the already-closed initial-Stone, ExChangeMan award, key-item, directed classic-Warp, WarpMan gate and post-ingress branch evidence:
+  - `fresh_start_stone_chain=1`;
+  - `fresh_start_leveling_to_target=1`;
+  - `award_to_gate_progression_chain=1`;
+  - `post_ingress_branch_full_closure=1`.
+- Full recovered25 materializable-world promotion:
+  - materializable floor ids = **826**;
+  - fresh-start state-gated reachable floor ids = **826**;
+  - fresh-start remaining unreachable floor ids = **0**;
+  - `FRESH_START_STATE_GATED_RUNTIME_WORLD|witness=1`.
+- Scope boundary remains explicit:
+  - this does **not** promote the gated WarpMan edge to an unconditional edge;
+  - it does **not** prove guaranteed RNG, efficient leveling, or universal combat victory;
+  - it does **not** prove all four normal hometowns can execute the same progression.
+  - Existing coordinate evidence remains **2 / 4** normal hometowns to the award interaction chain, and the static-only comparison is also **2 / 4**. Therefore `ALL_HOMETOWNS_FULL_WORLD|closed=0` remains correct.
+- New artifacts:
+  - `tools/stoneage_shadowed_branch_fresh_start_combat_probe.py`;
+  - `tests/test_stoneage_shadowed_branch_fresh_start_combat_probe.py`;
+  - `research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COMBAT-R1.txt`;
+  - `tools/stoneage_shadowed_branch_fresh_start_leveling_closure_probe.py`;
+  - `tests/test_stoneage_shadowed_branch_fresh_start_leveling_closure_probe.py`;
+  - `research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt`;
+  - `tools/stoneage_shadowed_branch_fresh_start_world_closure_probe.py`;
+  - `tests/test_stoneage_shadowed_branch_fresh_start_world_closure_probe.py`;
+  - `research/recovered/STONEAGE-25-FRESH-START-STATE-GATED-RUNTIME-WORLD-REACHABILITY-R1.txt`.
+- Validation:
+  - GitHub Actions **36684786971 = PASS** closed the ordered fresh-start leveling-to-target witness;
+  - GitHub Actions **36685235362 = PASS** closed the strict fresh-start-to-full-world join;
+  - derived-report remote HEAD before this state update = `18e6d530688c4c679f9aa0b638cd8d8cfb7254d8`.
+- **SHADOWED_BRANCH_FRESH_START_LEVELING_TO_TARGET_R1 = CLOSED.**
+- **FRESH_START_STATE_GATED_RUNTIME_WORLD_REACHABILITY_R1 = CLOSED.**
+- Next deterministic seam: resolve the **all-hometowns coordinate viability gap** without reopening the existential closure. The two failing normal hometowns already fail under the static-only coordinate model, so do not blame conservative NPC occupancy. Classify whether their missing award route is caused by a genuinely disconnected recovered coordinate component, a required non-classic transport/interaction omitted from the classic-Warp graph, or another recovered movement/transition semantic. Only promote all-hometown reachability if an explicit recovered path exists.
+
