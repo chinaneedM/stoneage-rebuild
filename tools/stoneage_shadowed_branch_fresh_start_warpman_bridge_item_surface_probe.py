@@ -60,7 +60,7 @@ def analyze(*,npc_dir:Path,setup:Path,data_dir:Path,server_map_root:Path,mapset_
     bridged=[r for r in failed if r.baseline_warpman.reachable]
     reqs=[]
     for row in bridged: reqs.extend(_requirements(row.ordinal,row.baseline_warpman.edge_sequence))
-    reached=set(load_ordered_runtime_world_reachability().reached_floor_ids)
+    reached=set(load_ordered_runtime_reachability().reached_floor_ids)
     catalog=_item_ids(_configured_itemset_paths(setup,data_dir))
     rows=[]; missing=0
     for req in reqs:
