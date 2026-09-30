@@ -4429,7 +4429,7 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Placement-weighted recovered NPC audit currently classifies **3,856** stable-world placements: **3,710 CLOSED_ORDINARY_CORE**, **84 NO_DISPATCH_PROFILE**, **62 DEFERRED_VERSIONED_PACKAGE**, **0 unclassified**. This means the priority is runtime integration of already-closed semantics, not another broad NPC archaeology sweep.
 - The current recovered25 local runtime stack already composes: world materialization, provenance-safe static collision routing, Classic Warp/state-gated WarpMan, 3,852 seedable live NPC occupancy rows, local save/continue, and presentation-neutral application boundaries.
 - The largest immediate gameplay restoration gap is that the already reconstructed **encounter -> enemy group spawn -> battle -> settlement** path still lives beside, rather than inside, the recovered25 local runtime stack/coordinator.
-- **ACTIVE RESTORATION PRIORITY:** integrate versioned encounter data into the recovered25 runtime composition, then bridge movement-triggered encounter requests into the existing deterministic single-player battle shell without inventing RNG/AI/content. Preserve the known 39 positive missing-group specimen defects as fail-closed evidence defects.
+- **ACTIVE RESTORATION PRIORITY:** integrate versioned encounter data into the recovered25 runtime composition, then bridge movement-triggered encounter requests into the existing deterministic single-player battle shell without inventing RNG/AI/content. Preserve the known stable-world 23 positive unresolved group references across 19 encounter areas as fail-closed evidence defects.
 - Production-engine/C# migration remains deferred until restoration acceptance.
 
 
