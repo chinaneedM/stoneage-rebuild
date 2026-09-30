@@ -1,0 +1,15 @@
+StoneAge fresh-start state-gated runtime world reachability — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+RULE|this is a strict join of same-bundle derived witnesses; it does not promote the gated WarpMan edge to an unconditional edge
+RULE|fresh-start claim is existential: at least one normal hometown has a legal coordinate/combat/level/item/fee sequence into the gated branch; it is not an all-hometowns or guaranteed-RNG claim
+PREREQUISITE|fresh_start_stone_chain=1
+PREREQUISITE|fresh_start_leveling_to_target=1
+PREREQUISITE|award_to_gate_progression_chain=1
+PREREQUISITE|post_ingress_branch_full_closure=1
+COUNT|materializable_floor_ids|826
+COUNT|fresh_start_state_gated_reachable_floor_ids|826
+COUNT|fresh_start_remaining_unreachable_floor_ids|0
+FRESH_START_STATE_GATED_RUNTIME_WORLD|witness=1
+ALL_HOMETOWNS_FULL_WORLD|closed=0|reason=fresh_start_coordinate_award_chain_is_existential_only
+RESOLUTION|FRESH_START_STATE_GATED_RUNTIME_WORLD_REACHABILITY_CLOSED
