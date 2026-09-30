@@ -208,6 +208,26 @@ class EnemyAiPetSkillBridgeTests(unittest.TestCase):
                 petskill_runtime=runtime,
             )
 
+    def test_mighty_rejects_malformed_numeric_option(self):
+        spawned = spawned_with_slots((60, 0, 0, 0, 0, 0, 0))
+        runtime = Recovered25PetSkillRuntime(
+            skills={
+                60: entry(
+                    60,
+                    "PETSKILL_Mighty",
+                    "倍x 回避30".encode("cp950"),
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        with self.assertRaisesRegex(ValueError, "numeric grammar"):
+            resolve_enemy_ai_mighty_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=0,
+                petskill_runtime=runtime,
+            )
+
     def test_powerbalance_uses_recovered_option_birth_fix_stats_and_round_bridge(self):
         spawned = spawned_with_slots((50, 0, 0, 0, 0, 0, 0))
         option = "攻%25 防%-35".encode("cp950")
