@@ -66,6 +66,30 @@ The returned `LocalRuntimeWalkResult` retains both evidence surfaces separately:
 
 This keeps recovered client hit-map semantics distinct from descendant live-object overlap semantics rather than merging them into a synthetic collision model.
 
+
+## 2B. Recovered25 initial NPC occupancy
+
+A verified recovered25 stack now supplies a deterministic initial NPC occupancy manifest to the coordinator instead of leaving the live registry empty.
+
+The manifest composes two separately versioned evidence surfaces:
+
+- recovered25 / LATER_RECOVERED stable-world NPC placement and template projection;
+- pinned stable-descendant CHAR_ISOVERED behavior classification.
+
+The audited initial overability profile covers all **3,856** recovered placements:
+
+- **2,264** Warp placements are STATIC_OVERABLE;
+- **1,592** remaining placements inherit the stable descendant default CHAR_ISOVERED = 1;
+- no current placement is STATIC_BLOCKING, DYNAMIC, UNRESOLVED, or LINEAGE_DIVERGENT.
+
+The existing spawn-integrity boundary is retained. **3,852 / 3,856** placements are eligible to seed the live registry; the existing four quarantined placement rows remain excluded from runtime instantiation rather than being repaired or silently admitted.
+
+Recovered25LocalRuntimeStack carries this manifest, and LocalRuntimeSessionCoordinator seeds it into RuntimeDynamicOccupancyRegistry during coordinator construction. Each seeded object has the stable identity npc-placement:<placement_id>, CHARACTER kind, recovered birth position, explicit overable state, and provenance identifying the overability classification.
+
+This does not merge NPC occupancy into static collision. The movement result continues to expose static routing provenance separately from dynamic occupancy provenance.
+
+Current persistence limit: stoneage.local-runtime-session.r1 does not serialize the mutable occupancy registry. Deterministic initial NPC seeds can therefore be reconstructed from the stack, but live occupancy mutations are not yet a durable save-state contract. That lifecycle/persistence seam is the next implementation boundary.
+
 ## 3. State-gated dialogue transitions
 
 The three current recovered25 conditional transitions remain outside the unconditional classic-Warp graph.
