@@ -382,7 +382,7 @@ def analyze(
             components=reachable.get(floor)
             if not components:
                 continue
-            if int(area["pmax"])<=0:
+            if int(area["pmax"])<=0 or int(area["enemymax"])<=0:
                 continue
             nav=navigators.get(floor)
             if nav is None or not _area_component_reachable(nav,components,area):
