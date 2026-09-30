@@ -329,13 +329,17 @@ def analyze(
         counts.items(), key=lambda item: (-item[1], item[0])
     ):
         if functionset == "<none>":
+            # No functionset INITFUNC is attached. Recovered template profiles
+            # also contain zero direct callback overrides, so this placement
+            # retains the three-lineage default CHAR_ISOVERED=1 state.
             rows.append(
                 LineageFunctionsetResult(
                     functionset=functionset,
                     placement_count=placement_count,
-                    classification=UNRESOLVED,
+                    classification=INHERITED_DEFAULT_OVERABLE,
                     lineage_classifications=tuple(
-                        (spec.label, UNRESOLVED) for spec in SOURCES
+                        (spec.label, INHERITED_DEFAULT_OVERABLE)
+                        for spec in SOURCES
                     ),
                     init_values=(),
                     file_values=(),
