@@ -548,13 +548,31 @@ def main() -> None:
             for skill_id in callback_ids
             if all(byte < 128 for byte in stack.petskill_runtime.skills[skill_id].option_bytes)
         )
+        dual_same = 0
+        dual_divergent = 0
+        dual_decode_error = 0
+        for skill_id in callback_ids:
+            option_bytes = stack.petskill_runtime.skills[skill_id].option_bytes
+            try:
+                cp950_text = option_bytes.decode("cp950", "strict")
+                big5_text = option_bytes.decode("big5", "strict")
+            except UnicodeDecodeError:
+                dual_decode_error += 1
+                continue
+            if cp950_text == big5_text:
+                dual_same += 1
+            else:
+                dual_divergent += 1
         print(
             "PETSKILL_CALLBACK_COVERAGE|"
             f"callback={callback}|"
             f"unique_ids={len(callback_ids)}|"
             f"slot_uses={slot_uses}|"
             f"ascii_option_ids={ascii_ids}|"
-            f"nonascii_option_ids={len(callback_ids)-ascii_ids}"
+            f"nonascii_option_ids={len(callback_ids)-ascii_ids}|"
+            f"cp950_big5_same_ids={dual_same}|"
+            f"cp950_big5_divergent_ids={dual_divergent}|"
+            f"cp950_big5_decode_error_ids={dual_decode_error}"
         )
     print(
         "COUNT|enemybase_unresolved_petskill_ids|"
