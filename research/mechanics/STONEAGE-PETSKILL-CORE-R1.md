@@ -100,6 +100,27 @@ R1 therefore models both:
 
 This avoids treating the callback function itself as the whole mechanic.
 
+## PETSKILL_Use dispatch boundary
+
+The fixed common dispatch wrapper was re-audited while connecting recovered
+enemy AI skill execution.
+
+Before calling a skill callback it:
+
+1. reads the selected seven-slot pet-skill ID from the character;
+2. resolves that ID to the pet-skill table row;
+3. applies the base `ILLEGAL` check only when the actor is `CHAR_TYPEPET`;
+4. resolves `FUNCNAME` and invokes the callback.
+
+The common wrapper does **not** consume `FIELD`, `TARGET`, `COST` or MP
+before dispatch. The optional `_PETSKILL_CHECKTYPE` gate is also restricted
+to `CHAR_TYPEPET`; it does not add an enemy-side resource gate.
+
+Therefore recovered enemy `wa` execution must preserve slot identity,
+callback/OPTION semantics and callback-specific downstream battle state, but
+must not invent an MP/COST deduction absent from this fixed enemy dispatch
+path.
+
 ## None / attack / guard
 
 The three simplest handlers only select ordinary battle commands:
