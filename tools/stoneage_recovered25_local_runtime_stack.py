@@ -42,6 +42,10 @@ from tools.stoneage_recovered25_npc_initial_occupancy import (
 from tools.stoneage_recovered25_encounter_runtime import (
     load_recovered25_encounter_runtime,
 )
+from tools.stoneage_recovered25_enemybase_runtime import (
+    Recovered25EnemybaseRuntime,
+    load_recovered25_enemybase_runtime,
+)
 from tools.stoneage_recovered25_server_collision_provider import (
     Recovered25ServerCollisionProvider,
 )
@@ -76,6 +80,7 @@ class Recovered25LocalRuntimeStack:
     collision_router: Recovered25CollisionRouter | None = None
     npc_initial_occupancy: Recovered25NpcInitialOccupancyManifest | None = None
     encounter_runtime: VersionedEncounterRuntimeAdapter | None = None
+    enemybase_runtime: Recovered25EnemybaseRuntime | None = None
 
     @classmethod
     def from_verified_bundle(
@@ -149,6 +154,14 @@ class Recovered25LocalRuntimeStack:
                 setup=setup,
             )
         )
+        enemybase_runtime = (
+            None
+            if server_data_dir is None
+            else load_recovered25_enemybase_runtime(
+                data_dir=server_data_dir,
+                setup=setup,
+            )
+        )
         stack = cls(
             profile=profile,
             world_adapter=adapter,
@@ -161,6 +174,7 @@ class Recovered25LocalRuntimeStack:
             collision_router=collision_router,
             npc_initial_occupancy=npc_initial_occupancy,
             encounter_runtime=encounter_runtime,
+            enemybase_runtime=enemybase_runtime,
         )
         stack._validate()
         return stack
@@ -234,6 +248,24 @@ class Recovered25LocalRuntimeStack:
             if invalid_encounter_floors:
                 raise ValueError(
                     "runtime stack encounter areas lie outside topology"
+                )
+        if self.enemybase_runtime is not None:
+            enemybase = self.enemybase_runtime
+            if enemybase.source_version != "recovered25":
+                raise ValueError(
+                    "runtime stack enemybase source-version drift"
+                )
+            if self.encounter_runtime is None:
+                raise ValueError(
+                    "runtime stack enemybase requires encounter runtime"
+                )
+            unresolved_templates = enemybase.unresolved_template_ids(
+                self.encounter_runtime
+            )
+            if unresolved_templates:
+                raise ValueError(
+                    "runtime stack stable encounter template gaps: "
+                    + ",".join(str(x) for x in unresolved_templates[:10])
                 )
 
     def create_fresh_start(self, hometown_ordinal: int) -> FreshStartSeed:

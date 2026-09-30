@@ -4492,5 +4492,20 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - New anonymous audit: `tools/stoneage_enemybase_name_encoding_probe.py`.
 - It records only row counts, strict-decoding counts, raw-name hashes and CP950-vs-Big5 equivalence; it emits no raw or decoded names.
 - Closure rule for runtime use: all 988 active names must decode strictly under CP950 and Big5, and the decoded text must be identical row-for-row. Otherwise enemybase runtime naming remains OPEN.
-- **RECOVERED25_ENEMYBASE_NAME_ENCODING_R1 = IMPLEMENTED_PENDING_REMOTE_BUNDLE_CI.**
+- Remote bundle audit **36748411361 = PASS**. Results: CP950 **988/988**, Big5 **988/988**, but **2 rows decode to different Unicode text**; therefore automatic text-decoder selection remains unresolved.
+- **RECOVERED25_ENEMYBASE_NAME_ENCODING_R1 = OPEN_CP950_BIG5_TWO_ROW_AMBIGUITY.**
 - If closed, next restoration step is a version-tagged enemybase template loader feeding the existing enemy-spawn/birth/battle shell. No placeholder enemy names may be invented.
+
+
+## Phase 1 recovered25 numeric enemybase runtime — 2026-10-01
+
+- Enemy/pet display-name decoding is explicitly separated from combat mechanics.
+- New loader: `tools/stoneage_recovered25_enemybase_runtime.py`.
+- It loads the active recovered25 enemybase numeric/template prefix into `PetTemplateBridge` values while forcing `name=None`; no CP950/Big5 choice and no placeholder name is invented.
+- Provenance remains `LATER_RECOVERED` / source profile `recovered25`.
+- Runtime validation requires unique TEMPNO identity and checks the stable encounter closure from positive encounter groups -> enemy IDs -> enemybase TEMPNO.
+- The full recovered25 stack now carries `enemybase_runtime` whenever `server_data_dir` is supplied.
+- Bundle smoke requires **988** loaded enemybase templates and **0** unresolved enemybase template identities across the stable encounter runtime.
+- Enemy names remain a presentation-layer OPEN issue until the two CP950/Big5 divergent rows are independently disambiguated.
+- **RECOVERED25_NUMERIC_ENEMYBASE_RUNTIME_R1 = IMPLEMENTED_PENDING_REMOTE_BUNDLE_CI.**
+- If the template join closes, proceed to group spawn/birth materialization and battle-shell integration with names nullable for enemy-side participants only; player and owned-pet names remain mandatory.

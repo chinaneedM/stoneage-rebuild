@@ -16,6 +16,9 @@ on:
       - tools/stoneage_recovered25_local_runtime_stack_smoke.py
       - tools/stoneage_recovered25_encounter_runtime.py
       - tools/stoneage_versioned_encounter_runtime.py
+      - tools/stoneage_recovered25_enemybase_runtime.py
+      - tests/test_stoneage_recovered25_enemybase_runtime.py
+      - tools/stoneage_enemybase_probe.py
       - tools/stoneage_encounter_chain_probe.py
       - tests/test_stoneage_recovered25_local_runtime_stack.py
       - tools/stoneage_recovered25_server_collision_coverage_probe.py
@@ -57,6 +60,7 @@ jobs:
             tests.test_stoneage_recovered25_region_payload \
             tests.test_stoneage_recovered25_world_profile_adapter \
             tests.test_stoneage_recovered25_local_runtime_stack \
+            tests.test_stoneage_recovered25_enemybase_runtime \
             tests.test_stoneage_recovered25_server_collision_coverage_probe \
             tests.test_stoneage_recovered25_server_collision_provider \
             tests.test_stoneage_recovered25_client_adrn_collision_coverage_probe \
@@ -169,6 +173,9 @@ jobs:
           grep -F 'COUNT|collision_unrouted_floors|0' "$R"
           grep -F 'CLIENT_COLLISION_PROFILE|RECOVERED25_DESCENDANT_STABLE_CLIENT_HITMAP_R1|exact_recovered25_binary_proof=0' "$R"
           grep -F 'CLIENT_COLLISION_MOVEMENT_WITNESS|1' "$R"
+          grep -F 'COUNT|enemybase_templates|988' "$R"
+          grep -F 'COUNT|stable_unresolved_enemybase_templates|0' "$R"
+          grep -F 'ENEMYBASE_NAME_ENCODING_STATUS|OPEN_CP950_BIG5_TWO_ROW_AMBIGUITY' "$R"
           grep -F 'COUNT|stable_encounter_areas|402' "$R"
           grep -F 'COUNT|stable_unresolved_positive_group_refs|23' "$R"
           grep -F 'COUNT|stable_affected_encounter_areas|19' "$R"

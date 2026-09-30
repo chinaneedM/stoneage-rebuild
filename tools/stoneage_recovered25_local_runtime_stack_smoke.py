@@ -236,6 +236,24 @@ def run(
 
     if stack.encounter_runtime is None:
         raise ValueError("runtime stack lacks encounter runtime")
+    if stack.enemybase_runtime is None:
+        raise ValueError("runtime stack lacks enemybase runtime")
+    if len(stack.enemybase_runtime.templates) != 988:
+        raise ValueError("unexpected recovered25 enemybase template count")
+    referenced_template_ids = (
+        stack.enemybase_runtime.referenced_template_ids(
+            stack.encounter_runtime
+        )
+    )
+    unresolved_template_ids = (
+        stack.enemybase_runtime.unresolved_template_ids(
+            stack.encounter_runtime
+        )
+    )
+    if unresolved_template_ids:
+        raise ValueError(
+            "stable encounter references unresolved enemybase templates"
+        )
     encounter_adapter = stack.encounter_runtime
     if len(encounter_adapter.encounter_areas) != 402:
         raise ValueError("unexpected stable encounter-area count")
@@ -402,6 +420,19 @@ def main() -> None:
         f"exact_recovered25_binary_proof={int(bool(client_witness.route.exact_recovered25_binary_proof))}"
     )
     print("CLIENT_COLLISION_MOVEMENT_WITNESS|1")
+    print(f"COUNT|enemybase_templates|{len(stack.enemybase_runtime.templates)}")
+    print(
+        "COUNT|stable_referenced_enemybase_templates|"
+        f"{len(referenced_template_ids)}"
+    )
+    print(
+        "COUNT|stable_unresolved_enemybase_templates|"
+        f"{len(unresolved_template_ids)}"
+    )
+    print(
+        "ENEMYBASE_NAME_ENCODING_STATUS|"
+        f"{stack.enemybase_runtime.name_encoding_status}"
+    )
     print(f"COUNT|stable_encounter_areas|{len(stack.encounter_runtime.encounter_areas)}")
     print(
         "COUNT|stable_unresolved_positive_group_refs|"
