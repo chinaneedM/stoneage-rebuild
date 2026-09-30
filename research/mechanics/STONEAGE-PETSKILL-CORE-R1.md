@@ -242,6 +242,16 @@ If the skill option pointer is null, the old handler returns FALSE **after** it 
 
 When valid, PowerBalance later participates in the normal attack execution path.
 
+Recovered25 runtime closure adds a narrower data-backed execution boundary:
+
+- all **3** enemy-referenced PowerBalance skill IDs decode identically under strict CP950 and Big5;
+- all **3/3** OPTION rows contain both the attack (`攻%`) and defense (`防%`) percentage markers;
+- **0/3** rows contain the later/unclosed dexterity-extension marker (`敏%`);
+- the recovered enemy birth projection supplies the FIXSTR/FIXTOUGH-equivalent attack/defense basis;
+- `BATTLE_COM_S_POWERBALANCE=1007` is carried into the ordinary physical attack path with the handler's immediate work attack/defense mutations kept as explicit command-setup effects.
+
+Recovered25 execution therefore fails closed if that proven marker grammar is not satisfied; no generalized PowerBalance extension parser is inferred.
+
 ## Mighty
 
 The handler packs:
