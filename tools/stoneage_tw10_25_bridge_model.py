@@ -65,6 +65,7 @@ class PetTemplateBridge:
     level_up_point: int | None = None
     size_class: int | None = None
     capture_default: int | None = None
+    rare: int | None = None
 
     @classmethod
     def from_enemybase(cls, row: Mapping[str, Any]) -> "PetTemplateBridge":
@@ -100,6 +101,9 @@ class PetTemplateBridge:
             ),
             capture_default=(
                 c_atoi(row["GET"]) if row.get("GET") is not None else None
+            ),
+            rare=(
+                c_atoi(row["RARE"]) if row.get("RARE") is not None else None
             ),
         )
 
