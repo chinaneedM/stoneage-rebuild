@@ -48,7 +48,20 @@ class EncountChainProbeTests(unittest.TestCase):
     def test_tactics_parser_rejects_missing_required_attack_suboption(self):
         parsed=parse_tactics_option("at:10;1|wa:1")
         self.assertFalse(parsed["valid"])
+        self.assertEqual(parsed["malformed_tags"],("at",))
         self.assertEqual(parsed["positive_actions"],("wa",))
+
+    def test_tactics_parser_keeps_rn_extension_out_of_common_validity(self):
+        empty=parse_tactics_option("at:10;1;1|rn:")
+        self.assertTrue(empty["valid"])
+        self.assertTrue(empty["rn_present"])
+        self.assertFalse(empty["rn_nonempty"])
+
+        configured=parse_tactics_option("at:10;1;1|rn:2")
+        self.assertTrue(configured["valid"])
+        self.assertTrue(configured["rn_present"])
+        self.assertTrue(configured["rn_nonempty"])
+        self.assertNotIn("rn",configured["tags"])
 
     def test_full_chain(self):
         with tempfile.TemporaryDirectory() as td:
