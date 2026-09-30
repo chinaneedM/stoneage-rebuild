@@ -1,0 +1,42 @@
+name: Audit StoneAge NPC overability lineage
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/audit-stoneage-npc-overability-lineage.yml
+      - tools/stoneage_npc_overability_lineage_probe.py
+      - tests/test_stoneage_npc_overability_lineage_probe.py
+      - research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate lineage parser
+        run: python3 -m unittest tests.test_stoneage_npc_overability_lineage_probe -v
+      - name: Audit recovered25 functionset overability
+        run: |
+          set -euo pipefail
+          R=research/recovered/STONEAGE-25-NPC-OVERABILITY-LINEAGE-R1.txt
+          python3 -m tools.stoneage_npc_overability_lineage_probe             --binding-report research/recovered/STONEAGE-25-STABLE-NPC-TEMPLATE-BINDINGS-R1.txt             > "$R"
+          test -s "$R"
+          grep -F 'COUNT|placements|3856' "$R"
+          grep -F 'RESOLUTION|RECOVERED25_NPC_OVERABILITY_LINEAGE_AUDITED' "$R"
+      - name: Commit derived overability report
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-25-NPC-OVERABILITY-LINEAGE-R1.txt
+          if git diff --cached --quiet; then
+            echo 'Derived NPC overability report unchanged; nothing to commit.'
+          else
+            git commit -m 'research: audit recovered25 NPC overability lineage'
+            git pull --rebase origin main
+            git push
+          fi
