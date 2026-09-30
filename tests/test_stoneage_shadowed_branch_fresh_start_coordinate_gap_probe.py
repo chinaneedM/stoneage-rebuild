@@ -4,24 +4,18 @@ from tools.stoneage_shadowed_branch_fresh_start_coordinate_gap_probe import (
     _frontier_reason,
     _reverse_floor_distances,
 )
-
-
-class _Point:
-    def __init__(self,floor_id):
-        self.floor_id=floor_id
-
-
-class _Edge:
-    def __init__(self,source,destination):
-        self.source=_Point(source)
-        self.destination=_Point(destination)
+from tools.stoneage_shadowed_branch_fresh_start_coordinate_probe import WarpEdge
 
 
 class FreshStartCoordinateGapProbeTests(unittest.TestCase):
 
     def test_reverse_floor_distances(self):
         rows=_reverse_floor_distances(
-            [_Edge(1,2),_Edge(2,3),_Edge(4,2)],
+            [
+                WarpEdge(1,0,0,2,0,0),
+                WarpEdge(2,0,0,3,0,0),
+                WarpEdge(4,0,0,2,0,0),
+            ],
             3,
         )
         self.assertEqual(rows[3],0)
