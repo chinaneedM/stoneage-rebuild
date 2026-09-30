@@ -1,0 +1,18 @@
+StoneAge shadowed-branch dynamic occupancy boundary — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+PINNED_SOURCE_FACT|classic_warp_character_overable=1|gold_blocks_walk=0|item_default_isovered=1|item_isovered_override_possible=1
+PINNED_SOURCE_FACT|normal_ground_object_restore_filename=itemgold|emergency_nonrestore_filename=itemgold_extra
+RULE|all recovered non-Warp NPC birth cells are already treated as blocking by the prerequisite coordinate report
+RULE|arbitrary later player/pet movement and later dropped items are transient live-session state, not deterministic recovered world content
+RULE|no despawn or NPC-movement assumption is used to obtain the deterministic initial-runtime witness
+COUNT|normal_itemgold_files|0
+COUNT|itemgold_extra_files|0
+COUNT|normal_itemgold_rows|0
+COUNT|critical_floor_item_rows|0
+COUNT|critical_floor_gold_rows|0
+COUNT|critical_floor_char_rows|0
+PERSISTED_CRITICAL_BLOCKER_FREE|witness=1
+DETERMINISTIC_INITIAL_DYNAMIC_OCCUPANCY_CHAIN|witness=1
+ARBITRARY_LIVE_SESSION_UNIVERSAL_REACHABILITY|closed=0|reason=transient_nonoverable_items_or_characters_may_be_introduced
+RESOLUTION|SHADOWED_BRANCH_DYNAMIC_OCCUPANCY_BOUNDARY_CLOSED
