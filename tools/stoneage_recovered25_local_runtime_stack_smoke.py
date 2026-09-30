@@ -491,6 +491,7 @@ def main() -> None:
         for skill_id in sorted(report_referenced_skill_ids)
     )
     basic_ai_callbacks = {
+        "PETSKILL_None",
         "PETSKILL_NormalAttack",
         "PETSKILL_NormalGuard",
     }
