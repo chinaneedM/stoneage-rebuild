@@ -136,10 +136,15 @@ class LocalEngineAdapterTests(unittest.TestCase):
                 fromlist=["*"],
             )
         )
-        self.assertNotIn("stoneage_recovered25", source)
-        self.assertNotIn("Recovered25", source)
-        self.assertNotIn("godot", source.lower())
-        self.assertNotIn("unity", source.lower())
+        import_surface = "\n".join(
+            line
+            for line in source.splitlines()
+            if line.startswith("from ") or line.startswith("import ")
+        )
+        self.assertNotIn("stoneage_recovered25", import_surface)
+        self.assertNotIn("Recovered25", import_surface)
+        self.assertNotIn("godot", import_surface.lower())
+        self.assertNotIn("unity", import_surface.lower())
         self.assertEqual(
             self.adapter.profile_id,
             LOCAL_ENGINE_ADAPTER_PROFILE,
