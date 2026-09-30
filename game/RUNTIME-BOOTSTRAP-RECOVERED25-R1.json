@@ -1,0 +1,177 @@
+{
+  "schema_id": "stoneage.runtime-bootstrap.r1",
+  "schema_version": 1,
+  "contract_id": "stoneage.recovered25.local-first-bootstrap.r1",
+  "status": "CLOSED_EVIDENCE_PROFILE",
+  "purpose": "Engine-neutral deterministic bootstrap contract for a local-first single-player runtime. It is an implementation scaffold, not a claim that all included recovered25 content existed in Taiwan v1.0.",
+  "historical_foundation": {
+    "profile": "taiwan-v1.0",
+    "role": "FOUNDATION_BASELINE",
+    "authority": "accepted clean retail client",
+    "gameplay_schema": "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+    "bridge_schema": "research/clients/STONEAGE-TW10-25-GAMEPLAY-BRIDGE-R1.json"
+  },
+  "runtime_world_profile": {
+    "profile": "recovered25",
+    "semantic_source_version": "recovered25",
+    "evidence_role": "LATER_RECOVERED",
+    "historical_membership_in_taiwan_v1": "UNPROVEN",
+    "may_supply_reconstruction_bootstrap_semantics": true,
+    "may_be_relabelled_as_taiwan_v1_content": false
+  },
+  "deployment": {
+    "mode": "LOCAL_FIRST_SINGLE_PLAYER",
+    "authoritative_state": "LOCAL_WORLD_MODEL",
+    "legacy_network_transport_required": false,
+    "account_service_required": false,
+    "engine_binding": "NONE",
+    "future_authorized_client_server_split_must_preserve_semantics": true
+  },
+  "map_runtime": {
+    "authority": "LOCAL_WORLD_MODEL",
+    "materialization": "REGION_VALIDATION_REQUEST_MATERIALIZATION",
+    "legacy_packet_transport_is_evidence_not_requirement": true,
+    "generated_compatibility_cache_is_historical_evidence": false
+  },
+  "world": {
+    "materializable_floor_count": 826,
+    "fresh_start_state_gated_reachable_floor_count": 826,
+    "remaining_unreachable_floor_count": 0,
+    "full_materializable_world_closed": true
+  },
+  "fresh_start": {
+    "normal_hometown_count": 4,
+    "direct_classic_award_hometowns": 2,
+    "gated_bridge_hometowns": 2,
+    "all_hometowns_ordered_progression": true,
+    "all_hometowns_full_world": true,
+    "inventory": {
+      "capacity": 15,
+      "configured_positive_starter_items": 13,
+      "guaranteed_empty_slots": 2
+    },
+    "economy": {
+      "starting_stone_positive": true,
+      "covers_minimum_award_fee": true,
+      "bridged_hometowns_starting_stone_covers_bridge_item_and_award_fee": true
+    },
+    "progression": {
+      "direct_birth_level_sufficient": false,
+      "finite_repeatable_positive_exp_route_required": true,
+      "leveling_reward_chain_closed": true,
+      "combat_rng_claim": "EXISTENTIAL_LEGAL_WITNESS",
+      "pacing_claim": "NONE"
+    },
+    "routes": [
+      {
+        "ordinal": 1,
+        "route_class": "CLASSIC",
+        "requires_shop": false,
+        "requires_warpman": false,
+        "milestones": [
+          "COMBAT"
+        ],
+        "ordered": true
+      },
+      {
+        "ordinal": 2,
+        "route_class": "CLASSIC",
+        "requires_shop": false,
+        "requires_warpman": false,
+        "milestones": [
+          "COMBAT"
+        ],
+        "ordered": true
+      },
+      {
+        "ordinal": 3,
+        "route_class": "STATE_GATED_WARPMAN",
+        "requires_shop": true,
+        "requires_warpman": true,
+        "milestones": [
+          "COMBAT",
+          "SHOP",
+          "WARPMAN"
+        ],
+        "ordered": true
+      },
+      {
+        "ordinal": 4,
+        "route_class": "STATE_GATED_WARPMAN",
+        "requires_shop": true,
+        "requires_warpman": true,
+        "milestones": [
+          "SHOP",
+          "COMBAT",
+          "WARPMAN"
+        ],
+        "ordered": true
+      }
+    ]
+  },
+  "state_gated_transitions": [
+    {
+      "id": "shadowed_branch_ingress",
+      "kind": "WARPMAN",
+      "source_floor": 811,
+      "destination_floor": 820,
+      "unconditional": false,
+      "gate": "CLOSED_PROGRESSION_WITNESS",
+      "source_profile": "recovered25"
+    },
+    {
+      "id": "fresh_start_hometown_3_bridge",
+      "kind": "WARPMAN",
+      "hometown_ordinal": 3,
+      "binding": "DERIVED_RECOVERED25_SELECTED_EDGE",
+      "raw_coordinates_withheld": true,
+      "unconditional": false,
+      "predicates": [
+        "ITEM_EQ"
+      ],
+      "item_identity": "DERIVED_WITHHELD",
+      "money_gate": "DISABLED_NEGATIVE",
+      "schedule_gate": "ABSENT",
+      "party_gate": "ABSENT",
+      "free_msg_required_and_present": true,
+      "event_action_side_effect_fields": 0,
+      "acquisition": "ORDERED_AFFORDABLE_NORMAL_ITEMSHOP"
+    },
+    {
+      "id": "fresh_start_hometown_4_bridge",
+      "kind": "WARPMAN",
+      "hometown_ordinal": 4,
+      "binding": "DERIVED_RECOVERED25_SELECTED_EDGE",
+      "raw_coordinates_withheld": true,
+      "unconditional": false,
+      "predicates": [
+        "ITEM_EQ"
+      ],
+      "item_identity": "DERIVED_WITHHELD",
+      "money_gate": "DISABLED_NEGATIVE",
+      "schedule_gate": "ABSENT",
+      "party_gate": "ABSENT",
+      "free_msg_required_and_present": true,
+      "event_action_side_effect_fields": 0,
+      "acquisition": "ORDERED_AFFORDABLE_NORMAL_ITEMSHOP"
+    }
+  ],
+  "invariants": [
+    "Never promote a state-gated transition to an unconditional graph edge.",
+    "Never infer Taiwan v1.0 historical membership from recovered25 runtime usefulness.",
+    "Never substitute runtime object IDs, inventory slots, pet slots or template IDs for one another.",
+    "Keep world/player/NPC/pet/item/progression/combat state independent of rendering and legacy network transport.",
+    "Preserve provenance on imported or reconstructed world data.",
+    "Treat guaranteed RNG, leveling efficiency and pacing as outside this R1 contract."
+  ],
+  "evidence": [
+    "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+    "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-GATE-R1.txt",
+    "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-SHOP-ROUTE-R1.txt",
+    "research/recovered/STONEAGE-25-STATE-GATED-RUNTIME-WORLD-REACHABILITY-R1.txt",
+    "research/recovered/STONEAGE-25-FRESH-START-STATE-GATED-RUNTIME-WORLD-REACHABILITY-R1.txt",
+    "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+    "research/clients/STONEAGE-TW10-25-GAMEPLAY-BRIDGE-R1.json",
+    "docs/DESIGN-DECISIONS.md"
+  ]
+}

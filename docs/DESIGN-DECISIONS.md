@@ -204,3 +204,23 @@ Consequences:
 
 Evidence closure: `research/mechanics/STONEAGE-MAP-DELIVERY-MATERIALIZATION-R1.md`.
 
+
+
+## DD-015 — Version-tagged runtime bootstrap contracts must preserve provenance and gated topology
+
+**Status:** Accepted
+
+Closed reconstruction evidence may be promoted into an engine-neutral runtime bootstrap contract only if the contract preserves its source version and evidence role.
+
+The accepted Taiwan/Waei v1.0 client remains the historical foundation baseline. A recovered25 world/profile may be used as a deterministic implementation scaffold, but its maps, NPCs, items, progression rules and transitions remain `LATER_RECOVERED` unless separate evidence proves Taiwan-v1 membership.
+
+Architecture consequences:
+
+- runtime bootstrap contracts are version-tagged compositions, not flattened “canonical history” files;
+- state-gated transports remain explicit conditional transitions and must never be inserted into an unconditional world graph;
+- raw recovered identifiers/coordinates may be resolved through provenance-preserving adapters when they should not be copied into the public semantic contract;
+- world/player/NPC/pet/item/progression/combat state stays independent of rendering engine and legacy network transport;
+- the local-first runtime owns authoritative state; legacy networking is optional compatibility/evidence infrastructure;
+- contradictory evidence produces a new/superseding contract version rather than silently changing provenance labels.
+
+R1 implementation contract: `docs/RUNTIME-BOOTSTRAP-CONTRACT-R1.md` and `game/RUNTIME-BOOTSTRAP-RECOVERED25-R1.json`.

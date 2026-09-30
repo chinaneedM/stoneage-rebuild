@@ -1,0 +1,28 @@
+name: Validate StoneAge runtime bootstrap contract
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - game/RUNTIME-BOOTSTRAP-RECOVERED25-R1.json
+      - game/README.md
+      - docs/RUNTIME-BOOTSTRAP-CONTRACT-R1.md
+      - docs/DESIGN-DECISIONS.md
+      - tests/test_stoneage_runtime_bootstrap_contract.py
+      - research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt
+      - research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-GATE-R1.txt
+      - research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-SHOP-ROUTE-R1.txt
+      - research/recovered/STONEAGE-25-STATE-GATED-RUNTIME-WORLD-REACHABILITY-R1.txt
+      - research/recovered/STONEAGE-25-FRESH-START-STATE-GATED-RUNTIME-WORLD-REACHABILITY-R1.txt
+      - .github/workflows/validate-stoneage-runtime-bootstrap-contract.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate runtime bootstrap contract
+        run: python3 -m unittest tests.test_stoneage_runtime_bootstrap_contract -v
