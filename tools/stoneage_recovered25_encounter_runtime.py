@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from tools.stoneage_encounter_chain_probe import (
+from tools.stoneage_encount_chain_probe import (
     configured_file,
     parse_encount,
     parse_enemy,
