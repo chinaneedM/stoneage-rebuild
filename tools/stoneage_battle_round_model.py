@@ -107,6 +107,7 @@ BATTLE_COM_WAIT = 11
 # Stable unguarded pet-skill command sequence begins at 1000.
 BATTLE_COM_S_GUARDIAN_ATTACK = 1003
 BATTLE_COM_S_GUARDIAN_GUARD = 1004  # enum-only in pinned common Guardian handler
+BATTLE_COM_S_POWERBALANCE = 1007
 BATTLE_COM_S_STATUSCHANGE = 1008
 
 
@@ -139,6 +140,7 @@ BASE_COMMAND_CODES = frozenset(
         BATTLE_COM_WAIT,
         BATTLE_COM_S_GUARDIAN_ATTACK,
         BATTLE_COM_S_GUARDIAN_GUARD,
+        BATTLE_COM_S_POWERBALANCE,
         BATTLE_COM_S_STATUSCHANGE,
     }
 )
@@ -494,6 +496,7 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_COMBO,
         BATTLE_COM_WAIT,
         BATTLE_COM_S_GUARDIAN_ATTACK,
+        BATTLE_COM_S_POWERBALANCE,
         BATTLE_COM_S_STATUSCHANGE,
     }
 )
@@ -3238,6 +3241,7 @@ def resolve_ordinary_round(
         attack_command_code=int(command.command1)
         if attack_command_code in {
             BATTLE_COM_S_GUARDIAN_ATTACK,
+            BATTLE_COM_S_POWERBALANCE,
             BATTLE_COM_S_STATUSCHANGE,
         }:
             command_by_slot[slot]=BattleCommand(
