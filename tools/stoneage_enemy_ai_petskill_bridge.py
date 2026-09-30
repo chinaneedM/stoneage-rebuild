@@ -8,6 +8,7 @@ Currently supported:
 - PETSKILL_None
 - PETSKILL_NormalAttack
 - PETSKILL_NormalGuard
+- PETSKILL_Mighty (explicit opt-in dispatcher branch)
 - PETSKILL_PowerBalance (explicit opt-in dispatcher branch)
 - PETSKILL_StatusChange (explicit opt-in dispatcher branch)
 
@@ -27,6 +28,7 @@ from tools.stoneage_battle_round_model import (
 )
 from tools.stoneage_enemy_spawn_model import SpawnedEnemy
 from tools.stoneage_petskill_core_model import (
+    mighty_command,
     parse_status_skill,
     power_balance_command,
     status_change_command,
@@ -43,6 +45,7 @@ from tools.stoneage_recovered25_petskill_runtime import (
 NONE = "PETSKILL_None"
 NORMAL_ATTACK = "PETSKILL_NormalAttack"
 NORMAL_GUARD = "PETSKILL_NormalGuard"
+MIGHTY = "PETSKILL_Mighty"
 POWER_BALANCE = "PETSKILL_PowerBalance"
 STATUS_CHANGE = "PETSKILL_StatusChange"
 
@@ -147,6 +150,7 @@ def resolve_enemy_ai_supported_petskill_command(
     petskill_runtime: Recovered25PetSkillRuntime,
     allow_status_change: bool = False,
     allow_power_balance: bool = False,
+    allow_mighty: bool = False,
 ) -> EnemyAiPetSkillCommand:
     """Dispatch only callbacks whose full execution boundary is admitted."""
 
@@ -158,6 +162,13 @@ def resolve_enemy_ai_supported_petskill_command(
     )
     if entry.function_name in BASIC_AI_CALLBACKS:
         return resolve_enemy_ai_basic_petskill_command(
+            spawned,
+            skill_slot=skill_slot,
+            target_slot=target_slot,
+            petskill_runtime=petskill_runtime,
+        )
+    if entry.function_name == MIGHTY and bool(allow_mighty):
+        return resolve_enemy_ai_mighty_petskill_command(
             spawned,
             skill_slot=skill_slot,
             target_slot=target_slot,
@@ -180,6 +191,46 @@ def resolve_enemy_ai_supported_petskill_command(
     raise ValueError(
         "enemy AI selected pet-skill callback outside admitted execution "
         f"subset: {entry.function_name}"
+    )
+
+
+def resolve_enemy_ai_mighty_petskill_command(
+    spawned: SpawnedEnemy,
+    *,
+    skill_slot: int,
+    target_slot: int,
+    petskill_runtime: Recovered25PetSkillRuntime,
+) -> EnemyAiPetSkillCommand:
+    """Resolve recovered PETSKILL_Mighty into the ordinary physical seam."""
+
+    skill_slot, target_slot, entry = _resolved_entry(
+        spawned,
+        skill_slot=skill_slot,
+        target_slot=target_slot,
+        petskill_runtime=petskill_runtime,
+    )
+    if entry.function_name != MIGHTY:
+        raise ValueError(
+            "enemy AI selected pet-skill callback outside Mighty "
+            f"execution subset: {entry.function_name}"
+        )
+
+    option_text = entry.unambiguous_cp950_big5_option()
+    if "倍" not in option_text or "避" not in option_text:
+        raise ValueError(
+            "recovered Mighty OPTION is outside closed multiplier/dodge "
+            "marker grammar"
+        )
+
+    payload = mighty_command(target_slot, option_text)
+    submission = bridge_stable_pet_skill_command(payload)
+    return EnemyAiPetSkillCommand(
+        participant_id=str(spawned.participant.participant_id),
+        skill_slot=skill_slot,
+        skill_id=int(entry.skill_id),
+        callback=entry.function_name,
+        command=submission.battle_command,
+        setup_effects=submission.setup_effects,
     )
 
 
