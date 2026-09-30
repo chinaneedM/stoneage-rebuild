@@ -3748,3 +3748,21 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Validation: transport workflow GitHub Actions **36676771400 = PASS**; derived report commit **4b11a1be9afd8aedd998192746f1a9c98ad4241e**.
 - **SHADOWED_BRANCH_DETERMINISTIC_DYNAMIC_OCCUPANCY_R1 = CLOSED.**
 - Next deterministic seam: close the remaining **fresh-character economic provenance** for the gated branch. The current progression proves only that the exchange fee fits inside the legal carried-Stone domain. Audit whether a newly initialized single-player character can legally acquire the required Stone through recovered gameplay sources before claiming the branch is fresh-start reachable; preserve the existing legal-state witness independently if a complete earning chain cannot be proven.
+
+
+## Phase 1 shadowed-branch fresh-start Stone closure — 2026-09-30
+
+- The previously open economic provenance seam is now closed without inventing any earning loop.
+- Fixed-descendant new-character initialization was revalidated: `CHAR_GOLD` is initialized from `getNewplayergivegold()`, whose recovered configuration key is `setup.cf` `GOLD`.
+- The new probe reads the recovered25 `setup.cf` birth-Stone value and compares it directly against the real `DelStone` fee over each already-valid ExChangeMan award level state. Exact Stone amounts and thresholds remain withheld from derived reports.
+- Recovered25 result:
+  - matching key-item award records = **2**;
+  - award records with valid computable fees = **2**;
+  - award records whose fee is already covered by new-character starting Stone = **2 / 2**;
+  - `FRESH_START_STONE|positive=1|covers_minimum_valid_fee=1`;
+  - `FRESH_START_ECONOMIC_CHAIN|witness=1`.
+- No battle-income, shop-sale, quest-reward, bank, external-player transfer, farming or despawn assumption is required for the fee. A valid route may simply retain the recovered starting Stone until the exchange.
+- Artifact: `tools/stoneage_shadowed_branch_fresh_start_stone_probe.py`; tests: `tests/test_stoneage_shadowed_branch_fresh_start_stone_probe.py`; derived report: `research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-STONE-R1.txt`.
+- Validation: transport workflow GitHub Actions **36677139842 = PASS**; derived report commit **b557bac186ce83900f5d3f5fe2f0e1abb5a0838b**.
+- **SHADOWED_BRANCH_FRESH_START_STONE_R1 = CLOSED.**
+- Next deterministic seam: close **fresh-character spatial provenance**. Recover the actual new-character spawn floor/coordinate rule from recovered25/fixed source, then test directed runtime reachability from those birth positions to the key-item award floor and through the already closed coordinate/progression chain. Do not equate the existing 761-floor world seed set with a real player birth state.
