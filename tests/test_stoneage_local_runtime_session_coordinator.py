@@ -14,6 +14,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_CAPTURE,
     BATTLE_COM_ESCAPE,
+    BATTLE_COM_GUARD,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
@@ -174,6 +175,9 @@ class _FakeStack:
             "CREATEMAXNUM": 2,
             "CREATEMINNUM": 1,
             "TACTICS": 1,
+            "TACTICSOPTION": (
+                "at:1;1;1|gu:1|es:0|wa:0;0;0;0;0;0;0"
+            ),
             "EXP": 100,
             "DUELPOINT": 0,
             "STYLE": 0,
@@ -1627,17 +1631,221 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         self.assertEqual(settled.player_position, session.player_position)
         self.assertEqual(settled.world_flags, session.world_flags)
 
-        with self.assertRaisesRegex(ValueError, "ATTACK/WAIT only"):
+        with self.assertRaisesRegex(ValueError, "ATTACK/GUARD/WAIT only"):
             self.coordinator.resolve_persistent_attack_wait_round(
                 context,
                 commands={
-                    "player": BattleCommand(2),
+                    "player": BattleCommand(BATTLE_COM_ESCAPE),
                     enemy_id: BattleCommand(BATTLE_COM_WAIT),
                 },
                 initiative_random_subtracts=initiative,
                 profiles=profiles,
                 attack_rolls=attack_rolls,
                 defense_profile="newpower_70pct",
+            )
+
+    def test_recovered_enemy_ai_builds_attack_and_guard_from_spawn_variant(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-command"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        enemy_id = context.battle.enemies[0].participant_id
+        context = self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player": 0, enemy_id: 10},
+        )
+
+        attack = self.coordinator.build_persistent_enemy_attack_guard_commands(
+            context,
+            mode_rolls_by_enemy_id={enemy_id: 0},
+            target_rolls_by_enemy_id={enemy_id: 0},
+        )
+        self.assertEqual(set(attack), {enemy_id})
+        self.assertEqual(attack[enemy_id].command1, BATTLE_COM_ATTACK)
+        self.assertEqual(attack[enemy_id].command2, 0)
+
+        guard = self.coordinator.build_persistent_enemy_attack_guard_commands(
+            context,
+            mode_rolls_by_enemy_id={enemy_id: 1},
+        )
+        self.assertEqual(guard[enemy_id].command1, BATTLE_COM_GUARD)
+        self.assertEqual(guard[enemy_id].command2, -1)
+
+    def test_recovered_enemy_ai_guard_executes_through_persistent_round(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-guard-round"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        enemy = replace(
+            context.battle.enemies[0],
+            hp=1000,
+            max_hp=1000,
+            defense=0,
+            quick=10,
+        )
+        context = replace(
+            context,
+            battle=replace(context.battle, enemies=(enemy,)),
+        )
+        enemy_id = enemy.participant_id
+        context = self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player": 0, enemy_id: 10},
+        )
+        result_context, round_result = (
+            self.coordinator
+            .resolve_persistent_attack_guard_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player": BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=10,
+                    )
+                },
+                enemy_mode_rolls={enemy_id: 1},
+                enemy_target_rolls=None,
+                initiative_random_subtracts={
+                    "player": 0,
+                    enemy_id: 0,
+                },
+                profiles={
+                    "player": BattleCombatProfile(
+                        fixed_dex=100,
+                        fixed_luck=0,
+                        earth=0,
+                        water=0,
+                        fire=0,
+                        wind=0,
+                    ),
+                    enemy_id: BattleCombatProfile(
+                        fixed_dex=10,
+                        fixed_luck=0,
+                        earth=0,
+                        water=0,
+                        fire=0,
+                        wind=0,
+                    ),
+                },
+                attack_rolls={
+                    "player": OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                        minimum_damage_roll_0_1=1,
+                    )
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        self.assertEqual(round_result.after.turn, 1)
+        self.assertEqual(
+            round_result.after.last_commands[enemy_id].command1,
+            BATTLE_COM_GUARD,
+        )
+        self.assertGreater(
+            round_result.after.hp_by_participant_id[enemy_id],
+            0,
+        )
+        self.assertLess(
+            round_result.after.hp_by_participant_id[enemy_id],
+            1000,
+        )
+        self.assertEqual(
+            result_context.persistent_battle_state,
+            round_result.after,
+        )
+
+    def test_recovered_enemy_ai_fails_closed_on_skill_selection(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-fail-closed"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        enemy_id = context.battle.enemies[0].participant_id
+        skill_variant = replace(
+            context.spawned_enemies[0].variant,
+            tactics_option="at:0;1;1|gu:0|es:0|wa:1",
+        )
+        context = replace(
+            context,
+            spawned_enemies=(
+                replace(
+                    context.spawned_enemies[0],
+                    variant=skill_variant,
+                ),
+            ),
+        )
+        context = self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player": 0, enemy_id: 10},
+        )
+        with self.assertRaisesRegex(
+            ValueError,
+            "outside coordinator ATTACK/GUARD subset",
+        ):
+            self.coordinator.build_persistent_enemy_attack_guard_commands(
+                context,
+                mode_rolls_by_enemy_id={enemy_id: 0},
+                target_rolls_by_enemy_id={enemy_id: 0},
             )
 
     def test_terminal_victory_crosses_player_exp_threshold_atomically(self):
