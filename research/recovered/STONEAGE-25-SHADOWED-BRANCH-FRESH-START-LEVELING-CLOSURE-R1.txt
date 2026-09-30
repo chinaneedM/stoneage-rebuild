@@ -1,0 +1,16 @@
+StoneAge shadowed-branch fresh-start leveling-to-target audit — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+PINNED_SOURCE_FACT|defeated_enemy_exp_level_difference_floor=1|level_up_free_stat_allocation_optional=1|ordinary_pve_battle_preserves_world_position=1
+RULE|birth/target levels, EXP values, encounter/enemy/group ids, source coordinates and route floor ids are withheld
+RULE|ordered witness is one concrete one-hit source cell that is coordinate-reachable from its fresh-start hometown and has a directed recovered classic-Warp coordinate continuation to the award NPC
+RULE|repetition is existential: reuse the same legal one-enemy, weak-enemy-roll, player-first and successful-hit outcomes; unspent level-up points preserve the witness STR/DEX while each kill remains positive EXP
+PREREQUISITE_LEVELING_REWARD_CHAIN|witness=1
+COUNT|combat_witness_variants|16
+COUNT|ordered_source_to_award_witnesses|16
+COUNT|ordered_source_hometowns|1
+COUNT|ambiguous_encounter_keys|0
+COUNT|unresolved_reverse_map_floors|0
+FRESH_START_LEVELING_TO_TARGET|witness=1
+GUARANTEED_OR_EFFICIENT_LEVELING|closed=0|reason=existential_rng_sequence_only
+RESOLUTION|SHADOWED_BRANCH_FRESH_START_LEVELING_TO_TARGET_CLOSED

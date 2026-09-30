@@ -3,10 +3,11 @@ SEMANTIC_SOURCE_VERSION|recovered25
 EVIDENCE_ROLE|LATER_RECOVERED
 PINNED_SOURCE_CONTROL|battle_newpower_enabled=1|npcenemy_addpower_enabled=1|ordinary_dodge_cap_percent=75|normal_enemy_ai_weighted_actions=1|counter_requires_surviving_target=1
 RULE|enemy/group/template ids, levels, stats, coordinates, player allocation values and damage values are withheld
-RULE|witness requires a coordinate-valid fresh-start hometown, positive-EXP low-level source, one-enemy legal encounter outcome, skill-free/counter-free enemy template, legal enemy birth rolls, legal 20-point new-character allocation, player-first legal initiative and ordinary one-hit KO without equipment/pet/item/critical/skill
+RULE|witness requires a coordinate-valid fresh-start hometown, positive-EXP low-level source, one-enemy legal encounter outcome, fixed-descendant normal enemy AI with a positive ordinary-attack branch weight, legal enemy birth rolls, legal 20-point new-character allocation, player-first legal initiative and ordinary one-hit KO without equipment/pet/item/critical/skill
 RULE|NPCENEMY_ADDPOWER minimum legal defense adjustment is zero under the fixed-descendant integer expression; no favorable negative modifier is invented
 COUNT|coordinate_valid_hometowns|2
 COUNT|low_level_source_rows|44
+PREREQUISITE_LEVELING_REWARD_CHAIN|witness=1
 COUNT|unique_candidate_variants|16
 COUNT|ordinary_attack_ai_candidate_variants|16
 COUNT|one_hit_witness_variants|16
