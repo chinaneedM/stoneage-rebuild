@@ -3943,6 +3943,11 @@ def resolve_ordinary_round(
     for carried_slot,carried_command in command_by_slot.items():
         if int(carried_command.command1) != BATTLE_COM_S_CHARGE:
             continue
+        if (
+            carried_slot in exited_slots
+            or int(hp_by_slot.get(carried_slot,0)) <= 0
+        ):
+            continue
         carried_id=str(by_slot[carried_slot].participant_id)
         carried_commands[carried_id]=carried_command
         effects=setup_effects.get(carried_id)
