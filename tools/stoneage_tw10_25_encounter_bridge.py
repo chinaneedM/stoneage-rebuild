@@ -31,6 +31,21 @@ def _int(row: Mapping[str, Any], key: str, default: int | None = None, *aliases:
     return int(value)
 
 
+def _text(
+    row: Mapping[str, Any],
+    key: str,
+    default: str = "",
+    *aliases: str,
+) -> str:
+    source_key = next((candidate for candidate in (key, *aliases) if candidate in row), None)
+    if source_key is None:
+        return str(default)
+    value = row[source_key]
+    if value is None:
+        return str(default)
+    return str(value)
+
+
 def _slots(
     row: Mapping[str, Any],
     id_prefix: str,
@@ -86,6 +101,7 @@ class EnemyVariantBridge:
     style: int
     capturable: bool
     drop_slots: tuple[tuple[int, int], ...] = ()
+    tactics_option: str = ""
 
     @classmethod
     def from_enemy(cls, row: Mapping[str, Any]) -> "EnemyVariantBridge":
@@ -112,6 +128,12 @@ class EnemyVariantBridge:
                     _int(row, f"ITEMPROB{slot}", 0),
                 )
                 for slot in range(1, 11)
+            ),
+            tactics_option=_text(
+                row,
+                "TACTICSOPTION",
+                "",
+                "TACTICS_OPTION",
             ),
         )
 
