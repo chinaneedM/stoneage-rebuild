@@ -4200,3 +4200,32 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - exact recovered25 `sa_2903.exe` machine-code identity proof = **not established**.
 - **RECOVERED25_CLIENT_HITMAP_ALGORITHM_PROVENANCE_R1 = CLOSED_AS_DESCENDANT_STABLE_RECONSTRUCTION_PROFILE.**
 - Next Phase-1 priority: implement a recovered25 client-DAT collision provider for the **191** server-uncovered floors using this explicitly versioned descendant-stable profile and the same-bundle `adrn_15.bin`. Keep its provenance distinct from the exact server LS2MAP provider. Then compose a unified collision router that yields a verdict for all **826** materializable floors without silently changing evidence class.
+
+
+## Phase 1 unified recovered25 collision routing — 2026-09-30
+
+- The recovered25 runtime collision seam now closes across the entire **826-floor** materializable topology without flattening evidence classes.
+- Canonical implementation layers:
+  - `tools/stoneage_client_hitmap_core.py` — provenance-neutral audited descendant-stable client hit-map semantics;
+  - `tools/stoneage_recovered25_client_collision_provider.py` — same-bundle recovered25 DAT + `adrn_15.bin` adapter for server gaps;
+  - `tools/stoneage_recovered25_collision_router.py` — provenance-bearing floor router;
+  - `Recovered25LocalRuntimeStack` — composes server provider + client fallback + router when the recovered ADRN path is supplied;
+  - `LocalRuntimeSessionCoordinator.walk_one_cell_with_runtime_collision()` — the single unified movement entry point.
+- Routing is strict and disjoint:
+  - server-routed floors = **635**;
+  - client descendant-stable reconstruction floors = **191**;
+  - total routed floors = **826**;
+  - provider overlap = **0**;
+  - unrouted floors = **0**.
+- Server routing retains recovered LS2MAP + recovered `mapset.txt` semantics where that path is unambiguous.
+- Client fallback retains a different evidence class:
+  - recovered25 DAT tile/parts/event planes = same-bundle direct evidence;
+  - recovered25 `adrn_15.bin` = same-bundle direct evidence;
+  - algorithm profile = `RECOVERED25_DESCENDANT_STABLE_CLIENT_HITMAP_R1`;
+  - exact recovered25 `sa_2903.exe` machine-code identity proof = **0 / not claimed**.
+- Full bundle-backed validation: GitHub Actions **36721791457 = PASS**.
+- Updated derived stack report: `research/recovered/STONEAGE-25-LOCAL-RUNTIME-STACK-R1.txt` records **635 + 191 = 826**, **0** unrouted floors and a legal client-reconstruction movement witness.
+- Existing server-provider smoke independently retains a legal server-backed coordinator movement witness and fail-closed witness for its 191 unsupported floors.
+- Duplicate implementation seams introduced during parallel composition were removed: one neutral client hit-map core, one unified router, one canonical unified coordinator movement method remain.
+- **RECOVERED25_UNIFIED_COLLISION_ROUTING_R1 = CLOSED.**
+- Next Phase-1 priority: close the **dynamic occupancy / overability seam** above static collision routing. The unified router currently selects authoritative/reconstruction static collision by floor, while runtime characters/items/NPCs are a separate live-object layer. Audit the already recovered runtime placement/object model against the established character/item overability rules, then compose destination occupancy into unified movement without relabelling client static hit-map semantics as server semantics. Keep static collision provenance and dynamic object-overlap provenance separately inspectable.
