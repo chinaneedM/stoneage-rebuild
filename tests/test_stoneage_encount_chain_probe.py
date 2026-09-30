@@ -15,8 +15,8 @@ def item_row(iid):
     vals[ITEM_INDEX["name"]]="N";vals[ITEM_INDEX["id"]]=str(iid)
     return ",".join(vals)
 
-def enemy_row(enemyid,tempno,itemid,prefix=2):
-    chars=["Enemy",""]+([""] if prefix==3 else [])
+def enemy_row(enemyid,tempno,itemid,prefix=2,tactics_option="at:10;1;1|gu:1|es:1"):
+    chars=["Enemy",tactics_option]+([""] if prefix==3 else [])
     nums=[0]*31
     nums[0]=enemyid;nums[1]=tempno;nums[2]=1;nums[3]=5
     nums[4]=2;nums[5]=1;nums[11]=itemid;nums[21]=100
@@ -55,6 +55,15 @@ class EncountChainProbeTests(unittest.TestCase):
             self.assertEqual(r["drop_missing"],[])
             self.assertEqual(r["cond_missing"],[])
             self.assertEqual(r["enemy_prefix"],2)
+            self.assertEqual(
+                r["enemies"][0]["tactics_option"],
+                "at:10;1;1|gu:1|es:1",
+            )
+            self.assertEqual(r["tactics_valid"],1)
+            self.assertEqual(
+                r["tactics_action_signatures"]["at+gu+es"],
+                1,
+            )
             buf=io.StringIO()
             with contextlib.redirect_stdout(buf):emit(d,setup)
             self.assertIn("ENEMY_DROP_ITEM_REF|unique=1|itemset_ids=1|matched=1|missing=0",buf.getvalue())
