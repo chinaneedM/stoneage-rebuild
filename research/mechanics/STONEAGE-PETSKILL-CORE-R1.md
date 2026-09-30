@@ -281,6 +281,17 @@ gBattleDuckModyfy   = HIGH(COM3)
 
 So missing the multiplier marker can produce a zero damage multiplier in this fixed implementation.
 
+The fixed physical executor also pins the application order:
+
+1. HIGH(COM3) is loaded into the action-local dodge modifier before target dodge is checked;
+2. the dodge modifier is added in percentage points before the source converts the probability to its per-10000 scale;
+3. LOW(COM3) becomes the action-local damage multiplier;
+4. that multiplier is applied after critical/base damage, GUARD adjustment, minimum-damage handling and Guardian zero-damage correction;
+5. it is applied before damage-reaction and later ride-pet sharing consume the resulting damage;
+6. both Mighty globals are reset before the ordinary counter chain, so counters do not inherit the initiating Mighty modifiers.
+
+This makes Mighty a single-hit ordinary physical specialization, not a multi-hit or persistent-status mechanic.
+
 ## Ordinary status-change attack
 
 The handler:
