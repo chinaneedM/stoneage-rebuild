@@ -949,6 +949,7 @@ class LocalRuntimeSessionCoordinator:
         allow_escape: bool = False,
         allow_basic_skill: bool = False,
         allow_statuschange_skill: bool = False,
+        allow_powerbalance_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1100,7 +1101,9 @@ class LocalRuntimeSessionCoordinator:
                 commands[enemy_id] = BattleCommand(BATTLE_COM_ESCAPE)
                 continue
             if decision.kind == ENEMY_AI_SKILL and (
-                bool(allow_basic_skill) or bool(allow_statuschange_skill)
+                bool(allow_basic_skill)
+                or bool(allow_statuschange_skill)
+                or bool(allow_powerbalance_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1114,6 +1117,7 @@ class LocalRuntimeSessionCoordinator:
                     target_slot=int(decision.target_slot),
                     petskill_runtime=petskill_runtime,
                     allow_status_change=bool(allow_statuschange_skill),
+                    allow_power_balance=bool(allow_powerbalance_skill),
                 )
                 commands[enemy_id] = bridged.command
                 if bridged.setup_effects != BattleCommandSetupEffects():
@@ -1126,6 +1130,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("basic-petskill")
             if bool(allow_statuschange_skill):
                 allowed_parts.append("StatusChange")
+            if bool(allow_powerbalance_skill):
+                allowed_parts.append("PowerBalance")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1155,6 +1161,7 @@ class LocalRuntimeSessionCoordinator:
             allow_escape=allow_escape,
             allow_basic_skill=allow_basic_skill,
             allow_statuschange_skill=False,
+            allow_powerbalance_skill=False,
         ).commands
 
     def build_persistent_enemy_attack_guard_commands(
@@ -1284,9 +1291,10 @@ class LocalRuntimeSessionCoordinator:
 
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
         explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
-        plus recovered StatusChange. StatusChange keeps setup effects and all
-        status/application RNG explicit; every other callback remains
-        fail-closed.
+        plus recovered PowerBalance and StatusChange. PowerBalance carries
+        immediate work attack/defense setup effects into the ordinary physical
+        attack path; StatusChange keeps setup effects and all status/application
+        RNG explicit. Every other callback remains fail-closed.
         """
 
         state = context.persistent_battle_state
@@ -1350,6 +1358,7 @@ class LocalRuntimeSessionCoordinator:
             allow_escape=True,
             allow_basic_skill=True,
             allow_statuschange_skill=True,
+            allow_powerbalance_skill=True,
         )
         enemy_commands = enemy_batch.commands
         escaping_enemy_ids = {
