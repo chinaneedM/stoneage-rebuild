@@ -4344,5 +4344,28 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - A future allowed gate with non-empty `consumed_state` may still be discovered but is marked `execution_supported = false`; canonical execution continues to fail closed until that exact recovered mutation semantics is implemented.
 - Classic overlap-Warp remains exclusively in ordinary movement; no second unconditional Warp path was introduced.
 - Deterministic tests cover: no interaction outside source geometry, semantic/provenance-only discovery inside source geometry, denied/allowed eligibility, non-mutation during discovery, dispatch through the canonical executor, and future-mutation unsupported signaling.
-- **LOCAL_RUNTIME_INTERACTION_DISCOVERY_DISPATCH_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
-- Next Phase-1 priority after CI closure: define the minimal **application command/result facade** needed by a future renderer/input adapter to drive new game, continue, save, current-region read, one-cell movement and discovered interaction dispatch without importing recovered25-specific modules. Keep the facade engine-neutral and do not select Godot/Unity or create UI assets yet.
+- Remote validation: local runtime session coordinator GitHub Actions **36737733087 = PASS**.
+- **LOCAL_RUNTIME_INTERACTION_DISCOVERY_DISPATCH_R1 = CLOSED.**
+- The application command/result facade was implemented immediately after interaction-discovery closure; see the following section.
+
+
+## Phase 1 engine-neutral local application facade — 2026-09-30
+
+- A narrow presentation/input boundary now sits above `LocalRuntimeSessionCoordinator`: `tools/stoneage_local_application_facade.py`.
+- The facade has no recovered25-specific imports. A future engine adapter can drive the runtime without importing world-profile adapters, collision providers, recovered NPC parsers, bootstrap derivation tools or save codecs.
+- R1 facade surface is intentionally small:
+  - new game;
+  - continue;
+  - save;
+  - current-region read;
+  - combined read view = authoritative session + materialized current region + discovered semantic interactions;
+  - one-cell movement through the canonical unified collision/occupancy path;
+  - state-gated interaction discovery;
+  - semantic interaction dispatch.
+- Movement cannot bypass collision authority: the facade does not expose the lower-level explicit `entry_allowed` seam and always calls `walk_one_cell_with_runtime_collision()`.
+- Interaction dispatch cannot bypass recovered geometry/gates: it delegates to the coordinator dispatcher, which revalidates source geometry and live eligibility.
+- The facade exposes no raw recovered source rectangle, NPC argument string, collision decoder or direct mutable runtime registry.
+- No renderer, window toolkit, scene graph, input library, audio layer or asset pipeline has been selected.
+- Design record: `docs/LOCAL-APPLICATION-FACADE-R1.md`.
+- **LOCAL_APPLICATION_FACADE_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Next Phase-1 priority after CI closure: define the first **engine-adapter contract** at the semantic command/event level (input intents in; facade results/view-model updates out) while remaining engine-agnostic. Do not select a renderer yet; first make the adapter boundary testable so later Godot/Unity evaluation is an implementation choice rather than a core-runtime dependency.
