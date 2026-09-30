@@ -23,10 +23,14 @@ from tools.stoneage_enemy_spawn_model import (
     EnemyBirthRolls,
     SpawnedEnemy,
 )
+from tools.stoneage_enemy_ai_petskill_bridge import (
+    resolve_enemy_ai_basic_petskill_command,
+)
 from tools.stoneage_enemy_ai_model import (
     ATTACK as ENEMY_AI_ATTACK,
     ESCAPE as ENEMY_AI_ESCAPE,
     GUARD as ENEMY_AI_GUARD,
+    SKILL as ENEMY_AI_SKILL,
     EnemyAiTarget,
     resolve_common_normal_enemy_ai,
 )
@@ -909,13 +913,17 @@ class LocalRuntimeSessionCoordinator:
         mode_rolls_by_enemy_id: Mapping[str, int],
         target_rolls_by_enemy_id: Mapping[str, int] | None = None,
         allow_escape: bool = False,
+        allow_basic_skill: bool = False,
     ) -> Mapping[str, BattleCommand]:
         """Derive the evidence-closed common enemy-AI command subset.
 
         ATTACK/GUARD are always available here. ESCAPE is emitted only when the
         caller explicitly opens that execution seam; its probability context
         and RAND(1,100) input are handled separately by the round coordinator.
-        Skill, magic-failure and unresolved extension paths remain fail-closed.
+        A selected wa slot is admitted only when the caller opens the basic
+        pet-skill seam and the recovered skill resolves to NormalAttack or
+        NormalGuard. All other skill, magic-failure and extension paths remain
+        fail-closed.
         """
 
         state = context.persistent_battle_state
@@ -1055,11 +1063,27 @@ class LocalRuntimeSessionCoordinator:
             if decision.kind == ENEMY_AI_ESCAPE and bool(allow_escape):
                 commands[enemy_id] = BattleCommand(BATTLE_COM_ESCAPE)
                 continue
-            allowed = (
-                "ATTACK/GUARD/ESCAPE"
-                if bool(allow_escape)
-                else "ATTACK/GUARD"
-            )
+            if decision.kind == ENEMY_AI_SKILL and bool(allow_basic_skill):
+                petskill_runtime = getattr(self.stack, "petskill_runtime", None)
+                if petskill_runtime is None:
+                    raise ValueError(
+                        "enemy AI pet-skill selection requires recovered "
+                        "pet-skill runtime"
+                    )
+                bridged = resolve_enemy_ai_basic_petskill_command(
+                    spawned,
+                    skill_slot=int(decision.skill_slot),
+                    target_slot=int(decision.target_slot),
+                    petskill_runtime=petskill_runtime,
+                )
+                commands[enemy_id] = bridged.command
+                continue
+            allowed_parts = ["ATTACK", "GUARD"]
+            if bool(allow_escape):
+                allowed_parts.append("ESCAPE")
+            if bool(allow_basic_skill):
+                allowed_parts.append("basic-petskill")
+            allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
                 f"{allowed} subset: {enemy_id}:{decision.kind}"
@@ -1081,6 +1105,7 @@ class LocalRuntimeSessionCoordinator:
             mode_rolls_by_enemy_id=mode_rolls_by_enemy_id,
             target_rolls_by_enemy_id=target_rolls_by_enemy_id,
             allow_escape=False,
+            allow_basic_skill=False,
         )
 
     def resolve_persistent_attack_guard_wait_round_with_enemy_ai(
@@ -1182,11 +1207,12 @@ class LocalRuntimeSessionCoordinator:
         field_power: int = 0,
         tie_break_order: Sequence[str] | None = None,
     ) -> tuple[LocalRuntimeBattleContext, PersistentRoundResult]:
-        """Advance a common enemy-AI round including source-shaped ESCAPE.
+        """Advance the currently executable common enemy-AI round.
 
-        Enemy RARE comes from the recovered enemybase template. Escape RAND and
-        opponent ABIO state remain explicit caller inputs because neither RNG nor
-        an authoritative ABIO container belongs to this coordinator.
+        ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
+        explicit RAND/ABIO inputs. A wa slot may resolve only through the
+        recovered NormalAttack/NormalGuard pet-skill bridge. Other callbacks
+        remain fail-closed.
         """
 
         state = context.persistent_battle_state
@@ -1248,6 +1274,7 @@ class LocalRuntimeSessionCoordinator:
             mode_rolls_by_enemy_id=enemy_mode_rolls,
             target_rolls_by_enemy_id=enemy_target_rolls,
             allow_escape=True,
+            allow_basic_skill=True,
         )
         escaping_enemy_ids = {
             str(participant_id)
