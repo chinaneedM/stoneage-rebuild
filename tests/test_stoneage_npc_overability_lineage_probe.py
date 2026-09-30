@@ -5,6 +5,8 @@ from tools.stoneage_npc_overability_lineage_probe import (
     STATIC_BLOCKING,
     STATIC_OVERABLE,
     UNRESOLVED,
+    default_chain_closed,
+    default_player_overable_value,
     _function_body,
     classify_init_and_file,
     overability_setter_values,
@@ -57,6 +59,65 @@ class NpcOverabilityLineageProbeTests(unittest.TestCase):
         self.assertEqual(
             classify_init_and_file(init_values=(), file_values=(0,)),
             UNRESOLVED,
+        )
+
+    def test_default_player_overable_decodes_fourth_flag_bit(self):
+        default_player = r'''
+        static Char player = {
+          FALSE,
+          {0},
+          { {""} },
+          { SETFLG(1,1,1,1,1,1,0,0), SETFLG(0,0,0,0,0,0,0,1) }
+        };
+        '''
+        char_base = r'''
+        typedef enum {
+          CHAR_ISATTACK,
+          CHAR_ISATTACKED,
+          CHAR_ISOVER,
+          CHAR_ISOVERED,
+          CHAR_HAVEHEIGHT,
+          CHAR_ISVISIBLE,
+          CHAR_ISTRANSPARENT,
+          CHAR_ISFLYING
+        } CHAR_DATAFLG;
+        '''
+        self.assertEqual(
+            default_player_overable_value(
+                default_player_source=default_player,
+                char_base_source=char_base,
+            ),
+            1,
+        )
+
+    def test_default_chain_requires_player_flags_before_functionset_init(self):
+        char_data = r'''
+        static defaultCharacterGet CHAR_defaultCharacterGet[] = {
+          {1, &player, &lvplayer00, 0},
+          {2, &player, &lvplayer00, 0},
+        };
+        BOOL CHAR_getDefaultChar(Char *nc, int image) {
+          int j;
+          Char *defaultchar = &player;
+          for (j = 0; j < arraysizeof(nc->flg); j++)
+            nc->flg[j] = defaultchar->flg[j];
+          return TRUE;
+        }
+        '''
+        npcgen = r'''
+        static BOOL NPC_generateNPC(int a, int b) {
+          Char one;
+          CHAR_getDefaultChar(&one, 1);
+          NPC_copyFunctionSetToChar(0, &one);
+          CHAR_initCharOneArray(&one);
+          return TRUE;
+        }
+        '''
+        self.assertTrue(
+            default_chain_closed(
+                char_data_source=char_data,
+                npcgen_source=npcgen,
+            )
         )
 
     def test_function_body_balances_nested_braces(self):
