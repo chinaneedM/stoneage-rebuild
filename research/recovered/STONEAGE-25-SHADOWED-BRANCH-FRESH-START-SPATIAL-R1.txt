@@ -1,0 +1,21 @@
+StoneAge shadowed-branch fresh-start floor reachability — R1
+SEMANTIC_SOURCE_VERSION|recovered25
+EVIDENCE_ROLE|LATER_RECOVERED
+PINNED_SOURCE_CONTROL|normal_hometowns=4|delbornplace_define_enabled=0|museum_define_enabled=0
+RULE|four normal hometown floors and two later compile-time spawn variants are tested; spawn coordinates and intermediate floor ids are withheld from this report
+RULE|testing later variants does not claim recovered25 enabled those compile options; it tests whether that ambiguity matters
+COUNT|normal_hometown_candidates|4
+COUNT|normal_hometown_reachable|4
+COUNT|later_variant_candidates|2
+COUNT|later_variant_reachable|0
+COUNT|all_source_known_candidates|6
+COUNT|all_source_known_reachable|4
+SPAWN_FLOOR_WITNESS|ordinal=1|class=NORMAL_HOMETOWN|reachable=1|hops=4|floor_id_withheld=1|intermediate_floors_withheld=1
+SPAWN_FLOOR_WITNESS|ordinal=2|class=NORMAL_HOMETOWN|reachable=1|hops=2|floor_id_withheld=1|intermediate_floors_withheld=1
+SPAWN_FLOOR_WITNESS|ordinal=3|class=NORMAL_HOMETOWN|reachable=1|hops=9|floor_id_withheld=1|intermediate_floors_withheld=1
+SPAWN_FLOOR_WITNESS|ordinal=4|class=NORMAL_HOMETOWN|reachable=1|hops=9|floor_id_withheld=1|intermediate_floors_withheld=1
+SPAWN_FLOOR_WITNESS|ordinal=5|class=LATER_VARIANT|reachable=0|hops=-1|floor_id_withheld=1|intermediate_floors_withheld=1
+SPAWN_FLOOR_WITNESS|ordinal=6|class=LATER_VARIANT|reachable=0|hops=-1|floor_id_withheld=1|intermediate_floors_withheld=1
+NORMAL_FRESH_START_FLOOR_CHAIN|witness=1
+ALL_SOURCE_KNOWN_SPAWN_VARIANTS_FLOOR_CHAIN|witness=0
+RESOLUTION|SHADOWED_BRANCH_FRESH_START_FLOOR_REACHABILITY_AUDITED
