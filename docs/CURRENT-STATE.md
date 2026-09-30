@@ -3874,3 +3874,50 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **ALL_HOMETOWNS_FULL_WORLD remains OPEN.**
 - Next deterministic seam: audit coordinate-level recovered **WarpMan/FMWarpMan spatial bridge candidates** from the actually reachable fresh-start components. Dialogue facing, FREE/action/fee, family and schedule gates remain separate; a spatial candidate must not be promoted to a legal fresh-start route until those gates are proven. If no dialogue-warp bridge exists, advance to Airplane boarding/route component geometry.
 
+## Phase 1 all-hometowns legal fresh-start full-world closure — 2026-09-30
+
+- The previously OPEN all-hometowns gap is now closed by an ordered recovered25 state search rather than by joining independent floor-level facts.
+- The two normal hometowns that fail the classic-Warp coordinate model each have exactly one selected recovered `WarpMan` spatial bridge into the award-reachable component. Both selected bridges use the same single `ITEM = ...` FREE predicate; their WarpMan fee is disabled, no schedule gate is present, and fresh-login party state is `CHAR_PARTY_NONE`.
+- Legitimate bridge-item acquisition is closed through recovered ItemShop state:
+  - target-visible ItemShop placements = **2**;
+  - normal-purchase ItemShop placements = **2**;
+  - each failed hometown has exactly **1** ordered fresh-start route from spawn to an affordable qualifying shop and onward to its selected WarpMan;
+  - starting Stone covers both the bridge-item purchase and the later already-proven ExChangeMan award fee on both routes;
+  - unresolved map floors on both ordered shop routes = **0**.
+- Purchase/execution prerequisites are closed without assuming an empty backpack:
+  - fixed descendant fresh-character inventory capacity = **15** slots;
+  - recovered25 exposes all **15** starter ITEM configuration keys, of which **13** are positive;
+  - therefore at least **2** item slots remain guaranteed empty even if every configured starter item is created successfully;
+  - both selected WarpMan arguments contain `FreeMsg`;
+  - both selected WarpMan arguments contain **0** `Action_RunDoEventAction` side-effect fields;
+  - `FRESH_START_ALL_FAILED_HOMETOWNS_WARPMAN_EXECUTION_PREREQUISITES|witness=1`.
+- The final all-hometowns probe preserves combat witness identity per spawn and searches a component/state graph from each real hometown coordinate. It requires a legal repeatable positive-EXP / one-hit existential combat witness before the award; the two bridged hometowns must additionally obtain the shop item and traverse the exact selected WarpMan edge before reaching the award interaction component.
+- Recovered25 ordered results:
+  - hometown **1**: **16** combat witnesses; ordered = **1**; milestones = `COMBAT`; visited states = **107**; unresolved maps = **0**;
+  - hometown **2**: **16** combat witnesses; ordered = **1**; milestones = `COMBAT`; visited states = **107**; unresolved maps = **0**;
+  - hometown **3**: **28** combat witnesses; ordered = **1**; milestones = `COMBAT > SHOP > WARPMAN`; visited states = **446**; unresolved maps = **0**;
+  - hometown **4**: **28** combat witnesses; ordered = **1**; milestones = `SHOP > COMBAT > WARPMAN`; visited states = **442**; unresolved maps = **0**.
+- Joined prerequisites are all positive:
+  - bridge shop/execution = **1**;
+  - fresh-start leveling reward chain = **1**;
+  - downstream award-to-shadowed-branch progression = **1**;
+  - materializable recovered world closure = **1**.
+- Final recovered25 result:
+  - `FRESH_START_ALL_HOMETOWNS_ORDERED_PROGRESSION|witness=1`;
+  - `ALL_HOMETOWNS_FULL_WORLD|closed=1`.
+- Scope remains existential and version-tagged. This does **not** make WarpMan unconditional, does not prove guaranteed combat or transport RNG, and does not make an efficiency/pacing claim. It proves that each of the four normal recovered25 fresh-start hometowns has at least one legal ordered progression into the complete **826-floor materializable recovered world** under the pinned descendant semantics and recovered data.
+- New/updated artifacts:
+  - `tools/stoneage_shadowed_branch_fresh_start_warpman_bridge_shop_route_probe.py`;
+  - `tests/test_stoneage_shadowed_branch_fresh_start_warpman_bridge_shop_route_probe.py`;
+  - `research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-SHOP-ROUTE-R1.txt`;
+  - `tools/stoneage_shadowed_branch_fresh_start_all_hometown_progression_probe.py`;
+  - `tests/test_stoneage_shadowed_branch_fresh_start_all_hometown_progression_probe.py`;
+  - `research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt`.
+- Validation:
+  - GitHub Actions **36703000224 = PASS** closed the strict shop / inventory / WarpMan execution prerequisites;
+  - GitHub Actions **36705174632 = PASS** closed the four-hometown ordered state search;
+  - derived-report remote commit = `8be51231c8b417ee5f9c19f5e900f8cbca750fb1`.
+- **FRESH_START_ALL_HOMETOWNS_ORDERED_PROGRESSION_R1 = CLOSED.**
+- **ALL_HOMETOWNS_FULL_WORLD = CLOSED.**
+- Next Phase-1 priority: stop extending this transport proof unless contradictory evidence appears. Promote the now-closed recovered world + four-hometown start/progression semantics into a single engine-neutral, version-tagged runtime bootstrap contract suitable for the local-first single-player implementation. Keep Taiwan-v1 historical membership separate from recovered25/later bridge content and preserve every state-gated transition explicitly.
+
