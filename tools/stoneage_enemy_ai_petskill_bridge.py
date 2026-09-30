@@ -8,6 +8,7 @@ Currently supported:
 - PETSKILL_None
 - PETSKILL_NormalAttack
 - PETSKILL_NormalGuard
+- PETSKILL_PowerBalance (explicit opt-in dispatcher branch)
 - PETSKILL_StatusChange (explicit opt-in dispatcher branch)
 
 All other stable-common and macro-gated callbacks remain fail-closed.
@@ -27,6 +28,7 @@ from tools.stoneage_battle_round_model import (
 from tools.stoneage_enemy_spawn_model import SpawnedEnemy
 from tools.stoneage_petskill_core_model import (
     parse_status_skill,
+    power_balance_command,
     status_change_command,
 )
 from tools.stoneage_petskill_round_bridge import (
@@ -41,6 +43,7 @@ from tools.stoneage_recovered25_petskill_runtime import (
 NONE = "PETSKILL_None"
 NORMAL_ATTACK = "PETSKILL_NormalAttack"
 NORMAL_GUARD = "PETSKILL_NormalGuard"
+POWER_BALANCE = "PETSKILL_PowerBalance"
 STATUS_CHANGE = "PETSKILL_StatusChange"
 
 BASIC_AI_CALLBACKS = frozenset({NONE, NORMAL_ATTACK, NORMAL_GUARD})
@@ -143,6 +146,7 @@ def resolve_enemy_ai_supported_petskill_command(
     target_slot: int,
     petskill_runtime: Recovered25PetSkillRuntime,
     allow_status_change: bool = False,
+    allow_power_balance: bool = False,
 ) -> EnemyAiPetSkillCommand:
     """Dispatch only callbacks whose full execution boundary is admitted."""
 
@@ -159,6 +163,13 @@ def resolve_enemy_ai_supported_petskill_command(
             target_slot=target_slot,
             petskill_runtime=petskill_runtime,
         )
+    if entry.function_name == POWER_BALANCE and bool(allow_power_balance):
+        return resolve_enemy_ai_powerbalance_petskill_command(
+            spawned,
+            skill_slot=skill_slot,
+            target_slot=target_slot,
+            petskill_runtime=petskill_runtime,
+        )
     if entry.function_name == STATUS_CHANGE and bool(allow_status_change):
         return resolve_enemy_ai_statuschange_petskill_command(
             spawned,
@@ -169,6 +180,67 @@ def resolve_enemy_ai_supported_petskill_command(
     raise ValueError(
         "enemy AI selected pet-skill callback outside admitted execution "
         f"subset: {entry.function_name}"
+    )
+
+
+def resolve_enemy_ai_powerbalance_petskill_command(
+    spawned: SpawnedEnemy,
+    *,
+    skill_slot: int,
+    target_slot: int,
+    petskill_runtime: Recovered25PetSkillRuntime,
+) -> EnemyAiPetSkillCommand:
+    """Resolve recovered PETSKILL_PowerBalance into the ordinary attack seam."""
+
+    skill_slot, target_slot, entry = _resolved_entry(
+        spawned,
+        skill_slot=skill_slot,
+        target_slot=target_slot,
+        petskill_runtime=petskill_runtime,
+    )
+    if entry.function_name != POWER_BALANCE:
+        raise ValueError(
+            "enemy AI selected pet-skill callback outside PowerBalance "
+            f"execution subset: {entry.function_name}"
+        )
+
+    option_text = entry.unambiguous_cp950_big5_option()
+    if (
+        "攻%" not in option_text
+        or "防%" not in option_text
+        or "敏%" in option_text
+    ):
+        raise ValueError(
+            "recovered PowerBalance OPTION is outside closed attack/defense "
+            "marker grammar"
+        )
+
+    birth = spawned.birth
+    projection_fn = getattr(birth, "combat_projection", None)
+    if not callable(projection_fn):
+        raise ValueError(
+            "PowerBalance execution requires recovered enemy birth projection"
+        )
+    projection = projection_fn()
+    if "attack" not in projection or "defense" not in projection:
+        raise ValueError(
+            "enemy birth projection lacks fixed attack/defense values"
+        )
+
+    payload = power_balance_command(
+        target_slot,
+        option_text,
+        fixed_attack=int(projection["attack"]),
+        fixed_defense=int(projection["defense"]),
+    )
+    submission = bridge_stable_pet_skill_command(payload)
+    return EnemyAiPetSkillCommand(
+        participant_id=str(spawned.participant.participant_id),
+        skill_slot=skill_slot,
+        skill_id=int(entry.skill_id),
+        callback=entry.function_name,
+        command=submission.battle_command,
+        setup_effects=submission.setup_effects,
     )
 
 
