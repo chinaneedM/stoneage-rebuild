@@ -295,6 +295,49 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         self.assertTrue(allowed.static_collision.allowed)
         self.assertTrue(allowed.dynamic_collision.allowed)
 
+    def test_runtime_collision_queries_live_occupancy_registry(self):
+        session = self.coordinator.new_game(1)
+        self.stack.collision_router = SimpleNamespace(
+            routed_step_verdict=lambda **_kwargs: SimpleNamespace(
+                decision=CollisionDecision(True, "static_allowed"),
+                route=SimpleNamespace(
+                    provider_kind="RECOVERED25_SERVER_COLLISION",
+                    evidence_class="LATER_RECOVERED_SERVER_PAYLOAD_AND_MAPSET",
+                    semantic_profile="RECOVERED25_SERVER_LS2MAP_MAPSET_R1",
+                    exact_recovered25_binary_proof=None,
+                ),
+            )
+        )
+        self.coordinator.occupancy_registry.register_character(
+            object_id="char:77",
+            position=MapPosition(1, 0, 1),
+            overable=False,
+            provenance="test:live-character",
+        )
+        blocked = self.coordinator.walk_one_cell_with_runtime_collision(
+            session,
+            destination=MapPosition(1, 0, 1),
+        )
+        self.assertFalse(blocked.resolution.moved)
+        self.assertEqual(blocked.collision.reason, "non_overable_character")
+        self.assertEqual(blocked.live_occupancy_object_ids, ("char:77",))
+        self.assertEqual(
+            blocked.live_occupancy_provenance,
+            ("test:live-character",),
+        )
+        self.assertEqual(
+            blocked.live_occupancy_registry_profile,
+            "STONEAGE_LOCAL_LIVE_OCCUPANCY_STATE_R1",
+        )
+
+        self.coordinator.occupancy_registry.set_overable("char:77", True)
+        allowed = self.coordinator.walk_one_cell_with_runtime_collision(
+            session,
+            destination=MapPosition(1, 0, 1),
+        )
+        self.assertTrue(allowed.resolution.moved)
+        self.assertTrue(allowed.dynamic_collision.allowed)
+
     def test_dynamic_occupancy_cannot_override_static_denial(self):
         session = self.coordinator.new_game(1)
         self.stack.collision_router = SimpleNamespace(
