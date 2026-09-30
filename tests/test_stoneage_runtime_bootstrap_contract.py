@@ -34,6 +34,9 @@ class RuntimeBootstrapContractTests(unittest.TestCase):
         cls.gate=_read("research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-GATE-R1.txt")
         cls.world=_read("research/recovered/STONEAGE-25-STATE-GATED-RUNTIME-WORLD-REACHABILITY-R1.txt")
         cls.fresh_world=_read("research/recovered/STONEAGE-25-FRESH-START-STATE-GATED-RUNTIME-WORLD-REACHABILITY-R1.txt")
+        cls.ordered_world=_read("research/recovered/STONEAGE-25-ORDERED-RUNTIME-WORLD-REACHABILITY-R1.txt")
+        cls.ingress_gate=_read("research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-GATING-R1.txt")
+        cls.ingress_free=_read("research/recovered/STONEAGE-25-SHADOWED-BRANCH-WARPMAN-FREE-R1.txt")
 
     def test_version_and_provenance_are_not_conflated(self):
         c=self.contract
@@ -56,10 +59,16 @@ class RuntimeBootstrapContractTests(unittest.TestCase):
         self.assertEqual(w["materializable_floor_count"],826)
         self.assertEqual(w["fresh_start_state_gated_reachable_floor_count"],826)
         self.assertEqual(w["remaining_unreachable_floor_count"],0)
+        self.assertEqual(w["active_classic_warp_count"],2724)
+        self.assertEqual(w["deferred_conditional_classic_warp_count"],14)
+        self.assertEqual(w["unresolved_cross_file_classic_warp_sources"],0)
         self.assertIn("COUNT|materializable_floor_ids|826",self.fresh_world)
         self.assertIn("COUNT|fresh_start_state_gated_reachable_floor_ids|826",self.fresh_world)
         self.assertIn("COUNT|fresh_start_remaining_unreachable_floor_ids|0",self.fresh_world)
         self.assertIn("COUNT|remaining_unreachable_floor_ids|0",self.world)
+        self.assertIn("COUNT|active_runtime_warps|2724",self.ordered_world)
+        self.assertIn("COUNT|deferred_conditional_warps|14",self.ordered_world)
+        self.assertIn("COUNT|unresolved_cross_file_sources|0",self.ordered_world)
 
     def test_all_hometown_routes_match_final_ordered_report(self):
         report_rows=_route_rows(self.all_hometown)
@@ -101,7 +110,12 @@ class RuntimeBootstrapContractTests(unittest.TestCase):
         row=next(x for x in self.contract["state_gated_transitions"] if x["id"]=="shadowed_branch_ingress")
         self.assertFalse(row["unconditional"])
         self.assertEqual((row["source_floor"],row["destination_floor"]),(811,820))
+        self.assertEqual(row["gate"],"DERIVED_RECOVERED25_FREE_PREDICATES")
+        self.assertEqual(row["predicate_shape"],["LV_GT","LV_LT","ITEM_EQ"])
+        self.assertTrue(row["progression_witness_closed"])
         self.assertIn("GATED_TRANSPORT|source_floor=811|destination_floor=820|progression_witness=1",self.world)
+        self.assertIn("free_condition_atoms=3",self.ingress_gate)
+        self.assertIn("keys=ITEM,LV|operators=<,=,>",self.ingress_free)
 
 
 if __name__=="__main__":
