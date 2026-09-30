@@ -1003,6 +1003,21 @@ class LocalRuntimeSessionCoordinator:
             result,
         )
 
+    def settle_persistent_defeat(
+        self,
+        context: LocalRuntimeBattleContext,
+    ) -> LocalRuntimeSessionState:
+        """Settle one terminal defeat through the recovered battle-exit seam."""
+
+        state = context.persistent_battle_state
+        if state is None:
+            raise ValueError("battle context has no persistent battle state")
+        if state.phase != "finished" or state.result != "defeat":
+            raise ValueError("defeat settlement requires terminal defeat state")
+        return self.settle_persistent_group_battle_without_level_crossing(
+            context
+        )
+
     def settle_persistent_escape(
         self,
         context: LocalRuntimeBattleContext,

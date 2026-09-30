@@ -32,6 +32,9 @@ on:
       - research/mechanics/STONEAGE-BATTLE-CAPTURE-R1.md
       - tests/test_stoneage_pet_capture_model.py
       - tools/stoneage_pet_capture_model.py
+      - research/mechanics/STONEAGE-PLAYER-DEATH-REVIVAL-CORE-R1.md
+      - tests/test_stoneage_player_death_model.py
+      - tools/stoneage_player_death_model.py
       - tools/stoneage_battle_round_model.py
       - tools/stoneage_enemy_spawn_model.py
       - tools/stoneage_recovered25_enemybase_runtime.py
@@ -72,4 +75,5 @@ jobs:
             tests.test_stoneage_enemy_spawn_model \
             tests.test_stoneage_group_battle_runtime \
             tests.test_stoneage_singleplayer_battle_transition_runtime \
-            tests.test_stoneage_pet_capture_model -v
+            tests.test_stoneage_pet_capture_model \
+            tests.test_stoneage_player_death_model -v

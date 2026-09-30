@@ -4601,5 +4601,31 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - All coordinator battle settlement paths now use the working persistent payload when one exists, so successful captures survive battle completion.
 - No placeholder MP, skill list, EXP threshold, display name or AI/compliance state is fabricated.
 - Coordinator CI now watches/runs the standalone capture model and capture research seams in addition to the persistent group-battle regression.
-- **LOCAL_RUNTIME_PLAYER_CAPTURE_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Remote validation after the syntax-only test fix: coordinator **36753606390 = PASS**; golden contract on the capture commit **36753460790 = PASS**. The prior **36753460775** failure was an unmatched-parenthesis test syntax defect only.
+- **LOCAL_RUNTIME_PLAYER_CAPTURE_R1 = CLOSED.**
 - Next after CI: audit whether the existing capture-to-owned-pet adapter can be populated from recovered25 enemy/birth/petskill/EXP data without guessing fields; if not, keep complete captured-pet construction outside runtime and move to explicit defeat/death recovery integration.
+
+
+## Captured-pet automatic construction audit — 2026-10-01
+
+- The runtime transaction for capture is CLOSED, but automatic construction of a complete owned `PetActor` from the current recovered25 wild-enemy battle object is **not** closed.
+- Existing recovered bridges can reconstruct template identity, birth/growth identity, current combat HP/attack/defense/quick, elements, skill template IDs and PETRANK/ALLOCPOINT lineage.
+- However `build_reconstructed_pet_state()` still requires explicit unresolved runtime values including MP, max MP, EXP, max EXP, rename flag, free name and a resolved display name; capture evidence also copies current status/skill runtime fields that are not carried by the current `BattleParticipant`.
+- Enemybase name decoding remains OPEN for two CP950/Big5-divergent rows.
+- Therefore the coordinator continues to require a complete provenance-bearing caller-supplied `PetActor` on successful capture.
+- **CAPTURED_PET_AUTOCONSTRUCTION_R1 = OPEN_MISSING_CURRENT_STATE_FIELDS.**
+- No MP, skill runtime, EXP threshold, display name or visible-AI/compliance state may be fabricated to close this gap.
+
+
+## Phase 1 explicit battle defeat settlement — 2026-10-01
+
+- The next restoration seam is battle defeat/death recovery, not automatic captured-pet construction.
+- New coordinator entry: `settle_persistent_defeat(context)`, which accepts only terminal result `defeat`.
+- Regression drives an actual ordinary enemy ATTACK against a player WAIT with all commands/initiative/attack rolls explicit.
+- For the level-5 no-active-pet fixture, the already recovered stable normal-death model applies `CH_FIX_PLAYERDEAD=-2` with the <=10 level divisor 2, producing pending charm delta **-1**.
+- Terminal defeat must retain player HP 0 in battle state; settlement returns persistent HP **1**, applies charm 5 -> **4**, awards no pending EXP, preserves world position/flags, and leaves the original pre-battle session unchanged.
+- This closes only the battle/BATTLE_Exit defeat boundary.
+- Separate `core_Dying` field/player death behavior remains its own reconstruction seam: party discharge, equipment/gold drop requests, death count/status flags and resurrection are modeled, but exact launch-era client death-screen / return-to-record-point choreography remains OPEN.
+- Coordinator CI now watches/runs the player death/revival core.
+- **LOCAL_RUNTIME_BATTLE_DEFEAT_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Next after CI: integrate the closed `core_Dying` transition as a separate field-death transaction without inventing automatic savepoint movement; keep return-to-record-point as an explicit/open presentation/world-flow choice until direct evidence closes it.

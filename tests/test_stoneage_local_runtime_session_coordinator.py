@@ -100,6 +100,7 @@ def _battle_player_state() -> PersistentPlayerState:
                     "quick": 50,
                     "exp": 0,
                     "max_exp": 1000,
+                    "charm": 5,
                 }
             )
         )
@@ -977,6 +978,131 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         )
         self.assertEqual(settled.player_position, session.player_position)
         self.assertEqual(settled.world_flags, session.world_flags)
+
+    def test_enemy_attack_can_reach_defeat_and_settle_death_hp_charm_without_exp(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"defeat-route"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        player = replace(
+            context.battle.player,
+            hp=100,
+            max_hp=100,
+            defense=0,
+            quick=10,
+        )
+        enemy = replace(
+            context.battle.enemies[0],
+            attack=10000,
+            quick=200,
+        )
+        context = replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=player,
+                enemies=(enemy,),
+            ),
+        )
+        enemy_id = enemy.participant_id
+        context = self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player": 0, enemy_id: 10},
+        )
+        result_context, round_result = (
+            self.coordinator.resolve_persistent_attack_wait_round(
+                context,
+                commands={
+                    "player": BattleCommand(BATTLE_COM_WAIT),
+                    enemy_id: BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=0,
+                    ),
+                },
+                initiative_random_subtracts={
+                    "player": 0,
+                    enemy_id: 0,
+                },
+                profiles={
+                    "player": BattleCombatProfile(
+                        fixed_dex=10,
+                        fixed_luck=0,
+                        earth=0,
+                        water=0,
+                        fire=0,
+                        wind=0,
+                    ),
+                    enemy_id: BattleCombatProfile(
+                        fixed_dex=200,
+                        fixed_luck=0,
+                        earth=0,
+                        water=0,
+                        fire=0,
+                        wind=0,
+                    ),
+                },
+                attack_rolls={
+                    enemy_id: OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                        minimum_damage_roll_0_1=1,
+                    )
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        terminal = round_result.after
+        self.assertEqual(terminal.phase, "finished")
+        self.assertEqual(terminal.result, "defeat")
+        self.assertEqual(terminal.winning_side, 1)
+        self.assertEqual(terminal.hp_by_participant_id["player"], 0)
+        self.assertEqual(terminal.pending_player_charm_delta, -1)
+        self.assertEqual(
+            terminal.pending_exp_by_participant_id["player"],
+            0,
+        )
+
+        settled = self.coordinator.settle_persistent_defeat(
+            result_context
+        )
+        fields = settled.player_state.character.fields
+        self.assertEqual(fields["hp"], 1)
+        self.assertEqual(fields["exp"], 0)
+        self.assertEqual(fields["charm"], 4)
+        self.assertEqual(settled.player_position, session.player_position)
+        self.assertEqual(settled.world_flags, session.world_flags)
+
+        original = session.player_state.character.fields
+        self.assertEqual(original["hp"], 100)
+        self.assertEqual(original["exp"], 0)
+        self.assertEqual(original["charm"], 5)
+
+        with self.assertRaisesRegex(
+            ValueError,
+            "terminal defeat state",
+        ):
+            self.coordinator.settle_persistent_defeat(context)
 
     def test_capture_round_persists_complete_pet_in_working_snapshot_and_settlement(self):
         session = LocalRuntimeSessionState(

@@ -289,6 +289,34 @@ are not fully derivable from the current recovered25 runtime must be supplied by
 a provenance-bearing adapter. Missing or mismatched successful-capture payloads
 fail atomically.
 
+## 2I. Explicit defeat settlement boundary
+
+The coordinator now has an explicit semantic defeat finisher on top of the
+already recovered persistent battle state.
+
+`settle_persistent_defeat()` accepts only a terminal battle state whose result
+is `defeat`. It delegates to the same below-threshold persistent battle
+settlement used by the lower runtime, so battle-exit HP recovery and already
+reconstructed ordinary-death penalties remain authoritative there.
+
+A deterministic coordinator regression drives a real ordinary round:
+
+- player submits WAIT;
+- enemy submits ATTACK targeting player slot 0;
+- initiative and attack RNG are explicit;
+- the attack reduces player HP to zero;
+- the persistent battle state terminates as defeat;
+- the stable ordinary-death charm delta is already present in the state;
+- settlement returns player HP 1, no EXP reward, and the charm penalty;
+- the original pre-battle session remains unchanged.
+
+This is the **battle defeat/BATTLE_Exit** boundary only. It must not be
+collapsed into the separate field/player `core_Dying` lifecycle. The latter
+contains party discharge, equipment/gold-drop requests, death counter/status
+flags and an independently reconstructed resurrection helper. The exact client
+death-screen / return-to-record-point choreography remains OPEN and is not
+invented here.
+
 ## 3. State-gated dialogue transitions
 
 The three current recovered25 conditional transitions remain outside the unconditional classic-Warp graph.
