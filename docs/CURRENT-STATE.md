@@ -3766,3 +3766,36 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Validation: transport workflow GitHub Actions **36677139842 = PASS**; derived report commit **b557bac186ce83900f5d3f5fe2f0e1abb5a0838b**.
 - **SHADOWED_BRANCH_FRESH_START_STONE_R1 = CLOSED.**
 - Next deterministic seam: close **fresh-character spatial provenance**. Recover the actual new-character spawn floor/coordinate rule from recovered25/fixed source, then test directed runtime reachability from those birth positions to the key-item award floor and through the already closed coordinate/progression chain. Do not equate the existing 761-floor world seed set with a real player birth state.
+
+
+## Phase 1 fresh-start spatial provenance and direct-level boundary — 2026-09-30
+
+- Fresh-character spatial provenance is now separated into floor-level, coordinate-level existential, and all-hometown claims.
+- Pinned fixed-descendant source control for this baseline keeps `_DELBORNPLACE` and `_MUSEUM` disabled, so the four normal hometown entries in `CHAR_getInitElderPosition` are the applicable new-character spawn candidates. Two later compile-time variant floors were tested only as a sensitivity check and are not promoted into the baseline.
+- Recovered25 floor-level result:
+  - normal hometown candidates = **4**;
+  - normal hometowns with directed classic-Warp floor reachability to the key-item award floor = **4 / 4**;
+  - shortest floor-hop counts = **4, 2, 9, 9**;
+  - later source-known compile-time variants tested = **2**, reachable = **0 / 2**.
+- Recovered25 coordinate-level result uses server-authoritative LS2MAP + mapset collision, diagonal corner rejection, active classic-Warp source/landing coordinates and conservative non-Warp NPC birth blockers:
+  - normal hometown coordinate-reachable to a valid award interaction cell = **2 / 4**;
+  - static-only comparison is also **2 / 4**, so the two failures are not caused by the conservative NPC blocker model;
+  - unresolved map floors on all four searches = **0**;
+  - `FRESH_START_EXISTENTIAL_COORDINATE_CHAIN|witness=1`;
+  - `FRESH_START_ALL_HOMETOWNS_COORDINATE_CHAIN|witness=0`.
+- Interpretation: a legal new-game start **exists** from at least two selectable hometowns and reaches the award NPC through recovered coordinate topology. The stronger statement that every normal hometown reaches that progression chain is not supported and remains explicitly false for this recovered topology model.
+- Artifacts: `tools/stoneage_shadowed_branch_fresh_start_spatial_probe.py`, `tools/stoneage_shadowed_branch_fresh_start_coordinate_probe.py`; reports: `research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-SPATIAL-R1.txt`, `research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-R1.txt`.
+- Validation: GitHub Actions **36677647678**, **36678032381**, **36678205216**, and **36678452071** all PASS; latest derived coordinate report is preserved on remote main.
+- **SHADOWED_BRANCH_FRESH_START_SPATIAL_EXISTENCE_R1 = CLOSED.**
+
+- Direct birth-level sufficiency was audited separately. Fixed-descendant `_NEW_PLAYER_CF` initializes `CHAR_LV` from recovered `setup.cf` `LV` via `getNewplayerlv()`.
+- Recovered25 direct-level result:
+  - matching key-item award records = **2**;
+  - records with nonempty award/gate joint level domain = **2**;
+  - unique WarpMan legal level values = **20**;
+  - records whose joint domain contains the exact birth level = **0 / 2**;
+  - `FRESH_START_DIRECT_LEVEL_CHAIN|witness=0`.
+- Therefore fresh-start progression is **not yet closed end-to-end**: the character must legally gain levels before the already-closed award -> key item -> 811 -> 820 branch chain can execute.
+- Artifact: `tools/stoneage_shadowed_branch_fresh_start_level_probe.py`; report: `research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVEL-R1.txt`.
+- Validation: GitHub Actions **36679638307 = PASS**; derived report commit **28a961dad0b7d65a858486ae28f6ab204d6d12a3**.
+- Next deterministic seam: prove **fresh-start leveling provenance**. Reuse recovered EXP, encounter, group and enemy data plus fixed-descendant battle EXP semantics. Prefer an existential repeatable positive-EXP route from one of the two coordinate-valid hometown starts; preserve combat-victory feasibility as a separate boundary if the data only proves reward mechanics rather than a winnable encounter.
