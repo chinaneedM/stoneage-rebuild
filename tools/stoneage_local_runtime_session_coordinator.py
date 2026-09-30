@@ -25,10 +25,13 @@ from tools.stoneage_enemy_spawn_model import (
 )
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
+    BATTLE_COM_ESCAPE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
     OrdinaryAttackRolls,
+    OrdinaryEscapeContext,
+    OrdinaryEscapeRolls,
 )
 from tools.stoneage_battle_state_model import (
     PersistentBattleState,
@@ -785,6 +788,131 @@ class LocalRuntimeSessionCoordinator:
             ),
             result,
         )
+
+    def resolve_persistent_escape_round(
+        self,
+        context: LocalRuntimeBattleContext,
+        *,
+        commands: Mapping[str, BattleCommand],
+        initiative_random_subtracts: Mapping[str, int],
+        profiles: Mapping[str, BattleCombatProfile],
+        attack_rolls: Mapping[str, OrdinaryAttackRolls],
+        escape_context: OrdinaryEscapeContext,
+        escape_rolls: OrdinaryEscapeRolls,
+        defense_profile: str,
+        no_risk: bool = False,
+        field_attr: str = "none",
+        field_power: int = 0,
+        tie_break_order: Sequence[str] | None = None,
+    ) -> tuple[LocalRuntimeBattleContext, PersistentRoundResult]:
+        """Advance one explicit player-escape round without synthesizing AI."""
+
+        state = context.persistent_battle_state
+        if state is None:
+            raise ValueError("battle context has no persistent battle state")
+
+        player_id = str(state.session.player.participant_id)
+        normalized_commands = {
+            str(key): value
+            for key, value in commands.items()
+        }
+        if player_id not in normalized_commands:
+            raise ValueError("escape round requires an explicit player command")
+        if int(normalized_commands[player_id].command1) != BATTLE_COM_ESCAPE:
+            raise ValueError("escape round requires player ESCAPE command")
+
+        invalid_commands = tuple(
+            sorted(
+                participant_id
+                for participant_id, command in normalized_commands.items()
+                if not isinstance(command, BattleCommand)
+                or int(command.command1)
+                not in {BATTLE_COM_ATTACK, BATTLE_COM_WAIT, BATTLE_COM_ESCAPE}
+                or (
+                    int(command.command1) == BATTLE_COM_ESCAPE
+                    and participant_id != player_id
+                )
+            )
+        )
+        if invalid_commands:
+            raise ValueError(
+                "escape coordinator accepts player ESCAPE and ATTACK/WAIT only: "
+                + ",".join(invalid_commands)
+            )
+        if not isinstance(escape_context, OrdinaryEscapeContext):
+            raise TypeError("escape_context must be OrdinaryEscapeContext")
+        if not isinstance(escape_rolls, OrdinaryEscapeRolls):
+            raise TypeError("escape_rolls must be OrdinaryEscapeRolls")
+
+        result = resolve_persistent_ordinary_round(
+            state,
+            commands=normalized_commands,
+            initiative_random_subtracts={
+                str(key): int(value)
+                for key, value in initiative_random_subtracts.items()
+            },
+            profiles=profiles,
+            attack_rolls=attack_rolls,
+            escape_contexts={player_id: escape_context},
+            escape_rolls={player_id: escape_rolls},
+            defense_profile=str(defense_profile),
+            no_risk=bool(no_risk),
+            field_attr=str(field_attr),
+            field_power=int(field_power),
+            tie_break_order=(
+                None
+                if tie_break_order is None
+                else tuple(str(x) for x in tie_break_order)
+            ),
+        )
+        return (
+            replace(
+                context,
+                persistent_battle_state=result.after,
+            ),
+            result,
+        )
+
+    def settle_persistent_escape(
+        self,
+        context: LocalRuntimeBattleContext,
+    ) -> LocalRuntimeSessionState:
+        """Settle terminal player escape without normal battle profit."""
+
+        state = context.persistent_battle_state
+        if state is None:
+            raise ValueError("battle context has no persistent battle state")
+
+        encounter_runtime = getattr(self.stack, "encounter_runtime", None)
+        if encounter_runtime is None:
+            raise ValueError("runtime stack has no encounter runtime")
+
+        working_state = decode_persistent_state(
+            context.persistent_state_payload
+        )
+        domain = SinglePlayerHistoricalDomain(
+            static=encounter_runtime.static_data,
+            persistent=working_state,
+        )
+        domain.move_player(
+            floor_id=context.origin_position.floor_id,
+            x=context.origin_position.x,
+            y=context.origin_position.y,
+        )
+        runtime = SinglePlayerHistoricalRuntime(
+            domain=domain,
+            topology=self.topology,
+        )
+        returned = runtime.finish_persistent_escape(state)
+        updated = LocalRuntimeSessionState(
+            contract_id=context.contract_id,
+            world_profile=context.world_profile,
+            hometown_ordinal=context.hometown_ordinal,
+            player_position=returned.world_position,
+            player_state=domain.persistent,
+            world_flags=context.world_flags,
+        )
+        return self._validate_session(updated)
 
     def settle_persistent_group_battle_without_level_crossing(
         self,

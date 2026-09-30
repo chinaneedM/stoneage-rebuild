@@ -221,6 +221,37 @@ threshold remains fail-closed and must use the separate progression seam.
 
 The original pre-battle session remains unchanged throughout the transaction.
 
+## 2G. Explicit player escape round and settlement
+
+The coordinator now exposes the already reconstructed stable-descendant escape
+mechanics without choosing escape automatically.
+
+`resolve_persistent_escape_round()` requires:
+
+- an existing `PersistentBattleState`;
+- an explicit player `BATTLE_COM_ESCAPE` command;
+- explicit ATTACK/WAIT commands for all other living actors;
+- the caller's `OrdinaryEscapeContext`;
+- the caller's `OrdinaryEscapeRolls`;
+- the normal explicit initiative/combat-profile/attack-roll inputs.
+
+R1 forbids an enemy ESCAPE command through this local coordinator boundary.
+Enemy escape, if later needed, belongs to a separately audited AI/behavior
+seam rather than being synthesized here.
+
+The persistent battle model preserves the source counter ordering: the stored
+player escape counter increments before the check, and a successful first
+attempt therefore leaves stored count 1 even though the probability formula
+uses the source's effective count 2.
+
+On success the persistent state terminates with result `escape`.
+`settle_persistent_escape()` reconstructs the pre-battle player-owned snapshot
+and calls the existing dedicated escape finisher. It preserves battle-exit HP
+recovery semantics while deliberately discarding normal victory/defeat EXP and
+item profit, matching the recovered BATTLE_Exit/BATTLE_Finish ordering.
+
+The input pre-battle session remains unchanged.
+
 ## 3. State-gated dialogue transitions
 
 The three current recovered25 conditional transitions remain outside the unconditional classic-Warp graph.

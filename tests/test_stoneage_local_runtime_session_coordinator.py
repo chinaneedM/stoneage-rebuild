@@ -12,10 +12,13 @@ from tools.stoneage_enemy_spawn_model import (
 )
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
+    BATTLE_COM_ESCAPE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
     OrdinaryAttackRolls,
+    OrdinaryEscapeContext,
+    OrdinaryEscapeRolls,
 )
 from tools.stoneage_encounter_frequency_model import (
     EncounterFrequencyState,
@@ -967,6 +970,128 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         )
         self.assertEqual(settled.player_position, session.player_position)
         self.assertEqual(settled.world_flags, session.world_flags)
+
+    def test_player_escape_round_is_explicit_terminal_and_discards_profit(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"escape-route"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        enemy_id = context.battle.enemies[0].participant_id
+        context = self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player": 0, enemy_id: 10},
+        )
+
+        profiles = {
+            "player": BattleCombatProfile(
+                fixed_dex=100,
+                fixed_luck=5,
+                earth=0,
+                water=0,
+                fire=0,
+                wind=0,
+            ),
+            enemy_id: BattleCombatProfile(
+                fixed_dex=10,
+                fixed_luck=0,
+                earth=0,
+                water=0,
+                fire=0,
+                wind=0,
+            ),
+        }
+        escaped_context, round_result = (
+            self.coordinator.resolve_persistent_escape_round(
+                context,
+                commands={
+                    "player": BattleCommand(BATTLE_COM_ESCAPE),
+                    enemy_id: BattleCommand(BATTLE_COM_WAIT),
+                },
+                initiative_random_subtracts={
+                    "player": 0,
+                    enemy_id: 0,
+                },
+                profiles=profiles,
+                attack_rolls={},
+                escape_context=OrdinaryEscapeContext(
+                    stored_escape_count_before=0,
+                ),
+                escape_rolls=OrdinaryEscapeRolls(
+                    escape_roll_1_100=1,
+                ),
+                defense_profile="newpower_70pct",
+            )
+        )
+        self.assertEqual(round_result.after.phase, "finished")
+        self.assertEqual(round_result.after.result, "escape")
+        self.assertEqual(
+            round_result.after.escape_count_by_participant_id["player"],
+            1,
+        )
+        self.assertEqual(
+            round_result.after.pending_exp_by_participant_id["player"],
+            0,
+        )
+
+        settled = self.coordinator.settle_persistent_escape(
+            escaped_context
+        )
+        self.assertEqual(
+            settled.player_state.character.fields["hp"],
+            100,
+        )
+        self.assertEqual(
+            settled.player_state.character.fields["exp"],
+            0,
+        )
+        self.assertEqual(settled.player_position, session.player_position)
+        self.assertEqual(settled.world_flags, session.world_flags)
+        self.assertEqual(
+            session.player_state.character.fields["exp"],
+            0,
+        )
+
+        with self.assertRaisesRegex(ValueError, "requires player ESCAPE"):
+            self.coordinator.resolve_persistent_escape_round(
+                context,
+                commands={
+                    "player": BattleCommand(BATTLE_COM_WAIT),
+                    enemy_id: BattleCommand(BATTLE_COM_WAIT),
+                },
+                initiative_random_subtracts={
+                    "player": 0,
+                    enemy_id: 0,
+                },
+                profiles=profiles,
+                attack_rolls={},
+                escape_context=OrdinaryEscapeContext(
+                    stored_escape_count_before=0,
+                ),
+                escape_rolls=OrdinaryEscapeRolls(
+                    escape_roll_1_100=1,
+                ),
+                defense_profile="newpower_70pct",
+            )
 
     def test_persistent_attack_wait_rounds_carry_hp_to_terminal_and_settle_clone(self):
         session = LocalRuntimeSessionState(

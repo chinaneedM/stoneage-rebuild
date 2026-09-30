@@ -4567,5 +4567,22 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Below-threshold EXP may settle through the existing `finish_persistent_battle_without_level_crossing()` path. Level-threshold crossing remains fail-closed until the progression seam is explicitly connected.
 - Regression target: a deterministic multi-round player ATTACK vs enemy WAIT battle must survive at least one nonterminal round, reach automatic victory later, carry pending EXP, and settle into a new session while the original session remains unchanged.
 - Coordinator workflow now watches/runs the battle-round, persistent-state, single-player runtime and group-battle regression surfaces.
-- **LOCAL_RUNTIME_PERSISTENT_ATTACK_WAIT_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Remote validation after correcting the terminal enemy-HP assertion: coordinator **36752621438 = PASS**; the prior `36752505766` failure was test expectation only, while golden contract **36752505709 = PASS**.
+- **LOCAL_RUNTIME_PERSISTENT_ATTACK_WAIT_R1 = CLOSED.**
 - Next restoration priority after CI closure: connect explicit escape and capture seams one at a time, then expose already-recovered AI selection only after its evidence boundary is separately audited. Do not synthesize enemy commands.
+
+
+## Phase 1 explicit player escape round — 2026-10-01
+
+- Escape is selected as the next battle branch because its strong stable-descendant mechanics and dedicated settlement are already closed, and it does not require unresolved enemy-name decoding or construction of a complete captured-pet record.
+- New coordinator entries:
+  - `resolve_persistent_escape_round(...)`;
+  - `settle_persistent_escape(context)`.
+- R1 requires the player command to be explicit `BATTLE_COM_ESCAPE`; all other living actors remain caller-supplied ATTACK/WAIT commands.
+- The caller supplies `OrdinaryEscapeContext`, `OrdinaryEscapeRolls`, initiative inputs, profiles and any attack rolls. No RNG or enemy decision is generated.
+- The source counter ordering is preserved: first stored count 0 increments to 1 before the check; success retains stored count 1.
+- Successful escape produces terminal result `escape` and uses the existing dedicated escape settlement, which does **not** award normal pending EXP or item profit.
+- The original pre-battle local session remains immutable; settlement returns a new session.
+- Enemy escape remains outside this local R1 boundary until AI/behavior evidence is connected.
+- **LOCAL_RUNTIME_PLAYER_ESCAPE_R1 = IMPLEMENTED_PENDING_REMOTE_CI.**
+- Next after CI: connect capture as a separate transaction because successful capture requires a complete provenance-bearing `PetActor`; do not fabricate MP, skills, name, EXP threshold or visible-AI/compliance fields.
