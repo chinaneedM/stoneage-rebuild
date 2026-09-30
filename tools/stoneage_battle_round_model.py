@@ -108,9 +108,11 @@ BATTLE_COM_WAIT = 11
 BATTLE_COM_S_GBREAK = 1002
 BATTLE_COM_S_GUARDIAN_ATTACK = 1003
 BATTLE_COM_S_GUARDIAN_GUARD = 1004  # enum-only in pinned common Guardian handler
+BATTLE_COM_S_CHARGE = 1005
 BATTLE_COM_S_MIGHTY = 1006
 BATTLE_COM_S_POWERBALANCE = 1007
 BATTLE_COM_S_STATUSCHANGE = 1008
+BATTLE_COM_S_CHARGE_OK = 1015
 
 
 def battle_command3_low(value: int) -> int:
@@ -143,9 +145,11 @@ BASE_COMMAND_CODES = frozenset(
         BATTLE_COM_S_GBREAK,
         BATTLE_COM_S_GUARDIAN_ATTACK,
         BATTLE_COM_S_GUARDIAN_GUARD,
+        BATTLE_COM_S_CHARGE,
         BATTLE_COM_S_MIGHTY,
         BATTLE_COM_S_POWERBALANCE,
         BATTLE_COM_S_STATUSCHANGE,
+        BATTLE_COM_S_CHARGE_OK,
     }
 )
 
@@ -188,6 +192,9 @@ class BattleCommandSetupEffects:
 
     attack_power: int | None = None
     defense_power: int | None = None
+    # Latent fixed-source ChargeAttack ready power. It is not applied while
+    # S_CHARGE waits; LOW(COM3)==0 promotes it for S_CHARGE_OK.
+    charge_ready_attack_power: int | None = None
     guardian_flag: bool = False
     guardian_for_slot: int | None = None
     guardian_barrier: int = 0
@@ -501,9 +508,11 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_WAIT,
         BATTLE_COM_S_GBREAK,
         BATTLE_COM_S_GUARDIAN_ATTACK,
+        BATTLE_COM_S_CHARGE,
         BATTLE_COM_S_MIGHTY,
         BATTLE_COM_S_POWERBALANCE,
         BATTLE_COM_S_STATUSCHANGE,
+        BATTLE_COM_S_CHARGE_OK,
     }
 )
 
@@ -708,6 +717,10 @@ class ResolvedOrdinaryRound:
     ultimate_exited_participant_ids: tuple[str, ...] = ()
     exited_participant_ids: tuple[str, ...] = ()
     escaped_participant_ids: tuple[str, ...] = ()
+    carried_commands_by_participant_id: Mapping[str,BattleCommand] | None = None
+    carried_setup_effects_by_participant_id: Mapping[
+        str,BattleCommandSetupEffects
+    ] | None = None
 
 
 def _participant_battle_kind(participant: BattleParticipant) -> str:
@@ -2825,6 +2838,53 @@ def resolve_ordinary_round(
                 guarding.discard(slot)
             command_by_slot[slot]=command
 
+        if command.command1 == BATTLE_COM_S_CHARGE:
+            remaining=battle_command3_low(command.command3)
+            attack_percent=battle_command3_high(command.command3)
+            charge_effects=setup_effects.get(str(participant_id))
+            if (
+                charge_effects is None
+                or charge_effects.charge_ready_attack_power is None
+            ):
+                raise ValueError(
+                    "S_CHARGE requires explicit latent ready attack power"
+                )
+            if remaining > 0:
+                next_charge=BattleCommand(
+                    BATTLE_COM_S_CHARGE,
+                    command2=command.command2,
+                    command3=pack_battle_command3(
+                        low=remaining-1,
+                        high=attack_percent,
+                    ),
+                    input_complete=command.input_complete,
+                )
+                command_by_slot[slot]=next_charge
+                events.append(
+                    OrdinaryRoundEvent(
+                        participant_id,
+                        slot,
+                        BATTLE_COM_S_CHARGE,
+                        entry.action_value,
+                        "charge_wait",
+                        original_target_slot=int(command.command2),
+                    )
+                )
+                continue
+            command=BattleCommand(
+                BATTLE_COM_S_CHARGE_OK,
+                command2=command.command2,
+                command3=command.command3,
+                input_complete=command.input_complete,
+            )
+            setup_effects[str(participant_id)]=replace(
+                charge_effects,
+                attack_power=int(
+                    charge_effects.charge_ready_attack_power
+                ),
+            )
+            command_by_slot[slot]=command
+
         if command.command1 == BATTLE_COM_NONE:
             events.append(
                 OrdinaryRoundEvent(
@@ -3245,7 +3305,10 @@ def resolve_ordinary_round(
         if rolls is None:
             raise KeyError(f"missing ordinary attack rolls for {participant_id}")
         attack_command_code=int(command.command1)
-        if attack_command_code in {
+        if attack_command_code == BATTLE_COM_S_CHARGE_OK:
+            # Fixed battle.c clears CHARGE_OK to NONE before its physical loop.
+            command_by_slot[slot]=BattleCommand(BATTLE_COM_NONE)
+        elif attack_command_code in {
             BATTLE_COM_S_GBREAK,
             BATTLE_COM_S_GUARDIAN_ATTACK,
             BATTLE_COM_S_MIGHTY,
@@ -3875,6 +3938,23 @@ def resolve_ordinary_round(
                 counter_target_slot,
             )
 
+    carried_commands={}
+    carried_effects={}
+    for carried_slot,carried_command in command_by_slot.items():
+        if int(carried_command.command1) != BATTLE_COM_S_CHARGE:
+            continue
+        carried_id=str(by_slot[carried_slot].participant_id)
+        carried_commands[carried_id]=carried_command
+        effects=setup_effects.get(carried_id)
+        if (
+            effects is None
+            or effects.charge_ready_attack_power is None
+        ):
+            raise ValueError(
+                f"carried S_CHARGE lacks ready attack power: {carried_id}"
+            )
+        carried_effects[carried_id]=effects
+
     return ResolvedOrdinaryRound(
         events=tuple(events),
         hp_by_participant_id=MappingProxyType(dict(hp_by_id)),
@@ -3896,4 +3976,10 @@ def resolve_ordinary_round(
         ultimate_exited_participant_ids=tuple(ultimate_exited_ids),
         exited_participant_ids=tuple(exited_ids),
         escaped_participant_ids=tuple(escaped_ids),
+        carried_commands_by_participant_id=MappingProxyType(
+            dict(carried_commands)
+        ),
+        carried_setup_effects_by_participant_id=MappingProxyType(
+            dict(carried_effects)
+        ),
     )
