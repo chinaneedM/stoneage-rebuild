@@ -699,6 +699,42 @@ def main() -> None:
         f"ascii_ids={guardbreak_ascii}|"
         f"attack_marker_ids={guardbreak_attack_marker}"
     )
+    charge_entries = tuple(
+        entry
+        for entry in referenced_skill_entries
+        if entry.function_name == "PETSKILL_ChargeAttack"
+    )
+    charge_leading_int = 0
+    charge_in_range = 0
+    charge_attack_marker = 0
+    charge_attack_numeric = 0
+    charge_counts = []
+    charge_attack_percents = []
+    for entry in charge_entries:
+        option_text = entry.unambiguous_cp950_big5_option()
+        leading = re.match(r"\s*([+-]?\d+)", option_text)
+        attack = re.search(r"攻%\s*([+-]?\d+)", option_text)
+        if leading is not None:
+            charge_leading_int += 1
+            count = int(leading.group(1))
+            charge_counts.append(count)
+            charge_in_range += int(1 <= count <= 10)
+        charge_attack_marker += int("攻%" in option_text)
+        if attack is not None:
+            charge_attack_numeric += 1
+            charge_attack_percents.append(int(attack.group(1)))
+    print(
+        "PETSKILL_CHARGEATTACK_PARSE|"
+        f"unique_ids={len(charge_entries)}|"
+        f"leading_int_ids={charge_leading_int}|"
+        f"in_range_count_ids={charge_in_range}|"
+        f"attack_marker_ids={charge_attack_marker}|"
+        f"attack_numeric_ids={charge_attack_numeric}|"
+        f"count_min={min(charge_counts) if charge_counts else -1}|"
+        f"count_max={max(charge_counts) if charge_counts else -1}|"
+        f"attack_percent_min={min(charge_attack_percents) if charge_attack_percents else -1}|"
+        f"attack_percent_max={max(charge_attack_percents) if charge_attack_percents else -1}"
+    )
     print(
         "COUNT|enemybase_unresolved_petskill_ids|"
         f"{len(stack.petskill_runtime.unresolved_skill_ids(report_referenced_skill_ids))}"
