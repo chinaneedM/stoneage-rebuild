@@ -22,6 +22,7 @@ from tools.stoneage_local_runtime_core import (
     load_runtime_bootstrap_file,
 )
 from tools.stoneage_player_creation_model import build_creation_state
+from tools.stoneage_petskill_core_model import parse_status_skill
 from tools.stoneage_recovered25_local_runtime_stack import (
     Recovered25LocalRuntimeStack,
 )
@@ -574,6 +575,44 @@ def main() -> None:
             f"cp950_big5_divergent_ids={dual_divergent}|"
             f"cp950_big5_decode_error_ids={dual_decode_error}"
         )
+    status_entries = tuple(
+        entry
+        for entry in referenced_skill_entries
+        if entry.function_name == "PETSKILL_StatusChange"
+    )
+    status_matched = 0
+    status_turns = []
+    status_attack_mod = 0
+    status_defense_mod = 0
+    for entry in status_entries:
+        option_text = entry.consensus_big5_option()
+        parsed = parse_status_skill(
+            option_text,
+            ("全", "毒", "麻", "眠", "石", "醉", "亂"),
+        )
+        if not parsed["matched"]:
+            # One pinned descendant source normalizes the confusion glyph to
+            # the simplified form; accept it only as the same index-6 token.
+            parsed = parse_status_skill(
+                option_text,
+                ("全", "毒", "麻", "眠", "石", "醉", "乱"),
+            )
+        if parsed["matched"]:
+            status_matched += 1
+        status_turns.append(int(parsed["turn"]))
+        if parsed["attack_percent"] is not None:
+            status_attack_mod += 1
+        if parsed["defense_percent"] is not None:
+            status_defense_mod += 1
+    print(
+        "PETSKILL_STATUSCHANGE_PARSE|"
+        f"unique_ids={len(status_entries)}|"
+        f"matched_status_ids={status_matched}|"
+        f"turn_min={min(status_turns) if status_turns else -1}|"
+        f"turn_max={max(status_turns) if status_turns else -1}|"
+        f"attack_modifier_ids={status_attack_mod}|"
+        f"defense_modifier_ids={status_defense_mod}"
+    )
     print(
         "COUNT|enemybase_unresolved_petskill_ids|"
         f"{len(stack.petskill_runtime.unresolved_skill_ids(report_referenced_skill_ids))}"
