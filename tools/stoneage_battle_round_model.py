@@ -2287,6 +2287,12 @@ class ContinuationBaselineResolution:
     last_target_slot: int | None
     counter_continuation_allowed: bool
     ride_pet_runtime: RidePetRuntime | None = None
+    base_status_runtime_by_participant_id: Mapping[
+        str,BaseBattleStatusRuntime
+    ] | None = None
+    base_damage_react_state_by_participant_id: Mapping[
+        str,BaseDamageReactState
+    ] | None = None
 
 
 def resolve_continuation_nonbow_baseline(
@@ -2355,11 +2361,18 @@ def resolve_continuation_nonbow_baseline(
             guardian_registrations_by_defender_slot or {}
         ).items()
     }
-    status_runtime={
+    supplied_status_runtime={
         str(participant_id):runtime
         for participant_id,runtime in (
             base_status_runtime_by_participant_id or {}
         ).items()
+    }
+    status_runtime={
+        str(participant.participant_id):supplied_status_runtime.get(
+            str(participant.participant_id),
+            BaseBattleStatusRuntime(),
+        )
+        for participant in by_slot.values()
     }
     damage_react_state={
         str(participant.participant_id):(
@@ -2764,6 +2777,27 @@ def resolve_continuation_nonbow_baseline(
             event_before=int(reaction_resolution.defender_hp_before)
             event_after=int(reaction_resolution.defender_hp_after)
 
+        if (
+            int(damage) > 0
+            and reaction_resolution.wakeup_target is not None
+        ):
+            wake_target_id=(
+                actor_id
+                if reaction_resolution.wakeup_target == "attacker"
+                else defender_id
+            )
+            wake_runtime=status_runtime[wake_target_id]
+            wake=resolve_base_damage_wakeup(
+                wake_runtime.status,
+                damage_count_before=wake_runtime.damage_count,
+                damage=int(damage),
+            )
+            status_runtime[wake_target_id]=replace(
+                wake_runtime,
+                status=wake.status_after,
+                damage_count=wake.damage_count_after,
+            )
+
         resolved.append(
             OrdinaryRoundEvent(
                 actor_id,
@@ -2802,6 +2836,12 @@ def resolve_continuation_nonbow_baseline(
         last_target_slot=last_target,
         counter_continuation_allowed=bool(last_continue),
         ride_pet_runtime=ride_runtime,
+        base_status_runtime_by_participant_id=MappingProxyType(
+            dict(status_runtime)
+        ),
+        base_damage_react_state_by_participant_id=MappingProxyType(
+            dict(damage_react_state)
+        ),
     )
 
 
