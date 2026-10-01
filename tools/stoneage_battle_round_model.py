@@ -112,6 +112,7 @@ BATTLE_COM_S_CHARGE = 1005
 BATTLE_COM_S_MIGHTY = 1006
 BATTLE_COM_S_POWERBALANCE = 1007
 BATTLE_COM_S_STATUSCHANGE = 1008
+BATTLE_COM_S_NOGUARD = 1014
 BATTLE_COM_S_CHARGE_OK = 1015
 
 
@@ -126,6 +127,23 @@ def battle_command3_high(value: int) -> int:
 def pack_battle_command3(*, low: int, high: int) -> int:
     """Mirror CHAR_SETWORKINT_LOW/HIGH for the common positive COM3 payloads."""
     return (int(high) << 16) | (int(low) & 0xFFFF)
+
+
+def _noguard_counter_percent_modifier(command: "BattleCommand") -> int:
+    """Decode the active fixed-source upper-byte NoGuard counter modifier."""
+
+    if int(command.command1) != BATTLE_COM_S_NOGUARD:
+        return 0
+    value=(battle_command3_low(command.command3) >> 8) & 0xFF
+    if value > 127:
+        value *= -1
+    return int(value)
+
+
+def _noguard_dodge_percent_modifier(command: "BattleCommand") -> int:
+    if int(command.command1) != BATTLE_COM_S_NOGUARD:
+        return 0
+    return int(battle_command3_high(command.command3))
 
 
 BASE_COMMAND_CODES = frozenset(
@@ -149,11 +167,16 @@ BASE_COMMAND_CODES = frozenset(
         BATTLE_COM_S_MIGHTY,
         BATTLE_COM_S_POWERBALANCE,
         BATTLE_COM_S_STATUSCHANGE,
+        BATTLE_COM_S_NOGUARD,
         BATTLE_COM_S_CHARGE_OK,
     }
 )
 
-NO_ACTION_COMMANDS = frozenset({BATTLE_COM_NONE, BATTLE_COM_WAIT})
+NO_ACTION_COMMANDS = frozenset({
+    BATTLE_COM_NONE,
+    BATTLE_COM_WAIT,
+    BATTLE_COM_S_NOGUARD,
+})
 
 
 @dataclass(frozen=True)
@@ -512,6 +535,7 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_S_MIGHTY,
         BATTLE_COM_S_POWERBALANCE,
         BATTLE_COM_S_STATUSCHANGE,
+        BATTLE_COM_S_NOGUARD,
         BATTLE_COM_S_CHARGE_OK,
     }
 )
@@ -878,7 +902,10 @@ def _resolve_counter_chain(
             )
             break
 
-        if command_by_slot[actor_slot].command1 != BATTLE_COM_ATTACK:
+        if command_by_slot[actor_slot].command1 not in {
+            BATTLE_COM_ATTACK,
+            BATTLE_COM_S_NOGUARD,
+        }:
             resolved.append(
                 OrdinaryRoundEvent(
                     actor_id,
@@ -929,6 +956,9 @@ def _resolve_counter_chain(
                 attacker_fixed_dex=int(actor_profile.fixed_dex),
                 defender_fixed_dex=int(target_profile.fixed_dex),
                 attacker_fixed_luck=_source_luck(actor,actor_profile),
+                nonplayer_percent_modifier=_noguard_counter_percent_modifier(
+                    command_by_slot[actor_slot]
+                ),
                 attacker_weapon_type=str(actor_profile.counter_weapon_type),
                 defender_weapon_type=str(target_profile.counter_weapon_type),
             ),
@@ -979,6 +1009,9 @@ def _resolve_counter_chain(
                 defender_luck=_source_luck(target,target_profile),
                 attacker_type=_participant_battle_kind(actor),
                 defender_type=_participant_battle_kind(target),
+                extra_percent_points=_noguard_dodge_percent_modifier(
+                    command_by_slot[target_slot]
+                ),
             )
             if dodge_roll <= dodge_probability:
                 resolved.append(
@@ -2921,6 +2954,20 @@ def resolve_ordinary_round(
             )
             continue
 
+        if command.command1 == BATTLE_COM_S_NOGUARD:
+            # Fixed battle.c calls BATTLE_NoAction but leaves COM1/COM3 intact;
+            # later attackers/counters in this same round still consume them.
+            events.append(
+                OrdinaryRoundEvent(
+                    participant_id,
+                    slot,
+                    BATTLE_COM_S_NOGUARD,
+                    entry.action_value,
+                    "noguard_no_action",
+                )
+            )
+            continue
+
         if command.command1 == BATTLE_COM_ESCAPE:
             # Stable BATTLE_Command ignores ESCAPE for CHAR_TYPEPET.
             if participant.kind == "pet":
@@ -3401,9 +3448,14 @@ def resolve_ordinary_round(
                 attacker_type=_participant_battle_kind(participant),
                 defender_type=_participant_battle_kind(defender),
                 extra_percent_points=(
-                    battle_command3_high(command.command3)
-                    if attack_command_code == BATTLE_COM_S_MIGHTY
-                    else 0
+                    (
+                        battle_command3_high(command.command3)
+                        if attack_command_code == BATTLE_COM_S_MIGHTY
+                        else 0
+                    )
+                    + _noguard_dodge_percent_modifier(
+                        command_by_slot[target]
+                    )
                 ),
             )
             if dodge_roll <= dodge_probability:
