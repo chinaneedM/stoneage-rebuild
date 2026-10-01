@@ -9,6 +9,7 @@ Currently supported:
 - PETSKILL_NormalAttack
 - PETSKILL_NormalGuard
 - PETSKILL_GuardBreak (explicit opt-in dispatcher branch)
+- PETSKILL_ChargeAttack (explicit opt-in dispatcher branch)
 - PETSKILL_Mighty (explicit opt-in dispatcher branch)
 - PETSKILL_PowerBalance (explicit opt-in dispatcher branch)
 - PETSKILL_StatusChange (explicit opt-in dispatcher branch)
@@ -30,6 +31,8 @@ from tools.stoneage_battle_round_model import (
 )
 from tools.stoneage_enemy_spawn_model import SpawnedEnemy
 from tools.stoneage_petskill_core_model import (
+    charge_attack_command,
+    charge_execution_step,
     guard_break_command,
     mighty_command,
     parse_status_skill,
@@ -49,6 +52,7 @@ NONE = "PETSKILL_None"
 NORMAL_ATTACK = "PETSKILL_NormalAttack"
 NORMAL_GUARD = "PETSKILL_NormalGuard"
 GUARD_BREAK = "PETSKILL_GuardBreak"
+CHARGE_ATTACK = "PETSKILL_ChargeAttack"
 MIGHTY = "PETSKILL_Mighty"
 POWER_BALANCE = "PETSKILL_PowerBalance"
 STATUS_CHANGE = "PETSKILL_StatusChange"
@@ -156,6 +160,7 @@ def resolve_enemy_ai_supported_petskill_command(
     allow_power_balance: bool = False,
     allow_mighty: bool = False,
     allow_guard_break: bool = False,
+    allow_charge_attack: bool = False,
 ) -> EnemyAiPetSkillCommand:
     """Dispatch only callbacks whose full execution boundary is admitted."""
 
@@ -174,6 +179,13 @@ def resolve_enemy_ai_supported_petskill_command(
         )
     if entry.function_name == GUARD_BREAK and bool(allow_guard_break):
         return resolve_enemy_ai_guardbreak_petskill_command(
+            spawned,
+            skill_slot=skill_slot,
+            target_slot=target_slot,
+            petskill_runtime=petskill_runtime,
+        )
+    if entry.function_name == CHARGE_ATTACK and bool(allow_charge_attack):
+        return resolve_enemy_ai_chargeattack_petskill_command(
             spawned,
             skill_slot=skill_slot,
             target_slot=target_slot,
@@ -203,6 +215,78 @@ def resolve_enemy_ai_supported_petskill_command(
     raise ValueError(
         "enemy AI selected pet-skill callback outside admitted execution "
         f"subset: {entry.function_name}"
+    )
+
+
+def resolve_enemy_ai_chargeattack_petskill_command(
+    spawned: SpawnedEnemy,
+    *,
+    skill_slot: int,
+    target_slot: int,
+    petskill_runtime: Recovered25PetSkillRuntime,
+) -> EnemyAiPetSkillCommand:
+    """Resolve recovered PETSKILL_ChargeAttack into persistent charge state."""
+
+    skill_slot, target_slot, entry = _resolved_entry(
+        spawned,
+        skill_slot=skill_slot,
+        target_slot=target_slot,
+        petskill_runtime=petskill_runtime,
+    )
+    if entry.function_name != CHARGE_ATTACK:
+        raise ValueError(
+            "enemy AI selected pet-skill callback outside ChargeAttack "
+            f"execution subset: {entry.function_name}"
+        )
+
+    option_text = entry.unambiguous_cp950_big5_option()
+    leading = re.match(r"\s*([+-]?\d+)", option_text)
+    attack = re.search(r"攻%\s*([+-]?\d+)", option_text)
+    if leading is None or attack is None:
+        raise ValueError(
+            "recovered ChargeAttack OPTION is outside closed wait/attack "
+            "numeric grammar"
+        )
+    wait_count = int(leading.group(1))
+    if not 1 <= wait_count <= 10:
+        raise ValueError(
+            "recovered ChargeAttack wait count is outside closed 1..10 range"
+        )
+
+    birth = spawned.birth
+    projection_fn = getattr(birth, "combat_projection", None)
+    if not callable(projection_fn):
+        raise ValueError(
+            "ChargeAttack execution requires recovered enemy birth projection"
+        )
+    projection = projection_fn()
+    if "attack" not in projection:
+        raise ValueError("enemy birth projection lacks fixed attack value")
+
+    payload = dict(charge_attack_command(target_slot, option_text))
+    if int(payload.get("low", -1)) != wait_count:
+        raise ValueError("ChargeAttack parsed wait count drift")
+    if int(payload.get("high", 0)) != int(attack.group(1)):
+        raise ValueError("ChargeAttack parsed attack percent drift")
+
+    ready = charge_execution_step(
+        remaining=0,
+        attack_percent=int(payload["high"]),
+        fixed_attack=int(projection["attack"]),
+        attack_modifier=0,
+    )
+    if not bool(ready.get("ready")) or ready.get("attack_power") is None:
+        raise ValueError("ChargeAttack ready-power reconstruction failed")
+    payload["charge_ready_attack_power"] = int(ready["attack_power"])
+
+    submission = bridge_stable_pet_skill_command(payload)
+    return EnemyAiPetSkillCommand(
+        participant_id=str(spawned.participant.participant_id),
+        skill_slot=skill_slot,
+        skill_id=int(entry.skill_id),
+        callback=entry.function_name,
+        command=submission.battle_command,
+        setup_effects=submission.setup_effects,
     )
 
 
