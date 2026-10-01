@@ -783,6 +783,26 @@ def main() -> None:
         if critical is not None:
             noguard_critical_numeric += 1
             noguard_critical_values.append(int(critical.group(1)))
+    if (
+        len(noguard_entries) != 3
+        or noguard_dodge_marker != 3
+        or noguard_dodge_numeric != 3
+        or noguard_counter_simplified_marker != 0
+        or noguard_counter_traditional_marker != 3
+        or noguard_counter_numeric != 3
+        or noguard_critical_marker != 3
+        or noguard_critical_numeric != 3
+        or min(noguard_dodge_values, default=-1) != 30
+        or max(noguard_dodge_values, default=-1) != 50
+        or min(noguard_counter_values, default=-1) != 50
+        or max(noguard_counter_values, default=-1) != 70
+        or min(noguard_critical_values, default=-1) != 20
+        or max(noguard_critical_values, default=-1) != 40
+    ):
+        raise ValueError(
+            "recovered25 NoGuard OPTION grammar drifted outside closed "
+            "traditional dodge/counter/critical subset"
+        )
     print(
         "PETSKILL_NOGUARD_PARSE|"
         f"unique_ids={len(noguard_entries)}|"
