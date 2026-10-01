@@ -6,6 +6,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_CHARGE,
     BATTLE_COM_S_MIGHTY,
+    BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
     battle_command3_high,
@@ -16,6 +17,7 @@ from tools.stoneage_petskill_core_model import (
     guard_break_command,
     guardian_command,
     mighty_command,
+    no_guard_command,
     power_balance_command,
     status_change_command,
 )
@@ -100,6 +102,19 @@ class PetSkillRoundBridgeTests(unittest.TestCase):
         self.assertEqual(command.command2,10)
         self.assertEqual(battle_command3_low(command.command3),250)
         self.assertEqual(battle_command3_high(command.command3),20)
+
+    def test_noguard_packs_dodge_counter_and_disabled_critical_bytes(self):
+        payload=no_guard_command(
+            10,
+            "避%40 擊%60 心%30",
+            counter_marker="擊%",
+        )
+        submission=bridge_stable_pet_skill_command(payload)
+        command=submission.battle_command
+        self.assertEqual(command.command1,BATTLE_COM_S_NOGUARD)
+        self.assertEqual(command.command2,10)
+        self.assertEqual(battle_command3_high(command.command3),40)
+        self.assertEqual(battle_command3_low(command.command3),(60 << 8)+30)
 
     def test_powerbalance_carries_work_attack_and_defense_into_round(self):
         payload=power_balance_command(
