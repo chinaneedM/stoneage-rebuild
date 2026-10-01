@@ -5132,3 +5132,43 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - this descendant drift must be resolved against the recovered25 OPTION population before runtime admission.
 - **RECOVERED25_NONCOMMON_PETSKILL_INVENTORY_R1 = CLOSED.**
 - Next priority: hard-probe all 25 recovered AttackMagic OPTION rows for source-shaped `magic` / `item` markers, ordering and numeric ranges; then reconstruct the appropriate recovered25 command/target/magic execution boundary without flattening the Bismarck high-half drift.
+
+## Phase 1 recovered25 AttackMagic command boundary — 2026-10-01
+
+- The hard probe requested by the preceding milestone is now closed against the
+  real preservation bundle:
+  - **25/25** AttackMagic rows contain numeric `magic` followed by numeric
+    `item`;
+  - magic IDs are exactly **301..325**, 25 distinct;
+  - item IDs are exactly **19647..19671**, 25 distinct;
+  - same-row numeric pairing is **25/25**;
+  - observed `item - magic` is uniformly **19346**, but is retained as an
+    observation rather than promoted to a derivation rule.
+- Probe source `ccb037e4ae105c48a2dc44fb514eae84dd5ca9c7` passed full recovered25
+  validation **36842103889**; automatic report write-back advanced `main` to
+  `537d98ae3088e457cb028d4eccf815556bc40559`.
+- The three pinned descendant sources establish the versioned command boundary:
+  - guarded `BATTLE_COM_S_ATTACK_MAGIC` is numeric **2002**;
+  - COM2 is the requested target and LOW(COM3) is the magic ID;
+  - gavin/iris parse/write the item into HIGH(COM3);
+  - Bismarck removes that write and therefore preserves prior HIGH(COM3)
+    residue;
+  - the battle executor applies the exact 25-entry magic-ID target table before
+    `MAGIC_DirectUse`;
+  - for non-player casters, `MAGIC_DirectUse` consumes the passed item number
+    directly as the global item index, so the high-half divergence is material.
+- Added a separate guarded-version reference layer rather than contaminating
+  the stable-common pet-skill model:
+  - `tools/stoneage_attack_magic_model.py`;
+  - `tests/test_stoneage_attack_magic_model.py`;
+  - `research/mechanics/STONEAGE-ATTACK-MAGIC-BOUNDARY-R1.md`;
+  - dedicated AttackMagic CI.
+- Recovered25 policy is explicit and fail-closed: require numeric magic/item
+  markers, use the recovered explicit item value, preserve the Bismarck residue
+  branch as a distinct descendant profile, and stop at the `MAGIC_DirectUse`
+  request boundary rather than guessing attack-magic damage.
+- **RECOVERED25_ATTACKMAGIC_COMMAND_BOUNDARY_R1 = CLOSED.**
+- Next priority: cross-link recovered magic IDs **301..325** through
+  `magic.txt`, corresponding item metadata and `attmagic.bin`
+  indices/footprints, then reconstruct the active `_FIX_MAGICDAMAGE`
+  execution core before admitting AttackMagic into recovered enemy-AI runtime.

@@ -1,0 +1,28 @@
+name: Validate StoneAge AttackMagic boundary
+concurrency:
+  group: stoneage-attack-magic-boundary
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-attack-magic-model.yml
+      - tools/stoneage_attack_magic_model.py
+      - tests/test_stoneage_attack_magic_model.py
+      - research/mechanics/STONEAGE-ATTACK-MAGIC-BOUNDARY-R1.md
+  pull_request:
+    paths:
+      - .github/workflows/validate-stoneage-attack-magic-model.yml
+      - tools/stoneage_attack_magic_model.py
+      - tests/test_stoneage_attack_magic_model.py
+      - research/mechanics/STONEAGE-ATTACK-MAGIC-BOUNDARY-R1.md
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deterministic AttackMagic boundary tests
+        run: python3 -m unittest tests.test_stoneage_attack_magic_model -v
