@@ -30,7 +30,10 @@ passes it through `LocalRuntimeSessionCoordinator`.
 The witness supplies an explicit battle-local zeroed `AttackMagicRoundOverlay`
 only as test input; the coordinator never synthesizes it. This is intentional:
 the current player-save model still lacks a reconstructed authoritative mapping
-for the four magic-resistance levels and experience counters.
+for the four magic-resistance levels and **defense-magic experience** counters
+consumed by the enemy-attack path. Later fixed descendants additionally persist
+four attack-magic proficiency levels and four attack-magic experience counters;
+those are a separate future player/pet caster seam.
 
 The acceptance requires a real command-2002 target event and verifies that the
 overlay returned by the persistent round is carried into the next battle
@@ -40,4 +43,14 @@ Expected report marker:
 
 `ATTACKMAGIC_ENEMY_AI_ROUND_WITNESS|1|portable=1|target_events=1|overlay_carried=1|round_turn=1`
 
-Marker: **RECOVERED25_ATTACKMAGIC_PRESERVATION_BUNDLE_ACCEPTANCE_R1 = CANDIDATE**
+Validation: preservation-bundle workflow **36856905249 = PASS**. The verified
+bundle was recovered successfully, all materializable maps passed, the concrete
+runtime-stack witness passed, AttackMagic cross-links passed, both server and
+client collision audits passed, and the workflow committed the derived report
+as `11cb491b2f97876cd4fb88b837226a5b717f9401`.
+
+The generated report contains the exact marker:
+
+`ATTACKMAGIC_ENEMY_AI_ROUND_WITNESS|1|portable=1|target_events=1|overlay_carried=1|round_turn=1`
+
+Marker: **RECOVERED25_ATTACKMAGIC_PRESERVATION_BUNDLE_ACCEPTANCE_R1 = CLOSED**

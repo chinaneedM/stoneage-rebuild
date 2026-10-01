@@ -28,7 +28,12 @@ def attack_magic_field_element(field_attr: str) -> int | None:
 
 @dataclass(frozen=True)
 class AttackMagicResistanceRuntime:
-    """Four-element magic resistance/training state plus battle modifiers."""
+    """Defender resistance state plus battle modifiers.
+
+    ``levels`` corresponds semantically to descendant CHAR_*_RESIST.
+    ``exps`` corresponds to CHAR_*_DEFMAGIC_EXP (resistance training
+    experience), not CHAR_*_EXP proficiency levels or CHAR_*_ATTMAGIC_EXP.
+    """
 
     levels: tuple[int, int, int, int] = (0, 0, 0, 0)
     exps: tuple[int, int, int, int] = (0, 0, 0, 0)
