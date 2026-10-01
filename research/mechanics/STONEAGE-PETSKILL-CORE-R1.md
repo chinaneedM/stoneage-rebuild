@@ -153,6 +153,41 @@ The normal attack loop then performs up to that many attacks and uses the attack
 
 So this is not simply “N full-damage attacks”; the fixed old combat layer explicitly sets `gDamageDiv=N`.
 
+### Recovered25 execution closure
+
+Recovered25 closes ContinuationAttack for enemy AI with **4 referenced IDs /
+139 positive enemybase skill-slot uses**. All four OPTION rows are ASCII,
+contain a leading integer accepted by the fixed 1..10 handler grammar, and
+recover the four distinct counts **2, 3, 4, 5**.
+
+The executable round model preserves the fixed loop rather than multiplying a
+single-hit result:
+
+- `BATTLE_COM_S_RENZOKU=1001`;
+- LOW(COM3) supplies both `attack_max` and `gDamageDiv`;
+- the positive-damage division occurs after AttackSeq-shaped
+  dodge/critical/GUARD/Guardian work and before DamageSub-shaped reactions and
+  ride sharing;
+- non-bow TargetListSet repeats the submitted original COM2, so once that
+  original target is dead each later hit independently writes it back and can
+  consume a fresh DefaultAttacker retarget roll;
+- Guardian, reaction, ride/petfall, wakeup and death/ultimate consequences are
+  applied per hit and therefore affect later hits;
+- only the final BATTLE_Attack continuation state and final counter target feed
+  the post-loop counter chain.
+
+Recovered runtime admission uses explicit `ContinuationAttackRolls` with one
+ordinary-attack RNG bundle per hit and rejects missing/extra actor mappings.
+The historical LOW-only handler write remains documented; for recovered enemy
+admission the otherwise inactive HIGH half is initialized to zero rather than
+inventing previous COM3 residue.
+
+Validation closes the full route through the ordinary resolver, persistent
+battle state, recovered enemy `wa[n]` bridge and coordinator. The end-to-end
+coordinator run is **36825205100 = PASS**, the full recovered25
+region/runtime-stack run is **36825205097 = PASS**, and the final battle-core /
+Taiwan gameplay regression runs are **36825541838 / 36825541884 = PASS**.
+
 ## Charge attack
 
 The handler encodes:

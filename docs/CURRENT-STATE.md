@@ -4893,3 +4893,40 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Executable recovered stable-common pet-skill slot-use coverage is now **1935 / 2486 = ~77.8%** when counting NormalAttack + NormalGuard + StatusChange + PowerBalance + Mighty + GuardBreak + ChargeAttack + NoGuard.
 - **LOCAL_RUNTIME_ENEMY_AI_NOGUARD_R1 = CLOSED.**
 - Next priority: `PETSKILL_ContinuationAttack` (**139 slot uses**). Its fixed handler stores the attack count in LOW(COM3), and battle execution sets the same count as the damage divisor. The remaining closure is the multi-hit loop itself: hit count, per-hit target adjustment/retarget behavior, damage division, Guardian/reaction interaction and counter-chain placement must be reconstructed before recovered enemy-AI admission.
+
+## Phase 1 recovered ContinuationAttack enemy-AI execution — 2026-10-01
+
+- `PETSKILL_ContinuationAttack` is now closed for recovered25 enemy AI:
+  - **4** referenced ContinuationAttack skill IDs;
+  - **139** positive enemybase skill-slot uses;
+  - all **4/4** recovered OPTION rows are ASCII, begin with a valid integer, and satisfy the fixed **1..10** handler range;
+  - recovered counts are exactly four distinct values spanning **2..5**.
+- Fixed command/setup semantics are preserved:
+  - `BATTLE_COM_S_RENZOKU=1001`;
+  - the handler writes the attack count into LOW(COM3) while preserving HIGH(COM3);
+  - recovered runtime admission initializes the inactive HIGH half to zero rather than inventing prior packed-state residue.
+- Fixed multi-hit execution is reconstructed rather than approximated as N full-damage attacks:
+  - LOW(COM3) is both the hit cap and `gDamageDiv`;
+  - positive physical damage is divided by N after AttackSeq-shaped dodge/critical/GUARD/Guardian processing and before DamageSub-shaped reactions/ride sharing;
+  - non-bow target-list setup repeats the originally submitted COM2, so after that original target dies each later hit independently re-checks it and may consume a fresh default-target retarget roll;
+  - Guardian eligibility is re-evaluated on every hit;
+  - damage reaction, ride split/petfall, positive-damage wakeup, death/ultimate accumulation and immediate ultimate exits are resolved per hit and therefore can change the state seen by later hits;
+  - the counter chain starts only after the multi-hit loop and is gated by the final `BATTLE_Attack` continuation boolean / final counter target.
+- RNG remains explicit and fail-closed:
+  - `ContinuationAttackRolls` requires exactly one ordinary-attack RNG bundle per recovered hit;
+  - the coordinator requires an exact participant-key match for enemies that actually selected S_RENZOKU;
+  - no hidden retarget, hit, damage, critical, dodge or counter RNG fallback was introduced.
+- Runtime plumbing is complete:
+  - stable command bridge -> ordinary round resolver -> persistent battle state -> recovered enemy `wa[n]` bridge -> local runtime coordinator;
+  - unsupported/malformed callback or OPTION data remains an error rather than ATTACK/WAIT fallback.
+- Validation:
+  - baseline multi-hit battle core **36820169804 = PASS** and Taiwan gameplay **36820169769 = PASS**;
+  - Guardian extension **36820385361 / 36820385299 = PASS**;
+  - per-hit damage reaction **36820516236 / 36820516168 = PASS**;
+  - final isolated main-round/counter-chain regression: battle core **36825541838 = PASS**, Taiwan gameplay **36825541884 = PASS**;
+  - runtime admission golden contract **36825016807 = PASS** and coordinator **36825016962 = PASS**;
+  - end-to-end recovered ContinuationAttack coordinator **36825205100 = PASS**;
+  - full recovered25 region/runtime-stack workflow **36825205097 = PASS**.
+- Executable recovered stable-common pet-skill slot-use coverage is now **2074 / 2486 = ~83.4%** when counting NormalAttack + NormalGuard + StatusChange + PowerBalance + Mighty + GuardBreak + ChargeAttack + NoGuard + ContinuationAttack.
+- **LOCAL_RUNTIME_ENEMY_AI_CONTINUATIONATTACK_R1 = CLOSED.**
+- Next priority: `PETSKILL_Abduct` (**2 referenced IDs / 14 slot uses**). It ties EarthRound at 14 uses, but recovered25 Abduct OPTION rows are **2/2 ASCII** and the stable base action does not require EarthRound's two-phase cross-round carry or stale-COM3 damage state. Close target eligibility, explicit RAND(1,100), success/failure exit semantics and persistent battle-entry removal before runtime admission. EarthRound remains behind it.

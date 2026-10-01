@@ -232,12 +232,21 @@ explicit-RNG rule.
   grammar with dodge **30..50**, counter **50..70** and critical **20..40**.
   Its own turn remains S_NOGUARD NoAction while the still-selected COM3 feeds
   same-round defender dodge and non-player counter probability.
+- `PETSKILL_ContinuationAttack` is admitted after bundle-backed proof that all
+  four referenced OPTION rows are ASCII leading-integer counts in the fixed
+  1..10 handler range; recovered values are the four distinct counts **2..5**.
+  S_RENZOKU uses LOW(COM3) as both hit cap and damage divisor. The ordinary
+  round consumes explicit per-hit RNG, independently re-checks the original
+  non-bow target after each hit, re-evaluates Guardian/reaction/ride/wakeup/
+  ultimate state per hit, and enters the counter chain only from the final
+  BATTLE_Attack continuation state.
 - StatusChange carries recovered command-setup effects and uses only explicit
   target status profiles / status RNG. PowerBalance carries handler-side work
   attack/defense mutations into the ordinary physical attack path. Mighty
   preserves its packed damage multiplier and dodge modifier. GuardBreak uses
   the dedicated command-1002 guard-only gate and fixed Guardian settlement
-  shape. No admitted callback introduces hidden RNG.
+  shape. ContinuationAttack consumes an exact explicit per-hit RNG bundle;
+  no admitted callback introduces hidden RNG.
 - Empty slots, unresolved IDs and every other callback continue to fail closed.
 - `BATTLE_COM_NONE` is preserved as its own source-shaped no-action command;
   it is not rewritten to WAIT.
@@ -255,7 +264,7 @@ Current rule:
 - caller-supplied enemy commands remain valid at the low-level explicit-command
   coordinator seam;
 - automatic common-normal generation is permitted only for the evidence-closed
-  ATTACK/GUARD/ESCAPE/basic-`wa`/StatusChange/PowerBalance/Mighty/GuardBreak/ChargeAttack/NoGuard subset described above;
+  ATTACK/GUARD/ESCAPE/basic-`wa`/StatusChange/PowerBalance/Mighty/GuardBreak/ChargeAttack/NoGuard/ContinuationAttack subset described above;
 - an unsupported selected `wa` callback is an error, never an implicit ATTACK,
   GUARD, NONE or WAIT fallback;
 - a selected `ma` path still resolves to no common decision, matching the
@@ -265,12 +274,13 @@ Current rule:
 ## Next seam
 
 Use hash-pinned recovered25 aggregate callback/slot-use coverage to prioritize
-the remaining stable-common `wa` callbacks. NoGuard is now closed, including
-bundle grammar, same-round defender dodge, non-player counter modification and
-explicit counter-chain RNG at the coordinator boundary. Audit
-ContinuationAttack next: its 139 recovered slot uses now make it the leading
-stable-common execution gap. Reconstruct the fixed multi-hit loop, LOW(COM3)
-attack-count/damage-divisor coupling, retarget behavior, Guardian/reaction
-ordering and counter-chain placement before recovered enemy-AI admission. Add
-explicit RNG/state inputs when required; do not generalize a pet-skill executor
-ahead of evidence.
+the remaining stable-common `wa` callbacks. ContinuationAttack is now closed,
+including recovered 2..5 count grammar, LOW(COM3) hit/divisor coupling,
+per-hit retarget + Guardian/reaction/ride/wakeup/ultimate sequencing, persistent
+state propagation and the final post-loop counter chain. Audit
+`PETSKILL_Abduct` next: **2 referenced IDs / 14 slot uses**, tied with
+EarthRound on use count but with **2/2 ASCII OPTION** rows and no two-phase
+cross-round carry. Close base target eligibility, explicit RAND(1,100),
+success/failure exit semantics and persistent entry removal before recovered
+enemy-AI admission. Keep EarthRound deferred behind its hide/attack carry and
+stale full-COM3 hazard.
