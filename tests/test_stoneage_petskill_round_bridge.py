@@ -2,6 +2,7 @@ import unittest
 
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_GUARD,
+    BATTLE_COM_S_RENZOKU,
     BATTLE_COM_S_GBREAK,
     BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_CHARGE,
@@ -14,6 +15,7 @@ from tools.stoneage_battle_round_model import (
 )
 from tools.stoneage_petskill_core_model import (
     charge_attack_command,
+    continuation_attack_command,
     guard_break_command,
     guardian_command,
     mighty_command,
@@ -64,6 +66,15 @@ class PetSkillRoundBridgeTests(unittest.TestCase):
         self.assertEqual(submission.battle_command.command2,3)
         self.assertEqual(submission.setup_effects.defense_power,960)
         self.assertEqual(submission.setup_effects.guardian_for_slot,3)
+
+    def test_continuationattack_packs_count_and_preserved_high_half(self):
+        payload=continuation_attack_command(10,"4",prior_high=77)
+        submission=bridge_stable_pet_skill_command(payload)
+        command=submission.battle_command
+        self.assertEqual(command.command1,BATTLE_COM_S_RENZOKU)
+        self.assertEqual(command.command2,10)
+        self.assertEqual(battle_command3_low(command.command3),4)
+        self.assertEqual(battle_command3_high(command.command3),77)
 
     def test_chargeattack_packs_wait_percent_and_latent_ready_power(self):
         payload=dict(charge_attack_command(10,"1 攻%50"))
