@@ -9,6 +9,10 @@ on:
       - .github/workflows/probe-stoneage-25-attmagic.yml
       - tools/stoneage_attmagic_probe.py
       - tests/test_stoneage_attmagic_probe.py
+      - tools/stoneage_attack_magic_footprint_coverage_probe.py
+      - tests/test_stoneage_attack_magic_footprint_coverage_probe.py
+      - tools/stoneage_attack_magic_footprint_model.py
+      - tools/stoneage_attack_magic_model.py
 permissions:
   contents: write
 jobs:
@@ -17,7 +21,10 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -m unittest tests.test_stoneage_attmagic_probe -v
+      - run: |
+          python3 -m unittest \
+            tests.test_stoneage_attmagic_probe \
+            tests.test_stoneage_attack_magic_footprint_coverage_probe -v
       - run: sudo apt-get update && sudo apt-get install -y unar
       - name: Recover verified preservation bundle
         run: |
@@ -56,11 +63,19 @@ jobs:
           test -n "$D"
           mkdir -p research/recovered
           python3 -m tools.stoneage_attmagic_probe --data-dir "$D" > research/recovered/STONEAGE-25-ATTMAGIC-PROBE-R1.txt
+      - name: Probe recovered25 AttackMagic footprint coverage
+        run: |
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          test -n "$D"
+          python3 -m tools.stoneage_attack_magic_footprint_coverage_probe \
+            --data-dir "$D" > research/recovered/STONEAGE-25-ATTACKMAGIC-FOOTPRINT-COVERAGE-R1.txt
+          grep -F 'RECOVERED_MAGIC_ROWS_PRESENT|25' research/recovered/STONEAGE-25-ATTACKMAGIC-FOOTPRINT-COVERAGE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_ATTACKMAGIC_FOOTPRINT_COVERAGE_AUDITED' research/recovered/STONEAGE-25-ATTACKMAGIC-FOOTPRINT-COVERAGE-R1.txt
       - name: Commit derived report only
         run: |
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
-          git add research/recovered/STONEAGE-25-ATTMAGIC-PROBE-R1.txt
+          git add research/recovered/STONEAGE-25-ATTMAGIC-PROBE-R1.txt research/recovered/STONEAGE-25-ATTACKMAGIC-FOOTPRINT-COVERAGE-R1.txt
           git commit -m 'research: analyze StoneAge attack magic'
           git pull --rebase origin main
           git push

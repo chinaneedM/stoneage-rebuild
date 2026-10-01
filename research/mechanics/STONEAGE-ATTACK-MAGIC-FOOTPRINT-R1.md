@@ -39,4 +39,6 @@ For affected right-down multi-target sets this comparator can violate the sortin
 
 R1 reconstructs target membership exactly, exposes the exact comparator, returns a source order only when the comparator is a strict ordering for the concrete set, and otherwise returns no portable sorted order. Runtime composition must fail closed at that ordering boundary unless a specific legacy qsort/ABI is established or a later explicit modern-design order is chosen.
 
-Marker: `FIXED_DESCENDANT_ATTACKMAGIC_FOOTPRINT_GEOMETRY_R1 = CANDIDATE`
+Validation: dedicated footprint CI **36846956075 = PASS**; recovered `attmagic.bin` R2 probe **36846955696 = PASS** and report write-back advanced `main` to `4cdb426b2649c0ec2e272200352c2e85b1e45957`.
+
+Marker: `FIXED_DESCENDANT_ATTACKMAGIC_FOOTPRINT_GEOMETRY_R1 = CLOSED`

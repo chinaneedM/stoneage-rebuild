@@ -5222,6 +5222,9 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Corrected a prior probe interpretation: the 54 `attmagic.bin` records are **27 adjacent side-specific pairs**, not 27 effective records plus a second half. Runtime chooses `IDX*2+1` for attacker slots 0..9 and `IDX*2` for attacker slots 10..19.
 - Added candidate footprint reconstruction with explicit dead-target retarget rolls, row fallback, 3x5 matrix expansion, and side-record selection.
 - The convergent historical `SortLoc` right-down branch is not a valid portable ordering relation (`ele2basex - ele1basey`). Because target order controls later RNG consumption, exact right-down multi-target execution remains fail-closed rather than guessed.
-- Added corrected AttackMagic binary probe R2 semantics; real preservation-bundle regeneration and dedicated footprint CI are pending for this candidate commit.
-- **FIXED_DESCENDANT_ATTACKMAGIC_FOOTPRINT_GEOMETRY_R1 = CANDIDATE.**
-- Next priority after CI/report acceptance: measure recovered25 real-matrix footprint/order coverage and determine the narrowest exact runtime-admission subset before composing with the damage core.
+- Corrected AttackMagic binary probe R2 passed against the real preservation bundle: **36846955696 = PASS**. It confirms 54 raw records = **27 adjacent side-specific pairs**, all **27/27 pairs differ**, all 27 magic indices are referenced, and field-matrix cells remain binary 0/1.
+- Dedicated footprint geometry CI **36846956075 = PASS**; bot report write-back advanced `main` to `4cdb426b2649c0ec2e272200352c2e85b1e45957`.
+- **FIXED_DESCENDANT_ATTACKMAGIC_FOOTPRINT_GEOMETRY_R1 = CLOSED.**
+- Added a recovered25 real-matrix coverage probe for the actual local-runtime orientation (player slots 0..9, enemy slots 10..19): enemy AttackMagic uses even `IDX*2` records against player side 0. The probe evaluates all 25 magic IDs across all ten possible initial player target slots under a fully alive side and measures exact target counts plus source-sort portability without storing payload text.
+- **RECOVERED25_ATTACKMAGIC_FOOTPRINT_COVERAGE_R1 = CANDIDATE.**
+- Next priority: run that coverage probe on the preservation bundle; use its measured portable/nonportable split to define the narrowest exact enemy-AI runtime admission boundary before composing with the damage core.
