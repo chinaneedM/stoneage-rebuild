@@ -680,6 +680,7 @@ def main() -> None:
     attackmagic_item_after_magic = 0
     attackmagic_item_numeric = []
     attackmagic_item_before_magic = 0
+    attackmagic_pairs = []
     for entry in attackmagic_entries:
         option_text = entry.ascii_option()
         magic_pos = option_text.find("magic")
@@ -698,7 +699,12 @@ def main() -> None:
                 item_tail = option_text[item_pos + len("item") + 1 :]
                 match = re.match(r"\s*([+-]?\d+)", item_tail)
                 if match is not None:
-                    attackmagic_item_numeric.append(int(match.group(1)))
+                    item_value = int(match.group(1))
+                    attackmagic_item_numeric.append(item_value)
+                    if len(attackmagic_magic_numeric) > 0:
+                        attackmagic_pairs.append(
+                            (attackmagic_magic_numeric[-1], item_value)
+                        )
             pre_item = option_text.find("item", 0, magic_pos)
             if pre_item >= 0:
                 attackmagic_item_before_magic += 1
@@ -708,6 +714,10 @@ def main() -> None:
         raise ValueError(
             "recovered25 AttackMagic callback population drifted from 25 IDs"
         )
+    attackmagic_pair_deltas = [
+        int(item_value) - int(magic_value)
+        for magic_value, item_value in attackmagic_pairs
+    ]
     print(
         "PETSKILL_ATTACKMAGIC_PARSE|"
         f"unique_ids={len(attackmagic_entries)}|"
@@ -721,7 +731,11 @@ def main() -> None:
         f"magic_distinct={len(set(attackmagic_magic_numeric))}|"
         f"item_min={min(attackmagic_item_numeric) if attackmagic_item_numeric else 'NONE'}|"
         f"item_max={max(attackmagic_item_numeric) if attackmagic_item_numeric else 'NONE'}|"
-        f"item_distinct={len(set(attackmagic_item_numeric))}"
+        f"item_distinct={len(set(attackmagic_item_numeric))}|"
+        f"pair_numeric_ids={len(attackmagic_pairs)}|"
+        f"pair_delta_min={min(attackmagic_pair_deltas) if attackmagic_pair_deltas else 'NONE'}|"
+        f"pair_delta_max={max(attackmagic_pair_deltas) if attackmagic_pair_deltas else 'NONE'}|"
+        f"pair_delta_distinct={len(set(attackmagic_pair_deltas))}"
     )
     status_entries = tuple(
         entry
