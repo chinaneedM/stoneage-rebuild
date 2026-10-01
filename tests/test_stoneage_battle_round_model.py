@@ -24,6 +24,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_MIGHTY,
     BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_STATUSCHANGE,
+    BATTLE_COM_S_ABDUCT,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
@@ -34,6 +35,8 @@ from tools.stoneage_battle_round_model import (
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
+    OrdinaryAbductContext,
+    OrdinaryAbductRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
     _battle_attack_continuation_allowed,
@@ -56,7 +59,18 @@ from tools.stoneage_battle_status_model import (
 from tools.stoneage_singleplayer_battle import BattleParticipant
 
 
-def actor(pid, side, kind, *, hp=100, attack=100, defense=70, quick=50, level=10):
+def actor(
+    pid,
+    side,
+    kind,
+    *,
+    hp=100,
+    attack=100,
+    defense=70,
+    quick=50,
+    level=10,
+    fixed_ai=None,
+):
     return BattleParticipant(
         participant_id=pid,
         side=side,
@@ -69,6 +83,7 @@ def actor(pid, side, kind, *, hp=100, attack=100, defense=70, quick=50, level=10
         quick=quick,
         name=pid,
         fixed_vital=40,
+        fixed_ai=fixed_ai,
     )
 
 
@@ -4293,6 +4308,181 @@ class BattleRoundModelTests(unittest.TestCase):
                 defense_profile="newpower_70pct",
             )
 
+
+    def test_abduct_enum_matches_pinned_fixed_battle_header(self):
+        self.assertEqual(BATTLE_COM_S_ABDUCT,1012)
+
+    def test_abduct_rejects_player_target_before_rng_and_keeps_attacker(self):
+        player=actor("player","player","player",quick=20)
+        enemy=actor("enemy","enemy","enemy",quick=100)
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(
+                    BATTLE_COM_S_ABDUCT,
+                    command2=0,
+                    command3=pack_battle_command3(low=77,high=0),
+                ),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            abduct_contexts={
+                "enemy":OrdinaryAbductContext(
+                    skill_array=77,
+                    ai_threshold=80,
+                ),
+            },
+        )
+        event=result.events[0]
+        self.assertEqual(event.result,"abduct_rejected_player")
+        self.assertFalse(event.abduct_resolution.attempted)
+        self.assertEqual(result.exited_participant_ids,())
+
+    def test_abduct_pet_threshold_success_exits_target_and_attacker_without_damage(self):
+        player=actor("player","player","player",quick=10)
+        pet=actor("pet","player","pet",quick=20,fixed_ai=79)
+        enemy=actor("enemy","enemy","enemy",quick=100)
+        prepared=prepare_battle_round(
+            (player,pet,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(
+                    BATTLE_COM_S_ABDUCT,
+                    command2=1,
+                    command3=pack_battle_command3(low=88,high=0),
+                ),
+            },
+            {"player":0,"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"pet":1,"enemy":10},
+            profiles={
+                "player":profile(),
+                "pet":profile(),
+                "enemy":profile(),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            abduct_contexts={
+                "enemy":OrdinaryAbductContext(
+                    skill_array=88,
+                    ai_threshold=80,
+                ),
+            },
+            abduct_rolls={
+                "enemy":OrdinaryAbductRolls(abduct_roll_1_100=100),
+            },
+        )
+        event=result.events[0]
+        self.assertEqual(event.result,"abduct_success")
+        self.assertEqual(event.abduct_resolution.probability,200)
+        self.assertTrue(event.abduct_resolution.attacker_exits)
+        self.assertTrue(event.abduct_resolution.defender_exits)
+        self.assertEqual(result.exited_participant_ids,("enemy","pet"))
+        self.assertEqual(result.hp_by_participant_id["pet"],100)
+        self.assertEqual(result.hp_by_participant_id["enemy"],100)
+        self.assertEqual(
+            [e.result for e in result.events[1:]],
+            ["skipped_exited","wait"],
+        )
+
+    def test_abduct_pet_threshold_failure_still_exits_attacker(self):
+        player=actor("player","player","player",quick=10)
+        pet=actor("pet","player","pet",quick=20,fixed_ai=80)
+        enemy=actor("enemy","enemy","enemy",quick=100)
+        prepared=prepare_battle_round(
+            (player,pet,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(
+                    BATTLE_COM_S_ABDUCT,
+                    command2=1,
+                    command3=pack_battle_command3(low=88,high=0),
+                ),
+            },
+            {"player":0,"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"pet":1,"enemy":10},
+            profiles={
+                "player":profile(),
+                "pet":profile(),
+                "enemy":profile(),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            abduct_contexts={
+                "enemy":OrdinaryAbductContext(
+                    skill_array=88,
+                    ai_threshold=80,
+                ),
+            },
+            abduct_rolls={
+                "enemy":OrdinaryAbductRolls(abduct_roll_1_100=1),
+            },
+        )
+        event=result.events[0]
+        self.assertEqual(event.result,"abduct_failed")
+        self.assertEqual(event.abduct_resolution.probability,0)
+        self.assertEqual(result.exited_participant_ids,("enemy",))
+        self.assertEqual(result.hp_by_participant_id["pet"],100)
+
+    def test_abduct_retargets_dead_original_target_before_resolution(self):
+        player=actor("player","player","player",hp=0,quick=20)
+        pet=actor("pet","player","pet",quick=30,fixed_ai=90)
+        enemy=actor("enemy","enemy","enemy",quick=100)
+        prepared=prepare_battle_round(
+            (player,pet,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(
+                    BATTLE_COM_S_ABDUCT,
+                    command2=0,
+                    command3=pack_battle_command3(low=88,high=0),
+                ),
+            },
+            {"player":0,"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"pet":1,"enemy":10},
+            profiles={
+                "player":profile(),
+                "pet":profile(),
+                "enemy":profile(),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            abduct_contexts={
+                "enemy":OrdinaryAbductContext(
+                    skill_array=88,
+                    ai_threshold=80,
+                ),
+            },
+            abduct_rolls={
+                "enemy":OrdinaryAbductRolls(
+                    abduct_roll_1_100=1,
+                    retarget_roll=0,
+                ),
+            },
+        )
+        event=result.events[0]
+        self.assertTrue(event.retargeted)
+        self.assertEqual(event.resolved_target_slot,1)
+        self.assertEqual(event.result,"abduct_failed")
+        self.assertEqual(result.exited_participant_ids,("enemy",))
 
     def test_capture_executes_in_action_order_and_exits_target_without_hp_damage(self):
         player=actor("player","player","player",quick=100,level=10)

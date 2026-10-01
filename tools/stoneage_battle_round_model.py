@@ -90,6 +90,10 @@ from tools.stoneage_battle_status_model import (
     resolve_base_status_tick,
 )
 from tools.stoneage_singleplayer_battle import BattleParticipant
+from tools.stoneage_petskill_core_model import (
+    abduct_probability,
+    abduct_transition,
+)
 
 
 BATTLE_COM_NONE = 0
@@ -114,6 +118,9 @@ BATTLE_COM_S_CHARGE = 1005
 BATTLE_COM_S_MIGHTY = 1006
 BATTLE_COM_S_POWERBALANCE = 1007
 BATTLE_COM_S_STATUSCHANGE = 1008
+# Fixed battle.h sequence: EARTHROUND0=1009, EARTHROUND1=1010,
+# LOSTESCAPE=1011, ABDUCT=1012, STEAL=1013.
+BATTLE_COM_S_ABDUCT = 1012
 BATTLE_COM_S_NOGUARD = 1014
 BATTLE_COM_S_CHARGE_OK = 1015
 
@@ -170,6 +177,7 @@ BASE_COMMAND_CODES = frozenset(
         BATTLE_COM_S_MIGHTY,
         BATTLE_COM_S_POWERBALANCE,
         BATTLE_COM_S_STATUSCHANGE,
+        BATTLE_COM_S_ABDUCT,
         BATTLE_COM_S_NOGUARD,
         BATTLE_COM_S_CHARGE_OK,
     }
@@ -539,6 +547,7 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_S_MIGHTY,
         BATTLE_COM_S_POWERBALANCE,
         BATTLE_COM_S_STATUSCHANGE,
+        BATTLE_COM_S_ABDUCT,
         BATTLE_COM_S_NOGUARD,
         BATTLE_COM_S_CHARGE_OK,
     }
@@ -630,6 +639,40 @@ class OrdinaryCaptureRolls:
 
 
 @dataclass(frozen=True)
+class OrdinaryAbductRolls:
+    """Explicit RNG consumed by TargetAdjust + BATTLE_Abduct."""
+
+    abduct_roll_1_100: int | None = None
+    retarget_roll: int | None = None
+
+
+@dataclass(frozen=True)
+class OrdinaryAbductContext:
+    """Recovered command identity plus fixed battle-global context."""
+
+    skill_array: int
+    ai_threshold: int
+    has_win_func: bool = False
+
+    def __post_init__(self) -> None:
+        array=int(self.skill_array)
+        if array < 0:
+            raise ValueError("Abduct skill array must be non-negative")
+        object.__setattr__(self,"skill_array",array)
+        object.__setattr__(self,"ai_threshold",int(self.ai_threshold))
+        object.__setattr__(self,"has_win_func",bool(self.has_win_func))
+
+
+@dataclass(frozen=True)
+class OrdinaryAbductResolution:
+    attempted: bool
+    success: bool
+    probability: int
+    attacker_exits: bool
+    defender_exits: bool
+
+
+@dataclass(frozen=True)
 class OrdinaryCaptureContext:
     """Non-random player/target state not carried by BattleParticipant."""
     attacker_charm: int
@@ -718,6 +761,7 @@ class OrdinaryRoundEvent:
     target_hp_after: int | None = None
     capture_resolution: BattleCaptureResolution | None = None
     escape_resolution: BattleEscapeResolution | None = None
+    abduct_resolution: OrdinaryAbductResolution | None = None
     is_counter: bool = False
     counter_attempt: int | None = None
     counter_check_resolution: BattleCounterCheckResolution | None = None
@@ -3035,6 +3079,8 @@ def resolve_ordinary_round(
     defense_profile: str,
     capture_contexts: Mapping[str, OrdinaryCaptureContext] | None = None,
     capture_rolls: Mapping[str, OrdinaryCaptureRolls] | None = None,
+    abduct_contexts: Mapping[str, OrdinaryAbductContext] | None = None,
+    abduct_rolls: Mapping[str, OrdinaryAbductRolls] | None = None,
     escape_contexts: Mapping[str, OrdinaryEscapeContext] | None = None,
     escape_rolls: Mapping[str, OrdinaryEscapeRolls] | None = None,
     counter_rolls_by_attack_id: Mapping[
@@ -3116,6 +3162,8 @@ def resolve_ordinary_round(
     exited_ids: list[str] = []
     capture_contexts=dict(capture_contexts or {})
     capture_rolls=dict(capture_rolls or {})
+    abduct_contexts=dict(abduct_contexts or {})
+    abduct_rolls=dict(abduct_rolls or {})
     escape_contexts=dict(escape_contexts or {})
     escape_rolls=dict(escape_rolls or {})
     normalized_counter_rolls=(
@@ -3898,6 +3946,136 @@ def resolve_ordinary_round(
                         else "escape_failed"
                     ),
                     escape_resolution=resolution,
+                )
+            )
+            continue
+
+        if command.command1 == BATTLE_COM_S_ABDUCT:
+            original_target=int(command.command2)
+            target=original_target
+            retargeted=False
+            target_alive=(
+                target in by_slot
+                and target not in exited_slots
+                and int(hp_by_slot.get(target,0))>0
+                and _slot_side(target) != _slot_side(slot)
+            )
+            actor_rolls=abduct_rolls.get(
+                participant_id,
+                OrdinaryAbductRolls(),
+            )
+            if not isinstance(actor_rolls,OrdinaryAbductRolls):
+                raise TypeError(
+                    f"Abduct rolls for {participant_id} have wrong type"
+                )
+            if not target_alive:
+                target=_retarget_slot(
+                    slot,
+                    by_slot,
+                    hp_by_slot,
+                    actor_rolls.retarget_roll,
+                    excluded_slots=exited_slots,
+                )
+                retargeted=True
+            if target is None:
+                events.append(
+                    OrdinaryRoundEvent(
+                        participant_id,
+                        slot,
+                        BATTLE_COM_S_ABDUCT,
+                        entry.action_value,
+                        "abduct_no_target",
+                        original_target_slot=original_target,
+                        retargeted=True,
+                    )
+                )
+                continue
+            if participant_id not in abduct_contexts:
+                raise KeyError(f"missing Abduct context for {participant_id}")
+            context=abduct_contexts[participant_id]
+            if not isinstance(context,OrdinaryAbductContext):
+                raise TypeError(
+                    f"Abduct context for {participant_id} has wrong type"
+                )
+            if battle_command3_low(command.command3) != int(context.skill_array):
+                raise ValueError("Abduct COM3 skill-array identity drift")
+
+            defender=by_slot[target]
+            defender_id=str(defender.participant_id)
+            probability=abduct_probability(
+                attacker_level=int(participant.level),
+                defender_level=int(defender.level),
+                defender_type=str(defender.kind),
+                has_win_func=bool(context.has_win_func),
+                ai_threshold=int(context.ai_threshold),
+                defender_fixed_ai=defender.fixed_ai,
+            )
+            if defender.kind=="player":
+                resolution=OrdinaryAbductResolution(
+                    attempted=False,
+                    success=False,
+                    probability=int(probability),
+                    attacker_exits=False,
+                    defender_exits=False,
+                )
+                result_name="abduct_rejected_player"
+            elif participant.kind not in {"pet","enemy"}:
+                resolution=OrdinaryAbductResolution(
+                    attempted=False,
+                    success=False,
+                    probability=int(probability),
+                    attacker_exits=False,
+                    defender_exits=False,
+                )
+                result_name="abduct_ineligible_attacker"
+            else:
+                roll=_validated_roll(
+                    actor_rolls.abduct_roll_1_100,
+                    1,
+                    100,
+                    "abduct_roll_1_100",
+                )
+                transition=abduct_transition(
+                    attacker_type=str(participant.kind),
+                    defender_type=str(defender.kind),
+                    probability=int(probability),
+                    rolled_1_to_100=roll,
+                )
+                resolution=OrdinaryAbductResolution(
+                    attempted=bool(transition["attempted"]),
+                    success=bool(transition["success"]),
+                    probability=int(probability),
+                    attacker_exits=bool(transition["attacker_exits"]),
+                    defender_exits=bool(transition.get("defender_exits",False)),
+                )
+                result_name=(
+                    "abduct_success"
+                    if resolution.success
+                    else "abduct_failed"
+                )
+                if resolution.attacker_exits and slot not in exited_slots:
+                    exited_slots.add(slot)
+                    if str(participant_id) not in exited_ids:
+                        exited_ids.append(str(participant_id))
+                if resolution.defender_exits and target not in exited_slots:
+                    exited_slots.add(target)
+                    if defender_id not in exited_ids:
+                        exited_ids.append(defender_id)
+
+            before=int(hp_by_slot[target])
+            events.append(
+                OrdinaryRoundEvent(
+                    participant_id,
+                    slot,
+                    BATTLE_COM_S_ABDUCT,
+                    entry.action_value,
+                    result_name,
+                    original_target_slot=original_target,
+                    resolved_target_slot=target,
+                    retargeted=retargeted,
+                    target_hp_before=before,
+                    target_hp_after=before,
+                    abduct_resolution=resolution,
                 )
             )
             continue

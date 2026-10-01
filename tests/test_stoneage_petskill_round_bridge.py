@@ -10,10 +10,12 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
+    BATTLE_COM_S_ABDUCT,
     battle_command3_high,
     battle_command3_low,
 )
 from tools.stoneage_petskill_core_model import (
+    abduct_command,
     charge_attack_command,
     continuation_attack_command,
     guard_break_command,
@@ -159,6 +161,16 @@ class PetSkillRoundBridgeTests(unittest.TestCase):
         self.assertEqual(battle_command3_high(command.command3),4)
         self.assertEqual(submission.setup_effects.attack_power,1250)
         self.assertEqual(submission.setup_effects.defense_power,720)
+
+    def test_abduct_packs_fixed_skill_array_identity(self):
+        payload=abduct_command(1,skill_array=77,prior_high=9)
+        submission=bridge_stable_pet_skill_command(payload)
+        command=submission.battle_command
+        self.assertEqual(command.command1,BATTLE_COM_S_ABDUCT)
+        self.assertEqual(command.command1,1012)
+        self.assertEqual(command.command2,1)
+        self.assertEqual(battle_command3_low(command.command3),77)
+        self.assertEqual(battle_command3_high(command.command3),9)
 
     def test_guardian_slot_drift_is_rejected(self):
         payload=guardian_command(

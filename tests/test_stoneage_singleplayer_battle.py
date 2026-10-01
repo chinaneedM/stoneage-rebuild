@@ -163,6 +163,7 @@ class SinglePlayerBattleLifecycleTests(unittest.TestCase):
         self.assertEqual(enemy.source_template_id, 88)
         self.assertEqual(enemy.level, 4)
         self.assertEqual(enemy.name, "Stone Wolf")
+        self.assertEqual(enemy.fixed_ai,4)
         self.assertGreater(enemy.hp, 0)
         self.assertGreater(enemy.attack, 0)
 

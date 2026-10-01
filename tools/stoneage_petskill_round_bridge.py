@@ -22,6 +22,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
+    BATTLE_COM_S_ABDUCT,
     BattleCommand,
     BattleCommandSetupEffects,
     pack_battle_command3,
@@ -53,6 +54,7 @@ def bridge_stable_pet_skill_command(
     - PETSKILL_NoGuard -> S_NOGUARD with packed dodge/counter/critical COM3
     - PETSKILL_PowerBalance -> S_POWERBALANCE + immediate work attack/defense
     - PETSKILL_StatusChange -> S_STATUSCHANGE with LOW=status/HIGH=turn
+    - PETSKILL_Abduct -> S_ABDUCT with LOW=skill-array ID / preserved HIGH
     """
     if not isinstance(payload,Mapping):
         raise TypeError("pet-skill command payload must be a mapping")
@@ -139,6 +141,17 @@ def bridge_stable_pet_skill_command(
             raise ValueError("S_STATUSCHANGE requires recovered low/high COM3")
         battle_command=BattleCommand(
             BATTLE_COM_S_STATUSCHANGE,
+            command2=target,
+            command3=pack_battle_command3(
+                low=int(payload["low"]),
+                high=int(payload["high"]),
+            ),
+        )
+    elif source_command=="S_ABDUCT":
+        if "low" not in payload or "high" not in payload:
+            raise ValueError("S_ABDUCT requires recovered low/high COM3")
+        battle_command=BattleCommand(
+            BATTLE_COM_S_ABDUCT,
             command2=target,
             command3=pack_battle_command3(
                 low=int(payload["low"]),

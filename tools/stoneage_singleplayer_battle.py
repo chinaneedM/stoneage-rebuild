@@ -54,6 +54,7 @@ class BattleParticipant:
     quick: int
     name: str | None
     fixed_vital: int | None = None
+    fixed_ai: int | None = None
     source_variant_id: int | None = None
     source_template_id: int | None = None
     source_pet_slot: int | None = None
@@ -138,6 +139,9 @@ def allied_pet_participant(pet: PetActor) -> BattleParticipant:
         defense=_require_int(fields, "defense"),
         quick=_require_int(fields, "quick"),
         name=_require_name(fields),
+        fixed_ai=(
+            int(fields["ai"]) if fields.get("ai") is not None else None
+        ),
         source_variant_id=pet.variant_id.value,
         source_template_id=pet.template_id.value,
         source_pet_slot=pet.slot.value,
@@ -180,6 +184,7 @@ def enemy_participant_from_spawn_state(
         quick=int(projection["quick"]),
         name=(None if template.name is None else str(template.name)),
         fixed_vital=int(birth.internal_vital),
+        fixed_ai=int(projection["ai"]),
         source_variant_id=variant.enemy_id,
         source_template_id=template.tempno,
         reward_exp=int(variant.exp_override),
