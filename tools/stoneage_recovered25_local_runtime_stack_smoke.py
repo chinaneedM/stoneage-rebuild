@@ -23,7 +23,10 @@ from tools.stoneage_local_runtime_core import (
     load_runtime_bootstrap_file,
 )
 from tools.stoneage_player_creation_model import build_creation_state
-from tools.stoneage_petskill_core_model import parse_status_skill
+from tools.stoneage_petskill_core_model import (
+    abduct_ai_threshold,
+    parse_status_skill,
+)
 from tools.stoneage_recovered25_local_runtime_stack import (
     Recovered25LocalRuntimeStack,
 )
@@ -790,6 +793,35 @@ def main() -> None:
         f"count_min={min(continuation_counts) if continuation_counts else -1}|"
         f"count_max={max(continuation_counts) if continuation_counts else -1}|"
         f"distinct_count={len(set(continuation_counts))}"
+    )
+    abduct_entries = tuple(
+        entry
+        for entry in referenced_skill_entries
+        if entry.function_name == "PETSKILL_Abduct"
+    )
+    abduct_ascii = 0
+    abduct_leading_int = 0
+    abduct_positive_ai = 0
+    abduct_ai_values = []
+    for entry in abduct_entries:
+        abduct_ascii += int(entry.option_bytes.isascii())
+        if not entry.option_bytes.isascii():
+            continue
+        option_text = entry.option_bytes.decode("ascii")
+        leading = re.match(r"\s*([+-]?\d+)", option_text)
+        abduct_leading_int += int(leading is not None)
+        value = int(abduct_ai_threshold(option_text))
+        abduct_ai_values.append(value)
+        abduct_positive_ai += int(value > 0)
+    print(
+        "PETSKILL_ABDUCT_PARSE|"
+        f"unique_ids={len(abduct_entries)}|"
+        f"ascii_ids={abduct_ascii}|"
+        f"leading_int_ids={abduct_leading_int}|"
+        f"positive_ai_ids={abduct_positive_ai}|"
+        f"ai_min={min(abduct_ai_values) if abduct_ai_values else -1}|"
+        f"ai_max={max(abduct_ai_values) if abduct_ai_values else -1}|"
+        f"distinct_ai={len(set(abduct_ai_values))}"
     )
     noguard_entries = tuple(
         entry
