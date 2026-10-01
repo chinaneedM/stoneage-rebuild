@@ -12,6 +12,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_S_EARTHROUND1,
     BATTLE_COM_S_ABDUCT,
+    BATTLE_COM_S_STEAL,
     battle_command3_high,
     battle_command3_low,
 )
@@ -26,6 +27,7 @@ from tools.stoneage_petskill_core_model import (
     no_guard_command,
     power_balance_command,
     status_change_command,
+    steal_command,
 )
 from tools.stoneage_petskill_round_bridge import (
     bridge_stable_pet_skill_command,
@@ -187,6 +189,13 @@ class PetSkillRoundBridgeTests(unittest.TestCase):
         )
         explicit_submission=bridge_stable_pet_skill_command(explicit)
         self.assertEqual(explicit_submission.battle_command.command3,50)
+
+    def test_steal_maps_to_fixed_command_1013_without_com3_payload(self):
+        submission=bridge_stable_pet_skill_command(steal_command(3))
+        self.assertEqual(submission.battle_command.command1,BATTLE_COM_S_STEAL)
+        self.assertEqual(submission.battle_command.command1,1013)
+        self.assertEqual(submission.battle_command.command2,3)
+        self.assertEqual(submission.battle_command.command3,0)
 
     def test_abduct_packs_fixed_skill_array_identity(self):
         payload=abduct_command(1,skill_array=77,prior_high=9)
