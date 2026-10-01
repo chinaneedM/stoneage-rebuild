@@ -947,9 +947,19 @@ def main() -> None:
     merge_empty_option = sum(
         int(len(entry.option_bytes) == 0) for entry in merge_entries
     )
-    if len(merge_entries) != 2:
+    if (
+        len(merge_entries) != 2
+        or merge_field_all != 0
+        or merge_field_battle != 0
+        or merge_field_map != 2
+        or merge_field_other != 0
+        or merge_illegal != 2
+        or merge_ascii != 2
+        or merge_empty_option != 2
+    ):
         raise ValueError(
-            "recovered25 Merge callback population drifted from two IDs"
+            "recovered25 Merge rows drifted outside closed "
+            "MAP/ILLEGAL/ASCII/empty-OPTION subset"
         )
     print(
         "PETSKILL_MERGE_PARSE|"

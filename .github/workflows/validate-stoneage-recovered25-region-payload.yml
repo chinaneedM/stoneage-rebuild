@@ -185,7 +185,7 @@ jobs:
           grep -F 'COUNT|enemybase_referenced_petskill_ids|111' "$R"
           grep -F 'PETSKILL_STATUSCHANGE_PARSE|unique_ids=6|matched_status_ids=6|turn_min=3|turn_max=5|attack_modifier_ids=6|defense_modifier_ids=0' "$R"
           grep -F 'PETSKILL_GUARDIAN_PARSE|unique_ids=1|attack_marker_ids=1|defense_marker_ids=0|defensive_com_ids=0|attack_numeric_ids=1|defense_numeric_ids=0|attack_min=-20.0|attack_max=-20.0|defense_min=NONE|defense_max=NONE' "$R"
-          grep -F 'PETSKILL_MERGE_PARSE|' "$R"
+          grep -F 'PETSKILL_MERGE_PARSE|unique_ids=2|field_all_ids=0|field_battle_ids=0|field_map_ids=2|field_other_ids=0|illegal_ids=2|ascii_ids=2|empty_option_ids=2' "$R"
           grep -F 'PETSKILL_NOGUARD_PARSE|' "$R"
           grep -F 'PETSKILL_CONTINUATIONATTACK_PARSE|unique_ids=4|ascii_ids=4|leading_int_ids=4|in_range_count_ids=4|count_min=2|count_max=5|distinct_count=4' "$R"
           grep -F 'PETSKILL_ABDUCT_PARSE|' "$R"
