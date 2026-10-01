@@ -374,6 +374,49 @@ class BattleCoreModelTests(unittest.TestCase):
         self.assertTrue(floor.success)
         self.assertFalse(miss.success)
 
+    def test_nonplayer_counter_modifier_applies_before_cap_and_floor(self):
+        inputs=BattleCounterCheckInputs(
+            attacker_kind=PET,
+            defender_kind=ENEMY,
+            attacker_fixed_dex=100,
+            defender_fixed_dex=100,
+            nonplayer_percent_modifier=30,
+        )
+        success=resolve_battle_counter_check(inputs,roll_1_10000=3000)
+        miss=resolve_battle_counter_check(inputs,roll_1_10000=3001)
+        self.assertEqual(success.raw_basis,0)
+        self.assertEqual(success.source_reported_percent,30.0)
+        self.assertEqual(success.comparison_threshold,3000.0)
+        self.assertTrue(success.success)
+        self.assertFalse(miss.success)
+
+    def test_player_counter_ignores_nonplayer_modifier(self):
+        inputs=BattleCounterCheckInputs(
+            attacker_kind=PLAYER,
+            defender_kind=ENEMY,
+            attacker_fixed_dex=100,
+            defender_fixed_dex=100,
+            attacker_fixed_luck=0,
+            nonplayer_percent_modifier=99,
+            attacker_weapon_type="fist",
+            defender_weapon_type="fist",
+        )
+        baseline=BattleCounterCheckInputs(
+            attacker_kind=PLAYER,
+            defender_kind=ENEMY,
+            attacker_fixed_dex=100,
+            defender_fixed_dex=100,
+            attacker_fixed_luck=0,
+            attacker_weapon_type="fist",
+            defender_weapon_type="fist",
+        )
+        modified=resolve_battle_counter_check(inputs,roll_1_10000=1)
+        plain=resolve_battle_counter_check(baseline,roll_1_10000=1)
+        self.assertEqual(
+            modified.comparison_threshold,
+            plain.comparison_threshold,
+        )
+
     def test_throwing_weapon_blocks_counter_without_consuming_rng(self):
         result=resolve_battle_counter_check(
             BattleCounterCheckInputs(
