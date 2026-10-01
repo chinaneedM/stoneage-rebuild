@@ -5336,3 +5336,50 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   path, hard-probe all three recovered OPTION rows, then admit only the
   evidence-closed RNG/damage/HP-conversion semantics. Do not infer a guarded
   numeric COM1 from a different compile profile.
+
+
+## Phase 1 recovered PETSKILL_DamageToHp runtime admission — 2026-10-01
+
+- Fixed-source audit separates the older `_SKILL_DAMAGETOHP`
+  `PETSKILL_DamageToHp` handler from the later
+  `_PETSKILL_DAMAGETOHP` / `DamageToHp2` variant. They are not flattened.
+- The older callback contains a real integer-arithmetic quirk:
+  `atoi(token1) / 100` executes as C integer division before assignment to
+  float.
+- Preservation-bundle hard probe **36866862704 = PASS** and closes all three
+  recovered rows:
+  - ID **503**: token1=30 -> integer ratio 0; recovery **50%**;
+  - ID **504**: token1=20 -> integer ratio 0; recovery **70%**;
+  - ID **505**: token1=10 -> integer ratio 0; recovery **100%**;
+  - all are ASCII two-field OPTIONs;
+  - total pressure is **30** positive enemybase slot uses across **30**
+    templates.
+- Recovered25 runtime admission uses a typed semantic submission rather than a
+  guessed guarded numeric COM1.
+- Exact physical ordering now represented:
+  - one ordinary TargetAdjust;
+  - specialized Guardian quirk where AttackSeq may calculate against the
+    Guardian but DamageSub still settles against the original adjusted target;
+  - pre-existing DamageReact on that original target disables HP conversion;
+  - otherwise ordinary physical damage resolves;
+  - post-hit conversion uses source-returned `damage + petdamage`;
+  - mounted targets therefore use rider amount + ride-pet amount, preserving
+    the source split's two +1 terms;
+  - attacker HP recovery is integer-truncated and max-HP capped before the
+    persistent round advances.
+- Validation at `59e85a8a9531206ce1465ba7ce805f408571716f`:
+  - DamageToHp runtime **36868357706 = PASS**;
+  - battle core **36868357723 = PASS**;
+  - stable pet-skill core **36868357938 = PASS**;
+  - local runtime coordinator **36868357914 = PASS**;
+  - runtime golden **36868357741 = PASS**;
+  - Taiwan-v1 gameplay **36868357811 = PASS**;
+  - ReHP and AttackMagic coordinator/state regressions also PASS.
+- Executable recovered pet-skill slot-use coverage is now approximately
+  **2285 / 2486 = 91.9%**. The separate **3** Merge uses remain intentionally
+  classified historical UB rather than executable.
+- **RECOVERED25_DAMAGETOHP_RUNTIME_R1 = CLOSED.**
+- Next priority: `PETSKILL_MpDamage` (**3 referenced IDs / 25 positive
+  enemybase slot uses**). Re-audit the fixed callback, OPTION grammar, guarded
+  command identity, target/MP mutation and any physical fallback/secondary
+  effects; then hard-probe all three recovered rows before runtime admission.
