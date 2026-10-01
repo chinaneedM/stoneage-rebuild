@@ -3560,6 +3560,24 @@ def resolve_ordinary_round(
     if any(value < 0 for value in mp_working.values()):
         raise ValueError("MpDamage MP state cannot be negative")
 
+    setup_effects={
+        str(participant_id):effects
+        for participant_id,effects in (
+            command_setup_effects_by_participant_id or {}
+        ).items()
+    }
+    unknown_setup_effect_ids=sorted(set(setup_effects)-set(slot_by_id))
+    if unknown_setup_effect_ids:
+        raise ValueError(
+            f"command setup effects reference unknown actors: "
+            f"{unknown_setup_effect_ids}"
+        )
+    for participant_id,effects in setup_effects.items():
+        if not isinstance(effects,BattleCommandSetupEffects):
+            raise TypeError(
+                f"command setup effects for {participant_id} have wrong type"
+            )
+
     fall_ground_submissions={
         str(participant_id):submission
         for participant_id,submission in (
@@ -3840,24 +3858,6 @@ def resolve_ordinary_round(
             f"status application RNG references unknown actors: "
             f"{unknown_status_application_ids}"
         )
-    setup_effects={
-        str(participant_id):effects
-        for participant_id,effects in (
-            command_setup_effects_by_participant_id or {}
-        ).items()
-    }
-    unknown_setup_effect_ids=sorted(set(setup_effects)-set(slot_by_id))
-    if unknown_setup_effect_ids:
-        raise ValueError(
-            f"command setup effects reference unknown actors: "
-            f"{unknown_setup_effect_ids}"
-        )
-    for participant_id,effects in setup_effects.items():
-        if not isinstance(effects,BattleCommandSetupEffects):
-            raise TypeError(
-                f"command setup effects for {participant_id} have wrong type"
-            )
-
     supplied_damage_react={
         str(participant_id):react_state
         for participant_id,react_state in (
