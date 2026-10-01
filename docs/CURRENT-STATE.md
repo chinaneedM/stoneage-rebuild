@@ -4835,3 +4835,30 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Executable recovered stable-common pet-skill slot-use coverage is now **1771 / 2486 = ~71.2%** when counting NormalAttack + NormalGuard + StatusChange + PowerBalance + Mighty + GuardBreak.
 - **LOCAL_RUNTIME_ENEMY_AI_GUARDBREAK_R1 = CLOSED.**
 - Next priority: `PETSKILL_ChargeAttack` (**3 referenced IDs / 90 slot uses**). The fixed command encoding and one-step `BATTLE_Charge` model already exist, but runtime admission remains OPEN because charge state must persist COM1/COM3 across rounds. Current persistent battle state stores submitted `last_commands`, while each new round still requires fresh commands; it does not yet preserve the decremented LOW(COM3) / S_CHARGE -> S_CHARGE_OK transition. Reconstruct that persistent command-state seam before enabling recovered ChargeAttack. ContinuationAttack remains deferred behind its multi-hit/divisor/retarget/counter-loop closure.
+
+## Phase 1 recovered ChargeAttack enemy-AI execution — 2026-10-01
+
+- `PETSKILL_ChargeAttack` is now closed for recovered25 enemy AI:
+  - **3** referenced ChargeAttack skill IDs;
+  - **90** positive enemybase skill-slot uses;
+  - all **3/3** OPTION rows decode identically under strict CP950 and Big5;
+  - bundle-backed hard grammar proves **3/3** leading integer wait counts, all in the fixed **1..10** range, and **3/3** numeric `攻%` parameters;
+  - recovered wait counts span **1..3** and recovered attack percentages span **90..150**.
+- The persistent battle state now preserves source-shaped charge execution across rounds:
+  - `BATTLE_COM_S_CHARGE=1005` carries the decremented LOW(COM3) countdown plus the original target;
+  - latent ready attack power is preserved separately from COM1/COM2/COM3;
+  - while charge carry is active, the enemy does **not** consume fresh AI mode/target rolls;
+  - when LOW reaches zero, the next charge turn promotes to `BATTLE_COM_S_CHARGE_OK=1015`, applies `FIXSTR + FIXSTR * attack_percent / 100 + MODATTACK`, executes the ordinary physical path, then clears the carried state.
+- Recovered enemy execution reconstructs ready power from the preserved birth FIXSTR-equivalent attack projection and uses `MODATTACK=0`; no unproven enemy equipment/modifier layer is invented.
+- OPTION parsing is fail-closed: missing/malformed leading wait count, missing/malformed `攻%`, codec disagreement, or a wait count outside 1..10 rejects execution.
+- End-to-end coordinator regression proves recovered `wa[n]` selection -> ChargeAttack -> two carried no-action countdown rounds -> automatic CHARGE_OK hit, with no AI reroll while carried.
+- Validation:
+  - persistent Charge state battle core **36776422452 / 36776475416 = PASS** and Taiwan v1.0 gameplay **36776422580 / 36776475341 = PASS**;
+  - carry-aware coordinator **36776700346 = PASS**, golden contract **36776700417 = PASS**, recovered25 workflow **36776700334 = PASS**;
+  - recovered bridge **36815994396 = PASS** and bridge regression **36816020673 = PASS**;
+  - recovered runtime enablement coordinator **36816051805 = PASS** and golden contract **36816051829 = PASS**;
+  - three-round recovered enemy-AI regression **36816143741 = PASS**;
+  - latest hard bundle grammar run **36816252519**, concrete recovered25 local-runtime-stack step = **PASS**.
+- Executable recovered stable-common pet-skill slot-use coverage is now **1861 / 2486 = ~74.9%** when counting NormalAttack + NormalGuard + StatusChange + PowerBalance + Mighty + GuardBreak + ChargeAttack.
+- **LOCAL_RUNTIME_ENEMY_AI_CHARGEATTACK_R1 = CLOSED.**
+- Next priority: `PETSKILL_NoGuard` (**3 referenced IDs / 74 slot uses**). Its fixed own turn is NoAction, but S_NOGUARD must remain selected for the rest of the same round because HIGH(COM3) modifies defending dodge and the upper byte of LOW(COM3) modifies non-player counter probability. First close the recovered OPTION grammar for `避%` / counter-token / `心%`; then add same-round S_NOGUARD dodge/counter consumption without introducing cross-round carry. ContinuationAttack (**139** uses) remains deferred behind its multi-hit/divisor/retarget/counter-loop closure.

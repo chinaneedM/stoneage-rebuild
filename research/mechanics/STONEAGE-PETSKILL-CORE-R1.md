@@ -177,6 +177,21 @@ The subsequent CHARGE_OK action enters the ordinary attack path and then resets 
 
 N=1 therefore means one no-action charge turn before the ready attack.
 
+Recovered25 execution closure adds:
+
+- **3** enemy-referenced ChargeAttack IDs accounting for **90** positive enemybase skill-slot uses;
+- strict CP950/Big5 agreement for all three OPTION rows;
+- **3/3** valid leading wait counts, spanning **1..3**;
+- **3/3** numeric `攻%` values, spanning **90..150**;
+- persistent S_CHARGE command/countdown state across rounds;
+- carry-aware enemy AI suppression so no fresh mode/target roll is consumed while charging;
+- automatic S_CHARGE_OK promotion and ordinary physical execution when the countdown reaches zero.
+
+Recovered enemy ready power uses the preserved birth FIXSTR-equivalent attack
+projection with `MODATTACK=0`; an unproven enemy equipment/modifier layer is
+not synthesized. Malformed or out-of-range recovered OPTION grammar fails
+closed.
+
 ## Guardian
 
 Guardian can immediately modify the pet’s attack and defense work powers using optional percent parameters:

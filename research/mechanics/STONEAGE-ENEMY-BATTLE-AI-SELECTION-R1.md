@@ -223,6 +223,10 @@ explicit-RNG rule.
   referenced row whose OPTION is ASCII-only. The fixed handler's only optional
   data marker is non-ASCII `攻%`, so recovered25 cannot activate that attack
   percentage rewrite.
+- `PETSKILL_ChargeAttack` is admitted after bundle-backed proof that all three
+  referenced OPTION rows have codec consensus, valid leading wait counts and
+  numeric `攻%` parameters. S_CHARGE is persisted across rounds; carried
+  enemies bypass fresh AI mode/target selection until S_CHARGE_OK fires.
 - StatusChange carries recovered command-setup effects and uses only explicit
   target status profiles / status RNG. PowerBalance carries handler-side work
   attack/defense mutations into the ordinary physical attack path. Mighty
@@ -246,7 +250,7 @@ Current rule:
 - caller-supplied enemy commands remain valid at the low-level explicit-command
   coordinator seam;
 - automatic common-normal generation is permitted only for the evidence-closed
-  ATTACK/GUARD/ESCAPE/basic-`wa`/StatusChange/PowerBalance/Mighty/GuardBreak subset described above;
+  ATTACK/GUARD/ESCAPE/basic-`wa`/StatusChange/PowerBalance/Mighty/GuardBreak/ChargeAttack subset described above;
 - an unsupported selected `wa` callback is an error, never an implicit ATTACK,
   GUARD, NONE or WAIT fallback;
 - a selected `ma` path still resolves to no common decision, matching the
@@ -256,12 +260,13 @@ Current rule:
 ## Next seam
 
 Use hash-pinned recovered25 aggregate callback/slot-use coverage to prioritize
-the remaining stable-common `wa` callbacks. GuardBreak is now closed. Audit
-ChargeAttack next: three referenced IDs account for 90 slot uses and the fixed
-handler/execution model is already reconstructed, but the runtime must first
-persist S_CHARGE command state and decremented LOW(COM3) across rounds until
-S_CHARGE_OK fires. Current persistent rounds save submitted commands rather than
-the mutated post-execution charge command state, so enabling ChargeAttack before
-that seam exists would lose the countdown. Keep ContinuationAttack deferred
-behind its multi-hit/divisor/retarget/counter-loop closure. Add new state/RNG
-inputs when required; do not generalize a pet-skill executor ahead of evidence.
+the remaining stable-common `wa` callbacks. ChargeAttack is now closed,
+including persistent S_CHARGE countdown state and carry-aware AI suppression.
+Audit NoGuard next: three referenced IDs account for 74 slot uses, its own turn
+is NoAction, and its still-selected COM3 is consumed later in the same round by
+defending dodge and non-player counter checks. Close the recovered `避%`,
+counter-token and `心%` grammar before runtime admission, then preserve those
+same-round cross-action reads without inventing cross-round state. Keep
+ContinuationAttack deferred behind its multi-hit/divisor/retarget/counter-loop
+closure. Add explicit RNG/state inputs when required; do not generalize a
+pet-skill executor ahead of evidence.
