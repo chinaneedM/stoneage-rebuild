@@ -11,6 +11,7 @@ from tools.stoneage_enemy_ai_petskill_bridge import (
     resolve_enemy_ai_noguard_petskill_command,
     resolve_enemy_ai_powerbalance_petskill_command,
     resolve_enemy_ai_statuschange_petskill_command,
+    resolve_enemy_ai_steal_petskill_command,
     resolve_enemy_ai_supported_petskill_command,
 )
 from tools.stoneage_enemy_spawn_model import SpawnedEnemy
@@ -37,6 +38,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_S_EARTHROUND1,
     BATTLE_COM_S_ABDUCT,
+    BATTLE_COM_S_STEAL,
     battle_command3_high,
     battle_command3_low,
 )
@@ -177,6 +179,56 @@ class EnemyAiPetSkillBridgeTests(unittest.TestCase):
         self.assertEqual(resolved.skill_id, 30)
         self.assertEqual(resolved.command.command1, BATTLE_COM_NONE)
         self.assertEqual(resolved.command.command2, 4)
+
+    def test_steal_uses_single_recovered_ascii_callback(self):
+        spawned=spawned_with_slots((130,0,0,0,0,0,0))
+        runtime=Recovered25PetSkillRuntime(
+            skills={
+                130:entry(130,"PETSKILL_Steal",b""),
+            },
+            source_file="petskill.txt",
+        )
+        resolved=resolve_enemy_ai_steal_petskill_command(
+            spawned,
+            skill_slot=0,
+            target_slot=3,
+            petskill_runtime=runtime,
+        )
+        self.assertEqual(resolved.command.command1,BATTLE_COM_S_STEAL)
+        self.assertEqual(resolved.command.command2,3)
+
+        with self.assertRaisesRegex(ValueError,"outside admitted"):
+            resolve_enemy_ai_supported_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=3,
+                petskill_runtime=runtime,
+            )
+        admitted=resolve_enemy_ai_supported_petskill_command(
+            spawned,
+            skill_slot=0,
+            target_slot=3,
+            petskill_runtime=runtime,
+            allow_steal=True,
+        )
+        self.assertEqual(admitted.command.command1,BATTLE_COM_S_STEAL)
+
+    def test_steal_rejects_callback_population_drift(self):
+        spawned=spawned_with_slots((130,0,0,0,0,0,0))
+        runtime=Recovered25PetSkillRuntime(
+            skills={
+                130:entry(130,"PETSKILL_Steal",b""),
+                131:entry(131,"PETSKILL_Steal",b""),
+            },
+            source_file="petskill.txt",
+        )
+        with self.assertRaisesRegex(ValueError,"exactly one"):
+            resolve_enemy_ai_steal_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=0,
+                petskill_runtime=runtime,
+            )
 
     def test_earthround_uses_closed_recovered_attack_percent(self):
         spawned=spawned_with_slots((120,0,0,0,0,0,0))
