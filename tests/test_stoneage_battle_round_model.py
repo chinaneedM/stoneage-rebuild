@@ -35,6 +35,7 @@ from tools.stoneage_battle_round_model import (
     OrdinaryCaptureRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
+    _battle_attack_continuation_allowed,
     _continuation_nonbow_target_for_hit,
     apply_base_combo_rewrite,
     battle_command3_high,
@@ -163,6 +164,26 @@ class BattleRoundModelTests(unittest.TestCase):
         )
         self.assertEqual(first,1)
         self.assertEqual(second,2)
+
+    def test_counter_continuation_gate_matches_fixed_battle_attack_return(self):
+        base=dict(
+            guardian_redirected=False,
+            damage_reaction_active=False,
+            critical=False,
+            target_guarding=False,
+            target_hp_after=1,
+        )
+        self.assertTrue(_battle_attack_continuation_allowed(**base))
+        for field,value in (
+            ("guardian_redirected",True),
+            ("damage_reaction_active",True),
+            ("critical",True),
+            ("target_guarding",True),
+            ("target_hp_after",0),
+        ):
+            case=dict(base)
+            case[field]=value
+            self.assertFalse(_battle_attack_continuation_allowed(**case))
 
     def test_explicit_none_is_source_shaped_no_action(self):
         player=actor("player","player","player",quick=100)
