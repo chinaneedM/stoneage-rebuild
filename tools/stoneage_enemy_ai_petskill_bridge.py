@@ -10,6 +10,7 @@ Currently supported:
 - PETSKILL_NormalGuard
 - PETSKILL_GuardBreak (explicit opt-in dispatcher branch)
 - PETSKILL_ChargeAttack (explicit opt-in dispatcher branch)
+- PETSKILL_NoGuard (explicit opt-in dispatcher branch)
 - PETSKILL_Mighty (explicit opt-in dispatcher branch)
 - PETSKILL_PowerBalance (explicit opt-in dispatcher branch)
 - PETSKILL_StatusChange (explicit opt-in dispatcher branch)
@@ -35,6 +36,7 @@ from tools.stoneage_petskill_core_model import (
     charge_execution_step,
     guard_break_command,
     mighty_command,
+    no_guard_command,
     parse_status_skill,
     power_balance_command,
     status_change_command,
@@ -53,6 +55,7 @@ NORMAL_ATTACK = "PETSKILL_NormalAttack"
 NORMAL_GUARD = "PETSKILL_NormalGuard"
 GUARD_BREAK = "PETSKILL_GuardBreak"
 CHARGE_ATTACK = "PETSKILL_ChargeAttack"
+NO_GUARD = "PETSKILL_NoGuard"
 MIGHTY = "PETSKILL_Mighty"
 POWER_BALANCE = "PETSKILL_PowerBalance"
 STATUS_CHANGE = "PETSKILL_StatusChange"
@@ -161,6 +164,7 @@ def resolve_enemy_ai_supported_petskill_command(
     allow_mighty: bool = False,
     allow_guard_break: bool = False,
     allow_charge_attack: bool = False,
+    allow_no_guard: bool = False,
 ) -> EnemyAiPetSkillCommand:
     """Dispatch only callbacks whose full execution boundary is admitted."""
 
@@ -191,6 +195,13 @@ def resolve_enemy_ai_supported_petskill_command(
             target_slot=target_slot,
             petskill_runtime=petskill_runtime,
         )
+    if entry.function_name == NO_GUARD and bool(allow_no_guard):
+        return resolve_enemy_ai_noguard_petskill_command(
+            spawned,
+            skill_slot=skill_slot,
+            target_slot=target_slot,
+            petskill_runtime=petskill_runtime,
+        )
     if entry.function_name == MIGHTY and bool(allow_mighty):
         return resolve_enemy_ai_mighty_petskill_command(
             spawned,
@@ -215,6 +226,76 @@ def resolve_enemy_ai_supported_petskill_command(
     raise ValueError(
         "enemy AI selected pet-skill callback outside admitted execution "
         f"subset: {entry.function_name}"
+    )
+
+
+def resolve_enemy_ai_noguard_petskill_command(
+    spawned: SpawnedEnemy,
+    *,
+    skill_slot: int,
+    target_slot: int,
+    petskill_runtime: Recovered25PetSkillRuntime,
+) -> EnemyAiPetSkillCommand:
+    """Resolve recovered PETSKILL_NoGuard into same-round cross-action state."""
+
+    skill_slot, target_slot, entry = _resolved_entry(
+        spawned,
+        skill_slot=skill_slot,
+        target_slot=target_slot,
+        petskill_runtime=petskill_runtime,
+    )
+    if entry.function_name != NO_GUARD:
+        raise ValueError(
+            "enemy AI selected pet-skill callback outside NoGuard "
+            f"execution subset: {entry.function_name}"
+        )
+
+    option_text=entry.unambiguous_cp950_big5_option()
+    dodge=re.search(r"避%\s*([+-]?\d+)",option_text)
+    counter=re.search(r"擊%\s*([+-]?\d+)",option_text)
+    critical=re.search(r"心%\s*([+-]?\d+)",option_text)
+    if (
+        dodge is None
+        or counter is None
+        or critical is None
+        or "击%" in option_text
+    ):
+        raise ValueError(
+            "recovered NoGuard OPTION is outside closed traditional "
+            "dodge/counter/critical numeric grammar"
+        )
+    dodge_value=int(dodge.group(1))
+    counter_value=int(counter.group(1))
+    critical_value=int(critical.group(1))
+    if not (
+        30 <= dodge_value <= 50
+        and 50 <= counter_value <= 70
+        and 20 <= critical_value <= 40
+    ):
+        raise ValueError(
+            "recovered NoGuard OPTION values are outside proven ranges"
+        )
+
+    payload=no_guard_command(
+        target_slot,
+        option_text,
+        counter_marker="擊%",
+        prior_high=0,
+    )
+    if int(payload.get("high",0)) != dodge_value:
+        raise ValueError("NoGuard parsed dodge modifier drift")
+    expected_low=(counter_value << 8) + critical_value
+    if int(payload.get("low",-1)) != expected_low:
+        raise ValueError("NoGuard packed counter/critical drift")
+
+    submission=bridge_stable_pet_skill_command(payload)
+    return EnemyAiPetSkillCommand(
+        participant_id=str(spawned.participant.participant_id),
+        skill_slot=skill_slot,
+        skill_id=int(entry.skill_id),
+        callback=entry.function_name,
+        command=submission.battle_command,
+        setup_effects=submission.setup_effects,
     )
 
 
