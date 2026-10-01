@@ -44,6 +44,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_RENZOKU,
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_S_ABDUCT,
+    BATTLE_COM_S_STEAL,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
@@ -55,6 +56,7 @@ from tools.stoneage_battle_round_model import (
     OrdinaryCaptureRolls,
     OrdinaryAbductContext,
     OrdinaryAbductRolls,
+    OrdinaryStealRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
 )
@@ -989,6 +991,7 @@ class LocalRuntimeSessionCoordinator:
         allow_noguard_skill: bool = False,
         allow_abduct_skill: bool = False,
         allow_earthround_skill: bool = False,
+        allow_steal_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1180,6 +1183,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_noguard_skill)
                 or bool(allow_abduct_skill)
                 or bool(allow_earthround_skill)
+                or bool(allow_steal_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1203,6 +1207,7 @@ class LocalRuntimeSessionCoordinator:
                     allow_no_guard=bool(allow_noguard_skill),
                     allow_abduct=bool(allow_abduct_skill),
                     allow_earth_round=bool(allow_earthround_skill),
+                    allow_steal=bool(allow_steal_skill),
                 )
                 commands[enemy_id] = bridged.command
                 if bridged.setup_effects != BattleCommandSetupEffects():
@@ -1240,6 +1245,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("Abduct")
             if bool(allow_earthround_skill):
                 allowed_parts.append("EarthRound")
+            if bool(allow_steal_skill):
+                allowed_parts.append("Steal")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1277,6 +1284,7 @@ class LocalRuntimeSessionCoordinator:
             allow_noguard_skill=False,
             allow_abduct_skill=False,
             allow_earthround_skill=False,
+            allow_steal_skill=False,
         ).commands
 
     def build_persistent_enemy_attack_guard_commands(
@@ -1403,6 +1411,9 @@ class LocalRuntimeSessionCoordinator:
         abduct_rolls_by_attack_id: Mapping[
             str, OrdinaryAbductRolls
         ] | None = None,
+        steal_rolls_by_attack_id: Mapping[
+            str, OrdinaryStealRolls
+        ] | None = None,
         counter_abio_by_participant_id: Mapping[str, bool] | None = None,
         base_status_rolls_by_participant_id: Mapping[
             str, BaseStatusTurnRolls
@@ -1421,7 +1432,9 @@ class LocalRuntimeSessionCoordinator:
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
         explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
         plus recovered Abduct, ChargeAttack, ContinuationAttack, EarthRound,
-        GuardBreak, Mighty, NoGuard, PowerBalance and StatusChange. EarthRound
+        GuardBreak, Mighty, NoGuard, PowerBalance, StatusChange and Steal.
+        Steal mutates only the working persistent player Gold/inventory clone
+        and uses explicit sub-rolls. EarthRound
         carries phase 1 into S_EARTHROUND0 without a fresh AI roll, then uses
         ordinary physical RNG on phase 2. Abduct carries the recovered OPTION
         atoi threshold and explicit RAND input. NoGuard keeps S_NOGUARD selected for its
@@ -1507,6 +1520,7 @@ class LocalRuntimeSessionCoordinator:
             allow_noguard_skill=True,
             allow_abduct_skill=True,
             allow_earthround_skill=True,
+            allow_steal_skill=True,
         )
         enemy_commands = enemy_batch.commands
         escaping_enemy_ids = {
@@ -1524,6 +1538,28 @@ class LocalRuntimeSessionCoordinator:
             for participant_id, command in enemy_commands.items()
             if int(command.command1) == BATTLE_COM_S_ABDUCT
         }
+        steal_enemy_ids = {
+            str(participant_id)
+            for participant_id, command in enemy_commands.items()
+            if int(command.command1) == BATTLE_COM_S_STEAL
+        }
+        normalized_steal_rolls={
+            str(key):value
+            for key,value in (steal_rolls_by_attack_id or {}).items()
+        }
+        if set(normalized_steal_rolls) != steal_enemy_ids:
+            missing=sorted(steal_enemy_ids-set(normalized_steal_rolls))
+            extra=sorted(set(normalized_steal_rolls)-steal_enemy_ids)
+            raise ValueError(
+                "enemy Steal RNG mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        for participant_id,rolls in normalized_steal_rolls.items():
+            if not isinstance(rolls,OrdinaryStealRolls):
+                raise TypeError(
+                    f"enemy Steal RNG has wrong type for {participant_id}"
+                )
+
         normalized_abduct_rolls={
             str(key):value
             for key,value in (abduct_rolls_by_attack_id or {}).items()
@@ -1665,6 +1701,34 @@ class LocalRuntimeSessionCoordinator:
             **normalized_player_commands,
             **dict(enemy_commands),
         }
+
+        working_persistent=None
+        steal_gold_state=None
+        steal_item_state=None
+        player_id=str(state.session.player.participant_id)
+        if steal_enemy_ids:
+            working_persistent=decode_persistent_state(
+                self._battle_working_persistent_payload(context)
+            )
+            if working_persistent.character is None:
+                raise ValueError(
+                    "enemy Steal requires persistent player character state"
+                )
+            fields=dict(working_persistent.character.fields)
+            if "gold" not in fields:
+                raise ValueError(
+                    "enemy Steal requires persistent player gold field"
+                )
+            steal_gold_state={player_id:int(fields["gold"])}
+            steal_item_state={
+                player_id:tuple(
+                    sorted(
+                        int(slot.value)
+                        for slot in working_persistent.inventory
+                    )
+                )
+            }
+
         result = resolve_persistent_ordinary_round(
             state,
             commands=commands,
@@ -1678,6 +1742,9 @@ class LocalRuntimeSessionCoordinator:
             continuation_rolls_by_attack_id=normalized_continuation_rolls,
             abduct_contexts=enemy_batch.abduct_contexts,
             abduct_rolls=normalized_abduct_rolls,
+            steal_rolls=normalized_steal_rolls,
+            steal_player_gold_by_participant_id=steal_gold_state,
+            steal_player_item_slots_by_participant_id=steal_item_state,
             counter_abio_by_participant_id=counter_abio_by_participant_id,
             escape_contexts=escape_contexts,
             escape_rolls=normalized_escape_rolls,
@@ -1703,10 +1770,42 @@ class LocalRuntimeSessionCoordinator:
                 else tuple(str(x) for x in tie_break_order)
             ),
         )
+        next_working_payload=context.working_persistent_state_payload
+        if steal_enemy_ids:
+            if working_persistent is None or working_persistent.character is None:
+                raise AssertionError("Steal working persistence disappeared")
+            if player_id not in result.round.steal_gold_by_player_id:
+                raise ValueError("Steal round omitted final player gold state")
+            if player_id not in result.round.steal_item_slots_by_player_id:
+                raise ValueError("Steal round omitted final player item state")
+            fields=dict(working_persistent.character.fields)
+            fields["gold"]=int(
+                result.round.steal_gold_by_player_id[player_id]
+            )
+            working_persistent.character=replace(
+                working_persistent.character,
+                fields=MappingProxyType(fields),
+            )
+            allowed_slots=set(
+                int(x)
+                for x in result.round.steal_item_slots_by_player_id[
+                    player_id
+                ]
+            )
+            working_persistent.inventory={
+                slot:item
+                for slot,item in working_persistent.inventory.items()
+                if int(slot.value) in allowed_slots
+            }
+            next_working_payload=encode_persistent_state(
+                working_persistent
+            )
+
         return (
             replace(
                 context,
                 persistent_battle_state=result.after,
+                working_persistent_state_payload=next_working_payload,
             ),
             result,
         )
