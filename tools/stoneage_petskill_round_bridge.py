@@ -14,6 +14,7 @@ from typing import Mapping, Any
 
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_GUARD,
+    BATTLE_COM_S_RENZOKU,
     BATTLE_COM_S_GBREAK,
     BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_CHARGE,
@@ -43,6 +44,7 @@ def bridge_stable_pet_skill_command(
 
     Supported common handlers are the branches currently executed by the
     reconstructed ordinary physical round:
+    - PETSKILL_ContinuationAttack -> S_RENZOKU with LOW=attack count and preserved HIGH
     - PETSKILL_GuardBreak -> S_GBREAK + immediate work attack
     - PETSKILL_Guardian -> S_GUARDIAN_ATTACK or ordinary GUARD + registration
     - PETSKILL_ChargeAttack -> S_CHARGE with LOW=wait/HIGH=attack percent and
@@ -60,7 +62,18 @@ def bridge_stable_pet_skill_command(
     source_command=str(payload.get("command",""))
     target=int(payload.get("target",-1))
 
-    if source_command=="S_GBREAK":
+    if source_command=="S_RENZOKU":
+        if "low" not in payload or "high" not in payload:
+            raise ValueError("S_RENZOKU requires recovered low/high COM3")
+        battle_command=BattleCommand(
+            BATTLE_COM_S_RENZOKU,
+            command2=target,
+            command3=pack_battle_command3(
+                low=int(payload["low"]),
+                high=int(payload["high"]),
+            ),
+        )
+    elif source_command=="S_GBREAK":
         battle_command=BattleCommand(
             BATTLE_COM_S_GBREAK,
             command2=target,
