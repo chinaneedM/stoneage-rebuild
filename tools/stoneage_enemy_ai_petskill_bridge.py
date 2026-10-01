@@ -15,6 +15,7 @@ Currently supported:
 - PETSKILL_Mighty (explicit opt-in dispatcher branch)
 - PETSKILL_PowerBalance (explicit opt-in dispatcher branch)
 - PETSKILL_StatusChange (explicit opt-in dispatcher branch)
+- PETSKILL_EarthRound (explicit opt-in dispatcher branch)
 - PETSKILL_Abduct (explicit opt-in dispatcher branch)
 
 All other stable-common and macro-gated callbacks remain fail-closed.
@@ -39,6 +40,7 @@ from tools.stoneage_petskill_core_model import (
     charge_attack_command,
     continuation_attack_command,
     charge_execution_step,
+    earth_round_command,
     guard_break_command,
     mighty_command,
     no_guard_command,
@@ -65,6 +67,7 @@ NO_GUARD = "PETSKILL_NoGuard"
 MIGHTY = "PETSKILL_Mighty"
 POWER_BALANCE = "PETSKILL_PowerBalance"
 STATUS_CHANGE = "PETSKILL_StatusChange"
+EARTH_ROUND = "PETSKILL_EarthRound"
 ABDUCT = "PETSKILL_Abduct"
 
 BASIC_AI_CALLBACKS = frozenset({NONE, NORMAL_ATTACK, NORMAL_GUARD})
@@ -175,6 +178,7 @@ def resolve_enemy_ai_supported_petskill_command(
     allow_charge_attack: bool = False,
     allow_no_guard: bool = False,
     allow_abduct: bool = False,
+    allow_earth_round: bool = False,
 ) -> EnemyAiPetSkillCommand:
     """Dispatch only callbacks whose full execution boundary is admitted."""
 
@@ -243,6 +247,13 @@ def resolve_enemy_ai_supported_petskill_command(
             target_slot=target_slot,
             petskill_runtime=petskill_runtime,
         )
+    if entry.function_name == EARTH_ROUND and bool(allow_earth_round):
+        return resolve_enemy_ai_earthround_petskill_command(
+            spawned,
+            skill_slot=skill_slot,
+            target_slot=target_slot,
+            petskill_runtime=petskill_runtime,
+        )
     if entry.function_name == ABDUCT and bool(allow_abduct):
         return resolve_enemy_ai_abduct_petskill_command(
             spawned,
@@ -253,6 +264,79 @@ def resolve_enemy_ai_supported_petskill_command(
     raise ValueError(
         "enemy AI selected pet-skill callback outside admitted execution "
         f"subset: {entry.function_name}"
+    )
+
+
+def _recovered_earthround_attack_percents(
+    petskill_runtime: Recovered25PetSkillRuntime,
+) -> dict[int,int]:
+    """Validate the one-row recovered25 EarthRound OPTION population."""
+
+    rows=tuple(
+        entry
+        for entry in petskill_runtime.skills.values()
+        if entry.function_name == EARTH_ROUND
+    )
+    if len(rows) != 1:
+        raise ValueError(
+            "recovered25 EarthRound runtime must contain exactly one callback ID"
+        )
+    entry=rows[0]
+    option_text=entry.unambiguous_cp950_big5_option()
+    attack=re.search(
+        r"攻%\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+))",
+        option_text,
+    )
+    if attack is None:
+        raise ValueError(
+            "recovered25 EarthRound OPTION lacks proven numeric 攻% marker"
+        )
+    percent=float(attack.group(1))
+    if percent != 90.0:
+        raise ValueError(
+            "recovered25 EarthRound attack percent drifted from 90"
+        )
+    return {int(entry.skill_id):int(percent)}
+
+
+def resolve_enemy_ai_earthround_petskill_command(
+    spawned: SpawnedEnemy,
+    *,
+    skill_slot: int,
+    target_slot: int,
+    petskill_runtime: Recovered25PetSkillRuntime,
+) -> EnemyAiPetSkillCommand:
+    """Resolve recovered PETSKILL_EarthRound into phase-1 command state."""
+
+    skill_slot,target_slot,entry=_resolved_entry(
+        spawned,
+        skill_slot=skill_slot,
+        target_slot=target_slot,
+        petskill_runtime=petskill_runtime,
+    )
+    if entry.function_name != EARTH_ROUND:
+        raise ValueError(
+            "enemy AI selected pet-skill callback outside EarthRound "
+            f"execution subset: {entry.function_name}"
+        )
+    percents=_recovered_earthround_attack_percents(petskill_runtime)
+    attack_percent=int(percents[int(entry.skill_id)])
+    option_text=entry.unambiguous_cp950_big5_option()
+    payload=earth_round_command(
+        target_slot,
+        option_text,
+        prior_com3=0,
+    )
+    if int(payload.get("com3",-1)) != attack_percent:
+        raise ValueError("EarthRound reconstructed COM3 percent drift")
+    submission=bridge_stable_pet_skill_command(payload)
+    return EnemyAiPetSkillCommand(
+        participant_id=str(spawned.participant.participant_id),
+        skill_slot=skill_slot,
+        skill_id=int(entry.skill_id),
+        callback=entry.function_name,
+        command=submission.battle_command,
+        setup_effects=submission.setup_effects,
     )
 
 
