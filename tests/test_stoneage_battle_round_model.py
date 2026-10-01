@@ -553,6 +553,116 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(result.hp_by_slot[1],1000)
         self.assertFalse(result.counter_continuation_allowed)
 
+    def test_main_round_executes_continuation_without_ordinary_attack_roll(self):
+        player=actor(
+            "player","player","player",
+            hp=1000,defense=70,quick=10,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=1000,attack=100,quick=100,
+        )
+        command=BattleCommand(
+            BATTLE_COM_S_RENZOKU,
+            command2=0,
+            command3=pack_battle_command3(low=2,high=77),
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":command,
+            },
+            {"player":0,"enemy":0},
+        )
+        hit=OrdinaryAttackRolls(
+            dodge_roll_1_10000=10000,
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={},
+            continuation_rolls_by_attack_id={
+                "enemy":ContinuationAttackRolls((hit,hit)),
+            },
+            defense_profile="newpower_70pct",
+        )
+        hits=[
+            event for event in result.events
+            if (
+                event.participant_id=="enemy"
+                and event.command1==BATTLE_COM_S_RENZOKU
+            )
+        ]
+        self.assertEqual(len(hits),2)
+        self.assertTrue(all(event.damage>0 for event in hits))
+        self.assertEqual(
+            result.hp_by_participant_id["player"],
+            1000-sum(event.damage for event in hits),
+        )
+        self.assertEqual(result.events[-1].result,"wait")
+
+    def test_main_round_continuation_enters_counter_chain_from_last_hit(self):
+        player=actor(
+            "player","player","player",
+            hp=1000,attack=80,defense=70,quick=10,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=1000,attack=100,defense=70,quick=100,
+        )
+        command=BattleCommand(
+            BATTLE_COM_S_RENZOKU,
+            command2=0,
+            command3=pack_battle_command3(low=2,high=0),
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":command,
+            },
+            {"player":0,"enemy":0},
+        )
+        hit=OrdinaryAttackRolls(
+            dodge_roll_1_10000=10000,
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={
+                "player":profile(dex=200),
+                "enemy":profile(dex=100),
+            },
+            attack_rolls={},
+            continuation_rolls_by_attack_id={
+                "enemy":ContinuationAttackRolls((hit,hit)),
+            },
+            counter_rolls_by_attack_id={
+                "enemy":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=1,
+                        attack_rolls=OrdinaryAttackRolls(
+                            dodge_roll_1_10000=10000,
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                    ),
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        counters=[event for event in result.events if event.is_counter]
+        self.assertEqual(len(counters),1)
+        self.assertEqual(counters[0].participant_id,"player")
+        self.assertEqual(counters[0].resolved_target_slot,10)
+        self.assertGreater(counters[0].damage,0)
+
     def test_counter_continuation_gate_matches_fixed_battle_attack_return(self):
         base=dict(
             guardian_redirected=False,
