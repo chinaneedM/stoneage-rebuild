@@ -29,6 +29,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_S_ABDUCT,
     BATTLE_COM_S_STEAL,
+    BATTLE_COM_S_ATTACK_MAGIC,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     battle_command3_low,
@@ -46,6 +47,18 @@ from tools.stoneage_battle_round_model import (
 from tools.stoneage_battle_status_model import (
     BaseStatusCombatProfile,
     STATUS_POISON,
+)
+from tools.stoneage_attack_magic_action_model import (
+    AttackMagicTargetRolls,
+    EnemyAttackMagicActionRolls,
+)
+from tools.stoneage_attack_magic_state_model import (
+    AttackMagicResistanceRuntime,
+    AttackMagicRoundOverlay,
+)
+from tools.stoneage_recovered25_attack_magic_runtime import (
+    Recovered25AttackMagicEntry,
+    Recovered25AttackMagicRuntime,
 )
 from tools.stoneage_encounter_frequency_model import (
     EncounterFrequencyState,
@@ -408,8 +421,42 @@ class _FakeStack:
                     function_name="PETSKILL_Merge",
                     option_bytes=b"",
                 ),
+                160: Recovered25PetSkillEntry(
+                    skill_id=160,
+                    field=1,
+                    target=3,
+                    cost=2,
+                    illegal=0,
+                    function_name="PETSKILL_AttackMagic",
+                    option_bytes=b"magic=301 item=19647",
+                ),
             },
             source_file="petskill.txt",
+        )
+
+        center=(
+            (0,0,0,0,0),
+            (0,0,1,0,0),
+            (0,0,0,0,0),
+        )
+        attack_entries={}
+        for offset,magic_id in enumerate(range(301,326)):
+            skill_id=(160 if magic_id==301 else 1000+magic_id)
+            attack_entries[skill_id]=Recovered25AttackMagicEntry(
+                skill_id=skill_id,
+                magic_id=magic_id,
+                item_config_id=19647+offset,
+                item_magicusemp=5,
+                magic_idx=2+offset,
+                element=0,
+                power=(3000 if magic_id==301 else 100),
+                magic_level=1,
+                attacker_side1_matrix=center,
+                attacker_side0_matrix=center,
+            )
+        self.attack_magic_runtime=Recovered25AttackMagicRuntime(
+            entries=attack_entries,
+            itemset_file="itemset.txt",
         )
 
     def create_fresh_start(self, ordinal):
@@ -2957,6 +3004,197 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             ),
             {},
         )
+
+    def test_recovered_enemy_ai_attackmagic_executes_and_carries_overlay(self):
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-attackmagic"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0,0,0,0),
+                    spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+                ),
+            ),
+        )
+        enemy_id=context.battle.enemies[0].participant_id
+        spawned=context.spawned_enemies[0]
+        context=replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=replace(
+                    context.battle.player,
+                    hp=1000,max_hp=1000,quick=10,
+                ),
+                enemies=(
+                    replace(context.battle.enemies[0],quick=200,level=56),
+                ),
+            ),
+            spawned_enemies=(
+                replace(
+                    spawned,
+                    participant=replace(spawned.participant,quick=200,level=56),
+                    template=replace(
+                        spawned.template,
+                        skill_ids=(160,20,30,40,50,60,70),
+                        skill_slot_ids=(160,20,30,40,50,60,70),
+                    ),
+                    variant=replace(
+                        spawned.variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:1;0;0;0;0;0;0"
+                        ),
+                    ),
+                ),
+            ),
+        )
+        magic_overlay=AttackMagicRoundOverlay({
+            "player":AttackMagicResistanceRuntime(
+                levels=(20,5,0,0),
+                exps=(90,1,0,0),
+            )
+        })
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:15},
+            attack_magic_overlay=magic_overlay,
+        )
+        profiles={
+            "player":BattleCombatProfile(
+                fixed_dex=10,fixed_luck=0,
+                earth=0,water=100,fire=0,wind=0,
+            ),
+            enemy_id:BattleCombatProfile(
+                fixed_dex=200,fixed_luck=0,
+                earth=100,water=0,fire=0,wind=0,
+            ),
+        }
+        next_context,result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player":BattleCommand(BATTLE_COM_WAIT),
+                },
+                enemy_mode_rolls={enemy_id:0},
+                enemy_target_rolls={enemy_id:0},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={"player":0,enemy_id:0},
+                profiles=profiles,
+                attack_rolls={},
+                defense_profile="newpower_70pct",
+                attack_magic_rolls_by_attack_id={
+                    enemy_id:EnemyAttackMagicActionRolls(
+                        0,{0:AttackMagicTargetRolls(100,0)}
+                    )
+                },
+            )
+        )
+        event=next(
+            event for event in result.round.events
+            if event.participant_id==enemy_id
+            and event.command1==BATTLE_COM_S_ATTACK_MAGIC
+        )
+        self.assertEqual(event.result,"attackmagic_hit")
+        self.assertEqual(result.after.result,"defeat")
+        self.assertIsNotNone(next_context.attack_magic_overlay)
+        trained=next_context.attack_magic_overlay.resistance_by_participant_id[
+            "player"
+        ]
+        self.assertEqual(trained.levels[:2],(21,4))
+        self.assertEqual(
+            result.attack_magic_overlay_after,
+            next_context.attack_magic_overlay,
+        )
+
+    def test_recovered_enemy_ai_attackmagic_requires_explicit_overlay(self):
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-attackmagic-no-overlay"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0,0,0,0),
+                    spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+                ),
+            ),
+        )
+        enemy_id=context.battle.enemies[0].participant_id
+        spawned=context.spawned_enemies[0]
+        context=replace(
+            context,
+            spawned_enemies=(
+                replace(
+                    spawned,
+                    template=replace(
+                        spawned.template,
+                        skill_ids=(160,20,30,40,50,60,70),
+                        skill_slot_ids=(160,20,30,40,50,60,70),
+                    ),
+                    variant=replace(
+                        spawned.variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:1;0;0;0;0;0;0"
+                        ),
+                    ),
+                ),
+            ),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,slots={"player":0,enemy_id:15}
+        )
+        with self.assertRaisesRegex(ValueError,"explicit battle overlay"):
+            (
+                self.coordinator
+                .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                    context,
+                    player_side_commands={
+                        "player":BattleCommand(BATTLE_COM_WAIT),
+                    },
+                    enemy_mode_rolls={enemy_id:0},
+                    enemy_target_rolls={enemy_id:0},
+                    enemy_escape_rolls={},
+                    opponent_abio_by_participant_id={},
+                    initiative_random_subtracts={"player":0,enemy_id:0},
+                    profiles={
+                        "player":BattleCombatProfile(
+                            fixed_dex=10,fixed_luck=0,
+                            earth=0,water=100,fire=0,wind=0,
+                        ),
+                        enemy_id:BattleCombatProfile(
+                            fixed_dex=20,fixed_luck=0,
+                            earth=100,water=0,fire=0,wind=0,
+                        ),
+                    },
+                    attack_rolls={},
+                    defense_profile="newpower_70pct",
+                )
+            )
 
     def test_recovered_enemy_ai_merge_is_fail_closed_before_round_execution(self):
         session=LocalRuntimeSessionState(

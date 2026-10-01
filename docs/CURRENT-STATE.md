@@ -5258,5 +5258,9 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Registered command **2002** as a guarded round command only for closed recovered25 enemy AttackMagic submissions. The ordinary action loop now resolves footprint/action state at execution time from current HP/status/ride state, emits per-target events, updates the four-element overlay, and leaves physical Guardian/reaction/counter/Ultimate paths untouched.
 - Existing persistent death-penalty/profit/termination processing consumes those events; `PersistentRoundResult` carries AttackMagic overlay before/after while `PersistentBattleState` retains HP/base-status/ride/turn ownership.
 - Exact retarget RNG validation rejects row/side-selector RNG, live-target RNG, and trailing unused single-target retarget rolls.
-- **RECOVERED25_ATTACKMAGIC_COMMAND2002_ROUND_EXECUTION_R1 = CANDIDATE.**
-- Next priority: dedicated round-execution CI; if green, wire the already-closed enemy-AI AttackMagic submission into `LocalRuntimeSessionCoordinator` so recovered enemy AI can choose command 2002 in the full local multi-round battle path.
+- Command-2002 round-execution CI **36854873316 = PASS** at `a2740b084422453b8f661d655ec93d5c26a4e32f`; local-session, Taiwan gameplay, battle-core, pet-skill-core and round-state-adapter regressions also passed on the same HEAD.
+- **RECOVERED25_ATTACKMAGIC_COMMAND2002_ROUND_EXECUTION_R1 = CLOSED.**
+- Integrated the closed enemy AttackMagic submission into `LocalRuntimeSessionCoordinator`: common enemy AI can now emit verified command 2002 plus its typed submission, and the full persistent round passes explicit AttackMagic RNG/retarget inputs into the closed round executor.
+- `LocalRuntimeBattleContext` now carries the battle-local AttackMagic resistance/training overlay across rounds. The coordinator refuses to synthesize missing resistance state; a selected AttackMagic without an explicit overlay fails closed.
+- **RECOVERED25_ENEMY_ATTACKMAGIC_COORDINATOR_INTEGRATION_R1 = CANDIDATE.**
+- Next priority: dedicated coordinator CI. If green, run the full preservation-bundle local-runtime acceptance with an AttackMagic-capable enemy witness, then decide whether the recovered persistence schema is sufficient to move four-element resistance/training out of the battle-local overlay.

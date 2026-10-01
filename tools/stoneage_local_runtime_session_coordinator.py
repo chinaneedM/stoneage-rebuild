@@ -23,6 +23,13 @@ from tools.stoneage_enemy_spawn_model import (
     EnemyBirthRolls,
     SpawnedEnemy,
 )
+from tools.stoneage_attack_magic_action_model import EnemyAttackMagicActionRolls
+from tools.stoneage_attack_magic_state_model import AttackMagicRoundOverlay
+from tools.stoneage_enemy_ai_attack_magic_bridge import (
+    ATTACK_MAGIC_CALLBACK,
+    EnemyAiAttackMagicSubmission,
+    resolve_enemy_ai_attack_magic_submission,
+)
 from tools.stoneage_enemy_ai_petskill_bridge import (
     resolve_enemy_ai_supported_petskill_command,
 )
@@ -45,6 +52,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_S_ABDUCT,
     BATTLE_COM_S_STEAL,
+    BATTLE_COM_S_ATTACK_MAGIC,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
@@ -185,6 +193,7 @@ class LocalRuntimeBattleContext:
     spawned_enemies: tuple[SpawnedEnemy, ...]
     persistent_battle_state: PersistentBattleState | None = None
     working_persistent_state_payload: str | None = None
+    attack_magic_overlay: AttackMagicRoundOverlay | None = None
 
     def __post_init__(self) -> None:
         if not str(self.contract_id).strip():
@@ -219,6 +228,11 @@ class LocalRuntimeBattleContext:
         if self.working_persistent_state_payload is not None:
             if not str(self.working_persistent_state_payload).strip():
                 raise ValueError("working persistent payload must be non-empty")
+        if (
+            self.attack_magic_overlay is not None
+            and not isinstance(self.attack_magic_overlay,AttackMagicRoundOverlay)
+        ):
+            raise TypeError("battle context AttackMagic overlay has wrong type")
 
 
 @dataclass(frozen=True)
@@ -328,6 +342,9 @@ class EnemyAiCommonCommandBatch:
     abduct_contexts: Mapping[str, OrdinaryAbductContext] = field(
         default_factory=dict
     )
+    attack_magic_submissions: Mapping[
+        str,EnemyAiAttackMagicSubmission
+    ] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         object.__setattr__(
@@ -371,6 +388,34 @@ class EnemyAiCommonCommandBatch:
             for value in contexts.values()
         ):
             raise TypeError("enemy AI Abduct context has wrong type")
+        magic_submissions={
+            str(key):value
+            for key,value in self.attack_magic_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "attack_magic_submissions",
+            MappingProxyType(magic_submissions),
+        )
+        magic_command_ids={
+            str(pid) for pid,command in self.commands.items()
+            if int(command.command1)==BATTLE_COM_S_ATTACK_MAGIC
+        }
+        if set(magic_submissions) != magic_command_ids:
+            raise ValueError(
+                "enemy AI AttackMagic submissions must match exactly "
+                "command-2002 actors"
+            )
+        for participant_id,submission in magic_submissions.items():
+            if not isinstance(submission,EnemyAiAttackMagicSubmission):
+                raise TypeError(
+                    f"enemy AI AttackMagic submission has wrong type for "
+                    f"{participant_id}"
+                )
+            if str(submission.participant_id) != participant_id:
+                raise ValueError(
+                    "enemy AI AttackMagic submission participant drift"
+                )
 
 
 @dataclass
@@ -960,6 +1005,7 @@ class LocalRuntimeSessionCoordinator:
         context: LocalRuntimeBattleContext,
         *,
         slots: Mapping[str, int],
+        attack_magic_overlay: AttackMagicRoundOverlay | None = None,
     ) -> LocalRuntimeBattleContext:
         """Promote a transient group battle shell into multi-round state."""
 
@@ -969,9 +1015,15 @@ class LocalRuntimeSessionCoordinator:
             context.battle,
             slots={str(key): int(value) for key, value in slots.items()},
         )
+        if (
+            attack_magic_overlay is not None
+            and not isinstance(attack_magic_overlay,AttackMagicRoundOverlay)
+        ):
+            raise TypeError("initial AttackMagic overlay has wrong type")
         return replace(
             context,
             persistent_battle_state=state,
+            attack_magic_overlay=attack_magic_overlay,
         )
 
     def _build_persistent_enemy_common_batch(
@@ -993,6 +1045,7 @@ class LocalRuntimeSessionCoordinator:
         allow_abduct_skill: bool = False,
         allow_earthround_skill: bool = False,
         allow_steal_skill: bool = False,
+        allow_attackmagic_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1132,6 +1185,7 @@ class LocalRuntimeSessionCoordinator:
             for enemy_id in carried_enemy_ids
         }
         abduct_contexts={}
+        attack_magic_submissions={}
         for enemy_id in ai_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
                 raise ValueError(
@@ -1186,6 +1240,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_abduct_skill)
                 or bool(allow_earthround_skill)
                 or bool(allow_steal_skill)
+                or bool(allow_attackmagic_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1193,6 +1248,37 @@ class LocalRuntimeSessionCoordinator:
                         "enemy AI pet-skill selection requires recovered "
                         "pet-skill runtime"
                     )
+                skill_ids=tuple(int(x) for x in spawned.template.skill_slot_ids)
+                selected_skill_id=skill_ids[int(decision.skill_slot)]
+                selected_skill=petskill_runtime.skills.get(selected_skill_id)
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == ATTACK_MAGIC_CALLBACK
+                    and bool(allow_attackmagic_skill)
+                ):
+                    attack_magic_runtime=getattr(
+                        self.stack,"attack_magic_runtime",None
+                    )
+                    if attack_magic_runtime is None:
+                        raise ValueError(
+                            "enemy AI AttackMagic selection requires recovered "
+                            "AttackMagic runtime"
+                        )
+                    submission=resolve_enemy_ai_attack_magic_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                        attack_magic_runtime=attack_magic_runtime,
+                    )
+                    commands[enemy_id]=BattleCommand(
+                        int(submission.command.command1),
+                        command2=int(submission.command.command2),
+                        command3=int(submission.command.command3),
+                    )
+                    attack_magic_submissions[enemy_id]=submission
+                    continue
+
                 bridged = resolve_enemy_ai_supported_petskill_command(
                     spawned,
                     skill_slot=int(decision.skill_slot),
@@ -1253,6 +1339,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("EarthRound")
             if bool(allow_steal_skill):
                 allowed_parts.append("Steal")
+            if bool(allow_attackmagic_skill):
+                allowed_parts.append("AttackMagic")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1263,6 +1351,7 @@ class LocalRuntimeSessionCoordinator:
             commands=commands,
             setup_effects=setup_effects,
             abduct_contexts=abduct_contexts,
+            attack_magic_submissions=attack_magic_submissions,
         )
 
     def build_persistent_enemy_common_commands(
@@ -1292,6 +1381,7 @@ class LocalRuntimeSessionCoordinator:
             allow_abduct_skill=False,
             allow_earthround_skill=False,
             allow_steal_skill=False,
+            allow_attackmagic_skill=False,
         ).commands
 
     def build_persistent_enemy_attack_guard_commands(
@@ -1429,6 +1519,12 @@ class LocalRuntimeSessionCoordinator:
             str, BaseStatusCombatProfile
         ] | None = None,
         status_application_rolls_by_attack_id: Mapping[str, int] | None = None,
+        attack_magic_rolls_by_attack_id: Mapping[
+            str,EnemyAttackMagicActionRolls
+        ] | None = None,
+        attack_magic_retarget_rolls_by_attack_id: Mapping[
+            str,Sequence[int]
+        ] | None = None,
         no_risk: bool = False,
         field_attr: str = "none",
         field_power: int = 0,
@@ -1438,8 +1534,9 @@ class LocalRuntimeSessionCoordinator:
 
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
         explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
-        plus recovered Abduct, ChargeAttack, ContinuationAttack, EarthRound,
-        GuardBreak, Mighty, NoGuard, PowerBalance, StatusChange and Steal.
+        plus recovered Abduct, AttackMagic, ChargeAttack, ContinuationAttack,
+        EarthRound, GuardBreak, Mighty, NoGuard, PowerBalance, StatusChange and
+        Steal.
         Steal mutates only the working persistent player Gold/inventory clone
         and uses explicit sub-rolls. EarthRound
         carries phase 1 into S_EARTHROUND0 without a fresh AI roll, then uses
@@ -1529,8 +1626,54 @@ class LocalRuntimeSessionCoordinator:
             allow_abduct_skill=True,
             allow_earthround_skill=True,
             allow_steal_skill=True,
+            allow_attackmagic_skill=True,
         )
         enemy_commands = enemy_batch.commands
+        attack_magic_enemy_ids={
+            str(participant_id)
+            for participant_id,command in enemy_commands.items()
+            if int(command.command1)==BATTLE_COM_S_ATTACK_MAGIC
+        }
+        if set(enemy_batch.attack_magic_submissions) != attack_magic_enemy_ids:
+            raise ValueError(
+                "enemy AttackMagic submission/command actor mismatch"
+            )
+        if attack_magic_enemy_ids and context.attack_magic_overlay is None:
+            raise ValueError(
+                "enemy AttackMagic round requires explicit battle overlay"
+            )
+        normalized_attack_magic_rolls={
+            str(key):value
+            for key,value in (attack_magic_rolls_by_attack_id or {}).items()
+        }
+        extra_attack_magic_rolls=sorted(
+            set(normalized_attack_magic_rolls)-attack_magic_enemy_ids
+        )
+        if extra_attack_magic_rolls:
+            raise ValueError(
+                "enemy AttackMagic RNG references non-AttackMagic actors: "
+                + ",".join(extra_attack_magic_rolls)
+            )
+        for participant_id,rolls in normalized_attack_magic_rolls.items():
+            if not isinstance(rolls,EnemyAttackMagicActionRolls):
+                raise TypeError(
+                    f"enemy AttackMagic RNG has wrong type for {participant_id}"
+                )
+        normalized_attack_magic_retarget_rolls={
+            str(key):tuple(int(x) for x in values)
+            for key,values in (
+                attack_magic_retarget_rolls_by_attack_id or {}
+            ).items()
+        }
+        extra_attack_magic_retarget=sorted(
+            set(normalized_attack_magic_retarget_rolls)-attack_magic_enemy_ids
+        )
+        if extra_attack_magic_retarget:
+            raise ValueError(
+                "enemy AttackMagic retarget RNG references non-AttackMagic "
+                "actors: " + ",".join(extra_attack_magic_retarget)
+            )
+
         escaping_enemy_ids = {
             str(participant_id)
             for participant_id, command in enemy_commands.items()
@@ -1768,6 +1911,21 @@ class LocalRuntimeSessionCoordinator:
             command_setup_effects_by_participant_id=(
                 enemy_batch.setup_effects
             ),
+            attack_magic_runtime=(
+                getattr(self.stack,"attack_magic_runtime",None)
+                if attack_magic_enemy_ids
+                else None
+            ),
+            attack_magic_submissions_by_participant_id=(
+                enemy_batch.attack_magic_submissions
+            ),
+            attack_magic_rolls_by_participant_id=(
+                normalized_attack_magic_rolls
+            ),
+            attack_magic_overlay=context.attack_magic_overlay,
+            attack_magic_retarget_rolls_by_participant_id=(
+                normalized_attack_magic_retarget_rolls
+            ),
             defense_profile=str(defense_profile),
             no_risk=bool(no_risk),
             field_attr=str(field_attr),
@@ -1814,6 +1972,7 @@ class LocalRuntimeSessionCoordinator:
                 context,
                 persistent_battle_state=result.after,
                 working_persistent_state_payload=next_working_payload,
+                attack_magic_overlay=result.attack_magic_overlay_after,
             ),
             result,
         )

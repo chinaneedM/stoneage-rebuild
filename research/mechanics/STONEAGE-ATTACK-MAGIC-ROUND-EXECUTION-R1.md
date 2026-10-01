@@ -46,4 +46,6 @@ death penalties and termination. The four magic resistance/EXP counters remain
 battle-local overlay state until their player/pet persistence schema is
 independently reconstructed.
 
-Marker: **RECOVERED25_ATTACKMAGIC_COMMAND2002_ROUND_EXECUTION_R1 = CANDIDATE**
+Validation: dedicated CI **36854873316 = PASS**. Concurrent local-session, Taiwan gameplay, battle-core, pet-skill-core and round-state-adapter regressions also passed on the same HEAD.
+
+Marker: **RECOVERED25_ATTACKMAGIC_COMMAND2002_ROUND_EXECUTION_R1 = CLOSED**
