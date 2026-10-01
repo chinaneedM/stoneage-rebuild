@@ -750,6 +750,34 @@ def main() -> None:
         f"attack_percent_min={min(charge_attack_percents) if charge_attack_percents else -1}|"
         f"attack_percent_max={max(charge_attack_percents) if charge_attack_percents else -1}"
     )
+    continuation_entries = tuple(
+        entry
+        for entry in referenced_skill_entries
+        if entry.function_name == "PETSKILL_ContinuationAttack"
+    )
+    continuation_ascii = 0
+    continuation_leading_int = 0
+    continuation_in_range = 0
+    continuation_counts = []
+    for entry in continuation_entries:
+        continuation_ascii += int(entry.option_bytes.isascii())
+        option_text = entry.option_bytes.decode("ascii")
+        leading = re.match(r"\s*([+-]?\d+)", option_text)
+        if leading is not None:
+            continuation_leading_int += 1
+            count = int(leading.group(1))
+            continuation_counts.append(count)
+            continuation_in_range += int(1 <= count <= 10)
+    print(
+        "PETSKILL_CONTINUATIONATTACK_PARSE|"
+        f"unique_ids={len(continuation_entries)}|"
+        f"ascii_ids={continuation_ascii}|"
+        f"leading_int_ids={continuation_leading_int}|"
+        f"in_range_count_ids={continuation_in_range}|"
+        f"count_min={min(continuation_counts) if continuation_counts else -1}|"
+        f"count_max={max(continuation_counts) if continuation_counts else -1}|"
+        f"distinct_count={len(set(continuation_counts))}"
+    )
     noguard_entries = tuple(
         entry
         for entry in referenced_skill_entries
