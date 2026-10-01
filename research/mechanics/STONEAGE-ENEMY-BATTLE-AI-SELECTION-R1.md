@@ -227,6 +227,11 @@ explicit-RNG rule.
   referenced OPTION rows have codec consensus, valid leading wait counts and
   numeric `攻%` parameters. S_CHARGE is persisted across rounds; carried
   enemies bypass fresh AI mode/target selection until S_CHARGE_OK fires.
+- `PETSKILL_NoGuard` is admitted after bundle-backed proof that all three
+  referenced OPTION rows use the traditional numeric `避% / 擊% / 心%`
+  grammar with dodge **30..50**, counter **50..70** and critical **20..40**.
+  Its own turn remains S_NOGUARD NoAction while the still-selected COM3 feeds
+  same-round defender dodge and non-player counter probability.
 - StatusChange carries recovered command-setup effects and uses only explicit
   target status profiles / status RNG. PowerBalance carries handler-side work
   attack/defense mutations into the ordinary physical attack path. Mighty
@@ -250,7 +255,7 @@ Current rule:
 - caller-supplied enemy commands remain valid at the low-level explicit-command
   coordinator seam;
 - automatic common-normal generation is permitted only for the evidence-closed
-  ATTACK/GUARD/ESCAPE/basic-`wa`/StatusChange/PowerBalance/Mighty/GuardBreak/ChargeAttack subset described above;
+  ATTACK/GUARD/ESCAPE/basic-`wa`/StatusChange/PowerBalance/Mighty/GuardBreak/ChargeAttack/NoGuard subset described above;
 - an unsupported selected `wa` callback is an error, never an implicit ATTACK,
   GUARD, NONE or WAIT fallback;
 - a selected `ma` path still resolves to no common decision, matching the
@@ -260,13 +265,12 @@ Current rule:
 ## Next seam
 
 Use hash-pinned recovered25 aggregate callback/slot-use coverage to prioritize
-the remaining stable-common `wa` callbacks. ChargeAttack is now closed,
-including persistent S_CHARGE countdown state and carry-aware AI suppression.
-Audit NoGuard next: three referenced IDs account for 74 slot uses, its own turn
-is NoAction, and its still-selected COM3 is consumed later in the same round by
-defending dodge and non-player counter checks. Close the recovered `避%`,
-counter-token and `心%` grammar before runtime admission, then preserve those
-same-round cross-action reads without inventing cross-round state. Keep
-ContinuationAttack deferred behind its multi-hit/divisor/retarget/counter-loop
-closure. Add explicit RNG/state inputs when required; do not generalize a
-pet-skill executor ahead of evidence.
+the remaining stable-common `wa` callbacks. NoGuard is now closed, including
+bundle grammar, same-round defender dodge, non-player counter modification and
+explicit counter-chain RNG at the coordinator boundary. Audit
+ContinuationAttack next: its 139 recovered slot uses now make it the leading
+stable-common execution gap. Reconstruct the fixed multi-hit loop, LOW(COM3)
+attack-count/damage-divisor coupling, retarget behavior, Guardian/reaction
+ordering and counter-chain placement before recovered enemy-AI admission. Add
+explicit RNG/state inputs when required; do not generalize a pet-skill executor
+ahead of evidence.

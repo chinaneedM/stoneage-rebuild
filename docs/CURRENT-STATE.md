@@ -4862,3 +4862,34 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Executable recovered stable-common pet-skill slot-use coverage is now **1861 / 2486 = ~74.9%** when counting NormalAttack + NormalGuard + StatusChange + PowerBalance + Mighty + GuardBreak + ChargeAttack.
 - **LOCAL_RUNTIME_ENEMY_AI_CHARGEATTACK_R1 = CLOSED.**
 - Next priority: `PETSKILL_NoGuard` (**3 referenced IDs / 74 slot uses**). Its fixed own turn is NoAction, but S_NOGUARD must remain selected for the rest of the same round because HIGH(COM3) modifies defending dodge and the upper byte of LOW(COM3) modifies non-player counter probability. First close the recovered OPTION grammar for `避%` / counter-token / `心%`; then add same-round S_NOGUARD dodge/counter consumption without introducing cross-round carry. ContinuationAttack (**139** uses) remains deferred behind its multi-hit/divisor/retarget/counter-loop closure.
+
+## Phase 1 recovered NoGuard enemy-AI execution — 2026-10-01
+
+- `PETSKILL_NoGuard` is now closed for recovered25 enemy AI:
+  - **3** referenced NoGuard skill IDs;
+  - **74** positive enemybase skill-slot uses;
+  - all **3/3** OPTION rows decode identically under strict CP950 and Big5;
+  - all **3/3** contain numeric `避%`, traditional `擊%`, and `心%` markers;
+  - recovered values span dodge **30..50**, counter **50..70**, critical **20..40**;
+  - **0/3** use the simplified `击%` token in the recovered25 bundle.
+- The fixed same-round semantics are preserved:
+  - `BATTLE_COM_S_NOGUARD=1014` resolves as own-turn NoAction without rewriting COM1/COM3 to WAIT/NONE;
+  - while the NoGuard actor is defending, HIGH(COM3) adds to dodge probability;
+  - when the NoGuard actor is the non-player counter actor, the upper byte of LOW(COM3) adds to counter probability before the 100-percent cap;
+  - the source's nonstandard byte rule is preserved exactly: values above 127 are multiplied by -1;
+  - the packed critical byte remains inactive because the common critical consumer is inside disabled `#if 0` source.
+- Runtime admission is fail-closed:
+  - recovered execution requires the proven traditional-token grammar and proven value ranges;
+  - command formation delegates to the existing NoGuard reference model and stable round bridge;
+  - no cross-round carry state is introduced.
+- The enemy-AI round exposes explicit counter-chain RNG so NoGuard's same-round counter eligibility can be exercised without hidden randomness.
+- Validation:
+  - NoGuard counter modifier model **23f19b2f = committed**;
+  - cross-action round execution and dedicated dodge/counter regressions **f90a4c88 / 56276cd1 / 634d0d45 / c6ca3d79**;
+  - bundle grammar hard closure **ab7523dd** and regenerated aggregate report **ef63f17b**;
+  - stable NoGuard round bridge **414bba83**, recovered enemy bridge **69da8a60 / 7cd6b324**, runtime admission **c6aa2d26**;
+  - the first end-to-end fixture at **eeee0569** exposed the missing explicit counter-RNG coordinator input; no hidden RNG fallback was added;
+  - final HEAD `17b650ffefa8ceccf34ee3760a5496d22542c403` passes coordinator **36817983797**, golden contract **36817983929**, and full recovered25 region/runtime-stack **36817983879**.
+- Executable recovered stable-common pet-skill slot-use coverage is now **1935 / 2486 = ~77.8%** when counting NormalAttack + NormalGuard + StatusChange + PowerBalance + Mighty + GuardBreak + ChargeAttack + NoGuard.
+- **LOCAL_RUNTIME_ENEMY_AI_NOGUARD_R1 = CLOSED.**
+- Next priority: `PETSKILL_ContinuationAttack` (**139 slot uses**). Its fixed handler stores the attack count in LOW(COM3), and battle execution sets the same count as the damage divisor. The remaining closure is the multi-hit loop itself: hit count, per-hit target adjustment/retarget behavior, damage division, Guardian/reaction interaction and counter-chain placement must be reconstructed before recovered enemy-AI admission.

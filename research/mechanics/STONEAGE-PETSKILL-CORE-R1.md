@@ -591,6 +591,20 @@ the later defending dodge calculation.
 
 LOW is always overwritten by the packed counter/critical value.
 
+### Recovered25 execution closure
+
+Recovered25 closes NoGuard for enemy AI with **3 referenced IDs / 74 positive
+enemybase skill-slot uses**. All three OPTION rows have strict CP950/Big5
+agreement and use the traditional numeric `避% / 擊% / 心%` grammar. The
+recovered value ranges are dodge **30..50**, counter **50..70**, and critical
+**20..40**; no recovered row uses simplified `击%`.
+
+The round core preserves S_NOGUARD as the selected same-round command after its
+own NoAction event. HIGH(COM3) is therefore still visible to later defending
+dodge checks, and the upper byte of LOW(COM3) is still visible when the actor
+enters the non-player counter path. The disabled critical byte remains packed
+but has no active consumer. This closure adds no cross-round state.
+
 ## COM3 residue as a historical implementation property
 
 Several stable handlers use halfword setters rather than resetting the full field:
