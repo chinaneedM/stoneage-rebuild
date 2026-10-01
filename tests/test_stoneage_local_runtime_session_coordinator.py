@@ -18,6 +18,8 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_NONE,
     BATTLE_COM_S_CHARGE,
     BATTLE_COM_S_CHARGE_OK,
+    BATTLE_COM_S_EARTHROUND0,
+    BATTLE_COM_S_EARTHROUND1,
     BATTLE_COM_S_RENZOKU,
     BATTLE_COM_S_GBREAK,
     BATTLE_COM_S_MIGHTY,
@@ -354,6 +356,15 @@ class _FakeStack:
                     illegal=0,
                     function_name="PETSKILL_Abduct",
                     option_bytes=b"partner",
+                ),
+                120: Recovered25PetSkillEntry(
+                    skill_id=120,
+                    field=1,
+                    target=3,
+                    cost=2,
+                    illegal=0,
+                    function_name="PETSKILL_EarthRound",
+                    option_bytes="攻%90".encode("cp950"),
                 ),
             },
             source_file="petskill.txt",
@@ -2717,6 +2728,189 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         self.assertEqual(
             dict(
                 third_context.persistent_battle_state
+                .carried_commands_by_participant_id
+            ),
+            {},
+        )
+
+    def test_recovered_enemy_ai_earthround_carries_then_fires_without_reroll(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-earthround"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        enemy_id = context.battle.enemies[0].participant_id
+        spawned = context.spawned_enemies[0]
+        earth_template = replace(
+            spawned.template,
+            skill_ids=(10, 20, 30, 40, 50, 60, 120),
+            skill_slot_ids=(10, 20, 30, 40, 50, 60, 120),
+        )
+        context = replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=replace(
+                    context.battle.player,
+                    hp=1000,
+                    max_hp=1000,
+                    defense=0,
+                    quick=10,
+                ),
+                enemies=(
+                    replace(
+                        context.battle.enemies[0],
+                        quick=200,
+                    ),
+                ),
+            ),
+            spawned_enemies=(
+                replace(
+                    spawned,
+                    template=earth_template,
+                    variant=replace(
+                        spawned.variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:0;0;0;0;0;0;1"
+                        ),
+                    ),
+                ),
+            ),
+        )
+        context = self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player": 0, enemy_id: 10},
+        )
+        profiles = {
+            "player": BattleCombatProfile(
+                fixed_dex=10,
+                fixed_luck=0,
+                earth=0,
+                water=0,
+                fire=0,
+                wind=0,
+            ),
+            enemy_id: BattleCombatProfile(
+                fixed_dex=200,
+                fixed_luck=10,
+                earth=0,
+                water=0,
+                fire=0,
+                wind=0,
+            ),
+        }
+
+        first_context, first = (
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player": BattleCommand(BATTLE_COM_WAIT),
+                },
+                enemy_mode_rolls={enemy_id: 0},
+                enemy_target_rolls={enemy_id: 0},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={
+                    "player": 0,
+                    enemy_id: 0,
+                },
+                profiles=profiles,
+                attack_rolls={},
+                defense_profile="newpower_70pct",
+            )
+        )
+        first_event = next(
+            event for event in first.round.events
+            if event.participant_id == enemy_id
+        )
+        self.assertEqual(
+            first_event.command1,
+            BATTLE_COM_S_EARTHROUND1,
+        )
+        self.assertEqual(first_event.result, "earthround_hide")
+        self.assertEqual(
+            first_context.persistent_battle_state
+            .hp_by_participant_id["player"],
+            1000,
+        )
+        carried = (
+            first_context.persistent_battle_state
+            .carried_commands_by_participant_id[enemy_id]
+        )
+        self.assertEqual(carried.command1, BATTLE_COM_S_EARTHROUND0)
+        self.assertEqual(carried.command3, 90)
+
+        hp_before = (
+            first_context.persistent_battle_state
+            .hp_by_participant_id["player"]
+        )
+        second_context, second = (
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                first_context,
+                player_side_commands={
+                    "player": BattleCommand(BATTLE_COM_WAIT),
+                },
+                # Fixed BATTLE_AllCharaCWaitSet preserves EARTHROUND0,
+                # so phase two must not consume a new AI mode/target roll.
+                enemy_mode_rolls={},
+                enemy_target_rolls={},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={
+                    "player": 0,
+                    enemy_id: 0,
+                },
+                profiles=profiles,
+                attack_rolls={
+                    enemy_id: OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                        minimum_damage_roll_0_1=1,
+                    ),
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        second_event = next(
+            event for event in second.round.events
+            if event.participant_id == enemy_id
+        )
+        self.assertEqual(
+            second_event.command1,
+            BATTLE_COM_S_EARTHROUND0,
+        )
+        self.assertGreater(second_event.damage, 0)
+        self.assertLess(
+            second_context.persistent_battle_state
+            .hp_by_participant_id["player"],
+            hp_before,
+        )
+        self.assertEqual(
+            dict(
+                second_context.persistent_battle_state
                 .carried_commands_by_participant_id
             ),
             {},
