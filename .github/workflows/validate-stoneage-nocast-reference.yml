@@ -1,0 +1,53 @@
+name: Validate StoneAge Nocast guarded reference
+concurrency:
+  group: stoneage-nocast-reference
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-nocast-reference.yml
+      - tools/stoneage_nocast_model.py
+      - tools/stoneage_nocast_source_audit.py
+      - tools/stoneage_recovered25_nocast_probe.py
+      - tests/test_stoneage_nocast_model.py
+      - tests/test_stoneage_recovered25_nocast_probe.py
+permissions:
+  contents: read
+jobs:
+  reference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Nocast model and probe
+        run: |
+          python3 -m unittest \
+            tests.test_stoneage_nocast_model \
+            tests.test_stoneage_recovered25_nocast_probe -v
+      - name: Recover pinned source profiles outside repository
+        run: |
+          python3 - <<'PY'
+          import subprocess
+          from pathlib import Path
+          profiles={
+            'gavin':('gavinlinasd/StoneAge','1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56'),
+            'iris':('iriselia/StoneAge','9e6c8ce2cd8ed532a7157773acd1c61582c178b5'),
+            'bismarck':('BismarckDD/stoneage','999ffdf1d220ec6666eb65339180689c9caf1876'),
+          }
+          for name,(repo,sha) in profiles.items():
+            root=Path('/tmp/nocast-source')/name
+            root.mkdir(parents=True)
+            subprocess.run(['git','init',str(root)],check=True)
+            subprocess.run(['git','-C',str(root),'remote','add','origin','https://github.com/'+repo+'.git'],check=True)
+            subprocess.run(['git','-C',str(root),'fetch','--depth','1','origin',sha],check=True)
+            subprocess.run(['git','-C',str(root),'checkout','--detach','FETCH_HEAD'],check=True)
+          PY
+      - name: Reproduce feature and header enum audit
+        run: |
+          python3 -m tools.stoneage_nocast_source_audit \
+            --gavin-dir /tmp/nocast-source/gavin \
+            --iris-dir /tmp/nocast-source/iris \
+            --bismarck-dir /tmp/nocast-source/bismarck \
+            > /tmp/nocast-source-audit.txt
+          diff -u research/recovered/STONEAGE-NOCAST-SOURCE-AUDIT-R1.txt /tmp/nocast-source-audit.txt

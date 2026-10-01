@@ -3114,3 +3114,15 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
 - The We Love SA page also preserves a retrospective topic label `sa_25 全螢幕時代!?`, supporting use of `SA_N` as update/runtime-generation vocabulary.
 - Significance: `SA_24` in April 2001 predates Waei's first-party 2.0 marketing date of 2001-08-01, so the suffix cannot be read as a marketing major/minor version. This is consistent with byte-recovered first-party `sa_40/sa_42` representing later runtime generations.
 - Limits: no `sa_24.exe` or `sa_25.exe` bytes are preserved by this source; exact first-party Wayback probes currently expose 0 rows for both paths.
+
+
+### SRC-DESCENDANT-NOCAST-PINNED-PROFILES-R1
+
+- Retrieval/audit date: **2026-10-01**.
+- Sources: `gavinlinasd/StoneAge@1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`, `iriselia/StoneAge@9e6c8ce2cd8ed532a7157773acd1c61582c178b5`, `BismarckDD/stoneage@999ffdf1d220ec6666eb65339180689c9caf1876`.
+- Type/confidence: pinned later public descendant source; A for literal handler/profile behavior, not authenticated Taiwan-v1 or recovered25 build identity.
+- Audited paths per source root: `battle/pet_skill.c`, `battle/battle.c`, `battle/battle_event.c`, `magic/magic.c`, `include/version.h`, `include/char_base.h`, `include/battle.h`, `include/battle_event.h`.
+- Actual preprocessor/header enum checks: gavin/iris compile `_SKILL_NOCAST`, command 2025, status index 10 vs WORKNOCAST 54; pinned Bismarck disables the callback, so its source presence is a textual control only and supplies no compiled Nocast command.
+- Supports the sequential byte parser, independent MultiList target expansion, shared status/RNG/resistance ordering, PET exclusion after hit RNG, exact counter write, FALSE-return quirk, direct-magic gating and status-counter/NC-notification timing.
+- Derived-only source hashes/profile output: `research/recovered/STONEAGE-NOCAST-SOURCE-AUDIT-R1.txt`; reproducible audit: `tools/stoneage_nocast_source_audit.py`; specification: `research/mechanics/STONEAGE-NOCAST-R1.md`.
+- Boundaries: missing turn and unsafe target-list domains remain historical UB; active recovered25 OPTION values need a separate hash-verified preservation-bundle probe; no Taiwan-v1 membership or universal numeric COM1 is asserted.

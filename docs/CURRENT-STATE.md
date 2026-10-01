@@ -5537,3 +5537,18 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Next priority will be selected by rerunning the preservation-bundle
   callback-pressure probe after adding BattleTear to its CLOSED set; no
   hand-maintained callback ordering is assumed.
+
+
+## Phase 1 PETSKILL_Nocast guarded reference and data gate — 2026-10-01
+
+- Startup re-read remote main HEAD `da39aaa3eda532fefd32ea024c67f7d68bd6d0e8`, tree `cf2478f4aa482d68abd409dacded7cf73b509ae1`, branches, recent commits/Actions and the continuity files. Callback-pressure workflow **36878251353 = PASS** selects Nocast, ID **580**, **18** slot uses across **16** templates.
+- Pinned source audit distinguishes executable profiles: gavin/iris enable `_SKILL_NOCAST` and resolve NOCAST to **2025**; pinned Bismarck retains the guarded source but disables that callback. Recovered25 numeric COM1 remains unresolved.
+- Added the independent Nocast reference model, byte-exact sequential OPTION parser, source-profile audit, preservation-bundle probe and dedicated CI.
+- Source-backed boundaries include: no preceding physical TargetAdjust; MultiList rejection RNG for dead singles; full compiled-status blocking; strict hit threshold; explicit MODNOCAST/general suit resistance; PET immunity after RNG; exact turn write without +1; FALSE executor return even after application; direct-magic gating; and counter/NC-notification divergence under weaken/barrier freezing.
+- Header enum audit proves status=10 differs from work-enum IDs, so the nominal extra equipment/suit-part3 Nocast deductions do not execute in the admitted gavin/iris profile.
+- Undefined missing/malformed turn, empty single-side target-list construction and unsafe TARGET_ALL remain fail-closed. No v1 save fields or existing six-base-status semantics were changed.
+- Local validation: **30 tests PASS**, including a compiled C float-arithmetic oracle; pinned profile/enum audit reproduced locally. Remote reference and preservation-bundle validation are pending for this milestone.
+- **PETSKILL_NOCAST_GUARDED_REFERENCE_R1 = LOCAL_PASS_REMOTE_PENDING.**
+- **RECOVERED25_NOCAST_OPTION_DOMAIN_R1 = OPEN_PENDING_BUNDLE_PROBE.**
+- **RECOVERED25_NOCAST_RUNTIME_R1 = OPEN.** Executable slot-use coverage remains **2352 / 2486 = 94.6%**; reference work does not increase it.
+- Next priority: inspect the dedicated bundle probe's exact ID-580 OPTION/metadata result, then connect typed Nocast submission, explicit full-status/work-resistance state, ordered round expiry and coordinator persistence. Do not advance to another callback or count these 18 uses executable before runtime acceptance.
