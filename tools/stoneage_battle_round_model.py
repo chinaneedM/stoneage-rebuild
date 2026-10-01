@@ -2403,7 +2403,6 @@ def resolve_continuation_nonbow_baseline(
                         retargeted=bool(retargeted),
                         target_hp_before=before,
                         target_hp_after=before,
-                        combo_member_index=hit_index,
                     )
                 )
                 last_target=target
