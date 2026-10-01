@@ -532,6 +532,7 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_ESCAPE,
         BATTLE_COM_COMBO,
         BATTLE_COM_WAIT,
+        BATTLE_COM_S_RENZOKU,
         BATTLE_COM_S_GBREAK,
         BATTLE_COM_S_GUARDIAN_ATTACK,
         BATTLE_COM_S_CHARGE,
@@ -3045,6 +3046,9 @@ def resolve_ordinary_round(
     combo_rolls_by_starter_id: Mapping[
         str,ComboExecutionRolls
     ] | None = None,
+    continuation_rolls_by_attack_id: Mapping[
+        str,ContinuationAttackRolls
+    ] | None = None,
     base_status_runtime_by_participant_id: Mapping[
         str,BaseBattleStatusRuntime
     ] | None = None,
@@ -3071,7 +3075,8 @@ def resolve_ordinary_round(
     """Execute the status-free base battle seam.
 
     Passing counter_rolls_by_attack_id enables the recovered base counter loop.
-    Prepared COMBO groups additionally require combo_rolls_by_starter_id. Guard
+    Prepared COMBO groups additionally require combo_rolls_by_starter_id;
+    S_RENZOKU requires continuation_rolls_by_attack_id. Guard
     stance is taken from the submitted command set before action sorting,
     matching BATTLE_AttackSeq's inspection of the defender's COM1 rather than
     requiring the guard actor's own execution turn to occur first.
@@ -3160,6 +3165,25 @@ def resolve_ordinary_round(
             combo_rolls_by_starter_id or {}
         ).items()
     }
+    normalized_continuation_rolls={
+        str(participant_id):rolls
+        for participant_id,rolls in (
+            continuation_rolls_by_attack_id or {}
+        ).items()
+    }
+    unknown_continuation_ids=sorted(
+        set(normalized_continuation_rolls)-set(slot_by_id)
+    )
+    if unknown_continuation_ids:
+        raise ValueError(
+            "ContinuationAttack RNG references unknown actors: "
+            f"{unknown_continuation_ids}"
+        )
+    for participant_id,rolls in normalized_continuation_rolls.items():
+        if not isinstance(rolls,ContinuationAttackRolls):
+            raise TypeError(
+                f"ContinuationAttack RNG for {participant_id} has wrong type"
+            )
     combo_groups: dict[int,list[RoundEntry]]={}
     for combo_entry in prepared.ordered_entries:
         if combo_entry.command.command1 != BATTLE_COM_COMBO:
@@ -4172,6 +4196,113 @@ def resolve_ordinary_round(
                 ride_runtime is not None and ride_runtime.mounted
             )
             processed_combo_ids.add(int(entry.combo_id))
+            continue
+
+        if command.command1 == BATTLE_COM_S_RENZOKU:
+            continuation_id=str(participant_id)
+            if continuation_id not in normalized_continuation_rolls:
+                raise KeyError(
+                    f"missing ContinuationAttack rolls for {continuation_id}"
+                )
+            continuation=resolve_continuation_nonbow_baseline(
+                actor=participant,
+                actor_slot=int(slot),
+                command=command,
+                action_value=int(entry.action_value),
+                by_slot=by_slot,
+                hp_by_slot=hp_by_slot,
+                profiles=profiles,
+                command_by_slot=command_by_slot,
+                rolls=normalized_continuation_rolls[continuation_id],
+                defense_profile=defense_profile,
+                setup_effects_by_participant_id=setup_effects,
+                guardian_registrations_by_defender_slot=guardian_registrations,
+                base_status_runtime_by_participant_id=status_runtime,
+                base_damage_react_state_by_participant_id=damage_react_state,
+                battle_abio_by_participant_id=battle_abio,
+                ultimate_overkill_by_participant_id=ultimate_overkill,
+                ride_pet_runtime=ride_runtime,
+                excluded_slots=exited_slots,
+                field_attr=field_attr,
+                field_power=field_power,
+            )
+
+            hp_by_slot.clear()
+            hp_by_slot.update({
+                int(k):int(v)
+                for k,v in continuation.hp_by_slot.items()
+            })
+            hp_by_id.clear()
+            hp_by_id.update({
+                str(by_slot[int(k)].participant_id):int(v)
+                for k,v in hp_by_slot.items()
+                if int(k) in by_slot
+            })
+            if continuation.base_status_runtime_by_participant_id is not None:
+                status_runtime.clear()
+                status_runtime.update(
+                    continuation.base_status_runtime_by_participant_id
+                )
+            if (
+                continuation.base_damage_react_state_by_participant_id
+                is not None
+            ):
+                damage_react_state.clear()
+                damage_react_state.update(
+                    continuation.base_damage_react_state_by_participant_id
+                )
+            if continuation.ultimate_overkill_by_participant_id is not None:
+                ultimate_overkill.clear()
+                ultimate_overkill.update(
+                    continuation.ultimate_overkill_by_participant_id
+                )
+            ride_runtime=continuation.ride_pet_runtime
+            active_ride=bool(
+                ride_runtime is not None and ride_runtime.mounted
+            )
+
+            continuation_events=tuple(continuation.events)
+            events.extend(continuation_events)
+            for exit_id in continuation.ultimate_exited_participant_ids:
+                exit_id=str(exit_id)
+                if exit_id not in slot_by_id:
+                    raise ValueError(
+                        "ContinuationAttack ultimate exit references "
+                        f"unknown actor {exit_id}"
+                    )
+                exit_slot=int(slot_by_id[exit_id])
+                exited_slots.add(exit_slot)
+                if exit_id not in ultimate_exited_ids:
+                    ultimate_exited_ids.append(exit_id)
+            for event in continuation_events:
+                if (
+                    int(event.ultimate_kind)>0
+                    and event.resolved_target_slot is not None
+                ):
+                    ultimate_marked_slots[
+                        int(event.resolved_target_slot)
+                    ]=int(event.ultimate_kind)
+
+            command_by_slot[slot]=BattleCommand(
+                BATTLE_COM_ATTACK,
+                command2=(
+                    -1
+                    if continuation.last_target_slot is None
+                    else int(continuation.last_target_slot)
+                ),
+                command3=command.command3,
+                input_complete=command.input_complete,
+            )
+
+            if (
+                continuation.counter_continuation_allowed
+                and continuation.last_target_slot is not None
+            ):
+                append_counter_chain(
+                    continuation_id,
+                    int(slot),
+                    int(continuation.last_target_slot),
+                )
             continue
 
         rolls = attack_rolls.get(participant_id)
