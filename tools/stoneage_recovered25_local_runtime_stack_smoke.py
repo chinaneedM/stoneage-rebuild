@@ -517,6 +517,18 @@ def main() -> None:
         if int(skill_id) > 0
     }
     print(f"COUNT|petskill_entries|{len(stack.petskill_runtime.skills)}")
+    attack_magic_exact = stack.resolve_enemy_attack_magic_footprint(
+        skill_id=stack.attack_magic_runtime.skill_id_for_magic(301),
+        actor_slot=15,
+        target_slot=0,
+        alive_player_slots=tuple(range(10)),
+    )
+    attack_magic_dynamic = stack.resolve_enemy_attack_magic_footprint(
+        skill_id=stack.attack_magic_runtime.skill_id_for_magic(305),
+        actor_slot=15,
+        target_slot=0,
+        alive_player_slots=(0,),
+    )
     print(
         f"COUNT|attackmagic_entries|{len(stack.attack_magic_runtime.entries)}"
     )
