@@ -61,4 +61,6 @@ This is required even at zero HP if the historical mounted state remains set:
 `BATTLE_GetAttr` can still average its elements, while the later HP-sharing
 branch independently tests pet HP > 0.
 
-Marker: **RECOVERED25_ATTACKMAGIC_ROUND_STATE_ADAPTER_R1 = CANDIDATE**
+Validation: dedicated CI **36853623595 = PASS**. The adapter remains green after the no-target RNG correction validated by action-composer CI **36854070168 = PASS**.
+
+Marker: **RECOVERED25_ATTACKMAGIC_ROUND_STATE_ADAPTER_R1 = CLOSED**

@@ -23,6 +23,11 @@ from dataclasses import dataclass, replace
 from types import MappingProxyType
 from typing import Mapping, Sequence
 
+from tools.stoneage_attack_magic_action_model import EnemyAttackMagicActionRolls
+from tools.stoneage_attack_magic_state_model import AttackMagicRoundOverlay
+from tools.stoneage_enemy_ai_attack_magic_bridge import EnemyAiAttackMagicSubmission
+from tools.stoneage_recovered25_attack_magic_runtime import Recovered25AttackMagicRuntime
+
 from tools.stoneage_battle_core_model import (
     BATTLE_PENDING_DROP_MAX,
     BattleCaptureInputs,
@@ -489,6 +494,8 @@ class PersistentRoundResult:
     before: PersistentBattleState
     round: ResolvedOrdinaryRound
     after: PersistentBattleState
+    attack_magic_overlay_before: AttackMagicRoundOverlay | None = None
+    attack_magic_overlay_after: AttackMagicRoundOverlay | None = None
 
 
 @dataclass(frozen=True)
@@ -1224,6 +1231,17 @@ def resolve_persistent_ordinary_round(
     drop_rolls_by_enemy_id: Mapping[
         str,Sequence[DropAllocationRoll]
     ] | None = None,
+    attack_magic_runtime: Recovered25AttackMagicRuntime | None = None,
+    attack_magic_submissions_by_participant_id: Mapping[
+        str,EnemyAiAttackMagicSubmission
+    ] | None = None,
+    attack_magic_rolls_by_participant_id: Mapping[
+        str,EnemyAttackMagicActionRolls
+    ] | None = None,
+    attack_magic_overlay: AttackMagicRoundOverlay | None = None,
+    attack_magic_retarget_rolls_by_participant_id: Mapping[
+        str,Sequence[int]
+    ] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
     tie_break_order: Sequence[str] | None = None,
@@ -1356,6 +1374,17 @@ def resolve_persistent_ordinary_round(
             for participant_id in living_ids
         }),
         ride_pet_runtime=state.ride_pet_runtime,
+        attack_magic_runtime=attack_magic_runtime,
+        attack_magic_submissions_by_participant_id=(
+            attack_magic_submissions_by_participant_id
+        ),
+        attack_magic_rolls_by_participant_id=(
+            attack_magic_rolls_by_participant_id
+        ),
+        attack_magic_overlay=attack_magic_overlay,
+        attack_magic_retarget_rolls_by_participant_id=(
+            attack_magic_retarget_rolls_by_participant_id
+        ),
         field_attr=field_attr,
         field_power=field_power,
     )
@@ -1567,4 +1596,6 @@ def resolve_persistent_ordinary_round(
         before=state,
         round=round_result,
         after=next_state,
+        attack_magic_overlay_before=attack_magic_overlay,
+        attack_magic_overlay_after=round_result.attack_magic_overlay,
     )

@@ -1,0 +1,47 @@
+name: Validate StoneAge AttackMagic round execution
+
+concurrency:
+  group: stoneage-attack-magic-round-execution
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-attack-magic-round-execution.yml
+      - tools/stoneage_attack_magic_state_model.py
+      - tools/stoneage_attack_magic_round_state_adapter.py
+      - tools/stoneage_attack_magic_action_model.py
+      - tools/stoneage_battle_round_model.py
+      - tools/stoneage_battle_state_model.py
+      - tests/test_stoneage_attack_magic_round_execution.py
+      - research/mechanics/STONEAGE-ATTACK-MAGIC-ROUND-EXECUTION-R1.md
+  pull_request:
+    paths:
+      - .github/workflows/validate-stoneage-attack-magic-round-execution.yml
+      - tools/stoneage_attack_magic_state_model.py
+      - tools/stoneage_attack_magic_round_state_adapter.py
+      - tools/stoneage_attack_magic_action_model.py
+      - tools/stoneage_battle_round_model.py
+      - tools/stoneage_battle_state_model.py
+      - tests/test_stoneage_attack_magic_round_execution.py
+      - research/mechanics/STONEAGE-ATTACK-MAGIC-ROUND-EXECUTION-R1.md
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate command-2002 round execution
+        run: |
+          python3 -m unittest \
+            tests.test_stoneage_battle_round_model \
+            tests.test_stoneage_battle_state_model \
+            tests.test_stoneage_attack_magic_damage_model \
+            tests.test_stoneage_attack_magic_action_model \
+            tests.test_stoneage_attack_magic_round_state_adapter \
+            tests.test_stoneage_attack_magic_round_execution -v

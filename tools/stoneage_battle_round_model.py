@@ -13,6 +13,27 @@ from dataclasses import dataclass, replace
 from types import MappingProxyType
 from typing import Mapping, Sequence
 
+from tools.stoneage_attack_magic_action_model import (
+    AttackMagicDefenderState,
+    AttackMagicRideTargetState,
+    AttackMagicTargetResolution,
+    EnemyAttackMagicActionRolls,
+    EnemyAttackMagicCasterState,
+    resolve_enemy_attack_magic_action,
+)
+from tools.stoneage_attack_magic_damage_model import ElementAttrs
+from tools.stoneage_attack_magic_model import BATTLE_COM_S_ATTACK_MAGIC
+from tools.stoneage_attack_magic_state_model import (
+    AttackMagicRoundOverlay,
+    attack_magic_field_element,
+)
+from tools.stoneage_enemy_ai_attack_magic_bridge import (
+    EnemyAiAttackMagicSubmission,
+)
+from tools.stoneage_recovered25_attack_magic_runtime import (
+    Recovered25AttackMagicRuntime,
+)
+
 from tools.stoneage_battle_core_model import (
     ENEMY,
     OTHER,
@@ -174,6 +195,7 @@ BASE_COMMAND_CODES = frozenset(
         BATTLE_COM_COMBO,
         BATTLE_COM_COMBOEND,
         BATTLE_COM_WAIT,
+        BATTLE_COM_S_ATTACK_MAGIC,
         BATTLE_COM_S_RENZOKU,
         BATTLE_COM_S_GBREAK,
         BATTLE_COM_S_GUARDIAN_ATTACK,
@@ -548,6 +570,7 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_ESCAPE,
         BATTLE_COM_COMBO,
         BATTLE_COM_WAIT,
+        BATTLE_COM_S_ATTACK_MAGIC,
         BATTLE_COM_S_RENZOKU,
         BATTLE_COM_S_GBREAK,
         BATTLE_COM_S_GUARDIAN_ATTACK,
@@ -820,6 +843,7 @@ class OrdinaryRoundEvent:
     # write the flag to a different entry after its quirky defindex rewrite.
     ultimate_flag_target_slot: int | None = None
     ultimate_flag_kind: int = 0
+    attack_magic_target_resolution: AttackMagicTargetResolution | None = None
 
 
 @dataclass(frozen=True)
@@ -835,6 +859,7 @@ class ResolvedOrdinaryRound:
         str,BaseDamageReactState
     ] | None = None
     ride_pet_runtime: RidePetRuntime | None = None
+    attack_magic_overlay: AttackMagicRoundOverlay | None = None
     ultimate_overkill_by_participant_id: Mapping[str,int] | None = None
     ultimate_exited_participant_ids: tuple[str, ...] = ()
     exited_participant_ids: tuple[str, ...] = ()
@@ -876,6 +901,51 @@ def _validated_roll(value: int | None, lo: int, hi: int, name: str) -> int:
 
 def _slot_side(slot: int) -> int:
     return 0 if int(slot) < SIDE_OFFSET else 1
+
+
+def _attack_magic_exact_retarget_rolls(
+    selector: int,
+    *,
+    alive_slots: Sequence[int],
+    rolls_0_9: Sequence[int],
+) -> tuple[int,...]:
+    """Reject unused AttackMagic BATTLE_MultiList retarget RNG."""
+    selector=int(selector)
+    rolls=tuple(int(x) for x in rolls_0_9)
+    if any(not 0 <= value <= 9 for value in rolls):
+        raise ValueError("AttackMagic retarget roll must be 0..9")
+
+    alive={int(x) for x in alive_slots}
+    if not 0 <= selector < 20:
+        if rolls:
+            raise ValueError(
+                "AttackMagic row/side selector cannot consume retarget RNG"
+            )
+        return rolls
+
+    side=0 if selector < 10 else 1
+    candidates=tuple(
+        slot
+        for slot in range(side*10,side*10+10)
+        if slot in alive
+    )
+    if not candidates or selector in alive:
+        if rolls:
+            raise ValueError(
+                "AttackMagic live/no-target selector cannot consume retarget RNG"
+            )
+        return rolls
+
+    success_index=None
+    for index,value in enumerate(rolls):
+        if value < len(candidates):
+            success_index=index
+            break
+    if success_index is None:
+        return rolls
+    if success_index != len(rolls)-1:
+        raise ValueError("AttackMagic retarget RNG contains unused trailing rolls")
+    return rolls
 
 
 def _effective_attack_power(
@@ -3154,6 +3224,17 @@ def resolve_ordinary_round(
         str,BaseDamageReactState
     ] | None = None,
     ride_pet_runtime: RidePetRuntime | None = None,
+    attack_magic_runtime: Recovered25AttackMagicRuntime | None = None,
+    attack_magic_submissions_by_participant_id: Mapping[
+        str,EnemyAiAttackMagicSubmission
+    ] | None = None,
+    attack_magic_rolls_by_participant_id: Mapping[
+        str,EnemyAttackMagicActionRolls
+    ] | None = None,
+    attack_magic_overlay: AttackMagicRoundOverlay | None = None,
+    attack_magic_retarget_rolls_by_participant_id: Mapping[
+        str,Sequence[int]
+    ] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
@@ -3187,6 +3268,83 @@ def resolve_ordinary_round(
     for participant_id in slot_by_id:
         if participant_id not in profiles:
             raise KeyError(f"missing combat profile for {participant_id}")
+
+    attack_magic_actor_ids={
+        str(entry.participant.participant_id)
+        for entry in prepared.ordered_entries
+        if int(entry.command.command1) == BATTLE_COM_S_ATTACK_MAGIC
+    }
+    attack_magic_submissions={
+        str(participant_id):submission
+        for participant_id,submission in (
+            attack_magic_submissions_by_participant_id or {}
+        ).items()
+    }
+    if set(attack_magic_submissions) != attack_magic_actor_ids:
+        missing=sorted(attack_magic_actor_ids-set(attack_magic_submissions))
+        extra=sorted(set(attack_magic_submissions)-attack_magic_actor_ids)
+        raise ValueError(
+            "AttackMagic submissions must match command-2002 actors; "
+            f"missing={missing}, extra={extra}"
+        )
+    for participant_id,submission in attack_magic_submissions.items():
+        if not isinstance(submission,EnemyAiAttackMagicSubmission):
+            raise TypeError(
+                f"AttackMagic submission for {participant_id} has wrong type"
+            )
+    if attack_magic_actor_ids and attack_magic_runtime is None:
+        raise ValueError("command 2002 requires recovered25 AttackMagic runtime")
+    if (
+        attack_magic_runtime is not None
+        and not isinstance(attack_magic_runtime,Recovered25AttackMagicRuntime)
+    ):
+        raise TypeError("attack_magic_runtime has wrong type")
+    if attack_magic_actor_ids and attack_magic_overlay is None:
+        raise ValueError("command 2002 requires AttackMagic round overlay")
+    if (
+        attack_magic_overlay is not None
+        and not isinstance(attack_magic_overlay,AttackMagicRoundOverlay)
+    ):
+        raise TypeError("attack_magic_overlay has wrong type")
+    attack_magic_working=(
+        None
+        if attack_magic_overlay is None
+        else dict(attack_magic_overlay.resistance_by_participant_id)
+    )
+    attack_magic_rolls={
+        str(participant_id):rolls
+        for participant_id,rolls in (
+            attack_magic_rolls_by_participant_id or {}
+        ).items()
+    }
+    unknown_attack_magic_roll_ids=sorted(
+        set(attack_magic_rolls)-attack_magic_actor_ids
+    )
+    if unknown_attack_magic_roll_ids:
+        raise ValueError(
+            "AttackMagic RNG references non-2002 actors: "
+            f"{unknown_attack_magic_roll_ids}"
+        )
+    for participant_id,magic_rolls in attack_magic_rolls.items():
+        if not isinstance(magic_rolls,EnemyAttackMagicActionRolls):
+            raise TypeError(
+                f"AttackMagic RNG for {participant_id} has wrong type"
+            )
+    attack_magic_retarget_rolls={
+        str(participant_id):tuple(int(x) for x in values)
+        for participant_id,values in (
+            attack_magic_retarget_rolls_by_participant_id or {}
+        ).items()
+    }
+    unknown_attack_magic_retarget_ids=sorted(
+        set(attack_magic_retarget_rolls)-attack_magic_actor_ids
+    )
+    if unknown_attack_magic_retarget_ids:
+        raise ValueError(
+            "AttackMagic retarget RNG references non-2002 actors: "
+            f"{unknown_attack_magic_retarget_ids}"
+        )
+    consumed_attack_magic_roll_ids=set()
 
     guarding = {
         slot_by_id[entry.participant.participant_id]
@@ -3939,6 +4097,257 @@ def resolve_ordinary_round(
                     "noguard_no_action",
                 )
             )
+            continue
+
+        if command.command1 == BATTLE_COM_S_ATTACK_MAGIC:
+            caster_id=str(participant_id)
+            if participant.kind != "enemy" or participant.side != "enemy":
+                raise ValueError(
+                    "reconstructed command 2002 currently admits enemy casters only"
+                )
+            submission=attack_magic_submissions[caster_id]
+            if str(submission.participant_id) != caster_id:
+                raise ValueError("AttackMagic submission/caster identity drift")
+            if (
+                int(submission.command.command1) != int(command.command1)
+                or int(submission.command.command2) != int(command.command2)
+                or int(submission.command.command3) != int(command.command3)
+            ):
+                raise ValueError("AttackMagic BattleCommand/submission payload drift")
+            if attack_magic_runtime is None or attack_magic_working is None:
+                raise ValueError("AttackMagic execution state unexpectedly absent")
+
+            alive_player_slots=tuple(
+                other_slot
+                for other_slot in sorted(by_slot)
+                if (
+                    _slot_side(other_slot) == 0
+                    and other_slot not in exited_slots
+                    and int(hp_by_slot.get(other_slot,0)) > 0
+                )
+            )
+            retarget_values=_attack_magic_exact_retarget_rolls(
+                int(submission.direct_use_request.target),
+                alive_slots=alive_player_slots,
+                rolls_0_9=attack_magic_retarget_rolls.get(caster_id,()),
+            )
+            plan=attack_magic_runtime.resolve_enemy_footprint(
+                skill_id=int(submission.skill_id),
+                actor_slot=int(slot),
+                target_slot=int(submission.direct_use_request.source_target),
+                alive_player_slots=alive_player_slots,
+                retarget_rolls_0_9=retarget_values,
+                require_exact_source_order=True,
+            )
+            if int(plan.magic_id) != int(submission.command.magic_id):
+                raise ValueError("AttackMagic round plan/submission magic-id drift")
+
+            caster_profile=profiles[caster_id]
+            caster=EnemyAttackMagicCasterState(
+                participant_id=caster_id,
+                level=int(participant.level),
+                pure_attrs=ElementAttrs(*caster_profile.elements),
+            )
+            defenders={}
+            for target_slot in plan.source_target_order or ():
+                target_slot=int(target_slot)
+                if target_slot not in by_slot:
+                    raise ValueError(
+                        f"AttackMagic target slot {target_slot} is not occupied"
+                    )
+                defender=by_slot[target_slot]
+                defender_id=str(defender.participant_id)
+                if defender.side != "player":
+                    raise ValueError("enemy AttackMagic target crossed battle sides")
+                if defender_id not in attack_magic_working:
+                    raise KeyError(
+                        f"missing AttackMagic resistance runtime for {defender_id}"
+                    )
+                defender_profile=profiles[defender_id]
+                resistance_runtime=attack_magic_working[defender_id]
+
+                ride_state=None
+                if (
+                    defender.kind == "player"
+                    and ride_runtime is not None
+                    and str(ride_runtime.rider_id) == defender_id
+                    and bool(ride_runtime.mounted)
+                ):
+                    ride_id=str(ride_runtime.pet_id)
+                    if ride_id not in profiles:
+                        raise KeyError(
+                            f"missing AttackMagic ride-pet profile for {ride_id}"
+                        )
+                    ride_profile=profiles[ride_id]
+                    if not isinstance(ride_profile,BattleCombatProfile):
+                        raise TypeError(
+                            f"AttackMagic ride profile for {ride_id} has wrong type"
+                        )
+                    ride_state=AttackMagicRideTargetState(
+                        pet_id=ride_id,
+                        hp=int(ride_runtime.hp),
+                        max_hp=int(ride_runtime.max_hp),
+                        pure_attrs=ElementAttrs(*ride_profile.elements),
+                        mounted=bool(ride_runtime.mounted),
+                        petfall=bool(ride_runtime.petfall),
+                    )
+
+                defender_runtime=status_runtime[defender_id]
+                defenders[target_slot]=AttackMagicDefenderState(
+                    participant_id=defender_id,
+                    kind=str(defender.kind),
+                    level=int(defender.level),
+                    hp=int(hp_by_slot[target_slot]),
+                    max_hp=int(defender.max_hp),
+                    pure_attrs=ElementAttrs(*defender_profile.elements),
+                    resistance=resistance_runtime.state_for(plan.element),
+                    luck=int(defender_profile.fixed_luck),
+                    equipment_resistance=int(
+                        resistance_runtime.equipment_resistance[plan.element]
+                    ),
+                    equipment_quimagic=int(
+                        resistance_runtime.equipment_quimagic
+                    ),
+                    magic_defense_percent=(
+                        resistance_runtime.magic_defense_percent
+                    ),
+                    sleep_turns=int(defender_runtime.status.sleep),
+                    ride=ride_state,
+                )
+
+            magic_rolls=attack_magic_rolls.get(caster_id)
+            if plan.normalized_selector is None and magic_rolls is None:
+                magic_rolls=EnemyAttackMagicActionRolls(None,{})
+            elif magic_rolls is None:
+                raise KeyError(
+                    f"missing AttackMagic action RNG for {caster_id}"
+                )
+            else:
+                consumed_attack_magic_roll_ids.add(caster_id)
+
+            expected_target_roll_slots=set(
+                int(x) for x in (plan.source_target_order or ())
+            )
+            actual_target_roll_slots=set(
+                int(x) for x in magic_rolls.target_rolls_by_slot
+            )
+            if actual_target_roll_slots != expected_target_roll_slots:
+                missing=sorted(
+                    expected_target_roll_slots-actual_target_roll_slots
+                )
+                extra=sorted(
+                    actual_target_roll_slots-expected_target_roll_slots
+                )
+                raise ValueError(
+                    "AttackMagic action RNG target slots mismatch; "
+                    f"missing={missing}, extra={extra}"
+                )
+
+            action=resolve_enemy_attack_magic_action(
+                plan=plan,
+                caster=caster,
+                defenders_by_slot=defenders,
+                rolls=magic_rolls,
+                field_element=attack_magic_field_element(field_attr),
+                field_power=int(field_power),
+            )
+            if not action.targets:
+                events.append(
+                    OrdinaryRoundEvent(
+                        caster_id,
+                        int(slot),
+                        BATTLE_COM_S_ATTACK_MAGIC,
+                        int(entry.action_value),
+                        (
+                            "attackmagic_no_target"
+                            if plan.normalized_selector is None
+                            else "attackmagic_empty_footprint"
+                        ),
+                        original_target_slot=int(
+                            submission.direct_use_request.source_target
+                        ),
+                        retargeted=bool(
+                            plan.normalized_selector != plan.source_selector
+                        ),
+                    )
+                )
+                continue
+
+            for hit in action.targets:
+                target_slot=int(hit.slot)
+                defender=by_slot[target_slot]
+                defender_id=str(defender.participant_id)
+                before=int(hp_by_slot[target_slot])
+                if before != int(hit.hp_before):
+                    raise ValueError(
+                        "AttackMagic action/local target HP pre-state drift"
+                    )
+                hp_by_slot[target_slot]=int(hit.hp_after)
+                hp_by_id[defender_id]=int(hit.hp_after)
+
+                defender_after=action.defenders_after[target_slot]
+                defender_runtime=status_runtime[defender_id]
+                status_runtime[defender_id]=replace(
+                    defender_runtime,
+                    status=replace(
+                        defender_runtime.status,
+                        sleep=int(defender_after.sleep_turns),
+                    ),
+                )
+                attack_magic_working[defender_id]=attack_magic_working[
+                    defender_id
+                ].with_state(
+                    plan.element,
+                    defender_after.resistance,
+                )
+
+                ride_fell_id=None
+                if (
+                    defender.kind == "player"
+                    and ride_runtime is not None
+                    and str(ride_runtime.rider_id) == defender_id
+                    and defender_after.ride is not None
+                ):
+                    ride_after=defender_after.ride
+                    if str(ride_after.pet_id) != str(ride_runtime.pet_id):
+                        raise ValueError("AttackMagic ride identity drift")
+                    if int(ride_after.max_hp) != int(ride_runtime.max_hp):
+                        raise ValueError("AttackMagic ride max-HP drift")
+                    if bool(hit.ride_pet_unmounted):
+                        ride_fell_id=defender_id
+                    ride_runtime=replace(
+                        ride_runtime,
+                        hp=int(ride_after.hp),
+                        mounted=bool(ride_after.mounted),
+                        petfall=bool(ride_after.petfall),
+                    )
+                    active_ride=bool(ride_runtime.mounted)
+
+                events.append(
+                    OrdinaryRoundEvent(
+                        caster_id,
+                        int(slot),
+                        BATTLE_COM_S_ATTACK_MAGIC,
+                        int(entry.action_value),
+                        (
+                            "attackmagic_dodge"
+                            if hit.dodged
+                            else "attackmagic_hit"
+                        ),
+                        original_target_slot=int(
+                            submission.direct_use_request.source_target
+                        ),
+                        resolved_target_slot=target_slot,
+                        retargeted=bool(
+                            plan.normalized_selector != plan.source_selector
+                        ),
+                        damage=int(hit.reported_rider_damage),
+                        target_hp_before=int(hit.hp_before),
+                        target_hp_after=int(hit.hp_after),
+                        ride_pet_fell_rider_id=ride_fell_id,
+                        attack_magic_target_resolution=hit,
+                    )
+                )
             continue
 
         if command.command1 == BATTLE_COM_ESCAPE:
@@ -5363,6 +5772,15 @@ def resolve_ordinary_round(
                 counter_target_slot,
             )
 
+    unused_attack_magic_roll_ids=sorted(
+        set(attack_magic_rolls)-consumed_attack_magic_roll_ids
+    )
+    if unused_attack_magic_roll_ids:
+        raise ValueError(
+            "unused AttackMagic action RNG supplied for actors: "
+            f"{unused_attack_magic_roll_ids}"
+        )
+
     carried_commands={}
     carried_effects={}
     for carried_slot,carried_command in command_by_slot.items():
@@ -5406,6 +5824,11 @@ def resolve_ordinary_round(
             dict(damage_react_state)
         ),
         ride_pet_runtime=ride_runtime,
+        attack_magic_overlay=(
+            None
+            if attack_magic_working is None
+            else AttackMagicRoundOverlay(attack_magic_working)
+        ),
         ultimate_overkill_by_participant_id=MappingProxyType(
             dict(ultimate_overkill)
         ),

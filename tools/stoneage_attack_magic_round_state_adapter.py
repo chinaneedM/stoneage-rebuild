@@ -26,9 +26,11 @@ from tools.stoneage_attack_magic_action_model import (
     EnemyAttackMagicCasterState,
     resolve_enemy_attack_magic_action,
 )
-from tools.stoneage_attack_magic_damage_model import (
-    ElementAttrs,
-    MagicExpState,
+from tools.stoneage_attack_magic_damage_model import ElementAttrs
+from tools.stoneage_attack_magic_state_model import (
+    AttackMagicResistanceRuntime,
+    AttackMagicRoundOverlay,
+    attack_magic_field_element,
 )
 from tools.stoneage_battle_ride_damage_model import RidePetRuntime
 from tools.stoneage_battle_round_model import BattleCombatProfile
@@ -41,102 +43,6 @@ from tools.stoneage_recovered25_attack_magic_runtime import (
     Recovered25AttackMagicRuntime,
     Recovered25EnemyAttackMagicPlan,
 )
-
-
-FIELD_ELEMENT_BY_NAME = {
-    "none": None,
-    "earth": 0,
-    "water": 1,
-    "fire": 2,
-    "wind": 3,
-}
-
-
-@dataclass(frozen=True)
-class AttackMagicResistanceRuntime:
-    """Four-element magic resistance/training state plus battle modifiers."""
-
-    levels: tuple[int, int, int, int] = (0, 0, 0, 0)
-    exps: tuple[int, int, int, int] = (0, 0, 0, 0)
-    equipment_resistance: tuple[int, int, int, int] = (0, 0, 0, 0)
-    equipment_quimagic: int = 0
-    magic_defense_percent: int | None = None
-
-    def __post_init__(self) -> None:
-        levels=tuple(int(x) for x in self.levels)
-        exps=tuple(int(x) for x in self.exps)
-        equip=tuple(int(x) for x in self.equipment_resistance)
-        if len(levels) != 4 or len(exps) != 4 or len(equip) != 4:
-            raise ValueError("AttackMagic resistance runtime requires four elements")
-        if any(not 0 <= x <= 100 for x in levels):
-            raise ValueError("AttackMagic resistance levels must be in 0..100")
-        if any(x < 0 for x in exps):
-            raise ValueError("AttackMagic resistance experience cannot be negative")
-        object.__setattr__(self,"levels",levels)
-        object.__setattr__(self,"exps",exps)
-        object.__setattr__(self,"equipment_resistance",equip)
-        object.__setattr__(
-            self,"equipment_quimagic",int(self.equipment_quimagic)
-        )
-        if self.magic_defense_percent is not None:
-            object.__setattr__(
-                self,
-                "magic_defense_percent",
-                int(self.magic_defense_percent),
-            )
-
-    def state_for(self, element: int) -> MagicExpState:
-        element=int(element)
-        if element not in range(4):
-            raise ValueError("AttackMagic resistance element must be 0..3")
-        opposed=(element+1)%4
-        return MagicExpState(
-            self.levels[element],
-            self.exps[element],
-            self.levels[opposed],
-            self.exps[opposed],
-        )
-
-    def with_state(
-        self,
-        element: int,
-        state: MagicExpState,
-    ) -> "AttackMagicResistanceRuntime":
-        element=int(element)
-        if element not in range(4):
-            raise ValueError("AttackMagic resistance element must be 0..3")
-        opposed=(element+1)%4
-        levels=list(self.levels)
-        exps=list(self.exps)
-        levels[element]=int(state.level)
-        exps[element]=int(state.exp)
-        levels[opposed]=int(state.opposed_level)
-        exps[opposed]=int(state.opposed_exp)
-        return replace(self,levels=tuple(levels),exps=tuple(exps))
-
-
-@dataclass(frozen=True)
-class AttackMagicRoundOverlay:
-    resistance_by_participant_id: Mapping[
-        str,AttackMagicResistanceRuntime
-    ]
-
-    def __post_init__(self) -> None:
-        normalized={}
-        for participant_id,runtime in self.resistance_by_participant_id.items():
-            participant_id=str(participant_id)
-            if not participant_id:
-                raise ValueError("AttackMagic overlay participant id cannot be empty")
-            if not isinstance(runtime,AttackMagicResistanceRuntime):
-                raise TypeError(
-                    "AttackMagic overlay values must be resistance runtimes"
-                )
-            normalized[participant_id]=runtime
-        object.__setattr__(
-            self,
-            "resistance_by_participant_id",
-            MappingProxyType(normalized),
-        )
 
 
 @dataclass(frozen=True)
@@ -174,13 +80,6 @@ def _element_attrs(profile: BattleCombatProfile) -> ElementAttrs:
         int(profile.fire),
         int(profile.wind),
     )
-
-
-def _field_element(field_attr: str) -> int | None:
-    key=str(field_attr)
-    if key not in FIELD_ELEMENT_BY_NAME:
-        raise ValueError(f"unknown AttackMagic field attribute: {key}")
-    return FIELD_ELEMENT_BY_NAME[key]
 
 
 def resolve_persistent_enemy_attack_magic_state(
@@ -363,7 +262,7 @@ def resolve_persistent_enemy_attack_magic_state(
         caster=caster,
         defenders_by_slot=defenders,
         rolls=rolls,
-        field_element=_field_element(field_attr),
+        field_element=attack_magic_field_element(field_attr),
         field_power=int(field_power),
     )
 
