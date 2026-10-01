@@ -34,6 +34,11 @@ from tools.stoneage_enemy_ai_rehp_bridge import EnemyAiReHpSubmission
 from tools.stoneage_enemy_ai_damage_to_hp_bridge import (
     EnemyAiDamageToHpSubmission,
 )
+from tools.stoneage_enemy_ai_mp_damage_bridge import EnemyAiMpDamageSubmission
+from tools.stoneage_mp_damage_model import (
+    MpDamageResolution,
+    resolve_mp_damage,
+)
 from tools.stoneage_damage_to_hp_model import (
     DamageToHpRecovery,
     resolve_damage_to_hp_recovery,
@@ -860,6 +865,7 @@ class OrdinaryRoundEvent:
     attack_magic_target_resolution: AttackMagicTargetResolution | None = None
     enemy_rehp_resolution: EnemyReHpResolution | None = None
     damage_to_hp_recovery: DamageToHpRecovery | None = None
+    mp_damage_resolution: MpDamageResolution | None = None
 
 
 @dataclass(frozen=True)
@@ -886,6 +892,7 @@ class ResolvedOrdinaryRound:
     ] | None = None
     steal_gold_by_player_id: Mapping[str,int] | None = None
     steal_item_slots_by_player_id: Mapping[str,tuple[int,...]] | None = None
+    mp_by_participant_id: Mapping[str,int] | None = None
 
 
 def _participant_battle_kind(participant: BattleParticipant) -> str:
@@ -3263,6 +3270,10 @@ def resolve_ordinary_round(
     damage_to_hp_submissions_by_participant_id: Mapping[
         str,EnemyAiDamageToHpSubmission
     ] | None = None,
+    mp_damage_submissions_by_participant_id: Mapping[
+        str,EnemyAiMpDamageSubmission
+    ] | None = None,
+    mp_by_participant_id: Mapping[str,int] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
@@ -3484,6 +3495,52 @@ def resolve_ordinary_round(
             raise ValueError(
                 "DamageToHp ordering carrier must be ATTACK/source-target"
             )
+
+    mp_damage_submissions={
+        str(participant_id):submission
+        for participant_id,submission in (
+            mp_damage_submissions_by_participant_id or {}
+        ).items()
+    }
+    mp_damage_actor_ids=set(mp_damage_submissions)
+    unknown_mp_damage_ids=sorted(mp_damage_actor_ids-set(slot_by_id))
+    if unknown_mp_damage_ids:
+        raise ValueError(
+            f"MpDamage submissions reference unknown actors: {unknown_mp_damage_ids}"
+        )
+    if mp_damage_actor_ids & (
+        damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+    ):
+        raise ValueError("MpDamage semantic submissions overlap another skill")
+    for participant_id,submission in mp_damage_submissions.items():
+        if not isinstance(submission,EnemyAiMpDamageSubmission):
+            raise TypeError(
+                f"MpDamage submission for {participant_id} has wrong type"
+            )
+        if str(submission.participant_id) != participant_id:
+            raise ValueError("MpDamage submission participant drift")
+        entry=prepared_entry_by_id[participant_id]
+        if entry.participant.side != "enemy" or entry.participant.kind != "enemy":
+            raise ValueError("recovered25 MpDamage currently admits enemy actors only")
+        if (
+            int(entry.command.command1) != BATTLE_COM_ATTACK
+            or int(entry.command.command2) != int(submission.source_target_slot)
+        ):
+            raise ValueError(
+                "MpDamage ordering carrier must be ATTACK/source-target"
+            )
+
+    mp_working={
+        str(participant_id):int(value)
+        for participant_id,value in (mp_by_participant_id or {}).items()
+    }
+    unknown_mp_state=sorted(set(mp_working)-set(slot_by_id))
+    if unknown_mp_state:
+        raise ValueError(
+            f"MpDamage MP state references unknown actors: {unknown_mp_state}"
+        )
+    if any(value < 0 for value in mp_working.values()):
+        raise ValueError("MpDamage MP state cannot be negative")
 
     guarding = {
         slot_by_id[entry.participant.participant_id]
@@ -5565,6 +5622,26 @@ def resolve_ordinary_round(
                 damage_react_state[source_defender_id]
             )
 
+        mp_damage_submission=None
+        mp_damage_source_react_blocked=False
+        if (
+            str(participant_id) in mp_damage_submissions
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            mp_damage_submission=mp_damage_submissions[str(participant_id)]
+            if int(command.command1) != BATTLE_COM_ATTACK:
+                raise ValueError(
+                    "MpDamage semantic action lost ATTACK ordering carrier"
+                )
+            source_defender=by_slot[int(target)]
+            source_defender_id=str(source_defender.participant_id)
+            mp_damage_source_react_blocked=base_damage_react_active(
+                damage_react_state[source_defender_id]
+            )
+
         counter_target_slot=int(target)
         damage_target_slot=int(target)
         guardian_redirected=False
@@ -5724,9 +5801,12 @@ def resolve_ordinary_round(
         reaction_defender=defender
         reaction_defender_id=str(defender_id)
         reaction_defender_work_defense=int(defender_work_defense)
-        if damage_to_hp_submission is not None:
-            # Fixed BATTLE_S_AttackDamage lets AttackSeq calculate against a
-            # Guardian but passes its original defindex to DamageSub.
+        if (
+            damage_to_hp_submission is not None
+            or mp_damage_submission is not None
+        ):
+            # Fixed specialized BATTLE_S_AttackDamage lets AttackSeq calculate
+            # against a Guardian but passes its original defindex to DamageSub.
             reaction_target_slot=int(target)
             reaction_defender=by_slot[reaction_target_slot]
             reaction_defender_id=str(reaction_defender.participant_id)
@@ -5924,6 +6004,36 @@ def resolve_ordinary_round(
                 damage_to_hp_recovery.attacker_hp_after
             )
 
+        mp_damage_resolution=None
+        if (
+            mp_damage_submission is not None
+            and not mp_damage_source_react_blocked
+        ):
+            mp_target=by_slot[int(target)]
+            mp_target_id=str(mp_target.participant_id)
+            if mp_target.kind == "player":
+                if mp_target_id not in mp_working:
+                    raise KeyError(
+                        f"missing MpDamage current MP for {mp_target_id}"
+                    )
+                target_mp=int(mp_working[mp_target_id])
+            else:
+                # Fixed helper rejects enemy/pet before reading MP.
+                target_mp=0
+            mp_damage_resolution=resolve_mp_damage(
+                # BATTLE_DamageSub writes playerdamage back through pDamage;
+                # on a mounted target this is the rider portion only.
+                physical_damage=int(event_damage),
+                target_kind=str(mp_target.kind),
+                target_mp=target_mp,
+                target_damage_react=0,
+                option=mp_damage_submission.option,
+            )
+            if mp_target.kind == "player":
+                mp_working[mp_target_id]=int(
+                    mp_damage_resolution.mp_after
+                )
+
         ultimate_damage_resolution=None
         death_ultimate_resolution=None
         ultimate_kind=0
@@ -6097,6 +6207,7 @@ def resolve_ordinary_round(
                 guardian_slot=guardian_slot,
                 damage_react_resolution=reaction_resolution,
                 damage_to_hp_recovery=damage_to_hp_recovery,
+                mp_damage_resolution=mp_damage_resolution,
                 ride_damage_split=ride_split,
                 ride_hp_resolution=ride_hp_resolution,
                 ride_pet_fell_rider_id=ride_pet_fell_rider_id,
@@ -6205,4 +6316,5 @@ def resolve_ordinary_round(
         steal_item_slots_by_player_id=MappingProxyType(
             dict(steal_items)
         ),
+        mp_by_participant_id=MappingProxyType(dict(mp_working)),
     )

@@ -38,6 +38,11 @@ from tools.stoneage_enemy_ai_damage_to_hp_bridge import (
     EnemyAiDamageToHpSubmission,
     resolve_enemy_ai_damage_to_hp_submission,
 )
+from tools.stoneage_enemy_ai_mp_damage_bridge import (
+    EnemyAiMpDamageSubmission,
+    resolve_enemy_ai_mp_damage_submission,
+)
+from tools.stoneage_mp_damage_model import CALLBACK_NAME as MP_DAMAGE_CALLBACK
 from tools.stoneage_damage_to_hp_model import (
     CALLBACK_NAME as DAMAGE_TO_HP_CALLBACK,
 )
@@ -366,6 +371,9 @@ class EnemyAiCommonCommandBatch:
     damage_to_hp_submissions: Mapping[
         str,EnemyAiDamageToHpSubmission
     ] = field(default_factory=dict)
+    mp_damage_submissions: Mapping[
+        str,EnemyAiMpDamageSubmission
+    ] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         object.__setattr__(
@@ -503,6 +511,38 @@ class EnemyAiCommonCommandBatch:
         ):
             raise ValueError(
                 "enemy AI DamageToHp semantic submissions overlap another skill"
+            )
+
+        mp_submissions={
+            str(key):value for key,value in self.mp_damage_submissions.items()
+        }
+        object.__setattr__(
+            self,"mp_damage_submissions",MappingProxyType(mp_submissions)
+        )
+        for participant_id,submission in mp_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError("enemy AI MpDamage submission lacks carrier command")
+            if not isinstance(submission,EnemyAiMpDamageSubmission):
+                raise TypeError(
+                    f"enemy AI MpDamage submission has wrong type for "
+                    f"{participant_id}"
+                )
+            if str(submission.participant_id) != participant_id:
+                raise ValueError("enemy AI MpDamage participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1) != BATTLE_COM_ATTACK
+                or int(carrier.command2) != int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI MpDamage carrier must be ATTACK/source-target"
+                )
+        if set(mp_submissions) & (
+            set(damage_submissions) | set(rehp_submissions)
+            | set(magic_submissions)
+        ):
+            raise ValueError(
+                "enemy AI MpDamage semantic submissions overlap another skill"
             )
 
 
@@ -1136,6 +1176,7 @@ class LocalRuntimeSessionCoordinator:
         allow_attackmagic_skill: bool = False,
         allow_rehp_skill: bool = False,
         allow_damage_to_hp_skill: bool = False,
+        allow_mp_damage_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1278,6 +1319,7 @@ class LocalRuntimeSessionCoordinator:
         attack_magic_submissions={}
         enemy_rehp_submissions={}
         damage_to_hp_submissions={}
+        mp_damage_submissions={}
         for enemy_id in ai_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
                 raise ValueError(
@@ -1335,6 +1377,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_attackmagic_skill)
                 or bool(allow_rehp_skill)
                 or bool(allow_damage_to_hp_skill)
+                or bool(allow_mp_damage_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1345,6 +1388,24 @@ class LocalRuntimeSessionCoordinator:
                 skill_ids=tuple(int(x) for x in spawned.template.skill_slot_ids)
                 selected_skill_id=skill_ids[int(decision.skill_slot)]
                 selected_skill=petskill_runtime.skills.get(selected_skill_id)
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == MP_DAMAGE_CALLBACK
+                    and bool(allow_mp_damage_skill)
+                ):
+                    submission=resolve_enemy_ai_mp_damage_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                    )
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    mp_damage_submissions[enemy_id]=submission
+                    continue
+
                 if (
                     selected_skill is not None
                     and selected_skill.function_name == DAMAGE_TO_HP_CALLBACK
@@ -1477,6 +1538,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("ENEMYSKILL_ReHP")
             if bool(allow_damage_to_hp_skill):
                 allowed_parts.append("PETSKILL_DamageToHp")
+            if bool(allow_mp_damage_skill):
+                allowed_parts.append("PETSKILL_MpDamage")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1490,6 +1553,7 @@ class LocalRuntimeSessionCoordinator:
             attack_magic_submissions=attack_magic_submissions,
             enemy_rehp_submissions=enemy_rehp_submissions,
             damage_to_hp_submissions=damage_to_hp_submissions,
+            mp_damage_submissions=mp_damage_submissions,
         )
 
     def build_persistent_enemy_common_commands(
@@ -1678,7 +1742,7 @@ class LocalRuntimeSessionCoordinator:
 
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
         explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
-        plus recovered Abduct, AttackMagic, ENEMYSKILL_ReHP, PETSKILL_DamageToHp, ChargeAttack, ContinuationAttack,
+        plus recovered Abduct, AttackMagic, ENEMYSKILL_ReHP, PETSKILL_DamageToHp, PETSKILL_MpDamage, ChargeAttack, ContinuationAttack,
         EarthRound, GuardBreak, Mighty, NoGuard, PowerBalance, StatusChange and
         Steal.
         Steal mutates only the working persistent player Gold/inventory clone
@@ -1773,6 +1837,7 @@ class LocalRuntimeSessionCoordinator:
             allow_attackmagic_skill=True,
             allow_rehp_skill=True,
             allow_damage_to_hp_skill=True,
+            allow_mp_damage_skill=True,
         )
         enemy_commands = enemy_batch.commands
         rehp_enemy_ids=set(enemy_batch.enemy_rehp_submissions)
@@ -2033,29 +2098,39 @@ class LocalRuntimeSessionCoordinator:
         working_persistent=None
         steal_gold_state=None
         steal_item_state=None
+        mp_state=None
         player_id=str(state.session.player.participant_id)
-        if steal_enemy_ids:
+        mp_damage_enemy_ids=set(enemy_batch.mp_damage_submissions)
+        if steal_enemy_ids or mp_damage_enemy_ids:
             working_persistent=decode_persistent_state(
                 self._battle_working_persistent_payload(context)
             )
             if working_persistent.character is None:
                 raise ValueError(
-                    "enemy Steal requires persistent player character state"
+                    "enemy Steal/MpDamage requires persistent player "
+                    "character state"
                 )
             fields=dict(working_persistent.character.fields)
-            if "gold" not in fields:
-                raise ValueError(
-                    "enemy Steal requires persistent player gold field"
-                )
-            steal_gold_state={player_id:int(fields["gold"])}
-            steal_item_state={
-                player_id:tuple(
-                    sorted(
-                        int(slot.value)
-                        for slot in working_persistent.inventory
+            if steal_enemy_ids:
+                if "gold" not in fields:
+                    raise ValueError(
+                        "enemy Steal requires persistent player gold field"
                     )
-                )
-            }
+                steal_gold_state={player_id:int(fields["gold"])}
+                steal_item_state={
+                    player_id:tuple(
+                        sorted(
+                            int(slot.value)
+                            for slot in working_persistent.inventory
+                        )
+                    )
+                }
+            if mp_damage_enemy_ids:
+                if "mp" not in fields:
+                    raise ValueError(
+                        "enemy MpDamage requires persistent player MP field"
+                    )
+                mp_state={player_id:int(fields["mp"])}
 
         result = resolve_persistent_ordinary_round(
             state,
@@ -2113,6 +2188,10 @@ class LocalRuntimeSessionCoordinator:
             damage_to_hp_submissions_by_participant_id=(
                 enemy_batch.damage_to_hp_submissions
             ),
+            mp_damage_submissions_by_participant_id=(
+                enemy_batch.mp_damage_submissions
+            ),
+            mp_by_participant_id=mp_state,
             defense_profile=str(defense_profile),
             no_risk=bool(no_risk),
             field_attr=str(field_attr),
@@ -2124,32 +2203,43 @@ class LocalRuntimeSessionCoordinator:
             ),
         )
         next_working_payload=context.working_persistent_state_payload
-        if steal_enemy_ids:
-            if working_persistent is None or working_persistent.character is None:
-                raise AssertionError("Steal working persistence disappeared")
-            if player_id not in result.round.steal_gold_by_player_id:
-                raise ValueError("Steal round omitted final player gold state")
-            if player_id not in result.round.steal_item_slots_by_player_id:
-                raise ValueError("Steal round omitted final player item state")
+        if working_persistent is not None:
+            if working_persistent.character is None:
+                raise AssertionError(
+                    "Steal/MpDamage working persistence disappeared"
+                )
             fields=dict(working_persistent.character.fields)
-            fields["gold"]=int(
-                result.round.steal_gold_by_player_id[player_id]
-            )
+            if steal_enemy_ids:
+                if player_id not in result.round.steal_gold_by_player_id:
+                    raise ValueError("Steal round omitted final player gold state")
+                if player_id not in result.round.steal_item_slots_by_player_id:
+                    raise ValueError("Steal round omitted final player item state")
+                fields["gold"]=int(
+                    result.round.steal_gold_by_player_id[player_id]
+                )
+                allowed_slots=set(
+                    int(x)
+                    for x in result.round.steal_item_slots_by_player_id[
+                        player_id
+                    ]
+                )
+                working_persistent.inventory={
+                    slot:item
+                    for slot,item in working_persistent.inventory.items()
+                    if int(slot.value) in allowed_slots
+                }
+            if mp_damage_enemy_ids:
+                if player_id not in result.round.mp_by_participant_id:
+                    raise ValueError(
+                        "MpDamage round omitted final player MP state"
+                    )
+                fields["mp"]=int(
+                    result.round.mp_by_participant_id[player_id]
+                )
             working_persistent.character=replace(
                 working_persistent.character,
                 fields=MappingProxyType(fields),
             )
-            allowed_slots=set(
-                int(x)
-                for x in result.round.steal_item_slots_by_player_id[
-                    player_id
-                ]
-            )
-            working_persistent.inventory={
-                slot:item
-                for slot,item in working_persistent.inventory.items()
-                if int(slot.value) in allowed_slots
-            }
             next_working_payload=encode_persistent_state(
                 working_persistent
             )

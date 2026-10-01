@@ -1,0 +1,33 @@
+name: Validate StoneAge MpDamage runtime
+concurrency:
+  group: stoneage-mpdamage-runtime
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-mpdamage-runtime.yml
+      - tools/stoneage_mp_damage_model.py
+      - tools/stoneage_enemy_ai_mp_damage_bridge.py
+      - tools/stoneage_battle_round_model.py
+      - tools/stoneage_battle_state_model.py
+      - tools/stoneage_local_runtime_session_coordinator.py
+      - tests/test_stoneage_mp_damage_model.py
+      - tests/test_stoneage_enemy_ai_mp_damage_bridge.py
+      - tests/test_stoneage_mp_damage_round.py
+      - tests/test_stoneage_local_runtime_session_coordinator.py
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate recovered25 MpDamage runtime
+        run: |
+          python3 -m unittest \
+            tests.test_stoneage_mp_damage_model \
+            tests.test_stoneage_enemy_ai_mp_damage_bridge \
+            tests.test_stoneage_mp_damage_round \
+            tests.test_stoneage_local_runtime_session_coordinator -v

@@ -30,6 +30,7 @@ from tools.stoneage_enemy_ai_rehp_bridge import EnemyAiReHpSubmission
 from tools.stoneage_enemy_ai_damage_to_hp_bridge import (
     EnemyAiDamageToHpSubmission,
 )
+from tools.stoneage_enemy_ai_mp_damage_bridge import EnemyAiMpDamageSubmission
 from tools.stoneage_enemy_rehp_model import EnemyReHpRolls
 from tools.stoneage_recovered25_attack_magic_runtime import Recovered25AttackMagicRuntime
 
@@ -1259,6 +1260,10 @@ def resolve_persistent_ordinary_round(
     damage_to_hp_submissions_by_participant_id: Mapping[
         str,EnemyAiDamageToHpSubmission
     ] | None = None,
+    mp_damage_submissions_by_participant_id: Mapping[
+        str,EnemyAiMpDamageSubmission
+    ] | None = None,
+    mp_by_participant_id: Mapping[str,int] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
     tie_break_order: Sequence[str] | None = None,
@@ -1414,6 +1419,10 @@ def resolve_persistent_ordinary_round(
         damage_to_hp_submissions_by_participant_id=(
             damage_to_hp_submissions_by_participant_id
         ),
+        mp_damage_submissions_by_participant_id=(
+            mp_damage_submissions_by_participant_id
+        ),
+        mp_by_participant_id=mp_by_participant_id,
         field_attr=field_attr,
         field_power=field_power,
     )
