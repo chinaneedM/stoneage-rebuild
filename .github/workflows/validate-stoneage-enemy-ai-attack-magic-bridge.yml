@@ -1,0 +1,40 @@
+name: Validate StoneAge enemy AttackMagic bridge
+
+concurrency:
+  group: stoneage-enemy-ai-attack-magic-bridge
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-enemy-ai-attack-magic-bridge.yml
+      - tools/stoneage_enemy_ai_attack_magic_bridge.py
+      - tests/test_stoneage_enemy_ai_attack_magic_bridge.py
+      - tools/stoneage_attack_magic_model.py
+      - tools/stoneage_recovered25_attack_magic_runtime.py
+      - research/mechanics/STONEAGE-ATTACK-MAGIC-ACTION-COMPOSER-R1.md
+  pull_request:
+    paths:
+      - .github/workflows/validate-stoneage-enemy-ai-attack-magic-bridge.yml
+      - tools/stoneage_enemy_ai_attack_magic_bridge.py
+      - tests/test_stoneage_enemy_ai_attack_magic_bridge.py
+      - tools/stoneage_attack_magic_model.py
+      - tools/stoneage_recovered25_attack_magic_runtime.py
+      - research/mechanics/STONEAGE-ATTACK-MAGIC-ACTION-COMPOSER-R1.md
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate enemy AttackMagic command submission
+        run: |
+          python3 -m unittest \
+            tests.test_stoneage_attack_magic_model \
+            tests.test_stoneage_recovered25_attack_magic_runtime \
+            tests.test_stoneage_enemy_ai_attack_magic_bridge -v

@@ -5242,5 +5242,10 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Added a separate enemy AttackMagic action-composer candidate. It combines only exact portable runtime plans with the closed damage core and explicit magic combat state/RNG; command code 2002, enemy-AI dispatch, profit/death flags and ordinary-round event integration remain outside this layer.
 - The composer preserves source RNG order: one cast roll; then per ordered target one dodge roll; damage `rand()%20` only for non-dodged targets.
 - It also composes fixed defender resistance/training, sleep clearing and dedicated AttackMagic ride attribute averaging/splitting without reusing physical ride-sharing formulas.
-- **RECOVERED25_ENEMY_ATTACKMAGIC_ACTION_COMPOSER_R1 = CANDIDATE.**
-- Next priority: dedicated composer CI; if green, register the guarded 2002 command/action adapter and wire only exact-source-order AttackMagic states into enemy-AI round execution.
+- Dedicated action-composer CI **36852504553 = PASS** at `316ae9a78869acf2cbcf852804ea1d539e0b92b1`; the damage-core, footprint, runtime-index and composer suites all passed together.
+- **RECOVERED25_ENEMY_ATTACKMAGIC_ACTION_COMPOSER_R1 = CLOSED.**
+- The existing `stoneage_attack_magic_model.py` already owns the authoritative 2002 / COM2 / COM3 encoding, so no duplicate command schema was added.
+- Added a separate enemy-AI AttackMagic submission bridge candidate that resolves the selected seven-slot pet-skill identity, requires `PETSKILL_AttackMagic`, cross-checks it against the closed AttackMagic runtime index, and emits the existing `AttackMagicCommand` + deterministic `MagicDirectUseRequest`.
+- The submission deliberately does **not** return `BattleCommand`; command 2002 remains outside the ordinary round enum until round-time magic-state synchronization is closed.
+- **RECOVERED25_ENEMY_ATTACKMAGIC_SUBMISSION_BRIDGE_R1 = CANDIDATE.**
+- Next priority: submission-bridge CI, then close the round-time state adapter for HP, magic resistance/training, sleep and ride state before admitting command 2002 into ordinary round execution.

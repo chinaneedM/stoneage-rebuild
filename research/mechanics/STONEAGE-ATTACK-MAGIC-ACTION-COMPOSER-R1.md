@@ -57,4 +57,17 @@ Not yet integrated here:
 
 Those remain the next adapter seam after dedicated composer CI acceptance.
 
-Marker: **RECOVERED25_ENEMY_ATTACKMAGIC_ACTION_COMPOSER_R1 = CANDIDATE**
+Validation: dedicated workflow **36852504553 = PASS** at
+`316ae9a78869acf2cbcf852804ea1d539e0b92b1`. The closed damage-core,
+footprint, runtime-index and action-composer tests passed in the same job.
+
+Marker: **RECOVERED25_ENEMY_ATTACKMAGIC_ACTION_COMPOSER_R1 = CLOSED**
+
+## Command-submission seam
+
+The pre-existing `stoneage_attack_magic_model.py` remains the sole owner of
+command code 2002 and COM2/COM3 encoding. A new enemy-AI submission bridge
+projects an authoritative recovered seven-slot skill selection into that
+existing envelope and cross-checks magic/item provenance against the runtime
+index. It intentionally does not coerce command 2002 into ordinary
+`BattleCommand` yet.
