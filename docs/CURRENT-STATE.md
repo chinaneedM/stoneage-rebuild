@@ -5176,35 +5176,35 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 ## Phase 1 recovered25 AttackMagic cross-link + fixed damage core — 2026-10-01
 
 - AttackMagic data cross-link is now closed by full preservation-bundle run
-  **36844577483 = PASS**; bot report write-back advanced \`main\` to
-  \`ded5d20debde9ccde2ffd3254be9f7f9c6afbb5d\`.
+  **36844577483 = PASS**; bot report write-back advanced `main` to
+  `ded5d20debde9ccde2ffd3254be9f7f9c6afbb5d`.
 - Exact recovered25 cross-link:
   - **25/25** skill rows -> explicit magic/item numeric pair;
-  - **25/25** magic IDs -> \`MAGIC_AttMagic\`;
-  - **25/25** valid \`MAGIC_IDX\`, with 25 distinct IDX values in **2..26**;
+  - **25/25** magic IDs -> `MAGIC_AttMagic`;
+  - **25/25** valid `MAGIC_IDX`, with 25 distinct IDX values in **2..26**;
   - attribute distribution earth/water/fire/wind = **6/6/7/6**;
   - power **100..350** across 7 distinct values;
   - magic level **1..5** across 5 distinct values;
-  - **25/25** active item rows exist and their \`magicid\` matches;
-  - all 25 item \`magicusemp\` values are **5**;
+  - **25/25** active item rows exist and their `magicid` matches;
+  - all 25 item `magicusemp` values are **5**;
   - all 25 IDX values have valid adjacent records in the 54-record /
-    27-effective-index \`attmagic.bin\`.
+    27-effective-index `attmagic.bin`.
 - **RECOVERED25_ATTACKMAGIC_CROSSLINK_R1 = CLOSED.**
 - Three pinned descendant implementations were then re-audited for their
   actually enabled AttackMagic formula. All three define
-  \`_EQUIT_DEFMAGIC\`, \`_FIX_MAGICDAMAGE\` and
-  \`_MAGIC_DEFMAGICATT\`; the primary fixed-damage path converges on:
+  `_EQUIT_DEFMAGIC`, `_FIX_MAGICDAMAGE` and
+  `_MAGIC_DEFMAGICATT`; the primary fixed-damage path converges on:
   cast proficiency check, per-target magic dodge, Kmagic/Mmagic/Amagic base
   damage, elemental traction, field adjustment, 0.7 failure attenuation,
   dedicated riding split, sleep clearing, and attack/defense magic training.
 - Added fixed-source deterministic candidate:
-  - \`tools/stoneage_attack_magic_damage_model.py\`;
-  - \`tests/test_stoneage_attack_magic_damage_model.py\`;
-  - \`research/mechanics/STONEAGE-ATTACK-MAGIC-DAMAGE-CORE-R1.md\`;
+  - `tools/stoneage_attack_magic_damage_model.py`;
+  - `tests/test_stoneage_attack_magic_damage_model.py`;
+  - `research/mechanics/STONEAGE-ATTACK-MAGIC-DAMAGE-CORE-R1.md`;
   - dedicated damage-core CI.
 - The damage model keeps RNG externally injected and preserves source quirks,
   including the riding-overkill negative-share behavior and the strict
-  \`pet_hp < 0\` unmount condition.
+  `pet_hp < 0` unmount condition.
 - Dedicated AttackMagic damage-core CI **36845772672 = PASS** at
   `e8e705ff75fe8aaf908b33359495a12b6aaa6480`.
 - **FIXED_DESCENDANT_ATTACKMAGIC_DAMAGE_CORE_R1 = CLOSED.**
@@ -5214,3 +5214,14 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   footprint expansion, including dead-target retargeting and the historical
   `SortLoc` ordering behavior; only then compose footprint + damage core at
   the recovered enemy-AI runtime boundary.
+
+## Phase 1 AttackMagic footprint geometry candidate — 2026-10-01
+
+- Damage-core acceptance is now formally closed: dedicated CI **36845772672 = PASS** at `e8e705ff75fe8aaf908b33359495a12b6aaa6480`.
+- Fixed descendant battle-slot geometry converges exactly across gavin/iris/Bismarck: the same 4x5 `CharTable`, inverse `CharTableIdx`, selector constants and `BATTLE_MultiAttMagic` matrix expansion.
+- Corrected a prior probe interpretation: the 54 `attmagic.bin` records are **27 adjacent side-specific pairs**, not 27 effective records plus a second half. Runtime chooses `IDX*2+1` for attacker slots 0..9 and `IDX*2` for attacker slots 10..19.
+- Added candidate footprint reconstruction with explicit dead-target retarget rolls, row fallback, 3x5 matrix expansion, and side-record selection.
+- The convergent historical `SortLoc` right-down branch is not a valid portable ordering relation (`ele2basex - ele1basey`). Because target order controls later RNG consumption, exact right-down multi-target execution remains fail-closed rather than guessed.
+- Added corrected AttackMagic binary probe R2 semantics; real preservation-bundle regeneration and dedicated footprint CI are pending for this candidate commit.
+- **FIXED_DESCENDANT_ATTACKMAGIC_FOOTPRINT_GEOMETRY_R1 = CANDIDATE.**
+- Next priority after CI/report acceptance: measure recovered25 real-matrix footprint/order coverage and determine the narrowest exact runtime-admission subset before composing with the damage core.

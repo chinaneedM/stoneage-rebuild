@@ -3,7 +3,6 @@
 
 import argparse,collections,hashlib,struct
 from pathlib import Path
-from tools.stoneage_magic_probe import parse as parse_magic
 
 RECORD_WORDS=33
 RECORD_SIZE=RECORD_WORDS*4
@@ -34,59 +33,66 @@ def parse_attmagic(path):
         records.append(struct.unpack_from("<33I",data,off))
     return records
 
+def _parse_magic_idxs(path):
+    idxs=[];malformed=0
+    if not path.exists():return idxs,None
+    for raw in path.read_bytes().splitlines():
+        line=raw.strip()
+        if not line or line.startswith(b"#"):continue
+        fields=[x.strip() for x in line.replace(b"\t",b" ").split(b",")]
+        if len(fields)<8:
+            malformed+=1;continue
+        if len(fields)>=9 and fields[8]:
+            try:idxs.append(int(fields[8],10))
+            except ValueError:malformed+=1
+    return idxs,malformed
+
 def analyze(data_dir):
     path=data_dir/"attmagic.bin"
     magic_path=data_dir/"magic.txt"
-    if not path.exists():
-        return {"exists":False}
+    if not path.exists():return {"exists":False}
     records=parse_attmagic(path)
     raw_count=len(records)
     source_even=(raw_count%2==0)
-    effective_count=(raw_count//2) if source_even else None
-    pair_exact=0
-    pair_diff=0
-    if effective_count is not None:
-        for i in range(effective_count):
-            if records[i]==records[i+effective_count]:pair_exact+=1
-            else:pair_diff+=1
+    index_count=(raw_count//2) if source_even else None
 
-    idxs=[]; magic_bad=None
-    if magic_path.exists():
-        _,parsed,magic_bad,_,_=parse_magic(magic_path)
-        idxs=[v["IDX"] for _,v in parsed if v["IDX"] is not None]
+    adjacent_exact=0;adjacent_diff=0
+    if index_count is not None:
+        for idx in range(index_count):
+            if records[idx*2]==records[idx*2+1]:adjacent_exact+=1
+            else:adjacent_diff+=1
+
+    idxs,magic_bad=_parse_magic_idxs(magic_path)
     idxset=set(idxs)
-    valid_idx=set()
-    invalid_idx=set()
-    if effective_count is not None:
-        valid_idx={v for v in idxset if 0<=v<effective_count}
+    valid_idx=set();invalid_idx=set()
+    if index_count is not None:
+        valid_idx={v for v in idxset if 0<=v<index_count}
         invalid_idx=idxset-valid_idx
-    else:
-        invalid_idx=idxset
+    else:invalid_idx=idxset
 
     field_stats=[]
-    effective=records[:effective_count] if effective_count is not None else records
     for i,name in enumerate(FIELD_NAMES):
-        vals=[r[i] if i in UNSIGNED else s32(r[i]) for r in effective]
+        vals=[r[i] if i in UNSIGNED else s32(r[i]) for r in records]
         field_stats.append((name,min(vals) if vals else None,max(vals) if vals else None,len(set(vals))))
 
-    attack=collections.Counter(r[1] for r in effective)
-    show=collections.Counter(r[3] for r in effective)
-    behind=collections.Counter(r[6] for r in effective)
-    shake=collections.Counter(r[7] for r in effective)
-    prev_sentinel=sum(1 for r in effective if r[10]==0xffffffff)
-    post_sentinel=sum(1 for r in effective if r[14]==0xffffffff)
-
+    attack=collections.Counter(r[1] for r in records)
+    show=collections.Counter(r[3] for r in records)
+    behind=collections.Counter(r[6] for r in records)
+    shake=collections.Counter(r[7] for r in records)
+    prev_sentinel=sum(1 for r in records if r[10]==0xffffffff)
+    post_sentinel=sum(1 for r in records if r[14]==0xffffffff)
     matrix=[]
-    for r in effective:
-        matrix.extend(s32(v) for v in r[18:33])
+    for r in records:matrix.extend(s32(v) for v in r[18:33])
 
     return {
         "exists":True,"bytes":path.stat().st_size,"sha":sha256(path),
-        "raw_count":raw_count,"source_even":source_even,"effective_count":effective_count,
-        "pair_exact":pair_exact,"pair_diff":pair_diff,
+        "raw_count":raw_count,"source_even":source_even,"index_count":index_count,
+        "adjacent_exact":adjacent_exact,"adjacent_diff":adjacent_diff,
+        "side1_even_records":index_count if index_count is not None else None,
+        "side0_odd_records":index_count if index_count is not None else None,
         "idxs":idxs,"idx_unique":idxset,"valid_idx":valid_idx,"invalid_idx":invalid_idx,
         "magic_bad":magic_bad,
-        "unreferenced":sorted(set(range(effective_count or 0))-valid_idx),
+        "unreferenced":sorted(set(range(index_count or 0))-valid_idx),
         "field_stats":field_stats,"attack":attack,"show":show,"behind":behind,"shake":shake,
         "prev_sentinel":prev_sentinel,"post_sentinel":post_sentinel,
         "matrix_min":min(matrix) if matrix else None,"matrix_max":max(matrix) if matrix else None,
@@ -95,9 +101,9 @@ def analyze(data_dir):
 
 def emit(data_dir):
     r=analyze(data_dir)
-    print("StoneAge recovered attack-magic binary probe — R1")
+    print("StoneAge recovered attack-magic binary probe — R2")
     print("No proprietary attack-magic payload bytes are stored in this report.")
-    print("SCHEMA_SOURCE|descendant_tagAttMagic_and_ATTMAGIC_initMagic")
+    print("SCHEMA_SOURCE|descendant_tagAttMagic_and_ATTMAGIC_initMagic_BATTLE_MultiAttMagic")
     print(f"RECORD_SIZE|{RECORD_SIZE}")
     if not r["exists"]:
         print("ATTMAGIC_FILE_EXISTS|0");return
@@ -105,20 +111,20 @@ def emit(data_dir):
     print(f"FILE|attmagic.bin|bytes={r['bytes']}|sha256={r['sha']}")
     print(f"RAW_RECORD_COUNT|{r['raw_count']}")
     print(f"SOURCE_EVEN_RECORD_REQUIREMENT|{int(r['source_even'])}")
-    print(f"SOURCE_EFFECTIVE_RECORD_COUNT|{r['effective_count'] if r['effective_count'] is not None else -1}")
-    print(f"HALF_PAIR_EXACT|{r['pair_exact']}")
-    print(f"HALF_PAIR_DIFFERENT|{r['pair_diff']}")
+    print(f"SOURCE_MAGIC_INDEX_COUNT|{r['index_count'] if r['index_count'] is not None else -1}")
+    print(f"SIDE1_EVEN_RECORD_COUNT|{r['side1_even_records'] if r['side1_even_records'] is not None else -1}")
+    print(f"SIDE0_ODD_RECORD_COUNT|{r['side0_odd_records'] if r['side0_odd_records'] is not None else -1}")
+    print(f"ADJACENT_SIDE_PAIR_EXACT|{r['adjacent_exact']}")
+    print(f"ADJACENT_SIDE_PAIR_DIFFERENT|{r['adjacent_diff']}")
     print(f"MAGIC_IDX_PRESENT_ROWS|{len(r['idxs'])}")
     print(f"MAGIC_IDX_UNIQUE|{len(r['idx_unique'])}")
-    if r["idxs"]:
-        print(f"MAGIC_IDX_RANGE|min={min(r['idxs'])}|max={max(r['idxs'])}")
+    if r["idxs"]:print(f"MAGIC_IDX_RANGE|min={min(r['idxs'])}|max={max(r['idxs'])}")
     print(f"MAGIC_IDX_VALID_UNIQUE|{len(r['valid_idx'])}")
     print(f"MAGIC_IDX_INVALID_UNIQUE|{len(r['invalid_idx'])}")
     if r["invalid_idx"]:print("MAGIC_IDX_INVALID_VALUES|"+",".join(map(str,sorted(r["invalid_idx"]))))
-    print(f"EFFECTIVE_RECORDS_UNREFERENCED_BY_MAGIC_IDX|{len(r['unreferenced'])}")
-    if r["unreferenced"]:print("EFFECTIVE_UNREFERENCED_INDEX_SAMPLE|"+",".join(map(str,r["unreferenced"][:40])))
-    for name,lo,hi,uniq in r["field_stats"]:
-        print(f"FIELD_STAT|{name}|min={lo}|max={hi}|unique={uniq}")
+    print(f"MAGIC_INDEXES_UNREFERENCED_BY_MAGIC_IDX|{len(r['unreferenced'])}")
+    if r["unreferenced"]:print("UNREFERENCED_MAGIC_INDEX_SAMPLE|"+",".join(map(str,r["unreferenced"][:40])))
+    for name,lo,hi,uniq in r["field_stats"]:print(f"FIELD_STAT|{name}|min={lo}|max={hi}|unique={uniq}")
     for key,counter in (("ATTACK_TYPE",r["attack"]),("SHOW_TYPE",r["show"]),("SHOW_BEHIND_CHAR",r["behind"]),("SHAKE_SCREEN",r["shake"])):
         for v,n in sorted(counter.items()):print(f"{key}_VALUE|{v}|{n}")
     print(f"PREV_MAGIC_SENTINEL_FFFFFFFF|{r['prev_sentinel']}")
@@ -126,8 +132,7 @@ def emit(data_dir):
     print(f"FIELD_MATRIX_STAT|min={r['matrix_min']}|max={r['matrix_max']}|unique={r['matrix_unique']}|zero={r['matrix_zero']}")
 
 def main():
-    ap=argparse.ArgumentParser()
-    ap.add_argument("--data-dir",type=Path,required=True)
+    ap=argparse.ArgumentParser();ap.add_argument("--data-dir",type=Path,required=True)
     a=ap.parse_args();emit(a.data_dir)
 
 if __name__=="__main__":main()
