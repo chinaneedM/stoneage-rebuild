@@ -132,7 +132,7 @@ class EnemyReHpRoundTests(unittest.TestCase):
         ]
         self.assertEqual(events[0].result,"enemy_rehp_fallback")
         self.assertTrue(events[0].enemy_rehp_resolution.fallback_to_attack)
-        self.assertIn(events[1].result,{"hit","critical","guard"})
+        self.assertIn(events[1].result,{"normal","critical","guard"})
         self.assertEqual(events[1].resolved_target_slot,0)
         self.assertLess(resolved.hp_by_participant_id["player"],1000)
 
