@@ -5205,8 +5205,12 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - The damage model keeps RNG externally injected and preserves source quirks,
   including the riding-overkill negative-share behavior and the strict
   \`pet_hp < 0\` unmount condition.
-- Damage-core implementation is **pending dedicated CI acceptance** at this
-  commit and is not yet wired into recovered25 enemy AI.
-- Next priority after CI acceptance: reconstruct \`attmagic.bin\` IDX-side
-  selection and 3x5 footprint expansion, then compose footprint + damage core
-  at the recovered enemy-AI runtime boundary.
+- Dedicated AttackMagic damage-core CI **36845772672 = PASS** at
+  `e8e705ff75fe8aaf908b33359495a12b6aaa6480`.
+- **FIXED_DESCENDANT_ATTACKMAGIC_DAMAGE_CORE_R1 = CLOSED.**
+- The damage core remains deliberately **not wired** into recovered25 enemy AI
+  until target-footprint geometry is independently closed.
+- Next priority: reconstruct `attmagic.bin` IDX-side selection and 3x5
+  footprint expansion, including dead-target retargeting and the historical
+  `SortLoc` ordering behavior; only then compose footprint + damage core at
+  the recovered enemy-AI runtime boundary.
