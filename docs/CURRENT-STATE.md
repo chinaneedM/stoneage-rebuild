@@ -4990,3 +4990,33 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Executable recovered stable-common pet-skill slot-use coverage is now **2088 / 2486 = ~84.0%** when counting NormalAttack + NormalGuard + StatusChange + PowerBalance + Mighty + GuardBreak + ChargeAttack + NoGuard + ContinuationAttack + Abduct.
 - **LOCAL_RUNTIME_ENEMY_AI_ABDUCT_R1 = CLOSED.**
 - Next priority: `PETSKILL_EarthRound` (**14 positive slot uses**). Its remaining gap is structurally different from Abduct: reconstruct and persist the two-phase `S_EARTHROUND1 -> S_EARTHROUND0` command transition, preserve the fixed stale-full-COM3 hazard when the optional attack-percent marker is absent, and apply `1 + 0.01 * COM3` only on the phase-2 ordinary physical attack before recovered enemy-AI admission.
+
+## Phase 1 recovered EarthRound enemy-AI execution — 2026-10-01
+
+- `PETSKILL_EarthRound` is now closed for recovered25 enemy AI:
+  - **1** referenced EarthRound skill ID;
+  - **14** positive enemybase skill-slot uses;
+  - the OPTION row is non-ASCII but strict CP950/Big5 decoding agrees exactly;
+  - bundle-backed probe `36830879270 = PASS` produced `attack_marker_ids=1`, `attack_numeric_ids=1`, and exact attack-percent range **90.0..90.0**.
+- Fixed command and two-phase execution are reconstructed:
+  - `BATTLE_COM_S_EARTHROUND0=1009` and `BATTLE_COM_S_EARTHROUND1=1010`;
+  - phase 1 hides/does no damage, clears the source attacked flag semantically, and carries `S_EARTHROUND0` with the original target/full COM3;
+  - phase 2 enters the ordinary physical path, applies `1 + 0.01 * COM3`, then clears the command to NONE;
+  - carried phase 2 overrides newly submitted commands and consumes **no new enemy AI mode/target roll**.
+- The historical stale-full-COM3 hazard remains preserved in the generic stable handler: missing `攻%` leaves the old full COM3 untouched. The recovered25 row does not enter that branch because its only OPTION is hard-probed as numeric **`攻%90`**.
+- Damage-order fidelity is preserved: the EarthRound 1.90 multiplier is applied after ordinary guard/minimum-damage/Guardian zero-damage correction and before damage-reaction settlement; it does not leak into the later counter chain.
+- Recovered runtime admission is fail-closed:
+  - exactly one EarthRound callback ID is required;
+  - strict CP950/Big5 OPTION consensus is required;
+  - numeric `攻%` must be present and must equal **90**.
+- Validation:
+  - two-phase round core `cc1192c762f0d50b3e1699e0b43f1e2fa6ef637a`: battle core **36831665599 = PASS**, stable pet-skill **36831665622 = PASS**, Taiwan gameplay **36831665422 = PASS**, local runtime **36831665403 = PASS**;
+  - persistent `S_EARTHROUND0` carry `3bc5baea14852a5977567848708045883ac61b15`: battle core **36831689093 = PASS**, Taiwan gameplay **36831689032 = PASS**, local runtime **36831689038 = PASS**;
+  - stable round bridge/regression `0cdfa9734a315ad76caf5af555de90900a22e3de`: stable pet-skill **36831744844 = PASS**, battle core **36831744962 = PASS**;
+  - two-phase battle/persistent regressions `6f50627cb89da735280f50c2e255b1d5cedd23a0` / `0b561def4caea7677653dbe3c5ab512104901a5a`: battle core **36831778341 / 36831814501 = PASS**, Taiwan gameplay **36831778423 / 36831814336 = PASS**;
+  - recovered bridge `0cc455b36aab19fb59a72b4de8a910997e8d94d3` and bridge regression `63128c2cf5109867de66e82b641747f69b7558a8`: coordinator **36832119661 / 36832084800 = PASS**;
+  - coordinator carry admission `17d964b648721c7378be0a8fb7427206ebf918fc`: runtime golden contract **36832307359 = PASS**, local runtime coordinator **36832307370 = PASS**;
+  - end-to-end recovered AI two-round regression `3808d9cf842989099ebc4e59e5d8696e3f6bf88b`: local runtime coordinator **36832389539 = PASS**; duplicate full recovered25 validation **36832389259** is still in progress at this state-writing point.
+- Executable recovered stable-common pet-skill slot-use coverage is now **2102 / 2486 = ~84.6%**.
+- **LOCAL_RUNTIME_ENEMY_AI_EARTHROUND_R1 = CLOSED.**
+- Next priority: `PETSKILL_Steal` (**1 referenced ID / 12 positive slot uses**). Its core RNG formula already exists, but runtime admission requires a transactional player Gold/inventory mutation seam plus success-only attacker battle exit; do not model it as ordinary damage or as item transfer to the attacker.
