@@ -31,6 +31,13 @@ from tools.stoneage_enemy_ai_attack_magic_bridge import (
     EnemyAiAttackMagicSubmission,
 )
 from tools.stoneage_enemy_ai_rehp_bridge import EnemyAiReHpSubmission
+from tools.stoneage_enemy_ai_damage_to_hp_bridge import (
+    EnemyAiDamageToHpSubmission,
+)
+from tools.stoneage_damage_to_hp_model import (
+    DamageToHpRecovery,
+    resolve_damage_to_hp_recovery,
+)
 from tools.stoneage_enemy_rehp_model import (
     EnemyReHpAllyState,
     EnemyReHpResolution,
@@ -852,6 +859,7 @@ class OrdinaryRoundEvent:
     ultimate_flag_kind: int = 0
     attack_magic_target_resolution: AttackMagicTargetResolution | None = None
     enemy_rehp_resolution: EnemyReHpResolution | None = None
+    damage_to_hp_recovery: DamageToHpRecovery | None = None
 
 
 @dataclass(frozen=True)
@@ -3252,6 +3260,9 @@ def resolve_ordinary_round(
     enemy_rehp_retarget_rolls_by_participant_id: Mapping[
         str,int | None
     ] | None = None,
+    damage_to_hp_submissions_by_participant_id: Mapping[
+        str,EnemyAiDamageToHpSubmission
+    ] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
@@ -3436,6 +3447,43 @@ def resolve_ordinary_round(
             f"missing={missing}, extra={extra}"
         )
     attempted_enemy_rehp_actor_ids=set()
+
+    damage_to_hp_submissions={
+        str(participant_id):submission
+        for participant_id,submission in (
+            damage_to_hp_submissions_by_participant_id or {}
+        ).items()
+    }
+    damage_to_hp_actor_ids=set(damage_to_hp_submissions)
+    unknown_damage_to_hp_ids=sorted(damage_to_hp_actor_ids-set(slot_by_id))
+    if unknown_damage_to_hp_ids:
+        raise ValueError(
+            "DamageToHp submissions reference unknown actors: "
+            f"{unknown_damage_to_hp_ids}"
+        )
+    if damage_to_hp_actor_ids & (
+        enemy_rehp_actor_ids | attack_magic_actor_ids
+    ):
+        raise ValueError("DamageToHp semantic submissions overlap another skill")
+    for participant_id,submission in damage_to_hp_submissions.items():
+        if not isinstance(submission,EnemyAiDamageToHpSubmission):
+            raise TypeError(
+                f"DamageToHp submission for {participant_id} has wrong type"
+            )
+        if str(submission.participant_id) != participant_id:
+            raise ValueError("DamageToHp submission participant drift")
+        entry=prepared_entry_by_id[participant_id]
+        if entry.participant.side != "enemy" or entry.participant.kind != "enemy":
+            raise ValueError(
+                "recovered25 DamageToHp currently admits enemy actors only"
+            )
+        if (
+            int(entry.command.command1) != BATTLE_COM_ATTACK
+            or int(entry.command.command2) != int(submission.source_target_slot)
+        ):
+            raise ValueError(
+                "DamageToHp ordering carrier must be ATTACK/source-target"
+            )
 
     guarding = {
         slot_by_id[entry.participant.participant_id]
@@ -5495,6 +5543,28 @@ def resolve_ordinary_round(
                     append_counter_chain(participant_id,slot,target)
                 continue
 
+        damage_to_hp_submission=None
+        damage_to_hp_source_react_blocked=False
+        if (
+            str(participant_id) in damage_to_hp_submissions
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            damage_to_hp_submission=damage_to_hp_submissions[
+                str(participant_id)
+            ]
+            if int(command.command1) != BATTLE_COM_ATTACK:
+                raise ValueError(
+                    "DamageToHp semantic action lost ATTACK ordering carrier"
+                )
+            source_defender=by_slot[int(target)]
+            source_defender_id=str(source_defender.participant_id)
+            damage_to_hp_source_react_blocked=base_damage_react_active(
+                damage_react_state[source_defender_id]
+            )
+
         counter_target_slot=int(target)
         damage_target_slot=int(target)
         guardian_redirected=False
@@ -5654,6 +5724,15 @@ def resolve_ordinary_round(
         reaction_defender=defender
         reaction_defender_id=str(defender_id)
         reaction_defender_work_defense=int(defender_work_defense)
+        if damage_to_hp_submission is not None:
+            # Fixed BATTLE_S_AttackDamage lets AttackSeq calculate against a
+            # Guardian but passes its original defindex to DamageSub.
+            reaction_target_slot=int(target)
+            reaction_defender=by_slot[reaction_target_slot]
+            reaction_defender_id=str(reaction_defender.participant_id)
+            reaction_defender_work_defense=_effective_defense_power(
+                reaction_defender,setup_effects
+            )
         if attack_command_code == BATTLE_COM_S_GBREAK:
             if not guardbreak_eligible:
                 damage=0
@@ -5820,6 +5899,30 @@ def resolve_ordinary_round(
             before=int(reaction_resolution.defender_hp_before)
             after=int(reaction_resolution.defender_hp_after)
             status_target_slot=int(reaction_target_slot)
+
+        damage_to_hp_recovery=None
+        if (
+            damage_to_hp_submission is not None
+            and not damage_to_hp_source_react_blocked
+            and int(damage) > 0
+        ):
+            damage_basis_player=int(damage)
+            damage_basis_pet=0
+            if ride_split is not None:
+                damage_basis_player=int(ride_split.rider_amount)
+                damage_basis_pet=int(ride_split.pet_amount)
+            damage_to_hp_recovery=resolve_damage_to_hp_recovery(
+                damage=damage_basis_player,
+                petdamage=damage_basis_pet,
+                attacker_hp=int(hp_by_slot[slot]),
+                attacker_max_hp=int(participant.max_hp),
+                target_damage_react=0,
+                option=damage_to_hp_submission.option,
+            )
+            hp_by_slot[slot]=int(damage_to_hp_recovery.attacker_hp_after)
+            hp_by_id[str(participant_id)]=int(
+                damage_to_hp_recovery.attacker_hp_after
+            )
 
         ultimate_damage_resolution=None
         death_ultimate_resolution=None
@@ -5993,6 +6096,7 @@ def resolve_ordinary_round(
                 guarded_target_slot=guarded_target_slot,
                 guardian_slot=guardian_slot,
                 damage_react_resolution=reaction_resolution,
+                damage_to_hp_recovery=damage_to_hp_recovery,
                 ride_damage_split=ride_split,
                 ride_hp_resolution=ride_hp_resolution,
                 ride_pet_fell_rider_id=ride_pet_fell_rider_id,

@@ -1,0 +1,33 @@
+name: Validate StoneAge DamageToHp runtime
+concurrency:
+  group: stoneage-damagetohp-runtime
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-damagetohp-runtime.yml
+      - tools/stoneage_damage_to_hp_model.py
+      - tools/stoneage_enemy_ai_damage_to_hp_bridge.py
+      - tools/stoneage_battle_round_model.py
+      - tools/stoneage_battle_state_model.py
+      - tools/stoneage_local_runtime_session_coordinator.py
+      - tests/test_stoneage_damage_to_hp_model.py
+      - tests/test_stoneage_enemy_ai_damage_to_hp_bridge.py
+      - tests/test_stoneage_damage_to_hp_round.py
+      - tests/test_stoneage_local_runtime_session_coordinator.py
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate recovered25 DamageToHp runtime
+        run: |
+          python3 -m unittest \
+            tests.test_stoneage_damage_to_hp_model \
+            tests.test_stoneage_enemy_ai_damage_to_hp_bridge \
+            tests.test_stoneage_damage_to_hp_round \
+            tests.test_stoneage_local_runtime_session_coordinator -v

@@ -34,6 +34,13 @@ from tools.stoneage_enemy_ai_rehp_bridge import (
     EnemyAiReHpSubmission,
     resolve_enemy_ai_rehp_submission,
 )
+from tools.stoneage_enemy_ai_damage_to_hp_bridge import (
+    EnemyAiDamageToHpSubmission,
+    resolve_enemy_ai_damage_to_hp_submission,
+)
+from tools.stoneage_damage_to_hp_model import (
+    CALLBACK_NAME as DAMAGE_TO_HP_CALLBACK,
+)
 from tools.stoneage_enemy_rehp_model import (
     CALLBACK_NAME as ENEMY_REHP_CALLBACK,
     EnemyReHpRolls,
@@ -356,6 +363,9 @@ class EnemyAiCommonCommandBatch:
     enemy_rehp_submissions: Mapping[
         str,EnemyAiReHpSubmission
     ] = field(default_factory=dict)
+    damage_to_hp_submissions: Mapping[
+        str,EnemyAiDamageToHpSubmission
+    ] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         object.__setattr__(
@@ -458,6 +468,42 @@ class EnemyAiCommonCommandBatch:
                 )
         if set(rehp_submissions) & set(magic_submissions):
             raise ValueError("enemy AI ReHP/AttackMagic submissions overlap")
+
+        damage_submissions={
+            str(key):value
+            for key,value in self.damage_to_hp_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "damage_to_hp_submissions",
+            MappingProxyType(damage_submissions),
+        )
+        for participant_id,submission in damage_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI DamageToHp submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiDamageToHpSubmission):
+                raise TypeError(
+                    f"enemy AI DamageToHp submission has wrong type for "
+                    f"{participant_id}"
+                )
+            if str(submission.participant_id) != participant_id:
+                raise ValueError("enemy AI DamageToHp participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1) != BATTLE_COM_ATTACK
+                or int(carrier.command2) != int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI DamageToHp carrier must be ATTACK/source-target"
+                )
+        if set(damage_submissions) & (
+            set(rehp_submissions) | set(magic_submissions)
+        ):
+            raise ValueError(
+                "enemy AI DamageToHp semantic submissions overlap another skill"
+            )
 
 
 @dataclass
@@ -1089,6 +1135,7 @@ class LocalRuntimeSessionCoordinator:
         allow_steal_skill: bool = False,
         allow_attackmagic_skill: bool = False,
         allow_rehp_skill: bool = False,
+        allow_damage_to_hp_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1230,6 +1277,7 @@ class LocalRuntimeSessionCoordinator:
         abduct_contexts={}
         attack_magic_submissions={}
         enemy_rehp_submissions={}
+        damage_to_hp_submissions={}
         for enemy_id in ai_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
                 raise ValueError(
@@ -1286,6 +1334,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_steal_skill)
                 or bool(allow_attackmagic_skill)
                 or bool(allow_rehp_skill)
+                or bool(allow_damage_to_hp_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1296,6 +1345,24 @@ class LocalRuntimeSessionCoordinator:
                 skill_ids=tuple(int(x) for x in spawned.template.skill_slot_ids)
                 selected_skill_id=skill_ids[int(decision.skill_slot)]
                 selected_skill=petskill_runtime.skills.get(selected_skill_id)
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == DAMAGE_TO_HP_CALLBACK
+                    and bool(allow_damage_to_hp_skill)
+                ):
+                    submission=resolve_enemy_ai_damage_to_hp_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                    )
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    damage_to_hp_submissions[enemy_id]=submission
+                    continue
+
                 if (
                     selected_skill is not None
                     and selected_skill.function_name == ENEMY_REHP_CALLBACK
@@ -1408,6 +1475,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("AttackMagic")
             if bool(allow_rehp_skill):
                 allowed_parts.append("ENEMYSKILL_ReHP")
+            if bool(allow_damage_to_hp_skill):
+                allowed_parts.append("PETSKILL_DamageToHp")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1420,6 +1489,7 @@ class LocalRuntimeSessionCoordinator:
             abduct_contexts=abduct_contexts,
             attack_magic_submissions=attack_magic_submissions,
             enemy_rehp_submissions=enemy_rehp_submissions,
+            damage_to_hp_submissions=damage_to_hp_submissions,
         )
 
     def build_persistent_enemy_common_commands(
@@ -1608,7 +1678,7 @@ class LocalRuntimeSessionCoordinator:
 
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
         explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
-        plus recovered Abduct, AttackMagic, ENEMYSKILL_ReHP, ChargeAttack, ContinuationAttack,
+        plus recovered Abduct, AttackMagic, ENEMYSKILL_ReHP, PETSKILL_DamageToHp, ChargeAttack, ContinuationAttack,
         EarthRound, GuardBreak, Mighty, NoGuard, PowerBalance, StatusChange and
         Steal.
         Steal mutates only the working persistent player Gold/inventory clone
@@ -1702,6 +1772,7 @@ class LocalRuntimeSessionCoordinator:
             allow_steal_skill=True,
             allow_attackmagic_skill=True,
             allow_rehp_skill=True,
+            allow_damage_to_hp_skill=True,
         )
         enemy_commands = enemy_batch.commands
         rehp_enemy_ids=set(enemy_batch.enemy_rehp_submissions)
@@ -2038,6 +2109,9 @@ class LocalRuntimeSessionCoordinator:
             enemy_rehp_rolls_by_participant_id=normalized_rehp_rolls,
             enemy_rehp_retarget_rolls_by_participant_id=(
                 normalized_rehp_retarget_rolls
+            ),
+            damage_to_hp_submissions_by_participant_id=(
+                enemy_batch.damage_to_hp_submissions
             ),
             defense_profile=str(defense_profile),
             no_risk=bool(no_risk),
