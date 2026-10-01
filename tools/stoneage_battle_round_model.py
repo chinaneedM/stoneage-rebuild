@@ -588,6 +588,24 @@ class CounterAttemptRolls:
 
 
 @dataclass(frozen=True)
+class ContinuationAttackRolls:
+    """Explicit per-hit RNG for one stable S_RENZOKU execution.
+
+    Each hit carries its own OrdinaryAttackRolls bundle.  retarget_roll inside
+    that bundle is consumed only when the source resets COM2 to the original
+    target and BATTLE_TargetAdjust finds that original target dead/invalid.
+    """
+
+    hit_rolls: tuple[OrdinaryAttackRolls, ...]
+
+    def __post_init__(self) -> None:
+        rolls=tuple(self.hit_rolls)
+        if not 1 <= len(rolls) <= 10:
+            raise ValueError("ContinuationAttack requires 1..10 hit-roll bundles")
+        object.__setattr__(self,"hit_rolls",rolls)
+
+
+@dataclass(frozen=True)
 class ComboExecutionRolls:
     """Explicit RNG consumed by one stable combo execution."""
 
@@ -2199,6 +2217,45 @@ def _retarget_slot(
         "retarget_roll",
     )
     return candidates[index]
+
+
+def _continuation_nonbow_target_for_hit(
+    *,
+    actor_slot: int,
+    original_target_slot: int,
+    by_slot: Mapping[int, BattleParticipant],
+    hp_by_slot: Mapping[int, int],
+    retarget_roll: int | None,
+    excluded_slots: Sequence[int] = (),
+) -> tuple[int | None,bool]:
+    """Mirror non-bow S_RENZOKU's repeated original-target adjustment.
+
+    BATTLE_TargetListSet fills every non-bow list entry with the originally
+    submitted COM2.  Before every later hit battle.c writes that list entry
+    back to COM2 and calls BATTLE_TargetAdjust.  Therefore once the original
+    target dies, each remaining hit independently runs BATTLE_DefaultAttacker
+    instead of sticking to the previous hit's retarget.
+    """
+
+    original=int(original_target_slot)
+    excluded={int(slot) for slot in excluded_slots}
+    original_alive=bool(
+        original in by_slot
+        and original not in excluded
+        and int(hp_by_slot.get(original,0)) > 0
+    )
+    if original_alive:
+        return original,False
+    return (
+        _retarget_slot(
+            int(actor_slot),
+            by_slot,
+            hp_by_slot,
+            retarget_roll,
+            excluded_slots=excluded_slots,
+        ),
+        True,
+    )
 
 
 def resolve_ordinary_round(
