@@ -14,6 +14,31 @@ from pathlib import Path
 from types import MappingProxyType
 
 from tools.stoneage_enemy_spawn_model import EnemyBirthRolls
+from tools.stoneage_attack_magic_action_model import (
+    AttackMagicTargetRolls,
+    EnemyAttackMagicActionRolls,
+)
+from tools.stoneage_attack_magic_state_model import (
+    AttackMagicResistanceRuntime,
+    AttackMagicRoundOverlay,
+)
+from tools.stoneage_battle_round_model import (
+    BATTLE_COM_S_ATTACK_MAGIC,
+    BATTLE_COM_WAIT,
+    BattleCombatProfile,
+    BattleCommand,
+)
+from tools.stoneage_enemy_ai_model import (
+    SKILL as ENEMY_AI_SKILL,
+    EnemyAiTarget,
+    parse_normal_enemy_ai_options,
+    resolve_common_normal_enemy_ai,
+)
+from tools.stoneage_local_runtime_session_coordinator import (
+    InMemoryLocalPersistenceStore,
+    LocalRuntimeSessionCoordinator,
+)
+from tools.stoneage_player_growth_model import base_derived_stats
 
 from tools.stoneage_local_runtime_core import (
     LocalRuntimeSessionState,
@@ -65,6 +90,291 @@ def _player_state(_ordinal: int) -> PersistentPlayerState:
     return PersistentPlayerState(
         character=PlayerState(MappingProxyType(dict(fields)))
     )
+
+
+def _battle_ready_player_state() -> PersistentPlayerState:
+    fields=build_creation_state(5,5,5,5,5,5,0,0)
+    derived=base_derived_stats(
+        int(fields["vital"]),
+        int(fields["strength"]),
+        int(fields["toughness"]),
+        int(fields["dexterity"]),
+    )
+    fields.update({
+        "name":"runtime-stack-attackmagic-witness",
+        "hp":max(100000,int(derived["max_hp"])),
+        "max_hp":max(100000,int(derived["max_hp"])),
+        "attack":int(derived["attack_power"]),
+        "defense":int(derived["defence_power"]),
+        "quick":int(derived["quick"]),
+    })
+    return PersistentPlayerState(
+        character=PlayerState(MappingProxyType(dict(fields)))
+    )
+
+
+def _first_weighted_roll(entries, wanted) -> int | None:
+    cursor=0
+    for value,raw_weight in entries:
+        weight=max(0,int(raw_weight))
+        if weight <= 0:
+            continue
+        if wanted(value):
+            return cursor
+        cursor+=weight
+    return None
+
+
+def _attack_magic_ai_mode_roll(options, skill_slot: int) -> int:
+    skill_slot=int(skill_slot)
+    if not 0 <= skill_slot < 7:
+        raise ValueError("AttackMagic witness skill slot must be 0..6")
+    weight=int(options.skill_weights[skill_slot])
+    if weight <= 0:
+        raise ValueError("AttackMagic witness skill slot has zero AI weight")
+    return (
+        int(options.attack_weight)
+        + int(options.guard_weight)
+        + int(options.magic_weight)
+        + int(options.escape_weight)
+        + sum(int(x) for x in options.skill_weights[:skill_slot])
+    )
+
+
+def _run_attack_magic_enemy_ai_witness(profile,stack):
+    """Exercise one real recovered-data AI -> 2002 -> persistent-round path."""
+    attack_skill_ids=set(int(x) for x in stack.attack_magic_runtime.entries)
+    defect_areas=set(stack.encounter_runtime.specimen_defect_area_indices)
+    chosen=None
+
+    for area in stack.encounter_runtime.encounter_areas:
+        if int(area.index) in defect_areas:
+            continue
+        try:
+            eligible_groups=tuple(
+                (group,int(weight))
+                for group,weight in area.resolved_group_choices(
+                    stack.encounter_runtime.groups,()
+                )
+                if int(weight)>0
+            )
+        except (KeyError,ValueError):
+            continue
+        for group,group_weight in eligible_groups:
+            raw_enemy_slots=tuple(
+                (int(enemy_id),int(weight))
+                for enemy_id,weight in group.enemy_slots
+                if (
+                    int(enemy_id) in stack.encounter_runtime.enemies
+                    and int(weight)>0
+                )
+            )
+            for enemy_id,enemy_weight in raw_enemy_slots:
+                variant=stack.encounter_runtime.enemies[enemy_id]
+                if int(variant.tactics) != 1 or not str(variant.tactics_option):
+                    continue
+                template=stack.enemybase_runtime.templates.get(int(variant.tempno))
+                if template is None:
+                    continue
+                slots=tuple(int(x) for x in template.skill_slot_ids)
+                try:
+                    options=parse_normal_enemy_ai_options(
+                        str(variant.tactics_option)
+                    )
+                except ValueError:
+                    continue
+                if options.enemy_attack_ai_random_override is not None:
+                    continue
+                for skill_slot,skill_id in enumerate(slots):
+                    if skill_id not in attack_skill_ids:
+                        continue
+                    if int(options.skill_weights[skill_slot]) <= 0:
+                        continue
+                    mode_roll=_attack_magic_ai_mode_roll(options,skill_slot)
+                    decision=resolve_common_normal_enemy_ai(
+                        str(variant.tactics_option),
+                        (
+                            EnemyAiTarget(
+                                slot=0,
+                                participant_id="player",
+                                kind="player",
+                                hp=100000,
+                            ),
+                        ),
+                        mode_roll=mode_roll,
+                        target_roll=0,
+                    )
+                    if (
+                        decision is None
+                        or decision.kind != ENEMY_AI_SKILL
+                        or int(decision.skill_slot) != skill_slot
+                        or int(decision.target_slot) != 0
+                    ):
+                        continue
+                    group_roll=_first_weighted_roll(
+                        eligible_groups,
+                        lambda candidate: (
+                            int(candidate.group_id)==int(group.group_id)
+                        ),
+                    )
+                    selection_roll=_first_weighted_roll(
+                        raw_enemy_slots,
+                        lambda candidate: int(candidate)==int(enemy_id),
+                    )
+                    if group_roll is None or selection_roll is None:
+                        continue
+                    try:
+                        footprint=stack.resolve_enemy_attack_magic_footprint(
+                            skill_id=skill_id,
+                            actor_slot=15,
+                            target_slot=0,
+                            alive_player_slots=(0,),
+                        )
+                    except (KeyError,ValueError):
+                        continue
+                    if (
+                        not footprint.source_sort_portable
+                        or footprint.source_target_order != (0,)
+                    ):
+                        continue
+                    chosen=(
+                        area,group,variant,template,skill_slot,skill_id,
+                        int(group_roll),int(selection_roll),int(mode_roll),
+                        footprint,
+                    )
+                    break
+                if chosen is not None:
+                    break
+            if chosen is not None:
+                break
+        if chosen is not None:
+            break
+
+    if chosen is None:
+        raise ValueError(
+            "no executable recovered25 AttackMagic enemy-AI witness found"
+        )
+
+    (
+        area,group,variant,template,skill_slot,skill_id,
+        group_roll,selection_roll,mode_roll,footprint,
+    )=chosen
+    player_state=_battle_ready_player_state()
+    session=LocalRuntimeSessionState(
+        contract_id=profile.contract_id,
+        world_profile=profile.runtime_world_profile,
+        hometown_ordinal=1,
+        player_position=MapPosition(
+            int(area.floor),int(area.min_x),int(area.min_y)
+        ),
+        player_state=player_state,
+        world_flags=frozenset({"attackmagic-preservation-witness"}),
+    )
+    requested=stack.request_encounter_group(
+        session,group_roll=group_roll
+    )
+    if int(requested.group_id) != int(group.group_id):
+        raise ValueError("AttackMagic witness group selection drift")
+
+    coordinator=LocalRuntimeSessionCoordinator(
+        stack=stack,
+        persistence=InMemoryLocalPersistenceStore(),
+    )
+    context=coordinator.start_group_battle(
+        session,
+        requested,
+        entry_count_roll=1,
+        selection_rolls=(selection_roll,),
+        birth_rolls=(
+            EnemyBirthRolls(
+                level_roll=0,
+                birth_offsets=(0,0,0,0),
+                spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+            ),
+        ),
+    )
+    if len(context.spawned_enemies) != 1:
+        raise ValueError("AttackMagic witness did not spawn exactly one enemy")
+    spawned=context.spawned_enemies[0]
+    if int(spawned.variant.enemy_id) != int(variant.enemy_id):
+        raise ValueError("AttackMagic witness enemy selection drift")
+    enemy_id=str(spawned.participant.participant_id)
+
+    overlay=AttackMagicRoundOverlay({
+        "player":AttackMagicResistanceRuntime()
+    })
+    context=coordinator.begin_persistent_group_battle(
+        context,
+        slots={"player":0,enemy_id:15},
+        attack_magic_overlay=overlay,
+    )
+    player_fields=player_state.character.fields
+    profiles={
+        "player":BattleCombatProfile(
+            fixed_dex=max(0,int(player_fields["quick"])-20),
+            fixed_luck=0,
+            earth=int(player_fields["earth"]),
+            water=int(player_fields["water"]),
+            fire=int(player_fields["fire"]),
+            wind=int(player_fields["wind"]),
+        ),
+        enemy_id:BattleCombatProfile(
+            fixed_dex=max(0,int(spawned.participant.quick)-20),
+            fixed_luck=0,
+            earth=int(template.earth),
+            water=int(template.water),
+            fire=int(template.fire),
+            wind=int(template.wind),
+        ),
+    }
+    next_context,result=(
+        coordinator
+        .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+            context,
+            player_side_commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+            },
+            enemy_mode_rolls={enemy_id:mode_roll},
+            enemy_target_rolls={enemy_id:0},
+            enemy_escape_rolls={},
+            opponent_abio_by_participant_id={},
+            initiative_random_subtracts={"player":0,enemy_id:0},
+            profiles=profiles,
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            attack_magic_rolls_by_attack_id={
+                enemy_id:EnemyAttackMagicActionRolls(
+                    0,{0:AttackMagicTargetRolls(100,0)}
+                )
+            },
+        )
+    )
+    magic_events=tuple(
+        event for event in result.round.events
+        if (
+            str(event.participant_id)==enemy_id
+            and int(event.command1)==BATTLE_COM_S_ATTACK_MAGIC
+        )
+    )
+    if len(magic_events) != 1:
+        raise ValueError(
+            "AttackMagic witness did not produce exactly one target event"
+        )
+    if magic_events[0].attack_magic_target_resolution is None:
+        raise ValueError("AttackMagic witness lacks typed target resolution")
+    if next_context.attack_magic_overlay != result.attack_magic_overlay_after:
+        raise ValueError("AttackMagic witness overlay did not carry forward")
+    if result.attack_magic_overlay_before != overlay:
+        raise ValueError("AttackMagic witness overlay pre-state drift")
+
+    return {
+        "executed":1,
+        "portable":int(bool(footprint.source_sort_portable)),
+        "target_events":len(magic_events),
+        "overlay_carried":1,
+        "skill_slot":int(skill_slot),
+        "round_turn":int(result.after.turn),
+    }
 
 
 def _session(profile, seed) -> LocalRuntimeSessionState:
@@ -255,6 +565,9 @@ def run(
         raise ValueError("runtime stack lacks AttackMagic runtime index")
     if len(stack.attack_magic_runtime.entries) != 25:
         raise ValueError("unexpected recovered25 AttackMagic runtime count")
+    attack_magic_ai_witness=_run_attack_magic_enemy_ai_witness(
+        profile,stack
+    )
     attack_magic_exact = stack.resolve_enemy_attack_magic_footprint(
         skill_id=stack.attack_magic_runtime.skill_id_for_magic(301),
         actor_slot=15,
@@ -435,6 +748,7 @@ def run(
         client_witness,
         encounter_witness,
         spawn_witness,
+        attack_magic_ai_witness,
     )
 
 
@@ -459,6 +773,7 @@ def main() -> None:
         client_witness,
         encounter_witness,
         spawn_witness,
+        attack_magic_ai_witness,
     ) = run(
         client_dat_dir=a.client_dat_dir,
         npc_dir=a.npc_dir,
@@ -547,6 +862,14 @@ def main() -> None:
         f"magic={attack_magic_dynamic.magic_id}|alive=1|"
         f"targets={len(attack_magic_dynamic.target_membership)}|"
         f"portable={int(attack_magic_dynamic.source_sort_portable)}"
+    )
+    print(
+        "ATTACKMAGIC_ENEMY_AI_ROUND_WITNESS|"
+        f"{attack_magic_ai_witness['executed']}|"
+        f"portable={attack_magic_ai_witness['portable']}|"
+        f"target_events={attack_magic_ai_witness['target_events']}|"
+        f"overlay_carried={attack_magic_ai_witness['overlay_carried']}|"
+        f"round_turn={attack_magic_ai_witness['round_turn']}"
     )
     referenced_skill_entries = tuple(
         stack.petskill_runtime.skills[skill_id]

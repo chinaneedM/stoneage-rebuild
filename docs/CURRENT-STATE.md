@@ -5262,5 +5262,9 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_ATTACKMAGIC_COMMAND2002_ROUND_EXECUTION_R1 = CLOSED.**
 - Integrated the closed enemy AttackMagic submission into `LocalRuntimeSessionCoordinator`: common enemy AI can now emit verified command 2002 plus its typed submission, and the full persistent round passes explicit AttackMagic RNG/retarget inputs into the closed round executor.
 - `LocalRuntimeBattleContext` now carries the battle-local AttackMagic resistance/training overlay across rounds. The coordinator refuses to synthesize missing resistance state; a selected AttackMagic without an explicit overlay fails closed.
-- **RECOVERED25_ENEMY_ATTACKMAGIC_COORDINATOR_INTEGRATION_R1 = CANDIDATE.**
-- Next priority: dedicated coordinator CI. If green, run the full preservation-bundle local-runtime acceptance with an AttackMagic-capable enemy witness, then decide whether the recovered persistence schema is sufficient to move four-element resistance/training out of the battle-local overlay.
+- Enemy AttackMagic coordinator CI **36855399645 = PASS** at `945a87b71ef79ba2432e7f774a7b1ad5d2674c76`; local-session, command-2002 round, runtime-golden and recovered25-region regressions also passed.
+- **RECOVERED25_ENEMY_ATTACKMAGIC_COORDINATOR_INTEGRATION_R1 = CLOSED.**
+- Added a preservation-bundle AttackMagic enemy-AI round witness to the existing recovered25 local-runtime smoke. It dynamically selects a real stable encounter/group/enemy whose recovered TACTICS/wa[] can select a real AttackMagic skill, derives weighted rolls from recovered data, spawns that enemy, then executes AI -> submission -> command 2002 -> persistent round and verifies overlay carry-forward.
+- The witness intentionally supplies an explicit battle-local zeroed magic-resistance overlay; it does not infer missing resistance/training fields from the current save schema.
+- **RECOVERED25_ATTACKMAGIC_PRESERVATION_BUNDLE_ACCEPTANCE_R1 = CANDIDATE.**
+- Next priority: full preservation-bundle region/local-runtime CI. If green, inspect recovered player/pet save layouts and source accessors for authoritative four-element resistance/training persistence; keep the overlay battle-local unless that mapping is actually evidenced.

@@ -48,4 +48,6 @@ to persistent player/pet storage after settlement; that requires independent
 reconstruction of the historical four-element magic-resistance persistence
 schema.
 
-Marker: **RECOVERED25_ENEMY_ATTACKMAGIC_COORDINATOR_INTEGRATION_R1 = CANDIDATE**
+Validation: dedicated coordinator CI **36855399645 = PASS** at `945a87b71ef79ba2432e7f774a7b1ad5d2674c76`; local-session, command-2002 round, runtime-golden and recovered25-region regressions also passed on that HEAD.
+
+Marker: **RECOVERED25_ENEMY_ATTACKMAGIC_COORDINATOR_INTEGRATION_R1 = CLOSED**
