@@ -46,8 +46,15 @@ from tools.stoneage_enemy_ai_fall_ground_bridge import (
     EnemyAiFallGroundSubmission,
     resolve_enemy_ai_fall_ground_submission,
 )
+from tools.stoneage_enemy_ai_battle_tear_bridge import (
+    EnemyAiBattleTearSubmission,
+    resolve_enemy_ai_battle_tear_submission,
+)
 from tools.stoneage_fall_ground_model import (
     CALLBACK_NAME as FALL_GROUND_CALLBACK,
+)
+from tools.stoneage_battle_tear_damage_model import (
+    CALLBACK_NAME as BATTLE_TEAR_CALLBACK,
 )
 from tools.stoneage_mp_damage_model import CALLBACK_NAME as MP_DAMAGE_CALLBACK
 from tools.stoneage_damage_to_hp_model import (
@@ -384,6 +391,9 @@ class EnemyAiCommonCommandBatch:
     fall_ground_submissions: Mapping[
         str,EnemyAiFallGroundSubmission
     ] = field(default_factory=dict)
+    battle_tear_submissions: Mapping[
+        str,EnemyAiBattleTearSubmission
+    ] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         object.__setattr__(
@@ -588,6 +598,42 @@ class EnemyAiCommonCommandBatch:
         ):
             raise ValueError(
                 "enemy AI FallGround semantic submissions overlap another skill"
+            )
+
+
+        tear_submissions={
+            str(key):value for key,value in self.battle_tear_submissions.items()
+        }
+        object.__setattr__(
+            self,"battle_tear_submissions",MappingProxyType(tear_submissions)
+        )
+        for participant_id,submission in tear_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI BattleTear submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiBattleTearSubmission):
+                raise TypeError(
+                    f"enemy AI BattleTear submission has wrong type for "
+                    f"{participant_id}"
+                )
+            if str(submission.participant_id) != participant_id:
+                raise ValueError("enemy AI BattleTear participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1) != BATTLE_COM_ATTACK
+                or int(carrier.command2) != int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI BattleTear carrier must be ATTACK/source-target"
+                )
+        if set(tear_submissions) & (
+            set(fall_submissions) | set(mp_submissions)
+            | set(damage_submissions) | set(rehp_submissions)
+            | set(magic_submissions)
+        ):
+            raise ValueError(
+                "enemy AI BattleTear semantic submissions overlap another skill"
             )
 
 
@@ -1223,6 +1269,7 @@ class LocalRuntimeSessionCoordinator:
         allow_damage_to_hp_skill: bool = False,
         allow_mp_damage_skill: bool = False,
         allow_fall_ground_skill: bool = False,
+        allow_battle_tear_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1367,6 +1414,7 @@ class LocalRuntimeSessionCoordinator:
         damage_to_hp_submissions={}
         mp_damage_submissions={}
         fall_ground_submissions={}
+        battle_tear_submissions={}
         for enemy_id in ai_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
                 raise ValueError(
@@ -1426,6 +1474,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_damage_to_hp_skill)
                 or bool(allow_mp_damage_skill)
                 or bool(allow_fall_ground_skill)
+                or bool(allow_battle_tear_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1436,6 +1485,32 @@ class LocalRuntimeSessionCoordinator:
                 skill_ids=tuple(int(x) for x in spawned.template.skill_slot_ids)
                 selected_skill_id=skill_ids[int(decision.skill_slot)]
                 selected_skill=petskill_runtime.skills.get(selected_skill_id)
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == BATTLE_TEAR_CALLBACK
+                    and bool(allow_battle_tear_skill)
+                ):
+                    submission=resolve_enemy_ai_battle_tear_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                    )
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    callback_setup=submission.callback_setup(
+                        fixed_strength=int(spawned.participant.attack),
+                        fixed_toughness=int(spawned.participant.defense),
+                    )
+                    setup_effects[enemy_id]=BattleCommandSetupEffects(
+                        attack_power=int(callback_setup.attack_power),
+                        defense_power=int(callback_setup.defense_power),
+                    )
+                    battle_tear_submissions[enemy_id]=submission
+                    continue
+
                 if (
                     selected_skill is not None
                     and selected_skill.function_name == FALL_GROUND_CALLBACK
@@ -1615,6 +1690,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_MpDamage")
             if bool(allow_fall_ground_skill):
                 allowed_parts.append("PETSKILL_FallGround")
+            if bool(allow_battle_tear_skill):
+                allowed_parts.append("PETSKILL_BattleTearDamage")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1630,6 +1707,7 @@ class LocalRuntimeSessionCoordinator:
             damage_to_hp_submissions=damage_to_hp_submissions,
             mp_damage_submissions=mp_damage_submissions,
             fall_ground_submissions=fall_ground_submissions,
+            battle_tear_submissions=battle_tear_submissions,
         )
 
     def build_persistent_enemy_common_commands(
@@ -1921,6 +1999,7 @@ class LocalRuntimeSessionCoordinator:
             allow_damage_to_hp_skill=True,
             allow_mp_damage_skill=True,
             allow_fall_ground_skill=True,
+            allow_battle_tear_skill=True,
         )
         enemy_commands = enemy_batch.commands
         rehp_enemy_ids=set(enemy_batch.enemy_rehp_submissions)
@@ -2323,6 +2402,9 @@ class LocalRuntimeSessionCoordinator:
                 enemy_batch.mp_damage_submissions
             ),
             mp_by_participant_id=mp_state,
+            battle_tear_submissions_by_participant_id=(
+                enemy_batch.battle_tear_submissions
+            ),
             fall_ground_submissions_by_participant_id=(
                 enemy_batch.fall_ground_submissions
             ),

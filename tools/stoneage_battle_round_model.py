@@ -38,6 +38,13 @@ from tools.stoneage_enemy_ai_mp_damage_bridge import EnemyAiMpDamageSubmission
 from tools.stoneage_enemy_ai_fall_ground_bridge import (
     EnemyAiFallGroundSubmission,
 )
+from tools.stoneage_enemy_ai_battle_tear_bridge import (
+    EnemyAiBattleTearSubmission,
+)
+from tools.stoneage_battle_tear_damage_model import (
+    BattleTearAugmentation,
+    resolve_battle_tear_pre_damage_sub,
+)
 from tools.stoneage_fall_ground_model import (
     FallGroundResolution,
     resolve_fall_ground,
@@ -874,6 +881,7 @@ class OrdinaryRoundEvent:
     damage_to_hp_recovery: DamageToHpRecovery | None = None
     mp_damage_resolution: MpDamageResolution | None = None
     fall_ground_resolution: FallGroundResolution | None = None
+    battle_tear_augmentation: BattleTearAugmentation | None = None
 
 
 @dataclass(frozen=True)
@@ -3282,6 +3290,9 @@ def resolve_ordinary_round(
         str,EnemyAiMpDamageSubmission
     ] | None = None,
     mp_by_participant_id: Mapping[str,int] | None = None,
+    battle_tear_submissions_by_participant_id: Mapping[
+        str,EnemyAiBattleTearSubmission
+    ] | None = None,
     fall_ground_submissions_by_participant_id: Mapping[
         str,EnemyAiFallGroundSubmission
     ] | None = None,
@@ -3578,6 +3589,58 @@ def resolve_ordinary_round(
                 f"command setup effects for {participant_id} have wrong type"
             )
 
+    battle_tear_submissions={
+        str(participant_id):submission
+        for participant_id,submission in (
+            battle_tear_submissions_by_participant_id or {}
+        ).items()
+    }
+    battle_tear_actor_ids=set(battle_tear_submissions)
+    unknown_battle_tear_ids=sorted(battle_tear_actor_ids-set(slot_by_id))
+    if unknown_battle_tear_ids:
+        raise ValueError(
+            "BattleTear submissions reference unknown actors: "
+            f"{unknown_battle_tear_ids}"
+        )
+    if battle_tear_actor_ids & (
+        mp_damage_actor_ids | damage_to_hp_actor_ids
+        | enemy_rehp_actor_ids | attack_magic_actor_ids
+    ):
+        raise ValueError("BattleTear semantic submissions overlap another skill")
+    for participant_id,submission in battle_tear_submissions.items():
+        if not isinstance(submission,EnemyAiBattleTearSubmission):
+            raise TypeError(
+                f"BattleTear submission for {participant_id} has wrong type"
+            )
+        if str(submission.participant_id) != participant_id:
+            raise ValueError("BattleTear submission participant drift")
+        entry=prepared_entry_by_id[participant_id]
+        if entry.participant.side != "enemy" or entry.participant.kind != "enemy":
+            raise ValueError(
+                "recovered25 BattleTear currently admits enemy actors only"
+            )
+        if (
+            int(entry.command.command1) != BATTLE_COM_ATTACK
+            or int(entry.command.command2) != int(submission.source_target_slot)
+        ):
+            raise ValueError(
+                "BattleTear ordering carrier must be ATTACK/source-target"
+            )
+        expected_setup=submission.callback_setup(
+            fixed_strength=int(entry.participant.attack),
+            fixed_toughness=int(entry.participant.defense),
+        )
+        effects=setup_effects.get(participant_id,BattleCommandSetupEffects())
+        if (
+            effects.attack_power is None
+            or int(effects.attack_power) != int(expected_setup.attack_power)
+            or effects.defense_power is None
+            or int(effects.defense_power) != int(expected_setup.defense_power)
+        ):
+            raise ValueError(
+                "BattleTear callback attack/defense setup effect drift"
+            )
+
     fall_ground_submissions={
         str(participant_id):submission
         for participant_id,submission in (
@@ -3592,7 +3655,7 @@ def resolve_ordinary_round(
             f"{unknown_fall_ground_ids}"
         )
     if fall_ground_actor_ids & (
-        mp_damage_actor_ids | damage_to_hp_actor_ids
+        battle_tear_actor_ids | mp_damage_actor_ids | damage_to_hp_actor_ids
         | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
         raise ValueError("FallGround semantic submissions overlap another skill")
@@ -5797,6 +5860,26 @@ def resolve_ordinary_round(
                 damage_react_state[source_defender_id]
             )
 
+        battle_tear_submission=None
+        battle_tear_source_react_blocked=False
+        if (
+            str(participant_id) in battle_tear_submissions
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            battle_tear_submission=battle_tear_submissions[str(participant_id)]
+            if int(command.command1) != BATTLE_COM_ATTACK:
+                raise ValueError(
+                    "BattleTear semantic action lost ATTACK ordering carrier"
+                )
+            source_defender=by_slot[int(target)]
+            source_defender_id=str(source_defender.participant_id)
+            battle_tear_source_react_blocked=base_damage_react_active(
+                damage_react_state[source_defender_id]
+            )
+
         counter_target_slot=int(target)
         damage_target_slot=int(target)
         guardian_redirected=False
@@ -5952,6 +6035,35 @@ def resolve_ordinary_round(
                 * float(earth_transition["damage_multiplier"])
             )
 
+        battle_tear_augmentation=None
+        if battle_tear_submission is not None:
+            original_tear_target=by_slot[int(target)]
+            original_tear_target_id=str(original_tear_target.participant_id)
+            tear_ride_hp=None
+            tear_ride_max_hp=None
+            if (
+                original_tear_target.kind=="player"
+                and active_ride
+                and ride_runtime is not None
+                and str(ride_runtime.rider_id)==original_tear_target_id
+            ):
+                tear_ride_hp=int(ride_runtime.hp)
+                tear_ride_max_hp=int(ride_runtime.max_hp)
+            battle_tear_augmentation=resolve_battle_tear_pre_damage_sub(
+                option_text=str(battle_tear_submission.wound_percent),
+                attack_seq_damage=int(damage),
+                attack_seq_result=str(result),
+                damage_react_active=bool(battle_tear_source_react_blocked),
+                same_side=(_slot_side(int(slot))==_slot_side(int(target))),
+                prevent_same_side=True,
+                target_hp=int(hp_by_slot[int(target)]),
+                target_max_hp=int(original_tear_target.max_hp),
+                target_kind=str(original_tear_target.kind),
+                ride_pet_hp=tear_ride_hp,
+                ride_pet_max_hp=tear_ride_max_hp,
+            )
+            damage=int(battle_tear_augmentation.damage_after)
+
         reaction_target_slot=int(damage_target_slot)
         reaction_defender=defender
         reaction_defender_id=str(defender_id)
@@ -5960,6 +6072,7 @@ def resolve_ordinary_round(
             damage_to_hp_submission is not None
             or mp_damage_submission is not None
             or fall_ground_submission is not None
+            or battle_tear_submission is not None
         ):
             # Fixed specialized BATTLE_S_AttackDamage lets AttackSeq calculate
             # against a Guardian but passes its original defindex to DamageSub.
@@ -6412,6 +6525,7 @@ def resolve_ordinary_round(
                 damage_to_hp_recovery=damage_to_hp_recovery,
                 mp_damage_resolution=mp_damage_resolution,
                 fall_ground_resolution=fall_ground_resolution,
+                battle_tear_augmentation=battle_tear_augmentation,
                 ride_damage_split=ride_split,
                 ride_hp_resolution=ride_hp_resolution,
                 ride_pet_fell_rider_id=ride_pet_fell_rider_id,
