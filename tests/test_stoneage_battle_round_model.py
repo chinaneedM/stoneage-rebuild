@@ -465,6 +465,45 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertTrue(result.ride_pet_runtime.petfall)
         self.assertEqual(result.ride_pet_runtime.hp,0)
 
+    def test_continuation_positive_hits_update_wakeup_state_per_hit(self):
+        player=actor("player","player","player",hp=1000,defense=70)
+        enemy=actor("enemy","enemy","enemy",hp=1000,attack=100)
+        command=BattleCommand(
+            BATTLE_COM_S_RENZOKU,
+            command2=0,
+            command3=pack_battle_command3(low=2,high=0),
+        )
+        hit=OrdinaryAttackRolls(
+            dodge_roll_1_10000=10000,
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+        )
+        result=resolve_continuation_nonbow_baseline(
+            actor=enemy,
+            actor_slot=10,
+            command=command,
+            action_value=100,
+            by_slot={0:player,10:enemy},
+            hp_by_slot={0:1000,10:1000},
+            profiles={"player":profile(),"enemy":profile()},
+            command_by_slot={
+                0:BattleCommand(BATTLE_COM_WAIT),
+                10:command,
+            },
+            rolls=ContinuationAttackRolls((hit,hit)),
+            defense_profile="newpower_70pct",
+            base_status_runtime_by_participant_id={
+                "player":BaseBattleStatusRuntime(
+                    status=BaseBattleStatusState(sleep=3),
+                    work_quick=player.quick,
+                ),
+                "enemy":BaseBattleStatusRuntime(work_quick=enemy.quick),
+            },
+        )
+        runtime=result.base_status_runtime_by_participant_id["player"]
+        self.assertEqual(runtime.status.sleep,0)
+        self.assertEqual(runtime.damage_count,2)
+
     def test_counter_continuation_gate_matches_fixed_battle_attack_return(self):
         base=dict(
             guardian_redirected=False,
