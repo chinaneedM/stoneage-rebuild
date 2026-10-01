@@ -40,11 +40,13 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_ESCAPE,
     BATTLE_COM_GUARD,
     BATTLE_COM_S_CHARGE,
+    BATTLE_COM_S_RENZOKU,
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
     BattleCommandSetupEffects,
+    ContinuationAttackRolls,
     CounterAttemptRolls,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
@@ -954,6 +956,7 @@ class LocalRuntimeSessionCoordinator:
         allow_powerbalance_skill: bool = False,
         allow_mighty_skill: bool = False,
         allow_guardbreak_skill: bool = False,
+        allow_continuationattack_skill: bool = False,
         allow_chargeattack_skill: bool = False,
         allow_noguard_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
@@ -1135,6 +1138,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_powerbalance_skill)
                 or bool(allow_mighty_skill)
                 or bool(allow_guardbreak_skill)
+                or bool(allow_continuationattack_skill)
                 or bool(allow_chargeattack_skill)
                 or bool(allow_noguard_skill)
             ):
@@ -1153,6 +1157,9 @@ class LocalRuntimeSessionCoordinator:
                     allow_power_balance=bool(allow_powerbalance_skill),
                     allow_mighty=bool(allow_mighty_skill),
                     allow_guard_break=bool(allow_guardbreak_skill),
+                    allow_continuation_attack=bool(
+                        allow_continuationattack_skill
+                    ),
                     allow_charge_attack=bool(allow_chargeattack_skill),
                     allow_no_guard=bool(allow_noguard_skill),
                 )
@@ -1173,6 +1180,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("Mighty")
             if bool(allow_guardbreak_skill):
                 allowed_parts.append("GuardBreak")
+            if bool(allow_continuationattack_skill):
+                allowed_parts.append("ContinuationAttack")
             if bool(allow_chargeattack_skill):
                 allowed_parts.append("ChargeAttack")
             if bool(allow_noguard_skill):
@@ -1327,6 +1336,9 @@ class LocalRuntimeSessionCoordinator:
         counter_rolls_by_attack_id: Mapping[
             str, Sequence[CounterAttemptRolls]
         ] | None = None,
+        continuation_rolls_by_attack_id: Mapping[
+            str, ContinuationAttackRolls
+        ] | None = None,
         counter_abio_by_participant_id: Mapping[str, bool] | None = None,
         base_status_rolls_by_participant_id: Mapping[
             str, BaseStatusTurnRolls
@@ -1344,8 +1356,8 @@ class LocalRuntimeSessionCoordinator:
 
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
         explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
-        plus recovered ChargeAttack, GuardBreak, Mighty, NoGuard,
-        PowerBalance and StatusChange. NoGuard keeps S_NOGUARD selected for its
+        plus recovered ChargeAttack, ContinuationAttack, GuardBreak, Mighty,
+        NoGuard, PowerBalance and StatusChange. NoGuard keeps S_NOGUARD selected for its
         own NoAction turn so later same-round dodge/counter checks can consume
         COM3; ChargeAttack carries its countdown across rounds. GuardBreak
         preserves its dedicated guard-only hit gate and source-shaped Guardian
@@ -1419,6 +1431,7 @@ class LocalRuntimeSessionCoordinator:
             allow_powerbalance_skill=True,
             allow_mighty_skill=True,
             allow_guardbreak_skill=True,
+            allow_continuationattack_skill=True,
             allow_chargeattack_skill=True,
             allow_noguard_skill=True,
         )
@@ -1428,6 +1441,34 @@ class LocalRuntimeSessionCoordinator:
             for participant_id, command in enemy_commands.items()
             if int(command.command1) == BATTLE_COM_ESCAPE
         }
+        continuation_enemy_ids = {
+            str(participant_id)
+            for participant_id, command in enemy_commands.items()
+            if int(command.command1) == BATTLE_COM_S_RENZOKU
+        }
+        normalized_continuation_rolls = {
+            str(key): value
+            for key, value in (
+                continuation_rolls_by_attack_id or {}
+            ).items()
+        }
+        if set(normalized_continuation_rolls) != continuation_enemy_ids:
+            missing=sorted(
+                continuation_enemy_ids-set(normalized_continuation_rolls)
+            )
+            extra=sorted(
+                set(normalized_continuation_rolls)-continuation_enemy_ids
+            )
+            raise ValueError(
+                "enemy ContinuationAttack RNG mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        for participant_id,rolls in normalized_continuation_rolls.items():
+            if not isinstance(rolls,ContinuationAttackRolls):
+                raise TypeError(
+                    "enemy ContinuationAttack RNG has wrong type for "
+                    f"{participant_id}"
+                )
 
         statuschange_enemy_ids = {
             str(participant_id)
@@ -1534,6 +1575,7 @@ class LocalRuntimeSessionCoordinator:
             profiles=profiles,
             attack_rolls=attack_rolls,
             counter_rolls_by_attack_id=counter_rolls_by_attack_id,
+            continuation_rolls_by_attack_id=normalized_continuation_rolls,
             counter_abio_by_participant_id=counter_abio_by_participant_id,
             escape_contexts=escape_contexts,
             escape_rolls=normalized_escape_rolls,
