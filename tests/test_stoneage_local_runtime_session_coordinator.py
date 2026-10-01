@@ -390,6 +390,24 @@ class _FakeStack:
                     function_name="PETSKILL_Guardian",
                     option_bytes="攻%-20".encode("cp950"),
                 ),
+                150: Recovered25PetSkillEntry(
+                    skill_id=150,
+                    field=2,
+                    target=3,
+                    cost=2,
+                    illegal=1,
+                    function_name="PETSKILL_Merge",
+                    option_bytes=b"",
+                ),
+                151: Recovered25PetSkillEntry(
+                    skill_id=151,
+                    field=2,
+                    target=3,
+                    cost=2,
+                    illegal=1,
+                    function_name="PETSKILL_Merge",
+                    option_bytes=b"",
+                ),
             },
             source_file="petskill.txt",
         )
@@ -2939,6 +2957,87 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             ),
             {},
         )
+
+    def test_recovered_enemy_ai_merge_is_fail_closed_before_round_execution(self):
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-merge-ub"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0,0,0,0),
+                    spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+                ),
+            ),
+        )
+        enemy_id=context.battle.enemies[0].participant_id
+        spawned=context.spawned_enemies[0]
+        context=replace(
+            context,
+            spawned_enemies=(
+                replace(
+                    spawned,
+                    template=replace(
+                        spawned.template,
+                        skill_ids=(150,20,30,40,50,60,70),
+                        skill_slot_ids=(150,20,30,40,50,60,70),
+                    ),
+                    variant=replace(
+                        spawned.variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:1;0;0;0;0;0;0"
+                        ),
+                    ),
+                ),
+            ),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+        )
+        profiles={
+            "player":BattleCombatProfile(
+                fixed_dex=10,fixed_luck=0,
+                earth=0,water=0,fire=0,wind=0,
+            ),
+            enemy_id:BattleCombatProfile(
+                fixed_dex=20,fixed_luck=0,
+                earth=0,water=0,fire=0,wind=0,
+            ),
+        }
+        with self.assertRaisesRegex(
+            ValueError,
+            "historical undefined-return.*fail-closed",
+        ):
+            (
+                self.coordinator
+                .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                    context,
+                    player_side_commands={
+                        "player":BattleCommand(BATTLE_COM_WAIT),
+                    },
+                    enemy_mode_rolls={enemy_id:0},
+                    enemy_target_rolls={enemy_id:0},
+                    enemy_escape_rolls={},
+                    opponent_abio_by_participant_id={},
+                    initiative_random_subtracts={"player":0,enemy_id:0},
+                    profiles=profiles,
+                    attack_rolls={},
+                    defense_profile="newpower_70pct",
+                )
+            )
 
     def test_recovered_enemy_ai_guardian_attack_uses_enemy_battle_slot(self):
         session=LocalRuntimeSessionState(
