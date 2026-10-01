@@ -504,6 +504,52 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(runtime.status.sleep,0)
         self.assertEqual(runtime.damage_count,2)
 
+    def test_continuation_player_ultimate_exit_updates_next_hit_candidates(self):
+        player=actor("player","player","player",hp=1,defense=0)
+        pet=actor("pet","player","pet",hp=1000,defense=70)
+        enemy=actor("enemy","enemy","enemy",hp=1000,attack=100)
+        command=BattleCommand(
+            BATTLE_COM_S_RENZOKU,
+            command2=0,
+            command3=pack_battle_command3(low=2,high=0),
+        )
+        hit=OrdinaryAttackRolls(
+            dodge_roll_1_10000=10000,
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+        )
+        result=resolve_continuation_nonbow_baseline(
+            actor=enemy,
+            actor_slot=10,
+            command=command,
+            action_value=100,
+            by_slot={0:player,1:pet,10:enemy},
+            hp_by_slot={0:1,1:1000,10:1000},
+            profiles={
+                "player":profile(),
+                "pet":profile(),
+                "enemy":profile(),
+            },
+            command_by_slot={
+                0:BattleCommand(BATTLE_COM_WAIT),
+                1:BattleCommand(BATTLE_COM_WAIT),
+                10:command,
+            },
+            rolls=ContinuationAttackRolls((hit,hit)),
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(len(result.events),1)
+        self.assertEqual(result.events[0].ultimate_kind,2)
+        self.assertEqual(
+            result.ultimate_exited_participant_ids,
+            ("player","pet"),
+        )
+        # BATTLE_Exit(player) restores the player to one HP but both player
+        # and the unique active/default pet are removed from target candidates.
+        self.assertEqual(result.hp_by_slot[0],1)
+        self.assertEqual(result.hp_by_slot[1],1000)
+        self.assertFalse(result.counter_continuation_allowed)
+
     def test_counter_continuation_gate_matches_fixed_battle_attack_return(self):
         base=dict(
             guardian_redirected=False,
