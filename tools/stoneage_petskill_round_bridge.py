@@ -18,6 +18,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_CHARGE,
     BATTLE_COM_S_MIGHTY,
+    BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
     BattleCommand,
@@ -47,6 +48,7 @@ def bridge_stable_pet_skill_command(
     - PETSKILL_ChargeAttack -> S_CHARGE with LOW=wait/HIGH=attack percent and
       explicit latent ready attack power
     - PETSKILL_Mighty -> S_MIGHTY with LOW=damage x100 / HIGH=dodge modifier
+    - PETSKILL_NoGuard -> S_NOGUARD with packed dodge/counter/critical COM3
     - PETSKILL_PowerBalance -> S_POWERBALANCE + immediate work attack/defense
     - PETSKILL_StatusChange -> S_STATUSCHANGE with LOW=status/HIGH=turn
     """
@@ -97,6 +99,17 @@ def bridge_stable_pet_skill_command(
             raise ValueError("Mighty payload lacks packed COM3 halves")
         battle_command=BattleCommand(
             BATTLE_COM_S_MIGHTY,
+            command2=target,
+            command3=pack_battle_command3(
+                low=int(payload["low"]),
+                high=int(payload["high"]),
+            ),
+        )
+    elif source_command=="S_NOGUARD":
+        if "low" not in payload or "high" not in payload:
+            raise ValueError("S_NOGUARD requires recovered low/high COM3")
+        battle_command=BattleCommand(
+            BATTLE_COM_S_NOGUARD,
             command2=target,
             command3=pack_battle_command3(
                 low=int(payload["low"]),
