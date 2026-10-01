@@ -5,6 +5,7 @@ from tools.stoneage_enemy_ai_petskill_bridge import (
     resolve_enemy_ai_chargeattack_petskill_command,
     resolve_enemy_ai_guardbreak_petskill_command,
     resolve_enemy_ai_mighty_petskill_command,
+    resolve_enemy_ai_noguard_petskill_command,
     resolve_enemy_ai_powerbalance_petskill_command,
     resolve_enemy_ai_statuschange_petskill_command,
 )
@@ -26,6 +27,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_CHARGE,
     BATTLE_COM_S_GBREAK,
     BATTLE_COM_S_MIGHTY,
+    BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
     battle_command3_high,
@@ -277,6 +279,72 @@ class EnemyAiPetSkillBridgeTests(unittest.TestCase):
         )
         with self.assertRaisesRegex(ValueError, "ASCII-only"):
             resolve_enemy_ai_guardbreak_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=0,
+                petskill_runtime=runtime,
+            )
+
+    def test_noguard_uses_recovered_traditional_option_and_round_bridge(self):
+        spawned = spawned_with_slots((90, 0, 0, 0, 0, 0, 0))
+        runtime = Recovered25PetSkillRuntime(
+            skills={
+                90: entry(
+                    90,
+                    "PETSKILL_NoGuard",
+                    "避%40 擊%60 心%30".encode("cp950"),
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        resolved = resolve_enemy_ai_noguard_petskill_command(
+            spawned,
+            skill_slot=0,
+            target_slot=3,
+            petskill_runtime=runtime,
+        )
+        self.assertEqual(resolved.command.command1, BATTLE_COM_S_NOGUARD)
+        self.assertEqual(resolved.command.command2, 3)
+        self.assertEqual(battle_command3_high(resolved.command.command3), 40)
+        self.assertEqual(
+            battle_command3_low(resolved.command.command3),
+            (60 << 8) + 30,
+        )
+
+    def test_noguard_rejects_simplified_counter_marker(self):
+        spawned = spawned_with_slots((90, 0, 0, 0, 0, 0, 0))
+        runtime = Recovered25PetSkillRuntime(
+            skills={
+                90: entry(
+                    90,
+                    "PETSKILL_NoGuard",
+                    "避%40 击%60 心%30".encode("utf-8"),
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        with self.assertRaises((UnicodeDecodeError, ValueError)):
+            resolve_enemy_ai_noguard_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=0,
+                petskill_runtime=runtime,
+            )
+
+    def test_noguard_rejects_values_outside_recovered_ranges(self):
+        spawned = spawned_with_slots((90, 0, 0, 0, 0, 0, 0))
+        runtime = Recovered25PetSkillRuntime(
+            skills={
+                90: entry(
+                    90,
+                    "PETSKILL_NoGuard",
+                    "避%60 擊%60 心%30".encode("cp950"),
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        with self.assertRaisesRegex(ValueError, "outside proven ranges"):
+            resolve_enemy_ai_noguard_petskill_command(
                 spawned,
                 skill_slot=0,
                 target_slot=0,
