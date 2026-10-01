@@ -9,6 +9,7 @@ Currently supported:
 - PETSKILL_NormalAttack
 - PETSKILL_NormalGuard
 - PETSKILL_GuardBreak (explicit opt-in dispatcher branch)
+- PETSKILL_ContinuationAttack (explicit opt-in dispatcher branch)
 - PETSKILL_ChargeAttack (explicit opt-in dispatcher branch)
 - PETSKILL_NoGuard (explicit opt-in dispatcher branch)
 - PETSKILL_Mighty (explicit opt-in dispatcher branch)
@@ -33,6 +34,7 @@ from tools.stoneage_battle_round_model import (
 from tools.stoneage_enemy_spawn_model import SpawnedEnemy
 from tools.stoneage_petskill_core_model import (
     charge_attack_command,
+    continuation_attack_command,
     charge_execution_step,
     guard_break_command,
     mighty_command,
@@ -54,6 +56,7 @@ NONE = "PETSKILL_None"
 NORMAL_ATTACK = "PETSKILL_NormalAttack"
 NORMAL_GUARD = "PETSKILL_NormalGuard"
 GUARD_BREAK = "PETSKILL_GuardBreak"
+CONTINUATION_ATTACK = "PETSKILL_ContinuationAttack"
 CHARGE_ATTACK = "PETSKILL_ChargeAttack"
 NO_GUARD = "PETSKILL_NoGuard"
 MIGHTY = "PETSKILL_Mighty"
@@ -163,6 +166,7 @@ def resolve_enemy_ai_supported_petskill_command(
     allow_power_balance: bool = False,
     allow_mighty: bool = False,
     allow_guard_break: bool = False,
+    allow_continuation_attack: bool = False,
     allow_charge_attack: bool = False,
     allow_no_guard: bool = False,
 ) -> EnemyAiPetSkillCommand:
@@ -183,6 +187,16 @@ def resolve_enemy_ai_supported_petskill_command(
         )
     if entry.function_name == GUARD_BREAK and bool(allow_guard_break):
         return resolve_enemy_ai_guardbreak_petskill_command(
+            spawned,
+            skill_slot=skill_slot,
+            target_slot=target_slot,
+            petskill_runtime=petskill_runtime,
+        )
+    if (
+        entry.function_name == CONTINUATION_ATTACK
+        and bool(allow_continuation_attack)
+    ):
+        return resolve_enemy_ai_continuationattack_petskill_command(
             spawned,
             skill_slot=skill_slot,
             target_slot=target_slot,
@@ -287,6 +301,66 @@ def resolve_enemy_ai_noguard_petskill_command(
     expected_low=(counter_value << 8) + critical_value
     if int(payload.get("low",-1)) != expected_low:
         raise ValueError("NoGuard packed counter/critical drift")
+
+    submission=bridge_stable_pet_skill_command(payload)
+    return EnemyAiPetSkillCommand(
+        participant_id=str(spawned.participant.participant_id),
+        skill_slot=skill_slot,
+        skill_id=int(entry.skill_id),
+        callback=entry.function_name,
+        command=submission.battle_command,
+        setup_effects=submission.setup_effects,
+    )
+
+
+def resolve_enemy_ai_continuationattack_petskill_command(
+    spawned: SpawnedEnemy,
+    *,
+    skill_slot: int,
+    target_slot: int,
+    petskill_runtime: Recovered25PetSkillRuntime,
+) -> EnemyAiPetSkillCommand:
+    """Resolve recovered PETSKILL_ContinuationAttack into S_RENZOKU."""
+
+    skill_slot, target_slot, entry = _resolved_entry(
+        spawned,
+        skill_slot=skill_slot,
+        target_slot=target_slot,
+        petskill_runtime=petskill_runtime,
+    )
+    if entry.function_name != CONTINUATION_ATTACK:
+        raise ValueError(
+            "enemy AI selected pet-skill callback outside ContinuationAttack "
+            f"execution subset: {entry.function_name}"
+        )
+    if not entry.option_bytes.isascii():
+        raise ValueError(
+            "recovered ContinuationAttack OPTION is outside proven ASCII subset"
+        )
+    option_text=entry.option_bytes.decode("ascii")
+    leading=re.match(r"\s*([+-]?\d+)",option_text)
+    if leading is None:
+        raise ValueError(
+            "recovered ContinuationAttack OPTION lacks leading attack count"
+        )
+    count=int(leading.group(1))
+    if not 2 <= count <= 5:
+        raise ValueError(
+            "recovered ContinuationAttack count is outside proven 2..5 range"
+        )
+
+    # The fixed handler writes LOW(COM3) and preserves HIGH.  S_RENZOKU
+    # execution consumes only LOW; recovered runtime therefore starts the
+    # inactive high half at zero rather than inventing prior COM3 residue.
+    payload=continuation_attack_command(
+        target_slot,
+        option_text,
+        prior_high=0,
+    )
+    if int(payload.get("low",-1)) != count:
+        raise ValueError("ContinuationAttack parsed hit-count drift")
+    if int(payload.get("high",-1)) != 0:
+        raise ValueError("ContinuationAttack inactive COM3 high-half drift")
 
     submission=bridge_stable_pet_skill_command(payload)
     return EnemyAiPetSkillCommand(
