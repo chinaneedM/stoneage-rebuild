@@ -80,7 +80,6 @@ from tools.stoneage_local_runtime_core import (
     ResolvedTransitionBinding,
     TransitionGateDecision,
     WorldRegionRequest,
-    decode_persistent_state,
     encode_local_runtime_session,
     load_runtime_bootstrap_file,
 )
@@ -93,6 +92,7 @@ from tools.stoneage_local_runtime_session_coordinator import (
     LocalRuntimeSessionCoordinator,
 )
 from tools.stoneage_singleplayer_battle import BattleOutcome
+from tools.stoneage_singleplayer_persistence import decode_persistent_state
 from tools.stoneage_pet_growth_model import (
     PetLevelGrowthRolls,
     pack_growth_base,
