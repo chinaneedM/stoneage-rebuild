@@ -18,6 +18,8 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_GUARD,
     BATTLE_COM_S_CHARGE,
     BATTLE_COM_S_CHARGE_OK,
+    BATTLE_COM_S_EARTHROUND0,
+    BATTLE_COM_S_EARTHROUND1,
     BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_S_ABDUCT,
@@ -284,6 +286,72 @@ class PersistentBattleStateTests(unittest.TestCase):
         )
         self.assertEqual(second.after.turn, 2)
         self.assertLess(second.after.hp_by_participant_id["enemy"], first_hp)
+
+    def test_persistent_earthround_overrides_new_command_then_fires_phase_two(self):
+        player=participant("player","player","player",attack=100,quick=100)
+        enemy=participant(
+            "enemy","enemy","enemy",
+            hp=500,defense=70,quick=20,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+        )
+        first=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(
+                    BATTLE_COM_S_EARTHROUND1,
+                    command2=10,
+                    command3=50,
+                ),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(first.after.turn,1)
+        self.assertEqual(first.round.events[0].result,"earthround_hide")
+        carried=first.after.carried_commands_by_participant_id["player"]
+        self.assertEqual(carried.command1,BATTLE_COM_S_EARTHROUND0)
+        hp_before=first.after.hp_by_participant_id["enemy"]
+
+        second=resolve_persistent_ordinary_round(
+            first.after,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                    minimum_damage_roll_0_1=1,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        attack=next(
+            event for event in second.round.events
+            if event.participant_id=="player"
+            and event.command1==BATTLE_COM_S_EARTHROUND0
+        )
+        self.assertGreater(attack.damage,0)
+        self.assertLess(second.after.hp_by_participant_id["enemy"],hp_before)
+        self.assertEqual(dict(second.after.carried_commands_by_participant_id),{})
+        self.assertEqual(
+            dict(second.after.carried_setup_effects_by_participant_id),
+            {},
+        )
+        self.assertEqual(
+            second.after.last_commands["player"].command1,
+            BATTLE_COM_WAIT,
+        )
 
     def test_persistent_charge_overrides_new_command_then_fires_ready_hit(self):
         player=participant("player","player","player",attack=100,quick=100)
