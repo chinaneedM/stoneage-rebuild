@@ -15,6 +15,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_ESCAPE,
     BATTLE_COM_GUARD,
     BATTLE_COM_NONE,
+    BATTLE_COM_S_RENZOKU,
     BATTLE_COM_S_GBREAK,
     BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_CHARGE,
@@ -38,6 +39,7 @@ from tools.stoneage_battle_round_model import (
     _battle_attack_continuation_allowed,
     _continuation_nonbow_target_for_hit,
     apply_base_combo_rewrite,
+    resolve_continuation_nonbow_baseline,
     battle_command3_high,
     battle_command3_low,
     pack_battle_command3,
@@ -164,6 +166,134 @@ class BattleRoundModelTests(unittest.TestCase):
         )
         self.assertEqual(first,1)
         self.assertEqual(second,2)
+
+    def test_continuation_baseline_splits_each_hit_damage_by_count(self):
+        player=actor("player","player","player",hp=1000,defense=70)
+        enemy=actor("enemy","enemy","enemy",hp=1000,attack=100)
+        command=BattleCommand(
+            BATTLE_COM_S_RENZOKU,
+            command2=0,
+            command3=pack_battle_command3(low=2,high=99),
+        )
+        hit=OrdinaryAttackRolls(
+            dodge_roll_1_10000=10000,
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+        )
+        result=resolve_continuation_nonbow_baseline(
+            actor=enemy,
+            actor_slot=10,
+            command=command,
+            action_value=100,
+            by_slot={0:player,10:enemy},
+            hp_by_slot={0:1000,10:1000},
+            profiles={"player":profile(),"enemy":profile()},
+            command_by_slot={
+                0:BattleCommand(BATTLE_COM_WAIT),
+                10:command,
+            },
+            rolls=ContinuationAttackRolls((hit,hit)),
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(len(result.events),2)
+        self.assertGreater(result.events[0].damage,0)
+        self.assertEqual(result.events[0].damage,result.events[1].damage)
+        self.assertEqual(
+            result.hp_by_slot[0],
+            1000-sum(event.damage for event in result.events),
+        )
+        self.assertTrue(result.counter_continuation_allowed)
+
+    def test_continuation_baseline_retargets_each_later_hit_from_dead_original(self):
+        original=actor("original","player","player",hp=1,defense=0)
+        p1=actor("p1","player","pet",hp=1000,defense=0)
+        p2=actor("p2","player","pet",hp=1000,defense=0)
+        enemy=actor("enemy","enemy","enemy",hp=1000,attack=100)
+        command=BattleCommand(
+            BATTLE_COM_S_RENZOKU,
+            command2=0,
+            command3=pack_battle_command3(low=3,high=0),
+        )
+        hits=(
+            OrdinaryAttackRolls(
+                dodge_roll_1_10000=10000,
+                critical_roll_1_10000=10000,
+                damage_roll=0,
+            ),
+            OrdinaryAttackRolls(
+                dodge_roll_1_10000=10000,
+                critical_roll_1_10000=10000,
+                damage_roll=0,
+                retarget_roll=0,
+            ),
+            OrdinaryAttackRolls(
+                dodge_roll_1_10000=10000,
+                critical_roll_1_10000=10000,
+                damage_roll=0,
+                retarget_roll=1,
+            ),
+        )
+        result=resolve_continuation_nonbow_baseline(
+            actor=enemy,
+            actor_slot=10,
+            command=command,
+            action_value=100,
+            by_slot={0:original,1:p1,2:p2,10:enemy},
+            hp_by_slot={0:1,1:1000,2:1000,10:1000},
+            profiles={
+                "original":profile(),
+                "p1":profile(),
+                "p2":profile(),
+                "enemy":profile(),
+            },
+            command_by_slot={
+                0:BattleCommand(BATTLE_COM_WAIT),
+                1:BattleCommand(BATTLE_COM_WAIT),
+                2:BattleCommand(BATTLE_COM_WAIT),
+                10:command,
+            },
+            rolls=ContinuationAttackRolls(hits),
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(
+            tuple(event.resolved_target_slot for event in result.events),
+            (0,1,2),
+        )
+        self.assertEqual(result.hp_by_slot[0],0)
+        self.assertTrue(result.events[1].retargeted)
+        self.assertTrue(result.events[2].retargeted)
+
+    def test_continuation_baseline_last_guarded_hit_closes_counter_chain(self):
+        player=actor("player","player","player",hp=1000,defense=70)
+        enemy=actor("enemy","enemy","enemy",hp=1000,attack=100)
+        command=BattleCommand(
+            BATTLE_COM_S_RENZOKU,
+            command2=0,
+            command3=pack_battle_command3(low=2,high=0),
+        )
+        hit=OrdinaryAttackRolls(
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+            guard_roll_1_100=100,
+            minimum_damage_roll_0_1=1,
+        )
+        result=resolve_continuation_nonbow_baseline(
+            actor=enemy,
+            actor_slot=10,
+            command=command,
+            action_value=100,
+            by_slot={0:player,10:enemy},
+            hp_by_slot={0:1000,10:1000},
+            profiles={"player":profile(),"enemy":profile()},
+            command_by_slot={
+                0:BattleCommand(BATTLE_COM_GUARD),
+                10:command,
+            },
+            rolls=ContinuationAttackRolls((hit,hit)),
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(len(result.events),2)
+        self.assertFalse(result.counter_continuation_allowed)
 
     def test_counter_continuation_gate_matches_fixed_battle_attack_return(self):
         base=dict(
