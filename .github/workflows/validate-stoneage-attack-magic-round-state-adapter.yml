@@ -1,0 +1,49 @@
+name: Validate StoneAge AttackMagic round state adapter
+
+concurrency:
+  group: stoneage-attack-magic-round-state-adapter
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-attack-magic-round-state-adapter.yml
+      - tools/stoneage_attack_magic_round_state_adapter.py
+      - tests/test_stoneage_attack_magic_round_state_adapter.py
+      - tools/stoneage_attack_magic_action_model.py
+      - tools/stoneage_enemy_ai_attack_magic_bridge.py
+      - tools/stoneage_recovered25_attack_magic_runtime.py
+      - tools/stoneage_battle_state_model.py
+      - tools/stoneage_battle_status_model.py
+      - tools/stoneage_battle_ride_damage_model.py
+      - research/mechanics/STONEAGE-ATTACK-MAGIC-ROUND-STATE-ADAPTER-R1.md
+  pull_request:
+    paths:
+      - .github/workflows/validate-stoneage-attack-magic-round-state-adapter.yml
+      - tools/stoneage_attack_magic_round_state_adapter.py
+      - tests/test_stoneage_attack_magic_round_state_adapter.py
+      - tools/stoneage_attack_magic_action_model.py
+      - tools/stoneage_enemy_ai_attack_magic_bridge.py
+      - tools/stoneage_recovered25_attack_magic_runtime.py
+      - tools/stoneage_battle_state_model.py
+      - tools/stoneage_battle_status_model.py
+      - tools/stoneage_battle_ride_damage_model.py
+      - research/mechanics/STONEAGE-ATTACK-MAGIC-ROUND-STATE-ADAPTER-R1.md
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate AttackMagic state synchronization
+        run: |
+          python3 -m unittest \
+            tests.test_stoneage_attack_magic_damage_model \
+            tests.test_stoneage_attack_magic_action_model \
+            tests.test_stoneage_enemy_ai_attack_magic_bridge \
+            tests.test_stoneage_attack_magic_round_state_adapter -v

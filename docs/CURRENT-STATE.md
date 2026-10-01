@@ -5247,5 +5247,10 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - The existing `stoneage_attack_magic_model.py` already owns the authoritative 2002 / COM2 / COM3 encoding, so no duplicate command schema was added.
 - Added a separate enemy-AI AttackMagic submission bridge candidate that resolves the selected seven-slot pet-skill identity, requires `PETSKILL_AttackMagic`, cross-checks it against the closed AttackMagic runtime index, and emits the existing `AttackMagicCommand` + deterministic `MagicDirectUseRequest`.
 - The submission deliberately does **not** return `BattleCommand`; command 2002 remains outside the ordinary round enum until round-time magic-state synchronization is closed.
-- **RECOVERED25_ENEMY_ATTACKMAGIC_SUBMISSION_BRIDGE_R1 = CANDIDATE.**
-- Next priority: submission-bridge CI, then close the round-time state adapter for HP, magic resistance/training, sleep and ride state before admitting command 2002 into ordinary round execution.
+- Enemy AttackMagic submission-bridge CI **36852877820 = PASS** at `ac7d993dd09f9ff61fe7bebf90d5cd4413bd203f`; action-composer regression CI **36852877777 = PASS** on the same HEAD.
+- **RECOVERED25_ENEMY_ATTACKMAGIC_SUBMISSION_BRIDGE_R1 = CLOSED.**
+- Added a typed AttackMagic round-state adapter candidate. Existing `PersistentBattleState` remains authoritative for HP, sleep/base status and ride state; a dedicated `AttackMagicRoundOverlay` owns only the four resistance levels/EXP counters and magic equipment/status modifiers not yet present in the persistent battle model.
+- The adapter consumes the closed enemy submission, derives current living player-side slots, requires exact portable footprint ordering, composes action RNG/damage, then writes HP/sleep/ride plus both selected/opposed resistance-training counters back without advancing turn or performing profit/death settlement.
+- Mounted ride pets require an explicit elemental combat profile, including the historical exact-zero-HP mounted quirk where attribute averaging can still occur while HP sharing does not.
+- **RECOVERED25_ATTACKMAGIC_ROUND_STATE_ADAPTER_R1 = CANDIDATE.**
+- Next priority: dedicated round-state adapter CI; if green, register a guarded command-2002 round action that invokes this adapter in action order and then integrate the existing death/profit/termination seams without admitting nonportable multi-target states.
