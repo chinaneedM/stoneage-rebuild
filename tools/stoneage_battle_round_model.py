@@ -3658,20 +3658,6 @@ def resolve_ordinary_round(
             "cross-descendant recovered25 admission domain"
         )
 
-    if ride_runtime is None:
-        if ride_pet_source_slot is not None:
-            raise ValueError(
-                "FallGround ride-pet source slot supplied without ride runtime"
-            )
-    else:
-        if ride_pet_source_slot is None:
-            raise ValueError(
-                "FallGround ride runtime requires source pet slot provenance"
-            )
-        ride_pet_source_slot=int(ride_pet_source_slot)
-        if not 0 <= ride_pet_source_slot <= 4:
-            raise ValueError("FallGround ride-pet source slot must be in 0..4")
-
     attempted_fall_ground_actor_ids=set()
 
     guarding = {
@@ -3914,6 +3900,21 @@ def resolve_ordinary_round(
                 "non-entry ride pet cannot also occupy an active battle slot"
             )
         active_ride=bool(ride_runtime.mounted)
+
+    if ride_runtime is None:
+        if ride_pet_source_slot is not None:
+            raise ValueError(
+                "FallGround ride-pet source slot supplied without ride runtime"
+            )
+    else:
+        if ride_pet_source_slot is None:
+            raise ValueError(
+                "FallGround ride runtime requires source pet slot provenance"
+            )
+        ride_pet_source_slot=int(ride_pet_source_slot)
+        if not 0 <= ride_pet_source_slot <= 4:
+            raise ValueError("FallGround ride-pet source slot must be in 0..4")
+
     guardian_registrations={
         int(defender_slot):registration
         for defender_slot,registration in (
