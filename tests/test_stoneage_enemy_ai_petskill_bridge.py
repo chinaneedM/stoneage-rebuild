@@ -7,6 +7,7 @@ from tools.stoneage_enemy_ai_petskill_bridge import (
     resolve_enemy_ai_continuationattack_petskill_command,
     resolve_enemy_ai_earthround_petskill_command,
     resolve_enemy_ai_guardbreak_petskill_command,
+    resolve_enemy_ai_guardian_petskill_command,
     resolve_enemy_ai_mighty_petskill_command,
     resolve_enemy_ai_noguard_petskill_command,
     resolve_enemy_ai_powerbalance_petskill_command,
@@ -32,6 +33,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_CHARGE,
     BATTLE_COM_S_RENZOKU,
     BATTLE_COM_S_GBREAK,
+    BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_MIGHTY,
     BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_POWERBALANCE,
@@ -179,6 +181,85 @@ class EnemyAiPetSkillBridgeTests(unittest.TestCase):
         self.assertEqual(resolved.skill_id, 30)
         self.assertEqual(resolved.command.command1, BATTLE_COM_NONE)
         self.assertEqual(resolved.command.command2, 4)
+
+    def test_guardian_uses_closed_attack_mode_and_authoritative_actor_slot(self):
+        spawned=spawned_with_slots((140,0,0,0,0,0,0))
+        runtime=Recovered25PetSkillRuntime(
+            skills={
+                140:entry(
+                    140,
+                    "PETSKILL_Guardian",
+                    "攻%-20".encode("cp950"),
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        projection=spawned.birth.combat_projection()
+        resolved=resolve_enemy_ai_guardian_petskill_command(
+            spawned,
+            skill_slot=0,
+            target_slot=3,
+            actor_slot=15,
+            petskill_runtime=runtime,
+        )
+        self.assertEqual(
+            resolved.command.command1,
+            BATTLE_COM_S_GUARDIAN_ATTACK,
+        )
+        self.assertEqual(resolved.command.command2,3)
+        self.assertEqual(
+            resolved.setup_effects.attack_power,
+            int(projection["attack"]) + int(int(projection["attack"])*-0.20),
+        )
+        self.assertEqual(
+            resolved.setup_effects.defense_power,
+            int(projection["defense"]),
+        )
+        self.assertTrue(resolved.setup_effects.guardian_flag)
+        self.assertEqual(resolved.setup_effects.guardian_for_slot,10)
+
+        with self.assertRaisesRegex(ValueError,"outside admitted"):
+            resolve_enemy_ai_supported_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=3,
+                actor_slot=15,
+                petskill_runtime=runtime,
+            )
+        admitted=resolve_enemy_ai_supported_petskill_command(
+            spawned,
+            skill_slot=0,
+            target_slot=3,
+            actor_slot=15,
+            petskill_runtime=runtime,
+            allow_guardian=True,
+        )
+        self.assertEqual(
+            admitted.command.command1,
+            BATTLE_COM_S_GUARDIAN_ATTACK,
+        )
+        self.assertEqual(admitted.setup_effects.guardian_for_slot,10)
+
+    def test_guardian_rejects_option_drift(self):
+        spawned=spawned_with_slots((140,0,0,0,0,0,0))
+        runtime=Recovered25PetSkillRuntime(
+            skills={
+                140:entry(
+                    140,
+                    "PETSKILL_Guardian",
+                    "攻%-10".encode("cp950"),
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        with self.assertRaisesRegex(ValueError,"攻%-20 subset"):
+            resolve_enemy_ai_guardian_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=0,
+                actor_slot=15,
+                petskill_runtime=runtime,
+            )
 
     def test_steal_uses_single_recovered_ascii_callback(self):
         spawned=spawned_with_slots((130,0,0,0,0,0,0))
