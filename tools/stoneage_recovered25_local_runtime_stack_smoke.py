@@ -723,6 +723,21 @@ def main() -> None:
         if attack is not None:
             charge_attack_numeric += 1
             charge_attack_percents.append(int(attack.group(1)))
+    if (
+        len(charge_entries) != 3
+        or charge_leading_int != 3
+        or charge_in_range != 3
+        or charge_attack_marker != 3
+        or charge_attack_numeric != 3
+        or min(charge_counts, default=-1) != 1
+        or max(charge_counts, default=-1) != 3
+        or min(charge_attack_percents, default=-1) != 90
+        or max(charge_attack_percents, default=-1) != 150
+    ):
+        raise ValueError(
+            "recovered25 ChargeAttack OPTION grammar drifted outside "
+            "closed 3-ID wait/attack-percent subset"
+        )
     print(
         "PETSKILL_CHARGEATTACK_PARSE|"
         f"unique_ids={len(charge_entries)}|"
