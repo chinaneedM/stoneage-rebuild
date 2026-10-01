@@ -5435,3 +5435,52 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   enemybase slot uses**). Re-audit its fixed-source callback/command/execution
   path and OPTION grammar, hard-probe the exact recovered row and usage
   context, then admit only source-backed target/state/RNG semantics.
+
+
+## Phase 1 recovered PETSKILL_FallGround runtime admission — 2026-10-01
+
+- Fixed-source audit confirms a dedicated `BATTLE_S_FallGround` executor
+  rather than the generic pet physical wrapper.
+- Preservation-bundle hard probe **36871586479 = PASS**:
+  - exactly **1** recovered callback row, skill ID **210**;
+  - **23** positive enemybase slot uses across **23** templates;
+  - FIELD=1, TARGET=6, COST=2, ILLEGAL=3000;
+  - OPTION decodes identically under strict CP950/Big5 and contains the exact
+    `攻%-30` mechanic;
+  - callback attack power is therefore exactly 70% of recovered FIXSTR for the
+    positive integral enemy domain.
+- Runtime admission uses a typed semantic submission and does not guess the
+  guarded numeric FALLRIDE command value.
+- Dedicated physical/fall ordering is represented:
+  - TargetAdjust once;
+  - callback attack-power mutation before physical calculation;
+  - DamageReact blocks fall;
+  - positive post-DamageSub player damage gates `RAND(0,100)`;
+  - zero-resistance cross-descendant threshold is strict `roll > 50`;
+  - nonzero equipment fall resistance remains fail-closed because
+    gavin/iriselia and Bismarck compile profiles diverge;
+  - successful fall unmounts the battle-local ride pet and sets PETFALL.
+- Historical bug preserved: none of the three pinned descendants enables
+  `_FIXPETFALL`; PLAYER unmount therefore tests `CHAR_RIDEPET > 0`.
+  A ride pet in source slot **0** remains mounted even after a successful fall
+  roll.
+- Integration regression repairs:
+  - `ebd497e15d08ddd7bb2b6985310faf03520fe020` moved setup-effect
+    initialization before FallGround validation;
+  - `9e6a4c2687c184b1a0b336aeb5ee06ac970a7331` scoped source-slot
+    requirements to FallGround actions;
+  - `e62c938fe782e24eedad80c575ba034752312f96` restored ordinary ride-pet
+    provenance compatibility outside FallGround rounds.
+- Final repaired validation at `e62c938fe782e24eedad80c575ba034752312f96`:
+  FallGround **36874842586**, battle core **36874842626**, local runtime
+  **36874842540**, DamageToHp **36874842608**, MpDamage **36874842676**,
+  ReHP **36874842571**, AttackMagic coordinator **36874842524**, AttackMagic
+  round **36874842784**, Taiwan-v1 gameplay **36874842624**, and recovered25
+  region/runtime-stack **36874842303** all PASS.
+- Executable recovered pet-skill slot-use coverage is now approximately
+  **2333 / 2486 = 93.8%**. The separate Merge historical-UB uses remain
+  intentionally non-executable.
+- **RECOVERED25_FALLGROUND_RUNTIME_R1 = CLOSED.**
+- Next priority is no longer hand-maintained: the new preservation-bundle
+  callback-pressure probe will select the highest-pressure remaining OPEN
+  callback directly from active recovered25 `petskill + enemybase` data.
