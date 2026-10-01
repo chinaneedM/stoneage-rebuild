@@ -30,6 +30,14 @@ from tools.stoneage_enemy_ai_attack_magic_bridge import (
     EnemyAiAttackMagicSubmission,
     resolve_enemy_ai_attack_magic_submission,
 )
+from tools.stoneage_enemy_ai_rehp_bridge import (
+    EnemyAiReHpSubmission,
+    resolve_enemy_ai_rehp_submission,
+)
+from tools.stoneage_enemy_rehp_model import (
+    CALLBACK_NAME as ENEMY_REHP_CALLBACK,
+    EnemyReHpRolls,
+)
 from tools.stoneage_enemy_ai_petskill_bridge import (
     resolve_enemy_ai_supported_petskill_command,
 )
@@ -345,6 +353,9 @@ class EnemyAiCommonCommandBatch:
     attack_magic_submissions: Mapping[
         str,EnemyAiAttackMagicSubmission
     ] = field(default_factory=dict)
+    enemy_rehp_submissions: Mapping[
+        str,EnemyAiReHpSubmission
+    ] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         object.__setattr__(
@@ -416,6 +427,37 @@ class EnemyAiCommonCommandBatch:
                 raise ValueError(
                     "enemy AI AttackMagic submission participant drift"
                 )
+
+        rehp_submissions={
+            str(key):value
+            for key,value in self.enemy_rehp_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "enemy_rehp_submissions",
+            MappingProxyType(rehp_submissions),
+        )
+        for participant_id,submission in rehp_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI ReHP submission lacks ordering carrier command"
+                )
+            if not isinstance(submission,EnemyAiReHpSubmission):
+                raise TypeError(
+                    f"enemy AI ReHP submission has wrong type for {participant_id}"
+                )
+            if str(submission.participant_id) != participant_id:
+                raise ValueError("enemy AI ReHP submission participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1) != BATTLE_COM_ATTACK
+                or int(carrier.command2) != int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI ReHP ordering carrier must be ATTACK/source-target"
+                )
+        if set(rehp_submissions) & set(magic_submissions):
+            raise ValueError("enemy AI ReHP/AttackMagic submissions overlap")
 
 
 @dataclass
@@ -1046,6 +1088,7 @@ class LocalRuntimeSessionCoordinator:
         allow_earthround_skill: bool = False,
         allow_steal_skill: bool = False,
         allow_attackmagic_skill: bool = False,
+        allow_rehp_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1186,6 +1229,7 @@ class LocalRuntimeSessionCoordinator:
         }
         abduct_contexts={}
         attack_magic_submissions={}
+        enemy_rehp_submissions={}
         for enemy_id in ai_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
                 raise ValueError(
@@ -1241,6 +1285,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_earthround_skill)
                 or bool(allow_steal_skill)
                 or bool(allow_attackmagic_skill)
+                or bool(allow_rehp_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1251,6 +1296,26 @@ class LocalRuntimeSessionCoordinator:
                 skill_ids=tuple(int(x) for x in spawned.template.skill_slot_ids)
                 selected_skill_id=skill_ids[int(decision.skill_slot)]
                 selected_skill=petskill_runtime.skills.get(selected_skill_id)
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == ENEMY_REHP_CALLBACK
+                    and bool(allow_rehp_skill)
+                ):
+                    submission=resolve_enemy_ai_rehp_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                    )
+                    # Modern internal ordering carrier only. It is not a
+                    # historical assertion that ReHP COM1 == ATTACK.
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    enemy_rehp_submissions[enemy_id]=submission
+                    continue
+
                 if (
                     selected_skill is not None
                     and selected_skill.function_name == ATTACK_MAGIC_CALLBACK
@@ -1341,6 +1406,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("Steal")
             if bool(allow_attackmagic_skill):
                 allowed_parts.append("AttackMagic")
+            if bool(allow_rehp_skill):
+                allowed_parts.append("ENEMYSKILL_ReHP")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1352,6 +1419,7 @@ class LocalRuntimeSessionCoordinator:
             setup_effects=setup_effects,
             abduct_contexts=abduct_contexts,
             attack_magic_submissions=attack_magic_submissions,
+            enemy_rehp_submissions=enemy_rehp_submissions,
         )
 
     def build_persistent_enemy_common_commands(
@@ -1525,6 +1593,12 @@ class LocalRuntimeSessionCoordinator:
         attack_magic_retarget_rolls_by_attack_id: Mapping[
             str,Sequence[int]
         ] | None = None,
+        enemy_rehp_rolls_by_attack_id: Mapping[
+            str,EnemyReHpRolls
+        ] | None = None,
+        enemy_rehp_retarget_rolls_by_attack_id: Mapping[
+            str,int | None
+        ] | None = None,
         no_risk: bool = False,
         field_attr: str = "none",
         field_power: int = 0,
@@ -1534,7 +1608,7 @@ class LocalRuntimeSessionCoordinator:
 
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
         explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
-        plus recovered Abduct, AttackMagic, ChargeAttack, ContinuationAttack,
+        plus recovered Abduct, AttackMagic, ENEMYSKILL_ReHP, ChargeAttack, ContinuationAttack,
         EarthRound, GuardBreak, Mighty, NoGuard, PowerBalance, StatusChange and
         Steal.
         Steal mutates only the working persistent player Gold/inventory clone
@@ -1627,8 +1701,40 @@ class LocalRuntimeSessionCoordinator:
             allow_earthround_skill=True,
             allow_steal_skill=True,
             allow_attackmagic_skill=True,
+            allow_rehp_skill=True,
         )
         enemy_commands = enemy_batch.commands
+        rehp_enemy_ids=set(enemy_batch.enemy_rehp_submissions)
+        normalized_rehp_rolls={
+            str(key):value
+            for key,value in (enemy_rehp_rolls_by_attack_id or {}).items()
+        }
+        if set(normalized_rehp_rolls) != rehp_enemy_ids:
+            missing=sorted(rehp_enemy_ids-set(normalized_rehp_rolls))
+            extra=sorted(set(normalized_rehp_rolls)-rehp_enemy_ids)
+            raise ValueError(
+                "enemy ReHP effect RNG mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        for participant_id,rolls in normalized_rehp_rolls.items():
+            if not isinstance(rolls,EnemyReHpRolls):
+                raise TypeError(
+                    f"enemy ReHP RNG has wrong type for {participant_id}"
+                )
+        normalized_rehp_retarget_rolls={
+            str(key):(None if value is None else int(value))
+            for key,value in (
+                enemy_rehp_retarget_rolls_by_attack_id or {}
+            ).items()
+        }
+        if set(normalized_rehp_retarget_rolls) != rehp_enemy_ids:
+            missing=sorted(rehp_enemy_ids-set(normalized_rehp_retarget_rolls))
+            extra=sorted(set(normalized_rehp_retarget_rolls)-rehp_enemy_ids)
+            raise ValueError(
+                "enemy ReHP TargetAdjust RNG mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+
         attack_magic_enemy_ids={
             str(participant_id)
             for participant_id,command in enemy_commands.items()
@@ -1925,6 +2031,13 @@ class LocalRuntimeSessionCoordinator:
             attack_magic_overlay=context.attack_magic_overlay,
             attack_magic_retarget_rolls_by_participant_id=(
                 normalized_attack_magic_retarget_rolls
+            ),
+            enemy_rehp_submissions_by_participant_id=(
+                enemy_batch.enemy_rehp_submissions
+            ),
+            enemy_rehp_rolls_by_participant_id=normalized_rehp_rolls,
+            enemy_rehp_retarget_rolls_by_participant_id=(
+                normalized_rehp_retarget_rolls
             ),
             defense_profile=str(defense_profile),
             no_risk=bool(no_risk),

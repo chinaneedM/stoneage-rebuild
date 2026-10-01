@@ -26,6 +26,8 @@ from typing import Mapping, Sequence
 from tools.stoneage_attack_magic_action_model import EnemyAttackMagicActionRolls
 from tools.stoneage_attack_magic_state_model import AttackMagicRoundOverlay
 from tools.stoneage_enemy_ai_attack_magic_bridge import EnemyAiAttackMagicSubmission
+from tools.stoneage_enemy_ai_rehp_bridge import EnemyAiReHpSubmission
+from tools.stoneage_enemy_rehp_model import EnemyReHpRolls
 from tools.stoneage_recovered25_attack_magic_runtime import Recovered25AttackMagicRuntime
 
 from tools.stoneage_battle_core_model import (
@@ -1242,6 +1244,15 @@ def resolve_persistent_ordinary_round(
     attack_magic_retarget_rolls_by_participant_id: Mapping[
         str,Sequence[int]
     ] | None = None,
+    enemy_rehp_submissions_by_participant_id: Mapping[
+        str,EnemyAiReHpSubmission
+    ] | None = None,
+    enemy_rehp_rolls_by_participant_id: Mapping[
+        str,EnemyReHpRolls
+    ] | None = None,
+    enemy_rehp_retarget_rolls_by_participant_id: Mapping[
+        str,int | None
+    ] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
     tie_break_order: Sequence[str] | None = None,
@@ -1384,6 +1395,15 @@ def resolve_persistent_ordinary_round(
         attack_magic_overlay=attack_magic_overlay,
         attack_magic_retarget_rolls_by_participant_id=(
             attack_magic_retarget_rolls_by_participant_id
+        ),
+        enemy_rehp_submissions_by_participant_id=(
+            enemy_rehp_submissions_by_participant_id
+        ),
+        enemy_rehp_rolls_by_participant_id=(
+            enemy_rehp_rolls_by_participant_id
+        ),
+        enemy_rehp_retarget_rolls_by_participant_id=(
+            enemy_rehp_retarget_rolls_by_participant_id
         ),
         field_attr=field_attr,
         field_power=field_power,

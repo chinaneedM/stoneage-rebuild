@@ -30,6 +30,13 @@ from tools.stoneage_attack_magic_state_model import (
 from tools.stoneage_enemy_ai_attack_magic_bridge import (
     EnemyAiAttackMagicSubmission,
 )
+from tools.stoneage_enemy_ai_rehp_bridge import EnemyAiReHpSubmission
+from tools.stoneage_enemy_rehp_model import (
+    EnemyReHpAllyState,
+    EnemyReHpResolution,
+    EnemyReHpRolls,
+    resolve_enemy_rehp_effect,
+)
 from tools.stoneage_recovered25_attack_magic_runtime import (
     Recovered25AttackMagicRuntime,
 )
@@ -844,6 +851,7 @@ class OrdinaryRoundEvent:
     ultimate_flag_target_slot: int | None = None
     ultimate_flag_kind: int = 0
     attack_magic_target_resolution: AttackMagicTargetResolution | None = None
+    enemy_rehp_resolution: EnemyReHpResolution | None = None
 
 
 @dataclass(frozen=True)
@@ -3235,6 +3243,15 @@ def resolve_ordinary_round(
     attack_magic_retarget_rolls_by_participant_id: Mapping[
         str,Sequence[int]
     ] | None = None,
+    enemy_rehp_submissions_by_participant_id: Mapping[
+        str,EnemyAiReHpSubmission
+    ] | None = None,
+    enemy_rehp_rolls_by_participant_id: Mapping[
+        str,EnemyReHpRolls
+    ] | None = None,
+    enemy_rehp_retarget_rolls_by_participant_id: Mapping[
+        str,int | None
+    ] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
@@ -3345,6 +3362,80 @@ def resolve_ordinary_round(
             f"{unknown_attack_magic_retarget_ids}"
         )
     consumed_attack_magic_roll_ids=set()
+
+    # ReHP uses a typed semantic submission because the recovered25 guarded
+    # numeric COM1 is unproven. Its BattleCommand is ordinary ATTACK only as
+    # an internal initiative/ordering carrier; execution is intercepted below.
+    enemy_rehp_submissions={
+        str(participant_id):submission
+        for participant_id,submission in (
+            enemy_rehp_submissions_by_participant_id or {}
+        ).items()
+    }
+    enemy_rehp_actor_ids=set(enemy_rehp_submissions)
+    unknown_rehp_ids=sorted(enemy_rehp_actor_ids-set(slot_by_id))
+    if unknown_rehp_ids:
+        raise ValueError(
+            f"enemy ReHP submissions reference unknown actors: {unknown_rehp_ids}"
+        )
+    if enemy_rehp_actor_ids & attack_magic_actor_ids:
+        raise ValueError("enemy ReHP and AttackMagic submissions overlap")
+    prepared_entry_by_id={
+        str(entry.participant.participant_id):entry
+        for entry in prepared.ordered_entries
+    }
+    for participant_id,submission in enemy_rehp_submissions.items():
+        if not isinstance(submission,EnemyAiReHpSubmission):
+            raise TypeError(
+                f"enemy ReHP submission for {participant_id} has wrong type"
+            )
+        if str(submission.participant_id) != participant_id:
+            raise ValueError("enemy ReHP submission participant drift")
+        entry=prepared_entry_by_id[participant_id]
+        if entry.participant.side != "enemy" or entry.participant.kind != "enemy":
+            raise ValueError("reconstructed ReHP currently admits enemy actors only")
+        if (
+            int(entry.command.command1) != BATTLE_COM_ATTACK
+            or int(entry.command.command2) != int(submission.source_target_slot)
+        ):
+            raise ValueError(
+                "enemy ReHP ordering carrier must be ATTACK with source target"
+            )
+
+    enemy_rehp_rolls={
+        str(participant_id):rolls
+        for participant_id,rolls in (
+            enemy_rehp_rolls_by_participant_id or {}
+        ).items()
+    }
+    if set(enemy_rehp_rolls) != enemy_rehp_actor_ids:
+        missing=sorted(enemy_rehp_actor_ids-set(enemy_rehp_rolls))
+        extra=sorted(set(enemy_rehp_rolls)-enemy_rehp_actor_ids)
+        raise ValueError(
+            "enemy ReHP effect RNG actors mismatch; "
+            f"missing={missing}, extra={extra}"
+        )
+    for participant_id,rolls in enemy_rehp_rolls.items():
+        if not isinstance(rolls,EnemyReHpRolls):
+            raise TypeError(
+                f"enemy ReHP effect RNG for {participant_id} has wrong type"
+            )
+    enemy_rehp_retarget_rolls={
+        str(participant_id):(
+            None if value is None else int(value)
+        )
+        for participant_id,value in (
+            enemy_rehp_retarget_rolls_by_participant_id or {}
+        ).items()
+    }
+    if set(enemy_rehp_retarget_rolls) != enemy_rehp_actor_ids:
+        missing=sorted(enemy_rehp_actor_ids-set(enemy_rehp_retarget_rolls))
+        extra=sorted(set(enemy_rehp_retarget_rolls)-enemy_rehp_actor_ids)
+        raise ValueError(
+            "enemy ReHP TargetAdjust RNG actors mismatch; "
+            f"missing={missing}, extra={extra}"
+        )
+    attempted_enemy_rehp_actor_ids=set()
 
     guarding = {
         slot_by_id[entry.participant.participant_id]
@@ -5118,9 +5209,157 @@ def resolve_ordinary_round(
                 )
             continue
 
+        rehp_fallback_active=False
+        rehp_fallback_original_target=None
+        rehp_fallback_retargeted=False
+        rehp_actor_id=str(participant_id)
+        if (
+            rehp_actor_id in enemy_rehp_submissions
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            submission=enemy_rehp_submissions[rehp_actor_id]
+            if (
+                int(command.command1) != BATTLE_COM_ATTACK
+                or int(command.command2) != int(submission.source_target_slot)
+            ):
+                raise ValueError("enemy ReHP ordering carrier drift before execution")
+
+            original_rehp_target=int(submission.source_target_slot)
+            adjusted_target=original_rehp_target
+            rehp_retargeted=False
+            adjusted_alive=(
+                adjusted_target in by_slot
+                and adjusted_target not in exited_slots
+                and int(hp_by_slot.get(adjusted_target,0)) > 0
+            )
+            if adjusted_alive and _slot_side(adjusted_target) == _slot_side(slot):
+                raise ValueError("enemy ReHP source target crossed battle sides")
+
+            target_adjust_roll=enemy_rehp_retarget_rolls[rehp_actor_id]
+            if adjusted_alive:
+                if target_adjust_roll is not None:
+                    raise ValueError(
+                        "enemy ReHP supplied unused TargetAdjust RNG for live target"
+                    )
+            else:
+                adjusted_target=_retarget_slot(
+                    int(slot),
+                    by_slot,
+                    hp_by_slot,
+                    target_adjust_roll,
+                    excluded_slots=exited_slots,
+                )
+                rehp_retargeted=True
+
+            effect_rolls=enemy_rehp_rolls[rehp_actor_id]
+            attempted_enemy_rehp_actor_ids.add(rehp_actor_id)
+            if adjusted_target is None:
+                if not effect_rolls.is_empty:
+                    raise ValueError(
+                        "enemy ReHP effect RNG supplied after TargetAdjust no-target"
+                    )
+                if rehp_actor_id in attack_rolls:
+                    raise ValueError(
+                        "enemy ReHP no-target path supplied unused fallback attack RNG"
+                    )
+                events.append(
+                    OrdinaryRoundEvent(
+                        rehp_actor_id,
+                        int(slot),
+                        BATTLE_COM_ATTACK,
+                        int(entry.action_value),
+                        "enemy_rehp_no_target",
+                        original_target_slot=original_rehp_target,
+                        retargeted=rehp_retargeted,
+                    )
+                )
+                continue
+
+            allies={}
+            for ally_slot in range(10,20):
+                if ally_slot not in by_slot or ally_slot in exited_slots:
+                    continue
+                ally=by_slot[ally_slot]
+                if ally.side != "enemy":
+                    raise ValueError("enemy ReHP ally scan crossed battle sides")
+                allies[ally_slot]=EnemyReHpAllyState(
+                    participant_id=str(ally.participant_id),
+                    slot=ally_slot,
+                    hp=int(hp_by_slot.get(ally_slot,0)),
+                    max_hp=int(ally.max_hp),
+                )
+
+            rehp_resolution=resolve_enemy_rehp_effect(
+                adjusted_attack_target_slot=int(adjusted_target),
+                allies_by_slot=allies,
+                rolls=effect_rolls,
+                caster_mode_ready=True,
+            )
+            if rehp_resolution.success:
+                if rehp_actor_id in attack_rolls:
+                    raise ValueError(
+                        "successful enemy ReHP supplied unused fallback attack RNG"
+                    )
+                if rehp_resolution.healed_slot is None:
+                    raise ValueError("successful enemy ReHP lacks healed slot")
+                healed_slot=int(rehp_resolution.healed_slot)
+                healed=by_slot[healed_slot]
+                healed_id=str(healed.participant_id)
+                hp_by_slot[healed_slot]=int(rehp_resolution.hp_after)
+                hp_by_id[healed_id]=int(rehp_resolution.hp_after)
+                events.append(
+                    OrdinaryRoundEvent(
+                        rehp_actor_id,
+                        int(slot),
+                        BATTLE_COM_ATTACK,
+                        int(entry.action_value),
+                        "enemy_rehp",
+                        original_target_slot=original_rehp_target,
+                        resolved_target_slot=healed_slot,
+                        retargeted=rehp_retargeted,
+                        target_hp_before=int(rehp_resolution.hp_before),
+                        target_hp_after=int(rehp_resolution.hp_after),
+                        enemy_rehp_resolution=rehp_resolution,
+                    )
+                )
+                continue
+
+            if not rehp_resolution.fallback_to_attack:
+                raise ValueError("failed enemy ReHP did not request physical fallback")
+            events.append(
+                OrdinaryRoundEvent(
+                    rehp_actor_id,
+                    int(slot),
+                    BATTLE_COM_ATTACK,
+                    int(entry.action_value),
+                    "enemy_rehp_fallback",
+                    original_target_slot=original_rehp_target,
+                    resolved_target_slot=int(adjusted_target),
+                    retargeted=rehp_retargeted,
+                    enemy_rehp_resolution=rehp_resolution,
+                )
+            )
+            rehp_fallback_active=True
+            rehp_fallback_original_target=original_rehp_target
+            rehp_fallback_retargeted=rehp_retargeted
+            command=BattleCommand(
+                BATTLE_COM_ATTACK,
+                command2=int(adjusted_target),
+                command3=command.command3,
+                input_complete=command.input_complete,
+            )
+            command_by_slot[slot]=command
+
         rolls = attack_rolls.get(participant_id)
         if rolls is None:
             raise KeyError(f"missing ordinary attack rolls for {participant_id}")
+        if rehp_fallback_active and rolls.retarget_roll is not None:
+            raise ValueError(
+                "enemy ReHP fallback attack must not consume a second retarget RNG"
+            )
         attack_command_code=int(command.command1)
         if attack_command_code in {
             BATTLE_COM_S_CHARGE_OK,
@@ -5143,9 +5382,14 @@ def resolve_ordinary_round(
                 input_complete=command.input_complete,
             )
 
-        original_target = int(command.command2)
-        target = original_target
-        retargeted = False
+        if rehp_fallback_active:
+            original_target=int(rehp_fallback_original_target)
+            target=int(command.command2)
+            retargeted=bool(rehp_fallback_retargeted)
+        else:
+            original_target=int(command.command2)
+            target=original_target
+            retargeted=False
 
         target_alive = (
             target in by_slot
@@ -5770,6 +6014,18 @@ def resolve_ordinary_round(
                 participant_id,
                 slot,
                 counter_target_slot,
+            )
+
+    for participant_id in sorted(
+        enemy_rehp_actor_ids-attempted_enemy_rehp_actor_ids
+    ):
+        if (
+            not enemy_rehp_rolls[participant_id].is_empty
+            or enemy_rehp_retarget_rolls[participant_id] is not None
+        ):
+            raise ValueError(
+                "enemy ReHP RNG supplied for status-suppressed semantic action: "
+                + participant_id
             )
 
     unused_attack_magic_roll_ids=sorted(
