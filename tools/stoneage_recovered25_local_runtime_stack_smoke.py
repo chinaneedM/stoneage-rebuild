@@ -676,6 +676,55 @@ def main() -> None:
         f"dodge_marker_ids={mighty_dodge}|"
         f"numeric_parse_ids={mighty_numeric_parse}"
     )
+    guardian_entries = tuple(
+        entry
+        for entry in referenced_skill_entries
+        if entry.function_name == "PETSKILL_Guardian"
+    )
+    guardian_attack_marker=0
+    guardian_defense_marker=0
+    guardian_defensive_com=0
+    guardian_attack_values=[]
+    guardian_defense_values=[]
+    for entry in guardian_entries:
+        option_text=entry.unambiguous_cp950_big5_option()
+        attack=re.search(
+            r"攻%\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+))",
+            option_text,
+        )
+        defense=re.search(
+            r"防%\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+))",
+            option_text,
+        )
+        guardian_attack_marker += int("攻%" in option_text)
+        guardian_defense_marker += int("防%" in option_text)
+        marker_index=option_text.find("COM:")
+        guardian_defensive_com += int(
+            marker_index >= 0
+            and "防御" in option_text[marker_index+4:]
+        )
+        if attack is not None:
+            guardian_attack_values.append(float(attack.group(1)))
+        if defense is not None:
+            guardian_defense_values.append(float(defense.group(1)))
+    if len(guardian_entries) != 1:
+        raise ValueError(
+            "recovered25 Guardian callback population drifted from one ID"
+        )
+    print(
+        "PETSKILL_GUARDIAN_PARSE|"
+        f"unique_ids={len(guardian_entries)}|"
+        f"attack_marker_ids={guardian_attack_marker}|"
+        f"defense_marker_ids={guardian_defense_marker}|"
+        f"defensive_com_ids={guardian_defensive_com}|"
+        f"attack_numeric_ids={len(guardian_attack_values)}|"
+        f"defense_numeric_ids={len(guardian_defense_values)}|"
+        f"attack_min={min(guardian_attack_values) if guardian_attack_values else 'NONE'}|"
+        f"attack_max={max(guardian_attack_values) if guardian_attack_values else 'NONE'}|"
+        f"defense_min={min(guardian_defense_values) if guardian_defense_values else 'NONE'}|"
+        f"defense_max={max(guardian_defense_values) if guardian_defense_values else 'NONE'}"
+    )
+
     steal_entries = tuple(
         entry
         for entry in referenced_skill_entries
