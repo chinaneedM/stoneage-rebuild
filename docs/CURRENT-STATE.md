@@ -5484,3 +5484,56 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Next priority is no longer hand-maintained: the new preservation-bundle
   callback-pressure probe will select the highest-pressure remaining OPEN
   callback directly from active recovered25 `petskill + enemybase` data.
+
+
+## Phase 1 recovered PETSKILL_BattleTearDamage runtime admission — 2026-10-01
+
+- The preservation-bundle callback-pressure ranking selected
+  `PETSKILL_BattleTearDamage` as the highest-pressure remaining OPEN family:
+  **2 IDs / 19 positive enemybase slot uses / 19 templates**.
+- Fixed-source audit across pinned gavin/iriselia/Bismarck descendants
+  converges on:
+  - callback rejects PLAYER actors;
+  - symbolic `BATTLE_COM_S_PETSKILLTEAR` plus submitted target;
+  - callback-time WORKATTACKPOWER = `int(FIXSTR*0.9)`;
+  - callback-time WORKDEFENCEPOWER = `int(FIXTOUGH*0.8)`;
+  - active `_PETSKILL_OPTIMUM` stores the skill array/ID in LOW(COM3);
+  - callback itself does not parse OPTION.
+- Preservation-bundle hard probe **36876535217 = PASS** closes the exact rows:
+  - ID **615**: FIELD=1, TARGET=1, COST=2, ILLEGAL=10000,
+    two-byte ASCII OPTION -> **20%** wound ratio;
+  - ID **616**: same metadata -> **50%** wound ratio.
+- Runtime admission uses a typed semantic submission and does not guess the
+  guarded numeric COM1.
+- Exact TEAR ordering now represented:
+  - one TargetAdjust;
+  - callback 0.9 attack / 0.8 defense work-state mutation before execution;
+  - ordinary AttackSeq dodge/Guardian/critical/guard/minimum-damage behavior;
+  - pre-existing DamageReact suppresses only the TEAR wound mutation;
+  - wound basis is the original adjusted target's missing HP plus a mounted
+    player's ride-pet missing HP;
+  - OPTION is applied as source `atoi` percent with float multiplication and
+    integer truncation;
+  - positive wound amount is added to physical damage;
+  - wound amount <=0 clears the **entire** damage value;
+  - DamageSub remains bound to the original adjusted target even if Guardian
+    participated in AttackSeq.
+- Cross-descendant same-side behavior remains compile-profile specific because
+  gavin/iriselia enable `_PREVENT_TEAMATTACK` and pinned Bismarck does not.
+  The admitted recovered enemy->player target domain is opposite-side and is
+  therefore convergent.
+- Validation at
+  `f2c166540b11a8f722e82fbec27e57622f2a7ec1`:
+  BattleTear **36877818507** (**73 tests**), battle core **36877818319**,
+  local runtime **36877818261**, stable pet-skill core **36877818294**,
+  runtime golden **36877818581**, Taiwan-v1 **36877818853**, FallGround
+  **36877819026**, DamageToHp **36877818298**, MpDamage **36877818333**,
+  ReHP **36877818356**, AttackMagic coordinator **36877818526**, AttackMagic
+  round **36877818555**, and AttackMagic state adapter **36877819266** all
+  PASS.
+- Executable recovered pet-skill slot-use coverage is now approximately
+  **2352 / 2486 = 94.6%**. Merge remains separately classified historical UB.
+- **RECOVERED25_BATTLETEAR_RUNTIME_R1 = CLOSED.**
+- Next priority will be selected by rerunning the preservation-bundle
+  callback-pressure probe after adding BattleTear to its CLOSED set; no
+  hand-maintained callback ordering is assumed.

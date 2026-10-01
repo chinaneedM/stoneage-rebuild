@@ -25,6 +25,7 @@ CLOSED_RUNTIME_CALLBACKS=frozenset(
         "PETSKILL_DamageToHp",
         "PETSKILL_MpDamage",
         "PETSKILL_FallGround",
+        "PETSKILL_BattleTearDamage",
     }
 )
 
