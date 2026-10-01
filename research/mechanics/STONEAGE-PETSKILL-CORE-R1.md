@@ -530,6 +530,31 @@ a successful ENEMY target receives `BATTLE_Exit`. The attacker then exits
 battle whether that valid roll succeeded or failed. A PLAYER target returns
 before the attempt and therefore does **not** trigger attacker exit.
 
+### Recovered25 execution closure
+
+Recovered25 closes Abduct for enemy AI with **2 referenced IDs / 14 positive
+enemybase skill-slot uses**. Both OPTION rows are ASCII. The hard bundle probe
+finds exactly one leading integer, exactly one positive `atoi(OPTION)`, and
+the exact threshold population **{0,80}**; runtime admission rejects any
+population drift.
+
+The executable command is **`BATTLE_COM_S_ABDUCT=1012`**. The stable round
+bridge preserves the skill ID in LOW(COM3), initializes the inactive HIGH half
+to zero for recovered enemy submission, and performs the fixed
+`BATTLE_TargetAdjust`-shaped target check before the Abduct transition.
+
+Battle participants now preserve recovered FIXAI where available. A valid
+non-player attempt consumes explicit `RAND(1,100)`; PLAYER targets consume no
+Abduct success roll. Non-death Abduct exits are persisted separately from
+capture/escape removal and from death/ultimate exit: the affected pet/enemy
+identity and HP remain in the battle session, but that entry is excluded from
+later rounds and produces no kill EXP/drop profit.
+
+The end-to-end recovered path is therefore:
+`enemy wa[n] -> PETSKILL_Abduct -> S_ABDUCT -> explicit target/RNG -> persistent
+battle-entry exit`. Special battles carrying a non-null WinFunc remain outside
+the admitted ordinary local-group seam rather than being synthesized.
+
 This supersedes the earlier R1 text that treated ABDUCTII as an inactive later
 extension.
 

@@ -4946,3 +4946,47 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - A valid non-player attempt makes the attacker exit whether the roll succeeds or fails; successful PET/ENEMY targets also exit through their source-specific path.
 - Runtime admission remains OPEN until recovered25 Abduct OPTION/AiPer values and persistent target/attacker exit semantics are bundle-backed and executable.
 - **PETSKILL_ABDUCT_ACTIVE_ABDUCTII_REFERENCE_R1 = CLOSED_REFERENCE_MODEL_ONLY.**
+
+## Phase 1 recovered Abduct enemy-AI execution — 2026-10-01
+
+- `PETSKILL_Abduct` is now closed for recovered25 enemy AI:
+  - **2** referenced Abduct skill IDs;
+  - **14** positive enemybase skill-slot uses;
+  - both OPTION rows are ASCII;
+  - the bundle-backed hard probe proves exactly **1/2** rows with a leading integer, exactly **1/2** with a positive `atoi(OPTION)`, and the exact threshold set **{0,80}**.
+- Fixed command identity and execution were re-audited before runtime admission:
+  - the pinned `battle.h` sequence is `S_EARTHROUND0=1009`, `S_EARTHROUND1=1010`, `S_LOSTESCAPE=1011`, **`S_ABDUCT=1012`**, `S_STEAL=1013`, `S_NOGUARD=1014`;
+  - `battle.c` runs `BATTLE_TargetAdjust` before `BATTLE_Abduct`;
+  - the handler preserves HIGH(COM3) and stores the recovered pet-skill array/ID in LOW(COM3).
+- The active `_BATTLE_ABDUCTII` probability branch is executable rather than reference-only:
+  - PLAYER defender returns before an attempt and consumes no Abduct success RNG;
+  - PET defender with positive AiPer uses **200** when `FIXAI < AiPer`, otherwise **0**;
+  - non-PET defenders or non-positive AiPer use the fixed level formula with minimum **50**;
+  - the reconstructed ordinary local group seam pins `has_win_func=False`; special WinFunc battles remain outside this admission rather than being guessed.
+- Recovered FIXAI is now preserved on battle participants:
+  - enemy FIXAI comes from the recovered enemy birth projection;
+  - allied-pet FIXAI comes from the persistent pet `ai` field when present.
+- Abduct has a dedicated explicit-RNG round path:
+  - dead/invalid submitted targets use the already reconstructed `BATTLE_TargetAdjust`-shaped retarget seam;
+  - valid non-player attempts require explicit `RAND(1,100)`;
+  - successful PET/ENEMY targets exit battle;
+  - a valid PET/ENEMY attacker exits whether the roll succeeds or fails;
+  - HP is unchanged by Abduct itself.
+- Persistent battle state now distinguishes **non-death battle-entry exit** from physical removal:
+  - Abduct-exited pets/enemies remain in the session identity graph with HP/state intact;
+  - they are excluded from later action/target/living counts;
+  - they do not produce kill EXP/drop profit;
+  - CAPTURE and ordinary enemy ESCAPE retain their existing physical-removal semantics.
+- The recovered enemy pet-skill bridge is fail-closed:
+  - runtime admission requires exactly the hard-probed two Abduct callback IDs;
+  - the OPTION population must remain ASCII with threshold values exactly **0 and 80**;
+  - LOW(COM3) must equal the recovered skill ID under the active `_PETSKILL_OPTIMUM` table identity.
+- End-to-end regression proves recovered enemy AI `wa[n]` selection -> Abduct ID with AiPer=80 -> player pet with FIXAI=79 -> probability 200 -> successful target + attacker battle exits, while both identities/HP remain and no kill EXP is awarded.
+- Validation:
+  - stable Abduct core / bridge commit `24723cdba7d9ab5abdd43aca9e0c96674a17f3a3`: battle core **36829173067 = PASS**, local runtime coordinator **36829173106 = PASS**, stable pet-skill core **36829173108 = PASS**, Taiwan v1.0 gameplay **36829173129 = PASS**, full recovered25 payload/runtime-stack **36829173114 = PASS**;
+  - persistent non-death exit seam `e16c478e08a3c52abf35adbed2c6357b8d5b95d2`: battle core **36829403059 = PASS**, local runtime coordinator **36829402550 = PASS**, Taiwan v1.0 gameplay **36829402642 = PASS**;
+  - recovered Abduct AI bridge `f993725a011ee03d8af1befb616b4ec54b132f1f`: local runtime coordinator **36829720935 = PASS**;
+  - end-to-end runtime commit `09991ef179066fdd69ae5d09c7e41c759a5f504c`: local runtime coordinator **36829954993 = PASS**, runtime golden contract **36829954981 = PASS**; its duplicate full recovered25 run **36829954966** remains in progress at this state-writing point, while the same hard bundle probe already passed in **36829173114**.
+- Executable recovered stable-common pet-skill slot-use coverage is now **2088 / 2486 = ~84.0%** when counting NormalAttack + NormalGuard + StatusChange + PowerBalance + Mighty + GuardBreak + ChargeAttack + NoGuard + ContinuationAttack + Abduct.
+- **LOCAL_RUNTIME_ENEMY_AI_ABDUCT_R1 = CLOSED.**
+- Next priority: `PETSKILL_EarthRound` (**14 positive slot uses**). Its remaining gap is structurally different from Abduct: reconstruct and persist the two-phase `S_EARTHROUND1 -> S_EARTHROUND0` command transition, preserve the fixed stale-full-COM3 hazard when the optional attack-percent marker is absent, and apply `1 + 0.01 * COM3` only on the phase-2 ordinary physical attack before recovered enemy-AI admission.
