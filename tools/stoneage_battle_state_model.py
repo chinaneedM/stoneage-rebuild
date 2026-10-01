@@ -53,6 +53,7 @@ from tools.stoneage_battle_round_model import (
     OrdinaryCaptureRolls,
     OrdinaryAbductContext,
     OrdinaryAbductRolls,
+    OrdinaryStealRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
     ResolvedOrdinaryRound,
@@ -1187,6 +1188,11 @@ def resolve_persistent_ordinary_round(
     capture_rolls: Mapping[str, OrdinaryCaptureRolls] | None = None,
     abduct_contexts: Mapping[str, OrdinaryAbductContext] | None = None,
     abduct_rolls: Mapping[str, OrdinaryAbductRolls] | None = None,
+    steal_rolls: Mapping[str, OrdinaryStealRolls] | None = None,
+    steal_player_gold_by_participant_id: Mapping[str,int] | None = None,
+    steal_player_item_slots_by_participant_id: Mapping[
+        str,Sequence[int]
+    ] | None = None,
     escape_contexts: Mapping[str, OrdinaryEscapeContext] | None = None,
     escape_rolls: Mapping[str, OrdinaryEscapeRolls] | None = None,
     counter_rolls_by_attack_id: Mapping[
@@ -1293,6 +1299,13 @@ def resolve_persistent_ordinary_round(
         capture_rolls=capture_rolls,
         abduct_contexts=abduct_contexts,
         abduct_rolls=abduct_rolls,
+        steal_rolls=steal_rolls,
+        steal_player_gold_by_participant_id=(
+            steal_player_gold_by_participant_id
+        ),
+        steal_player_item_slots_by_participant_id=(
+            steal_player_item_slots_by_participant_id
+        ),
         escape_contexts=normalized_escape_contexts,
         escape_rolls=escape_rolls,
         counter_rolls_by_attack_id=counter_rolls_by_attack_id,
