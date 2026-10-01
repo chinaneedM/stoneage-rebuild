@@ -205,7 +205,10 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertTrue(result.counter_continuation_allowed)
 
     def test_continuation_baseline_retargets_each_later_hit_from_dead_original(self):
-        original=actor("original","player","player",hp=1,defense=0)
+        # Keep this regression scoped to per-hit retarget. A player death can
+        # invoke BATTLE_UltimateExtra(player), which additionally requires a
+        # unique default/active pet and would conflate two separate seams.
+        original=actor("original","player","pet",hp=1,defense=0)
         p1=actor("p1","player","pet",hp=1000,defense=0)
         p2=actor("p2","player","pet",hp=1000,defense=0)
         enemy=actor("enemy","enemy","enemy",hp=1000,attack=100)
