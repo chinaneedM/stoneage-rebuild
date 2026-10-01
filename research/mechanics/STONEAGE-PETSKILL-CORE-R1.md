@@ -637,7 +637,48 @@ ITEM_mergeItem_merge(owner, pet_id, data, pet_index, 0)
 
 and returns that result.
 
-This stable descendant callback must not be conflated automatically with later macro-gated pet-fusion/egg systems; historical introduction still requires earlier evidence.
+### Recovered enemy-AI hazard
+
+The recovered25 enemybase references cannot be treated as a normal battle command.
+
+The fixed common enemy `BATTLE_ai_normal` `wa[n]` path calls:
+
+```
+PETSKILL_Use(enemy, skill_slot, target, NULL)
+```
+
+directly. It does **not** filter on `PETSKILL_FIELD`. The active
+`_PETSKILL_CHECKTYPE` guard also applies only to `CHAR_TYPEPET`, not
+`CHAR_TYPEENEMY`.
+
+Ordinary enemies are initialized with all work integers at zero and do not
+replace `CHAR_WORKPLAYERINDEX`, so Merge reads global character index **0**
+as its nominal owner.
+
+With `data == NULL`, the delimiter helper is NULL-safe but yields at most one
+empty/zero material token. Therefore `ITEM_mergeItem_merge` reaches
+`cnt <= 1` and never enters the real merge transaction.
+
+The two earlier fixed descendants (gavinlinasd and iriselia) then fall off the
+end of this non-void `int` function without returning a value. The resulting
+garbage return controls whether `BATTLE_ai_normal` leaves the enemy in
+`C_WAIT` or promotes it to `C_OK + COM_NONE`; that distinction is observable
+because `BATTLE_Battling` skips actors not in `C_OK`, including their later
+per-actor status sequence.
+
+Bismarck explicitly repairs the function by moving/adding a final
+`return result;` outside `if (cnt > 1)`, making this same NULL-data path
+deterministically FALSE. That is treated as descendant bug-fix evidence, not
+retroactive proof that the earlier binaries had deterministic FALSE semantics.
+
+Accordingly, recovered enemy Merge remains a **historical undefined-behavior
+boundary** and is intentionally fail-closed in the modern runtime. We do not
+replay global-character-index-0 side effects or invent one ABI/compiler's
+garbage return value.
+
+This stable descendant callback must not be conflated automatically with later
+macro-gated pet-fusion/egg systems; historical introduction still requires
+earlier evidence.
 
 ## NoGuard
 
