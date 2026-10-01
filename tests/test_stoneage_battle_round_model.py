@@ -622,7 +622,7 @@ class BattleRoundModelTests(unittest.TestCase):
         prepared=prepare_battle_round(
             (player,enemy),
             {
-                "player":BattleCommand(BATTLE_COM_WAIT),
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
                 "enemy":command,
             },
             {"player":0,"enemy":0},
@@ -639,7 +639,13 @@ class BattleRoundModelTests(unittest.TestCase):
                 "player":profile(dex=200),
                 "enemy":profile(dex=100),
             },
-            attack_rolls={},
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+            },
             continuation_rolls_by_attack_id={
                 "enemy":ContinuationAttackRolls((hit,hit)),
             },
