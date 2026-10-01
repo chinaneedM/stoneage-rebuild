@@ -24,7 +24,7 @@ PROFILE_RECOVERED25 = "RECOVERED25_EXPLICIT_ITEM"
 
 
 def _parse_int_from(text, start):
-    match = re.match(r"\\s*([+-]?\\d+)", text[int(start):])
+    match = re.match(r"\s*([+-]?\d+)", text[int(start):])
     return None if match is None else int(match.group(1), 10)
 
 
