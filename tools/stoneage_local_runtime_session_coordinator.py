@@ -986,6 +986,7 @@ class LocalRuntimeSessionCoordinator:
         allow_powerbalance_skill: bool = False,
         allow_mighty_skill: bool = False,
         allow_guardbreak_skill: bool = False,
+        allow_guardian_skill: bool = False,
         allow_continuationattack_skill: bool = False,
         allow_chargeattack_skill: bool = False,
         allow_noguard_skill: bool = False,
@@ -1178,6 +1179,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_powerbalance_skill)
                 or bool(allow_mighty_skill)
                 or bool(allow_guardbreak_skill)
+                or bool(allow_guardian_skill)
                 or bool(allow_continuationattack_skill)
                 or bool(allow_chargeattack_skill)
                 or bool(allow_noguard_skill)
@@ -1196,10 +1198,12 @@ class LocalRuntimeSessionCoordinator:
                     skill_slot=int(decision.skill_slot),
                     target_slot=int(decision.target_slot),
                     petskill_runtime=petskill_runtime,
+                    actor_slot=int(state.slots[enemy_id]),
                     allow_status_change=bool(allow_statuschange_skill),
                     allow_power_balance=bool(allow_powerbalance_skill),
                     allow_mighty=bool(allow_mighty_skill),
                     allow_guard_break=bool(allow_guardbreak_skill),
+                    allow_guardian=bool(allow_guardian_skill),
                     allow_continuation_attack=bool(
                         allow_continuationattack_skill
                     ),
@@ -1235,6 +1239,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("Mighty")
             if bool(allow_guardbreak_skill):
                 allowed_parts.append("GuardBreak")
+            if bool(allow_guardian_skill):
+                allowed_parts.append("Guardian")
             if bool(allow_continuationattack_skill):
                 allowed_parts.append("ContinuationAttack")
             if bool(allow_chargeattack_skill):
@@ -1280,6 +1286,7 @@ class LocalRuntimeSessionCoordinator:
             allow_powerbalance_skill=False,
             allow_mighty_skill=False,
             allow_guardbreak_skill=False,
+            allow_guardian_skill=False,
             allow_chargeattack_skill=False,
             allow_noguard_skill=False,
             allow_abduct_skill=False,
@@ -1515,6 +1522,7 @@ class LocalRuntimeSessionCoordinator:
             allow_powerbalance_skill=True,
             allow_mighty_skill=True,
             allow_guardbreak_skill=True,
+            allow_guardian_skill=True,
             allow_continuationattack_skill=True,
             allow_chargeattack_skill=True,
             allow_noguard_skill=True,
