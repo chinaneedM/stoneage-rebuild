@@ -46,12 +46,18 @@ def _compact(text: str) -> str:
 
 
 def _function(text: str, signature: str) -> str:
-    start = text.find(signature)
-    if start < 0:
-        raise ValueError(f"missing function signature: {signature}")
-    brace = text.find("{", start)
-    if brace < 0:
-        raise ValueError(f"missing function body: {signature}")
+    """Return the first definition, skipping earlier C prototypes."""
+    search_from = 0
+    while True:
+        start = text.find(signature, search_from)
+        if start < 0:
+            raise ValueError(f"missing function definition: {signature}")
+        brace = text.find("{", start)
+        semicolon = text.find(";", start)
+        if brace >= 0 and (semicolon < 0 or brace < semicolon):
+            break
+        search_from = start + len(signature)
+
     depth = 0
     for index in range(brace, len(text)):
         char = text[index]
