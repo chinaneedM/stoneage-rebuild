@@ -750,6 +750,56 @@ def main() -> None:
         f"attack_percent_min={min(charge_attack_percents) if charge_attack_percents else -1}|"
         f"attack_percent_max={max(charge_attack_percents) if charge_attack_percents else -1}"
     )
+    noguard_entries = tuple(
+        entry
+        for entry in referenced_skill_entries
+        if entry.function_name == "PETSKILL_NoGuard"
+    )
+    noguard_dodge_marker = 0
+    noguard_dodge_numeric = 0
+    noguard_counter_simplified_marker = 0
+    noguard_counter_traditional_marker = 0
+    noguard_counter_numeric = 0
+    noguard_critical_marker = 0
+    noguard_critical_numeric = 0
+    noguard_dodge_values = []
+    noguard_counter_values = []
+    noguard_critical_values = []
+    for entry in noguard_entries:
+        option_text = entry.unambiguous_cp950_big5_option()
+        dodge = re.search(r"避%\s*([+-]?\d+)", option_text)
+        counter = re.search(r"(?:击|擊)%\s*([+-]?\d+)", option_text)
+        critical = re.search(r"心%\s*([+-]?\d+)", option_text)
+        noguard_dodge_marker += int("避%" in option_text)
+        noguard_counter_simplified_marker += int("击%" in option_text)
+        noguard_counter_traditional_marker += int("擊%" in option_text)
+        noguard_critical_marker += int("心%" in option_text)
+        if dodge is not None:
+            noguard_dodge_numeric += 1
+            noguard_dodge_values.append(int(dodge.group(1)))
+        if counter is not None:
+            noguard_counter_numeric += 1
+            noguard_counter_values.append(int(counter.group(1)))
+        if critical is not None:
+            noguard_critical_numeric += 1
+            noguard_critical_values.append(int(critical.group(1)))
+    print(
+        "PETSKILL_NOGUARD_PARSE|"
+        f"unique_ids={len(noguard_entries)}|"
+        f"dodge_marker_ids={noguard_dodge_marker}|"
+        f"dodge_numeric_ids={noguard_dodge_numeric}|"
+        f"counter_simplified_marker_ids={noguard_counter_simplified_marker}|"
+        f"counter_traditional_marker_ids={noguard_counter_traditional_marker}|"
+        f"counter_numeric_ids={noguard_counter_numeric}|"
+        f"critical_marker_ids={noguard_critical_marker}|"
+        f"critical_numeric_ids={noguard_critical_numeric}|"
+        f"dodge_min={min(noguard_dodge_values) if noguard_dodge_values else -1}|"
+        f"dodge_max={max(noguard_dodge_values) if noguard_dodge_values else -1}|"
+        f"counter_min={min(noguard_counter_values) if noguard_counter_values else -1}|"
+        f"counter_max={max(noguard_counter_values) if noguard_counter_values else -1}|"
+        f"critical_min={min(noguard_critical_values) if noguard_critical_values else -1}|"
+        f"critical_max={max(noguard_critical_values) if noguard_critical_values else -1}"
+    )
     print(
         "COUNT|enemybase_unresolved_petskill_ids|"
         f"{len(stack.petskill_runtime.unresolved_skill_ids(report_referenced_skill_ids))}"
