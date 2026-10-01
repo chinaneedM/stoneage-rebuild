@@ -5383,3 +5383,55 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   enemybase slot uses**). Re-audit the fixed callback, OPTION grammar, guarded
   command identity, target/MP mutation and any physical fallback/secondary
   effects; then hard-probe all three recovered rows before runtime admission.
+
+
+## Phase 1 recovered PETSKILL_MpDamage runtime admission — 2026-10-01
+
+- Fixed-source audit across the pinned gavin/iriselia/Bismarck descendants
+  converges on the guarded `_Skill_MPDAMAGE` callback and
+  `BATTLE_S_MpDamage` helper.
+- The callback repeats the same source arithmetic quirk as the older
+  DamageToHp handler: `(float)(atoi(token1)/100)` performs integer division
+  first.
+- Preservation-bundle hard probe **36869183326 = PASS** closes all three
+  referenced recovered25 rows:
+  - ID **506**: token1=50 -> callback integer ratio 0; MP loss **50%**;
+  - ID **507**: token1=50 -> callback integer ratio 0; MP loss **75%**;
+  - ID **508**: token1=50 -> callback integer ratio 0; MP loss **100%**;
+  - all three are FIELD=1, TARGET=6, COST=2, ASCII two-field OPTIONs;
+  - total pressure is **25** positive enemybase slot uses across **25**
+    templates.
+- Fixed post-hit semantics are now represented:
+  - ordinary TargetAdjust runs once;
+  - specialized Guardian calculation/original-defindex settlement is
+    preserved;
+  - pre-existing DamageReact on the original adjusted target suppresses MP
+    loss;
+  - `damage < 1` suppresses MP loss;
+  - ENEMY and PET targets are excluded by the fixed helper;
+  - PLAYER current MP must be positive;
+  - MP loss is `int(current_mp * percent / 100)`, independent of physical
+    damage magnitude.
+- Runtime admission remains semantic/typed rather than inventing the guarded
+  numeric COM1.
+- Round-local MP is ordered state. Two admitted attackers therefore operate on
+  the successively reduced current MP, not independently on the round-start
+  value; the dedicated test verifies 40 -> 20 -> 5 for 50% then 75%.
+- The local-session coordinator seeds player MP from the working persistent
+  clone and writes the round's final MP back to that clone only; the original
+  session snapshot remains unchanged.
+- Current repaired HEAD
+  `0e0917d320faa9eda90d4e9f315400713c14a753` passes:
+  - MpDamage runtime **36870364373** (**67 tests**);
+  - local runtime coordinator **run 163**;
+  - enemy AttackMagic coordinator **run 8**;
+  - enemy ReHP runtime **run 7**;
+  - DamageToHp runtime **run 4**.
+- Executable recovered pet-skill slot-use coverage is now approximately
+  **2310 / 2486 = 92.9%**. The separate **3** Merge uses remain intentionally
+  classified historical UB rather than executable.
+- **RECOVERED25_MPDAMAGE_RUNTIME_R1 = CLOSED.**
+- Next priority: `PETSKILL_FallGround` (**1 referenced ID / 23 positive
+  enemybase slot uses**). Re-audit its fixed-source callback/command/execution
+  path and OPTION grammar, hard-probe the exact recovered row and usage
+  context, then admit only source-backed target/state/RNG semantics.
