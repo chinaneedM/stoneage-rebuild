@@ -5020,3 +5020,56 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Executable recovered stable-common pet-skill slot-use coverage is now **2102 / 2486 = ~84.6%**.
 - **LOCAL_RUNTIME_ENEMY_AI_EARTHROUND_R1 = CLOSED.**
 - Next priority: `PETSKILL_Steal` (**1 referenced ID / 12 positive slot uses**). Its core RNG formula already exists, but runtime admission requires a transactional player Gold/inventory mutation seam plus success-only attacker battle exit; do not model it as ordinary damage or as item transfer to the attacker.
+
+
+## Phase 1 recovered Steal enemy-AI execution — 2026-10-01
+
+- `PETSKILL_Steal` is closed for recovered25 enemy AI:
+  - **1** referenced skill ID / **12** positive enemybase skill-slot uses;
+  - the sole OPTION row is ASCII and the hard probe requires exactly that one callback population.
+- Fixed `BATTLE_Steal` semantics are preserved rather than normalized into a conventional transfer:
+  - only PLAYER defenders receive the **50%** entry chance; non-player defenders have probability **0**;
+  - successful entry uses a second 50% split for gold vs ordinary-item mode;
+  - gold mode removes **RAND(8,12)%** of defender Gold and credits **nothing** to the attacker;
+  - item mode selects one occupied ordinary inventory slot, removes the slot item and ends that item instance; it does **not** transfer the item to the attacker;
+  - zero gold / no eligible item converts the attempt back to failure;
+  - the stealing attacker exits battle only when the final steal result succeeds.
+- The local runtime applies Steal against the battle's working persistent clone:
+  - player Gold/inventory mutation is visible to later rounds in the same battle;
+  - the pre-battle persistence payload is not mutated in place;
+  - normal settlement/commit remains the transaction boundary.
+- Validation:
+  - stable battle mutation seam `eaa8fc63...` / `0a8caf1c...`: battle-core regressions remain green;
+  - stable command bridge `2606c228...` plus command regression `41b88237ae76a6005a137bad5ae11bd570942933`: stable pet-skill **36833681260 = PASS**, battle core **36833681131 = PASS**;
+  - recovered bridge `1efaaf1b...` / regression `310b9c5c...`: local runtime coordinator **36833382378 / 36833413967 = PASS**;
+  - transactional coordinator `82b3fe20bce1e04edf9d41266e0874c714d30ac9`: runtime golden **36833505390 = PASS**, local runtime **36833505356 = PASS**;
+  - end-to-end Steal transaction `cc9da4734a4d326a3e3d92f938abbf12205b7a3e`: local runtime **36833626994 = PASS**;
+  - full hard-probed recovered25 bundle validation including the pinned one-row Steal population: **36833909945 = PASS**.
+- Executable recovered stable-common slot-use coverage after Steal is **2114 / 2486 = ~85.0%**.
+- **LOCAL_RUNTIME_ENEMY_AI_STEAL_R1 = CLOSED.**
+
+## Phase 1 recovered Guardian enemy-AI execution — 2026-10-01
+
+- `PETSKILL_Guardian` is closed for recovered25 enemy AI:
+  - **1** referenced Guardian skill ID / **4** positive enemybase skill-slot uses;
+  - strict CP950/Big5 decoding agrees for the non-ASCII OPTION;
+  - hard probe proves the recovered row is attack-mode only: exactly **`攻%-20`**, no `防%`, and no defensive `COM:...防御`.
+- Fixed attack-branch semantics are retained:
+  - work attack is rebuilt as FIXSTR + trunc(FIXSTR × -20%), i.e. 80% for positive FIXSTR;
+  - work defense remains the fixed defense;
+  - the Guardian flag is retained;
+  - authoritative battle slot is passed into the bridge so a back-row actor can register the corresponding same-side front-row protected slot using the fixed source formula rather than a guessed position.
+- Runtime admission is fail-closed:
+  - exactly one recovered Guardian callback ID is required;
+  - OPTION must remain the exact recovered attack-mode subset;
+  - enemy actor slot must come from persistent battle state and be on the enemy side.
+- End-to-end coordinator regression exercises a recovered enemy in battle slot 15 and confirms `S_GUARDIAN_ATTACK` executes through the ordinary physical path with the reconstructed setup effects.
+- Validation:
+  - recovered bridge `29b55be181cfec8aca31e20589d2732600cac64f`: local runtime **36835022656 = PASS**;
+  - bridge regression `9ad6a1ba646681237b0e7e5c7c4e71698f30f2a0`: local runtime **36835054828 = PASS**;
+  - coordinator admission `48752047c4003817059df8cb11d12c1ef0be5aea`: local runtime **36835086215 = PASS**, runtime golden **36835086316 = PASS**;
+  - end-to-end recovered Guardian regression `bcc78817377bb59764367c7e7831f018a513f53b`: local runtime **36835215844 = PASS**;
+  - exact Guardian bundle grammar hardened in `d79b236b...` / `311571b4c6d9a312fe6bb0bc9e6b5fa6c82d09b9`, with full recovered25 validation **36835322303 = PASS**.
+- Executable recovered stable-common slot-use coverage after Guardian is **2118 / 2486 = ~85.2%**.
+- **LOCAL_RUNTIME_ENEMY_AI_GUARDIAN_R1 = CLOSED.**
+- Next priority: `PETSKILL_Merge` (**2 referenced IDs / 3 positive slot uses**). Do **not** admit it as a battle command. The stable callback writes no COM and delegates to field/item merge logic; historical enemy-AI execution is first gated by `PETSKILL_FIELD`. Probe the recovered rows' FIELD values before deciding whether these enemybase references are executable battle skills or inert field-only references.

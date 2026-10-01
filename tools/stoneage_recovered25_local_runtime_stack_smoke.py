@@ -931,6 +931,37 @@ def main() -> None:
         f"ai_max={max(abduct_ai_values) if abduct_ai_values else -1}|"
         f"distinct_ai={len(set(abduct_ai_values))}"
     )
+    merge_entries = tuple(
+        entry
+        for entry in referenced_skill_entries
+        if entry.function_name == "PETSKILL_Merge"
+    )
+    merge_field_all = sum(int(entry.field == 0) for entry in merge_entries)
+    merge_field_battle = sum(int(entry.field == 1) for entry in merge_entries)
+    merge_field_map = sum(int(entry.field == 2) for entry in merge_entries)
+    merge_field_other = sum(
+        int(entry.field not in {0, 1, 2}) for entry in merge_entries
+    )
+    merge_illegal = sum(int(entry.illegal != 0) for entry in merge_entries)
+    merge_ascii = sum(int(entry.option_bytes.isascii()) for entry in merge_entries)
+    merge_empty_option = sum(
+        int(len(entry.option_bytes) == 0) for entry in merge_entries
+    )
+    if len(merge_entries) != 2:
+        raise ValueError(
+            "recovered25 Merge callback population drifted from two IDs"
+        )
+    print(
+        "PETSKILL_MERGE_PARSE|"
+        f"unique_ids={len(merge_entries)}|"
+        f"field_all_ids={merge_field_all}|"
+        f"field_battle_ids={merge_field_battle}|"
+        f"field_map_ids={merge_field_map}|"
+        f"field_other_ids={merge_field_other}|"
+        f"illegal_ids={merge_illegal}|"
+        f"ascii_ids={merge_ascii}|"
+        f"empty_option_ids={merge_empty_option}"
+    )
     noguard_entries = tuple(
         entry
         for entry in referenced_skill_entries
