@@ -5,6 +5,7 @@ from tools.stoneage_enemy_ai_petskill_bridge import (
     resolve_enemy_ai_basic_petskill_command,
     resolve_enemy_ai_chargeattack_petskill_command,
     resolve_enemy_ai_continuationattack_petskill_command,
+    resolve_enemy_ai_earthround_petskill_command,
     resolve_enemy_ai_guardbreak_petskill_command,
     resolve_enemy_ai_mighty_petskill_command,
     resolve_enemy_ai_noguard_petskill_command,
@@ -34,6 +35,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
+    BATTLE_COM_S_EARTHROUND1,
     BATTLE_COM_S_ABDUCT,
     battle_command3_high,
     battle_command3_low,
@@ -175,6 +177,71 @@ class EnemyAiPetSkillBridgeTests(unittest.TestCase):
         self.assertEqual(resolved.skill_id, 30)
         self.assertEqual(resolved.command.command1, BATTLE_COM_NONE)
         self.assertEqual(resolved.command.command2, 4)
+
+    def test_earthround_uses_closed_recovered_attack_percent(self):
+        spawned=spawned_with_slots((120,0,0,0,0,0,0))
+        runtime=Recovered25PetSkillRuntime(
+            skills={
+                120:entry(
+                    120,
+                    "PETSKILL_EarthRound",
+                    "攻%90".encode("cp950"),
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        resolved=resolve_enemy_ai_earthround_petskill_command(
+            spawned,
+            skill_slot=0,
+            target_slot=3,
+            petskill_runtime=runtime,
+        )
+        self.assertEqual(
+            resolved.command.command1,
+            BATTLE_COM_S_EARTHROUND1,
+        )
+        self.assertEqual(resolved.command.command2,3)
+        self.assertEqual(resolved.command.command3,90)
+
+        with self.assertRaisesRegex(ValueError,"outside admitted"):
+            resolve_enemy_ai_supported_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=3,
+                petskill_runtime=runtime,
+            )
+        admitted=resolve_enemy_ai_supported_petskill_command(
+            spawned,
+            skill_slot=0,
+            target_slot=3,
+            petskill_runtime=runtime,
+            allow_earth_round=True,
+        )
+        self.assertEqual(
+            admitted.command.command1,
+            BATTLE_COM_S_EARTHROUND1,
+        )
+        self.assertEqual(admitted.command.command3,90)
+
+    def test_earthround_rejects_percent_drift(self):
+        spawned=spawned_with_slots((120,0,0,0,0,0,0))
+        runtime=Recovered25PetSkillRuntime(
+            skills={
+                120:entry(
+                    120,
+                    "PETSKILL_EarthRound",
+                    "攻%80".encode("cp950"),
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        with self.assertRaisesRegex(ValueError,"drifted from 90"):
+            resolve_enemy_ai_earthround_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=0,
+                petskill_runtime=runtime,
+            )
 
     def test_abduct_uses_bundle_threshold_population_and_skill_id_array(self):
         spawned=spawned_with_slots((110,0,0,0,0,0,0))
