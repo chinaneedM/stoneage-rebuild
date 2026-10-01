@@ -27,6 +27,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_S_ABDUCT,
+    BATTLE_COM_S_STEAL,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     battle_command3_low,
@@ -37,6 +38,7 @@ from tools.stoneage_battle_round_model import (
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
     OrdinaryAbductRolls,
+    OrdinaryStealRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
 )
@@ -83,6 +85,9 @@ from tools.stoneage_singleplayer_domain import (
     EncounterRolls,
     EnemyVariantId,
     HistoricalStaticData,
+    InventoryItem,
+    InventorySlot,
+    ItemTemplateId,
     MapPosition,
     PetActor,
     PetGrowthState,
@@ -365,6 +370,15 @@ class _FakeStack:
                     illegal=0,
                     function_name="PETSKILL_EarthRound",
                     option_bytes="攻%90".encode("cp950"),
+                ),
+                130: Recovered25PetSkillEntry(
+                    skill_id=130,
+                    field=1,
+                    target=3,
+                    cost=2,
+                    illegal=0,
+                    function_name="PETSKILL_Steal",
+                    option_bytes=b"",
                 ),
             },
             source_file="petskill.txt",
@@ -2914,6 +2928,243 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                 .carried_commands_by_participant_id
             ),
             {},
+        )
+
+    def test_recovered_enemy_ai_steal_gold_mutates_only_working_clone(self):
+        player_state=_battle_player_state()
+        fields=dict(player_state.character.fields)
+        fields["gold"]=1000
+        player_state.character=PlayerState(MappingProxyType(fields))
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=player_state,
+            world_flags=frozenset({"enemy-ai-steal-gold"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0,0,0,0),
+                    spawn_allocation_rolls=(
+                        0,1,2,3,0,1,2,3,0,1
+                    ),
+                ),
+            ),
+        )
+        enemy_id=context.battle.enemies[0].participant_id
+        spawned=context.spawned_enemies[0]
+        context=replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=replace(context.battle.player,quick=10),
+                enemies=(replace(context.battle.enemies[0],quick=200),),
+            ),
+            spawned_enemies=(
+                replace(
+                    spawned,
+                    template=replace(
+                        spawned.template,
+                        skill_ids=(130,20,30,40,50,60,70),
+                        skill_slot_ids=(130,20,30,40,50,60,70),
+                    ),
+                    variant=replace(
+                        spawned.variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:1;0;0;0;0;0;0"
+                        ),
+                    ),
+                ),
+            ),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+        )
+        profiles={
+            "player":BattleCombatProfile(
+                fixed_dex=10,fixed_luck=0,
+                earth=0,water=0,fire=0,wind=0,
+            ),
+            enemy_id:BattleCombatProfile(
+                fixed_dex=100,fixed_luck=0,
+                earth=0,water=0,fire=0,wind=0,
+            ),
+        }
+        result_context,result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player":BattleCommand(BATTLE_COM_WAIT),
+                },
+                enemy_mode_rolls={enemy_id:0},
+                enemy_target_rolls={enemy_id:0},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={"player":0,enemy_id:0},
+                profiles=profiles,
+                attack_rolls={},
+                steal_rolls_by_attack_id={
+                    enemy_id:OrdinaryStealRolls(
+                        success_roll_1_100=1,
+                        mode_roll_1_100=1,
+                        gold_percent_roll_8_12=10,
+                    ),
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        event=next(
+            event for event in result.round.events
+            if event.participant_id==enemy_id
+        )
+        self.assertEqual(event.command1,BATTLE_COM_S_STEAL)
+        self.assertEqual(event.result,"steal_success_gold")
+        self.assertEqual(event.steal_resolution.defender_gold_loss,100)
+        self.assertEqual(
+            result.after.battle_exited_participant_ids,
+            (enemy_id,),
+        )
+        self.assertEqual(result.after.result,"victory")
+        payload=json.loads(result_context.working_persistent_state_payload)
+        self.assertEqual(payload["character"]["gold"],900)
+        self.assertEqual(session.player_state.character.fields["gold"],1000)
+
+        settled=self.coordinator.settle_persistent_group_battle_without_level_crossing(
+            result_context
+        )
+        self.assertEqual(settled.player_state.character.fields["gold"],900)
+
+    def test_recovered_enemy_ai_steal_item_destroys_carried_slot_only(self):
+        player_state=_battle_player_state()
+        for slot_value,template_id in ((3,501),(7,502)):
+            slot=InventorySlot(slot_value)
+            player_state.inventory[slot]=InventoryItem(
+                slot=slot,
+                template_id=ItemTemplateId(template_id),
+                view=MappingProxyType({"name":f"item-{template_id}"}),
+            )
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=player_state,
+            world_flags=frozenset({"enemy-ai-steal-item"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0,0,0,0),
+                    spawn_allocation_rolls=(
+                        0,1,2,3,0,1,2,3,0,1
+                    ),
+                ),
+            ),
+        )
+        enemy_id=context.battle.enemies[0].participant_id
+        spawned=context.spawned_enemies[0]
+        context=replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=replace(context.battle.player,quick=10),
+                enemies=(replace(context.battle.enemies[0],quick=200),),
+            ),
+            spawned_enemies=(
+                replace(
+                    spawned,
+                    template=replace(
+                        spawned.template,
+                        skill_ids=(130,20,30,40,50,60,70),
+                        skill_slot_ids=(130,20,30,40,50,60,70),
+                    ),
+                    variant=replace(
+                        spawned.variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:1;0;0;0;0;0;0"
+                        ),
+                    ),
+                ),
+            ),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+        )
+        profiles={
+            "player":BattleCombatProfile(
+                fixed_dex=10,fixed_luck=0,
+                earth=0,water=0,fire=0,wind=0,
+            ),
+            enemy_id:BattleCombatProfile(
+                fixed_dex=100,fixed_luck=0,
+                earth=0,water=0,fire=0,wind=0,
+            ),
+        }
+        result_context,result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player":BattleCommand(BATTLE_COM_WAIT),
+                },
+                enemy_mode_rolls={enemy_id:0},
+                enemy_target_rolls={enemy_id:0},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={"player":0,enemy_id:0},
+                profiles=profiles,
+                attack_rolls={},
+                steal_rolls_by_attack_id={
+                    enemy_id:OrdinaryStealRolls(
+                        success_roll_1_100=1,
+                        mode_roll_1_100=99,
+                        chosen_item_ordinal=1,
+                    ),
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        event=next(
+            event for event in result.round.events
+            if event.participant_id==enemy_id
+        )
+        self.assertEqual(event.result,"steal_success_item")
+        self.assertEqual(event.steal_resolution.destroyed_item_slot,7)
+        payload=json.loads(result_context.working_persistent_state_payload)
+        self.assertEqual(
+            [row["slot"] for row in payload["inventory"]],
+            [3],
+        )
+        self.assertEqual(
+            sorted(slot.value for slot in session.player_state.inventory),
+            [3,7],
+        )
+
+        settled=self.coordinator.settle_persistent_group_battle_without_level_crossing(
+            result_context
+        )
+        self.assertEqual(
+            sorted(slot.value for slot in settled.player_state.inventory),
+            [3],
         )
 
     def test_recovered_enemy_ai_guardbreak_executes_against_guard(self):
