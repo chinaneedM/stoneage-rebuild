@@ -676,6 +676,33 @@ def main() -> None:
         f"dodge_marker_ids={mighty_dodge}|"
         f"numeric_parse_ids={mighty_numeric_parse}"
     )
+    earthround_entries = tuple(
+        entry
+        for entry in referenced_skill_entries
+        if entry.function_name == "PETSKILL_EarthRound"
+    )
+    earthround_attack_marker = 0
+    earthround_attack_numeric = 0
+    earthround_attack_percents = []
+    for entry in earthround_entries:
+        option_text = entry.unambiguous_cp950_big5_option()
+        attack = re.search(r"攻%\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+))", option_text)
+        earthround_attack_marker += int("攻%" in option_text)
+        if attack is not None:
+            earthround_attack_numeric += 1
+            earthround_attack_percents.append(float(attack.group(1)))
+    if len(earthround_entries) != 1:
+        raise ValueError(
+            "recovered25 EarthRound callback population drifted from one ID"
+        )
+    print(
+        "PETSKILL_EARTHROUND_PARSE|"
+        f"unique_ids={len(earthround_entries)}|"
+        f"attack_marker_ids={earthround_attack_marker}|"
+        f"attack_numeric_ids={earthround_attack_numeric}|"
+        f"attack_percent_min={min(earthround_attack_percents) if earthround_attack_percents else 'NONE'}|"
+        f"attack_percent_max={max(earthround_attack_percents) if earthround_attack_percents else 'NONE'}"
+    )
     guardbreak_entries = tuple(
         entry
         for entry in referenced_skill_entries
