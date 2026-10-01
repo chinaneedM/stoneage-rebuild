@@ -20,12 +20,14 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_CHARGE_OK,
     BATTLE_COM_S_GBREAK,
     BATTLE_COM_S_MIGHTY,
+    BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     battle_command3_low,
     BattleCommand,
+    CounterAttemptRolls,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
@@ -312,6 +314,15 @@ class _FakeStack:
                     illegal=0,
                     function_name="PETSKILL_ChargeAttack",
                     option_bytes="2 攻%150".encode("cp950"),
+                ),
+                90: Recovered25PetSkillEntry(
+                    skill_id=90,
+                    field=1,
+                    target=3,
+                    cost=2,
+                    illegal=0,
+                    function_name="PETSKILL_NoGuard",
+                    option_bytes="避%40 擊%60 心%30".encode("cp950"),
                 ),
             },
             source_file="petskill.txt",
@@ -2202,6 +2213,130 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             .base_status_runtime_by_participant_id["player"]
             .status.poison,
             0,
+        )
+
+    def test_recovered_enemy_ai_noguard_preserves_same_round_dodge_state(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-noguard"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        enemy_id=context.battle.enemies[0].participant_id
+        spawned=context.spawned_enemies[0]
+        noguard_template=replace(
+            spawned.template,
+            skill_ids=(90,20,30,40,50,60,70),
+            skill_slot_ids=(90,20,30,40,50,60,70),
+        )
+        context=replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=replace(context.battle.player,quick=200),
+                enemies=(replace(context.battle.enemies[0],quick=20),),
+            ),
+            spawned_enemies=(
+                replace(
+                    spawned,
+                    template=noguard_template,
+                    variant=replace(
+                        spawned.variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:1;0;0;0;0;0;0"
+                        ),
+                    ),
+                ),
+            ),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+        )
+
+        result_context,round_result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                },
+                enemy_mode_rolls={enemy_id:0},
+                enemy_target_rolls={enemy_id:0},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={
+                    "player":0,
+                    enemy_id:0,
+                },
+                profiles={
+                    "player":BattleCombatProfile(
+                        fixed_dex=1000,
+                        fixed_luck=0,
+                        earth=0,
+                        water=0,
+                        fire=0,
+                        wind=0,
+                    ),
+                    enemy_id:BattleCombatProfile(
+                        fixed_dex=1,
+                        fixed_luck=0,
+                        earth=0,
+                        water=0,
+                        fire=0,
+                        wind=0,
+                    ),
+                },
+                attack_rolls={
+                    "player":OrdinaryAttackRolls(
+                        dodge_roll_1_10000=2000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    ),
+                },
+                counter_rolls_by_attack_id={
+                    "player":(
+                        CounterAttemptRolls(
+                            counter_check_roll_1_10000=10000,
+                        ),
+                    ),
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        player_attack=next(
+            event for event in round_result.round.events
+            if event.participant_id=="player" and not event.is_counter
+        )
+        enemy_own=next(
+            event for event in round_result.round.events
+            if event.participant_id==enemy_id and not event.is_counter
+        )
+        self.assertEqual(player_attack.result,"dodge")
+        self.assertEqual(enemy_own.command1,BATTLE_COM_S_NOGUARD)
+        self.assertEqual(enemy_own.result,"noguard_no_action")
+        self.assertEqual(
+            result_context.persistent_battle_state.turn,
+            context.persistent_battle_state.turn+1,
         )
 
     def test_recovered_enemy_ai_chargeattack_carries_then_fires_without_reroll(self):
