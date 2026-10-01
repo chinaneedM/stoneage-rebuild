@@ -3901,19 +3901,26 @@ def resolve_ordinary_round(
             )
         active_ride=bool(ride_runtime.mounted)
 
-    if ride_runtime is None:
-        if ride_pet_source_slot is not None:
-            raise ValueError(
-                "FallGround ride-pet source slot supplied without ride runtime"
-            )
-    else:
-        if ride_pet_source_slot is None:
-            raise ValueError(
-                "FallGround ride runtime requires source pet slot provenance"
-            )
-        ride_pet_source_slot=int(ride_pet_source_slot)
-        if not 0 <= ride_pet_source_slot <= 4:
-            raise ValueError("FallGround ride-pet source slot must be in 0..4")
+    if fall_ground_actor_ids:
+        if ride_runtime is None:
+            if ride_pet_source_slot is not None:
+                raise ValueError(
+                    "FallGround ride-pet source slot supplied without ride runtime"
+                )
+        else:
+            if ride_pet_source_slot is None:
+                raise ValueError(
+                    "FallGround ride runtime requires source pet slot provenance"
+                )
+            ride_pet_source_slot=int(ride_pet_source_slot)
+            if not 0 <= ride_pet_source_slot <= 4:
+                raise ValueError(
+                    "FallGround ride-pet source slot must be in 0..4"
+                )
+    elif ride_pet_source_slot is not None:
+        raise ValueError(
+            "ride-pet source slot is meaningful only for FallGround actions"
+        )
 
     guardian_registrations={
         int(defender_slot):registration
