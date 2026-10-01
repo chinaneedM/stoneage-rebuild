@@ -8,6 +8,7 @@ from tools.stoneage_battle_core_model import (
     critical_bonus,
     critical_damage,
     critical_per_10000,
+    continuation_divided_damage,
     elemental_vector,
     field_attribute_power,
     dodge_per_10000,
@@ -133,6 +134,15 @@ class BattleCoreModelTests(unittest.TestCase):
         for roll,mult in cases.items():
             self.assertEqual(guard_multiplier(roll),mult)
         self.assertEqual(guard_damage(101,26),10)
+
+    def test_continuation_damage_division_matches_positive_float_split(self):
+        self.assertEqual(continuation_divided_damage(100,3),33)
+        self.assertEqual(continuation_divided_damage(3,2),1)
+        self.assertEqual(continuation_divided_damage(1,4),1)
+        self.assertEqual(continuation_divided_damage(0,4),0)
+        self.assertEqual(continuation_divided_damage(-5,4),-5)
+        with self.assertRaisesRegex(ValueError,"positive"):
+            continuation_divided_damage(10,0)
 
     def test_dodge_relationship_modifier(self):
         # player -> non-player reduces defender DEX to 60%.
