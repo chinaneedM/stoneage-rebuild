@@ -1406,14 +1406,14 @@ Supplemental source ledgers:
   - combo profit uses the complete eligible combo attack list and does not split EXP between members in the pinned enabled branch;
   - `BATTLE_AddExpItem()` source-shaped scanning is explicit: every `HP <= 0 && ISDIE == false` reward enemy is claimed by the current profit trigger, so deferred status deaths are **not** reassigned to an invented DoT owner.
 - Battle item-drop mechanics and the current single-player runtime seam are now closed to the strong stable-descendant boundary:
-  - enemy variants now preserve all ten \`ITEMn / ITEMPROBn\` source slots;
-  - pinned Gavin \`version.h\` enables \`_FIX_ITEMPROB\`, so that build uses \`RAND(0,999) < ITEMPROB\`; the preserved \`0..99\` branch remains separately modeled because exact JSS-1999 selection is OPEN;
+  - enemy variants now preserve all ten `ITEMn / ITEMPROBn` source slots;
+  - pinned Gavin `version.h` enables `_FIX_ITEMPROB`, so that build uses `RAND(0,999) < ITEMPROB`; the preserved `0..99` branch remains separately modeled because exact JSS-1999 selection is OPEN;
   - enemy-held items are instantiated at spawn, not invented at final victory settlement;
   - kill profit randomly selects an attack-list ticket, maps pet tickets to the owning player entry, and preserves duplicate-owner tickets rather than deduplicating them;
   - each player battle entry has a three-item pending reward buffer; overflow either destroys the new item or replaces/destroys one random old pending item;
   - concrete spawned `BattleDropItem` snapshots now flow through enemy participants, `PersistentBattleState`, ordinary-kill allocation and all persistent finish paths into the existing 20-slot `PersistentPlayerState.inventory`;
   - final item settlement takes the first empty persistent bag slot; no-space items are destroyed, and a dead player does not settle pending items;
-  - detailed evidence is recorded in \`research/mechanics/STONEAGE-BATTLE-DROP-SETTLEMENT-R1.md\`.
+  - detailed evidence is recorded in `research/mechanics/STONEAGE-BATTLE-DROP-SETTLEMENT-R1.md`.
 - Battle money is now closed as a **negative stable-descendant invariant**, not as an invented reward formula:
   - Gavin and independent iriselia descendants both retain `BATTLE_GetExpGold()` but perform no battle `CHAR_GOLD` mutation and expose no `ENEMY_GOLD`, `WORKGETGOLD`, `_BATTLE_GOLD` or `getBattleGold` base path;
   - the ordinary economy still has persistent `CHAR_GOLD`, so this is specifically a battle-reward absence rather than a missing currency system;
@@ -1421,29 +1421,29 @@ Supplemental source ledgers:
   - the runtime regression fixture now preserves `gold=1234` unchanged across terminal battle and EXP-settlement paths;
   - exact JSS-1999 absence remains OPEN until original server evidence is recovered; detailed evidence is in `research/mechanics/STONEAGE-BATTLE-MONEY-R1.md`.
 - Battle capture is now closed to the strong stable-descendant mechanics boundary and the current explicit single-player persistence boundary:
-  - \`BATTLE_COM_CAPTURE\` / \`T|target\` now executes inside the ordinary action-order seam rather than remaining parse-only;
+  - `BATTLE_COM_CAPTURE` / `T|target` now executes inside the ordinary action-order seam rather than remaining parse-only;
   - target adjustment keeps a still-valid submitted target or uses an explicit opposite-side retarget roll; capture-specific enemy/PETFLG eligibility remains in the capture check rather than being conflated with generic target validity;
-  - capture requires an enemy target with PETFLG enabled and, unless \`PickAllPet\` is active, rejects targets more than five levels above the player before RNG;
-  - \`enemybase.GET\` is preserved as \`capture_default\`; the stable formula uses current HP squared over max HP, level gap, fixed-DEX gap, target GET, fixed luck, fixed charm, temporary capture modifier and sleep +15, caps only above 99, then uses strict \`RAND(1,100) < WorkGet\`;
+  - capture requires an enemy target with PETFLG enabled and, unless `PickAllPet` is active, rejects targets more than five levels above the player before RNG;
+  - `enemybase.GET` is preserved as `capture_default`; the stable formula uses current HP squared over max HP, level gap, fixed-DEX gap, target GET, fixed luck, fixed charm, temporary capture modifier and sleep +15, caps only above 99, then uses strict `RAND(1,100) < WorkGet`;
   - temporary capture modifier resets after the attempt;
   - five pet slots are scanned 0→4 for the first empty slot **after** a successful capture roll, so a full pet array can consume a successful RNG result and still fail;
   - success removes the enemy battle entry through a BATTLE_Exit-shaped transition without setting HP to zero, so it awards neither kill EXP nor held-item drops;
-  - ordinary-round capture now requires a complete source-identified \`PetActor\` and validates slot, variant/template, level, HP and max-HP before atomically updating persistent pets;
-  - both pinned Gavin and independent iriselia builds enable later \`_CAPTURE_FREES\` required-item extensions; those hard-coded conditions remain profile-specific/OPEN for early JSS and are not silently promoted into the base rule;
-  - detailed evidence is recorded in \`research/mechanics/STONEAGE-BATTLE-CAPTURE-R1.md\`.
+  - ordinary-round capture now requires a complete source-identified `PetActor` and validates slot, variant/template, level, HP and max-HP before atomically updating persistent pets;
+  - both pinned Gavin and independent iriselia builds enable later `_CAPTURE_FREES` required-item extensions; those hard-coded conditions remain profile-specific/OPEN for early JSS and are not silently promoted into the base rule;
+  - detailed evidence is recorded in `research/mechanics/STONEAGE-BATTLE-CAPTURE-R1.md`.
 - Battle escape is now closed to the strong stable-descendant probability/action-state boundary, with final recovery deliberately isolated:
-  - \`E\` maps to \`BATTLE_COM_ESCAPE\`; pet entries do not execute the ordinary escape branch;
-  - \`BATTLE_ENTRY.escape\` initializes at 0, \`BATTLE_Escape()\` increments it before calling \`BATTLE_EscapeCheck()\`, and the check reads \`escape+1\`; the first ordinary attempt therefore uses effective attempt count 2 and this source off-by-one is preserved;
+  - `E` maps to `BATTLE_COM_ESCAPE`; pet entries do not execute the ordinary escape branch;
+  - `BATTLE_ENTRY.escape` initializes at 0, `BATTLE_Escape()` increments it before calling `BATTLE_EscapeCheck()`, and the check reads `escape+1`; the first ordinary attempt therefore uses effective attempt count 2 and this source off-by-one is preserved;
   - player fixed luck is clamped to 1..5; enemy escape luck maps RARE 0/1/other to 1/3/5;
   - opponent average level includes the source ABIO -100 adjustment before C-style truncating division;
-  - ordinary probability uses the stable luck bands and strict \`RAND(1,100) < Esc\`, clamps only the lower end to 1 and does not cap the upper end;
+  - ordinary probability uses the stable luck bands and strict `RAND(1,100) < Esc`, clamps only the lower end to 1 and does not cap the upper end;
   - PvP escape succeeds before RNG; forced escape still executes the probability check/RNG first but exits regardless of check failure;
-  - successful player escape performs a BATTLE_Exit-shaped action exit, removes the active allied pet entry from subsequent action execution, and is represented as a distinct persistent \`escape\` terminal rather than victory/defeat;
+  - successful player escape performs a BATTLE_Exit-shaped action exit, removes the active allied pet entry from subsequent action execution, and is represented as a distinct persistent `escape` terminal rather than victory/defeat;
   - stored escape-attempt counters are persistent battle-entry state and caller-provided contexts are checked against them, so failed attempts affect later attempts deterministically;
-  - stable \`BATTLE_Finish()\` calls \`BATTLE_GetProfit()\` only for entries still present at finish, while successful escape has already cleared the player entry through \`BATTLE_Exit()\`; runtime victory/EXP/drop finishers therefore reject escape terminals instead of accidentally awarding pending battle profit;
+  - stable `BATTLE_Finish()` calls `BATTLE_GetProfit()` only for entries still present at finish, while successful escape has already cleared the player entry through `BATTLE_Exit()`; runtime victory/EXP/drop finishers therefore reject escape terminals instead of accidentally awarding pending battle profit;
   - exact BATTLE_Exit recovery/status cleanup is still a separate seam and has not been guessed into the escape return path;
   - dedicated `finish_persistent_escape()` now returns a successful escape to world state without calling the normal drop/EXP settlement path; player HP is preserved, active-pet battle HP is preserved, and every carried non-mail pet at HP≤0 is restored to HP=1, matching the stable player `BATTLE_Exit()` loop in the current no-pet-mail single-player scope;
-  - detailed evidence is recorded in \`research/mechanics/STONEAGE-BATTLE-ESCAPE-R1.md\`.
+  - detailed evidence is recorded in `research/mechanics/STONEAGE-BATTLE-ESCAPE-R1.md`.
 - Common base status acquisition and its ordinary physical interaction seams are now closed to the pinned descendant boundary:
   - ordinary magic and item StatusChange delegate to the shared base status core and write their requested duration directly;
   - pet StatusChange (`BATTLE_COM_S_STATUSCHANGE=1008`) executes through the ordinary physical path, requires positive resolved damage, uses the stable `PerOffset=30 / Range=40 / Bai=2.0` profile, writes `turn+1`, and preserves the physical DRUNK post-write halving;
@@ -2092,7 +2092,7 @@ Supplemental source ledgers:
   - original `CD [SA_ARENA].cue`: **299 bytes**, one `MODE1/2352` track;
   - ISO9660 volume label **`SA_ARENA`**;
   - root includes `AUTORUN.INF`, `README.TXT`, `SAARENA.EXE` and `DIRECTX8/`.
-- The preserved 22,009-byte README (SHA-256 `b4a7145830418692f73030e8b6f6561458bbe272252f23178ec538e107cdd3ab`) decodes cleanly as GB18030 and identifies the product as **`疯狂原始人`**. It gives default installation directory `C:\Program Files\Waei\疯狂原始人\`, Beijing-Waei/WGS URLs and registration/charging instructions.
+- The preserved 22,009-byte README (SHA-256 `b4a7145830418692f73030e8b6f6561458bbe272252f23178ec538e107cdd3ab`) decodes cleanly as GB18030 and identifies the product as **`疯狂原始人`**. It gives default installation directory `C:\Program Files\Waei\疯狂原始人`, Beijing-Waei/WGS URLs and registration/charging instructions.
 - The decisive product-separation line says WGS points can be used for **`《石器时代》、《大法师》、《疯狂原始人》`**. Therefore the preserved bytes themselves treat StoneAge and 疯狂原始人 as distinct WGS products. This independently agrees with the SMZDM survivor list that separately names `2.5 / 3.0 / 4.0 / 5.0 / 疯狂原始人`.
 - **CLASSIFICATION:** `sa-arena` is a **same-operator / same-WGS-ecosystem negative control**, **not** a StoneAge 2.5 client candidate. It is removed from the 2.5 recovery queue; no deeper extraction of its 599,802,752-byte Wise installer is justified for the current objective.
 - The current IA `date=2002-05-29` and creator fields remain **catalogue/uploader metadata**, not independently verified contemporaneous publication facts.
@@ -5274,18 +5274,20 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **DESCENDANT_ATTACKMAGIC_16FIELD_SAVE_LAYOUT_R1 = CLOSED.**
 - **RECOVERED25_ATTACKMAGIC_LOCAL_SAVE_MAPPING_R1 = OPEN.**
 - Next priority: keep AttackMagic local-save migration fail-closed and resume the recovered non-common pet-skill backlog from the callback census, selecting the highest-impact still-unexecuted battle callback whose OPTION grammar and fixed-source handler can be closed without speculative semantics.
+
 ## Phase 1 recovered ENEMYSKILL_ReHP guarded reference boundary — 2026-10-01
 
-- The non-common callback census makes \`ENEMYSKILL_ReHP\` the current next family: **1 referenced ID / 31 positive enemybase slot uses**.
-- All three pinned fixed descendants compile \`_PRO_BATTLEENEMYSKILL\`; the callback itself ignores OPTION/data, writes symbolic \`BATTLE_COM_S_ENEMYREHP\`, copies the submitted target into COM2, marks the actor ready and returns TRUE.
-- Battle execution target-adjusts COM2 first. If no valid opponent remains, the action stops before ReHP. If the ReHP effect returns FALSE, the dispatcher falls back to ordinary physical \`BATTLE_Attack\` against the already-adjusted opponent target rather than WAIT/NONE.
-- The enemy-caster effect scans enemy-side slots **10..19** in ascending order and admits only alive entries with \`HP < floor(MAXHP * 2 / 3)\`; the threshold is strict.
+- The non-common callback census makes `ENEMYSKILL_ReHP` the current next family: **1 referenced ID / 31 positive enemybase slot uses**.
+- All three pinned fixed descendants compile `_PRO_BATTLEENEMYSKILL`; the callback itself ignores OPTION/data, writes symbolic `BATTLE_COM_S_ENEMYREHP`, copies the submitted target into COM2, marks the actor ready and returns TRUE.
+- Battle execution target-adjusts COM2 first. If no valid opponent remains, the action stops before ReHP. If the ReHP effect returns FALSE, the dispatcher falls back to ordinary physical `BATTLE_Attack` against the already-adjusted opponent target rather than WAIT/NONE.
+- The enemy-caster effect scans enemy-side slots **10..19** in ascending order and admits only alive entries with `HP < floor(MAXHP * 2 / 3)`; the threshold is strict.
 - Successful ReHP consumes source RNG after caller-side target adjustment in exact order:
-  1. eligible-ally index \`RAND(0,n-1)\`;
-  2. base power \`RAND(100,target_max_hp)\`;
-  3. \`BATTLE_MultiRecovery\` variance \`RAND(power*0.9,power*1.1)\`.
-- All three pinned builds define \`_MAGIC_REHPAI\`; the active HP branch therefore bypasses ordinary percentage/recovery-rate scaling. HP is capped at max HP while the source reports the pre-cap recovery amount.
-- Guarded command numbering is **compile-profile specific**: pinned gavin/iris resolve ReHP to **2014**, while pinned Bismarck resolves it to **2013** because \`_SHOOTCHESTNUT\` is disabled there. No universal recovered25 COM1 value is asserted.
-- Added \`tools/stoneage_enemy_rehp_model.py\`, \`tests/test_stoneage_enemy_rehp_model.py\`, \`research/mechanics/STONEAGE-ENEMY-REHP-R1.md\` and dedicated CI. The reference model keeps an unknown recovered25 command profile fail-closed and rejects the unresolved reversed \`RAND(100,max_hp)\` edge for max HP below 100.
+  1. eligible-ally index `RAND(0,n-1)`;
+  2. base power `RAND(100,target_max_hp)`;
+  3. `BATTLE_MultiRecovery` variance `RAND(power*0.9,power*1.1)`.
+- All three pinned builds define `_MAGIC_REHPAI`; the active HP branch therefore bypasses ordinary percentage/recovery-rate scaling. HP is capped at max HP while the source reports the pre-cap recovery amount.
+- Guarded command numbering is **compile-profile specific**: pinned gavin/iris resolve ReHP to **2014**, while pinned Bismarck resolves it to **2013** because `_SHOOTCHESTNUT` is disabled there. No universal recovered25 COM1 value is asserted.
+- Added `tools/stoneage_enemy_rehp_model.py`, `tests/test_stoneage_enemy_rehp_model.py`, `research/mechanics/STONEAGE-ENEMY-REHP-R1.md` and dedicated CI. The reference model keeps an unknown recovered25 command profile fail-closed and rejects the unresolved reversed `RAND(100,max_hp)` edge for max HP below 100.
+- Validation: dedicated ReHP reference workflow **36861530391 = PASS**; runtime bootstrap contract **36861530272 = PASS** at the same source commit `0a58b4911202f20a8aa02f11224256deb5b0e49e`.
 - **ENEMYSKILL_REHP_GUARDED_REFERENCE_R1 = CLOSED_REFERENCE_MODEL_ONLY.**
 - Next priority: hard-probe the single recovered ReHP row plus all **31** references, prove the referenced max-HP domain, then integrate exact target-adjust -> ReHP RNG -> ordinary-attack fallback ordering into recovered enemy AI / round / coordinator without inventing a historical numeric COM1 value.

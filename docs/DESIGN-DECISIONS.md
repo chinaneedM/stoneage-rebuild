@@ -285,6 +285,7 @@ Consequences:
 - the recovered25 bridge remains version-tagged and cannot be promoted to Taiwan-v1 historical membership without evidence.
 
 Current restoration integration target: connect the already reconstructed encounter/battle path into the recovered25 local runtime composition before resuming production-language migration.
+
 ## DD-019 — Guarded historical battle command numbers require compile-profile evidence
 
 **Status:** Accepted
@@ -299,6 +300,6 @@ Consequences:
 - when a recovered build profile is unresolved, historical numeric command emission remains fail-closed rather than choosing a convenient descendant value;
 - a modern internal semantic token may be used only if it is explicitly distinguished from a claimed historical numeric COM1 value.
 
-The first concrete case is \`BATTLE_COM_S_ENEMYREHP\`: the pinned gavin/iriselia profiles resolve it to **2014**, while pinned Bismarck resolves it to **2013** because an earlier guarded enum member differs.
+The first concrete case is `BATTLE_COM_S_ENEMYREHP`: the pinned gavin/iriselia profiles resolve it to **2014**, while pinned Bismarck resolves it to **2013** because an earlier guarded enum member differs.
 
-Evidence record: \`research/mechanics/STONEAGE-ENEMY-REHP-R1.md\`.
+Evidence record: `research/mechanics/STONEAGE-ENEMY-REHP-R1.md`.
