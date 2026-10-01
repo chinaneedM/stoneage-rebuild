@@ -4930,3 +4930,19 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Executable recovered stable-common pet-skill slot-use coverage is now **2074 / 2486 = ~83.4%** when counting NormalAttack + NormalGuard + StatusChange + PowerBalance + Mighty + GuardBreak + ChargeAttack + NoGuard + ContinuationAttack.
 - **LOCAL_RUNTIME_ENEMY_AI_CONTINUATIONATTACK_R1 = CLOSED.**
 - Next priority: `PETSKILL_Abduct` (**2 referenced IDs / 14 slot uses**). It ties EarthRound at 14 uses, but recovered25 Abduct OPTION rows are **2/2 ASCII** and the stable base action does not require EarthRound's two-phase cross-round carry or stale-COM3 damage state. Close target eligibility, explicit RAND(1,100), success/failure exit semantics and persistent battle-entry removal before runtime admission. EarthRound remains behind it.
+
+## Stable Abduct active-branch correction — 2026-10-01
+
+- Re-audit of the three pinned fixed descendant builds found that all three define both `_BATTLE_ABDUCTII` and `_PETSKILL_OPTIMUM`.
+- This supersedes the earlier reference-model assumption that ABDUCTII was outside the active fixed build.
+- Active command identity:
+  - `PETSKILL_Abduct` writes the resolved pet-skill array to LOW(COM3) and preserves HIGH;
+  - with `_PETSKILL_OPTIMUM`, pet-skill rows are loaded directly at their skill-ID index, so the active fixed array identity is recoverable from the pet-skill ID itself.
+- Active probability branch:
+  - PLAYER defender -> return FALSE before an attempt;
+  - PET defender with `atoi(OPTION) > 0` -> probability 200 iff `FIXAI < AiPer`, otherwise 0;
+  - non-PET defender or non-positive AiPer -> old level formula with minimum 50;
+  - non-null WinFunc -> probability 0.
+- A valid non-player attempt makes the attacker exit whether the roll succeeds or fails; successful PET/ENEMY targets also exit through their source-specific path.
+- Runtime admission remains OPEN until recovered25 Abduct OPTION/AiPer values and persistent target/attacker exit semantics are bundle-backed and executable.
+- **PETSKILL_ABDUCT_ACTIVE_ABDUCTII_REFERENCE_R1 = CLOSED_REFERENCE_MODEL_ONLY.**

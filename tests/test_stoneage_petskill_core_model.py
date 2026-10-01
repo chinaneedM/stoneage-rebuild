@@ -3,6 +3,7 @@ import unittest
 from tools.stoneage_battle_status_model import BaseBattleStatusState
 
 from tools.stoneage_petskill_core_model import (
+    abduct_ai_threshold,
     abduct_command,
     abduct_probability,
     abduct_transition,
@@ -486,6 +487,70 @@ class StoneAgePetSkillCoreModelTests(unittest.TestCase):
         r = abduct_command(12, skill_array=77, prior_high=9)
         self.assertEqual(r["low"], 77)
         self.assertEqual(r["high"], 9)
+
+    def test_abductii_option_uses_c_atoi_prefix(self):
+        self.assertEqual(abduct_ai_threshold("80 partner"),80)
+        self.assertEqual(abduct_ai_threshold("  -5 trailing"),-5)
+        self.assertEqual(abduct_ai_threshold("not-a-number"),0)
+
+    def test_abductii_pet_target_uses_fixed_ai_threshold_branch(self):
+        self.assertEqual(
+            abduct_probability(
+                attacker_level=100,
+                defender_level=1,
+                defender_type="pet",
+                has_win_func=False,
+                ai_threshold=80,
+                defender_fixed_ai=79,
+            ),
+            200,
+        )
+        self.assertEqual(
+            abduct_probability(
+                attacker_level=1,
+                defender_level=100,
+                defender_type="pet",
+                has_win_func=False,
+                ai_threshold=80,
+                defender_fixed_ai=80,
+            ),
+            0,
+        )
+
+    def test_abductii_nonpet_or_nonpositive_threshold_keeps_level_formula(self):
+        self.assertEqual(
+            abduct_probability(
+                attacker_level=100,
+                defender_level=1,
+                defender_type="enemy",
+                has_win_func=False,
+                ai_threshold=80,
+            ),
+            50,
+        )
+        self.assertEqual(
+            abduct_probability(
+                attacker_level=10,
+                defender_level=110,
+                defender_type="pet",
+                has_win_func=False,
+                ai_threshold=0,
+            ),
+            90,
+        )
+
+    def test_abductii_winfunc_still_zeroes_pet_threshold_success(self):
+        self.assertEqual(
+            abduct_probability(
+                attacker_level=10,
+                defender_level=20,
+                defender_type="pet",
+                has_win_func=True,
+                ai_threshold=80,
+                defender_fixed_ai=1,
+            ),
+            0,
+        )
 
     def test_abduct_probability_has_minimum_fifty(self):
         self.assertEqual(

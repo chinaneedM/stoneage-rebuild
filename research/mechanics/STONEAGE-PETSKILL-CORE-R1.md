@@ -495,27 +495,43 @@ This makes the ordinary GuardBreak family a conditional anti-guard strike, not a
 
 ## Abduct
 
-The handler stores the pet-skill array index in the low half of COM3 and leaves the high half untouched.
+The handler stores the pet-skill array index in the low half of COM3 and leaves
+the high half untouched.
 
-The base unguarded `BATTLE_Abduct` accepts PET or ENEMY attackers and rejects PLAYER defenders.
+A later audit corrected the earlier claim that `_BATTLE_ABDUCTII` was outside
+the fixed common build. All three pinned descendant `version.h` files define
+both **`_BATTLE_ABDUCTII`** and **`_PETSKILL_OPTIMUM`**, so the active fixed
+semantics include the AI-threshold branch.
 
-Without the later ABDUCTII extension, chance is:
+`_PETSKILL_OPTIMUM` loads each row directly at its pet-skill ID table index.
+`PETSKILL_getPetskillArray(id)` therefore resolves the active fixed
+`array` to that ID, allowing the handler's LOW(COM3) value to be reconstructed
+from recovered skill identity rather than guessed from file line order.
+
+The active fixed `BATTLE_Abduct` accepts PET or ENEMY attackers and rejects a
+PLAYER defender before any attempt. It obtains:
 
 ```
-int((defender_level - attacker_level) * 0.6 + 30)
-per = max(per, 50)
+AiPer = atoi(PETSKILL_OPTION)
 ```
 
-That is a **minimum** of 50, not a maximum.
+Probability then branches as follows:
 
-A battle with a non-null WinFunc forces chance to zero.
+- if `AiPer <= 0` **or** the defender is not PET, use the old level formula:
+  `int((defender_level - attacker_level) * 0.6 + 30)`, clamped to a
+  **minimum 50**;
+- if the defender is PET and `AiPer > 0`, bypass that formula and set
+  `per=200` only when `defender FIXAI < AiPer`; otherwise set `per=0`;
+- a non-null battle WinFunc subsequently forces `per=0`.
 
-For an otherwise valid attempt:
+For an otherwise valid non-player attempt, `RAND(1,100) < per` determines
+success. A successful PET target causes `BATTLE_PetDefaultExit` for its owner;
+a successful ENEMY target receives `BATTLE_Exit`. The attacker then exits
+battle whether that valid roll succeeded or failed. A PLAYER target returns
+before the attempt and therefore does **not** trigger attacker exit.
 
-- success can remove the target pet/enemy;
-- the attacker exits battle whether the abduct roll succeeds or fails.
-
-The later loyalty/Ai-based `_BATTLE_ABDUCTII` branch is not part of this stable base.
+This supersedes the earlier R1 text that treated ABDUCTII as an inactive later
+extension.
 
 ## Steal
 

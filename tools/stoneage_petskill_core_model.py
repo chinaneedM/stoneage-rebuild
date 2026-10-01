@@ -485,12 +485,59 @@ def abduct_command(target, *, skill_array, prior_high=0):
     return _command("S_ABDUCT", target, low=int(skill_array), high=int(prior_high))
 
 
-def abduct_probability(*, attacker_level, defender_level, defender_is_player, has_win_func):
-    """Base unguarded BATTLE_Abduct probability before later ABDUCTII extension."""
-    if defender_is_player or has_win_func:
+def abduct_ai_threshold(option):
+    """Active _BATTLE_ABDUCTII reads PETSKILL_OPTION with C atoi semantics."""
+    return _c_number(option, 0)
+
+
+def abduct_probability(
+    *,
+    attacker_level,
+    defender_level,
+    has_win_func,
+    defender_type=None,
+    defender_is_player=None,
+    ai_threshold=0,
+    defender_fixed_ai=None,
+):
+    """Pinned active BATTLE_Abduct probability with _BATTLE_ABDUCTII enabled.
+
+    All three fixed descendant version.h files define _BATTLE_ABDUCTII.
+    For a PET target and positive OPTION/AiPer, the level formula is bypassed:
+    FIXAI strictly below AiPer yields 200, otherwise zero.  Non-PET targets
+    and non-positive AiPer retain the old level formula.  PLAYER targets are
+    rejected before an attempt, and a battle WinFunc forces a valid
+    non-player attempt's probability back to zero.
+    """
+    if defender_type is None:
+        if defender_is_player is None:
+            raise ValueError(
+                "abduct probability requires defender_type or defender_is_player"
+            )
+        defender_type="player" if bool(defender_is_player) else "enemy"
+    defender_type=str(defender_type)
+    if defender_is_player is not None:
+        expected=(defender_type=="player")
+        if bool(defender_is_player) != expected:
+            raise ValueError("abduct defender type/player flag mismatch")
+
+    if defender_type=="player":
         return 0
-    per = int((int(defender_level) - int(attacker_level)) * 0.6 + 30)
-    return max(per, 50)
+
+    threshold=int(ai_threshold)
+    if threshold > 0 and defender_type=="pet":
+        if defender_fixed_ai is None:
+            raise ValueError(
+                "active ABDUCTII PET target requires defender_fixed_ai"
+            )
+        per=200 if int(defender_fixed_ai) < threshold else 0
+    else:
+        per=int((int(defender_level)-int(attacker_level))*0.6+30)
+        per=max(per,50)
+
+    if has_win_func:
+        per=0
+    return int(per)
 
 
 def abduct_transition(
