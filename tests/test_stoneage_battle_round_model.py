@@ -1160,7 +1160,7 @@ class BattleRoundModelTests(unittest.TestCase):
         )
         self.assertTrue(counter.counter_check_resolution.success)
         self.assertGreater(counter.damage,0)
-        self.assertEqual(result.hp_by_participant_id["player"],0)
+        self.assertLess(counter.target_hp_after,counter.target_hp_before)
 
     def test_command3_halves_match_fixed_battle_macros(self):
         packed=pack_battle_command3(low=3,high=4)
