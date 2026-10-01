@@ -402,6 +402,10 @@ class BattleCounterCheckInputs:
     attacker_fixed_dex: int
     defender_fixed_dex: int
     attacker_fixed_luck: int = 0
+    # BATTLE_CounterCheckPet adds NoGuard's packed counter modifier after
+    # BATTLE_CounterCalc and before the 100-percent cap. Player counter checks
+    # do not consume this pet/enemy-only modifier.
+    nonplayer_percent_modifier: int = 0
     attacker_weapon_type: str = COUNTER_WEAPON_FIST
     defender_weapon_type: str = COUNTER_WEAPON_FIST
 
@@ -416,6 +420,9 @@ class BattleCounterCheckInputs:
         object.__setattr__(self,"attacker_fixed_dex",int(self.attacker_fixed_dex))
         object.__setattr__(self,"defender_fixed_dex",int(self.defender_fixed_dex))
         object.__setattr__(self,"attacker_fixed_luck",int(self.attacker_fixed_luck))
+        object.__setattr__(
+            self,"nonplayer_percent_modifier",int(self.nonplayer_percent_modifier)
+        )
         object.__setattr__(
             self,"attacker_weapon_type",
             _counter_weapon_type(self.attacker_weapon_type),
@@ -505,7 +512,10 @@ def resolve_battle_counter_check(
             success=roll < threshold,
         )
 
-    percent=min(100.0,float(basis))
+    percent=min(
+        100.0,
+        float(basis) + float(inputs.nonplayer_percent_modifier),
+    )
     reported=percent
     threshold=percent*100.0
     if threshold <= 0:
