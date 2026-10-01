@@ -40,6 +40,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_ESCAPE,
     BATTLE_COM_GUARD,
     BATTLE_COM_S_CHARGE,
+    BATTLE_COM_S_EARTHROUND0,
     BATTLE_COM_S_RENZOKU,
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_S_ABDUCT,
@@ -987,6 +988,7 @@ class LocalRuntimeSessionCoordinator:
         allow_chargeattack_skill: bool = False,
         allow_noguard_skill: bool = False,
         allow_abduct_skill: bool = False,
+        allow_earthround_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1039,7 +1041,10 @@ class LocalRuntimeSessionCoordinator:
                     state.carried_commands_by_participant_id[
                         enemy_id
                     ].command1
-                ) == BATTLE_COM_S_CHARGE
+                ) in {
+                    BATTLE_COM_S_CHARGE,
+                    BATTLE_COM_S_EARTHROUND0,
+                }
             )
         }
         ai_enemy_ids=tuple(
@@ -1174,6 +1179,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_chargeattack_skill)
                 or bool(allow_noguard_skill)
                 or bool(allow_abduct_skill)
+                or bool(allow_earthround_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1196,6 +1202,7 @@ class LocalRuntimeSessionCoordinator:
                     allow_charge_attack=bool(allow_chargeattack_skill),
                     allow_no_guard=bool(allow_noguard_skill),
                     allow_abduct=bool(allow_abduct_skill),
+                    allow_earth_round=bool(allow_earthround_skill),
                 )
                 commands[enemy_id] = bridged.command
                 if bridged.setup_effects != BattleCommandSetupEffects():
@@ -1231,6 +1238,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("NoGuard")
             if bool(allow_abduct_skill):
                 allowed_parts.append("Abduct")
+            if bool(allow_earthround_skill):
+                allowed_parts.append("EarthRound")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1267,6 +1276,7 @@ class LocalRuntimeSessionCoordinator:
             allow_chargeattack_skill=False,
             allow_noguard_skill=False,
             allow_abduct_skill=False,
+            allow_earthround_skill=False,
         ).commands
 
     def build_persistent_enemy_attack_guard_commands(
@@ -1410,9 +1420,11 @@ class LocalRuntimeSessionCoordinator:
 
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
         explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
-        plus recovered Abduct, ChargeAttack, ContinuationAttack, GuardBreak,
-        Mighty, NoGuard, PowerBalance and StatusChange. Abduct carries the
-        recovered OPTION atoi threshold and explicit RAND input. NoGuard keeps S_NOGUARD selected for its
+        plus recovered Abduct, ChargeAttack, ContinuationAttack, EarthRound,
+        GuardBreak, Mighty, NoGuard, PowerBalance and StatusChange. EarthRound
+        carries phase 1 into S_EARTHROUND0 without a fresh AI roll, then uses
+        ordinary physical RNG on phase 2. Abduct carries the recovered OPTION
+        atoi threshold and explicit RAND input. NoGuard keeps S_NOGUARD selected for its
         own NoAction turn so later same-round dodge/counter checks can consume
         COM3; ChargeAttack carries its countdown across rounds. GuardBreak
         preserves its dedicated guard-only hit gate and source-shaped Guardian
@@ -1494,6 +1506,7 @@ class LocalRuntimeSessionCoordinator:
             allow_chargeattack_skill=True,
             allow_noguard_skill=True,
             allow_abduct_skill=True,
+            allow_earthround_skill=True,
         )
         enemy_commands = enemy_batch.commands
         escaping_enemy_ids = {
