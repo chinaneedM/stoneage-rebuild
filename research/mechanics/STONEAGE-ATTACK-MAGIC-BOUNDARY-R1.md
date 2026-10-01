@@ -49,7 +49,7 @@ as an explicit optional version layer rather than projected into recovered25.
 
 ## HIGH(COM3) divergence
 
-The important descendant divergence is real and cannot be flattened:
+The descendant HIGH(COM3) encoding divergence is real and remains versioned:
 
 - gavin/iris initialize `magic=313`, `item=19659`, parse `magic`, then
   search for `item` from the advanced source pointer and write the resulting
@@ -58,10 +58,15 @@ The important descendant divergence is real and cannot be flattened:
   HIGH(COM3) write. Its LOW-half setter therefore preserves whatever high-half
   state already existed.
 
-The divergence is semantically significant. In the fixed `MAGIC_DirectUse`
-implementation, a non-player caster passes `itemnum` straight through as the
-global item index; only player casters reinterpret it as an inventory slot.
-Therefore Bismarck's preserved high-half residue is not harmless padding.
+The command encoding diverges, but a later source audit narrows its runtime
+effect for **non-player AttackMagic**. `MAGIC_DirectUse` does pass `itemnum`
+straight to the dynamic existing-item table, while the recovered 196xx values
+are configuration IDs and are not guaranteed existing-item instance indexes.
+However an invalid `ITEM_getInt(..., ITEM_MAGICUSEMP)` returns a negative MP
+value without aborting; `MAGIC_AttMagic` skips MP check/deduction for
+non-player casters; and `MAGIC_AttMagic_Battle` does not read its `mp`
+argument. Thus HIGH(COM3) is provenance-significant but **execution-dead for
+non-player AttackMagic footprint/damage** in the pinned descendants.
 
 The gavin/iris missing-`magic` path is also not normalized: their second
 `strstr` reuses the pointer returned by the first `strstr("magic")`. If that
@@ -109,9 +114,10 @@ a `MagicDirectUseRequest(magic_id, target, item_index)`. It stops there.
 
 ## Evidence boundary
 
-**FACT:** recovered25 supplies the explicit item token for every AttackMagic row,
-and those item values are semantically consumed by the earlier fixed source
-path.
+**FACT:** recovered25 supplies the explicit item token for every AttackMagic
+row and those tokens cross-link 25/25 to the corresponding item configuration.
+For non-player AttackMagic, the later MP value derived from HIGH(COM3) is
+execution-dead before footprint/damage.
 
 **VERSIONED:** Bismarck's removed item write/high-half residue behavior is kept
 as its own descendant profile rather than overwritten.
@@ -119,9 +125,20 @@ as its own descendant profile rather than overwritten.
 **DESIGN:** recovered25 uses the explicit-item profile because it preserves all
 directly recovered fields and avoids throwing away 25/25 observed item tokens.
 
-**OPEN:** recovered25-specific downstream attack-magic execution still requires
-a cross-link from magic IDs 301..325 through recovered `magic.txt`, the
-corresponding item metadata, `attmagic.bin` indices/footprints, and the active
-`_FIX_MAGICDAMAGE` arithmetic before enemy-AI runtime admission.
+**CLOSED DOWNSTREAM LAYERS:** the recovered magic/item/IDX cross-link,
+`attmagic.bin` footprint geometry, and active `_FIX_MAGICDAMAGE` arithmetic
+were subsequently reconstructed and independently validated. Runtime admission
+still fails closed whenever the historical right-down `SortLoc/qsort` target
+order is nonportable.
 
 Marker: **RECOVERED25_ATTACKMAGIC_COMMAND_BOUNDARY_R1 = CLOSED**
+
+
+## Non-player item-token semantic correction — 2026-10-01
+
+- gavin/iris fixed builds leave `_IMPOROVE_ITEMTABLE` disabled; Bismarck uses an explicit item-ID-to-template-row index. Neither mechanism makes recovered configuration ID `196xx` an authoritative dynamic existing-item instance index.
+- Existing-item allocation uses a rotating free-slot `Sindex`, so instance identity is runtime-dependent.
+- `MAGIC_DirectUse` does not abort on a negative item-derived MP value.
+- `MAGIC_AttMagic` explicitly does not consume MP for non-player casters.
+- `MAGIC_AttMagic_Battle` ignores its `mp` argument.
+- Therefore recovered item IDs remain required cross-link/provenance evidence but are not used as runtime instance addresses in the reconstructed non-player AttackMagic path.

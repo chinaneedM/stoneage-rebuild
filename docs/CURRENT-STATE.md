@@ -5226,5 +5226,11 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Dedicated footprint geometry CI **36846956075 = PASS**; bot report write-back advanced `main` to `4cdb426b2649c0ec2e272200352c2e85b1e45957`.
 - **FIXED_DESCENDANT_ATTACKMAGIC_FOOTPRINT_GEOMETRY_R1 = CLOSED.**
 - Added a recovered25 real-matrix coverage probe for the actual local-runtime orientation (player slots 0..9, enemy slots 10..19): enemy AttackMagic uses even `IDX*2` records against player side 0. The probe evaluates all 25 magic IDs across all ten possible initial player target slots under a fully alive side and measures exact target counts plus source-sort portability without storing payload text.
-- **RECOVERED25_ATTACKMAGIC_FOOTPRINT_COVERAGE_R1 = CANDIDATE.**
-- Next priority: run that coverage probe on the preservation bundle; use its measured portable/nonportable split to define the narrowest exact enemy-AI runtime admission boundary before composing with the damage core.
+- Coverage probe run **36847455747 = PASS**; report write-back advanced `main` to `0226f17c0498bd029681aa2d0c4c4e0952ab3f94`.
+- Fully alive enemy->player scenarios: **250 total = 110 source-sort portable + 140 nonportable**. This exactly matches **110 single-target + 140 multi-target** scenarios in the recovered population; target-count distribution is 1:110, 2:8, 3:16, 4:6, 5:50, 10:60.
+- Eleven magic IDs are portable across all ten fully alive source targets: **301,302,307,308,309,310,313,314,319,320,322**. The other fourteen remain dynamically admissible if current living-target membership collapses to a portable set.
+- **RECOVERED25_ATTACKMAGIC_FOOTPRINT_COVERAGE_R1 = CLOSED.**
+- A deeper fixed-source audit corrected the earlier HIGH(COM3) risk assessment: recovered `item 196xx` values are configuration IDs, not guaranteed dynamic existing-item indexes, but the resulting MP value is **execution-dead for non-player AttackMagic**. `MAGIC_DirectUse` does not abort on negative MP, non-player `MAGIC_AttMagic` skips MP consumption, and `MAGIC_AttMagic_Battle` ignores `mp`.
+- Added a recovered25 AttackMagic runtime-index candidate that validates all 25 skill->magic->item-config->IDX->side-pair links, retains item IDs only as provenance/cross-link data, and dynamically fails closed when historical `SortLoc/qsort` target order is nonportable.
+- **RECOVERED25_ATTACKMAGIC_RUNTIME_INDEX_R1 = CANDIDATE.**
+- Next priority: validate the runtime index against the fixed preservation bundle, then compose its exact-source-order subset with the closed damage core at the enemy battle-action execution boundary.
