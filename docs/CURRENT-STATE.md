@@ -5072,4 +5072,36 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   - exact Guardian bundle grammar hardened in `d79b236b...` / `311571b4c6d9a312fe6bb0bc9e6b5fa6c82d09b9`, with full recovered25 validation **36835322303 = PASS**.
 - Executable recovered stable-common slot-use coverage after Guardian is **2118 / 2486 = ~85.2%**.
 - **LOCAL_RUNTIME_ENEMY_AI_GUARDIAN_R1 = CLOSED.**
-- Next priority: `PETSKILL_Merge` (**2 referenced IDs / 3 positive slot uses**). Do **not** admit it as a battle command. The stable callback writes no COM and delegates to field/item merge logic; historical enemy-AI execution is first gated by `PETSKILL_FIELD`. Probe the recovered rows' FIELD values before deciding whether these enemybase references are executable battle skills or inert field-only references.
+
+## Phase 1 recovered Merge historical-UB closure — 2026-10-01
+
+- `PETSKILL_Merge` is closed as a **historical undefined-behavior boundary**, not admitted as executable recovered enemy AI:
+  - **2** referenced IDs / **3** positive enemybase skill-slot uses;
+  - the real preservation bundle is hard-probed as **2/2 FIELD=MAP**, **2/2 ILLEGAL=1**, **2/2 ASCII**, **2/2 empty OPTION**;
+  - nevertheless, fixed `BATTLE_ai_normal` does **not** filter `PETSKILL_FIELD` before a `wa[n]` call; it directly invokes `PETSKILL_Use(enemy, slot, target, NULL)`;
+  - active `_PETSKILL_CHECKTYPE` does not save this path because that gate applies only to `CHAR_TYPEPET`, while encounter actors are `CHAR_TYPEENEMY`.
+- Fixed owner/data flow was re-audited:
+  - ordinary enemies start with all work integers zero and do not replace `CHAR_WORKPLAYERINDEX`, so Merge resolves nominal owner index **0**;
+  - `data=NULL` is accepted by the delimiter helper but yields at most one empty/zero material token;
+  - true item merge requires `cnt > 1`, so this enemy-AI path never enters a legitimate merge transaction.
+- Descendant divergence proves this was a historical bug rather than a deterministic game rule:
+  - gavinlinasd and iriselia both fall off the end of `ITEM_mergeItem_merge(int ...)` with no return when `cnt <= 1`, yielding C-level undefined return data;
+  - Bismarck later repairs the path with an explicit final `return result;`, making the same NULL-data path deterministically FALSE;
+  - the later repair is bug-fix evidence and is **not** back-projected as the exact result of the earlier code.
+- The undefined return is observably relevant in battle:
+  - each round first clears non-carried COM1 to NONE and sets actors to `C_WAIT`;
+  - if the garbage callback return happens to equal TRUE, `BATTLE_ai_normal` promotes the enemy to `C_OK + COM_NONE`;
+  - otherwise it remains `C_WAIT`;
+  - `BATTLE_Battling` skips actors not in `C_OK`, so this can alter per-actor status-sequence timing even though no attack command is produced.
+- Modern reconstruction policy:
+  - recovered enemy Merge is rejected with a dedicated historical-UB fail-closed error;
+  - the runtime does not touch global character index 0, does not invent one compiler/ABI's garbage return value, and does not normalize the action to WAIT/NONE/ATTACK.
+- Validation:
+  - dedicated bridge boundary `85f7843e389483fe9a997bd1c6820b314694f3c7`: local runtime coordinator **36837156954 = PASS**;
+  - bridge regression `5b8c640c0d728599e237739eefb1baf99b2ca5b9`: local runtime coordinator **36837179586 = PASS**;
+  - coordinator end-to-end negative regression `98ea48149fcdf9883235d8611cff9cd8b856eaba`: local runtime coordinator **36837398997 = PASS**;
+  - exact Merge specimen hard probe at the same HEAD: full recovered25 payload/runtime-stack **36837399052 = PASS**.
+- Executable recovered stable-common slot-use coverage therefore remains **2118 / 2486 = ~85.2%**; the remaining **3** stable-common slot uses are intentionally classified-but-nonexecuted historical UB, not an implementation backlog.
+- All **31 referenced stable-common pet-skill IDs** are now either executable or explicitly closed at a no-guess boundary.
+- **LOCAL_RUNTIME_ENEMY_AI_MERGE_HISTORICAL_UB_R1 = CLOSED.**
+- Next priority: inventory the **80 referenced non-common pet-skill IDs / 365 positive slot uses** by callback, FIELD/ILLEGAL class and option encoding, then take the highest-frequency source-backed callback family. Do not promote macro-gated or lineage-specific callbacks into the stable-common set without evidence.

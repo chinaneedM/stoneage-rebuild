@@ -579,6 +579,97 @@ def main() -> None:
             f"cp950_big5_divergent_ids={dual_divergent}|"
             f"cp950_big5_decode_error_ids={dual_decode_error}"
         )
+    noncommon_entries = tuple(
+        entry
+        for entry in referenced_skill_entries
+        if not entry.stable_common_callback
+    )
+    noncommon_ids = {
+        int(entry.skill_id)
+        for entry in noncommon_entries
+    }
+    noncommon_slot_uses = sum(
+        1
+        for skill_id in all_skill_slot_ids
+        if int(skill_id) in noncommon_ids
+    )
+    print(
+        "COUNT|enemybase_referenced_noncommon_petskill_ids|"
+        f"{len(noncommon_ids)}"
+    )
+    print(
+        "COUNT|enemybase_noncommon_petskill_slot_uses|"
+        f"{noncommon_slot_uses}"
+    )
+    noncommon_callbacks = sorted(
+        {
+            entry.function_name
+            for entry in noncommon_entries
+        }
+    )
+    for callback in noncommon_callbacks:
+        callback_ids = {
+            int(entry.skill_id)
+            for entry in noncommon_entries
+            if entry.function_name == callback
+        }
+        slot_uses = sum(
+            1
+            for skill_id in all_skill_slot_ids
+            if int(skill_id) in callback_ids
+        )
+        field_all = sum(
+            int(stack.petskill_runtime.skills[skill_id].field == 0)
+            for skill_id in callback_ids
+        )
+        field_battle = sum(
+            int(stack.petskill_runtime.skills[skill_id].field == 1)
+            for skill_id in callback_ids
+        )
+        field_map = sum(
+            int(stack.petskill_runtime.skills[skill_id].field == 2)
+            for skill_id in callback_ids
+        )
+        field_other = len(callback_ids) - field_all - field_battle - field_map
+        illegal_ids = sum(
+            int(stack.petskill_runtime.skills[skill_id].illegal != 0)
+            for skill_id in callback_ids
+        )
+        ascii_ids = sum(
+            int(stack.petskill_runtime.skills[skill_id].option_bytes.isascii())
+            for skill_id in callback_ids
+        )
+        dual_same = 0
+        dual_divergent = 0
+        dual_decode_error = 0
+        for skill_id in callback_ids:
+            option_bytes = stack.petskill_runtime.skills[skill_id].option_bytes
+            try:
+                cp950_text = option_bytes.decode("cp950", "strict")
+                big5_text = option_bytes.decode("big5", "strict")
+            except UnicodeDecodeError:
+                dual_decode_error += 1
+                continue
+            if cp950_text == big5_text:
+                dual_same += 1
+            else:
+                dual_divergent += 1
+        print(
+            "PETSKILL_NONCOMMON_CALLBACK_COVERAGE|"
+            f"callback={callback}|"
+            f"unique_ids={len(callback_ids)}|"
+            f"slot_uses={slot_uses}|"
+            f"field_all_ids={field_all}|"
+            f"field_battle_ids={field_battle}|"
+            f"field_map_ids={field_map}|"
+            f"field_other_ids={field_other}|"
+            f"illegal_ids={illegal_ids}|"
+            f"ascii_option_ids={ascii_ids}|"
+            f"nonascii_option_ids={len(callback_ids)-ascii_ids}|"
+            f"cp950_big5_same_ids={dual_same}|"
+            f"cp950_big5_divergent_ids={dual_divergent}|"
+            f"cp950_big5_decode_error_ids={dual_decode_error}"
+        )
     status_entries = tuple(
         entry
         for entry in referenced_skill_entries
