@@ -94,6 +94,7 @@ from tools.stoneage_petskill_core_model import (
     abduct_probability,
     abduct_transition,
     earth_round_attack_transition,
+    steal_transition,
 )
 
 
@@ -124,6 +125,7 @@ BATTLE_COM_S_STATUSCHANGE = 1008
 BATTLE_COM_S_EARTHROUND0 = 1009
 BATTLE_COM_S_EARTHROUND1 = 1010
 BATTLE_COM_S_ABDUCT = 1012
+BATTLE_COM_S_STEAL = 1013
 BATTLE_COM_S_NOGUARD = 1014
 BATTLE_COM_S_CHARGE_OK = 1015
 
@@ -183,6 +185,7 @@ BASE_COMMAND_CODES = frozenset(
         BATTLE_COM_S_EARTHROUND0,
         BATTLE_COM_S_EARTHROUND1,
         BATTLE_COM_S_ABDUCT,
+        BATTLE_COM_S_STEAL,
         BATTLE_COM_S_NOGUARD,
         BATTLE_COM_S_CHARGE_OK,
     }
@@ -555,6 +558,7 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_S_EARTHROUND0,
         BATTLE_COM_S_EARTHROUND1,
         BATTLE_COM_S_ABDUCT,
+        BATTLE_COM_S_STEAL,
         BATTLE_COM_S_NOGUARD,
         BATTLE_COM_S_CHARGE_OK,
     }
@@ -651,6 +655,26 @@ class OrdinaryAbductRolls:
 
     abduct_roll_1_100: int | None = None
     retarget_roll: int | None = None
+
+
+@dataclass(frozen=True)
+class OrdinaryStealRolls:
+    """Explicit RAND inputs consumed by TargetAdjust + BATTLE_Steal."""
+
+    success_roll_1_100: int | None = None
+    mode_roll_1_100: int | None = None
+    gold_percent_roll_8_12: int | None = None
+    chosen_item_ordinal: int | None = None
+    retarget_roll: int | None = None
+
+
+@dataclass(frozen=True)
+class OrdinaryStealResolution:
+    success: bool
+    mode: str | None
+    attacker_exits: bool
+    defender_gold_loss: int = 0
+    destroyed_item_slot: int | None = None
 
 
 @dataclass(frozen=True)
@@ -769,6 +793,7 @@ class OrdinaryRoundEvent:
     capture_resolution: BattleCaptureResolution | None = None
     escape_resolution: BattleEscapeResolution | None = None
     abduct_resolution: OrdinaryAbductResolution | None = None
+    steal_resolution: OrdinaryStealResolution | None = None
     is_counter: bool = False
     counter_attempt: int | None = None
     counter_check_resolution: BattleCounterCheckResolution | None = None
@@ -818,6 +843,8 @@ class ResolvedOrdinaryRound:
     carried_setup_effects_by_participant_id: Mapping[
         str,BattleCommandSetupEffects
     ] | None = None
+    steal_gold_by_player_id: Mapping[str,int] | None = None
+    steal_item_slots_by_player_id: Mapping[str,tuple[int,...]] | None = None
 
 
 def _participant_battle_kind(participant: BattleParticipant) -> str:
@@ -3088,6 +3115,11 @@ def resolve_ordinary_round(
     capture_rolls: Mapping[str, OrdinaryCaptureRolls] | None = None,
     abduct_contexts: Mapping[str, OrdinaryAbductContext] | None = None,
     abduct_rolls: Mapping[str, OrdinaryAbductRolls] | None = None,
+    steal_rolls: Mapping[str, OrdinaryStealRolls] | None = None,
+    steal_player_gold_by_participant_id: Mapping[str,int] | None = None,
+    steal_player_item_slots_by_participant_id: Mapping[
+        str,Sequence[int]
+    ] | None = None,
     escape_contexts: Mapping[str, OrdinaryEscapeContext] | None = None,
     escape_rolls: Mapping[str, OrdinaryEscapeRolls] | None = None,
     counter_rolls_by_attack_id: Mapping[
@@ -3171,6 +3203,22 @@ def resolve_ordinary_round(
     capture_rolls=dict(capture_rolls or {})
     abduct_contexts=dict(abduct_contexts or {})
     abduct_rolls=dict(abduct_rolls or {})
+    steal_rolls=dict(steal_rolls or {})
+    steal_gold={
+        str(pid):int(value)
+        for pid,value in (steal_player_gold_by_participant_id or {}).items()
+    }
+    if any(value < 0 for value in steal_gold.values()):
+        raise ValueError("Steal player gold cannot be negative")
+    steal_items={
+        str(pid):tuple(sorted(int(slot) for slot in slots))
+        for pid,slots in (
+            steal_player_item_slots_by_participant_id or {}
+        ).items()
+    }
+    for pid,slots in steal_items.items():
+        if len(slots) != len(set(slots)):
+            raise ValueError(f"Steal item slots contain duplicates for {pid}")
     escape_contexts=dict(escape_contexts or {})
     escape_rolls=dict(escape_rolls or {})
     normalized_counter_rolls=(
@@ -4103,6 +4151,157 @@ def resolve_ordinary_round(
                     target_hp_before=before,
                     target_hp_after=before,
                     abduct_resolution=resolution,
+                )
+            )
+            continue
+
+        if command.command1 == BATTLE_COM_S_STEAL:
+            original_target=int(command.command2)
+            target=original_target
+            retargeted=False
+            target_alive=(
+                target in by_slot
+                and target not in exited_slots
+                and int(hp_by_slot.get(target,0)) > 0
+                and _slot_side(target) != _slot_side(slot)
+            )
+            actor_rolls=steal_rolls.get(
+                str(participant_id),
+                OrdinaryStealRolls(),
+            )
+            if not isinstance(actor_rolls,OrdinaryStealRolls):
+                raise TypeError(
+                    f"Steal rolls for {participant_id} have wrong type"
+                )
+            if not target_alive:
+                target=_retarget_slot(
+                    slot,
+                    by_slot,
+                    hp_by_slot,
+                    actor_rolls.retarget_roll,
+                    excluded_slots=exited_slots,
+                )
+                retargeted=True
+            if target is None:
+                events.append(
+                    OrdinaryRoundEvent(
+                        str(participant_id),
+                        int(slot),
+                        BATTLE_COM_S_STEAL,
+                        int(entry.action_value),
+                        "steal_no_target",
+                        original_target_slot=original_target,
+                        retargeted=True,
+                    )
+                )
+                continue
+            if participant.kind not in {"pet","enemy"}:
+                raise ValueError("S_STEAL requires PET or ENEMY attacker")
+
+            defender=by_slot[target]
+            defender_id=str(defender.participant_id)
+            success_roll=_validated_roll(
+                actor_rolls.success_roll_1_100,
+                1,
+                100,
+                "steal_success_roll_1_100",
+            )
+            transition_kwargs={
+                "defender_type":str(defender.kind),
+                "success_roll_1_to_100":success_roll,
+            }
+            if defender.kind=="player" and success_roll < 50:
+                if defender_id not in steal_gold:
+                    raise KeyError(
+                        f"missing Steal gold state for {defender_id}"
+                    )
+                if defender_id not in steal_items:
+                    raise KeyError(
+                        f"missing Steal item state for {defender_id}"
+                    )
+                mode_roll=_validated_roll(
+                    actor_rolls.mode_roll_1_100,
+                    1,
+                    100,
+                    "steal_mode_roll_1_100",
+                )
+                transition_kwargs["mode_roll_1_to_100"]=mode_roll
+                transition_kwargs["defender_gold"]=int(
+                    steal_gold[defender_id]
+                )
+                current_items=tuple(steal_items[defender_id])
+                transition_kwargs["carried_item_slots"]=current_items
+                if mode_roll < 50:
+                    transition_kwargs["gold_percent_roll"]=_validated_roll(
+                        actor_rolls.gold_percent_roll_8_12,
+                        8,
+                        12,
+                        "steal_gold_percent_roll_8_12",
+                    )
+                elif current_items:
+                    transition_kwargs["chosen_item_ordinal"]=_validated_roll(
+                        actor_rolls.chosen_item_ordinal,
+                        0,
+                        len(current_items)-1,
+                        "steal_chosen_item_ordinal",
+                    )
+
+            transition=steal_transition(**transition_kwargs)
+            resolution=OrdinaryStealResolution(
+                success=bool(transition["success"]),
+                mode=(
+                    None
+                    if transition.get("mode") is None
+                    else str(transition["mode"])
+                ),
+                attacker_exits=bool(
+                    transition.get("attacker_exits",False)
+                ),
+                defender_gold_loss=int(
+                    transition.get("defender_gold_loss",0)
+                ),
+                destroyed_item_slot=(
+                    None
+                    if transition.get("destroyed_item_slot") is None
+                    else int(transition["destroyed_item_slot"])
+                ),
+            )
+            if resolution.success and defender.kind=="player":
+                if resolution.mode=="gold":
+                    steal_gold[defender_id]=(
+                        int(steal_gold[defender_id])
+                        - int(resolution.defender_gold_loss)
+                    )
+                elif resolution.mode=="item":
+                    destroyed=int(resolution.destroyed_item_slot)
+                    steal_items[defender_id]=tuple(
+                        item_slot
+                        for item_slot in steal_items[defender_id]
+                        if int(item_slot) != destroyed
+                    )
+            if resolution.attacker_exits and slot not in exited_slots:
+                exited_slots.add(slot)
+                if str(participant_id) not in exited_ids:
+                    exited_ids.append(str(participant_id))
+
+            before=int(hp_by_slot[target])
+            events.append(
+                OrdinaryRoundEvent(
+                    str(participant_id),
+                    int(slot),
+                    BATTLE_COM_S_STEAL,
+                    int(entry.action_value),
+                    (
+                        f"steal_success_{resolution.mode}"
+                        if resolution.success
+                        else "steal_failed"
+                    ),
+                    original_target_slot=original_target,
+                    resolved_target_slot=int(target),
+                    retargeted=retargeted,
+                    target_hp_before=before,
+                    target_hp_after=before,
+                    steal_resolution=resolution,
                 )
             )
             continue
@@ -5218,5 +5417,9 @@ def resolve_ordinary_round(
         ),
         carried_setup_effects_by_participant_id=MappingProxyType(
             dict(carried_effects)
+        ),
+        steal_gold_by_player_id=MappingProxyType(dict(steal_gold)),
+        steal_item_slots_by_player_id=MappingProxyType(
+            dict(steal_items)
         ),
     )
