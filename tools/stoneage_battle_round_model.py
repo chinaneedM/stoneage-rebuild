@@ -35,6 +35,13 @@ from tools.stoneage_enemy_ai_damage_to_hp_bridge import (
     EnemyAiDamageToHpSubmission,
 )
 from tools.stoneage_enemy_ai_mp_damage_bridge import EnemyAiMpDamageSubmission
+from tools.stoneage_enemy_ai_fall_ground_bridge import (
+    EnemyAiFallGroundSubmission,
+)
+from tools.stoneage_fall_ground_model import (
+    FallGroundResolution,
+    resolve_fall_ground,
+)
 from tools.stoneage_mp_damage_model import (
     MpDamageResolution,
     resolve_mp_damage,
@@ -866,6 +873,7 @@ class OrdinaryRoundEvent:
     enemy_rehp_resolution: EnemyReHpResolution | None = None
     damage_to_hp_recovery: DamageToHpRecovery | None = None
     mp_damage_resolution: MpDamageResolution | None = None
+    fall_ground_resolution: FallGroundResolution | None = None
 
 
 @dataclass(frozen=True)
@@ -3274,6 +3282,16 @@ def resolve_ordinary_round(
         str,EnemyAiMpDamageSubmission
     ] | None = None,
     mp_by_participant_id: Mapping[str,int] | None = None,
+    fall_ground_submissions_by_participant_id: Mapping[
+        str,EnemyAiFallGroundSubmission
+    ] | None = None,
+    fall_ground_rolls_by_participant_id: Mapping[
+        str,int | None
+    ] | None = None,
+    fall_ground_equipment_resistance_by_participant_id: Mapping[
+        str,int
+    ] | None = None,
+    ride_pet_source_slot: int | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ResolvedOrdinaryRound:
@@ -3541,6 +3559,120 @@ def resolve_ordinary_round(
         )
     if any(value < 0 for value in mp_working.values()):
         raise ValueError("MpDamage MP state cannot be negative")
+
+    fall_ground_submissions={
+        str(participant_id):submission
+        for participant_id,submission in (
+            fall_ground_submissions_by_participant_id or {}
+        ).items()
+    }
+    fall_ground_actor_ids=set(fall_ground_submissions)
+    unknown_fall_ground_ids=sorted(fall_ground_actor_ids-set(slot_by_id))
+    if unknown_fall_ground_ids:
+        raise ValueError(
+            "FallGround submissions reference unknown actors: "
+            f"{unknown_fall_ground_ids}"
+        )
+    if fall_ground_actor_ids & (
+        mp_damage_actor_ids | damage_to_hp_actor_ids
+        | enemy_rehp_actor_ids | attack_magic_actor_ids
+    ):
+        raise ValueError("FallGround semantic submissions overlap another skill")
+    for participant_id,submission in fall_ground_submissions.items():
+        if not isinstance(submission,EnemyAiFallGroundSubmission):
+            raise TypeError(
+                f"FallGround submission for {participant_id} has wrong type"
+            )
+        if str(submission.participant_id) != participant_id:
+            raise ValueError("FallGround submission participant drift")
+        entry=prepared_entry_by_id[participant_id]
+        if entry.participant.side != "enemy" or entry.participant.kind != "enemy":
+            raise ValueError(
+                "recovered25 FallGround currently admits enemy actors only"
+            )
+        if (
+            int(entry.command.command1) != BATTLE_COM_ATTACK
+            or int(entry.command.command2) != int(submission.source_target_slot)
+        ):
+            raise ValueError(
+                "FallGround ordering carrier must be ATTACK/source-target"
+            )
+        expected_attack=submission.callback_attack_power(
+            int(entry.participant.attack)
+        )
+        effects=setup_effects.get(
+            participant_id,
+            BattleCommandSetupEffects(),
+        )
+        if effects.attack_power is None or int(effects.attack_power) != expected_attack:
+            raise ValueError(
+                "FallGround callback attack-power setup effect drift"
+            )
+
+    fall_ground_rolls={
+        str(participant_id):(
+            None if value is None else int(value)
+        )
+        for participant_id,value in (
+            fall_ground_rolls_by_participant_id or {}
+        ).items()
+    }
+    if set(fall_ground_rolls) != fall_ground_actor_ids:
+        missing=sorted(fall_ground_actor_ids-set(fall_ground_rolls))
+        extra=sorted(set(fall_ground_rolls)-fall_ground_actor_ids)
+        raise ValueError(
+            "FallGround RNG actors mismatch; "
+            f"missing={missing}, extra={extra}"
+        )
+    for participant_id,value in fall_ground_rolls.items():
+        if value is not None and not 0 <= value <= 100:
+            raise ValueError(
+                f"FallGround RNG for {participant_id} must be 0..100 or None"
+            )
+
+    fall_ground_resistance={
+        str(participant_id):int(value)
+        for participant_id,value in (
+            fall_ground_equipment_resistance_by_participant_id or {}
+        ).items()
+    }
+    expected_fall_targets={
+        str(entry.participant.participant_id)
+        for entry in prepared.ordered_entries
+        if entry.participant.side=="player"
+    } if fall_ground_actor_ids else set()
+    if set(fall_ground_resistance) != expected_fall_targets:
+        missing=sorted(expected_fall_targets-set(fall_ground_resistance))
+        extra=sorted(set(fall_ground_resistance)-expected_fall_targets)
+        raise ValueError(
+            "FallGround equipment-resistance state must cover exactly "
+            f"player-side targets; missing={missing}, extra={extra}"
+        )
+    nonzero_fall_resistance={
+        pid:value for pid,value in fall_ground_resistance.items()
+        if int(value) != 0
+    }
+    if nonzero_fall_resistance:
+        raise ValueError(
+            "FallGround nonzero equipment resistance is outside the "
+            "cross-descendant recovered25 admission domain"
+        )
+
+    if ride_runtime is None:
+        if ride_pet_source_slot is not None:
+            raise ValueError(
+                "FallGround ride-pet source slot supplied without ride runtime"
+            )
+    else:
+        if ride_pet_source_slot is None:
+            raise ValueError(
+                "FallGround ride runtime requires source pet slot provenance"
+            )
+        ride_pet_source_slot=int(ride_pet_source_slot)
+        if not 0 <= ride_pet_source_slot <= 4:
+            raise ValueError("FallGround ride-pet source slot must be in 0..4")
+
+    attempted_fall_ground_actor_ids=set()
 
     guarding = {
         slot_by_id[entry.participant.participant_id]
@@ -5622,6 +5754,26 @@ def resolve_ordinary_round(
                 damage_react_state[source_defender_id]
             )
 
+        fall_ground_submission=None
+        fall_ground_source_react_blocked=False
+        if (
+            str(participant_id) in fall_ground_submissions
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            fall_ground_submission=fall_ground_submissions[str(participant_id)]
+            if int(command.command1) != BATTLE_COM_ATTACK:
+                raise ValueError(
+                    "FallGround semantic action lost ATTACK ordering carrier"
+                )
+            source_defender=by_slot[int(target)]
+            source_defender_id=str(source_defender.participant_id)
+            fall_ground_source_react_blocked=base_damage_react_active(
+                damage_react_state[source_defender_id]
+            )
+
         mp_damage_submission=None
         mp_damage_source_react_blocked=False
         if (
@@ -5804,6 +5956,7 @@ def resolve_ordinary_round(
         if (
             damage_to_hp_submission is not None
             or mp_damage_submission is not None
+            or fall_ground_submission is not None
         ):
             # Fixed specialized BATTLE_S_AttackDamage lets AttackSeq calculate
             # against a Guardian but passes its original defindex to DamageSub.
@@ -5979,6 +6132,53 @@ def resolve_ordinary_round(
             before=int(reaction_resolution.defender_hp_before)
             after=int(reaction_resolution.defender_hp_after)
             status_target_slot=int(reaction_target_slot)
+
+        fall_ground_resolution=None
+        if fall_ground_submission is not None:
+            attempted_fall_ground_actor_ids.add(str(participant_id))
+            fall_target=by_slot[int(reaction_target_slot)]
+            fall_target_id=str(fall_target.participant_id)
+            source_ride_slot=None
+            if (
+                fall_target.kind=="player"
+                and ride_runtime is not None
+                and ride_runtime.mounted
+                and str(ride_runtime.rider_id)==fall_target_id
+            ):
+                source_ride_slot=ride_pet_source_slot
+            fall_ground_resolution=resolve_fall_ground(
+                post_damage_player_damage=int(event_damage),
+                damage_react=(
+                    1 if fall_ground_source_react_blocked else 0
+                ),
+                same_side=(
+                    _slot_side(int(slot))
+                    == _slot_side(int(reaction_target_slot))
+                ),
+                target_kind=str(fall_target.kind),
+                ride_pet_slot=source_ride_slot,
+                fall_roll_0_100=fall_ground_rolls[str(participant_id)],
+                equipment_fall_resistance=int(
+                    fall_ground_resistance[fall_target_id]
+                ),
+                # Only the cross-descendant zero-resistance intersection is
+                # admitted. With explicit zero state both pinned branches agree.
+                use_equipment_resistance=True,
+                prevent_same_side=True,
+                fix_petfall=False,
+            )
+            if fall_ground_resolution.fell:
+                if ride_runtime is None or not ride_runtime.mounted:
+                    raise ValueError(
+                        "FallGround resolved fall without mounted ride runtime"
+                    )
+                ride_runtime=replace(
+                    ride_runtime,
+                    mounted=False,
+                    petfall=True,
+                )
+                active_ride=False
+                ride_pet_fell_rider_id=str(ride_runtime.rider_id)
 
         damage_to_hp_recovery=None
         if (
@@ -6208,6 +6408,7 @@ def resolve_ordinary_round(
                 damage_react_resolution=reaction_resolution,
                 damage_to_hp_recovery=damage_to_hp_recovery,
                 mp_damage_resolution=mp_damage_resolution,
+                fall_ground_resolution=fall_ground_resolution,
                 ride_damage_split=ride_split,
                 ride_hp_resolution=ride_hp_resolution,
                 ride_pet_fell_rider_id=ride_pet_fell_rider_id,
@@ -6217,12 +6418,27 @@ def resolve_ordinary_round(
             )
         )
         register_ultimate_exits((events[-1],))
-        # BATTLE_Attack forces continuation FALSE whenever Guardian>=0.
+        # Generic BATTLE_S_AttackDamage forces continuation FALSE on
+        # Guardian/DamageReact. Dedicated BATTLE_S_FallGround does not: its
+        # iRet is controlled by AttackSeq result, the post-react defindex's
+        # GUARD state and death. Preserve that difference here.
         if _battle_attack_continuation_allowed(
-            guardian_redirected=guardian_redirected,
-            damage_reaction_active=continuation_blocked_by_reaction,
+            guardian_redirected=(
+                False
+                if fall_ground_submission is not None
+                else guardian_redirected
+            ),
+            damage_reaction_active=(
+                False
+                if fall_ground_submission is not None
+                else continuation_blocked_by_reaction
+            ),
             critical=(result == "critical"),
-            target_guarding=(counter_target_slot in guarding),
+            target_guarding=(
+                (resolved_damage_slot in guarding)
+                if fall_ground_submission is not None
+                else (counter_target_slot in guarding)
+            ),
             target_hp_after=after,
         ):
             append_counter_chain(
@@ -6241,6 +6457,15 @@ def resolve_ordinary_round(
             raise ValueError(
                 "enemy ReHP RNG supplied for status-suppressed semantic action: "
                 + participant_id
+            )
+
+    for participant_id in sorted(
+        fall_ground_actor_ids-attempted_fall_ground_actor_ids
+    ):
+        if fall_ground_rolls[participant_id] is not None:
+            raise ValueError(
+                "FallGround RNG supplied for status/no-target/dodge-suppressed "
+                "semantic action: " + participant_id
             )
 
     unused_attack_magic_roll_ids=sorted(

@@ -42,6 +42,13 @@ from tools.stoneage_enemy_ai_mp_damage_bridge import (
     EnemyAiMpDamageSubmission,
     resolve_enemy_ai_mp_damage_submission,
 )
+from tools.stoneage_enemy_ai_fall_ground_bridge import (
+    EnemyAiFallGroundSubmission,
+    resolve_enemy_ai_fall_ground_submission,
+)
+from tools.stoneage_fall_ground_model import (
+    CALLBACK_NAME as FALL_GROUND_CALLBACK,
+)
 from tools.stoneage_mp_damage_model import CALLBACK_NAME as MP_DAMAGE_CALLBACK
 from tools.stoneage_damage_to_hp_model import (
     CALLBACK_NAME as DAMAGE_TO_HP_CALLBACK,
@@ -374,6 +381,9 @@ class EnemyAiCommonCommandBatch:
     mp_damage_submissions: Mapping[
         str,EnemyAiMpDamageSubmission
     ] = field(default_factory=dict)
+    fall_ground_submissions: Mapping[
+        str,EnemyAiFallGroundSubmission
+    ] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         object.__setattr__(
@@ -543,6 +553,41 @@ class EnemyAiCommonCommandBatch:
         ):
             raise ValueError(
                 "enemy AI MpDamage semantic submissions overlap another skill"
+            )
+
+        fall_submissions={
+            str(key):value
+            for key,value in self.fall_ground_submissions.items()
+        }
+        object.__setattr__(
+            self,"fall_ground_submissions",MappingProxyType(fall_submissions)
+        )
+        for participant_id,submission in fall_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI FallGround submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiFallGroundSubmission):
+                raise TypeError(
+                    f"enemy AI FallGround submission has wrong type for "
+                    f"{participant_id}"
+                )
+            if str(submission.participant_id) != participant_id:
+                raise ValueError("enemy AI FallGround participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1) != BATTLE_COM_ATTACK
+                or int(carrier.command2) != int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI FallGround carrier must be ATTACK/source-target"
+                )
+        if set(fall_submissions) & (
+            set(mp_submissions) | set(damage_submissions)
+            | set(rehp_submissions) | set(magic_submissions)
+        ):
+            raise ValueError(
+                "enemy AI FallGround semantic submissions overlap another skill"
             )
 
 
@@ -1177,6 +1222,7 @@ class LocalRuntimeSessionCoordinator:
         allow_rehp_skill: bool = False,
         allow_damage_to_hp_skill: bool = False,
         allow_mp_damage_skill: bool = False,
+        allow_fall_ground_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1320,6 +1366,7 @@ class LocalRuntimeSessionCoordinator:
         enemy_rehp_submissions={}
         damage_to_hp_submissions={}
         mp_damage_submissions={}
+        fall_ground_submissions={}
         for enemy_id in ai_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
                 raise ValueError(
@@ -1378,6 +1425,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_rehp_skill)
                 or bool(allow_damage_to_hp_skill)
                 or bool(allow_mp_damage_skill)
+                or bool(allow_fall_ground_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1388,6 +1436,31 @@ class LocalRuntimeSessionCoordinator:
                 skill_ids=tuple(int(x) for x in spawned.template.skill_slot_ids)
                 selected_skill_id=skill_ids[int(decision.skill_slot)]
                 selected_skill=petskill_runtime.skills.get(selected_skill_id)
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == FALL_GROUND_CALLBACK
+                    and bool(allow_fall_ground_skill)
+                ):
+                    submission=resolve_enemy_ai_fall_ground_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                    )
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    # Fixed callback mutates WORKATTACKPOWER at submission
+                    # time, before later status/confusion execution checks.
+                    setup_effects[enemy_id]=BattleCommandSetupEffects(
+                        attack_power=submission.callback_attack_power(
+                            int(spawned.participant.attack)
+                        )
+                    )
+                    fall_ground_submissions[enemy_id]=submission
+                    continue
+
                 if (
                     selected_skill is not None
                     and selected_skill.function_name == MP_DAMAGE_CALLBACK
@@ -1540,6 +1613,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_DamageToHp")
             if bool(allow_mp_damage_skill):
                 allowed_parts.append("PETSKILL_MpDamage")
+            if bool(allow_fall_ground_skill):
+                allowed_parts.append("PETSKILL_FallGround")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1554,6 +1629,7 @@ class LocalRuntimeSessionCoordinator:
             enemy_rehp_submissions=enemy_rehp_submissions,
             damage_to_hp_submissions=damage_to_hp_submissions,
             mp_damage_submissions=mp_damage_submissions,
+            fall_ground_submissions=fall_ground_submissions,
         )
 
     def build_persistent_enemy_common_commands(
@@ -1733,6 +1809,12 @@ class LocalRuntimeSessionCoordinator:
         enemy_rehp_retarget_rolls_by_attack_id: Mapping[
             str,int | None
         ] | None = None,
+        fall_ground_rolls_by_attack_id: Mapping[
+            str,int | None
+        ] | None = None,
+        fall_ground_equipment_resistance_by_participant_id: Mapping[
+            str,int
+        ] | None = None,
         no_risk: bool = False,
         field_attr: str = "none",
         field_power: int = 0,
@@ -1742,7 +1824,7 @@ class LocalRuntimeSessionCoordinator:
 
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
         explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
-        plus recovered Abduct, AttackMagic, ENEMYSKILL_ReHP, PETSKILL_DamageToHp, PETSKILL_MpDamage, ChargeAttack, ContinuationAttack,
+        plus recovered Abduct, AttackMagic, ENEMYSKILL_ReHP, PETSKILL_DamageToHp, PETSKILL_MpDamage, PETSKILL_FallGround, ChargeAttack, ContinuationAttack,
         EarthRound, GuardBreak, Mighty, NoGuard, PowerBalance, StatusChange and
         Steal.
         Steal mutates only the working persistent player Gold/inventory clone
@@ -1838,6 +1920,7 @@ class LocalRuntimeSessionCoordinator:
             allow_rehp_skill=True,
             allow_damage_to_hp_skill=True,
             allow_mp_damage_skill=True,
+            allow_fall_ground_skill=True,
         )
         enemy_commands = enemy_batch.commands
         rehp_enemy_ids=set(enemy_batch.enemy_rehp_submissions)
@@ -1869,6 +1952,54 @@ class LocalRuntimeSessionCoordinator:
             raise ValueError(
                 "enemy ReHP TargetAdjust RNG mismatch; "
                 f"missing={missing}, extra={extra}"
+            )
+
+        fall_ground_enemy_ids=set(
+            enemy_batch.fall_ground_submissions
+        )
+        normalized_fall_ground_rolls={
+            str(key):(None if value is None else int(value))
+            for key,value in (
+                fall_ground_rolls_by_attack_id or {}
+            ).items()
+        }
+        if set(normalized_fall_ground_rolls) != fall_ground_enemy_ids:
+            missing=sorted(
+                fall_ground_enemy_ids-set(normalized_fall_ground_rolls)
+            )
+            extra=sorted(
+                set(normalized_fall_ground_rolls)-fall_ground_enemy_ids
+            )
+            raise ValueError(
+                "enemy FallGround RNG mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        expected_fall_resistance_ids=(
+            set(living_player_side_ids)
+            if fall_ground_enemy_ids
+            else set()
+        )
+        normalized_fall_resistance={
+            str(key):int(value)
+            for key,value in (
+                fall_ground_equipment_resistance_by_participant_id or {}
+            ).items()
+        }
+        if set(normalized_fall_resistance) != expected_fall_resistance_ids:
+            missing=sorted(
+                expected_fall_resistance_ids-set(normalized_fall_resistance)
+            )
+            extra=sorted(
+                set(normalized_fall_resistance)-expected_fall_resistance_ids
+            )
+            raise ValueError(
+                "enemy FallGround equipment-resistance inputs mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        if any(value != 0 for value in normalized_fall_resistance.values()):
+            raise ValueError(
+                "enemy FallGround nonzero equipment resistance remains "
+                "compile-profile dependent"
             )
 
         attack_magic_enemy_ids={
@@ -2192,6 +2323,15 @@ class LocalRuntimeSessionCoordinator:
                 enemy_batch.mp_damage_submissions
             ),
             mp_by_participant_id=mp_state,
+            fall_ground_submissions_by_participant_id=(
+                enemy_batch.fall_ground_submissions
+            ),
+            fall_ground_rolls_by_participant_id=(
+                normalized_fall_ground_rolls
+            ),
+            fall_ground_equipment_resistance_by_participant_id=(
+                normalized_fall_resistance
+            ),
             defense_profile=str(defense_profile),
             no_risk=bool(no_risk),
             field_attr=str(field_attr),

@@ -5265,5 +5265,122 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         self.assertEqual(working.character.fields["mp"],20)
         self.assertEqual(session.player_state.character.fields["mp"],40)
 
+
+    def test_recovered_enemy_ai_fall_ground_executes_semantic_attack(self):
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-fall-ground"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0,0,0,0),
+                    spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+                ),
+            ),
+        )
+        enemy_id=str(context.battle.enemies[0].participant_id)
+        spawned=context.spawned_enemies[0]
+        skills=dict(self.stack.petskill_runtime.skills)
+        skills[210]=Recovered25PetSkillEntry(
+            skill_id=210,
+            field=1,target=6,cost=2,illegal=3000,
+            function_name="PETSKILL_FallGround",
+            option_bytes="攻%-30".encode("cp950"),
+        )
+        self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+            skills=skills,
+            source_file=self.stack.petskill_runtime.source_file,
+        )
+        enemy=replace(
+            context.battle.enemies[0],
+            attack=200,defense=0,quick=200,
+        )
+        context=replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=replace(
+                    context.battle.player,
+                    hp=100,max_hp=100,defense=0,quick=10,
+                ),
+                enemies=(enemy,),
+            ),
+            spawned_enemies=(
+                replace(
+                    spawned,
+                    participant=enemy,
+                    template=replace(
+                        spawned.template,
+                        skill_ids=(210,20,30,40,50,60,70),
+                        skill_slot_ids=(210,20,30,40,50,60,70),
+                    ),
+                    variant=replace(
+                        spawned.variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:1;0;0;0;0;0;0"
+                        ),
+                    ),
+                ),
+            ),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,slots={"player":0,enemy_id:10}
+        )
+        next_context,result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={"player":BattleCommand(BATTLE_COM_WAIT)},
+                enemy_mode_rolls={enemy_id:0},
+                enemy_target_rolls={enemy_id:0},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={"player":0,enemy_id:0},
+                profiles={
+                    "player":BattleCombatProfile(
+                        fixed_dex=10,fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                    enemy_id:BattleCombatProfile(
+                        fixed_dex=200,fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                },
+                attack_rolls={
+                    enemy_id:OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                        minimum_damage_roll_0_1=1,
+                    ),
+                },
+                fall_ground_rolls_by_attack_id={enemy_id:100},
+                fall_ground_equipment_resistance_by_participant_id={
+                    "player":0,
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        event=next(
+            e for e in result.round.events
+            if e.participant_id==enemy_id
+            and e.fall_ground_resolution is not None
+        )
+        self.assertTrue(event.fall_ground_resolution.rng_consumed)
+        self.assertFalse(event.fall_ground_resolution.fell)
+        self.assertIsNone(next_context.persistent_battle_state.ride_pet_runtime)
+
 if __name__ == "__main__":
     unittest.main()

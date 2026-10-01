@@ -31,6 +31,9 @@ from tools.stoneage_enemy_ai_damage_to_hp_bridge import (
     EnemyAiDamageToHpSubmission,
 )
 from tools.stoneage_enemy_ai_mp_damage_bridge import EnemyAiMpDamageSubmission
+from tools.stoneage_enemy_ai_fall_ground_bridge import (
+    EnemyAiFallGroundSubmission,
+)
 from tools.stoneage_enemy_rehp_model import EnemyReHpRolls
 from tools.stoneage_recovered25_attack_magic_runtime import Recovered25AttackMagicRuntime
 
@@ -1264,6 +1267,15 @@ def resolve_persistent_ordinary_round(
         str,EnemyAiMpDamageSubmission
     ] | None = None,
     mp_by_participant_id: Mapping[str,int] | None = None,
+    fall_ground_submissions_by_participant_id: Mapping[
+        str,EnemyAiFallGroundSubmission
+    ] | None = None,
+    fall_ground_rolls_by_participant_id: Mapping[
+        str,int | None
+    ] | None = None,
+    fall_ground_equipment_resistance_by_participant_id: Mapping[
+        str,int
+    ] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
     tie_break_order: Sequence[str] | None = None,
@@ -1423,6 +1435,20 @@ def resolve_persistent_ordinary_round(
             mp_damage_submissions_by_participant_id
         ),
         mp_by_participant_id=mp_by_participant_id,
+        fall_ground_submissions_by_participant_id=(
+            fall_ground_submissions_by_participant_id
+        ),
+        fall_ground_rolls_by_participant_id=(
+            fall_ground_rolls_by_participant_id
+        ),
+        fall_ground_equipment_resistance_by_participant_id=(
+            fall_ground_equipment_resistance_by_participant_id
+        ),
+        ride_pet_source_slot=(
+            None
+            if state.session.ride_pet is None
+            else state.session.ride_pet.source_pet_slot
+        ),
         field_attr=field_attr,
         field_power=field_power,
     )
