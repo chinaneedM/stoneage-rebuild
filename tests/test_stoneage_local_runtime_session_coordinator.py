@@ -80,6 +80,7 @@ from tools.stoneage_local_runtime_core import (
     ResolvedTransitionBinding,
     TransitionGateDecision,
     WorldRegionRequest,
+    decode_persistent_state,
     encode_local_runtime_session,
     load_runtime_bootstrap_file,
 )
