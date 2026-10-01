@@ -28,12 +28,14 @@ from tools.stoneage_battle_round_model import (
     BattleCommand,
     BattleCommandSetupEffects,
     ComboExecutionRolls,
+    ContinuationAttackRolls,
     CounterAttemptRolls,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
+    _continuation_nonbow_target_for_hit,
     apply_base_combo_rewrite,
     battle_command3_high,
     battle_command3_low,
@@ -111,6 +113,56 @@ class BattleRoundModelTests(unittest.TestCase):
                 commands,
                 {"a": 20, "b": 0},
             )
+
+    def test_continuation_roll_bundle_requires_one_to_ten_hits(self):
+        one=OrdinaryAttackRolls(
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+        )
+        self.assertEqual(
+            len(ContinuationAttackRolls((one,)).hit_rolls),
+            1,
+        )
+        with self.assertRaisesRegex(ValueError,"1..10"):
+            ContinuationAttackRolls(())
+        with self.assertRaisesRegex(ValueError,"1..10"):
+            ContinuationAttackRolls((one,)*11)
+
+    def test_continuation_nonbow_rechecks_original_target_each_hit(self):
+        original=actor("original","player","player",hp=100)
+        p1=actor("p1","player","pet",hp=100)
+        p2=actor("p2","player","pet",hp=100)
+        enemy=actor("enemy","enemy","enemy",hp=100)
+        by_slot={0:original,1:p1,2:p2,10:enemy}
+
+        alive_hp={0:100,1:100,2:100,10:100}
+        target,retargeted=_continuation_nonbow_target_for_hit(
+            actor_slot=10,
+            original_target_slot=0,
+            by_slot=by_slot,
+            hp_by_slot=alive_hp,
+            retarget_roll=None,
+        )
+        self.assertEqual(target,0)
+        self.assertFalse(retargeted)
+
+        dead_original_hp={0:0,1:100,2:100,10:100}
+        first,_=_continuation_nonbow_target_for_hit(
+            actor_slot=10,
+            original_target_slot=0,
+            by_slot=by_slot,
+            hp_by_slot=dead_original_hp,
+            retarget_roll=0,
+        )
+        second,_=_continuation_nonbow_target_for_hit(
+            actor_slot=10,
+            original_target_slot=0,
+            by_slot=by_slot,
+            hp_by_slot=dead_original_hp,
+            retarget_roll=1,
+        )
+        self.assertEqual(first,1)
+        self.assertEqual(second,2)
 
     def test_explicit_none_is_source_shaped_no_action(self):
         player=actor("player","player","player",quick=100)
