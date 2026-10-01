@@ -467,6 +467,32 @@ If the marker is absent, the entire previous COM3 value survives and becomes the
 
 R1 preserves this historical state-residue behavior rather than clearing COM3 defensively.
 
+### Recovered25 execution closure
+
+Recovered25 closes EarthRound for enemy AI with **1 referenced ID / 14 positive
+enemybase skill-slot uses**. Its OPTION is non-ASCII but strict CP950 and Big5
+decoding agree exactly. The bundle-backed hard probe proves the only recovered
+row contains one numeric `攻%` marker and that its value is exactly **90**.
+
+That recovered row therefore always overwrites the full COM3 with **90** before
+phase 1; the historical stale-COM3 branch remains part of the stable generic
+model, but is not reachable from this recovered25 row.
+
+The executable two-round path preserves the fixed command state:
+
+- phase 1 selects `BATTLE_COM_S_EARTHROUND1=1010`, emits hide/no-action, and
+  carries `BATTLE_COM_S_EARTHROUND0=1009` with the original COM2/COM3;
+- `BATTLE_AllCharaCWaitSet`-shaped persistence prevents a new command/AI
+  decision from replacing that carried phase-2 command;
+- phase 2 enters the ordinary physical path, applies
+  `1.0 + 0.01 * COM3 = 1.90` after guard/minimum-damage/Guardian zero-damage
+  handling, and then clears the command to NONE;
+- the multiplier is action-local and is reset before the ordinary counter
+  chain, so counters do not inherit the EarthRound multiplier.
+
+Recovered runtime admission fails closed if the callback population, codec
+agreement, marker grammar, or the exact **90** percentage drifts.
+
 ## Guard break
 
 GuardBreak selects `BATTLE_COM_S_GBREAK=1002` and can immediately raise/lower attack power via an optional attack-percent marker.
