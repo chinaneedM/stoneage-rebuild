@@ -27,6 +27,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_EARTHROUND0,
     BATTLE_COM_S_EARTHROUND1,
     BATTLE_COM_S_ABDUCT,
+    BATTLE_COM_S_STEAL,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
@@ -39,6 +40,7 @@ from tools.stoneage_battle_round_model import (
     OrdinaryCaptureRolls,
     OrdinaryAbductContext,
     OrdinaryAbductRolls,
+    OrdinaryStealRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
     _battle_attack_continuation_allowed,
@@ -4393,6 +4395,102 @@ class BattleRoundModelTests(unittest.TestCase):
                 defense_profile="newpower_70pct",
             )
 
+
+    def test_steal_actions_consume_mutated_player_assets_in_action_order(self):
+        player=actor("player","player","player",quick=10)
+        enemy1=actor("enemy1","enemy","enemy",quick=100)
+        enemy2=actor("enemy2","enemy","enemy",quick=90)
+        prepared=prepare_battle_round(
+            (player,enemy1,enemy2),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy1":BattleCommand(BATTLE_COM_S_STEAL,command2=0),
+                "enemy2":BattleCommand(BATTLE_COM_S_STEAL,command2=0),
+            },
+            {"player":0,"enemy1":0,"enemy2":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy1":10,"enemy2":11},
+            profiles={
+                "player":profile(),
+                "enemy1":profile(),
+                "enemy2":profile(),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            steal_rolls={
+                "enemy1":OrdinaryStealRolls(
+                    success_roll_1_100=1,
+                    mode_roll_1_100=1,
+                    gold_percent_roll_8_12=10,
+                ),
+                "enemy2":OrdinaryStealRolls(
+                    success_roll_1_100=1,
+                    mode_roll_1_100=99,
+                    chosen_item_ordinal=0,
+                ),
+            },
+            steal_player_gold_by_participant_id={"player":1000},
+            steal_player_item_slots_by_participant_id={
+                "player":(2,5),
+            },
+        )
+        steals=[
+            event for event in result.events
+            if event.command1==BATTLE_COM_S_STEAL
+        ]
+        self.assertEqual(
+            [event.result for event in steals],
+            ["steal_success_gold","steal_success_item"],
+        )
+        self.assertEqual(
+            steals[0].steal_resolution.defender_gold_loss,
+            100,
+        )
+        self.assertEqual(
+            steals[1].steal_resolution.destroyed_item_slot,
+            2,
+        )
+        self.assertEqual(
+            result.steal_gold_by_player_id["player"],
+            900,
+        )
+        self.assertEqual(
+            result.steal_item_slots_by_player_id["player"],
+            (5,),
+        )
+        self.assertEqual(
+            result.exited_participant_ids,
+            ("enemy1","enemy2"),
+        )
+        self.assertEqual(result.hp_by_participant_id["player"],100)
+
+    def test_steal_nonplayer_target_consumes_entry_roll_but_never_exits(self):
+        pet=actor("pet","player","pet",quick=20)
+        enemy=actor("enemy","enemy","enemy",quick=100)
+        prepared=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_S_STEAL,command2=1),
+            },
+            {"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"pet":1,"enemy":10},
+            profiles={"pet":profile(),"enemy":profile()},
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            steal_rolls={
+                "enemy":OrdinaryStealRolls(success_roll_1_100=1),
+            },
+        )
+        event=result.events[0]
+        self.assertEqual(event.result,"steal_failed")
+        self.assertFalse(event.steal_resolution.success)
+        self.assertEqual(result.exited_participant_ids,())
 
     def test_abduct_enum_matches_pinned_fixed_battle_header(self):
         self.assertEqual(BATTLE_COM_S_ABDUCT,1012)
