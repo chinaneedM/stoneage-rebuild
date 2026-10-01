@@ -44,6 +44,7 @@ from tools.stoneage_battle_round_model import (
     BattleCommand,
     BattleCommandSetupEffects,
     BATTLE_COM_S_CHARGE,
+    BATTLE_COM_S_EARTHROUND0,
     ComboExecutionRolls,
     ContinuationAttackRolls,
     CounterAttemptRolls,
@@ -96,7 +97,7 @@ class PersistentBattleState:
     winning_side: int | None = None
     last_commands: Mapping[str, BattleCommand] | None = None
     # Commands preserved by fixed BATTLE_AllCharaCWaitSet across rounds.
-    # R1 currently admits only stable S_CHARGE into this carried seam.
+    # Stable S_CHARGE and phase-2 S_EARTHROUND0 are admitted here.
     carried_commands_by_participant_id: Mapping[
         str,BattleCommand
     ] | None = None
@@ -204,10 +205,13 @@ class PersistentBattleState:
                     raise TypeError(
                         f"carried command for {pid} has wrong type"
                     )
-                if int(command.command1) != BATTLE_COM_S_CHARGE:
+                if int(command.command1) not in {
+                    BATTLE_COM_S_CHARGE,
+                    BATTLE_COM_S_EARTHROUND0,
+                }:
                     raise ValueError(
-                        "persistent carried-command seam currently admits "
-                        "S_CHARGE only"
+                        "persistent carried-command seam admits only "
+                        "S_CHARGE or S_EARTHROUND0"
                     )
             object.__setattr__(
                 self,
@@ -239,7 +243,11 @@ class PersistentBattleState:
                     raise TypeError(
                         f"carried setup effects for {pid} have wrong type"
                     )
-                if effects.charge_ready_attack_power is None:
+                command=self.carried_commands_by_participant_id[pid]
+                if (
+                    int(command.command1) == BATTLE_COM_S_CHARGE
+                    and effects.charge_ready_attack_power is None
+                ):
                     raise ValueError(
                         f"carried S_CHARGE lacks ready attack power: {pid}"
                     )
