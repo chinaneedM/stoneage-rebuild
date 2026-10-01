@@ -421,6 +421,50 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(result.hp_by_slot[0],1000)
         self.assertFalse(result.counter_continuation_allowed)
 
+    def test_continuation_ride_petfall_changes_later_hit_settlement(self):
+        player=actor("player","player","player",hp=1000,defense=70)
+        enemy=actor("enemy","enemy","enemy",hp=1000,attack=100)
+        command=BattleCommand(
+            BATTLE_COM_S_RENZOKU,
+            command2=0,
+            command3=pack_battle_command3(low=2,high=0),
+        )
+        hit=OrdinaryAttackRolls(
+            dodge_roll_1_10000=10000,
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+        )
+        result=resolve_continuation_nonbow_baseline(
+            actor=enemy,
+            actor_slot=10,
+            command=command,
+            action_value=100,
+            by_slot={0:player,10:enemy},
+            hp_by_slot={0:1000,10:1000},
+            profiles={"player":profile(),"enemy":profile()},
+            command_by_slot={
+                0:BattleCommand(BATTLE_COM_WAIT),
+                10:command,
+            },
+            rolls=ContinuationAttackRolls((hit,hit)),
+            defense_profile="newpower_70pct",
+            ride_pet_runtime=RidePetRuntime(
+                rider_id="player",
+                pet_id="ride",
+                hp=1,
+                max_hp=1,
+                defense_power=70,
+            ),
+        )
+        self.assertEqual(len(result.events),2)
+        self.assertIsNotNone(result.events[0].ride_damage_split)
+        self.assertTrue(result.events[0].ride_damage_split.shared)
+        self.assertEqual(result.events[0].ride_pet_fell_rider_id,"player")
+        self.assertIsNone(result.events[1].ride_damage_split)
+        self.assertFalse(result.ride_pet_runtime.mounted)
+        self.assertTrue(result.ride_pet_runtime.petfall)
+        self.assertEqual(result.ride_pet_runtime.hp,0)
+
     def test_counter_continuation_gate_matches_fixed_battle_attack_return(self):
         base=dict(
             guardian_redirected=False,
