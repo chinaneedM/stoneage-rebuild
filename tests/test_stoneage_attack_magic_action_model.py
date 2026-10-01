@@ -229,6 +229,42 @@ class AttackMagicActionModelTests(unittest.TestCase):
         self.assertTrue(after.mounted)
         self.assertFalse(after.petfall)
 
+
+    def test_no_target_multilist_early_return_consumes_no_rng(self):
+        empty_plan=Recovered25EnemyAttackMagicPlan(
+            skill_id=1001,
+            magic_id=301,
+            item_config_id=19647,
+            item_runtime_role=NONPLAYER_ITEM_ROLE,
+            magic_idx=8,
+            element=0,
+            power=100,
+            magic_level=1,
+            actor_slot=15,
+            source_target_slot=0,
+            source_selector=0,
+            normalized_selector=None,
+            target_membership=(),
+            source_sort_portable=True,
+            source_target_order=(),
+        )
+        resolved=resolve_enemy_attack_magic_action(
+            plan=empty_plan,
+            caster=caster(),
+            defenders_by_slot={},
+            rolls=EnemyAttackMagicActionRolls(None,{}),
+        )
+        self.assertIsNone(resolved.true_magic_success)
+        self.assertEqual(resolved.targets,())
+
+        with self.assertRaisesRegex(ValueError,"cannot consume cast RNG"):
+            resolve_enemy_attack_magic_action(
+                plan=empty_plan,
+                caster=caster(),
+                defenders_by_slot={},
+                rolls=EnemyAttackMagicActionRolls(0,{}),
+            )
+
     def test_nonportable_plan_fails_closed_before_rng_execution(self):
         with self.assertRaisesRegex(ValueError,"exact portable"):
             resolve_enemy_attack_magic_action(
