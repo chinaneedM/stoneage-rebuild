@@ -768,6 +768,19 @@ def main() -> None:
             count = int(leading.group(1))
             continuation_counts.append(count)
             continuation_in_range += int(1 <= count <= 10)
+    if (
+        len(continuation_entries) != 4
+        or continuation_ascii != 4
+        or continuation_leading_int != 4
+        or continuation_in_range != 4
+        or min(continuation_counts, default=-1) != 2
+        or max(continuation_counts, default=-1) != 5
+        or len(set(continuation_counts)) != 4
+    ):
+        raise ValueError(
+            "recovered25 ContinuationAttack OPTION grammar drifted outside "
+            "closed four-ID ASCII count subset"
+        )
     print(
         "PETSKILL_CONTINUATIONATTACK_PARSE|"
         f"unique_ids={len(continuation_entries)}|"
