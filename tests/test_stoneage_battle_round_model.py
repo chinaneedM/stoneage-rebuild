@@ -343,6 +343,84 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(result.last_target_slot,0)
         self.assertTrue(result.counter_continuation_allowed)
 
+    def test_continuation_reaction_applies_per_hit_without_stopping_loop(self):
+        player=actor("player","player","player",hp=1000,defense=70)
+        enemy=actor("enemy","enemy","enemy",hp=1000,attack=100)
+        command=BattleCommand(
+            BATTLE_COM_S_RENZOKU,
+            command2=0,
+            command3=pack_battle_command3(low=2,high=0),
+        )
+        hit=OrdinaryAttackRolls(
+            dodge_roll_1_10000=10000,
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+        )
+        result=resolve_continuation_nonbow_baseline(
+            actor=enemy,
+            actor_slot=10,
+            command=command,
+            action_value=100,
+            by_slot={0:player,10:enemy},
+            hp_by_slot={0:1000,10:1000},
+            profiles={"player":profile(),"enemy":profile()},
+            command_by_slot={
+                0:BattleCommand(BATTLE_COM_WAIT),
+                10:command,
+            },
+            rolls=ContinuationAttackRolls((hit,hit)),
+            defense_profile="newpower_70pct",
+            base_damage_react_state_by_participant_id={
+                "player":BaseDamageReactState(reflect=1),
+                "enemy":BaseDamageReactState(),
+            },
+        )
+        self.assertEqual(len(result.events),2)
+        self.assertEqual(
+            result.events[0].damage_react_resolution.effective_kind,
+            DAMAGE_REACT_REFLEC,
+        )
+        self.assertLess(result.hp_by_slot[10],1000)
+        self.assertLess(result.hp_by_slot[0],1000)
+        self.assertTrue(result.counter_continuation_allowed)
+
+    def test_continuation_reflect_killing_attacker_stops_later_hits(self):
+        player=actor("player","player","player",hp=1000,defense=70)
+        enemy=actor("enemy","enemy","enemy",hp=1,attack=100)
+        command=BattleCommand(
+            BATTLE_COM_S_RENZOKU,
+            command2=0,
+            command3=pack_battle_command3(low=3,high=0),
+        )
+        hit=OrdinaryAttackRolls(
+            dodge_roll_1_10000=10000,
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+        )
+        result=resolve_continuation_nonbow_baseline(
+            actor=enemy,
+            actor_slot=10,
+            command=command,
+            action_value=100,
+            by_slot={0:player,10:enemy},
+            hp_by_slot={0:1000,10:1},
+            profiles={"player":profile(),"enemy":profile()},
+            command_by_slot={
+                0:BattleCommand(BATTLE_COM_WAIT),
+                10:command,
+            },
+            rolls=ContinuationAttackRolls((hit,hit,hit)),
+            defense_profile="newpower_70pct",
+            base_damage_react_state_by_participant_id={
+                "player":BaseDamageReactState(reflect=1),
+                "enemy":BaseDamageReactState(),
+            },
+        )
+        self.assertEqual(len(result.events),1)
+        self.assertEqual(result.hp_by_slot[10],0)
+        self.assertEqual(result.hp_by_slot[0],1000)
+        self.assertFalse(result.counter_continuation_allowed)
+
     def test_counter_continuation_gate_matches_fixed_battle_attack_return(self):
         base=dict(
             guardian_redirected=False,
