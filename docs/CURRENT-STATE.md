@@ -5172,3 +5172,41 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   `magic.txt`, corresponding item metadata and `attmagic.bin`
   indices/footprints, then reconstruct the active `_FIX_MAGICDAMAGE`
   execution core before admitting AttackMagic into recovered enemy-AI runtime.
+
+## Phase 1 recovered25 AttackMagic cross-link + fixed damage core — 2026-10-01
+
+- AttackMagic data cross-link is now closed by full preservation-bundle run
+  **36844577483 = PASS**; bot report write-back advanced \`main\` to
+  \`ded5d20debde9ccde2ffd3254be9f7f9c6afbb5d\`.
+- Exact recovered25 cross-link:
+  - **25/25** skill rows -> explicit magic/item numeric pair;
+  - **25/25** magic IDs -> \`MAGIC_AttMagic\`;
+  - **25/25** valid \`MAGIC_IDX\`, with 25 distinct IDX values in **2..26**;
+  - attribute distribution earth/water/fire/wind = **6/6/7/6**;
+  - power **100..350** across 7 distinct values;
+  - magic level **1..5** across 5 distinct values;
+  - **25/25** active item rows exist and their \`magicid\` matches;
+  - all 25 item \`magicusemp\` values are **5**;
+  - all 25 IDX values have valid adjacent records in the 54-record /
+    27-effective-index \`attmagic.bin\`.
+- **RECOVERED25_ATTACKMAGIC_CROSSLINK_R1 = CLOSED.**
+- Three pinned descendant implementations were then re-audited for their
+  actually enabled AttackMagic formula. All three define
+  \`_EQUIT_DEFMAGIC\`, \`_FIX_MAGICDAMAGE\` and
+  \`_MAGIC_DEFMAGICATT\`; the primary fixed-damage path converges on:
+  cast proficiency check, per-target magic dodge, Kmagic/Mmagic/Amagic base
+  damage, elemental traction, field adjustment, 0.7 failure attenuation,
+  dedicated riding split, sleep clearing, and attack/defense magic training.
+- Added fixed-source deterministic candidate:
+  - \`tools/stoneage_attack_magic_damage_model.py\`;
+  - \`tests/test_stoneage_attack_magic_damage_model.py\`;
+  - \`research/mechanics/STONEAGE-ATTACK-MAGIC-DAMAGE-CORE-R1.md\`;
+  - dedicated damage-core CI.
+- The damage model keeps RNG externally injected and preserves source quirks,
+  including the riding-overkill negative-share behavior and the strict
+  \`pet_hp < 0\` unmount condition.
+- Damage-core implementation is **pending dedicated CI acceptance** at this
+  commit and is not yet wired into recovered25 enemy AI.
+- Next priority after CI acceptance: reconstruct \`attmagic.bin\` IDX-side
+  selection and 3x5 footprint expansion, then compose footprint + damage core
+  at the recovered enemy-AI runtime boundary.

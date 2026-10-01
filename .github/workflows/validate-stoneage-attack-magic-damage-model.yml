@@ -1,0 +1,32 @@
+name: Validate StoneAge AttackMagic damage core
+
+concurrency:
+  group: stoneage-attack-magic-damage-core
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-attack-magic-damage-model.yml
+      - tools/stoneage_attack_magic_damage_model.py
+      - tests/test_stoneage_attack_magic_damage_model.py
+      - research/mechanics/STONEAGE-ATTACK-MAGIC-DAMAGE-CORE-R1.md
+  pull_request:
+    paths:
+      - .github/workflows/validate-stoneage-attack-magic-damage-model.yml
+      - tools/stoneage_attack_magic_damage_model.py
+      - tests/test_stoneage_attack_magic_damage_model.py
+      - research/mechanics/STONEAGE-ATTACK-MAGIC-DAMAGE-CORE-R1.md
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deterministic AttackMagic damage-core tests
+        run: python3 -m unittest tests.test_stoneage_attack_magic_damage_model -v
