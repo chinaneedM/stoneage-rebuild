@@ -50,6 +50,15 @@ from tools.stoneage_enemy_ai_battle_tear_bridge import (
     EnemyAiBattleTearSubmission,
     resolve_enemy_ai_battle_tear_submission,
 )
+from tools.stoneage_enemy_ai_nocast_bridge import (
+    EnemyAiNocastSubmission,
+    resolve_enemy_ai_nocast_submission,
+)
+from tools.stoneage_nocast_model import CALLBACK_NAME as NOCAST_CALLBACK
+from tools.stoneage_nocast_runtime_state import (
+    NocastActionRolls,
+    NocastRoundOverlay,
+)
 from tools.stoneage_fall_ground_model import (
     CALLBACK_NAME as FALL_GROUND_CALLBACK,
 )
@@ -394,6 +403,9 @@ class EnemyAiCommonCommandBatch:
     battle_tear_submissions: Mapping[
         str,EnemyAiBattleTearSubmission
     ] = field(default_factory=dict)
+    nocast_submissions: Mapping[
+        str,EnemyAiNocastSubmission
+    ] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         object.__setattr__(
@@ -634,6 +646,38 @@ class EnemyAiCommonCommandBatch:
         ):
             raise ValueError(
                 "enemy AI BattleTear semantic submissions overlap another skill"
+            )
+
+        nocast_submissions={
+            str(key):value for key,value in self.nocast_submissions.items()
+        }
+        object.__setattr__(
+            self,"nocast_submissions",MappingProxyType(nocast_submissions)
+        )
+        for participant_id,submission in nocast_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError("enemy AI Nocast submission lacks carrier command")
+            if not isinstance(submission,EnemyAiNocastSubmission):
+                raise TypeError(
+                    f"enemy AI Nocast submission has wrong type for {participant_id}"
+                )
+            if str(submission.participant_id) != participant_id:
+                raise ValueError("enemy AI Nocast participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1) != BATTLE_COM_ATTACK
+                or int(carrier.command2) != int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI Nocast carrier must be ATTACK/source-target"
+                )
+        if set(nocast_submissions) & (
+            set(tear_submissions) | set(fall_submissions) | set(mp_submissions)
+            | set(damage_submissions) | set(rehp_submissions)
+            | set(magic_submissions)
+        ):
+            raise ValueError(
+                "enemy AI Nocast semantic submissions overlap another skill"
             )
 
 
@@ -1225,6 +1269,7 @@ class LocalRuntimeSessionCoordinator:
         *,
         slots: Mapping[str, int],
         attack_magic_overlay: AttackMagicRoundOverlay | None = None,
+        nocast_overlay: NocastRoundOverlay | None = None,
     ) -> LocalRuntimeBattleContext:
         """Promote a transient group battle shell into multi-round state."""
 
@@ -1233,6 +1278,7 @@ class LocalRuntimeSessionCoordinator:
         state = begin_persistent_battle(
             context.battle,
             slots={str(key): int(value) for key, value in slots.items()},
+            nocast_overlay=nocast_overlay,
         )
         if (
             attack_magic_overlay is not None
@@ -1244,6 +1290,19 @@ class LocalRuntimeSessionCoordinator:
             persistent_battle_state=state,
             attack_magic_overlay=attack_magic_overlay,
         )
+
+    def persistent_actor_direct_magic_blocked(
+        self,
+        context: LocalRuntimeBattleContext,
+        participant_id: str,
+    ) -> bool:
+        """Expose fixed MAGIC_DirectUse's positive WORKNOCAST gate."""
+        state=context.persistent_battle_state
+        if state is None:
+            raise ValueError("battle context has no persistent battle state")
+        if state.nocast_overlay is None:
+            return False
+        return state.nocast_overlay.blocks_direct_magic(str(participant_id))
 
     def _build_persistent_enemy_common_batch(
         self,
@@ -1270,6 +1329,7 @@ class LocalRuntimeSessionCoordinator:
         allow_mp_damage_skill: bool = False,
         allow_fall_ground_skill: bool = False,
         allow_battle_tear_skill: bool = False,
+        allow_nocast_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1415,6 +1475,7 @@ class LocalRuntimeSessionCoordinator:
         mp_damage_submissions={}
         fall_ground_submissions={}
         battle_tear_submissions={}
+        nocast_submissions={}
         for enemy_id in ai_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
                 raise ValueError(
@@ -1475,6 +1536,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_mp_damage_skill)
                 or bool(allow_fall_ground_skill)
                 or bool(allow_battle_tear_skill)
+                or bool(allow_nocast_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1485,6 +1547,26 @@ class LocalRuntimeSessionCoordinator:
                 skill_ids=tuple(int(x) for x in spawned.template.skill_slot_ids)
                 selected_skill_id=skill_ids[int(decision.skill_slot)]
                 selected_skill=petskill_runtime.skills.get(selected_skill_id)
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == NOCAST_CALLBACK
+                    and bool(allow_nocast_skill)
+                ):
+                    submission=resolve_enemy_ai_nocast_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                    )
+                    # Internal scheduling carrier only. The guarded reference
+                    # does not prove a recovered25 numeric Nocast COM1.
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    nocast_submissions[enemy_id]=submission
+                    continue
+
                 if (
                     selected_skill is not None
                     and selected_skill.function_name == BATTLE_TEAR_CALLBACK
@@ -1692,6 +1774,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_FallGround")
             if bool(allow_battle_tear_skill):
                 allowed_parts.append("PETSKILL_BattleTearDamage")
+            if bool(allow_nocast_skill):
+                allowed_parts.append("PETSKILL_Nocast")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1708,6 +1792,7 @@ class LocalRuntimeSessionCoordinator:
             mp_damage_submissions=mp_damage_submissions,
             fall_ground_submissions=fall_ground_submissions,
             battle_tear_submissions=battle_tear_submissions,
+            nocast_submissions=nocast_submissions,
         )
 
     def build_persistent_enemy_common_commands(
@@ -1893,6 +1978,9 @@ class LocalRuntimeSessionCoordinator:
         fall_ground_equipment_resistance_by_participant_id: Mapping[
             str,int
         ] | None = None,
+        nocast_rolls_by_attack_id: Mapping[
+            str,NocastActionRolls
+        ] | None = None,
         no_risk: bool = False,
         field_attr: str = "none",
         field_power: int = 0,
@@ -2000,6 +2088,7 @@ class LocalRuntimeSessionCoordinator:
             allow_mp_damage_skill=True,
             allow_fall_ground_skill=True,
             allow_battle_tear_skill=True,
+            allow_nocast_skill=True,
         )
         enemy_commands = enemy_batch.commands
         rehp_enemy_ids=set(enemy_batch.enemy_rehp_submissions)
@@ -2079,6 +2168,28 @@ class LocalRuntimeSessionCoordinator:
             raise ValueError(
                 "enemy FallGround nonzero equipment resistance remains "
                 "compile-profile dependent"
+            )
+
+        nocast_enemy_ids=set(enemy_batch.nocast_submissions)
+        normalized_nocast_rolls={
+            str(key):value
+            for key,value in (nocast_rolls_by_attack_id or {}).items()
+        }
+        if set(normalized_nocast_rolls) != nocast_enemy_ids:
+            missing=sorted(nocast_enemy_ids-set(normalized_nocast_rolls))
+            extra=sorted(set(normalized_nocast_rolls)-nocast_enemy_ids)
+            raise ValueError(
+                "enemy Nocast RNG mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        for participant_id,rolls in normalized_nocast_rolls.items():
+            if not isinstance(rolls,NocastActionRolls):
+                raise TypeError(
+                    f"enemy Nocast RNG has wrong type for {participant_id}"
+                )
+        if nocast_enemy_ids and state.nocast_overlay is None:
+            raise ValueError(
+                "enemy Nocast requires explicit persistent battle overlay"
             )
 
         attack_magic_enemy_ids={
@@ -2414,6 +2525,10 @@ class LocalRuntimeSessionCoordinator:
             fall_ground_equipment_resistance_by_participant_id=(
                 normalized_fall_resistance
             ),
+            nocast_submissions_by_participant_id=(
+                enemy_batch.nocast_submissions
+            ),
+            nocast_rolls_by_participant_id=normalized_nocast_rolls,
             defense_profile=str(defense_profile),
             no_risk=bool(no_risk),
             field_attr=str(field_attr),

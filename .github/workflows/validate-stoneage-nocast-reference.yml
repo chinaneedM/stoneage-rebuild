@@ -10,7 +10,13 @@ on:
       - tools/stoneage_nocast_model.py
       - tools/stoneage_nocast_source_audit.py
       - tools/stoneage_recovered25_nocast_probe.py
+      - tools/stoneage_nocast_runtime_state.py
+      - tools/stoneage_enemy_ai_nocast_bridge.py
+      - tools/stoneage_battle_round_model.py
+      - tools/stoneage_battle_state_model.py
+      - tools/stoneage_local_runtime_session_coordinator.py
       - tests/test_stoneage_nocast_model.py
+      - tests/test_stoneage_local_runtime_session_coordinator.py
       - tests/test_stoneage_recovered25_nocast_probe.py
 permissions:
   contents: read
@@ -24,7 +30,8 @@ jobs:
         run: |
           python3 -m unittest \
             tests.test_stoneage_nocast_model \
-            tests.test_stoneage_recovered25_nocast_probe -v
+            tests.test_stoneage_recovered25_nocast_probe \
+            tests.test_stoneage_local_runtime_session_coordinator.LocalRuntimeSessionCoordinatorTests.test_recovered_enemy_ai_nocast_executes_and_ticks_persistently -v
       - name: Recover pinned source profiles outside repository
         run: |
           python3 - <<'PY'

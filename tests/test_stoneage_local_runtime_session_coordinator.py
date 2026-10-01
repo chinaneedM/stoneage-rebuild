@@ -57,6 +57,11 @@ from tools.stoneage_attack_magic_state_model import (
     AttackMagicRoundOverlay,
 )
 from tools.stoneage_enemy_rehp_model import EnemyReHpRolls
+from tools.stoneage_nocast_runtime_state import (
+    NocastActionRolls,
+    NocastParticipantRuntime,
+    NocastRoundOverlay,
+)
 from tools.stoneage_recovered25_attack_magic_runtime import (
     Recovered25AttackMagicEntry,
     Recovered25AttackMagicRuntime,
@@ -5482,6 +5487,143 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             next_context.persistent_battle_state.hp_by_participant_id["player"],
             result.round.hp_by_participant_id["player"],
         )
+
+
+    def test_recovered_enemy_ai_nocast_executes_and_ticks_persistently(self):
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-nocast"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,group,
+            entry_count_roll=1,selection_rolls=(0,),
+            birth_rolls=(EnemyBirthRolls(
+                level_roll=1,birth_offsets=(0,0,0,0),
+                spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+            ),),
+        )
+        enemy_id=str(context.battle.enemies[0].participant_id)
+        spawned=context.spawned_enemies[0]
+        skills=dict(self.stack.petskill_runtime.skills)
+        skills[580]=Recovered25PetSkillEntry(
+            skill_id=580,field=1,target=3,cost=2,illegal=1000,
+            function_name="PETSKILL_Nocast",
+            option_bytes="turn=3 成=50".encode("cp950"),
+        )
+        self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+            skills=skills,source_file=self.stack.petskill_runtime.source_file
+        )
+        enemy=replace(context.battle.enemies[0],quick=200)
+        player=replace(context.battle.player,quick=10)
+        context=replace(
+            context,
+            battle=replace(context.battle,player=player,enemies=(enemy,)),
+            spawned_enemies=(replace(
+                spawned,participant=enemy,
+                template=replace(
+                    spawned.template,
+                    skill_ids=(580,20,30,40,50,60,70),
+                    skill_slot_ids=(580,20,30,40,50,60,70),
+                ),
+                variant=replace(
+                    spawned.variant,
+                    tactics_option="at:0;1;1|gu:0|es:0|wa:1;0;0;0;0;0;0",
+                ),
+            ),),
+        )
+        overlay=NocastRoundOverlay({
+            "player":NocastParticipantRuntime(25,25,25,25),
+            enemy_id:NocastParticipantRuntime(25,25,25,25),
+        })
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+            nocast_overlay=overlay,
+        )
+        profiles={
+            "player":BattleCombatProfile(
+                fixed_dex=10,fixed_luck=0,
+                earth=0,water=0,fire=0,wind=0,
+            ),
+            enemy_id:BattleCombatProfile(
+                fixed_dex=200,fixed_luck=0,
+                earth=0,water=0,fire=0,wind=0,
+            ),
+        }
+        context,result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={"player":BattleCommand(BATTLE_COM_WAIT)},
+                enemy_mode_rolls={enemy_id:0},
+                enemy_target_rolls={enemy_id:0},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={"player":0,enemy_id:0},
+                profiles=profiles,
+                attack_rolls={},
+                nocast_rolls_by_attack_id={
+                    enemy_id:NocastActionRolls(
+                        hit_rolls_by_slot={0:1}
+                    )
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        applied=next(
+            event for event in result.round.events
+            if event.participant_id==enemy_id
+            and event.nocast_application is not None
+        )
+        self.assertEqual(applied.result,"nocast_applied")
+        self.assertEqual(applied.nocast_application.turn_written,3)
+        player_runtime=(
+            context.persistent_battle_state.nocast_overlay
+            .runtime_by_participant_id["player"]
+        )
+        # Enemy acts first; the player then visits status slot 10 in the same
+        # round, so the stored counter is already 2.
+        self.assertEqual((player_runtime.counter,player_runtime.nc_flag),(2,1))
+        self.assertTrue(
+            self.coordinator.persistent_actor_direct_magic_blocked(
+                context,"player"
+            )
+        )
+
+        for expected_counter,expected_flag,blocked in (
+            (1,1,True),
+            (0,0,False),
+        ):
+            context,result=self.coordinator.resolve_persistent_attack_wait_round(
+                context,
+                commands={
+                    "player":BattleCommand(BATTLE_COM_WAIT),
+                    enemy_id:BattleCommand(BATTLE_COM_WAIT),
+                },
+                initiative_random_subtracts={"player":0,enemy_id:0},
+                profiles=profiles,
+                attack_rolls={},
+                defense_profile="newpower_70pct",
+            )
+            player_runtime=(
+                context.persistent_battle_state.nocast_overlay
+                .runtime_by_participant_id["player"]
+            )
+            self.assertEqual(
+                (player_runtime.counter,player_runtime.nc_flag),
+                (expected_counter,expected_flag),
+            )
+            self.assertEqual(
+                self.coordinator.persistent_actor_direct_magic_blocked(
+                    context,"player"
+                ),
+                blocked,
+            )
 
 if __name__ == "__main__":
     unittest.main()

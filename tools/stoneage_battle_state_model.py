@@ -37,6 +37,11 @@ from tools.stoneage_enemy_ai_fall_ground_bridge import (
 from tools.stoneage_enemy_ai_battle_tear_bridge import (
     EnemyAiBattleTearSubmission,
 )
+from tools.stoneage_enemy_ai_nocast_bridge import EnemyAiNocastSubmission
+from tools.stoneage_nocast_runtime_state import (
+    NocastActionRolls,
+    NocastRoundOverlay,
+)
 from tools.stoneage_enemy_rehp_model import EnemyReHpRolls
 from tools.stoneage_recovered25_attack_magic_runtime import Recovered25AttackMagicRuntime
 
@@ -135,6 +140,7 @@ class PersistentBattleState:
     # Non-death BATTLE_Exit/PetDefaultExit entries (e.g. Abduct) stay in the
     # battle session identity graph but no longer participate in later rounds.
     battle_exited_participant_ids: tuple[str,...] = ()
+    nocast_overlay: NocastRoundOverlay | None = None
 
     def __post_init__(self) -> None:
         if self.phase not in {ACTIVE, FINISHED}:
@@ -157,6 +163,17 @@ class PersistentBattleState:
                     )
 
         participants = _participant_map(self.session)
+        if self.nocast_overlay is not None:
+            if not isinstance(self.nocast_overlay,NocastRoundOverlay):
+                raise TypeError("persistent Nocast overlay has wrong type")
+            overlay_ids=set(self.nocast_overlay.runtime_by_participant_id)
+            if overlay_ids != set(participants):
+                missing=sorted(set(participants)-overlay_ids)
+                extra=sorted(overlay_ids-set(participants))
+                raise ValueError(
+                    "persistent Nocast overlay participant mismatch; "
+                    f"missing={missing}, extra={extra}"
+                )
         normalized_ultimate_exits=tuple(
             str(pid) for pid in self.ultimate_exited_participant_ids
         )
@@ -573,6 +590,7 @@ def begin_persistent_battle(
         str,BaseDamageReactState
     ] | None = None,
     ride_pet_runtime: RidePetRuntime | None = None,
+    nocast_overlay: NocastRoundOverlay | None = None,
 ) -> PersistentBattleState:
     participants = _participant_map(session)
     normalized_slots = {str(pid): int(slot) for pid, slot in slots.items()}
@@ -629,6 +647,7 @@ def begin_persistent_battle(
             base_damage_react_state_by_participant_id
         ),
         ride_pet_runtime=ride_pet_runtime,
+        nocast_overlay=nocast_overlay,
     )
     return _with_termination(state)
 
@@ -1282,6 +1301,12 @@ def resolve_persistent_ordinary_round(
     fall_ground_equipment_resistance_by_participant_id: Mapping[
         str,int
     ] | None = None,
+    nocast_submissions_by_participant_id: Mapping[
+        str,EnemyAiNocastSubmission
+    ] | None = None,
+    nocast_rolls_by_participant_id: Mapping[
+        str,NocastActionRolls
+    ] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
     tie_break_order: Sequence[str] | None = None,
@@ -1453,6 +1478,13 @@ def resolve_persistent_ordinary_round(
         fall_ground_equipment_resistance_by_participant_id=(
             fall_ground_equipment_resistance_by_participant_id
         ),
+        nocast_submissions_by_participant_id=(
+            nocast_submissions_by_participant_id
+        ),
+        nocast_rolls_by_participant_id=(
+            nocast_rolls_by_participant_id
+        ),
+        nocast_overlay=state.nocast_overlay,
         ride_pet_source_slot=(
             None
             if state.session.ride_pet is None
@@ -1603,6 +1635,20 @@ def resolve_persistent_ordinary_round(
         if pid in next_battle_exited:
             next_battle_exited.remove(pid)
 
+    next_nocast_overlay=round_result.nocast_overlay
+    if next_nocast_overlay is not None:
+        next_session_ids={
+            str(participant.participant_id)
+            for participant in _session_participants(next_session)
+        }
+        next_nocast_overlay=NocastRoundOverlay({
+            participant_id:runtime
+            for participant_id,runtime in (
+                next_nocast_overlay.runtime_by_participant_id.items()
+            )
+            if participant_id in next_session_ids
+        })
+
     next_state = PersistentBattleState(
         session=next_session,
         slots=_freeze_mapping(next_slots),
@@ -1655,6 +1701,7 @@ def resolve_persistent_ordinary_round(
         ),
         ultimate_exited_participant_ids=tuple(next_ultimate_exited),
         battle_exited_participant_ids=tuple(next_battle_exited),
+        nocast_overlay=next_nocast_overlay,
     )
     if player_id in escaped_ids:
         next_state=replace(

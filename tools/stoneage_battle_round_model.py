@@ -41,6 +41,19 @@ from tools.stoneage_enemy_ai_fall_ground_bridge import (
 from tools.stoneage_enemy_ai_battle_tear_bridge import (
     EnemyAiBattleTearSubmission,
 )
+from tools.stoneage_enemy_ai_nocast_bridge import EnemyAiNocastSubmission
+from tools.stoneage_nocast_model import (
+    NocastApplication,
+    NocastCheckInputs,
+    NocastTick,
+    resolve_nocast_multilist,
+    resolve_nocast_target,
+    resolve_nocast_tick,
+)
+from tools.stoneage_nocast_runtime_state import (
+    NocastActionRolls,
+    NocastRoundOverlay,
+)
 from tools.stoneage_battle_tear_damage_model import (
     BattleTearAugmentation,
     resolve_battle_tear_pre_damage_sub,
@@ -882,6 +895,8 @@ class OrdinaryRoundEvent:
     mp_damage_resolution: MpDamageResolution | None = None
     fall_ground_resolution: FallGroundResolution | None = None
     battle_tear_augmentation: BattleTearAugmentation | None = None
+    nocast_application: NocastApplication | None = None
+    nocast_tick_resolution: NocastTick | None = None
 
 
 @dataclass(frozen=True)
@@ -898,6 +913,7 @@ class ResolvedOrdinaryRound:
     ] | None = None
     ride_pet_runtime: RidePetRuntime | None = None
     attack_magic_overlay: AttackMagicRoundOverlay | None = None
+    nocast_overlay: NocastRoundOverlay | None = None
     ultimate_overkill_by_participant_id: Mapping[str,int] | None = None
     ultimate_exited_participant_ids: tuple[str, ...] = ()
     exited_participant_ids: tuple[str, ...] = ()
@@ -3302,6 +3318,13 @@ def resolve_ordinary_round(
     fall_ground_equipment_resistance_by_participant_id: Mapping[
         str,int
     ] | None = None,
+    nocast_submissions_by_participant_id: Mapping[
+        str,EnemyAiNocastSubmission
+    ] | None = None,
+    nocast_rolls_by_participant_id: Mapping[
+        str,NocastActionRolls
+    ] | None = None,
+    nocast_overlay: NocastRoundOverlay | None = None,
     ride_pet_source_slot: int | None = None,
     field_attr: str = "none",
     field_power: int = 0,
@@ -3741,6 +3764,78 @@ def resolve_ordinary_round(
 
     attempted_fall_ground_actor_ids=set()
 
+    nocast_submissions={
+        str(participant_id):submission
+        for participant_id,submission in (
+            nocast_submissions_by_participant_id or {}
+        ).items()
+    }
+    nocast_actor_ids=set(nocast_submissions)
+    unknown_nocast_ids=sorted(nocast_actor_ids-set(slot_by_id))
+    if unknown_nocast_ids:
+        raise ValueError(
+            f"Nocast submissions reference unknown actors: {unknown_nocast_ids}"
+        )
+    if nocast_actor_ids & (
+        fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
+        | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+    ):
+        raise ValueError("Nocast semantic submissions overlap another skill")
+    for participant_id,submission in nocast_submissions.items():
+        if not isinstance(submission,EnemyAiNocastSubmission):
+            raise TypeError(
+                f"Nocast submission for {participant_id} has wrong type"
+            )
+        if str(submission.participant_id) != participant_id:
+            raise ValueError("Nocast submission participant drift")
+        entry=prepared_entry_by_id[participant_id]
+        if entry.participant.side != "enemy" or entry.participant.kind != "enemy":
+            raise ValueError("recovered25 Nocast currently admits enemy actors only")
+        if (
+            int(entry.command.command1) != BATTLE_COM_ATTACK
+            or int(entry.command.command2) != int(submission.source_target_slot)
+        ):
+            raise ValueError(
+                "Nocast ordering carrier must be ATTACK/source-target"
+            )
+
+    if nocast_actor_ids and nocast_overlay is None:
+        raise ValueError("Nocast semantic action requires explicit round overlay")
+    if nocast_overlay is not None and not isinstance(
+        nocast_overlay,NocastRoundOverlay
+    ):
+        raise TypeError("nocast_overlay has wrong type")
+    nocast_working=(
+        None
+        if nocast_overlay is None
+        else dict(nocast_overlay.runtime_by_participant_id)
+    )
+    if nocast_working is not None:
+        missing_nocast_runtime=sorted(set(slot_by_id)-set(nocast_working))
+        if missing_nocast_runtime:
+            raise ValueError(
+                "Nocast overlay lacks active participants: "
+                + ",".join(missing_nocast_runtime)
+            )
+
+    nocast_rolls={
+        str(participant_id):rolls
+        for participant_id,rolls in (
+            nocast_rolls_by_participant_id or {}
+        ).items()
+    }
+    if set(nocast_rolls) != nocast_actor_ids:
+        missing=sorted(nocast_actor_ids-set(nocast_rolls))
+        extra=sorted(set(nocast_rolls)-nocast_actor_ids)
+        raise ValueError(
+            "Nocast RNG actors mismatch; "
+            f"missing={missing}, extra={extra}"
+        )
+    for participant_id,rolls in nocast_rolls.items():
+        if not isinstance(rolls,NocastActionRolls):
+            raise TypeError(f"Nocast RNG for {participant_id} has wrong type")
+    attempted_nocast_actor_ids=set()
+
     guarding = {
         slot_by_id[entry.participant.participant_id]
         for entry in prepared.ordered_entries
@@ -3750,6 +3845,38 @@ def resolve_ordinary_round(
     }
 
     events: list[OrdinaryRoundEvent] = []
+
+    def tick_nocast_runtime(
+        participant_id: str,
+        slot: int,
+        command_code: int,
+        action_value: int,
+    ) -> None:
+        if nocast_working is None:
+            return
+        participant_id=str(participant_id)
+        runtime=nocast_working[participant_id]
+        if int(runtime.counter) <= 0:
+            return
+        tick=resolve_nocast_tick(
+            int(runtime.counter),
+            weaken_active_at_visit=bool(runtime.weaken_active_at_visit),
+            barrier_active_at_visit=bool(runtime.barrier_active_at_visit),
+        )
+        nocast_working[participant_id]=runtime.after_tick(tick)
+        events.append(
+            OrdinaryRoundEvent(
+                participant_id,
+                int(slot),
+                int(command_code),
+                int(action_value),
+                "nocast_tick",
+                original_target_slot=int(slot),
+                resolved_target_slot=int(slot),
+                nocast_tick_resolution=tick,
+            )
+        )
+
     exited_slots: set[int] = set()
     exited_ids: list[str] = []
     capture_contexts=dict(capture_contexts or {})
@@ -4285,9 +4412,12 @@ def resolve_ordinary_round(
         command=entry.command
         runtime=status_runtime[str(participant_id)]
         status_before=runtime.status
-        if any(int(getattr(status_before,name))>0 for name in (
-            "poison","paralysis","sleep","stone","drunk","confusion"
-        )):
+        base_status_was_active=any(
+            int(getattr(status_before,name))>0 for name in (
+                "poison","paralysis","sleep","stone","drunk","confusion"
+            )
+        )
+        if base_status_was_active:
             rolls=status_rolls.get(
                 str(participant_id),
                 BaseStatusTurnRolls(),
@@ -4344,6 +4474,12 @@ def resolve_ordinary_round(
                     status_tick_resolution=tick,
                 )
             )
+            tick_nocast_runtime(
+                str(participant_id),
+                int(slot),
+                int(entry.command.command1),
+                int(entry.action_value),
+            )
             if tick.command_override == "none":
                 command=BattleCommand(
                     BATTLE_COM_NONE,
@@ -4375,6 +4511,14 @@ def resolve_ordinary_round(
                 )
                 guarding.discard(slot)
             command_by_slot[slot]=command
+
+        if not base_status_was_active:
+            tick_nocast_runtime(
+                str(participant_id),
+                int(slot),
+                int(entry.command.command1),
+                int(entry.action_value),
+            )
 
         if command.command1 == BATTLE_COM_S_EARTHROUND1:
             next_earthround=BattleCommand(
@@ -5238,13 +5382,14 @@ def resolve_ordinary_round(
 
                 candidate_runtime=status_runtime[candidate_id]
                 candidate_status=candidate_runtime.status
-                if any(
+                candidate_base_status_was_active=any(
                     int(getattr(candidate_status,name))>0
                     for name in (
                         "poison","paralysis","sleep",
                         "stone","drunk","confusion",
                     )
-                ):
+                )
+                if candidate_base_status_was_active:
                     candidate_rolls=status_rolls.get(
                         candidate_id,
                         BaseStatusTurnRolls(),
@@ -5300,6 +5445,12 @@ def resolve_ordinary_round(
                             status_tick_resolution=tick,
                         )
                     )
+                    tick_nocast_runtime(
+                        candidate_id,
+                        candidate_slot,
+                        int(candidate.command.command1),
+                        int(candidate.action_value),
+                    )
                     if tick.command_override=="none":
                         command_by_slot[candidate_slot]=BattleCommand(
                             BATTLE_COM_NONE,
@@ -5323,6 +5474,14 @@ def resolve_ordinary_round(
 
                     if not tick.can_move_after_tick:
                         continue
+
+                if not candidate_base_status_was_active:
+                    tick_nocast_runtime(
+                        candidate_id,
+                        candidate_slot,
+                        int(candidate.command.command1),
+                        int(candidate.action_value),
+                    )
 
                 if int(hp_by_slot.get(candidate_slot,0)) <= 0:
                     continue
@@ -5509,6 +5668,131 @@ def resolve_ordinary_round(
                     continuation_id,
                     int(slot),
                     int(continuation.last_target_slot),
+                )
+            continue
+
+        nocast_actor_id=str(participant_id)
+        if (
+            nocast_actor_id in nocast_submissions
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            submission=nocast_submissions[nocast_actor_id]
+            if (
+                int(command.command1) != BATTLE_COM_ATTACK
+                or int(command.command2) != int(submission.source_target_slot)
+            ):
+                raise ValueError("Nocast ordering carrier drift before execution")
+            if nocast_working is None:
+                raise ValueError("Nocast working overlay unexpectedly absent")
+
+            alive_slots=tuple(
+                other_slot
+                for other_slot in sorted(by_slot)
+                if (
+                    other_slot not in exited_slots
+                    and int(hp_by_slot.get(other_slot,0)) > 0
+                )
+            )
+            action_rolls=nocast_rolls[nocast_actor_id]
+            target_list=resolve_nocast_multilist(
+                int(submission.source_target_slot),
+                alive_slots=alive_slots,
+                retarget_draws_0_9=action_rolls.retarget_draws_0_9,
+            )
+            attempted_nocast_actor_ids.add(nocast_actor_id)
+            consumed_hit_roll_slots=set()
+            for target_slot in target_list.slots:
+                target_slot=int(target_slot)
+                if target_slot not in by_slot:
+                    raise ValueError("Nocast target list resolved unoccupied slot")
+                defender=by_slot[target_slot]
+                defender_id=str(defender.participant_id)
+                target_runtime=nocast_working[defender_id]
+                base_runtime=status_runtime[defender_id]
+                base_status_active=any(
+                    int(getattr(base_runtime.status,name))>0
+                    for name in (
+                        "poison","paralysis","sleep",
+                        "stone","drunk","confusion",
+                    )
+                )
+                any_status=target_runtime.has_any_status(
+                    base_status_active=base_status_active
+                )
+                hit_roll=action_rolls.hit_rolls_by_slot.get(target_slot)
+                application=resolve_nocast_target(
+                    NocastCheckInputs(
+                        attacker_level=int(participant.level),
+                        defender_level=int(defender.level),
+                        pvp=False,
+                        attacker_fixed_luck=int(
+                            profiles[nocast_actor_id].fixed_luck
+                        ),
+                        defender_vital=int(target_runtime.vital),
+                        defender_strength=int(target_runtime.strength),
+                        defender_toughness=int(target_runtime.toughness),
+                        defender_dexterity=int(target_runtime.dexterity),
+                        defender_mod_nocast=int(target_runtime.mod_nocast),
+                        defender_suit_resist=int(target_runtime.suit_resist),
+                        any_existing_status=bool(any_status),
+                        target_kind=(
+                            str(defender.kind)
+                            if str(defender.kind) in {
+                                "player","pet","enemy","other"
+                            }
+                            else "other"
+                        ),
+                    ),
+                    submission.option,
+                    roll_1_100=hit_roll,
+                )
+                if application.rng_consumed:
+                    consumed_hit_roll_slots.add(target_slot)
+                nocast_working[defender_id]=target_runtime.after_application(
+                    application
+                )
+                result_name=(
+                    "nocast_blocked_existing_status"
+                    if application.probability_value is None
+                    else (
+                        "nocast_pet_excluded"
+                        if application.pet_excluded
+                        else (
+                            "nocast_applied"
+                            if application.turn_written is not None
+                            else "nocast_missed"
+                        )
+                    )
+                )
+                events.append(
+                    OrdinaryRoundEvent(
+                        nocast_actor_id,
+                        int(slot),
+                        BATTLE_COM_ATTACK,
+                        int(entry.action_value),
+                        result_name,
+                        original_target_slot=int(
+                            submission.source_target_slot
+                        ),
+                        resolved_target_slot=target_slot,
+                        retargeted=bool(
+                            target_list.slots
+                            and int(target_list.slots[0])
+                            != int(submission.source_target_slot)
+                        ),
+                        nocast_application=application,
+                    )
+                )
+            supplied_hit_slots=set(action_rolls.hit_rolls_by_slot)
+            if supplied_hit_slots != consumed_hit_roll_slots:
+                missing=sorted(consumed_hit_roll_slots-supplied_hit_slots)
+                extra=sorted(supplied_hit_slots-consumed_hit_roll_slots)
+                raise ValueError(
+                    "Nocast hit RNG slots mismatch; "
+                    f"missing={missing}, extra={extra}"
                 )
             continue
 
@@ -6585,6 +6869,15 @@ def resolve_ordinary_round(
                 "semantic action: " + participant_id
             )
 
+    for participant_id in sorted(
+        nocast_actor_ids-attempted_nocast_actor_ids
+    ):
+        if not nocast_rolls[participant_id].is_empty:
+            raise ValueError(
+                "Nocast RNG supplied for status-suppressed semantic action: "
+                + participant_id
+            )
+
     unused_attack_magic_roll_ids=sorted(
         set(attack_magic_rolls)-consumed_attack_magic_roll_ids
     )
@@ -6641,6 +6934,11 @@ def resolve_ordinary_round(
             None
             if attack_magic_working is None
             else AttackMagicRoundOverlay(attack_magic_working)
+        ),
+        nocast_overlay=(
+            None
+            if nocast_working is None
+            else NocastRoundOverlay(nocast_working)
         ),
         ultimate_overkill_by_participant_id=MappingProxyType(
             dict(ultimate_overkill)
