@@ -213,6 +213,23 @@ def guard_damage(damage,roll_1_100):
     return _c_int(damage*guard_multiplier(roll_1_100))
 
 
+def continuation_divided_damage(damage, attack_count):
+    """Mirror the stable gDamageDiv split used by S_RENZOKU.
+
+    battle_event.c divides only positive damage by the float-valued attack
+    count and then forces any truncated positive result back up to one.
+    Non-positive damage is left unchanged.
+    """
+    damage=int(damage)
+    attack_count=int(attack_count)
+    if attack_count < 1:
+        raise ValueError("continuation attack_count must be positive")
+    if damage <= 0:
+        return damage
+    divided=_c_int(float(damage)/float(attack_count))
+    return 1 if divided <= 0 else divided
+
+
 def _relation_dex(attacker_dex,defender_dex,attacker_type,defender_type):
     at=int(attacker_dex);df=int(defender_dex)
     if attacker_type==ENEMY and defender_type==PET:
