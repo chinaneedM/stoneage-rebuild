@@ -17,6 +17,7 @@ Currently supported:
 - PETSKILL_StatusChange (explicit opt-in dispatcher branch)
 - PETSKILL_EarthRound (explicit opt-in dispatcher branch)
 - PETSKILL_Abduct (explicit opt-in dispatcher branch)
+- PETSKILL_Steal (explicit opt-in dispatcher branch)
 
 All other stable-common and macro-gated callbacks remain fail-closed.
 """
@@ -47,6 +48,7 @@ from tools.stoneage_petskill_core_model import (
     parse_status_skill,
     power_balance_command,
     status_change_command,
+    steal_command,
 )
 from tools.stoneage_petskill_round_bridge import (
     bridge_stable_pet_skill_command,
@@ -69,6 +71,7 @@ POWER_BALANCE = "PETSKILL_PowerBalance"
 STATUS_CHANGE = "PETSKILL_StatusChange"
 EARTH_ROUND = "PETSKILL_EarthRound"
 ABDUCT = "PETSKILL_Abduct"
+STEAL = "PETSKILL_Steal"
 
 BASIC_AI_CALLBACKS = frozenset({NONE, NORMAL_ATTACK, NORMAL_GUARD})
 STATUS_TOKENS_TRADITIONAL = ("全", "毒", "麻", "眠", "石", "醉", "亂")
@@ -179,6 +182,7 @@ def resolve_enemy_ai_supported_petskill_command(
     allow_no_guard: bool = False,
     allow_abduct: bool = False,
     allow_earth_round: bool = False,
+    allow_steal: bool = False,
 ) -> EnemyAiPetSkillCommand:
     """Dispatch only callbacks whose full execution boundary is admitted."""
 
@@ -261,9 +265,62 @@ def resolve_enemy_ai_supported_petskill_command(
             target_slot=target_slot,
             petskill_runtime=petskill_runtime,
         )
+    if entry.function_name == STEAL and bool(allow_steal):
+        return resolve_enemy_ai_steal_petskill_command(
+            spawned,
+            skill_slot=skill_slot,
+            target_slot=target_slot,
+            petskill_runtime=petskill_runtime,
+        )
     raise ValueError(
         "enemy AI selected pet-skill callback outside admitted execution "
         f"subset: {entry.function_name}"
+    )
+
+
+def resolve_enemy_ai_steal_petskill_command(
+    spawned: SpawnedEnemy,
+    *,
+    skill_slot: int,
+    target_slot: int,
+    petskill_runtime: Recovered25PetSkillRuntime,
+) -> EnemyAiPetSkillCommand:
+    """Resolve the one recovered25 PETSKILL_Steal row into S_STEAL."""
+
+    skill_slot,target_slot,entry=_resolved_entry(
+        spawned,
+        skill_slot=skill_slot,
+        target_slot=target_slot,
+        petskill_runtime=petskill_runtime,
+    )
+    rows=tuple(
+        row
+        for row in petskill_runtime.skills.values()
+        if row.function_name == STEAL
+    )
+    if len(rows) != 1:
+        raise ValueError(
+            "recovered25 Steal runtime must contain exactly one callback ID"
+        )
+    if entry.function_name != STEAL:
+        raise ValueError(
+            "enemy AI selected pet-skill callback outside Steal "
+            f"execution subset: {entry.function_name}"
+        )
+    if not entry.option_bytes.isascii():
+        raise ValueError(
+            "recovered25 Steal OPTION drifted outside proven ASCII subset"
+        )
+    submission=bridge_stable_pet_skill_command(
+        steal_command(target_slot)
+    )
+    return EnemyAiPetSkillCommand(
+        participant_id=str(spawned.participant.participant_id),
+        skill_slot=skill_slot,
+        skill_id=int(entry.skill_id),
+        callback=entry.function_name,
+        command=submission.battle_command,
+        setup_effects=submission.setup_effects,
     )
 
 
