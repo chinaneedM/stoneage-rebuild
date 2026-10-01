@@ -14,6 +14,8 @@ on:
       - tests/test_stoneage_recovered25_region_payload.py
       - tools/stoneage_recovered25_local_runtime_stack.py
       - tools/stoneage_recovered25_local_runtime_stack_smoke.py
+      - tools/stoneage_attack_magic_crosslink_probe.py
+      - tests/test_stoneage_attack_magic_crosslink_probe.py
       - tools/stoneage_recovered25_encounter_runtime.py
       - tools/stoneage_versioned_encounter_runtime.py
       - tools/stoneage_recovered25_enemybase_runtime.py
@@ -65,6 +67,7 @@ jobs:
             tests.test_stoneage_recovered25_region_payload \
             tests.test_stoneage_recovered25_world_profile_adapter \
             tests.test_stoneage_recovered25_local_runtime_stack \
+            tests.test_stoneage_attack_magic_crosslink_probe \
             tests.test_stoneage_recovered25_enemybase_runtime \
             tests.test_stoneage_recovered25_petskill_runtime \
             tests.test_stoneage_singleplayer_battle \
@@ -206,6 +209,21 @@ jobs:
           grep -F 'ENCOUNTER_VARIANT_RUNTIME_WITNESS|1' "$R"
           grep -F 'ENEMY_SPAWN_BIRTH_RUNTIME_WITNESS|1' "$R"
           grep -F 'RESOLUTION|RECOVERED25_LOCAL_RUNTIME_STACK_CLOSED' "$R"
+      - name: Probe recovered25 AttackMagic cross-links
+        run: |
+          set -euo pipefail
+          G="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
+          test -n "$G"; test -n "$C"
+          R=research/recovered/STONEAGE-25-ATTACKMAGIC-CROSSLINK-R1.txt
+          python3 -m tools.stoneage_attack_magic_crosslink_probe             --data-dir "$G"             --setup "$C" > "$R"
+          test -s "$R"
+          grep -F 'ATTACK_SKILL_COUNT|25' "$R"
+          grep -F 'SKILL_MAGIC_ITEM_NUMERIC_PAIRS|25' "$R"
+          grep -F 'MAGIC_ROWS_MATCHED|' "$R"
+          grep -F 'ITEM_ROWS_MATCHED|' "$R"
+          grep -F 'ATTMAGIC_ADJACENT_RECORD_PAIRS_VALID|' "$R"
+          grep -F 'RESOLUTION|RECOVERED25_ATTACKMAGIC_CROSSLINK_' "$R"
       - name: Audit recovered25 server-backed collision coverage
         run: |
           set -euo pipefail
@@ -254,7 +272,7 @@ jobs:
           M="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/data/map/mapset.txt' -print -quit)"
           A="$(find /tmp/sa25/out -type f -iname 'adrn_15.bin' -print -quit)"
           test -n "$D"; test -n "$S"; test -n "$M"; test -n "$A"
-          R=research/recovered/STONEAGE-25-CLIENT-ADRN-COLLISION-COVERAGE-R1.txt
+          R=research/recovered/STONEAGE-25-CLIENT-ADRN-COLLISION-COVERAGE-R1.txt research/recovered/STONEAGE-25-ATTACKMAGIC-CROSSLINK-R1.txt
           python3 -m tools.stoneage_recovered25_client_adrn_collision_coverage_probe \
             --client-dat-dir "$D" \
             --server-map-root "$S" \
