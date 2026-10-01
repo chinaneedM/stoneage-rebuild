@@ -24,6 +24,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
+    BATTLE_COM_S_ABDUCT,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     battle_command3_low,
@@ -33,6 +34,7 @@ from tools.stoneage_battle_round_model import (
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
+    OrdinaryAbductRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
 )
@@ -334,6 +336,24 @@ class _FakeStack:
                     illegal=0,
                     function_name="PETSKILL_ContinuationAttack",
                     option_bytes=b"3",
+                ),
+                110: Recovered25PetSkillEntry(
+                    skill_id=110,
+                    field=1,
+                    target=3,
+                    cost=2,
+                    illegal=0,
+                    function_name="PETSKILL_Abduct",
+                    option_bytes=b"80 partner",
+                ),
+                111: Recovered25PetSkillEntry(
+                    skill_id=111,
+                    field=1,
+                    target=3,
+                    cost=2,
+                    illegal=0,
+                    function_name="PETSKILL_Abduct",
+                    option_bytes=b"partner",
                 ),
             },
             source_file="petskill.txt",
@@ -3147,6 +3167,156 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                 },
                 defense_profile="newpower_70pct",
             )
+
+    def test_recovered_enemy_ai_abduct_pet_success_persists_entry_exits(self):
+        player_state=_battle_player_state()
+        pet=PetActor(
+            slot=PetSlot(0),
+            variant_id=EnemyVariantId(701),
+            template_id=PetTemplateId(89),
+            runtime_object_id=None,
+            state=MappingProxyType(
+                {
+                    "name":"abduct-target",
+                    "level":5,
+                    "hp":100,
+                    "max_hp":100,
+                    "attack":20,
+                    "defense":20,
+                    "quick":30,
+                    "ai":79,
+                    "exp":0,
+                    "max_exp":500,
+                }
+            ),
+            skills=(),
+            growth=None,
+        )
+        player_state.pets[PetSlot(0)]=pet
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=player_state,
+            world_flags=frozenset({"enemy-ai-abduct"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0,0,0,0),
+                    spawn_allocation_rolls=(
+                        0,1,2,3,0,1,2,3,0,1
+                    ),
+                ),
+            ),
+            allied_pet_slots=(0,),
+        )
+        enemy_id=context.battle.enemies[0].participant_id
+        spawned=context.spawned_enemies[0]
+        context=replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=replace(context.battle.player,quick=10),
+                enemies=(
+                    replace(context.battle.enemies[0],quick=200),
+                ),
+            ),
+            spawned_enemies=(
+                replace(
+                    spawned,
+                    variant=replace(
+                        spawned.variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:0;0;0;0;0;0;1"
+                        ),
+                    ),
+                    template=replace(
+                        spawned.template,
+                        skill_slot_ids=(10,20,30,40,50,60,110),
+                    ),
+                ),
+            ),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,"pet:0":1,enemy_id:10},
+        )
+        result_context,round_result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player":BattleCommand(BATTLE_COM_WAIT),
+                    "pet:0":BattleCommand(BATTLE_COM_WAIT),
+                },
+                enemy_mode_rolls={enemy_id:0},
+                enemy_target_rolls={enemy_id:1},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={
+                    "player":0,"pet:0":0,enemy_id:0,
+                },
+                profiles={
+                    "player":BattleCombatProfile(
+                        fixed_dex=10,fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                    "pet:0":BattleCombatProfile(
+                        fixed_dex=10,fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                    enemy_id:BattleCombatProfile(
+                        fixed_dex=200,fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                },
+                attack_rolls={},
+                abduct_rolls_by_attack_id={
+                    enemy_id:OrdinaryAbductRolls(
+                        abduct_roll_1_100=100,
+                    ),
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        event=next(
+            event for event in round_result.round.events
+            if event.participant_id==enemy_id
+        )
+        self.assertEqual(event.command1,BATTLE_COM_S_ABDUCT)
+        self.assertEqual(event.result,"abduct_success")
+        self.assertEqual(event.abduct_resolution.probability,200)
+        terminal=round_result.after
+        self.assertEqual(terminal.phase,"finished")
+        self.assertEqual(terminal.result,"victory")
+        self.assertEqual(
+            set(terminal.battle_exited_participant_ids),
+            {enemy_id,"pet:0"},
+        )
+        self.assertIn(enemy_id,terminal.hp_by_participant_id)
+        self.assertIn("pet:0",terminal.hp_by_participant_id)
+        self.assertEqual(
+            tuple(x.participant_id for x in terminal.session.enemies),
+            (enemy_id,),
+        )
+        self.assertEqual(
+            tuple(x.participant_id for x in terminal.session.allied_pets),
+            ("pet:0",),
+        )
+        self.assertEqual(terminal.pending_exp_by_participant_id["player"],0)
+        self.assertEqual(
+            result_context.persistent_battle_state,
+            terminal,
+        )
 
     def test_recovered_enemy_ai_escape_uses_template_rare_and_explicit_abio_rng(self):
         session = LocalRuntimeSessionState(

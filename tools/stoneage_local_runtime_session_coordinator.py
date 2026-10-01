@@ -42,6 +42,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_CHARGE,
     BATTLE_COM_S_RENZOKU,
     BATTLE_COM_S_STATUSCHANGE,
+    BATTLE_COM_S_ABDUCT,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
@@ -51,6 +52,8 @@ from tools.stoneage_battle_round_model import (
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
+    OrdinaryAbductContext,
+    OrdinaryAbductRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
 )
@@ -319,6 +322,9 @@ def _nonempty_key(value: str) -> str:
 class EnemyAiCommonCommandBatch:
     commands: Mapping[str, BattleCommand]
     setup_effects: Mapping[str, BattleCommandSetupEffects]
+    abduct_contexts: Mapping[str, OrdinaryAbductContext] = field(
+        default_factory=dict
+    )
 
     def __post_init__(self) -> None:
         object.__setattr__(
@@ -341,6 +347,27 @@ class EnemyAiCommonCommandBatch:
                 "enemy AI setup effects lack matching command actors: "
                 + ",".join(unknown)
             )
+        contexts={
+            str(key):value for key,value in self.abduct_contexts.items()
+        }
+        object.__setattr__(
+            self,
+            "abduct_contexts",
+            MappingProxyType(contexts),
+        )
+        abduct_command_ids={
+            str(pid) for pid,command in self.commands.items()
+            if int(command.command1)==BATTLE_COM_S_ABDUCT
+        }
+        if set(contexts) != abduct_command_ids:
+            raise ValueError(
+                "enemy AI Abduct contexts must match exactly S_ABDUCT actors"
+            )
+        if any(
+            not isinstance(value,OrdinaryAbductContext)
+            for value in contexts.values()
+        ):
+            raise TypeError("enemy AI Abduct context has wrong type")
 
 
 @dataclass
@@ -959,6 +986,7 @@ class LocalRuntimeSessionCoordinator:
         allow_continuationattack_skill: bool = False,
         allow_chargeattack_skill: bool = False,
         allow_noguard_skill: bool = False,
+        allow_abduct_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -982,11 +1010,14 @@ class LocalRuntimeSessionCoordinator:
             *state.session.allied_pets,
             *state.session.enemies,
         )
+        inactive_ids=set(state.ultimate_exited_participant_ids)
+        inactive_ids.update(state.battle_exited_participant_ids)
         living = {
             str(participant.participant_id): participant
             for participant in participants
             if (
                 str(participant.participant_id) in state.hp_by_participant_id
+                and str(participant.participant_id) not in inactive_ids
                 and int(
                     state.hp_by_participant_id[
                         str(participant.participant_id)
@@ -1091,6 +1122,7 @@ class LocalRuntimeSessionCoordinator:
             enemy_id:state.carried_setup_effects_by_participant_id[enemy_id]
             for enemy_id in carried_enemy_ids
         }
+        abduct_contexts={}
         for enemy_id in ai_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
                 raise ValueError(
@@ -1141,6 +1173,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_continuationattack_skill)
                 or bool(allow_chargeattack_skill)
                 or bool(allow_noguard_skill)
+                or bool(allow_abduct_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1162,10 +1195,20 @@ class LocalRuntimeSessionCoordinator:
                     ),
                     allow_charge_attack=bool(allow_chargeattack_skill),
                     allow_no_guard=bool(allow_noguard_skill),
+                    allow_abduct=bool(allow_abduct_skill),
                 )
                 commands[enemy_id] = bridged.command
                 if bridged.setup_effects != BattleCommandSetupEffects():
                     setup_effects[enemy_id] = bridged.setup_effects
+                if bridged.abduct_ai_threshold is not None:
+                    abduct_contexts[enemy_id]=OrdinaryAbductContext(
+                        skill_array=int(bridged.skill_id),
+                        ai_threshold=int(bridged.abduct_ai_threshold),
+                        # Local reconstructed ordinary group battles have no
+                        # event WinFunc seam; special WinFunc battles remain
+                        # outside this coordinator subset.
+                        has_win_func=False,
+                    )
                 continue
             allowed_parts = ["ATTACK", "GUARD"]
             if bool(allow_escape):
@@ -1186,6 +1229,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("ChargeAttack")
             if bool(allow_noguard_skill):
                 allowed_parts.append("NoGuard")
+            if bool(allow_abduct_skill):
+                allowed_parts.append("Abduct")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1195,6 +1240,7 @@ class LocalRuntimeSessionCoordinator:
         return EnemyAiCommonCommandBatch(
             commands=commands,
             setup_effects=setup_effects,
+            abduct_contexts=abduct_contexts,
         )
 
     def build_persistent_enemy_common_commands(
@@ -1220,6 +1266,7 @@ class LocalRuntimeSessionCoordinator:
             allow_guardbreak_skill=False,
             allow_chargeattack_skill=False,
             allow_noguard_skill=False,
+            allow_abduct_skill=False,
         ).commands
 
     def build_persistent_enemy_attack_guard_commands(
@@ -1275,6 +1322,10 @@ class LocalRuntimeSessionCoordinator:
             if (
                 str(participant.participant_id)
                 in state.hp_by_participant_id
+                and str(participant.participant_id)
+                not in set(state.ultimate_exited_participant_ids)
+                and str(participant.participant_id)
+                not in set(state.battle_exited_participant_ids)
                 and int(
                     state.hp_by_participant_id[
                         str(participant.participant_id)
@@ -1339,6 +1390,9 @@ class LocalRuntimeSessionCoordinator:
         continuation_rolls_by_attack_id: Mapping[
             str, ContinuationAttackRolls
         ] | None = None,
+        abduct_rolls_by_attack_id: Mapping[
+            str, OrdinaryAbductRolls
+        ] | None = None,
         counter_abio_by_participant_id: Mapping[str, bool] | None = None,
         base_status_rolls_by_participant_id: Mapping[
             str, BaseStatusTurnRolls
@@ -1356,8 +1410,9 @@ class LocalRuntimeSessionCoordinator:
 
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
         explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
-        plus recovered ChargeAttack, ContinuationAttack, GuardBreak, Mighty,
-        NoGuard, PowerBalance and StatusChange. NoGuard keeps S_NOGUARD selected for its
+        plus recovered Abduct, ChargeAttack, ContinuationAttack, GuardBreak,
+        Mighty, NoGuard, PowerBalance and StatusChange. Abduct carries the
+        recovered OPTION atoi threshold and explicit RAND input. NoGuard keeps S_NOGUARD selected for its
         own NoAction turn so later same-round dodge/counter checks can consume
         COM3; ChargeAttack carries its countdown across rounds. GuardBreak
         preserves its dedicated guard-only hit gate and source-shaped Guardian
@@ -1382,6 +1437,10 @@ class LocalRuntimeSessionCoordinator:
             if (
                 str(participant.participant_id)
                 in state.hp_by_participant_id
+                and str(participant.participant_id)
+                not in set(state.ultimate_exited_participant_ids)
+                and str(participant.participant_id)
+                not in set(state.battle_exited_participant_ids)
                 and int(
                     state.hp_by_participant_id[
                         str(participant.participant_id)
@@ -1434,6 +1493,7 @@ class LocalRuntimeSessionCoordinator:
             allow_continuationattack_skill=True,
             allow_chargeattack_skill=True,
             allow_noguard_skill=True,
+            allow_abduct_skill=True,
         )
         enemy_commands = enemy_batch.commands
         escaping_enemy_ids = {
@@ -1446,6 +1506,33 @@ class LocalRuntimeSessionCoordinator:
             for participant_id, command in enemy_commands.items()
             if int(command.command1) == BATTLE_COM_S_RENZOKU
         }
+        abduct_enemy_ids = {
+            str(participant_id)
+            for participant_id, command in enemy_commands.items()
+            if int(command.command1) == BATTLE_COM_S_ABDUCT
+        }
+        normalized_abduct_rolls={
+            str(key):value
+            for key,value in (abduct_rolls_by_attack_id or {}).items()
+        }
+        extra_abduct_rolls=sorted(
+            set(normalized_abduct_rolls)-abduct_enemy_ids
+        )
+        if extra_abduct_rolls:
+            raise ValueError(
+                "enemy Abduct RNG references non-Abduct actors: "
+                + ",".join(extra_abduct_rolls)
+            )
+        for participant_id,rolls in normalized_abduct_rolls.items():
+            if not isinstance(rolls,OrdinaryAbductRolls):
+                raise TypeError(
+                    f"enemy Abduct RNG has wrong type for {participant_id}"
+                )
+        if set(enemy_batch.abduct_contexts) != abduct_enemy_ids:
+            raise ValueError(
+                "enemy Abduct context/command actor mismatch"
+            )
+
         normalized_continuation_rolls = {
             str(key): value
             for key, value in (
@@ -1576,6 +1663,8 @@ class LocalRuntimeSessionCoordinator:
             attack_rolls=attack_rolls,
             counter_rolls_by_attack_id=counter_rolls_by_attack_id,
             continuation_rolls_by_attack_id=normalized_continuation_rolls,
+            abduct_contexts=enemy_batch.abduct_contexts,
+            abduct_rolls=normalized_abduct_rolls,
             counter_abio_by_participant_id=counter_abio_by_participant_id,
             escape_contexts=escape_contexts,
             escape_rolls=normalized_escape_rolls,
