@@ -198,12 +198,16 @@ class AttackMagicTargetRolls:
 
 @dataclass(frozen=True)
 class EnemyAttackMagicActionRolls:
-    true_magic_roll_0_99: int
+    true_magic_roll_0_99: int | None
     target_rolls_by_slot: Mapping[int, AttackMagicTargetRolls]
 
     def __post_init__(self) -> None:
-        cast=int(self.true_magic_roll_0_99)
-        if not 0 <= cast <= 99:
+        cast=(
+            None
+            if self.true_magic_roll_0_99 is None
+            else int(self.true_magic_roll_0_99)
+        )
+        if cast is not None and not 0 <= cast <= 99:
             raise ValueError("AttackMagic cast roll must be 0..99")
         normalized={}
         for slot,value in self.target_rolls_by_slot.items():
@@ -224,7 +228,7 @@ class AttackMagicTargetResolution:
     slot: int
     participant_id: str
     dodged: bool
-    true_magic_success: bool
+    true_magic_success: bool | None
     raw_magic_damage: int
     reported_rider_damage: int
     ride_pet_damage: int
@@ -315,6 +319,31 @@ def resolve_enemy_attack_magic_action(
     )
     if training_actor:
         raise ValueError("enemy AttackMagic caster unexpectedly trainable")
+
+    # Source BATTLE_MultiAttMagic returns immediately when BATTLE_MultiList
+    # yields -1 (dead single/row target with no fallback). No proficiency,
+    # dodge or damage RNG is consumed on that path.
+    if plan.normalized_selector is None:
+        if rolls.true_magic_roll_0_99 is not None:
+            raise ValueError(
+                "AttackMagic no-target early return cannot consume cast RNG"
+            )
+        if rolls.target_rolls_by_slot:
+            raise ValueError(
+                "AttackMagic no-target early return cannot consume target RNG"
+            )
+        return EnemyAttackMagicActionResolution(
+            plan=plan,
+            attacker_proficiency=proficiency,
+            true_magic_success=None,
+            target_order=target_order,
+            targets=(),
+            defenders_after=defenders,
+            attacker_training_applied=False,
+        )
+
+    if rolls.true_magic_roll_0_99 is None:
+        raise ValueError("AttackMagic executable cast requires cast RNG")
     cast_success=true_magic_success(
         proficiency=proficiency,
         roll_0_99=rolls.true_magic_roll_0_99,
