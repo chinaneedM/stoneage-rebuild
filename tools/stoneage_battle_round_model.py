@@ -2258,6 +2258,25 @@ def _continuation_nonbow_target_for_hit(
     )
 
 
+def _battle_attack_continuation_allowed(
+    *,
+    guardian_redirected: bool,
+    damage_reaction_active: bool,
+    critical: bool,
+    target_guarding: bool,
+    target_hp_after: int,
+) -> bool:
+    """Mirror the stable BATTLE_Attack boolean used to enter counter chaining."""
+
+    return bool(
+        not bool(guardian_redirected)
+        and not bool(damage_reaction_active)
+        and not bool(critical)
+        and not bool(target_guarding)
+        and int(target_hp_after) > 0
+    )
+
+
 def resolve_ordinary_round(
     prepared: PreparedBattleRound,
     *,
@@ -4036,12 +4055,12 @@ def resolve_ordinary_round(
         )
         register_ultimate_exits((events[-1],))
         # BATTLE_Attack forces continuation FALSE whenever Guardian>=0.
-        if (
-            not guardian_redirected
-            and not continuation_blocked_by_reaction
-            and result != "critical"
-            and counter_target_slot not in guarding
-            and after > 0
+        if _battle_attack_continuation_allowed(
+            guardian_redirected=guardian_redirected,
+            damage_reaction_active=continuation_blocked_by_reaction,
+            critical=(result == "critical"),
+            target_guarding=(counter_target_slot in guarding),
+            target_hp_after=after,
         ):
             append_counter_chain(
                 participant_id,
