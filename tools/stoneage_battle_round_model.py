@@ -2280,12 +2280,13 @@ def _battle_attack_continuation_allowed(
 
 @dataclass(frozen=True)
 class ContinuationBaselineResolution:
-    """Status/reaction-free non-bow S_RENZOKU execution witness."""
+    """Evidence-closed non-bow S_RENZOKU execution witness."""
 
     events: tuple[OrdinaryRoundEvent, ...]
     hp_by_slot: Mapping[int,int]
     last_target_slot: int | None
     counter_continuation_allowed: bool
+    ride_pet_runtime: RidePetRuntime | None = None
 
 
 def resolve_continuation_nonbow_baseline(
