@@ -45,6 +45,7 @@ from tools.stoneage_battle_round_model import (
     BattleCombatProfile,
     BattleCommand,
     BattleCommandSetupEffects,
+    CounterAttemptRolls,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
@@ -1323,6 +1324,10 @@ class LocalRuntimeSessionCoordinator:
         profiles: Mapping[str, BattleCombatProfile],
         attack_rolls: Mapping[str, OrdinaryAttackRolls],
         defense_profile: str,
+        counter_rolls_by_attack_id: Mapping[
+            str, Sequence[CounterAttemptRolls]
+        ] | None = None,
+        counter_abio_by_participant_id: Mapping[str, bool] | None = None,
         base_status_rolls_by_participant_id: Mapping[
             str, BaseStatusTurnRolls
         ] | None = None,
@@ -1528,6 +1533,8 @@ class LocalRuntimeSessionCoordinator:
             },
             profiles=profiles,
             attack_rolls=attack_rolls,
+            counter_rolls_by_attack_id=counter_rolls_by_attack_id,
+            counter_abio_by_participant_id=counter_abio_by_participant_id,
             escape_contexts=escape_contexts,
             escape_rolls=normalized_escape_rolls,
             base_status_rolls_by_participant_id=(
