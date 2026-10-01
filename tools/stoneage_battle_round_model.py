@@ -3917,11 +3917,6 @@ def resolve_ordinary_round(
                 raise ValueError(
                     "FallGround ride-pet source slot must be in 0..4"
                 )
-    elif ride_pet_source_slot is not None:
-        raise ValueError(
-            "ride-pet source slot is meaningful only for FallGround actions"
-        )
-
     guardian_registrations={
         int(defender_slot):registration
         for defender_slot,registration in (
