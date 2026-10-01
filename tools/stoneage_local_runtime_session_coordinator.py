@@ -953,6 +953,7 @@ class LocalRuntimeSessionCoordinator:
         allow_powerbalance_skill: bool = False,
         allow_mighty_skill: bool = False,
         allow_guardbreak_skill: bool = False,
+        allow_chargeattack_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1132,6 +1133,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_powerbalance_skill)
                 or bool(allow_mighty_skill)
                 or bool(allow_guardbreak_skill)
+                or bool(allow_chargeattack_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1148,6 +1150,7 @@ class LocalRuntimeSessionCoordinator:
                     allow_power_balance=bool(allow_powerbalance_skill),
                     allow_mighty=bool(allow_mighty_skill),
                     allow_guard_break=bool(allow_guardbreak_skill),
+                    allow_charge_attack=bool(allow_chargeattack_skill),
                 )
                 commands[enemy_id] = bridged.command
                 if bridged.setup_effects != BattleCommandSetupEffects():
@@ -1166,6 +1169,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("Mighty")
             if bool(allow_guardbreak_skill):
                 allowed_parts.append("GuardBreak")
+            if bool(allow_chargeattack_skill):
+                allowed_parts.append("ChargeAttack")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1198,6 +1203,7 @@ class LocalRuntimeSessionCoordinator:
             allow_powerbalance_skill=False,
             allow_mighty_skill=False,
             allow_guardbreak_skill=False,
+            allow_chargeattack_skill=False,
         ).commands
 
     def build_persistent_enemy_attack_guard_commands(
@@ -1400,6 +1406,7 @@ class LocalRuntimeSessionCoordinator:
             allow_powerbalance_skill=True,
             allow_mighty_skill=True,
             allow_guardbreak_skill=True,
+            allow_chargeattack_skill=True,
         )
         enemy_commands = enemy_batch.commands
         escaping_enemy_ids = {
