@@ -15,6 +15,7 @@ Currently supported:
 - PETSKILL_Mighty (explicit opt-in dispatcher branch)
 - PETSKILL_PowerBalance (explicit opt-in dispatcher branch)
 - PETSKILL_StatusChange (explicit opt-in dispatcher branch)
+- PETSKILL_Abduct (explicit opt-in dispatcher branch)
 
 All other stable-common and macro-gated callbacks remain fail-closed.
 """
@@ -33,6 +34,8 @@ from tools.stoneage_battle_round_model import (
 )
 from tools.stoneage_enemy_spawn_model import SpawnedEnemy
 from tools.stoneage_petskill_core_model import (
+    abduct_ai_threshold,
+    abduct_command,
     charge_attack_command,
     continuation_attack_command,
     charge_execution_step,
@@ -62,6 +65,7 @@ NO_GUARD = "PETSKILL_NoGuard"
 MIGHTY = "PETSKILL_Mighty"
 POWER_BALANCE = "PETSKILL_PowerBalance"
 STATUS_CHANGE = "PETSKILL_StatusChange"
+ABDUCT = "PETSKILL_Abduct"
 
 BASIC_AI_CALLBACKS = frozenset({NONE, NORMAL_ATTACK, NORMAL_GUARD})
 STATUS_TOKENS_TRADITIONAL = ("全", "毒", "麻", "眠", "石", "醉", "亂")
@@ -76,6 +80,7 @@ class EnemyAiPetSkillCommand:
     callback: str
     command: BattleCommand
     setup_effects: BattleCommandSetupEffects = BattleCommandSetupEffects()
+    abduct_ai_threshold: int | None = None
 
 
 def _resolved_entry(
@@ -169,6 +174,7 @@ def resolve_enemy_ai_supported_petskill_command(
     allow_continuation_attack: bool = False,
     allow_charge_attack: bool = False,
     allow_no_guard: bool = False,
+    allow_abduct: bool = False,
 ) -> EnemyAiPetSkillCommand:
     """Dispatch only callbacks whose full execution boundary is admitted."""
 
@@ -237,9 +243,110 @@ def resolve_enemy_ai_supported_petskill_command(
             target_slot=target_slot,
             petskill_runtime=petskill_runtime,
         )
+    if entry.function_name == ABDUCT and bool(allow_abduct):
+        return resolve_enemy_ai_abduct_petskill_command(
+            spawned,
+            skill_slot=skill_slot,
+            target_slot=target_slot,
+            petskill_runtime=petskill_runtime,
+        )
     raise ValueError(
         "enemy AI selected pet-skill callback outside admitted execution "
         f"subset: {entry.function_name}"
+    )
+
+
+def _recovered_abduct_thresholds(
+    petskill_runtime: Recovered25PetSkillRuntime,
+) -> dict[int,int]:
+    """Validate the hard-probed recovered25 Abduct OPTION population.
+
+    The pinned bundle has exactly two enemy-referenced Abduct IDs.  Both OPTION
+    payloads are ASCII; exactly one begins with an integer; source atoi results
+    are exactly {0,80}.  Admission is denied if a different runtime drifts from
+    that recovered population.
+    """
+
+    rows=tuple(
+        entry
+        for entry in petskill_runtime.skills.values()
+        if entry.function_name == ABDUCT
+    )
+    if len(rows) != 2:
+        raise ValueError(
+            "recovered25 Abduct runtime must contain exactly two callback IDs"
+        )
+    thresholds={}
+    leading_count=0
+    positive_count=0
+    for entry in rows:
+        if not entry.option_bytes.isascii():
+            raise ValueError(
+                "recovered25 Abduct OPTION must stay in proven ASCII subset"
+            )
+        option_text=entry.option_bytes.decode("ascii")
+        leading=re.match(r"\s*([+-]?\d+)",option_text)
+        if leading is not None:
+            leading_count += 1
+        value=int(abduct_ai_threshold(option_text))
+        if value > 0:
+            positive_count += 1
+        thresholds[int(entry.skill_id)]=value
+    if sorted(thresholds.values()) != [0,80]:
+        raise ValueError(
+            "recovered25 Abduct atoi threshold set drifted from {0,80}"
+        )
+    if leading_count != 1 or positive_count != 1:
+        raise ValueError(
+            "recovered25 Abduct leading/positive OPTION population drift"
+        )
+    return thresholds
+
+
+def resolve_enemy_ai_abduct_petskill_command(
+    spawned: SpawnedEnemy,
+    *,
+    skill_slot: int,
+    target_slot: int,
+    petskill_runtime: Recovered25PetSkillRuntime,
+) -> EnemyAiPetSkillCommand:
+    """Resolve recovered PETSKILL_Abduct into fixed S_ABDUCT command state."""
+
+    skill_slot,target_slot,entry=_resolved_entry(
+        spawned,
+        skill_slot=skill_slot,
+        target_slot=target_slot,
+        petskill_runtime=petskill_runtime,
+    )
+    if entry.function_name != ABDUCT:
+        raise ValueError(
+            "enemy AI selected pet-skill callback outside Abduct "
+            f"execution subset: {entry.function_name}"
+        )
+    thresholds=_recovered_abduct_thresholds(petskill_runtime)
+    threshold=int(thresholds[int(entry.skill_id)])
+
+    # _PETSKILL_OPTIMUM loads rows directly at their skill-ID table index, so
+    # PETSKILL_getPetskillArray(id) resolves the fixed handler LOW(COM3) array
+    # back to this recovered skill ID.
+    payload=abduct_command(
+        target_slot,
+        skill_array=int(entry.skill_id),
+        prior_high=0,
+    )
+    if int(payload.get("low",-1)) != int(entry.skill_id):
+        raise ValueError("Abduct reconstructed skill-array identity drift")
+    if int(payload.get("high",-1)) != 0:
+        raise ValueError("Abduct inactive COM3 high-half drift")
+    submission=bridge_stable_pet_skill_command(payload)
+    return EnemyAiPetSkillCommand(
+        participant_id=str(spawned.participant.participant_id),
+        skill_slot=skill_slot,
+        skill_id=int(entry.skill_id),
+        callback=entry.function_name,
+        command=submission.battle_command,
+        setup_effects=submission.setup_effects,
+        abduct_ai_threshold=threshold,
     )
 
 

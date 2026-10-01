@@ -1,6 +1,7 @@
 import unittest
 
 from tools.stoneage_enemy_ai_petskill_bridge import (
+    resolve_enemy_ai_abduct_petskill_command,
     resolve_enemy_ai_basic_petskill_command,
     resolve_enemy_ai_chargeattack_petskill_command,
     resolve_enemy_ai_continuationattack_petskill_command,
@@ -9,6 +10,7 @@ from tools.stoneage_enemy_ai_petskill_bridge import (
     resolve_enemy_ai_noguard_petskill_command,
     resolve_enemy_ai_powerbalance_petskill_command,
     resolve_enemy_ai_statuschange_petskill_command,
+    resolve_enemy_ai_supported_petskill_command,
 )
 from tools.stoneage_enemy_spawn_model import SpawnedEnemy
 from tools.stoneage_recovered25_petskill_runtime import (
@@ -32,6 +34,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
+    BATTLE_COM_S_ABDUCT,
     battle_command3_high,
     battle_command3_low,
 )
@@ -172,6 +175,77 @@ class EnemyAiPetSkillBridgeTests(unittest.TestCase):
         self.assertEqual(resolved.skill_id, 30)
         self.assertEqual(resolved.command.command1, BATTLE_COM_NONE)
         self.assertEqual(resolved.command.command2, 4)
+
+    def test_abduct_uses_bundle_threshold_population_and_skill_id_array(self):
+        spawned=spawned_with_slots((110,0,0,0,0,0,0))
+        runtime=Recovered25PetSkillRuntime(
+            skills={
+                110:entry(110,"PETSKILL_Abduct",b"80 partner"),
+                111:entry(111,"PETSKILL_Abduct",b"partner"),
+            },
+            source_file="petskill.txt",
+        )
+        resolved=resolve_enemy_ai_abduct_petskill_command(
+            spawned,
+            skill_slot=0,
+            target_slot=3,
+            petskill_runtime=runtime,
+        )
+        self.assertEqual(resolved.command.command1,BATTLE_COM_S_ABDUCT)
+        self.assertEqual(resolved.command.command2,3)
+        self.assertEqual(battle_command3_low(resolved.command.command3),110)
+        self.assertEqual(battle_command3_high(resolved.command.command3),0)
+        self.assertEqual(resolved.abduct_ai_threshold,80)
+
+        with self.assertRaisesRegex(ValueError,"outside admitted"):
+            resolve_enemy_ai_supported_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=3,
+                petskill_runtime=runtime,
+            )
+        admitted=resolve_enemy_ai_supported_petskill_command(
+            spawned,
+            skill_slot=0,
+            target_slot=3,
+            petskill_runtime=runtime,
+            allow_abduct=True,
+        )
+        self.assertEqual(admitted.command.command1,BATTLE_COM_S_ABDUCT)
+        self.assertEqual(admitted.abduct_ai_threshold,80)
+
+    def test_abduct_rejects_runtime_drift_from_hard_probed_zero_eighty_set(self):
+        spawned=spawned_with_slots((110,0,0,0,0,0,0))
+        runtime=Recovered25PetSkillRuntime(
+            skills={
+                110:entry(110,"PETSKILL_Abduct",b"80 partner"),
+                111:entry(111,"PETSKILL_Abduct",b"1"),
+            },
+            source_file="petskill.txt",
+        )
+        with self.assertRaisesRegex(ValueError,"threshold set drifted"):
+            resolve_enemy_ai_abduct_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=0,
+                petskill_runtime=runtime,
+            )
+
+    def test_abduct_rejects_incomplete_callback_population(self):
+        spawned=spawned_with_slots((110,0,0,0,0,0,0))
+        runtime=Recovered25PetSkillRuntime(
+            skills={
+                110:entry(110,"PETSKILL_Abduct",b"80 partner"),
+            },
+            source_file="petskill.txt",
+        )
+        with self.assertRaisesRegex(ValueError,"exactly two"):
+            resolve_enemy_ai_abduct_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=0,
+                petskill_runtime=runtime,
+            )
 
     def test_continuationattack_uses_recovered_ascii_count_and_round_bridge(self):
         spawned = spawned_with_slots((75, 0, 0, 0, 0, 0, 0))
