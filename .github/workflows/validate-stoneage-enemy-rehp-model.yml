@@ -1,0 +1,32 @@
+name: Validate StoneAge enemy ReHP reference model
+
+concurrency:
+  group: stoneage-enemy-rehp-reference
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-enemy-rehp-model.yml
+      - tools/stoneage_enemy_rehp_model.py
+      - tests/test_stoneage_enemy_rehp_model.py
+      - research/mechanics/STONEAGE-ENEMY-REHP-R1.md
+  pull_request:
+    paths:
+      - .github/workflows/validate-stoneage-enemy-rehp-model.yml
+      - tools/stoneage_enemy_rehp_model.py
+      - tests/test_stoneage_enemy_rehp_model.py
+      - research/mechanics/STONEAGE-ENEMY-REHP-R1.md
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate guarded enemy ReHP semantics
+        run: python3 -m unittest tests.test_stoneage_enemy_rehp_model -v

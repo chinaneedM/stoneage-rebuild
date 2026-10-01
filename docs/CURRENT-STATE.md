@@ -5274,3 +5274,18 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **DESCENDANT_ATTACKMAGIC_16FIELD_SAVE_LAYOUT_R1 = CLOSED.**
 - **RECOVERED25_ATTACKMAGIC_LOCAL_SAVE_MAPPING_R1 = OPEN.**
 - Next priority: keep AttackMagic local-save migration fail-closed and resume the recovered non-common pet-skill backlog from the callback census, selecting the highest-impact still-unexecuted battle callback whose OPTION grammar and fixed-source handler can be closed without speculative semantics.
+## Phase 1 recovered ENEMYSKILL_ReHP guarded reference boundary — 2026-10-01
+
+- The non-common callback census makes \`ENEMYSKILL_ReHP\` the current next family: **1 referenced ID / 31 positive enemybase slot uses**.
+- All three pinned fixed descendants compile \`_PRO_BATTLEENEMYSKILL\`; the callback itself ignores OPTION/data, writes symbolic \`BATTLE_COM_S_ENEMYREHP\`, copies the submitted target into COM2, marks the actor ready and returns TRUE.
+- Battle execution target-adjusts COM2 first. If no valid opponent remains, the action stops before ReHP. If the ReHP effect returns FALSE, the dispatcher falls back to ordinary physical \`BATTLE_Attack\` against the already-adjusted opponent target rather than WAIT/NONE.
+- The enemy-caster effect scans enemy-side slots **10..19** in ascending order and admits only alive entries with \`HP < floor(MAXHP * 2 / 3)\`; the threshold is strict.
+- Successful ReHP consumes source RNG after caller-side target adjustment in exact order:
+  1. eligible-ally index \`RAND(0,n-1)\`;
+  2. base power \`RAND(100,target_max_hp)\`;
+  3. \`BATTLE_MultiRecovery\` variance \`RAND(power*0.9,power*1.1)\`.
+- All three pinned builds define \`_MAGIC_REHPAI\`; the active HP branch therefore bypasses ordinary percentage/recovery-rate scaling. HP is capped at max HP while the source reports the pre-cap recovery amount.
+- Guarded command numbering is **compile-profile specific**: pinned gavin/iris resolve ReHP to **2014**, while pinned Bismarck resolves it to **2013** because \`_SHOOTCHESTNUT\` is disabled there. No universal recovered25 COM1 value is asserted.
+- Added \`tools/stoneage_enemy_rehp_model.py\`, \`tests/test_stoneage_enemy_rehp_model.py\`, \`research/mechanics/STONEAGE-ENEMY-REHP-R1.md\` and dedicated CI. The reference model keeps an unknown recovered25 command profile fail-closed and rejects the unresolved reversed \`RAND(100,max_hp)\` edge for max HP below 100.
+- **ENEMYSKILL_REHP_GUARDED_REFERENCE_R1 = CLOSED_REFERENCE_MODEL_ONLY.**
+- Next priority: hard-probe the single recovered ReHP row plus all **31** references, prove the referenced max-HP domain, then integrate exact target-adjust -> ReHP RNG -> ordinary-attack fallback ordering into recovered enemy AI / round / coordinator without inventing a historical numeric COM1 value.
