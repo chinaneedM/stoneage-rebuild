@@ -691,9 +691,14 @@ def main() -> None:
         if attack is not None:
             earthround_attack_numeric += 1
             earthround_attack_percents.append(float(attack.group(1)))
-    if len(earthround_entries) != 1:
+    if (
+        len(earthround_entries) != 1
+        or earthround_attack_marker != 1
+        or earthround_attack_numeric != 1
+        or earthround_attack_percents != [90.0]
+    ):
         raise ValueError(
-            "recovered25 EarthRound callback population drifted from one ID"
+            "recovered25 EarthRound OPTION drifted outside closed 攻%90 subset"
         )
     print(
         "PETSKILL_EARTHROUND_PARSE|"
