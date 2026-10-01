@@ -652,12 +652,10 @@ class BattleRoundModelTests(unittest.TestCase):
             counter_rolls_by_attack_id={
                 "enemy":(
                     CounterAttemptRolls(
-                        counter_check_roll_1_10000=1,
-                        attack_rolls=OrdinaryAttackRolls(
-                            dodge_roll_1_10000=10000,
-                            critical_roll_1_10000=10000,
-                            damage_roll=0,
-                        ),
+                        # This regression proves the post-S_RENZOKU counter
+                        # probe boundary only. Fail the first check explicitly
+                        # so no second alternating counter RNG is required.
+                        counter_check_roll_1_10000=10000,
                     ),
                 ),
             },
