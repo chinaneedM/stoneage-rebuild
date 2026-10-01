@@ -5291,3 +5291,48 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Validation: dedicated ReHP reference workflow **36861530391 = PASS**; runtime bootstrap contract **36861530272 = PASS** at the same source commit `0a58b4911202f20a8aa02f11224256deb5b0e49e`.
 - **ENEMYSKILL_REHP_GUARDED_REFERENCE_R1 = CLOSED_REFERENCE_MODEL_ONLY.**
 - Next priority: hard-probe the single recovered ReHP row plus all **31** references, prove the referenced max-HP domain, then integrate exact target-adjust -> ReHP RNG -> ordinary-attack fallback ordering into recovered enemy AI / round / coordinator without inventing a historical numeric COM1 value.
+
+
+## Phase 1 recovered ENEMYSKILL_ReHP runtime admission — 2026-10-01
+
+- The preservation-bundle hard probe closed the ReHP data domain:
+  - exact recovered callback population: **1 skill ID, 501**;
+  - **31** positive enemybase slot references across **31** templates;
+  - **28** runtime caster variants in **2** reachable groups;
+  - **7** potential same-group heal-target variants;
+  - minimum possible reachable target max HP is **602**, so the fixed
+    `RAND(100,target_max_hp)` call never enters a reversed range in the
+    admitted recovered25 encounter graph.
+- Dedicated recovered bundle probe **36862737415 = PASS**.
+- Runtime admission preserves the guarded-command uncertainty rather than
+  guessing a historical numeric COM1:
+  - the enemy-AI bridge emits a typed ReHP submission bound to recovered skill
+    ID 501;
+  - ordinary ATTACK is an explicitly modern **ordering carrier only** and is
+    intercepted before physical execution;
+  - `BATTLE_TargetAdjust`-shaped target repair occurs first with its own
+    explicit RNG;
+  - successful heal consumes explicit eligible-index -> base-power ->
+    MultiRecovery-variance RNG in source order;
+  - no eligible ally produces the fixed ordinary-attack fallback against the
+    already-adjusted opponent and rejects any second retarget RNG;
+  - status suppression/confusion remains ordered before ReHP execution and
+    unused semantic RNG is rejected;
+  - successful heal writes directly through the ordinary round HP map into
+    persistent multi-round state.
+- Validation:
+  - ReHP semantic runtime **36865350487 = PASS**;
+  - battle core **36865230127 = PASS**;
+  - local runtime coordinator **36865229998 = PASS**;
+  - Taiwan-v1 gameplay **36865230219 = PASS**;
+  - runtime golden contract **36865230075 = PASS**.
+- Executable recovered pet-skill slot-use coverage is now approximately
+  **2255 / 2486 = 90.7%** when the previously closed stable-common families,
+  AttackMagic (**106**) and ReHP (**31**) are counted; the separate **3** Merge
+  uses remain intentionally classified historical UB rather than executable.
+- **RECOVERED25_ENEMY_REHP_RUNTIME_R1 = CLOSED.**
+- Next priority: `PETSKILL_DamageToHp` (**3 referenced IDs / 30 positive
+  enemybase slot uses**). Re-audit its fixed-source callback/command/execution
+  path, hard-probe all three recovered OPTION rows, then admit only the
+  evidence-closed RNG/damage/HP-conversion semantics. Do not infer a guarded
+  numeric COM1 from a different compile profile.

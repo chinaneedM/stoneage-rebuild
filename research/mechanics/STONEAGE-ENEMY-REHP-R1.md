@@ -77,3 +77,60 @@ Still open before recovered25 runtime admission:
 - integrate the effect/fallback into the recovered enemy-AI round/coordinator with exact RNG ordering.
 
 No Taiwan-v1 historical membership is implied. This remains a `LATER_RECOVERED`, macro-gated descendant layer.
+
+
+## Recovered25 hard-probe closure
+
+The preservation-bundle ReHP probe closed the remaining data-domain question
+without projecting later source assumptions into Taiwan v1:
+
+- one recovered ReHP skill row, hard-probed as skill ID **501**;
+- **31** positive enemybase slot references across **31** templates;
+- **28** runtime caster variants in **2** reachable encounter groups;
+- **7** potential same-group heal-target variants;
+- minimum possible reachable target max HP **602** over the recovered birth
+  domain.
+
+Therefore the fixed `RAND(100,target_max_hp)` lower bound is never reversed
+inside the currently admitted recovered25 encounter graph.  Dedicated bundle
+probe **36862737415 = PASS**.  The generated report is
+`research/recovered/STONEAGE-25-ENEMY-REHP-PROBE-R1.txt`.
+
+## Recovered25 runtime admission
+
+Recovered25 ReHP is now executable without inventing a guarded historical
+numeric COM1:
+
+- `tools/stoneage_enemy_ai_rehp_bridge.py` binds the recovered one-row
+  population to skill ID 501 and emits a typed semantic submission;
+- ordinary `ATTACK` is used only as an internal initiative/order carrier.
+  It is intercepted before physical execution and is **not** asserted to be
+  the historical ReHP COM1 value;
+- the round executor performs source-order `BATTLE_TargetAdjust` first;
+- successful ReHP then consumes only the explicit three-stage effect RNG and
+  updates the selected enemy-side HP with max-HP capping;
+- no eligible heal target emits the semantic fallback phase and then performs
+  ordinary physical `BATTLE_Attack` against the already-adjusted opponent;
+- that fallback rejects a second retarget roll, preserving the source's single
+  TargetAdjust consumption;
+- status suppression/confusion remains ordered ahead of the semantic ReHP
+  intercept, and unused ReHP RNG is rejected;
+- persistent battle state and the local runtime coordinator carry the resulting
+  HP across rounds with no special persistence side channel.
+
+Validation:
+
+- recovered25 ReHP semantic runtime **36865350487 = PASS**;
+- battle core **36865230127 = PASS**;
+- local runtime session coordinator **36865229998 = PASS**;
+- Taiwan-v1 gameplay regression **36865230219 = PASS**;
+- runtime golden contract **36865230075 = PASS**.
+
+The guarded numeric divergence remains deliberately unresolved for recovered25:
+2013 and 2014 are still descendant-profile facts only.  Runtime admission does
+not require choosing between them.
+
+**RECOVERED25_ENEMY_REHP_RUNTIME_R1 = CLOSED.**
+
+The next non-common callback by positive recovered enemybase slot-use pressure
+is `PETSKILL_DamageToHp` (**3 referenced IDs / 30 slot uses**).
