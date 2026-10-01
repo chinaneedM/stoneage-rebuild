@@ -2226,6 +2226,159 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             0,
         )
 
+    def test_recovered_enemy_ai_continuationattack_requires_and_executes_hit_rng(self):
+        session = LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1, 0, 0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-continuationattack"}),
+        )
+        group = self.stack.request_encounter_group(session, group_roll=0)
+        context = self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0, 0, 0, 0),
+                    spawn_allocation_rolls=(
+                        0, 1, 2, 3, 0, 1, 2, 3, 0, 1
+                    ),
+                ),
+            ),
+        )
+        enemy_id=context.battle.enemies[0].participant_id
+        spawned=context.spawned_enemies[0]
+        continuation_template=replace(
+            spawned.template,
+            skill_ids=(100,20,30,40,50,60,70),
+            skill_slot_ids=(100,20,30,40,50,60,70),
+        )
+        context=replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=replace(
+                    context.battle.player,
+                    defense=0,
+                    quick=10,
+                ),
+                enemies=(
+                    replace(
+                        context.battle.enemies[0],
+                        quick=100,
+                    ),
+                ),
+            ),
+            spawned_enemies=(
+                replace(
+                    spawned,
+                    template=continuation_template,
+                    variant=replace(
+                        spawned.variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:1;0;0;0;0;0;0"
+                        ),
+                    ),
+                ),
+            ),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+        )
+        profiles={
+            "player":BattleCombatProfile(
+                fixed_dex=10,
+                fixed_luck=0,
+                earth=0,
+                water=0,
+                fire=0,
+                wind=0,
+            ),
+            enemy_id:BattleCombatProfile(
+                fixed_dex=200,
+                fixed_luck=0,
+                earth=0,
+                water=0,
+                fire=0,
+                wind=0,
+            ),
+        }
+        base_kwargs=dict(
+            player_side_commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+            },
+            enemy_mode_rolls={enemy_id:0},
+            enemy_target_rolls={enemy_id:0},
+            enemy_escape_rolls={},
+            opponent_abio_by_participant_id={},
+            initiative_random_subtracts={
+                "player":0,
+                enemy_id:0,
+            },
+            profiles=profiles,
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+        )
+
+        with self.assertRaisesRegex(
+            ValueError,
+            "ContinuationAttack RNG mismatch",
+        ):
+            (
+                self.coordinator
+                .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                    context,
+                    **base_kwargs,
+                )
+            )
+
+        hit=OrdinaryAttackRolls(
+            dodge_roll_1_10000=10000,
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+        )
+        before_hp=(
+            context.persistent_battle_state
+            .hp_by_participant_id["player"]
+        )
+        result_context,round_result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                continuation_rolls_by_attack_id={
+                    enemy_id:ContinuationAttackRolls((hit,hit,hit)),
+                },
+                **base_kwargs,
+            )
+        )
+        enemy_hits=[
+            event
+            for event in round_result.round.events
+            if (
+                event.participant_id==enemy_id
+                and event.command1==BATTLE_COM_S_RENZOKU
+                and not event.is_counter
+            )
+        ]
+        self.assertEqual(len(enemy_hits),3)
+        self.assertTrue(all(event.damage>0 for event in enemy_hits))
+        self.assertLess(
+            result_context.persistent_battle_state
+            .hp_by_participant_id["player"],
+            before_hp,
+        )
+        self.assertEqual(
+            result_context.persistent_battle_state.turn,
+            context.persistent_battle_state.turn+1,
+        )
+
     def test_recovered_enemy_ai_noguard_preserves_same_round_dodge_state(self):
         session = LocalRuntimeSessionState(
             contract_id=self.profile.contract_id,
