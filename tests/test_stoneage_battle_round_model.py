@@ -21,6 +21,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_CHARGE_OK,
     BATTLE_COM_S_GUARDIAN_GUARD,
     BATTLE_COM_S_MIGHTY,
+    BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_STATUSCHANGE,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
@@ -1057,6 +1058,109 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(result.events[0].result, "allguard")
         self.assertEqual(result.events[0].damage, 0)
         self.assertEqual(result.hp_by_participant_id["player"], 100)
+
+    def test_noguard_own_turn_is_noaction_but_high_modifies_defending_dodge(self):
+        player=actor("player","player","player",attack=60,quick=100)
+        enemy=actor("enemy","enemy","enemy",hp=200,quick=20)
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(
+                    BATTLE_COM_S_NOGUARD,
+                    command2=0,
+                    command3=pack_battle_command3(low=0,high=30),
+                ),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={
+                "player":profile(dex=1000),
+                "enemy":profile(dex=1),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=2000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(result.events[0].participant_id,"player")
+        self.assertEqual(result.events[0].result,"dodge")
+        own=next(
+            event for event in result.events
+            if event.participant_id=="enemy" and not event.is_counter
+        )
+        self.assertEqual(own.command1,BATTLE_COM_S_NOGUARD)
+        self.assertEqual(own.result,"noguard_no_action")
+        self.assertEqual(result.hp_by_participant_id["enemy"],200)
+
+    def test_noguard_nonplayer_counter_modifier_allows_counter(self):
+        player=actor(
+            "player","player","player",
+            hp=1,attack=60,defense=20,quick=100,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=200,attack=100,defense=70,quick=20,
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(
+                    BATTLE_COM_S_NOGUARD,
+                    command2=0,
+                    command3=pack_battle_command3(
+                        low=(100 << 8),
+                        high=0,
+                    ),
+                ),
+            },
+            {"player":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={
+                "player":profile(dex=100),
+                "enemy":profile(dex=100),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                )
+            },
+            counter_rolls_by_attack_id={
+                "player":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=10000,
+                        attack_rolls=OrdinaryAttackRolls(
+                            dodge_roll_1_10000=10000,
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                        ),
+                    ),
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        counter=next(event for event in result.events if event.is_counter)
+        self.assertEqual(counter.participant_id,"enemy")
+        self.assertEqual(
+            counter.counter_check_resolution.source_reported_percent,
+            100.0,
+        )
+        self.assertTrue(counter.counter_check_resolution.success)
+        self.assertGreater(counter.damage,0)
+        self.assertEqual(result.hp_by_participant_id["player"],0)
 
     def test_command3_halves_match_fixed_battle_macros(self):
         packed=pack_battle_command3(low=3,high=4)
