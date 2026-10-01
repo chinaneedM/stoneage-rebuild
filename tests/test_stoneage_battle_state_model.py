@@ -20,6 +20,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_CHARGE_OK,
     BATTLE_COM_S_GUARDIAN_ATTACK,
     BATTLE_COM_S_STATUSCHANGE,
+    BATTLE_COM_S_ABDUCT,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
@@ -29,6 +30,8 @@ from tools.stoneage_battle_round_model import (
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
+    OrdinaryAbductContext,
+    OrdinaryAbductRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
     battle_command3_low,
@@ -85,6 +88,7 @@ def participant(
     capture_default=None,
     source_variant_id=None,
     source_template_id=None,
+    fixed_ai=None,
 ):
     return BattleParticipant(
         participant_id=pid,
@@ -98,6 +102,7 @@ def participant(
         quick=quick,
         name=pid,
         fixed_vital=40,
+        fixed_ai=fixed_ai,
         reward_exp=reward_exp,
         source_pet_slot=source_pet_slot,
         reward_items=tuple(reward_items),
@@ -891,6 +896,94 @@ class PersistentBattleStateTests(unittest.TestCase):
         self.assertEqual(
             second.after.ultimate_exited_participant_ids,
             ("pet:0",),
+        )
+
+    def test_abduct_exit_persists_without_deleting_pet_or_enemy_identity(self):
+        player=participant("player","player","player",quick=10)
+        pet=participant(
+            "pet:0","player","pet",
+            quick=20,source_pet_slot=0,fixed_ai=79,
+        )
+        enemy1=participant("enemy:1","enemy","enemy",quick=100)
+        enemy2=participant("enemy:2","enemy","enemy",quick=5)
+        state=begin_persistent_battle(
+            session(player,(enemy1,enemy2),pets=(pet,)),
+            slots={
+                "player":0,
+                "pet:0":1,
+                "enemy:1":10,
+                "enemy:2":11,
+            },
+        )
+        first=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet:0":BattleCommand(BATTLE_COM_WAIT),
+                "enemy:1":BattleCommand(
+                    BATTLE_COM_S_ABDUCT,
+                    command2=1,
+                    command3=pack_battle_command3(low=88,high=0),
+                ),
+                "enemy:2":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={
+                "player":0,"pet:0":0,"enemy:1":0,"enemy:2":0,
+            },
+            profiles={
+                "player":profile(),
+                "pet:0":profile(),
+                "enemy:1":profile(),
+                "enemy:2":profile(),
+            },
+            attack_rolls={},
+            abduct_contexts={
+                "enemy:1":OrdinaryAbductContext(
+                    skill_array=88,
+                    ai_threshold=80,
+                ),
+            },
+            abduct_rolls={
+                "enemy:1":OrdinaryAbductRolls(abduct_roll_1_100=100),
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(
+            set(first.after.battle_exited_participant_ids),
+            {"enemy:1","pet:0"},
+        )
+        self.assertEqual(
+            tuple(x.participant_id for x in first.after.session.enemies),
+            ("enemy:1","enemy:2"),
+        )
+        self.assertEqual(
+            tuple(x.participant_id for x in first.after.session.allied_pets),
+            ("pet:0",),
+        )
+        self.assertEqual(first.after.hp_by_participant_id["pet:0"],100)
+        self.assertEqual(first.after.hp_by_participant_id["enemy:1"],100)
+        self.assertEqual(first.after.phase,ACTIVE)
+        self.assertEqual(living_non_pet_count(first.after,1),1)
+        self.assertEqual(
+            dict(first.after.pending_exp_by_participant_id),
+            {"player":0,"pet:0":0},
+        )
+
+        second=resolve_persistent_ordinary_round(
+            first.after,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy:2":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,"enemy:2":0},
+            profiles={"player":profile(),"enemy:2":profile()},
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(second.after.phase,ACTIVE)
+        self.assertEqual(
+            set(second.after.battle_exited_participant_ids),
+            {"enemy:1","pet:0"},
         )
 
     def test_player_death_finishes_even_if_allied_pet_is_alive(self):

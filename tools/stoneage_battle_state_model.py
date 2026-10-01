@@ -50,6 +50,8 @@ from tools.stoneage_battle_round_model import (
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
     OrdinaryCaptureRolls,
+    OrdinaryAbductContext,
+    OrdinaryAbductRolls,
     OrdinaryEscapeContext,
     OrdinaryEscapeRolls,
     ResolvedOrdinaryRound,
@@ -111,6 +113,9 @@ class PersistentBattleState:
     ride_pet_runtime: RidePetRuntime | None = None
     ultimate_overkill_by_participant_id: Mapping[str,int] | None = None
     ultimate_exited_participant_ids: tuple[str,...] = ()
+    # Non-death BATTLE_Exit/PetDefaultExit entries (e.g. Abduct) stay in the
+    # battle session identity graph but no longer participate in later rounds.
+    battle_exited_participant_ids: tuple[str,...] = ()
 
     def __post_init__(self) -> None:
         if self.phase not in {ACTIVE, FINISHED}:
@@ -150,6 +155,32 @@ class PersistentBattleState:
             self,
             "ultimate_exited_participant_ids",
             normalized_ultimate_exits,
+        )
+        normalized_battle_exits=tuple(
+            str(pid) for pid in self.battle_exited_participant_ids
+        )
+        if len(normalized_battle_exits) != len(set(normalized_battle_exits)):
+            raise ValueError("battle-exited participants cannot contain duplicates")
+        unknown_battle_exits=sorted(
+            set(normalized_battle_exits)-set(participants)
+        )
+        if unknown_battle_exits:
+            raise ValueError(
+                "battle-exited participants are not in battle session: "
+                f"{unknown_battle_exits}"
+            )
+        overlap=sorted(
+            set(normalized_battle_exits)&set(normalized_ultimate_exits)
+        )
+        if overlap:
+            raise ValueError(
+                "participant cannot be both ordinary battle-exited and "
+                f"ultimate-exited: {overlap}"
+            )
+        object.__setattr__(
+            self,
+            "battle_exited_participant_ids",
+            normalized_battle_exits,
         )
 
         if self.carried_commands_by_participant_id is None:
@@ -588,9 +619,10 @@ def living_non_pet_count(
         raise ValueError("side must be 0 or 1")
     participants = _participant_map(state.session)
     count = 0
-    ultimate_exited=set(state.ultimate_exited_participant_ids)
+    exited=set(state.ultimate_exited_participant_ids)
+    exited.update(state.battle_exited_participant_ids)
     for pid, participant in participants.items():
-        if pid in ultimate_exited:
+        if pid in exited:
             continue
         slot = int(state.slots[pid])
         if (0 if slot < 10 else 1) != side:
@@ -657,12 +689,13 @@ def active_participants(
     state: PersistentBattleState,
 ) -> tuple[BattleParticipant, ...]:
     """Return living actors only, retaining original session order."""
-    ultimate_exited=set(state.ultimate_exited_participant_ids)
+    exited=set(state.ultimate_exited_participant_ids)
+    exited.update(state.battle_exited_participant_ids)
     return tuple(
         participant_snapshot(state, participant.participant_id)
         for participant in _session_participants(state.session)
         if (
-            str(participant.participant_id) not in ultimate_exited
+            str(participant.participant_id) not in exited
             and int(state.hp_by_participant_id[participant.participant_id]) > 0
         )
     )
@@ -853,6 +886,10 @@ def resolve_persistent_capture_transition(
         }),
         ultimate_exited_participant_ids=tuple(
             pid for pid in state.ultimate_exited_participant_ids
+            if pid != target_id
+        ),
+        battle_exited_participant_ids=tuple(
+            pid for pid in state.battle_exited_participant_ids
             if pid != target_id
         ),
     )
@@ -1140,6 +1177,8 @@ def resolve_persistent_ordinary_round(
     defense_profile: str,
     capture_contexts: Mapping[str, OrdinaryCaptureContext] | None = None,
     capture_rolls: Mapping[str, OrdinaryCaptureRolls] | None = None,
+    abduct_contexts: Mapping[str, OrdinaryAbductContext] | None = None,
+    abduct_rolls: Mapping[str, OrdinaryAbductRolls] | None = None,
     escape_contexts: Mapping[str, OrdinaryEscapeContext] | None = None,
     escape_rolls: Mapping[str, OrdinaryEscapeRolls] | None = None,
     counter_rolls_by_attack_id: Mapping[
@@ -1244,6 +1283,8 @@ def resolve_persistent_ordinary_round(
         defense_profile=defense_profile,
         capture_contexts=capture_contexts,
         capture_rolls=capture_rolls,
+        abduct_contexts=abduct_contexts,
+        abduct_rolls=abduct_rolls,
         escape_contexts=normalized_escape_contexts,
         escape_rolls=escape_rolls,
         counter_rolls_by_attack_id=counter_rolls_by_attack_id,
@@ -1320,25 +1361,47 @@ def resolve_persistent_ordinary_round(
     )
     exited_ids={str(pid) for pid in round_result.exited_participant_ids}
     enemy_ids={str(enemy.participant_id) for enemy in state.session.enemies}
-    invalid_exits=sorted(exited_ids-enemy_ids)
+    player_id=str(state.session.player.participant_id)
+    allied_pet_ids={
+        str(pet.participant_id) for pet in state.session.allied_pets
+    }
+    known_ids={player_id}|allied_pet_ids|enemy_ids
+    participant_id_by_slot={
+        int(slot):str(pid) for pid,slot in state.slots.items()
+    }
+    captured_enemy_ids=set()
+    for event in round_result.events:
+        if (
+            event.capture_resolution is None
+            or not event.capture_resolution.success
+        ):
+            continue
+        if event.resolved_target_slot is None:
+            raise ValueError("successful capture lacks resolved target slot")
+        target_id=participant_id_by_slot.get(int(event.resolved_target_slot))
+        if target_id is None or target_id not in enemy_ids:
+            raise ValueError("successful capture target is not an enemy entry")
+        captured_enemy_ids.add(target_id)
+    if not captured_enemy_ids.issubset(exited_ids):
+        raise ValueError("capture exit missing from ordinary exited IDs")
+    battle_exit_ids=exited_ids-captured_enemy_ids
+    invalid_exits=sorted(battle_exit_ids-(allied_pet_ids|enemy_ids))
     if invalid_exits:
-        raise ValueError(f"ordinary round exited non-enemy entries: {invalid_exits}")
+        raise ValueError(
+            "ordinary non-capture battle exits must be pet/enemy entries: "
+            f"{invalid_exits}"
+        )
 
     escaped_ids={str(pid) for pid in round_result.escaped_participant_ids}
     ultimate_exited_ids={
         str(pid) for pid in round_result.ultimate_exited_participant_ids
     }
-    known_ids=set(_participant_map(state.session))
     invalid_ultimate_exits=sorted(ultimate_exited_ids-known_ids)
     if invalid_ultimate_exits:
         raise ValueError(
             "ordinary round ultimate-exited unknown entries: "
             f"{invalid_ultimate_exits}"
         )
-    player_id=str(state.session.player.participant_id)
-    allied_pet_ids={
-        str(pet.participant_id) for pet in state.session.allied_pets
-    }
     invalid_escapes=sorted(
         escaped_ids-({player_id}|allied_pet_ids|enemy_ids)
     )
@@ -1360,12 +1423,12 @@ def resolve_persistent_ordinary_round(
             event.escape_resolution.stored_escape_count_after
         )
     # BATTLE_Exit resets the entry escape counter for every exiting non-pet.
-    for pid in ultimate_exited_ids:
+    for pid in ultimate_exited_ids | battle_exit_ids:
         if pid in escape_counts:
             escape_counts[pid]=0
 
     escaped_enemy_ids=escaped_ids & enemy_ids
-    removed_enemy_ids=exited_ids | escaped_enemy_ids
+    removed_enemy_ids=captured_enemy_ids | escaped_enemy_ids
     next_session=(
         replace(
             state.session,
@@ -1401,6 +1464,10 @@ def resolve_persistent_ordinary_round(
         pid=str(pid)
         if pid not in next_ultimate_exited:
             next_ultimate_exited.append(pid)
+    next_battle_exited=list(state.battle_exited_participant_ids)
+    for pid in sorted(battle_exit_ids):
+        if pid not in next_battle_exited:
+            next_battle_exited.append(pid)
     for pid in removed_enemy_ids:
         next_slots.pop(pid,None)
         hp.pop(pid,None)
@@ -1410,6 +1477,8 @@ def resolve_persistent_ordinary_round(
         next_ultimate_overkill.pop(pid,None)
         if pid in next_ultimate_exited:
             next_ultimate_exited.remove(pid)
+        if pid in next_battle_exited:
+            next_battle_exited.remove(pid)
 
     next_state = PersistentBattleState(
         session=next_session,
@@ -1433,14 +1502,22 @@ def resolve_persistent_ordinary_round(
             for pid,command in (
                 round_result.carried_commands_by_participant_id or {}
             ).items()
-            if pid in next_slots
+            if (
+                pid in next_slots
+                and pid not in next_battle_exited
+                and pid not in next_ultimate_exited
+            )
         }),
         carried_setup_effects_by_participant_id=_freeze_mapping({
             pid:effects
             for pid,effects in (
                 round_result.carried_setup_effects_by_participant_id or {}
             ).items()
-            if pid in next_slots
+            if (
+                pid in next_slots
+                and pid not in next_battle_exited
+                and pid not in next_ultimate_exited
+            )
         }),
         escape_count_by_participant_id=_freeze_mapping(escape_counts),
         base_status_runtime_by_participant_id=_freeze_mapping(
@@ -1454,6 +1531,7 @@ def resolve_persistent_ordinary_round(
             next_ultimate_overkill
         ),
         ultimate_exited_participant_ids=tuple(next_ultimate_exited),
+        battle_exited_participant_ids=tuple(next_battle_exited),
     )
     if player_id in escaped_ids:
         next_state=replace(
