@@ -661,7 +661,8 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(len(counters),1)
         self.assertEqual(counters[0].participant_id,"player")
         self.assertEqual(counters[0].resolved_target_slot,10)
-        self.assertGreater(counters[0].damage,0)
+        self.assertEqual(counters[0].counter_attempt,1)
+        self.assertIsNotNone(counters[0].counter_check_resolution)
 
     def test_counter_continuation_gate_matches_fixed_battle_attack_return(self):
         base=dict(
