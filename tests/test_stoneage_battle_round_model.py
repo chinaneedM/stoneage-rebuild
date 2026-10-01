@@ -24,6 +24,8 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_MIGHTY,
     BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_STATUSCHANGE,
+    BATTLE_COM_S_EARTHROUND0,
+    BATTLE_COM_S_EARTHROUND1,
     BATTLE_COM_S_ABDUCT,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
@@ -2471,6 +2473,89 @@ class BattleRoundModelTests(unittest.TestCase):
         )
         self.assertTrue(result.events[0].guardian_redirected)
         self.assertFalse(any(event.is_counter for event in result.events))
+
+    def test_earthround_hide_carries_phase_two_without_attack_rng(self):
+        pet=actor("pet","player","pet",attack=100,quick=100)
+        enemy=actor("enemy","enemy","enemy",hp=300,quick=20)
+        prepared=prepare_battle_round(
+            (pet,enemy),
+            {
+                "pet":BattleCommand(
+                    BATTLE_COM_S_EARTHROUND1,
+                    command2=10,
+                    command3=50,
+                ),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            {"pet":0,"enemy":0},
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(),"enemy":profile()},
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+        )
+        event=result.events[0]
+        self.assertEqual(event.command1,BATTLE_COM_S_EARTHROUND1)
+        self.assertEqual(event.result,"earthround_hide")
+        self.assertEqual(result.hp_by_participant_id["enemy"],300)
+        carried=result.carried_commands_by_participant_id["pet"]
+        self.assertEqual(carried.command1,BATTLE_COM_S_EARTHROUND0)
+        self.assertEqual(carried.command2,10)
+        self.assertEqual(carried.command3,50)
+        self.assertEqual(
+            result.carried_setup_effects_by_participant_id["pet"],
+            BattleCommandSetupEffects(),
+        )
+
+    def test_earthround_phase_two_applies_full_com3_multiplier_then_clears(self):
+        pet=actor("pet","player","pet",attack=100,quick=100)
+        enemy=actor("enemy","enemy","enemy",hp=500,defense=70,quick=20)
+        rolls=OrdinaryAttackRolls(
+            dodge_roll_1_10000=10000,
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+            minimum_damage_roll_0_1=1,
+        )
+        ordinary=resolve_ordinary_round(
+            prepare_battle_round(
+                (pet,enemy),
+                {
+                    "pet":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                    "enemy":BattleCommand(BATTLE_COM_WAIT),
+                },
+                {"pet":0,"enemy":0},
+            ),
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(),"enemy":profile()},
+            attack_rolls={"pet":rolls},
+            defense_profile="newpower_70pct",
+        )
+        earth=resolve_ordinary_round(
+            prepare_battle_round(
+                (pet,enemy),
+                {
+                    "pet":BattleCommand(
+                        BATTLE_COM_S_EARTHROUND0,
+                        command2=10,
+                        command3=50,
+                    ),
+                    "enemy":BattleCommand(BATTLE_COM_WAIT),
+                },
+                {"pet":0,"enemy":0},
+            ),
+            slots={"pet":0,"enemy":10},
+            profiles={"pet":profile(),"enemy":profile()},
+            attack_rolls={"pet":rolls},
+            defense_profile="newpower_70pct",
+        )
+        normal_event=ordinary.events[0]
+        earth_event=earth.events[0]
+        self.assertEqual(earth_event.command1,BATTLE_COM_S_EARTHROUND0)
+        self.assertEqual(earth_event.damage,int(normal_event.damage*1.5))
+        self.assertEqual(dict(earth.carried_commands_by_participant_id),{})
+        self.assertEqual(dict(earth.carried_setup_effects_by_participant_id),{})
 
     def test_charge_wait_carries_decremented_command_and_latent_power(self):
         pet=actor("pet","player","pet",attack=100,quick=100)
