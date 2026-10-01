@@ -78,3 +78,13 @@ player target. Report write-back advanced `main` to
 `99a6fa36b9c916696b3791618866377b17baa998`.
 
 Marker: **RECOVERED25_ATTACKMAGIC_RUNTIME_INDEX_R1 = CLOSED**
+
+
+## Local-stack integration acceptance — 2026-10-01
+
+- Full recovered25 workflow **36851295344 = PASS** after the prior failed run was traced to a smoke-only local-variable scope error.
+- All map, stack, AttackMagic cross-link, server collision, client ADRN and aggregate-report stages passed.
+- Report write-back advanced `main` to `0dc65140f6cf5acb9dd8724408818b083f3f98c3`.
+- The stack report proves 25 AttackMagic runtime entries, the non-player item-token execution-dead role, one normal exact footprint witness and one dynamic portability witness.
+
+Marker: **RECOVERED25_ATTACKMAGIC_STACK_INTEGRATION_R1 = CLOSED**

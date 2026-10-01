@@ -5236,6 +5236,11 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Runtime report reconfirms **25 entries**, **250 full-side scenarios = 110 portable + 140 nonportable**, the eleven fully-alive always-portable magic IDs, `magicusemp={5}`, item-token role `CONFIG_CROSSLINK_ONLY_MP_EXECUTION_DEAD`, and the dynamic magic-305 one-alive portability witness.
 - **RECOVERED25_ATTACKMAGIC_RUNTIME_INDEX_R1 = CLOSED.**
 - Integrated the closed AttackMagic runtime index into the recovered25 local runtime stack as a typed optional component loaded with `server_data_dir`; stack validation requires exact equality with the recovered `PETSKILL_AttackMagic` skill population and exposes a fail-closed `resolve_enemy_attack_magic_footprint(...)` delegate.
-- Full preservation-bundle local-stack acceptance for this integration is **pending**.
-- **RECOVERED25_ATTACKMAGIC_STACK_INTEGRATION_R1 = CANDIDATE.**
-- Next priority after full-stack acceptance: compose only exact-source-order AttackMagic plans with the closed damage core at the enemy battle-action execution boundary; do not admit nonportable multi-target qsort states.
+- Full preservation-bundle local-stack rerun **36851295344 = PASS** after a smoke-only witness scope fix. Every stage passed: deterministic stack tests, verified bundle recovery, all materializable maps, local stack, AttackMagic cross-link, server collision coverage/provider, client ADRN coverage, and aggregate report write-back.
+- Bot report write-back advanced `main` to `0dc65140f6cf5acb9dd8724408818b083f3f98c3`; the local-stack report contains all 25 AttackMagic entries, execution-dead non-player item role, exact magic-301 witness, dynamic magic-305 witness, and `RECOVERED25_LOCAL_RUNTIME_STACK_CLOSED`.
+- **RECOVERED25_ATTACKMAGIC_STACK_INTEGRATION_R1 = CLOSED.**
+- Added a separate enemy AttackMagic action-composer candidate. It combines only exact portable runtime plans with the closed damage core and explicit magic combat state/RNG; command code 2002, enemy-AI dispatch, profit/death flags and ordinary-round event integration remain outside this layer.
+- The composer preserves source RNG order: one cast roll; then per ordered target one dodge roll; damage `rand()%20` only for non-dodged targets.
+- It also composes fixed defender resistance/training, sleep clearing and dedicated AttackMagic ride attribute averaging/splitting without reusing physical ride-sharing formulas.
+- **RECOVERED25_ENEMY_ATTACKMAGIC_ACTION_COMPOSER_R1 = CANDIDATE.**
+- Next priority: dedicated composer CI; if green, register the guarded 2002 command/action adapter and wire only exact-source-order AttackMagic states into enemy-AI round execution.
