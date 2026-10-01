@@ -93,6 +93,7 @@ from tools.stoneage_singleplayer_battle import BattleParticipant
 from tools.stoneage_petskill_core_model import (
     abduct_probability,
     abduct_transition,
+    earth_round_attack_transition,
 )
 
 
@@ -120,6 +121,8 @@ BATTLE_COM_S_POWERBALANCE = 1007
 BATTLE_COM_S_STATUSCHANGE = 1008
 # Fixed battle.h sequence: EARTHROUND0=1009, EARTHROUND1=1010,
 # LOSTESCAPE=1011, ABDUCT=1012, STEAL=1013.
+BATTLE_COM_S_EARTHROUND0 = 1009
+BATTLE_COM_S_EARTHROUND1 = 1010
 BATTLE_COM_S_ABDUCT = 1012
 BATTLE_COM_S_NOGUARD = 1014
 BATTLE_COM_S_CHARGE_OK = 1015
@@ -177,6 +180,8 @@ BASE_COMMAND_CODES = frozenset(
         BATTLE_COM_S_MIGHTY,
         BATTLE_COM_S_POWERBALANCE,
         BATTLE_COM_S_STATUSCHANGE,
+        BATTLE_COM_S_EARTHROUND0,
+        BATTLE_COM_S_EARTHROUND1,
         BATTLE_COM_S_ABDUCT,
         BATTLE_COM_S_NOGUARD,
         BATTLE_COM_S_CHARGE_OK,
@@ -547,6 +552,8 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_S_MIGHTY,
         BATTLE_COM_S_POWERBALANCE,
         BATTLE_COM_S_STATUSCHANGE,
+        BATTLE_COM_S_EARTHROUND0,
+        BATTLE_COM_S_EARTHROUND1,
         BATTLE_COM_S_ABDUCT,
         BATTLE_COM_S_NOGUARD,
         BATTLE_COM_S_CHARGE_OK,
@@ -3769,6 +3776,26 @@ def resolve_ordinary_round(
                 guarding.discard(slot)
             command_by_slot[slot]=command
 
+        if command.command1 == BATTLE_COM_S_EARTHROUND1:
+            next_earthround=BattleCommand(
+                BATTLE_COM_S_EARTHROUND0,
+                command2=command.command2,
+                command3=command.command3,
+                input_complete=command.input_complete,
+            )
+            command_by_slot[slot]=next_earthround
+            events.append(
+                OrdinaryRoundEvent(
+                    participant_id,
+                    slot,
+                    BATTLE_COM_S_EARTHROUND1,
+                    entry.action_value,
+                    "earthround_hide",
+                    original_target_slot=int(command.command2),
+                )
+            )
+            continue
+
         if command.command1 == BATTLE_COM_S_CHARGE:
             remaining=battle_command3_low(command.command3)
             attack_percent=battle_command3_high(command.command3)
@@ -4487,8 +4514,12 @@ def resolve_ordinary_round(
         if rolls is None:
             raise KeyError(f"missing ordinary attack rolls for {participant_id}")
         attack_command_code=int(command.command1)
-        if attack_command_code == BATTLE_COM_S_CHARGE_OK:
-            # Fixed battle.c clears CHARGE_OK to NONE before its physical loop.
+        if attack_command_code in {
+            BATTLE_COM_S_CHARGE_OK,
+            BATTLE_COM_S_EARTHROUND0,
+        }:
+            # Fixed battle.c clears CHARGE_OK/EARTHROUND0 to NONE before
+            # entering their physical attack loops.
             command_by_slot[slot]=BattleCommand(BATTLE_COM_NONE)
         elif attack_command_code in {
             BATTLE_COM_S_GBREAK,
@@ -4757,6 +4788,14 @@ def resolve_ordinary_round(
             damage = int(
                 int(damage)
                 * (battle_command3_low(command.command3) * 0.01)
+            )
+        elif attack_command_code == BATTLE_COM_S_EARTHROUND0:
+            earth_transition=earth_round_attack_transition(
+                attack_percent=int(command.command3)
+            )
+            damage=int(
+                int(damage)
+                * float(earth_transition["damage_multiplier"])
             )
 
         reaction_target_slot=int(damage_target_slot)
@@ -5128,7 +5167,10 @@ def resolve_ordinary_round(
     carried_commands={}
     carried_effects={}
     for carried_slot,carried_command in command_by_slot.items():
-        if int(carried_command.command1) != BATTLE_COM_S_CHARGE:
+        if int(carried_command.command1) not in {
+            BATTLE_COM_S_CHARGE,
+            BATTLE_COM_S_EARTHROUND0,
+        }:
             continue
         if (
             carried_slot in exited_slots
@@ -5137,10 +5179,13 @@ def resolve_ordinary_round(
             continue
         carried_id=str(by_slot[carried_slot].participant_id)
         carried_commands[carried_id]=carried_command
-        effects=setup_effects.get(carried_id)
+        effects=setup_effects.get(
+            carried_id,
+            BattleCommandSetupEffects(),
+        )
         if (
-            effects is None
-            or effects.charge_ready_attack_power is None
+            int(carried_command.command1) == BATTLE_COM_S_CHARGE
+            and effects.charge_ready_attack_power is None
         ):
             raise ValueError(
                 f"carried S_CHARGE lacks ready attack power: {carried_id}"
