@@ -2293,6 +2293,8 @@ class ContinuationBaselineResolution:
     base_damage_react_state_by_participant_id: Mapping[
         str,BaseDamageReactState
     ] | None = None
+    ultimate_overkill_by_participant_id: Mapping[str,int] | None = None
+    ultimate_exited_participant_ids: tuple[str, ...] = ()
 
 
 def resolve_continuation_nonbow_baseline(
@@ -2319,6 +2321,8 @@ def resolve_continuation_nonbow_baseline(
     base_damage_react_state_by_participant_id: Mapping[
         str,BaseDamageReactState
     ] | None = None,
+    battle_abio_by_participant_id: Mapping[str,bool] | None = None,
+    ultimate_overkill_by_participant_id: Mapping[str,int] | None = None,
     ride_pet_runtime: RidePetRuntime | None = None,
     excluded_slots: Sequence[int] = (),
     field_attr: str = "none",
@@ -2329,10 +2333,10 @@ def resolve_continuation_nonbow_baseline(
     This layer closes the fixed loop, per-hit original-target recheck,
     Guardian redirection, ordinary dodge/critical/guard damage, gDamageDiv,
     and the final BATTLE_Attack boolean used by the later counter chain.
-    Damage-reaction and ride splitting are applied per hit; either may change
-    later loop state, including attacker death or petfall/unmount. Status
-    application and ultimate/death side effects remain outside this helper and
-    therefore cannot be silently approximated.
+    Damage-reaction, ride splitting, wakeup and ultimate/death handling are
+    applied per hit because each can change later loop state, including actor
+    death, petfall/unmount, target exit and the next retarget candidate set.
+    ContinuationAttack itself adds no status-application payload.
     """
 
     if int(command.command1) != BATTLE_COM_S_RENZOKU:
@@ -2383,6 +2387,35 @@ def resolve_continuation_nonbow_baseline(
         )
         for participant in by_slot.values()
     }
+    battle_abio={
+        str(participant_id):bool(value)
+        for participant_id,value in (
+            battle_abio_by_participant_id or {}
+        ).items()
+    }
+    if ultimate_overkill_by_participant_id is None:
+        ultimate_overkill={
+            str(participant.participant_id):0
+            for participant in by_slot.values()
+        }
+    else:
+        ultimate_overkill={
+            str(participant_id):int(value)
+            for participant_id,value in (
+                ultimate_overkill_by_participant_id or {}
+            ).items()
+        }
+        expected_ids={
+            str(participant.participant_id)
+            for participant in by_slot.values()
+        }
+        if set(ultimate_overkill) != expected_ids:
+            raise ValueError(
+                "ContinuationAttack ultimate accumulator participants mismatch"
+            )
+        if any(value < 0 for value in ultimate_overkill.values()):
+            raise ValueError("ultimate accumulator cannot be negative")
+    ultimate_exited_ids: list[str]=[]
     excluded={int(slot) for slot in excluded_slots}
     ride_runtime=ride_pet_runtime
     active_ride=False
@@ -2777,6 +2810,80 @@ def resolve_continuation_nonbow_baseline(
             event_before=int(reaction_resolution.defender_hp_before)
             event_after=int(reaction_resolution.defender_hp_after)
 
+        resolved_damage_id=str(
+            by_slot[resolved_damage_slot].participant_id
+        )
+        ultimate_damage_resolution=None
+        death_ultimate_resolution=None
+        ultimate_kind=0
+        if int(damage) > 0:
+            hp_damage_applied=max(0,int(event_before)-int(event_after))
+            ultimate_damage_resolution=resolve_battle_ultimate_damage(
+                BattleUltimateDamageInputs(
+                    damage_for_threshold=int(damage),
+                    hp_damage_applied=int(hp_damage_applied),
+                    target_hp_before=int(event_before),
+                    target_max_hp=int(
+                        by_slot[resolved_damage_slot].max_hp
+                    ),
+                    accumulated_overkill_before=int(
+                        ultimate_overkill[resolved_damage_id]
+                    ),
+                )
+            )
+            ultimate_overkill[resolved_damage_id]=int(
+                ultimate_damage_resolution.accumulated_overkill_after
+            )
+            ultimate_kind=int(
+                ultimate_damage_resolution.ultimate_kind
+            )
+            if int(event_before) > 0 and int(event_after) <= 0:
+                victim=by_slot[resolved_damage_slot]
+                victim_kind=_participant_battle_kind(victim)
+                victim_abio=bool(
+                    battle_abio.get(resolved_damage_id,False)
+                )
+                needs_ultimate_roll=bool(
+                    (not victim_abio)
+                    and victim_kind != PLAYER
+                    and is_critical
+                )
+                if (
+                    hit_rolls.ultimate_roll_1_100 is not None
+                    and not needs_ultimate_roll
+                ):
+                    raise ValueError(
+                        "continuation ultimate_roll_1_100 supplied "
+                        "on unused death path"
+                    )
+                death_ultimate_resolution=(
+                    resolve_battle_death_ultimate_override(
+                        BattleDeathUltimateInputs(
+                            base_ultimate_kind=ultimate_kind,
+                            victim_kind=victim_kind,
+                            abio=victim_abio,
+                            critical=bool(is_critical),
+                        ),
+                        critical_roll_1_100=(
+                            hit_rolls.ultimate_roll_1_100
+                            if needs_ultimate_roll
+                            else None
+                        ),
+                    )
+                )
+                ultimate_kind=int(
+                    death_ultimate_resolution.ultimate_kind
+                )
+            elif hit_rolls.ultimate_roll_1_100 is not None:
+                raise ValueError(
+                    "continuation ultimate_roll_1_100 supplied "
+                    "when no non-player critical death consumed it"
+                )
+        elif hit_rolls.ultimate_roll_1_100 is not None:
+            raise ValueError(
+                "continuation ultimate_roll_1_100 supplied on zero-damage path"
+            )
+
         if (
             int(damage) > 0
             and reaction_resolution.wakeup_target is not None
@@ -2819,16 +2926,85 @@ def resolve_continuation_nonbow_baseline(
                 ride_damage_split=ride_split,
                 ride_hp_resolution=ride_hp_resolution,
                 ride_pet_fell_rider_id=ride_pet_fell_rider_id,
+                ultimate_damage_resolution=ultimate_damage_resolution,
+                death_ultimate_resolution=death_ultimate_resolution,
+                ultimate_kind=int(ultimate_kind),
             )
         )
+        counter_target_hp_after_attack=int(hp.get(counter_target,0))
         last_target=counter_target
         last_continue=_battle_attack_continuation_allowed(
             guardian_redirected=guardian_redirected,
             damage_reaction_active=continuation_blocked_by_reaction,
             critical=bool(is_critical),
             target_guarding=original_guarding,
-            target_hp_after=int(hp.get(counter_target,0)),
+            target_hp_after=counter_target_hp_after_attack,
         )
+
+        if (
+            int(event_before) > 0
+            and int(event_after) <= 0
+            and int(ultimate_kind) > 0
+        ):
+            exit_slot=int(resolved_damage_slot)
+            exit_actor=by_slot[exit_slot]
+            exit_id=str(exit_actor.participant_id)
+            if exit_id not in ultimate_exited_ids:
+                excluded.add(exit_slot)
+                ultimate_exited_ids.append(exit_id)
+
+                if exit_actor.kind == "player":
+                    active_allied=[
+                        (other_slot,other)
+                        for other_slot,other in by_slot.items()
+                        if (
+                            other.side == exit_actor.side
+                            and other.kind == "pet"
+                            and str(other.participant_id)
+                            not in ultimate_exited_ids
+                            and int(other_slot) not in excluded
+                        )
+                    ]
+                    if len(active_allied) > 1:
+                        raise ValueError(
+                            "player ultimate exit requires a unique "
+                            "active/default pet"
+                        )
+                    if active_allied:
+                        pet_slot,pet=active_allied[0]
+                        excluded.add(int(pet_slot))
+                        ultimate_exited_ids.append(
+                            str(pet.participant_id)
+                        )
+
+                    hp[exit_slot]=1
+                    status_runtime[exit_id]=BaseBattleStatusRuntime(
+                        work_quick=int(exit_actor.quick)
+                    )
+                    for other_slot,other in by_slot.items():
+                        if (
+                            other.side != exit_actor.side
+                            or other.kind != "pet"
+                        ):
+                            continue
+                        other_id=str(other.participant_id)
+                        if int(hp.get(int(other_slot),0)) <= 0:
+                            hp[int(other_slot)]=1
+                        status_runtime[other_id]=BaseBattleStatusRuntime(
+                            work_quick=int(other.quick)
+                        )
+
+                    if (
+                        ride_runtime is not None
+                        and str(ride_runtime.rider_id)==exit_id
+                        and ride_runtime.petfall
+                    ):
+                        ride_runtime=replace(
+                            ride_runtime,
+                            mounted=False,
+                            petfall=False,
+                        )
+                        active_ride=False
 
     return ContinuationBaselineResolution(
         events=tuple(resolved),
@@ -2842,6 +3018,10 @@ def resolve_continuation_nonbow_baseline(
         base_damage_react_state_by_participant_id=MappingProxyType(
             dict(damage_react_state)
         ),
+        ultimate_overkill_by_participant_id=MappingProxyType(
+            dict(ultimate_overkill)
+        ),
+        ultimate_exited_participant_ids=tuple(ultimate_exited_ids),
     )
 
 
