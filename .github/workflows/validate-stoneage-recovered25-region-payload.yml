@@ -187,6 +187,7 @@ jobs:
           grep -F 'PETSKILL_NOGUARD_PARSE|' "$R"
           grep -F 'PETSKILL_CONTINUATIONATTACK_PARSE|unique_ids=4|ascii_ids=4|leading_int_ids=4|in_range_count_ids=4|count_min=2|count_max=5|distinct_count=4' "$R"
           grep -F 'PETSKILL_ABDUCT_PARSE|' "$R"
+          grep -F 'PETSKILL_STEAL_PARSE|unique_ids=1|ascii_ids=1' "$R"
           grep -F 'PETSKILL_EARTHROUND_PARSE|unique_ids=1|attack_marker_ids=1|attack_numeric_ids=1|attack_percent_min=90.0|attack_percent_max=90.0' "$R"
           grep -F 'COUNT|enemybase_unresolved_petskill_ids|0' "$R"
           grep -F 'COUNT|stable_unresolved_enemybase_templates|0' "$R"
