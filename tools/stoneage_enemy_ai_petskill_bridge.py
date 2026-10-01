@@ -75,6 +75,7 @@ STATUS_CHANGE = "PETSKILL_StatusChange"
 EARTH_ROUND = "PETSKILL_EarthRound"
 ABDUCT = "PETSKILL_Abduct"
 STEAL = "PETSKILL_Steal"
+MERGE = "PETSKILL_Merge"
 
 BASIC_AI_CALLBACKS = frozenset({NONE, NORMAL_ATTACK, NORMAL_GUARD})
 STATUS_TOKENS_TRADITIONAL = ("全", "毒", "麻", "眠", "石", "醉", "亂")
@@ -197,6 +198,18 @@ def resolve_enemy_ai_supported_petskill_command(
         target_slot=target_slot,
         petskill_runtime=petskill_runtime,
     )
+    if entry.function_name == MERGE:
+        # Historical recovered25 enemybase rows can select Merge through
+        # BATTLE_ai_normal wa[n], which directly calls PETSKILL_Use(..., NULL).
+        # Ordinary enemies default CHAR_WORKPLAYERINDEX to global index 0.
+        # The early fixed descendants' ITEM_mergeItem_merge falls off its
+        # non-void function when NULL data yields <=1 candidate; Bismarck later
+        # repairs that path with an explicit FALSE return. Do not fabricate a
+        # deterministic early result or replay global-index-0 side effects.
+        raise ValueError(
+            "recovered enemy Merge is a historical undefined-return "
+            "field callback and remains fail-closed"
+        )
     if entry.function_name in BASIC_AI_CALLBACKS:
         return resolve_enemy_ai_basic_petskill_command(
             spawned,
