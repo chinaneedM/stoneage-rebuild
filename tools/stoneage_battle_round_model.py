@@ -2309,6 +2309,9 @@ def resolve_continuation_nonbow_baseline(
     base_status_runtime_by_participant_id: Mapping[
         str,BaseBattleStatusRuntime
     ] | None = None,
+    base_damage_react_state_by_participant_id: Mapping[
+        str,BaseDamageReactState
+    ] | None = None,
     excluded_slots: Sequence[int] = (),
     field_attr: str = "none",
     field_power: int = 0,
@@ -2318,8 +2321,9 @@ def resolve_continuation_nonbow_baseline(
     This layer closes the fixed loop, per-hit original-target recheck,
     Guardian redirection, ordinary dodge/critical/guard damage, gDamageDiv,
     and the final BATTLE_Attack boolean used by the later counter chain.
-    Damage-reaction, ride, status-application and ultimate/death side effects
-    remain outside this helper and therefore cannot be silently approximated.
+    Damage-reaction is applied per hit and can kill the attacker between loop
+    iterations. Ride, status-application and ultimate/death side effects remain
+    outside this helper and therefore cannot be silently approximated.
     """
 
     if int(command.command1) != BATTLE_COM_S_RENZOKU:
@@ -2353,6 +2357,15 @@ def resolve_continuation_nonbow_baseline(
         for participant_id,runtime in (
             base_status_runtime_by_participant_id or {}
         ).items()
+    }
+    damage_react_state={
+        str(participant.participant_id):(
+            base_damage_react_state_by_participant_id or {}
+        ).get(
+            str(participant.participant_id),
+            BaseDamageReactState(),
+        )
+        for participant in by_slot.values()
     }
     excluded={int(slot) for slot in excluded_slots}
     original_target=int(command.command2)
@@ -2393,6 +2406,12 @@ def resolve_continuation_nonbow_baseline(
         original_guarding=bool(
             target in command_by_slot
             and int(command_by_slot[target].command1)==BATTLE_COM_GUARD
+        )
+        continuation_blocked_by_reaction=(
+            base_damage_react_blocks_main_continuation(
+                damage_react_state[actor_id],
+                damage_react_state[original_defender_id],
+            )
         )
 
         # BATTLE_AttackSeq performs dodge against the original/adjusted target
@@ -2435,7 +2454,7 @@ def resolve_continuation_nonbow_baseline(
                     )
                 )
                 last_target=target
-                last_continue=True
+                last_continue=not continuation_blocked_by_reaction
                 continue
 
         counter_target=target
@@ -2580,8 +2599,30 @@ def resolve_continuation_nonbow_baseline(
                 else "continuation_normal"
             )
 
-        after=max(0,before-int(damage))
-        hp[damage_target]=after
+        reaction_resolution=resolve_base_damage_react(
+            damage_react_state[defender_id],
+            raw_damage=int(damage),
+            attacker_hp=int(hp[actor_slot]),
+            attacker_max_hp=int(actor.max_hp),
+            defender_hp=int(hp[damage_target]),
+            defender_max_hp=int(defender.max_hp),
+            attacker_uses_throwing_weapon=counter_weapon_blocks_counter(
+                actor_profile.counter_weapon_type
+            ),
+        )
+        damage_react_state[defender_id]=reaction_resolution.state_after
+        hp[actor_slot]=int(reaction_resolution.attacker_hp_after)
+        hp[damage_target]=int(reaction_resolution.defender_hp_after)
+
+        if reaction_resolution.effective_kind == DAMAGE_REACT_REFLEC:
+            resolved_damage_slot=actor_slot
+            event_before=int(reaction_resolution.attacker_hp_before)
+            event_after=int(reaction_resolution.attacker_hp_after)
+        else:
+            resolved_damage_slot=damage_target
+            event_before=int(reaction_resolution.defender_hp_before)
+            event_after=int(reaction_resolution.defender_hp_after)
+
         resolved.append(
             OrdinaryRoundEvent(
                 actor_id,
@@ -2590,21 +2631,22 @@ def resolve_continuation_nonbow_baseline(
                 int(action_value),
                 result,
                 original_target_slot=original_target,
-                resolved_target_slot=damage_target,
+                resolved_target_slot=resolved_damage_slot,
                 retargeted=bool(retargeted),
                 critical=bool(is_critical),
                 damage=int(damage),
-                target_hp_before=before,
-                target_hp_after=after,
+                target_hp_before=event_before,
+                target_hp_after=event_after,
                 guardian_redirected=guardian_redirected,
                 guarded_target_slot=guarded_target_slot,
                 guardian_slot=guardian_slot,
+                damage_react_resolution=reaction_resolution,
             )
         )
         last_target=counter_target
         last_continue=_battle_attack_continuation_allowed(
             guardian_redirected=guardian_redirected,
-            damage_reaction_active=False,
+            damage_reaction_active=continuation_blocked_by_reaction,
             critical=bool(is_critical),
             target_guarding=original_guarding,
             target_hp_after=int(hp.get(counter_target,0)),
