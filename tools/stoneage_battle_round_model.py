@@ -2313,6 +2313,7 @@ def resolve_continuation_nonbow_baseline(
     base_damage_react_state_by_participant_id: Mapping[
         str,BaseDamageReactState
     ] | None = None,
+    ride_pet_runtime: RidePetRuntime | None = None,
     excluded_slots: Sequence[int] = (),
     field_attr: str = "none",
     field_power: int = 0,
@@ -2322,9 +2323,10 @@ def resolve_continuation_nonbow_baseline(
     This layer closes the fixed loop, per-hit original-target recheck,
     Guardian redirection, ordinary dodge/critical/guard damage, gDamageDiv,
     and the final BATTLE_Attack boolean used by the later counter chain.
-    Damage-reaction is applied per hit and can kill the attacker between loop
-    iterations. Ride, status-application and ultimate/death side effects remain
-    outside this helper and therefore cannot be silently approximated.
+    Damage-reaction and ride splitting are applied per hit; either may change
+    later loop state, including attacker death or petfall/unmount. Status
+    application and ultimate/death side effects remain outside this helper and
+    therefore cannot be silently approximated.
     """
 
     if int(command.command1) != BATTLE_COM_S_RENZOKU:
@@ -2369,6 +2371,27 @@ def resolve_continuation_nonbow_baseline(
         for participant in by_slot.values()
     }
     excluded={int(slot) for slot in excluded_slots}
+    ride_runtime=ride_pet_runtime
+    active_ride=False
+    if ride_runtime is not None:
+        if not isinstance(ride_runtime,RidePetRuntime):
+            raise TypeError("ride_pet_runtime must be RidePetRuntime or null")
+        rider_id=str(ride_runtime.rider_id)
+        rider_slot=next(
+            (
+                int(slot)
+                for slot,participant in by_slot.items()
+                if str(participant.participant_id)==rider_id
+            ),
+            None,
+        )
+        if rider_slot is None:
+            raise ValueError("ride runtime rider is not an active battle entry")
+        active_ride=bool(
+            ride_runtime.mounted
+            and int(hp.get(rider_slot,0)) > 0
+            and int(ride_runtime.hp) > 0
+        )
     original_target=int(command.command2)
     actor_profile=profiles[actor_id]
     resolved: list[OrdinaryRoundEvent]=[]
@@ -2612,6 +2635,123 @@ def resolve_continuation_nonbow_baseline(
             ),
         )
         damage_react_state[defender_id]=reaction_resolution.state_after
+
+        ride_split=None
+        ride_hp_resolution=None
+        ride_pet_fell_rider_id=None
+        event_damage=int(damage)
+        if active_ride and ride_runtime is not None:
+            rider_id=str(ride_runtime.rider_id)
+            if (
+                reaction_resolution.effective_kind == DAMAGE_REACT_ABSROB
+                and defender_id == rider_id
+            ):
+                ride_split=immediate_reaction_ride_split(
+                    int(damage),
+                    rider_defense_power=int(defender_work_defense),
+                    pet_defense_power=int(ride_runtime.defense_power),
+                    pet_hp=int(ride_runtime.hp),
+                )
+                ride_hp_resolution=apply_ride_heal(
+                    ride_split,
+                    rider_hp=int(reaction_resolution.defender_hp_before),
+                    rider_max_hp=int(defender.max_hp),
+                    pet_hp=int(ride_runtime.hp),
+                    pet_max_hp=int(ride_runtime.max_hp),
+                )
+                reaction_resolution=replace(
+                    reaction_resolution,
+                    defender_hp_after=int(
+                        ride_hp_resolution.rider_hp_after
+                    ),
+                )
+                event_damage=int(ride_split.rider_amount)
+                ride_runtime=replace(
+                    ride_runtime,
+                    hp=int(ride_hp_resolution.pet_hp_after),
+                )
+            elif (
+                reaction_resolution.effective_kind == DAMAGE_REACT_REFLEC
+                and actor_id == rider_id
+            ):
+                actor_work_defense=_effective_defense_power(
+                    actor,setup_effects
+                )
+                ride_split=immediate_reaction_ride_split(
+                    int(damage),
+                    rider_defense_power=int(actor_work_defense),
+                    pet_defense_power=int(ride_runtime.defense_power),
+                    pet_hp=int(ride_runtime.hp),
+                )
+                ride_hp_resolution=apply_ride_damage(
+                    ride_split,
+                    rider_hp=int(reaction_resolution.attacker_hp_before),
+                    rider_max_hp=int(actor.max_hp),
+                    pet_hp=int(ride_runtime.hp),
+                    pet_max_hp=int(ride_runtime.max_hp),
+                )
+                reaction_resolution=replace(
+                    reaction_resolution,
+                    attacker_hp_after=int(
+                        ride_hp_resolution.rider_hp_after
+                    ),
+                )
+                event_damage=int(ride_split.rider_amount)
+                if ride_hp_resolution.unmounted:
+                    ride_pet_fell_rider_id=ride_runtime.rider_id
+                ride_runtime=replace(
+                    ride_runtime,
+                    hp=int(ride_hp_resolution.pet_hp_after),
+                    mounted=(
+                        False
+                        if ride_hp_resolution.unmounted
+                        else ride_runtime.mounted
+                    ),
+                    petfall=bool(
+                        ride_runtime.petfall or ride_hp_resolution.petfall
+                    ),
+                )
+                active_ride=bool(ride_runtime.mounted)
+            elif (
+                reaction_resolution.damage_target == "defender"
+                and defender_id == rider_id
+            ):
+                ride_split=ordinary_ride_damage_split(
+                    int(damage),
+                    rider_defense_power=int(defender_work_defense),
+                    pet_defense_power=int(ride_runtime.defense_power),
+                    pet_hp=int(ride_runtime.hp),
+                )
+                ride_hp_resolution=apply_ride_damage(
+                    ride_split,
+                    rider_hp=int(reaction_resolution.defender_hp_before),
+                    rider_max_hp=int(defender.max_hp),
+                    pet_hp=int(ride_runtime.hp),
+                    pet_max_hp=int(ride_runtime.max_hp),
+                )
+                reaction_resolution=replace(
+                    reaction_resolution,
+                    defender_hp_after=int(
+                        ride_hp_resolution.rider_hp_after
+                    ),
+                )
+                event_damage=int(ride_split.rider_amount)
+                if ride_hp_resolution.unmounted:
+                    ride_pet_fell_rider_id=ride_runtime.rider_id
+                ride_runtime=replace(
+                    ride_runtime,
+                    hp=int(ride_hp_resolution.pet_hp_after),
+                    mounted=(
+                        False
+                        if ride_hp_resolution.unmounted
+                        else ride_runtime.mounted
+                    ),
+                    petfall=bool(
+                        ride_runtime.petfall or ride_hp_resolution.petfall
+                    ),
+                )
+                active_ride=bool(ride_runtime.mounted)
+
         hp[actor_slot]=int(reaction_resolution.attacker_hp_after)
         hp[damage_target]=int(reaction_resolution.defender_hp_after)
 
@@ -2635,13 +2775,16 @@ def resolve_continuation_nonbow_baseline(
                 resolved_target_slot=resolved_damage_slot,
                 retargeted=bool(retargeted),
                 critical=bool(is_critical),
-                damage=int(damage),
+                damage=int(event_damage),
                 target_hp_before=event_before,
                 target_hp_after=event_after,
                 guardian_redirected=guardian_redirected,
                 guarded_target_slot=guarded_target_slot,
                 guardian_slot=guardian_slot,
                 damage_react_resolution=reaction_resolution,
+                ride_damage_split=ride_split,
+                ride_hp_resolution=ride_hp_resolution,
+                ride_pet_fell_rider_id=ride_pet_fell_rider_id,
             )
         )
         last_target=counter_target
@@ -2658,6 +2801,7 @@ def resolve_continuation_nonbow_baseline(
         hp_by_slot=MappingProxyType(dict(hp)),
         last_target_slot=last_target,
         counter_continuation_allowed=bool(last_continue),
+        ride_pet_runtime=ride_runtime,
     )
 
 
