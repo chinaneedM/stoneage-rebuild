@@ -8,6 +8,7 @@ Currently supported:
 - PETSKILL_None
 - PETSKILL_NormalAttack
 - PETSKILL_NormalGuard
+- PETSKILL_Guardian (explicit opt-in dispatcher branch)
 - PETSKILL_GuardBreak (explicit opt-in dispatcher branch)
 - PETSKILL_ContinuationAttack (explicit opt-in dispatcher branch)
 - PETSKILL_ChargeAttack (explicit opt-in dispatcher branch)
@@ -43,6 +44,7 @@ from tools.stoneage_petskill_core_model import (
     charge_execution_step,
     earth_round_command,
     guard_break_command,
+    guardian_command,
     mighty_command,
     no_guard_command,
     parse_status_skill,
@@ -62,6 +64,7 @@ from tools.stoneage_recovered25_petskill_runtime import (
 NONE = "PETSKILL_None"
 NORMAL_ATTACK = "PETSKILL_NormalAttack"
 NORMAL_GUARD = "PETSKILL_NormalGuard"
+GUARDIAN = "PETSKILL_Guardian"
 GUARD_BREAK = "PETSKILL_GuardBreak"
 CONTINUATION_ATTACK = "PETSKILL_ContinuationAttack"
 CHARGE_ATTACK = "PETSKILL_ChargeAttack"
@@ -183,6 +186,8 @@ def resolve_enemy_ai_supported_petskill_command(
     allow_abduct: bool = False,
     allow_earth_round: bool = False,
     allow_steal: bool = False,
+    allow_guardian: bool = False,
+    actor_slot: int | None = None,
 ) -> EnemyAiPetSkillCommand:
     """Dispatch only callbacks whose full execution boundary is admitted."""
 
@@ -197,6 +202,18 @@ def resolve_enemy_ai_supported_petskill_command(
             spawned,
             skill_slot=skill_slot,
             target_slot=target_slot,
+            petskill_runtime=petskill_runtime,
+        )
+    if entry.function_name == GUARDIAN and bool(allow_guardian):
+        if actor_slot is None:
+            raise ValueError(
+                "recovered enemy Guardian requires authoritative actor_slot"
+            )
+        return resolve_enemy_ai_guardian_petskill_command(
+            spawned,
+            skill_slot=skill_slot,
+            target_slot=target_slot,
+            actor_slot=int(actor_slot),
             petskill_runtime=petskill_runtime,
         )
     if entry.function_name == GUARD_BREAK and bool(allow_guard_break):
@@ -275,6 +292,105 @@ def resolve_enemy_ai_supported_petskill_command(
     raise ValueError(
         "enemy AI selected pet-skill callback outside admitted execution "
         f"subset: {entry.function_name}"
+    )
+
+
+def resolve_enemy_ai_guardian_petskill_command(
+    spawned: SpawnedEnemy,
+    *,
+    skill_slot: int,
+    target_slot: int,
+    actor_slot: int,
+    petskill_runtime: Recovered25PetSkillRuntime,
+) -> EnemyAiPetSkillCommand:
+    """Resolve the one recovered25 Guardian row into attack-mode Guardian."""
+
+    skill_slot,target_slot,entry=_resolved_entry(
+        spawned,
+        skill_slot=skill_slot,
+        target_slot=target_slot,
+        petskill_runtime=petskill_runtime,
+    )
+    rows=tuple(
+        row
+        for row in petskill_runtime.skills.values()
+        if row.function_name == GUARDIAN
+    )
+    if len(rows) != 1:
+        raise ValueError(
+            "recovered25 Guardian runtime must contain exactly one callback ID"
+        )
+    if entry.function_name != GUARDIAN:
+        raise ValueError(
+            "enemy AI selected pet-skill callback outside Guardian "
+            f"execution subset: {entry.function_name}"
+        )
+
+    option_text=entry.unambiguous_cp950_big5_option()
+    attack=re.search(
+        r"攻%\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+))",
+        option_text,
+    )
+    marker_index=option_text.find("COM:")
+    defensive_com=(
+        marker_index >= 0
+        and "防御" in option_text[marker_index+4:]
+    )
+    if (
+        attack is None
+        or float(attack.group(1)) != -20.0
+        or "防%" in option_text
+        or defensive_com
+    ):
+        raise ValueError(
+            "recovered25 Guardian OPTION drifted outside closed attack-mode "
+            "攻%-20 subset"
+        )
+
+    actor_slot=int(actor_slot)
+    if not 10 <= actor_slot < 20:
+        raise ValueError(
+            "recovered enemy Guardian actor_slot must be enemy-side 10..19"
+        )
+    projection_fn=getattr(spawned.birth,"combat_projection",None)
+    if not callable(projection_fn):
+        raise ValueError(
+            "Guardian execution requires recovered enemy birth projection"
+        )
+    projection=projection_fn()
+    if "attack" not in projection or "defense" not in projection:
+        raise ValueError(
+            "enemy birth projection lacks fixed attack/defense values"
+        )
+
+    payload=guardian_command(
+        target_slot,
+        option_text,
+        fixed_attack=int(projection["attack"]),
+        fixed_defense=int(projection["defense"]),
+        battle_slot=actor_slot,
+        battle_side=1,
+    )
+    if payload.get("command") != "S_GUARDIAN_ATTACK":
+        raise ValueError(
+            "recovered25 Guardian unexpectedly entered defensive command mode"
+        )
+    expected_attack=int(projection["attack"]) + int(
+        int(projection["attack"]) * -0.20
+    )
+    if int(payload.get("attack_power",-1)) != expected_attack:
+        raise ValueError("Guardian reconstructed attack power drift")
+    submission=bridge_stable_pet_skill_command(
+        payload,
+        actor_slot=actor_slot,
+    )
+    return EnemyAiPetSkillCommand(
+        participant_id=str(spawned.participant.participant_id),
+        skill_slot=skill_slot,
+        skill_id=int(entry.skill_id),
+        callback=entry.function_name,
+        command=submission.battle_command,
+        setup_effects=submission.setup_effects,
     )
 
 
