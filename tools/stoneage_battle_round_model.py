@@ -2303,18 +2303,23 @@ def resolve_continuation_nonbow_baseline(
     setup_effects_by_participant_id: Mapping[
         str,BattleCommandSetupEffects
     ] | None = None,
+    guardian_registrations_by_defender_slot: Mapping[
+        int,GuardianRegistration
+    ] | None = None,
+    base_status_runtime_by_participant_id: Mapping[
+        str,BaseBattleStatusRuntime
+    ] | None = None,
     excluded_slots: Sequence[int] = (),
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ContinuationBaselineResolution:
-    """Execute the evidence-closed baseline S_RENZOKU multi-hit loop.
+    """Execute the evidence-closed non-bow S_RENZOKU baseline.
 
-    This helper deliberately stops before Guardian, damage-reaction, ride,
-    status-application and ultimate/death side effects. It models the fixed
-    non-bow loop itself: LOW(COM3) is both hit cap and gDamageDiv; each hit
-    re-checks the submitted original target; dead originals independently
-    consume that hit's retarget roll; and only the last BATTLE_Attack-shaped
-    result supplies the post-loop counter continuation flag.
+    This layer closes the fixed loop, per-hit original-target recheck,
+    Guardian redirection, ordinary dodge/critical/guard damage, gDamageDiv,
+    and the final BATTLE_Attack boolean used by the later counter chain.
+    Damage-reaction, ride, status-application and ultimate/death side effects
+    remain outside this helper and therefore cannot be silently approximated.
     """
 
     if int(command.command1) != BATTLE_COM_S_RENZOKU:
@@ -2337,13 +2342,26 @@ def resolve_continuation_nonbow_baseline(
     for slot,participant in by_slot.items():
         hp.setdefault(int(slot),max(0,int(participant.hp)))
     setup_effects=dict(setup_effects_by_participant_id or {})
+    guardian_registrations={
+        int(slot):registration
+        for slot,registration in (
+            guardian_registrations_by_defender_slot or {}
+        ).items()
+    }
+    status_runtime={
+        str(participant_id):runtime
+        for participant_id,runtime in (
+            base_status_runtime_by_participant_id or {}
+        ).items()
+    }
+    excluded={int(slot) for slot in excluded_slots}
     original_target=int(command.command2)
     actor_profile=profiles[actor_id]
     resolved: list[OrdinaryRoundEvent]=[]
     last_target: int | None=None
     last_continue=False
 
-    for hit_index,hit_rolls in enumerate(rolls.hit_rolls,start=1):
+    for hit_rolls in rolls.hit_rolls:
         if int(hp.get(actor_slot,0)) <= 0:
             last_continue=False
             break
@@ -2354,7 +2372,7 @@ def resolve_continuation_nonbow_baseline(
             by_slot=by_slot,
             hp_by_slot=hp,
             retarget_roll=hit_rolls.retarget_roll,
-            excluded_slots=excluded_slots,
+            excluded_slots=excluded,
         )
         if target is None:
             last_target=None
@@ -2363,18 +2381,23 @@ def resolve_continuation_nonbow_baseline(
         target=int(target)
         if _slot_side(target)==_slot_side(actor_slot):
             raise ValueError("ContinuationAttack retarget crossed battle sides")
-        defender=by_slot[target]
-        defender_id=str(defender.participant_id)
-        if defender_id not in profiles:
-            raise KeyError(f"missing combat profile for {defender_id}")
-        defender_profile=profiles[defender_id]
-        before=int(hp[target])
-        target_guarding=bool(
+
+        original_defender=by_slot[target]
+        original_defender_id=str(original_defender.participant_id)
+        if original_defender_id not in profiles:
+            raise KeyError(
+                f"missing combat profile for {original_defender_id}"
+            )
+        original_defender_profile=profiles[original_defender_id]
+        original_before=int(hp[target])
+        original_guarding=bool(
             target in command_by_slot
             and int(command_by_slot[target].command1)==BATTLE_COM_GUARD
         )
 
-        if not target_guarding:
+        # BATTLE_AttackSeq performs dodge against the original/adjusted target
+        # before BATTLE_GuardianCheck may redirect the damage calculation.
+        if not original_guarding:
             dodge_roll=_validated_roll(
                 hit_rolls.dodge_roll_1_10000,
                 1,10000,
@@ -2382,12 +2405,18 @@ def resolve_continuation_nonbow_baseline(
             )
             dodge_probability=dodge_per_10000(
                 actor_profile.fixed_dex,
-                defender_profile.fixed_dex,
-                defender_luck=_source_luck(defender,defender_profile),
+                original_defender_profile.fixed_dex,
+                defender_luck=_source_luck(
+                    original_defender,
+                    original_defender_profile,
+                ),
                 attacker_type=_participant_battle_kind(actor),
-                defender_type=_participant_battle_kind(defender),
+                defender_type=_participant_battle_kind(original_defender),
                 extra_percent_points=_noguard_dodge_percent_modifier(
-                    command_by_slot.get(target,BattleCommand(BATTLE_COM_NONE))
+                    command_by_slot.get(
+                        target,
+                        BattleCommand(BATTLE_COM_NONE),
+                    )
                 ),
             )
             if dodge_roll <= dodge_probability:
@@ -2401,13 +2430,81 @@ def resolve_continuation_nonbow_baseline(
                         original_target_slot=original_target,
                         resolved_target_slot=target,
                         retargeted=bool(retargeted),
-                        target_hp_before=before,
-                        target_hp_after=before,
+                        target_hp_before=original_before,
+                        target_hp_after=original_before,
                     )
                 )
                 last_target=target
                 last_continue=True
                 continue
+
+        counter_target=target
+        damage_target=target
+        guardian_redirected=False
+        guarded_target_slot=None
+        guardian_slot=None
+        registration=guardian_registrations.get(target)
+        if registration is not None:
+            candidate_slot=int(registration.guardian_slot)
+            candidate=by_slot.get(candidate_slot)
+            candidate_runtime=(
+                None
+                if candidate is None
+                else status_runtime.get(
+                    str(candidate.participant_id),
+                    BaseBattleStatusRuntime(),
+                )
+            )
+            if guardian_redirect_allowed(
+                guardian_exists=(
+                    candidate is not None
+                    and candidate_slot not in excluded
+                ),
+                guardian_slot=candidate_slot,
+                defender_slot=target,
+                guardian_alive=(
+                    candidate is not None
+                    and candidate_slot not in excluded
+                    and int(hp.get(candidate_slot,0)) > 0
+                ),
+                guardian_flag=bool(registration.guardian_flag),
+                guardian_sleep=(
+                    0 if candidate_runtime is None
+                    else int(candidate_runtime.status.sleep)
+                ),
+                guardian_confusion=(
+                    0 if candidate_runtime is None
+                    else int(candidate_runtime.status.confusion)
+                ),
+                guardian_paralysis=(
+                    0 if candidate_runtime is None
+                    else int(candidate_runtime.status.paralysis)
+                ),
+                guardian_stone=(
+                    0 if candidate_runtime is None
+                    else int(candidate_runtime.status.stone)
+                ),
+                guardian_barrier=int(registration.guardian_barrier),
+                guardian_is_attacker=(candidate_slot==actor_slot),
+                attacker_uses_throw_weapon=counter_weapon_blocks_counter(
+                    actor_profile.counter_weapon_type
+                ),
+            ):
+                guardian_redirected=True
+                guarded_target_slot=target
+                guardian_slot=candidate_slot
+                damage_target=candidate_slot
+
+        defender=by_slot[damage_target]
+        defender_id=str(defender.participant_id)
+        if defender_id not in profiles:
+            raise KeyError(f"missing combat profile for {defender_id}")
+        defender_profile=profiles[defender_id]
+        before=int(hp[damage_target])
+        damage_target_guarding=bool(
+            damage_target in command_by_slot
+            and int(command_by_slot[damage_target].command1)==BATTLE_COM_GUARD
+        )
 
         critical_roll=_validated_roll(
             hit_rolls.critical_roll_1_10000,
@@ -2449,7 +2546,7 @@ def resolve_continuation_nonbow_baseline(
                 actor.level,
                 defender.level,
             )
-        if target_guarding:
+        if damage_target_guarding:
             guard_roll=_validated_roll(
                 hit_rolls.guard_roll_1_100,
                 1,100,
@@ -2463,11 +2560,17 @@ def resolve_continuation_nonbow_baseline(
                 "continuation minimum_damage_roll_0_1",
             )
 
+        # Fixed BATTLE_Attack applies gDamageDiv after AttackSeq (including
+        # Guardian/critical/guard) and before BATTLE_DamageSub.
         damage=continuation_divided_damage(damage,count)
-        if damage == 0:
+        if damage == 0 and guardian_redirected:
+            # AttackSeq's redirected zero-damage path is rendered as NORMAL/1.
+            damage=1
+            result="continuation_normal"
+        elif damage == 0:
             result=(
                 "continuation_allguard"
-                if target_guarding
+                if damage_target_guarding
                 else "continuation_miss"
             )
         else:
@@ -2476,8 +2579,9 @@ def resolve_continuation_nonbow_baseline(
                 if is_critical
                 else "continuation_normal"
             )
+
         after=max(0,before-int(damage))
-        hp[target]=after
+        hp[damage_target]=after
         resolved.append(
             OrdinaryRoundEvent(
                 actor_id,
@@ -2486,22 +2590,24 @@ def resolve_continuation_nonbow_baseline(
                 int(action_value),
                 result,
                 original_target_slot=original_target,
-                resolved_target_slot=target,
+                resolved_target_slot=damage_target,
                 retargeted=bool(retargeted),
                 critical=bool(is_critical),
                 damage=int(damage),
                 target_hp_before=before,
                 target_hp_after=after,
-                combo_member_index=hit_index,
+                guardian_redirected=guardian_redirected,
+                guarded_target_slot=guarded_target_slot,
+                guardian_slot=guardian_slot,
             )
         )
-        last_target=target
+        last_target=counter_target
         last_continue=_battle_attack_continuation_allowed(
-            guardian_redirected=False,
+            guardian_redirected=guardian_redirected,
             damage_reaction_active=False,
             critical=bool(is_critical),
-            target_guarding=target_guarding,
-            target_hp_after=after,
+            target_guarding=original_guarding,
+            target_hp_after=int(hp.get(counter_target,0)),
         )
 
     return ContinuationBaselineResolution(
