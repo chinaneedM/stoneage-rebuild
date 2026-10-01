@@ -295,6 +295,54 @@ class BattleRoundModelTests(unittest.TestCase):
         self.assertEqual(len(result.events),2)
         self.assertFalse(result.counter_continuation_allowed)
 
+    def test_continuation_guardian_is_rechecked_on_each_hit(self):
+        player=actor("player","player","player",hp=1000,defense=70)
+        guardian=actor("guardian","player","pet",hp=1,defense=0)
+        enemy=actor("enemy","enemy","enemy",hp=1000,attack=100)
+        command=BattleCommand(
+            BATTLE_COM_S_RENZOKU,
+            command2=0,
+            command3=pack_battle_command3(low=2,high=0),
+        )
+        hit=OrdinaryAttackRolls(
+            dodge_roll_1_10000=10000,
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+        )
+        result=resolve_continuation_nonbow_baseline(
+            actor=enemy,
+            actor_slot=10,
+            command=command,
+            action_value=100,
+            by_slot={0:player,1:guardian,10:enemy},
+            hp_by_slot={0:1000,1:1,10:1000},
+            profiles={
+                "player":profile(),
+                "guardian":profile(),
+                "enemy":profile(),
+            },
+            command_by_slot={
+                0:BattleCommand(BATTLE_COM_WAIT),
+                1:BattleCommand(BATTLE_COM_WAIT),
+                10:command,
+            },
+            rolls=ContinuationAttackRolls((hit,hit)),
+            defense_profile="newpower_70pct",
+            guardian_registrations_by_defender_slot={
+                0:GuardianRegistration(guardian_slot=1),
+            },
+        )
+        self.assertEqual(
+            tuple(event.resolved_target_slot for event in result.events),
+            (1,0),
+        )
+        self.assertTrue(result.events[0].guardian_redirected)
+        self.assertFalse(result.events[1].guardian_redirected)
+        self.assertEqual(result.hp_by_slot[1],0)
+        self.assertLess(result.hp_by_slot[0],1000)
+        self.assertEqual(result.last_target_slot,0)
+        self.assertTrue(result.counter_continuation_allowed)
+
     def test_counter_continuation_gate_matches_fixed_battle_attack_return(self):
         base=dict(
             guardian_redirected=False,
