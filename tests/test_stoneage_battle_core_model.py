@@ -382,11 +382,11 @@ class BattleCoreModelTests(unittest.TestCase):
             defender_fixed_dex=100,
             nonplayer_percent_modifier=30,
         )
-        success=resolve_battle_counter_check(inputs,roll_1_10000=3000)
-        miss=resolve_battle_counter_check(inputs,roll_1_10000=3001)
-        self.assertEqual(success.raw_basis,0)
-        self.assertEqual(success.source_reported_percent,30.0)
-        self.assertEqual(success.comparison_threshold,3000.0)
+        success=resolve_battle_counter_check(inputs,roll_1_10000=4500)
+        miss=resolve_battle_counter_check(inputs,roll_1_10000=4501)
+        self.assertEqual(success.raw_basis,15)
+        self.assertEqual(success.source_reported_percent,45.0)
+        self.assertEqual(success.comparison_threshold,4500.0)
         self.assertTrue(success.success)
         self.assertFalse(miss.success)
 
