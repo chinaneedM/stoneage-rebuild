@@ -45,6 +45,7 @@ from tools.stoneage_battle_round_model import (
     BattleCommandSetupEffects,
     BATTLE_COM_S_CHARGE,
     ComboExecutionRolls,
+    ContinuationAttackRolls,
     CounterAttemptRolls,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
@@ -1150,6 +1151,9 @@ def resolve_persistent_ordinary_round(
     combo_rolls_by_starter_id: Mapping[
         str,ComboExecutionRolls
     ] | None = None,
+    continuation_rolls_by_attack_id: Mapping[
+        str,ContinuationAttackRolls
+    ] | None = None,
     base_status_rolls_by_participant_id: Mapping[
         str,BaseStatusTurnRolls
     ] | None = None,
@@ -1251,6 +1255,7 @@ def resolve_persistent_ordinary_round(
             for participant_id in living_ids
         }),
         combo_rolls_by_starter_id=combo_rolls_by_starter_id,
+        continuation_rolls_by_attack_id=continuation_rolls_by_attack_id,
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
                 state.base_status_runtime_by_participant_id[participant_id]
