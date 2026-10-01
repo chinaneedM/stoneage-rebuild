@@ -182,6 +182,42 @@ class EnemyAiPetSkillBridgeTests(unittest.TestCase):
         self.assertEqual(resolved.command.command1, BATTLE_COM_NONE)
         self.assertEqual(resolved.command.command2, 4)
 
+    def test_merge_is_explicitly_fail_closed_as_historical_undefined_return(self):
+        spawned=spawned_with_slots((150,0,0,0,0,0,0))
+        runtime=Recovered25PetSkillRuntime(
+            skills={
+                150:Recovered25PetSkillEntry(
+                    skill_id=150,
+                    field=2,
+                    target=3,
+                    cost=2,
+                    illegal=1,
+                    function_name="PETSKILL_Merge",
+                    option_bytes=b"",
+                ),
+                151:Recovered25PetSkillEntry(
+                    skill_id=151,
+                    field=2,
+                    target=3,
+                    cost=2,
+                    illegal=1,
+                    function_name="PETSKILL_Merge",
+                    option_bytes=b"",
+                ),
+            },
+            source_file="petskill.txt",
+        )
+        with self.assertRaisesRegex(
+            ValueError,
+            "historical undefined-return.*fail-closed",
+        ):
+            resolve_enemy_ai_supported_petskill_command(
+                spawned,
+                skill_slot=0,
+                target_slot=3,
+                petskill_runtime=runtime,
+            )
+
     def test_guardian_uses_closed_attack_mode_and_authoritative_actor_slot(self):
         spawned=spawned_with_slots((140,0,0,0,0,0,0))
         runtime=Recovered25PetSkillRuntime(
