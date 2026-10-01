@@ -5104,4 +5104,31 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Executable recovered stable-common slot-use coverage therefore remains **2118 / 2486 = ~85.2%**; the remaining **3** stable-common slot uses are intentionally classified-but-nonexecuted historical UB, not an implementation backlog.
 - All **31 referenced stable-common pet-skill IDs** are now either executable or explicitly closed at a no-guess boundary.
 - **LOCAL_RUNTIME_ENEMY_AI_MERGE_HISTORICAL_UB_R1 = CLOSED.**
-- Next priority: inventory the **80 referenced non-common pet-skill IDs / 365 positive slot uses** by callback, FIELD/ILLEGAL class and option encoding, then take the highest-frequency source-backed callback family. Do not promote macro-gated or lineage-specific callbacks into the stable-common set without evidence.
+
+## Phase 1 recovered non-common pet-skill inventory — 2026-10-01
+
+- The remaining recovered enemybase pet-skill surface is now explicitly inventoried rather than treated as one opaque later-version bucket:
+  - **80** referenced non-common pet-skill IDs;
+  - **365** positive enemybase slot uses;
+  - **38** distinct callback tokens in that referenced subset.
+- Full preservation-bundle validation **36838204361 = PASS** at source commit `1194408d5bb8c90b50a651ecfd29e8af25179a63`; bot report write-back advanced `main` to `8071abf23671581d148ee5afbb58d4216ee497c5`.
+- Highest-frequency families are:
+  - `PETSKILL_AttackMagic`: **25 IDs / 106 slot uses**;
+  - `ENEMYSKILL_ReHP`: **1 / 31**;
+  - `PETSKILL_DamageToHp`: **3 / 30**;
+  - `PETSKILL_MpDamage`: **3 / 25**;
+  - `PETSKILL_FallGround`: **1 / 23**.
+- `PETSKILL_AttackMagic` is selected as the next family because it is both the dominant recovered non-common callback and fixed-source backed:
+  - all **25/25** recovered rows are FIELD=BATTLE, ILLEGAL=0 and ASCII;
+  - OPTION decoding is identical under strict CP950 and Big5 for all 25 rows;
+  - gavin/iris guard the handler with `__ATTACK_MAGIC` and both define it;
+  - Bismarck renames the guard to `_ATTACK_MAGIC` and also defines it;
+  - therefore AttackMagic is compile-active in all three pinned descendants, but remains a **guarded version layer**, not part of the unguarded stable-common set.
+- Fixed handler convergence/divergence already identified:
+  - all three write `BATTLE_COM_S_ATTACK_MAGIC`, target COM2 and magic ID to LOW(COM3);
+  - gavin/iris additionally parse an `item` token and write it to HIGH(COM3);
+  - Bismarck comments out the item parse/high-half write and invokes the same magic execution with whatever HIGH(COM3) state remains;
+  - battle execution remaps target shape by magic ID and calls `MAGIC_DirectUse`;
+  - this descendant drift must be resolved against the recovered25 OPTION population before runtime admission.
+- **RECOVERED25_NONCOMMON_PETSKILL_INVENTORY_R1 = CLOSED.**
+- Next priority: hard-probe all 25 recovered AttackMagic OPTION rows for source-shaped `magic` / `item` markers, ordering and numeric ranges; then reconstruct the appropriate recovered25 command/target/magic execution boundary without flattening the Bismarck high-half drift.

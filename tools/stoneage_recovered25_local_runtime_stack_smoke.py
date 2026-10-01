@@ -670,6 +670,59 @@ def main() -> None:
             f"cp950_big5_divergent_ids={dual_divergent}|"
             f"cp950_big5_decode_error_ids={dual_decode_error}"
         )
+    attackmagic_entries = tuple(
+        entry
+        for entry in noncommon_entries
+        if entry.function_name == "PETSKILL_AttackMagic"
+    )
+    attackmagic_magic_markers = 0
+    attackmagic_magic_numeric = []
+    attackmagic_item_after_magic = 0
+    attackmagic_item_numeric = []
+    attackmagic_item_before_magic = 0
+    for entry in attackmagic_entries:
+        option_text = entry.ascii_option()
+        magic_pos = option_text.find("magic")
+        if magic_pos >= 0:
+            attackmagic_magic_markers += 1
+            magic_tail = option_text[magic_pos + len("magic") + 1 :]
+            match = re.match(r"\s*([+-]?\d+)", magic_tail)
+            if match is not None:
+                attackmagic_magic_numeric.append(int(match.group(1)))
+            item_pos = option_text.find(
+                "item",
+                magic_pos + len("magic") + 1,
+            )
+            if item_pos >= 0:
+                attackmagic_item_after_magic += 1
+                item_tail = option_text[item_pos + len("item") + 1 :]
+                match = re.match(r"\s*([+-]?\d+)", item_tail)
+                if match is not None:
+                    attackmagic_item_numeric.append(int(match.group(1)))
+            pre_item = option_text.find("item", 0, magic_pos)
+            if pre_item >= 0:
+                attackmagic_item_before_magic += 1
+        elif "item" in option_text:
+            attackmagic_item_before_magic += 1
+    if len(attackmagic_entries) != 25:
+        raise ValueError(
+            "recovered25 AttackMagic callback population drifted from 25 IDs"
+        )
+    print(
+        "PETSKILL_ATTACKMAGIC_PARSE|"
+        f"unique_ids={len(attackmagic_entries)}|"
+        f"magic_marker_ids={attackmagic_magic_markers}|"
+        f"magic_numeric_ids={len(attackmagic_magic_numeric)}|"
+        f"item_after_magic_ids={attackmagic_item_after_magic}|"
+        f"item_numeric_ids={len(attackmagic_item_numeric)}|"
+        f"item_before_magic_ids={attackmagic_item_before_magic}|"
+        f"magic_min={min(attackmagic_magic_numeric) if attackmagic_magic_numeric else 'NONE'}|"
+        f"magic_max={max(attackmagic_magic_numeric) if attackmagic_magic_numeric else 'NONE'}|"
+        f"magic_distinct={len(set(attackmagic_magic_numeric))}|"
+        f"item_min={min(attackmagic_item_numeric) if attackmagic_item_numeric else 'NONE'}|"
+        f"item_max={max(attackmagic_item_numeric) if attackmagic_item_numeric else 'NONE'}|"
+        f"item_distinct={len(set(attackmagic_item_numeric))}"
+    )
     status_entries = tuple(
         entry
         for entry in referenced_skill_entries
