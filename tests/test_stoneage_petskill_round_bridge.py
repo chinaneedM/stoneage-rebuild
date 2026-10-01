@@ -10,6 +10,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_NOGUARD,
     BATTLE_COM_S_POWERBALANCE,
     BATTLE_COM_S_STATUSCHANGE,
+    BATTLE_COM_S_EARTHROUND1,
     BATTLE_COM_S_ABDUCT,
     battle_command3_high,
     battle_command3_low,
@@ -18,6 +19,7 @@ from tools.stoneage_petskill_core_model import (
     abduct_command,
     charge_attack_command,
     continuation_attack_command,
+    earth_round_command,
     guard_break_command,
     guardian_command,
     mighty_command,
@@ -161,6 +163,30 @@ class PetSkillRoundBridgeTests(unittest.TestCase):
         self.assertEqual(battle_command3_high(command.command3),4)
         self.assertEqual(submission.setup_effects.attack_power,1250)
         self.assertEqual(submission.setup_effects.defense_power,720)
+
+    def test_earthround_preserves_full_com3_residue_and_marker_write(self):
+        stale=earth_round_command(
+            10,
+            "no-marker",
+            prior_com3=0x12345678,
+        )
+        stale_submission=bridge_stable_pet_skill_command(stale)
+        self.assertEqual(
+            stale_submission.battle_command.command1,
+            BATTLE_COM_S_EARTHROUND1,
+        )
+        self.assertEqual(
+            stale_submission.battle_command.command3,
+            0x12345678,
+        )
+
+        explicit=earth_round_command(
+            10,
+            "攻%50",
+            prior_com3=0x12345678,
+        )
+        explicit_submission=bridge_stable_pet_skill_command(explicit)
+        self.assertEqual(explicit_submission.battle_command.command3,50)
 
     def test_abduct_packs_fixed_skill_array_identity(self):
         payload=abduct_command(1,skill_array=77,prior_high=9)
