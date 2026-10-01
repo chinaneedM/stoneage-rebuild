@@ -56,6 +56,11 @@ from tools.stoneage_recovered25_petskill_runtime import (
     Recovered25PetSkillRuntime,
     load_recovered25_petskill_runtime,
 )
+from tools.stoneage_recovered25_attack_magic_runtime import (
+    Recovered25AttackMagicRuntime,
+    Recovered25EnemyAttackMagicPlan,
+    load_recovered25_attack_magic_runtime,
+)
 from tools.stoneage_recovered25_server_collision_provider import (
     Recovered25ServerCollisionProvider,
 )
@@ -92,6 +97,7 @@ class Recovered25LocalRuntimeStack:
     encounter_runtime: VersionedEncounterRuntimeAdapter | None = None
     enemybase_runtime: Recovered25EnemybaseRuntime | None = None
     petskill_runtime: Recovered25PetSkillRuntime | None = None
+    attack_magic_runtime: Recovered25AttackMagicRuntime | None = None
 
     @classmethod
     def from_verified_bundle(
@@ -181,6 +187,14 @@ class Recovered25LocalRuntimeStack:
                 setup=setup,
             )
         )
+        attack_magic_runtime = (
+            None
+            if server_data_dir is None
+            else load_recovered25_attack_magic_runtime(
+                data_dir=server_data_dir,
+                setup=setup,
+            )
+        )
         stack = cls(
             profile=profile,
             world_adapter=adapter,
@@ -195,6 +209,7 @@ class Recovered25LocalRuntimeStack:
             encounter_runtime=encounter_runtime,
             enemybase_runtime=enemybase_runtime,
             petskill_runtime=petskill_runtime,
+            attack_magic_runtime=attack_magic_runtime,
         )
         stack._validate()
         return stack
@@ -315,6 +330,47 @@ class Recovered25LocalRuntimeStack:
                     "runtime stack enemybase pet-skill gaps: "
                     + ",".join(str(x) for x in unresolved_skill_ids[:10])
                 )
+        if self.attack_magic_runtime is not None:
+            attack_magic = self.attack_magic_runtime
+            if attack_magic.source_version != "recovered25":
+                raise ValueError(
+                    "runtime stack AttackMagic source-version drift"
+                )
+            if self.petskill_runtime is None:
+                raise ValueError(
+                    "runtime stack AttackMagic index requires pet-skill runtime"
+                )
+            expected_attack_skill_ids = {
+                int(entry.skill_id)
+                for entry in self.petskill_runtime.skills.values()
+                if entry.function_name == "PETSKILL_AttackMagic"
+            }
+            if set(attack_magic.entries) != expected_attack_skill_ids:
+                raise ValueError(
+                    "runtime stack AttackMagic/pet-skill population drift"
+                )
+
+    def resolve_enemy_attack_magic_footprint(
+        self,
+        *,
+        skill_id: int,
+        actor_slot: int,
+        target_slot: int,
+        alive_player_slots: Sequence[int],
+        retarget_rolls_0_9: Sequence[int] = (),
+        require_exact_source_order: bool = True,
+    ) -> Recovered25EnemyAttackMagicPlan:
+        """Resolve one recovered25 enemy AttackMagic target footprint."""
+        if self.attack_magic_runtime is None:
+            raise ValueError("runtime stack has no AttackMagic runtime index")
+        return self.attack_magic_runtime.resolve_enemy_footprint(
+            skill_id=int(skill_id),
+            actor_slot=int(actor_slot),
+            target_slot=int(target_slot),
+            alive_player_slots=tuple(int(x) for x in alive_player_slots),
+            retarget_rolls_0_9=tuple(int(x) for x in retarget_rolls_0_9),
+            require_exact_source_order=bool(require_exact_source_order),
+        )
 
     def create_fresh_start(self, hometown_ordinal: int) -> FreshStartSeed:
         return self.fresh_start_factory.create_fresh_start(

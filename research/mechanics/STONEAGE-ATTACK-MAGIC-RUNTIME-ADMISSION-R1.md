@@ -70,4 +70,11 @@ shape. Admission is state-dependent:
 This preserves historical evidence while allowing a multi-target spell to
 become exact when only one applicable target remains.
 
-Marker: **RECOVERED25_ATTACKMAGIC_RUNTIME_INDEX_R1 = CANDIDATE**
+Validation: fixed preservation-bundle workflow **36850584056 = PASS**. The
+runtime smoke closed all 25 entries, reproduced the 110/140 full-side
+portable/nonportable split, retained item tokens as execution-dead non-player
+MP provenance, and proved dynamic portability with magic 305 at one living
+player target. Report write-back advanced `main` to
+`99a6fa36b9c916696b3791618866377b17baa998`.
+
+Marker: **RECOVERED25_ATTACKMAGIC_RUNTIME_INDEX_R1 = CLOSED**

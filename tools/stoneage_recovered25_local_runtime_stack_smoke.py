@@ -251,6 +251,32 @@ def run(
         raise ValueError("runtime stack lacks pet-skill runtime")
     if len(stack.petskill_runtime.skills) != 147:
         raise ValueError("unexpected recovered25 pet-skill count")
+    if stack.attack_magic_runtime is None:
+        raise ValueError("runtime stack lacks AttackMagic runtime index")
+    if len(stack.attack_magic_runtime.entries) != 25:
+        raise ValueError("unexpected recovered25 AttackMagic runtime count")
+    attack_magic_exact = stack.resolve_enemy_attack_magic_footprint(
+        skill_id=stack.attack_magic_runtime.skill_id_for_magic(301),
+        actor_slot=15,
+        target_slot=0,
+        alive_player_slots=tuple(range(10)),
+    )
+    if (
+        attack_magic_exact.magic_id != 301
+        or attack_magic_exact.source_target_order != (0,)
+    ):
+        raise ValueError("AttackMagic exact footprint witness drift")
+    attack_magic_dynamic = stack.resolve_enemy_attack_magic_footprint(
+        skill_id=stack.attack_magic_runtime.skill_id_for_magic(305),
+        actor_slot=15,
+        target_slot=0,
+        alive_player_slots=(0,),
+    )
+    if (
+        attack_magic_dynamic.magic_id != 305
+        or attack_magic_dynamic.source_target_order != (0,)
+    ):
+        raise ValueError("AttackMagic dynamic portability witness drift")
     referenced_skill_ids = {
         int(skill_id)
         for template in stack.enemybase_runtime.templates.values()
@@ -491,6 +517,25 @@ def main() -> None:
         if int(skill_id) > 0
     }
     print(f"COUNT|petskill_entries|{len(stack.petskill_runtime.skills)}")
+    print(
+        f"COUNT|attackmagic_entries|{len(stack.attack_magic_runtime.entries)}"
+    )
+    print(
+        "ATTACKMAGIC_NONPLAYER_ITEM_RUNTIME_ROLE|"
+        f"{stack.attack_magic_runtime.nonplayer_item_role}"
+    )
+    print(
+        "ATTACKMAGIC_EXACT_FOOTPRINT_WITNESS|"
+        f"magic={attack_magic_exact.magic_id}|"
+        f"targets={len(attack_magic_exact.target_membership)}|"
+        f"portable={int(attack_magic_exact.source_sort_portable)}"
+    )
+    print(
+        "ATTACKMAGIC_DYNAMIC_PORTABILITY_WITNESS|"
+        f"magic={attack_magic_dynamic.magic_id}|alive=1|"
+        f"targets={len(attack_magic_dynamic.target_membership)}|"
+        f"portable={int(attack_magic_dynamic.source_sort_portable)}"
+    )
     referenced_skill_entries = tuple(
         stack.petskill_runtime.skills[skill_id]
         for skill_id in sorted(report_referenced_skill_ids)

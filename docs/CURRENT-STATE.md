@@ -5232,5 +5232,10 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_ATTACKMAGIC_FOOTPRINT_COVERAGE_R1 = CLOSED.**
 - A deeper fixed-source audit corrected the earlier HIGH(COM3) risk assessment: recovered `item 196xx` values are configuration IDs, not guaranteed dynamic existing-item indexes, but the resulting MP value is **execution-dead for non-player AttackMagic**. `MAGIC_DirectUse` does not abort on negative MP, non-player `MAGIC_AttMagic` skips MP consumption, and `MAGIC_AttMagic_Battle` ignores `mp`.
 - Added a recovered25 AttackMagic runtime-index candidate that validates all 25 skill->magic->item-config->IDX->side-pair links, retains item IDs only as provenance/cross-link data, and dynamically fails closed when historical `SortLoc/qsort` target order is nonportable.
-- **RECOVERED25_ATTACKMAGIC_RUNTIME_INDEX_R1 = CANDIDATE.**
-- Next priority: validate the runtime index against the fixed preservation bundle, then compose its exact-source-order subset with the closed damage core at the enemy battle-action execution boundary.
+- Runtime-index validation **36850584056 = PASS**; all unit tests, fixed-bundle recovery, footprint coverage and runtime-index smoke passed. Bot report write-back advanced `main` to `99a6fa36b9c916696b3791618866377b17baa998`.
+- Runtime report reconfirms **25 entries**, **250 full-side scenarios = 110 portable + 140 nonportable**, the eleven fully-alive always-portable magic IDs, `magicusemp={5}`, item-token role `CONFIG_CROSSLINK_ONLY_MP_EXECUTION_DEAD`, and the dynamic magic-305 one-alive portability witness.
+- **RECOVERED25_ATTACKMAGIC_RUNTIME_INDEX_R1 = CLOSED.**
+- Integrated the closed AttackMagic runtime index into the recovered25 local runtime stack as a typed optional component loaded with `server_data_dir`; stack validation requires exact equality with the recovered `PETSKILL_AttackMagic` skill population and exposes a fail-closed `resolve_enemy_attack_magic_footprint(...)` delegate.
+- Full preservation-bundle local-stack acceptance for this integration is **pending**.
+- **RECOVERED25_ATTACKMAGIC_STACK_INTEGRATION_R1 = CANDIDATE.**
+- Next priority after full-stack acceptance: compose only exact-source-order AttackMagic plans with the closed damage core at the enemy battle-action execution boundary; do not admit nonportable multi-target qsort states.

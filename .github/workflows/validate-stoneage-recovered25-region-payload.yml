@@ -14,6 +14,9 @@ on:
       - tests/test_stoneage_recovered25_region_payload.py
       - tools/stoneage_recovered25_local_runtime_stack.py
       - tools/stoneage_recovered25_local_runtime_stack_smoke.py
+      - tools/stoneage_recovered25_attack_magic_runtime.py
+      - tools/stoneage_recovered25_attack_magic_runtime_smoke.py
+      - tests/test_stoneage_recovered25_attack_magic_runtime.py
       - tools/stoneage_attack_magic_crosslink_probe.py
       - tests/test_stoneage_attack_magic_crosslink_probe.py
       - tools/stoneage_recovered25_encounter_runtime.py
@@ -68,6 +71,7 @@ jobs:
             tests.test_stoneage_recovered25_world_profile_adapter \
             tests.test_stoneage_recovered25_local_runtime_stack \
             tests.test_stoneage_attack_magic_crosslink_probe \
+            tests.test_stoneage_recovered25_attack_magic_runtime \
             tests.test_stoneage_recovered25_enemybase_runtime \
             tests.test_stoneage_recovered25_petskill_runtime \
             tests.test_stoneage_singleplayer_battle \
@@ -185,6 +189,10 @@ jobs:
           grep -F 'CLIENT_COLLISION_MOVEMENT_WITNESS|1' "$R"
           grep -F 'COUNT|enemybase_templates|988' "$R"
           grep -F 'COUNT|petskill_entries|147' "$R"
+          grep -F 'COUNT|attackmagic_entries|25' "$R"
+          grep -F 'ATTACKMAGIC_NONPLAYER_ITEM_RUNTIME_ROLE|CONFIG_CROSSLINK_ONLY_MP_EXECUTION_DEAD' "$R"
+          grep -F 'ATTACKMAGIC_EXACT_FOOTPRINT_WITNESS|magic=301|targets=1|portable=1' "$R"
+          grep -F 'ATTACKMAGIC_DYNAMIC_PORTABILITY_WITNESS|magic=305|alive=1|targets=1|portable=1' "$R"
           grep -F 'COUNT|enemybase_referenced_petskill_ids|111' "$R"
           grep -F 'COUNT|enemybase_referenced_noncommon_petskill_ids|80' "$R"
           grep -F 'COUNT|enemybase_noncommon_petskill_slot_uses|365' "$R"
