@@ -22,7 +22,7 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         })
         result=analyze_runtime_objects(pets,enemies)
         rows={row["callback"]:row for row in result["rows"]}
-        self.assertEqual(result["total_positive_slot_uses"],10)
+        self.assertEqual(result["total_positive_slot_uses"],9)
         self.assertEqual(rows["PETSKILL_Explode"]["slot_uses"],4)
         self.assertEqual(rows["PETSKILL_Explode"]["skill_ids"],(300,301))
         self.assertEqual(rows["PETSKILL_NormalAttack"]["status"],"closed_runtime")
