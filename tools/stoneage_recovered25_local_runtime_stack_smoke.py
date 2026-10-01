@@ -676,6 +676,25 @@ def main() -> None:
         f"dodge_marker_ids={mighty_dodge}|"
         f"numeric_parse_ids={mighty_numeric_parse}"
     )
+    steal_entries = tuple(
+        entry
+        for entry in referenced_skill_entries
+        if entry.function_name == "PETSKILL_Steal"
+    )
+    steal_ascii_ids=sum(
+        int(entry.option_bytes.isascii())
+        for entry in steal_entries
+    )
+    if len(steal_entries) != 1 or steal_ascii_ids != 1:
+        raise ValueError(
+            "recovered25 Steal callback/OPTION population drifted"
+        )
+    print(
+        "PETSKILL_STEAL_PARSE|"
+        f"unique_ids={len(steal_entries)}|"
+        f"ascii_ids={steal_ascii_ids}"
+    )
+
     earthround_entries = tuple(
         entry
         for entry in referenced_skill_entries
