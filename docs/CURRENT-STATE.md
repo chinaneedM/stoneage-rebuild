@@ -5552,3 +5552,19 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_NOCAST_OPTION_DOMAIN_R1 = OPEN_PENDING_BUNDLE_PROBE.**
 - **RECOVERED25_NOCAST_RUNTIME_R1 = OPEN.** Executable slot-use coverage remains **2352 / 2486 = 94.6%**; reference work does not increase it.
 - Next priority: inspect the dedicated bundle probe's exact ID-580 OPTION/metadata result, then connect typed Nocast submission, explicit full-status/work-resistance state, ordered round expiry and coordinator persistence. Do not advance to another callback or count these 18 uses executable before runtime acceptance.
+
+
+## Phase 1 Nocast reference and recovered OPTION acceptance — 2026-10-01
+
+- Supersedes the pending-validation statuses in the immediately preceding Nocast milestone.
+- Guarded reference/source-profile workflow **36881045171 = PASS** and verified preservation-bundle probe **36881045423 = PASS**, both at source commit `02b443d618d3ed10c617e33d46c26cf309a0e0d9`.
+- Probe report write-back commit: `2f461c0a36af906b6514cedd6a1c1fa6c247f47c`.
+- Exact recovered row: ID **580**, FIELD **1**, TARGET **3**, COST **2**, ILLEGAL **1000**, OPTION length **15 bytes**, SHA-256 `28c465f3106af23dafc91aa2c54c7c7c8ff147dd26d8ee92382ecd4862dd871f`.
+- Strict CP950/Big5 decoding and sequential-parser results converge: **turn=3**, **Success offset=50**. This is a probability-formula offset, not a flat 50% hit chance.
+- Positive pressure remains **18** slot references across **16** templates.
+- Dedicated validation covers **30 tests** plus reproduction of the pinned macro/header enum audit. Local targeted base-status/pressure regressions bring the validation set to **52 passing tests**.
+- **PETSKILL_NOCAST_GUARDED_REFERENCE_R1 = CLOSED_REFERENCE_MODEL_ONLY.**
+- **RECOVERED25_NOCAST_OPTION_DOMAIN_R1 = CLOSED_OPTION_GRAMMAR_AND_METADATA.**
+- **RECOVERED25_NOCAST_RUNTIME_R1 = OPEN.** Executable slot-use coverage remains **2352 / 2486 = 94.6%**.
+- Historical profile limits remain explicit: pinned source text encodings/compile features do not authenticate the recovered binary's literal encoding or command enum. A future semantic bridge must declare its byte decoding; no historical numeric COM1 is assigned.
+- Highest-priority unfinished work: admit the ID-580 typed semantic submission using the closed metadata/parameters; carry explicit full-status and work-resistance state through enemy AI -> ordered round -> persistent coordinator; integrate exact Nocast tick/NC semantics and direct-magic restriction at their proper boundaries. Keep unidentified late statuses/resistance/save mappings fail-closed and leave this callback OPEN until end-to-end runtime tests pass.

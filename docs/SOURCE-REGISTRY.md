@@ -3126,3 +3126,7 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
 - Supports the sequential byte parser, independent MultiList target expansion, shared status/RNG/resistance ordering, PET exclusion after hit RNG, exact counter write, FALSE-return quirk, direct-magic gating and status-counter/NC-notification timing.
 - Derived-only source hashes/profile output: `research/recovered/STONEAGE-NOCAST-SOURCE-AUDIT-R1.txt`; reproducible audit: `tools/stoneage_nocast_source_audit.py`; specification: `research/mechanics/STONEAGE-NOCAST-R1.md`.
 - Boundaries: missing turn and unsafe target-list domains remain historical UB; active recovered25 OPTION values need a separate hash-verified preservation-bundle probe; no Taiwan-v1 membership or universal numeric COM1 is asserted.
+
+- Acceptance update: verified bundle workflow **36881045423 = PASS** at `02b443d618d3ed10c617e33d46c26cf309a0e0d9`; derived report `research/recovered/STONEAGE-25-NOCAST-PROBE-R1.txt` committed by `2f461c0a36af906b6514cedd6a1c1fa6c247f47c`.
+- Recovered metadata: ID 580, FIELD=1, TARGET=3, COST=2, ILLEGAL=1000; 15 OPTION bytes, SHA-256 `28c465f3106af23dafc91aa2c54c7c7c8ff147dd26d8ee92382ecd4862dd871f`; strict CP950/Big5 parser results turn=3 and Success offset=50; 18 slot uses across 16 templates. This supersedes the pending data gate above, while executable runtime/compile-profile identity remains OPEN.
+- Guarded reference/source-profile workflow **36881045171 = PASS** at the same source commit.

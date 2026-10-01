@@ -113,3 +113,35 @@ submission, round-local full-status/resistance overlays, ordered per-actor
 expiry and persistent coordinator carry-forward. Keep missing late-status and
 work-resistance state fail-closed; do not inject it into Taiwan-v1 save fields
 or mark the 18 slot uses executable until that path has passed.
+
+
+## Accepted recovered data and validation
+
+The verified preservation-bundle probe **36881045423 = PASS** at
+`02b443d618d3ed10c617e33d46c26cf309a0e0d9` closes the real OPTION/metadata gate:
+
+| ID | FIELD | TARGET | COST | ILLEGAL | OPTION bytes | turn | Success offset |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 580 | 1 | 3 | 2 | 1000 | 15 | 3 | 50 |
+
+OPTION SHA-256:
+`28c465f3106af23dafc91aa2c54c7c7c8ff147dd26d8ee92382ecd4862dd871f`.
+Strict CP950/Big5 interpretations converge. Success=50 is the formula offset,
+not an unconditional 50% chance. Actual positive references are 18 across 16
+templates. Report write-back is `2f461c0a36af906b6514cedd6a1c1fa6c247f47c`.
+
+Reference/source-profile workflow **36881045171 = PASS**: 30 dedicated tests and
+reproduction of the three clean pinned header audits. Local base-status/pressure
+regressions bring the targeted set to 52 passing tests.
+
+The code-page result closes the data grammar; it does not establish the original
+recovered executable's compiled string-literal bytes. The currently preserved
+source repositories use their own encodings. Runtime admission must explicitly
+declare a semantic bridge decoding/profile instead of claiming that compiling
+these modern descendant trees reproduces the recovered25 binary.
+
+`PETSKILL_NOCAST_GUARDED_REFERENCE_R1 = CLOSED_REFERENCE_MODEL_ONLY`.
+`RECOVERED25_NOCAST_OPTION_DOMAIN_R1 = CLOSED_OPTION_GRAMMAR_AND_METADATA`.
+`RECOVERED25_NOCAST_RUNTIME_R1 = OPEN`.
+The 18 references remain outside executable coverage until the ordered
+full-status/resistance/persistence integration passes.
