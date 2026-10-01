@@ -32,6 +32,7 @@ from tools.stoneage_battle_core_model import (
     attribute_adjusted_damage,
     critical_damage,
     critical_per_10000,
+    continuation_divided_damage,
     counter_weapon_blocks_counter,
     dodge_per_10000,
     early_action_value,
@@ -2274,6 +2275,241 @@ def _battle_attack_continuation_allowed(
         and not bool(critical)
         and not bool(target_guarding)
         and int(target_hp_after) > 0
+    )
+
+
+@dataclass(frozen=True)
+class ContinuationBaselineResolution:
+    """Status/reaction-free non-bow S_RENZOKU execution witness."""
+
+    events: tuple[OrdinaryRoundEvent, ...]
+    hp_by_slot: Mapping[int,int]
+    last_target_slot: int | None
+    counter_continuation_allowed: bool
+
+
+def resolve_continuation_nonbow_baseline(
+    *,
+    actor: BattleParticipant,
+    actor_slot: int,
+    command: BattleCommand,
+    action_value: int,
+    by_slot: Mapping[int,BattleParticipant],
+    hp_by_slot: Mapping[int,int],
+    profiles: Mapping[str,BattleCombatProfile],
+    command_by_slot: Mapping[int,BattleCommand],
+    rolls: ContinuationAttackRolls,
+    defense_profile: str,
+    setup_effects_by_participant_id: Mapping[
+        str,BattleCommandSetupEffects
+    ] | None = None,
+    excluded_slots: Sequence[int] = (),
+    field_attr: str = "none",
+    field_power: int = 0,
+) -> ContinuationBaselineResolution:
+    """Execute the evidence-closed baseline S_RENZOKU multi-hit loop.
+
+    This helper deliberately stops before Guardian, damage-reaction, ride,
+    status-application and ultimate/death side effects. It models the fixed
+    non-bow loop itself: LOW(COM3) is both hit cap and gDamageDiv; each hit
+    re-checks the submitted original target; dead originals independently
+    consume that hit's retarget roll; and only the last BATTLE_Attack-shaped
+    result supplies the post-loop counter continuation flag.
+    """
+
+    if int(command.command1) != BATTLE_COM_S_RENZOKU:
+        raise ValueError("continuation baseline requires S_RENZOKU command")
+    actor_slot=int(actor_slot)
+    if by_slot.get(actor_slot) != actor:
+        raise ValueError("continuation actor/slot mapping mismatch")
+    actor_id=str(actor.participant_id)
+    if actor_id not in profiles:
+        raise KeyError(f"missing combat profile for {actor_id}")
+    count=battle_command3_low(command.command3)
+    if not 1 <= count <= 10:
+        raise ValueError("S_RENZOKU LOW(COM3) must be in 1..10")
+    if len(rolls.hit_rolls) != count:
+        raise ValueError(
+            "ContinuationAttack requires exactly LOW(COM3) hit-roll bundles"
+        )
+
+    hp={int(slot):max(0,int(value)) for slot,value in hp_by_slot.items()}
+    for slot,participant in by_slot.items():
+        hp.setdefault(int(slot),max(0,int(participant.hp)))
+    setup_effects=dict(setup_effects_by_participant_id or {})
+    original_target=int(command.command2)
+    actor_profile=profiles[actor_id]
+    resolved: list[OrdinaryRoundEvent]=[]
+    last_target: int | None=None
+    last_continue=False
+
+    for hit_index,hit_rolls in enumerate(rolls.hit_rolls,start=1):
+        if int(hp.get(actor_slot,0)) <= 0:
+            last_continue=False
+            break
+
+        target,retargeted=_continuation_nonbow_target_for_hit(
+            actor_slot=actor_slot,
+            original_target_slot=original_target,
+            by_slot=by_slot,
+            hp_by_slot=hp,
+            retarget_roll=hit_rolls.retarget_roll,
+            excluded_slots=excluded_slots,
+        )
+        if target is None:
+            last_target=None
+            last_continue=False
+            break
+        target=int(target)
+        if _slot_side(target)==_slot_side(actor_slot):
+            raise ValueError("ContinuationAttack retarget crossed battle sides")
+        defender=by_slot[target]
+        defender_id=str(defender.participant_id)
+        if defender_id not in profiles:
+            raise KeyError(f"missing combat profile for {defender_id}")
+        defender_profile=profiles[defender_id]
+        before=int(hp[target])
+        target_guarding=bool(
+            target in command_by_slot
+            and int(command_by_slot[target].command1)==BATTLE_COM_GUARD
+        )
+
+        if not target_guarding:
+            dodge_roll=_validated_roll(
+                hit_rolls.dodge_roll_1_10000,
+                1,10000,
+                "continuation dodge_roll_1_10000",
+            )
+            dodge_probability=dodge_per_10000(
+                actor_profile.fixed_dex,
+                defender_profile.fixed_dex,
+                defender_luck=_source_luck(defender,defender_profile),
+                attacker_type=_participant_battle_kind(actor),
+                defender_type=_participant_battle_kind(defender),
+                extra_percent_points=_noguard_dodge_percent_modifier(
+                    command_by_slot.get(target,BattleCommand(BATTLE_COM_NONE))
+                ),
+            )
+            if dodge_roll <= dodge_probability:
+                resolved.append(
+                    OrdinaryRoundEvent(
+                        actor_id,
+                        actor_slot,
+                        BATTLE_COM_S_RENZOKU,
+                        int(action_value),
+                        "continuation_dodge",
+                        original_target_slot=original_target,
+                        resolved_target_slot=target,
+                        retargeted=bool(retargeted),
+                        target_hp_before=before,
+                        target_hp_after=before,
+                        combo_member_index=hit_index,
+                    )
+                )
+                last_target=target
+                last_continue=True
+                continue
+
+        critical_roll=_validated_roll(
+            hit_rolls.critical_roll_1_10000,
+            1,10000,
+            "continuation critical_roll_1_10000",
+        )
+        critical_probability=critical_per_10000(
+            actor_profile.fixed_dex,
+            defender_profile.fixed_dex,
+            attacker_luck=_source_luck(actor,actor_profile),
+            weapon_critical=int(actor_profile.weapon_critical),
+            attacker_type=_participant_battle_kind(actor),
+            defender_type=_participant_battle_kind(defender),
+        )
+        is_critical=critical_roll < critical_probability
+
+        defender_work_defense=_effective_defense_power(defender,setup_effects)
+        base_damage=physical_base_damage(
+            _effective_attack_power(actor,setup_effects),
+            _effective_defense_for_round(
+                defender,
+                defense_profile,
+                stone=False,
+                work_defense=defender_work_defense,
+            ),
+            int(hit_rolls.damage_roll),
+        )
+        damage=attribute_adjusted_damage(
+            base_damage,
+            actor_profile.elements,
+            defender_profile.elements,
+            field_attr=field_attr,
+            field_power=field_power,
+        )
+        if is_critical:
+            damage=critical_damage(
+                damage,
+                defender_work_defense,
+                actor.level,
+                defender.level,
+            )
+        if target_guarding:
+            guard_roll=_validated_roll(
+                hit_rolls.guard_roll_1_100,
+                1,100,
+                "continuation guard_roll_1_100",
+            )
+            damage=guard_damage(damage,guard_roll)
+        if damage < 1:
+            damage=_validated_roll(
+                hit_rolls.minimum_damage_roll_0_1,
+                0,1,
+                "continuation minimum_damage_roll_0_1",
+            )
+
+        damage=continuation_divided_damage(damage,count)
+        if damage == 0:
+            result=(
+                "continuation_allguard"
+                if target_guarding
+                else "continuation_miss"
+            )
+        else:
+            result=(
+                "continuation_critical"
+                if is_critical
+                else "continuation_normal"
+            )
+        after=max(0,before-int(damage))
+        hp[target]=after
+        resolved.append(
+            OrdinaryRoundEvent(
+                actor_id,
+                actor_slot,
+                BATTLE_COM_S_RENZOKU,
+                int(action_value),
+                result,
+                original_target_slot=original_target,
+                resolved_target_slot=target,
+                retargeted=bool(retargeted),
+                critical=bool(is_critical),
+                damage=int(damage),
+                target_hp_before=before,
+                target_hp_after=after,
+                combo_member_index=hit_index,
+            )
+        )
+        last_target=target
+        last_continue=_battle_attack_continuation_allowed(
+            guardian_redirected=False,
+            damage_reaction_active=False,
+            critical=bool(is_critical),
+            target_guarding=target_guarding,
+            target_hp_after=after,
+        )
+
+    return ContinuationBaselineResolution(
+        events=tuple(resolved),
+        hp_by_slot=MappingProxyType(dict(hp)),
+        last_target_slot=last_target,
+        counter_continuation_allowed=bool(last_continue),
     )
 
 
