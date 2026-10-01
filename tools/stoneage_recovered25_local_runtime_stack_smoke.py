@@ -707,9 +707,17 @@ def main() -> None:
             guardian_attack_values.append(float(attack.group(1)))
         if defense is not None:
             guardian_defense_values.append(float(defense.group(1)))
-    if len(guardian_entries) != 1:
+    if (
+        len(guardian_entries) != 1
+        or guardian_attack_marker != 1
+        or guardian_defense_marker != 0
+        or guardian_defensive_com != 0
+        or guardian_attack_values != [-20.0]
+        or guardian_defense_values
+    ):
         raise ValueError(
-            "recovered25 Guardian callback population drifted from one ID"
+            "recovered25 Guardian OPTION drifted outside closed attack-mode "
+            "攻%-20 subset"
         )
     print(
         "PETSKILL_GUARDIAN_PARSE|"
