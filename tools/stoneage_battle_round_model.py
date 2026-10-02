@@ -3828,6 +3828,44 @@ def resolve_ordinary_round(
                 "Nocast ordering carrier must be ATTACK/source-target"
             )
 
+    barrier_submissions={
+        str(participant_id):submission
+        for participant_id,submission in (
+            barrier_submissions_by_participant_id or {}
+        ).items()
+    }
+    barrier_actor_ids=set(barrier_submissions)
+    unknown_barrier_ids=sorted(barrier_actor_ids-set(slot_by_id))
+    if unknown_barrier_ids:
+        raise ValueError(
+            f"Barrier submissions reference unknown actors: {unknown_barrier_ids}"
+        )
+    if barrier_actor_ids & (
+        nocast_actor_ids | fall_ground_actor_ids | battle_tear_actor_ids
+        | mp_damage_actor_ids | damage_to_hp_actor_ids
+        | enemy_rehp_actor_ids | attack_magic_actor_ids
+    ):
+        raise ValueError("Barrier semantic submissions overlap another skill")
+    for participant_id,submission in barrier_submissions.items():
+        if not isinstance(submission,EnemyAiBarrierSubmission):
+            raise TypeError(
+                f"Barrier submission for {participant_id} has wrong type"
+            )
+        if str(submission.participant_id) != participant_id:
+            raise ValueError("Barrier submission participant drift")
+        entry=prepared_entry_by_id[participant_id]
+        if entry.participant.side != "enemy" or entry.participant.kind != "enemy":
+            raise ValueError(
+                "recovered25 Barrier currently admits enemy actors only"
+            )
+        if (
+            int(entry.command.command1) != BATTLE_COM_ATTACK
+            or int(entry.command.command2) != int(submission.source_target_slot)
+        ):
+            raise ValueError(
+                "Barrier ordering carrier must be ATTACK/source-target"
+            )
+
     guard_break2_submissions={
         str(participant_id):submission
         for participant_id,submission in (
@@ -3871,8 +3909,10 @@ def resolve_ordinary_round(
                 "GuardBreak2 ordering carrier must be ATTACK/source-target"
             )
 
-    if nocast_actor_ids and nocast_overlay is None:
-        raise ValueError("Nocast semantic action requires explicit round overlay")
+    if (nocast_actor_ids or barrier_actor_ids) and nocast_overlay is None:
+        raise ValueError(
+            "Nocast/Barrier semantic action requires explicit round overlay"
+        )
     if nocast_overlay is not None and not isinstance(
         nocast_overlay,NocastRoundOverlay
     ):
@@ -3907,6 +3947,26 @@ def resolve_ordinary_round(
         if not isinstance(rolls,NocastActionRolls):
             raise TypeError(f"Nocast RNG for {participant_id} has wrong type")
     attempted_nocast_actor_ids=set()
+
+    barrier_rolls={
+        str(participant_id):rolls
+        for participant_id,rolls in (
+            barrier_rolls_by_participant_id or {}
+        ).items()
+    }
+    if set(barrier_rolls) != barrier_actor_ids:
+        missing=sorted(barrier_actor_ids-set(barrier_rolls))
+        extra=sorted(set(barrier_rolls)-barrier_actor_ids)
+        raise ValueError(
+            "Barrier RNG actors mismatch; "
+            f"missing={missing}, extra={extra}"
+        )
+    for participant_id,rolls in barrier_rolls.items():
+        if not isinstance(rolls,BarrierActionRolls):
+            raise TypeError(
+                f"Barrier RNG for {participant_id} has wrong type"
+            )
+    attempted_barrier_actor_ids=set()
 
     guarding = {
         slot_by_id[entry.participant.participant_id]
