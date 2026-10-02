@@ -5623,5 +5623,5 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_BARRIER_POPULATION_R1 = CLOSED.**
 - **RECOVERED25_BARRIER_RUNTIME_R1 = CLOSED.**
 - The 10 Barrier slot uses are now executable, moving recovered pet-skill slot-use coverage from **2381 / 2486 = 95.8%** to **2391 / 2486 ≈ 96.2%**. Merge remains separately classified historical UB.
-- Barrier is added to `CLOSED_RUNTIME_CALLBACKS`. The regenerated preservation-bundle report selects the next OPEN callback mechanically as **PETSKILL_AttackCrazed**, recovered25 ID **613**, **9** slot uses across **9** templates. This is the next research target; no AttackCrazed runtime semantics are assumed yet.
+- Barrier is added to `CLOSED_RUNTIME_CALLBACKS`. Verified callback-pressure workflow **37025618270 = PASS**; the regenerated preservation-bundle report selects the next OPEN callback mechanically as **PETSKILL_AttackCrazed**, recovered25 ID **613**, **9** slot uses across **9** templates. This is the next research target; no AttackCrazed runtime semantics are assumed yet.
 
