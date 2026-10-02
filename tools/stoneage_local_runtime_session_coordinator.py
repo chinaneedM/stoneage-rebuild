@@ -2131,6 +2131,9 @@ class LocalRuntimeSessionCoordinator:
         nocast_rolls_by_attack_id: Mapping[
             str,NocastActionRolls
         ] | None = None,
+        barrier_rolls_by_attack_id: Mapping[
+            str,BarrierActionRolls
+        ] | None = None,
         no_risk: bool = False,
         field_attr: str = "none",
         field_power: int = 0,
@@ -2240,6 +2243,7 @@ class LocalRuntimeSessionCoordinator:
             allow_battle_tear_skill=True,
             allow_nocast_skill=True,
             allow_guard_break2_skill=True,
+            allow_barrier_skill=True,
         )
         enemy_commands = enemy_batch.commands
         rehp_enemy_ids=set(enemy_batch.enemy_rehp_submissions)
@@ -2341,6 +2345,28 @@ class LocalRuntimeSessionCoordinator:
         if nocast_enemy_ids and state.nocast_overlay is None:
             raise ValueError(
                 "enemy Nocast requires explicit persistent battle overlay"
+            )
+
+        barrier_enemy_ids=set(enemy_batch.barrier_submissions)
+        normalized_barrier_rolls={
+            str(key):value
+            for key,value in (barrier_rolls_by_attack_id or {}).items()
+        }
+        if set(normalized_barrier_rolls) != barrier_enemy_ids:
+            missing=sorted(barrier_enemy_ids-set(normalized_barrier_rolls))
+            extra=sorted(set(normalized_barrier_rolls)-barrier_enemy_ids)
+            raise ValueError(
+                "enemy Barrier RNG mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        for participant_id,rolls in normalized_barrier_rolls.items():
+            if not isinstance(rolls,BarrierActionRolls):
+                raise TypeError(
+                    f"enemy Barrier RNG has wrong type for {participant_id}"
+                )
+        if barrier_enemy_ids and state.nocast_overlay is None:
+            raise ValueError(
+                "enemy Barrier requires explicit persistent late-status overlay"
             )
 
         attack_magic_enemy_ids={
@@ -2683,6 +2709,10 @@ class LocalRuntimeSessionCoordinator:
                 enemy_batch.nocast_submissions
             ),
             nocast_rolls_by_participant_id=normalized_nocast_rolls,
+            barrier_submissions_by_participant_id=(
+                enemy_batch.barrier_submissions
+            ),
+            barrier_rolls_by_participant_id=normalized_barrier_rolls,
             defense_profile=str(defense_profile),
             no_risk=bool(no_risk),
             field_attr=str(field_attr),
