@@ -5583,3 +5583,19 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - The 18 positive Nocast slot uses are now executable, moving recovered pet-skill slot-use coverage from **2352 / 2486 = 94.6%** to **2370 / 2486 = 95.3%**. Merge remains separately classified historical UB.
 - Next priority is selected mechanically, not by hand: Nocast is added to `CLOSED_RUNTIME_CALLBACKS` and the verified preservation-bundle callback-pressure probe must rerun. The highest-pressure remaining OPEN callback from that new report becomes the next implementation target; no result is assumed until the report is reproduced.
 
+## Phase 1 recovered25 GuardBreak2 reference + runtime closure — 2026-10-02
+
+- Mechanically selected by the preservation-bundle callback-pressure report at main commit `ea0ca4090d051d37ce488d83406d7f7de240f5b4`: `PETSKILL_GuardBreak2`, recovered25 data ID **543**, **11** positive enemybase slot uses across **11** templates.
+- Fixed-source audit closes the semantics across pinned gavin `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`, iris `9e6c8ce2cd8ed532a7157773acd1c61582c178b5`, and Bismarck `999ffdf1d220ec6666eb65339180689c9caf1876`. The callback writes the dedicated command symbol and target but does not parse OPTION; battle dispatch performs TargetAdjust before `BATTLE_S_GBreak2`.
+- The source numbering boundary remains explicit: fixed-source `PETSKILL_GUARDBREAK2` macro value is **542** while the recovered25 data row is **543**. These are different numbering domains. No recovered25 numeric COM1 mapping is asserted.
+- Verified preservation-bundle probe closes the recovered row as **ID=543, FIELD=1, TARGET=6, COST=2, ILLEGAL=1000, OPTION empty**, with SHA-256 of the empty OPTION `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`.
+- Runtime commit `95a32c3273de2639c0bbae599e284b390e6a490d` adds a typed `EnemyAiGuardBreak2Submission`. Ordinary ATTACK is only an internal ordering carrier; the specialized semantic path is intercepted without inventing a historical command number.
+- Ordered physical execution preserves fixed-source order: dodge/TargetAdjust -> Guardian redirect -> critical/base damage -> GuardBreak2 multiplier -> ordinary GuardAdjust when the actual calculation defender is guarding and not confused -> minimum-damage fallback. Guarding multiplies by **1.3**; non-guarding multiplies by **0.7**, using C double-to-int truncation.
+- Guardian semantics are preserved: the 1.3/0.7 decision uses the post-Guardian actual calculation defender, while specialized `BATTLE_S_GBreak2` DamageSub settlement remains bound to the original adjusted target. OPTION is not interpreted and stable GuardBreak's guard-only/attack-power setup is not reused.
+- Evidence/probe workflow **37018840805 = PASS**. Runtime acceptance **37020188189 = PASS**; full battle-core suite **37020187862 = PASS**; full local-runtime coordinator **37020188163 = PASS**; runtime golden **37020188875 = PASS**; stable pet-skill core **37020188257 = PASS**; Nocast **37020188368 = PASS**; BattleTear **37020188312 = PASS**; FallGround **37020188938 = PASS**; DamageToHp **37020188419 = PASS**; MpDamage **37020188125 = PASS**; ReHP **37020188612 = PASS**; AttackMagic coordinator **37020188344 = PASS**; AttackMagic round **37020188159 = PASS**; AttackMagic state adapter **37020188069 = PASS**; Taiwan-v1 **37020187774 = PASS**.
+- **GUARDBREAK2_FIXED_SOURCE_R1 = CLOSED.**
+- **RECOVERED25_GUARDBREAK2_POPULATION_R1 = CLOSED.**
+- **RECOVERED25_GUARDBREAK2_RUNTIME_R1 = CLOSED.**
+- The 11 GuardBreak2 slot uses are now executable, moving recovered pet-skill slot-use coverage from **2370 / 2486 = 95.3%** to **2381 / 2486 = 95.8%**. Merge remains separately classified historical UB.
+- GuardBreak2 is added to `CLOSED_RUNTIME_CALLBACKS`. The verified preservation-bundle callback-pressure probe must rerun; its new highest-pressure OPEN callback is the next implementation target and is not assumed in advance.
+
