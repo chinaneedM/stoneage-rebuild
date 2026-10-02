@@ -62,6 +62,7 @@ from tools.stoneage_nocast_runtime_state import (
     NocastParticipantRuntime,
     NocastRoundOverlay,
 )
+from tools.stoneage_barrier_runtime_state import BarrierActionRolls
 from tools.stoneage_recovered25_attack_magic_runtime import (
     Recovered25AttackMagicEntry,
     Recovered25AttackMagicRuntime,
