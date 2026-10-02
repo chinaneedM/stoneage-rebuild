@@ -452,6 +452,8 @@ class BaseStatusTickInputs:
     confusion_pos_roll_0_9: int | None = None
     work_quick: int | None = None
     ride_work_quick: int | None = None
+    weaken_freeze_active: bool = False
+    barrier_freeze_active: bool = False
 
     def __post_init__(self) -> None:
         hp=int(self.hp)
@@ -468,6 +470,12 @@ class BaseStatusTickInputs:
             if not 0 <= slot <= 19:
                 raise ValueError("actor_slot must be in 0..19")
             object.__setattr__(self,"actor_slot",slot)
+        object.__setattr__(
+            self,"weaken_freeze_active",bool(self.weaken_freeze_active)
+        )
+        object.__setattr__(
+            self,"barrier_freeze_active",bool(self.barrier_freeze_active)
+        )
 
 
 @dataclass(frozen=True)
@@ -557,7 +565,11 @@ def _confusion_target(inputs: BaseStatusTickInputs) -> int:
 
 
 def resolve_base_status_tick(inputs: BaseStatusTickInputs) -> BaseStatusTickResult:
-    """Mirror common BATTLE_StatusSeq ordering for the six base statuses."""
+    """Mirror common BATTLE_StatusSeq ordering for the six base statuses.
+
+    Fixed WEAKEN/BARRIER guards restore storage to cnt+1 after each local
+    decrement. Expiry/effect control still uses the decremented local cnt.
+    """
     if not isinstance(inputs,BaseStatusTickInputs):
         raise TypeError("inputs must be BaseStatusTickInputs")
 
@@ -584,6 +596,11 @@ def resolve_base_status_tick(inputs: BaseStatusTickInputs) -> BaseStatusTickResu
             continue
         current=_decrement(current,name)
         count_after=int(getattr(current,name))
+        if (
+            inputs.weaken_freeze_active
+            or inputs.barrier_freeze_active
+        ):
+            current=replace(current,**{name:count})
         if count_after <= 0:
             expired.append(name)
             if name == STATUS_DRUNK:
