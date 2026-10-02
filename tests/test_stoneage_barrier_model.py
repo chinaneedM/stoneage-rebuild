@@ -118,6 +118,19 @@ class BarrierModelTests(unittest.TestCase):
             ),
             (0,0,True,False),
         )
+        weaken_edge=resolve_barrier_self_tick(
+            1,
+            weaken_active_at_visit=True,
+        )
+        self.assertEqual(
+            (
+                weaken_edge.decremented_local_counter,
+                weaken_edge.counter_after,
+                weaken_edge.expired,
+                weaken_edge.self_freeze_restored_storage,
+            ),
+            (0,1,True,True),
+        )
 
     def test_positive_barrier_blocks_action(self):
         self.assertTrue(barrier_blocks_action(1))
