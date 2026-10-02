@@ -68,13 +68,24 @@ def submission(skill_id=594):
 
 
 class BarrierRuntimeTests(unittest.TestCase):
-    def _round(self,*,skill_id=594,player_counter=0,hit_rolls=None):
+    def _round(
+        self,
+        *,
+        skill_id=594,
+        player_counter=0,
+        hit_rolls=None,
+        player_wait=False,
+    ):
         player=actor("player","player","player",quick=10)
         enemy=actor("enemy","enemy","enemy",quick=200)
         prepared=prepare_battle_round(
             (player,enemy),
             {
-                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "player":(
+                    BattleCommand(BATTLE_COM_WAIT)
+                    if player_wait
+                    else BattleCommand(BATTLE_COM_ATTACK,command2=10)
+                ),
                 "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
             },
             {"player":0,"enemy":0},
@@ -146,7 +157,11 @@ class BarrierRuntimeTests(unittest.TestCase):
         self.assertEqual(player_runtime.barrier_counter,2)
 
     def test_existing_nocast_blocks_barrier_before_rng(self):
-        result=self._round(player_counter=2,hit_rolls={})
+        result=self._round(
+            player_counter=2,
+            hit_rolls={},
+            player_wait=True,
+        )
         event=next(
             event for event in result.events
             if event.barrier_application is not None
