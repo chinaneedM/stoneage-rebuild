@@ -5582,6 +5582,24 @@ def resolve_ordinary_round(
                 ):
                     continue
 
+                candidate_late_runtime=(
+                    None
+                    if nocast_working is None
+                    else nocast_working[candidate_id]
+                )
+                candidate_barrier_blocked_before=bool(
+                    candidate_late_runtime is not None
+                    and int(candidate_late_runtime.barrier_counter) > 0
+                )
+                if candidate_barrier_blocked_before:
+                    command_by_slot[candidate_slot]=BattleCommand(
+                        BATTLE_COM_NONE,
+                        command2=candidate.command.command2,
+                        command3=candidate.command.command3,
+                        input_complete=candidate.command.input_complete,
+                    )
+                    guarding.discard(candidate_slot)
+
                 candidate_runtime=status_runtime[candidate_id]
                 candidate_status=candidate_runtime.status
                 candidate_base_status_was_active=any(
@@ -5622,6 +5640,14 @@ def resolve_ordinary_round(
                             ),
                             work_quick=candidate_runtime.work_quick,
                             ride_work_quick=candidate_runtime.ride_work_quick,
+                            weaken_freeze_active=bool(
+                                candidate_late_runtime is not None
+                                and candidate_late_runtime.weaken_active_at_visit
+                            ),
+                            barrier_freeze_active=bool(
+                                candidate_late_runtime is not None
+                                and candidate_late_runtime.barrier_active_for_late_statuses
+                            ),
                         )
                     )
                     hp_by_slot[candidate_slot]=int(tick.hp_after)
@@ -5647,12 +5673,6 @@ def resolve_ordinary_round(
                             status_tick_resolution=tick,
                         )
                     )
-                    tick_nocast_runtime(
-                        candidate_id,
-                        candidate_slot,
-                        int(candidate.command.command1),
-                        int(candidate.action_value),
-                    )
                     if tick.command_override=="none":
                         command_by_slot[candidate_slot]=BattleCommand(
                             BATTLE_COM_NONE,
@@ -5674,16 +5694,40 @@ def resolve_ordinary_round(
                         )
                         guarding.discard(candidate_slot)
 
-                    if not tick.can_move_after_tick:
-                        continue
+                    candidate_base_can_move=bool(tick.can_move_after_tick)
+                else:
+                    candidate_base_can_move=True
 
-                if not candidate_base_status_was_active:
-                    tick_nocast_runtime(
-                        candidate_id,
-                        candidate_slot,
-                        int(candidate.command.command1),
-                        int(candidate.action_value),
+                candidate_barrier_tick=tick_barrier_runtime(
+                    candidate_id,
+                    candidate_slot,
+                    int(candidate.command.command1),
+                    int(candidate.action_value),
+                )
+                candidate_barrier_after=bool(
+                    nocast_working is not None
+                    and int(
+                        nocast_working[candidate_id].barrier_counter
+                    ) > 0
+                )
+                if candidate_barrier_after:
+                    command_by_slot[candidate_slot]=BattleCommand(
+                        BATTLE_COM_NONE,
+                        command2=candidate.command.command2,
+                        command3=candidate.command.command3,
+                        input_complete=candidate.command.input_complete,
                     )
+                    guarding.discard(candidate_slot)
+
+                tick_nocast_runtime(
+                    candidate_id,
+                    candidate_slot,
+                    int(candidate.command.command1),
+                    int(candidate.action_value),
+                )
+
+                if not candidate_base_can_move or candidate_barrier_after:
+                    continue
 
                 if int(hp_by_slot.get(candidate_slot,0)) <= 0:
                     continue
