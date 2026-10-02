@@ -738,6 +738,44 @@ class EnemyAiCommonCommandBatch:
                 "enemy AI GuardBreak2 semantic submissions overlap another skill"
             )
 
+        barrier_submissions={
+            str(key):value for key,value in self.barrier_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "barrier_submissions",
+            MappingProxyType(barrier_submissions),
+        )
+        for participant_id,submission in barrier_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI Barrier submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiBarrierSubmission):
+                raise TypeError(
+                    f"enemy AI Barrier submission has wrong type for "
+                    f"{participant_id}"
+                )
+            if str(submission.participant_id) != participant_id:
+                raise ValueError("enemy AI Barrier participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1) != BATTLE_COM_ATTACK
+                or int(carrier.command2) != int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI Barrier carrier must be ATTACK/source-target"
+                )
+        if set(barrier_submissions) & (
+            set(guard_break2_submissions) | set(nocast_submissions)
+            | set(tear_submissions) | set(fall_submissions)
+            | set(mp_submissions) | set(damage_submissions)
+            | set(rehp_submissions) | set(magic_submissions)
+        ):
+            raise ValueError(
+                "enemy AI Barrier semantic submissions overlap another skill"
+            )
+
 
 @dataclass
 class LocalRuntimeSessionCoordinator:
