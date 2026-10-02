@@ -38,6 +38,7 @@ from tools.stoneage_enemy_ai_battle_tear_bridge import (
     EnemyAiBattleTearSubmission,
 )
 from tools.stoneage_enemy_ai_nocast_bridge import EnemyAiNocastSubmission
+from tools.stoneage_enemy_ai_barrier_bridge import EnemyAiBarrierSubmission
 from tools.stoneage_enemy_ai_guard_break2_bridge import (
     EnemyAiGuardBreak2Submission,
 )
@@ -45,6 +46,7 @@ from tools.stoneage_nocast_runtime_state import (
     NocastActionRolls,
     NocastRoundOverlay,
 )
+from tools.stoneage_barrier_runtime_state import BarrierActionRolls
 from tools.stoneage_enemy_rehp_model import EnemyReHpRolls
 from tools.stoneage_recovered25_attack_magic_runtime import Recovered25AttackMagicRuntime
 
@@ -1313,6 +1315,12 @@ def resolve_persistent_ordinary_round(
     nocast_rolls_by_participant_id: Mapping[
         str,NocastActionRolls
     ] | None = None,
+    barrier_submissions_by_participant_id: Mapping[
+        str,EnemyAiBarrierSubmission
+    ] | None = None,
+    barrier_rolls_by_participant_id: Mapping[
+        str,BarrierActionRolls
+    ] | None = None,
     field_attr: str = "none",
     field_power: int = 0,
     tie_break_order: Sequence[str] | None = None,
@@ -1492,6 +1500,12 @@ def resolve_persistent_ordinary_round(
         ),
         nocast_rolls_by_participant_id=(
             nocast_rolls_by_participant_id
+        ),
+        barrier_submissions_by_participant_id=(
+            barrier_submissions_by_participant_id
+        ),
+        barrier_rolls_by_participant_id=(
+            barrier_rolls_by_participant_id
         ),
         nocast_overlay=state.nocast_overlay,
         ride_pet_source_slot=(
