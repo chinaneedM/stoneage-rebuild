@@ -118,6 +118,30 @@ def _function(text: str, signature: str) -> str:
     raise ValueError(f"unterminated function: {signature}")
 
 
+def _definition_window(
+    text: str,
+    function_name: str,
+    *,
+    max_chars: int = 12000,
+) -> str:
+    """Locate a real C definition and return a bounded raw-source window.
+
+    Raw source may be brace-unbalanced before preprocessing because mutually
+    exclusive #ifdef branches are all present at once. Semantic auditing here
+    therefore anchors on a definition-shaped regex rather than pretending to
+    parse preprocessor-dependent C.
+    """
+    pattern=re.compile(
+        rf"\b(?:static\s+)?(?:int|void|BOOL)\s+"
+        rf"{re.escape(function_name)}\s*\([^;{{}}]*\)\s*\{{",
+        re.DOTALL,
+    )
+    match=pattern.search(text)
+    if match is None:
+        raise ValueError(f"missing function definition: {function_name}")
+    return text[match.start():match.start()+int(max_chars)]
+
+
 def _git_head(root: Path) -> str:
     return subprocess.check_output(
         ["git", "-C", str(root), "rev-parse", "HEAD"],
@@ -223,7 +247,13 @@ def analyze_profile(name: str, root: Path):
         and "BATTLE_COM_GUARD" in attack_fn[branch:zero_seven + 100]
     )
 
-    event_fn = _compact(_function(data["battle_event"], "int BATTLE_S_GBreak2"))
+    event_fn = _compact(
+        _definition_window(
+            data["battle_event"],
+            "BATTLE_S_GBreak2",
+            max_chars=9000,
+        )
+    )
     event_attackseq = (
         "BATTLE_AttackSeq(" in event_fn
         and COMMAND_NAME in event_fn
