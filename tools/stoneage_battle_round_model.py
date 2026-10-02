@@ -42,6 +42,7 @@ from tools.stoneage_enemy_ai_battle_tear_bridge import (
     EnemyAiBattleTearSubmission,
 )
 from tools.stoneage_enemy_ai_nocast_bridge import EnemyAiNocastSubmission
+from tools.stoneage_enemy_ai_barrier_bridge import EnemyAiBarrierSubmission
 from tools.stoneage_enemy_ai_guard_break2_bridge import (
     EnemyAiGuardBreak2Submission,
 )
@@ -49,6 +50,15 @@ from tools.stoneage_guard_break2_model import (
     GuardBreak2DamageResolution,
     resolve_guard_break2_damage_step,
 )
+from tools.stoneage_barrier_model import (
+    BarrierApplication,
+    BarrierCheckInputs,
+    BarrierSelfTick,
+    resolve_barrier_multilist,
+    resolve_barrier_self_tick,
+    resolve_barrier_target,
+)
+from tools.stoneage_barrier_runtime_state import BarrierActionRolls
 from tools.stoneage_nocast_model import (
     NocastApplication,
     NocastCheckInputs,
@@ -903,6 +913,8 @@ class OrdinaryRoundEvent:
     fall_ground_resolution: FallGroundResolution | None = None
     battle_tear_augmentation: BattleTearAugmentation | None = None
     guard_break2_resolution: GuardBreak2DamageResolution | None = None
+    barrier_application: BarrierApplication | None = None
+    barrier_tick_resolution: BarrierSelfTick | None = None
     nocast_application: NocastApplication | None = None
     nocast_tick_resolution: NocastTick | None = None
 
@@ -3335,6 +3347,12 @@ def resolve_ordinary_round(
     nocast_rolls_by_participant_id: Mapping[
         str,NocastActionRolls
     ] | None = None,
+    barrier_submissions_by_participant_id: Mapping[
+        str,EnemyAiBarrierSubmission
+    ] | None = None,
+    barrier_rolls_by_participant_id: Mapping[
+        str,BarrierActionRolls
+    ] | None = None,
     nocast_overlay: NocastRoundOverlay | None = None,
     ride_pet_source_slot: int | None = None,
     field_attr: str = "none",
@@ -3810,6 +3828,44 @@ def resolve_ordinary_round(
                 "Nocast ordering carrier must be ATTACK/source-target"
             )
 
+    barrier_submissions={
+        str(participant_id):submission
+        for participant_id,submission in (
+            barrier_submissions_by_participant_id or {}
+        ).items()
+    }
+    barrier_actor_ids=set(barrier_submissions)
+    unknown_barrier_ids=sorted(barrier_actor_ids-set(slot_by_id))
+    if unknown_barrier_ids:
+        raise ValueError(
+            f"Barrier submissions reference unknown actors: {unknown_barrier_ids}"
+        )
+    if barrier_actor_ids & (
+        nocast_actor_ids | fall_ground_actor_ids | battle_tear_actor_ids
+        | mp_damage_actor_ids | damage_to_hp_actor_ids
+        | enemy_rehp_actor_ids | attack_magic_actor_ids
+    ):
+        raise ValueError("Barrier semantic submissions overlap another skill")
+    for participant_id,submission in barrier_submissions.items():
+        if not isinstance(submission,EnemyAiBarrierSubmission):
+            raise TypeError(
+                f"Barrier submission for {participant_id} has wrong type"
+            )
+        if str(submission.participant_id) != participant_id:
+            raise ValueError("Barrier submission participant drift")
+        entry=prepared_entry_by_id[participant_id]
+        if entry.participant.side != "enemy" or entry.participant.kind != "enemy":
+            raise ValueError(
+                "recovered25 Barrier currently admits enemy actors only"
+            )
+        if (
+            int(entry.command.command1) != BATTLE_COM_ATTACK
+            or int(entry.command.command2) != int(submission.source_target_slot)
+        ):
+            raise ValueError(
+                "Barrier ordering carrier must be ATTACK/source-target"
+            )
+
     guard_break2_submissions={
         str(participant_id):submission
         for participant_id,submission in (
@@ -3853,8 +3909,10 @@ def resolve_ordinary_round(
                 "GuardBreak2 ordering carrier must be ATTACK/source-target"
             )
 
-    if nocast_actor_ids and nocast_overlay is None:
-        raise ValueError("Nocast semantic action requires explicit round overlay")
+    if (nocast_actor_ids or barrier_actor_ids) and nocast_overlay is None:
+        raise ValueError(
+            "Nocast/Barrier semantic action requires explicit round overlay"
+        )
     if nocast_overlay is not None and not isinstance(
         nocast_overlay,NocastRoundOverlay
     ):
@@ -3890,6 +3948,26 @@ def resolve_ordinary_round(
             raise TypeError(f"Nocast RNG for {participant_id} has wrong type")
     attempted_nocast_actor_ids=set()
 
+    barrier_rolls={
+        str(participant_id):rolls
+        for participant_id,rolls in (
+            barrier_rolls_by_participant_id or {}
+        ).items()
+    }
+    if set(barrier_rolls) != barrier_actor_ids:
+        missing=sorted(barrier_actor_ids-set(barrier_rolls))
+        extra=sorted(set(barrier_rolls)-barrier_actor_ids)
+        raise ValueError(
+            "Barrier RNG actors mismatch; "
+            f"missing={missing}, extra={extra}"
+        )
+    for participant_id,rolls in barrier_rolls.items():
+        if not isinstance(rolls,BarrierActionRolls):
+            raise TypeError(
+                f"Barrier RNG for {participant_id} has wrong type"
+            )
+    attempted_barrier_actor_ids=set()
+
     guarding = {
         slot_by_id[entry.participant.participant_id]
         for entry in prepared.ordered_entries
@@ -3899,6 +3977,37 @@ def resolve_ordinary_round(
     }
 
     events: list[OrdinaryRoundEvent] = []
+
+    def tick_barrier_runtime(
+        participant_id: str,
+        slot: int,
+        command_code: int,
+        action_value: int,
+    ) -> BarrierSelfTick | None:
+        if nocast_working is None:
+            return None
+        participant_id=str(participant_id)
+        runtime=nocast_working[participant_id]
+        if int(runtime.barrier_counter) <= 0:
+            return None
+        tick=resolve_barrier_self_tick(
+            int(runtime.barrier_counter),
+            weaken_active_at_visit=bool(runtime.weaken_active_at_visit),
+        )
+        nocast_working[participant_id]=runtime.after_barrier_tick(tick)
+        events.append(
+            OrdinaryRoundEvent(
+                participant_id,
+                int(slot),
+                int(command_code),
+                int(action_value),
+                "barrier_tick",
+                original_target_slot=int(slot),
+                resolved_target_slot=int(slot),
+                barrier_tick_resolution=tick,
+            )
+        )
+        return tick
 
     def tick_nocast_runtime(
         participant_id: str,
@@ -3915,7 +4024,9 @@ def resolve_ordinary_round(
         tick=resolve_nocast_tick(
             int(runtime.counter),
             weaken_active_at_visit=bool(runtime.weaken_active_at_visit),
-            barrier_active_at_visit=bool(runtime.barrier_active_at_visit),
+            barrier_active_at_visit=bool(
+                runtime.barrier_active_for_late_statuses
+            ),
         )
         nocast_working[participant_id]=runtime.after_tick(tick)
         events.append(
@@ -4464,6 +4575,23 @@ def resolve_ordinary_round(
             continue
 
         command=entry.command
+        late_runtime=(
+            None
+            if nocast_working is None
+            else nocast_working[str(participant_id)]
+        )
+        barrier_blocked_before=bool(
+            late_runtime is not None
+            and int(late_runtime.barrier_counter) > 0
+        )
+        if barrier_blocked_before:
+            command=BattleCommand(
+                BATTLE_COM_NONE,
+                command2=entry.command.command2,
+                command3=entry.command.command3,
+                input_complete=entry.command.input_complete,
+            )
+            guarding.discard(slot)
         runtime=status_runtime[str(participant_id)]
         status_before=runtime.status
         base_status_was_active=any(
@@ -4502,6 +4630,14 @@ def resolve_ordinary_round(
                     ),
                     work_quick=runtime.work_quick,
                     ride_work_quick=runtime.ride_work_quick,
+                    weaken_freeze_active=bool(
+                        late_runtime is not None
+                        and late_runtime.weaken_active_at_visit
+                    ),
+                    barrier_freeze_active=bool(
+                        late_runtime is not None
+                        and late_runtime.barrier_active_for_late_statuses
+                    ),
                 )
             )
             current_status_tick=tick
@@ -4527,12 +4663,6 @@ def resolve_ordinary_round(
                     target_hp_after=int(tick.hp_after),
                     status_tick_resolution=tick,
                 )
-            )
-            tick_nocast_runtime(
-                str(participant_id),
-                int(slot),
-                int(entry.command.command1),
-                int(entry.action_value),
             )
             if tick.command_override == "none":
                 command=BattleCommand(
@@ -4566,13 +4696,31 @@ def resolve_ordinary_round(
                 guarding.discard(slot)
             command_by_slot[slot]=command
 
-        if not base_status_was_active:
-            tick_nocast_runtime(
-                str(participant_id),
-                int(slot),
-                int(entry.command.command1),
-                int(entry.action_value),
+        barrier_tick=tick_barrier_runtime(
+            str(participant_id),
+            int(slot),
+            int(entry.command.command1),
+            int(entry.action_value),
+        )
+        if (
+            barrier_tick is not None
+            and int(barrier_tick.counter_after) > 0
+        ):
+            command=BattleCommand(
+                BATTLE_COM_NONE,
+                command2=entry.command.command2,
+                command3=entry.command.command3,
+                input_complete=entry.command.input_complete,
             )
+            command_by_slot[slot]=command
+            guarding.discard(slot)
+
+        tick_nocast_runtime(
+            str(participant_id),
+            int(slot),
+            int(entry.command.command1),
+            int(entry.action_value),
+        )
 
         if command.command1 == BATTLE_COM_S_EARTHROUND1:
             next_earthround=BattleCommand(
@@ -5434,6 +5582,24 @@ def resolve_ordinary_round(
                 ):
                     continue
 
+                candidate_late_runtime=(
+                    None
+                    if nocast_working is None
+                    else nocast_working[candidate_id]
+                )
+                candidate_barrier_blocked_before=bool(
+                    candidate_late_runtime is not None
+                    and int(candidate_late_runtime.barrier_counter) > 0
+                )
+                if candidate_barrier_blocked_before:
+                    command_by_slot[candidate_slot]=BattleCommand(
+                        BATTLE_COM_NONE,
+                        command2=candidate.command.command2,
+                        command3=candidate.command.command3,
+                        input_complete=candidate.command.input_complete,
+                    )
+                    guarding.discard(candidate_slot)
+
                 candidate_runtime=status_runtime[candidate_id]
                 candidate_status=candidate_runtime.status
                 candidate_base_status_was_active=any(
@@ -5474,6 +5640,14 @@ def resolve_ordinary_round(
                             ),
                             work_quick=candidate_runtime.work_quick,
                             ride_work_quick=candidate_runtime.ride_work_quick,
+                            weaken_freeze_active=bool(
+                                candidate_late_runtime is not None
+                                and candidate_late_runtime.weaken_active_at_visit
+                            ),
+                            barrier_freeze_active=bool(
+                                candidate_late_runtime is not None
+                                and candidate_late_runtime.barrier_active_for_late_statuses
+                            ),
                         )
                     )
                     hp_by_slot[candidate_slot]=int(tick.hp_after)
@@ -5499,12 +5673,6 @@ def resolve_ordinary_round(
                             status_tick_resolution=tick,
                         )
                     )
-                    tick_nocast_runtime(
-                        candidate_id,
-                        candidate_slot,
-                        int(candidate.command.command1),
-                        int(candidate.action_value),
-                    )
                     if tick.command_override=="none":
                         command_by_slot[candidate_slot]=BattleCommand(
                             BATTLE_COM_NONE,
@@ -5526,16 +5694,40 @@ def resolve_ordinary_round(
                         )
                         guarding.discard(candidate_slot)
 
-                    if not tick.can_move_after_tick:
-                        continue
+                    candidate_base_can_move=bool(tick.can_move_after_tick)
+                else:
+                    candidate_base_can_move=True
 
-                if not candidate_base_status_was_active:
-                    tick_nocast_runtime(
-                        candidate_id,
-                        candidate_slot,
-                        int(candidate.command.command1),
-                        int(candidate.action_value),
+                candidate_barrier_tick=tick_barrier_runtime(
+                    candidate_id,
+                    candidate_slot,
+                    int(candidate.command.command1),
+                    int(candidate.action_value),
+                )
+                candidate_barrier_after=bool(
+                    nocast_working is not None
+                    and int(
+                        nocast_working[candidate_id].barrier_counter
+                    ) > 0
+                )
+                if candidate_barrier_after:
+                    command_by_slot[candidate_slot]=BattleCommand(
+                        BATTLE_COM_NONE,
+                        command2=candidate.command.command2,
+                        command3=candidate.command.command3,
+                        input_complete=candidate.command.input_complete,
                     )
+                    guarding.discard(candidate_slot)
+
+                tick_nocast_runtime(
+                    candidate_id,
+                    candidate_slot,
+                    int(candidate.command.command1),
+                    int(candidate.action_value),
+                )
+
+                if not candidate_base_can_move or candidate_barrier_after:
+                    continue
 
                 if int(hp_by_slot.get(candidate_slot,0)) <= 0:
                     continue
@@ -5722,6 +5914,122 @@ def resolve_ordinary_round(
                     continuation_id,
                     int(slot),
                     int(continuation.last_target_slot),
+                )
+            continue
+
+        barrier_actor_id=str(participant_id)
+        if (
+            barrier_actor_id in barrier_submissions
+            and int(command.command1) == BATTLE_COM_ATTACK
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            submission=barrier_submissions[barrier_actor_id]
+            if int(command.command2) != int(submission.source_target_slot):
+                raise ValueError(
+                    "Barrier ordering carrier target drift before execution"
+                )
+            if nocast_working is None:
+                raise ValueError("Barrier working overlay unexpectedly absent")
+
+            alive_slots=tuple(
+                other_slot
+                for other_slot in sorted(by_slot)
+                if (
+                    other_slot not in exited_slots
+                    and int(hp_by_slot.get(other_slot,0)) > 0
+                )
+            )
+            action_rolls=barrier_rolls[barrier_actor_id]
+            target_list=resolve_barrier_multilist(
+                int(submission.source_target_slot),
+                alive_slots=alive_slots,
+                retarget_draws_0_9=action_rolls.retarget_draws_0_9,
+            )
+            attempted_barrier_actor_ids.add(barrier_actor_id)
+            consumed_hit_roll_slots=set()
+            for target_slot in target_list.slots:
+                target_slot=int(target_slot)
+                if target_slot not in by_slot:
+                    raise ValueError(
+                        "Barrier target list resolved unoccupied slot"
+                    )
+                defender=by_slot[target_slot]
+                defender_id=str(defender.participant_id)
+                target_runtime=nocast_working[defender_id]
+                base_runtime=status_runtime[defender_id]
+                base_status_active=any(
+                    int(getattr(base_runtime.status,name))>0
+                    for name in (
+                        "poison","paralysis","sleep",
+                        "stone","drunk","confusion",
+                    )
+                )
+                any_status=target_runtime.has_any_status(
+                    base_status_active=base_status_active
+                )
+                hit_roll=action_rolls.hit_rolls_by_slot.get(target_slot)
+                application=resolve_barrier_target(
+                    BarrierCheckInputs(
+                        attacker_level=int(participant.level),
+                        defender_level=int(defender.level),
+                        pvp=False,
+                        attacker_fixed_luck=int(
+                            profiles[barrier_actor_id].fixed_luck
+                        ),
+                        defender_vital=int(target_runtime.vital),
+                        defender_strength=int(target_runtime.strength),
+                        defender_toughness=int(target_runtime.toughness),
+                        defender_dexterity=int(target_runtime.dexterity),
+                        defender_mod_barrier=int(target_runtime.mod_barrier),
+                        defender_suit_resist=int(target_runtime.suit_resist),
+                        any_existing_status=bool(any_status),
+                    ),
+                    submission.option,
+                    roll_1_100=hit_roll,
+                )
+                if application.rng_consumed:
+                    consumed_hit_roll_slots.add(target_slot)
+                nocast_working[defender_id]=(
+                    target_runtime.after_barrier_application(application)
+                )
+                result_name=(
+                    "barrier_blocked_existing_status"
+                    if application.probability_value is None
+                    else (
+                        "barrier_applied"
+                        if application.counter_written is not None
+                        else "barrier_missed"
+                    )
+                )
+                events.append(
+                    OrdinaryRoundEvent(
+                        barrier_actor_id,
+                        int(slot),
+                        BATTLE_COM_ATTACK,
+                        int(entry.action_value),
+                        result_name,
+                        original_target_slot=int(
+                            submission.source_target_slot
+                        ),
+                        resolved_target_slot=target_slot,
+                        retargeted=bool(
+                            target_list.slots
+                            and int(target_list.slots[0])
+                            != int(submission.source_target_slot)
+                        ),
+                        barrier_application=application,
+                    )
+                )
+            supplied_hit_slots=set(action_rolls.hit_rolls_by_slot)
+            if supplied_hit_slots != consumed_hit_roll_slots:
+                missing=sorted(consumed_hit_roll_slots-supplied_hit_slots)
+                extra=sorted(supplied_hit_slots-consumed_hit_roll_slots)
+                raise ValueError(
+                    "Barrier hit RNG slots mismatch; "
+                    f"missing={missing}, extra={extra}"
                 )
             continue
 
@@ -6977,6 +7285,15 @@ def resolve_ordinary_round(
         if not nocast_rolls[participant_id].is_empty:
             raise ValueError(
                 "Nocast RNG supplied for status-suppressed semantic action: "
+                + participant_id
+            )
+
+    for participant_id in sorted(
+        barrier_actor_ids-attempted_barrier_actor_ids
+    ):
+        if not barrier_rolls[participant_id].is_empty:
+            raise ValueError(
+                "Barrier RNG supplied for status-suppressed semantic action: "
                 + participant_id
             )
 

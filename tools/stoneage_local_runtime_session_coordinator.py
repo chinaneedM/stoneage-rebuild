@@ -54,6 +54,10 @@ from tools.stoneage_enemy_ai_nocast_bridge import (
     EnemyAiNocastSubmission,
     resolve_enemy_ai_nocast_submission,
 )
+from tools.stoneage_enemy_ai_barrier_bridge import (
+    EnemyAiBarrierSubmission,
+    resolve_enemy_ai_barrier_submission,
+)
 from tools.stoneage_enemy_ai_guard_break2_bridge import (
     EnemyAiGuardBreak2Submission,
     resolve_enemy_ai_guard_break2_submission,
@@ -62,6 +66,8 @@ from tools.stoneage_guard_break2_model import (
     CALLBACK_NAME as GUARD_BREAK2_CALLBACK,
 )
 from tools.stoneage_nocast_model import CALLBACK_NAME as NOCAST_CALLBACK
+from tools.stoneage_barrier_model import CALLBACK_NAME as BARRIER_CALLBACK
+from tools.stoneage_barrier_runtime_state import BarrierActionRolls
 from tools.stoneage_nocast_runtime_state import (
     NocastActionRolls,
     NocastRoundOverlay,
@@ -416,6 +422,9 @@ class EnemyAiCommonCommandBatch:
     guard_break2_submissions: Mapping[
         str,EnemyAiGuardBreak2Submission
     ] = field(default_factory=dict)
+    barrier_submissions: Mapping[
+        str,EnemyAiBarrierSubmission
+    ] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         object.__setattr__(
@@ -727,6 +736,44 @@ class EnemyAiCommonCommandBatch:
         ):
             raise ValueError(
                 "enemy AI GuardBreak2 semantic submissions overlap another skill"
+            )
+
+        barrier_submissions={
+            str(key):value for key,value in self.barrier_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "barrier_submissions",
+            MappingProxyType(barrier_submissions),
+        )
+        for participant_id,submission in barrier_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI Barrier submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiBarrierSubmission):
+                raise TypeError(
+                    f"enemy AI Barrier submission has wrong type for "
+                    f"{participant_id}"
+                )
+            if str(submission.participant_id) != participant_id:
+                raise ValueError("enemy AI Barrier participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1) != BATTLE_COM_ATTACK
+                or int(carrier.command2) != int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI Barrier carrier must be ATTACK/source-target"
+                )
+        if set(barrier_submissions) & (
+            set(guard_break2_submissions) | set(nocast_submissions)
+            | set(tear_submissions) | set(fall_submissions)
+            | set(mp_submissions) | set(damage_submissions)
+            | set(rehp_submissions) | set(magic_submissions)
+        ):
+            raise ValueError(
+                "enemy AI Barrier semantic submissions overlap another skill"
             )
 
 
@@ -1380,6 +1427,7 @@ class LocalRuntimeSessionCoordinator:
         allow_battle_tear_skill: bool = False,
         allow_nocast_skill: bool = False,
         allow_guard_break2_skill: bool = False,
+        allow_barrier_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1527,6 +1575,7 @@ class LocalRuntimeSessionCoordinator:
         battle_tear_submissions={}
         nocast_submissions={}
         guard_break2_submissions={}
+        barrier_submissions={}
         for enemy_id in ai_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
                 raise ValueError(
@@ -1589,6 +1638,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_battle_tear_skill)
                 or bool(allow_nocast_skill)
                 or bool(allow_guard_break2_skill)
+                or bool(allow_barrier_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1599,6 +1649,27 @@ class LocalRuntimeSessionCoordinator:
                 skill_ids=tuple(int(x) for x in spawned.template.skill_slot_ids)
                 selected_skill_id=skill_ids[int(decision.skill_slot)]
                 selected_skill=petskill_runtime.skills.get(selected_skill_id)
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == BARRIER_CALLBACK
+                    and bool(allow_barrier_skill)
+                ):
+                    submission=resolve_enemy_ai_barrier_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                    )
+                    # Internal scheduling carrier only. Pinned source profiles
+                    # disagree on numeric BARRIER COM1 (2024 vs 2023), so no
+                    # recovered25 historical command number is asserted.
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    barrier_submissions[enemy_id]=submission
+                    continue
+
                 if (
                     selected_skill is not None
                     and selected_skill.function_name == GUARD_BREAK2_CALLBACK
@@ -1851,6 +1922,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_Nocast")
             if bool(allow_guard_break2_skill):
                 allowed_parts.append("PETSKILL_GuardBreak2")
+            if bool(allow_barrier_skill):
+                allowed_parts.append("PETSKILL_Barrier")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1869,6 +1942,7 @@ class LocalRuntimeSessionCoordinator:
             battle_tear_submissions=battle_tear_submissions,
             nocast_submissions=nocast_submissions,
             guard_break2_submissions=guard_break2_submissions,
+            barrier_submissions=barrier_submissions,
         )
 
     def build_persistent_enemy_common_commands(
@@ -2057,6 +2131,9 @@ class LocalRuntimeSessionCoordinator:
         nocast_rolls_by_attack_id: Mapping[
             str,NocastActionRolls
         ] | None = None,
+        barrier_rolls_by_attack_id: Mapping[
+            str,BarrierActionRolls
+        ] | None = None,
         no_risk: bool = False,
         field_attr: str = "none",
         field_power: int = 0,
@@ -2166,6 +2243,7 @@ class LocalRuntimeSessionCoordinator:
             allow_battle_tear_skill=True,
             allow_nocast_skill=True,
             allow_guard_break2_skill=True,
+            allow_barrier_skill=True,
         )
         enemy_commands = enemy_batch.commands
         rehp_enemy_ids=set(enemy_batch.enemy_rehp_submissions)
@@ -2267,6 +2345,28 @@ class LocalRuntimeSessionCoordinator:
         if nocast_enemy_ids and state.nocast_overlay is None:
             raise ValueError(
                 "enemy Nocast requires explicit persistent battle overlay"
+            )
+
+        barrier_enemy_ids=set(enemy_batch.barrier_submissions)
+        normalized_barrier_rolls={
+            str(key):value
+            for key,value in (barrier_rolls_by_attack_id or {}).items()
+        }
+        if set(normalized_barrier_rolls) != barrier_enemy_ids:
+            missing=sorted(barrier_enemy_ids-set(normalized_barrier_rolls))
+            extra=sorted(set(normalized_barrier_rolls)-barrier_enemy_ids)
+            raise ValueError(
+                "enemy Barrier RNG mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        for participant_id,rolls in normalized_barrier_rolls.items():
+            if not isinstance(rolls,BarrierActionRolls):
+                raise TypeError(
+                    f"enemy Barrier RNG has wrong type for {participant_id}"
+                )
+        if barrier_enemy_ids and state.nocast_overlay is None:
+            raise ValueError(
+                "enemy Barrier requires explicit persistent late-status overlay"
             )
 
         attack_magic_enemy_ids={
@@ -2609,6 +2709,10 @@ class LocalRuntimeSessionCoordinator:
                 enemy_batch.nocast_submissions
             ),
             nocast_rolls_by_participant_id=normalized_nocast_rolls,
+            barrier_submissions_by_participant_id=(
+                enemy_batch.barrier_submissions
+            ),
+            barrier_rolls_by_participant_id=normalized_barrier_rolls,
             defense_profile=str(defense_profile),
             no_risk=bool(no_risk),
             field_attr=str(field_attr),

@@ -5599,3 +5599,29 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - The 11 GuardBreak2 slot uses are now executable, moving recovered pet-skill slot-use coverage from **2370 / 2486 = 95.3%** to **2381 / 2486 = 95.8%**. Merge remains separately classified historical UB.
 - GuardBreak2 is added to `CLOSED_RUNTIME_CALLBACKS`. The verified preservation-bundle callback-pressure probe must rerun; its new highest-pressure OPEN callback is the next implementation target and is not assumed in advance.
 
+## Phase 1 recovered25 Barrier fixed-source + runtime closure — 2026-10-02
+
+- The verified callback-pressure report selected `PETSKILL_Barrier` as the next open callback after GuardBreak2: recovered25 IDs **579,594**, **10** positive enemybase slot uses across **10** templates.
+- Fixed-source audit closes the guarded semantics across pinned gavin `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`, iris `9e6c8ce2cd8ed532a7157773acd1c61582c178b5`, and Bismarck `999ffdf1d220ec6666eb65339180689c9caf1876`. All three enable `_SKILL_BARRIER` and `_MAGIC_BARRIER`, use `BATTLE_ST_BARRIER=9`, and define source `PETSKILL_BARRIER=546`.
+- The fixed command enum is intentionally not projected onto recovered25: gavin/iris compile Barrier COM1 as **2024**, while pinned Bismarck compiles it as **2023**. The recovered runtime therefore uses a typed semantic submission with ordinary ATTACK only as an internal ordering carrier.
+- Verified recovered rows:
+  - ID **579**: FIELD=1, TARGET=3, COST=2, ILLEGAL=0, OPTION parses to **turn=1 / Success offset=50**.
+  - ID **594**: FIELD=1, TARGET=3, COST=2, ILLEGAL=0, OPTION parses to **turn=3 / Success offset=50**.
+  CP950 and Big5 parsing converge for both rows.
+- Runtime integration preserves the fixed ordering and state-machine quirks instead of normalizing them:
+  - Barrier has no physical TargetAdjust path; it expands its stored target through the fixed MultiList semantics.
+  - Any existing status blocks the Barrier hit check before RNG.
+  - A successful check writes `turn+1` to the Barrier counter and positive Barrier blocks movement.
+  - Base statuses 1..6 visit before Barrier slot 9; Barrier slot 9 visits before Nocast slot 10.
+  - WEAKEN/BARRIER freeze guards restore status storage after the local decrement, while expiry/effect control still observes the decremented local counter.
+  - Barrier self-freezes when its stored counter is above one. The `counter=1 + active WEAKEN` edge can report local expiry while storage is restored to one. These are retained source behaviors, not corrected timers.
+  - Existing Nocast remains a direct-magic restriction only; it does not block ordinary physical ATTACK.
+- The existing late-status overlay was extended rather than duplicated: `NocastParticipantRuntime` now also carries MODBARRIER and the Barrier counter, and persistent battle state continues to carry the single explicit late-status overlay.
+- Dedicated Barrier runtime workflow **37025401083 = PASS**, including reference-model tests, direct round tests, base-status freeze tests, and recovered enemy-AI -> typed Barrier submission -> ordered round -> persistent overlay E2E.
+- Cross-regression acceptance is green: battle core **37024251352**, runtime golden **37024771754**, local runtime coordinator **37025116777**, stable pet-skill core **37024194681**, Nocast **37025117036**, GuardBreak2 **37025116886**, BattleTear **37025116673**, FallGround **37025116855**, DamageToHp **37025116789**, MpDamage **37025116935**, ReHP **37025117095**, AttackMagic coordinator **37025116602**, AttackMagic round **37024251364**, AttackMagic state adapter **37024251404**, and Taiwan-v1 **37024251560** all PASS.
+- **BARRIER_FIXED_SOURCE_R1 = CLOSED.**
+- **RECOVERED25_BARRIER_POPULATION_R1 = CLOSED.**
+- **RECOVERED25_BARRIER_RUNTIME_R1 = CLOSED.**
+- The 10 Barrier slot uses are now executable, moving recovered pet-skill slot-use coverage from **2381 / 2486 = 95.8%** to **2391 / 2486 ≈ 96.2%**. Merge remains separately classified historical UB.
+- Barrier is added to `CLOSED_RUNTIME_CALLBACKS`. Verified callback-pressure workflow **37025618270 = PASS**; the regenerated preservation-bundle report selects the next OPEN callback mechanically as **PETSKILL_AttackCrazed**, recovered25 ID **613**, **9** slot uses across **9** templates. This is the next research target; no AttackCrazed runtime semantics are assumed yet.
+

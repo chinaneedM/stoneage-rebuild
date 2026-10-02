@@ -12,6 +12,10 @@ from tools.stoneage_nocast_model import (
     NocastTick,
     nocast_blocks_direct_magic,
 )
+from tools.stoneage_barrier_model import (
+    BarrierApplication,
+    BarrierSelfTick,
+)
 
 
 @dataclass(frozen=True)
@@ -23,8 +27,10 @@ class NocastParticipantRuntime:
     toughness: int
     dexterity: int
     mod_nocast: int = 0
+    mod_barrier: int = 0
     suit_resist: int = 0
     counter: int = 0
+    barrier_counter: int = 0
     nc_flag: int | None = None
     unmodeled_status_active: bool = False
     weaken_active_at_visit: bool = False
@@ -33,7 +39,8 @@ class NocastParticipantRuntime:
     def __post_init__(self) -> None:
         for name in (
             "vital", "strength", "toughness", "dexterity",
-            "mod_nocast", "suit_resist", "counter",
+            "mod_nocast", "mod_barrier", "suit_resist",
+            "counter", "barrier_counter",
         ):
             object.__setattr__(self, name, int(getattr(self, name)))
         attrs=(self.vital,self.strength,self.toughness,self.dexterity)
@@ -41,6 +48,8 @@ class NocastParticipantRuntime:
             raise ValueError("Nocast participant stats require a positive nonnegative sum")
         if self.counter < 0:
             raise ValueError("Nocast counter cannot be negative")
+        if self.barrier_counter < 0:
+            raise ValueError("Barrier counter cannot be negative")
         if self.nc_flag is not None:
             flag=int(self.nc_flag)
             if flag not in {0,1}:
@@ -59,6 +68,7 @@ class NocastParticipantRuntime:
             or self.unmodeled_status_active
             or self.weaken_active_at_visit
             or self.barrier_active_at_visit
+            or self.barrier_counter > 0
             or self.counter > 0
         )
 
@@ -79,6 +89,33 @@ class NocastParticipantRuntime:
             self,
             counter=int(tick.counter_after),
             nc_flag=tick.nc_flag,
+        )
+
+    def after_barrier_application(
+        self,
+        application: BarrierApplication,
+    ) -> "NocastParticipantRuntime":
+        if application.counter_written is None:
+            return self
+        return replace(
+            self,
+            barrier_counter=int(application.counter_written),
+        )
+
+    def after_barrier_tick(
+        self,
+        tick: BarrierSelfTick,
+    ) -> "NocastParticipantRuntime":
+        return replace(
+            self,
+            barrier_counter=int(tick.counter_after),
+        )
+
+    @property
+    def barrier_active_for_late_statuses(self) -> bool:
+        return bool(
+            self.barrier_active_at_visit
+            or int(self.barrier_counter) > 0
         )
 
 

@@ -1,0 +1,36 @@
+name: Validate StoneAge Barrier runtime
+concurrency:
+  group: stoneage-barrier-runtime
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-barrier-runtime.yml
+      - tools/stoneage_barrier_model.py
+      - tools/stoneage_barrier_runtime_state.py
+      - tools/stoneage_enemy_ai_barrier_bridge.py
+      - tools/stoneage_nocast_runtime_state.py
+      - tools/stoneage_battle_status_model.py
+      - tools/stoneage_battle_round_model.py
+      - tools/stoneage_battle_state_model.py
+      - tools/stoneage_local_runtime_session_coordinator.py
+      - tests/test_stoneage_barrier_model.py
+      - tests/test_stoneage_barrier_runtime.py
+      - tests/test_stoneage_battle_status_model.py
+      - tests/test_stoneage_local_runtime_session_coordinator.py
+permissions:
+  contents: read
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Barrier runtime chain
+        run: |
+          python3 -m unittest \
+            tests.test_stoneage_barrier_model \
+            tests.test_stoneage_barrier_runtime \
+            tests.test_stoneage_battle_status_model \
+            tests.test_stoneage_local_runtime_session_coordinator.LocalRuntimeSessionCoordinatorTests.test_recovered_enemy_ai_barrier_executes_and_persists -v

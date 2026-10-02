@@ -17,20 +17,22 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
             500:SimpleNamespace(function_name="PETSKILL_Merge"),
             580:SimpleNamespace(function_name="PETSKILL_Nocast"),
             543:SimpleNamespace(function_name="PETSKILL_GuardBreak2"),
+            579:SimpleNamespace(function_name="PETSKILL_Barrier"),
         })
         enemies=SimpleNamespace(templates={
             10:SimpleNamespace(skill_slot_ids=(1,300,300,400,500,580,543)),
-            11:SimpleNamespace(skill_slot_ids=(210,301,300,400,0,0,0)),
+            11:SimpleNamespace(skill_slot_ids=(210,301,300,400,579,0,0)),
         })
         result=analyze_runtime_objects(pets,enemies)
         rows={row["callback"]:row for row in result["rows"]}
-        self.assertEqual(result["total_positive_slot_uses"],11)
+        self.assertEqual(result["total_positive_slot_uses"],12)
         self.assertEqual(rows["PETSKILL_Explode"]["slot_uses"],4)
         self.assertEqual(rows["PETSKILL_Explode"]["skill_ids"],(300,301))
         self.assertEqual(rows["PETSKILL_NormalAttack"]["status"],"closed_runtime")
         self.assertEqual(rows["PETSKILL_FallGround"]["status"],"closed_runtime")
         self.assertEqual(rows["PETSKILL_Nocast"]["status"],"closed_runtime")
         self.assertEqual(rows["PETSKILL_GuardBreak2"]["status"],"closed_runtime")
+        self.assertEqual(rows["PETSKILL_Barrier"]["status"],"closed_runtime")
         self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
         self.assertEqual(result["next_open"]["callback"],"PETSKILL_Explode")
 

@@ -343,6 +343,29 @@ class BattleStatusModelTests(unittest.TestCase):
         self.assertEqual(expiring.poison_damage,0)
         self.assertEqual(expiring.hp_after,10)
 
+    def test_barrier_freeze_restores_storage_but_uses_local_decrement(self):
+        frozen=resolve_base_status_tick(
+            BaseStatusTickInputs(
+                hp=10,
+                status=BaseBattleStatusState(poison=2),
+                poison_stat_sum=10000,
+                barrier_freeze_active=True,
+            )
+        )
+        self.assertEqual(frozen.status_after.poison,2)
+        self.assertEqual(frozen.poison_damage,9)
+
+        expiry_edge=resolve_base_status_tick(
+            BaseStatusTickInputs(
+                hp=100,
+                status=BaseBattleStatusState(paralysis=1),
+                barrier_freeze_active=True,
+            )
+        )
+        self.assertEqual(expiry_edge.status_after.paralysis,1)
+        self.assertEqual(expiry_edge.expired_statuses,("paralysis",))
+        self.assertFalse(expiry_edge.can_move_after_tick)
+
     def test_confusion_boundary_and_increment_before_target_probe(self):
         rewritten=resolve_base_status_tick(
             BaseStatusTickInputs(

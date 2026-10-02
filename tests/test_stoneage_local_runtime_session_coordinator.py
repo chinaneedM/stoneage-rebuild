@@ -62,6 +62,7 @@ from tools.stoneage_nocast_runtime_state import (
     NocastParticipantRuntime,
     NocastRoundOverlay,
 )
+from tools.stoneage_barrier_runtime_state import BarrierActionRolls
 from tools.stoneage_recovered25_attack_magic_runtime import (
     Recovered25AttackMagicEntry,
     Recovered25AttackMagicRuntime,
@@ -5625,6 +5626,118 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                 blocked,
             )
 
+
+    def test_recovered_enemy_ai_barrier_executes_and_persists(self):
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-barrier"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,group,
+            entry_count_roll=1,selection_rolls=(0,),
+            birth_rolls=(EnemyBirthRolls(
+                level_roll=1,birth_offsets=(0,0,0,0),
+                spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+            ),),
+        )
+        enemy_id=str(context.battle.enemies[0].participant_id)
+        spawned=context.spawned_enemies[0]
+        skills=dict(self.stack.petskill_runtime.skills)
+        skills[579]=Recovered25PetSkillEntry(
+            skill_id=579,field=1,target=3,cost=2,illegal=0,
+            function_name="PETSKILL_Barrier",
+            option_bytes="turn=1 成=50".encode("cp950"),
+        )
+        skills[594]=Recovered25PetSkillEntry(
+            skill_id=594,field=1,target=3,cost=2,illegal=0,
+            function_name="PETSKILL_Barrier",
+            option_bytes="turn=3 成=50".encode("cp950"),
+        )
+        self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+            skills=skills,
+            source_file=self.stack.petskill_runtime.source_file,
+        )
+        enemy=replace(context.battle.enemies[0],quick=200)
+        player=replace(context.battle.player,quick=10)
+        context=replace(
+            context,
+            battle=replace(context.battle,player=player,enemies=(enemy,)),
+            spawned_enemies=(replace(
+                spawned,
+                participant=enemy,
+                template=replace(
+                    spawned.template,
+                    skill_ids=(594,20,30,40,50,60,70),
+                    skill_slot_ids=(594,20,30,40,50,60,70),
+                ),
+                variant=replace(
+                    spawned.variant,
+                    tactics_option="at:0;1;1|gu:0|es:0|wa:1;0;0;0;0;0;0",
+                ),
+            ),),
+        )
+        overlay=NocastRoundOverlay({
+            "player":NocastParticipantRuntime(25,25,25,25),
+            enemy_id:NocastParticipantRuntime(25,25,25,25),
+        })
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+            nocast_overlay=overlay,
+        )
+        context,result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player":BattleCommand(BATTLE_COM_ATTACK,command2=10)
+                },
+                enemy_mode_rolls={enemy_id:0},
+                enemy_target_rolls={enemy_id:0},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={"player":0,enemy_id:0},
+                profiles={
+                    "player":BattleCombatProfile(
+                        fixed_dex=10,fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                    enemy_id:BattleCombatProfile(
+                        fixed_dex=200,fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                },
+                attack_rolls={},
+                barrier_rolls_by_attack_id={
+                    enemy_id:BarrierActionRolls(
+                        hit_rolls_by_slot={0:1}
+                    )
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        applied=next(
+            event for event in result.round.events
+            if event.participant_id==enemy_id
+            and event.barrier_application is not None
+        )
+        self.assertEqual(applied.result,"barrier_applied")
+        self.assertEqual(applied.barrier_application.counter_written,4)
+        self.assertTrue(any(
+            event.participant_id=="player"
+            and event.result=="status_no_action"
+            for event in result.round.events
+        ))
+        player_runtime=(
+            context.persistent_battle_state.nocast_overlay
+            .runtime_by_participant_id["player"]
+        )
+        self.assertEqual(player_runtime.barrier_counter,4)
 
     def test_recovered_enemy_ai_guard_break2_executes_semantic_attack(self):
         session=LocalRuntimeSessionState(
