@@ -54,6 +54,10 @@ from tools.stoneage_enemy_ai_nocast_bridge import (
     EnemyAiNocastSubmission,
     resolve_enemy_ai_nocast_submission,
 )
+from tools.stoneage_enemy_ai_barrier_bridge import (
+    EnemyAiBarrierSubmission,
+    resolve_enemy_ai_barrier_submission,
+)
 from tools.stoneage_enemy_ai_guard_break2_bridge import (
     EnemyAiGuardBreak2Submission,
     resolve_enemy_ai_guard_break2_submission,
@@ -62,6 +66,8 @@ from tools.stoneage_guard_break2_model import (
     CALLBACK_NAME as GUARD_BREAK2_CALLBACK,
 )
 from tools.stoneage_nocast_model import CALLBACK_NAME as NOCAST_CALLBACK
+from tools.stoneage_barrier_model import CALLBACK_NAME as BARRIER_CALLBACK
+from tools.stoneage_barrier_runtime_state import BarrierActionRolls
 from tools.stoneage_nocast_runtime_state import (
     NocastActionRolls,
     NocastRoundOverlay,
@@ -415,6 +421,9 @@ class EnemyAiCommonCommandBatch:
     ] = field(default_factory=dict)
     guard_break2_submissions: Mapping[
         str,EnemyAiGuardBreak2Submission
+    ] = field(default_factory=dict)
+    barrier_submissions: Mapping[
+        str,EnemyAiBarrierSubmission
     ] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
