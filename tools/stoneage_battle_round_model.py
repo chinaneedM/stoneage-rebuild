@@ -4575,6 +4575,23 @@ def resolve_ordinary_round(
             continue
 
         command=entry.command
+        late_runtime=(
+            None
+            if nocast_working is None
+            else nocast_working[str(participant_id)]
+        )
+        barrier_blocked_before=bool(
+            late_runtime is not None
+            and int(late_runtime.barrier_counter) > 0
+        )
+        if barrier_blocked_before:
+            command=BattleCommand(
+                BATTLE_COM_NONE,
+                command2=entry.command.command2,
+                command3=entry.command.command3,
+                input_complete=entry.command.input_complete,
+            )
+            guarding.discard(slot)
         runtime=status_runtime[str(participant_id)]
         status_before=runtime.status
         base_status_was_active=any(
@@ -4613,6 +4630,14 @@ def resolve_ordinary_round(
                     ),
                     work_quick=runtime.work_quick,
                     ride_work_quick=runtime.ride_work_quick,
+                    weaken_freeze_active=bool(
+                        late_runtime is not None
+                        and late_runtime.weaken_active_at_visit
+                    ),
+                    barrier_freeze_active=bool(
+                        late_runtime is not None
+                        and late_runtime.barrier_active_for_late_statuses
+                    ),
                 )
             )
             current_status_tick=tick
@@ -4638,12 +4663,6 @@ def resolve_ordinary_round(
                     target_hp_after=int(tick.hp_after),
                     status_tick_resolution=tick,
                 )
-            )
-            tick_nocast_runtime(
-                str(participant_id),
-                int(slot),
-                int(entry.command.command1),
-                int(entry.action_value),
             )
             if tick.command_override == "none":
                 command=BattleCommand(
@@ -4677,13 +4696,31 @@ def resolve_ordinary_round(
                 guarding.discard(slot)
             command_by_slot[slot]=command
 
-        if not base_status_was_active:
-            tick_nocast_runtime(
-                str(participant_id),
-                int(slot),
-                int(entry.command.command1),
-                int(entry.action_value),
+        barrier_tick=tick_barrier_runtime(
+            str(participant_id),
+            int(slot),
+            int(entry.command.command1),
+            int(entry.action_value),
+        )
+        if (
+            barrier_tick is not None
+            and int(barrier_tick.counter_after) > 0
+        ):
+            command=BattleCommand(
+                BATTLE_COM_NONE,
+                command2=entry.command.command2,
+                command3=entry.command.command3,
+                input_complete=entry.command.input_complete,
             )
+            command_by_slot[slot]=command
+            guarding.discard(slot)
+
+        tick_nocast_runtime(
+            str(participant_id),
+            int(slot),
+            int(entry.command.command1),
+            int(entry.action_value),
+        )
 
         if command.command1 == BATTLE_COM_S_EARTHROUND1:
             next_earthround=BattleCommand(
