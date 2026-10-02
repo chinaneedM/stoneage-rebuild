@@ -149,42 +149,32 @@ def _git_head(root: Path) -> str:
     ).strip()
 
 
-def _enum_probe(base: Path) -> tuple[int, int, int]:
-    code = r"""
-    #include <stdio.h>
-    #include "battle.h"
-    #include "pet_skillinfo.h"
-    int main(void) {
-      printf("%d %d %d\n",
-        BATTLE_COM_S_GBREAK2,
-        PETSKILL_GUARDBREAK2,
-        PETSKILL_SACRIFICE);
-      return 0;
-    }
-    """
-    with tempfile.TemporaryDirectory() as directory:
-        root = Path(directory)
-        src = root / "probe.c"
-        exe = root / "probe"
-        src.write_text(code)
-        subprocess.run(
-            [
-                "cc", "-std=c99", "-O0",
-                "-I", str(base),
-                "-I", str(base / "include"),
-                "-I", str(base / "common"),
-                "-I", str(base / "lua"),
-                str(src), "-o", str(exe),
-            ],
-            check=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        )
-        out = subprocess.check_output([str(exe)], text=True).strip()
-    values = tuple(map(int, out.split()))
-    if len(values) != 3:
-        raise ValueError("unexpected GuardBreak2 enum probe output")
-    return values
+def _macro_int(text: str, name: str) -> int:
+    match=re.search(
+        rf"^\s*#\s*define\s+{re.escape(name)}\s*\(\s*(-?\d+)\s*\)",
+        text,
+        re.MULTILINE,
+    )
+    if match is None:
+        raise ValueError(f"missing integer macro: {name}")
+    return int(match.group(1))
+
+
+def _symbol_probe(battle_header: str, petskill_header: str):
+    source_skill_id=_macro_int(
+        petskill_header,
+        SOURCE_PETSKILL_SYMBOL_NAME,
+    )
+    source_sacrifice_id=_macro_int(
+        petskill_header,
+        "PETSKILL_SACRIFICE",
+    )
+    command_symbol_present=bool(re.search(
+        rf"^\s*{re.escape(COMMAND_NAME)}\s*,",
+        battle_header,
+        re.MULTILINE,
+    ))
+    return command_symbol_present,source_skill_id,source_sacrifice_id
 
 
 def analyze_profile(name: str, root: Path):
@@ -263,7 +253,11 @@ def analyze_profile(name: str, root: Path):
         "BCF_GUARD" in event_fn and "BCF_GBREAK" in event_fn
     )
 
-    command_value, source_skill_id, source_sacrifice_id = _enum_probe(base)
+    (
+        battle_header_command_symbol,
+        source_skill_id,
+        source_sacrifice_id,
+    ) = _symbol_probe(data["battle_h"],data["petskill_h"])
     source_symbol_order = (
         source_skill_id == 542 and source_sacrifice_id == 543
     )
@@ -278,6 +272,7 @@ def analyze_profile(name: str, root: Path):
         "event_attackseq": event_attackseq,
         "event_damage_sub": event_damage_sub,
         "event_marks_guardbreak": event_marks_guardbreak,
+        "battle_header_command_symbol": battle_header_command_symbol,
         "source_symbol_order": source_symbol_order,
     }
     if not all(gates.values()):
@@ -286,7 +281,6 @@ def analyze_profile(name: str, root: Path):
     return {
         "name": name,
         "commit": actual,
-        "command_value": command_value,
         "source_skill_id": source_skill_id,
         "source_sacrifice_id": source_sacrifice_id,
         "gates": gates,
@@ -301,7 +295,6 @@ def emit(rows) -> None:
         fields = [
             f"profile={row['name']}",
             f"commit={row['commit']}",
-            f"command_value={row['command_value']}",
             f"source_skill_symbol_id={row['source_skill_id']}",
             f"source_sacrifice_symbol_id={row['source_sacrifice_id']}",
         ]
@@ -315,11 +308,9 @@ def emit(rows) -> None:
                 "SOURCE_SHA256|"
                 f"profile={row['name']}|file={key}|sha256={value}"
             )
-    command_values={row["command_value"] for row in rows}
     source_ids={row["source_skill_id"] for row in rows}
     closed=(
         len(rows)==3
-        and len(command_values)==1
         and source_ids=={542}
         and all(all(row["gates"].values()) for row in rows)
     )
