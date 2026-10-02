@@ -172,10 +172,10 @@ def analyze_profile(name:str,root:Path):
     ))
     status_seq=_compact(_definition_window(
         data["battle"],"BATTLE_StatusSeq",max_chars=15000
-    ))
+    )).replace("char_index","charaindex")
     can_move=_compact(_definition_window(
         data["battle"],"BATTLE_CanMoveCheck",max_chars=5000
-    ))
+    )).replace("char_index","charaindex")
 
     dispatch_compact=_compact(data["battle"])
     case=dispatch_compact.find(f"case{COMMAND_NAME}:")
