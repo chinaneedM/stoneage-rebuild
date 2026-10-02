@@ -46,7 +46,7 @@ def _compact(text: str) -> str:
 
 
 def _function(text: str, signature: str) -> str:
-    """Return the first C definition, ignoring prototypes/comments/literals."""
+    """Return the first C definition, ignoring comments/string brace noise."""
     search_from = 0
     while True:
         start = text.find(signature, search_from)
@@ -59,45 +59,62 @@ def _function(text: str, signature: str) -> str:
         search_from = start + len(signature)
 
     depth = 0
-    index = brace
     state = "code"
+    index = brace
     while index < len(text):
         char = text[index]
         nxt = text[index + 1] if index + 1 < len(text) else ""
 
-        if state == "line_comment":
-            if char == "\n":
-                state = "code"
-        elif state == "block_comment":
-            if char == "*" and nxt == "/":
-                state = "code"
-                index += 1
-        elif state in {"string", "char"}:
-            if char == "\\":
-                index += 1
-            elif (
-                state == "string" and char == '"'
-                or state == "char" and char == "'"
-            ):
-                state = "code"
-        else:
+        if state == "code":
             if char == "/" and nxt == "/":
                 state = "line_comment"
-                index += 1
-            elif char == "/" and nxt == "*":
+                index += 2
+                continue
+            if char == "/" and nxt == "*":
                 state = "block_comment"
-                index += 1
-            elif char == '"':
+                index += 2
+                continue
+            if char == '"':
                 state = "string"
-            elif char == "'":
+                index += 1
+                continue
+            if char == "'":
                 state = "char"
-            elif char == "{":
+                index += 1
+                continue
+            if char == "{":
                 depth += 1
             elif char == "}":
                 depth -= 1
                 if depth == 0:
                     return text[start:index + 1]
-        index += 1
+            index += 1
+            continue
+
+        if state == "line_comment":
+            if char == "\n":
+                state = "code"
+            index += 1
+            continue
+
+        if state == "block_comment":
+            if char == "*" and nxt == "/":
+                state = "code"
+                index += 2
+                continue
+            index += 1
+            continue
+
+        if state in {"string", "char"}:
+            quote = '"' if state == "string" else "'"
+            if char == "\\":
+                index += 2
+                continue
+            if char == quote:
+                state = "code"
+            index += 1
+            continue
+
     raise ValueError(f"unterminated function: {signature}")
 
 
