@@ -1427,6 +1427,7 @@ class LocalRuntimeSessionCoordinator:
         allow_battle_tear_skill: bool = False,
         allow_nocast_skill: bool = False,
         allow_guard_break2_skill: bool = False,
+        allow_barrier_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1574,6 +1575,7 @@ class LocalRuntimeSessionCoordinator:
         battle_tear_submissions={}
         nocast_submissions={}
         guard_break2_submissions={}
+        barrier_submissions={}
         for enemy_id in ai_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
                 raise ValueError(
@@ -1636,6 +1638,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_battle_tear_skill)
                 or bool(allow_nocast_skill)
                 or bool(allow_guard_break2_skill)
+                or bool(allow_barrier_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1646,6 +1649,27 @@ class LocalRuntimeSessionCoordinator:
                 skill_ids=tuple(int(x) for x in spawned.template.skill_slot_ids)
                 selected_skill_id=skill_ids[int(decision.skill_slot)]
                 selected_skill=petskill_runtime.skills.get(selected_skill_id)
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == BARRIER_CALLBACK
+                    and bool(allow_barrier_skill)
+                ):
+                    submission=resolve_enemy_ai_barrier_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                    )
+                    # Internal scheduling carrier only. Pinned source profiles
+                    # disagree on numeric BARRIER COM1 (2024 vs 2023), so no
+                    # recovered25 historical command number is asserted.
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    barrier_submissions[enemy_id]=submission
+                    continue
+
                 if (
                     selected_skill is not None
                     and selected_skill.function_name == GUARD_BREAK2_CALLBACK
@@ -1898,6 +1922,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_Nocast")
             if bool(allow_guard_break2_skill):
                 allowed_parts.append("PETSKILL_GuardBreak2")
+            if bool(allow_barrier_skill):
+                allowed_parts.append("PETSKILL_Barrier")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1916,6 +1942,7 @@ class LocalRuntimeSessionCoordinator:
             battle_tear_submissions=battle_tear_submissions,
             nocast_submissions=nocast_submissions,
             guard_break2_submissions=guard_break2_submissions,
+            barrier_submissions=barrier_submissions,
         )
 
     def build_persistent_enemy_common_commands(
