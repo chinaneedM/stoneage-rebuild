@@ -42,6 +42,13 @@ from tools.stoneage_enemy_ai_battle_tear_bridge import (
     EnemyAiBattleTearSubmission,
 )
 from tools.stoneage_enemy_ai_nocast_bridge import EnemyAiNocastSubmission
+from tools.stoneage_enemy_ai_guard_break2_bridge import (
+    EnemyAiGuardBreak2Submission,
+)
+from tools.stoneage_guard_break2_model import (
+    GuardBreak2DamageResolution,
+    resolve_guard_break2_damage_step,
+)
 from tools.stoneage_nocast_model import (
     NocastApplication,
     NocastCheckInputs,
@@ -895,6 +902,7 @@ class OrdinaryRoundEvent:
     mp_damage_resolution: MpDamageResolution | None = None
     fall_ground_resolution: FallGroundResolution | None = None
     battle_tear_augmentation: BattleTearAugmentation | None = None
+    guard_break2_resolution: GuardBreak2DamageResolution | None = None
     nocast_application: NocastApplication | None = None
     nocast_tick_resolution: NocastTick | None = None
 
@@ -3309,6 +3317,9 @@ def resolve_ordinary_round(
     battle_tear_submissions_by_participant_id: Mapping[
         str,EnemyAiBattleTearSubmission
     ] | None = None,
+    guard_break2_submissions_by_participant_id: Mapping[
+        str,EnemyAiGuardBreak2Submission
+    ] | None = None,
     fall_ground_submissions_by_participant_id: Mapping[
         str,EnemyAiFallGroundSubmission
     ] | None = None,
@@ -3797,6 +3808,49 @@ def resolve_ordinary_round(
         ):
             raise ValueError(
                 "Nocast ordering carrier must be ATTACK/source-target"
+            )
+
+    guard_break2_submissions={
+        str(participant_id):submission
+        for participant_id,submission in (
+            guard_break2_submissions_by_participant_id or {}
+        ).items()
+    }
+    guard_break2_actor_ids=set(guard_break2_submissions)
+    unknown_guard_break2_ids=sorted(
+        guard_break2_actor_ids-set(slot_by_id)
+    )
+    if unknown_guard_break2_ids:
+        raise ValueError(
+            "GuardBreak2 submissions reference unknown actors: "
+            f"{unknown_guard_break2_ids}"
+        )
+    if guard_break2_actor_ids & (
+        nocast_actor_ids | fall_ground_actor_ids | battle_tear_actor_ids
+        | mp_damage_actor_ids | damage_to_hp_actor_ids
+        | enemy_rehp_actor_ids | attack_magic_actor_ids
+    ):
+        raise ValueError(
+            "GuardBreak2 semantic submissions overlap another skill"
+        )
+    for participant_id,submission in guard_break2_submissions.items():
+        if not isinstance(submission,EnemyAiGuardBreak2Submission):
+            raise TypeError(
+                f"GuardBreak2 submission for {participant_id} has wrong type"
+            )
+        if str(submission.participant_id) != participant_id:
+            raise ValueError("GuardBreak2 submission participant drift")
+        entry=prepared_entry_by_id[participant_id]
+        if entry.participant.side != "enemy" or entry.participant.kind != "enemy":
+            raise ValueError(
+                "recovered25 GuardBreak2 currently admits enemy actors only"
+            )
+        if (
+            int(entry.command.command1) != BATTLE_COM_ATTACK
+            or int(entry.command.command2) != int(submission.source_target_slot)
+        ):
+            raise ValueError(
+                "GuardBreak2 ordering carrier must be ATTACK/source-target"
             )
 
     if nocast_actor_ids and nocast_overlay is None:
@@ -6144,6 +6198,22 @@ def resolve_ordinary_round(
                 damage_react_state[source_defender_id]
             )
 
+        guard_break2_submission=None
+        if (
+            str(participant_id) in guard_break2_submissions
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            guard_break2_submission=guard_break2_submissions[
+                str(participant_id)
+            ]
+            if int(command.command1) != BATTLE_COM_ATTACK:
+                raise ValueError(
+                    "GuardBreak2 semantic action lost ATTACK ordering carrier"
+                )
+
         battle_tear_submission=None
         battle_tear_source_react_blocked=False
         if (
@@ -6272,7 +6342,27 @@ def resolve_ordinary_round(
                 defender.level,
             )
 
-        if (
+        guard_break2_resolution=None
+        if guard_break2_submission is not None:
+            guard_break2_resolution=resolve_guard_break2_damage_step(
+                int(damage),
+                defender_command_is_guard=(
+                    int(damage_target_slot) in guarding
+                ),
+                defender_confusion_counter=int(
+                    status_runtime[str(defender_id)].status.confusion
+                ),
+            )
+            damage=int(guard_break2_resolution.damage_after_multiplier)
+            if guard_break2_resolution.guard_adjust_applies_after_multiplier:
+                guard_roll=_validated_roll(
+                    rolls.guard_roll_1_100,
+                    1,
+                    100,
+                    "guard_roll_1_100",
+                )
+                damage=guard_damage(damage,guard_roll)
+        elif (
             damage_target_slot in guarding
             and attack_command_code != BATTLE_COM_S_GBREAK
         ):
@@ -6357,6 +6447,7 @@ def resolve_ordinary_round(
             or mp_damage_submission is not None
             or fall_ground_submission is not None
             or battle_tear_submission is not None
+            or guard_break2_submission is not None
         ):
             # Fixed specialized BATTLE_S_AttackDamage lets AttackSeq calculate
             # against a Guardian but passes its original defindex to DamageSub.
@@ -6810,6 +6901,7 @@ def resolve_ordinary_round(
                 mp_damage_resolution=mp_damage_resolution,
                 fall_ground_resolution=fall_ground_resolution,
                 battle_tear_augmentation=battle_tear_augmentation,
+                guard_break2_resolution=guard_break2_resolution,
                 ride_damage_split=ride_split,
                 ride_hp_resolution=ride_hp_resolution,
                 ride_pet_fell_rider_id=ride_pet_fell_rider_id,
@@ -6826,19 +6918,29 @@ def resolve_ordinary_round(
         if _battle_attack_continuation_allowed(
             guardian_redirected=(
                 False
-                if fall_ground_submission is not None
+                if (
+                    fall_ground_submission is not None
+                    or guard_break2_submission is not None
+                )
                 else guardian_redirected
             ),
             damage_reaction_active=(
                 False
-                if fall_ground_submission is not None
+                if (
+                    fall_ground_submission is not None
+                    or guard_break2_submission is not None
+                )
                 else continuation_blocked_by_reaction
             ),
             critical=(result == "critical"),
             target_guarding=(
                 (resolved_damage_slot in guarding)
                 if fall_ground_submission is not None
-                else (counter_target_slot in guarding)
+                else (
+                    (counter_target_slot in guarding)
+                    if guard_break2_submission is not None
+                    else (counter_target_slot in guarding)
+                )
             ),
             target_hp_after=after,
         ):

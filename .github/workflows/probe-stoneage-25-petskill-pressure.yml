@@ -71,5 +71,5 @@ jobs:
           git add research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
           if git diff --cached --quiet; then echo 'Pressure report unchanged.'; exit 0; fi
           git commit -m 'research: rank recovered pet-skill callback pressure'
-          git pull --rebase origin main
-          git push
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
