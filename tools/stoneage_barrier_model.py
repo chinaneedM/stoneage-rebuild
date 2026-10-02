@@ -185,19 +185,24 @@ class BarrierSelfTick:
     self_freeze_restored_storage: bool
 
 
-def resolve_barrier_self_tick(counter:int) -> BarrierSelfTick:
-    """Mirror Barrier's own StatusSeq visit.
+def resolve_barrier_self_tick(
+    counter:int,
+    *,
+    weaken_active_at_visit:bool=False,
+) -> BarrierSelfTick:
+    """Mirror Barrier's own StatusTbl[9] visit.
 
-    StatusSeq first decrements Barrier storage. If that storage remains
-    positive, _MAGIC_BARRIER immediately writes cnt+1 back. Therefore any
-    Barrier counter above one self-freezes indefinitely; a counter of one
-    reaches zero and expires on that visit.
+    StatusSeq decrements local cnt first. Active WEAKEN may immediately write
+    cnt+1 back; then active BARRIER may do the same. Expiry still tests the
+    decremented local cnt, so counter=1 with WEAKEN active can report expiry
+    while storage is restored to 1. Without WEAKEN, any counter above one
+    self-freezes indefinitely while counter=1 reaches stored zero.
     """
     before=int(counter)
     if before <= 0:
         return BarrierSelfTick(before,before,before,False,False)
     decremented=before-1
-    restored=decremented > 0
+    restored=bool(weaken_active_at_visit) or decremented > 0
     after=before if restored else decremented
     return BarrierSelfTick(
         counter_before=before,
