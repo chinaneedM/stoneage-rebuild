@@ -5917,6 +5917,122 @@ def resolve_ordinary_round(
                 )
             continue
 
+        barrier_actor_id=str(participant_id)
+        if (
+            barrier_actor_id in barrier_submissions
+            and int(command.command1) == BATTLE_COM_ATTACK
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            submission=barrier_submissions[barrier_actor_id]
+            if int(command.command2) != int(submission.source_target_slot):
+                raise ValueError(
+                    "Barrier ordering carrier target drift before execution"
+                )
+            if nocast_working is None:
+                raise ValueError("Barrier working overlay unexpectedly absent")
+
+            alive_slots=tuple(
+                other_slot
+                for other_slot in sorted(by_slot)
+                if (
+                    other_slot not in exited_slots
+                    and int(hp_by_slot.get(other_slot,0)) > 0
+                )
+            )
+            action_rolls=barrier_rolls[barrier_actor_id]
+            target_list=resolve_barrier_multilist(
+                int(submission.source_target_slot),
+                alive_slots=alive_slots,
+                retarget_draws_0_9=action_rolls.retarget_draws_0_9,
+            )
+            attempted_barrier_actor_ids.add(barrier_actor_id)
+            consumed_hit_roll_slots=set()
+            for target_slot in target_list.slots:
+                target_slot=int(target_slot)
+                if target_slot not in by_slot:
+                    raise ValueError(
+                        "Barrier target list resolved unoccupied slot"
+                    )
+                defender=by_slot[target_slot]
+                defender_id=str(defender.participant_id)
+                target_runtime=nocast_working[defender_id]
+                base_runtime=status_runtime[defender_id]
+                base_status_active=any(
+                    int(getattr(base_runtime.status,name))>0
+                    for name in (
+                        "poison","paralysis","sleep",
+                        "stone","drunk","confusion",
+                    )
+                )
+                any_status=target_runtime.has_any_status(
+                    base_status_active=base_status_active
+                )
+                hit_roll=action_rolls.hit_rolls_by_slot.get(target_slot)
+                application=resolve_barrier_target(
+                    BarrierCheckInputs(
+                        attacker_level=int(participant.level),
+                        defender_level=int(defender.level),
+                        pvp=False,
+                        attacker_fixed_luck=int(
+                            profiles[barrier_actor_id].fixed_luck
+                        ),
+                        defender_vital=int(target_runtime.vital),
+                        defender_strength=int(target_runtime.strength),
+                        defender_toughness=int(target_runtime.toughness),
+                        defender_dexterity=int(target_runtime.dexterity),
+                        defender_mod_barrier=int(target_runtime.mod_barrier),
+                        defender_suit_resist=int(target_runtime.suit_resist),
+                        any_existing_status=bool(any_status),
+                    ),
+                    submission.option,
+                    roll_1_100=hit_roll,
+                )
+                if application.rng_consumed:
+                    consumed_hit_roll_slots.add(target_slot)
+                nocast_working[defender_id]=(
+                    target_runtime.after_barrier_application(application)
+                )
+                result_name=(
+                    "barrier_blocked_existing_status"
+                    if application.probability_value is None
+                    else (
+                        "barrier_applied"
+                        if application.counter_written is not None
+                        else "barrier_missed"
+                    )
+                )
+                events.append(
+                    OrdinaryRoundEvent(
+                        barrier_actor_id,
+                        int(slot),
+                        BATTLE_COM_ATTACK,
+                        int(entry.action_value),
+                        result_name,
+                        original_target_slot=int(
+                            submission.source_target_slot
+                        ),
+                        resolved_target_slot=target_slot,
+                        retargeted=bool(
+                            target_list.slots
+                            and int(target_list.slots[0])
+                            != int(submission.source_target_slot)
+                        ),
+                        barrier_application=application,
+                    )
+                )
+            supplied_hit_slots=set(action_rolls.hit_rolls_by_slot)
+            if supplied_hit_slots != consumed_hit_roll_slots:
+                missing=sorted(consumed_hit_roll_slots-supplied_hit_slots)
+                extra=sorted(supplied_hit_slots-consumed_hit_roll_slots)
+                raise ValueError(
+                    "Barrier hit RNG slots mismatch; "
+                    f"missing={missing}, extra={extra}"
+                )
+            continue
+
         nocast_actor_id=str(participant_id)
         if (
             nocast_actor_id in nocast_submissions
@@ -7169,6 +7285,15 @@ def resolve_ordinary_round(
         if not nocast_rolls[participant_id].is_empty:
             raise ValueError(
                 "Nocast RNG supplied for status-suppressed semantic action: "
+                + participant_id
+            )
+
+    for participant_id in sorted(
+        barrier_actor_ids-attempted_barrier_actor_ids
+    ):
+        if not barrier_rolls[participant_id].is_empty:
+            raise ValueError(
+                "Barrier RNG supplied for status-suppressed semantic action: "
                 + participant_id
             )
 
