@@ -3978,6 +3978,37 @@ def resolve_ordinary_round(
 
     events: list[OrdinaryRoundEvent] = []
 
+    def tick_barrier_runtime(
+        participant_id: str,
+        slot: int,
+        command_code: int,
+        action_value: int,
+    ) -> BarrierSelfTick | None:
+        if nocast_working is None:
+            return None
+        participant_id=str(participant_id)
+        runtime=nocast_working[participant_id]
+        if int(runtime.barrier_counter) <= 0:
+            return None
+        tick=resolve_barrier_self_tick(
+            int(runtime.barrier_counter),
+            weaken_active_at_visit=bool(runtime.weaken_active_at_visit),
+        )
+        nocast_working[participant_id]=runtime.after_barrier_tick(tick)
+        events.append(
+            OrdinaryRoundEvent(
+                participant_id,
+                int(slot),
+                int(command_code),
+                int(action_value),
+                "barrier_tick",
+                original_target_slot=int(slot),
+                resolved_target_slot=int(slot),
+                barrier_tick_resolution=tick,
+            )
+        )
+        return tick
+
     def tick_nocast_runtime(
         participant_id: str,
         slot: int,
@@ -3993,7 +4024,9 @@ def resolve_ordinary_round(
         tick=resolve_nocast_tick(
             int(runtime.counter),
             weaken_active_at_visit=bool(runtime.weaken_active_at_visit),
-            barrier_active_at_visit=bool(runtime.barrier_active_at_visit),
+            barrier_active_at_visit=bool(
+                runtime.barrier_active_for_late_statuses
+            ),
         )
         nocast_working[participant_id]=runtime.after_tick(tick)
         events.append(
