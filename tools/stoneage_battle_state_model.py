@@ -38,6 +38,9 @@ from tools.stoneage_enemy_ai_battle_tear_bridge import (
     EnemyAiBattleTearSubmission,
 )
 from tools.stoneage_enemy_ai_nocast_bridge import EnemyAiNocastSubmission
+from tools.stoneage_enemy_ai_guard_break2_bridge import (
+    EnemyAiGuardBreak2Submission,
+)
 from tools.stoneage_nocast_runtime_state import (
     NocastActionRolls,
     NocastRoundOverlay,
@@ -1292,6 +1295,9 @@ def resolve_persistent_ordinary_round(
     battle_tear_submissions_by_participant_id: Mapping[
         str,EnemyAiBattleTearSubmission
     ] | None = None,
+    guard_break2_submissions_by_participant_id: Mapping[
+        str,EnemyAiGuardBreak2Submission
+    ] | None = None,
     fall_ground_submissions_by_participant_id: Mapping[
         str,EnemyAiFallGroundSubmission
     ] | None = None,
@@ -1468,6 +1474,9 @@ def resolve_persistent_ordinary_round(
         mp_by_participant_id=mp_by_participant_id,
         battle_tear_submissions_by_participant_id=(
             battle_tear_submissions_by_participant_id
+        ),
+        guard_break2_submissions_by_participant_id=(
+            guard_break2_submissions_by_participant_id
         ),
         fall_ground_submissions_by_participant_id=(
             fall_ground_submissions_by_participant_id
