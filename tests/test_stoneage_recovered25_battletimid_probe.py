@@ -3,7 +3,10 @@ from types import SimpleNamespace
 import unittest
 
 from tools.stoneage_recovered25_petskill_runtime import Recovered25PetSkillEntry
-from tools.stoneage_recovered25_battletimid_probe import (\n    EXPECTED_EXACT_ROW,\n    analyze_runtime_objects,\n)
+from tools.stoneage_recovered25_battletimid_probe import (
+    EXPECTED_EXACT_ROW,
+    analyze_runtime_objects,
+)
 
 
 def fixture():
