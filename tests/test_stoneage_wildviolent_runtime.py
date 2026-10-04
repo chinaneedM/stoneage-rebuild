@@ -19,9 +19,11 @@ from tools.stoneage_battle_round_model import (
     BattleCombatProfile,
     BattleCommand,
     BattleCommandSetupEffects,
+    CounterAttemptRolls,
     OrdinaryAttackRolls,
     WildViolentRolls,
     _resolve_nonbow_multihit_baseline,
+    apply_base_combo_rewrite,
     prepare_battle_round,
     resolve_ordinary_round,
 )
@@ -327,6 +329,179 @@ class WildViolentTypedAdmissionTests(unittest.TestCase):
                 },
             )
 
+
+
+    def test_no_remaining_opposite_target_terminates_after_kill(self):
+        actor=BattleParticipant(
+            "enemy","enemy","enemy",20,500,500,100,100,100,"enemy"
+        )
+        original=BattleParticipant(
+            "original","player","pet",20,1,1,10,0,50,"original"
+        )
+        setup=synthetic_setup(target=0,packed=0x2345)
+        submission=EnemyAiWildViolentSubmission(
+            participant_id="enemy",skill_slot=0,skill_id=541,
+            callback=CALLBACK_NAME,source_target_slot=0,setup=setup,
+        )
+        command=BattleCommand(
+            BATTLE_COM_ATTACK,command2=0,command3=setup.packed_com3
+        )
+        hit=OrdinaryAttackRolls(
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+            dodge_roll_1_10000=10000,
+        )
+        result=_resolve_nonbow_multihit_baseline(
+            actor=actor,actor_slot=10,command=command,action_value=100,
+            by_slot={0:original,10:actor},
+            hp_by_slot={0:1,10:500},
+            profiles={
+                "original":BattleCombatProfile(
+                    fixed_dex=50,fixed_luck=0,earth=0,water=0,fire=0,wind=0
+                ),
+                "enemy":BattleCombatProfile(
+                    fixed_dex=100,fixed_luck=0,earth=0,water=0,fire=0,wind=0
+                ),
+            },
+            command_by_slot={
+                0:BattleCommand(BATTLE_COM_WAIT),
+                10:command,
+            },
+            rolls=WildViolentRolls(3,(hit,hit,hit)),
+            defense_profile="newpower_70pct",
+            setup_effects_by_participant_id={
+                "enemy":BattleCommandSetupEffects(
+                    attack_power=setup.attack_power,
+                    defense_power=setup.defense_power,
+                )
+            },
+            wildviolent_submission=submission,
+        )
+        self.assertEqual(len(result.events),1)
+        self.assertEqual(result.hp_by_slot[0],0)
+        self.assertFalse(result.counter_continuation_allowed)
+
+    def test_semantic_carrier_is_excluded_from_base_combo_rewrite(self):
+        player=BattleParticipant(
+            "player","player","player",20,1000,1000,10,0,50,"player"
+        )
+        e1=BattleParticipant(
+            "e1","enemy","enemy",20,500,500,100,100,100,"e1"
+        )
+        e2=BattleParticipant(
+            "e2","enemy","enemy",20,500,500,90,100,100,"e2"
+        )
+        prepared=prepare_battle_round(
+            (player,e1,e2),
+            {
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "e1":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+                "e2":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"e1":0,"e2":0},
+        )
+        rewritten=apply_base_combo_rewrite(
+            prepared,
+            {
+                "player":BattleCombatProfile(
+                    fixed_dex=50,fixed_luck=0,earth=0,water=0,fire=0,wind=0
+                ),
+                "e1":BattleCombatProfile(
+                    fixed_dex=100,fixed_luck=0,earth=0,water=0,fire=0,wind=0
+                ),
+                "e2":BattleCombatProfile(
+                    fixed_dex=90,fixed_luck=0,earth=0,water=0,fire=0,wind=0
+                ),
+            },
+            {"e1":1,"e2":1},
+            semantic_nonattack_ids=("e1",),
+        )
+        e1_entry=next(
+            entry for entry in rewritten.ordered_entries
+            if entry.participant.participant_id=="e1"
+        )
+        self.assertEqual(e1_entry.command.command1,BATTLE_COM_ATTACK)
+        self.assertEqual(e1_entry.combo_id,0)
+
+    def test_wildviolent_finishes_before_shared_final_counter_probe(self):
+        player=BattleParticipant(
+            "player","player","player",20,1000,1000,80,70,200,"player"
+        )
+        enemy=BattleParticipant(
+            "enemy","enemy","enemy",20,1000,1000,100,70,100,"enemy"
+        )
+        setup=synthetic_setup(target=0,packed=0x2345)
+        submission=EnemyAiWildViolentSubmission(
+            participant_id="enemy",skill_slot=0,skill_id=541,
+            callback=CALLBACK_NAME,source_target_slot=0,setup=setup,
+        )
+        command=BattleCommand(
+            BATTLE_COM_ATTACK,command2=0,command3=setup.packed_com3
+        )
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":command,
+            },
+            {"player":0,"enemy":0},
+        )
+        hit=OrdinaryAttackRolls(
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+            dodge_roll_1_10000=10000,
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={
+                "player":BattleCombatProfile(
+                    fixed_dex=200,fixed_luck=0,earth=0,water=0,fire=0,wind=0
+                ),
+                "enemy":BattleCombatProfile(
+                    fixed_dex=100,fixed_luck=0,earth=0,water=0,fire=0,wind=0
+                ),
+            },
+            attack_rolls={
+                "player":OrdinaryAttackRolls(
+                    critical_roll_1_10000=1,
+                    damage_roll=0,
+                    dodge_roll_1_10000=10000,
+                )
+            },
+            wildviolent_submissions_by_participant_id={"enemy":submission},
+            wildviolent_rolls_by_attack_id={
+                "enemy":WildViolentRolls(3,(hit,hit,hit))
+            },
+            command_setup_effects_by_participant_id={
+                "enemy":BattleCommandSetupEffects(
+                    attack_power=setup.attack_power,
+                    defense_power=setup.defense_power,
+                )
+            },
+            counter_rolls_by_attack_id={
+                "enemy":(
+                    CounterAttemptRolls(
+                        counter_check_roll_1_10000=10000
+                    ),
+                )
+            },
+            defense_profile="newpower_70pct",
+        )
+        wild=[
+            event for event in result.events
+            if event.wildviolent_skill_id is not None
+        ]
+        counters=[event for event in result.events if event.is_counter]
+        self.assertEqual(len(wild),3)
+        self.assertEqual([event.wildviolent_hit_index for event in wild],[0,1,2])
+        self.assertEqual(len(counters),1)
+        self.assertEqual(counters[0].participant_id,"player")
+        self.assertEqual(counters[0].resolved_target_slot,10)
+        self.assertGreater(
+            result.events.index(counters[0]),
+            result.events.index(wild[-1]),
+        )
 
 if __name__=="__main__":
     unittest.main()
