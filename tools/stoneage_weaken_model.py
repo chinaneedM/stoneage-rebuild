@@ -6,7 +6,7 @@ unverified descendant encoding/build identities remain outside this reference.
 from dataclasses import dataclass
 
 from tools.stoneage_nocast_model import (
-    NocastCheckInputs, _scanf_int, nocast_probability_value,
+    NocastCheckInputs, _scanf_int, _f32, nocast_probability_value,
     resolve_nocast_multilist,
 )
 from tools.stoneage_barrier_model import resolve_barrier_self_tick
@@ -93,6 +93,8 @@ def weaken_probability_value(inputs: WeakenCheckInputs, success_offset: int) -> 
     delta = inputs.attacker_level - inputs.defender_level
     if not inputs.pvp and not -(2**31) <= delta < 2**31:
         raise WeakenUndefinedSourceDomain("level subtraction overflows signed int32")
+    if not inputs.pvp and not -(2**31) <= _f32(delta) < 2**31:
+        raise WeakenUndefinedSourceDomain("level *= float Bai cannot convert to int32")
     level = 0 if inputs.pvp else max(-30, min(30, delta))
     subtotal = int(success_offset)
     for term in (level, inputs.attacker_fixed_luck, -inputs.defender_mod_weaken):

@@ -28,6 +28,9 @@ GATE|profile=gavin|name=status_order_weaken_before_barrier_nocast|pass=1
 GATE|profile=gavin|name=decrement_before_weaken_freeze|pass=1
 GATE|profile=gavin|name=executor_keeps_false_return|pass=1
 GATE|profile=gavin|name=compliance_calls_recalc_after_base_equipment|pass=1
+GATE|profile=gavin|name=precommand_compliance_before_turn_modifiers|pass=1
+GATE|profile=gavin|name=precommand_earthround0_skips_recalculation|pass=1
+GATE|profile=gavin|name=completed_battle_prepares_next_commands|pass=1
 GATE|profile=gavin|name=recalc_three_power_reductions_and_counter_decrement|pass=1
 GATE|profile=gavin|name=lua_extra_resist_inactive|pass=1
 ORACLE|profile=gavin|name=recalculation_cases|value=128
@@ -74,6 +77,9 @@ GATE|profile=iris|name=status_order_weaken_before_barrier_nocast|pass=1
 GATE|profile=iris|name=decrement_before_weaken_freeze|pass=1
 GATE|profile=iris|name=executor_keeps_false_return|pass=1
 GATE|profile=iris|name=compliance_calls_recalc_after_base_equipment|pass=1
+GATE|profile=iris|name=precommand_compliance_before_turn_modifiers|pass=1
+GATE|profile=iris|name=precommand_earthround0_skips_recalculation|pass=1
+GATE|profile=iris|name=completed_battle_prepares_next_commands|pass=1
 GATE|profile=iris|name=recalc_three_power_reductions_and_counter_decrement|pass=1
 GATE|profile=iris|name=lua_extra_resist_inactive|pass=1
 ORACLE|profile=iris|name=recalculation_cases|value=128
@@ -120,6 +126,9 @@ GATE|profile=bismarck|name=status_order_weaken_before_barrier_nocast|pass=1
 GATE|profile=bismarck|name=decrement_before_weaken_freeze|pass=1
 GATE|profile=bismarck|name=executor_keeps_false_return|pass=1
 GATE|profile=bismarck|name=compliance_calls_recalc_after_base_equipment|pass=1
+GATE|profile=bismarck|name=precommand_compliance_before_turn_modifiers|pass=1
+GATE|profile=bismarck|name=precommand_earthround0_skips_recalculation|pass=1
+GATE|profile=bismarck|name=completed_battle_prepares_next_commands|pass=1
 GATE|profile=bismarck|name=recalc_three_power_reductions_and_counter_decrement|pass=1
 GATE|profile=bismarck|name=lua_extra_resist_inactive|pass=1
 ORACLE|profile=bismarck|name=recalculation_cases|value=128

@@ -237,6 +237,12 @@ def analyze_profile(name, root):
         'BATTLE_StatusSeq',raw_window=True))).replace('char_index','charaindex')
     dispatch=re.sub(r'\s+','',_strip(data['battle']))
     dispatch=dispatch[dispatch.index('caseBATTLE_COM_S_WEAKEN:'):][:600]
+    pre_command=re.sub(r'\s+','',_strip(_definition(data['battle'],
+        'BATTLE_PreCommandSeq',raw_window=True))).replace('char_index','charaindex')
+    command=re.sub(r'\s+','',_strip(_definition(data['battle'],
+        'BATTLE_Command',raw_window=True)))
+    compliance=re.sub(r'\s+','',_strip(_definition(data['char_c'],
+        '_CHAR_complianceParameter',raw_window=True)))
     gates={
         'skill_magic_features_active':features['_SKILL_WEAKEN'] and features['_MAGIC_WEAKEN'],
         'callback_command_target_mode_low_array':all(x in callback for x in (
@@ -258,8 +264,17 @@ def analyze_profile(name, root):
             status_seq.find('CHAR_WORKWEAKEN)>0') < status_seq.find('StatusTbl[i],cnt+1'),
         'executor_keeps_false_return':all(x in re.sub(r'\s+','',_strip(functions[3])) for x in ('BOOLiRet=FALSE','returniRet;')),
         'compliance_calls_recalc_after_base_equipment':
-            'Other_DefcharWorkInt(index)' in re.sub(r'\s+','',_strip(data['char_c']))
-            and 'CHAR_initcharWorkInt(index)' in re.sub(r'\s+','',_strip(data['char_c'])),
+            0 <= compliance.find('CHAR_initcharWorkInt(index)') <
+            compliance.find('ITEM_equipEffect(index)') <
+            compliance.find('Other_DefcharWorkInt(index)'),
+        'precommand_compliance_before_turn_modifiers':
+            0 <= pre_command.find('CHAR_complianceParameter(charaindex)') <
+            pre_command.find('BATTLE_TurnParam(charaindex'),
+        'precommand_earthround0_skips_recalculation':
+            'BATTLE_COM_S_EARTHROUND0)continue;' in pre_command,
+        'completed_battle_prepares_next_commands':
+            0 <= command.find('BATTLE_Battling(battleindex)') <
+            command.find('BATTLE_PreCommandSeq(battleindex)'),
         'recalc_three_power_reductions_and_counter_decrement':all(x in
             re.sub(r'\s+','',_strip(functions[-1])) for x in (
                 'CHAR_WORKFIXSTR)*0.8','CHAR_WORKFIXTOUGH)*0.8','CHAR_WORKFIXDEX)*0.8',

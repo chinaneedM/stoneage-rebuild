@@ -87,8 +87,11 @@ event rebuilds baseline first, so the weakening is not automatically a cumulativ
 0.8 multiplier on the previous weakened profile.
 
 This is separate from command submission, status application and StatusSeq.
-Do not substitute an automatic beginning/end-of-round recalculation without
-closing the caller schedule. Existing direct application does not itself call
+FACT: BATTLE_Init calls BATTLE_PreCommandSeq; completed BATTLE_Command calls
+it again after BATTLE_Battling. It visits valid entries, except a current
+BATTLE_COM_S_EARTHROUND0, and invokes compliance before BATTLE_TurnParam.
+Thus normal post-battle preparation rebuilds the next command phase's powers
+and decrements WEAKEN/BARRIER. It is not an extra arbitrary status tick. Existing direct application does not itself call
 compliance. The standalone safe recalculation reference requires other suit,
 profession, wolf and fear modifiers absent, but compiles the actual routine with
 those active feature branches present and their explicit work inputs zero.
@@ -125,12 +128,35 @@ probability/writer plus 128 recalculation cases per profile (24 + 1536 + 384 tot
 because the execution host does not support LeakSanitizer's process inspection;
 address and undefined-behavior instrumentation remain enabled.
 
-The 17 dedicated model tests cover byte offsets/defaults, failed/strict hit
+The 18 dedicated model tests cover byte offsets/defaults, failed/strict hit
 checks, PET admission, overflow, self/mutual freeze, visit-order effects and
 retarget RNG. Six synthetic probe tests do not impersonate actual recovered
-rows. Total local reference/related-regression acceptance is 126 tests, including
+rows. Total local reference/related-regression acceptance is 127 tests, including
 the existing Nocast and Barrier persistent coordinator E2Es.
 
-OPEN: recovered data population/OPTION acceptance, compliance caller scheduling and typed ordered runtime.
+OPEN: typed ordered runtime/E2E acceptance and unsupported extension/skip-command domains.
 No original source, raw skill rows or proprietary assets are stored.
 Source registry: SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1.
+
+## Verified preservation data acceptance — 2026-10-04
+
+Hash-verified source/bundle workflow **37179176709 = PASS** and reference
+**37179176714 = PASS** at `d3f1ce58852bcf30fa39974f8a6f3a4340cfddea`.
+Derived report write-back: `b78c9fdec393bac5baf513f9eb2e2a17916834a6`.
+
+| Data ID | FIELD | TARGET | COST | ILLEGAL | OPTION bytes | Status | Turn | Success offset |
+|---|---|---|---|---|---|---|---|---|
+| 575 | 1 | 6 | 2 | 3000 | 15 | 7 | 3 | 50 |
+| 576 | 1 | 3 | 2 | 0 | 15 | 7 | 3 | 50 |
+
+Both OPTION hashes are
+`f58b7a4fdfc76fcefd2eca1a688b46a04c3c3e1a4516fc4a1364436f58d4fed6`.
+Strict CP950/Big5 parsing converges; no embedded NUL. Exact callback population
+has two rows, 7 positive slot references and 6 templates. Distinct target/illegal
+metadata must be validated individually by the future typed bridge, alongside
+the complete family, seven-slot identity and exact byte hashes.
+
+Population/OPTION closure does not increase executable skill-slot coverage.
+These seven uses remain OPEN until enemy-AI, ordered status visits, pre-command
+recalculation and persistent coordinator E2E acceptance. Final scheduling-gate
+and 127-test remote acceptance is recorded in CURRENT-STATE when complete.

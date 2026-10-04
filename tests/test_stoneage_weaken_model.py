@@ -86,6 +86,7 @@ class WeakenModelTests(unittest.TestCase):
         for inp,success in ((inputs(defender_vital=0,defender_strength=0,
             defender_toughness=0,defender_dexterity=0),50),
             (inputs(attacker_level=2**31-1,defender_level=-2**31),50),
+            (inputs(attacker_level=2**31-1,defender_level=0),50),
             (inputs(attacker_fixed_luck=2**31-1),50)):
             with self.assertRaises(ValueError):
                 weaken_probability_value(inp,success)
@@ -128,6 +129,19 @@ class WeakenModelTests(unittest.TestCase):
                           out.weaken_counter,out.barrier_counter),(84,160,266,3,1))
         self.assertEqual(resolve_weaken_recalculation(105,201,333,weaken_counter=0,
             barrier_counter=1).strength,105)
+
+    def test_end_round_recalculation_unfreezes_duration_then_restores_baseline(self):
+        counter=4  # impact turn+1; target's status visit already happened
+        end=resolve_weaken_recalculation(105,201,333,weaken_counter=counter,barrier_counter=0)
+        counter=end.weaken_counter
+        observed=[]
+        for _ in range(3):
+            tick=resolve_weaken_self_tick(counter)
+            end=resolve_weaken_recalculation(105,201,333,
+                weaken_counter=tick.counter_after,barrier_counter=0)
+            observed.append((tick.counter_after,end.weaken_counter,end.strength))
+            counter=end.weaken_counter
+        self.assertEqual(observed,[(3,2,84),(2,1,84),(0,0,105)])
 
     def test_recalculation_counter_one_is_reduced_before_reaching_zero(self):
         out=resolve_weaken_recalculation(5,9,11,weaken_counter=1,barrier_counter=0)

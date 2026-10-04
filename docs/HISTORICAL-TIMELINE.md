@@ -508,3 +508,13 @@ has no power effect. At explicit character compliance recalculation, later
 source reduces freshly rebuilt fixed strength/toughness/dexterity by 20% and
 decrements the status counter. The caller schedule must be evidenced separately
 from StatusSeq's freeze loop. [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]
+
+
+**2026-10-04 Weaken caller-schedule closure:** later pinned battle initialization
+and completed battle-command processing invoke BATTLE_PreCommandSeq, which
+performs compliance before turn modifiers for valid non-EARTHROUND0 entries.
+This resolves the preceding normal battle caller schedule OPEN; it does not
+supply Taiwan-v1 membership, an introduction date or recovered binary enum.
+The verified recovered25 preservation data separately binds IDs 575/576 to
+status 7 / turn 3 / success 50 with differing target/illegal metadata.
+[SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]
