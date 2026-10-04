@@ -6299,6 +6299,7 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
 
 
     def test_recovered_enemy_ai_wildviolent_executes_and_persists(self):
+        from tests.test_stoneage_wildviolent_runtime import SYNTHETIC_OPTIONS, SYNTHETIC_HASHES
         session=LocalRuntimeSessionState(
             contract_id=self.profile.contract_id,
             world_profile=self.profile.runtime_world_profile,
@@ -6326,8 +6327,9 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             cost=2,
             illegal=1000,
             function_name=WILDVIOLENT_CALLBACK,
-            option_bytes="攻%95防%-35避30".encode("cp950"),
+            option_bytes=SYNTHETIC_OPTIONS[541],
         )
+        skills[652]=replace(skills[541], skill_id=652, option_bytes=SYNTHETIC_OPTIONS[652])
         self.stack.petskill_runtime=Recovered25PetSkillRuntime(
             skills=skills,
             source_file=self.stack.petskill_runtime.source_file,
@@ -6370,36 +6372,16 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             context,
             slots={"player":0,enemy_id:10},
         )
-        setup=resolve_wildviolent_setup(
-            option="攻%95防%-35避30".encode("cp950"),
-            execution_charset="cp950",
-            profile="gavin",
-            target_slot=0,
-            fixed_strength=300,
-            fixed_toughness=100,
-            attack_power_before=300,
-            defense_power_before=100,
-            packed_com3_before=0,
-        )
-        submission=EnemyAiWildViolentSubmission(
-            participant_id=enemy_id,
-            skill_slot=0,
-            skill_id=541,
-            callback=WILDVIOLENT_CALLBACK,
-            source_target_slot=0,
-            setup=setup,
-        )
         hit=OrdinaryAttackRolls(
             critical_roll_1_10000=10000,
             damage_roll=0,
             guard_roll_1_100=100,
-            dodge_roll_1_10000=10000,
+            dodge_roll_1_10000=None,
         )
         previous_hp=2000
         with patch(
-            "tools.stoneage_local_runtime_session_coordinator."
-            "resolve_enemy_ai_wildviolent_submission",
-            return_value=submission,
+            "tools.stoneage_enemy_ai_wildviolent_bridge.EXPECTED_OPTION_SHA256",
+            SYNTHETIC_HASHES,
         ):
             for _ in range(2):
                 context,result=(

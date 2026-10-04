@@ -2868,6 +2868,7 @@ def _resolve_nonbow_multihit_baseline(
     resolved: list[OrdinaryRoundEvent]=[]
     last_target: int | None=None
     last_continue=False
+    wild_used_roll_fields=[set() for _ in rolls.hit_rolls] if wild else None
 
     for hit_index,hit_rolls in enumerate(rolls.hit_rolls):
         original_target=hit_targets[hit_index]
@@ -2888,6 +2889,8 @@ def _resolve_nonbow_multihit_baseline(
             last_continue=False
             break
         target=int(target)
+        if wild and retargeted:
+            wild_used_roll_fields[hit_index].add("retarget_roll")
         if _slot_side(target)==_slot_side(actor_slot):
             raise ValueError("ContinuationAttack retarget crossed battle sides")
 
@@ -2913,6 +2916,8 @@ def _resolve_nonbow_multihit_baseline(
         # BATTLE_AttackSeq performs dodge against the original/adjusted target
         # before BATTLE_GuardianCheck may redirect the damage calculation.
         if not original_guarding:
+            if wild:
+                wild_used_roll_fields[hit_index].add("dodge_roll_1_10000")
             dodge_roll=_validated_roll(
                 hit_rolls.dodge_roll_1_10000,
                 1,10000,
@@ -3029,6 +3034,8 @@ def _resolve_nonbow_multihit_baseline(
             and int(command_by_slot[damage_target].command1)==BATTLE_COM_GUARD
         )
 
+        if wild:
+            wild_used_roll_fields[hit_index].update(("critical_roll_1_10000", "damage_roll"))
         critical_roll=_validated_roll(
             hit_rolls.critical_roll_1_10000,
             1,10000,
@@ -3070,6 +3077,8 @@ def _resolve_nonbow_multihit_baseline(
                 defender.level,
             )
         if damage_target_guarding:
+            if wild:
+                wild_used_roll_fields[hit_index].add("guard_roll_1_100")
             guard_roll=_validated_roll(
                 hit_rolls.guard_roll_1_100,
                 1,100,
@@ -3077,6 +3086,8 @@ def _resolve_nonbow_multihit_baseline(
             )
             damage=guard_damage(damage,guard_roll)
         if damage < 1:
+            if wild:
+                wild_used_roll_fields[hit_index].add("minimum_damage_roll_0_1")
             damage=_validated_roll(
                 hit_rolls.minimum_damage_roll_0_1,
                 0,1,
@@ -3285,6 +3296,8 @@ def _resolve_nonbow_multihit_baseline(
                     and victim_kind != PLAYER
                     and is_critical
                 )
+                if wild and needs_ultimate_roll:
+                    wild_used_roll_fields[hit_index].add("ultimate_roll_1_100")
                 if (
                     hit_rolls.ultimate_roll_1_100 is not None
                     and not needs_ultimate_roll
@@ -3450,6 +3463,13 @@ def _resolve_nonbow_multihit_baseline(
                             petfall=False,
                         )
                         active_ride=False
+
+    if wild:
+        for hit_index, (hit_rolls, used) in enumerate(zip(rolls.hit_rolls, wild_used_roll_fields)):
+            unused=sorted(name for name, value in vars(hit_rolls).items()
+                          if value is not None and name not in used)
+            if unused:
+                raise ValueError(f"unused WildViolentAttack hit RNG at hit {hit_index}: {unused}")
 
     return ContinuationBaselineResolution(
         events=tuple(resolved),

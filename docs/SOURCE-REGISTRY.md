@@ -3210,3 +3210,8 @@ Initial Actions 37192280495 (reference) and 37192280455 (source/hash-verified bu
 ### 2026-10-04 — WildViolentAttack final conditional source/data acceptance
 
 Hardened reference **37192609926 PASS** and pinned-source/full-file/hash-verified preservation/real-byte native **37192610005 PASS**, source commit `e460037c0214fa795efa8c1e041a8a676eb0bb0b`, derived report `ae9bfa7a4596925e49d82731e1528e7a830cf6cb`. Reports preserve the exact two-row/full-file hashes above, 964 generic callback / 6672 float-division / 192 plan witnesses and six expected UB diagnostics; data probe adds 60 actual-byte callback witnesses. Runtime remains OPEN and compiler execution charset remains explicitly unknown. This supersedes prior expanded-native pending status; raw source/OPTION/assets remain outside the repository.
+
+
+### 2026-10-04 — WildViolentAttack runtime verification supplement
+
+Existing pinned source/data evidence feeds the separately typed conditional CP950 enemy runtime. Dedicated runtime fixtures exercise production metadata/population/parser/slot gates with independent hashes, source-ordered physical/status/reaction/ride/counter seams and Weaken preparation restoration. Coordinator E2E retains the production submission resolver. Local 1122 affected tests PASS; latest runtime/real-bundle Actions remain pending. Original compiler charset and Taiwan-v1 historical membership remain OPEN. See `specs/STONEAGE-WILDVIOLENT-RUNTIME-R1.md` and current-state handoff.

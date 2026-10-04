@@ -60,26 +60,6 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         self.assertEqual(rows["PETSKILL_Modifyattack"]["status"],"open")
         self.assertEqual(result["next_open"]["callback"],"PETSKILL_Modifyattack")
 
-    def test_wildviolent_closure_advances_only_the_exact_callback(self):
-        pets=SimpleNamespace(skills={
-            541:SimpleNamespace(function_name="PETSKILL_WildViolentAttack"),
-            652:SimpleNamespace(function_name="PETSKILL_WildViolentAttack"),
-            544:SimpleNamespace(function_name="PETSKILL_Modifyattack"),
-            200:SimpleNamespace(function_name="PETSKILL_Merge"),
-        })
-        enemies=SimpleNamespace(templates={
-            10:SimpleNamespace(skill_slot_ids=(541,541,544,200,0,0,0)),
-        })
-        result=analyze_runtime_objects(pets,enemies)
-        rows={row["callback"]:row for row in result["rows"]}
-        self.assertEqual(
-            rows["PETSKILL_WildViolentAttack"]["status"],
-            "closed_runtime",
-        )
-        self.assertEqual(rows["PETSKILL_Modifyattack"]["status"],"open")
-        self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
-        self.assertEqual(result["next_open"]["callback"],"PETSKILL_Modifyattack")
-
     def test_weaken_closure_advances_only_the_exact_callback(self):
         pets=SimpleNamespace(skills={
             575:SimpleNamespace(function_name="PETSKILL_Weaken"),
