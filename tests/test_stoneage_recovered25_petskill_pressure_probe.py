@@ -93,9 +93,12 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         result=analyze_runtime_objects(pets,enemies)
         rows={row["callback"]:row for row in result["rows"]}
         self.assertEqual(rows["PETSKILL_Refresh"]["status"],"closed_runtime")
-        self.assertEqual(rows["PETSKILL_SetMagicPet"]["status"],"open")
+        self.assertEqual(
+            rows["PETSKILL_SetMagicPet"]["status"],
+            "closed_runtime",
+        )
         self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
-        self.assertEqual(result["next_open"]["callback"],"PETSKILL_SetMagicPet")
+        self.assertEqual(result["next_open"]["callback"],"PETSKILL_BattleTimid")
 
     def test_setmagicpet_closure_advances_only_the_exact_callback(self):
         pets=SimpleNamespace(skills={
