@@ -1,0 +1,29 @@
+name: Validate StoneAge WildViolentAttack runtime
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-wildviolent-runtime.yml
+      - tools/stoneage_wildviolent_model.py
+      - tools/stoneage_enemy_ai_wildviolent_bridge.py
+      - tools/stoneage_battle_round_model.py
+      - tools/stoneage_battle_state_model.py
+      - tools/stoneage_local_runtime_session_coordinator.py
+      - tests/test_stoneage_wildviolent_model.py
+      - tests/test_stoneage_recovered25_wildviolent_probe.py
+      - tests/test_stoneage_wildviolent_runtime.py
+      - tests/test_stoneage_local_runtime_session_coordinator.py
+permissions:
+  contents: read
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python3 -m unittest \
+            tests.test_stoneage_wildviolent_model \
+            tests.test_stoneage_recovered25_wildviolent_probe \
+            tests.test_stoneage_wildviolent_runtime \
+            tests.test_stoneage_local_runtime_session_coordinator.LocalRuntimeSessionCoordinatorTests.test_recovered_enemy_ai_wildviolent_executes_and_persists -v
