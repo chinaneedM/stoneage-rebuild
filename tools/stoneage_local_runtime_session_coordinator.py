@@ -62,6 +62,13 @@ from tools.stoneage_enemy_ai_guard_break2_bridge import (
     EnemyAiGuardBreak2Submission,
     resolve_enemy_ai_guard_break2_submission,
 )
+from tools.stoneage_enemy_ai_battletimid_bridge import (
+    EnemyAiBattleTimidSubmission,
+    resolve_enemy_ai_battletimid_submission,
+)
+from tools.stoneage_battletimid_model import (
+    CALLBACK_NAME as BATTLETIMID_CALLBACK,
+)
 from tools.stoneage_guard_break2_model import (
     CALLBACK_NAME as GUARD_BREAK2_CALLBACK,
 )
@@ -455,6 +462,9 @@ class EnemyAiCommonCommandBatch:
     ] = field(default_factory=dict)
     guard_break2_submissions: Mapping[
         str,EnemyAiGuardBreak2Submission
+    ] = field(default_factory=dict)
+    battletimid_submissions: Mapping[
+        str,EnemyAiBattleTimidSubmission
     ] = field(default_factory=dict)
     barrier_submissions: Mapping[
         str,EnemyAiBarrierSubmission
@@ -1026,6 +1036,60 @@ class EnemyAiCommonCommandBatch:
         if set(setmagicpet_submissions) & setmagicpet_overlap:
             raise ValueError(
                 "enemy AI SetMagicPet semantic submissions overlap another skill"
+            )
+
+        battletimid_submissions={
+            str(key):value
+            for key,value in self.battletimid_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "battletimid_submissions",
+            MappingProxyType(battletimid_submissions),
+        )
+        for participant_id,submission in battletimid_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI BattleTimid submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiBattleTimidSubmission):
+                raise TypeError(
+                    "enemy AI BattleTimid submission has wrong type for "
+                    + participant_id
+                )
+            if str(submission.participant_id)!=participant_id:
+                raise ValueError("enemy AI BattleTimid participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1)!=BATTLE_COM_ATTACK
+                or int(carrier.command2)!=int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI BattleTimid carrier must be ATTACK/source-target"
+                )
+            effects=self.setup_effects.get(participant_id)
+            if effects is None or (
+                effects.attack_power,effects.defense_power
+            ) != (
+                submission.setup.attack_power,
+                submission.setup.defence_power,
+            ):
+                raise ValueError(
+                    "enemy AI BattleTimid callback work-power setup drift"
+                )
+        battletimid_overlap=(
+            set(magic_submissions) | set(rehp_submissions)
+            | set(damage_submissions) | set(mp_submissions)
+            | set(fall_submissions) | set(tear_submissions)
+            | set(nocast_submissions) | set(guard_break2_submissions)
+            | set(barrier_submissions) | set(attack_crazed_submissions)
+            | set(mdfyattack_submissions) | set(weaken_submissions)
+            | set(wildviolent_submissions) | set(refresh_submissions)
+            | set(setmagicpet_submissions)
+        )
+        if set(battletimid_submissions) & battletimid_overlap:
+            raise ValueError(
+                "enemy AI BattleTimid semantic submissions overlap another skill"
             )
 
 
@@ -1681,6 +1745,7 @@ class LocalRuntimeSessionCoordinator:
         allow_battle_tear_skill: bool = False,
         allow_nocast_skill: bool = False,
         allow_guard_break2_skill: bool = False,
+        allow_battletimid_skill: bool = False,
         allow_weaken_skill: bool = False,
         allow_refresh_skill: bool = False,
         allow_setmagicpet_skill: bool = False,
@@ -1835,6 +1900,7 @@ class LocalRuntimeSessionCoordinator:
         battle_tear_submissions={}
         nocast_submissions={}
         guard_break2_submissions={}
+        battletimid_submissions={}
         weaken_submissions={}
         refresh_submissions={}
         setmagicpet_submissions={}
@@ -1904,6 +1970,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_battle_tear_skill)
                 or bool(allow_nocast_skill)
                 or bool(allow_guard_break2_skill)
+                or bool(allow_battletimid_skill)
                 or bool(allow_weaken_skill)
                 or bool(allow_refresh_skill)
                 or bool(allow_setmagicpet_skill)
@@ -2109,6 +2176,63 @@ class LocalRuntimeSessionCoordinator:
                         command2=int(submission.source_target_slot),
                     )
                     guard_break2_submissions[enemy_id]=submission
+                    continue
+
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == BATTLETIMID_CALLBACK
+                    and bool(allow_battletimid_skill)
+                ):
+                    baseline=living[enemy_id]
+                    weaken_prepared=(
+                        None if state.nocast_overlay is None else
+                        state.nocast_overlay.runtime_by_participant_id[
+                            enemy_id
+                        ].prepared_weaken_powers
+                    )
+                    if weaken_prepared is not None:
+                        raise ValueError(
+                            "BattleTimid with prepared Weaken powers is outside R1"
+                        )
+                    magic_prepared=(
+                        None if state.setmagicpet_overlay is None else
+                        state.setmagicpet_overlay.runtime_by_participant_id[
+                            enemy_id
+                        ].prepared_powers
+                    )
+                    fixed_strength=(
+                        int(baseline.attack)
+                        if magic_prepared is None
+                        else int(magic_prepared.attack)
+                    )
+                    fixed_toughness=(
+                        int(baseline.defense)
+                        if magic_prepared is None
+                        else int(magic_prepared.defense)
+                    )
+                    fixed_dex=(
+                        int(baseline.quick)
+                        if magic_prepared is None
+                        else int(magic_prepared.dexterity)
+                    )
+                    submission=resolve_enemy_ai_battletimid_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                        fixed_strength=fixed_strength,
+                        fixed_toughness=fixed_toughness,
+                        fixed_dex=fixed_dex,
+                    )
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    setup_effects[enemy_id]=BattleCommandSetupEffects(
+                        attack_power=int(submission.setup.attack_power),
+                        defense_power=int(submission.setup.defence_power),
+                    )
+                    battletimid_submissions[enemy_id]=submission
                     continue
 
                 if (
@@ -2342,6 +2466,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_Nocast")
             if bool(allow_guard_break2_skill):
                 allowed_parts.append("PETSKILL_GuardBreak2")
+            if bool(allow_battletimid_skill):
+                allowed_parts.append("PETSKILL_BattleTimid")
             if bool(allow_weaken_skill):
                 allowed_parts.append("PETSKILL_Weaken")
             if bool(allow_refresh_skill):
@@ -2374,6 +2500,7 @@ class LocalRuntimeSessionCoordinator:
             battle_tear_submissions=battle_tear_submissions,
             nocast_submissions=nocast_submissions,
             guard_break2_submissions=guard_break2_submissions,
+            battletimid_submissions=battletimid_submissions,
             weaken_submissions=weaken_submissions,
             refresh_submissions=refresh_submissions,
             setmagicpet_submissions=setmagicpet_submissions,
@@ -2577,6 +2704,9 @@ class LocalRuntimeSessionCoordinator:
         setmagicpet_rolls_by_attack_id: Mapping[
             str,SetMagicPetActionRolls
         ] | None = None,
+        battletimid_rolls_by_attack_id: Mapping[
+            str,int | None
+        ] | None = None,
         barrier_rolls_by_attack_id: Mapping[
             str,BarrierActionRolls
         ] | None = None,
@@ -2689,6 +2819,7 @@ class LocalRuntimeSessionCoordinator:
             allow_battle_tear_skill=True,
             allow_nocast_skill=True,
             allow_guard_break2_skill=True,
+            allow_battletimid_skill=True,
             allow_weaken_skill=True,
             allow_refresh_skill=True,
             allow_setmagicpet_skill=True,
@@ -2721,6 +2852,30 @@ class LocalRuntimeSessionCoordinator:
             raise ValueError("enemy AttackCrazed RNG actors mismatch")
         if not all(isinstance(v,AttackCrazedRolls) for v in normalized_attack_crazed_rolls.values()):
             raise TypeError("enemy AttackCrazed RNG wrong type")
+        battletimid_enemy_ids=set(enemy_batch.battletimid_submissions)
+        normalized_battletimid_rolls={
+            str(key):(None if value is None else int(value))
+            for key,value in (
+                battletimid_rolls_by_attack_id or {}
+            ).items()
+        }
+        if set(normalized_battletimid_rolls)!=battletimid_enemy_ids:
+            missing=sorted(
+                battletimid_enemy_ids-set(normalized_battletimid_rolls)
+            )
+            extra=sorted(
+                set(normalized_battletimid_rolls)-battletimid_enemy_ids
+            )
+            raise ValueError(
+                "enemy BattleTimid RNG actors mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        if any(
+            value is not None and not 0 <= int(value) <= 99
+            for value in normalized_battletimid_rolls.values()
+        ):
+            raise ValueError("enemy BattleTimid reduced rand draw must be 0..99")
+
         rehp_enemy_ids=set(enemy_batch.enemy_rehp_submissions)
         normalized_rehp_rolls={
             str(key):value
@@ -3251,6 +3406,12 @@ class LocalRuntimeSessionCoordinator:
             ),
             guard_break2_submissions_by_participant_id=(
                 enemy_batch.guard_break2_submissions
+            ),
+            battletimid_submissions_by_participant_id=(
+                enemy_batch.battletimid_submissions
+            ),
+            battletimid_rolls_by_participant_id=(
+                normalized_battletimid_rolls
             ),
             fall_ground_submissions_by_participant_id=(
                 enemy_batch.fall_ground_submissions
