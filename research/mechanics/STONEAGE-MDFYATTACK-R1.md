@@ -154,3 +154,24 @@ Local 1024 tests / 106 affected modules PASS, including 19 direct runtime tests
 and two-round coordinator E2E. **RECOVERED25_MDFYATTACK_RUNTIME_R1 =
 LOCAL_PASS_REMOTE_PENDING**; executable coverage remains 2400/2486 until remote
 runtime acceptance. Pressure reranking is deferred until that acceptance.
+
+
+## Runtime acceptance — 2026-10-04
+
+Dedicated workflow **37177521796**, battle core **37177521656**, coordinator
+**37177521753**, runtime golden **37177521767** and related magic/skill/gameplay
+regressions PASS at `102b308c7c738d64bce00a3a25c89ebd39d89afd`. Reference
+**37177521736** and repeated source/verified-data probe **37177521678** also PASS.
+Full region/runtime-stack **37177521661 = PASS**, including server collision
+provider and client-ADRN coverage; all 21 affected workflows completed successfully.
+
+**RECOVERED25_MDFYATTACK_RUNTIME_R1 = CLOSED** within the explicit recovered
+base enemy/opposite-side/FIST/amount-100 domain. Unknown actor/weapon/arithmetic
+and arbitrary property/suit/profession effects remain outside admission.
+Executable positive slot uses become 2408/2486 (~96.9%). No early-version
+membership, production-engine decision or character-save extension is implied.
+
+Verified pressure workflow **37177629438** regenerated its report in
+`18c27b5d6ddb6b66e39ccbeb1348630bebb2b5ff` and selects **PETSKILL_Weaken**,
+IDs 575/576, 7 positive uses across 6 templates. Weaken callback execution
+remains OPEN even though related WEAKEN-freeze overlay semantics already exist.
