@@ -92,19 +92,27 @@ def analyze_profile(name: str, root: Path):
     callback=_compact(_function(data["pet"],"int "+CALLBACK_NAME)).replace(
         "char_index","charaindex"
     )
-    target_list=_compact(_function(
-        data["battle"],"void BATTLE_TargetListSet"
-    )).replace("char_index","charaindex")
+    target_start=data["battle"].find("void BATTLE_TargetListSet")
+    target_end=data["battle"].find("int BATTLE_GetAttackCount",target_start)
+    if target_start < 0 or target_end < 0:
+        raise ValueError("missing bounded TargetListSet slice")
+    target_list=_compact(data["battle"][target_start:target_end]).replace(
+        "char_index","charaindex"
+    )
     dispatch=_compact(data["battle"]).replace("char_index","charaindex")
     start=dispatch.find("case"+COMMAND_NAME+":")
     if start < 0:
         raise ValueError("missing compiled-source dispatch case text")
     dispatch=dispatch[start:].split("#endif",1)[0]
-    attack_damage=_compact(_function(
-        data["event"],"int BATTLE_S_AttackDamage"
-    )).replace("char_index","charaindex")
+    damage_start=data["event"].find("int BATTLE_S_AttackDamage")
+    event_start=data["event"].find("case "+COMMAND_NAME+":",damage_start)
+    if damage_start < 0 or event_start < 0:
+        raise ValueError("missing bounded AttackDamage/TIMID slice")
+    attack_damage=_compact(data["event"][damage_start:event_start]).replace(
+        "char_index","charaindex"
+    )
     event_case=_compact(_case_block(
-        data["event"],"case "+COMMAND_NAME+":"
+        data["event"][event_start:],"case "+COMMAND_NAME+":"
     )).replace("char_index","charaindex")
 
     expected_same_side_guard=name in {"gavin","iris"}
