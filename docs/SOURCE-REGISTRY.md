@@ -3205,3 +3205,8 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
 ### 2026-10-04 — WildViolentAttack real-data evidence
 
 Initial Actions 37192280495 (reference) and 37192280455 (source/hash-verified bundle) PASS; derived bot commit `3e9fdb42a46122f7826be4bad8ca1e53698bc244`. Reports: `research/recovered/STONEAGE-WILDVIOLENT-SOURCE-AUDIT-R1.txt` and `research/recovered/STONEAGE-25-WILDVIOLENT-PROBE-R1.txt`. Entire petskill file SHA-256 `f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4`; OPTION hashes for IDs 541/652 are `f63637633ee0e144f8807548d25f51b72f654756f1ec7858e40be0a5f796cb2c` / `9f1b961b626838f19d00f234527f3fd99ca86883befe4204cbdf33ef9bc783b1`. Both conditional parsers converge with defined HIGH shifts. Hardened probe adds exact observed full population, full-file hash and transient actual callbacks against real bytes; original charset and executable runtime remain separately OPEN.
+
+
+### 2026-10-04 — WildViolentAttack final conditional source/data acceptance
+
+Hardened reference **37192609926 PASS** and pinned-source/full-file/hash-verified preservation/real-byte native **37192610005 PASS**, source commit `e460037c0214fa795efa8c1e041a8a676eb0bb0b`, derived report `ae9bfa7a4596925e49d82731e1528e7a830cf6cb`. Reports preserve the exact two-row/full-file hashes above, 964 generic callback / 6672 float-division / 192 plan witnesses and six expected UB diagnostics; data probe adds 60 actual-byte callback witnesses. Runtime remains OPEN and compiler execution charset remains explicitly unknown. This supersedes prior expanded-native pending status; raw source/OPTION/assets remain outside the repository.

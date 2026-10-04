@@ -537,3 +537,8 @@ recovered binary enum. [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]
 ### 2026-10-04 — WildViolentAttack full recovered callback population
 
 **FACT / LATER_RECOVERED:** Verified preservation run 37192280455 enumerates two exact callback rows, IDs 541 and 652. Only 541 has positive enemy references (7 uses / 7 templates). Both metadata rows are FIELD 1 / TARGET 6 / COST 2 / ILLEGAL 1000. Their 20-byte OPTION strings converge under strict CP950/Big5 decoding and have defined positive HIGH modifiers 30 / 50; UTF-8 execution differs. No raw rows are stored. **OPEN:** original compiler execution charset, ordered runtime and historical Taiwan-v1 membership. This supersedes earlier unknown full callback population, without promoting a conditional build to original provenance.
+
+
+### 2026-10-04 — WildViolentAttack conditional source/data accepted
+
+**FACT / LATER_RECOVERED:** Hardened source/data Actions 37192609926 and 37192610005 PASS at `e460037c0214fa795efa8c1e041a8a676eb0bb0b`, derived report `ae9bfa7a4596925e49d82731e1528e7a830cf6cb`. Full population and hashes reproduce; 60 actual recovered-byte callback witnesses match the own reference across three sources and UTF-8/CP950 builds with UBSan. **CLOSED:** explicit conditional charset safe source reference and CP950/Big5 data/defined-shift domain. **OPEN:** original build charset, ordered executable runtime and Taiwan-v1 membership. Seven slot uses remain outside accepted executable coverage, which stays 2415/2486.

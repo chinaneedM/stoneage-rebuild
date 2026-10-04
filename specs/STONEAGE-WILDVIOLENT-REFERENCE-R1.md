@@ -101,3 +101,16 @@ This supersedes the unknown population/defined-shift data gate; original
 compiler charset and ordered runtime remain OPEN. The hardened probe now
 checks both observed IDs and full-file hash and requires **60 actual-byte
 callback witnesses** across all three source profiles and both charsets.
+
+
+## Acceptance — 2026-10-04
+
+Hardened reference 37192609926 and verified source/data/native probe
+37192610005 PASS at `e460037c0214fa795efa8c1e041a8a676eb0bb0b`;
+derived report `ae9bfa7a4596925e49d82731e1528e7a830cf6cb`.
+All **60** real-byte callbacks match; local/remote regressions **120 tests PASS**.
+The conditional safe source reference, full callback population and
+CP950/Big5 defined-shift data domain are **CLOSED**. Original build charset and
+ordered runtime are **OPEN**. Next is typed enemy execution and persistent E2E
+under an explicitly labelled conditional reference domain, with the original
+compiler identity left unresolved. Accepted executable coverage is unchanged.
