@@ -9,6 +9,7 @@ on:
       - "tools/stoneage_battle_state_model.py"
       - "tools/stoneage_local_runtime_session_coordinator.py"
       - "tests/test_stoneage_refresh_runtime.py"
+      - "tests/test_stoneage_local_runtime_session_coordinator.py"
       - "specs/STONEAGE-REFRESH-RUNTIME-R1.md"
       - ".github/workflows/validate-stoneage-refresh-runtime.yml"
   workflow_dispatch:

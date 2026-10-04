@@ -80,6 +80,23 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
         self.assertEqual(result["next_open"]["callback"],"PETSKILL_Modifyattack")
 
+    def test_refresh_closure_advances_only_the_exact_callback(self):
+        pets=SimpleNamespace(skills={
+            583:SimpleNamespace(function_name="PETSKILL_Refresh"),
+            592:SimpleNamespace(function_name="PETSKILL_Refresh"),
+            601:SimpleNamespace(function_name="PETSKILL_SetMagicPet"),
+            200:SimpleNamespace(function_name="PETSKILL_Merge"),
+        })
+        enemies=SimpleNamespace(templates={
+            10:SimpleNamespace(skill_slot_ids=(583,583,592,601,200,0,0)),
+        })
+        result=analyze_runtime_objects(pets,enemies)
+        rows={row["callback"]:row for row in result["rows"]}
+        self.assertEqual(rows["PETSKILL_Refresh"]["status"],"closed_runtime")
+        self.assertEqual(rows["PETSKILL_SetMagicPet"]["status"],"open")
+        self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
+        self.assertEqual(result["next_open"]["callback"],"PETSKILL_SetMagicPet")
+
     def test_weaken_closure_advances_only_the_exact_callback(self):
         pets=SimpleNamespace(skills={
             575:SimpleNamespace(function_name="PETSKILL_Weaken"),
