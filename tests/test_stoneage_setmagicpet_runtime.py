@@ -40,6 +40,10 @@ from tools.stoneage_battle_state_model import (
     resolve_persistent_ordinary_round,
 )
 from tools.stoneage_battle_status_model import BaseBattleStatusRuntime
+from tools.stoneage_nocast_runtime_state import (
+    NocastParticipantRuntime,
+    NocastRoundOverlay,
+)
 from tools.stoneage_setmagicpet_runtime_state import (
     PreparedSetMagicPetPowers,
     SetMagicPetActionRolls,
@@ -363,6 +367,103 @@ class SetMagicPetRuntimePrimitiveTests(unittest.TestCase):
         self.assertEqual(magic.state.tgh_turn,2)
         self.assertEqual(magic.prepared_powers.defense,92)
         self.assertEqual(participant_snapshot(result.after,"player").defense,92)
+
+    def test_persistent_tgh_expires_and_clears_prepared_defense(self):
+        player=actor(
+            "player","player","player",defense=80,quick=100
+        )
+        enemy=actor("enemy","enemy","enemy",quick=220)
+        state=begin_persistent_battle(
+            battle_session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+            setmagicpet_overlay=SetMagicPetRoundOverlay({
+                "player":SetMagicPetParticipantRuntime(
+                    SetMagicPetTargetState(tgh_turn=2,tgh_power=15),
+                    PreparedSetMagicPetPowers(100,92,100),
+                ),
+                "enemy":SetMagicPetParticipantRuntime(),
+            }),
+        )
+        for expected_counter,expected_defense in ((1,92),(0,80)):
+            result=resolve_persistent_ordinary_round(
+                state,
+                commands={
+                    "player":BattleCommand(BATTLE_COM_WAIT),
+                    "enemy":BattleCommand(BATTLE_COM_WAIT),
+                },
+                initiative_random_subtracts={"player":0,"enemy":0},
+                profiles={
+                    pid:BattleCombatProfile(100,0,0,0,0,0)
+                    for pid in ("player","enemy")
+                },
+                attack_rolls={},
+                defense_profile="newpower_70pct",
+            )
+            state=result.after
+            magic=state.setmagicpet_overlay.runtime_by_participant_id[
+                "player"
+            ]
+            self.assertEqual(magic.state.tgh_turn,expected_counter)
+            self.assertEqual(
+                participant_snapshot(state,"player").defense,
+                expected_defense,
+            )
+            if expected_counter:
+                self.assertEqual(magic.prepared_powers.defense,92)
+            else:
+                self.assertIsNone(magic.prepared_powers)
+
+    def test_postround_preparation_orders_setmagicpet_before_weaken(self):
+        player=actor(
+            "player","player","player",
+            attack=100,defense=80,quick=60,
+        )
+        enemy=actor("enemy","enemy","enemy",quick=20)
+        state=begin_persistent_battle(
+            battle_session(player,(enemy,)),
+            slots={"player":0,"enemy":10},
+            nocast_overlay=NocastRoundOverlay({
+                "player":NocastParticipantRuntime(
+                    25,25,25,25,weaken_counter=4,
+                ),
+                "enemy":NocastParticipantRuntime(25,25,25,25),
+            }),
+            setmagicpet_overlay=SetMagicPetRoundOverlay({
+                "player":SetMagicPetParticipantRuntime(
+                    SetMagicPetTargetState(tgh_turn=3,tgh_power=15)
+                ),
+                "enemy":SetMagicPetParticipantRuntime(),
+            }),
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={
+                pid:BattleCombatProfile(100,0,0,0,0,0)
+                for pid in ("player","enemy")
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+        )
+        magic=result.after.setmagicpet_overlay.runtime_by_participant_id[
+            "player"
+        ]
+        late=result.after.nocast_overlay.runtime_by_participant_id[
+            "player"
+        ]
+        self.assertEqual(magic.state.tgh_turn,2)
+        self.assertEqual(magic.prepared_powers.defense,92)
+        # Source preparation order: SetMagicPet 80 + 15% = 92, then
+        # Weaken truncates 92 * 0.8 -> 73.
+        self.assertEqual(late.prepared_weaken_powers.defense,73)
+        self.assertEqual(
+            participant_snapshot(result.after,"player").defense,
+            73,
+        )
 
     def test_overlay_is_exact_participant_mapping_type(self):
         overlay=SetMagicPetRoundOverlay({
