@@ -5960,3 +5960,17 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Runtime golden Action **37222545385 PASS** after expanding the golden workflow path filter to direct BattleTimid runtime dependencies.
 - **Still OPEN:** recovered25 full-region Action **37222338826** is still running; pressure classifier still intentionally lists BattleTimid as `open`. Do not count the five ID-606 slot uses as accepted executable coverage until full-region passes and a hash-verified pressure run rewrites the derived report.
 - **Highest-priority unfinished task:** wait for **37222338826** to finish. If PASS, add only exact `PETSKILL_BattleTimid` to the pressure `CLOSED_RUNTIME_CALLBACKS`, update the pressure unit fixture, run the verified preservation-bundle pressure workflow, and accept the mechanically selected next OPEN callback only from that report.
+
+
+## Phase 1 BattleTimid runtime closure / Combined handoff — 2026-10-05
+
+- Recovered25 full-region Action **37222338826 PASS**. All deterministic region/runtime-stack tests, verified bundle recovery, 826 materializable map payload validation, concrete local runtime stack, AttackMagic cross-links, server/client collision audits/providers, and derived report write-back passed.
+- Pressure classifier commit `1d210bd797909e959241a080efd21a30f21234a9` closes **only** exact `PETSKILL_BattleTimid`; near-name `PETSKILL_2BattleTimid` remains OPEN.
+- Preservation-bundle pressure Action **37222914634 PASS**; derived report commit `2d29fa43ddddd2a006eedc73c57962042e786361`.
+- Derived pressure report: `PETSKILL_BattleTimid` = **closed_runtime**, exact ID **606**, **5 slot uses / 5 templates**.
+- Canonical accepted executable positive skill-slot coverage advances from **2434 to 2439 / 2486 = 98.11%**. This remains a recovered25 enemy pet-skill slot metric, not whole-project reconstruction completion.
+- `BATTLETIMID_RUNTIME_R1 = CLOSED_BOUNDED_RECOVERED25_ID606_OPPOSITE_SIDE_ENEMY_RUNTIME`.
+- Open boundaries remain intentionally outside closure: same-side target behavior; active DamageReact/reflect; mounted ride; prepared-Weaken combination; lethal-damage + forced-exit overlap; exact libc rand state; original numeric COM1 and LOW(COM3) array-index identity; battle-external `CHAR_DEFAULTPET` persistence.
+- Machine-selected next OPEN callback is **`PETSKILL_Combined`**, recovered IDs **627, 632, 637**, **5 slot uses / 5 templates**.
+- Preliminary read-only descendant inspection shows `PETSKILL_Combined` is compile-guarded by `_PETSKILL_COMBINED`; at least the fixed gavin descendant parses OPTION as a pipe-delimited “综合法” list and writes `BATTLE_COM_JYUJYUTU` plus a randomly selected listed skill into LOW(COM3). This is **PRE-AUDIT ONLY** and not yet accepted reference evidence.
+- **Highest-priority unfinished task:** after BattleTimid main fast-forward and main Action verification, create a fresh bounded Combined reference branch; audit all fixed descendant source/header/caller/dispatcher variants and build a hash-verified recovered25 population/metadata/OPTION probe for IDs 627/632/637 before any runtime implementation. Continue **WORK mode** under DD-018.
