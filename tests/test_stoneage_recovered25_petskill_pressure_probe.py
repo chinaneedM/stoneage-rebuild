@@ -85,10 +85,11 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
             583:SimpleNamespace(function_name="PETSKILL_Refresh"),
             592:SimpleNamespace(function_name="PETSKILL_Refresh"),
             601:SimpleNamespace(function_name="PETSKILL_SetMagicPet"),
+            606:SimpleNamespace(function_name="PETSKILL_BattleTimid"),
             200:SimpleNamespace(function_name="PETSKILL_Merge"),
         })
         enemies=SimpleNamespace(templates={
-            10:SimpleNamespace(skill_slot_ids=(583,583,592,601,200,0,0)),
+            10:SimpleNamespace(skill_slot_ids=(583,583,592,601,606,200,0)),
         })
         result=analyze_runtime_objects(pets,enemies)
         rows={row["callback"]:row for row in result["rows"]}
