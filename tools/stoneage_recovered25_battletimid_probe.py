@@ -15,8 +15,7 @@ EXPECTED_CALLBACK_IDS=(606,)
 EXPECTED_REFERENCED_IDS=(606,)
 EXPECTED_SLOT_REFERENCES=5
 EXPECTED_TEMPLATES=5
-# Filled only after a hash-verified first-pass workflow reports the row.
-EXPECTED_EXACT_ROW=None
+EXPECTED_EXACT_ROW=(\n    606,1,6,2,3000,0,\n    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",\n    False,\n)
 
 
 def analyze_runtime_objects(petskills,enemybase,*,expected_exact_row=EXPECTED_EXACT_ROW):
@@ -94,7 +93,7 @@ def emit(result):
     )
     print(
         "RESOLUTION|RECOVERED25_BATTLETIMID_EXACT_ROW_"
-        +("CLOSED" if result["exact_row_closed"] else "OPEN_FIRST_PASS")
+        +("CLOSED" if result["exact_row_closed"] else "OPEN")
     )
     print("RESOLUTION|RECOVERED25_BATTLETIMID_ORDERED_RUNTIME_OPEN")
 

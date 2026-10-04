@@ -101,6 +101,7 @@ jobs:
           grep -F 'COUNT|enemybase_slot_references|5'             research/recovered/STONEAGE-25-BATTLETIMID-PROBE-R1.txt
           grep -F 'COUNT|enemybase_templates|5'             research/recovered/STONEAGE-25-BATTLETIMID-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_BATTLETIMID_POPULATION_CLOSED'             research/recovered/STONEAGE-25-BATTLETIMID-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_BATTLETIMID_EXACT_ROW_CLOSED'             research/recovered/STONEAGE-25-BATTLETIMID-PROBE-R1.txt
       - name: Print derived reports
         if: always()
         run: |

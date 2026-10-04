@@ -3,7 +3,7 @@ from types import SimpleNamespace
 import unittest
 
 from tools.stoneage_recovered25_petskill_runtime import Recovered25PetSkillEntry
-from tools.stoneage_recovered25_battletimid_probe import analyze_runtime_objects
+from tools.stoneage_recovered25_battletimid_probe import (\n    EXPECTED_EXACT_ROW,\n    analyze_runtime_objects,\n)
 
 
 def fixture():
@@ -57,6 +57,25 @@ class BattleTimidProbeTests(unittest.TestCase):
         row=result["rows"][0]
         self.assertEqual(row["option_bytes"],6)
         self.assertEqual(len(row["option_sha256"]),64)
+
+    def test_verified_exact_row_pin_closes(self):
+        pets,enemies=fixture()
+        skills={
+            606:Recovered25PetSkillEntry(
+                606,1,6,2,3000,"PETSKILL_BattleTimid",b""
+            ),
+        }
+        result=analyze_runtime_objects(
+            SimpleNamespace(skills=skills),enemies,
+            expected_exact_row=EXPECTED_EXACT_ROW,
+        )
+        self.assertTrue(result["population_closed"])
+        self.assertTrue(result["exact_row_closed"])
+        self.assertEqual(result["rows"][0]["option_bytes"],0)
+        self.assertEqual(
+            result["rows"][0]["option_sha256"],
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        )
 
     def test_nul_presence_is_derived_not_hidden(self):
         pets,enemies=fixture()
