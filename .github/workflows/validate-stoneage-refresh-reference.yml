@@ -1,0 +1,19 @@
+name: Validate StoneAge Refresh reference
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-refresh-reference.yml
+      - tools/stoneage_refresh_model.py
+      - tools/stoneage_refresh_source_audit.py
+      - tools/stoneage_recovered25_refresh_probe.py
+      - tests/test_stoneage_refresh_model.py
+      - tests/test_stoneage_recovered25_refresh_probe.py
+permissions:
+  contents: read
+jobs:
+  reference:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_refresh_model tests.test_stoneage_recovered25_refresh_probe tests.test_stoneage_recovered25_petskill_runtime tests.test_stoneage_recovered25_enemybase_runtime tests.test_stoneage_recovered25_petskill_pressure_probe -v

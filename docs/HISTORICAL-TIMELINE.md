@@ -547,3 +547,8 @@ recovered binary enum. [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]
 ### 2026-10-04 — WildViolentAttack conditional runtime evidence boundary
 
 **LATER_RECOVERED:** Typed recovered25 enemy execution and two-round persistence now pass independent/remote acceptance, including exact data/hash gates, all seven authoritative slot selections and corrected compliance-prepared fixed-power use alongside Weaken. This admits an explicit CP950 descendant-reference domain; it neither resolves the original binary execution charset nor dates the skill's introduction or proves Taiwan-v1 membership. See `specs/STONEAGE-WILDVIOLENT-RUNTIME-R1.md`.
+
+
+## 2026-10-04 — Refresh bounded descendant audit
+
+**FACT / LATER_RECOVERED:** Three fixed descendant source profiles expose a command-only Refresh callback and shared highest-positive-status recovery. Executor success/receive effect depend on the actor, while recovery acts on targets. Wildcard compares a battle status index with the CONFUSION work enum, clearing one highest state including extensions rather than all states. Two tables have 32 labels while scanning to END44; unmatched scans and NULL OPTION are unsafe. Source commands2032/2032/2030 and skill macro575 are profile facts, not recovered data IDs583/592 or binary enums. 9083 transient defined native witnesses and expected sanitizer diagnostics support the bounded reference. **OPEN:** whole recovered callback population/real-byte outcomes until remote verification, original compiler charset, ordered runtime and Taiwan-v1 membership. The source's 2002/08/08 comment is not independently verified introduction evidence. See SRC-DESCENDANT-REFRESH-PINNED-PROFILES-R1 and the R1 reference spec.
