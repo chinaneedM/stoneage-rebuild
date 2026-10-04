@@ -1,0 +1,28 @@
+name: Validate StoneAge SetMagicPet runtime
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-setmagicpet-runtime.yml"
+      - "tools/stoneage_enemy_ai_setmagicpet_bridge.py"
+      - "tools/stoneage_setmagicpet_runtime_state.py"
+      - "tools/stoneage_setmagicpet_model.py"
+      - "tools/stoneage_recovered25_petskill_runtime.py"
+      - "tests/test_stoneage_setmagicpet_runtime.py"
+permissions:
+  contents: read
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate SetMagicPet runtime primitives
+        run: |
+          python -m unittest -v \
+            tests.test_stoneage_setmagicpet_runtime \
+            tests.test_stoneage_setmagicpet_model \
+            tests.test_stoneage_recovered25_setmagicpet_probe \
+            tests.test_stoneage_recovered25_petskill_runtime
