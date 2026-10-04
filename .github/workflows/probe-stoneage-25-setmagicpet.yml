@@ -109,6 +109,12 @@ jobs:
             research/recovered/STONEAGE-25-SETMAGICPET-PROBE-R1.txt
           grep -F 'COUNT|enemybase_templates|6' \
             research/recovered/STONEAGE-25-SETMAGICPET-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_SETMAGICPET_POPULATION_CLOSED' \
+            research/recovered/STONEAGE-25-SETMAGICPET-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_SETMAGICPET_EXACT_ROWS_CLOSED' \
+            research/recovered/STONEAGE-25-SETMAGICPET-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_SETMAGICPET_OPTION_DOMAIN_SAFE' \
+            research/recovered/STONEAGE-25-SETMAGICPET-PROBE-R1.txt
       - name: Print derived reports
         if: always()
         run: |

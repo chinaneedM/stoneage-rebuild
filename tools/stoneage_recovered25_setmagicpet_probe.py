@@ -18,7 +18,13 @@ EXPECTED_PETSKILL_SHA256="f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86
 EXPECTED_REFERENCED_IDS=(601,)
 EXPECTED_SLOT_REFERENCES=6
 EXPECTED_TEMPLATES=6
-EXPECTED_CALLBACK_IDS=None
+EXPECTED_CALLBACK_IDS=(601,602,603,604)
+EXPECTED_ROWS={
+    601:(1,2,2,2500,8,"9f79d3271fc37e9a8f16a0fc664a3149efab9b2fb2d8026a89032c331f6ea6a8",3,15,"TGH"),
+    602:(1,2,2,2500,9,"f696651e7561190d5f9018aa246dd0a5ba8d9ea7b35a92d94b5e9a0a53b272de",3,3000,"HP"),
+    603:(1,2,2,2500,8,"9e56ba09b3efd92d37969ff10b39441ce14e9fc3eddbe7c806ee3e5a243cb39d",3,10,"STR"),
+    604:(1,2,2,2500,8,"3c627e924f3b3f5e19f2d7c6db7811e174ac6958c2ba3f4067f98822def3cbf2",3,15,"DEX"),
+}
 
 
 def analyze_runtime_objects(petskills,enemybase,*,expected_ids=EXPECTED_CALLBACK_IDS):
@@ -64,6 +70,24 @@ def analyze_runtime_objects(petskills,enemybase,*,expected_ids=EXPECTED_CALLBACK
         and sum(counts.values())==EXPECTED_SLOT_REFERENCES
         and len(templates)==EXPECTED_TEMPLATES
     )
+    row_map={row["id"]:row for row in rows}
+    exact_rows=(
+        ids==tuple(EXPECTED_ROWS)
+        and all(
+            (
+                row_map[skill_id]["field"],
+                row_map[skill_id]["target"],
+                row_map[skill_id]["cost"],
+                row_map[skill_id]["illegal"],
+                row_map[skill_id]["option_bytes"],
+                row_map[skill_id]["option_sha256"],
+                row_map[skill_id]["turn"],
+                row_map[skill_id]["amount"],
+                row_map[skill_id]["kind"],
+            ) == EXPECTED_ROWS[skill_id]
+            for skill_id in EXPECTED_ROWS
+        )
+    )
     return {
         "rows":tuple(rows),
         "callback_ids":ids,
@@ -72,6 +96,7 @@ def analyze_runtime_objects(petskills,enemybase,*,expected_ids=EXPECTED_CALLBACK
         "templates":len(templates),
         "references_match":references_match,
         "population_closed":expected_ids is not None and ids==expected_ids and references_match,
+        "exact_rows_match":exact_rows,
         "all_options_parse_safe":bool(rows) and all(row["parse_safe"] for row in rows),
         "all_kinds_recognized":bool(rows) and all(row["recognized_kind"] for row in rows),
     }
@@ -91,6 +116,10 @@ def emit(result):
     print(
         "RESOLUTION|RECOVERED25_SETMAGICPET_POPULATION_"
         +("CLOSED" if result["population_closed"] else "OPEN")
+    )
+    print(
+        "RESOLUTION|RECOVERED25_SETMAGICPET_EXACT_ROWS_"
+        +("CLOSED" if result["exact_rows_match"] else "OPEN")
     )
     print(
         "RESOLUTION|RECOVERED25_SETMAGICPET_OPTION_DOMAIN_"
@@ -116,6 +145,10 @@ def main():
         raise SystemExit("SetMagicPet positive reference population drift")
     if EXPECTED_CALLBACK_IDS is not None and not result["population_closed"]:
         raise SystemExit("SetMagicPet full callback population drift")
+    if not result["exact_rows_match"]:
+        raise SystemExit("SetMagicPet exact metadata/OPTION/parse drift")
+    if not (result["all_options_parse_safe"] and result["all_kinds_recognized"]):
+        raise SystemExit("SetMagicPet OPTION domain drift")
 
 
 if __name__=="__main__":

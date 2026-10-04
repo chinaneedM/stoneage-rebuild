@@ -3,7 +3,7 @@ from types import SimpleNamespace
 import unittest
 
 from tools.stoneage_recovered25_petskill_runtime import Recovered25PetSkillEntry
-from tools.stoneage_recovered25_setmagicpet_probe import analyze_runtime_objects
+from tools.stoneage_recovered25_setmagicpet_probe import analyze_runtime_objects, EXPECTED_ROWS
 
 
 def fixture():
@@ -70,6 +70,13 @@ class SetMagicPetProbeTests(unittest.TestCase):
         )
         self.assertTrue(result["all_options_parse_safe"])
         self.assertFalse(result["all_kinds_recognized"])
+
+    def test_production_exact_row_gate_is_independent_of_population(self):
+        pets,enemies=fixture()
+        result=analyze_runtime_objects(pets,enemies,expected_ids=(601,701))
+        self.assertTrue(result["population_closed"])
+        self.assertFalse(result["exact_rows_match"])
+        self.assertEqual(tuple(EXPECTED_ROWS),(601,602,603,604))
 
     def test_metadata_and_hash_are_derived_independently(self):
         pets,enemies=fixture()
