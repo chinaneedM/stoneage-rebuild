@@ -99,6 +99,8 @@ from tools.stoneage_recovered25_attack_magic_runtime import (
 
 from tools.stoneage_enemy_ai_attack_crazed_bridge import EnemyAiAttackCrazedSubmission
 from tools.stoneage_attack_crazed_model import resolve_attack_crazed_target_list
+from tools.stoneage_enemy_ai_mdfyattack_bridge import EnemyAiMdfyAttackSubmission
+from tools.stoneage_mdfyattack_model import mdfyattack_attribute_damage
 
 from tools.stoneage_battle_core_model import (
     ENEMY,
@@ -940,6 +942,10 @@ class OrdinaryRoundEvent:
     fall_ground_resolution: FallGroundResolution | None = None
     battle_tear_augmentation: BattleTearAugmentation | None = None
     guard_break2_resolution: GuardBreak2DamageResolution | None = None
+    mdfyattack_skill_id: int | None = None
+    mdfyattack_element: str | None = None
+    mdfyattack_attack_vector: tuple[int, ...] = ()
+    mdfyattack_event_marked: bool = False
     attack_crazed_skill_id: int | None = None
     attack_crazed_hit_index: int | None = None
     attack_crazed_target_list: tuple[int, ...] = ()
@@ -1126,6 +1132,7 @@ def _resolve_counter_chain(
     field_attr: str,
     field_power: int,
     ride_pet_runtime: RidePetRuntime | None = None,
+    semantic_noncounter_actor_ids: frozenset[str] = frozenset(),
 ) -> tuple[tuple[OrdinaryRoundEvent, ...], RidePetRuntime | None]:
     """Execute the stable base alternating BATTLE_Counter() loop.
 
@@ -1178,7 +1185,7 @@ def _resolve_counter_chain(
             )
             break
 
-        if command_by_slot[actor_slot].command1 not in {
+        if actor_id in semantic_noncounter_actor_ids or command_by_slot[actor_slot].command1 not in {
             BATTLE_COM_ATTACK,
             BATTLE_COM_S_NOGUARD,
         }:
@@ -3411,6 +3418,7 @@ def resolve_ordinary_round(
     continuation_rolls_by_attack_id: Mapping[
         str,ContinuationAttackRolls
     ] | None = None,
+    mdfyattack_submissions_by_participant_id: Mapping[str,EnemyAiMdfyAttackSubmission] | None = None,
     attack_crazed_submissions_by_participant_id: Mapping[str,EnemyAiAttackCrazedSubmission] | None = None,
     attack_crazed_rolls_by_attack_id: Mapping[str,AttackCrazedRolls] | None = None,
     base_status_runtime_by_participant_id: Mapping[
@@ -4069,6 +4077,29 @@ def resolve_ordinary_round(
         if (effects.attack_power,effects.defense_power)!=(expected.attack_power,expected.defense_power):
             raise ValueError("AttackCrazed callback work-power setup drift")
 
+    mdfyattack_submissions=dict(mdfyattack_submissions_by_participant_id or {})
+    if set(mdfyattack_submissions)-set(slot_by_id):
+        raise ValueError("Mdfyattack references unknown actors")
+    if set(mdfyattack_submissions) & (
+        set(attack_crazed_submissions) | guard_break2_actor_ids | barrier_actor_ids
+        | nocast_actor_ids | fall_ground_actor_ids | battle_tear_actor_ids
+        | mp_damage_actor_ids | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+    ):
+        raise ValueError("Mdfyattack semantic submissions overlap another skill")
+    for pid,submission in mdfyattack_submissions.items():
+        if not isinstance(submission,EnemyAiMdfyAttackSubmission):
+            raise TypeError("Mdfyattack submission has wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (submission.participant_id!=pid or entry.participant.kind!="enemy"
+            or entry.participant.side!="enemy" or entry.command.command1!=BATTLE_COM_ATTACK
+            or entry.command.command2!=submission.source_target_slot):
+            raise ValueError("Mdfyattack ordering carrier must be enemy ATTACK/source-target")
+        if profiles[pid].counter_weapon_type!=COUNTER_WEAPON_FIST:
+            raise ValueError("Mdfyattack currently admits enemy FIST actors only")
+    # The scheduling carrier cannot confer native ATTACK counter eligibility.
+    # Confusion later removes a rewritten actor from this symbolic-command set.
+    mdfyattack_active_command_ids=set(mdfyattack_submissions)
+
     if (nocast_actor_ids or barrier_actor_ids) and nocast_overlay is None:
         raise ValueError(
             "Nocast/Barrier semantic action requires explicit round overlay"
@@ -4672,6 +4703,7 @@ def resolve_ordinary_round(
             status_runtime_by_participant_id=status_runtime,
             command_by_slot=command_by_slot,
             action_value_by_slot=action_value_by_slot,
+            semantic_noncounter_actor_ids=frozenset(mdfyattack_active_command_ids),
             counter_rolls=normalized_counter_rolls.get(
                 str(main_actor_id),()
             ),
@@ -4801,6 +4833,8 @@ def resolve_ordinary_round(
                 )
             )
             current_status_tick=tick
+            if tick.confusion_rewrote_command:
+                mdfyattack_active_command_ids.discard(str(participant_id))
             hp_by_slot[slot]=int(tick.hp_after)
             hp_by_id[str(participant_id)]=int(tick.hp_after)
             runtime=replace(
@@ -6551,6 +6585,10 @@ def resolve_ordinary_round(
         attacker_profile = profiles[participant_id]
         defender_profile = profiles[defender_id]
         before = hp_by_slot[target]
+        mdfyattack_submission=(mdfyattack_submissions.get(str(participant_id))
+            if str(participant_id) in mdfyattack_active_command_ids else None)
+        mdfyattack_source_react_blocked=(mdfyattack_submission is not None
+            and base_damage_react_active(damage_react_state[str(defender_id)]))
         guardbreak_eligible=bool(
             attack_command_code == BATTLE_COM_S_GBREAK
             and int(target) in guarding
@@ -6606,7 +6644,7 @@ def resolve_ordinary_round(
                         target_hp_after=before,
                     )
                 )
-                if not continuation_blocked_by_reaction:
+                if mdfyattack_submission is None and not continuation_blocked_by_reaction:
                     append_counter_chain(participant_id,slot,target)
                 continue
 
@@ -6801,13 +6839,19 @@ def resolve_ordinary_round(
             ),
             int(rolls.damage_roll),
         )
-        damage = attribute_adjusted_damage(
-            base_damage,
-            attacker_profile.elements,
-            defender_profile.elements,
-            field_attr=field_attr,
-            field_power=field_power,
-        )
+        if mdfyattack_submission is not None:
+            damage = mdfyattack_attribute_damage(
+                base_damage, mdfyattack_submission.option, defender_profile.elements,
+                field_attr=field_attr, field_power=field_power,
+            )
+        else:
+            damage = attribute_adjusted_damage(
+                base_damage,
+                attacker_profile.elements,
+                defender_profile.elements,
+                field_attr=field_attr,
+                field_power=field_power,
+            )
         if is_critical:
             damage = critical_damage(
                 damage,
@@ -6922,6 +6966,7 @@ def resolve_ordinary_round(
             or fall_ground_submission is not None
             or battle_tear_submission is not None
             or guard_break2_submission is not None
+            or mdfyattack_submission is not None
         ):
             # Fixed specialized BATTLE_S_AttackDamage lets AttackSeq calculate
             # against a Guardian but passes its original defindex to DamageSub.
@@ -7376,6 +7421,11 @@ def resolve_ordinary_round(
                 fall_ground_resolution=fall_ground_resolution,
                 battle_tear_augmentation=battle_tear_augmentation,
                 guard_break2_resolution=guard_break2_resolution,
+                mdfyattack_skill_id=(None if mdfyattack_submission is None else mdfyattack_submission.skill_id),
+                mdfyattack_element=(None if mdfyattack_submission is None else mdfyattack_submission.option.element),
+                mdfyattack_attack_vector=(() if mdfyattack_submission is None else mdfyattack_submission.option.attack_vector),
+                mdfyattack_event_marked=(mdfyattack_submission is not None
+                    and not mdfyattack_source_react_blocked and int(event_damage)>0),
                 ride_damage_split=ride_split,
                 ride_hp_resolution=ride_hp_resolution,
                 ride_pet_fell_rider_id=ride_pet_fell_rider_id,
@@ -7389,7 +7439,7 @@ def resolve_ordinary_round(
         # Guardian/DamageReact. Dedicated BATTLE_S_FallGround does not: its
         # iRet is controlled by AttackSeq result, the post-react defindex's
         # GUARD state and death. Preserve that difference here.
-        if _battle_attack_continuation_allowed(
+        if mdfyattack_submission is None and _battle_attack_continuation_allowed(
             guardian_redirected=(
                 False
                 if (

@@ -67,6 +67,7 @@ from tools.stoneage_battle_core_model import (
     resolve_battle_ultimate_death_penalty,
 )
 from tools.stoneage_enemy_ai_attack_crazed_bridge import EnemyAiAttackCrazedSubmission
+from tools.stoneage_enemy_ai_mdfyattack_bridge import EnemyAiMdfyAttackSubmission
 from tools.stoneage_battle_round_model import (
     AttackCrazedRolls,
     BattleCombatProfile,
@@ -1249,6 +1250,7 @@ def resolve_persistent_ordinary_round(
     combo_rolls_by_starter_id: Mapping[
         str,ComboExecutionRolls
     ] | None = None,
+    mdfyattack_submissions_by_participant_id: Mapping[str,EnemyAiMdfyAttackSubmission] | None = None,
     attack_crazed_submissions_by_participant_id: Mapping[str,EnemyAiAttackCrazedSubmission] | None = None,
     attack_crazed_rolls_by_attack_id: Mapping[str,AttackCrazedRolls] | None = None,
     continuation_rolls_by_attack_id: Mapping[
@@ -1380,7 +1382,8 @@ def resolve_persistent_ordinary_round(
         prepared,
         profiles,
         combo_start_rolls_1_100,
-        semantic_nonattack_ids=tuple(attack_crazed_submissions_by_participant_id or {}),
+        semantic_nonattack_ids=tuple(set(attack_crazed_submissions_by_participant_id or {})
+            | set(mdfyattack_submissions_by_participant_id or {})),
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
                 state.base_status_runtime_by_participant_id[participant_id]
@@ -1420,6 +1423,7 @@ def resolve_persistent_ordinary_round(
         }),
         combo_rolls_by_starter_id=combo_rolls_by_starter_id,
         continuation_rolls_by_attack_id=continuation_rolls_by_attack_id,
+        mdfyattack_submissions_by_participant_id=mdfyattack_submissions_by_participant_id,
         attack_crazed_submissions_by_participant_id=attack_crazed_submissions_by_participant_id,
         attack_crazed_rolls_by_attack_id=attack_crazed_rolls_by_attack_id,
         base_status_runtime_by_participant_id=_freeze_mapping({

@@ -193,6 +193,7 @@ def analyze_profile(name, root):
     attr = _compact(_strip(_definition(data['battle_event'], 'BATTLE_AttrAdjust')))
     event = _compact(_strip(_definition(data['battle_event'], 'BATTLE_S_AttackDamage', raw_window=True)))
     battle = _compact(_strip(data['battle']))
+    counter = _compact(_strip(_definition(data['battle_event'], 'BATTLE_Counter', raw_window=True)))
     start = battle.index('case' + COMMAND_NAME + ':')
     branch = battle[start:battle.index('case', start + 4)]
     mark = event[event.index('case' + COMMAND_NAME + ':'):]
@@ -213,6 +214,10 @@ def analyze_profile(name, root):
         'override_before_properties_before_field_before_calc': rewrite < hooks < field < calc,
         'attacker_and_defender_property_hooks': all(s in attr for s in ('loopfunc(attackindex,defindex,&damage,At_pow,5)', 'loopfunc(defindex,attackindex,&damage,Dt_pow,5)')),
         'dispatch_targetadjust_specialized_single_hit': 'BATTLE_TargetAdjust' in branch and ('BATTLE_S_AttackDamage(battleindex,attackNo,defNo,' + COMMAND_NAME + ',skill)') in branch and 'BATTLE_COM_ATTACK' not in branch and 'BATTLE_Counter' not in branch,
+        'native_counter_rejects_specialized_command_before_rng': all(x in counter for x in
+            ('CHAR_WORKBATTLECOM1)==BATTLE_COM_ATTACK', 'CHAR_WORKBATTLECOM1)==BATTLE_COM_S_NOGUARD')) and
+            counter.index('BATTLE_COM_S_NOGUARD') < counter.index('BATTLE_CounterCheck') and
+            'returnFALSE' in counter[counter.index('BATTLE_COM_S_NOGUARD'):counter.index('BATTLE_CounterCheck')],
         'reaction_disables_event_skill_before_attackseq': event.index('skill_type=-1') < event.index('BATTLE_AttackSeq'),
         'damage_sub_after_attackseq': event.index('BATTLE_AttackSeq') < event.index('BATTLE_DamageSub'),
         'guardian_not_reassigned_by_specialized_wrapper': 'Guardian=-1' in event and '&Guardian,skill_type' in event and 'if(Guardian>=0)' not in event,

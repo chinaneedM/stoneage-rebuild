@@ -117,3 +117,40 @@ then implement typed AI -> ordered specialized physical action -> persistent
 coordinator acceptance within an explicitly supported actor/weapon/extension
 domain. These 8 uses do not increase executable coverage before runtime E2E
 acceptance; do not advance to another callback yet.
+
+
+## Verified data and typed runtime — 2026-10-04
+
+Reference **37176835218** and pinned-source/verified-bundle probe **37176835194**
+PASS at `4140c8ee2c7894b5f4956814e8e51f5c03d6b345`; report write-back is
+`743cf5255d5a694556ad3ebae67e886edaae8467`.
+
+| Recovered ID | Element index/name | Amount | FIELD | TARGET | COST | ILLEGAL |
+| --- | --- | --- | --- | --- | --- | --- |
+| 548 | 0 / earth | 100 | 1 | 6 | 2 | 2000 |
+| 549 | 1 / water | 100 | 1 | 6 | 2 | 2000 |
+| 550 | 2 / fire | 100 | 1 | 6 | 2 | 2000 |
+| 551 | 3 / wind | 100 | 1 | 6 | 2 | 2000 |
+
+Each OPTION is six NUL-free ASCII bytes. Distinct byte hashes are recorded in
+`research/recovered/STONEAGE-25-MDFYATTACK-PROBE-R1.txt`. Population is 8 positive
+uses / 8 templates. The source and population/OPTION pending gates above are
+superseded by **CLOSED_SAFE_REFERENCE_ONLY / CLOSED / CLOSED_VERIFIED_METADATA**.
+
+Typed runtime uses the recovered enemy/opposite-side/FIST/amount-100 domain,
+without arbitrary property/suit/profession effects. It computes the specialized
+attribute stage before existing critical/guard settlement and retains the
+specialized Guardian calculation/original-target reaction/HP boundary. A local
+semantic witness records skill ID/element/attack vector and whether final
+positive player damage retains the special event mark. This is not an invented
+historical skill-array index or numeric command/protocol emission.
+
+The original counter checker admits ATTACK/NOGUARD only before its RNG check;
+Mdfyattack remains ineligible both before and after its own action. Its internal
+ordering carrier cannot confer counter/combo eligibility. A confusion command
+rewrite removes that semantic identity and uses ordinary attributes.
+
+Local 1024 tests / 106 affected modules PASS, including 19 direct runtime tests
+and two-round coordinator E2E. **RECOVERED25_MDFYATTACK_RUNTIME_R1 =
+LOCAL_PASS_REMOTE_PENDING**; executable coverage remains 2400/2486 until remote
+runtime acceptance. Pressure reranking is deferred until that acceptance.

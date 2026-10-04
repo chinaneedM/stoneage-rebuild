@@ -101,6 +101,8 @@ from tools.stoneage_enemy_ai_attack_crazed_bridge import (
     EnemyAiAttackCrazedSubmission, resolve_enemy_ai_attack_crazed_submission,
 )
 from tools.stoneage_attack_crazed_model import CALLBACK_NAME as ATTACK_CRAZED_CALLBACK
+from tools.stoneage_enemy_ai_mdfyattack_bridge import EnemyAiMdfyAttackSubmission, resolve_enemy_ai_mdfyattack_submission
+from tools.stoneage_mdfyattack_model import CALLBACK_NAME as MDFYATTACK_CALLBACK
 from tools.stoneage_battle_round_model import (
     AttackCrazedRolls,
     BATTLE_COM_ATTACK,
@@ -430,6 +432,7 @@ class EnemyAiCommonCommandBatch:
     barrier_submissions: Mapping[
         str,EnemyAiBarrierSubmission
     ] = field(default_factory=dict)
+    mdfyattack_submissions: Mapping[str,EnemyAiMdfyAttackSubmission] = field(default_factory=dict)
     attack_crazed_submissions: Mapping[str,EnemyAiAttackCrazedSubmission] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
@@ -819,6 +822,24 @@ class EnemyAiCommonCommandBatch:
             raise ValueError(
                 "enemy AI AttackCrazed semantic submissions overlap another skill"
             )
+
+
+        mdfyattack_submissions={str(k):v for k,v in self.mdfyattack_submissions.items()}
+        object.__setattr__(self,"mdfyattack_submissions",MappingProxyType(mdfyattack_submissions))
+        for pid,submission in mdfyattack_submissions.items():
+            if not isinstance(submission,EnemyAiMdfyAttackSubmission):
+                raise TypeError("enemy AI Mdfyattack submission has wrong type")
+            if pid not in self.commands or submission.participant_id!=pid:
+                raise ValueError("enemy AI Mdfyattack participant/carrier drift")
+            command=self.commands[pid]
+            if command.command1!=BATTLE_COM_ATTACK or command.command2!=submission.source_target_slot:
+                raise ValueError("enemy AI Mdfyattack carrier must be ATTACK/source-target")
+        if set(mdfyattack_submissions) & (
+            set(attack_crazed_submissions) | set(barrier_submissions) | set(guard_break2_submissions)
+            | set(nocast_submissions) | set(tear_submissions) | set(fall_submissions)
+            | set(mp_submissions) | set(damage_submissions) | set(rehp_submissions) | set(magic_submissions)
+        ):
+            raise ValueError("enemy AI Mdfyattack semantic submissions overlap another skill")
 
 
 @dataclass
@@ -1472,6 +1493,7 @@ class LocalRuntimeSessionCoordinator:
         allow_nocast_skill: bool = False,
         allow_guard_break2_skill: bool = False,
         allow_barrier_skill: bool = False,
+        allow_mdfyattack_skill: bool = False,
         allow_attack_crazed_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
@@ -1621,6 +1643,7 @@ class LocalRuntimeSessionCoordinator:
         nocast_submissions={}
         guard_break2_submissions={}
         barrier_submissions={}
+        mdfyattack_submissions={}
         attack_crazed_submissions={}
         for enemy_id in ai_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
@@ -1685,6 +1708,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_nocast_skill)
                 or bool(allow_guard_break2_skill)
                 or bool(allow_barrier_skill)
+                or bool(allow_mdfyattack_skill)
                 or bool(allow_attack_crazed_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
@@ -1696,6 +1720,21 @@ class LocalRuntimeSessionCoordinator:
                 skill_ids=tuple(int(x) for x in spawned.template.skill_slot_ids)
                 selected_skill_id=skill_ids[int(decision.skill_slot)]
                 selected_skill=petskill_runtime.skills.get(selected_skill_id)
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == MDFYATTACK_CALLBACK
+                    and bool(allow_mdfyattack_skill)
+                ):
+                    submission=resolve_enemy_ai_mdfyattack_submission(
+                        spawned,skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),petskill_runtime=petskill_runtime,
+                    )
+                    # Scheduling carrier only; symbolic native COM1 remains
+                    # distinct for attributes, combo and counter eligibility.
+                    commands[enemy_id]=BattleCommand(BATTLE_COM_ATTACK,command2=submission.source_target_slot)
+                    mdfyattack_submissions[enemy_id]=submission
+                    continue
+
                 if (
                     selected_skill is not None
                     and selected_skill.function_name == ATTACK_CRAZED_CALLBACK
@@ -1988,6 +2027,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_GuardBreak2")
             if bool(allow_barrier_skill):
                 allowed_parts.append("PETSKILL_Barrier")
+            if bool(allow_mdfyattack_skill):
+                allowed_parts.append("PETSKILL_Mdfyattack")
             if bool(allow_attack_crazed_skill):
                 allowed_parts.append("PETSKILL_AttackCrazed")
             allowed = "/".join(allowed_parts)
@@ -2009,6 +2050,7 @@ class LocalRuntimeSessionCoordinator:
             nocast_submissions=nocast_submissions,
             guard_break2_submissions=guard_break2_submissions,
             barrier_submissions=barrier_submissions,
+            mdfyattack_submissions=mdfyattack_submissions,
             attack_crazed_submissions=attack_crazed_submissions,
         )
 
@@ -2312,6 +2354,7 @@ class LocalRuntimeSessionCoordinator:
             allow_nocast_skill=True,
             allow_guard_break2_skill=True,
             allow_barrier_skill=True,
+            allow_mdfyattack_skill=True,
             allow_attack_crazed_skill=True,
         )
         enemy_commands = enemy_batch.commands
@@ -2716,6 +2759,7 @@ class LocalRuntimeSessionCoordinator:
             counter_rolls_by_attack_id=counter_rolls_by_attack_id,
             continuation_rolls_by_attack_id=normalized_continuation_rolls,
             attack_crazed_rolls_by_attack_id=normalized_attack_crazed_rolls,
+            mdfyattack_submissions_by_participant_id=enemy_batch.mdfyattack_submissions,
             attack_crazed_submissions_by_participant_id=enemy_batch.attack_crazed_submissions,
             abduct_contexts=enemy_batch.abduct_contexts,
             abduct_rolls=normalized_abduct_rolls,
