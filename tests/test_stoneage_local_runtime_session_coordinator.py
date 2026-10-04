@@ -6898,6 +6898,7 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                         dodge_roll_1_10000=10000,
                         critical_roll_1_10000=10000,
                         damage_roll=0,
+                        minimum_damage_roll_0_1=1,
                     )
                 },
                 battletimid_rolls_by_attack_id={enemy_id:14},
