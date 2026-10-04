@@ -1,6 +1,6 @@
 StoneAge recovered25 WildViolentAttack full callback probe — R1
 No original names, descriptions, raw OPTION rows or assets are stored.
-Complete callback population is enumerated, including unreferenced rows; no full ID list was guessed.
+Complete callback population includes unreferenced ID 652, verified by initial run 37192280455.
 CP950/Big5 build interpretation is conditional; original execution charset and ordered runtime OPEN.
 COUNT|wildviolent_skill_rows|2
 COUNT|enemybase_slot_references|7
@@ -11,3 +11,11 @@ RESOLUTION|RECOVERED25_WILDVIOLENT_POPULATION_CLOSED
 RESOLUTION|RECOVERED25_WILDVIOLENT_CONDITIONAL_OPTION_DOMAIN_CLOSED
 RESOLUTION|RECOVERED25_WILDVIOLENT_RUNTIME_OPEN
 DATA_SHA256|file=petskill|sha256=f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4
+RECOVERED_NATIVE|profile=gavin|execution_charset=utf-8|callback_cases=10|UBSan=PASS
+RECOVERED_NATIVE|profile=gavin|execution_charset=cp950|callback_cases=10|UBSan=PASS
+RECOVERED_NATIVE|profile=iris|execution_charset=utf-8|callback_cases=10|UBSan=PASS
+RECOVERED_NATIVE|profile=iris|execution_charset=cp950|callback_cases=10|UBSan=PASS
+RECOVERED_NATIVE|profile=bismarck|execution_charset=utf-8|callback_cases=10|UBSan=PASS
+RECOVERED_NATIVE|profile=bismarck|execution_charset=cp950|callback_cases=10|UBSan=PASS
+COUNT|recovered_native_callback_witnesses|60
+RESOLUTION|RECOVERED25_WILDVIOLENT_ACTUAL_CALLBACK_CLOSED_CONDITIONAL_CHARSET_REFERENCE
