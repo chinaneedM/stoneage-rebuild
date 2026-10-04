@@ -89,3 +89,14 @@ restored 585/65 callback powers from baseline 300/100 without stubbing the
 production resolver. Original charset/enum/Taiwan-v1 questions remain OPEN.
 The independently verified pressure refresh is the next accounting gate;
 its denominator is positive enemy skill-slot uses, not total reconstruction.
+
+
+## Main and accounting acceptance
+
+Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` repeats all 24
+affected workflows PASS, including 37209543841 runtime, 37209543750 real-data
+admission/native witnesses and 37209543784 full region/resource/collision
+stack. Verified pressure 37209543865 and derived report
+`dc51d2f7a5b4bd05d936343502b41316b4342ca9` account for 2422/2486 positive
+slot uses (97.4%) across all accepted families and select Refresh as next OPEN.
+These counts do not mean total game reconstruction completion.

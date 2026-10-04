@@ -3220,3 +3220,8 @@ Existing pinned source/data evidence feeds the separately typed conditional CP95
 ### 2026-10-04 — WildViolentAttack conditional runtime accepted
 
 Corrected source `b60bc052f82f8f0e241762e9f97c44d479bdf3b2` passes all 21 triggered Actions: dedicated 37209088767, real verified data/seven authoritative selection gates 37209088658, full coordinator 37209088790, golden 37209088681 and full region/resource/collision stack 37209088684. Local 1123 affected tests include 24 dedicated witnesses and production-path two-round E2E, with compliance-prepared fixed powers and strict per-hit RNG ownership. Runtime is CLOSED only in the declared conditional CP950 enemy/opposite-side/FIST baseline domain. Original compiler charset, historical numeric COM1 and Taiwan-v1 membership remain OPEN. Raw source/OPTION/assets remain external.
+
+
+### 2026-10-04 — WildViolentAttack main acceptance and pressure refresh
+
+Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affected Actions, including dedicated 37209543841, verified source/data/seven-slot/60-native-byte witness probe 37209543750 and full region/resource/collision stack 37209543784. Verified pressure 37209543865 PASS produces report commit `dc51d2f7a5b4bd05d936343502b41316b4342ca9`: total 2486, unresolved 0, accepted 2422 within declared domains, next OPEN exact PETSKILL_Refresh (positive IDs 583/592; six uses/six templates). This selects the next audit; it does not establish full Refresh population or semantics. Original compiler charset and Taiwan-v1 historical membership remain OPEN.
