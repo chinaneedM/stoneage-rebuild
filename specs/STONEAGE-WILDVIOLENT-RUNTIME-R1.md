@@ -57,7 +57,10 @@ and AttackCrazed contracts remain unchanged.
 
 The persistent adapter and local session coordinator carry HP, reaction,
 ride and shared status state through the existing battle model. Exact callback
-attack/defense overwrites may coexist with already prepared Weaken powers;
+attack/defense overwrites may coexist with already prepared Weaken powers.
+Compliance reduces WORKFIXSTR/WORKFIXTOUGH as well as work attack/defense;
+the callback uses those prepared fixed values (equal to prepared powers in
+this baseline domain), not the untouched session reconstruction inputs.
 prepared QUICK/DEX still drives that round. Normal post-round preparation
 rebuilds powers from immutable session baselines and advances the accepted
 Weaken/Barrier counters once. Callback powers do not compound or persist as

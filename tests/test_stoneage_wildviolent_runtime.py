@@ -705,7 +705,11 @@ class WildViolentInteractionTests(unittest.TestCase):
                                              prepared_weaken_powers=PreparedWeakenPowers(80, 80, 160)),
         })
         state = begin_persistent_battle(session(player, (enemy,)), slots={"player": 0, "enemy": 10}, nocast_overlay=late)
-        setup = synthetic_setup()
+        setup = resolve_wildviolent_setup(
+            option=SYNTHETIC_OPTIONS[541], execution_charset="cp950", profile="gavin", target_slot=0,
+            fixed_strength=80, fixed_toughness=80, attack_power_before=80, defense_power_before=80,
+            packed_com3_before=0x2345,
+        )
         submission = EnemyAiWildViolentSubmission("enemy", 0, 541, CALLBACK_NAME, 0, setup)
         common = dict(initiative_random_subtracts={"player": 0, "enemy": 0},
                       profiles={"player": BattleCombatProfile(100, 0, 0, 0, 0, 0), "enemy": BattleCombatProfile(200, 0, 0, 0, 0, 0)},
@@ -714,8 +718,10 @@ class WildViolentInteractionTests(unittest.TestCase):
             commands={"player": BattleCommand(BATTLE_COM_WAIT), "enemy": BattleCommand(BATTLE_COM_ATTACK, 0, setup.packed_com3)},
             wildviolent_submissions_by_participant_id={"enemy": submission},
             wildviolent_rolls_by_attack_id={"enemy": WildViolentRolls(3, (hit(),) * 3)},
-            command_setup_effects_by_participant_id={"enemy": BattleCommandSetupEffects(attack_power=195, defense_power=65)}, **common)
+            command_setup_effects_by_participant_id={"enemy": BattleCommandSetupEffects(attack_power=156, defense_power=52)}, **common)
         self.assertEqual(len(self.wild_events(result.round)), 3)
+        self.assertTrue(all(e.damage == wildviolent_divided_damage(physical_base_damage(156, 0, 0), 3)
+                            for e in self.wild_events(result.round)))
         after = result.after.nocast_overlay.runtime_by_participant_id["enemy"]
         self.assertEqual(after.weaken_counter, 0)
         self.assertIsNone(after.prepared_weaken_powers)

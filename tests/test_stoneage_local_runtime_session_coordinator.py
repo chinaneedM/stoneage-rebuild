@@ -6378,12 +6378,23 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             guard_roll_1_100=100,
             dodge_roll_1_10000=None,
         )
+        from tools.stoneage_nocast_runtime_state import PreparedWeakenPowers
+        state=context.persistent_battle_state
+        late={pid:NocastParticipantRuntime(25,25,25,25) for pid in state.hp_by_participant_id}
+        late[enemy_id]=replace(late[enemy_id], weaken_counter=1,
+                              prepared_weaken_powers=PreparedWeakenPowers(240,80,160))
+        context=replace(context, persistent_battle_state=replace(state, nocast_overlay=NocastRoundOverlay(late)))
         previous_hp=2000
         with patch(
             "tools.stoneage_enemy_ai_wildviolent_bridge.EXPECTED_OPTION_SHA256",
             SYNTHETIC_HASHES,
         ):
-            for _ in range(2):
+            for expected_powers in ((468,52),(585,65)):
+                batch=self.coordinator._build_persistent_enemy_common_batch(
+                    context, mode_rolls_by_enemy_id={enemy_id:0},
+                    target_rolls_by_enemy_id={enemy_id:0}, allow_wildviolent_skill=True)
+                setup=batch.wildviolent_submissions[enemy_id].setup
+                self.assertEqual((setup.attack_power,setup.defense_power), expected_powers)
                 context,result=(
                     self.coordinator
                     .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
@@ -6451,6 +6462,10 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                     result.round.hp_by_participant_id["player"],
                 )
                 self.assertLess(current_hp,previous_hp)
+                restored=context.persistent_battle_state.nocast_overlay.runtime_by_participant_id[enemy_id]
+                self.assertEqual(restored.weaken_counter,0)
+                self.assertIsNone(restored.prepared_weaken_powers)
+                self.assertEqual(context.persistent_battle_state.session.enemies[0].attack,300)
                 previous_hp=current_hp
 
 if __name__ == "__main__":

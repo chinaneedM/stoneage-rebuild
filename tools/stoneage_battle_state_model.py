@@ -1407,7 +1407,7 @@ def resolve_persistent_ordinary_round(
                     )
                 # Exact recovered WildViolent rows contain both strength and
                 # toughness markers.  They overwrite the prepared work values
-                # from the fixed session baseline; QUICK/DEX remains prepared.
+                # from compliance-prepared FIXSTR/FIXTOUGH; QUICK/DEX remains prepared.
                 expected=wild_submission.setup
                 if (
                     expected.attack_power is None

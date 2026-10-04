@@ -1832,6 +1832,16 @@ class LocalRuntimeSessionCoordinator:
                 ):
                     baseline=living[enemy_id]
                     current=participant_snapshot(state,enemy_id)
+                    prepared_powers=(
+                        None if state.nocast_overlay is None else
+                        state.nocast_overlay.runtime_by_participant_id[enemy_id].prepared_weaken_powers
+                    )
+                    # Normal compliance rebuilds WORKFIXSTR/WORKFIXTOUGH as
+                    # well as attack/defense powers. In this admitted baseline
+                    # domain the prepared values are equal; immutable session
+                    # stats remain the next preparation's reconstruction input.
+                    fixed_strength=(baseline.attack if prepared_powers is None else prepared_powers.attack)
+                    fixed_toughness=(baseline.defense if prepared_powers is None else prepared_powers.defense)
                     # The scheduling carrier starts with no asserted historical
                     # LOW(COM3) meaning.  The callback preserves that LOW exactly
                     # and writes only the proved HIGH dodge modifier.
@@ -1840,8 +1850,8 @@ class LocalRuntimeSessionCoordinator:
                         skill_slot=int(decision.skill_slot),
                         target_slot=int(decision.target_slot),
                         petskill_runtime=petskill_runtime,
-                        fixed_strength=int(baseline.attack),
-                        fixed_toughness=int(baseline.defense),
+                        fixed_strength=int(fixed_strength),
+                        fixed_toughness=int(fixed_toughness),
                         attack_power_before=int(current.attack),
                         defense_power_before=int(current.defense),
                         packed_com3_before=0,
