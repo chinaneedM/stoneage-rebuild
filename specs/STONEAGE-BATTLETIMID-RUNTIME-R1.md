@@ -92,4 +92,18 @@ end-to-end tests. The ordinary/persistent shared models must also retain all
 existing cross-skill regressions. Full recovered25 region and runtime golden
 contract gates are required before pressure reclassification.
 
-**BATTLETIMID_RUNTIME_R1 = OPEN_PENDING_FINAL_CROSS_GATES.**
+**BATTLETIMID_RUNTIME_R1 =
+CLOSED_BOUNDED_RECOVERED25_ID606_OPPOSITE_SIDE_ENEMY_RUNTIME.**
+
+Closure evidence:
+
+- dedicated runtime Action **37222424443 PASS**;
+- coordinator/cross-skill production gates at `2a8ffa9c2aac4ccb77d69b9fca748dd1f5f0ae8c` PASS;
+- runtime golden Action **37222545385 PASS**;
+- recovered25 full-region Action **37222338826 PASS**;
+- preservation-bundle pressure Action **37222914634 PASS**, with derived report commit
+  `2d29fa43ddddd2a006eedc73c57962042e786361`;
+- pressure report classifies exact `PETSKILL_BattleTimid` ID 606 as
+  `closed_runtime`, 5 uses / 5 templates, while `PETSKILL_2BattleTimid`
+  remains independently OPEN.
+
