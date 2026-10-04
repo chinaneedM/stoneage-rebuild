@@ -2,6 +2,7 @@ import json
 from dataclasses import replace
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 from types import MappingProxyType, SimpleNamespace
 
@@ -36,6 +37,7 @@ from tools.stoneage_battle_round_model import (
     BattleCommand,
     ContinuationAttackRolls,
     AttackCrazedRolls,
+    WildViolentRolls,
     CounterAttemptRolls,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
@@ -93,6 +95,13 @@ from tools.stoneage_local_runtime_core import (
 from tools.stoneage_recovered25_petskill_runtime import (
     Recovered25PetSkillEntry,
     Recovered25PetSkillRuntime,
+)
+from tools.stoneage_enemy_ai_wildviolent_bridge import (
+    EnemyAiWildViolentSubmission,
+)
+from tools.stoneage_wildviolent_model import (
+    CALLBACK_NAME as WILDVIOLENT_CALLBACK,
+    resolve_wildviolent_setup,
 )
 from tools.stoneage_local_runtime_session_coordinator import (
     InMemoryLocalPersistenceStore,
@@ -6287,6 +6296,180 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         self.assertEqual(events[0].target_hp_before,first_hp)
         self.assertLess(context.persistent_battle_state.hp_by_participant_id["player"],first_hp)
         self.assertEqual(context.persistent_battle_state.hp_by_participant_id["player"],result.round.hp_by_participant_id["player"])
+
+
+    def test_recovered_enemy_ai_wildviolent_executes_and_persists(self):
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-wildviolent"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,group,
+            entry_count_roll=1,selection_rolls=(0,),
+            birth_rolls=(EnemyBirthRolls(
+                level_roll=1,birth_offsets=(0,0,0,0),
+                spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+            ),),
+        )
+        enemy_id=str(context.battle.enemies[0].participant_id)
+        spawned=context.spawned_enemies[0]
+        skills=dict(self.stack.petskill_runtime.skills)
+        skills[541]=Recovered25PetSkillEntry(
+            skill_id=541,
+            field=1,
+            target=6,
+            cost=2,
+            illegal=1000,
+            function_name=WILDVIOLENT_CALLBACK,
+            option_bytes="攻%95防%-35避30".encode("cp950"),
+        )
+        self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+            skills=skills,
+            source_file=self.stack.petskill_runtime.source_file,
+        )
+        enemy=replace(
+            context.battle.enemies[0],
+            attack=300,
+            defense=100,
+            quick=200,
+        )
+        player=replace(
+            context.battle.player,
+            hp=2000,
+            max_hp=2000,
+            defense=0,
+            quick=10,
+        )
+        context=replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=player,
+                enemies=(enemy,),
+            ),
+            spawned_enemies=(replace(
+                spawned,
+                participant=enemy,
+                template=replace(
+                    spawned.template,
+                    skill_ids=(541,20,30,40,50,60,70),
+                    skill_slot_ids=(541,20,30,40,50,60,70),
+                ),
+                variant=replace(
+                    spawned.variant,
+                    tactics_option="at:0;1;1|gu:0|es:0|wa:1;0;0;0;0;0;0",
+                ),
+            ),),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+        )
+        setup=resolve_wildviolent_setup(
+            option="攻%95防%-35避30".encode("cp950"),
+            execution_charset="cp950",
+            profile="gavin",
+            target_slot=0,
+            fixed_strength=300,
+            fixed_toughness=100,
+            attack_power_before=300,
+            defense_power_before=100,
+            packed_com3_before=0,
+        )
+        submission=EnemyAiWildViolentSubmission(
+            participant_id=enemy_id,
+            skill_slot=0,
+            skill_id=541,
+            callback=WILDVIOLENT_CALLBACK,
+            source_target_slot=0,
+            setup=setup,
+        )
+        hit=OrdinaryAttackRolls(
+            critical_roll_1_10000=10000,
+            damage_roll=0,
+            guard_roll_1_100=100,
+            dodge_roll_1_10000=10000,
+        )
+        previous_hp=2000
+        with patch(
+            "tools.stoneage_local_runtime_session_coordinator."
+            "resolve_enemy_ai_wildviolent_submission",
+            return_value=submission,
+        ):
+            for _ in range(2):
+                context,result=(
+                    self.coordinator
+                    .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                        context,
+                        player_side_commands={
+                            "player":BattleCommand(BATTLE_COM_GUARD)
+                        },
+                        enemy_mode_rolls={enemy_id:0},
+                        enemy_target_rolls={enemy_id:0},
+                        enemy_escape_rolls={},
+                        opponent_abio_by_participant_id={},
+                        initiative_random_subtracts={
+                            "player":0,
+                            enemy_id:0,
+                        },
+                        profiles={
+                            "player":BattleCombatProfile(
+                                fixed_dex=10,
+                                fixed_luck=0,
+                                earth=0,water=0,fire=0,wind=0,
+                            ),
+                            enemy_id:BattleCombatProfile(
+                                fixed_dex=200,
+                                fixed_luck=0,
+                                earth=0,water=0,fire=0,wind=0,
+                            ),
+                        },
+                        attack_rolls={},
+                        wildviolent_rolls_by_attack_id={
+                            enemy_id:WildViolentRolls(
+                                3,(hit,hit,hit)
+                            )
+                        },
+                        defense_profile="newpower_70pct",
+                    )
+                )
+                events=tuple(
+                    event for event in result.round.events
+                    if event.wildviolent_skill_id is not None
+                )
+                self.assertEqual(len(events),3)
+                self.assertEqual(
+                    [event.wildviolent_hit_index for event in events],
+                    [0,1,2],
+                )
+                self.assertTrue(
+                    all(event.wildviolent_skill_id==541 for event in events)
+                )
+                self.assertTrue(
+                    all(event.wildviolent_attack_count==3 for event in events)
+                )
+                self.assertTrue(
+                    all(
+                        event.wildviolent_dodge_percent_points==30
+                        for event in events
+                    )
+                )
+                self.assertEqual(events[0].target_hp_before,previous_hp)
+                current_hp=(
+                    context.persistent_battle_state
+                    .hp_by_participant_id["player"]
+                )
+                self.assertEqual(
+                    current_hp,
+                    result.round.hp_by_participant_id["player"],
+                )
+                self.assertLess(current_hp,previous_hp)
+                previous_hp=current_hp
 
 if __name__ == "__main__":
     unittest.main()
