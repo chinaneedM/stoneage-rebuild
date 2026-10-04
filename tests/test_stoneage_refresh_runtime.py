@@ -103,13 +103,13 @@ class RefreshRuntimeTests(unittest.TestCase):
 
     def test_runtime_projection_and_silence_clear_restore_nc(self):
         base = BaseBattleStatusRuntime(
-            status=BaseBattleStatusState(confusion=2)
+            status=BaseBattleStatusState(paralysis=2)
         )
         overlay = late(counter=3, nc_flag=1)
         vector = refresh_status_vector(base, overlay, require_complete=True)
         self.assertEqual((vector[6], vector[10]), (2, 3))
         base2, overlay2 = apply_refresh_cleared_status(base, overlay, 10)
-        self.assertEqual(base2.status.confusion, 2)
+        self.assertEqual(base2.status.paralysis, 1)
         self.assertEqual((overlay2.counter, overlay2.nc_flag), (0, 0))
 
     def test_weaken_clear_retains_current_prepared_powers(self):
@@ -189,14 +189,14 @@ class RefreshRuntimeTests(unittest.TestCase):
         result = self.resolve(
             skill_id=583,
             player_base=BaseBattleStatusRuntime(
-                status=BaseBattleStatusState(confusion=2),
+                status=BaseBattleStatusState(paralysis=2),
             ),
             player_late=late(counter=3, nc_flag=1),
         )
         event = self.refresh_event(result)
         self.assertEqual((event.refresh_status_index, event.refresh_cleared_status), (10, 10))
         self.assertEqual(result.hp_by_participant_id["player"], 2000)
-        self.assertEqual(result.base_status_runtime_by_participant_id["player"].status.confusion, 2)
+        self.assertEqual(result.base_status_runtime_by_participant_id["player"].status.paralysis, 1)
         refreshed = result.nocast_overlay.runtime_by_participant_id["player"]
         self.assertEqual((refreshed.counter, refreshed.nc_flag), (0, 0))
 
@@ -206,7 +206,7 @@ class RefreshRuntimeTests(unittest.TestCase):
         result = self.resolve(
             skill_id=583,
             player_base=BaseBattleStatusRuntime(
-                status=BaseBattleStatusState(confusion=2),
+                status=BaseBattleStatusState(paralysis=2),
             ),
             player_late=late(weaken_counter=2, barrier_counter=2, counter=3, nc_flag=1),
         )
@@ -219,7 +219,7 @@ class RefreshRuntimeTests(unittest.TestCase):
         result = self.resolve(
             skill_id=592,
             player_base=BaseBattleStatusRuntime(
-                status=BaseBattleStatusState(confusion=2),
+                status=BaseBattleStatusState(paralysis=2),
             ),
             player_late=late(weaken_counter=2, barrier_counter=4),
         )
@@ -227,7 +227,7 @@ class RefreshRuntimeTests(unittest.TestCase):
         self.assertEqual((event.refresh_status_index, event.refresh_cleared_status), (0, 9))
         refreshed = result.nocast_overlay.runtime_by_participant_id["player"]
         self.assertEqual((refreshed.weaken_counter, refreshed.barrier_counter), (2, 0))
-        self.assertEqual(result.base_status_runtime_by_participant_id["player"].status.confusion, 2)
+        self.assertEqual(result.base_status_runtime_by_participant_id["player"].status.paralysis, 1)
 
     def test_dead_single_target_consumes_only_explicit_multilist_draw(self):
         pet = actor("pet", "player", "pet")
