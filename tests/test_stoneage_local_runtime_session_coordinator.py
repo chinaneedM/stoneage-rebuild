@@ -6813,7 +6813,11 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             skills=skills,
             source_file=self.stack.petskill_runtime.source_file,
         )
-        enemy=replace(context.battle.enemies[0],quick=200)
+        enemy=replace(
+            context.battle.enemies[0],
+            attack=300,
+            quick=200,
+        )
         player=replace(
             context.battle.player,
             hp=2000,
