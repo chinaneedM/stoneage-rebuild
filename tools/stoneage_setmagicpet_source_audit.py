@@ -11,6 +11,7 @@ from tools.stoneage_guard_break2_source_audit import (
     PINNED, LAYOUTS, _sha, _text, _function, _compact, _macro_int,
 )
 from tools.stoneage_weaken_source_audit import _enum_values
+from tools.stoneage_mdfyattack_source_audit import _definition, _strip
 from tools.stoneage_setmagicpet_model import (
     CALLBACK_NAME, COMMAND_NAME, FEATURE_NAME, SOURCE_PETSKILL_SYMBOL_NAME,
 )
@@ -49,8 +50,12 @@ def analyze_profile(name: str, root: Path):
     data={key:_text(path) for key,path in paths.items()}
     callback=_compact(_function(data["pet"],f"int {CALLBACK_NAME}")).replace("char_index","charaindex")
     executor=_compact(_function(data["event"],f"int {CALLBACK_NAME}_Battle")).replace("char_index","charaindex")
-    status_seq=_compact(_function(data["battle"],"static int BATTLE_StatusSeq")).replace("char_index","charaindex")
-    recalc=_compact(_function(data["item"],"void Other_DefcharWorkInt"))
+    status_seq=_compact(_strip(_definition(
+        data["battle"],"BATTLE_StatusSeq",raw_window=True
+    ))).replace("char_index","charaindex")
+    recalc=_compact(_strip(_definition(
+        data["item"],"Other_DefcharWorkInt",raw_window=True
+    )))
     battle_compact=_compact(data["battle"]).replace("char_index","charaindex")
     case=battle_compact.find("case"+COMMAND_NAME+":")
     dispatch=battle_compact[case:case+700] if case>=0 else ""
