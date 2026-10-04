@@ -31,7 +31,10 @@ jobs:
           python-version: "3.12"
       - name: Validate BattleTimid runtime seam
         run: |
-          python -m unittest -v             tests.test_stoneage_battletimid_model             tests.test_stoneage_recovered25_battletimid_probe             tests.test_stoneage_battletimid_bridge
-          if test -f tests/test_stoneage_battletimid_runtime.py; then
-            python -m unittest -v tests.test_stoneage_battletimid_runtime
-          fi
+          python -m unittest -v \
+            tests.test_stoneage_battletimid_model \
+            tests.test_stoneage_recovered25_battletimid_probe \
+            tests.test_stoneage_battletimid_bridge \
+            tests.test_stoneage_battletimid_runtime \
+            tests.test_stoneage_local_runtime_session_coordinator.LocalRuntimeSessionCoordinatorTests.test_recovered_enemy_ai_battletimid_executes_and_persists_exit \
+            tests.test_stoneage_local_runtime_session_coordinator.LocalRuntimeSessionCoordinatorTests.test_enemy_ai_battletimid_rng_actor_set_is_exact
