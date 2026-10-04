@@ -3215,3 +3215,8 @@ Hardened reference **37192609926 PASS** and pinned-source/full-file/hash-verifie
 ### 2026-10-04 — WildViolentAttack runtime verification supplement
 
 Existing pinned source/data evidence feeds the separately typed conditional CP950 enemy runtime. Dedicated runtime fixtures exercise production metadata/population/parser/slot gates with independent hashes, source-ordered physical/status/reaction/ride/counter seams and Weaken preparation restoration. Coordinator E2E retains the production submission resolver. Local 1123 affected tests PASS; latest runtime/real-bundle Actions remain pending. Original compiler charset and Taiwan-v1 historical membership remain OPEN. See `specs/STONEAGE-WILDVIOLENT-RUNTIME-R1.md` and current-state handoff.
+
+
+### 2026-10-04 — WildViolentAttack conditional runtime accepted
+
+Corrected source `b60bc052f82f8f0e241762e9f97c44d479bdf3b2` passes all 21 triggered Actions: dedicated 37209088767, real verified data/seven authoritative selection gates 37209088658, full coordinator 37209088790, golden 37209088681 and full region/resource/collision stack 37209088684. Local 1123 affected tests include 24 dedicated witnesses and production-path two-round E2E, with compliance-prepared fixed powers and strict per-hit RNG ownership. Runtime is CLOSED only in the declared conditional CP950 enemy/opposite-side/FIST baseline domain. Original compiler charset, historical numeric COM1 and Taiwan-v1 membership remain OPEN. Raw source/OPTION/assets remain external.

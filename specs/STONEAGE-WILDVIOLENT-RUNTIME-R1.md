@@ -79,7 +79,13 @@ persistence. It does not replace the submission resolver. Real archive bytes
 remain external and the hash-verified probe exercises production admission
 for all seven authoritative uses.
 
-Runtime acceptance is **LOCAL_PASS_REMOTE_PENDING** until the latest affected
-Actions, including the real archive admission probe, pass. Pressure remains
-2415/2486 until acceptance and a fresh verified pressure run. This denominator
-is positive enemy skill-slot uses, not total reconstruction progress.
+Runtime acceptance is **CLOSED_CONDITIONAL_CP950_ENEMY_FIST_BASELINE**.
+Corrected source `b60bc052f82f8f0e241762e9f97c44d479bdf3b2` passes all 21 triggered
+Actions, including dedicated 37209088767, real seven-slot/60-native-byte
+witness probe 37209088658, coordinator 37209088790, golden 37209088681 and full
+region/resource/collision stack 37209088684. Local 1123 affected tests include
+24 dedicated runtime tests. The coordinator verifies weakened 468/52 and then
+restored 585/65 callback powers from baseline 300/100 without stubbing the
+production resolver. Original charset/enum/Taiwan-v1 questions remain OPEN.
+The independently verified pressure refresh is the next accounting gate;
+its denominator is positive enemy skill-slot uses, not total reconstruction.
