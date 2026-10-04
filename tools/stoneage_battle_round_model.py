@@ -4430,6 +4430,15 @@ def resolve_ordinary_round(
             raise ValueError(
                 "BattleTimid ordering carrier must be enemy ATTACK/source-target"
             )
+        effects=setup_effects.get(pid,BattleCommandSetupEffects())
+        if (
+            effects.attack_power,
+            effects.defense_power,
+        ) != (
+            submission.setup.attack_power,
+            submission.setup.defence_power,
+        ):
+            raise ValueError("BattleTimid callback work-power setup drift")
     battletimid_rolls={
         str(pid):(None if draw is None else int(draw))
         for pid,draw in (battletimid_rolls_by_participant_id or {}).items()
