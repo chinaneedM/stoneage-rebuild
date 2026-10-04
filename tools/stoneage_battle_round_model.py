@@ -61,6 +61,13 @@ from tools.stoneage_barrier_model import (
 from tools.stoneage_barrier_runtime_state import BarrierActionRolls
 from tools.stoneage_enemy_ai_weaken_bridge import EnemyAiWeakenSubmission
 from tools.stoneage_weaken_runtime_state import WeakenActionRolls
+from tools.stoneage_enemy_ai_refresh_bridge import EnemyAiRefreshSubmission
+from tools.stoneage_refresh_runtime_state import (
+    RefreshActionRolls,
+    apply_refresh_cleared_status,
+    refresh_status_vector,
+)
+from tools.stoneage_refresh_model import RefreshResolution, resolve_refresh_recovery
 from tools.stoneage_weaken_model import (
     WeakenApplication, WeakenCheckInputs, resolve_weaken_target,
     resolve_weaken_multilist, resolve_weaken_self_tick,
@@ -987,6 +994,10 @@ class OrdinaryRoundEvent:
     wildviolent_hit_index: int | None = None
     wildviolent_attack_count: int | None = None
     wildviolent_dodge_percent_points: int | None = None
+    refresh_resolution: RefreshResolution | None = None
+    refresh_skill_id: int | None = None
+    refresh_status_index: int | None = None
+    refresh_cleared_status: int | None = None
     weaken_application: WeakenApplication | None = None
     weaken_tick_resolution: BarrierSelfTick | None = None
     weaken_skill_id: int | None = None
@@ -3594,6 +3605,8 @@ def resolve_ordinary_round(
     ] | None = None,
     weaken_submissions_by_participant_id: Mapping[str,EnemyAiWeakenSubmission] | None = None,
     weaken_rolls_by_participant_id: Mapping[str,WeakenActionRolls] | None = None,
+    refresh_submissions_by_participant_id: Mapping[str,EnemyAiRefreshSubmission] | None = None,
+    refresh_rolls_by_participant_id: Mapping[str,RefreshActionRolls] | None = None,
     barrier_submissions_by_participant_id: Mapping[
         str,EnemyAiBarrierSubmission
     ] | None = None,
@@ -4268,13 +4281,55 @@ def resolve_ordinary_round(
     attempted_weaken_actor_ids=set()
     weaken_active_command_ids=set(weaken_actor_ids)
 
+    refresh_submissions={
+        str(pid):submission
+        for pid,submission in (refresh_submissions_by_participant_id or {}).items()
+    }
+    refresh_actor_ids=set(refresh_submissions)
+    if refresh_actor_ids-set(slot_by_id):
+        raise ValueError("Refresh references unknown actors")
+    refresh_overlap=(
+        wildviolent_actor_ids | set(mdfyattack_submissions)
+        | set(attack_crazed_submissions) | weaken_actor_ids
+        | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
+        | fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
+        | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+    )
+    if refresh_actor_ids & refresh_overlap:
+        raise ValueError("Refresh semantic submissions overlap another skill")
+    for pid,submission in refresh_submissions.items():
+        if not isinstance(submission,EnemyAiRefreshSubmission):
+            raise TypeError("Refresh submission has wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (
+            submission.participant_id!=pid
+            or entry.participant.kind!="enemy"
+            or entry.participant.side!="enemy"
+            or entry.command.command1!=BATTLE_COM_ATTACK
+            or entry.command.command2!=submission.source_target_slot
+        ):
+            raise ValueError("Refresh ordering carrier must be enemy ATTACK/source-target")
+    refresh_rolls={
+        str(pid):rolls
+        for pid,rolls in (refresh_rolls_by_participant_id or {}).items()
+    }
+    if set(refresh_rolls)!=refresh_actor_ids:
+        raise ValueError("Refresh RNG actors mismatch")
+    if any(not isinstance(rolls,RefreshActionRolls) for rolls in refresh_rolls.values()):
+        raise TypeError("Refresh RNG has wrong type")
+    attempted_refresh_actor_ids=set()
+    refresh_active_command_ids=set(refresh_actor_ids)
+
     # The scheduling carrier cannot confer native ATTACK counter eligibility.
     # Confusion later removes a rewritten actor from this symbolic-command set.
     mdfyattack_active_command_ids=set(mdfyattack_submissions)
 
-    if (nocast_actor_ids or barrier_actor_ids or weaken_actor_ids) and nocast_overlay is None:
+    if (
+        nocast_actor_ids or barrier_actor_ids or weaken_actor_ids
+        or refresh_actor_ids
+    ) and nocast_overlay is None:
         raise ValueError(
-            "Nocast/Barrier semantic action requires explicit round overlay"
+            "Nocast/Barrier/Weaken/Refresh semantic action requires explicit round overlay"
         )
     if nocast_overlay is not None and not isinstance(
         nocast_overlay,NocastRoundOverlay
@@ -4906,7 +4961,11 @@ def resolve_ordinary_round(
             status_runtime_by_participant_id=status_runtime,
             command_by_slot=command_by_slot,
             action_value_by_slot=action_value_by_slot,
-            semantic_noncounter_actor_ids=frozenset(mdfyattack_active_command_ids | weaken_active_command_ids),
+            semantic_noncounter_actor_ids=frozenset(
+                mdfyattack_active_command_ids
+                | weaken_active_command_ids
+                | refresh_active_command_ids
+            ),
             counter_rolls=normalized_counter_rolls.get(
                 str(main_actor_id),()
             ),
@@ -5039,6 +5098,7 @@ def resolve_ordinary_round(
             if tick.confusion_rewrote_command:
                 mdfyattack_active_command_ids.discard(str(participant_id))
                 weaken_active_command_ids.discard(str(participant_id))
+                refresh_active_command_ids.discard(str(participant_id))
             hp_by_slot[slot]=int(tick.hp_after)
             hp_by_id[str(participant_id)]=int(tick.hp_after)
             runtime=replace(
@@ -6346,6 +6406,98 @@ def resolve_ordinary_round(
                     continuation_id,
                     int(slot),
                     int(continuation.last_target_slot),
+                )
+            continue
+
+        refresh_actor_id=str(participant_id)
+        if (
+            refresh_actor_id in refresh_submissions
+            and int(command.command1) == BATTLE_COM_ATTACK
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            submission=refresh_submissions[refresh_actor_id]
+            if int(command.command2) != int(submission.source_target_slot):
+                raise ValueError(
+                    "Refresh ordering carrier target drift before execution"
+                )
+            if nocast_working is None:
+                raise ValueError("Refresh working overlay unexpectedly absent")
+            alive_slots=tuple(
+                other_slot
+                for other_slot in sorted(by_slot)
+                if (
+                    other_slot not in exited_slots
+                    and int(hp_by_slot.get(other_slot,0)) > 0
+                )
+            )
+            action_rolls=refresh_rolls[refresh_actor_id]
+            target_list=resolve_nocast_multilist(
+                int(submission.source_target_slot),
+                alive_slots=alive_slots,
+                retarget_draws_0_9=action_rolls.retarget_draws_0_9,
+            )
+            attempted_refresh_actor_ids.add(refresh_actor_id)
+            actor_vector=refresh_status_vector(
+                status_runtime[refresh_actor_id],
+                nocast_working[refresh_actor_id],
+                require_complete=False,
+            )
+            for target_slot in target_list.slots:
+                target_slot=int(target_slot)
+                if target_slot not in by_slot:
+                    raise ValueError("Refresh target list resolved unoccupied slot")
+                defender=by_slot[target_slot]
+                defender_id=str(defender.participant_id)
+                target_vector=refresh_status_vector(
+                    status_runtime[defender_id],
+                    nocast_working[defender_id],
+                    require_complete=True,
+                )
+                resolution=resolve_refresh_recovery(
+                    int(submission.status_index),
+                    profile="iris",
+                    actor_counters=actor_vector,
+                    target_counters=(target_vector,),
+                )
+                cleared=resolution.cleared_statuses[0]
+                next_base,next_late=apply_refresh_cleared_status(
+                    status_runtime[defender_id],
+                    nocast_working[defender_id],
+                    cleared,
+                )
+                status_runtime[defender_id]=next_base
+                nocast_working[defender_id]=next_late
+                projected=refresh_status_vector(
+                    next_base,
+                    next_late,
+                    require_complete=True,
+                )
+                if projected != resolution.target_counters[0]:
+                    raise ValueError("Refresh modeled status mutation drifted from source recovery")
+                events.append(
+                    OrdinaryRoundEvent(
+                        refresh_actor_id,
+                        int(slot),
+                        BATTLE_COM_ATTACK,
+                        int(entry.action_value),
+                        "refresh_cleared" if cleared is not None else "refresh_noop",
+                        original_target_slot=int(submission.source_target_slot),
+                        resolved_target_slot=target_slot,
+                        retargeted=bool(
+                            target_list.slots
+                            and int(target_list.slots[0])
+                            != int(submission.source_target_slot)
+                        ),
+                        refresh_resolution=resolution,
+                        refresh_skill_id=int(submission.skill_id),
+                        refresh_status_index=int(submission.status_index),
+                        refresh_cleared_status=(
+                            None if cleared is None else int(cleared)
+                        ),
+                    )
                 )
             continue
 
@@ -7869,6 +8021,15 @@ def resolve_ordinary_round(
         if not weaken_rolls[participant_id].is_empty:
             raise ValueError(
                 "Weaken RNG supplied for status-suppressed semantic action: "
+                + participant_id
+            )
+
+    for participant_id in sorted(
+        refresh_actor_ids-attempted_refresh_actor_ids
+    ):
+        if not refresh_rolls[participant_id].is_empty:
+            raise ValueError(
+                "Refresh RNG supplied for status-suppressed semantic action: "
                 + participant_id
             )
 

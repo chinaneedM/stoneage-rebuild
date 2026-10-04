@@ -49,6 +49,8 @@ from tools.stoneage_nocast_runtime_state import (
 from tools.stoneage_barrier_runtime_state import BarrierActionRolls
 from tools.stoneage_enemy_ai_weaken_bridge import EnemyAiWeakenSubmission
 from tools.stoneage_weaken_runtime_state import WeakenActionRolls
+from tools.stoneage_enemy_ai_refresh_bridge import EnemyAiRefreshSubmission
+from tools.stoneage_refresh_runtime_state import RefreshActionRolls
 from tools.stoneage_weaken_model import resolve_weaken_recalculation
 from tools.stoneage_nocast_runtime_state import PreparedWeakenPowers
 from tools.stoneage_enemy_rehp_model import EnemyReHpRolls
@@ -1335,6 +1337,8 @@ def resolve_persistent_ordinary_round(
     ] | None = None,
     weaken_submissions_by_participant_id: Mapping[str,EnemyAiWeakenSubmission] | None = None,
     weaken_rolls_by_participant_id: Mapping[str,WeakenActionRolls] | None = None,
+    refresh_submissions_by_participant_id: Mapping[str,EnemyAiRefreshSubmission] | None = None,
+    refresh_rolls_by_participant_id: Mapping[str,RefreshActionRolls] | None = None,
     barrier_submissions_by_participant_id: Mapping[
         str,EnemyAiBarrierSubmission
     ] | None = None,
@@ -1442,6 +1446,7 @@ def resolve_persistent_ordinary_round(
             | set(wildviolent_submissions_by_participant_id or {})
             | set(mdfyattack_submissions_by_participant_id or {})
             | set(weaken_submissions_by_participant_id or {})
+            | set(refresh_submissions_by_participant_id or {})
         ),
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
@@ -1575,6 +1580,8 @@ def resolve_persistent_ordinary_round(
         ),
         weaken_submissions_by_participant_id=weaken_submissions_by_participant_id,
         weaken_rolls_by_participant_id=weaken_rolls_by_participant_id,
+        refresh_submissions_by_participant_id=refresh_submissions_by_participant_id,
+        refresh_rolls_by_participant_id=refresh_rolls_by_participant_id,
         barrier_submissions_by_participant_id=(
             barrier_submissions_by_participant_id
         ),
