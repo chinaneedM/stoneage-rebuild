@@ -3277,3 +3277,14 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - Derived report commit: `ec46a0248e6c64623096d03c14e5ffc156a1193c`; report path `research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt`; **2486 positive uses / 0 unresolved IDs**.
 - Exact `PETSKILL_SetMagicPet` ID 601 is now `closed_runtime` for **6 uses / 6 templates**. Accepted executable positive-slot coverage is **2434/2486 = 97.91%**.
 - Next mechanically selected OPEN callback is `PETSKILL_BattleTimid`, recovered ID **606**, **5 uses / 5 templates**. Any existing BattleTimid notes are pre-audit observations only until fresh pinned-source and verified recovered-data gates close.
+
+
+### 2026-10-05 — BattleTimid fixed-source + recovered25 exact-row closure
+
+- Fixed descendants: gavin `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`, iris `9e6c8ce2cd8ed532a7157773acd1c61582c178b5`, Bismarck `999ffdf1d220ec6666eb65339180689c9caf1876`.
+- Reproducible source report: `research/recovered/STONEAGE-BATTLETIMID-SOURCE-AUDIT-R1.txt`; resolution `BATTLETIMID_FIXED_SOURCE_CLOSED_OPPOSITE_SIDE_REFERENCE`.
+- Hash-verified recovered25 report: `research/recovered/STONEAGE-25-BATTLETIMID-PROBE-R1.txt`; `petskill` SHA-256 `f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4`.
+- Exact callback population: `PETSKILL_BattleTimid` ID **606** only; **5 slot uses / 5 templates**. Exact metadata: FIELD 1, TARGET 6, COST 2, ILLEGAL 3000; OPTION length 0; OPTION SHA-256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`.
+- Exact-pin Action **37220370536 PASS**; derived-report write-back commit `3f49cb44c7e836eb89a249b6d293d7acbc9e79a4`.
+- Accepted descendant behavior: callback rejects player actor; writes semantic TIMID command/target/C_OK and LOW(COM3); work powers are 70%/40%/80%; event consumes one raw rand%100 draw; forced exit iff draw<15 and damage>1; pet exit clears default pet while non-pet exit discharges party.
+- Boundaries retained: gavin/iris same-side guard active vs fixed Bismarck inactive; gavin/iris NULL OPTION guard vs Bismarck pointer-literal guard; no original numeric COM1/binary/compiler or Taiwan-v1 proof.

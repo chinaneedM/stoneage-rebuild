@@ -81,7 +81,13 @@ it does not claim Python RNG equivalence to the original C runtime.
 
 **BATTLETIMID_FIXED_SOURCE_R1 = CLOSED_OPPOSITE_SIDE_REFERENCE.**
 
-Recovered25 population and exact row are accepted only after the second
-hash-verified probe reproduces the pinned row. Ordered runtime integration,
-damage settlement coupling, persistent battle/session consequences, and
-pressure reclassification remain OPEN until dedicated runtime gates pass.
+Hash-verified exact-pin Action **37220370536 PASS** reproduced the pinned
+recovered25 population and exact row and wrote the accepted derived reports at
+`3f49cb44c7e836eb89a249b6d293d7acbc9e79a4`.
+
+**BATTLETIMID_REFERENCE_R1 =
+CLOSED_BOUNDED_ID606_OPPOSITE_SIDE_REFERENCE.**
+
+Ordered runtime integration, damage-settlement coupling, persistent
+battle/session consequences, and pressure reclassification remain OPEN until
+dedicated runtime gates pass.

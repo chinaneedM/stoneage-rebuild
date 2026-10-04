@@ -577,3 +577,8 @@ recovered binary enum. [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]
 ## 2026-10-05 — SetMagicPet verified pressure closure and BattleTimid handoff
 
 **LATER_RECOVERED / EXECUTION:** hash-verified pressure Action **37218864011 PASS** after two fixture-only ranking-test corrections. Derived report `ec46a0248e6c64623096d03c14e5ffc156a1193c` reproduces **2486 positive recovered25 enemy skill-slot uses / 0 unresolved IDs**, marks exact SetMagicPet ID 601 **closed_runtime** for six uses/six templates, and advances accepted executable coverage to **2434/2486 (97.91%)**. The next mechanically selected OPEN family is **PETSKILL_BattleTimid**, recovered ID 606, five uses/five templates. Existing BattleTimid observations remain pre-audit only; original introduction, Taiwan-v1 membership and original binary/compiler identity remain OPEN.
+
+
+## 2026-10-05 — BattleTimid bounded reference closed
+
+**LATER_RECOVERED / REFERENCE:** Action **37220370536 PASS** reproduces three pinned descendant source profiles and the hash-verified recovered25 bundle. The shared bounded reference is enemy/non-player setup with 70% STR / 40% TOUGH / 80% DEX work powers, TargetAdjust → AttackDamage dispatch, one raw `rand()%100` draw, and forced exit only for `draw < 15 && damage > 1`. Pet and non-pet forced exits have distinct persistent consequences. Recovered25 population is exactly ID 606 with five positive uses/five templates and exact row `1/6/2/3000` plus an empty OPTION. Same-side compile gating and OPTION-pointer guarding differ across the pinned descendants and remain explicit boundaries. Original JSS/Taiwan-v1 membership, original compiler/binary identity and historical numeric COM1 remain OPEN.
