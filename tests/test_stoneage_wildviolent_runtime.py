@@ -679,6 +679,19 @@ class WildViolentInteractionTests(unittest.TestCase):
         with self.assertRaisesRegex(KeyError, "action-time rolls"):
             self.resolve(extra={"wildviolent_rolls_by_attack_id": {}})
 
+    def test_verified_probe_checks_each_authoritative_slot(self):
+        from tools.stoneage_recovered25_wildviolent_probe import verify_typed_slot_admission
+        pets = synthetic_population()
+        enemies = SimpleNamespace(templates={i: SimpleNamespace(skill_slot_ids=(0, 541, 0, 0, 0, 0, 0)) for i in range(7)})
+        with patch("tools.stoneage_enemy_ai_wildviolent_bridge.EXPECTED_OPTION_SHA256", SYNTHETIC_HASHES):
+            self.assertEqual(verify_typed_slot_admission(pets, enemies), 7)
+            enemies.templates[0].skill_slot_ids = (541, 541, 0, 0, 0, 0, 0)
+            with self.assertRaisesRegex(ValueError, "population drift"):
+                verify_typed_slot_admission(pets, enemies)
+            enemies.templates[0].skill_slot_ids = (0, 652, 0, 0, 0, 0, 0)
+            with self.assertRaisesRegex(ValueError, "positive seven-slot"):
+                verify_typed_slot_admission(pets, enemies)
+
     def test_prepared_weaken_and_callback_powers_restore_next_round(self):
         from tests.test_stoneage_attack_crazed_runtime import actor, hit
         from tests.test_stoneage_battle_state_model import session

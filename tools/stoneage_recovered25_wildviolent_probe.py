@@ -2,17 +2,53 @@
 import argparse
 import hashlib
 from pathlib import Path
+from types import SimpleNamespace
 
 from tools.stoneage_recovered25_petskill_runtime import load_recovered25_petskill_runtime
 from tools.stoneage_recovered25_enemybase_runtime import load_recovered25_enemybase_runtime
 from tools.stoneage_wildviolent_model import CALLBACK_NAME, parse_wildviolent_option
-from tools.stoneage_enemy_ai_wildviolent_bridge import validate_recovered25_wildviolent_population
+from tools.stoneage_enemy_ai_wildviolent_bridge import (
+    validate_recovered25_wildviolent_population,
+    resolve_enemy_ai_wildviolent_submission,
+)
 
 EXPECTED_REFERENCED_IDS = (541,)
 EXPECTED_CALLBACK_IDS = (541,652)  # Observed by verified run 37192280455.
 EXPECTED_SLOT_REFERENCES = 7
 EXPECTED_TEMPLATES = 7
 EXPECTED_PETSKILL_SHA256 = 'f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4'
+
+
+def verify_typed_slot_admission(petskills, enemybase):
+    """Run production selection gates on every actual authoritative slot.
+
+    The template/slot/data inputs are recovered; participant identity and fixed
+    powers are explicit synthetic work-state witnesses, not recovered births.
+    """
+    validate_recovered25_wildviolent_population(petskills)
+    count=0
+    templates=set()
+    for tempno, template in enemybase.templates.items():
+        for slot, skill_id in enumerate(template.skill_slot_ids):
+            entry=petskills.skills.get(int(skill_id))
+            if entry is None or entry.function_name != CALLBACK_NAME:
+                continue
+            spawned=SimpleNamespace(
+                participant=SimpleNamespace(participant_id=f"typed-witness-{tempno}", side="enemy", kind="enemy"),
+                template=template,
+            )
+            submission=resolve_enemy_ai_wildviolent_submission(
+                spawned, skill_slot=slot, target_slot=0, petskill_runtime=petskills,
+                fixed_strength=100, fixed_toughness=100, attack_power_before=80,
+                defense_power_before=90, packed_com3_before=0x2345,
+            )
+            if submission.skill_id != int(skill_id) or submission.setup.packed_com3 & 0xffff != 0x2345:
+                raise ValueError("WildViolentAttack typed slot identity/LOW drift")
+            count+=1
+            templates.add(tempno)
+    if (count, len(templates)) != (EXPECTED_SLOT_REFERENCES, EXPECTED_TEMPLATES):
+        raise ValueError("WildViolentAttack typed slot admission population drift")
+    return count
 
 
 def analyze_runtime_objects(petskills, enemybase):
@@ -97,7 +133,8 @@ def main():
         raise SystemExit('verified full petskill file hash drift')
     if not result['population_closed']:
         raise SystemExit('referenced population drift')
-    validate_recovered25_wildviolent_population(pets)
+    admitted=verify_typed_slot_admission(pets, enemies)
+    print(f'COUNT|typed_authoritative_slot_admissions|{admitted}')
     print('RESOLUTION|RECOVERED25_WILDVIOLENT_TYPED_ADMISSION_CLOSED_CONDITIONAL_CP950')
     if result['conditional_option_domain_closed']:
         from tools.stoneage_wildviolent_source_audit import analyze_profile

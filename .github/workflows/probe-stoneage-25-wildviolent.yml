@@ -111,6 +111,8 @@ jobs:
             research/recovered/STONEAGE-25-WILDVIOLENT-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_WILDVIOLENT_TYPED_ADMISSION_CLOSED_CONDITIONAL_CP950' \
             research/recovered/STONEAGE-25-WILDVIOLENT-PROBE-R1.txt
+          grep -F 'COUNT|typed_authoritative_slot_admissions|7' \
+            research/recovered/STONEAGE-25-WILDVIOLENT-PROBE-R1.txt
           grep -F 'COUNT|enemybase_slot_references|7' \
             research/recovered/STONEAGE-25-WILDVIOLENT-PROBE-R1.txt
           grep -F 'COUNT|enemybase_templates|7' \
