@@ -75,6 +75,24 @@ Nocast, it has no PET exclusion or NC application notification.
 The safe MultiList selector/retarget rules reuse the accepted Nocast primitive.
 Unsafe TARGET_ALL and empty single-side domains remain excluded.
 
+## Explicit attribute recalculation seam
+
+FACT: `CHAR_complianceParameter` rebuilds base work values, applies equipment,
+then calls `Other_DefcharWorkInt`. With WORKWEAKEN positive, this latter routine
+multiplies fixed strength/toughness/dexterity by **double 0.8**, converts to int,
+and decrements WEAKEN once. It also decrements positive BARRIER once. Finally
+it copies the resulting fixed values into attack/defense/quick work fields.
+Even a counter of one reduces powers before becoming zero. A later compliance
+event rebuilds baseline first, so the weakening is not automatically a cumulative
+0.8 multiplier on the previous weakened profile.
+
+This is separate from command submission, status application and StatusSeq.
+Do not substitute an automatic beginning/end-of-round recalculation without
+closing the caller schedule. Existing direct application does not itself call
+compliance. The standalone safe recalculation reference requires other suit,
+profession, wolf and fear modifiers absent, but compiles the actual routine with
+those active feature branches present and their explicit work inputs zero.
+
 ## Counter visits and overlay integration boundary
 
 FACT: WEAKEN index 7 precedes DEEPPOISON 8, BARRIER 9 and NOCAST 10.
@@ -89,7 +107,7 @@ WEAKEN storage before its own visit; later statuses see the updated storage.
 
 Reference tick uses the existing accepted Barrier decrement/self-freeze
 primitive. Runtime integration must extend **NocastParticipantRuntime /
-NocastRoundOverlay**, adding an explicit counter/resistance and typed submission
+NocastRoundOverlay**, adding an explicit counter/resistance, an explicit recalculation boundary and typed submission
 through enemy AI, ordered round, persistent adapter and coordinator. Existing
 `weaken_active_at_visit` external input remains distinct from the new counter.
 Do not create another parallel status overlay, change historical character save
@@ -99,20 +117,20 @@ fields, or claim these uses executable before ordered runtime/E2E acceptance.
 
 `tools/stoneage_weaken_source_audit.py` verifies clean pinned Git identities,
 active features, actual header enums, callback/dispatch/status gates and hashes.
-It compiles actual callback, executor, status checker and shared writer only in
+It compiles actual callback, executor, status checker, shared writer and Other_DefcharWorkInt only in
 a temporary directory. Fixtures inject a single resolved MultiList target and
 explicit RAND(1,100) witness; the legacy random generator and MultiList itself
 are not part of this native oracle. UBSan/ASan run 8 parser/executor and 512
-probability/writer cases per profile (24 + 1536 total). Leak detection is disabled
+probability/writer plus 128 recalculation cases per profile (24 + 1536 + 384 total). Leak detection is disabled
 because the execution host does not support LeakSanitizer's process inspection;
 address and undefined-behavior instrumentation remain enabled.
 
-The 15 dedicated model tests cover byte offsets/defaults, failed/strict hit
+The 17 dedicated model tests cover byte offsets/defaults, failed/strict hit
 checks, PET admission, overflow, self/mutual freeze, visit-order effects and
 retarget RNG. Six synthetic probe tests do not impersonate actual recovered
-rows. Total local reference/related-regression acceptance is 124 tests, including
+rows. Total local reference/related-regression acceptance is 126 tests, including
 the existing Nocast and Barrier persistent coordinator E2Es.
 
-OPEN: recovered data population/OPTION acceptance and typed ordered runtime.
+OPEN: recovered data population/OPTION acceptance, compliance caller scheduling and typed ordered runtime.
 No original source, raw skill rows or proprietary assets are stored.
 Source registry: SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1.

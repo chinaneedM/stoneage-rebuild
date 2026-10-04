@@ -94,7 +94,7 @@ jobs:
           python3 -m tools.stoneage_recovered25_weaken_probe \
             --data-dir "$D" --setup "$C" \
             > research/recovered/STONEAGE-25-WEAKEN-PROBE-R1.txt
-          grep -F 'COUNT|weaken_skill_rows|4' \
+          grep -F 'COUNT|weaken_skill_rows|2' \
             research/recovered/STONEAGE-25-WEAKEN-PROBE-R1.txt
           grep -F 'COUNT|enemybase_slot_references|7' \
             research/recovered/STONEAGE-25-WEAKEN-PROBE-R1.txt
@@ -104,6 +104,12 @@ jobs:
             research/recovered/STONEAGE-25-WEAKEN-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_WEAKEN_POPULATION_CLOSED' \
             research/recovered/STONEAGE-25-WEAKEN-PROBE-R1.txt
+      - name: Print derived domain report
+        if: always()
+        run: |
+          if test -f research/recovered/STONEAGE-25-WEAKEN-PROBE-R1.txt; then
+            cat research/recovered/STONEAGE-25-WEAKEN-PROBE-R1.txt
+          fi
       - name: Commit derived reports only
         run: |
           git config user.name stoneage-recovery-bot

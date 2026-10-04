@@ -10,7 +10,7 @@ import tempfile
 from tools.stoneage_guard_break2_source_audit import PINNED, LAYOUTS, _sha, _text
 from tools.stoneage_mdfyattack_source_audit import _definition, _strip
 from tools.stoneage_weaken_model import (
-    WeakenCheckInputs, parse_weaken_option, resolve_weaken_target,
+    WeakenCheckInputs, parse_weaken_option, resolve_weaken_target, resolve_weaken_recalculation,
 )
 
 
@@ -79,6 +79,19 @@ int main(int argc,char **argv){
     printf("%d %d %d %d %d %d %d\n",ok,works[0][CHAR_WORKBATTLECOM1],
       works[0][CHAR_WORKBATTLECOM2],works[0][CHAR_WORKBATTLECOM3],
       ret,draws,works[1][CHAR_WORKWEAKEN]);return 0;
+  }
+  if(argc==3){
+    int a,b,c,w,bar;
+    while(scanf("%d%d%d%d%d",&a,&b,&c,&w,&bar)==5){
+      memset(works,0,sizeof(works));memset(stats,0,sizeof(stats));
+      works[0][CHAR_WORKFIXSTR]=a;works[0][CHAR_WORKFIXTOUGH]=b;works[0][CHAR_WORKFIXDEX]=c;
+      works[0][CHAR_WORKWEAKEN]=w;works[0][CHAR_WORKBARRIER]=bar;
+      Other_DefcharWorkInt(0);
+      printf("%d %d %d %d %d %d %d %d\n",works[0][CHAR_WORKFIXSTR],
+        works[0][CHAR_WORKFIXTOUGH],works[0][CHAR_WORKFIXDEX],works[0][CHAR_WORKWEAKEN],
+        works[0][CHAR_WORKBARRIER],works[0][CHAR_WORKATTACKPOWER],
+        works[0][CHAR_WORKDEFENCEPOWER],works[0][CHAR_WORKQUICK]);
+    }return 0;
   }
   int al,dl,pvp,luck,v,s,t,d,res,suit,active,roll,success,turn,kind;
   while(scanf("%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d",
@@ -165,7 +178,23 @@ int main(int argc,char **argv){
                     expected.counter_written if expected.counter_written is not None else -999)
             if tuple(values[4*n:4*n+4])!=wanted:
                 raise ValueError('native probability/shared-writer mismatch at case '+str(n))
-    return {'callback_executor_cases':len(options),'probability_writer_cases':len(cases),
+        recalcs=[(n,n,n,w,b) for n,w,b in ((0,0,0),(1,1,0),(5,2,1),(105,3,2),
+                                                  (2147483647,1,1),(2147483647,0,0))]
+        for _ in range(122):
+            recalcs.append((rng.randrange(100001),rng.randrange(100001),rng.randrange(100001),
+                            rng.randrange(8),rng.randrange(8)))
+        result=subprocess.run([str(p/'oracle'),'--recalc','fixture'],
+            input='\n'.join(' '.join(map(str,x)) for x in recalcs)+'\n',
+            capture_output=True,text=True,check=True,env=sanitizer_env)
+        actuals=list(map(int,result.stdout.split()))
+        if len(actuals)!=8*len(recalcs):
+            raise ValueError('recalculation oracle witness count drift')
+        for n,(a,b,c,w,bar) in enumerate(recalcs):
+            out=resolve_weaken_recalculation(a,b,c,weaken_counter=w,barrier_counter=bar)
+            powers=(out.strength,out.toughness,out.dexterity)
+            if tuple(actuals[8*n:8*n+8])!=(*powers,out.weaken_counter,out.barrier_counter,*powers):
+                raise ValueError('native recalculation mismatch at case '+str(n))
+    return {'recalculation_cases':len(recalcs),'callback_executor_cases':len(options),'probability_writer_cases':len(cases),
             'ubsan_asan_pass':True}
 
 
@@ -179,7 +208,7 @@ def analyze_profile(name, root):
     paths={k:base/v for k,v in {'pet':'battle/pet_skill.c','event':'battle/battle_event.c',
         'magic':'battle/battle_magic.c','battle':'battle/battle.c','version':'include/version.h',
         'char':'include/char_base.h','bh':'include/battle.h','eh':'include/battle_event.h',
-        'ph':'include/pet_skillinfo.h'}.items()}
+        'ph':'include/pet_skillinfo.h','item':'item/item.c','char_c':'char/char.c'}.items()}
     data={k:_text(v) for k,v in paths.items()}
     includes=['-I',str(base/'include')]
     if name=='bismarck':
@@ -191,7 +220,8 @@ def analyze_profile(name, root):
     functions=[_definition(data['pet'],'PETSKILL_Weaken'),
         _definition(data['event'],'BATTLE_StatusAttackCheck'),
         _definition(data['magic'],'BATTLE_MultiParamChangeTurn'),
-        _definition(data['event'],'BATTLE_S_Weaken')]
+        _definition(data['event'],'BATTLE_S_Weaken'),
+        _definition(data['item'],'Other_DefcharWorkInt')]
     arrays=[_array(data['event'],n) for n in ('aszStatus','StatusTbl','RegTbl')]
     # Inject explicit RAND(1,100) witness after profile preprocessing.
     source=_preprocess('#undef RAND\n'+'\n'.join(arrays+functions),includes,paths['version'])
@@ -226,7 +256,14 @@ def analyze_profile(name, root):
             re.sub(r'\s+','',_strip(arrays[1])),
         'decrement_before_weaken_freeze':0 <= status_seq.find('StatusTbl[i],--cnt') <
             status_seq.find('CHAR_WORKWEAKEN)>0') < status_seq.find('StatusTbl[i],cnt+1'),
-        'executor_keeps_false_return':all(x in re.sub(r'\s+','',_strip(functions[-1])) for x in ('BOOLiRet=FALSE','returniRet;')),
+        'executor_keeps_false_return':all(x in re.sub(r'\s+','',_strip(functions[3])) for x in ('BOOLiRet=FALSE','returniRet;')),
+        'compliance_calls_recalc_after_base_equipment':
+            'Other_DefcharWorkInt(index)' in re.sub(r'\s+','',_strip(data['char_c']))
+            and 'CHAR_initcharWorkInt(index)' in re.sub(r'\s+','',_strip(data['char_c'])),
+        'recalc_three_power_reductions_and_counter_decrement':all(x in
+            re.sub(r'\s+','',_strip(functions[-1])) for x in (
+                'CHAR_WORKFIXSTR)*0.8','CHAR_WORKFIXTOUGH)*0.8','CHAR_WORKFIXDEX)*0.8',
+                'CHAR_WORKWEAKEN)-1','CHAR_WORKBARRIER)-1')),
         'lua_extra_resist_inactive':not features['_MO_LUA_RESIST'],
     }
     if not all(gates.values()):

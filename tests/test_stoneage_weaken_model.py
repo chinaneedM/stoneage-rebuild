@@ -6,6 +6,7 @@ from tools.stoneage_weaken_model import (
     WeakenOption, WeakenCheckInputs, parse_weaken_option,
     resolve_weaken_target, weaken_probability_value, resolve_weaken_self_tick,
     resolve_weaken_multilist,
+    resolve_weaken_recalculation,
 )
 from tools.stoneage_nocast_model import resolve_nocast_tick
 from tools.stoneage_barrier_model import resolve_barrier_self_tick
@@ -120,6 +121,21 @@ class WeakenModelTests(unittest.TestCase):
         self.assertEqual(resolve_weaken_multilist(20,alive_slots=(0,3,10)).slots,(0,3))
         with self.assertRaises(ValueError):
             resolve_weaken_multilist(22,alive_slots=(0,10))
+
+    def test_recalculation_reduces_all_three_powers_and_both_counters(self):
+        out=resolve_weaken_recalculation(105,201,333,weaken_counter=4,barrier_counter=2)
+        self.assertEqual((out.strength,out.toughness,out.dexterity,
+                          out.weaken_counter,out.barrier_counter),(84,160,266,3,1))
+        self.assertEqual(resolve_weaken_recalculation(105,201,333,weaken_counter=0,
+            barrier_counter=1).strength,105)
+
+    def test_recalculation_counter_one_is_reduced_before_reaching_zero(self):
+        out=resolve_weaken_recalculation(5,9,11,weaken_counter=1,barrier_counter=0)
+        self.assertEqual((out.strength,out.toughness,out.dexterity,out.weaken_counter),(4,7,8,0))
+        # A future compliance event receives newly rebuilt baseline powers,
+        # rather than multiplying the previous weakened work state again.
+        out=resolve_weaken_recalculation(5,9,11,weaken_counter=out.weaken_counter,barrier_counter=0)
+        self.assertEqual((out.strength,out.toughness,out.dexterity),(5,9,11))
 
 
 if __name__=='__main__':

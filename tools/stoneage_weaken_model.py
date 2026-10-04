@@ -151,3 +151,31 @@ def resolve_weaken_self_tick(counter: int, *, barrier_active_at_visit: bool = Fa
 
 
 resolve_weaken_multilist = resolve_nocast_multilist
+
+
+@dataclass(frozen=True)
+class WeakenRecalculation:
+    strength: int
+    toughness: int
+    dexterity: int
+    weaken_counter: int
+    barrier_counter: int
+
+
+def resolve_weaken_recalculation(strength: int, toughness: int, dexterity: int,
+                                 *, weaken_counter: int, barrier_counter: int):
+    """Other_DefcharWorkInt seam AFTER fresh base/equipment reconstruction.
+
+    All other suit/profession/wolf/fear modifiers must be absent. This function
+    is an explicit recalculation event, not an automatically invented round tick.
+    C 0.8 is double; conversion back to int truncates toward zero. The final
+    attack/defense/quick work fields equal these resulting fixed values.
+    """
+    values=(strength,toughness,dexterity,weaken_counter,barrier_counter)
+    if any(not 0 <= int(x) < 2**31 for x in values):
+        raise WeakenUndefinedSourceDomain("recalculation requires nonnegative int32 inputs")
+    active=weaken_counter>0
+    powers=tuple(int(x*0.8) if active else int(x) for x in (strength,toughness,dexterity))
+    return WeakenRecalculation(*powers,
+        weaken_counter-1 if active else weaken_counter,
+        barrier_counter-1 if barrier_counter>0 else barrier_counter)

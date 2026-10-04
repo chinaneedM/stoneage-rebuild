@@ -500,3 +500,11 @@ and self/mutual status-counter freeze. This is not direct attack/defense reducti
 Compiled command values differ (2022 vs 2021); source macro 544 is not recovered
 data ID 575/576. No introduction date or Taiwan-v1 membership follows from this
 technical audit. [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]
+
+
+**2026-10-04 Weaken power-seam clarification:** the preceding observation of no
+direct callback/application attack/defense reduction does not mean the status
+has no power effect. At explicit character compliance recalculation, later
+source reduces freshly rebuilt fixed strength/toughness/dexterity by 20% and
+decrements the status counter. The caller schedule must be evidenced separately
+from StatusSeq's freeze loop. [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]

@@ -27,7 +27,10 @@ GATE|profile=gavin|name=status_index_not_equipment_work_enum|pass=1
 GATE|profile=gavin|name=status_order_weaken_before_barrier_nocast|pass=1
 GATE|profile=gavin|name=decrement_before_weaken_freeze|pass=1
 GATE|profile=gavin|name=executor_keeps_false_return|pass=1
+GATE|profile=gavin|name=compliance_calls_recalc_after_base_equipment|pass=1
+GATE|profile=gavin|name=recalc_three_power_reductions_and_counter_decrement|pass=1
 GATE|profile=gavin|name=lua_extra_resist_inactive|pass=1
+ORACLE|profile=gavin|name=recalculation_cases|value=128
 ORACLE|profile=gavin|name=callback_executor_cases|value=8
 ORACLE|profile=gavin|name=probability_writer_cases|value=512
 ORACLE|profile=gavin|name=ubsan_asan_pass|value=1
@@ -42,6 +45,8 @@ SOURCE_HASH|profile=gavin|path=gmsv/src/include/char_base.h|sha256=2959c40645149
 SOURCE_HASH|profile=gavin|path=gmsv/src/include/battle.h|sha256=5ec5972c6fff32a11f80cadb15529e4b4983cd92669cc9c3c60784baa41f1526
 SOURCE_HASH|profile=gavin|path=gmsv/src/include/battle_event.h|sha256=ac9cc3ddd5aa0bbc1a44616303cbe3d9ceae2689513ac9ea514cd7fd7235cc91
 SOURCE_HASH|profile=gavin|path=gmsv/src/include/pet_skillinfo.h|sha256=32af3006d5fc828463091e2d322d0227a62b1fc3282aeb4af68492e16b5fe328
+SOURCE_HASH|profile=gavin|path=gmsv/src/item/item.c|sha256=a43b354cf8c15f74bdb5bbc9dda952604d250b905ef957189254fc533d4bc95a
+SOURCE_HASH|profile=gavin|path=gmsv/src/char/char.c|sha256=3aeb8fa3124aa68c69509ee351b0773a26193c3742e9c78ef57fad03e6d7fa19
 PROFILE|name=iris|sha=9e6c8ce2cd8ed532a7157773acd1c61582c178b5
 FEATURE|profile=iris|name=_SKILL_WEAKEN|active=1
 FEATURE|profile=iris|name=_MAGIC_WEAKEN|active=1
@@ -68,7 +73,10 @@ GATE|profile=iris|name=status_index_not_equipment_work_enum|pass=1
 GATE|profile=iris|name=status_order_weaken_before_barrier_nocast|pass=1
 GATE|profile=iris|name=decrement_before_weaken_freeze|pass=1
 GATE|profile=iris|name=executor_keeps_false_return|pass=1
+GATE|profile=iris|name=compliance_calls_recalc_after_base_equipment|pass=1
+GATE|profile=iris|name=recalc_three_power_reductions_and_counter_decrement|pass=1
 GATE|profile=iris|name=lua_extra_resist_inactive|pass=1
+ORACLE|profile=iris|name=recalculation_cases|value=128
 ORACLE|profile=iris|name=callback_executor_cases|value=8
 ORACLE|profile=iris|name=probability_writer_cases|value=512
 ORACLE|profile=iris|name=ubsan_asan_pass|value=1
@@ -83,6 +91,8 @@ SOURCE_HASH|profile=iris|path=Source/gmsv/include/char_base.h|sha256=d53f39efe6f
 SOURCE_HASH|profile=iris|path=Source/gmsv/include/battle.h|sha256=2c0e83a742f707383ef4db442f5c71c65beabbb4748deaf4b62c81ddba406278
 SOURCE_HASH|profile=iris|path=Source/gmsv/include/battle_event.h|sha256=d7fbfa0cd3d9cb7525f7e1a274f6788490aee8f79aee770c47274486ffdd7c02
 SOURCE_HASH|profile=iris|path=Source/gmsv/include/pet_skillinfo.h|sha256=75d76f0983ac084660cd7603f5e9f97691e418c406ebf656982452ac13629b0f
+SOURCE_HASH|profile=iris|path=Source/gmsv/item/item.c|sha256=3a352f87c2aadb1862e8f0e266953456635b1aa2602fd65664e48b1356c20cb1
+SOURCE_HASH|profile=iris|path=Source/gmsv/char/char.c|sha256=e1054617bc7079257bc6b39d97827e8f5ec6cdea3752abbbc3e40c7b93911149
 PROFILE|name=bismarck|sha=999ffdf1d220ec6666eb65339180689c9caf1876
 FEATURE|profile=bismarck|name=_SKILL_WEAKEN|active=1
 FEATURE|profile=bismarck|name=_MAGIC_WEAKEN|active=1
@@ -109,7 +119,10 @@ GATE|profile=bismarck|name=status_index_not_equipment_work_enum|pass=1
 GATE|profile=bismarck|name=status_order_weaken_before_barrier_nocast|pass=1
 GATE|profile=bismarck|name=decrement_before_weaken_freeze|pass=1
 GATE|profile=bismarck|name=executor_keeps_false_return|pass=1
+GATE|profile=bismarck|name=compliance_calls_recalc_after_base_equipment|pass=1
+GATE|profile=bismarck|name=recalc_three_power_reductions_and_counter_decrement|pass=1
 GATE|profile=bismarck|name=lua_extra_resist_inactive|pass=1
+ORACLE|profile=bismarck|name=recalculation_cases|value=128
 ORACLE|profile=bismarck|name=callback_executor_cases|value=8
 ORACLE|profile=bismarck|name=probability_writer_cases|value=512
 ORACLE|profile=bismarck|name=ubsan_asan_pass|value=1
@@ -124,4 +137,6 @@ SOURCE_HASH|profile=bismarck|path=server/gmsv/include/char_base.h|sha256=71bcc04
 SOURCE_HASH|profile=bismarck|path=server/gmsv/include/battle.h|sha256=4b8515aad3b0e659cd0d86a554844b8c471af294cce6e0f40888c45814c56a69
 SOURCE_HASH|profile=bismarck|path=server/gmsv/include/battle_event.h|sha256=8f97e94f70e5efdbbdf6267f4b44a6adb4c2c29eca06433093c1e19f626dc3fc
 SOURCE_HASH|profile=bismarck|path=server/gmsv/include/pet_skillinfo.h|sha256=32af3006d5fc828463091e2d322d0227a62b1fc3282aeb4af68492e16b5fe328
+SOURCE_HASH|profile=bismarck|path=server/gmsv/item/item.c|sha256=50b27efe0495afdc3b807e29f31fd2403d297f64127fac8357904853f8abe055
+SOURCE_HASH|profile=bismarck|path=server/gmsv/char/char.c|sha256=f191897baa48d7eaa721deb199a025d88e13c465007d8e3f9a48b23ac1ccfb99
 RESOLUTION|WEAKEN_FIXED_SOURCE_CLOSED_SAFE_REFERENCE
