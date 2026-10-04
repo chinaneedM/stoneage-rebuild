@@ -3268,3 +3268,12 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - ID 601 target state is TGH 3/15. MultiList dead-single retarget RNG is explicit; live targets consume none. SetDuck/STR/TGH/DEX mutual exclusion, same-round StatusSeq decrement, persistent expiry, baseline-toughness preparation and SetMagicPet-before-Weaken ordering are tested. Unreferenced HP/STR/DEX family execution remains outside R1.
 - Accepted code gate: `234cfb200ccff06bd97cb29009f81c7406e8f373` with SetMagicPet **37217333303 PASS**, coordinator **37217333081 PASS**, full region/runtime stack **37217333016 PASS** plus all affected battle regressions; supplement `8b1cb0fd49f2708eecfe08b67bc97301fbf7e14f` has **37217473190 PASS**.
 - **CLOSED:** bounded ID-601 TGH enemy ordered runtime. **OPEN:** pressure-report regeneration (Action 37217793085 queued), unreferenced 602/603/604 execution, original numeric COM1/binary provenance and Taiwan-v1 membership.
+
+
+### 2026-10-05 — SetMagicPet verified pressure closure
+
+- Pressure fixture corrections only: `ef5f66af8e12467d486048b5d1e04a803b495321` updates the post-Refresh expectation after SetMagicPet closure; `05c6fec3ef27ef5b06acefc19a87712ede3a3348` adds BattleTimid ID 606 to the synthetic next-open fixture. Neither changes the production pressure classifier or runtime.
+- Verified pressure Action **37218864011 PASS**: ranking tests, preservation-bundle recovery, real callback ranking and derived report write-back all succeed.
+- Derived report commit: `ec46a0248e6c64623096d03c14e5ffc156a1193c`; report path `research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt`; **2486 positive uses / 0 unresolved IDs**.
+- Exact `PETSKILL_SetMagicPet` ID 601 is now `closed_runtime` for **6 uses / 6 templates**. Accepted executable positive-slot coverage is **2434/2486 = 97.91%**.
+- Next mechanically selected OPEN callback is `PETSKILL_BattleTimid`, recovered ID **606**, **5 uses / 5 templates**. Any existing BattleTimid notes are pre-audit observations only until fresh pinned-source and verified recovered-data gates close.
