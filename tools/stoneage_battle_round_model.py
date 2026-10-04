@@ -8302,13 +8302,13 @@ def resolve_ordinary_round(
                 )
             ),
             target_hp_after=after,
+            )
         ):
             append_counter_chain(
                 participant_id,
                 slot,
                 counter_target_slot,
             )
-        )
 
     for participant_id in sorted(
         battletimid_actor_ids-attempted_battletimid_actor_ids
