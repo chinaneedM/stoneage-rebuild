@@ -572,3 +572,8 @@ recovered binary enum. [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]
 ## 2026-10-05 — SetMagicPet bounded ID-601 runtime accepted, pressure verification pending
 
 **LATER_RECOVERED / EXECUTION:** exact recovered25 ID 601 now has a typed enemy runtime preserving source MultiList retarget ownership, mutual SetDuck/STR/TGH/DEX exclusion, action-ordered counter decrement, non-compounding TGH +15% preparation from baseline toughness, and SetMagicPet-before-Weaken preparation order. Code-level dedicated/coordinator/full-stack regressions pass at `234cfb200ccff06bd97cb29009f81c7406e8f373`; expiry/order supplement **37217473190 PASS**. Rows 602–604 remain data-only. Numeric historical COM1, original binary identity and Taiwan-v1 membership remain OPEN. Pressure reclassification source is committed but hash-verified Action **37217793085 remains queued**, so the old 2428/2486 report remains canonical until regenerated.
+
+
+## 2026-10-05 — SetMagicPet verified pressure closure and BattleTimid handoff
+
+**LATER_RECOVERED / EXECUTION:** hash-verified pressure Action **37218864011 PASS** after two fixture-only ranking-test corrections. Derived report `ec46a0248e6c64623096d03c14e5ffc156a1193c` reproduces **2486 positive recovered25 enemy skill-slot uses / 0 unresolved IDs**, marks exact SetMagicPet ID 601 **closed_runtime** for six uses/six templates, and advances accepted executable coverage to **2434/2486 (97.91%)**. The next mechanically selected OPEN family is **PETSKILL_BattleTimid**, recovered ID 606, five uses/five templates. Existing BattleTimid observations remain pre-audit only; original introduction, Taiwan-v1 membership and original binary/compiler identity remain OPEN.
