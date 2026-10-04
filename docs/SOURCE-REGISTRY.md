@@ -3130,3 +3130,14 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
 - Acceptance update: verified bundle workflow **36881045423 = PASS** at `02b443d618d3ed10c617e33d46c26cf309a0e0d9`; derived report `research/recovered/STONEAGE-25-NOCAST-PROBE-R1.txt` committed by `2f461c0a36af906b6514cedd6a1c1fa6c247f47c`.
 - Recovered metadata: ID 580, FIELD=1, TARGET=3, COST=2, ILLEGAL=1000; 15 OPTION bytes, SHA-256 `28c465f3106af23dafc91aa2c54c7c7c8ff147dd26d8ee92382ecd4862dd871f`; strict CP950/Big5 parser results turn=3 and Success offset=50; 18 slot uses across 16 templates. This supersedes the pending data gate above, while executable runtime/compile-profile identity remains OPEN.
 - Guarded reference/source-profile workflow **36881045171 = PASS** at the same source commit.
+
+### SRC-DESCENDANT-ATTACKCRAZED-PINNED-PROFILES-R1
+
+- Retrieval/audit date: **2026-10-04**.
+- Sources: `gavinlinasd/StoneAge@1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`, `iriselia/StoneAge@9e6c8ce2cd8ed532a7157773acd1c61582c178b5`, `BismarckDD/stoneage@999ffdf1d220ec6666eb65339180689c9caf1876`.
+- Type/confidence: pinned public later descendant source; A for literal source/profile behavior, OPEN for recovered25 binary identity and Taiwan-v1 membership.
+- Audited paths: `battle/pet_skill.c`, `battle/battle.c`, `include/version.h`, `include/battle.h`, `include/pet_skillinfo.h` under each pinned source root.
+- Supports callback 0.8/0.7 work-power writes, LOW array/HIGH atoi count, preselected random target list excluding side slots 9/19, first non-bow hit using the original TargetAdjust, later hits skipping list[0], no AttackCrazed damage division, and post-sequence ordinary counter boundary.
+- Profile differences: `_SHOOTCHESTNUT` same-side gate enabled in gavin/iris and disabled in Bismarck; Bismarck's OPTION pointer comparison is not a NULL guard. All three compiled command enums are 2010 and source skill macros are 608; neither identifies recovered row 613's binary COM1.
+- Reproducible audit: `tools/stoneage_attack_crazed_source_audit.py`; derived report: `research/recovered/STONEAGE-ATTACKCRAZED-SOURCE-AUDIT-R1.txt`; specification: `research/mechanics/STONEAGE-ATTACKCRAZED-R1.md`.
+- Runtime remains OPEN; safe reference domain is non-null OPTION count 1..19. Actual recovered metadata/count requires the separate verified preservation-bundle probe.

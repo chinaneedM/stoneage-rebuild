@@ -1,0 +1,19 @@
+name: Validate StoneAge AttackCrazed reference
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-attack-crazed-reference.yml
+      - tools/stoneage_attack_crazed_model.py
+      - tools/stoneage_attack_crazed_source_audit.py
+      - tools/stoneage_recovered25_attack_crazed_probe.py
+      - tests/test_stoneage_attack_crazed_model.py
+      - tests/test_stoneage_recovered25_attack_crazed_probe.py
+permissions:
+  contents: read
+jobs:
+  reference:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_attack_crazed_model tests.test_stoneage_recovered25_attack_crazed_probe -v

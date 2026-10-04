@@ -5625,3 +5625,16 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - The 10 Barrier slot uses are now executable, moving recovered pet-skill slot-use coverage from **2381 / 2486 = 95.8%** to **2391 / 2486 ≈ 96.2%**. Merge remains separately classified historical UB.
 - Barrier is added to `CLOSED_RUNTIME_CALLBACKS`. Verified callback-pressure workflow **37025618270 = PASS**; the regenerated preservation-bundle report selects the next OPEN callback mechanically as **PETSKILL_AttackCrazed**, recovered25 ID **613**, **9** slot uses across **9** templates. This is the next research target; no AttackCrazed runtime semantics are assumed yet.
 
+
+## Phase 1 AttackCrazed fixed-source reference and verified data probe — 2026-10-04
+
+- Startup freshly verified remote main HEAD `aaec7ac0be8ccb40e32faf561ff4590d4c21fe0e`, tree `a31ca4c57f0e7c130bfd1231e727cadd70228201`, all five branches, recent commits, README/continuity/decision/timeline/source records and **21/21 successful Actions** at that HEAD.
+- The latest verified callback-pressure report selects **PETSKILL_AttackCrazed**, recovered row **613**, **9** positive slot uses across **9** templates. No new callback ordering is assumed.
+- Freshly fetched all three pinned descendant trees and reproduced the source audit, including active features and compiled command enum checks. All three use source command 2010/source macro 608; these are not assigned to recovered25's separate row-ID domain.
+- Added an independent callback/target-list reference, source-audit tool, strict verified-bundle data probe and dedicated workflows. Local **14 tests PASS**, plus actual three-profile source/header audit PASS.
+- Preserved non-obvious rules: attack work 0.8/defense work 0.7; target pool omits slots 9/19; n target-selection draws occur before physical execution; first non-bow hit uses the original submitted target while selected list[0] is skipped; no ContinuationAttack damage divisor; no-candidate list stays target-filled; final ordinary attack result owns counter continuation.
+- Explicit profile limits: same-side gate depends on `_SHOOTCHESTNUT`; pinned Bismarck disables it and has a defective OPTION pointer check. Safe reference admission requires non-null OPTION count 1..19. No missing-pointer/unsafe-count behavior is normalized into an invented rule.
+- **ATTACKCRAZED_FIXED_SOURCE_R1 = LOCAL_PASS_SAFE_REFERENCE_REMOTE_PENDING.**
+- **RECOVERED25_ATTACKCRAZED_OPTION_DOMAIN_R1 = OPEN_PENDING_VERIFIED_BUNDLE_PROBE.**
+- **RECOVERED25_ATTACKCRAZED_RUNTIME_R1 = OPEN.** Executable slot-use coverage remains **2391/2486 ≈ 96.2%**; reference/probe work does not increase it.
+- Highest-priority next work: inspect the dedicated preservation-bundle probe, close exact ID-613 metadata/OPTION count from its hash-verified report, then implement a typed enemy-AI submission with correct first-hit/list-selection/per-hit mutation and final counter ordering through the persistent coordinator. Do not move to another callback or claim these 9 uses executable before E2E runtime acceptance.
