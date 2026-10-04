@@ -137,8 +137,8 @@ class RefreshRuntimeTests(unittest.TestCase):
             )
 
     def resolve(self, *, skill_id=583, target=0, player_base=None, player_late=None,
-                rolls=RefreshActionRolls(), player_hp=2000, extra_players=None,
-                commands=None):
+                enemy_late=None, rolls=RefreshActionRolls(), player_hp=2000,
+                extra_players=None, commands=None):
         player = actor("player", "player", "player", hp=player_hp)
         enemy = actor("enemy", "enemy", "enemy", quick=200)
         players = {0: player}
@@ -167,6 +167,7 @@ class RefreshRuntimeTests(unittest.TestCase):
             for participant in participants
         }
         overlay_rows["player"] = player_late or late()
+        overlay_rows["enemy"] = enemy_late or late()
         return resolve_ordinary_round(
             prepared,
             slots={participant.participant_id: slot for slot, participant in players.items()} | {"enemy": 10},
@@ -199,6 +200,21 @@ class RefreshRuntimeTests(unittest.TestCase):
         self.assertEqual(result.base_status_runtime_by_participant_id["player"].status.paralysis, 1)
         refreshed = result.nocast_overlay.runtime_by_participant_id["player"]
         self.assertEqual((refreshed.counter, refreshed.nc_flag), (0, 0))
+
+    def test_id583_preserves_actor_dependent_return_and_receive_effect(self):
+        result = self.resolve(
+            skill_id=583,
+            player_late=late(counter=3, nc_flag=1),
+            enemy_late=late(counter=3, nc_flag=1),
+        )
+        event = self.refresh_event(result)
+        self.assertTrue(event.refresh_resolution.source_return_value)
+        self.assertEqual(event.refresh_resolution.receive_effect_name, "SPR_tyusya")
+        self.assertEqual(event.refresh_cleared_status, 10)
+        self.assertEqual(
+            result.nocast_overlay.runtime_by_participant_id["player"].counter,
+            0,
+        )
 
     def test_id583_is_masked_by_higher_known_status_impossible_in_admitted_vector(self):
         # Status 10 is the highest modeled index, so it clears even when lower
