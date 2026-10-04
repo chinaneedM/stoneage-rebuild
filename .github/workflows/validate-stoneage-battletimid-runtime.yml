@@ -1,0 +1,37 @@
+name: Validate StoneAge BattleTimid runtime
+concurrency:
+  group: stoneage-battletimid-runtime
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-battletimid-runtime.yml"
+      - "tools/stoneage_battletimid_model.py"
+      - "tools/stoneage_enemy_ai_battletimid_bridge.py"
+      - "tools/stoneage_recovered25_battletimid_probe.py"
+      - "tools/stoneage_battle_round_model.py"
+      - "tools/stoneage_battle_state_model.py"
+      - "tools/stoneage_local_runtime_session_coordinator.py"
+      - "tests/test_stoneage_battletimid_model.py"
+      - "tests/test_stoneage_battletimid_bridge.py"
+      - "tests/test_stoneage_battletimid_runtime.py"
+      - "tests/test_stoneage_local_runtime_session_coordinator.py"
+      - "specs/STONEAGE-BATTLETIMID-RUNTIME-R1.md"
+permissions:
+  contents: read
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate BattleTimid runtime seam
+        run: |
+          python -m unittest -v             tests.test_stoneage_battletimid_model             tests.test_stoneage_recovered25_battletimid_probe             tests.test_stoneage_battletimid_bridge
+          if test -f tests/test_stoneage_battletimid_runtime.py; then
+            python -m unittest -v tests.test_stoneage_battletimid_runtime
+          fi
