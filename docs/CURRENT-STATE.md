@@ -5918,3 +5918,17 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Canonical accepted executable positive skill-slot coverage advances from **2428 to 2434 / 2486 = 97.91%**. This remains a recovered25 enemy pet-skill slot metric, not whole-project reconstruction completion.
 - The mechanically selected next OPEN callback is **PETSKILL_BattleTimid**, recovered ID **606**, **5 uses / 5 templates**. Existing read-only observations remain PRE-AUDIT only and are not yet accepted source/data facts.
 - **Highest-priority unfinished task:** start a fresh bounded BattleTimid source/header/caller audit against the fixed descendant pins, then build a hash-verified recovered25 population/metadata/OPTION probe before any typed runtime. Do not infer runtime semantics from the callback name or the pre-audit summary. Continue **WORK mode** under DD-018; production-engine selection and redesigned content remain deferred.
+
+
+## Phase 1 SetMagicPet main integration / BattleTimid reference start — 2026-10-05
+
+- `main` was fast-forwarded without force to `f39d22b74dc708ff5896cfd964622677122e9c89`, tree `9ebddadb67973a98ac9c7f8d2cccde595ca8d956`.
+- The resulting main push completed **24/24 affected Actions PASS, 0 failures**. Key gates include SetMagicPet runtime **37219086782**, local runtime session coordinator **37219086859**, runtime golden contract **37219086815**, pressure ranking **37219086923**, and recovered25 region payload source **37219086860**.
+- Therefore SetMagicPet is fully closed on main at the bounded recovered25 ID-601 enemy-domain scope; canonical accepted executable positive skill-slot coverage remains **2434/2486 = 97.91%**.
+- Fresh work branch `agent/battletimid-reference-r1-20261005` was created from that verified main.
+- BattleTimid source work is deliberately split into fixed descendant source audit and hash-verified recovered25 population/metadata audit before any typed runtime.
+- Fresh read-only inspection confirms all three pinned descendants share the callback work-power writes **attack 70% / defence 40% / quick 80%**, dispatch through `BATTLE_TargetAdjust -> BATTLE_S_AttackDamage`, and consume one raw `rand()%100` draw in the TIMID damage branch; forced exit requires `draw < 15 && damage > 1`.
+- Target-kind effects differ inside the same shared branch: pet targets use default-pet exit and clear the owner's default-pet selection; non-pet targets use battle exit and party discharge.
+- Compile-profile divergence is preserved: gavin/iris have the `_SKILLLIMIT` same-side guard active; the fixed Bismarck profile does not. BattleTimid R1 therefore keeps the common runtime-safe target domain **opposite-side only** rather than normalizing this difference.
+- New bounded model, unit tests, source audit and first-pass recovered25 probe are on the BattleTimid branch. First Action **37219777331** failed only because the generic C function extractor could not span conditional-preprocessor braces in `BATTLE_TargetListSet`; commit `02f9b85fc9eae068c946ce17d9d42a49af644336` replaces that with explicit bounded slices. Re-run **37219824297** is the current source/data gate.
+- **Highest-priority unfinished task:** close Action 37219824297; if source audit passes, let the verified bundle emit the exact ID-606 row metadata/OPTION hash, pin those derived facts in a second pass, then close the BattleTimid source/data reference before any runtime implementation.
