@@ -489,3 +489,6 @@ entries. Same-side/pointer handling varies by source profile. This audit does
 **not** date the skill's introduction or prove Taiwan-v1 membership, and source
 macro 608/compiled command 2010 are not a recovered-binary command mapping.
 [SRC-DESCENDANT-ATTACKCRAZED-PINNED-PROFILES-R1]
+
+
+**2026-10-04 technical evidence boundary — Mdfyattack:** the three pinned later descendant profiles separately register Mdfyattack and Modifyattack. Mdfyattack replaces the temporary attacker attribute vector with one selected EA/WA/FI/WI weight and zero neutral weight before property/field calculations. Compiled symbolic command values differ (gavin/iris 2030 vs Bismarck 2028), so none is a recovered25 binary mapping. The safe reference/data audit neither dates this skill's introduction nor establishes Taiwan-v1 membership. [SRC-DESCENDANT-MDFYATTACK-PINNED-PROFILES-R1]

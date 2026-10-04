@@ -3146,3 +3146,15 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
 - Exact recovered ID 613: FIELD=1, TARGET=1, COST=2, ILLEGAL=0; one non-NUL OPTION byte, SHA-256 `4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce`, attack count=3; 9 uses/9 templates reproduced. This supersedes the pending data gate above, while ordered runtime and early-version membership remain OPEN.
 
 - Runtime acceptance update — 2026-10-04: typed enemy-AI/ordered-round/persistent-coordinator execution at `26d47e45402b302822639c524b82396b29b0c6a0` passed dedicated workflow **37175407818**, battle core **37175407825**, coordinator **37175407757** and runtime golden **37175407754**, plus related skill/magic regressions. Local 985-test acceptance includes a two-round persistence witness. Closure is limited to explicit recovered enemy/opposite-side/FIST/count-3; no historical numeric COM1, original skill-array index, or Taiwan-v1 membership is assigned. Verified pressure reranking **37175482501** accounts for the 9 accepted uses and selects `PETSKILL_Mdfyattack` next.
+
+
+### SRC-DESCENDANT-MDFYATTACK-PINNED-PROFILES-R1
+
+- Retrieval/audit date: **2026-10-04**.
+- Sources: `gavinlinasd/StoneAge@1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`, `iriselia/StoneAge@9e6c8ce2cd8ed532a7157773acd1c61582c178b5`, `BismarckDD/stoneage@999ffdf1d220ec6666eb65339180689c9caf1876`.
+- Type/confidence: pinned public later descendant source; A for literal callback/dispatch/attribute/event behavior, OPEN for recovered25 compiled profile and Taiwan-v1 membership.
+- Audited surfaces: pet_skill.c, battle.c, battle_event.c, version/battle/event/pet-skill headers; actual delimiter/copy helpers. Bismarck's split helper is server/common/utils/util_string.c with workspace.c copy helpers, and its shared AttrCalc resides in battle_magic.c; the audit uses these live files, not remove_code controls.
+- Actual compilation: gavin/iris Mdfyattack command 2030 vs Modifyattack 2029; Bismarck 2028 vs 2027; BCF_MODIFY 2097152. Both callbacks remain distinct. Numeric recovered COM1 remains unassigned.
+- Supports exact ASCII code/atoi/COM4 setup, all-five-weight replacement with neutral zero, property/field/AttrCalc ordering, local event cancellation independent from actor COM1, specialized single-hit/no ordinary counter dispatch, and Guardian output not reassigned by the event wrapper.
+- Source-profile boundary: property/suit features are enabled in these descendants, but the numerical reference admits their absence only. Bismarck's OPTION pointer comparison is defective and its byte helper differs; no null-pointer/non-ASCII/undefined arithmetic behavior is invented.
+- Reproducible audit: `tools/stoneage_mdfyattack_source_audit.py`; report: `research/recovered/STONEAGE-MDFYATTACK-SOURCE-AUDIT-R1.txt`; specification: `research/mechanics/STONEAGE-MDFYATTACK-R1.md`. Local native oracle uses UBSan on transient actual functions and passes 45 callback + 3075 attribute cases. Data population/OPTION requires the separate hash-verified bundle probe; runtime remains OPEN.
