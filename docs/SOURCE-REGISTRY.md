@@ -3242,3 +3242,10 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - Exact callback population: **583, 584, 591, 592, 593**; positive uses **583=4, 592=2**, others zero. All rows are FIELD=1/COST=2; TARGET=2 for 583/584/592/593 and TARGET=1 for 591. Row-specific ILLEGAL and OPTION SHA-256 values are preserved in `research/recovered/STONEAGE-25-REFRESH-PROBE-R1.txt` without storing raw proprietary rows.
 - Conditional iris CP950/Big5 parsed statuses are **10/8/9/0/7**. The source/data evidence closes only a conditional descendant-reference interpretation; the original recovered binary execution charset and historical membership remain OPEN.
 - Full petskill hash: `f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4`. Native recovered-byte report records 135 defined witnesses and expected unsafe-build diagnostics. Ordered runtime remains a separate acceptance gate.
+
+
+### 2026-10-04 — Refresh conditional runtime acceptance
+
+- Runtime source path accepted through `a1d7a884e2a18863348aab07bf9958b6df3af227`; all 17 affected workflows PASS, including dedicated Refresh **37213319829**, coordinator **37213319916**, golden **37213319930** and full recovered region/resource/runtime/collision **37213319811**. Actor-dependent source return/effect supplement **37213476518 PASS**.
+- Pressure-classification source `8a21f0a3aa3bbfed1289d577d2a20e43b99787cc` passes dedicated Refresh **37213544347** and verified pressure **37213544358**; report write-back `13faa957cb645c4ccfacbdd3c0d77ac3ae2eae55` marks exact Refresh CLOSED_RUNTIME and selects SetMagicPet next.
+- Accepted runtime is bounded to the verified recovered enemy uses and conditional iris CP950 status interpretation. It preserves symbolic command identity, explicit dead-single retarget RNG only, single-highest status clearing, Nocast NC restoration and persistent next-round behavior. Original binary charset, numeric recovered COM1, Taiwan-v1 membership and unmodeled extension statuses remain OPEN.
