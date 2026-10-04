@@ -5777,6 +5777,157 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                 self.assertIsNone(late.prepared_weaken_powers)
                 self.assertEqual(context.persistent_battle_state.base_status_runtime_by_participant_id["player"].work_quick,10)
 
+    def test_recovered_enemy_ai_refresh_clears_silence_and_persists(self):
+        from tests.test_stoneage_refresh_runtime import (
+            SYNTHETIC_HASHES as REFRESH_HASHES,
+            SYNTHETIC_OPTIONS as REFRESH_OPTIONS,
+        )
+        from tools.stoneage_enemy_ai_refresh_bridge import (
+            EXPECTED_OPTION_SHA256_BY_ID,
+        )
+        from tools.stoneage_refresh_runtime_state import RefreshActionRolls
+
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-refresh"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,group,
+            entry_count_roll=1,selection_rolls=(0,),
+            birth_rolls=(EnemyBirthRolls(
+                level_roll=1,birth_offsets=(0,0,0,0),
+                spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+            ),),
+        )
+        enemy_id=str(context.battle.enemies[0].participant_id)
+        spawned=context.spawned_enemies[0]
+        skills=dict(self.stack.petskill_runtime.skills)
+        metadata={
+            583:(1,2,2,2000),
+            584:(1,2,2,5000),
+            591:(1,1,2,5000),
+            592:(1,2,2,8000),
+            593:(1,2,2,5000),
+        }
+        for skill_id,(field,target,cost,illegal) in metadata.items():
+            skills[skill_id]=Recovered25PetSkillEntry(
+                skill_id=skill_id,
+                field=field,
+                target=target,
+                cost=cost,
+                illegal=illegal,
+                function_name="PETSKILL_Refresh",
+                option_bytes=REFRESH_OPTIONS[skill_id],
+            )
+        self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+            skills=skills,
+            source_file=self.stack.petskill_runtime.source_file,
+        )
+        enemy=replace(context.battle.enemies[0],quick=200)
+        player=replace(context.battle.player,quick=10)
+        context=replace(
+            context,
+            battle=replace(context.battle,player=player,enemies=(enemy,)),
+            spawned_enemies=(replace(
+                spawned,
+                participant=enemy,
+                template=replace(
+                    spawned.template,
+                    skill_ids=(583,20,30,40,50,60,70),
+                    skill_slot_ids=(583,20,30,40,50,60,70),
+                ),
+                variant=replace(
+                    spawned.variant,
+                    tactics_option="at:0;1;1|gu:0|es:0|wa:1;0;0;0;0;0;0",
+                ),
+            ),),
+        )
+        overlay=NocastRoundOverlay({
+            "player":NocastParticipantRuntime(
+                25,25,25,25,counter=3,nc_flag=1
+            ),
+            enemy_id:NocastParticipantRuntime(25,25,25,25),
+        })
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+            nocast_overlay=overlay,
+        )
+        self.assertTrue(
+            self.coordinator.participant_nocast_blocks_direct_magic(
+                context,"player"
+            )
+        )
+        with patch.dict(
+            EXPECTED_OPTION_SHA256_BY_ID,
+            REFRESH_HASHES,
+            clear=True,
+        ):
+            batch=self.coordinator._build_persistent_enemy_common_batch(
+                context,
+                mode_rolls_by_enemy_id={enemy_id:0},
+                target_rolls_by_enemy_id={enemy_id:0},
+                allow_refresh_skill=True,
+            )
+            self.assertEqual(batch.refresh_submissions[enemy_id].skill_id,583)
+            context,result=(
+                self.coordinator
+                .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                    context,
+                    player_side_commands={
+                        "player":BattleCommand(BATTLE_COM_WAIT)
+                    },
+                    enemy_mode_rolls={enemy_id:0},
+                    enemy_target_rolls={enemy_id:0},
+                    enemy_escape_rolls={},
+                    opponent_abio_by_participant_id={},
+                    initiative_random_subtracts={"player":0,enemy_id:0},
+                    profiles={
+                        "player":BattleCombatProfile(
+                            fixed_dex=10,fixed_luck=0,
+                            earth=0,water=0,fire=0,wind=0,
+                        ),
+                        enemy_id:BattleCombatProfile(
+                            fixed_dex=200,fixed_luck=0,
+                            earth=0,water=0,fire=0,wind=0,
+                        ),
+                    },
+                    attack_rolls={},
+                    refresh_rolls_by_attack_id={
+                        enemy_id:RefreshActionRolls()
+                    },
+                    defense_profile="newpower_70pct",
+                )
+            )
+        event=next(
+            event for event in result.round.events
+            if event.refresh_skill_id is not None
+        )
+        self.assertEqual(
+            (event.refresh_skill_id,event.refresh_status_index,
+             event.refresh_cleared_status),
+            (583,10,10),
+        )
+        late=(
+            context.persistent_battle_state.nocast_overlay
+            .runtime_by_participant_id["player"]
+        )
+        self.assertEqual((late.counter,late.nc_flag),(0,0))
+        self.assertFalse(
+            self.coordinator.participant_nocast_blocks_direct_magic(
+                context,"player"
+            )
+        )
+        self.assertEqual(
+            context.persistent_battle_state.hp_by_participant_id["player"],
+            result.round.hp_by_participant_id["player"],
+        )
+
     def test_recovered_enemy_ai_barrier_executes_and_persists(self):
         session=LocalRuntimeSessionState(
             contract_id=self.profile.contract_id,
