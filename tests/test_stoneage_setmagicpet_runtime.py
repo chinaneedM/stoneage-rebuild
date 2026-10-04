@@ -25,6 +25,7 @@ from tools.stoneage_setmagicpet_model import (
     parse_setmagicpet_option,
 )
 from tests.test_stoneage_attack_crazed_runtime import actor
+from tests.test_stoneage_battle_state_model import session as battle_session
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_WAIT,
@@ -39,7 +40,6 @@ from tools.stoneage_battle_state_model import (
     resolve_persistent_ordinary_round,
 )
 from tools.stoneage_battle_status_model import BaseBattleStatusRuntime
-from tools.stoneage_singleplayer_battle import BattleSession
 from tools.stoneage_setmagicpet_runtime_state import (
     PreparedSetMagicPetPowers,
     SetMagicPetActionRolls,
@@ -328,7 +328,7 @@ class SetMagicPetRuntimePrimitiveTests(unittest.TestCase):
             "player","player","player",defense=80,quick=100
         )
         enemy=actor("enemy","enemy","enemy",quick=220)
-        session=BattleSession(player=player,allied_pets=(),enemies=(enemy,))
+        session=battle_session(player,(enemy,))
         state=begin_persistent_battle(
             session,
             slots={"player":0,"enemy":10},
