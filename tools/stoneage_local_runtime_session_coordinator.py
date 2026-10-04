@@ -77,6 +77,17 @@ from tools.stoneage_enemy_ai_refresh_bridge import (
 )
 from tools.stoneage_refresh_runtime_state import RefreshActionRolls
 from tools.stoneage_refresh_model import CALLBACK_NAME as REFRESH_CALLBACK
+from tools.stoneage_enemy_ai_setmagicpet_bridge import (
+    EnemyAiSetMagicPetSubmission,
+    resolve_enemy_ai_setmagicpet_submission,
+)
+from tools.stoneage_setmagicpet_runtime_state import (
+    SetMagicPetActionRolls,
+    SetMagicPetRoundOverlay,
+)
+from tools.stoneage_setmagicpet_model import (
+    CALLBACK_NAME as SETMAGICPET_CALLBACK,
+)
 from tools.stoneage_nocast_runtime_state import (
     NocastActionRolls,
     NocastRoundOverlay,
@@ -450,6 +461,9 @@ class EnemyAiCommonCommandBatch:
     ] = field(default_factory=dict)
     weaken_submissions: Mapping[str,EnemyAiWeakenSubmission] = field(default_factory=dict)
     refresh_submissions: Mapping[str,EnemyAiRefreshSubmission] = field(default_factory=dict)
+    setmagicpet_submissions: Mapping[
+        str,EnemyAiSetMagicPetSubmission
+    ] = field(default_factory=dict)
     mdfyattack_submissions: Mapping[str,EnemyAiMdfyAttackSubmission] = field(default_factory=dict)
     attack_crazed_submissions: Mapping[str,EnemyAiAttackCrazedSubmission] = field(default_factory=dict)
     wildviolent_submissions: Mapping[str,EnemyAiWildViolentSubmission] = field(default_factory=dict)
@@ -969,6 +983,49 @@ class EnemyAiCommonCommandBatch:
         if set(refresh_submissions) & refresh_overlap:
             raise ValueError(
                 "enemy AI Refresh semantic submissions overlap another skill"
+            )
+
+        setmagicpet_submissions={
+            str(key):value
+            for key,value in self.setmagicpet_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "setmagicpet_submissions",
+            MappingProxyType(setmagicpet_submissions),
+        )
+        for participant_id,submission in setmagicpet_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI SetMagicPet submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiSetMagicPetSubmission):
+                raise TypeError(
+                    "enemy AI SetMagicPet submission has wrong type for "
+                    + participant_id
+                )
+            if str(submission.participant_id)!=participant_id:
+                raise ValueError("enemy AI SetMagicPet participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1)!=BATTLE_COM_ATTACK
+                or int(carrier.command2)!=int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI SetMagicPet carrier must be ATTACK/source-target"
+                )
+        setmagicpet_overlap=(
+            set(magic_submissions) | set(rehp_submissions)
+            | set(damage_submissions) | set(mp_submissions)
+            | set(fall_submissions) | set(tear_submissions)
+            | set(nocast_submissions) | set(guard_break2_submissions)
+            | set(barrier_submissions) | set(attack_crazed_submissions)
+            | set(mdfyattack_submissions) | set(weaken_submissions)
+            | set(wildviolent_submissions) | set(refresh_submissions)
+        )
+        if set(setmagicpet_submissions) & setmagicpet_overlap:
+            raise ValueError(
+                "enemy AI SetMagicPet semantic submissions overlap another skill"
             )
 
 
@@ -1561,6 +1618,7 @@ class LocalRuntimeSessionCoordinator:
         slots: Mapping[str, int],
         attack_magic_overlay: AttackMagicRoundOverlay | None = None,
         nocast_overlay: NocastRoundOverlay | None = None,
+        setmagicpet_overlay: SetMagicPetRoundOverlay | None = None,
     ) -> LocalRuntimeBattleContext:
         """Promote a transient group battle shell into multi-round state."""
 
@@ -1570,6 +1628,7 @@ class LocalRuntimeSessionCoordinator:
             context.battle,
             slots={str(key): int(value) for key, value in slots.items()},
             nocast_overlay=nocast_overlay,
+            setmagicpet_overlay=setmagicpet_overlay,
         )
         if (
             attack_magic_overlay is not None
@@ -1624,6 +1683,7 @@ class LocalRuntimeSessionCoordinator:
         allow_guard_break2_skill: bool = False,
         allow_weaken_skill: bool = False,
         allow_refresh_skill: bool = False,
+        allow_setmagicpet_skill: bool = False,
         allow_barrier_skill: bool = False,
         allow_mdfyattack_skill: bool = False,
         allow_attack_crazed_skill: bool = False,
@@ -1777,6 +1837,7 @@ class LocalRuntimeSessionCoordinator:
         guard_break2_submissions={}
         weaken_submissions={}
         refresh_submissions={}
+        setmagicpet_submissions={}
         barrier_submissions={}
         mdfyattack_submissions={}
         attack_crazed_submissions={}
@@ -1845,6 +1906,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_guard_break2_skill)
                 or bool(allow_weaken_skill)
                 or bool(allow_refresh_skill)
+                or bool(allow_setmagicpet_skill)
                 or bool(allow_barrier_skill)
                 or bool(allow_mdfyattack_skill)
                 or bool(allow_attack_crazed_skill)
@@ -1881,9 +1943,22 @@ class LocalRuntimeSessionCoordinator:
                 ):
                     baseline=living[enemy_id]
                     current=participant_snapshot(state,enemy_id)
-                    prepared_powers=(
+                    weaken_prepared=(
                         None if state.nocast_overlay is None else
-                        state.nocast_overlay.runtime_by_participant_id[enemy_id].prepared_weaken_powers
+                        state.nocast_overlay.runtime_by_participant_id[
+                            enemy_id
+                        ].prepared_weaken_powers
+                    )
+                    magic_prepared=(
+                        None if state.setmagicpet_overlay is None else
+                        state.setmagicpet_overlay.runtime_by_participant_id[
+                            enemy_id
+                        ].prepared_powers
+                    )
+                    prepared_powers=(
+                        weaken_prepared
+                        if weaken_prepared is not None
+                        else magic_prepared
                     )
                     # Normal compliance rebuilds WORKFIXSTR/WORKFIXTOUGH as
                     # well as attack/defense powers. In this admitted baseline
@@ -1971,6 +2046,27 @@ class LocalRuntimeSessionCoordinator:
                         command2=int(submission.source_target_slot),
                     )
                     refresh_submissions[enemy_id]=submission
+                    continue
+
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == SETMAGICPET_CALLBACK
+                    and bool(allow_setmagicpet_skill)
+                ):
+                    submission=resolve_enemy_ai_setmagicpet_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                    )
+                    # Internal action-order carrier only. Descendant numeric
+                    # S_SETMAGICPET differs by compile profile and is not a
+                    # recovered25 COM1 assertion.
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    setmagicpet_submissions[enemy_id]=submission
                     continue
 
                 if (
@@ -2250,6 +2346,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_Weaken")
             if bool(allow_refresh_skill):
                 allowed_parts.append("PETSKILL_Refresh")
+            if bool(allow_setmagicpet_skill):
+                allowed_parts.append("PETSKILL_SetMagicPet")
             if bool(allow_barrier_skill):
                 allowed_parts.append("PETSKILL_Barrier")
             if bool(allow_mdfyattack_skill):
@@ -2278,6 +2376,7 @@ class LocalRuntimeSessionCoordinator:
             guard_break2_submissions=guard_break2_submissions,
             weaken_submissions=weaken_submissions,
             refresh_submissions=refresh_submissions,
+            setmagicpet_submissions=setmagicpet_submissions,
             barrier_submissions=barrier_submissions,
             mdfyattack_submissions=mdfyattack_submissions,
             attack_crazed_submissions=attack_crazed_submissions,
@@ -2475,6 +2574,9 @@ class LocalRuntimeSessionCoordinator:
         ] | None = None,
         weaken_rolls_by_attack_id: Mapping[str,WeakenActionRolls] | None = None,
         refresh_rolls_by_attack_id: Mapping[str,RefreshActionRolls] | None = None,
+        setmagicpet_rolls_by_attack_id: Mapping[
+            str,SetMagicPetActionRolls
+        ] | None = None,
         barrier_rolls_by_attack_id: Mapping[
             str,BarrierActionRolls
         ] | None = None,
@@ -2589,6 +2691,7 @@ class LocalRuntimeSessionCoordinator:
             allow_guard_break2_skill=True,
             allow_weaken_skill=True,
             allow_refresh_skill=True,
+            allow_setmagicpet_skill=True,
             allow_barrier_skill=True,
             allow_mdfyattack_skill=True,
             allow_attack_crazed_skill=True,
@@ -2783,6 +2886,38 @@ class LocalRuntimeSessionCoordinator:
         if refresh_enemy_ids and state.nocast_overlay is None:
             raise ValueError(
                 "enemy Refresh requires explicit persistent status overlay"
+            )
+
+        setmagicpet_enemy_ids=set(enemy_batch.setmagicpet_submissions)
+        normalized_setmagicpet_rolls={
+            str(key):value
+            for key,value in (
+                setmagicpet_rolls_by_attack_id or {}
+            ).items()
+        }
+        if set(normalized_setmagicpet_rolls) != setmagicpet_enemy_ids:
+            missing=sorted(
+                setmagicpet_enemy_ids-set(normalized_setmagicpet_rolls)
+            )
+            extra=sorted(
+                set(normalized_setmagicpet_rolls)-setmagicpet_enemy_ids
+            )
+            raise ValueError(
+                "enemy SetMagicPet RNG mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        for participant_id,rolls in normalized_setmagicpet_rolls.items():
+            if not isinstance(rolls,SetMagicPetActionRolls):
+                raise TypeError(
+                    "enemy SetMagicPet RNG has wrong type for "
+                    + participant_id
+                )
+        if (
+            setmagicpet_enemy_ids
+            and state.setmagicpet_overlay is None
+        ):
+            raise ValueError(
+                "enemy SetMagicPet requires explicit persistent overlay"
             )
 
         attack_magic_enemy_ids={
@@ -3134,6 +3269,12 @@ class LocalRuntimeSessionCoordinator:
             weaken_rolls_by_participant_id=normalized_weaken_rolls,
             refresh_submissions_by_participant_id=enemy_batch.refresh_submissions,
             refresh_rolls_by_participant_id=normalized_refresh_rolls,
+            setmagicpet_submissions_by_participant_id=(
+                enemy_batch.setmagicpet_submissions
+            ),
+            setmagicpet_rolls_by_participant_id=(
+                normalized_setmagicpet_rolls
+            ),
             barrier_submissions_by_participant_id=(
                 enemy_batch.barrier_submissions
             ),

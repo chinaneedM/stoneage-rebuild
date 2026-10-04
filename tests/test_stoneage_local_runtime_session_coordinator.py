@@ -5928,6 +5928,165 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             result.round.hp_by_participant_id["player"],
         )
 
+    def test_recovered_enemy_ai_setmagicpet_tgh_executes_and_persists(self):
+        from tests.test_stoneage_setmagicpet_runtime import (
+            SYNTHETIC_HASH_BY_ID as SETMAGICPET_HASHES,
+            SYNTHETIC_OPTION_BY_ID as SETMAGICPET_OPTIONS,
+        )
+        from tools.stoneage_enemy_ai_setmagicpet_bridge import (
+            EXPECTED_OPTION_SHA256_BY_ID,
+        )
+        from tools.stoneage_setmagicpet_runtime_state import (
+            SetMagicPetActionRolls,
+            SetMagicPetParticipantRuntime,
+            SetMagicPetRoundOverlay,
+        )
+
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-setmagicpet"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,group,
+            entry_count_roll=1,selection_rolls=(0,),
+            birth_rolls=(EnemyBirthRolls(
+                level_roll=1,birth_offsets=(0,0,0,0),
+                spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+            ),),
+        )
+        enemy_id=str(context.battle.enemies[0].participant_id)
+        spawned=context.spawned_enemies[0]
+        skills=dict(self.stack.petskill_runtime.skills)
+        for skill_id in (601,602,603,604):
+            skills[skill_id]=Recovered25PetSkillEntry(
+                skill_id=skill_id,
+                field=1,
+                target=2,
+                cost=2,
+                illegal=2500,
+                function_name="PETSKILL_SetMagicPet",
+                option_bytes=SETMAGICPET_OPTIONS[skill_id],
+            )
+        self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+            skills=skills,
+            source_file=self.stack.petskill_runtime.source_file,
+        )
+        enemy=replace(context.battle.enemies[0],quick=200)
+        player=replace(context.battle.player,quick=10)
+        baseline_defense=int(player.defense)
+        context=replace(
+            context,
+            battle=replace(
+                context.battle,player=player,enemies=(enemy,)
+            ),
+            spawned_enemies=(replace(
+                spawned,
+                participant=enemy,
+                template=replace(
+                    spawned.template,
+                    skill_ids=(601,20,30,40,50,60,70),
+                    skill_slot_ids=(601,20,30,40,50,60,70),
+                ),
+                variant=replace(
+                    spawned.variant,
+                    tactics_option=(
+                        "at:0;1;1|gu:0|es:0|"
+                        "wa:1;0;0;0;0;0;0"
+                    ),
+                ),
+            ),),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+            setmagicpet_overlay=SetMagicPetRoundOverlay({
+                "player":SetMagicPetParticipantRuntime(),
+                enemy_id:SetMagicPetParticipantRuntime(),
+            }),
+        )
+        with patch.dict(
+            EXPECTED_OPTION_SHA256_BY_ID,
+            SETMAGICPET_HASHES,
+            clear=True,
+        ):
+            batch=self.coordinator._build_persistent_enemy_common_batch(
+                context,
+                mode_rolls_by_enemy_id={enemy_id:0},
+                target_rolls_by_enemy_id={enemy_id:0},
+                allow_setmagicpet_skill=True,
+            )
+            self.assertEqual(
+                batch.setmagicpet_submissions[enemy_id].skill_id,
+                601,
+            )
+            context,result=(
+                self.coordinator
+                .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                    context,
+                    player_side_commands={
+                        "player":BattleCommand(BATTLE_COM_WAIT)
+                    },
+                    enemy_mode_rolls={enemy_id:0},
+                    enemy_target_rolls={enemy_id:0},
+                    enemy_escape_rolls={},
+                    opponent_abio_by_participant_id={},
+                    initiative_random_subtracts={
+                        "player":0,enemy_id:0
+                    },
+                    profiles={
+                        "player":BattleCombatProfile(
+                            fixed_dex=10,fixed_luck=0,
+                            earth=0,water=0,fire=0,wind=0,
+                        ),
+                        enemy_id:BattleCombatProfile(
+                            fixed_dex=200,fixed_luck=0,
+                            earth=0,water=0,fire=0,wind=0,
+                        ),
+                    },
+                    attack_rolls={},
+                    setmagicpet_rolls_by_attack_id={
+                        enemy_id:SetMagicPetActionRolls()
+                    },
+                    defense_profile="newpower_70pct",
+                )
+            )
+        event=next(
+            event for event in result.round.events
+            if event.setmagicpet_skill_id is not None
+        )
+        self.assertEqual(
+            (
+                event.setmagicpet_skill_id,
+                event.setmagicpet_kind,
+                event.setmagicpet_applied,
+            ),
+            (601,"TGH",True),
+        )
+        magic=(
+            context.persistent_battle_state.setmagicpet_overlay
+            .runtime_by_participant_id["player"]
+        )
+        # Enemy acts first: TGH 3 is immediately visited by player's
+        # same-round StatusSeq and therefore persists as 2.
+        self.assertEqual(
+            (magic.state.tgh_turn,magic.state.tgh_power),
+            (2,15),
+        )
+        self.assertIsNotNone(magic.prepared_powers)
+        self.assertEqual(
+            magic.prepared_powers.defense,
+            baseline_defense+(baseline_defense*15)//100,
+        )
+        self.assertEqual(
+            context.persistent_battle_state.hp_by_participant_id["player"],
+            result.round.hp_by_participant_id["player"],
+        )
+
     def test_recovered_enemy_ai_barrier_executes_and_persists(self):
         session=LocalRuntimeSessionState(
             contract_id=self.profile.contract_id,
