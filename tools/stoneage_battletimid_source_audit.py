@@ -117,6 +117,17 @@ def analyze_profile(name: str, root: Path):
 
     expected_same_side_guard=name in {"gavin","iris"}
     compiled_same_side_guard="_SKILLLIMIT" in active
+    expected_option_guard = (
+        'if(pszP=="\\0")returniRet'
+        if name=="bismarck"
+        else "if(pszP==NULL)returniRet"
+    )
+    option_guard_style = (
+        "pointer_literal_nul"
+        if name=="bismarck"
+        else "null_pointer"
+    )
+
     gates={
         "feature_active":FEATURE_NAME in active,
         "pets_selectcon_active":"_PETS_SELECTCON" in active,
@@ -155,10 +166,10 @@ def analyze_profile(name: str, root: Path):
             "BATTLE_S_AttackDamage(",
             COMMAND_NAME,
         )),
-        "attackdamage_common_requires_nonnull_option":all(
+        "attackdamage_reads_option_and_matches_profile_guard":all(
             token in attack_damage for token in (
                 "PETSKILL_getChar(skill,PETSKILL_OPTION)",
-                "if(pszP==NULL)returniRet",
+                expected_option_guard,
             )
         ),
         "event_consumes_raw_rand_mod_100":
@@ -194,6 +205,7 @@ def analyze_profile(name: str, root: Path):
         "command_value":enums[COMMAND_NAME],
         "mode_value":enums["BATTLE_CHARMODE_C_OK"],
         "same_side_guard_compiled":compiled_same_side_guard,
+        "option_guard_style":option_guard_style,
         "gates":gates,
         "hashes":{key:_sha(path) for key,path in paths.items()},
     }
@@ -209,7 +221,8 @@ def emit(rows):
             f"name={row['profile']}|sha={row['commit']}|"
             f"command_value={row['command_value']}|"
             f"mode_value={row['mode_value']}|"
-            f"same_side_guard_compiled={int(row['same_side_guard_compiled'])}"
+            f"same_side_guard_compiled={int(row['same_side_guard_compiled'])}|"
+            f"option_guard_style={row['option_guard_style']}"
         )
         for key,value in sorted(row["gates"].items()):
             print(f"GATE|profile={row['profile']}|name={key}|pass={int(value)}")
@@ -221,6 +234,8 @@ def emit(rows):
     print("FACT|pet_exit=default_pet_exit_and_owner_defaultpet_minus_one")
     print("FACT|nonpet_exit=battle_exit_and_party_discharge")
     print("BOUNDARY|same_side_gate=gavin_iris_on_bismarck_off")
+    print("BOUNDARY|option_guard=gavin_iris_null_pointer_bismarck_pointer_literal_nul")
+    print("BOUNDARY|bismarck_pointer_literal_guard_not_generalized_as_null_safety")
     print("BOUNDARY|original_binary_compile_profile_and_numeric_command_open")
     print("RESOLUTION|BATTLETIMID_FIXED_SOURCE_CLOSED_OPPOSITE_SIDE_REFERENCE")
 
