@@ -3164,3 +3164,14 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
 
 
 - Mdfyattack runtime acceptance update — 2026-10-04: source `102b308c7c738d64bce00a3a25c89ebd39d89afd` passed dedicated **37177521796**, battle core **37177521656**, coordinator **37177521753**, golden **37177521767**, repeated reference/source-data gates and all related magic/skill/gameplay regressions. Local 1024-test acceptance includes 19 runtime tests and two-round persistence; additional pressure regression passes 3 tests. Accepted execution is recovered base enemy/opposite-side/FIST/amount-100 only, retaining Guardian/original-target, reaction/event and counter/combo boundaries. Pressure **37177629438** accounts for the 8 accepted uses and selects `PETSKILL_Weaken` (575/576, 7 uses / 6 templates). Numeric recovered COM1/skill-array indices and Taiwan-v1 membership remain unassigned.
+
+
+### SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1
+
+- Audit date: **2026-10-04**. Sources: `gavinlinasd/StoneAge@1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`, `iriselia/StoneAge@9e6c8ce2cd8ed532a7157773acd1c61582c178b5`, `BismarckDD/stoneage@999ffdf1d220ec6666eb65339180689c9caf1876`.
+- Type/confidence: pinned later public source; A for literal callback/profile/parser/shared-status behavior, OPEN for recovered25 compiled build and Taiwan-v1 membership.
+- Audited paths under source roots: battle/pet_skill.c, battle.c, battle_event.c, battle_magic.c and version/char_base/battle/event/pet_skillinfo headers. Header compilation resolves command 2022/2022/2021, WEAKEN index 7 vs work 51/51/47 and source skill macro 544.
+- Supports command-only callback setup, direct COM2 dispatch, two-byte marker/sequential sizeof/sscanf parsing with initialized turn=3, shared MultiList/status RNG/turn+1 including PET, FALSE executor return, no direct work-power mutation and StatusSeq decrement/self/mutual-freeze boundaries.
+- Boundaries: Bismarck's pointer/literal guard does not protect NULL; extended gavin/iris marker arrays are shorter than status END, so arbitrary scans remain unsafe. Leading WEAKEN marker only is admitted, with explicit encoding and no extra Lua resistance.
+- Reproducible audit: tools/stoneage_weaken_source_audit.py; derived report: research/recovered/STONEAGE-WEAKEN-SOURCE-AUDIT-R1.txt; spec: research/mechanics/STONEAGE-WEAKEN-R1.md. Actual source compiles transiently under UBSan/ASan: 24 callback/executor + 1536 probability/writer cases PASS, injected RAND witness and a single resolved target. Local 124 tests PASS.
+- Recovered IDs 575/576 and OPTION metadata require a separate verified preservation-bundle probe; typed ordered-runtime acceptance remains OPEN. No raw source/data/assets committed.

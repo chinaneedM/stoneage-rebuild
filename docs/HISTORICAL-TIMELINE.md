@@ -492,3 +492,11 @@ macro 608/compiled command 2010 are not a recovered-binary command mapping.
 
 
 **2026-10-04 technical evidence boundary — Mdfyattack:** the three pinned later descendant profiles separately register Mdfyattack and Modifyattack. Mdfyattack replaces the temporary attacker attribute vector with one selected EA/WA/FI/WI weight and zero neutral weight before property/field calculations. Compiled symbolic command values differ (gavin/iris 2030 vs Bismarck 2028), so none is a recovered25 binary mapping. The safe reference/data audit neither dates this skill's introduction nor establishes Taiwan-v1 membership. [SRC-DESCENDANT-MDFYATTACK-PINNED-PROFILES-R1]
+
+
+**2026-10-04 technical evidence boundary — Weaken:** pinned later descendants
+converge on command-only callback setup, shared status application with turn+1
+and self/mutual status-counter freeze. This is not direct attack/defense reduction.
+Compiled command values differ (2022 vs 2021); source macro 544 is not recovered
+data ID 575/576. No introduction date or Taiwan-v1 membership follows from this
+technical audit. [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]
