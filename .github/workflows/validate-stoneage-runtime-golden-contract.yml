@@ -12,6 +12,11 @@ on:
       - tools/stoneage_local_runtime_core.py
       - tools/stoneage_local_runtime_save.py
       - tools/stoneage_local_runtime_session_coordinator.py
+      - tools/stoneage_battle_round_model.py
+      - tools/stoneage_battle_state_model.py
+      - tools/stoneage_enemy_ai_battletimid_bridge.py
+      - tools/stoneage_battletimid_model.py
+      - tests/test_stoneage_battletimid_runtime.py
       - tools/stoneage_runtime_dynamic_occupancy.py
       - tools/stoneage_runtime_occupancy_registry.py
       - tools/stoneage_singleplayer_domain.py
