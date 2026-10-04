@@ -46,6 +46,20 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         result=analyze_runtime_objects(pets,enemies)
         self.assertEqual(result["unresolved_skill_ids"],(999,))
 
+    def test_mdfyattack_runtime_closure_does_not_close_modifyattack(self):
+        pets=SimpleNamespace(skills={
+            548:SimpleNamespace(function_name="PETSKILL_Mdfyattack"),
+            544:SimpleNamespace(function_name="PETSKILL_Modifyattack"),
+        })
+        enemies=SimpleNamespace(templates={
+            10:SimpleNamespace(skill_slot_ids=(548,548,544,0,0,0,0)),
+        })
+        result=analyze_runtime_objects(pets,enemies)
+        rows={row["callback"]:row for row in result["rows"]}
+        self.assertEqual(rows["PETSKILL_Mdfyattack"]["status"],"closed_runtime")
+        self.assertEqual(rows["PETSKILL_Modifyattack"]["status"],"open")
+        self.assertEqual(result["next_open"]["callback"],"PETSKILL_Modifyattack")
+
 
 if __name__=="__main__":
     unittest.main()
