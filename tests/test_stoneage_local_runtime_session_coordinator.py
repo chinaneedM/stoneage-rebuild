@@ -5859,7 +5859,7 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             nocast_overlay=overlay,
         )
         self.assertTrue(
-            self.coordinator.participant_nocast_blocks_direct_magic(
+            self.coordinator.persistent_actor_direct_magic_blocked(
                 context,"player"
             )
         )
@@ -5919,7 +5919,7 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         )
         self.assertEqual((late.counter,late.nc_flag),(0,0))
         self.assertFalse(
-            self.coordinator.participant_nocast_blocks_direct_magic(
+            self.coordinator.persistent_actor_direct_magic_blocked(
                 context,"player"
             )
         )
