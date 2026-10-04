@@ -29,6 +29,7 @@ CLOSED_RUNTIME_CALLBACKS=frozenset(
         "PETSKILL_Nocast",
         "PETSKILL_GuardBreak2",
         "PETSKILL_Barrier",
+        "PETSKILL_AttackCrazed",
     }
 )
 
