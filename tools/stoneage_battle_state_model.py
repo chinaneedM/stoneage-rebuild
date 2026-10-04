@@ -71,9 +71,11 @@ from tools.stoneage_battle_core_model import (
     resolve_battle_ultimate_death_penalty,
 )
 from tools.stoneage_enemy_ai_attack_crazed_bridge import EnemyAiAttackCrazedSubmission
+from tools.stoneage_enemy_ai_wildviolent_bridge import EnemyAiWildViolentSubmission
 from tools.stoneage_enemy_ai_mdfyattack_bridge import EnemyAiMdfyAttackSubmission
 from tools.stoneage_battle_round_model import (
     AttackCrazedRolls,
+    WildViolentRolls,
     BattleCombatProfile,
     BattleCommand,
     BattleCommandSetupEffects,
@@ -1261,6 +1263,8 @@ def resolve_persistent_ordinary_round(
     mdfyattack_submissions_by_participant_id: Mapping[str,EnemyAiMdfyAttackSubmission] | None = None,
     attack_crazed_submissions_by_participant_id: Mapping[str,EnemyAiAttackCrazedSubmission] | None = None,
     attack_crazed_rolls_by_attack_id: Mapping[str,AttackCrazedRolls] | None = None,
+    wildviolent_submissions_by_participant_id: Mapping[str,EnemyAiWildViolentSubmission] | None = None,
+    wildviolent_rolls_by_attack_id: Mapping[str,WildViolentRolls] | None = None,
     continuation_rolls_by_attack_id: Mapping[
         str,ContinuationAttackRolls
     ] | None = None,
@@ -1390,10 +1394,30 @@ def resolve_persistent_ordinary_round(
                 raise ValueError("Weaken preparation requires baseline fixed DEX/QUICK equality")
             if state.ride_pet_runtime is not None or state.base_status_runtime_by_participant_id[pid].status.drunk>0:
                 raise ValueError("Weaken preparation with riding/drunk modifiers is outside the admitted domain")
+            wild_submission=(wildviolent_submissions_by_participant_id or {}).get(pid)
             for effects in ((command_setup_effects_by_participant_id or {}).get(pid),
                             state.carried_setup_effects_by_participant_id.get(pid)):
-                if effects is not None and (effects.attack_power is not None or effects.defense_power is not None):
-                    raise ValueError("Weaken prepared powers overlap unsupported callback power setup")
+                if effects is None or (
+                    effects.attack_power is None and effects.defense_power is None
+                ):
+                    continue
+                if wild_submission is None:
+                    raise ValueError(
+                        "Weaken prepared powers overlap unsupported callback power setup"
+                    )
+                # Exact recovered WildViolent rows contain both strength and
+                # toughness markers.  They overwrite the prepared work values
+                # from the fixed session baseline; QUICK/DEX remains prepared.
+                expected=wild_submission.setup
+                if (
+                    expected.attack_power is None
+                    or expected.defense_power is None
+                    or (effects.attack_power,effects.defense_power)
+                    != (expected.attack_power,expected.defense_power)
+                ):
+                    raise ValueError(
+                        "WildViolentAttack/Weaken callback power setup drift"
+                    )
             profiles[pid]=replace(profiles[pid],fixed_dex=powers.dexterity)
 
     effective_commands=dict(commands)
@@ -1413,9 +1437,12 @@ def resolve_persistent_ordinary_round(
         prepared,
         profiles,
         combo_start_rolls_1_100,
-        semantic_nonattack_ids=tuple(set(attack_crazed_submissions_by_participant_id or {})
+        semantic_nonattack_ids=tuple(
+            set(attack_crazed_submissions_by_participant_id or {})
+            | set(wildviolent_submissions_by_participant_id or {})
             | set(mdfyattack_submissions_by_participant_id or {})
-            | set(weaken_submissions_by_participant_id or {})),
+            | set(weaken_submissions_by_participant_id or {})
+        ),
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
                 state.base_status_runtime_by_participant_id[participant_id]
@@ -1458,6 +1485,8 @@ def resolve_persistent_ordinary_round(
         mdfyattack_submissions_by_participant_id=mdfyattack_submissions_by_participant_id,
         attack_crazed_submissions_by_participant_id=attack_crazed_submissions_by_participant_id,
         attack_crazed_rolls_by_attack_id=attack_crazed_rolls_by_attack_id,
+        wildviolent_submissions_by_participant_id=wildviolent_submissions_by_participant_id,
+        wildviolent_rolls_by_attack_id=wildviolent_rolls_by_attack_id,
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
                 state.base_status_runtime_by_participant_id[participant_id]
