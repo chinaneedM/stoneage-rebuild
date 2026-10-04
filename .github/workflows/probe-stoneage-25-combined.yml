@@ -1,0 +1,130 @@
+name: Probe recovered StoneAge Combined
+concurrency:
+  group: stoneage-25-combined-probe
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/probe-stoneage-25-combined.yml"
+      - "tools/stoneage_combined_model.py"
+      - "tools/stoneage_combined_source_audit.py"
+      - "tools/stoneage_recovered25_combined_probe.py"
+      - "tests/test_stoneage_combined_model.py"
+      - "tests/test_stoneage_recovered25_combined_probe.py"
+      - "specs/STONEAGE-COMBINED-REFERENCE-R1.md"
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate Combined bounded model and probe
+        run: |
+          python -m unittest -v \
+            tests.test_stoneage_combined_model \
+            tests.test_stoneage_recovered25_combined_probe
+      - name: Recover pinned source profiles outside repository
+        run: |
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          profiles={
+            "gavin":("gavinlinasd/StoneAge","1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56"),
+            "iris":("iriselia/StoneAge","9e6c8ce2cd8ed532a7157773acd1c61582c178b5"),
+            "bismarck":("BismarckDD/stoneage","999ffdf1d220ec6666eb65339180689c9caf1876"),
+          }
+          for name,(repo,sha) in profiles.items():
+            root=Path("/tmp/combined-source")/name
+            root.mkdir(parents=True)
+            subprocess.run(["git","init",str(root)],check=True)
+            subprocess.run(["git","-C",str(root),"remote","add","origin","https://github.com/"+repo+".git"],check=True)
+            subprocess.run(["git","-C",str(root),"fetch","--depth","1","origin",sha],check=True)
+            subprocess.run(["git","-C",str(root),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Reproduce fixed-source Combined audit
+        run: |
+          mkdir -p research/recovered
+          python -m tools.stoneage_combined_source_audit \
+            --gavin-dir /tmp/combined-source/gavin \
+            --iris-dir /tmp/combined-source/iris \
+            --bismarck-dir /tmp/combined-source/bismarck \
+            > research/recovered/STONEAGE-COMBINED-SOURCE-AUDIT-R1.txt
+          grep -F 'RESOLUTION|COMBINED_FIXED_SOURCE_CLOSED_WELLFORMED_OPTION_REFERENCE' \
+            research/recovered/STONEAGE-COMBINED-SOURCE-AUDIT-R1.txt
+      - run: sudo apt-get update && sudo apt-get install -y unar
+      - name: Recover verified preservation bundle
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25
+          python - <<'PY'
+          import hashlib,html,json,re,http.cookiejar,urllib.parse,urllib.request
+          from pathlib import Path
+          ua="Mozilla/5.0"
+          hashes={
+            "ev7l29fw77891go":"7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5",
+            "ytaa168o5jih0lx":"567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb",
+          }
+          op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+          def get(key,suffix):
+            data=urllib.parse.urlencode({"quick_key":key,"response_format":"json"}).encode()
+            req=urllib.request.Request("https://www.mediafire.com/api/1.5/file/get_info.php",data=data,headers={"User-Agent":ua})
+            with op.open(req,timeout=60) as response:
+                info=json.load(response)["response"]["file_info"]
+            if str(info.get("hash","")).lower()!=hashes[key]:
+                raise SystemExit("metadata hash changed")
+            with op.open(urllib.request.Request(info["links"]["normal_download"],headers={"User-Agent":ua}),timeout=60) as response:
+                page=response.read().decode("utf-8","replace");ref=response.geturl()
+            match=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S) or re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+            if not match:
+                raise SystemExit("no direct link")
+            path=Path("/tmp/sa25")/("part."+suffix);digest=hashlib.sha256()
+            with op.open(urllib.request.Request(html.unescape(match.group(1)),headers={"User-Agent":ua,"Referer":ref}),timeout=300) as response,path.open("wb") as out:
+                while True:
+                    block=response.read(1048576)
+                    if not block:break
+                    out.write(block);digest.update(block)
+            if digest.hexdigest()!=hashes[key]:
+                raise SystemExit("hash mismatch")
+          get("ev7l29fw77891go","001");get("ytaa168o5jih0lx","002")
+          PY
+          cat /tmp/sa25/part.001 /tmp/sa25/part.002 >/tmp/sa25/bundle.rar
+          test "$(sha256sum /tmp/sa25/bundle.rar|awk '{print $1}')" = "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+          mkdir -p /tmp/sa25/out
+          ulimit -c 0
+          unar -f -o /tmp/sa25/out /tmp/sa25/bundle.rar >/dev/null 2>&1
+      - name: Probe recovered25 Combined rows and usage
+        run: |
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
+          test -n "$D";test -n "$C"
+          python -m tools.stoneage_recovered25_combined_probe \
+            --data-dir "$D" --setup "$C" \
+            > research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt
+          grep -F 'COUNT|combined_skill_rows|3' research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt
+          grep -F 'COUNT|enemybase_slot_references|5' research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt
+          grep -F 'COUNT|enemybase_templates|5' research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt
+          grep -F 'COUNT|well_formed_rows|3' research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_COMBINED_POPULATION_CLOSED' research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_COMBINED_WELLFORMED_OPTION_CLOSED' research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt
+      - name: Print derived reports
+        if: always()
+        run: |
+          test ! -f research/recovered/STONEAGE-COMBINED-SOURCE-AUDIT-R1.txt || cat research/recovered/STONEAGE-COMBINED-SOURCE-AUDIT-R1.txt
+          test ! -f research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt || cat research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt
+      - name: Commit derived reports only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add \
+            research/recovered/STONEAGE-COMBINED-SOURCE-AUDIT-R1.txt \
+            research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt
+          if git diff --cached --quiet; then echo 'Combined reports unchanged.';exit 0;fi
+          git commit -m 'research: probe recovered Combined'
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
