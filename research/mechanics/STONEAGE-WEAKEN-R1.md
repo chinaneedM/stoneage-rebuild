@@ -195,3 +195,16 @@ Supersession: previous Barrier self-freeze records remain correct for StatusSeq;
 normal persistent preparation now also decrements BARRIER once. Earlier
 StatusSeq-only indefinite-duration interpretations do not describe this full
 phase composition. Remote runtime acceptance is pending.
+
+
+## Runtime acceptance — 2026-10-04
+
+The preceding runtime pending record is superseded: **RECOVERED25_WEAKEN_RUNTIME_R1
+= CLOSED** in the declared baseline domain. Source `b57dcc2adc4ecefdd526cbce3e9d63ad9c8b9506`
+passes all 22 affected workflows, including runtime 37190143523, verified real-data
+admission 37190143464, coordinator 37190143380 and full region 37190143397.
+All seven real selected-slot references pass production metadata/hash gates;
+report write-back is `32a80d6164e201a8f784db1374dd0cbc4c742a39`.
+Local 1074 tests/109 modules include 24 dedicated runtime tests and four-round
+coordinator persistence/expiry/restoration. Numeric recovered COM1, historical
+membership and the documented unsupported modifier overlaps remain OPEN.
