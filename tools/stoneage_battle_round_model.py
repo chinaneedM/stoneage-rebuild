@@ -97,6 +97,9 @@ from tools.stoneage_recovered25_attack_magic_runtime import (
     Recovered25AttackMagicRuntime,
 )
 
+from tools.stoneage_enemy_ai_attack_crazed_bridge import EnemyAiAttackCrazedSubmission
+from tools.stoneage_attack_crazed_model import resolve_attack_crazed_target_list
+
 from tools.stoneage_battle_core_model import (
     ENEMY,
     OTHER,
@@ -508,6 +511,7 @@ def apply_base_combo_rewrite(
     base_status_runtime_by_participant_id: Mapping[
         str,BaseBattleStatusRuntime
     ] | None = None,
+    semantic_nonattack_ids: Sequence[str] = (),
 ) -> PreparedBattleRound:
     """Mirror stable ComboCheck() on the already action-sorted entry list.
 
@@ -521,6 +525,7 @@ def apply_base_combo_rewrite(
         return prepared
 
     entries=list(prepared.ordered_entries)
+    nonattack_ids={str(pid) for pid in semantic_nonattack_ids}
     status_runtime={
         str(participant_id):runtime
         for participant_id,runtime in (
@@ -566,6 +571,7 @@ def apply_base_combo_rewrite(
         movable=(
             int(participant.hp)>0
             and base_status_can_move(runtime.status)
+            and participant_id not in nonattack_ids
         )
         throwing=counter_weapon_blocks_counter(
             profiles[participant_id].counter_weapon_type
@@ -711,6 +717,27 @@ class ContinuationAttackRolls:
         if not 1 <= len(rolls) <= 10:
             raise ValueError("ContinuationAttack requires 1..10 hit-roll bundles")
         object.__setattr__(self,"hit_rolls",rolls)
+
+
+@dataclass(frozen=True)
+class AttackCrazedRolls:
+    """Preselection indices consumed before any of the three physical hits.
+
+    Zero indices are allowed only when the action-time candidate pool is empty.
+    Per-hit retarget/dodge/critical/guard RNG stays in OrdinaryAttackRolls.
+    """
+    selection_indices: tuple[int, ...]
+    hit_rolls: tuple[OrdinaryAttackRolls, ...]
+
+    def __post_init__(self):
+        indices=tuple(int(v) for v in self.selection_indices)
+        hits=tuple(self.hit_rolls)
+        if len(indices) not in (0,3) or any(v < 0 or v > 8 for v in indices):
+            raise ValueError("AttackCrazed requires zero or three pool-index draws")
+        if len(hits)!=3 or not all(isinstance(v,OrdinaryAttackRolls) for v in hits):
+            raise ValueError("AttackCrazed requires three typed per-hit RNG bundles")
+        object.__setattr__(self,"selection_indices",indices)
+        object.__setattr__(self,"hit_rolls",hits)
 
 
 @dataclass(frozen=True)
@@ -913,6 +940,10 @@ class OrdinaryRoundEvent:
     fall_ground_resolution: FallGroundResolution | None = None
     battle_tear_augmentation: BattleTearAugmentation | None = None
     guard_break2_resolution: GuardBreak2DamageResolution | None = None
+    attack_crazed_skill_id: int | None = None
+    attack_crazed_hit_index: int | None = None
+    attack_crazed_target_list: tuple[int, ...] = ()
+    attack_crazed_selection_draws: int = 0
     barrier_application: BarrierApplication | None = None
     barrier_tick_resolution: BarrierSelfTick | None = None
     nocast_application: NocastApplication | None = None
@@ -2504,7 +2535,7 @@ def _battle_attack_continuation_allowed(
 
 @dataclass(frozen=True)
 class ContinuationBaselineResolution:
-    """Evidence-closed non-bow S_RENZOKU execution witness."""
+    """Shared non-bow physical sequence witness; public RENZOKU API retained."""
 
     events: tuple[OrdinaryRoundEvent, ...]
     hp_by_slot: Mapping[int,int]
@@ -2552,8 +2583,67 @@ def resolve_continuation_nonbow_baseline(
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ContinuationBaselineResolution:
-    """Execute the evidence-closed non-bow S_RENZOKU baseline.
+    """Execute the stable non-bow ContinuationAttack public boundary."""
+    return _resolve_nonbow_multihit_baseline(
+        actor=actor,
+        actor_slot=actor_slot,
+        command=command,
+        action_value=action_value,
+        by_slot=by_slot,
+        hp_by_slot=hp_by_slot,
+        profiles=profiles,
+        command_by_slot=command_by_slot,
+        rolls=rolls,
+        defense_profile=defense_profile,
+        setup_effects_by_participant_id=setup_effects_by_participant_id,
+        guardian_registrations_by_defender_slot=guardian_registrations_by_defender_slot,
+        base_status_runtime_by_participant_id=base_status_runtime_by_participant_id,
+        base_damage_react_state_by_participant_id=base_damage_react_state_by_participant_id,
+        battle_abio_by_participant_id=battle_abio_by_participant_id,
+        ultimate_overkill_by_participant_id=ultimate_overkill_by_participant_id,
+        ride_pet_runtime=ride_pet_runtime,
+        excluded_slots=excluded_slots,
+        field_attr=field_attr,
+        field_power=field_power,
+    )
 
+
+def _resolve_nonbow_multihit_baseline(
+    *,
+    actor: BattleParticipant,
+    actor_slot: int,
+    command: BattleCommand,
+    action_value: int,
+    by_slot: Mapping[int,BattleParticipant],
+    hp_by_slot: Mapping[int,int],
+    profiles: Mapping[str,BattleCombatProfile],
+    command_by_slot: Mapping[int,BattleCommand],
+    rolls: ContinuationAttackRolls | AttackCrazedRolls,
+    defense_profile: str,
+    setup_effects_by_participant_id: Mapping[
+        str,BattleCommandSetupEffects
+    ] | None = None,
+    guardian_registrations_by_defender_slot: Mapping[
+        int,GuardianRegistration
+    ] | None = None,
+    base_status_runtime_by_participant_id: Mapping[
+        str,BaseBattleStatusRuntime
+    ] | None = None,
+    base_damage_react_state_by_participant_id: Mapping[
+        str,BaseDamageReactState
+    ] | None = None,
+    battle_abio_by_participant_id: Mapping[str,bool] | None = None,
+    ultimate_overkill_by_participant_id: Mapping[str,int] | None = None,
+    ride_pet_runtime: RidePetRuntime | None = None,
+    excluded_slots: Sequence[int] = (),
+    attack_crazed_submission: EnemyAiAttackCrazedSubmission | None = None,
+    field_attr: str = "none",
+    field_power: int = 0,
+) -> ContinuationBaselineResolution:
+    """Execute shared non-bow physical settlement under a typed hit plan.
+
+    ContinuationAttack repeats its original target and divides damage;
+    AttackCrazed consumes its preselection first and does not divide damage.
     This layer closes the fixed loop, per-hit original-target recheck,
     Guardian redirection, ordinary dodge/critical/guard damage, gDamageDiv,
     and the final BATTLE_Attack boolean used by the later counter chain.
@@ -2563,7 +2653,9 @@ def resolve_continuation_nonbow_baseline(
     ContinuationAttack itself adds no status-application payload.
     """
 
-    if int(command.command1) != BATTLE_COM_S_RENZOKU:
+    crazed=attack_crazed_submission is not None
+    expected_command=BATTLE_COM_ATTACK if crazed else BATTLE_COM_S_RENZOKU
+    if int(command.command1) != expected_command:
         raise ValueError("continuation baseline requires S_RENZOKU command")
     actor_slot=int(actor_slot)
     if by_slot.get(actor_slot) != actor:
@@ -2571,7 +2663,7 @@ def resolve_continuation_nonbow_baseline(
     actor_id=str(actor.participant_id)
     if actor_id not in profiles:
         raise KeyError(f"missing combat profile for {actor_id}")
-    count=battle_command3_low(command.command3)
+    count=attack_crazed_submission.attack_count if crazed else battle_command3_low(command.command3)
     if not 1 <= count <= 10:
         raise ValueError("S_RENZOKU LOW(COM3) must be in 1..10")
     if len(rolls.hit_rolls) != count:
@@ -2663,12 +2755,44 @@ def resolve_continuation_nonbow_baseline(
             and int(ride_runtime.hp) > 0
         )
     original_target=int(command.command2)
+    event_command=expected_command
+    result_prefix="attack_crazed" if crazed else "continuation"
+    hit_targets=(original_target,)*count
+    selection_draws=0
+    target_list=()
+    if crazed:
+        if not isinstance(rolls,AttackCrazedRolls):
+            raise TypeError("AttackCrazed needs AttackCrazedRolls")
+        if (actor.kind!="enemy" or actor.side!="enemy"
+            or profiles[actor_id].counter_weapon_type!=COUNTER_WEAPON_FIST):
+            raise ValueError("AttackCrazed currently admits enemy FIST actors only")
+        if (attack_crazed_submission.participant_id!=actor_id
+            or attack_crazed_submission.source_target_slot!=original_target):
+            raise ValueError("AttackCrazed semantic carrier drift")
+        draws=iter(rolls.selection_indices)
+        consumed=[]
+        def rand_index(low,high):
+            try:value=next(draws)
+            except StopIteration as exc:raise ValueError("missing AttackCrazed pool RNG") from exc
+            consumed.append(value)
+            return value
+        listing=resolve_attack_crazed_target_list(
+            actor_slot=actor_slot,submitted_target=original_target,attack_count=count,
+            live_slots=(slot for slot in by_slot if slot not in excluded and hp[slot]>0),
+            rand_index=rand_index,shootchestnut_enabled=True,
+        )
+        if len(consumed)!=len(rolls.selection_indices):
+            raise ValueError("unused AttackCrazed pool RNG on empty candidate path")
+        selection_draws=listing.selection_draws
+        target_list=listing.slots[:count]
+        hit_targets=(original_target,)+listing.slots[1:count]
     actor_profile=profiles[actor_id]
     resolved: list[OrdinaryRoundEvent]=[]
     last_target: int | None=None
     last_continue=False
 
-    for hit_rolls in rolls.hit_rolls:
+    for hit_index,hit_rolls in enumerate(rolls.hit_rolls):
+        original_target=hit_targets[hit_index]
         if int(hp.get(actor_slot,0)) <= 0:
             last_continue=False
             break
@@ -2737,9 +2861,13 @@ def resolve_continuation_nonbow_baseline(
                     OrdinaryRoundEvent(
                         actor_id,
                         actor_slot,
-                        BATTLE_COM_S_RENZOKU,
+                        event_command,
                         int(action_value),
-                        "continuation_dodge",
+                        result_prefix+"_dodge",
+                        attack_crazed_skill_id=613 if crazed else None,
+                        attack_crazed_hit_index=hit_index if crazed else None,
+                        attack_crazed_target_list=target_list,
+                        attack_crazed_selection_draws=selection_draws,
                         original_target_slot=original_target,
                         resolved_target_slot=target,
                         retargeted=bool(retargeted),
@@ -2875,22 +3003,23 @@ def resolve_continuation_nonbow_baseline(
 
         # Fixed BATTLE_Attack applies gDamageDiv after AttackSeq (including
         # Guardian/critical/guard) and before BATTLE_DamageSub.
-        damage=continuation_divided_damage(damage,count)
+        if not crazed:
+            damage=continuation_divided_damage(damage,count)
         if damage == 0 and guardian_redirected:
             # AttackSeq's redirected zero-damage path is rendered as NORMAL/1.
             damage=1
-            result="continuation_normal"
+            result=result_prefix+"_normal"
         elif damage == 0:
             result=(
-                "continuation_allguard"
+                result_prefix+"_allguard"
                 if damage_target_guarding
-                else "continuation_miss"
+                else result_prefix+"_miss"
             )
         else:
             result=(
-                "continuation_critical"
+                result_prefix+"_critical"
                 if is_critical
-                else "continuation_normal"
+                else result_prefix+"_normal"
             )
 
         reaction_resolution=resolve_base_damage_react(
@@ -3133,9 +3262,13 @@ def resolve_continuation_nonbow_baseline(
             OrdinaryRoundEvent(
                 actor_id,
                 actor_slot,
-                BATTLE_COM_S_RENZOKU,
+                event_command,
                 int(action_value),
                 result,
+                attack_crazed_skill_id=613 if crazed else None,
+                attack_crazed_hit_index=hit_index if crazed else None,
+                attack_crazed_target_list=target_list,
+                attack_crazed_selection_draws=selection_draws,
                 original_target_slot=original_target,
                 resolved_target_slot=resolved_damage_slot,
                 retargeted=bool(retargeted),
@@ -3248,7 +3381,6 @@ def resolve_continuation_nonbow_baseline(
         ultimate_exited_participant_ids=tuple(ultimate_exited_ids),
     )
 
-
 def resolve_ordinary_round(
     prepared: PreparedBattleRound,
     *,
@@ -3279,6 +3411,8 @@ def resolve_ordinary_round(
     continuation_rolls_by_attack_id: Mapping[
         str,ContinuationAttackRolls
     ] | None = None,
+    attack_crazed_submissions_by_participant_id: Mapping[str,EnemyAiAttackCrazedSubmission] | None = None,
+    attack_crazed_rolls_by_attack_id: Mapping[str,AttackCrazedRolls] | None = None,
     base_status_runtime_by_participant_id: Mapping[
         str,BaseBattleStatusRuntime
     ] | None = None,
@@ -3908,6 +4042,32 @@ def resolve_ordinary_round(
             raise ValueError(
                 "GuardBreak2 ordering carrier must be ATTACK/source-target"
             )
+
+    attack_crazed_submissions=dict(attack_crazed_submissions_by_participant_id or {})
+    attack_crazed_rolls=dict(attack_crazed_rolls_by_attack_id or {})
+    if set(attack_crazed_submissions)-set(slot_by_id):
+        raise ValueError("AttackCrazed references unknown actors")
+    if set(attack_crazed_submissions) & (
+        guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
+        | fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
+        | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+    ):
+        raise ValueError("AttackCrazed semantic submissions overlap another skill")
+    if set(attack_crazed_rolls)!=set(attack_crazed_submissions):
+        raise ValueError("AttackCrazed RNG actors mismatch")
+    for pid,submission in attack_crazed_submissions.items():
+        if not isinstance(submission,EnemyAiAttackCrazedSubmission) or not isinstance(attack_crazed_rolls[pid],AttackCrazedRolls):
+            raise TypeError("AttackCrazed submission/RNG wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (submission.participant_id!=pid or entry.participant.kind!="enemy" or entry.participant.side!="enemy"
+            or entry.command.command1!=BATTLE_COM_ATTACK or entry.command.command2!=submission.source_target_slot):
+            raise ValueError("AttackCrazed ordering carrier must be enemy ATTACK/source-target")
+        if profiles[pid].counter_weapon_type!=COUNTER_WEAPON_FIST:
+            raise ValueError("AttackCrazed currently admits enemy FIST actors only")
+        expected=submission.callback_setup(fixed_strength=entry.participant.attack,fixed_toughness=entry.participant.defense)
+        effects=setup_effects.get(pid,BattleCommandSetupEffects())
+        if (effects.attack_power,effects.defense_power)!=(expected.attack_power,expected.defense_power):
+            raise ValueError("AttackCrazed callback work-power setup drift")
 
     if (nocast_actor_ids or barrier_actor_ids) and nocast_overlay is None:
         raise ValueError(
@@ -5810,13 +5970,18 @@ def resolve_ordinary_round(
             processed_combo_ids.add(int(entry.combo_id))
             continue
 
-        if command.command1 == BATTLE_COM_S_RENZOKU:
+        crazed_submission=attack_crazed_submissions.get(str(participant_id))
+        execute_crazed=bool(
+            crazed_submission is not None and command.command1==BATTLE_COM_ATTACK
+            and not (current_status_tick is not None and current_status_tick.confusion_rewrote_command)
+        )
+        if command.command1 == BATTLE_COM_S_RENZOKU or execute_crazed:
             continuation_id=str(participant_id)
-            if continuation_id not in normalized_continuation_rolls:
+            if not execute_crazed and continuation_id not in normalized_continuation_rolls:
                 raise KeyError(
                     f"missing ContinuationAttack rolls for {continuation_id}"
                 )
-            continuation=resolve_continuation_nonbow_baseline(
+            continuation=_resolve_nonbow_multihit_baseline(
                 actor=participant,
                 actor_slot=int(slot),
                 command=command,
@@ -5825,7 +5990,8 @@ def resolve_ordinary_round(
                 hp_by_slot=hp_by_slot,
                 profiles=profiles,
                 command_by_slot=command_by_slot,
-                rolls=normalized_continuation_rolls[continuation_id],
+                rolls=(attack_crazed_rolls[continuation_id] if execute_crazed else normalized_continuation_rolls[continuation_id]),
+                attack_crazed_submission=crazed_submission if execute_crazed else None,
                 defense_profile=defense_profile,
                 setup_effects_by_participant_id=setup_effects,
                 guardian_registrations_by_defender_slot=guardian_registrations,

@@ -5650,3 +5650,13 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_ATTACKCRAZED_OPTION_DOMAIN_R1 = CLOSED_VERIFIED_COUNT_AND_METADATA.**
 - **RECOVERED25_ATTACKCRAZED_RUNTIME_R1 = OPEN.** Executable slot-use coverage remains **2391/2486 ≈ 96.2%**.
 - Next priority: implement typed ID-613 submission with closed FIELD/TARGET/COST/ILLEGAL/count metadata; preserve callback-time 0.8/0.7 work setup, three preselection draws before the initial physical TargetAdjust, first original-target hit plus list[1]/list[2] follow-ups, no damage division, per-hit mutable state/retarget and final counter ordering. Wire through enemy AI -> ordered round -> persistent coordinator, with explicit admitted weapon/target domains and no invented recovered numeric COM1. These 9 uses remain non-executable until E2E acceptance; do not advance to another callback.
+
+## Phase 1 AttackCrazed ordered runtime implementation — 2026-10-04
+
+- Added typed ID-613 enemy-AI submission and strict recovered population/slot/full-metadata/OPTION admission. No historical recovered25 numeric COM1 is assigned.
+- Shared the already accepted non-bow per-hit physical settlement while retaining ContinuationAttack's public API and divisor. AttackCrazed takes three action-time preselection draws, uses submitted first target then list[1]/list[2], and skips damage division.
+- Preserved empty-pool/slot-9 fallback, per-hit death retarget, Guardian, reaction charges, actor death stop, ride splitting/unmount, ultimate/exit state and one final counter chain. Sleep blocks before selection; confusion discards specialized execution; internal ATTACK carriers cannot start/join base combos.
+- Integrated enemy AI -> ordered round -> persistent state adapter -> local runtime coordinator. A two-round E2E test verifies the second round starts at the persisted first-round HP.
+- Admission is explicit enemy/opposite-side/FIST/count-3 only; other weapons, actors and unverified metadata stay fail-closed. Callback attack/defense work mutations occur at command setup, not at hit time.
+- All **985 tests across the 102 test modules selected by the 18 affected workflows PASS** locally, including the 17 dedicated runtime tests and two-round coordinator E2E; remote acceptance is pending. **RECOVERED25_ATTACKCRAZED_RUNTIME_R1 = LOCAL_PASS_REMOTE_PENDING.** Executable coverage is not yet advanced in the canonical accepted record.
+- Next action: run dedicated runtime and cross-regression Actions, then close runtime and rerun the verified preservation callback-pressure probe with AttackCrazed in its CLOSED set. Its regenerated highest-pressure OPEN row becomes the next task; do not hand-select a replacement callback.

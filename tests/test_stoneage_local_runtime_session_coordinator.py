@@ -35,6 +35,7 @@ from tools.stoneage_battle_round_model import (
     battle_command3_low,
     BattleCommand,
     ContinuationAttackRolls,
+    AttackCrazedRolls,
     CounterAttemptRolls,
     OrdinaryAttackRolls,
     OrdinaryCaptureContext,
@@ -5864,6 +5865,171 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             context.persistent_battle_state.hp_by_participant_id["player"],
             500,
         )
+
+    def test_recovered_enemy_ai_attack_crazed_executes_and_persists(self):
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-attack-crazed"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,group,
+            entry_count_roll=1,selection_rolls=(0,),
+            birth_rolls=(EnemyBirthRolls(
+                level_roll=1,birth_offsets=(0,0,0,0),
+                spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+            ),),
+        )
+        enemy_id=str(context.battle.enemies[0].participant_id)
+        spawned=context.spawned_enemies[0]
+        skills=dict(self.stack.petskill_runtime.skills)
+        skills[613]=Recovered25PetSkillEntry(
+            skill_id=613,
+            field=1,
+            target=1,
+            cost=2,
+            illegal=0,
+            function_name="PETSKILL_AttackCrazed",
+            option_bytes=b"3",
+        )
+        self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+            skills=skills,
+            source_file=self.stack.petskill_runtime.source_file,
+        )
+        enemy=replace(
+            context.battle.enemies[0],
+            attack=300,
+            defense=0,
+            quick=200,
+        )
+        player=replace(
+            context.battle.player,
+            hp=2000,
+            max_hp=2000,
+            defense=0,
+            quick=10,
+        )
+        context=replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=player,
+                enemies=(enemy,),
+            ),
+            spawned_enemies=(replace(
+                spawned,
+                participant=enemy,
+                template=replace(
+                    spawned.template,
+                    skill_ids=(613,20,30,40,50,60,70),
+                    skill_slot_ids=(613,20,30,40,50,60,70),
+                ),
+                variant=replace(
+                    spawned.variant,
+                    tactics_option="at:0;1;1|gu:0|es:0|wa:1;0;0;0;0;0;0",
+                ),
+            ),),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+        )
+        context,result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player":BattleCommand(BATTLE_COM_GUARD)
+                },
+                enemy_mode_rolls={enemy_id:0},
+                enemy_target_rolls={enemy_id:0},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={
+                    "player":0,
+                    enemy_id:0,
+                },
+                profiles={
+                    "player":BattleCombatProfile(
+                        fixed_dex=10,
+                        fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                    enemy_id:BattleCombatProfile(
+                        fixed_dex=200,
+                        fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                },
+                attack_rolls={},
+                attack_crazed_rolls_by_attack_id={
+                    enemy_id:AttackCrazedRolls(
+                        selection_indices=(0,0,0),
+                        hit_rolls=(OrdinaryAttackRolls(
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,guard_roll_1_100=100,
+                        ),)*3,
+                    )
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        events=tuple(e for e in result.round.events if e.attack_crazed_skill_id is not None)
+        self.assertEqual(len(events),3)
+        self.assertTrue(all(e.participant_id==enemy_id for e in events))
+        self.assertEqual([e.attack_crazed_hit_index for e in events],[0,1,2])
+        first_hp=context.persistent_battle_state.hp_by_participant_id["player"]
+        self.assertEqual(first_hp,result.round.hp_by_participant_id["player"])
+        self.assertLess(first_hp,2000)
+        context,result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player":BattleCommand(BATTLE_COM_GUARD)
+                },
+                enemy_mode_rolls={enemy_id:0},
+                enemy_target_rolls={enemy_id:0},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={
+                    "player":0,
+                    enemy_id:0,
+                },
+                profiles={
+                    "player":BattleCombatProfile(
+                        fixed_dex=10,
+                        fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                    enemy_id:BattleCombatProfile(
+                        fixed_dex=200,
+                        fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                },
+                attack_rolls={},
+                attack_crazed_rolls_by_attack_id={
+                    enemy_id:AttackCrazedRolls(
+                        selection_indices=(0,0,0),
+                        hit_rolls=(OrdinaryAttackRolls(
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,guard_roll_1_100=100,
+                        ),)*3,
+                    )
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        events=tuple(e for e in result.round.events if e.attack_crazed_skill_id is not None)
+        self.assertEqual(len(events),3)
+        self.assertEqual(events[0].target_hp_before,first_hp)
+        self.assertLess(context.persistent_battle_state.hp_by_participant_id["player"],first_hp)
+        self.assertEqual(context.persistent_battle_state.hp_by_participant_id["player"],result.round.hp_by_participant_id["player"])
 
 if __name__ == "__main__":
     unittest.main()

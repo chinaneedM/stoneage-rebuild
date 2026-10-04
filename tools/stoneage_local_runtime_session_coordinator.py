@@ -97,7 +97,12 @@ from tools.stoneage_enemy_ai_model import (
     EnemyAiTarget,
     resolve_common_normal_enemy_ai,
 )
+from tools.stoneage_enemy_ai_attack_crazed_bridge import (
+    EnemyAiAttackCrazedSubmission, resolve_enemy_ai_attack_crazed_submission,
+)
+from tools.stoneage_attack_crazed_model import CALLBACK_NAME as ATTACK_CRAZED_CALLBACK
 from tools.stoneage_battle_round_model import (
+    AttackCrazedRolls,
     BATTLE_COM_ATTACK,
     BATTLE_COM_CAPTURE,
     BATTLE_COM_ESCAPE,
@@ -425,6 +430,7 @@ class EnemyAiCommonCommandBatch:
     barrier_submissions: Mapping[
         str,EnemyAiBarrierSubmission
     ] = field(default_factory=dict)
+    attack_crazed_submissions: Mapping[str,EnemyAiAttackCrazedSubmission] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         object.__setattr__(
@@ -774,6 +780,44 @@ class EnemyAiCommonCommandBatch:
         ):
             raise ValueError(
                 "enemy AI Barrier semantic submissions overlap another skill"
+            )
+
+        attack_crazed_submissions={
+            str(key):value for key,value in self.attack_crazed_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "attack_crazed_submissions",
+            MappingProxyType(attack_crazed_submissions),
+        )
+        for participant_id,submission in attack_crazed_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI AttackCrazed submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiAttackCrazedSubmission):
+                raise TypeError(
+                    f"enemy AI AttackCrazed submission has wrong type for "
+                    f"{participant_id}"
+                )
+            if str(submission.participant_id) != participant_id:
+                raise ValueError("enemy AI AttackCrazed participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1) != BATTLE_COM_ATTACK
+                or int(carrier.command2) != int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI AttackCrazed carrier must be ATTACK/source-target"
+                )
+        if set(attack_crazed_submissions) & (
+            set(barrier_submissions) | set(guard_break2_submissions) | set(nocast_submissions)
+            | set(tear_submissions) | set(fall_submissions)
+            | set(mp_submissions) | set(damage_submissions)
+            | set(rehp_submissions) | set(magic_submissions)
+        ):
+            raise ValueError(
+                "enemy AI AttackCrazed semantic submissions overlap another skill"
             )
 
 
@@ -1428,6 +1472,7 @@ class LocalRuntimeSessionCoordinator:
         allow_nocast_skill: bool = False,
         allow_guard_break2_skill: bool = False,
         allow_barrier_skill: bool = False,
+        allow_attack_crazed_skill: bool = False,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -1576,6 +1621,7 @@ class LocalRuntimeSessionCoordinator:
         nocast_submissions={}
         guard_break2_submissions={}
         barrier_submissions={}
+        attack_crazed_submissions={}
         for enemy_id in ai_enemy_ids:
             if enemy_id not in spawn_by_participant_id:
                 raise ValueError(
@@ -1639,6 +1685,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_nocast_skill)
                 or bool(allow_guard_break2_skill)
                 or bool(allow_barrier_skill)
+                or bool(allow_attack_crazed_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -1649,6 +1696,23 @@ class LocalRuntimeSessionCoordinator:
                 skill_ids=tuple(int(x) for x in spawned.template.skill_slot_ids)
                 selected_skill_id=skill_ids[int(decision.skill_slot)]
                 selected_skill=petskill_runtime.skills.get(selected_skill_id)
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == ATTACK_CRAZED_CALLBACK
+                    and bool(allow_attack_crazed_skill)
+                ):
+                    submission=resolve_enemy_ai_attack_crazed_submission(
+                        spawned,skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),petskill_runtime=petskill_runtime,
+                    )
+                    # ATTACK is an internal ordering carrier, never a claimed
+                    # recovered25 AttackCrazed numeric command.
+                    commands[enemy_id]=BattleCommand(BATTLE_COM_ATTACK,command2=submission.source_target_slot)
+                    work=submission.callback_setup(fixed_strength=spawned.participant.attack,fixed_toughness=spawned.participant.defense)
+                    setup_effects[enemy_id]=BattleCommandSetupEffects(attack_power=work.attack_power,defense_power=work.defense_power)
+                    attack_crazed_submissions[enemy_id]=submission
+                    continue
+
                 if (
                     selected_skill is not None
                     and selected_skill.function_name == BARRIER_CALLBACK
@@ -1924,6 +1988,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_GuardBreak2")
             if bool(allow_barrier_skill):
                 allowed_parts.append("PETSKILL_Barrier")
+            if bool(allow_attack_crazed_skill):
+                allowed_parts.append("PETSKILL_AttackCrazed")
             allowed = "/".join(allowed_parts)
             raise ValueError(
                 "enemy AI selected command outside coordinator "
@@ -1943,6 +2009,7 @@ class LocalRuntimeSessionCoordinator:
             nocast_submissions=nocast_submissions,
             guard_break2_submissions=guard_break2_submissions,
             barrier_submissions=barrier_submissions,
+            attack_crazed_submissions=attack_crazed_submissions,
         )
 
     def build_persistent_enemy_common_commands(
@@ -2093,6 +2160,7 @@ class LocalRuntimeSessionCoordinator:
         counter_rolls_by_attack_id: Mapping[
             str, Sequence[CounterAttemptRolls]
         ] | None = None,
+        attack_crazed_rolls_by_attack_id: Mapping[str,AttackCrazedRolls] | None = None,
         continuation_rolls_by_attack_id: Mapping[
             str, ContinuationAttackRolls
         ] | None = None,
@@ -2244,8 +2312,14 @@ class LocalRuntimeSessionCoordinator:
             allow_nocast_skill=True,
             allow_guard_break2_skill=True,
             allow_barrier_skill=True,
+            allow_attack_crazed_skill=True,
         )
         enemy_commands = enemy_batch.commands
+        normalized_attack_crazed_rolls=dict(attack_crazed_rolls_by_attack_id or {})
+        if set(normalized_attack_crazed_rolls)!=set(enemy_batch.attack_crazed_submissions):
+            raise ValueError("enemy AttackCrazed RNG actors mismatch")
+        if not all(isinstance(v,AttackCrazedRolls) for v in normalized_attack_crazed_rolls.values()):
+            raise TypeError("enemy AttackCrazed RNG wrong type")
         rehp_enemy_ids=set(enemy_batch.enemy_rehp_submissions)
         normalized_rehp_rolls={
             str(key):value
@@ -2641,6 +2715,8 @@ class LocalRuntimeSessionCoordinator:
             attack_rolls=attack_rolls,
             counter_rolls_by_attack_id=counter_rolls_by_attack_id,
             continuation_rolls_by_attack_id=normalized_continuation_rolls,
+            attack_crazed_rolls_by_attack_id=normalized_attack_crazed_rolls,
+            attack_crazed_submissions_by_participant_id=enemy_batch.attack_crazed_submissions,
             abduct_contexts=enemy_batch.abduct_contexts,
             abduct_rolls=normalized_abduct_rolls,
             steal_rolls=normalized_steal_rolls,

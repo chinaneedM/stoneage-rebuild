@@ -99,3 +99,43 @@ parsed attack count **3**. The 9 positive slot uses/9 templates were reproduced.
 This closes the data gate only; ordered physical runtime admission remains OPEN.
 Reference workflow **37174398691** also passed. Local C double-to-int oracle
 checked 1004 stat pairs in addition to the dedicated regression tests.
+
+
+## Ordered runtime implementation — 2026-10-04 (remote acceptance pending)
+
+The recovered enemy-AI bridge checks the complete ID-613 callback population,
+selected authoritative skill slot, FIELD/TARGET/COST/ILLEGAL and exact OPTION.
+It emits a typed submission with count 3; ATTACK is solely an internal ordering
+carrier. No recovered command enum or source array index is manufactured.
+The bridge computes callback work powers from fixed stats before initiative
+execution. Ordinary faster attackers therefore observe the reduced defense.
+
+The shared non-bow physical sequence preserves ContinuationAttack's public API
+and existing division, while AttackCrazed selects its list at action time and
+skips division. Explicit selection indices are consumed before any hit RNG;
+slot 9 is excluded from the pool, but remains a valid submitted first target.
+The empty-pool/only-slot-9 case performs no pool draws and uses the original
+filled list. Per-hit witnesses expose the typed skill, hit index, selected list
+and selection draw count without assigning historical COM1.
+
+After each hit, authoritative HP, Guardian redirection, damage-reaction charges,
+wakeup, ride-pet split/fall and ultimate/exit state are updated before the next
+TargetAdjust. Counter chaining runs once after the final physical sequence.
+Sleep/movement blocking suppresses the action before list RNG; confusion's
+ordinary-command rewrite discards the specialized execution while retaining
+callback work setup. A semantic ATTACK carrier is explicitly excluded from
+combo-start/join checks in the persistent state adapter.
+
+Current runtime admission is enemy -> opposite-side target, exact recovered
+three-hit OPTION and explicitly FIST weapon profile. PLAYER/PET submissions,
+other count/metadata/OPTION, unknown/bow/throwing weapon profiles and numeric
+command identity stay outside admission. The reference's broader safe-count
+parser is not automatically a broader runtime claim.
+
+Acceptance tests cover original-first/list[1]/list[2], no damage division,
+per-hit retarget after death, singleton/empty selection RNG, Guardian, reflection
+actor death, guard/dodge, ride-pet fall, callback-defense timing, confusion,
+sleep and combo exclusion. The coordinator E2E test selects the recovered skill
+through AI, executes three hits, persists state, and executes a second round
+starting from the previous HP. Executable coverage changes only after remote
+runtime acceptance and the updated verified pressure report.
