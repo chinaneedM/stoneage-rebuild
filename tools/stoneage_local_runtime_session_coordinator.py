@@ -1844,6 +1844,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_nocast_skill)
                 or bool(allow_guard_break2_skill)
                 or bool(allow_weaken_skill)
+                or bool(allow_refresh_skill)
                 or bool(allow_barrier_skill)
                 or bool(allow_mdfyattack_skill)
                 or bool(allow_attack_crazed_skill)
