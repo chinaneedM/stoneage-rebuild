@@ -12,10 +12,26 @@ from tools.stoneage_nocast_model import (
     NocastTick,
     nocast_blocks_direct_magic,
 )
+from tools.stoneage_weaken_model import WeakenApplication
 from tools.stoneage_barrier_model import (
     BarrierApplication,
     BarrierSelfTick,
 )
+
+
+@dataclass(frozen=True)
+class PreparedWeakenPowers:
+    """Next-command work powers, distinct from a possibly expired counter."""
+    attack: int
+    defense: int
+    dexterity: int
+
+    def __post_init__(self):
+        for name in ("attack", "defense", "dexterity"):
+            value = int(getattr(self, name))
+            if not 0 <= value < 2**31:
+                raise ValueError("prepared Weaken powers require nonnegative int32")
+            object.__setattr__(self, name, value)
 
 
 @dataclass(frozen=True)
@@ -35,12 +51,15 @@ class NocastParticipantRuntime:
     unmodeled_status_active: bool = False
     weaken_active_at_visit: bool = False
     barrier_active_at_visit: bool = False
+    weaken_counter: int = 0
+    mod_weaken: int = 0
+    prepared_weaken_powers: PreparedWeakenPowers | None = None
 
     def __post_init__(self) -> None:
         for name in (
             "vital", "strength", "toughness", "dexterity",
             "mod_nocast", "mod_barrier", "suit_resist",
-            "counter", "barrier_counter",
+            "counter", "barrier_counter", "weaken_counter", "mod_weaken",
         ):
             object.__setattr__(self, name, int(getattr(self, name)))
         attrs=(self.vital,self.strength,self.toughness,self.dexterity)
@@ -50,6 +69,10 @@ class NocastParticipantRuntime:
             raise ValueError("Nocast counter cannot be negative")
         if self.barrier_counter < 0:
             raise ValueError("Barrier counter cannot be negative")
+        if not 0 <= self.weaken_counter < 2**31 or not -(2**31) <= self.mod_weaken < 2**31:
+            raise ValueError("Weaken counter/resistance outside signed int32 domain")
+        if self.prepared_weaken_powers is not None and not isinstance(self.prepared_weaken_powers, PreparedWeakenPowers):
+            raise TypeError("prepared Weaken powers have wrong type")
         if self.nc_flag is not None:
             flag=int(self.nc_flag)
             if flag not in {0,1}:
@@ -66,7 +89,7 @@ class NocastParticipantRuntime:
         return bool(
             base_status_active
             or self.unmodeled_status_active
-            or self.weaken_active_at_visit
+            or self.weaken_active_for_late_statuses
             or self.barrier_active_at_visit
             or self.barrier_counter > 0
             or self.counter > 0
@@ -110,6 +133,18 @@ class NocastParticipantRuntime:
             self,
             barrier_counter=int(tick.counter_after),
         )
+
+    def after_weaken_application(self, application: WeakenApplication) -> "NocastParticipantRuntime":
+        if application.counter_written is None:
+            return self
+        return replace(self, weaken_counter=int(application.counter_written))
+
+    def after_weaken_tick(self, tick: BarrierSelfTick) -> "NocastParticipantRuntime":
+        return replace(self, weaken_counter=int(tick.counter_after))
+
+    @property
+    def weaken_active_for_late_statuses(self) -> bool:
+        return bool(self.weaken_active_at_visit or self.weaken_counter > 0)
 
     @property
     def barrier_active_for_late_statuses(self) -> bool:

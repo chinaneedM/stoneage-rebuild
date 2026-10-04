@@ -73,12 +73,33 @@ def main():
     parser.add_argument('--data-dir', type=Path, required=True)
     parser.add_argument('--setup', type=Path)
     args = parser.parse_args()
-    result = analyze_runtime_objects(
-        load_recovered25_petskill_runtime(data_dir=args.data_dir, setup=args.setup),
-        load_recovered25_enemybase_runtime(data_dir=args.data_dir, setup=args.setup))
+    petskills=load_recovered25_petskill_runtime(data_dir=args.data_dir, setup=args.setup)
+    enemybase=load_recovered25_enemybase_runtime(data_dir=args.data_dir, setup=args.setup)
+    result = analyze_runtime_objects(petskills,enemybase)
     emit(result)
     if not result['option_domain_closed']:
         raise SystemExit('Weaken data gate remains open')
+    # The real preservation bundle exercises production admission, including
+    # complete metadata, both encoding parses and the immutable OPTION hash.
+    from types import SimpleNamespace
+    from tools.stoneage_enemy_ai_weaken_bridge import resolve_enemy_ai_weaken_submission
+    admitted=0
+    for template in enemybase.templates.values():
+        slots=tuple(int(i) for i in template.skill_slot_ids)
+        for slot,skill_id in enumerate(slots):
+            if skill_id not in EXPECTED_IDS:
+                continue
+            submission=resolve_enemy_ai_weaken_submission(
+                SimpleNamespace(template=template,participant=SimpleNamespace(
+                    participant_id="probe",kind="enemy",side="enemy")),
+                skill_slot=slot,target_slot=0,petskill_runtime=petskills)
+            if submission.skill_id!=skill_id:
+                raise SystemExit("Weaken selected seven-slot identity drift")
+            admitted+=1
+    if admitted!=EXPECTED_SLOT_REFERENCES:
+        raise SystemExit("Weaken typed admission population drift")
+    print(f"COUNT|weaken_typed_admitted_slot_references|{admitted}")
+    print("RESOLUTION|RECOVERED25_WEAKEN_TYPED_ADMISSION_CLOSED")
 
 
 if __name__ == '__main__':

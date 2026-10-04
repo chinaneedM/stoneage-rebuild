@@ -3185,3 +3185,6 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
 
 
 - Weaken final source/data acceptance — 2026-10-04: final reference 37179420593 and source/hash-verified preservation probe 37179420582 PASS at `4a626dbd148d4bcda6665314fcb9b6f9b7b9df90`; 127 reference/regression tests and 24+1536+384 transient UBSan/ASan witnesses PASS. Source scheduling and both exact data rows are closed in the declared safe domain. Typed persistent runtime remains OPEN; the newly audited preparation-stage WEAKEN/BARRIER decrement must be integrated separately from StatusSeq self-freeze before runtime acceptance.
+
+
+- Weaken runtime implementation update — 2026-10-04: exact two-row/hash typed bridge, existing late-status overlay extension, source-ordered status visits and once-only post-round preparation are connected through the persistent coordinator. Local 1074 tests/109 affected modules PASS, including 24 dedicated tests and four-round coordinator expiry/restoration. Production hash acceptance on seven real-data selected slots is added to the verified bundle probe; synthetic witnesses use an explicitly substituted independent fixture hash. Runtime/real-data Actions remain pending. Original source/data/assets and recovered numeric COM1 are not committed or inferred. Riding/drunk/overlapping callback-power extensions stay fail-closed.

@@ -5628,6 +5628,146 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             )
 
 
+    def test_recovered_enemy_ai_weaken_executes_and_persists(self):
+        from unittest.mock import patch
+        from tests.test_stoneage_weaken_runtime import SYNTHETIC_HASH, SYNTHETIC_OPTION
+        from tools.stoneage_weaken_runtime_state import WeakenActionRolls
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-weaken"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,group,
+            entry_count_roll=1,selection_rolls=(0,),
+            birth_rolls=(EnemyBirthRolls(
+                level_roll=1,birth_offsets=(0,0,0,0),
+                spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+            ),),
+        )
+        enemy_id=str(context.battle.enemies[0].participant_id)
+        spawned=context.spawned_enemies[0]
+        skills=dict(self.stack.petskill_runtime.skills)
+        skills[575]=Recovered25PetSkillEntry(
+            skill_id=575,field=1,target=6,cost=2,illegal=3000,
+            function_name="PETSKILL_Weaken",
+            option_bytes=SYNTHETIC_OPTION,
+        )
+        skills[576]=Recovered25PetSkillEntry(
+            skill_id=576,field=1,target=3,cost=2,illegal=0,
+            function_name="PETSKILL_Weaken",
+            option_bytes=SYNTHETIC_OPTION,
+        )
+        self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+            skills=skills,
+            source_file=self.stack.petskill_runtime.source_file,
+        )
+        enemy=replace(context.battle.enemies[0],quick=200)
+        player=replace(context.battle.player,quick=10)
+        context=replace(
+            context,
+            battle=replace(context.battle,player=player,enemies=(enemy,)),
+            spawned_enemies=(replace(
+                spawned,
+                participant=enemy,
+                template=replace(
+                    spawned.template,
+                    skill_ids=(576,20,30,40,50,60,70),
+                    skill_slot_ids=(576,20,30,40,50,60,70),
+                ),
+                variant=replace(
+                    spawned.variant,
+                    tactics_option="at:0;1;1|gu:0|es:0|wa:1;0;0;0;0;0;0",
+                ),
+            ),),
+        )
+        overlay=NocastRoundOverlay({
+            "player":NocastParticipantRuntime(25,25,25,25),
+            enemy_id:NocastParticipantRuntime(25,25,25,25),
+        })
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+            nocast_overlay=overlay,
+        )
+        # Synthetic grammar witness; actual preservation hash is gated in data CI.
+        with patch('tools.stoneage_enemy_ai_weaken_bridge.EXPECTED_OPTION_SHA256',SYNTHETIC_HASH):
+            context,result=(
+                self.coordinator
+                .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                    context,
+                    player_side_commands={
+                        "player":BattleCommand(BATTLE_COM_WAIT)
+                    },
+                    enemy_mode_rolls={enemy_id:0},
+                    enemy_target_rolls={enemy_id:0},
+                    enemy_escape_rolls={},
+                    opponent_abio_by_participant_id={},
+                    initiative_random_subtracts={"player":0,enemy_id:0},
+                    profiles={
+                        "player":BattleCombatProfile(
+                            fixed_dex=10,fixed_luck=0,
+                            earth=0,water=0,fire=0,wind=0,
+                        ),
+                        enemy_id:BattleCombatProfile(
+                            fixed_dex=200,fixed_luck=0,
+                            earth=0,water=0,fire=0,wind=0,
+                        ),
+                    },
+                    attack_rolls={},
+                    weaken_rolls_by_attack_id={
+                        enemy_id:WeakenActionRolls(
+                            hit_rolls_by_slot={0:1}
+                        )
+                    },
+                    defense_profile="newpower_70pct",
+                )
+            )
+        applied=next(
+            event for event in result.round.events
+            if event.participant_id==enemy_id
+            and event.weaken_application is not None
+        )
+        self.assertEqual(applied.result,"weaken_applied")
+        self.assertEqual(applied.weaken_application.counter_written,4)
+        self.assertTrue(any(
+            event.participant_id=="player"
+            and event.result=="wait"
+            for event in result.round.events
+        ))
+        player_runtime=(
+            context.persistent_battle_state.nocast_overlay
+            .runtime_by_participant_id["player"]
+        )
+        self.assertEqual(player_runtime.weaken_counter,3)
+        self.assertIsNotNone(player_runtime.prepared_weaken_powers)
+        self.assertEqual(player_runtime.prepared_weaken_powers.dexterity,8)
+        # Three further coordinator calls consume the persisted clock and work
+        # snapshot without reapplying the previous preparation on entry.
+        context=replace(context,spawned_enemies=(replace(context.spawned_enemies[0],
+            variant=replace(context.spawned_enemies[0].variant,
+                tactics_option="at:0;1;1|gu:1|es:0|wa:0;0;0;0;0;0;0")),))
+        for expected_counter in (2,1,0):
+            previous=context.persistent_battle_state
+            context,result=self.coordinator.resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,player_side_commands={"player":BattleCommand(BATTLE_COM_WAIT)},
+                enemy_mode_rolls={enemy_id:0},enemy_target_rolls={},enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},initiative_random_subtracts={"player":0,enemy_id:0},
+                profiles={"player":BattleCombatProfile(10,0,0,0,0,0),enemy_id:BattleCombatProfile(200,0,0,0,0,0)},
+                attack_rolls={},defense_profile="newpower_70pct")
+            self.assertEqual(result.before,previous)
+            late=context.persistent_battle_state.nocast_overlay.runtime_by_participant_id["player"]
+            self.assertEqual(late.weaken_counter,expected_counter)
+            if expected_counter:
+                self.assertEqual(late.prepared_weaken_powers.dexterity,8)
+            else:
+                self.assertIsNone(late.prepared_weaken_powers)
+                self.assertEqual(context.persistent_battle_state.base_status_runtime_by_participant_id["player"].work_quick,10)
+
     def test_recovered_enemy_ai_barrier_executes_and_persists(self):
         session=LocalRuntimeSessionState(
             contract_id=self.profile.contract_id,
@@ -5738,7 +5878,7 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             context.persistent_battle_state.nocast_overlay
             .runtime_by_participant_id["player"]
         )
-        self.assertEqual(player_runtime.barrier_counter,4)
+        self.assertEqual(player_runtime.barrier_counter,3)
 
     def test_recovered_enemy_ai_guard_break2_executes_semantic_attack(self):
         session=LocalRuntimeSessionState(

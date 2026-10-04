@@ -518,3 +518,12 @@ supply Taiwan-v1 membership, an introduction date or recovered binary enum.
 The verified recovered25 preservation data separately binds IDs 575/576 to
 status 7 / turn 3 / success 50 with differing target/illegal metadata.
 [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]
+
+
+**2026-10-04 Weaken runtime evidence boundary:** the rebuilt recovered25 path
+now composes separate command-only application, base/WEAKEN/BARRIER/NOCAST
+visits and normal post-round preparation. The latter rebuilds baseline powers,
+reduces fixed strength/toughness/dexterity and decrements positive WEAKEN/BARRIER.
+This supersedes an indefinite Barrier duration inferred from StatusSeq alone;
+it does not date skill introduction, establish Taiwan-v1 membership or map a
+recovered binary enum. [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]

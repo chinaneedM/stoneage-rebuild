@@ -68,6 +68,9 @@ from tools.stoneage_guard_break2_model import (
 from tools.stoneage_nocast_model import CALLBACK_NAME as NOCAST_CALLBACK
 from tools.stoneage_barrier_model import CALLBACK_NAME as BARRIER_CALLBACK
 from tools.stoneage_barrier_runtime_state import BarrierActionRolls
+from tools.stoneage_enemy_ai_weaken_bridge import EnemyAiWeakenSubmission, resolve_enemy_ai_weaken_submission
+from tools.stoneage_weaken_runtime_state import WeakenActionRolls
+from tools.stoneage_weaken_model import CALLBACK_NAME as WEAKEN_CALLBACK
 from tools.stoneage_nocast_runtime_state import (
     NocastActionRolls,
     NocastRoundOverlay,
@@ -432,6 +435,7 @@ class EnemyAiCommonCommandBatch:
     barrier_submissions: Mapping[
         str,EnemyAiBarrierSubmission
     ] = field(default_factory=dict)
+    weaken_submissions: Mapping[str,EnemyAiWeakenSubmission] = field(default_factory=dict)
     mdfyattack_submissions: Mapping[str,EnemyAiMdfyAttackSubmission] = field(default_factory=dict)
     attack_crazed_submissions: Mapping[str,EnemyAiAttackCrazedSubmission] = field(default_factory=dict)
 
@@ -840,6 +844,24 @@ class EnemyAiCommonCommandBatch:
             | set(mp_submissions) | set(damage_submissions) | set(rehp_submissions) | set(magic_submissions)
         ):
             raise ValueError("enemy AI Mdfyattack semantic submissions overlap another skill")
+
+        weaken_submissions={str(k):v for k,v in self.weaken_submissions.items()}
+        object.__setattr__(self,"weaken_submissions",MappingProxyType(weaken_submissions))
+        for pid,submission in weaken_submissions.items():
+            if not isinstance(submission,EnemyAiWeakenSubmission):
+                raise TypeError("enemy AI Weaken submission has wrong type")
+            if pid not in self.commands or submission.participant_id!=pid:
+                raise ValueError("enemy AI Weaken participant/carrier drift")
+            command=self.commands[pid]
+            if command.command1!=BATTLE_COM_ATTACK or command.command2!=submission.source_target_slot:
+                raise ValueError("enemy AI Weaken carrier must be ATTACK/source-target")
+        if set(weaken_submissions) & (
+            set(mdfyattack_submissions) | set(attack_crazed_submissions) | set(barrier_submissions)
+            | set(guard_break2_submissions) | set(nocast_submissions) | set(tear_submissions)
+            | set(fall_submissions) | set(mp_submissions) | set(damage_submissions)
+            | set(rehp_submissions) | set(magic_submissions)
+        ):
+            raise ValueError("enemy AI Weaken semantic submissions overlap another skill")
 
 
 @dataclass
@@ -1492,6 +1514,7 @@ class LocalRuntimeSessionCoordinator:
         allow_battle_tear_skill: bool = False,
         allow_nocast_skill: bool = False,
         allow_guard_break2_skill: bool = False,
+        allow_weaken_skill: bool = False,
         allow_barrier_skill: bool = False,
         allow_mdfyattack_skill: bool = False,
         allow_attack_crazed_skill: bool = False,
@@ -1642,6 +1665,7 @@ class LocalRuntimeSessionCoordinator:
         battle_tear_submissions={}
         nocast_submissions={}
         guard_break2_submissions={}
+        weaken_submissions={}
         barrier_submissions={}
         mdfyattack_submissions={}
         attack_crazed_submissions={}
@@ -1707,6 +1731,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_battle_tear_skill)
                 or bool(allow_nocast_skill)
                 or bool(allow_guard_break2_skill)
+                or bool(allow_weaken_skill)
                 or bool(allow_barrier_skill)
                 or bool(allow_mdfyattack_skill)
                 or bool(allow_attack_crazed_skill)
@@ -1750,6 +1775,25 @@ class LocalRuntimeSessionCoordinator:
                     work=submission.callback_setup(fixed_strength=spawned.participant.attack,fixed_toughness=spawned.participant.defense)
                     setup_effects[enemy_id]=BattleCommandSetupEffects(attack_power=work.attack_power,defense_power=work.defense_power)
                     attack_crazed_submissions[enemy_id]=submission
+                    continue
+
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == WEAKEN_CALLBACK
+                    and bool(allow_weaken_skill)
+                ):
+                    submission=resolve_enemy_ai_weaken_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                    )
+                    # Scheduling carrier only; native WEAKEN stays symbolic.
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    weaken_submissions[enemy_id]=submission
                     continue
 
                 if (
@@ -2025,6 +2069,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_Nocast")
             if bool(allow_guard_break2_skill):
                 allowed_parts.append("PETSKILL_GuardBreak2")
+            if bool(allow_weaken_skill):
+                allowed_parts.append("PETSKILL_Weaken")
             if bool(allow_barrier_skill):
                 allowed_parts.append("PETSKILL_Barrier")
             if bool(allow_mdfyattack_skill):
@@ -2049,6 +2095,7 @@ class LocalRuntimeSessionCoordinator:
             battle_tear_submissions=battle_tear_submissions,
             nocast_submissions=nocast_submissions,
             guard_break2_submissions=guard_break2_submissions,
+            weaken_submissions=weaken_submissions,
             barrier_submissions=barrier_submissions,
             mdfyattack_submissions=mdfyattack_submissions,
             attack_crazed_submissions=attack_crazed_submissions,
@@ -2241,6 +2288,7 @@ class LocalRuntimeSessionCoordinator:
         nocast_rolls_by_attack_id: Mapping[
             str,NocastActionRolls
         ] | None = None,
+        weaken_rolls_by_attack_id: Mapping[str,WeakenActionRolls] | None = None,
         barrier_rolls_by_attack_id: Mapping[
             str,BarrierActionRolls
         ] | None = None,
@@ -2353,6 +2401,7 @@ class LocalRuntimeSessionCoordinator:
             allow_battle_tear_skill=True,
             allow_nocast_skill=True,
             allow_guard_break2_skill=True,
+            allow_weaken_skill=True,
             allow_barrier_skill=True,
             allow_mdfyattack_skill=True,
             allow_attack_crazed_skill=True,
@@ -2484,6 +2533,28 @@ class LocalRuntimeSessionCoordinator:
         if barrier_enemy_ids and state.nocast_overlay is None:
             raise ValueError(
                 "enemy Barrier requires explicit persistent late-status overlay"
+            )
+
+        weaken_enemy_ids=set(enemy_batch.weaken_submissions)
+        normalized_weaken_rolls={
+            str(key):value
+            for key,value in (weaken_rolls_by_attack_id or {}).items()
+        }
+        if set(normalized_weaken_rolls) != weaken_enemy_ids:
+            missing=sorted(weaken_enemy_ids-set(normalized_weaken_rolls))
+            extra=sorted(set(normalized_weaken_rolls)-weaken_enemy_ids)
+            raise ValueError(
+                "enemy Weaken RNG mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        for participant_id,rolls in normalized_weaken_rolls.items():
+            if not isinstance(rolls,WeakenActionRolls):
+                raise TypeError(
+                    f"enemy Weaken RNG has wrong type for {participant_id}"
+                )
+        if weaken_enemy_ids and state.nocast_overlay is None:
+            raise ValueError(
+                "enemy Weaken requires explicit persistent late-status overlay"
             )
 
         attack_magic_enemy_ids={
@@ -2829,6 +2900,8 @@ class LocalRuntimeSessionCoordinator:
                 enemy_batch.nocast_submissions
             ),
             nocast_rolls_by_participant_id=normalized_nocast_rolls,
+            weaken_submissions_by_participant_id=enemy_batch.weaken_submissions,
+            weaken_rolls_by_participant_id=normalized_weaken_rolls,
             barrier_submissions_by_participant_id=(
                 enemy_batch.barrier_submissions
             ),

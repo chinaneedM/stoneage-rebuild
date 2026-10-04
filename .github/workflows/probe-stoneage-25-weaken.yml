@@ -7,6 +7,8 @@ on:
   push:
     paths:
       - .github/workflows/probe-stoneage-25-weaken.yml
+      - tools/stoneage_enemy_ai_weaken_bridge.py
+      - tools/stoneage_weaken_runtime_state.py
       - tools/stoneage_weaken_model.py
       - tools/stoneage_weaken_source_audit.py
       - tools/stoneage_recovered25_weaken_probe.py
@@ -94,6 +96,8 @@ jobs:
           python3 -m tools.stoneage_recovered25_weaken_probe \
             --data-dir "$D" --setup "$C" \
             > research/recovered/STONEAGE-25-WEAKEN-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_WEAKEN_TYPED_ADMISSION_CLOSED' \
+            research/recovered/STONEAGE-25-WEAKEN-PROBE-R1.txt
           grep -F 'COUNT|weaken_skill_rows|2' \
             research/recovered/STONEAGE-25-WEAKEN-PROBE-R1.txt
           grep -F 'COUNT|enemybase_slot_references|7' \

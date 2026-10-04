@@ -59,6 +59,12 @@ from tools.stoneage_barrier_model import (
     resolve_barrier_target,
 )
 from tools.stoneage_barrier_runtime_state import BarrierActionRolls
+from tools.stoneage_enemy_ai_weaken_bridge import EnemyAiWeakenSubmission
+from tools.stoneage_weaken_runtime_state import WeakenActionRolls
+from tools.stoneage_weaken_model import (
+    WeakenApplication, WeakenCheckInputs, resolve_weaken_target,
+    resolve_weaken_multilist, resolve_weaken_self_tick,
+)
 from tools.stoneage_nocast_model import (
     NocastApplication,
     NocastCheckInputs,
@@ -950,6 +956,9 @@ class OrdinaryRoundEvent:
     attack_crazed_hit_index: int | None = None
     attack_crazed_target_list: tuple[int, ...] = ()
     attack_crazed_selection_draws: int = 0
+    weaken_application: WeakenApplication | None = None
+    weaken_tick_resolution: BarrierSelfTick | None = None
+    weaken_skill_id: int | None = None
     barrier_application: BarrierApplication | None = None
     barrier_tick_resolution: BarrierSelfTick | None = None
     nocast_application: NocastApplication | None = None
@@ -3489,6 +3498,8 @@ def resolve_ordinary_round(
     nocast_rolls_by_participant_id: Mapping[
         str,NocastActionRolls
     ] | None = None,
+    weaken_submissions_by_participant_id: Mapping[str,EnemyAiWeakenSubmission] | None = None,
+    weaken_rolls_by_participant_id: Mapping[str,WeakenActionRolls] | None = None,
     barrier_submissions_by_participant_id: Mapping[
         str,EnemyAiBarrierSubmission
     ] | None = None,
@@ -4096,11 +4107,37 @@ def resolve_ordinary_round(
             raise ValueError("Mdfyattack ordering carrier must be enemy ATTACK/source-target")
         if profiles[pid].counter_weapon_type!=COUNTER_WEAPON_FIST:
             raise ValueError("Mdfyattack currently admits enemy FIST actors only")
+    weaken_submissions=dict(weaken_submissions_by_participant_id or {})
+    weaken_actor_ids=set(weaken_submissions)
+    if weaken_actor_ids-set(slot_by_id):
+        raise ValueError("Weaken references unknown actors")
+    if weaken_actor_ids & (
+        set(mdfyattack_submissions) | set(attack_crazed_submissions) | guard_break2_actor_ids
+        | barrier_actor_ids | nocast_actor_ids | fall_ground_actor_ids | battle_tear_actor_ids
+        | mp_damage_actor_ids | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+    ):
+        raise ValueError("Weaken semantic submissions overlap another skill")
+    for pid,submission in weaken_submissions.items():
+        if not isinstance(submission,EnemyAiWeakenSubmission):
+            raise TypeError("Weaken submission has wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (submission.participant_id!=pid or entry.participant.kind!="enemy"
+            or entry.participant.side!="enemy" or entry.command.command1!=BATTLE_COM_ATTACK
+            or entry.command.command2!=submission.source_target_slot):
+            raise ValueError("Weaken ordering carrier must be enemy ATTACK/source-target")
+    weaken_rolls=dict(weaken_rolls_by_participant_id or {})
+    if set(weaken_rolls)!=weaken_actor_ids:
+        raise ValueError("Weaken RNG actors mismatch")
+    if any(not isinstance(r,WeakenActionRolls) for r in weaken_rolls.values()):
+        raise TypeError("Weaken RNG has wrong type")
+    attempted_weaken_actor_ids=set()
+    weaken_active_command_ids=set(weaken_actor_ids)
+
     # The scheduling carrier cannot confer native ATTACK counter eligibility.
     # Confusion later removes a rewritten actor from this symbolic-command set.
     mdfyattack_active_command_ids=set(mdfyattack_submissions)
 
-    if (nocast_actor_ids or barrier_actor_ids) and nocast_overlay is None:
+    if (nocast_actor_ids or barrier_actor_ids or weaken_actor_ids) and nocast_overlay is None:
         raise ValueError(
             "Nocast/Barrier semantic action requires explicit round overlay"
         )
@@ -4169,6 +4206,37 @@ def resolve_ordinary_round(
 
     events: list[OrdinaryRoundEvent] = []
 
+    def tick_weaken_runtime(
+        participant_id: str,
+        slot: int,
+        command_code: int,
+        action_value: int,
+    ) -> BarrierSelfTick | None:
+        if nocast_working is None:
+            return None
+        participant_id=str(participant_id)
+        runtime=nocast_working[participant_id]
+        if int(runtime.weaken_counter) <= 0:
+            return None
+        tick=resolve_weaken_self_tick(
+            int(runtime.weaken_counter),
+            barrier_active_at_visit=bool(runtime.barrier_active_for_late_statuses),
+        )
+        nocast_working[participant_id]=runtime.after_weaken_tick(tick)
+        events.append(
+            OrdinaryRoundEvent(
+                participant_id,
+                int(slot),
+                int(command_code),
+                int(action_value),
+                "weaken_tick",
+                original_target_slot=int(slot),
+                resolved_target_slot=int(slot),
+                weaken_tick_resolution=tick,
+            )
+        )
+        return tick
+
     def tick_barrier_runtime(
         participant_id: str,
         slot: int,
@@ -4183,7 +4251,7 @@ def resolve_ordinary_round(
             return None
         tick=resolve_barrier_self_tick(
             int(runtime.barrier_counter),
-            weaken_active_at_visit=bool(runtime.weaken_active_at_visit),
+            weaken_active_at_visit=bool(runtime.weaken_active_for_late_statuses),
         )
         nocast_working[participant_id]=runtime.after_barrier_tick(tick)
         events.append(
@@ -4214,7 +4282,7 @@ def resolve_ordinary_round(
             return
         tick=resolve_nocast_tick(
             int(runtime.counter),
-            weaken_active_at_visit=bool(runtime.weaken_active_at_visit),
+            weaken_active_at_visit=bool(runtime.weaken_active_for_late_statuses),
             barrier_active_at_visit=bool(
                 runtime.barrier_active_for_late_statuses
             ),
@@ -4703,7 +4771,7 @@ def resolve_ordinary_round(
             status_runtime_by_participant_id=status_runtime,
             command_by_slot=command_by_slot,
             action_value_by_slot=action_value_by_slot,
-            semantic_noncounter_actor_ids=frozenset(mdfyattack_active_command_ids),
+            semantic_noncounter_actor_ids=frozenset(mdfyattack_active_command_ids | weaken_active_command_ids),
             counter_rolls=normalized_counter_rolls.get(
                 str(main_actor_id),()
             ),
@@ -4824,7 +4892,7 @@ def resolve_ordinary_round(
                     ride_work_quick=runtime.ride_work_quick,
                     weaken_freeze_active=bool(
                         late_runtime is not None
-                        and late_runtime.weaken_active_at_visit
+                        and late_runtime.weaken_active_for_late_statuses
                     ),
                     barrier_freeze_active=bool(
                         late_runtime is not None
@@ -4835,6 +4903,7 @@ def resolve_ordinary_round(
             current_status_tick=tick
             if tick.confusion_rewrote_command:
                 mdfyattack_active_command_ids.discard(str(participant_id))
+                weaken_active_command_ids.discard(str(participant_id))
             hp_by_slot[slot]=int(tick.hp_after)
             hp_by_id[str(participant_id)]=int(tick.hp_after)
             runtime=replace(
@@ -4890,6 +4959,8 @@ def resolve_ordinary_round(
                 guarding.discard(slot)
             command_by_slot[slot]=command
 
+        tick_weaken_runtime(str(participant_id), int(slot),
+                            int(entry.command.command1), int(entry.action_value))
         barrier_tick=tick_barrier_runtime(
             str(participant_id),
             int(slot),
@@ -5836,7 +5907,7 @@ def resolve_ordinary_round(
                             ride_work_quick=candidate_runtime.ride_work_quick,
                             weaken_freeze_active=bool(
                                 candidate_late_runtime is not None
-                                and candidate_late_runtime.weaken_active_at_visit
+                                and candidate_late_runtime.weaken_active_for_late_statuses
                             ),
                             barrier_freeze_active=bool(
                                 candidate_late_runtime is not None
@@ -5892,6 +5963,8 @@ def resolve_ordinary_round(
                 else:
                     candidate_base_can_move=True
 
+                tick_weaken_runtime(candidate_id, candidate_slot,
+                                    int(candidate.command.command1), int(candidate.action_value))
                 candidate_barrier_tick=tick_barrier_runtime(
                     candidate_id,
                     candidate_slot,
@@ -6114,6 +6187,124 @@ def resolve_ordinary_round(
                     continuation_id,
                     int(slot),
                     int(continuation.last_target_slot),
+                )
+            continue
+
+        weaken_actor_id=str(participant_id)
+        if (
+            weaken_actor_id in weaken_submissions
+            and int(command.command1) == BATTLE_COM_ATTACK
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            submission=weaken_submissions[weaken_actor_id]
+            if int(command.command2) != int(submission.source_target_slot):
+                raise ValueError(
+                    "Weaken ordering carrier target drift before execution"
+                )
+            if nocast_working is None:
+                raise ValueError("Weaken working overlay unexpectedly absent")
+
+            alive_slots=tuple(
+                other_slot
+                for other_slot in sorted(by_slot)
+                if (
+                    other_slot not in exited_slots
+                    and int(hp_by_slot.get(other_slot,0)) > 0
+                )
+            )
+            action_rolls=weaken_rolls[weaken_actor_id]
+            target_list=resolve_weaken_multilist(
+                int(submission.source_target_slot),
+                alive_slots=alive_slots,
+                retarget_draws_0_9=action_rolls.retarget_draws_0_9,
+            )
+            attempted_weaken_actor_ids.add(weaken_actor_id)
+            consumed_hit_roll_slots=set()
+            for target_slot in target_list.slots:
+                target_slot=int(target_slot)
+                if target_slot not in by_slot:
+                    raise ValueError(
+                        "Weaken target list resolved unoccupied slot"
+                    )
+                defender=by_slot[target_slot]
+                defender_id=str(defender.participant_id)
+                target_runtime=nocast_working[defender_id]
+                base_runtime=status_runtime[defender_id]
+                base_status_active=any(
+                    int(getattr(base_runtime.status,name))>0
+                    for name in (
+                        "poison","paralysis","sleep",
+                        "stone","drunk","confusion",
+                    )
+                )
+                any_status=target_runtime.has_any_status(
+                    base_status_active=base_status_active
+                )
+                hit_roll=action_rolls.hit_rolls_by_slot.get(target_slot)
+                application=resolve_weaken_target(
+                    WeakenCheckInputs(
+                        attacker_level=int(participant.level),
+                        defender_level=int(defender.level),
+                        pvp=False,
+                        attacker_fixed_luck=int(
+                            profiles[weaken_actor_id].fixed_luck
+                        ),
+                        defender_vital=int(target_runtime.vital),
+                        defender_strength=int(target_runtime.strength),
+                        defender_toughness=int(target_runtime.toughness),
+                        defender_dexterity=int(target_runtime.dexterity),
+                        defender_mod_weaken=int(target_runtime.mod_weaken),
+                        defender_suit_resist=int(target_runtime.suit_resist),
+                        any_existing_status=bool(any_status),
+                        target_kind=str(defender.kind),
+                    ),
+                    submission.option,
+                    roll_1_100=hit_roll,
+                )
+                if application.rng_consumed:
+                    consumed_hit_roll_slots.add(target_slot)
+                nocast_working[defender_id]=(
+                    target_runtime.after_weaken_application(application)
+                )
+                result_name=(
+                    "weaken_blocked_existing_status"
+                    if application.probability_value is None
+                    else (
+                        "weaken_applied"
+                        if application.counter_written is not None
+                        else "weaken_missed"
+                    )
+                )
+                events.append(
+                    OrdinaryRoundEvent(
+                        weaken_actor_id,
+                        int(slot),
+                        BATTLE_COM_ATTACK,
+                        int(entry.action_value),
+                        result_name,
+                        original_target_slot=int(
+                            submission.source_target_slot
+                        ),
+                        resolved_target_slot=target_slot,
+                        retargeted=bool(
+                            target_list.slots
+                            and int(target_list.slots[0])
+                            != int(submission.source_target_slot)
+                        ),
+                        weaken_application=application,
+                        weaken_skill_id=submission.skill_id,
+                    )
+                )
+            supplied_hit_slots=set(action_rolls.hit_rolls_by_slot)
+            if supplied_hit_slots != consumed_hit_roll_slots:
+                missing=sorted(consumed_hit_roll_slots-supplied_hit_slots)
+                extra=sorted(supplied_hit_slots-consumed_hit_roll_slots)
+                raise ValueError(
+                    "Weaken hit RNG slots mismatch; "
+                    f"missing={missing}, extra={extra}"
                 )
             continue
 
@@ -7510,6 +7701,15 @@ def resolve_ordinary_round(
         if not barrier_rolls[participant_id].is_empty:
             raise ValueError(
                 "Barrier RNG supplied for status-suppressed semantic action: "
+                + participant_id
+            )
+
+    for participant_id in sorted(
+        weaken_actor_ids-attempted_weaken_actor_ids
+    ):
+        if not weaken_rolls[participant_id].is_empty:
+            raise ValueError(
+                "Weaken RNG supplied for status-suppressed semantic action: "
                 + participant_id
             )
 

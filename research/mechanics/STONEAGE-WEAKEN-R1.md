@@ -164,3 +164,34 @@ scheduling gates and 127 reference/regression tests. Source/data are closed
 in this declared domain; ordered runtime remains OPEN. Earlier Barrier
 StatusSeq self-freeze describes that visit only: runtime integration must also
 apply its now-audited normal preparation-stage decrement.
+
+
+## Ordered runtime implementation — 2026-10-04
+
+DESIGN: typed `EnemyAiWeakenSubmission` preserves the exact two verified rows,
+full population/metadata/hash, seven-slot identity and symbolic command. The
+production bundle probe tests real admission; synthetic fixture hashes are
+explicitly substituted only inside unit/coordinator witnesses.
+
+The existing late-status overlay holds `weaken_counter`, `mod_weaken` and
+`PreparedWeakenPowers`, separate from external freeze flags. Raw ordered-round
+results expose post-StatusSeq storage. Persistent `after` state additionally
+includes the once-only post-round preparation; these two observations are not
+interchangeable. Preparation uses fresh immutable baseline attack/defense/quick,
+not previously reduced powers. Prepared fixed DEX is used for dodge/counter and
+quick for initiative. Counter zero does not erase prepared work in mid-round.
+
+The explicit no-extra-modifier domain requires baseline fixed DEX/QUICK equality
+and rejects riding, drunk preparation and overlapping callback power overrides.
+Valid zero-HP entries are prepared, exited/removed entries are excluded, and
+current carried EARTHROUND0 preserves counters/powers without preparation.
+There is no newly inferred recovered command number, array index or historical
+character-save field. Synthetic action witnesses cover PET targets, strict RNG,
+retargeting, sleep/confusion, combo/counter exclusion and earlier/later status
+storage visibility; persistent and four-round coordinator witnesses cover
+non-cumulative reduction, expiry, restoration and Barrier preparation.
+
+Supersession: previous Barrier self-freeze records remain correct for StatusSeq;
+normal persistent preparation now also decrements BARRIER once. Earlier
+StatusSeq-only indefinite-duration interpretations do not describe this full
+phase composition. Remote runtime acceptance is pending.

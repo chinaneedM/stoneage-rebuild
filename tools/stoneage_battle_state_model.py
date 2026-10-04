@@ -47,6 +47,10 @@ from tools.stoneage_nocast_runtime_state import (
     NocastRoundOverlay,
 )
 from tools.stoneage_barrier_runtime_state import BarrierActionRolls
+from tools.stoneage_enemy_ai_weaken_bridge import EnemyAiWeakenSubmission
+from tools.stoneage_weaken_runtime_state import WeakenActionRolls
+from tools.stoneage_weaken_model import resolve_weaken_recalculation
+from tools.stoneage_nocast_runtime_state import PreparedWeakenPowers
 from tools.stoneage_enemy_rehp_model import EnemyReHpRolls
 from tools.stoneage_recovered25_attack_magic_runtime import Recovered25AttackMagicRuntime
 
@@ -729,13 +733,17 @@ def participant_snapshot(
         raise KeyError(f"unknown battle participant {participant_id}")
     participant = participants[participant_id]
     runtime=state.base_status_runtime_by_participant_id[participant_id]
+    powers=(None if state.nocast_overlay is None else
+            state.nocast_overlay.runtime_by_participant_id[participant_id].prepared_weaken_powers)
+    if powers is not None:
+        participant=replace(participant, attack=powers.attack, defense=powers.defense)
     return replace(
         participant,
         hp=int(state.hp_by_participant_id[participant_id]),
         quick=(
-            int(participant.quick)
-            if runtime.work_quick is None
-            else int(runtime.work_quick)
+            powers.dexterity if powers is not None else (
+                int(participant.quick) if runtime.work_quick is None else int(runtime.work_quick)
+            )
         ),
     )
 
@@ -1321,6 +1329,8 @@ def resolve_persistent_ordinary_round(
     nocast_rolls_by_participant_id: Mapping[
         str,NocastActionRolls
     ] | None = None,
+    weaken_submissions_by_participant_id: Mapping[str,EnemyAiWeakenSubmission] | None = None,
+    weaken_rolls_by_participant_id: Mapping[str,WeakenActionRolls] | None = None,
     barrier_submissions_by_participant_id: Mapping[
         str,EnemyAiBarrierSubmission
     ] | None = None,
@@ -1365,6 +1375,27 @@ def resolve_persistent_ordinary_round(
                 f"state={expected}, context={context.stored_escape_count_before}"
             )
 
+    # Prepared work powers belong to the preceding PreCommandSeq, even if
+    # StatusSeq will expire WEAKEN later in this round. Baseline session values
+    # remain untouched, so the next preparation never compounds 0.8.
+    profiles=dict(profiles)
+    if state.nocast_overlay is not None:
+        baseline=_participant_map(state.session)
+        for pid in living_ids:
+            late=state.nocast_overlay.runtime_by_participant_id[pid]
+            powers=late.prepared_weaken_powers
+            if powers is None:
+                continue
+            if int(profiles[pid].fixed_dex)!=int(baseline[pid].quick):
+                raise ValueError("Weaken preparation requires baseline fixed DEX/QUICK equality")
+            if state.ride_pet_runtime is not None or state.base_status_runtime_by_participant_id[pid].status.drunk>0:
+                raise ValueError("Weaken preparation with riding/drunk modifiers is outside the admitted domain")
+            for effects in ((command_setup_effects_by_participant_id or {}).get(pid),
+                            state.carried_setup_effects_by_participant_id.get(pid)):
+                if effects is not None and (effects.attack_power is not None or effects.defense_power is not None):
+                    raise ValueError("Weaken prepared powers overlap unsupported callback power setup")
+            profiles[pid]=replace(profiles[pid],fixed_dex=powers.dexterity)
+
     effective_commands=dict(commands)
     for participant_id,carried in (
         state.carried_commands_by_participant_id.items()
@@ -1383,7 +1414,8 @@ def resolve_persistent_ordinary_round(
         profiles,
         combo_start_rolls_1_100,
         semantic_nonattack_ids=tuple(set(attack_crazed_submissions_by_participant_id or {})
-            | set(mdfyattack_submissions_by_participant_id or {})),
+            | set(mdfyattack_submissions_by_participant_id or {})
+            | set(weaken_submissions_by_participant_id or {})),
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
                 state.base_status_runtime_by_participant_id[participant_id]
@@ -1512,6 +1544,8 @@ def resolve_persistent_ordinary_round(
         nocast_rolls_by_participant_id=(
             nocast_rolls_by_participant_id
         ),
+        weaken_submissions_by_participant_id=weaken_submissions_by_participant_id,
+        weaken_rolls_by_participant_id=weaken_rolls_by_participant_id,
         barrier_submissions_by_participant_id=(
             barrier_submissions_by_participant_id
         ),
@@ -1682,6 +1716,36 @@ def resolve_persistent_ordinary_round(
             )
             if participant_id in next_session_ids
         })
+
+    # Source BATTLE_PreCommandSeq runs exactly once after BATTLE_Battling.
+    # It visits valid entries (including zero-HP entries), except EARTHROUND0.
+    # This is not another StatusSeq visit and is not repeated on next call.
+    if next_nocast_overlay is not None:
+        baseline=_participant_map(next_session)
+        prepared_late={}
+        for pid,late in next_nocast_overlay.runtime_by_participant_id.items():
+            carried=(round_result.carried_commands_by_participant_id or {}).get(pid)
+            if (pid in next_battle_exited or pid in next_ultimate_exited
+                or (carried is not None and carried.command1==BATTLE_COM_S_EARTHROUND0)):
+                prepared_late[pid]=late
+                continue
+            actor=baseline[pid]
+            was_weakened=late.prepared_weaken_powers is not None
+            active_weaken=late.weaken_counter>0
+            if active_weaken or was_weakened:
+                if state.ride_pet_runtime is not None or next_status_runtime[pid].status.drunk>0:
+                    raise ValueError("Weaken preparation with riding/drunk modifiers is outside the admitted domain")
+                recalculated=resolve_weaken_recalculation(actor.attack,actor.defense,actor.quick,
+                    weaken_counter=late.weaken_counter,barrier_counter=late.barrier_counter)
+                powers=(PreparedWeakenPowers(recalculated.strength,recalculated.toughness,recalculated.dexterity)
+                        if active_weaken else None)
+                late=replace(late, weaken_counter=recalculated.weaken_counter,
+                             barrier_counter=recalculated.barrier_counter, prepared_weaken_powers=powers)
+                next_status_runtime[pid]=replace(next_status_runtime[pid],work_quick=recalculated.dexterity)
+            elif late.barrier_counter>0:
+                late=replace(late,barrier_counter=late.barrier_counter-1)
+            prepared_late[pid]=late
+        next_nocast_overlay=NocastRoundOverlay(prepared_late)
 
     next_state = PersistentBattleState(
         session=next_session,
