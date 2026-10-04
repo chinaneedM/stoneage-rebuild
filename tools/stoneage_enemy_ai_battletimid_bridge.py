@@ -16,6 +16,7 @@ from tools.stoneage_battletimid_model import (
     BattleTimidSetup,
     resolve_battletimid_setup,
     validate_common_runtime_domain,
+    resolve_battletimid_post_damage,
 )
 from tools.stoneage_enemy_spawn_model import SpawnedEnemy
 from tools.stoneage_recovered25_petskill_runtime import Recovered25PetSkillRuntime
@@ -63,6 +64,13 @@ class EnemyAiBattleTimidSubmission:
         object.__setattr__(self,"skill_slot",skill_slot)
         object.__setattr__(self,"skill_id",skill_id)
         object.__setattr__(self,"source_target_slot",target)
+
+    def post_damage(self, *, draw: int, damage: int, target_is_pet: bool):
+        return resolve_battletimid_post_damage(
+            draw=int(draw),
+            damage=int(damage),
+            target_is_pet=bool(target_is_pet),
+        )
 
 
 def resolve_enemy_ai_battletimid_submission(
