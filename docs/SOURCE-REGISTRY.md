@@ -3141,3 +3141,6 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
 - Profile differences: `_SHOOTCHESTNUT` same-side gate enabled in gavin/iris and disabled in Bismarck; Bismarck's OPTION pointer comparison is not a NULL guard. All three compiled command enums are 2010 and source skill macros are 608; neither identifies recovered row 613's binary COM1.
 - Reproducible audit: `tools/stoneage_attack_crazed_source_audit.py`; derived report: `research/recovered/STONEAGE-ATTACKCRAZED-SOURCE-AUDIT-R1.txt`; specification: `research/mechanics/STONEAGE-ATTACKCRAZED-R1.md`.
 - Runtime remains OPEN; safe reference domain is non-null OPTION count 1..19. Actual recovered metadata/count requires the separate verified preservation-bundle probe.
+
+- Acceptance update: workflows **37174398691** (reference) and **37174398688** (source + hash-verified preservation data) PASS at `4539d885cf0007cd1b4e50dd311dd3ba397de7b9`; derived report written by `cc896d6b647e91c33675f8c97976e3d6695767bf`.
+- Exact recovered ID 613: FIELD=1, TARGET=1, COST=2, ILLEGAL=0; one non-NUL OPTION byte, SHA-256 `4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce`, attack count=3; 9 uses/9 templates reproduced. This supersedes the pending data gate above, while ordered runtime and early-version membership remain OPEN.

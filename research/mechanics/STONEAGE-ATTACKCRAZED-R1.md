@@ -84,3 +84,18 @@ SHA-256 before decoding. Only derived reports may be committed. Until that
 probe and enemy AI -> typed submission -> ordered physical round -> persistent
 coordinator acceptance pass, `RECOVERED25_ATTACKCRAZED_RUNTIME_R1` stays **OPEN**
 and executable slot-use coverage stays **2391/2486**, approximately **96.2%**.
+
+
+## Verified recovered population acceptance — 2026-10-04
+
+Workflow **37174398688** verified the two preservation parts and combined
+archive hash, reproduced the three pinned source audits, and closed the real
+population/OPTION gate. Source commit: `4539d885cf0007cd1b4e50dd311dd3ba397de7b9`;
+derived report commit: `cc896d6b647e91c33675f8c97976e3d6695767bf`.
+
+The exact row is ID 613, FIELD 1, TARGET 1, COST 2, ILLEGAL 0. OPTION is one
+non-NUL byte, SHA-256 `4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce`,
+parsed attack count **3**. The 9 positive slot uses/9 templates were reproduced.
+This closes the data gate only; ordered physical runtime admission remains OPEN.
+Reference workflow **37174398691** also passed. Local C double-to-int oracle
+checked 1004 stat pairs in addition to the dedicated regression tests.

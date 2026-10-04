@@ -1,10 +1,10 @@
 # Current State
 
-Last updated: 2026-09-30
+Last updated: 2026-10-04
 
 ## Current phase
 
-**Phase 0 — Earliest Clean Client Recovery & Reverse Engineering (Taiwan 1.0 clean baseline accepted; technical extraction active)**
+**Phase 1 — Foundation Baseline Technical Reconstruction & Specification (Taiwan 1.0 clean baseline accepted; deterministic runtime reconstruction active)**
 
 The independent GitHub repository and continuity scaffold are established on remote `main`. The project has now recovered and byte-verified its first early provenance-preserving retail client specimen: **Taiwan Waei/JSS StoneAge v1.0, Redump disc 104630**. This artifact is not the 1999 JSS origin, but it is early, publicly obtainable, physically attributable and complete enough to activate the protocol's next stage: use it as the primary current reverse-engineering specimen while continuing targeted recovery of the 1999 JSS and Korean operator branches for lineage comparison.
 
@@ -5638,3 +5638,15 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **RECOVERED25_ATTACKCRAZED_OPTION_DOMAIN_R1 = OPEN_PENDING_VERIFIED_BUNDLE_PROBE.**
 - **RECOVERED25_ATTACKCRAZED_RUNTIME_R1 = OPEN.** Executable slot-use coverage remains **2391/2486 ≈ 96.2%**; reference/probe work does not increase it.
 - Highest-priority next work: inspect the dedicated preservation-bundle probe, close exact ID-613 metadata/OPTION count from its hash-verified report, then implement a typed enemy-AI submission with correct first-hit/list-selection/per-hit mutation and final counter ordering through the persistent coordinator. Do not move to another callback or claim these 9 uses executable before E2E runtime acceptance.
+
+## Phase 1 AttackCrazed reference/data acceptance — 2026-10-04
+
+- Supersedes the pending source/data statuses in the immediately preceding milestone; ordered-round runtime remains OPEN.
+- Reference workflow **37174398691 = PASS** and hash-verified preservation-bundle/source-audit workflow **37174398688 = PASS**, at source commit `4539d885cf0007cd1b4e50dd311dd3ba397de7b9`. Derived report write-back commit: `cc896d6b647e91c33675f8c97976e3d6695767bf`.
+- Exact recovered row: **ID=613, FIELD=1, TARGET=1, COST=2, ILLEGAL=0**, non-NUL OPTION length **1 byte**, SHA-256 `4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce`, C-atoi attack count **3**. Population reproduced as **9 slot uses / 9 templates**.
+- Local validation includes **16 tests PASS** (14 dedicated reference/data tests plus 2 callback-pressure regressions), the three-profile active-feature/compiled-header audit, and an independent compiled-C oracle covering **1004** attack/defense stat pairs.
+- **ATTACKCRAZED_FIXED_SOURCE_R1 = CLOSED_SAFE_REFERENCE_ONLY.**
+- **RECOVERED25_ATTACKCRAZED_POPULATION_R1 = CLOSED.**
+- **RECOVERED25_ATTACKCRAZED_OPTION_DOMAIN_R1 = CLOSED_VERIFIED_COUNT_AND_METADATA.**
+- **RECOVERED25_ATTACKCRAZED_RUNTIME_R1 = OPEN.** Executable slot-use coverage remains **2391/2486 ≈ 96.2%**.
+- Next priority: implement typed ID-613 submission with closed FIELD/TARGET/COST/ILLEGAL/count metadata; preserve callback-time 0.8/0.7 work setup, three preselection draws before the initial physical TargetAdjust, first original-target hit plus list[1]/list[2] follow-ups, no damage division, per-hit mutable state/retarget and final counter ordering. Wire through enemy AI -> ordered round -> persistent coordinator, with explicit admitted weapon/target domains and no invented recovered numeric COM1. These 9 uses remain non-executable until E2E acceptance; do not advance to another callback.

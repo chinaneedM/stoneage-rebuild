@@ -478,3 +478,14 @@ IMPORTANT LIMIT: this closes a battle-map inheritance chain. It is not evidence 
 
 **WAEI FIRST-PARTY RUNTIME GENERATION CHAIN — 2001:**
 the archived first-party `stoneage.waei.net/saupdate/` surface now yields byte-recoverable `sa_40.exe` and `sa_42.exe`. `sa_40` is 528,384 bytes (SHA-256 `d54a6c109644dd4842f61bdd42a95362fda7a16f5e9b9dbd829d6b97c678fde1`) with PE timestamp 2001-09-27; `sa_42` is 557,056 bytes (SHA-256 `744fc0557f024930f351ef31b6adac0dbe41968625105d5f0eba45be1a048df6`) with PE timestamp 2001-11-01. Both self-identify as Waei `SaDeb.exe` runtimes and preserve the launcher-child `updated` architecture already seen in Taiwan v1.0. Waei's 2003 public prospectus dates marketing releases 2.0=2001-08-01, 2.5=2001-11-01, 3.0=2002-03-01, 4.0=2002-07-01, proving that suffixes `40/42` are not marketing 4.0/4.2 identifiers. A later community chronology's explicit 2001-04-24 `SA_24` update naming supports an internal update-generation interpretation. `sa_42` is a strong temporal 2.5-era runtime anchor, but exact launch-build identity remains open. Exact first-party probes find no usable `sa_3/23/24/25/41` payloads; only `sa_40/42` survive as HTTP-200 binaries. [SRC-TW-2001-WAEI-SAUPDATE-RUNTIME-BYTES-01; SRC-TW-2003-WAYI-PROSPECTUS-PRODUCT-CHRONOLOGY-01; SRC-TW-COMMUNITY-SA24-CHRONOLOGY-01]
+
+
+**2026-10-04 technical evidence boundary — AttackCrazed:** three pinned later
+descendant profiles and the hash-verified recovered25 preservation bundle
+converge on the valid three-hit OPTION domain for recovered data ID 613.
+The later source's candidate loop omits side slots 9/19; its first non-bow hit
+uses the submitted target, while subsequent hits use later preselected list
+entries. Same-side/pointer handling varies by source profile. This audit does
+**not** date the skill's introduction or prove Taiwan-v1 membership, and source
+macro 608/compiled command 2010 are not a recovered-binary command mapping.
+[SRC-DESCENDANT-ATTACKCRAZED-PINNED-PROFILES-R1]
