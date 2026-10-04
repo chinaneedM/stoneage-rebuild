@@ -105,6 +105,11 @@ from tools.stoneage_recovered25_attack_magic_runtime import (
 
 from tools.stoneage_enemy_ai_attack_crazed_bridge import EnemyAiAttackCrazedSubmission
 from tools.stoneage_attack_crazed_model import resolve_attack_crazed_target_list
+from tools.stoneage_enemy_ai_wildviolent_bridge import EnemyAiWildViolentSubmission
+from tools.stoneage_wildviolent_model import (
+    plan_wildviolent_nonbow_action,
+    wildviolent_divided_damage,
+)
 from tools.stoneage_enemy_ai_mdfyattack_bridge import EnemyAiMdfyAttackSubmission
 from tools.stoneage_mdfyattack_model import mdfyattack_attribute_damage
 
@@ -749,6 +754,28 @@ class AttackCrazedRolls:
 
 
 @dataclass(frozen=True)
+class WildViolentRolls:
+    """Action-time RAND(3,10) plus exactly that many physical hit bundles."""
+
+    count_roll_3_10: int
+    hit_rolls: tuple[OrdinaryAttackRolls, ...]
+
+    def __post_init__(self):
+        count=int(self.count_roll_3_10)
+        hits=tuple(self.hit_rolls)
+        if not 3 <= count <= 10:
+            raise ValueError("WildViolentAttack count roll must be 3..10")
+        if len(hits)!=count or not all(
+            isinstance(value,OrdinaryAttackRolls) for value in hits
+        ):
+            raise ValueError(
+                "WildViolentAttack requires exactly count-roll typed hit bundles"
+            )
+        object.__setattr__(self,"count_roll_3_10",count)
+        object.__setattr__(self,"hit_rolls",hits)
+
+
+@dataclass(frozen=True)
 class ComboExecutionRolls:
     """Explicit RNG consumed by one stable combo execution."""
 
@@ -956,6 +983,10 @@ class OrdinaryRoundEvent:
     attack_crazed_hit_index: int | None = None
     attack_crazed_target_list: tuple[int, ...] = ()
     attack_crazed_selection_draws: int = 0
+    wildviolent_skill_id: int | None = None
+    wildviolent_hit_index: int | None = None
+    wildviolent_attack_count: int | None = None
+    wildviolent_dodge_percent_points: int | None = None
     weaken_application: WeakenApplication | None = None
     weaken_tick_resolution: BarrierSelfTick | None = None
     weaken_skill_id: int | None = None
@@ -2634,7 +2665,7 @@ def _resolve_nonbow_multihit_baseline(
     hp_by_slot: Mapping[int,int],
     profiles: Mapping[str,BattleCombatProfile],
     command_by_slot: Mapping[int,BattleCommand],
-    rolls: ContinuationAttackRolls | AttackCrazedRolls,
+    rolls: ContinuationAttackRolls | AttackCrazedRolls | WildViolentRolls,
     defense_profile: str,
     setup_effects_by_participant_id: Mapping[
         str,BattleCommandSetupEffects
@@ -2653,6 +2684,7 @@ def _resolve_nonbow_multihit_baseline(
     ride_pet_runtime: RidePetRuntime | None = None,
     excluded_slots: Sequence[int] = (),
     attack_crazed_submission: EnemyAiAttackCrazedSubmission | None = None,
+    wildviolent_submission: EnemyAiWildViolentSubmission | None = None,
     field_attr: str = "none",
     field_power: int = 0,
 ) -> ContinuationBaselineResolution:
@@ -2670,22 +2702,38 @@ def _resolve_nonbow_multihit_baseline(
     """
 
     crazed=attack_crazed_submission is not None
-    expected_command=BATTLE_COM_ATTACK if crazed else BATTLE_COM_S_RENZOKU
+    wild=wildviolent_submission is not None
+    if crazed and wild:
+        raise ValueError("nonbow multihit semantic submissions overlap")
+    semantic_carrier=bool(crazed or wild)
+    expected_command=BATTLE_COM_ATTACK if semantic_carrier else BATTLE_COM_S_RENZOKU
     if int(command.command1) != expected_command:
-        raise ValueError("continuation baseline requires S_RENZOKU command")
+        raise ValueError("nonbow multihit command/carrier mismatch")
     actor_slot=int(actor_slot)
     if by_slot.get(actor_slot) != actor:
         raise ValueError("continuation actor/slot mapping mismatch")
     actor_id=str(actor.participant_id)
     if actor_id not in profiles:
         raise KeyError(f"missing combat profile for {actor_id}")
-    count=attack_crazed_submission.attack_count if crazed else battle_command3_low(command.command3)
-    if not 1 <= count <= 10:
-        raise ValueError("S_RENZOKU LOW(COM3) must be in 1..10")
-    if len(rolls.hit_rolls) != count:
-        raise ValueError(
-            "ContinuationAttack requires exactly LOW(COM3) hit-roll bundles"
+    wild_plan=None
+    if wild:
+        if not isinstance(rolls,WildViolentRolls):
+            raise TypeError("WildViolentAttack needs WildViolentRolls")
+        wild_plan=plan_wildviolent_nonbow_action(
+            count_roll_3_10=rolls.count_roll_3_10,
+            packed_com3=command.command3,
+            target_slot=command.command2,
         )
+        count=int(wild_plan.attack_count)
+    else:
+        count=(
+            attack_crazed_submission.attack_count
+            if crazed else battle_command3_low(command.command3)
+        )
+    if not 1 <= count <= 10:
+        raise ValueError("nonbow multihit count must be in 1..10")
+    if len(rolls.hit_rolls) != count:
+        raise ValueError("nonbow multihit RNG bundle count mismatch")
 
     hp={int(slot):max(0,int(value)) for slot,value in hp_by_slot.items()}
     for slot,participant in by_slot.items():
@@ -2772,7 +2820,7 @@ def _resolve_nonbow_multihit_baseline(
         )
     original_target=int(command.command2)
     event_command=expected_command
-    result_prefix="attack_crazed" if crazed else "continuation"
+    result_prefix=("wildviolent" if wild else ("attack_crazed" if crazed else "continuation"))
     hit_targets=(original_target,)*count
     selection_draws=0
     target_list=()
@@ -2802,6 +2850,20 @@ def _resolve_nonbow_multihit_baseline(
         selection_draws=listing.selection_draws
         target_list=listing.slots[:count]
         hit_targets=(original_target,)+listing.slots[1:count]
+    if wild:
+        if (
+            actor.kind!="enemy" or actor.side!="enemy"
+            or profiles[actor_id].counter_weapon_type!=COUNTER_WEAPON_FIST
+        ):
+            raise ValueError("WildViolentAttack currently admits enemy FIST actors only")
+        if (
+            wildviolent_submission.participant_id!=actor_id
+            or wildviolent_submission.source_target_slot!=original_target
+            or int(wildviolent_submission.setup.packed_com3)!=int(command.command3)
+        ):
+            raise ValueError("WildViolentAttack semantic carrier/setup drift")
+        if tuple(wild_plan.original_target_list)!=(original_target,)*20:
+            raise ValueError("WildViolentAttack original-target list drift")
     actor_profile=profiles[actor_id]
     resolved: list[OrdinaryRoundEvent]=[]
     last_target: int | None=None
@@ -2865,10 +2927,10 @@ def _resolve_nonbow_multihit_baseline(
                 ),
                 attacker_type=_participant_battle_kind(actor),
                 defender_type=_participant_battle_kind(original_defender),
-                extra_percent_points=_noguard_dodge_percent_modifier(
-                    command_by_slot.get(
-                        target,
-                        BattleCommand(BATTLE_COM_NONE),
+                extra_percent_points=(
+                    (int(wild_plan.additive_dodge_percent_points) if wild else 0)
+                    + _noguard_dodge_percent_modifier(
+                        command_by_slot.get(target,BattleCommand(BATTLE_COM_NONE))
                     )
                 ),
             )
@@ -2884,6 +2946,10 @@ def _resolve_nonbow_multihit_baseline(
                         attack_crazed_hit_index=hit_index if crazed else None,
                         attack_crazed_target_list=target_list,
                         attack_crazed_selection_draws=selection_draws,
+                        wildviolent_skill_id=(wildviolent_submission.skill_id if wild else None),
+                        wildviolent_hit_index=hit_index if wild else None,
+                        wildviolent_attack_count=count if wild else None,
+                        wildviolent_dodge_percent_points=(wild_plan.additive_dodge_percent_points if wild else None),
                         original_target_slot=original_target,
                         resolved_target_slot=target,
                         retargeted=bool(retargeted),
@@ -3019,7 +3085,9 @@ def _resolve_nonbow_multihit_baseline(
 
         # Fixed BATTLE_Attack applies gDamageDiv after AttackSeq (including
         # Guardian/critical/guard) and before BATTLE_DamageSub.
-        if not crazed:
+        if wild:
+            damage=wildviolent_divided_damage(damage,count)
+        elif not crazed:
             damage=continuation_divided_damage(damage,count)
         if damage == 0 and guardian_redirected:
             # AttackSeq's redirected zero-damage path is rendered as NORMAL/1.
@@ -3285,6 +3353,10 @@ def _resolve_nonbow_multihit_baseline(
                 attack_crazed_hit_index=hit_index if crazed else None,
                 attack_crazed_target_list=target_list,
                 attack_crazed_selection_draws=selection_draws,
+                wildviolent_skill_id=(wildviolent_submission.skill_id if wild else None),
+                wildviolent_hit_index=hit_index if wild else None,
+                wildviolent_attack_count=count if wild else None,
+                wildviolent_dodge_percent_points=(wild_plan.additive_dodge_percent_points if wild else None),
                 original_target_slot=original_target,
                 resolved_target_slot=resolved_damage_slot,
                 retargeted=bool(retargeted),
@@ -3430,6 +3502,8 @@ def resolve_ordinary_round(
     mdfyattack_submissions_by_participant_id: Mapping[str,EnemyAiMdfyAttackSubmission] | None = None,
     attack_crazed_submissions_by_participant_id: Mapping[str,EnemyAiAttackCrazedSubmission] | None = None,
     attack_crazed_rolls_by_attack_id: Mapping[str,AttackCrazedRolls] | None = None,
+    wildviolent_submissions_by_participant_id: Mapping[str,EnemyAiWildViolentSubmission] | None = None,
+    wildviolent_rolls_by_attack_id: Mapping[str,WildViolentRolls] | None = None,
     base_status_runtime_by_participant_id: Mapping[
         str,BaseBattleStatusRuntime
     ] | None = None,
@@ -4062,12 +4136,53 @@ def resolve_ordinary_round(
                 "GuardBreak2 ordering carrier must be ATTACK/source-target"
             )
 
+    wildviolent_submissions=dict(wildviolent_submissions_by_participant_id or {})
+    wildviolent_actor_ids=set(wildviolent_submissions)
+    if wildviolent_actor_ids-set(slot_by_id):
+        raise ValueError("WildViolentAttack references unknown actors")
+    if wildviolent_actor_ids & (
+        guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
+        | fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
+        | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+    ):
+        raise ValueError("WildViolentAttack semantic submissions overlap another skill")
+    for pid,submission in wildviolent_submissions.items():
+        if not isinstance(submission,EnemyAiWildViolentSubmission):
+            raise TypeError("WildViolentAttack submission wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (
+            submission.participant_id!=pid
+            or entry.participant.kind!="enemy"
+            or entry.participant.side!="enemy"
+            or entry.command.command1!=BATTLE_COM_ATTACK
+            or entry.command.command2!=submission.source_target_slot
+            or int(entry.command.command3)!=int(submission.setup.packed_com3)
+        ):
+            raise ValueError(
+                "WildViolentAttack ordering carrier must be enemy ATTACK/source-target/setup COM3"
+            )
+        if profiles[pid].counter_weapon_type!=COUNTER_WEAPON_FIST:
+            raise ValueError("WildViolentAttack currently admits enemy FIST actors only")
+        effects=setup_effects.get(pid,BattleCommandSetupEffects())
+        if (effects.attack_power,effects.defense_power)!=(
+            submission.setup.attack_power,submission.setup.defense_power
+        ):
+            raise ValueError("WildViolentAttack callback work-power setup drift")
+    wildviolent_rolls={
+        str(pid):rolls for pid,rolls in (wildviolent_rolls_by_attack_id or {}).items()
+    }
+    if set(wildviolent_rolls)-wildviolent_actor_ids:
+        raise ValueError("WildViolentAttack RNG references non-WildViolent actors")
+    if any(not isinstance(value,WildViolentRolls) for value in wildviolent_rolls.values()):
+        raise TypeError("WildViolentAttack RNG wrong type")
+    consumed_wildviolent_roll_ids=set()
+
     attack_crazed_submissions=dict(attack_crazed_submissions_by_participant_id or {})
     attack_crazed_rolls=dict(attack_crazed_rolls_by_attack_id or {})
     if set(attack_crazed_submissions)-set(slot_by_id):
         raise ValueError("AttackCrazed references unknown actors")
     if set(attack_crazed_submissions) & (
-        guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
+        wildviolent_actor_ids | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
         | fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
         | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
@@ -4092,7 +4207,7 @@ def resolve_ordinary_round(
     if set(mdfyattack_submissions)-set(slot_by_id):
         raise ValueError("Mdfyattack references unknown actors")
     if set(mdfyattack_submissions) & (
-        set(attack_crazed_submissions) | guard_break2_actor_ids | barrier_actor_ids
+        wildviolent_actor_ids | set(attack_crazed_submissions) | guard_break2_actor_ids | barrier_actor_ids
         | nocast_actor_ids | fall_ground_actor_ids | battle_tear_actor_ids
         | mp_damage_actor_ids | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
@@ -4112,7 +4227,7 @@ def resolve_ordinary_round(
     if weaken_actor_ids-set(slot_by_id):
         raise ValueError("Weaken references unknown actors")
     if weaken_actor_ids & (
-        set(mdfyattack_submissions) | set(attack_crazed_submissions) | guard_break2_actor_ids
+        wildviolent_actor_ids | set(mdfyattack_submissions) | set(attack_crazed_submissions) | guard_break2_actor_ids
         | barrier_actor_ids | nocast_actor_ids | fall_ground_actor_ids | battle_tear_actor_ids
         | mp_damage_actor_ids | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
@@ -6078,16 +6193,30 @@ def resolve_ordinary_round(
             continue
 
         crazed_submission=attack_crazed_submissions.get(str(participant_id))
+        wild_submission=wildviolent_submissions.get(str(participant_id))
         execute_crazed=bool(
             crazed_submission is not None and command.command1==BATTLE_COM_ATTACK
             and not (current_status_tick is not None and current_status_tick.confusion_rewrote_command)
         )
-        if command.command1 == BATTLE_COM_S_RENZOKU or execute_crazed:
+        execute_wild=bool(
+            wild_submission is not None and command.command1==BATTLE_COM_ATTACK
+            and not (current_status_tick is not None and current_status_tick.confusion_rewrote_command)
+        )
+        if execute_crazed and execute_wild:
+            raise ValueError("multihit semantic execution overlap")
+        if command.command1 == BATTLE_COM_S_RENZOKU or execute_crazed or execute_wild:
             continuation_id=str(participant_id)
-            if not execute_crazed and continuation_id not in normalized_continuation_rolls:
-                raise KeyError(
-                    f"missing ContinuationAttack rolls for {continuation_id}"
-                )
+            if (
+                not execute_crazed and not execute_wild
+                and continuation_id not in normalized_continuation_rolls
+            ):
+                raise KeyError(f"missing ContinuationAttack rolls for {continuation_id}")
+            if execute_wild:
+                if continuation_id not in wildviolent_rolls:
+                    raise KeyError(
+                        f"missing WildViolentAttack action-time rolls for {continuation_id}"
+                    )
+                consumed_wildviolent_roll_ids.add(continuation_id)
             continuation=_resolve_nonbow_multihit_baseline(
                 actor=participant,
                 actor_slot=int(slot),
@@ -6097,8 +6226,15 @@ def resolve_ordinary_round(
                 hp_by_slot=hp_by_slot,
                 profiles=profiles,
                 command_by_slot=command_by_slot,
-                rolls=(attack_crazed_rolls[continuation_id] if execute_crazed else normalized_continuation_rolls[continuation_id]),
+                rolls=(
+                    attack_crazed_rolls[continuation_id]
+                    if execute_crazed else (
+                        wildviolent_rolls[continuation_id]
+                        if execute_wild else normalized_continuation_rolls[continuation_id]
+                    )
+                ),
                 attack_crazed_submission=crazed_submission if execute_crazed else None,
+                wildviolent_submission=wild_submission if execute_wild else None,
                 defense_profile=defense_profile,
                 setup_effects_by_participant_id=setup_effects,
                 guardian_registrations_by_defender_slot=guardian_registrations,
@@ -6175,7 +6311,10 @@ def resolve_ordinary_round(
                     if continuation.last_target_slot is None
                     else int(continuation.last_target_slot)
                 ),
-                command3=command.command3,
+                command3=(
+                    battle_command3_low(command.command3)
+                    if execute_wild else command.command3
+                ),
                 input_complete=command.input_complete,
             )
 
@@ -7712,6 +7851,15 @@ def resolve_ordinary_round(
                 "Weaken RNG supplied for status-suppressed semantic action: "
                 + participant_id
             )
+
+    unused_wildviolent_roll_ids=sorted(
+        set(wildviolent_rolls)-consumed_wildviolent_roll_ids
+    )
+    if unused_wildviolent_roll_ids:
+        raise ValueError(
+            "unused WildViolentAttack action RNG supplied for status/death-suppressed actors: "
+            f"{unused_wildviolent_roll_ids}"
+        )
 
     unused_attack_magic_roll_ids=sorted(
         set(attack_magic_rolls)-consumed_attack_magic_roll_ids
