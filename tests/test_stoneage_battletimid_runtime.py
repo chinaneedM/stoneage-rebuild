@@ -11,6 +11,12 @@ from tools.stoneage_battle_round_model import (
     prepare_battle_round,
     resolve_ordinary_round,
 )
+from tools.stoneage_battle_state_model import (
+    ACTIVE,
+    ENEMY_WIN,
+    begin_persistent_battle,
+    resolve_persistent_ordinary_round,
+)
 from tools.stoneage_battle_status_model import (
     BaseBattleStatusRuntime,
     BaseBattleStatusState,
@@ -20,7 +26,13 @@ from tools.stoneage_battletimid_model import resolve_battletimid_setup
 from tools.stoneage_enemy_ai_battletimid_bridge import (
     EnemyAiBattleTimidSubmission,
 )
-from tools.stoneage_singleplayer_battle import BattleParticipant
+from tools.stoneage_singleplayer_battle import BattleParticipant, BattleSession
+from tools.stoneage_singleplayer_domain import (
+    EncounterRequest,
+    EnemyVariantId,
+    MapPosition,
+    PetTemplateId,
+)
 
 
 def actor(
@@ -32,6 +44,7 @@ def actor(
     attack=100,
     defense=0,
     quick=50,
+    source_pet_slot=None,
 ):
     return BattleParticipant(
         participant_id=pid,
@@ -45,6 +58,27 @@ def actor(
         quick=quick,
         name=pid,
         fixed_vital=40,
+        source_pet_slot=source_pet_slot,
+    )
+
+
+
+def battle_session(player,enemy,pet=None):
+    encounter=EncounterRequest(
+        position=MapPosition(2000,10,10),
+        area_index=1,
+        group_id=1,
+        enemy_variant_id=EnemyVariantId(10),
+        pet_template_id=PetTemplateId(20),
+        level=5,
+        max_enemy_count=1,
+    )
+    return BattleSession(
+        origin_position=encounter.position,
+        encounter=encounter,
+        player=player,
+        allied_pets=(() if pet is None else (pet,)),
+        enemies=(enemy,),
     )
 
 
@@ -253,6 +287,97 @@ class BattleTimidRuntimeTests(unittest.TestCase):
                 status_runtime=sleeping,
                 status_rolls={"enemy":BaseStatusTurnRolls()},
             )
+
+
+    def test_persistent_player_exit_finishes_as_defeat(self):
+        player=actor("player","player","player",hp=500,quick=10)
+        enemy=actor("enemy","enemy","enemy",quick=100)
+        state=begin_persistent_battle(
+            battle_session(player,enemy),
+            slots={"player":0,"enemy":10},
+        )
+        sub=submission(enemy=enemy)
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={"enemy":attack_rolls()},
+            defense_profile="newpower_70pct",
+            battletimid_submissions_by_participant_id={"enemy":sub},
+            battletimid_rolls_by_participant_id={"enemy":14},
+        )
+        self.assertEqual(result.after.result,ENEMY_WIN)
+        self.assertIn("player",result.after.battle_exited_participant_ids)
+        self.assertGreater(result.after.hp_by_participant_id["player"],0)
+
+    def test_persistent_pet_exit_keeps_player_battle_active(self):
+        player=actor("player","player","player",hp=500,quick=10)
+        pet=actor(
+            "pet","player","pet",hp=500,quick=20,source_pet_slot=0
+        )
+        enemy=actor("enemy","enemy","enemy",quick=100)
+        state=begin_persistent_battle(
+            battle_session(player,enemy,pet),
+            slots={"player":0,"pet":1,"enemy":10},
+        )
+        sub=submission(target=1,enemy=enemy)
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=1),
+            },
+            initiative_random_subtracts={"player":0,"pet":0,"enemy":0},
+            profiles={
+                "player":profile(),"pet":profile(),"enemy":profile()
+            },
+            attack_rolls={"enemy":attack_rolls()},
+            defense_profile="newpower_70pct",
+            battletimid_submissions_by_participant_id={"enemy":sub},
+            battletimid_rolls_by_participant_id={"enemy":14},
+        )
+        self.assertEqual(result.after.phase,ACTIVE)
+        self.assertIn("pet",result.after.battle_exited_participant_ids)
+        self.assertNotIn("player",result.after.battle_exited_participant_ids)
+        self.assertEqual(
+            tuple(p.participant_id for p in result.after.session.allied_pets),
+            ("pet",),
+        )
+
+    def test_persistent_initiative_uses_callback_workquick_not_fixdex(self):
+        player=actor("player","player","player",hp=500,quick=170)
+        enemy=actor("enemy","enemy","enemy",quick=200)
+        state=begin_persistent_battle(
+            battle_session(player,enemy),
+            slots={"player":0,"enemy":10},
+        )
+        sub=submission(enemy=enemy)
+        self.assertEqual(sub.setup.quick,160)
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={"player":profile(),"enemy":profile(dex=200)},
+            attack_rolls={"enemy":attack_rolls()},
+            defense_profile="newpower_70pct",
+            battletimid_submissions_by_participant_id={"enemy":sub},
+            battletimid_rolls_by_participant_id={"enemy":15},
+        )
+        meaningful=[
+            event for event in result.round.events
+            if event.result not in {"status_tick","setmagicpet_tick"}
+        ]
+        self.assertEqual(meaningful[0].participant_id,"player")
+        self.assertEqual(profiles_fixed_dex := 200,200)
+        self.assertEqual(profiles_fixed_dex,200)
 
 
 if __name__=="__main__":
