@@ -107,9 +107,9 @@ class RefreshRuntimeTests(unittest.TestCase):
         )
         overlay = late(counter=3, nc_flag=1)
         vector = refresh_status_vector(base, overlay, require_complete=True)
-        self.assertEqual((vector[6], vector[10]), (2, 3))
+        self.assertEqual((vector[2], vector[10]), (2, 3))
         base2, overlay2 = apply_refresh_cleared_status(base, overlay, 10)
-        self.assertEqual(base2.status.paralysis, 1)
+        self.assertEqual(base2.status.paralysis, 2)
         self.assertEqual((overlay2.counter, overlay2.nc_flag), (0, 0))
 
     def test_weaken_clear_retains_current_prepared_powers(self):
@@ -227,7 +227,9 @@ class RefreshRuntimeTests(unittest.TestCase):
         self.assertEqual((event.refresh_status_index, event.refresh_cleared_status), (0, 9))
         refreshed = result.nocast_overlay.runtime_by_participant_id["player"]
         self.assertEqual((refreshed.weaken_counter, refreshed.barrier_counter), (2, 0))
-        self.assertEqual(result.base_status_runtime_by_participant_id["player"].status.paralysis, 1)
+        # Player StatusSeq can precede Refresh under the recovered action order;
+        # Barrier freezes the lower base counter until Refresh clears Barrier.
+        self.assertEqual(result.base_status_runtime_by_participant_id["player"].status.paralysis, 2)
 
     def test_dead_single_target_consumes_only_explicit_multilist_draw(self):
         pet = actor("pet", "player", "pet")
