@@ -10,7 +10,7 @@ def fixture():
     # Independent synthetic mechanics; not an asserted recovered OPTION row.
     entry=Recovered25PetSkillEntry(541,1,3,7,1000,'PETSKILL_WildViolentAttack',
                                    '攻%50防%-50避12'.encode('cp950'))
-    return (SimpleNamespace(skills={541:entry}),
+    return (SimpleNamespace(skills={541:entry,652:replace(entry,skill_id=652)}),
             SimpleNamespace(templates={i:SimpleNamespace(skill_slot_ids=(541,0,-1)) for i in range(7)}))
 
 
@@ -26,14 +26,18 @@ class WildViolentProbeTests(unittest.TestCase):
         pets,enemies=fixture()
         pets.skills[700]=replace(pets.skills[541],skill_id=700)
         result=analyze_runtime_objects(pets,enemies)
-        self.assertEqual([r['id'] for r in result['rows']],[541,700])
+        self.assertEqual([r['id'] for r in result['rows']],[541,652,700])
         self.assertEqual(result['rows'][1]['slot_references'],0)
-        self.assertTrue(result['population_closed'])
+        self.assertFalse(result['population_closed'])
 
     def test_neighbor_spelling_is_not_admitted(self):
         pets,enemies=fixture()
         pets.skills[540]=replace(pets.skills[541],skill_id=540,function_name='PETSKILL_AttackCrazed')
-        self.assertEqual(len(analyze_runtime_objects(pets,enemies)['rows']),1)
+        self.assertEqual(len(analyze_runtime_objects(pets,enemies)['rows']),2)
+
+    def test_missing_unreferenced_record_is_detected(self):
+        pets,enemies=fixture();del pets.skills[652]
+        self.assertFalse(analyze_runtime_objects(pets,enemies)['population_closed'])
 
     def test_negative_high_preserves_observed_value_and_open_domain(self):
         pets,enemies=fixture()

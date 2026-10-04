@@ -87,3 +87,17 @@ then determine whether a safe, independently typed enemy-AI -> ordered action
 -> persistent coordinator domain can be admitted. Any original-build or UB
 ambiguity remains explicit. These seven uses stay OPEN and accepted pressure
 coverage remains 2415/2486 until runtime acceptance.
+
+
+## Verified data supplement — 2026-10-04
+
+Initial verified run 37192280455 found the complete callback family **541/652**,
+with **7/0** positive references and **7** templates. Both rows have FIELD 1,
+TARGET 6, COST 2, ILLEGAL 1000 and 20-byte non-NUL OPTION. Their CP950/Big5
+fractions/dodge are respectively **0.949999988079071 / -0.3499999940395355 / 30**
+and **0.6000000238418579 / -0.5 / 50**. The exact OPTION and full petskill hashes
+are in the derived report. Neither has the undefined HIGH shift discussed above.
+This supersedes the unknown population/defined-shift data gate; original
+compiler charset and ordered runtime remain OPEN. The hardened probe now
+checks both observed IDs and full-file hash and requires **60 actual-byte
+callback witnesses** across all three source profiles and both charsets.

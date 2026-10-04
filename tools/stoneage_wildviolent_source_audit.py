@@ -19,7 +19,7 @@ from tools.stoneage_wildviolent_model import (
 )
 
 
-def _native_oracle(data, profile):
+def _native_oracle(data, profile, *, recovered_options=()):
     callback = _definition(data['pet_skill'], CALLBACK_NAME)
     packed_macros=[]
     for name in ('CHAR_GETWORKINT_HIGH','CHAR_SETWORKINT_HIGH'):
@@ -39,6 +39,9 @@ def _native_oracle(data, profile):
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
+#include <float.h>
+_Static_assert(CHAR_BIT==8 && INT_MAX==2147483647 && sizeof(float)==4 && FLT_RADIX==2 && FLT_MANT_DIG==24,"requires int32/IEEE binary32");
 #define BOOL int
 #define TRUE 1
 #define FALSE 0
@@ -98,20 +101,20 @@ int main(void){
              '攻%-1.25防%50避bad', '攻%200防%-100避 0', '避', '攻%防%')
     for charset in ('utf-8', 'cp950'):
         callback_lines, expected = [], []
-        for text in texts:
-            for option_encoding in ('utf-8', 'cp950'):
-                raw = text.encode(option_encoding)
-                for strength,toughness,before_a,before_d,packed in (
-                    (0,0,19,23,0x1234abcd), (100,101,77,79,-65535),
-                    (10001,9999,3,5,65535), (1000000,1000000,77,79,1234),
-                    (16777217,16777219,8,9,0x12345678)):
-                    result = resolve_wildviolent_setup(
-                        option=raw, execution_charset=charset, profile=profile,
-                        target_slot=7, fixed_strength=strength, fixed_toughness=toughness,
-                        attack_power_before=before_a, defense_power_before=before_d,
-                        packed_com3_before=packed)
-                    callback_lines.append(f'C {raw.hex() or "EMPTY"} {strength} {toughness} {before_a} {before_d} {packed}')
-                    expected.append(f'C {int(result.source_return_value)} 1 7 1 {result.attack_power} {result.defense_power} {result.packed_com3}')
+        options=[text.encode(encoding) for text in texts for encoding in ('utf-8','cp950')]
+        options+=list(recovered_options)
+        for raw in options:
+            for strength,toughness,before_a,before_d,packed in (
+                (0,0,19,23,0x1234abcd), (100,101,77,79,-65535),
+                (10001,9999,3,5,65535), (1000000,1000000,77,79,1234),
+                (16777217,16777219,8,9,0x12345678)):
+                result = resolve_wildviolent_setup(
+                    option=raw, execution_charset=charset, profile=profile,
+                    target_slot=7, fixed_strength=strength, fixed_toughness=toughness,
+                    attack_power_before=before_a, defense_power_before=before_d,
+                    packed_com3_before=packed)
+                callback_lines.append(f'C {raw.hex() or "EMPTY"} {strength} {toughness} {before_a} {before_d} {packed}')
+                expected.append(f'C {int(result.source_return_value)} 1 7 1 {result.attack_power} {result.defense_power} {result.packed_com3}')
         if profile != 'bismarck':
             callback_lines.append('C NULL 100 100 77 79 1234')
             expected.append('C 0 1 7 1 77 79 1234')
@@ -151,11 +154,12 @@ int main(void){
                     diagnostics+=1
         cases.append({'execution_charset':charset,'callback_cases':len(callback_lines),
                       'division_cases':len(damages)*8,'action_plan_cases':32,
+                      'recovered_callback_cases':len(recovered_options)*5,
                       'expected_undefined_shift_diagnostics':diagnostics})
     return cases
 
 
-def analyze_profile(name, root):
+def analyze_profile(name, root, *, recovered_options=()):
     root=Path(root).resolve()
     head=subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip()
     if head!=PINNED[name] or subprocess.check_output(['git','-C',str(root),'status','--porcelain'],text=True).strip():
@@ -212,7 +216,7 @@ def analyze_profile(name, root):
             'same_side_limit_active':'_SKILLLIMIT' in active,
             'option_failure_gate':'strcmp_empty_NULL_undefined' if name=='bismarck' else 'NULL_false_empty_accepted',
             'hashes':{k:_sha(p) for k,p in paths.items()},'gates':gates,
-            'native':_native_oracle(data,name)}
+            'native':_native_oracle(data,name,recovered_options=recovered_options)}
 
 
 def emit(rows):

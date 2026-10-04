@@ -94,7 +94,16 @@ jobs:
           test -n "$D"; test -n "$C"
           python3 -m tools.stoneage_recovered25_wildviolent_probe \
             --data-dir "$D" --setup "$C" \
+            --gavin-dir /tmp/wildviolent-source/gavin \
+            --iris-dir /tmp/wildviolent-source/iris \
+            --bismarck-dir /tmp/wildviolent-source/bismarck \
             > research/recovered/STONEAGE-25-WILDVIOLENT-PROBE-R1.txt
+          grep -F 'COUNT|wildviolent_skill_rows|2' \
+            research/recovered/STONEAGE-25-WILDVIOLENT-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_WILDVIOLENT_CONDITIONAL_OPTION_DOMAIN_CLOSED' \
+            research/recovered/STONEAGE-25-WILDVIOLENT-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_WILDVIOLENT_ACTUAL_CALLBACK_CLOSED_CONDITIONAL_CHARSET_REFERENCE' \
+            research/recovered/STONEAGE-25-WILDVIOLENT-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_WILDVIOLENT_POPULATION_CLOSED' \
             research/recovered/STONEAGE-25-WILDVIOLENT-PROBE-R1.txt
           grep -F 'COUNT|enemybase_slot_references|7' \
