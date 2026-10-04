@@ -139,3 +139,27 @@ sleep and combo exclusion. The coordinator E2E test selects the recovered skill
 through AI, executes three hits, persists state, and executes a second round
 starting from the previous HP. Executable coverage changes only after remote
 runtime acceptance and the updated verified pressure report.
+
+
+## Runtime acceptance — 2026-10-04
+
+The preceding implementation-pending status is superseded by dedicated
+runtime workflow **37175407818**, battle core **37175407825**, coordinator
+**37175407757**, runtime golden **37175407754** and the related magic/skill
+regressions, all PASS at `26d47e45402b302822639c524b82396b29b0c6a0`.
+Local acceptance comprises 985 tests across 102 affected modules, including
+17 specialized runtime tests and the two-round AI/coordinator witness.
+Full recovered25 region/runtime-stack workflow **37175407813 = PASS**, including
+the collision-provider and client-ADRN resource checks; all 18 affected runtime
+workflows completed successfully.
+
+`RECOVERED25_ATTACKCRAZED_RUNTIME_R1 = CLOSED` within the explicit
+recovered-enemy/opposite-side/FIST/count-3 domain. This increases executable
+positive slot uses to 2400/2486 (~96.5%). No production-engine decision,
+early-version membership, historical command enum or new character-save
+field is implied by this runtime closure.
+
+Verified callback-pressure workflow **37175482501** regenerated the report
+and selected the separately spelled `PETSKILL_Mdfyattack` as the next open
+family: IDs 548/549/550/551, 8 uses across 8 templates. Its semantics remain
+OPEN until independent source/data verification.
