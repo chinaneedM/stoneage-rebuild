@@ -6,6 +6,7 @@ from pathlib import Path
 from tools.stoneage_recovered25_petskill_runtime import load_recovered25_petskill_runtime
 from tools.stoneage_recovered25_enemybase_runtime import load_recovered25_enemybase_runtime
 from tools.stoneage_wildviolent_model import CALLBACK_NAME, parse_wildviolent_option
+from tools.stoneage_enemy_ai_wildviolent_bridge import validate_recovered25_wildviolent_population
 
 EXPECTED_REFERENCED_IDS = (541,)
 EXPECTED_CALLBACK_IDS = (541,652)  # Observed by verified run 37192280455.
@@ -96,6 +97,8 @@ def main():
         raise SystemExit('verified full petskill file hash drift')
     if not result['population_closed']:
         raise SystemExit('referenced population drift')
+    validate_recovered25_wildviolent_population(pets)
+    print('RESOLUTION|RECOVERED25_WILDVIOLENT_TYPED_ADMISSION_CLOSED_CONDITIONAL_CP950')
     if result['conditional_option_domain_closed']:
         from tools.stoneage_wildviolent_source_audit import analyze_profile
         options=tuple(pets.skills[i].option_bytes for i in EXPECTED_CALLBACK_IDS)
