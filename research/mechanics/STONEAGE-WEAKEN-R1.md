@@ -158,5 +158,9 @@ the complete family, seven-slot identity and exact byte hashes.
 
 Population/OPTION closure does not increase executable skill-slot coverage.
 These seven uses remain OPEN until enemy-AI, ordered status visits, pre-command
-recalculation and persistent coordinator E2E acceptance. Final scheduling-gate
-and 127-test remote acceptance is recorded in CURRENT-STATE when complete.
+recalculation and persistent coordinator E2E acceptance. Final reference **37179420593** and source/hash-verified probe **37179420582**
+PASS at `4a626dbd148d4bcda6665314fcb9b6f9b7b9df90`, including all source
+scheduling gates and 127 reference/regression tests. Source/data are closed
+in this declared domain; ordered runtime remains OPEN. Earlier Barrier
+StatusSeq self-freeze describes that visit only: runtime integration must also
+apply its now-audited normal preparation-stage decrement.
