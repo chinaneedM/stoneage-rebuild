@@ -42,6 +42,9 @@ from tools.stoneage_enemy_ai_barrier_bridge import EnemyAiBarrierSubmission
 from tools.stoneage_enemy_ai_guard_break2_bridge import (
     EnemyAiGuardBreak2Submission,
 )
+from tools.stoneage_enemy_ai_battletimid_bridge import (
+    EnemyAiBattleTimidSubmission,
+)
 from tools.stoneage_nocast_runtime_state import (
     NocastActionRolls,
     NocastRoundOverlay,
@@ -1355,6 +1358,12 @@ def resolve_persistent_ordinary_round(
     guard_break2_submissions_by_participant_id: Mapping[
         str,EnemyAiGuardBreak2Submission
     ] | None = None,
+    battletimid_submissions_by_participant_id: Mapping[
+        str,EnemyAiBattleTimidSubmission
+    ] | None = None,
+    battletimid_rolls_by_participant_id: Mapping[
+        str,int | None
+    ] | None = None,
     fall_ground_submissions_by_participant_id: Mapping[
         str,EnemyAiFallGroundSubmission
     ] | None = None,
@@ -1404,6 +1413,53 @@ def resolve_persistent_ordinary_round(
         raise ValueError(
             f"initiative rolls must cover exactly living actors; "
             f"missing={missing}, extra={extra}"
+        )
+
+    battletimid_submissions={
+        str(pid):submission
+        for pid,submission in (
+            battletimid_submissions_by_participant_id or {}
+        ).items()
+    }
+    unknown_battletimid_ids=sorted(
+        set(battletimid_submissions)-living_ids
+    )
+    if unknown_battletimid_ids:
+        raise ValueError(
+            "BattleTimid submissions reference inactive actors: "
+            f"{unknown_battletimid_ids}"
+        )
+    for pid,submission in battletimid_submissions.items():
+        if not isinstance(submission,EnemyAiBattleTimidSubmission):
+            raise TypeError("BattleTimid submission has wrong type")
+        if str(submission.participant_id)!=pid:
+            raise ValueError("BattleTimid submission participant drift")
+        if state.base_status_runtime_by_participant_id[pid].status.drunk>0:
+            raise ValueError(
+                "BattleTimid with drunk actor is outside R1"
+            )
+        if (
+            state.nocast_overlay is not None
+            and state.nocast_overlay.runtime_by_participant_id[
+                pid
+            ].prepared_weaken_powers is not None
+        ):
+            raise ValueError(
+                "BattleTimid with prepared Weaken powers is outside R1"
+            )
+    if battletimid_submissions:
+        participants=tuple(
+            replace(
+                participant,
+                quick=int(
+                    battletimid_submissions[
+                        str(participant.participant_id)
+                    ].setup.quick
+                ),
+            )
+            if str(participant.participant_id) in battletimid_submissions
+            else participant
+            for participant in participants
         )
 
     normalized_escape_contexts=dict(escape_contexts or {})
@@ -1468,6 +1524,41 @@ def resolve_persistent_ordinary_round(
         if participant_id in living_ids:
             effective_commands[participant_id]=carried
 
+    effective_setup_effects={
+        str(pid):effects
+        for pid,effects in (
+            command_setup_effects_by_participant_id or {}
+        ).items()
+    }
+    effective_setup_effects.update({
+        str(pid):effects
+        for pid,effects in (
+            state.carried_setup_effects_by_participant_id.items()
+        )
+        if pid in living_ids
+    })
+    for pid,submission in battletimid_submissions.items():
+        existing=effective_setup_effects.get(
+            pid,BattleCommandSetupEffects()
+        )
+        if (
+            existing.attack_power is not None
+            and int(existing.attack_power)!=int(
+                submission.setup.attack_power
+            )
+        ) or (
+            existing.defense_power is not None
+            and int(existing.defense_power)!=int(
+                submission.setup.defence_power
+            )
+        ):
+            raise ValueError("BattleTimid callback setup overlaps power drift")
+        effective_setup_effects[pid]=replace(
+            existing,
+            attack_power=int(submission.setup.attack_power),
+            defense_power=int(submission.setup.defence_power),
+        )
+
     prepared = prepare_battle_round(
         participants,
         effective_commands,
@@ -1485,6 +1576,7 @@ def resolve_persistent_ordinary_round(
             | set(weaken_submissions_by_participant_id or {})
             | set(refresh_submissions_by_participant_id or {})
             | set(setmagicpet_submissions_by_participant_id or {})
+            | set(battletimid_submissions)
         ),
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
@@ -1547,21 +1639,7 @@ def resolve_persistent_ordinary_round(
         guardian_registrations_by_defender_slot=(
             guardian_registrations_by_defender_slot
         ),
-        command_setup_effects_by_participant_id={
-            **{
-                str(pid):effects
-                for pid,effects in (
-                    command_setup_effects_by_participant_id or {}
-                ).items()
-            },
-            **{
-                str(pid):effects
-                for pid,effects in (
-                    state.carried_setup_effects_by_participant_id.items()
-                )
-                if pid in living_ids
-            },
-        },
+        command_setup_effects_by_participant_id=effective_setup_effects,
         base_damage_react_state_by_participant_id=_freeze_mapping({
             participant_id:
                 state.base_damage_react_state_by_participant_id[participant_id]
@@ -1600,6 +1678,10 @@ def resolve_persistent_ordinary_round(
         ),
         guard_break2_submissions_by_participant_id=(
             guard_break2_submissions_by_participant_id
+        ),
+        battletimid_submissions_by_participant_id=battletimid_submissions,
+        battletimid_rolls_by_participant_id=(
+            battletimid_rolls_by_participant_id
         ),
         fall_ground_submissions_by_participant_id=(
             fall_ground_submissions_by_participant_id
@@ -1688,12 +1770,44 @@ def resolve_persistent_ordinary_round(
         captured_enemy_ids.add(target_id)
     if not captured_enemy_ids.issubset(exited_ids):
         raise ValueError("capture exit missing from ordinary exited IDs")
+    battletimid_exit_ids=set()
+    for event in round_result.events:
+        resolution=event.battletimid_resolution
+        if resolution is None or not resolution.forced_exit:
+            continue
+        if event.resolved_target_slot is None:
+            raise ValueError("BattleTimid forced exit lacks target slot")
+        target_id=participant_id_by_slot.get(
+            int(event.resolved_target_slot)
+        )
+        if target_id is None:
+            raise ValueError("BattleTimid forced exit targets unknown slot")
+        if resolution.player_battle_exit and target_id != player_id:
+            raise ValueError("BattleTimid player-exit target identity drift")
+        if (
+            resolution.pet_default_exit
+            and target_id not in allied_pet_ids
+        ):
+            raise ValueError("BattleTimid pet-exit target identity drift")
+        battletimid_exit_ids.add(target_id)
+    if not battletimid_exit_ids.issubset(exited_ids):
+        raise ValueError("BattleTimid exit missing from ordinary exited IDs")
     battle_exit_ids=exited_ids-captured_enemy_ids
-    invalid_exits=sorted(battle_exit_ids-(allied_pet_ids|enemy_ids))
+    allowed_battle_exit_ids=(
+        allied_pet_ids | enemy_ids | battletimid_exit_ids
+    )
+    invalid_exits=sorted(battle_exit_ids-allowed_battle_exit_ids)
     if invalid_exits:
         raise ValueError(
-            "ordinary non-capture battle exits must be pet/enemy entries: "
+            "ordinary non-capture battle exit lacks admitted provenance: "
             f"{invalid_exits}"
+        )
+    if (
+        player_id in battle_exit_ids
+        and player_id not in battletimid_exit_ids
+    ):
+        raise ValueError(
+            "player ordinary battle exit requires BattleTimid provenance"
         )
 
     escaped_ids={str(pid) for pid in round_result.escaped_participant_ids}
