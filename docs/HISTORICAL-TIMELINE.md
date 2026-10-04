@@ -527,3 +527,8 @@ reduces fixed strength/toughness/dexterity and decrements positive WEAKEN/BARRIE
 This supersedes an indefinite Barrier duration inferred from StatusSeq alone;
 it does not date skill introduction, establish Taiwan-v1 membership or map a
 recovered binary enum. [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]
+
+
+## 2026-10-04 — WildViolentAttack descendant reference (conditional charset)
+
+**FACT / LATER_RECOVERED:** Three freshly pinned descendants expose callback work-power/HIGH setup and action-time random 3–10 physical hits, a float damage divisor, original-target reset and additive defender dodge. Compiled command 2018/2018/2017 and source macro 540 are profile facts, not recovered data ID 541 or binary identifiers. Actual-source UTF-8 vs explicit CP950 builds diverge at fixed byte offsets; negative/>32767 HIGH packing is signed-shift UB. Native reference and derived probe/spec are reproducible without committing original source. **OPEN:** original execution charset, full real callback metadata/OPTION population, safe ordered runtime and Taiwan-v1 membership. Source comments dated 2002/05/16 are not independently verified introduction dates. See `specs/STONEAGE-WILDVIOLENT-REFERENCE-R1.md`.

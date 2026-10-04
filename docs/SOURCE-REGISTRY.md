@@ -3194,3 +3194,9 @@ The earlier records `SRC-CN-2001-CHINADOTCOM-SA-TRIAL-GIVEAWAY-MIRROR-01` and `S
 
 
 - Post-Weaken pressure refresh — 2026-10-04: hash-verified preservation workflow 37190672044 PASS at `38c26913525394074291c6a7635697cb7992576b`, report write-back `68eb92975bf0504083c7d91ff2bcb15f5f18b52d`. Derived pressure report marks Weaken CLOSED, total 2486/unresolved 0, accepted 2415 uses, and selects exact WildViolentAttack (positively referenced ID 541, seven uses/seven templates). This ranks the next audit; it does not establish complete callback population, skill semantics, introduction date, Taiwan-v1 membership or recovered binary enum. WildViolentAttack source/data/runtime gates remain OPEN.
+
+
+## 2026-10-04 — WildViolentAttack conditional audit
+
+- **LATER_RECOVERED:** Clean pinned gavin `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`, iriselia `9e6c8ce2cd8ed532a7157773acd1c61582c178b5`, Bismarck `999ffdf1d220ec6666eb65339180689c9caf1876`. Audit hashes pet_skill.c, battle.c, battle_event.c, battle.h, pet_skillinfo.h and version.h; compiles actual command headers and transient callback/macros/count/division fragments with UBSan under UTF-8 and explicit CP950 execution charsets. The latter is a conditional test build, not original binary provenance.
+- Own reference `tools/stoneage_wildviolent_model.py`, audit `tools/stoneage_wildviolent_source_audit.py`, full-family derived probe `tools/stoneage_recovered25_wildviolent_probe.py`; dedicated reference and hash-verified preservation-bundle workflows. The probe enumerates unreferenced rows, keeps full metadata/hash and conditional derived values, and preserves undefined HIGH-domain findings. No raw source, OPTION records or assets are stored. Original charset and runtime remain OPEN pending evidence/acceptance; see the R1 reference spec and latest CURRENT-STATE record.
