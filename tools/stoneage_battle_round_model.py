@@ -68,6 +68,14 @@ from tools.stoneage_refresh_runtime_state import (
     refresh_status_vector,
 )
 from tools.stoneage_refresh_model import RefreshResolution, resolve_refresh_recovery
+from tools.stoneage_enemy_ai_setmagicpet_bridge import EnemyAiSetMagicPetSubmission
+from tools.stoneage_setmagicpet_runtime_state import (
+    SetMagicPetActionRolls,
+    SetMagicPetRoundOverlay,
+    SetMagicPetTurnTick,
+    apply_setmagicpet_option,
+    tick_setmagicpet_runtime,
+)
 from tools.stoneage_weaken_model import (
     WeakenApplication, WeakenCheckInputs, resolve_weaken_target,
     resolve_weaken_multilist, resolve_weaken_self_tick,
@@ -998,6 +1006,10 @@ class OrdinaryRoundEvent:
     refresh_skill_id: int | None = None
     refresh_status_index: int | None = None
     refresh_cleared_status: int | None = None
+    setmagicpet_skill_id: int | None = None
+    setmagicpet_kind: str | None = None
+    setmagicpet_applied: bool | None = None
+    setmagicpet_turn_tick: SetMagicPetTurnTick | None = None
     weaken_application: WeakenApplication | None = None
     weaken_tick_resolution: BarrierSelfTick | None = None
     weaken_skill_id: int | None = None
@@ -1022,6 +1034,7 @@ class ResolvedOrdinaryRound:
     ride_pet_runtime: RidePetRuntime | None = None
     attack_magic_overlay: AttackMagicRoundOverlay | None = None
     nocast_overlay: NocastRoundOverlay | None = None
+    setmagicpet_overlay: SetMagicPetRoundOverlay | None = None
     ultimate_overkill_by_participant_id: Mapping[str,int] | None = None
     ultimate_exited_participant_ids: tuple[str, ...] = ()
     exited_participant_ids: tuple[str, ...] = ()
@@ -3607,6 +3620,8 @@ def resolve_ordinary_round(
     weaken_rolls_by_participant_id: Mapping[str,WeakenActionRolls] | None = None,
     refresh_submissions_by_participant_id: Mapping[str,EnemyAiRefreshSubmission] | None = None,
     refresh_rolls_by_participant_id: Mapping[str,RefreshActionRolls] | None = None,
+    setmagicpet_submissions_by_participant_id: Mapping[str,EnemyAiSetMagicPetSubmission] | None = None,
+    setmagicpet_rolls_by_participant_id: Mapping[str,SetMagicPetActionRolls] | None = None,
     barrier_submissions_by_participant_id: Mapping[
         str,EnemyAiBarrierSubmission
     ] | None = None,
@@ -3614,6 +3629,7 @@ def resolve_ordinary_round(
         str,BarrierActionRolls
     ] | None = None,
     nocast_overlay: NocastRoundOverlay | None = None,
+    setmagicpet_overlay: SetMagicPetRoundOverlay | None = None,
     ride_pet_source_slot: int | None = None,
     field_attr: str = "none",
     field_power: int = 0,
@@ -4320,6 +4336,55 @@ def resolve_ordinary_round(
     attempted_refresh_actor_ids=set()
     refresh_active_command_ids=set(refresh_actor_ids)
 
+    setmagicpet_submissions={
+        str(pid):submission
+        for pid,submission in (
+            setmagicpet_submissions_by_participant_id or {}
+        ).items()
+    }
+    setmagicpet_actor_ids=set(setmagicpet_submissions)
+    if setmagicpet_actor_ids-set(slot_by_id):
+        raise ValueError("SetMagicPet references unknown actors")
+    setmagicpet_overlap=(
+        wildviolent_actor_ids | set(mdfyattack_submissions)
+        | set(attack_crazed_submissions) | weaken_actor_ids
+        | refresh_actor_ids | guard_break2_actor_ids | barrier_actor_ids
+        | nocast_actor_ids | fall_ground_actor_ids | battle_tear_actor_ids
+        | mp_damage_actor_ids | damage_to_hp_actor_ids
+        | enemy_rehp_actor_ids | attack_magic_actor_ids
+    )
+    if setmagicpet_actor_ids & setmagicpet_overlap:
+        raise ValueError("SetMagicPet semantic submissions overlap another skill")
+    for pid,submission in setmagicpet_submissions.items():
+        if not isinstance(submission,EnemyAiSetMagicPetSubmission):
+            raise TypeError("SetMagicPet submission has wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (
+            submission.participant_id!=pid
+            or entry.participant.kind!="enemy"
+            or entry.participant.side!="enemy"
+            or entry.command.command1!=BATTLE_COM_ATTACK
+            or entry.command.command2!=submission.source_target_slot
+        ):
+            raise ValueError(
+                "SetMagicPet ordering carrier must be enemy ATTACK/source-target"
+            )
+    setmagicpet_rolls={
+        str(pid):rolls
+        for pid,rolls in (
+            setmagicpet_rolls_by_participant_id or {}
+        ).items()
+    }
+    if set(setmagicpet_rolls)!=setmagicpet_actor_ids:
+        raise ValueError("SetMagicPet RNG actors mismatch")
+    if any(
+        not isinstance(rolls,SetMagicPetActionRolls)
+        for rolls in setmagicpet_rolls.values()
+    ):
+        raise TypeError("SetMagicPet RNG has wrong type")
+    attempted_setmagicpet_actor_ids=set()
+    setmagicpet_active_command_ids=set(setmagicpet_actor_ids)
+
     # The scheduling carrier cannot confer native ATTACK counter eligibility.
     # Confusion later removes a rewritten actor from this symbolic-command set.
     mdfyattack_active_command_ids=set(mdfyattack_submissions)
@@ -4346,6 +4411,29 @@ def resolve_ordinary_round(
             raise ValueError(
                 "Nocast overlay lacks active participants: "
                 + ",".join(missing_nocast_runtime)
+            )
+
+    if setmagicpet_actor_ids and setmagicpet_overlay is None:
+        raise ValueError(
+            "SetMagicPet semantic action requires explicit round overlay"
+        )
+    if setmagicpet_overlay is not None and not isinstance(
+        setmagicpet_overlay,SetMagicPetRoundOverlay
+    ):
+        raise TypeError("setmagicpet_overlay has wrong type")
+    setmagicpet_working=(
+        None
+        if setmagicpet_overlay is None
+        else dict(setmagicpet_overlay.runtime_by_participant_id)
+    )
+    if setmagicpet_working is not None:
+        missing_magicpet_runtime=sorted(
+            set(slot_by_id)-set(setmagicpet_working)
+        )
+        if missing_magicpet_runtime:
+            raise ValueError(
+                "SetMagicPet overlay lacks active participants: "
+                + ",".join(missing_magicpet_runtime)
             )
 
     nocast_rolls={
@@ -4395,6 +4483,34 @@ def resolve_ordinary_round(
     }
 
     events: list[OrdinaryRoundEvent] = []
+
+    def tick_setmagicpet_runtime_for_actor(
+        participant_id: str,
+        slot: int,
+        command_code: int,
+        action_value: int,
+    ) -> SetMagicPetTurnTick | None:
+        if setmagicpet_working is None:
+            return None
+        participant_id=str(participant_id)
+        runtime=setmagicpet_working[participant_id]
+        runtime,tick=tick_setmagicpet_runtime(runtime)
+        setmagicpet_working[participant_id]=runtime
+        if tick is None:
+            return None
+        events.append(
+            OrdinaryRoundEvent(
+                participant_id,
+                int(slot),
+                int(command_code),
+                int(action_value),
+                "setmagicpet_tick",
+                original_target_slot=int(slot),
+                resolved_target_slot=int(slot),
+                setmagicpet_turn_tick=tick,
+            )
+        )
+        return tick
 
     def tick_weaken_runtime(
         participant_id: str,
@@ -4965,6 +5081,7 @@ def resolve_ordinary_round(
                 mdfyattack_active_command_ids
                 | weaken_active_command_ids
                 | refresh_active_command_ids
+                | setmagicpet_active_command_ids
             ),
             counter_rolls=normalized_counter_rolls.get(
                 str(main_actor_id),()
@@ -5099,6 +5216,7 @@ def resolve_ordinary_round(
                 mdfyattack_active_command_ids.discard(str(participant_id))
                 weaken_active_command_ids.discard(str(participant_id))
                 refresh_active_command_ids.discard(str(participant_id))
+                setmagicpet_active_command_ids.discard(str(participant_id))
             hp_by_slot[slot]=int(tick.hp_after)
             hp_by_id[str(participant_id)]=int(tick.hp_after)
             runtime=replace(
@@ -5154,6 +5272,10 @@ def resolve_ordinary_round(
                 guarding.discard(slot)
             command_by_slot[slot]=command
 
+        tick_setmagicpet_runtime_for_actor(
+            str(participant_id),int(slot),
+            int(entry.command.command1),int(entry.action_value)
+        )
         tick_weaken_runtime(str(participant_id), int(slot),
                             int(entry.command.command1), int(entry.action_value))
         barrier_tick=tick_barrier_runtime(
@@ -6406,6 +6528,79 @@ def resolve_ordinary_round(
                     continuation_id,
                     int(slot),
                     int(continuation.last_target_slot),
+                )
+            continue
+
+        setmagicpet_actor_id=str(participant_id)
+        if (
+            setmagicpet_actor_id in setmagicpet_submissions
+            and int(command.command1) == BATTLE_COM_ATTACK
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            submission=setmagicpet_submissions[setmagicpet_actor_id]
+            if int(command.command2) != int(submission.source_target_slot):
+                raise ValueError(
+                    "SetMagicPet ordering carrier target drift before execution"
+                )
+            if setmagicpet_working is None:
+                raise ValueError(
+                    "SetMagicPet working overlay unexpectedly absent"
+                )
+            alive_slots=tuple(
+                other_slot
+                for other_slot in sorted(by_slot)
+                if (
+                    other_slot not in exited_slots
+                    and int(hp_by_slot.get(other_slot,0)) > 0
+                )
+            )
+            action_rolls=setmagicpet_rolls[setmagicpet_actor_id]
+            target_list=resolve_nocast_multilist(
+                int(submission.source_target_slot),
+                alive_slots=alive_slots,
+                retarget_draws_0_9=action_rolls.retarget_draws_0_9,
+            )
+            attempted_setmagicpet_actor_ids.add(setmagicpet_actor_id)
+            for target_slot in target_list.slots:
+                target_slot=int(target_slot)
+                if target_slot not in by_slot:
+                    raise ValueError(
+                        "SetMagicPet target list resolved unoccupied slot"
+                    )
+                defender=by_slot[target_slot]
+                defender_id=str(defender.participant_id)
+                next_runtime,applied=apply_setmagicpet_option(
+                    setmagicpet_working[defender_id],
+                    submission.option,
+                )
+                setmagicpet_working[defender_id]=next_runtime
+                events.append(
+                    OrdinaryRoundEvent(
+                        setmagicpet_actor_id,
+                        int(slot),
+                        BATTLE_COM_ATTACK,
+                        int(entry.action_value),
+                        (
+                            "setmagicpet_applied"
+                            if applied
+                            else "setmagicpet_blocked_existing_buff"
+                        ),
+                        original_target_slot=int(
+                            submission.source_target_slot
+                        ),
+                        resolved_target_slot=target_slot,
+                        retargeted=bool(
+                            target_list.slots
+                            and int(target_list.slots[0])
+                            != int(submission.source_target_slot)
+                        ),
+                        setmagicpet_skill_id=int(submission.skill_id),
+                        setmagicpet_kind=submission.option.kind,
+                        setmagicpet_applied=bool(applied),
+                    )
                 )
             continue
 
@@ -8033,6 +8228,15 @@ def resolve_ordinary_round(
                 + participant_id
             )
 
+    for participant_id in sorted(
+        setmagicpet_actor_ids-attempted_setmagicpet_actor_ids
+    ):
+        if not setmagicpet_rolls[participant_id].is_empty:
+            raise ValueError(
+                "SetMagicPet RNG supplied for status-suppressed semantic action: "
+                + participant_id
+            )
+
     unused_wildviolent_roll_ids=sorted(
         set(wildviolent_rolls)-consumed_wildviolent_roll_ids
     )
@@ -8103,6 +8307,11 @@ def resolve_ordinary_round(
             None
             if nocast_working is None
             else NocastRoundOverlay(nocast_working)
+        ),
+        setmagicpet_overlay=(
+            None
+            if setmagicpet_working is None
+            else SetMagicPetRoundOverlay(setmagicpet_working)
         ),
         ultimate_overkill_by_participant_id=MappingProxyType(
             dict(ultimate_overkill)

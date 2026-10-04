@@ -51,6 +51,12 @@ from tools.stoneage_enemy_ai_weaken_bridge import EnemyAiWeakenSubmission
 from tools.stoneage_weaken_runtime_state import WeakenActionRolls
 from tools.stoneage_enemy_ai_refresh_bridge import EnemyAiRefreshSubmission
 from tools.stoneage_refresh_runtime_state import RefreshActionRolls
+from tools.stoneage_enemy_ai_setmagicpet_bridge import EnemyAiSetMagicPetSubmission
+from tools.stoneage_setmagicpet_runtime_state import (
+    SetMagicPetActionRolls,
+    SetMagicPetRoundOverlay,
+    prepare_setmagicpet_powers,
+)
 from tools.stoneage_weaken_model import resolve_weaken_recalculation
 from tools.stoneage_nocast_runtime_state import PreparedWeakenPowers
 from tools.stoneage_enemy_rehp_model import EnemyReHpRolls
@@ -157,6 +163,7 @@ class PersistentBattleState:
     # battle session identity graph but no longer participate in later rounds.
     battle_exited_participant_ids: tuple[str,...] = ()
     nocast_overlay: NocastRoundOverlay | None = None
+    setmagicpet_overlay: SetMagicPetRoundOverlay | None = None
 
     def __post_init__(self) -> None:
         if self.phase not in {ACTIVE, FINISHED}:
@@ -188,6 +195,19 @@ class PersistentBattleState:
                 extra=sorted(overlay_ids-set(participants))
                 raise ValueError(
                     "persistent Nocast overlay participant mismatch; "
+                    f"missing={missing}, extra={extra}"
+                )
+        if self.setmagicpet_overlay is not None:
+            if not isinstance(self.setmagicpet_overlay,SetMagicPetRoundOverlay):
+                raise TypeError("persistent SetMagicPet overlay has wrong type")
+            overlay_ids=set(
+                self.setmagicpet_overlay.runtime_by_participant_id
+            )
+            if overlay_ids != set(participants):
+                missing=sorted(set(participants)-overlay_ids)
+                extra=sorted(overlay_ids-set(participants))
+                raise ValueError(
+                    "persistent SetMagicPet overlay participant mismatch; "
                     f"missing={missing}, extra={extra}"
                 )
         normalized_ultimate_exits=tuple(
@@ -607,6 +627,7 @@ def begin_persistent_battle(
     ] | None = None,
     ride_pet_runtime: RidePetRuntime | None = None,
     nocast_overlay: NocastRoundOverlay | None = None,
+    setmagicpet_overlay: SetMagicPetRoundOverlay | None = None,
 ) -> PersistentBattleState:
     participants = _participant_map(session)
     normalized_slots = {str(pid): int(slot) for pid, slot in slots.items()}
@@ -664,6 +685,7 @@ def begin_persistent_battle(
         ),
         ride_pet_runtime=ride_pet_runtime,
         nocast_overlay=nocast_overlay,
+        setmagicpet_overlay=setmagicpet_overlay,
     )
     return _with_termination(state)
 
@@ -737,10 +759,23 @@ def participant_snapshot(
         raise KeyError(f"unknown battle participant {participant_id}")
     participant = participants[participant_id]
     runtime=state.base_status_runtime_by_participant_id[participant_id]
-    powers=(None if state.nocast_overlay is None else
-            state.nocast_overlay.runtime_by_participant_id[participant_id].prepared_weaken_powers)
+    magic_powers=(
+        None if state.setmagicpet_overlay is None else
+        state.setmagicpet_overlay.runtime_by_participant_id[
+            participant_id
+        ].prepared_powers
+    )
+    weaken_powers=(
+        None if state.nocast_overlay is None else
+        state.nocast_overlay.runtime_by_participant_id[
+            participant_id
+        ].prepared_weaken_powers
+    )
+    powers=weaken_powers if weaken_powers is not None else magic_powers
     if powers is not None:
-        participant=replace(participant, attack=powers.attack, defense=powers.defense)
+        participant=replace(
+            participant,attack=powers.attack,defense=powers.defense
+        )
     return replace(
         participant,
         hp=int(state.hp_by_participant_id[participant_id]),
@@ -1339,6 +1374,8 @@ def resolve_persistent_ordinary_round(
     weaken_rolls_by_participant_id: Mapping[str,WeakenActionRolls] | None = None,
     refresh_submissions_by_participant_id: Mapping[str,EnemyAiRefreshSubmission] | None = None,
     refresh_rolls_by_participant_id: Mapping[str,RefreshActionRolls] | None = None,
+    setmagicpet_submissions_by_participant_id: Mapping[str,EnemyAiSetMagicPetSubmission] | None = None,
+    setmagicpet_rolls_by_participant_id: Mapping[str,SetMagicPetActionRolls] | None = None,
     barrier_submissions_by_participant_id: Mapping[
         str,EnemyAiBarrierSubmission
     ] | None = None,
@@ -1447,6 +1484,7 @@ def resolve_persistent_ordinary_round(
             | set(mdfyattack_submissions_by_participant_id or {})
             | set(weaken_submissions_by_participant_id or {})
             | set(refresh_submissions_by_participant_id or {})
+            | set(setmagicpet_submissions_by_participant_id or {})
         ),
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
@@ -1582,6 +1620,12 @@ def resolve_persistent_ordinary_round(
         weaken_rolls_by_participant_id=weaken_rolls_by_participant_id,
         refresh_submissions_by_participant_id=refresh_submissions_by_participant_id,
         refresh_rolls_by_participant_id=refresh_rolls_by_participant_id,
+        setmagicpet_submissions_by_participant_id=(
+            setmagicpet_submissions_by_participant_id
+        ),
+        setmagicpet_rolls_by_participant_id=(
+            setmagicpet_rolls_by_participant_id
+        ),
         barrier_submissions_by_participant_id=(
             barrier_submissions_by_participant_id
         ),
@@ -1589,6 +1633,7 @@ def resolve_persistent_ordinary_round(
             barrier_rolls_by_participant_id
         ),
         nocast_overlay=state.nocast_overlay,
+        setmagicpet_overlay=state.setmagicpet_overlay,
         ride_pet_source_slot=(
             None
             if state.session.ride_pet is None
@@ -1753,11 +1798,69 @@ def resolve_persistent_ordinary_round(
             if participant_id in next_session_ids
         })
 
+    next_setmagicpet_overlay=round_result.setmagicpet_overlay
+    if next_setmagicpet_overlay is not None:
+        next_session_ids={
+            str(participant.participant_id)
+            for participant in _session_participants(next_session)
+        }
+        next_setmagicpet_overlay=SetMagicPetRoundOverlay({
+            participant_id:runtime
+            for participant_id,runtime in (
+                next_setmagicpet_overlay.runtime_by_participant_id.items()
+            )
+            if participant_id in next_session_ids
+        })
+
     # Source BATTLE_PreCommandSeq runs exactly once after BATTLE_Battling.
     # It visits valid entries (including zero-HP entries), except EARTHROUND0.
     # This is not another StatusSeq visit and is not repeated on next call.
+    baseline=_participant_map(next_session)
+    if next_setmagicpet_overlay is not None:
+        prepared_magic={}
+        for pid,magic in (
+            next_setmagicpet_overlay.runtime_by_participant_id.items()
+        ):
+            carried=(
+                round_result.carried_commands_by_participant_id or {}
+            ).get(pid)
+            if (
+                pid in next_battle_exited
+                or pid in next_ultimate_exited
+                or (
+                    carried is not None
+                    and carried.command1==BATTLE_COM_S_EARTHROUND0
+                )
+            ):
+                prepared_magic[pid]=magic
+                continue
+            active=magic.state.tgh_turn>0
+            was_prepared=magic.prepared_powers is not None
+            if active or was_prepared:
+                if (
+                    state.ride_pet_runtime is not None
+                    or next_status_runtime[pid].status.drunk>0
+                ):
+                    raise ValueError(
+                        "SetMagicPet preparation with riding/drunk modifiers "
+                        "is outside the admitted domain"
+                    )
+                actor=baseline[pid]
+                powers=(
+                    prepare_setmagicpet_powers(
+                        baseline_attack=actor.attack,
+                        baseline_defense=actor.defense,
+                        baseline_quick=actor.quick,
+                        runtime=magic,
+                    )
+                    if active
+                    else None
+                )
+                magic=replace(magic,prepared_powers=powers)
+            prepared_magic[pid]=magic
+        next_setmagicpet_overlay=SetMagicPetRoundOverlay(prepared_magic)
+
     if next_nocast_overlay is not None:
-        baseline=_participant_map(next_session)
         prepared_late={}
         for pid,late in next_nocast_overlay.runtime_by_participant_id.items():
             carried=(round_result.carried_commands_by_participant_id or {}).get(pid)
@@ -1771,8 +1874,33 @@ def resolve_persistent_ordinary_round(
             if active_weaken or was_weakened:
                 if state.ride_pet_runtime is not None or next_status_runtime[pid].status.drunk>0:
                     raise ValueError("Weaken preparation with riding/drunk modifiers is outside the admitted domain")
-                recalculated=resolve_weaken_recalculation(actor.attack,actor.defense,actor.quick,
-                    weaken_counter=late.weaken_counter,barrier_counter=late.barrier_counter)
+                magic_powers=(
+                    None
+                    if next_setmagicpet_overlay is None
+                    else next_setmagicpet_overlay.runtime_by_participant_id[
+                        pid
+                    ].prepared_powers
+                )
+                base_attack=(
+                    actor.attack
+                    if magic_powers is None
+                    else magic_powers.attack
+                )
+                base_defense=(
+                    actor.defense
+                    if magic_powers is None
+                    else magic_powers.defense
+                )
+                base_quick=(
+                    actor.quick
+                    if magic_powers is None
+                    else magic_powers.dexterity
+                )
+                recalculated=resolve_weaken_recalculation(
+                    base_attack,base_defense,base_quick,
+                    weaken_counter=late.weaken_counter,
+                    barrier_counter=late.barrier_counter,
+                )
                 powers=(PreparedWeakenPowers(recalculated.strength,recalculated.toughness,recalculated.dexterity)
                         if active_weaken else None)
                 late=replace(late, weaken_counter=recalculated.weaken_counter,
@@ -1836,6 +1964,7 @@ def resolve_persistent_ordinary_round(
         ultimate_exited_participant_ids=tuple(next_ultimate_exited),
         battle_exited_participant_ids=tuple(next_battle_exited),
         nocast_overlay=next_nocast_overlay,
+        setmagicpet_overlay=next_setmagicpet_overlay,
     )
     if player_id in escaped_ids:
         next_state=replace(

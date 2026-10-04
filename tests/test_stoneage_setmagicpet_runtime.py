@@ -24,6 +24,22 @@ from tools.stoneage_setmagicpet_model import (
     SetMagicPetTargetState,
     parse_setmagicpet_option,
 )
+from tests.test_stoneage_attack_crazed_runtime import actor
+from tools.stoneage_battle_round_model import (
+    BATTLE_COM_ATTACK,
+    BATTLE_COM_WAIT,
+    BattleCombatProfile,
+    BattleCommand,
+    prepare_battle_round,
+    resolve_ordinary_round,
+)
+from tools.stoneage_battle_state_model import (
+    begin_persistent_battle,
+    participant_snapshot,
+    resolve_persistent_ordinary_round,
+)
+from tools.stoneage_battle_status_model import BaseBattleStatusRuntime
+from tools.stoneage_singleplayer_battle import BattleSession
 from tools.stoneage_setmagicpet_runtime_state import (
     PreparedSetMagicPetPowers,
     SetMagicPetActionRolls,
@@ -183,6 +199,170 @@ class SetMagicPetRuntimePrimitiveTests(unittest.TestCase):
                     baseline_quick=60,
                     runtime=SetMagicPetParticipantRuntime(state),
                 )
+
+    def _submission(self,target=0):
+        return EnemyAiSetMagicPetSubmission(
+            "enemy",0,601,"PETSKILL_SetMagicPet",target,
+            SetMagicPetOption(3,15,"TGH",b"TGH"),
+        )
+
+    def _round(self,*,target=0,player_first=False,player_hp=2000,
+               player_magic=None,extra_players=None,
+               rolls=SetMagicPetActionRolls(),enemy_status=None):
+        player=actor(
+            "player","player","player",
+            hp=player_hp,quick=220 if player_first else 100,
+            defense=80,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            quick=100 if player_first else 220,
+        )
+        players={0:player}
+        for slot,participant in (extra_players or {}).items():
+            players[int(slot)]=participant
+        participants=tuple(players.values())+(enemy,)
+        prepared=prepare_battle_round(
+            participants,
+            {
+                **{
+                    participant.participant_id:BattleCommand(BATTLE_COM_WAIT)
+                    for participant in players.values()
+                },
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=target),
+            },
+            {participant.participant_id:0 for participant in participants},
+            tie_break_order=tuple(
+                participant.participant_id for participant in participants
+            ),
+        )
+        overlay={
+            participant.participant_id:SetMagicPetParticipantRuntime()
+            for participant in participants
+        }
+        if player_magic is not None:
+            overlay["player"]=player_magic
+        status={
+            participant.participant_id:BaseBattleStatusRuntime()
+            for participant in participants
+        }
+        if enemy_status is not None:
+            status["enemy"]=enemy_status
+        return resolve_ordinary_round(
+            prepared,
+            slots={
+                participant.participant_id:slot
+                for slot,participant in players.items()
+            }|{"enemy":10},
+            profiles={
+                participant.participant_id:
+                    BattleCombatProfile(100,0,0,0,0,0)
+                for participant in participants
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            base_status_runtime_by_participant_id=status,
+            setmagicpet_submissions_by_participant_id={
+                "enemy":self._submission(target)
+            },
+            setmagicpet_rolls_by_participant_id={"enemy":rolls},
+            setmagicpet_overlay=SetMagicPetRoundOverlay(overlay),
+        )
+
+    def test_round_applies_without_damage_and_same_round_target_tick_is_ordered(self):
+        result=self._round(player_first=False)
+        event=next(
+            event for event in result.events
+            if event.setmagicpet_skill_id is not None
+        )
+        self.assertTrue(event.setmagicpet_applied)
+        self.assertEqual(event.setmagicpet_kind,"TGH")
+        self.assertEqual(result.hp_by_participant_id["player"],2000)
+        # Enemy acts first and applies 3; player's later StatusSeq decrements 3->2.
+        magic=result.setmagicpet_overlay.runtime_by_participant_id["player"]
+        self.assertEqual((magic.state.tgh_turn,magic.state.tgh_power),(2,15))
+
+    def test_target_that_already_acted_keeps_full_three_until_next_round(self):
+        result=self._round(player_first=True)
+        magic=result.setmagicpet_overlay.runtime_by_participant_id["player"]
+        self.assertEqual(magic.state.tgh_turn,3)
+
+    def test_round_blocks_tgh_when_setduck_is_active(self):
+        result=self._round(
+            player_first=True,
+            player_magic=SetMagicPetParticipantRuntime(
+                SetMagicPetTargetState(duck_turn=2)
+            ),
+        )
+        event=next(
+            event for event in result.events
+            if event.setmagicpet_skill_id is not None
+        )
+        self.assertFalse(event.setmagicpet_applied)
+        self.assertEqual(
+            result.setmagicpet_overlay.runtime_by_participant_id[
+                "player"
+            ].state.tgh_turn,
+            0,
+        )
+
+    def test_dead_single_target_uses_only_explicit_multilist_rng(self):
+        pet=actor("pet","player","pet")
+        result=self._round(
+            target=0,player_hp=0,extra_players={1:pet},
+            rolls=SetMagicPetActionRolls((0,)),
+        )
+        event=next(
+            event for event in result.events
+            if event.setmagicpet_skill_id is not None
+        )
+        self.assertEqual(event.resolved_target_slot,1)
+        self.assertTrue(event.retargeted)
+
+    def test_live_target_rejects_unused_setmagicpet_rng(self):
+        with self.assertRaisesRegex(ValueError,"live single target"):
+            self._round(rolls=SetMagicPetActionRolls((0,)))
+
+    def test_persistent_postround_prepares_tgh_for_next_command(self):
+        player=actor(
+            "player","player","player",defense=80,quick=100
+        )
+        enemy=actor("enemy","enemy","enemy",quick=220)
+        session=BattleSession(player=player,allied_pets=(),enemies=(enemy,))
+        state=begin_persistent_battle(
+            session,
+            slots={"player":0,"enemy":10},
+            setmagicpet_overlay=SetMagicPetRoundOverlay({
+                "player":SetMagicPetParticipantRuntime(),
+                "enemy":SetMagicPetParticipantRuntime(),
+            }),
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={
+                pid:BattleCombatProfile(100,0,0,0,0,0)
+                for pid in ("player","enemy")
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            setmagicpet_submissions_by_participant_id={
+                "enemy":self._submission(0)
+            },
+            setmagicpet_rolls_by_participant_id={
+                "enemy":SetMagicPetActionRolls()
+            },
+        )
+        magic=result.after.setmagicpet_overlay.runtime_by_participant_id[
+            "player"
+        ]
+        self.assertEqual(magic.state.tgh_turn,2)
+        self.assertEqual(magic.prepared_powers.defense,92)
+        self.assertEqual(participant_snapshot(result.after,"player").defense,92)
 
     def test_overlay_is_exact_participant_mapping_type(self):
         overlay=SetMagicPetRoundOverlay({
