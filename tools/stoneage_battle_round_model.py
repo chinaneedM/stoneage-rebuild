@@ -46,6 +46,10 @@ from tools.stoneage_enemy_ai_barrier_bridge import EnemyAiBarrierSubmission
 from tools.stoneage_enemy_ai_guard_break2_bridge import (
     EnemyAiGuardBreak2Submission,
 )
+from tools.stoneage_enemy_ai_battletimid_bridge import (
+    EnemyAiBattleTimidSubmission,
+)
+from tools.stoneage_battletimid_model import BattleTimidExitResolution
 from tools.stoneage_guard_break2_model import (
     GuardBreak2DamageResolution,
     resolve_guard_break2_damage_step,
@@ -990,6 +994,8 @@ class OrdinaryRoundEvent:
     fall_ground_resolution: FallGroundResolution | None = None
     battle_tear_augmentation: BattleTearAugmentation | None = None
     guard_break2_resolution: GuardBreak2DamageResolution | None = None
+    battletimid_resolution: BattleTimidExitResolution | None = None
+    battletimid_skill_id: int | None = None
     mdfyattack_skill_id: int | None = None
     mdfyattack_element: str | None = None
     mdfyattack_attack_vector: tuple[int, ...] = ()
@@ -3601,6 +3607,12 @@ def resolve_ordinary_round(
     guard_break2_submissions_by_participant_id: Mapping[
         str,EnemyAiGuardBreak2Submission
     ] | None = None,
+    battletimid_submissions_by_participant_id: Mapping[
+        str,EnemyAiBattleTimidSubmission
+    ] | None = None,
+    battletimid_rolls_by_participant_id: Mapping[
+        str,int | None
+    ] | None = None,
     fall_ground_submissions_by_participant_id: Mapping[
         str,EnemyAiFallGroundSubmission
     ] | None = None,
@@ -4385,6 +4397,53 @@ def resolve_ordinary_round(
     attempted_setmagicpet_actor_ids=set()
     setmagicpet_active_command_ids=set(setmagicpet_actor_ids)
 
+    battletimid_submissions={
+        str(pid):submission
+        for pid,submission in (
+            battletimid_submissions_by_participant_id or {}
+        ).items()
+    }
+    battletimid_actor_ids=set(battletimid_submissions)
+    if battletimid_actor_ids-set(slot_by_id):
+        raise ValueError("BattleTimid references unknown actors")
+    battletimid_overlap=(
+        wildviolent_actor_ids | set(mdfyattack_submissions)
+        | set(attack_crazed_submissions) | weaken_actor_ids
+        | refresh_actor_ids | setmagicpet_actor_ids | guard_break2_actor_ids
+        | barrier_actor_ids | nocast_actor_ids | fall_ground_actor_ids
+        | battle_tear_actor_ids | mp_damage_actor_ids | damage_to_hp_actor_ids
+        | enemy_rehp_actor_ids | attack_magic_actor_ids
+    )
+    if battletimid_actor_ids & battletimid_overlap:
+        raise ValueError("BattleTimid semantic submissions overlap another skill")
+    for pid,submission in battletimid_submissions.items():
+        if not isinstance(submission,EnemyAiBattleTimidSubmission):
+            raise TypeError("BattleTimid submission has wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (
+            submission.participant_id!=pid
+            or entry.participant.kind!="enemy"
+            or entry.participant.side!="enemy"
+            or entry.command.command1!=BATTLE_COM_ATTACK
+            or entry.command.command2!=submission.source_target_slot
+        ):
+            raise ValueError(
+                "BattleTimid ordering carrier must be enemy ATTACK/source-target"
+            )
+    battletimid_rolls={
+        str(pid):(None if draw is None else int(draw))
+        for pid,draw in (battletimid_rolls_by_participant_id or {}).items()
+    }
+    if set(battletimid_rolls)!=battletimid_actor_ids:
+        raise ValueError("BattleTimid RNG actors mismatch")
+    if any(
+        draw is not None and not 0 <= int(draw) <= 99
+        for draw in battletimid_rolls.values()
+    ):
+        raise ValueError("BattleTimid reduced rand draw must be 0..99")
+    attempted_battletimid_actor_ids=set()
+    battletimid_active_command_ids=set(battletimid_actor_ids)
+
     # The scheduling carrier cannot confer native ATTACK counter eligibility.
     # Confusion later removes a rewritten actor from this symbolic-command set.
     mdfyattack_active_command_ids=set(mdfyattack_submissions)
@@ -5082,6 +5141,7 @@ def resolve_ordinary_round(
                 | weaken_active_command_ids
                 | refresh_active_command_ids
                 | setmagicpet_active_command_ids
+                | battletimid_active_command_ids
             ),
             counter_rolls=normalized_counter_rolls.get(
                 str(main_actor_id),()
@@ -5217,6 +5277,7 @@ def resolve_ordinary_round(
                 weaken_active_command_ids.discard(str(participant_id))
                 refresh_active_command_ids.discard(str(participant_id))
                 setmagicpet_active_command_ids.discard(str(participant_id))
+                battletimid_active_command_ids.discard(str(participant_id))
             hp_by_slot[slot]=int(tick.hp_after)
             hp_by_id[str(participant_id)]=int(tick.hp_after)
             runtime=replace(
@@ -7300,6 +7361,37 @@ def resolve_ordinary_round(
             )
         )
 
+        battletimid_submission=None
+        battletimid_draw=None
+        if (
+            str(participant_id) in battletimid_active_command_ids
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            battletimid_submission=battletimid_submissions[str(participant_id)]
+            if int(command.command1) != BATTLE_COM_ATTACK:
+                raise ValueError(
+                    "BattleTimid semantic action lost ATTACK ordering carrier"
+                )
+            if base_damage_react_active(
+                damage_react_state[str(defender_id)]
+            ):
+                raise ValueError(
+                    "BattleTimid with active target DamageReact is outside R1"
+                )
+            if active_ride:
+                raise ValueError(
+                    "BattleTimid with mounted ride runtime is outside R1"
+                )
+            battletimid_draw=battletimid_rolls[str(participant_id)]
+            if battletimid_draw is None:
+                raise ValueError(
+                    "BattleTimid execution requires one reduced rand draw"
+                )
+            attempted_battletimid_actor_ids.add(str(participant_id))
+
         # Source order: dodge is checked against the original/adjusted target
         # before BATTLE_GuardianCheck can redirect the physical hit.
         if target not in guarding:
@@ -7327,6 +7419,15 @@ def resolve_ordinary_round(
                 ),
             )
             if dodge_roll <= dodge_probability:
+                battletimid_resolution=(
+                    None
+                    if battletimid_submission is None
+                    else battletimid_submission.post_damage(
+                        draw=int(battletimid_draw),
+                        damage=0,
+                        target_is_pet=(defender.kind=="pet"),
+                    )
+                )
                 events.append(
                     OrdinaryRoundEvent(
                         participant_id,
@@ -7339,6 +7440,12 @@ def resolve_ordinary_round(
                         retargeted=retargeted,
                         target_hp_before=before,
                         target_hp_after=before,
+                        battletimid_resolution=battletimid_resolution,
+                        battletimid_skill_id=(
+                            None
+                            if battletimid_submission is None
+                            else int(battletimid_submission.skill_id)
+                        ),
                     )
                 )
                 if mdfyattack_submission is None and not continuation_blocked_by_reaction:
@@ -7663,6 +7770,7 @@ def resolve_ordinary_round(
             or fall_ground_submission is not None
             or battle_tear_submission is not None
             or guard_break2_submission is not None
+            or battletimid_submission is not None
             or mdfyattack_submission is not None
         ):
             # Fixed specialized BATTLE_S_AttackDamage lets AttackSeq calculate
@@ -8033,6 +8141,24 @@ def resolve_ordinary_round(
                 damage_count=wake.damage_count_after,
             )
 
+        battletimid_resolution=None
+        if battletimid_submission is not None:
+            battletimid_resolution=battletimid_submission.post_damage(
+                draw=int(battletimid_draw),
+                damage=int(event_damage),
+                target_is_pet=(reaction_defender.kind=="pet"),
+            )
+            if battletimid_resolution.forced_exit:
+                if int(after) <= 0:
+                    raise ValueError(
+                        "BattleTimid lethal-damage forced-exit overlap is outside R1"
+                    )
+                exit_slot=int(reaction_target_slot)
+                exit_id=str(reaction_defender_id)
+                exited_slots.add(exit_slot)
+                if exit_id not in exited_ids:
+                    exited_ids.append(exit_id)
+
         status_application=None
         if (
             int(event_damage) > 0
@@ -8118,6 +8244,12 @@ def resolve_ordinary_round(
                 fall_ground_resolution=fall_ground_resolution,
                 battle_tear_augmentation=battle_tear_augmentation,
                 guard_break2_resolution=guard_break2_resolution,
+                battletimid_resolution=battletimid_resolution,
+                battletimid_skill_id=(
+                    None
+                    if battletimid_submission is None
+                    else int(battletimid_submission.skill_id)
+                ),
                 mdfyattack_skill_id=(None if mdfyattack_submission is None else mdfyattack_submission.skill_id),
                 mdfyattack_element=(None if mdfyattack_submission is None else mdfyattack_submission.option.element),
                 mdfyattack_attack_vector=(() if mdfyattack_submission is None else mdfyattack_submission.option.attack_vector),
@@ -8136,7 +8268,13 @@ def resolve_ordinary_round(
         # Guardian/DamageReact. Dedicated BATTLE_S_FallGround does not: its
         # iRet is controlled by AttackSeq result, the post-react defindex's
         # GUARD state and death. Preserve that difference here.
-        if mdfyattack_submission is None and _battle_attack_continuation_allowed(
+        if (
+            mdfyattack_submission is None
+            and not (
+                battletimid_resolution is not None
+                and battletimid_resolution.forced_exit
+            )
+            and _battle_attack_continuation_allowed(
             guardian_redirected=(
                 False
                 if (
@@ -8169,6 +8307,16 @@ def resolve_ordinary_round(
                 participant_id,
                 slot,
                 counter_target_slot,
+            )
+        )
+
+    for participant_id in sorted(
+        battletimid_actor_ids-attempted_battletimid_actor_ids
+    ):
+        if battletimid_rolls[participant_id] is not None:
+            raise ValueError(
+                "BattleTimid RNG supplied for status/no-target-suppressed "
+                "semantic action: " + participant_id
             )
 
     for participant_id in sorted(
