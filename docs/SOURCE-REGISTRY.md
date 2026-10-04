@@ -3259,3 +3259,12 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - Reproducible artifacts: `tools/stoneage_setmagicpet_model.py`, `tools/stoneage_setmagicpet_source_audit.py`, `tools/stoneage_recovered25_setmagicpet_probe.py`, spec `specs/STONEAGE-SETMAGICPET-REFERENCE-R1.md`. Reference **37215723983 PASS**, verified bundle **37215724000 PASS**, derived report `283ff86f6b008453b4f03e7f22b017625c084002`.
 - Recovered family **601–604** all FIELD=1/TARGET=2/COST=2/ILLEGAL=2500. Parsed actual OPTIONS: 601 TGH 3/15 (6 uses), 602 HP 3/3000, 603 STR 3/10, 604 DEX 3/15 (latter three unreferenced). Immutable OPTION hashes are recorded in the derived probe without raw rows.
 - **CLOSED:** bounded source reference, exact population, exact metadata/hash and recognized three-field OPTION domain. **OPEN:** ordered persistent runtime, original compiler/binary identity, earliest historical membership, and unneeded unreferenced family execution.
+
+
+### 2026-10-05 — SetMagicPet ordered runtime acceptance supplement
+
+- Typed runtime files: `tools/stoneage_enemy_ai_setmagicpet_bridge.py`, `tools/stoneage_setmagicpet_runtime_state.py`, battle round/state and local coordinator integration, with spec `specs/STONEAGE-SETMAGICPET-RUNTIME-R1.md`.
+- Runtime admits only positive recovered ID **601** and rechecks the exact 601–604 family metadata/OPTION hashes before submission. ATTACK is an internal scheduling carrier only; source command identity stays symbolic.
+- ID 601 target state is TGH 3/15. MultiList dead-single retarget RNG is explicit; live targets consume none. SetDuck/STR/TGH/DEX mutual exclusion, same-round StatusSeq decrement, persistent expiry, baseline-toughness preparation and SetMagicPet-before-Weaken ordering are tested. Unreferenced HP/STR/DEX family execution remains outside R1.
+- Accepted code gate: `234cfb200ccff06bd97cb29009f81c7406e8f373` with SetMagicPet **37217333303 PASS**, coordinator **37217333081 PASS**, full region/runtime stack **37217333016 PASS** plus all affected battle regressions; supplement `8b1cb0fd49f2708eecfe08b67bc97301fbf7e14f` has **37217473190 PASS**.
+- **CLOSED:** bounded ID-601 TGH enemy ordered runtime. **OPEN:** pressure-report regeneration (Action 37217793085 queued), unreferenced 602/603/604 execution, original numeric COM1/binary provenance and Taiwan-v1 membership.
