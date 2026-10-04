@@ -58,7 +58,10 @@ def analyze_profile(name: str, root: Path):
     )))
     battle_compact=_compact(data["battle"]).replace("char_index","charaindex")
     case=battle_compact.find("case"+COMMAND_NAME+":")
-    dispatch=battle_compact[case:case+700] if case>=0 else ""
+    if case>=0:
+        dispatch=battle_compact[case:].split("break;",1)[0]
+    else:
+        dispatch=""
 
     includes=["-I",str(base/"include")]
     if name=="bismarck":
