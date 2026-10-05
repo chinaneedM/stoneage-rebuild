@@ -31,8 +31,12 @@ from tools.stoneage_singleplayer_domain import (
 
 LEGACY_PERSISTENCE_SCHEMA = "stoneage.singleplayer.persistence.r1"
 PET_GROWTH_PERSISTENCE_SCHEMA = "stoneage.singleplayer.persistence.r2"
-PERSISTENCE_SCHEMA = "stoneage.singleplayer.persistence.r3"
-_TOP_LEVEL_KEYS = {"schema", "character", "inventory", "pets"}
+VARIABLE_AI_PERSISTENCE_SCHEMA = "stoneage.singleplayer.persistence.r3"
+PERSISTENCE_SCHEMA = "stoneage.singleplayer.persistence.r4"
+_LEGACY_TOP_LEVEL_KEYS = {"schema", "character", "inventory", "pets"}
+_TOP_LEVEL_KEYS = {
+    "schema", "character", "inventory", "pets", "default_pet_slot"
+}
 
 
 def _plain_mapping(value: Mapping[str, Any], *, label: str) -> dict[str, Any]:
@@ -104,13 +108,27 @@ def dump_persistent_state(
         "character": character,
         "inventory": inventory,
         "pets": pets,
+        "default_pet_slot": (
+            None
+            if state.default_pet_slot is None
+            else int(state.default_pet_slot.value)
+        ),
     }
 
 
-def _require_exact_top_level(payload: Mapping[str, Any]) -> None:
+def _require_exact_top_level(
+    payload: Mapping[str, Any],
+    *,
+    schema: str,
+) -> None:
+    expected = (
+        _TOP_LEVEL_KEYS
+        if schema == PERSISTENCE_SCHEMA
+        else _LEGACY_TOP_LEVEL_KEYS
+    )
     keys = set(payload)
-    missing = _TOP_LEVEL_KEYS - keys
-    extra = keys - _TOP_LEVEL_KEYS
+    missing = expected - keys
+    extra = keys - expected
     if missing:
         raise ValueError(f"persistent payload missing keys: {sorted(missing)}")
     if extra:
@@ -118,16 +136,22 @@ def _require_exact_top_level(payload: Mapping[str, Any]) -> None:
 
 
 def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
-    _require_exact_top_level(payload)
-    schema = payload["schema"]
+    schema = payload.get("schema")
     if schema not in {
         LEGACY_PERSISTENCE_SCHEMA,
         PET_GROWTH_PERSISTENCE_SCHEMA,
+        VARIABLE_AI_PERSISTENCE_SCHEMA,
         PERSISTENCE_SCHEMA,
     }:
         raise ValueError(f"unsupported persistence schema: {schema}")
+    _require_exact_top_level(payload, schema=str(schema))
 
-    state = PersistentPlayerState()
+    default_pet_slot = (
+        None
+        if schema != PERSISTENCE_SCHEMA or payload["default_pet_slot"] is None
+        else PetSlot(int(payload["default_pet_slot"]))
+    )
+    state = PersistentPlayerState(default_pet_slot=default_pet_slot)
 
     character = payload["character"]
     if character is not None:
@@ -212,7 +236,10 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
                 "internal_toughness",
                 "internal_dexterity",
             }
-            if schema == PERSISTENCE_SCHEMA:
+            if schema in {
+                VARIABLE_AI_PERSISTENCE_SCHEMA,
+                PERSISTENCE_SCHEMA,
+            }:
                 expected_growth_keys.add("variable_ai")
             if set(growth_row) != expected_growth_keys:
                 raise ValueError("pet growth entry has unexpected shape")
@@ -225,7 +252,10 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
                 internal_dexterity=int(growth_row["internal_dexterity"]),
                 variable_ai=(
                     int(growth_row["variable_ai"])
-                    if schema == PERSISTENCE_SCHEMA
+                    if schema in {
+                        VARIABLE_AI_PERSISTENCE_SCHEMA,
+                        PERSISTENCE_SCHEMA,
+                    }
                     else 0
                 ),
             )
