@@ -12,9 +12,11 @@ import argparse
 from pathlib import Path
 import re
 import subprocess
+import tempfile
+import random
 
 from tools.stoneage_guard_break2_source_audit import (
-    PINNED, LAYOUTS, _text, _sha, _compact,
+    PINNED, LAYOUTS, _text, _sha, _compact, _function,
 )
 from tools.stoneage_mdfyattack_source_audit import _definition, _strip
 from tools.stoneage_battletimid_source_audit import _case_block
@@ -23,6 +25,151 @@ from tools.stoneage_weaken_source_audit import _enum_values
 CALLBACK_NAME="PETSKILL_BattleModel"
 COMMAND_NAME="BATTLE_COM_S_BATTLE_MODEL"
 FEATURE_NAME="_PETSKILL_BATTLE_MODEL"
+
+from tools.stoneage_battlemodel_reference_model import (
+    resolve_battlemodel_target_plan,
+)
+
+
+def _native_plan_oracle(effect_source:str)->int:
+    """Compile the original effect with stubs and compare target scheduling."""
+    prefix=r'''
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define SIDE_OFFSET 10
+#define FALSE 0
+#define TRUE 1
+#define TARGET_SIDE_0 20
+#define TARGET_SIDE_1 21
+#define CHAR_WORKBATTLECOM2 2
+#define CHAR_WORKBATTLECOM3 3
+#define PETSKILL_OPTION 0
+#define BATTLE_ST_END 2
+typedef struct _tsAttackObject{
+  int index;
+  int target;
+  int actionNumber;
+} AttackObject;
+static int packed_com2;
+static char option_buf[256]="0|0|||||10 20 30 40";
+static int live_n;
+static int live_slots[10];
+static int rolls[10],roll_n,roll_pos;
+static int noaction;
+static int rec_n;
+static int rec_obj[64],rec_target[64],rec_action[64];
+static char *aszStatus[]={"","ZZ"};
+int BATTLE_No2Index(int b,int n){return 0;}
+#define CHAR_CHECKINDEX(i) (1)
+int CHAR_getWorkInt(int i,int p){
+  if(p==CHAR_WORKBATTLECOM2)return packed_com2;
+  if(p==CHAR_WORKBATTLECOM3)return 0;
+  return 0;
+}
+#define CHAR_GETWORKINT_LOW(i,p) ((int)((unsigned int)CHAR_getWorkInt(i,p)&0xffffU))
+#define CHAR_GETWORKINT_HIGH(i,p) ((int)(((unsigned int)CHAR_getWorkInt(i,p)>>16)&0xffffU))
+char *PETSKILL_getChar(int array,int pos){return option_buf;}
+int getStringFromIndexWithDelim(const char *src,const char *delim,int want,
+                                char *out,int outsz){
+  if(!src||!delim||!delim[0]||want<=0||outsz<=0)return FALSE;
+  char d=delim[0];
+  const char *start=src;
+  int idx=1;
+  while(idx<want){
+    const char *p=strchr(start,d);
+    if(!p)return FALSE;
+    start=p+1;idx++;
+  }
+  const char *end=strchr(start,d);
+  size_t n=end?(size_t)(end-start):strlen(start);
+  if(n>=(size_t)outsz)n=(size_t)outsz-1;
+  memcpy(out,start,n);out[n]='\0';
+  return TRUE;
+}
+void BATTLE_MultiList(int b,int target,int *out){
+  for(int i=0;i<live_n;i++)out[i]=live_slots[i];
+  if(live_n<SIDE_OFFSET*2+1)out[live_n]=-1;
+}
+void BATTLE_NoAction(int b,int a){noaction=1;}
+#define BATTLESTR_ADD(x) ((void)0)
+int RAND(int lo,int hi){
+  if(roll_pos>=roll_n){fprintf(stderr,"missing roll\n");exit(90);}
+  int v=rolls[roll_pos++];
+  if(v<lo||v>hi){fprintf(stderr,"roll range %d %d %d\n",lo,hi,v);exit(91);}
+  return v;
+}
+void BATTLE_BattleModel_ATTACK(int b,int c,AttackObject *p,
+                               int e,int t,int h,int ty){
+  if(rec_n>=64)exit(92);
+  rec_obj[rec_n]=p->index;
+  rec_target[rec_n]=p->target;
+  rec_action[rec_n]=p->actionNumber;
+  rec_n++;
+}
+'''
+    main=r'''
+int main(void){
+  int type,count;
+  while(scanf("%d%d%d",&type,&count,&live_n)==3){
+    for(int i=0;i<live_n;i++)scanf("%d",&live_slots[i]);
+    scanf("%d",&roll_n);
+    for(int i=0;i<roll_n;i++)scanf("%d",&rolls[i]);
+    packed_com2=((count&0xffff)<<16)|(type&0xffff);
+    roll_pos=0;noaction=0;rec_n=0;
+    BATTLE_BattleModel(0,0,0);
+    printf("%d %d %d",noaction,rec_n,roll_pos);
+    for(int i=0;i<rec_n;i++)
+      printf(" %d %d %d",rec_obj[i],rec_target[i],rec_action[i]);
+    printf("\n");
+  }
+  return 0;
+}
+'''
+    rng=random.Random(638)
+    cases=[]
+    lines=[]
+    for living_n in range(1,6):
+        living=tuple(range(0,living_n*2,2))
+        for object_count in range(1,11):
+            for attack_type in (0,1,4,5):
+                needed=max(0,object_count-living_n)
+                rolls_tuple=tuple(rng.randrange(living_n) for _ in range(needed))
+                expected=resolve_battlemodel_target_plan(
+                    attack_type=attack_type,
+                    object_count=object_count,
+                    living_opposing_slots=living,
+                    action_numbers=(10,20,30,40),
+                    excess_target_rolls=rolls_tuple,
+                )
+                cases.append(expected)
+                line=[attack_type,object_count,living_n,*living,len(rolls_tuple),*rolls_tuple]
+                lines.append(" ".join(map(str,line)))
+    with tempfile.TemporaryDirectory() as d:
+        src=Path(d)/"oracle.c"
+        exe=Path(d)/"oracle"
+        src.write_text(prefix+"\n"+effect_source+"\n"+main,encoding="utf-8")
+        subprocess.run(["cc","-w","-O0",str(src),"-o",str(exe)],check=True)
+        run=subprocess.run(
+            [str(exe)],input="\n".join(lines)+"\n",
+            text=True,capture_output=True,check=True,
+        )
+    outputs=run.stdout.splitlines()
+    if len(outputs)!=len(cases):
+        raise ValueError("BattleModel native planner output count drift")
+    for expected,line in zip(cases,outputs):
+        values=list(map(int,line.split()))
+        noaction,rec_n,rng_draws=values[:3]
+        triples=[tuple(values[i:i+3]) for i in range(3,len(values),3)]
+        wanted=[
+            (item.object_index,item.target_slot,item.action_number)
+            for item in expected.attacks
+        ]
+        if noaction or rec_n!=len(wanted) or triples!=wanted:
+            raise ValueError("BattleModel native target schedule mismatch")
+        if rng_draws!=expected.target_rng_draws:
+            raise ValueError("BattleModel native target RNG ownership mismatch")
+    return len(cases)
 
 
 def _normalized_identifier(text:str)->str:
@@ -68,11 +215,8 @@ def analyze_profile(name:str,root:Path):
 
     callback=_compact(_strip(_definition(data["pet"],CALLBACK_NAME)))
     callback=_normalized_identifier(callback)
-    # raw_window avoids the shared helper's prefix re-search accidentally
-    # resolving the earlier BATTLE_BattleModel_ATTACK definition.
-    effect=_compact(_strip(_definition(
-        data["event"],"BATTLE_BattleModel",raw_window=True
-    )))
+    effect_source=_function(data["event"],"void BATTLE_BattleModel(")
+    effect=_compact(_strip(effect_source))
     effect=_normalized_identifier(effect)
     attack=_compact(_strip(_definition(data["event"],"BATTLE_BattleModel_ATTACK")))
     attack=_normalized_identifier(attack)
@@ -207,6 +351,7 @@ def analyze_profile(name:str,root:Path):
             "CHAR_getWorkInt(defindex,CHAR_NPCWORKINT1)!=BATTLE_COM_S_BATTLE_MODEL"
             in damage,
     }
+    native_cases=_native_plan_oracle(effect_source)
     if not all(guards.values()):
         raise ValueError(
             f"{name} BattleModel source gates failed: "
@@ -220,6 +365,7 @@ def analyze_profile(name:str,root:Path):
         "mode_value":enums["BATTLE_CHARMODE_C_OK"],
         "gates":guards,
         "hashes":{key:_sha(path) for key,path in paths.items()},
+        "native_cases":native_cases,
     }
 
 
@@ -232,7 +378,7 @@ def emit(rows):
             f"name={row['profile']}|sha={row['sha']}|"
             f"feature_active={int(row['feature_active'])}|"
             f"command_value={row['command_value']}|"
-            f"mode_value={row['mode_value']}"
+            f"mode_value={row['mode_value']}|native_plan_cases={row['native_cases']}"
         )
         for key,value in row["gates"].items():
             print(
@@ -250,6 +396,7 @@ def emit(rows):
     print("FACT|effect_OPTION_fields_3_4_5_drive_status_turn_hit_and_field7_drives_one_to_four_action_numbers")
     print("FACT|effect_rebuilds_living_opposing_side_and_reads_type_count_from_packed_COM2")
     print("FACT|excess_attack_objects_choose_random_living_targets_with_replacement")
+    print("FACT|native_effect_target_planner_matches_200_vectors_per_pinned_profile")
     print("FACT|type_bit0_extends_coverage_when_object_count_is_below_living_target_count")
     print("FACT|each_attack_object_rechecks_target_then_enters_AttackSeq_and_DamageSub")
     print("FACT|type_bit2_controls_physical_guardian_route")
