@@ -79,6 +79,7 @@ def analyze_profile(name: str, root: Path):
     paths={
         "pet":base/"battle/pet_skill.c",
         "battle":base/"battle/battle.c",
+        "battle_magic":base/"battle/battle_magic.c",
         "enemy":base/"char/enemy.c",
         "version":base/"include/version.h",
         "battle_h":base/"include/battle.h",
@@ -95,6 +96,15 @@ def analyze_profile(name: str, root: Path):
     callback=_compact(_function(
         data["pet"],"int "+CALLBACK_NAME
     )).replace("char_index","cindex")
+    direct_use=_compact(_function(
+        data["pet"],"int PETSKILL_Use"
+    )).replace("char_index","charaindex")
+    dexcalc=_compact(_function(
+        data["battle"],"int BATTLE_DexCalc"
+    )).replace("char_index","charaindex")
+    magic_effect=_compact(_function(
+        data["battle_magic"],"int BATTLE_MagicEffect"
+    )).replace("char_index","charaindex")
     pet_compact=_compact(data["pet"])
     battle_compact=_compact(data["battle"]).replace("char_index","charaindex")
     setup_case=_bounded_case(
@@ -145,6 +155,28 @@ def analyze_profile(name: str, root: Path):
             COMMAND_NAME in data["battle_h"],
         "mode_symbol_present":
             "BATTLE_CHARMODE_C_OK" in data["battle_h"],
+        "use_blocks_recast_while_default_wolf_image":all(
+            token in direct_use for token in (
+                "petskillid==600",
+                "CHAR_BASEIMAGENUMBER)==101428",
+                "petskillid=-1",
+            )
+        ),
+        "vary_has_no_special_dexcalc_branch":
+            COMMAND_NAME not in dexcalc,
+        "magic_effect_is_visual_frame_only":all(
+            token in magic_effect for token in (
+                '"BJ|a%X|m%X|e%X|e%X|"',
+                "BATTLESTR_ADD(",
+                '"FF|"',
+            )
+        ) and all(
+            token not in magic_effect
+            for token in (
+                "CHAR_setWorkInt(","CHAR_setInt(",
+                "BATTLE_Attack(","BATTLE_S_AttackDamage(",
+            )
+        ),
         "callback_sets_command_target_mode":all(
             token in callback for token in (
                 "CHAR_WORKBATTLECOM1,"+COMMAND_NAME,
@@ -246,6 +278,9 @@ def emit(rows):
     print("FACT|runtime_CHAR_PETID_is_enemybase_TEMPNO")
     print("FACT|base_allowed_tempnos=981,982,983,984")
     print("FACT|callback_writes_command_target_mode_and_resets_workturn")
+    print("FACT|PETSKILL_Use_blocks_recast_while_image_101428")
+    print("FACT|Vary_has_no_special_BATTLE_DexCalc_branch")
+    print("FACT|BATTLE_MagicEffect_is_visual_frame_only")
     print("FACT|wolf_turn_counter_reverts_after_six_actor_actions")
     print("FACT|gavin_iris_option_markers=attack,quick")
     print("FACT|bismarck_adds_defense_marker")
@@ -255,7 +290,7 @@ def emit(rows):
     print("BOUNDARY|bismarck_raw_expansion_image_branch_not_compiled_at_fixed_pin")
     print("BOUNDARY|original_numeric_command_and_mode_values_open")
     print("BOUNDARY|original_binary_compile_profile_and_charset_open")
-    print("RESOLUTION|VARY_FIXED_SOURCE_FIRST_PASS_CLOSED_BOUNDED_REFERENCE")
+    print("RESOLUTION|VARY_FIXED_SOURCE_CLOSED_BOUNDED_REFERENCE")
 
 
 def main():
