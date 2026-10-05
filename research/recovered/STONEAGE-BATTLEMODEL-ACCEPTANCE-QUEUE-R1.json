@@ -1,0 +1,79 @@
+{
+  "schema": "stoneage-battlemodel-acceptance-queue-r1",
+  "observed_at_utc": "2026-10-05T16:55:57Z",
+  "main_sha": "d2b309c750049c1585543b4f76514cf8eca19826",
+  "reference_sha": "be9de3df70d4a872817f55fd484e9a08f4dd1f31",
+  "reference_tree": "561ea9143c7746268de38492ab6737c7ad882454",
+  "runs": [
+    {
+      "run_id": 37342593141,
+      "jobs": [
+        {
+          "job_id": 111873130178,
+          "status": "queued",
+          "conclusion": null,
+          "runner_id": 0,
+          "runner_name": "",
+          "labels": [
+            "ubuntu-latest"
+          ],
+          "step_count": 0
+        }
+      ]
+    },
+    {
+      "run_id": 37342593073,
+      "jobs": [
+        {
+          "job_id": 111873131177,
+          "status": "queued",
+          "conclusion": null,
+          "runner_id": 0,
+          "runner_name": "",
+          "labels": [
+            "ubuntu-latest"
+          ],
+          "step_count": 0
+        }
+      ]
+    },
+    {
+      "run_id": 37344060042,
+      "jobs": [
+        {
+          "job_id": 111878092333,
+          "status": "queued",
+          "conclusion": null,
+          "runner_id": 0,
+          "runner_name": "",
+          "labels": [
+            "ubuntu-latest"
+          ],
+          "step_count": 0
+        }
+      ]
+    }
+  ],
+  "repo_running_runs": 0,
+  "repo_queued_runs": 3,
+  "repo_pending_runs": 0,
+  "diagnosis": "No assigned runners and no executed steps. No test failure observed. Underlying queue cause remains unknown.",
+  "github_status": {
+    "url": "https://www.githubstatus.com/",
+    "reported_actions": "Operational",
+    "does_not_explain_repo_queue": true
+  },
+  "fallback_evidence": {
+    "successful_discovery_run": 37336325458,
+    "downloadable_artifacts": 0,
+    "local_pinned_descendant_petskill_tables_checked": 5,
+    "matching_accepted_recovered25_sha256_tables": 0,
+    "accepted_recovered25_petskill_sha256": "f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4"
+  },
+  "decision": {
+    "restart_runs": false,
+    "fast_forward_main": false,
+    "runtime_admission": false,
+    "next": "Inspect these same three run IDs; accept only completed successful gates and their derived reports."
+  }
+}
