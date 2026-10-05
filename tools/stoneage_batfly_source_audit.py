@@ -285,6 +285,8 @@ def analyze_profile(name:str,root:Path):
                 and "SortLoc" in multilist
                 and "CharTableIdx" in sort_window
             ),
+        "side0_sortloc_contains_shared_anomalous_comparator_term":
+            "return(ele2basex-ele1basey)" in sort_window,
         "whole_side_branch_has_no_rng":
             (
                 "rand()%10" not in _compact(_strip(
@@ -379,7 +381,8 @@ def emit(rows):
     print("FACT|target3_is_all_other_side_but_dispatch_targetadjust_is_only_an_execution_gate")
     print("FACT|effect_rebuilds_and_drains_the_whole_opposing_side")
     print("FACT|whole_side_target_list_uses_live_targetcheck_and_excludes_dead_or_nonpositive_hp_entries")
-    print("FACT|multi_target_side_list_uses_fixed_battle_position_sortloc_under_each_pinned_attack_magic_profile")
+    print("FACT|multi_target_side_list_calls_shared_SortLoc_under_each_pinned_attack_magic_profile")
+    print("BOUNDARY|side0_SortLoc_uses_anomalous_ele2basex_minus_ele1basey_term_so_portable_exact_qsort_presentation_order_is_not_claimed")
     print("FACT|BatFly_side_target_path_owns_no_rng_even_though_unrelated_single_target_MultiList_path_can_use_rand")
     print("FACT|unmounted_target_drains_floor_10pct_min1_mounted_rider_and_pet_each_floor_5pct_min1")
     print("FACT|attacker_heals_sum_but_overflow_cap_sets_reported_addhp_to_zero")
