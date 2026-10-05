@@ -77,9 +77,10 @@ def analyze_profile(name: str, root: Path):
         get_react.find("CHAR_WORKDAMAGEABSROB"),
         get_react.find("CHAR_WORKDAMAGEREFLEC"),
     ]
+    react_read=attack_damage.find("ReactType=BATTLE_GetDamageReact(defindex)")
     lifecycle_positions={
-        "react_read":attack_damage.find("ReactType=BATTLE_GetDamageReact(defindex)"),
-        "match_zero":attack_damage.find("react=0"),
+        "react_read":react_read,
+        "match_zero":attack_damage.find("react=0",react_read+1),
         "attackseq":attack_damage.find("BATTLE_AttackSeq("),
         "damagesub":attack_damage.find("BATTLE_DamageSub("),
         "reflect_redirect":attack_damage.find(
@@ -140,6 +141,8 @@ def analyze_profile(name: str, root: Path):
             < damage_sub.find("CHAR_WORKDAMAGEREFLEC)-1"),
         "attackdamage_lighttake_full_order":ordered,
         "post_damage_transfer_profile_matches":transfer_ok,
+        "lighttake_case_has_no_damage_guard":
+            "damage>0" not in lighttake_case and "damage<=0" not in lighttake_case,
         "lighttake_case_no_rng":
             "RAND(" not in lighttake_case and "rand(" not in lighttake_case,
     }
@@ -181,11 +184,12 @@ def emit(rows):
     print("FACT|positive_damage_reloads_active_reaction_inside_DamageSub")
     print("FACT|ordinary_nonthrowing_active_reaction_consumes_one_counter_clamped_zero")
     print("FACT|matching_Lighttake_local_react_zero_does_not_skip_DamageSub_refetch")
-    print("FACT|VANISH_ABSROB_transfer_observes_target_after_one_charge_consumption")
-    print("FACT|REFLEC_nonthrowing_redirects_defindex_to_attacker_before_Lighttake_post_branch")
-    print("FACT|REFLEC_gavin_iris_post_branch_is_attacker_counter_self_copy")
-    print("FACT|REFLEC_bismarck_post_branch_increments_attacker_counter_by_one")
-    print("BOUNDARY|throwing_weapon_REFLEC_bypasses_charge_consumption_and_redirect")
+    print("FACT|positive_damage_VANISH_ABSROB_transfer_observes_defender_after_one_charge_consumption")
+    print("FACT|positive_damage_REFLEC_nonthrowing_redirects_defindex_to_attacker_before_Lighttake_post_branch")
+    print("FACT|positive_damage_REFLEC_gavin_iris_post_branch_is_attacker_counter_self_copy")
+    print("FACT|positive_damage_REFLEC_bismarck_post_branch_increments_attacker_counter_by_one")
+    print("FACT|zero_damage_returns_before_refetch_and_Lighttake_post_branch_still_has_no_damage_guard")
+    print("BOUNDARY|throwing_weapon_REFLEC_bypasses_charge_consumption_and_redirect_then_post_branch_reads_defender")
     print("BOUNDARY|recovered25_positive_users_are_enemybase_rows_but_original_binary_profile_remains_open")
     print("RESOLUTION|LIGHTTAKEED_DAMAGEREACT_LIFECYCLE_FIXED_SOURCE_CLOSED")
 
