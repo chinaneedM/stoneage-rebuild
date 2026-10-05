@@ -1,7 +1,7 @@
-name: Validate StoneAge Vary runtime state
+name: Validate StoneAge Vary runtime
 
 concurrency:
-  group: stoneage-vary-runtime-state-${{ github.ref }}
+  group: stoneage-vary-runtime-${{ github.ref }}
   cancel-in-progress: true
 
 on:
@@ -9,8 +9,10 @@ on:
   push:
     paths:
       - ".github/workflows/validate-stoneage-vary-runtime.yml"
-      - "tools/stoneage_vary_runtime_state.py"\n      - "tools/stoneage_enemy_ai_vary_bridge.py"
-      - "tests/test_stoneage_vary_runtime_state.py"\n      - "tests/test_stoneage_enemy_ai_vary_bridge.py"
+      - "tools/stoneage_vary_runtime_state.py"
+      - "tools/stoneage_enemy_ai_vary_bridge.py"
+      - "tests/test_stoneage_vary_runtime_state.py"
+      - "tests/test_stoneage_enemy_ai_vary_bridge.py"
 
 permissions:
   contents: read
@@ -24,5 +26,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate Vary battle-local runtime state
-        run: |\n          python -m unittest -v \\\n            tests.test_stoneage_vary_runtime_state \\\n            tests.test_stoneage_enemy_ai_vary_bridge
+      - name: Validate Vary recovered runtime admission
+        run: |
+          python -m unittest -v \
+            tests.test_stoneage_vary_runtime_state \
+            tests.test_stoneage_enemy_ai_vary_bridge
