@@ -1,0 +1,10 @@
+StoneAge recovered25 PETSKILL_Lighttakeed executable-profile probe — R1
+Derived facts only; no executable bytes/source text stored.
+SCAN|elf_candidates=1
+ELF_CANDIDATE|index=0|size=273|sha256=22a786475540dd734e0b0dc1b21219e53aba1462de8be623270f71fa90c22365|petskill_lighttakeed_symbol=0|attackdamage_symbol=0
+SYMBOL|name=PETSKILL_Lighttakeed|present=0
+SYMBOL|name=BATTLE_S_AttackDamage|present=0
+PROFILE_SIGNAL|counter_transfer=inconclusive_attackdamage_symbol_unavailable
+BOUNDARY|copy_vs_copy_plus_one_not_selected_without_unique_dataflow_identity=1
+BOUNDARY|compiler_stripping_inlining_and_unrelated_integer_adds_not_normalized_into_profile_truth=1
+RESOLUTION|LIGHTTAKEED_EXECUTABLE_PROFILE_DISCRIMINATOR_ATTEMPTED
