@@ -39,6 +39,7 @@ CLOSED_RUNTIME_CALLBACKS=frozenset(
         "PETSKILL_BattleTimid",
         "PETSKILL_Combined",
         "PETSKILL_Vary",
+        "PETSKILL_Lighttakeed",
     }
 )
 
