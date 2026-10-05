@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
 """Pure Lighttakeed reaction-transfer layer over the accepted DamageReact core.
 
-This module does not calculate BATTLE_AttackSeq damage.  It receives that
-already-resolved raw physical magnitude and mirrors only the source ordering
-that is unique to BATTLE_COM_S_LIGHTTAKE:
+BATTLE_S_AttackDamage first classifies the defender's active DamageReact and
+keeps the Lighttake command only when that reaction matches the OPTION marker
+(or when no reaction is active). Matching sets the outer local react to zero,
+but positive damage then enters BATTLE_DamageSub, which re-fetches the
+defender's DamageReact and performs the ordinary reaction transaction.
 
-1. inspect the defender's highest-priority DamageReact;
-2. if it matches the Lighttakeed OPTION marker, neutralize local react before
-   ordinary DamageSub, so the defender's charge is not consumed;
-3. run ordinary physical settlement with no active reaction;
-4. after settlement, overwrite the attacker's matching work counter with the
-   defender's still-current count (gavin/iris) or that count + 1 (Bismarck);
-5. if an active reaction does not match, demote Lighttakeed and let the normal
-   DamageReact transaction own consumption/effect, with no transfer.
+The Lighttake-specific post branch therefore observes post-DamageSub state:
+- ABSROB/VANISH positive hits consume one defender charge before transfer;
+- non-throwing REFLEC positive hits consume one defender charge and redirect
+  the outer defindex to the attacker, so the post branch reads the attacker's
+  own reflect counter;
+- throwing REFLEC is bypassed, consumes no defender charge, does not redirect,
+  and the post branch reads the defender's unchanged reflect counter;
+- zero damage returns from DamageSub before re-fetch/consumption/redirect, but
+  the Lighttake post branch still executes and may transfer the defender count.
 """
 
 from __future__ import annotations
@@ -52,12 +55,18 @@ class LighttakeedResolution:
     matched_reaction: bool
     lighttake_case_executed: bool
     demoted_to_ordinary: bool
+    post_branch_read_target: str | None
+    observed_counter_value: int | None
     transferred_count: int | None
     attacker_state_before: BaseDamageReactState
     attacker_state_after: BaseDamageReactState
     defender_state_before: BaseDamageReactState
     defender_state_after: BaseDamageReactState
     damage_react_resolution: BaseDamageReactResolution
+
+    def __post_init__(self) -> None:
+        if self.post_branch_read_target not in {None,"attacker","defender"}:
+            raise ValueError("post_branch_read_target must be attacker/defender/None")
 
 
 def _counter_value(state: BaseDamageReactState, kind: int) -> int:
@@ -101,7 +110,7 @@ def resolve_lighttakeed_reaction(
     defender_max_hp: int,
     attacker_uses_throwing_weapon: bool = False,
 ) -> LighttakeedResolution:
-    """Resolve the Lighttake-specific reaction seam for one physical hit."""
+    """Resolve the source-shaped Lighttakeed DamageReact/post-branch seam."""
 
     profile=str(profile)
     marker_kind=int(marker_kind)
@@ -134,6 +143,8 @@ def resolve_lighttakeed_reaction(
             matched_reaction=False,
             lighttake_case_executed=False,
             demoted_to_ordinary=True,
+            post_branch_read_target=None,
+            observed_counter_value=None,
             transferred_count=None,
             attacker_state_before=attacker_state,
             attacker_state_after=attacker_state,
@@ -142,11 +153,8 @@ def resolve_lighttakeed_reaction(
             damage_react_resolution=ordinary,
         )
 
-    # With no active reaction, or with a matching reaction neutralized by the
-    # Lighttake prelude, DamageSub receives react==0.  Settle on an empty
-    # reaction state, while retaining the defender's real counters separately.
     ordinary=resolve_base_damage_react(
-        BaseDamageReactState(),
+        defender_state,
         raw_damage=int(raw_damage),
         attacker_hp=int(attacker_hp),
         attacker_max_hp=int(attacker_max_hp),
@@ -156,9 +164,19 @@ def resolve_lighttakeed_reaction(
     )
 
     attacker_after=attacker_state
+    observed=None
     transferred=None
+    post_target=None
+
     if matched:
-        transferred=_counter_value(defender_state,marker_kind)
+        if ordinary.effective_kind == DAMAGE_REACT_REFLEC:
+            post_target="attacker"
+            observed=_counter_value(attacker_state,marker_kind)
+        else:
+            post_target="defender"
+            observed=_counter_value(ordinary.state_after,marker_kind)
+
+        transferred=int(observed)
         if profile == PROFILE_BISMARCK_COPY_PLUS_ONE:
             transferred += 1
         attacker_after=_overwrite_counter(
@@ -174,11 +192,13 @@ def resolve_lighttakeed_reaction(
         matched_reaction=matched,
         lighttake_case_executed=True,
         demoted_to_ordinary=False,
+        post_branch_read_target=post_target,
+        observed_counter_value=observed,
         transferred_count=transferred,
         attacker_state_before=attacker_state,
         attacker_state_after=attacker_after,
         defender_state_before=defender_state,
-        defender_state_after=defender_state,
+        defender_state_after=ordinary.state_after,
         damage_react_resolution=ordinary,
     )
 
