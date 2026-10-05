@@ -160,6 +160,9 @@ from tools.stoneage_enemy_ai_wildviolent_bridge import (
     resolve_enemy_ai_wildviolent_submission,
 )
 from tools.stoneage_wildviolent_model import CALLBACK_NAME as WILDVIOLENT_CALLBACK
+from tools.stoneage_enemy_ai_modifyattack_bridge import (
+    EnemyAiModifyAttackSubmission, resolve_enemy_ai_modifyattack_submission,
+)
 from tools.stoneage_enemy_ai_mdfyattack_bridge import EnemyAiMdfyAttackSubmission, resolve_enemy_ai_mdfyattack_submission
 from tools.stoneage_mdfyattack_model import CALLBACK_NAME as MDFYATTACK_CALLBACK
 from tools.stoneage_battle_round_model import (
@@ -513,6 +516,7 @@ class EnemyAiCommonCommandBatch:
     setmagicpet_submissions: Mapping[
         str,EnemyAiSetMagicPetSubmission
     ] = field(default_factory=dict)
+    modifyattack_submissions: Mapping[str,EnemyAiModifyAttackSubmission] = field(default_factory=dict)
     mdfyattack_submissions: Mapping[str,EnemyAiMdfyAttackSubmission] = field(default_factory=dict)
     attack_crazed_submissions: Mapping[str,EnemyAiAttackCrazedSubmission] = field(default_factory=dict)
     wildviolent_submissions: Mapping[str,EnemyAiWildViolentSubmission] = field(default_factory=dict)
@@ -1292,6 +1296,23 @@ class EnemyAiCommonCommandBatch:
                 "enemy AI Vary semantic submissions overlap another skill"
             )
 
+        modifyattack_submissions={str(pid):value for pid,value in self.modifyattack_submissions.items()}
+        object.__setattr__(self,"modifyattack_submissions",MappingProxyType(modifyattack_submissions))
+        for pid,submission in modifyattack_submissions.items():
+            if not isinstance(submission,EnemyAiModifyAttackSubmission):
+                raise TypeError("enemy AI Modifyattack submission has wrong type")
+            if pid not in self.commands or submission.participant_id!=pid:
+                raise ValueError("enemy AI Modifyattack participant/carrier drift")
+            carrier=self.commands[pid]
+            if carrier.command1!=BATTLE_COM_ATTACK or carrier.command2!=submission.source_target_slot:
+                raise ValueError("enemy AI Modifyattack carrier must be ATTACK/source-target")
+            if self.setup_effects.get(pid,BattleCommandSetupEffects())!=BattleCommandSetupEffects():
+                raise ValueError("Modifyattack callback does not mutate work powers")
+        for field_name in self.__dataclass_fields__:
+            if field_name.endswith("_submissions") and field_name!="modifyattack_submissions":
+                if set(modifyattack_submissions) & set(getattr(self,field_name)):
+                    raise ValueError("enemy AI Modifyattack semantic submissions overlap another skill")
+
 
 @dataclass
 class LocalRuntimeSessionCoordinator:
@@ -1959,6 +1980,7 @@ class LocalRuntimeSessionCoordinator:
         allow_refresh_skill: bool = False,
         allow_setmagicpet_skill: bool = False,
         allow_barrier_skill: bool = False,
+        allow_modifyattack_skill: bool = False,
         allow_mdfyattack_skill: bool = False,
         allow_attack_crazed_skill: bool = False,
         allow_wildviolent_skill: bool = False,
@@ -2138,6 +2160,7 @@ class LocalRuntimeSessionCoordinator:
         refresh_submissions={}
         setmagicpet_submissions={}
         barrier_submissions={}
+        modifyattack_submissions={}
         mdfyattack_submissions={}
         attack_crazed_submissions={}
         wildviolent_submissions={}
@@ -2211,6 +2234,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_refresh_skill)
                 or bool(allow_setmagicpet_skill)
                 or bool(allow_barrier_skill)
+                or bool(allow_modifyattack_skill)
                 or bool(allow_mdfyattack_skill)
                 or bool(allow_attack_crazed_skill)
                 or bool(allow_wildviolent_skill)
@@ -2224,6 +2248,19 @@ class LocalRuntimeSessionCoordinator:
                 skill_ids=tuple(int(x) for x in spawned.template.skill_slot_ids)
                 selected_skill_id=skill_ids[int(decision.skill_slot)]
                 selected_skill=petskill_runtime.skills.get(selected_skill_id)
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == "PETSKILL_Modifyattack"
+                    and bool(allow_modifyattack_skill)
+                ):
+                    submission=resolve_enemy_ai_modifyattack_submission(
+                        spawned,skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),petskill_runtime=petskill_runtime,
+                    )
+                    commands[enemy_id]=BattleCommand(BATTLE_COM_ATTACK,command2=submission.source_target_slot)
+                    modifyattack_submissions[enemy_id]=submission
+                    continue
+
                 if (
                     selected_skill is not None
                     and selected_skill.function_name == MDFYATTACK_CALLBACK
@@ -2853,6 +2890,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_SetMagicPet")
             if bool(allow_barrier_skill):
                 allowed_parts.append("PETSKILL_Barrier")
+            if bool(allow_modifyattack_skill):
+                allowed_parts.append("PETSKILL_Modifyattack")
             if bool(allow_mdfyattack_skill):
                 allowed_parts.append("PETSKILL_Mdfyattack")
             if bool(allow_attack_crazed_skill):
@@ -2912,6 +2951,7 @@ class LocalRuntimeSessionCoordinator:
             refresh_submissions=refresh_submissions,
             setmagicpet_submissions=setmagicpet_submissions,
             barrier_submissions=barrier_submissions,
+            modifyattack_submissions=modifyattack_submissions,
             mdfyattack_submissions=mdfyattack_submissions,
             attack_crazed_submissions=attack_crazed_submissions,
             wildviolent_submissions=wildviolent_submissions,
@@ -3120,6 +3160,7 @@ class LocalRuntimeSessionCoordinator:
         battletimid_rolls_by_attack_id: Mapping[
             str,int | None
         ] | None = None,
+        modifyattack_rand_by_attack_id: Mapping[str,int | None] | None = None,
         lighttakeed_profiles_by_enemy_id: Mapping[
             str,str
         ] | None = None,
@@ -3260,6 +3301,7 @@ class LocalRuntimeSessionCoordinator:
             allow_refresh_skill=True,
             allow_setmagicpet_skill=True,
             allow_barrier_skill=True,
+            allow_modifyattack_skill=True,
             allow_mdfyattack_skill=True,
             allow_attack_crazed_skill=True,
             allow_wildviolent_skill=True,
@@ -3309,6 +3351,12 @@ class LocalRuntimeSessionCoordinator:
             for value in normalized_combined_rolls.values()
         ):
             raise TypeError("enemy Combined action RNG wrong type")
+
+        normalized_modifyattack_rand={str(key):value for key,value in (modifyattack_rand_by_attack_id or {}).items()}
+        if set(normalized_modifyattack_rand)!=set(enemy_batch.modifyattack_submissions):
+            raise ValueError("enemy Modifyattack helper RNG actors mismatch")
+        if any(value is not None and (type(value) is not int or not 0<=value<2**31) for value in normalized_modifyattack_rand.values()):
+            raise ValueError("enemy Modifyattack requires raw nonnegative signed-int rand")
 
         battletimid_enemy_ids=set(enemy_batch.battletimid_submissions)
         normalized_battletimid_rolls={
@@ -3842,6 +3890,8 @@ class LocalRuntimeSessionCoordinator:
             continuation_rolls_by_attack_id=normalized_continuation_rolls,
             attack_crazed_rolls_by_attack_id=normalized_attack_crazed_rolls,
             wildviolent_rolls_by_attack_id=normalized_wildviolent_rolls,
+            modifyattack_submissions_by_participant_id=enemy_batch.modifyattack_submissions,
+            modifyattack_rand_by_participant_id=normalized_modifyattack_rand,
             mdfyattack_submissions_by_participant_id=enemy_batch.mdfyattack_submissions,
             attack_crazed_submissions_by_participant_id=enemy_batch.attack_crazed_submissions,
             wildviolent_submissions_by_participant_id=enemy_batch.wildviolent_submissions,

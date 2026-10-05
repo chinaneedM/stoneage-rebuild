@@ -6456,6 +6456,134 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             self.assertLess(current_hp,previous_hp)
             previous_hp=current_hp
 
+    def test_recovered_enemy_ai_modifyattack_executes_and_persists(self):
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-modifyattack"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,group,
+            entry_count_roll=1,selection_rolls=(0,),
+            birth_rolls=(EnemyBirthRolls(
+                level_roll=1,birth_offsets=(0,0,0,0),
+                spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+            ),),
+        )
+        enemy_id=str(context.battle.enemies[0].participant_id)
+        spawned=context.spawned_enemies[0]
+        skills=dict(self.stack.petskill_runtime.skills)
+        for i,code in enumerate((b"EA",b"WA",b"FI",b"WI")):
+            skills[544+i]=Recovered25PetSkillEntry(
+                skill_id=544+i,field=1,target=6,cost=2,illegal=2000,
+                function_name="PETSKILL_Modifyattack",option_bytes=code+b"|20",
+            )
+        self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+            skills=skills,
+            source_file=self.stack.petskill_runtime.source_file,
+        )
+        enemy=replace(
+            context.battle.enemies[0],
+            attack=300,
+            defense=0,
+            quick=200,
+        )
+        player=replace(
+            context.battle.player,
+            hp=2000,
+            max_hp=2000,
+            defense=0,
+            quick=10,
+        )
+        context=replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=player,
+                enemies=(enemy,),
+            ),
+            spawned_enemies=(replace(
+                spawned,
+                participant=enemy,
+                template=replace(
+                    spawned.template,
+                    tempno=20, graphic_id=101532,
+                    skill_ids=(20,30,40,544,50,60,70),
+                    skill_slot_ids=(20,30,40,544,50,60,70),
+                ),
+                variant=replace(
+                    spawned.variant,
+                    tactics_option="at:0;1;1|gu:0|es:0|wa:0;0;0;1;0;0;0",
+                ),
+            ),),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+        )
+        batch=self.coordinator._build_persistent_enemy_common_batch(
+            context,mode_rolls_by_enemy_id={enemy_id:0},target_rolls_by_enemy_id={enemy_id:0},
+            allow_modifyattack_skill=True,
+        )
+        self.assertEqual(batch.modifyattack_submissions[enemy_id].skill_id,544)
+        self.assertEqual(dict(batch.setup_effects),{})
+        previous_hp=2000
+        for turn in range(2):
+            context,result=(
+                self.coordinator
+                .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                    context,
+                    player_side_commands={
+                        "player":BattleCommand(BATTLE_COM_GUARD)
+                    },
+                    enemy_mode_rolls={enemy_id:0},
+                    enemy_target_rolls={enemy_id:0},
+                    modifyattack_rand_by_attack_id={enemy_id:100},
+                    enemy_escape_rolls={},
+                    opponent_abio_by_participant_id={},
+                    initiative_random_subtracts={
+                        "player":0,
+                        enemy_id:0,
+                    },
+                    profiles={
+                        "player":BattleCombatProfile(
+                            fixed_dex=10,
+                            fixed_luck=0,
+                            earth=100,water=0,fire=0,wind=0,
+                        ),
+                        enemy_id:BattleCombatProfile(
+                            fixed_dex=200,
+                            fixed_luck=0,
+                            earth=0,water=0,fire=0,wind=0,
+                        ),
+                    },
+                    attack_rolls={
+                        enemy_id:OrdinaryAttackRolls(
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                            guard_roll_1_100=100,
+                        )
+                    },
+                    defense_profile="newpower_70pct",
+                )
+            )
+            event=next(e for e in result.round.events if e.modifyattack_skill_id is not None)
+            self.assertEqual(event.modifyattack_skill_id,544)
+            self.assertEqual(event.modifyattack_helper_draws,1)
+            from tools.stoneage_modifyattack_reference_model import modifyattack_helper_damage, ModifyAttackOption
+            self.assertEqual(event.damage,modifyattack_helper_damage(
+                event.modifyattack_damage_before,ModifyAttackOption(0,20),(100,0,0,0),raw_rand=100)[0])
+            self.assertTrue(event.modifyattack_event_marked)
+            self.assertEqual(event.target_hp_before,previous_hp)
+            current_hp=context.persistent_battle_state.hp_by_participant_id["player"]
+            self.assertEqual(current_hp,result.round.hp_by_participant_id["player"])
+            self.assertLess(current_hp,previous_hp)
+            previous_hp=current_hp
+
     def test_recovered_enemy_ai_attack_crazed_executes_and_persists(self):
         session=LocalRuntimeSessionState(
             contract_id=self.profile.contract_id,

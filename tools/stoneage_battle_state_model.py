@@ -96,6 +96,7 @@ from tools.stoneage_battle_core_model import (
 )
 from tools.stoneage_enemy_ai_attack_crazed_bridge import EnemyAiAttackCrazedSubmission
 from tools.stoneage_enemy_ai_wildviolent_bridge import EnemyAiWildViolentSubmission
+from tools.stoneage_enemy_ai_modifyattack_bridge import EnemyAiModifyAttackSubmission
 from tools.stoneage_enemy_ai_mdfyattack_bridge import EnemyAiMdfyAttackSubmission
 from tools.stoneage_battle_round_model import (
     AttackCrazedRolls,
@@ -1449,6 +1450,8 @@ def resolve_persistent_ordinary_round(
         str,ComboExecutionRolls
     ] | None = None,
     mdfyattack_submissions_by_participant_id: Mapping[str,EnemyAiMdfyAttackSubmission] | None = None,
+    modifyattack_submissions_by_participant_id: Mapping[str,EnemyAiModifyAttackSubmission] | None = None,
+    modifyattack_rand_by_participant_id: Mapping[str,int | None] | None = None,
     attack_crazed_submissions_by_participant_id: Mapping[str,EnemyAiAttackCrazedSubmission] | None = None,
     attack_crazed_rolls_by_attack_id: Mapping[str,AttackCrazedRolls] | None = None,
     wildviolent_submissions_by_participant_id: Mapping[str,EnemyAiWildViolentSubmission] | None = None,
@@ -1698,6 +1701,15 @@ def resolve_persistent_ordinary_round(
             raise ValueError(
                 "Lighttakeed with prepared SetMagicPet powers is outside R1"
             )
+
+    modifyattack_submissions={str(pid):value for pid,value in (modifyattack_submissions_by_participant_id or {}).items()}
+    if set(modifyattack_submissions)-living_ids:
+        raise ValueError("Modifyattack submissions reference inactive actors")
+    for pid,submission in modifyattack_submissions.items():
+        if not isinstance(submission,EnemyAiModifyAttackSubmission):
+            raise TypeError("Modifyattack submission has wrong type")
+        if submission.participant_id!=pid:
+            raise ValueError("Modifyattack participant drift")
 
     combined_submissions={
         str(pid):submission
@@ -2002,6 +2014,7 @@ def resolve_persistent_ordinary_round(
         semantic_nonattack_ids=tuple(
             set(attack_crazed_submissions_by_participant_id or {})
             | set(wildviolent_submissions_by_participant_id or {})
+            | set(modifyattack_submissions)
             | set(mdfyattack_submissions_by_participant_id or {})
             | set(weaken_submissions_by_participant_id or {})
             | set(refresh_submissions_by_participant_id or {})
@@ -2050,6 +2063,8 @@ def resolve_persistent_ordinary_round(
         }),
         combo_rolls_by_starter_id=combo_rolls_by_starter_id,
         continuation_rolls_by_attack_id=continuation_rolls_by_attack_id,
+        modifyattack_submissions_by_participant_id=modifyattack_submissions,
+        modifyattack_rand_by_participant_id=modifyattack_rand_by_participant_id,
         mdfyattack_submissions_by_participant_id=mdfyattack_submissions_by_participant_id,
         attack_crazed_submissions_by_participant_id=attack_crazed_submissions_by_participant_id,
         attack_crazed_rolls_by_attack_id=attack_crazed_rolls_by_attack_id,

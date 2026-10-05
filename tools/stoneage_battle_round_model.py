@@ -162,6 +162,8 @@ from tools.stoneage_wildviolent_model import (
     plan_wildviolent_nonbow_action,
     wildviolent_divided_damage,
 )
+from tools.stoneage_enemy_ai_modifyattack_bridge import EnemyAiModifyAttackSubmission
+from tools.stoneage_modifyattack_reference_model import modifyattack_helper_damage
 from tools.stoneage_enemy_ai_mdfyattack_bridge import EnemyAiMdfyAttackSubmission
 from tools.stoneage_mdfyattack_model import mdfyattack_attribute_damage
 
@@ -1060,6 +1062,10 @@ class OrdinaryRoundEvent:
     combined_att_reverse_effect: CombinedAttReverseEffect | None = None
     vary_skill_id: int | None = None
     vary_visual_effect_enabled: bool | None = None
+    modifyattack_skill_id: int | None = None
+    modifyattack_damage_before: int | None = None
+    modifyattack_helper_draws: int = 0
+    modifyattack_event_marked: bool = False
     mdfyattack_skill_id: int | None = None
     mdfyattack_element: str | None = None
     mdfyattack_attack_vector: tuple[int, ...] = ()
@@ -3615,6 +3621,8 @@ def resolve_ordinary_round(
         str,ContinuationAttackRolls
     ] | None = None,
     mdfyattack_submissions_by_participant_id: Mapping[str,EnemyAiMdfyAttackSubmission] | None = None,
+    modifyattack_submissions_by_participant_id: Mapping[str,EnemyAiModifyAttackSubmission] | None = None,
+    modifyattack_rand_by_participant_id: Mapping[str,int | None] | None = None,
     attack_crazed_submissions_by_participant_id: Mapping[str,EnemyAiAttackCrazedSubmission] | None = None,
     attack_crazed_rolls_by_attack_id: Mapping[str,AttackCrazedRolls] | None = None,
     wildviolent_submissions_by_participant_id: Mapping[str,EnemyAiWildViolentSubmission] | None = None,
@@ -4809,6 +4817,32 @@ def resolve_ordinary_round(
             )
     vary_active_command_ids=set(vary_actor_ids)
 
+    modifyattack_submissions={str(pid):value for pid,value in (modifyattack_submissions_by_participant_id or {}).items()}
+    modifyattack_actor_ids=set(modifyattack_submissions)
+    if modifyattack_actor_ids-set(slot_by_id):
+        raise ValueError("Modifyattack references unknown actors")
+    if modifyattack_actor_ids & (vary_overlap | vary_actor_ids):
+        raise ValueError("Modifyattack semantic submissions overlap another skill")
+    for pid,submission in modifyattack_submissions.items():
+        if not isinstance(submission,EnemyAiModifyAttackSubmission):
+            raise TypeError("Modifyattack submission has wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (submission.participant_id!=pid or entry.participant.kind!="enemy"
+            or entry.participant.side!="enemy" or entry.command.command1!=BATTLE_COM_ATTACK
+            or entry.command.command2!=submission.source_target_slot):
+            raise ValueError("Modifyattack ordering carrier must be enemy ATTACK/source-target")
+        if profiles[pid].counter_weapon_type!=COUNTER_WEAPON_FIST:
+            raise ValueError("Modifyattack currently admits enemy FIST actors only")
+        if setup_effects.get(pid,BattleCommandSetupEffects())!=BattleCommandSetupEffects():
+            raise ValueError("Modifyattack callback does not mutate work powers")
+    modifyattack_rand={str(pid):value for pid,value in (modifyattack_rand_by_participant_id or {}).items()}
+    if set(modifyattack_rand)!=modifyattack_actor_ids:
+        raise ValueError("Modifyattack helper RNG actors mismatch")
+    if any(value is not None and (type(value) is not int or not 0<=value<2**31) for value in modifyattack_rand.values()):
+        raise ValueError("Modifyattack requires raw nonnegative signed-int rand result")
+    modifyattack_active_command_ids=set(modifyattack_actor_ids)
+    consumed_modifyattack_rand_ids=set()
+
     # The scheduling carrier cannot confer native ATTACK counter eligibility.
     # Confusion later removes a rewritten actor from this symbolic-command set.
     mdfyattack_active_command_ids=set(mdfyattack_submissions)
@@ -5529,7 +5563,7 @@ def resolve_ordinary_round(
             command_by_slot=command_by_slot,
             action_value_by_slot=action_value_by_slot,
             semantic_noncounter_actor_ids=frozenset(
-                mdfyattack_active_command_ids
+                modifyattack_active_command_ids | mdfyattack_active_command_ids
                 | weaken_active_command_ids
                 | refresh_active_command_ids
                 | setmagicpet_active_command_ids
@@ -5677,6 +5711,7 @@ def resolve_ordinary_round(
             )
             current_status_tick=tick
             if tick.confusion_rewrote_command:
+                modifyattack_active_command_ids.discard(str(participant_id))
                 mdfyattack_active_command_ids.discard(str(participant_id))
                 weaken_active_command_ids.discard(str(participant_id))
                 refresh_active_command_ids.discard(str(participant_id))
@@ -8252,6 +8287,12 @@ def resolve_ordinary_round(
         attacker_profile = profiles[participant_id]
         defender_profile = profiles[defender_id]
         before = hp_by_slot[target]
+        modifyattack_submission=(modifyattack_submissions.get(str(participant_id))
+            if str(participant_id) in modifyattack_active_command_ids else None)
+        modifyattack_source_react_blocked=(modifyattack_submission is not None
+            and base_damage_react_active(damage_react_state[str(defender_id)]))
+        modifyattack_damage_before=None
+        modifyattack_helper_draws=0
         mdfyattack_submission=(mdfyattack_submissions.get(str(participant_id))
             if str(participant_id) in mdfyattack_active_command_ids else None)
         mdfyattack_source_react_blocked=(mdfyattack_submission is not None
@@ -8387,6 +8428,7 @@ def resolve_ordinary_round(
                             if battletimid_submission is None
                             else int(battletimid_submission.skill_id)
                         ),
+                        modifyattack_skill_id=(None if modifyattack_submission is None else modifyattack_submission.skill_id),
                         lighttakeed_resolution=lighttakeed_dodge_resolution,
                         lighttakeed_skill_id=(
                             None
@@ -8400,7 +8442,7 @@ def resolve_ordinary_round(
                         ),
                     )
                 )
-                if mdfyattack_submission is None and not continuation_blocked_by_reaction:
+                if modifyattack_submission is None and mdfyattack_submission is None and not continuation_blocked_by_reaction:
                     append_counter_chain(participant_id,slot,target)
                 continue
 
@@ -8683,6 +8725,19 @@ def resolve_ordinary_round(
                 * float(earth_transition["damage_multiplier"])
             )
 
+        if modifyattack_submission is not None and not modifyattack_source_react_blocked and int(damage)>0:
+            original_modify_target=by_slot[int(target)]
+            modifyattack_damage_before=int(damage)
+            original_elements=profiles[str(original_modify_target.participant_id)].elements
+            owns_rand=original_elements[modifyattack_submission.option.element_index]>0
+            supplied_rand=modifyattack_rand[str(participant_id)]
+            damage,modifyattack_helper_draws=modifyattack_helper_damage(
+                int(damage),modifyattack_submission.option,original_elements,
+                raw_rand=supplied_rand if owns_rand else None,
+            )
+            if modifyattack_helper_draws:
+                consumed_modifyattack_rand_ids.add(str(participant_id))
+
         battle_tear_augmentation=None
         if battle_tear_submission is not None:
             original_tear_target=by_slot[int(target)]
@@ -8724,6 +8779,7 @@ def resolve_ordinary_round(
             or guard_break2_submission is not None
             or battletimid_submission is not None
             or lighttakeed_submission is not None
+            or modifyattack_submission is not None
             or mdfyattack_submission is not None
         ):
             # Fixed specialized BATTLE_S_AttackDamage lets AttackSeq calculate
@@ -9238,6 +9294,11 @@ def resolve_ordinary_round(
                     if lighttakeed_submission is None
                     else str(lighttakeed_submission.profile)
                 ),
+                modifyattack_skill_id=(None if modifyattack_submission is None else modifyattack_submission.skill_id),
+                modifyattack_damage_before=modifyattack_damage_before,
+                modifyattack_helper_draws=modifyattack_helper_draws,
+                modifyattack_event_marked=(modifyattack_submission is not None
+                    and not modifyattack_source_react_blocked and int(event_damage)>0),
                 mdfyattack_skill_id=(None if mdfyattack_submission is None else mdfyattack_submission.skill_id),
                 mdfyattack_element=(None if mdfyattack_submission is None else mdfyattack_submission.option.element),
                 mdfyattack_attack_vector=(() if mdfyattack_submission is None else mdfyattack_submission.option.attack_vector),
@@ -9257,7 +9318,8 @@ def resolve_ordinary_round(
         # iRet is controlled by AttackSeq result, the post-react defindex's
         # GUARD state and death. Preserve that difference here.
         if (
-            mdfyattack_submission is None
+            modifyattack_submission is None
+            and mdfyattack_submission is None
             and not (
                 battletimid_resolution is not None
                 and battletimid_resolution.forced_exit
@@ -9306,6 +9368,10 @@ def resolve_ordinary_round(
                 "Combined RNG supplied for status/death-suppressed semantic action: "
                 + participant_id
             )
+
+    for participant_id in sorted(modifyattack_actor_ids-consumed_modifyattack_rand_ids):
+        if modifyattack_rand[participant_id] is not None:
+            raise ValueError("Modifyattack unowned helper RNG supplied: "+participant_id)
 
     for participant_id in sorted(
         battletimid_actor_ids-attempted_battletimid_actor_ids
