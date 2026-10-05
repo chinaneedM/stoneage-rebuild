@@ -64,7 +64,7 @@ jobs:
             --iris-dir /tmp/vary-source/iris \
             --bismarck-dir /tmp/vary-source/bismarck \
             > research/recovered/STONEAGE-VARY-SOURCE-AUDIT-R1.txt
-          grep -F 'RESOLUTION|VARY_FIXED_SOURCE_FIRST_PASS_CLOSED_BOUNDED_REFERENCE' \
+          grep -F 'RESOLUTION|VARY_FIXED_SOURCE_CLOSED_BOUNDED_REFERENCE' \
             research/recovered/STONEAGE-VARY-SOURCE-AUDIT-R1.txt
 
       - run: sudo apt-get update && sudo apt-get install -y unar
