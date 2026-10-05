@@ -87,6 +87,7 @@ def analyze_profile(name: str, root: Path):
             "if(react==BATTLE_MD_REFLEC)defindex=attackindex"
         ),
         "defineattack":attack_damage.find("BATTLE_DefineAttack("),
+        "zero_damage_demote":attack_damage.find("if(damage<=0)"),
         "lighttake_case":attack_damage.find("case"+COMMAND_NAME+":"),
     }
     ordered=all(value >= 0 for value in lifecycle_positions.values()) and (
@@ -96,6 +97,7 @@ def analyze_profile(name: str, root: Path):
         < lifecycle_positions["damagesub"]
         < lifecycle_positions["reflect_redirect"]
         < lifecycle_positions["defineattack"]
+        < lifecycle_positions["zero_damage_demote"]
         < lifecycle_positions["lighttake_case"]
     )
 
@@ -141,7 +143,13 @@ def analyze_profile(name: str, root: Path):
             < damage_sub.find("CHAR_WORKDAMAGEREFLEC)-1"),
         "attackdamage_lighttake_full_order":ordered,
         "post_damage_transfer_profile_matches":transfer_ok,
-        "lighttake_case_has_no_damage_guard":
+        "zero_damage_demotes_skill_before_post_switch":
+            "if(damage<=0)" in attack_damage
+            and "skill_type=-1" in attack_damage[
+                lifecycle_positions["zero_damage_demote"]:
+                lifecycle_positions["lighttake_case"]
+            ],
+        "lighttake_case_has_no_local_damage_guard":
             "damage>0" not in lighttake_case and "damage<=0" not in lighttake_case,
         "lighttake_case_no_rng":
             "RAND(" not in lighttake_case and "rand(" not in lighttake_case,
@@ -188,7 +196,7 @@ def emit(rows):
     print("FACT|positive_damage_REFLEC_nonthrowing_redirects_defindex_to_attacker_before_Lighttake_post_branch")
     print("FACT|positive_damage_REFLEC_gavin_iris_post_branch_is_attacker_counter_self_copy")
     print("FACT|positive_damage_REFLEC_bismarck_post_branch_increments_attacker_counter_by_one")
-    print("FACT|zero_damage_returns_before_refetch_and_Lighttake_post_branch_still_has_no_damage_guard")
+    print("FACT|zero_damage_returns_before_DamageSub_refetch_then_demotes_skill_type_before_post_switch")
     print("BOUNDARY|throwing_weapon_REFLEC_bypasses_charge_consumption_and_redirect_then_post_branch_reads_defender")
     print("BOUNDARY|recovered25_positive_users_are_enemybase_rows_but_original_binary_profile_remains_open")
     print("RESOLUTION|LIGHTTAKEED_DAMAGEREACT_LIFECYCLE_FIXED_SOURCE_CLOSED")
