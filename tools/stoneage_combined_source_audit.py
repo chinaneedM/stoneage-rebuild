@@ -104,6 +104,14 @@ def analyze_profile(name:str,root:Path):
         "initialized_zero" if "intkill[10],count=0,i;" in callback
         else "uninitialized"
     )
+    initiative_style=(
+        "fixed_0_15" if name=="bismarck" else "scaled_0_30pct"
+    )
+    expected_initiative=(
+        "dex=work-RAND(0,15);"
+        if name=="bismarck"
+        else "dex=work-RAND(0,work*0.3);"
+    )
 
     selection="CHAR_SETWORKINT_LOW(charaindex,CHAR_WORKBATTLECOM3,kill[rand()%count]);"
     gates={
@@ -146,9 +154,10 @@ def analyze_profile(name:str,root:Path):
             "CHAR_getWorkInt(charaindex,CHAR_WORKBATTLECOM2)",
             "CHAR_GETWORKINT_HIGH(charaindex,CHAR_WORKBATTLECOM3)",
         )),
-        "initiative_uses_workquick_and_rand_0_30pct":
+        "initiative_profile_matches":
             "case"+COMMAND_NAME+":" in battle
-            and "dex=work-RAND(0,work*0.3);" in battle,
+            and "work=CHAR_getWorkInt(charaindex,CHAR_WORKQUICK)+20;" in battle
+            and expected_initiative in battle,
         "defender_command_changes_dodge_parameter":all(token in event for token in (
             "CHAR_WORKBATTLECOM1)=="+COMMAND_NAME,
             "gKawashiPara=0.027;",
@@ -176,6 +185,7 @@ def analyze_profile(name:str,root:Path):
         "marker_sha256":marker_sha,
         "option_guard_style":option_guard_style,
         "count_init_style":count_init_style,
+        "initiative_style":initiative_style,
         "gates":gates,
         "hashes":{key:_sha(path) for key,path in paths.items()},
     }
@@ -192,7 +202,8 @@ def emit(rows):
             f"mode_value={row['mode_value']}|"
             f"marker_sha256={row['marker_sha256']}|"
             f"option_guard_style={row['option_guard_style']}|"
-            f"count_init_style={row['count_init_style']}"
+            f"count_init_style={row['count_init_style']}|"
+            f"initiative_style={row['initiative_style']}"
         )
         for key,value in sorted(row["gates"].items()):
             print(f"GATE|profile={row['profile']}|name={key}|pass={int(value)}")
@@ -209,6 +220,7 @@ def emit(rows):
     print("BOUNDARY|malformed_nonpositive_count=historical_modulo_or_index_ub")
     print("BOUNDARY|missing_magic_token=historical_uninitialized_read_ub")
     print("BOUNDARY|count_init=gavin_iris_uninitialized_bismarck_zero")
+    print("BOUNDARY|initiative=gavin_iris_workquick_plus20_minus_rand_0_30pct_bismarck_workquick_plus20_minus_rand_0_15")
     print("BOUNDARY|magic_directuse_player_and_nonplayer_itemnum_semantics_differ")
     print("BOUNDARY|original_binary_compile_profile_and_jss_membership_open")
     print("RESOLUTION|COMBINED_FIXED_SOURCE_CLOSED_WELLFORMED_OPTION_REFERENCE")
