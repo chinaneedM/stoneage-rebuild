@@ -20,6 +20,7 @@ EXPECTED_MAGIC_IDS=(
     139,159,169,179,189,240,306,
 )
 EXPECTED_MAGIC_SHA256="b3a57b595bd60dfab571fe7af4dd6e2d43a5839c934eb644ba462897b1bcb6bb"
+EXPECTED_RECOVERY21_DERIVED=(100,False)
 EXPECTED_EXACT_MAGIC_ROWS=(
     (20,"MAGIC_Recovery","0b3af9808d0d5d77f9d093223c13425b8a5b07b5c1542271e90d8afbbe5a62b8",1,8,0,None,2,"1a6562590ef19d1045d06c4055742d38288e9e6dcd71ccde5cee80f1d5a774eb",False),
     (21,"MAGIC_Recovery","0b3af9808d0d5d77f9d093223c13425b8a5b07b5c1542271e90d8afbbe5a62b8",1,8,0,None,3,"ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306",False),
@@ -80,6 +81,7 @@ def analyze_parsed_rows(
     ids_match=source_ids==EXPECTED_MAGIC_IDS
     rows=[]
     missing=[]
+    recovery21_derived=None
     for magic_id in EXPECTED_MAGIC_IDS:
         record=by_id.get(int(magic_id))
         if record is None:
@@ -91,6 +93,17 @@ def analyze_parsed_rows(
         function=_ascii_function(fields[2])
         option=bytes(fields[3])
         function_raw=bytes(fields[2])
+        if magic_id==21 and function=="MAGIC_Recovery":
+            try:
+                option_text=option.decode("ascii","strict")
+            except UnicodeDecodeError as exc:
+                raise ValueError("positive Recovery 21 OPTION is not ASCII") from exc
+            import re
+            match=re.match(r"\\s*([+-]?\\d+)",option_text)
+            recovery21_derived=(
+                int(match.group(1),10) if match else 0,
+                "%" in option_text,
+            )
         rows.append({
             "id":int(magic_id),
             "function":function,
@@ -130,6 +143,10 @@ def analyze_parsed_rows(
             and int(malformed)==0
         ),
         "exact_rows_closed":exact_rows_closed,
+        "recovery21_derived":recovery21_derived,
+        "recovery21_derived_closed":(
+            recovery21_derived==EXPECTED_RECOVERY21_DERIVED
+        ),
     }
 
 
@@ -167,6 +184,16 @@ def emit(result,digest):
             f"option_sha256={row['option_sha256']}|"
             f"option_contains_nul={int(row['option_contains_nul'])}"
         )
+    if result["recovery21_derived"] is not None:
+        power,percent=result["recovery21_derived"]
+        print(
+            f"DERIVED_POSITIVE_RECOVERY|id=21|power={power}|"
+            f"percent={int(percent)}"
+        )
+    print(
+        "RESOLUTION|RECOVERED25_COMBINED_RECOVERY21_DERIVED_"
+        +("CLOSED" if result["recovery21_derived_closed"] else "OPEN")
+    )
     print(
         "RESOLUTION|RECOVERED25_COMBINED_MAGIC_CROSSLINK_"
         +("CLOSED" if result["population_closed"] else "OPEN")
@@ -191,6 +218,8 @@ def main():
         and not result["exact_rows_closed"]
     ):
         raise SystemExit("Combined selected-magic exact row drift")
+    if not result["recovery21_derived_closed"]:
+        raise SystemExit("Combined positive Recovery 21 derived OPTION drift")
 
 
 if __name__=="__main__":
