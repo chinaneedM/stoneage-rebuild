@@ -6283,16 +6283,19 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Three pinned fixed descendants close the semantic callback/dispatcher/effect:
   gavin `1f90cb6...`, iris `9e6c8ce...`, Bismarck `999ffdf...`.
   Callback writes symbolic BatFly + COM2 + C_OK + LOW(COM3), reads no OPTION and
-  owns no RNG. Dispatcher TargetAdjust is only an execution-validity gate;
-  effect then rebuilds the complete opposing living side.
+  owns no callback-local RNG. Dispatcher TargetAdjust is only an execution gate:
+  live COM2 consumes no draw; invalid COM2 with living candidates consumes one
+  explicit DefaultAttacker draw; no candidates returns no-action without a
+  draw. The effect then rebuilds the complete opposing living side.
 - BatFly drains current HP directly, outside ordinary AttackSeq/DamageSub:
   ordinary living entries lose floor(HP/10), minimum1. A player with a living
   ride pet instead loses floor(HP/20), minimum1, and the separate ride pet also
   loses floor(HP/20), minimum1. Ride-pet HP<=0 clears mounted state and sets
   PETFALL. The BatFly actor heals the summed drain; if that sum would overflow
   max HP, actual HP is capped but source-reported addhp is reset to **0**.
-- The side-target path uses ordinary live TargetCheck and excludes dead/HP<=0
-  entries. It owns no RNG. Multi-target presentation calls shared SortLoc under
+- The whole-side effect path uses ordinary live TargetCheck and excludes
+  dead/HP<=0 entries. After the dispatcher TargetAdjust gate it owns no further
+  RNG. Multi-target presentation calls shared SortLoc under
   the pinned attack-magic profiles, but the preserved side0 comparator contains
   the anomalous `ele2basex-ele1basey` term; exact portable qsort/BD
   presentation order is therefore **not claimed**.
@@ -6335,7 +6338,8 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   typed ID633/TEMPNO1160/graphic101815/slot1-or4 admission and a dedicated
   whole-side semantic action: live-target filtering, 10% drain, player+ride
   5%/5% split, PETFALL, summed attacker healing and overflow reported-heal-zero
-  quirk, with **no BatFly RNG**. Preserve normal death/profit/termination and
+  quirk, with exact **conditional TargetAdjust RNG only**. Preserve normal
+  death/profit/termination and
   existing ride-pet exit projection; use deterministic modern slot ordering
   without claiming recovered qsort presentation identity. Promote pressure only
   after dedicated/coordinator/golden/full-region runtime gates pass. Continue
