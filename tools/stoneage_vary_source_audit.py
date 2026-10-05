@@ -14,6 +14,7 @@ CALLBACK_NAME="PETSKILL_Vary"
 COMMAND_NAME="BATTLE_COM_S_VARY"
 FEATURE_NAME="_VARY_WOLF"
 EXPANSION_NAME="_EXPANSION_VARY_WOLF"
+FIXWOLF_NAME="_FIXWOLF"
 SOURCE_PETSKILL_SYMBOL_NAME="PETSKILL_VARY"
 
 
@@ -84,6 +85,7 @@ def analyze_profile(name: str, root: Path):
     enemy_compact=_compact(data["enemy"])
 
     expansion_active=EXPANSION_NAME in active
+    fixwolf_active=FIXWOLF_NAME in active
     expected_expansion=False
     option_guard=(
         "string_literal_nul"
@@ -110,6 +112,7 @@ def analyze_profile(name: str, root: Path):
         "feature_active":FEATURE_NAME in active,
         "expansion_profile_is_explicit":
             expansion_active==expected_expansion,
+        "fixwolf_inactive_at_fixed_pin":not fixwolf_active,
         "callback_registered":
             '{"PETSKILL_Vary",PETSKILL_Vary,0}' in pet_compact,
         "source_skill_symbol_is_600":source_skill_id==600,
@@ -156,6 +159,24 @@ def analyze_profile(name: str, root: Path):
                     and not expansion_active
                 )
             ),
+        "turn_counter_increments_while_wolf":
+            "CHAR_WORKTURN)==0" in battle_compact
+            and "CHAR_WORKTURN)+1" in battle_compact,
+        "turn_counter_expires_after_five":
+            "CHAR_WORKTURN)>5" in battle_compact,
+        "expiry_restores_base_image":
+            "CHAR_BASEIMAGENUMBER,CHAR_getInt(charaindex,CHAR_BASEBASEIMAGENUMBER)" in battle_compact,
+        "expiry_restores_attack":
+            "CHAR_WORKATTACKPOWER,CHAR_getWorkInt(charaindex,CHAR_WORKFIXSTR)" in battle_compact,
+        "expiry_restores_quick":
+            "CHAR_WORKQUICK,CHAR_getWorkInt(charaindex,CHAR_WORKFIXDEX)" in battle_compact,
+        "expiry_defense_divergence_explicit":
+            (
+                "CHAR_WORKDEFENCEPOWER,CHAR_getWorkInt(charaindex,CHAR_WORKFIXTOUGH)"
+                in battle_compact
+            )==(name=="bismarck"),
+        "battle_end_restores_nonbase_image":
+            "CHAR_BASEBASEIMAGENUMBER)!=CHAR_getInt(petindex,CHAR_BASEIMAGENUMBER)" in battle_compact,
     }
     failed={k:v for k,v in gates.items() if not v}
     if failed:
@@ -168,6 +189,7 @@ def analyze_profile(name: str, root: Path):
         "command_symbol":COMMAND_NAME,
         "mode_symbol":"BATTLE_CHARMODE_C_OK",
         "expansion_active":expansion_active,
+        "fixwolf_active":fixwolf_active,
         "option_guard":option_guard,
         "defense_marker":'strstr(pszOption,"防%")' in callback,
         "compiled_magic_effect":expected_effect,
@@ -187,6 +209,7 @@ def emit(rows):
             f"command_symbol={row['command_symbol']}|"
             f"mode_symbol={row['mode_symbol']}|"
             f"expansion_active={int(row['expansion_active'])}|"
+            f"fixwolf_active={int(row['fixwolf_active'])}|"
             f"option_guard={row['option_guard']}|"
             f"defense_marker={int(row['defense_marker'])}|"
             f"compiled_magic_effect={int(row['compiled_magic_effect'])}"
@@ -198,9 +221,12 @@ def emit(rows):
     print("FACT|runtime_CHAR_PETID_is_enemybase_TEMPNO")
     print("FACT|base_allowed_tempnos=981,982,983,984")
     print("FACT|callback_writes_command_target_mode_and_resets_workturn")
+    print("FACT|wolf_turn_counter_reverts_after_six_actor_actions")
     print("FACT|gavin_iris_option_markers=attack,quick")
     print("FACT|bismarck_adds_defense_marker")
+    print("BOUNDARY|expiry_restore=gavin_iris_attack_quick_bismarck_attack_defense_quick")
     print("BOUNDARY|EXPANSION_VARY_WOLF_inactive_at_all_three_fixed_pins")
+    print("BOUNDARY|FIXWOLF_inactive_at_all_three_fixed_pins")
     print("BOUNDARY|bismarck_raw_expansion_image_branch_not_compiled_at_fixed_pin")
     print("BOUNDARY|original_numeric_command_and_mode_values_open")
     print("BOUNDARY|original_binary_compile_profile_and_charset_open")
