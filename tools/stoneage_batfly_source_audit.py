@@ -221,6 +221,8 @@ def analyze_profile(name:str,root:Path):
     effect=_compact(_strip(_definition(data["event"],"BATTLE_BatFly")))
     visual=_compact(_strip(_definition(data["magic"],"PROFESSION_MAGIC_ATTAIC_Effect")))
     lerchange=_compact(_strip(_definition(data["event"],"BATTLE_LerChange")))
+    multilist=_compact(_strip(_definition(data["battle"],"BATTLE_MultiList")))
+    targetcheck=_compact(_strip(_definition(data["battle"],"BATTLE_TargetCheck")))
     at=data["battle"].find("case "+COMMAND_NAME+":")
     dispatch=_compact(_strip(_case_block(data["battle"][at:],"case "+COMMAND_NAME+":")))
 
@@ -248,6 +250,14 @@ def analyze_profile(name:str,root:Path):
         "effect_rebuilds_whole_opposing_side":
             "TARGET_SIDE_0" in effect and "TARGET_SIDE_1" in effect
             and "BATTLE_MultiList" in effect,
+        "whole_side_list_uses_live_targetcheck":
+            "TARGET_SIDE_0" in multilist
+            and "TARGET_SIDE_1" in multilist
+            and "BATTLE_TargetCheck" in multilist
+            and "BATTLE_TargetCheckDead" not in multilist,
+        "live_targetcheck_rejects_dead_and_nonpositive_hp":
+            "CHAR_ISDIE)==TRUE" in targetcheck
+            and "CHAR_HP)<=0" in targetcheck,
         "effect_protocol_helper_precedes_hp_loop":
             effect.find("PROFESSION_MAGIC_ATTAIC_Effect")>=0
             and effect.find("PROFESSION_MAGIC_ATTAIC_Effect")<effect.find("for(i=0;i<SIDE_OFFSET;i++)"),
@@ -327,6 +337,7 @@ def emit(rows):
     print("FACT|batfly_callback_uses_no_option_and_no_rng")
     print("FACT|target3_is_all_other_side_but_dispatch_targetadjust_is_only_an_execution_gate")
     print("FACT|effect_rebuilds_and_drains_the_whole_opposing_side")
+    print("FACT|whole_side_target_list_uses_live_targetcheck_and_excludes_dead_or_nonpositive_hp_entries")
     print("FACT|unmounted_target_drains_floor_10pct_min1_mounted_rider_and_pet_each_floor_5pct_min1")
     print("FACT|attacker_heals_sum_but_overflow_cap_sets_reported_addhp_to_zero")
     print("FACT|profession_magic_attack_effect_is_protocol_animation_only_for_this_path")
