@@ -1948,6 +1948,14 @@ class LocalRuntimeSessionCoordinator:
         guard_break2_submissions={}
         battletimid_submissions={}
         combined_submissions={}
+        combined_selection_draws={
+            str(key):int(value)
+            for key,value in (
+                combined_selection_draws_by_enemy_id or {}
+            ).items()
+        }
+        if any(value < 0 for value in combined_selection_draws.values()):
+            raise ValueError("Combined reduced selection draw cannot be negative")
         weaken_submissions={}
         refresh_submissions={}
         setmagicpet_submissions={}
@@ -2231,13 +2239,7 @@ class LocalRuntimeSessionCoordinator:
                     and selected_skill.function_name == COMBINED_CALLBACK
                     and bool(allow_combined_skill)
                 ):
-                    draw_map={
-                        str(key):int(value)
-                        for key,value in (
-                            combined_selection_draws_by_enemy_id or {}
-                        ).items()
-                    }
-                    if enemy_id not in draw_map:
+                    if enemy_id not in combined_selection_draws:
                         raise ValueError(
                             "Combined callback selection requires explicit "
                             "reduced draw for " + enemy_id
@@ -2247,7 +2249,7 @@ class LocalRuntimeSessionCoordinator:
                         skill_slot=int(decision.skill_slot),
                         target_slot=int(decision.target_slot),
                         petskill_runtime=petskill_runtime,
-                        draw_index=int(draw_map[enemy_id]),
+                        draw_index=int(combined_selection_draws[enemy_id]),
                     )
                     commands[enemy_id]=BattleCommand(
                         BATTLE_COM_ATTACK,
@@ -2566,6 +2568,15 @@ class LocalRuntimeSessionCoordinator:
             raise ValueError(
                 "enemy AI selected command outside coordinator "
                 f"{allowed} subset: {enemy_id}:{decision.kind}"
+            )
+
+        unused_combined_draws=sorted(
+            set(combined_selection_draws)-set(combined_submissions)
+        )
+        if unused_combined_draws:
+            raise ValueError(
+                "Combined selection RNG supplied for non-selected actors: "
+                + ",".join(unused_combined_draws)
             )
 
         return EnemyAiCommonCommandBatch(
