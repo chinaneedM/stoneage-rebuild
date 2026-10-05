@@ -70,6 +70,11 @@ from tools.stoneage_enemy_ai_battletimid_bridge import (
     EnemyAiBattleTimidSubmission,
     resolve_enemy_ai_battletimid_submission,
 )
+from tools.stoneage_enemy_ai_lighttakeed_bridge import (
+    CALLBACK_NAME as LIGHTTAKEED_CALLBACK,
+    EnemyAiLighttakeedSubmission,
+    resolve_enemy_ai_lighttakeed_submission,
+)
 from tools.stoneage_battletimid_model import (
     CALLBACK_NAME as BATTLETIMID_CALLBACK,
 )
@@ -490,6 +495,9 @@ class EnemyAiCommonCommandBatch:
     ] = field(default_factory=dict)
     battletimid_submissions: Mapping[
         str,EnemyAiBattleTimidSubmission
+    ] = field(default_factory=dict)
+    lighttakeed_submissions: Mapping[
+        str,EnemyAiLighttakeedSubmission
     ] = field(default_factory=dict)
     combined_submissions: Mapping[
         str,EnemyAiCombinedSubmission
@@ -1160,6 +1168,50 @@ class EnemyAiCommonCommandBatch:
                 "enemy AI BattleTimid semantic submissions overlap another skill"
             )
 
+        lighttakeed_submissions={
+            str(key):value
+            for key,value in self.lighttakeed_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "lighttakeed_submissions",
+            MappingProxyType(lighttakeed_submissions),
+        )
+        for participant_id,submission in lighttakeed_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI Lighttakeed submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiLighttakeedSubmission):
+                raise TypeError(
+                    "enemy AI Lighttakeed submission has wrong type for "
+                    + participant_id
+                )
+            if str(submission.participant_id)!=participant_id:
+                raise ValueError("enemy AI Lighttakeed participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1)!=BATTLE_COM_ATTACK
+                or int(carrier.command2)!=int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI Lighttakeed carrier must be ATTACK/source-target"
+                )
+            effects=self.setup_effects.get(participant_id)
+            if effects is None or (
+                effects.attack_power,effects.defense_power
+            ) != (
+                submission.attack_power,submission.defense_power
+            ):
+                raise ValueError(
+                    "enemy AI Lighttakeed callback work-power setup drift"
+                )
+        lighttakeed_overlap=battletimid_overlap | set(battletimid_submissions)
+        if set(lighttakeed_submissions) & lighttakeed_overlap:
+            raise ValueError(
+                "enemy AI Lighttakeed semantic submissions overlap another skill"
+            )
+
         combined_submissions={
             str(key):value
             for key,value in self.combined_submissions.items()
@@ -1189,7 +1241,11 @@ class EnemyAiCommonCommandBatch:
                 raise ValueError(
                     "enemy AI Combined carrier must be ATTACK/source-target"
                 )
-        combined_overlap=battletimid_overlap | set(battletimid_submissions)
+        combined_overlap=(
+            lighttakeed_overlap
+            | set(battletimid_submissions)
+            | set(lighttakeed_submissions)
+        )
         if set(combined_submissions) & combined_overlap:
             raise ValueError(
                 "enemy AI Combined semantic submissions overlap another skill"
@@ -1893,6 +1949,8 @@ class LocalRuntimeSessionCoordinator:
         allow_nocast_skill: bool = False,
         allow_guard_break2_skill: bool = False,
         allow_battletimid_skill: bool = False,
+        allow_lighttakeed_skill: bool = False,
+        lighttakeed_profiles_by_enemy_id: Mapping[str,str] | None = None,
         allow_combined_skill: bool = False,
         combined_selection_draws_by_enemy_id: Mapping[str,int] | None = None,
         allow_vary_skill: bool = False,
@@ -2053,8 +2111,15 @@ class LocalRuntimeSessionCoordinator:
         nocast_submissions={}
         guard_break2_submissions={}
         battletimid_submissions={}
+        lighttakeed_submissions={}
         combined_submissions={}
         vary_submissions={}
+        lighttakeed_profiles={
+            str(key):str(value)
+            for key,value in (
+                lighttakeed_profiles_by_enemy_id or {}
+            ).items()
+        }
         vary_profiles={
             str(key):str(value)
             for key,value in (
@@ -2467,6 +2532,57 @@ class LocalRuntimeSessionCoordinator:
 
                 if (
                     selected_skill is not None
+                    and selected_skill.function_name == LIGHTTAKEED_CALLBACK
+                    and bool(allow_lighttakeed_skill)
+                ):
+                    if enemy_id not in lighttakeed_profiles:
+                        raise ValueError(
+                            "Lighttakeed callback requires explicit descendant "
+                            "profile for " + enemy_id
+                        )
+                    baseline=living[enemy_id]
+                    weaken_prepared=(
+                        None if state.nocast_overlay is None else
+                        state.nocast_overlay.runtime_by_participant_id[
+                            enemy_id
+                        ].prepared_weaken_powers
+                    )
+                    if weaken_prepared is not None:
+                        raise ValueError(
+                            "Lighttakeed with prepared Weaken powers is outside R1"
+                        )
+                    magic_prepared=(
+                        None if state.setmagicpet_overlay is None else
+                        state.setmagicpet_overlay.runtime_by_participant_id[
+                            enemy_id
+                        ].prepared_powers
+                    )
+                    if magic_prepared is not None:
+                        raise ValueError(
+                            "Lighttakeed with prepared SetMagicPet powers is outside R1"
+                        )
+                    submission=resolve_enemy_ai_lighttakeed_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                        profile=lighttakeed_profiles[enemy_id],
+                        fixed_strength=int(baseline.attack),
+                        fixed_toughness=int(baseline.defense),
+                    )
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    setup_effects[enemy_id]=BattleCommandSetupEffects(
+                        attack_power=int(submission.attack_power),
+                        defense_power=int(submission.defense_power),
+                    )
+                    lighttakeed_submissions[enemy_id]=submission
+                    continue
+
+                if (
+                    selected_skill is not None
                     and selected_skill.function_name == NOCAST_CALLBACK
                     and bool(allow_nocast_skill)
                 ):
@@ -2722,6 +2838,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_GuardBreak2")
             if bool(allow_battletimid_skill):
                 allowed_parts.append("PETSKILL_BattleTimid")
+            if bool(allow_lighttakeed_skill):
+                allowed_parts.append("PETSKILL_Lighttakeed")
             if bool(allow_combined_skill):
                 allowed_parts.append("PETSKILL_Combined")
             if bool(allow_vary_skill):
@@ -2744,6 +2862,15 @@ class LocalRuntimeSessionCoordinator:
             raise ValueError(
                 "enemy AI selected command outside coordinator "
                 f"{allowed} subset: {enemy_id}:{decision.kind}"
+            )
+
+        unused_lighttakeed_profiles=sorted(
+            set(lighttakeed_profiles)-set(lighttakeed_submissions)
+        )
+        if unused_lighttakeed_profiles:
+            raise ValueError(
+                "Lighttakeed profile supplied for non-selected actors: "
+                + ",".join(unused_lighttakeed_profiles)
             )
 
         unused_combined_draws=sorted(
@@ -2777,6 +2904,7 @@ class LocalRuntimeSessionCoordinator:
             nocast_submissions=nocast_submissions,
             guard_break2_submissions=guard_break2_submissions,
             battletimid_submissions=battletimid_submissions,
+            lighttakeed_submissions=lighttakeed_submissions,
             combined_submissions=combined_submissions,
             vary_submissions=vary_submissions,
             weaken_submissions=weaken_submissions,
@@ -2991,6 +3119,9 @@ class LocalRuntimeSessionCoordinator:
         battletimid_rolls_by_attack_id: Mapping[
             str,int | None
         ] | None = None,
+        lighttakeed_profiles_by_enemy_id: Mapping[
+            str,str
+        ] | None = None,
         combined_selection_draws_by_enemy_id: Mapping[
             str,int
         ] | None = None,
@@ -3114,6 +3245,10 @@ class LocalRuntimeSessionCoordinator:
             allow_nocast_skill=True,
             allow_guard_break2_skill=True,
             allow_battletimid_skill=True,
+            allow_lighttakeed_skill=True,
+            lighttakeed_profiles_by_enemy_id=(
+                lighttakeed_profiles_by_enemy_id
+            ),
             allow_combined_skill=True,
             combined_selection_draws_by_enemy_id=(
                 combined_selection_draws_by_enemy_id
@@ -3778,6 +3913,9 @@ class LocalRuntimeSessionCoordinator:
             ),
             battletimid_rolls_by_participant_id=(
                 normalized_battletimid_rolls
+            ),
+            lighttakeed_submissions_by_participant_id=(
+                enemy_batch.lighttakeed_submissions
             ),
             combined_submissions_by_participant_id=(
                 enemy_batch.combined_submissions
