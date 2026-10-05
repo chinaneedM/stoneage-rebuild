@@ -338,9 +338,13 @@ class LighttakeedOrderedRuntimeTests(unittest.TestCase):
             defense_profile="newpower_70pct",
             command_setup_effects_by_participant_id=setup_effects(sub),
             lighttakeed_submissions_by_participant_id={"enemy":sub},
-            counter_rolls_by_attack_id={"player":()},
+            counter_rolls_by_attack_id={"player":(),"enemy":()},
+            counter_abio_by_participant_id={"player":True},
         )
-        counter=next(event for event in result.events if event.is_counter)
+        counter=next(
+            event for event in result.events
+            if event.is_counter and event.participant_id=="enemy"
+        )
         self.assertEqual(counter.participant_id,"enemy")
         self.assertEqual(counter.result,"counter_ineligible_command")
         self.assertTrue(any(
