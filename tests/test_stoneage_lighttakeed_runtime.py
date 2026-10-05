@@ -306,15 +306,48 @@ class LighttakeedOrderedRuntimeTests(unittest.TestCase):
             )
 
     def test_attack_carrier_does_not_gain_native_counter_eligibility(self):
-        # A semantic Lighttakeed ATTACK carrier is excluded from ordinary
-        # counter-chain eligibility. Supplying a counter bundle for it must
-        # therefore remain unused and fail closed.
-        sub=submission()
-        with self.assertRaises(ValueError):
-            self.resolve(
-                sub=sub,
-                counter_rolls={"enemy":()},
-            )
+        # Player acts first and physically attacks the Lighttakeed caster.
+        # The caster's ATTACK-shaped scheduling carrier must not make it an
+        # ordinary BATTLE_Counter actor.
+        player=actor(
+            "player","player","player",
+            hp=500,attack=50,defense=0,quick=200,
+        )
+        enemy=actor(
+            "enemy","enemy","enemy",
+            hp=500,attack=100,defense=0,quick=100,
+        )
+        sub=submission(enemy=enemy)
+        prepared=prepare_battle_round(
+            (player,enemy),
+            {
+                "player":BattleCommand(BATTLE_COM_ATTACK,command2=10),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            {"player":0,"enemy":0},
+            tie_break_order=("player","enemy"),
+        )
+        result=resolve_ordinary_round(
+            prepared,
+            slots={"player":0,"enemy":10},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={
+                "player":attack_rolls(),
+                "enemy":attack_rolls(),
+            },
+            defense_profile="newpower_70pct",
+            command_setup_effects_by_participant_id=setup_effects(sub),
+            lighttakeed_submissions_by_participant_id={"enemy":sub},
+            counter_rolls_by_attack_id={"player":()},
+        )
+        counter=next(event for event in result.events if event.is_counter)
+        self.assertEqual(counter.participant_id,"enemy")
+        self.assertEqual(counter.result,"counter_ineligible_command")
+        self.assertTrue(any(
+            event.participant_id=="enemy"
+            and event.lighttakeed_skill_id==611
+            for event in result.events
+        ))
 
     def test_persistent_round_carries_transferred_counter_forward(self):
         player=actor("player","player","player",hp=500,quick=10)
