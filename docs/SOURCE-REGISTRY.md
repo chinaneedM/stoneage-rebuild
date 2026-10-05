@@ -3288,3 +3288,13 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - Exact-pin Action **37220370536 PASS**; derived-report write-back commit `3f49cb44c7e836eb89a249b6d293d7acbc9e79a4`.
 - Accepted descendant behavior: callback rejects player actor; writes semantic TIMID command/target/C_OK and LOW(COM3); work powers are 70%/40%/80%; event consumes one raw rand%100 draw; forced exit iff draw<15 and damage>1; pet exit clears default pet while non-pet exit discharges party.
 - Boundaries retained: gavin/iris same-side guard active vs fixed Bismarck inactive; gavin/iris NULL OPTION guard vs Bismarck pointer-literal guard; no original numeric COM1/binary/compiler or Taiwan-v1 proof.
+
+
+### 2026-10-05 — Combined fixed-source + recovered25 exact-row closure
+
+- Fixed later descendants: gavin `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`, iris `9e6c8ce2cd8ed532a7157773acd1c61582c178b5`, Bismarck `999ffdf1d220ec6666eb65339180689c9caf1876`. These are descendant-reference sources, not proof of original JSS/Taiwan-v1 introduction.
+- Reproducible source report: `research/recovered/STONEAGE-COMBINED-SOURCE-AUDIT-R1.txt`; resolution `COMBINED_FIXED_SOURCE_CLOSED_WELLFORMED_OPTION_REFERENCE`. Shared bounded facts: command value 2000, declared OPTION count clamp to 10, one raw `rand()%effective_count` draw, selected magic in LOW(COM3), HIGH(COM3)=0, and `MAGIC_DirectUse` dispatch.
+- Preserved source divergences: gavin/iris NULL OPTION guard vs Bismarck pointer-literal NUL guard; gavin/iris uninitialized count/kill declaration vs Bismarck zero-initialized count; gavin/iris Combined initiative `WORKQUICK+20-RAND(0,work*0.3)` vs Bismarck `WORKQUICK+20-RAND(0,15)`.
+- First corrected bundle gate **37262695753 PASS**; exact-pin gate **37262850204 PASS**. Derived exact report commit `8252a51966450a0b5b515d051e52b3c84d61ae65`; report `research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt`; full `petskill` SHA-256 `f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4`.
+- Exact callback population is **627, 629, 630, 632, 637, 646, 648**. Positive references are only **627=1, 632=2, 637=2**, totaling **5 uses / 5 templates**; 629/630/646/648 are zero-reference data-only rows. All seven OPTION structures are well formed in the verified corpus and all exact row metadata/hashes/counts/magic-ID lists are pinned without storing raw OPTION bytes.
+- **CLOSED:** bounded fixed-descendant source reference plus recovered25 full population and exact-row evidence in the well-formed OPTION domain. **OPEN:** ordered runtime, malformed OPTION behavior, original binary/compiler identity, original command-number provenance and earliest historical membership.
