@@ -303,3 +303,42 @@ Consequences:
 The first concrete case is `BATTLE_COM_S_ENEMYREHP`: the pinned gavin/iriselia profiles resolve it to **2014**, while pinned Bismarck resolves it to **2013** because an earlier guarded enum member differs.
 
 Evidence record: `research/mechanics/STONEAGE-ENEMY-REHP-R1.md`.
+
+
+## DD-020 — Keep pet ownership, default selection, and battle occupancy independent
+
+**Status:** Accepted
+
+The reconstruction must not infer the player's selected/default battle pet from
+roster ownership or from the fact that only one allied pet currently exists in a
+battle. These are three distinct authoritative states:
+
+- **ownership** — the pet remains in the persistent player roster with its
+  persistent HP/growth/identity;
+- **default selection** — a nullable persistent roster slot identifies the pet
+  selected by the historical DEFAULTPET-style state;
+- **battle occupancy** — battle-local participation can end independently
+  through recall/exit/death while ownership survives.
+
+Consequences:
+
+- player-death loyalty penalties read explicit default selection rather than
+  choosing the first/only retained allied pet;
+- a successful recall may clear default selection and active battle occupancy
+  without deleting the pet or zeroing its HP;
+- a blocked recall leaves both selection and occupancy intact;
+- battle-return/save logic persists the selection state independently of the
+  owned-pet collection;
+- legacy saves that predate explicit selection migrate to **unknown/no selected
+  pet**, not to an inferred pet;
+- active coordinator battle context remains battle-local; ordinary world save
+  persistence does not imply mid-battle disk resume.
+
+This decision is engine-neutral and applies beyond the current 2BattleTimid
+case. It prevents future pet skills, player-death rules, UI selection and battle
+return from silently reintroducing the old “owned == selected == active”
+shortcut.
+
+Evidence/implementation boundary:
+`specs/STONEAGE-2BATTLETIMID-RUNTIME-STATE-AUDIT-R1.md` and the accepted
+2BattleTimid runtime integration.
