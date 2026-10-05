@@ -51,6 +51,10 @@ from tools.stoneage_enemy_ai_battletimid_bridge import (
     EnemyAiBattleTimidSubmission,
 )
 from tools.stoneage_battletimid_model import BattleTimidExitResolution
+from tools.stoneage_enemy_ai_2battletimid_bridge import (
+    EnemyAiTwoBattleTimidSubmission,
+)
+from tools.stoneage_2battletimid_reference_model import TwoBattleTimidPost
 from tools.stoneage_enemy_ai_lighttakeed_bridge import (
     EnemyAiLighttakeedSubmission,
 )
@@ -1050,6 +1054,9 @@ class OrdinaryRoundEvent:
     guard_break2_resolution: GuardBreak2DamageResolution | None = None
     battletimid_resolution: BattleTimidExitResolution | None = None
     battletimid_skill_id: int | None = None
+    two_battletimid_resolution: TwoBattleTimidPost | None = None
+    two_battletimid_skill_id: int | None = None
+    two_battletimid_profile: str | None = None
     lighttakeed_resolution: LighttakeedResolution | None = None
     lighttakeed_skill_id: int | None = None
     lighttakeed_profile: str | None = None
@@ -3699,6 +3706,18 @@ def resolve_ordinary_round(
     battletimid_rolls_by_participant_id: Mapping[
         str,int | None
     ] | None = None,
+    two_battletimid_submissions_by_participant_id: Mapping[
+        str,EnemyAiTwoBattleTimidSubmission
+    ] | None = None,
+    two_battletimid_rolls_by_participant_id: Mapping[
+        str,int | None
+    ] | None = None,
+    two_battletimid_default_pet_slot_by_target_id: Mapping[
+        str,int
+    ] | None = None,
+    two_battletimid_noreturn_by_target_id: Mapping[
+        str,bool
+    ] | None = None,
     lighttakeed_submissions_by_participant_id: Mapping[
         str,EnemyAiLighttakeedSubmission
     ] | None = None,
@@ -4674,6 +4693,81 @@ def resolve_ordinary_round(
     attempted_battletimid_actor_ids=set()
     battletimid_active_command_ids=set(battletimid_actor_ids)
 
+    two_battletimid_submissions={
+        str(pid):submission
+        for pid,submission in (
+            two_battletimid_submissions_by_participant_id or {}
+        ).items()
+    }
+    two_battletimid_actor_ids=set(two_battletimid_submissions)
+    if two_battletimid_actor_ids-set(slot_by_id):
+        raise ValueError("2BattleTimid references unknown actors")
+    two_battletimid_overlap=(
+        battletimid_actor_ids | wildviolent_actor_ids
+        | set(mdfyattack_submissions) | set(attack_crazed_submissions)
+        | weaken_actor_ids | refresh_actor_ids | setmagicpet_actor_ids
+        | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
+        | fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
+        | damage_to_hp_actor_ids | enemy_relife_actor_ids
+        | enemy_rehp_actor_ids | attack_magic_actor_ids
+    )
+    if two_battletimid_actor_ids & two_battletimid_overlap:
+        raise ValueError("2BattleTimid semantic submissions overlap another skill")
+    for pid,submission in two_battletimid_submissions.items():
+        if not isinstance(submission,EnemyAiTwoBattleTimidSubmission):
+            raise TypeError("2BattleTimid submission has wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (
+            submission.participant_id!=pid
+            or entry.participant.kind!="enemy"
+            or entry.participant.side!="enemy"
+            or entry.command.command1!=BATTLE_COM_ATTACK
+            or entry.command.command2!=submission.source_target_slot
+        ):
+            raise ValueError(
+                "2BattleTimid ordering carrier must be enemy ATTACK/source-target"
+            )
+        if int(entry.combo_id)!=0:
+            raise ValueError("2BattleTimid cannot inherit ordinary combo rewriting")
+        effects=setup_effects.get(pid,BattleCommandSetupEffects())
+        if (
+            effects.attack_power,
+            effects.defense_power,
+        ) != (
+            int(submission.setup.powers[0]),
+            int(submission.setup.powers[1]),
+        ):
+            raise ValueError("2BattleTimid callback work-power setup drift")
+    two_battletimid_rolls={
+        str(pid):(None if draw is None else int(draw))
+        for pid,draw in (
+            two_battletimid_rolls_by_participant_id or {}
+        ).items()
+    }
+    if set(two_battletimid_rolls)!=two_battletimid_actor_ids:
+        raise ValueError("2BattleTimid RNG actors mismatch")
+    if any(
+        draw is not None and not 0 <= int(draw) <= 99
+        for draw in two_battletimid_rolls.values()
+    ):
+        raise ValueError("2BattleTimid reduced rand draw must be 0..99")
+    two_battletimid_default_slots={
+        str(pid):int(value)
+        for pid,value in (
+            two_battletimid_default_pet_slot_by_target_id or {}
+        ).items()
+    }
+    two_battletimid_noreturn={
+        str(pid):value
+        for pid,value in (
+            two_battletimid_noreturn_by_target_id or {}
+        ).items()
+    }
+    if any(type(value) is not bool for value in two_battletimid_noreturn.values()):
+        raise TypeError("2BattleTimid NORETURN witnesses must be booleans")
+    consumed_two_battletimid_draw_ids=set()
+    two_battletimid_active_command_ids=set(two_battletimid_actor_ids)
+
     lighttakeed_submissions={
         str(pid):submission
         for pid,submission in (
@@ -4684,7 +4778,7 @@ def resolve_ordinary_round(
     if lighttakeed_actor_ids-set(slot_by_id):
         raise ValueError("Lighttakeed submissions reference unknown actors")
     lighttakeed_overlap=(
-        battletimid_actor_ids | wildviolent_actor_ids
+        two_battletimid_actor_ids | battletimid_actor_ids | wildviolent_actor_ids
         | set(mdfyattack_submissions) | set(attack_crazed_submissions)
         | weaken_actor_ids | refresh_actor_ids | setmagicpet_actor_ids
         | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
@@ -4729,7 +4823,8 @@ def resolve_ordinary_round(
     if combined_actor_ids-set(slot_by_id):
         raise ValueError("Combined submissions reference unknown actors")
     combined_overlap=(
-        lighttakeed_actor_ids | battletimid_actor_ids | wildviolent_actor_ids
+        lighttakeed_actor_ids | two_battletimid_actor_ids
+        | battletimid_actor_ids | wildviolent_actor_ids
         | set(mdfyattack_submissions) | set(attack_crazed_submissions)
         | weaken_actor_ids | refresh_actor_ids | setmagicpet_actor_ids
         | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
@@ -4791,7 +4886,8 @@ def resolve_ordinary_round(
     if vary_actor_ids-set(slot_by_id):
         raise ValueError("Vary submissions reference unknown actors")
     vary_overlap=(
-        lighttakeed_actor_ids | combined_actor_ids | battletimid_actor_ids
+        lighttakeed_actor_ids | combined_actor_ids | two_battletimid_actor_ids
+        | battletimid_actor_ids
         | wildviolent_actor_ids
         | set(mdfyattack_submissions) | set(attack_crazed_submissions)
         | weaken_actor_ids | refresh_actor_ids | setmagicpet_actor_ids
