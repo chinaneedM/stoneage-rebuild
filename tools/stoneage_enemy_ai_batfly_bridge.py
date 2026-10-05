@@ -165,7 +165,7 @@ def resolve_enemy_ai_batfly_submission(
     if skill_slot not in allowed or slots[skill_slot] != allowed[skill_slot]:
         raise ValueError("selected slot is not an exact positive BatFly use")
 
-    entry=runtime.skills[633]
+    entry=petskill_runtime.skills[633]
     setup=resolve_batfly_setup(
         target_slot=target_slot,
         skill_array=0,
