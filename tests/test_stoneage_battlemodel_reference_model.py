@@ -80,7 +80,16 @@ class BattleModelReferenceTests(unittest.TestCase):
         self.assertEqual((shape.turn_value,shape.hit_value),(2,40))
         self.assertEqual(shape.action_numbers,(101,102,103,104))
         self.assertGreater(shape.status_token_bytes,0)
+        self.assertEqual((shape.status_index,shape.status_kind),(1,"poison"))
+        self.assertTrue(shape.status_known)
         self.assertTrue(shape.field7_present)
+
+    def test_unknown_nonempty_status_token_is_not_guessed(self):
+        raw=option(status="X")
+        shape=inspect_battlemodel_option(raw)
+        self.assertIsNone(shape.status_index)
+        self.assertIsNone(shape.status_kind)
+        self.assertFalse(shape.status_known)
 
     def test_fewer_objects_type2_attacks_only_prefix_without_rng(self):
         r=resolve_battlemodel_target_plan(
