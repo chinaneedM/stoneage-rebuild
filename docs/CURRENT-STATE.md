@@ -6813,3 +6813,31 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   round/state/coordinator command clear and ultimate exits; require golden,
   full-region and verified pressure before promoting638's two slots. Existing
   recovered25 positive-slot coverage is unchanged. WORK/DD-018 continues.
+
+
+### Post-AttackSeq isolated publication and exact gate — 2026-10-06
+
+- Remote implementation input **f5568edd37b4c22257717b20bb205d84c57767e1**,
+  tree **0ed843a2f667564cfae1001203445ab22fbafdbc**, branch
+  `agent/battlemodel-hit-loop-r1-20261006`, based on accepted mainb819ba14.
+  Remote/local tree equality, clean checkout and isolated branch tracking
+  verified after publication.
+- New bounded gate **37355987371 QUEUED** on that exact input. Workflow
+  `validate-stoneage-battlemodel-settlement.yml` now runs the controlled hit-loop
+  tests, shared primitives,1920 original native calls,480 direct model/native
+  comparisons and60 reduced pet-guard calls. Receipt is on the branch:
+  `research/recovered/STONEAGE-BATTLEMODEL-HIT-LOOP-ACCEPTANCE-R1.json`.
+- Fresh exact-main replay: data **37355118492 SUCCESS**, core
+  **37355118643 SUCCESS**.2BattleTimid37355118574, full-region37355118667,
+  golden37355118849 and coordinator37355118738 still QUEUED at this snapshot.
+  All27 original accepted input5c555bf7 gates remain SUCCESS; main's code
+  is unchanged relative to that accepted implementation.
+- **Next highest priority:** freshly re-read main and both implementation
+  branches, these exact queued runs and possible bot/artifact write-backs.
+  On37355987371 SUCCESS close only the explicit experimental post-AttackSeq
+  seam and reduced pet-guard contract. Synchronize that bounded milestone only
+  after fresh ancestry/result checks; full BattleModel runtime remains OPEN.
+  Next wire production AttackSeq and equipment/RNG, prepared command clearing,
+  persistent/coordinator state and ultimate exit, then golden/full-region and
+  verified pressure. Do not select original build/charset/numeric COM1 or
+  promote638 positive slots from a controlled seam PASS.

@@ -1,0 +1,81 @@
+{
+  "contract": "BATTLEMODEL_BOUNDED_POST_ATTACKSEQ_HIT_LOOP_R1",
+  "date": "2026-10-06",
+  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "branch": "agent/battlemodel-hit-loop-r1-20261006",
+  "input_sha": "f5568edd37b4c22257717b20bb205d84c57767e1",
+  "input_tree": "0ed843a2f667564cfae1001203445ab22fbafdbc",
+  "accepted_base_sha": "b819ba1460c794a5f2c4275819e5085698a9bf46",
+  "accepted_base_tree": "39b74c641009f973f1e3f48f744746c90b1e2341",
+  "execution_scope": "reduced_SIDE_OFFSET10_no_ride_nonthrowing_no_ItemCrush_gDamageDiv0",
+  "gate": [
+    {
+      "id": 37355987371,
+      "name": "Validate StoneAge BattleModel base DamageSub settlement",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37355987371",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "f5568edd37b4c22257717b20bb205d84c57767e1"
+    }
+  ],
+  "local_validation": {
+    "related_tests": 81,
+    "dedicated_hit_loop_tests": 16,
+    "original_native_settlement_calls": 1920,
+    "physical_marker_model_native_comparisons": 480,
+    "literal_pet_guard_native_calls": 60,
+    "result": "PASS"
+  },
+  "main_replay_snapshot": [
+    {
+      "id": 37355118574,
+      "name": "Validate StoneAge 2BattleTimid runtime",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "b819ba1460c794a5f2c4275819e5085698a9bf46"
+    },
+    {
+      "id": 37355118667,
+      "name": "Validate StoneAge recovered25 region payload source",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "b819ba1460c794a5f2c4275819e5085698a9bf46"
+    },
+    {
+      "id": 37355118849,
+      "name": "Validate StoneAge runtime golden contract",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "b819ba1460c794a5f2c4275819e5085698a9bf46"
+    },
+    {
+      "id": 37355118738,
+      "name": "Validate StoneAge local runtime session coordinator",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "b819ba1460c794a5f2c4275819e5085698a9bf46"
+    },
+    {
+      "id": 37355118643,
+      "name": "Validate StoneAge battle core model",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "b819ba1460c794a5f2c4275819e5085698a9bf46"
+    },
+    {
+      "id": 37355118492,
+      "name": "Probe recovered StoneAge BattleModel reference",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "b819ba1460c794a5f2c4275819e5085698a9bf46"
+    }
+  ],
+  "boundaries": [
+    "AttackSeq is an injected controlled dependency, including its physical RNG and Guardian eligibility.",
+    "Equipment/ItemCrush precedes status in source and is excluded from this explicit experimental scope.",
+    "No production round/state/coordinator/pressure admission is enabled.",
+    "Ultimate flag without HP loss is retained; complete round exit is OPEN.",
+    "Original build/charset/numeric COM1 and multiplayer SIDE_OFFSET12 are OPEN.",
+    "No ID638 positive slots are promoted."
+  ]
+}
