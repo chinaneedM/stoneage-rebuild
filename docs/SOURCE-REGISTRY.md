@@ -3358,3 +3358,15 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - Pressure outcome: ReLife `closed_runtime`, **3 uses / 3 templates**, coverage **2451/2486 = 98.59%**, unresolved positive IDs **0**; next OPEN **PETSKILL_Lighttakeed IDs610/611, 3 uses / 2 templates**.
 - **OPEN:** recovered-original binary/compiler/profile, original numeric COM1, JSS/Taiwan-v1 membership, pet-caster and PvP/rescue domains, exact libc PRNG state and unmodeled expansion death-entry interactions.
 
+
+
+### SRC-LIGHTTAKEED-REFERENCE-R1
+
+- Date: 2026-10-05. **LATER_RECOVERED + RECOVERED25 DERIVED**, not original JSS/Taiwan-v1 source or executable provenance.
+- Fixed descendants: gavinlinasd/StoneAge@`1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`; iriselia/StoneAge@`9e6c8ce2cd8ed532a7157773acd1c61582c178b5`; BismarckDD/stoneage@`999ffdf1d220ec6666eb65339180689c9caf1876`.
+- Reproducible source audit closes registration/callback/dispatch/reaction-marker facts: fixed STR*0.7, fixed TOUGH*0.5, no callback OPTION/RNG, TargetAdjust before AttackDamage, VANISH/ABSROB/REFLEC match neutralization. Descendant command value is 2009 and C_OK is 3 in all three pins, but original numeric COM1 remains OPEN under DD-019.
+- Material divergence is retained: gavin/iris assign the defender's matching damage-reaction work counter unchanged to the attacker; fixed Bismarck assigns observed value +1. No recovered-original profile is inferred.
+- Hash-verified recovered25 petskill SHA-256 `f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4`. Complete callback population = IDs **609/610/611**; all FIELD/TARGET/COST/ILLEGAL = **1/7/2/5000**, six-byte non-NUL OPTIONs. Derived marker/hash identities: 609 ABSROB / `28e420f6e618020e7fdba9f49433a94c5f88cbd6edba2d521104f880b416c5e7` / zero positive refs; 610 REFLEC / `73bef6383b8b2e301ef6860a573f7b7d703c651aa3e90df3e1efe6f1b28fce01` / two refs; 611 VANISH / `a715b2ee62e500775e7eca86facd327f5cdc6501f4064dd322f8fc6e1ddbf96b` / one ref.
+- Exact positive templates: TEMPNO 70 / graphic 101550 / slot4 -> 610; TEMPNO 157 / graphic 101283 / slots4,5 -> 610,611. Pressure's earlier IDs 610/611 were therefore positive-reference selection, not the complete callback population.
+- Acceptance: workflow **37295790110 attempt 2 PASS**; derived report commit `0d002434a5b86e20505ff8b8fd431b3075374c84`. Reports: `research/recovered/STONEAGE-LIGHTTAKEED-SOURCE-AUDIT-R1.txt`, `research/recovered/STONEAGE-25-LIGHTTAKEED-PROBE-R1.txt`; spec: `specs/STONEAGE-LIGHTTAKEED-REFERENCE-R1.md`.
+- **LIGHTTAKEED_REFERENCE_R1 = CLOSED_BOUNDED_RECOVERED25_REFERENCE.** Ordered runtime and recovered-original copy-vs-copy+1 discriminator remain OPEN; pressure coverage stays **2451/2486 = 98.59%** until runtime acceptance.
