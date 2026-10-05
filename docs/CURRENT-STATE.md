@@ -6732,3 +6732,39 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   runtime and slot promotion remain OPEN; then implement the saved ordered
   integration plan. Main continuity checkpoint may contain this record without
   the unaccepted branch code. No user restatement or chat SHA inference needed.
+
+
+## Phase 1 BattleModel bounded admission and corrected636 accepted — 2026-10-06
+
+- Fresh exact-input Actions re-read: **all27 workflows SUCCESS** on
+  `5c555bf781b2517d1709a246afd80bc875fb7980`, tree
+  `faf8c42007bbec39ea0994de920e033e417af7fa`. Six required gates
+  **37353001564 /37353001258 /37353002049 /37353000921 /
+  37353001458 /37353001229 SUCCESS**. This supersedes the queued handoff.
+- Actual-data job111908266812 independently verifies24 conditional BattleModel
+  admissions and4 corrected2BattleTimid admissions from the hash-verified
+  preservation bundle and exact full petskill identity. Derived report
+  write-back `47d3a6a536c5564a345620f3019e3143b9e27f94`, tree
+  `1b93b499fc5df7e56404eade017cde4e5a7380c4`, adds the derived report only;
+  all other changes since tested input are documentation. Clean checkout and
+  latest main ancestry verified before closure.
+- **CLOSED:** bounded638 typed admission/pure target plan and repaired636 exact
+  slot-base admission. This restores current acceptance of the2BattleTimid
+  admission path; it does not add covered positive slots. Prior2461/2486 metric
+  remains a recovered25 positive-slot count, not project completion. Full638
+  ordered/persistent/coordinator/pressure integration remains OPEN.
+- While those gates queued, an independent local hit-loop branch was prepared:
+  `agent/battlemodel-hit-loop-r1-20261006`. It models interleaved target selection,
+  post-AttackSeq no-ride marker settlement, wake/status, immediate command clear
+  and distinct ultimate flags. AttackSeq remains an injected controlled
+  dependency; no ordinary round/coordinator path enables it. Local15 seam tests
+  and480 physical marker/native comparisons PASS, with1920 original native
+  settlement calls still passing. This preparation is NOT part of the accepted
+  admission milestone and is not promoted to main with it.
+- **Highest-priority unfinished task:** freshly verify main is an ancestor and
+  nonforce synchronize the accepted admission milestone; inspect exact-main
+  Actions. Rebase the independent hit-loop work onto that accepted main,
+  finish its tests/source guards and remote bounded gate. Then connect the
+  production AttackSeq dependency, prepared round/state/coordinator execution,
+  command-clear lifetime, ultimate exit, mounted exclusions and verified
+  pressure before promoting638's two slots. DD-018/019/020 remain in force.

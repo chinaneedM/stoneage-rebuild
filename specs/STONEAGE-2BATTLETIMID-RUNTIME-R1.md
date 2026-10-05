@@ -201,3 +201,15 @@ golden and full-region acceptance. This correction does not change the
 accepted conditional recall semantics, pet lifecycle or persistence schema.
 Historical pressure percentages above are not fresh certification of this
 repaired admission path.
+
+
+## Corrected admission remote acceptance — 2026-10-06
+
+The dated correction's renewed acceptance is now complete. Input5c555bf7:
+actual-data37353001564, dedicated runtime37353001258, core37353002049,
+coordinator37353000921, golden37353001458 and full-region37353001229 all
+SUCCESS. The actual-data job verifies both real templates178/179 at runtime
+index2 under both charset profiles. All27 triggered workflows succeeded.
+Earlier repair-pending statements are superseded; bounded runtime acceptance
+now includes the corrected exact admission. No new skill-slot coverage or
+change to the accepted conditional recall/ownership/selection semantics.

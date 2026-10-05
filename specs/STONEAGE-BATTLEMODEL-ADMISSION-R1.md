@@ -1,7 +1,7 @@
 # BattleModel exact runtime admission R1
 
 Date: 2026-10-06
-Status: **LOCAL_TESTED_REMOTE_ACTUAL_DATA_PENDING_ORDERED_RUNTIME_OPEN**
+Status: **CLOSED_BOUNDED_TYPED_ADMISSION_ORDERED_RUNTIME_OPEN**
 
 This milestone implements the first seam in the accepted runtime integration
 plan. It does not yet execute a BattleModel battle turn or promote its two
@@ -68,3 +68,19 @@ HP suppression with retained reported damage, wake/status split, exact command
 clearing, ultimate flags, mounted compositions, persistent/coordinator runtime,
 golden/full-region/pressure promotion remain OPEN. Source and native acceptance
 are evidence for implementation, not substitutes for these runtime gates.
+
+
+## Remote acceptance — 2026-10-06
+
+Exact input5c555bf781b2517d1709a246afd80bc875fb7980,
+treefaf8c42007bbec39ea0994de920e033e417af7fa: all27 triggered Actions SUCCESS.
+Required gates37353001564 /37353001258 /37353002049 /37353000921 /
+37353001458 /37353001229 accept actual-data admission, repaired636 runtime,
+core, coordinator, golden and full-region respectively. Actual-data job
+111908266812 verifies24 conditional638 admissions and4 corrected636
+admissions. Derived report write-back47d3a6a536c5564a345620f3019e3143b9e27f94
+adds only `STONEAGE-25-BATTLEMODEL-ADMISSION-R1.txt`; input code is unchanged.
+
+The earlier pending statements are historical and superseded. Bounded typed
+admission is accepted; full ordered BattleModel runtime remains OPEN and no
+638 positive slots are promoted.

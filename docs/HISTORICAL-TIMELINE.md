@@ -732,3 +732,14 @@ Synthetic local fixture tests pass. Newly extended verified-data and existing
 runtime regression Actions must pass before acceptance. No ordered BattleModel
 execution, new historical build profile or additional covered slots are claimed.
 See `SRC-RUNTIME-ADMISSION-SLOT-BASE-20261006`.
+
+
+### 2026-10-06 — exact admission correction remotely accepted
+
+**FACT (reconstruction acceptance):** all27 Actions on5c555bf7 succeeded,
+including six required actual-data/runtime/core/coordinator/golden/full-region
+gates. Hash-verified actual data reproduces24 conditional638 admissions and4
+corrected636 admissions. The earlier repair-pending record is superseded.
+Only bounded typed BattleModel admission and repaired2BattleTimid admission
+are accepted. Full BattleModel execution and its two positive slots remain OPEN.
+Independent local post-AttackSeq loop preparation is not part of this acceptance.

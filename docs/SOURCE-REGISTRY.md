@@ -3526,3 +3526,15 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
   acceptance pending publication. No new raw OPTION or proprietary assets are
   added by this milestone. Pure target-plan validation is not ordered runtime
   execution and does not certify original charset/build/JSS membership.
+
+
+#### SRC-RUNTIME-ADMISSION-SLOT-BASE-20261006 remote acceptance
+
+Exact input5c555bf781b2517d1709a246afd80bc875fb7980,
+treefaf8c42007bbec39ea0994de920e033e417af7fa: all27 workflows SUCCESS.
+Required actual-data/runtime/core/coordinator/golden/full-region gates:
+37353001564 /37353001258 /37353002049 /37353000921 /37353001458 /
+37353001229. Job111908266812 and write-back47d3a6a5 prove24 actual conditional
+BattleModel admissions and4 corrected real636 admissions. Full petskill hash
+and row/template/global placement identities verified. Earlier remote-pending
+record superseded; complete BattleModel ordered runtime remains OPEN.
