@@ -74,7 +74,10 @@ from tools.stoneage_enemy_ai_combined_bridge import (
     resolve_enemy_ai_combined_submission,
 )
 from tools.stoneage_combined_model import CALLBACK_NAME as COMBINED_CALLBACK
-from tools.stoneage_combined_runtime_state import CombinedActionRolls
+from tools.stoneage_combined_runtime_state import (
+    CombinedActionRolls,
+    CombinedRuntimeOverlay,
+)
 from tools.stoneage_guard_break2_model import (
     CALLBACK_NAME as GUARD_BREAK2_CALLBACK,
 )
@@ -1727,6 +1730,7 @@ class LocalRuntimeSessionCoordinator:
         attack_magic_overlay: AttackMagicRoundOverlay | None = None,
         nocast_overlay: NocastRoundOverlay | None = None,
         setmagicpet_overlay: SetMagicPetRoundOverlay | None = None,
+        combined_overlay: CombinedRuntimeOverlay | None = None,
     ) -> LocalRuntimeBattleContext:
         """Promote a transient group battle shell into multi-round state."""
 
@@ -1737,6 +1741,7 @@ class LocalRuntimeSessionCoordinator:
             slots={str(key): int(value) for key, value in slots.items()},
             nocast_overlay=nocast_overlay,
             setmagicpet_overlay=setmagicpet_overlay,
+            combined_overlay=combined_overlay,
         )
         if (
             attack_magic_overlay is not None
@@ -2799,6 +2804,12 @@ class LocalRuntimeSessionCoordinator:
         battletimid_rolls_by_attack_id: Mapping[
             str,int | None
         ] | None = None,
+        combined_selection_draws_by_enemy_id: Mapping[
+            str,int
+        ] | None = None,
+        combined_rolls_by_attack_id: Mapping[
+            str,CombinedActionRolls
+        ] | None = None,
         barrier_rolls_by_attack_id: Mapping[
             str,BarrierActionRolls
         ] | None = None,
@@ -2912,6 +2923,10 @@ class LocalRuntimeSessionCoordinator:
             allow_nocast_skill=True,
             allow_guard_break2_skill=True,
             allow_battletimid_skill=True,
+            allow_combined_skill=True,
+            combined_selection_draws_by_enemy_id=(
+                combined_selection_draws_by_enemy_id
+            ),
             allow_weaken_skill=True,
             allow_refresh_skill=True,
             allow_setmagicpet_skill=True,
@@ -2944,6 +2959,28 @@ class LocalRuntimeSessionCoordinator:
             raise ValueError("enemy AttackCrazed RNG actors mismatch")
         if not all(isinstance(v,AttackCrazedRolls) for v in normalized_attack_crazed_rolls.values()):
             raise TypeError("enemy AttackCrazed RNG wrong type")
+        combined_enemy_ids=set(enemy_batch.combined_submissions)
+        normalized_combined_rolls={
+            str(key):value
+            for key,value in (combined_rolls_by_attack_id or {}).items()
+        }
+        if set(normalized_combined_rolls)!=combined_enemy_ids:
+            missing=sorted(
+                combined_enemy_ids-set(normalized_combined_rolls)
+            )
+            extra=sorted(
+                set(normalized_combined_rolls)-combined_enemy_ids
+            )
+            raise ValueError(
+                "enemy Combined action RNG actors mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        if any(
+            not isinstance(value,CombinedActionRolls)
+            for value in normalized_combined_rolls.values()
+        ):
+            raise TypeError("enemy Combined action RNG wrong type")
+
         battletimid_enemy_ids=set(enemy_batch.battletimid_submissions)
         normalized_battletimid_rolls={
             str(key):(None if value is None else int(value))
@@ -3504,6 +3541,12 @@ class LocalRuntimeSessionCoordinator:
             ),
             battletimid_rolls_by_participant_id=(
                 normalized_battletimid_rolls
+            ),
+            combined_submissions_by_participant_id=(
+                enemy_batch.combined_submissions
+            ),
+            combined_rolls_by_participant_id=(
+                normalized_combined_rolls
             ),
             fall_ground_submissions_by_participant_id=(
                 enemy_batch.fall_ground_submissions
