@@ -46,6 +46,8 @@ from tools.stoneage_enemy_ai_battletimid_bridge import (
     EnemyAiBattleTimidSubmission,
 )
 from tools.stoneage_enemy_ai_combined_bridge import EnemyAiCombinedSubmission
+from tools.stoneage_enemy_ai_vary_bridge import EnemyAiVarySubmission
+from tools.stoneage_vary_runtime_state import VaryRuntimeOverlay
 from tools.stoneage_combined_runtime_state import (
     CombinedActionRolls,
     CombinedRuntimeOverlay,
@@ -174,6 +176,7 @@ class PersistentBattleState:
     nocast_overlay: NocastRoundOverlay | None = None
     setmagicpet_overlay: SetMagicPetRoundOverlay | None = None
     combined_overlay: CombinedRuntimeOverlay | None = None
+    vary_overlay: VaryRuntimeOverlay | None = None
 
     def __post_init__(self) -> None:
         if self.phase not in {ACTIVE, FINISHED}:
@@ -224,6 +227,17 @@ class PersistentBattleState:
             if not isinstance(self.combined_overlay,CombinedRuntimeOverlay):
                 raise TypeError("persistent Combined overlay has wrong type")
             self.combined_overlay.validate_participants(participants)
+        if self.vary_overlay is not None:
+            if not isinstance(self.vary_overlay,VaryRuntimeOverlay):
+                raise TypeError("persistent Vary overlay has wrong type")
+            unknown_vary=sorted(
+                set(self.vary_overlay.runtime_by_participant_id)-set(participants)
+            )
+            if unknown_vary:
+                raise ValueError(
+                    "persistent Vary overlay references unknown participants: "
+                    f"{unknown_vary}"
+                )
         normalized_ultimate_exits=tuple(
             str(pid) for pid in self.ultimate_exited_participant_ids
         )
@@ -643,6 +657,7 @@ def begin_persistent_battle(
     nocast_overlay: NocastRoundOverlay | None = None,
     setmagicpet_overlay: SetMagicPetRoundOverlay | None = None,
     combined_overlay: CombinedRuntimeOverlay | None = None,
+    vary_overlay: VaryRuntimeOverlay | None = None,
 ) -> PersistentBattleState:
     participants = _participant_map(session)
     normalized_slots = {str(pid): int(slot) for pid, slot in slots.items()}
@@ -702,6 +717,7 @@ def begin_persistent_battle(
         nocast_overlay=nocast_overlay,
         setmagicpet_overlay=setmagicpet_overlay,
         combined_overlay=combined_overlay,
+        vary_overlay=vary_overlay,
     )
     return _with_termination(state)
 
@@ -762,6 +778,7 @@ def _with_termination(state: PersistentBattleState) -> PersistentBattleState:
         phase=FINISHED,
         result=result,
         winning_side=winning_side,
+        vary_overlay=None,
     )
 
 
@@ -792,7 +809,7 @@ def participant_snapshot(
         participant=replace(
             participant,attack=powers.attack,defense=powers.defense
         )
-    return replace(
+    participant=replace(
         participant,
         hp=int(state.hp_by_participant_id[participant_id]),
         quick=(
@@ -801,6 +818,18 @@ def participant_snapshot(
             )
         ),
     )
+    vary=(
+        None if state.vary_overlay is None else
+        state.vary_overlay.runtime_by_participant_id.get(participant_id)
+    )
+    if vary is not None:
+        participant=replace(
+            participant,
+            attack=int(vary.attack_power),
+            defense=int(vary.defense_power),
+            quick=int(vary.quick),
+        )
+    return participant
 
 
 def active_participants(
@@ -1042,6 +1071,16 @@ def resolve_persistent_capture_transition(
                     for pid,value in state.combined_overlay.att_reverse_by_participant_id.items()
                     if pid != target_id
                 },
+            )
+        ),
+        vary_overlay=(
+            None if state.vary_overlay is None else
+            state.vary_overlay.retain_participants(
+                {
+                    pid
+                    for pid in participants
+                    if pid != target_id
+                }
             )
         ),
     )
@@ -1417,6 +1456,9 @@ def resolve_persistent_ordinary_round(
     combined_rolls_by_participant_id: Mapping[
         str,CombinedActionRolls
     ] | None = None,
+    vary_submissions_by_participant_id: Mapping[
+        str,EnemyAiVarySubmission
+    ] | None = None,
     fall_ground_submissions_by_participant_id: Mapping[
         str,EnemyAiFallGroundSubmission
     ] | None = None,
@@ -1482,6 +1524,26 @@ def resolve_persistent_ordinary_round(
             "BattleTimid submissions reference inactive actors: "
             f"{unknown_battletimid_ids}"
         )
+    for pid,vary in working_vary.runtime_by_participant_id.items():
+        if pid not in living_ids:
+            continue
+        existing=effective_setup_effects.get(
+            pid,BattleCommandSetupEffects()
+        )
+        if (
+            existing.attack_power is not None
+            and int(existing.attack_power)!=int(vary.attack_power)
+        ) or (
+            existing.defense_power is not None
+            and int(existing.defense_power)!=int(vary.defense_power)
+        ):
+            raise ValueError("Vary callback setup overlaps another power write")
+        effective_setup_effects[pid]=replace(
+            existing,
+            attack_power=int(vary.attack_power),
+            defense_power=int(vary.defense_power),
+        )
+
     for pid,submission in battletimid_submissions.items():
         if not isinstance(submission,EnemyAiBattleTimidSubmission):
             raise TypeError("BattleTimid submission has wrong type")
@@ -1553,6 +1615,42 @@ def resolve_persistent_ordinary_round(
                 f"Combined actors lack persistent MP witness: {missing_mp}"
             )
 
+    vary_submissions={
+        str(pid):submission
+        for pid,submission in (
+            vary_submissions_by_participant_id or {}
+        ).items()
+    }
+    unknown_vary_ids=sorted(set(vary_submissions)-living_ids)
+    if unknown_vary_ids:
+        raise ValueError(
+            f"Vary submissions reference inactive actors: {unknown_vary_ids}"
+        )
+    if set(vary_submissions) & (
+        set(combined_submissions) | set(battletimid_submissions)
+    ):
+        raise ValueError("Vary overlaps Combined/BattleTimid submission")
+    for pid,submission in vary_submissions.items():
+        if not isinstance(submission,EnemyAiVarySubmission):
+            raise TypeError("Vary submission has wrong type")
+        if str(submission.participant_id)!=pid:
+            raise ValueError("Vary submission participant drift")
+        if (
+            state.vary_overlay is not None
+            and pid in state.vary_overlay.runtime_by_participant_id
+        ):
+            raise ValueError("Vary recast blocked while actor is transformed")
+
+    working_vary=(
+        VaryRuntimeOverlay.empty()
+        if state.vary_overlay is None
+        else state.vary_overlay
+    )
+    for pid,submission in vary_submissions.items():
+        working_vary=working_vary.with_cast(
+            pid,submission.runtime_after_callback
+        )
+
     normalized_escape_contexts=dict(escape_contexts or {})
     for participant_id,context in normalized_escape_contexts.items():
         participant_id=str(participant_id)
@@ -1621,6 +1719,54 @@ def resolve_persistent_ordinary_round(
                         "WildViolentAttack/Weaken callback power setup drift"
                     )
             profiles[pid]=replace(profiles[pid],fixed_dex=powers.dexterity)
+
+    if working_vary.runtime_by_participant_id:
+        if state.ride_pet_runtime is not None:
+            raise ValueError("Vary with mounted ride runtime is outside R1")
+        for pid in working_vary.runtime_by_participant_id:
+            if (
+                state.base_status_runtime_by_participant_id[pid].status.drunk>0
+            ):
+                raise ValueError("Vary with drunk work-power state is outside R1")
+            if (
+                state.nocast_overlay is not None
+                and state.nocast_overlay.runtime_by_participant_id[
+                    pid
+                ].prepared_weaken_powers is not None
+            ):
+                raise ValueError("Vary/Weaken prepared-power overlap is outside R1")
+            if (
+                state.setmagicpet_overlay is not None
+                and state.setmagicpet_overlay.runtime_by_participant_id[
+                    pid
+                ].prepared_powers is not None
+            ):
+                raise ValueError("Vary/SetMagicPet prepared-power overlap is outside R1")
+
+        participants=tuple(
+            replace(
+                participant,
+                attack=int(
+                    working_vary.runtime_by_participant_id[
+                        str(participant.participant_id)
+                    ].attack_power
+                ),
+                defense=int(
+                    working_vary.runtime_by_participant_id[
+                        str(participant.participant_id)
+                    ].defense_power
+                ),
+                quick=int(
+                    working_vary.runtime_by_participant_id[
+                        str(participant.participant_id)
+                    ].quick
+                ),
+            )
+            if str(participant.participant_id)
+            in working_vary.runtime_by_participant_id
+            else participant
+            for participant in participants
+        )
 
     effective_commands=dict(commands)
     for participant_id,carried in (
@@ -1698,6 +1844,7 @@ def resolve_persistent_ordinary_round(
             | set(setmagicpet_submissions_by_participant_id or {})
             | set(battletimid_submissions)
             | set(combined_submissions)
+            | set(vary_submissions)
         ),
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
@@ -1809,6 +1956,7 @@ def resolve_persistent_ordinary_round(
             combined_rolls_by_participant_id
         ),
         combined_overlay=state.combined_overlay,
+        vary_submissions_by_participant_id=vary_submissions,
         fall_ground_submissions_by_participant_id=(
             fall_ground_submissions_by_participant_id
         ),
@@ -2078,6 +2226,30 @@ def resolve_persistent_ordinary_round(
             },
         )
 
+    next_vary_overlay=working_vary
+    auxiliary_vary_results={
+        "status_tick","setmagicpet_tick","weaken_tick","barrier_tick",
+        "nocast_tick","skipped_incomplete","skipped_dead","skipped_exited",
+    }
+    for pid in tuple(next_vary_overlay.runtime_by_participant_id):
+        completed=any(
+            str(event.participant_id)==pid
+            and str(event.result) not in auxiliary_vary_results
+            for event in round_result.events
+        )
+        if completed:
+            next_vary_overlay,_=next_vary_overlay.advance_actor_action(pid)
+    next_vary_overlay=next_vary_overlay.retain_participants(
+        {
+            str(participant.participant_id)
+            for participant in _session_participants(next_session)
+            if (
+                str(participant.participant_id) not in next_battle_exited
+                and str(participant.participant_id) not in next_ultimate_exited
+            )
+        }
+    )
+
     # Source BATTLE_PreCommandSeq runs exactly once after BATTLE_Battling.
     # It visits valid entries (including zero-HP entries), except EARTHROUND0.
     # This is not another StatusSeq visit and is not repeated on next call.
@@ -2232,6 +2404,7 @@ def resolve_persistent_ordinary_round(
         nocast_overlay=next_nocast_overlay,
         setmagicpet_overlay=next_setmagicpet_overlay,
         combined_overlay=next_combined_overlay,
+        vary_overlay=next_vary_overlay,
     )
     if player_id in escaped_ids:
         next_state=replace(
@@ -2239,6 +2412,7 @@ def resolve_persistent_ordinary_round(
             phase=FINISHED,
             result=PLAYER_ESCAPE,
             winning_side=None,
+            vary_overlay=None,
         )
     else:
         next_state = _with_termination(next_state)
