@@ -88,7 +88,7 @@ class ReLifePersistentRuntimeTests(unittest.TestCase):
     def initial_state(self):
         player=participant(
             "player","player","player",
-            hp=500,attack=200,defense=20,quick=200,
+            hp=500,attack=1,defense=20,quick=200,
         )
         caster=participant(
             "enemy:caster","enemy","enemy",
@@ -96,7 +96,7 @@ class ReLifePersistentRuntimeTests(unittest.TestCase):
         )
         victim=participant(
             "enemy:victim","enemy","enemy",
-            hp=1,max_hp=101,attack=10,defense=0,quick=20,reward_exp=7,
+            hp=1,max_hp=101,attack=10,defense=100,quick=20,reward_exp=7,
         )
         return begin_persistent_battle(
             session(player,(caster,victim)),
