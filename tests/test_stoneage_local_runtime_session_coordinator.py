@@ -67,12 +67,16 @@ from tools.stoneage_nocast_runtime_state import (
     NocastRoundOverlay,
 )
 import tools.stoneage_enemy_ai_combined_bridge as combined_bridge
+import tools.stoneage_enemy_ai_vary_bridge as vary_bridge
 from tools.stoneage_combined_direct_magic_model import RuntimeItemZeroWitness
 from tools.stoneage_combined_initiative_model import PROFILE_GAVIN_IRIS_30PCT
 from tools.stoneage_combined_runtime_state import (
     CombinedActionRolls,
     CombinedRuntimeOverlay,
     STATUS_MAGIC_PROFILE_IRIS_CP950,
+)
+from tools.stoneage_vary_runtime_state import (
+    PROFILE_GAVIN_IRIS_ATTACK_QUICK,
 )
 from tools.stoneage_barrier_runtime_state import BarrierActionRolls
 from tools.stoneage_recovered25_attack_magic_runtime import (
@@ -7225,6 +7229,193 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
             .mp_by_participant_id[enemy_id],
             10,
         )
+
+    def test_recovered_enemy_ai_vary_requires_profile_executes_and_blocks_recast(self):
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-vary"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,group,
+            entry_count_roll=1,selection_rolls=(0,),
+            birth_rolls=(EnemyBirthRolls(
+                level_roll=1,birth_offsets=(0,0,0,0),
+                spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+            ),),
+        )
+        enemy_id=str(context.battle.enemies[0].participant_id)
+        spawned=context.spawned_enemies[0]
+
+        synthetic_option=b"x"*22
+        synthetic_digest=hashlib.sha256(synthetic_option).hexdigest()
+        self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+            skills={
+                600:Recovered25PetSkillEntry(
+                    600,1,5,2,1000,"PETSKILL_Vary",synthetic_option
+                )
+            },
+            source_file="petskill.txt",
+        )
+
+        enemy=replace(
+            context.battle.enemies[0],
+            attack=100,defense=80,quick=80,
+        )
+        player=replace(
+            context.battle.player,
+            hp=1000,max_hp=1000,quick=100,
+        )
+        context=replace(
+            context,
+            battle=replace(context.battle,player=player,enemies=(enemy,)),
+            spawned_enemies=(replace(
+                spawned,
+                participant=enemy,
+                template=replace(
+                    spawned.template,
+                    tempno=981,
+                    graphic_id=101427,
+                    skill_ids=(0,0,600,0,0,0,0),
+                    skill_slot_ids=(0,0,600,0,0,0,0),
+                ),
+                variant=replace(
+                    spawned.variant,
+                    tactics_option=(
+                        "at:0;1;1|gu:0|es:0|"
+                        "wa:0;0;1;0;0;0;0"
+                    ),
+                ),
+            ),),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+        )
+
+        with patch.object(
+            vary_bridge,"EXPECTED_OPTION_SHA256",synthetic_digest
+        ):
+            with self.assertRaisesRegex(
+                ValueError,"explicit descendant profile"
+            ):
+                self.coordinator._build_persistent_enemy_common_batch(
+                    context,
+                    mode_rolls_by_enemy_id={enemy_id:0},
+                    target_rolls_by_enemy_id={enemy_id:0},
+                    allow_vary_skill=True,
+                )
+
+            batch=self.coordinator._build_persistent_enemy_common_batch(
+                context,
+                mode_rolls_by_enemy_id={enemy_id:0},
+                target_rolls_by_enemy_id={enemy_id:0},
+                allow_vary_skill=True,
+                vary_profiles_by_enemy_id={
+                    enemy_id:PROFILE_GAVIN_IRIS_ATTACK_QUICK
+                },
+            )
+            submission=batch.vary_submissions[enemy_id]
+            self.assertEqual(submission.skill_id,600)
+            self.assertEqual(submission.skill_slot,2)
+            self.assertEqual(
+                (
+                    submission.runtime_after_callback.attack_power,
+                    submission.runtime_after_callback.defense_power,
+                    submission.runtime_after_callback.quick,
+                ),
+                (130,80,104),
+            )
+
+            context,result=(
+                self.coordinator
+                .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                    context,
+                    player_side_commands={
+                        "player":BattleCommand(BATTLE_COM_WAIT)
+                    },
+                    enemy_mode_rolls={enemy_id:0},
+                    enemy_target_rolls={enemy_id:0},
+                    enemy_escape_rolls={},
+                    opponent_abio_by_participant_id={},
+                    initiative_random_subtracts={
+                        "player":0,enemy_id:0
+                    },
+                    profiles={
+                        "player":BattleCombatProfile(
+                            fixed_dex=100,fixed_luck=0,
+                            earth=0,water=0,fire=0,wind=0,
+                        ),
+                        enemy_id:BattleCombatProfile(
+                            fixed_dex=80,fixed_luck=0,
+                            earth=0,water=0,fire=0,wind=0,
+                        ),
+                    },
+                    attack_rolls={},
+                    vary_profiles_by_enemy_id={
+                        enemy_id:PROFILE_GAVIN_IRIS_ATTACK_QUICK
+                    },
+                    defense_profile="newpower_70pct",
+                )
+            )
+
+            event=next(
+                e for e in result.round.events
+                if e.vary_skill_id==600
+            )
+            self.assertEqual(event.result,"vary_applied")
+            self.assertTrue(event.vary_visual_effect_enabled)
+            self.assertEqual(result.round.action_order,(enemy_id,"player"))
+            self.assertEqual(
+                result.round.hp_by_participant_id["player"],1000
+            )
+            active=(
+                context.persistent_battle_state.vary_overlay
+                .runtime_by_participant_id[enemy_id]
+            )
+            self.assertEqual(active.work_turn,1)
+            self.assertEqual(
+                (active.attack_power,active.defense_power,active.quick),
+                (130,80,104),
+            )
+
+            with self.assertRaisesRegex(ValueError,"recast"):
+                (
+                    self.coordinator
+                    .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                        context,
+                        player_side_commands={
+                            "player":BattleCommand(BATTLE_COM_WAIT)
+                        },
+                        enemy_mode_rolls={enemy_id:0},
+                        enemy_target_rolls={enemy_id:0},
+                        enemy_escape_rolls={},
+                        opponent_abio_by_participant_id={},
+                        initiative_random_subtracts={
+                            "player":0,enemy_id:0
+                        },
+                        profiles={
+                            "player":BattleCombatProfile(
+                                fixed_dex=100,fixed_luck=0,
+                                earth=0,water=0,fire=0,wind=0,
+                            ),
+                            enemy_id:BattleCombatProfile(
+                                fixed_dex=80,fixed_luck=0,
+                                earth=0,water=0,fire=0,wind=0,
+                            ),
+                        },
+                        attack_rolls={},
+                        vary_profiles_by_enemy_id={
+                            enemy_id:PROFILE_GAVIN_IRIS_ATTACK_QUICK
+                        },
+                        defense_profile="newpower_70pct",
+                    )
+                )
+
 
 if __name__ == "__main__":
     unittest.main()
