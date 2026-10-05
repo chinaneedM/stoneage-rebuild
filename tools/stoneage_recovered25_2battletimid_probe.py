@@ -9,9 +9,9 @@ from tools.stoneage_recovered25_enemybase_runtime import load_recovered25_enemyb
 CALLBACK_NAME = 'PETSKILL_2BattleTimid'
 EXPECTED_PETSKILL_SHA256 = 'f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4'
 EXPECTED_REFERENCED_IDS = (636,)
-EXPECTED_CALLBACK_IDS = None
-EXPECTED_EXACT_ROWS = None
-EXPECTED_TEMPLATE_ROWS = None
+EXPECTED_CALLBACK_IDS = (636,)
+EXPECTED_EXACT_ROWS = ((636,1,7,2,10000,2,17,'8e6b5dd952bf3bc81e522f1df382db48473b1aeec13f9ff08c7bb76d2c06f9e5',False,False,True),)
+EXPECTED_TEMPLATE_ROWS = ((178,101872,(3,),(636,)),(179,101873,(3,),(636,)))
 
 
 def analyze_runtime_objects(petskills, enemybase, *, expected_callback_ids=EXPECTED_CALLBACK_IDS,
