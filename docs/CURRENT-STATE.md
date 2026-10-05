@@ -6768,3 +6768,76 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   production AttackSeq dependency, prepared round/state/coordinator execution,
   command-clear lifetime, ultimate exit, mounted exclusions and verified
   pressure before promoting638's two slots. DD-018/019/020 remain in force.
+
+
+## Phase 1 BattleModel post-AttackSeq loop implementation — 2026-10-06
+
+- Accepted admission milestone nonforce-fast-forwarded main to
+  **b819ba1460c794a5f2c4275819e5085698a9bf46**, tree
+  **39b74c641009f973f1e3f48f744746c90b1e2341**. Fresh remote HEAD/tree verified.
+  All27 initial Actions on5c555bf7 remain SUCCESS; exact-main replay gates were
+  inspected after synchronization (core37355118643 SUCCESS, data37355118492
+  running, other main runtime replays queued at that snapshot). Main's code
+  matches accepted input; later differences are docs and the derived report.
+- Fresh isolated implementation branch
+  `agent/battlemodel-hit-loop-r1-20261006` now descends from accepted main.
+  New loop does not enter ordinary round, battle state, coordinator or pressure.
+- **LOCAL_TESTED:** source-ordered initial target pool, lazy excess selections,
+  distinct ordinal/recycled-object identity, dead-target skips with preserved
+  selection ownership, immutable snapshots and typed chronological RNG tape.
+  Common AttackSeq is an injected dependency, not certified by this seam.
+- Marker-specific no-ride physical settlement consumes reflect and preserves
+  both HP while retaining positive reported damage. Wake/status gates remain
+  independent; generic paralysis20-resistance/strict-roll/exactturn1 is used,
+  with immediate cleared-command state. Guardian actual recipient, ABIO and
+  critical non-player death, reported-versus-HP damage and surviving ultimate
+  flags are represented without inventing immediate exit.
+- Explicit experimental scope is mandatory: reduced SIDE_OFFSET10, no ride,
+  nonthrowing, no ItemCrush, gDamageDiv0. Source ItemCrush precedes status and
+  remains a required equipment/RNG integration gate. Mounted/full feature
+  compositions and production physical arithmetic remain OPEN.
+- **Local81 tests PASS**, including16 dedicated loop tests. Direct comparison
+  of the modern physical marker settlement against native original DamageSub
+  passes160/profile,480 total. All1920 existing native calls still pass.
+  A new transient helper audit verifies literal pet target+5 across all5 pet
+  slots, owner/opposite flag combinations:20/profile,60 native calls total.
+  These use controlled stubs and explicit offset10; offset12/original build
+  membership and complete flag-to-exit integration remain OPEN.
+- Extended existing settlement workflow reproduces the loop/shared tests,
+  original1920 native calls,480 model comparisons and60 pet-guard calls, with
+  derived artifacts only. Its exact input/run receipt follows publication.
+- **Highest-priority unfinished task:** freshly inspect exact-main replays and
+  this isolated loop branch's bounded native/test gate. On PASS accept only the
+  post-AttackSeq experimental seam and reduced pet-guard contract; preserve all
+  exclusions. Then connect accepted production AttackSeq and equipment/RNG,
+  round/state/coordinator command clear and ultimate exits; require golden,
+  full-region and verified pressure before promoting638's two slots. Existing
+  recovered25 positive-slot coverage is unchanged. WORK/DD-018 continues.
+
+
+### Post-AttackSeq isolated publication and exact gate — 2026-10-06
+
+- Remote implementation input **f5568edd37b4c22257717b20bb205d84c57767e1**,
+  tree **0ed843a2f667564cfae1001203445ab22fbafdbc**, branch
+  `agent/battlemodel-hit-loop-r1-20261006`, based on accepted mainb819ba14.
+  Remote/local tree equality, clean checkout and isolated branch tracking
+  verified after publication.
+- New bounded gate **37355987371 QUEUED** on that exact input. Workflow
+  `validate-stoneage-battlemodel-settlement.yml` now runs the controlled hit-loop
+  tests, shared primitives,1920 original native calls,480 direct model/native
+  comparisons and60 reduced pet-guard calls. Receipt is on the branch:
+  `research/recovered/STONEAGE-BATTLEMODEL-HIT-LOOP-ACCEPTANCE-R1.json`.
+- Fresh exact-main replay: data **37355118492 SUCCESS**, core
+  **37355118643 SUCCESS**.2BattleTimid37355118574, full-region37355118667,
+  golden37355118849 and coordinator37355118738 still QUEUED at this snapshot.
+  All27 original accepted input5c555bf7 gates remain SUCCESS; main's code
+  is unchanged relative to that accepted implementation.
+- **Next highest priority:** freshly re-read main and both implementation
+  branches, these exact queued runs and possible bot/artifact write-backs.
+  On37355987371 SUCCESS close only the explicit experimental post-AttackSeq
+  seam and reduced pet-guard contract. Synchronize that bounded milestone only
+  after fresh ancestry/result checks; full BattleModel runtime remains OPEN.
+  Next wire production AttackSeq and equipment/RNG, prepared command clearing,
+  persistent/coordinator state and ultimate exit, then golden/full-region and
+  verified pressure. Do not select original build/charset/numeric COM1 or
+  promote638 positive slots from a controlled seam PASS.
