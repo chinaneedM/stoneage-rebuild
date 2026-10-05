@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 from pathlib import Path
+import re
 from types import MappingProxyType
 
 from tools.stoneage_recovered25_petskill_runtime import (
@@ -21,6 +22,29 @@ EXPECTED_REFERENCED_IDS=(600,)
 EXPECTED_SLOT_REFERENCES=4
 EXPECTED_TEMPLATES=4
 BASE_ALLOWED_TEMPNOS=frozenset({981,982,983,984})
+
+
+def _c_float_after(raw: bytes, marker: bytes) -> float | None:
+    pos=raw.find(marker)
+    if pos < 0:
+        return None
+    tail=raw[pos+len(marker):].decode("latin-1","replace")
+    match=re.match(
+        r"\\s*[+-]?(?:(?:\\d+(?:\\.\\d*)?)|(?:\\.\\d+))"
+        r"(?:[eE][+-]?\\d+)?",
+        tail,
+    )
+    if match is None:
+        return None
+    return float(match.group(0))
+
+
+def _cp950_values(raw: bytes):
+    return {
+        "attack_percent":_c_float_after(raw,"攻%".encode("cp950")),
+        "defense_percent":_c_float_after(raw,"防%".encode("cp950")),
+        "quick_percent":_c_float_after(raw,"敏%".encode("cp950")),
+    }
 
 
 def _marker_presence(raw: bytes):
@@ -87,6 +111,7 @@ def analyze_runtime_objects(petskills,enemybase):
             "option_contains_nul":b"\0" in raw,
             "ascii_percent_count":raw.count(b"%"),
             "markers":_marker_presence(raw),
+            "cp950_values":_cp950_values(raw),
         })
 
     ids=tuple(row["id"] for row in rows)
@@ -134,6 +159,14 @@ def emit(result):
             for key,value in sorted(row["markers"].items())
         )
         print(f"VARY_OPTION_MARKERS|id={row['id']}|{marker_bits}")
+        values=row["cp950_values"]
+        print(
+            "VARY_OPTION_VALUES|"
+            f"id={row['id']}|"
+            f"attack_percent={values['attack_percent']}|"
+            f"defense_percent={values['defense_percent']}|"
+            f"quick_percent={values['quick_percent']}"
+        )
     for row in result["templates"]:
         slots=",".join(str(x) for x in row["skill_slots"])
         print(
