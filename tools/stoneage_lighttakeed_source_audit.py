@@ -96,10 +96,13 @@ def analyze_profile(name: str, root: Path):
     ).replace("char_index", "charaindex")
     battle_compact = _compact(data["battle"]).replace("char_index", "charaindex")
     dispatch = _case_block(battle_compact, "case" + COMMAND_NAME + ":")
-    event = _compact(
-        _function(data["event"], "int BATTLE_S_AttackDamage")
-    ).replace("char_index", "charaindex")
-    event_case = _case_block(event, "case" + COMMAND_NAME + ":")
+    event_all = _compact(data["event"]).replace("char_index", "charaindex")
+    damage_start = event_all.find("intBATTLE_S_AttackDamage(")
+    lighttake_start = event_all.find("case" + COMMAND_NAME + ":", damage_start)
+    if damage_start < 0 or lighttake_start < 0:
+        raise ValueError("missing bounded AttackDamage/Lighttake slice")
+    event_prefix = event_all[damage_start:lighttake_start]
+    event_case = _case_block(event_all[lighttake_start:], "case" + COMMAND_NAME + ":")
 
     expected_style = "copy_plus_one" if name == "bismarck" else "copy"
     vars_ = (
@@ -120,10 +123,10 @@ def analyze_profile(name: str, root: Path):
             for var in vars_
         )
 
-    switch_at = event.find("switch(skill_type)")
+    switch_at = event_prefix.find("switch(skill_type)")
     if switch_at < 0:
         raise ValueError("missing BATTLE_S_AttackDamage skill switch")
-    reaction_gate = event[:switch_at]
+    reaction_gate = event_prefix[:switch_at]
     gates = {
         "feature_active": FEATURE_NAME in active,
         "callback_registered":
@@ -170,7 +173,7 @@ def analyze_profile(name: str, root: Path):
             "if(ReactType==Statustype){react=0;}else{skill_type=-1;}"
             in reaction_gate,
         "event_reads_option":
-            "PETSKILL_getChar(skill,PETSKILL_OPTION)" in event
+            "PETSKILL_getChar(skill,PETSKILL_OPTION)" in event_prefix
             or "PETSKILL_getChar(skill,PETSKILL_OPTION)" in event_case,
         "event_three_counter_paths": all(
             token in event_case for token in (
