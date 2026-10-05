@@ -9,7 +9,9 @@ from tools.stoneage_battle_status_model import (
     BaseBattleStatusRuntime, BaseStatusCombatProfile,
 )
 from tools.stoneage_combined_direct_magic_model import RuntimeItemZeroWitness
-from tools.stoneage_combined_initiative_model import PROFILE_GAVIN_IRIS_30PCT
+from tools.stoneage_combined_initiative_model import (
+    PROFILE_BISMARCK_FIXED15, PROFILE_GAVIN_IRIS_30PCT,
+)
 from tools.stoneage_combined_model import resolve_combined_selection
 from tools.stoneage_combined_runtime_state import (
     CombinedActionRolls, CombinedRuntimeOverlay,
@@ -21,7 +23,13 @@ from tools.stoneage_enemy_ai_combined_bridge import (
 from tools.stoneage_nocast_runtime_state import (
     NocastParticipantRuntime, NocastRoundOverlay,
 )
-from tools.stoneage_singleplayer_battle import BattleParticipant
+from tools.stoneage_battle_state_model import (
+    begin_persistent_battle, resolve_persistent_ordinary_round,
+)
+from tools.stoneage_singleplayer_battle import BattleParticipant, BattleSession
+from tools.stoneage_singleplayer_domain import (
+    EncounterRequest, EnemyVariantId, MapPosition, PetTemplateId,
+)
 
 
 def actor(pid,side,kind,*,level=10,hp=500,max_hp=1000,quick=50):
@@ -53,6 +61,28 @@ def submission(*,skill_id,magic_id,function,target=0):
     )
     return EnemyAiCombinedSubmission(
         "enemy",0,skill_id,"PETSKILL_Combined",target,selection,magic,
+    )
+
+
+def battle_session(player,enemy):
+    encounter=EncounterRequest(
+        position=MapPosition(2000,10,10),
+        area_index=1,group_id=1,
+        enemy_variant_id=EnemyVariantId(10),
+        pet_template_id=PetTemplateId(20),
+        level=5,max_enemy_count=1,
+    )
+    return BattleSession(
+        origin_position=encounter.position,encounter=encounter,
+        player=player,allied_pets=(),enemies=(enemy,),
+    )
+
+
+def combined_overlay(*,initiative_profile=PROFILE_GAVIN_IRIS_30PCT,item_mp=5,enemy_mp=20,reversed_player=False):
+    return CombinedRuntimeOverlay(
+        initiative_profile,STATUS_MAGIC_PROFILE_IRIS_CP950,
+        RuntimeItemZeroWitness(True,item_mp),
+        {"enemy":enemy_mp},{"player":reversed_player,"enemy":False},
     )
 
 
@@ -182,6 +212,82 @@ class CombinedOrderedRuntimeTests(unittest.TestCase):
         )
         self.assertEqual(prepared.ordered_entries[0].participant.participant_id,"enemy")
         self.assertEqual(prepared.ordered_entries[0].action_value,500)
+
+
+    def test_persistent_recovery_commits_hp_and_actor_mp(self):
+        player=actor("player","player","player",level=1,hp=500,max_hp=1000,quick=10)
+        enemy=actor("enemy","enemy","enemy",level=100,quick=200)
+        state=begin_persistent_battle(
+            battle_session(player,enemy),slots={"player":0,"enemy":10},
+            nocast_overlay=NocastRoundOverlay({"player":late(),"enemy":late()}),
+            combined_overlay=combined_overlay(),
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            initiative_random_subtracts={"player":0,"enemy":0},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={},defense_profile="newpower_70pct",
+            combined_submissions_by_participant_id={
+                "enemy":submission(skill_id=627,magic_id=21,function="MAGIC_Recovery")
+            },
+            combined_rolls_by_participant_id={
+                "enemy":CombinedActionRolls(recovery_roll_90_110=100)
+            },
+        )
+        self.assertGreater(result.after.hp_by_participant_id["player"],500)
+        self.assertEqual(result.after.combined_overlay.mp_by_participant_id["enemy"],15)
+
+    def test_bismarck_initiative_and_attreverse_persist_across_rounds(self):
+        player=actor("player","player","player",level=1,quick=0)
+        enemy=actor("enemy","enemy","enemy",level=100,quick=10)
+        state=begin_persistent_battle(
+            battle_session(player,enemy),slots={"player":0,"enemy":10},
+            nocast_overlay=NocastRoundOverlay({"player":late(),"enemy":late()}),
+            combined_overlay=combined_overlay(
+                initiative_profile=PROFILE_BISMARCK_FIXED15
+            ),
+        )
+        sub=submission(skill_id=632,magic_id=240,function="MAGIC_AttReverse")
+        first=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            initiative_random_subtracts={"player":0,"enemy":15},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={},defense_profile="newpower_70pct",
+            combined_submissions_by_participant_id={"enemy":sub},
+            combined_rolls_by_participant_id={"enemy":CombinedActionRolls()},
+        )
+        self.assertEqual(first.round.action_order,("player","enemy"))
+        self.assertTrue(first.after.combined_overlay.att_reverse_by_participant_id["player"])
+        self.assertEqual(first.after.combined_overlay.mp_by_participant_id["enemy"],15)
+
+        second=resolve_persistent_ordinary_round(
+            first.after,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            initiative_random_subtracts={"player":0,"enemy":15},
+            profiles={"player":profile(),"enemy":profile()},
+            attack_rolls={},defense_profile="newpower_70pct",
+            combined_submissions_by_participant_id={"enemy":sub},
+            combined_rolls_by_participant_id={"enemy":CombinedActionRolls()},
+        )
+        event=self.combined_event(second.round)
+        effect=event.combined_att_reverse_effect
+        self.assertEqual(
+            (effect.earth,effect.water,effect.fire,effect.wind),
+            (30,40,10,20),
+        )
+        self.assertFalse(second.after.combined_overlay.att_reverse_by_participant_id["player"])
+        self.assertEqual(second.after.combined_overlay.mp_by_participant_id["enemy"],10)
 
 
 if __name__=="__main__":
