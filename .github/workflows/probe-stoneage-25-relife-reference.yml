@@ -146,7 +146,9 @@ jobs:
             research/recovered/STONEAGE-25-RELIFE-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_RELIFE_POPULATION_CLOSED' \
             research/recovered/STONEAGE-25-RELIFE-PROBE-R1.txt
-          grep -F 'RESOLUTION|RECOVERED25_RELIFE_EXACT_ROW_PENDING_PIN' \
+          grep -F 'RESOLUTION|RECOVERED25_RELIFE_EXACT_ROW_CLOSED' \
+            research/recovered/STONEAGE-25-RELIFE-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_RELIFE_EXACT_TEMPLATES_CLOSED' \
             research/recovered/STONEAGE-25-RELIFE-PROBE-R1.txt
 
       - name: Print derived reports
