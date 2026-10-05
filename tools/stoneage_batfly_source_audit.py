@@ -20,6 +20,16 @@ from tools.stoneage_batfly_reference_model import (
 )
 
 
+def _window_until(source:str,start_marker:str,end_marker:str) -> str:
+    start=source.find(start_marker)
+    if start < 0:
+        raise ValueError("missing source marker: "+start_marker)
+    end=source.find(end_marker,start+len(start_marker))
+    if end < 0:
+        raise ValueError("missing source end marker: "+end_marker)
+    return source[start:end]
+
+
 def _native_oracle(event_source:str) -> int:
     effect=_definition(event_source,"BATTLE_BatFly")
     prefix=r"""
@@ -221,8 +231,18 @@ def analyze_profile(name:str,root:Path):
     effect=_compact(_strip(_definition(data["event"],"BATTLE_BatFly")))
     visual=_compact(_strip(_definition(data["magic"],"PROFESSION_MAGIC_ATTAIC_Effect")))
     lerchange=_compact(_strip(_definition(data["event"],"BATTLE_LerChange")))
-    multilist=_compact(_strip(_definition(data["battle"],"BATTLE_MultiList")))
+    multilist_raw=_window_until(
+        data["battle"],
+        "int BATTLE_MultiList",
+        "void BATTLE_MultiListDead",
+    )
+    multilist=_compact(_strip(multilist_raw))
     targetcheck=_compact(_strip(_definition(data["battle"],"BATTLE_TargetCheck")))
+    sort_window=_compact(_strip(_window_until(
+        data["battle"],
+        "static int CharTableIdx",
+        "int BATTLE_MultiList",
+    )))
     at=data["battle"].find("case "+COMMAND_NAME+":")
     dispatch=_compact(_strip(_case_block(data["battle"][at:],"case "+COMMAND_NAME+":")))
 
@@ -255,6 +275,27 @@ def analyze_profile(name:str,root:Path):
             and "TARGET_SIDE_1" in multilist
             and "BATTLE_TargetCheck" in multilist
             and "BATTLE_TargetCheckDead" not in multilist,
+        "whole_side_multi_target_order_uses_sortloc_when_attack_magic_enabled":
+            (
+                (
+                    "__ATTACK_MAGIC" in active
+                    or "_ATTACK_MAGIC" in active
+                )
+                and "qsort(ToList,cnt,sizeof(ToList[0])" in multilist
+                and "SortLoc" in multilist
+                and "CharTableIdx" in sort_window
+            ),
+        "whole_side_branch_has_no_rng":
+            (
+                "rand()%10" not in _compact(_strip(
+                    multilist_raw[
+                        multilist_raw.find("if( toNo == TARGET_SIDE_0 )"):
+                        multilist_raw.find("// 所有人",multilist_raw.find("if( toNo == TARGET_SIDE_0 )"))
+                        if "// 所有人" in multilist_raw[multilist_raw.find("if( toNo == TARGET_SIDE_0 )"):]
+                        else len(multilist_raw)
+                    ]
+                ))
+            ),
         "live_targetcheck_rejects_dead_and_nonpositive_hp":
             "CHAR_ISDIE)==TRUE" in targetcheck
             and "CHAR_HP)<=0" in targetcheck,
@@ -338,6 +379,8 @@ def emit(rows):
     print("FACT|target3_is_all_other_side_but_dispatch_targetadjust_is_only_an_execution_gate")
     print("FACT|effect_rebuilds_and_drains_the_whole_opposing_side")
     print("FACT|whole_side_target_list_uses_live_targetcheck_and_excludes_dead_or_nonpositive_hp_entries")
+    print("FACT|multi_target_side_list_uses_fixed_battle_position_sortloc_under_each_pinned_attack_magic_profile")
+    print("FACT|BatFly_side_target_path_owns_no_rng_even_though_unrelated_single_target_MultiList_path_can_use_rand")
     print("FACT|unmounted_target_drains_floor_10pct_min1_mounted_rider_and_pet_each_floor_5pct_min1")
     print("FACT|attacker_heals_sum_but_overflow_cap_sets_reported_addhp_to_zero")
     print("FACT|profession_magic_attack_effect_is_protocol_animation_only_for_this_path")
