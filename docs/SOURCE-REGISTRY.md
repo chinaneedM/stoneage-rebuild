@@ -3419,3 +3419,22 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - Verified Action37311978479 PASS at `57babd06d8e53faefe59bd47179a8d20d941ee7e`; report commit `126a1362a9d76ce821a883cf47da3a79c96e9ef0`. Derived report `research/recovered/STONEAGE-2BATTLETIMID-RECALL-LIFECYCLE-SOURCE-R1.txt` pins battle/event hashes,36 gates and boundaries.
 - Reproducer `tools/stoneage_2battletimid_executable_profile_probe.py`, report `research/recovered/STONEAGE-25-2BATTLETIMID-EXECUTABLE-PROFILE-R1.txt`: one273-byte ELF candidate, SHA-256 `22a786475540dd734e0b0dc1b21219e53aba1462de8be623270f71fa90c22365`; neither required symbol available. Bounded discriminator is inconclusive and does not select an original charset. Two discriminator tests PASS.
 - Modern source-tree audit contract: `specs/STONEAGE-2BATTLETIMID-RUNTIME-STATE-AUDIT-R1.md`. Explicit owner/default/NORETURN state and later death/return semantics are still to be implemented. Reference/native profile acceptance remains37309960471 PASS; runtime and pressure unchanged2457/2486=98.83%.
+
+
+### SRC-BATTLEMODEL-STATUS-PROFILES-R1 — 2026-10-06
+
+- Type: fixed descendant source comparison; technical bridge evidence.
+- Exact source commits: gavinlinasd/StoneAge
+  `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`, iriselia/StoneAge
+  `9e6c8ce2cd8ed532a7157773acd1c61582c178b5`, BismarckDD/stoneage
+  `999ffdf1d220ec6666eb65339180689c9caf1876`.
+- Source path: each profile's `battle/battle_event.c`, `aszStatus` base prefix.
+- Supports: the same base status indices have different literal spellings and
+  lengths across descendants; BattleModel compares their first two bytes in
+  source index order. Strict Big5 cannot encode some modern simplified
+  descendant literals. Original compile charset remains unresolved.
+- Reproduction: `tools/stoneage_battlemodel_source_audit.py` now gates each
+  profile's exact base-table prefix; local three-profile PASS with 600 native
+  target-plan vectors. Remote replacement acceptance remains pending.
+- Does not support: original recovered25 compiler/source-table identity,
+  JSS/Taiwan-v1 membership or BattleModel runtime completion.

@@ -141,3 +141,26 @@ Before this reference can close:
    are both closed.
 
 **RECOVERED25_BATTLEMODEL_REFERENCE_R1 = OPEN_PENDING_EVIDENCE.**
+
+## 2026-10-06 profile-classifier correction
+
+Local acceptance reproduction found four test errors in the pending branch:
+the assumed common status table included modern simplified literals that cannot
+be encoded by strict Big5. The three pinned source tables are not identical:
+gavin uses short simplified literals, iris short traditional literals, and
+Bismarck longer status words. Their source index order is now an explicit gate
+in every pinned source audit.
+
+OPTION inspection retains separate source/charset witnesses for all three
+profiles crossed with Big5/UTF-8. The legacy status summary is explicitly the
+iris/Big5 witness; it does not identify the original recovered executable.
+Unrepresentable source literals remain unsupported in that charset, without
+transliteration or replacement bytes. Unknown tokens remain unknown. First
+matching two-byte source prefix wins, including UTF-8 prefix collisions.
+
+The unreferenced-population fixture now uses a valid OPTION. A separate
+regression requires malformed OPTION to fail closed rather than silently
+dropping the callback row. Local evidence: 24 tests PASS; all three pinned
+source audits PASS, 200 native target-plan vectors per profile (600 total).
+This local evidence does not replace hash-verified recovered25 remote
+acceptance. Reference and runtime-state statuses remain pending.

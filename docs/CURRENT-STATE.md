@@ -6455,3 +6455,36 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   under DD-018; production-engine selection and redesigned-content work remain
   deferred.
 
+
+
+## Phase 1 BattleModel acceptance blocker repair — 2026-10-06
+
+- Startup freshly read remote main `d2b309c750049c1585543b4f76514cf8eca19826`,
+  tree `ff764e45470698514d728aa401e2ef17aba5c2ff`; all32 exact-main
+  Actions completed successfully, including coordinator, golden, battle core
+  and full-region/runtime. BatFly is already accepted on main.
+- Remote `agent/battlemodel-reference-r1-20261005` at
+  `aec3af792e712b8c0367ec65e579bc3878407b68` was then inspected. It descends
+  exactly from main and records two pending acceptance runs, so this session
+  continued that branch rather than repeating reference discovery.
+- Local acceptance reproduced four classifier test errors from strict Big5
+  encoding of unsupported modern simplified source spellings. Fixed source
+  inspection additionally found three distinct `aszStatus` base tables.
+  The classifier now keeps source-profile/charset witnesses, source-order
+  prefix matching and unsupported/unknown states without guessed spelling
+  conversion. Every source audit gates its exact base-table prefix.
+- Corrected the stale unreferenced-population fixture and separately tests
+  malformed OPTION fail-closed behavior. **24 local tests PASS**; three pinned
+  source audits PASS with **600 native target-plan vectors**.
+- Prior remote runs37339817353 and37339825354 were still pending/queued when
+  rechecked. They predate this repair and cannot accept the repaired tree.
+  One combined repair push replaces both affected gates; no runtime work or
+  executable-slot promotion is accepted yet. Coverage remains
+  **2461/2486=98.99%**, a recovered25 positive enemy skill-slot metric only.
+- **Highest-priority unfinished task:** inspect the two replacement reference
+  Actions on this repair's exact input commit. Accept only after hash-verified
+  data and three-profile source/native gates succeed and derived reports are
+  written; inspect all source/charset status witnesses before closing the
+  bounded reference and state-audit contracts. Then freshly verify main,
+  nonforce fast-forward the accepted reference, verify main Actions and create
+  a fresh BattleModel runtime branch. Continue WORK under DD-018.

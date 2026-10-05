@@ -27,6 +27,7 @@ COMMAND_NAME="BATTLE_COM_S_BATTLE_MODEL"
 FEATURE_NAME="_PETSKILL_BATTLE_MODEL"
 
 from tools.stoneage_battlemodel_reference_model import (
+    BASE_STATUS_LITERALS_BY_SOURCE,
     resolve_battlemodel_target_plan,
 )
 
@@ -231,6 +232,17 @@ def analyze_profile(name:str,root:Path):
     ))
 
     guards={
+        "base_status_literals_match_source_index_order":bool(re.search(
+            r'char\s*\*\s*aszStatus\[\]\s*=\s*\{\s*'
+            + r'\s*,\s*'.join(
+                re.escape('"'+literal+'"')
+                for literal in (
+                    "NULL" if name=="bismarck" else "全",
+                    *BASE_STATUS_LITERALS_BY_SOURCE[name],
+                )
+            ),
+            data["event"],
+        )),
         "feature_active":feature_active,
         "callback_registered":bool(re.search(
             r'"PETSKILL_BattleModel"\s*,\s*PETSKILL_BattleModel',

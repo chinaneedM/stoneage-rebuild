@@ -49,6 +49,11 @@ BASE_STATUS_KIND_BY_INDEX={
     9:"barrier",
     10:"nocast",
 }
+BASE_STATUS_LITERALS_BY_SOURCE={
+    "gavin":tuple(BASE_STATUS_LITERAL_BY_INDEX.values()),
+    "iris":("毒","麻","眠","石","醉","亂","虛","劇","障","默"),
+    "bismarck":("中毒","麻痹","睡眠","石化","醉酒","混乱","虚弱","剧毒","障碍","沉默"),
+}
 
 
 def _i32(value:int,name:str="value")->int:
@@ -116,7 +121,9 @@ class BattleModelOptionShape:
     field7_present:bool
 
 
-def _classify_base_status_token(raw:bytes,profile:str)->tuple[int|None,str|None,bool]:
+def _classify_base_status_token(
+    raw:bytes,profile:str,source_profile:str
+)->tuple[int|None,str|None,bool]:
     """Mirror BattleModel's first-two-byte aszStatus lookup for base statuses.
 
     The stable descendants compare two bytes beginning at status index 1.
@@ -126,17 +133,25 @@ def _classify_base_status_token(raw:bytes,profile:str)->tuple[int|None,str|None,
     """
     if profile not in CHARSETS:
         raise ValueError("explicit BattleModel literal charset profile required")
+    if source_profile not in BASE_STATUS_LITERALS_BY_SOURCE:
+        raise ValueError("explicit BattleModel source profile required")
     if not raw:
         return None,None,True
-    for index,literal in BASE_STATUS_LITERAL_BY_INDEX.items():
-        encoded=literal.encode(CHARSETS[profile])
+    for index,literal in enumerate(BASE_STATUS_LITERALS_BY_SOURCE[source_profile],1):
+        try:
+            encoded=literal.encode(CHARSETS[profile],"strict")
+        except UnicodeEncodeError:
+            # A modern descendant spelling need not have a representation in
+            # the explicit historical charset. Do not invent a traditional
+            # spelling or replacement byte: that entry remains unsupported.
+            continue
         if raw[:2]==encoded[:2]:
             return index,BASE_STATUS_KIND_BY_INDEX[index],True
     return None,None,False
 
 
 def inspect_battlemodel_option(
-    raw:bytes,*,profile:str=PROFILE_BIG5
+    raw:bytes,*,profile:str=PROFILE_BIG5,source_profile:str="iris"
 )->BattleModelOptionShape:
     """Return derived-only OPTION structure without retaining textual payload."""
     raw=_raw_option(raw)
@@ -146,7 +161,7 @@ def inspect_battlemodel_option(
         raise ValueError("BattleModel OPTION requires fields 1 and 2")
     f3=_field(raw,3) or b""
     status_index,status_kind,status_known=_classify_base_status_token(
-        f3,profile
+        f3,profile,source_profile
     )
     f4=_field(raw,4)
     f5=_field(raw,5)

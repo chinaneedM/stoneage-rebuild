@@ -650,3 +650,16 @@ recovered binary enum. [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]
 ## 2026-10-05 — 2BattleTimid normal-pet lifecycle source audit and inconclusive build assay
 
 **LATER_RECOVERED / SOURCE AUDIT:** verified Action37311978479 PASS closes36 textual gates across the three fixed descendant pins for PetIn -> player-owner PetDefaultExit -> matching BATTLE_Exit entry/escape/FINAL/battleindex changes. Owned pet membership and HP are separate from selected-default and battle occupancy. The preserved service root's sole273-byte ELF exposes neither required symbol, so the bounded UTF-8/Big5 discriminator is inconclusive; no original build is selected. Modern state audit identifies absent independent default-pet/NORETURN state and the need to stop treating retained pet membership as active selection during later player death. Ordered runtime remains OPEN; coverage unchanged2457/2486=98.83%. See `specs/STONEAGE-2BATTLETIMID-RUNTIME-STATE-AUDIT-R1.md`.
+
+
+### 2026-10-06 — BattleModel descendant status-table correction
+
+**FACT (fixed descendant source comparison):** three pinned profiles retain
+BattleModel's two-byte source-order status lookup but differ in literal
+spellings and lengths. The reference must retain independent source and
+charset witnesses. An original compiler/source profile cannot be inferred from
+visual similarity or a successful modern decoder.
+[`SRC-BATTLEMODEL-STATUS-PROFILES-R1`]
+
+**OPEN:** hash-verified recovered25 OPTION/status identity and replacement
+remote source/native acceptance remain pending; runtime is not promoted.

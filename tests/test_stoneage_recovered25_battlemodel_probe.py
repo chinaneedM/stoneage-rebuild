@@ -50,7 +50,7 @@ class BattleModelProbeTests(unittest.TestCase):
         pets,enemies=fixture()
         pets.skills[700]=S(
             skill_id=700,field=1,target=3,cost=2,illegal=0,
-            function_name="PETSKILL_BattleModel",option_bytes=b"x",
+            function_name="PETSKILL_BattleModel",option_bytes=b"1|2|X|1|30||100",
         )
         result=analyze_runtime_objects(
             pets,enemies,expected_callback_ids=(638,)
@@ -58,6 +58,15 @@ class BattleModelProbeTests(unittest.TestCase):
         self.assertTrue(result["positive_references_closed"])
         self.assertEqual(result["callback_ids"],(638,700))
         self.assertFalse(result["population_closed"])
+
+    def test_malformed_unreferenced_option_fails_closed(self):
+        pets,enemies=fixture()
+        pets.skills[700]=S(
+            skill_id=700,field=1,target=3,cost=2,illegal=0,
+            function_name="PETSKILL_BattleModel",option_bytes=b"x",
+        )
+        with self.assertRaisesRegex(ValueError,"requires fields 1 and 2"):
+            analyze_runtime_objects(pets,enemies)
 
     def test_exact_metadata_and_template_fields_drift_independently(self):
         pets,enemies=fixture()

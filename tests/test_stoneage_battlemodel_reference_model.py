@@ -91,6 +91,54 @@ class BattleModelReferenceTests(unittest.TestCase):
         self.assertIsNone(shape.status_kind)
         self.assertFalse(shape.status_known)
 
+    def test_big5_unrepresentable_source_literals_do_not_block_later_status(self):
+        shape=inspect_battlemodel_option(
+            option(status="障"),profile=PROFILE_BIG5,source_profile="gavin"
+        )
+        self.assertEqual((shape.status_index,shape.status_kind),(9,"barrier"))
+        self.assertTrue(shape.status_known)
+
+    def test_big5_does_not_invent_traditional_spelling_for_source_literal(self):
+        shape=inspect_battlemodel_option(
+            option(status="亂"),profile=PROFILE_BIG5,source_profile="gavin"
+        )
+        self.assertIsNone(shape.status_index)
+        self.assertFalse(shape.status_known)
+
+    def test_iris_traditional_literal_is_supported_by_pinned_source(self):
+        shape=inspect_battlemodel_option(
+            option(status="亂"),profile=PROFILE_BIG5,source_profile="iris"
+        )
+        self.assertEqual((shape.status_index,shape.status_kind),(6,"confusion"))
+        self.assertTrue(shape.status_known)
+
+    def test_bismarck_long_literal_has_a_distinct_two_byte_prefix(self):
+        raw=option(status="毒")
+        iris=inspect_battlemodel_option(raw,source_profile="iris")
+        bismarck=inspect_battlemodel_option(raw,source_profile="bismarck")
+        self.assertEqual(iris.status_index,1)
+        self.assertFalse(bismarck.status_known)
+
+    def test_unknown_source_profile_is_rejected(self):
+        with self.assertRaisesRegex(ValueError,"source profile"):
+            inspect_battlemodel_option(option(),source_profile="original")
+
+    def test_big5_paralysis_prefix_agrees_across_pinned_source_profiles(self):
+        for source_profile in ("gavin","iris","bismarck"):
+            with self.subTest(source_profile=source_profile):
+                shape=inspect_battlemodel_option(
+                    option(status="麻"),source_profile=source_profile
+                )
+                self.assertEqual((shape.status_index,shape.status_kind),(2,"paralysis"))
+                self.assertTrue(shape.status_known)
+
+    def test_utf8_prefix_collision_uses_first_source_index(self):
+        # The source compares only two bytes: these distinct three-byte
+        # literals collide. Preserve its first-match index, not Unicode equality.
+        raw="1|2|矮|1|30||100".encode("utf-8")
+        shape=inspect_battlemodel_option(raw,profile=PROFILE_UTF8)
+        self.assertEqual((shape.status_index,shape.status_kind),(4,"stone"))
+
     def test_fewer_objects_type2_attacks_only_prefix_without_rng(self):
         r=resolve_battlemodel_target_plan(
             attack_type=0,object_count=2,
@@ -136,7 +184,7 @@ class BattleModelReferenceTests(unittest.TestCase):
             )
 
     def test_no_living_target_fails_closed_instead_of_modeling_rand_zero_minus_one(self):
-        with self.assertRaisesRegex(ValueError,"RAND\(0,-1\)"):
+        with self.assertRaisesRegex(ValueError,r"RAND\(0,-1\)"):
             resolve_battlemodel_target_plan(
                 attack_type=0,object_count=1,living_opposing_slots=(),
                 action_numbers=(10,),excess_target_rolls=(),

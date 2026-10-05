@@ -10,6 +10,8 @@ from tools.stoneage_recovered25_enemybase_runtime import (
     load_recovered25_enemybase_runtime,
 )
 from tools.stoneage_battlemodel_reference_model import (
+    BASE_STATUS_LITERALS_BY_SOURCE,
+    CHARSETS,
     PROFILE_BIG5,
     inspect_battlemodel_option,
     resolve_battlemodel_setup,
@@ -104,7 +106,7 @@ def analyze_runtime_objects(
             raw,profile=PROFILE_BIG5,skill_array=int(entry.skill_id),
             powers_before=(137,91,53),object_count_roll=callback_roll,
         )
-        rows.append({
+        row={
             "id":int(entry.skill_id),
             "field":int(entry.field),
             "target":int(entry.target),
@@ -132,7 +134,16 @@ def analyze_runtime_objects(
             "big5_probe_b_powers":probe_b.powers,
             "callback_rng_draws":probe_a.rng_draws,
             "resolved_object_count_probe":probe_a.object_count,
-        })
+        }
+        for source_profile in BASE_STATUS_LITERALS_BY_SOURCE:
+            for charset_profile in CHARSETS:
+                witness=inspect_battlemodel_option(
+                    raw,profile=charset_profile,source_profile=source_profile
+                )
+                prefix=source_profile+"_"+charset_profile
+                row[prefix+"_status_index"]=witness.status_index
+                row[prefix+"_status_known"]=witness.status_known
+        rows.append(row)
 
     callback_ids=tuple(row["id"] for row in rows)
     referenced_ids=tuple(
