@@ -1,0 +1,94 @@
+name: Probe StoneAge BatFly source reference
+
+concurrency:
+  group: stoneage-batfly-source-reference-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/probe-stoneage-batfly-source-reference.yml"
+      - "tools/stoneage_batfly_reference_model.py"
+      - "tools/stoneage_batfly_source_audit.py"
+      - "tests/test_stoneage_batfly_reference_model.py"
+      - "research/recovered/STONEAGE-25-BATFLY-PROBE-R1.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate bounded BatFly reference model
+        run: |
+          python -m unittest -v tests.test_stoneage_batfly_reference_model
+          grep -F 'BATFLY_ROW|id=633|field=1|target=3|cost=2|illegal=5000|slot_references=2|option_bytes=0|' \
+            research/recovered/STONEAGE-25-BATFLY-PROBE-R1.txt
+          grep -F 'BATFLY_TEMPLATE|tempno=1160|graphic_id=101815|base_vital=300|base_strength=1|base_toughness=1|base_dexterity=30|ai=100|skill_slots=1,4|skill_ids=633,633' \
+            research/recovered/STONEAGE-25-BATFLY-PROBE-R1.txt
+      - name: Recover pinned fixed descendant source profiles
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          profiles={
+            "gavin":(
+              "gavinlinasd/StoneAge",
+              "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+            ),
+            "iris":(
+              "iriselia/StoneAge",
+              "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+            ),
+            "bismarck":(
+              "BismarckDD/stoneage",
+              "999ffdf1d220ec6666eb65339180689c9caf1876",
+            ),
+          }
+          for name,(repo,sha) in profiles.items():
+            root=Path("/tmp/batfly-source")/name
+            root.mkdir(parents=True)
+            subprocess.run(["git","init",str(root)],check=True)
+            subprocess.run([
+              "git","-C",str(root),"remote","add","origin",
+              "https://github.com/"+repo+".git",
+            ],check=True)
+            subprocess.run([
+              "git","-C",str(root),"fetch","--depth","1","origin",sha,
+            ],check=True)
+            subprocess.run([
+              "git","-C",str(root),"checkout","--detach","FETCH_HEAD",
+            ],check=True)
+          PY
+      - name: Reproduce source/native BatFly semantics
+        run: |
+          python -m tools.stoneage_batfly_source_audit \
+            --gavin-dir /tmp/batfly-source/gavin \
+            --iris-dir /tmp/batfly-source/iris \
+            --bismarck-dir /tmp/batfly-source/bismarck \
+            > research/recovered/STONEAGE-BATFLY-SOURCE-AUDIT-R1.txt
+          cat research/recovered/STONEAGE-BATFLY-SOURCE-AUDIT-R1.txt
+          grep -F 'RESOLUTION|BATFLY_FIXED_SOURCE_CLOSED_BOUNDED_REFERENCE' \
+            research/recovered/STONEAGE-BATFLY-SOURCE-AUDIT-R1.txt
+          test "$(grep -c '^PROFILE|' research/recovered/STONEAGE-BATFLY-SOURCE-AUDIT-R1.txt)" = 3
+          test "$(grep -c 'native_cases=249' research/recovered/STONEAGE-BATFLY-SOURCE-AUDIT-R1.txt)" = 3
+      - name: Commit derived source report
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-BATFLY-SOURCE-AUDIT-R1.txt
+          if git diff --cached --quiet; then
+            echo 'BatFly source report unchanged.'
+            exit 0
+          fi
+          git commit -m 'research: audit pinned BatFly source semantics'
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
