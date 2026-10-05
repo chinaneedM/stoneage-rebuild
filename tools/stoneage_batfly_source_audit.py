@@ -259,7 +259,9 @@ def analyze_profile(name:str,root:Path):
             "(charhp/10)==0" in effect
             and "charhp-(charhp/10)" in effect,
         "mounted_rider_and_pet_five_percent_min_one":
-            effect.count("/20")>=6
+            effect.count("/20")>=4
+            and "charhp/=20" in effect
+            and "pethp/=20" in effect
             and "pethp=CHAR_getInt(petidx,CHAR_HP)" in effect,
         "ride_pet_fall_clears_ride_and_marks_fall":
             "CHAR_RIDEPET,-1" in effect
