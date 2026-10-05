@@ -1,7 +1,8 @@
 # Combined ordinary status-magic reference R1
 
-**Conditional parser reference passes locally. Remote actual-byte acceptance
-is pending. Combined ordered runtime remains OPEN.**
+**Conditional parser reference and first-pass actual-byte audit PASS remotely.
+Second-pass exact outcome-matrix acceptance is pending. Combined ordered
+runtime remains OPEN.**
 
 This follows the remotely accepted direct-wrapper MP boundary at
 `97fb9e5ca78a007f383024b7edc935fd997077e0` and the continuation checkpoint
@@ -63,15 +64,47 @@ the original parser or convert one build's result into another's result.
 
 Local source reference: **747 defined native cases** and **38 expected
 ASan/UBSan diagnostics** across all seven admitted profile/charset builds.
-The 12 independent model tests cover wildcard/base labels, raw byte collisions,
+The 15 independent model tests cover wildcard/base labels, raw byte collisions,
 cursor movement, marker order, numeric/default behavior and unsafe domains.
 
 The verified-data workflow additionally checks full recovered `magic.txt`
 SHA-256 and all 19 exact crosslink rows before supplying the six status-magic
 OPTION byte strings directly to the transient original parsers. It reports
 each of the 42 profile/charset/magic outcomes as defined or diagnosed unsafe.
-Raw bytes are kept outside the repository. Actual outcome evidence is pending
-until that workflow passes and writes the derived report.
+Raw bytes are kept outside the repository. First-pass Action **37266411923
+PASS** at input commit `463cc02c2c2fa3087c39548c9c2517cf6de5cfd6` wrote
+the actual report at `7f50e1ae836485f2c46a5b2bc16e5a4cc2db9362`.
+
+## Actual recovered-byte outcomes
+
+Of the **42** profile/charset/magic cells, **24 diagnose unsafe table scans**,
+**12 safely return FALSE without an effect call**, and **6 safely dispatch**
+inside the explicitly conditional **iris CP950** build:
+
+| Magic ID | Parser | Status index | Duration | Success offset |
+| --- | --- | --- | --- | --- |
+| 61 | StatusRecovery | 0 (wildcard) | — | — |
+| 139 | StatusChange | 1 (poison) | 5 | 15 |
+| 159 | StatusChange | 4 (stone) | 5 | 15 |
+| 169 | StatusChange | 6 (confusion) | 5 | 15 |
+| 179 | StatusChange | 5 (drunk) | 5 | 15 |
+| 189 | StatusChange | 3 (sleep) | 5 | 15 |
+
+All six real rows are unsafe in gavin UTF-8/GBK and iris UTF-8/GBK because
+their raw bytes do not match the admitted label prefixes before the short
+table is overrun. Bismarck UTF-8/GBK both safely reject all six without a
+match. These are incompatible conditional outcomes, not one original rule.
+
+Native totals with real rows included are **765 defined comparisons** and
+**62 expected sanitizer diagnostics**. The accepted matrix is pinned
+independently of parser computation; the second pass requires all 42 cells
+to reproduce their domain, return, status, duration and success offset.
+
+The success value **15 is an input offset**, not a claim that final application
+probability is 15 percent. The original downstream StatusAttackCheck still
+uses actor/target stats and explicit RNG, which this parser audit does not
+execute. A decoded parameter description cannot override the native parser
+result or silently change the profile's marker bytes.
 
 ## Remaining boundaries
 

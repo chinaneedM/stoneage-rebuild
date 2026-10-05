@@ -18,6 +18,7 @@ from tools.stoneage_combined_direct_magic_source_audit import _normalize
 from tools.stoneage_refresh_model import _BASELINE,BUILD_CHARSETS,PROFILE_FACTS
 from tools.stoneage_combined_status_magic_model import (
     STATUS_MAGIC_IDS,SUCCESS_MARKERS,CombinedStatusMagicDomain,parse_status_magic_option,
+    validate_actual_outcomes,
 )
 from tools.stoneage_recovered25_combined_magic_probe import analyze as analyze_crosslinks
 from tools.stoneage_magic_probe import parse as parse_magic
@@ -207,6 +208,19 @@ def recovered_options(data_dir):
 
 
 def emit(results,digest):
+    if digest:
+        signatures=[]
+        for row in results:
+            for build in row["builds"]:
+                for actual in build["actual"]:
+                    out=actual["out"]
+                    signatures.append((row["profile"],build["charset"],actual["magic_id"],actual["kind"],
+                        "defined" if out is not None else "unsafe",
+                        out.accepted if out is not None else None,
+                        out.status if out is not None else None,
+                        out.turn if out is not None else None,
+                        out.success if out is not None else None,actual["reason"]))
+        validate_actual_outcomes(signatures)
     print("StoneAge Combined ordinary status-magic parser audit — R1")
     print("Derived hashes and semantic fields only; exact NUL-terminated native OPTION witnesses.")
     print("Battle mutation collectors are stubs; original build charset and ordered runtime remain OPEN.")
@@ -230,6 +244,7 @@ def emit(results,digest):
     if digest:
         print("DATA_SHA256|file=magic|sha256="+digest)
         print("RESOLUTION|RECOVERED25_COMBINED_STATUS_MAGIC_ACTUAL_BYTE_AUDIT_CLOSED_CONDITIONAL_BUILD")
+        print("RESOLUTION|RECOVERED25_COMBINED_STATUS_MAGIC_EXACT_OUTCOME_MATRIX_CLOSED")
     else:
         print("RESOLUTION|RECOVERED25_COMBINED_STATUS_MAGIC_ACTUAL_BYTE_AUDIT_OPEN")
     print("RESOLUTION|RECOVERED25_COMBINED_ORDERED_RUNTIME_OPEN")

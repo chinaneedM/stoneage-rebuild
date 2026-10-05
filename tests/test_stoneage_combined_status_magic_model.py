@@ -2,10 +2,36 @@ import unittest
 
 from tools.stoneage_combined_status_magic_model import (
     CombinedStatusMagicDomain, parse_status_magic_option as parse,
+    expected_actual_outcomes, validate_actual_outcomes,
 )
 
 
 class StatusMagicParserTests(unittest.TestCase):
+    def test_pinned_actual_matrix_has_six_safe_casts_twelve_safe_failures_twentyfour_unsafe_cells(self):
+        rows=expected_actual_outcomes()
+        self.assertEqual(len(rows),42)
+        self.assertEqual(sum(row[5] is True for row in rows),6)
+        self.assertEqual(sum(row[5] is False for row in rows),12)
+        self.assertEqual(sum(row[4]=="unsafe" for row in rows),24)
+        validate_actual_outcomes(rows)
+
+    def test_actual_matrix_detects_duration_success_status_and_profile_drift(self):
+        rows=list(expected_actual_outcomes())
+        index=next(i for i,row in enumerate(rows) if row[0:3]==("iris","cp950",139))
+        for column,value in ((6,4),(7,3),(8,100),(1,"gbk")):
+            altered=rows.copy();row=list(altered[index]);row[column]=value;altered[index]=tuple(row)
+            with self.assertRaisesRegex(CombinedStatusMagicDomain,"matrix_drift"):
+                validate_actual_outcomes(altered)
+
+    def test_actual_matrix_detects_missing_duplicate_or_diagnostic_classification(self):
+        rows=list(expected_actual_outcomes())
+        for altered in (rows[:-1],rows+[rows[0]],rows[:-1]+[rows[0]]):
+            with self.assertRaises(CombinedStatusMagicDomain):
+                validate_actual_outcomes(altered)
+        row=list(rows[0]);row[4]="unsafe";rows[0]=tuple(row)
+        with self.assertRaises(CombinedStatusMagicDomain):
+            validate_actual_outcomes(rows)
+
     def parse(self,raw,kind="change",profile="iris",charset="cp950"):
         return parse(raw,kind=kind,profile=profile,execution_charset=charset)
 

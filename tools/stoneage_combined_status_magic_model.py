@@ -11,6 +11,37 @@ from tools.stoneage_refresh_model import _BASELINE, BUILD_CHARSETS, PROFILE_FACT
 STATUS_MAGIC_IDS = (61,139,159,169,179,189)
 SUCCESS_MARKERS = {"gavin":"成", "iris":"Θ", "bismarck":"成功"}
 
+# Independently pinned after verified-data Action 37266411923, report commit
+# 7f50e1ae836485f2c46a5b2bc16e5a4cc2db9362. These do not derive from parsing.
+EXPECTED_IRIS_CP950_STATUS = {61:0,139:1,159:4,169:6,179:5,189:3}
+
+
+def expected_actual_outcomes():
+    """The accepted 42-cell conditional actual-byte outcome matrix."""
+    rows=[]
+    for profile,charsets in BUILD_CHARSETS.items():
+        for charset in charsets:
+            for magic_id in STATUS_MAGIC_IDS:
+                kind="recovery" if magic_id==61 else "change"
+                if profile=="iris" and charset=="cp950":
+                    rows.append((profile,charset,magic_id,kind,"defined",True,
+                        EXPECTED_IRIS_CP950_STATUS[magic_id],
+                        None if kind=="recovery" else 5,
+                        None if kind=="recovery" else 15,"defined"))
+                elif profile=="bismarck":
+                    rows.append((profile,charset,magic_id,kind,"defined",False,None,None,None,"defined"))
+                else:
+                    rows.append((profile,charset,magic_id,kind,"unsafe",None,None,None,None,
+                                 "short_status_table_scan_unsafe"))
+    return tuple(sorted(rows))
+
+
+def validate_actual_outcomes(rows):
+    """Reject population, profile, classification or semantic drift."""
+    rows=tuple(rows)
+    if len(rows)!=42 or tuple(sorted(rows))!=expected_actual_outcomes():
+        raise CombinedStatusMagicDomain("recovered_status_magic_exact_outcome_matrix_drift")
+
 
 class CombinedStatusMagicDomain(ValueError):
     """Unsafe source parser or input outside the admitted build domain."""
