@@ -768,6 +768,7 @@ class PersistentBattleStateTests(unittest.TestCase):
         state=begin_persistent_battle(
             session(player,(enemy,),pets=(pet,)),
             slots={"player":0,"pet:0":1,"enemy":10},
+            default_pet_slot=0,
         )
         self.assertEqual(
             dict(state.ultimate_overkill_by_participant_id),
@@ -1446,6 +1447,7 @@ class PersistentBattleStateTests(unittest.TestCase):
                 "enemy:1":10,
                 "enemy:2":11,
             },
+            default_pet_slot=0,
         )
         result=resolve_persistent_ordinary_round(
             state,
@@ -1924,6 +1926,7 @@ class PersistentBattleStateTests(unittest.TestCase):
         state=begin_persistent_battle(
             session(player,(enemy,),pets=(pet,)),
             slots={"player":0,"pet:0":1,"enemy":10},
+            default_pet_slot=0,
         )
         result=resolve_persistent_ordinary_round(
             state,
