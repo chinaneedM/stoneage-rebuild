@@ -180,6 +180,36 @@ class CombinedOrderedRuntimeTests(unittest.TestCase):
             for e in result.events
         ))
 
+    def test_all_five_positive_statuschange_choices_reach_exact_iris_indices(self):
+        expected={139:1,159:4,169:6,179:5,189:3}
+        for magic_id,status_index in expected.items():
+            with self.subTest(magic_id=magic_id):
+                result=self.resolve(
+                    sub=submission(
+                        skill_id=627,magic_id=magic_id,
+                        function="MAGIC_StatusChange",
+                    ),
+                    rolls=CombinedActionRolls(status_roll_1_100=1),
+                    player=actor(
+                        "player","player","player",
+                        level=1,quick=10,
+                    ),
+                    status_profile=BaseStatusCombatProfile(
+                        vital=1,strength=1,tough=1,dex=1,
+                    ),
+                )
+                event=self.combined_event(result)
+                self.assertEqual(
+                    event.combined_status_change_effect.status_index,
+                    status_index,
+                )
+                self.assertEqual(
+                    event.combined_status_change_effect.turn,5
+                )
+                self.assertEqual(
+                    event.combined_status_change_effect.success_offset,15
+                )
+
     def test_statusrecovery61_clears_persistent_nocast_without_effect_rng(self):
         result=self.resolve(
             sub=submission(skill_id=637,magic_id=61,function="MAGIC_StatusRecovery"),
