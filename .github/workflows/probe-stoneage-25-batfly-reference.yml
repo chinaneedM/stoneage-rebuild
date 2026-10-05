@@ -99,7 +99,7 @@ jobs:
           test -n "$D"; test -n "$C"
           mkdir -p research/recovered
           python -m tools.stoneage_recovered25_batfly_probe \
-            --data-dir "$D" --setup "$C" --discover \
+            --data-dir "$D" --setup "$C" \
             > research/recovered/STONEAGE-25-BATFLY-PROBE-R1.txt
           cat research/recovered/STONEAGE-25-BATFLY-PROBE-R1.txt
           grep -F 'COUNT|enemybase_slot_references|2' \
@@ -108,7 +108,11 @@ jobs:
             research/recovered/STONEAGE-25-BATFLY-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_BATFLY_POSITIVE_REFERENCES_CLOSED' \
             research/recovered/STONEAGE-25-BATFLY-PROBE-R1.txt
-          grep -F 'BOUNDARY|discovery_only_complete_population_and_exact_identity_not_accepted' \
+          grep -F 'RESOLUTION|RECOVERED25_BATFLY_POPULATION_CLOSED' \
+            research/recovered/STONEAGE-25-BATFLY-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_BATFLY_EXACT_ROWS_CLOSED' \
+            research/recovered/STONEAGE-25-BATFLY-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_BATFLY_EXACT_TEMPLATES_CLOSED' \
             research/recovered/STONEAGE-25-BATFLY-PROBE-R1.txt
       - name: Commit derived discovery report
         run: |
