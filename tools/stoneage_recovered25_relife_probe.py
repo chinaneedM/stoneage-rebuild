@@ -21,6 +21,16 @@ EXPECTED_CALLBACK_IDS=(500,)
 EXPECTED_REFERENCED_IDS=(500,)
 EXPECTED_SLOT_REFERENCES=3
 EXPECTED_TEMPLATES=3
+EXPECTED_EXACT_ROW=(
+    500,1,2,2,0,3,0,
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    False,
+)
+EXPECTED_TEMPLATE_ROWS=(
+    (39,100370,(5,)),
+    (909,100071,(2,)),
+    (1165,101814,(4,)),
+)
 
 
 def analyze_runtime_objects(petskills,enemybase):
@@ -66,6 +76,21 @@ def analyze_runtime_objects(petskills,enemybase):
 
     ids=tuple(row["id"] for row in rows)
     referenced=tuple(sorted(k for k,v in counts.items() if v))
+    exact_row_closed=False
+    if len(rows)==1:
+        row=rows[0]
+        actual=(
+            row["id"],row["field"],row["target"],row["cost"],
+            row["illegal"],row["slot_references"],row["option_bytes"],
+            row["option_sha256"],row["option_contains_nul"],
+        )
+        exact_row_closed=actual==EXPECTED_EXACT_ROW
+    actual_templates=tuple(
+        (
+            row["tempno"],row["graphic_id"],row["skill_slots"],
+        )
+        for row in templates
+    )
     return {
         "rows":tuple(rows),
         "callback_ids":ids,
@@ -78,6 +103,8 @@ def analyze_runtime_objects(petskills,enemybase):
             and sum(counts.values())==EXPECTED_SLOT_REFERENCES
             and len(templates)==EXPECTED_TEMPLATES
         ),
+        "exact_row_closed":exact_row_closed,
+        "exact_templates_closed":actual_templates==EXPECTED_TEMPLATE_ROWS,
     }
 
 
@@ -103,7 +130,14 @@ def emit(result):
         "RESOLUTION|RECOVERED25_RELIFE_POPULATION_"
         +("CLOSED" if result["population_closed"] else "OPEN")
     )
-    print("RESOLUTION|RECOVERED25_RELIFE_EXACT_ROW_PENDING_PIN")
+    print(
+        "RESOLUTION|RECOVERED25_RELIFE_EXACT_ROW_"
+        +("CLOSED" if result["exact_row_closed"] else "OPEN")
+    )
+    print(
+        "RESOLUTION|RECOVERED25_RELIFE_EXACT_TEMPLATES_"
+        +("CLOSED" if result["exact_templates_closed"] else "OPEN")
+    )
 
 
 def main():
@@ -127,6 +161,10 @@ def main():
     print("DATA_SHA256|file=petskill|sha256="+digest)
     if not result["population_closed"]:
         raise SystemExit("ReLife callback/reference population drift")
+    if not result["exact_row_closed"]:
+        raise SystemExit("ReLife exact row drift")
+    if not result["exact_templates_closed"]:
+        raise SystemExit("ReLife exact template/slot drift")
 
 
 if __name__=="__main__":
