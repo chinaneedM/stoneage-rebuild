@@ -55,6 +55,13 @@ from tools.stoneage_enemy_ai_2battletimid_bridge import (
     EnemyAiTwoBattleTimidSubmission,
 )
 from tools.stoneage_2battletimid_reference_model import TwoBattleTimidPost
+from tools.stoneage_enemy_ai_batfly_bridge import EnemyAiBatFlySubmission
+from tools.stoneage_batfly_reference_model import (
+    BatFlyExecutionGate,
+    BatFlyResolution,
+    BatFlyTarget,
+    BatFlyTargetResolution,
+)
 from tools.stoneage_enemy_ai_lighttakeed_bridge import (
     EnemyAiLighttakeedSubmission,
 )
@@ -1057,6 +1064,10 @@ class OrdinaryRoundEvent:
     two_battletimid_resolution: TwoBattleTimidPost | None = None
     two_battletimid_skill_id: int | None = None
     two_battletimid_profile: str | None = None
+    batfly_execution_gate: BatFlyExecutionGate | None = None
+    batfly_target_resolution: BatFlyTargetResolution | None = None
+    batfly_resolution: BatFlyResolution | None = None
+    batfly_skill_id: int | None = None
     lighttakeed_resolution: LighttakeedResolution | None = None
     lighttakeed_skill_id: int | None = None
     lighttakeed_profile: str | None = None
@@ -3712,6 +3723,12 @@ def resolve_ordinary_round(
     two_battletimid_rolls_by_participant_id: Mapping[
         str,int | None
     ] | None = None,
+    batfly_submissions_by_participant_id: Mapping[
+        str,EnemyAiBatFlySubmission
+    ] | None = None,
+    batfly_retarget_rolls_by_participant_id: Mapping[
+        str,int | None
+    ] | None = None,
     two_battletimid_default_pet_slot_by_target_id: Mapping[
         str,int
     ] | None = None,
@@ -4939,6 +4956,66 @@ def resolve_ordinary_round(
     modifyattack_active_command_ids=set(modifyattack_actor_ids)
     consumed_modifyattack_rand_ids=set()
 
+    batfly_submissions={
+        str(pid):submission
+        for pid,submission in (
+            batfly_submissions_by_participant_id or {}
+        ).items()
+    }
+    batfly_actor_ids=set(batfly_submissions)
+    if batfly_actor_ids-set(slot_by_id):
+        raise ValueError("BatFly submissions reference unknown actors")
+    batfly_overlap=(
+        attack_magic_actor_ids | enemy_rehp_actor_ids | enemy_relife_actor_ids
+        | damage_to_hp_actor_ids | mp_damage_actor_ids | fall_ground_actor_ids
+        | battle_tear_actor_ids | nocast_actor_ids | guard_break2_actor_ids
+        | barrier_actor_ids | weaken_actor_ids | refresh_actor_ids
+        | setmagicpet_actor_ids | battletimid_actor_ids
+        | two_battletimid_actor_ids | lighttakeed_actor_ids
+        | combined_actor_ids | vary_actor_ids | modifyattack_actor_ids
+        | set(mdfyattack_submissions) | set(attack_crazed_submissions)
+        | wildviolent_actor_ids
+    )
+    if batfly_actor_ids & batfly_overlap:
+        raise ValueError("BatFly semantic submissions overlap another skill")
+    for pid,submission in batfly_submissions.items():
+        if not isinstance(submission,EnemyAiBatFlySubmission):
+            raise TypeError("BatFly submission has wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (
+            str(submission.participant_id)!=pid
+            or entry.participant.kind!="enemy"
+            or entry.participant.side!="enemy"
+            or int(entry.command.command1)!=BATTLE_COM_ATTACK
+            or int(entry.command.command2)!=int(submission.source_target_slot)
+        ):
+            raise ValueError(
+                "BatFly ordering carrier must be enemy ATTACK/source-target"
+            )
+        if int(entry.combo_id)!=0:
+            raise ValueError("BatFly cannot inherit ordinary combo rewriting")
+        if setup_effects.get(pid,BattleCommandSetupEffects()) != BattleCommandSetupEffects():
+            raise ValueError("BatFly callback does not mutate work powers")
+    batfly_retarget_rolls={
+        str(pid):(None if draw is None else int(draw))
+        for pid,draw in (
+            batfly_retarget_rolls_by_participant_id or {}
+        ).items()
+    }
+    if set(batfly_retarget_rolls)!=batfly_actor_ids:
+        missing=sorted(batfly_actor_ids-set(batfly_retarget_rolls))
+        extra=sorted(set(batfly_retarget_rolls)-batfly_actor_ids)
+        raise ValueError(
+            "BatFly TargetAdjust RNG actors mismatch; "
+            f"missing={missing}, extra={extra}"
+        )
+    if any(
+        draw is not None and int(draw)<0
+        for draw in batfly_retarget_rolls.values()
+    ):
+        raise ValueError("BatFly TargetAdjust draw cannot be negative")
+    batfly_active_command_ids=set(batfly_actor_ids)
+
     # The scheduling carrier cannot confer native ATTACK counter eligibility.
     # Confusion later removes a rewritten actor from this symbolic-command set.
     mdfyattack_active_command_ids=set(mdfyattack_submissions)
@@ -5665,6 +5742,7 @@ def resolve_ordinary_round(
                 | setmagicpet_active_command_ids
                 | battletimid_active_command_ids
                 | two_battletimid_active_command_ids
+                | batfly_active_command_ids
                 | lighttakeed_active_command_ids
                 | combined_active_command_ids
                 | vary_active_command_ids
@@ -5815,6 +5893,7 @@ def resolve_ordinary_round(
                 setmagicpet_active_command_ids.discard(str(participant_id))
                 battletimid_active_command_ids.discard(str(participant_id))
                 two_battletimid_active_command_ids.discard(str(participant_id))
+                batfly_active_command_ids.discard(str(participant_id))
                 lighttakeed_active_command_ids.discard(str(participant_id))
                 combined_active_command_ids.discard(str(participant_id))
                 vary_active_command_ids.discard(str(participant_id))
@@ -7130,6 +7209,149 @@ def resolve_ordinary_round(
                     int(slot),
                     int(continuation.last_target_slot),
                 )
+            continue
+
+        batfly_actor_id=str(participant_id)
+        if (
+            batfly_actor_id in batfly_active_command_ids
+            and int(command.command1) == BATTLE_COM_ATTACK
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            submission=batfly_submissions[batfly_actor_id]
+            if int(command.command2) != int(submission.source_target_slot):
+                raise ValueError(
+                    "BatFly ordering carrier target drift before execution"
+                )
+            living_opposing_slots=tuple(
+                other_slot
+                for other_slot in sorted(by_slot)
+                if (
+                    _slot_side(other_slot)==0
+                    and other_slot not in exited_slots
+                    and int(hp_by_slot.get(other_slot,0))>0
+                )
+            )
+            gate=submission.execution_gate(
+                living_opposing_slots=living_opposing_slots,
+                retarget_roll=batfly_retarget_rolls[batfly_actor_id],
+            )
+            if not gate.executable:
+                events.append(
+                    OrdinaryRoundEvent(
+                        batfly_actor_id,
+                        int(slot),
+                        BATTLE_COM_ATTACK,
+                        int(entry.action_value),
+                        "batfly_no_action",
+                        original_target_slot=int(submission.source_target_slot),
+                        resolved_target_slot=gate.adjusted_target_slot,
+                        retargeted=bool(gate.retargeted),
+                        batfly_execution_gate=gate,
+                        batfly_skill_id=int(submission.skill_id),
+                    )
+                )
+                continue
+
+            target_slots=tuple(
+                other_slot
+                for other_slot in sorted(by_slot)
+                if (
+                    _slot_side(other_slot)==0
+                    and other_slot not in exited_slots
+                    and int(hp_by_slot.get(other_slot,0))>0
+                )
+            )
+            target_inputs=[]
+            for target_slot in target_slots:
+                target_actor=by_slot[int(target_slot)]
+                target_id=str(target_actor.participant_id)
+                ride_hp=None
+                if (
+                    target_actor.kind=="player"
+                    and ride_runtime is not None
+                    and str(ride_runtime.rider_id)==target_id
+                    and bool(ride_runtime.mounted)
+                ):
+                    ride_hp=int(ride_runtime.hp)
+                target_inputs.append(
+                    BatFlyTarget(
+                        character_hp=int(hp_by_slot[int(target_slot)]),
+                        ride_pet_hp=ride_hp,
+                    )
+                )
+            batfly_resolution=submission.effect(
+                attacker_hp=int(hp_by_slot[int(slot)]),
+                attacker_max_hp=int(participant.max_hp),
+                targets=tuple(target_inputs),
+            )
+            batfly_events=[]
+            for target_slot,target_resolution in zip(
+                target_slots,batfly_resolution.targets
+            ):
+                target_actor=by_slot[int(target_slot)]
+                target_id=str(target_actor.participant_id)
+                before=int(hp_by_slot[int(target_slot)])
+                after=int(target_resolution.character_hp_after)
+                if before!=int(target_resolution.character_hp_before):
+                    raise ValueError("BatFly target HP snapshot drift")
+                hp_by_slot[int(target_slot)]=after
+                hp_by_id[target_id]=after
+                fell_rider_id=None
+                if target_resolution.ride_pet_hp_before is not None:
+                    if (
+                        ride_runtime is None
+                        or target_actor.kind!="player"
+                        or str(ride_runtime.rider_id)!=target_id
+                    ):
+                        raise ValueError("BatFly ride target lost runtime identity")
+                    if int(ride_runtime.hp)!=int(
+                        target_resolution.ride_pet_hp_before
+                    ):
+                        raise ValueError("BatFly ride-pet HP snapshot drift")
+                    ride_runtime=replace(
+                        ride_runtime,
+                        hp=int(target_resolution.ride_pet_hp_after),
+                        mounted=(
+                            False
+                            if target_resolution.ride_pet_fell
+                            else bool(ride_runtime.mounted)
+                        ),
+                        petfall=(
+                            True
+                            if target_resolution.ride_pet_fell
+                            else bool(ride_runtime.petfall)
+                        ),
+                    )
+                    if target_resolution.ride_pet_fell:
+                        active_ride=False
+                        fell_rider_id=target_id
+                batfly_events.append(
+                    OrdinaryRoundEvent(
+                        batfly_actor_id,
+                        int(slot),
+                        BATTLE_COM_ATTACK,
+                        int(entry.action_value),
+                        "batfly_drain",
+                        original_target_slot=int(submission.source_target_slot),
+                        resolved_target_slot=int(target_slot),
+                        retargeted=bool(gate.retargeted),
+                        damage=int(target_resolution.character_drain),
+                        target_hp_before=before,
+                        target_hp_after=after,
+                        ride_pet_fell_rider_id=fell_rider_id,
+                        batfly_execution_gate=gate,
+                        batfly_target_resolution=target_resolution,
+                        batfly_resolution=batfly_resolution,
+                        batfly_skill_id=int(submission.skill_id),
+                    )
+                )
+            hp_by_slot[int(slot)]=int(batfly_resolution.attacker_hp_after)
+            hp_by_id[batfly_actor_id]=int(batfly_resolution.attacker_hp_after)
+            events.extend(batfly_events)
+            register_ultimate_exits(batfly_events)
             continue
 
         vary_actor_id=str(participant_id)
