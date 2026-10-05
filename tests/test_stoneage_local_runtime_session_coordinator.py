@@ -61,6 +61,7 @@ from tools.stoneage_attack_magic_state_model import (
     AttackMagicRoundOverlay,
 )
 from tools.stoneage_enemy_rehp_model import EnemyReHpRolls
+from tools.stoneage_enemy_relife_model import EnemyReLifeRolls
 from tools.stoneage_nocast_runtime_state import (
     NocastActionRolls,
     NocastParticipantRuntime,
@@ -7415,6 +7416,168 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                         defense_profile="newpower_70pct",
                     )
                 )
+
+
+    def test_recovered_enemy_ai_relife_revives_retained_dead_entry(self):
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-relife"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,
+            group,
+            entry_count_roll=1,
+            selection_rolls=(0,),
+            birth_rolls=(
+                EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0,0,0,0),
+                    spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+                ),
+            ),
+        )
+        original=context.spawned_enemies[0]
+        caster_id=str(context.battle.enemies[0].participant_id)
+        ally_id="enemy:relife-dead"
+
+        self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+            skills={
+                **dict(self.stack.petskill_runtime.skills),
+                500:Recovered25PetSkillEntry(
+                    skill_id=500,
+                    field=1,
+                    target=2,
+                    cost=2,
+                    illegal=0,
+                    function_name="ENEMYSKILL_ReLife",
+                    option_bytes=b"",
+                ),
+            },
+            source_file=self.stack.petskill_runtime.source_file,
+        )
+        caster_participant=replace(
+            context.battle.enemies[0],
+            hp=600,max_hp=600,quick=200,
+        )
+        ally_participant=replace(
+            context.battle.enemies[0],
+            participant_id=ally_id,
+            hp=0,max_hp=101,quick=20,
+        )
+        caster_spawn=replace(
+            original,
+            participant=caster_participant,
+            template=replace(
+                original.template,
+                tempno=39,
+                graphic_id=100370,
+                skill_ids=(20,30,40,50,500,60,70),
+                skill_slot_ids=(20,30,40,50,500,60,70),
+            ),
+            variant=replace(
+                original.variant,
+                tactics_option=(
+                    "at:0;1;1|gu:0|es:0|"
+                    "wa:0;0;0;0;1;0;0"
+                ),
+            ),
+        )
+        ally_spawn=replace(
+            original,
+            participant=ally_participant,
+            variant=replace(
+                original.variant,
+                tactics_option="at:0;1;1|gu:1|es:0|wa:0;0;0;0;0;0;0",
+            ),
+        )
+        context=replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=replace(
+                    context.battle.player,
+                    hp=1000,max_hp=1000,quick=10,
+                ),
+                enemies=(caster_participant,ally_participant),
+            ),
+            spawned_enemies=(caster_spawn,ally_spawn),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,caster_id:10,ally_id:11},
+        )
+        context=replace(
+            context,
+            persistent_battle_state=replace(
+                context.persistent_battle_state,
+                revivable_dead_participant_ids=(ally_id,),
+            ),
+        )
+        profiles={
+            "player":BattleCombatProfile(
+                fixed_dex=10,fixed_luck=0,
+                earth=0,water=0,fire=0,wind=0,
+            ),
+            caster_id:BattleCombatProfile(
+                fixed_dex=100,fixed_luck=0,
+                earth=0,water=0,fire=0,wind=0,
+            ),
+            ally_id:BattleCombatProfile(
+                fixed_dex=10,fixed_luck=0,
+                earth=0,water=0,fire=0,wind=0,
+            ),
+        }
+        next_context,result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player":BattleCommand(BATTLE_COM_WAIT)
+                },
+                enemy_mode_rolls={caster_id:0},
+                enemy_target_rolls={caster_id:0},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={
+                    "player":0,caster_id:0,
+                },
+                profiles=profiles,
+                attack_rolls={},
+                defense_profile="newpower_70pct",
+                enemy_relife_rolls_by_attack_id={
+                    caster_id:EnemyReLifeRolls(0,55),
+                },
+                enemy_relife_retarget_rolls_by_attack_id={
+                    caster_id:None,
+                },
+            )
+        )
+        event=next(
+            event for event in result.round.events
+            if event.participant_id==caster_id
+            and event.result=="enemy_relife"
+        )
+        self.assertEqual(event.resolved_target_slot,11)
+        self.assertEqual(
+            event.enemy_relife_resolution.selected_participant_id,
+            ally_id,
+        )
+        self.assertEqual(
+            next_context.persistent_battle_state.hp_by_participant_id[
+                ally_id
+            ],
+            55,
+        )
+        self.assertEqual(
+            next_context.persistent_battle_state
+            .revivable_dead_participant_ids,
+            (),
+        )
 
 
 if __name__ == "__main__":
