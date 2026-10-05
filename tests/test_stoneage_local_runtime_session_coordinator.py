@@ -6921,6 +6921,279 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                 previous_hp=current_hp
 
 
+    def test_recovered_enemy_ai_2battletimid_recall_roundtrips_world_save_and_noreturn(self):
+        def run_case(*,noreturn: bool, save_key: str):
+            player_state=_battle_player_state()
+            pet=PetActor(
+                slot=PetSlot(0),
+                variant_id=EnemyVariantId(701),
+                template_id=PetTemplateId(89),
+                runtime_object_id=None,
+                state=MappingProxyType(
+                    {
+                        "name":"2timid-target",
+                        "level":5,
+                        "hp":180,
+                        "max_hp":180,
+                        "attack":50,
+                        "defense":20,
+                        "quick":30,
+                        "ai":79,
+                        "exp":0,
+                        "max_exp":500,
+                    }
+                ),
+                skills=(),
+                growth=None,
+            )
+            player_state.pets[PetSlot(0)]=pet
+            player_state.default_pet_slot=PetSlot(0)
+            session=LocalRuntimeSessionState(
+                contract_id=self.profile.contract_id,
+                world_profile=self.profile.runtime_world_profile,
+                hometown_ordinal=1,
+                player_position=MapPosition(1,0,0),
+                player_state=player_state,
+                world_flags=frozenset({"enemy-ai-2battletimid"}),
+            )
+            group=self.stack.request_encounter_group(session,group_roll=0)
+            context=self.coordinator.start_group_battle(
+                session,
+                group,
+                entry_count_roll=1,
+                selection_rolls=(0,),
+                birth_rolls=(EnemyBirthRolls(
+                    level_roll=1,
+                    birth_offsets=(0,0,0,0),
+                    spawn_allocation_rolls=(
+                        0,1,2,3,0,1,2,3,0,1
+                    ),
+                ),),
+                allied_pet_slots=(0,),
+            )
+            enemy_id=str(context.battle.enemies[0].participant_id)
+            spawned=context.spawned_enemies[0]
+
+            skills=dict(self.stack.petskill_runtime.skills)
+            skills[636]=Recovered25PetSkillEntry(
+                skill_id=636,
+                field=1,
+                target=7,
+                cost=2,
+                illegal=10000,
+                function_name="PETSKILL_2BattleTimid",
+                option_bytes=b"-\xa7\xf0%50+\xb1\xd3%30\xa9R%60",
+            )
+            self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+                skills=skills,
+                source_file=self.stack.petskill_runtime.source_file,
+            )
+
+            player=replace(
+                context.battle.player,
+                hp=400,
+                max_hp=400,
+                attack=500,
+                defense=20,
+                quick=100,
+            )
+            enemy=replace(
+                context.battle.enemies[0],
+                hp=20,
+                max_hp=20,
+                attack=200,
+                defense=0,
+                quick=200,
+            )
+            context=replace(
+                context,
+                battle=replace(
+                    context.battle,
+                    player=player,
+                    enemies=(enemy,),
+                ),
+                spawned_enemies=(replace(
+                    spawned,
+                    participant=enemy,
+                    template=replace(
+                        spawned.template,
+                        tempno=178,
+                        graphic_id=101872,
+                        skill_slots=7,
+                        skill_ids=(10,20,30,636,50,60,70),
+                        skill_slot_ids=(10,20,30,636,50,60,70),
+                    ),
+                    variant=replace(
+                        spawned.variant,
+                        tactics_option=(
+                            "at:0;1;1|gu:0|es:0|"
+                            "wa:0;0;0;1;0;0;0"
+                        ),
+                    ),
+                ),),
+            )
+            context=self.coordinator.begin_persistent_group_battle(
+                context,
+                slots={"player":0,"pet:0":5,enemy_id:10},
+                pet_noreturn_by_participant_id={"pet:0":noreturn},
+            )
+            self.assertEqual(
+                context.persistent_battle_state.default_pet_slot,
+                0,
+            )
+
+            context,result=(
+                self.coordinator
+                .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                    context,
+                    player_side_commands={
+                        "player":BattleCommand(
+                            BATTLE_COM_ATTACK,
+                            command2=10,
+                        ),
+                        "pet:0":BattleCommand(BATTLE_COM_WAIT),
+                    },
+                    enemy_mode_rolls={enemy_id:0},
+                    enemy_target_rolls={enemy_id:1},
+                    enemy_escape_rolls={},
+                    opponent_abio_by_participant_id={},
+                    initiative_random_subtracts={
+                        "player":0,"pet:0":0,enemy_id:0,
+                    },
+                    profiles={
+                        "player":BattleCombatProfile(
+                            fixed_dex=100,fixed_luck=0,
+                            earth=0,water=0,fire=0,wind=0,
+                        ),
+                        "pet:0":BattleCombatProfile(
+                            fixed_dex=30,fixed_luck=0,
+                            earth=0,water=0,fire=0,wind=0,
+                        ),
+                        enemy_id:BattleCombatProfile(
+                            fixed_dex=200,fixed_luck=0,
+                            earth=0,water=0,fire=0,wind=0,
+                        ),
+                    },
+                    attack_rolls={
+                        "player":OrdinaryAttackRolls(
+                            dodge_roll_1_10000=10000,
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                            minimum_damage_roll_0_1=1,
+                        ),
+                        enemy_id:OrdinaryAttackRolls(
+                            dodge_roll_1_10000=10000,
+                            critical_roll_1_10000=10000,
+                            damage_roll=0,
+                            minimum_damage_roll_0_1=1,
+                        ),
+                    },
+                    two_battletimid_profiles_by_enemy_id={
+                        enemy_id:"big5_literals",
+                    },
+                    two_battletimid_rolls_by_attack_id={
+                        enemy_id:59,
+                    },
+                    defense_profile="newpower_70pct",
+                    tie_break_order=(
+                        enemy_id,"player","pet:0"
+                    ),
+                )
+            )
+            event=next(
+                item for item in result.round.events
+                if item.two_battletimid_skill_id==636
+            )
+            self.assertEqual(
+                event.two_battletimid_profile,
+                "big5_literals",
+            )
+            self.assertTrue(
+                event.two_battletimid_resolution.pet_recall_requested
+            )
+            self.assertEqual(
+                event.two_battletimid_resolution.rng_draws,
+                1,
+            )
+            self.assertEqual(result.after.phase,"finished")
+            self.assertEqual(result.after.result,"victory")
+
+            expected_slot=(0 if noreturn else None)
+            self.assertEqual(
+                result.after.default_pet_slot,
+                expected_slot,
+            )
+            self.assertEqual(
+                event.two_battletimid_resolution.pet_withdrawn,
+                not noreturn,
+            )
+            self.assertEqual(
+                "pet:0" in result.after.battle_exited_participant_ids,
+                not noreturn,
+            )
+            self.assertEqual(len(result.after.session.allied_pets),1)
+            self.assertGreater(
+                result.after.hp_by_participant_id["pet:0"],
+                0,
+            )
+
+            settled=self.coordinator.settle_persistent_group_battle_without_level_crossing(
+                context
+            )
+            self.assertIn(PetSlot(0),settled.player_state.pets)
+            self.assertEqual(
+                settled.player_state.default_pet_slot,
+                (
+                    PetSlot(0)
+                    if noreturn
+                    else None
+                ),
+            )
+            self.coordinator.save_game(save_key,settled)
+            restored=self.coordinator.continue_game(save_key)
+            self.assertIn(PetSlot(0),restored.player_state.pets)
+            self.assertEqual(
+                restored.player_state.default_pet_slot,
+                settled.player_state.default_pet_slot,
+            )
+            return event,result,settled,restored
+
+        recalled,recall_result,_,_=run_case(
+            noreturn=False,
+            save_key="2timid-recalled",
+        )
+        self.assertEqual(
+            recalled.two_battletimid_resolution.status_notifications,
+            2,
+        )
+        self.assertEqual(
+            recalled.two_battletimid_resolution.bs_frames,
+            1,
+        )
+        self.assertTrue(any(
+            item.participant_id=="pet:0"
+            and item.result=="skipped_exited"
+            for item in recall_result.round.events
+        ))
+
+        blocked,blocked_result,_,_=run_case(
+            noreturn=True,
+            save_key="2timid-noreturn",
+        )
+        self.assertEqual(
+            blocked.two_battletimid_resolution.status_notifications,
+            2,
+        )
+        self.assertEqual(
+            blocked.two_battletimid_resolution.bs_frames,
+            0,
+        )
+        self.assertTrue(any(
+            item.participant_id=="pet:0"
+            and item.result=="wait"
+            for item in blocked_result.round.events
+        ))
+
     def test_recovered_enemy_ai_battletimid_executes_and_persists_exit(self):
         session=LocalRuntimeSessionState(
             contract_id=self.profile.contract_id,
