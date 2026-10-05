@@ -69,6 +69,12 @@ from tools.stoneage_enemy_ai_battletimid_bridge import (
 from tools.stoneage_battletimid_model import (
     CALLBACK_NAME as BATTLETIMID_CALLBACK,
 )
+from tools.stoneage_enemy_ai_combined_bridge import (
+    EnemyAiCombinedSubmission,
+    resolve_enemy_ai_combined_submission,
+)
+from tools.stoneage_combined_model import CALLBACK_NAME as COMBINED_CALLBACK
+from tools.stoneage_combined_runtime_state import CombinedActionRolls
 from tools.stoneage_guard_break2_model import (
     CALLBACK_NAME as GUARD_BREAK2_CALLBACK,
 )
@@ -465,6 +471,9 @@ class EnemyAiCommonCommandBatch:
     ] = field(default_factory=dict)
     battletimid_submissions: Mapping[
         str,EnemyAiBattleTimidSubmission
+    ] = field(default_factory=dict)
+    combined_submissions: Mapping[
+        str,EnemyAiCombinedSubmission
     ] = field(default_factory=dict)
     barrier_submissions: Mapping[
         str,EnemyAiBarrierSubmission
@@ -1090,6 +1099,41 @@ class EnemyAiCommonCommandBatch:
         if set(battletimid_submissions) & battletimid_overlap:
             raise ValueError(
                 "enemy AI BattleTimid semantic submissions overlap another skill"
+            )
+
+        combined_submissions={
+            str(key):value
+            for key,value in self.combined_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "combined_submissions",
+            MappingProxyType(combined_submissions),
+        )
+        for participant_id,submission in combined_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI Combined submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiCombinedSubmission):
+                raise TypeError(
+                    "enemy AI Combined submission has wrong type for "
+                    + participant_id
+                )
+            if str(submission.participant_id)!=participant_id:
+                raise ValueError("enemy AI Combined participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1)!=BATTLE_COM_ATTACK
+                or int(carrier.command2)!=int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI Combined carrier must be ATTACK/source-target"
+                )
+        combined_overlap=battletimid_overlap | set(battletimid_submissions)
+        if set(combined_submissions) & combined_overlap:
+            raise ValueError(
+                "enemy AI Combined semantic submissions overlap another skill"
             )
 
 
@@ -1746,6 +1790,8 @@ class LocalRuntimeSessionCoordinator:
         allow_nocast_skill: bool = False,
         allow_guard_break2_skill: bool = False,
         allow_battletimid_skill: bool = False,
+        allow_combined_skill: bool = False,
+        combined_selection_draws_by_enemy_id: Mapping[str,int] | None = None,
         allow_weaken_skill: bool = False,
         allow_refresh_skill: bool = False,
         allow_setmagicpet_skill: bool = False,
@@ -1901,6 +1947,7 @@ class LocalRuntimeSessionCoordinator:
         nocast_submissions={}
         guard_break2_submissions={}
         battletimid_submissions={}
+        combined_submissions={}
         weaken_submissions={}
         refresh_submissions={}
         setmagicpet_submissions={}
@@ -1971,6 +2018,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_nocast_skill)
                 or bool(allow_guard_break2_skill)
                 or bool(allow_battletimid_skill)
+                or bool(allow_combined_skill)
                 or bool(allow_weaken_skill)
                 or bool(allow_refresh_skill)
                 or bool(allow_setmagicpet_skill)
@@ -2176,6 +2224,36 @@ class LocalRuntimeSessionCoordinator:
                         command2=int(submission.source_target_slot),
                     )
                     guard_break2_submissions[enemy_id]=submission
+                    continue
+
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == COMBINED_CALLBACK
+                    and bool(allow_combined_skill)
+                ):
+                    draw_map={
+                        str(key):int(value)
+                        for key,value in (
+                            combined_selection_draws_by_enemy_id or {}
+                        ).items()
+                    }
+                    if enemy_id not in draw_map:
+                        raise ValueError(
+                            "Combined callback selection requires explicit "
+                            "reduced draw for " + enemy_id
+                        )
+                    submission=resolve_enemy_ai_combined_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                        draw_index=int(draw_map[enemy_id]),
+                    )
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    combined_submissions[enemy_id]=submission
                     continue
 
                 if (
@@ -2468,6 +2546,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_GuardBreak2")
             if bool(allow_battletimid_skill):
                 allowed_parts.append("PETSKILL_BattleTimid")
+            if bool(allow_combined_skill):
+                allowed_parts.append("PETSKILL_Combined")
             if bool(allow_weaken_skill):
                 allowed_parts.append("PETSKILL_Weaken")
             if bool(allow_refresh_skill):
@@ -2501,6 +2581,7 @@ class LocalRuntimeSessionCoordinator:
             nocast_submissions=nocast_submissions,
             guard_break2_submissions=guard_break2_submissions,
             battletimid_submissions=battletimid_submissions,
+            combined_submissions=combined_submissions,
             weaken_submissions=weaken_submissions,
             refresh_submissions=refresh_submissions,
             setmagicpet_submissions=setmagicpet_submissions,
