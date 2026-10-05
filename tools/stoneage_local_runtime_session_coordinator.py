@@ -3320,6 +3320,12 @@ class LocalRuntimeSessionCoordinator:
         battletimid_rolls_by_attack_id: Mapping[
             str,int | None
         ] | None = None,
+        two_battletimid_rolls_by_attack_id: Mapping[
+            str,int | None
+        ] | None = None,
+        two_battletimid_profiles_by_enemy_id: Mapping[
+            str,str
+        ] | None = None,
         modifyattack_rand_by_attack_id: Mapping[str,int | None] | None = None,
         lighttakeed_profiles_by_enemy_id: Mapping[
             str,str
@@ -3447,6 +3453,10 @@ class LocalRuntimeSessionCoordinator:
             allow_nocast_skill=True,
             allow_guard_break2_skill=True,
             allow_battletimid_skill=True,
+            allow_two_battletimid_skill=True,
+            two_battletimid_profiles_by_enemy_id=(
+                two_battletimid_profiles_by_enemy_id
+            ),
             allow_lighttakeed_skill=True,
             lighttakeed_profiles_by_enemy_id=(
                 lighttakeed_profiles_by_enemy_id
@@ -3541,6 +3551,37 @@ class LocalRuntimeSessionCoordinator:
             for value in normalized_battletimid_rolls.values()
         ):
             raise ValueError("enemy BattleTimid reduced rand draw must be 0..99")
+
+        two_battletimid_enemy_ids=set(
+            enemy_batch.two_battletimid_submissions
+        )
+        normalized_two_battletimid_rolls={
+            str(key):(None if value is None else int(value))
+            for key,value in (
+                two_battletimid_rolls_by_attack_id or {}
+            ).items()
+        }
+        if set(normalized_two_battletimid_rolls)!=two_battletimid_enemy_ids:
+            missing=sorted(
+                two_battletimid_enemy_ids-set(
+                    normalized_two_battletimid_rolls
+                )
+            )
+            extra=sorted(
+                set(normalized_two_battletimid_rolls)
+                - two_battletimid_enemy_ids
+            )
+            raise ValueError(
+                "enemy 2BattleTimid RNG actors mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        if any(
+            value is not None and not 0 <= int(value) <= 99
+            for value in normalized_two_battletimid_rolls.values()
+        ):
+            raise ValueError(
+                "enemy 2BattleTimid reduced rand draw must be 0..99"
+            )
 
         rehp_enemy_ids=set(enemy_batch.enemy_rehp_submissions)
         normalized_rehp_rolls={
@@ -4124,6 +4165,12 @@ class LocalRuntimeSessionCoordinator:
             ),
             battletimid_rolls_by_participant_id=(
                 normalized_battletimid_rolls
+            ),
+            two_battletimid_submissions_by_participant_id=(
+                enemy_batch.two_battletimid_submissions
+            ),
+            two_battletimid_rolls_by_participant_id=(
+                normalized_two_battletimid_rolls
             ),
             lighttakeed_submissions_by_participant_id=(
                 enemy_batch.lighttakeed_submissions
