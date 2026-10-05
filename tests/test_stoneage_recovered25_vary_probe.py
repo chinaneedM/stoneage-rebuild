@@ -6,6 +6,8 @@ from tools.stoneage_recovered25_petskill_runtime import (
     Recovered25PetSkillEntry,
 )
 from tools.stoneage_recovered25_vary_probe import (
+    EXPECTED_EXACT_ROW,
+    EXPECTED_TEMPLATE_ROWS,
     _c_float_after,
     analyze_runtime_objects,
 )
@@ -78,6 +80,35 @@ class Recovered25VaryProbeTests(unittest.TestCase):
         self.assertEqual(_c_float_after(marker+b"-7e1|",marker),-70.0)
         self.assertIsNone(_c_float_after(marker+b"abc",marker))
         self.assertIsNone(_c_float_after(b"other",marker))
+
+
+    def test_production_exact_pins_are_not_satisfied_by_synthetic_fixture(self):
+        result=analyze_runtime_objects(*fixture())
+        self.assertFalse(result["exact_row_closed"])
+        self.assertFalse(result["exact_templates_closed"])
+        self.assertEqual(EXPECTED_EXACT_ROW[0],600)
+        self.assertEqual(
+            tuple(row[0] for row in EXPECTED_TEMPLATE_ROWS),
+            (981,982,983,984),
+        )
+
+    def test_exact_template_pin_includes_graphic_and_slot_not_only_tempno(self):
+        pets,enemies=fixture()
+        templates={
+            tempno:SimpleNamespace(
+                graphic_id=graphic,
+                skill_slot_ids=(0,0,600,0,0,0,0),
+            )
+            for tempno,graphic in (
+                (981,101427),(982,101424),
+                (983,101425),(984,101426),
+            )
+        }
+        result=analyze_runtime_objects(
+            pets,SimpleNamespace(templates=templates)
+        )
+        self.assertTrue(result["exact_templates_closed"])
+        self.assertFalse(result["exact_row_closed"])
 
 
 
