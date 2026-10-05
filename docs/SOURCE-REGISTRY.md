@@ -3347,3 +3347,14 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - Acceptance: **37288674220 PASS** first pass; **37288913119 PASS** exact row/template pin.
 - **OPEN:** original binary/compiler/profile, original numeric COM1, JSS/Taiwan-v1 membership, and runtime dead-entry/coordinator carrier integration.
 
+### SRC-RELIFE-ORDERED-RUNTIME-R1 — 2026-10-05
+
+- Runtime boundary: `specs/STONEAGE-RELIFE-RUNTIME-R1.md`; implementation files include `tools/stoneage_enemy_relife_model.py`, `tools/stoneage_enemy_ai_relife_bridge.py`, shared ordered battle/state models and the local runtime coordinator.
+- Exact positive recovered admission remains ID500 / FIELD1 / TARGET2 / COST2 / ILLEGAL0 / empty OPTION, with TEMPNO/graphic/slot identities **39/100370/5**, **909/100071/2**, **1165/101814/4**. Admission rechecks exact template graphic as well as slot/row identity.
+- The original numeric ENEMYRELIFE command remains unknown because later descendants disagree (**2013 gavin/iris, 2012 Bismarck**). Runtime uses a typed symbolic submission and ATTACK only as a modern scheduling/COM2/fallback carrier.
+- Accepted semantics: prior ordinary TargetAdjust; independent enemy-side dead scan 10..19; one reduced candidate draw; WORKMAXHP/2 base; nonzero 90–110% amount draw; capped HP/death clear; no-dead physical fallback using the same adjusted target and no second retarget draw.
+- Persistent state retains only ordinary-dead **enemy-side** battle entries as ReLife candidates. Dead entries do not participate in initiative; successful revival can affect later same-round targeting and restores next-round command participation. Ultimate/BATTLE_Exit entries are excluded. Already-settled death profit is not reversed.
+- Acceptance: ReLife **37293702272 PASS**, battle core **37293114252**, coordinator **37293114108**, golden **37293113921**, full region **37293113718**. Verified pressure **37293804945 PASS**, report write-back `420e34a7a29aa06a37ea45e55369afd1b01a80fd`.
+- Pressure outcome: ReLife `closed_runtime`, **3 uses / 3 templates**, coverage **2451/2486 = 98.59%**, unresolved positive IDs **0**; next OPEN **PETSKILL_Lighttakeed IDs610/611, 3 uses / 2 templates**.
+- **OPEN:** recovered-original binary/compiler/profile, original numeric COM1, JSS/Taiwan-v1 membership, pet-caster and PvP/rescue domains, exact libc PRNG state and unmodeled expansion death-entry interactions.
+
