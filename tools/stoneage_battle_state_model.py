@@ -45,6 +45,12 @@ from tools.stoneage_enemy_ai_guard_break2_bridge import (
 from tools.stoneage_enemy_ai_battletimid_bridge import (
     EnemyAiBattleTimidSubmission,
 )
+from tools.stoneage_enemy_ai_combined_bridge import EnemyAiCombinedSubmission
+from tools.stoneage_combined_runtime_state import (
+    CombinedActionRolls,
+    CombinedRuntimeOverlay,
+)
+from tools.stoneage_combined_initiative_model import resolve_combined_initiative
 from tools.stoneage_nocast_runtime_state import (
     NocastActionRolls,
     NocastRoundOverlay,
@@ -167,6 +173,7 @@ class PersistentBattleState:
     battle_exited_participant_ids: tuple[str,...] = ()
     nocast_overlay: NocastRoundOverlay | None = None
     setmagicpet_overlay: SetMagicPetRoundOverlay | None = None
+    combined_overlay: CombinedRuntimeOverlay | None = None
 
     def __post_init__(self) -> None:
         if self.phase not in {ACTIVE, FINISHED}:
@@ -213,6 +220,10 @@ class PersistentBattleState:
                     "persistent SetMagicPet overlay participant mismatch; "
                     f"missing={missing}, extra={extra}"
                 )
+        if self.combined_overlay is not None:
+            if not isinstance(self.combined_overlay,CombinedRuntimeOverlay):
+                raise TypeError("persistent Combined overlay has wrong type")
+            self.combined_overlay.validate_participants(participants)
         normalized_ultimate_exits=tuple(
             str(pid) for pid in self.ultimate_exited_participant_ids
         )
@@ -631,6 +642,7 @@ def begin_persistent_battle(
     ride_pet_runtime: RidePetRuntime | None = None,
     nocast_overlay: NocastRoundOverlay | None = None,
     setmagicpet_overlay: SetMagicPetRoundOverlay | None = None,
+    combined_overlay: CombinedRuntimeOverlay | None = None,
 ) -> PersistentBattleState:
     participants = _participant_map(session)
     normalized_slots = {str(pid): int(slot) for pid, slot in slots.items()}
@@ -689,6 +701,7 @@ def begin_persistent_battle(
         ride_pet_runtime=ride_pet_runtime,
         nocast_overlay=nocast_overlay,
         setmagicpet_overlay=setmagicpet_overlay,
+        combined_overlay=combined_overlay,
     )
     return _with_termination(state)
 
@@ -996,6 +1009,40 @@ def resolve_persistent_capture_transition(
         battle_exited_participant_ids=tuple(
             pid for pid in state.battle_exited_participant_ids
             if pid != target_id
+        ),
+        nocast_overlay=(
+            None if state.nocast_overlay is None else
+            NocastRoundOverlay({
+                pid:runtime
+                for pid,runtime in state.nocast_overlay.runtime_by_participant_id.items()
+                if pid != target_id
+            })
+        ),
+        setmagicpet_overlay=(
+            None if state.setmagicpet_overlay is None else
+            SetMagicPetRoundOverlay({
+                pid:runtime
+                for pid,runtime in state.setmagicpet_overlay.runtime_by_participant_id.items()
+                if pid != target_id
+            })
+        ),
+        combined_overlay=(
+            None if state.combined_overlay is None else
+            CombinedRuntimeOverlay(
+                state.combined_overlay.initiative_profile,
+                state.combined_overlay.status_magic_profile,
+                state.combined_overlay.item_zero,
+                {
+                    pid:value
+                    for pid,value in state.combined_overlay.mp_by_participant_id.items()
+                    if pid != target_id
+                },
+                {
+                    pid:value
+                    for pid,value in state.combined_overlay.att_reverse_by_participant_id.items()
+                    if pid != target_id
+                },
+            )
         ),
     )
     next_state=_with_termination(next_state)
