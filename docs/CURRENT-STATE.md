@@ -6702,3 +6702,33 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   golden/full-region/verified-pressure gates from the saved integration plan.
   Do not merge unaccepted runtime code or promote638's two slots. WORK/DD-018
   continues; production engine/redesigned content remains deferred.
+
+
+### Exact admission branch publication and queued handoff — 2026-10-06
+
+- Published implementation input **5c555bf781b2517d1709a246afd80bc875fb7980**,
+  tree **faf8c42007bbec39ea0994de920e033e417af7fa**, on
+  `agent/battlemodel-runtime-admission-r1-20261006`. Remote/local tree equality
+  and clean checkout verified; main2880eb6c remained unchanged at publication.
+- Exact-input acceptance gates at this checkpoint are **QUEUED**:
+
+  | Gate | Run ID | Result |
+  | --- | ---: | --- |
+  | Hash-verified BattleModel admission + corrected real ID636 |37353001564|QUEUED|
+  | 2BattleTimid runtime |37353001258|QUEUED|
+  | Battle core |37353002049|QUEUED|
+  | Local runtime coordinator |37353000921|QUEUED|
+  | Runtime golden contract |37353001458|QUEUED|
+  | Full recovered25 region/runtime stack |37353001229|QUEUED|
+
+- Receipt on the implementation branch:
+  `research/recovered/STONEAGE-BATTLEMODEL-ADMISSION-ACCEPTANCE-R1.json`.
+  Subsequent handoff commits change documentation only and preserve tested code.
+  A bot may add the verified admission derived report; re-read the branch HEAD.
+- **Next highest priority:** freshly inspect these exact runs and any branch
+  write-back; failures block acceptance. Once all affected gates pass, record
+  acceptance of repaired636 admission and bounded638 typed admission, verify
+  main ancestry and nonforce sync the accepted milestone. BattleModel full
+  runtime and slot promotion remain OPEN; then implement the saved ordered
+  integration plan. Main continuity checkpoint may contain this record without
+  the unaccepted branch code. No user restatement or chat SHA inference needed.

@@ -1,0 +1,92 @@
+{
+  "contract": "RECOVERED25_BATTLEMODEL_ADMISSION_AND_2BATTLETIMID_SLOT_BASE_R1",
+  "date": "2026-10-06",
+  "status": "REMOTE_ACCEPTANCE_PENDING",
+  "branch": "agent/battlemodel-runtime-admission-r1-20261006",
+  "input_sha": "5c555bf781b2517d1709a246afd80bc875fb7980",
+  "input_tree": "faf8c42007bbec39ea0994de920e033e417af7fa",
+  "base_sha": "2880eb6cbacdba0a2026a126f0c5a635cdcda09b",
+  "local_validation": {
+    "related_tests": 140,
+    "shared_core_and_golden_tests": 279,
+    "result": "PASS",
+    "actual_recovered_data": "REMOTE_PENDING"
+  },
+  "gates": [
+    {
+      "name": "Validate StoneAge local runtime session coordinator",
+      "id": 37353000921,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37353000921",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "5c555bf781b2517d1709a246afd80bc875fb7980"
+    },
+    {
+      "name": "Validate StoneAge recovered25 region payload source",
+      "id": 37353001229,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37353001229",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "5c555bf781b2517d1709a246afd80bc875fb7980"
+    },
+    {
+      "name": "Validate StoneAge 2BattleTimid runtime",
+      "id": 37353001258,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37353001258",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "5c555bf781b2517d1709a246afd80bc875fb7980"
+    },
+    {
+      "name": "Probe recovered StoneAge BattleModel reference",
+      "id": 37353001564,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37353001564",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "5c555bf781b2517d1709a246afd80bc875fb7980"
+    },
+    {
+      "name": "Validate StoneAge runtime golden contract",
+      "id": 37353001458,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37353001458",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "5c555bf781b2517d1709a246afd80bc875fb7980"
+    },
+    {
+      "name": "Validate StoneAge battle core model",
+      "id": 37353002049,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37353002049",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "5c555bf781b2517d1709a246afd80bc875fb7980"
+    }
+  ],
+  "corrected_mapping": {
+    "callback": "PETSKILL_2BattleTimid",
+    "skill_id": 636,
+    "templates": [
+      178,
+      179
+    ],
+    "source_column_one_based": 3,
+    "runtime_index_zero_based": 2
+  },
+  "battlemodel_scope": {
+    "skill_id": 638,
+    "templates": [
+      1178,
+      1179
+    ],
+    "source_column_one_based": 3,
+    "runtime_index_zero_based": 2,
+    "typed_admission_and_pure_target_plan": "LOCAL_PASS",
+    "ordered_runtime": "OPEN",
+    "new_closed_runtime_slots": 0
+  },
+  "rules": [
+    "Re-read current GitHub refs and exact run results; queued is not PASS.",
+    "Accept admission only after actual-data and affected runtime regression gates pass.",
+    "Do not promote BattleModel slots before ordered/persistent/coordinator/golden/full-region and verified pressure acceptance."
+  ]
+}
