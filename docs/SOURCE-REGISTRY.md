@@ -3498,3 +3498,11 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
   profile, rides/throwing/later gates and flag-to-exit integration remain OPEN.
 - Boundary: specs/STONEAGE-BATTLEMODEL-SETTLEMENT-AUDIT-R1.md; prepared runtime
   plan: specs/STONEAGE-BATTLEMODEL-RUNTIME-INTEGRATION-PLAN-R1.md.
+
+
+#### SRC-BATTLEMODEL-BASE-SETTLEMENT-R1 remote acceptance — 2026-10-06
+
+-37349075552 SUCCESS, exact input33a8e76a988c441629e797defcc8095d77952e86,
+ tree1cb9731ed51d82c58e1e8da753afcddbc0d78af1.1920 native calls reproduced.
+ The earlier remote-pending entry is superseded; all reduced-profile/stub/no-ride
+ and full runtime exclusions remain. Contract CLOSED_BOUNDED_NO_RIDE_NATIVE_SETTLEMENT.

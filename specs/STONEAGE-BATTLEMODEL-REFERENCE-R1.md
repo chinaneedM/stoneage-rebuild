@@ -248,3 +248,12 @@ presentation value uninitialised; historical bytes for that field remain OPEN.
 Contract: `specs/STONEAGE-BATTLEMODEL-HIT-LIFECYCLE-AUDIT-R1.md`. This
 stubbed-helper audit does not certify common damage/status arithmetic or
 replace the pending exact-data/source remote gates.
+
+
+## Settlement acceptance update — 2026-10-06
+
+Supplemental native Action37349075552 completed SUCCESS on33a8e76a.
+Its1920 reduced-profile/no-ride calls close only that bounded settlement
+contract and supersede the supplemental remote-pending statements above.
+Full runtime, mounted composition, literal pet-entry pre-hit guard and
+no-HP-loss ultimate flag-to-exit integration remain OPEN.

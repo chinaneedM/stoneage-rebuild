@@ -84,3 +84,12 @@ membership and excluded feature paths remain OPEN.
   golden/full-region regression and verified pressure.
 
 Implement after the remaining audit acceptance. Full runtime remains OPEN.
+
+
+## Settlement acceptance update — 2026-10-06
+
+Supplemental native Action37349075552 completed SUCCESS on33a8e76a.
+Its1920 reduced-profile/no-ride calls close only that bounded settlement
+contract and supersede the supplemental remote-pending statements above.
+Full runtime, mounted composition, literal pet-entry pre-hit guard and
+no-HP-loss ultimate flag-to-exit integration remain OPEN.

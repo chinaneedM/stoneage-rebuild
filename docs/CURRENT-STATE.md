@@ -6630,3 +6630,29 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   a fresh runtime branch. Implement the saved integration plan with the explicit
   no-HP-loss ultimate flag, source pet-flag lookup and ride boundaries. No
   executable slots are promoted before runtime and verified pressure gates.
+
+
+## Phase 1 BattleModel bounded settlement accepted — 2026-10-06
+
+- Supplemental **37349075552 SUCCESS** on input
+  `33a8e76a988c441629e797defcc8095d77952e86`, tree
+  `1cb9731ed51d82c58e1e8da753afcddbc0d78af1`. Three pinned profiles
+  reproduce1920 native no-ride DamageSub calls; all prior main replay gates
+  remain SUCCESS. Earlier queued snapshots are historical and superseded.
+- **BATTLEMODEL_BASE_SETTLEMENT_AUDIT_R1 =
+  CLOSED_BOUNDED_NO_RIDE_NATIVE_SETTLEMENT.** Explicit reduced-feature scope
+  and invalid absent-ride read, mounted composition, source pet-flag mapping,
+  full ultimate flag-to-exit integration and runtime exclusions remain.
+- Latest freshly inspected main before this closure:
+  `2d3b10ecdc005c3cbd8436e8e7b3d9cb9f5873b1`, tree
+  `3182d9f59f823e8815cffe8d3466a3460b25f068`; a documentation-only continuity
+  descendant of accepted reference input58d4800a. Supplemental branch
+  `c36d58b1eee5b776ae2071c974d53396133a319c` retains that exact main as an
+  ancestor; tree `b3750abfacfa3ee163dc41dadcbee2f0c12e0f52`.
+- **Highest-priority unfinished task:** nonforce synchronize this accepted
+  source/settlement/plan milestone to freshly verified main, inspect main
+  Actions, then create a fresh BattleModel runtime branch. Resolve the saved
+  plan's literal pet-flag, no-HP-loss ultimate and mounted-reaction boundaries
+  during bounded implementation; require ordered/persistent/coordinator/golden/
+  full-region and verified pressure acceptance before promoting two638 slots.
+  Accepted executable coverage remains2461/2486=98.99%; WORK/DD-018 continues.

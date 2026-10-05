@@ -102,3 +102,12 @@ Before this audit can close, the reference branch must prove: exact callback pop
 If those semantics fit the carriers above, this audit can move to CLOSED_FOR_BOUNDED_RUNTIME_INTEGRATION without adding a new persistent-state schema. Runtime coding must then occur on a fresh runtime branch after reference acceptance.
 
 **BATTLEMODEL_RUNTIME_STATE_AUDIT_R1 = OPEN_PENDING_RECOVERED25_OPTION_PROFILE_ACCEPTANCE.**
+
+
+## Settlement acceptance update — 2026-10-06
+
+Supplemental native Action37349075552 completed SUCCESS on33a8e76a.
+Its1920 reduced-profile/no-ride calls close only that bounded settlement
+contract and supersede the supplemental remote-pending statements above.
+Full runtime, mounted composition, literal pet-entry pre-hit guard and
+no-HP-loss ultimate flag-to-exit integration remain OPEN.

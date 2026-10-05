@@ -701,3 +701,14 @@ ultimate2 can occur without HP loss. **OPEN:** original invalid absent-ride
 read behavior, full active build gates, ordered flag-to-exit integration, ride
 composition and remote acceptance of this supplemental audit.
 [SRC-BATTLEMODEL-BASE-SETTLEMENT-R1]
+
+
+### 2026-10-06 — BattleModel base settlement remote acceptance
+
+**FACT (bounded native reproduction):**37349075552 SUCCESS on33a8e76a
+accepts1920 reduced-feature no-ride DamageSub calls across the three fixed
+pins. The preceding remote-pending record is superseded. Both-HP-preserving
+reflect, positive reported damage, counter consumption/sentinel bypass and
+raw-threshold ultimate2 are accepted only within that contract. Full runtime,
+mounted composition, source pet-entry lookup, flag-to-exit behavior and
+original executable/profile membership remain **OPEN**.

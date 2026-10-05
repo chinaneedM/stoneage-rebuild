@@ -1,7 +1,7 @@
 # BattleModel base DamageSub settlement audit R1
 
 Date: 2026-10-06
-Status: **LOCAL_NATIVE_PASS_REMOTE_ACCEPTANCE_PENDING**
+Status: **CLOSED_BOUNDED_NO_RIDE_NATIVE_SETTLEMENT**
 
 This audit supplements the accepted conditional reference. It directly compiles
 the original DamageSub body transiently at all three established pins, with
@@ -16,6 +16,14 @@ initial defender HP1/100 and1/2 charges. Both sequential HP/counter changes
 and reported damage/reaction/ultimate values are checked. Direct DamageSub
 calls after death isolate that function; they are not asserted to represent
 reachable BattleModel helper calls, which recheck target life first.
+
+## Remote acceptance — 2026-10-06
+
+Action **37349075552 SUCCESS** on exact input
+`33a8e76a988c441629e797defcc8095d77952e86`, tree
+`1cb9731ed51d82c58e1e8da753afcddbc0d78af1`, reproduces640 native calls
+per profile,1920 total. This closes only the reduced native contract stated
+here. Full runtime, ride composition and flag-to-exit integration remain OPEN.
 
 ## Dated correction to earlier state interpretation
 
@@ -55,4 +63,4 @@ Report: `research/recovered/STONEAGE-BATTLEMODEL-SETTLEMENT-SOURCE-AUDIT-R1.txt`
 Reproducer: `tools/stoneage_battlemodel_settlement_source_audit.py`.
 Remote reproduction: `validate-stoneage-battlemodel-settlement.yml`.
 
-**BATTLEMODEL_BASE_SETTLEMENT_AUDIT_R1 = LOCAL_NATIVE_PASS_REMOTE_PENDING.**
+**BATTLEMODEL_BASE_SETTLEMENT_AUDIT_R1 = CLOSED_BOUNDED_NO_RIDE_NATIVE_SETTLEMENT.**
