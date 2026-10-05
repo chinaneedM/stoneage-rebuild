@@ -1,6 +1,6 @@
 # StoneAge BatFly ordered runtime R1
 
-Status: **ACCEPTANCE_PENDING_FULL_REGION_GATE**
+Status: **CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME**
 Date: 2026-10-05
 Scope: exact recovered25 positive enemy uses of `PETSKILL_BatFly`.
 
@@ -130,8 +130,10 @@ The following remain OPEN:
   **2459/2486 = 98.91%** to **2461/2486 = 98.99%**.
 - The next OPEN callback is mechanically selected as
   **`PETSKILL_BattleModel` / ID638 / 2 uses / 2 templates**.
-- Full recovered25 region/runtime gate **37334364405** is the remaining
-  acceptance gate at the time this contract revision was written. The CLOSED
-  marker below must not be asserted until that run succeeds.
+- Full recovered25 region/runtime stack **37334364405 PASS**: deterministic
+  region/runtime tests, verified preservation recovery, all materializable map
+  payloads, concrete runtime stack, AttackMagic cross-links, server collision
+  audit/provider and client ADRN collision audit all pass.
 
-**RECOVERED25_BATFLY_ORDERED_RUNTIME_R1 = PENDING_FULL_REGION_ACCEPTANCE.**
+**RECOVERED25_BATFLY_ORDERED_RUNTIME_R1 =
+CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME.**
