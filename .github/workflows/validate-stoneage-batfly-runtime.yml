@@ -16,6 +16,7 @@ on:
       - "tools/stoneage_local_runtime_session_coordinator.py"
       - "tests/test_stoneage_batfly_reference_model.py"
       - "tests/test_stoneage_batfly_runtime.py"
+      - "tests/test_stoneage_local_runtime_session_coordinator.py"
       - "specs/STONEAGE-BATFLY-RUNTIME-STATE-AUDIT-R1.md"
 
 permissions:
@@ -41,4 +42,5 @@ jobs:
         run: |
           python -m unittest -v \
             tests.test_stoneage_batfly_reference_model \
-            tests.test_stoneage_batfly_runtime
+            tests.test_stoneage_batfly_runtime \
+            tests.test_stoneage_local_runtime_session_coordinator.LocalRuntimeSessionCoordinatorTests.test_recovered_enemy_ai_batfly_routes_whole_side_without_physical_rolls
