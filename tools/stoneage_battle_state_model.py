@@ -27,6 +27,7 @@ from tools.stoneage_attack_magic_action_model import EnemyAttackMagicActionRolls
 from tools.stoneage_attack_magic_state_model import AttackMagicRoundOverlay
 from tools.stoneage_enemy_ai_attack_magic_bridge import EnemyAiAttackMagicSubmission
 from tools.stoneage_enemy_ai_rehp_bridge import EnemyAiReHpSubmission
+from tools.stoneage_enemy_ai_relife_bridge import EnemyAiReLifeSubmission
 from tools.stoneage_enemy_ai_damage_to_hp_bridge import (
     EnemyAiDamageToHpSubmission,
 )
@@ -71,6 +72,7 @@ from tools.stoneage_setmagicpet_runtime_state import (
 from tools.stoneage_weaken_model import resolve_weaken_recalculation
 from tools.stoneage_nocast_runtime_state import PreparedWeakenPowers
 from tools.stoneage_enemy_rehp_model import EnemyReHpRolls
+from tools.stoneage_enemy_relife_model import EnemyReLifeRolls
 from tools.stoneage_recovered25_attack_magic_runtime import Recovered25AttackMagicRuntime
 
 from tools.stoneage_battle_core_model import (
@@ -173,6 +175,9 @@ class PersistentBattleState:
     # Non-death BATTLE_Exit/PetDefaultExit entries (e.g. Abduct) stay in the
     # battle session identity graph but no longer participate in later rounds.
     battle_exited_participant_ids: tuple[str,...] = ()
+    # Ordinary dead entries remain in the battle array and can be selected by
+    # ReLife. Ultimate/BATTLE_Exit entries are deliberately excluded.
+    revivable_dead_participant_ids: tuple[str,...] = ()
     nocast_overlay: NocastRoundOverlay | None = None
     setmagicpet_overlay: SetMagicPetRoundOverlay | None = None
     combined_overlay: CombinedRuntimeOverlay | None = None
@@ -281,6 +286,47 @@ class PersistentBattleState:
             self,
             "battle_exited_participant_ids",
             normalized_battle_exits,
+        )
+        normalized_revivable=tuple(
+            str(pid) for pid in self.revivable_dead_participant_ids
+        )
+        if len(normalized_revivable) != len(set(normalized_revivable)):
+            raise ValueError(
+                "revivable-dead participants cannot contain duplicates"
+            )
+        unknown_revivable=sorted(
+            set(normalized_revivable)-set(participants)
+        )
+        if unknown_revivable:
+            raise ValueError(
+                "revivable-dead participants are not in battle session: "
+                f"{unknown_revivable}"
+            )
+        invalid_revivable=sorted(
+            set(normalized_revivable)
+            & (set(normalized_battle_exits)|set(normalized_ultimate_exits))
+        )
+        if invalid_revivable:
+            raise ValueError(
+                "battle-exited participants cannot remain revivable: "
+                f"{invalid_revivable}"
+            )
+        nondead_revivable=sorted(
+            pid for pid in normalized_revivable
+            if (
+                pid not in self.hp_by_participant_id
+                or int(self.hp_by_participant_id[pid]) != 0
+            )
+        )
+        if nondead_revivable:
+            raise ValueError(
+                "revivable-dead participants must have zero HP: "
+                f"{nondead_revivable}"
+            )
+        object.__setattr__(
+            self,
+            "revivable_dead_participant_ids",
+            normalized_revivable,
         )
 
         if self.carried_commands_by_participant_id is None:
@@ -1039,6 +1085,10 @@ def resolve_persistent_capture_transition(
             pid for pid in state.battle_exited_participant_ids
             if pid != target_id
         ),
+        revivable_dead_participant_ids=tuple(
+            pid for pid in state.revivable_dead_participant_ids
+            if pid != target_id
+        ),
         nocast_overlay=(
             None if state.nocast_overlay is None else
             NocastRoundOverlay({
@@ -1431,6 +1481,15 @@ def resolve_persistent_ordinary_round(
     enemy_rehp_retarget_rolls_by_participant_id: Mapping[
         str,int | None
     ] | None = None,
+    enemy_relife_submissions_by_participant_id: Mapping[
+        str,EnemyAiReLifeSubmission
+    ] | None = None,
+    enemy_relife_rolls_by_participant_id: Mapping[
+        str,EnemyReLifeRolls
+    ] | None = None,
+    enemy_relife_retarget_rolls_by_participant_id: Mapping[
+        str,int | None
+    ] | None = None,
     damage_to_hp_submissions_by_participant_id: Mapping[
         str,EnemyAiDamageToHpSubmission
     ] | None = None,
@@ -1495,6 +1554,30 @@ def resolve_persistent_ordinary_round(
 
     participants = active_participants(state)
     living_ids = {participant.participant_id for participant in participants}
+    round_entry_ids=set(living_ids)
+    passive_battle_entries_by_slot={}
+    if enemy_relife_submissions_by_participant_id:
+        exited_ids=set(state.ultimate_exited_participant_ids)
+        exited_ids.update(state.battle_exited_participant_ids)
+        for source_participant in _session_participants(state.session):
+            participant_id=str(source_participant.participant_id)
+            if participant_id in living_ids or participant_id in exited_ids:
+                continue
+            if int(state.hp_by_participant_id[participant_id]) != 0:
+                raise ValueError(
+                    "non-living ReLife battle entry must have zero HP"
+                )
+            slot=int(state.slots[participant_id])
+            passive_battle_entries_by_slot[slot]=participant_snapshot(
+                state,participant_id
+            )
+            round_entry_ids.add(participant_id)
+        missing_profiles=sorted(round_entry_ids-set(profiles))
+        if missing_profiles:
+            raise ValueError(
+                "ReLife round lacks combat profiles for retained battle entries: "
+                f"{missing_profiles}"
+            )
     if set(commands) != living_ids:
         missing = sorted(living_ids - set(commands))
         extra = sorted(set(commands) - living_ids)
@@ -1849,7 +1932,7 @@ def resolve_persistent_ordinary_round(
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
                 state.base_status_runtime_by_participant_id[participant_id]
-            for participant_id in living_ids
+            for participant_id in round_entry_ids
         }),
     )
     current_slots = {
@@ -1881,7 +1964,7 @@ def resolve_persistent_ordinary_round(
         ultimate_overkill_by_participant_id=_freeze_mapping({
             participant_id:
                 state.ultimate_overkill_by_participant_id[participant_id]
-            for participant_id in living_ids
+            for participant_id in round_entry_ids
         }),
         combo_rolls_by_starter_id=combo_rolls_by_starter_id,
         continuation_rolls_by_attack_id=continuation_rolls_by_attack_id,
@@ -1893,7 +1976,7 @@ def resolve_persistent_ordinary_round(
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
                 state.base_status_runtime_by_participant_id[participant_id]
-            for participant_id in living_ids
+            for participant_id in round_entry_ids
         }),
         base_status_rolls_by_participant_id=(
             base_status_rolls_by_participant_id
@@ -1911,7 +1994,7 @@ def resolve_persistent_ordinary_round(
         base_damage_react_state_by_participant_id=_freeze_mapping({
             participant_id:
                 state.base_damage_react_state_by_participant_id[participant_id]
-            for participant_id in living_ids
+            for participant_id in round_entry_ids
         }),
         ride_pet_runtime=state.ride_pet_runtime,
         attack_magic_runtime=attack_magic_runtime,
@@ -1934,6 +2017,19 @@ def resolve_persistent_ordinary_round(
         enemy_rehp_retarget_rolls_by_participant_id=(
             enemy_rehp_retarget_rolls_by_participant_id
         ),
+        enemy_relife_submissions_by_participant_id=(
+            enemy_relife_submissions_by_participant_id
+        ),
+        enemy_relife_rolls_by_participant_id=(
+            enemy_relife_rolls_by_participant_id
+        ),
+        enemy_relife_retarget_rolls_by_participant_id=(
+            enemy_relife_retarget_rolls_by_participant_id
+        ),
+        revivable_dead_participant_ids=(
+            state.revivable_dead_participant_ids
+        ),
+        passive_battle_entries_by_slot=passive_battle_entries_by_slot,
         damage_to_hp_submissions_by_participant_id=(
             damage_to_hp_submissions_by_participant_id
         ),
@@ -2172,6 +2268,45 @@ def resolve_persistent_ordinary_round(
         if pid in next_battle_exited:
             next_battle_exited.remove(pid)
 
+    next_revivable=set(state.revivable_dead_participant_ids)
+    for event in round_result.events:
+        if (
+            event.target_hp_before is not None
+            and event.target_hp_after is not None
+            and int(event.target_hp_before) > 0
+            and int(event.target_hp_after) == 0
+            and event.resolved_target_slot is not None
+        ):
+            target_id=participant_id_by_slot.get(
+                int(event.resolved_target_slot)
+            )
+            if target_id is not None:
+                next_revivable.add(target_id)
+        if (
+            event.enemy_relife_resolution is not None
+            and event.enemy_relife_resolution.success
+            and event.enemy_relife_resolution.selected_participant_id
+            is not None
+        ):
+            next_revivable.discard(
+                str(
+                    event.enemy_relife_resolution.selected_participant_id
+                )
+            )
+    invalid_revivable_ids=(
+        set(next_ultimate_exited)
+        | set(next_battle_exited)
+        | set(removed_enemy_ids)
+    )
+    next_revivable={
+        pid for pid in next_revivable
+        if (
+            pid in hp
+            and int(hp[pid]) == 0
+            and pid not in invalid_revivable_ids
+        )
+    }
+
     next_nocast_overlay=round_result.nocast_overlay
     if next_nocast_overlay is not None:
         next_session_ids={
@@ -2401,6 +2536,7 @@ def resolve_persistent_ordinary_round(
         ),
         ultimate_exited_participant_ids=tuple(next_ultimate_exited),
         battle_exited_participant_ids=tuple(next_battle_exited),
+        revivable_dead_participant_ids=tuple(sorted(next_revivable)),
         nocast_overlay=next_nocast_overlay,
         setmagicpet_overlay=next_setmagicpet_overlay,
         combined_overlay=next_combined_overlay,
