@@ -49,6 +49,7 @@ from tools.stoneage_enemy_ai_battletimid_bridge import (
 from tools.stoneage_enemy_ai_2battletimid_bridge import (
     EnemyAiTwoBattleTimidSubmission,
 )
+from tools.stoneage_enemy_ai_batfly_bridge import EnemyAiBatFlySubmission
 from tools.stoneage_enemy_ai_lighttakeed_bridge import (
     EnemyAiLighttakeedSubmission,
 )
@@ -1622,6 +1623,12 @@ def resolve_persistent_ordinary_round(
     two_battletimid_rolls_by_participant_id: Mapping[
         str,int | None
     ] | None = None,
+    batfly_submissions_by_participant_id: Mapping[
+        str,EnemyAiBatFlySubmission
+    ] | None = None,
+    batfly_retarget_rolls_by_participant_id: Mapping[
+        str,int | None
+    ] | None = None,
     lighttakeed_submissions_by_participant_id: Mapping[
         str,EnemyAiLighttakeedSubmission
     ] | None = None,
@@ -1855,6 +1862,24 @@ def resolve_persistent_ordinary_round(
             else participant
             for participant in participants
         )
+
+    batfly_submissions={
+        str(pid):submission
+        for pid,submission in (
+            batfly_submissions_by_participant_id or {}
+        ).items()
+    }
+    unknown_batfly_ids=sorted(set(batfly_submissions)-living_ids)
+    if unknown_batfly_ids:
+        raise ValueError(
+            "BatFly submissions reference inactive actors: "
+            f"{unknown_batfly_ids}"
+        )
+    for pid,submission in batfly_submissions.items():
+        if not isinstance(submission,EnemyAiBatFlySubmission):
+            raise TypeError("BatFly submission has wrong type")
+        if str(submission.participant_id)!=pid:
+            raise ValueError("BatFly submission participant drift")
 
     lighttakeed_submissions={
         str(pid):submission
@@ -2235,6 +2260,7 @@ def resolve_persistent_ordinary_round(
             | set(setmagicpet_submissions_by_participant_id or {})
             | set(battletimid_submissions)
             | set(two_battletimid_submissions)
+            | set(batfly_submissions)
             | set(lighttakeed_submissions)
             | set(combined_submissions)
             | set(vary_submissions)
@@ -2370,6 +2396,10 @@ def resolve_persistent_ordinary_round(
         ),
         two_battletimid_noreturn_by_target_id=(
             two_battletimid_noreturn
+        ),
+        batfly_submissions_by_participant_id=batfly_submissions,
+        batfly_retarget_rolls_by_participant_id=(
+            batfly_retarget_rolls_by_participant_id
         ),
         lighttakeed_submissions_by_participant_id=lighttakeed_submissions,
         combined_submissions_by_participant_id=combined_submissions,
