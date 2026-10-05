@@ -2046,6 +2046,8 @@ class LocalRuntimeSessionCoordinator:
         allow_nocast_skill: bool = False,
         allow_guard_break2_skill: bool = False,
         allow_battletimid_skill: bool = False,
+        allow_two_battletimid_skill: bool = False,
+        two_battletimid_profiles_by_enemy_id: Mapping[str,str] | None = None,
         allow_lighttakeed_skill: bool = False,
         lighttakeed_profiles_by_enemy_id: Mapping[str,str] | None = None,
         allow_combined_skill: bool = False,
@@ -2209,9 +2211,16 @@ class LocalRuntimeSessionCoordinator:
         nocast_submissions={}
         guard_break2_submissions={}
         battletimid_submissions={}
+        two_battletimid_submissions={}
         lighttakeed_submissions={}
         combined_submissions={}
         vary_submissions={}
+        two_battletimid_profiles={
+            str(key):str(value)
+            for key,value in (
+                two_battletimid_profiles_by_enemy_id or {}
+            ).items()
+        }
         lighttakeed_profiles={
             str(key):str(value)
             for key,value in (
@@ -2589,6 +2598,69 @@ class LocalRuntimeSessionCoordinator:
 
                 if (
                     selected_skill is not None
+                    and selected_skill.function_name == TWO_BATTLETIMID_CALLBACK
+                    and bool(allow_two_battletimid_skill)
+                ):
+                    if enemy_id not in two_battletimid_profiles:
+                        raise ValueError(
+                            "2BattleTimid callback requires explicit charset "
+                            "profile for " + enemy_id
+                        )
+                    baseline=living[enemy_id]
+                    weaken_prepared=(
+                        None if state.nocast_overlay is None else
+                        state.nocast_overlay.runtime_by_participant_id[
+                            enemy_id
+                        ].prepared_weaken_powers
+                    )
+                    if weaken_prepared is not None:
+                        raise ValueError(
+                            "2BattleTimid with prepared Weaken powers is outside R1"
+                        )
+                    magic_prepared=(
+                        None if state.setmagicpet_overlay is None else
+                        state.setmagicpet_overlay.runtime_by_participant_id[
+                            enemy_id
+                        ].prepared_powers
+                    )
+                    fixed_strength=(
+                        int(baseline.attack)
+                        if magic_prepared is None
+                        else int(magic_prepared.attack)
+                    )
+                    fixed_toughness=(
+                        int(baseline.defense)
+                        if magic_prepared is None
+                        else int(magic_prepared.defense)
+                    )
+                    fixed_dex=(
+                        int(baseline.quick)
+                        if magic_prepared is None
+                        else int(magic_prepared.dexterity)
+                    )
+                    submission=resolve_enemy_ai_2battletimid_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                        profile=two_battletimid_profiles[enemy_id],
+                        fixed_strength=fixed_strength,
+                        fixed_toughness=fixed_toughness,
+                        fixed_dex=fixed_dex,
+                    )
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    setup_effects[enemy_id]=BattleCommandSetupEffects(
+                        attack_power=int(submission.setup.powers[0]),
+                        defense_power=int(submission.setup.powers[1]),
+                    )
+                    two_battletimid_submissions[enemy_id]=submission
+                    continue
+
+                if (
+                    selected_skill is not None
                     and selected_skill.function_name == BATTLETIMID_CALLBACK
                     and bool(allow_battletimid_skill)
                 ):
@@ -2952,6 +3024,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_GuardBreak2")
             if bool(allow_battletimid_skill):
                 allowed_parts.append("PETSKILL_BattleTimid")
+            if bool(allow_two_battletimid_skill):
+                allowed_parts.append("PETSKILL_2BattleTimid")
             if bool(allow_lighttakeed_skill):
                 allowed_parts.append("PETSKILL_Lighttakeed")
             if bool(allow_combined_skill):
@@ -2978,6 +3052,15 @@ class LocalRuntimeSessionCoordinator:
             raise ValueError(
                 "enemy AI selected command outside coordinator "
                 f"{allowed} subset: {enemy_id}:{decision.kind}"
+            )
+
+        unused_two_battletimid_profiles=sorted(
+            set(two_battletimid_profiles)-set(two_battletimid_submissions)
+        )
+        if unused_two_battletimid_profiles:
+            raise ValueError(
+                "2BattleTimid profile supplied for non-selected actors: "
+                + ",".join(unused_two_battletimid_profiles)
             )
 
         unused_lighttakeed_profiles=sorted(
@@ -3020,6 +3103,7 @@ class LocalRuntimeSessionCoordinator:
             nocast_submissions=nocast_submissions,
             guard_break2_submissions=guard_break2_submissions,
             battletimid_submissions=battletimid_submissions,
+            two_battletimid_submissions=two_battletimid_submissions,
             lighttakeed_submissions=lighttakeed_submissions,
             combined_submissions=combined_submissions,
             vary_submissions=vary_submissions,
