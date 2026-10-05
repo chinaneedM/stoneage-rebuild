@@ -25,6 +25,27 @@ def _active_macros(version: Path, includes: list[str]) -> set[str]:
     return set(re.findall(r"^#define\s+(\w+)",out,re.M))
 
 
+def _last_brace_block(text: str, marker: str) -> str:
+    start=text.rfind(marker)
+    if start < 0:
+        raise ValueError("missing lifecycle marker: "+marker)
+    brace=text.find("{",start)
+    if brace < 0:
+        raise ValueError("missing lifecycle brace")
+    depth=0
+    index=brace
+    while index < len(text):
+        ch=text[index]
+        if ch=="{":
+            depth+=1
+        elif ch=="}":
+            depth-=1
+            if depth==0:
+                return text[start:index+1]
+        index+=1
+    raise ValueError("unterminated lifecycle block")
+
+
 def _bounded_case(text: str, marker: str, occurrence: int) -> str:
     positions=[]
     pos=0
@@ -83,6 +104,10 @@ def analyze_profile(name: str, root: Path):
         battle_compact,"case"+COMMAND_NAME+":",1
     )
     enemy_compact=_compact(data["enemy"])
+    vary_lifecycle=_last_brace_block(
+        battle_compact,
+        "if(CHAR_getInt(charaindex,CHAR_BASEIMAGENUMBER)==101428",
+    )
 
     expansion_active=EXPANSION_NAME in active
     fixwolf_active=FIXWOLF_NAME in active
@@ -112,7 +137,7 @@ def analyze_profile(name: str, root: Path):
         "feature_active":FEATURE_NAME in active,
         "expansion_profile_is_explicit":
             expansion_active==expected_expansion,
-        "fixwolf_inactive_at_fixed_pin":not fixwolf_active,
+        "fixwolf_active_at_fixed_pin":fixwolf_active,
         "callback_registered":
             '{"PETSKILL_Vary",PETSKILL_Vary,0}' in pet_compact,
         "source_skill_symbol_is_600":source_skill_id==600,
@@ -160,20 +185,20 @@ def analyze_profile(name: str, root: Path):
                 )
             ),
         "turn_counter_increments_while_wolf":
-            "CHAR_WORKTURN)==0" in battle_compact
-            and "CHAR_WORKTURN)+1" in battle_compact,
+            "CHAR_WORKTURN)==0" in vary_lifecycle
+            and "CHAR_WORKTURN)+1" in vary_lifecycle,
         "turn_counter_expires_after_five":
-            "CHAR_WORKTURN)>5" in battle_compact,
+            "CHAR_WORKTURN)>5" in vary_lifecycle,
         "expiry_restores_base_image":
-            "CHAR_BASEIMAGENUMBER,CHAR_getInt(charaindex,CHAR_BASEBASEIMAGENUMBER)" in battle_compact,
+            "CHAR_BASEIMAGENUMBER,CHAR_getInt(charaindex,CHAR_BASEBASEIMAGENUMBER)" in vary_lifecycle,
         "expiry_restores_attack":
-            "CHAR_WORKATTACKPOWER,CHAR_getWorkInt(charaindex,CHAR_WORKFIXSTR)" in battle_compact,
+            "CHAR_WORKATTACKPOWER,CHAR_getWorkInt(charaindex,CHAR_WORKFIXSTR)" in vary_lifecycle,
         "expiry_restores_quick":
-            "CHAR_WORKQUICK,CHAR_getWorkInt(charaindex,CHAR_WORKFIXDEX)" in battle_compact,
+            "CHAR_WORKQUICK,CHAR_getWorkInt(charaindex,CHAR_WORKFIXDEX)" in vary_lifecycle,
         "expiry_defense_divergence_explicit":
             (
                 "CHAR_WORKDEFENCEPOWER,CHAR_getWorkInt(charaindex,CHAR_WORKFIXTOUGH)"
-                in battle_compact
+                in vary_lifecycle
             )==(name=="bismarck"),
         "battle_end_restores_nonbase_image":
             "CHAR_BASEBASEIMAGENUMBER)!=CHAR_getInt(petindex,CHAR_BASEIMAGENUMBER)" in battle_compact,
@@ -226,7 +251,7 @@ def emit(rows):
     print("FACT|bismarck_adds_defense_marker")
     print("BOUNDARY|expiry_restore=gavin_iris_attack_quick_bismarck_attack_defense_quick")
     print("BOUNDARY|EXPANSION_VARY_WOLF_inactive_at_all_three_fixed_pins")
-    print("BOUNDARY|FIXWOLF_inactive_at_all_three_fixed_pins")
+    print("FACT|FIXWOLF_active_at_all_three_fixed_pins")
     print("BOUNDARY|bismarck_raw_expansion_image_branch_not_compiled_at_fixed_pin")
     print("BOUNDARY|original_numeric_command_and_mode_values_open")
     print("BOUNDARY|original_binary_compile_profile_and_charset_open")
