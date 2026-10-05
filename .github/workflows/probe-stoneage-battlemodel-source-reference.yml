@@ -75,6 +75,7 @@ jobs:
           grep -F 'RESOLUTION|BATTLEMODEL_FIXED_SOURCE_CLOSED_BOUNDED_REFERENCE' \
             research/recovered/STONEAGE-BATTLEMODEL-SOURCE-AUDIT-R1.txt
           test "$(grep -c '^PROFILE|' research/recovered/STONEAGE-BATTLEMODEL-SOURCE-AUDIT-R1.txt)" = 3
+          test "$(grep -c 'native_plan_cases=200' research/recovered/STONEAGE-BATTLEMODEL-SOURCE-AUDIT-R1.txt)" = 3
       - name: Commit derived source report
         run: |
           git config user.name stoneage-recovery-bot
