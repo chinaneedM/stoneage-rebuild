@@ -46,6 +46,9 @@ from tools.stoneage_enemy_ai_guard_break2_bridge import (
 from tools.stoneage_enemy_ai_battletimid_bridge import (
     EnemyAiBattleTimidSubmission,
 )
+from tools.stoneage_enemy_ai_lighttakeed_bridge import (
+    EnemyAiLighttakeedSubmission,
+)
 from tools.stoneage_enemy_ai_combined_bridge import EnemyAiCombinedSubmission
 from tools.stoneage_enemy_ai_vary_bridge import EnemyAiVarySubmission
 from tools.stoneage_vary_runtime_state import VaryRuntimeOverlay
@@ -1518,6 +1521,9 @@ def resolve_persistent_ordinary_round(
     battletimid_rolls_by_participant_id: Mapping[
         str,int | None
     ] | None = None,
+    lighttakeed_submissions_by_participant_id: Mapping[
+        str,EnemyAiLighttakeedSubmission
+    ] | None = None,
     combined_submissions_by_participant_id: Mapping[
         str,EnemyAiCombinedSubmission
     ] | None = None,
@@ -1651,6 +1657,48 @@ def resolve_persistent_ordinary_round(
             for participant in participants
         )
 
+    lighttakeed_submissions={
+        str(pid):submission
+        for pid,submission in (
+            lighttakeed_submissions_by_participant_id or {}
+        ).items()
+    }
+    unknown_lighttakeed_ids=sorted(
+        set(lighttakeed_submissions)-living_ids
+    )
+    if unknown_lighttakeed_ids:
+        raise ValueError(
+            "Lighttakeed submissions reference inactive actors: "
+            f"{unknown_lighttakeed_ids}"
+        )
+    if set(lighttakeed_submissions) & set(battletimid_submissions):
+        raise ValueError("Lighttakeed and BattleTimid submissions overlap")
+    for pid,submission in lighttakeed_submissions.items():
+        if not isinstance(submission,EnemyAiLighttakeedSubmission):
+            raise TypeError("Lighttakeed submission has wrong type")
+        if str(submission.participant_id)!=pid:
+            raise ValueError("Lighttakeed submission participant drift")
+        if state.base_status_runtime_by_participant_id[pid].status.drunk>0:
+            raise ValueError("Lighttakeed with drunk work-power state is outside R1")
+        if (
+            state.nocast_overlay is not None
+            and state.nocast_overlay.runtime_by_participant_id[
+                pid
+            ].prepared_weaken_powers is not None
+        ):
+            raise ValueError(
+                "Lighttakeed with prepared Weaken powers is outside R1"
+            )
+        if (
+            state.setmagicpet_overlay is not None
+            and state.setmagicpet_overlay.runtime_by_participant_id[
+                pid
+            ].prepared_powers is not None
+        ):
+            raise ValueError(
+                "Lighttakeed with prepared SetMagicPet powers is outside R1"
+            )
+
     combined_submissions={
         str(pid):submission
         for pid,submission in (
@@ -1663,8 +1711,12 @@ def resolve_persistent_ordinary_round(
             "Combined submissions reference inactive actors: "
             f"{unknown_combined_ids}"
         )
-    if set(combined_submissions) & set(battletimid_submissions):
-        raise ValueError("Combined and BattleTimid submissions overlap")
+    if set(combined_submissions) & (
+        set(battletimid_submissions) | set(lighttakeed_submissions)
+    ):
+        raise ValueError(
+            "Combined overlaps BattleTimid/Lighttakeed submissions"
+        )
     for pid,submission in combined_submissions.items():
         if not isinstance(submission,EnemyAiCombinedSubmission):
             raise TypeError("Combined submission has wrong type")
@@ -1904,6 +1956,24 @@ def resolve_persistent_ordinary_round(
             defense_power=int(submission.setup.defence_power),
         )
 
+    for pid,submission in lighttakeed_submissions.items():
+        existing=effective_setup_effects.get(
+            pid,BattleCommandSetupEffects()
+        )
+        if (
+            existing.attack_power is not None
+            and int(existing.attack_power)!=int(submission.attack_power)
+        ) or (
+            existing.defense_power is not None
+            and int(existing.defense_power)!=int(submission.defense_power)
+        ):
+            raise ValueError("Lighttakeed callback setup overlaps power drift")
+        effective_setup_effects[pid]=replace(
+            existing,
+            attack_power=int(submission.attack_power),
+            defense_power=int(submission.defense_power),
+        )
+
     combined_action_overrides={}
     if combined_submissions:
         participant_by_id={
@@ -1937,6 +2007,7 @@ def resolve_persistent_ordinary_round(
             | set(refresh_submissions_by_participant_id or {})
             | set(setmagicpet_submissions_by_participant_id or {})
             | set(battletimid_submissions)
+            | set(lighttakeed_submissions)
             | set(combined_submissions)
             | set(vary_submissions)
         ),
@@ -2058,6 +2129,7 @@ def resolve_persistent_ordinary_round(
         battletimid_rolls_by_participant_id=(
             battletimid_rolls_by_participant_id
         ),
+        lighttakeed_submissions_by_participant_id=lighttakeed_submissions,
         combined_submissions_by_participant_id=combined_submissions,
         combined_rolls_by_participant_id=(
             combined_rolls_by_participant_id
