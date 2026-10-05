@@ -5,6 +5,7 @@ DESCENDANT_ENUM|profile=gavin|symbol=BATTLE_CHARMODE_C_OK|value=3
 DESCENDANT_ENUM|profile=gavin|symbol=BATTLE_COM_S_MDFYATTACK|value=2030
 DESCENDANT_ENUM|profile=gavin|symbol=BATTLE_COM_S_MODIFYATT|value=2029
 DESCENDANT_ENUM|profile=gavin|symbol=BCF_ATTDOUBLE|value=65536
+DESCENDANT_ENUM|profile=gavin|symbol=PETSKILL_TARGET_OTHERWITHOUTMYSELF|value=6
 GATE|profile=gavin|name=attdouble_visual_flag_not_second_attack|pass=1
 GATE|profile=gavin|name=callback_no_option_rng_or_power_writes|pass=1
 GATE|profile=gavin|name=callback_symbol_target_mode_low_array|pass=1
@@ -23,8 +24,9 @@ GATE|profile=gavin|name=reaction_demotion_before_attackseq|pass=1
 GATE|profile=gavin|name=targetadjust_before_single_attackdamage|pass=1
 GATE|profile=gavin|name=two_256_byte_fields_and_float_percent|pass=1
 GATE|profile=gavin|name=zero_damage_demotion_before_visual|pass=1
-NATIVE|profile=gavin|name=callback_cases|value=16
-NATIVE|profile=gavin|name=helper_cases|value=2128
+NATIVE|profile=gavin|name=actual_data_options|value=4
+NATIVE|profile=gavin|name=callback_cases|value=20
+NATIVE|profile=gavin|name=helper_cases|value=2660
 NATIVE|profile=gavin|name=ubsan_pass|value=1
 SOURCE_SHA256|profile=gavin|file=battle|sha256=a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602
 SOURCE_SHA256|profile=gavin|file=battle_h|sha256=5ec5972c6fff32a11f80cadb15529e4b4983cd92669cc9c3c60784baa41f1526
@@ -38,6 +40,7 @@ DESCENDANT_ENUM|profile=iris|symbol=BATTLE_CHARMODE_C_OK|value=3
 DESCENDANT_ENUM|profile=iris|symbol=BATTLE_COM_S_MDFYATTACK|value=2030
 DESCENDANT_ENUM|profile=iris|symbol=BATTLE_COM_S_MODIFYATT|value=2029
 DESCENDANT_ENUM|profile=iris|symbol=BCF_ATTDOUBLE|value=65536
+DESCENDANT_ENUM|profile=iris|symbol=PETSKILL_TARGET_OTHERWITHOUTMYSELF|value=6
 GATE|profile=iris|name=attdouble_visual_flag_not_second_attack|pass=1
 GATE|profile=iris|name=callback_no_option_rng_or_power_writes|pass=1
 GATE|profile=iris|name=callback_symbol_target_mode_low_array|pass=1
@@ -56,8 +59,9 @@ GATE|profile=iris|name=reaction_demotion_before_attackseq|pass=1
 GATE|profile=iris|name=targetadjust_before_single_attackdamage|pass=1
 GATE|profile=iris|name=two_256_byte_fields_and_float_percent|pass=1
 GATE|profile=iris|name=zero_damage_demotion_before_visual|pass=1
-NATIVE|profile=iris|name=callback_cases|value=16
-NATIVE|profile=iris|name=helper_cases|value=2128
+NATIVE|profile=iris|name=actual_data_options|value=4
+NATIVE|profile=iris|name=callback_cases|value=20
+NATIVE|profile=iris|name=helper_cases|value=2660
 NATIVE|profile=iris|name=ubsan_pass|value=1
 SOURCE_SHA256|profile=iris|file=battle|sha256=6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8
 SOURCE_SHA256|profile=iris|file=battle_h|sha256=2c0e83a742f707383ef4db442f5c71c65beabbb4748deaf4b62c81ddba406278
@@ -71,6 +75,7 @@ DESCENDANT_ENUM|profile=bismarck|symbol=BATTLE_CHARMODE_C_OK|value=3
 DESCENDANT_ENUM|profile=bismarck|symbol=BATTLE_COM_S_MDFYATTACK|value=2028
 DESCENDANT_ENUM|profile=bismarck|symbol=BATTLE_COM_S_MODIFYATT|value=2027
 DESCENDANT_ENUM|profile=bismarck|symbol=BCF_ATTDOUBLE|value=65536
+DESCENDANT_ENUM|profile=bismarck|symbol=PETSKILL_TARGET_OTHERWITHOUTMYSELF|value=6
 GATE|profile=bismarck|name=attdouble_visual_flag_not_second_attack|pass=1
 GATE|profile=bismarck|name=callback_no_option_rng_or_power_writes|pass=1
 GATE|profile=bismarck|name=callback_symbol_target_mode_low_array|pass=1
@@ -89,8 +94,9 @@ GATE|profile=bismarck|name=reaction_demotion_before_attackseq|pass=1
 GATE|profile=bismarck|name=targetadjust_before_single_attackdamage|pass=1
 GATE|profile=bismarck|name=two_256_byte_fields_and_float_percent|pass=1
 GATE|profile=bismarck|name=zero_damage_demotion_before_visual|pass=1
-NATIVE|profile=bismarck|name=callback_cases|value=16
-NATIVE|profile=bismarck|name=helper_cases|value=2128
+NATIVE|profile=bismarck|name=actual_data_options|value=4
+NATIVE|profile=bismarck|name=callback_cases|value=20
+NATIVE|profile=bismarck|name=helper_cases|value=2660
 NATIVE|profile=bismarck|name=ubsan_pass|value=1
 SOURCE_SHA256|profile=bismarck|file=battle|sha256=2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18
 SOURCE_SHA256|profile=bismarck|file=battle_h|sha256=4b8515aad3b0e659cd0d86a554844b8c471af294cce6e0f40888c45814c56a69
