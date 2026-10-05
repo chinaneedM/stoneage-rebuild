@@ -6,12 +6,11 @@ import argparse
 from pathlib import Path
 import re
 import subprocess
+import tempfile
 
 from tools.stoneage_guard_break2_source_audit import (
     PINNED, LAYOUTS, _sha, _text, _function, _compact, _macro_int,
 )
-from tools.stoneage_weaken_source_audit import _enum_values
-
 CALLBACK_NAME="PETSKILL_Vary"
 COMMAND_NAME="BATTLE_COM_S_VARY"
 FEATURE_NAME="_VARY_WOLF"
@@ -26,6 +25,43 @@ def _active_macros(version: Path, includes: list[str]) -> set[str]:
     return set(re.findall(r"^#define\s+(\w+)",out,re.M))
 
 
+def _enum_values_with_version(
+    names: list[str],includes: list[str],version: Path
+) -> dict[str,int]:
+    code=(
+        '#include <stdio.h>\n'
+        '#include "char_base.h"\n'
+        '#include "battle.h"\n'
+        '#include "battle_event.h"\n'
+        '#include "pet_skill.h"\n'
+        '#include "pet_skillinfo.h"\n'
+        'int main(void){\n'
+        + ''.join(f'printf("%d\\n",{name});\n' for name in names)
+        + 'return 0;}\n'
+    )
+    with tempfile.TemporaryDirectory() as directory:
+        root=Path(directory)
+        source=root/"enum.c"
+        exe=root/"enum"
+        source.write_text(code)
+        result=subprocess.run(
+            [
+                "cc","-w",*includes,"-imacros",str(version),
+                str(source),"-o",str(exe)
+            ],
+            capture_output=True,text=True,
+        )
+        if result.returncode:
+            raise ValueError(
+                "Vary enum compilation failed: "+result.stderr[-2500:]
+            )
+        values=list(map(
+            int,
+            subprocess.check_output([str(exe)],text=True).split()
+        ))
+    return dict(zip(names,values))
+
+
 def _bounded_case(text: str, marker: str, occurrence: int) -> str:
     positions=[]
     pos=0
@@ -38,7 +74,7 @@ def _bounded_case(text: str, marker: str, occurrence: int) -> str:
     if len(positions) <= occurrence:
         raise ValueError(f"missing case occurrence {occurrence}: {marker}")
     start=positions[occurrence]
-    next_case=text.find("case ",start+len(marker))
+    next_case=text.find("case",start+len(marker))
     if next_case < 0:
         next_case=min(len(text),start+12000)
     return text[start:next_case]
@@ -69,7 +105,10 @@ def analyze_profile(name: str, root: Path):
     if name=="bismarck":
         includes += ["-I",str(root/"server/common"),"-I",str(root/"shared/lua51")]
     active=_active_macros(paths["version"],includes)
-    enums=_enum_values([COMMAND_NAME,"BATTLE_CHARMODE_C_OK"],includes)
+    enums=_enum_values_with_version(
+        [COMMAND_NAME,"BATTLE_CHARMODE_C_OK"],
+        includes,paths["version"],
+    )
     source_skill_id=_macro_int(
         data["petskill_h"],SOURCE_PETSKILL_SYMBOL_NAME
     )
