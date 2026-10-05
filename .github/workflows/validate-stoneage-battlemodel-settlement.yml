@@ -6,6 +6,9 @@ on:
     paths:
       - ".github/workflows/validate-stoneage-battlemodel-settlement.yml"
       - "tools/stoneage_battlemodel_settlement_source_audit.py"
+      - "tools/stoneage_battlemodel_hit_loop.py"
+      - "tools/stoneage_battlemodel_pet_guard_source_audit.py"
+      - "tests/test_stoneage_battlemodel_hit_loop.py"
       - "specs/STONEAGE-BATTLEMODEL-SETTLEMENT-AUDIT-R1.md"
 
 concurrency:
@@ -24,6 +27,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Verify bounded post-AttackSeq loop and shared primitives
+        run: |
+          python -m unittest -v \
+            tests.test_stoneage_battlemodel_hit_loop \
+            tests.test_stoneage_battlemodel_admission \
+            tests.test_stoneage_battlemodel_reference_model \
+            tests.test_stoneage_battle_damage_react_model \
+            tests.test_stoneage_battle_status_model
       - name: Recover pinned source profiles
         run: |
           python - <<'PY'
@@ -47,6 +58,7 @@ jobs:
       - name: Audit bounded native no-ride DamageSub
         run: |
           python -m tools.stoneage_battlemodel_settlement_source_audit \
+            --verify-runtime-model \
             --gavin-dir /tmp/battlemodel-hit/gavin \
             --iris-dir /tmp/battlemodel-hit/iris \
             --bismarck-dir /tmp/battlemodel-hit/bismarck \
@@ -55,7 +67,23 @@ jobs:
           test "$(grep -c 'native_hits=640' /tmp/battlemodel-settlement.txt)" = 3
           grep -F 'RESOLUTION|BATTLEMODEL_NO_RIDE_SETTLEMENT_LOCAL_NATIVE_PASS' \
             /tmp/battlemodel-settlement.txt
+          test "$(grep -c 'physical_marker_model_native_comparisons=160' /tmp/battlemodel-settlement.txt)" = 3
+          grep -F 'RESOLUTION|BATTLEMODEL_PHYSICAL_MARKER_RUNTIME_MODEL_NATIVE_PASS' \
+            /tmp/battlemodel-settlement.txt
+      - name: Verify literal pet guard in explicit reduced SIDE_OFFSET10
+        run: |
+          python -m tools.stoneage_battlemodel_pet_guard_source_audit \
+            --gavin-dir /tmp/battlemodel-hit/gavin \
+            --iris-dir /tmp/battlemodel-hit/iris \
+            --bismarck-dir /tmp/battlemodel-hit/bismarck \
+            > /tmp/battlemodel-pet-guard.txt
+          cat /tmp/battlemodel-pet-guard.txt
+          test "$(grep -c 'native_pet_guard_cases=20' /tmp/battlemodel-pet-guard.txt)" = 3
+          grep -F 'RESOLUTION|BATTLEMODEL_LITERAL_PET_GUARD_REDUCED10_NATIVE_PASS' \
+            /tmp/battlemodel-pet-guard.txt
       - uses: actions/upload-artifact@v4
         with:
           name: battlemodel-settlement
-          path: /tmp/battlemodel-settlement.txt
+          path: |
+            /tmp/battlemodel-settlement.txt
+            /tmp/battlemodel-pet-guard.txt

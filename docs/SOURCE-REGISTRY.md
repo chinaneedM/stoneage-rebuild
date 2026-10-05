@@ -3538,3 +3538,27 @@ Required actual-data/runtime/core/coordinator/golden/full-region gates:
 BattleModel admissions and4 corrected real636 admissions. Full petskill hash
 and row/template/global placement identities verified. Earlier remote-pending
 record superseded; complete BattleModel ordered runtime remains OPEN.
+
+
+### SRC-BATTLEMODEL-POST-ATTACKSEQ-LOOP-R1
+
+- Type: modern experimental loop implementation plus transient native
+  fixed-descendant comparisons; no new original build/version membership.
+- Three clean pins remain gavin1f90cb6c /iris9e6c8ce2 /bismarck999ffdf1.
+  New pet-guard audit compiles the same original helper bodies/hash identities
+  as the accepted helper lifecycle audit. Controlled SIDE_OFFSET10/shared
+  stubs prove literal target+5 rather than ordinary owner target-5:60 local
+  native cases. Multiplayer offset12 is excluded.
+- Settlement audit opt-in `--verify-runtime-model` compares physical marker
+  HP/charges/reported damage/ultimate against original native outputs:480
+  local comparisons across three profiles; original1920 calls still PASS.
+  Direct native calls after death remain function experiments, not reachable
+  loop calls. Modern loop rechecks life and skips those actual helper calls.
+- Evidence modules: `tools/stoneage_battlemodel_hit_loop.py`,
+  `tools/stoneage_battlemodel_pet_guard_source_audit.py`, extended settlement
+  source audit; spec `specs/STONEAGE-BATTLEMODEL-HIT-LOOP-R1.md`.
+- Local81 tests PASS. Typed injected AttackSeq controls shared arithmetic/RNG;
+  it is not production AttackSeq acceptance. No-ride/nonthrowing/no-ItemCrush/
+  gDamageDiv0/reduced offset10 scope is mandatory. Equipment ItemCrush precedes
+  status in source and remains required for full integration. Remote gate
+  pending; ordinary round/state/coordinator/pressure execution unchanged.

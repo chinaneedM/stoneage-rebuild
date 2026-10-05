@@ -90,6 +90,20 @@ membership and excluded feature paths remain OPEN.
 
 Implement after the remaining audit acceptance. Full runtime remains OPEN.
 
+## Bounded post-AttackSeq implementation checkpoint — 2026-10-06
+
+Typed admission is now remotely accepted. An independent hit-loop seam is
+implemented with an explicit reduced SIDE_OFFSET10/no-ride/nonthrowing/
+no-ItemCrush/gDamageDiv0 execution scope; see `STONEAGE-BATTLEMODEL-HIT-LOOP-R1.md`.
+AttackSeq remains injected, including Guardian eligibility and its physical
+RNG. Only this bounded seam is implemented; production round/state/coordinator
+execution and full BattleModel runtime remain OPEN.
+
+Additional required integration gate: the source surviving-target branch calls
+ItemCrush before status. Close that equipment/RNG seam or prove an explicitly
+equipment-free admission before claiming the complete original hit chronology.
+The new loop does not silently bypass equipped ItemCrush in production.
+
 
 ## Settlement acceptance update — 2026-10-06
 

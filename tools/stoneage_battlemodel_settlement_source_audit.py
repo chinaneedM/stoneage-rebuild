@@ -17,7 +17,7 @@ from tools.stoneage_guard_break2_source_audit import PINNED, LAYOUTS, _text, _sh
 from tools.stoneage_mdfyattack_source_audit import _definition
 
 
-def _native_settlement(body: str) -> int:
+def _native_settlement(body: str, *, verify_runtime_model: bool = False) -> int:
     fixed = {
         "BATTLE_MD_NONE": 0, "BATTLE_MD_ABSROB": 1,
         "BATTLE_MD_REFLEC": 2, "BATTLE_MD_VANISH": 3,
@@ -95,6 +95,7 @@ int main(void){
     lines = result.stdout.splitlines()
     if len(lines) != len(cases) * 2:
         raise ValueError("native settlement witness count drift")
+    model_checks = 0
     for case_index, (marker, sentinel, kind, raw, dhp, charges) in enumerate(cases):
         hp = [150, dhp]
         counters = [charges if kind in (1, 4) else 0,
@@ -102,6 +103,7 @@ int main(void){
                     charges if kind in (3, 4) else 0]
         overkill = [0, 0]
         for hit in range(2):
+            before_hp, before_counters, before_overkill = tuple(hp), tuple(counters), tuple(overkill)
             selected = (3 if counters[2] else 1 if counters[0] else 2 if counters[1] else 0)
             reaction = selected if sentinel != -1 else 0
             reported_reaction = sentinel
@@ -137,10 +139,35 @@ int main(void){
             actual = tuple(map(int, lines[case_index * 2 + hit].split()))
             if actual != expected:
                 raise ValueError(f"settlement mismatch case={case_index} hit={hit}: {actual} != {expected}")
+            if verify_runtime_model and marker == 1 and sentinel == 0:
+                from tools.stoneage_battlemodel_hit_loop import resolve_battlemodel_marker_settlement
+                from tools.stoneage_battle_damage_react_model import BaseDamageReactState
+                from tools.stoneage_battle_core_model import (
+                    BattleUltimateDamageInputs, resolve_battle_ultimate_damage,
+                )
+                modern = resolve_battlemodel_marker_settlement(
+                    BaseDamageReactState(*before_counters), raw_damage=raw,
+                    attacker_hp=before_hp[0], attacker_max_hp=200,
+                    defender_hp=before_hp[1], defender_max_hp=200,
+                )
+                ultimate_model = resolve_battle_ultimate_damage(BattleUltimateDamageInputs(
+                    raw, raw if modern.effective_kind == 0 else 0,
+                    before_hp[1], 200, before_overkill[1],
+                ))
+                model = (modern.attacker_hp_after, modern.defender_hp_after,
+                         modern.state_after.absorb, modern.state_after.reflect,
+                         modern.state_after.vanish, modern.raw_damage,
+                         ultimate_model.ultimate_kind)
+                native = (*actual[:6], actual[8])
+                if model != native:
+                    raise ValueError(f"runtime model/native mismatch case={case_index} hit={hit}: {model} != {native}")
+                model_checks += 1
+    if verify_runtime_model and model_checks != 160:
+        raise ValueError("runtime/native settlement comparison count drift")
     return len(lines)
 
 
-def analyze_profile(name: str, root: Path) -> tuple[str, int]:
+def analyze_profile(name: str, root: Path, *, verify_runtime_model: bool = False) -> tuple[str, int]:
     root = root.resolve()
     sha = subprocess.check_output(["git", "-C", str(root), "rev-parse", "HEAD"], text=True).strip()
     dirty = subprocess.check_output(["git", "-C", str(root), "status", "--porcelain"], text=True).strip()
@@ -148,24 +175,30 @@ def analyze_profile(name: str, root: Path) -> tuple[str, int]:
         raise ValueError(f"{name} pin/tree drift")
     source = root / LAYOUTS[name] / "battle/battle_event.c"
     body = _definition(_text(source), "BATTLE_DamageSub")
-    return _sha(source), _native_settlement(body)
+    return _sha(source), _native_settlement(body, verify_runtime_model=verify_runtime_model)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--verify-runtime-model", action="store_true")
     for name in PINNED:
         parser.add_argument(f"--{name}-dir", required=True, type=Path)
     args = parser.parse_args()
     print("StoneAge BattleModel no-ride native DamageSub settlement — R1")
     for name in PINNED:
-        digest, count = analyze_profile(name, getattr(args, name + "_dir"))
+        digest, count = analyze_profile(name, getattr(args, name + "_dir"),
+                                        verify_runtime_model=args.verify_runtime_model)
         print(f"PROFILE|profile={name}|sha={PINNED[name]}|source_sha256={digest}|native_hits={count}")
+        if args.verify_runtime_model:
+            print(f"MODEL|profile={name}|physical_marker_model_native_comparisons=160")
     print("FACT|BattleModel_reflect_consumes_charge_preserves_both_HP_and_reports_positive_raw_damage")
     print("FACT|nonphysical_sentinel_bypasses_reactions_and_preserves_charges")
     print("FACT|raw_threshold_can_report_ultimate2_without_HP_loss")
     print("OPEN|reflect_marker_reads_absent_ride_index_in_no_ride_source_path")
     print("BOUNDARY|reduced_base_feature_profile_no_ride_nonthrowing_stubbed_reaction_priority_no_original_build_claim")
     print("RESOLUTION|BATTLEMODEL_NO_RIDE_SETTLEMENT_LOCAL_NATIVE_PASS")
+    if args.verify_runtime_model:
+        print("RESOLUTION|BATTLEMODEL_PHYSICAL_MARKER_RUNTIME_MODEL_NATIVE_PASS")
 
 
 if __name__ == "__main__":

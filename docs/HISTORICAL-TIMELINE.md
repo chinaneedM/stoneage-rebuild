@@ -743,3 +743,23 @@ corrected636 admissions. The earlier repair-pending record is superseded.
 Only bounded typed BattleModel admission and repaired2BattleTimid admission
 are accepted. Full BattleModel execution and its two positive slots remain OPEN.
 Independent local post-AttackSeq loop preparation is not part of this acceptance.
+
+
+### 2026-10-06 — bounded BattleModel loop and literal pet guard witnesses
+
+**FACT (fixed-source reduced experiment):** original hit helpers compiled
+transiently at all three established pins, with SIDE_OFFSET10 and shared stubs,
+confirm pet targets5..9 guard opposite entries10..14, independently of ordinary
+owner entries0..4. All20 cases/profile,60 total pass locally. Original
+multiplayer offset12 and original executable/build remain OPEN.
+
+**LOCAL_TESTED (modern implementation):** post-AttackSeq ordered scheduling,
+marker-specific settlement, wake/status and distinct command/ultimate state
+have81 local tests and480 direct physical marker/native comparisons passing.
+Original1920 no-ride native calls still pass. Source TargetCheck does not
+independently test ultimate entry flags; a surviving flagged target is not
+silently killed/exited by this bounded loop. Full round exit remains OPEN.
+AttackSeq, no-ItemCrush, no-ride/nonthrowing/gDamageDiv0 and reduced offset10
+limits are explicit. Source surviving-target ItemCrush occurs before status;
+its equipment/RNG seam must be closed for complete integration.
+See `SRC-BATTLEMODEL-POST-ATTACKSEQ-LOOP-R1`; remote acceptance pending.
