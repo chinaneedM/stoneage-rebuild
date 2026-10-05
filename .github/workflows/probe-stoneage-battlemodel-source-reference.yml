@@ -10,6 +10,8 @@ on:
     paths:
       - ".github/workflows/probe-stoneage-battlemodel-source-reference.yml"
       - "tools/stoneage_battlemodel_source_audit.py"
+      - "tools/stoneage_battlemodel_reference_model.py"
+      - "tests/test_stoneage_battlemodel_reference_model.py"
 
 permissions:
   contents: write
@@ -23,6 +25,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Validate bounded BattleModel reference primitives
+        run: |
+          python -m unittest -v tests.test_stoneage_battlemodel_reference_model
       - name: Recover pinned fixed descendant source profiles
         run: |
           set -euo pipefail
