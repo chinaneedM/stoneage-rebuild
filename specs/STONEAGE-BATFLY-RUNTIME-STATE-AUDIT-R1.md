@@ -50,17 +50,20 @@ For an enemy ID633 actor:
 For the admitted recovered25 runtime, the BatFly actor is the enemy template
 identity TEMPNO1160 / graphic101815 with ID633 in source slot1 or slot4.
 
-## Required fail-closed invariant
+## Required fail-closed invariant — implemented
 
 A single owned pet must not simultaneously be represented as:
 
 1. an active `BattleSession.allied_pets` entry, and
 2. `BattleSession.ride_pet`.
 
-The current exit projection already rejects that impossible combination at
-settlement. BatFly runtime integration must move that rejection to battle-state
-validation/construction so the invalid topology cannot execute even one
-BatFly round.
+This is now rejected during `PersistentBattleState` construction, before any
+round can execute. Core invariant commit:
+`adf00d237d7f9ac25c6359f2587870827d079da1`; regression witness:
+`8795f24cd0c169c8c5871d4deca904303af8500f`.
+
+The terminal exit projection retains its existing duplicate-state rejection as
+a second line of defense.
 
 ## Slot order versus source presentation order
 
@@ -101,7 +104,7 @@ The runtime branch must:
 9. consume no BatFly RNG;
 10. preserve standard persistent battle termination and standard ride-pet
     battle-exit projection;
-11. fail closed on active-pet/ride-pet identity overlap;
+11. preserve the now-core active-pet/ride-pet identity-overlap rejection;
 12. leave 101813/101814 Ler transform/anti-knockout behavior outside ID633.
 
 **BATFLY_RUNTIME_STATE_AUDIT_R1 =
