@@ -14,6 +14,10 @@ on:
       - "tools/stoneage_combined_direct_magic_model.py"
       - "tests/test_stoneage_combined_direct_magic_model.py"
       - "tests/test_stoneage_enemy_ai_combined_bridge.py"
+      - "tools/stoneage_combined_status_magic_model.py"
+      - "tools/stoneage_combined_status_magic_source_audit.py"
+      - "tests/test_stoneage_combined_status_magic_model.py"
+      - "specs/STONEAGE-COMBINED-STATUS-MAGIC-REFERENCE-R1.md"
 permissions:
   contents: write
 jobs:
@@ -29,7 +33,35 @@ jobs:
         run: |
           python -m unittest -v \
             tests.test_stoneage_recovered25_combined_magic_probe \
-            tests.test_stoneage_enemy_ai_combined_bridge
+            tests.test_stoneage_enemy_ai_combined_bridge \
+            tests.test_stoneage_combined_direct_magic_model \
+            tests.test_stoneage_combined_status_magic_model
+      - name: Recover clean pinned status-magic source profiles outside repository
+        run: |
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          profiles={
+              "gavin":("gavinlinasd/StoneAge","1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56"),
+              "iris":("iriselia/StoneAge","9e6c8ce2cd8ed532a7157773acd1c61582c178b5"),
+              "bismarck":("BismarckDD/stoneage","999ffdf1d220ec6666eb65339180689c9caf1876"),
+          }
+          for name,(repo,sha) in profiles.items():
+              root=Path("/tmp/combined-status-source")/name
+              root.mkdir(parents=True)
+              subprocess.run(["git","init",str(root)],check=True)
+              subprocess.run(["git","-C",str(root),"remote","add","origin","https://github.com/"+repo+".git"],check=True)
+              subprocess.run(["git","-C",str(root),"fetch","--depth","1","origin",sha],check=True)
+              subprocess.run(["git","-C",str(root),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Reproduce conditional status-magic source reference
+        run: |
+          python -m tools.stoneage_combined_status_magic_source_audit \
+            --gavin-dir /tmp/combined-status-source/gavin \
+            --iris-dir /tmp/combined-status-source/iris \
+            --bismarck-dir /tmp/combined-status-source/bismarck \
+            > /tmp/combined-status-magic-source.txt
+          diff -u research/recovered/STONEAGE-COMBINED-STATUS-MAGIC-SOURCE-AUDIT-R1.txt /tmp/combined-status-magic-source.txt
       - run: sudo apt-get update && sudo apt-get install -y unar
       - name: Recover verified preservation bundle
         run: |
@@ -145,15 +177,28 @@ jobs:
               assert conditional.remaining_mp==11 and conditional.mp_argument==-1
           print("RESOLUTION|RECOVERED25_COMBINED_SUBMISSION_BRIDGE_CLOSED")
           PY
+      - name: Audit actual recovered status-magic OPTION bytes against native parsers
+        run: |
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          test -n "$D"
+          python -m tools.stoneage_combined_status_magic_source_audit \
+            --gavin-dir /tmp/combined-status-source/gavin \
+            --iris-dir /tmp/combined-status-source/iris \
+            --bismarck-dir /tmp/combined-status-source/bismarck \
+            --data-dir "$D" \
+            > research/recovered/STONEAGE-25-COMBINED-STATUS-MAGIC-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_COMBINED_STATUS_MAGIC_ACTUAL_BYTE_AUDIT_CLOSED_CONDITIONAL_BUILD' research/recovered/STONEAGE-25-COMBINED-STATUS-MAGIC-PROBE-R1.txt
+          cat research/recovered/STONEAGE-25-COMBINED-STATUS-MAGIC-PROBE-R1.txt
       - name: Print derived report
         if: always()
         run: |
           test ! -f research/recovered/STONEAGE-25-COMBINED-MAGIC-CROSSLINK-R1.txt || cat research/recovered/STONEAGE-25-COMBINED-MAGIC-CROSSLINK-R1.txt
+          test ! -f research/recovered/STONEAGE-25-COMBINED-STATUS-MAGIC-PROBE-R1.txt || cat research/recovered/STONEAGE-25-COMBINED-STATUS-MAGIC-PROBE-R1.txt
       - name: Commit derived report only
         run: |
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
-          git add research/recovered/STONEAGE-25-COMBINED-MAGIC-CROSSLINK-R1.txt
+          git add research/recovered/STONEAGE-25-COMBINED-MAGIC-CROSSLINK-R1.txt research/recovered/STONEAGE-25-COMBINED-STATUS-MAGIC-PROBE-R1.txt
           if git diff --cached --quiet; then echo 'Combined magic report unchanged.';exit 0;fi
           git commit -m 'research: crosslink recovered Combined magic'
           git pull --rebase origin "$GITHUB_REF_NAME"
