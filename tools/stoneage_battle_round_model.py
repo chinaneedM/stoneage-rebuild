@@ -6726,6 +6726,292 @@ def resolve_ordinary_round(
                 )
             continue
 
+        combined_actor_id=str(participant_id)
+        if (
+            combined_actor_id in combined_submissions
+            and combined_actor_id in combined_active_command_ids
+            and int(command.command1) == BATTLE_COM_ATTACK
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            submission=combined_submissions[combined_actor_id]
+            if int(command.command2) != int(submission.source_target_slot):
+                raise ValueError(
+                    "Combined ordering carrier target drift before execution"
+                )
+            if combined_working is None:
+                raise ValueError("Combined working overlay unexpectedly absent")
+            if nocast_working is None:
+                raise ValueError("Combined Nocast/status overlay unexpectedly absent")
+            if combined_actor_id not in combined_working.mp_by_participant_id:
+                raise ValueError(
+                    "Combined actor lacks explicit current-MP witness"
+                )
+            action_rolls=combined_rolls[combined_actor_id]
+            current_mp=int(
+                combined_working.mp_by_participant_id[combined_actor_id]
+            )
+            route=submission.direct_magic_route(
+                current_mp=current_mp,
+                item_zero=combined_working.item_zero,
+                nocast=int(nocast_working[combined_actor_id].counter),
+                caster_valid=True,
+                battle_mode_init=False,
+                battling=True,
+                function_present=True,
+                battle_effect_return=True,
+                family_index=0,
+            )
+            attempted_combined_actor_ids.add(combined_actor_id)
+            if int(route.remaining_mp) != current_mp:
+                combined_working=combined_working.with_mp(
+                    combined_actor_id,int(route.remaining_mp)
+                )
+            if not route.accepted:
+                if action_rolls != CombinedActionRolls():
+                    raise ValueError(
+                        "rejected Combined DirectUse cannot consume action RNG"
+                    )
+                events.append(
+                    OrdinaryRoundEvent(
+                        combined_actor_id,int(slot),BATTLE_COM_ATTACK,
+                        int(entry.action_value),
+                        "combined_direct_rejected_" + str(route.reason),
+                        original_target_slot=int(submission.source_target_slot),
+                        combined_skill_id=int(submission.skill_id),
+                        combined_magic_id=int(submission.magic.magic_id),
+                        combined_direct_route=route,
+                    )
+                )
+                continue
+
+            alive_slots=tuple(
+                other_slot
+                for other_slot in sorted(by_slot)
+                if (
+                    other_slot not in exited_slots
+                    and int(hp_by_slot.get(other_slot,0)) > 0
+                )
+            )
+            target_resolution=resolve_combined_single_target(
+                int(submission.source_target_slot),
+                alive_slots=alive_slots,
+                retarget_draws_0_9=action_rolls.retarget_draws_0_9,
+            )
+            target_slot=int(target_resolution.resolved_target_slot)
+            if target_slot not in by_slot:
+                raise ValueError(
+                    "Combined target list resolved unoccupied slot"
+                )
+            defender=by_slot[target_slot]
+            defender_id=str(defender.participant_id)
+            magic_id=int(submission.magic.magic_id)
+            recovery_effect=None
+            status_change_effect=None
+            status_recovery_effect=None
+            att_reverse_effect=None
+            result_name="combined_magic_applied"
+
+            if magic_id == 21:
+                if action_rolls.recovery_roll_90_110 is None:
+                    raise ValueError(
+                        "Combined Recovery 21 requires one RAND(90,110) witness"
+                    )
+                if action_rolls.status_roll_1_100 is not None:
+                    raise ValueError(
+                        "Combined Recovery 21 cannot consume status RNG"
+                    )
+                target_late=nocast_working[defender_id]
+                riding_target=bool(
+                    active_ride
+                    and ride_runtime is not None
+                    and str(ride_runtime.rider_id)==defender_id
+                )
+                recovery_effect=resolve_combined_recovery21_effect(
+                    source_target_slot=int(submission.source_target_slot),
+                    alive_slots=alive_slots,
+                    current_hp=int(hp_by_slot[target_slot]),
+                    max_hp=int(defender.max_hp),
+                    target_vital=int(target_late.vital),
+                    target_is_player=(defender.kind=="player"),
+                    rolled_power=int(action_rolls.recovery_roll_90_110),
+                    riding=riding_target,
+                    resolved_target=target_resolution,
+                )
+                hp_by_slot[target_slot]=int(recovery_effect.hp_after)
+                hp_by_id[defender_id]=int(recovery_effect.hp_after)
+                result_name="combined_recovery"
+
+            elif magic_id in {139,159,169,179,189}:
+                if action_rolls.recovery_roll_90_110 is not None:
+                    raise ValueError(
+                        "Combined StatusChange cannot consume Recovery RNG"
+                    )
+                target_late=nocast_working[defender_id]
+                if bool(target_late.unmodeled_status_active):
+                    raise ValueError(
+                        "Combined StatusChange with unmodeled active status "
+                        "remains fail-closed"
+                    )
+                base_runtime=status_runtime[defender_id]
+                base_active=any(
+                    int(getattr(base_runtime.status,name))>0
+                    for name in (
+                        "poison","paralysis","sleep",
+                        "stone","drunk","confusion",
+                    )
+                )
+                modeled_late_active=target_late.has_any_status(
+                    base_status_active=False
+                )
+                if modeled_late_active:
+                    if action_rolls.status_roll_1_100 is not None:
+                        raise ValueError(
+                            "existing late status blocks Combined StatusAttackCheck RNG"
+                        )
+                    result_name="combined_status_change_blocked_existing_status"
+                else:
+                    if defender_id not in status_combat_profiles:
+                        raise ValueError(
+                            "Combined StatusChange target lacks explicit "
+                            "status combat profile"
+                        )
+                    status_index=int(EXPECTED_IRIS_CP950_STATUS[magic_id])
+                    status_name=BASE_STATUS_NAME_BY_INDEX[status_index]
+                    status_profile=status_combat_profiles[defender_id]
+                    status_change_effect=resolve_combined_status_change_effect(
+                        magic_id=magic_id,
+                        source_target_slot=int(submission.source_target_slot),
+                        alive_slots=alive_slots,
+                        current_status=base_runtime.status,
+                        late_status_domain_clear=True,
+                        roll_1_100=action_rolls.status_roll_1_100,
+                        attacker_level=int(participant.level),
+                        defender_level=int(defender.level),
+                        pvp=False,
+                        attacker_fixed_luck=int(
+                            profiles[combined_actor_id].fixed_luck
+                        ),
+                        defender_vital=int(status_profile.vital),
+                        defender_str=int(status_profile.strength),
+                        defender_tough=int(status_profile.tough),
+                        defender_dex=int(status_profile.dex),
+                        defender_resistance=int(
+                            status_profile.resistance_for(status_name)
+                        ),
+                        resolved_target=target_resolution,
+                    )
+                    status_runtime[defender_id]=replace(
+                        base_runtime,
+                        status=status_change_effect.status_after,
+                    )
+                    if status_change_effect.command_cleared:
+                        combined_cleared_command_ids.add(defender_id)
+                    result_name=(
+                        "combined_status_change_applied"
+                        if status_change_effect.status_after
+                        != status_change_effect.status_before
+                        else "combined_status_change_blocked"
+                    )
+
+            elif magic_id == 61:
+                if (
+                    action_rolls.recovery_roll_90_110 is not None
+                    or action_rolls.status_roll_1_100 is not None
+                ):
+                    raise ValueError(
+                        "Combined StatusRecovery 61 owns no effect RNG"
+                    )
+                status_recovery_effect=resolve_combined_status_recovery61_effect(
+                    source_target_slot=int(submission.source_target_slot),
+                    alive_slots=alive_slots,
+                    base_runtime=status_runtime[defender_id],
+                    late_runtime=nocast_working[defender_id],
+                    resolved_target=target_resolution,
+                )
+                status_runtime[defender_id]=status_recovery_effect.base_runtime
+                nocast_working[defender_id]=status_recovery_effect.late_runtime
+                result_name=(
+                    "combined_status_recovery_cleared"
+                    if status_recovery_effect.cleared_status is not None
+                    else "combined_status_recovery_noop"
+                )
+
+            elif magic_id == 240:
+                if (
+                    action_rolls.recovery_roll_90_110 is not None
+                    or action_rolls.status_roll_1_100 is not None
+                ):
+                    raise ValueError(
+                        "Combined AttReverse 240 owns no effect RNG"
+                    )
+                was_reversed=bool(
+                    combined_working.att_reverse_by_participant_id[defender_id]
+                )
+                current_profile=profiles[defender_id]
+                att_reverse_effect=resolve_combined_att_reverse240_effect(
+                    source_target_slot=int(submission.source_target_slot),
+                    alive_slots=alive_slots,
+                    battle_flags=1 if was_reversed else 0,
+                    reverse_bit=1,
+                    earth=int(current_profile.earth),
+                    water=int(current_profile.water),
+                    fire=int(current_profile.fire),
+                    wind=int(current_profile.wind),
+                    resolved_target=target_resolution,
+                )
+                next_overlay,attrs=combined_working.cast_att_reverse(
+                    defender_id,current_profile
+                )
+                if (
+                    int(attrs["earth"])!=int(att_reverse_effect.earth)
+                    or int(attrs["water"])!=int(att_reverse_effect.water)
+                    or int(attrs["fire"])!=int(att_reverse_effect.fire)
+                    or int(attrs["wind"])!=int(att_reverse_effect.wind)
+                ):
+                    raise ValueError("Combined AttReverse state/effect drift")
+                combined_working=next_overlay
+                profiles[defender_id]=replace(
+                    current_profile,
+                    earth=int(attrs["earth"]),
+                    water=int(attrs["water"]),
+                    fire=int(attrs["fire"]),
+                    wind=int(attrs["wind"]),
+                )
+                result_name="combined_att_reverse_toggled"
+            else:
+                raise ValueError(
+                    "Combined selected magic escaped positive executable set"
+                )
+
+            events.append(
+                OrdinaryRoundEvent(
+                    combined_actor_id,int(slot),BATTLE_COM_ATTACK,
+                    int(entry.action_value),result_name,
+                    original_target_slot=int(submission.source_target_slot),
+                    resolved_target_slot=target_slot,
+                    retargeted=bool(target_resolution.retargeted),
+                    target_hp_before=(
+                        None if recovery_effect is None
+                        else int(recovery_effect.hp_before)
+                    ),
+                    target_hp_after=(
+                        None if recovery_effect is None
+                        else int(recovery_effect.hp_after)
+                    ),
+                    combined_skill_id=int(submission.skill_id),
+                    combined_magic_id=magic_id,
+                    combined_direct_route=route,
+                    combined_recovery_effect=recovery_effect,
+                    combined_status_change_effect=status_change_effect,
+                    combined_status_recovery_effect=status_recovery_effect,
+                    combined_att_reverse_effect=att_reverse_effect,
+                )
+            )
+            continue
+
         setmagicpet_actor_id=str(participant_id)
         if (
             setmagicpet_actor_id in setmagicpet_submissions
