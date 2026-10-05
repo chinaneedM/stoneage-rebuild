@@ -51,6 +51,13 @@ from tools.stoneage_enemy_ai_battletimid_bridge import (
     EnemyAiBattleTimidSubmission,
 )
 from tools.stoneage_battletimid_model import BattleTimidExitResolution
+from tools.stoneage_enemy_ai_lighttakeed_bridge import (
+    EnemyAiLighttakeedSubmission,
+)
+from tools.stoneage_lighttakeed_model import (
+    LighttakeedResolution,
+    resolve_lighttakeed_reaction,
+)
 from tools.stoneage_enemy_ai_combined_bridge import EnemyAiCombinedSubmission
 from tools.stoneage_enemy_ai_vary_bridge import EnemyAiVarySubmission
 from tools.stoneage_combined_direct_magic_model import CombinedDirectMagicRoute
@@ -1041,6 +1048,9 @@ class OrdinaryRoundEvent:
     guard_break2_resolution: GuardBreak2DamageResolution | None = None
     battletimid_resolution: BattleTimidExitResolution | None = None
     battletimid_skill_id: int | None = None
+    lighttakeed_resolution: LighttakeedResolution | None = None
+    lighttakeed_skill_id: int | None = None
+    lighttakeed_profile: str | None = None
     combined_skill_id: int | None = None
     combined_magic_id: int | None = None
     combined_direct_route: CombinedDirectMagicRoute | None = None
@@ -3681,6 +3691,9 @@ def resolve_ordinary_round(
     battletimid_rolls_by_participant_id: Mapping[
         str,int | None
     ] | None = None,
+    lighttakeed_submissions_by_participant_id: Mapping[
+        str,EnemyAiLighttakeedSubmission
+    ] | None = None,
     combined_submissions_by_participant_id: Mapping[
         str,EnemyAiCombinedSubmission
     ] | None = None,
@@ -4653,6 +4666,51 @@ def resolve_ordinary_round(
     attempted_battletimid_actor_ids=set()
     battletimid_active_command_ids=set(battletimid_actor_ids)
 
+    lighttakeed_submissions={
+        str(pid):submission
+        for pid,submission in (
+            lighttakeed_submissions_by_participant_id or {}
+        ).items()
+    }
+    lighttakeed_actor_ids=set(lighttakeed_submissions)
+    if lighttakeed_actor_ids-set(slot_by_id):
+        raise ValueError("Lighttakeed submissions reference unknown actors")
+    lighttakeed_overlap=(
+        battletimid_actor_ids | wildviolent_actor_ids
+        | set(mdfyattack_submissions) | set(attack_crazed_submissions)
+        | weaken_actor_ids | refresh_actor_ids | setmagicpet_actor_ids
+        | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
+        | fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
+        | damage_to_hp_actor_ids | enemy_relife_actor_ids
+        | enemy_rehp_actor_ids | attack_magic_actor_ids
+    )
+    if lighttakeed_actor_ids & lighttakeed_overlap:
+        raise ValueError("Lighttakeed semantic submissions overlap another skill")
+    for pid,submission in lighttakeed_submissions.items():
+        if not isinstance(submission,EnemyAiLighttakeedSubmission):
+            raise TypeError("Lighttakeed submission has wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (
+            str(submission.participant_id)!=pid
+            or entry.participant.kind!="enemy"
+            or entry.participant.side!="enemy"
+            or int(entry.command.command1)!=BATTLE_COM_ATTACK
+            or int(entry.command.command2)!=int(submission.source_target_slot)
+        ):
+            raise ValueError(
+                "Lighttakeed ordering carrier must be enemy ATTACK/source-target"
+            )
+        effects=setup_effects.get(pid,BattleCommandSetupEffects())
+        if (
+            effects.attack_power,
+            effects.defense_power,
+        ) != (
+            int(submission.attack_power),
+            int(submission.defense_power),
+        ):
+            raise ValueError("Lighttakeed callback work-power setup drift")
+    lighttakeed_active_command_ids=set(lighttakeed_actor_ids)
+
     combined_submissions={
         str(pid):submission
         for pid,submission in (
@@ -4663,7 +4721,7 @@ def resolve_ordinary_round(
     if combined_actor_ids-set(slot_by_id):
         raise ValueError("Combined submissions reference unknown actors")
     combined_overlap=(
-        battletimid_actor_ids | wildviolent_actor_ids
+        lighttakeed_actor_ids | battletimid_actor_ids | wildviolent_actor_ids
         | set(mdfyattack_submissions) | set(attack_crazed_submissions)
         | weaken_actor_ids | refresh_actor_ids | setmagicpet_actor_ids
         | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
@@ -4725,7 +4783,8 @@ def resolve_ordinary_round(
     if vary_actor_ids-set(slot_by_id):
         raise ValueError("Vary submissions reference unknown actors")
     vary_overlap=(
-        combined_actor_ids | battletimid_actor_ids | wildviolent_actor_ids
+        lighttakeed_actor_ids | combined_actor_ids | battletimid_actor_ids
+        | wildviolent_actor_ids
         | set(mdfyattack_submissions) | set(attack_crazed_submissions)
         | weaken_actor_ids | refresh_actor_ids | setmagicpet_actor_ids
         | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
@@ -5475,6 +5534,7 @@ def resolve_ordinary_round(
                 | refresh_active_command_ids
                 | setmagicpet_active_command_ids
                 | battletimid_active_command_ids
+                | lighttakeed_active_command_ids
                 | combined_active_command_ids
                 | vary_active_command_ids
             ),
@@ -5622,6 +5682,7 @@ def resolve_ordinary_round(
                 refresh_active_command_ids.discard(str(participant_id))
                 setmagicpet_active_command_ids.discard(str(participant_id))
                 battletimid_active_command_ids.discard(str(participant_id))
+                lighttakeed_active_command_ids.discard(str(participant_id))
                 combined_active_command_ids.discard(str(participant_id))
                 vary_active_command_ids.discard(str(participant_id))
             hp_by_slot[slot]=int(tick.hp_after)
@@ -8209,6 +8270,20 @@ def resolve_ordinary_round(
             )
         )
 
+        lighttakeed_submission=None
+        if (
+            str(participant_id) in lighttakeed_active_command_ids
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            lighttakeed_submission=lighttakeed_submissions[str(participant_id)]
+            if int(command.command1) != BATTLE_COM_ATTACK:
+                raise ValueError(
+                    "Lighttakeed semantic action lost ATTACK ordering carrier"
+                )
+
         battletimid_submission=None
         battletimid_draw=None
         if (
@@ -8267,6 +8342,24 @@ def resolve_ordinary_round(
                 ),
             )
             if dodge_roll <= dodge_probability:
+                lighttakeed_dodge_resolution=None
+                if lighttakeed_submission is not None:
+                    source_defender=by_slot[int(target)]
+                    source_defender_id=str(source_defender.participant_id)
+                    lighttakeed_dodge_resolution=resolve_lighttakeed_reaction(
+                        profile=str(lighttakeed_submission.profile),
+                        marker_kind=int(lighttakeed_submission.marker_kind),
+                        attacker_state=damage_react_state[str(participant_id)],
+                        defender_state=damage_react_state[source_defender_id],
+                        raw_damage=0,
+                        attacker_hp=int(hp_by_slot[slot]),
+                        attacker_max_hp=int(participant.max_hp),
+                        defender_hp=int(hp_by_slot[int(target)]),
+                        defender_max_hp=int(source_defender.max_hp),
+                        attacker_uses_throwing_weapon=counter_weapon_blocks_counter(
+                            attacker_profile.counter_weapon_type
+                        ),
+                    )
                 battletimid_resolution=(
                     None
                     if battletimid_submission is None
@@ -8293,6 +8386,17 @@ def resolve_ordinary_round(
                             None
                             if battletimid_submission is None
                             else int(battletimid_submission.skill_id)
+                        ),
+                        lighttakeed_resolution=lighttakeed_dodge_resolution,
+                        lighttakeed_skill_id=(
+                            None
+                            if lighttakeed_submission is None
+                            else int(lighttakeed_submission.skill_id)
+                        ),
+                        lighttakeed_profile=(
+                            None
+                            if lighttakeed_submission is None
+                            else str(lighttakeed_submission.profile)
                         ),
                     )
                 )
@@ -8619,6 +8723,7 @@ def resolve_ordinary_round(
             or battle_tear_submission is not None
             or guard_break2_submission is not None
             or battletimid_submission is not None
+            or lighttakeed_submission is not None
             or mdfyattack_submission is not None
         ):
             # Fixed specialized BATTLE_S_AttackDamage lets AttackSeq calculate
@@ -8643,18 +8748,42 @@ def resolve_ordinary_round(
                 reaction_defender,setup_effects
             )
 
-        reaction_resolution=resolve_base_damage_react(
-            damage_react_state[reaction_defender_id],
-            raw_damage=int(damage),
-            attacker_hp=int(hp_by_slot[slot]),
-            attacker_max_hp=int(participant.max_hp),
-            defender_hp=int(hp_by_slot[reaction_target_slot]),
-            defender_max_hp=int(reaction_defender.max_hp),
-            attacker_uses_throwing_weapon=counter_weapon_blocks_counter(
-                attacker_profile.counter_weapon_type
-            ),
-        )
-        damage_react_state[reaction_defender_id]=reaction_resolution.state_after
+        lighttakeed_resolution=None
+        if lighttakeed_submission is not None:
+            lighttakeed_resolution=resolve_lighttakeed_reaction(
+                profile=str(lighttakeed_submission.profile),
+                marker_kind=int(lighttakeed_submission.marker_kind),
+                attacker_state=damage_react_state[str(participant_id)],
+                defender_state=damage_react_state[reaction_defender_id],
+                raw_damage=int(damage),
+                attacker_hp=int(hp_by_slot[slot]),
+                attacker_max_hp=int(participant.max_hp),
+                defender_hp=int(hp_by_slot[reaction_target_slot]),
+                defender_max_hp=int(reaction_defender.max_hp),
+                attacker_uses_throwing_weapon=counter_weapon_blocks_counter(
+                    attacker_profile.counter_weapon_type
+                ),
+            )
+            reaction_resolution=lighttakeed_resolution.damage_react_resolution
+            damage_react_state[str(participant_id)]=(
+                lighttakeed_resolution.attacker_state_after
+            )
+            damage_react_state[reaction_defender_id]=(
+                lighttakeed_resolution.defender_state_after
+            )
+        else:
+            reaction_resolution=resolve_base_damage_react(
+                damage_react_state[reaction_defender_id],
+                raw_damage=int(damage),
+                attacker_hp=int(hp_by_slot[slot]),
+                attacker_max_hp=int(participant.max_hp),
+                defender_hp=int(hp_by_slot[reaction_target_slot]),
+                defender_max_hp=int(reaction_defender.max_hp),
+                attacker_uses_throwing_weapon=counter_weapon_blocks_counter(
+                    attacker_profile.counter_weapon_type
+                ),
+            )
+            damage_react_state[reaction_defender_id]=reaction_resolution.state_after
 
         ride_split=None
         ride_hp_resolution=None
@@ -9097,6 +9226,17 @@ def resolve_ordinary_round(
                     None
                     if battletimid_submission is None
                     else int(battletimid_submission.skill_id)
+                ),
+                lighttakeed_resolution=lighttakeed_resolution,
+                lighttakeed_skill_id=(
+                    None
+                    if lighttakeed_submission is None
+                    else int(lighttakeed_submission.skill_id)
+                ),
+                lighttakeed_profile=(
+                    None
+                    if lighttakeed_submission is None
+                    else str(lighttakeed_submission.profile)
                 ),
                 mdfyattack_skill_id=(None if mdfyattack_submission is None else mdfyattack_submission.skill_id),
                 mdfyattack_element=(None if mdfyattack_submission is None else mdfyattack_submission.option.element),
