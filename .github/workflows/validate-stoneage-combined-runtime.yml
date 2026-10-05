@@ -20,6 +20,7 @@ on:
       - "tests/test_stoneage_combined_effect_model.py"
       - "tests/test_stoneage_combined_runtime_state.py"
       - "tests/test_stoneage_combined_ordered_runtime.py"
+      - "tests/test_stoneage_local_runtime_session_coordinator.py"
 
 permissions:
   contents: read
@@ -39,4 +40,5 @@ jobs:
             tests.test_stoneage_combined_initiative_model \
             tests.test_stoneage_combined_effect_model \
             tests.test_stoneage_combined_runtime_state \
-            tests.test_stoneage_combined_ordered_runtime
+            tests.test_stoneage_combined_ordered_runtime \
+            tests.test_stoneage_local_runtime_session_coordinator.LocalRuntimeSessionCoordinatorTests.test_recovered_enemy_ai_combined_attreverse_executes_and_persists
