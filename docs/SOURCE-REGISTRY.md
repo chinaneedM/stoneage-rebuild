@@ -3316,3 +3316,13 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - **37265053597 PASS**: 36 unit tests; fixed three-source recovery; all 4800 actual-accessor/DirectUse/wrapper witnesses under ASan/UBSan; exact report reproduction.
 - **37265053470 PASS**: verified preservation bundle, 19 exact magic rows, eight positive selection choices and unknown/invalid/Nocast item-state checks.
 - Conditional direct-wrapper MP/return reference is now remotely accepted. Stubbed battle effects and explicit item-state witnesses remain declared limitations; ordered runtime and pressure closure remain OPEN.
+
+
+### SRC-COMBINED-ORDINARY-STATUS-MAGIC-BYTE-PARSERS-R1 — 2026-10-05
+
+- Fixed pins: gavin `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`, iris `9e6c8ce2cd8ed532a7157773acd1c61582c178b5`, Bismarck `999ffdf1d220ec6666eb65339180689c9caf1876`; clean sources stay outside the reconstruction repository.
+- Source model/audit: `tools/stoneage_combined_status_magic_model.py`, `tools/stoneage_combined_status_magic_source_audit.py`; boundary spec: `specs/STONEAGE-COMBINED-STATUS-MAGIC-REFERENCE-R1.md`. Source hashes, enum/table counts, marker identities and parser cursor/default behavior are checked. Only original parsers/labels are transiently compiled; downstream multi-effect calls are collector seams.
+- First actual-byte Action **37266411923 PASS** at `463cc02c2c2fa3087c39548c9c2517cf6de5cfd6`; report `7f50e1ae836485f2c46a5b2bc16e5a4cc2db9362`. Exact-matrix Action **37266742566 PASS** at `4c9974a1b569d08ac1d9b71d4d38c359fd0601c8`; report `93cada6a5de092018391a837c80cd1c55e1839c3`, tree `79de70c9cdb1cd3fad0d0e268660e04a173d1d52`. Both recover the verified bundle and exact magic table before actual-byte native witnesses.
+- Source-only 747 defined comparisons / 38 expected ASan/UBSan diagnostics; with real rows 765 / 62. **51 unit tests PASS**. Outcome matrix: 24 unsafe cells, 12 safe FALSE/no-effect cells, six defined iris CP950 dispatches.
+- iris CP950 accepted numeric outputs: ID61 wildcard status0; IDs139/159/169/179/189 status1/4/6/5/3, turn5, success offset15. No final chance, actor/target mutation or original build provenance follows from those parser values.
+- **CLOSED:** explicit conditional parser and exact 42-cell actual-data outcome reference. **OPEN:** initiative, target/effect RNG and mutation, MP item-pool witness, command/persistence ordering and earliest historical membership. Pressure/ordered runtime remains open.

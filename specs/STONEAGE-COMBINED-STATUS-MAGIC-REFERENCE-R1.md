@@ -1,8 +1,7 @@
 # Combined ordinary status-magic reference R1
 
-**Conditional parser reference and first-pass actual-byte audit PASS remotely.
-Second-pass exact outcome-matrix acceptance is pending. Combined ordered
-runtime remains OPEN.**
+**COMBINED_STATUS_MAGIC_REFERENCE_R1 = CLOSED_CONDITIONAL_BUILD_EXACT_OUTCOMES.**
+**Combined ordered runtime remains OPEN.**
 
 This follows the remotely accepted direct-wrapper MP boundary at
 `97fb9e5ca78a007f383024b7edc935fd997077e0` and the continuation checkpoint
@@ -94,6 +93,12 @@ All six real rows are unsafe in gavin UTF-8/GBK and iris UTF-8/GBK because
 their raw bytes do not match the admitted label prefixes before the short
 table is overrun. Bismarck UTF-8/GBK both safely reject all six without a
 match. These are incompatible conditional outcomes, not one original rule.
+
+Second-pass Action **37266742566 PASS** at input commit
+`4c9974a1b569d08ac1d9b71d4d38c359fd0601c8` validates all **51** Combined
+tests and all 42 independently pinned outcomes. Derived exact-matrix report
+commit: `93cada6a5de092018391a837c80cd1c55e1839c3`, tree
+`79de70c9cdb1cd3fad0d0e268660e04a173d1d52`.
 
 Native totals with real rows included are **765 defined comparisons** and
 **62 expected sanitizer diagnostics**. The accepted matrix is pinned

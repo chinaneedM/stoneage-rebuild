@@ -597,3 +597,8 @@ recovered binary enum. [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]
 ### 2026-10-05 — Combined direct-wrapper evidence remotely reproduced
 
 **FACT / LATER_RECOVERED:** At `97fb9e5ca78a007f383024b7edc935fd997077e0`, native boundary Action **37265053597 PASS** reproduces all 4800 witnesses and source/report hashes; verified bundle Action **37265053470 PASS** checks all 19 crosslinks and the eight positively selected magic choices with explicit item-state boundaries. This supersedes the previous entry's pending remote-verification status only. Live item-pool provenance, status parsers, effect mutation/persistence and original Taiwan-v1 membership remain **OPEN**.
+
+
+## 2026-10-05 — Combined actual status-magic parser results remain conditional
+
+**FACT / LATER_RECOVERED:** Verified source/data Actions **37266411923 / 37266742566 PASS** establish 42 explicit parser outcomes for magic 61/139/159/169/179/189. iris CP950 safely yields recovery wildcard 0 and status 1/4/6/5/3 with duration 5 and success input offset 15. gavin UTF-8/GBK and iris UTF-8/GBK overrun their short status-label tables; Bismarck UTF-8/GBK safely reject all six. All 42 classifications/values are independently pinned and native-compared without publishing raw parameters or source. **CLOSED:** conditional byte-parser reference. **OPEN:** original execution charset, target/effect mutation, live-item MP provenance, ordered persistence and Taiwan-v1 membership. No introduction date or whole-project completion is inferred.
