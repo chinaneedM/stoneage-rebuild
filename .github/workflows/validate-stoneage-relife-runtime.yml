@@ -36,4 +36,5 @@ jobs:
           python -m unittest -v \
             tests.test_stoneage_enemy_relife_model \
             tests.test_stoneage_enemy_ai_relife_bridge \
-            tests.test_stoneage_relife_ordered_runtime
+            tests.test_stoneage_relife_ordered_runtime \
+            tests.test_stoneage_relife_persistent_runtime
