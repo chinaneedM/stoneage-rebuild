@@ -107,6 +107,12 @@ def analyze_profile(name:str,root:Path):
         "callback_field6_is_stat_adjustment":
             'getStringFromIndexWithDelim(pszOption,"|",6,szData,sizeof(szData))'
             in callback,
+        "field6_uses_two_byte_fixed_offsets":
+            'szWord[3][3]={"攻","防","敏"}' in callback
+            and 'strstr(szData2,szWord[i])' in callback
+            and 'strstr(szData2,"%")' in callback
+            and 'sscanf(szData2+3,"%f",&fPer)' in callback
+            and 'sscanf(szData2+2,"%f",&fPer)' in callback,
         "all_stat_adjustments_start_from_attackpower":
             "iValue=CHAR_getWorkInt(charaindex,CHAR_WORKATTACKPOWER)" in callback
             and "CHAR_setWorkInt(charaindex,iAddPowerType[i],iValue)" in callback,
@@ -138,6 +144,13 @@ def analyze_profile(name:str,root:Path):
             in effect
             and "for(i=0;i<4;i++)" in effect
             and "iActionNumber[i]=atoi(szData2)" in effect,
+        "missing_field7_is_noaction":
+            'getStringFromIndexWithDelim(pszOption,"|",7,szData,sizeof(szData))==FALSE'
+            in effect
+            and "BATTLE_NoAction(battleindex,attackNo)" in effect,
+        "action_numbers_cycle_across_attack_objects":
+            "AAttackObject[i].actionNumber=iActionNumber[i1]" in effect
+            and "if(++i1>=iActionAmount)i1=0" in effect,
         "effect_rebuilds_living_opposing_side":
             "BATTLE_MultiList(battleindex,TARGET_SIDE_0,iToList)" in effect
             and "BATTLE_MultiList(battleindex,TARGET_SIDE_1,iToList)" in effect,
@@ -159,7 +172,10 @@ def analyze_profile(name:str,root:Path):
             and "iGuardian>=0" in attack,
         "damage_sub_is_marked_with_battlemodel_command":
             "CHAR_setWorkInt(iDefindex,CHAR_NPCWORKINT1,BATTLE_COM_S_BATTLE_MODEL)"
-            in attack,
+            in attack
+            and "CHAR_setWorkInt(iDefindex,CHAR_NPCWORKINT1,iTemp2)" in attack,
+        "nonphysical_path_disables_damage_reaction_redirect":
+            "else{iTemp=-1;iUltimate=BATTLE_DamageSub" in attack,
         "positive_damage_wakes_before_post_status":
             "BATTLE_DamageWakeUp(battleindex,iDefindex)" in attack
             and attack.find("BATTLE_DamageWakeUp")
@@ -179,9 +195,17 @@ def analyze_profile(name:str,root:Path):
             and "CHAR_WORKBATTLECOM1,BATTLE_COM_NONE" in attack,
         "critical_nonplayer_death_can_own_rand50_ultimate":
             "RAND(1,100)<50" in attack,
-        "damage_sub_has_battlemodel_reaction_special_cases":
-            damage.count("BATTLE_COM_S_BATTLE_MODEL")>=3
-            and "CHAR_WORKDAMAGEREFLEC" in damage,
+        "reflect_return_damage_is_suppressed_for_battlemodel":
+            "CHAR_WORKDAMAGEREFLEC" in damage
+            and "CHAR_getWorkInt(defindex,CHAR_NPCWORKINT1)==BATTLE_COM_S_BATTLE_MODEL"
+            in damage,
+        "trap_return_damage_is_suppressed_when_compiled":
+            "CHAR_WORKTRAP,0" in damage
+            and "CHAR_WORKMODTRAP,0" in damage
+            and "BATTLE_COM_S_BATTLE_MODEL" in damage,
+        "acupuncture_return_damage_is_suppressed_when_compiled":
+            "CHAR_getWorkInt(defindex,CHAR_NPCWORKINT1)!=BATTLE_COM_S_BATTLE_MODEL"
+            in damage,
     }
     if not all(guards.values()):
         raise ValueError(
@@ -221,6 +245,7 @@ def emit(rows):
     print("FACT|callback_OPTION_fields_1_2_drive_type_and_object_count")
     print("FACT|nonpositive_object_count_owns_callback_RAND_1_10_and_count_above10_clamps")
     print("FACT|field6_attack_defense_quick_writes_all_compute_from_current_attackpower_baseline")
+    print("FACT|field6_parser_uses_fixed_plus2_plus3_byte_offsets_for_two_byte_literals")
     print("FACT|dispatcher_calls_BATTLE_BattleModel_without_TargetAdjust")
     print("FACT|effect_OPTION_fields_3_4_5_drive_status_turn_hit_and_field7_drives_one_to_four_action_numbers")
     print("FACT|effect_rebuilds_living_opposing_side_and_reads_type_count_from_packed_COM2")
@@ -228,11 +253,14 @@ def emit(rows):
     print("FACT|type_bit0_extends_coverage_when_object_count_is_below_living_target_count")
     print("FACT|each_attack_object_rechecks_target_then_enters_AttackSeq_and_DamageSub")
     print("FACT|type_bit2_controls_physical_guardian_route")
+    print("FACT|nonphysical_path_passes_reaction_sentinel_minus1_to_DamageSub")
+    print("FACT|BattleModel_marker_suppresses_reflect_trap_acupuncture_return_damage_paths_when_present")
     print("FACT|status_application_requires_positive_damage_and_surviving_target")
     print("FACT|critical_nonplayer_death_can_consume_RAND_1_100_for_ultimate")
     print("FACT|DamageSub_has_BattleModel_specific_reaction_suppression_paths")
     print("BOUNDARY|descendant_numeric_command_is_not_original_build_identity")
-    print("BOUNDARY|recovered25_OPTION_semantics_are_not_accepted_until_exact_data_probe_closes")
+    print("BOUNDARY|recovered25_OPTION_semantics_require_explicit_two_byte_profile_cross_audit")
+    print("BOUNDARY|no_living_target_with_positive_object_count_reaches_source_RAND_0_minus1_hazard")
     print("RESOLUTION|BATTLEMODEL_FIXED_SOURCE_CLOSED_BOUNDED_REFERENCE")
 
 
