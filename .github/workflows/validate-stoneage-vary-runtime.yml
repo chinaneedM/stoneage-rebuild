@@ -17,6 +17,8 @@ on:
       - "tests/test_stoneage_vary_ordered_runtime.py"
       - "tools/stoneage_battle_state_model.py"
       - "tests/test_stoneage_vary_persistent_runtime.py"
+      - "tools/stoneage_local_runtime_session_coordinator.py"
+      - "tests/test_stoneage_local_runtime_session_coordinator.py"
 
 permissions:
   contents: read
@@ -36,4 +38,5 @@ jobs:
             tests.test_stoneage_vary_runtime_state \
             tests.test_stoneage_enemy_ai_vary_bridge \
             tests.test_stoneage_vary_ordered_runtime \
-            tests.test_stoneage_vary_persistent_runtime
+            tests.test_stoneage_vary_persistent_runtime \
+            tests.test_stoneage_local_runtime_session_coordinator.LocalRuntimeSessionCoordinatorTests.test_recovered_enemy_ai_vary_requires_profile_executes_and_blocks_recast
