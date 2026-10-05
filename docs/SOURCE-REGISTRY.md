@@ -3419,3 +3419,19 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - Verified Action37311978479 PASS at `57babd06d8e53faefe59bd47179a8d20d941ee7e`; report commit `126a1362a9d76ce821a883cf47da3a79c96e9ef0`. Derived report `research/recovered/STONEAGE-2BATTLETIMID-RECALL-LIFECYCLE-SOURCE-R1.txt` pins battle/event hashes,36 gates and boundaries.
 - Reproducer `tools/stoneage_2battletimid_executable_profile_probe.py`, report `research/recovered/STONEAGE-25-2BATTLETIMID-EXECUTABLE-PROFILE-R1.txt`: one273-byte ELF candidate, SHA-256 `22a786475540dd734e0b0dc1b21219e53aba1462de8be623270f71fa90c22365`; neither required symbol available. Bounded discriminator is inconclusive and does not select an original charset. Two discriminator tests PASS.
 - Modern source-tree audit contract: `specs/STONEAGE-2BATTLETIMID-RUNTIME-STATE-AUDIT-R1.md`. Explicit owner/default/NORETURN state and later death/return semantics are still to be implemented. Reference/native profile acceptance remains37309960471 PASS; runtime and pressure unchanged2457/2486=98.83%.
+
+
+### SRC-BECOMEFOX-PINNED-PREAUDIT-R1 — 2026-10-06
+
+- Type: three pinned fixed-descendant source structural checks,20 per profile.
+- Commits: gavinlinasd/StoneAge `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`;
+  iriselia/StoneAge `9e6c8ce2cd8ed532a7157773acd1c61582c178b5`;
+  BismarckDD/stoneage `999ffdf1d220ec6666eb65339180689c9caf1876`.
+- Source paths/hashes: derived
+  `research/recovered/STONEAGE-BECOMEFOX-PREAUDIT-R1.txt`.
+- Supports: callback/draw predicate structure; action/round/exit state sites;
+  explicit gavin/iris versus Bismarck PetIn FOXROUND accessor divergence;
+  fox-reset-before-NORETURN ordering.
+- Does not support: hash-verified recovered25 exact rows/placements, native
+  arithmetic/lifecycle equivalence, original build membership or runtime
+  admission. See `specs/STONEAGE-BECOMEFOX-PREAUDIT-R1.md`.

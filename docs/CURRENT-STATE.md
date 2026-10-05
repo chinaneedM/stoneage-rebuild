@@ -6416,3 +6416,32 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   **WORK mode** under DD-018; production-engine choice and redesigned-content
   discussion remain deferred.
 
+
+
+## Independent BecomeFox preparation during BattleModel runner queue — 2026-10-06
+
+- User explicitly authorized continuing independent work while remote
+  acceptance tasks queue. The primary BattleModel acceptance/runtime sequence
+  remains unchanged.
+- Side branch `agent/becomefox-preaudit-r1-20261006` starts at freshly verified
+  accepted main `d2b309c750049c1585543b4f76514cf8eca19826`, tree
+  `ff764e45470698514d728aa401e2ef17aba5c2ff`; it contains no pending
+  BattleModel implementation or reference branch changes.
+- Prepared the next pressure candidate `PETSKILL_BecomeFox` (positive ID625,
+  two uses/two templates). **Three pinned-source profiles pass20 structural
+  checks each,60 total**. This is textual preaudit, not native/runtime closure.
+- Recorded post-attack draw ownership before target-type/PETFLG/pig checks,
+  turn-difference>2 expiry, independent initiative/action-power sites, and
+  name-based skill presentation rather than owned-skill deletion.
+- PetIn has a material profile divergence: gavin/iris use integer accessors
+  for FOXROUND work state; Bismarck uses work accessors. Fox reset precedes
+  NORETURN in all three. Numeric/storage effects and blocked-recall
+  transformation changes require separate native/versioned acceptance.
+- Contract/report: `specs/STONEAGE-BECOMEFOX-PREAUDIT-R1.md` and
+  `research/recovered/STONEAGE-BECOMEFOX-PREAUDIT-R1.txt`. No runtime ID or
+  slot is promoted; accepted coverage remains2461/2486=98.99%.
+- **Primary unfinished task:** return to the freshly read BattleModel
+  reference branch and inspect runs37342593141,37342593073 and37344060042.
+  Complete bounded reference/state acceptance and main integration before
+  BattleModel runtime coding. This side branch is preparatory evidence only
+  and must not be fast-forwarded into main as a skill-runtime acceptance.
