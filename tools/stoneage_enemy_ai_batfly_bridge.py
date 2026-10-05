@@ -32,7 +32,7 @@ EXPECTED_OPTION_SHA256=(
     "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 )
 EXPECTED_POSITIVE_TEMPLATE_SLOTS={
-    1160:(101815,{0:633,3:633}),
+    1160:(101815,(300,1,1,30,100),{0:633,3:633}),
 }
 
 
@@ -156,12 +156,28 @@ def resolve_enemy_ai_batfly_submission(
     tempno=int(spawned.template.tempno)
     if tempno not in EXPECTED_POSITIVE_TEMPLATE_SLOTS:
         raise ValueError("BatFly actor outside exact positive template")
-    expected_graphic,allowed=EXPECTED_POSITIVE_TEMPLATE_SLOTS[tempno]
+    expected_graphic,expected_base,allowed=EXPECTED_POSITIVE_TEMPLATE_SLOTS[tempno]
     if int(spawned.template.graphic_id)!=expected_graphic:
         raise ValueError("BatFly recovered template graphic identity drift")
+    actual_base=(
+        int(spawned.template.base_vital),
+        int(spawned.template.base_strength),
+        int(spawned.template.base_toughness),
+        int(spawned.template.base_dexterity),
+        int(spawned.template.ai),
+    )
+    if actual_base != expected_base:
+        raise ValueError("BatFly recovered template base-stat/AI identity drift")
     slots=tuple(int(value) for value in spawned.template.skill_slot_ids)
     if len(slots)!=7:
         raise ValueError("enemy template lacks authoritative seven-slot pet-skill identity")
+    actual_positive={
+        index:value
+        for index,value in enumerate(slots)
+        if int(value)==633
+    }
+    if actual_positive != allowed:
+        raise ValueError("BatFly recovered positive slot population drift")
     if skill_slot not in allowed or slots[skill_slot] != allowed[skill_slot]:
         raise ValueError("selected slot is not an exact positive BatFly use")
 
