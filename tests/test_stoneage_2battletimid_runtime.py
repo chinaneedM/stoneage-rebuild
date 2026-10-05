@@ -271,6 +271,34 @@ class TwoBattleTimidRuntimeTests(unittest.TestCase):
             {str(x.participant_id) for x in active_participants(result.after)},
         )
 
+        follow=resolve_persistent_ordinary_round(
+            result.after,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet:0":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_WAIT),
+            },
+            initiative_random_subtracts={
+                "player":0,"pet:0":0,"enemy":0,
+            },
+            profiles={
+                "player":profile(),
+                "pet:0":profile(),
+                "enemy":profile(),
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+        )
+        self.assertEqual(follow.after.default_pet_slot,0)
+        self.assertNotIn(
+            "pet:0",
+            follow.after.battle_exited_participant_ids,
+        )
+        self.assertIn(
+            "pet:0",
+            {str(x.participant_id) for x in active_participants(follow.after)},
+        )
+
     def test_utf8_profile_keeps_powers_and_has_zero_recall_chance(self):
         state=self.make_state(noreturn=False)
         sub=submission(profile_name=PROFILE_UTF8)
