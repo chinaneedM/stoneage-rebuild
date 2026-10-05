@@ -47,6 +47,19 @@ class CombinedMagicCrosslinkTests(unittest.TestCase):
         self.assertEqual(result["missing"],())
         self.assertEqual(len(result["rows"]),19)
 
+    def test_positive_recovery21_derives_power_without_storing_raw_option(self):
+        rows=parsed_rows()
+        index=EXPECTED_MAGIC_IDS.index(21)
+        fields,values=rows[index]
+        rows[index]=([
+            *fields[:2],b"MAGIC_Recovery",b"100",*fields[4:]
+        ],values)
+        result=analyze_parsed_rows(
+            rows,0,expected_exact_rows=None
+        )
+        self.assertEqual(result["recovery21_derived"],(100,False))
+        self.assertTrue(result["recovery21_derived_closed"])
+
     def test_missing_magic_id_stays_open(self):
         result=analyze_parsed_rows(
             parsed_rows(EXPECTED_MAGIC_IDS[:-1]),
