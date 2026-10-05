@@ -78,12 +78,20 @@ event order while preserving the exact **target set and state transform**.
 Such order must be labeled modern deterministic presentation, not recovered
 original protocol order.
 
-## No RNG contract
+## RNG ownership contract
 
-BatFly's admitted side-target path owns no RNG. Runtime must reject any API
-that requires or consumes a BatFly-specific random draw. The unrelated
-single-target retarget branch in source `BATTLE_MultiList` is not reachable
-for this side-target effect.
+BatFly callback and whole-side HP effect own no RNG, but the dispatcher-level
+`BATTLE_TargetAdjust` gate can own one draw before the effect:
+
+- live submitted COM2: **0 draws** and any supplied retarget draw is rejected;
+- dead/invalid submitted COM2 with N>0 living opposing entries: exactly **one
+  explicit 0..N-1 DefaultAttacker draw** is required;
+- no living opposing entries: **0 draws**, no-action, and any supplied draw is
+  rejected.
+
+The unrelated single-target `BATTLE_MultiList` retarget RNG is still not
+reachable from BatFly's whole-side selector. Runtime must expose only the
+conditional TargetAdjust draw above and must not fabricate a PRNG stream.
 
 ## Runtime implementation requirements
 
@@ -101,7 +109,8 @@ The runtime branch must:
 7. update `RidePetRuntime` to unmounted+PETFALL when its HP reaches zero;
 8. heal the BatFly actor by total drain, preserving the overflow
    reported-heal-zero quirk;
-9. consume no BatFly RNG;
+9. preserve exact conditional TargetAdjust draw ownership and consume no RNG
+   in the whole-side effect itself;
 10. preserve standard persistent battle termination and standard ride-pet
     battle-exit projection;
 11. preserve the now-core active-pet/ride-pet identity-overlap rejection;
