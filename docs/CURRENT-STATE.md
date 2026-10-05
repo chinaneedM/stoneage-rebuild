@@ -6951,3 +6951,21 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   prepared command cancellation, persistent/coordinator propagation, ultimate
   exit, golden/full-region and verified pressure before closing638's slots.
   DD-018 restoration-first remains in force.
+
+
+### Physical main synchronization verified and replay checkpoint — 2026-10-06
+
+- Nonforce synchronization completed. Fresh main and physical implementation
+  branch both87799e516f2bbd63174d677518dae2ad4fc8b251,
+  tree7e97cc02e8d09199da0b33f2c01bfba7699382a7. Remote/local tree equality,
+  clean checkout and ancestry verified. Differences from successful exact
+  physical inputce4c7a16 are docs/derived acceptance receipt only.
+- Fresh same-code main replay37359971984 QUEUED; physical branch docs-only
+  replay37359969828 QUEUED at this checkpoint. Required original physical
+  acceptance37359587030 remains SUCCESS. Do not claim the new replays have
+  passed until freshly inspecting them. This checkpoint is docs-only/skip-ci.
+- **Next priority:** inspect these replays and current remote refs, then continue
+  isolated ItemCrush equipment-free RNG/native chronology work from latest
+  main. Physical bounded acceptance is complete; no need to reconstruct prior
+  progress from chat. All full BattleModel runtime/pressure/slot boundaries
+  above remain OPEN.
