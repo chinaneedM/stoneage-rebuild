@@ -25,6 +25,31 @@ CHARSETS={PROFILE_BIG5:"big5",PROFILE_UTF8:"utf-8"}
 TYPE_COVER_ALL_BIT=0x00000001
 TYPE_PHYSICAL_BIT=0x00000004
 
+BASE_STATUS_LITERAL_BY_INDEX={
+    1:"毒",
+    2:"麻",
+    3:"眠",
+    4:"石",
+    5:"醉",
+    6:"乱",
+    7:"虚",
+    8:"剧",
+    9:"障",
+    10:"默",
+}
+BASE_STATUS_KIND_BY_INDEX={
+    1:"poison",
+    2:"paralysis",
+    3:"sleep",
+    4:"stone",
+    5:"drunk",
+    6:"confusion",
+    7:"weaken",
+    8:"deep_poison",
+    9:"barrier",
+    10:"nocast",
+}
+
 
 def _i32(value:int,name:str="value")->int:
     if type(value) is not int or not -(2**31) <= value < 2**31:
@@ -80,6 +105,9 @@ class BattleModelOptionShape:
     configured_object_count:int
     status_token_bytes:int
     status_token_sha256:str
+    status_index:int|None
+    status_kind:str|None
+    status_known:bool
     turn_value:int|None
     hit_value:int|None
     action_numbers:tuple[int,...]
@@ -88,7 +116,28 @@ class BattleModelOptionShape:
     field7_present:bool
 
 
-def inspect_battlemodel_option(raw:bytes)->BattleModelOptionShape:
+def _classify_base_status_token(raw:bytes,profile:str)->tuple[int|None,str|None,bool]:
+    """Mirror BattleModel's first-two-byte aszStatus lookup for base statuses.
+
+    The stable descendants compare two bytes beginning at status index 1.
+    Empty tokens mean no effect.  Unknown nonempty tokens are deliberately not
+    guessed; later profession/SARS extensions stay outside this bounded base
+    classifier until independently pinned.
+    """
+    if profile not in CHARSETS:
+        raise ValueError("explicit BattleModel literal charset profile required")
+    if not raw:
+        return None,None,True
+    for index,literal in BASE_STATUS_LITERAL_BY_INDEX.items():
+        encoded=literal.encode(CHARSETS[profile])
+        if raw[:2]==encoded[:2]:
+            return index,BASE_STATUS_KIND_BY_INDEX[index],True
+    return None,None,False
+
+
+def inspect_battlemodel_option(
+    raw:bytes,*,profile:str=PROFILE_BIG5
+)->BattleModelOptionShape:
     """Return derived-only OPTION structure without retaining textual payload."""
     raw=_raw_option(raw)
     f1=_field(raw,1)
@@ -96,6 +145,9 @@ def inspect_battlemodel_option(raw:bytes)->BattleModelOptionShape:
     if f1 is None or f2 is None:
         raise ValueError("BattleModel OPTION requires fields 1 and 2")
     f3=_field(raw,3) or b""
+    status_index,status_kind,status_known=_classify_base_status_token(
+        f3,profile
+    )
     f4=_field(raw,4)
     f5=_field(raw,5)
     f6=_field(raw,6) or b""
@@ -109,6 +161,9 @@ def inspect_battlemodel_option(raw:bytes)->BattleModelOptionShape:
         configured_object_count=_c_atoi(f2),
         status_token_bytes=len(f3),
         status_token_sha256=hashlib.sha256(f3).hexdigest(),
+        status_index=status_index,
+        status_kind=status_kind,
+        status_known=status_known,
         turn_value=None if f4 is None else _c_atoi(f4),
         hit_value=None if f5 is None else _c_atoi(f5),
         action_numbers=actions,
