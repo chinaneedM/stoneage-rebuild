@@ -1524,26 +1524,6 @@ def resolve_persistent_ordinary_round(
             "BattleTimid submissions reference inactive actors: "
             f"{unknown_battletimid_ids}"
         )
-    for pid,vary in working_vary.runtime_by_participant_id.items():
-        if pid not in living_ids:
-            continue
-        existing=effective_setup_effects.get(
-            pid,BattleCommandSetupEffects()
-        )
-        if (
-            existing.attack_power is not None
-            and int(existing.attack_power)!=int(vary.attack_power)
-        ) or (
-            existing.defense_power is not None
-            and int(existing.defense_power)!=int(vary.defense_power)
-        ):
-            raise ValueError("Vary callback setup overlaps another power write")
-        effective_setup_effects[pid]=replace(
-            existing,
-            attack_power=int(vary.attack_power),
-            defense_power=int(vary.defense_power),
-        )
-
     for pid,submission in battletimid_submissions.items():
         if not isinstance(submission,EnemyAiBattleTimidSubmission):
             raise TypeError("BattleTimid submission has wrong type")
@@ -1788,6 +1768,26 @@ def resolve_persistent_ordinary_round(
         )
         if pid in living_ids
     })
+    for pid,vary in working_vary.runtime_by_participant_id.items():
+        if pid not in living_ids:
+            continue
+        existing=effective_setup_effects.get(
+            pid,BattleCommandSetupEffects()
+        )
+        if (
+            existing.attack_power is not None
+            and int(existing.attack_power)!=int(vary.attack_power)
+        ) or (
+            existing.defense_power is not None
+            and int(existing.defense_power)!=int(vary.defense_power)
+        ):
+            raise ValueError("Vary callback setup overlaps another power write")
+        effective_setup_effects[pid]=replace(
+            existing,
+            attack_power=int(vary.attack_power),
+            defense_power=int(vary.defense_power),
+        )
+
     for pid,submission in battletimid_submissions.items():
         existing=effective_setup_effects.get(
             pid,BattleCommandSetupEffects()
