@@ -1901,6 +1901,7 @@ class LocalRuntimeSessionCoordinator:
         context: LocalRuntimeBattleContext,
         *,
         slots: Mapping[str, int],
+        pet_noreturn_by_participant_id: Mapping[str,bool] | None = None,
         attack_magic_overlay: AttackMagicRoundOverlay | None = None,
         nocast_overlay: NocastRoundOverlay | None = None,
         setmagicpet_overlay: SetMagicPetRoundOverlay | None = None,
@@ -1910,9 +1911,19 @@ class LocalRuntimeSessionCoordinator:
 
         if context.persistent_battle_state is not None:
             raise ValueError("battle context already has persistent state")
+        persistent=decode_persistent_state(
+            self._battle_working_persistent_payload(context)
+        )
+        default_pet_slot=(
+            None
+            if persistent.default_pet_slot is None
+            else int(persistent.default_pet_slot.value)
+        )
         state = begin_persistent_battle(
             context.battle,
             slots={str(key): int(value) for key, value in slots.items()},
+            default_pet_slot=default_pet_slot,
+            pet_noreturn_by_participant_id=pet_noreturn_by_participant_id,
             nocast_overlay=nocast_overlay,
             setmagicpet_overlay=setmagicpet_overlay,
             combined_overlay=combined_overlay,
