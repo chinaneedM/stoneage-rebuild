@@ -170,11 +170,13 @@ def analyze_profile(name,root,actual_options=()):
     active=set(re.findall(r'^#define\s+(\w+)',macros,re.M))
     enums=_enum_values([COMMAND_NAME,'BATTLE_CHARMODE_C_OK','PETSKILL_TARGET_WITHOUTMYSELFANDPET'],includes)
     callback=_compact(_strip(_definition(data['pet'],CALLBACK_NAME))).replace('char_index','charaindex')
-    damage=_compact(_strip(_definition(data['event'],'BATTLE_S_AttackDamage'))).replace('char_index','charaindex')
+    # Mutually exclusive preprocessor branches have unbalanced raw braces.
+    # Use the existing next-top-level-definition boundary for semantic gates.
+    damage=_compact(_strip(_definition(data['event'],'BATTLE_S_AttackDamage',raw_window=True))).replace('char_index','charaindex')
     event_case=_compact(_strip(_case_block(data['event'][data['event'].find('case '+COMMAND_NAME+':'):],'case '+COMMAND_NAME+':')))
     recall=_compact(_strip(_definition(data['event'],'BATTLE_PetIn'))).replace('char_index','charaindex')
     start=data['battle'].find('case '+COMMAND_NAME+':');dispatch=_compact(data['battle'][start:].split('#endif',1)[0])
-    target=_compact(_strip(_definition(data['battle'],'BATTLE_TargetListSet')))
+    target=_compact(_strip(_definition(data['battle'],'BATTLE_TargetListSet',raw_window=True)))
     guards={
         'target7_symbol_verified':enums['PETSKILL_TARGET_WITHOUTMYSELFANDPET']==7,
         'feature_active':FEATURE_NAME in active,
