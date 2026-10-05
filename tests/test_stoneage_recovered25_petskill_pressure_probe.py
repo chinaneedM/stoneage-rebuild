@@ -199,11 +199,13 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
         self.assertIsNone(result["next_open"])
 
-    def test_relife_closure_advances_to_lighttakeed_without_closing_neighbors(self):
+    def test_lighttakeed_closure_advances_without_closing_neighbors(self):
         pets=SimpleNamespace(skills={
             600:SimpleNamespace(function_name="PETSKILL_Vary"),
             500:SimpleNamespace(function_name="ENEMYSKILL_ReLife"),
+            609:SimpleNamespace(function_name="PETSKILL_Lighttakeed"),
             610:SimpleNamespace(function_name="PETSKILL_Lighttakeed"),
+            611:SimpleNamespace(function_name="PETSKILL_Lighttakeed"),
             636:SimpleNamespace(function_name="PETSKILL_2BattleTimid"),
             200:SimpleNamespace(function_name="PETSKILL_Merge"),
         })
@@ -212,7 +214,7 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
                 skill_slot_ids=(600,600,500,610,636,200,0)
             ),
             11:SimpleNamespace(
-                skill_slot_ids=(600,600,500,500,610,0,0)
+                skill_slot_ids=(600,600,500,500,610,611,0)
             ),
         })
         result=analyze_runtime_objects(pets,enemies)
@@ -223,12 +225,14 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
             rows["ENEMYSKILL_ReLife"]["status"],
             "closed_runtime",
         )
-        self.assertEqual(rows["PETSKILL_Lighttakeed"]["status"],"open")
+        self.assertEqual(rows["PETSKILL_Lighttakeed"]["status"],"closed_runtime")
+        self.assertEqual(rows["PETSKILL_Lighttakeed"]["slot_uses"],3)
+        self.assertEqual(rows["PETSKILL_Lighttakeed"]["skill_ids"],(610,611))
         self.assertEqual(rows["PETSKILL_2BattleTimid"]["status"],"open")
         self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
         self.assertEqual(
             result["next_open"]["callback"],
-            "PETSKILL_Lighttakeed",
+            "PETSKILL_2BattleTimid",
         )
 
     def test_weaken_closure_advances_only_the_exact_callback(self):
