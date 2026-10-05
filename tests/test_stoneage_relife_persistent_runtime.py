@@ -203,6 +203,21 @@ class ReLifePersistentRuntimeTests(unittest.TestCase):
             {"player","enemy:caster","enemy:victim"},
         )
 
+    def test_revivable_state_rejects_player_side_entries(self):
+        state=self.initial_state()
+        from dataclasses import replace
+        with self.assertRaisesRegex(
+            ValueError,"must be enemy-side"
+        ):
+            replace(
+                state,
+                hp_by_participant_id={
+                    **dict(state.hp_by_participant_id),
+                    "player":0,
+                },
+                revivable_dead_participant_ids=("player",),
+            )
+
     def test_revivable_state_rejects_ultimate_or_exit_overlap(self):
         state=self.initial_state()
         from dataclasses import replace
