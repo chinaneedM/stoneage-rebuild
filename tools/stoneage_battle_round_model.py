@@ -6909,6 +6909,10 @@ def resolve_ordinary_round(
                     )
                     if status_change_effect.command_cleared:
                         combined_cleared_command_ids.add(defender_id)
+                        command_by_slot[target_slot]=BattleCommand(
+                            BATTLE_COM_NONE
+                        )
+                        guarding.discard(target_slot)
                     result_name=(
                         "combined_status_change_applied"
                         if status_change_effect.status_after
