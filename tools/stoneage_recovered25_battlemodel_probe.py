@@ -9,6 +9,7 @@ from tools.stoneage_recovered25_petskill_runtime import (
 from tools.stoneage_recovered25_enemybase_runtime import (
     load_recovered25_enemybase_runtime,
 )
+from tools.stoneage_battlemodel_reference_model import inspect_battlemodel_option
 
 CALLBACK_NAME="PETSKILL_BattleModel"
 EXPECTED_PETSKILL_SHA256=(
@@ -89,6 +90,7 @@ def analyze_runtime_objects(
             codec_agrees=(cp950==big5)
         except UnicodeError:
             codec_agrees=False
+        shape=inspect_battlemodel_option(raw)
         rows.append({
             "id":int(entry.skill_id),
             "field":int(entry.field),
@@ -101,6 +103,15 @@ def analyze_runtime_objects(
             "option_contains_nul":b"\0" in raw,
             "option_ascii":raw.isascii(),
             "cp950_big5_agrees":codec_agrees,
+            "option_type":shape.type_value,
+            "option_configured_objects":shape.configured_object_count,
+            "status_token_bytes":shape.status_token_bytes,
+            "status_token_sha256":shape.status_token_sha256,
+            "turn_value":shape.turn_value,
+            "hit_value":shape.hit_value,
+            "field6_bytes":shape.field6_bytes,
+            "field6_sha256":shape.field6_sha256,
+            "action_numbers":shape.action_numbers,
         })
 
     callback_ids=tuple(row["id"] for row in rows)
@@ -160,7 +171,7 @@ def emit(result):
         print(
             "BATTLEMODEL_ROW|"
             +"|".join(
-                f"{key}={int(value) if isinstance(value,bool) else value}"
+                f"{key}={int(value) if isinstance(value,bool) else (','.join(map(str,value)) if isinstance(value,tuple) else value)}"
                 for key,value in row.items()
             )
         )
