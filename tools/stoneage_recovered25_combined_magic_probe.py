@@ -99,7 +99,7 @@ def analyze_parsed_rows(
             except UnicodeDecodeError as exc:
                 raise ValueError("positive Recovery 21 OPTION is not ASCII") from exc
             import re
-            match=re.match(r"\\s*([+-]?\\d+)",option_text)
+            match=re.match(r"\s*([+-]?\d+)",option_text)
             recovery21_derived=(
                 int(match.group(1),10) if match else 0,
                 "%" in option_text,
