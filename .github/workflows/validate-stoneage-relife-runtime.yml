@@ -18,6 +18,7 @@ on:
       - "tools/stoneage_local_runtime_session_coordinator.py"
       - "tests/test_stoneage_relife_ordered_runtime.py"
       - "tests/test_stoneage_relife_persistent_runtime.py"
+      - "tests/test_stoneage_local_runtime_session_coordinator.py"
 
 permissions:
   contents: read
@@ -37,4 +38,5 @@ jobs:
             tests.test_stoneage_enemy_relife_model \
             tests.test_stoneage_enemy_ai_relife_bridge \
             tests.test_stoneage_relife_ordered_runtime \
-            tests.test_stoneage_relife_persistent_runtime
+            tests.test_stoneage_relife_persistent_runtime \
+            tests.test_stoneage_local_runtime_session_coordinator.LocalRuntimeSessionCoordinatorTests.test_recovered_enemy_ai_relife_revives_retained_dead_entry
