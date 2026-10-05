@@ -99,7 +99,8 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         row=rows["PETSKILL_Modifyattack"]
         self.assertEqual((row["status"],row["skill_ids"],row["slot_uses"]),("closed_runtime",(544,545,546),3))
         self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
-        self.assertEqual(result["next_open"]["callback"],"PETSKILL_2BattleTimid")
+        self.assertEqual(rows["PETSKILL_2BattleTimid"]["status"],"closed_runtime")
+        self.assertIsNone(result["next_open"])
 
     def test_refresh_closure_advances_only_the_exact_callback(self):
         pets=SimpleNamespace(skills={
@@ -163,7 +164,7 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         )
         self.assertIsNone(result["next_open"])
 
-    def test_battletimid_closure_does_not_close_2battletimid(self):
+    def test_2battletimid_closure_is_independent_from_battletimid(self):
         pets=SimpleNamespace(skills={
             606:SimpleNamespace(function_name="PETSKILL_BattleTimid"),
             636:SimpleNamespace(function_name="PETSKILL_2BattleTimid"),
@@ -181,13 +182,10 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
             rows["PETSKILL_BattleTimid"]["status"],
             "closed_runtime",
         )
-        self.assertEqual(rows["PETSKILL_2BattleTimid"]["status"],"open")
+        self.assertEqual(rows["PETSKILL_2BattleTimid"]["status"],"closed_runtime")
         self.assertEqual(rows["PETSKILL_Combined"]["status"],"closed_runtime")
         self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
-        self.assertEqual(
-            result["next_open"]["callback"],
-            "PETSKILL_2BattleTimid",
-        )
+        self.assertIsNone(result["next_open"])
 
     def test_combined_closure_advances_to_highest_remaining_open(self):
         pets=SimpleNamespace(skills={
@@ -249,12 +247,12 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         self.assertEqual(rows["PETSKILL_Lighttakeed"]["status"],"closed_runtime")
         self.assertEqual(rows["PETSKILL_Lighttakeed"]["slot_uses"],3)
         self.assertEqual(rows["PETSKILL_Lighttakeed"]["skill_ids"],(610,611))
-        self.assertEqual(rows["PETSKILL_2BattleTimid"]["status"],"open")
-        self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
         self.assertEqual(
-            result["next_open"]["callback"],
-            "PETSKILL_2BattleTimid",
+            rows["PETSKILL_2BattleTimid"]["status"],
+            "closed_runtime",
         )
+        self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
+        self.assertIsNone(result["next_open"])
 
     def test_weaken_closure_advances_only_the_exact_callback(self):
         pets=SimpleNamespace(skills={
