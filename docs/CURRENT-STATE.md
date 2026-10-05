@@ -6067,3 +6067,15 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Reference spec: `specs/STONEAGE-VARY-REFERENCE-R1.md`. Reports: `research/recovered/STONEAGE-VARY-SOURCE-AUDIT-R1.txt` and `research/recovered/STONEAGE-25-VARY-PROBE-R1.txt`.
 - **VARY_REFERENCE_R1 = CLOSED_BOUNDED_RECOVERED25_REFERENCE.** Pressure remains **2444/2486 = 98.31%**; no Vary positive slot is yet counted executable.
 - **Highest-priority unfinished task:** fast-forward this accepted Vary reference branch into freshly re-read `main`, then create a fresh Vary runtime branch. Before coding ordered execution, attempt one bounded recovered-executable/profile discriminator for the defense/animation divergence. If no authoritative discriminator is available, implement explicit `gavin_iris_attack_quick` versus `bismarck_attack_defense_quick` conditional profiles, preserving six-action lifetime, recast block, TARGET_NONE semantics and visual-only effect ownership. Continue **WORK mode** under DD-018.
+
+## Phase 1 PETSKILL_Vary runtime closure / ReLife handoff — 2026-10-05
+
+- Exact recovered25 `PETSKILL_Vary` ID **600** is now accepted through reference, ordered execution, persistence and coordinator integration for its **4 positive slot uses / 4 templates**.
+- Executable discriminator **37282101502 PASS** was inconclusive: the verified server tree exposed no `PETSKILL_Vary` symbol carrier. Runtime therefore keeps explicit `gavin_iris_attack_quick` and `bismarck_attack_defense_quick` profiles; no recovered-original default is inferred.
+- Same-round callback QUICK feeds the ordinary sorter. Vary itself is semantic/visual-only, does not become a physical ATTACK, persists for **six actor actions including the cast**, blocks recast while active, and restores profile-owned powers on expiry.
+- Final acceptance is green: Vary **37286463853 PASS**; coordinator **37286420982 PASS**; golden **37286013147 PASS**; full-region **37286420991 PASS**; verified pressure **37286756850 PASS**.
+- Verified pressure now reports **2486 total positive uses / 0 unresolved IDs**, Vary = `closed_runtime`, accepted executable coverage **2448/2486 = 98.47%**.
+- Boundary spec: `specs/STONEAGE-VARY-RUNTIME-R1.md`. **RECOVERED25_VARY_ORDERED_RUNTIME_R1 = CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME.**
+- Next OPEN is mechanically selected as **ENEMYSKILL_ReLife / ID 500 / 3 positive slot uses / 3 templates**.
+- **Highest-priority unfinished task:** integrate this accepted runtime branch into freshly verified `main`, then create `agent/relife-reference-r1-20261005` from that exact main commit and begin bounded ReLife reference recovery. Continue **WORK mode** under DD-018.
+
