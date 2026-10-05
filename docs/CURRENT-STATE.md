@@ -6345,3 +6345,74 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   after dedicated/coordinator/golden/full-region runtime gates pass. Continue
   **WORK mode** under DD-018; production-engine choice and redesigned content
   remain deferred.
+
+## Phase 1 PETSKILL_BatFly ordered runtime closure — 2026-10-05
+
+- Fresh runtime branch `agent/batfly-runtime-r1-20261005` was created from
+  exact accepted main `64a5eb49f37be9bea02a30a791d452730dafee03`, tree
+  `e0fb9110f4e35d420658a88ae12b0a2204fcf925`, after the BatFly reference
+  and runtime-state audit were fast-forwarded into main.
+- Exact typed admission is limited to recovered25 **ID633**, FIELD1 / TARGET3 /
+  COST2 / ILLEGAL5000, empty OPTION SHA-256
+  `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`.
+  Positive use is only **TEMPNO1160 / graphic101815 / source slot1 or slot4**,
+  with exact base V/S/T/D 300/1/1/30 and AI100. Complete seven-slot identity is
+  checked. Neighboring 101813/101814 Ler behavior is not imported.
+- `ATTACK` is only the modern scheduling carrier. BatFly executes as a
+  dedicated whole-side semantic action outside ordinary physical
+  dodge/critical/counter/combo/damage RNG.
+- Dispatcher TargetAdjust ownership is exact and conditional: live COM2 uses no
+  draw; a dead/invalid COM2 with living player-side candidates owns exactly one
+  explicit reduced DefaultAttacker draw; no candidates is no-action with no
+  draw. The whole-side effect owns no additional RNG.
+- Runtime rebuilds the complete living player side at action time. Ordinary
+  entries lose floor(current HP/10), minimum1. A player with a live mounted
+  ride pet instead loses floor(player HP/20), minimum1, while the separate ride
+  pet loses floor(ride HP/20), minimum1. Allied battle-pet entries remain on
+  the 10% branch and the non-entry ride pet cannot be double-enumerated.
+- Ride-pet zero HP is preserved battle-locally, clears mounted state and sets
+  PETFALL. Existing terminal settlement remains authoritative for persistent
+  roster projection.
+- One HP-transition event is emitted per affected active battle entry so
+  existing normal death/loyalty/termination projection remains authoritative.
+  The BatFly actor heals once by the summed drain. If the uncapped heal would
+  exceed max HP, actual HP caps normally while the preserved reported-heal
+  value is reset to **0**.
+- Production/runtime chain starts at
+  `12cf7594376ee5ec2e4c54a46efa493154b0a3bc`; exact-template regression
+  reaches `c1c9e8827ea08519f9ad79659ea204eb00b5c20b`, tree
+  `25011d84cbd28466a4c9eaab687fe05d91fb1c27`.
+- Dedicated BatFly gate **37334364213 PASS (15 tests)**; later workflow-contract
+  rerun **37334947862 PASS**. Full coordinator **37334363921 PASS**.
+  Representative adjacent runtime gates all pass on the runtime head, including
+  2BattleTimid **37334364243**, AttackMagic coordinator **37334364476**,
+  FallGround **37334364164**, MpDamage **37334364259**, Combined
+  **37334364440**, BattleTimid **37334364077** and Modifyattack
+  **37334364521**.
+- Runtime golden contract **37334626700 PASS**. Full recovered25
+  region/runtime stack **37334364405 PASS**, including deterministic
+  region/runtime tests, verified preservation recovery, materializable maps,
+  concrete runtime stack, AttackMagic cross-links, server collision
+  audit/provider and client ADRN collision audit.
+- Hash-verified pressure **37334620980 PASS**; report write-back
+  `59ece605d56e16f700361f8cb23edac9ff2e7f5b`, tree
+  `a902b99c95665a5777ea752838dfb1ec41479e35`. ID633 is now
+  `closed_runtime`; unresolved positive skill IDs remain0.
+- Accepted executable positive enemy pet-skill slot coverage advances
+  **2459/2486 (98.91%) -> 2461/2486 (98.99%)**. This remains a recovered25
+  positive enemy skill-slot metric, not whole-project restoration completion.
+- Runtime boundary: `specs/STONEAGE-BATFLY-RUNTIME-R1.md`.
+  **RECOVERED25_BATFLY_ORDERED_RUNTIME_R1 =
+  CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME.**
+- Pressure mechanically selects the next OPEN family as
+  **`PETSKILL_BattleModel` / ID638 / 2 uses / 2 templates**.
+- **Highest-priority unfinished task:** freshly verify remote `main` is still
+  the exact ancestor of this accepted BatFly runtime branch. If so, non-force
+  fast-forward the accepted runtime/spec/pressure/current-state into `main`,
+  verify main Actions, then create a fresh bounded
+  `PETSKILL_BattleModel` reference branch from that exact main. Recover the
+  complete callback population, exact metadata/OPTION identity and all positive
+  template/graphic/slot placements before any runtime coding. Continue
+  **WORK mode** under DD-018; production-engine choice and redesigned-content
+  discussion remain deferred.
+
