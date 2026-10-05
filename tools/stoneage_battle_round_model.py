@@ -67,6 +67,7 @@ from tools.stoneage_combined_runtime_state import (
     CombinedActionRolls,
     CombinedRuntimeOverlay,
 )
+from tools.stoneage_combined_status_magic_model import EXPECTED_IRIS_CP950_STATUS
 from tools.stoneage_guard_break2_model import (
     GuardBreak2DamageResolution,
     resolve_guard_break2_damage_step,
@@ -4564,6 +4565,7 @@ def resolve_ordinary_round(
     combined_working=combined_overlay
     attempted_combined_actor_ids=set()
     combined_active_command_ids=set(combined_actor_ids)
+    combined_cleared_command_ids=set()
 
     # The scheduling carrier cannot confer native ATTACK counter eligibility.
     # Confusion later removes a rewritten actor from this symbolic-command set.
@@ -5328,6 +5330,15 @@ def resolve_ordinary_round(
             continue
 
         command=entry.command
+        if str(participant_id) in combined_cleared_command_ids:
+            command=BattleCommand(
+                BATTLE_COM_NONE,
+                command2=entry.command.command2,
+                command3=entry.command.command3,
+                input_complete=entry.command.input_complete,
+            )
+            guarding.discard(slot)
+            combined_active_command_ids.discard(str(participant_id))
         late_runtime=(
             None
             if nocast_working is None
