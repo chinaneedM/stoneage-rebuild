@@ -85,6 +85,7 @@ def make_state():
         ),
     )
     state.pets[pet.slot] = pet
+    state.default_pet_slot = PetSlot(2)
     return state
 
 
@@ -92,7 +93,10 @@ class SinglePlayerPersistenceTests(unittest.TestCase):
     def test_roundtrip_persists_only_player_owned_state(self):
         state = make_state()
         payload = dump_persistent_state(state)
-        self.assertEqual(set(payload), {"schema", "character", "inventory", "pets"})
+        self.assertEqual(
+            set(payload),
+            {"schema", "character", "inventory", "pets", "default_pet_slot"},
+        )
         self.assertEqual(payload["schema"], PERSISTENCE_SCHEMA)
         self.assertNotIn("runtime_object_id", payload["pets"][0])
 
@@ -112,6 +116,7 @@ class SinglePlayerPersistenceTests(unittest.TestCase):
         self.assertEqual(restored_pet.growth.alloc_point, 0x12131516)
         self.assertEqual(restored_pet.growth.internal_dexterity, 2200)
         self.assertEqual(restored_pet.growth.variable_ai, 500)
+        self.assertEqual(restored.default_pet_slot, PetSlot(2))
 
     def test_json_encoding_is_deterministic_and_roundtrips(self):
         state = make_state()
@@ -162,14 +167,17 @@ class SinglePlayerPersistenceTests(unittest.TestCase):
     def test_r1_payload_migrates_without_inventing_hidden_pet_growth(self):
         payload = dump_persistent_state(make_state())
         payload["schema"] = "stoneage.singleplayer.persistence.r1"
+        del payload["default_pet_slot"]
         for pet in payload["pets"]:
             del pet["growth"]
 
         restored = load_persistent_state(payload)
         self.assertIsNone(restored.pets[PetSlot(2)].growth)
+        self.assertIsNone(restored.default_pet_slot)
     def test_r2_payload_migrates_variable_ai_to_zero(self):
         payload = dump_persistent_state(make_state())
         payload["schema"] = "stoneage.singleplayer.persistence.r2"
+        del payload["default_pet_slot"]
         for pet in payload["pets"]:
             if pet["growth"] is not None:
                 del pet["growth"]["variable_ai"]
@@ -177,6 +185,29 @@ class SinglePlayerPersistenceTests(unittest.TestCase):
         restored = load_persistent_state(payload)
         self.assertIsNotNone(restored.pets[PetSlot(2)].growth)
         self.assertEqual(restored.pets[PetSlot(2)].growth.variable_ai, 0)
+        self.assertIsNone(restored.default_pet_slot)
+
+    def test_r3_payload_migrates_without_default_pet_selection(self):
+        payload = dump_persistent_state(make_state())
+        payload["schema"] = "stoneage.singleplayer.persistence.r3"
+        del payload["default_pet_slot"]
+
+        restored = load_persistent_state(payload)
+        self.assertEqual(
+            restored.pets[PetSlot(2)].growth.variable_ai,
+            500,
+        )
+        self.assertIsNone(restored.default_pet_slot)
+
+    def test_default_pet_slot_must_be_valid_or_null(self):
+        payload = dump_persistent_state(make_state())
+        payload["default_pet_slot"] = None
+        self.assertIsNone(load_persistent_state(payload).default_pet_slot)
+
+        payload = dump_persistent_state(make_state())
+        payload["default_pet_slot"] = 5
+        with self.assertRaisesRegex(ValueError, "pet slot"):
+            load_persistent_state(payload)
 
     def test_duplicate_slots_are_rejected(self):
         payload = dump_persistent_state(make_state())
