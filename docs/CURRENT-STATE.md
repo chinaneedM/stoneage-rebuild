@@ -6265,3 +6265,79 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   callback/dispatcher/effect semantics before any BatFly runtime coding.
   Continue **WORK mode** under DD-018; production-engine selection and
   redesigned-content discussion remain deferred.
+
+
+## Phase 1 PETSKILL_BatFly bounded reference closure — 2026-10-05
+
+- Fresh reference branch `agent/batfly-reference-r1-20261005` was created from
+  exact all-green main `029172e123690dc7d82ac1e2c404471522a85cdf`, tree
+  `34b0aa4ac6d95052825ec0399ce8c6bb8ff831ea`, after 2BattleTimid closure.
+- Verified recovered25 data closes the complete callback population as **ID633
+  only**, FIELD1 / TARGET3 / COST2 / ILLEGAL5000, empty OPTION with SHA-256
+  `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`.
+  TARGET3 is fixed-descendant `PETSKILL_TARGET_ALLOTHERSIDE`.
+- Exact positive placement is one template / two slots:
+  **TEMPNO1160 / graphic101815 / one-based PETSKILL1 and PETSKILL4 ->633**,
+  base V/S/T/D 300/1/1/30, AI100. First verified discovery
+  **37324003345 PASS**; exact second-pass **37324573414 PASS**.
+- Three pinned fixed descendants close the semantic callback/dispatcher/effect:
+  gavin `1f90cb6...`, iris `9e6c8ce...`, Bismarck `999ffdf...`.
+  Callback writes symbolic BatFly + COM2 + C_OK + LOW(COM3), reads no OPTION and
+  owns no RNG. Dispatcher TargetAdjust is only an execution-validity gate;
+  effect then rebuilds the complete opposing living side.
+- BatFly drains current HP directly, outside ordinary AttackSeq/DamageSub:
+  ordinary living entries lose floor(HP/10), minimum1. A player with a living
+  ride pet instead loses floor(HP/20), minimum1, and the separate ride pet also
+  loses floor(HP/20), minimum1. Ride-pet HP<=0 clears mounted state and sets
+  PETFALL. The BatFly actor heals the summed drain; if that sum would overflow
+  max HP, actual HP is capped but source-reported addhp is reset to **0**.
+- The side-target path uses ordinary live TargetCheck and excludes dead/HP<=0
+  entries. It owns no RNG. Multi-target presentation calls shared SortLoc under
+  the pinned attack-magic profiles, but the preserved side0 comparator contains
+  the anomalous `ele2basex-ele1basey` term; exact portable qsort/BD
+  presentation order is therefore **not claimed**.
+- The same compile feature contains 101813/101814 anti-fly/death-transform
+  behavior, but the sole recovered BatFly template is graphic **101815**.
+  Those neighboring Ler lifecycle semantics are not imported into ID633.
+- Final pinned source/native gate **37328006584 PASS**: **249 native vectors per
+  profile / 747 total**, including 10%/5% boundaries, 1HP behavior, ride-pet
+  fall, whole-side accumulation and overflow-reporting quirk. Source report:
+  `research/recovered/STONEAGE-BATFLY-SOURCE-AUDIT-R1.txt`.
+- Runtime state audit found the existing engine-neutral state already has the
+  correct source-shaped mount separation: `BattleSession.ride_pet` is a
+  non-entry pet and `RidePetRuntime` carries battle-local HP/mounted/PETFALL;
+  standard terminal settlement writes ride-pet HP back to the persistent pet
+  slot. No new generalized mount subsystem is needed.
+- One general state invariant was tightened before runtime coding: a pet cannot
+  simultaneously be an active allied battle entry and the ride pet. Core
+  `adf00d237d7f9ac25c6359f2587870827d079da1`; regression
+  `8795f24cd0c169c8c5871d4deca904303af8500f`.
+  Acceptance: battle core **37328444515 PASS**, coordinator **37328433726
+  PASS**, golden **37328433805 PASS**, Taiwan-v1 gameplay **37328444604 PASS**,
+  and full recovered25 region/runtime stack **37328433701 PASS**. The
+  source-affecting set reached **31 PASS / 0 failures** including full-region.
+- Reference boundary:
+  `specs/STONEAGE-BATFLY-REFERENCE-R1.md`.
+  Runtime-state contract:
+  `specs/STONEAGE-BATFLY-RUNTIME-STATE-AUDIT-R1.md`.
+  **RECOVERED25_BATFLY_REFERENCE_R1 =
+  CLOSED_BOUNDED_FIXED_DESCENDANT_REFERENCE** and
+  **BATFLY_RUNTIME_STATE_AUDIT_R1 =
+  CLOSED_FOR_BOUNDED_RUNTIME_INTEGRATION**.
+- Accepted executable positive-slot coverage remains **2459/2486 = 98.91%**.
+  Reference closure promotes no executable slot and is not whole-project
+  restoration completion.
+- **Highest-priority unfinished task:** freshly re-read remote `main` and
+  verify it is still the exact ancestor of this accepted reference branch. If
+  so, non-force fast-forward the accepted reference/state-audit into `main`,
+  verify main Actions, then create a fresh
+  `agent/batfly-runtime-r1-20261005` from that exact main. Implement exact
+  typed ID633/TEMPNO1160/graphic101815/slot1-or4 admission and a dedicated
+  whole-side semantic action: live-target filtering, 10% drain, player+ride
+  5%/5% split, PETFALL, summed attacker healing and overflow reported-heal-zero
+  quirk, with **no BatFly RNG**. Preserve normal death/profit/termination and
+  existing ride-pet exit projection; use deterministic modern slot ordering
+  without claiming recovered qsort presentation identity. Promote pressure only
+  after dedicated/coordinator/golden/full-region runtime gates pass. Continue
+  **WORK mode** under DD-018; production-engine choice and redesigned content
+  remain deferred.
