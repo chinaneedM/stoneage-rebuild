@@ -4504,16 +4504,77 @@ def resolve_ordinary_round(
     attempted_battletimid_actor_ids=set()
     battletimid_active_command_ids=set(battletimid_actor_ids)
 
+    combined_submissions={
+        str(pid):submission
+        for pid,submission in (
+            combined_submissions_by_participant_id or {}
+        ).items()
+    }
+    combined_actor_ids=set(combined_submissions)
+    if combined_actor_ids-set(slot_by_id):
+        raise ValueError("Combined submissions reference unknown actors")
+    combined_overlap=(
+        battletimid_actor_ids | wildviolent_actor_ids
+        | set(mdfyattack_submissions) | set(attack_crazed_submissions)
+        | weaken_actor_ids | refresh_actor_ids | setmagicpet_actor_ids
+        | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
+        | fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
+        | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+    )
+    if combined_actor_ids & combined_overlap:
+        raise ValueError("Combined semantic submissions overlap another skill")
+    for pid,submission in combined_submissions.items():
+        if not isinstance(submission,EnemyAiCombinedSubmission):
+            raise TypeError("Combined submission has wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (
+            str(submission.participant_id)!=pid
+            or entry.participant.kind!="enemy"
+            or entry.participant.side!="enemy"
+            or int(entry.command.command1)!=BATTLE_COM_ATTACK
+            or int(entry.command.command2)!=int(submission.source_target_slot)
+        ):
+            raise ValueError(
+                "Combined ordering carrier must be enemy ATTACK/source-target"
+            )
+    combined_rolls={
+        str(pid):rolls
+        for pid,rolls in (
+            combined_rolls_by_participant_id or {}
+        ).items()
+    }
+    if set(combined_rolls)!=combined_actor_ids:
+        missing=sorted(combined_actor_ids-set(combined_rolls))
+        extra=sorted(set(combined_rolls)-combined_actor_ids)
+        raise ValueError(
+            "Combined action RNG actors mismatch; "
+            f"missing={missing}, extra={extra}"
+        )
+    if any(
+        not isinstance(rolls,CombinedActionRolls)
+        for rolls in combined_rolls.values()
+    ):
+        raise TypeError("Combined action RNG has wrong type")
+    if combined_actor_ids and combined_overlay is None:
+        raise ValueError("Combined semantic action requires explicit runtime overlay")
+    if combined_overlay is not None:
+        if not isinstance(combined_overlay,CombinedRuntimeOverlay):
+            raise TypeError("combined_overlay has wrong type")
+        combined_overlay.validate_participants(slot_by_id)
+    combined_working=combined_overlay
+    attempted_combined_actor_ids=set()
+    combined_active_command_ids=set(combined_actor_ids)
+
     # The scheduling carrier cannot confer native ATTACK counter eligibility.
     # Confusion later removes a rewritten actor from this symbolic-command set.
     mdfyattack_active_command_ids=set(mdfyattack_submissions)
 
     if (
         nocast_actor_ids or barrier_actor_ids or weaken_actor_ids
-        or refresh_actor_ids
+        or refresh_actor_ids or combined_actor_ids
     ) and nocast_overlay is None:
         raise ValueError(
-            "Nocast/Barrier/Weaken/Refresh semantic action requires explicit round overlay"
+            "Nocast/Barrier/Weaken/Refresh/Combined semantic action requires explicit round overlay"
         )
     if nocast_overlay is not None and not isinstance(
         nocast_overlay,NocastRoundOverlay
