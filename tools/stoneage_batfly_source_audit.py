@@ -238,6 +238,8 @@ def analyze_profile(name:str,root:Path):
     )
     multilist=_compact(_strip(multilist_raw))
     targetcheck=_compact(_strip(_definition(data["battle"],"BATTLE_TargetCheck")))
+    targetadjust=_compact(_strip(_definition(data["battle"],"BATTLE_TargetAdjust")))
+    defaultattacker=_compact(_strip(_definition(data["battle"],"BATTLE_DefaultAttacker")))
     sort_window=_compact(_strip(_window_until(
         data["battle"],
         "static int CharTableIdx",
@@ -265,6 +267,20 @@ def analyze_profile(name:str,root:Path):
         "dispatcher_targetadjust_gate_precedes_effect":
             dispatch.find("BATTLE_TargetAdjust")>=0
             and dispatch.find("BATTLE_TargetAdjust")<dispatch.find("BATTLE_BatFly"),
+        "targetadjust_invalid_com2_calls_defaultattacker":
+            "BATTLE_TargetCheck" in targetadjust
+            and "BATTLE_DefaultAttacker" in targetadjust
+            and targetadjust.find("BATTLE_TargetCheck")
+                < targetadjust.find("BATTLE_DefaultAttacker"),
+        "defaultattacker_no_candidate_returns_before_rng":
+            "if(cnt==0){return-1;}" in defaultattacker
+            and defaultattacker.find("if(cnt==0){return-1;}")
+                < defaultattacker.find("RAND(0,cnt-1)"),
+        "defaultattacker_owns_one_rng_selection_when_candidates_exist":
+            defaultattacker.count("RAND(0,cnt-1)")==1
+            and "BATTLE_TargetCheck" in defaultattacker,
+        "targetadjust_writes_adjusted_com2":
+            "CHAR_WORKBATTLECOM2,defNo" in targetadjust,
         "dispatcher_effect_ignores_adjusted_defno":
             "BATTLE_BatFly(battleindex,attackNo,myside)" in dispatch.replace(" ",""),
         "effect_rebuilds_whole_opposing_side":
@@ -379,11 +395,14 @@ def emit(rows):
             )
     print("FACT|batfly_callback_uses_no_option_and_no_rng")
     print("FACT|target3_is_all_other_side_but_dispatch_targetadjust_is_only_an_execution_gate")
+    print("FACT|live_submitted_COM2_consumes_no_TargetAdjust_rng")
+    print("FACT|invalid_submitted_COM2_with_live_candidates_consumes_one_DefaultAttacker_RAND_before_BatFly")
+    print("FACT|invalid_submitted_COM2_with_no_live_candidates_returns_noaction_without_DefaultAttacker_rng")
     print("FACT|effect_rebuilds_and_drains_the_whole_opposing_side")
     print("FACT|whole_side_target_list_uses_live_targetcheck_and_excludes_dead_or_nonpositive_hp_entries")
     print("FACT|multi_target_side_list_calls_shared_SortLoc_under_each_pinned_attack_magic_profile")
     print("BOUNDARY|side0_SortLoc_uses_anomalous_ele2basex_minus_ele1basey_term_so_portable_exact_qsort_presentation_order_is_not_claimed")
-    print("FACT|BatFly_side_target_path_owns_no_rng_even_though_unrelated_single_target_MultiList_path_can_use_rand")
+    print("FACT|BatFly_whole_side_effect_path_owns_no_rng_after_the_dispatch_TargetAdjust_gate")
     print("FACT|unmounted_target_drains_floor_10pct_min1_mounted_rider_and_pet_each_floor_5pct_min1")
     print("FACT|attacker_heals_sum_but_overflow_cap_sets_reported_addhp_to_zero")
     print("FACT|profession_magic_attack_effect_is_protocol_animation_only_for_this_path")
