@@ -9,8 +9,8 @@ on:
   push:
     paths:
       - ".github/workflows/validate-stoneage-vary-runtime.yml"
-      - "tools/stoneage_vary_runtime_state.py"
-      - "tests/test_stoneage_vary_runtime_state.py"
+      - "tools/stoneage_vary_runtime_state.py"\n      - "tools/stoneage_enemy_ai_vary_bridge.py"
+      - "tests/test_stoneage_vary_runtime_state.py"\n      - "tests/test_stoneage_enemy_ai_vary_bridge.py"
 
 permissions:
   contents: read
@@ -25,4 +25,4 @@ jobs:
         with:
           python-version: "3.12"
       - name: Validate Vary battle-local runtime state
-        run: python -m unittest -v tests.test_stoneage_vary_runtime_state
+        run: |\n          python -m unittest -v \\\n            tests.test_stoneage_vary_runtime_state \\\n            tests.test_stoneage_enemy_ai_vary_bridge
