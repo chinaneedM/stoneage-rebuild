@@ -194,14 +194,25 @@ Accepted before final closure:
 - Runtime golden contract on the production integration:
   **37272234289 PASS**
 
-Still required before pressure reclassification:
+Final acceptance:
 
-1. recovered25 full-region/runtime-stack gate **37272501409** must PASS;
-2. only then add exact `PETSKILL_Combined` to the pressure classifier;
-3. verified preservation-bundle pressure workflow must PASS and rewrite the
-   derived report;
-4. accept the mechanically selected next OPEN callback from that report.
+- Latest dedicated Combined runtime, including all five positive StatusChange
+  choices and same-round poison/confusion semantics: **37273398820 PASS**
+- Latest full local-runtime coordinator after the shared round-executor poison
+  fix: **37273391543 PASS**
+- Latest runtime golden contract after that production fix:
+  **37273391580 PASS**
+- Latest recovered25 full-region/runtime-stack gate:
+  **37273391567 PASS**
+- Verified preservation-bundle pressure reclassification:
+  **37273998149 PASS**
 
-Until those gates pass:
+The pressure report now classifies exact `PETSKILL_Combined` as
+`closed_runtime`: IDs **627/632/637**, **5 positive slot uses / 5 templates**.
+Accepted executable positive-slot coverage is therefore
+**2444/2486 = 98.31%**.
 
-**RECOVERED25_COMBINED_ORDERED_RUNTIME_R1 = PENDING_FULL_REGION_AND_PRESSURE.**
+The mechanically selected next OPEN callback is
+**PETSKILL_Vary / ID 600 / 4 positive slot uses / 4 templates**.
+
+**RECOVERED25_COMBINED_ORDERED_RUNTIME_R1 = CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME.**
