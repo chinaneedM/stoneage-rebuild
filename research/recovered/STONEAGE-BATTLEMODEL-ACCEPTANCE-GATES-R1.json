@@ -1,0 +1,85 @@
+{
+  "schema": "stoneage-battlemodel-acceptance-gates-r1",
+  "reference_report_commit": "fb8cabc13a05c8e4188d18fbf774567a20c1f019",
+  "reference_report_tree": "76e56d3a9334ab0db35bfbc5885fb5756fede514",
+  "core_gates": [
+    {
+      "id": 37342593141,
+      "input_sha": "4131a23ce12b4d03e367456f4135988e8e5121b9",
+      "conclusion": "success",
+      "scope": "hash-verified complete recovered25 population, metadata, OPTION, positive placements"
+    },
+    {
+      "id": 37342593073,
+      "input_sha": "4131a23ce12b4d03e367456f4135988e8e5121b9",
+      "conclusion": "success",
+      "scope": "three pinned source profiles and 600 native target-plan vectors"
+    }
+  ],
+  "supplemental_gate": {
+    "id": 37344060042,
+    "status": "queued",
+    "conclusion": null,
+    "input_sha": "be9de3df70d4a872817f55fd484e9a08f4dd1f31"
+  },
+  "population_ids": [
+    638,
+    641,
+    649,
+    650
+  ],
+  "positive_id638": {
+    "field": 1,
+    "target": 3,
+    "cost": 3,
+    "illegal": 10000,
+    "option_bytes": 32,
+    "option_sha256": "690101963c1d05be1151cc54644e453c5a96c4e03eaf6b8dd6cbfd406d9a50a4",
+    "type": 5,
+    "objects": 4,
+    "turn": 1,
+    "hit": 30,
+    "action_numbers": [
+      101867,
+      101868
+    ],
+    "big5_status": "paralysis_index2_all_three_sources",
+    "utf8_status": "unknown_all_three_sources",
+    "original_build_profile_selected": false
+  },
+  "placements": [
+    {
+      "tempno": 1178,
+      "graphic": 101867,
+      "slot": 3,
+      "vstd": [
+        38,
+        40,
+        15,
+        37
+      ],
+      "ai": 150
+    },
+    {
+      "tempno": 1179,
+      "graphic": 101868,
+      "slot": 3,
+      "vstd": [
+        42,
+        35,
+        20,
+        34
+      ],
+      "ai": 150
+    }
+  ],
+  "accepted_runtime_slot_count": 2461,
+  "total_positive_slot_count": 2486,
+  "runtime_promoted": false,
+  "independent_work": {
+    "branch": "agent/becomefox-preaudit-r1-20261006",
+    "commit": "93637f8336a7a0ce317a40eb13c1f75e518971df",
+    "scope": "60 textual fixed-source preaudit gates only"
+  },
+  "next": "Reconcile supplemental helper gate, then close bounded BattleModel reference/state contracts, verify and nonforce fast-forward main, verify main Actions and create a fresh runtime branch."
+}
