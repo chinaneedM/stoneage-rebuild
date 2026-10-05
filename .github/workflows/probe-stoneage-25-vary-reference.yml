@@ -146,6 +146,12 @@ jobs:
             research/recovered/STONEAGE-25-VARY-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_VARY_POPULATION_CLOSED' \
             research/recovered/STONEAGE-25-VARY-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_VARY_BASE_TEMPID_DOMAIN_CLOSED' \
+            research/recovered/STONEAGE-25-VARY-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_VARY_EXACT_ROW_CLOSED' \
+            research/recovered/STONEAGE-25-VARY-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_VARY_EXACT_TEMPLATES_CLOSED' \
+            research/recovered/STONEAGE-25-VARY-PROBE-R1.txt
 
       - name: Print derived reports
         if: always()
