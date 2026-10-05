@@ -76,6 +76,26 @@ def resolve_combined_single_target(
     )
 
 
+
+
+def _resolve_or_accept_target(
+    source_target_slot: int, *, alive_slots, retarget_draws_0_9=(), resolved_target=None,
+) -> CombinedResolvedTarget:
+    if resolved_target is None:
+        return resolve_combined_single_target(
+            source_target_slot,alive_slots=alive_slots,
+            retarget_draws_0_9=retarget_draws_0_9,
+        )
+    if not isinstance(resolved_target,CombinedResolvedTarget):
+        raise TypeError("resolved_target must be CombinedResolvedTarget or null")
+    if int(resolved_target.source_target_slot)!=int(source_target_slot):
+        raise CombinedEffectDomain("pre-resolved Combined target/source drift")
+    if tuple(retarget_draws_0_9):
+        raise CombinedEffectDomain("pre-resolved Combined target cannot consume retarget RNG twice")
+    if int(resolved_target.resolved_target_slot) not in {int(x) for x in alive_slots}:
+        raise CombinedEffectDomain("pre-resolved Combined target is not alive")
+    return resolved_target
+
 @dataclass(frozen=True)
 class CombinedRecoveryEffect:
     target: CombinedResolvedTarget
@@ -97,6 +117,7 @@ def resolve_combined_recovery21_effect(
     target_is_player: bool,
     rolled_power: int,
     riding: bool,
+    resolved_target: CombinedResolvedTarget | None = None,
 ) -> CombinedRecoveryEffect:
     """Bounded non-riding ID-21 HP recovery after DirectUse accepted."""
     if type(riding) is not bool or riding:
@@ -106,9 +127,9 @@ def resolve_combined_recovery21_effect(
         raise CombinedEffectDomain("invalid bounded HP witness")
     if not 90 <= rolled_power <= 110:
         raise CombinedEffectDomain("Recovery 21 RAND witness must lie in 90..110")
-    target=resolve_combined_single_target(
+    target=_resolve_or_accept_target(
         source_target_slot,alive_slots=alive_slots,
-        retarget_draws_0_9=retarget_draws_0_9,
+        retarget_draws_0_9=retarget_draws_0_9,resolved_target=resolved_target,
     )
     rate=recovery_rate(vital=int(target_vital),is_player=bool(target_is_player))
     gain=battle_recovery_gain(
@@ -153,6 +174,7 @@ def resolve_combined_status_change_effect(
     defender_tough: int,
     defender_dex: int,
     defender_resistance: int,
+    resolved_target: CombinedResolvedTarget | None = None,
 ) -> CombinedStatusChangeEffect:
     """Conditional iris-CP950 StatusChange -> common StatusAttackCheck seam."""
     magic_id=int(magic_id)
@@ -167,9 +189,9 @@ def resolve_combined_status_change_effect(
         raise CombinedEffectDomain("existing status blocks StatusAttackCheck RNG")
     if not active and roll_1_100 is None:
         raise CombinedEffectDomain("eligible StatusAttackCheck requires explicit RNG")
-    target=resolve_combined_single_target(
+    target=_resolve_or_accept_target(
         source_target_slot,alive_slots=alive_slots,
-        retarget_draws_0_9=retarget_draws_0_9,
+        retarget_draws_0_9=retarget_draws_0_9,resolved_target=resolved_target,
     )
     status_index=int(EXPECTED_IRIS_CP950_STATUS[magic_id])
     transition=common_magic_status_change_transition(
@@ -205,11 +227,12 @@ def resolve_combined_status_recovery61_effect(
     retarget_draws_0_9=(),
     base_runtime: BaseBattleStatusRuntime,
     late_runtime: NocastParticipantRuntime,
+    resolved_target: CombinedResolvedTarget | None = None,
 ) -> CombinedStatusRecoveryEffect:
     """Conditional iris-CP950 wildcard: clear one highest modeled active status."""
-    target=resolve_combined_single_target(
+    target=_resolve_or_accept_target(
         source_target_slot,alive_slots=alive_slots,
-        retarget_draws_0_9=retarget_draws_0_9,
+        retarget_draws_0_9=retarget_draws_0_9,resolved_target=resolved_target,
     )
     vector=refresh_status_vector(base_runtime,late_runtime,require_complete=True)
     result=resolve_refresh_recovery(
@@ -246,11 +269,12 @@ def resolve_combined_att_reverse240_effect(
     water: int,
     fire: int,
     wind: int,
+    resolved_target: CombinedResolvedTarget | None = None,
 ) -> CombinedAttReverseEffect:
     """Toggle persistent reverse flag and apply the immediate attribute swap."""
-    target=resolve_combined_single_target(
+    target=_resolve_or_accept_target(
         source_target_slot,alive_slots=alive_slots,
-        retarget_draws_0_9=retarget_draws_0_9,
+        retarget_draws_0_9=retarget_draws_0_9,resolved_target=resolved_target,
     )
     out=att_reverse_cast_transition(
         battle_flags=battle_flags,reverse_bit=reverse_bit,
