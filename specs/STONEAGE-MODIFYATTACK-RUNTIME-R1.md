@@ -1,6 +1,6 @@
 # StoneAge Modifyattack ordered runtime R1
 
-Status: **IMPLEMENTED_PENDING_REMOTE_ACCEPTANCE**
+Status: **CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME**
 Date: 2026-10-05
 Scope: recovered25 positive enemy uses of `PETSKILL_Modifyattack`.
 
@@ -69,10 +69,42 @@ Exact identity, all four population rows, the three executable IDs, RNG
 ownership, M95/96/100 boundaries, retarget, Guardian, status, reactions,
 counter, combo, cross-round lifetime and coordinator dispatch have local
 witnesses. Remote runtime/core/coordinator/golden/full-region gates and the
-hash-verified pressure report must pass before accepted coverage advances.
-Until then accepted coverage remains **2454/2486 = 98.71%**.
+hash-verified pressure report are accepted as recorded below.
 
 Original COM1 (2029 versus2027 in descendants), compiler/libc/PRNG profile,
 null-pointer divergence and original JSS/Taiwan-v1 membership remain OPEN.
 This bounded recovered25 enemy-use result does not establish whole-game
 completion or an original executable profile.
+
+
+## Acceptance evidence
+
+- Runtime code `a985a4977d790e9706031f30b70bd5bc6362b044`, tree
+  `5ca054ffbfe7d8c565428ae3c4a1d0e34867ef58`; local and remote trees match.
+- Dedicated reference/admission/ordered/persistent/coordinator gate
+  **37305538911 PASS**: 99 tests.
+- Battle core **37305538909 PASS**, coordinator **37305538741 PASS**,
+  golden contract **37305538906 PASS**, full recovered25 region/runtime stack
+  **37305538863 PASS**. All29 source-affecting workflows PASS / zero failures.
+- Local related regression **450 tests PASS**, plus independent golden-contract
+  CLI PASS. Updated pressure logic **11 tests PASS**.
+- Hash-verified preservation pressure **37306407247 PASS**, input
+  `7b017f6ca06a00faa22c96269486d95e467518aa`, derived report write-back
+  `a85f25e492402adceec35594936c0608f1295d52`.
+- Derived pressure marks Modifyattack IDs544/545/546 closed for three uses /
+  three templates; unreferenced ID547 is not included. Unresolved positive
+  skill IDs remain zero. Coverage advances from **2454/2486 = 98.71%** to
+  **2457/2486 = 98.83%**. This is an enemy skill-use metric, not whole-game
+  completion. The next OPEN family is mechanically selected as
+  `PETSKILL_2BattleTimid`, ID636, two uses / two templates; it is distinct from
+  the already-closed `PETSKILL_BattleTimid`.
+
+Whole-repository discovery is not claimed green: 3350 tests attempted with
+25 dependency/import errors and two existing probe assertions failing. The
+ReHP target-minimum68-versus100 and Taiwan25 bridge capture-defaultNone-versus11
+failures independently reproduce on the unchanged accepted baseline. Binary
+analysis dependencies including capstone are absent locally. This does not
+replace the accepted bounded regression and remote gates above.
+
+**RECOVERED25_MODIFYATTACK_ORDERED_RUNTIME_R1 =
+CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME.**
