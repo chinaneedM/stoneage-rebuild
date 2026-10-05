@@ -2,64 +2,112 @@
 
 ## Status
 
-**COMBINED_REFERENCE_R1 = OPEN_SOURCE_AND_DATA_AUDIT.**
+**COMBINED_REFERENCE_R1 = CLOSED_BOUNDED_RECOVERED25_WELLFORMED_OPTION_REFERENCE.**
 
-Pressure ranking on verified `main` selected `PETSKILL_Combined` as the
-next OPEN callback. The positively referenced recovered25 IDs are **627, 632
-and 637**, with **5 enemybase slot uses across 5 templates**.
+The verified recovered25 callback family is exactly **627, 629, 630, 632,
+637, 646, 648**. Only **627, 632 and 637** have positive enemybase slot
+references: **5 uses across 5 templates**. IDs 629, 630, 646 and 648 remain
+zero-reference data evidence and are not admitted as executable candidates.
 
-The first hash-verified bundle observation in Action **37262367447** corrected
-the pre-audit population hypothesis: the full callback family contains
-**627, 629, 630, 632, 637, 646 and 648**. IDs 629, 630, 646 and 648 have zero
-positive enemybase slot references in this recovered25 corpus and therefore
-remain data evidence rather than executable candidates. This seven-row
-population must reproduce under the corrected gate before it is accepted.
+No ordered runtime is admitted by this reference closure.
 
-No runtime implementation is admitted by this document yet.
+## Fixed descendant source reference
 
-## Fixed descendant audit target
-
-The reference audit is pinned to the same three fixed later-source profiles
-used by the preceding pet-skill closures:
+The audit is pinned to the same three fixed later-source profiles used by the
+preceding pet-skill closures:
 
 - gavin `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`
 - iris `9e6c8ce2cd8ed532a7157773acd1c61582c178b5`
 - BismarckDD `999ffdf1d220ec6666eb65339180689c9caf1876`
 
-Action **37262367447** reproduced the fixed-source audit before the data
-population expectation stopped the workflow. The shared callback shape is:
-OPTION supplies a declared list length and magic IDs; lengths above ten are
-clamped to ten; one raw `rand()%count` selection writes
-`BATTLE_COM_JYUJYUTU` (numeric 2000), target, selected magic in LOW(COM3),
-zero in HIGH(COM3), and the battle dispatcher calls `MAGIC_DirectUse`.
+The reproducible source audit closes the well-formed OPTION reference:
 
-A real descendant-profile divergence is retained rather than normalized:
-gavin/iris calculate Combined initiative from `WORKQUICK+20` minus a
-0..30%-of-work random interval, while the fixed Bismarck profile uses
-`WORKQUICK+20` minus a fixed 0..15 random interval.
+- callback registration and feature gates are active;
+- the declared OPTION count is read and clamped to a maximum of ten;
+- one raw `rand()%count` selection chooses a magic ID;
+- the callback writes symbolic `BATTLE_COM_JYUJYUTU`, whose pinned
+  descendant enum value is 2000;
+- target goes to COM2, selected magic to LOW(COM3), HIGH(COM3) is cleared;
+- the battle dispatcher calls `MAGIC_DirectUse`;
+- the defender-side Combined command changes the pinned descendant dodge
+  parameter from 0.02 to 0.027.
 
-## Safety boundary
+The source audit resolution is
+`COMBINED_FIXED_SOURCE_CLOSED_WELLFORMED_OPTION_REFERENCE`.
 
-Malformed OPTION behavior is deliberately not normalized. The fixed source
-does not guard nonpositive counts before `rand()%count`, and missing listed
-magic tokens can leave `kill[]` elements uninitialized. The accepted model
-therefore covers only hash-verified recovered25 rows whose OPTION structure is
-proved well formed.
+## Preserved descendant differences
 
-The marker lexeme is localized across descendant profiles and is recorded only
-as a hash; raw source text or raw recovered OPTION bytes are not stored.
+Real differences are recorded rather than flattened:
 
-## First-pass data objective
+- gavin/iris use a NULL-pointer OPTION guard; fixed Bismarck uses a
+  pointer-to-literal-NUL comparison;
+- gavin/iris leave the historical count/kill declaration uninitialized,
+  while fixed Bismarck initializes count to zero;
+- gavin/iris initiative uses
+  `WORKQUICK+20 - RAND(0, work*0.3)`;
+- fixed Bismarck initiative uses
+  `WORKQUICK+20 - RAND(0, 15)`.
 
-The recovered25 probe must prove, from the hash-verified preservation bundle:
+Therefore a later runtime must choose or model the initiative profile
+explicitly. Reference closure does not silently designate one descendant as
+the original behavior.
 
-- callback population exactly IDs 627, 629, 630, 632, 637, 646, 648;
-- positively referenced IDs exactly 627, 632, 637;
-- exactly 5 positive enemybase slot references / 5 templates;
-- every actual OPTION has a positive declared count and enough numeric magic
-  IDs after the source's max-10 clamp;
-- exact metadata, OPTION hashes, marker hashes, declared counts and selected
-  magic-ID lists are emitted as derived facts.
+## Recovered25 exact-row evidence
 
-The first pass intentionally leaves exact-row pinning OPEN. A second pass will
-pin the observed derived rows before source/data reference closure.
+Corrected first-pass Action **37262695753 PASS** established the complete
+seven-row population and the 5-use/5-template reference set. Second-pass
+exact-pin Action **37262850204 PASS** at input commit
+`a3029a77c43bba60aef13a930d0bfb3a07361abb` closed all exact rows. The
+derived report was written back at commit
+`8252a51966450a0b5b515d051e52b3c84d61ae65`.
+
+The full recovered `petskill` SHA-256 is
+`f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4`.
+
+Positive recovered rows are:
+
+- ID 627: TARGET 3, ILLEGAL 2000, 1 slot reference, declared/effective count
+  6, magic IDs 21/139/159/169/179/189;
+- ID 632: TARGET 1, ILLEGAL 5000, 2 slot references, declared/effective count
+  1, magic ID 240;
+- ID 637: TARGET 2, ILLEGAL 20000, 2 slot references, declared/effective count
+  1, magic ID 61.
+
+Exact metadata, OPTION lengths and SHA-256 values, marker hash, counts and
+magic-ID lists for all seven rows are pinned in
+`research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt`. Raw OPTION bytes,
+names, descriptions and assets are not stored.
+
+The recovered probe resolutions are:
+
+- `RECOVERED25_COMBINED_POPULATION_CLOSED`
+- `RECOVERED25_COMBINED_WELLFORMED_OPTION_CLOSED`
+- `RECOVERED25_COMBINED_EXACT_ROWS_CLOSED`
+- `RECOVERED25_COMBINED_ORDERED_RUNTIME_OPEN`
+
+## Safety and provenance boundaries
+
+Malformed OPTION behavior is not normalized. Nonpositive counts reach
+historical modulo/index undefined behavior, and missing listed magic tokens can
+leave historical array elements uninitialized. Those malformed domains are
+outside R1.
+
+The marker lexeme is localized across descendant profiles and stored only as a
+hash. The fixed descendant audit is later-source evidence; it does not prove
+original JSS/Taiwan-v1 membership, original binary/compiler identity, or the
+original game's numeric command encoding.
+
+## Runtime handoff
+
+The next runtime stage must:
+
+- admit only positively referenced recovered IDs **627/632/637**;
+- recheck the exact seven-row population and exact row pins as data evidence;
+- keep IDs 629/630/646/648 data-only unless independent positive use appears;
+- consume one explicit reduced selection draw only when Combined executes;
+- preserve selected magic ID, target and direct-magic dispatch ownership;
+- preserve Nocast/direct-magic failure boundaries rather than fabricating an
+  effect;
+- resolve the descendant initiative-profile divergence explicitly;
+- continue using symbolic command identity instead of claiming original
+  historical COM1 provenance.
