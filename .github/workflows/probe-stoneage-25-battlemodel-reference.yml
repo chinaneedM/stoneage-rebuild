@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate BattleModel discovery logic
+      - name: Validate BattleModel exact-pin logic
         run: |
           python -m unittest -v \
             tests.test_stoneage_recovered25_battlemodel_probe
@@ -92,33 +92,41 @@ jobs:
           mkdir -p /tmp/sa25/out
           ulimit -c 0
           unar -f -o /tmp/sa25/out /tmp/sa25/bundle.rar >/dev/null 2>&1
-      - name: Discover BattleModel population and positive placements
+      - name: Verify exact BattleModel population and positive placements
         run: |
           D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
           C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
           test -n "$D"; test -n "$C"
           mkdir -p research/recovered
           python -m tools.stoneage_recovered25_battlemodel_probe \
-            --data-dir "$D" --setup "$C" --discover \
+            --data-dir "$D" --setup "$C" \
             > research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
           cat research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
           grep -F 'COUNT|enemybase_slot_references|2' \
             research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
           grep -F 'COUNT|enemybase_templates|2' \
             research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
+          grep -F 'COUNT|callback_rows|4' \
+            research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_BATTLEMODEL_POSITIVE_REFERENCES_CLOSED' \
             research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
-          grep -F 'BOUNDARY|discovery_only_complete_population_and_exact_identity_not_accepted' \
+          grep -F 'RESOLUTION|RECOVERED25_BATTLEMODEL_POPULATION_CLOSED' \
             research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
-      - name: Commit derived discovery report
+          grep -F 'RESOLUTION|RECOVERED25_BATTLEMODEL_EXACT_ROWS_CLOSED' \
+            research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_BATTLEMODEL_EXACT_TEMPLATES_CLOSED' \
+            research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_BATTLEMODEL_EXACT_IDENTITY_ACCEPTED' \
+            research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
+      - name: Commit exact derived report
         run: |
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
           git add research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
           if git diff --cached --quiet; then
-            echo 'BattleModel discovery report unchanged.'
+            echo 'BattleModel exact report unchanged.'
             exit 0
           fi
-          git commit -m 'research: discover recovered25 BattleModel population'
+          git commit -m 'research: pin recovered25 BattleModel exact identity'
           git pull --rebase origin "$GITHUB_REF_NAME"
           git push origin "HEAD:$GITHUB_REF_NAME"
