@@ -31,6 +31,7 @@ from tools.stoneage_enemy_ai_attack_magic_bridge import (
     EnemyAiAttackMagicSubmission,
 )
 from tools.stoneage_enemy_ai_rehp_bridge import EnemyAiReHpSubmission
+from tools.stoneage_enemy_ai_relife_bridge import EnemyAiReLifeSubmission
 from tools.stoneage_enemy_ai_damage_to_hp_bridge import (
     EnemyAiDamageToHpSubmission,
 )
@@ -136,6 +137,12 @@ from tools.stoneage_enemy_rehp_model import (
     EnemyReHpResolution,
     EnemyReHpRolls,
     resolve_enemy_rehp_effect,
+)
+from tools.stoneage_enemy_relife_model import (
+    EnemyReLifeDeadEntry,
+    EnemyReLifeResolution,
+    EnemyReLifeRolls,
+    resolve_enemy_relife_effect,
 )
 from tools.stoneage_recovered25_attack_magic_runtime import (
     Recovered25AttackMagicRuntime,
@@ -1026,6 +1033,7 @@ class OrdinaryRoundEvent:
     ultimate_flag_kind: int = 0
     attack_magic_target_resolution: AttackMagicTargetResolution | None = None
     enemy_rehp_resolution: EnemyReHpResolution | None = None
+    enemy_relife_resolution: EnemyReLifeResolution | None = None
     damage_to_hp_recovery: DamageToHpRecovery | None = None
     mp_damage_resolution: MpDamageResolution | None = None
     fall_ground_resolution: FallGroundResolution | None = None
@@ -3641,6 +3649,19 @@ def resolve_ordinary_round(
     enemy_rehp_retarget_rolls_by_participant_id: Mapping[
         str,int | None
     ] | None = None,
+    enemy_relife_submissions_by_participant_id: Mapping[
+        str,EnemyAiReLifeSubmission
+    ] | None = None,
+    enemy_relife_rolls_by_participant_id: Mapping[
+        str,EnemyReLifeRolls
+    ] | None = None,
+    enemy_relife_retarget_rolls_by_participant_id: Mapping[
+        str,int | None
+    ] | None = None,
+    revivable_dead_participant_ids: Sequence[str] = (),
+    passive_battle_entries_by_slot: Mapping[
+        int,BattleParticipant
+    ] | None = None,
     damage_to_hp_submissions_by_participant_id: Mapping[
         str,EnemyAiDamageToHpSubmission
     ] | None = None,
@@ -3721,6 +3742,29 @@ def resolve_ordinary_round(
             )
 
     by_slot, slot_by_id = _build_slot_maps(prepared, slots)
+    passive_slots={}
+    for raw_slot,participant in (
+        passive_battle_entries_by_slot or {}
+    ).items():
+        slot=int(raw_slot)
+        if not isinstance(participant,BattleParticipant):
+            raise TypeError("passive battle entry has wrong type")
+        participant_id=str(participant.participant_id)
+        if not 0 <= slot < BATTLE_SLOT_COUNT:
+            raise ValueError("passive battle entry slot must be in 0..19")
+        expected_side="player" if slot < SIDE_OFFSET else "enemy"
+        if participant.side != expected_side:
+            raise ValueError("passive battle entry crossed battle sides")
+        if int(participant.hp) > 0:
+            raise ValueError("passive battle entry must be non-living")
+        if slot in by_slot:
+            raise ValueError("passive battle entry collides with active slot")
+        if participant_id in slot_by_id:
+            raise ValueError("passive battle entry duplicates participant")
+        by_slot[slot]=participant
+        slot_by_id[participant_id]=slot
+        passive_slots[slot]=participant_id
+
     hp_by_slot = {
         slot: max(0, int(participant.hp))
         for slot, participant in by_slot.items()
@@ -3729,6 +3773,24 @@ def resolve_ordinary_round(
         participant.participant_id: hp_by_slot[slot]
         for slot, participant in by_slot.items()
     }
+    initial_revivable_dead_ids={
+        str(participant_id)
+        for participant_id in revivable_dead_participant_ids
+    }
+    unknown_revivable=sorted(
+        initial_revivable_dead_ids-set(slot_by_id)
+    )
+    if unknown_revivable:
+        raise ValueError(
+            "revivable-dead identities reference unknown battle entries: "
+            f"{unknown_revivable}"
+        )
+    for participant_id in initial_revivable_dead_ids:
+        slot=int(slot_by_id[participant_id])
+        if int(hp_by_slot[slot]) != 0:
+            raise ValueError(
+                "revivable-dead identity must currently have zero HP"
+            )
 
     for participant_id in slot_by_id:
         if participant_id not in profiles:
@@ -3886,6 +3948,82 @@ def resolve_ordinary_round(
         )
     attempted_enemy_rehp_actor_ids=set()
 
+    # ReLife also uses ATTACK only as an initiative/COM2 carrier.  Its
+    # resurrection target is selected independently from dead enemy entries.
+    enemy_relife_submissions={
+        str(participant_id):submission
+        for participant_id,submission in (
+            enemy_relife_submissions_by_participant_id or {}
+        ).items()
+    }
+    enemy_relife_actor_ids=set(enemy_relife_submissions)
+    unknown_relife_ids=sorted(enemy_relife_actor_ids-set(slot_by_id))
+    if unknown_relife_ids:
+        raise ValueError(
+            "enemy ReLife submissions reference unknown actors: "
+            f"{unknown_relife_ids}"
+        )
+    if enemy_relife_actor_ids & (
+        enemy_rehp_actor_ids | attack_magic_actor_ids
+    ):
+        raise ValueError("enemy ReLife overlaps another semantic skill")
+    for participant_id,submission in enemy_relife_submissions.items():
+        if not isinstance(submission,EnemyAiReLifeSubmission):
+            raise TypeError(
+                f"enemy ReLife submission for {participant_id} has wrong type"
+            )
+        if str(submission.participant_id) != participant_id:
+            raise ValueError("enemy ReLife submission participant drift")
+        entry=prepared_entry_by_id[participant_id]
+        if entry.participant.side != "enemy" or entry.participant.kind != "enemy":
+            raise ValueError("recovered25 ReLife admits enemy actors only")
+        if (
+            int(entry.command.command1) != BATTLE_COM_ATTACK
+            or int(entry.command.command2)
+            != int(submission.source_attack_target_slot)
+        ):
+            raise ValueError(
+                "enemy ReLife ordering carrier must be ATTACK/source target"
+            )
+    enemy_relife_rolls={
+        str(participant_id):rolls
+        for participant_id,rolls in (
+            enemy_relife_rolls_by_participant_id or {}
+        ).items()
+    }
+    if set(enemy_relife_rolls) != enemy_relife_actor_ids:
+        missing=sorted(enemy_relife_actor_ids-set(enemy_relife_rolls))
+        extra=sorted(set(enemy_relife_rolls)-enemy_relife_actor_ids)
+        raise ValueError(
+            "enemy ReLife effect RNG actors mismatch; "
+            f"missing={missing}, extra={extra}"
+        )
+    for participant_id,rolls in enemy_relife_rolls.items():
+        if not isinstance(rolls,EnemyReLifeRolls):
+            raise TypeError(
+                f"enemy ReLife effect RNG for {participant_id} has wrong type"
+            )
+    enemy_relife_retarget_rolls={
+        str(participant_id):(
+            None if value is None else int(value)
+        )
+        for participant_id,value in (
+            enemy_relife_retarget_rolls_by_participant_id or {}
+        ).items()
+    }
+    if set(enemy_relife_retarget_rolls) != enemy_relife_actor_ids:
+        missing=sorted(
+            enemy_relife_actor_ids-set(enemy_relife_retarget_rolls)
+        )
+        extra=sorted(
+            set(enemy_relife_retarget_rolls)-enemy_relife_actor_ids
+        )
+        raise ValueError(
+            "enemy ReLife TargetAdjust RNG actors mismatch; "
+            f"missing={missing}, extra={extra}"
+        )
+    attempted_enemy_relife_actor_ids=set()
+
     damage_to_hp_submissions={
         str(participant_id):submission
         for participant_id,submission in (
@@ -3900,7 +4038,7 @@ def resolve_ordinary_round(
             f"{unknown_damage_to_hp_ids}"
         )
     if damage_to_hp_actor_ids & (
-        enemy_rehp_actor_ids | attack_magic_actor_ids
+        enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
         raise ValueError("DamageToHp semantic submissions overlap another skill")
     for participant_id,submission in damage_to_hp_submissions.items():
@@ -3936,7 +4074,7 @@ def resolve_ordinary_round(
             f"MpDamage submissions reference unknown actors: {unknown_mp_damage_ids}"
         )
     if mp_damage_actor_ids & (
-        damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+        damage_to_hp_actor_ids | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
         raise ValueError("MpDamage semantic submissions overlap another skill")
     for participant_id,submission in mp_damage_submissions.items():
@@ -4002,7 +4140,7 @@ def resolve_ordinary_round(
         )
     if battle_tear_actor_ids & (
         mp_damage_actor_ids | damage_to_hp_actor_ids
-        | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
         raise ValueError("BattleTear semantic submissions overlap another skill")
     for participant_id,submission in battle_tear_submissions.items():
@@ -4054,7 +4192,7 @@ def resolve_ordinary_round(
         )
     if fall_ground_actor_ids & (
         battle_tear_actor_ids | mp_damage_actor_ids | damage_to_hp_actor_ids
-        | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
         raise ValueError("FallGround semantic submissions overlap another skill")
     for participant_id,submission in fall_ground_submissions.items():
@@ -4153,7 +4291,7 @@ def resolve_ordinary_round(
         )
     if nocast_actor_ids & (
         fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
-        | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | damage_to_hp_actor_ids | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
         raise ValueError("Nocast semantic submissions overlap another skill")
     for participant_id,submission in nocast_submissions.items():
@@ -4189,7 +4327,7 @@ def resolve_ordinary_round(
     if barrier_actor_ids & (
         nocast_actor_ids | fall_ground_actor_ids | battle_tear_actor_ids
         | mp_damage_actor_ids | damage_to_hp_actor_ids
-        | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
         raise ValueError("Barrier semantic submissions overlap another skill")
     for participant_id,submission in barrier_submissions.items():
@@ -4230,7 +4368,7 @@ def resolve_ordinary_round(
     if guard_break2_actor_ids & (
         nocast_actor_ids | fall_ground_actor_ids | battle_tear_actor_ids
         | mp_damage_actor_ids | damage_to_hp_actor_ids
-        | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
         raise ValueError(
             "GuardBreak2 semantic submissions overlap another skill"
@@ -4262,7 +4400,7 @@ def resolve_ordinary_round(
     if wildviolent_actor_ids & (
         guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
         | fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
-        | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | damage_to_hp_actor_ids | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
         raise ValueError("WildViolentAttack semantic submissions overlap another skill")
     for pid,submission in wildviolent_submissions.items():
@@ -4303,7 +4441,7 @@ def resolve_ordinary_round(
     if set(attack_crazed_submissions) & (
         wildviolent_actor_ids | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
         | fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
-        | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | damage_to_hp_actor_ids | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
         raise ValueError("AttackCrazed semantic submissions overlap another skill")
     if set(attack_crazed_rolls)!=set(attack_crazed_submissions):
@@ -4328,7 +4466,7 @@ def resolve_ordinary_round(
     if set(mdfyattack_submissions) & (
         wildviolent_actor_ids | set(attack_crazed_submissions) | guard_break2_actor_ids | barrier_actor_ids
         | nocast_actor_ids | fall_ground_actor_ids | battle_tear_actor_ids
-        | mp_damage_actor_ids | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | mp_damage_actor_ids | damage_to_hp_actor_ids | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
         raise ValueError("Mdfyattack semantic submissions overlap another skill")
     for pid,submission in mdfyattack_submissions.items():
@@ -4348,7 +4486,7 @@ def resolve_ordinary_round(
     if weaken_actor_ids & (
         wildviolent_actor_ids | set(mdfyattack_submissions) | set(attack_crazed_submissions) | guard_break2_actor_ids
         | barrier_actor_ids | nocast_actor_ids | fall_ground_actor_ids | battle_tear_actor_ids
-        | mp_damage_actor_ids | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | mp_damage_actor_ids | damage_to_hp_actor_ids | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     ):
         raise ValueError("Weaken semantic submissions overlap another skill")
     for pid,submission in weaken_submissions.items():
@@ -4379,7 +4517,7 @@ def resolve_ordinary_round(
         | set(attack_crazed_submissions) | weaken_actor_ids
         | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
         | fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
-        | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | damage_to_hp_actor_ids | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     )
     if refresh_actor_ids & refresh_overlap:
         raise ValueError("Refresh semantic submissions overlap another skill")
@@ -4421,7 +4559,7 @@ def resolve_ordinary_round(
         | refresh_actor_ids | guard_break2_actor_ids | barrier_actor_ids
         | nocast_actor_ids | fall_ground_actor_ids | battle_tear_actor_ids
         | mp_damage_actor_ids | damage_to_hp_actor_ids
-        | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     )
     if setmagicpet_actor_ids & setmagicpet_overlap:
         raise ValueError("SetMagicPet semantic submissions overlap another skill")
@@ -4470,7 +4608,7 @@ def resolve_ordinary_round(
         | refresh_actor_ids | setmagicpet_actor_ids | guard_break2_actor_ids
         | barrier_actor_ids | nocast_actor_ids | fall_ground_actor_ids
         | battle_tear_actor_ids | mp_damage_actor_ids | damage_to_hp_actor_ids
-        | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     )
     if battletimid_actor_ids & battletimid_overlap:
         raise ValueError("BattleTimid semantic submissions overlap another skill")
@@ -4526,7 +4664,7 @@ def resolve_ordinary_round(
         | weaken_actor_ids | refresh_actor_ids | setmagicpet_actor_ids
         | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
         | fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
-        | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | damage_to_hp_actor_ids | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     )
     if combined_actor_ids & combined_overlap:
         raise ValueError("Combined semantic submissions overlap another skill")
@@ -4588,7 +4726,7 @@ def resolve_ordinary_round(
         | weaken_actor_ids | refresh_actor_ids | setmagicpet_actor_ids
         | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
         | fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
-        | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+        | damage_to_hp_actor_ids | enemy_relife_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
     )
     if vary_actor_ids & vary_overlap:
         raise ValueError("Vary semantic submissions overlap another skill")
@@ -4832,6 +4970,7 @@ def resolve_ordinary_round(
 
     exited_slots: set[int] = set()
     exited_ids: list[str] = []
+    revivable_dead_ids=set(initial_revivable_dead_ids)
     capture_contexts=dict(capture_contexts or {})
     capture_rolls=dict(capture_rolls or {})
     abduct_contexts=dict(abduct_contexts or {})
@@ -5148,6 +5287,12 @@ def resolve_ordinary_round(
         slot_by_id[entry.participant.participant_id]:int(entry.action_value)
         for entry in prepared.ordered_entries
     }
+    for passive_slot in passive_slots:
+        command_by_slot.setdefault(
+            int(passive_slot),
+            BattleCommand(BATTLE_COM_NONE,input_complete=False),
+        )
+        action_value_by_slot.setdefault(int(passive_slot),0)
     escaped_ids: list[str] = []
     ultimate_exited_ids: list[str] = []
     # Source BENT_FLG_ULTIMATE is cleared at the start of each battle turn.
@@ -5195,6 +5340,23 @@ def resolve_ordinary_round(
 
         for event in new_events:
             if (
+                event.target_hp_before is not None
+                and event.target_hp_after is not None
+                and int(event.target_hp_before) > 0
+                and int(event.target_hp_after) == 0
+                and event.resolved_target_slot is not None
+            ):
+                dead_slot=int(event.resolved_target_slot)
+                if (
+                    dead_slot in by_slot
+                    and int(ultimate_marked_slots.get(dead_slot,0)) <= 0
+                ):
+                    revivable_dead_ids.add(
+                        str(by_slot[dead_slot].participant_id)
+                    )
+
+        for event in new_events:
+            if (
                 event.target_hp_before is None
                 or event.target_hp_after is None
                 or int(event.target_hp_before) <= 0
@@ -5215,6 +5377,7 @@ def resolve_ordinary_round(
             if target_id in ultimate_exited_ids:
                 continue
 
+            revivable_dead_ids.discard(target_id)
             exited_slots.add(target_slot)
             ultimate_exited_ids.append(target_id)
 
@@ -7631,6 +7794,173 @@ def resolve_ordinary_round(
         rehp_fallback_active=False
         rehp_fallback_original_target=None
         rehp_fallback_retargeted=False
+
+        relife_actor_id=str(participant_id)
+        if (
+            relife_actor_id in enemy_relife_submissions
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            submission=enemy_relife_submissions[relife_actor_id]
+            if (
+                int(command.command1) != BATTLE_COM_ATTACK
+                or int(command.command2)
+                != int(submission.source_attack_target_slot)
+            ):
+                raise ValueError(
+                    "enemy ReLife ordering carrier drift before execution"
+                )
+
+            original_relife_target=int(
+                submission.source_attack_target_slot
+            )
+            adjusted_target=original_relife_target
+            relife_retargeted=False
+            adjusted_alive=(
+                adjusted_target in by_slot
+                and adjusted_target not in exited_slots
+                and int(hp_by_slot.get(adjusted_target,0)) > 0
+            )
+            if (
+                adjusted_alive
+                and _slot_side(adjusted_target) == _slot_side(slot)
+            ):
+                raise ValueError(
+                    "enemy ReLife fallback target crossed battle sides"
+                )
+            target_adjust_roll=enemy_relife_retarget_rolls[
+                relife_actor_id
+            ]
+            if adjusted_alive:
+                if target_adjust_roll is not None:
+                    raise ValueError(
+                        "enemy ReLife supplied unused TargetAdjust RNG"
+                    )
+            else:
+                adjusted_target=_retarget_slot(
+                    int(slot),
+                    by_slot,
+                    hp_by_slot,
+                    target_adjust_roll,
+                    excluded_slots=exited_slots,
+                )
+                relife_retargeted=True
+
+            effect_rolls=enemy_relife_rolls[relife_actor_id]
+            attempted_enemy_relife_actor_ids.add(relife_actor_id)
+            if adjusted_target is None:
+                if not effect_rolls.is_empty:
+                    raise ValueError(
+                        "enemy ReLife effect RNG supplied after no-target"
+                    )
+                if relife_actor_id in attack_rolls:
+                    raise ValueError(
+                        "enemy ReLife no-target supplied fallback attack RNG"
+                    )
+                events.append(
+                    OrdinaryRoundEvent(
+                        relife_actor_id,
+                        int(slot),
+                        BATTLE_COM_ATTACK,
+                        int(entry.action_value),
+                        "enemy_relife_no_target",
+                        original_target_slot=original_relife_target,
+                        retargeted=relife_retargeted,
+                    )
+                )
+                continue
+
+            dead_entries={}
+            for ally_slot in range(10,20):
+                if ally_slot not in by_slot or ally_slot in exited_slots:
+                    continue
+                ally=by_slot[ally_slot]
+                if ally.side != "enemy":
+                    raise ValueError(
+                        "enemy ReLife dead scan crossed battle sides"
+                    )
+                ally_id=str(ally.participant_id)
+                is_revivable=ally_id in revivable_dead_ids
+                dead_entries[ally_slot]=EnemyReLifeDeadEntry(
+                    participant_id=ally_id,
+                    slot=ally_slot,
+                    hp=int(hp_by_slot.get(ally_slot,0)),
+                    max_hp=int(ally.max_hp),
+                    is_die=bool(is_revivable),
+                    is_attacked=bool(is_revivable),
+                    battle_mode_ready=True,
+                    rescue_mode=False,
+                    ultimate_exited=False,
+                )
+
+            relife_resolution=resolve_enemy_relife_effect(
+                adjusted_attack_target_slot=int(adjusted_target),
+                entries_by_slot=dead_entries,
+                rolls=effect_rolls,
+                caster_mode_ready=True,
+            )
+            if relife_resolution.success:
+                if relife_actor_id in attack_rolls:
+                    raise ValueError(
+                        "successful enemy ReLife supplied fallback attack RNG"
+                    )
+                if relife_resolution.selected_slot is None:
+                    raise ValueError(
+                        "successful enemy ReLife lacks selected slot"
+                    )
+                revived_slot=int(relife_resolution.selected_slot)
+                revived=by_slot[revived_slot]
+                revived_id=str(revived.participant_id)
+                hp_by_slot[revived_slot]=int(relife_resolution.hp_after)
+                hp_by_id[revived_id]=int(relife_resolution.hp_after)
+                revivable_dead_ids.discard(revived_id)
+                events.append(
+                    OrdinaryRoundEvent(
+                        relife_actor_id,
+                        int(slot),
+                        BATTLE_COM_ATTACK,
+                        int(entry.action_value),
+                        "enemy_relife",
+                        original_target_slot=original_relife_target,
+                        resolved_target_slot=revived_slot,
+                        retargeted=relife_retargeted,
+                        target_hp_before=int(relife_resolution.hp_before),
+                        target_hp_after=int(relife_resolution.hp_after),
+                        enemy_relife_resolution=relife_resolution,
+                    )
+                )
+                continue
+
+            if not relife_resolution.fallback_to_attack:
+                raise ValueError(
+                    "failed enemy ReLife did not request physical fallback"
+                )
+            events.append(
+                OrdinaryRoundEvent(
+                    relife_actor_id,
+                    int(slot),
+                    BATTLE_COM_ATTACK,
+                    int(entry.action_value),
+                    "enemy_relife_fallback",
+                    original_target_slot=original_relife_target,
+                    resolved_target_slot=int(adjusted_target),
+                    retargeted=relife_retargeted,
+                    enemy_relife_resolution=relife_resolution,
+                )
+            )
+            rehp_fallback_active=True
+            rehp_fallback_original_target=original_relife_target
+            rehp_fallback_retargeted=relife_retargeted
+            command=BattleCommand(
+                BATTLE_COM_ATTACK,
+                command2=int(adjusted_target),
+                command3=command.command3,
+                input_complete=command.input_complete,
+            )
+            command_by_slot[slot]=command
+
         rehp_actor_id=str(participant_id)
         if (
             rehp_actor_id in enemy_rehp_submissions
@@ -7777,7 +8107,7 @@ def resolve_ordinary_round(
             raise KeyError(f"missing ordinary attack rolls for {participant_id}")
         if rehp_fallback_active and rolls.retarget_roll is not None:
             raise ValueError(
-                "enemy ReHP fallback attack must not consume a second retarget RNG"
+                "semantic fallback attack must not consume a second retarget RNG"
             )
         attack_command_code=int(command.command1)
         if attack_command_code in {
@@ -8838,6 +9168,18 @@ def resolve_ordinary_round(
             raise ValueError(
                 "BattleTimid RNG supplied for status/no-target-suppressed "
                 "semantic action: " + participant_id
+            )
+
+    for participant_id in sorted(
+        enemy_relife_actor_ids-attempted_enemy_relife_actor_ids
+    ):
+        if (
+            not enemy_relife_rolls[participant_id].is_empty
+            or enemy_relife_retarget_rolls[participant_id] is not None
+        ):
+            raise ValueError(
+                "enemy ReLife RNG supplied for status-suppressed semantic action: "
+                + participant_id
             )
 
     for participant_id in sorted(
