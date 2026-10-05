@@ -6915,3 +6915,39 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   Then prepared command cancellation/state/coordinator/ultimate exit, golden/
   full-region and hash-verified pressure; preserve original build/charset/COM1
   ambiguity and DD-018.
+
+
+## Phase 1 BattleModel physical AttackSeq remotely accepted — 2026-10-06
+
+- Exact physical input ce4c7a16dc022e7ce88b314b8cb2845f0012389e, tree
+  4f5b4f6d2a845f7ea781b0ce5de6b09a59b269db. Fresh main c897fd46
+  remains its ancestor; remote branch unchanged and clean matching local tree
+  verified before acceptance.
+- **37359587030 SUCCESS**, job111930531041. All157 shared tests,696
+  physical original-function comparisons,1920 original settlement calls,480
+  marker comparisons and60 pet-guard cases pass remotely. Derived artifact
+  11366277131 uploaded. Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-PHYSICAL-ATTACKSEQ-ACCEPTANCE-R1.json`.
+- **CLOSED_BOUNDED_EQUIPMENT_FREE_PHYSICAL_ATTACKSEQ.** Physical adapter
+  now uses real shared algorithms; neutral equipment-free/no-later-features
+  scope and no-ride/no-ItemCrush/reduced-offset10 composition remain mandatory.
+  Historical pending snapshot superseded. Complete ordinary runtime, prepared
+  actions/state/coordinator/ultimate exit/pressure remain OPEN. No638 slot or
+  project-wide percentage promotion. Nonforce main synchronization follows
+  acceptance; no unaccepted later ItemCrush code is included.
+- While remote physical gate ran, inspected ItemCrushCheck across all three
+  fixed pins. Legacy player RAND and TAKE_ITEMDAMAGE raw-rand-before-equipment
+  findings agree. Bismarck also has TAKE_ITEMDAMAGE_FOR_PET and
+  TAKE_ITEMDAMAGE_FIX (rand()%equipnum); keep these separate declared variants.
+  Empty equipment is NOT proof of absent helper RNG. No native/runtime
+  ItemCrush acceptance is claimed from this inspection.
+- **Highest-priority unfinished task:** freshly re-read remote main/HEAD/tree,
+  branches and Actions. Complete any remaining accepted physical main-sync
+  verification, then start an isolated ItemCrush equipment-free chronology
+  branch from latest main. Native-reproduce legacy/TAKE_ITEMDAMAGE and guarded
+  Bismarck variants, explicit global rate/raw-rand ownership and helper
+  surviving-actual-defender reachability BEFORE status. Bind scoped no-item
+  behavior without inventing original feature/charset/COM1 membership; then
+  prepared command cancellation, persistent/coordinator propagation, ultimate
+  exit, golden/full-region and verified pressure before closing638's slots.
+  DD-018 restoration-first remains in force.

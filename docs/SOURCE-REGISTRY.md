@@ -3600,3 +3600,16 @@ and complete production AttackSeq/runtime boundaries remain OPEN.
   TAKE_ITEMDAMAGE selection consume RNG before any equipment lookup can rule
   out an item. Equipment-free scope must NOT be promoted to no-ItemCrush proof.
   Multi-profile/native ItemCrush acceptance is the next gate.
+
+
+#### SRC-BATTLEMODEL-PHYSICAL-ATTACKSEQ-R1 remote acceptance
+
+Run37359587030 SUCCESS, job111930531041; input
+ce4c7a16dc022e7ce88b314b8cb2845f0012389e,
+tree4f5b4f6d2a845f7ea781b0ce5de6b09a59b269db.157 tests/696 physical
+comparisons plus1920 settlement/480 marker/60 pet checks reproduced remotely;
+derived artifact11366277131 retained. Bounded physical composition accepted;
+full runtime/pressure/638 positive slots unchanged. Pending records superseded.
+Further source inspection at all three pins confirms ItemCrush RNG preceding
+equipment validation. Bismarck has additional guarded pet-equipment and FIX
+variants; native/runtime ItemCrush acceptance is still OPEN.

@@ -1,0 +1,54 @@
+{
+  "schema": "STONEAGE_BATTLEMODEL_PHYSICAL_ATTACKSEQ_ACCEPTANCE_R1",
+  "status": "CLOSED_BOUNDED_EQUIPMENT_FREE_PHYSICAL_ATTACKSEQ_FULL_RUNTIME_OPEN",
+  "date": "2026-10-06 (UTC+8)",
+  "branch": "agent/battlemodel-physical-attackseq-r1-20261006",
+  "input_commit": "ce4c7a16dc022e7ce88b314b8cb2845f0012389e",
+  "input_tree": "4f5b4f6d2a845f7ea781b0ce5de6b09a59b269db",
+  "accepted_main_base": "c897fd460f32314a00bb39f04441c9ef24fdba4e",
+  "remote_validation": {
+    "workflow": "validate-stoneage-battlemodel-settlement.yml",
+    "run_id": 37359587030,
+    "job_id": 111930531041,
+    "conclusion": "success",
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37359587030",
+    "controlled_shared_tests": 157,
+    "new_adapter_tests": 17,
+    "physical_attackseq_model_native_comparisons_per_profile": 232,
+    "physical_attackseq_model_native_comparisons_total": 696,
+    "original_settlement_native_calls": 1920,
+    "physical_marker_native_comparisons": 480,
+    "literal_pet_guard_native_calls": 60,
+    "artifact": {
+      "id": 11366277131,
+      "name": "battlemodel-settlement",
+      "size_bytes": 2349
+    }
+  },
+  "source_profiles": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "native_function_count": 11,
+  "scope": [
+    "explicit equipment-free non-bow physical context with neutral global modifiers",
+    "separate newpower70pct and preserved_old_mixed defense profiles",
+    "reduced_SIDE_OFFSET10_no_ride_nonthrowing_no_ItemCrush_gDamageDiv0",
+    "controlled getters CanMove reaction selection and no-ride/equipment native stubs",
+    "sampled native agreement; exhaustive float32 equivalence remains OPEN"
+  ],
+  "full_battlemodel_runtime": "OPEN",
+  "positive_slots_promoted": 0,
+  "next_priority": "ItemCrush equipment-free RNG before status across declared feature variants; no equipment does not imply no RNG",
+  "remaining_gates": [
+    "ItemCrush feature profile/global rate/raw-rand ownership",
+    "prepared command cancellation",
+    "persistent/coordinator state propagation",
+    "ultimate exit",
+    "golden",
+    "full-region",
+    "hash-verified pressure",
+    "original build/charset/numeric COM1 selection"
+  ]
+}

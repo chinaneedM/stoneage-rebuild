@@ -1,7 +1,7 @@
 # BattleModel equipment-free physical AttackSeq adapter R1
 
 Date: 2026-10-06 (UTC+8)
-Status: **LOCAL_VALIDATED_REMOTE_PENDING_FULL_RUNTIME_OPEN**
+Status: **CLOSED_BOUNDED_EQUIPMENT_FREE_PHYSICAL_ATTACKSEQ_FULL_RUNTIME_OPEN**
 
 ## Explicit composition and identity
 
@@ -88,3 +88,23 @@ an original feature profile. Equipped mutation/UI/persistence stays separate.
 Then prepared-action cancellation, persistent/coordinator propagation and
 ultimate exit still require runtime/golden/full-region/verified pressure gates.
 ID638's two positive slots remain OPEN; existing coverage is unchanged.
+
+
+## Remote acceptance — 2026-10-06
+
+37359587030 SUCCESS, job111930531041, exact input
+ce4c7a16dc022e7ce88b314b8cb2845f0012389e,
+tree4f5b4f6d2a845f7ea781b0ce5de6b09a59b269db. All shared157 tests,696 new
+physical native comparisons,1920 original settlement calls,480 marker
+comparisons and60 literal pet-guard cases reproduced remotely; derived artifact
+11366277131 uploaded. Prior pending records are historical and superseded.
+Only this explicitly bounded physical composition is accepted; all full-runtime
+exclusions and two638 positive slots remain OPEN. Acceptance receipt is
+`research/recovered/STONEAGE-BATTLEMODEL-PHYSICAL-ATTACKSEQ-ACCEPTANCE-R1.json`.
+
+Further fixed-source inspection confirms legacy and TAKE_ITEMDAMAGE checks in
+all three pins. Bismarck additionally guards TAKE_ITEMDAMAGE_FOR_PET and
+TAKE_ITEMDAMAGE_FIX; the latter draws rand()%equipnum instead of rand()%100.
+Those variants must be declared and audited separately, never inferred to be
+part of an original executable. This is source inspection, not yet native
+ItemCrush acceptance or runtime enablement.

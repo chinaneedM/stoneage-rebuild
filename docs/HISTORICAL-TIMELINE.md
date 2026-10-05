@@ -792,3 +792,18 @@ raw rand()%100 before item validation. Empty equipment therefore does not
 prove a no-ItemCrush RNG seam. Both feature variants and full chronology require
 further native reproduction; original build membership remains OPEN.
 See `SRC-BATTLEMODEL-PHYSICAL-ATTACKSEQ-R1`.
+
+
+### 2026-10-06 — bounded physical AttackSeq accepted remotely
+
+**FACT (bounded reconstruction acceptance):**37359587030 SUCCESS, job
+111930531041 on ce4c7a16 reproduces157 tests/696 physical native comparisons
+and1920/480/60 accepted settlement/pet checks. Equipment-free physical
+composition alone is closed; complete BattleModel runtime/pressure/two638
+slots remain OPEN. Earlier pending records are superseded.
+
+**FACT (additional source inspection):** legacy and TAKE_ITEMDAMAGE checks
+agree across all three pins about RNG before equipment can eliminate an item.
+Bismarck additionally guards pet equipment count and a FIX variant using
+rand()%equipnum; these are separate profile choices, not original-build facts.
+ItemCrush native acceptance and chronology integration remain OPEN.
