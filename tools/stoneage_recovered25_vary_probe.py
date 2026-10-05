@@ -30,8 +30,8 @@ def _c_float_after(raw: bytes, marker: bytes) -> float | None:
         return None
     tail=raw[pos+len(marker):].decode("latin-1","replace")
     match=re.match(
-        r"\\s*[+-]?(?:(?:\\d+(?:\\.\\d*)?)|(?:\\.\\d+))"
-        r"(?:[eE][+-]?\\d+)?",
+        r"\s*[+-]?(?:(?:\d+(?:\.\d*)?)|(?:\.\d+))"
+        r"(?:[eE][+-]?\d+)?",
         tail,
     )
     if match is None:
