@@ -1,0 +1,38 @@
+name: Validate StoneAge ReLife runtime
+
+concurrency:
+  group: stoneage-relife-runtime-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-relife-runtime.yml"
+      - "tools/stoneage_enemy_relife_model.py"
+      - "tools/stoneage_enemy_ai_relife_bridge.py"
+      - "tests/test_stoneage_enemy_relife_model.py"
+      - "tests/test_stoneage_enemy_ai_relife_bridge.py"
+      - "tools/stoneage_battle_round_model.py"
+      - "tools/stoneage_battle_state_model.py"
+      - "tools/stoneage_local_runtime_session_coordinator.py"
+      - "tests/test_stoneage_relife_ordered_runtime.py"
+      - "tests/test_stoneage_relife_persistent_runtime.py"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate ReLife bounded runtime
+        run: |
+          python -m unittest -v \
+            tests.test_stoneage_enemy_relife_model \
+            tests.test_stoneage_enemy_ai_relife_bridge
