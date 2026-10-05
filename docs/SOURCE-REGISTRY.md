@@ -3562,3 +3562,14 @@ record superseded; complete BattleModel ordered runtime remains OPEN.
   gDamageDiv0/reduced offset10 scope is mandatory. Equipment ItemCrush precedes
   status in source and remains required for full integration. Remote gate
   pending; ordinary round/state/coordinator/pressure execution unchanged.
+
+
+#### SRC-BATTLEMODEL-POST-ATTACKSEQ-LOOP-R1 remote acceptance
+
+37355987371 SUCCESS, job111918386052, input
+f5568edd37b4c22257717b20bb205d84c57767e1,
+tree0ed843a2f667564cfae1001203445ab22fbafdbc. Controlled loop/shared tests,
+1920 original native calls,480 physical marker/model comparisons and60
+reduced pet-guard witnesses reproduced remotely, derived artifacts uploaded.
+Earlier remote-pending status superseded; all explicit experimental exclusions
+and complete production AttackSeq/runtime boundaries remain OPEN.

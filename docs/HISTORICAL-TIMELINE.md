@@ -763,3 +763,14 @@ AttackSeq, no-ItemCrush, no-ride/nonthrowing/gDamageDiv0 and reduced offset10
 limits are explicit. Source surviving-target ItemCrush occurs before status;
 its equipment/RNG seam must be closed for complete integration.
 See `SRC-BATTLEMODEL-POST-ATTACKSEQ-LOOP-R1`; remote acceptance pending.
+
+
+### 2026-10-06 — bounded post-AttackSeq seam accepted remotely
+
+**FACT (bounded reconstruction acceptance):**37355987371 SUCCESS onf5568edd,
+job111918386052, reproduces the controlled loop/shared tests,1920 native
+settlement calls,480 physical marker/model comparisons and60 literal pet
+pre-hit guard cases. Earlier remote-pending records are superseded. This
+closes only reduced offset10/no-ride/nonthrowing/no-ItemCrush/gDamageDiv0
+composition; production AttackSeq, complete round/state/coordinator and
+pressure remain OPEN. No original build selection or new covered slots.

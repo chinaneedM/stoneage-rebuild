@@ -1,7 +1,7 @@
 {
   "contract": "BATTLEMODEL_BOUNDED_POST_ATTACKSEQ_HIT_LOOP_R1",
   "date": "2026-10-06",
-  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "status": "CLOSED_BOUNDED_POST_ATTACKSEQ_EXPERIMENTAL_SEAM",
   "branch": "agent/battlemodel-hit-loop-r1-20261006",
   "input_sha": "f5568edd37b4c22257717b20bb205d84c57767e1",
   "input_tree": "0ed843a2f667564cfae1001203445ab22fbafdbc",
@@ -13,8 +13,8 @@
       "id": 37355987371,
       "name": "Validate StoneAge BattleModel base DamageSub settlement",
       "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37355987371",
-      "status": "queued",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "success",
       "head_sha": "f5568edd37b4c22257717b20bb205d84c57767e1"
     }
   ],
@@ -77,5 +77,24 @@
     "Ultimate flag without HP loss is retained; complete round exit is OPEN.",
     "Original build/charset/numeric COM1 and multiplayer SIDE_OFFSET12 are OPEN.",
     "No ID638 positive slots are promoted."
-  ]
+  ],
+  "initial_gate_snapshot": [
+    {
+      "id": 37355987371,
+      "name": "Validate StoneAge BattleModel base DamageSub settlement",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37355987371",
+      "status": "queued",
+      "conclusion": null,
+      "head_sha": "f5568edd37b4c22257717b20bb205d84c57767e1"
+    }
+  ],
+  "remote_validation": {
+    "run_id": 37355987371,
+    "job_id": 111918386052,
+    "result": "PASS",
+    "original_native_settlement_calls": 1920,
+    "physical_marker_model_native_comparisons": 480,
+    "literal_pet_guard_native_calls": 60,
+    "full_BattleModel_runtime": "OPEN"
+  }
 }

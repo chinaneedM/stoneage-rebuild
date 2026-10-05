@@ -1,7 +1,7 @@
 # BattleModel bounded post-AttackSeq hit loop R1
 
 Date: 2026-10-06
-Status: **LOCAL_TESTED_REMOTE_GATE_PENDING_FULL_RUNTIME_OPEN**
+Status: **CLOSED_BOUNDED_POST_ATTACKSEQ_EXPERIMENTAL_SEAM_FULL_RUNTIME_OPEN**
 
 This implementation advances the saved integration plan after exact typed
 admission acceptance. It executes a bounded scheduling/helper composition;
@@ -79,3 +79,15 @@ boundary, prepared action execution/command-clear lifetime, persistent state,
 coordinator, ultimate exit and excluded mounted compositions. Require golden,
 full-region and hash-verified pressure acceptance before promoting ID638's
 two positive slots. Existing accepted coverage is unchanged by this seam.
+
+
+## Remote acceptance — 2026-10-06
+
+Action37355987371 SUCCESS, job111918386052: exact input
+f5568edd37b4c22257717b20bb205d84c57767e1,
+tree0ed843a2f667564cfae1001203445ab22fbafdbc. Controlled loop/shared tests,
+1920 original native calls,480 model/native comparisons and60 literal pet
+pre-hit guard cases reproduced, with derived artifacts uploaded. Earlier
+remote-pending records are superseded. Only the explicit experimental seam
+is closed; injected production AttackSeq, equipment/ItemCrush, full ordered
+round/state/coordinator, mounted/full feature scope and pressure remain OPEN.

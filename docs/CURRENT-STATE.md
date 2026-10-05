@@ -6841,3 +6841,36 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   persistent/coordinator state and ultimate exit, then golden/full-region and
   verified pressure. Do not select original build/charset/numeric COM1 or
   promote638 positive slots from a controlled seam PASS.
+
+
+## Phase 1 BattleModel bounded hit-loop seam remotely accepted — 2026-10-06
+
+- Fresh remote main startup **4a5fdad7677bc998182376c8e63692350941b3b9**,
+  tree **d26c08bc0ecef427a9b7cc3ca8b68ef136b0bb54**. Latest loop branch
+  cf332e9c140934ca23f43fcbb12a29f4a2e8f086 retains this main as ancestor.
+  Changes since exact tested loop input are docs/receipt only; clean local
+  checkout and ancestry verified before acceptance.
+- Exact loop **37355987371 SUCCESS**, job111918386052 on
+  **f5568edd37b4c22257717b20bb205d84c57767e1**, tree
+  **0ed843a2f667564cfae1001203445ab22fbafdbc**. Controlled loop/shared tests,
+  1920 original native calls,480 modern physical marker/native comparisons
+  and60 reduced literal pet-guard witnesses pass remotely; artifacts uploaded.
+  Previous queued records are historical and superseded.
+- **CLOSED_BOUNDED_POST_ATTACKSEQ_EXPERIMENTAL_SEAM.** Explicit reduced
+  offset10/no-ride/nonthrowing/no-ItemCrush/gDamageDiv0 scope is retained.
+  Injected AttackSeq is still not production physical arithmetic; complete
+  ordinary round/state/coordinator/pressure and ultimate exit remain OPEN.
+  No638 positive slots are promoted.
+- Main admission replay onb819ba14:26 of27 workflows SUCCESS at startup;
+  full-region37355118667 still running. Required actual-data37355118492,
+  core37355118643,2BattleTimid37355118574,golden37355118849 and coordinator
+  37355118738 SUCCESS. Prior original accepted input's full-region already
+  SUCCESS; main code has not changed since that input.
+- **Highest-priority unfinished task:** nonforce synchronize this bounded
+  accepted seam after fresh main/ref ancestry checks, inspect exact-main
+  Actions, then start a fresh physical AttackSeq integration branch. Bind
+  existing dodge/Guardian/critical/defense/attribute/guard/minimum algorithms to
+  the chronological loop tape, with explicit physical context and exclusions.
+  Close equipment/ItemCrush or prove equipment-free scope, then prepared
+  command clear, persistent/coordinator and ultimate exit; require golden,
+  full-region and verified pressure before promoting638's two slots.
