@@ -6079,3 +6079,16 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Next OPEN is mechanically selected as **ENEMYSKILL_ReLife / ID 500 / 3 positive slot uses / 3 templates**.
 - **Highest-priority unfinished task:** integrate this accepted runtime branch into freshly verified `main`, then create `agent/relife-reference-r1-20261005` from that exact main commit and begin bounded ReLife reference recovery. Continue **WORK mode** under DD-018.
 
+## Phase 1 ENEMYSKILL_ReLife bounded reference closure — 2026-10-05
+
+- Verified pressure after Vary closure selected **ENEMYSKILL_ReLife / ID 500 / 3 positive slot uses / 3 templates**. Fresh branch `agent/relife-reference-r1-20261005` was created from exact accepted main HEAD `451eb075b6fd5b094b0036f8c10f576d8b6105b4`.
+- Fixed gavin/iris/Bismarck source audit plus verified preservation-bundle exact-pin workflow is green: first pass **37288674220 PASS**; final exact row/template gate **37288913119 PASS**.
+- Recovered25 callback population is exactly ID **500**, FIELD **1**, TARGET **2 = PETSKILL_TARGET_ALLMYSIDE**, COST **2**, ILLEGAL **0**, empty OPTION SHA-256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`.
+- Exact positive references are TEMPNO **39 / PETSKILL5**, **909 / PETSKILL2**, and **1165 / PETSKILL4**, totaling **3 uses / 3 templates**.
+- Source callback is parameter-light: it writes symbolic `BATTLE_COM_S_ENEMYRELIFE`, copies COM2 and marks C_OK. Guarded command values diverge: gavin/iris **2013**, Bismarck **2012**; DD-019 therefore forbids selecting either as the recovered original numeric COM1.
+- Dispatcher ordering is source-closed: `BATTLE_TargetAdjust` runs first; ReLife then independently scans enemy slots 10..19 for valid, non-ultimate, actionable dead entries. No dead candidate returns FALSE and falls back to ordinary physical ATTACK against the already-adjusted COM2 target.
+- Successful enemy ReLife consumes one target-selection `RAND(0,dead_count-1)`, computes base power as target WORKMAXHP/2, then `BATTLE_MultiRessurect` consumes the nonzero-power 90–110% recovery draw, caps HP and clears ISDIE.
+- Reference spec: `specs/STONEAGE-RELIFE-REFERENCE-R1.md`. Reports: `research/recovered/STONEAGE-RELIFE-SOURCE-AUDIT-R1.txt` and `research/recovered/STONEAGE-25-RELIFE-PROBE-R1.txt`.
+- **RELIFE_REFERENCE_R1 = CLOSED_BOUNDED_RECOVERED25_REFERENCE.** Pressure remains **2448/2486 = 98.47%** until ordered runtime acceptance.
+- **Highest-priority unfinished task:** fast-forward this accepted ReLife reference branch into freshly verified `main`; create fresh `agent/relife-runtime-r1-20261005`; before runtime coding, close the battle-state seam for dead-but-revivable entries and confirm coordinator COM2/fallback carrier ordering. Then implement the bounded semantic runtime without inventing numeric COM1. Continue **WORK mode** under DD-018.
+
