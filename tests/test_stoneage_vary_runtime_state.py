@@ -5,6 +5,7 @@ from tools.stoneage_vary_runtime_state import (
     PROFILE_BISMARCK_ATTACK_DEFENSE_QUICK,
     PROFILE_GAVIN_IRIS_ATTACK_QUICK,
     VARY_WOLF_IMAGE,
+    VaryRuntimeOverlay,
     advance_vary_after_actor_action,
     cast_vary,
     create_vary_participant_runtime,
@@ -94,6 +95,30 @@ class VaryRuntimeStateTests(unittest.TestCase):
         state, tick = advance_vary_after_actor_action(runtime())
         self.assertIsNone(tick)
         self.assertEqual(state.work_turn, 0)
+
+    def test_overlay_blocks_recast_and_removes_actor_on_sixth_action(self):
+        overlay=VaryRuntimeOverlay.empty().with_cast(
+            "enemy",
+            cast_vary(runtime()),
+        )
+        with self.assertRaisesRegex(ValueError,"recast"):
+            overlay.with_cast("enemy",cast_vary(runtime()))
+        for _ in range(5):
+            overlay,tick=overlay.advance_actor_action("enemy")
+            self.assertFalse(tick.expired)
+            self.assertIn("enemy",overlay.runtime_by_participant_id)
+        overlay,tick=overlay.advance_actor_action("enemy")
+        self.assertTrue(tick.expired)
+        self.assertNotIn("enemy",overlay.runtime_by_participant_id)
+
+    def test_overlay_retain_and_teardown_are_fail_closed(self):
+        overlay=VaryRuntimeOverlay({
+            "a":cast_vary(runtime(tempno=981)),
+            "b":cast_vary(runtime(tempno=982)),
+        })
+        kept=overlay.retain_participants({"b"})
+        self.assertEqual(tuple(kept.runtime_by_participant_id),("b",))
+        self.assertEqual(kept.teardown().runtime_by_participant_id,{})
 
 
 if __name__ == "__main__":
