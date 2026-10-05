@@ -3370,3 +3370,14 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - Exact positive templates: TEMPNO 70 / graphic 101550 / slot4 -> 610; TEMPNO 157 / graphic 101283 / slots4,5 -> 610,611. Pressure's earlier IDs 610/611 were therefore positive-reference selection, not the complete callback population.
 - Acceptance: workflow **37295790110 attempt 2 PASS**; derived report commit `0d002434a5b86e20505ff8b8fd431b3075374c84`. Reports: `research/recovered/STONEAGE-LIGHTTAKEED-SOURCE-AUDIT-R1.txt`, `research/recovered/STONEAGE-25-LIGHTTAKEED-PROBE-R1.txt`; spec: `specs/STONEAGE-LIGHTTAKEED-REFERENCE-R1.md`.
 - **LIGHTTAKEED_REFERENCE_R1 = CLOSED_BOUNDED_RECOVERED25_REFERENCE.** Ordered runtime and recovered-original copy-vs-copy+1 discriminator remain OPEN; pressure coverage stays **2451/2486 = 98.59%** until runtime acceptance.
+
+
+### SRC-LIGHTTAKEED-ORDERED-RUNTIME-R1 — 2026-10-05
+
+- Evidence role: fixed later descendants plus hash-verified recovered25 data, not original JSS/Taiwan-v1 provenance. Complete family609/610/611; executable positive domain610/611 only, three slots/two templates.
+- Executable discriminator report: `research/recovered/STONEAGE-25-LIGHTTAKEED-EXECUTABLE-PROFILE-R1.txt`; one 273-byte ELF/no callback or AttackDamage symbols; copy profile remains inconclusive.
+- Lifecycle report: `research/recovered/STONEAGE-LIGHTTAKEED-DAMAGEREACT-LIFECYCLE-R1.txt`; DamageSub re-fetch/consumption, reaction priority, reflection identity redirect, throwing bypass and zero-damage demotion. Sources retain the existing exact gavin/iris/Bismarck pins.
+- Runtime boundary: `specs/STONEAGE-LIGHTTAKEED-RUNTIME-R1.md`; pure model, exact admission bridge, ordered battle, persistent state and coordinator. Typed identity hardening at `5bdedd571f2f369f3f196955581589e59eb283dd`; independent multi-round regression added at `15392c6b5d9470789fcdfa8d2bb1f5da69cd2094`.
+- Acceptance: dedicated **37299772670**, multi-round **37299752226**, coordinator **37299249647**, golden **37299249686**, full-region **37299249771**, pressure **37299752243 PASS**; final local **258 tests PASS**.
+- Derived pressure report commit `26afc10ee71572d09fffce2413ff13dc6c590e72`: Lighttakeed closed_runtime, three positive uses/two templates, zero unresolved positive IDs, coverage **2454/2486 = 98.71%**, next OPEN **PETSKILL_Modifyattack IDs544/545/546, three uses/three templates**.
+- OPEN: original executable/compiler/profile, historical numeric COM1, JSS/Taiwan-v1 membership, exact libc PRNG identity and excluded drunk/Weaken/SetMagicPet compositions. ID609 is not promoted to executable enemy use.
