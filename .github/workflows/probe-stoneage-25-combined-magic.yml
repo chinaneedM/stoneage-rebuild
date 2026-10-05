@@ -77,6 +77,7 @@ jobs:
           grep -F 'COUNT|magic_rows_matched|19' research/recovered/STONEAGE-25-COMBINED-MAGIC-CROSSLINK-R1.txt
           grep -F 'COUNT|magic_parse_malformed|0' research/recovered/STONEAGE-25-COMBINED-MAGIC-CROSSLINK-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_COMBINED_MAGIC_CROSSLINK_CLOSED' research/recovered/STONEAGE-25-COMBINED-MAGIC-CROSSLINK-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_COMBINED_MAGIC_EXACT_ROWS_CLOSED' research/recovered/STONEAGE-25-COMBINED-MAGIC-CROSSLINK-R1.txt
       - name: Print derived report
         if: always()
         run: |
