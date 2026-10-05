@@ -8731,6 +8731,15 @@ def resolve_ordinary_round(
             )
 
     for participant_id in sorted(
+        combined_actor_ids-attempted_combined_actor_ids
+    ):
+        if combined_rolls[participant_id] != CombinedActionRolls():
+            raise ValueError(
+                "Combined RNG supplied for status/death-suppressed semantic action: "
+                + participant_id
+            )
+
+    for participant_id in sorted(
         battletimid_actor_ids-attempted_battletimid_actor_ids
     ):
         if battletimid_rolls[participant_id] is not None:
@@ -8881,6 +8890,7 @@ def resolve_ordinary_round(
             if setmagicpet_working is None
             else SetMagicPetRoundOverlay(setmagicpet_working)
         ),
+        combined_overlay=combined_working,
         ultimate_overkill_by_participant_id=MappingProxyType(
             dict(ultimate_overkill)
         ),
