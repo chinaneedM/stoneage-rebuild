@@ -46,7 +46,7 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         result=analyze_runtime_objects(pets,enemies)
         self.assertEqual(result["unresolved_skill_ids"],(999,))
 
-    def test_mdfyattack_runtime_closure_does_not_close_modifyattack(self):
+    def test_mdfyattack_and_modifyattack_have_separate_runtime_rows(self):
         pets=SimpleNamespace(skills={
             548:SimpleNamespace(function_name="PETSKILL_Mdfyattack"),
             544:SimpleNamespace(function_name="PETSKILL_Modifyattack"),
@@ -57,8 +57,10 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         result=analyze_runtime_objects(pets,enemies)
         rows={row["callback"]:row for row in result["rows"]}
         self.assertEqual(rows["PETSKILL_Mdfyattack"]["status"],"closed_runtime")
-        self.assertEqual(rows["PETSKILL_Modifyattack"]["status"],"open")
-        self.assertEqual(result["next_open"]["callback"],"PETSKILL_Modifyattack")
+        self.assertEqual(rows["PETSKILL_Modifyattack"]["status"],"closed_runtime")
+        self.assertEqual(rows["PETSKILL_Mdfyattack"]["slot_uses"],2)
+        self.assertEqual(rows["PETSKILL_Modifyattack"]["slot_uses"],1)
+        self.assertIsNone(result["next_open"])
 
     def test_wildviolent_closure_advances_only_the_exact_callback(self):
         pets=SimpleNamespace(skills={
@@ -76,9 +78,28 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
             rows["PETSKILL_WildViolentAttack"]["status"],
             "closed_runtime",
         )
-        self.assertEqual(rows["PETSKILL_Modifyattack"]["status"],"open")
+        self.assertEqual(rows["PETSKILL_Modifyattack"]["status"],"closed_runtime")
         self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
-        self.assertEqual(result["next_open"]["callback"],"PETSKILL_Modifyattack")
+        self.assertIsNone(result["next_open"])
+
+    def test_modifyattack_closes_only_three_positive_uses_not_unreferenced_wind(self):
+        pets=SimpleNamespace(skills={
+            **{skill:SimpleNamespace(function_name="PETSKILL_Modifyattack") for skill in range(544,548)},
+            636:SimpleNamespace(function_name="PETSKILL_2BattleTimid"),
+            200:SimpleNamespace(function_name="PETSKILL_Merge"),
+        })
+        enemies=SimpleNamespace(templates={
+            18:SimpleNamespace(skill_slot_ids=(0,0,0,546,0,0,0)),
+            19:SimpleNamespace(skill_slot_ids=(0,0,0,0,545,0,0)),
+            20:SimpleNamespace(skill_slot_ids=(0,0,0,544,0,0,0)),
+            21:SimpleNamespace(skill_slot_ids=(636,200,0,0,0,0,0)),
+        })
+        result=analyze_runtime_objects(pets,enemies)
+        rows={row["callback"]:row for row in result["rows"]}
+        row=rows["PETSKILL_Modifyattack"]
+        self.assertEqual((row["status"],row["skill_ids"],row["slot_uses"]),("closed_runtime",(544,545,546),3))
+        self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
+        self.assertEqual(result["next_open"]["callback"],"PETSKILL_2BattleTimid")
 
     def test_refresh_closure_advances_only_the_exact_callback(self):
         pets=SimpleNamespace(skills={

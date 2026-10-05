@@ -32,6 +32,7 @@ CLOSED_RUNTIME_CALLBACKS=frozenset(
         "PETSKILL_Barrier",
         "PETSKILL_AttackCrazed",
         "PETSKILL_Mdfyattack",
+        "PETSKILL_Modifyattack",
         "PETSKILL_Weaken",
         "PETSKILL_WildViolentAttack",
         "PETSKILL_Refresh",
