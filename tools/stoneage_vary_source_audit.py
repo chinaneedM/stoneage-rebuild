@@ -6,7 +6,6 @@ import argparse
 from pathlib import Path
 import re
 import subprocess
-import tempfile
 
 from tools.stoneage_guard_break2_source_audit import (
     PINNED, LAYOUTS, _sha, _text, _function, _compact, _macro_int,
@@ -23,43 +22,6 @@ def _active_macros(version: Path, includes: list[str]) -> set[str]:
         ["cpp","-dM",*includes,str(version)],text=True
     )
     return set(re.findall(r"^#define\s+(\w+)",out,re.M))
-
-
-def _enum_values_with_version(
-    names: list[str],includes: list[str],version: Path
-) -> dict[str,int]:
-    code=(
-        '#include <stdio.h>\n'
-        '#include "char_base.h"\n'
-        '#include "battle.h"\n'
-        '#include "battle_event.h"\n'
-        '#include "pet_skill.h"\n'
-        '#include "pet_skillinfo.h"\n'
-        'int main(void){\n'
-        + ''.join(f'printf("%d\\n",{name});\n' for name in names)
-        + 'return 0;}\n'
-    )
-    with tempfile.TemporaryDirectory() as directory:
-        root=Path(directory)
-        source=root/"enum.c"
-        exe=root/"enum"
-        source.write_text(code)
-        result=subprocess.run(
-            [
-                "cc","-w",*includes,"-imacros",str(version),
-                str(source),"-o",str(exe)
-            ],
-            capture_output=True,text=True,
-        )
-        if result.returncode:
-            raise ValueError(
-                "Vary enum compilation failed: "+result.stderr[-2500:]
-            )
-        values=list(map(
-            int,
-            subprocess.check_output([str(exe)],text=True).split()
-        ))
-    return dict(zip(names,values))
 
 
 def _bounded_case(text: str, marker: str, occurrence: int) -> str:
@@ -105,10 +67,6 @@ def analyze_profile(name: str, root: Path):
     if name=="bismarck":
         includes += ["-I",str(root/"server/common"),"-I",str(root/"shared/lua51")]
     active=_active_macros(paths["version"],includes)
-    enums=_enum_values_with_version(
-        [COMMAND_NAME,"BATTLE_CHARMODE_C_OK"],
-        includes,paths["version"],
-    )
     source_skill_id=_macro_int(
         data["petskill_h"],SOURCE_PETSKILL_SYMBOL_NAME
     )
@@ -155,6 +113,10 @@ def analyze_profile(name: str, root: Path):
         "callback_registered":
             '{"PETSKILL_Vary",PETSKILL_Vary,0}' in pet_compact,
         "source_skill_symbol_is_600":source_skill_id==600,
+        "command_symbol_present":
+            COMMAND_NAME in data["battle_h"],
+        "mode_symbol_present":
+            "BATTLE_CHARMODE_C_OK" in data["battle_h"],
         "callback_sets_command_target_mode":all(
             token in callback for token in (
                 "CHAR_WORKBATTLECOM1,"+COMMAND_NAME,
@@ -203,8 +165,8 @@ def analyze_profile(name: str, root: Path):
         "profile":name,
         "commit":actual,
         "source_skill_id":source_skill_id,
-        "command_value":enums[COMMAND_NAME],
-        "mode_value":enums["BATTLE_CHARMODE_C_OK"],
+        "command_symbol":COMMAND_NAME,
+        "mode_symbol":"BATTLE_CHARMODE_C_OK",
         "expansion_active":expansion_active,
         "option_guard":option_guard,
         "defense_marker":'strstr(pszOption,"防%")' in callback,
@@ -222,8 +184,8 @@ def emit(rows):
             "PROFILE|"
             f"name={row['profile']}|sha={row['commit']}|"
             f"source_skill_id={row['source_skill_id']}|"
-            f"command_value={row['command_value']}|"
-            f"mode_value={row['mode_value']}|"
+            f"command_symbol={row['command_symbol']}|"
+            f"mode_symbol={row['mode_symbol']}|"
             f"expansion_active={int(row['expansion_active'])}|"
             f"option_guard={row['option_guard']}|"
             f"defense_marker={int(row['defense_marker'])}|"
@@ -240,6 +202,7 @@ def emit(rows):
     print("FACT|bismarck_adds_defense_marker")
     print("BOUNDARY|EXPANSION_VARY_WOLF_inactive_at_all_three_fixed_pins")
     print("BOUNDARY|bismarck_raw_expansion_image_branch_not_compiled_at_fixed_pin")
+    print("BOUNDARY|original_numeric_command_and_mode_values_open")
     print("BOUNDARY|original_binary_compile_profile_and_charset_open")
     print("RESOLUTION|VARY_FIXED_SOURCE_FIRST_PASS_CLOSED_BOUNDED_REFERENCE")
 
