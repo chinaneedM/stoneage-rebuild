@@ -29,9 +29,9 @@ The complete positive recovered25 placement is one template with two slots:
 - one-based skill slots **1 and 4**
 - both slots carry ID633
 
-The verified data gate is Action **37324573414 PASS**. Its second exact-pin pass
-is Action **37324573414/37324573414-derived discovery followed by
-37324573414-compatible exact report state**; the accepted derived report is
+The first verified discovery gate is Action **37324003345 PASS**. The
+second-pass exact-pin gate is Action **37324573414 PASS**. The accepted
+derived report is
 `research/recovered/STONEAGE-25-BATFLY-PROBE-R1.txt` on this branch.
 
 ## Fixed descendant callback and dispatcher
