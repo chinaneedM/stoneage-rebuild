@@ -9,6 +9,7 @@ on:
       - ".github/workflows/validate-stoneage-combined-direct-magic.yml"
       - "tools/stoneage_combined_direct_magic_model.py"
       - "tools/stoneage_combined_initiative_model.py"
+      - "tools/stoneage_combined_effect_model.py"
       - "tools/stoneage_combined_direct_magic_source_audit.py"
       - "tools/stoneage_combined_source_audit.py"
       - "tools/stoneage_enemy_ai_combined_bridge.py"
@@ -17,6 +18,7 @@ on:
       - "tools/stoneage_mdfyattack_source_audit.py"
       - "tests/test_stoneage_combined_direct_magic_model.py"
       - "tests/test_stoneage_combined_initiative_model.py"
+      - "tests/test_stoneage_combined_effect_model.py"
       - "specs/STONEAGE-COMBINED-DIRECT-MAGIC-BOUNDARY-R1.md"
 permissions:
   contents: read
@@ -37,7 +39,8 @@ jobs:
             tests.test_stoneage_recovered25_combined_magic_probe \
             tests.test_stoneage_enemy_ai_combined_bridge \
             tests.test_stoneage_combined_direct_magic_model \
-            tests.test_stoneage_combined_initiative_model
+            tests.test_stoneage_combined_initiative_model \
+            tests.test_stoneage_combined_effect_model
       - name: Recover clean pinned descendant profiles outside repository
         run: |
           python - <<'PY'
