@@ -74,7 +74,7 @@ class LighttakeedModelTests(unittest.TestCase):
         self.assertEqual(r.defender_state_after.absorb,2)
         self.assertEqual(r.damage_react_resolution.defender_hp_after,100)
 
-    def test_zero_damage_returns_before_refetch_but_still_transfers(self):
+    def test_zero_damage_demotes_before_post_branch_and_transfers_nothing(self):
         r=resolve(
             marker=DAMAGE_REACT_REFLEC,
             attacker=BaseDamageReactState(reflect=7),
@@ -82,10 +82,12 @@ class LighttakeedModelTests(unittest.TestCase):
             damage=0,
         )
         self.assertTrue(r.matched_reaction)
-        self.assertEqual(r.post_branch_read_target,"defender")
-        self.assertEqual(r.observed_counter_value,2)
-        self.assertEqual(r.transferred_count,2)
-        self.assertEqual(r.attacker_state_after.reflect,2)
+        self.assertFalse(r.lighttake_case_executed)
+        self.assertTrue(r.demoted_to_ordinary)
+        self.assertIsNone(r.post_branch_read_target)
+        self.assertIsNone(r.observed_counter_value)
+        self.assertIsNone(r.transferred_count)
+        self.assertEqual(r.attacker_state_after.reflect,7)
         self.assertEqual(r.defender_state_after.reflect,2)
         self.assertEqual(r.damage_react_resolution.raw_damage,0)
         self.assertFalse(r.damage_react_resolution.charge_consumed)
