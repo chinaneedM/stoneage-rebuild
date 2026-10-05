@@ -774,3 +774,21 @@ pre-hit guard cases. Earlier remote-pending records are superseded. This
 closes only reduced offset10/no-ride/nonthrowing/no-ItemCrush/gDamageDiv0
 composition; production AttackSeq, complete round/state/coordinator and
 pressure remain OPEN. No original build selection or new covered slots.
+
+
+### 2026-10-06 — bounded physical AttackSeq composition locally validated
+
+**LOCAL_TESTED:** real shared physical arithmetic is connected to the ordered
+BattleModel loop under explicit equipment-free/no-bow/no-later-features/neutral
+globals and existing no-ride/no-ItemCrush/reduced-offset10 exclusions.157 tests
+and696 transient native original11-function comparisons pass across three
+pins/two defense variants. Source Duck gates/drunk RNG precede Guardian;
+actual defender drives critical/damage/guard and later status/command changes.
+Full ordinary runtime and two638 positive slots remain OPEN.
+
+**FACT (source; scope correction):** gavin's legacy player ItemCrushCheck draws
+RAND before equipment lookup. TAKE_ITEMDAMAGE defender slot selection draws
+raw rand()%100 before item validation. Empty equipment therefore does not
+prove a no-ItemCrush RNG seam. Both feature variants and full chronology require
+further native reproduction; original build membership remains OPEN.
+See `SRC-BATTLEMODEL-PHYSICAL-ATTACKSEQ-R1`.

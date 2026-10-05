@@ -7,8 +7,19 @@ on:
       - ".github/workflows/validate-stoneage-battlemodel-settlement.yml"
       - "tools/stoneage_battlemodel_settlement_source_audit.py"
       - "tools/stoneage_battlemodel_hit_loop.py"
+      - "tools/stoneage_battlemodel_physical_attackseq.py"
+      - "tools/stoneage_battlemodel_physical_source_audit.py"
+      - "tools/stoneage_battle_core_model.py"
+      - "tools/stoneage_battle_guardian_model.py"
+      - "tools/stoneage_battle_status_model.py"
+      - "tools/stoneage_battle_damage_react_model.py"
+      - "tools/stoneage_enemy_ai_battlemodel_bridge.py"
+      - "tools/stoneage_battlemodel_reference_model.py"
       - "tools/stoneage_battlemodel_pet_guard_source_audit.py"
       - "tests/test_stoneage_battlemodel_hit_loop.py"
+      - "tests/test_stoneage_battlemodel_physical_attackseq.py"
+      - "tests/test_stoneage_battlemodel_admission.py"
+      - "specs/STONEAGE-BATTLEMODEL-PHYSICAL-ATTACKSEQ-R1.md"
       - "specs/STONEAGE-BATTLEMODEL-SETTLEMENT-AUDIT-R1.md"
 
 concurrency:
@@ -27,14 +38,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Verify bounded post-AttackSeq loop and shared primitives
+      - name: Verify bounded physical AttackSeq loop and shared primitives
         run: |
           python -m unittest -v \
             tests.test_stoneage_battlemodel_hit_loop \
+            tests.test_stoneage_battlemodel_physical_attackseq \
             tests.test_stoneage_battlemodel_admission \
             tests.test_stoneage_battlemodel_reference_model \
             tests.test_stoneage_battle_damage_react_model \
-            tests.test_stoneage_battle_status_model
+            tests.test_stoneage_battle_status_model \
+            tests.test_stoneage_battle_core_model \
+            tests.test_stoneage_battle_guardian_model
       - name: Recover pinned source profiles
         run: |
           python - <<'PY'
@@ -55,6 +69,17 @@ jobs:
               subprocess.run(["git","-C",str(root),"checkout","--detach",
                   "FETCH_HEAD"],check=True)
           PY
+      - name: Compare equipment-free physical AttackSeq against native functions
+        run: |
+          python -m tools.stoneage_battlemodel_physical_source_audit \
+            --gavin-dir /tmp/battlemodel-hit/gavin \
+            --iris-dir /tmp/battlemodel-hit/iris \
+            --bismarck-dir /tmp/battlemodel-hit/bismarck \
+            > /tmp/battlemodel-physical-attackseq.txt
+          cat /tmp/battlemodel-physical-attackseq.txt
+          test "$(grep -c 'physical_attackseq_model_native_comparisons=232' /tmp/battlemodel-physical-attackseq.txt)" = 3
+          grep -F 'RESOLUTION|BATTLEMODEL_EQUIPMENT_FREE_PHYSICAL_ATTACKSEQ_MODEL_NATIVE_PASS' \
+            /tmp/battlemodel-physical-attackseq.txt
       - name: Audit bounded native no-ride DamageSub
         run: |
           python -m tools.stoneage_battlemodel_settlement_source_audit \
@@ -85,5 +110,6 @@ jobs:
         with:
           name: battlemodel-settlement
           path: |
+            /tmp/battlemodel-physical-attackseq.txt
             /tmp/battlemodel-settlement.txt
             /tmp/battlemodel-pet-guard.txt

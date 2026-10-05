@@ -6874,3 +6874,44 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   Close equipment/ItemCrush or prove equipment-free scope, then prepared
   command clear, persistent/coordinator and ultimate exit; require golden,
   full-region and verified pressure before promoting638's two slots.
+
+
+## Phase 1 BattleModel physical AttackSeq local milestone — 2026-10-06
+
+- Fresh remote accepted main c897fd460f32314a00bb39f04441c9ef24fdba4e,
+  tree d2a51e002e71d9fa3513e37fc6ed704c661c0f41. Its bounded loop
+  synchronization is complete. Fresh prior-main full-region37355118667
+  SUCCESS on b819ba14; all27 replay workflows now SUCCESS. Earlier running
+  snapshots are historical and superseded.
+- Isolated branch `agent/battlemodel-physical-attackseq-r1-20261006`
+  descends from accepted main. LOCAL_VALIDATED equipment-free physical
+  adapter binds real shared Duck/Guardian/critical/defense/element/field/guard/
+  minimum arithmetic to the chronological loop; post-setup attack is used,
+  profiles exactly bind participant identities and actor defense/quick.
+- Current per-hit statuses/reactions/cleared commands affect later Duck,
+  guard and Guardian eligibility. Drunk20..30 owns an explicit draw before
+  Duck. Original-target Duck precedes actual-Guardian critical/damage;
+  critical strict and Duck inclusive comparisons retain source order.
+- Local157 tests PASS, including17 new physical adapter witnesses. Native
+  original11-function composition compares232/profile,696 total across
+  all three clean pins and both declared defense variants. RNG bounds,
+  values/order, outcome, damage and actual Guardian agree in sampled cases.
+  Controlled getters/CanMove/reaction/no-ride/equipment, neutral globals and
+  no-later-features exclusions remain explicit; not exhaustive float32 proof.
+- Mandatory no-ItemCrush scope is still an exclusion. Fresh source inspection
+  shows an empty equipment map does NOT eliminate ItemCrush RNG: legacy
+  player check draws before equipment lookup; TAKE_ITEMDAMAGE defender slot
+  selection draws raw rand()%100 before item validation. Full helper/RNG
+  integration is OPEN even for equipment-free battles. Spec:
+  `specs/STONEAGE-BATTLEMODEL-PHYSICAL-ATTACKSEQ-R1.md`.
+- Existing settlement workflow now reproduces physical tests/696 native
+  comparisons alongside accepted1920/480/60 settlement/pet checks. Exact
+  publication/run receipt follows; remote acceptance is PENDING. Main runtime,
+  round/state/coordinator/pressure and two638 covered slots are unchanged.
+- **Highest-priority unfinished task:** publish isolated physical input and
+  inspect its exact remote gate; accept only bounded physical composition on
+  PASS. While queued, audit both declared ItemCrush variants and surviving
+  actual-defender RNG before status. Do not infer no RNG from no equipment.
+  Then prepared command cancellation/state/coordinator/ultimate exit, golden/
+  full-region and hash-verified pressure; preserve original build/charset/COM1
+  ambiguity and DD-018.

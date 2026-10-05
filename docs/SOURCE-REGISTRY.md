@@ -3573,3 +3573,30 @@ tree0ed843a2f667564cfae1001203445ab22fbafdbc. Controlled loop/shared tests,
 reduced pet-guard witnesses reproduced remotely, derived artifacts uploaded.
 Earlier remote-pending status superseded; all explicit experimental exclusions
 and complete production AttackSeq/runtime boundaries remain OPEN.
+
+
+### SRC-BATTLEMODEL-PHYSICAL-ATTACKSEQ-R1
+
+- Type: independent equipment-free experimental adapter with transient native
+  physical composition; no original source/payload assets retained.
+- Clean source pins: gavin1f90cb6c /iris9e6c8ce2 /bismarck999ffdf1. Event file
+  SHA256 respectively9a4607566b7cf6f6a94f2019c5d1dfc7088f7805421037b0a5f0095054b9db1d,
+  2437d4fe88f1dd77e14ad5b976402053ddd1e297d471f45b4169c3588310d4db,
+  b294f82e2a0b8382b59edd06fa8646fa3e50c00656eba496d8b78fa421c58ecc.
+  Bismarck AttrCalc moved to battle/battle_magic.c at the same pin; SHA256
+  cceea0c9d30922105904805cc4c18f22944ef1c936b89315625ddd9a83b12018.
+- Eleven original functions compile under separately declared newpower/old
+  defense profiles: Duck/Guardian/CriticalPlayer/Critical/Damage/CriDamage/
+  FieldAttAdjust/AttrCalc/AttrAdjust/GuardAdjust/AttackSeq.232 comparisons per
+  profile,696 total verify damage/outcome/Guardian/RNG ranges and order.
+  Getters, CanMove, reaction selection and no-ride/equipment remain controlled.
+  Synthetic admission fixture changes only evidence identity; no raw assets.
+- `tools/stoneage_battlemodel_physical_attackseq.py`,
+  `tools/stoneage_battlemodel_physical_source_audit.py`,17 new adapter tests and
+  `specs/STONEAGE-BATTLEMODEL-PHYSICAL-ATTACKSEQ-R1.md`;157 local tests PASS.
+  Extended settlement CI publication pending. Full runtime/round/coordinator/
+  pressure, equipped interactions and exhaustive float32 equality remain OPEN.
+- Source inspection also establishes gavin legacy ItemCrushCheck and guarded
+  TAKE_ITEMDAMAGE selection consume RNG before any equipment lookup can rule
+  out an item. Equipment-free scope must NOT be promoted to no-ItemCrush proof.
+  Multi-profile/native ItemCrush acceptance is the next gate.

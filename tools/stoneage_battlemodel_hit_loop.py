@@ -104,7 +104,7 @@ class BattleModelDraw:
         _int(self.ordinal, "scheduled ordinal", 0, 9)
         if self.owner not in {"target_selection", "status", "critical_death",
                               "attackseq_dodge", "attackseq_critical", "attackseq_damage",
-                              "attackseq_guard", "attackseq_minimum"}:
+                              "attackseq_guard", "attackseq_minimum", "attackseq_drunk_dodge"}:
             raise ValueError("unknown BattleModel RNG owner")
         _int(self.value, "draw", -(2**31), 2**31 - 1)
 
@@ -124,7 +124,7 @@ class BattleModelAttackSeqRng:
 
     def take(self, owner: str, low: int, high: int) -> int:
         if owner not in {"attackseq_dodge", "attackseq_critical", "attackseq_damage",
-                         "attackseq_guard", "attackseq_minimum"}:
+                         "attackseq_guard", "attackseq_minimum", "attackseq_drunk_dodge"}:
             raise ValueError("AttackSeq cannot consume target/status/death RNG")
         return self._take(owner, low, high)
 
