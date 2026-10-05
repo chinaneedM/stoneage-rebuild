@@ -34,6 +34,10 @@ from tools.stoneage_enemy_ai_rehp_bridge import (
     EnemyAiReHpSubmission,
     resolve_enemy_ai_rehp_submission,
 )
+from tools.stoneage_enemy_ai_relife_bridge import (
+    EnemyAiReLifeSubmission,
+    resolve_enemy_ai_relife_submission,
+)
 from tools.stoneage_enemy_ai_damage_to_hp_bridge import (
     EnemyAiDamageToHpSubmission,
     resolve_enemy_ai_damage_to_hp_submission,
@@ -126,6 +130,10 @@ from tools.stoneage_damage_to_hp_model import (
 from tools.stoneage_enemy_rehp_model import (
     CALLBACK_NAME as ENEMY_REHP_CALLBACK,
     EnemyReHpRolls,
+)
+from tools.stoneage_enemy_relife_model import (
+    CALLBACK_NAME as ENEMY_RELIFE_CALLBACK,
+    EnemyReLifeRolls,
 )
 from tools.stoneage_enemy_ai_petskill_bridge import (
     resolve_enemy_ai_supported_petskill_command,
@@ -459,6 +467,9 @@ class EnemyAiCommonCommandBatch:
     enemy_rehp_submissions: Mapping[
         str,EnemyAiReHpSubmission
     ] = field(default_factory=dict)
+    enemy_relife_submissions: Mapping[
+        str,EnemyAiReLifeSubmission
+    ] = field(default_factory=dict)
     damage_to_hp_submissions: Mapping[
         str,EnemyAiDamageToHpSubmission
     ] = field(default_factory=dict)
@@ -600,6 +611,43 @@ class EnemyAiCommonCommandBatch:
         if set(rehp_submissions) & set(magic_submissions):
             raise ValueError("enemy AI ReHP/AttackMagic submissions overlap")
 
+        relife_submissions={
+            str(key):value
+            for key,value in self.enemy_relife_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "enemy_relife_submissions",
+            MappingProxyType(relife_submissions),
+        )
+        for participant_id,submission in relife_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI ReLife submission lacks ordering carrier command"
+                )
+            if not isinstance(submission,EnemyAiReLifeSubmission):
+                raise TypeError(
+                    f"enemy AI ReLife submission has wrong type for "
+                    f"{participant_id}"
+                )
+            if str(submission.participant_id) != participant_id:
+                raise ValueError("enemy AI ReLife submission participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1) != BATTLE_COM_ATTACK
+                or int(carrier.command2)
+                != int(submission.source_attack_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI ReLife carrier must be ATTACK/source-target"
+                )
+        if set(relife_submissions) & (
+            set(rehp_submissions) | set(magic_submissions)
+        ):
+            raise ValueError(
+                "enemy AI ReLife semantic submissions overlap another skill"
+            )
+
         damage_submissions={
             str(key):value
             for key,value in self.damage_to_hp_submissions.items()
@@ -630,7 +678,7 @@ class EnemyAiCommonCommandBatch:
                     "enemy AI DamageToHp carrier must be ATTACK/source-target"
                 )
         if set(damage_submissions) & (
-            set(rehp_submissions) | set(magic_submissions)
+            set(relife_submissions) | set(rehp_submissions) | set(magic_submissions)
         ):
             raise ValueError(
                 "enemy AI DamageToHp semantic submissions overlap another skill"
@@ -661,7 +709,7 @@ class EnemyAiCommonCommandBatch:
                     "enemy AI MpDamage carrier must be ATTACK/source-target"
                 )
         if set(mp_submissions) & (
-            set(damage_submissions) | set(rehp_submissions)
+            set(damage_submissions) | set(relife_submissions) | set(rehp_submissions)
             | set(magic_submissions)
         ):
             raise ValueError(
@@ -697,7 +745,7 @@ class EnemyAiCommonCommandBatch:
                 )
         if set(fall_submissions) & (
             set(mp_submissions) | set(damage_submissions)
-            | set(rehp_submissions) | set(magic_submissions)
+            | set(relife_submissions) | set(rehp_submissions) | set(magic_submissions)
         ):
             raise ValueError(
                 "enemy AI FallGround semantic submissions overlap another skill"
@@ -732,7 +780,7 @@ class EnemyAiCommonCommandBatch:
                 )
         if set(tear_submissions) & (
             set(fall_submissions) | set(mp_submissions)
-            | set(damage_submissions) | set(rehp_submissions)
+            | set(damage_submissions) | set(relife_submissions) | set(rehp_submissions)
             | set(magic_submissions)
         ):
             raise ValueError(
@@ -764,7 +812,7 @@ class EnemyAiCommonCommandBatch:
                 )
         if set(nocast_submissions) & (
             set(tear_submissions) | set(fall_submissions) | set(mp_submissions)
-            | set(damage_submissions) | set(rehp_submissions)
+            | set(damage_submissions) | set(relife_submissions) | set(rehp_submissions)
             | set(magic_submissions)
         ):
             raise ValueError(
@@ -803,7 +851,7 @@ class EnemyAiCommonCommandBatch:
         if set(guard_break2_submissions) & (
             set(nocast_submissions) | set(tear_submissions)
             | set(fall_submissions) | set(mp_submissions)
-            | set(damage_submissions) | set(rehp_submissions)
+            | set(damage_submissions) | set(relife_submissions) | set(rehp_submissions)
             | set(magic_submissions)
         ):
             raise ValueError(
@@ -842,7 +890,7 @@ class EnemyAiCommonCommandBatch:
             set(guard_break2_submissions) | set(nocast_submissions)
             | set(tear_submissions) | set(fall_submissions)
             | set(mp_submissions) | set(damage_submissions)
-            | set(rehp_submissions) | set(magic_submissions)
+            | set(relife_submissions) | set(rehp_submissions) | set(magic_submissions)
         ):
             raise ValueError(
                 "enemy AI Barrier semantic submissions overlap another skill"
@@ -880,7 +928,7 @@ class EnemyAiCommonCommandBatch:
             set(barrier_submissions) | set(guard_break2_submissions) | set(nocast_submissions)
             | set(tear_submissions) | set(fall_submissions)
             | set(mp_submissions) | set(damage_submissions)
-            | set(rehp_submissions) | set(magic_submissions)
+            | set(relife_submissions) | set(rehp_submissions) | set(magic_submissions)
         ):
             raise ValueError(
                 "enemy AI AttackCrazed semantic submissions overlap another skill"
@@ -900,7 +948,7 @@ class EnemyAiCommonCommandBatch:
         if set(mdfyattack_submissions) & (
             set(attack_crazed_submissions) | set(barrier_submissions) | set(guard_break2_submissions)
             | set(nocast_submissions) | set(tear_submissions) | set(fall_submissions)
-            | set(mp_submissions) | set(damage_submissions) | set(rehp_submissions) | set(magic_submissions)
+            | set(mp_submissions) | set(damage_submissions) | set(relife_submissions) | set(rehp_submissions) | set(magic_submissions)
         ):
             raise ValueError("enemy AI Mdfyattack semantic submissions overlap another skill")
 
@@ -918,7 +966,7 @@ class EnemyAiCommonCommandBatch:
             set(mdfyattack_submissions) | set(attack_crazed_submissions) | set(barrier_submissions)
             | set(guard_break2_submissions) | set(nocast_submissions) | set(tear_submissions)
             | set(fall_submissions) | set(mp_submissions) | set(damage_submissions)
-            | set(rehp_submissions) | set(magic_submissions)
+            | set(relife_submissions) | set(rehp_submissions) | set(magic_submissions)
         ):
             raise ValueError("enemy AI Weaken semantic submissions overlap another skill")
 
@@ -964,7 +1012,7 @@ class EnemyAiCommonCommandBatch:
                     "enemy AI WildViolentAttack callback work-power setup drift"
                 )
         wild_overlap=(
-            set(magic_submissions) | set(rehp_submissions)
+            set(magic_submissions) | set(relife_submissions) | set(rehp_submissions)
             | set(damage_submissions) | set(mp_submissions)
             | set(fall_submissions) | set(tear_submissions)
             | set(nocast_submissions) | set(guard_break2_submissions)
@@ -1002,7 +1050,7 @@ class EnemyAiCommonCommandBatch:
                     "enemy AI Refresh carrier must be ATTACK/source-target"
                 )
         refresh_overlap=(
-            set(magic_submissions) | set(rehp_submissions)
+            set(magic_submissions) | set(relife_submissions) | set(rehp_submissions)
             | set(damage_submissions) | set(mp_submissions)
             | set(fall_submissions) | set(tear_submissions)
             | set(nocast_submissions) | set(guard_break2_submissions)
@@ -1045,7 +1093,7 @@ class EnemyAiCommonCommandBatch:
                     "enemy AI SetMagicPet carrier must be ATTACK/source-target"
                 )
         setmagicpet_overlap=(
-            set(magic_submissions) | set(rehp_submissions)
+            set(magic_submissions) | set(relife_submissions) | set(rehp_submissions)
             | set(damage_submissions) | set(mp_submissions)
             | set(fall_submissions) | set(tear_submissions)
             | set(nocast_submissions) | set(guard_break2_submissions)
@@ -1098,7 +1146,7 @@ class EnemyAiCommonCommandBatch:
                     "enemy AI BattleTimid callback work-power setup drift"
                 )
         battletimid_overlap=(
-            set(magic_submissions) | set(rehp_submissions)
+            set(magic_submissions) | set(relife_submissions) | set(rehp_submissions)
             | set(damage_submissions) | set(mp_submissions)
             | set(fall_submissions) | set(tear_submissions)
             | set(nocast_submissions) | set(guard_break2_submissions)
@@ -1837,6 +1885,7 @@ class LocalRuntimeSessionCoordinator:
         allow_steal_skill: bool = False,
         allow_attackmagic_skill: bool = False,
         allow_rehp_skill: bool = False,
+        allow_relife_skill: bool = False,
         allow_damage_to_hp_skill: bool = False,
         allow_mp_damage_skill: bool = False,
         allow_fall_ground_skill: bool = False,
@@ -1996,6 +2045,7 @@ class LocalRuntimeSessionCoordinator:
         abduct_contexts={}
         attack_magic_submissions={}
         enemy_rehp_submissions={}
+        enemy_relife_submissions={}
         damage_to_hp_submissions={}
         mp_damage_submissions={}
         fall_ground_submissions={}
@@ -2544,6 +2594,28 @@ class LocalRuntimeSessionCoordinator:
 
                 if (
                     selected_skill is not None
+                    and selected_skill.function_name == ENEMY_RELIFE_CALLBACK
+                    and bool(allow_relife_skill)
+                ):
+                    submission=resolve_enemy_ai_relife_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                    )
+                    # Internal ATTACK is only the source COM2/initiative and
+                    # physical-fallback carrier. ReLife itself stays symbolic.
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(
+                            submission.source_attack_target_slot
+                        ),
+                    )
+                    enemy_relife_submissions[enemy_id]=submission
+                    continue
+
+                if (
+                    selected_skill is not None
                     and selected_skill.function_name == ATTACK_MAGIC_CALLBACK
                     and bool(allow_attackmagic_skill)
                 ):
@@ -2634,6 +2706,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("AttackMagic")
             if bool(allow_rehp_skill):
                 allowed_parts.append("ENEMYSKILL_ReHP")
+            if bool(allow_relife_skill):
+                allowed_parts.append("ENEMYSKILL_ReLife")
             if bool(allow_damage_to_hp_skill):
                 allowed_parts.append("PETSKILL_DamageToHp")
             if bool(allow_mp_damage_skill):
@@ -2695,6 +2769,7 @@ class LocalRuntimeSessionCoordinator:
             abduct_contexts=abduct_contexts,
             attack_magic_submissions=attack_magic_submissions,
             enemy_rehp_submissions=enemy_rehp_submissions,
+            enemy_relife_submissions=enemy_relife_submissions,
             damage_to_hp_submissions=damage_to_hp_submissions,
             mp_damage_submissions=mp_damage_submissions,
             fall_ground_submissions=fall_ground_submissions,
@@ -2893,6 +2968,12 @@ class LocalRuntimeSessionCoordinator:
         enemy_rehp_retarget_rolls_by_attack_id: Mapping[
             str,int | None
         ] | None = None,
+        enemy_relife_rolls_by_attack_id: Mapping[
+            str,EnemyReLifeRolls
+        ] | None = None,
+        enemy_relife_retarget_rolls_by_attack_id: Mapping[
+            str,int | None
+        ] | None = None,
         fall_ground_rolls_by_attack_id: Mapping[
             str,int | None
         ] | None = None,
@@ -2931,7 +3012,7 @@ class LocalRuntimeSessionCoordinator:
 
         ATTACK/GUARD are direct. ESCAPE uses recovered enemybase RARE plus
         explicit RAND/ABIO inputs. wa slots admit None/NormalAttack/NormalGuard
-        plus recovered Abduct, AttackMagic, ENEMYSKILL_ReHP, PETSKILL_DamageToHp, PETSKILL_MpDamage, PETSKILL_FallGround, ChargeAttack, ContinuationAttack,
+        plus recovered Abduct, AttackMagic, ENEMYSKILL_ReHP, ENEMYSKILL_ReLife, PETSKILL_DamageToHp, PETSKILL_MpDamage, PETSKILL_FallGround, ChargeAttack, ContinuationAttack,
         EarthRound, GuardBreak, Mighty, NoGuard, PowerBalance, StatusChange and
         Steal.
         Steal mutates only the working persistent player Gold/inventory clone
@@ -3025,6 +3106,7 @@ class LocalRuntimeSessionCoordinator:
             allow_steal_skill=True,
             allow_attackmagic_skill=True,
             allow_rehp_skill=True,
+            allow_relife_skill=True,
             allow_damage_to_hp_skill=True,
             allow_mp_damage_skill=True,
             allow_fall_ground_skill=True,
@@ -3144,6 +3226,41 @@ class LocalRuntimeSessionCoordinator:
             extra=sorted(set(normalized_rehp_retarget_rolls)-rehp_enemy_ids)
             raise ValueError(
                 "enemy ReHP TargetAdjust RNG mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+
+        relife_enemy_ids=set(enemy_batch.enemy_relife_submissions)
+        normalized_relife_rolls={
+            str(key):value
+            for key,value in (enemy_relife_rolls_by_attack_id or {}).items()
+        }
+        if set(normalized_relife_rolls) != relife_enemy_ids:
+            missing=sorted(relife_enemy_ids-set(normalized_relife_rolls))
+            extra=sorted(set(normalized_relife_rolls)-relife_enemy_ids)
+            raise ValueError(
+                "enemy ReLife effect RNG mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        for participant_id,rolls in normalized_relife_rolls.items():
+            if not isinstance(rolls,EnemyReLifeRolls):
+                raise TypeError(
+                    f"enemy ReLife RNG has wrong type for {participant_id}"
+                )
+        normalized_relife_retarget_rolls={
+            str(key):(None if value is None else int(value))
+            for key,value in (
+                enemy_relife_retarget_rolls_by_attack_id or {}
+            ).items()
+        }
+        if set(normalized_relife_retarget_rolls) != relife_enemy_ids:
+            missing=sorted(
+                relife_enemy_ids-set(normalized_relife_retarget_rolls)
+            )
+            extra=sorted(
+                set(normalized_relife_retarget_rolls)-relife_enemy_ids
+            )
+            raise ValueError(
+                "enemy ReLife TargetAdjust RNG mismatch; "
                 f"missing={missing}, extra={extra}"
             )
 
@@ -3633,6 +3750,15 @@ class LocalRuntimeSessionCoordinator:
             enemy_rehp_rolls_by_participant_id=normalized_rehp_rolls,
             enemy_rehp_retarget_rolls_by_participant_id=(
                 normalized_rehp_retarget_rolls
+            ),
+            enemy_relife_submissions_by_participant_id=(
+                enemy_batch.enemy_relife_submissions
+            ),
+            enemy_relife_rolls_by_participant_id=(
+                normalized_relife_rolls
+            ),
+            enemy_relife_retarget_rolls_by_participant_id=(
+                normalized_relife_retarget_rolls
             ),
             damage_to_hp_submissions_by_participant_id=(
                 enemy_batch.damage_to_hp_submissions
