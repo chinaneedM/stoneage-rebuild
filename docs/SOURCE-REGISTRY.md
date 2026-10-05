@@ -3326,3 +3326,14 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - Source-only 747 defined comparisons / 38 expected ASan/UBSan diagnostics; with real rows 765 / 62. **51 unit tests PASS**. Outcome matrix: 24 unsafe cells, 12 safe FALSE/no-effect cells, six defined iris CP950 dispatches.
 - iris CP950 accepted numeric outputs: ID61 wildcard status0; IDs139/159/169/179/189 status1/4/6/5/3, turn5, success offset15. No final chance, actor/target mutation or original build provenance follows from those parser values.
 - **CLOSED:** explicit conditional parser and exact 42-cell actual-data outcome reference. **OPEN:** initiative, target/effect RNG and mutation, MP item-pool witness, command/persistence ordering and earliest historical membership. Pressure/ordered runtime remains open.
+
+### SRC-VARY-REFERENCE-RUNTIME-R1 — 2026-10-05
+
+- Fixed descendant pins: gavin `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`, iris `9e6c8ce2cd8ed532a7157773acd1c61582c178b5`, Bismarck `999ffdf1d220ec6666eb65339180689c9caf1876`. They are later-descendant reference sources, not proof of original JSS/Taiwan-v1 introduction.
+- Reference outputs: `specs/STONEAGE-VARY-REFERENCE-R1.md`, `research/recovered/STONEAGE-VARY-SOURCE-AUDIT-R1.txt`, `research/recovered/STONEAGE-25-VARY-PROBE-R1.txt`. Exact recovered25 population is ID 600 only, four positive PETSKILL3 uses on TEMPNO 981/982/983/984.
+- Executable-profile discriminator: `tools/stoneage_vary_executable_profile_probe.py`, derived report `research/recovered/STONEAGE-25-VARY-EXECUTABLE-PROFILE-R1.txt`, Action **37282101502 PASS**. Bounded result: one 273-byte ELF candidate, no Vary symbol carrier, profile classification **inconclusive_symbol_unavailable**.
+- Runtime boundary: `specs/STONEAGE-VARY-RUNTIME-R1.md`; implementation preserves explicit gavin/iris versus Bismarck work-power/visual divergence, ordinary QUICK ordering, semantic no-damage Vary action, six-action persistence and active recast block.
+- Acceptance: dedicated Vary **37286463853 PASS**; local coordinator **37286420982 PASS**; runtime golden **37286013147 PASS**; recovered25 full-region **37286420991 PASS**; verified pressure **37286756850 PASS**.
+- Pressure outcome: exact Vary = `closed_runtime`, **4 uses / 4 templates**, **2448/2486 = 98.47%** executable positive-slot coverage; next OPEN = **ENEMYSKILL_ReLife / ID500 / 3 uses / 3 templates**.
+- **OPEN:** original executable/compiler/profile/charset identity, original numeric Vary COM1, original JSS/Taiwan-v1 membership and excluded cross-system work-power compositions.
+
