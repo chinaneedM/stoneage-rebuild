@@ -22,6 +22,7 @@ CLOSED_RUNTIME_CALLBACKS=frozenset(
     | {
         "PETSKILL_AttackMagic",
         "ENEMYSKILL_ReHP",
+        "ENEMYSKILL_ReLife",
         "PETSKILL_DamageToHp",
         "PETSKILL_MpDamage",
         "PETSKILL_FallGround",
