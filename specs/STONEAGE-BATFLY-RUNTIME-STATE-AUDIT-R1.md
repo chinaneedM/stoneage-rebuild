@@ -65,6 +65,26 @@ round can execute. Core invariant commit:
 The terminal exit projection retains its existing duplicate-state rejection as
 a second line of defense.
 
+## Death/profit/termination event seam
+
+BatFly changes several active battle entries in one semantic action. The current
+persistent death/penalty projector consumes per-entry HP transitions from round
+events. Runtime must therefore expose **one target HP-transition event per
+affected active battle entry**, all owned by the same BatFly actor/action:
+
+- each event carries that entry's before/after HP and authoritative battle slot;
+- player/allied-pet deaths then flow through the existing normal death/loyalty
+  projector exactly once;
+- the enemy BatFly actor does not gain player-side kill EXP/drop profit;
+- the separately mounted ride pet is **not** fabricated as a battle-entry
+  event; its 5% drain and PETFALL stay in `RidePetRuntime`;
+- after all target transitions, the actor's summed heal is committed once and
+  ordinary persistent termination evaluates the final HP map.
+
+This decomposition is a modern deterministic state/projection carrier. It does
+not claim the original server emitted one historical protocol command per
+modern event object.
+
 ## Slot order versus source presentation order
 
 `PersistentBattleState.slots` carries the authoritative battle slot mapping
