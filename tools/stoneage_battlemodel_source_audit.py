@@ -68,7 +68,11 @@ def analyze_profile(name:str,root:Path):
 
     callback=_compact(_strip(_definition(data["pet"],CALLBACK_NAME)))
     callback=_normalized_identifier(callback)
-    effect=_compact(_strip(_definition(data["event"],"BATTLE_BattleModel")))
+    # raw_window avoids the shared helper's prefix re-search accidentally
+    # resolving the earlier BATTLE_BattleModel_ATTACK definition.
+    effect=_compact(_strip(_definition(
+        data["event"],"BATTLE_BattleModel",raw_window=True
+    )))
     effect=_normalized_identifier(effect)
     attack=_compact(_strip(_definition(data["event"],"BATTLE_BattleModel_ATTACK")))
     attack=_normalized_identifier(attack)
