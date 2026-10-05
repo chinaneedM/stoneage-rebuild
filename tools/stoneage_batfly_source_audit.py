@@ -144,7 +144,7 @@ int main(void){
             result.attacker_hp_after,
             *t1,
             *t2,
-            TARGET_SIDE_1 if side==0 else TARGET_SIDE_0,
+            21 if side==0 else 20,
             1,
             int(t1[3])+int(t2[3]),
         ))
