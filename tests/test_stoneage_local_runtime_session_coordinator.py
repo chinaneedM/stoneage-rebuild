@@ -1,4 +1,5 @@
 import json
+import hashlib
 from dataclasses import replace
 import tempfile
 import unittest
@@ -64,6 +65,14 @@ from tools.stoneage_nocast_runtime_state import (
     NocastActionRolls,
     NocastParticipantRuntime,
     NocastRoundOverlay,
+)
+import tools.stoneage_enemy_ai_combined_bridge as combined_bridge
+from tools.stoneage_combined_direct_magic_model import RuntimeItemZeroWitness
+from tools.stoneage_combined_initiative_model import PROFILE_GAVIN_IRIS_30PCT
+from tools.stoneage_combined_runtime_state import (
+    CombinedActionRolls,
+    CombinedRuntimeOverlay,
+    STATUS_MAGIC_PROFILE_IRIS_CP950,
 )
 from tools.stoneage_barrier_runtime_state import BarrierActionRolls
 from tools.stoneage_recovered25_attack_magic_runtime import (
@@ -7010,6 +7019,212 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                     "ghost":14,
                 },
             )
+
+
+    def test_recovered_enemy_ai_combined_attreverse_executes_and_persists(self):
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-combined"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,group,
+            entry_count_roll=1,selection_rolls=(0,),
+            birth_rolls=(EnemyBirthRolls(
+                level_roll=1,birth_offsets=(0,0,0,0),
+                spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+            ),),
+        )
+        enemy_id=str(context.battle.enemies[0].participant_id)
+        spawned=context.spawned_enemies[0]
+
+        options={
+            627:b"marker|6|21|139|159|169|179|189",
+            629:b"marker|5|139|159|169|179|189",
+            630:b"marker|1|306",
+            632:b"marker|1|240",
+            637:b"marker|1|61",
+            646:b"marker|6|20|21|22|23|24|25",
+            648:b"marker|6|71|81|91|101|121|61",
+        }
+        meta={
+            627:(1,3,2,2000),629:(1,3,2,2000),630:(1,3,2,2000),
+            632:(1,1,2,5000),637:(1,2,2,20000),
+            646:(1,2,2,20000),648:(1,2,2,20000),
+        }
+        skills={}
+        for skill_id,raw in options.items():
+            field,target,cost,illegal=meta[skill_id]
+            skills[skill_id]=Recovered25PetSkillEntry(
+                skill_id,field,target,cost,illegal,
+                "PETSKILL_Combined",raw,
+            )
+        combined_runtime=Recovered25PetSkillRuntime(
+            skills=skills,source_file="petskill.txt"
+        )
+        self.stack.petskill_runtime=combined_runtime
+
+        expected_rows=[]
+        for skill_id in sorted(options):
+            entry=combined_runtime.skills[skill_id]
+            marker,declared,effective,magic_ids,well=(
+                combined_bridge._option_structure(entry.option_bytes)
+            )
+            expected_rows.append((
+                skill_id,entry.field,entry.target,entry.cost,entry.illegal,
+                0,len(entry.option_bytes),
+                hashlib.sha256(entry.option_bytes).hexdigest(),
+                False,marker,declared,effective,magic_ids,well,
+            ))
+        functions={
+            20:"MAGIC_Recovery",21:"MAGIC_Recovery",22:"MAGIC_Recovery",
+            23:"MAGIC_Recovery",24:"MAGIC_Recovery",25:"MAGIC_Recovery",
+            61:"MAGIC_StatusRecovery",71:"MAGIC_StatusRecovery",
+            81:"MAGIC_StatusRecovery",91:"MAGIC_StatusRecovery",
+            101:"MAGIC_StatusRecovery",121:"MAGIC_StatusRecovery",
+            139:"MAGIC_StatusChange",159:"MAGIC_StatusChange",
+            169:"MAGIC_StatusChange",179:"MAGIC_StatusChange",
+            189:"MAGIC_StatusChange",240:"MAGIC_AttReverse",
+            306:"MAGIC_AttMagic",
+        }
+        magic_rows=tuple(
+            (
+                magic_id,function,
+                hashlib.sha256(function.encode("ascii")).hexdigest(),
+                1,8,0,None,0,hashlib.sha256(b"").hexdigest(),False,
+            )
+            for magic_id,function in sorted(functions.items())
+        )
+
+        enemy=replace(context.battle.enemies[0],quick=200)
+        player=replace(
+            context.battle.player,hp=1000,max_hp=1000,quick=10,
+        )
+        context=replace(
+            context,
+            battle=replace(context.battle,player=player,enemies=(enemy,)),
+            spawned_enemies=(replace(
+                spawned,
+                participant=enemy,
+                template=replace(
+                    spawned.template,
+                    skill_ids=(632,0,0,0,0,0,0),
+                    skill_slot_ids=(632,0,0,0,0,0,0),
+                ),
+                variant=replace(
+                    spawned.variant,
+                    tactics_option=(
+                        "at:0;1;1|gu:0|es:0|"
+                        "wa:1;0;0;0;0;0;0"
+                    ),
+                ),
+            ),),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+            nocast_overlay=NocastRoundOverlay({
+                "player":NocastParticipantRuntime(25,25,25,25),
+                enemy_id:NocastParticipantRuntime(25,25,25,25),
+            }),
+            combined_overlay=CombinedRuntimeOverlay(
+                PROFILE_GAVIN_IRIS_30PCT,
+                STATUS_MAGIC_PROFILE_IRIS_CP950,
+                RuntimeItemZeroWitness(True,5),
+                {enemy_id:20},
+                {"player":False,enemy_id:False},
+            ),
+        )
+        profiles={
+            "player":BattleCombatProfile(
+                fixed_dex=10,fixed_luck=0,
+                earth=10,water=20,fire=30,wind=40,
+            ),
+            enemy_id:BattleCombatProfile(
+                fixed_dex=200,fixed_luck=0,
+                earth=0,water=0,fire=0,wind=0,
+            ),
+        }
+        common=dict(
+            player_side_commands={"player":BattleCommand(BATTLE_COM_WAIT)},
+            enemy_mode_rolls={enemy_id:0},
+            enemy_target_rolls={enemy_id:0},
+            enemy_escape_rolls={},
+            opponent_abio_by_participant_id={},
+            initiative_random_subtracts={"player":0,enemy_id:0},
+            profiles=profiles,
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            combined_selection_draws_by_enemy_id={enemy_id:0},
+            combined_rolls_by_attack_id={enemy_id:CombinedActionRolls()},
+        )
+        with (
+            patch.object(
+                combined_bridge,"EXPECTED_EXACT_ROWS",tuple(expected_rows)
+            ),
+            patch.object(
+                combined_bridge,"EXPECTED_EXACT_MAGIC_ROWS",magic_rows
+            ),
+        ):
+            batch=self.coordinator._build_persistent_enemy_common_batch(
+                context,
+                mode_rolls_by_enemy_id={enemy_id:0},
+                target_rolls_by_enemy_id={enemy_id:0},
+                allow_combined_skill=True,
+                combined_selection_draws_by_enemy_id={enemy_id:0},
+            )
+            self.assertEqual(
+                batch.combined_submissions[enemy_id].magic.magic_id,240
+            )
+            context,first=(
+                self.coordinator
+                .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                    context,**common
+                )
+            )
+            event=next(
+                e for e in first.round.events
+                if e.combined_magic_id==240
+            )
+            self.assertEqual(event.result,"combined_att_reverse_toggled")
+            self.assertTrue(
+                context.persistent_battle_state.combined_overlay
+                .att_reverse_by_participant_id["player"]
+            )
+            self.assertEqual(
+                context.persistent_battle_state.combined_overlay
+                .mp_by_participant_id[enemy_id],
+                15,
+            )
+
+            context,second=(
+                self.coordinator
+                .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                    context,**common
+                )
+            )
+        event=next(
+            e for e in second.round.events
+            if e.combined_magic_id==240
+        )
+        effect=event.combined_att_reverse_effect
+        self.assertEqual(
+            (effect.earth,effect.water,effect.fire,effect.wind),
+            (30,40,10,20),
+        )
+        self.assertFalse(
+            context.persistent_battle_state.combined_overlay
+            .att_reverse_by_participant_id["player"]
+        )
+        self.assertEqual(
+            context.persistent_battle_state.combined_overlay
+            .mp_by_participant_id[enemy_id],
+            10,
+        )
 
 if __name__ == "__main__":
     unittest.main()
