@@ -3337,3 +3337,13 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - Pressure outcome: exact Vary = `closed_runtime`, **4 uses / 4 templates**, **2448/2486 = 98.47%** executable positive-slot coverage; next OPEN = **ENEMYSKILL_ReLife / ID500 / 3 uses / 3 templates**.
 - **OPEN:** original executable/compiler/profile/charset identity, original numeric Vary COM1, original JSS/Taiwan-v1 membership and excluded cross-system work-power compositions.
 
+### SRC-RELIFE-REFERENCE-R1 — 2026-10-05
+
+- Fixed descendant pins: gavin `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56`, iris `9e6c8ce2cd8ed532a7157773acd1c61582c178b5`, Bismarck `999ffdf1d220ec6666eb65339180689c9caf1876`; later-descendant evidence only.
+- Reproducer: `tools/stoneage_relife_source_audit.py`; recovered data probe: `tools/stoneage_recovered25_relife_probe.py`; reports `research/recovered/STONEAGE-RELIFE-SOURCE-AUDIT-R1.txt` and `research/recovered/STONEAGE-25-RELIFE-PROBE-R1.txt`; spec `specs/STONEAGE-RELIFE-REFERENCE-R1.md`.
+- Exact recovered25 row: ID500 / FIELD1 / TARGET2 / COST2 / ILLEGAL0 / empty OPTION SHA-256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`; three positive refs on TEMPNO 39 slot5, 909 slot2, 1165 slot4.
+- Source facts: callback sets symbolic ENEMYRELIFE command/COM2/C_OK; dispatcher TargetAdjust precedes effect; enemy helper scans slots 10..19 for non-ultimate actionable dead entries; no candidate falls back to physical ATTACK; success owns candidate-selection RNG plus nonzero resurrection-amount RNG; HP is capped and ISDIE cleared.
+- Guarded numeric command: gavin/iris **2013**, Bismarck **2012**. No recovered-original numeric command is selected.
+- Acceptance: **37288674220 PASS** first pass; **37288913119 PASS** exact row/template pin.
+- **OPEN:** original binary/compiler/profile, original numeric COM1, JSS/Taiwan-v1 membership, and runtime dead-entry/coordinator carrier integration.
+
