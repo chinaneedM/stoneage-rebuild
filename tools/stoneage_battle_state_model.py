@@ -1411,6 +1411,12 @@ def resolve_persistent_ordinary_round(
     battletimid_rolls_by_participant_id: Mapping[
         str,int | None
     ] | None = None,
+    combined_submissions_by_participant_id: Mapping[
+        str,EnemyAiCombinedSubmission
+    ] | None = None,
+    combined_rolls_by_participant_id: Mapping[
+        str,CombinedActionRolls
+    ] | None = None,
     fall_ground_submissions_by_participant_id: Mapping[
         str,EnemyAiFallGroundSubmission
     ] | None = None,
@@ -1509,6 +1515,44 @@ def resolve_persistent_ordinary_round(
             for participant in participants
         )
 
+    combined_submissions={
+        str(pid):submission
+        for pid,submission in (
+            combined_submissions_by_participant_id or {}
+        ).items()
+    }
+    unknown_combined_ids=sorted(set(combined_submissions)-living_ids)
+    if unknown_combined_ids:
+        raise ValueError(
+            "Combined submissions reference inactive actors: "
+            f"{unknown_combined_ids}"
+        )
+    if set(combined_submissions) & set(battletimid_submissions):
+        raise ValueError("Combined and BattleTimid submissions overlap")
+    for pid,submission in combined_submissions.items():
+        if not isinstance(submission,EnemyAiCombinedSubmission):
+            raise TypeError("Combined submission has wrong type")
+        if str(submission.participant_id)!=pid:
+            raise ValueError("Combined submission participant drift")
+    if combined_submissions:
+        if state.combined_overlay is None:
+            raise ValueError(
+                "Combined persistent execution requires explicit runtime overlay"
+            )
+        if state.nocast_overlay is None:
+            raise ValueError(
+                "Combined persistent execution requires Nocast/status overlay"
+            )
+        missing_mp=sorted(
+            set(combined_submissions)-set(
+                state.combined_overlay.mp_by_participant_id
+            )
+        )
+        if missing_mp:
+            raise ValueError(
+                f"Combined actors lack persistent MP witness: {missing_mp}"
+            )
+
     normalized_escape_contexts=dict(escape_contexts or {})
     for participant_id,context in normalized_escape_contexts.items():
         participant_id=str(participant_id)
@@ -1527,6 +1571,20 @@ def resolve_persistent_ordinary_round(
     # StatusSeq will expire WEAKEN later in this round. Baseline session values
     # remain untouched, so the next preparation never compounds 0.8.
     profiles=dict(profiles)
+    if state.combined_overlay is not None:
+        for pid in living_ids:
+            if pid not in profiles:
+                raise KeyError(f"missing combat profile for {pid}")
+            attrs=state.combined_overlay.precommand_elements(
+                pid,profiles[pid]
+            )
+            profiles[pid]=replace(
+                profiles[pid],
+                earth=int(attrs["earth"]),
+                water=int(attrs["water"]),
+                fire=int(attrs["fire"]),
+                wind=int(attrs["wind"]),
+            )
     if state.nocast_overlay is not None:
         baseline=_participant_map(state.session)
         for pid in living_ids:
@@ -1606,11 +1664,26 @@ def resolve_persistent_ordinary_round(
             defense_power=int(submission.setup.defence_power),
         )
 
+    combined_action_overrides={}
+    if combined_submissions:
+        participant_by_id={
+            str(participant.participant_id):participant
+            for participant in participants
+        }
+        for pid in combined_submissions:
+            initiative=resolve_combined_initiative(
+                profile=state.combined_overlay.initiative_profile,
+                work_quick=int(participant_by_id[pid].quick),
+                random_subtract=int(initiative_random_subtracts[pid]),
+            )
+            combined_action_overrides[pid]=int(initiative.action_value)
+
     prepared = prepare_battle_round(
         participants,
         effective_commands,
         initiative_random_subtracts,
         tie_break_order=tie_break_order,
+        action_value_overrides_by_participant_id=combined_action_overrides,
     )
     prepared = apply_base_combo_rewrite(
         prepared,
@@ -1624,6 +1697,7 @@ def resolve_persistent_ordinary_round(
             | set(refresh_submissions_by_participant_id or {})
             | set(setmagicpet_submissions_by_participant_id or {})
             | set(battletimid_submissions)
+            | set(combined_submissions)
         ),
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
@@ -1730,6 +1804,11 @@ def resolve_persistent_ordinary_round(
         battletimid_rolls_by_participant_id=(
             battletimid_rolls_by_participant_id
         ),
+        combined_submissions_by_participant_id=combined_submissions,
+        combined_rolls_by_participant_id=(
+            combined_rolls_by_participant_id
+        ),
+        combined_overlay=state.combined_overlay,
         fall_ground_submissions_by_participant_id=(
             fall_ground_submissions_by_participant_id
         ),
