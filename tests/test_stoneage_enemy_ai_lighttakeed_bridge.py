@@ -1,4 +1,5 @@
 from types import SimpleNamespace
+from dataclasses import replace
 import unittest
 
 from tools.stoneage_battle_damage_react_model import (
@@ -57,6 +58,27 @@ def spawned(*,tempno=70,graphic=101550,slots=None,side="enemy",kind="enemy"):
 
 
 class EnemyAiLighttakeedBridgeTests(unittest.TestCase):
+    def test_typed_submission_cannot_relabel_recovered_skill_effect_or_slot(self):
+        # These records can enter the ordered runtime directly, bypassing the
+        # raw-data bridge. A valid marker must still belong to the claimed ID.
+        for skill_slot,skill_id,wrong_marker,wrong_slot in (
+            (3,610,DAMAGE_REACT_VANISH,4),
+            (4,611,DAMAGE_REACT_REFLEC,3),
+        ):
+            actor=spawned(tempno=157,graphic=101283,
+                          slots=(0,0,0,610,611,0,0))
+            row=resolve_enemy_ai_lighttakeed_submission(
+                actor,skill_slot=skill_slot,target_slot=0,
+                petskill_runtime=runtime(),profile=PROFILE_GAVIN_IRIS_COPY,
+                fixed_strength=100,fixed_toughness=80,
+            )
+            with self.subTest(skill_id=skill_id,drift="marker"):
+                with self.assertRaisesRegex(ValueError,"skill/marker identity"):
+                    replace(row,marker_kind=wrong_marker)
+            with self.subTest(skill_id=skill_id,drift="slot"):
+                with self.assertRaisesRegex(ValueError,"skill/slot identity"):
+                    replace(row,skill_slot=wrong_slot)
+
     def test_exact_complete_callback_population_is_required(self):
         validate_recovered25_lighttakeed_population(runtime())
         with self.assertRaisesRegex(ValueError,"population"):

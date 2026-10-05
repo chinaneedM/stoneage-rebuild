@@ -76,10 +76,16 @@ class EnemyAiLighttakeedSubmission:
             raise ValueError(
                 "recovered enemy Lighttakeed target must be player-side slot 0..9"
             )
-        if int(self.marker_kind) not in {
-            DAMAGE_REACT_REFLEC,DAMAGE_REACT_VANISH
-        }:
-            raise ValueError("positive recovered Lighttakeed marker drift")
+        if int(self.marker_kind) != EXPECTED_OPTION_BY_ID[skill_id][1]:
+            raise ValueError("positive recovered Lighttakeed skill/marker identity drift")
+        expected_slots={
+            slot
+            for _,slots in EXPECTED_POSITIVE_TEMPLATE_SLOTS.values()
+            for slot,source_id in slots.items()
+            if source_id==skill_id
+        }
+        if skill_slot not in expected_slots:
+            raise ValueError("positive recovered Lighttakeed skill/slot identity drift")
         if str(self.profile) not in LIGHTTAKEED_PROFILES:
             raise ValueError("Lighttakeed source profile must be explicit")
         if attack_power < 0 or defense_power < 0:
