@@ -3,6 +3,7 @@ import unittest
 from tools.stoneage_batfly_reference_model import (
     BatFlyTarget,
     resolve_batfly_effect,
+    resolve_batfly_execution_gate,
     resolve_batfly_setup,
 )
 
@@ -20,6 +21,51 @@ class BatFlyReferenceTests(unittest.TestCase):
         self.assertTrue(result.target_written)
         self.assertTrue(result.mode_written)
         self.assertTrue(result.skill_written)
+
+    def test_execution_gate_live_target_owns_no_rng(self):
+        result=resolve_batfly_execution_gate(
+            source_target_slot=3,
+            living_opposing_slots=(1,3,7),
+            retarget_roll=None,
+        )
+        self.assertTrue(result.executable)
+        self.assertFalse(result.retargeted)
+        self.assertEqual(result.adjusted_target_slot,3)
+        self.assertEqual(result.rng_draws,0)
+        with self.assertRaisesRegex(ValueError,"cannot consume"):
+            resolve_batfly_execution_gate(
+                source_target_slot=3,
+                living_opposing_slots=(1,3,7),
+                retarget_roll=0,
+            )
+
+    def test_execution_gate_dead_target_owns_one_defaultattacker_draw(self):
+        result=resolve_batfly_execution_gate(
+            source_target_slot=3,
+            living_opposing_slots=(1,7,9),
+            retarget_roll=1,
+        )
+        self.assertTrue(result.executable)
+        self.assertTrue(result.retargeted)
+        self.assertEqual(result.adjusted_target_slot,7)
+        self.assertEqual(result.rng_draws,1)
+        with self.assertRaisesRegex(ValueError,"requires one"):
+            resolve_batfly_execution_gate(
+                source_target_slot=3,
+                living_opposing_slots=(1,7,9),
+                retarget_roll=None,
+            )
+
+    def test_execution_gate_no_living_target_is_noaction_without_rng(self):
+        result=resolve_batfly_execution_gate(
+            source_target_slot=3,
+            living_opposing_slots=(),
+            retarget_roll=None,
+        )
+        self.assertFalse(result.executable)
+        self.assertIsNone(result.adjusted_target_slot)
+        self.assertTrue(result.retargeted)
+        self.assertEqual(result.rng_draws,0)
 
     def test_unmounted_drain_is_ten_percent_with_minimum_one(self):
         expected={
