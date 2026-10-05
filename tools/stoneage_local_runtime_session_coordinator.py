@@ -74,6 +74,11 @@ from tools.stoneage_enemy_ai_combined_bridge import (
     resolve_enemy_ai_combined_submission,
 )
 from tools.stoneage_combined_model import CALLBACK_NAME as COMBINED_CALLBACK
+from tools.stoneage_enemy_ai_vary_bridge import (
+    EnemyAiVarySubmission,
+    resolve_enemy_ai_vary_submission,
+)
+from tools.stoneage_vary_runtime_state import CALLBACK_NAME as VARY_CALLBACK
 from tools.stoneage_combined_runtime_state import (
     CombinedActionRolls,
     CombinedRuntimeOverlay,
@@ -477,6 +482,9 @@ class EnemyAiCommonCommandBatch:
     ] = field(default_factory=dict)
     combined_submissions: Mapping[
         str,EnemyAiCombinedSubmission
+    ] = field(default_factory=dict)
+    vary_submissions: Mapping[
+        str,EnemyAiVarySubmission
     ] = field(default_factory=dict)
     barrier_submissions: Mapping[
         str,EnemyAiBarrierSubmission
@@ -1139,6 +1147,47 @@ class EnemyAiCommonCommandBatch:
                 "enemy AI Combined semantic submissions overlap another skill"
             )
 
+        vary_submissions={
+            str(key):value
+            for key,value in self.vary_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "vary_submissions",
+            MappingProxyType(vary_submissions),
+        )
+        for participant_id,submission in vary_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI Vary submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiVarySubmission):
+                raise TypeError(
+                    "enemy AI Vary submission has wrong type for "
+                    + participant_id
+                )
+            if str(submission.participant_id)!=participant_id:
+                raise ValueError("enemy AI Vary participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1)!=BATTLE_COM_ATTACK
+                or int(carrier.command2)!=int(
+                    submission.source_target_carrier
+                )
+            ):
+                raise ValueError(
+                    "enemy AI Vary carrier must be ATTACK/source-target"
+                )
+        vary_overlap=(
+            combined_overlap
+            | set(battletimid_submissions)
+            | set(combined_submissions)
+        )
+        if set(vary_submissions) & vary_overlap:
+            raise ValueError(
+                "enemy AI Vary semantic submissions overlap another skill"
+            )
+
 
 @dataclass
 class LocalRuntimeSessionCoordinator:
@@ -1797,6 +1846,8 @@ class LocalRuntimeSessionCoordinator:
         allow_battletimid_skill: bool = False,
         allow_combined_skill: bool = False,
         combined_selection_draws_by_enemy_id: Mapping[str,int] | None = None,
+        allow_vary_skill: bool = False,
+        vary_profiles_by_enemy_id: Mapping[str,str] | None = None,
         allow_weaken_skill: bool = False,
         allow_refresh_skill: bool = False,
         allow_setmagicpet_skill: bool = False,
@@ -1953,6 +2004,13 @@ class LocalRuntimeSessionCoordinator:
         guard_break2_submissions={}
         battletimid_submissions={}
         combined_submissions={}
+        vary_submissions={}
+        vary_profiles={
+            str(key):str(value)
+            for key,value in (
+                vary_profiles_by_enemy_id or {}
+            ).items()
+        }
         combined_selection_draws={
             str(key):int(value)
             for key,value in (
@@ -2032,6 +2090,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_guard_break2_skill)
                 or bool(allow_battletimid_skill)
                 or bool(allow_combined_skill)
+                or bool(allow_vary_skill)
                 or bool(allow_weaken_skill)
                 or bool(allow_refresh_skill)
                 or bool(allow_setmagicpet_skill)
@@ -2237,6 +2296,42 @@ class LocalRuntimeSessionCoordinator:
                         command2=int(submission.source_target_slot),
                     )
                     guard_break2_submissions[enemy_id]=submission
+                    continue
+
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == VARY_CALLBACK
+                    and bool(allow_vary_skill)
+                ):
+                    if enemy_id not in vary_profiles:
+                        raise ValueError(
+                            "Vary requires explicit descendant profile for "
+                            + enemy_id
+                        )
+                    if (
+                        state.vary_overlay is not None
+                        and enemy_id
+                        in state.vary_overlay.runtime_by_participant_id
+                    ):
+                        raise ValueError(
+                            "Vary recast blocked while actor is transformed"
+                        )
+                    baseline=living[enemy_id]
+                    submission=resolve_enemy_ai_vary_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_carrier=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                        profile=vary_profiles[enemy_id],
+                        fixed_attack=int(baseline.attack),
+                        fixed_defense=int(baseline.defense),
+                        fixed_quick=int(baseline.quick),
+                    )
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_carrier),
+                    )
+                    vary_submissions[enemy_id]=submission
                     continue
 
                 if (
@@ -2555,6 +2650,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_BattleTimid")
             if bool(allow_combined_skill):
                 allowed_parts.append("PETSKILL_Combined")
+            if bool(allow_vary_skill):
+                allowed_parts.append("PETSKILL_Vary")
             if bool(allow_weaken_skill):
                 allowed_parts.append("PETSKILL_Weaken")
             if bool(allow_refresh_skill):
@@ -2583,6 +2680,14 @@ class LocalRuntimeSessionCoordinator:
                 "Combined selection RNG supplied for non-selected actors: "
                 + ",".join(unused_combined_draws)
             )
+        unused_vary_profiles=sorted(
+            set(vary_profiles)-set(vary_submissions)
+        )
+        if unused_vary_profiles:
+            raise ValueError(
+                "Vary profile supplied for non-selected actors: "
+                + ",".join(unused_vary_profiles)
+            )
 
         return EnemyAiCommonCommandBatch(
             commands=commands,
@@ -2598,6 +2703,7 @@ class LocalRuntimeSessionCoordinator:
             guard_break2_submissions=guard_break2_submissions,
             battletimid_submissions=battletimid_submissions,
             combined_submissions=combined_submissions,
+            vary_submissions=vary_submissions,
             weaken_submissions=weaken_submissions,
             refresh_submissions=refresh_submissions,
             setmagicpet_submissions=setmagicpet_submissions,
@@ -2810,6 +2916,9 @@ class LocalRuntimeSessionCoordinator:
         combined_rolls_by_attack_id: Mapping[
             str,CombinedActionRolls
         ] | None = None,
+        vary_profiles_by_enemy_id: Mapping[
+            str,str
+        ] | None = None,
         barrier_rolls_by_attack_id: Mapping[
             str,BarrierActionRolls
         ] | None = None,
@@ -2927,6 +3036,8 @@ class LocalRuntimeSessionCoordinator:
             combined_selection_draws_by_enemy_id=(
                 combined_selection_draws_by_enemy_id
             ),
+            allow_vary_skill=True,
+            vary_profiles_by_enemy_id=vary_profiles_by_enemy_id,
             allow_weaken_skill=True,
             allow_refresh_skill=True,
             allow_setmagicpet_skill=True,
@@ -3547,6 +3658,9 @@ class LocalRuntimeSessionCoordinator:
             ),
             combined_rolls_by_participant_id=(
                 normalized_combined_rolls
+            ),
+            vary_submissions_by_participant_id=(
+                enemy_batch.vary_submissions
             ),
             fall_ground_submissions_by_participant_id=(
                 enemy_batch.fall_ground_submissions
