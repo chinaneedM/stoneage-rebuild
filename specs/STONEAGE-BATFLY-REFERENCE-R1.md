@@ -50,12 +50,20 @@ All three retain the same semantic callback:
 - LOW(COM3) stores the skill array/index;
 - callback code consumes no OPTION and no RNG.
 
-The dispatcher first calls `BATTLE_TargetAdjust`. If no living target exists,
-it performs `BATTLE_NoAction`; otherwise it calls
+The dispatcher first calls `BATTLE_TargetAdjust`. The submitted COM2 is
+checked before the whole-side effect:
+
+- if the submitted target is still living, it is retained with **no RNG**;
+- if it is no longer targetable but at least one living opposing entry remains,
+  `BATTLE_DefaultAttacker` scans living opposing slots in ascending slot order
+  and consumes exactly **one RAND(0,cnt-1)** to replace COM2;
+- if no living opposing entry remains, DefaultAttacker returns -1 **without a
+  draw**, the dispatcher performs `BATTLE_NoAction`, and BatFly does not run.
+
+When the gate succeeds it calls
 `BATTLE_BatFly(battleindex, attackNo, myside)`. The adjusted single target is
-therefore only an execution-validity gate. The effect itself rebuilds the
-entire opposing side and does not consume that adjusted target as the damage
-recipient.
+only an execution-validity gate. The effect itself rebuilds the entire
+opposing side and does not use that adjusted target as an HP recipient.
 
 Numeric descendant command values are profile-dependent:
 
@@ -72,7 +80,8 @@ That side-list path calls `BATTLE_TargetCheck`, which rejects invalid
 entries, dead actors and actors with HP <= 0. BatFly does not call
 `BATTLE_MultiListDead`.
 
-The side-list path itself owns no RNG. An unrelated single-target branch inside
+After the dispatcher TargetAdjust gate has succeeded, the BatFly side-list/effect
+path itself owns no further RNG. An unrelated single-target branch inside
 `BATTLE_MultiList` can use `rand()%10` when retargeting, but BatFly's side
 constant does not enter that branch.
 
