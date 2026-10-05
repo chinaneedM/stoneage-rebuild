@@ -6609,3 +6609,24 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   lookup and mounted reaction composition; implement plan's ordered/state/AI
   tests and verified pressure. Accepted coverage stays2461/2486=98.99%.
   WORK/DD-018 continues; engine/redesign work remains deferred.
+
+
+### Exact main replay and supplemental handoff — 2026-10-06
+
+- Main `58d4800afb72e4f41f1934395e1cf194133ca75c`, tree
+  `24702312029248dd46bf72d608864ceac9b6e8a4`: all three new main replay
+  Actions **37347571253 /37347571372 /37347571801 SUCCESS**. This supersedes
+  the main data queued checkpoint above.
+- New settlement audit exact input:
+  `33a8e76a988c441629e797defcc8095d77952e86`, tree
+  `1cb9731ed51d82c58e1e8da753afcddbc0d78af1`. Remote/local tree equality
+  and clean checkout verified before this documentation-only handoff.
+- Supplemental **37349075552 QUEUED**, branch
+  `agent/battlemodel-settlement-audit-r1-20261006`. Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-SETTLEMENT-ACCEPTANCE-R1.json`.
+- **Next highest priority:** freshly inspect37349075552. On SUCCESS accept the
+  bounded base settlement correction, record receipt and nonforce synchronize
+  accepted refinements to freshly verified main; inspect main Actions and start
+  a fresh runtime branch. Implement the saved integration plan with the explicit
+  no-HP-loss ultimate flag, source pet-flag lookup and ride boundaries. No
+  executable slots are promoted before runtime and verified pressure gates.
