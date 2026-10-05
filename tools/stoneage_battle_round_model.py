@@ -50,6 +50,23 @@ from tools.stoneage_enemy_ai_battletimid_bridge import (
     EnemyAiBattleTimidSubmission,
 )
 from tools.stoneage_battletimid_model import BattleTimidExitResolution
+from tools.stoneage_enemy_ai_combined_bridge import EnemyAiCombinedSubmission
+from tools.stoneage_combined_direct_magic_model import CombinedDirectMagicRoute
+from tools.stoneage_combined_effect_model import (
+    CombinedRecoveryEffect,
+    CombinedStatusChangeEffect,
+    CombinedStatusRecoveryEffect,
+    CombinedAttReverseEffect,
+    resolve_combined_single_target,
+    resolve_combined_recovery21_effect,
+    resolve_combined_status_change_effect,
+    resolve_combined_status_recovery61_effect,
+    resolve_combined_att_reverse240_effect,
+)
+from tools.stoneage_combined_runtime_state import (
+    CombinedActionRolls,
+    CombinedRuntimeOverlay,
+)
 from tools.stoneage_guard_break2_model import (
     GuardBreak2DamageResolution,
     resolve_guard_break2_damage_step,
@@ -442,6 +459,7 @@ def prepare_battle_round(
     initiative_random_subtracts: Mapping[str, int],
     *,
     tie_break_order: Sequence[str] | None = None,
+    action_value_overrides_by_participant_id: Mapping[str,int] | None = None,
 ) -> PreparedBattleRound:
     """Calculate command-relative action values then sort descending.
 
@@ -452,6 +470,12 @@ def prepare_battle_round(
     """
     entries = []
     seen_ids: set[str] = set()
+    action_value_overrides={
+        str(pid):int(value)
+        for pid,value in (
+            action_value_overrides_by_participant_id or {}
+        ).items()
+    }
     for source_order, participant in enumerate(participants):
         participant_id = str(participant.participant_id)
         if participant_id in seen_ids:
@@ -468,13 +492,24 @@ def prepare_battle_round(
             RoundEntry(
                 participant=participant,
                 command=command,
-                action_value=command_action_value(
-                    participant,
-                    command,
-                    random_subtract=initiative_random_subtracts[participant_id],
+                action_value=(
+                    action_value_overrides[participant_id]
+                    if participant_id in action_value_overrides
+                    else command_action_value(
+                        participant,
+                        command,
+                        random_subtract=initiative_random_subtracts[participant_id],
+                    )
                 ),
                 source_order=source_order,
             )
+        )
+
+    unknown_action_overrides=sorted(set(action_value_overrides)-seen_ids)
+    if unknown_action_overrides:
+        raise ValueError(
+            "action-value overrides reference unknown participants: "
+            f"{unknown_action_overrides}"
         )
 
     values: dict[int, list[str]] = {}
@@ -996,6 +1031,13 @@ class OrdinaryRoundEvent:
     guard_break2_resolution: GuardBreak2DamageResolution | None = None
     battletimid_resolution: BattleTimidExitResolution | None = None
     battletimid_skill_id: int | None = None
+    combined_skill_id: int | None = None
+    combined_magic_id: int | None = None
+    combined_direct_route: CombinedDirectMagicRoute | None = None
+    combined_recovery_effect: CombinedRecoveryEffect | None = None
+    combined_status_change_effect: CombinedStatusChangeEffect | None = None
+    combined_status_recovery_effect: CombinedStatusRecoveryEffect | None = None
+    combined_att_reverse_effect: CombinedAttReverseEffect | None = None
     mdfyattack_skill_id: int | None = None
     mdfyattack_element: str | None = None
     mdfyattack_attack_vector: tuple[int, ...] = ()
@@ -1041,6 +1083,7 @@ class ResolvedOrdinaryRound:
     attack_magic_overlay: AttackMagicRoundOverlay | None = None
     nocast_overlay: NocastRoundOverlay | None = None
     setmagicpet_overlay: SetMagicPetRoundOverlay | None = None
+    combined_overlay: CombinedRuntimeOverlay | None = None
     ultimate_overkill_by_participant_id: Mapping[str,int] | None = None
     ultimate_exited_participant_ids: tuple[str, ...] = ()
     exited_participant_ids: tuple[str, ...] = ()
@@ -3613,6 +3656,13 @@ def resolve_ordinary_round(
     battletimid_rolls_by_participant_id: Mapping[
         str,int | None
     ] | None = None,
+    combined_submissions_by_participant_id: Mapping[
+        str,EnemyAiCombinedSubmission
+    ] | None = None,
+    combined_rolls_by_participant_id: Mapping[
+        str,CombinedActionRolls
+    ] | None = None,
+    combined_overlay: CombinedRuntimeOverlay | None = None,
     fall_ground_submissions_by_participant_id: Mapping[
         str,EnemyAiFallGroundSubmission
     ] | None = None,
@@ -3676,6 +3726,7 @@ def resolve_ordinary_round(
     for participant_id in slot_by_id:
         if participant_id not in profiles:
             raise KeyError(f"missing combat profile for {participant_id}")
+    profiles=dict(profiles)
 
     attack_magic_actor_ids={
         str(entry.participant.participant_id)
