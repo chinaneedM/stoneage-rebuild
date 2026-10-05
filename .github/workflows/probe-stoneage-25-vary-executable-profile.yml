@@ -111,9 +111,10 @@ jobs:
           fi
           test -n "$GMSV"
           mkdir -p research/recovered
-          python -m tools.stoneage_vary_executable_profile_probe --binary "$GMSV" > research/recovered/STONEAGE-25-VARY-EXECUTABLE-PROFILE-R1.txt
+          echo "GMSV_FILE=$(file -b "$GMSV")"
+          echo "GMSV_SIZE=$(stat -c %s "$GMSV")"
+          python -m tools.stoneage_vary_executable_profile_probe --binary "$GMSV" | tee research/recovered/STONEAGE-25-VARY-EXECUTABLE-PROFILE-R1.txt
           grep -F 'RESOLUTION|VARY_EXECUTABLE_PROFILE_DISCRIMINATOR_ATTEMPTED' research/recovered/STONEAGE-25-VARY-EXECUTABLE-PROFILE-R1.txt
-          cat research/recovered/STONEAGE-25-VARY-EXECUTABLE-PROFILE-R1.txt
 
       - name: Commit derived report only
         run: |
