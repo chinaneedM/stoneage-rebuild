@@ -6571,3 +6571,41 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   exact positive ID638 through ordered battle/state/enemy-AI coordinator;
   accept runtime and hash-verified pressure before promoting its two slots.
   Continue WORK under DD-018; production-engine/redesigned-content work deferred.
+
+
+## Phase 1 BattleModel main sync and settlement refinement — 2026-10-06
+
+- Accepted conditional reference nonforce-fast-forwarded main to
+  `58d4800afb72e4f41f1934395e1cf194133ca75c`, tree
+  `24702312029248dd46bf72d608864ceac9b6e8a4`; remote HEAD/tree re-read.
+- Exact-main replay source/native **37347571372 SUCCESS** and helper
+  **37347571801 SUCCESS**. Exact-data **37347571253** remains queued at
+  this checkpoint. This does not undo prior accepted exact-data37342593141.
+- While that replay queues, preparation found an incorrect earlier settlement
+  interpretation. Direct native DamageSub at all three fixed pins now proves
+  **physical BattleModel reflect consumes its charge and preserves both HP**,
+  with positive reported damage retained. Thus wake/status may still occur.
+  The prior “damage remains on defender” wording does not mean HP subtraction
+  and is superseded by the dated settlement correction.
+- **1920 local native calls PASS**,640/profile, covering320 two-hit sequences
+  per profile with marker/sentinel/base-reaction/priority/charge/HP/damage
+  variants. Reduced-feature, no-ride, nonthrowing scope only. Raw-threshold
+  ultimate2 can occur without HP loss. Absent-ride source read remains OPEN.
+- Fresh source/preparation branch:
+  `agent/battlemodel-settlement-audit-r1-20261006`, based on the exact main
+  above. New read-only native settlement workflow is independent of existing
+  acceptance gates. No runtime coding/admission/coverage change.
+- Concrete integration plan now pins exact bridge/round/state/coordinator
+  seams, interleaved excess-selection versus hit RNG, scheduled ordinal versus
+  object index, immediate command-clear snapshots, and the paralysis primitive
+  (20-resistance, strict comparison; caller hit30 is not the probability).
+  Do not use ordinary physical-status wrapper's turn+1/Range40/scale2.
+- **Highest-priority unfinished task:** inspect main data replay37347571253
+  and the newly triggered settlement audit on this branch's exact input; keep
+  queue state OPEN. On SUCCESS, close only that reduced native contract, sync
+  accepted refinements nonforce into freshly verified main, inspect Actions,
+  then create a fresh bounded BattleModel runtime branch. Before runtime
+  promotion reconcile no-HP-loss ultimate flags, literal pet pre-hit ultimate
+  lookup and mounted reaction composition; implement plan's ordered/state/AI
+  tests and verified pressure. Accepted coverage stays2461/2486=98.99%.
+  WORK/DD-018 continues; engine/redesign work remains deferred.

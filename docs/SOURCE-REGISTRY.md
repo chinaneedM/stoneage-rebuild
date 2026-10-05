@@ -3477,3 +3477,24 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - OPEN: original executable/source/charset/numeric COM1/libc PRNG, original
   qsort presentation, DODGE uninitialised bytes, excluded transformations and
   reactions, ordered runtime and original version membership. Coverage unchanged.
+
+
+### SRC-BATTLEMODEL-BASE-SETTLEMENT-R1 — 2026-10-06
+
+- Same three fixed pins and battle_event.c hashes as the accepted hit-helper
+  audit. Original DamageSub body compiled transiently with reduced base feature
+  profile, BattleModel marker gate, no ride, nonthrowing actor, defined state
+  getters/setters and stubbed base reaction priority. No raw source committed.
+- Reproducer: tools/stoneage_battlemodel_settlement_source_audit.py; derived
+  report: research/recovered/STONEAGE-BATTLEMODEL-SETTLEMENT-SOURCE-AUDIT-R1.txt.
+  Local640 native calls/profile,1920 total PASS; remote acceptance pending.
+- Supports: marker reflect HP preservation, retained positive reported damage,
+  reaction/counter priority and exhaustion, sentinel bypass, and raw-threshold
+  ultimate2 without HP loss. Does not certify live target checks or complete
+  ordered/persistent/coordinator behavior; direct function calls after death
+  isolate DamageSub and are not asserted reachable helper calls.
+- Correction: previous “damage remains on defender” interpretation is superseded
+  by explicit both-HP preservation. Original absent-ride read, active build
+  profile, rides/throwing/later gates and flag-to-exit integration remain OPEN.
+- Boundary: specs/STONEAGE-BATTLEMODEL-SETTLEMENT-AUDIT-R1.md; prepared runtime
+  plan: specs/STONEAGE-BATTLEMODEL-RUNTIME-INTEGRATION-PLAN-R1.md.

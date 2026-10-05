@@ -7,6 +7,15 @@ Scope: next pressure-selected recovered25 enemy callback
 
 ## Accepted closure — 2026-10-06
 
+Subsequent integration preparation directly audited the native no-ride
+DamageSub marker branch. Reflect consumes its charge **without HP loss to
+either participant**, while positive reported damage can still reach wakeup
+and status. Raw-threshold ultimate flags can occur without HP loss. These
+refinements and the invalid absent-ride read boundary are recorded in
+`STONEAGE-BATTLEMODEL-SETTLEMENT-AUDIT-R1.md`. Its remote gate is pending;
+runtime integration remains OPEN. The existing conditional reference facts
+remain accepted, with these explicit settlement refinements.
+
 This dated closure supersedes the pending statements in the historical sections
 below; those sections remain as evidence of the discovery and correction path.
 

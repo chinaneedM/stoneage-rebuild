@@ -5,6 +5,15 @@ Date: 2026-10-05
 
 ## Accepted state-carrier closure — 2026-10-06
 
+**Later settlement correction:** the dedicated no-ride native DamageSub audit
+proves that marker-specific reflect preserves both HP while consuming its
+charge and reporting positive damage. It supersedes the earlier sentence below
+that described damage as remaining on the defender. Raw-threshold ultimate
+flags can also be written without HP loss; ordered integration must account for
+that distinction. See `STONEAGE-BATTLEMODEL-SETTLEMENT-AUDIT-R1.md` and the
+runtime integration plan. State-carrier closure is retained; the supplemental
+settlement remote gate and full runtime integration are still pending.
+
 This closure supersedes pending prerequisites in the historical audit below.
 Exact-data37342593141, source/native37342593073 and supplemental helper
 37344060042 all completed successfully. Their exact inputs and derived facts

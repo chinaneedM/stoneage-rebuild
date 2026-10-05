@@ -689,3 +689,15 @@ native target-plan and1296 controlled helper witnesses close only their bounded
 contracts. **OPEN:** original charset/compiler/numeric COM1, exact source
 DODGE presentation, original JSS/Taiwan-v1 membership and ordered runtime.
 Coverage remains2461/2486. [SRC-BATTLEMODEL-CONDITIONAL-REFERENCE-R1]
+
+
+### 2026-10-06 — BattleModel native settlement correction
+
+**FACT (reduced fixed-descendant native DamageSub):**1920 calls across the
+three established pins prove marker-specific reflect consumes a charge while
+preserving both HP and positive reported damage. This supersedes any earlier
+interpretation that the marker branch subtracts defender HP. Raw-threshold
+ultimate2 can occur without HP loss. **OPEN:** original invalid absent-ride
+read behavior, full active build gates, ordered flag-to-exit integration, ride
+composition and remote acceptance of this supplemental audit.
+[SRC-BATTLEMODEL-BASE-SETTLEMENT-R1]
