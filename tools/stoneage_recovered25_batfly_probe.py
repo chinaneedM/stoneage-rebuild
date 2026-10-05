@@ -17,15 +17,28 @@ EXPECTED_PETSKILL_SHA256 = (
 EXPECTED_REFERENCED_IDS = (633,)
 EXPECTED_POSITIVE_USES = 2
 EXPECTED_POSITIVE_TEMPLATES = 1
+EXPECTED_CALLBACK_IDS = (633,)
+EXPECTED_EXACT_ROWS = (
+    (
+        633,1,3,2,5000,2,0,
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        False,True,True,
+    ),
+)
+EXPECTED_TEMPLATE_ROWS = (
+    (
+        1160,101815,300,1,1,30,100,(1,4),(633,633),
+    ),
+)
 
 
 def analyze_runtime_objects(
     petskills,
     enemybase,
     *,
-    expected_callback_ids=None,
-    expected_exact_rows=None,
-    expected_template_rows=None,
+    expected_callback_ids=EXPECTED_CALLBACK_IDS,
+    expected_exact_rows=EXPECTED_EXACT_ROWS,
+    expected_template_rows=EXPECTED_TEMPLATE_ROWS,
 ):
     entries = sorted(
         (
