@@ -36,7 +36,7 @@ RANK|rank=31|callback=PETSKILL_Vary|ids=600|slot_uses=4|templates=4|status=close
 RANK|rank=32|callback=ENEMYSKILL_ReLife|ids=500|slot_uses=3|templates=3|status=closed_runtime
 RANK|rank=33|callback=PETSKILL_Lighttakeed|ids=610,611|slot_uses=3|templates=2|status=closed_runtime
 RANK|rank=34|callback=PETSKILL_Merge|ids=200,201|slot_uses=3|templates=3|status=historical_ub
-RANK|rank=35|callback=PETSKILL_Modifyattack|ids=544,545,546|slot_uses=3|templates=3|status=open
+RANK|rank=35|callback=PETSKILL_Modifyattack|ids=544,545,546|slot_uses=3|templates=3|status=closed_runtime
 RANK|rank=36|callback=PETSKILL_2BattleTimid|ids=636|slot_uses=2|templates=2|status=open
 RANK|rank=37|callback=PETSKILL_BatFly|ids=633|slot_uses=2|templates=1|status=open
 RANK|rank=38|callback=PETSKILL_BattleModel|ids=638|slot_uses=2|templates=2|status=open
@@ -54,4 +54,4 @@ RANK|rank=49|callback=PETSKILL_MagicStatusChange|ids=552|slot_uses=1|templates=1
 RANK|rank=50|callback=PETSKILL_Regret|ids=640|slot_uses=1|templates=1|status=open
 RANK|rank=51|callback=PETSKILL_SelfExplodeAttack|ids=582|slot_uses=1|templates=1|status=open
 RANK|rank=52|callback=PETSKILL_StealMoney|ids=211|slot_uses=1|templates=1|status=open
-NEXT_OPEN|callback=PETSKILL_Modifyattack|ids=544,545,546|slot_uses=3|templates=3
+NEXT_OPEN|callback=PETSKILL_2BattleTimid|ids=636|slot_uses=2|templates=2
