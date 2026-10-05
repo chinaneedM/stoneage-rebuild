@@ -40,7 +40,7 @@ def resolve(
 
 
 class LighttakeedModelTests(unittest.TestCase):
-    def test_gavin_iris_match_preserves_defender_charge_and_overwrites_attacker(self):
+    def test_gavin_iris_vanish_positive_hit_consumes_then_copies_remaining(self):
         r=resolve(
             marker=DAMAGE_REACT_VANISH,
             attacker=BaseDamageReactState(absorb=4,reflect=5,vanish=9),
@@ -49,37 +49,41 @@ class LighttakeedModelTests(unittest.TestCase):
         self.assertTrue(r.matched_reaction)
         self.assertTrue(r.lighttake_case_executed)
         self.assertFalse(r.demoted_to_ordinary)
-        self.assertEqual(r.transferred_count,2)
-        self.assertEqual(r.defender_state_after.vanish,2)
-        self.assertEqual(r.attacker_state_after.vanish,2)
+        self.assertEqual(r.post_branch_read_target,"defender")
+        self.assertEqual(r.observed_counter_value,1)
+        self.assertEqual(r.transferred_count,1)
+        self.assertEqual(r.defender_state_after.vanish,1)
+        self.assertEqual(r.attacker_state_after.vanish,1)
         self.assertEqual(r.attacker_state_after.absorb,4)
         self.assertEqual(r.attacker_state_after.reflect,5)
-        self.assertFalse(r.damage_react_resolution.charge_consumed)
-        self.assertEqual(r.damage_react_resolution.effective_kind,DAMAGE_REACT_NONE)
-        self.assertEqual(r.damage_react_resolution.defender_hp_after,50)
+        self.assertTrue(r.damage_react_resolution.charge_consumed)
+        self.assertEqual(r.damage_react_resolution.effective_kind,DAMAGE_REACT_VANISH)
+        self.assertEqual(r.damage_react_resolution.defender_hp_after,80)
 
-    def test_bismarck_match_adds_one_to_observed_defender_count(self):
+    def test_bismarck_absorb_positive_hit_transfers_remaining_plus_one(self):
         r=resolve(
             profile=PROFILE_BISMARCK_COPY_PLUS_ONE,
             marker=DAMAGE_REACT_ABSROB,
             attacker=BaseDamageReactState(absorb=8),
             defender=BaseDamageReactState(absorb=3),
         )
-        self.assertEqual(r.transferred_count,4)
-        self.assertEqual(r.attacker_state_after.absorb,4)
-        self.assertEqual(r.defender_state_after.absorb,3)
-        # Matching Lighttake neutralizes ABSROB, so damage harms the defender
-        # rather than healing and does not consume the ABSROB charge.
-        self.assertEqual(r.damage_react_resolution.defender_hp_after,50)
+        self.assertEqual(r.post_branch_read_target,"defender")
+        self.assertEqual(r.observed_counter_value,2)
+        self.assertEqual(r.transferred_count,3)
+        self.assertEqual(r.attacker_state_after.absorb,3)
+        self.assertEqual(r.defender_state_after.absorb,2)
+        self.assertEqual(r.damage_react_resolution.defender_hp_after,100)
 
-    def test_zero_damage_still_transfers_when_marker_matches(self):
+    def test_zero_damage_returns_before_refetch_but_still_transfers(self):
         r=resolve(
             marker=DAMAGE_REACT_REFLEC,
-            attacker=BaseDamageReactState(),
+            attacker=BaseDamageReactState(reflect=7),
             defender=BaseDamageReactState(reflect=2),
             damage=0,
         )
         self.assertTrue(r.matched_reaction)
+        self.assertEqual(r.post_branch_read_target,"defender")
+        self.assertEqual(r.observed_counter_value,2)
         self.assertEqual(r.transferred_count,2)
         self.assertEqual(r.attacker_state_after.reflect,2)
         self.assertEqual(r.defender_state_after.reflect,2)
@@ -95,6 +99,7 @@ class LighttakeedModelTests(unittest.TestCase):
         self.assertFalse(r.matched_reaction)
         self.assertFalse(r.lighttake_case_executed)
         self.assertTrue(r.demoted_to_ordinary)
+        self.assertIsNone(r.post_branch_read_target)
         self.assertIsNone(r.transferred_count)
         self.assertEqual(r.selected_reaction_kind,DAMAGE_REACT_VANISH)
         self.assertEqual(r.defender_state_after.vanish,1)
@@ -112,31 +117,68 @@ class LighttakeedModelTests(unittest.TestCase):
         self.assertFalse(r.matched_reaction)
         self.assertTrue(r.lighttake_case_executed)
         self.assertFalse(r.demoted_to_ordinary)
+        self.assertIsNone(r.post_branch_read_target)
         self.assertIsNone(r.transferred_count)
         self.assertEqual(r.damage_react_resolution.defender_hp_after,50)
 
-    def test_matching_reflect_bypasses_reflection_even_for_throwing_weapon(self):
+    def test_nonthrowing_reflect_redirect_makes_gavin_iris_post_branch_self_copy(self):
         r=resolve(
             marker=DAMAGE_REACT_REFLEC,
+            attacker=BaseDamageReactState(reflect=7),
+            defender=BaseDamageReactState(reflect=2),
+            attacker_hp=100,
+        )
+        self.assertTrue(r.matched_reaction)
+        self.assertEqual(r.defender_state_after.reflect,1)
+        self.assertEqual(r.damage_react_resolution.attacker_hp_after,70)
+        self.assertEqual(r.damage_react_resolution.defender_hp_after,80)
+        self.assertEqual(r.post_branch_read_target,"attacker")
+        self.assertEqual(r.observed_counter_value,7)
+        self.assertEqual(r.transferred_count,7)
+        self.assertEqual(r.attacker_state_after.reflect,7)
+
+    def test_nonthrowing_reflect_bismarck_increments_attacker_own_counter(self):
+        r=resolve(
+            profile=PROFILE_BISMARCK_COPY_PLUS_ONE,
+            marker=DAMAGE_REACT_REFLEC,
+            attacker=BaseDamageReactState(reflect=7),
+            defender=BaseDamageReactState(reflect=2),
+        )
+        self.assertEqual(r.defender_state_after.reflect,1)
+        self.assertEqual(r.post_branch_read_target,"attacker")
+        self.assertEqual(r.observed_counter_value,7)
+        self.assertEqual(r.transferred_count,8)
+        self.assertEqual(r.attacker_state_after.reflect,8)
+
+    def test_throwing_reflect_bypasses_consumption_and_reads_defender(self):
+        r=resolve(
+            marker=DAMAGE_REACT_REFLEC,
+            attacker=BaseDamageReactState(reflect=7),
             defender=BaseDamageReactState(reflect=2),
             throwing=True,
         )
         self.assertTrue(r.matched_reaction)
         self.assertEqual(r.defender_state_after.reflect,2)
+        self.assertTrue(r.damage_react_resolution.reflect_blocked_by_throwing_weapon)
         self.assertEqual(r.damage_react_resolution.defender_hp_after,50)
         self.assertEqual(r.damage_react_resolution.attacker_hp_after,100)
-        self.assertFalse(r.damage_react_resolution.reflect_blocked_by_throwing_weapon)
+        self.assertEqual(r.post_branch_read_target,"defender")
+        self.assertEqual(r.observed_counter_value,2)
+        self.assertEqual(r.attacker_state_after.reflect,2)
 
     def test_mismatched_reflect_retains_ordinary_throwing_weapon_bypass(self):
         r=resolve(
             marker=DAMAGE_REACT_ABSROB,
+            attacker=BaseDamageReactState(reflect=7),
             defender=BaseDamageReactState(reflect=2),
             throwing=True,
         )
         self.assertTrue(r.demoted_to_ordinary)
+        self.assertFalse(r.lighttake_case_executed)
         self.assertEqual(r.defender_state_after.reflect,2)
         self.assertTrue(r.damage_react_resolution.reflect_blocked_by_throwing_weapon)
         self.assertEqual(r.damage_react_resolution.defender_hp_after,50)
+        self.assertEqual(r.attacker_state_after.reflect,7)
 
     def test_invalid_profile_and_marker_fail_closed(self):
         with self.assertRaisesRegex(ValueError,"profile"):
