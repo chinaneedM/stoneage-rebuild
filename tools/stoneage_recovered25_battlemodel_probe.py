@@ -9,7 +9,11 @@ from tools.stoneage_recovered25_petskill_runtime import (
 from tools.stoneage_recovered25_enemybase_runtime import (
     load_recovered25_enemybase_runtime,
 )
-from tools.stoneage_battlemodel_reference_model import inspect_battlemodel_option
+from tools.stoneage_battlemodel_reference_model import (
+    PROFILE_BIG5,
+    inspect_battlemodel_option,
+    resolve_battlemodel_setup,
+)
 
 CALLBACK_NAME="PETSKILL_BattleModel"
 EXPECTED_PETSKILL_SHA256=(
@@ -91,6 +95,15 @@ def analyze_runtime_objects(
         except UnicodeError:
             codec_agrees=False
         shape=inspect_battlemodel_option(raw)
+        callback_roll=1 if shape.configured_object_count <= 0 else None
+        probe_a=resolve_battlemodel_setup(
+            raw,profile=PROFILE_BIG5,skill_array=int(entry.skill_id),
+            powers_before=(100,80,60),object_count_roll=callback_roll,
+        )
+        probe_b=resolve_battlemodel_setup(
+            raw,profile=PROFILE_BIG5,skill_array=int(entry.skill_id),
+            powers_before=(137,91,53),object_count_roll=callback_roll,
+        )
         rows.append({
             "id":int(entry.skill_id),
             "field":int(entry.field),
@@ -112,6 +125,10 @@ def analyze_runtime_objects(
             "field6_bytes":shape.field6_bytes,
             "field6_sha256":shape.field6_sha256,
             "action_numbers":shape.action_numbers,
+            "big5_probe_a_powers":probe_a.powers,
+            "big5_probe_b_powers":probe_b.powers,
+            "callback_rng_draws":probe_a.rng_draws,
+            "resolved_object_count_probe":probe_a.object_count,
         })
 
     callback_ids=tuple(row["id"] for row in rows)
