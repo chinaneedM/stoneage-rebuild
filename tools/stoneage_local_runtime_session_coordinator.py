@@ -70,6 +70,13 @@ from tools.stoneage_enemy_ai_battletimid_bridge import (
     EnemyAiBattleTimidSubmission,
     resolve_enemy_ai_battletimid_submission,
 )
+from tools.stoneage_enemy_ai_2battletimid_bridge import (
+    EnemyAiTwoBattleTimidSubmission,
+    resolve_enemy_ai_2battletimid_submission,
+)
+from tools.stoneage_2battletimid_reference_model import (
+    CALLBACK_NAME as TWO_BATTLETIMID_CALLBACK,
+)
 from tools.stoneage_enemy_ai_lighttakeed_bridge import (
     CALLBACK_NAME as LIGHTTAKEED_CALLBACK,
     EnemyAiLighttakeedSubmission,
@@ -498,6 +505,9 @@ class EnemyAiCommonCommandBatch:
     ] = field(default_factory=dict)
     battletimid_submissions: Mapping[
         str,EnemyAiBattleTimidSubmission
+    ] = field(default_factory=dict)
+    two_battletimid_submissions: Mapping[
+        str,EnemyAiTwoBattleTimidSubmission
     ] = field(default_factory=dict)
     lighttakeed_submissions: Mapping[
         str,EnemyAiLighttakeedSubmission
@@ -1170,6 +1180,61 @@ class EnemyAiCommonCommandBatch:
         if set(battletimid_submissions) & battletimid_overlap:
             raise ValueError(
                 "enemy AI BattleTimid semantic submissions overlap another skill"
+            )
+
+        two_battletimid_submissions={
+            str(key):value
+            for key,value in self.two_battletimid_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "two_battletimid_submissions",
+            MappingProxyType(two_battletimid_submissions),
+        )
+        for participant_id,submission in two_battletimid_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI 2BattleTimid submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiTwoBattleTimidSubmission):
+                raise TypeError(
+                    "enemy AI 2BattleTimid submission has wrong type for "
+                    + participant_id
+                )
+            if str(submission.participant_id)!=participant_id:
+                raise ValueError("enemy AI 2BattleTimid participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1)!=BATTLE_COM_ATTACK
+                or int(carrier.command2)!=int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI 2BattleTimid carrier must be ATTACK/source-target"
+                )
+            effects=self.setup_effects.get(participant_id)
+            if effects is None or (
+                effects.attack_power,effects.defense_power
+            ) != (
+                int(submission.setup.powers[0]),
+                int(submission.setup.powers[1]),
+            ):
+                raise ValueError(
+                    "enemy AI 2BattleTimid callback work-power setup drift"
+                )
+        two_battletimid_overlap=(
+            set(battletimid_submissions)
+            | set(magic_submissions) | set(relife_submissions)
+            | set(rehp_submissions) | set(damage_submissions)
+            | set(mp_submissions) | set(fall_submissions)
+            | set(tear_submissions) | set(nocast_submissions)
+            | set(guard_break2_submissions) | set(barrier_submissions)
+            | set(attack_crazed_submissions) | set(mdfyattack_submissions)
+            | set(weaken_submissions) | set(wildviolent_submissions)
+            | set(refresh_submissions) | set(setmagicpet_submissions)
+        )
+        if set(two_battletimid_submissions) & two_battletimid_overlap:
+            raise ValueError(
+                "enemy AI 2BattleTimid semantic submissions overlap another skill"
             )
 
         lighttakeed_submissions={
