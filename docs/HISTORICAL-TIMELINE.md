@@ -675,3 +675,17 @@ original target remains the actual defender.
 
 **OPEN (source defect):** the DODGE path can reach presentation formatting
 with an uninitialised pet-damage value. Exact original bytes are not accepted.
+
+
+### 2026-10-06 — BattleModel conditional reference acceptance
+
+**FACT (recovered25 data / fixed descendant bridge):** exact-data37342593141,
+source/native37342593073 and helper37344060042 SUCCESS supersede the pending
+2026-10-06 records above. Complete callback population638/641/649/650; only638
+has two positive placements,1178/101867/slot3 and1179/101868/slot3. Three
+Big5 witnesses select paralysis/index2; three UTF-8 witnesses leave that token
+unknown. Attack70% versus unchanged attack is similarly conditional.600
+native target-plan and1296 controlled helper witnesses close only their bounded
+contracts. **OPEN:** original charset/compiler/numeric COM1, exact source
+DODGE presentation, original JSS/Taiwan-v1 membership and ordered runtime.
+Coverage remains2461/2486. [SRC-BATTLEMODEL-CONDITIONAL-REFERENCE-R1]

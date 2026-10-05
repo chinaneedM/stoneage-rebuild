@@ -1,9 +1,70 @@
 # StoneAge BattleModel reference R1
 
-Status: **PENDING_RECOVERED25_DATA_AND_PINNED_SOURCE_ACCEPTANCE**
+Status: **CLOSED_BOUNDED_RECOVERED25_CONDITIONAL_REFERENCE**
 Date: 2026-10-05
 Scope: next pressure-selected recovered25 enemy callback
 `PETSKILL_BattleModel`.
+
+## Accepted closure — 2026-10-06
+
+This dated closure supersedes the pending statements in the historical sections
+below; those sections remain as evidence of the discovery and correction path.
+
+- Exact recovered25 data Action **37342593141 SUCCESS** and three-profile
+  source/native Action **37342593073 SUCCESS** both accepted input
+  `4131a23ce12b4d03e367456f4135988e8e5121b9`.
+- Exact report write-back: `fb8cabc13a05c8e4188d18fbf774567a20c1f019`,
+  tree `76e56d3a9334ab0db35bfbc5885fb5756fede514`.
+- Supplemental helper Action **37344060042 SUCCESS** accepted input
+  `be9de3df70d4a872817f55fd484e9a08f4dd1f31`: 432 controlled native
+  helper cases per pinned profile, 1296 total. The core source gate separately
+  covers 200 native target-plan cases per profile, 600 total.
+- Full petskill SHA-256:
+  `f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4`.
+  Complete callback population is **638/641/649/650**. Only638 has positive
+  recovered25 enemy references. Other rows remain data/reference-only.
+
+ID638 has FIELD/TARGET/COST/ILLEGAL **1/3/3/10000**, 32 non-NUL OPTION
+bytes, SHA-256
+`690101963c1d05be1151cc54644e453c5a96c4e03eaf6b8dd6cbfd406d9a50a4`.
+Derived fields: type5 (cover bit1 and physical bit4), object count4, status
+turn1, hit input30, action numbers101867/101868. Callback count RNG is absent.
+The status token is2 bytes, SHA-256
+`fc84ea411bd02914ae6224a2d2d9d791c441d9e22aa8d98fcc3cf86ca873f428`;
+field6 is6 bytes, SHA-256
+`d45477b1b516ad1ec7b23ff1ca22bb433c16636acb4fde6404974ba311759a84`.
+
+| TEMPNO | Graphic | Skill slot | ID | Vital/strength/toughness/dexterity | AI |
+| --- | --- | --- | --- | --- | --- |
+| 1178 | 101867 | 3 | 638 | 38/40/15/37 | 150 |
+| 1179 | 101868 | 3 | 638 | 42/35/20/34 | 150 |
+
+All three explicit Big5 source witnesses classify ID638 as **paralysis,
+index2**. All three UTF-8 witnesses leave the actual recovered status token
+**unknown**, so that conditional runtime applies no matched status. Under
+Big5 field6 derives attack70% with integer/float32 truncation, preserving
+defence/quick; witnesses100/80/60 ->70/80/60 and137/91/53 ->96/91/53.
+UTF-8 literals do not match that recovered attack modifier and preserve powers.
+Neither condition is selected as the original recovered build.
+
+Runtime integration is authorized only for these exact positive identities,
+with an explicit charset condition. It requires the dedicated hit loop and
+state boundaries in `STONEAGE-BATTLEMODEL-RUNTIME-STATE-AUDIT-R1.md`.
+Per-hit ordinary physical RNG, eligible status RNG and reached critical
+non-player ultimate RNG remain separately owned; skipped targets own none.
+Physical reflect consumes its charge while suppressing return damage.
+ABSORB/VANISH suppress wakeup, while status eligibility separately reads
+surviving HP and positive reported damage. The helper audit stubs common
+arithmetic and does not recertify that arithmetic.
+
+**OPEN:** original compiler/charset/source profile, numeric COM1, libc PRNG,
+portable original qsort order, DODGE's uninitialised presentation field,
+TRAP/ACUPUNCTURE and later transformations, complete runtime integration,
+and JSS/Taiwan-v1 membership. Empty living-target lists fail closed in modern
+execution. This acceptance changes no executable coverage: **2461/2486**.
+
+**RECOVERED25_BATTLEMODEL_REFERENCE_R1 =
+CLOSED_BOUNDED_RECOVERED25_CONDITIONAL_REFERENCE.**
 
 ## Starting provenance
 

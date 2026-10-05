@@ -1,7 +1,40 @@
 # StoneAge BattleModel runtime state audit R1
 
-Status: **PENDING_RECOVERED25_OPTION_PROFILE_ACCEPTANCE**
+Status: **CLOSED_FOR_BOUNDED_RUNTIME_INTEGRATION**
 Date: 2026-10-05
+
+## Accepted state-carrier closure — 2026-10-06
+
+This closure supersedes pending prerequisites in the historical audit below.
+Exact-data37342593141, source/native37342593073 and supplemental helper
+37344060042 all completed successfully. Their exact inputs and derived facts
+are recorded in `STONEAGE-BATTLEMODEL-REFERENCE-R1.md` and
+`research/recovered/STONEAGE-BATTLEMODEL-ACCEPTANCE-GATES-R1.json`.
+
+The complete family is638/641/649/650; bounded runtime admission is only
+ID638 at TEMPNO1178/1179, graphic101867/101868, skill slot3. Accepted type5,
+object count4, turn1, hit30 and action numbers101867/101868 fit existing
+action-local scheduling. Big5 witnesses select paralysis/index2 and attack70%;
+UTF-8 witnesses select no matched status/modifier. Runtime must require an
+explicit conditional profile and must not infer the original compiler.
+
+Paralysis fits the existing six-status carrier and clears the remaining-round
+command on success. No new generalized persistent schema is needed. Existing
+HP, Guardian, base reactions, ride/death/ultimate and explicit pet ownership,
+default selection and battle occupancy remain authoritative. Active-battle
+disk resume is not accepted by this state-carrier closure.
+
+The dedicated loop must schedule once, recheck each submitted target without
+retarget, use the actual Guardian defender for physical damage/status, restore
+the temporary BattleModel marker, consume reflect while suppressing return
+damage, and keep wakeup versus status eligibility separate. Shared arithmetic
+must be reused only where its accepted contract agrees. Preserve the separate
+per-hit RNG requirements and safe DODGE presentation. Trap/acupuncture and
+later transformation states remain structurally excluded.
+
+**BATTLEMODEL_RUNTIME_STATE_AUDIT_R1 =
+CLOSED_FOR_BOUNDED_RUNTIME_INTEGRATION.** Runtime implementation and pressure
+promotion remain OPEN and belong on a fresh branch after main acceptance.
 
 This audit maps the bounded PETSKILL_BattleModel fixed-descendant reference onto the existing deterministic single-player battle state. It is a state-carrier audit only and does not authorize runtime integration until the recovered25 exact OPTION/profile gate and the source/native reference gates are accepted.
 

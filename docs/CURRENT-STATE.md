@@ -6534,3 +6534,40 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   witnesses, close only bounded reference/state contracts, freshly verify and
   fast-forward main, then start a fresh runtime branch. Accepted executable
   coverage remains2461/2486=98.99%; this is not whole-project completion.
+
+
+## Phase 1 BattleModel bounded conditional reference accepted — 2026-10-06
+
+- Fresh GitHub verification: main remains `d2b309c750049c1585543b4f76514cf8eca19826`,
+  tree `ff764e45470698514d728aa401e2ef17aba5c2ff`; all32 exact-main Actions
+  SUCCESS. Reference branch was re-read at `d2b7640f9aea153a4f1a6dff51077bb374fcaaea`,
+  tree `3638f69d5e3aaec1e6f1cfb5f3c192d0a06645ec` before this closure.
+- Exact-data **37342593141 SUCCESS** and source/native **37342593073 SUCCESS**
+  accepted repair input `4131a23ce12b4d03e367456f4135988e8e5121b9`. Exact
+  derived report write-back `fb8cabc13a05c8e4188d18fbf774567a20c1f019`.
+- Supplemental helper **37344060042 SUCCESS** accepted input
+  `be9de3df70d4a872817f55fd484e9a08f4dd1f31`; artifact11360861465.
+  Three pins reproduce600 native target-plan and1296 controlled helper cases.
+  Shared damage/status arithmetic remains outside the helper certification.
+- Complete callback population638/641/649/650; positive runtime candidate
+  is only638, skill slot3 on1178/101867 and1179/101868. Exact metadata
+  1/3/3/10000 and32-byte OPTION hash are pinned in the reference/receipt.
+- Accepted type5/object count4/turn1/hit30/actions101867,101868. Explicit
+  Big5 witnesses derive attack70% and paralysis/index2; UTF-8 witnesses
+  preserve powers and find no matched status. Original build is not selected.
+- Reference is **CLOSED_BOUNDED_RECOVERED25_CONDITIONAL_REFERENCE**; state
+  carrier audit is **CLOSED_FOR_BOUNDED_RUNTIME_INTEGRATION**. Dedicated
+  hit loop, actual Guardian defender, reflect suppression, wake/status split,
+  explicit RNG ownership and safe presentation remain implementation work.
+- Accepted executable coverage remains **2461/2486=98.99%**. This is only
+  recovered25 positive enemy skill-slot coverage, not whole-project completion.
+- Independently authorized BecomeFox preaudit is on
+  `agent/becomefox-preaudit-r1-20261006` at
+  `93637f8336a7a0ce317a40eb13c1f75e518971df`;60 textual source gates only,
+  no data/native/runtime acceptance. It does not replace BattleModel priority.
+- **Highest-priority unfinished task:** freshly verify main is still an ancestor,
+  nonforce fast-forward the accepted BattleModel reference, inspect exact-main
+  Actions, then create a fresh BattleModel runtime branch. Integrate only
+  exact positive ID638 through ordered battle/state/enemy-AI coordinator;
+  accept runtime and hash-verified pressure before promoting its two slots.
+  Continue WORK under DD-018; production-engine/redesigned-content work deferred.

@@ -1,7 +1,17 @@
 # BattleModel hit-helper lifecycle source audit R1
 
 Date: 2026-10-06
-Status: **LOCAL_NATIVE_PASS_REMOTE_ACCEPTANCE_PENDING**
+Status: **CLOSED_BOUNDED_FIXED_DESCENDANT_HELPER_LIFECYCLE**
+
+## Remote acceptance — 2026-10-06
+
+Action **37344060042 SUCCESS** on input
+`be9de3df70d4a872817f55fd484e9a08f4dd1f31` independently reproduces
+the three pinned profiles and1296 controlled helper witnesses. Its audit job
+111878092333 completed all steps successfully and uploaded artifact
+11360861465, `battlemodel-hit-lifecycle`. The historical pending statements
+below are superseded by this receipt. Both core reference gates also succeeded;
+this acceptance retains every stub/exclusion/presentation limit below.
 
 This is a supplementary fixed-descendant source audit, not runtime integration
 and not recovered25 OPTION acceptance. The three source commits and file hashes

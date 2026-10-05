@@ -18,9 +18,12 @@
   ],
   "supplemental_gate": {
     "id": 37344060042,
-    "status": "queued",
-    "conclusion": null,
-    "input_sha": "be9de3df70d4a872817f55fd484e9a08f4dd1f31"
+    "status": "completed",
+    "conclusion": "success",
+    "input_sha": "be9de3df70d4a872817f55fd484e9a08f4dd1f31",
+    "job_id": 111878092333,
+    "artifact_id": 11360861465,
+    "native_vectors": 1296
   },
   "population_ids": [
     638,
@@ -81,5 +84,7 @@
     "commit": "93637f8336a7a0ce317a40eb13c1f75e518971df",
     "scope": "60 textual fixed-source preaudit gates only"
   },
-  "next": "Reconcile supplemental helper gate, then close bounded BattleModel reference/state contracts, verify and nonforce fast-forward main, verify main Actions and create a fresh runtime branch."
+  "next": "Freshly verify main ancestry, nonforce fast-forward accepted reference, inspect exact-main Actions, then create a fresh bounded BattleModel runtime branch.",
+  "reference_status": "CLOSED_BOUNDED_RECOVERED25_CONDITIONAL_REFERENCE",
+  "state_audit_status": "CLOSED_FOR_BOUNDED_RUNTIME_INTEGRATION"
 }

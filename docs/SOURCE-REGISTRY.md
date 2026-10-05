@@ -3452,3 +3452,28 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - Does not support: complete common combat arithmetic, original executable
   membership, exact presentation bytes, or production runtime closure.
 - Full boundaries: `specs/STONEAGE-BATTLEMODEL-HIT-LIFECYCLE-AUDIT-R1.md`.
+
+
+### SRC-BATTLEMODEL-CONDITIONAL-REFERENCE-R1 — 2026-10-06
+
+- Evidence role: hash-verified recovered25 later-data bridge and the same three
+  fixed gavin/iris/Bismarck commits as SRC-BATTLEMODEL-STATUS-PROFILES-R1;
+  not original JSS/Taiwan-v1 provenance.
+- Exact-data37342593141 and three-profile source/native37342593073 SUCCESS
+  on input4131a23ce12b4d03e367456f4135988e8e5121b9. Derived report commit
+  fb8cabc13a05c8e4188d18fbf774567a20c1f019, tree
+  76e56d3a9334ab0db35bfbc5885fb5756fede514.
+- Helper37344060042 SUCCESS on be9de3df70d4a872817f55fd484e9a08f4dd1f31,
+  job111878092333, artifact11360861465.600 planner/1296 controlled helper
+  vectors total. This supersedes remote-pending status in the two source
+  records above; common damage/status arithmetic remains stubbed.
+- Complete population638/641/649/650; positive638 uses two slot3 identities
+  1178/101867 and1179/101868. Full data and exact OPTION hashes, source/charset
+  witnesses and placement metadata are in the derived probe/acceptance JSON.
+- Contracts: STONEAGE-BATTLEMODEL-REFERENCE-R1.md, runtime-state audit and
+  hit-lifecycle audit. Reference CLOSED_BOUNDED_RECOVERED25_CONDITIONAL_REFERENCE;
+  state audit CLOSED_FOR_BOUNDED_RUNTIME_INTEGRATION. Explicit Big5 paralysis
+  and attack70% versus UTF-8 unmatched-status/unchanged-power profiles remain.
+- OPEN: original executable/source/charset/numeric COM1/libc PRNG, original
+  qsort presentation, DODGE uninitialised bytes, excluded transformations and
+  reactions, ordered runtime and original version membership. Coverage unchanged.
