@@ -1,5 +1,6 @@
 """Fixed-descendant Modifyattack audit with transient native witnesses."""
 import argparse
+import hashlib
 from pathlib import Path
 import random
 import re
@@ -15,7 +16,7 @@ from tools.stoneage_modifyattack_reference_model import (
 )
 
 
-def _native_oracle(data):
+def _native_oracle(data, actual_options=()):
     prefix = r'''
 #include <stdio.h>
 #include <stdlib.h>
@@ -77,6 +78,7 @@ int main(int argc,char **argv){
 }
 '''
     options=[b'EA|20',b'WA|80',b'FI|100',b'WI|33',b'ALL|100',b'ea|50',b' EA|20',b'EA |20',b'EA',b'EA|',b'EA||80',b'FI|abc',b'WI| \t+72suffix|ignored',b'EA|-20',b'FI|0',b'WA|'+b'0'+b'x'*300]
+    options += list(actual_options)
     rng=random.Random(544546)
     cases=[(137,(95,95,95,95),99),(137,(96,96,96,96),100),(137,(100,100,100,100),104),(137,(100,100,100,100),105),(137,(0,0,0,0),100)]
     cases += [(rng.randrange(3001),tuple(rng.randrange(101) for _ in range(4)),rng.randrange(2**31)) for _ in range(128)]
@@ -103,10 +105,10 @@ int main(int argc,char **argv){
                 if actual!=expected:
                     raise ValueError(f'native helper differs: {actual} != {expected}')
                 count+=1
-    return {'callback_cases':len(options),'helper_cases':count,'ubsan_pass':True}
+    return {'callback_cases':len(options),'helper_cases':count,'actual_data_options':len(actual_options),'ubsan_pass':True}
 
 
-def analyze_profile(name,root):
+def analyze_profile(name,root,actual_options=()):
     root=Path(root).resolve()
     head=subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip()
     if head!=PINNED[name] or subprocess.check_output(['git','-C',str(root),'status','--porcelain'],text=True).strip():
@@ -150,12 +152,14 @@ def analyze_profile(name,root):
     }
     if not all(gates.values()):
         raise ValueError(f'{name} source gate failure: {gates}')
-    enums=_enum_values([COMMAND_NAME,'BATTLE_COM_S_MDFYATTACK','BATTLE_CHARMODE_C_OK','BCF_ATTDOUBLE'],flags)
+    enums=_enum_values([COMMAND_NAME,'BATTLE_COM_S_MDFYATTACK','BATTLE_CHARMODE_C_OK','BCF_ATTDOUBLE','PETSKILL_TARGET_OTHERWITHOUTMYSELF'],flags)
+    if enums['PETSKILL_TARGET_OTHERWITHOUTMYSELF'] != 6:
+        raise ValueError('TARGET6 identity drift')
     pointer='null_pointer' if 'if(pszOption==NULL)' in helper else 'empty_literal_pointer_comparison'
     if pointer=='empty_literal_pointer_comparison' and 'if(pszOption=="\\0")' not in helper:
         raise ValueError('unknown pointer guard')
     return {'profile':name,'commit':head,'gates':gates,'enums':enums,'pointer_guard':pointer,
-            'oracle':_native_oracle(data),'hashes':{key:_sha(path) for key,path in paths.items()}}
+            'oracle':_native_oracle(data,actual_options),'hashes':{key:_sha(path) for key,path in paths.items()}}
 
 
 def emit(rows):
@@ -184,8 +188,21 @@ def main():
     parser=argparse.ArgumentParser()
     for name in PINNED:
         parser.add_argument('--'+name+'-dir',type=Path,required=True)
+    parser.add_argument('--data-dir',type=Path)
+    parser.add_argument('--setup',type=Path)
     args=parser.parse_args()
-    emit([analyze_profile(name,getattr(args,name+'_dir')) for name in PINNED])
+    options=()
+    if args.data_dir is not None:
+        from tools.stoneage_recovered25_modifyattack_probe import EXPECTED_PETSKILL_SHA256, EXPECTED_CALLBACK_IDS
+        from tools.stoneage_recovered25_petskill_runtime import load_recovered25_petskill_runtime
+        pets=load_recovered25_petskill_runtime(data_dir=args.data_dir,setup=args.setup)
+        if hashlib.sha256((args.data_dir/pets.source_file).read_bytes()).hexdigest()!=EXPECTED_PETSKILL_SHA256:
+            raise ValueError('actual-data source hash drift')
+        entries=sorted((entry for entry in pets.skills.values() if entry.function_name==CALLBACK_NAME),key=lambda entry:entry.skill_id)
+        if tuple(entry.skill_id for entry in entries)!=EXPECTED_CALLBACK_IDS:
+            raise ValueError('actual-data callback population drift')
+        options=tuple(bytes(entry.option_bytes) for entry in entries)
+    emit([analyze_profile(name,getattr(args,name+'_dir'),options) for name in PINNED])
 
 
 if __name__=='__main__':

@@ -23,6 +23,12 @@ class ModifyAttackOption:
     element_index: int | None
     percent: int
 
+    def __post_init__(self):
+        if self.element_index is not None and (type(self.element_index) is not int or self.element_index not in range(4)):
+            raise ValueError("element outside EA/WA/FI/WI or no-match domain")
+        if type(self.percent) is not int or not -(2**31) <= self.percent < 2**31:
+            raise ValueError("percent outside defined signed-int domain")
+
 
 def parse_modifyattack_option(raw: bytes) -> ModifyAttackOption | None:
     if not isinstance(raw, bytes) or b"\0" in raw or not raw.isascii():
