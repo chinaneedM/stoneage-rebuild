@@ -3308,3 +3308,11 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
 - Native boundary: original ITEM integer getter, DirectUse and Recovery/StatusChange/StatusRecovery/AttReverse wrappers; **4800 local ASan/UBSan witnesses PASS** under preprocessed profile macros, with explicit non-player/no-family/live-battle and stubbed effect seams.
 - Accepted local facts: HIGH zero means runtime item index zero, invalid item getter returns -1, ordinary wrappers compare/subtract the forwarded MP, selection precedes Nocast, Recovery discards battle-helper failure. New remote source gate is pending at this record.
 - **OPEN:** actual live item-pool state, status OPTION charset/safe scans, ordered mutations/persistence, family modifiers, original compiler/binary and earliest historical membership. Conditional item-state reference closure does not close Combined runtime or advance pressure coverage.
+
+
+### SRC-COMBINED-DIRECT-MAGIC-ITEM-MP-R1 — remote acceptance supplement
+
+- Input commit `97fb9e5ca78a007f383024b7edc935fd997077e0`, tree `8acf0205a1dc1cef70c5e2984e0309fccddefbfe`.
+- **37265053597 PASS**: 36 unit tests; fixed three-source recovery; all 4800 actual-accessor/DirectUse/wrapper witnesses under ASan/UBSan; exact report reproduction.
+- **37265053470 PASS**: verified preservation bundle, 19 exact magic rows, eight positive selection choices and unknown/invalid/Nocast item-state checks.
+- Conditional direct-wrapper MP/return reference is now remotely accepted. Stubbed battle effects and explicit item-state witnesses remain declared limitations; ordered runtime and pressure closure remain OPEN.

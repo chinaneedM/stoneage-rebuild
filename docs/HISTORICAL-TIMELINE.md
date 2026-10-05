@@ -592,3 +592,8 @@ recovered binary enum. [SRC-DESCENDANT-WEAKEN-PINNED-PROFILES-R1]
 ## 2026-10-05 — Combined direct magic consumes live item-pool MP
 
 **FACT / LATER_RECOVERED:** The three fixed descendant profiles agree that Combined's zero HIGH(COM3) becomes non-player DirectUse runtime item index 0, whose ITEM_MAGICUSEMP is used by the four positively selected ordinary wrappers. A witnessed invalid item returns -1 and can increase caster MP by 1; an unknown item-pool state is not evidence of a free cast. 4800 transient native accessor/DirectUse/wrapper witnesses pass locally with stubbed effect helpers. Selection RNG is owned by the preceding callback, before Nocast. **OPEN:** remote reproduction, live item-pool provenance, actual-byte status parsers, effect mutation, ordered persistence and Taiwan-v1 membership. See `specs/STONEAGE-COMBINED-DIRECT-MAGIC-BOUNDARY-R1.md`.
+
+
+### 2026-10-05 — Combined direct-wrapper evidence remotely reproduced
+
+**FACT / LATER_RECOVERED:** At `97fb9e5ca78a007f383024b7edc935fd997077e0`, native boundary Action **37265053597 PASS** reproduces all 4800 witnesses and source/report hashes; verified bundle Action **37265053470 PASS** checks all 19 crosslinks and the eight positively selected magic choices with explicit item-state boundaries. This supersedes the previous entry's pending remote-verification status only. Live item-pool provenance, status parsers, effect mutation/persistence and original Taiwan-v1 membership remain **OPEN**.
