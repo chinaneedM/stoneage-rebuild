@@ -13,6 +13,8 @@ on:
       - "tools/stoneage_enemy_ai_vary_bridge.py"
       - "tests/test_stoneage_vary_runtime_state.py"
       - "tests/test_stoneage_enemy_ai_vary_bridge.py"
+      - "tools/stoneage_battle_round_model.py"
+      - "tests/test_stoneage_vary_ordered_runtime.py"
 
 permissions:
   contents: read
@@ -30,4 +32,5 @@ jobs:
         run: |
           python -m unittest -v \
             tests.test_stoneage_vary_runtime_state \
-            tests.test_stoneage_enemy_ai_vary_bridge
+            tests.test_stoneage_enemy_ai_vary_bridge \
+            tests.test_stoneage_vary_ordered_runtime
