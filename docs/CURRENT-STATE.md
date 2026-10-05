@@ -6656,3 +6656,79 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   during bounded implementation; require ordered/persistent/coordinator/golden/
   full-region and verified pressure acceptance before promoting two638 slots.
   Accepted executable coverage remains2461/2486=98.99%; WORK/DD-018 continues.
+
+
+## Phase 1 BattleModel admission and 2BattleTimid slot correction — 2026-10-06
+
+- Fresh remote main at startup and before publication:
+  `2880eb6cbacdba0a2026a126f0c5a635cdcda09b`, tree
+  `66aaf8aad597646763a1592e349bac36956b8c51`. Latest main settlement replay
+  **37349889669 SUCCESS** on that exact input; prior queued snapshot superseded.
+  Accepted native settlement input33a8e76a has no tools/workflow/tests diff
+  against this main. Earlier source/data/helper acceptance remains recorded.
+- Fresh isolated implementation branch:
+  `agent/battlemodel-runtime-admission-r1-20261006`, based on that exact main.
+  No unaccepted runtime code is promoted to main by this checkpoint.
+- **FACT / repair:** accepted recovered25 ID636 templates178/179 place it in
+  report column3, meaning zero-based runtime index2. Existing 2BattleTimid
+  bridge and coordinator fixtures instead used index3; the spec's column4
+  table is wrong and explicitly superseded by a dated correction. New tests
+  reproduced rejection of the real placement and acceptance of the shifted
+  placement before repair. Bridge, typed submission and coordinator fixtures
+  now use index2 and reject shifted/duplicate positive placements.
+- **Implemented / local tested:** BattleModel strict admission checks all four
+  callback rows, exact metadata/OPTION hashes, two template identities including
+  graphic/base/AI and seven-slot family placement, explicit charset/source
+  profiles and current work powers. Only638 on1178/1179 index2 is admitted.
+  Typed setup and pure target-plan seam exist; dedicated ordered hit execution,
+  persistent state and coordinator BattleModel execution remain OPEN.
+- **Local validation:**140 related tests and279 shared battle-core/golden
+  tests PASS; golden CLI and module compilation PASS. This is local controlled
+  fixture validation, not newly verified actual-data acceptance.
+- Extended hash-verified exact-data workflow adds24 conditional BattleModel
+  admissions and4 corrected real 2BattleTimid admissions, checks the whole
+  petskill hash and global family placements, and emits only derived metadata.
+  Added bridge push triggers to core/golden/coordinator/full-region gates.
+  New remote run IDs/results will be appended after branch publication.
+- **Coverage boundary:** prior2461/2486=98.99% is the historical recovered25
+  positive-slot metric, not project completion. ID636 exact admission now
+  requires renewed regression/actual-data acceptance; do not mechanically
+  recertify that prior percentage. No BattleModel slots are newly closed.
+- **Highest-priority unfinished task:** freshly inspect this branch's exact
+  actual-data/2BattleTimid/core/golden/coordinator/full-region Actions. Repair
+  failures before accepting the corrected admission; accept only bounded
+  BattleModel admission after verified actual-data PASS. Then implement the
+  dedicated interleaved hit loop and remaining ordered/persistent/coordinator/
+  golden/full-region/verified-pressure gates from the saved integration plan.
+  Do not merge unaccepted runtime code or promote638's two slots. WORK/DD-018
+  continues; production engine/redesigned content remains deferred.
+
+
+### Exact admission branch publication and queued handoff — 2026-10-06
+
+- Published implementation input **5c555bf781b2517d1709a246afd80bc875fb7980**,
+  tree **faf8c42007bbec39ea0994de920e033e417af7fa**, on
+  `agent/battlemodel-runtime-admission-r1-20261006`. Remote/local tree equality
+  and clean checkout verified; main2880eb6c remained unchanged at publication.
+- Exact-input acceptance gates at this checkpoint are **QUEUED**:
+
+  | Gate | Run ID | Result |
+  | --- | ---: | --- |
+  | Hash-verified BattleModel admission + corrected real ID636 |37353001564|QUEUED|
+  | 2BattleTimid runtime |37353001258|QUEUED|
+  | Battle core |37353002049|QUEUED|
+  | Local runtime coordinator |37353000921|QUEUED|
+  | Runtime golden contract |37353001458|QUEUED|
+  | Full recovered25 region/runtime stack |37353001229|QUEUED|
+
+- Receipt on the implementation branch:
+  `research/recovered/STONEAGE-BATTLEMODEL-ADMISSION-ACCEPTANCE-R1.json`.
+  Subsequent handoff commits change documentation only and preserve tested code.
+  A bot may add the verified admission derived report; re-read the branch HEAD.
+- **Next highest priority:** freshly inspect these exact runs and any branch
+  write-back; failures block acceptance. Once all affected gates pass, record
+  acceptance of repaired636 admission and bounded638 typed admission, verify
+  main ancestry and nonforce sync the accepted milestone. BattleModel full
+  runtime and slot promotion remain OPEN; then implement the saved ordered
+  integration plan. Main continuity checkpoint may contain this record without
+  the unaccepted branch code. No user restatement or chat SHA inference needed.
