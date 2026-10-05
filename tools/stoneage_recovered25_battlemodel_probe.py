@@ -17,6 +17,25 @@ EXPECTED_PETSKILL_SHA256=(
 EXPECTED_REFERENCED_IDS=(638,)
 EXPECTED_POSITIVE_USES=2
 EXPECTED_POSITIVE_TEMPLATES=2
+EXPECTED_CALLBACK_IDS=(638,641,649,650)
+EXPECTED_EXACT_ROWS=(
+    (638,1,3,3,10000,2,32,
+     "690101963c1d05be1151cc54644e453c5a96c4e03eaf6b8dd6cbfd406d9a50a4",
+     False,False,True),
+    (641,1,3,3,10000,0,32,
+     "1bb3aba6ea65cc8173fba1a4723c295191afde5b4e66a4944070321bc599713a",
+     False,False,True),
+    (649,1,3,3,20000,0,25,
+     "ed0f84cf247af7945385ba07597c0c0584c70383e49ea5da141db459deebb5b9",
+     False,False,True),
+    (650,1,3,3,10000,0,31,
+     "6e27493d6b48c89fc86d1da99bbadaff022f1fc085901e388d35cbb9a0f8f3cd",
+     False,False,True),
+)
+EXPECTED_TEMPLATE_ROWS=(
+    (1178,101867,38,40,15,37,150,(3,),(638,)),
+    (1179,101868,42,35,20,34,150,(3,),(638,)),
+)
 
 
 def analyze_runtime_objects(
@@ -132,7 +151,7 @@ def analyze_runtime_objects(
 
 
 def emit(result):
-    print("StoneAge recovered25 BattleModel probe — R1 discovery")
+    print("StoneAge recovered25 BattleModel probe — R1 exact pin")
     print("Derived facts only; no names/descriptions/raw OPTION bytes/assets stored.")
     print("COUNT|callback_rows|"+str(len(result["rows"])))
     print("COUNT|enemybase_slot_references|"+str(result["slot_references"]))
@@ -166,7 +185,6 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--data-dir",type=Path,required=True)
     parser.add_argument("--setup",type=Path)
-    parser.add_argument("--discover",action="store_true")
     args=parser.parse_args()
 
     pets=load_recovered25_petskill_runtime(
@@ -180,19 +198,21 @@ def main():
     ).hexdigest()
     if digest!=EXPECTED_PETSKILL_SHA256:
         raise SystemExit("full petskill hash drift")
-    result=analyze_runtime_objects(pets,enemies)
+    result=analyze_runtime_objects(
+        pets,enemies,
+        expected_callback_ids=EXPECTED_CALLBACK_IDS,
+        expected_exact_rows=EXPECTED_EXACT_ROWS,
+        expected_template_rows=EXPECTED_TEMPLATE_ROWS,
+    )
     emit(result)
     print("DATA_SHA256|file=petskill|sha256="+digest)
-    if not result["positive_references_closed"]:
-        raise SystemExit("BattleModel pressure/positive reference identity drift")
-    if args.discover:
-        print(
-            "BOUNDARY|discovery_only_complete_population_and_exact_identity_not_accepted"
-        )
-        return
-    raise SystemExit(
-        "BattleModel exact population/row/template identity is not pinned yet"
-    )
+    for key in (
+        "positive_references_closed","population_closed",
+        "exact_rows_closed","exact_templates_closed",
+    ):
+        if not result[key]:
+            raise SystemExit("BattleModel exact recovered25 identity drift: "+key)
+    print("RESOLUTION|RECOVERED25_BATTLEMODEL_EXACT_IDENTITY_ACCEPTED")
 
 
 if __name__=="__main__":
