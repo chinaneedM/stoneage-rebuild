@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, replace
+from types import MappingProxyType
+from typing import Mapping
 
 
 CALLBACK_NAME = "PETSKILL_Vary"
@@ -198,3 +200,84 @@ def teardown_vary(state: VaryParticipantRuntime) -> VaryParticipantRuntime:
     if not state.active:
         return state
     return _expire_vary(state)
+
+
+@dataclass(frozen=True)
+class VaryRuntimeOverlay:
+    """Persistent battle-local Vary work state for currently transformed actors.
+
+    Only active wolf states are carried. Expiry removes the actor from the
+    overlay rather than retaining a second baseline copy.
+    """
+
+    runtime_by_participant_id: Mapping[str, VaryParticipantRuntime]
+
+    def __post_init__(self) -> None:
+        normalized={}
+        for participant_id,state in self.runtime_by_participant_id.items():
+            participant_id=str(participant_id)
+            if not participant_id:
+                raise ValueError("Vary overlay participant id must be non-empty")
+            if participant_id in normalized:
+                raise ValueError("Vary overlay participant ids must be unique")
+            if not isinstance(state,VaryParticipantRuntime):
+                raise TypeError("Vary overlay state has wrong type")
+            if not state.active:
+                raise ValueError("Vary overlay may carry active wolf states only")
+            normalized[participant_id]=state
+        object.__setattr__(
+            self,
+            "runtime_by_participant_id",
+            MappingProxyType(normalized),
+        )
+
+    @classmethod
+    def empty(cls) -> "VaryRuntimeOverlay":
+        return cls({})
+
+    def with_cast(
+        self,
+        participant_id: str,
+        state: VaryParticipantRuntime,
+    ) -> "VaryRuntimeOverlay":
+        participant_id=str(participant_id)
+        if participant_id in self.runtime_by_participant_id:
+            raise ValueError("Vary recast blocked while actor is transformed")
+        if not isinstance(state,VaryParticipantRuntime) or not state.active:
+            raise ValueError("Vary overlay cast requires active post-callback state")
+        values=dict(self.runtime_by_participant_id)
+        values[participant_id]=state
+        return VaryRuntimeOverlay(values)
+
+    def advance_actor_action(
+        self,
+        participant_id: str,
+    ) -> tuple["VaryRuntimeOverlay", VaryTurnAdvance | None]:
+        participant_id=str(participant_id)
+        if participant_id not in self.runtime_by_participant_id:
+            return self,None
+        next_state,tick=advance_vary_after_actor_action(
+            self.runtime_by_participant_id[participant_id]
+        )
+        values=dict(self.runtime_by_participant_id)
+        if next_state.active:
+            values[participant_id]=next_state
+        else:
+            values.pop(participant_id,None)
+        return VaryRuntimeOverlay(values),tick
+
+    def retain_participants(
+        self,
+        participant_ids: set[str] | frozenset[str] | tuple[str, ...],
+    ) -> "VaryRuntimeOverlay":
+        allowed={str(value) for value in participant_ids}
+        return VaryRuntimeOverlay({
+            participant_id:state
+            for participant_id,state in self.runtime_by_participant_id.items()
+            if participant_id in allowed
+        })
+
+    def teardown(self) -> "VaryRuntimeOverlay":
+        # Work-state restoration is represented by dropping all overlays; the
+        # baseline battle/session participants remain untouched.
+        return VaryRuntimeOverlay.empty()
