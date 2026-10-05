@@ -6903,9 +6903,23 @@ def resolve_ordinary_round(
                         ),
                         resolved_target=target_resolution,
                     )
+                    poison_stat_sum=base_runtime.poison_stat_sum
+                    if (
+                        status_name == STATUS_POISON
+                        and status_change_effect.status_after
+                        != status_change_effect.status_before
+                        and poison_stat_sum is None
+                    ):
+                        poison_stat_sum=(
+                            int(status_profile.vital)
+                            + int(status_profile.strength)
+                            + int(status_profile.tough)
+                            + int(status_profile.dex)
+                        )
                     status_runtime[defender_id]=replace(
                         base_runtime,
                         status=status_change_effect.status_after,
+                        poison_stat_sum=poison_stat_sum,
                     )
                     if status_change_effect.command_cleared:
                         combined_cleared_command_ids.add(defender_id)
