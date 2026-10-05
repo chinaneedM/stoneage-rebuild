@@ -17,6 +17,7 @@ on:
       - "tests/test_stoneage_lighttakeed_model.py"
       - "tests/test_stoneage_enemy_ai_lighttakeed_bridge.py"
       - "tests/test_stoneage_lighttakeed_runtime.py"
+      - "tests/test_stoneage_lighttakeed_persistent_runtime.py"
 
 jobs:
   validate:
@@ -33,3 +34,4 @@ jobs:
           if test -f tests/test_stoneage_lighttakeed_runtime.py; then
             python -m unittest -v tests.test_stoneage_lighttakeed_runtime
           fi
+          python -m unittest -v tests.test_stoneage_lighttakeed_persistent_runtime
