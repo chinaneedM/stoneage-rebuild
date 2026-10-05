@@ -46,6 +46,9 @@ from tools.stoneage_enemy_ai_guard_break2_bridge import (
 from tools.stoneage_enemy_ai_battletimid_bridge import (
     EnemyAiBattleTimidSubmission,
 )
+from tools.stoneage_enemy_ai_2battletimid_bridge import (
+    EnemyAiTwoBattleTimidSubmission,
+)
 from tools.stoneage_enemy_ai_lighttakeed_bridge import (
     EnemyAiLighttakeedSubmission,
 )
@@ -1291,8 +1294,17 @@ def _pending_profit_after_ordinary_round(
     ride_rider_id=(
         None if ride_runtime is None else str(ride_runtime.rider_id)
     )
+    current_default_pet_id=selected_default_pet_participant_id(state)
 
     for event in round_result.events:
+        if (
+            event.two_battletimid_resolution is not None
+            and event.two_battletimid_resolution.pet_withdrawn
+        ) or (
+            event.battletimid_resolution is not None
+            and event.battletimid_resolution.owner_default_pet_cleared
+        ):
+            current_default_pet_id=None
         if event.ride_pet_fell_rider_id is not None:
             if (
                 ride_rider_id is None
@@ -1313,7 +1325,7 @@ def _pending_profit_after_ordinary_round(
 
         if target.side == "player" and target.kind in {"player","pet"}:
             if target.kind == "player":
-                default_pet_id=selected_default_pet_participant_id(state)
+                default_pet_id=current_default_pet_id
                 if target_id in ultimate_exited_ids:
                     penalty=resolve_battle_ultimate_death_penalty(
                         BattleUltimateDeathInputs(
@@ -1600,6 +1612,12 @@ def resolve_persistent_ordinary_round(
     battletimid_rolls_by_participant_id: Mapping[
         str,int | None
     ] | None = None,
+    two_battletimid_submissions_by_participant_id: Mapping[
+        str,EnemyAiTwoBattleTimidSubmission
+    ] | None = None,
+    two_battletimid_rolls_by_participant_id: Mapping[
+        str,int | None
+    ] | None = None,
     lighttakeed_submissions_by_participant_id: Mapping[
         str,EnemyAiLighttakeedSubmission
     ] | None = None,
@@ -1732,6 +1750,104 @@ def resolve_persistent_ordinary_round(
                 ),
             )
             if str(participant.participant_id) in battletimid_submissions
+            else participant
+            for participant in participants
+        )
+
+    two_battletimid_submissions={
+        str(pid):submission
+        for pid,submission in (
+            two_battletimid_submissions_by_participant_id or {}
+        ).items()
+    }
+    unknown_two_battletimid_ids=sorted(
+        set(two_battletimid_submissions)-living_ids
+    )
+    if unknown_two_battletimid_ids:
+        raise ValueError(
+            "2BattleTimid submissions reference inactive actors: "
+            f"{unknown_two_battletimid_ids}"
+        )
+    two_battletimid_default_slots={}
+    two_battletimid_noreturn={}
+    participant_id_by_slot={
+        int(slot):str(pid) for pid,slot in state.slots.items()
+    }
+    player_id=str(state.session.player.participant_id)
+    player_slot=int(state.slots[player_id])
+    selected_default_pet_id=selected_default_pet_participant_id(state)
+    for pid,submission in two_battletimid_submissions.items():
+        if not isinstance(submission,EnemyAiTwoBattleTimidSubmission):
+            raise TypeError("2BattleTimid submission has wrong type")
+        if str(submission.participant_id)!=pid:
+            raise ValueError("2BattleTimid submission participant drift")
+        if state.base_status_runtime_by_participant_id[pid].status.drunk>0:
+            raise ValueError("2BattleTimid with drunk actor is outside R1")
+        if (
+            state.nocast_overlay is not None
+            and state.nocast_overlay.runtime_by_participant_id[
+                pid
+            ].prepared_weaken_powers is not None
+        ):
+            raise ValueError(
+                "2BattleTimid with prepared Weaken powers is outside R1"
+            )
+        target_slot=int(submission.source_target_slot)
+        target_id=participant_id_by_slot.get(target_slot)
+        if target_id is None or target_id not in living_ids:
+            raise ValueError(
+                "2BattleTimid target must resolve to one active player-side entry"
+            )
+        target=next(
+            participant for participant in participants
+            if str(participant.participant_id)==target_id
+        )
+        if target.side!="player":
+            raise ValueError("2BattleTimid target crossed battle sides")
+        if target.kind=="pet":
+            if target.source_pet_slot is None:
+                raise ValueError(
+                    "2BattleTimid target pet lacks owned roster source slot"
+                )
+            if selected_default_pet_id != target_id:
+                raise ValueError(
+                    "2BattleTimid pet target must be the explicit selected default pet"
+                )
+            if target_slot != player_slot + 5:
+                raise ValueError(
+                    "2BattleTimid pet target must occupy owner-aligned slot+5"
+                )
+            if state.default_pet_slot is None or int(
+                target.source_pet_slot
+            ) != int(state.default_pet_slot):
+                raise ValueError(
+                    "2BattleTimid selected roster slot/target identity drift"
+                )
+            if state.pet_noreturn_by_participant_id is None:
+                raise ValueError(
+                    "2BattleTimid requires authoritative pet NORETURN state"
+                )
+            two_battletimid_default_slots[target_id]=int(
+                state.default_pet_slot
+            )
+            two_battletimid_noreturn[target_id]=bool(
+                state.pet_noreturn_by_participant_id[target_id]
+            )
+        elif target.kind!="player":
+            raise ValueError(
+                "2BattleTimid admitted player-side target must be player or pet"
+            )
+    if two_battletimid_submissions:
+        participants=tuple(
+            replace(
+                participant,
+                quick=int(
+                    two_battletimid_submissions[
+                        str(participant.participant_id)
+                    ].setup.powers[2]
+                ),
+            )
+            if str(participant.participant_id) in two_battletimid_submissions
             else participant
             for participant in participants
         )
@@ -2044,6 +2160,24 @@ def resolve_persistent_ordinary_round(
             defense_power=int(submission.setup.defence_power),
         )
 
+    for pid,submission in two_battletimid_submissions.items():
+        existing=effective_setup_effects.get(
+            pid,BattleCommandSetupEffects()
+        )
+        if (
+            existing.attack_power is not None
+            and int(existing.attack_power)!=int(submission.setup.powers[0])
+        ) or (
+            existing.defense_power is not None
+            and int(existing.defense_power)!=int(submission.setup.powers[1])
+        ):
+            raise ValueError("2BattleTimid callback setup overlaps power drift")
+        effective_setup_effects[pid]=replace(
+            existing,
+            attack_power=int(submission.setup.powers[0]),
+            defense_power=int(submission.setup.powers[1]),
+        )
+
     for pid,submission in lighttakeed_submissions.items():
         existing=effective_setup_effects.get(
             pid,BattleCommandSetupEffects()
@@ -2096,6 +2230,7 @@ def resolve_persistent_ordinary_round(
             | set(refresh_submissions_by_participant_id or {})
             | set(setmagicpet_submissions_by_participant_id or {})
             | set(battletimid_submissions)
+            | set(two_battletimid_submissions)
             | set(lighttakeed_submissions)
             | set(combined_submissions)
             | set(vary_submissions)
@@ -2219,6 +2354,18 @@ def resolve_persistent_ordinary_round(
         battletimid_submissions_by_participant_id=battletimid_submissions,
         battletimid_rolls_by_participant_id=(
             battletimid_rolls_by_participant_id
+        ),
+        two_battletimid_submissions_by_participant_id=(
+            two_battletimid_submissions
+        ),
+        two_battletimid_rolls_by_participant_id=(
+            two_battletimid_rolls_by_participant_id
+        ),
+        two_battletimid_default_pet_slot_by_target_id=(
+            two_battletimid_default_slots
+        ),
+        two_battletimid_noreturn_by_target_id=(
+            two_battletimid_noreturn
         ),
         lighttakeed_submissions_by_participant_id=lighttakeed_submissions,
         combined_submissions_by_participant_id=combined_submissions,
@@ -2348,9 +2495,38 @@ def resolve_persistent_ordinary_round(
         battletimid_exit_ids.add(target_id)
     if not battletimid_exit_ids.issubset(exited_ids):
         raise ValueError("BattleTimid exit missing from ordinary exited IDs")
+    two_battletimid_exit_ids=set()
+    for event in round_result.events:
+        resolution=event.two_battletimid_resolution
+        if resolution is None or not resolution.pet_withdrawn:
+            continue
+        if not resolution.pet_recall_requested:
+            raise ValueError("2BattleTimid withdrawal lacks recall request")
+        if event.resolved_target_slot is None:
+            raise ValueError("2BattleTimid withdrawal lacks target slot")
+        target_id=participant_id_by_slot.get(
+            int(event.resolved_target_slot)
+        )
+        if target_id is None or target_id not in allied_pet_ids:
+            raise ValueError(
+                "2BattleTimid withdrawal target is not an allied pet"
+            )
+        if selected_default_pet_id != target_id:
+            raise ValueError(
+                "2BattleTimid withdrawal conflicts with selected default pet"
+            )
+        if int(resolution.owner_default_pet_after) != -1:
+            raise ValueError(
+                "2BattleTimid successful withdrawal must clear default selection"
+            )
+        next_default_pet_slot=None
+        two_battletimid_exit_ids.add(target_id)
+    if not two_battletimid_exit_ids.issubset(exited_ids):
+        raise ValueError("2BattleTimid withdrawal missing from ordinary exits")
     battle_exit_ids=exited_ids-captured_enemy_ids
     allowed_battle_exit_ids=(
         allied_pet_ids | enemy_ids | battletimid_exit_ids
+        | two_battletimid_exit_ids
     )
     invalid_exits=sorted(battle_exit_ids-allowed_battle_exit_ids)
     if invalid_exits:
