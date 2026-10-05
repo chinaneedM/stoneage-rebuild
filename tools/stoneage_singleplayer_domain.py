@@ -254,11 +254,18 @@ class PersistentPlayerState:
     inventory: dict[InventorySlot, InventoryItem] = field(default_factory=dict)
     pets: dict[PetSlot, PetActor] = field(default_factory=dict)
     dead_pet_count: int = 0
+    # Modern authoritative selection state corresponding to the historical
+    # DEFAULTPET roster slot. Ownership and battle occupancy stay independent.
+    default_pet_slot: PetSlot | None = None
 
     def __post_init__(self) -> None:
         self.dead_pet_count=int(self.dead_pet_count)
         if self.dead_pet_count < 0:
             raise ValueError("dead_pet_count cannot be negative")
+        if self.default_pet_slot is not None and not isinstance(
+            self.default_pet_slot,PetSlot
+        ):
+            self.default_pet_slot=PetSlot(int(self.default_pet_slot))
 
 
 @dataclass
