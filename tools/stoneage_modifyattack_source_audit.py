@@ -23,6 +23,7 @@ def _native_oracle(data):
 #define BOOL int
 #define TRUE 1
 #define FALSE 0
+#define min(a,b) ((a)<(b)?(a):(b))
 #define IS_2BYTEWORD(x) ((unsigned char)(x)>=128)
 #define strncpy2 strncpy
 #define CHAR_WORKBATTLECOM1 0
