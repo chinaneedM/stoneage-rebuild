@@ -558,6 +558,10 @@ class PersistentBattleState:
                 raise ValueError(
                     "ride runtime requires player-side pet provenance"
                 )
+            if str(ride.participant_id) in allied_pet_ids:
+                raise ValueError(
+                    "ride pet cannot also be an active allied battle entry"
+                )
             if self.ride_pet_runtime is None:
                 object.__setattr__(
                     self,
