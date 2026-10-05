@@ -311,6 +311,15 @@ class PersistentBattleState:
                 "battle-exited participants cannot remain revivable: "
                 f"{invalid_revivable}"
             )
+        nonenemy_revivable=sorted(
+            pid for pid in normalized_revivable
+            if participants[pid].side != "enemy"
+        )
+        if nonenemy_revivable:
+            raise ValueError(
+                "bounded ReLife revivable participants must be enemy-side: "
+                f"{nonenemy_revivable}"
+            )
         nondead_revivable=sorted(
             pid for pid in normalized_revivable
             if (
@@ -1561,6 +1570,8 @@ def resolve_persistent_ordinary_round(
         exited_ids.update(state.battle_exited_participant_ids)
         for source_participant in _session_participants(state.session):
             participant_id=str(source_participant.participant_id)
+            if source_participant.side != "enemy":
+                continue
             if participant_id in living_ids or participant_id in exited_ids:
                 continue
             if int(state.hp_by_participant_id[participant_id]) != 0:
@@ -2280,7 +2291,10 @@ def resolve_persistent_ordinary_round(
             target_id=participant_id_by_slot.get(
                 int(event.resolved_target_slot)
             )
-            if target_id is not None:
+            if (
+                target_id is not None
+                and target_id in enemy_ids
+            ):
                 next_revivable.add(target_id)
         if (
             event.enemy_relife_resolution is not None
