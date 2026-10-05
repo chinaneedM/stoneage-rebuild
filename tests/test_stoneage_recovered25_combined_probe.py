@@ -20,9 +20,10 @@ def fixture():
     }
     templates={
         1:SimpleNamespace(skill_slot_ids=(627,0,0,0,0,0,0)),
-        2:SimpleNamespace(skill_slot_ids=(627,632,0,0,0,0,0)),
-        3:SimpleNamespace(skill_slot_ids=(637,0,0,0,0,0,0)),
+        2:SimpleNamespace(skill_slot_ids=(627,0,0,0,0,0,0)),
+        3:SimpleNamespace(skill_slot_ids=(632,0,0,0,0,0,0)),
         4:SimpleNamespace(skill_slot_ids=(637,0,0,0,0,0,0)),
+        5:SimpleNamespace(skill_slot_ids=(637,0,0,0,0,0,0)),
     }
     return SimpleNamespace(skills=skills),SimpleNamespace(templates=templates)
 
@@ -37,16 +38,23 @@ class CombinedProbeTests(unittest.TestCase):
         self.assertFalse(result["exact_rows_closed"])
         self.assertEqual(result["callback_ids"],(627,632,637))
         self.assertEqual(result["slot_references"],5)
-        self.assertEqual(result["templates"],4 if False else 4)
+        self.assertEqual(result["templates"],5)
 
-    def test_fixture_template_count_can_be_made_exact_five(self):
+    def test_five_references_across_only_four_templates_stays_open(self):
         pets,enemies=fixture()
         templates=dict(enemies.templates)
-        templates[5]=SimpleNamespace(skill_slot_ids=(0,0,0,0,0,0,0))
+        templates[2]=SimpleNamespace(
+            skill_slot_ids=(627,632,0,0,0,0,0)
+        )
+        templates[3]=SimpleNamespace(
+            skill_slot_ids=(0,0,0,0,0,0,0)
+        )
         result=analyze_runtime_objects(
             pets,SimpleNamespace(templates=templates),
             expected_exact_rows=None,
         )
+        self.assertEqual(result["slot_references"],5)
+        self.assertEqual(result["templates"],4)
         self.assertFalse(result["population_closed"])
 
     def test_extra_callback_row_breaks_population(self):
