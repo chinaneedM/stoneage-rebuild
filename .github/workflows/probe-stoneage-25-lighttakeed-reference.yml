@@ -132,10 +132,12 @@ jobs:
           C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
           test -n "$D"; test -n "$C"
           python -m tools.stoneage_recovered25_lighttakeed_probe             --data-dir "$D" --setup "$C"             > research/recovered/STONEAGE-25-LIGHTTAKEED-PROBE-R1.txt
-          grep -F 'COUNT|lighttakeed_skill_rows|2'             research/recovered/STONEAGE-25-LIGHTTAKEED-PROBE-R1.txt
+          grep -F 'COUNT|lighttakeed_skill_rows|3'             research/recovered/STONEAGE-25-LIGHTTAKEED-PROBE-R1.txt
           grep -F 'COUNT|enemybase_slot_references|3'             research/recovered/STONEAGE-25-LIGHTTAKEED-PROBE-R1.txt
           grep -F 'COUNT|enemybase_templates|2'             research/recovered/STONEAGE-25-LIGHTTAKEED-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_LIGHTTAKEED_POPULATION_CLOSED'             research/recovered/STONEAGE-25-LIGHTTAKEED-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_LIGHTTAKEED_EXACT_ROWS_CLOSED'             research/recovered/STONEAGE-25-LIGHTTAKEED-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_LIGHTTAKEED_EXACT_TEMPLATES_CLOSED'             research/recovered/STONEAGE-25-LIGHTTAKEED-PROBE-R1.txt
 
       - name: Print derived reports
         if: always()
