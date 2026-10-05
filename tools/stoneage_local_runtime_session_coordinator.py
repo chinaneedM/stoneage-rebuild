@@ -77,6 +77,13 @@ from tools.stoneage_enemy_ai_2battletimid_bridge import (
 from tools.stoneage_2battletimid_reference_model import (
     CALLBACK_NAME as TWO_BATTLETIMID_CALLBACK,
 )
+from tools.stoneage_enemy_ai_batfly_bridge import (
+    EnemyAiBatFlySubmission,
+    resolve_enemy_ai_batfly_submission,
+)
+from tools.stoneage_batfly_reference_model import (
+    CALLBACK_NAME as BATFLY_CALLBACK,
+)
 from tools.stoneage_enemy_ai_lighttakeed_bridge import (
     CALLBACK_NAME as LIGHTTAKEED_CALLBACK,
     EnemyAiLighttakeedSubmission,
@@ -508,6 +515,9 @@ class EnemyAiCommonCommandBatch:
     ] = field(default_factory=dict)
     two_battletimid_submissions: Mapping[
         str,EnemyAiTwoBattleTimidSubmission
+    ] = field(default_factory=dict)
+    batfly_submissions: Mapping[
+        str,EnemyAiBatFlySubmission
     ] = field(default_factory=dict)
     lighttakeed_submissions: Mapping[
         str,EnemyAiLighttakeedSubmission
@@ -1235,6 +1245,62 @@ class EnemyAiCommonCommandBatch:
         if set(two_battletimid_submissions) & two_battletimid_overlap:
             raise ValueError(
                 "enemy AI 2BattleTimid semantic submissions overlap another skill"
+            )
+
+        batfly_submissions={
+            str(key):value
+            for key,value in self.batfly_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "batfly_submissions",
+            MappingProxyType(batfly_submissions),
+        )
+        for participant_id,submission in batfly_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI BatFly submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiBatFlySubmission):
+                raise TypeError(
+                    "enemy AI BatFly submission has wrong type for "
+                    + participant_id
+                )
+            if str(submission.participant_id)!=participant_id:
+                raise ValueError("enemy AI BatFly participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1)!=BATTLE_COM_ATTACK
+                or int(carrier.command2)!=int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI BatFly carrier must be ATTACK/source-target"
+                )
+            if self.setup_effects.get(
+                participant_id,BattleCommandSetupEffects()
+            ) != BattleCommandSetupEffects():
+                raise ValueError(
+                    "enemy AI BatFly callback must not mutate work powers"
+                )
+        batfly_overlap=(
+            set(two_battletimid_submissions)
+            | set(battletimid_submissions)
+            | set(self.lighttakeed_submissions)
+            | set(self.combined_submissions)
+            | set(self.vary_submissions)
+            | set(self.modifyattack_submissions)
+            | set(magic_submissions) | set(relife_submissions)
+            | set(rehp_submissions) | set(damage_submissions)
+            | set(mp_submissions) | set(fall_submissions)
+            | set(tear_submissions) | set(nocast_submissions)
+            | set(guard_break2_submissions) | set(barrier_submissions)
+            | set(attack_crazed_submissions) | set(mdfyattack_submissions)
+            | set(weaken_submissions) | set(wildviolent_submissions)
+            | set(refresh_submissions) | set(setmagicpet_submissions)
+        )
+        if set(batfly_submissions) & batfly_overlap:
+            raise ValueError(
+                "enemy AI BatFly semantic submissions overlap another skill"
             )
 
         lighttakeed_submissions={
@@ -2048,6 +2114,7 @@ class LocalRuntimeSessionCoordinator:
         allow_battletimid_skill: bool = False,
         allow_two_battletimid_skill: bool = False,
         two_battletimid_profiles_by_enemy_id: Mapping[str,str] | None = None,
+        allow_batfly_skill: bool = False,
         allow_lighttakeed_skill: bool = False,
         lighttakeed_profiles_by_enemy_id: Mapping[str,str] | None = None,
         allow_combined_skill: bool = False,
@@ -2212,6 +2279,7 @@ class LocalRuntimeSessionCoordinator:
         guard_break2_submissions={}
         battletimid_submissions={}
         two_battletimid_submissions={}
+        batfly_submissions={}
         lighttakeed_submissions={}
         combined_submissions={}
         vary_submissions={}
@@ -2594,6 +2662,24 @@ class LocalRuntimeSessionCoordinator:
                         command2=int(submission.source_target_slot),
                     )
                     combined_submissions[enemy_id]=submission
+                    continue
+
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == BATFLY_CALLBACK
+                    and bool(allow_batfly_skill)
+                ):
+                    submission=resolve_enemy_ai_batfly_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                    )
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_ATTACK,
+                        command2=int(submission.source_target_slot),
+                    )
+                    batfly_submissions[enemy_id]=submission
                     continue
 
                 if (
@@ -3104,6 +3190,7 @@ class LocalRuntimeSessionCoordinator:
             guard_break2_submissions=guard_break2_submissions,
             battletimid_submissions=battletimid_submissions,
             two_battletimid_submissions=two_battletimid_submissions,
+            batfly_submissions=batfly_submissions,
             lighttakeed_submissions=lighttakeed_submissions,
             combined_submissions=combined_submissions,
             vary_submissions=vary_submissions,
@@ -3323,6 +3410,9 @@ class LocalRuntimeSessionCoordinator:
         two_battletimid_rolls_by_attack_id: Mapping[
             str,int | None
         ] | None = None,
+        batfly_retarget_rolls_by_attack_id: Mapping[
+            str,int | None
+        ] | None = None,
         two_battletimid_profiles_by_enemy_id: Mapping[
             str,str
         ] | None = None,
@@ -3457,6 +3547,7 @@ class LocalRuntimeSessionCoordinator:
             two_battletimid_profiles_by_enemy_id=(
                 two_battletimid_profiles_by_enemy_id
             ),
+            allow_batfly_skill=True,
             allow_lighttakeed_skill=True,
             lighttakeed_profiles_by_enemy_id=(
                 lighttakeed_profiles_by_enemy_id
@@ -3581,6 +3672,32 @@ class LocalRuntimeSessionCoordinator:
         ):
             raise ValueError(
                 "enemy 2BattleTimid reduced rand draw must be 0..99"
+            )
+
+        batfly_enemy_ids=set(enemy_batch.batfly_submissions)
+        normalized_batfly_retarget_rolls={
+            str(key):(None if value is None else int(value))
+            for key,value in (
+                batfly_retarget_rolls_by_attack_id or {}
+            ).items()
+        }
+        if set(normalized_batfly_retarget_rolls)!=batfly_enemy_ids:
+            missing=sorted(
+                batfly_enemy_ids-set(normalized_batfly_retarget_rolls)
+            )
+            extra=sorted(
+                set(normalized_batfly_retarget_rolls)-batfly_enemy_ids
+            )
+            raise ValueError(
+                "enemy BatFly TargetAdjust RNG actors mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        if any(
+            value is not None and int(value)<0
+            for value in normalized_batfly_retarget_rolls.values()
+        ):
+            raise ValueError(
+                "enemy BatFly TargetAdjust draw cannot be negative"
             )
 
         rehp_enemy_ids=set(enemy_batch.enemy_rehp_submissions)
@@ -4171,6 +4288,12 @@ class LocalRuntimeSessionCoordinator:
             ),
             two_battletimid_rolls_by_participant_id=(
                 normalized_two_battletimid_rolls
+            ),
+            batfly_submissions_by_participant_id=(
+                enemy_batch.batfly_submissions
+            ),
+            batfly_retarget_rolls_by_participant_id=(
+                normalized_batfly_retarget_rolls
             ),
             lighttakeed_submissions_by_participant_id=(
                 enemy_batch.lighttakeed_submissions
