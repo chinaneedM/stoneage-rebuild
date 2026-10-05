@@ -6194,3 +6194,74 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Bounded executable charset discriminator attempted: the verified service root has one273-byte ELF candidate, SHA-256 `22a786475540dd734e0b0dc1b21219e53aba1462de8be623270f71fa90c22365`, exposing neither callback nor AttackDamage symbol. Original build charset remains inconclusive; explicit `utf8_literals` and `big5_literals` must both survive runtime admission. Two independent discriminator tests PASS.
 - Modern state audit: side/unique-slot validation and retained battle-exit occupancy exist; independent owner/default-pet/NORETURN state does not. Session permits multiple allied pets, and player-death penalties currently infer the default from retained pet membership. Successful 2Timid recall must clear selection and exclude active occupancy while preserving owned pet/HP; blocked recall keeps occupancy and both notifications. The new default-pet state must also govern later player death and battle return. World save currently persists world/session/occupancy, not active coordinator battle context; do not claim active-battle disk resume.
 - Contract: `specs/STONEAGE-2BATTLETIMID-RUNTIME-STATE-AUDIT-R1.md`. **PREIMPLEMENTATION_STATE_AUDIT_ACCEPTED; ORDERED_RUNTIME_OPEN**. No production runtime skill added and no pressure promotion; accepted coverage stays **2457/2486=98.83%**. **Highest-priority unfinished task:** accept the audit checkpoint on freshly read main, then create a fresh 2BattleTimid runtime integration branch. Implement explicit validated owner/default-pet/NORETURN state before exact typed ID636 admission and ordered settlement; include same-round/cross-round blocked versus successful recall, later player-death selection, battle-return/world-save and coordinator witnesses. Retain both charset profiles and explicit exclusions; rerun verified pressure only after runtime gates. Continue **WORK** under DD-018; no engine/redesigned-content discussion yet.
+
+
+## Phase 1 PETSKILL_2BattleTimid ordered runtime closure — 2026-10-05
+
+- Runtime integration branch `agent/2battletimid-runtime-integration-r1-20261005`
+  started from freshly verified main `4468dbe41cbb1e9bde56796424601fb250ef6ed1`
+  after the accepted owner/recall state audit.
+- The former “owned pet == selected/default pet == active battle pet” shortcut
+  has been removed. `PersistentPlayerState.default_pet_slot` is independent
+  from roster ownership; persistence schema advances to r4 with r1/r2/r3
+  migration that invents no selection. Persistent battle state separately
+  carries selected roster state, active occupancy/exit state and authoritative
+  pet NORETURN witnesses. DD-020 records this engine-neutral state rule.
+- Exact typed runtime admission is limited to recovered25 ID636 and the two
+  positive placements: TEMPNO178 / graphic101872 / source slot4 and TEMPNO179 /
+  graphic101873 / source slot4. Complete metadata and the 17-byte OPTION hash
+  remain fail-closed. `PETSKILL_BattleTimid` is a distinct callback and is
+  not aliased.
+- Both conditional charset profiles survive: `utf8_literals` keeps powers and
+  chance0; `big5_literals` produces attack-50%, defence unchanged,
+  quick+30%, chance60. No original executable/compiler/charset profile is
+  selected. ATTACK remains only a modern ordering carrier; original numeric
+  COM1 remains OPEN under DD-019.
+- Ordered runtime preserves post-damage demotion and draw ownership. An
+  undemoted positive event owns one reduced draw before the damage>1/pet checks.
+  Successful selected-pet recall clears DEFAULTPET selection and later battle
+  occupancy while preserving owned pet/HP. NORETURN blocks withdrawal/default
+  clear without suppressing the two outer notifications.
+- Same-round and cross-round state are now closed: a successfully recalled pet
+  is skipped later in the same round and absent from later active rounds; a
+  NORETURN-blocked pet remains selected/active into a real following round.
+  Later same-round player death observes a prior recall and does not apply the
+  default-pet loyalty penalty to the recalled pet.
+- Coordinator end-to-end settlement is closed for the bounded domain: terminal
+  battle return writes selection into persistent player state, world
+  save/continue preserves cleared versus retained selection, and the pet remains
+  owned. Active battle context itself is still not a disk-resume contract.
+- Production integration culminates at
+  `3e243db19b398d5382b63d5e48e7bf7abd252c89`, tree
+  `e771cf74249c108ac0dc1bccc4f0dca631f8bd42`. Final cross-round witness
+  `f421f673e6c5a988f314ca8b7c3904b8709f69c5`, tree
+  `8581e827d07568e24821e40e88fc124217f4fd0f`.
+- Final dedicated **37321077390 PASS (25 tests)**; full coordinator
+  **37320486287 PASS**; battle core **37319322994 PASS**; golden contract
+  **37319726838 PASS**; full recovered25 region/runtime stack
+  **37320486193 PASS**. Full-region includes verified preservation recovery,
+  all materializable map payloads, concrete runtime stack, AttackMagic
+  cross-links, server collision audit/provider and client ADRN collision audit.
+- Hash-verified pressure **37320722163 PASS**; report write-back
+  `392e26d39210ac2a8583fc0d07559a0f0af9f173`, tree
+  `6921e42ee8de68533fb815be0effa00a41b37a93`. Exact ID636 is
+  `closed_runtime`, unresolved positive IDs remain0.
+- Accepted executable positive enemy pet-skill slot coverage advances
+  **2457/2486 (98.83%) -> 2459/2486 (98.91%)**. This remains a recovered25
+  positive enemy skill-slot metric, not whole-project restoration completion.
+- Runtime boundary:
+  `specs/STONEAGE-2BATTLETIMID-RUNTIME-R1.md`.
+  **RECOVERED25_2BATTLETIMID_ORDERED_RUNTIME_R1 =
+  CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME.**
+- Pressure mechanically selects the next OPEN family as
+  **`PETSKILL_BatFly` / ID633 / 2 uses / 1 template**.
+- **Highest-priority unfinished task:** freshly re-read remote `main` and
+  verify it is still the exact ancestor of this accepted runtime branch. If so,
+  non-force fast-forward the accepted runtime/spec/pressure state into
+  `main`, verify main Actions, then create a fresh bounded
+  `PETSKILL_BatFly` reference branch from that exact main. Recover the complete
+  callback population, exact metadata/OPTION identity and positive
+  template/graphic/slot placement, then audit all fixed descendant
+  callback/dispatcher/effect semantics before any BatFly runtime coding.
+  Continue **WORK mode** under DD-018; production-engine selection and
+  redesigned-content discussion remain deferred.
