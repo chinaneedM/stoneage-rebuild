@@ -7627,6 +7627,7 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
 
         enemy=replace(
             context.battle.enemies[0],
+            hp=1000,max_hp=1000,
             attack=100,defense=80,quick=200,
         )
         player=replace(
@@ -7765,7 +7766,7 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         )
         self.assertLess(
             context.persistent_battle_state.hp_by_participant_id[enemy_id],
-            100,
+            1000,
         )
 
 
