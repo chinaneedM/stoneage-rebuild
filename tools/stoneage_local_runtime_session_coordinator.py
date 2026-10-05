@@ -2204,6 +2204,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_nocast_skill)
                 or bool(allow_guard_break2_skill)
                 or bool(allow_battletimid_skill)
+                or bool(allow_lighttakeed_skill)
                 or bool(allow_combined_skill)
                 or bool(allow_vary_skill)
                 or bool(allow_weaken_skill)
