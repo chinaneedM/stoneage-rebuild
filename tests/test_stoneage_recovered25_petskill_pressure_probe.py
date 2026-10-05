@@ -254,6 +254,25 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
         self.assertIsNone(result["next_open"])
 
+    def test_batfly_closure_advances_to_battlemodel_without_closing_neighbors(self):
+        pets=SimpleNamespace(skills={
+            633:SimpleNamespace(function_name="PETSKILL_BatFly"),
+            638:SimpleNamespace(function_name="PETSKILL_BattleModel"),
+            625:SimpleNamespace(function_name="PETSKILL_BecomeFox"),
+            200:SimpleNamespace(function_name="PETSKILL_Merge"),
+        })
+        enemies=SimpleNamespace(templates={
+            10:SimpleNamespace(skill_slot_ids=(633,633,638,625,200,0,0)),
+        })
+        result=analyze_runtime_objects(pets,enemies)
+        rows={row["callback"]:row for row in result["rows"]}
+        self.assertEqual(rows["PETSKILL_BatFly"]["status"],"closed_runtime")
+        self.assertEqual(rows["PETSKILL_BatFly"]["slot_uses"],2)
+        self.assertEqual(rows["PETSKILL_BattleModel"]["status"],"open")
+        self.assertEqual(rows["PETSKILL_BecomeFox"]["status"],"open")
+        self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
+        self.assertEqual(result["next_open"]["callback"],"PETSKILL_BattleModel")
+
     def test_weaken_closure_advances_only_the_exact_callback(self):
         pets=SimpleNamespace(skills={
             575:SimpleNamespace(function_name="PETSKILL_Weaken"),
