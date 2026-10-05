@@ -849,12 +849,27 @@ class SinglePlayerHistoricalRuntime:
                 )
         return player_updates,pet_updates,pet_growth_updates
 
+    def _validated_default_pet_selection(
+        self,
+        state: PersistentBattleState,
+    ) -> PetSlot | None:
+        if state.default_pet_slot is None:
+            return None
+        slot=PetSlot(int(state.default_pet_slot))
+        if slot not in self.domain.persistent.pets:
+            raise ValueError(
+                "terminal default-pet selection references an unowned pet slot"
+            )
+        return slot
+
     def _apply_persistent_battle_outcome(
         self,
         state: PersistentBattleState,
         outcome: BattleOutcome,
     ) -> BattleReturn:
+        next_default_pet_slot=self._validated_default_pet_selection(state)
         result=apply_battle_outcome(self.domain,state.session,outcome)
+        self.domain.persistent.default_pet_slot=next_default_pet_slot
         self._settle_persistent_battle_drops(state)
         self.domain.persistent.dead_pet_count+=int(
             state.pending_player_dead_pet_count_delta
@@ -875,6 +890,7 @@ class SinglePlayerHistoricalRuntime:
         player_updates,pet_updates,pet_growth_updates=(
             self._battle_exit_projection(state)
         )
+        next_default_pet_slot=self._validated_default_pet_selection(state)
         result=apply_battle_outcome(
             self.domain,
             state.session,
@@ -885,6 +901,7 @@ class SinglePlayerHistoricalRuntime:
                 pet_growth_updates=pet_growth_updates,
             ),
         )
+        self.domain.persistent.default_pet_slot=next_default_pet_slot
         self.domain.persistent.dead_pet_count+=int(
             state.pending_player_dead_pet_count_delta
         )
@@ -926,6 +943,7 @@ class SinglePlayerHistoricalRuntime:
         player_updates,pet_updates,pet_growth_updates=(
             self._battle_exit_projection(state)
         )
+        next_default_pet_slot=self._validated_default_pet_selection(state)
         result=apply_battle_outcome(
             self.domain,
             state.session,
@@ -936,6 +954,7 @@ class SinglePlayerHistoricalRuntime:
                 pet_growth_updates=pet_growth_updates,
             ),
         )
+        self.domain.persistent.default_pet_slot=next_default_pet_slot
         self.domain.persistent.dead_pet_count+=int(
             state.pending_player_dead_pet_count_delta
         )
