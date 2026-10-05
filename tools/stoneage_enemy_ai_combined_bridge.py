@@ -30,6 +30,9 @@ from tools.stoneage_recovered25_combined_probe import EXPECTED_EXACT_ROWS
 from tools.stoneage_recovered25_petskill_runtime import (
     Recovered25PetSkillRuntime,
 )
+from tools.stoneage_combined_direct_magic_model import (
+    resolve_combined_direct_magic_route,
+)
 
 RECOVERED25_COMBINED_CALLBACK_IDS=(627,629,630,632,637,646,648)
 RECOVERED25_COMBINED_EXECUTABLE_IDS=(627,632,637)
@@ -98,6 +101,26 @@ class EnemyAiCombinedSubmission:
         object.__setattr__(self,"skill_slot",skill_slot)
         object.__setattr__(self,"skill_id",skill_id)
         object.__setattr__(self,"source_target_slot",target)
+
+    def direct_magic_route(self, **witnesses):
+        """Resolve the conditional MP/return seam after callback selection.
+
+        This owns no effect mutation or RNG and does not close ordered battle
+        execution. In particular Nocast cannot refund selection's earlier draw.
+        """
+        effects = {
+            "MAGIC_Recovery": "recovery",
+            "MAGIC_StatusChange": "status_change",
+            "MAGIC_StatusRecovery": "status_recovery",
+            "MAGIC_AttReverse": "att_reverse",
+        }
+        try:
+            effect = effects[self.magic.function_name]
+        except KeyError as exc:
+            raise ValueError("Combined magic is outside positive ordinary wrapper boundary") from exc
+        return resolve_combined_direct_magic_route(
+            effect=effect, target_slot=self.source_target_slot, **witnesses,
+        )
 
 
 def _ascii_int(token:bytes):

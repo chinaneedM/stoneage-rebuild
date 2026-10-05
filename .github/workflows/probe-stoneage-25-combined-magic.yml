@@ -11,6 +11,8 @@ on:
       - "tools/stoneage_recovered25_combined_probe.py"
       - "tools/stoneage_enemy_ai_combined_bridge.py"
       - "tests/test_stoneage_recovered25_combined_magic_probe.py"
+      - "tools/stoneage_combined_direct_magic_model.py"
+      - "tests/test_stoneage_combined_direct_magic_model.py"
       - "tests/test_stoneage_enemy_ai_combined_bridge.py"
 permissions:
   contents: write
@@ -99,6 +101,10 @@ jobs:
           runtime=load_recovered25_petskill_runtime(data_dir=Path(os.environ["D"]))
           cases=(
               (627,0,21,"MAGIC_Recovery"),
+              (627,1,139,"MAGIC_StatusChange"),
+              (627,2,159,"MAGIC_StatusChange"),
+              (627,3,169,"MAGIC_StatusChange"),
+              (627,4,179,"MAGIC_StatusChange"),
               (627,5,189,"MAGIC_StatusChange"),
               (632,0,240,"MAGIC_AttReverse"),
               (637,0,61,"MAGIC_StatusRecovery"),
@@ -121,6 +127,22 @@ jobs:
               assert result.magic.function_name==function
               assert result.selection.rng_draws_consumed==1
               assert result.magic.direct_item_index==0
+              from tools.stoneage_combined_direct_magic_model import (
+                  CombinedDirectMagicDomain, RuntimeItemZeroWitness,
+              )
+              try:
+                  result.direct_magic_route(current_mp=10)
+              except CombinedDirectMagicDomain:
+                  pass
+              else:
+                  raise AssertionError("unknown live item pool must not imply zero MP")
+              blocked=result.direct_magic_route(current_mp=10,nocast=1)
+              assert not blocked.accepted and blocked.item_reads==0
+              assert result.selection.rng_draws_consumed==1
+              conditional=result.direct_magic_route(
+                  current_mp=10,item_zero=RuntimeItemZeroWitness(False)
+              )
+              assert conditional.remaining_mp==11 and conditional.mp_argument==-1
           print("RESOLUTION|RECOVERED25_COMBINED_SUBMISSION_BRIDGE_CLOSED")
           PY
       - name: Print derived report
