@@ -179,6 +179,13 @@ class PersistentBattleState:
     # Non-death BATTLE_Exit/PetDefaultExit entries (e.g. Abduct) stay in the
     # battle session identity graph but no longer participate in later rounds.
     battle_exited_participant_ids: tuple[str,...] = ()
+    # Historical DEFAULTPET roster selection is independent from ownership and
+    # from active battle occupancy. None corresponds to DEFAULTPET == -1.
+    default_pet_slot: int | None = None
+    # BATTLE_PetIn's NORETURN guard is battle-local authoritative state.
+    # None means that this state was not supplied; callers that execute a
+    # NORETURN-sensitive skill must fail closed rather than infer False.
+    pet_noreturn_by_participant_id: Mapping[str,bool] | None = None
     # Ordinary dead entries remain in the battle array and can be selected by
     # ReLife. Ultimate/BATTLE_Exit entries are deliberately excluded.
     revivable_dead_participant_ids: tuple[str,...] = ()
@@ -208,6 +215,55 @@ class PersistentBattleState:
                     )
 
         participants = _participant_map(self.session)
+        allied_pet_ids={
+            str(pet.participant_id)
+            for pet in self.session.allied_pets
+        }
+        if self.default_pet_slot is None:
+            normalized_default_pet_slot=None
+        else:
+            normalized_default_pet_slot=int(self.default_pet_slot)
+            if not 0 <= normalized_default_pet_slot < 5:
+                raise ValueError("default pet roster slot must be in 0..4")
+            matches=[
+                str(pet.participant_id)
+                for pet in self.session.allied_pets
+                if (
+                    pet.source_pet_slot is not None
+                    and int(pet.source_pet_slot)==normalized_default_pet_slot
+                )
+            ]
+            if len(matches)!=1:
+                raise ValueError(
+                    "default pet selection must resolve to exactly one allied "
+                    "battle pet"
+                )
+        object.__setattr__(
+            self,
+            "default_pet_slot",
+            normalized_default_pet_slot,
+        )
+
+        if self.pet_noreturn_by_participant_id is not None:
+            normalized_noreturn={
+                str(pid):value
+                for pid,value in self.pet_noreturn_by_participant_id.items()
+            }
+            if set(normalized_noreturn)!=allied_pet_ids:
+                missing=sorted(allied_pet_ids-set(normalized_noreturn))
+                extra=sorted(set(normalized_noreturn)-allied_pet_ids)
+                raise ValueError(
+                    "authoritative pet NORETURN mapping must cover exactly "
+                    f"all allied pets; missing={missing}, extra={extra}"
+                )
+            if any(type(value) is not bool for value in normalized_noreturn.values()):
+                raise TypeError("pet NORETURN values must be booleans")
+            object.__setattr__(
+                self,
+                "pet_noreturn_by_participant_id",
+                _freeze_mapping(normalized_noreturn),
+            )
+
         if self.nocast_overlay is not None:
             if not isinstance(self.nocast_overlay,NocastRoundOverlay):
                 raise TypeError("persistent Nocast overlay has wrong type")
@@ -702,6 +758,27 @@ def _freeze_mapping(values: Mapping) -> Mapping:
     return MappingProxyType(dict(values))
 
 
+def selected_default_pet_participant_id(
+    state: PersistentBattleState,
+) -> str | None:
+    """Resolve the authoritative DEFAULTPET roster selection to battle identity."""
+    if state.default_pet_slot is None:
+        return None
+    matches=[
+        str(pet.participant_id)
+        for pet in state.session.allied_pets
+        if (
+            pet.source_pet_slot is not None
+            and int(pet.source_pet_slot)==int(state.default_pet_slot)
+        )
+    ]
+    if len(matches)!=1:
+        raise ValueError(
+            "persistent default pet selection no longer resolves uniquely"
+        )
+    return matches[0]
+
+
 def begin_persistent_battle(
     session: BattleSession,
     *,
@@ -713,6 +790,8 @@ def begin_persistent_battle(
         str,BaseDamageReactState
     ] | None = None,
     ride_pet_runtime: RidePetRuntime | None = None,
+    default_pet_slot: int | None = None,
+    pet_noreturn_by_participant_id: Mapping[str,bool] | None = None,
     nocast_overlay: NocastRoundOverlay | None = None,
     setmagicpet_overlay: SetMagicPetRoundOverlay | None = None,
     combined_overlay: CombinedRuntimeOverlay | None = None,
@@ -773,6 +852,8 @@ def begin_persistent_battle(
             base_damage_react_state_by_participant_id
         ),
         ride_pet_runtime=ride_pet_runtime,
+        default_pet_slot=default_pet_slot,
+        pet_noreturn_by_participant_id=pet_noreturn_by_participant_id,
         nocast_overlay=nocast_overlay,
         setmagicpet_overlay=setmagicpet_overlay,
         combined_overlay=combined_overlay,
@@ -1098,6 +1179,8 @@ def resolve_persistent_capture_transition(
             pid for pid in state.battle_exited_participant_ids
             if pid != target_id
         ),
+        default_pet_slot=state.default_pet_slot,
+        pet_noreturn_by_participant_id=state.pet_noreturn_by_participant_id,
         revivable_dead_participant_ids=tuple(
             pid for pid in state.revivable_dead_participant_ids
             if pid != target_id
@@ -1230,14 +1313,7 @@ def _pending_profit_after_ordinary_round(
 
         if target.side == "player" and target.kind in {"player","pet"}:
             if target.kind == "player":
-                allied=tuple(state.session.allied_pets)
-                if len(allied) > 1:
-                    raise ValueError(
-                        "player-death penalty requires a unique active/default pet"
-                    )
-                default_pet_id=(
-                    None if not allied else str(allied[0].participant_id)
-                )
+                default_pet_id=selected_default_pet_participant_id(state)
                 if target_id in ultimate_exited_ids:
                     penalty=resolve_battle_ultimate_death_penalty(
                         BattleUltimateDeathInputs(
@@ -2239,6 +2315,8 @@ def resolve_persistent_ordinary_round(
     if not captured_enemy_ids.issubset(exited_ids):
         raise ValueError("capture exit missing from ordinary exited IDs")
     battletimid_exit_ids=set()
+    next_default_pet_slot=state.default_pet_slot
+    selected_default_pet_id=selected_default_pet_participant_id(state)
     for event in round_result.events:
         resolution=event.battletimid_resolution
         if resolution is None or not resolution.forced_exit:
@@ -2257,6 +2335,16 @@ def resolve_persistent_ordinary_round(
             and target_id not in allied_pet_ids
         ):
             raise ValueError("BattleTimid pet-exit target identity drift")
+        if resolution.owner_default_pet_cleared:
+            if (
+                selected_default_pet_id is not None
+                and target_id != selected_default_pet_id
+            ):
+                raise ValueError(
+                    "BattleTimid pet exit conflicts with explicit default-pet "
+                    "selection"
+                )
+            next_default_pet_slot=None
         battletimid_exit_ids.add(target_id)
     if not battletimid_exit_ids.issubset(exited_ids):
         raise ValueError("BattleTimid exit missing from ordinary exited IDs")
@@ -2637,6 +2725,8 @@ def resolve_persistent_ordinary_round(
         ),
         ultimate_exited_participant_ids=tuple(next_ultimate_exited),
         battle_exited_participant_ids=tuple(next_battle_exited),
+        default_pet_slot=next_default_pet_slot,
+        pet_noreturn_by_participant_id=state.pet_noreturn_by_participant_id,
         revivable_dead_participant_ids=tuple(sorted(next_revivable)),
         nocast_overlay=next_nocast_overlay,
         setmagicpet_overlay=next_setmagicpet_overlay,
