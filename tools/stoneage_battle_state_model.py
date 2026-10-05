@@ -2052,6 +2052,32 @@ def resolve_persistent_ordinary_round(
             if participant_id in next_session_ids
         })
 
+    next_combined_overlay=round_result.combined_overlay
+    if next_combined_overlay is not None:
+        next_session_ids={
+            str(participant.participant_id)
+            for participant in _session_participants(next_session)
+        }
+        next_combined_overlay=CombinedRuntimeOverlay(
+            next_combined_overlay.initiative_profile,
+            next_combined_overlay.status_magic_profile,
+            next_combined_overlay.item_zero,
+            {
+                participant_id:value
+                for participant_id,value in (
+                    next_combined_overlay.mp_by_participant_id.items()
+                )
+                if participant_id in next_session_ids
+            },
+            {
+                participant_id:value
+                for participant_id,value in (
+                    next_combined_overlay.att_reverse_by_participant_id.items()
+                )
+                if participant_id in next_session_ids
+            },
+        )
+
     # Source BATTLE_PreCommandSeq runs exactly once after BATTLE_Battling.
     # It visits valid entries (including zero-HP entries), except EARTHROUND0.
     # This is not another StatusSeq visit and is not repeated on next call.
@@ -2205,6 +2231,7 @@ def resolve_persistent_ordinary_round(
         battle_exited_participant_ids=tuple(next_battle_exited),
         nocast_overlay=next_nocast_overlay,
         setmagicpet_overlay=next_setmagicpet_overlay,
+        combined_overlay=next_combined_overlay,
     )
     if player_id in escaped_ids:
         next_state=replace(
