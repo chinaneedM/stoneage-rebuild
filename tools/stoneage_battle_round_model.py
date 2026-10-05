@@ -5664,6 +5664,7 @@ def resolve_ordinary_round(
                 | refresh_active_command_ids
                 | setmagicpet_active_command_ids
                 | battletimid_active_command_ids
+                | two_battletimid_active_command_ids
                 | lighttakeed_active_command_ids
                 | combined_active_command_ids
                 | vary_active_command_ids
@@ -5813,6 +5814,7 @@ def resolve_ordinary_round(
                 refresh_active_command_ids.discard(str(participant_id))
                 setmagicpet_active_command_ids.discard(str(participant_id))
                 battletimid_active_command_ids.discard(str(participant_id))
+                two_battletimid_active_command_ids.discard(str(participant_id))
                 lighttakeed_active_command_ids.discard(str(participant_id))
                 combined_active_command_ids.discard(str(participant_id))
                 vary_active_command_ids.discard(str(participant_id))
@@ -8421,6 +8423,44 @@ def resolve_ordinary_round(
                     "Lighttakeed semantic action lost ATTACK ordering carrier"
                 )
 
+        two_battletimid_submission=None
+        two_battletimid_draw=None
+        if (
+            str(participant_id) in two_battletimid_active_command_ids
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            two_battletimid_submission=two_battletimid_submissions[
+                str(participant_id)
+            ]
+            if int(command.command1) != BATTLE_COM_ATTACK:
+                raise ValueError(
+                    "2BattleTimid semantic action lost ATTACK ordering carrier"
+                )
+            if active_ride:
+                raise ValueError(
+                    "2BattleTimid with mounted ride runtime is outside R1"
+                )
+            if retargeted or int(target)!=int(
+                two_battletimid_submission.source_target_slot
+            ):
+                raise ValueError(
+                    "2BattleTimid substituted target is outside admitted R1"
+                )
+            if defender.kind=="pet":
+                target_id=str(defender.participant_id)
+                if target_id not in two_battletimid_default_slots:
+                    raise ValueError(
+                        "2BattleTimid pet target lacks authoritative default-pet slot"
+                    )
+                if target_id not in two_battletimid_noreturn:
+                    raise ValueError(
+                        "2BattleTimid pet target lacks authoritative NORETURN state"
+                    )
+            two_battletimid_draw=two_battletimid_rolls[str(participant_id)]
+
         battletimid_submission=None
         battletimid_draw=None
         if (
@@ -8506,6 +8546,27 @@ def resolve_ordinary_round(
                         target_is_pet=(defender.kind=="pet"),
                     )
                 )
+                two_battletimid_resolution=None
+                if two_battletimid_submission is not None:
+                    if two_battletimid_draw is not None:
+                        raise ValueError(
+                            "2BattleTimid dodge/zero-damage path owns no effect RNG"
+                        )
+                    target_id=str(defender.participant_id)
+                    two_battletimid_resolution=(
+                        two_battletimid_submission.post_damage(
+                            draw=None,
+                            damage=0,
+                            target_is_pet=(defender.kind=="pet"),
+                            source_target_slot=int(target),
+                            default_pet_slot=two_battletimid_default_slots.get(
+                                target_id,-1
+                            ),
+                            pet_noreturn=two_battletimid_noreturn.get(
+                                target_id,False
+                            ),
+                        )
+                    )
                 events.append(
                     OrdinaryRoundEvent(
                         participant_id,
@@ -8524,6 +8585,17 @@ def resolve_ordinary_round(
                             if battletimid_submission is None
                             else int(battletimid_submission.skill_id)
                         ),
+                        two_battletimid_resolution=two_battletimid_resolution,
+                        two_battletimid_skill_id=(
+                            None
+                            if two_battletimid_submission is None
+                            else int(two_battletimid_submission.skill_id)
+                        ),
+                        two_battletimid_profile=(
+                            None
+                            if two_battletimid_submission is None
+                            else str(two_battletimid_submission.profile)
+                        ),
                         modifyattack_skill_id=(None if modifyattack_submission is None else modifyattack_submission.skill_id),
                         lighttakeed_resolution=lighttakeed_dodge_resolution,
                         lighttakeed_skill_id=(
@@ -8538,7 +8610,12 @@ def resolve_ordinary_round(
                         ),
                     )
                 )
-                if modifyattack_submission is None and mdfyattack_submission is None and not continuation_blocked_by_reaction:
+                if (
+                    modifyattack_submission is None
+                    and mdfyattack_submission is None
+                    and two_battletimid_submission is None
+                    and not continuation_blocked_by_reaction
+                ):
                     append_counter_chain(participant_id,slot,target)
                 continue
 
@@ -8874,6 +8951,7 @@ def resolve_ordinary_round(
             or battle_tear_submission is not None
             or guard_break2_submission is not None
             or battletimid_submission is not None
+            or two_battletimid_submission is not None
             or lighttakeed_submission is not None
             or modifyattack_submission is not None
             or mdfyattack_submission is not None
@@ -9288,6 +9366,57 @@ def resolve_ordinary_round(
                 if exit_id not in exited_ids:
                     exited_ids.append(exit_id)
 
+        two_battletimid_resolution=None
+        if two_battletimid_submission is not None:
+            if guardian_redirected:
+                raise ValueError(
+                    "2BattleTimid Guardian redirect composition is outside R1"
+                )
+            source_reaction_active=base_damage_react_active(
+                reaction_resolution.state_before
+            )
+            owns_effect_draw=bool(
+                int(event_damage)>0 and not source_reaction_active
+            )
+            if owns_effect_draw:
+                if two_battletimid_draw is None:
+                    raise ValueError(
+                        "2BattleTimid positive undemoted event requires one draw"
+                    )
+                consumed_two_battletimid_draw_ids.add(str(participant_id))
+            elif two_battletimid_draw is not None:
+                raise ValueError(
+                    "2BattleTimid reaction/zero-damage path owns no effect RNG"
+                )
+            target_id=str(reaction_defender_id)
+            two_battletimid_resolution=two_battletimid_submission.post_damage(
+                draw=(
+                    int(two_battletimid_draw)
+                    if owns_effect_draw
+                    else None
+                ),
+                damage=int(event_damage),
+                target_is_pet=(reaction_defender.kind=="pet"),
+                source_target_slot=int(reaction_target_slot),
+                default_pet_slot=two_battletimid_default_slots.get(
+                    target_id,-1
+                ),
+                pet_noreturn=two_battletimid_noreturn.get(
+                    target_id,False
+                ),
+                active_original_reaction=source_reaction_active,
+            )
+            if two_battletimid_resolution.pet_withdrawn:
+                if int(after)<=0:
+                    raise ValueError(
+                        "2BattleTimid lethal recall/death overlap is outside R1"
+                    )
+                exit_slot=int(reaction_target_slot)
+                exit_id=str(reaction_defender_id)
+                exited_slots.add(exit_slot)
+                if exit_id not in exited_ids:
+                    exited_ids.append(exit_id)
+
         status_application=None
         if (
             int(event_damage) > 0
@@ -9379,6 +9508,17 @@ def resolve_ordinary_round(
                     if battletimid_submission is None
                     else int(battletimid_submission.skill_id)
                 ),
+                two_battletimid_resolution=two_battletimid_resolution,
+                two_battletimid_skill_id=(
+                    None
+                    if two_battletimid_submission is None
+                    else int(two_battletimid_submission.skill_id)
+                ),
+                two_battletimid_profile=(
+                    None
+                    if two_battletimid_submission is None
+                    else str(two_battletimid_submission.profile)
+                ),
                 lighttakeed_resolution=lighttakeed_resolution,
                 lighttakeed_skill_id=(
                     None
@@ -9416,6 +9556,7 @@ def resolve_ordinary_round(
         if (
             modifyattack_submission is None
             and mdfyattack_submission is None
+            and two_battletimid_submission is None
             and not (
                 battletimid_resolution is not None
                 and battletimid_resolution.forced_exit
@@ -9475,6 +9616,17 @@ def resolve_ordinary_round(
         if battletimid_rolls[participant_id] is not None:
             raise ValueError(
                 "BattleTimid RNG supplied for status/no-target-suppressed "
+                "semantic action: " + participant_id
+            )
+
+    for participant_id in sorted(two_battletimid_actor_ids):
+        draw=two_battletimid_rolls[participant_id]
+        if (
+            draw is not None
+            and participant_id not in consumed_two_battletimid_draw_ids
+        ):
+            raise ValueError(
+                "2BattleTimid unowned RNG supplied for suppressed/demoted "
                 "semantic action: " + participant_id
             )
 
