@@ -10,7 +10,11 @@ from tools.stoneage_recovered25_petskill_runtime import Recovered25PetSkillRunti
 
 RECOVERED25_RELIFE_SKILL_ID=500
 EXPECTED_ROW=(1,2,2,0,b"")
-EXPECTED_TEMPLATE_SLOTS={39:4,909:1,1165:3}
+EXPECTED_TEMPLATE_IDENTITIES={
+    39:(100370,4),
+    909:(100071,1),
+    1165:(101814,3),
+}
 
 @dataclass(frozen=True)
 class EnemyAiReLifeSubmission:
@@ -74,9 +78,11 @@ def resolve_enemy_ai_relife_submission(
         raise ValueError("recovered25 ReLife exact row drift")
 
     tempno=int(spawned.template.tempno)
-    if tempno not in EXPECTED_TEMPLATE_SLOTS:
+    if tempno not in EXPECTED_TEMPLATE_IDENTITIES:
         raise ValueError("enemy ReLife actor is outside positive template domain")
-    expected_slot=EXPECTED_TEMPLATE_SLOTS[tempno]
+    expected_graphic,expected_slot=EXPECTED_TEMPLATE_IDENTITIES[tempno]
+    if int(spawned.template.graphic_id) != int(expected_graphic):
+        raise ValueError("enemy ReLife graphic identity drift")
     if skill_slot != expected_slot:
         raise ValueError("enemy ReLife selected slot drift from recovered template")
     slots=tuple(int(value) for value in spawned.template.skill_slot_ids)
