@@ -1,0 +1,44 @@
+name: Validate StoneAge BatFly runtime
+
+concurrency:
+  group: stoneage-batfly-runtime-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-batfly-runtime.yml"
+      - "tools/stoneage_batfly_reference_model.py"
+      - "tools/stoneage_enemy_ai_batfly_bridge.py"
+      - "tools/stoneage_battle_round_model.py"
+      - "tools/stoneage_battle_state_model.py"
+      - "tools/stoneage_local_runtime_session_coordinator.py"
+      - "tests/test_stoneage_batfly_reference_model.py"
+      - "tests/test_stoneage_batfly_runtime.py"
+      - "specs/STONEAGE-BATFLY-RUNTIME-STATE-AUDIT-R1.md"
+
+permissions:
+  contents: read
+
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile BatFly integration
+        run: |
+          python -m py_compile \
+            tools/stoneage_enemy_ai_batfly_bridge.py \
+            tools/stoneage_battle_round_model.py \
+            tools/stoneage_battle_state_model.py \
+            tools/stoneage_local_runtime_session_coordinator.py
+      - name: Validate bounded BatFly runtime seam
+        run: |
+          python -m unittest -v \
+            tests.test_stoneage_batfly_reference_model \
+            tests.test_stoneage_batfly_runtime
