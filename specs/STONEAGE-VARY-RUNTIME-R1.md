@@ -1,6 +1,6 @@
 # StoneAge PETSKILL_Vary ordered runtime R1
 
-Status: **PENDING_FULL_REGION_AND_PRESSURE_ACCEPTANCE**  
+Status: **CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME**  
 Date: 2026-10-05  
 Scope: recovered25 positive enemy uses of `PETSKILL_Vary` / ID 600 only.
 
@@ -154,13 +154,19 @@ Accepted before final closure:
 - runtime golden contract on the production coordinator integration:
   **37286013147 PASS**.
 
-Pending final closure:
+Final acceptance:
 
-- recovered25 full-region/runtime-stack gate: **37286420991 RUNNING**;
+- recovered25 full-region/runtime-stack gate: **37286420991 PASS**;
 - verified preservation-bundle pressure reclassification:
-  **37286756850 RUNNING**.
+  **37286756850 PASS**.
 
-Until both final gates pass, Vary remains pending pressure closure and the
-accepted positive-slot coverage remains **2444/2486 = 98.31%**.
+The pressure report now classifies exact `PETSKILL_Vary` as
+`closed_runtime`: ID **600**, **4 positive slot uses / 4 templates**, with
+**0 unresolved positive skill IDs**. Accepted executable positive-slot coverage
+therefore advances from **2444/2486 = 98.31%** to
+**2448/2486 = 98.47%**.
 
-**RECOVERED25_VARY_ORDERED_RUNTIME_R1 = PENDING_FINAL_ACCEPTANCE.**
+The mechanically selected next OPEN callback is
+**ENEMYSKILL_ReLife / ID 500 / 3 positive slot uses / 3 templates**.
+
+**RECOVERED25_VARY_ORDERED_RUNTIME_R1 = CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME.**
