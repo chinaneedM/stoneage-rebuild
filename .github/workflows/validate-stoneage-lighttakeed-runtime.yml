@@ -1,0 +1,32 @@
+name: Validate StoneAge Lighttakeed runtime
+
+concurrency:
+  group: stoneage-lighttakeed-runtime-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-lighttakeed-runtime.yml"
+      - "tools/stoneage_lighttakeed_model.py"
+      - "tools/stoneage_enemy_ai_lighttakeed_bridge.py"
+      - "tests/test_stoneage_lighttakeed_model.py"
+      - "tests/test_stoneage_enemy_ai_lighttakeed_bridge.py"
+      - "tests/test_stoneage_lighttakeed_runtime.py"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run Lighttakeed bounded runtime tests
+        run: |
+          python -m unittest -v             tests.test_stoneage_lighttakeed_model             tests.test_stoneage_enemy_ai_lighttakeed_bridge
+          if test -f tests/test_stoneage_lighttakeed_runtime.py; then
+            python -m unittest -v tests.test_stoneage_lighttakeed_runtime
+          fi
