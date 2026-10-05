@@ -20,7 +20,50 @@ EXPECTED_CALLBACK_IDS=(627,629,630,632,637,646,648)
 EXPECTED_REFERENCED_IDS=(627,632,637)
 EXPECTED_SLOT_REFERENCES=5
 EXPECTED_TEMPLATES=5
-EXPECTED_EXACT_ROWS=None
+EXPECTED_EXACT_ROWS=(
+    (
+        627,1,3,2,2000,1,31,
+        "edc61332cbc425bd8a4796b40a9100f095499a8720bf8f914d4d4726b5326d3c",
+        False,"e08ac3a40709a2cd7e250aaf8f73fbc4ab6e084041c293bf22f7ab4af14359ad",
+        6,6,(21,139,159,169,179,189),True,
+    ),
+    (
+        629,1,3,2,2000,0,28,
+        "6dc11bcc44c66779ce44b106cf9701917ba825df559032215d38b0f0b5a42ce5",
+        False,"e08ac3a40709a2cd7e250aaf8f73fbc4ab6e084041c293bf22f7ab4af14359ad",
+        5,5,(139,159,169,179,189),True,
+    ),
+    (
+        630,1,3,2,2000,0,12,
+        "60fd15a780f3eaf1064a93150ab4e5a079e5ad8119ad878dbcc0ab60b9feddf4",
+        False,"e08ac3a40709a2cd7e250aaf8f73fbc4ab6e084041c293bf22f7ab4af14359ad",
+        1,1,(306,),True,
+    ),
+    (
+        632,1,1,2,5000,2,12,
+        "a62d9d9c5ecf463dfbaff7ee5f92ff027c7b014904241b559831cba864a02002",
+        False,"e08ac3a40709a2cd7e250aaf8f73fbc4ab6e084041c293bf22f7ab4af14359ad",
+        1,1,(240,),True,
+    ),
+    (
+        637,1,2,2,20000,2,11,
+        "449f3b09480c3de8c57c76cb1226ec0da407f02450004f99cdf01cf9fa6437f5",
+        False,"e08ac3a40709a2cd7e250aaf8f73fbc4ab6e084041c293bf22f7ab4af14359ad",
+        1,1,(61,),True,
+    ),
+    (
+        646,1,2,2,20000,0,26,
+        "e0fffa94433f48b69b871e4ff90e5f69d41b64a32cb9f75c203992d567083a82",
+        False,"e08ac3a40709a2cd7e250aaf8f73fbc4ab6e084041c293bf22f7ab4af14359ad",
+        6,6,(20,21,22,23,24,25),True,
+    ),
+    (
+        648,1,2,2,20000,0,28,
+        "a4a59a768aafff70765c791c0e6692462196f5eb62d3d50fa1fec62b97c261af",
+        False,"e08ac3a40709a2cd7e250aaf8f73fbc4ab6e084041c293bf22f7ab4af14359ad",
+        6,6,(71,81,91,101,121,61),True,
+    ),
+)
 
 
 def _ascii_int(token:bytes):
