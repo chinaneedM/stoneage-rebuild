@@ -9,7 +9,9 @@ on:
       - ".github/workflows/probe-stoneage-25-combined-magic.yml"
       - "tools/stoneage_recovered25_combined_magic_probe.py"
       - "tools/stoneage_recovered25_combined_probe.py"
+      - "tools/stoneage_enemy_ai_combined_bridge.py"
       - "tests/test_stoneage_recovered25_combined_magic_probe.py"
+      - "tests/test_stoneage_enemy_ai_combined_bridge.py"
 permissions:
   contents: write
 jobs:
@@ -21,9 +23,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate Combined selected-magic crosslink model
+      - name: Validate Combined selected-magic crosslink and submission bridge
         run: |
-          python -m unittest -v tests.test_stoneage_recovered25_combined_magic_probe
+          python -m unittest -v \
+            tests.test_stoneage_recovered25_combined_magic_probe \
+            tests.test_stoneage_enemy_ai_combined_bridge
       - run: sudo apt-get update && sudo apt-get install -y unar
       - name: Recover verified preservation bundle
         run: |
@@ -78,6 +82,47 @@ jobs:
           grep -F 'COUNT|magic_parse_malformed|0' research/recovered/STONEAGE-25-COMBINED-MAGIC-CROSSLINK-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_COMBINED_MAGIC_CROSSLINK_CLOSED' research/recovered/STONEAGE-25-COMBINED-MAGIC-CROSSLINK-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_COMBINED_MAGIC_EXACT_ROWS_CLOSED' research/recovered/STONEAGE-25-COMBINED-MAGIC-CROSSLINK-R1.txt
+      - name: Smoke real recovered Combined submissions
+        run: |
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          test -n "$D"
+          D="$D" python - <<'PY'
+          import os
+          from pathlib import Path
+          from types import SimpleNamespace
+          from tools.stoneage_enemy_ai_combined_bridge import (
+              resolve_enemy_ai_combined_submission,
+          )
+          from tools.stoneage_recovered25_petskill_runtime import (
+              load_recovered25_petskill_runtime,
+          )
+          runtime=load_recovered25_petskill_runtime(data_dir=Path(os.environ["D"]))
+          cases=(
+              (627,0,21,"MAGIC_Recovery"),
+              (627,5,189,"MAGIC_StatusChange"),
+              (632,0,240,"MAGIC_AttReverse"),
+              (637,0,61,"MAGIC_StatusRecovery"),
+          )
+          for skill_id,draw,magic_id,function in cases:
+              spawned=SimpleNamespace(
+                  participant=SimpleNamespace(participant_id="enemy"),
+                  template=SimpleNamespace(
+                      skill_slot_ids=(skill_id,0,0,0,0,0,0)
+                  ),
+              )
+              result=resolve_enemy_ai_combined_submission(
+                  spawned,
+                  skill_slot=0,
+                  target_slot=0,
+                  petskill_runtime=runtime,
+                  draw_index=draw,
+              )
+              assert result.selection.selected_magic_id==magic_id
+              assert result.magic.function_name==function
+              assert result.selection.rng_draws_consumed==1
+              assert result.magic.direct_item_index==0
+          print("RESOLUTION|RECOVERED25_COMBINED_SUBMISSION_BRIDGE_CLOSED")
+          PY
       - name: Print derived report
         if: always()
         run: |
