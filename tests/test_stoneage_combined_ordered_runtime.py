@@ -6,7 +6,7 @@ from tools.stoneage_battle_round_model import (
     prepare_battle_round, resolve_ordinary_round,
 )
 from tools.stoneage_battle_status_model import (
-    BaseBattleStatusRuntime, BaseStatusCombatProfile,
+    BaseBattleStatusRuntime, BaseStatusCombatProfile, BaseStatusTurnRolls,
 )
 from tools.stoneage_combined_direct_magic_model import RuntimeItemZeroWitness
 from tools.stoneage_combined_initiative_model import (
@@ -90,7 +90,8 @@ class CombinedOrderedRuntimeTests(unittest.TestCase):
     def resolve(
         self,*,sub,rolls,player=None,enemy=None,
         player_command=None,player_late=None,enemy_late=None,
-        player_base=None,status_profile=None,item_mp=5,enemy_mp=20,
+        player_base=None,status_profile=None,player_status_rolls=None,
+        item_mp=5,enemy_mp=20,
     ):
         player=player or actor("player","player","player",level=1,quick=10)
         enemy=enemy or actor("enemy","enemy","enemy",level=100,quick=200)
@@ -122,6 +123,10 @@ class CombinedOrderedRuntimeTests(unittest.TestCase):
             },
             base_status_combat_profiles_by_participant_id=(
                 {} if status_profile is None else {"player":status_profile}
+            ),
+            base_status_rolls_by_participant_id=(
+                {} if player_status_rolls is None
+                else {"player":player_status_rolls}
             ),
             combined_submissions_by_participant_id={"enemy":sub},
             combined_rolls_by_participant_id={"enemy":rolls},
@@ -196,6 +201,12 @@ class CombinedOrderedRuntimeTests(unittest.TestCase):
                     ),
                     status_profile=BaseStatusCombatProfile(
                         vital=1,strength=1,tough=1,dex=1,
+                    ),
+                    player_status_rolls=(
+                        BaseStatusTurnRolls(
+                            confusion_action_roll_1_100=100
+                        )
+                        if magic_id==169 else None
                     ),
                 )
                 event=self.combined_event(result)
