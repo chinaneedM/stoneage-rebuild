@@ -7580,5 +7580,194 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         )
 
 
+    def test_recovered_enemy_ai_lighttakeed_requires_profile_and_executes(self):
+        from tools.stoneage_battle_damage_react_model import (
+            BaseDamageReactState,
+        )
+        from tools.stoneage_lighttakeed_model import (
+            PROFILE_GAVIN_IRIS_COPY,
+        )
+
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-lighttakeed"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,group,
+            entry_count_roll=1,selection_rolls=(0,),
+            birth_rolls=(EnemyBirthRolls(
+                level_roll=1,birth_offsets=(0,0,0,0),
+                spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+            ),),
+        )
+        enemy_id=str(context.battle.enemies[0].participant_id)
+        spawned=context.spawned_enemies[0]
+
+        skills=dict(self.stack.petskill_runtime.skills)
+        skills.update({
+            609:Recovered25PetSkillEntry(
+                609,1,7,2,5000,"PETSKILL_Lighttakeed",b"ABSROB"
+            ),
+            610:Recovered25PetSkillEntry(
+                610,1,7,2,5000,"PETSKILL_Lighttakeed",b"REFLEC"
+            ),
+            611:Recovered25PetSkillEntry(
+                611,1,7,2,5000,"PETSKILL_Lighttakeed",b"VANISH"
+            ),
+        })
+        self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+            skills=skills,
+            source_file=self.stack.petskill_runtime.source_file,
+        )
+
+        enemy=replace(
+            context.battle.enemies[0],
+            attack=100,defense=80,quick=200,
+        )
+        player=replace(
+            context.battle.player,
+            hp=1000,max_hp=1000,defense=0,quick=10,
+        )
+        context=replace(
+            context,
+            battle=replace(context.battle,player=player,enemies=(enemy,)),
+            spawned_enemies=(replace(
+                spawned,
+                participant=enemy,
+                template=replace(
+                    spawned.template,
+                    tempno=157,
+                    graphic_id=101283,
+                    skill_ids=(0,0,0,610,611,0,0),
+                    skill_slot_ids=(0,0,0,610,611,0,0),
+                ),
+                variant=replace(
+                    spawned.variant,
+                    tactics_option=(
+                        "at:0;1;1|gu:0|es:0|"
+                        "wa:0;0;0;1;0;0;0"
+                    ),
+                ),
+            ),),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,enemy_id:10},
+        )
+        state=context.persistent_battle_state
+        context=replace(
+            context,
+            persistent_battle_state=replace(
+                state,
+                base_damage_react_state_by_participant_id=MappingProxyType({
+                    "player":BaseDamageReactState(reflect=2),
+                    enemy_id:BaseDamageReactState(reflect=7),
+                }),
+            ),
+        )
+
+        with self.assertRaisesRegex(
+            ValueError,"explicit descendant profile"
+        ):
+            self.coordinator._build_persistent_enemy_common_batch(
+                context,
+                mode_rolls_by_enemy_id={enemy_id:0},
+                target_rolls_by_enemy_id={enemy_id:0},
+                allow_lighttakeed_skill=True,
+            )
+
+        batch=self.coordinator._build_persistent_enemy_common_batch(
+            context,
+            mode_rolls_by_enemy_id={enemy_id:0},
+            target_rolls_by_enemy_id={enemy_id:0},
+            allow_lighttakeed_skill=True,
+            lighttakeed_profiles_by_enemy_id={
+                enemy_id:PROFILE_GAVIN_IRIS_COPY
+            },
+        )
+        submission=batch.lighttakeed_submissions[enemy_id]
+        self.assertEqual(
+            (submission.skill_id,submission.skill_slot,submission.profile),
+            (610,3,PROFILE_GAVIN_IRIS_COPY),
+        )
+        self.assertEqual(
+            (
+                batch.setup_effects[enemy_id].attack_power,
+                batch.setup_effects[enemy_id].defense_power,
+            ),
+            (70,40),
+        )
+
+        context,result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player":BattleCommand(BATTLE_COM_WAIT)
+                },
+                enemy_mode_rolls={enemy_id:0},
+                enemy_target_rolls={enemy_id:0},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={
+                    "player":0,enemy_id:0,
+                },
+                profiles={
+                    "player":BattleCombatProfile(
+                        fixed_dex=10,fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                    enemy_id:BattleCombatProfile(
+                        fixed_dex=200,fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                },
+                attack_rolls={
+                    enemy_id:OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                        minimum_damage_roll_0_1=1,
+                    )
+                },
+                lighttakeed_profiles_by_enemy_id={
+                    enemy_id:PROFILE_GAVIN_IRIS_COPY
+                },
+                defense_profile="newpower_70pct",
+            )
+        )
+        event=next(
+            event for event in result.round.events
+            if event.lighttakeed_skill_id==610
+        )
+        self.assertTrue(event.lighttakeed_resolution.matched_reaction)
+        self.assertEqual(
+            event.lighttakeed_profile,PROFILE_GAVIN_IRIS_COPY
+        )
+        self.assertEqual(
+            context.persistent_battle_state
+            .base_damage_react_state_by_participant_id["player"].reflect,
+            1,
+        )
+        self.assertEqual(
+            context.persistent_battle_state
+            .base_damage_react_state_by_participant_id[enemy_id].reflect,
+            7,
+        )
+        self.assertEqual(
+            context.persistent_battle_state.hp_by_participant_id["player"],
+            1000,
+        )
+        self.assertLess(
+            context.persistent_battle_state.hp_by_participant_id[enemy_id],
+            100,
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
