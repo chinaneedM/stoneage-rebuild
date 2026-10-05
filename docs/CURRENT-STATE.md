@@ -6416,3 +6416,42 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   **WORK mode** under DD-018; production-engine choice and redesigned-content
   discussion remain deferred.
 
+## Phase 1 PETSKILL_BattleModel reference acceptance in progress — 2026-10-06
+
+- Fresh bounded branch `agent/battlemodel-reference-r1-20261005` is remote and descends exactly from accepted
+  `main` `d2b309c750049c1585543b4f76514cf8eca19826`, tree
+  `ff764e45470698514d728aa401e2ef17aba5c2ff`. At this checkpoint the branch
+  HEAD is `dc2e4649c1e4eb2b40b2dca7059c9fe55f4f7af9`, tree
+  `41fdb7a39b122d27c77b320e4e497d55c6c9a40b`, **22 commits ahead / 0 behind**
+  `main`.
+- Pressure-selected executable family remains **PETSKILL_BattleModel / ID638 /
+  2 positive uses / 2 templates**. The branch now contains a dedicated
+  recovered25 probe, fixed-descendant source/native audit, bounded reference
+  model/tests, reference contract and runtime-state audit.
+- Discovery has found complete candidate callback population
+  **638/641/649/650** and positive placements **TEMPNO1178 graphic101867 slot3**
+  and **TEMPNO1179 graphic101868 slot3**, but the branch must not promote these
+  to accepted exact identity until the hash-verified recovered25 workflow
+  completes successfully and writes its derived exact report.
+- Current acceptance gates are not green yet: recovered25 exact-identity run
+  **37339817353** is runner-queued/pending; pinned fixed-descendant
+  source/native run **37339825354** is runner-queued. Earlier superseded runs
+  were cancelled by workflow concurrency and are not failures of the current
+  candidate.
+- Runtime-state audit finds the existing deterministic battle state structurally
+  sufficient for a bounded BattleModel runtime, but runtime coding remains
+  blocked until exact ID638 OPTION/profile/status identity and the source/native
+  target-planner gate are accepted. No new generalized persistent BattleModel
+  schema is authorized at this checkpoint.
+- **Highest-priority unfinished task:** wait only on the two already-triggered
+  remote acceptance gates as evidence, without treating queue state as PASS.
+  When both complete successfully, re-read the branch HEAD, verify the derived
+  reports were written, close
+  `specs/STONEAGE-BATTLEMODEL-REFERENCE-R1.md` and
+  `specs/STONEAGE-BATTLEMODEL-RUNTIME-STATE-AUDIT-R1.md` only to the proven
+  bounded facts, record source/timeline evidence, then non-force fast-forward
+  the accepted reference into a freshly verified `main`. Create a fresh
+  BattleModel runtime branch only after that acceptance. Continue **WORK mode**
+  under DD-018; production-engine selection and redesigned-content work remain
+  deferred.
+
