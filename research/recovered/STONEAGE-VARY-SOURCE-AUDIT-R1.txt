@@ -19,6 +19,7 @@ GATE|profile=gavin|name=expiry_restores_quick|pass=1
 GATE|profile=gavin|name=feature_active|pass=1
 GATE|profile=gavin|name=fixed_default_image_101428|pass=1
 GATE|profile=gavin|name=fixwolf_active_at_fixed_pin|pass=1
+GATE|profile=gavin|name=magic_effect_is_visual_frame_only|pass=1
 GATE|profile=gavin|name=mode_symbol_present|pass=1
 GATE|profile=gavin|name=option_guard_matches_profile|pass=1
 GATE|profile=gavin|name=petid_is_loaded_from_enemy_tempno|pass=1
@@ -27,9 +28,12 @@ GATE|profile=gavin|name=setup_case_is_noop|pass=1
 GATE|profile=gavin|name=source_skill_symbol_is_600|pass=1
 GATE|profile=gavin|name=turn_counter_expires_after_five|pass=1
 GATE|profile=gavin|name=turn_counter_increments_while_wolf|pass=1
+GATE|profile=gavin|name=use_blocks_recast_while_default_wolf_image|pass=1
+GATE|profile=gavin|name=vary_has_no_special_dexcalc_branch|pass=1
 GATE|profile=gavin|name=workturn_reset_zero|pass=1
 SOURCE_SHA256|profile=gavin|file=battle|sha256=a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602
 SOURCE_SHA256|profile=gavin|file=battle_h|sha256=5ec5972c6fff32a11f80cadb15529e4b4983cd92669cc9c3c60784baa41f1526
+SOURCE_SHA256|profile=gavin|file=battle_magic|sha256=09d3e93f52e2ae98c7cf4829b0cc6c0b7a44cfc6f426e943c16ac133d702fc6c
 SOURCE_SHA256|profile=gavin|file=enemy|sha256=aefdf73e3f62bceaabacdc60798fb07c5ceefb88b913b8c1f819d44db973f350
 SOURCE_SHA256|profile=gavin|file=pet|sha256=12d95301b9ecaf60175fb9c94095e8ab05c152f375e1585c090d951fa416e672
 SOURCE_SHA256|profile=gavin|file=petskill_h|sha256=32af3006d5fc828463091e2d322d0227a62b1fc3282aeb4af68492e16b5fe328
@@ -53,6 +57,7 @@ GATE|profile=iris|name=expiry_restores_quick|pass=1
 GATE|profile=iris|name=feature_active|pass=1
 GATE|profile=iris|name=fixed_default_image_101428|pass=1
 GATE|profile=iris|name=fixwolf_active_at_fixed_pin|pass=1
+GATE|profile=iris|name=magic_effect_is_visual_frame_only|pass=1
 GATE|profile=iris|name=mode_symbol_present|pass=1
 GATE|profile=iris|name=option_guard_matches_profile|pass=1
 GATE|profile=iris|name=petid_is_loaded_from_enemy_tempno|pass=1
@@ -61,9 +66,12 @@ GATE|profile=iris|name=setup_case_is_noop|pass=1
 GATE|profile=iris|name=source_skill_symbol_is_600|pass=1
 GATE|profile=iris|name=turn_counter_expires_after_five|pass=1
 GATE|profile=iris|name=turn_counter_increments_while_wolf|pass=1
+GATE|profile=iris|name=use_blocks_recast_while_default_wolf_image|pass=1
+GATE|profile=iris|name=vary_has_no_special_dexcalc_branch|pass=1
 GATE|profile=iris|name=workturn_reset_zero|pass=1
 SOURCE_SHA256|profile=iris|file=battle|sha256=6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8
 SOURCE_SHA256|profile=iris|file=battle_h|sha256=2c0e83a742f707383ef4db442f5c71c65beabbb4748deaf4b62c81ddba406278
+SOURCE_SHA256|profile=iris|file=battle_magic|sha256=642f570c749cd6bcb0025ff6460581a9059a4d4aebe5952d4e6982c47aca8554
 SOURCE_SHA256|profile=iris|file=enemy|sha256=1f8c0333cfca4b469e40981f0331466fff7c14e54b50ae9aa66bf68928cde66e
 SOURCE_SHA256|profile=iris|file=pet|sha256=e49dd8cd079231717c4f7af34eccae4bd6cafe6d54f07dd5270f461b1ae24fc8
 SOURCE_SHA256|profile=iris|file=petskill_h|sha256=75d76f0983ac084660cd7603f5e9f97691e418c406ebf656982452ac13629b0f
@@ -87,6 +95,7 @@ GATE|profile=bismarck|name=expiry_restores_quick|pass=1
 GATE|profile=bismarck|name=feature_active|pass=1
 GATE|profile=bismarck|name=fixed_default_image_101428|pass=1
 GATE|profile=bismarck|name=fixwolf_active_at_fixed_pin|pass=1
+GATE|profile=bismarck|name=magic_effect_is_visual_frame_only|pass=1
 GATE|profile=bismarck|name=mode_symbol_present|pass=1
 GATE|profile=bismarck|name=option_guard_matches_profile|pass=1
 GATE|profile=bismarck|name=petid_is_loaded_from_enemy_tempno|pass=1
@@ -95,9 +104,12 @@ GATE|profile=bismarck|name=setup_case_is_noop|pass=1
 GATE|profile=bismarck|name=source_skill_symbol_is_600|pass=1
 GATE|profile=bismarck|name=turn_counter_expires_after_five|pass=1
 GATE|profile=bismarck|name=turn_counter_increments_while_wolf|pass=1
+GATE|profile=bismarck|name=use_blocks_recast_while_default_wolf_image|pass=1
+GATE|profile=bismarck|name=vary_has_no_special_dexcalc_branch|pass=1
 GATE|profile=bismarck|name=workturn_reset_zero|pass=1
 SOURCE_SHA256|profile=bismarck|file=battle|sha256=2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18
 SOURCE_SHA256|profile=bismarck|file=battle_h|sha256=4b8515aad3b0e659cd0d86a554844b8c471af294cce6e0f40888c45814c56a69
+SOURCE_SHA256|profile=bismarck|file=battle_magic|sha256=cceea0c9d30922105904805cc4c18f22944ef1c936b89315625ddd9a83b12018
 SOURCE_SHA256|profile=bismarck|file=enemy|sha256=91ab124f715d4913d5a0aefa7d266afd736bb08cafa35f6644c0de5e8aaaf53b
 SOURCE_SHA256|profile=bismarck|file=pet|sha256=d6801f12373d6a4ca0d20829797ee230ce85d978e42b2d50e563e86ab4b1f4d4
 SOURCE_SHA256|profile=bismarck|file=petskill_h|sha256=32af3006d5fc828463091e2d322d0227a62b1fc3282aeb4af68492e16b5fe328
@@ -105,6 +117,9 @@ SOURCE_SHA256|profile=bismarck|file=version|sha256=4996de26fa1fc795da5d903e05aca
 FACT|runtime_CHAR_PETID_is_enemybase_TEMPNO
 FACT|base_allowed_tempnos=981,982,983,984
 FACT|callback_writes_command_target_mode_and_resets_workturn
+FACT|PETSKILL_Use_blocks_recast_while_image_101428
+FACT|Vary_has_no_special_BATTLE_DexCalc_branch
+FACT|BATTLE_MagicEffect_is_visual_frame_only
 FACT|wolf_turn_counter_reverts_after_six_actor_actions
 FACT|gavin_iris_option_markers=attack,quick
 FACT|bismarck_adds_defense_marker
@@ -114,4 +129,4 @@ FACT|FIXWOLF_active_at_all_three_fixed_pins
 BOUNDARY|bismarck_raw_expansion_image_branch_not_compiled_at_fixed_pin
 BOUNDARY|original_numeric_command_and_mode_values_open
 BOUNDARY|original_binary_compile_profile_and_charset_open
-RESOLUTION|VARY_FIXED_SOURCE_FIRST_PASS_CLOSED_BOUNDED_REFERENCE
+RESOLUTION|VARY_FIXED_SOURCE_CLOSED_BOUNDED_REFERENCE
