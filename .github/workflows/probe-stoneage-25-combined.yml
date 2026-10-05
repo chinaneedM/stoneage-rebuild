@@ -112,6 +112,7 @@ jobs:
           grep -F 'COUNT|well_formed_rows|7' research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_COMBINED_POPULATION_CLOSED' research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_COMBINED_WELLFORMED_OPTION_CLOSED' research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_COMBINED_EXACT_ROWS_CLOSED' research/recovered/STONEAGE-25-COMBINED-PROBE-R1.txt
       - name: Print derived reports
         if: always()
         run: |
