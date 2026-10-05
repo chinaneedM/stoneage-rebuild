@@ -1,0 +1,70 @@
+name: Audit StoneAge Lighttakeed DamageReact lifecycle
+
+concurrency:
+  group: stoneage-lighttakeed-reaction-lifecycle-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/probe-stoneage-25-lighttakeed-reaction-lifecycle.yml"
+      - "tools/stoneage_lighttakeed_reaction_lifecycle_source_audit.py"
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Recover pinned source profiles outside repository
+        run: |
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          profiles={
+            "gavin":("gavinlinasd/StoneAge","1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56"),
+            "iris":("iriselia/StoneAge","9e6c8ce2cd8ed532a7157773acd1c61582c178b5"),
+            "bismarck":("BismarckDD/stoneage","999ffdf1d220ec6666eb65339180689c9caf1876"),
+          }
+          for name,(repo,sha) in profiles.items():
+            root=Path("/tmp/lighttakeed-lifecycle-source")/name
+            root.mkdir(parents=True)
+            subprocess.run(["git","init",str(root)],check=True)
+            subprocess.run([
+              "git","-C",str(root),"remote","add","origin",
+              "https://github.com/"+repo+".git"
+            ],check=True)
+            subprocess.run([
+              "git","-C",str(root),"fetch","--depth","1","origin",sha
+            ],check=True)
+            subprocess.run([
+              "git","-C",str(root),"checkout","--detach","FETCH_HEAD"
+            ],check=True)
+          PY
+
+      - name: Reproduce Lighttakeed DamageReact lifecycle audit
+        run: |
+          mkdir -p research/recovered
+          python -m tools.stoneage_lighttakeed_reaction_lifecycle_source_audit             --gavin-dir /tmp/lighttakeed-lifecycle-source/gavin             --iris-dir /tmp/lighttakeed-lifecycle-source/iris             --bismarck-dir /tmp/lighttakeed-lifecycle-source/bismarck             | tee research/recovered/STONEAGE-LIGHTTAKEED-DAMAGEREACT-LIFECYCLE-R1.txt
+          grep -F             'RESOLUTION|LIGHTTAKEED_DAMAGEREACT_LIFECYCLE_FIXED_SOURCE_CLOSED'             research/recovered/STONEAGE-LIGHTTAKEED-DAMAGEREACT-LIFECYCLE-R1.txt
+
+      - name: Commit derived report only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-LIGHTTAKEED-DAMAGEREACT-LIFECYCLE-R1.txt
+          if git diff --cached --quiet; then
+            echo 'Lighttakeed lifecycle report unchanged.'
+            exit 0
+          fi
+          git commit -m 'research: audit Lighttakeed DamageReact lifecycle'
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
