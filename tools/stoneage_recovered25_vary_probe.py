@@ -22,6 +22,17 @@ EXPECTED_REFERENCED_IDS=(600,)
 EXPECTED_SLOT_REFERENCES=4
 EXPECTED_TEMPLATES=4
 BASE_ALLOWED_TEMPNOS=frozenset({981,982,983,984})
+EXPECTED_EXACT_ROW=(
+    600,1,5,2,1000,4,22,
+    "17e7ff6e7530a5fc2a0964432699f6c82a3dcc79374a2bad6fc547bbdc5e6f99",
+    False,3,30.0,-50.0,30.0,
+)
+EXPECTED_TEMPLATE_ROWS=(
+    (981,101427,(3,),True),
+    (982,101424,(3,),True),
+    (983,101425,(3,),True),
+    (984,101426,(3,),True),
+)
 
 
 def _c_float_after(raw: bytes, marker: bytes) -> float | None:
@@ -122,6 +133,27 @@ def analyze_runtime_objects(petskills,enemybase):
         and sum(counts.values())==EXPECTED_SLOT_REFERENCES
         and len(template_rows)==EXPECTED_TEMPLATES
     )
+    exact_row_closed=False
+    if len(rows)==1:
+        row=rows[0]
+        values=row["cp950_values"]
+        actual=(
+            row["id"],row["field"],row["target"],row["cost"],
+            row["illegal"],row["slot_references"],row["option_bytes"],
+            row["option_sha256"],row["option_contains_nul"],
+            row["ascii_percent_count"],values["attack_percent"],
+            values["defense_percent"],values["quick_percent"],
+        )
+        exact_row_closed=actual==EXPECTED_EXACT_ROW
+    actual_templates=tuple(
+        (
+            row["tempno"],row["graphic_id"],row["skill_slots"],
+            row["base_allowed_tempno"],
+        )
+        for row in template_rows
+    )
+    exact_templates_closed=actual_templates==EXPECTED_TEMPLATE_ROWS
+
     return {
         "rows":tuple(rows),
         "callback_ids":ids,
@@ -129,6 +161,8 @@ def analyze_runtime_objects(petskills,enemybase):
         "slot_references":sum(counts.values()),
         "templates":tuple(template_rows),
         "population_closed":population_closed,
+        "exact_row_closed":exact_row_closed,
+        "exact_templates_closed":exact_templates_closed,
         "all_positive_templates_base_allowed":(
             bool(template_rows)
             and all(row["base_allowed_tempno"] for row in template_rows)
@@ -183,7 +217,14 @@ def emit(result):
         "RESOLUTION|RECOVERED25_VARY_BASE_TEMPID_DOMAIN_"
         +("CLOSED" if result["all_positive_templates_base_allowed"] else "OPEN")
     )
-    print("RESOLUTION|RECOVERED25_VARY_EXACT_OPTION_SEMANTICS_OPEN")
+    print(
+        "RESOLUTION|RECOVERED25_VARY_EXACT_ROW_"
+        +("CLOSED" if result["exact_row_closed"] else "OPEN")
+    )
+    print(
+        "RESOLUTION|RECOVERED25_VARY_EXACT_TEMPLATES_"
+        +("CLOSED" if result["exact_templates_closed"] else "OPEN")
+    )
 
 
 def main():
@@ -207,6 +248,10 @@ def main():
     print("DATA_SHA256|file=petskill|sha256="+digest)
     if not result["population_closed"]:
         raise SystemExit("Vary callback/reference population drift")
+    if not result["exact_row_closed"]:
+        raise SystemExit("Vary exact metadata/OPTION semantics drift")
+    if not result["exact_templates_closed"]:
+        raise SystemExit("Vary exact positive-template drift")
 
 
 if __name__=="__main__":
