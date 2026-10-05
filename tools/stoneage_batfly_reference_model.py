@@ -26,6 +26,59 @@ class BatFlySetup:
 
 
 @dataclass(frozen=True)
+class BatFlyExecutionGate:
+    source_target_slot:int
+    adjusted_target_slot:int|None
+    retargeted:bool
+    rng_draws:int
+    executable:bool
+
+
+def resolve_batfly_execution_gate(
+    *,
+    source_target_slot:int,
+    living_opposing_slots:tuple[int,...],
+    retarget_roll:int|None,
+) -> BatFlyExecutionGate:
+    """Model dispatcher TargetAdjust before the whole-side BatFly effect.
+
+    The recovered enemy runtime domain uses player-side slots 0..9.
+    A live submitted COM2 target consumes no RNG.  An invalid/dead submitted
+    target consumes exactly one DefaultAttacker RAND only when at least one
+    living opposing candidate remains.  No candidates returns -1/no-action
+    without a draw.
+    """
+    source_target_slot=_i32(source_target_slot)
+    if not 0 <= source_target_slot < 10:
+        raise ValueError("BatFly source target must be player-side 0..9")
+    living=tuple(sorted({int(slot) for slot in living_opposing_slots}))
+    if any(not 0 <= slot < 10 for slot in living):
+        raise ValueError("BatFly living target slots must be player-side 0..9")
+    if source_target_slot in living:
+        if retarget_roll is not None:
+            raise ValueError("BatFly live COM2 cannot consume TargetAdjust RNG")
+        return BatFlyExecutionGate(
+            source_target_slot,source_target_slot,False,0,True
+        )
+    if not living:
+        if retarget_roll is not None:
+            raise ValueError("BatFly no-target gate cannot consume RNG")
+        return BatFlyExecutionGate(
+            source_target_slot,None,True,0,False
+        )
+    if retarget_roll is None:
+        raise ValueError("BatFly dead COM2 requires one DefaultAttacker draw")
+    roll=int(retarget_roll)
+    if not 0 <= roll < len(living):
+        raise ValueError(
+            "BatFly DefaultAttacker draw must index the living target list"
+        )
+    return BatFlyExecutionGate(
+        source_target_slot,living[roll],True,1,True
+    )
+
+
+@dataclass(frozen=True)
 class BatFlyTarget:
     character_hp:int
     ride_pet_hp:int|None=None
