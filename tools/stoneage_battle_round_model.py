@@ -51,6 +51,7 @@ from tools.stoneage_enemy_ai_battletimid_bridge import (
 )
 from tools.stoneage_battletimid_model import BattleTimidExitResolution
 from tools.stoneage_enemy_ai_combined_bridge import EnemyAiCombinedSubmission
+from tools.stoneage_enemy_ai_vary_bridge import EnemyAiVarySubmission
 from tools.stoneage_combined_direct_magic_model import CombinedDirectMagicRoute
 from tools.stoneage_combined_effect_model import (
     CombinedRecoveryEffect,
@@ -1039,6 +1040,8 @@ class OrdinaryRoundEvent:
     combined_status_change_effect: CombinedStatusChangeEffect | None = None
     combined_status_recovery_effect: CombinedStatusRecoveryEffect | None = None
     combined_att_reverse_effect: CombinedAttReverseEffect | None = None
+    vary_skill_id: int | None = None
+    vary_visual_effect_enabled: bool | None = None
     mdfyattack_skill_id: int | None = None
     mdfyattack_element: str | None = None
     mdfyattack_attack_vector: tuple[int, ...] = ()
@@ -3664,6 +3667,9 @@ def resolve_ordinary_round(
         str,CombinedActionRolls
     ] | None = None,
     combined_overlay: CombinedRuntimeOverlay | None = None,
+    vary_submissions_by_participant_id: Mapping[
+        str,EnemyAiVarySubmission
+    ] | None = None,
     fall_ground_submissions_by_participant_id: Mapping[
         str,EnemyAiFallGroundSubmission
     ] | None = None,
@@ -4567,6 +4573,41 @@ def resolve_ordinary_round(
     combined_active_command_ids=set(combined_actor_ids)
     combined_cleared_command_ids=set()
 
+    vary_submissions={
+        str(pid):submission
+        for pid,submission in (
+            vary_submissions_by_participant_id or {}
+        ).items()
+    }
+    vary_actor_ids=set(vary_submissions)
+    if vary_actor_ids-set(slot_by_id):
+        raise ValueError("Vary submissions reference unknown actors")
+    vary_overlap=(
+        combined_actor_ids | battletimid_actor_ids | wildviolent_actor_ids
+        | set(mdfyattack_submissions) | set(attack_crazed_submissions)
+        | weaken_actor_ids | refresh_actor_ids | setmagicpet_actor_ids
+        | guard_break2_actor_ids | barrier_actor_ids | nocast_actor_ids
+        | fall_ground_actor_ids | battle_tear_actor_ids | mp_damage_actor_ids
+        | damage_to_hp_actor_ids | enemy_rehp_actor_ids | attack_magic_actor_ids
+    )
+    if vary_actor_ids & vary_overlap:
+        raise ValueError("Vary semantic submissions overlap another skill")
+    for pid,submission in vary_submissions.items():
+        if not isinstance(submission,EnemyAiVarySubmission):
+            raise TypeError("Vary submission has wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (
+            str(submission.participant_id)!=pid
+            or entry.participant.kind!="enemy"
+            or entry.participant.side!="enemy"
+            or int(entry.command.command1)!=BATTLE_COM_ATTACK
+            or int(entry.command.command2)!=int(submission.source_target_carrier)
+        ):
+            raise ValueError(
+                "Vary ordering carrier must be enemy ATTACK/source-target"
+            )
+    vary_active_command_ids=set(vary_actor_ids)
+
     # The scheduling carrier cannot confer native ATTACK counter eligibility.
     # Confusion later removes a rewritten actor from this symbolic-command set.
     mdfyattack_active_command_ids=set(mdfyattack_submissions)
@@ -5266,6 +5307,7 @@ def resolve_ordinary_round(
                 | setmagicpet_active_command_ids
                 | battletimid_active_command_ids
                 | combined_active_command_ids
+                | vary_active_command_ids
             ),
             counter_rolls=normalized_counter_rolls.get(
                 str(main_actor_id),()
@@ -5412,6 +5454,7 @@ def resolve_ordinary_round(
                 setmagicpet_active_command_ids.discard(str(participant_id))
                 battletimid_active_command_ids.discard(str(participant_id))
                 combined_active_command_ids.discard(str(participant_id))
+                vary_active_command_ids.discard(str(participant_id))
             hp_by_slot[slot]=int(tick.hp_after)
             hp_by_id[str(participant_id)]=int(tick.hp_after)
             runtime=replace(
@@ -6724,6 +6767,37 @@ def resolve_ordinary_round(
                     int(slot),
                     int(continuation.last_target_slot),
                 )
+            continue
+
+        vary_actor_id=str(participant_id)
+        if (
+            vary_actor_id in vary_submissions
+            and vary_actor_id in vary_active_command_ids
+            and int(command.command1) == BATTLE_COM_ATTACK
+            and not (
+                current_status_tick is not None
+                and current_status_tick.confusion_rewrote_command
+            )
+        ):
+            submission=vary_submissions[vary_actor_id]
+            if int(command.command2) != int(submission.source_target_carrier):
+                raise ValueError(
+                    "Vary ordering carrier target drift before execution"
+                )
+            events.append(
+                OrdinaryRoundEvent(
+                    vary_actor_id,
+                    int(slot),
+                    BATTLE_COM_ATTACK,
+                    int(entry.action_value),
+                    "vary_applied",
+                    original_target_slot=int(submission.source_target_carrier),
+                    vary_skill_id=int(submission.skill_id),
+                    vary_visual_effect_enabled=bool(
+                        submission.runtime_after_callback.visual_effect_enabled
+                    ),
+                )
+            )
             continue
 
         combined_actor_id=str(participant_id)
