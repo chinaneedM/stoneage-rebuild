@@ -3787,6 +3787,10 @@ def resolve_ordinary_round(
         )
     for participant_id in initial_revivable_dead_ids:
         slot=int(slot_by_id[participant_id])
+        if int(slot) < SIDE_OFFSET:
+            raise ValueError(
+                "bounded ReLife revivable entry must be enemy-side"
+            )
         if int(hp_by_slot[slot]) != 0:
             raise ValueError(
                 "revivable-dead identity must currently have zero HP"
@@ -5349,6 +5353,8 @@ def resolve_ordinary_round(
                 dead_slot=int(event.resolved_target_slot)
                 if (
                     dead_slot in by_slot
+                    and dead_slot >= SIDE_OFFSET
+                    and by_slot[dead_slot].side == "enemy"
                     and int(ultimate_marked_slots.get(dead_slot,0)) <= 0
                 ):
                     revivable_dead_ids.add(
