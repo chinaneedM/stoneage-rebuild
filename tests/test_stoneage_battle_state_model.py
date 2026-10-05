@@ -1184,6 +1184,27 @@ class PersistentBattleStateTests(unittest.TestCase):
                 ),
             )
 
+    def test_ride_pet_cannot_also_be_active_allied_entry(self):
+        player=participant("player","player","player")
+        ride=participant(
+            "pet:0","player","pet",
+            hp=55,max_hp=80,defense=33,source_pet_slot=0,
+        )
+        enemy=participant("enemy","enemy","enemy")
+        with self.assertRaisesRegex(
+            ValueError,
+            "ride pet cannot also be an active allied battle entry",
+        ):
+            begin_persistent_battle(
+                session(
+                    player,
+                    (enemy,),
+                    pets=(ride,),
+                    ride_pet=ride,
+                ),
+                slots={"player":0,"pet:0":5,"enemy":10},
+            )
+
     def test_no_ride_session_rejects_synthetic_ride_runtime(self):
         player=participant("player","player","player")
         enemy=participant("enemy","enemy","enemy")
