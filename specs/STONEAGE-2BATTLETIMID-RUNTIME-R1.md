@@ -1,5 +1,10 @@
 # StoneAge 2BattleTimid ordered runtime R1
 
+**2026-10-06 correction:** the earlier source-slot table below is superseded
+by the dated correction at the end. Historical runtime acceptance did not
+detect a bridge/fixture slot-base regression. The corrected exact admission
+requires renewed remote actual-data and regression acceptance.
+
 Status: **CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME**
 Date: 2026-10-05
 Scope: exact recovered25 positive enemy uses of `PETSKILL_2BattleTimid`.
@@ -169,3 +174,30 @@ The following remain OPEN and are not silently normalized:
 
 **RECOVERED25_2BATTLETIMID_ORDERED_RUNTIME_R1 =
 CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME.**
+
+## Exact admission slot-base correction — 2026-10-06
+
+**FACT:** the independently accepted recovered25 probe and derived report
+identify ID636 in source skill column **3**, for both TEMPNO178 and179.
+`Recovered25EnemyBaseTemplate.skill_slot_ids` retains all seven columns as a
+zero-based tuple. Consequently the runtime selected index must be **2**.
+The earlier table's source column4 and the bridge/test index3 were wrong;
+the original evidence record above is retained and explicitly superseded.
+
+| TEMPNO | Graphic | Source column (one-based) | Runtime index (zero-based) | ID |
+| --- | ---: | ---: | ---: | ---: |
+| 178 | 101872 | 3 | 2 | 636 |
+| 179 | 101873 | 3 | 2 | 636 |
+
+The bridge now rejects the shifted fourth column and duplicate positive
+placements. Typed submissions also require index2. Regression tests derive
+the index from the independent exact-data probe, and coordinator fixtures
+place the skill and AI weight in the real third column. The hash-verified
+BattleModel admission probe additionally checks both real ID636 templates
+under both explicit charset profiles.
+
+**OPEN:** renewed remote actual-data, dedicated runtime, coordinator, core,
+golden and full-region acceptance. This correction does not change the
+accepted conditional recall semantics, pet lifecycle or persistence schema.
+Historical pressure percentages above are not fresh certification of this
+repaired admission path.

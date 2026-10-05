@@ -11,6 +11,11 @@ This plan changes no executable admission or pressure classification.
 
 ## Concrete seams
 
+2026-10-06 implementation checkpoint: exact admission and pure target-plan
+bridge are locally tested; see `STONEAGE-BATTLEMODEL-ADMISSION-R1.md`.
+Source report column3 means runtime tuple index2. The dedicated ordered
+hit loop, persistent state and coordinator execution remain OPEN.
+
 | Seam | Planned change | Required boundary |
 | --- | --- | --- |
 | New enemy-AI BattleModel bridge | Validate all four callback rows; admit638 only on the two exact slot3 identities | Explicit charset; exact metadata and byte hashes; semantic command only |

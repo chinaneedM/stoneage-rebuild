@@ -712,3 +712,23 @@ reflect, positive reported damage, counter consumption/sentinel bypass and
 raw-threshold ultimate2 are accepted only within that contract. Full runtime,
 mounted composition, source pet-entry lookup, flag-to-exit behavior and
 original executable/profile membership remain **OPEN**.
+
+
+### 2026-10-06 — reconstructed runtime admission column correction
+
+**FACT (modern reconstruction defect, not a new original-game claim):** the
+independently accepted recovered25 2BattleTimid probe places ID636 on source
+skill column3 for templates178/179. The modern seven-slot runtime tuple is
+zero-based. The existing bridge and integration fixture index3, and the earlier
+runtime spec's column4 table, were inconsistent with that evidence. Regression
+witnesses reproduced both rejection of the actual placement and acceptance of
+the shifted placement. They are repaired to runtime index2; original erroneous
+records remain visible and are superseded by the dated spec correction.
+
+**IMPLEMENTED / OPEN:** the first BattleModel admission seam now derives slot
+indices from its independent exact probe, validates all four callback rows and
+the two exact positive templates, and preserves explicit conditional profiles.
+Synthetic local fixture tests pass. Newly extended verified-data and existing
+runtime regression Actions must pass before acceptance. No ordered BattleModel
+execution, new historical build profile or additional covered slots are claimed.
+See `SRC-RUNTIME-ADMISSION-SLOT-BASE-20261006`.

@@ -7148,14 +7148,14 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                         tempno=178,
                         graphic_id=101872,
                         skill_slots=7,
-                        skill_ids=(10,20,30,636,50,60,70),
-                        skill_slot_ids=(10,20,30,636,50,60,70),
+                        skill_ids=(10,20,636,30,50,60,70),
+                        skill_slot_ids=(10,20,636,30,50,60,70),
                     ),
                     variant=replace(
                         spawned.variant,
                         tactics_option=(
                             "at:0;1;1|gu:0|es:0|"
-                            "wa:0;0;0;1;0;0;0"
+                            "wa:0;0;1;0;0;0;0"
                         ),
                     ),
                 ),),

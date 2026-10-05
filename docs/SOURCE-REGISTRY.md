@@ -3506,3 +3506,23 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
  tree1cb9731ed51d82c58e1e8da753afcddbc0d78af1.1920 native calls reproduced.
  The earlier remote-pending entry is superseded; all reduced-profile/stub/no-ride
  and full runtime exclusions remain. Contract CLOSED_BOUNDED_NO_RIDE_NATIVE_SETTLEMENT.
+
+
+### SRC-RUNTIME-ADMISSION-SLOT-BASE-20261006
+
+- Kind: independently accepted recovered25 derived-data schema plus modern
+  reconstruction regression; not an original-client historical source.
+- Evidence: `tools/stoneage_recovered25_2battletimid_probe.py` exact rows and
+  `research/recovered/STONEAGE-25-2BATTLETIMID-PROBE-R1.txt`; enemybase loader's
+  seven-column tuple; corrected `tools/stoneage_enemy_ai_2battletimid_bridge.py`
+  and two regression tests derived from the independent report indices.
+- FACT: ID636 templates178/179 source column3 maps to runtime index2. Existing
+  runtime/spec fixture column4 is erroneous and superseded, with history retained.
+- BattleModel evidence: accepted four-row/template probe and report, strict
+  bridge and `specs/STONEAGE-BATTLEMODEL-ADMISSION-R1.md`. Its verified-data
+  admission probe checks global positive placements and two current-power
+  witnesses across explicit descendant/charset profiles, plus corrected636.
+- Local140 related and279 core/golden tests PASS; actual-data/regression remote
+  acceptance pending publication. No new raw OPTION or proprietary assets are
+  added by this milestone. Pure target-plan validation is not ordered runtime
+  execution and does not certify original charset/build/JSS membership.

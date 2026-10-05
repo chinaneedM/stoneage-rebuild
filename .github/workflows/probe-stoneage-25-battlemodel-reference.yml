@@ -11,6 +11,11 @@ on:
       - ".github/workflows/probe-stoneage-25-battlemodel-reference.yml"
       - "tools/stoneage_recovered25_battlemodel_probe.py"
       - "tests/test_stoneage_recovered25_battlemodel_probe.py"
+      - "tools/stoneage_enemy_ai_battlemodel_bridge.py"
+      - "tools/stoneage_recovered25_battlemodel_admission_probe.py"
+      - "tests/test_stoneage_battlemodel_admission.py"
+      - "tests/test_stoneage_recovered25_battlemodel_admission_probe.py"
+      - "tools/stoneage_enemy_ai_2battletimid_bridge.py"
 
 permissions:
   contents: write
@@ -27,7 +32,9 @@ jobs:
       - name: Validate BattleModel exact-pin logic
         run: |
           python -m unittest -v \
-            tests.test_stoneage_recovered25_battlemodel_probe
+            tests.test_stoneage_recovered25_battlemodel_probe \
+            tests.test_stoneage_battlemodel_admission \
+            tests.test_stoneage_recovered25_battlemodel_admission_probe
       - run: sudo apt-get update && sudo apt-get install -y unar
       - name: Recover verified preservation bundle
         run: |
@@ -118,15 +125,31 @@ jobs:
             research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_BATTLEMODEL_EXACT_IDENTITY_ACCEPTED' \
             research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
+      - name: Verify actual BattleModel admission and corrected 2BattleTimid slots
+        run: |
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
+          test -n "$D"; test -n "$C"
+          python -m tools.stoneage_recovered25_battlemodel_admission_probe \
+            --data-dir "$D" --setup "$C" \
+            > research/recovered/STONEAGE-25-BATTLEMODEL-ADMISSION-R1.txt
+          cat research/recovered/STONEAGE-25-BATTLEMODEL-ADMISSION-R1.txt
+          grep -F 'COUNT|battlemodel_conditional_admissions=24' \
+            research/recovered/STONEAGE-25-BATTLEMODEL-ADMISSION-R1.txt
+          grep -F 'COUNT|2battletimid_corrected_admissions=4' \
+            research/recovered/STONEAGE-25-BATTLEMODEL-ADMISSION-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_BATTLEMODEL_ADMISSION_AND_2BATTLETIMID_SLOT_BASE_PASS' \
+            research/recovered/STONEAGE-25-BATTLEMODEL-ADMISSION-R1.txt
       - name: Commit exact derived report
         run: |
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
           git add research/recovered/STONEAGE-25-BATTLEMODEL-PROBE-R1.txt
+          git add research/recovered/STONEAGE-25-BATTLEMODEL-ADMISSION-R1.txt
           if git diff --cached --quiet; then
             echo 'BattleModel exact report unchanged.'
             exit 0
           fi
-          git commit -m 'research: pin recovered25 BattleModel exact identity'
+          git commit -m 'research: verify BattleModel admission and corrected 2BattleTimid slots'
           git pull --rebase origin "$GITHUB_REF_NAME"
           git push origin "HEAD:$GITHUB_REF_NAME"

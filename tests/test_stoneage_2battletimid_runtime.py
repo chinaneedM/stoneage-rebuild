@@ -1,4 +1,5 @@
 import unittest
+from types import SimpleNamespace
 
 from tools.stoneage_2battletimid_reference_model import (
     PROFILE_BIG5,
@@ -20,7 +21,12 @@ from tools.stoneage_battle_state_model import (
 )
 from tools.stoneage_enemy_ai_2battletimid_bridge import (
     EnemyAiTwoBattleTimidSubmission,
+    resolve_enemy_ai_2battletimid_submission,
 )
+from tools.stoneage_recovered25_petskill_runtime import (
+    Recovered25PetSkillEntry, Recovered25PetSkillRuntime,
+)
+from tools.stoneage_recovered25_2battletimid_probe import EXPECTED_TEMPLATE_ROWS
 from tools.stoneage_singleplayer_battle import BattleParticipant, BattleSession
 from tools.stoneage_singleplayer_domain import (
     EncounterRequest,
@@ -122,7 +128,7 @@ def submission(
     )
     return EnemyAiTwoBattleTimidSubmission(
         participant_id=participant_id,
-        skill_slot=3,
+        skill_slot=2,
         skill_id=636,
         callback="PETSKILL_2BattleTimid",
         source_target_slot=target_slot,
@@ -133,6 +139,41 @@ def submission(
 
 
 class TwoBattleTimidRuntimeTests(unittest.TestCase):
+    def bridge(self, tempno, graphic, slots, selected):
+        runtime=Recovered25PetSkillRuntime(
+            skills={636:Recovered25PetSkillEntry(
+                636,1,7,2,10000,"PETSKILL_2BattleTimid",RAW_OPTION,
+            )},source_file="existing controlled test fixture",
+        )
+        spawned=SimpleNamespace(
+            participant=actor("enemy","enemy","enemy"),
+            template=SimpleNamespace(
+                tempno=tempno,graphic_id=graphic,skill_slot_ids=slots,
+            ),
+        )
+        return resolve_enemy_ai_2battletimid_submission(
+            spawned,skill_slot=selected,target_slot=5,petskill_runtime=runtime,
+            profile=PROFILE_BIG5,fixed_strength=200,fixed_toughness=0,fixed_dex=100,
+        )
+
+    def test_bridge_uses_zero_based_index_for_independently_pinned_report_slot(self):
+        for tempno,graphic,report_slots,ids in EXPECTED_TEMPLATE_ROWS:
+            selected=report_slots[0]-1
+            slots=[0]*7
+            slots[selected]=ids[0]
+            with self.subTest(tempno=tempno):
+                item=self.bridge(tempno,graphic,tuple(slots),selected)
+                self.assertEqual(item.skill_slot,2)
+                self.assertEqual(item.skill_id,636)
+
+    def test_bridge_rejects_shifted_fourth_slot_and_duplicate_positive_use(self):
+        for slots,selected in (
+            ((0,0,0,636,0,0,0),3),
+            ((0,0,636,636,0,0,0),2),
+        ):
+            with self.subTest(slots=slots),self.assertRaises(ValueError):
+                self.bridge(178,101872,slots,selected)
+
     def make_state(self,*,noreturn=False,pet_slot=5,with_second_enemy=False):
         player=actor(
             "player","player","player",

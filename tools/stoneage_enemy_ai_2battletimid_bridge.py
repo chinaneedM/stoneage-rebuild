@@ -34,8 +34,9 @@ EXPECTED_OPTION_SHA256=(
     "8e6b5dd952bf3bc81e522f1df382db48473b1aeec13f9ff08c7bb76d2c06f9e5"
 )
 EXPECTED_POSITIVE_TEMPLATE_SLOTS={
-    178:(101872,{3:636}),
-    179:(101873,{3:636}),
+    # Recovered reports number skill columns from1; runtime tuples use0..6.
+    178:(101872,{2:636}),
+    179:(101873,{2:636}),
 }
 EXECUTION_PROFILES=frozenset({PROFILE_UTF8,PROFILE_BIG5})
 
@@ -63,8 +64,8 @@ class EnemyAiTwoBattleTimidSubmission:
             raise ValueError("2BattleTimid participant id must be non-empty")
         if skill_id != 636:
             raise ValueError("2BattleTimid runtime admits only recovered ID636")
-        if not 0 <= skill_slot < 7:
-            raise ValueError("2BattleTimid skill slot must be in 0..6")
+        if skill_slot != 2:
+            raise ValueError("2BattleTimid admits only runtime index2 (report slot3)")
         if self.callback != CALLBACK_NAME:
             raise ValueError("2BattleTimid callback drift")
         if not 0 <= target < 10:
@@ -188,6 +189,8 @@ def resolve_enemy_ai_2battletimid_submission(
         raise ValueError(
             "enemy template lacks authoritative seven-slot pet-skill identity"
         )
+    if {index:value for index,value in enumerate(slots) if value==636} != allowed:
+        raise ValueError("2BattleTimid recovered positive slot population drift")
     if skill_slot not in allowed or slots[skill_slot] != allowed[skill_slot]:
         raise ValueError("selected slot is not an exact positive 2BattleTimid use")
 
