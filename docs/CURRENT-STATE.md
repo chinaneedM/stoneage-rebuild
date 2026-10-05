@@ -6488,3 +6488,18 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   bounded reference and state-audit contracts. Then freshly verify main,
   nonforce fast-forward the accepted reference, verify main Actions and create
   a fresh BattleModel runtime branch. Continue WORK under DD-018.
+
+
+### Exact replacement acceptance handoff — 2026-10-06 00:41 CST
+
+- Remote repair commit: `4131a23ce12b4d03e367456f4135988e8e5121b9`.
+- Exact repair tree: `b6b5d2bb8bb04f7c5ed8aa34018573af9ea7e95a`;
+  remote/local tree equality and clean local checkout verified.
+- Replacement recovered25 exact-data Action **37342593141**: queued.
+- Replacement three-profile source/native Action **37342593073**: queued.
+- These are the two runs to inspect first on the next continuation. Queue
+  state is not PASS. A source-audit report is saved from local pinned-source
+  reproduction; remote source/native acceptance remains pending.
+- Expanded adjacent check: **39 local tests PASS**, including BatFly probe
+  and reference regression. The BattleModel-specific subset has24 tests.
+- No accepted runtime coverage change and no main fast-forward yet.
