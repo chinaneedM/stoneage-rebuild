@@ -6,6 +6,7 @@ from tools.stoneage_recovered25_petskill_runtime import (
     Recovered25PetSkillEntry,
 )
 from tools.stoneage_recovered25_vary_probe import (
+    _c_float_after,
     analyze_runtime_objects,
 )
 
@@ -70,6 +71,14 @@ class Recovered25VaryProbeTests(unittest.TestCase):
         )
         self.assertEqual(result["slot_references"],5)
         self.assertFalse(result["population_closed"])
+
+    def test_c_float_prefix_parser_matches_sscanf_style_prefix(self):
+        marker="攻%".encode("cp950")
+        self.assertEqual(_c_float_after(marker+b"  +25.5tail",marker),25.5)
+        self.assertEqual(_c_float_after(marker+b"-7e1|",marker),-70.0)
+        self.assertIsNone(_c_float_after(marker+b"abc",marker))
+        self.assertIsNone(_c_float_after(b"other",marker))
+
 
 
 if __name__=="__main__":
