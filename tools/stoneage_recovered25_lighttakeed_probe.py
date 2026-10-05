@@ -1,4 +1,4 @@
-"""Derived-only first-pass Lighttakeed population/data probe for recovered25."""
+"""Derived-only exact Lighttakeed population/data probe for recovered25."""
 
 from __future__ import annotations
 
@@ -17,13 +17,40 @@ CALLBACK_NAME = "PETSKILL_Lighttakeed"
 EXPECTED_PETSKILL_SHA256 = (
     "f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4"
 )
-EXPECTED_CALLBACK_IDS = (610, 611)
+EXPECTED_CALLBACK_IDS = (609, 610, 611)
 EXPECTED_REFERENCED_IDS = (610, 611)
 EXPECTED_SLOT_REFERENCES = 3
 EXPECTED_TEMPLATES = 2
+EXPECTED_EXACT_ROWS = (
+    (
+        609, 1, 7, 2, 5000, 0, 6,
+        "28e420f6e618020e7fdba9f49433a94c5f88cbd6edba2d521104f880b416c5e7",
+        False, False, True, False,
+    ),
+    (
+        610, 1, 7, 2, 5000, 2, 6,
+        "73bef6383b8b2e301ef6860a573f7b7d703c651aa3e90df3e1efe6f1b28fce01",
+        False, False, False, True,
+    ),
+    (
+        611, 1, 7, 2, 5000, 1, 6,
+        "a715b2ee62e500775e7eca86facd327f5cdc6501f4064dd322f8fc6e1ddbf96b",
+        False, True, False, False,
+    ),
+)
+EXPECTED_TEMPLATE_ROWS = (
+    (70, 101550, (4,), (610,)),
+    (157, 101283, (4, 5), (610, 611)),
+)
 
 
-def analyze_runtime_objects(petskills, enemybase):
+def analyze_runtime_objects(
+    petskills,
+    enemybase,
+    *,
+    expected_exact_rows=EXPECTED_EXACT_ROWS,
+    expected_template_rows=EXPECTED_TEMPLATE_ROWS,
+):
     entries = tuple(sorted(
         (
             entry for entry in petskills.skills.values()
@@ -72,23 +99,42 @@ def analyze_runtime_objects(petskills, enemybase):
 
     ids = tuple(row["id"] for row in rows)
     referenced = tuple(sorted(k for k, value in counts.items() if value))
+    actual_rows = tuple(
+        (
+            row["id"], row["field"], row["target"], row["cost"], row["illegal"],
+            row["slot_references"], row["option_bytes"], row["option_sha256"],
+            row["option_contains_nul"], row["marker_vanish"],
+            row["marker_absrob"], row["marker_reflec"],
+        )
+        for row in rows
+    )
+    actual_templates = tuple(
+        (
+            row["tempno"], row["graphic_id"],
+            row["skill_slots"], row["skill_ids"],
+        )
+        for row in templates
+    )
+    population_closed = (
+        ids == EXPECTED_CALLBACK_IDS
+        and referenced == EXPECTED_REFERENCED_IDS
+        and sum(counts.values()) == EXPECTED_SLOT_REFERENCES
+        and len(templates) == EXPECTED_TEMPLATES
+    )
     return {
         "rows": tuple(rows),
         "callback_ids": ids,
         "referenced_ids": referenced,
         "slot_references": sum(counts.values()),
         "templates": tuple(templates),
-        "population_closed": (
-            ids == EXPECTED_CALLBACK_IDS
-            and referenced == EXPECTED_REFERENCED_IDS
-            and sum(counts.values()) == EXPECTED_SLOT_REFERENCES
-            and len(templates) == EXPECTED_TEMPLATES
-        ),
+        "population_closed": population_closed,
+        "exact_rows_closed": actual_rows == expected_exact_rows,
+        "exact_templates_closed": actual_templates == expected_template_rows,
     }
 
 
 def emit(result):
-    print("StoneAge recovered25 PETSKILL_Lighttakeed probe — R1 first pass")
+    print("StoneAge recovered25 PETSKILL_Lighttakeed probe — R1")
     print("No names/descriptions/raw OPTION bytes/assets stored.")
     print(f"COUNT|lighttakeed_skill_rows|{len(result['rows'])}")
     print(f"COUNT|enemybase_slot_references|{result['slot_references']}")
@@ -110,8 +156,14 @@ def emit(result):
         "RESOLUTION|RECOVERED25_LIGHTTAKEED_POPULATION_"
         + ("CLOSED" if result["population_closed"] else "OPEN")
     )
-    print("RESOLUTION|RECOVERED25_LIGHTTAKEED_EXACT_ROWS_OPEN")
-    print("RESOLUTION|RECOVERED25_LIGHTTAKEED_EXACT_TEMPLATES_OPEN")
+    print(
+        "RESOLUTION|RECOVERED25_LIGHTTAKEED_EXACT_ROWS_"
+        + ("CLOSED" if result["exact_rows_closed"] else "OPEN")
+    )
+    print(
+        "RESOLUTION|RECOVERED25_LIGHTTAKEED_EXACT_TEMPLATES_"
+        + ("CLOSED" if result["exact_templates_closed"] else "OPEN")
+    )
 
 
 def main():
@@ -135,6 +187,10 @@ def main():
     print("DATA_SHA256|file=petskill|sha256=" + digest)
     if not result["population_closed"]:
         raise SystemExit("Lighttakeed callback/reference population drift")
+    if not result["exact_rows_closed"]:
+        raise SystemExit("Lighttakeed exact row drift")
+    if not result["exact_templates_closed"]:
+        raise SystemExit("Lighttakeed exact template/slot drift")
 
 
 if __name__ == "__main__":
