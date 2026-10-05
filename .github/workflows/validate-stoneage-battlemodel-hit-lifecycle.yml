@@ -1,0 +1,61 @@
+name: Validate StoneAge BattleModel hit helper lifecycle
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-battlemodel-hit-lifecycle.yml"
+      - "tools/stoneage_battlemodel_hit_lifecycle_source_audit.py"
+      - "specs/STONEAGE-BATTLEMODEL-HIT-LIFECYCLE-AUDIT-R1.md"
+
+concurrency:
+  group: stoneage-battlemodel-hit-lifecycle-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Recover pinned source profiles
+        run: |
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_guard_break2_source_audit import PINNED
+          repositories={
+              "gavin":"gavinlinasd/StoneAge",
+              "iris":"iriselia/StoneAge",
+              "bismarck":"BismarckDD/stoneage",
+          }
+          for name,repo in repositories.items():
+              root=Path("/tmp/battlemodel-hit")/name
+              root.mkdir(parents=True,exist_ok=True)
+              subprocess.run(["git","init",str(root)],check=True)
+              subprocess.run(["git","-C",str(root),"fetch","--depth","1",
+                  "https://github.com/"+repo+".git",PINNED[name]],check=True)
+              subprocess.run(["git","-C",str(root),"checkout","--detach",
+                  "FETCH_HEAD"],check=True)
+          PY
+      - name: Audit bounded native hit-helper lifecycle
+        run: |
+          python -m tools.stoneage_battlemodel_hit_lifecycle_source_audit \
+            --gavin-dir /tmp/battlemodel-hit/gavin \
+            --iris-dir /tmp/battlemodel-hit/iris \
+            --bismarck-dir /tmp/battlemodel-hit/bismarck \
+            > /tmp/battlemodel-hit-lifecycle.txt
+          cat /tmp/battlemodel-hit-lifecycle.txt
+          test "$(grep -c 'native_cases=432' /tmp/battlemodel-hit-lifecycle.txt)" = 3
+          grep -F 'RESOLUTION|BATTLEMODEL_HIT_HELPER_LIFECYCLE_LOCAL_NATIVE_PASS' \
+            /tmp/battlemodel-hit-lifecycle.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: battlemodel-hit-lifecycle
+          path: /tmp/battlemodel-hit-lifecycle.txt

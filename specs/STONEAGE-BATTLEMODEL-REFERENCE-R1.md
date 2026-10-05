@@ -164,3 +164,17 @@ dropping the callback row. Local evidence: 24 tests PASS; all three pinned
 source audits PASS, 200 native target-plan vectors per profile (600 total).
 This local evidence does not replace hash-verified recovered25 remote
 acceptance. Reference and runtime-state statuses remain pending.
+
+## 2026-10-06 supplementary hit-helper audit
+
+Native helper branch/call-order witnesses now cover432 cases per pinned
+profile,1296 total. They refine the earlier positive-damage wake statement:
+ABSORB/VANISH suppress wakeup, while a surviving positive reported-damage
+status check is not independently suppressed by those reaction identities.
+Nonphysical hits keep the original actual defender but can retain a Guardian
+candidate in notification fields. DODGE can leave the source pet-damage
+presentation value uninitialised; historical bytes for that field remain OPEN.
+
+Contract: `specs/STONEAGE-BATTLEMODEL-HIT-LIFECYCLE-AUDIT-R1.md`. This
+stubbed-helper audit does not certify common damage/status arithmetic or
+replace the pending exact-data/source remote gates.

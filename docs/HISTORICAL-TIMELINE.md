@@ -663,3 +663,15 @@ visual similarity or a successful modern decoder.
 
 **OPEN:** hash-verified recovered25 OPTION/status identity and replacement
 remote source/native acceptance remain pending; runtime is not promoted.
+
+
+### 2026-10-06 — BattleModel hit-helper boundary refinement
+
+**FACT (fixed descendant helper):** absorb/vanish explicitly suppress damage
+wakeup but do not independently suppress the surviving positive-damage status
+check. A nonphysical hit can retain a Guardian notification witness while the
+original target remains the actual defender.
+[`SRC-BATTLEMODEL-HIT-LIFECYCLE-R1`]
+
+**OPEN (source defect):** the DODGE path can reach presentation formatting
+with an uninitialised pet-damage value. Exact original bytes are not accepted.

@@ -3438,3 +3438,17 @@ Main integration `d44e873a380208d192f458659cfcffb0e2d0763c` passes all 24 affect
   target-plan vectors. Remote replacement acceptance remains pending.
 - Does not support: original recovered25 compiler/source-table identity,
   JSS/Taiwan-v1 membership or BattleModel runtime completion.
+
+
+### SRC-BATTLEMODEL-HIT-LIFECYCLE-R1 — 2026-10-06
+
+- Type: transient native extraction of `BATTLE_BattleModel_ATTACK` from the
+  same three pinned descendant commits as SRC-BATTLEMODEL-STATUS-PROFILES-R1.
+- Reproduction: `tools/stoneage_battlemodel_hit_lifecycle_source_audit.py`.
+  Local432 controlled helper vectors per profile,1296 total, PASS.
+- Supports: actual-defender versus notification-Guardian distinctions;
+  conditional DamageSub/wakeup/status call ordering; marker restoration;
+  source DODGE pet-damage presentation initialisation gap.
+- Does not support: complete common combat arithmetic, original executable
+  membership, exact presentation bytes, or production runtime closure.
+- Full boundaries: `specs/STONEAGE-BATTLEMODEL-HIT-LIFECYCLE-AUDIT-R1.md`.

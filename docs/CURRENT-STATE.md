@@ -6503,3 +6503,34 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Expanded adjacent check: **39 local tests PASS**, including BatFly probe
   and reference regression. The BattleModel-specific subset has24 tests.
 - No accepted runtime coverage change and no main fast-forward yet.
+
+
+## Phase 1 BattleModel supplementary hit-helper audit — 2026-10-06
+
+- Fresh remote main remains `d2b309c750049c1585543b4f76514cf8eca19826`;
+  the remote reference-repair checkpoint was
+  `47c9ee3316c9cdf93510f5eb375043dbc5f546ab`. The two exact repair gates
+  **37342593141 /37342593073** remain runner-queued, not PASS.
+- Continued independent source auditing without runtime coding or replacing
+  the pending gates. Three pinned native helper audits pass432 controlled
+  branch/call-order vectors each, **1296 total**. Shared AttackSeq/DamageSub
+  and status arithmetic are stubs and are explicitly not re-certified.
+- Confirmed physical authoritative Guardian routing versus nonphysical
+  notification-Guardian retention; ABSORB/VANISH wakeup suppression versus
+  separately reached surviving-positive-damage status checks; defender marker
+  restoration and MISS/DODGE ordering.
+- Recorded an additional source hazard: DODGE can leave pet-damage presentation
+  uninitialised. The native harness suppresses presentation argument evaluation
+  to avoid reading undefined data. No exact historical presentation value or
+  runtime slot is promoted.
+- Added a separate read-only supplementary CI workflow,
+  `validate-stoneage-battlemodel-hit-lifecycle.yml`; its concurrency group
+  does not cancel either original reference gate. Local24 BattleModel tests
+  still PASS. Contract:
+  `specs/STONEAGE-BATTLEMODEL-HIT-LIFECYCLE-AUDIT-R1.md`.
+- **Highest-priority unfinished task:** inspect the two existing exact-data
+  and source/native acceptance gates and the supplemental helper audit. Keep
+  queued results OPEN; after successful reports, reconcile source/charset
+  witnesses, close only bounded reference/state contracts, freshly verify and
+  fast-forward main, then start a fresh runtime branch. Accepted executable
+  coverage remains2461/2486=98.99%; this is not whole-project completion.
