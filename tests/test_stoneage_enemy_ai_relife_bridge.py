@@ -28,13 +28,17 @@ def runtime(*,field=1,target=2,cost=2,illegal=0,option=b""):
     )
 
 
-def spawned(tempno=39,slot=4):
+def spawned(tempno=39,slot=4,graphic_id=None):
     ids=[0]*7
     ids[slot]=500
+    graphics={39:100370,909:100071,1165:101814}
+    if graphic_id is None:
+        graphic_id=graphics.get(tempno,999999)
     return SimpleNamespace(
         participant=SimpleNamespace(participant_id="enemy:relife"),
         template=SimpleNamespace(
             tempno=tempno,
+            graphic_id=graphic_id,
             skill_slot_ids=tuple(ids),
         ),
     )
@@ -80,6 +84,15 @@ class EnemyAiReLifeBridgeTests(unittest.TestCase):
             resolve_enemy_ai_relife_submission(
                 spawned(39,0),
                 skill_slot=0,
+                target_slot=0,
+                petskill_runtime=runtime(),
+            )
+
+    def test_graphic_identity_drift_fails_closed(self):
+        with self.assertRaisesRegex(ValueError,"graphic identity drift"):
+            resolve_enemy_ai_relife_submission(
+                spawned(graphic_id=123),
+                skill_slot=4,
                 target_slot=0,
                 petskill_runtime=runtime(),
             )
