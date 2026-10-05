@@ -5263,6 +5263,7 @@ def resolve_ordinary_round(
                 | refresh_active_command_ids
                 | setmagicpet_active_command_ids
                 | battletimid_active_command_ids
+                | combined_active_command_ids
             ),
             counter_rolls=normalized_counter_rolls.get(
                 str(main_actor_id),()
@@ -5399,6 +5400,7 @@ def resolve_ordinary_round(
                 refresh_active_command_ids.discard(str(participant_id))
                 setmagicpet_active_command_ids.discard(str(participant_id))
                 battletimid_active_command_ids.discard(str(participant_id))
+                combined_active_command_ids.discard(str(participant_id))
             hp_by_slot[slot]=int(tick.hp_after)
             hp_by_id[str(participant_id)]=int(tick.hp_after)
             runtime=replace(
