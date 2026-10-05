@@ -69,7 +69,7 @@ class CombinedInitiativeTests(unittest.TestCase):
         ):
             resolve_combined_initiative(
                 profile=PROFILE_GAVIN_IRIS_30PCT,
-                work_quick=-21,
+                work_quick=-24,
                 random_subtract=0,
             )
 
