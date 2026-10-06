@@ -423,7 +423,7 @@ class OrdinaryBattleModelTests(unittest.TestCase):
         loop=self.loop(result.round)
         damaged=[
             event for event in loop.events
-            if event.actual_defender_slot is not None and event.damage_applied > 0
+            if event.actual_defender_slot is not None and event.hp_loss > 0
         ]
         self.assertEqual(
             [event.actual_defender_slot for event in damaged],
