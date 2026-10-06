@@ -304,7 +304,13 @@ class OrdinaryBattleModelTests(unittest.TestCase):
     def test_lethal638_persistent_player_ultimate_exits_at_command_tail(self):
         self.actors[0]=replace(self.actors[0],hp=10,max_hp=10)
         state=self.persistent()
-        action=self.action(scope=BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1)
+        lethal_draws=(
+            BattleModelDraw(0,"attackseq_dodge",10000),
+            BattleModelDraw(0,"attackseq_critical",10000),
+            BattleModelDraw(0,"attackseq_damage",2),
+            *(BattleModelDraw(i,"target_selection",0) for i in range(1,4)),
+        )
+        action=self.action(lethal_draws,scope=BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1)
         result=self.state_round(state,action)
         self.assertEqual(state.hp_by_participant_id["target"],10)
         self.assertEqual(result.after.hp_by_participant_id["target"],1)
@@ -329,7 +335,13 @@ class OrdinaryBattleModelTests(unittest.TestCase):
     def test_lethal638_coordinator_player_ultimate_replays_current_identity(self):
         self.actors[0]=replace(self.actors[0],hp=10,max_hp=10)
         context=self.context()
-        action=self.action(scope=BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1)
+        lethal_draws=(
+            BattleModelDraw(0,"attackseq_dodge",10000),
+            BattleModelDraw(0,"attackseq_critical",10000),
+            BattleModelDraw(0,"attackseq_damage",2),
+            *(BattleModelDraw(i,"target_selection",0) for i in range(1,4)),
+        )
+        action=self.action(lethal_draws,scope=BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1)
         after,result=self.coordinator_round(context,action)
         self.assertEqual(context.persistent_battle_state.hp_by_participant_id["target"],10)
         self.assertEqual(after.persistent_battle_state.hp_by_participant_id["target"],1)
