@@ -122,7 +122,10 @@ class OrdinaryBattleModelTests(unittest.TestCase):
         coordinator=LocalRuntimeSessionCoordinator(SimpleNamespace(petskill_runtime=self.runtime if runtime is None else runtime),None)
         return coordinator.resolve_persistent_attack_wait_round(context,
             commands=self.commands,initiative_random_subtracts={"target":0,"enemy":0},
-            profiles={pid:BattleCombatProfile(100,0,0,0,0,0) for pid in ("target","enemy")},
+            profiles={
+                p.participant_id:BattleCombatProfile(100,0,0,0,0,0)
+                for p in self.actors.values()
+            },
             attack_rolls={},defense_profile="newpower_70pct",
             battlemodel_actions_by_participant_id={"enemy":action})
 
@@ -355,6 +358,135 @@ class OrdinaryBattleModelTests(unittest.TestCase):
         )
         self.assertEqual(dict(boundary.ultimate_kind_by_slot),{0:2})
         self.assertEqual(after.persistent_state_payload,context.persistent_state_payload)
+
+    def test_lethal638_guardian_pet_hit_first_but_owner_exit_scans_first(self):
+        self.actors[0]=replace(self.actors[0],hp=10,max_hp=10)
+        self.actors[5]=replace(
+            self.actors[0],
+            participant_id="guardian",
+            kind="pet",
+            source_pet_slot=0,
+        )
+        self.commands["guardian"]=BattleCommand(BATTLE_COM_WAIT)
+        self.status["guardian"]=BaseBattleStatusRuntime(work_quick=40)
+        self.resistances[5]=0
+        self.guardians={0:GuardianRegistration(5)}
+        state=begin_persistent_battle(
+            session(self.actors[0],(self.actors[10],),(self.actors[5],)),
+            slots={"target":0,"guardian":5,"enemy":10},
+            default_pet_slot=0,
+            base_status_runtime_by_participant_id=self.status,
+        )
+        draws=(
+            BattleModelDraw(0,"attackseq_dodge",10000),
+            BattleModelDraw(0,"attackseq_critical",10000),
+            BattleModelDraw(0,"attackseq_damage",2),
+            BattleModelDraw(2,"target_selection",0),
+            BattleModelDraw(2,"attackseq_dodge",10000),
+            BattleModelDraw(2,"attackseq_critical",10000),
+            BattleModelDraw(2,"attackseq_damage",2),
+            BattleModelDraw(3,"target_selection",0),
+        )
+        action=replace(
+            self.action(draws,scope=BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1),
+            opposing_slot_order=(0,5),
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands=self.commands,
+            initiative_random_subtracts={
+                p.participant_id:0 for p in self.actors.values()
+            },
+            profiles={
+                p.participant_id:BattleCombatProfile(100,0,0,0,0,0)
+                for p in self.actors.values()
+            },
+            attack_rolls={},
+            defense_profile="newpower_70pct",
+            command_setup_effects_by_participant_id={
+                "enemy":BattleCommandSetupEffects(
+                    attack_power=action.submission.setup.powers[0]
+                )
+            },
+            guardian_registrations_by_defender_slot=self.guardians,
+            battlemodel_actions_by_participant_id={"enemy":action},
+        )
+        loop=self.loop(result.round)
+        damaged=[
+            event for event in loop.events
+            if event.actual_defender_slot is not None and event.damage_applied > 0
+        ]
+        self.assertEqual(
+            [event.actual_defender_slot for event in damaged],
+            [5,0],
+        )
+        boundary=next(
+            boundary for boundary in result.round.profit_boundaries
+            if boundary.boundary_kind == PROFIT_BOUNDARY_BATTLEMODEL_COMMAND_TAIL
+        )
+        self.assertEqual(boundary.hp_by_slot[0],0)
+        self.assertEqual(boundary.hp_by_slot[5],0)
+        self.assertEqual(dict(boundary.ultimate_kind_by_slot),{0:2,5:2})
+        # Damage occurred pet5 -> owner0, but source AddProfit scans slot0 first.
+        # Player Exit therefore owns the pet cleanup before slot5 can perform a
+        # separate pet-ultimate selection clear.
+        self.assertEqual(
+            result.round.ultimate_exited_participant_ids,
+            ("target","guardian"),
+        )
+        self.assertEqual(result.after.default_pet_slot,0)
+        self.assertEqual(result.after.hp_by_participant_id["target"],1)
+        self.assertEqual(result.after.hp_by_participant_id["guardian"],1)
+        self.assertNotIn("target",result.after.profit_processed_death_ids)
+        self.assertNotIn("guardian",result.after.profit_processed_death_ids)
+
+    def test_lethal638_guardian_owner_first_exit_replays_through_coordinator(self):
+        self.actors[0]=replace(self.actors[0],hp=10,max_hp=10)
+        self.actors[5]=replace(
+            self.actors[0],
+            participant_id="guardian",
+            kind="pet",
+            source_pet_slot=0,
+        )
+        self.commands["guardian"]=BattleCommand(BATTLE_COM_WAIT)
+        self.status["guardian"]=BaseBattleStatusRuntime(work_quick=40)
+        self.resistances[5]=0
+        self.guardians={0:GuardianRegistration(5)}
+        state=begin_persistent_battle(
+            session(self.actors[0],(self.actors[10],),(self.actors[5],)),
+            slots={"target":0,"guardian":5,"enemy":10},
+            default_pet_slot=0,
+            base_status_runtime_by_participant_id=self.status,
+        )
+        context=LocalRuntimeBattleContext(
+            "control-contract","control-world",1,
+            state.session.origin_position,frozenset(),
+            "control-payload",state.session,(spawned(),),state,
+        )
+        draws=(
+            BattleModelDraw(0,"attackseq_dodge",10000),
+            BattleModelDraw(0,"attackseq_critical",10000),
+            BattleModelDraw(0,"attackseq_damage",2),
+            BattleModelDraw(2,"target_selection",0),
+            BattleModelDraw(2,"attackseq_dodge",10000),
+            BattleModelDraw(2,"attackseq_critical",10000),
+            BattleModelDraw(2,"attackseq_damage",2),
+            BattleModelDraw(3,"target_selection",0),
+        )
+        action=replace(
+            self.action(draws,scope=BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1),
+            opposing_slot_order=(0,5),
+        )
+        after,result=self.coordinator_round(context,action)
+        self.assertEqual(
+            result.round.ultimate_exited_participant_ids,
+            ("target","guardian"),
+        )
+        self.assertEqual(after.persistent_battle_state.default_pet_slot,0)
+        self.assertEqual(after.persistent_battle_state.hp_by_participant_id["target"],1)
+        self.assertEqual(after.persistent_battle_state.hp_by_participant_id["guardian"],1)
+        self.assertEqual(context.persistent_battle_state.hp_by_participant_id["target"],10)
+        self.assertEqual(context.persistent_battle_state.hp_by_participant_id["guardian"],10)
 
     def test_success_cancels_later_prepared_attack_in_actual_same_round(self):
         result = self.run_round()
