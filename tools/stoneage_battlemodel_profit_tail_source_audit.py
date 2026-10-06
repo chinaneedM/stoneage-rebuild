@@ -38,6 +38,11 @@ from tools.stoneage_profit_exit_scan_model import (
 
 
 COMMAND="BATTLE_COM_S_BATTLE_MODEL"
+BATTLE_FLAG_MACROS=(
+    "CHAR_BATTLEFLG_GUARDIAN",
+    "CHAR_BATTLEFLG_ABIO",
+    "CHAR_BATTLEFLG_NODUCK",
+)
 
 
 @dataclass(frozen=True)
@@ -65,7 +70,7 @@ def _macro_profile(headers: str) -> dict[str,str]:
         input=headers,capture_output=True,text=True,check=True,
     ).stdout
     result={}
-    for name in SOURCE_MACROS:
+    for name in (*SOURCE_MACROS,*BATTLE_FLAG_MACROS):
         found=re.findall(r"^\s*#\s*define\s+"+name+r"\b[^\n]*",pre,re.M)
         if len(found)!=1:
             raise ValueError("ambiguous original header macro: "+name)
@@ -172,6 +177,7 @@ def _source(name: str, root: Path):
         "CH_FIX_PLAYERDEAD","CH_FIX_PLAYEULTIMATE","AI_FIX_PLAYERDEAD",
         "AI_FIX_PLAYERULTIMATE","AI_FIX_PETDEAD","AI_FIX_PETULTIMATE",
         "AI_FIX_PETWIN","AI_FIX_PETGOLDWIN","CHAR_BATTLEFLG_ULTIMATE",
+        *BATTLE_FLAG_MACROS,
     }
     fixed={
         "TRUE":1,"FALSE":0,
@@ -232,7 +238,9 @@ def _source(name: str, root: Path):
         if symbol not in fields and symbol not in {"TRUE","FALSE","BATTLE_ST_END"}:
             defines.append(f"#define {symbol} {value}")
 
-    macro_lines="\n".join(macros[k] for k in SOURCE_MACROS)
+    macro_lines="\n".join(
+        macros[k] for k in (*SOURCE_MACROS,*BATTLE_FLAG_MACROS)
+    )
     prefix=r'''
 #include <stdio.h>
 #include <stdlib.h>
@@ -390,6 +398,9 @@ int main(void){
         "static_tail_addprofit_anchor":True,
         "executed_full_battling_case_body":False,
         "battlemodel_internal_profit_calls":0,
+        "battle_flag_macros":{
+            key:macros[key] for key in BATTLE_FLAG_MACROS
+        },
     }
 
 
