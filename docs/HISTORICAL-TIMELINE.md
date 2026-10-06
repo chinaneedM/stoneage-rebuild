@@ -1130,3 +1130,22 @@ adapter and ten-field/overlay clear are next.
   ride/items, wider recipients, automatic AI and packets remain open.
 - OPEN: next gate is lethal638-specific recovered-ID admission through the
   persistent/coordinator runtime boundary; no positive slot is promoted yet.
+
+### 2026-10-06 — ID638 normal-death persistent/coordinator bridge accepted
+
+- RUNTIME/FACT: explicit scope
+  `lethal_normal_profit_base_round_empty_equipment_ID638_R1` admits a normal
+  death created by recovered ID638 into the BattleModel command-tail profit
+  boundary; the older nonlethal scope still rejects death.
+- SETTLEMENT: final input `89848f2ed92c4aa4c21c70d68356fe52b951ab40`
+  passes BattleModel settlement `37443593822/112202958318` with **655 tests**
+  plus the existing native/full-Battling/whole-scan gates.
+- PERSISTENCE: coordinator re-admission, immutable whole-scan settlement and
+  persistent processed-death authority now compose for the bounded normal-death
+  path. Coordinator, golden and recovered25 region pressure all pass at the
+  implementation head.
+- BOUNDARY: ultimate flags/Exit remain rejected. This is not full lethal638 and
+  promotes no recovered positive slots.
+- OPEN: next gate is source-slot-ordered BattleModel command-tail
+  ultimate/Exit, especially Guardian pet5 hit-before-owner0 versus AddProfit
+  owner0→pet5 scan order and default-pet effects.
