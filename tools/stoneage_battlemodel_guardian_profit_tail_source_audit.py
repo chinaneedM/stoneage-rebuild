@@ -115,7 +115,11 @@ def _same_harness_source(name: str, root: Path):
     code=code.replace(old_battle,new_battle)
 
     old_arrays="static int ints[32][1024],works[32][1024],flags[32][1024],pets[32][5],valid[32];"
-    new_arrays=old_arrays+"\nstatic int vectors[32][5],rnglow[64],rnghigh[64],rngval[64],rngcount;"
+    new_arrays=(
+        "static int ints[32][4096],works[32][4096],flags[32][4096],"
+        "pets[32][5],valid[32];"
+        "\nstatic int vectors[32][5],rnglow[64],rnghigh[64],rngval[64],rngcount;"
+    )
     if old_arrays not in code:
         raise ValueError("splice array anchor drift")
     code=code.replace(old_arrays,new_arrays)
@@ -201,6 +205,12 @@ void PROFESSION_SKILL_DUAL_WEAPON_LVEVEL_UP(int c,char *s){}
         +"\n".join(macros)+"\n"
         +"\n".join(additions)+"\n"
     )
+    if next_id >= 4096 or any(
+        int(line.rsplit(" ",1)[1]) >= 4096
+        for line in additions
+        if line.rsplit(" ",1)[1].isdigit()
+    ):
+        raise ValueError("synthetic physical getter key exceeds harness storage")
     code=prelude+code
 
     # Entry guardian defaults and physical state setup.
