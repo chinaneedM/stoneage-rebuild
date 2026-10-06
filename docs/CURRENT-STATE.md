@@ -7427,3 +7427,29 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   Full command-native bridge, original build/version, equipped/wider features,
   automatic AI and specific golden/region/hash-verified pressure remain OPEN;
   no positive-slot or overall-percentage promotion.
+
+
+### Bounded native PvE profit/exit main synchronization verified — 2026-10-06
+
+- Main/audit branch accepted3f49bf3691ad8e8f250ff6dde97b40c38f0773a9,
+  tree0da216a1916623b002300e81d49ae0a03cf9486d. Expected-head nonforce
+  fast-forward, input ancestry and clean matching local/remote tree verified.
+- Exact main run37420751562/job112129336267 SUCCESS; decoded logs
+  reproduce19656 native cases/6552 per profile,535 regressions and prior
+  native gates. Artifact11393450600,6080 bytes. Exact accepted-branch
+  run37420748877 SUCCESS. Acceptance receipt now records these replays.
+  This supersedes the preceding pending main synchronization/replay note.
+- This checkpoint changes documentation/derived receipt only with skip-ci.
+  Scope remains CLOSED_BOUNDED_FEATURE_OFF_PVE_NATIVE_COMPOSITION; no
+  modern lethal638, full command-native driver, original build/version or
+  new positive-slot/golden/region/pressure claim.
+- **Highest-priority unfinished task:** isolate the immutable whole-scan
+  profit/exit adapter for638 command tail, preserving actual side/slot order,
+  HP/ISDIE/ultimate, owner/selection/roster/occupancy mutations and only
+  scan-processed death penalties. Explicitly bridge Nocast/Barrier/Weaken
+  overlay clear and recalculation; base six-status reset is insufficient.
+  Follow STONEAGE-BATTLEMODEL-PROFIT-EXIT-COMPOSITION-PLAN-R1 and bounded
+  accepted audit before enabling lethal638 ordinary/state/coordinator/
+  Guardian behavior. Full command-native bridge, original profile/version,
+  equipped/wider features, automatic AI and specific638 golden/region/
+  hash-verified pressure remain OPEN.
