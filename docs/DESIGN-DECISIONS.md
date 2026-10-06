@@ -342,3 +342,13 @@ shortcut.
 Evidence/implementation boundary:
 `specs/STONEAGE-2BATTLETIMID-RUNTIME-STATE-AUDIT-R1.md` and the accepted
 2BattleTimid runtime integration.
+
+## 2026-10-06 — Separate placement capability from actual command reachability
+
+DESIGN: the pressure ledger's static positive skill-slot capability must be
+reported separately from recovered natural selection. Any proposed ID638
+closure uses an exact two-placement predicate and accepted bounded execution
+profile, with identity mutations and exact-data CI. A global BattleModel
+callback promotion is disallowed;641/649/650 are not admitted implicitly.
+Nonzero ILLEGAL and zero actual wa weights are preserved. No promotion in the
+command-entry audit; equipment/other actor paths need separate evidence.

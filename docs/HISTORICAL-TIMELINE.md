@@ -1201,3 +1201,15 @@ adapter and ten-field/overlay clear are next.
   weighted selection path, not universal absence of another command entry.
   **No slot promoted**; ledger2461 closed/22 OPEN/3 UB retained.
   Receipt: `research/recovered/STONEAGE-BATTLEMODEL-AI-SELECTION-ACCEPTANCE-R1.json`.
+
+## 2026-10-06 — Pinned descendant BattleModel entry boundary
+
+FACT (version-tagged descendants, not Taiwan-v1/original executable): nonzero
+ILLEGAL PET skill admission rejects before callback under the three default
+headers; source/native2592 default-header cases and864 separately labelled
+Bismarck OPEN_E counterfactual cases. Direct equipment magic forwards a runtime
+array rather than resolving a pet-skill ID. Default magic feature enabled only
+in gavin/iris among these profiles. Actual data magic reachability PENDING;
+opaque script/build flags remain OPEN. TemplateAI150 is MODAI, while enemy
+TACTICS/wa are separate. See command-entry audit R1; no historical path or
+pressure promotion inferred from conditional controls.

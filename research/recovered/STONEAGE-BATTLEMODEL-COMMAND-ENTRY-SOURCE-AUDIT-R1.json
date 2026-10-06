@@ -1,0 +1,231 @@
+{
+  "native_counterfactual_cases": 864,
+  "native_default_header_cases": 2592,
+  "profiles": [
+    {
+      "file_sha256": {
+        "battle/battle.c": "a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602",
+        "battle/battle_ai.c": "9ec5ac3b6d693591651e9c18c1ee1e652291e86c66dfa3173daae849a7aeee7c",
+        "battle/battle_command.c": "dfeaaeab0f9524b5a6b4225cec206012ed9185962959827ba9335d26cbd89584",
+        "battle/pet_skill.c": "12d95301b9ecaf60175fb9c94095e8ab05c152f375e1585c090d951fa416e672",
+        "callfromcli.c": "485ec2b55bc5c2fa53df14dddcd582962f33a3c181335b2e0fd6e23ae0408048",
+        "char/enemy.c": "aefdf73e3f62bceaabacdc60798fb07c5ceefb88b913b8c1f819d44db973f350",
+        "include/version.h": "e58232f8763dccedfbba775ddfb3eaa33e431505b090b2e9a7a87cf8d5945d4a",
+        "magic/magic.c": "20c44d37bec0fa41d7d0a3a068107f77b7f26bb29bf5280811efe7f555de0349"
+      },
+      "flags": {
+        "_FIXWOLF": true,
+        "_ITEM_ATTSKILLMAGIC": true,
+        "_ONE_PET_SKILL": false,
+        "_OPEN_E_PETSKILL": false,
+        "_PETSKILL_BATTLE_MODEL": true,
+        "_PETSKILL_CHECKTYPE": true
+      },
+      "gates": {
+        "default_pet_W_command": true,
+        "enemy_tactics_from_variant": true,
+        "equipment_magic_SKILL_sentinel": true,
+        "equipment_magic_direct_dispatch": true,
+        "illegal_pet_rejected_before_callback": true,
+        "magic_second_token_passed_without_ID_lookup": true,
+        "normal_ai_nonzero_wa_guard": true,
+        "normal_ai_slot_submission": true,
+        "slot_to_id_to_runtime_array": true,
+        "template_MODAI_is_character_MODAI": true
+      },
+      "lexical_C_sites": {
+        "PETSKILL_BattleModel": [
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/pet_skill.c"
+          }
+        ],
+        "PETSKILL_Use": [
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/battle.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/battle_ai.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/battle_command.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/pet_skill.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "callfromcli.c"
+          }
+        ],
+        "PETSKILL_getPetskillFuncPointer": [
+          {
+            "lexical_sites_including_definitions": 2,
+            "path": "battle/pet_skill.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "magic/magic.c"
+          }
+        ]
+      },
+      "native_OPEN_E_counterfactual_cases": 0,
+      "native_default_header_cases": 864,
+      "profile": "gavin",
+      "source_commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56"
+    },
+    {
+      "file_sha256": {
+        "battle/battle.c": "6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8",
+        "battle/battle_ai.c": "1155c5f4b24b0a347e18620c2a45022107f5263b256027e23799730594d5a5b2",
+        "battle/battle_command.c": "ebb63f1d9f1950c87cb5732e93ccdae8296980e6f539496871473ca92bbd4618",
+        "battle/pet_skill.c": "e49dd8cd079231717c4f7af34eccae4bd6cafe6d54f07dd5270f461b1ae24fc8",
+        "callfromcli.c": "812b10228d4159d6e6f71c2aea4fdf48d59a4fcdf21cbc386415dae2e7608b0a",
+        "char/enemy.c": "1f8c0333cfca4b469e40981f0331466fff7c14e54b50ae9aa66bf68928cde66e",
+        "include/version.h": "a404dacc30266a04a58aa53e914bb4ba19aa583c982051ed5427ad71f8498bad",
+        "magic/magic.c": "b87ecbbecbd7218799c6fcfa14f844635a2375d61f0592463852c509183a975f"
+      },
+      "flags": {
+        "_FIXWOLF": true,
+        "_ITEM_ATTSKILLMAGIC": true,
+        "_ONE_PET_SKILL": false,
+        "_OPEN_E_PETSKILL": false,
+        "_PETSKILL_BATTLE_MODEL": true,
+        "_PETSKILL_CHECKTYPE": true
+      },
+      "gates": {
+        "default_pet_W_command": true,
+        "enemy_tactics_from_variant": true,
+        "equipment_magic_SKILL_sentinel": true,
+        "equipment_magic_direct_dispatch": true,
+        "illegal_pet_rejected_before_callback": true,
+        "magic_second_token_passed_without_ID_lookup": true,
+        "normal_ai_nonzero_wa_guard": true,
+        "normal_ai_slot_submission": true,
+        "slot_to_id_to_runtime_array": true,
+        "template_MODAI_is_character_MODAI": true
+      },
+      "lexical_C_sites": {
+        "PETSKILL_BattleModel": [
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/pet_skill.c"
+          }
+        ],
+        "PETSKILL_Use": [
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/battle.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/battle_ai.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/battle_command.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/pet_skill.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "callfromcli.c"
+          }
+        ],
+        "PETSKILL_getPetskillFuncPointer": [
+          {
+            "lexical_sites_including_definitions": 2,
+            "path": "battle/pet_skill.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "magic/magic.c"
+          }
+        ]
+      },
+      "native_OPEN_E_counterfactual_cases": 0,
+      "native_default_header_cases": 864,
+      "profile": "iris",
+      "source_commit": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5"
+    },
+    {
+      "file_sha256": {
+        "battle/battle.c": "2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18",
+        "battle/battle_ai.c": "5ee59a1814fdf5c824420aa22fc29dffe9ef9250556b0ec6990f8b613ec6b45b",
+        "battle/battle_command.c": "6169f18d883a0ecbc52e671677aeb263fa3139d37eea6e82134744cf1d11cf0b",
+        "battle/pet_skill.c": "d6801f12373d6a4ca0d20829797ee230ce85d978e42b2d50e563e86ab4b1f4d4",
+        "char/enemy.c": "91ab124f715d4913d5a0aefa7d266afd736bb08cafa35f6644c0de5e8aaaf53b",
+        "include/version.h": "4996de26fa1fc795da5d903e05aca00d3170ee672300387e02e54675f5a79602",
+        "magic/magic.c": "48a0c6c5eee4826a4c29d785ae4a3df7eb5d210d0cb6dd05b3bf9c23d1584706"
+      },
+      "flags": {
+        "_FIXWOLF": true,
+        "_ITEM_ATTSKILLMAGIC": false,
+        "_ONE_PET_SKILL": false,
+        "_OPEN_E_PETSKILL": false,
+        "_PETSKILL_BATTLE_MODEL": true,
+        "_PETSKILL_CHECKTYPE": true
+      },
+      "gates": {
+        "default_pet_W_command": true,
+        "enemy_tactics_from_variant": true,
+        "equipment_magic_SKILL_sentinel": true,
+        "equipment_magic_direct_dispatch": true,
+        "illegal_pet_rejected_before_callback": true,
+        "magic_second_token_passed_without_ID_lookup": true,
+        "normal_ai_nonzero_wa_guard": true,
+        "normal_ai_slot_submission": true,
+        "slot_to_id_to_runtime_array": true,
+        "template_MODAI_is_character_MODAI": true
+      },
+      "lexical_C_sites": {
+        "PETSKILL_BattleModel": [
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/pet_skill.c"
+          }
+        ],
+        "PETSKILL_Use": [
+          {
+            "lexical_sites_including_definitions": 2,
+            "path": "battle/battle.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/battle_ai.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/battle_command.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "battle/pet_skill.c"
+          }
+        ],
+        "PETSKILL_getPetskillFuncPointer": [
+          {
+            "lexical_sites_including_definitions": 2,
+            "path": "battle/pet_skill.c"
+          },
+          {
+            "lexical_sites_including_definitions": 1,
+            "path": "magic/magic.c"
+          }
+        ]
+      },
+      "native_OPEN_E_counterfactual_cases": 864,
+      "native_default_header_cases": 864,
+      "profile": "bismarck",
+      "source_commit": "999ffdf1d220ec6666eb65339180689c9caf1876"
+    }
+  ],
+  "resolution": "BATTLEMODEL_COMMAND_ENTRY_PINNED_SOURCE_NATIVE_PASS",
+  "schema": "stoneage.battlemodel-command-entry-source.r1"
+}

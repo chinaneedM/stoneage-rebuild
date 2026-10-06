@@ -4156,3 +4156,15 @@ remain explicitly OPEN. No original source/payload committed.
   establish original active-build/Taiwan-v1 membership. Pressure remains
   2486=2461 closed+22 OPEN+3 UB;0 slots promoted.
 - Full receipt `research/recovered/STONEAGE-BATTLEMODEL-AI-SELECTION-ACCEPTANCE-R1.json`; next gate `specs/STONEAGE-BATTLEMODEL-ACTUAL-DISPATCH-AUDIT-PLAN-R1.md`.
+
+## 2026-10-06 — BattleModel command-entry audit R1
+
+Derived-only source receipt:
+`research/recovered/STONEAGE-BATTLEMODEL-COMMAND-ENTRY-SOURCE-AUDIT-R1.json`.
+Auditor pins the same three descendant commits as guard-break2 research,
+verifies clean trees and SHA256 of entry/AI/command/battle/enemy/magic/header
+files; lists bounded lexical C sites, default-header macro flags and neutral
+callback traces. Native2592 default-header +864 Bismarck counterfactual controls.
+Exact master-data audit newly configured in region workflow, pending receipt.
+Source/native facts do not establish original active-build flags or full
+script/gameplay reachability. Spec: command-entry audit R1.

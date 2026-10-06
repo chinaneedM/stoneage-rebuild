@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - tools/stoneage_battlemodel_command_entry_source_audit.py
+      - tools/stoneage_recovered25_battlemodel_command_entry_probe.py
+      - tests/test_stoneage_battlemodel_command_entry_audit.py
       - .github/workflows/validate-stoneage-recovered25-region-payload.yml
       - tools/stoneage_recovered25_battlemodel_runtime_probe.py
       - tests/test_stoneage_recovered25_battlemodel_runtime_probe.py
@@ -81,6 +84,7 @@ jobs:
       - name: Verify bounded physical AttackSeq loop and shared primitives
         run: |
           python -m unittest -v \
+            tests.test_stoneage_battlemodel_command_entry_audit \
             tests.test_stoneage_recovered25_battlemodel_runtime_probe \
             tests.test_stoneage_battlemodel_hit_loop \
             tests.test_stoneage_battlemodel_physical_attackseq \
@@ -127,6 +131,21 @@ jobs:
                   "https://github.com/"+repo+".git",PINNED[name]],check=True)
               subprocess.run(["git","-C",str(root),"checkout","--detach",
                   "FETCH_HEAD"],check=True)
+          PY
+      - name: Audit original PETSKILL command entry and versioned alternatives
+        run: |
+          python -m tools.stoneage_battlemodel_command_entry_source_audit \
+            --gavin-dir /tmp/battlemodel-hit/gavin \
+            --iris-dir /tmp/battlemodel-hit/iris \
+            --bismarck-dir /tmp/battlemodel-hit/bismarck \
+            > /tmp/battlemodel-command-entry-source.json
+          cat /tmp/battlemodel-command-entry-source.json
+          python - <<'PY'
+          import json
+          r=json.load(open('/tmp/battlemodel-command-entry-source.json'))
+          assert r['native_default_header_cases']==2592
+          assert r['native_counterfactual_cases']==864
+          assert r['resolution']=='BATTLEMODEL_COMMAND_ENTRY_PINNED_SOURCE_NATIVE_PASS'
           PY
       - name: Verify explicit DEFAULTPET helper and separate exit anchors
         run: |
@@ -279,6 +298,7 @@ jobs:
         with:
           name: battlemodel-settlement
           path: |
+            /tmp/battlemodel-command-entry-source.json
             /tmp/default-pet-exit.txt
             /tmp/profit-exit-native.txt
             /tmp/battlemodel-profit-tail.txt

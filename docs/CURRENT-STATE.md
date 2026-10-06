@@ -8138,3 +8138,25 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   from controls. Plan: `specs/STONEAGE-BATTLEMODEL-ACTUAL-DISPATCH-AUDIT-PLAN-R1.md`. Original active
   build/Taiwan-v1 membership, wider recipients, ride/items and historical
   scheduler/presentation remain OPEN.
+
+## 2026-10-06 — ID638 command-entry source audit; exact data gate pending
+
+- Fresh remote main6b795a0d40918399614a537d934d9b610ab84516/tree
+  be47a939163f5e89c12cecfe198ca51ced3c88aa and prior exact-head four accepted
+  Actions re-read before work. No old chat SHA used as the project base.
+- New pinned source auditor executes2592 original PETSKILL_Use default-header
+  guard witnesses and864 explicitly counterfactual Bismarck OPEN_E controls.
+  Nonzero ILLEGAL blocks PET before callback; ordinary W/PS/random-pet calls
+  do not establish a bypass. Original active build macros remain OPEN.
+- Equipment magic is a source-level direct callback alternative. Its second
+  token is a runtime array position, not a skill ID. Exact active181-row magic
+  hash/loader-position census and structural enemy/group/area provenance are
+  now wired into full-region Actions; data result PENDING.
+- AI150 maps to MODAI, not variant TACTICS or skill selection weight.
+- Pressure criteria review separates static bounded capability from natural
+  command-entry reachability. No blanket callback closure; exact two-placement
+  conditional predicate proposed for the next gate after audit acceptance.
+- Highest-priority unfinished item: finish exact-head Actions and actual magic/
+  placement report, accept the entry audit, then implement/test that scoped
+  closure predicate if supported. Pressure unchanged2486=2461+22+3;0 promotions.
+  Spec: `specs/STONEAGE-BATTLEMODEL-COMMAND-ENTRY-AUDIT-R1.md`.
