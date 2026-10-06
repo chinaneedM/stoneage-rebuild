@@ -8331,3 +8331,26 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - **Highest-priority unfinished task:** require a second exact-data CI run to
   close population/row/template invariants, then build the bounded native/reference
   model for post-attack transformation and cross-round state semantics.
+
+
+## 2026-10-06 — BecomeFox recovered25 source/data reference ACCEPTED
+
+- **CLOSED_BOUNDED_RECOVERED25_SOURCE_DATA_REFERENCE.** Exact pinning input
+  a0fed469ce621ce1dba53afd3d608074af144544, tree 73c835d23d670f6d0bc39828fecc525b92d874d8; Action37467755344/job112282980151 SUCCESS.
+  Four probe tests passed, all3 pinned descendant profiles reproduce21/21 source
+  gates, and the verified bundle closes callback population/row/templates.
+- Exact row: ID625 FIELD1 TARGET1 COST2 ILLEGAL3000, empty OPTION. Exactly2
+  positive runtime-index2/report-slot3 placements: TEMPNO148 IMG101743
+  base32/40/26/30 AI150 and TEMPNO149 IMG101744 base28/45/22/32 AI150.
+- Source structure is bounded but not runtime acceptance: post-hit one-draw
+  transform, FOXROUND duration/power rules and exit cleanup are established as
+  descendant-source facts. gavin/iris versus Bismarck PetIn FOXROUND accessor
+  divergence remains explicit and unresolved.
+- **Pressure unchanged:**2486=2463 closed capability+20 OPEN+3 historical UB;
+  BecomeFox promotes0 slots at this stage.
+- Receipt: `research/recovered/STONEAGE-BECOMEFOX-REFERENCE-ACCEPTANCE-R1.json`;
+  canonical reference: `specs/STONEAGE-BECOMEFOX-REFERENCE-R1.md`.
+- **Highest-priority unfinished task:** implement bounded ordered/native
+  BecomeFox post-attack transformation and FOXROUND lifecycle semantics, then
+  integrate exact ID625 placements into persistent runtime only after that gate
+  passes. Preserve the PetIn version split and no-ride/wider-path boundaries.

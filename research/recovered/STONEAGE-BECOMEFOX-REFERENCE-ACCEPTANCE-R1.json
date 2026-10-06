@@ -1,0 +1,94 @@
+{
+  "schema": "stoneage.becomefox-reference-acceptance.r1",
+  "status": "CLOSED_BOUNDED_RECOVERED25_SOURCE_DATA_REFERENCE",
+  "accepted_at_utc": "2026-10-06T13:04:00Z",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "a0fed469ce621ce1dba53afd3d608074af144544",
+    "tree": "73c835d23d670f6d0bc39828fecc525b92d874d8"
+  },
+  "workflow": {
+    "run_id": 37467755344,
+    "job_id": 112282980151,
+    "conclusion": "success",
+    "probe_tests": 4,
+    "source_profiles": 3,
+    "source_gates_per_profile": 21
+  },
+  "source_profiles": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "recovered25": {
+    "petskill_sha256": "f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4",
+    "callback": "PETSKILL_BecomeFox",
+    "callback_ids": [
+      625
+    ],
+    "row": {
+      "id": 625,
+      "field": 1,
+      "target": 1,
+      "cost": 2,
+      "illegal": 3000,
+      "slot_references": 2,
+      "option_bytes": 0,
+      "option_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "placements": [
+      {
+        "tempno": 148,
+        "graphic_id": 101743,
+        "base_vital": 32,
+        "base_strength": 40,
+        "base_toughness": 26,
+        "base_dexterity": 30,
+        "ai": 150,
+        "report_slot": 3,
+        "runtime_index": 2,
+        "skill_id": 625
+      },
+      {
+        "tempno": 149,
+        "graphic_id": 101744,
+        "base_vital": 28,
+        "base_strength": 45,
+        "base_toughness": 22,
+        "base_dexterity": 32,
+        "ai": 150,
+        "report_slot": 3,
+        "runtime_index": 2,
+        "skill_id": 625
+      }
+    ]
+  },
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2463,
+    "open": 20,
+    "historical_ub": 3,
+    "becomefox_promoted_slots": 0
+  },
+  "divergence": {
+    "gavin_iris_petin_foxround_accessor": "ordinary_int",
+    "bismarck_petin_foxround_accessor": "work_int",
+    "resolution": "PRESERVE_VERSIONED_DIVERGENCE"
+  },
+  "boundaries": [
+    "ordered_attack_hit_guardian_composition_open",
+    "native_transform_equivalence_open",
+    "original_prng_identity_open",
+    "persistent_foxround_runtime_open",
+    "recovered_executable_petin_profile_open",
+    "ride_cleanup_reachability_open",
+    "original_build_and_taiwan_v1_membership_open"
+  ],
+  "derived_writeback": {
+    "sha": "8dfa0a6313acb4a0b3e87e031663a8c4f09e1cb7",
+    "files": [
+      "research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt"
+    ]
+  },
+  "next": "build bounded ordered/native BecomeFox transform and FOXROUND lifecycle reference/runtime; do not promote pressure before acceptance"
+}

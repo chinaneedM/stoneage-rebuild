@@ -4225,3 +4225,21 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   d5fe135f738cbb2ac0bc76730b8e3f9a5758d459 touch only aggregate reports.
 - Receipt:
   `research/recovered/STONEAGE-BATTLEMODEL-CONDITIONAL-PLACEMENT-ACCEPTANCE-R1.json`.
+
+
+### SRC-BECOMEFOX-RECOVERED25-REFERENCE-R1 — exact source/data acceptance 2026-10-06
+
+- Exact pinning input a0fed469ce621ce1dba53afd3d608074af144544, tree 73c835d23d670f6d0bc39828fecc525b92d874d8; remote Action
+  37467755344/job112282980151 SUCCESS.
+- Verified active petskill SHA256
+  f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4.
+  Complete callback population: only ID625, FIELD1/TARGET1/COST2/ILLEGAL3000,
+  empty OPTION,2 positive uses across2 templates.
+- Exact placements:148/IMG101743/base32,40,26,30/AI150/slot3 and
+  149/IMG101744/base28,45,22,32/AI150/slot3.
+- Pinned descendants gavin1f90cb6, iris9e6c8ce and Bismarck999ffdf each pass
+  21 structural source gates. Material PetIn accessor divergence is retained.
+- Boundary: no native ordered-hit equivalence, persistent FOXROUND runtime,
+  original PRNG/build identity or historical membership is claimed; pressure
+  promotion remains0.
+- Receipt: `research/recovered/STONEAGE-BECOMEFOX-REFERENCE-ACCEPTANCE-R1.json`.

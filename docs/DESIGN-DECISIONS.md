@@ -385,3 +385,14 @@ BattleModel callback closure is forbidden; natural AI/PET/magic/NPC/script and
 original-build reachability remain independent evidence gates. Accepted pressure
 is 2486=2463 closed capability+20 OPEN+3 historical UB; next OPEN is BecomeFox
 ID625. Receipt: `STONEAGE-BATTLEMODEL-CONDITIONAL-PLACEMENT-ACCEPTANCE-R1.json`.
+
+
+## 2026-10-06 — BecomeFox reference must preserve source-profile state-access divergence
+
+BecomeFox's exact recovered25 data identity is closed independently from runtime
+semantics. The modern implementation must not flatten the pinned descendant
+PetIn disagreement: gavin/iris use ordinary integer accessors for FOXROUND while
+Bismarck uses work-state accessors. Until executable evidence resolves which
+profile matches the recovered binary, ordered/runtime work must model this as an
+explicit versioned boundary. Exact recovered25 ID625/placements alone are not a
+runtime-pressure promotion.

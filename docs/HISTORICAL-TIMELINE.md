@@ -1250,3 +1250,14 @@ in the verified gate. DESIGN/analysis classification of those placements as
 conditional capability does **not** establish how an original active executable,
 player/pet command, equipment magic, NPC or script made the skill reachable.
 Those provenance questions remain OPEN and Taiwan-v1 membership is not inferred.
+
+
+## 2026-10-06 — Later recovered25 BecomeFox source/data reference closed
+
+FACT for the hash-verified later recovered25 specimen: PETSKILL_BecomeFox has
+one active row, ID625, and exactly two positive enemybase placements at TEMPNO
+148/149 report slot3. Three pinned descendant source trees share the bounded
+post-attack fox/FOXROUND structure but materially diverge in PetIn FOXROUND
+accessor choice. This is later-source/data lineage evidence only; it does not
+date the feature, establish JSS/Taiwan-v1 membership or identify the recovered
+executable's exact descendant semantics.
