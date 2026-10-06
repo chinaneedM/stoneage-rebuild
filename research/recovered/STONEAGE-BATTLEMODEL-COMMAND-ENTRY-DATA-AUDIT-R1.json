@@ -1,0 +1,622 @@
+{
+  "boundary": "entry census only; opaque script/build overrides and full gameplay reachability OPEN",
+  "callback_rows": [
+    {
+      "ID_indexed_callback_array": 638,
+      "default_header_array_within_effective_bound": true,
+      "default_header_pet_entry": "blocked_nonzero_ILLEGAL",
+      "illegal": 10000,
+      "ordered_callback_array": 135,
+      "skill_id": 638
+    },
+    {
+      "ID_indexed_callback_array": 641,
+      "default_header_array_within_effective_bound": true,
+      "default_header_pet_entry": "blocked_nonzero_ILLEGAL",
+      "illegal": 10000,
+      "ordered_callback_array": 138,
+      "skill_id": 641
+    },
+    {
+      "ID_indexed_callback_array": 649,
+      "default_header_array_within_effective_bound": true,
+      "default_header_pet_entry": "blocked_nonzero_ILLEGAL",
+      "illegal": 20000,
+      "ordered_callback_array": 144,
+      "skill_id": 649
+    },
+    {
+      "ID_indexed_callback_array": 650,
+      "default_header_array_within_effective_bound": true,
+      "default_header_pet_entry": "blocked_nonzero_ILLEGAL",
+      "illegal": 10000,
+      "ordered_callback_array": 145,
+      "skill_id": 650
+    }
+  ],
+  "file_sha256": {
+    "encountfile": "70bbd997d98508a0587df183b5bdd48222ff42db91bf21bea632e0ed6f2fea87",
+    "enemyfile": "cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6",
+    "groupfile": "4a02f2a3fa3d2dcf5589d8a2a560313c35d5a0a7e5e0589cc8df5f7df159ea8f",
+    "magicfile": "b3a57b595bd60dfab571fe7af4dd6e2d43a5839c934eb644ba462897b1bcb6bb"
+  },
+  "magic": {
+    "ID_indexed_allocation_bound": 653,
+    "ID_indexed_effective_bound": 653,
+    "callback_option_candidates": [],
+    "layout_counts": {
+      "ID_indexed_OPTIMUM": {
+        "resolved_ID638_rows": 0,
+        "resolved_other_BattleModel_rows": 0
+      },
+      "ordered_rows": {
+        "resolved_ID638_rows": 0,
+        "resolved_other_BattleModel_rows": 0
+      }
+    },
+    "ordered_array_bound": 147,
+    "rows": 181,
+    "scope": "literal first OPTION token; default OPTIMUM and legacy ordered layouts; original build/equipment ownership/MP not inferred"
+  },
+  "positive_placements": [
+    {
+      "capturable_flag": 1,
+      "enemy_id": 2559,
+      "positive_area_rows": 0,
+      "positive_group_ids": [],
+      "scope": "structural positive weights only; item/event/location/spawn prerequisites not discharged",
+      "tactics": 1,
+      "tempno": 1178,
+      "wa_index2_weight": 0
+    },
+    {
+      "capturable_flag": 1,
+      "enemy_id": 2560,
+      "positive_area_rows": 0,
+      "positive_group_ids": [],
+      "scope": "structural positive weights only; item/event/location/spawn prerequisites not discharged",
+      "tactics": 1,
+      "tempno": 1179,
+      "wa_index2_weight": 0
+    }
+  ],
+  "pressure": {
+    "closed": 2461,
+    "historical_ub": 3,
+    "open": 22,
+    "promoted_slots": 0,
+    "total": 2486,
+    "unresolved_skill_ids": []
+  },
+  "pressure_rows": [
+    {
+      "callback": "PETSKILL_NormalAttack",
+      "skill_ids": [
+        1
+      ],
+      "slot_uses": 729,
+      "status": "closed_runtime",
+      "templates": 729
+    },
+    {
+      "callback": "PETSKILL_NormalGuard",
+      "skill_ids": [
+        2
+      ],
+      "slot_uses": 626,
+      "status": "closed_runtime",
+      "templates": 626
+    },
+    {
+      "callback": "PETSKILL_StatusChange",
+      "skill_ids": [
+        60,
+        61,
+        80,
+        90,
+        100,
+        110
+      ],
+      "slot_uses": 174,
+      "status": "closed_runtime",
+      "templates": 115
+    },
+    {
+      "callback": "PETSKILL_ContinuationAttack",
+      "skill_ids": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "slot_uses": 139,
+      "status": "closed_runtime",
+      "templates": 111
+    },
+    {
+      "callback": "PETSKILL_Mighty",
+      "skill_ids": [
+        40,
+        41
+      ],
+      "slot_uses": 120,
+      "status": "closed_runtime",
+      "templates": 114
+    },
+    {
+      "callback": "PETSKILL_AttackMagic",
+      "skill_ids": [
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325
+      ],
+      "slot_uses": 106,
+      "status": "closed_runtime",
+      "templates": 73
+    },
+    {
+      "callback": "PETSKILL_ChargeAttack",
+      "skill_ids": [
+        30,
+        31,
+        605
+      ],
+      "slot_uses": 90,
+      "status": "closed_runtime",
+      "templates": 71
+    },
+    {
+      "callback": "PETSKILL_NoGuard",
+      "skill_ids": [
+        150,
+        151,
+        152
+      ],
+      "slot_uses": 74,
+      "status": "closed_runtime",
+      "templates": 72
+    },
+    {
+      "callback": "PETSKILL_PowerBalance",
+      "skill_ids": [
+        50,
+        51,
+        52
+      ],
+      "slot_uses": 62,
+      "status": "closed_runtime",
+      "templates": 54
+    },
+    {
+      "callback": "PETSKILL_GuardBreak",
+      "skill_ids": [
+        3
+      ],
+      "slot_uses": 60,
+      "status": "closed_runtime",
+      "templates": 60
+    },
+    {
+      "callback": "ENEMYSKILL_ReHP",
+      "skill_ids": [
+        501
+      ],
+      "slot_uses": 31,
+      "status": "closed_runtime",
+      "templates": 31
+    },
+    {
+      "callback": "PETSKILL_DamageToHp",
+      "skill_ids": [
+        503,
+        504,
+        505
+      ],
+      "slot_uses": 30,
+      "status": "closed_runtime",
+      "templates": 30
+    },
+    {
+      "callback": "PETSKILL_MpDamage",
+      "skill_ids": [
+        506,
+        507,
+        508
+      ],
+      "slot_uses": 25,
+      "status": "closed_runtime",
+      "templates": 25
+    },
+    {
+      "callback": "PETSKILL_FallGround",
+      "skill_ids": [
+        210
+      ],
+      "slot_uses": 23,
+      "status": "closed_runtime",
+      "templates": 23
+    },
+    {
+      "callback": "PETSKILL_BattleTearDamage",
+      "skill_ids": [
+        615,
+        616
+      ],
+      "slot_uses": 19,
+      "status": "closed_runtime",
+      "templates": 19
+    },
+    {
+      "callback": "PETSKILL_Nocast",
+      "skill_ids": [
+        580
+      ],
+      "slot_uses": 18,
+      "status": "closed_runtime",
+      "templates": 16
+    },
+    {
+      "callback": "PETSKILL_Abduct",
+      "skill_ids": [
+        130,
+        608
+      ],
+      "slot_uses": 14,
+      "status": "closed_runtime",
+      "templates": 14
+    },
+    {
+      "callback": "PETSKILL_EarthRound",
+      "skill_ids": [
+        120
+      ],
+      "slot_uses": 14,
+      "status": "closed_runtime",
+      "templates": 14
+    },
+    {
+      "callback": "PETSKILL_Steal",
+      "skill_ids": [
+        140
+      ],
+      "slot_uses": 12,
+      "status": "closed_runtime",
+      "templates": 11
+    },
+    {
+      "callback": "PETSKILL_GuardBreak2",
+      "skill_ids": [
+        543
+      ],
+      "slot_uses": 11,
+      "status": "closed_runtime",
+      "templates": 11
+    },
+    {
+      "callback": "PETSKILL_Barrier",
+      "skill_ids": [
+        579,
+        594
+      ],
+      "slot_uses": 10,
+      "status": "closed_runtime",
+      "templates": 10
+    },
+    {
+      "callback": "PETSKILL_AttackCrazed",
+      "skill_ids": [
+        613
+      ],
+      "slot_uses": 9,
+      "status": "closed_runtime",
+      "templates": 9
+    },
+    {
+      "callback": "PETSKILL_Mdfyattack",
+      "skill_ids": [
+        548,
+        549,
+        550,
+        551
+      ],
+      "slot_uses": 8,
+      "status": "closed_runtime",
+      "templates": 8
+    },
+    {
+      "callback": "PETSKILL_Weaken",
+      "skill_ids": [
+        575,
+        576
+      ],
+      "slot_uses": 7,
+      "status": "closed_runtime",
+      "templates": 6
+    },
+    {
+      "callback": "PETSKILL_WildViolentAttack",
+      "skill_ids": [
+        541
+      ],
+      "slot_uses": 7,
+      "status": "closed_runtime",
+      "templates": 7
+    },
+    {
+      "callback": "PETSKILL_Refresh",
+      "skill_ids": [
+        583,
+        592
+      ],
+      "slot_uses": 6,
+      "status": "closed_runtime",
+      "templates": 6
+    },
+    {
+      "callback": "PETSKILL_SetMagicPet",
+      "skill_ids": [
+        601
+      ],
+      "slot_uses": 6,
+      "status": "closed_runtime",
+      "templates": 6
+    },
+    {
+      "callback": "PETSKILL_BattleTimid",
+      "skill_ids": [
+        606
+      ],
+      "slot_uses": 5,
+      "status": "closed_runtime",
+      "templates": 5
+    },
+    {
+      "callback": "PETSKILL_Combined",
+      "skill_ids": [
+        627,
+        632,
+        637
+      ],
+      "slot_uses": 5,
+      "status": "closed_runtime",
+      "templates": 5
+    },
+    {
+      "callback": "PETSKILL_Guardian",
+      "skill_ids": [
+        20
+      ],
+      "slot_uses": 4,
+      "status": "closed_runtime",
+      "templates": 4
+    },
+    {
+      "callback": "PETSKILL_Vary",
+      "skill_ids": [
+        600
+      ],
+      "slot_uses": 4,
+      "status": "closed_runtime",
+      "templates": 4
+    },
+    {
+      "callback": "ENEMYSKILL_ReLife",
+      "skill_ids": [
+        500
+      ],
+      "slot_uses": 3,
+      "status": "closed_runtime",
+      "templates": 3
+    },
+    {
+      "callback": "PETSKILL_Lighttakeed",
+      "skill_ids": [
+        610,
+        611
+      ],
+      "slot_uses": 3,
+      "status": "closed_runtime",
+      "templates": 2
+    },
+    {
+      "callback": "PETSKILL_Merge",
+      "skill_ids": [
+        200,
+        201
+      ],
+      "slot_uses": 3,
+      "status": "historical_ub",
+      "templates": 3
+    },
+    {
+      "callback": "PETSKILL_Modifyattack",
+      "skill_ids": [
+        544,
+        545,
+        546
+      ],
+      "slot_uses": 3,
+      "status": "closed_runtime",
+      "templates": 3
+    },
+    {
+      "callback": "PETSKILL_2BattleTimid",
+      "skill_ids": [
+        636
+      ],
+      "slot_uses": 2,
+      "status": "closed_runtime",
+      "templates": 2
+    },
+    {
+      "callback": "PETSKILL_BatFly",
+      "skill_ids": [
+        633
+      ],
+      "slot_uses": 2,
+      "status": "closed_runtime",
+      "templates": 1
+    },
+    {
+      "callback": "PETSKILL_BattleModel",
+      "skill_ids": [
+        638
+      ],
+      "slot_uses": 2,
+      "status": "open",
+      "templates": 2
+    },
+    {
+      "callback": "PETSKILL_BecomeFox",
+      "skill_ids": [
+        625
+      ],
+      "slot_uses": 2,
+      "status": "open",
+      "templates": 2
+    },
+    {
+      "callback": "PETSKILL_BecomePig",
+      "skill_ids": [
+        631,
+        635
+      ],
+      "slot_uses": 2,
+      "status": "open",
+      "templates": 2
+    },
+    {
+      "callback": "PETSKILL_Deeppoison",
+      "skill_ids": [
+        577,
+        578
+      ],
+      "slot_uses": 2,
+      "status": "open",
+      "templates": 2
+    },
+    {
+      "callback": "PETSKILL_SetDuck",
+      "skill_ids": [
+        595
+      ],
+      "slot_uses": 2,
+      "status": "open",
+      "templates": 2
+    },
+    {
+      "callback": "PETSKILL_SpeedyAttack",
+      "skill_ids": [
+        542
+      ],
+      "slot_uses": 2,
+      "status": "open",
+      "templates": 2
+    },
+    {
+      "callback": "PETSKILL_ToothCrushe",
+      "skill_ids": [
+        574
+      ],
+      "slot_uses": 2,
+      "status": "open",
+      "templates": 2
+    },
+    {
+      "callback": "PETSKILL_DivideAttack",
+      "skill_ids": [
+        634
+      ],
+      "slot_uses": 1,
+      "status": "open",
+      "templates": 1
+    },
+    {
+      "callback": "PETSKILL_Fixitem",
+      "skill_ids": [
+        540
+      ],
+      "slot_uses": 1,
+      "status": "open",
+      "templates": 1
+    },
+    {
+      "callback": "PETSKILL_Gyrate",
+      "skill_ids": [
+        619
+      ],
+      "slot_uses": 1,
+      "status": "open",
+      "templates": 1
+    },
+    {
+      "callback": "PETSKILL_Inslay",
+      "skill_ids": [
+        572
+      ],
+      "slot_uses": 1,
+      "status": "open",
+      "templates": 1
+    },
+    {
+      "callback": "PETSKILL_MagicStatusChange",
+      "skill_ids": [
+        552
+      ],
+      "slot_uses": 1,
+      "status": "open",
+      "templates": 1
+    },
+    {
+      "callback": "PETSKILL_Regret",
+      "skill_ids": [
+        640
+      ],
+      "slot_uses": 1,
+      "status": "open",
+      "templates": 1
+    },
+    {
+      "callback": "PETSKILL_SelfExplodeAttack",
+      "skill_ids": [
+        582
+      ],
+      "slot_uses": 1,
+      "status": "open",
+      "templates": 1
+    },
+    {
+      "callback": "PETSKILL_StealMoney",
+      "skill_ids": [
+        211
+      ],
+      "slot_uses": 1,
+      "status": "open",
+      "templates": 1
+    }
+  ],
+  "resolution": "RECOVERED25_BATTLEMODEL_COMMAND_ENTRY_DATA_AUDITED",
+  "schema": "stoneage.battlemodel-command-entry-data.r1"
+}
