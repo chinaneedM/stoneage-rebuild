@@ -18,7 +18,7 @@ from tools.stoneage_guard_break2_source_audit import PINNED, LAYOUTS, _text, _sh
 from tools.stoneage_mdfyattack_source_audit import _definition, _strip
 
 FLAGS = ("_PETSKILL_CHECKTYPE", "_OPEN_E_PETSKILL", "_ONE_PET_SKILL",
-         "_ITEM_ATTSKILLMAGIC", "_PETSKILL_BATTLE_MODEL", "_FIXWOLF")
+         "_ITEM_ATTSKILLMAGIC", "_PETSKILL_BATTLE_MODEL", "_FIXWOLF", "_PETSKILL_OPTIMUM", "_CFREE_petskill")
 
 
 def cases():
@@ -117,6 +117,7 @@ def analyze_profile(name, root):
     macros = subprocess.check_output(["cpp", "-dM", *inc, str(base / "include/version.h")], text=True)
     active = set(re.findall(r"^#define\s+(\w+)", macros, re.M))
     function = _definition(texts["battle/pet_skill.c"], "PETSKILL_Use")
+    loader = _compact(_strip(_definition(texts["battle/pet_skill.c"], "PETSKILL_initPetskill", raw_window=True)))
     use = _compact(_strip(function)).replace("char_index", "charaindex")
     magic = _compact(_strip(_definition(texts["magic/magic.c"], "MAGIC_AttSkill")))
     ai = _compact(_strip(_definition(texts["battle/battle_ai.c"], "BATTLE_ai_normal", raw_window=True)))
@@ -124,6 +125,9 @@ def analyze_profile(name, root):
     pet = _compact(_strip(_definition(texts["char/enemy.c"], "ENEMY_createPetFromEnemyIndex", raw_window=True)))
     command = _compact(_strip(texts["battle/battle_command.c"]))
     gates = {
+        "OPTIMUM_ID_indexed_loader": "#ifdef_PETSKILL_OPTIMUM" in loader and "petskill_readlen=atoi(token)" in loader,
+        "loader_final_effective_bound": "PETSKILL_petskillnum=petskill_readlen" in loader,
+
         "slot_to_id_to_runtime_array": "CHAR_getPetSkill(charaindex,havepetskill)" in use and "PETSKILL_getPetskillArray(petskillid)" in use,
         "illegal_pet_rejected_before_callback": use.index("PETSKILL_ILLEGAL") < use.index("func=PETSKILL_getPetskillFuncPointer") and "CHAR_TYPEPET" in use,
         "normal_ai_nonzero_wa_guard": "wa[i]!=0&&r<work" in ai,

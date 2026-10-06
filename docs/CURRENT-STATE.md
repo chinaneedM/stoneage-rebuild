@@ -8150,7 +8150,7 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   do not establish a bypass. Original active build macros remain OPEN.
 - Equipment magic is a source-level direct callback alternative. Its second
   token is a runtime array position, not a skill ID. Exact active181-row magic
-  hash/loader-position census and structural enemy/group/area provenance are
+  hash/dual-layout array-bound census and structural enemy/group/area provenance are
   now wired into full-region Actions; data result PENDING.
 - AI150 maps to MODAI, not variant TACTICS or skill selection weight.
 - Pressure criteria review separates static bounded capability from natural
@@ -8160,3 +8160,9 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   placement report, accept the entry audit, then implement/test that scoped
   closure predicate if supported. Pressure unchanged2486=2461+22+3;0 promotions.
   Spec: `specs/STONEAGE-BATTLEMODEL-COMMAND-ENTRY-AUDIT-R1.md`.
+
+- Pre-acceptance loader correction: all three default headers enable
+  `_PETSKILL_OPTIMUM`, so direct callback array numbers may equal IDs. Audit
+  both ID-indexed and legacy ordered layouts and the loader's last-ID+1
+  effective bound. This supersedes the initial ordered-only pending census;
+  neither layout is inferred as the original active executable's build.

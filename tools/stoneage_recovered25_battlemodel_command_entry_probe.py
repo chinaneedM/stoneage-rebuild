@@ -21,30 +21,39 @@ CALLBACK = b"PETSKILL_BattleModel"
 
 
 def magic_census(parsed, petskills):
-    # MAGIC_AttSkill forwards its second token directly to the callback's
-    # array parameter. Resolve by loader order, never by skill-ID arithmetic.
+    # The callback receives an array directly. Default descendant headers use
+    # ID-indexed OPTIMUM storage; legacy storage uses file order. Original
+    # active build flags are unknown, so census both without conflating them.
     ordered = tuple(petskills.skills.values())
+    bound = ordered[-1].skill_id + 1 if ordered else 0
     candidates = []
+    counts = {mode: dict(resolved_ID638_rows=0, resolved_other_BattleModel_rows=0)
+              for mode in ("ordered_rows", "ID_indexed_OPTIMUM")}
     for fields, values in parsed:
         parts = fields[3].split(b";")
         if len(parts) < 2 or parts[0] != CALLBACK:
             continue
-        # C atoi consumes a signed decimal prefix and returns zero when
-        # there are no digits. A strict Python int would miss actual entries.
         token = parts[1].split(b"\0", 1)[0]
         match = re.match(rb"\s*([+-]?[0-9]+)", token)
         array = int(match.group(1)) if match else 0
         if not -(2**31) <= array < 2**31:
             raise ValueError("magic callback array atoi overflow outside bounded audit")
-        skill = ordered[array] if array is not None and 0 <= array < len(ordered) else None
+        resolutions = {}
+        for mode, skill in (
+            ("ordered_rows", ordered[array] if 0 <= array < len(ordered) else None),
+            ("ID_indexed_OPTIMUM", petskills.skills.get(array) if 0 <= array < bound else None)):
+            matched = skill is not None and skill.function_name == CALLBACK.decode()
+            resolutions[mode] = dict(resolved_skill_id=None if skill is None else skill.skill_id,
+                                     resolves_BattleModel=matched)
+            counts[mode]["resolved_ID638_rows"] += int(matched and skill.skill_id == 638)
+            counts[mode]["resolved_other_BattleModel_rows"] += int(matched and skill.skill_id in (641, 649, 650))
         candidates.append(dict(magic_id=values["ID"], callback_array=array,
-            resolved_skill_id=None if skill is None else skill.skill_id,
-            resolves_BattleModel=skill is not None and skill.function_name == CALLBACK.decode(),
-            option_sha256=hashlib.sha256(fields[3]).hexdigest()))
+            layouts=resolutions, option_sha256=hashlib.sha256(fields[3]).hexdigest()))
     return dict(rows=len(parsed), callback_option_candidates=candidates,
-        resolved_ID638_rows=sum(row["resolved_skill_id"] == 638 and row["resolves_BattleModel"] for row in candidates),
-        resolved_other_BattleModel_rows=sum(row["resolved_skill_id"] in (641, 649, 650) and row["resolves_BattleModel"] for row in candidates),
-        scope="literal first OPTION token and loader-ordered callback array; equipment ownership/MP not inferred")
+        layout_counts=counts, ordered_array_bound=len(ordered),
+        ID_indexed_effective_bound=bound,
+        ID_indexed_allocation_bound=max(petskills.skills, default=-1) + 1,
+        scope="literal first OPTION token; default OPTIMUM and legacy ordered layouts; original build/equipment ownership/MP not inferred")
 
 
 def graph_census(enemies, groups, areas):
@@ -92,8 +101,9 @@ def analyze(data_dir, setup):
     if any((enemy_bad, group_bad, area_bad, magic_bad)):
         raise ValueError("BattleModel entry audit malformed master rows")
     ordered = tuple(petskills.skills.values())
-    callback_rows = [dict(skill_id=row.skill_id, illegal=row.illegal, callback_array=index,
-                         default_header_pet_entry="blocked_nonzero_ILLEGAL")
+    callback_rows = [dict(skill_id=row.skill_id, illegal=row.illegal, ordered_callback_array=index, ID_indexed_callback_array=row.skill_id,
+                         default_header_pet_entry="blocked_nonzero_ILLEGAL",
+                         default_header_array_within_effective_bound=row.skill_id < ordered[-1].skill_id + 1)
                      for index, row in enumerate(ordered) if row.function_name == CALLBACK.decode()]
     ledger = analyze_runtime_objects(petskills, enemybase)
     pressure = dict(total=ledger["total_positive_slot_uses"],

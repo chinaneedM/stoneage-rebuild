@@ -37,13 +37,19 @@ class CommandEntryTests(unittest.TestCase):
                   (fields(b"PETSKILL_BattleModel;638;SKILL"), {"ID": 2}),
                   (fields(b"PETSKILL_BattleModel;1;SKILL"), {"ID": 3})]
         result = magic_census(parsed, runtime)
-        self.assertEqual(result["resolved_ID638_rows"], 1)
-        self.assertEqual(result["resolved_other_BattleModel_rows"], 1)
-        self.assertIsNone(result["callback_option_candidates"][1]["resolved_skill_id"])
+        self.assertEqual(result["layout_counts"]["ordered_rows"]["resolved_ID638_rows"], 1)
+        self.assertEqual(result["layout_counts"]["ordered_rows"]["resolved_other_BattleModel_rows"], 1)
+        self.assertIsNone(result["callback_option_candidates"][1]["layouts"]["ordered_rows"]["resolved_skill_id"])
+        self.assertEqual(result["layout_counts"]["ID_indexed_OPTIMUM"]["resolved_ID638_rows"], 1)
         self.assertNotIn("SKILL", str(result))
         for token in (b"0trailing", b"not-a-number", b" +0"):
             result = magic_census([(fields(b"PETSKILL_BattleModel;" + token), {"ID": 4})], runtime)
-            self.assertEqual(result["resolved_ID638_rows"], 1)
+            self.assertEqual(result["layout_counts"]["ordered_rows"]["resolved_ID638_rows"], 1)
+
+        # OPTIMUM publishes last row ID+1, rather than allocation max+1.
+        reversed_runtime = type(runtime)(skills=dict(reversed(tuple(runtime.skills.items()))), source_file=runtime.source_file)
+        truncated = magic_census([(fields(b"PETSKILL_BattleModel;641"), {"ID": 5})], reversed_runtime)
+        self.assertEqual(truncated["layout_counts"]["ID_indexed_OPTIMUM"]["resolved_other_BattleModel_rows"], 0)
 
     def test_zero_weight_graph_counts_are_not_skill_reachability(self):
         enemies = [dict(tempno=t, id=e, tactics=1, tactics_option="at:1;1;1|wa:0;0;0;0;0;0;0", petflg=0)

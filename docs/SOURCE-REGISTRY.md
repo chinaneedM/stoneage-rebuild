@@ -4168,3 +4168,7 @@ callback traces. Native2592 default-header +864 Bismarck counterfactual controls
 Exact master-data audit newly configured in region workflow, pending receipt.
 Source/native facts do not establish original active-build flags or full
 script/gameplay reachability. Spec: command-entry audit R1.
+
+Loader flags include OPTIMUM/CFREE, with ID-indexed storage and final effective
+array-bound source gates. Exact data census reports both default ID-indexed
+and legacy ordered layouts; no original active-build layout assumption.

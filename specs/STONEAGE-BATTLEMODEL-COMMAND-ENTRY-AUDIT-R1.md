@@ -19,10 +19,13 @@ witnesses, not a re-test of the separately accepted hit/damage implementation.
 FACT for pinned source: equipment J magic can use `MAGIC_AttSkill` to look up a
 callback directly, bypassing `PETSKILL_Use`. `_ITEM_ATTSKILLMAGIC` is present in
 gavin/iris default headers, absent in Bismarck's. The second semicolon token is
-C atoi input passed directly as a callback **runtime array position**; it is
-not resolved as a pet-skill ID. The exact active magic file, loader order and
-callback candidate census must be checked before claiming any configured
-ID638 magic path. Equipment possession, MP and actor/gameplay prerequisites
+C atoi input passed directly as a callback **runtime array position**, with no ID lookup at that call site.
+All three default headers enable `_PETSKILL_OPTIMUM`: the loader stores rows
+at their numeric IDs, so the array may equal the ID. Legacy layout stores rows
+in file order. The loader publishes last-row-ID+1 as the effective OPTIMUM
+bound, rather than simply allocation maximum+1. The exact active magic file
+and both explicitly tagged layouts/bounds must be checked before claiming
+any configured ID638 magic path; the original active build layout stays OPEN. Equipment possession, MP and actor/gameplay prerequisites
 are separate OPEN obligations even for a matching row.
 
 FACT for pinned source: template AI150 is CHAR_MODAI. Enemy battle tactics and

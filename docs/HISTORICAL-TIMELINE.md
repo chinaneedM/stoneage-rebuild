@@ -1208,7 +1208,8 @@ FACT (version-tagged descendants, not Taiwan-v1/original executable): nonzero
 ILLEGAL PET skill admission rejects before callback under the three default
 headers; source/native2592 default-header cases and864 separately labelled
 Bismarck OPEN_E counterfactual cases. Direct equipment magic forwards a runtime
-array rather than resolving a pet-skill ID. Default magic feature enabled only
+array without lookup. Default OPTIMUM storage uses numeric IDs as arrays;
+legacy storage uses file order, and original executable layout remains OPEN. Default magic feature enabled only
 in gavin/iris among these profiles. Actual data magic reachability PENDING;
 opaque script/build flags remain OPEN. TemplateAI150 is MODAI, while enemy
 TACTICS/wa are separate. See command-entry audit R1; no historical path or
