@@ -243,3 +243,19 @@ bounded tests or a new full native exit certificate. Exact helper audit
 `37415958204` reproduces486 cases at three clean pins with controlled Exit
 stubs. Full cleanup/profit behavior remains outside that certificate. Contract:
 `specs/STONEAGE-BATTLEMODEL-DEFAULT-EXIT-AUDIT-R1.md`.
+
+
+## 2026-10-06 subsequent correction — explicit runtime now accepted
+
+The correction-pending statement above is superseded by bounded explicit
+ordinary/persistent/shared-nonbow runtime acceptance on0a4cecc3/tree97546cab.
+All33 Actions SUCCESS; settlement37417691024 reproduces535 tests including22
+new cases. Selection, owned roster and paired occupancy are independently
+bound, and pet ultimate clears owner selection before later player-death
+loyalty. See STONEAGE-DEFAULT-PET-ULTIMATE-RUNTIME-R1 and its acceptance receipt.
+
+The helper audit still does not certify full native cleanup/profit. Static
+preflight shows AddExpItem scans deaths in side/slot order and can observe
+mutations from earlier player Exit; BattleModel profit is at command tail,
+whereas ordinary nonbow/counter profit occurs per hit. Native composition
+under those exact boundaries is the next gate. Lethal638 remains disabled.

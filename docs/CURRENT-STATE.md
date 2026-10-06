@@ -7305,3 +7305,36 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   BattleModel integration, preserving target/item/status RNG and actual flags.
   Golden/region/hash-verified638 pressure, equipped/wider features and original
   profile ambiguity remain OPEN. Spec: STONEAGE-DEFAULT-PET-ULTIMATE-RUNTIME-R1.
+
+
+## Phase 1 DD-020 explicit ultimate selection remote acceptance — 2026-10-06
+
+- Exact input0a4cecc36e3b36c17d3f032dfd826412801d9679,
+  tree97546cab8a298d2e9d850ccee9d70154630324f7: all33 triggered Actions
+  SUCCESS. Settlement37417691024/job112119856439 reproduces535 tests
+  including22 new cases and486/696/3420/1920/480/60 native gates. Existing
+  golden and full-region37417690927 SUCCESS; region reports unchanged.
+- CLOSED_BOUNDED_EXPLICIT_DEFAULT_PET_ULTIMATE_STATE_CORRECTION: ordinary,
+  persistent and shared nonbow paths bind nullable selection, ownership and
+  occupancy independently; pet ultimate clears selection before later death
+  loyalty. Player carried cleanup/terminal return and immutable rejection
+  verified. Earlier remote-pending records superseded within this scope only.
+- Receipt research/recovered/STONEAGE-DEFAULT-PET-ULTIMATE-ACCEPTANCE-R1.json
+  preserves every run and local broad-suite limitations. All-suite PASS is
+  not claimed. No lethal638/automatic-AI/new specific golden/slot promotion.
+- Three-pin STATIC preflight confirms non-duel AddProfit delegates the scan
+  to AddExpItem; scan follows side/entry order, and player Exit may remove or
+  heal later pet entries. Ordinary nonbow/counter profit is per hit, while
+  BattleModel has no internal profit call and reaches command-tail profit.
+  This is not a full native composition certificate; zero new native cases.
+- Nonforce main synchronization/exact replay pending. Acceptance changes only
+  docs/derived receipts; fresh branch/main refs and input ancestry verified.
+- **Highest-priority unfinished task:** verify accepted main replay, then
+  execute the original PvE AddProfit/AddExpItem/UltimateExtra/NormalDeadExtra/
+  PetDefaultExit/_BATTLE_Exit bodies together at three pins under the declared
+  reduced profile. Test scan-order multi-victim mutation, no-selection paired
+  occupancy, prior ISDIE, surviving ultimate flags, Guardian and exact profit
+  boundaries before enabling lethal BattleModel. Contract:
+  specs/STONEAGE-BATTLEMODEL-PROFIT-EXIT-COMPOSITION-PLAN-R1.md.
+  Automatic AI, equipped/wider features, original build/profile ambiguity and
+  BattleModel-specific golden/region/hash-verified pressure remain OPEN.

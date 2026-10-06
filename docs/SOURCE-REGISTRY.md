@@ -3753,3 +3753,23 @@ slots remain OPEN. Pending snapshot superseded; no raw source/payload retained.
 - Spec STONEAGE-DEFAULT-PET-ULTIMATE-RUNTIME-R1; remote exact/shared/full-region
   gates pending.638 remains nonlethal/unpromoted; full native Exit/profit,
   equipped/wider features, automatic AI and638-specific pressure remain OPEN.
+
+
+### SRC-EXPLICIT-DEFAULT-PET-ULTIMATE-STATE-R1 — 2026-10-06
+
+- Kind: independent modern DD-020 correction and exact remote regression;
+  historical helper/static evidence remains the three clean pins recorded in
+  SRC-EXPLICIT-DEFAULT-PET-EXIT-HELPER-R1. No raw source/payload retained.
+- Input0a4cecc36e3b36c17d3f032dfd826412801d9679,
+  tree97546cab8a298d2e9d850ccee9d70154630324f7: all33 Actions SUCCESS.
+  Settlement37417691024/job112119856439:535 tests/22 new, prior native
+ 486/696/3420/1920/480/60 checks. Full-region37417690927 PASS, no writeback.
+- Accepted scope: exact nullable selection, owned roster and paired occupancy,
+  pet-ultimate chronological selection/profit-state clear, persistent carried
+  cleanup and terminal return. Receipt/spec preserve reduced-profile and
+  broad-suite limitations; no lethal638 or full native composition claim.
+- Static three-pin preflight metadata:
+  research/recovered/STONEAGE-PROFIT-EXIT-COMPOSITION-PREFLIGHT-R1.json.
+  PvE AddExpItem side/slot scan and BattleModel command-tail profit establish
+  next audit boundaries; zero native composition cases. Full contract:
+  specs/STONEAGE-BATTLEMODEL-PROFIT-EXIT-COMPOSITION-PLAN-R1.md.

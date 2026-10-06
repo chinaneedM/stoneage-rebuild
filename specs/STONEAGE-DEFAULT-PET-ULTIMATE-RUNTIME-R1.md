@@ -1,6 +1,6 @@
 # Explicit default pet selection and ultimate exit runtime R1
 
-Status: LOCAL_VALIDATED; exact remote input/gates pending.
+Status: CLOSED_BOUNDED_EXPLICIT_DEFAULT_PET_ULTIMATE_STATE_CORRECTION.
 
 ## Corrected behavior
 
@@ -87,3 +87,20 @@ draws and actual Guardian flags. Automatic638 AI selection, equipped/wider
 features and BattleModel-specific golden/region/hash-verified pressure remain
 OPEN. Existing baseline golden/region replays do not certify those scenarios.
 DD-018 restoration-first and the original profile ambiguity remain binding.
+
+## Exact remote acceptance — 2026-10-06
+
+Input0a4cecc36e3b36c17d3f032dfd826412801d9679,
+tree97546cab8a298d2e9d850ccee9d70154630324f7: all33 triggered
+Actions SUCCESS. Settlement37417691024/job112119856439 reproduces535
+tests, including22 new cases, and native486 helper/696 physical/3420
+ItemCrush/1920 settlement/480 marker/60 pet checks. Artifact11391357152.
+Existing golden and full-region37417690927 SUCCESS; region derived reports
+unchanged. Receipt: STONEAGE-DEFAULT-PET-ULTIMATE-ACCEPTANCE-R1.json.
+Earlier pending snapshots are superseded only within the scope above.
+
+Full native profit/exit composition remains OPEN. Static preflight at the
+three clean pins locates the PvE scan in AddExpItem, distinguishes ordinary
+per-hit profit from BattleModel command-tail profit, and records scan-order
+mutations for the next gate. See
+STONEAGE-BATTLEMODEL-PROFIT-EXIT-COMPOSITION-PLAN-R1.md.

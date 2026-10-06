@@ -1,0 +1,116 @@
+{
+  "schema": "STONEAGE_PROFIT_EXIT_COMPOSITION_PREFLIGHT_R1",
+  "classification": "STATIC_SOURCE_OBSERVATION_NOT_NATIVE_CERTIFICATE",
+  "profiles": [
+    {
+      "name": "gavin",
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "battle_c_sha256": "a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602",
+      "battle_event_c_sha256": "9a4607566b7cf6f6a94f2019c5d1dfc7088f7805421037b0a5f0095054b9db1d",
+      "windows": {
+        "BATTLE_AddProfit": {
+          "comment_stripped_window_utf8_sha256": "96f15c84a74bcc6987ee3b3b45d75aca4ef1cafa066f0137484a1326c1cec80f",
+          "preprocessor_directives": 0
+        },
+        "BATTLE_AddExpItem": {
+          "comment_stripped_window_utf8_sha256": "87025cf57d29ce69e2c5408a1fea15e0e9fd0866febf9c6d9b831f11ea8a4c02",
+          "preprocessor_directives": 5
+        },
+        "BATTLE_UltimateExtra": {
+          "comment_stripped_window_utf8_sha256": "21090413c3ff310d1e829343f3677fc4dee16a8cf33ce090568c95fefc451aa8",
+          "preprocessor_directives": 9
+        },
+        "BATTLE_NormalDeadExtra": {
+          "comment_stripped_window_utf8_sha256": "8a4b24b82bd3035cee3279de375bd9e7961effd10e3fe0e4636773f95e6a4857",
+          "preprocessor_directives": 1
+        },
+        "_BATTLE_Exit": {
+          "comment_stripped_window_utf8_sha256": "9a5cf4a6a2069d7bb59f4e304ad10bef0559f638c79d01855c98ce0d3427ec11",
+          "preprocessor_directives": 32
+        },
+        "BATTLE_PetDefaultExit": {
+          "comment_stripped_window_utf8_sha256": "58e04b3e6a7b32f53058ea6ab338907a7b25b247b1d9092b76041d53c1dc7a88",
+          "preprocessor_directives": 0
+        }
+      },
+      "battlemodel_internal_profit_calls": 0
+    },
+    {
+      "name": "iris",
+      "commit": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "battle_c_sha256": "6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8",
+      "battle_event_c_sha256": "2437d4fe88f1dd77e14ad5b976402053ddd1e297d471f45b4169c3588310d4db",
+      "windows": {
+        "BATTLE_AddProfit": {
+          "comment_stripped_window_utf8_sha256": "96f15c84a74bcc6987ee3b3b45d75aca4ef1cafa066f0137484a1326c1cec80f",
+          "preprocessor_directives": 0
+        },
+        "BATTLE_AddExpItem": {
+          "comment_stripped_window_utf8_sha256": "e897cc96c0c808801915e4e968dc68eeb0a3b0e2703b79c4b400fec66104b049",
+          "preprocessor_directives": 5
+        },
+        "BATTLE_UltimateExtra": {
+          "comment_stripped_window_utf8_sha256": "21090413c3ff310d1e829343f3677fc4dee16a8cf33ce090568c95fefc451aa8",
+          "preprocessor_directives": 9
+        },
+        "BATTLE_NormalDeadExtra": {
+          "comment_stripped_window_utf8_sha256": "8a4b24b82bd3035cee3279de375bd9e7961effd10e3fe0e4636773f95e6a4857",
+          "preprocessor_directives": 1
+        },
+        "_BATTLE_Exit": {
+          "comment_stripped_window_utf8_sha256": "01bf18153c959c060ec41162a3e830f9fe71a18713bf197a1ec6134102fc1fba",
+          "preprocessor_directives": 32
+        },
+        "BATTLE_PetDefaultExit": {
+          "comment_stripped_window_utf8_sha256": "58e04b3e6a7b32f53058ea6ab338907a7b25b247b1d9092b76041d53c1dc7a88",
+          "preprocessor_directives": 0
+        }
+      },
+      "battlemodel_internal_profit_calls": 0
+    },
+    {
+      "name": "bismarck",
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "battle_c_sha256": "2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18",
+      "battle_event_c_sha256": "b294f82e2a0b8382b59edd06fa8646fa3e50c00656eba496d8b78fa421c58ecc",
+      "windows": {
+        "BATTLE_AddProfit": {
+          "comment_stripped_window_utf8_sha256": "dd50ec1260bbae7f0df71e1e7f1bec2c23429888703c7e1c0809577dffb7f84c",
+          "preprocessor_directives": 5
+        },
+        "BATTLE_AddExpItem": {
+          "comment_stripped_window_utf8_sha256": "42769db60effd75ff188f0bd0f505d438a5ea255ec74ca36cde2eebe8c8ac5fa",
+          "preprocessor_directives": 5
+        },
+        "BATTLE_UltimateExtra": {
+          "comment_stripped_window_utf8_sha256": "5d93f68d322d46f1101c715f6d6a7b011a4e24746f6ee413ad805c6b1bae9032",
+          "preprocessor_directives": 4
+        },
+        "BATTLE_NormalDeadExtra": {
+          "comment_stripped_window_utf8_sha256": "f400e57e167ebbb839384d14e8ca08647b90bca26039db54dd1380ef68cb5c50",
+          "preprocessor_directives": 3
+        },
+        "_BATTLE_Exit": {
+          "comment_stripped_window_utf8_sha256": "d8006819d4b97789154b18a563598a5f0b8d39a7f0512863e6656b2c27504e5a",
+          "preprocessor_directives": 60
+        },
+        "BATTLE_PetDefaultExit": {
+          "comment_stripped_window_utf8_sha256": "a1205a0d4d0c8a909cfdab3c329b1aae910db3ba20553ee1a7031f4e39dcd730",
+          "preprocessor_directives": 0
+        }
+      },
+      "battlemodel_internal_profit_calls": 0
+    }
+  ],
+  "observations": [
+    "AddProfit dispatches non-duel profit to AddExpItem",
+    "AddExpItem scans side 0 then side 1 and ascending entry indices; HP <= 0 and ISDIE false gates processing",
+    "Original BattleModel function has no AddProfit call; command tail invokes it after dispatch",
+    "Ordinary nonbow and counter command loops contain per-hit profit calls",
+    "Player Exit can heal owned dead non-mail pets and remove paired occupancy before later scan entries"
+  ],
+  "native_cases": 0,
+  "full_composition": "OPEN",
+  "original_build_membership": "OPEN",
+  "positive_slots_promoted": 0
+}

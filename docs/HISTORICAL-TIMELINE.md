@@ -910,3 +910,19 @@ dead carried entries propagate. Terminal return preserves ownership/HP and
 excludes final profit. No full native exit/profit, lethal638 or original build
 membership claim. Broad discovery has identical clean-baseline failures and
 optional-dependency import errors. Remote exact/shared/full-region gates pending.
+
+
+### 2026-10-06 — explicit default-pet ultimate state correction accepted
+
+- Modern bounded correction on0a4cecc3/tree97546cab: all33 Actions SUCCESS;
+  settlement37417691024 reproduces535 tests including22 new cases and
+ 486/696/3420/1920/480/60 prior native gates. Full-region37417690927 PASS,
+  reports unchanged. Explicit nullable selection and separate occupancy now
+  replace sole-active-pet inference; pet ultimate clears DEFAULTPET before
+  later player-death loyalty. Ownership and carried HP restoration retained.
+- This supersedes correction-pending status, not historical build provenance.
+  Full native cleanup/profit, lethal638/AI/pressure and positive slots OPEN.
+- Static preflight at the same three clean pins locates PvE death scanning in
+  AddExpItem and distinguishes per-hit ordinary profit from post-dispatch
+  BattleModel command-tail profit. Scan-order mutation is the next native
+  gate; static anchors alone do not certify the full composition.
