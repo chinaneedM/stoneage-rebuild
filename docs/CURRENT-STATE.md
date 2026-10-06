@@ -8292,3 +8292,25 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   templates**. Re-read any existing BecomeFox branch/spec before changing code,
   then audit its exact placements, source lineage, OPTION/runtime semantics and
   execution boundary. ID638's bounded capability must not be generalized to it.
+
+
+## 2026-10-06 — BecomeFox next-OPEN reference discovery started
+
+- ID638 conditional placement capability is accepted and main now reports
+  2486=2463 closed capability+20 OPEN+3 historical UB. Mechanical NEXT_OPEN is
+  PETSKILL_BecomeFox ID625,2 positive uses/2 templates.
+- The only existing BecomeFox branch was inspected first. It diverged154 commits
+  behind current main and contained one source-preaudit-only commit, so it is not
+  merged. Its auditor is being re-executed on a fresh current-main branch.
+- New combined discovery gate pins only the already accepted ID625/2-use/2-template
+  pressure facts. Exact callback population, row metadata, OPTION identity and
+  template/slot/base-stat/MODAI rows are emitted from the verified preservation
+  bundle and remain OPEN until the remote report is inspected and pinned.
+- The three descendant source profiles must independently reproduce21 structural
+  gates. The gavin/iris ordinary-int versus Bismarck work-int FOXROUND PetIn
+  accessor divergence remains explicit and unresolved; no profile is chosen as
+  recovered-original truth.
+- **Highest-priority unfinished task:** complete this remote discovery gate,
+  inspect the derived exact data, pin the complete identities and rerun for
+  bounded reference acceptance before implementing any runtime semantics.
+  Spec: `specs/STONEAGE-BECOMEFOX-REFERENCE-DISCOVERY-R1.md`.
