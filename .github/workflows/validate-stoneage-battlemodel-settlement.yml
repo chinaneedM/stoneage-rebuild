@@ -19,6 +19,7 @@ on:
       - "tools/stoneage_battlemodel_guardian_profit_tail_source_audit.py"
       - "tools/stoneage_battlemodel_damagesub_profit_tail_source_audit.py"
       - "tools/stoneage_battlemodel_full_battling_profit_tail_source_audit.py"
+      - "tools/stoneage_battlemodel_ultimate_profit_tail_source_audit.py"
       - "tools/stoneage_profit_exit_scan_model.py"
       - "tools/stoneage_nocast_runtime_state.py"
       - "tools/stoneage_battle_round_model.py"
@@ -198,6 +199,17 @@ jobs:
             /tmp/battlemodel-full-battling-profit-tail.txt
           grep -F 'RESOLUTION|BATTLEMODEL_FULL_BATTLING_PROFIT_TAIL_NATIVE_PASS' \
             /tmp/battlemodel-full-battling-profit-tail.txt
+      - name: Execute ID638 full original ultimate profit tail
+        run: |
+          python -m tools.stoneage_battlemodel_ultimate_profit_tail_source_audit \
+            --gavin-dir /tmp/battlemodel-hit/gavin \
+            --iris-dir /tmp/battlemodel-hit/iris \
+            --bismarck-dir /tmp/battlemodel-hit/bismarck \
+            > /tmp/battlemodel-ultimate-profit-tail.txt
+          cat /tmp/battlemodel-ultimate-profit-tail.txt
+          test "$(grep -c '"native_ultimate_full_battling_cases": 16' /tmp/battlemodel-ultimate-profit-tail.txt)" = 3
+          grep -F 'TOTAL|native_ultimate_full_battling_cases=48|profiles=3' /tmp/battlemodel-ultimate-profit-tail.txt
+          grep -F 'RESOLUTION|BATTLEMODEL_ULTIMATE_FULL_BATTLING_PROFIT_TAIL_NATIVE_PASS' /tmp/battlemodel-ultimate-profit-tail.txt
       - name: Recheck original bounded Weaken attribute recalculation
         run: |
           python -m tools.stoneage_weaken_source_audit \
@@ -267,6 +279,7 @@ jobs:
             /tmp/battlemodel-guardian-profit-tail.txt
             /tmp/battlemodel-damagesub-profit-tail.txt
             /tmp/battlemodel-full-battling-profit-tail.txt
+            /tmp/battlemodel-ultimate-profit-tail.txt
             /tmp/player-exit-weaken-native.txt
             /tmp/battlemodel-physical-attackseq.txt
             /tmp/battlemodel-itemcrush.txt

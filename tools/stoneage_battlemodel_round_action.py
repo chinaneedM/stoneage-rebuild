@@ -1,9 +1,9 @@
 """Typed, bounded BattleModel inputs for the existing ordinary round driver.
 
 No round-model import: the ordinary driver owns command/status timing and
-passes current work to the accepted physical loop. Normal death is admitted
-only by an explicit lethal-profit scope; ultimate/Exit settlement remains
-outside this bounded seam.
+passes current work to the accepted physical loop. Normal death and newly
+lethal ultimate/Exit each require their explicit profit integration scope.
+Living reflected ultimate flags remain outside the admitted domain.
 """
 from __future__ import annotations
 

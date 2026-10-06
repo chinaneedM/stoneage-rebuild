@@ -497,6 +497,56 @@ class OrdinaryBattleModelTests(unittest.TestCase):
         self.assertEqual(context.persistent_battle_state.hp_by_participant_id["target"],10)
         self.assertEqual(context.persistent_battle_state.hp_by_participant_id["guardian"],10)
 
+    def test_lethal638_pet_only_ultimate_clears_selection_through_coordinator(self):
+        self.actors[5]=replace(self.actors[0],participant_id="guardian",kind="pet",
+                               hp=10,max_hp=10,source_pet_slot=0)
+        self.commands["target"]=BattleCommand(BATTLE_COM_WAIT)
+        self.commands["guardian"]=BattleCommand(BATTLE_COM_WAIT)
+        self.status["guardian"]=BaseBattleStatusRuntime(work_quick=40)
+        self.resistances[5]=0
+        self.guardians={0:GuardianRegistration(5)}
+        state=begin_persistent_battle(
+            session(self.actors[0],(self.actors[10],),(self.actors[5],)),
+            slots={"target":0,"guardian":5,"enemy":10},default_pet_slot=0,
+            base_status_runtime_by_participant_id=self.status)
+        context=LocalRuntimeBattleContext("control-contract","control-world",1,
+            state.session.origin_position,frozenset(),"control-payload",state.session,
+            (spawned(),),state)
+        draws=[BattleModelDraw(0,"attackseq_dodge",10000),
+               BattleModelDraw(0,"attackseq_critical",10000),
+               BattleModelDraw(0,"attackseq_damage",2)]
+        for i in (2,3):
+            draws.extend((BattleModelDraw(i,"target_selection",0),
+                          BattleModelDraw(i,"attackseq_dodge",10000),
+                          BattleModelDraw(i,"attackseq_critical",10000),
+                          BattleModelDraw(i,"attackseq_damage",2),
+                          BattleModelDraw(i,"itemcrush_check",400000),
+                          BattleModelDraw(i,"status",100)))
+        action=replace(self.action(tuple(draws),scope=BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1),
+                       opposing_slot_order=(0,5))
+        after,result=self.coordinator_round(context,action)
+        self.assertEqual(result.round.ultimate_exited_participant_ids,("guardian",))
+        self.assertIsNone(after.persistent_battle_state.default_pet_slot)
+        self.assertEqual(context.persistent_battle_state.default_pet_slot,0)
+        self.assertEqual(result.profit_scan_settlement.steps[0].result.processed_death_ids,
+                         ("guardian",))
+        self.assertNotIn("guardian",after.persistent_battle_state.profit_processed_death_ids)
+        self.assertGreater(after.persistent_battle_state.hp_by_participant_id["target"],0)
+
+    def test_lethal638_accumulated_ultimate1_preserves_kind_at_boundary(self):
+        self.actors[0]=replace(self.actors[0],hp=1)
+        state=replace(self.persistent(),ultimate_overkill_by_participant_id={"target":1000,"enemy":0})
+        draws=(BattleModelDraw(0,"attackseq_dodge",10000),
+               BattleModelDraw(0,"attackseq_critical",10000),
+               BattleModelDraw(0,"attackseq_damage",2),
+               *(BattleModelDraw(i,"target_selection",0) for i in range(1,4)))
+        result=self.state_round(state,self.action(draws,scope=BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1))
+        boundary=result.round.profit_boundaries[0]
+        self.assertEqual(dict(boundary.ultimate_kind_by_slot),{0:1})
+        self.assertEqual(result.after.hp_by_participant_id["target"],1)
+        self.assertEqual(result.round.ultimate_exited_participant_ids,("target",))
+        self.assertEqual(state.ultimate_overkill_by_participant_id["target"],1000)
+
     def test_success_cancels_later_prepared_attack_in_actual_same_round(self):
         result = self.run_round()
         self.assertEqual(result.action_order, ("enemy", "target"))
@@ -668,7 +718,7 @@ class OrdinaryBattleModelTests(unittest.TestCase):
         self.assertEqual(self.actors[0].hp, 1)
         self.assertEqual(self.status["target"].status.paralysis, 0)
 
-    def test_later_ordinary_death_stays_outside_both_battlemodel_scopes(self):
+    def test_later_ordinary_death_stays_outside_all_battlemodel_scopes(self):
         # Kill the 500-HP enemy through the later ordinary attack without
         # crossing the source maxHP*1.2+20 ultimate threshold. With the fixed
         # no-element/newpower profile and damage_roll=0, attack=320 settles
@@ -677,6 +727,7 @@ class OrdinaryBattleModelTests(unittest.TestCase):
         for scope in (
             BATTLEMODEL_ORDINARY_SCOPE_R1,
             BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
+            BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1,
         ):
             with self.subTest(scope=scope), self.assertRaisesRegex(
                 ValueError, "excludes death outside"
