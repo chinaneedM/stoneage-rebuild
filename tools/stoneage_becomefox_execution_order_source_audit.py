@@ -73,11 +73,12 @@ def analyze_profile(name: str, root: Path) -> dict:
     switch="switch(COM)"
     default="default:"
     default_assign="dex=work-RAND("
+    default_at=dex.find(default)
     positions={
         "fox":dex.find(fox_assign),
         "switch":dex.find(switch),
-        "default":dex.find(default),
-        "default_assign":dex.find(default_assign),
+        "default":default_at,
+        "default_assign":dex.find(default_assign,default_at),
     }
     guards={
         "fox_dex_write_precedes_command_switch":
