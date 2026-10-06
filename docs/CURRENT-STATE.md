@@ -8389,3 +8389,27 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   exact report. If PASS, accept the postattack predicate and proceed to whole
   ordered AttackSeq/retarget/Guardian composition plus FOXROUND cross-round
   persistent state. Pressure remains2486=2463+20+3; BecomeFox0 promotions.
+
+
+## 2026-10-06 — BecomeFox exact admission + FOXROUND state layer implemented (PENDING)
+
+- Postattack native predicate is now independently confirmed against **3840**
+  exact pinned-C vectors (1280/profile). This closes the reduced postattack
+  short-circuit/state oracle, not the whole attack dispatcher.
+- New exact recovered25 admission admits only callback ID625 on templates148/149,
+  runtime index2/report slot3, with accepted metadata1/1/2/3000 and empty OPTION.
+  Template graphic/base-stat/MODAI identities and enemy-only actor boundary are
+  rechecked before a typed semantic submission is created.
+- New persistent FOXROUND overlay stores only active transformed targets. It
+  intentionally does **not** lower powers at transformation time. The actor
+  action-preparation transition rewrites FIXSTR/FIXTOUGH/FIXDEX to C-truncated
+  80%; recovery remains post-action and strictly currentTurn-foxRound>2.
+  Retransformation refreshes the marker without duplicating overlay state.
+- gavin/iris vs fixed-Bismarck profile differences remain explicit for ARRANGE
+  admission and PetIn accessor choice. No profile is promoted to historical
+  recovered-original truth.
+- **Highest-priority unfinished task:** finish this unit/identity gate, then wire
+  typed BecomeFox into the ordered ordinary-attack loop so transformation occurs
+  after the attack/counter chain but before later actors, and FOX action powers /
+  recovery execute at the target actor's own action boundary. Persistent state
+  and coordinator threading follow only after focused round tests pass.

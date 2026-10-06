@@ -1,0 +1,43 @@
+name: Validate StoneAge BecomeFox admission and FOXROUND state
+
+concurrency:
+  group: stoneage-becomefox-runtime-state-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-becomefox-runtime-state.yml"
+      - "tools/stoneage_becomefox_reference_model.py"
+      - "tools/stoneage_becomefox_runtime_state.py"
+      - "tools/stoneage_enemy_ai_becomefox_bridge.py"
+      - "tests/test_stoneage_becomefox_reference_model.py"
+      - "tests/test_stoneage_becomefox_runtime_state.py"
+      - "tests/test_stoneage_enemy_ai_becomefox_bridge.py"
+      - "research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate exact admission and persistent FOXROUND state
+        run: |
+          python -m unittest -v \
+            tests.test_stoneage_becomefox_reference_model \
+            tests.test_stoneage_becomefox_runtime_state \
+            tests.test_stoneage_enemy_ai_becomefox_bridge
+          grep -F 'BECOMEFOX_ROW|id=625|field=1|target=1|cost=2|illegal=3000|slot_references=2|option_bytes=0|option_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855' \
+            research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt
+          grep -F 'BECOMEFOX_TEMPLATE|tempno=148|graphic_id=101743|base_vital=32|base_strength=40|base_toughness=26|base_dexterity=30|ai=150|skill_slots=3|skill_ids=625' \
+            research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt
+          grep -F 'BECOMEFOX_TEMPLATE|tempno=149|graphic_id=101744|base_vital=28|base_strength=45|base_toughness=22|base_dexterity=32|ai=150|skill_slots=3|skill_ids=625' \
+            research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt
