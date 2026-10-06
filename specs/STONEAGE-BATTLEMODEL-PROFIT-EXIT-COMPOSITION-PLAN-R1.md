@@ -79,3 +79,13 @@ existing native hit gates. Only then isolate lethal638 integration with
 native scan boundaries. BattleModel-specific golden, full-region actual-data
 execution and hash-verified pressure remain required before positive-slot
 promotion. Automatic638 AI selection and equipped/wider features stay OPEN.
+
+
+## 2026-10-06 bounded native local milestone
+
+The required seven-function feature-off PvE composition now passes19656 native
+cases locally at the three clean pins. Original ten-field status table/extent
+and ISDIE clear are included. This supersedes zero-native-case status within
+that declared profile only; exact remote acceptance remains pending.
+Contract: STONEAGE-PVE-PROFIT-EXIT-NATIVE-AUDIT-R1.md. The full command-native
+attack-to-profit bridge and modern lethal638 integration remain OPEN.

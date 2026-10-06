@@ -3773,3 +3773,24 @@ slots remain OPEN. Pending snapshot superseded; no raw source/payload retained.
   PvE AddExpItem side/slot scan and BattleModel command-tail profit establish
   next audit boundaries; zero native composition cases. Full contract:
   specs/STONEAGE-BATTLEMODEL-PROFIT-EXIT-COMPOSITION-PLAN-R1.md.
+
+
+### SRC-PVE-PROFIT-EXIT-NATIVE-COMPOSITION-R1 — 2026-10-06
+
+- Same clean fixed gavin1f90cb6c/iris9e6c8ce2/bismarck999ffdf1 pins.
+  battle.c, battle_event.c and char_base.h/battle.h/battle_event.h hashes,
+  seven stripped-function hashes and native counts emitted in
+  research/recovered/STONEAGE-PVE-PROFIT-EXIT-NATIVE-R1.txt. No raw source
+  retained. Reproducer: tools/stoneage_profit_exit_source_audit.py.
+-6552 cases per pin/19656 total LOCAL PASS: source side/slot death scan plus
+  actual Exit/helper/normal/ultimate/base-status bodies. Ten-field original
+  table and extent verified, including ISDIE clearing. Ordered semantic traces
+  and final state/ownership/EXP/counts checked; some injected snapshots are
+  controlled function experiments rather than historical Entry witnesses.
+- Harness controls getters/field keys, no-item/no-ride and external penalty
+  helper deltas/notifications/elder/party/deallocation. It does not execute
+  Guardian physical selection or full original Battling/638 driver. Four
+  STATIC profit-boundary anchors separately checked; original active build and
+  JSS/Taiwan-v1 membership, complete modern638 runtime/pressure remain OPEN.
+- Spec: STONEAGE-PVE-PROFIT-EXIT-NATIVE-AUDIT-R1. Extended settlement CI pending
+  exact remote acceptance; no positive-slot or overall-percentage promotion.

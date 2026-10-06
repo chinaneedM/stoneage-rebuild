@@ -7361,3 +7361,38 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   boundaries; follow STONEAGE-BATTLEMODEL-PROFIT-EXIT-COMPOSITION-PLAN-R1.
   Then isolate lethal638 integration and specific golden/region/hash-verified
   pressure. Original build/profile, equipped/wider features and AI remain OPEN.
+
+
+## Phase 1 bounded native PvE profit/exit composition local milestone — 2026-10-06
+
+- Fresh remote main4e26e2e3135762e33a960fc42f30b3607c00ec45,
+  tree9abb03723eb18dd3eb7d6c6a1a624683252514dd; prior33 exact-main
+  workflows SUCCESS. Isolated agent/profit-exit-native-r1-20261006.
+- LOCAL_VALIDATED: seven original AddProfit/AddExpItem/UltimateExtra/
+  NormalDeadExtra/PetDefaultExit/_BATTLE_Exit/BadStatusAllClr functions
+  compiled together at all three clean pins.6552 cases/profile,19656 total
+  PASS. Original header enums/feature-off conditional layout and ten-field
+  StatusTbl compiled; original BATTLE_ST_END11 asserted. No raw source saved.
+- Ordered DEFAULTPET/HP/ISDIE/status/death/penalty/Exit/warp-request traces
+  and final occupancy, ownership, counts, pending EXP and modes compared.
+  Simultaneous scan versus separate-call pet-first chronology, selected absent
+  or distinct paired identity, owner0/4 and both sides, prior death/positive-HP
+  ultimate flags, risk/level and enemy profit/idempotence covered.
+- Native bounded FACT: owner-first ultimate exit removes/heals the later paired
+  dead pet before scan processing; it is not an additional pet death event.
+  Original BadStatusAllClr clears ten unconditional statuses AND ISDIE.
+  Earlier six-status runtime claims stay bounded; modern overlay clear still
+  needs an explicit adapter. Per-hit ordinary versus638 command-tail profit
+  remains a separate STATIC call-site gate, not native full-driver execution.
+-535 exact related regression tests PASS. Existing hit/native/world evidence
+  not promoted; no runtime code change, no full-suite PASS or new638 slot.
+  Spec: STONEAGE-PVE-PROFIT-EXIT-NATIVE-AUDIT-R1. Derived local report:
+  research/recovered/STONEAGE-PVE-PROFIT-EXIT-NATIVE-R1.txt. CI extended to
+  reproduce new audit and all prior535/helper/physical/ItemCrush/settlement gates.
+- **Highest-priority unfinished task:** publish exact audit branch, inspect
+  required settlement job/artifact and fresh refs; accept only feature-off PvE
+  native composition on PASS and sync nonforce. Then isolate source-shaped
+  BattleModel command-tail profit adapter preserving whole-scan mutations and
+  ten-field clear/modern overlay boundaries before lethal638 integration.
+  Full command-native bridge, original profile/version, automatic AI, equipped/
+  wider features and specific golden/region/hash-verified638 pressure OPEN.

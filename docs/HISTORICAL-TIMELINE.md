@@ -926,3 +926,18 @@ optional-dependency import errors. Remote exact/shared/full-region gates pending
   AddExpItem and distinguishes per-hit ordinary profit from post-dispatch
   BattleModel command-tail profit. Scan-order mutation is the next native
   gate; static anchors alone do not certify the full composition.
+
+
+### 2026-10-06 — original bounded PvE profit/exit composition local audit
+
+- Three clean fixed descendant pins compile seven original profit/death/exit/
+  status-clear functions together with original relevant header declarations.
+  Declared feature-off PvE/no-item/no-ride/non-mail scope:19656 native cases
+  PASS locally,6552 per pin. Exact remote acceptance pending.
+- Source-bounded observations: side/slot scan mutations from player ultimate
+  can prevent later paired-pet death processing; earlier pet-ultimate profit
+  calls clear DEFAULTPET before later owner penalties. BadStatusAllClr also
+  clears ISDIE and all ten unconditional StatusTbl fields. Independent modern
+  runtime still has separately represented overlays; no full exit/638 claim.
+- Original full Battling/638 command-to-profit execution, compiler/feature/
+  version membership and hash-verified specific pressure remain unresolved.
