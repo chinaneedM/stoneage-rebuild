@@ -34,3 +34,13 @@ Pressure stays2486=2461 closed+22 OPEN+3 historical UB. Receipt:
 `research/recovered/STONEAGE-BATTLEMODEL-AI-SELECTION-ACCEPTANCE-R1.json`.
 Original active build/Taiwan-v1 membership, wider recipients, ride/items and
 historical scheduler/presentation remain OPEN. No engine/MMO choice is added.
+
+## 2026-10-06 — Bounded command-entry audit completed
+
+Steps1–4 are superseded by accepted command-entry audit R1 and its receipt.
+Default-header PET requests reject nonzero ILLEGAL; no active literal
+BattleModel magic candidate, positive group reference or positive area row
+was found. Both enemy wa weights remain0. Original build/opaque NPC/script
+paths remain OPEN. Capability and actual reachability are now separate gates.
+Steps5–6 continue under the exact conditional-placement closure plan R1;
+this audit itself promotes0 slots and keeps pressure2461/22/3.

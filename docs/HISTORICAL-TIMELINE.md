@@ -1214,3 +1214,17 @@ in gavin/iris among these profiles. Actual data magic reachability PENDING;
 opaque script/build flags remain OPEN. TemplateAI150 is MODAI, while enemy
 TACTICS/wa are separate. See command-entry audit R1; no historical path or
 pressure promotion inferred from conditional controls.
+
+## 2026-10-06 — Accepted ID638 negative configured-path census
+
+FACT for exact recovered25 active masters:181 magic rows, zero literal
+BattleModel callback OPTION candidates; enemy2559/2560 have zero positive
+loader-first group/area references and zero index2 wa weight. These are bounded
+configuration facts, not universal unreachability or proof of no NPC/scripts.
+All three default descendant headers enable OPTIMUM ID-indexed storage;
+legacy row order is a separate layout. This corrects the preceding pending
+ordered-only array interpretation. Original active executable flags remain
+OPEN.2592 original default-header entry guard controls and864 separately
+counterfactual controls pass. Full pressure unchanged2461/22/3,0 promotions.
+Accepted receipt is command-entry acceptance R1; scope remains later recovered
+material and explicitly pinned descendants, not original Taiwan-v1 membership.

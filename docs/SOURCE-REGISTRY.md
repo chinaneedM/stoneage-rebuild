@@ -4172,3 +4172,18 @@ script/gameplay reachability. Spec: command-entry audit R1.
 Loader flags include OPTIMUM/CFREE, with ID-indexed storage and final effective
 array-bound source gates. Exact data census reports both default ID-indexed
 and legacy ordered layouts; no original active-build layout assumption.
+
+## 2026-10-06 — Exact command-entry data and CI acceptance
+
+Source/data derived reports and command-entry acceptance R1 are accepted on
+input c26dce336ba59eccc1aca82080c1982ab07ece08; four core Actions PASS and
+source receipt equals exact CI. Data writeback c2d3b5dee957060163c1465cc5aa0776e1b8d1bd
+adds only622-line derived JSON. Magic wholefile
+b3a57b595bd60dfab571fe7af4dd6e2d43a5839c934eb644ba462897b1bcb6bb:
+181 rows,0 literal callback candidates; both loader layouts censused.
+Exact enemy/group/encount hashes, callback arrays/ILLEGAL, structural refs and
+all active pressure rows are included, with no original names/OPTION/data
+bytes. Receipt artifact digests pin native and full-region evidence. Original
+build/opaque NPC/script/full gameplay paths remain OPEN. Next exact conditional
+placement plan is a DESIGN capability gate, not a new historical reachability
+claim or pressure promotion.

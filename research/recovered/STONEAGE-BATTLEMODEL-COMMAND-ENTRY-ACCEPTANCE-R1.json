@@ -1,0 +1,186 @@
+{
+  "schema": "stoneage.battlemodel-command-entry-acceptance.r1",
+  "status": "CLOSED_BOUNDED_PINNED_SOURCE_AND_EXACT_DATA_ENTRY_AUDIT",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "input_sha": "c26dce336ba59eccc1aca82080c1982ab07ece08",
+  "input_tree": "13612cb1e79d83b77c7a71071bace64e9f6366a9",
+  "counts": {
+    "local_unique_tests": 855,
+    "new_entry_tests": 5,
+    "settlement_tests": 679,
+    "coordinator_tests": 249,
+    "golden_tests": 20,
+    "region_tests": 160,
+    "native_default_header_entry_cases": 2592,
+    "native_Bismarck_OPEN_E_counterfactual_cases": 864,
+    "exact_template_runtime_goldens": 60,
+    "selected_normal_ai_control_companions": 60,
+    "current_identity_rejections_per_suite": 12,
+    "actual_normal_ai_goldens": 0,
+    "materializable_floors": 826
+  },
+  "boundary": {
+    "version": "recovered25 and three explicitly pinned later-descendant source profiles",
+    "default_header_pet_entry": "nonzero ILLEGAL rejects before callback",
+    "OPEN_E": "Bismarck counterfactual only, owner/battle guard retained",
+    "default_header_loader": "all three enable ID-indexed PETSKILL_OPTIMUM; effective bound last loaded ID+1",
+    "legacy_loader": "separately censused ordered layout; not asserted as the original active build",
+    "equipment_magic": "direct callback array, with no ID lookup at the call site; actor/MP/equipment conditions separate",
+    "template_AI150": "CHAR_MODAI, separate from variant TACTICS/wa",
+    "lexical_sites": "bounded C census includes definitions; not whole-program or opaque-script proof",
+    "original_active_build_and_Taiwan_v1": "OPEN",
+    "opaque_script_NPC_and_full_gameplay_reachability": "OPEN"
+  },
+  "promotion": {
+    "decision": "HOLD_THIS_AUDIT",
+    "promoted_slots": 0,
+    "criterion_review": "Static pressure counts placement capability, separately from actual command-entry reachability. Next gate is exact two-placement conditional capability predicate, never a blanket BattleModel callback closure."
+  },
+  "next": "Implement exact ID638 conditional two-placement capability predicate, re-certify complete pressure and exact-head core gates; preserve actual normal selection0, original build/opaque paths OPEN.",
+  "accepted_at_utc": "2026-10-06T12:08:06.405Z",
+  "derived_report_sha": "c2d3b5dee957060163c1465cc5aa0776e1b8d1bd",
+  "derived_report_tree": "51d3aae89282226c32a1323e1824691693050707",
+  "pressure": {
+    "closed": 2461,
+    "historical_ub": 3,
+    "open": 22,
+    "promoted_slots": 0,
+    "total": 2486,
+    "unresolved_skill_ids": []
+  },
+  "actual_callback_rows": [
+    {
+      "ID_indexed_callback_array": 638,
+      "default_header_array_within_effective_bound": true,
+      "default_header_pet_entry": "blocked_nonzero_ILLEGAL",
+      "illegal": 10000,
+      "ordered_callback_array": 135,
+      "skill_id": 638
+    },
+    {
+      "ID_indexed_callback_array": 641,
+      "default_header_array_within_effective_bound": true,
+      "default_header_pet_entry": "blocked_nonzero_ILLEGAL",
+      "illegal": 10000,
+      "ordered_callback_array": 138,
+      "skill_id": 641
+    },
+    {
+      "ID_indexed_callback_array": 649,
+      "default_header_array_within_effective_bound": true,
+      "default_header_pet_entry": "blocked_nonzero_ILLEGAL",
+      "illegal": 20000,
+      "ordered_callback_array": 144,
+      "skill_id": 649
+    },
+    {
+      "ID_indexed_callback_array": 650,
+      "default_header_array_within_effective_bound": true,
+      "default_header_pet_entry": "blocked_nonzero_ILLEGAL",
+      "illegal": 10000,
+      "ordered_callback_array": 145,
+      "skill_id": 650
+    }
+  ],
+  "actual_placement_census": [
+    {
+      "capturable_flag": 1,
+      "enemy_id": 2559,
+      "positive_area_rows": 0,
+      "positive_group_ids": [],
+      "scope": "structural positive weights only; item/event/location/spawn prerequisites not discharged",
+      "tactics": 1,
+      "tempno": 1178,
+      "wa_index2_weight": 0
+    },
+    {
+      "capturable_flag": 1,
+      "enemy_id": 2560,
+      "positive_area_rows": 0,
+      "positive_group_ids": [],
+      "scope": "structural positive weights only; item/event/location/spawn prerequisites not discharged",
+      "tactics": 1,
+      "tempno": 1179,
+      "wa_index2_weight": 0
+    }
+  ],
+  "actual_magic_census": {
+    "ID_indexed_allocation_bound": 653,
+    "ID_indexed_effective_bound": 653,
+    "callback_option_candidates": [],
+    "layout_counts": {
+      "ID_indexed_OPTIMUM": {
+        "resolved_ID638_rows": 0,
+        "resolved_other_BattleModel_rows": 0
+      },
+      "ordered_rows": {
+        "resolved_ID638_rows": 0,
+        "resolved_other_BattleModel_rows": 0
+      }
+    },
+    "ordered_array_bound": 147,
+    "rows": 181,
+    "scope": "literal first OPTION token; default OPTIMUM and legacy ordered layouts; original build/equipment ownership/MP not inferred"
+  },
+  "data_file_sha256": {
+    "encountfile": "70bbd997d98508a0587df183b5bdd48222ff42db91bf21bea632e0ed6f2fea87",
+    "enemyfile": "cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6",
+    "groupfile": "4a02f2a3fa3d2dcf5589d8a2a560313c35d5a0a7e5e0589cc8df5f7df159ea8f",
+    "magicfile": "b3a57b595bd60dfab571fe7af4dd6e2d43a5839c934eb644ba462897b1bcb6bb",
+    "petskillfile": "f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4",
+    "enemybasefile": "1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63afa91df3e8b7"
+  },
+  "runs": [
+    {
+      "id": 37460202344,
+      "name": "Validate StoneAge runtime golden contract",
+      "head_sha": "c26dce336ba59eccc1aca82080c1982ab07ece08",
+      "conclusion": "success",
+      "job_id": 112257584081
+    },
+    {
+      "id": 37460202366,
+      "name": "Validate StoneAge local runtime session coordinator",
+      "head_sha": "c26dce336ba59eccc1aca82080c1982ab07ece08",
+      "conclusion": "success",
+      "job_id": 112257584629
+    },
+    {
+      "id": 37460202401,
+      "name": "Validate StoneAge BattleModel base DamageSub settlement",
+      "head_sha": "c26dce336ba59eccc1aca82080c1982ab07ece08",
+      "conclusion": "success",
+      "job_id": 112257584648
+    },
+    {
+      "id": 37460202235,
+      "name": "Validate StoneAge recovered25 region payload source",
+      "head_sha": "c26dce336ba59eccc1aca82080c1982ab07ece08",
+      "conclusion": "success",
+      "job_id": 112257667600
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11411237091,
+      "name": "battlemodel-settlement",
+      "digest": "sha256:caa8d699e5528029793859dbdc3cff74b2898f13ff7c84a71c09d259d59165ca"
+    },
+    {
+      "id": 11412831928,
+      "name": "battlemodel-recovered-runtime-golden",
+      "digest": "sha256:3b7de6120979e51c5ed846d07ad101203456a25d34cd2158bbbbbd224467d447"
+    }
+  ],
+  "report_review": {
+    "comparison": "exact tested input -> derived branch writeback",
+    "changed_files": [
+      "research/recovered/STONEAGE-BATTLEMODEL-COMMAND-ENTRY-DATA-AUDIT-R1.json"
+    ],
+    "code_changes": 0
+  },
+  "derived_report_sha256": {
+    "source": "f31f62fae6cb19421f500dab5b620da61876bad3b65e511943fb0ee6a1fc1014",
+    "data": "f6580c58bbab8e40508c14c091ad0d1774549c9414b97896182b7c2bc6152df4"
+  }
+}

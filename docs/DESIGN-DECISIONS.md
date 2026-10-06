@@ -352,3 +352,14 @@ profile, with identity mutations and exact-data CI. A global BattleModel
 callback promotion is disallowed;641/649/650 are not admitted implicitly.
 Nonzero ILLEGAL and zero actual wa weights are preserved. No promotion in the
 command-entry audit; equipment/other actor paths need separate evidence.
+
+## 2026-10-06 — ID638 placement-criterion review accepted without promotion
+
+The accepted entry audit establishes negative configured-path results while
+retaining original build/NPC/script uncertainty. Existing static pressure
+closures support evaluating **conditional bounded capability** separately from
+natural command-entry reachability. Proceed to an exact two-placement
+predicate and complete pressure/native/runtime regression gate; preserve wa0
+and actual normal selection0. Predicted2463/20/3 remains unaccepted until that
+next gate passes. This audit leaves pressure2461/22/3 and promotes0 slots;
+641/649/650 and broader actor/magic execution are not admitted.

@@ -8166,3 +8166,60 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   both ID-indexed and legacy ordered layouts and the loader's last-ID+1
   effective bound. This supersedes the initial ordered-only pending census;
   neither layout is inferred as the original active executable's build.
+
+## 2026-10-06 — ID638 command-entry audit ACCEPTED; scoped pressure gate next
+
+- **CLOSED_BOUNDED_PINNED_SOURCE_AND_EXACT_DATA_ENTRY_AUDIT**, exact tested
+  input `c26dce336ba59eccc1aca82080c1982ab07ece08`, tree
+  `13612cb1e79d83b77c7a71071bace64e9f6366a9`. Four core Actions SUCCESS:
+  settlement37460202401/job112257584648 (679 tests),
+  coordinator37460202366/job112257584629 (249),
+  golden37460202344/job112257584081 (20),
+  region37460202235/job112257667600 (160 tests,826 floors).
+  Local unique workflow-test union **855 PASS**.
+- Three pinned descendant headers/native controls: **2592 default-header
+  PETSKILL_Use cases +864 explicitly counterfactual Bismarck OPEN_E cases**.
+  Source receipt exactly matches CI. Nonzero ILLEGAL blocks ordinary PET
+  callback entry; OPEN_E counterfactual still enforces owner/battle guards.
+  These are neutral callback admission controls, not actual gameplay claims.
+- **Loader correction accepted:** direct equipment magic passes an array with
+  no ID lookup. All three default headers enable OPTIMUM and store rows by ID;
+  legacy storage uses file order. Original active build layout remains OPEN.
+  ID638 is array638 under OPTIMUM versus135 in ordered layout. Both layouts
+  and last-loaded-ID+1 effective bound are independently censused; no fixed
+  arithmetic identity is inferred across versions. TemplateAI150 is MODAI,
+  separately sourced from variant TACTICS/wa.
+- **FACT, exact active configuration:**181-row magic table has0 literal
+  BattleModel callback OPTION candidates under either layout. Variants2559/
+  2560 have0 positive loader-first group references and0 positive area rows,
+  TACTICS1 and wa index2 weight0. PETFLG1 is raw metadata, not proof of capture
+  or ownership. Opaque NPC/scripts, build overrides and full natural gameplay
+  reachability remain OPEN; absence is limited to these configured paths.
+- Exact standalone and concrete-stack gates re-certified **60 explicit selected
+  goldens +60 independently authored selected-AI controls +12 identity rejects
+  per suite**, actual normal-AI selected cases0. Existing native death/ultimate/
+  default-pet Exit/whole-tail scan and physical/status boundaries retained.
+- **Complete pressure recomputed:** **2486=2461 closed+22 OPEN+3 historical UB**,
+  unresolved IDs0, BattleModel2 uses OPEN, **0 promotions**. Criteria review
+  found existing bounded closures count static placement capability separately
+  from natural trigger proof. Global BattleModel callback promotion remains
+  disallowed; future closure must use an exact two-placement predicate.
+- Derived writeback `c2d3b5dee957060163c1465cc5aa0776e1b8d1bd` adds only
+  `research/recovered/STONEAGE-BATTLEMODEL-COMMAND-ENTRY-DATA-AUDIT-R1.json`;
+  original data/source bytes are not stored. Native artifact11411237091 digest
+  caa8d699e5528029793859dbdc3cff74b2898f13ff7c84a71c09d259d59165ca;
+  region artifact11412831928 digest
+  3b7de6120979e51c5ed846d07ad101203456a25d34cd2158bbbbbd224467d447.
+- Receipt: `research/recovered/STONEAGE-BATTLEMODEL-COMMAND-ENTRY-ACCEPTANCE-R1.json`;
+  spec: `specs/STONEAGE-BATTLEMODEL-COMMAND-ENTRY-AUDIT-R1.md`.
+  This acceptance supersedes the preceding PENDING checkpoint and initial
+  ordered-only array analysis. No active PET, magic or normal-AI bypass is added.
+- **Highest-priority unfinished task:** implement and audit the exact ID638
+  conditional placement-capability predicate for template1178/1179, runtime
+  index2/report-slot3, then re-certify complete pressure and exact-head core
+  native/coordinator/golden/full-region gates before evaluating2 promotions.
+  Planned2463/20/3 is a prediction, not accepted pressure. Preserve actual
+  natural selection0 and original build/NPC/script/ownership uncertainties.
+  Plan: `specs/STONEAGE-BATTLEMODEL-CONDITIONAL-PLACEMENT-CLOSURE-PLAN-R1.md`.
+  Original Taiwan-v1 membership, ride/items, wider actors/recipients and original
+  scheduler/presentation remain OPEN. No engine/MMO choice is introduced.
