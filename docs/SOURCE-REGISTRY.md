@@ -4071,3 +4071,25 @@ remain explicitly OPEN. No original source/payload committed.
 - Receipt:
   `research/recovered/STONEAGE-BATTLEMODEL-ID638-NORMAL-DEATH-PERSISTENT-ACCEPTANCE-R1.json`.
   Positive slots promoted: **0**.
+
+
+### SRC-BATTLEMODEL-ID638-ULTIMATE-EXIT-R1 — remote bounded runtime/native acceptance 2026-10-06
+
+- Exact tested input `12f61e06a8e773bf223f37d7be9acc67460571e7`, tree `2b7ef3df20b01801a5d80a758a70c5a22baf35eb`.
+- Settlement `37448704545/112219678935` SUCCESS: 661 tests, 48 new full
+  original Battling ultimate/native-binder comparisons, prior 19656 original
+  PvE profit/exit and 19656 immutable scan comparisons, prior four 9-case
+  same-harness gates, and 384 bounded Weaken recalculation vectors.
+- Artifact `11405655040`,
+  `sha256:6f3b1281ab89609cc7067b9d4d701e44729234b0d3e2ef33bb35c5ba2766df9d`.
+- Exact-head coordinator `37448704430/112219678366` SUCCESS (231 tests);
+  generic runtime golden `37448704495/112219678442` SUCCESS. Full-region
+  verdict and source/function/header hashes are in the receipt.
+- Accepted claim: newly lethal ID638 ultimate kinds reach the canonical command
+  tail; source slot order determines owner/pet Exit/accounting in the persistent
+  coordinator. Native work type5/four objects, actual pre-profit captures and
+  repeat-whole-state idempotence are certified in the declared reduced profile.
+- Boundary: source C status/presentation OPTION is neutralized; this is not a
+  historical active-build/packet certificate. BattleModel-specific full recovered
+  payload runtime/golden/region/pressure promotion remains OPEN. 0 slots promoted.
+- Receipt: `research/recovered/STONEAGE-BATTLEMODEL-ID638-ULTIMATE-EXIT-ACCEPTANCE-R1.json`.

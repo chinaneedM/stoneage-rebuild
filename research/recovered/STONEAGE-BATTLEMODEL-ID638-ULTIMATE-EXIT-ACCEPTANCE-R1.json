@@ -1,0 +1,1575 @@
+{
+  "schema": "stoneage-battlemodel-id638-ultimate-exit-acceptance-r1",
+  "status": "CLOSED_BOUNDED_ID638_ULTIMATE_EXIT_PERSISTENT_COORDINATOR",
+  "date": "2026-10-06",
+  "tested_input_sha": "12f61e06a8e773bf223f37d7be9acc67460571e7",
+  "tested_tree_sha": "2b7ef3df20b01801a5d80a758a70c5a22baf35eb",
+  "work_branch": "agent/lethal638-ultimate-exit-r1-20261006",
+  "required_exact_head_gates": [
+    {
+      "id": 37448704545,
+      "jobs": [
+        {
+          "id": 112219678935,
+          "result": "success"
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 11405655040,
+          "name": "battlemodel-settlement",
+          "digest": "sha256:6f3b1281ab89609cc7067b9d4d701e44729234b0d3e2ef33bb35c5ba2766df9d"
+        }
+      ]
+    },
+    {
+      "id": 37448704430,
+      "jobs": [
+        {
+          "id": 112219678366,
+          "result": "success"
+        }
+      ],
+      "artifacts": []
+    },
+    {
+      "id": 37448704495,
+      "jobs": [
+        {
+          "id": 112219678442,
+          "result": "success"
+        }
+      ],
+      "artifacts": []
+    },
+    {
+      "id": 37448704436,
+      "jobs": [
+        {
+          "id": 112219679686,
+          "result": "success"
+        }
+      ],
+      "artifacts": [],
+      "scope": "generic hash-verified full-region/runtime-stack regression; BattleModel-specific witnesses remain OPEN"
+    }
+  ],
+  "counts": {
+    "related_runtime_tests": 661,
+    "coordinator_tests": 231,
+    "original_pve_profit_exit_cases": 19656,
+    "immutable_scan_model_native_comparisons": 19656,
+    "new_ultimate_full_battling_native_binder_comparisons": 48,
+    "prior_native_gates": {
+      "dispatch_tail": 9,
+      "guardian": 9,
+      "exact_damagesub": 9,
+      "full_battling": 9
+    },
+    "weaken_recalculation_vectors": 384
+  },
+  "native_profiles": [
+    {
+      "actual_preprofit_hp_ultimate_capture": true,
+      "battle_c_sha256": "a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602",
+      "battle_event_c_sha256": "9a4607566b7cf6f6a94f2019c5d1dfc7088f7805421037b0a5f0095054b9db1d",
+      "battle_flag_macros": {
+        "CHAR_BATTLEFLG_ABIO": "#define CHAR_BATTLEFLG_ABIO (1<<6)",
+        "CHAR_BATTLEFLG_GUARDIAN": "#define CHAR_BATTLEFLG_GUARDIAN (1<<3)",
+        "CHAR_BATTLEFLG_NODUCK": "#define CHAR_BATTLEFLG_NODUCK (1<<7)"
+      },
+      "battlemodel_internal_profit_calls": 0,
+      "canonical_runtime_binder_comparisons": 16,
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "controlled_driver_helpers": [
+        "BATTLE_DexCalc",
+        "EntrySort",
+        "ComboCheck",
+        "BATTLE_StatusSeq",
+        "BATTLE_GetAttackCount",
+        "BATTLE_PetLoyalCheck",
+        "BATTLE_TargetListSet",
+        "BATTLE_CountAlive",
+        "BATTLE_CommandSend"
+      ],
+      "damage_reaction_enum": {
+        "BATTLE_MD_ABSROB": 1,
+        "BATTLE_MD_NONE": 0,
+        "BATTLE_MD_REFLEC": 2,
+        "BATTLE_MD_VANISH": 3
+      },
+      "damage_sub_comment_stripped_sha256": "c978e7fb82412570086d67b582d0ff6c84a33b72a0481fb327634977ebd3ac9e",
+      "damage_sub_controlled": false,
+      "damage_sub_event_sha256": "9a4607566b7cf6f6a94f2019c5d1dfc7088f7805421037b0a5f0095054b9db1d",
+      "damage_sub_petdamage_ub_seeded_zero": true,
+      "executed_full_battling_case_body": true,
+      "full_battling_body_sha256": "48c648ac8cb66a60ae4a955d08a332d56bb4b4a8dcc6659ff55e6a1b7cfc1f4f",
+      "full_battling_conditional_source_context_preserved": true,
+      "id638_work_objects": 4,
+      "id638_work_type": 5,
+      "native_ultimate_full_battling_cases": 16,
+      "original_addprofit_body_mechanical_rename_only": true,
+      "physical_event_sha256": "9a4607566b7cf6f6a94f2019c5d1dfc7088f7805421037b0a5f0095054b9db1d",
+      "physical_function_count": 11,
+      "profile": "gavin",
+      "same_harness_exact_damagesub_body": true,
+      "same_harness_original_attackseq_guardiancheck": true,
+      "static_dispatch_case_anchor": true,
+      "static_tail_addprofit_anchor": true,
+      "status_and_presentation_option_neutralized": true,
+      "witnesses": [
+        {
+          "case": "normal_both",
+          "exit_request_ids": [],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            0,
+            5
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1",
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            0
+          ]
+        },
+        {
+          "case": "ultimate2_both_owner_first",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_owner_normal_pet",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            0
+          ]
+        },
+        {
+          "case": "normal_owner_ultimate2_pet",
+          "exit_request_ids": [
+            "2"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            0,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1",
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_pet_only",
+          "exit_request_ids": [
+            "2"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            0,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1",
+            "1",
+            "1"
+          ],
+          "preprofit_hp": [
+            553,
+            0
+          ],
+          "processed_death_ids": [
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_owner_only",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            1000
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            0
+          ]
+        },
+        {
+          "case": "ultimate1_both_owner_first",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_both_unselected",
+          "exit_request_ids": [
+            "1"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "normal_both_norisk",
+          "exit_request_ids": [],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            0,
+            5
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1",
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            0
+          ]
+        },
+        {
+          "case": "ultimate2_both_owner_first_norisk",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_owner_normal_pet_norisk",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            0
+          ]
+        },
+        {
+          "case": "normal_owner_ultimate2_pet_norisk",
+          "exit_request_ids": [
+            "2"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            0,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1",
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_pet_only_norisk",
+          "exit_request_ids": [
+            "2"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            0,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1",
+            "1",
+            "1"
+          ],
+          "preprofit_hp": [
+            553,
+            0
+          ],
+          "processed_death_ids": [
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_owner_only_norisk",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            1000
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            0
+          ]
+        },
+        {
+          "case": "ultimate1_both_owner_first_norisk",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_both_unselected_norisk",
+          "exit_request_ids": [
+            "1"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "actual_preprofit_hp_ultimate_capture": true,
+      "battle_c_sha256": "6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8",
+      "battle_event_c_sha256": "2437d4fe88f1dd77e14ad5b976402053ddd1e297d471f45b4169c3588310d4db",
+      "battle_flag_macros": {
+        "CHAR_BATTLEFLG_ABIO": "#define CHAR_BATTLEFLG_ABIO (1<<6)",
+        "CHAR_BATTLEFLG_GUARDIAN": "#define CHAR_BATTLEFLG_GUARDIAN (1<<3)",
+        "CHAR_BATTLEFLG_NODUCK": "#define CHAR_BATTLEFLG_NODUCK (1<<7)"
+      },
+      "battlemodel_internal_profit_calls": 0,
+      "canonical_runtime_binder_comparisons": 16,
+      "commit": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "controlled_driver_helpers": [
+        "BATTLE_DexCalc",
+        "EntrySort",
+        "ComboCheck",
+        "BATTLE_StatusSeq",
+        "BATTLE_GetAttackCount",
+        "BATTLE_PetLoyalCheck",
+        "BATTLE_TargetListSet",
+        "BATTLE_CountAlive",
+        "BATTLE_CommandSend"
+      ],
+      "damage_reaction_enum": {
+        "BATTLE_MD_ABSROB": 1,
+        "BATTLE_MD_NONE": 0,
+        "BATTLE_MD_REFLEC": 2,
+        "BATTLE_MD_VANISH": 3
+      },
+      "damage_sub_comment_stripped_sha256": "c978e7fb82412570086d67b582d0ff6c84a33b72a0481fb327634977ebd3ac9e",
+      "damage_sub_controlled": false,
+      "damage_sub_event_sha256": "2437d4fe88f1dd77e14ad5b976402053ddd1e297d471f45b4169c3588310d4db",
+      "damage_sub_petdamage_ub_seeded_zero": true,
+      "executed_full_battling_case_body": true,
+      "full_battling_body_sha256": "74f51b9d98e5a797c52c3474d0c0603808c95b70bc0c55344afe4375d7a1225b",
+      "full_battling_conditional_source_context_preserved": true,
+      "id638_work_objects": 4,
+      "id638_work_type": 5,
+      "native_ultimate_full_battling_cases": 16,
+      "original_addprofit_body_mechanical_rename_only": true,
+      "physical_event_sha256": "2437d4fe88f1dd77e14ad5b976402053ddd1e297d471f45b4169c3588310d4db",
+      "physical_function_count": 11,
+      "profile": "iris",
+      "same_harness_exact_damagesub_body": true,
+      "same_harness_original_attackseq_guardiancheck": true,
+      "static_dispatch_case_anchor": true,
+      "static_tail_addprofit_anchor": true,
+      "status_and_presentation_option_neutralized": true,
+      "witnesses": [
+        {
+          "case": "normal_both",
+          "exit_request_ids": [],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            0,
+            5
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1",
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            0
+          ]
+        },
+        {
+          "case": "ultimate2_both_owner_first",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_owner_normal_pet",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            0
+          ]
+        },
+        {
+          "case": "normal_owner_ultimate2_pet",
+          "exit_request_ids": [
+            "2"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            0,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1",
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_pet_only",
+          "exit_request_ids": [
+            "2"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            0,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1",
+            "1",
+            "1"
+          ],
+          "preprofit_hp": [
+            553,
+            0
+          ],
+          "processed_death_ids": [
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_owner_only",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            1000
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            0
+          ]
+        },
+        {
+          "case": "ultimate1_both_owner_first",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_both_unselected",
+          "exit_request_ids": [
+            "1"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "normal_both_norisk",
+          "exit_request_ids": [],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            0,
+            5
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1",
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            0
+          ]
+        },
+        {
+          "case": "ultimate2_both_owner_first_norisk",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_owner_normal_pet_norisk",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            0
+          ]
+        },
+        {
+          "case": "normal_owner_ultimate2_pet_norisk",
+          "exit_request_ids": [
+            "2"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            0,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1",
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_pet_only_norisk",
+          "exit_request_ids": [
+            "2"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            0,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1",
+            "1",
+            "1"
+          ],
+          "preprofit_hp": [
+            553,
+            0
+          ],
+          "processed_death_ids": [
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_owner_only_norisk",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            1000
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            0
+          ]
+        },
+        {
+          "case": "ultimate1_both_owner_first_norisk",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_both_unselected_norisk",
+          "exit_request_ids": [
+            "1"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "actual_preprofit_hp_ultimate_capture": true,
+      "battle_c_sha256": "2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18",
+      "battle_event_c_sha256": "b294f82e2a0b8382b59edd06fa8646fa3e50c00656eba496d8b78fa421c58ecc",
+      "battle_flag_macros": {
+        "CHAR_BATTLEFLG_ABIO": "#define CHAR_BATTLEFLG_ABIO (1 << 6)",
+        "CHAR_BATTLEFLG_GUARDIAN": "#define CHAR_BATTLEFLG_GUARDIAN (1 << 3)",
+        "CHAR_BATTLEFLG_NODUCK": "#define CHAR_BATTLEFLG_NODUCK (1 << 7)"
+      },
+      "battlemodel_internal_profit_calls": 0,
+      "canonical_runtime_binder_comparisons": 16,
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "controlled_driver_helpers": [
+        "BATTLE_DexCalc",
+        "EntrySort",
+        "ComboCheck",
+        "BATTLE_StatusSeq",
+        "BATTLE_GetAttackCount",
+        "BATTLE_PetLoyalCheck",
+        "BATTLE_TargetListSet",
+        "BATTLE_CountAlive",
+        "BATTLE_CommandSend"
+      ],
+      "damage_reaction_enum": {
+        "BATTLE_MD_ABSROB": 1,
+        "BATTLE_MD_NONE": 0,
+        "BATTLE_MD_REFLEC": 2,
+        "BATTLE_MD_VANISH": 3
+      },
+      "damage_sub_comment_stripped_sha256": "e1dff8b748beba524cd203ac8dd7090df3593cd00692708effff2579cdb582d6",
+      "damage_sub_controlled": false,
+      "damage_sub_event_sha256": "b294f82e2a0b8382b59edd06fa8646fa3e50c00656eba496d8b78fa421c58ecc",
+      "damage_sub_petdamage_ub_seeded_zero": true,
+      "executed_full_battling_case_body": true,
+      "full_battling_body_sha256": "b23e58042695a5fdb9c0cd451604a88d7c9063279b9726860ab9726bd615ea27",
+      "full_battling_conditional_source_context_preserved": true,
+      "id638_work_objects": 4,
+      "id638_work_type": 5,
+      "native_ultimate_full_battling_cases": 16,
+      "original_addprofit_body_mechanical_rename_only": true,
+      "physical_event_sha256": "b294f82e2a0b8382b59edd06fa8646fa3e50c00656eba496d8b78fa421c58ecc",
+      "physical_function_count": 11,
+      "profile": "bismarck",
+      "same_harness_exact_damagesub_body": true,
+      "same_harness_original_attackseq_guardiancheck": true,
+      "static_dispatch_case_anchor": true,
+      "static_tail_addprofit_anchor": true,
+      "status_and_presentation_option_neutralized": true,
+      "witnesses": [
+        {
+          "case": "normal_both",
+          "exit_request_ids": [],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            0,
+            5
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1",
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            0
+          ]
+        },
+        {
+          "case": "ultimate2_both_owner_first",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_owner_normal_pet",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            0
+          ]
+        },
+        {
+          "case": "normal_owner_ultimate2_pet",
+          "exit_request_ids": [
+            "2"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            0,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1",
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_pet_only",
+          "exit_request_ids": [
+            "2"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            0,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1",
+            "1",
+            "1"
+          ],
+          "preprofit_hp": [
+            553,
+            0
+          ],
+          "processed_death_ids": [
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_owner_only",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            1000
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            0
+          ]
+        },
+        {
+          "case": "ultimate1_both_owner_first",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_both_unselected",
+          "exit_request_ids": [
+            "1"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "normal_both_norisk",
+          "exit_request_ids": [],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            0,
+            5
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1",
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            0
+          ]
+        },
+        {
+          "case": "ultimate2_both_owner_first_norisk",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_owner_normal_pet_norisk",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            0
+          ]
+        },
+        {
+          "case": "normal_owner_ultimate2_pet_norisk",
+          "exit_request_ids": [
+            "2"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            0,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1",
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_pet_only_norisk",
+          "exit_request_ids": [
+            "2"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            0,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1",
+            "1",
+            "1"
+          ],
+          "preprofit_hp": [
+            553,
+            0
+          ],
+          "processed_death_ids": [
+            "2"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            0,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_owner_only_norisk",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            1000
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            0
+          ]
+        },
+        {
+          "case": "ultimate1_both_owner_first_norisk",
+          "exit_request_ids": [
+            "2",
+            "1"
+          ],
+          "final_default_pet_slot": 0,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        },
+        {
+          "case": "ultimate2_both_unselected_norisk",
+          "exit_request_ids": [
+            "1"
+          ],
+          "final_default_pet_slot": -1,
+          "final_occupied_slots": [
+            -1,
+            -1
+          ],
+          "hit_hp_write_ids": [
+            "2",
+            "1"
+          ],
+          "preprofit_hp": [
+            0,
+            0
+          ],
+          "processed_death_ids": [
+            "1"
+          ],
+          "repeat_entire_state_unchanged": true,
+          "ultimate_flags": [
+            1,
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "runtime_scope": "lethal_ultimate_exit_profit_base_round_empty_equipment_ID638_R1",
+  "accepted_behavior": [
+    "newly lethal ID638 ultimate_kind carried to one command-tail boundary",
+    "source slot order rather than hit order controls ultimate/Exit",
+    "canonical whole scan owns persistent accounting",
+    "coordinator readmission preserves before state and payload",
+    "standalone pet selection clearing versus owner-first paired pet cleanup",
+    "repeat native AddProfit preserves entire gameplay state"
+  ],
+  "boundaries": {
+    "living_reflected_ultimate_flags": "REJECTED",
+    "unrelated_ordinary_deaths": "REJECTED",
+    "original_build_version": "OPEN",
+    "automatic_ai_selection": "OPEN",
+    "ride_equipment_wider_recipients": "OPEN",
+    "native_status_scheduler_presentation": "CONTROLLED_SEAMS",
+    "specific_recovered_data_golden_region_pressure": "OPEN",
+    "positive_slots_promoted": 0,
+    "current_accepted_positive_slots": 2461,
+    "total_positive_slots": 2486
+  },
+  "next": "Hash-verified recovered-data ID638 persistent/coordinator witnesses for both exact templates; BattleModel-specific golden/region/runtime-stack and complete pressure before evaluating slot promotion.",
+  "generic_exact_head_gates_all_success": true
+}

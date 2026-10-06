@@ -1149,3 +1149,22 @@ adapter and ten-field/overlay clear are next.
 - OPEN: next gate is source-slot-ordered BattleModel command-tail
   ultimate/Exit, especially Guardian pet5 hit-before-owner0 versus AddProfit
   owner0→pet5 scan order and default-pet effects.
+
+
+### 2026-10-06 — ID638 ultimate/Exit full-command-tail bridge accepted
+
+- NATIVE/MODEL within the declared reduced profile: exact input `12f61e06a8e773bf223f37d7be9acc67460571e7`,
+  tree `2b7ef3df20b01801a5d80a758a70c5a22baf35eb`, passes settlement `37448704545/112219678935`:
+  661 regressions plus 48 original full-Battling ultimate/native-binder vectors.
+  Coordinator and generic runtime golden also pass at the same input.
+- CHRONOLOGY: actual pet5→owner0 hit order does not define death scan order.
+  Source AddProfit processes owner0 first; default-pet and player Exit remove
+  slot5 before a separate pet death can charge or clear default selection.
+  Standalone pet ultimate clears selection. Normal/ultimate mixed victims,
+  accumulated ultimate1, direct ultimate2 and no-risk are native-differential
+  witnesses; repeat profit leaves all native gameplay state unchanged.
+- BOUNDARY: original active build/version and packet/status/scheduler history
+  remain unresolved; native C OPTION effects/presentation are neutral seams.
+  Exact recovered OPTION identity is independently enforced by typed admission.
+  No positive runtime slots are promoted until specific exact-data/golden/region/
+  pressure witnesses cover both recovered ID638 placements.

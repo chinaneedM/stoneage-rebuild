@@ -1,6 +1,6 @@
 # BattleModel ID638 ultimate/Exit command-tail bridge R1
 
-Status: LOCAL_VALIDATED_REMOTE_PENDING (2026-10-06).
+Status: CLOSED_BOUNDED_ID638_ULTIMATE_EXIT_PERSISTENT_COORDINATOR (2026-10-06).
 
 ## Admitted runtime scope
 
@@ -72,3 +72,17 @@ golden, region, hash-pressure and runtime-stack admission requirements before
 promoting either placement. Automatic AI selection, original active build and
 version membership, ride/equipment, broader recipients and scheduler/status/
 packet history remain OPEN.
+
+
+## Remote acceptance — 2026-10-06
+
+Exact tested input `12f61e06a8e773bf223f37d7be9acc67460571e7`, tree `2b7ef3df20b01801a5d80a758a70c5a22baf35eb`.
+All four exact-head workflows SUCCESS: settlement `37448704545/112219678935`
+(661 tests plus 48 full-original ultimate comparisons), coordinator
+`37448704430/112219678366` (231 tests), generic golden `37448704495/112219678442`,
+and generic hash-verified region/runtime-stack `37448704436/112219679686`.
+Artifact `11405655040`,
+`sha256:6f3b1281ab89609cc7067b9d4d701e44729234b0d3e2ef33bb35c5ba2766df9d`.
+The generic integration gates certify regressions, not the open BattleModel-specific
+real-data promotion witnesses. Full receipt:
+`research/recovered/STONEAGE-BATTLEMODEL-ID638-ULTIMATE-EXIT-ACCEPTANCE-R1.json`.

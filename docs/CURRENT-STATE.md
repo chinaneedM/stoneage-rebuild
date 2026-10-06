@@ -7926,3 +7926,47 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   exact full-Battling chronology and canonical persistent/coordinator binder.
   Only then may the two recovered positive BattleModel slots be evaluated for
   promotion.
+
+
+## Phase 1 ID638 ultimate/Exit full-command-tail persistent/coordinator acceptance — 2026-10-06
+
+- Exact tested input `12f61e06a8e773bf223f37d7be9acc67460571e7`, tree `2b7ef3df20b01801a5d80a758a70c5a22baf35eb`, branch
+  `agent/lethal638-ultimate-exit-r1-20261006`.
+- **CLOSED_BOUNDED_ID638_ULTIMATE_EXIT_PERSISTENT_COORDINATOR.** The explicit
+  `lethal_ultimate_exit_profit_base_round_empty_equipment_ID638_R1` scope now
+  carries each newly lethal hit's ultimate kind into one command-tail boundary.
+  Immediate Exit composition follows original source slot order, independent
+  of hit order; persistent death/accounting authority remains the canonical
+  immutable whole scan. Nonlethal/normal-death scopes still reject ultimate.
+- Exact-head settlement `37448704545/112219678935` SUCCESS: **661 tests**,
+  **48/48** new exact full-Battling ultimate/native-binder comparisons,
+  **19656** original PvE profit/exit cases, **19656** immutable scan comparisons,
+  the four prior splice/Guardian/exact-DamageSub/full-Battling gates **9/9 each**,
+  and **384** bounded Weaken recalculation vectors. Artifact `11405655040`,
+  digest `sha256:6f3b1281ab89609cc7067b9d4d701e44729234b0d3e2ef33bb35c5ba2766df9d`.
+- Same-head coordinator `37448704430/112219678366` SUCCESS (**231 tests**)
+  and runtime golden `37448704495/112219678442` SUCCESS. The recovered25
+  region/runtime-stack `37448704436/112219679686` also SUCCESS. All **4/4**
+  exact-head workflows pass.
+- Native work matches recovered ID638 type5/four objects; the 16 scenarios per
+  clean pin cover ordinary/ultimate1/ultimate2, mixed victims, selected/unselected
+  default pets and no-risk on/off. Actual pre-profit HP/ultimate flags, death
+  order, Exit request order and final gameplay state match the canonical binder.
+  Repeat AddProfit preserves the complete native character/work/battle state.
+- Critical witness: HP writes pet5→owner0, but scan processes only owner0 death,
+  requests default-pet Exit then player Exit, restores dead carried pets to HP1
+  and retains default selection0. Standalone pet ultimate clears selection.
+  Runtime/coordinator tests independently exercise these distinct outcomes.
+- Receipt: `research/recovered/STONEAGE-BATTLEMODEL-ID638-ULTIMATE-EXIT-ACCEPTANCE-R1.json`.
+  Spec: `specs/STONEAGE-BATTLEMODEL-ID638-ULTIMATE-EXIT-R1.md`.
+- **0 positive slots promoted.** The generic golden/full-region regressions
+  do not substitute for BattleModel-specific exact recovered-data witnesses.
+- **Highest-priority unfinished task:** build hash-verified recovered-data
+  ID638 full persistent/coordinator execution on both exact positive templates
+  (TEMPNO1178/1179, runtime index2), add BattleModel-specific golden and
+  full-region/runtime-stack witnesses, and rerun complete verified pressure
+  before evaluating promotion of the two positive slots. Keep both charset
+  profiles explicit, reject all-row/template/slot identity drift, and retain
+  fail-closed unsupported callback/grouping boundaries. Automatic AI selection,
+  active original build/version, ride/items, wider recipients and scheduler/
+  status/presentation history remain OPEN.
