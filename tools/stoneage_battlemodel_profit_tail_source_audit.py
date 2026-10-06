@@ -27,9 +27,9 @@ from tools.stoneage_profit_exit_source_audit import (
     FUNCTIONS as PROFIT_FUNCTIONS,
     STATUS_FIELDS,
     SOURCE_MACROS,
+    _enum,
 )
 from tools.stoneage_default_pet_exit_model import DefaultPetExitAuthority
-from tools.stoneage_weaken_source_audit import _enum_values
 from tools.stoneage_profit_exit_scan_model import (
     ProfitExitCharacter,
     ProfitExitSnapshot,
@@ -73,6 +73,29 @@ def _macro_profile(headers: str) -> dict[str,str]:
     return result
 
 
+def _feature_off_enum_value(header_text: str, symbol: str) -> int:
+    """Compile one original enum block with all optional build features off."""
+    block=_enum(_strip(header_text),symbol)
+    code=(
+        "#include <stdio.h>\n"
+        + block
+        + "\nint main(void){printf(\"%d\\n\"," + symbol + ");return 0;}\n"
+    )
+    with tempfile.TemporaryDirectory(prefix="sa-feature-off-enum-") as folder:
+        source=Path(folder)/"enum.c"
+        binary=Path(folder)/"enum"
+        source.write_text(code,encoding="utf-8")
+        built=subprocess.run(
+            ["cc","-std=c11","-O0",str(source),"-o",str(binary)],
+            capture_output=True,text=True,
+        )
+        if built.returncode:
+            raise ValueError(
+                "feature-off enum compilation failed: "+built.stderr[-2500:]
+            )
+        return int(subprocess.check_output([str(binary)],text=True).strip())
+
+
 def _function_body(text: str, name: str) -> str:
     window=_definition(_strip(text),name,raw_window=True)
     return window[:window.rfind("}")+1]
@@ -98,13 +121,10 @@ def _source(name: str, root: Path):
         for k,v in (("BATTLE_ENTRY_MAX",10),("SIDE_OFFSET",10),("CHAR_MAXPETHAVE",5))
     ):
         raise ValueError("dispatch-tail witness requires original reduced SIDE_OFFSET10 layout")
-    includes=["-I",str(base/"include")]
-    if name=="bismarck":
-        includes += [
-            "-I",str(root/"server/common"),
-            "-I",str(root/"shared/lua51"),
-        ]
-    st_end=int(_enum_values(["BATTLE_ST_END"],includes)["BATTLE_ST_END"])
+    st_end=_feature_off_enum_value(
+        headers["battle_event.h"],
+        "BATTLE_ST_END",
+    )
     if st_end!=11:
         raise ValueError("dispatch-tail witness requires original ten status fields")
 
