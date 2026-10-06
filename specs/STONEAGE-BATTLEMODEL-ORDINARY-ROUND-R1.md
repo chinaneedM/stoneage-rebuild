@@ -1,6 +1,7 @@
 # BattleModel ordinary round/state/coordinator R1
 
-Status: LOCAL_VALIDATED; exact remote input/gates pending.
+Status: CLOSED_BOUNDED_NONLETHAL_ORDINARY_STATE_COORDINATOR;
+full BattleModel runtime remains OPEN.
 
 ## Declared scope
 
@@ -77,8 +78,14 @@ the skill automatically or implement mid-battle disk resume.
 transactions. Total428 tests PASS:31 new +283 prior handoff/shared/ordinary
 +39 state +75 coordinator regressions. Three clean-pin native reruns also
 PASS696 physical/3420 ItemCrush/1920 settlement/480 marker/60 pet checks.
-CI reproduces these, and shared-file change workflows must be inspected before
-main acceptance. Existing native comparisons verify hit machinery, not a new
+Exact input `a03b87813eb1b21a7811d523586102b1701be293`, tree
+`b46bc747ac7e96a33e739878640a3e037175d0ef`, passed all 32 triggered
+workflows. Settlement run `37414798897`, job `112110945349`, reproduces all
+428 tests and the native gates; derived artifact `11390323818` is uploaded.
+Receipt: `research/recovered/STONEAGE-BATTLEMODEL-ORDINARY-ROUND-ACCEPTANCE-R1.json`.
+Baseline golden `37414798930` and recovered-region `37414798987` also PASS;
+their existing scenarios do not certify new BattleModel golden/pressure cases.
+Existing native comparisons verify hit machinery, not a new
 original full-command-loop certificate. Synthetic fixtures patch only expected
 OPTION byte identity; production admission rules retain exact pinned identity.
 

@@ -3699,4 +3699,16 @@ under DD-020. No raw source/payload retained; pending records superseded.
 - Coordinator re-admits from current actual template/loaded runtime/work powers.
   Automatic skill selection, lethal/ultimate/default-selection profit flow,
   equipped/extra slots/wider features, BattleModel-specific golden/region/
-  pressure and638 positive slots OPEN. Remote exact/all-workflow gates pending.
+pressure and638 positive slots OPEN. Remote exact/all-workflow gates pending.
+
+
+#### SRC-BATTLEMODEL-NONLETHAL-ORDINARY-STATE-COORDINATOR-R1 remote acceptance
+
+Exact input a03b87813eb1b21a7811d523586102b1701be293, tree
+b46bc747ac7e96a33e739878640a3e037175d0ef: all32 triggered Actions SUCCESS.
+Settlement37414798897, job112110945349, reproduces428 tests and native
+696/3420/1920/480/60 checks. Artifact11390323818; exact baseline golden
+37414798930 and full-region37414798987 SUCCESS. Receipt records every run.
+Only bounded nonlethal explicit integration accepted; new BattleModel golden,
+pressure, full original command loop, lethal/default-pet/automatic AI and638
+slots remain OPEN. Pending snapshot superseded; no raw source/payload retained.

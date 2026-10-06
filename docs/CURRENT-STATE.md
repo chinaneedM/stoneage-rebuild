@@ -7178,3 +7178,32 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   automatic AI selection and native command-loop/BattleModel golden/region/
   hash-verified pressure. Equipped/extra-slot/wider-feature and original profile
   ambiguities remain required before closing638's two positive slots. DD-018.
+
+
+## Phase 1 BattleModel nonlethal ordinary/state/coordinator remotely accepted — 2026-10-06
+
+- Fresh exact remote input a03b87813eb1b21a7811d523586102b1701be293,
+  tree b46bc747ac7e96a33e739878640a3e037175d0ef; main6d5159a9 is its
+  ancestor. Branch unchanged, matching clean local tree verified after all
+  workflows completed. No region write-back advanced the implementation ref.
+- All32 triggered Actions SUCCESS. Settlement37414798897, job112110945349:
+  logs reproduce428 tests including31 new round/state/coordinator cases and
+  696 physical/3420 ItemCrush/1920 settlement/480 marker/60 pet native checks.
+  Derived artifact11390323818 uploaded. Receipt:
+  research/recovered/STONEAGE-BATTLEMODEL-ORDINARY-ROUND-ACCEPTANCE-R1.json.
+- CLOSED_BOUNDED_NONLETHAL_ORDINARY_STATE_COORDINATOR. Status-clock/rewrite,
+  actual current-work/Guardian cancellation, immutable state transaction and
+  explicit coordinator re-admission are accepted within declared empty-equipment
+  nonlethal scope. No historical numeric638 COM1 or automatic AI selection.
+- Exact baseline golden37414798930 and full-region37414798987 PASS, as do
+  core/state/coordinator/shared skill regressions. These existing scenarios do
+  not establish new BattleModel-specific golden/pressure acceptance. No638
+  slots or overall percentage promoted. Earlier pending snapshot superseded.
+- Acceptance changes only docs/derived receipt; nonforce main synchronization
+  follows fresh ref/ancestry verification. Lethal/ultimate/profit/default-pet,
+  automatic AI, full native command loop and equipped/wider compositions OPEN.
+- **Highest-priority unfinished task:** verify accepted main synchronization,
+  then close DD-020 explicit selection across ordinary and continuation player
+  ultimate exit before enabling lethal BattleModel. Preserve ownership and
+  occupancy independently; no unique-pet inference. Require native profit/exit
+  chronology, golden/region and hash-verified pressure before638 slot promotion.

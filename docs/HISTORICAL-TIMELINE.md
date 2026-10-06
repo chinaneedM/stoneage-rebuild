@@ -874,3 +874,15 @@ ultimate composition fails before committing state; full lethal/automatic-AI/
 original command-loop/638 slot acceptance OPEN. No original build/Taiwan-v1
 membership claim. Existing696/3420/1920/480/60 native reruns PASS; remote
 exact input and all shared-workflow regressions pending.
+
+
+### 2026-10-06 — bounded nonlethal BattleModel round/state/coordinator accepted
+
+**FACT (bounded reconstruction acceptance):** exact a03b8781 passed all32
+triggered workflows. Settlement37414798897/job112110945349 reproduces428
+tests and696/3420/1920/480/60 native hit checks; artifact11390323818 uploaded.
+Status clock/rewrite, current-work cancellation, persistent state and explicit
+coordinator transaction closed only for declared nonlethal empty-equipment
+scope. Baseline golden/region pass does not certify new BattleModel scenarios.
+Full lethal/automatic-AI/native command-loop/638 coverage OPEN. Earlier remote
+pending snapshot superseded; no original build/Taiwan-v1 membership claim.
