@@ -42,6 +42,11 @@ on:
       - tests/test_stoneage_player_death_model.py
       - tools/stoneage_player_death_model.py
       - tools/stoneage_battle_round_model.py
+      - tools/stoneage_battlemodel_round_action.py
+      - tools/stoneage_battlemodel_hit_loop.py
+      - tools/stoneage_battlemodel_physical_attackseq.py
+      - tools/stoneage_profit_exit_runtime_binder.py
+      - tests/test_stoneage_battlemodel_ordinary_round.py
       - tools/stoneage_default_pet_exit_model.py
       - tools/stoneage_enemy_spawn_model.py
       - tools/stoneage_recovered25_enemybase_runtime.py

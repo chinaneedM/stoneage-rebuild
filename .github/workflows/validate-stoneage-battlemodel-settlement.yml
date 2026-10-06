@@ -56,6 +56,7 @@ on:
       - "specs/STONEAGE-PLAYER-EXIT-STATUS-RUNTIME-R1.md"
       - "specs/STONEAGE-DEFAULT-PET-ULTIMATE-RUNTIME-R1.md"
       - "specs/STONEAGE-BATTLEMODEL-SETTLEMENT-AUDIT-R1.md"
+      - "specs/STONEAGE-BATTLEMODEL-ID638-ULTIMATE-EXIT-R1.md"
 
 concurrency:
   group: stoneage-battlemodel-settlement-${{ github.ref }}
