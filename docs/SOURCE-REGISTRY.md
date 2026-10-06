@@ -3648,3 +3648,22 @@ ItemCrush comparisons,696 physical and1920/480/60 settlement/marker/pet
 checks reproduce remotely. Derived artifact11389775634 uploaded. Explicit
 empty-equipment chronology accepted; equipped/full runtime/profile membership
 remains OPEN, no new slot coverage. Previous pending records superseded.
+
+
+### SRC-BATTLEMODEL-PREPARED-HANDOFF-R1
+
+- Independent engine-neutral experimental handoff; no original source/assets
+  retained. Uses accepted fixed-pin physical/ItemCrush loop and existing
+  PreparedBattleRound/ordinary resolver as independent continuation witness.
+- Source helper already recorded under ItemCrush source event-file hashes:
+  successful common status writes actual defender COM1=NONE. Prepared handoff
+  retains COM2/COM3 and dynamic work snapshots without guessing numeric638.
+  Exact ordered prefix is supplied by caller, not independently reconstructed.
+- tools/stoneage_battlemodel_prepared_handoff.py and12 new tests;283 total
+  local PASS. Ordinary continuation verifies cancellation after paralysis
+  expiry, failed status action, no completed actor/tick replay, fresh guard at
+  new preparation, HP/death/Guardian/reflection and strict RNG/identity gates.
+- New handoff has no native full-command-loop certificate. Extended existing
+  native physical/item/settlement gates reproduce hit machinery only. Remote
+  acceptance pending. Actor status clock/rewrite, complete dispatch/state/
+  coordinator, profit/ultimate exit, equipped variants and638 coverage OPEN.

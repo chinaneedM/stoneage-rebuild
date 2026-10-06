@@ -835,3 +835,16 @@ comparisons plus696 physical and1920/480/60 settlement/marker/pet checks.
 Only declared empty-equipment chronology is closed, including surviving
 DODGE/zero damage before status. Full runtime/equipped mutations/original
 profile membership/638 slots remain OPEN. Earlier pending records superseded.
+
+
+### 2026-10-06 — prepared BattleModel handoff locally validated
+
+**LOCAL_TESTED (reconstruction seam):**283 tests PASS, including12 handoff
+witnesses and101 existing ordinary round tests. Actual ordinary continuation
+confirms successful one-turn paralysis cancels an already prepared attack even
+as status expires; failed status preserves action, and completed actors never
+repeat ticks. Guardian/current HP/reactions/flags propagate without re-sorting.
+Explicit fresh preparation clears round-local cancellation only. New death/
+ultimate flags block continuation until exit/profit integration. Original full
+command loop, persistent/coordinator integration and638 slots remain OPEN;
+no new historical build or Taiwan-v1 membership claim. Remote gate pending.

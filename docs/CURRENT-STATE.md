@@ -7064,3 +7064,42 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   not itself cancel an already prepared action. These existing contracts must
   be reused/tested, not replaced with permanent cancellation in later rounds.
   No next-stage code or full638 runtime acceptance is claimed in this record.
+
+
+## Phase 1 BattleModel prepared handoff local milestone — 2026-10-06
+
+- Fresh startup remote main91f898cb25c803b23fb6b7ddc4ae7eecb1e98623,
+  treeb063a5e62956cc38016fc36d6c38d53789e55740; matching clean checkout.
+  Remote branches/HEAD/tree/latest commits/Actions and protocol-ordered docs
+  re-read. ItemCrush main replay37411707229 and branch37411704244 SUCCESS;
+  historical in-progress snapshot superseded. Original37411512720 SUCCESS.
+- Isolated `agent/battlemodel-prepared-handoff-r1-20261006` from latest main.
+  LOCAL_VALIDATED bounded handoff binds typed symbolic638 to exact prepared
+  cursor/current entries and base commands. NONE is an internal semantic
+  carrier, never an asserted historical638 numeric COM1.
+- Real hit-loop HP/status/reaction/overkill/flags propagate to prepared work;
+  successful status clears COM1 while retaining COM2/COM3/input completion,
+  removes guarding, routes to actual Guardian, and preserves exact initiative
+  order. Already completed actors are disabled in ordinary continuation and
+  do not repeat status ticks. Current HP may differ from original prepared HP.
+- Twelve new tests exercise actual ordinary continuation: paralysis expires
+  yet cancelled prepared attack owns no attack RNG; failed status permits an
+  attack; completed actors never replay; next preparation accepts fresh guard.
+  All283 local tests PASS (12 new +101 ordinary +170 prior shared). CI extended
+  to reproduce these and existing696/3420/1920/480/60 native gates.
+- Explicit new-round helper clears only cancellation/ultimate round flags;
+  persistent HP/status/reaction/overkill remain. Any active actor base status
+  requires future status-clock/rewrite dispatch. Ordinary continuation rejects
+  new death or ultimate flags until profit/exit integration is closed.
+- Full state/coordinator/AI dispatch remains OPEN; no persistent transaction,
+  death profit, original full command-loop acceptance or638 slot promotion.
+  Spec: specs/STONEAGE-BATTLEMODEL-PREPARED-HANDOFF-R1.md. Remote input/gate
+  publication PENDING. Existing exact ItemCrush acceptance remains authoritative.
+  Local native reruns also PASS:696 physical,3420 ItemCrush,1920 settlement,
+  480 marker and60 pet-guard cases at all three clean pinned checkouts.
+- **Highest-priority unfinished task:** publish this bounded handoff and inspect
+  exact remote gate, accept/synchronize nonforce on PASS. Then integrate actor
+  status clock/rewrite, full ordinary dispatch and persistent/coordinator
+  propagation with ultimate exit/profit and round-boundary flags. Retain empty
+  equipment scope; equipped/wider features, golden/full-region/hash-verified
+  pressure remain required before promoting638's two positive slots. DD-018.

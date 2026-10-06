@@ -11,6 +11,8 @@ on:
       - "tools/stoneage_battlemodel_physical_source_audit.py"
       - "tools/stoneage_battlemodel_itemcrush_model.py"
       - "tools/stoneage_battlemodel_itemcrush_source_audit.py"
+      - "tools/stoneage_battlemodel_prepared_handoff.py"
+      - "tools/stoneage_battle_round_model.py"
       - "tools/stoneage_battle_core_model.py"
       - "tools/stoneage_battle_guardian_model.py"
       - "tools/stoneage_battle_status_model.py"
@@ -21,9 +23,12 @@ on:
       - "tests/test_stoneage_battlemodel_hit_loop.py"
       - "tests/test_stoneage_battlemodel_physical_attackseq.py"
       - "tests/test_stoneage_battlemodel_itemcrush.py"
+      - "tests/test_stoneage_battlemodel_prepared_handoff.py"
+      - "tests/test_stoneage_battle_round_model.py"
       - "tests/test_stoneage_battlemodel_admission.py"
       - "specs/STONEAGE-BATTLEMODEL-PHYSICAL-ATTACKSEQ-R1.md"
       - "specs/STONEAGE-BATTLEMODEL-ITEMCRUSH-R1.md"
+      - "specs/STONEAGE-BATTLEMODEL-PREPARED-HANDOFF-R1.md"
       - "specs/STONEAGE-BATTLEMODEL-SETTLEMENT-AUDIT-R1.md"
 
 concurrency:
@@ -48,6 +53,8 @@ jobs:
             tests.test_stoneage_battlemodel_hit_loop \
             tests.test_stoneage_battlemodel_physical_attackseq \
             tests.test_stoneage_battlemodel_itemcrush \
+            tests.test_stoneage_battlemodel_prepared_handoff \
+            tests.test_stoneage_battle_round_model \
             tests.test_stoneage_battlemodel_admission \
             tests.test_stoneage_battlemodel_reference_model \
             tests.test_stoneage_battle_damage_react_model \
