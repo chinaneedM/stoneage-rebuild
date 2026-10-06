@@ -3962,3 +3962,28 @@ remain explicitly OPEN. No original source/payload committed.
 - Receipt:
   `research/recovered/STONEAGE-BATTLEMODEL-PROFIT-TAIL-SPLICE-ACCEPTANCE-R1.json`.
 
+### SRC-BATTLEMODEL-SAME-HARNESS-GUARDIAN-PROFIT-TAIL-R1 — remote native acceptance 2026-10-06
+
+- Exact input `93bd7fa550eaa99137015109237b78a67815c1fd`, tree `f97009c53238724f362847003976b26595c719d5`; no original source or
+  assets committed.
+- Settlement `37436034852/112177967610` SUCCESS: 653 tests, 19656 original
+  PvE profit/exit cases, 19656 immutable scan/model-native comparisons, 384
+  bounded Weaken recalculation vectors, 9 prior dispatch-tail splice cases and
+  **9 same-harness original Guardian profit-tail cases**. Artifact
+  `11399556875`,
+  `sha256:65235a67ee514ff87487d041af8642ac0ee10ef7be5351d2615062b515800278`.
+- Exact original physical function count linked in the same program: **11**,
+  including `BATTLE_GuardianCheck` and `BATTLE_AttackSeq`. The exact
+  BattleModel/helper and exact AddProfit/exit scan remain in the same transient
+  executable.
+- Original battle flag macros are imported directly from pinned headers:
+  Guardian `1<<3`, ABIO `1<<6`, NODUCK `1<<7`; all three pins agree.
+- Accepted chronology: a pre-AddProfit zero-HP guardian can remain an original
+  GuardianCheck candidate because ISDIE is false, while BattleModel's
+  post-AttackSeq TargetCheck controls the final DamageSub target. Multi-victim
+  writes precede the single tail scan and repeat AddProfit is idempotent.
+- Boundary: DamageSub is still controlled in this same harness, full Battling is
+  not executed, lethal638/build-version/wider feature claims remain OPEN.
+- Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-GUARDIAN-PROFIT-TAIL-ACCEPTANCE-R1.json`.
+

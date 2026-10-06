@@ -1,6 +1,6 @@
 # BattleModel same-harness original Guardian profit-tail audit R1
 
-Status: IMPLEMENTED_ON_ISOLATED_BRANCH; REMOTE_NATIVE_VALIDATION_PENDING.
+Status: CLOSED_BOUNDED_SAME_HARNESS_ORIGINAL_GUARDIAN_PROFIT_TAIL_NATIVE.
 
 ## Purpose
 
@@ -59,3 +59,30 @@ controlled seam even though it is separately native-certified. Lethal638 stays
 disabled. The next gate is same-harness exact DamageSub, followed by full
 Battling case execution if conditional source context can be retained without
 modifying original bodies.
+
+## Remote acceptance — 2026-10-06
+
+Exact input `93bd7fa550eaa99137015109237b78a67815c1fd`, tree `f97009c53238724f362847003976b26595c719d5`, passed settlement
+`37436034852/112177967610`. The run contains **653 tests**, **19656**
+original PvE profit/exit cases, **19656** immutable scan/model-native
+comparisons, **384** bounded Weaken recalculation vectors, **9/9** prior splice
+vectors and **9/9** new same-harness original Guardian vectors.
+
+The accepted trace closes the controlled-Guardian seam: the exact original
+reduced physical function set through GuardianCheck/AttackSeq now executes in
+the same transient program as exact BattleModel/helper and exact tail AddProfit.
+It also pins the subtle pre-ISDIE behavior where a zero-HP guardian can still be
+returned by GuardianCheck, while BattleModel's post-AttackSeq TargetCheck
+decides whether that candidate actually receives DamageSub.
+
+The source battle flags are now imported verbatim from pinned battle.h macros:
+Guardian `1<<3`, ABIO `1<<6`, NODUCK `1<<7`. This correction rejects an
+earlier transient false-ultimate path caused by synthesizing ABIO as a getter
+key.
+
+Next gate: exact original DamageSub in this same harness, then full Battling
+case-body execution. Lethal638 remains disabled.
+
+Acceptance receipt:
+`research/recovered/STONEAGE-BATTLEMODEL-GUARDIAN-PROFIT-TAIL-ACCEPTANCE-R1.json`.
+

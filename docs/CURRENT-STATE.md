@@ -7755,3 +7755,47 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   evidence agrees with the canonical runtime binder. Build/version, wider
   recipients/features and automatic AI remain OPEN; no positive-slot promotion.
 
+## Phase 1 same-harness original Guardian → BattleModel → profit-tail native acceptance — 2026-10-06
+
+- Exact accepted input `93bd7fa550eaa99137015109237b78a67815c1fd`, tree `f97009c53238724f362847003976b26595c719d5`, branch
+  `agent/native-guardian-profit-tail-r1-20261006`.
+- **CLOSED_BOUNDED_SAME_HARNESS_ORIGINAL_GUARDIAN_PROFIT_TAIL_NATIVE.**
+  Settlement `37436034852/112177967610` SUCCESS: **653 tests**,
+  **19656** original PvE profit/exit cases, **19656** immutable
+  scan/model-native comparisons, **384** bounded Weaken recalculation vectors,
+  prior splice **9/9**, and new same-harness original Guardian witnesses
+  **9/9** across gavin/iris/bismarck. Artifact `11399556875`, digest
+  `sha256:65235a67ee514ff87487d041af8642ac0ee10ef7be5351d2615062b515800278`.
+- The same transient program now links the exact original reduced physical
+  function set through `BATTLE_GuardianCheck` and `BATTLE_AttackSeq` with
+  exact original `BATTLE_BattleModel` / helper and exact original tail
+  `BATTLE_AddProfit` / exit whole scan. Guardian registration is real
+  BattleArray state, not an injected target result.
+- The strongest chronology witness is now native in one process: hit1 resolves
+  to pet slot5; pet HP reaches zero but ISDIE is still false because AddProfit
+  has not run; hit2 original `GuardianCheck` may therefore still return that
+  pet, but BattleModel's post-AttackSeq `TargetCheck` rejects the zero-HP
+  candidate and the actual second DamageSub target becomes the requested owner
+  slot0. Only after all hit writes does the one command-tail AddProfit scan run
+  owner slot0 → pet slot5; repeat profit remains idempotent.
+- A source-sensitive harness correction was required: the original battle flags
+  are `CHAR_BATTLEFLG_GUARDIAN=(1<<3)`,
+  `CHAR_BATTLEFLG_ABIO=(1<<6)`,
+  `CHAR_BATTLEFLG_NODUCK=(1<<7)`. They are now imported directly from each
+  pinned `battle.h`; synthesizing ABIO as a getter key could overlap Guardian
+  and falsely force pet ultimate. The accepted noncritical witness also uses
+  equal fixed DEX so original CriticalCheckPlayer returns zero, keeping
+  critical/ultimate composition separate.
+- Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-GUARDIAN-PROFIT-TAIL-ACCEPTANCE-R1.json`.
+- This still does **not** execute exact original `BATTLE_DamageSub` in the same
+  harness and does not execute the full `BATTLE_Battling` body. Lethal638
+  remains blocked.
+- **Highest-priority unfinished task:** replace controlled DamageSub with exact
+  original `BATTLE_DamageSub` inside this same Guardian→BattleModel→tail
+  AddProfit program under the already certified reduced no-ride profile; then
+  attempt full Battling case-body execution without rewriting original
+  conditional source context. Only after those stronger traces match the
+  canonical runtime binder may lethal638 be considered. Build/version, wider
+  recipients/features and automatic AI remain OPEN; no positive-slot promotion.
+

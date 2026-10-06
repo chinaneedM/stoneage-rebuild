@@ -1077,3 +1077,20 @@ adapter and ten-field/overlay clear are next.
 - OPEN: original AttackSeq/GuardianCheck is still a controlled seam in this
   splice and full Battling body execution remains a stronger later gate.
 
+### 2026-10-06 — Same-harness original Guardian profit-tail accepted
+
+- NATIVE/FACT: exact input `93bd7fa550eaa99137015109237b78a67815c1fd` passes settlement
+  `37436034852/112177967610`: 653 tests, 19656 whole-scan original/model
+  comparisons, 384 Weaken recalculation vectors, prior splice 9/9 and new
+  same-harness Guardian vectors 9/9 across three pinned profiles.
+- CHRONOLOGY: original GuardianCheck/AttackSeq, BattleModel helper and tail
+  AddProfit now execute in one transient program. A zero-HP guardian can still
+  be returned before ISDIE is written, but BattleModel's post-AttackSeq
+  TargetCheck rejects it and actual damage falls back to the requested owner.
+  Tail profit runs only after the full hit batch and scans source slot order.
+- HARNESS CORRECTION: Guardian/ABIO/NODUCK bits are imported from original
+  battle.h (1<<3, 1<<6, 1<<7). A synthesized ABIO value had overlapped the
+  Guardian bit and generated a false ultimate path; that evidence was rejected.
+- OPEN: same-harness exact DamageSub and full Battling body remain stronger
+  gates before lethal638.
+

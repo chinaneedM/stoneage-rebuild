@@ -1,0 +1,80 @@
+{
+  "schema": "STONEAGE_BATTLEMODEL_SAME_HARNESS_GUARDIAN_PROFIT_TAIL_ACCEPTANCE_R1",
+  "status": "CLOSED_BOUNDED_SAME_HARNESS_ORIGINAL_GUARDIAN_PROFIT_TAIL_NATIVE",
+  "date": "2026-10-06",
+  "baseline_main_commit": "03aee3c53c5f3608201370118db08f49b8e504f8",
+  "accepted_commit": "93bd7fa550eaa99137015109237b78a67815c1fd",
+  "accepted_tree": "f97009c53238724f362847003976b26595c719d5",
+  "branch": "agent/native-guardian-profit-tail-r1-20261006",
+  "remote_validation": {
+    "settlement": {
+      "run_id": 37436034852,
+      "job_id": 112177967610,
+      "conclusion": "success",
+      "tests": 653,
+      "native_profit_exit_cases": 19656,
+      "immutable_scan_model_native_comparisons": 19656,
+      "weaken_recalculation_vectors": 384,
+      "prior_dispatch_tail_cases": 9,
+      "native_same_harness_guardian_tail_cases": 9,
+      "source_profiles": 3
+    },
+    "artifact": {
+      "id": 11399556875,
+      "name": "battlemodel-settlement",
+      "digest": "sha256:65235a67ee514ff87487d041af8642ac0ee10ef7be5351d2615062b515800278"
+    }
+  },
+  "source_profiles": [
+    {
+      "name": "gavin",
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "battle_sha256": "a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602",
+      "battle_event_sha256": "9a4607566b7cf6f6a94f2019c5d1dfc7088f7805421037b0a5f0095054b9db1"
+    },
+    {
+      "name": "iris",
+      "commit": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "battle_sha256": "6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8",
+      "battle_event_sha256": "2437d4fe88f1dd77e14ad5b976402053ddd1e297d471f45b4169c3588310d4db"
+    },
+    {
+      "name": "bismarck",
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "battle_sha256": "2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18",
+      "battle_event_sha256": "b294f82e2a0b8382b59edd06fa8646fa3e50c00656eba496d8b78fa421c58ecc"
+    }
+  ],
+  "original_battle_flag_macros": {
+    "CHAR_BATTLEFLG_GUARDIAN": "1<<3",
+    "CHAR_BATTLEFLG_ABIO": "1<<6",
+    "CHAR_BATTLEFLG_NODUCK": "1<<7"
+  },
+  "accepted_scope": [
+    "eleven exact original reduced physical functions including BATTLE_GuardianCheck and BATTLE_AttackSeq execute in the same transient program as exact original BattleModel helper and tail AddProfit/exit whole scan",
+    "three same-harness vectors per pinned source profile, nine total, pass against immutable ProfitExitSnapshot accounting",
+    "Guardian registration is real BattleArray state and uses exact source battle-flag macros",
+    "first actual damage in Guardian vector lands on pet slot5",
+    "before tail ISDIE is written, a zero-HP guardian can still be returned by original GuardianCheck because the source gate checks ISDIE rather than HP",
+    "BattleModel post-AttackSeq TargetCheck rejects that zero-HP guardian and actual second DamageSub lands on the requested owner",
+    "all same-harness damage writes complete before one source-order tail AddProfit scan; repeated AddProfit is idempotent",
+    "prior dispatch-tail splice remains 9/9 green with exact source battle-flag macros"
+  ],
+  "harness_corrections": [
+    "synthetic getter IDs are bounded by backing storage and cannot silently overrun",
+    "CHAR_BATTLEFLG_GUARDIAN ABIO NODUCK are imported from original battle.h macros rather than synthesized as getter keys",
+    "the noncritical Guardian baseline uses equal fixed DEX so original CriticalCheckPlayer returns zero and critical/ultimate composition is isolated from this chronology witness"
+  ],
+  "explicit_nonclaims": [
+    "BATTLE_DamageSub remains controlled in this same-harness audit though separately native-certified",
+    "full BATTLE_Battling body is not executed in this same harness",
+    "status application presentation and external notifications remain controlled",
+    "lethal BattleModel ID638 remains rejected in the modern runtime",
+    "original build/version membership is not selected",
+    "no raw original source/assets are committed"
+  ],
+  "historical_claims_added": false,
+  "original_source_or_assets_committed": false,
+  "positive_slots_promoted": 0,
+  "next_priority": "Replace the controlled DamageSub seam with exact original BATTLE_DamageSub in the same Guardian->BattleModel->tail AddProfit transient program under the already certified no-ride reduced profile. Then attempt full BATTLE_Battling case-body execution. Lethal638 remains blocked until those stronger same-harness traces agree with the canonical runtime binder."
+}
