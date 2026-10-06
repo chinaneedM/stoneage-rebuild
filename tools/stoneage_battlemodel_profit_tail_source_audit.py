@@ -96,9 +96,13 @@ def _feature_off_enum_value(header_text: str, symbol: str) -> int:
         return int(subprocess.check_output([str(binary)],text=True).strip())
 
 
-def _function_body(text: str, name: str) -> str:
+def _raw_function_body(text: str, name: str) -> str:
     window=_definition(_strip(text),name,raw_window=True)
     return window[:window.rfind("}")+1]
+
+
+def _exact_function_body(text: str, name: str) -> str:
+    return _definition(_strip(text),name)
 
 
 def _source(name: str, root: Path):
@@ -130,9 +134,12 @@ def _source(name: str, root: Path):
 
     clean_battle=_strip(battle)
     clean_event=_strip(event)
-    profit="\n".join(_function_body(clean_battle,n) for n in PROFIT_FUNCTIONS)
-    helper=_function_body(clean_event,"BATTLE_BattleModel_ATTACK")
-    model=_function_body(clean_event,"BATTLE_BattleModel")
+    profit="\n".join(_raw_function_body(clean_battle,n) for n in PROFIT_FUNCTIONS)
+    # Reuse the exact balanced function extraction already used by the accepted
+    # BattleModel lifecycle/source audits. The raw windows include surrounding
+    # feature guards and are unsuitable for direct standalone concatenation.
+    helper=_exact_function_body(clean_event,"BATTLE_BattleModel_ATTACK")
+    model=_exact_function_body(clean_event,"BATTLE_BattleModel")
 
     case_at=battle.find("case "+COMMAND+":")
     if case_at<0:
@@ -160,6 +167,7 @@ def _source(name: str, root: Path):
     fields=set(re.findall(r"\b(?:CHAR|BATTLE|BENT|ITEM|TARGET|PETSKILL|BCF)_[A-Z][A-Z_0-9]*\b",combined))
     fields.update(STATUS_FIELDS)
     semantic={
+        "BATTLE_ENTRY","BATTLE_SIDE","BATTLE",
         "BATTLE_ENTRY_MAX","SIDE_OFFSET","CHAR_MAXPETHAVE","BENT_FLG_ULTIMATE",
         "CH_FIX_PLAYERDEAD","CH_FIX_PLAYEULTIMATE","AI_FIX_PLAYERDEAD",
         "AI_FIX_PLAYERULTIMATE","AI_FIX_PETDEAD","AI_FIX_PETULTIMATE",
@@ -184,6 +192,7 @@ def _source(name: str, root: Path):
         "BATTLE_S_TYPE_PLAYER":101,
         "BATTLE_S_TYPE_ENEMY":102,
         "BATTLE_TYPE_P_vs_E":103,
+        "BATTLE_TYPE_P_vs_P":107,
         "BATTLE_CHARMODE_NONE":104,
         "BATTLE_CHARMODE_BATTLE":105,
         "BATTLE_CHARMODE_FINAL":106,
@@ -358,7 +367,7 @@ DISPATCH_CASE
 '''.replace("DISPATCH_CASE",case_source)
     code=(
         "#include <math.h>\n"+macro_lines+"\n#define BATTLE_ST_END "+str(st_end)+"\n"
-        +"\n".join(defines)+"\n"+prefix+"\n"+table.group(0)+"\n"+status_array
+        +"\n".join(defines)+"\n"+table.group(0)+"\n"+prefix+"\n"+status_array
         +profit+"\n"+helper+"\n"+model+"\n"+main
     )
     return code,{
