@@ -35,6 +35,7 @@ on:
       - "tests/test_stoneage_battlemodel_ordinary_round.py"
       - "tests/test_stoneage_default_pet_ultimate_runtime.py"
       - "tests/test_stoneage_profit_exit_scan_model.py"
+      - "tests/test_stoneage_player_exit_status_runtime.py"
       - "tests/test_stoneage_battle_round_model.py"
       - "tests/test_stoneage_battlemodel_admission.py"
       - "specs/STONEAGE-BATTLEMODEL-PHYSICAL-ATTACKSEQ-R1.md"
@@ -44,6 +45,7 @@ on:
       - "specs/STONEAGE-BATTLEMODEL-DEFAULT-EXIT-AUDIT-R1.md"
       - "specs/STONEAGE-PVE-PROFIT-EXIT-NATIVE-AUDIT-R1.md"
       - "specs/STONEAGE-PVE-PROFIT-EXIT-SCAN-MODEL-R1.md"
+      - "specs/STONEAGE-PLAYER-EXIT-STATUS-RUNTIME-R1.md"
       - "specs/STONEAGE-DEFAULT-PET-ULTIMATE-RUNTIME-R1.md"
       - "specs/STONEAGE-BATTLEMODEL-SETTLEMENT-AUDIT-R1.md"
 
@@ -73,6 +75,11 @@ jobs:
             tests.test_stoneage_battlemodel_ordinary_round \
             tests.test_stoneage_default_pet_ultimate_runtime \
             tests.test_stoneage_profit_exit_scan_model \
+            tests.test_stoneage_player_exit_status_runtime \
+            tests.test_stoneage_weaken_runtime \
+            tests.test_stoneage_barrier_runtime \
+            tests.test_stoneage_nocast_model \
+            tests.test_stoneage_setmagicpet_runtime \
             tests.test_stoneage_attack_crazed_runtime \
             tests.test_stoneage_wildviolent_runtime \
             tests.test_stoneage_2battletimid_runtime \
@@ -133,6 +140,16 @@ jobs:
           test "$(grep -c '\"immutable_scan_model_native_comparisons\": 6552' /tmp/profit-exit-native.txt)" = 3
           grep -F 'MODEL|immutable_scan_model_native_comparisons=19656' /tmp/profit-exit-native.txt
           grep -F 'RESOLUTION|IMMUTABLE_PVE_PROFIT_EXIT_SCAN_MODEL_NATIVE_PASS' /tmp/profit-exit-native.txt
+      - name: Recheck original bounded Weaken attribute recalculation
+        run: |
+          python -m tools.stoneage_weaken_source_audit \
+            --gavin-dir /tmp/battlemodel-hit/gavin \
+            --iris-dir /tmp/battlemodel-hit/iris \
+            --bismarck-dir /tmp/battlemodel-hit/bismarck \
+            > /tmp/player-exit-weaken-native.txt
+          cat /tmp/player-exit-weaken-native.txt
+          test "$(grep -c 'name=recalculation_cases|value=128' /tmp/player-exit-weaken-native.txt)" = 3
+          grep -F 'RESOLUTION|WEAKEN_FIXED_SOURCE_CLOSED_SAFE_REFERENCE' /tmp/player-exit-weaken-native.txt
       - name: Compare equipment-free physical AttackSeq against native functions
         run: |
           python -m tools.stoneage_battlemodel_physical_source_audit \
@@ -188,6 +205,7 @@ jobs:
           path: |
             /tmp/default-pet-exit.txt
             /tmp/profit-exit-native.txt
+            /tmp/player-exit-weaken-native.txt
             /tmp/battlemodel-physical-attackseq.txt
             /tmp/battlemodel-itemcrush.txt
             /tmp/battlemodel-settlement.txt

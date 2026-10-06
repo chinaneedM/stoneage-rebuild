@@ -3834,3 +3834,15 @@ remain explicitly OPEN. No original source/payload committed.
 - CLOSED_BOUNDED_ISOLATED_MODEL_NATIVE_MATCH only. Full command-native
   bridge, attribute-recalculation integration, actual Guardian attack-to-profit
   and modern lethal638 remain OPEN. No raw original code/assets committed.
+
+
+### Actual player Exit late-status local replay — 2026-10-06
+
+- Spec specs/STONEAGE-PLAYER-EXIT-STATUS-RUNTIME-R1.md.
+  Derived report research/recovered/STONEAGE-PLAYER-EXIT-WEAKEN-NATIVE-R1.txt.
+- Existing tools.stoneage_weaken_source_audit at the three clean source pins
+  reproduces384 recalculation vectors under ASan/UBSan. Existing seven-function
+  profit/exit audit reproduces19656 model/native comparisons after sharing the
+  modern clear primitive. No original source/assets committed or new vectors.
+- Runtime/modern baseline restoration is separate from original full
+  complianceParameter, build/version or lethal638 acceptance; those stay OPEN.

@@ -7534,3 +7534,35 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   multi-victim638 tail states before lethal638 admission. Pet/party recipients,
   sparse source roster mapping, mail/items/ride/wider features, original build/
   version, automatic AI and specific golden/region/hash-verified pressure OPEN.
+
+
+## Phase 1 actual player Exit late-status bridge local milestone — 2026-10-06
+
+- Fresh remote main97ebc6475006e644ba790f521873e1e8ad12c511,
+  tree7849add3ebd23c73e20497e491b5ca8ec2b2a635; accepted main scan replay
+  run37422423135 SUCCESS. Isolated agent/player-exit-status-runtime-r1-20261006.
+- LOCAL_VALIDATED: actual ordinary player UltimateExtra/Exit and outer
+  continuation player exits now clear Nocast/Barrier/Weaken, visit flags and
+  prepared Weaken powers for explicit owner/full non-mail carried roster.
+  The immutable scan model uses the same narrow clear primitive. Selection,
+  paired occupancy and unrelated records stay distinct. Missing/unknown active
+  status records fail closed; no NC packet state is invented.
+- Persistent boundary includes inactive dead and retained-exited pets and
+  rebuilds work_quick from preserved session baseline through accepted Weaken
+  recalculation. Participant views restore baseline powers rather than old
+  weakened snapshots; independent prepared SetMagicPet powers are preserved.
+  Original full complianceParameter/SetMagicPet expiry/ride/equipment seams
+  and all intra-continuation late-status interactions are not newly certified.
+-14 new actual-runtime cases plus related modules total642 tests PASS.
+  Existing19656 scan/model comparisons and384 native Weaken recalculation
+  vectors plus prior callback/probability gates PASS. No new native vectors.
+  Spec STONEAGE-PLAYER-EXIT-STATUS-RUNTIME-R1; derived native replay report
+  research/recovered/STONEAGE-PLAYER-EXIT-WEAKEN-NATIVE-R1.txt.
+- **Highest-priority unfinished task:** publish exact runtime correction and
+  inspect required settlement/golden/region and all triggered Actions. Nonforce
+  accept and main replay only on PASS. Then bind actual whole-scan snapshots
+  and replace damage-event death charges with processed-death accounting at
+  per-hit/638 tail boundaries. Full original command-native/actual Guardian/
+  multi-victim bridge still required before lethal638. Pet/party EXP, sparse
+  profit roster mapping, items/ride/wider features, build/version, AI and
+  specific638 golden/region/pressure OPEN; no positive-slot promotion.

@@ -142,6 +142,18 @@ class NocastParticipantRuntime:
     def after_weaken_tick(self, tick: BarrierSelfTick) -> "NocastParticipantRuntime":
         return replace(self, weaken_counter=int(tick.counter_after))
 
+    def after_player_exit_status_clear(self) -> "NocastParticipantRuntime":
+        """Project the admitted part of original BadStatusAllClr.
+
+        Cached powers and visit flags must not retain a cleared counter. Work
+        attributes are rebuilt by the caller; no feature-on NC packet is inferred.
+        """
+        if self.unmodeled_status_active:
+            raise ValueError("player Exit cannot silently clear an unmodeled active status")
+        return replace(self, counter=0, barrier_counter=0, weaken_counter=0,
+                       weaken_active_at_visit=False, barrier_active_at_visit=False,
+                       prepared_weaken_powers=None)
+
     @property
     def weaken_active_for_late_statuses(self) -> bool:
         return bool(self.weaken_active_at_visit or self.weaken_counter > 0)
@@ -180,6 +192,20 @@ class NocastRoundOverlay:
         return nocast_blocks_direct_magic(
             self.runtime_by_participant_id[participant_id].counter
         )
+
+    def after_player_exit(self, owner_id: str, owned_pet_ids: tuple[str, ...]) -> "NocastRoundOverlay":
+        """Clear the explicitly bound owner and full non-mail carried roster."""
+        if type(owner_id) is not str or not owner_id or type(owned_pet_ids) is not tuple:
+            raise ValueError("explicit player Exit owner/roster required")
+        ids = (owner_id,) + owned_pet_ids
+        if any(type(pid) is not str or not pid for pid in ids) or len(set(ids)) != len(ids):
+            raise ValueError("player Exit owner/roster identity drift")
+        if set(ids) - set(self.runtime_by_participant_id):
+            raise ValueError("player Exit overlay lacks complete owned roster")
+        result = dict(self.runtime_by_participant_id)
+        for pid in ids:
+            result[pid] = result[pid].after_player_exit_status_clear()
+        return NocastRoundOverlay(result)
 
 
 @dataclass(frozen=True)

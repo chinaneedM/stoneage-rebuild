@@ -2865,6 +2865,22 @@ def resolve_persistent_ordinary_round(
         next_setmagicpet_overlay=SetMagicPetRoundOverlay(prepared_magic)
 
     if next_nocast_overlay is not None:
+        if player_id in ultimate_exited_ids:
+            owned_pet_ids=tuple(str(p.participant_id) for p in next_session.allied_pets)
+            next_nocast_overlay=next_nocast_overlay.after_player_exit(player_id,owned_pet_ids)
+            # The session retains unmodified baseline powers. Participant
+            # views may already contain a previous Weaken reduction, so never
+            # rebuild from the round's prepared participant/quick snapshots.
+            for pid in (player_id,)+owned_pet_ids:
+                actor=baseline[pid]
+                magic=(None if next_setmagicpet_overlay is None else
+                       next_setmagicpet_overlay.runtime_by_participant_id[pid].prepared_powers)
+                recalculated=resolve_weaken_recalculation(
+                    actor.attack if magic is None else magic.attack,
+                    actor.defense if magic is None else magic.defense,
+                    actor.quick if magic is None else magic.dexterity,
+                    weaken_counter=0,barrier_counter=0)
+                next_status_runtime[pid]=replace(next_status_runtime[pid],work_quick=recalculated.dexterity)
         prepared_late={}
         for pid,late in next_nocast_overlay.runtime_by_participant_id.items():
             carried=(round_result.carried_commands_by_participant_id or {}).get(pid)

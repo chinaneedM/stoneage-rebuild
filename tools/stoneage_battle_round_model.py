@@ -5641,6 +5641,15 @@ def resolve_ordinary_round(
     ultimate_marked_slots: dict[int,int] = {}
     default_authorities=bind_exit_authorities(default_pet_exit_authorities,by_slot)
 
+    def clear_player_exit_overlay(owner_id: str) -> None:
+        if nocast_working is None:
+            return
+        authority=default_authorities[owner_id]
+        cleared=NocastRoundOverlay(nocast_working).after_player_exit(
+            owner_id,authority.owned_pet_ids)
+        nocast_working.clear()
+        nocast_working.update(cleared.runtime_by_participant_id)
+
     def register_ultimate_exits(
         new_events: Sequence[OrdinaryRoundEvent],
     ) -> None:
@@ -5736,6 +5745,7 @@ def resolve_ordinary_round(
             if target.kind != "player":
                 continue
 
+            clear_player_exit_overlay(target_id)
             for pet_id in player_pet_exit_ids(target_slot,target_id,
                 default_authorities,by_slot,exited_slots):
                 pet_slot=default_authorities[target_id].occupied_pet_slots[pet_id]
@@ -7293,6 +7303,11 @@ def resolve_ordinary_round(
                 exited_slots.add(exit_slot)
                 if exit_id not in ultimate_exited_ids:
                     ultimate_exited_ids.append(exit_id)
+                if exit_id in slot_by_id and by_slot[slot_by_id[exit_id]].kind == "player":
+                    # The multihit resolver owns immediate HP/base clear. Bind
+                    # its actual player Exit to the outer late-status overlay
+                    # before any later prepared actor executes.
+                    clear_player_exit_overlay(exit_id)
             for event in continuation_events:
                 if (
                     int(event.ultimate_kind)>0

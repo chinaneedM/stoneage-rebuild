@@ -981,3 +981,15 @@ adapter and ten-field/overlay clear are next.
 - OPEN: existing drivers still need explicit scan/recalculation integration,
   full native command chronology and Guardian-to-profit witnesses. Modern
   lethal638, original build/version and specific golden/region/pressure OPEN.
+
+
+### 2026-10-06 — Actual player Exit late-status local bridge
+
+- MODEL/DESIGN: real ordinary and outer continuation player exits now consume
+  the admitted late-counter/cache clear. Persistent carried state restores
+  original session/independent buff views instead of retained Weaken powers.
+- Existing native evidence replays19656 scan comparisons and384 narrow
+  Other_DefcharWorkInt recalculation vectors; no new source/version claim.
+ 14 new actual runtime tests and642 related regressions PASS locally.
+- OPEN: full command-native scan integration, original complianceParameter,
+  intra-continuation late interactions, lethal638 and exact remote acceptance.

@@ -321,9 +321,7 @@ def project_profit_exit_status_clear(result: ProfitExitScanResult, *,
                 raise ValueError("unmodeled active status cannot be silently cleared")
             if (runtime.weaken_counter, runtime.barrier_counter, runtime.counter) != (source[6], source[8], source[9]):
                 raise ValueError("overlay counters do not match scan boundary snapshot")
-            late[pid] = replace(runtime, counter=0, barrier_counter=0, weaken_counter=0,
-                                weaken_active_at_visit=False, barrier_active_at_visit=False,
-                                prepared_weaken_powers=None)
+            late[pid] = runtime.after_player_exit_status_clear()
         base[pid] = replace(base[pid], status=BaseBattleStatusState())
     return ProfitExitStatusProjection(MappingProxyType(base),
         None if late is None else NocastRoundOverlay(late), result.status_cleared_ids)
