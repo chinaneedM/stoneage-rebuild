@@ -4041,3 +4041,33 @@ remain explicitly OPEN. No original source/payload committed.
   lethal638 persistent/coordinator admission remain OPEN.
 - Receipt:
   `research/recovered/STONEAGE-BATTLEMODEL-FULL-BATTLING-PROFIT-TAIL-ACCEPTANCE-R1.json`.
+
+### SRC-BATTLEMODEL-ID638-NORMAL-DEATH-PERSISTENT-R1 — remote runtime acceptance 2026-10-06
+
+- Implementation head `6c4032a4d6f3c3ab12b2e2c0c9830033809ba33b`, tree
+  `ec14ccbe881f6065ac1afc73466a702758a6eba4`; final tested input
+  `89848f2ed92c4aa4c21c70d68356fe52b951ab40`, tree
+  `312a842d8d093fa57bb1b4a4200186dcaa63ce1a`. No original source/assets
+  committed.
+- BattleModel settlement `37443593822/112202958318` SUCCESS: **655 tests**,
+  19656 original PvE profit/exit cases, 19656 immutable scan/model-native
+  comparisons, full-Battling / exact-DamageSub / Guardian / dispatch-tail
+  native witnesses **9/9 each**, and 384 bounded Weaken recalculation vectors.
+  Artifact `11401694955`,
+  `sha256:d9bae433e4e06df60f2f18f7c6b11a697aff04377be8619fe6862e9ec6b1b41e`.
+- Integration evidence at implementation head: coordinator
+  `37443283037/112201941097` SUCCESS (**231 tests**), runtime golden
+  `37443283236/112201941937` SUCCESS, recovered25 region/runtime-stack
+  `37443283255/112201946517` SUCCESS.
+- Accepted claim: already accepted recovered ID638 admission now composes with
+  one canonical BattleModel command-tail whole-scan boundary for **normal
+  death**, and persistent state takes processed-death authority from that scan.
+  Coordinator re-admission still validates current template/skill/runtime
+  identity before commit.
+- Boundary: ultimate flags, BATTLE_UltimateExtra/BATTLE_Exit, multi-victim
+  ultimate source-slot ordering, automatic BattleModel AI, ride/equipment,
+  wider callbacks, packets and build/version remain OPEN. A later ordinary
+  non-BattleModel death cannot borrow this scope.
+- Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-ID638-NORMAL-DEATH-PERSISTENT-ACCEPTANCE-R1.json`.
+  Positive slots promoted: **0**.
