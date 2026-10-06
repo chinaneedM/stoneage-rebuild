@@ -8,6 +8,9 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - tools/stoneage_recovered25_battlemodel_runtime_probe.py
+      - tests/test_stoneage_recovered25_battlemodel_runtime_probe.py
+      - game/STONEAGE-BATTLEMODEL-RUNTIME-GOLDEN-R1.json
       - .github/workflows/validate-stoneage-recovered25-region-payload.yml
       - tools/stoneage_recovered25_region_payload.py
       - tools/stoneage_recovered25_region_payload_smoke.py
@@ -78,6 +81,7 @@ jobs:
       - name: Run deterministic region/runtime-stack tests
         run: |
           python3 -m unittest \
+            tests.test_stoneage_recovered25_battlemodel_runtime_probe \
             tests.test_stoneage_recovered25_region_payload \
             tests.test_stoneage_recovered25_world_profile_adapter \
             tests.test_stoneage_recovered25_local_runtime_stack \
@@ -164,6 +168,18 @@ jobs:
           grep -F 'COUNT|event_plane_present_floors|761' "$R"
           grep -F 'COUNT|event_plane_separate_floors|65' "$R"
           grep -F 'RESOLUTION|RECOVERED25_REGION_PAYLOAD_SOURCE_CLOSED' "$R"
+      - name: Verify exact recovered ID638 persistent coordinator golden and identity pressure
+        run: |
+          set -euo pipefail
+          G="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
+          test -n "$G"; test -n "$C"
+          python3 -m tools.stoneage_recovered25_battlemodel_runtime_probe \
+            --data-dir "$G" --setup "$C" > /tmp/recovered-battlemodel-runtime.txt
+          cat /tmp/recovered-battlemodel-runtime.txt
+          grep -F 'COUNT|battlemodel_recovered_persistent_coordinator_goldens=60' /tmp/recovered-battlemodel-runtime.txt
+          grep -F 'COUNT|battlemodel_current_identity_rejections=12' /tmp/recovered-battlemodel-runtime.txt
+          grep -F 'RESOLUTION|RECOVERED25_BATTLEMODEL_RUNTIME_GOLDEN_PASS' /tmp/recovered-battlemodel-runtime.txt
       - name: Validate concrete recovered25 local runtime stack
         run: |
           set -euo pipefail
@@ -185,6 +201,8 @@ jobs:
             --mapset "$M" \
             --client-adrn "$A" > "$R"
           test -s "$R"
+          grep -F 'BATTLEMODEL_STACK_GOLDEN|cases=60|templates=2|charsets=2|source_profiles=3' "$R"
+          grep -F 'BATTLEMODEL_STACK_IDENTITY_PRESSURE|rejections=12' "$R"
           grep -F 'COUNT|materializable_floors|826' "$R"
           grep -F 'COUNT|state_gated_bindings|3' "$R"
           grep -F 'COUNT|fresh_start_seeds|4' "$R"
@@ -302,6 +320,14 @@ jobs:
           grep -F 'COUNT|server_uncovered_floors|191' "$R"
           grep -F 'COUNT|adrn_records|234564' "$R"
           grep -F 'RESOLUTION|RECOVERED25_CLIENT_ADRN_COLLISION_COVERAGE_AUDITED' "$R"
+      - name: Preserve BattleModel and full-region evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: battlemodel-recovered-runtime-golden
+          path: |
+            /tmp/recovered-battlemodel-runtime.txt
+            research/recovered/STONEAGE-25-LOCAL-RUNTIME-STACK-R1.txt
+            research/recovered/STONEAGE-25-REGION-PAYLOAD-SOURCE-R1.txt
       - name: Commit derived aggregate reports
         run: |
           git config user.name stoneage-recovery-bot

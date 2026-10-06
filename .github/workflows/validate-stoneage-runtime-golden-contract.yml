@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - tools/stoneage_recovered25_battlemodel_runtime_probe.py
+      - tests/test_stoneage_recovered25_battlemodel_runtime_probe.py
+      - game/STONEAGE-BATTLEMODEL-RUNTIME-GOLDEN-R1.json
       - game/STONEAGE-RUNTIME-GOLDEN-CONTRACT-R1.json
       - tools/stoneage_runtime_golden_contract.py
       - tests/test_stoneage_runtime_golden_contract.py
@@ -45,5 +48,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Verify cross-language runtime golden contract
         run: |
-          python3 -m unittest tests.test_stoneage_runtime_golden_contract -v
+          python3 -m unittest tests.test_stoneage_runtime_golden_contract tests.test_stoneage_recovered25_battlemodel_runtime_probe -v
           python3 -m tools.stoneage_runtime_golden_contract

@@ -1,0 +1,88 @@
+{
+  "schema": "stoneage.battlemodel-runtime-golden.r1",
+  "evidence_role": "LATER_RECOVERED_EXPLICIT_WORK_EXPERIMENT",
+  "scenarios": {
+    "status_success": {
+      "processed_deaths": [],
+      "scan_deaths": [],
+      "ultimate_exits": [],
+      "default_pet_slot": null,
+      "ultimate_by_slot": {},
+      "turn": 1,
+      "hp_write_slots": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "status_fail": {
+      "processed_deaths": [],
+      "scan_deaths": [],
+      "ultimate_exits": [],
+      "default_pet_slot": null,
+      "ultimate_by_slot": {},
+      "turn": 1,
+      "hp_write_slots": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "normal_death": {
+      "processed_deaths": [
+        "player"
+      ],
+      "scan_deaths": [
+        "player"
+      ],
+      "ultimate_exits": [],
+      "default_pet_slot": null,
+      "ultimate_by_slot": {},
+      "turn": 1,
+      "hp_write_slots": [
+        0
+      ]
+    },
+    "owner_pet_ultimate": {
+      "processed_deaths": [],
+      "scan_deaths": [
+        "player"
+      ],
+      "ultimate_exits": [
+        "player",
+        "pet"
+      ],
+      "default_pet_slot": 0,
+      "ultimate_by_slot": {
+        "0": 2,
+        "5": 2
+      },
+      "turn": 1,
+      "hp_write_slots": [
+        5,
+        0
+      ]
+    },
+    "pet_only_ultimate": {
+      "processed_deaths": [],
+      "scan_deaths": [
+        "pet"
+      ],
+      "ultimate_exits": [
+        "pet"
+      ],
+      "default_pet_slot": null,
+      "ultimate_by_slot": {
+        "5": 2
+      },
+      "turn": 1,
+      "hp_write_slots": [
+        5,
+        0,
+        0
+      ]
+    }
+  }
+}

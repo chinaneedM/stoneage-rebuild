@@ -7970,3 +7970,33 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   fail-closed unsupported callback/grouping boundaries. Automatic AI selection,
   active original build/version, ride/items, wider recipients and scheduler/
   status/presentation history remain OPEN.
+
+
+## Phase 1 ID638 recovered-data golden and concrete stack gate — 2026-10-06
+
+- Started from freshly verified remote `main` `581e34af2776b4e676df7061e80b1bfb4f48b643`,
+  tree `864fc6839aa6205b1649c1eb613f833ae01f02d4`. The preceding four code-head
+  Actions all completed SUCCESS; its documentation head intentionally skips CI.
+- Added `tools/stoneage_recovered25_battlemodel_runtime_probe.py` and the derived
+  semantic `game/STONEAGE-BATTLEMODEL-RUNTIME-GOLDEN-R1.json`. The CLI verifies
+  complete active petskill and enemybase file SHA-256 before execution.
+- Sixty witnesses cover both exact positive templates, both charset profiles,
+  three pinned source profiles and five scenarios: successful/failed status,
+  normal death, Guardian pet-before-owner ultimate, and pet-only ultimate.
+  Direct persistent execution must equal coordinator execution; current
+  OPTION/template/work identity is re-admitted before any commit. Twelve
+  current-data row/template/slot mutations must reject with immutable inputs.
+- Status golden observes the pre-player-tick paralysis separately from final
+  state: later WAIT consumes its one turn, so final status alone is insufficient.
+- Concrete recovered25 stack smoke now repeats all witnesses at a materialized
+  fresh-start position, using the full stack's loaded data and coordinator.
+  Position/work/selection are controlled experiments, not a recovered original
+  encounter or automatic AI selection certificate.
+- Local synthetic orchestration and existing related regressions pass. Exact
+  bundle/native/full-region remote acceptance is **PENDING**; no slot promoted.
+- **Highest-priority unfinished task:** inspect exact implementation-head
+  settlement/coordinator/golden/verified-region Actions and their derived
+  artifacts; fix any failing actual-data witness. Only after exact-data pressure
+  passes, audit the remaining promotion criteria and authoritative slot ledger.
+  Original active build, automatic AI, real encounter-to-selection composition,
+  ride/items, wider recipients and presentation remain OPEN.
