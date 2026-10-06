@@ -1,0 +1,71 @@
+{
+  "schema": "STONEAGE_DEFAULT_PET_EXIT_HELPER_ACCEPTANCE_R1",
+  "date": "2026-10-06 (UTC+8)",
+  "status": "CLOSED_BOUNDED_DEFAULTPET_HELPER_AUDIT_RUNTIME_CORRECTION_OPEN",
+  "branch": "agent/battlemodel-default-exit-audit-r1-20261006",
+  "accepted_main_base": "038f7118cfec9162db7e045d318f527d26afff09",
+  "input_commit": "b6ca59eb86d2e0d1462fcdf56939d2c1cd7e6f8b",
+  "input_tree": "23f26db6cb082ec75b742ad48f5c5a9f1b633ca1",
+  "remote_validation": {
+    "run_id": 37415958204,
+    "job_id": 112114499031,
+    "conclusion": "success",
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37415958204",
+    "native_default_pet_exit_cases": 486,
+    "shared_tests": 428,
+    "physical_native_comparisons": 696,
+    "itemcrush_native_comparisons": 3420,
+    "settlement_native_calls": 1920,
+    "marker_native_comparisons": 480,
+    "pet_guard_native_calls": 60,
+    "artifact": {
+      "id": 11391295439,
+      "node_id": "MDg6QXJ0aWZhY3QxMTM5MTI5NTQzOQ==",
+      "name": "battlemodel-settlement",
+      "size_in_bytes": 4093,
+      "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/11391295439",
+      "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/11391295439/zip",
+      "expired": false,
+      "digest": "sha256:19b9438afa0c3c16bbf09394bb6ca7599827d981408286cc31a35093a5c8c946",
+      "created_at": "2026-10-06T04:55:09Z",
+      "updated_at": "2026-10-06T04:55:09Z",
+      "expires_at": "2027-01-04T04:54:54Z",
+      "workflow_run": {
+        "id": 37415958204,
+        "repository_id": 1374762421,
+        "head_repository_id": 1374762421,
+        "head_branch": "agent/battlemodel-default-exit-audit-r1-20261006",
+        "head_sha": "b6ca59eb86d2e0d1462fcdf56939d2c1cd7e6f8b"
+      }
+    }
+  },
+  "profiles": [
+    {
+      "profile": "gavin",
+      "sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "source_sha256": "a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602",
+      "native_default_pet_exit_cases": "162"
+    },
+    {
+      "profile": "iris",
+      "sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "source_sha256": "6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8",
+      "native_default_pet_exit_cases": "162"
+    },
+    {
+      "profile": "bismarck",
+      "sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "source_sha256": "2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18",
+      "native_default_pet_exit_cases": "162"
+    }
+  ],
+  "scope": [
+    "unmodified original BATTLE_PetDefaultExit with controlled getters/BATTLE_Exit results",
+    "clean pinned source commit and tree, transient original function compilation only",
+    "static UltimateExtra DEFAULTPET and independent Entry[i+5] cleanup anchors; no full native exit/profit",
+    "no historical original build/compile profile/Taiwan-v1 membership claim"
+  ],
+  "runtime_correction": "OPEN; sole-active-pet inference remains in ordinary and continuation exit; pet-ultimate chronological selection clearing also OPEN",
+  "positive_slots_promoted": 0,
+  "next_priority": "explicit nullable selection through ordinary/continuation plus source-shaped paired occupancy and chronological pet-ultimate profit selection"
+}

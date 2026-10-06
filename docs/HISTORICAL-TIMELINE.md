@@ -886,3 +886,15 @@ coordinator transaction closed only for declared nonlethal empty-equipment
 scope. Baseline golden/region pass does not certify new BattleModel scenarios.
 Full lethal/automatic-AI/native command-loop/638 coverage OPEN. Earlier remote
 pending snapshot superseded; no original build/Taiwan-v1 membership claim.
+
+
+### 2026-10-06 — explicit DEFAULTPET helper audit accepted
+
+**FACT (bounded descendant helper):**37415958204/job112114499031 PASS on
+b6ca59eb,486 original-function cases at three clean fixed pins. Controlled
+getters/Exit confirm exact selection lookup and unchanged selection, not sole
+active-pet inference. **STATIC:** player Exit also has independent Entry[i+5]
+cleanup; pet UltimateExtra clears owner DEFAULTPET. Full native cleanup/profit
+not certified. **OPEN:** current ordinary/continuation inference and absent
+pet-ultimate selection transition require correction before lethal638. Older
+"paired/default" terminology superseded; no Taiwan-v1/build membership claim.

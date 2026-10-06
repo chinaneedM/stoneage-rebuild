@@ -7207,3 +7207,49 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   ultimate exit before enabling lethal BattleModel. Preserve ownership and
   occupancy independently; no unique-pet inference. Require native profit/exit
   chronology, golden/region and hash-verified pressure before638 slot promotion.
+
+
+### Nonlethal main synchronization and replay verified — 2026-10-06
+
+- Main/ordinary branch both038f7118cfec9162db7e045d318f527d26afff09,
+  treecc866bd5ba86d5832a2a9f6099c19e261a282014. Nonforce expected-head
+  synchronization and clean matching local/remote tree verified. Acceptance
+  differs from successful a03b8781 only in docs/derived receipt.
+- All32 exact-main replays SUCCESS, including settlement37415709871,
+  golden37415709855 and full-region37415709963. Ordinary branch
+  same-code settlement37415707068 SUCCESS. Queued/in-progress observations
+  are superseded. Original exact acceptance37414798897 stays authoritative.
+
+
+## Phase 1 explicit default-pet exit helper audit accepted — 2026-10-06
+
+- Fresh isolated audit from038f7118: exact input
+  b6ca59eb86d2e0d1462fcdf56939d2c1cd7e6f8b,
+  tree23f26db6cb082ec75b742ad48f5c5a9f1b633ca1. No runtime code change.
+- Three clean pinned original BATTLE_PetDefaultExit functions compiled
+  transiently with controlled getters/Exit results:162 cases per pin,486 total.
+  Invalid owner/type/no selection short-circuit; selected exact roster lookup
+  reaches Exit, successful result1/nonzero result negation, selection unchanged.
+  Native certificate covers only that helper, not full Exit/profit/occupancy.
+- Exact run37415958204 SUCCESS, job112114499031. Logs reproduce486 new
+  helper cases,428 regressions and696/3420/1920/480/60 prior native gates.
+  Derived artifact11391295439 uploaded; receipt:
+  research/recovered/STONEAGE-DEFAULT-PET-EXIT-HELPER-ACCEPTANCE-R1.json.
+- CLOSED_BOUNDED_DEFAULTPET_HELPER_AUDIT. Separate static anchors show
+  player Exit also reads/clears Entry[i+5], and pet UltimateExtra clears owner
+  DEFAULTPET. No-selection therefore does not prove absence of paired cleanup.
+  Superseding note added to the older ultimate-exit mechanics record.
+- OPEN runtime defects are precisely located: ordinary register_ultimate_exits
+  and ContinuationAttack use sole-active-pet inference; persistent adapter has
+  no general explicit selection exit input; pet-ultimate default clearing is
+  absent from selection/profit chronological transitions. Existing loyalty
+  reads explicit state but recall alone is not sufficient. No correction claim.
+- **Highest-priority unfinished task:** verify accepted audit main-sync/exact
+  replay, then isolate DD-020 correction from latest main. Pass explicit nullable
+  selected identity through ordinary/persistent/continuation; keep source-shaped
+  paired-slot occupancy distinct; clear selection on pet ultimate before later
+  player-death loyalty. Test ownership/HP preservation, no-selection+paired
+  occupancy, unrelated/multiple pets, already recalled/exited selection, actual
+  Guardian and failure immutability. Native full exit/profit composition then
+  lethal BattleModel, automatic AI and specific golden/region/hash-verified
+  pressure remain OPEN. No638 slot promotion; DD-018 restoration-first.

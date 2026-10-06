@@ -1,6 +1,14 @@
 # BattleModel default selection and ultimate exit audit R1
 
-Status: LOCAL_NATIVE_HELPER_VALIDATED; full cleanup/profit integration OPEN.
+Status: CLOSED_BOUNDED_DEFAULTPET_HELPER_AUDIT;
+runtime correction and full cleanup/profit integration OPEN.
+
+Exact input `b6ca59eb86d2e0d1462fcdf56939d2c1cd7e6f8b`, tree
+`23f26db6cb082ec75b742ad48f5c5a9f1b633ca1`: run `37415958204`, job
+`112114499031` SUCCESS. Logs reproduce486 native helper cases and all428
+shared tests/696 physical/3420 ItemCrush/1920 settlement/480 marker/60 pet
+gates. Derived artifact `11391295439` uploaded. Receipt:
+`research/recovered/STONEAGE-DEFAULT-PET-EXIT-HELPER-ACCEPTANCE-R1.json`.
 
 ## Evidence and boundary
 

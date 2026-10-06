@@ -225,3 +225,21 @@ Regression coverage includes:
 - player ultimate terminal rejects generic profit-bearing finishers;
 - explicit elder-return position is applied;
 - explicit failed elder lookup keeps the battle-origin position.
+
+## 2026-10-06 correction — selected helper and paired occupancy are distinct
+
+The older phrase "paired/default active pet" must not be interpreted as a
+single identity or permission to choose the sole allied pet. DD-020 now carries
+explicit nullable DEFAULTPET roster selection. Native original
+`BATTLE_PetDefaultExit` uses that exact lookup; it never counts active pets and
+does not itself clear selection. Player `_BATTLE_Exit` also has a separate
+`Entry[i+5]` cleanup path. Pet UltimateExtra clears its owner's DEFAULTPET.
+These selection, occupancy and carried-ownership operations require separate
+state bindings. No-selection does not remove the later paired cleanup.
+
+The current ordinary/continuation projection has not yet been corrected; this
+is a superseding interpretation/integration audit, not withdrawal of the older
+bounded tests or a new full native exit certificate. Exact helper audit
+`37415958204` reproduces486 cases at three clean pins with controlled Exit
+stubs. Full cleanup/profit behavior remains outside that certificate. Contract:
+`specs/STONEAGE-BATTLEMODEL-DEFAULT-EXIT-AUDIT-R1.md`.

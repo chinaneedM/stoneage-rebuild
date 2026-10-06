@@ -3712,3 +3712,25 @@ Settlement37414798897, job112110945349, reproduces428 tests and native
 Only bounded nonlethal explicit integration accepted; new BattleModel golden,
 pressure, full original command loop, lethal/default-pet/automatic AI and638
 slots remain OPEN. Pending snapshot superseded; no raw source/payload retained.
+
+
+### SRC-EXPLICIT-DEFAULT-PET-EXIT-HELPER-R1
+
+- Existing clean fixed pins gavin1f90cb6c/iris9e6c8ce2/bismarck999ffdf1.
+  battle.c SHA256 respectively a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602,
+  6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8,
+  2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18.
+- Unmodified BATTLE_PetDefaultExit compiled transiently against controlled
+  getters/Exit returns:486 native cases. Exact explicit DEFAULTPET lookup,
+  no-selection/type/index short-circuit and source return/selection contract.
+  Original source/assets not retained; no complete native cleanup/profit claim.
+- Static UltimateExtra/pet-selection and separate Entry[i+5] cleanup anchors
+  distinguish ownership/selection/occupancy. Bismarck identifier normalization
+  applies only to static anchors; original helper is compiled unchanged.
+- Exact b6ca59eb86d2e0d1462fcdf56939d2c1cd7e6f8b,
+  tree23f26db6cb082ec75b742ad48f5c5a9f1b633ca1;
+  run37415958204/job112114499031 SUCCESS, artifact11391295439.
+  Existing428 tests and696/3420/1920/480/60 native checks reproduced.
+- Current ordinary/continuation selected-pet inference and pet-ultimate
+  chronological selection/profit defects OPEN. Spec/receipt record correction
+  contract; no full lethal BattleModel/original build/Taiwan-v1/638 promotion.
