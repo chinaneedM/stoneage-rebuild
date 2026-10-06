@@ -17,7 +17,8 @@ on:
       - "tools/stoneage_profit_exit_source_audit.py"
       - "tools/stoneage_battlemodel_profit_tail_source_audit.py"
       - "tools/stoneage_battlemodel_guardian_profit_tail_source_audit.py"
-      - "tools/stoneage_battlemodel_damagesub_profit_tail_source_audit.py"\n      - "tools/stoneage_battlemodel_full_battling_profit_tail_source_audit.py"
+      - "tools/stoneage_battlemodel_damagesub_profit_tail_source_audit.py"
+      - "tools/stoneage_battlemodel_full_battling_profit_tail_source_audit.py"
       - "tools/stoneage_profit_exit_scan_model.py"
       - "tools/stoneage_nocast_runtime_state.py"
       - "tools/stoneage_battle_round_model.py"
@@ -181,7 +182,7 @@ jobs:
           cat /tmp/battlemodel-damagesub-profit-tail.txt
           test "$(grep -c '"native_same_harness_exact_damagesub_tail_cases": 3' /tmp/battlemodel-damagesub-profit-tail.txt)" = 3
           grep -F 'TOTAL|native_same_harness_exact_damagesub_tail_cases=9|profiles=3' \
-            /tmp/battlemodel-damagesub-profit-tail.txt\n            /tmp/battlemodel-full-battling-profit-tail.txt
+            /tmp/battlemodel-damagesub-profit-tail.txt
           grep -F 'RESOLUTION|BATTLEMODEL_SAME_HARNESS_EXACT_DAMAGESUB_PROFIT_TAIL_NATIVE_PASS' \
             /tmp/battlemodel-damagesub-profit-tail.txt
       - name: Execute full original Battling BattleModel profit tail
