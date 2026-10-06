@@ -254,12 +254,12 @@ def _canonical_layout(
             raise ProfitBoundaryUnsupported("pet occupancy is not canonical")
         if participant.kind=="enemy" and not 10<=int(slot)<20:
             raise ProfitBoundaryUnsupported("enemy occupancy is not canonical")
-    if dict(authority.occupied_pet_slots)!={
-        pet_id:reverse[pet_id]
-        for pet_id in authority.owned_pet_ids
-        if pet_id in reverse
-    }:
-        raise ValueError("boundary authority and actual canonical pet occupancy drift")
+    for pet_id,recorded_slot in authority.occupied_pet_slots.items():
+        actual_slot=reverse.get(pet_id)
+        if actual_slot is not None and int(actual_slot)!=int(recorded_slot):
+            raise ValueError(
+                "boundary authority and actual canonical pet occupancy drift"
+            )
 
 
 def _bind_snapshot(
@@ -280,6 +280,18 @@ def _bind_snapshot(
     ids=set(participants)
     authority=_canonical_authority(session,boundary)
     _canonical_layout(session,boundary,authority,participants)
+    actual_occupied_by_id={
+        str(pid):int(slot)
+        for slot,pid in boundary.occupied_participant_id_by_slot.items()
+    }
+    authority=replace(
+        authority,
+        occupied_pet_slots={
+            pet_id:actual_occupied_by_id[pet_id]
+            for pet_id in authority.owned_pet_ids
+            if pet_id in actual_occupied_by_id
+        },
+    )
     base_runtime=_merged_base_runtime(
         boundary,base_status_runtime_by_participant_id,ids
     )

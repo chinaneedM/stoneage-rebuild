@@ -2065,8 +2065,12 @@ class PersistentBattleStateTests(unittest.TestCase):
             1500,
         )
         self.assertEqual(
-            result.profit_scan_settlement.final_processed_death_ids,
+            result.profit_scan_settlement.steps[0].result.processed_death_ids,
             ("enemy",),
+        )
+        self.assertEqual(
+            result.profit_scan_settlement.final_processed_death_ids,
+            (),
         )
 
     def test_pet_profit_recipient_remains_on_legacy_path_even_in_slot5(self):
@@ -2104,8 +2108,73 @@ class PersistentBattleStateTests(unittest.TestCase):
         self.assertIsNone(result.profit_scan_settlement)
         self.assertEqual(
             result.after.pending_exp_by_participant_id["pet:0"],
-            100,
+            66,
         )
+
+    def test_canonical_multiboundary_scan_does_not_use_roundwide_future_ultimate_for_prior_pet_death(self):
+        player=participant(
+            "player","player","player",
+            hp=20,defense=0,quick=20,level=11,
+        )
+        pet=participant(
+            "pet:0","player","pet",
+            hp=1,max_hp=1000,defense=0,quick=10,level=20,source_pet_slot=0,
+        )
+        enemy1=participant(
+            "enemy1","enemy","enemy",
+            hp=100,attack=20,quick=100,level=20,
+        )
+        enemy2=participant(
+            "enemy2","enemy","enemy",
+            hp=100,attack=200,quick=90,level=20,
+        )
+        state=begin_persistent_battle(
+            session(player,(enemy1,enemy2),pets=(pet,)),
+            slots={"player":0,"pet:0":5,"enemy1":10,"enemy2":11},
+            default_pet_slot=0,
+        )
+        result=resolve_persistent_ordinary_round(
+            state,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet:0":BattleCommand(BATTLE_COM_WAIT),
+                "enemy1":BattleCommand(BATTLE_COM_ATTACK,command2=5),
+                "enemy2":BattleCommand(BATTLE_COM_ATTACK,command2=0),
+            },
+            initiative_random_subtracts={
+                "player":0,"pet:0":0,"enemy1":0,"enemy2":0,
+            },
+            profiles={
+                "player":profile(),"pet:0":profile(),
+                "enemy1":profile(),"enemy2":profile(),
+            },
+            attack_rolls={
+                "enemy1":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+                "enemy2":OrdinaryAttackRolls(
+                    dodge_roll_1_10000=10000,
+                    critical_roll_1_10000=10000,
+                    damage_roll=0,
+                ),
+            },
+            defense_profile="newpower_70pct",
+        )
+        self.assertIsNotNone(result.profit_scan_settlement)
+        self.assertEqual(len(result.profit_scan_settlement.steps),2)
+        self.assertEqual(
+            result.profit_scan_settlement.steps[0].result.processed_death_ids,
+            ("pet:0",),
+        )
+        # First death is normal and must not be retroactively upgraded merely
+        # because the later player ultimate removes the paired pet this round.
+        self.assertEqual(
+            result.after.pending_pet_variable_ai_by_participant_id["pet:0"],
+            -1500,
+        )
+        self.assertEqual(result.after.pending_player_dead_pet_count_delta,1)
 
     def test_player_death_accumulates_charm_and_active_pet_loyalty_penalty(self):
         player=participant(

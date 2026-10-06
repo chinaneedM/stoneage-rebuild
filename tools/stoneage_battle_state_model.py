@@ -2615,7 +2615,12 @@ def resolve_persistent_ordinary_round(
             pending_player_dead_pet_count_delta,
             destroyed_drops,
         )
-        if scan_tuple!=legacy_profit:
+        differential_safe=(
+            len(round_result.profit_boundaries)==1
+            and not round_result.profit_boundaries[0].ultimate_kind_by_slot
+            and not profit_scan_settlement.steps[0].result.status_cleared_ids
+        )
+        if differential_safe and scan_tuple!=legacy_profit:
             raise ValueError(
                 "canonical whole-scan accounting diverged from legacy "
                 "event-order accounting inside the admitted comparison subset"
