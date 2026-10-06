@@ -7600,3 +7600,43 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   build/version, automatic AI and specific638 golden/region/hash-verified
   pressure remain OPEN.
 
+## Phase 1 pre-settlement profit-boundary runtime trace remote acceptance — 2026-10-06
+
+- Exact implementation commit `6d4298c40fca439d1dcf153b5630c24d3b4de0d6`; final tested input
+  `fe9109a7440caa9c10847eb649c01c28b7348075`, tree `9366032fe3126f062a9cf58d3a5a4b9e1138fec8`, on
+  `agent/profit-boundary-runtime-r1-20261006`.
+- **CLOSED_BOUNDED_PRE_SETTLEMENT_PROFIT_BOUNDARY_TRACE.** The implementation
+  head triggered **31/31 SUCCESS**, including BattleModel settlement
+  `37427373309/112149996535` and recovered25 region `37427373349`.
+  The final test-only head triggered its required settlement
+  `37427836728/112151449355` **SUCCESS**, with **646 tests**,
+  **19656** immutable-scan/model-native comparisons and the existing **384**
+  bounded Weaken recalculation vectors. Final artifact `11395995441`,
+  digest
+  `sha256:19550e602bb7b6fa2ab337fce14dbb615cc523822a57d830e2a29971e6ea3d36`.
+- Accepted behavior is deliberately observational: the actual round driver now
+  freezes typed pre-settlement snapshots with HP, real occupancy, round-local
+  ultimate flags, prior processed-death/ISDIE chronology, explicit
+  DEFAULTPET/owned-roster authority, base status and late overlay. Ordinary
+  single-hit and BattleModel command-tail boundaries are distinct; nonlethal
+  ID638 records one tail snapshot after all admitted callback hits. A dedicated
+  two-boundary regression proves a normal death is already processed at the
+  next boundary.
+- Receipt:
+  `research/recovered/STONEAGE-PROFIT-BOUNDARY-RUNTIME-TRACE-ACCEPTANCE-R1.json`.
+  This checkpoint does **not** replace
+  `_pending_profit_after_ordinary_round()`, does not make damage-event-order
+  charging authoritative, does not certify the current counter/BatFly grouping
+  against the original command driver, and does not admit lethal638.
+- **Highest-priority unfinished task:** consume only supported boundary
+  snapshots through the accepted immutable `ProfitExitSnapshot` /
+  `resolve_profit_exit_scan()` path, sequentially carry source-shaped ISDIE,
+  project admitted status clears plus required recalculation, and let only
+  `processed_death_ids` create new death/charm/loyalty charges. Unsupported
+  boundary kinds must fail closed. Then execute the full original
+  dispatch/hit-to-profit chronology with actual Guardian victims and
+  multi-victim command tails before enabling lethal638. Pet/party recipients,
+  sparse original roster mapping, items/ride/wider features, build/version,
+  automatic AI and specific638 golden/region/hash-verified pressure remain
+  OPEN; no positive-slot promotion.
+

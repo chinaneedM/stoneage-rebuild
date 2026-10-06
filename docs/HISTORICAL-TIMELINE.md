@@ -1011,3 +1011,22 @@ adapter and ten-field/overlay clear are next.
   accounting, full command-native chronology, Guardian/multi-victim witnesses
   and lethal638 therefore remain unresolved.
 
+### 2026-10-06 — Pre-settlement profit-boundary runtime trace accepted
+
+- MODEL/FACT within the declared modern bounded runtime: implementation
+  `6d4298c40fca439d1dcf153b5630c24d3b4de0d6` passes 31/31 triggered workflows, including settlement and
+  recovered25 region. Final test-only input `fe9109a7440caa9c10847eb649c01c28b7348075` passes
+  settlement `37427836728/112151449355`: 646 tests, 19656 accepted immutable
+  scan/model-native comparisons and 384 bounded Weaken recalculation vectors.
+- DESIGN: an immutable `OrdinaryProfitBoundarySnapshot` is now captured at
+  actual modern profit-boundary candidates. It separates HP, occupancy,
+  round-local ultimate flags, explicit DEFAULTPET authority and prior processed
+  deaths. Player-ultimate state is observed before Exit mutates occupancy;
+  nonlethal BattleModel638 is grouped once at command tail, not once per hit.
+- OPEN: this is observation, not settlement. Persistent
+  `_pending_profit_after_ordinary_round()` remains event-order based until the
+  next adapter consumes the snapshots through `resolve_profit_exit_scan()`
+  and charges only `processed_death_ids`. Counter/BatFly grouping, full
+  original command chronology, actual Guardian/multi-victim composition and
+  lethal638 remain unresolved.
+

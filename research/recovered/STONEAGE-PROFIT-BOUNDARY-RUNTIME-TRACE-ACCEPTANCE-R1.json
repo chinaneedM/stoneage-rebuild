@@ -1,0 +1,78 @@
+{
+  "schema": "STONEAGE_PROFIT_BOUNDARY_RUNTIME_TRACE_ACCEPTANCE_R1",
+  "status": "CLOSED_BOUNDED_PRE_SETTLEMENT_PROFIT_BOUNDARY_TRACE",
+  "date": "2026-10-06",
+  "baseline_main_commit": "0da1e985aac60061cf078e10d91ebc55f948c815",
+  "implementation_commit": "6d4298c40fca439d1dcf153b5630c24d3b4de0d6",
+  "accepted_tested_commit": "fe9109a7440caa9c10847eb649c01c28b7348075",
+  "accepted_tree": "9366032fe3126f062a9cf58d3a5a4b9e1138fec8",
+  "branch": "agent/profit-boundary-runtime-r1-20261006",
+  "remote_validation": {
+    "implementation_head": {
+      "triggered_workflow_count": 31,
+      "all_success": true,
+      "settlement": {
+        "run_id": 37427373309,
+        "job_id": 112149996535,
+        "conclusion": "success"
+      },
+      "recovered25_region": {
+        "run_id": 37427373349,
+        "conclusion": "success"
+      },
+      "artifact": {
+        "id": 11395384042,
+        "name": "battlemodel-settlement",
+        "digest": "sha256:d014126a5a04de80d24ce5fc9accedd7bf53ccc4f831176efeeb4275a96fd039"
+      }
+    },
+    "final_test_only_head": {
+      "triggered_workflow_count": 1,
+      "all_success": true,
+      "settlement": {
+        "run_id": 37427836728,
+        "job_id": 112151449355,
+        "conclusion": "success"
+      },
+      "artifact": {
+        "id": 11395995441,
+        "name": "battlemodel-settlement",
+        "digest": "sha256:19550e602bb7b6fa2ab337fce14dbb615cc523822a57d830e2a29971e6ea3d36"
+      }
+    }
+  },
+  "settlement_gate": {
+    "tests": 646,
+    "immutable_scan_model_native_comparisons": 19656,
+    "weaken_recalculation_vectors": 384,
+    "new_original_native_vectors": 0
+  },
+  "accepted_scope": [
+    "typed immutable pre-settlement OrdinaryProfitBoundarySnapshot on actual modern round-driver boundaries",
+    "ordinary single-hit boundaries remain explicitly distinct from BattleModel command-tail grouping",
+    "BattleModel ID638 nonlethal callback records exactly one command-tail boundary after all admitted hits",
+    "player ultimate boundary is captured after round-local ultimate flag write but before immediate Exit occupancy/status mutation",
+    "normal death processed/ISDIE chronology is carried to the next observed profit boundary",
+    "owner/default-pet authority, actual occupancy, HP, status runtime and late overlay are copied into each boundary snapshot"
+  ],
+  "explicit_nonclaims": [
+    "snapshot observation is not persistent settlement authority",
+    "event-order _pending_profit_after_ordinary_round has not yet been replaced",
+    "counter and BatFly current-driver grouping is not an original native chronology certificate",
+    "full original command-driver dispatch/hit-to-profit chronology remains open",
+    "Guardian/multi-victim whole-scan composition remains open",
+    "lethal BattleModel ID638 remains rejected",
+    "pet/party/ride/item profit recipients and sparse original roster mapping remain open",
+    "original build/version membership remains open"
+  ],
+  "historical_claims_added": false,
+  "original_source_or_assets_committed": false,
+  "positive_slots_promoted": 0,
+  "next_priority": "Bind supported actual boundary snapshots to ProfitExitSnapshot and sequential resolve_profit_exit_scan calls, project admitted status clears/recalculation, and replace new death/charm/loyalty charges with processed_death_ids; fail closed on unsupported boundary groupings. Full original command-native Guardian/multi-victim chronology remains required before lethal638.",
+  "main_sync": {
+    "mode": "NONFORCE_FAST_FORWARD_WITH_EXPECTED_HEAD",
+    "expected_previous_main": "0da1e985aac60061cf078e10d91ebc55f948c815",
+    "input_ancestry": "accepted tested head descends from expected main",
+    "docs_checkpoint_skip_ci": true
+  }
+}

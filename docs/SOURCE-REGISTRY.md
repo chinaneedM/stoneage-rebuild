@@ -3869,3 +3869,28 @@ remain explicitly OPEN. No original source/payload committed.
   processed-death persistent accounting, actual Guardian-to-profit chronology,
   lethal638 and wider feature/version membership remain OPEN.
 
+### SRC-PROFIT-BOUNDARY-RUNTIME-TRACE-R1 — remote acceptance 2026-10-06
+
+- Modern runtime observation certificate only; no original source/assets or new
+  original native vectors committed. Implementation `6d4298c40fca439d1dcf153b5630c24d3b4de0d6`;
+  accepted tested input `fe9109a7440caa9c10847eb649c01c28b7348075`, tree `9366032fe3126f062a9cf58d3a5a4b9e1138fec8`.
+- Implementation head: 31/31 triggered workflows SUCCESS; settlement
+  `37427373309/112149996535`, region `37427373349`; artifact
+  `11395384042`,
+  `sha256:d014126a5a04de80d24ce5fc9accedd7bf53ccc4f831176efeeb4275a96fd039`.
+  Final test-only head: settlement `37427836728/112151449355` SUCCESS,
+  646 tests; artifact `11395995441`,
+  `sha256:19550e602bb7b6fa2ab337fce14dbb615cc523822a57d830e2a29971e6ea3d36`.
+  Existing 19656 immutable scan/model-native comparisons and 384 bounded
+  Weaken recalculation vectors replayed.
+- Accepted scope: typed pre-AddProfit snapshots, ordinary per-hit versus
+  nonlethal638 command-tail separation, pre-Exit player-ultimate occupancy
+  witness, and cross-boundary processed-death/ISDIE carry. The current
+  counter/BatFly labels remain explicitly modern-driver observations, not
+  original chronology certificates.
+- Receipt:
+  `research/recovered/STONEAGE-PROFIT-BOUNDARY-RUNTIME-TRACE-ACCEPTANCE-R1.json`.
+  Persistent processed-death settlement consumption, full original command
+  bridge, actual Guardian/multi-victim composition, lethal638, wider profit
+  recipients/features and build/version membership remain OPEN.
+
