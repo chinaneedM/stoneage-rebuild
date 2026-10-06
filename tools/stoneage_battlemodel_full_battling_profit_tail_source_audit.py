@@ -26,6 +26,15 @@ from tools.stoneage_guard_break2_source_audit import (
     PINNED, LAYOUTS, _text, _sha, _function,
 )
 from tools import stoneage_battlemodel_damagesub_profit_tail_source_audit as prior
+from tools.stoneage_battle_round_model import (
+    OrdinaryProfitBoundarySnapshot,
+    OrdinaryRoundEvent,
+    PROFIT_BOUNDARY_BATTLEMODEL_COMMAND_TAIL,
+)
+from tools.stoneage_battle_status_model import BaseBattleStatusRuntime
+from tools.stoneage_default_pet_exit_model import DefaultPetExitAuthority
+from tools.stoneage_profit_exit_runtime_binder import resolve_profit_boundary_scans
+from tools.stoneage_singleplayer_battle import BattleParticipant, BattleSession
 
 
 CONTROLLED_DRIVER_HELPERS = (
@@ -288,6 +297,67 @@ int BATTLE_CommandSend(int c,char*s){(void)c;(void)s;return 0;}
     return full, meta
 
 
+def _canonical_binder_expected(owner_hp: int, pet_hp: int):
+    """Run the accepted modern command-tail binder on the same post-hit boundary."""
+    owner = BattleParticipant(
+        participant_id="1", side="player", kind="player", level=11,
+        hp=int(owner_hp), max_hp=max(1, int(owner_hp)), attack=1, defense=1,
+        quick=1, name="owner",
+    )
+    pet = BattleParticipant(
+        participant_id="2", side="player", kind="pet", level=20,
+        hp=int(pet_hp), max_hp=max(1, int(pet_hp)), attack=1, defense=1,
+        quick=1, name="pet",
+    )
+    enemy = BattleParticipant(
+        participant_id="10", side="enemy", kind="enemy", level=20,
+        hp=100, max_hp=100, attack=1, defense=1, quick=1, name="enemy",
+        reward_exp=0,
+    )
+    session = BattleSession(None, None, owner, (pet,), (enemy,))
+    authority = DefaultPetExitAuthority("1", "2", ("2",), {"2": 5})
+    status = {
+        "1": BaseBattleStatusRuntime(),
+        "2": BaseBattleStatusRuntime(),
+        "10": BaseBattleStatusRuntime(),
+    }
+    event = OrdinaryRoundEvent(
+        participant_id="10",
+        slot=10,
+        command1=900,
+        action_value=0,
+        result="battlemodel_action",
+        battlemodel_skill_id=638,
+    )
+    boundary = OrdinaryProfitBoundarySnapshot(
+        boundary_kind=PROFIT_BOUNDARY_BATTLEMODEL_COMMAND_TAIL,
+        trigger_event_indexes=(0,),
+        hp_by_slot={0: int(owner_hp), 5: int(pet_hp), 10: 100},
+        occupied_participant_id_by_slot={0: "1", 5: "2", 10: "10"},
+        ultimate_kind_by_slot={},
+        prior_processed_death_ids=(),
+        default_pet_authorities_by_owner_id={"1": authority},
+        base_status_runtime_by_participant_id=status,
+        nocast_overlay=None,
+    )
+    return resolve_profit_boundary_scans(
+        session=session,
+        boundaries=(boundary,),
+        events=(event,),
+        persistent_hp_by_participant_id={
+            "1": int(owner_hp), "2": int(pet_hp), "10": 100,
+        },
+        pending_exp_by_participant_id={"10": 0},
+        pending_pet_variable_ai_by_participant_id={"2": 0},
+        pending_player_charm_delta=0,
+        pending_player_dead_pet_count_delta=0,
+        base_status_runtime_by_participant_id=status,
+        nocast_overlay=None,
+        initial_processed_death_ids=(),
+        no_risk=False,
+    )
+
+
 def analyze_profile(name: str, root: Path):
     root = root.resolve()
     head = subprocess.check_output(
@@ -359,6 +429,25 @@ def analyze_profile(name: str, root: Path):
                 f"full Battling profit state drift {case}: "
                 f"{actual} != {expected}; full={got}; trace={trace}"
             )
+        binder = _canonical_binder_expected(owner_hp, pet_hp)
+        bchars = binder.final_snapshot.characters
+        binder_expected = (
+            int(bchars["1"].isdie), bchars["1"].death_count,
+            bchars["1"].charm_delta,
+            int(bchars["2"].isdie), bchars["2"].death_count,
+            bchars["2"].variable_ai_delta,
+        )
+        if binder_expected != actual:
+            raise ValueError(
+                f"full Battling canonical runtime binder drift {case}: "
+                f"{binder_expected} != {actual}"
+            )
+        if binder.steps[0].result.processed_death_ids != result.processed_death_ids:
+            raise ValueError(
+                "full Battling binder/immutable scan death-order drift: "
+                f"{binder.steps[0].result.processed_death_ids} != "
+                f"{result.processed_death_ids}"
+            )
         semantic = [x for x in trace.rstrip(",").split(",") if x]
         first_death = next(
             (i for i, x in enumerate(semantic) if x.startswith("F:")),
@@ -397,6 +486,7 @@ def analyze_profile(name: str, root: Path):
         "profile": name,
         "commit": head,
         "native_full_battling_tail_cases": len(vectors),
+        "canonical_runtime_binder_direct_comparisons": len(vectors),
         **meta,
     }
 
@@ -419,6 +509,7 @@ def main():
     print("FACT|exact_original_full_BATTLE_Battling_body_dispatches_BattleModel_and_reaches_common_tail_AddProfit_in_same_transient_program")
     print("FACT|exact_original_Guardian_AttackSeq_DamageSub_BattleModel_helper_and_tail_AddProfit_remain_linked_under_full_command_driver")
     print("FACT|full_command_driver_gameplay_chronology_matches_immutable_profit_exit_scan_in_reduced_profile")
+    print("FACT|full_command_driver_post_hit_boundary_directly_matches_accepted_canonical_BattleModel638_runtime_binder")
     print("BOUNDARY|driver_scheduler_status_presentation_and_unrelated_command_helpers_controlled_feature_off_no_ride_no_equipment_noncritical")
     print("OPEN|lethal638_build_version_wider_recipients_ride_items_automatic_AI_packet_presentation_history")
     print("RESOLUTION|BATTLEMODEL_FULL_BATTLING_PROFIT_TAIL_NATIVE_PASS")
