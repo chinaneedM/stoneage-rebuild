@@ -71,9 +71,10 @@
     "scope": "literal first OPTION token; default OPTIMUM and legacy ordered layouts; original build/equipment ownership/MP not inferred"
   },
   "next_open": {
-    "callback": "PETSKILL_BecomeFox",
+    "callback": "PETSKILL_BecomePig",
     "skill_ids": [
-      625
+      631,
+      635
     ],
     "slot_uses": 2,
     "status": "open",
@@ -102,10 +103,10 @@
     }
   ],
   "pressure": {
-    "closed": 2463,
+    "closed": 2465,
     "conditional_capability_slots": 2,
     "historical_ub": 3,
-    "open": 20,
+    "open": 18,
     "total": 2486,
     "unresolved_skill_ids": []
   },
@@ -518,7 +519,7 @@
         625
       ],
       "slot_uses": 2,
-      "status": "open",
+      "status": "closed_runtime",
       "templates": 2
     },
     {
