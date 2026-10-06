@@ -3613,3 +3613,27 @@ full runtime/pressure/638 positive slots unchanged. Pending records superseded.
 Further source inspection at all three pins confirms ItemCrush RNG preceding
 equipment validation. Bismarck has additional guarded pet-equipment and FIX
 variants; native/runtime ItemCrush acceptance is still OPEN.
+
+
+### SRC-BATTLEMODEL-EMPTY-EQUIPMENT-ITEMCRUSH-R1
+
+- Clean pins gavin1f90cb6c /iris9e6c8ce2 /bismarck999ffdf1 unchanged.
+  Read battle_event.c Check/Seq/helper, legacy ItemCrush body, battle.c global
+  default400000 and reduced char_base.h equipment/pet enums. Event hashes
+  are those already recorded for physical AttackSeq. Additional SHA256:
+  gavin battle.c a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602,
+  header2959c40645149277878661dd49ccffd1653f11fcb55c93f03efe306e6d578d45;
+  iris battle.c6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8,
+  headerd53f39efe6f18ad90b668457461624f2a9aef542b24389a4e0e14c6b64f92645;
+  bismarck battle.c2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18,
+  header71bcc04e14959e6c4646759716e034c8d9209c17d8457d94a8b1071b5d4d5fa4.
+- Transient native original Check/Seq/helper and legacy empty scan, controlled
+  no-equipment getters/physical/status/libc raw values; TAKE mutation traps.
+  Two variants each gavin/iris, five bismarck;380 cases/variant,3420 total
+  verify lookup identity/order, surviving DODGE/zero reachability and RNG
+  before status. Extra equipment slot macros excluded; default5/pet7 declared.
+- Independent `tools/stoneage_battlemodel_itemcrush_model.py`,
+  `tools/stoneage_battlemodel_itemcrush_source_audit.py`,13 new tests and
+  `specs/STONEAGE-BATTLEMODEL-ITEMCRUSH-R1.md`;170 local tests PASS.
+  Extended CI publication/acceptance pending. No original payloads retained,
+  equipped mutation/full runtime/profile membership/coverage remain OPEN.

@@ -12,6 +12,10 @@ from typing import Callable, Mapping
 
 from tools.stoneage_enemy_ai_battlemodel_bridge import EnemyAiBattleModelSubmission
 from tools.stoneage_battlemodel_reference_model import BattleModelAttackObject
+from tools.stoneage_battlemodel_itemcrush_model import (
+    BattleModelItemCrushContext, EmptyEquipmentItemCrushResolution,
+    resolve_empty_equipment_itemcrush,
+)
 from tools.stoneage_battle_damage_react_model import (
     BaseDamageReactState, BaseDamageReactResolution, resolve_base_damage_react,
     DAMAGE_REACT_REFLEC, DAMAGE_REACT_ABSROB, DAMAGE_REACT_VANISH,
@@ -26,6 +30,7 @@ from tools.stoneage_battle_status_model import (
 )
 
 HIT_LOOP_SCOPE_R1 = "reduced_SIDE_OFFSET10_no_ride_nonthrowing_no_ItemCrush_gDamageDiv0"
+ITEMCRUSH_HIT_LOOP_SCOPE_R1 = "reduced_SIDE_OFFSET10_no_ride_nonthrowing_equipment_free_ItemCrush_gDamageDiv0"
 
 
 def _int(value: int, name: str, low: int, high: int) -> int:
@@ -104,7 +109,8 @@ class BattleModelDraw:
         _int(self.ordinal, "scheduled ordinal", 0, 9)
         if self.owner not in {"target_selection", "status", "critical_death",
                               "attackseq_dodge", "attackseq_critical", "attackseq_damage",
-                              "attackseq_guard", "attackseq_minimum", "attackseq_drunk_dodge"}:
+                              "attackseq_guard", "attackseq_minimum", "attackseq_drunk_dodge",
+                              "itemcrush_check", "itemcrush_raw_rand"}:
             raise ValueError("unknown BattleModel RNG owner")
         _int(self.value, "draw", -(2**31), 2**31 - 1)
 
@@ -155,6 +161,7 @@ class BattleModelHitEvent:
     status_application: BaseStatusApplicationResolution | None = None
     ultimate_kind: int = 0
     pet_presentation_damage: int = 0  # modern safe no-ride/DODGE value
+    itemcrush: EmptyEquipmentItemCrushResolution | None = None
 
 
 @dataclass(frozen=True)
@@ -175,18 +182,25 @@ def execute_battlemodel_post_attackseq_loop(
     attack_sequence: Callable[[BattleModelAttackObject, Mapping[int, BattleModelEntry],
                                BattleModelAttackSeqRng], BattleModelAttackSeqResult],
     source_pet_guard_flags: tuple[bool, ...] | None = None,
+    itemcrush_context: BattleModelItemCrushContext | None = None,
 ) -> BattleModelHitLoopResolution:
     """Execute source-ordered no-ride ID638 helper composition.
 
     The caller supplies an authoritative initial MultiList order and an
     AttackSeq dependency (including Guardian eligibility and physical RNG).
-    Mount/throwing/Weaken, ItemCrush, nonzero gDamageDiv, numeric COM1 and round-exit integration
-    are outside this seam and cannot be certified through this API.
+    ItemCrush is either explicitly excluded or declared equipment-free with
+    its own context and owned RNG. Equipped mutations, mount/throwing/Weaken,
+    nonzero gDamageDiv, numeric COM1 and round-exit integration remain outside.
     """
     if not isinstance(submission, EnemyAiBattleModelSubmission):
         raise TypeError("exact typed BattleModel submission required")
-    if execution_scope != HIT_LOOP_SCOPE_R1:
+    if execution_scope not in {HIT_LOOP_SCOPE_R1, ITEMCRUSH_HIT_LOOP_SCOPE_R1}:
         raise ValueError("explicit reduced BattleModel execution scope required")
+    if execution_scope == ITEMCRUSH_HIT_LOOP_SCOPE_R1:
+        if not isinstance(itemcrush_context, BattleModelItemCrushContext):
+            raise TypeError("equipment-free scope requires typed ItemCrush context")
+    elif itemcrush_context is not None:
+        raise ValueError("no-ItemCrush scope cannot accept ItemCrush context")
     if submission.setup.attack_type != 5 or submission.setup.object_count != 4:
         raise ValueError("only admitted physical four-object ID638 is bounded")
     shape = submission.option_shape
@@ -198,6 +212,8 @@ def execute_battlemodel_post_attackseq_loop(
         _int(slot, "entry slot", 0, 19)
         if not isinstance(entry, BattleModelEntry):
             raise TypeError("immutable BattleModel entries required")
+    if itemcrush_context is not None:
+        itemcrush_context.bind(entries, source_profile=submission.source_profile)
     if len({e.participant_id for e in current.values()}) != len(current):
         raise ValueError("duplicate participant entry identity")
     if (actor_slot not in current or current[actor_slot].kind != "enemy"
@@ -278,10 +294,18 @@ def execute_battlemodel_post_attackseq_loop(
                 defender_slot = hit.guardian_slot
         defender = current[defender_slot]
         before = defender.hp
+        def crush_before_status():
+            if itemcrush_context is None:
+                return None
+            trace.append(BattleModelTrace("itemcrush", ordinal, defender_slot))
+            return resolve_empty_equipment_itemcrush(itemcrush_context,
+                actor_slot=actor_slot, defender_slot=defender_slot,
+                take=lambda owner, low, high: take(owner, low, high, ordinal, defender_slot))
         trace.append(BattleModelTrace("marker_enter", ordinal, defender_slot))
         if hit.outcome == "dodge":
             # Native iPetDamage is undefined here. Safe modern zero is explicit.
-            events.append(BattleModelHitEvent(ordinal, attack, "dodge", defender_slot))
+            crush = crush_before_status()
+            events.append(BattleModelHitEvent(ordinal, attack, "dodge", defender_slot, itemcrush=crush))
             trace.append(BattleModelTrace("marker_restore", ordinal, defender_slot))
             continue
         actor = current[actor_slot]
@@ -307,6 +331,7 @@ def execute_battlemodel_post_attackseq_loop(
             trace.append(BattleModelTrace("wakeup", ordinal, defender_slot))
         ultimate_kind = ultimate.ultimate_kind
         status = None
+        crush = None
         if settlement.defender_hp_after <= 0:
             needs_death_draw = hit.outcome == "critical" and defender.kind != "player" and not defender.abio
             death_roll = take("critical_death", 1, 100, ordinal, defender_slot) if needs_death_draw else None
@@ -314,7 +339,9 @@ def execute_battlemodel_post_attackseq_loop(
                 ultimate_kind, defender.kind, defender.abio, hit.outcome == "critical",
             ), critical_roll_1_100=death_roll)
             ultimate_kind = death.ultimate_kind
-        elif reported > 0 and shape.status_index == 2:
+        else:
+            crush = crush_before_status()
+        if settlement.defender_hp_after > 0 and reported > 0 and shape.status_index == 2:
             status_roll = None
             if not active_base_status_names(runtime.status):
                 status_roll = take("status", 1, 100, ordinal, defender_slot)
@@ -336,7 +363,7 @@ def execute_battlemodel_post_attackseq_loop(
         flags[defender_slot] = current[defender_slot].ultimate_flag
         events.append(BattleModelHitEvent(
             ordinal, attack, hit.outcome, defender_slot, reported,
-            before - settlement.defender_hp_after, settlement, status, ultimate_kind,
+            before - settlement.defender_hp_after, settlement, status, ultimate_kind, itemcrush=crush,
         ))
         trace.append(BattleModelTrace("marker_restore", ordinal, defender_slot))
     if position != len(tape):

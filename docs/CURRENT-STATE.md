@@ -6969,3 +6969,44 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   main. Physical bounded acceptance is complete; no need to reconstruct prior
   progress from chat. All full BattleModel runtime/pressure/slot boundaries
   above remain OPEN.
+
+
+## Phase 1 BattleModel empty-equipment ItemCrush local milestone — 2026-10-06
+
+- Fresh remote startup main a4f41f9deb6faa2461eb315fe087370bad6e7e8d,
+  tree818ed175fd806ceeeb4c6aa1e05792f0beb16d04, clean matching checkout.
+  README/protocol/current state/decisions/timeline/source registry, latest
+  commits/branches/Actions re-read. Both earlier queued physical replays
+  37359971984 and37359969828 now SUCCESS on87799e51; queued snapshots
+  superseded. Accepted physical input37359587030 remains SUCCESS.
+- Fresh isolated branch `agent/battlemodel-itemcrush-r1-20261006` from main.
+  LOCAL_VALIDATED explicit empty-equipment ItemCrush context binds every
+  participant identity/kind/level/empty slots, declared source variant/current
+  global rate/raw rand maximum, matching physical levels. New required scope
+  replaces only the no-ItemCrush exclusion; ordinary runtime unchanged.
+- FACT: all three pinned battle.c source defaults are400000. Legacy actual
+  player defender owns strict roll<level check and empty successful scan has
+  no second RNG. TAKE owns raw rand before slot lookup and attacker ARM lookup.
+  Bismarck FIX/pet variants are separately declared; literal scan increment
+  remains modulo5 even in seven-slot pet equipment. No original build selected.
+- Source surviving-defender branch includes DODGE/MISS/ALLGUARD/damage0.
+  New loop retains ItemCrush on those survivors, after wakeup and before
+  status; actual Guardian type/level controls it. Dead/pet-flag skipped targets
+  own no item draw. Missing/extra/misowned draws fail closed. Equipped items
+  are rejected, no equipment/stat mutation or automatic coverage promotion.
+- Local170 tests PASS, including13 new ItemCrush tests. Three-pin native
+  Check/Seq/legacy empty ItemCrush/original helper composition:760 gavin,760
+  iris,1900 bismarck,3420 total. Each variant60 direct+320 helper cases.
+  Controlled physical/status/getters/raw libc values and reduced5/pet7 slots
+  are explicit. Existing696 physical native comparisons still PASS.
+- Spec `specs/STONEAGE-BATTLEMODEL-ITEMCRUSH-R1.md`, new model/native audit
+  and extended settlement CI. Remote publication/acceptance PENDING; existing
+  settlement1920/marker480/pet60 gates will be reproduced in that workflow.
+- **Highest-priority unfinished task:** publish isolated ItemCrush input and
+  inspect exact remote gate/possible write-backs. On PASS accept only explicit
+  empty-equipment ItemCrush chronology and DODGE reachability, synchronize
+  nonforce after fresh ancestry checks. Then prepared-action cancellation and
+  bounded ordinary round/state/coordinator/ultimate-exit integration; equipped
+  mutations/wider feature compositions remain required before general ID638
+  runtime acceptance. Require golden/full-region/hash-verified pressure before
+  promoting its two slots. DD-018 and original profile ambiguities remain.

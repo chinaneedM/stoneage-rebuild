@@ -807,3 +807,21 @@ agree across all three pins about RNG before equipment can eliminate an item.
 Bismarck additionally guards pet equipment count and a FIX variant using
 rand()%equipnum; these are separate profile choices, not original-build facts.
 ItemCrush native acceptance and chronology integration remain OPEN.
+
+
+### 2026-10-06 — empty-equipment ItemCrush chronology locally validated
+
+**FACT (fixed source/native experiment):** all three source defaults are
+400000. Source helper calls ItemCrush on surviving DODGE/MISS/ALLGUARD/zero
+damage, routed to actual Guardian before status. Legacy player strict check
+draw survives empty equipment; successful empty scan returns before another
+RAND. TAKE consumes raw rand before equipment checks; guarded Bismarck
+FIX/pet variants retain modulo5 failed-scan increments even for seven slots.
+3420 native comparisons pass across separately declared variants; not
+original-build/PRNG membership or equipped mutation acceptance.
+
+**LOCAL_TESTED:**170 tests/13 new item witnesses and existing696 physical
+comparisons PASS. An explicit empty-equipment loop scope replaces the previous
+no-ItemCrush exclusion, including DODGE reachability. Complete ordinary
+runtime/state/coordinator/pressure/638 slots remain OPEN; remote gate pending.
+See SRC-BATTLEMODEL-EMPTY-EQUIPMENT-ITEMCRUSH-R1.

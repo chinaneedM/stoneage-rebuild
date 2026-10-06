@@ -26,6 +26,7 @@ from tools.stoneage_battlemodel_hit_loop import (
 )
 from tools.stoneage_battlemodel_reference_model import BattleModelAttackObject
 from tools.stoneage_enemy_ai_battlemodel_bridge import EnemyAiBattleModelSubmission
+from tools.stoneage_battlemodel_itemcrush_model import BattleModelItemCrushContext
 
 PHYSICAL_SCOPE_R1 = "equipment_free_no_bow_no_later_features_neutral_globals_R1"
 DEFENSE_PROFILES = frozenset({"newpower_70pct", "preserved_old_mixed"})
@@ -214,13 +215,21 @@ def execute_battlemodel_physical_loop(
     initial_living_slots: tuple[int, ...], draws: tuple[BattleModelDraw, ...],
     context: BattleModelPhysicalContext,
     source_pet_guard_flags: tuple[bool, ...] | None = None,
+    itemcrush_context: BattleModelItemCrushContext | None = None,
 ) -> BattleModelHitLoopResolution:
     """Connect real shared physical arithmetic to the accepted ordered loop."""
     _bind_context(submission, actor_slot, entries, context)
+    if itemcrush_context is not None:
+        if not isinstance(itemcrush_context, BattleModelItemCrushContext):
+            raise TypeError("typed ItemCrush context required")
+        itemcrush_context.bind(entries, source_profile=submission.source_profile)
+        if any(p.level != context.profiles[s].level for s, p in itemcrush_context.participants.items()):
+            raise ValueError("ItemCrush levels must match physical profiles")
     return execute_battlemodel_post_attackseq_loop(
         submission, actor_slot=actor_slot, execution_scope=execution_scope,
         entries=entries, initial_living_slots=initial_living_slots, draws=draws,
         source_pet_guard_flags=source_pet_guard_flags,
+        itemcrush_context=itemcrush_context,
         attack_sequence=lambda attack, snapshot, rng: resolve_battlemodel_physical_attackseq(
             submission, actor_slot=actor_slot, attack=attack, entries=snapshot,
             context=context, rng=rng),

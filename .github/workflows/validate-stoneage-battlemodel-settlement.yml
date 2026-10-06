@@ -9,6 +9,8 @@ on:
       - "tools/stoneage_battlemodel_hit_loop.py"
       - "tools/stoneage_battlemodel_physical_attackseq.py"
       - "tools/stoneage_battlemodel_physical_source_audit.py"
+      - "tools/stoneage_battlemodel_itemcrush_model.py"
+      - "tools/stoneage_battlemodel_itemcrush_source_audit.py"
       - "tools/stoneage_battle_core_model.py"
       - "tools/stoneage_battle_guardian_model.py"
       - "tools/stoneage_battle_status_model.py"
@@ -18,8 +20,10 @@ on:
       - "tools/stoneage_battlemodel_pet_guard_source_audit.py"
       - "tests/test_stoneage_battlemodel_hit_loop.py"
       - "tests/test_stoneage_battlemodel_physical_attackseq.py"
+      - "tests/test_stoneage_battlemodel_itemcrush.py"
       - "tests/test_stoneage_battlemodel_admission.py"
       - "specs/STONEAGE-BATTLEMODEL-PHYSICAL-ATTACKSEQ-R1.md"
+      - "specs/STONEAGE-BATTLEMODEL-ITEMCRUSH-R1.md"
       - "specs/STONEAGE-BATTLEMODEL-SETTLEMENT-AUDIT-R1.md"
 
 concurrency:
@@ -43,6 +47,7 @@ jobs:
           python -m unittest -v \
             tests.test_stoneage_battlemodel_hit_loop \
             tests.test_stoneage_battlemodel_physical_attackseq \
+            tests.test_stoneage_battlemodel_itemcrush \
             tests.test_stoneage_battlemodel_admission \
             tests.test_stoneage_battlemodel_reference_model \
             tests.test_stoneage_battle_damage_react_model \
@@ -80,6 +85,18 @@ jobs:
           test "$(grep -c 'physical_attackseq_model_native_comparisons=232' /tmp/battlemodel-physical-attackseq.txt)" = 3
           grep -F 'RESOLUTION|BATTLEMODEL_EQUIPMENT_FREE_PHYSICAL_ATTACKSEQ_MODEL_NATIVE_PASS' \
             /tmp/battlemodel-physical-attackseq.txt
+      - name: Compare empty-equipment ItemCrush and surviving helper chronology
+        run: |
+          python -m tools.stoneage_battlemodel_itemcrush_source_audit \
+            --gavin-dir /tmp/battlemodel-hit/gavin \
+            --iris-dir /tmp/battlemodel-hit/iris \
+            --bismarck-dir /tmp/battlemodel-hit/bismarck \
+            > /tmp/battlemodel-itemcrush.txt
+          cat /tmp/battlemodel-itemcrush.txt
+          test "$(grep -c 'itemcrush_model_native_comparisons=760' /tmp/battlemodel-itemcrush.txt)" = 2
+          grep -F 'itemcrush_model_native_comparisons=1900' /tmp/battlemodel-itemcrush.txt
+          grep -F 'TOTAL|itemcrush_model_native_comparisons=3420|source_default_rate=400000' /tmp/battlemodel-itemcrush.txt
+          grep -F 'RESOLUTION|BATTLEMODEL_EMPTY_EQUIPMENT_ITEMCRUSH_NATIVE_CHRONOLOGY_PASS' /tmp/battlemodel-itemcrush.txt
       - name: Audit bounded native no-ride DamageSub
         run: |
           python -m tools.stoneage_battlemodel_settlement_source_audit \
@@ -111,5 +128,6 @@ jobs:
           name: battlemodel-settlement
           path: |
             /tmp/battlemodel-physical-attackseq.txt
+            /tmp/battlemodel-itemcrush.txt
             /tmp/battlemodel-settlement.txt
             /tmp/battlemodel-pet-guard.txt
