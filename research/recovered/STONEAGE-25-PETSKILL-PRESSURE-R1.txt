@@ -39,7 +39,7 @@ RANK|rank=34|callback=PETSKILL_Merge|ids=200,201|slot_uses=3|templates=3|status=
 RANK|rank=35|callback=PETSKILL_Modifyattack|ids=544,545,546|slot_uses=3|templates=3|status=closed_runtime
 RANK|rank=36|callback=PETSKILL_2BattleTimid|ids=636|slot_uses=2|templates=2|status=closed_runtime
 RANK|rank=37|callback=PETSKILL_BatFly|ids=633|slot_uses=2|templates=1|status=closed_runtime
-RANK|rank=38|callback=PETSKILL_BattleModel|ids=638|slot_uses=2|templates=2|status=open
+RANK|rank=38|callback=PETSKILL_BattleModel|ids=638|slot_uses=2|templates=2|status=closed_conditional_runtime
 RANK|rank=39|callback=PETSKILL_BecomeFox|ids=625|slot_uses=2|templates=2|status=open
 RANK|rank=40|callback=PETSKILL_BecomePig|ids=631,635|slot_uses=2|templates=2|status=open
 RANK|rank=41|callback=PETSKILL_Deeppoison|ids=577,578|slot_uses=2|templates=2|status=open
@@ -54,4 +54,8 @@ RANK|rank=49|callback=PETSKILL_MagicStatusChange|ids=552|slot_uses=1|templates=1
 RANK|rank=50|callback=PETSKILL_Regret|ids=640|slot_uses=1|templates=1|status=open
 RANK|rank=51|callback=PETSKILL_SelfExplodeAttack|ids=582|slot_uses=1|templates=1|status=open
 RANK|rank=52|callback=PETSKILL_StealMoney|ids=211|slot_uses=1|templates=1|status=open
-NEXT_OPEN|callback=PETSKILL_BattleModel|ids=638|slot_uses=2|templates=2
+CAPABILITY_PRESSURE|total=2486|closed=2463|open=20|historical_ub=3
+CONDITIONAL_PLACEMENT|template=1178|runtime_slot=2|report_slot=3|skill_id=638|capability=CONDITIONAL_BOUNDED_CAPABILITY
+CONDITIONAL_PLACEMENT|template=1179|runtime_slot=2|report_slot=3|skill_id=638|capability=CONDITIONAL_BOUNDED_CAPABILITY
+REACHABILITY|conditional_capability_does_not_certify_natural_AI_or_pet_magic_NPC_script_entry
+NEXT_OPEN|callback=PETSKILL_BecomeFox|ids=625|slot_uses=2|templates=2
