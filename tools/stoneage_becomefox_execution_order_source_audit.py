@@ -18,7 +18,14 @@ def _postattack_window(source: str) -> str:
         before=source[max(0,hit.start()-2200):hit.start()]
         if "BATTLE_COM_S_BECOMEFOX" not in before:
             continue
-        start=source.rfind("if",max(0,hit.start()-2200),hit.start())
+        region_start=max(0,hit.start()-2200)
+        candidates=list(re.finditer(r"\\bif\\s*\\(",source[region_start:hit.start()]))
+        start=-1
+        for candidate in reversed(candidates):
+            absolute=region_start+candidate.start()
+            if "BATTLE_COM_S_BECOMEFOX" in source[absolute:hit.start()]:
+                start=absolute
+                break
         if start<0:
             continue
         brace=source.find("{",hit.end())
