@@ -8372,3 +8372,20 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   then execute the exact postattack C block in a transient native harness against
   the model before whole ordered/persistent runtime admission.
   Spec: `specs/STONEAGE-BECOMEFOX-ORDERED-RUNTIME-PLAN-R1.md`.
+
+
+## 2026-10-06 — BecomeFox exact postattack native oracle implemented (PENDING)
+
+- The accepted source-order correction is retained: the pre-switch fox DexCalc
+  write is overwritten for ATTACK/GUARD/NONE and is not modeled as an extra20%
+  initiative penalty.
+- New native gate transiently extracts the exact BecomeFox postattack C block
+  from all3 pinned descendants and executes1280 controlled vectors/profile
+  (3840 total). It compares target-check/draw/type/PETFLG/pig short-circuit
+  ownership plus FOXROUND/image/ride side effects against the bounded model.
+  gavin/iris retain active ARRANGE rejection; fixed Bismarck retains the absent
+  ARRANGE compile guard. Original rand implementation remains out of scope.
+- **Highest-priority unfinished task:** finish this native Action and inspect the
+  exact report. If PASS, accept the postattack predicate and proceed to whole
+  ordered AttackSeq/retarget/Guardian composition plus FOXROUND cross-round
+  persistent state. Pressure remains2486=2463+20+3; BecomeFox0 promotions.

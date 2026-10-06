@@ -1,7 +1,7 @@
 # StoneAge BecomeFox ordered/runtime semantics plan R1
 
 Date: 2026-10-06  
-Status: **SOURCE_EXECUTION_ORDER_GATE_IMPLEMENTED / NATIVE_PENDING**
+Status: **SOURCE_EXECUTION_ORDER_PASS / EXACT_POSTATTACK_NATIVE_GATE_IMPLEMENTED**
 
 The accepted recovered25 source/data reference closes ID625 and its two exact
 placements, but does not yet authorize a pressure promotion. This stage separates
@@ -44,3 +44,19 @@ BecomeFox block for all three pinned descendants with controlled draw/result/
 target inputs and compare every side effect against this bounded model. After
 that, whole ordered command integration and persistent recovered25 runtime can
 be admitted separately. No pressure change occurs in this source-order commit.
+
+
+## Native postattack gate implementation
+
+The next remote gate extracts the exact postattack `BATTLE_COM_S_BECOMEFOX`
+condition/body from each pinned `battle.c` into a transient C harness. A
+controlled `rand()%100` provider executes **1280 vectors per profile** over
+command/result/liveness/draw/type/PETFLG/pig/ride combinations. The harness
+records short-circuit getter/draw counts and every accepted state side effect,
+then compares them to `stoneage_becomefox_reference_model`. The original source
+block is never committed. Fixed gavin/iris compile with ARRANGE guard active;
+fixed Bismarck does not, matching their pinned `version.h` profiles.
+
+A PASS closes only the exact postattack transform predicate/state mutation. It
+does not yet close full AttackSeq/Guardian/retarget ordering, FOXROUND
+cross-round persistent integration, PetIn runtime choice, or pressure.
