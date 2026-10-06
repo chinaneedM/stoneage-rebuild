@@ -7512,3 +7512,25 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   Pet/party recipients, sparse source rosters, items/ride/wider features,
   original build/version, automatic AI and specific638 golden/region/
   hash-verified pressure remain OPEN.
+
+
+### Isolated immutable PvE adapter main synchronization verified — 2026-10-06
+
+- Main/adapter branch101e1b19adecc1de31578c0edaae2aaf2dd1bf68,
+  tree47e77d8a3ea5e74c44db797b02ba5f5a3e5a10d6. Expected-head nonforce
+  fast-forward, accepted input ancestry and clean local/remote tree match verified.
+- Exact main run37422423135/job112134520123 SUCCESS; logs reproduce19656
+  model/native comparisons,560 regressions and identical profile/function/header
+  hashes. Exact branch run37422418876/job112134505497 SUCCESS. Receipt now
+  records main replay/artifact. This supersedes preceding pending sync notes.
+- This checkpoint changes documentation/receipt only with skip-ci. Accepted
+  scope stays CLOSED_BOUNDED_ISOLATED_MODEL_NATIVE_MATCH. No existing command
+  driver or attribute-recalculation integration, modern lethal638, positive-slot
+  or new golden/region/pressure acceptance is implied.
+- **Highest-priority unfinished task:** bind actual per-hit/command-tail snapshots
+  and separately verified attribute recalculation to the immutable scan, then
+  replace event-derived death charges with processed-death results. Execute
+  original full dispatch/hit-to-profit chronology with actual Guardian and
+  multi-victim638 tail states before lethal638 admission. Pet/party recipients,
+  sparse source roster mapping, mail/items/ride/wider features, original build/
+  version, automatic AI and specific golden/region/hash-verified pressure OPEN.

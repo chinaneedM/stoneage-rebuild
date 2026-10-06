@@ -118,5 +118,28 @@
   "original_build_and_version_membership": "OPEN",
   "battlemodel_specific_golden_region_pressure": "OPEN",
   "positive_slots_promoted": 0,
-  "main_sync": "PENDING_NONFORCE_SYNCHRONIZATION_AND_REPLAY"
+  "main_sync": {
+    "status": "NONFORCE_SYNCHRONIZATION_AND_EXACT_MAIN_REPLAY_VERIFIED",
+    "accepted_commit": "101e1b19adecc1de31578c0edaae2aaf2dd1bf68",
+    "accepted_tree": "47e77d8a3ea5e74c44db797b02ba5f5a3e5a10d6",
+    "expected_previous_main": "5e9daaf77e4d2ecb39d73a3520fd97a3f9d2fd95",
+    "force": false,
+    "input_ancestry_verified": true,
+    "local_remote_tree_match": true,
+    "main_run": 37422423135,
+    "main_job": 112134520123,
+    "main_conclusion": "success",
+    "branch_run": 37422418876,
+    "branch_job": 112134505497,
+    "branch_conclusion": "success",
+    "main_log_model_native_comparisons": 19656,
+    "main_log_regressions": 560,
+    "main_artifact": {
+      "id": 11393243290,
+      "name": "battlemodel-settlement",
+      "size_in_bytes": 6141,
+      "digest": "sha256:135b123fd37b7f49bd19757b4a5a51dbb093933589284470f09e2ca6b4e41b7f"
+    },
+    "checkpoint_scope": "documentation/derived receipt only, skip-ci; accepted implementation unchanged"
+  }
 }
