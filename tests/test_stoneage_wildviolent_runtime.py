@@ -1,3 +1,4 @@
+from tools.stoneage_default_pet_exit_model import DefaultPetExitAuthority
 import unittest
 from dataclasses import replace
 from hashlib import sha256
@@ -205,6 +206,7 @@ class WildViolentTypedAdmissionTests(unittest.TestCase):
             ),
         )
         result=_resolve_nonbow_multihit_baseline(
+            default_pet_exit_authorities={"owner":DefaultPetExitAuthority("owner",None,("original","p1","p2"),{"original":0,"p1":1,"p2":2})},
             actor=actor,actor_slot=10,command=command,action_value=100,
             by_slot={0:original,1:p1,2:p2,10:actor},
             hp_by_slot={0:1,1:1000,2:1000,10:500},
@@ -378,6 +380,7 @@ class WildViolentTypedAdmissionTests(unittest.TestCase):
             dodge_roll_1_10000=10000,
         )
         result=_resolve_nonbow_multihit_baseline(
+            default_pet_exit_authorities={"owner":DefaultPetExitAuthority("owner",None,("original",),{"original":0})},
             actor=actor,actor_slot=10,command=command,action_value=100,
             by_slot={0:original,10:actor},
             hp_by_slot={0:1,10:500},

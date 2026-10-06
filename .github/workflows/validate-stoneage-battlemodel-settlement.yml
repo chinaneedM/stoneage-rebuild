@@ -15,6 +15,7 @@ on:
       - "tools/stoneage_battlemodel_round_action.py"
       - "tools/stoneage_default_pet_exit_source_audit.py"
       - "tools/stoneage_battle_round_model.py"
+      - "tools/stoneage_default_pet_exit_model.py"
       - "tools/stoneage_battle_state_model.py"
       - "tools/stoneage_local_runtime_session_coordinator.py"
       - "tools/stoneage_battle_core_model.py"
@@ -29,6 +30,7 @@ on:
       - "tests/test_stoneage_battlemodel_itemcrush.py"
       - "tests/test_stoneage_battlemodel_prepared_handoff.py"
       - "tests/test_stoneage_battlemodel_ordinary_round.py"
+      - "tests/test_stoneage_default_pet_ultimate_runtime.py"
       - "tests/test_stoneage_battle_round_model.py"
       - "tests/test_stoneage_battlemodel_admission.py"
       - "specs/STONEAGE-BATTLEMODEL-PHYSICAL-ATTACKSEQ-R1.md"
@@ -36,6 +38,7 @@ on:
       - "specs/STONEAGE-BATTLEMODEL-PREPARED-HANDOFF-R1.md"
       - "specs/STONEAGE-BATTLEMODEL-ORDINARY-ROUND-R1.md"
       - "specs/STONEAGE-BATTLEMODEL-DEFAULT-EXIT-AUDIT-R1.md"
+      - "specs/STONEAGE-DEFAULT-PET-ULTIMATE-RUNTIME-R1.md"
       - "specs/STONEAGE-BATTLEMODEL-SETTLEMENT-AUDIT-R1.md"
 
 concurrency:
@@ -62,6 +65,12 @@ jobs:
             tests.test_stoneage_battlemodel_itemcrush \
             tests.test_stoneage_battlemodel_prepared_handoff \
             tests.test_stoneage_battlemodel_ordinary_round \
+            tests.test_stoneage_default_pet_ultimate_runtime \
+            tests.test_stoneage_attack_crazed_runtime \
+            tests.test_stoneage_wildviolent_runtime \
+            tests.test_stoneage_2battletimid_runtime \
+            tests.test_stoneage_singleplayer_runtime \
+            tests.test_stoneage_group_battle_runtime \
             tests.test_stoneage_battle_round_model \
             tests.test_stoneage_battle_state_model \
             tests.test_stoneage_local_runtime_session_coordinator \

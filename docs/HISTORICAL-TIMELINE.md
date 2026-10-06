@@ -898,3 +898,15 @@ cleanup; pet UltimateExtra clears owner DEFAULTPET. Full native cleanup/profit
 not certified. **OPEN:** current ordinary/continuation inference and absent
 pet-ultimate selection transition require correction before lethal638. Older
 "paired/default" terminology superseded; no Taiwan-v1/build membership claim.
+
+
+### 2026-10-06 — DD-020 ordinary and continuation exit correction local milestone
+
+**LOCAL_TESTED:**22 new actual flow witnesses/535 targeted regressions PASS.
+Explicit nullable roster selection and separate i+5 occupancy cleanup replace
+sole-pet inference. Pet ultimate clears selection chronologically before later
+player-death loyalty, including within multihit; actual Guardian and absent
+dead carried entries propagate. Terminal return preserves ownership/HP and
+excludes final profit. No full native exit/profit, lethal638 or original build
+membership claim. Broad discovery has identical clean-baseline failures and
+optional-dependency import errors. Remote exact/shared/full-region gates pending.

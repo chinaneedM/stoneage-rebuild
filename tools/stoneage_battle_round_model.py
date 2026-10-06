@@ -10,6 +10,11 @@ action sorting; combo damage execution remains a separate seam.
 from __future__ import annotations
 
 from dataclasses import dataclass, replace
+from tools.stoneage_default_pet_exit_model import (
+    DefaultPetExitAuthority, bind_exit_authorities, player_pet_exit_ids,
+    pet_owner_id, clear_owner_selection, apply_selection_events,
+)
+
 from types import MappingProxyType
 from typing import Mapping, Sequence
 
@@ -1050,6 +1055,8 @@ class OrdinaryRoundEvent:
     ultimate_damage_resolution: BattleUltimateDamageResolution | None = None
     death_ultimate_resolution: BattleDeathUltimateResolution | None = None
     ultimate_kind: int = 0
+    # Source pet UltimateExtra clears the owner's selection before later deaths.
+    default_pet_selection_cleared_owner_id: str | None = None
     # Exact round-local BENT_FLG_ULTIMATE write. Most paths leave these null
     # and the flag target is the resolved death target. Combo+DamageReact can
     # write the flag to a different entry after its quirky defindex rewrite.
@@ -2755,6 +2762,7 @@ def resolve_continuation_nonbow_baseline(
     excluded_slots: Sequence[int] = (),
     field_attr: str = "none",
     field_power: int = 0,
+    default_pet_exit_authorities: Mapping[str, DefaultPetExitAuthority] | None = None,
 ) -> ContinuationBaselineResolution:
     """Execute the stable non-bow ContinuationAttack public boundary."""
     return _resolve_nonbow_multihit_baseline(
@@ -2776,6 +2784,7 @@ def resolve_continuation_nonbow_baseline(
         ultimate_overkill_by_participant_id=ultimate_overkill_by_participant_id,
         ride_pet_runtime=ride_pet_runtime,
         excluded_slots=excluded_slots,
+        default_pet_exit_authorities=default_pet_exit_authorities,
         field_attr=field_attr,
         field_power=field_power,
     )
@@ -2813,6 +2822,7 @@ def _resolve_nonbow_multihit_baseline(
     wildviolent_submission: EnemyAiWildViolentSubmission | None = None,
     field_attr: str = "none",
     field_power: int = 0,
+    default_pet_exit_authorities: Mapping[str, DefaultPetExitAuthority] | None = None,
 ) -> ContinuationBaselineResolution:
     """Execute shared non-bow physical settlement under a typed hit plan.
 
@@ -2923,6 +2933,7 @@ def _resolve_nonbow_multihit_baseline(
             raise ValueError("ultimate accumulator cannot be negative")
     ultimate_exited_ids: list[str]=[]
     excluded={int(slot) for slot in excluded_slots}
+    default_authorities=bind_exit_authorities(default_pet_exit_authorities,by_slot)
     ride_runtime=ride_pet_runtime
     active_ride=False
     if ride_runtime is not None:
@@ -3537,29 +3548,18 @@ def _resolve_nonbow_multihit_baseline(
                 excluded.add(exit_slot)
                 ultimate_exited_ids.append(exit_id)
 
+                if exit_actor.kind == "pet":
+                    owner_id=pet_owner_id(exit_id,default_authorities)
+                    clear_owner_selection(default_authorities,owner_id)
+                    resolved[-1]=replace(resolved[-1],
+                        default_pet_selection_cleared_owner_id=owner_id)
                 if exit_actor.kind == "player":
-                    active_allied=[
-                        (other_slot,other)
-                        for other_slot,other in by_slot.items()
-                        if (
-                            other.side == exit_actor.side
-                            and other.kind == "pet"
-                            and str(other.participant_id)
-                            not in ultimate_exited_ids
-                            and int(other_slot) not in excluded
-                        )
-                    ]
-                    if len(active_allied) > 1:
-                        raise ValueError(
-                            "player ultimate exit requires a unique "
-                            "active/default pet"
-                        )
-                    if active_allied:
-                        pet_slot,pet=active_allied[0]
-                        excluded.add(int(pet_slot))
-                        ultimate_exited_ids.append(
-                            str(pet.participant_id)
-                        )
+                    for pet_id in player_pet_exit_ids(exit_slot,exit_id,
+                        default_authorities,by_slot,excluded):
+                        pet_slot=default_authorities[exit_id].occupied_pet_slots[pet_id]
+                        excluded.add(pet_slot)
+                        if pet_id not in ultimate_exited_ids:
+                            ultimate_exited_ids.append(pet_id)
 
                     hp[exit_slot]=1
                     status_runtime[exit_id]=BaseBattleStatusRuntime(
@@ -3567,8 +3567,7 @@ def _resolve_nonbow_multihit_baseline(
                     )
                     for other_slot,other in by_slot.items():
                         if (
-                            other.side != exit_actor.side
-                            or other.kind != "pet"
+                            other.participant_id not in default_authorities[exit_id].owned_pet_ids
                         ):
                             continue
                         other_id=str(other.participant_id)
@@ -3788,6 +3787,7 @@ def resolve_ordinary_round(
     field_attr: str = "none",
     field_power: int = 0,
     battlemodel_actions_by_participant_id: Mapping[str, BattleModelRoundAction] | None = None,
+    default_pet_exit_authorities: Mapping[str, DefaultPetExitAuthority] | None = None,
 ) -> ResolvedOrdinaryRound:
     """Execute the status-free base battle seam.
 
@@ -5639,6 +5639,7 @@ def resolve_ordinary_round(
     # Source BENT_FLG_ULTIMATE is cleared at the start of each battle turn.
     # Keep it round-local; do not persist it across PersistentBattleState.
     ultimate_marked_slots: dict[int,int] = {}
+    default_authorities=bind_exit_authorities(default_pet_exit_authorities,by_slot)
 
     def register_ultimate_exits(
         new_events: Sequence[OrdinaryRoundEvent],
@@ -5724,33 +5725,23 @@ def resolve_ordinary_round(
             exited_slots.add(target_slot)
             ultimate_exited_ids.append(target_id)
 
+            if target.kind == "pet":
+                owner_id=pet_owner_id(target_id,default_authorities)
+                clear_owner_selection(default_authorities,owner_id)
+                for index,recorded in enumerate(events):
+                    if recorded is event:
+                        events[index]=replace(recorded,
+                            default_pet_selection_cleared_owner_id=owner_id)
+                        break
             if target.kind != "player":
                 continue
 
-            # BATTLE_UltimateExtra(player) first calls
-            # BATTLE_PetDefaultExit(), then BATTLE_Exit(player).  The current
-            # single-player battle session has no independent DEFAULTPET
-            # selector, so at most one active allied pet can be projected
-            # without inventing ownership/selection.
-            active_allied=[
-                (other_slot,other)
-                for other_slot,other in by_slot.items()
-                if (
-                    other.side==target.side
-                    and other.kind=="pet"
-                    and str(other.participant_id)
-                    not in ultimate_exited_ids
-                    and other_slot not in exited_slots
-                )
-            ]
-            if len(active_allied) > 1:
-                raise ValueError(
-                    "player ultimate exit requires a unique active/default pet"
-                )
-            if active_allied:
-                pet_slot,pet=active_allied[0]
-                exited_slots.add(int(pet_slot))
-                ultimate_exited_ids.append(str(pet.participant_id))
+            for pet_id in player_pet_exit_ids(target_slot,target_id,
+                default_authorities,by_slot,exited_slots):
+                pet_slot=default_authorities[target_id].occupied_pet_slots[pet_id]
+                exited_slots.add(pet_slot)
+                if pet_id not in ultimate_exited_ids:
+                    ultimate_exited_ids.append(pet_id)
 
             # AddProfit marks ISDIE before UltimateExtra. BATTLE_Exit(player)
             # clears ISDIE and restores the dead player to HP=1.
@@ -5763,7 +5754,7 @@ def resolve_ordinary_round(
                 work_quick=int(target.quick)
             )
             for other_slot,other in by_slot.items():
-                if other.side!=target.side or other.kind!="pet":
+                if other.participant_id not in default_authorities[target_id].owned_pet_ids:
                     continue
                 other_id=str(other.participant_id)
                 if int(hp_by_slot.get(other_slot,0)) <= 0:
@@ -5835,6 +5826,7 @@ def resolve_ordinary_round(
         register_ultimate_exits(counter_events)
 
     for entry in prepared.ordered_entries:
+        apply_selection_events(default_authorities,events,by_slot)
         participant = entry.participant
         participant_id = participant.participant_id
         slot = slot_by_id[participant_id]
@@ -7225,6 +7217,7 @@ def resolve_ordinary_round(
                 command=command,
                 action_value=int(entry.action_value),
                 by_slot=by_slot,
+                default_pet_exit_authorities=default_authorities,
                 hp_by_slot=hp_by_slot,
                 profiles=profiles,
                 command_by_slot=command_by_slot,
@@ -7286,14 +7279,17 @@ def resolve_ordinary_round(
 
             continuation_events=tuple(continuation.events)
             events.extend(continuation_events)
+            apply_selection_events(default_authorities,continuation_events,by_slot)
             for exit_id in continuation.ultimate_exited_participant_ids:
                 exit_id=str(exit_id)
-                if exit_id not in slot_by_id:
-                    raise ValueError(
-                        "ContinuationAttack ultimate exit references "
-                        f"unknown actor {exit_id}"
-                    )
-                exit_slot=int(slot_by_id[exit_id])
+                exit_slot=slot_by_id.get(exit_id)
+                if exit_slot is None:
+                    exit_slot=next((a.occupied_pet_slots[exit_id]
+                        for a in default_authorities.values()
+                        if exit_id in a.occupied_pet_slots),None)
+                if exit_slot is None:
+                    raise ValueError("ContinuationAttack ultimate exit references unknown actor")
+                exit_slot=int(exit_slot)
                 exited_slots.add(exit_slot)
                 if exit_id not in ultimate_exited_ids:
                     ultimate_exited_ids.append(exit_id)

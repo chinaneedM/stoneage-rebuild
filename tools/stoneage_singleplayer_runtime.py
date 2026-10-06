@@ -9,6 +9,7 @@ commands, AI and battle outcomes as explicit inputs.
 from __future__ import annotations
 
 from dataclasses import dataclass, field, replace
+from tools.stoneage_default_pet_exit_model import DefaultPetExitAuthority
 from types import MappingProxyType
 from typing import Mapping, Sequence
 
@@ -1419,6 +1420,7 @@ class SinglePlayerHistoricalRuntime:
         field_attr: str = "none",
         field_power: int = 0,
         tie_break_order: Sequence[str] | None = None,
+        default_pet_exit_authorities: Mapping[str,DefaultPetExitAuthority] | None = None,
     ) -> ResolvedOrdinaryRound:
         """Resolve one explicit attack/guard/wait round inside the battle shell."""
         participants = (
@@ -1435,6 +1437,7 @@ class SinglePlayerHistoricalRuntime:
         return resolve_ordinary_round(
             prepared,
             slots=slots,
+            default_pet_exit_authorities=default_pet_exit_authorities,
             profiles=profiles,
             attack_rolls=attack_rolls,
             defense_profile=defense_profile,

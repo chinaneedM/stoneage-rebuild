@@ -7268,3 +7268,40 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   selection and paired occupancy correction under the contract above; the
   bounded native helper audit and accepted main synchronization are complete.
   All lethal638/native full-exit/profit/automatic-AI/pressure gates remain OPEN.
+
+
+## Phase 1 DD-020 explicit ultimate selection runtime local milestone — 2026-10-06
+
+- Fresh remote main0f27b9c74a2dd02530c6232f815174cb3fff0f8f,
+  tree78e9ee30711284fdc6d6c79ce84d92c0b9b01560 unchanged at startup.
+  Prior main/audit replay37416184338/37416182677 and original37415958204
+  SUCCESS. Isolated agent/default-pet-ultimate-runtime-r1-20261006 from main.
+- LOCAL_VALIDATED explicit immutable owner/selected-roster/owned/occupied-slot
+  authority replaces sole-active-pet inference in ordinary/shared nonbow exit.
+  Nullable selection and Entry[i+5] cleanup are independent. Missing authority,
+  collisions/ownership drift reject. Source-shaped pet ultimate clears owner
+  selection via fatal event before later actor/hit and chronological profit.
+- Persistent adapter binds actual DEFAULTPET/session/occupancy including dead
+  owned entries absent from prepared living queue. Player Exit restores dead
+  carried pets to1 and clears common statuses without deleting ownership.
+  Player ultimate preserves selection unless a pet ultimate/recall clears it.
+  Nonpersistent shell forwards explicit authority; no automatic pet inference.
+-22 new actual ordinary/continuation/state/terminal-return witnesses;535 local
+  targeted tests PASS. Includes pet ultimate then player death in one round and
+  one multihit, actual Guardian, nonselected pet, retained/exited selection,
+  no-selection+paired cleanup, inactive dead pet, immutable failures and no
+  erroneous final EXP. Existing world golden PASS. Shared dependency registered
+  in31 workflows that already watch round model; exact remote gates pending.
+- Broad discovery baseline3523/changed3545 has identical25 optional binary
+  probe import errors and two pre-existing ReHp/birth-bridge fixture failures;
+  no new failure/error after explicit caller migrations. All-suite PASS is not
+  claimed. Derived local receipt/spec preserve exact limitations. Existing
+  native helper486/physical696/ItemCrush3420 reruns PASS; full Exit/profit native
+  composition not certified. No lethal638/automatic AI/positive-slot promotion.
+- **Highest-priority unfinished task:** publish exact bounded correction,
+  inspect all triggered regressions/full-region and write-backs; on PASS accept
+  only DD-020 selection/occupancy/profit-state correction and sync nonforce.
+  Then source-native full Exit/UltimateExtra/AddProfit composition and lethal
+  BattleModel integration, preserving target/item/status RNG and actual flags.
+  Golden/region/hash-verified638 pressure, equipped/wider features and original
+  profile ambiguity remain OPEN. Spec: STONEAGE-DEFAULT-PET-ULTIMATE-RUNTIME-R1.

@@ -15,6 +15,7 @@ from tools.stoneage_battle_ride_damage_model import RidePetRuntime
 from tools.stoneage_battle_status_model import BaseBattleStatusRuntime, BaseBattleStatusState, BaseStatusTurnRolls
 from tools.stoneage_battle_damage_react_model import BaseDamageReactState
 from tools.stoneage_singleplayer_battle import BattleParticipant
+from tools.stoneage_default_pet_exit_model import DefaultPetExitAuthority
 from tools.stoneage_battle_core_model import physical_base_damage
 
 
@@ -67,7 +68,8 @@ class AttackCrazedRuntimeTests(unittest.TestCase):
 
     def test_preselected_dead_target_retargets_per_hit_after_mutation(self):
         players={0:actor('player','player','player'),1:actor('pet','player','pet',hp=1),9:actor('last','player','pet')}
-        r=self.resolve(target=1,draws=(1,1,1),players=players,hits=(hit(),hit(retarget_roll=0),hit(retarget_roll=1)))
+        r=self.resolve(target=1,draws=(1,1,1),players=players,hits=(hit(),hit(retarget_roll=0),hit(retarget_roll=1)),
+            extra={"default_pet_exit_authorities":{"player":DefaultPetExitAuthority("player",None,("pet","last"),{"pet":1,"last":9})}})
         events=self.attack_events(r)
         self.assertEqual([e.resolved_target_slot for e in events],[1,0,9])
         self.assertEqual([e.retargeted for e in events],[False,True,True])

@@ -20,6 +20,7 @@ persistent character EXP or level state.
 from __future__ import annotations
 
 from dataclasses import dataclass, replace
+from tools.stoneage_default_pet_exit_model import DefaultPetExitAuthority
 from types import MappingProxyType
 from typing import Mapping, Sequence
 
@@ -1303,6 +1304,10 @@ def _pending_profit_after_ordinary_round(
     current_default_pet_id=selected_default_pet_participant_id(state)
 
     for event in round_result.events:
+        if event.default_pet_selection_cleared_owner_id is not None:
+            if event.default_pet_selection_cleared_owner_id != state.session.player.participant_id:
+                raise ValueError("ultimate selection clear references unknown owner")
+            current_default_pet_id=None
         if (
             event.two_battletimid_resolution is not None
             and event.two_battletimid_resolution.pet_withdrawn
@@ -2283,6 +2288,13 @@ def resolve_persistent_ordinary_round(
     round_result = resolve_ordinary_round(
         prepared,
         slots=current_slots,
+        default_pet_exit_authorities={player_id:DefaultPetExitAuthority(
+            player_id,selected_default_pet_participant_id(state),
+            tuple(str(p.participant_id) for p in state.session.allied_pets),
+            {str(p.participant_id):int(state.slots[p.participant_id])
+             for p in state.session.allied_pets
+             if p.participant_id not in set(state.ultimate_exited_participant_ids)
+                | set(state.battle_exited_participant_ids)})},
         profiles=profiles,
         attack_rolls=attack_rolls,
         defense_profile=defense_profile,
@@ -2503,6 +2515,11 @@ def resolve_persistent_ordinary_round(
         raise ValueError("capture exit missing from ordinary exited IDs")
     battletimid_exit_ids=set()
     next_default_pet_slot=state.default_pet_slot
+    for event in round_result.events:
+        if event.default_pet_selection_cleared_owner_id is not None:
+            if event.default_pet_selection_cleared_owner_id != player_id:
+                raise ValueError("ultimate selection clear references unknown owner")
+            next_default_pet_slot=None
     selected_default_pet_id=selected_default_pet_participant_id(state)
     for event in round_result.events:
         resolution=event.battletimid_resolution
@@ -2637,6 +2654,15 @@ def resolve_persistent_ordinary_round(
     next_status_runtime.update(
         dict(round_result.base_status_runtime_by_participant_id)
     )
+    # Player Exit cleans the carried roster even when some pets had no active
+    # prepared entry. Selection is preserved unless a pet UltimateExtra cleared it.
+    if player_id in ultimate_exited_ids:
+        for pet in state.session.allied_pets:
+            pet_id=str(pet.participant_id)
+            if hp[pet_id] <= 0:
+                hp[pet_id]=1
+            next_status_runtime[pet_id]=BaseBattleStatusRuntime(work_quick=int(pet.quick))
+
     next_damage_react=dict(
         state.base_damage_react_state_by_participant_id
     )

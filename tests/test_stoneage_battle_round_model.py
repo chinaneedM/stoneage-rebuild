@@ -61,6 +61,7 @@ from tools.stoneage_battle_status_model import (
     STATUS_POISON,
 )
 from tools.stoneage_singleplayer_battle import BattleParticipant
+from tools.stoneage_default_pet_exit_model import DefaultPetExitAuthority
 
 
 def actor(
@@ -226,7 +227,7 @@ class BattleRoundModelTests(unittest.TestCase):
     def test_continuation_baseline_retargets_each_later_hit_from_dead_original(self):
         # Keep this regression scoped to per-hit retarget. A player death can
         # invoke BATTLE_UltimateExtra(player), which additionally requires a
-        # unique default/active pet and would conflate two separate seams.
+        # explicit default-pet authority; this test supplies a retained owner.
         original=actor("original","player","pet",hp=1,defense=0)
         p1=actor("p1","player","pet",hp=1000,defense=0)
         p2=actor("p2","player","pet",hp=1000,defense=0)
@@ -256,6 +257,7 @@ class BattleRoundModelTests(unittest.TestCase):
             ),
         )
         result=resolve_continuation_nonbow_baseline(
+            default_pet_exit_authorities={"owner":DefaultPetExitAuthority("owner",None,("original","p1","p2"),{"original":0,"p1":1,"p2":2})},
             actor=enemy,
             actor_slot=10,
             command=command,
@@ -332,6 +334,7 @@ class BattleRoundModelTests(unittest.TestCase):
             damage_roll=0,
         )
         result=resolve_continuation_nonbow_baseline(
+            default_pet_exit_authorities={"player":DefaultPetExitAuthority("player","guardian",("guardian",),{"guardian":1})},
             actor=enemy,
             actor_slot=10,
             command=command,
@@ -541,6 +544,7 @@ class BattleRoundModelTests(unittest.TestCase):
             damage_roll=0,
         )
         result=resolve_continuation_nonbow_baseline(
+            default_pet_exit_authorities={"player":DefaultPetExitAuthority("player","pet",("pet",),{"pet":1})},
             actor=enemy,
             actor_slot=10,
             command=command,
@@ -567,7 +571,7 @@ class BattleRoundModelTests(unittest.TestCase):
             ("player","pet"),
         )
         # BATTLE_Exit(player) restores the player to one HP but both player
-        # and the unique active/default pet are removed from target candidates.
+        # and the explicitly selected pet are removed from target candidates.
         self.assertEqual(result.hp_by_slot[0],1)
         self.assertEqual(result.hp_by_slot[1],1000)
         self.assertFalse(result.counter_continuation_allowed)
@@ -1233,6 +1237,7 @@ class BattleRoundModelTests(unittest.TestCase):
         prepared=replace(prepared,ordered_entries=combo_entries)
         result=resolve_ordinary_round(
             prepared,
+            default_pet_exit_authorities={"p1":DefaultPetExitAuthority("p1","p2",("p2",),{"p2":1})},
             slots={"p1":0,"p2":1,"enemy":10},
             profiles={
                 "p1":profile(counter_weapon_type="bow"),
@@ -1301,6 +1306,7 @@ class BattleRoundModelTests(unittest.TestCase):
         )
         result=resolve_ordinary_round(
             prepared,
+            default_pet_exit_authorities={"player":DefaultPetExitAuthority("player",None,(),{})},
             slots={"player":0,"e1":10,"e2":11},
             profiles={
                 "player":profile(),"e1":profile(),"e2":profile(),
@@ -1724,6 +1730,7 @@ class BattleRoundModelTests(unittest.TestCase):
         )
         result=resolve_ordinary_round(
             prepared,
+            default_pet_exit_authorities={"player":DefaultPetExitAuthority("player",None,(),{})},
             slots={"player":0,"enemy":10},
             profiles={
                 "player":profile(dex=100),
@@ -3459,6 +3466,7 @@ class BattleRoundModelTests(unittest.TestCase):
         )
         result=resolve_ordinary_round(
             prepared,
+            default_pet_exit_authorities={"player":DefaultPetExitAuthority("player","pet:0",("pet:0",),{"pet:0":1})},
             slots={"player":0,"pet:0":1,"enemy":10},
             profiles={
                 "player":profile(),"pet:0":profile(),"enemy":profile(),
@@ -3513,6 +3521,7 @@ class BattleRoundModelTests(unittest.TestCase):
         )
         result=resolve_ordinary_round(
             prepared,
+            default_pet_exit_authorities={"player":DefaultPetExitAuthority("player","pet:0",("pet:0",),{"pet:0":1})},
             slots={"player":0,"pet:0":1,"enemy":10},
             profiles={
                 "player":profile(),"pet:0":profile(),"enemy":profile(),
@@ -4135,6 +4144,7 @@ class BattleRoundModelTests(unittest.TestCase):
         )
         result=resolve_ordinary_round(
             prepared,
+            default_pet_exit_authorities={"player":DefaultPetExitAuthority("player",None,(),{})},
             slots={"player":0,"enemy":10},
             profiles={
                 "player":profile(dex=100),

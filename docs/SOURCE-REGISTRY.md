@@ -3734,3 +3734,22 @@ slots remain OPEN. Pending snapshot superseded; no raw source/payload retained.
 - Current ordinary/continuation selected-pet inference and pet-ultimate
   chronological selection/profit defects OPEN. Spec/receipt record correction
   contract; no full lethal BattleModel/original build/Taiwan-v1/638 promotion.
+
+
+### SRC-DEFAULT-PET-ULTIMATE-STATE-CORRECTION-R1
+
+- Independent owner/selection/occupancy authority model and ordinary/shared
+  nonbow/persistent integration under DD-020, grounded in already accepted
+  three-pin486 helper cases and separately declared static Exit/UltimateExtra
+  observations. No original source/assets retained; no full native exit proof.
+-22 new actual flow cases: nullable/missing authority, exact selected/paired
+  identities, unrelated/multiple/retained/exited pets, dead unprepared occupancy,
+  actual Guardian, pet ultimate then player death across actors and hits,
+  signed loyalty/selection ordering, failure immutability and terminal return
+  without final profit.535 targeted PASS; existing world golden PASS.
+- Clean-baseline3523 vs changed3545 broad-discovery failure/error names are
+  identical (25 optional probe import errors, two pre-existing fixture failures).
+  Local derived receipt preserves limitations; no full-suite PASS claimed.
+- Spec STONEAGE-DEFAULT-PET-ULTIMATE-RUNTIME-R1; remote exact/shared/full-region
+  gates pending.638 remains nonlethal/unpromoted; full native Exit/profit,
+  equipped/wider features, automatic AI and638-specific pressure remain OPEN.
