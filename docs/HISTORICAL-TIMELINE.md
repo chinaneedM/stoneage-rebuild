@@ -953,3 +953,17 @@ pending status superseded within feature-off PvE/no-item/no-ride/non-mail
 scope. No modern runtime code change, lethal638/native full command driver,
 original active feature/version or slot-promotion claim. Whole-scan profit
 adapter and ten-field/overlay clear are next.
+
+
+### 2026-10-06 — Immutable PvE scan adapter local comparison
+
+- MODEL/LOCAL_VALIDATED: new independent immutable adapter reproduces19656
+  already accepted native death/exit vectors and their recorded writes. This
+  adds modern model comparisons, not new original executions or a version claim.
+- DESIGN: projecting original counter clear into the modern separate late-status
+  overlay requires clearing counters/visit flags and invalidating cached Weaken
+  powers. Recalculation is an explicit unresolved caller seam; active deep poison
+  and unmodeled statuses are rejected. Existing runtime drivers are not wired.
+- OPEN: full command-native chronology, modern lethal638, actual Guardian-to-
+  profit composition, sparse rosters/party recipients and specific golden/
+  region/pressure gates. Exact remote acceptance pending.

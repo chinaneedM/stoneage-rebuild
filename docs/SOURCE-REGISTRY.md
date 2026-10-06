@@ -3807,3 +3807,17 @@ all profile/header/function hashes. Local-pending statement superseded;
 controlled external seams, injected-state/reachability limits, native full
 command bridge, modern lethal638/pressure and original version membership
 remain explicitly OPEN. No original source/payload committed.
+
+
+### Immutable PvE profit/exit scan model local witness — 2026-10-06
+
+- Derived model/native report:
+  research/recovered/STONEAGE-PVE-PROFIT-EXIT-SCAN-MODEL-R1.txt.
+  Spec: specs/STONEAGE-PVE-PROFIT-EXIT-SCAN-MODEL-R1.md.
+- Source pins and seven-function/header hashes remain those in the accepted
+  STONEAGE-PVE-PROFIT-EXIT-NATIVE-ACCEPTANCE-R1.json. No original source/asset
+  is committed.19656 new modern-model comparisons use existing native cases.
+- Replay: python -m tools.stoneage_profit_exit_source_audit --verify-scan-model
+  with --gavin-dir/--iris-dir/--bismarck-dir clean source checkouts.
+  Original dispatcher call-site anchors remain static; full native command
+  integration, original build/version and modern lethal638 stay OPEN.

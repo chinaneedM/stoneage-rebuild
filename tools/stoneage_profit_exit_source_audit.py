@@ -393,7 +393,81 @@ def _expected(case):
     return tuple(result), trace
 
 
-def analyze_profile(name: str, root: Path):
+def _adapter_expected(case):
+    # Test-only translation of the same injected boundary into the independent
+    # immutable adapter. No original source or audit expectation is imported by
+    # the adapter. Retain the original expectation as a second comparison.
+    from dataclasses import replace
+    from tools.stoneage_default_pet_exit_model import DefaultPetExitAuthority
+    from tools.stoneage_profit_exit_scan_model import (
+        ProfitExitCharacter, ProfitExitSnapshot, resolve_profit_exit_scan,
+    )
+    characters = {
+        str(i): ProfitExitCharacter(str(i), "player" if i == 1 else "enemy" if i == 10 else "pet",
+            case.level if i == 1 else 10, 20, None,
+            status_counters=(9,) * 10, command=99, escape=7)
+        for i in (1, 2, 3, 10)
+    }
+    def update(pid, **values):
+        characters[pid] = replace(characters[pid], **values)
+    update("1", occupied_slot=case.side*10+case.owner_slot, hp=case.owner_hp,
+           isdie=bool(case.owner_isdie), ultimate=bool(case.owner_ultimate))
+    update("2", occupied_slot=case.side*10+case.owner_slot+5, hp=case.pet_hp,
+           isdie=bool(case.pet_isdie), ultimate=bool(case.pet_ultimate))
+    update("3", hp=0, battle_mode="none", battle_index=77)
+    update("10", occupied_slot=(1-case.side)*10)
+    if case.mode == 1:
+        update("1", hp=20, isdie=False)
+        update("2", hp=0, isdie=False, ultimate=True)
+    elif case.mode == 2:
+        update("3", hp=20, occupied_slot=case.side*10+(case.owner_slot+1)%5+5,
+               battle_mode="battle", battle_index=0)
+    elif case.mode == 3:
+        update("1", hp=20, isdie=False, ultimate=False)
+        update("2", hp=20, isdie=False, ultimate=False)
+        update("10", hp=0, reward_exp=100, isdie=bool(case.pet_isdie),
+               ultimate=bool(case.pet_ultimate))
+    authority = DefaultPetExitAuthority("1", {0: "2", 1: "3"}.get(case.selection),
+        ("2", "3"), {pid: characters[pid].occupied_slot for pid in ("2", "3")
+                     if characters[pid].occupied_slot is not None})
+    snapshot = ProfitExitSnapshot(characters, authority, case.side, bool(case.norisk),
+                                 (8000, 1, 2) if case.elder_success else None)
+    recipient = "1" if case.mode == 3 else "10"
+    trace, warps = [], 0
+    def scan():
+        nonlocal snapshot, warps
+        result = resolve_profit_exit_scan(snapshot, recipient_id=recipient)
+        snapshot = result.after
+        trace.extend(result.effects)
+        warps += len(result.warp_requests)
+    scan()
+    if case.mode == 1:
+        chars = dict(snapshot.characters)
+        chars["1"] = replace(chars["1"], hp=0)
+        snapshot = replace(snapshot, characters=chars)
+        scan()
+    scan()
+    chars = snapshot.characters
+    selected = snapshot.authority.selected_pet_id
+    owner, enemy = chars["1"], chars["10"]
+    result = [-1 if selected is None else snapshot.authority.owned_pet_ids.index(selected),
+              owner.charm_delta, owner.dead_pet_count, owner.pending_exp, owner.kill_count,
+              warps, 2, 3, enemy.reward_exp, int(enemy.enemy_ultimate)]
+    mode = {"none": 0, "battle": 4, "final": 6}
+    for pid in ("1", "2", "3", "10"):
+        c = chars[pid]
+        result.extend((int(c.valid), -1 if c.occupied_slot is None else c.occupied_slot,
+                       c.hp, int(c.isdie), c.death_count, c.variable_ai_delta,
+                       sum(v != 0 for v in c.status_counters), mode[c.battle_mode],
+                       c.battle_index, -1 if c.occupied_slot is None else c.escape, c.command))
+    tags = {"selection_read": "R", "selection_write": "S", "hp": "H",
+            "death_count": "D", "dead_pet_count": "P", "status_clear": "Z",
+            "isdie": "F", "variable_ai_delta": "A", "charm_delta": "C",
+            "warp_request": "W", "exit_request": "X"}
+    return tuple(result), [f"{tags[e.kind]}:{e.participant_id}:{e.value}" for e in trace]
+
+
+def analyze_profile(name: str, root: Path, *, verify_scan_model: bool = False):
     root = root.resolve()
     head = subprocess.check_output(["git", "-C", str(root), "rev-parse", "HEAD"], text=True).strip()
     dirty = subprocess.check_output(["git", "-C", str(root), "status", "--porcelain"], text=True).strip()
@@ -421,7 +495,12 @@ def analyze_profile(name: str, root: Path):
         semantic = [t for t in trace.rstrip(",").split(",") if t]
         if semantic != wanted_trace:
             raise ValueError(f"native chronological trace drift: {case}: {semantic} != {wanted_trace}")
+        if verify_scan_model:
+            model_state, model_trace = _adapter_expected(case)
+            if got != model_state or semantic != model_trace:
+                raise ValueError(f"immutable scan/native drift: {case}: {got} != {model_state}; {semantic} != {model_trace}")
     return {"profile": name, "commit": head, "native_profit_exit_cases": len(vectors),
+            "immutable_scan_model_native_comparisons": len(vectors) if verify_scan_model else 0,
             "original_functions": len(FUNCTIONS), "unconditional_status_fields": 10,
             **hashes}
 
@@ -430,10 +509,11 @@ def main():
     parser = argparse.ArgumentParser()
     for name in PINNED:
         parser.add_argument("--"+name+"-dir", required=True, type=Path)
+    parser.add_argument("--verify-scan-model", action="store_true")
     args = parser.parse_args()
     total = 0
     for name in PINNED:
-        result = analyze_profile(name, getattr(args, name+"_dir"))
+        result = analyze_profile(name, getattr(args, name+"_dir"), verify_scan_model=args.verify_scan_model)
         total += result["native_profit_exit_cases"]
         import json
         print("PROFILE|" + json.dumps(result, sort_keys=True))
@@ -441,6 +521,9 @@ def main():
     print("BOUNDARY|declared_feature_off_PvE_no_items_no_ride_controlled_notifications_getters_penalty_delta_helpers")
     print("OPEN|full_command_driver_attack_to_profit_bridge_modern_lethal638_runtime_original_build_membership")
     print("RESOLUTION|BOUNDED_PVE_PROFIT_EXIT_NATIVE_COMPOSITION_PASS")
+    if args.verify_scan_model:
+        print(f"MODEL|immutable_scan_model_native_comparisons={total}")
+        print("RESOLUTION|IMMUTABLE_PVE_PROFIT_EXIT_SCAN_MODEL_NATIVE_PASS")
 
 
 if __name__ == "__main__":

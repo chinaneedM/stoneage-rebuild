@@ -7453,3 +7453,33 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   Guardian behavior. Full command-native bridge, original profile/version,
   equipped/wider features, automatic AI and specific638 golden/region/
   hash-verified pressure remain OPEN.
+
+
+## Phase 1 immutable PvE profit/exit adapter local milestone — 2026-10-06
+
+- Fresh remote main5e9daaf77e4d2ecb39d73a3520fd97a3f9d2fd95,
+  tree9e4db3478186a8f9d7cd25a3e5d2589e54f4a9d4; latest main settlement
+  replay37420751562 SUCCESS. Isolated agent/profit-exit-adapter-r1-20261006.
+- LOCAL_VALIDATED: independent immutable whole-scan model now compares
+  exactly to19656 existing native vectors at three clean pins, including
+  ordered recorded writes and final state; zero additional original C cases.
+  It preserves side/slot order, explicit HP/ISDIE/ultimate, selection/roster/
+  occupancy, processed-death counters, pending EXP and ten-field clear.
+- Modern clear projection checks matching base/overlay inputs, rejects deep
+  poison and unmodeled active statuses, clears Nocast/Barrier/Weaken and visit
+  flags, invalidates prepared powers and emits required recalculation IDs.
+  It deliberately leaves work attributes/NC notification state to separately
+  bound seams. This is an isolated helper, not an integrated runtime fix.
+-24 new behavioral/validation/projection tests and prior535 pass (559).
+  Spec STONEAGE-PVE-PROFIT-EXIT-SCAN-MODEL-R1; derived model/native report
+  research/recovered/STONEAGE-PVE-PROFIT-EXIT-SCAN-MODEL-R1.txt. Required
+  settlement CI now checks all19656 comparisons,559 tests and prior native gates.
+- **Highest-priority unfinished task:** publish the exact adapter input and
+  verify remote settlement logs/artifact, then nonforce sync and main replay.
+  After acceptance, bind command-tail/per-hit invocation and required attribute
+  recalculation, replace event-based penalties with processed-death accounting,
+  and execute original full command-to-profit/actual Guardian/multi-victim
+  witnesses before lethal638 admission. Existing drivers and lethal638 guards
+  remain unchanged. Pet/party profit, sparse roster mapping, full build/profile,
+  equipped/wider features, automatic AI and specific638 golden/region/pressure
+  remain OPEN; no positive slot or overall percentage promotion.
