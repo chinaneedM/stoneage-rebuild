@@ -181,6 +181,8 @@ jobs:
           cat /tmp/recovered-battlemodel-runtime.txt
           grep -F 'COUNT|battlemodel_recovered_persistent_coordinator_goldens=60' /tmp/recovered-battlemodel-runtime.txt
           grep -F 'COUNT|battlemodel_selected_normal_ai_controls=60' /tmp/recovered-battlemodel-runtime.txt
+          # Exact active specimen currently has no admitted index2 normal-AI variant.
+          grep -F 'COUNT|battlemodel_recovered_normal_ai_goldens=0' /tmp/recovered-battlemodel-runtime.txt
           grep -F 'COUNT|battlemodel_current_identity_rejections=12' /tmp/recovered-battlemodel-runtime.txt
           grep -F 'PRESSURE|total=2486|closed=2461|open=22|historical_ub=3' /tmp/recovered-battlemodel-runtime.txt
           grep -F 'RESOLUTION|RECOVERED25_BATTLEMODEL_RUNTIME_GOLDEN_PASS' /tmp/recovered-battlemodel-runtime.txt
@@ -206,6 +208,9 @@ jobs:
             --client-adrn "$A" > "$R"
           test -s "$R"
           grep -F 'BATTLEMODEL_STACK_GOLDEN|cases=60|templates=2|charsets=2|source_profiles=3' "$R"
+          grep -F 'BATTLEMODEL_STACK_SELECTED_AI_CONTROL|cases=60|controlled_tactics_option=1' "$R"
+          grep -F 'COUNT|battlemodel_recovered_normal_ai_goldens=0' "$R"
+          grep -F 'BATTLEMODEL_RECOVERED_NORMAL_AI|' "$R"
           grep -F 'BATTLEMODEL_STACK_IDENTITY_PRESSURE|rejections=12' "$R"
           grep -F 'COUNT|materializable_floors|826' "$R"
           grep -F 'COUNT|state_gated_bindings|3' "$R"

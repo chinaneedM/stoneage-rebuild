@@ -121,6 +121,12 @@ class RecoveredBattleModelGoldenTests(unittest.TestCase):
             rows = probe.run_recovered_ai_goldens(self.stack)
         self.assertEqual([row["cases"] for row in rows], [0, 30])
         self.assertIsNone(rows[0]["witness_enemy_id"])
+        self.assertEqual(rows[0]["variant_admissions"][0]["rejection_reasons"], ["wa_index2_zero_weight"])
+        variants[1178].tactics = 2
+        with patch("builtins.print"):
+            rows = probe.run_recovered_ai_goldens(self.stack)
+        self.assertEqual(rows[0]["variant_admissions"][0]["rejection_reasons"], ["unsupported_tactics_mode"])
+        self.assertEqual(rows[0]["cases"], 0)
 
     def test_ai_caller_cannot_override_enemy_commands_or_widen_death_scope(self):
         context, kwargs = self.ai_case("normal_death")

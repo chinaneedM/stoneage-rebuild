@@ -310,10 +310,27 @@ def run_recovered_ai_goldens(stack, *, position=None):
         variants = sorted((v for v in stack.encounter_runtime.enemies.values() if v.tempno == tempno),
                           key=lambda v: v.enemy_id)
         eligible = []
+        admissions = []
         for variant in variants:
+            admission = dict(enemy_id=variant.enemy_id, tactics=variant.tactics,
+                option_utf8_sha256=hashlib.sha256(variant.tactics_option.encode()).hexdigest())
+            reasons = []
             if variant.tactics != 1:
+                admission.update(wa_index2_weight=None, rn_extension=None, target_selection=None,
+                                 rejection_reasons=["unsupported_tactics_mode"])
+                admissions.append(admission)
                 continue
             options = parse_normal_enemy_ai_options(variant.tactics_option)
+            if options.skill_weights[2] <= 0:
+                reasons.append("wa_index2_zero_weight")
+            if options.enemy_attack_ai_random_override is not None:
+                reasons.append("unresolved_ENEMY_ATTACK_AI_extension")
+            if options.target_selection not in (1, 2, 3):
+                reasons.append("unsupported_target_selection")
+            admission.update(wa_index2_weight=options.skill_weights[2],
+                rn_extension=options.enemy_attack_ai_random_override is not None,
+                target_selection=options.target_selection, rejection_reasons=reasons)
+            admissions.append(admission)
             if (options.skill_weights[2] > 0 and options.enemy_attack_ai_random_override is None
                     and options.target_selection in (1, 2, 3)):
                 eligible.append(variant)
@@ -350,6 +367,7 @@ def run_recovered_ai_goldens(stack, *, position=None):
                             raise ValueError("recovered BattleModel selected AI result drift")
                         count += 1
         results.append(dict(tempno=tempno, active_variants=len(variants),
+            variant_admissions=admissions,
             eligible_normal_variants=len(eligible), witness_enemy_id=None if chosen is None else chosen.enemy_id,
             option_utf8_sha256=None if chosen is None else hashlib.sha256(chosen.tactics_option.encode()).hexdigest(),
             cases=count))
