@@ -121,12 +121,18 @@ class OrdinaryBattleModelTests(unittest.TestCase):
     def coordinator_round(self, context, action, runtime=None):
         coordinator=LocalRuntimeSessionCoordinator(SimpleNamespace(petskill_runtime=self.runtime if runtime is None else runtime),None)
         return coordinator.resolve_persistent_attack_wait_round(context,
-            commands=self.commands,initiative_random_subtracts={"target":0,"enemy":0},
+            commands=self.commands,
+            initiative_random_subtracts={
+                p.participant_id:0 for p in self.actors.values()
+            },
             profiles={
                 p.participant_id:BattleCombatProfile(100,0,0,0,0,0)
                 for p in self.actors.values()
             },
             attack_rolls={},defense_profile="newpower_70pct",
+            tie_break_order=tuple(
+                p.participant_id for p in self.actors.values()
+            ),
             battlemodel_actions_by_participant_id={"enemy":action})
 
     def context(self):
@@ -409,6 +415,9 @@ class OrdinaryBattleModelTests(unittest.TestCase):
                 )
             },
             guardian_registrations_by_defender_slot=self.guardians,
+            tie_break_order=tuple(
+                p.participant_id for p in self.actors.values()
+            ),
             battlemodel_actions_by_participant_id={"enemy":action},
         )
         loop=self.loop(result.round)
