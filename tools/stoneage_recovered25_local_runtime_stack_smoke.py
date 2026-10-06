@@ -755,6 +755,8 @@ def run(
         encounter_witness,
         spawn_witness,
         attack_magic_ai_witness,
+        battlemodel_goldens,
+        battlemodel_rejections,
     )
 
 
@@ -780,6 +782,8 @@ def main() -> None:
         encounter_witness,
         spawn_witness,
         attack_magic_ai_witness,
+        battlemodel_goldens,
+        battlemodel_rejections,
     ) = run(
         client_dat_dir=a.client_dat_dir,
         npc_dir=a.npc_dir,

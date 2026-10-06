@@ -3,6 +3,7 @@ from dataclasses import replace
 import json
 from pathlib import Path
 import tempfile
+import sys
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
@@ -11,6 +12,7 @@ from tests.test_stoneage_battlemodel_admission import fixture, spawned
 from tools import stoneage_enemy_ai_battlemodel_bridge as bridge
 from tools import stoneage_recovered25_battlemodel_runtime_probe as probe
 from tools.stoneage_tw10_25_bridge_model import PetTemplateBridge
+from tools import stoneage_recovered25_local_runtime_stack_smoke as stack_smoke
 
 
 class RecoveredBattleModelGoldenTests(unittest.TestCase):
@@ -57,6 +59,26 @@ class RecoveredBattleModelGoldenTests(unittest.TestCase):
                  patch.object(probe, "_active_enemybase_path", return_value=root / "fixture.txt"), \
                  self.assertRaisesRegex(ValueError, "complete recovered BattleModel file identity drift"):
                 probe.verify_files(root, None)
+
+    def test_cli_reports_counts_returned_by_stack_run(self):
+        class ReachedExistingReport(Exception):
+            pass
+        output = []
+        def record(*values):
+            text = " ".join(str(v) for v in values)
+            if text == "SEMANTIC_SOURCE_VERSION|recovered25":
+                raise ReachedExistingReport
+            output.append(text)
+        args = ["stack-smoke"]
+        for flag in ("--client-dat-dir", "--npc-dir", "--setup", "--server-data-dir",
+                     "--server-map-root", "--mapset", "--client-adrn"):
+            args.extend((flag, "/controlled/path"))
+        with patch.object(sys, "argv", args), \
+             patch.object(stack_smoke, "run", return_value=(None,) * 11 + (60, 12)), \
+             patch("builtins.print", side_effect=record), self.assertRaises(ReachedExistingReport):
+            stack_smoke.main()
+        self.assertIn("BATTLEMODEL_STACK_GOLDEN|cases=60|templates=2|charsets=2|source_profiles=3", output)
+        self.assertIn("BATTLEMODEL_STACK_IDENTITY_PRESSURE|rejections=12", output)
 
 
 if __name__ == "__main__":
