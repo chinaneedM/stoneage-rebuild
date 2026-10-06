@@ -967,3 +967,17 @@ adapter and ten-field/overlay clear are next.
 - OPEN: full command-native chronology, modern lethal638, actual Guardian-to-
   profit composition, sparse rosters/party recipients and specific golden/
   region/pressure gates. Exact remote acceptance pending.
+
+
+### 2026-10-06 — Isolated immutable PvE scan adapter accepted
+
+- MODEL/FACT within declared domain: input737da287/tree41fc4788, required
+  run37422202059/job112133821223 SUCCESS,19656 model/native comparisons
+  and560 related tests. Source pins/function hashes retain the prior original
+  composition provenance. No new original command execution or version claim.
+- DESIGN: reject EXP intermediate overflow; modern status projection emits
+  attribute-recalculation requirements instead of fabricating work powers.
+  Active deep poison/unmodeled statuses remain outside the admitted schema.
+- OPEN: existing drivers still need explicit scan/recalculation integration,
+  full native command chronology and Guardian-to-profit witnesses. Modern
+  lethal638, original build/version and specific golden/region/pressure OPEN.

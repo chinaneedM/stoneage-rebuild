@@ -7483,3 +7483,32 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   remain unchanged. Pet/party profit, sparse roster mapping, full build/profile,
   equipped/wider features, automatic AI and specific638 golden/region/pressure
   remain OPEN; no positive slot or overall percentage promotion.
+
+
+## Phase 1 immutable PvE profit/exit adapter accepted — 2026-10-06
+
+- Exact input737da28735dc955e3d6a4e5ed2e27649096799fd,
+  tree41fc47883d68b877ee9405df454c50496f0a9ade; required settlement
+  run37422202059/job112133821223 SUCCESS. Decoded logs confirm19656
+  model/native comparisons,6552 per profile,560 regressions and prior gates.
+  Artifact11393920866,6141 bytes. Receipt:
+  STONEAGE-PVE-PROFIT-EXIT-SCAN-MODEL-ACCEPTANCE-R1.json.
+- CLOSED_BOUNDED_ISOLATED_MODEL_NATIVE_MATCH supersedes local pending status.
+  Independent whole-scan adapter and modern clear projection accepted only as
+  isolated helpers. Requested loyalty/charm deltas do not certify clamps;
+  recalculation IDs do not certify recalculated attributes. Native snapshots
+  permit all ten fields, while modern projection explicitly rejects deep poison.
+- EXP intermediate signed-int product overflow is rejected even if a final
+  quotient could fit.25 new tests+535 prior tests PASS; native report adds model
+  comparisons against existing cases, not new original command executions.
+- Main nonforce synchronization/exact replay pending. No existing ordinary,
+  continuation, state or coordinator driver imports the new adapter; current
+  nonlethal638 guards remain. No positive-slot/golden/region/pressure promotion.
+- **Highest-priority unfinished task:** verify accepted main replay, then bind
+  actual command-boundary snapshots and explicit status/attribute recalculation
+  to the new scan. Replace event-derived death accounting with processed-death
+  results. Execute original full dispatch/hit-to-profit chronology with actual
+  Guardian and multi-victim command-tail states before admitting lethal638.
+  Pet/party recipients, sparse source rosters, items/ride/wider features,
+  original build/version, automatic AI and specific638 golden/region/
+  hash-verified pressure remain OPEN.

@@ -1,6 +1,6 @@
 # Immutable bounded PvE profit/exit scan model R1
 
-Status: LOCAL_VALIDATED; exact remote input acceptance pending.
+Status: CLOSED_BOUNDED_ISOLATED_MODEL_NATIVE_MATCH; command/recalculation integration OPEN.
 
 ## Scope and evidence
 
@@ -82,3 +82,16 @@ Pet/party profit recipients, sparse roster mappings, mail, riding/items,
 original build/version membership and penalty helper clamps remain OPEN.
 BattleModel-specific golden/full-region/hash-verified pressure and automatic
 AI admission remain OPEN. No positive slot or overall percentage is promoted.
+
+
+## Exact remote acceptance — 2026-10-06
+
+Input737da28735dc955e3d6a4e5ed2e27649096799fd,
+tree41fc47883d68b877ee9405df454c50496f0a9ade. Required settlement
+run37422202059/job112133821223 SUCCESS. Decoded logs reproduce19656
+model/native comparisons,6552 per profile,560 regressions and prior native
+gates. Artifact11393920866,6141 bytes. Receipt:
+research/recovered/STONEAGE-PVE-PROFIT-EXIT-SCAN-MODEL-ACCEPTANCE-R1.json.
+The preceding local-only acceptance status is superseded within this isolated
+model domain. Main nonforce synchronization/replay is pending. No existing
+command driver or recalculation seam was changed; modern lethal638 stays OPEN.

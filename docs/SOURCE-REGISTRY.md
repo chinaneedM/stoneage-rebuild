@@ -3821,3 +3821,16 @@ remain explicitly OPEN. No original source/payload committed.
   with --gavin-dir/--iris-dir/--bismarck-dir clean source checkouts.
   Original dispatcher call-site anchors remain static; full native command
   integration, original build/version and modern lethal638 stay OPEN.
+
+
+### Isolated immutable PvE scan model exact remote certificate — 2026-10-06
+
+- Input737da28735dc955e3d6a4e5ed2e27649096799fd,
+  tree41fc47883d68b877ee9405df454c50496f0a9ade.
+  Required run37422202059/job112133821223 SUCCESS. Artifact11393920866.
+- Receipt research/recovered/STONEAGE-PVE-PROFIT-EXIT-SCAN-MODEL-ACCEPTANCE-R1.json
+  records exact source/function/header and implementation hashes,19656 model/
+  native comparisons and560 regressions. Prior native gates also reproduced.
+- CLOSED_BOUNDED_ISOLATED_MODEL_NATIVE_MATCH only. Full command-native
+  bridge, attribute-recalculation integration, actual Guardian attack-to-profit
+  and modern lethal638 remain OPEN. No raw original code/assets committed.

@@ -127,3 +127,23 @@ Run37420393572/job112128219849 SUCCESS on c1c3209e/tree777d45a0,
 local-pending snapshots are superseded in the declared feature-off PvE domain.
 Full native command-driver bridge, modern whole-scan/overlay integration and
 lethal638 are still OPEN under the next adapter review above.
+
+
+## 2026-10-06 isolated immutable scan adapter accepted
+
+STONEAGE-PVE-PROFIT-EXIT-SCAN-MODEL-R1 now has an independently implemented
+immutable whole scan and an explicit modern status-clear projection. Exact
+input737da287/tree41fc4788, run37422202059/job112133821223 SUCCESS,
+19656 model/native comparisons and560 regressions. No new native vectors.
+The next adapter review above is partially closed for this isolated model.
+
+The projection invalidates Weaken cached powers and returns required
+recalculation IDs; it does not calculate replacement powers or change the
+existing command/state drivers. Active deep poison and unmodeled statuses
+are rejected. Bind actual snapshots, perform separately certified
+recalculation and consume only processed-death accounting at real profit
+boundaries. Then execute full original command-native dispatch/hit-to-tail
+chronology, actual Guardian victims and multi-victim batches before lethal638
+admission. Pet/party profit and sparse source roster mapping need additional
+vectors. Specific golden/region/pressure, original build/version and AI remain
+OPEN. Main synchronization/replay is recorded separately in the receipt.
