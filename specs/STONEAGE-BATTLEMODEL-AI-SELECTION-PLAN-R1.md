@@ -40,3 +40,12 @@ pressure classifier while this normal-AI composition remains absent.
 Original active build membership, historical packet/presentation, wider
 recipients, ride/items and unsupported scheduler compositions remain OPEN.
 This plan does not select an engine or introduce MMO services.
+
+
+## 2026-10-06 implementation checkpoint
+
+The missing carrier/selected dispatch is implemented in the normal common batch
+and a bounded opt-in coordinator method. Remote exact-head acceptance is PENDING.
+See `STONEAGE-BATTLEMODEL-AI-SELECTION-R1.md`. The former missing-carrier statement
+above is retained as the dated starting boundary; it no longer describes code.
+Actual active variant census/execution is separate from control AI evidence.

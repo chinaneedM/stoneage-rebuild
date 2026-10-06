@@ -71,6 +71,38 @@ class BattleModelRoundAction:
         object.__setattr__(self, "paralysis_resistance_by_slot", MappingProxyType(resistances))
 
 
+@dataclass(frozen=True)
+class BattleModelSelectedRoundInputs:
+    """Explicit execution inputs; the coordinator supplies the selected submission.
+
+    Keeping the submission out of this carrier prevents caller-supplied slot,
+    target or work from replacing the normal AI decision.
+    """
+    profile: str
+    source_profile: str
+    scope: str
+    physical_context: BattleModelPhysicalContext
+    itemcrush_context: BattleModelItemCrushContext
+    opposing_slot_order: tuple[int, ...]
+    paralysis_resistance_by_slot: Mapping[int, int]
+    draws: tuple[BattleModelDraw, ...]
+
+    def __post_init__(self):
+        from tools.stoneage_battlemodel_reference_model import CHARSETS, BASE_STATUS_LITERALS_BY_SOURCE
+        if self.profile not in CHARSETS or self.source_profile not in BASE_STATUS_LITERALS_BY_SOURCE:
+            raise ValueError("BattleModel selected inputs require explicit charset/source profiles")
+        object.__setattr__(self, "paralysis_resistance_by_slot",
+                           MappingProxyType(dict(self.paralysis_resistance_by_slot)))
+
+    def bind(self, submission: EnemyAiBattleModelSubmission) -> BattleModelRoundAction:
+        if submission.profile != self.profile or submission.source_profile != self.source_profile:
+            raise ValueError("BattleModel selected input/submission profile drift")
+        return BattleModelRoundAction(
+            self.scope, submission, self.physical_context, self.itemcrush_context,
+            self.opposing_slot_order, self.paralysis_resistance_by_slot, self.draws,
+        )
+
+
 def execute_current_battlemodel_round_action(
     action: BattleModelRoundAction, *, actor_slot: int, by_slot, hp_by_slot,
     status_runtime, damage_react_state, ultimate_overkill, guarding_slots,

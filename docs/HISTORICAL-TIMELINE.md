@@ -1180,3 +1180,12 @@ adapter and ten-field/overlay clear are next.
   This is LATER_RECOVERED conditional runtime evidence, not Taiwan-v1 membership,
   original active-build or historical encounter/packet proof.
   Receipt: `research/recovered/STONEAGE-BATTLEMODEL-RECOVERED-RUNTIME-GOLDEN-ACCEPTANCE-R1.json`.
+
+
+- **2026-10-06 — DESIGN / conditional reconstruction (remote acceptance PENDING):**
+  normal enemy-AI selected ID638 now has an explicit typed batch/round seam.
+  Slot/target/current work are derived by the coordinator;60 independently
+  controlled AI cases accompany the prior60 exact-template runtime cases.
+  A separate hash-verified active variant census will distinguish real normal
+  AI options from controls. This does not prove natural encounter reachability
+  or original active-build/Taiwan-v1 membership;0 placements are promoted.

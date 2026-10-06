@@ -15,7 +15,7 @@ from types import MappingProxyType
 
 from tools.stoneage_enemy_spawn_model import EnemyBirthRolls
 from tools.stoneage_recovered25_battlemodel_runtime_probe import (
-    verify_files as verify_battlemodel_files, run_runtime_golden, run_identity_pressure,
+    verify_files as verify_battlemodel_files, verify_ai_files, run_recovered_ai_goldens, run_runtime_golden, run_identity_pressure,
 )
 from tools.stoneage_attack_magic_action_model import (
     AttackMagicTargetRolls,
@@ -565,7 +565,9 @@ def run(
     if len(stack.petskill_runtime.skills) != 147:
         raise ValueError("unexpected recovered25 pet-skill count")
     verify_battlemodel_files(server_data_dir, setup)
+    verify_ai_files(server_data_dir, setup)
     battlemodel_goldens = run_runtime_golden(stack, position=seeds[1].position)
+    run_recovered_ai_goldens(stack, position=seeds[1].position)
     battlemodel_rejections = run_identity_pressure(stack)
     if stack.attack_magic_runtime is None:
         raise ValueError("runtime stack lacks AttackMagic runtime index")
@@ -795,6 +797,7 @@ def main() -> None:
     )
     print("StoneAge recovered25 concrete local runtime stack — R1")
     print(f"BATTLEMODEL_STACK_GOLDEN|cases={battlemodel_goldens}|templates=2|charsets=2|source_profiles=3")
+    print(f"BATTLEMODEL_STACK_SELECTED_AI_CONTROL|cases={battlemodel_goldens}|controlled_tactics_option=1")
     print(f"BATTLEMODEL_STACK_IDENTITY_PRESSURE|rejections={battlemodel_rejections}")
     print("SEMANTIC_SOURCE_VERSION|recovered25")
     print("EVIDENCE_ROLE|LATER_RECOVERED")

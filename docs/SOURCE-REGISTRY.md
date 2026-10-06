@@ -4117,3 +4117,17 @@ remain explicitly OPEN. No original source/payload committed.
   both charset profiles retained. Normal enemy-AI selected dispatch, original
   active build and broader runtime remain OPEN. Promotion decision HOLD,0 slots.
 - Full receipt: `research/recovered/STONEAGE-BATTLEMODEL-RECOVERED-RUNTIME-GOLDEN-ACCEPTANCE-R1.json`.
+
+
+## 2026-10-06 — ID638 selected normal-AI composition gate (PENDING)
+
+- Specification: `specs/STONEAGE-BATTLEMODEL-AI-SELECTION-R1.md`.
+- Runtime control gate extends `tools/stoneage_recovered25_battlemodel_runtime_probe.py`
+  and the concrete stack; original OPTION/TACTICSOPTION bytes stay transient.
+- Active input identities inherited from `STONEAGE-25-ENCOUNT-CHAIN-R1.txt`:
+  enemy.txt SHA256 cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6;
+  group1.txt SHA2564a02f2a3fa3d2dcf5589d8a2a560313c35d5a0a7e5e0589cc8df5f7df159ea8f;
+  encount.txt SHA25670bbd997d98508a0587df183b5bdd48222ff42db91bf21bea632e0ed6f2fea87.
+- Normal control OPTION is independently authored and explicitly labelled.
+  Active recovered variant admission/execution and natural encounter provenance
+  will be recorded from exact-head CI, not inferred from controls.

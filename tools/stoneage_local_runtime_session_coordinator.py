@@ -96,8 +96,11 @@ from tools.stoneage_enemy_ai_combined_bridge import (
     EnemyAiCombinedSubmission,
     resolve_enemy_ai_combined_submission,
 )
-from tools.stoneage_battlemodel_round_action import BattleModelRoundAction
-from tools.stoneage_enemy_ai_battlemodel_bridge import resolve_enemy_ai_battlemodel_submission
+from tools.stoneage_battlemodel_round_action import BattleModelRoundAction, BattleModelSelectedRoundInputs
+from tools.stoneage_enemy_ai_battlemodel_bridge import (
+    CALLBACK_NAME as BATTLEMODEL_CALLBACK, EnemyAiBattleModelSubmission,
+    resolve_enemy_ai_battlemodel_submission,
+)
 from tools.stoneage_combined_model import CALLBACK_NAME as COMBINED_CALLBACK
 from tools.stoneage_enemy_ai_vary_bridge import (
     EnemyAiVarySubmission,
@@ -543,6 +546,7 @@ class EnemyAiCommonCommandBatch:
     mdfyattack_submissions: Mapping[str,EnemyAiMdfyAttackSubmission] = field(default_factory=dict)
     attack_crazed_submissions: Mapping[str,EnemyAiAttackCrazedSubmission] = field(default_factory=dict)
     wildviolent_submissions: Mapping[str,EnemyAiWildViolentSubmission] = field(default_factory=dict)
+    battlemodel_submissions: Mapping[str, EnemyAiBattleModelSubmission] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         object.__setattr__(
@@ -565,6 +569,20 @@ class EnemyAiCommonCommandBatch:
                 "enemy AI setup effects lack matching command actors: "
                 + ",".join(unknown)
             )
+        battlemodel = dict(self.battlemodel_submissions)
+        carriers = {pid for pid, command in self.commands.items()
+                    if command.command1 == BATTLE_COM_NONE}
+        if set(battlemodel) - carriers:
+            raise ValueError("enemy AI BattleModel submissions require matching NONE carriers")
+        for pid, submission in battlemodel.items():
+            if not isinstance(submission, EnemyAiBattleModelSubmission):
+                raise TypeError("typed enemy AI BattleModel submission required")
+            if submission.participant_id != pid or self.commands[pid].command2 != submission.source_target_carrier:
+                raise ValueError("enemy AI BattleModel participant/target carrier drift")
+            if self.setup_effects.get(pid) != BattleCommandSetupEffects(
+                    attack_power=submission.setup.powers[0], defense_power=submission.setup.powers[1]):
+                raise ValueError("enemy AI BattleModel setup work drift")
+        object.__setattr__(self, "battlemodel_submissions", MappingProxyType(battlemodel))
         contexts={
             str(key):value for key,value in self.abduct_contexts.items()
         }
@@ -2132,6 +2150,8 @@ class LocalRuntimeSessionCoordinator:
         allow_mdfyattack_skill: bool = False,
         allow_attack_crazed_skill: bool = False,
         allow_wildviolent_skill: bool = False,
+        allow_battlemodel_skill: bool = False,
+        battlemodel_profiles_by_enemy_id: Mapping[str, tuple[str, str]] | None = None,
     ) -> EnemyAiCommonCommandBatch:
         """Derive the evidence-closed common enemy-AI command subset.
 
@@ -2286,6 +2306,8 @@ class LocalRuntimeSessionCoordinator:
         lighttakeed_submissions={}
         combined_submissions={}
         vary_submissions={}
+        battlemodel_submissions={}
+        battlemodel_profiles=dict(battlemodel_profiles_by_enemy_id or {})
         two_battletimid_profiles={
             str(key):str(value)
             for key,value in (
@@ -2394,6 +2416,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_mdfyattack_skill)
                 or bool(allow_attack_crazed_skill)
                 or bool(allow_wildviolent_skill)
+                or bool(allow_battlemodel_skill)
             ):
                 petskill_runtime = getattr(self.stack, "petskill_runtime", None)
                 if petskill_runtime is None:
@@ -2404,6 +2427,24 @@ class LocalRuntimeSessionCoordinator:
                 skill_ids=tuple(int(x) for x in spawned.template.skill_slot_ids)
                 selected_skill_id=skill_ids[int(decision.skill_slot)]
                 selected_skill=petskill_runtime.skills.get(selected_skill_id)
+                if (selected_skill is not None
+                        and selected_skill.function_name == BATTLEMODEL_CALLBACK
+                        and allow_battlemodel_skill):
+                    if enemy_id not in battlemodel_profiles:
+                        raise ValueError("selected BattleModel actor requires charset/source profiles")
+                    declared=battlemodel_profiles[enemy_id]
+                    if type(declared) is not tuple or len(declared) != 2:
+                        raise ValueError("BattleModel requires a charset/source profile pair")
+                    current=participant_snapshot(state, enemy_id)
+                    submission=resolve_enemy_ai_battlemodel_submission(
+                        spawned, skill_slot=int(decision.skill_slot), target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime, profile=declared[0], source_profile=declared[1],
+                        powers_before=(current.attack, current.defense, current.quick))
+                    commands[enemy_id]=BattleCommand(BATTLE_COM_NONE, command2=submission.source_target_carrier)
+                    setup_effects[enemy_id]=BattleCommandSetupEffects(
+                        attack_power=submission.setup.powers[0], defense_power=submission.setup.powers[1])
+                    battlemodel_submissions[enemy_id]=submission
+                    continue
                 if (
                     selected_skill is not None
                     and selected_skill.function_name == "PETSKILL_Modifyattack"
@@ -3146,6 +3187,8 @@ class LocalRuntimeSessionCoordinator:
         unused_two_battletimid_profiles=sorted(
             set(two_battletimid_profiles)-set(two_battletimid_submissions)
         )
+        if set(battlemodel_profiles) != set(battlemodel_submissions):
+            raise ValueError("BattleModel profiles supplied for non-selected actors")
         if unused_two_battletimid_profiles:
             raise ValueError(
                 "2BattleTimid profile supplied for non-selected actors: "
@@ -3181,6 +3224,7 @@ class LocalRuntimeSessionCoordinator:
         return EnemyAiCommonCommandBatch(
             commands=commands,
             setup_effects=setup_effects,
+            battlemodel_submissions=battlemodel_submissions,
             abduct_contexts=abduct_contexts,
             attack_magic_submissions=attack_magic_submissions,
             enemy_rehp_submissions=enemy_rehp_submissions,
@@ -4399,6 +4443,73 @@ class LocalRuntimeSessionCoordinator:
             result,
         )
 
+    def resolve_persistent_battlemodel_round_with_enemy_ai(
+        self,
+        context: LocalRuntimeBattleContext,
+        *,
+        player_side_commands: Mapping[str, BattleCommand],
+        enemy_mode_rolls: Mapping[str, int],
+        enemy_target_rolls: Mapping[str, int] | None,
+        battlemodel_inputs_by_enemy_id: Mapping[str, BattleModelSelectedRoundInputs],
+        initiative_random_subtracts: Mapping[str, int],
+        profiles: Mapping[str, BattleCombatProfile],
+        attack_rolls: Mapping[str, OrdinaryAttackRolls],
+        defense_profile: str,
+        no_risk: bool = False,
+        field_attr: str = "none",
+        field_power: int = 0,
+        tie_break_order: Sequence[str] | None = None,
+        base_status_rolls_by_participant_id: Mapping[str, BaseStatusTurnRolls] | None = None,
+    ) -> tuple[LocalRuntimeBattleContext, PersistentRoundResult]:
+        """Normal AI selection -> current ID638 admission -> bounded typed round.
+
+        Other selected callbacks stay closed in this opt-in entry point. Slot,
+        scheduling target and work powers are derived here, never supplied by
+        the caller. The accepted round driver owns suppression/RNG chronology,
+        death scopes, whole profit scans and immutable result commitment.
+        """
+        state = context.persistent_battle_state
+        if state is None:
+            raise ValueError("battle context has no persistent battle state")
+        inputs = dict(battlemodel_inputs_by_enemy_id)
+        if any(not isinstance(value, BattleModelSelectedRoundInputs) for value in inputs.values()):
+            raise TypeError("typed BattleModel selected round inputs required")
+        player_ids = {state.session.player.participant_id,
+                      *(p.participant_id for p in state.session.allied_pets)}
+        if set(player_side_commands) - player_ids:
+            raise ValueError("BattleModel AI caller commands must belong to player side")
+        batch = self._build_persistent_enemy_common_batch(
+            context, mode_rolls_by_enemy_id=enemy_mode_rolls,
+            target_rolls_by_enemy_id=enemy_target_rolls,
+            allow_battlemodel_skill=True,
+            battlemodel_profiles_by_enemy_id={pid: (value.profile, value.source_profile)
+                                             for pid, value in inputs.items()},
+        )
+        if set(inputs) != set(batch.battlemodel_submissions):
+            raise ValueError("BattleModel execution inputs must cover exactly selected actors")
+        commands = {**player_side_commands, **batch.commands}
+        ordinary_attack_ids = {pid for pid, command in commands.items()
+                               if command.command1 == BATTLE_COM_ATTACK}
+        if set(attack_rolls) - ordinary_attack_ids:
+            raise ValueError("ordinary attack RNG supplied for non-ATTACK actors")
+        # The shared AI selector ignores target RNG for GUARD and deterministic
+        # target selectors. This opt-in seam refuses those unused inputs.
+        from tools.stoneage_enemy_ai_model import parse_normal_enemy_ai_options, SELECT_RANDOM
+        spawned = {s.participant.participant_id: s for s in context.spawned_enemies}
+        for pid in (enemy_target_rolls or {}):
+            if (batch.commands[pid].command1 not in {BATTLE_COM_ATTACK, BATTLE_COM_NONE}
+                    or parse_normal_enemy_ai_options(spawned[pid].variant.tactics_option).target_selection != SELECT_RANDOM):
+                raise ValueError("unused enemy AI target RNG supplied")
+        actions = {pid: inputs[pid].bind(submission)
+                   for pid, submission in batch.battlemodel_submissions.items()}
+        return self.resolve_persistent_attack_wait_round(
+            context, commands=commands, initiative_random_subtracts=initiative_random_subtracts,
+            profiles=profiles, attack_rolls=attack_rolls, defense_profile=defense_profile,
+            no_risk=no_risk, field_attr=field_attr, field_power=field_power,
+            tie_break_order=tie_break_order, battlemodel_actions_by_participant_id=actions,
+            base_status_rolls_by_participant_id=base_status_rolls_by_participant_id,
+        )
+
     def resolve_persistent_attack_wait_round(
         self,
         context: LocalRuntimeBattleContext,
@@ -4420,8 +4531,9 @@ class LocalRuntimeSessionCoordinator:
         Typed BattleModel is explicitly supplied and re-admitted against current
         spawned/template/runtime identity. An explicit lethal-profit scope may
         commit normal ID638 death through the canonical command-tail whole scan;
-        automatic AI, other callbacks, equipped features and ultimate/Exit
-        remain outside.
+        a separate explicit scope admits newly lethal ultimate/Exit. The normal
+        AI entry point above derives its submissions before calling this seam.
+        Other callbacks and equipped features remain outside.
         """
 
         state = context.persistent_battle_state

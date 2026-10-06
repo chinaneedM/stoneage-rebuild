@@ -8050,3 +8050,31 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   coordinator, BattleModel golden, concrete region and whole verified pressure,
   then evaluate the two placement promotions. Original active build, broader
   recipients, ride/items and scheduler/status/presentation history remain OPEN.
+
+
+## Phase 1 ID638 selected normal-AI composition — 2026-10-06 (PENDING remote gates)
+
+- Implemented explicit opt-in `resolve_persistent_battlemodel_round_with_enemy_ai`.
+  The existing common AI batch now carries typed BattleModel submissions.
+  Runtime index2/report slot3, selected scheduling target and current work powers
+  are derived from normal AI/current state, then re-admitted by the accepted
+  coordinator. Execution inputs cannot replace the selected submission.
+- Both exact templates retain60 explicit runtime goldens and gain60 normal-AI
+  control companions (two charsets, three source profiles, five scenarios).
+  Whole persistent results agree with independently supplied typed actions using
+  the selected scheduling carrier, including status clocks/death/ultimate Exit.
+- Missing/extra/unselected profiles, wrong actor RNG, unused target draws,
+  suppressed hit RNG, drifted OPTION/template identities, player-side command
+  overrides, undeclared death scopes and equipment features fail closed.
+  Existing ordinary NONE callbacks remain supported; batch field order stays
+  backward compatible.
+- Active enemy/group/encount files gain exact whole-file hash checks. A separate
+  census and execution gate uses actual active normal-AI variants where eligible;
+  it never substitutes a control TACTICSOPTION for an absent recovered variant.
+  Results and natural encounter reachability remain PENDING until remote logs.
+- Pressure remains2486=2461 closed+22 OPEN+3 historical UB;0 slots promoted.
+- **Highest-priority unfinished task:** inspect all four exact implementation-head
+  Actions, actual variant census/goldens and concrete-stack results; correct any
+  failures, then evaluate remaining natural encounter/group/spawn and promotion
+  gates. Do not promote on controlled AI options alone. Original active build,
+  broader recipients, ride/items and historical presentation remain OPEN.
