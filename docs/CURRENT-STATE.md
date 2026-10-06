@@ -7044,3 +7044,23 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   ultimate exit, golden/full-region/hash-verified pressure before promoting
   the two slots. DD-018 restoration-first and original profile ambiguities
   remain in force.
+
+
+### ItemCrush main synchronization verified — 2026-10-06
+
+- Nonforce synchronization completed. Fresh main and isolated ItemCrush
+  branch bothba7b9915cf8b9c6d8990192f7fec41bec07e8aaf,
+  treebe29f171845cb99da8e1ab711f33be4ed0c7510c. Matching local/remote
+  trees and clean checkout verified; only docs/receipt differ from successful
+  exact implementation7c7de32d.
+- Same-code branch replay37411704244 SUCCESS. Main replay37411707229
+  IN_PROGRESS at this checkpoint; inspect fresh before claiming PASS. Original
+  acceptance37411512720 SUCCESS remains authoritative for the bounded code.
+  This additional checkpoint is docs-only/skip-ci and does not cancel replays.
+- Next priority is prepared-command cancellation and bounded round/state/
+  coordinator integration. Preliminary repository inspection finds ordinary
+  status/Combined paths already write round-local NONE and remove guarding;
+  persistent apply_persistent_base_status_application stores status but does
+  not itself cancel an already prepared action. These existing contracts must
+  be reused/tested, not replaced with permanent cancellation in later rounds.
+  No next-stage code or full638 runtime acceptance is claimed in this record.
