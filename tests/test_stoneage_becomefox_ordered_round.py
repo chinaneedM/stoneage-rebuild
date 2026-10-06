@@ -42,11 +42,12 @@ def profile(dex=100):
     )
 
 
-def rolls(*,dodge=10000,retarget=None):
+def rolls(*,dodge=10000,retarget=None,guard=None):
     return OrdinaryAttackRolls(
         critical_roll_1_10000=10000,
         damage_roll=0,
         dodge_roll_1_10000=dodge,
+        guard_roll_1_100=guard,
         retarget_roll=retarget,
     )
 
@@ -97,7 +98,10 @@ class BecomeFoxOrderedRoundTests(unittest.TestCase):
             prepared,
             slots=slots,
             profiles=profiles,
-            attack_rolls={"caster":rolls(),"pet":rolls()},
+            attack_rolls={
+                "caster":rolls(guard=100 if guardian else None),
+                "pet":rolls(),
+            },
             defense_profile="newpower_70pct",
             becomefox_submissions_by_participant_id={"caster":submission()},
             becomefox_draws_by_participant_id={"caster":draw},
