@@ -19,7 +19,7 @@ def _postattack_window(source: str) -> str:
         if "BATTLE_COM_S_BECOMEFOX" not in before:
             continue
         region_start=max(0,hit.start()-2200)
-        candidates=list(re.finditer(r"\\bif\\s*\\(",source[region_start:hit.start()]))
+        candidates=list(re.finditer(r"\bif\s*\(",source[region_start:hit.start()]))
         start=-1
         for candidate in reversed(candidates):
             absolute=region_start+candidate.start()
