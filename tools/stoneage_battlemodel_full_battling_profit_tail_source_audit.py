@@ -75,9 +75,10 @@ def _missing_defines(code: str, battling: str) -> str:
     existing = set(re.findall(r"^#define\s+(\w+)\b", code, re.M))
     calls = set(re.findall(r"\b([A-Za-z_]\w*)\s*\(", battling))
     tokens = set(re.findall(
-        r"\b(?:CHAR|BATTLE|BENT|BSIDE|ITEM|TARGET|PETSKILL|BCF|AI|CH)_[A-Z][A-Z0-9_]*\b",
+        r"\b(?:CHAR|BATTLE|BENT|BSIDE|ITEM|TARGET|PETSKILL|PET|BCF|AI|CH)_[A-Z][A-Z0-9_]*\b",
         battling,
     ))
+    type_names = {"BATTLE", "BATTLE_ENTRY", "BATTLE_SIDE", "BATTLE_CHARLIST"}
     fixed = {
         "BATTLE_CHARMODE_C_OK": 2801,
         "BATTLE_CHARMODE_RESCUE": 2802,
@@ -115,7 +116,7 @@ def _missing_defines(code: str, battling: str) -> str:
 def _missing_call_stubs(code: str, battling: str) -> str:
     macros = set(re.findall(r"^#define\s+(\w+)\b", code, re.M))
     defined = set(re.findall(
-        r"\b(?:static\s+)?(?:int|void|BOOL|float|char\s*\*)\s+"
+        r"\b(?:static\s+)?(?:(?:int|void|BOOL|float)\s+|char\s*\*\s*)"
         r"([A-Za-z_]\w*)\s*\([^;{}]*\)\s*\{",
         code,
         re.S,
