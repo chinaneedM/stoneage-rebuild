@@ -372,3 +372,16 @@ conditional row declares its bounded scope and reachability not inferred.
 Generic callback classification remains OPEN. Factory-verified complete file/
 loaded-object identity is required to qualify either placement; incomplete
 identity cannot become a callback-wide closure. Current evaluation PENDING.
+
+
+## 2026-10-06 — ID638 capability and reachability remain separate acceptance axes
+
+The exact recovered25 placements (1178,2,638) and (1179,2,638) may be counted as
+**CONDITIONAL_BOUNDED_CAPABILITY** only when the verified whole-file/semantic
+certificate and the named enemy-only explicit-selected empty-equipment R1 scope
+are present. This closes those two static capability placements without asserting
+that the recovered game naturally selects or exposes the command. Global
+BattleModel callback closure is forbidden; natural AI/PET/magic/NPC/script and
+original-build reachability remain independent evidence gates. Accepted pressure
+is 2486=2463 closed capability+20 OPEN+3 historical UB; next OPEN is BecomeFox
+ID625. Receipt: `STONEAGE-BATTLEMODEL-CONDITIONAL-PLACEMENT-ACCEPTANCE-R1.json`.

@@ -1237,3 +1237,16 @@ actual wa index2 weights0, configured magic candidates0 and positive group/area
 references0 remain as audited. PET ILLEGAL guard and original build/NPC/script
 uncertainties persist. Whole-file and complete semantic binding protect scope;
 exact-head pressure promotion evaluation PENDING, predicted +2 capability uses.
+
+
+## 2026-10-06 — Recovered25 ID638 capability classification accepted; no new historical reachability claim
+
+FACT for the hash-verified later recovered25 specimen: the two exact positive
+ID638 placements at templates1178/1179 runtime index2 satisfy the project's
+bounded execution-capability gate, raising complete capability pressure to
+2463 closed /20 OPEN /3 historical UB out of2486. FACT remains that the active
+normal variants have wa index2 weight0 and produce0 actual normal-AI selections
+in the verified gate. DESIGN/analysis classification of those placements as
+conditional capability does **not** establish how an original active executable,
+player/pet command, equipment magic, NPC or script made the skill reachable.
+Those provenance questions remain OPEN and Taiwan-v1 membership is not inferred.

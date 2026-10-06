@@ -1,6 +1,6 @@
 # ID638 exact conditional placement capability R1
 
-Date: 2026-10-06. Status: IMPLEMENTED_LOCAL_PASS / EXACT_HEAD_CI_PENDING.
+Date: 2026-10-06. Status: CLOSED_CONDITIONAL_BOUNDED_ID638_PLACEMENT_CAPABILITY.
 
 ## Accepted criterion and axes
 
@@ -45,12 +45,11 @@ All other callback classifications and historical UB are unchanged.
 
 Total closed capability includes ordinary closed_runtime and conditional
 closed_conditional_runtime; natural entry is not inferred from either total.
-Predicted exact-data change is +2 conditional slots, no other change:
-2486=2463 closed capability+20 OPEN+3 historical UB, unresolved IDs0. This is
-PENDING until exact-data/native/coordinator/golden/full-region/pressure CI PASS.
-The actual normal-AI cases0 remain separate standalone and concrete-stack
-markers. Both paths rebind the certificate to their own loaded population and
-recompute the complete pressure, rather than copying the expected total.
+Accepted exact-data change is +2 conditional slots and no other classification
+change: 2486=2463 closed capability+20 OPEN+3 historical UB, unresolved IDs0.
+Dedicated pressure, exact-data region and concrete-stack paths independently
+recomputed that ledger. The actual normal-AI cases0 remain separate standalone
+and concrete-stack markers; the accepted total does not infer reachability.
 
 ## Validation and remaining boundary
 
@@ -60,12 +59,26 @@ parser-detached objects, all callback rows, unreferenced siblings, wrong IDs/
 callbacks/metadata/OPTIONs, template graphics/stats/MODAI, moved/extra/short
 slots, extra/missing positive templates, next OPEN selection and no mutation.
 The local five-workflow test union878 PASS before remote execution. Exact-head
-CI must re-certify2592 default-header guard controls +864 counterfactual controls,
-prior native physical/status/ItemCrush/ultimate/profit/Exit scans,60 explicit
-selected goldens +60 selected-AI controls +12 runtime identity rejects per
-suite,826 floors and all active pressure slots. A dedicated pressure gate and
-full-region gate independently produce the same derived ranking report.
+CI then re-certified2592 default-header guard controls +864 counterfactual
+controls, prior native physical/status/ItemCrush/ultimate/profit/Exit scans,
+60 explicit selected goldens +60 selected-AI controls +12 runtime identity
+rejects per suite,826 floors and all active pressure slots. Dedicated pressure
+and full-region gates independently produced the same 2463/20/3 ranking.
 
 Original active build/Taiwan-v1 membership, opaque scripts/NPCs, capture/
 ownership/natural encounter, ride/items, wider recipients and original
 scheduler/presentation remain OPEN. Modern engine/MMO decisions are untouched.
+
+
+## Exact-head acceptance
+
+Accepted implementation: `74e5e937884865a561cd55dc0164bd4f029dad12`, tree
+`ae50e33edda6b3e0a8135d60144f21a637956bfc`. Remote SUCCESS gates:
+settlement37463130823/112267407318 (702 tests), coordinator37463130720/
+112267405941 (272), golden37463130586/112267405485 (43), region37463130861/
+112267406678 (183 plus826 floors), pressure37463130784/112267406905 (23).
+The two accepted placements are capability-only promotions; command-entry
+reachability remains OPEN_SEPARATE_AXIS_NOT_INFERRED and actual normal-AI cases
+remain0. Derived writebacks f4eb651cbe6770c53abf361278996ab0924f7220 and
+d5fe135f738cbb2ac0bc76730b8e3f9a5758d459 contain report changes only. Next
+mechanical OPEN is PETSKILL_BecomeFox ID625,2 uses/2 templates.

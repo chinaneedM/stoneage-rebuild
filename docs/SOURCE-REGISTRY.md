@@ -4197,3 +4197,31 @@ Dedicated pressure and full-region Actions independently recompute all2486
 positive slots and preserve actual normal-AI selection0 as a separate axis.
 Local878 unique tests PASS; exact-head acceptance pending. Specification:
 `specs/STONEAGE-BATTLEMODEL-CONDITIONAL-PLACEMENT-CAPABILITY-R1.md`.
+
+
+### SRC-BATTLEMODEL-ID638-CONDITIONAL-PLACEMENT-CAPABILITY-R1 — remote exact-head acceptance 2026-10-06
+
+- Exact implementation input `74e5e937884865a561cd55dc0164bd4f029dad12`, tree
+  `ae50e33edda6b3e0a8135d60144f21a637956bfc`.
+- Required Actions SUCCESS: settlement37463130823/112267407318 (702 tests),
+  coordinator37463130720/112267405941 (272), golden37463130586/112267405485
+  (43), recovered25 region37463130861/112267406678 (183 plus826 floors), and
+  dedicated pressure37463130784/112267406905 (23).
+- Independent exact-data and concrete-stack pressure both report
+  **2486=2463 closed capability+20 OPEN+3 historical UB**, unresolved IDs0,
+  with exactly two `CONDITIONAL_BOUNDED_CAPABILITY` placements:
+  (1178,2,638) and (1179,2,638). Next OPEN is BecomeFox ID625 (2 uses/2 templates).
+- Actual recovered normal-AI BattleModel cases remain0; wa index2 weights remain0.
+  This source therefore supports bounded static/runtime capability only, not
+  natural command-entry reachability or original-build/Taiwan-v1 provenance.
+- Native/default-header entry guards2592 + counterfactual864, existing native
+  profit/exit19656 and immutable scan19656,60 explicit goldens,60 selected-AI
+  controls and12 current identity rejects remain accepted.
+- Artifacts:11413301367
+  (`sha256:ec987508b387b7d2f3d9389c72fab5f5fea7194ec8e6498be0bd17c70eec1b93`)
+  and11413686735
+  (`sha256:c84759419eee99997dceafbe5fdbd15c3f93e6b59315e749540cbedfdb0ca075`).
+- Derived writebacks f4eb651cbe6770c53abf361278996ab0924f7220 and
+  d5fe135f738cbb2ac0bc76730b8e3f9a5758d459 touch only aggregate reports.
+- Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-CONDITIONAL-PLACEMENT-ACCEPTANCE-R1.json`.

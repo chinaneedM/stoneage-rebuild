@@ -1,0 +1,126 @@
+{
+  "schema": "stoneage.battlemodel-conditional-placement-acceptance.r1",
+  "status": "CLOSED_CONDITIONAL_BOUNDED_ID638_PLACEMENT_CAPABILITY",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "accepted_at_utc": "2026-10-06T12:30:00Z",
+  "implementation": {
+    "sha": "74e5e937884865a561cd55dc0164bd4f029dad12",
+    "tree": "ae50e33edda6b3e0a8135d60144f21a637956bfc"
+  },
+  "boundary": {
+    "capability_kind": "CONDITIONAL_BOUNDED_CAPABILITY",
+    "status": "closed_conditional_runtime",
+    "scope": "ID638_enemy_explicit_selected_empty_equipment_bounded_runtime_R1",
+    "command_entry_reachability": "OPEN_SEPARATE_AXIS_NOT_INFERRED",
+    "actual_normal_ai_goldens": 0,
+    "natural_ai_weight_index2": 0,
+    "original_active_build_and_taiwan_v1": "OPEN",
+    "opaque_npc_script_equipment_magic_capture_ownership": "OPEN"
+  },
+  "placements": [
+    {
+      "tempno": 1178,
+      "runtime_slot": 2,
+      "report_slot": 3,
+      "skill_id": 638
+    },
+    {
+      "tempno": 1179,
+      "runtime_slot": 2,
+      "report_slot": 3,
+      "skill_id": 638
+    }
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2463,
+    "open": 20,
+    "historical_ub": 3,
+    "unresolved_skill_ids": [],
+    "conditional_capability_slots": 2
+  },
+  "witnesses": {
+    "explicit_selected_goldens": 60,
+    "selected_normal_ai_controls": 60,
+    "actual_normal_ai_goldens": 0,
+    "current_identity_rejections_per_suite": 12,
+    "materializable_floors": 826,
+    "native_default_header_entry_cases": 2592,
+    "native_counterfactual_cases": 864,
+    "native_profit_exit_cases": 19656,
+    "immutable_scan_model_native_comparisons": 19656
+  },
+  "runs": [
+    {
+      "id": 37463130823,
+      "job_id": 112267407318,
+      "name": "Validate StoneAge BattleModel base DamageSub settlement",
+      "conclusion": "success",
+      "tests": 702
+    },
+    {
+      "id": 37463130720,
+      "job_id": 112267405941,
+      "name": "Validate StoneAge local runtime session coordinator",
+      "conclusion": "success",
+      "tests": 272
+    },
+    {
+      "id": 37463130586,
+      "job_id": 112267405485,
+      "name": "Validate StoneAge runtime golden contract",
+      "conclusion": "success",
+      "tests": 43
+    },
+    {
+      "id": 37463130861,
+      "job_id": 112267406678,
+      "name": "Validate StoneAge recovered25 region payload source",
+      "conclusion": "success",
+      "tests": 183
+    },
+    {
+      "id": 37463130784,
+      "job_id": 112267406905,
+      "name": "Rank recovered StoneAge pet-skill callback pressure",
+      "conclusion": "success",
+      "tests": 23
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11413301367,
+      "name": "battlemodel-settlement",
+      "digest": "sha256:ec987508b387b7d2f3d9389c72fab5f5fea7194ec8e6498be0bd17c70eec1b93"
+    },
+    {
+      "id": 11413686735,
+      "name": "battlemodel-recovered-runtime-golden",
+      "digest": "sha256:c84759419eee99997dceafbe5fdbd15c3f93e6b59315e749540cbedfdb0ca075"
+    }
+  ],
+  "derived_writebacks": [
+    {
+      "sha": "f4eb651cbe6770c53abf361278996ab0924f7220",
+      "files": [
+        "research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt"
+      ]
+    },
+    {
+      "sha": "d5fe135f738cbb2ac0bc76730b8e3f9a5758d459",
+      "files": [
+        "research/recovered/STONEAGE-25-LOCAL-RUNTIME-STACK-R1.txt",
+        "research/recovered/STONEAGE-BATTLEMODEL-COMMAND-ENTRY-DATA-AUDIT-R1.json"
+      ]
+    }
+  ],
+  "next_open": {
+    "callback": "PETSKILL_BecomeFox",
+    "skill_ids": [
+      625
+    ],
+    "slot_uses": 2,
+    "templates": 2
+  },
+  "note": "Capability promotion only; no natural command-entry or historical active-build reachability is inferred."
+}

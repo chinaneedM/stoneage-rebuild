@@ -8245,3 +8245,50 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   promotions. Predicted2463/20/3 remains unaccepted until PASS; preceding accepted
   pressure2461/22/3 is the current baseline. Then mechanically select next OPEN.
   Spec: `specs/STONEAGE-BATTLEMODEL-CONDITIONAL-PLACEMENT-CAPABILITY-R1.md`.
+
+
+## 2026-10-06 — ID638 exact conditional placement capability ACCEPTED
+
+- **CLOSED_CONDITIONAL_BOUNDED_ID638_PLACEMENT_CAPABILITY.** Exact implementation
+  input `74e5e937884865a561cd55dc0164bd4f029dad12`, tree
+  `ae50e33edda6b3e0a8135d60144f21a637956bfc`. The required remote gates all
+  completed SUCCESS: settlement `37463130823/112267407318` (**702 tests**),
+  coordinator `37463130720/112267405941` (**272**), runtime golden
+  `37463130586/112267405485` (**43**), full recovered25 region
+  `37463130861/112267406678` (**183**, plus the verified bundle and **826**
+  materializable floors), and dedicated complete pressure
+  `37463130784/112267406905` (**23**). Runtime bootstrap also passed at the
+  same implementation head.
+- Exact-data pressure is now accepted as **2486 = 2463 closed capability + 20
+  OPEN + 3 historical UB**, with zero unresolved skill IDs. Exactly two positive
+  placements are promoted on the capability axis only:
+  `(TEMPNO1178,runtime2/report3,ID638)` and
+  `(TEMPNO1179,runtime2/report3,ID638)`, both labelled
+  `CONDITIONAL_BOUNDED_CAPABILITY` / `closed_conditional_runtime`.
+- This is deliberately **not** a natural command-entry promotion. Callback-only
+  `PETSKILL_BattleModel` classification remains context-free OPEN; command-entry
+  reachability remains `OPEN_SEPARATE_AXIS_NOT_INFERRED`. Exact active variants
+  2559/2560 still have wa index2 weight0 and actual normal-AI goldens remain0.
+  Nonzero PET ILLEGAL guards, the zero literal181-row equipment-magic census,
+  zero positive group/area references, original-build uncertainty and opaque
+  NPC/script paths are unchanged.
+- Runtime/native scope was re-certified rather than borrowed: **60** explicit
+  selected recovered goldens, **60** independently authored selected-AI controls,
+  **12** current-identity rejections per suite, concrete-stack pressure
+  2463/20/3, source guard controls **2592+864**, and the established native
+  profit/exit and immutable-scan comparisons remain green.
+- Workflow artifacts: settlement `11413301367`,
+  `sha256:ec987508b387b7d2f3d9389c72fab5f5fea7194ec8e6498be0bd17c70eec1b93`;
+  recovered runtime/region `11413686735`,
+  `sha256:c84759419eee99997dceafbe5fdbd15c3f93e6b59315e749540cbedfdb0ca075`.
+  Automatic writebacks `f4eb651cbe6770c53abf361278996ab0924f7220` and
+  `d5fe135f738cbb2ac0bc76730b8e3f9a5758d459` modify only the three derived
+  pressure/stack/command-entry reports; no additional implementation code.
+- Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-CONDITIONAL-PLACEMENT-ACCEPTANCE-R1.json`.
+  The preceding PENDING checkpoint is superseded by this acceptance.
+- **Highest-priority unfinished task:** mechanically advance to the newly
+  verified `NEXT_OPEN`: **PETSKILL_BecomeFox, ID625, 2 positive uses across 2
+  templates**. Re-read any existing BecomeFox branch/spec before changing code,
+  then audit its exact placements, source lineage, OPTION/runtime semantics and
+  execution boundary. ID638's bounded capability must not be generalized to it.
