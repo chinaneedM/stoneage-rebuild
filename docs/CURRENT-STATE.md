@@ -8354,3 +8354,21 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   BecomeFox post-attack transformation and FOXROUND lifecycle semantics, then
   integrate exact ID625 placements into persistent runtime only after that gate
   passes. Preserve the PetIn version split and no-ride/wider-path boundaries.
+
+
+## 2026-10-06 — BecomeFox execution-order audit started; initiative comment corrected
+
+- Fresh main b893685f3ce62a5810d200e9c18ce8ce40b8ca69/tree 55eb9ed1fbd9a7de34815f75b4c19358dbe9cd7d re-read before runtime work.
+- Exact pinned BATTLE_DexCalc control flow shows a material correction: all3
+  descendants first write fox dex=(QUICK+20)*0.8, but allowed ATTACK/GUARD/NONE
+  have no dedicated switch cases and reach default, which recomputes and
+  overwrites dex. The source comment therefore is not an accepted effective
+  extra20% initiative penalty. gavin/iris default RAND range uses work*0.3;
+  Bismarck uses work*0.1, so the profile split must remain explicit.
+- A bounded semantic model now separates postattack short-circuit draw ownership,
+  success state, action-time power rewrite, strict >2 recovery, exit cleanup and
+  the PetIn accessor/NORETURN divergence. Pressure remains2463/20/3.
+- **Highest-priority unfinished task:** pass the exact pinned source-order CI,
+  then execute the exact postattack C block in a transient native harness against
+  the model before whole ordered/persistent runtime admission.
+  Spec: `specs/STONEAGE-BECOMEFOX-ORDERED-RUNTIME-PLAN-R1.md`.

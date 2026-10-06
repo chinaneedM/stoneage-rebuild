@@ -1,0 +1,68 @@
+name: Audit StoneAge BecomeFox ordered source semantics
+
+concurrency:
+  group: stoneage-becomefox-ordered-source-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-becomefox-ordered-source.yml"
+      - "tools/stoneage_becomefox_reference_model.py"
+      - "tools/stoneage_becomefox_execution_order_source_audit.py"
+      - "tests/test_stoneage_becomefox_reference_model.py"
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate bounded BecomeFox semantic model
+        run: python -m unittest -v tests.test_stoneage_becomefox_reference_model
+      - name: Recover pinned fixed descendant source profiles
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          profiles={
+            "gavin":("gavinlinasd/StoneAge","1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56"),
+            "iris":("iriselia/StoneAge","9e6c8ce2cd8ed532a7157773acd1c61582c178b5"),
+            "bismarck":("BismarckDD/stoneage","999ffdf1d220ec6666eb65339180689c9caf1876"),
+          }
+          for name,(repo,sha) in profiles.items():
+            root=Path("/tmp/becomefox-ordered-source")/name
+            root.mkdir(parents=True)
+            subprocess.run(["git","init",str(root)],check=True)
+            subprocess.run(["git","-C",str(root),"remote","add","origin","https://github.com/"+repo+".git"],check=True)
+            subprocess.run(["git","-C",str(root),"fetch","--depth","1","origin",sha],check=True)
+            subprocess.run(["git","-C",str(root),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Audit exact source execution order
+        run: |
+          mkdir -p research/recovered
+          python -m tools.stoneage_becomefox_execution_order_source_audit             --gavin-dir /tmp/becomefox-ordered-source/gavin             --iris-dir /tmp/becomefox-ordered-source/iris             --bismarck-dir /tmp/becomefox-ordered-source/bismarck             > research/recovered/STONEAGE-BECOMEFOX-EXECUTION-ORDER-SOURCE-AUDIT-R1.txt
+          cat research/recovered/STONEAGE-BECOMEFOX-EXECUTION-ORDER-SOURCE-AUDIT-R1.txt
+          grep -F 'RESOLUTION|BECOMEFOX_EXECUTION_ORDER_SOURCE_AUDIT_PASS' research/recovered/STONEAGE-BECOMEFOX-EXECUTION-ORDER-SOURCE-AUDIT-R1.txt
+          grep -F 'CORRECTION|fox_DexCalc_pre_switch_0.8_write_is_overwritten_for_allowed_ATTACK_GUARD_NONE_by_default_branch' research/recovered/STONEAGE-BECOMEFOX-EXECUTION-ORDER-SOURCE-AUDIT-R1.txt
+          test "$(grep -c '^PROFILE|' research/recovered/STONEAGE-BECOMEFOX-EXECUTION-ORDER-SOURCE-AUDIT-R1.txt)" = 3
+      - name: Commit derived execution-order report
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-BECOMEFOX-EXECUTION-ORDER-SOURCE-AUDIT-R1.txt
+          if git diff --cached --quiet; then
+            echo 'BecomeFox execution-order report unchanged.'
+            exit 0
+          fi
+          git commit -m 'research: audit BecomeFox source execution order'
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
