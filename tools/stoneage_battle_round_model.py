@@ -36,7 +36,9 @@ from tools.stoneage_enemy_ai_attack_magic_bridge import (
     EnemyAiAttackMagicSubmission,
 )
 from tools.stoneage_battlemodel_round_action import (
-    BattleModelRoundAction, execute_current_battlemodel_round_action,
+    BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
+    BattleModelRoundAction,
+    execute_current_battlemodel_round_action,
 )
 from tools.stoneage_battlemodel_hit_loop import BattleModelEntry, BattleModelHitLoopResolution
 from tools.stoneage_enemy_ai_rehp_bridge import EnemyAiReHpSubmission
@@ -10294,11 +10296,31 @@ def resolve_ordinary_round(
         )
 
     carried_commands={}
-    if battlemodel_actions and (ultimate_marked_slots or any(
-        e.target_hp_before is not None and e.target_hp_before > 0
-        and e.target_hp_after == 0 for e in events
-    )):
-        raise ValueError("BattleModel nonlethal round excludes all death/ultimate exit/profit compositions")
+    if battlemodel_actions and ultimate_marked_slots:
+        raise ValueError(
+            "BattleModel bounded round still excludes ultimate exit/profit compositions"
+        )
+    if battlemodel_actions:
+        for event in events:
+            is_death=(
+                event.target_hp_before is not None
+                and event.target_hp_after is not None
+                and int(event.target_hp_before) > 0
+                and int(event.target_hp_after) == 0
+            )
+            if not is_death:
+                continue
+            actor_id=str(event.participant_id)
+            action=battlemodel_actions.get(actor_id)
+            if (
+                event.battlemodel_skill_id != 638
+                or action is None
+                or action.scope != BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1
+            ):
+                raise ValueError(
+                    "BattleModel bounded round excludes death outside the "
+                    "explicit lethal638 command-tail scope"
+                )
     for pid in battlemodel_actor_ids-attempted_battlemodel_actor_ids:
         if battlemodel_actions[pid].draws:
             raise ValueError("unused BattleModel RNG supplied for status/death/incomplete-suppressed actor: "+pid)
