@@ -11,6 +11,7 @@ on:
       - ".github/workflows/validate-stoneage-becomefox-ordered-source.yml"
       - "tools/stoneage_becomefox_reference_model.py"
       - "tools/stoneage_becomefox_execution_order_source_audit.py"
+      - "tools/stoneage_becomefox_native_postattack_audit.py"
       - "tests/test_stoneage_becomefox_reference_model.py"
 
 permissions:
@@ -54,11 +55,24 @@ jobs:
           grep -F 'RESOLUTION|BECOMEFOX_EXECUTION_ORDER_SOURCE_AUDIT_PASS' research/recovered/STONEAGE-BECOMEFOX-EXECUTION-ORDER-SOURCE-AUDIT-R1.txt
           grep -F 'CORRECTION|fox_DexCalc_pre_switch_0.8_write_is_overwritten_for_allowed_ATTACK_GUARD_NONE_by_default_branch' research/recovered/STONEAGE-BECOMEFOX-EXECUTION-ORDER-SOURCE-AUDIT-R1.txt
           test "$(grep -c '^PROFILE|' research/recovered/STONEAGE-BECOMEFOX-EXECUTION-ORDER-SOURCE-AUDIT-R1.txt)" = 3
-      - name: Commit derived execution-order report
+      - name: Execute exact postattack source block against bounded model
+        run: |
+          python -m tools.stoneage_becomefox_native_postattack_audit \
+            --gavin-dir /tmp/becomefox-ordered-source/gavin \
+            --iris-dir /tmp/becomefox-ordered-source/iris \
+            --bismarck-dir /tmp/becomefox-ordered-source/bismarck \
+            > research/recovered/STONEAGE-BECOMEFOX-POSTATTACK-NATIVE-R1.txt
+          cat research/recovered/STONEAGE-BECOMEFOX-POSTATTACK-NATIVE-R1.txt
+          grep -F 'TOTAL|native_postattack_model_comparisons=3840' \
+            research/recovered/STONEAGE-BECOMEFOX-POSTATTACK-NATIVE-R1.txt
+          grep -F 'RESOLUTION|BECOMEFOX_EXACT_POSTATTACK_NATIVE_MODEL_PASS' \
+            research/recovered/STONEAGE-BECOMEFOX-POSTATTACK-NATIVE-R1.txt
+          test "$(grep -c '^PROFILE|' research/recovered/STONEAGE-BECOMEFOX-POSTATTACK-NATIVE-R1.txt)" = 3
+      - name: Commit derived execution-order reports
         run: |
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
-          git add research/recovered/STONEAGE-BECOMEFOX-EXECUTION-ORDER-SOURCE-AUDIT-R1.txt
+          git add research/recovered/STONEAGE-BECOMEFOX-EXECUTION-ORDER-SOURCE-AUDIT-R1.txt research/recovered/STONEAGE-BECOMEFOX-POSTATTACK-NATIVE-R1.txt
           if git diff --cached --quiet; then
             echo 'BecomeFox execution-order report unchanged.'
             exit 0
