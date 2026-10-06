@@ -326,27 +326,30 @@ class PersistentBattleState:
         if self.becomefox_overlay is not None:
             if not isinstance(self.becomefox_overlay,BecomeFoxRuntimeOverlay):
                 raise TypeError("persistent BecomeFox overlay has wrong type")
-            unknown_fox=sorted(
-                set(self.becomefox_overlay.runtime_by_participant_id)-set(participants)
-            )
-            if unknown_fox:
-                raise ValueError(
-                    "persistent BecomeFox overlay references unknown participants: "
-                    f"{unknown_fox}"
+            if not self.becomefox_overlay.runtime_by_participant_id:
+                object.__setattr__(self,"becomefox_overlay",None)
+            else:
+                unknown_fox=sorted(
+                    set(self.becomefox_overlay.runtime_by_participant_id)-set(participants)
                 )
-            invalid_fox=sorted(
-                participant_id
-                for participant_id in self.becomefox_overlay.runtime_by_participant_id
-                if (
-                    participants[participant_id].side!="player"
-                    or participants[participant_id].kind!="pet"
+                if unknown_fox:
+                    raise ValueError(
+                        "persistent BecomeFox overlay references unknown participants: "
+                        f"{unknown_fox}"
+                    )
+                invalid_fox=sorted(
+                    participant_id
+                    for participant_id in self.becomefox_overlay.runtime_by_participant_id
+                    if (
+                        participants[participant_id].side!="player"
+                        or participants[participant_id].kind!="pet"
+                    )
                 )
-            )
-            if invalid_fox:
-                raise ValueError(
-                    "persistent bounded BecomeFox targets must be player-side pets: "
-                    f"{invalid_fox}"
-                )
+                if invalid_fox:
+                    raise ValueError(
+                        "persistent bounded BecomeFox targets must be player-side pets: "
+                        f"{invalid_fox}"
+                    )
         normalized_ultimate_exits=tuple(
             str(pid) for pid in self.ultimate_exited_participant_ids
         )

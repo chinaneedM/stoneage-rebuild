@@ -91,6 +91,25 @@ def run_round(state,commands,attacks,**extra):
 
 
 class BecomeFoxPersistentRuntimeTests(unittest.TestCase):
+    def test_empty_overlay_is_canonicalized_to_none_for_unrelated_rounds(self):
+        from tools.stoneage_becomefox_runtime_state import BecomeFoxRuntimeOverlay
+        state=begin_persistent_battle(
+            session(),slots=SLOTS,
+            becomefox_overlay=BecomeFoxRuntimeOverlay.empty(),
+        )
+        self.assertIsNone(state.becomefox_overlay)
+        result=run_round(
+            state,
+            {
+                "player":BattleCommand(BATTLE_COM_NONE),
+                "pet":BattleCommand(BATTLE_COM_NONE),
+                "caster":BattleCommand(BATTLE_COM_NONE),
+                "dummy":BattleCommand(BATTLE_COM_NONE),
+            },
+            {},
+        )
+        self.assertIsNone(result.after.becomefox_overlay)
+
     def test_transform_before_pet_action_persists_80pct_work_state_across_rounds(self):
         state=begin_persistent_battle(session(),slots=SLOTS)
         first=run_round(
