@@ -3637,3 +3637,14 @@ variants; native/runtime ItemCrush acceptance is still OPEN.
   `specs/STONEAGE-BATTLEMODEL-ITEMCRUSH-R1.md`;170 local tests PASS.
   Extended CI publication/acceptance pending. No original payloads retained,
   equipped mutation/full runtime/profile membership/coverage remain OPEN.
+
+
+#### SRC-BATTLEMODEL-EMPTY-EQUIPMENT-ITEMCRUSH-R1 remote acceptance
+
+37411512720 SUCCESS, job112100761415; exact input
+7c7de32d7284eca3ea4dc66b8534f0c04bc14455,
+tree8b81bae80313f02aed8295a21a10917c99de97ed. All170 tests/3420
+ItemCrush comparisons,696 physical and1920/480/60 settlement/marker/pet
+checks reproduce remotely. Derived artifact11389775634 uploaded. Explicit
+empty-equipment chronology accepted; equipped/full runtime/profile membership
+remains OPEN, no new slot coverage. Previous pending records superseded.

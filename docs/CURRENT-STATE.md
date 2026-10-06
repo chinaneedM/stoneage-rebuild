@@ -7010,3 +7010,37 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   mutations/wider feature compositions remain required before general ID638
   runtime acceptance. Require golden/full-region/hash-verified pressure before
   promoting its two slots. DD-018 and original profile ambiguities remain.
+
+
+## Phase 1 BattleModel empty-equipment ItemCrush remotely accepted — 2026-10-06
+
+- Exact implementation input7c7de32d7284eca3ea4dc66b8534f0c04bc14455,
+  tree8b81bae80313f02aed8295a21a10917c99de97ed. Fresh remote main
+  a4f41f9d remains its ancestor; branch ref unchanged, matching clean local
+  tree and ancestry verified before acceptance.
+- **37411512720 SUCCESS**, job112100761415. All170 tests,3420 new
+  ItemCrush comparisons,696 physical comparisons and1920/480/60 prior
+  settlement/marker/pet gates PASS remotely. Derived artifact11389775634
+  uploaded. Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-ITEMCRUSH-ACCEPTANCE-R1.json`.
+- **CLOSED_BOUNDED_EMPTY_EQUIPMENT_ITEMCRUSH.** Original Check/Seq/helper
+  confirms ItemCrush on surviving DODGE/MISS/ALLGUARD/zero damage before
+  status; actual Guardian routes type/level. Legacy check and raw rand own
+  chronological draws despite empty equipment. Declared reduced5/pet7 and
+  Bismarck FIX/pet variants are separate; no original build/PRNG is selected.
+  Previous no-ItemCrush scope remains separately supported.
+- Scope acceptance does not enable ordinary runtime, equipped mutations or
+  wider features and promotes no638 slots/overall coverage. Pending records
+  superseded. Nonforce accepted main synchronization follows this record.
+- **Highest-priority unfinished task:** fresh main/branches/Actions and this
+  exact gate/synchronization verification, then isolate prepared-action
+  cancellation plus bounded round/state/coordinator integration from latest
+  main. Bind real per-hit cleared commands/current status, HP/reactions/
+  ultimate flags and ordered target/item/status RNG to prepared execution
+  without making cleared commands permanent across future preparation.
+  Existing persistent status application alone is not proof of cancellation.
+  Retain explicit empty-equipment scope; equipped mutations/extra slots/
+  broader features remain required for general638 runtime acceptance. Close
+  ultimate exit, golden/full-region/hash-verified pressure before promoting
+  the two slots. DD-018 restoration-first and original profile ambiguities
+  remain in force.

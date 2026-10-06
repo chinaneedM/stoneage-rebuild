@@ -825,3 +825,13 @@ comparisons PASS. An explicit empty-equipment loop scope replaces the previous
 no-ItemCrush exclusion, including DODGE reachability. Complete ordinary
 runtime/state/coordinator/pressure/638 slots remain OPEN; remote gate pending.
 See SRC-BATTLEMODEL-EMPTY-EQUIPMENT-ITEMCRUSH-R1.
+
+
+### 2026-10-06 — empty-equipment ItemCrush remotely accepted
+
+**FACT (bounded reconstruction acceptance):**37411512720 SUCCESS, job
+112100761415 on7c7de32d reproduces170 tests/3420 ItemCrush native
+comparisons plus696 physical and1920/480/60 settlement/marker/pet checks.
+Only declared empty-equipment chronology is closed, including surviving
+DODGE/zero damage before status. Full runtime/equipped mutations/original
+profile membership/638 slots remain OPEN. Earlier pending records superseded.

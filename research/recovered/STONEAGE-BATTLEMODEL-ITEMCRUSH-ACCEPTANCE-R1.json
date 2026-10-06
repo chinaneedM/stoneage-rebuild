@@ -1,0 +1,77 @@
+{
+  "schema": "STONEAGE_BATTLEMODEL_EMPTY_EQUIPMENT_ITEMCRUSH_ACCEPTANCE_R1",
+  "date": "2026-10-06 (UTC+8)",
+  "status": "CLOSED_BOUNDED_EMPTY_EQUIPMENT_ITEMCRUSH_FULL_RUNTIME_OPEN",
+  "branch": "agent/battlemodel-itemcrush-r1-20261006",
+  "accepted_main_base": "a4f41f9deb6faa2461eb315fe087370bad6e7e8d",
+  "input_commit": "7c7de32d7284eca3ea4dc66b8534f0c04bc14455",
+  "input_tree": "8b81bae80313f02aed8295a21a10917c99de97ed",
+  "remote_validation": {
+    "workflow": "validate-stoneage-battlemodel-settlement.yml",
+    "run_id": 37411512720,
+    "job_id": 112100761415,
+    "conclusion": "success",
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37411512720",
+    "shared_tests": 170,
+    "new_itemcrush_tests": 13,
+    "itemcrush_model_native_comparisons": {
+      "gavin": 760,
+      "iris": 760,
+      "bismarck": 1900,
+      "total": 3420
+    },
+    "physical_native_comparisons": 696,
+    "original_settlement_native_calls": 1920,
+    "marker_native_comparisons": 480,
+    "pet_guard_native_calls": 60,
+    "artifact": {
+      "id": 11389775634,
+      "name": "battlemodel-settlement",
+      "size_bytes": 3424
+    }
+  },
+  "source_profiles": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "declared_variants": {
+    "gavin": [
+      "legacy",
+      "take_itemdamage"
+    ],
+    "iris": [
+      "legacy",
+      "take_itemdamage"
+    ],
+    "bismarck": [
+      "legacy",
+      "take_itemdamage",
+      "take_itemdamage_fix",
+      "take_itemdamage_pet",
+      "take_itemdamage_pet_fix"
+    ]
+  },
+  "source_default_global_rate": 400000,
+  "scope": [
+    "explicit current global rate and raw rand maximum; no original libc selection",
+    "exact identity/kind/level/empty-minus-one equipment binding; reduced five slots or declared pet seven",
+    "surviving actual defender including DODGE/MISS/ALLGUARD/damage0 before status",
+    "reduced_SIDE_OFFSET10_no_ride_nonthrowing_equipment_free_ItemCrush_gDamageDiv0",
+    "controlled native physical/status/getters; original legacy empty scan; TAKE mutation trap"
+  ],
+  "full_battlemodel_runtime": "OPEN",
+  "positive_slots_promoted": 0,
+  "next_priority": "prepared-action cancellation and bounded round/state/coordinator propagation with ultimate exit",
+  "remaining_gates": [
+    "equipped mutation/recomputed stats/UI/persistence",
+    "extra equipment slots/feature compositions",
+    "original build/PRNG/charset/numeric COM1 membership",
+    "prepared cancellation",
+    "round/state/coordinator",
+    "ultimate exit",
+    "golden",
+    "full-region",
+    "hash-verified pressure"
+  ]
+}

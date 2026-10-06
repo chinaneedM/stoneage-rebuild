@@ -1,7 +1,7 @@
 # BattleModel empty-equipment ItemCrush chronology R1
 
 Date: 2026-10-06 (UTC+8)
-Status: **LOCAL_VALIDATED_REMOTE_PENDING_FULL_RUNTIME_OPEN**
+Status: **CLOSED_BOUNDED_EMPTY_EQUIPMENT_ITEMCRUSH_FULL_RUNTIME_OPEN**
 
 ## Evidence and declared variants
 
@@ -80,3 +80,16 @@ slot features, original PRNG/build/charset/numeric COM1 membership, prepared
 action cancellation, ordinary round/state/coordinator propagation, ultimate exit,
 golden/full-region and verified pressure. Empty-equipment ItemCrush agreement
 does not close ID638's two positive slots or alter existing coverage.
+
+
+## Remote bounded acceptance — 2026-10-06
+
+37411512720 SUCCESS, job112100761415, exact input
+7c7de32d7284eca3ea4dc66b8534f0c04bc14455,
+tree8b81bae80313f02aed8295a21a10917c99de97ed.170 shared tests,3420
+ItemCrush comparisons,696 physical comparisons,1920 settlement/480 marker/
+60 pet checks reproduce remotely; derived artifact11389775634 uploaded.
+Earlier pending records are historical and superseded. Acceptance receipt:
+`research/recovered/STONEAGE-BATTLEMODEL-ITEMCRUSH-ACCEPTANCE-R1.json`.
+Only explicit empty-equipment chronology is closed; all full-runtime and
+equipped/feature/profile boundaries above remain OPEN, zero638 slots promoted.
