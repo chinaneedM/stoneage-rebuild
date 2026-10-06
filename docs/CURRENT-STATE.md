@@ -7837,3 +7837,45 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   ride/items, automatic AI and packet/presentation history remain OPEN; no
   positive-slot promotion.
 
+## Phase 1 full BATTLE_Battling → BattleModel → profit-tail native acceptance — 2026-10-06
+
+- Exact accepted input `1fd9866556f9cf0ec338e22c804a4354e2f8c3e0`, tree `533c3554a4ade9a49b52f3263c6b6d584d3fe68a`, branch
+  `agent/native-full-battling-profit-tail-r1-20261006`.
+- **CLOSED_BOUNDED_FULL_BATTLING_BATTLEMODEL_PROFIT_TAIL_NATIVE.**
+  Settlement `37441895862/112197395144` SUCCESS: **653 tests**,
+  **19656** original PvE profit/exit cases, **19656** immutable
+  scan/model-native comparisons, **384** bounded Weaken recalculation vectors,
+  prior dispatch-tail **9/9**, original Guardian **9/9**, exact DamageSub
+  **9/9**, and new full-`BATTLE_Battling` witnesses **9/9** across
+  gavin/iris/bismarck. Artifact `11401378027`, digest
+  `sha256:31be8e5c965b8658c67d4e7055c2035a54148aff710d86f4f8bc1aa5e5eb38f2`.
+- The exact full original `BATTLE_Battling` body now executes its original
+  conditional BattleModel case and reaches the common tail `BATTLE_AddProfit`
+  in the same transient program as original Guardian/AttackSeq, exact
+  DamageSub, exact BattleModel/helper and the exact PvE exit whole scan.
+- The same nine native post-hit boundaries also run directly through the
+  accepted canonical BattleModel638 runtime binder. Owner/pet ISDIE, death
+  counts, charm/variable-AI effects and processed-death order agree **9/9**.
+  This closes the full command chronology differential required by the prior
+  gate; it does not yet prove a lethal638 persistent/coordinator admission.
+- Exact full-body SHA-256:
+  gavin `48c648ac8cb66a60ae4a955d08a332d56bb4b4a8dcc6659ff55e6a1b7cfc1f4f`;
+  iris `74f51b9d98e5a797c52c3474d0c0603808c95b70bc0c55344afe4375d7a1225b`;
+  bismarck `b23e58042695a5fdb9c0cd451604a88d7c9063279b9726860ab9726bd615ea27`.
+- Bounded seams remain explicit: `BATTLE_DexCalc`, `EntrySort`,
+  `ComboCheck`, `BATTLE_StatusSeq`, `BATTLE_GetAttackCount`,
+  `BATTLE_PetLoyalCheck`, `BATTLE_TargetListSet`, `BATTLE_CountAlive`
+  and `BATTLE_CommandSend` are controlled neutral helpers. The exact
+  DamageSub wrapper still seeds only the historically undefined
+  `*pPetDamage=0` presentation input. Scheduler/status/presentation history,
+  build/version, wider recipients, ride/items and automatic AI remain OPEN.
+- Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-FULL-BATTLING-PROFIT-TAIL-ACCEPTANCE-R1.json`.
+- No original source/assets were committed and **0 positive slots** were
+  promoted.
+- **Highest-priority unfinished task:** bind the already accepted recovered
+  ID638/template admission to this now-native full command chronology and prove
+  the **lethal638** path through the canonical persistent/coordinator runtime
+  boundary without widening unsupported scheduler/status/presentation seams.
+  Only after that gate may the two recovered positive BattleModel slots be
+  evaluated for promotion. Build/version and wider runtime remain OPEN.

@@ -4013,3 +4013,31 @@ remain explicitly OPEN. No original source/payload committed.
 - Receipt:
   `research/recovered/STONEAGE-BATTLEMODEL-DAMAGESUB-PROFIT-TAIL-ACCEPTANCE-R1.json`.
 
+### SRC-BATTLEMODEL-FULL-BATTLING-PROFIT-TAIL-R1 — remote native acceptance 2026-10-06
+
+- Exact input `1fd9866556f9cf0ec338e22c804a4354e2f8c3e0`, tree `533c3554a4ade9a49b52f3263c6b6d584d3fe68a`, branch
+  `agent/native-full-battling-profit-tail-r1-20261006`; no original source or assets committed.
+- Settlement `37441895862/112197395144` SUCCESS: 653 tests, 19656 original
+  PvE profit/exit cases, 19656 immutable scan/model-native comparisons, 384
+  bounded Weaken recalculation vectors, prior splice/Guardian/exact-DamageSub
+  9/9 each and **9 full-`BATTLE_Battling` native cases**. Artifact
+  `11401378027`,
+  `sha256:31be8e5c965b8658c67d4e7055c2035a54148aff710d86f4f8bc1aa5e5eb38f2`.
+- Exact full-body SHA-256:
+  gavin `48c648ac8cb66a60ae4a955d08a332d56bb4b4a8dcc6659ff55e6a1b7cfc1f4f`;
+  iris `74f51b9d98e5a797c52c3474d0c0603808c95b70bc0c55344afe4375d7a1225b`;
+  bismarck `b23e58042695a5fdb9c0cd451604a88d7c9063279b9726860ab9726bd615ea27`.
+- Accepted claim: the exact full original `BATTLE_Battling` body executes the
+  original BattleModel case and common tail AddProfit in the same process as
+  original Guardian/AttackSeq, exact DamageSub and exact BattleModel/helper,
+  preserving conditional source context.
+- Modern differential: **9/9** identical post-hit boundaries directly match the
+  accepted canonical skill638 command-tail runtime binder. This certifies the
+  bounded chronology bridge, not universal historical skill identity.
+- Controlled seams: `BATTLE_DexCalc`, `EntrySort`, `ComboCheck`,
+  `BATTLE_StatusSeq`, `BATTLE_GetAttackCount`, `BATTLE_PetLoyalCheck`,
+  `BATTLE_TargetListSet`, `BATTLE_CountAlive`, `BATTLE_CommandSend`.
+  Build/version, wider recipients, ride/items, automatic AI, packets and
+  lethal638 persistent/coordinator admission remain OPEN.
+- Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-FULL-BATTLING-PROFIT-TAIL-ACCEPTANCE-R1.json`.

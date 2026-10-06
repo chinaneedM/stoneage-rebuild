@@ -1,0 +1,81 @@
+{
+  "schema": "STONEAGE_BATTLEMODEL_FULL_BATTLING_PROFIT_TAIL_ACCEPTANCE_R1",
+  "status": "CLOSED_BOUNDED_FULL_BATTLING_BATTLEMODEL_PROFIT_TAIL_NATIVE",
+  "date": "2026-10-06",
+  "baseline_main_commit": "c63b26bd854c17b41dfc7dfcf1603a29712499f3",
+  "accepted_commit": "1fd9866556f9cf0ec338e22c804a4354e2f8c3e0",
+  "accepted_tree": "533c3554a4ade9a49b52f3263c6b6d584d3fe68a",
+  "branch": "agent/native-full-battling-profit-tail-r1-20261006",
+  "remote_validation": {
+    "settlement": {
+      "run_id": 37441895862,
+      "job_id": 112197395144,
+      "conclusion": "success",
+      "tests": 653,
+      "original_profit_exit_cases": 19656,
+      "immutable_scan_model_native_comparisons": 19656,
+      "weaken_recalculation_vectors": 384,
+      "prior_dispatch_tail_splice_cases": 9,
+      "prior_same_harness_guardian_tail_cases": 9,
+      "prior_same_harness_exact_damagesub_tail_cases": 9,
+      "full_battling_tail_cases": 9,
+      "canonical_runtime_binder_direct_comparisons": 9
+    },
+    "artifact": {
+      "id": 11401378027,
+      "name": "battlemodel-settlement",
+      "digest": "sha256:31be8e5c965b8658c67d4e7055c2035a54148aff710d86f4f8bc1aa5e5eb38f2"
+    }
+  },
+  "source_profiles": {
+    "gavin": {
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "battle_c_sha256": "a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602",
+      "full_battling_body_sha256": "48c648ac8cb66a60ae4a955d08a332d56bb4b4a8dcc6659ff55e6a1b7cfc1f4f",
+      "damage_sub_comment_stripped_sha256": "c978e7fb82412570086d67b582d0ff6c84a33b72a0481fb327634977ebd3ac9e"
+    },
+    "iris": {
+      "commit": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "battle_c_sha256": "6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8",
+      "full_battling_body_sha256": "74f51b9d98e5a797c52c3474d0c0603808c95b70bc0c55344afe4375d7a1225b",
+      "damage_sub_comment_stripped_sha256": "c978e7fb82412570086d67b582d0ff6c84a33b72a0481fb327634977ebd3ac9e"
+    },
+    "bismarck": {
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "battle_c_sha256": "2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18",
+      "full_battling_body_sha256": "b23e58042695a5fdb9c0cd451604a88d7c9063279b9726860ab9726bd615ea27",
+      "damage_sub_comment_stripped_sha256": "e1dff8b748beba524cd203ac8dd7090df3593cd00692708effff2579cdb582d6"
+    }
+  },
+  "controlled_driver_helpers": [
+    "BATTLE_DexCalc",
+    "EntrySort",
+    "ComboCheck",
+    "BATTLE_StatusSeq",
+    "BATTLE_GetAttackCount",
+    "BATTLE_PetLoyalCheck",
+    "BATTLE_TargetListSet",
+    "BATTLE_CountAlive",
+    "BATTLE_CommandSend"
+  ],
+  "accepted_scope": [
+    "exact full original BATTLE_Battling body executes its original BATTLE_COM_S_BATTLE_MODEL case and common AddProfit tail without rewriting conditional source context",
+    "exact original GuardianCheck/AttackSeq, exact DamageSub, exact BattleModel/helper and exact AddProfit/exit whole scan execute in one transient program",
+    "native multi-victim HP writes precede the single source-order tail death scan and repeat settlement remains idempotent",
+    "native post-hit gameplay state and processed death order directly match the accepted canonical BattleModel638 runtime binder for all nine vectors",
+    "feature-off SIDE_OFFSET10 no-ride no-equipment noncritical reduced profile"
+  ],
+  "explicit_nonclaims": [
+    "controlled driver scheduler/status/presentation helpers are not historically certified",
+    "historical undefined iPetDamage presentation value and packet bytes are not certified",
+    "original build/version membership remains open",
+    "wider profit recipients ride items automatic AI and unrelated command families remain open",
+    "this chronology differential does not by itself prove every original BattleModel option is skill638",
+    "lethal638 persistent/coordinator admission remains open",
+    "no positive recovered-data slot is promoted by this milestone"
+  ],
+  "historical_claims_added": false,
+  "original_source_or_assets_committed": false,
+  "positive_slots_promoted": 0,
+  "next_priority": "Bind the already accepted recovered ID638/template admission to the now-native full BATTLE_Battling chronology, prove lethal638 through the canonical persistent/coordinator runtime boundary without widening unsupported scheduler/status/presentation seams, then evaluate positive-slot promotion."
+}

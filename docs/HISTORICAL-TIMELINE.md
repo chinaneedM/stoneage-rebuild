@@ -1110,3 +1110,23 @@ adapter and ten-field/overlay clear are next.
 - OPEN: full original `BATTLE_Battling` execution is the next stronger gate
   before lethal638.
 
+### 2026-10-06 — Full BATTLE_Battling BattleModel profit-tail accepted
+
+- NATIVE/FACT: exact input `1fd9866556f9cf0ec338e22c804a4354e2f8c3e0`, tree `533c3554a4ade9a49b52f3263c6b6d584d3fe68a`, passes
+  settlement `37441895862/112197395144`: 653 tests, 19656 original PvE
+  profit/exit cases, 19656 immutable scan/model-native comparisons, 384 Weaken
+  recalculation vectors and **9/9** new full-`BATTLE_Battling` witnesses
+  across the three pinned profiles.
+- CHRONOLOGY: the exact full command-driver body executes the original
+  BattleModel case, original Guardian/AttackSeq, exact DamageSub,
+  BattleModel/helper and the common-tail AddProfit/exit scan in one transient
+  program. All hit writes precede the one tail death scan.
+- RUNTIME DIFFERENTIAL: all **9/9** post-hit native boundaries also directly
+  match the accepted canonical BattleModel638 runtime binder for ISDIE,
+  death/charm/loyalty state and processed-death order.
+- BOUNDARY: nine scheduler/status/presentation command-driver helpers remain
+  controlled neutral seams; the historical undefined DamageSub pet-damage
+  presentation input is still deterministically zero-seeded. Build/version,
+  ride/items, wider recipients, automatic AI and packets remain open.
+- OPEN: next gate is lethal638-specific recovered-ID admission through the
+  persistent/coordinator runtime boundary; no positive slot is promoted yet.
