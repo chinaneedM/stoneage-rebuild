@@ -86,6 +86,7 @@ def _missing_defines(code: str, battling: str) -> str:
         "ITEM_BREAKTHROW": 2803,
         "BSIDE_FLG_SURPRISE": 1 << 0,
         "CHAR_COLORYELLOW": 1,
+        "PET_STAT_SELECT": 1,
     }
     numeric = [
         int(x)
@@ -99,7 +100,7 @@ def _missing_defines(code: str, battling: str) -> str:
             out.append(f"#define {symbol} {value}")
             existing.add(symbol)
     for symbol in sorted(tokens):
-        if symbol in existing or symbol in calls:
+        if symbol in existing or symbol in calls or symbol in type_names:
             continue
         out.append(f"#define {symbol} {next_id}")
         existing.add(symbol)
@@ -126,6 +127,7 @@ def _missing_call_stubs(code: str, battling: str) -> str:
         "memset", "memcpy", "strcat", "strncat", "strlen",
         "qsort", "rand", "time",
         *CONTROLLED_DRIVER_HELPERS,
+        "BATTLE_Battling", "PETSKILL_getChar",
     }
     lines = []
     for name in sorted(calls - defined - macros - skip):
@@ -180,6 +182,7 @@ typedef struct {
 static char szBattleString[65536],szAllBattleString[65536],szBadStatusString[65536];
 static char *pszBattleTop=szBattleString,*pszBattleLast=szBattleString+sizeof(szBattleString);
 static int gBattleStausChange,gBattleStausTurn,gWeponType;
+static int BoomerangVsTbl[20][20];
 '''
     controlled = r'''
 int BATTLE_DexCalc(int c){return CHAR_getWorkInt(c,CHAR_WORKQUICK);}
