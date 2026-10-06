@@ -169,19 +169,32 @@ void PROFESSION_SKILL_DUAL_WEAPON_LVEVEL_UP(int c,char *s){}
         r"\b(?:CHAR|BATTLE|ITEM|AI)_[A-Z][A-Z0-9_]*\b",
         physical,
     )))
+    physical_calls=set(re.findall(r"\b([A-Za-z_]\w*)\s*\(",physical))
     fixed={
         "CHAR_BATTLEFLG_NODUCK":1,
         "CHAR_BATTLEFLG_ABIO":2,
         "CHAR_BATTLEFLG_GUARDIAN":4,
+        "CHAR_WORKDAMAGEVANISH":1750,
+        "CHAR_WORKDAMAGEABSROB":1751,
+        "CHAR_WORKDAMAGEREFLEC":1752,
     }
     next_id=1800
     additions=[]
     for symbol in physical_names:
-        if symbol in existing:
+        if symbol in existing or symbol in physical_calls:
             continue
         additions.append(f"#define {symbol} {fixed.get(symbol,next_id)}")
         if symbol not in fixed:
             next_id+=1
+    for symbol in (
+        "CHAR_WORKDAMAGEVANISH",
+        "CHAR_WORKDAMAGEABSROB",
+        "CHAR_WORKDAMAGEREFLEC",
+    ):
+        if symbol not in existing and not any(
+            line.startswith("#define "+symbol+" ") for line in additions
+        ):
+            additions.append(f"#define {symbol} {fixed[symbol]}")
     prelude=(
         "#define _BATTLE_NEWPOWER\n"
         "#define ATTACKSIDE 0\n#define DEFFENCESIDE 1\n"
