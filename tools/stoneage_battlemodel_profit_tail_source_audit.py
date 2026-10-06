@@ -19,7 +19,7 @@ import subprocess
 import tempfile
 
 from tools.stoneage_guard_break2_source_audit import (
-    PINNED, LAYOUTS, _text, _sha, _compact,
+    PINNED, LAYOUTS, _text, _sha, _compact, _function,
 )
 from tools.stoneage_mdfyattack_source_audit import _definition, _strip
 from tools.stoneage_battletimid_source_audit import _case_block
@@ -139,7 +139,7 @@ def _source(name: str, root: Path):
     # BattleModel lifecycle/source audits. The raw windows include surrounding
     # feature guards and are unsuitable for direct standalone concatenation.
     helper=_exact_function_body(clean_event,"BATTLE_BattleModel_ATTACK")
-    model=_exact_function_body(clean_event,"BATTLE_BattleModel")
+    model=_function(clean_event,"void BATTLE_BattleModel(")
 
     case_at=battle.find("case "+COMMAND+":")
     if case_at<0:
@@ -178,6 +178,8 @@ def _source(name: str, root: Path):
         "BATTLE_ST_END":st_end,
         "BATTLE_COM_S_BATTLE_MODEL":900,
         "BATTLE_COM_NONE":0,
+        "CHAR_WORKBATTLECOM2":250,
+        "CHAR_WORKBATTLECOM3":251,
         "BATTLE_RET_ALLGUARD":1,
         "BATTLE_RET_MISS":2,
         "BATTLE_RET_DODGE":3,
@@ -348,9 +350,7 @@ int main(void){
     works[10][CHAR_WORKBATTLECOM2]=(2<<16)|4;works[10][CHAR_WORKBATTLECOM3]=0;
     int battleindex=0,attackNo=10,myside=1;
     int aAttackList[2]={10,-1};char szBadStatusString[2]={0};
-    switch(BATTLE_COM_S_BATTLE_MODEL){
-DISPATCH_CASE
-    }
+    BATTLE_BattleModel(battleindex,attackNo,myside);
     BATTLESTR_ADD(szBadStatusString);
     if(BATTLE_AddProfit(battleindex,aAttackList)!=BATTLE_ERR_NONE)abort();
     int first_deaths=ints[1][CHAR_DEADCOUNT]+ints[2][CHAR_DEADCOUNT];
@@ -364,7 +364,7 @@ DISPATCH_CASE
   }
   return 0;
 }
-'''.replace("DISPATCH_CASE",case_source)
+'''
     code=(
         "#include <math.h>\n"+macro_lines+"\n#define BATTLE_ST_END "+str(st_end)+"\n"
         +"\n".join(defines)+"\n"+table.group(0)+"\n"+prefix+"\n"+status_array
@@ -375,6 +375,7 @@ DISPATCH_CASE
         "battle_event_c_sha256":_sha(event_path),
         "static_dispatch_case_anchor":True,
         "static_tail_addprofit_anchor":True,
+        "executed_full_battling_case_body":False,
         "battlemodel_internal_profit_calls":0,
     }
 
@@ -480,11 +481,11 @@ def main():
         import json
         print("PROFILE|"+json.dumps(result,sort_keys=True))
     print(f"TOTAL|native_dispatch_tail_cases={total}|profiles={len(PINNED)}")
-    print("FACT|exact_original_BattleModel_planner_helper_executes_before_single_command_tail_original_AddProfit")
+    print("FACT|static_original_Battling_case_anchor_then_exact_original_BattleModel_planner_helper_executes_before_single_tail_original_AddProfit")
     print("FACT|controlled_guardian_protocol_routes_first_hit_to_pet_and_second_hit_to_owner_before_tail_scan")
     print("FACT|multi_victim_tail_scan_processes_owner_slot0_then_pet_slot5_and_repeat_profit_does_not_duplicate")
     print("BOUNDARY|AttackSeq_guardian_protocol_controlled_in_this_splice;original_AttackSeq_GuardianCheck_is_separately_native_certified_but_not_same_harness")
-    print("OPEN|full_BATTLE_Battling_body_same_harness_original_GuardianCheck_lethal638_modern_admission")
+    print("OPEN|executed_full_BATTLE_Battling_case_body_same_harness_original_GuardianCheck_lethal638_modern_admission")
     print("RESOLUTION|BATTLEMODEL_DISPATCH_TAIL_PROFIT_SPLICE_NATIVE_PASS")
 
 

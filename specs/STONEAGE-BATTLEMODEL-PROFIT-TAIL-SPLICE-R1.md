@@ -22,8 +22,12 @@ It separately verifies the original Battling case contains
 command-tail `BATTLE_AddProfit(battleindex,aAttackList)` anchor, and verifies
 BattleModel itself contains no internal AddProfit.
 
-The harness then executes that dispatch case followed by one command-tail
-AddProfit in the source-observed order.
+Because the raw case text is conditionally compiled inside the full
+`BATTLE_Battling` function, this splice does **not** transplant or claim to
+execute that case body. After the static anchor check, it directly executes the
+exact original `BATTLE_BattleModel` body and then the exact original
+`BATTLE_AddProfit` body in the source-observed case→tail order. Executing the
+full Battling case in its native function context remains a stronger later gate.
 
 ## Controlled Guardian seam
 
