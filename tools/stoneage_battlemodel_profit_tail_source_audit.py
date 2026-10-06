@@ -255,7 +255,7 @@ int CHAR_setFlg(int i,int f,int v){if(!CHAR_CHECKINDEX(i))hfail(15);if(f==CHAR_I
 int CHAR_getCharPet(int i,int slot){if(!CHAR_CHECKINDEX(i)||slot<0||slot>=5)hfail(16);return pets[i][slot];}
 int BATTLE_No2Index(int b,int no){if(b!=0||no<0||no>=20)hfail(17);return BattleArray[0].Side[no/10].Entry[no%10].charaindex;}
 int BATTLE_Index2No(int b,int id){for(int s=0;s<2;s++)for(int p=0;p<10;p++)if(BattleArray[b].Side[s].Entry[p].charaindex==id)return s*10+p;return -1;}
-int BATTLE_TargetCheck(int b,int no){target_checks++;int id=BATTLE_No2Index(b,no);return CHAR_CHECKINDEX(id)&&ints[id][CHAR_HP]>0;}
+int BATTLE_TargetCheck(int b,int no){target_checks++;if(no<0||no>=20)return FALSE;int id=BATTLE_No2Index(b,no);return CHAR_CHECKINDEX(id)&&ints[id][CHAR_HP]>0;}
 int BATTLE_AttackSeq(int a,int d,int *damage,int *guardian,int ignored){
   attackseq_calls++;*damage=attack_damage;*guardian=-1;
   if(guardian_enabled&&d==1&&ints[2][CHAR_HP]>0)*guardian=5;
