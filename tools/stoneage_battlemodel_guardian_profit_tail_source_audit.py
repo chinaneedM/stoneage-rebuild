@@ -229,8 +229,11 @@ void PROFESSION_SKILL_DUAL_WEAPON_LVEVEL_UP(int c,char *s){}
     code=code.replace(old_reset,new_reset)
 
     setup_anchor="works[1][CHAR_WORKBATTLECOM1]=works[2][CHAR_WORKBATTLECOM1]=works[10][CHAR_WORKBATTLECOM1]=77;\n"
-    setup_extra='''    works[1][CHAR_WORKFIXDEX]=10;works[2][CHAR_WORKFIXDEX]=10;works[10][CHAR_WORKFIXDEX]=100;
-    works[1][CHAR_WORKFIXLUCK]=works[2][CHAR_WORKFIXLUCK]=0;works[10][CHAR_WORKFIXLUCK]=999;
+    setup_extra='''    /* Equal fixed DEX makes original CriticalCheckPlayer return exactly 0
+       for this Guardian chronology witness. Critical/ultimate composition is a
+       separate later gate and must not contaminate the noncritical baseline. */
+    works[1][CHAR_WORKFIXDEX]=10;works[2][CHAR_WORKFIXDEX]=10;works[10][CHAR_WORKFIXDEX]=10;
+    works[1][CHAR_WORKFIXLUCK]=works[2][CHAR_WORKFIXLUCK]=works[10][CHAR_WORKFIXLUCK]=0;
     works[1][CHAR_WORKDEFENCEPOWER]=works[2][CHAR_WORKDEFENCEPOWER]=40;works[10][CHAR_WORKDEFENCEPOWER]=80;
     works[1][CHAR_WORKQUICK]=works[2][CHAR_WORKQUICK]=40;works[10][CHAR_WORKQUICK]=60;
     works[1][CHAR_WORKFIXVITAL]=works[2][CHAR_WORKFIXVITAL]=40;works[10][CHAR_WORKFIXVITAL]=80;
@@ -354,6 +357,11 @@ def analyze_profile(name: str, root: Path):
         )
         if death_first < len(damage):
             raise ValueError("tail AddProfit began before all same-harness damage writes")
+        if any(x.startswith("S:1:-1") for x in semantic):
+            raise ValueError(
+                "noncritical same-harness Guardian baseline unexpectedly "
+                "entered pet ultimate selection clear"
+            )
         if case.guardian_enabled:
             if not damage or not damage[0].startswith("M:2:"):
                 raise ValueError(
