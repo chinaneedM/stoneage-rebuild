@@ -84,6 +84,13 @@ from tools.stoneage_enemy_rehp_model import EnemyReHpRolls
 from tools.stoneage_enemy_relife_model import EnemyReLifeRolls
 from tools.stoneage_recovered25_attack_magic_runtime import Recovered25AttackMagicRuntime
 
+from tools.stoneage_profit_exit_runtime_binder import (
+    ProfitBoundaryScanSettlement,
+    accounting_from_scan,
+    resolve_profit_boundary_scans,
+    supports_profit_boundary_scan,
+)
+
 from tools.stoneage_battle_core_model import (
     BATTLE_PENDING_DROP_MAX,
     BattleCaptureInputs,
@@ -762,6 +769,7 @@ class PersistentRoundResult:
     after: PersistentBattleState
     attack_magic_overlay_before: AttackMagicRoundOverlay | None = None
     attack_magic_overlay_after: AttackMagicRoundOverlay | None = None
+    profit_scan_settlement: ProfitBoundaryScanSettlement | None = None
 
 
 @dataclass(frozen=True)
@@ -2530,19 +2538,104 @@ def resolve_persistent_ordinary_round(
             for participant_id, value in round_result.hp_by_participant_id.items()
         }
     )
-    (
-        pending_exp,
-        pending_variable_ai,
-        pending_drops,
-        pending_player_charm_delta,
-        pending_player_dead_pet_count_delta,
-        destroyed_drops,
-    )=_pending_profit_after_ordinary_round(
+    profit_scan_settlement=None
+    use_profit_scan=(
+        not (drop_rolls_by_enemy_id or {})
+        and supports_profit_boundary_scan(
+            session=state.session,
+            boundaries=round_result.profit_boundaries,
+            events=round_result.events,
+            persistent_hp_by_participant_id=state.hp_by_participant_id,
+            pending_exp_by_participant_id=state.pending_exp_by_participant_id,
+            pending_pet_variable_ai_by_participant_id=(
+                state.pending_pet_variable_ai_by_participant_id
+            ),
+            pending_player_charm_delta=state.pending_player_charm_delta,
+            pending_player_dead_pet_count_delta=(
+                state.pending_player_dead_pet_count_delta
+            ),
+            base_status_runtime_by_participant_id=(
+                state.base_status_runtime_by_participant_id
+            ),
+            nocast_overlay=state.nocast_overlay,
+            initial_processed_death_ids=state.profit_processed_death_ids,
+            no_risk=bool(no_risk),
+            battle_exited_participant_ids=state.battle_exited_participant_ids,
+            ultimate_exited_participant_ids=state.ultimate_exited_participant_ids,
+        )
+    )
+    legacy_profit=_pending_profit_after_ordinary_round(
         state,
         round_result,
         no_risk=bool(no_risk),
         drop_rolls_by_enemy_id=drop_rolls_by_enemy_id,
     )
+    if use_profit_scan:
+        profit_scan_settlement=resolve_profit_boundary_scans(
+            session=state.session,
+            boundaries=round_result.profit_boundaries,
+            events=round_result.events,
+            persistent_hp_by_participant_id=state.hp_by_participant_id,
+            pending_exp_by_participant_id=state.pending_exp_by_participant_id,
+            pending_pet_variable_ai_by_participant_id=(
+                state.pending_pet_variable_ai_by_participant_id
+            ),
+            pending_player_charm_delta=state.pending_player_charm_delta,
+            pending_player_dead_pet_count_delta=(
+                state.pending_player_dead_pet_count_delta
+            ),
+            base_status_runtime_by_participant_id=(
+                state.base_status_runtime_by_participant_id
+            ),
+            nocast_overlay=state.nocast_overlay,
+            initial_processed_death_ids=state.profit_processed_death_ids,
+            no_risk=bool(no_risk),
+        )
+        (
+            pending_exp,
+            pending_variable_ai,
+            pending_player_charm_delta,
+            pending_player_dead_pet_count_delta,
+        )=accounting_from_scan(
+            profit_scan_settlement,
+            exp_recipient_ids=tuple(state.pending_exp_by_participant_id),
+            allied_pet_ids=tuple(
+                str(pet.participant_id)
+                for pet in state.session.allied_pets
+            ),
+            player_id=str(state.session.player.participant_id),
+        )
+        pending_drops=state.pending_drop_items_by_player_entry_id
+        destroyed_drops=state.destroyed_drop_items
+        scan_tuple=(
+            pending_exp,
+            pending_variable_ai,
+            pending_drops,
+            pending_player_charm_delta,
+            pending_player_dead_pet_count_delta,
+            destroyed_drops,
+        )
+        if scan_tuple!=legacy_profit:
+            raise ValueError(
+                "canonical whole-scan accounting diverged from legacy "
+                "event-order accounting inside the admitted comparison subset"
+            )
+        if (
+            tuple(sorted(profit_scan_settlement.final_processed_death_ids))
+            != tuple(sorted(round_result.profit_processed_death_ids))
+        ):
+            raise ValueError(
+                "canonical whole-scan final processed-death state drift"
+            )
+    else:
+        (
+            pending_exp,
+            pending_variable_ai,
+            pending_drops,
+            pending_player_charm_delta,
+            pending_player_dead_pet_count_delta,
+            destroyed_drops,
+        )=legacy_profit
     exited_ids={str(pid) for pid in round_result.exited_participant_ids}
     enemy_ids={str(enemy.participant_id) for enemy in state.session.enemies}
     player_id=str(state.session.player.participant_id)
@@ -3065,4 +3158,5 @@ def resolve_persistent_ordinary_round(
         after=next_state,
         attack_magic_overlay_before=attack_magic_overlay,
         attack_magic_overlay_after=round_result.attack_magic_overlay,
+        profit_scan_settlement=profit_scan_settlement,
     )
