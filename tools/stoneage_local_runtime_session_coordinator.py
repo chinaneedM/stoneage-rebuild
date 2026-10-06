@@ -4415,11 +4415,13 @@ class LocalRuntimeSessionCoordinator:
         battlemodel_actions_by_participant_id: Mapping[str,BattleModelRoundAction] | None = None,
         base_status_rolls_by_participant_id: Mapping[str,BaseStatusTurnRolls] | None = None,
     ) -> tuple[LocalRuntimeBattleContext, PersistentRoundResult]:
-        """Advance an explicit base round, optionally scoped nonlethal BattleModel.
+        """Advance an explicit base round with a bounded typed BattleModel seam.
 
         Typed BattleModel is explicitly supplied and re-admitted against current
-        spawned/template/runtime identity. Automatic BattleModel AI selection,
-        other callbacks, equipped features and death/ultimate remain outside.
+        spawned/template/runtime identity. An explicit lethal-profit scope may
+        commit normal ID638 death through the canonical command-tail whole scan;
+        automatic AI, other callbacks, equipped features and ultimate/Exit
+        remain outside.
         """
 
         state = context.persistent_battle_state
