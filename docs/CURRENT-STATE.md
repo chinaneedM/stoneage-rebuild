@@ -8492,3 +8492,29 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   with an acceptance receipt/pressure update. PetIn accessor divergence,
   ride-bearing transformation and wider equipment/critical composition remain
   explicit follow-up seams.
+
+
+## 2026-10-06 — BecomeFox bounded runtime implementation gates PASS; pressure reclassification submitted
+
+- Exact implementation head **265d23956793d364fe29785b96be7e2b1694490e**
+  passed the dedicated BecomeFox coordinator gate
+  **37479834236/112324747712**, the complete local runtime coordinator
+  **37479834342/112324747692**, runtime golden **37479834125**, BattleModel base
+  DamageSub settlement **37479834207**, and full recovered25 region/runtime-stack
+  **37479834237/112324747709**. No completed workflow on that implementation head
+  reported a failure.
+- Ordered/native/persistent/coordinator scope is therefore sufficient for a
+  bounded recovered25 runtime classification of the exact two ID625 placements.
+  This does not close PetIn accessor divergence, ride-bearing transforms,
+  wider equipment/critical composition, original PRNG identity, original enum
+  ordinal or original JSS/Taiwan-v1 provenance.
+- Pressure classifier candidate now adds only PETSKILL_BecomeFox to
+  closed_runtime. Expected mechanically recomputed pressure is
+  **2486 = 2465 closed + 18 OPEN + 3 historical UB** and expected NEXT_OPEN is
+  **PETSKILL_BecomePig / IDs631,635 / 2 uses / 2 templates**.
+- The pressure workflow must independently recover the verified preservation
+  bundle, recompute the ranking, pass the focused closure regression and write
+  the derived pressure report. These expected counts remain **PENDING** until
+  that remote gate succeeds.
+- Canonical runtime spec:
+  `specs/STONEAGE-BECOMEFOX-RUNTIME-R1.md`.

@@ -67,9 +67,10 @@ jobs:
             > research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
           grep -F 'TOTAL|positive_skill_slot_uses|2486' research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
           grep -F 'TOTAL|unresolved_skill_ids|0' research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
-          grep -F 'CAPABILITY_PRESSURE|total=2486|closed=2463|open=20|historical_ub=3' research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
+          grep -F 'CAPABILITY_PRESSURE|total=2486|closed=2465|open=18|historical_ub=3' research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
+          grep -F 'callback=PETSKILL_BecomeFox|ids=625|slot_uses=2|templates=2|status=closed_runtime' research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
           test "$(grep -c '^CONDITIONAL_PLACEMENT|' research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt)" = 2
-          grep -F 'NEXT_OPEN|' research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
+          grep -F 'NEXT_OPEN|callback=PETSKILL_BecomePig|ids=631,635|slot_uses=2|templates=2' research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
       - name: Commit derived ranking report
         run: |
           git config user.name stoneage-recovery-bot

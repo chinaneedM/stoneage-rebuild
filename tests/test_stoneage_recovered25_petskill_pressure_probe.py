@@ -291,5 +291,38 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         self.assertEqual(result["next_open"]["callback"],"PETSKILL_Deeppoison")
 
 
+    def test_becomefox_closure_advances_only_to_becomepig(self):
+        pets=SimpleNamespace(skills={
+            625:SimpleNamespace(function_name="PETSKILL_BecomeFox"),
+            631:SimpleNamespace(function_name="PETSKILL_BecomePig"),
+            635:SimpleNamespace(function_name="PETSKILL_BecomePig"),
+            577:SimpleNamespace(function_name="PETSKILL_Deeppoison"),
+            200:SimpleNamespace(function_name="PETSKILL_Merge"),
+        })
+        enemies=SimpleNamespace(templates={
+            10:SimpleNamespace(
+                skill_slot_ids=(625,625,631,635,577,200,0)
+            ),
+        })
+        result=analyze_runtime_objects(pets,enemies)
+        rows={row["callback"]:row for row in result["rows"]}
+        self.assertEqual(
+            (
+                rows["PETSKILL_BecomeFox"]["status"],
+                rows["PETSKILL_BecomeFox"]["slot_uses"],
+                rows["PETSKILL_BecomeFox"]["skill_ids"],
+            ),
+            ("closed_runtime",2,(625,)),
+        )
+        self.assertEqual(rows["PETSKILL_BecomePig"]["status"],"open")
+        self.assertEqual(rows["PETSKILL_BecomePig"]["slot_uses"],2)
+        self.assertEqual(rows["PETSKILL_Deeppoison"]["status"],"open")
+        self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
+        self.assertEqual(
+            result["next_open"]["callback"],
+            "PETSKILL_BecomePig",
+        )
+
+
 if __name__=="__main__":
     unittest.main()
