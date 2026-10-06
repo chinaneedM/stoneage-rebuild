@@ -112,7 +112,12 @@ jobs:
           grep -F 'COUNT|enemybase_templates|2' research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt
           grep -F 'BECOMEFOX_ROW|id=625|' research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_BECOMEFOX_POSITIVE_REFERENCES_CLOSED' research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt
-          grep -F 'BOUNDARY|discovery_only_complete_population_and_exact_identity_not_accepted' research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_BECOMEFOX_POPULATION_CLOSED' research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_BECOMEFOX_EXACT_ROWS_CLOSED' research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_BECOMEFOX_EXACT_TEMPLATES_CLOSED' research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt
+          grep -F 'BECOMEFOX_ROW|id=625|field=1|target=1|cost=2|illegal=3000|slot_references=2|option_bytes=0|' research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt
+          grep -F 'BECOMEFOX_TEMPLATE|tempno=148|graphic_id=101743|base_vital=32|base_strength=40|base_toughness=26|base_dexterity=30|ai=150|skill_slots=3|skill_ids=625' research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt
+          grep -F 'BECOMEFOX_TEMPLATE|tempno=149|graphic_id=101744|base_vital=28|base_strength=45|base_toughness=22|base_dexterity=32|ai=150|skill_slots=3|skill_ids=625' research/recovered/STONEAGE-25-BECOMEFOX-PROBE-R1.txt
 
       - name: Commit derived discovery reports
         run: |

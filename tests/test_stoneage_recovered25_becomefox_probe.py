@@ -21,7 +21,12 @@ def fixture():
 
 class BecomeFoxProbeTests(unittest.TestCase):
     def test_discovery_closes_only_known_pressure_identity(self):
-        result=analyze_runtime_objects(*fixture())
+        result=analyze_runtime_objects(
+            *fixture(),
+            expected_callback_ids=None,
+            expected_exact_rows=None,
+            expected_template_rows=None,
+        )
         self.assertTrue(result["positive_references_closed"])
         self.assertFalse(result["population_closed"])
         self.assertFalse(result["exact_rows_closed"])

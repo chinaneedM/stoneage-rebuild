@@ -8314,3 +8314,20 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   inspect the derived exact data, pin the complete identities and rerun for
   bounded reference acceptance before implementing any runtime semantics.
   Spec: `specs/STONEAGE-BECOMEFOX-REFERENCE-DISCOVERY-R1.md`.
+
+
+## 2026-10-06 — BecomeFox exact recovered25 identity discovered; pinning gate
+
+- Discovery Action37467373346/job112281727223 SUCCESS from current-main branch:
+  4 probe tests and all3 pinned source profiles21/21 gates. Report-only writeback
+  7d3dd20df03a78db67e4905378ed0533e85448d8.
+- Verified data closes the observed population to one row: ID625 FIELD1 TARGET1
+  COST2 ILLEGAL3000, empty OPTION;2 positive references on exactly2 templates.
+  Placements are TEMPNO148/IMG101743/base32,40,26,30/AI150 and
+  TEMPNO149/IMG101744/base28,45,22,32/AI150, both report slot3.
+- Those discovered values are now pinned in the probe. This is still a data/source
+  reference gate only: no ordered hit, transformation RNG, FOXROUND lifetime,
+  PetIn divergence or persistent runtime is accepted yet.
+- **Highest-priority unfinished task:** require a second exact-data CI run to
+  close population/row/template invariants, then build the bounded native/reference
+  model for post-attack transformation and cross-round state semantics.

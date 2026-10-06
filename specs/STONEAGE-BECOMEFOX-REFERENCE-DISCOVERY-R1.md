@@ -1,7 +1,7 @@
 # StoneAge PETSKILL_BecomeFox reference discovery R1
 
 Date: 2026-10-06  
-Status: **DISCOVERY_GATE_IMPLEMENTED / EXACT_DATA_AND_SOURCE_CI_PENDING**
+Status: **EXACT_IDENTITIES_PINNED / EXACT_RERUN_PENDING**
 
 ## Purpose
 
@@ -50,3 +50,24 @@ identity, cross-round persistence, PetIn recall semantics, original numeric
 command, active-build/Taiwan-v1 membership or pressure promotion is accepted by
 this discovery commit. ID638's conditional capability classification is not
 transferable to BecomeFox.
+
+
+## First remote discovery result
+
+Run `37467373346/112281727223` completed SUCCESS on discovery input
+`f96cc371bdb1772ca9f559e7c3a54e74060b19c4`. Four unit tests passed and all
+three pinned descendant profiles reproduced21/21 structural gates. Derived
+writeback `7d3dd20df03a78db67e4905378ed0533e85448d8` stores reports only.
+
+The verified recovered25 bundle discovered exactly one callback row:
+
+- ID625, FIELD1, TARGET1, COST2, ILLEGAL3000;
+- exactly2 positive enemybase references across2 templates;
+- OPTION length0, SHA256 of empty bytes
+  `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`;
+- exact placements: TEMPNO148/IMG101743/base32,40,26,30/AI150/report slot3;
+  TEMPNO149/IMG101744/base28,45,22,32/AI150/report slot3.
+
+These values are now pinned as invariants. The next run must close callback
+population, exact row and exact template identities simultaneously; discovery
+success alone is not yet reference acceptance.
