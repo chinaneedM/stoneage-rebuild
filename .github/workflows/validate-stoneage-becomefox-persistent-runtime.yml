@@ -1,0 +1,37 @@
+name: Validate StoneAge BecomeFox persistent runtime
+
+concurrency:
+  group: stoneage-becomefox-persistent-runtime-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-becomefox-persistent-runtime.yml"
+      - "tools/stoneage_battle_state_model.py"
+      - "tools/stoneage_battle_round_model.py"
+      - "tools/stoneage_becomefox_runtime_state.py"
+      - "tools/stoneage_enemy_ai_becomefox_bridge.py"
+      - "tests/test_stoneage_becomefox_persistent_runtime.py"
+      - "tests/test_stoneage_battle_state_model.py"
+      - "tests/test_stoneage_becomefox_ordered_round.py"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate multi-round FOXROUND persistence and state regressions
+        run: |
+          python -m unittest -v \
+            tests.test_stoneage_becomefox_persistent_runtime \
+            tests.test_stoneage_becomefox_ordered_round \
+            tests.test_stoneage_battle_state_model

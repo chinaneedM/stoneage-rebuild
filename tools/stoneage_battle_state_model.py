@@ -58,6 +58,8 @@ from tools.stoneage_enemy_ai_lighttakeed_bridge import (
 from tools.stoneage_enemy_ai_combined_bridge import EnemyAiCombinedSubmission
 from tools.stoneage_enemy_ai_vary_bridge import EnemyAiVarySubmission
 from tools.stoneage_vary_runtime_state import VaryRuntimeOverlay
+from tools.stoneage_enemy_ai_becomefox_bridge import EnemyAiBecomeFoxSubmission
+from tools.stoneage_becomefox_runtime_state import BecomeFoxRuntimeOverlay
 from tools.stoneage_combined_runtime_state import (
     CombinedActionRolls,
     CombinedRuntimeOverlay,
@@ -210,6 +212,7 @@ class PersistentBattleState:
     setmagicpet_overlay: SetMagicPetRoundOverlay | None = None
     combined_overlay: CombinedRuntimeOverlay | None = None
     vary_overlay: VaryRuntimeOverlay | None = None
+    becomefox_overlay: BecomeFoxRuntimeOverlay | None = None
 
     def __post_init__(self) -> None:
         if self.phase not in {ACTIVE, FINISHED}:
@@ -319,6 +322,30 @@ class PersistentBattleState:
                 raise ValueError(
                     "persistent Vary overlay references unknown participants: "
                     f"{unknown_vary}"
+                )
+        if self.becomefox_overlay is not None:
+            if not isinstance(self.becomefox_overlay,BecomeFoxRuntimeOverlay):
+                raise TypeError("persistent BecomeFox overlay has wrong type")
+            unknown_fox=sorted(
+                set(self.becomefox_overlay.runtime_by_participant_id)-set(participants)
+            )
+            if unknown_fox:
+                raise ValueError(
+                    "persistent BecomeFox overlay references unknown participants: "
+                    f"{unknown_fox}"
+                )
+            invalid_fox=sorted(
+                participant_id
+                for participant_id in self.becomefox_overlay.runtime_by_participant_id
+                if (
+                    participants[participant_id].side!="player"
+                    or participants[participant_id].kind!="pet"
+                )
+            )
+            if invalid_fox:
+                raise ValueError(
+                    "persistent bounded BecomeFox targets must be player-side pets: "
+                    f"{invalid_fox}"
                 )
         normalized_ultimate_exits=tuple(
             str(pid) for pid in self.ultimate_exited_participant_ids
@@ -862,6 +889,7 @@ def begin_persistent_battle(
     setmagicpet_overlay: SetMagicPetRoundOverlay | None = None,
     combined_overlay: CombinedRuntimeOverlay | None = None,
     vary_overlay: VaryRuntimeOverlay | None = None,
+    becomefox_overlay: BecomeFoxRuntimeOverlay | None = None,
 ) -> PersistentBattleState:
     participants = _participant_map(session)
     normalized_slots = {str(pid): int(slot) for pid, slot in slots.items()}
@@ -924,6 +952,7 @@ def begin_persistent_battle(
         setmagicpet_overlay=setmagicpet_overlay,
         combined_overlay=combined_overlay,
         vary_overlay=vary_overlay,
+        becomefox_overlay=becomefox_overlay,
     )
     return _with_termination(state)
 
@@ -985,6 +1014,7 @@ def _with_termination(state: PersistentBattleState) -> PersistentBattleState:
         result=result,
         winning_side=winning_side,
         vary_overlay=None,
+        becomefox_overlay=None,
     )
 
 
@@ -1034,6 +1064,17 @@ def participant_snapshot(
             attack=int(vary.attack_power),
             defense=int(vary.defense_power),
             quick=int(vary.quick),
+        )
+    fox=(
+        None if state.becomefox_overlay is None else
+        state.becomefox_overlay.runtime_by_participant_id.get(participant_id)
+    )
+    if fox is not None:
+        participant=replace(
+            participant,
+            attack=int(fox.state.attack_power),
+            defense=int(fox.state.defence_power),
+            quick=int(fox.state.quick),
         )
     return participant
 
@@ -1292,6 +1333,16 @@ def resolve_persistent_capture_transition(
         vary_overlay=(
             None if state.vary_overlay is None else
             state.vary_overlay.retain_participants(
+                {
+                    pid
+                    for pid in participants
+                    if pid != target_id
+                }
+            )
+        ),
+        becomefox_overlay=(
+            None if state.becomefox_overlay is None else
+            state.becomefox_overlay.retain_participants(
                 {
                     pid
                     for pid in participants
@@ -1707,6 +1758,13 @@ def resolve_persistent_ordinary_round(
     vary_submissions_by_participant_id: Mapping[
         str,EnemyAiVarySubmission
     ] | None = None,
+    becomefox_submissions_by_participant_id: Mapping[
+        str,EnemyAiBecomeFoxSubmission
+    ] | None = None,
+    becomefox_draws_by_participant_id: Mapping[str,int | None] | None = None,
+    becomefox_target_petflag_by_participant_id: Mapping[str,int] | None = None,
+    becomefox_base_image_by_participant_id: Mapping[str,int] | None = None,
+    becomefox_attacker_pig_marker_by_participant_id: Mapping[str,int] | None = None,
     fall_ground_submissions_by_participant_id: Mapping[
         str,EnemyAiFallGroundSubmission
     ] | None = None,
@@ -1744,6 +1802,12 @@ def resolve_persistent_ordinary_round(
     if (battlemodel_actions_by_participant_id and state.vary_overlay is not None
         and state.vary_overlay.runtime_by_participant_id):
         raise ValueError("BattleModel persistent scope excludes Vary overlay")
+    if (
+        battlemodel_actions_by_participant_id
+        and state.becomefox_overlay is not None
+        and state.becomefox_overlay.runtime_by_participant_id
+    ):
+        raise ValueError("BattleModel persistent scope excludes BecomeFox overlay")
 
     participants = active_participants(state)
     living_ids = {participant.participant_id for participant in participants}
@@ -2334,6 +2398,7 @@ def resolve_persistent_ordinary_round(
             | set(lighttakeed_submissions)
             | set(combined_submissions)
             | set(vary_submissions)
+            | set(becomefox_submissions_by_participant_id or {})
         ),
         base_status_runtime_by_participant_id=_freeze_mapping({
             participant_id:
@@ -2345,6 +2410,11 @@ def resolve_persistent_ordinary_round(
         participant.participant_id: int(state.slots[participant.participant_id])
         for participant in participants
     }
+    round_becomefox_overlay=(
+        None
+        if state.becomefox_overlay is None
+        else state.becomefox_overlay.retain_participants(round_entry_ids)
+    )
     round_result = resolve_ordinary_round(
         prepared,
         slots=current_slots,
@@ -2488,6 +2558,23 @@ def resolve_persistent_ordinary_round(
         ),
         combined_overlay=state.combined_overlay,
         vary_submissions_by_participant_id=vary_submissions,
+        becomefox_submissions_by_participant_id=(
+            becomefox_submissions_by_participant_id
+        ),
+        becomefox_draws_by_participant_id=(
+            becomefox_draws_by_participant_id
+        ),
+        becomefox_overlay=round_becomefox_overlay,
+        becomefox_current_turn=int(state.turn),
+        becomefox_target_petflag_by_participant_id=(
+            becomefox_target_petflag_by_participant_id
+        ),
+        becomefox_base_image_by_participant_id=(
+            becomefox_base_image_by_participant_id
+        ),
+        becomefox_attacker_pig_marker_by_participant_id=(
+            becomefox_attacker_pig_marker_by_participant_id
+        ),
         fall_ground_submissions_by_participant_id=(
             fall_ground_submissions_by_participant_id
         ),
@@ -2945,6 +3032,30 @@ def resolve_persistent_ordinary_round(
             },
         )
 
+    next_becomefox_values={}
+    if state.becomefox_overlay is not None:
+        next_becomefox_values.update(
+            state.becomefox_overlay.runtime_by_participant_id
+        )
+    if round_result.becomefox_overlay is not None:
+        for participant_id in round_entry_ids:
+            next_becomefox_values.pop(str(participant_id),None)
+        next_becomefox_values.update(
+            round_result.becomefox_overlay.runtime_by_participant_id
+        )
+    next_becomefox_overlay=BecomeFoxRuntimeOverlay(
+        next_becomefox_values
+    ).retain_participants(
+        {
+            str(participant.participant_id)
+            for participant in _session_participants(next_session)
+            if (
+                str(participant.participant_id) not in next_battle_exited
+                and str(participant.participant_id) not in next_ultimate_exited
+            )
+        }
+    )
+
     next_vary_overlay=working_vary
     auxiliary_vary_results={
         "status_tick","setmagicpet_tick","weaken_tick","barrier_tick",
@@ -3146,6 +3257,7 @@ def resolve_persistent_ordinary_round(
         setmagicpet_overlay=next_setmagicpet_overlay,
         combined_overlay=next_combined_overlay,
         vary_overlay=next_vary_overlay,
+        becomefox_overlay=next_becomefox_overlay,
     )
     if player_id in escaped_ids:
         next_state=replace(
@@ -3154,6 +3266,7 @@ def resolve_persistent_ordinary_round(
             result=PLAYER_ESCAPE,
             winning_side=None,
             vary_overlay=None,
+            becomefox_overlay=None,
         )
     else:
         next_state = _with_termination(next_state)

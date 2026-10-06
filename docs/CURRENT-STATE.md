@@ -8439,3 +8439,28 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   PASS, thread becomefox_overlay/currentTurn through PersistentBattleState and
   local coordinator, then add multi-round/persistence acceptance. PetIn and
   wider ride/equipment interactions remain explicit later seams.
+
+
+## 2026-10-06 — BecomeFox persistent multi-round layer implemented (PENDING)
+
+- Ordered-round gate is accepted at the implementation-test level: the corrected
+  rerun completed 128 tests / OK. The previous shared battle-round commit also
+  completed the existing cross-skill workflows successfully except one unrelated
+  recovered25-region job that was still running when this layer started.
+- PersistentBattleState now carries a bounded BecomeFox overlay. Its participant
+  snapshot uses the overlay's stored current work attack/defense/quick exactly;
+  it does not recompute 80 percent merely because FOXROUND is active. This
+  preserves the source distinction between a target transformed before versus
+  after its own action in the same turn.
+- Each persistent round passes state.turn as the source battle turn, admits typed
+  ID625 submissions and exact draw/PETFLG/base-image/pig witnesses, then merges
+  the returned overlay back with foxed entries that were not active round
+  participants. Normal dead entries may therefore retain FOXROUND; battle/ultimate
+  exits and session removal drop it. Battle termination/escape clears it.
+- Focused multi-round tests cover transform-before-action carry, transform-after-
+  action nonretroactivity, strict turn-delta recovery and bounded target-class
+  validation. Existing PersistentBattleState regressions run in the same gate.
+- Highest-priority unfinished task: inspect the persistent gate. If PASS, thread
+  exact ID625 selection/submission and the persistent overlay through the local
+  runtime session coordinator. PetIn accessor divergence and wider ride/equipment
+  composition remain explicit later seams.
