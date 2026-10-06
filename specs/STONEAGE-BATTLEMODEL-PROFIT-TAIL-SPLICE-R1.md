@@ -1,6 +1,6 @@
 # BattleModel dispatch-tail profit splice native audit R1
 
-Status: IMPLEMENTED_ON_ISOLATED_BRANCH; REMOTE_NATIVE_VALIDATION_PENDING.
+Status: CLOSED_BOUNDED_BATTLEMODEL_DISPATCH_TAIL_PROFIT_SPLICE_NATIVE.
 
 ## Purpose
 
@@ -60,3 +60,25 @@ This audit may close only the dispatch-tail splice. Full
 `BATTLE_Battling` body execution with original GuardianCheck/AttackSeq in the
 same harness remains OPEN. Modern lethal638 remains blocked until that stronger
 native composition is available and matches the canonical runtime binder.
+
+## Remote acceptance — 2026-10-06
+
+Exact input `da3512edb89877d0761fde7ddbe083f03237dd0e`, tree `16220e2ffa4da9e9bce8321eb3b8c0952fcb6163`, passed settlement
+`37433803780/112170605599`. The run reports **653 tests**, **19656**
+original PvE profit/exit cases, **19656** immutable scan/model-native
+comparisons, **384** bounded Weaken recalculation vectors and **9/9** new
+dispatch-tail splice witnesses across the three pinned profiles.
+
+The accepted witness proves that the exact original BattleModel planner/helper
+can execute all selected hit effects before the one exact original tail
+AddProfit whole scan, including a controlled Guardian pet→owner multi-victim
+batch. It also records two source-critical harness corrections:
+`BATTLE_TargetCheck(-1)` is a normal absent-Guardian probe, and the
+`BCF_*` constants must preserve their original bitmask semantics.
+
+This is not full Battling execution and not same-harness original GuardianCheck.
+Those remain the next native gate; lethal638 remains disabled.
+
+Acceptance receipt:
+`research/recovered/STONEAGE-BATTLEMODEL-PROFIT-TAIL-SPLICE-ACCEPTANCE-R1.json`.
+

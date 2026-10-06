@@ -3939,3 +3939,26 @@ remain explicitly OPEN. No original source/payload committed.
 - Receipt:
   `research/recovered/STONEAGE-PROFIT-SCAN-RUNTIME-BINDER-ACCEPTANCE-R1.json`.
 
+### SRC-BATTLEMODEL-PROFIT-TAIL-SPLICE-R1 — remote native acceptance 2026-10-06
+
+- Exact input `da3512edb89877d0761fde7ddbe083f03237dd0e`, tree `16220e2ffa4da9e9bce8321eb3b8c0952fcb6163`; no original source or
+  assets committed.
+- Settlement `37433803780/112170605599` SUCCESS: 653 tests, 19656 original
+  PvE profit/exit cases, 19656 immutable scan/model-native comparisons, 384
+  bounded Weaken recalculation vectors and **9 native dispatch-tail splice
+  cases** across the three clean pins. Artifact `11397488740`,
+  `sha256:f28d16bd25e02eaa54b5e9ebaf8e1f5bd654140e426e01f8cffb2bb32a645fa9`.
+- Source hashes remain:
+  gavin battle `a10380b8…`, event `9a460756…`;
+  iris battle `6cbcf85a…`, event `2437d4fe…`;
+  bismarck battle `23469518…`, event `b294f82e…`.
+- Accepted claim: original BattleModel/helper and original tail AddProfit execute
+  in one transient program in the statically verified case→tail chronology;
+  multi-victim tail processing and repeat-profit idempotence match the immutable
+  scan. BattleModel internal AddProfit count remains zero.
+- Boundary: full `BATTLE_Battling` case body and same-harness original
+  AttackSeq/GuardianCheck are **not** certified here. Lethal638, original
+  build/version and wider runtime remain OPEN.
+- Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-PROFIT-TAIL-SPLICE-ACCEPTANCE-R1.json`.
+

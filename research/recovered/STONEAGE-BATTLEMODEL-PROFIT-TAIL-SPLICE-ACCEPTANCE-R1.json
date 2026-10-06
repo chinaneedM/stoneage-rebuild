@@ -1,0 +1,68 @@
+{
+  "schema": "STONEAGE_BATTLEMODEL_PROFIT_TAIL_SPLICE_ACCEPTANCE_R1",
+  "status": "CLOSED_BOUNDED_BATTLEMODEL_DISPATCH_TAIL_PROFIT_SPLICE_NATIVE",
+  "date": "2026-10-06",
+  "baseline_main_commit": "ebf2e057c8f786519378b9a9676a7684a0e2b83f",
+  "accepted_commit": "da3512edb89877d0761fde7ddbe083f03237dd0e",
+  "accepted_tree": "16220e2ffa4da9e9bce8321eb3b8c0952fcb6163",
+  "branch": "agent/native-command-profit-guardian-r1-20261006",
+  "remote_validation": {
+    "settlement": {
+      "run_id": 37433803780,
+      "job_id": 112170605599,
+      "conclusion": "success",
+      "tests": 653,
+      "native_profit_exit_cases": 19656,
+      "immutable_scan_model_native_comparisons": 19656,
+      "weaken_recalculation_vectors": 384,
+      "native_dispatch_tail_cases": 9,
+      "source_profiles": 3
+    },
+    "artifact": {
+      "id": 11397488740,
+      "name": "battlemodel-settlement",
+      "digest": "sha256:f28d16bd25e02eaa54b5e9ebaf8e1f5bd654140e426e01f8cffb2bb32a645fa9"
+    }
+  },
+  "source_profiles": [
+    {
+      "name": "gavin",
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "battle_sha256": "a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602",
+      "battle_event_sha256": "9a4607566b7cf6f6a94f2019c5d1dfc7088f7805421037b0a5f0095054b9db1"
+    },
+    {
+      "name": "iris",
+      "commit": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "battle_sha256": "6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8",
+      "battle_event_sha256": "2437d4fe88f1dd77e14ad5b976402053ddd1e297d471f45b4169c3588310d4db"
+    },
+    {
+      "name": "bismarck",
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "battle_sha256": "2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18",
+      "battle_event_sha256": "b294f82e2a0b8382b59edd06fa8646fa3e50c00656eba496d8b78fa421c58ecc"
+    }
+  ],
+  "accepted_scope": [
+    "exact original BattleModel and BattleModel_ATTACK bodies execute before one exact original command-tail AddProfit whole scan in one transient C program",
+    "static original Battling BattleModel case anchor and command-tail AddProfit anchor are checked at all three pinned source profiles",
+    "BattleModel itself has zero internal AddProfit calls at all three profiles",
+    "three vectors per profile, nine total, match the accepted immutable whole-scan end state",
+    "controlled Guardian protocol routes first hit to pet slot5 and second hit to owner slot0 before the tail scan",
+    "multi-victim tail scan observes owner slot0 then pet slot5 and a repeated AddProfit does not duplicate death processing",
+    "source BCF bitmask semantics and absent guardian TargetCheck(-1) protocol are preserved in the harness"
+  ],
+  "explicit_nonclaims": [
+    "full BATTLE_Battling case body is not executed in this harness",
+    "original BATTLE_AttackSeq and BATTLE_GuardianCheck are not linked into the same splice harness",
+    "Guardian routing is controlled in this splice even though original AttackSeq/GuardianCheck is separately native-certified",
+    "lethal BattleModel ID638 remains rejected in the modern runtime",
+    "original build/version membership is not selected",
+    "no raw original source/assets are committed"
+  ],
+  "historical_claims_added": false,
+  "original_source_or_assets_committed": false,
+  "positive_slots_promoted": 0,
+  "next_priority": "Build the stronger same-harness native composition by linking original BATTLE_AttackSeq/GuardianCheck into the BattleModel->tail AddProfit splice, then attempt full BATTLE_Battling case execution if the conditional source context can be preserved without altering original bodies. Lethal638 remains blocked until same-harness actual Guardian and multi-victim tail evidence matches the canonical runtime binder."
+}

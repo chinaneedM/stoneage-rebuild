@@ -7717,3 +7717,41 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   original build/version, automatic AI and BattleModel-specific
   golden/region/hash-pressure remain OPEN; no positive-slot promotion.
 
+## Phase 1 BattleModel dispatch-tail profit splice native acceptance — 2026-10-06
+
+- Exact accepted input `da3512edb89877d0761fde7ddbe083f03237dd0e`, tree `16220e2ffa4da9e9bce8321eb3b8c0952fcb6163`, branch
+  `agent/native-command-profit-guardian-r1-20261006`.
+- **CLOSED_BOUNDED_BATTLEMODEL_DISPATCH_TAIL_PROFIT_SPLICE_NATIVE.**
+  Settlement `37433803780/112170605599` SUCCESS: **653 tests**,
+  **19656** original PvE profit/exit cases, **19656** immutable
+  scan/model-native comparisons, **384** bounded Weaken recalculation vectors,
+  and the new **9/9** dispatch-tail splice witnesses across gavin/iris/bismarck.
+  Artifact `11397488740`, digest
+  `sha256:f28d16bd25e02eaa54b5e9ebaf8e1f5bd654140e426e01f8cffb2bb32a645fa9`.
+- The transient C splice now executes the exact original
+  `BATTLE_BattleModel` + `BATTLE_BattleModel_ATTACK` bodies followed by one
+  exact original command-tail `BATTLE_AddProfit` whole scan, while separately
+  checking the original Battling case/tail anchors and proving BattleModel has
+  zero internal AddProfit calls. In the primary witness, controlled Guardian
+  routing produces pet-slot5 damage then owner-slot0 damage **before** any
+  AddProfit death/ISDIE write; the tail scan then processes the two dead entries
+  in source slot order and a repeated profit call creates no duplicate death.
+- During construction, two harness assumptions were corrected from source:
+  `BATTLE_TargetCheck(-1)` is a legitimate absent-Guardian probe and must
+  return false without forcing `BATTLE_No2Index(-1)`; and `BCF_*` values are
+  real bitmasks, not arbitrary synthetic enum IDs. Preserving those details
+  removes a false critical/ultimate path.
+- Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-PROFIT-TAIL-SPLICE-ACCEPTANCE-R1.json`.
+- This closes only the **splice**. The full `BATTLE_Battling` case body is not
+  executed, and original `BATTLE_AttackSeq/BATTLE_GuardianCheck` is not linked
+  into this same harness; Guardian routing remains controlled here even though
+  that subsystem is separately native-certified.
+- **Highest-priority unfinished task:** build the stronger same-harness native
+  composition by linking original `BATTLE_AttackSeq/GuardianCheck` into this
+  BattleModel→tail-AddProfit splice, then attempt full `BATTLE_Battling` case
+  execution without rewriting conditional source context. Lethal638 stays
+  blocked until same-harness actual Guardian + multi-victim command-tail
+  evidence agrees with the canonical runtime binder. Build/version, wider
+  recipients/features and automatic AI remain OPEN; no positive-slot promotion.
+

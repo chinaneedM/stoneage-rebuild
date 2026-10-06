@@ -1061,3 +1061,19 @@ adapter and ten-field/overlay clear are next.
 - OPEN: full original command-driver execution with actual Guardian victims and
   multi-victim BattleModel tail remains required before lethal638.
 
+### 2026-10-06 — BattleModel dispatch-tail profit splice accepted
+
+- NATIVE/FACT: exact input `da3512edb89877d0761fde7ddbe083f03237dd0e` passes settlement
+  `37433803780/112170605599`. Three pinned source profiles each contribute
+  three native splice vectors (**9 total**) while the existing 19656 whole-scan
+  native/model comparisons and 653 regressions remain green.
+- CHRONOLOGY: exact original BattleModel planner/helper executes before the one
+  command-tail original AddProfit. The multi-victim witness records pet damage
+  then owner damage before any ISDIE/death write; the scan subsequently follows
+  source slot order and repeat profit is idempotent.
+- HARNESS CORRECTION: absent Guardian is represented by TargetCheck(-1)==false,
+  and BCF result flags retain original bitmask values. Synthetic sequential flag
+  IDs had produced a false critical/ultimate branch and were rejected.
+- OPEN: original AttackSeq/GuardianCheck is still a controlled seam in this
+  splice and full Battling body execution remains a stronger later gate.
+
