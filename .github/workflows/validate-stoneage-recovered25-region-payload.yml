@@ -340,6 +340,6 @@ jobs:
             echo 'Derived region report unchanged; nothing to commit.'
           else
             git commit -m 'research: validate recovered25 region payload source'
-            git pull --rebase origin main
-            git push
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
           fi
