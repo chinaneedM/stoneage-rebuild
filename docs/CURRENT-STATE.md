@@ -7980,6 +7980,8 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
 - Added `tools/stoneage_recovered25_battlemodel_runtime_probe.py` and the derived
   semantic `game/STONEAGE-BATTLEMODEL-RUNTIME-GOLDEN-R1.json`. The CLI verifies
   complete active petskill and enemybase file SHA-256 before execution.
+  The same exact-data gate recounts all 2486 positive placements: 2461 closed,
+  22 OPEN, 3 historical UB; BattleModel remains OPEN with exactly two uses.
 - Sixty witnesses cover both exact positive templates, both charset profiles,
   three pinned source profiles and five scenarios: successful/failed status,
   normal death, Guardian pet-before-owner ultimate, and pet-only ultimate.

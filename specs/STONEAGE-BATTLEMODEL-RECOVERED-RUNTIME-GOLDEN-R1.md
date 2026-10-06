@@ -26,4 +26,6 @@ Big5 and UTF8 remain conditional experiments; no historical build is selected.
 
 Local unit controls use synthetic OPTION identities only. Remote bundle tests
 use production digests without patches and preserve derived reports as an
-Actions artifact. No original OPTION/source/assets are committed.
+Actions artifact. The same loaded data recounts the complete 2486-placement
+pressure ledger (2461 closed, 22 OPEN, 3 historical UB), retaining BattleModel
+as OPEN until promotion evaluation. No original OPTION/source/assets are committed.
