@@ -82,6 +82,46 @@ class DefaultPetUltimateRuntimeTests(unittest.TestCase):
         )
         self.assertEqual(result.ultimate_exited_participant_ids,("player","pet"))
 
+    def test_next_profit_boundary_carries_prior_normal_death_as_processed(self):
+        pet=replace(
+            self.pet,
+            hp=1,
+            max_hp=1000,
+            defense=0,
+        )
+        enemy2=replace(
+            self.enemy,
+            participant_id="enemy2",
+            quick=90,
+        )
+        before=begin_persistent_battle(
+            session(self.player,(self.enemy,enemy2),(pet,)),
+            slots={"player":0,"pet":5,"enemy":10,"enemy2":11},
+            default_pet_slot=0,
+        )
+        commands={
+            "player":BattleCommand(BATTLE_COM_WAIT),
+            "pet":BattleCommand(BATTLE_COM_WAIT),
+            "enemy":BattleCommand(BATTLE_COM_ATTACK,5),
+            "enemy2":BattleCommand(BATTLE_COM_ATTACK,0),
+        }
+        result=self.state_round(
+            before,
+            commands,
+            {"enemy":hit(),"enemy2":hit()},
+        )
+        boundaries=[
+            boundary for boundary in result.round.profit_boundaries
+            if boundary.boundary_kind == PROFIT_BOUNDARY_ORDINARY_PER_HIT
+        ]
+        self.assertEqual(len(boundaries),2)
+        first,second=boundaries
+        self.assertEqual(first.hp_by_slot[5],0)
+        self.assertNotIn(5,first.ultimate_kind_by_slot)
+        self.assertNotIn("pet",first.prior_processed_death_ids)
+        self.assertIn("pet",second.prior_processed_death_ids)
+        self.assertEqual(second.hp_by_slot[5],0)
+
     def test_explicit_none_still_removes_paired_occupancy(self):
         result=self.ordinary(self.authority(None))
         self.assertEqual(result.ultimate_exited_participant_ids,("player","pet"))
