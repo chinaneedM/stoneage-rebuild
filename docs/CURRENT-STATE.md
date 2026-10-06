@@ -7253,3 +7253,18 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   Guardian and failure immutability. Native full exit/profit composition then
   lethal BattleModel, automatic AI and specific golden/region/hash-verified
   pressure remain OPEN. No638 slot promotion; DD-018 restoration-first.
+
+
+### Default-pet helper audit main synchronization verified — 2026-10-06
+
+- Main/audit branch both0d05bd8e1eb7d09b4e6136bc3af12ff28c97af43,
+  treeb066563a4f809ca82ca2917f1d2a732bf9311637. Matching clean local/remote
+  tree, accepted input ancestry and nonforce synchronization verified.
+- Exact-main settlement replay37416184338 SUCCESS; same-code audit-branch
+  replay37416182677 SUCCESS. Original audit37415958204 SUCCESS. All32 prior
+  nonlethal exact-main regressions on038f7118 also SUCCESS, including region.
+  This checkpoint changes only continuity documentation and uses skip-ci.
+- **Highest-priority unfinished task:** DD-020 ordinary/persistent/continuation
+  selection and paired occupancy correction under the contract above; the
+  bounded native helper audit and accepted main synchronization are complete.
+  All lethal638/native full-exit/profit/automatic-AI/pressure gates remain OPEN.
