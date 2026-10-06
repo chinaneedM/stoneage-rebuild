@@ -3846,3 +3846,26 @@ remain explicitly OPEN. No original source/payload committed.
   modern clear primitive. No original source/assets committed or new vectors.
 - Runtime/modern baseline restoration is separate from original full
   complianceParameter, build/version or lethal638 acceptance; those stay OPEN.
+
+### SRC-PLAYER-EXIT-LATE-STATUS-RUNTIME-R1 — remote acceptance 2026-10-06
+
+- Modern bounded runtime acceptance only; no original source/assets committed.
+  Exact head `0425028d5965c76d34106a427c4a47f4a56f620b`, tree
+  `c84d46c6b1e8140579bffdaa950ba12c44505778`.
+- Main 33/33 triggered workflows SUCCESS; synchronized
+  `agent/player-exit-status-runtime-r1-20261006` 31/31 SUCCESS. Main settlement
+  `37425651218/112144564632`: 643 tests, 19656 immutable
+  scan/model-native comparisons, 486 DEFAULTPET helper cases and 384 bounded
+  Weaken recalculation vectors. Artifact `11395306244`,
+  `sha256:005110756a634a0b6fae329c38cef240be8556475d869c8d9f421b58fddcb107`. Golden `37425651031`, Taiwan gameplay
+  `37425651183`, region `37425651071` SUCCESS.
+- Accepted behavior: actual player ultimate Exit clears the admitted modern late
+  overlay/cache for explicit owner plus complete non-mail carried roster and
+  restores session-derived work state; independent SetMagicPet prepared powers
+  remain separate. Missing owner authority and unknown active status fail closed.
+- Receipt:
+  `research/recovered/STONEAGE-PLAYER-EXIT-STATUS-RUNTIME-ACCEPTANCE-R1.json`.
+  Original full complianceParameter, whole-scan command integration,
+  processed-death persistent accounting, actual Guardian-to-profit chronology,
+  lethal638 and wider feature/version membership remain OPEN.
+

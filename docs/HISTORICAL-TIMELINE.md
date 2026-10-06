@@ -993,3 +993,21 @@ adapter and ten-field/overlay clear are next.
  15 new actual runtime tests and643 related regressions PASS locally.
 - OPEN: full command-native scan integration, original complianceParameter,
   intra-continuation late interactions, lethal638 and exact remote acceptance.
+
+### 2026-10-06 — Actual player Exit late-status bridge remotely accepted
+
+- MODEL/FACT within the declared modern bounded runtime: exact head
+  `0425028d5965c76d34106a427c4a47f4a56f620b` passes all triggered remote gates (main 33/33; synchronized
+  work branch 31/31). Settlement `37425651218/112144564632` reproduces
+  643 tests, 19656 accepted whole-scan/model-native comparisons and 384 bounded
+  Weaken attribute-recalculation vectors.
+- DESIGN: actual player UltimateExtra/Exit and the outer continuation Exit path
+  clear admitted Nocast/Barrier/Weaken counters and stale prepared Weaken powers
+  only when explicit owner/default-pet authority and the complete non-mail
+  carried roster are available. Missing authority remains fail-closed.
+- OPEN: the persistent profit layer still charges deaths from damage-event order.
+  Native evidence requires side/slot whole-scan order at each real profit
+  boundary. Actual per-hit/ID638 command-tail snapshots, processed-death
+  accounting, full command-native chronology, Guardian/multi-victim witnesses
+  and lethal638 therefore remain unresolved.
+

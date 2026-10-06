@@ -7566,3 +7566,37 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   multi-victim bridge still required before lethal638. Pet/party EXP, sparse
   profit roster mapping, items/ride/wider features, build/version, AI and
   specific638 golden/region/pressure OPEN; no positive-slot promotion.
+
+## Phase 1 actual player Exit late-status bridge remote acceptance — 2026-10-06
+
+- Exact accepted runtime head `0425028d5965c76d34106a427c4a47f4a56f620b`, tree
+  `c84d46c6b1e8140579bffdaa950ba12c44505778`. The correction spans
+  `0b6ac781cd0486b0b49bfccb4c9d375434d56d09` plus the explicit-authority
+  fail-closed fix at the accepted head.
+- **CLOSED_BOUNDED_ACTUAL_PLAYER_EXIT_LATE_STATUS_RUNTIME_BRIDGE.** Main
+  triggered **33/33 SUCCESS** and the synchronized work branch **31/31 SUCCESS**.
+  Main settlement run `37425651218` / job `112144564632` reproduces
+  **643 tests**, **19656** immutable-scan/model-native comparisons, the existing
+  **486** DEFAULTPET helper cases and **384** bounded Weaken recalculation
+  vectors. Artifact `11395306244`, digest `sha256:005110756a634a0b6fae329c38cef240be8556475d869c8d9f421b58fddcb107`.
+  Runtime golden `37425651031`, Taiwan gameplay `37425651183`, and full
+  recovered25 region `37425651071` all SUCCESS.
+- Receipt:
+  `research/recovered/STONEAGE-PLAYER-EXIT-STATUS-RUNTIME-ACCEPTANCE-R1.json`.
+  This accepts only the actual player-Exit late-status/cache restoration bridge;
+  it does **not** certify original full `complianceParameter`, all
+  intra-continuation late-status interactions, the original full command driver,
+  lethal ID638, new positive slots, or new BattleModel-specific golden/region
+  semantics.
+- **Highest-priority unfinished task:** replace the remaining event-order profit
+  accounting with source-shaped boundary accounting. Bind actual ordinary
+  per-hit and BattleModel command-tail snapshots to the already accepted
+  immutable whole scan, carry explicit `ISDIE`/ultimate/occupancy/selection
+  state, and let only `processed_death_ids` drive new death/charm/loyalty
+  charges. Preserve ordinary per-hit versus ID638 command-tail grouping.
+  Execute original dispatch/hit-to-profit chronology with actual Guardian and
+  multi-victim tail states before admitting lethal638. Pet/party recipients,
+  sparse original roster mapping, items/ride/wider features, original
+  build/version, automatic AI and specific638 golden/region/hash-verified
+  pressure remain OPEN.
+

@@ -1,0 +1,86 @@
+{
+  "schema": "STONEAGE_PLAYER_EXIT_STATUS_RUNTIME_ACCEPTANCE_R1",
+  "status": "CLOSED_BOUNDED_ACTUAL_PLAYER_EXIT_LATE_STATUS_RUNTIME_BRIDGE",
+  "date": "2026-10-06",
+  "baseline_commit": "97ebc6475006e644ba790f521873e1e8ad12c511",
+  "runtime_commit": "0b6ac781cd0486b0b49bfccb4c9d375434d56d09",
+  "accepted_commit": "0425028d5965c76d34106a427c4a47f4a56f620b",
+  "accepted_tree": "c84d46c6b1e8140579bffdaa950ba12c44505778",
+  "branch": "agent/player-exit-status-runtime-r1-20261006",
+  "remote_validation": {
+    "main_workflow_count": 33,
+    "main_all_success": true,
+    "branch_workflow_count": 31,
+    "branch_all_success": true,
+    "main_settlement": {
+      "run_id": 37425651218,
+      "job_id": 112144564632,
+      "conclusion": "success"
+    },
+    "main_golden": {
+      "run_id": 37425651031,
+      "conclusion": "success"
+    },
+    "main_region": {
+      "run_id": 37425651071,
+      "job_id": 112144563965,
+      "conclusion": "success"
+    },
+    "main_taiwan_gameplay": {
+      "run_id": 37425651183,
+      "conclusion": "success"
+    },
+    "branch_settlement": {
+      "run_id": 37424935838,
+      "conclusion": "success"
+    },
+    "branch_region": {
+      "run_id": 37424935979,
+      "conclusion": "success"
+    }
+  },
+  "settlement": {
+    "targeted_tests": 643,
+    "new_player_exit_status_tests": 15,
+    "immutable_scan_model_native_comparisons": 19656,
+    "weaken_recalculation_vectors": 384,
+    "native_default_pet_exit_cases": 486,
+    "artifact": {
+      "id": 11395306244,
+      "name": "battlemodel-settlement",
+      "size_in_bytes": 9196,
+      "digest": "sha256:005110756a634a0b6fae329c38cef240be8556475d869c8d9f421b58fddcb107",
+      "expired": false
+    },
+    "branch_artifact": {
+      "id": 11394791403,
+      "name": "battlemodel-settlement",
+      "size_in_bytes": 9196,
+      "digest": "sha256:09ffee6596a3ef499dc327ee1f27545c0e965c214fdc5705245f0461485a4636",
+      "expired": false
+    }
+  },
+  "accepted_scope": [
+    "actual ordinary player UltimateExtra/Exit clears admitted Nocast/Barrier/Weaken late counters, visit flags and prepared Weaken powers",
+    "outer continuation player Exit applies the same narrow clear before later continuation work",
+    "explicit owner/default-pet authority and complete owned non-mail carried roster remain fail-closed",
+    "persistent carried state restores preserved session baselines and accepted Weaken recalculation rather than stale weakened powers",
+    "independent SetMagicPet prepared powers are preserved"
+  ],
+  "historical_claims_added": false,
+  "original_source_or_assets_committed": false,
+  "original_full_compliance_parameter": "OPEN",
+  "intra_continuation_late_status_interactions": "OPEN",
+  "whole_scan_command_boundary_integration": "OPEN",
+  "processed_death_accounting_integration": "OPEN",
+  "original_full_command_native_bridge": "OPEN",
+  "actual_guardian_to_profit_composition": "OPEN",
+  "modern_lethal638_runtime": "OPEN",
+  "pet_party_profit_and_sparse_roster_mapping": "OPEN",
+  "items_ride_wider_features": "OPEN",
+  "original_build_version_membership": "OPEN",
+  "automatic_ai": "OPEN",
+  "battlemodel_specific_golden_region_pressure": "OPEN",
+  "positive_slots_promoted": 0,
+  "next_priority": "Bind actual ordinary per-hit and BattleModel command-tail profit-boundary snapshots to the accepted immutable whole scan; settle death/loyalty accounting only from processed_death_ids before any lethal638 admission."
+}

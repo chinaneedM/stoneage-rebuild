@@ -66,3 +66,26 @@ Guardian victims and multi-victim batches before lethal638 admission.
 Original build/version membership, pet/party EXP, sparse profit roster mapping,
 items/ride/wider features, automatic638 AI and specific golden/region/pressure
 remain OPEN. No new positive slot or overall percentage is promoted.
+
+## Remote acceptance — 2026-10-06
+
+Exact accepted head `0425028d5965c76d34106a427c4a47f4a56f620b`, tree
+`c84d46c6b1e8140579bffdaa950ba12c44505778`.
+All triggered gates passed: main **33/33 SUCCESS**, synchronized work branch
+**31/31 SUCCESS**. Main settlement `37425651218/112144564632` ran 643 tests,
+replayed 19656 immutable-scan/model-native comparisons and 384 bounded Weaken
+recalculation vectors. Golden `37425651031`, Taiwan gameplay
+`37425651183`, and recovered25 region `37425651071` also passed.
+
+Status is **CLOSED_BOUNDED_ACTUAL_PLAYER_EXIT_LATE_STATUS_RUNTIME_BRIDGE**.
+This does not widen the historical/native claim. The next runtime boundary is
+the accepted whole-scan model itself: capture the actual ordinary per-hit and
+BattleModel command-tail state, then settle new death/charm/loyalty changes only
+from scan `processed_death_ids`. The existing event-order pending-profit walk
+must not be used to authorize lethal638. Full command-native chronology,
+actual Guardian/multi-victim witnesses, pet/party recipients, sparse original
+roster mapping and wider features remain OPEN.
+
+Acceptance receipt:
+`research/recovered/STONEAGE-PLAYER-EXIT-STATUS-RUNTIME-ACCEPTANCE-R1.json`.
+
