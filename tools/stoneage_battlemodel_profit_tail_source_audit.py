@@ -241,18 +241,19 @@ static int guardian_enabled,attack_damage,attackseq_calls,damage_calls,target_ch
 static char option_buf[256]="4|2|||||10";
 static char trace[65536];static int trace_length;
 float gDamageDiv;
-void note(char kind,int id,int value){trace_length+=snprintf(trace+trace_length,sizeof(trace)-trace_length,"%c:%d:%d,",kind,id,value);if(trace_length>=sizeof(trace)-128)abort();}
+void hfail(int code){fprintf(stderr,"HFAIL:%d\n",code);fflush(stderr);abort();}
+void note(char kind,int id,int value){trace_length+=snprintf(trace+trace_length,sizeof(trace)-trace_length,"%c:%d:%d,",kind,id,value);if(trace_length>=sizeof(trace)-128)hfail(1);}
 int CHAR_CHECKINDEX(int i){return i>=0&&i<32&&valid[i];}
 int BATTLE_CHECKINDEX(int i){return i==0;}
 int BATTLE_CHECKSIDE(int i){return i==0||i==1;}
-int CHAR_getInt(int i,int f){if(!CHAR_CHECKINDEX(i))abort();if(f==CHAR_DEFAULTPET)note('R',i,ints[i][f]);return ints[i][f];}
-int CHAR_getWorkInt(int i,int f){if(!CHAR_CHECKINDEX(i))abort();return works[i][f];}
-int CHAR_getFlg(int i,int f){if(!CHAR_CHECKINDEX(i))abort();return flags[i][f];}
-int CHAR_setInt(int i,int f,int v){if(!CHAR_CHECKINDEX(i))abort();if(f==CHAR_DEFAULTPET)note('S',i,v);if(f==CHAR_HP)note('H',i,v);if(f==CHAR_DEADCOUNT)note('D',i,v);if(f==CHAR_DEADPETCOUNT)note('P',i,v);return ints[i][f]=v;}
-int CHAR_setWorkInt(int i,int f,int v){if(!CHAR_CHECKINDEX(i))abort();return works[i][f]=v;}
-int CHAR_setFlg(int i,int f,int v){if(!CHAR_CHECKINDEX(i))abort();if(f==CHAR_ISDIE)note('F',i,v);return flags[i][f]=v;}
-int CHAR_getCharPet(int i,int slot){if(!CHAR_CHECKINDEX(i)||slot<0||slot>=5)abort();return pets[i][slot];}
-int BATTLE_No2Index(int b,int no){if(b!=0||no<0||no>=20)abort();return BattleArray[0].Side[no/10].Entry[no%10].charaindex;}
+int CHAR_getInt(int i,int f){if(!CHAR_CHECKINDEX(i))hfail(10);if(f==CHAR_DEFAULTPET)note('R',i,ints[i][f]);return ints[i][f];}
+int CHAR_getWorkInt(int i,int f){if(!CHAR_CHECKINDEX(i))hfail(11);return works[i][f];}
+int CHAR_getFlg(int i,int f){if(!CHAR_CHECKINDEX(i))hfail(12);return flags[i][f];}
+int CHAR_setInt(int i,int f,int v){if(!CHAR_CHECKINDEX(i))hfail(13);if(f==CHAR_DEFAULTPET)note('S',i,v);if(f==CHAR_HP)note('H',i,v);if(f==CHAR_DEADCOUNT)note('D',i,v);if(f==CHAR_DEADPETCOUNT)note('P',i,v);return ints[i][f]=v;}
+int CHAR_setWorkInt(int i,int f,int v){if(!CHAR_CHECKINDEX(i))hfail(14);return works[i][f]=v;}
+int CHAR_setFlg(int i,int f,int v){if(!CHAR_CHECKINDEX(i))hfail(15);if(f==CHAR_ISDIE)note('F',i,v);return flags[i][f]=v;}
+int CHAR_getCharPet(int i,int slot){if(!CHAR_CHECKINDEX(i)||slot<0||slot>=5)hfail(16);return pets[i][slot];}
+int BATTLE_No2Index(int b,int no){if(b!=0||no<0||no>=20)hfail(17);return BattleArray[0].Side[no/10].Entry[no%10].charaindex;}
 int BATTLE_Index2No(int b,int id){for(int s=0;s<2;s++)for(int p=0;p<10;p++)if(BattleArray[b].Side[s].Entry[p].charaindex==id)return s*10+p;return -1;}
 int BATTLE_TargetCheck(int b,int no){target_checks++;int id=BATTLE_No2Index(b,no);return CHAR_CHECKINDEX(id)&&ints[id][CHAR_HP]>0;}
 int BATTLE_AttackSeq(int a,int d,int *damage,int *guardian,int ignored){
@@ -271,7 +272,7 @@ int BATTLE_ItemCrushSeq(int d){return 0;}
 int BATTLE_StatusAttackCheck(int a,int d,int e,int h,int p,float f,int*out){return 0;}
 void BATTLE_BadStatusString(int slot,int effect){}
 void BATTLE_MultiList(int b,int target,int*out){out[0]=0;out[1]=-1;}
-void BATTLE_NoAction(int b,int a){abort();}
+void BATTLE_NoAction(int b,int a){hfail(20);}
 char *PETSKILL_getChar(int array,int pos){return option_buf;}
 int getStringFromIndexWithDelim(const char *src,const char *delim,int want,char*out,int outsz){
   if(!src||!delim||!delim[0]||want<=0||outsz<=0)return FALSE;
@@ -280,23 +281,23 @@ int getStringFromIndexWithDelim(const char *src,const char *delim,int want,char*
   const char *end=strchr(start,d);size_t n=end?(size_t)(end-start):strlen(start);
   if(n>=(size_t)outsz)n=(size_t)outsz-1;memcpy(out,start,n);out[n]='\0';return TRUE;
 }
-int RAND(int lo,int hi){rand_calls++;if(lo>hi)abort();return lo;}
+int RAND(int lo,int hi){rand_calls++;if(lo>hi)hfail(21);return lo;}
 #define CHAR_GETWORKINT_LOW(i,p) ((int)((unsigned int)CHAR_getWorkInt(i,p)&0xffffU))
 #define CHAR_GETWORKINT_HIGH(i,p) ((int)(((unsigned int)CHAR_getWorkInt(i,p)>>16)&0xffffU))
 #define BATTLESTR_ADD(s) ((void)0)
 int BATTLE_getRidePet(int i){return -1;}
 int CHAR_getItemIndex(int i,int slot){return -1;}
 int ITEM_CHECKINDEX(int i){return 0;}
-int ITEM_getWorkInt(int i,int f){abort();}
-int getFdnum(void){abort();}
-int CHAR_setItemIndex(int i,int slot,int v){abort();}
-int BATTLE_ItemDelCheck(int i){abort();}
-int ITEM_endExistItemsOne(int i){abort();}
+int ITEM_getWorkInt(int i,int f){hfail(30);return 0;}
+int getFdnum(void){hfail(31);return 0;}
+int CHAR_setItemIndex(int i,int slot,int v){hfail(32);return 0;}
+int BATTLE_ItemDelCheck(int i){hfail(33);return 0;}
+int ITEM_endExistItemsOne(int i){hfail(34);return 0;}
 int CHAR_setMaxExp(int i,int v){return ints[i][CHAR_EXP]=v;}
 int CHAR_PetAddVariableAi(int i,int delta){note('A',i,delta);return works[i][900]+=delta;}
 int CHAR_AddCharm(int i,int delta){note('C',i,delta);return works[i][901]+=delta;}
 int CHAR_getElderPosition(int elder,int*f,int*x,int*y){return 0;}
-int CHAR_warpToSpecificPoint(int i,int f,int x,int y){abort();}
+int CHAR_warpToSpecificPoint(int i,int f,int x,int y){hfail(35);return 0;}
 int getBattleDebugMsg(void){return 0;}
 int CHAR_DischargePartyNoMsg(int i){return 0;}
 int BATTLE_talkToCli(int i,char*s,int c){return 0;}
@@ -312,8 +313,8 @@ int GmsvServer_FS_send(int fd,int f){return 0;}
 int GmsvServer_XYD_send(int fd,int x,int y,int dir){return 0;}
 int lssproto_FS_send(int fd,int f){return 0;}
 int lssproto_XYD_send(int fd,int x,int y,int dir){return 0;}
-int print(char*fmt,...){abort();}
-int BATTLE_AddDuelPoint(int b,int*list){abort();}
+int print(char*fmt,...){hfail(36);return 0;}
+int BATTLE_AddDuelPoint(int b,int*list){hfail(37);return 0;}
 #define BATTLE_Exit(i,b) traced_exit(__FILE__,__LINE__,i,b)
 int _BATTLE_Exit(char*,int,int,int);
 int BATTLE_PetDefaultExit(int,int);
@@ -352,15 +353,15 @@ int main(void){
     int aAttackList[2]={10,-1};char szBadStatusString[2]={0};
     BATTLE_BattleModel(battleindex,attackNo,myside);
     BATTLESTR_ADD(szBadStatusString);
-    if(BATTLE_AddProfit(battleindex,aAttackList)!=BATTLE_ERR_NONE)abort();
+    if(BATTLE_AddProfit(battleindex,aAttackList)!=BATTLE_ERR_NONE)hfail(40);
     int first_deaths=ints[1][CHAR_DEADCOUNT]+ints[2][CHAR_DEADCOUNT];
-    if(BATTLE_AddProfit(battleindex,aAttackList)!=BATTLE_ERR_NONE)abort();
+    if(BATTLE_AddProfit(battleindex,aAttackList)!=BATTLE_ERR_NONE)hfail(41);
     printf("%d %d %d %d %d %d %d %d %d %d %d %d|%s\n",
       attackseq_calls,damage_calls,target_checks,rand_calls,
       ints[1][CHAR_HP],flags[1][CHAR_ISDIE],ints[1][CHAR_DEADCOUNT],works[1][901],
       ints[2][CHAR_HP],flags[2][CHAR_ISDIE],ints[2][CHAR_DEADCOUNT],works[2][900],
       trace);
-    if(first_deaths!=ints[1][CHAR_DEADCOUNT]+ints[2][CHAR_DEADCOUNT])abort();
+    if(first_deaths!=ints[1][CHAR_DEADCOUNT]+ints[2][CHAR_DEADCOUNT])hfail(42);
   }
   return 0;
 }
@@ -436,11 +437,18 @@ def analyze_profile(name: str, root: Path):
         )
         if built.returncode:
             raise ValueError("native dispatch-tail compile failed: "+built.stderr[-8000:])
-        rows=subprocess.check_output(
+        executed=subprocess.run(
             [str(binary)],
             input="".join(" ".join(map(str,c.row()))+"\n" for c in vectors),
-            text=True,
-        ).splitlines()
+            text=True,capture_output=True,
+        )
+        if executed.returncode:
+            raise ValueError(
+                "native dispatch-tail execution failed: "
+                f"returncode={executed.returncode}; stderr={executed.stderr[-3000:]}; "
+                f"stdout={executed.stdout[-3000:]}"
+            )
+        rows=executed.stdout.splitlines()
     if len(rows)!=len(vectors):
         raise ValueError("native dispatch-tail row count drift")
     for case,row in zip(vectors,rows):
