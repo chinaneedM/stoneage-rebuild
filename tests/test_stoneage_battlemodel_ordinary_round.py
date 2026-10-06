@@ -12,7 +12,11 @@ from tools.stoneage_battlemodel_physical_attackseq import (
     PHYSICAL_SCOPE_R1, BattleModelPhysicalContext, BattleModelPhysicalProfile,
 )
 from tools.stoneage_battlemodel_itemcrush_model import BattleModelItemCrushContext, EmptyEquipmentParticipant
-from tools.stoneage_battlemodel_round_action import BATTLEMODEL_ORDINARY_SCOPE_R1, BattleModelRoundAction
+from tools.stoneage_battlemodel_round_action import (
+    BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
+    BATTLEMODEL_ORDINARY_SCOPE_R1,
+    BattleModelRoundAction,
+)
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_NONE, BATTLE_COM_ATTACK, BATTLE_COM_GUARD, BATTLE_COM_WAIT,
     BattleCommand, BattleCommandSetupEffects, BattleCombatProfile,
@@ -61,7 +65,8 @@ class OrdinaryBattleModelTests(unittest.TestCase):
                 draws.append(BattleModelDraw(i, "status", 100 if failed else 1))
         return tuple(draws)
 
-    def action(self, draws=None, charset=PROFILE_BIG5, actor_slot=10):
+    def action(self, draws=None, charset=PROFILE_BIG5, actor_slot=10,
+               scope=BATTLEMODEL_ORDINARY_SCOPE_R1):
         enemy = self.actors[actor_slot]
         source = spawned()
         source.participant.participant_id = enemy.participant_id
@@ -73,7 +78,7 @@ class OrdinaryBattleModelTests(unittest.TestCase):
             for s, p in self.actors.items()}
         item = BattleModelItemCrushContext("iris", "legacy", 400000, 2147483647,
             {s: EmptyEquipmentParticipant(p.participant_id, p.kind, p.level, (-1,) * 5) for s, p in self.actors.items()})
-        return BattleModelRoundAction(BATTLEMODEL_ORDINARY_SCOPE_R1, submission,
+        return BattleModelRoundAction(scope, submission,
             BattleModelPhysicalContext(PHYSICAL_SCOPE_R1, "newpower_70pct", profiles, self.guardians),
             item, tuple(s for s in self.actors if s < 10), self.resistances,
             self.tape() if draws is None else draws)
@@ -231,6 +236,69 @@ class OrdinaryBattleModelTests(unittest.TestCase):
         self.assertEqual(state.turn,0)
         self.assertEqual(state.hp_by_participant_id["target"],1)
         self.assertEqual(state.pending_exp_by_participant_id["target"],0)
+
+    def test_lethal638_persistent_normal_death_commits_command_tail_whole_scan(self):
+        self.actors[0] = replace(self.actors[0],hp=1)
+        state = self.persistent()
+        draws = (
+            BattleModelDraw(0,"attackseq_dodge",10000),
+            BattleModelDraw(0,"attackseq_critical",10000),
+            BattleModelDraw(0,"attackseq_damage",2),
+            *(BattleModelDraw(i,"target_selection",0) for i in range(1,4)),
+        )
+        action=self.action(
+            draws,
+            scope=BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
+        )
+        result=self.state_round(state,action)
+        self.assertEqual(state.turn,0)
+        self.assertEqual(state.hp_by_participant_id["target"],1)
+        self.assertEqual(result.after.turn,1)
+        self.assertEqual(result.after.hp_by_participant_id["target"],0)
+        self.assertIsNotNone(result.profit_scan_settlement)
+        self.assertEqual(len(result.profit_scan_settlement.steps),1)
+        step=result.profit_scan_settlement.steps[0]
+        self.assertEqual(step.result.processed_death_ids,("target",))
+        self.assertEqual(
+            result.after.profit_processed_death_ids,
+            ("target",),
+        )
+        boundaries=[
+            boundary for boundary in result.round.profit_boundaries
+            if boundary.boundary_kind == PROFIT_BOUNDARY_BATTLEMODEL_COMMAND_TAIL
+        ]
+        self.assertEqual(len(boundaries),1)
+        self.assertEqual(boundaries[0].hp_by_slot[0],0)
+        trigger=[
+            result.round.events[index]
+            for index in boundaries[0].trigger_event_indexes
+        ]
+        self.assertEqual(trigger[-1].result,"battlemodel_action")
+        self.assertTrue(all(event.battlemodel_skill_id==638 for event in trigger))
+
+    def test_lethal638_coordinator_readmits_and_commits_without_mutating_before(self):
+        self.actors[0]=replace(self.actors[0],hp=1)
+        context=self.context()
+        draws=(
+            BattleModelDraw(0,"attackseq_dodge",10000),
+            BattleModelDraw(0,"attackseq_critical",10000),
+            BattleModelDraw(0,"attackseq_damage",2),
+            *(BattleModelDraw(i,"target_selection",0) for i in range(1,4)),
+        )
+        action=self.action(
+            draws,
+            scope=BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
+        )
+        after,result=self.coordinator_round(context,action)
+        self.assertEqual(context.persistent_battle_state.turn,0)
+        self.assertEqual(context.persistent_battle_state.hp_by_participant_id["target"],1)
+        self.assertEqual(after.persistent_state_payload,context.persistent_state_payload)
+        self.assertIs(after.persistent_battle_state,result.after)
+        self.assertEqual(after.persistent_battle_state.hp_by_participant_id["target"],0)
+        self.assertEqual(
+            result.profit_scan_settlement.steps[0].result.processed_death_ids,
+            ("target",),
+        )
 
     def test_success_cancels_later_prepared_attack_in_actual_same_round(self):
         result = self.run_round()
@@ -403,19 +471,40 @@ class OrdinaryBattleModelTests(unittest.TestCase):
         self.assertEqual(self.actors[0].hp, 1)
         self.assertEqual(self.status["target"].status.paralysis, 0)
 
-    def test_later_ordinary_death_also_excludes_whole_round_profit_exit(self):
+    def test_later_ordinary_death_stays_outside_both_battlemodel_scopes(self):
         self.actors[0] = replace(self.actors[0], attack=10000)
-        with self.assertRaisesRegex(ValueError, "nonlethal round excludes"):
-            self.run_round(draws=self.tape(failed=True),
-                attack_rolls={"target": OrdinaryAttackRolls(10000, 0, 10000)})
-        self.assertEqual(self.actors[10].hp, 500)
+        for scope in (
+            BATTLEMODEL_ORDINARY_SCOPE_R1,
+            BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
+        ):
+            with self.subTest(scope=scope), self.assertRaisesRegex(
+                ValueError, "excludes death outside"
+            ):
+                self.run_round(
+                    action=self.action(self.tape(failed=True),scope=scope),
+                    attack_rolls={
+                        "target": OrdinaryAttackRolls(10000,0,10000)
+                    },
+                )
+        self.assertEqual(self.actors[10].hp,500)
 
-    def test_reflected_living_ultimate_flag_is_not_treated_as_an_exit(self):
+    def test_reflected_living_ultimate_flag_is_rejected_in_both_scopes(self):
         self.actors[0] = replace(self.actors[0], hp=10, max_hp=10)
         self.reactions["target"] = BaseDamageReactState(reflect=4)
-        with self.assertRaisesRegex(ValueError, "ultimate flags"):
-            self.run_round(draws=self.tape(blocked_target=True))
-        self.assertEqual(self.actors[0].hp, 10)
+        for scope in (
+            BATTLEMODEL_ORDINARY_SCOPE_R1,
+            BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
+        ):
+            with self.subTest(scope=scope), self.assertRaisesRegex(
+                ValueError, "ultimate flags"
+            ):
+                self.run_round(
+                    action=self.action(
+                        self.tape(blocked_target=True),
+                        scope=scope,
+                    )
+                )
+        self.assertEqual(self.actors[0].hp,10)
 
     def test_nonempty_counter_opt_in_is_rejected_for_bounded_composition(self):
         with self.assertRaisesRegex(ValueError, "counter"):
