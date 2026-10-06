@@ -269,7 +269,7 @@ class Recovered25PetSkillPressureProbeTests(unittest.TestCase):
         self.assertEqual(rows["PETSKILL_BatFly"]["status"],"closed_runtime")
         self.assertEqual(rows["PETSKILL_BatFly"]["slot_uses"],2)
         self.assertEqual(rows["PETSKILL_BattleModel"]["status"],"open")
-        self.assertEqual(rows["PETSKILL_BecomeFox"]["status"],"open")
+        self.assertEqual(rows["PETSKILL_BecomeFox"]["status"],"closed_runtime")
         self.assertEqual(rows["PETSKILL_Merge"]["status"],"historical_ub")
         self.assertEqual(result["next_open"]["callback"],"PETSKILL_BattleModel")
 

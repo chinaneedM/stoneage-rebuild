@@ -156,13 +156,15 @@ class PlacementCapabilityTests(unittest.TestCase):
         identity = self.certify(pets, enemies)
         before = (repr(pets), repr(enemies))
         result = analyze_runtime_objects(pets, enemies, capability_identity=identity)
-        self.assertEqual(summarize_pressure(result), dict(total=5, closed=3, open=1, historical_ub=1))
+        self.assertEqual(summarize_pressure(result), dict(total=5, closed=4, open=0, historical_ub=1))
         model = next(row for row in result["rows"] if row["callback"] == "PETSKILL_BattleModel")
         self.assertEqual(model["status"], "closed_conditional_runtime")
         self.assertEqual(model["capability_kind"], "CONDITIONAL_BOUNDED_CAPABILITY")
         self.assertEqual(model["command_entry_reachability"], "OPEN_SEPARATE_AXIS_NOT_INFERRED")
         self.assertEqual(model["skill_ids"], (638,))
-        self.assertEqual(result["next_open"]["callback"], "PETSKILL_BecomeFox")
+        fox = next(row for row in result["rows"] if row["callback"] == "PETSKILL_BecomeFox")
+        self.assertEqual(fox["status"], "closed_runtime")
+        self.assertIsNone(result["next_open"])
         self.assertEqual((repr(pets), repr(enemies)), before)
 
 
