@@ -2025,6 +2025,10 @@ class PersistentBattleStateTests(unittest.TestCase):
             -500,
         )
         self.assertEqual(first.after.pending_player_dead_pet_count_delta,1)
+        self.assertEqual(
+            first.after.profit_processed_death_ids,
+            ("pet:0",),
+        )
 
         second=resolve_persistent_ordinary_round(
             first.after,
@@ -2042,6 +2046,39 @@ class PersistentBattleStateTests(unittest.TestCase):
             -500,
         )
         self.assertEqual(second.after.pending_player_dead_pet_count_delta,1)
+        self.assertEqual(
+            second.after.profit_processed_death_ids,
+            ("pet:0",),
+        )
+
+    def test_processed_death_state_rejects_living_or_exited_identity(self):
+        player=participant("player","player","player",hp=100,level=11)
+        pet=participant(
+            "pet:0","player","pet",
+            hp=0,level=20,source_pet_slot=0,
+        )
+        enemy=participant("enemy","enemy","enemy",hp=100,level=20)
+        base=begin_persistent_battle(
+            session(player,(enemy,),pets=(pet,)),
+            slots={"player":0,"pet:0":1,"enemy":10},
+        )
+        with self.assertRaisesRegex(
+            ValueError,
+            "processed-death participants must have zero HP",
+        ):
+            replace(
+                base,
+                profit_processed_death_ids=("player",),
+            )
+        with self.assertRaisesRegex(
+            ValueError,
+            "battle-exited participants cannot retain processed-death",
+        ):
+            replace(
+                base,
+                battle_exited_participant_ids=("pet:0",),
+                profit_processed_death_ids=("pet:0",),
+            )
 
     def test_no_risk_round_suppresses_normal_death_penalties(self):
         player=participant(

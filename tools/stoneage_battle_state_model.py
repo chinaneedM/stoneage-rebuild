@@ -195,6 +195,10 @@ class PersistentBattleState:
     # Ordinary dead entries remain in the battle array and can be selected by
     # ReLife. Ultimate/BATTLE_Exit entries are deliberately excluded.
     revivable_dead_participant_ids: tuple[str,...] = ()
+    # Source ISDIE is a profit-scan property, not a ReLife property. Persist it
+    # for all sides so later AddProfit boundaries cannot re-charge a previously
+    # processed normal player/pet/enemy death.
+    profit_processed_death_ids: tuple[str,...] = ()
     nocast_overlay: NocastRoundOverlay | None = None
     setmagicpet_overlay: SetMagicPetRoundOverlay | None = None
     combined_overlay: CombinedRuntimeOverlay | None = None
@@ -402,6 +406,50 @@ class PersistentBattleState:
             self,
             "revivable_dead_participant_ids",
             normalized_revivable,
+        )
+
+        normalized_processed_deaths=tuple(
+            str(pid) for pid in self.profit_processed_death_ids
+        )
+        if len(normalized_processed_deaths) != len(
+            set(normalized_processed_deaths)
+        ):
+            raise ValueError(
+                "processed-death participants cannot contain duplicates"
+            )
+        unknown_processed=sorted(
+            set(normalized_processed_deaths)-set(participants)
+        )
+        if unknown_processed:
+            raise ValueError(
+                "processed-death participants are not in battle session: "
+                f"{unknown_processed}"
+            )
+        exited_processed=sorted(
+            set(normalized_processed_deaths)
+            & (set(normalized_battle_exits)|set(normalized_ultimate_exits))
+        )
+        if exited_processed:
+            raise ValueError(
+                "battle-exited participants cannot retain processed-death "
+                f"ISDIE state: {exited_processed}"
+            )
+        living_processed=sorted(
+            pid for pid in normalized_processed_deaths
+            if (
+                pid not in self.hp_by_participant_id
+                or int(self.hp_by_participant_id[pid]) != 0
+            )
+        )
+        if living_processed:
+            raise ValueError(
+                "processed-death participants must have zero HP: "
+                f"{living_processed}"
+            )
+        object.__setattr__(
+            self,
+            "profit_processed_death_ids",
+            normalized_processed_deaths,
         )
 
         if self.carried_commands_by_participant_id is None:
@@ -1193,6 +1241,10 @@ def resolve_persistent_capture_transition(
         pet_noreturn_by_participant_id=state.pet_noreturn_by_participant_id,
         revivable_dead_participant_ids=tuple(
             pid for pid in state.revivable_dead_participant_ids
+            if pid != target_id
+        ),
+        profit_processed_death_ids=tuple(
+            pid for pid in state.profit_processed_death_ids
             if pid != target_id
         ),
         nocast_overlay=(
@@ -2384,6 +2436,9 @@ def resolve_persistent_ordinary_round(
         revivable_dead_participant_ids=(
             state.revivable_dead_participant_ids
         ),
+        profit_processed_death_ids=(
+            state.profit_processed_death_ids
+        ),
         passive_battle_entries_by_slot=passive_battle_entries_by_slot,
         damage_to_hp_submissions_by_participant_id=(
             damage_to_hp_submissions_by_participant_id
@@ -2986,6 +3041,9 @@ def resolve_persistent_ordinary_round(
         default_pet_slot=next_default_pet_slot,
         pet_noreturn_by_participant_id=state.pet_noreturn_by_participant_id,
         revivable_dead_participant_ids=tuple(sorted(next_revivable)),
+        profit_processed_death_ids=tuple(
+            round_result.profit_processed_death_ids
+        ),
         nocast_overlay=next_nocast_overlay,
         setmagicpet_overlay=next_setmagicpet_overlay,
         combined_overlay=next_combined_overlay,

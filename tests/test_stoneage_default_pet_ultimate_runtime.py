@@ -168,6 +168,43 @@ class DefaultPetUltimateRuntimeTests(unittest.TestCase):
         self.assertEqual(result.after.session.allied_pets,before.session.allied_pets)
         self.assertEqual(before.hp_by_participant_id["player"],30)
 
+    def test_processed_normal_pet_death_is_visible_at_next_round_profit_boundary(self):
+        pet=replace(
+            self.pet,
+            hp=1,
+            max_hp=1000,
+            defense=0,
+        )
+        before=self.state(pets=(pet,))
+        first=self.state_round(
+            before,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "pet":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,5),
+            },
+            rolls={"enemy":hit()},
+        )
+        self.assertEqual(
+            first.after.profit_processed_death_ids,
+            ("pet",),
+        )
+        enemy=first.after.session.enemies[0]
+        second=self.state_round(
+            first.after,
+            commands={
+                "player":BattleCommand(BATTLE_COM_WAIT),
+                "enemy":BattleCommand(BATTLE_COM_ATTACK,0),
+            },
+            rolls={"enemy":hit()},
+        )
+        boundary=next(
+            boundary for boundary in second.round.profit_boundaries
+            if boundary.boundary_kind == PROFIT_BOUNDARY_ORDINARY_PER_HIT
+        )
+        self.assertIn("pet",boundary.prior_processed_death_ids)
+        self.assertIn("pet",second.before.profit_processed_death_ids)
+
     def test_player_ultimate_preserves_explicit_selection(self):
         result=self.state_round(self.state())
         self.assertEqual(result.after.default_pet_slot,0)

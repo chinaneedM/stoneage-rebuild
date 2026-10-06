@@ -1258,6 +1258,7 @@ class ResolvedOrdinaryRound:
     mp_by_participant_id: Mapping[str,int] | None = None
     battlemodel_cleared_command_ids: tuple[str, ...] = ()
     profit_boundaries: tuple[OrdinaryProfitBoundarySnapshot, ...] = ()
+    profit_processed_death_ids: tuple[str, ...] = ()
 
 
 def _participant_battle_kind(participant: BattleParticipant) -> str:
@@ -3804,6 +3805,7 @@ def resolve_ordinary_round(
         str,int | None
     ] | None = None,
     revivable_dead_participant_ids: Sequence[str] = (),
+    profit_processed_death_ids: Sequence[str] = (),
     passive_battle_entries_by_slot: Mapping[
         int,BattleParticipant
     ] | None = None,
@@ -3963,6 +3965,17 @@ def resolve_ordinary_round(
             raise ValueError(
                 "revivable-dead identity must currently have zero HP"
             )
+
+    initial_profit_processed_death_ids=tuple(
+        str(participant_id)
+        for participant_id in profit_processed_death_ids
+    )
+    if len(initial_profit_processed_death_ids) != len(
+        set(initial_profit_processed_death_ids)
+    ):
+        raise ValueError(
+            "processed-death identities cannot contain duplicates"
+        )
 
     for participant_id in slot_by_id:
         if participant_id not in profiles:
@@ -5352,11 +5365,10 @@ def resolve_ordinary_round(
     exited_slots: set[int] = set()
     exited_ids: list[str] = []
     revivable_dead_ids=set(initial_revivable_dead_ids)
-    # Existing persistent revivable deaths correspond to already-processed
-    # source ISDIE entries. Within this round the set is advanced only at
-    # explicit profit boundaries; it is chronology metadata, not yet the
-    # persistent settlement authority.
-    profit_processed_death_ids=set(initial_revivable_dead_ids)
+    # Source ISDIE is independent from ReLife eligibility. Player/pet deaths
+    # also need to survive across rounds so a later AddProfit scan cannot charge
+    # them twice. The persistent caller supplies that explicit state.
+    profit_processed_death_ids=set(initial_profit_processed_death_ids)
     capture_contexts=dict(capture_contexts or {})
     capture_rolls=dict(capture_rolls or {})
     abduct_contexts=dict(abduct_contexts or {})
@@ -5916,6 +5928,7 @@ def resolve_ordinary_round(
                 default_authorities,by_slot,exited_slots):
                 pet_slot=default_authorities[target_id].occupied_pet_slots[pet_id]
                 exited_slots.add(pet_slot)
+                profit_processed_death_ids.discard(str(pet_id))
                 if pet_id not in ultimate_exited_ids:
                     ultimate_exited_ids.append(pet_id)
 
@@ -10366,4 +10379,7 @@ def resolve_ordinary_round(
         mp_by_participant_id=MappingProxyType(dict(mp_working)),
         battlemodel_cleared_command_ids=tuple(sorted(battlemodel_cleared_command_ids)),
         profit_boundaries=tuple(profit_boundaries),
+        profit_processed_death_ids=tuple(
+            sorted(profit_processed_death_ids)
+        ),
     )
