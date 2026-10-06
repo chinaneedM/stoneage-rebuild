@@ -1,0 +1,74 @@
+{
+  "schema": "STONEAGE_BATTLEMODEL_ID638_NORMAL_DEATH_PERSISTENT_ACCEPTANCE_R1",
+  "status": "CLOSED_BOUNDED_ID638_NORMAL_DEATH_PERSISTENT_COORDINATOR",
+  "date": "2026-10-06",
+  "baseline_main_commit": "8dd224b44b77eb9662f976f1f8fa8aa6b927ca80",
+  "implementation_head": "6c4032a4d6f3c3ab12b2e2c0c9830033809ba33b",
+  "implementation_tree": "ec14ccbe881f6065ac1afc73466a702758a6eba4",
+  "final_tested_input": "89848f2ed92c4aa4c21c70d68356fe52b951ab40",
+  "final_tested_tree": "312a842d8d093fa57bb1b4a4200186dcaa63ce1a",
+  "branch": "agent/lethal638-persistent-runtime-r1-20261006",
+  "admitted_scope": {
+    "skill_id": 638,
+    "nonlethal_scope": "nonlethal_base_round_empty_equipment_ID638_R1",
+    "normal_death_scope": "lethal_normal_profit_base_round_empty_equipment_ID638_R1",
+    "death_kind": "normal_only",
+    "profit_boundary": "battlemodel_command_tail"
+  },
+  "remote_validation": {
+    "settlement": {
+      "run_id": 37443593822,
+      "job_id": 112202958318,
+      "conclusion": "success",
+      "tests": 655,
+      "original_profit_exit_cases": 19656,
+      "immutable_scan_model_native_comparisons": 19656,
+      "full_battling_tail_cases": 9,
+      "same_harness_exact_damagesub_tail_cases": 9,
+      "same_harness_guardian_tail_cases": 9,
+      "dispatch_tail_splice_cases": 9,
+      "weaken_recalculation_vectors": 384
+    },
+    "settlement_artifact": {
+      "id": 11401694955,
+      "name": "battlemodel-settlement",
+      "digest": "sha256:d9bae433e4e06df60f2f18f7c6b11a697aff04377be8619fe6862e9ec6b1b41e"
+    },
+    "coordinator": {
+      "run_id": 37443283037,
+      "job_id": 112201941097,
+      "conclusion": "success",
+      "tests": 231
+    },
+    "runtime_golden": {
+      "run_id": 37443283236,
+      "job_id": 112201941937,
+      "conclusion": "success"
+    },
+    "recovered25_region": {
+      "run_id": 37443283255,
+      "job_id": 112201946517,
+      "conclusion": "success"
+    }
+  },
+  "accepted_claims": [
+    "explicit ID638 normal-death scope may commit a BattleModel-created normal death through one command-tail profit boundary",
+    "persistent settlement consumes the existing immutable whole scan and carries processed_death_ids as death authority",
+    "local runtime coordinator re-admits the BattleModel submission against current spawned/template/runtime identity before commit",
+    "pre-round persistent and coordinator context objects remain immutable",
+    "existing nonlethal BattleModel scope still rejects death",
+    "death created outside the explicit BattleModel ID638 action remains rejected in both scopes"
+  ],
+  "explicit_nonclaims": [
+    "BattleModel ultimate flags remain rejected",
+    "BATTLE_UltimateExtra and BATTLE_Exit are not admitted by this checkpoint",
+    "multi-victim ultimate source-slot ordering is not yet certified",
+    "automatic BattleModel AI is not admitted",
+    "ride, equipment, unrelated callbacks and packet/presentation history remain open",
+    "original build/version membership remains open"
+  ],
+  "positive_slots_promoted": 0,
+  "historical_claims_added": false,
+  "original_source_or_assets_committed": false,
+  "next_priority": "Carry BattleModel ultimate_kind into the command-tail boundary and prove source-slot-ordered multi-victim ultimate/Exit/default-pet chronology through exact full BATTLE_Battling and canonical persistent/coordinator runtime before evaluating the two recovered positive ID638 slots for promotion."
+}
