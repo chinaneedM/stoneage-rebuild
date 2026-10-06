@@ -110,7 +110,7 @@ def analyze(data_dir, setup):
     ledger = analyze_runtime_objects(petskills, enemybase, capability_identity=identity)
     pressure = dict(**summarize_pressure(ledger), conditional_capability_slots=len(ledger["conditional_placements"]),
                     unresolved_skill_ids=list(ledger["unresolved_skill_ids"]))
-    if pressure != dict(total=2486, closed=2463, open=20, historical_ub=3,
+    if pressure != dict(total=2486, closed=2465, open=18, historical_ub=3,
                         conditional_capability_slots=2, unresolved_skill_ids=[]):
         raise ValueError("complete pressure census drift")
     battlemodel = next(row for row in ledger["rows"] if row["callback"] == CALLBACK.decode())

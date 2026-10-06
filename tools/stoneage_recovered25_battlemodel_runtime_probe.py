@@ -382,10 +382,18 @@ def verify_complete_pressure(stack, *, identity):
     result = analyze_pressure(stack.petskill_runtime, stack.enemybase_runtime, capability_identity=identity)
     totals = summarize_pressure(result)
     model = tuple(row for row in result["rows"] if row["callback"] == "PETSKILL_BattleModel")
-    if (totals != dict(total=2486, closed=2463, open=20, historical_ub=3)
+    fox = tuple(row for row in result["rows"] if row["callback"] == "PETSKILL_BecomeFox")
+    next_open = result["next_open"]
+    if (totals != dict(total=2486, closed=2465, open=18, historical_ub=3)
             or result["unresolved_skill_ids"] or len(model) != 1
             or model[0]["status"] != "closed_conditional_runtime"
             or model[0]["slot_uses"] != 2 or model[0]["skill_ids"] != (638,)
+            or len(fox) != 1 or fox[0]["status"] != "closed_runtime"
+            or fox[0]["slot_uses"] != 2 or fox[0]["skill_ids"] != (625,)
+            or next_open is None
+            or next_open["callback"] != "PETSKILL_BecomePig"
+            or next_open["skill_ids"] != (631, 635)
+            or next_open["slot_uses"] != 2
             or result["conditional_placements"] != ((1178, 2, 638), (1179, 2, 638))):
         raise ValueError("BattleModel complete verified conditional pressure ledger drift")
     print("BATTLEMODEL_CONDITIONAL_CAPABILITY|placements=2|kind=" + CONDITIONAL_CAPABILITY_KIND)

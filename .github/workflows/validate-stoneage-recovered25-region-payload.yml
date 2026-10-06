@@ -194,7 +194,7 @@ jobs:
           # Exact active specimen currently has no admitted index2 normal-AI variant.
           grep -F 'COUNT|battlemodel_recovered_normal_ai_goldens=0' /tmp/recovered-battlemodel-runtime.txt
           grep -F 'COUNT|battlemodel_current_identity_rejections=12' /tmp/recovered-battlemodel-runtime.txt
-          grep -F 'PRESSURE|total=2486|closed=2463|open=20|historical_ub=3' /tmp/recovered-battlemodel-runtime.txt
+          grep -F 'PRESSURE|total=2486|closed=2465|open=18|historical_ub=3' /tmp/recovered-battlemodel-runtime.txt
           grep -F 'RESOLUTION|RECOVERED25_BATTLEMODEL_RUNTIME_GOLDEN_PASS' /tmp/recovered-battlemodel-runtime.txt
       - name: Census actual BattleModel command-entry data and structural placement
         run: |
@@ -211,7 +211,7 @@ jobs:
           assert [x['skill_id'] for x in r['callback_rows']]==[638,641,649,650]
           assert all(x['illegal']!=0 for x in r['callback_rows'])
           assert r['pressure']['conditional_capability_slots']==2
-          assert r['pressure']['closed']==2463 and r['pressure']['open']==20
+          assert r['pressure']['closed']==2465 and r['pressure']['open']==18
           assert r['conditional_placements']==[[1178,2,638],[1179,2,638]]
           PY
       - name: Verify complete exact conditional placement pressure
@@ -222,9 +222,10 @@ jobs:
           R=research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
           python3 -m tools.stoneage_recovered25_petskill_pressure_probe --data-dir "$G" --setup "$C" > "$R"
           cat "$R"
-          grep -F 'CAPABILITY_PRESSURE|total=2486|closed=2463|open=20|historical_ub=3' "$R"
+          grep -F 'CAPABILITY_PRESSURE|total=2486|closed=2465|open=18|historical_ub=3' "$R"
           test "$(grep -c '^CONDITIONAL_PLACEMENT|' "$R")" = 2
-          grep -F 'NEXT_OPEN|' "$R"
+          grep -F 'callback=PETSKILL_BecomeFox|ids=625|slot_uses=2|templates=2|status=closed_runtime' "$R"
+          grep -F 'NEXT_OPEN|callback=PETSKILL_BecomePig|ids=631,635|slot_uses=2|templates=2' "$R"
       - name: Validate concrete recovered25 local runtime stack
         run: |
           set -euo pipefail
@@ -246,7 +247,7 @@ jobs:
             --mapset "$M" \
             --client-adrn "$A" > "$R"
           test -s "$R"
-          grep -F 'BATTLEMODEL_STACK_CAPABILITY_PRESSURE|total=2486|closed=2463|open=20|historical_ub=3' "$R"
+          grep -F 'BATTLEMODEL_STACK_CAPABILITY_PRESSURE|total=2486|closed=2465|open=18|historical_ub=3' "$R"
           grep -F 'BATTLEMODEL_STACK_GOLDEN|cases=60|templates=2|charsets=2|source_profiles=3' "$R"
           grep -F 'BATTLEMODEL_STACK_SELECTED_AI_CONTROL|cases=60|controlled_tactics_option=1' "$R"
           grep -F 'COUNT|battlemodel_recovered_normal_ai_goldens=0' "$R"
