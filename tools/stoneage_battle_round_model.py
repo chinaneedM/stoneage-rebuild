@@ -30,6 +30,10 @@ from tools.stoneage_attack_magic_state_model import (
 from tools.stoneage_enemy_ai_attack_magic_bridge import (
     EnemyAiAttackMagicSubmission,
 )
+from tools.stoneage_battlemodel_round_action import (
+    BattleModelRoundAction, execute_current_battlemodel_round_action,
+)
+from tools.stoneage_battlemodel_hit_loop import BattleModelEntry, BattleModelHitLoopResolution
 from tools.stoneage_enemy_ai_rehp_bridge import EnemyAiReHpSubmission
 from tools.stoneage_enemy_ai_relife_bridge import EnemyAiReLifeSubmission
 from tools.stoneage_enemy_ai_damage_to_hp_bridge import (
@@ -1111,6 +1115,8 @@ class OrdinaryRoundEvent:
     barrier_tick_resolution: BarrierSelfTick | None = None
     nocast_application: NocastApplication | None = None
     nocast_tick_resolution: NocastTick | None = None
+    battlemodel_skill_id: int | None = None
+    battlemodel_loop_resolution: BattleModelHitLoopResolution | None = None
 
 
 @dataclass(frozen=True)
@@ -1141,6 +1147,7 @@ class ResolvedOrdinaryRound:
     steal_gold_by_player_id: Mapping[str,int] | None = None
     steal_item_slots_by_player_id: Mapping[str,tuple[int,...]] | None = None
     mp_by_participant_id: Mapping[str,int] | None = None
+    battlemodel_cleared_command_ids: tuple[str, ...] = ()
 
 
 def _participant_battle_kind(participant: BattleParticipant) -> str:
@@ -3780,6 +3787,7 @@ def resolve_ordinary_round(
     ride_pet_source_slot: int | None = None,
     field_attr: str = "none",
     field_power: int = 0,
+    battlemodel_actions_by_participant_id: Mapping[str, BattleModelRoundAction] | None = None,
 ) -> ResolvedOrdinaryRound:
     """Execute the status-free base battle seam.
 
@@ -5542,6 +5550,69 @@ def resolve_ordinary_round(
         raise ValueError(
             "guardian interaction with combo execution is a separate seam"
         )
+
+    battlemodel_actions=dict(battlemodel_actions_by_participant_id or {})
+    battlemodel_actor_ids=set(battlemodel_actions)
+    if battlemodel_actor_ids-set(prepared_entry_by_id):
+        raise ValueError("BattleModel actions reference unknown prepared actors")
+    if battlemodel_actions:
+        other_semantics=(
+            attack_magic_submissions or enemy_rehp_submissions or enemy_relife_submissions
+            or damage_to_hp_submissions or mp_damage_submissions or battle_tear_submissions
+            or guard_break2_submissions or battletimid_submissions or two_battletimid_submissions
+            or batfly_submissions or lighttakeed_submissions or combined_submissions
+            or vary_submissions or fall_ground_submissions or nocast_submissions
+            or weaken_submissions or refresh_submissions or setmagicpet_submissions
+            or barrier_submissions or attack_crazed_submissions or wildviolent_submissions
+            or modifyattack_submissions or mdfyattack_submissions
+        )
+        if (other_semantics or ride_runtime is not None or nocast_overlay is not None
+            or setmagicpet_overlay is not None or attack_magic_overlay is not None
+            or combined_overlay is not None or counter_rolls_by_attack_id is not None):
+            raise ValueError("BattleModel ordinary scope excludes other callbacks/overlays/ride/counter")
+        if any(e.command.command1 not in {BATTLE_COM_ATTACK,BATTLE_COM_GUARD,BATTLE_COM_NONE,BATTLE_COM_WAIT}
+               or e.combo_id for e in prepared.ordered_entries):
+            raise ValueError("BattleModel ordinary scope requires noncombo base commands")
+    for pid,action in battlemodel_actions.items():
+        if not isinstance(action,BattleModelRoundAction):
+            raise TypeError("typed BattleModel round actions required")
+        entry=prepared_entry_by_id[pid]
+        if (action.submission.participant_id != pid or entry.participant.kind != "enemy"
+            or entry.participant.side != "enemy" or entry.command.command1 != BATTLE_COM_NONE
+            or entry.command.command2 != action.submission.source_target_carrier):
+            raise ValueError("BattleModel symbolic NONE/source-target carrier identity drift")
+        context=action.physical_context
+        if (set(context.profiles) != set(by_slot)
+            or set(action.paralysis_resistance_by_slot) != set(by_slot)
+            or set(action.opposing_slot_order) != {s for s in by_slot if s < SIDE_OFFSET}):
+            raise ValueError("BattleModel current profile/resistance/opposing slot coverage mismatch")
+        if context.defense_profile != defense_profile or (context.field_attr,context.field_power) != (field_attr,field_power):
+            raise ValueError("BattleModel physical defense/field profile drift")
+        if dict(context.guardians) != guardian_registrations:
+            raise ValueError("BattleModel Guardian registrations drift")
+        for s,p in by_slot.items():
+            pp=context.profiles[s]
+            combat=profiles[p.participant_id]
+            quick=status_runtime[p.participant_id].work_quick
+            if quick is None:
+                quick=int(p.quick)
+            if (pp.participant_id,pp.level,pp.fixed_dex,pp.fixed_luck,pp.defense_power,pp.quick,pp.elements,pp.fixed_vital) != (
+                p.participant_id,int(p.level),int(combat.fixed_dex),int(combat.fixed_luck),
+                _effective_defense_power(p,setup_effects),quick,combat.elements,p.fixed_vital):
+                raise ValueError("BattleModel physical participant/current work drift")
+            if pp.no_dodge or int(combat.weapon_critical) != 0 or combat.counter_weapon_type != COUNTER_WEAPON_FIST:
+                raise ValueError("BattleModel ordinary scope requires no equipment critical/NO_DUCK/weapon feature")
+        actor=entry.participant
+        if (_effective_attack_power(actor,setup_effects),_effective_defense_power(actor,setup_effects),int(actor.quick)) != action.submission.setup.powers:
+            raise ValueError("BattleModel callback post-setup work-power drift")
+        bound_entries={s:BattleModelEntry(p.participant_id,p.kind,hp_by_slot[s],p.max_hp,
+            action.paralysis_resistance_by_slot[s]) for s,p in by_slot.items()}
+        action.itemcrush_context.bind(bound_entries,source_profile=action.submission.source_profile)
+        if any(action.itemcrush_context.participants[s].level != context.profiles[s].level for s in by_slot):
+            raise ValueError("BattleModel ItemCrush physical level drift")
+    battlemodel_active_command_ids=set(battlemodel_actor_ids)
+    battlemodel_cleared_command_ids=set()
+    attempted_battlemodel_actor_ids=set()
     has_active_base_status=any(
         any(int(getattr(runtime.status,name))>0 for name in (
             "poison","paralysis","sleep","stone","drunk","confusion"
@@ -5810,7 +5881,7 @@ def resolve_ordinary_round(
             continue
 
         command=entry.command
-        if str(participant_id) in combined_cleared_command_ids:
+        if str(participant_id) in combined_cleared_command_ids or str(participant_id) in battlemodel_cleared_command_ids:
             command=BattleCommand(
                 BATTLE_COM_NONE,
                 command2=entry.command.command2,
@@ -5819,6 +5890,7 @@ def resolve_ordinary_round(
             )
             guarding.discard(slot)
             combined_active_command_ids.discard(str(participant_id))
+            battlemodel_active_command_ids.discard(str(participant_id))
         late_runtime=(
             None
             if nocast_working is None
@@ -5886,6 +5958,7 @@ def resolve_ordinary_round(
             )
             current_status_tick=tick
             if tick.confusion_rewrote_command:
+                battlemodel_active_command_ids.discard(str(participant_id))
                 modifyattack_active_command_ids.discard(str(participant_id))
                 mdfyattack_active_command_ids.discard(str(participant_id))
                 weaken_active_command_ids.discard(str(participant_id))
@@ -5921,6 +5994,7 @@ def resolve_ordinary_round(
                 )
             )
             if tick.command_override == "none":
+                battlemodel_active_command_ids.discard(str(participant_id))
                 command=BattleCommand(
                     BATTLE_COM_NONE,
                     command2=entry.command.command2,
@@ -6050,6 +6124,52 @@ def resolve_ordinary_round(
                 ),
             )
             command_by_slot[slot]=command
+
+        if str(participant_id) in battlemodel_active_command_ids:
+            action=battlemodel_actions[str(participant_id)]
+            before_hp=dict(hp_by_slot)
+            loop=execute_current_battlemodel_round_action(action,actor_slot=slot,
+                by_slot=by_slot,hp_by_slot=hp_by_slot,status_runtime=status_runtime,
+                damage_react_state=damage_react_state,ultimate_overkill=ultimate_overkill,
+                guarding_slots=frozenset(guarding),cleared_command_ids=battlemodel_cleared_command_ids,
+                ultimate_marked_slots=ultimate_marked_slots,exited_slots=exited_slots,battle_abio=battle_abio)
+            attempted_battlemodel_actor_ids.add(str(participant_id))
+            if loop is None:
+                events.append(OrdinaryRoundEvent(str(participant_id),slot,BATTLE_COM_NONE,
+                    entry.action_value,"battlemodel_no_target",battlemodel_skill_id=638))
+                continue
+            for target_slot,work in loop.entries.items():
+                target_id=work.participant_id
+                hp_by_slot[target_slot]=work.hp
+                hp_by_id[target_id]=work.hp
+                status_runtime[target_id]=work.status_runtime
+                damage_react_state[target_id]=work.reaction
+                ultimate_overkill[target_id]=work.accumulated_overkill
+            for cleared_slot in loop.cleared_command_slots:
+                cleared_id=by_slot[cleared_slot].participant_id
+                battlemodel_cleared_command_ids.add(cleared_id)
+                command_by_slot[cleared_slot]=replace(command_by_slot[cleared_slot],command1=BATTLE_COM_NONE)
+                guarding.discard(cleared_slot)
+                battlemodel_active_command_ids.discard(cleared_id)
+            for hit in loop.events:
+                actual=hit.actual_defender_slot
+                hp_before=before_hp[actual] if actual is not None else None
+                hp_after=hp_before-hit.hp_loss if actual is not None else None
+                if actual is not None:
+                    before_hp[actual]=hp_after
+                events.append(OrdinaryRoundEvent(str(participant_id),slot,BATTLE_COM_NONE,
+                    entry.action_value,"battlemodel_"+hit.outcome,
+                    original_target_slot=hit.attack.target_slot,resolved_target_slot=actual,
+                    damage=hit.reported_damage,critical=hit.outcome=="critical",
+                    target_hp_before=hp_before,target_hp_after=hp_after,
+                    guardian_redirected=actual is not None and actual!=hit.attack.target_slot,
+                    guardian_slot=actual if actual!=hit.attack.target_slot else None,
+                    status_application_resolution=hit.status_application,
+                    damage_react_resolution=hit.reaction,battlemodel_skill_id=638))
+            events.append(OrdinaryRoundEvent(str(participant_id),slot,BATTLE_COM_NONE,
+                entry.action_value,"battlemodel_action",battlemodel_skill_id=638,
+                battlemodel_loop_resolution=loop))
+            continue
 
         if command.command1 == BATTLE_COM_NONE:
             events.append(
@@ -9949,6 +10069,14 @@ def resolve_ordinary_round(
         )
 
     carried_commands={}
+    if battlemodel_actions and (ultimate_marked_slots or any(
+        e.target_hp_before is not None and e.target_hp_before > 0
+        and e.target_hp_after == 0 for e in events
+    )):
+        raise ValueError("BattleModel nonlethal round excludes all death/ultimate exit/profit compositions")
+    for pid in battlemodel_actor_ids-attempted_battlemodel_actor_ids:
+        if battlemodel_actions[pid].draws:
+            raise ValueError("unused BattleModel RNG supplied for status/death/incomplete-suppressed actor: "+pid)
     carried_effects={}
     for carried_slot,carried_command in command_by_slot.items():
         if int(carried_command.command1) not in {
@@ -10024,4 +10152,5 @@ def resolve_ordinary_round(
             dict(steal_items)
         ),
         mp_by_participant_id=MappingProxyType(dict(mp_working)),
+        battlemodel_cleared_command_ids=tuple(sorted(battlemodel_cleared_command_ids)),
     )

@@ -860,3 +860,17 @@ coverage OPEN. Internal semantic carrier is not a historical numeric COM1.
 **OPEN (repository integration review):** ordinary player ultimate exit uses
 unique active pet projection; audit against DD-020 before integration. No
 historical claim or exit correction accepted here. Pending records superseded.
+
+
+### 2026-10-06 — nonlethal BattleModel ordinary/state/coordinator locally validated
+
+**LOCAL_TESTED:**31 new actual round/state/coordinator witnesses,428 total
+PASS. Actor status tick precedes symbolic638 dispatch; confusion can replace
+it with ordinary attack, paralysis expiry never restores cancelled commands,
+poison/current drunk QUICK propagate without re-sorting. Actual Guardian and
+hit state affect later actors; next preparation resets cancellation. Explicit
+coordinator re-admits current spawned/template/skill/work identity. Death or
+ultimate composition fails before committing state; full lethal/automatic-AI/
+original command-loop/638 slot acceptance OPEN. No original build/Taiwan-v1
+membership claim. Existing696/3420/1920/480/60 native reruns PASS; remote
+exact input and all shared-workflow regressions pending.

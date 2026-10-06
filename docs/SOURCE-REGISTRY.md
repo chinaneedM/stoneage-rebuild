@@ -3679,3 +3679,24 @@ native gates reproduced; artifact11389966161. This closes bounded handoff,
 not original full command-loop/persistent/coordinator/ultimate acceptance.
 Next review includes ordinary player ultimate default-selection semantics
 under DD-020. No raw source/payload retained; pending records superseded.
+
+
+### SRC-BATTLEMODEL-NONLETHAL-ORDINARY-STATE-COORDINATOR-R1
+
+- Independent engine-neutral integration using existing accepted common status
+  clock, ordinary driver and fixed-pin physical/ItemCrush helper. Same three
+  clean source pins/event hashes; no raw source or proprietary payload retained.
+- Typed BattleModelRoundAction and current work binding, explicit semantic
+  NONE/source-target carrier, actor tick before dispatch, chronological owned
+  RNG, actual Guardian/status cancellation and nonlethal immutable transaction.
+  Shared physical binder now reads typed current status work QUICK when supplied
+  rather than silently requiring stale setup QUICK after drunk expiry.
+-31 new witnesses:24 actual ordinary rounds,3 state and4 coordinator cases.
+  428 local tests PASS; existing696 physical/3420 ItemCrush/1920 settlement/
+  480 marker/60 pet native reruns PASS. These native gates cover hit machinery;
+  no new original full-command-loop certificate is asserted. Explicit opposing
+  slot order remains a caller authority; production OPTION identity unchanged.
+- Coordinator re-admits from current actual template/loaded runtime/work powers.
+  Automatic skill selection, lethal/ultimate/default-selection profit flow,
+  equipped/extra slots/wider features, BattleModel-specific golden/region/
+  pressure and638 positive slots OPEN. Remote exact/all-workflow gates pending.

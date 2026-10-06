@@ -96,6 +96,8 @@ from tools.stoneage_enemy_ai_combined_bridge import (
     EnemyAiCombinedSubmission,
     resolve_enemy_ai_combined_submission,
 )
+from tools.stoneage_battlemodel_round_action import BattleModelRoundAction
+from tools.stoneage_enemy_ai_battlemodel_bridge import resolve_enemy_ai_battlemodel_submission
 from tools.stoneage_combined_model import CALLBACK_NAME as COMBINED_CALLBACK
 from tools.stoneage_enemy_ai_vary_bridge import (
     EnemyAiVarySubmission,
@@ -180,6 +182,7 @@ from tools.stoneage_enemy_ai_modifyattack_bridge import (
 from tools.stoneage_enemy_ai_mdfyattack_bridge import EnemyAiMdfyAttackSubmission, resolve_enemy_ai_mdfyattack_submission
 from tools.stoneage_mdfyattack_model import CALLBACK_NAME as MDFYATTACK_CALLBACK
 from tools.stoneage_battle_round_model import (
+    BATTLE_COM_NONE,
     AttackCrazedRolls,
     WildViolentRolls,
     BATTLE_COM_ATTACK,
@@ -4409,17 +4412,51 @@ class LocalRuntimeSessionCoordinator:
         field_attr: str = "none",
         field_power: int = 0,
         tie_break_order: Sequence[str] | None = None,
+        battlemodel_actions_by_participant_id: Mapping[str,BattleModelRoundAction] | None = None,
+        base_status_rolls_by_participant_id: Mapping[str,BaseStatusTurnRolls] | None = None,
     ) -> tuple[LocalRuntimeBattleContext, PersistentRoundResult]:
-        """Advance one explicit ordinary ATTACK/GUARD/WAIT round.
+        """Advance an explicit base round, optionally scoped nonlethal BattleModel.
 
-        Capture, escape, item, skill/combo and automatic enemy-AI selection
-        remain outside this low-level coordinator seam. The dedicated AI bridge
-        above may generate only ATTACK/GUARD before entering this method.
+        Typed BattleModel is explicitly supplied and re-admitted against current
+        spawned/template/runtime identity. Automatic BattleModel AI selection,
+        other callbacks, equipped features and death/ultimate remain outside.
         """
 
         state = context.persistent_battle_state
         if state is None:
             raise ValueError("battle context has no persistent battle state")
+
+        battlemodel_actions=dict(battlemodel_actions_by_participant_id or {})
+        effects={}
+        guardians={}
+        if battlemodel_actions:
+            if context.attack_magic_overlay is not None:
+                raise ValueError("BattleModel coordinator scope excludes AttackMagic overlay")
+            runtime=getattr(self.stack,"petskill_runtime",None)
+            if runtime is None:
+                raise ValueError("BattleModel coordinator requires recovered25 skill runtime")
+            spawned_by_id={s.participant.participant_id:s for s in context.spawned_enemies}
+            if len(spawned_by_id)!=len(context.spawned_enemies):
+                raise ValueError("BattleModel coordinator duplicate spawned identity")
+            for pid,action in battlemodel_actions.items():
+                if not isinstance(action,BattleModelRoundAction):
+                    raise TypeError("typed BattleModel coordinator action required")
+                if pid not in spawned_by_id:
+                    raise ValueError("BattleModel actor is absent from current spawned enemies")
+                current=participant_snapshot(state,pid)
+                canonical=resolve_enemy_ai_battlemodel_submission(spawned_by_id[pid],
+                    skill_slot=action.submission.skill_slot,target_slot=action.submission.source_target_carrier,
+                    petskill_runtime=runtime,profile=action.submission.profile,
+                    source_profile=action.submission.source_profile,
+                    powers_before=(current.attack,current.defense,current.quick))
+                if canonical!=action.submission:
+                    raise ValueError("BattleModel coordinator current submission/template/work drift")
+                effects[pid]=BattleCommandSetupEffects(attack_power=canonical.setup.powers[0],
+                    defense_power=canonical.setup.powers[1])
+                for target,registration in action.physical_context.guardians.items():
+                    if target in guardians and guardians[target]!=registration:
+                        raise ValueError("BattleModel coordinator Guardian registration drift")
+                    guardians[target]=registration
 
         normalized_commands = {
             str(key): value
@@ -4430,13 +4467,14 @@ class LocalRuntimeSessionCoordinator:
                 participant_id
                 for participant_id, command in normalized_commands.items()
                 if not isinstance(command, BattleCommand)
-                or int(command.command1)
-                not in {BATTLE_COM_ATTACK, BATTLE_COM_GUARD, BATTLE_COM_WAIT}
+                or (int(command.command1) not in {BATTLE_COM_ATTACK,BATTLE_COM_GUARD,BATTLE_COM_WAIT}
+                    and not (participant_id in battlemodel_actions and command.command1==BATTLE_COM_NONE))
             )
         )
         if invalid_commands:
             raise ValueError(
-                "persistent coordinator R1 accepts ATTACK/GUARD/WAIT only: "
+                ("persistent coordinator requires base commands or typed BattleModel NONE carrier: "
+                 if battlemodel_actions else "persistent coordinator R1 accepts ATTACK/GUARD/WAIT only: ")
                 + ",".join(invalid_commands)
             )
 
@@ -4450,6 +4488,10 @@ class LocalRuntimeSessionCoordinator:
             profiles=profiles,
             attack_rolls=attack_rolls,
             defense_profile=str(defense_profile),
+            command_setup_effects_by_participant_id=effects,
+            guardian_registrations_by_defender_slot=guardians,
+            battlemodel_actions_by_participant_id=battlemodel_actions,
+            base_status_rolls_by_participant_id=base_status_rolls_by_participant_id,
             no_risk=bool(no_risk),
             field_attr=str(field_attr),
             field_power=int(field_power),

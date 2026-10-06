@@ -26,6 +26,7 @@ from typing import Mapping, Sequence
 from tools.stoneage_attack_magic_action_model import EnemyAttackMagicActionRolls
 from tools.stoneage_attack_magic_state_model import AttackMagicRoundOverlay
 from tools.stoneage_enemy_ai_attack_magic_bridge import EnemyAiAttackMagicSubmission
+from tools.stoneage_battlemodel_round_action import BattleModelRoundAction
 from tools.stoneage_enemy_ai_rehp_bridge import EnemyAiReHpSubmission
 from tools.stoneage_enemy_ai_relife_bridge import EnemyAiReLifeSubmission
 from tools.stoneage_enemy_ai_damage_to_hp_bridge import (
@@ -1671,9 +1672,13 @@ def resolve_persistent_ordinary_round(
     field_attr: str = "none",
     field_power: int = 0,
     tie_break_order: Sequence[str] | None = None,
+    battlemodel_actions_by_participant_id: Mapping[str,BattleModelRoundAction] | None = None,
 ) -> PersistentRoundResult:
     if state.phase != ACTIVE:
         raise ValueError("cannot execute another round after battle termination")
+    if (battlemodel_actions_by_participant_id and state.vary_overlay is not None
+        and state.vary_overlay.runtime_by_participant_id):
+        raise ValueError("BattleModel persistent scope excludes Vary overlay")
 
     participants = active_participants(state)
     living_ids = {participant.participant_id for participant in participants}
@@ -2448,6 +2453,7 @@ def resolve_persistent_ordinary_round(
         ),
         field_attr=field_attr,
         field_power=field_power,
+        battlemodel_actions_by_participant_id=battlemodel_actions_by_participant_id,
     )
 
     hp = dict(state.hp_by_participant_id)

@@ -7139,3 +7139,42 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   chronology and round-local flags. Equipped/extra-slot/wider features and
   golden/full-region/hash-verified pressure remain required before closing
  638's two slots. DD-018 restoration-first remains in force.
+
+
+## Phase 1 BattleModel nonlethal ordinary/state/coordinator local milestone — 2026-10-06
+
+- Fresh remote startup main6d5159a99c07f4ab9ee9c32ea3bedd28f11e51ff,
+  treedca44043c751270f96561ece43f2fe7ecdbe87fc, clean matching local tree.
+  Branches/HEAD/tree/latest commits/Actions and protocol-ordered docs re-read.
+  Prepared handoff37412928360 SUCCESS; main/accepted branch sync verified.
+- Isolated agent/battlemodel-ordinary-round-r1-20261006 from latest main.
+  LOCAL_VALIDATED explicit nonlethal ordinary driver -> persistent state ->
+  low-level coordinator path. Typed638 NONE/source-target remains internal,
+  never claimed numeric COM1. Automatic recovered-AI selector stays unchanged.
+- Existing actor status clock now precedes skill dispatch exactly once:
+  poison HP, paralysis/sleep/stone cancellation including expiry, confusion
+  rewrite to real ordinary attack, drunk current QUICK and owned drunk-Duck
+  RNG. Prepared order retained; callback setup not re-applied after ticking.
+- Actual hit results propagate HP/status/reactions/overkill/command clearing
+  and Guardian recipient to later actors. Multiple semantic actors read live
+  intervening state. Explicit opposing order filters liveness at the actor
+  visit. Suppressed/incomplete/dead/no-target paths reject unused action RNG.
+- State commits successful nonlethal results/turn and leaves failed input
+  immutable. Next-round fresh commands have no permanent cancellation.
+  Coordinator re-admits from current spawned template, loaded skill bytes
+  and pre-callback work, returning a new context without changing world payload.
+- New31 witnesses (24 round/3 state/4 coordinator);428 tests PASS (31+283
+  prior +39 state +75 coordinator). Existing native696/3420/1920/480/60
+  reruns PASS at all3 clean pins. Settlement CI extended; shared round/state/
+  coordinator changes trigger other workflow regressions, all require review.
+- Spec specs/STONEAGE-BATTLEMODEL-ORDINARY-ROUND-R1.md. Remote publication/
+  exact gates PENDING. The whole scoped round rejects new death or ultimate,
+  even from other ordinary attacks; no profit/exit/default-pet projection is
+  accepted. No equipped/other-callback/ride/counter/late-overlay compositions.
+- **Highest-priority unfinished task:** publish exact scoped input, inspect all
+  triggered Actions and possible write-backs; accept only nonlethal explicit
+  round/state/coordinator integration after PASS and sync main nonforce.
+  Then lethal/ultimate/profit integration with DD-020 default selection audit,
+  automatic AI selection and native command-loop/BattleModel golden/region/
+  hash-verified pressure. Equipped/extra-slot/wider-feature and original profile
+  ambiguities remain required before closing638's two positive slots. DD-018.

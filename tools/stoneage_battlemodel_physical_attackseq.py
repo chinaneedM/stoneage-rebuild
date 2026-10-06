@@ -122,8 +122,11 @@ def _bind_context(submission, actor_slot, entries, context):
         or not entries[actor_slot].live_target):
         raise ValueError("physical actor must match admitted enemy")
     actor = context.profiles[actor_slot]
-    if (actor.defense_power, actor.quick) != submission.setup.powers[1:]:
-        raise ValueError("actor defense/quick must match post-setup work powers")
+    work_quick = entries[actor_slot].status_runtime.work_quick
+    expected_quick = submission.setup.powers[2] if work_quick is None else work_quick
+    _int(expected_quick, "current actor work quick", 0, 2**31 - 1)
+    if actor.defense_power != submission.setup.powers[1] or actor.quick != expected_quick:
+        raise ValueError("actor defense/quick must match post-setup/current status work powers")
     _int(submission.setup.powers[0], "post-setup attack power", 0, 2**31 - 1)
 
 
