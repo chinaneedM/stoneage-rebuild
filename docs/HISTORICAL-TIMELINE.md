@@ -941,3 +941,15 @@ optional-dependency import errors. Remote exact/shared/full-region gates pending
   runtime still has separately represented overlays; no full exit/638 claim.
 - Original full Battling/638 command-to-profit execution, compiler/feature/
   version membership and hash-verified specific pressure remain unresolved.
+
+
+### 2026-10-06 — bounded native PvE profit/exit remote acceptance
+
+Exact c1c3209e/tree777d45a0, run37420393572/job112128219849 SUCCESS:
+19656 seven-function native cases,535 regressions and prior486/696/3420/
+1920/480/60 native gates reproduced. Artifact11392388401 and acceptance
+receipt preserve exact source/header hashes and boundaries. Earlier remote
+pending status superseded within feature-off PvE/no-item/no-ride/non-mail
+scope. No modern runtime code change, lethal638/native full command driver,
+original active feature/version or slot-promotion claim. Whole-scan profit
+adapter and ten-field/overlay clear are next.

@@ -1,6 +1,6 @@
 # BattleModel native profit and exit composition plan R1
 
-Status: OPEN_NATIVE_COMPOSITION; three pinned static preflight observations only.
+Status: CLOSED_BOUNDED_FEATURE_OFF_PVE_NATIVE_COMPOSITION; full command bridge and modern lethal638 OPEN.
 
 ## Required composition
 
@@ -89,3 +89,41 @@ and ISDIE clear are included. This supersedes zero-native-case status within
 that declared profile only; exact remote acceptance remains pending.
 Contract: STONEAGE-PVE-PROFIT-EXIT-NATIVE-AUDIT-R1.md. The full command-native
 attack-to-profit bridge and modern lethal638 integration remain OPEN.
+
+
+## Next adapter review after bounded native acceptance
+
+The current common runtime exposes six-status BaseBattleStatusRuntime and
+separate NocastRoundOverlay counters for Nocast/Barrier/Weaken. Player ultimate
+cleanup resets base status and carried HP, while the persistent overlay path
+retains exited participant records and skips their next-visit preparation.
+The native ten-field clear therefore needs an explicit overlay transition;
+base-status reset alone is not a complete source Exit certificate.
+
+Bind an immutable scan snapshot with actual side/slot identities, HP, ISDIE,
+BENT ultimate bits, nullable DEFAULTPET, owned non-mail roster and occupancy.
+For638, invoke the scan at command tail after all admitted hits, preserving
+mutations from earlier scanned entries. Keep ordinary per-hit boundaries.
+The existing event-oriented pending-profit walk cannot supply this grouping
+without an explicit scan result/chronology adapter. Only native-processed
+deaths may drive new death/loyalty accounting; suppressed paired deaths must
+not be charged from an earlier damage event.
+
+Map source counter clears to the overlay counters and visit flags, and audit
+prepared Weaken powers/recalculation separately. Original complianceParameter
+and notification internals are controlled seams in the native certificate;
+no attribute recalculation or packet spelling is certified by that stub.
+Deep poison is outside the admitted modern status schema and must stay
+explicitly rejected rather than erased through an unmodeled-status boolean.
+Native EXP fixtures use a single player recipient and three level-gap points;
+pet/party recipients, item distribution and rides require additional native
+vectors before expanding the adapter domain.
+
+
+## 2026-10-06 bounded native remote acceptance
+
+Run37420393572/job112128219849 SUCCESS on c1c3209e/tree777d45a0,
+19656 cases,535 regressions and all prior native gates. The earlier static-only/
+local-pending snapshots are superseded in the declared feature-off PvE domain.
+Full native command-driver bridge, modern whole-scan/overlay integration and
+lethal638 are still OPEN under the next adapter review above.

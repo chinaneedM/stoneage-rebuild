@@ -7396,3 +7396,34 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   ten-field clear/modern overlay boundaries before lethal638 integration.
   Full command-native bridge, original profile/version, automatic AI, equipped/
   wider features and specific golden/region/hash-verified638 pressure OPEN.
+
+
+## Phase 1 bounded native PvE profit/exit composition accepted — 2026-10-06
+
+- Exact inputc1c3209e4bf8a6f9c7193a3be44435f1564b6a23,
+  tree777d45a00ad13f6fa35a57f6efd2422161b3b092; required run37420393572/
+  job112128219849 SUCCESS.19656 cases/6552 per clean pin,535 regressions
+  and prior486/696/3420/1920/480/60 native gates reproduced. Artifact
+ 11392388401; receipt STONEAGE-PVE-PROFIT-EXIT-NATIVE-ACCEPTANCE-R1.json.
+- CLOSED_BOUNDED_FEATURE_OFF_PVE_NATIVE_COMPOSITION. Original seven bodies,
+  original relevant headers/table and ten-field clear plus ISDIE checked.
+  Earlier pending/local snapshots superseded within this scope. No runtime
+  code change, no original full command/native profile or lethal638 claim.
+- Fresh main4e26e2e and audit branchc1c3209e unchanged; ancestry verified.
+  Nonforce main synchronization/replay pending; acceptance alters only
+  documentation and derived receipt. Existing golden/full-region evidence
+  remains the accepted prior baseline, not new638 scenario acceptance.
+- Next adapter contract locates separate Nocast/Barrier/Weaken overlay
+  counters, retained exited records and prepared Weaken powers. Base-status
+  reset is insufficient for the native ten-field cleanup. Attribute
+  recalculation/packet/penalty clamp seams and pet/party recipients were not
+  certified by this bounded harness. Deep-poison schema remains excluded.
+- **Highest-priority unfinished task:** verify accepted main replay, then
+  isolate a whole-scan immutable profit/exit adapter at638 command tail. Bind
+  actual entry HP/ISDIE/ultimate bits, side/slot order, owner/selection/roster/
+  occupancy; only scan-processed deaths affect counters/loyalty. Integrate
+  explicit overlay clear/recalculation before enabling lethal638 ordinary/
+  state/coordinator/Guardian behavior. Follow composition plan/accepted audit.
+  Full command-native bridge, original build/version, equipped/wider features,
+  automatic AI and specific golden/region/hash-verified pressure remain OPEN;
+  no positive-slot or overall-percentage promotion.

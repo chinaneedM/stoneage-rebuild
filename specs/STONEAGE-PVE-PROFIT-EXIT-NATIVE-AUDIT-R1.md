@@ -1,6 +1,6 @@
 # Bounded native PvE profit and exit composition R1
 
-Status: LOCAL_VALIDATED; exact remote acceptance pending.
+Status: CLOSED_BOUNDED_FEATURE_OFF_PVE_NATIVE_COMPOSITION.
 
 ## Native functions and declared profile
 
@@ -92,3 +92,18 @@ selection and occupancy, persistent state/coordinator and actual Guardian
 hits. Full command-native bridge, equipped/wider features, original compiler/
 profile/charset/JSS or Taiwan-v1 membership, automatic638 AI, specific golden/
 region/hash-verified pressure and positive-slot promotion remain OPEN.
+
+
+## Exact remote acceptance — 2026-10-06
+
+Inputc1c3209e4bf8a6f9c7193a3be44435f1564b6a23,
+tree777d45a00ad13f6fa35a57f6efd2422161b3b092; run37420393572,
+job112128219849 SUCCESS.19656 native cases/6552 per clean profile,
+535 regressions and prior486/696/3420/1920/480/60 native gates reproduce.
+Artifact11392388401 retains derived reports, including the new native audit.
+Receipt: STONEAGE-PVE-PROFIT-EXIT-NATIVE-ACCEPTANCE-R1.json.
+
+Earlier remote-pending snapshots are superseded within the declared scope.
+No runtime source change or broad all-suite PASS is claimed. Prior golden/
+full-region acceptance remains unchanged; no new638 scenario certification.
+Full command-native bridge and modern scan/overlay adapter remain OPEN.

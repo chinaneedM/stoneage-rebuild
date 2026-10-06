@@ -3794,3 +3794,16 @@ slots remain OPEN. Pending snapshot superseded; no raw source/payload retained.
   JSS/Taiwan-v1 membership, complete modern638 runtime/pressure remain OPEN.
 - Spec: STONEAGE-PVE-PROFIT-EXIT-NATIVE-AUDIT-R1. Extended settlement CI pending
   exact remote acceptance; no positive-slot or overall-percentage promotion.
+
+
+#### SRC-PVE-PROFIT-EXIT-NATIVE-COMPOSITION-R1 remote acceptance
+
+Inputc1c3209e4bf8a6f9c7193a3be44435f1564b6a23,
+tree777d45a00ad13f6fa35a57f6efd2422161b3b092,
+run37420393572/job112128219849 SUCCESS.19656 cases at the same three
+clean pins and535 regressions/prior native gates reproduced; artifact
+11392388401 and STONEAGE-PVE-PROFIT-EXIT-NATIVE-ACCEPTANCE-R1.json record
+all profile/header/function hashes. Local-pending statement superseded;
+controlled external seams, injected-state/reachability limits, native full
+command bridge, modern lethal638/pressure and original version membership
+remain explicitly OPEN. No original source/payload committed.
