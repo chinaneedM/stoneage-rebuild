@@ -15,6 +15,7 @@ from tools.stoneage_battlemodel_itemcrush_model import BattleModelItemCrushConte
 from tools.stoneage_battlemodel_round_action import (
     BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
     BATTLEMODEL_ORDINARY_SCOPE_R1,
+    BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1,
     BattleModelRoundAction,
 )
 from tools.stoneage_battle_round_model import (
@@ -300,6 +301,49 @@ class OrdinaryBattleModelTests(unittest.TestCase):
             ("target",),
         )
 
+    def test_lethal638_persistent_player_ultimate_exits_at_command_tail(self):
+        self.actors[0]=replace(self.actors[0],hp=10,max_hp=10)
+        state=self.persistent()
+        action=self.action(scope=BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1)
+        result=self.state_round(state,action)
+        self.assertEqual(state.hp_by_participant_id["target"],10)
+        self.assertEqual(result.after.hp_by_participant_id["target"],1)
+        self.assertEqual(
+            result.round.ultimate_exited_participant_ids,
+            ("target",),
+        )
+        self.assertNotIn(
+            "target",
+            result.after.profit_processed_death_ids,
+        )
+        boundaries=[
+            boundary for boundary in result.round.profit_boundaries
+            if boundary.boundary_kind == PROFIT_BOUNDARY_BATTLEMODEL_COMMAND_TAIL
+        ]
+        self.assertEqual(len(boundaries),1)
+        self.assertEqual(boundaries[0].hp_by_slot[0],0)
+        self.assertEqual(dict(boundaries[0].ultimate_kind_by_slot),{0:2})
+        self.assertIsNotNone(result.profit_scan_settlement)
+        self.assertEqual(len(result.profit_scan_settlement.steps),1)
+
+    def test_lethal638_coordinator_player_ultimate_replays_current_identity(self):
+        self.actors[0]=replace(self.actors[0],hp=10,max_hp=10)
+        context=self.context()
+        action=self.action(scope=BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1)
+        after,result=self.coordinator_round(context,action)
+        self.assertEqual(context.persistent_battle_state.hp_by_participant_id["target"],10)
+        self.assertEqual(after.persistent_battle_state.hp_by_participant_id["target"],1)
+        self.assertEqual(
+            result.round.ultimate_exited_participant_ids,
+            ("target",),
+        )
+        boundary=next(
+            boundary for boundary in result.round.profit_boundaries
+            if boundary.boundary_kind == PROFIT_BOUNDARY_BATTLEMODEL_COMMAND_TAIL
+        )
+        self.assertEqual(dict(boundary.ultimate_kind_by_slot),{0:2})
+        self.assertEqual(after.persistent_state_payload,context.persistent_state_payload)
+
     def test_success_cancels_later_prepared_attack_in_actual_same_round(self):
         result = self.run_round()
         self.assertEqual(result.action_order, ("enemy", "target"))
@@ -492,7 +536,7 @@ class OrdinaryBattleModelTests(unittest.TestCase):
                 )
         self.assertEqual(self.actors[10].hp,500)
 
-    def test_reflected_living_ultimate_flag_is_rejected_in_both_scopes(self):
+    def test_reflected_living_ultimate_flag_is_rejected_in_all_scopes(self):
         self.actors[0] = replace(self.actors[0], hp=10, max_hp=10)
         self.reactions["target"] = BaseDamageReactState(reflect=4)
         for scope in (
@@ -508,6 +552,13 @@ class OrdinaryBattleModelTests(unittest.TestCase):
                         scope=scope,
                     )
                 )
+        with self.assertRaisesRegex(ValueError, "newly lethal ultimate flag"):
+            self.run_round(
+                action=self.action(
+                    self.tape(blocked_target=True),
+                    scope=BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1,
+                )
+            )
         self.assertEqual(self.actors[0].hp,10)
 
     def test_nonempty_counter_opt_in_is_rejected_for_bounded_composition(self):
