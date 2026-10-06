@@ -32,12 +32,14 @@ For each supported boundary the adapter:
 6. carries the scan's still-valid occupied ISDIE entries to the next boundary;
 7. exposes the settlement on `PersistentRoundResult.profit_scan_settlement`.
 
-For the initial integration gate, supported canonical rounds also execute the
-legacy pending-profit calculation as a differential oracle. EXP, pet VARIABLEAI,
-player charm, dead-pet count, pending drops and destroyed-drop fields must match
-exactly or the round fails. The persistent fields are then sourced from the
-whole-scan result. Unsupported rounds remain explicitly on the legacy path and
-expose `profit_scan_settlement=None`.
+For the initial integration gate, canonical rounds also execute the legacy
+pending-profit calculation as a differential oracle. Exact equality is required
+only for the deliberately equivalent subset: one profit boundary, no ultimate
+flag and no scan-driven status clear. Multi-boundary or ultimate composition is
+allowed to diverge because that is exactly where round-wide event-order metadata
+can misclassify an earlier death. Persistent accounting is sourced from the
+whole-scan result whenever the binder is admitted. Unsupported rounds remain
+explicitly on the legacy path and expose `profit_scan_settlement=None`.
 
 This differential gate is temporary safety pressure, not a claim that event
 order is authoritative.

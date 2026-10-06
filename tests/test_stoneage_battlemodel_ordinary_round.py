@@ -200,6 +200,12 @@ class OrdinaryBattleModelTests(unittest.TestCase):
         self.assertEqual(result.after.base_damage_react_state_by_participant_id["target"].reflect,0)
         self.assertEqual(result.after.base_status_runtime_by_participant_id["target"].damage_count,4)
         self.assertEqual(result.after.pending_exp_by_participant_id,state.pending_exp_by_participant_id)
+        self.assertIsNotNone(result.profit_scan_settlement)
+        self.assertEqual(len(result.profit_scan_settlement.steps),1)
+        self.assertEqual(
+            result.profit_scan_settlement.steps[0].result.processed_death_ids,
+            (),
+        )
         self.assertEqual(state.base_damage_react_state_by_participant_id["target"].reflect,4)
 
     def test_persistent_next_preparation_takes_fresh_command_without_saved_cancellation(self):
