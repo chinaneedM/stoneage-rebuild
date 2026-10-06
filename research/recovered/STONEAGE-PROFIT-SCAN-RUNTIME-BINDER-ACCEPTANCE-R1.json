@@ -1,0 +1,77 @@
+{
+  "schema": "STONEAGE_PROFIT_SCAN_RUNTIME_BINDER_ACCEPTANCE_R1",
+  "status": "CLOSED_BOUNDED_CANONICAL_PROFIT_SCAN_RUNTIME_BINDER",
+  "date": "2026-10-06",
+  "baseline_main_commit": "6909c750db84188048b0a3356ff8992aea26e9aa",
+  "implementation_commit": "babf091e66192463cc51ac06a51348b8ef010048",
+  "accepted_tested_commit": "f9bc6b1688500987562fda89ab347984ab12a684",
+  "accepted_tree": "cf8af0a399453487807976c2681bf841cabd5a5e",
+  "branch": "agent/profit-scan-runtime-binder-r1-20261006",
+  "remote_validation": {
+    "implementation_head": {
+      "triggered_workflow_count": 31,
+      "all_success": true,
+      "settlement": {
+        "run_id": 37430287171,
+        "job_id": 112159300888,
+        "conclusion": "success",
+        "tests": 653,
+        "immutable_scan_model_native_comparisons": 19656,
+        "weaken_recalculation_vectors": 384
+      },
+      "recovered25_region": {
+        "run_id": 37430287204,
+        "job_id": 112159301018,
+        "conclusion": "success"
+      },
+      "artifact": {
+        "id": 11396209963,
+        "name": "battlemodel-settlement",
+        "digest": "sha256:023a25d6b06f17951decffeb8a531c6854b5f7cf0b98b064769e33794a816f0b"
+      }
+    },
+    "final_test_only_head": {
+      "triggered_workflow_count": 1,
+      "all_success": true,
+      "settlement": {
+        "run_id": 37430504940,
+        "job_id": 112160004965,
+        "conclusion": "success",
+        "tests": 653
+      },
+      "artifact": {
+        "id": 11396273753,
+        "name": "battlemodel-settlement",
+        "digest": "sha256:e0c0a89ca66965d2933ce9fe38dc2ec836dd0176791f1b6d48752dafaee7c7ef"
+      }
+    }
+  },
+  "accepted_scope": [
+    "canonical SIDE_OFFSET10 one-owner profit boundaries bind to the accepted immutable ProfitExitSnapshot whole scan",
+    "supported boundary kinds are ordinary per-hit and nonlethal BattleModel ID638 command-tail only",
+    "active owned pets must occupy canonical entry5..9 and enemies entry10..19; exact complete owned roster is retained",
+    "no ride pet, no item-bearing enemy, no pre-existing battle/ultimate exits, and one occupied non-pet profit recipient",
+    "sequential boundary prior_processed_death_ids must match the preceding scan's surviving occupied ISDIE state",
+    "scan-driven status clears are projected through the accepted status-clear projection",
+    "persistent EXP/pet VARIABLEAI/player charm/dead-pet accounting is sourced from the whole-scan result on admitted rounds",
+    "nonlethal BattleModel command-tail admission is explicitly regression-tested",
+    "multi-boundary normal-pet then player-ultimate regression proves earlier pet death is not retroactively upgraded by later round-wide ultimate exit metadata"
+  ],
+  "corrected_legacy_behavior": {
+    "issue": "legacy event-order pending-profit reads round-wide ultimate_exited_ids and can retroactively classify an earlier normal pet death as ultimate when a later player ultimate removes that pet",
+    "canonical_whole_scan_resolution": "the earlier boundary is settled immediately as normal death; later player ultimate observes prior ISDIE and does not rewrite that prior death classification"
+  },
+  "legacy_fallback_scope": [
+    "noncanonical or sparse pet slot layouts",
+    "pet/party profit recipients",
+    "Combo/counter/BatFly groupings without full original command chronology",
+    "ride/item composition",
+    "pre-existing battle/ultimate exits outside the admitted binder state",
+    "lethal BattleModel ID638"
+  ],
+  "differential_oracle_scope": "single boundary, no ultimate flag, no scan-driven status clear only",
+  "historical_claims_added": false,
+  "original_source_or_assets_committed": false,
+  "positive_slots_promoted": 0,
+  "next_priority": "Build a new native command-driver harness that compiles the original dispatch-to-profit chronology with BattleModel and actual Guardian victim selection, then add multi-victim command-tail whole-scan witnesses. Do not enable lethal638 until that native command-tail composition matches the modern canonical binder."
+}

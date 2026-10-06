@@ -1043,3 +1043,21 @@ adapter and ten-field/overlay clear are next.
   walk remains event-order based until a canonical boundary binder drives
   `resolve_profit_exit_scan()` and consumes `processed_death_ids`.
 
+### 2026-10-06 — Canonical whole-scan runtime binder accepted
+
+- MODEL/FACT: implementation `babf091e66192463cc51ac06a51348b8ef010048` passes 31/31 triggered workflows;
+  final test-only input `f9bc6b1688500987562fda89ab347984ab12a684` passes the settlement gate. Settlement
+  covers 653 tests plus the existing 19656 immutable scan/model-native
+  comparisons and 384 bounded Weaken recalculation vectors; recovered25 region
+  also passes.
+- DESIGN: supported canonical SIDE_OFFSET10 ordinary per-hit and nonlethal638
+  command-tail boundaries now execute the accepted immutable whole scan and
+  persist its accounting. Unsupported layouts/recipients/groupings remain
+  explicit fallback, not silently coerced.
+- CORRECTION: the new integration proves a round-wide event-order bug can
+  retroactively misclassify an earlier normal pet death after a later player
+  ultimate. Sequential whole-scan boundaries preserve the earlier normal death
+  and carry ISDIE forward.
+- OPEN: full original command-driver execution with actual Guardian victims and
+  multi-victim BattleModel tail remains required before lethal638.
+

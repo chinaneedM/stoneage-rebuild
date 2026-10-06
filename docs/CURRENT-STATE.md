@@ -7672,3 +7672,48 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   lethal638; pet/party/ride/item profit recipients, build/version, AI and
   specific638 golden/region pressure remain OPEN.
 
+## Phase 1 canonical SIDE_OFFSET10 whole-scan runtime binder remote acceptance — 2026-10-06
+
+- Implementation `babf091e66192463cc51ac06a51348b8ef010048`; final tested input `f9bc6b1688500987562fda89ab347984ab12a684`, tree
+  `cf8af0a399453487807976c2681bf841cabd5a5e`, branch `agent/profit-scan-runtime-binder-r1-20261006`.
+- **CLOSED_BOUNDED_CANONICAL_PROFIT_SCAN_RUNTIME_BINDER.** Implementation head
+  triggered **31/31 SUCCESS**, including settlement
+  `37430287171/112159300888` (**653 tests**, **19656** immutable
+  scan/model-native comparisons, **384** bounded Weaken recalculation vectors)
+  and recovered25 region `37430287204/112159301018`. Artifact
+  `11396209963`,
+  `sha256:023a25d6b06f17951decffeb8a531c6854b5f7cf0b98b064769e33794a816f0b`.
+  Final test-only settlement `37430504940/112160004965` also SUCCESS; artifact
+  `11396273753`,
+  `sha256:e0c0a89ca66965d2933ce9fe38dc2ec836dd0176791f1b6d48752dafaee7c7ef`.
+- Supported actual runtime boundaries now bind to the accepted immutable
+  `ProfitExitSnapshot` whole scan and source persistent EXP/pet VARIABLEAI/
+  player charm/dead-pet accounting from scan results. The admitted subset is
+  deliberately narrow: canonical SIDE_OFFSET10 owner/pets/enemies, exact
+  complete non-mail roster, ordinary per-hit or nonlethal638 command-tail,
+  no ride/items/pre-existing exits, and one occupied non-pet recipient.
+  Sequential `ISDIE` must agree at every boundary; scan-driven status clears
+  are projected through the accepted clear adapter.
+- This integration exposed and fixes a concrete legacy event-order defect:
+  when a pet dies **normally on an earlier profit boundary** and a later player
+  ultimate removes that pet in the same round, the old pending-profit walk can
+  read round-wide `ultimate_exited_ids` and retroactively treat the earlier pet
+  death as ultimate. The canonical whole scan settles the first boundary as
+  normal immediately, carries ISDIE forward, and does not rewrite it later.
+- Noncanonical/sparse pet slots, pet/party recipients, Combo/counter/BatFly
+  grouping, ride/items, pre-existing exit compositions and lethal638 remain on
+  the explicit legacy/unsupported side. The differential oracle is required
+  only where old/new are definitionally equivalent: one boundary, no ultimate,
+  no scan-driven status clear.
+- Receipt:
+  `research/recovered/STONEAGE-PROFIT-SCAN-RUNTIME-BINDER-ACCEPTANCE-R1.json`.
+- **Highest-priority unfinished task:** construct a **new native command-driver
+  harness** rather than extending the injected whole-scan harness. Compile and
+  execute the original `BATTLE_Battling` dispatch-to-`BATTLE_AddProfit`
+  chronology with BattleModel and actual Guardian victim selection, then add
+  multi-victim command-tail whole-scan witnesses. Only after those native
+  command-tail traces match the modern binder may lethal638 be admitted.
+  Pet/party recipients, sparse source roster mapping, ride/items/wider features,
+  original build/version, automatic AI and BattleModel-specific
+  golden/region/hash-pressure remain OPEN; no positive-slot promotion.
+

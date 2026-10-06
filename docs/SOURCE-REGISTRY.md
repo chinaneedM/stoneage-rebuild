@@ -3913,3 +3913,29 @@ remain explicitly OPEN. No original source/payload committed.
   Whole-scan settlement consumption, sparse/source roster mapping, full original
   command chronology, lethal638 and wider recipients/features remain OPEN.
 
+### SRC-PROFIT-SCAN-RUNTIME-BINDER-R1 — remote acceptance 2026-10-06
+
+- Modern runtime integration certificate only; no new original source/assets or
+  native vectors committed. Implementation `babf091e66192463cc51ac06a51348b8ef010048`; final tested input
+  `f9bc6b1688500987562fda89ab347984ab12a684`, tree `cf8af0a399453487807976c2681bf841cabd5a5e`.
+- Implementation head: **31/31** triggered workflows SUCCESS. Settlement
+  `37430287171/112159300888`: 653 tests, 19656 immutable scan/model-native
+  comparisons, 384 bounded Weaken recalculation vectors; artifact
+  `11396209963`,
+  `sha256:023a25d6b06f17951decffeb8a531c6854b5f7cf0b98b064769e33794a816f0b`.
+  Recovered25 region `37430287204/112159301018` SUCCESS. Final test-only
+  settlement `37430504940/112160004965` SUCCESS; artifact
+  `11396273753`,
+  `sha256:e0c0a89ca66965d2933ce9fe38dc2ec836dd0176791f1b6d48752dafaee7c7ef`.
+- Accepted scope: canonical SIDE_OFFSET10 runtime binding, sequential ISDIE,
+  scan-based accounting, scan status-clear projection, explicit nonlethal638
+  command-tail admission, and the earlier-normal-pet/later-player-ultimate
+  chronology regression.
+- Static original call-site evidence still shows BattleModel has zero internal
+  AddProfit calls and command tail owns the profit call, but the existing
+  source audit does **not** compile full Battling/BattleModel. A separate native
+  command-driver harness with actual Guardian/multi-victim tail is therefore
+  still OPEN and required before lethal638.
+- Receipt:
+  `research/recovered/STONEAGE-PROFIT-SCAN-RUNTIME-BINDER-ACCEPTANCE-R1.json`.
+
