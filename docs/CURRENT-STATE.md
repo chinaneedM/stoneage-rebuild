@@ -8002,3 +8002,51 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   passes, audit the remaining promotion criteria and authoritative slot ledger.
   Original active build, automatic AI, real encounter-to-selection composition,
   ride/items, wider recipients and presentation remain OPEN.
+
+
+## Phase 1 ID638 recovered-data persistent/coordinator golden acceptance — 2026-10-06
+
+- **CLOSED_BOUNDED_ID638_RECOVERED_DATA_RUNTIME_GOLDEN.** Exact tested input
+  `24b61a6c3f051d7d6f44efb67df34af1c0eff0c5`, tree `ae66a157b0a791580db7d69b85cab0803ab81e90`. All four exact-head Actions SUCCESS:
+  settlement **37452535512/112232279318** (666 tests), coordinator
+  **37452535491/112232256552** (236 tests), golden
+  **37452535501/112232256576** (7 tests), region
+  **37452535455/112232680115** (147 tests and full verified bundle/826 floors).
+- Hash-verified active petskill and enemybase feed **60** distinct witnesses:
+  both actual positive templates1178/1179, both explicit charsets, all three
+  descendant source profiles and five status/death/Exit scenarios. The same
+  **60** witnesses also execute in the concrete stack at a materialized
+  fresh-start position. Direct persistent and current-data coordinator results
+  agree; **12** current identity mutations per suite reject without mutation.
+- Whole recovered population pressure is independently re-counted:
+  **2486 total =2461 closed +22 OPEN +3 historical UB**, zero unresolved IDs.
+  BattleModel remains OPEN with two uses; **0 positive slots promoted**.
+- Existing exact-native gates are re-certified at this head: **48** full
+  Battling ultimate comparisons, **19656** profit/exit cases and **19656**
+  immutable scan comparisons, four prior9-case command-tail gates, physical
+  AttackSeq/ItemCrush/default-pet exit/Weaken coverage.
+- Native artifact `11407805107`,
+  `sha256:afd8ee8abd8c5c147b9d545ec6dbe64ccba68bb9b6d0bb12a4d7fec654ae3b1d`;
+  recovered/stack/region artifact `11408095891`,
+  `sha256:52365418bc1634daa4a32ae71ce36d857651a27f898e5dd13e29628ad4177d11`.
+  Derived report writeback `83f04b657fe2db5ec2815533f59075f1a069fc52` changes only the stack
+  report's two aggregate witness lines.
+- Two integration defects are resolved and retained in the receipt: CLI now
+  receives witness counts returned by run(); region report writeback uses full
+  git ancestry and the current input branch instead of shallow/main rebasing.
+  The CLI has a dedicated output regression. Earlier PENDING/failure entries
+  above are superseded by this completed exact-head acceptance.
+- **Promotion evaluation: HOLD.** The generic `EnemyAiCommonCommandBatch`
+  and selected-skill dispatcher currently have no BattleModel carrier. Explicit
+  typed execution is closed, but normal enemy-AI selected dispatch is still
+  absent. A global pressure-classifier change would overstate that closure.
+- Receipt: `research/recovered/STONEAGE-BATTLEMODEL-RECOVERED-RUNTIME-GOLDEN-ACCEPTANCE-R1.json`.
+  Next-gate plan: `specs/STONEAGE-BATTLEMODEL-AI-SELECTION-PLAN-R1.md`.
+- **Highest-priority unfinished task:** implement the explicit opt-in normal
+  enemy-AI selection → exact ID638 typed dispatch → persistent command-tail
+  whole scan on both positive templates. Require exact selected actor/slot,
+  charset/source profile and used-only hit RNG ownership; retain fail-closed
+  unsupported callback/grouping/equipment boundaries. Rerun exact-head native,
+  coordinator, BattleModel golden, concrete region and whole verified pressure,
+  then evaluate the two placement promotions. Original active build, broader
+  recipients, ride/items and scheduler/status/presentation history remain OPEN.

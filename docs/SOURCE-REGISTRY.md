@@ -4093,3 +4093,27 @@ remain explicitly OPEN. No original source/payload committed.
   historical active-build/packet certificate. BattleModel-specific full recovered
   payload runtime/golden/region/pressure promotion remains OPEN. 0 slots promoted.
 - Receipt: `research/recovered/STONEAGE-BATTLEMODEL-ID638-ULTIMATE-EXIT-ACCEPTANCE-R1.json`.
+
+
+### SRC-BATTLEMODEL-RECOVERED-RUNTIME-GOLDEN-R1 — exact-head acceptance 2026-10-06
+
+- Exact tested input `24b61a6c3f051d7d6f44efb67df34af1c0eff0c5`, tree `ae66a157b0a791580db7d69b85cab0803ab81e90`.
+- Settlement37452535512/112232279318 SUCCESS (666 tests;48 native ultimate,
+  19656 profit/exit and19656 immutable scan comparisons); coordinator
+  37452535491/112232256552 SUCCESS (236 tests); golden
+  37452535501/112232256576 SUCCESS (7 tests); verified region
+  37452535455/112232680115 SUCCESS (147 tests and826 materializable floors).
+- Derived actual-data markers:60 distinct ID638 persistent/coordinator goldens,
+  same60 concrete-stack goldens,12 identity rejections in each suite, and the
+  complete pressure ledger2486=2461 closed+22 OPEN+3 historical UB.
+- Artifacts11407805107
+  (`sha256:afd8ee8abd8c5c147b9d545ec6dbe64ccba68bb9b6d0bb12a4d7fec654ae3b1d`)
+  and11408095891
+  (`sha256:52365418bc1634daa4a32ae71ce36d857651a27f898e5dd13e29628ad4177d11`).
+- Input rows remain transient and hash-verified; report writeback
+  `83f04b657fe2db5ec2815533f59075f1a069fc52` contains only two new aggregate stack lines.
+  CLI count handoff and shallow/main report-rebase defects are corrected.
+- Boundary: controlled work/position/RNG and explicit typed action selection;
+  both charset profiles retained. Normal enemy-AI selected dispatch, original
+  active build and broader runtime remain OPEN. Promotion decision HOLD,0 slots.
+- Full receipt: `research/recovered/STONEAGE-BATTLEMODEL-RECOVERED-RUNTIME-GOLDEN-ACCEPTANCE-R1.json`.

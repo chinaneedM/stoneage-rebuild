@@ -1,6 +1,6 @@
 # ID638 recovered runtime golden R1
 
-Status: IN_VALIDATION (2026-10-06). No positive-slot promotion.
+Status: CLOSED_BOUNDED_ID638_RECOVERED_DATA_RUNTIME_GOLDEN (2026-10-06). No positive-slot promotion.
 
 The runtime probe consumes preserved data transiently and verifies the complete
 active petskill and enemybase SHA-256 against the existing recovery reports.
@@ -29,3 +29,18 @@ use production digests without patches and preserve derived reports as an
 Actions artifact. The same loaded data recounts the complete 2486-placement
 pressure ledger (2461 closed, 22 OPEN, 3 historical UB), retaining BattleModel
 as OPEN until promotion evaluation. No original OPTION/source/assets are committed.
+
+
+## Remote acceptance — 2026-10-06
+
+Exact input `24b61a6c3f051d7d6f44efb67df34af1c0eff0c5`, tree `ae66a157b0a791580db7d69b85cab0803ab81e90`; all4 exact-head workflows SUCCESS.
+Native settlement37452535512/112232279318, coordinator37452535491/112232256552,
+golden37452535501/112232256576 and full region37452535455/112232680115
+certify the bounded experiments above.60 actual-data goldens and12 rejections
+are repeated inside the full verified concrete stack; complete pressure remains
+2486=2461 closed+22 OPEN+3 UB, with no BattleModel promotion.
+
+The CLI result handoff and full-ancestry/current-branch report writeback are
+fixed. Receipt: `research/recovered/STONEAGE-BATTLEMODEL-RECOVERED-RUNTIME-GOLDEN-ACCEPTANCE-R1.json`. Normal enemy-AI selected dispatch remains
+the concrete promotion blocker; its next plan is
+`STONEAGE-BATTLEMODEL-AI-SELECTION-PLAN-R1.md`.

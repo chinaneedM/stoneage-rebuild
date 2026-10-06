@@ -1,0 +1,97 @@
+{
+  "schema": "stoneage.battlemodel-recovered-runtime-golden-acceptance.r1",
+  "accepted_at_utc": "2026-10-06T10:59:21.406Z",
+  "status": "CLOSED_BOUNDED_ID638_RECOVERED_DATA_RUNTIME_GOLDEN",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "input_sha": "24b61a6c3f051d7d6f44efb67df34af1c0eff0c5",
+  "input_tree": "ae66a157b0a791580db7d69b85cab0803ab81e90",
+  "derived_report_sha": "83f04b657fe2db5ec2815533f59075f1a069fc52",
+  "derived_report_tree": "c665a01d9c153c12b0d65e350720b6008b2653af",
+  "runs": [
+    {
+      "id": 37452535501,
+      "name": "Validate StoneAge runtime golden contract",
+      "head_sha": "24b61a6c3f051d7d6f44efb67df34af1c0eff0c5",
+      "conclusion": "success",
+      "job_id": 112232256576
+    },
+    {
+      "id": 37452535491,
+      "name": "Validate StoneAge local runtime session coordinator",
+      "head_sha": "24b61a6c3f051d7d6f44efb67df34af1c0eff0c5",
+      "conclusion": "success",
+      "job_id": 112232256552
+    },
+    {
+      "id": 37452535512,
+      "name": "Validate StoneAge BattleModel base DamageSub settlement",
+      "head_sha": "24b61a6c3f051d7d6f44efb67df34af1c0eff0c5",
+      "conclusion": "success",
+      "job_id": 112232279318
+    },
+    {
+      "id": 37452535455,
+      "name": "Validate StoneAge recovered25 region payload source",
+      "head_sha": "24b61a6c3f051d7d6f44efb67df34af1c0eff0c5",
+      "conclusion": "success",
+      "job_id": 112232680115
+    }
+  ],
+  "counts": {
+    "settlement_tests": 666,
+    "coordinator_tests": 236,
+    "golden_tests": 7,
+    "region_tests": 147,
+    "distinct_recovered_golden_cases": 60,
+    "concrete_stack_golden_cases": 60,
+    "current_identity_rejections_per_suite": 12,
+    "native_ultimate_comparisons": 48,
+    "native_profit_exit_cases": 19656,
+    "immutable_scan_native_comparisons": 19656,
+    "materializable_floors": 826
+  },
+  "pressure": {
+    "total_positive_uses": 2486,
+    "closed_runtime": 2461,
+    "open": 22,
+    "historical_ub": 3,
+    "battlemodel_uses": 2,
+    "battlemodel_status": "open",
+    "promoted_slots": 0
+  },
+  "artifacts": [
+    {
+      "id": 11407805107,
+      "name": "battlemodel-settlement",
+      "digest": "sha256:afd8ee8abd8c5c147b9d545ec6dbe64ccba68bb9b6d0bb12a4d7fec654ae3b1d"
+    },
+    {
+      "id": 11408095891,
+      "name": "battlemodel-recovered-runtime-golden",
+      "digest": "sha256:52365418bc1634daa4a32ae71ce36d857651a27f898e5dd13e29628ad4177d11"
+    }
+  ],
+  "superseded_failures": [
+    {
+      "run_id": 37451189055,
+      "input_sha": "717357920a923f6d10c24c27e67621afedc940e8",
+      "reason": "CLI report did not receive run() witness counts",
+      "fix_sha": "840dad4880d237b3b2d0c39de2fed3a259fbab9e"
+    },
+    {
+      "run_id": 37451818160,
+      "input_sha": "840dad4880d237b3b2d0c39de2fed3a259fbab9e",
+      "reason": "All computation and artifact gates passed; old shallow checkout/main rebase failed at report writeback",
+      "fix_sha": "24b61a6c3f051d7d6f44efb67df34af1c0eff0c5"
+    }
+  ],
+  "boundary": {
+    "version": "recovered25",
+    "evidence_role": "LATER_RECOVERED",
+    "work_and_rng": "explicit controlled experiments",
+    "normal_enemy_ai_selection": "OPEN: generic batch/coordinator lacks BattleModel carrier",
+    "original_active_build": "OPEN",
+    "ride_items_wider_recipients_scheduler_presentation": "OPEN"
+  },
+  "next": "Implement explicit opt-in normal enemy-AI selected ID638 dispatch on both exact templates; rerun scoped runtime/native/golden/region/verified-pressure before placement promotion."
+}

@@ -1168,3 +1168,15 @@ adapter and ten-field/overlay clear are next.
   Exact recovered OPTION identity is independently enforced by typed admission.
   No positive runtime slots are promoted until specific exact-data/golden/region/
   pressure witnesses cover both recovered ID638 placements.
+
+
+- **2026-10-06 — FACT (bounded recovered25 experiment):** exact input
+  `24b61a6c3f051d7d6f44efb67df34af1c0eff0c5` passes four native/runtime/coordinator/golden/verified-region
+  workflows. Both positive ID638 templates pass60 conditional runtime goldens
+  and the same60 concrete-stack witnesses;12 current row/template/slot mutations
+  reject per suite. Pre-player-clock paralysis is observed separately from final
+  state. The complete2486-placement pressure remains2461 closed/22 OPEN/3 UB;
+  normal AI selected BattleModel dispatch is still OPEN and no slot is promoted.
+  This is LATER_RECOVERED conditional runtime evidence, not Taiwan-v1 membership,
+  original active-build or historical encounter/packet proof.
+  Receipt: `research/recovered/STONEAGE-BATTLEMODEL-RECOVERED-RUNTIME-GOLDEN-ACCEPTANCE-R1.json`.
