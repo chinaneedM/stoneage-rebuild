@@ -8413,3 +8413,29 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   after the attack/counter chain but before later actors, and FOX action powers /
   recovery execute at the target actor's own action boundary. Persistent state
   and coordinator threading follow only after focused round tests pass.
+
+
+## 2026-10-06 — BecomeFox ordered ordinary-round integration implemented (PENDING)
+
+- Exact callback control flow was rechecked before integration: all pinned
+  descendants write COM1=BATTLE_COM_S_BECOMEFOX and COM2=target. The guarded
+  source enum ordinal is not treated as recovered25 truth; the reconstruction
+  uses an explicit internal token only.
+- BATTLE_Counter calls BATTLE_AttackSeq directly and does not overwrite
+  Battle_Attack_ReturnData_x; therefore the fox gate owns the main-attack result,
+  but liveness is checked only after the counter chain against final adjusted
+  defNo. Guardian redirection does not replace that fox target.
+- The round model now carries typed ID625 submissions, exact rand()%100 witness
+  ownership, explicit attacker pig marker/PETFLG/base-image witnesses and a
+  persistent FOXROUND overlay. Fresh transform changes marker/image only. A
+  later foxed actor rewrites fixed attack/defense/quick to C-truncated80% at its
+  own action boundary; commands outside ATTACK/GUARD/NONE are demoted to NONE.
+  Expiry runs after that action and restores fixed powers when turn delta >2.
+- Focused tests cover same-round transform-before-later-action, strict post-action
+  recovery, player rejection after RNG consumption, dodge pre-RNG blocking,
+  Guardian original-target identity and fox command restriction. Full existing
+  battle-round regression is included in the remote gate.
+- Highest-priority unfinished task: inspect this remote ordered-round gate. If
+  PASS, thread becomefox_overlay/currentTurn through PersistentBattleState and
+  local coordinator, then add multi-round/persistence acceptance. PetIn and
+  wider ride/equipment interactions remain explicit later seams.

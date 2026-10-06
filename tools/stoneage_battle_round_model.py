@@ -83,6 +83,12 @@ from tools.stoneage_lighttakeed_model import (
 )
 from tools.stoneage_enemy_ai_combined_bridge import EnemyAiCombinedSubmission
 from tools.stoneage_enemy_ai_vary_bridge import EnemyAiVarySubmission
+from tools.stoneage_enemy_ai_becomefox_bridge import EnemyAiBecomeFoxSubmission
+from tools.stoneage_becomefox_reference_model import FoxState, TransformDecision
+from tools.stoneage_becomefox_runtime_state import (
+    BecomeFoxRuntimeOverlay,
+    FoxParticipantRuntime,
+)
 from tools.stoneage_combined_direct_magic_model import CombinedDirectMagicRoute
 from tools.stoneage_combined_effect_model import (
     CombinedRecoveryEffect,
@@ -305,6 +311,9 @@ BATTLE_COM_S_ABDUCT = 1012
 BATTLE_COM_S_STEAL = 1013
 BATTLE_COM_S_NOGUARD = 1014
 BATTLE_COM_S_CHARGE_OK = 1015
+# Reconstruction-only stable token. Descendant enum ordinals vary with guarded
+# features, so 2625 is not asserted as a historical source ordinal.
+BATTLE_COM_S_BECOMEFOX = 2625
 
 
 def battle_command3_low(value: int) -> int:
@@ -366,6 +375,7 @@ BASE_COMMAND_CODES = frozenset(
         BATTLE_COM_S_STEAL,
         BATTLE_COM_S_NOGUARD,
         BATTLE_COM_S_CHARGE_OK,
+        BATTLE_COM_S_BECOMEFOX,
     }
 )
 
@@ -761,6 +771,7 @@ ORDINARY_RESOLUTION_COMMANDS = frozenset(
         BATTLE_COM_S_STEAL,
         BATTLE_COM_S_NOGUARD,
         BATTLE_COM_S_CHARGE_OK,
+        BATTLE_COM_S_BECOMEFOX,
     }
 )
 
@@ -1127,6 +1138,8 @@ class OrdinaryRoundEvent:
     nocast_tick_resolution: NocastTick | None = None
     battlemodel_skill_id: int | None = None
     battlemodel_loop_resolution: BattleModelHitLoopResolution | None = None
+    becomefox_decision: TransformDecision | None = None
+    becomefox_skill_id: int | None = None
 
 
 PROFIT_BOUNDARY_ORDINARY_PER_HIT = "ordinary_per_hit"
@@ -1248,6 +1261,7 @@ class ResolvedOrdinaryRound:
     nocast_overlay: NocastRoundOverlay | None = None
     setmagicpet_overlay: SetMagicPetRoundOverlay | None = None
     combined_overlay: CombinedRuntimeOverlay | None = None
+    becomefox_overlay: BecomeFoxRuntimeOverlay | None = None
     ultimate_overkill_by_participant_id: Mapping[str,int] | None = None
     ultimate_exited_participant_ids: tuple[str, ...] = ()
     exited_participant_ids: tuple[str, ...] = ()
@@ -3862,6 +3876,15 @@ def resolve_ordinary_round(
     vary_submissions_by_participant_id: Mapping[
         str,EnemyAiVarySubmission
     ] | None = None,
+    becomefox_submissions_by_participant_id: Mapping[
+        str,EnemyAiBecomeFoxSubmission
+    ] | None = None,
+    becomefox_draws_by_participant_id: Mapping[str,int | None] | None = None,
+    becomefox_overlay: BecomeFoxRuntimeOverlay | None = None,
+    becomefox_current_turn: int | None = None,
+    becomefox_target_petflag_by_participant_id: Mapping[str,int] | None = None,
+    becomefox_base_image_by_participant_id: Mapping[str,int] | None = None,
+    becomefox_attacker_pig_marker_by_participant_id: Mapping[str,int] | None = None,
     fall_ground_submissions_by_participant_id: Mapping[
         str,EnemyAiFallGroundSubmission
     ] | None = None,
@@ -5057,11 +5080,122 @@ def resolve_ordinary_round(
             )
     vary_active_command_ids=set(vary_actor_ids)
 
+    becomefox_submissions={
+        str(pid):submission
+        for pid,submission in (
+            becomefox_submissions_by_participant_id or {}
+        ).items()
+    }
+    becomefox_actor_ids=set(becomefox_submissions)
+    if becomefox_actor_ids-set(slot_by_id):
+        raise ValueError("BecomeFox submissions reference unknown actors")
+    becomefox_overlap=vary_overlap | vary_actor_ids
+    if becomefox_actor_ids & becomefox_overlap:
+        raise ValueError("BecomeFox semantic submissions overlap another skill")
+    for pid,submission in becomefox_submissions.items():
+        if not isinstance(submission,EnemyAiBecomeFoxSubmission):
+            raise TypeError("BecomeFox submission has wrong type")
+        entry=prepared_entry_by_id[pid]
+        if (
+            str(submission.participant_id)!=pid
+            or entry.participant.kind!="enemy"
+            or entry.participant.side!="enemy"
+            or int(entry.command.command1)!=BATTLE_COM_S_BECOMEFOX
+            or int(entry.command.command2)!=int(submission.source_target_slot)
+            or int(entry.combo_id)!=0
+        ):
+            raise ValueError(
+                "BecomeFox ordering carrier must be enemy BECOMEFOX/source-target"
+            )
+        if profiles[pid].counter_weapon_type!=COUNTER_WEAPON_FIST:
+            raise ValueError(
+                "BecomeFox bounded execution currently requires FIST actor"
+            )
+        if int(profiles[pid].weapon_critical)!=0:
+            raise ValueError(
+                "BecomeFox bounded execution excludes equipment critical"
+            )
+    becomefox_draws={
+        str(pid):(None if draw is None else int(draw))
+        for pid,draw in (becomefox_draws_by_participant_id or {}).items()
+    }
+    if set(becomefox_draws)!=becomefox_actor_ids:
+        raise ValueError("BecomeFox draw actors mismatch")
+    if any(
+        draw is not None and not 0<=int(draw)<=99
+        for draw in becomefox_draws.values()
+    ):
+        raise ValueError("BecomeFox draw must be rand()%100 residue in 0..99")
+    becomefox_petflag={
+        str(pid):int(value)
+        for pid,value in (
+            becomefox_target_petflag_by_participant_id or {}
+        ).items()
+    }
+    becomefox_base_image={
+        str(pid):int(value)
+        for pid,value in (
+            becomefox_base_image_by_participant_id or {}
+        ).items()
+    }
+    becomefox_pig_marker={
+        str(pid):int(value)
+        for pid,value in (
+            becomefox_attacker_pig_marker_by_participant_id or {}
+        ).items()
+    }
+    if set(becomefox_pig_marker)!=becomefox_actor_ids:
+        raise ValueError("BecomeFox attacker pig-marker actors mismatch")
+    for mapping_name,mapping in (
+        ("PETFLG",becomefox_petflag),
+        ("base-image",becomefox_base_image),
+    ):
+        unknown=sorted(set(mapping)-set(slot_by_id))
+        if unknown:
+            raise ValueError(
+                f"BecomeFox {mapping_name} witnesses reference unknown participants: {unknown}"
+            )
+    if becomefox_overlay is not None and not isinstance(
+        becomefox_overlay,BecomeFoxRuntimeOverlay
+    ):
+        raise TypeError("becomefox_overlay has wrong type")
+    if becomefox_overlay is not None:
+        unknown=sorted(
+            set(becomefox_overlay.runtime_by_participant_id)-set(slot_by_id)
+        )
+        if unknown:
+            raise ValueError(
+                f"BecomeFox overlay references unknown participants: {unknown}"
+            )
+    becomefox_working=(
+        None
+        if becomefox_overlay is None and not becomefox_actor_ids
+        else (
+            becomefox_overlay
+            if becomefox_overlay is not None
+            else BecomeFoxRuntimeOverlay.empty()
+        )
+    )
+    if becomefox_working is not None:
+        if becomefox_current_turn is None:
+            raise ValueError(
+                "BecomeFox active/submitted runtime requires explicit current battle turn"
+            )
+        becomefox_turn=int(becomefox_current_turn)
+        if becomefox_turn < 0:
+            raise ValueError("BecomeFox current battle turn cannot be negative")
+    else:
+        becomefox_turn=0
+    becomefox_active_command_ids=set(becomefox_actor_ids)
+    consumed_becomefox_draw_ids=set()
+
     modifyattack_submissions={str(pid):value for pid,value in (modifyattack_submissions_by_participant_id or {}).items()}
     modifyattack_actor_ids=set(modifyattack_submissions)
     if modifyattack_actor_ids-set(slot_by_id):
         raise ValueError("Modifyattack references unknown actors")
-    if modifyattack_actor_ids & (vary_overlap | vary_actor_ids):
+    if modifyattack_actor_ids & (
+        vary_overlap | vary_actor_ids | becomefox_actor_ids
+    ):
         raise ValueError("Modifyattack semantic submissions overlap another skill")
     for pid,submission in modifyattack_submissions.items():
         if not isinstance(submission,EnemyAiModifyAttackSubmission):
@@ -5099,7 +5233,8 @@ def resolve_ordinary_round(
         | barrier_actor_ids | weaken_actor_ids | refresh_actor_ids
         | setmagicpet_actor_ids | battletimid_actor_ids
         | two_battletimid_actor_ids | lighttakeed_actor_ids
-        | combined_actor_ids | vary_actor_ids | modifyattack_actor_ids
+        | combined_actor_ids | vary_actor_ids | becomefox_actor_ids
+        | modifyattack_actor_ids
         | set(mdfyattack_submissions) | set(attack_crazed_submissions)
         | wildviolent_actor_ids
     )
@@ -5684,14 +5819,16 @@ def resolve_ordinary_round(
             or damage_to_hp_submissions or mp_damage_submissions or battle_tear_submissions
             or guard_break2_submissions or battletimid_submissions or two_battletimid_submissions
             or batfly_submissions or lighttakeed_submissions or combined_submissions
-            or vary_submissions or fall_ground_submissions or nocast_submissions
+            or vary_submissions or becomefox_submissions
+            or fall_ground_submissions or nocast_submissions
             or weaken_submissions or refresh_submissions or setmagicpet_submissions
             or barrier_submissions or attack_crazed_submissions or wildviolent_submissions
             or modifyattack_submissions or mdfyattack_submissions
         )
         if (other_semantics or ride_runtime is not None or nocast_overlay is not None
             or setmagicpet_overlay is not None or attack_magic_overlay is not None
-            or combined_overlay is not None or counter_rolls_by_attack_id is not None):
+            or combined_overlay is not None or becomefox_working is not None
+            or counter_rolls_by_attack_id is not None):
             raise ValueError("BattleModel ordinary scope excludes other callbacks/overlays/ride/counter")
         if any(e.command.command1 not in {BATTLE_COM_ATTACK,BATTLE_COM_GUARD,BATTLE_COM_NONE,BATTLE_COM_WAIT}
                or e.combo_id for e in prepared.ordered_entries):
@@ -6021,6 +6158,7 @@ def resolve_ordinary_round(
                 | lighttakeed_active_command_ids
                 | combined_active_command_ids
                 | vary_active_command_ids
+                | becomefox_active_command_ids
             ),
             counter_rolls=normalized_counter_rolls.get(
                 str(main_actor_id),()
@@ -6041,7 +6179,140 @@ def resolve_ordinary_round(
             boundary_kind=PROFIT_BOUNDARY_COUNTER_CHAIN_CURRENT_DRIVER,
         )
 
+    pending_fox_recovery: tuple[str,int] | None = None
+
+    def flush_pending_fox_recovery() -> None:
+        nonlocal becomefox_working,pending_fox_recovery
+        if pending_fox_recovery is None or becomefox_working is None:
+            pending_fox_recovery=None
+            return
+        actor_id,actor_slot=pending_fox_recovery
+        becomefox_working,recovery=becomefox_working.recover_after_actor_action(
+            actor_id,
+            current_turn=becomefox_turn,
+            battle_slot=actor_slot,
+        )
+        if recovery is not None and recovery.recovered:
+            restored=recovery.state
+            effects=setup_effects.get(actor_id,BattleCommandSetupEffects())
+            setup_effects[actor_id]=replace(
+                effects,
+                attack_power=int(restored.attack_power),
+                defense_power=int(restored.defence_power),
+            )
+            status_runtime[actor_id]=replace(
+                status_runtime[actor_id],
+                work_quick=int(restored.quick),
+            )
+        pending_fox_recovery=None
+
+    def apply_becomefox_postattack(
+        actor_id: str,
+        *,
+        event_index: int,
+        target_slot: int,
+        attack_result: str,
+    ) -> None:
+        nonlocal becomefox_working
+        actor_id=str(actor_id)
+        if (
+            actor_id not in becomefox_active_command_ids
+            or actor_id not in becomefox_submissions
+        ):
+            return
+        if becomefox_working is None:
+            raise ValueError("BecomeFox working overlay unexpectedly absent")
+        target_slot=int(target_slot)
+        if target_slot not in by_slot:
+            raise ValueError("BecomeFox postattack target slot is unoccupied")
+        target=by_slot[target_slot]
+        target_id=str(target.participant_id)
+        target_alive=bool(
+            target_slot not in exited_slots
+            and int(hp_by_slot.get(target_slot,0))>0
+        )
+        source_result={
+            "miss":"MISS",
+            "dodge":"DODGE",
+            "allguard":"ALLGUARD",
+            "arrange":"ARRANGE",
+        }.get(str(attack_result).lower(),"HIT")
+        draw=becomefox_draws[actor_id]
+        active_before=becomefox_working.runtime_by_participant_id.get(
+            target_id
+        )
+        if active_before is None:
+            image=int(becomefox_base_image.get(target_id,0))
+            work_quick=status_runtime[target_id].work_quick
+            if work_quick is None:
+                work_quick=int(target.quick)
+            target_state=FoxState(
+                base_image=image,
+                base_base_image=image,
+                attack_power=_effective_attack_power(target,setup_effects),
+                defence_power=_effective_defense_power(target,setup_effects),
+                quick=int(work_quick),
+                fix_str=int(target.attack),
+                fix_tough=int(target.defense),
+                fix_dex=int(target.quick),
+                fox_round=-1,
+                ride_pet=-1,
+                petfall=0,
+            )
+        else:
+            target_state=active_before.state
+
+        # Type/PETFLG is after the reached RNG in source. Require PETFLG
+        # provenance only on a path that can actually read it.
+        if (
+            source_result not in {"MISS","DODGE","ALLGUARD","ARRANGE"}
+            or not becomefox_submissions[actor_id].arrange_guard_active
+        ):
+            if (
+                target_alive
+                and draw is not None
+                and int(draw)<31
+                and target.kind!="player"
+                and target_id not in becomefox_petflag
+            ):
+                raise KeyError(
+                    f"BecomeFox reached target {target_id} without PETFLG witness"
+                )
+
+        decision,active_after=becomefox_submissions[actor_id].postattack(
+            target_state,
+            attack_result=source_result,
+            target_alive=target_alive,
+            draw_mod_100=draw,
+            target_is_player=(target.kind=="player"),
+            target_petflag=int(becomefox_petflag.get(target_id,0)),
+            attacker_pig_marker=int(becomefox_pig_marker[actor_id]),
+            current_turn=becomefox_turn,
+        )
+        if decision.draw_consumed:
+            consumed_becomefox_draw_ids.add(actor_id)
+        if decision.transformed:
+            if active_before is None and target_id not in becomefox_base_image:
+                raise KeyError(
+                    f"BecomeFox transformed target {target_id} without base-image witness"
+                )
+            if active_after is None:
+                raise ValueError("BecomeFox transformed without active runtime")
+            if decision.ride_image_changed:
+                raise ValueError(
+                    "BecomeFox transformed ride-bearing nonplayer is outside bounded R1"
+                )
+            becomefox_working=becomefox_working.with_transformed(
+                target_id,active_after
+            )
+        events[event_index]=replace(
+            events[event_index],
+            becomefox_decision=decision,
+            becomefox_skill_id=625,
+        )
+
     for entry in prepared.ordered_entries:
+        flush_pending_fox_recovery()
         apply_selection_events(default_authorities,events,by_slot)
         participant = entry.participant
         participant_id = participant.participant_id
@@ -6178,6 +6449,7 @@ def resolve_ordinary_round(
                 lighttakeed_active_command_ids.discard(str(participant_id))
                 combined_active_command_ids.discard(str(participant_id))
                 vary_active_command_ids.discard(str(participant_id))
+                becomefox_active_command_ids.discard(str(participant_id))
             hp_by_slot[slot]=int(tick.hp_after)
             hp_by_id[str(participant_id)]=int(tick.hp_after)
             runtime=replace(
@@ -6265,6 +6537,60 @@ def resolve_ordinary_round(
             int(entry.command.command1),
             int(entry.action_value),
         )
+
+        actor_id=str(participant_id)
+        if (
+            becomefox_working is not None
+            and actor_id in becomefox_working.runtime_by_participant_id
+        ):
+            if (
+                profiles[actor_id].counter_weapon_type!=COUNTER_WEAPON_FIST
+                or int(profiles[actor_id].weapon_critical)!=0
+            ):
+                raise ValueError(
+                    "active FOX bounded execution requires FIST/no-equipment-critical actor"
+                )
+            becomefox_working,fox_runtime=(
+                becomefox_working.prepare_actor_action(actor_id)
+            )
+            if fox_runtime is None:
+                raise ValueError("active FOX actor lost runtime before action")
+            fox_state=fox_runtime.state
+            effects=setup_effects.get(actor_id,BattleCommandSetupEffects())
+            setup_effects[actor_id]=replace(
+                effects,
+                attack_power=int(fox_state.attack_power),
+                defense_power=int(fox_state.defence_power),
+            )
+            status_runtime[actor_id]=replace(
+                status_runtime[actor_id],
+                work_quick=int(fox_state.quick),
+            )
+            if int(command.command1) not in {
+                BATTLE_COM_ATTACK,BATTLE_COM_GUARD,BATTLE_COM_NONE
+            }:
+                command=BattleCommand(
+                    BATTLE_COM_NONE,
+                    command2=command.command2,
+                    command3=command.command3,
+                    input_complete=command.input_complete,
+                )
+                command_by_slot[slot]=command
+                guarding.discard(slot)
+                battlemodel_active_command_ids.discard(actor_id)
+                modifyattack_active_command_ids.discard(actor_id)
+                mdfyattack_active_command_ids.discard(actor_id)
+                weaken_active_command_ids.discard(actor_id)
+                refresh_active_command_ids.discard(actor_id)
+                setmagicpet_active_command_ids.discard(actor_id)
+                battletimid_active_command_ids.discard(actor_id)
+                two_battletimid_active_command_ids.discard(actor_id)
+                batfly_active_command_ids.discard(actor_id)
+                lighttakeed_active_command_ids.discard(actor_id)
+                combined_active_command_ids.discard(actor_id)
+                vary_active_command_ids.discard(actor_id)
+                becomefox_active_command_ids.discard(actor_id)
+            pending_fox_recovery=(actor_id,int(slot))
 
         if command.command1 == BATTLE_COM_S_EARTHROUND1:
             next_earthround=BattleCommand(
@@ -9187,6 +9513,7 @@ def resolve_ordinary_round(
                         ),
                     )
                 )
+                main_event_index=len(events)-1
                 if (
                     modifyattack_submission is None
                     and mdfyattack_submission is None
@@ -9194,6 +9521,12 @@ def resolve_ordinary_round(
                     and not continuation_blocked_by_reaction
                 ):
                     append_counter_chain(participant_id,slot,target)
+                apply_becomefox_postattack(
+                    str(participant_id),
+                    event_index=main_event_index,
+                    target_slot=int(target),
+                    attack_result="dodge",
+                )
                 continue
 
         damage_to_hp_submission=None
@@ -10125,6 +10458,7 @@ def resolve_ordinary_round(
                 ultimate_kind=int(ultimate_kind),
             )
         )
+        main_event_index=len(events)-1
         register_ultimate_exits(
             (events[-1],),
             boundary_kind=PROFIT_BOUNDARY_ORDINARY_PER_HIT,
@@ -10175,6 +10509,23 @@ def resolve_ordinary_round(
                 participant_id,
                 slot,
                 counter_target_slot,
+            )
+        apply_becomefox_postattack(
+            str(participant_id),
+            event_index=main_event_index,
+            target_slot=int(target),
+            attack_result=str(result),
+        )
+
+    flush_pending_fox_recovery()
+    for actor_id in sorted(becomefox_actor_ids):
+        if (
+            becomefox_draws[actor_id] is not None
+            and actor_id not in consumed_becomefox_draw_ids
+        ):
+            raise ValueError(
+                "BecomeFox RNG supplied for a path that never reached rand()%100: "
+                + actor_id
             )
 
     for participant_id in sorted(
@@ -10418,6 +10769,7 @@ def resolve_ordinary_round(
             else SetMagicPetRoundOverlay(setmagicpet_working)
         ),
         combined_overlay=combined_working,
+        becomefox_overlay=becomefox_working,
         ultimate_overkill_by_participant_id=MappingProxyType(
             dict(ultimate_overkill)
         ),
