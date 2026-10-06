@@ -14,7 +14,8 @@ from tools.stoneage_recovered25_enemybase_runtime import load_recovered25_enemyb
 from tools.stoneage_encount_chain_probe import configured_file, setup_values, parse_enemy, parse_group, parse_encount
 from tools.stoneage_enemy_ai_model import parse_normal_enemy_ai_options
 from tools.stoneage_magic_probe import parse as parse_magic
-from tools.stoneage_recovered25_petskill_pressure_probe import analyze_runtime_objects
+from tools.stoneage_recovered25_petskill_pressure_probe import analyze_runtime_objects, summarize_pressure
+from tools.stoneage_battlemodel_placement_capability import verify_placement_population
 
 MAGIC_SHA256 = "b3a57b595bd60dfab571fe7af4dd6e2d43a5839c934eb644ba462897b1bcb6bb"
 CALLBACK = b"PETSKILL_BattleModel"
@@ -105,23 +106,22 @@ def analyze(data_dir, setup):
                          default_header_pet_entry="blocked_nonzero_ILLEGAL",
                          default_header_array_within_effective_bound=row.skill_id < ordered[-1].skill_id + 1)
                      for index, row in enumerate(ordered) if row.function_name == CALLBACK.decode()]
-    ledger = analyze_runtime_objects(petskills, enemybase)
-    pressure = dict(total=ledger["total_positive_slot_uses"],
-        closed=sum(row["slot_uses"] for row in ledger["rows"] if row["status"] == "closed_runtime"),
-        open=sum(row["slot_uses"] for row in ledger["rows"] if row["status"] == "open"),
-        historical_ub=sum(row["slot_uses"] for row in ledger["rows"] if row["status"] == "historical_ub"),
-        promoted_slots=0, unresolved_skill_ids=list(ledger["unresolved_skill_ids"]))
-    if pressure != dict(total=2486, closed=2461, open=22, historical_ub=3,
-                        promoted_slots=0, unresolved_skill_ids=[]):
+    identity = verify_placement_population(petskills, enemybase, data_dir=data_dir, setup=setup)
+    ledger = analyze_runtime_objects(petskills, enemybase, capability_identity=identity)
+    pressure = dict(**summarize_pressure(ledger), conditional_capability_slots=len(ledger["conditional_placements"]),
+                    unresolved_skill_ids=list(ledger["unresolved_skill_ids"]))
+    if pressure != dict(total=2486, closed=2463, open=20, historical_ub=3,
+                        conditional_capability_slots=2, unresolved_skill_ids=[]):
         raise ValueError("complete pressure census drift")
     battlemodel = next(row for row in ledger["rows"] if row["callback"] == CALLBACK.decode())
-    if battlemodel["status"] != "open" or battlemodel["slot_uses"] != 2 or battlemodel["skill_ids"] != (638,):
+    if battlemodel["status"] != "closed_conditional_runtime" or battlemodel["slot_uses"] != 2 or battlemodel["skill_ids"] != (638,):
         raise ValueError("BattleModel pressure scope drift")
     return dict(schema="stoneage.battlemodel-command-entry-data.r1",
         file_sha256={key: hashlib.sha256(path.read_bytes()).hexdigest() for key, path in paths.items()},
         callback_rows=callback_rows, positive_placements=graph_census(enemies, groups, areas),
         magic=magic_census(magic, petskills),
-        pressure=pressure, pressure_rows=ledger["rows"],
+        pressure=pressure, pressure_rows=ledger["rows"], next_open=ledger["next_open"],
+        conditional_placements=ledger["conditional_placements"],
         boundary="entry census only; opaque script/build overrides and full gameplay reachability OPEN",
         resolution="RECOVERED25_BATTLEMODEL_COMMAND_ENTRY_DATA_AUDITED")
 

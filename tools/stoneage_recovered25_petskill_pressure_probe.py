@@ -15,6 +15,12 @@ from tools.stoneage_recovered25_enemybase_runtime import (
     load_recovered25_enemybase_runtime,
 )
 
+from tools.stoneage_battlemodel_placement_capability import (
+    CONDITIONAL_CAPABILITY_KIND, CONDITIONAL_CAPABILITY_SCOPE,
+    conditional_battlemodel_placements, verify_placement_population,
+)
+
+CLOSED_PRESSURE_STATUSES = frozenset({"closed_runtime", "closed_conditional_runtime"})
 
 HISTORICAL_UB_CALLBACKS=frozenset({"PETSKILL_Merge"})
 CLOSED_RUNTIME_CALLBACKS=frozenset(
@@ -55,15 +61,18 @@ def classify(callback:str) -> str:
     return "open"
 
 
-def analyze_runtime_objects(petskills,enemybase):
+def analyze_runtime_objects(petskills,enemybase, *, capability_identity=None,
+                            capability_scope=CONDITIONAL_CAPABILITY_SCOPE):
     ids_by_callback=defaultdict(set)
     slot_uses_by_callback=defaultdict(int)
     templates_by_callback=defaultdict(set)
+    qualified = conditional_battlemodel_placements(petskills, enemybase,
+        identity=capability_identity, scope=capability_scope)
     total_positive=0
     unresolved_ids=set()
 
     for tempno,template in enemybase.templates.items():
-        for raw_skill_id in template.skill_slot_ids:
+        for slot, raw_skill_id in enumerate(template.skill_slot_ids):
             skill_id=int(raw_skill_id)
             if skill_id <= 0:
                 continue
@@ -73,26 +82,26 @@ def analyze_runtime_objects(petskills,enemybase):
                 unresolved_ids.add(skill_id)
                 continue
             callback=str(entry.function_name)
-            ids_by_callback[callback].add(skill_id)
-            slot_uses_by_callback[callback]+=1
-            templates_by_callback[callback].add(int(tempno))
+            status = "closed_conditional_runtime" if (tempno, slot, skill_id) in qualified else classify(callback)
+            key = (callback, status)
+            ids_by_callback[key].add(skill_id)
+            slot_uses_by_callback[key]+=1
+            templates_by_callback[key].add(int(tempno))
 
     rows=[]
-    for callback in sorted(
-        slot_uses_by_callback,
-        key=lambda name:(-slot_uses_by_callback[name],name),
-    ):
-        rows.append({
-            "callback":callback,
-            "skill_ids":tuple(sorted(ids_by_callback[callback])),
-            "slot_uses":int(slot_uses_by_callback[callback]),
-            "templates":len(templates_by_callback[callback]),
-            "status":classify(callback),
-        })
+    for key in sorted(slot_uses_by_callback, key=lambda key:(-slot_uses_by_callback[key], *key)):
+        callback, status = key
+        row = dict(callback=callback, skill_ids=tuple(sorted(ids_by_callback[key])),
+            slot_uses=int(slot_uses_by_callback[key]), templates=len(templates_by_callback[key]), status=status)
+        if status == "closed_conditional_runtime":
+            row.update(capability_kind=CONDITIONAL_CAPABILITY_KIND, scope=CONDITIONAL_CAPABILITY_SCOPE,
+                       command_entry_reachability="OPEN_SEPARATE_AXIS_NOT_INFERRED")
+        rows.append(row)
 
     open_rows=tuple(row for row in rows if row["status"]=="open")
     return {
         "rows":tuple(rows),
+        "conditional_placements":tuple(sorted(qualified)),
         "total_positive_slot_uses":total_positive,
         "unresolved_skill_ids":tuple(sorted(unresolved_ids)),
         "next_open":(None if not open_rows else open_rows[0]),
@@ -100,10 +109,17 @@ def analyze_runtime_objects(petskills,enemybase):
 
 
 def analyze(data_dir:Path,setup:Path|None):
-    return analyze_runtime_objects(
-        load_recovered25_petskill_runtime(data_dir=data_dir,setup=setup),
-        load_recovered25_enemybase_runtime(data_dir=data_dir,setup=setup),
-    )
+    petskills = load_recovered25_petskill_runtime(data_dir=data_dir,setup=setup)
+    enemybase = load_recovered25_enemybase_runtime(data_dir=data_dir,setup=setup)
+    identity = verify_placement_population(petskills, enemybase, data_dir=data_dir, setup=setup)
+    return analyze_runtime_objects(petskills, enemybase, capability_identity=identity)
+
+
+def summarize_pressure(result):
+    return dict(total=result["total_positive_slot_uses"],
+        closed=sum(row["slot_uses"] for row in result["rows"] if row["status"] in CLOSED_PRESSURE_STATUSES),
+        open=sum(row["slot_uses"] for row in result["rows"] if row["status"] == "open"),
+        historical_ub=sum(row["slot_uses"] for row in result["rows"] if row["status"] == "historical_ub"))
 
 
 def emit(result):
@@ -119,6 +135,12 @@ def emit(result):
             f"ids={ids}|slot_uses={row['slot_uses']}|"
             f"templates={row['templates']}|status={row['status']}"
         )
+    totals = summarize_pressure(result)
+    print("CAPABILITY_PRESSURE|" + "|".join(f"{key}={value}" for key, value in totals.items()))
+    for tempno, slot, skill_id in result["conditional_placements"]:
+        print(f"CONDITIONAL_PLACEMENT|template={tempno}|runtime_slot={slot}|report_slot={slot+1}|skill_id={skill_id}|capability={CONDITIONAL_CAPABILITY_KIND}")
+    if result["conditional_placements"]:
+        print("REACHABILITY|conditional_capability_does_not_certify_natural_AI_or_pet_magic_NPC_script_entry")
     nxt=result["next_open"]
     if nxt is None:
         print("NEXT_OPEN|none")

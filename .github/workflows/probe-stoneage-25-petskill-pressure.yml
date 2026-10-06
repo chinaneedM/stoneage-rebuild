@@ -1,12 +1,14 @@
 name: Rank recovered StoneAge pet-skill callback pressure
 concurrency:
-  group: stoneage-25-petskill-pressure
+  group: stoneage-25-petskill-pressure-${{ github.ref }}
   cancel-in-progress: true
 on:
   workflow_dispatch:
   push:
     paths:
       - .github/workflows/probe-stoneage-25-petskill-pressure.yml
+      - tools/stoneage_battlemodel_placement_capability.py
+      - tests/test_stoneage_battlemodel_placement_capability.py
       - tools/stoneage_recovered25_petskill_pressure_probe.py
       - tests/test_stoneage_recovered25_petskill_pressure_probe.py
 permissions:
@@ -17,8 +19,10 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Validate pressure-ranking logic
-        run: python3 -m unittest tests.test_stoneage_recovered25_petskill_pressure_probe -v
+        run: python3 -m unittest tests.test_stoneage_recovered25_petskill_pressure_probe tests.test_stoneage_battlemodel_placement_capability -v
       - run: sudo apt-get update && sudo apt-get install -y unar
       - name: Recover verified preservation bundle
         run: |
@@ -63,6 +67,8 @@ jobs:
             > research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
           grep -F 'TOTAL|positive_skill_slot_uses|2486' research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
           grep -F 'TOTAL|unresolved_skill_ids|0' research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
+          grep -F 'CAPABILITY_PRESSURE|total=2486|closed=2463|open=20|historical_ub=3' research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
+          test "$(grep -c '^CONDITIONAL_PLACEMENT|' research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt)" = 2
           grep -F 'NEXT_OPEN|' research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt
       - name: Commit derived ranking report
         run: |

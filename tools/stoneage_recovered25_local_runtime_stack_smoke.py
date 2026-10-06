@@ -16,6 +16,7 @@ from types import MappingProxyType
 from tools.stoneage_enemy_spawn_model import EnemyBirthRolls
 from tools.stoneage_recovered25_battlemodel_runtime_probe import (
     verify_files as verify_battlemodel_files, verify_ai_files, run_recovered_ai_goldens, run_runtime_golden, run_identity_pressure,
+    verify_complete_pressure, verify_placement_population,
 )
 from tools.stoneage_attack_magic_action_model import (
     AttackMagicTargetRolls,
@@ -569,6 +570,10 @@ def run(
     battlemodel_goldens = run_runtime_golden(stack, position=seeds[1].position)
     run_recovered_ai_goldens(stack, position=seeds[1].position)
     battlemodel_rejections = run_identity_pressure(stack)
+    capability_identity = verify_placement_population(stack.petskill_runtime, stack.enemybase_runtime,
+        data_dir=server_data_dir, setup=setup)
+    capability_pressure = verify_complete_pressure(stack, identity=capability_identity)
+    print("BATTLEMODEL_STACK_CAPABILITY_PRESSURE|" + "|".join(f"{key}={value}" for key, value in capability_pressure.items()))
     if stack.attack_magic_runtime is None:
         raise ValueError("runtime stack lacks AttackMagic runtime index")
     if len(stack.attack_magic_runtime.entries) != 25:

@@ -363,3 +363,12 @@ predicate and complete pressure/native/runtime regression gate; preserve wa0
 and actual normal selection0. Predicted2463/20/3 remains unaccepted until that
 next gate passes. This audit leaves pressure2461/22/3 and promotes0 slots;
 641/649/650 and broader actor/magic execution are not admitted.
+
+## 2026-10-06 — Placement-aware conditional capability status
+
+Use closed_conditional_runtime for exact ID638 slots, separately from existing
+closed_runtime. Complete closed-capability totals include both; every
+conditional row declares its bounded scope and reachability not inferred.
+Generic callback classification remains OPEN. Factory-verified complete file/
+loaded-object identity is required to qualify either placement; incomplete
+identity cannot become a callback-wide closure. Current evaluation PENDING.

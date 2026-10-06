@@ -1228,3 +1228,12 @@ OPEN.2592 original default-header entry guard controls and864 separately
 counterfactual controls pass. Full pressure unchanged2461/22/3,0 promotions.
 Accepted receipt is command-entry acceptance R1; scope remains later recovered
 material and explicitly pinned descendants, not original Taiwan-v1 membership.
+
+## 2026-10-06 — Conditional capability criterion implementation (not a new historical claim)
+
+The rebuilt analysis can qualify exact ID638 placements as conditional bounded
+capability, independent of natural entry. This adds no historical command path:
+actual wa index2 weights0, configured magic candidates0 and positive group/area
+references0 remain as audited. PET ILLEGAL guard and original build/NPC/script
+uncertainties persist. Whole-file and complete semantic binding protect scope;
+exact-head pressure promotion evaluation PENDING, predicted +2 capability uses.

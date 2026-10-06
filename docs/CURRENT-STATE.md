@@ -8223,3 +8223,25 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   Plan: `specs/STONEAGE-BATTLEMODEL-CONDITIONAL-PLACEMENT-CLOSURE-PLAN-R1.md`.
   Original Taiwan-v1 membership, ride/items, wider actors/recipients and original
   scheduler/presentation remain OPEN. No engine/MMO choice is introduced.
+
+## 2026-10-06 — ID638 exact conditional placement capability implemented (PENDING)
+
+- Fresh remote mainc7876210e5c24d4a0166877635ff526d89ab7ba2/tree
+  0188954d43b4fc37466317c8faf6aa653223c085, branches, tree entries, recent
+  commits/Actions, protocol and all continuity files re-read before work.
+- New pure predicate/frozen source-binding factory qualifies only template1178/
+  1179, runtime slot2/report slot3, ID638, with exact complete files and loaded
+  semantics plus existing row/population/template/OPTION admission. Stale,
+  incomplete or widened inputs qualify0 slots. Callback-only classification
+  remains OPEN; no global BattleModel callback promotion.
+- Capability status closed_conditional_runtime is explicitly separate from
+  command-entry reachability OPEN_SEPARATE_AXIS_NOT_INFERRED. Normal enemy
+  weights and PET guard unchanged; actual normal-AI selected goldens remain0.
+- Local878 related unique tests PASS, including11 new methods/mutation matrices.
+  Exact-head settlement/coordinator/golden/full-region and dedicated complete
+  pressure Actions are PENDING; source/native and concrete-stack gates retained.
+- Highest-priority unfinished item: finish this exact-head gate, inspect derived
+  pressure/report-only writebacks and evaluate exactly2 conditional capability
+  promotions. Predicted2463/20/3 remains unaccepted until PASS; preceding accepted
+  pressure2461/22/3 is the current baseline. Then mechanically select next OPEN.
+  Spec: `specs/STONEAGE-BATTLEMODEL-CONDITIONAL-PLACEMENT-CAPABILITY-R1.md`.

@@ -22,7 +22,8 @@ from tools.stoneage_recovered25_enemybase_runtime import (
     _active_enemybase_path, load_recovered25_enemybase_runtime,
 )
 from tools.stoneage_recovered25_petskill_runtime import load_recovered25_petskill_runtime
-from tools.stoneage_recovered25_petskill_pressure_probe import analyze_runtime_objects as analyze_pressure
+from tools.stoneage_recovered25_petskill_pressure_probe import analyze_runtime_objects as analyze_pressure, summarize_pressure
+from tools.stoneage_battlemodel_placement_capability import verify_placement_population, CONDITIONAL_CAPABILITY_KIND
 from tools.stoneage_battlemodel_hit_loop import BattleModelDraw
 from tools.stoneage_battlemodel_physical_attackseq import (
     PHYSICAL_SCOPE_R1, BattleModelPhysicalContext, BattleModelPhysicalProfile,
@@ -376,19 +377,19 @@ def run_recovered_ai_goldens(stack, *, position=None):
     return results
 
 
-def verify_complete_pressure(stack):
-    """Recount the entire loaded population while keeping BattleModel OPEN."""
-    result = analyze_pressure(stack.petskill_runtime, stack.enemybase_runtime)
-    closed = sum(row["slot_uses"] for row in result["rows"] if row["status"] == "closed_runtime")
-    pending = sum(row["slot_uses"] for row in result["rows"] if row["status"] == "open")
-    ub = sum(row["slot_uses"] for row in result["rows"] if row["status"] == "historical_ub")
+def verify_complete_pressure(stack, *, identity):
+    """Recount exact conditional capability; actual command entry is separate."""
+    result = analyze_pressure(stack.petskill_runtime, stack.enemybase_runtime, capability_identity=identity)
+    totals = summarize_pressure(result)
     model = tuple(row for row in result["rows"] if row["callback"] == "PETSKILL_BattleModel")
-    if (result["total_positive_slot_uses"] != 2486 or result["unresolved_skill_ids"]
-            or (closed, pending, ub) != (2461, 22, 3) or len(model) != 1
-            or model[0] != {"callback": "PETSKILL_BattleModel", "skill_ids": (638,),
-                            "slot_uses": 2, "templates": 2, "status": "open"}):
-        raise ValueError("BattleModel complete verified pressure ledger drift")
-    return {"total": 2486, "closed": closed, "open": pending, "historical_ub": ub}
+    if (totals != dict(total=2486, closed=2463, open=20, historical_ub=3)
+            or result["unresolved_skill_ids"] or len(model) != 1
+            or model[0]["status"] != "closed_conditional_runtime"
+            or model[0]["slot_uses"] != 2 or model[0]["skill_ids"] != (638,)
+            or result["conditional_placements"] != ((1178, 2, 638), (1179, 2, 638))):
+        raise ValueError("BattleModel complete verified conditional pressure ledger drift")
+    print("BATTLEMODEL_CONDITIONAL_CAPABILITY|placements=2|kind=" + CONDITIONAL_CAPABILITY_KIND)
+    return totals
 
 
 def main():
@@ -405,7 +406,9 @@ def main():
     count = run_runtime_golden(stack)
     run_recovered_ai_goldens(stack)
     pressure = run_identity_pressure(stack)
-    ledger = verify_complete_pressure(stack)
+    identity = verify_placement_population(stack.petskill_runtime, stack.enemybase_runtime,
+        data_dir=args.data_dir, setup=args.setup)
+    ledger = verify_complete_pressure(stack, identity=identity)
     print(f"COUNT|battlemodel_recovered_persistent_coordinator_goldens={count}")
     print(f"COUNT|battlemodel_selected_normal_ai_controls={count}")
     print(f"COUNT|battlemodel_current_identity_rejections={pressure}")

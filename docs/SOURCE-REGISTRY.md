@@ -4187,3 +4187,13 @@ bytes. Receipt artifact digests pin native and full-region evidence. Original
 build/opaque NPC/script/full gameplay paths remain OPEN. Next exact conditional
 placement plan is a DESIGN capability gate, not a new historical reachability
 claim or pressure promotion.
+
+## 2026-10-06 — ID638 conditional placement capability gate (PENDING)
+
+Uses the accepted command-entry/native/runtime receipts and the same pinned
+petskill/enemybase whole-file identities. New factory reparse/semantic binding
+and pure predicate store only metadata/digests; no original data/source bytes.
+Dedicated pressure and full-region Actions independently recompute all2486
+positive slots and preserve actual normal-AI selection0 as a separate axis.
+Local878 unique tests PASS; exact-head acceptance pending. Specification:
+`specs/STONEAGE-BATTLEMODEL-CONDITIONAL-PLACEMENT-CAPABILITY-R1.md`.
