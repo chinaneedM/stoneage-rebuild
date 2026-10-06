@@ -34,6 +34,18 @@
       "skill_id": 650
     }
   ],
+  "conditional_placements": [
+    [
+      1178,
+      2,
+      638
+    ],
+    [
+      1179,
+      2,
+      638
+    ]
+  ],
   "file_sha256": {
     "encountfile": "70bbd997d98508a0587df183b5bdd48222ff42db91bf21bea632e0ed6f2fea87",
     "enemyfile": "cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6",
@@ -58,6 +70,15 @@
     "rows": 181,
     "scope": "literal first OPTION token; default OPTIMUM and legacy ordered layouts; original build/equipment ownership/MP not inferred"
   },
+  "next_open": {
+    "callback": "PETSKILL_BecomeFox",
+    "skill_ids": [
+      625
+    ],
+    "slot_uses": 2,
+    "status": "open",
+    "templates": 2
+  },
   "positive_placements": [
     {
       "capturable_flag": 1,
@@ -81,10 +102,10 @@
     }
   ],
   "pressure": {
-    "closed": 2461,
+    "closed": 2463,
+    "conditional_capability_slots": 2,
     "historical_ub": 3,
-    "open": 22,
-    "promoted_slots": 0,
+    "open": 20,
     "total": 2486,
     "unresolved_skill_ids": []
   },
@@ -481,11 +502,14 @@
     },
     {
       "callback": "PETSKILL_BattleModel",
+      "capability_kind": "CONDITIONAL_BOUNDED_CAPABILITY",
+      "command_entry_reachability": "OPEN_SEPARATE_AXIS_NOT_INFERRED",
+      "scope": "ID638_enemy_explicit_selected_empty_equipment_bounded_runtime_R1",
       "skill_ids": [
         638
       ],
       "slot_uses": 2,
-      "status": "open",
+      "status": "closed_conditional_runtime",
       "templates": 2
     },
     {
