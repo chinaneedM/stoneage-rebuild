@@ -3987,3 +3987,29 @@ remain explicitly OPEN. No original source/payload committed.
 - Receipt:
   `research/recovered/STONEAGE-BATTLEMODEL-GUARDIAN-PROFIT-TAIL-ACCEPTANCE-R1.json`.
 
+### SRC-BATTLEMODEL-SAME-HARNESS-EXACT-DAMAGESUB-PROFIT-TAIL-R1 — remote native acceptance 2026-10-06
+
+- Exact input `f804d879cc701b0b29c2d3f2adbd1e2b6df1eddc`, tree `d99b472d1f0e97df01518ae9bae184fe0b4584ac`; no original source or
+  assets committed.
+- Settlement `37437282822/112182088944` SUCCESS: 653 tests, 19656 original
+  PvE profit/exit cases, 19656 immutable scan/model-native comparisons, 384
+  bounded Weaken recalculation vectors, prior splice 9/9, prior original
+  Guardian 9/9 and **9 same-harness exact DamageSub profit-tail cases**.
+  Artifact `11399543542`,
+  `sha256:f01386a4c5b42a701ed4dd54863e5ed554ea70dafa564a1aad806e3bdf00c6cf`.
+- Exact comment-stripped DamageSub hashes:
+  gavin/iris
+  `c978e7fb82412570086d67b582d0ff6c84a33b72a0481fb327634977ebd3ac9e`;
+  bismarck
+  `e1dff8b748beba524cd203ac8dd7090df3593cd00692708effff2579cdb582d6`.
+- Accepted claim: exact DamageSub HP/ultimate/reaction state machine executes in
+  the same process as the already accepted original physical Guardian path,
+  exact BattleModel/helper and exact tail AddProfit; gameplay-state chronology
+  matches the immutable scan in the bounded no-ride/no-equipment/noncritical
+  profile.
+- Boundary: the wrapper seeds only the historically undefined BattleModel
+  `iPetDamage` input to zero. Presentation/packet bytes and full Battling are
+  not certified. Lethal638/build-version/wider features remain OPEN.
+- Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-DAMAGESUB-PROFIT-TAIL-ACCEPTANCE-R1.json`.
+

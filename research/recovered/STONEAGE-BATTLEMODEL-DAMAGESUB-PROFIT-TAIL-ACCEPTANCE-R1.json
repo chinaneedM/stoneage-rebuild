@@ -1,0 +1,63 @@
+{
+  "schema": "STONEAGE_BATTLEMODEL_DAMAGESUB_PROFIT_TAIL_ACCEPTANCE_R1",
+  "status": "CLOSED_BOUNDED_SAME_HARNESS_EXACT_DAMAGESUB_PROFIT_TAIL_NATIVE",
+  "date": "2026-10-06",
+  "baseline_main_commit": "ba6d09ae76f0e6c7f284ed4ac6b1c2e6db6ca623",
+  "accepted_commit": "f804d879cc701b0b29c2d3f2adbd1e2b6df1eddc",
+  "accepted_tree": "d99b472d1f0e97df01518ae9bae184fe0b4584ac",
+  "branch": "agent/native-damagesub-profit-tail-r1-20261006",
+  "remote_validation": {
+    "settlement": {
+      "run_id": 37437282822,
+      "job_id": 112182088944,
+      "conclusion": "success",
+      "tests": 653,
+      "original_profit_exit_cases": 19656,
+      "immutable_scan_model_native_comparisons": 19656,
+      "weaken_recalculation_vectors": 384,
+      "prior_dispatch_tail_splice_cases": 9,
+      "prior_same_harness_guardian_tail_cases": 9,
+      "new_same_harness_exact_damagesub_tail_cases": 9
+    },
+    "artifact": {
+      "id": 11399543542,
+      "name": "battlemodel-settlement",
+      "digest": "sha256:f01386a4c5b42a701ed4dd54863e5ed554ea70dafa564a1aad806e3bdf00c6cf"
+    }
+  },
+  "source_profiles": {
+    "gavin": {
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "damage_sub_comment_stripped_sha256": "c978e7fb82412570086d67b582d0ff6c84a33b72a0481fb327634977ebd3ac9e"
+    },
+    "iris": {
+      "commit": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "damage_sub_comment_stripped_sha256": "c978e7fb82412570086d67b582d0ff6c84a33b72a0481fb327634977ebd3ac9e"
+    },
+    "bismarck": {
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "damage_sub_comment_stripped_sha256": "e1dff8b748beba524cd203ac8dd7090df3593cd00692708effff2579cdb582d6"
+    }
+  },
+  "accepted_scope": [
+    "exact original reduced AttackSeq/GuardianCheck and exact original DamageSub execute in the same transient process as exact BattleModel/helper and exact tail AddProfit/exit whole scan",
+    "actual exact DamageSub HP writes complete before any command-tail ISDIE/death processing",
+    "Guardian multi-victim chronology remains pet slot5 then owner slot0 before source-order tail scan owner slot0 then pet slot5",
+    "repeat AddProfit is idempotent",
+    "native death/charm/loyalty gameplay state matches the accepted immutable ProfitExitSnapshot model",
+    "no-ride no-equipment no-active-reaction noncritical reduced feature profile"
+  ],
+  "explicit_nonclaims": [
+    "full BATTLE_Battling body is not yet executed",
+    "BattleModel helper historical uninitialized iPetDamage presentation value is not certified",
+    "wrapper seeds pPetDamage to zero only to eliminate undefined presentation input before the exact DamageSub body",
+    "packet/presentation bytes are not certified by this milestone",
+    "lethal638 remains blocked",
+    "original build/version membership remains open",
+    "wider recipients ride items automatic AI remain open"
+  ],
+  "historical_claims_added": false,
+  "original_source_or_assets_committed": false,
+  "positive_slots_promoted": 0,
+  "next_priority": "Execute the original BattleModel case inside the full BATTLE_Battling body in the same transient program without rewriting conditional source context, retaining the already closed original Guardian/AttackSeq/exact DamageSub/tail AddProfit components; compare the resulting command chronology with the canonical runtime binder before any lethal638 admission."
+}

@@ -1094,3 +1094,19 @@ adapter and ten-field/overlay clear are next.
 - OPEN: same-harness exact DamageSub and full Battling body remain stronger
   gates before lethal638.
 
+### 2026-10-06 — Same-harness exact DamageSub profit-tail accepted
+
+- NATIVE/FACT: exact input `f804d879cc701b0b29c2d3f2adbd1e2b6df1eddc` passes settlement
+  `37437282822/112182088944`: 653 tests, 19656 whole-scan original/model
+  comparisons, 384 Weaken recalculation vectors and 9/9 new exact-DamageSub
+  same-harness witnesses across the three pinned profiles.
+- CHRONOLOGY: original GuardianCheck/AttackSeq, exact DamageSub, BattleModel
+  helper and tail AddProfit now execute in one transient program. Exact HP
+  writes finish before the one tail ISDIE/death scan; multi-victim processing
+  still follows source slot order and repeat AddProfit is idempotent.
+- BOUNDARY: the source helper's uninitialized iPetDamage presentation input is
+  deterministically seeded to zero only at the wrapper boundary; packet or
+  historical undefined-value behavior is not certified.
+- OPEN: full original `BATTLE_Battling` execution is the next stronger gate
+  before lethal638.
+

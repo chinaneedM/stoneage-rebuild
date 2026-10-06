@@ -7799,3 +7799,41 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   canonical runtime binder may lethal638 be considered. Build/version, wider
   recipients/features and automatic AI remain OPEN; no positive-slot promotion.
 
+## Phase 1 same-harness exact DamageSub → BattleModel → profit-tail native acceptance — 2026-10-06
+
+- Exact accepted input `f804d879cc701b0b29c2d3f2adbd1e2b6df1eddc`, tree `d99b472d1f0e97df01518ae9bae184fe0b4584ac`, branch
+  `agent/native-damagesub-profit-tail-r1-20261006`.
+- **CLOSED_BOUNDED_SAME_HARNESS_EXACT_DAMAGESUB_PROFIT_TAIL_NATIVE.**
+  Settlement `37437282822/112182088944` SUCCESS: **653 tests**,
+  **19656** original PvE profit/exit cases, **19656** immutable
+  scan/model-native comparisons, **384** bounded Weaken recalculation vectors,
+  prior dispatch-tail splice **9/9**, prior same-harness original Guardian
+  **9/9**, and new same-harness exact DamageSub witnesses **9/9** across
+  gavin/iris/bismarck. Artifact `11399543542`, digest
+  `sha256:f01386a4c5b42a701ed4dd54863e5ed554ea70dafa564a1aad806e3bdf00c6cf`.
+- The same transient program now executes exact original reduced
+  `BATTLE_AttackSeq/BATTLE_GuardianCheck`, exact original
+  `BATTLE_DamageSub`, exact original `BATTLE_BattleModel`/helper and exact
+  original command-tail `BATTLE_AddProfit`/exit whole scan. In the primary
+  multi-victim witness, exact DamageSub writes the Guardian pet slot5 HP first
+  and the requested owner slot0 HP second; only after those writes does the
+  tail scan set ISDIE/death state in source slot order owner0→pet5. Repeat
+  AddProfit remains idempotent and gameplay-state effects match the immutable
+  scan model.
+- The source helper's `iPetDamage` local is historically uninitialized before
+  DamageSub. The harness therefore seeds only `*pPetDamage=0` in a wrapper
+  immediately before the unchanged exact DamageSub body. This removes undefined
+  presentation input for deterministic execution; it is **not** a historical
+  packet/presentation certificate and does not alter HP/ISDIE/death chronology.
+- Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-DAMAGESUB-PROFIT-TAIL-ACCEPTANCE-R1.json`.
+- Full `BATTLE_Battling` is still not executed and lethal638 remains blocked.
+- **Highest-priority unfinished task:** execute the original BattleModel case
+  inside the full `BATTLE_Battling` body in the same transient program,
+  without rewriting its conditional source context, while retaining the
+  already-closed original Guardian/AttackSeq/exact DamageSub/tail AddProfit
+  chain. Compare that full command-driver chronology with the canonical runtime
+  binder before considering lethal638. Build/version, wider recipients,
+  ride/items, automatic AI and packet/presentation history remain OPEN; no
+  positive-slot promotion.
+

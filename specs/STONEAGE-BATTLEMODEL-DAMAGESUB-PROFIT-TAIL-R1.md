@@ -1,6 +1,6 @@
 # BattleModel same-harness exact DamageSub profit-tail audit R1
 
-Status: IMPLEMENTED_ON_ISOLATED_BRANCH; REMOTE_NATIVE_VALIDATION_PENDING.
+Status: CLOSED_BOUNDED_SAME_HARNESS_EXACT_DAMAGESUB_PROFIT_TAIL_NATIVE.
 
 ## Purpose
 
@@ -63,3 +63,25 @@ After exact remote acceptance, attempt the full original BattleModel case inside
 components. The undefined iPetDamage presentation value stays explicitly
 outside historical certification. Lethal638 remains blocked until full
 command-driver chronology is native and matches the canonical runtime binder.
+
+## Remote acceptance — 2026-10-06
+
+Exact input `f804d879cc701b0b29c2d3f2adbd1e2b6df1eddc`, tree `d99b472d1f0e97df01518ae9bae184fe0b4584ac`, passed settlement
+`37437282822/112182088944`: **653 tests**, **19656** original PvE
+profit/exit cases, **19656** immutable scan/model-native comparisons, **384**
+bounded Weaken recalculation vectors and **9/9** same-harness exact DamageSub
+profit-tail witnesses. Artifact `11399543542`, digest
+`sha256:f01386a4c5b42a701ed4dd54863e5ed554ea70dafa564a1aad806e3bdf00c6cf`.
+
+The exact DamageSub body is unchanged after mechanical symbol rename. Only the
+undefined BattleModel `iPetDamage` input is seeded to zero at the wrapper
+boundary; this remains outside packet/presentation historical certification.
+
+Next gate: execute the original BattleModel case through the full
+`BATTLE_Battling` body in the same transient program, preserving original
+conditional context. Lethal638 remains blocked until that full command-driver
+chronology matches the canonical runtime binder.
+
+Acceptance receipt:
+`research/recovered/STONEAGE-BATTLEMODEL-DAMAGESUB-PROFIT-TAIL-ACCEPTANCE-R1.json`.
+
