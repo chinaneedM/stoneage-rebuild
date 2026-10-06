@@ -125,8 +125,9 @@ def _missing_call_stubs(code: str, battling: str) -> str:
     skip = {
         "if", "for", "while", "switch", "sizeof",
         "sprintf", "snprintf", "printf", "sscanf",
-        "memset", "memcpy", "strcat", "strncat", "strlen",
-        "qsort", "rand", "time",
+        "memset", "memcpy", "memmove", "strcat", "strncat", "strlen",
+        "strcpy", "strncpy", "strcmp", "strncmp", "strstr", "strchr",
+        "atoi", "atol", "abs", "qsort", "rand", "time",
         *CONTROLLED_DRIVER_HELPERS,
         "BATTLE_Battling", "PETSKILL_getChar",
     }
