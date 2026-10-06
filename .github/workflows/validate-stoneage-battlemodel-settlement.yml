@@ -156,7 +156,6 @@ jobs:
           grep -F 'TOTAL|native_dispatch_tail_cases=9|profiles=3' /tmp/battlemodel-profit-tail.txt
           grep -F 'RESOLUTION|BATTLEMODEL_DISPATCH_TAIL_PROFIT_SPLICE_NATIVE_PASS' \
             /tmp/battlemodel-profit-tail.txt
-            /tmp/battlemodel-guardian-profit-tail.txt
       - name: Execute same-harness original Guardian profit tail
         run: |
           python -m tools.stoneage_battlemodel_guardian_profit_tail_source_audit \
@@ -236,6 +235,7 @@ jobs:
             /tmp/default-pet-exit.txt
             /tmp/profit-exit-native.txt
             /tmp/battlemodel-profit-tail.txt
+            /tmp/battlemodel-guardian-profit-tail.txt
             /tmp/player-exit-weaken-native.txt
             /tmp/battlemodel-physical-attackseq.txt
             /tmp/battlemodel-itemcrush.txt
