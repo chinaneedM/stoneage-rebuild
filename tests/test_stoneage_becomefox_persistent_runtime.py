@@ -158,7 +158,7 @@ class BecomeFoxPersistentRuntimeTests(unittest.TestCase):
             state=result.after
             self.assertEqual(state.turn,expected_turn)
 
-        self.assertFalse(state.becomefox_overlay.runtime_by_participant_id)
+        self.assertIsNone(state.becomefox_overlay)
         snap=participant_snapshot(state,"pet")
         self.assertEqual((snap.attack,snap.defense,snap.quick),(100,20,70))
         self.assertEqual(len(set(reduced_damage)),1)
