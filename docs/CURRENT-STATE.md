@@ -7470,10 +7470,10 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   flags, invalidates prepared powers and emits required recalculation IDs.
   It deliberately leaves work attributes/NC notification state to separately
   bound seams. This is an isolated helper, not an integrated runtime fix.
--24 new behavioral/validation/projection tests and prior535 pass (559).
+-25 new behavioral/validation/projection tests and prior535 pass (560).
   Spec STONEAGE-PVE-PROFIT-EXIT-SCAN-MODEL-R1; derived model/native report
   research/recovered/STONEAGE-PVE-PROFIT-EXIT-SCAN-MODEL-R1.txt. Required
-  settlement CI now checks all19656 comparisons,559 tests and prior native gates.
+  settlement CI now checks all19656 comparisons,560 tests and prior native gates.
 - **Highest-priority unfinished task:** publish the exact adapter input and
   verify remote settlement logs/artifact, then nonforce sync and main replay.
   After acceptance, bind command-tail/per-hit invocation and required attribute

@@ -224,6 +224,11 @@ def resolve_profit_exit_scan(snapshot: ProfitExitSnapshot, *, recipient_id: str)
         if not c.valid or c.hp > 0 or c.isdie:
             continue
         if recipient.kind == "player" and slot // 10 != snapshot.player_side:
+            # Original exp * factor is signed-int arithmetic before division.
+            # A bounded final award does not make an overflowing product valid.
+            level_gap = recipient.level - c.level
+            if 5 < level_gap < 20 and c.reward_exp * (20 - level_gap) >= 2**31:
+                raise ValueError("enemy EXP intermediate product exceeds signed int32")
             award = battle_exp_from_enemy(c.reward_exp, recipient.level, c.level)
             r = chars[recipient_id]
             change(recipient_id, pending_exp=r.pending_exp + award, kill_count=r.kill_count + 1)

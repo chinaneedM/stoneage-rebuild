@@ -12,8 +12,8 @@ source nor calls the audit expectation. Original C stays transient. The
 native fields to both the existing independent witness and this new adapter.
 Local19656 model/native comparisons pass,6552/profile at the same clean pins.
 No new original C cases are claimed: these are new model comparisons against
-the already accepted19656 injected native snapshots.24 new unit tests plus
-prior535 related regressions pass (559 total).
+the already accepted19656 injected native snapshots.25 new unit tests plus
+prior535 related regressions pass (560 total).
 
 The model admits feature-off PvE dpbattle0 SIDE_OFFSET10, one explicit player
 owner, a complete ordered contiguous non-mail pet roster (up to five original

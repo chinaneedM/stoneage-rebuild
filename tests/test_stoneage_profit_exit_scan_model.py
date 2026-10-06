@@ -153,6 +153,15 @@ class ProfitExitScanTests(unittest.TestCase):
         kinds = [(e.kind, e.participant_id) for e in result.effects]
         self.assertLess(kinds.index(("warp_request", "owner")), kinds.index(("exit_request", "owner")))
 
+    def test_native_exp_intermediate_overflow_is_rejected_before_division(self):
+        before = fixture(owner_hp=20, pet_hp=20)
+        chars = dict(before.characters)
+        chars["owner"] = replace(chars["owner"], level=16)
+        chars["enemy"] = replace(chars["enemy"], hp=0, reward_exp=200_000_000)
+        with self.assertRaisesRegex(ValueError, "intermediate product"):
+            resolve_profit_exit_scan(replace(before, characters=chars), recipient_id="owner")
+        self.assertEqual(before.characters["owner"].pending_exp, 0)
+
     def test_inputs_and_results_cannot_be_mutated(self):
         before = fixture()
         after = scan(before).after
