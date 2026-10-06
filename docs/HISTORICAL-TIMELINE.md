@@ -848,3 +848,15 @@ Explicit fresh preparation clears round-local cancellation only. New death/
 ultimate flags block continuation until exit/profit integration. Original full
 command loop, persistent/coordinator integration and638 slots remain OPEN;
 no new historical build or Taiwan-v1 membership claim. Remote gate pending.
+
+
+### 2026-10-06 — bounded prepared handoff accepted remotely
+
+**FACT (bounded reconstruction acceptance):**37412928360 SUCCESS,
+job112105158829 on57d21667 reproduces283 tests and existing696/3420/
+1920/480/60 native gates. Prepared cancellation and current-work handoff alone
+closed; full original command loop/state/coordinator/ultimate exit and638
+coverage OPEN. Internal semantic carrier is not a historical numeric COM1.
+**OPEN (repository integration review):** ordinary player ultimate exit uses
+unique active pet projection; audit against DD-020 before integration. No
+historical claim or exit correction accepted here. Pending records superseded.

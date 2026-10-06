@@ -1,6 +1,6 @@
 # BattleModel prepared handoff R1
 
-Status: LOCAL_VALIDATED; remote exact-input gate pending.
+Status: CLOSED_BOUNDED_PREPARED_HANDOFF; full runtime remains OPEN.
 
 ## Scope and identity
 
@@ -64,3 +64,19 @@ BattleModel dispatch, persistent/coordinator transaction, ultimate death/exit/
 profit, equipped mutations/extra slots/wider features, golden/full-region and
 hash-verified pressure. No ID638 positive slot or overall coverage promotion.
 DD-018 restoration-first and DD-019 original numeric-profile ambiguity remain.
+
+
+## Remote acceptance — 2026-10-06
+
+Input57d21667464cd39d970c3e70e549fb3febd6d81f,
+tree35bea36b05c6440bb800bee8e4992a79cf7deb90. Run37412928360 SUCCESS,
+job112105158829;283 tests and696/3420/1920/480/60 previous native gates
+reproduced. Artifact11389966161 uploaded. Receipt:
+research/recovered/STONEAGE-BATTLEMODEL-PREPARED-HANDOFF-ACCEPTANCE-R1.json.
+Only this declared handoff is closed; earlier pending records superseded.
+
+Repository inspection for the next integration gate finds the ordinary player
+ultimate exit branch in stoneage_battle_round_model.py uses unique active
+allied-pet projection. Before integrating BattleModel ultimate exits, audit it
+against DD-020's explicit default selection; current handoff blocks all such
+continuations. No exit correction or original command-loop proof is claimed.

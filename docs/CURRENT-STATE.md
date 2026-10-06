@@ -1,6 +1,6 @@
 # Current State
 
-Last updated: 2026-10-05
+Last updated: 2026-10-06
 
 ## Current phase
 
@@ -7103,3 +7103,39 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   propagation with ultimate exit/profit and round-boundary flags. Retain empty
   equipment scope; equipped/wider features, golden/full-region/hash-verified
   pressure remain required before promoting638's two positive slots. DD-018.
+
+
+## Phase 1 BattleModel prepared handoff remotely accepted — 2026-10-06
+
+- Exact input57d21667464cd39d970c3e70e549fb3febd6d81f,
+  tree35bea36b05c6440bb800bee8e4992a79cf7deb90. Fresh main91f898cb
+  remains its ancestor; unchanged remote branch, matching clean checkout and
+  ancestry verified before acceptance.
+- **37412928360 SUCCESS**, job112105158829. Remote283 tests PASS
+  (12 new handoff witnesses,101 ordinary round,170 prior loop/shared), plus
+  696 physical/3420 ItemCrush/1920 settlement/480 marker/60 pet cases.
+  Uploaded artifact11389966161. Derived receipt:
+  research/recovered/STONEAGE-BATTLEMODEL-PREPARED-HANDOFF-ACCEPTANCE-R1.json.
+- **CLOSED_BOUNDED_PREPARED_HANDOFF.** Actual ordinary continuation proves
+  cancellation after paralysis expiry and no completed actor/status replay.
+  HP/status/reactions/overkill/flags and actual Guardian commands are bound to
+  current prepared work; exact initiative order is retained. Fresh preparation
+  clears only round-local flags. Numeric638 COM1 is still unresolved; explicit
+  NONE carrier is an internal semantic dispatcher seam only.
+- No full original command loop, ordinary AI dispatcher or persistent/
+  coordinator transaction is accepted. New death/ultimate flags continue to
+  block ordinary continuation before profit/exit integration. No638 positive
+  slot/overall percentage promotion. Previous pending snapshots superseded.
+  Only docs/receipt differ from successful input; nonforce main sync follows.
+- During remote wait, repository inspection found ordinary player ultimate
+  exit uses unique-active-allied-pet projection rather than explicit DEFAULTPET
+  selection. This is an OPEN integration review against DD-020, not a new
+  historical fact or accepted correction. Current seam blocks that path.
+- **Highest-priority unfinished task:** fresh main/branches/HEAD/tree/Actions
+  and sync verification, then integrate actor status clock/confusion rewrite,
+  ordinary typed638 dispatch, state/coordinator transaction and ultimate
+  death/exit/profit. Audit/fix default selection versus ownership/occupancy
+  before using the player ultimate path. Preserve exact target/item/status
+  chronology and round-local flags. Equipped/extra-slot/wider features and
+  golden/full-region/hash-verified pressure remain required before closing
+ 638's two slots. DD-018 restoration-first remains in force.

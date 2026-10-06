@@ -1,0 +1,55 @@
+{
+  "schema": "STONEAGE_BATTLEMODEL_PREPARED_HANDOFF_ACCEPTANCE_R1",
+  "date": "2026-10-06 (UTC+8)",
+  "status": "CLOSED_BOUNDED_PREPARED_HANDOFF_FULL_RUNTIME_OPEN",
+  "branch": "agent/battlemodel-prepared-handoff-r1-20261006",
+  "accepted_main_base": "91f898cb25c803b23fb6b7ddc4ae7eecb1e98623",
+  "input_commit": "57d21667464cd39d970c3e70e549fb3febd6d81f",
+  "input_tree": "35bea36b05c6440bb800bee8e4992a79cf7deb90",
+  "remote_validation": {
+    "workflow": "validate-stoneage-battlemodel-settlement.yml",
+    "run_id": 37412928360,
+    "job_id": 112105158829,
+    "conclusion": "success",
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37412928360",
+    "shared_tests": 283,
+    "new_handoff_tests": 12,
+    "ordinary_round_tests": 101,
+    "previous_shared_tests": 170,
+    "physical_native_comparisons": 696,
+    "itemcrush_model_native_comparisons": 3420,
+    "original_settlement_native_calls": 1920,
+    "marker_native_comparisons": 480,
+    "pet_guard_native_calls": 60,
+    "artifact": {
+      "id": 11389966161,
+      "name": "battlemodel-settlement",
+      "size_bytes": 3424,
+      "digest": "sha256:a405297ea707c5487344f9bed44a3e1b045201239b15fbc5a9feaeca1b7c66e4"
+    }
+  },
+  "scope": [
+    "base_commands_prepared_empty_equipment_ID638_R1",
+    "typed symbolic submission with internal NONE carrier; no historical numeric COM1",
+    "authoritative exact completed prefix and current entry/slot identity",
+    "no active actor base status; status clock/rewrite not integrated",
+    "current HP/status/reaction/overkill/round flags and actual Guardian cancellation",
+    "ordinary continuation refuses new death or ultimate flags until exit/profit integration",
+    "explicit new-round reset of cancellation/ultimate flags only"
+  ],
+  "new_handoff_native_full_command_loop": "OPEN; existing native comparisons cover hit machinery only",
+  "full_battlemodel_runtime": "OPEN",
+  "positive_slots_promoted": 0,
+  "next_priority": "actor status clock/rewrite, full ordinary dispatch/state/coordinator, ultimate exit/profit with explicit default pet",
+  "remaining_gates": [
+    "actor status clock/confusion rewrite",
+    "ordinary AI dispatch",
+    "persistent/coordinator transaction",
+    "ultimate exit/profit/default-selection DD-020 audit",
+    "equipped/extra-slot/wider-feature compositions",
+    "original build/PRNG/charset/numeric COM1 membership",
+    "golden",
+    "full-region",
+    "hash-verified pressure"
+  ]
+}
