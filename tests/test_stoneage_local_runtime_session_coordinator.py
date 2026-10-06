@@ -8299,5 +8299,172 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
         )
 
 
+    def test_recovered_enemy_ai_becomefox_selects_exact_id625_and_persists_fox(self):
+        session=LocalRuntimeSessionState(
+            contract_id=self.profile.contract_id,
+            world_profile=self.profile.runtime_world_profile,
+            hometown_ordinal=1,
+            player_position=MapPosition(1,0,0),
+            player_state=_battle_player_state(),
+            world_flags=frozenset({"enemy-ai-becomefox"}),
+        )
+        group=self.stack.request_encounter_group(session,group_roll=0)
+        context=self.coordinator.start_group_battle(
+            session,group,
+            entry_count_roll=1,selection_rolls=(0,),
+            birth_rolls=(EnemyBirthRolls(
+                level_roll=1,birth_offsets=(0,0,0,0),
+                spawn_allocation_rolls=(0,1,2,3,0,1,2,3,0,1),
+            ),),
+        )
+        enemy_id=str(context.battle.enemies[0].participant_id)
+        spawned=context.spawned_enemies[0]
+        self.stack.petskill_runtime=Recovered25PetSkillRuntime(
+            skills={
+                625:Recovered25PetSkillEntry(
+                    625,1,1,2,3000,"PETSKILL_BecomeFox",b""
+                )
+            },
+            source_file="petskill.txt",
+        )
+
+        player=replace(
+            context.battle.player,
+            hp=1000,max_hp=1000,quick=40,
+        )
+        pet=replace(
+            context.battle.player,
+            participant_id="pet",
+            kind="pet",
+            hp=1000,max_hp=1000,
+            attack=100,defense=20,quick=70,
+            source_pet_slot=0,
+        )
+        enemy=replace(
+            context.battle.enemies[0],
+            attack=180,defense=10,quick=100,
+        )
+        context=replace(
+            context,
+            battle=replace(
+                context.battle,
+                player=player,
+                allied_pets=(pet,),
+                enemies=(enemy,),
+            ),
+            spawned_enemies=(replace(
+                spawned,
+                participant=enemy,
+                template=replace(
+                    spawned.template,
+                    tempno=148,
+                    graphic_id=101743,
+                    base_vital=32,
+                    base_strength=40,
+                    base_toughness=26,
+                    base_dexterity=30,
+                    ai=150,
+                    skill_ids=(0,0,625,0,0,0,0),
+                    skill_slot_ids=(0,0,625,0,0,0,0),
+                ),
+                variant=replace(
+                    spawned.variant,
+                    tactics_option=(
+                        "at:0;1;1|gu:0|es:0|"
+                        "wa:0;0;1;0;0;0;0"
+                    ),
+                ),
+            ),),
+        )
+        context=self.coordinator.begin_persistent_group_battle(
+            context,
+            slots={"player":0,"pet":5,enemy_id:10},
+        )
+
+        with self.assertRaisesRegex(
+            ValueError,"explicit descendant profile"
+        ):
+            self.coordinator._build_persistent_enemy_common_batch(
+                context,
+                mode_rolls_by_enemy_id={enemy_id:0},
+                target_rolls_by_enemy_id={enemy_id:1},
+                allow_becomefox_skill=True,
+            )
+
+        batch=self.coordinator._build_persistent_enemy_common_batch(
+            context,
+            mode_rolls_by_enemy_id={enemy_id:0},
+            target_rolls_by_enemy_id={enemy_id:1},
+            allow_becomefox_skill=True,
+            becomefox_profiles_by_enemy_id={enemy_id:"gavin"},
+        )
+        submission=batch.becomefox_submissions[enemy_id]
+        self.assertEqual(
+            (
+                submission.skill_id,
+                submission.skill_slot,
+                submission.source_target_slot,
+                submission.source_profile,
+            ),
+            (625,2,5,"gavin"),
+        )
+
+        context,result=(
+            self.coordinator
+            .resolve_persistent_attack_guard_escape_wait_round_with_enemy_ai(
+                context,
+                player_side_commands={
+                    "player":BattleCommand(BATTLE_COM_WAIT),
+                    "pet":BattleCommand(BATTLE_COM_WAIT),
+                },
+                enemy_mode_rolls={enemy_id:0},
+                enemy_target_rolls={enemy_id:1},
+                enemy_escape_rolls={},
+                opponent_abio_by_participant_id={},
+                initiative_random_subtracts={
+                    "player":0,"pet":0,enemy_id:0,
+                },
+                profiles={
+                    "player":BattleCombatProfile(
+                        fixed_dex=40,fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                    "pet":BattleCombatProfile(
+                        fixed_dex=70,fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                    enemy_id:BattleCombatProfile(
+                        fixed_dex=100,fixed_luck=0,
+                        earth=0,water=0,fire=0,wind=0,
+                    ),
+                },
+                attack_rolls={
+                    enemy_id:OrdinaryAttackRolls(
+                        dodge_roll_1_10000=10000,
+                        critical_roll_1_10000=10000,
+                        damage_roll=0,
+                    )
+                },
+                becomefox_profiles_by_enemy_id={enemy_id:"gavin"},
+                becomefox_draws_by_attack_id={enemy_id:0},
+                becomefox_target_petflag_by_participant_id={"pet":1},
+                becomefox_base_image_by_participant_id={"pet":101111},
+                becomefox_attacker_pig_marker_by_enemy_id={enemy_id:-1},
+                defense_profile="newpower_70pct",
+            )
+        )
+        event=next(
+            event for event in result.round.events
+            if event.becomefox_skill_id==625
+        )
+        self.assertTrue(event.becomefox_decision.draw_consumed)
+        self.assertTrue(event.becomefox_decision.transformed)
+        overlay=context.persistent_battle_state.becomefox_overlay
+        self.assertIsNotNone(overlay)
+        fox=overlay.runtime_by_participant_id["pet"].state
+        self.assertEqual(fox.fox_round,0)
+        self.assertEqual((fox.attack_power,fox.defence_power,fox.quick),(80,16,56))
+
+
 if __name__ == "__main__":
     unittest.main()

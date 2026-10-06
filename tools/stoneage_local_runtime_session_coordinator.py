@@ -107,6 +107,11 @@ from tools.stoneage_enemy_ai_vary_bridge import (
     resolve_enemy_ai_vary_submission,
 )
 from tools.stoneage_vary_runtime_state import CALLBACK_NAME as VARY_CALLBACK
+from tools.stoneage_enemy_ai_becomefox_bridge import (
+    CALLBACK_NAME as BECOMEFOX_CALLBACK,
+    EnemyAiBecomeFoxSubmission,
+    resolve_enemy_ai_becomefox_submission,
+)
 from tools.stoneage_combined_runtime_state import (
     CombinedActionRolls,
     CombinedRuntimeOverlay,
@@ -199,6 +204,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_S_ABDUCT,
     BATTLE_COM_S_STEAL,
     BATTLE_COM_S_ATTACK_MAGIC,
+    BATTLE_COM_S_BECOMEFOX,
     BATTLE_COM_WAIT,
     BattleCombatProfile,
     BattleCommand,
@@ -533,6 +539,9 @@ class EnemyAiCommonCommandBatch:
     ] = field(default_factory=dict)
     vary_submissions: Mapping[
         str,EnemyAiVarySubmission
+    ] = field(default_factory=dict)
+    becomefox_submissions: Mapping[
+        str,EnemyAiBecomeFoxSubmission
     ] = field(default_factory=dict)
     barrier_submissions: Mapping[
         str,EnemyAiBarrierSubmission
@@ -1448,6 +1457,45 @@ class EnemyAiCommonCommandBatch:
                 "enemy AI Vary semantic submissions overlap another skill"
             )
 
+        becomefox_submissions={
+            str(key):value
+            for key,value in self.becomefox_submissions.items()
+        }
+        object.__setattr__(
+            self,
+            "becomefox_submissions",
+            MappingProxyType(becomefox_submissions),
+        )
+        for participant_id,submission in becomefox_submissions.items():
+            if participant_id not in self.commands:
+                raise ValueError(
+                    "enemy AI BecomeFox submission lacks carrier command"
+                )
+            if not isinstance(submission,EnemyAiBecomeFoxSubmission):
+                raise TypeError(
+                    "enemy AI BecomeFox submission has wrong type for "
+                    + participant_id
+                )
+            if str(submission.participant_id)!=participant_id:
+                raise ValueError("enemy AI BecomeFox participant drift")
+            carrier=self.commands[participant_id]
+            if (
+                int(carrier.command1)!=BATTLE_COM_S_BECOMEFOX
+                or int(carrier.command2)!=int(submission.source_target_slot)
+            ):
+                raise ValueError(
+                    "enemy AI BecomeFox carrier must be BECOMEFOX/source-target"
+                )
+        for field_name in self.__dataclass_fields__:
+            if (
+                field_name.endswith("_submissions")
+                and field_name!="becomefox_submissions"
+                and set(becomefox_submissions)&set(getattr(self,field_name))
+            ):
+                raise ValueError(
+                    "enemy AI BecomeFox semantic submissions overlap another skill"
+                )
+
         modifyattack_submissions={str(pid):value for pid,value in self.modifyattack_submissions.items()}
         object.__setattr__(self,"modifyattack_submissions",MappingProxyType(modifyattack_submissions))
         for pid,submission in modifyattack_submissions.items():
@@ -2142,6 +2190,8 @@ class LocalRuntimeSessionCoordinator:
         combined_selection_draws_by_enemy_id: Mapping[str,int] | None = None,
         allow_vary_skill: bool = False,
         vary_profiles_by_enemy_id: Mapping[str,str] | None = None,
+        allow_becomefox_skill: bool = False,
+        becomefox_profiles_by_enemy_id: Mapping[str,str] | None = None,
         allow_weaken_skill: bool = False,
         allow_refresh_skill: bool = False,
         allow_setmagicpet_skill: bool = False,
@@ -2306,6 +2356,7 @@ class LocalRuntimeSessionCoordinator:
         lighttakeed_submissions={}
         combined_submissions={}
         vary_submissions={}
+        becomefox_submissions={}
         battlemodel_submissions={}
         battlemodel_profiles=dict(battlemodel_profiles_by_enemy_id or {})
         two_battletimid_profiles={
@@ -2324,6 +2375,12 @@ class LocalRuntimeSessionCoordinator:
             str(key):str(value)
             for key,value in (
                 vary_profiles_by_enemy_id or {}
+            ).items()
+        }
+        becomefox_profiles={
+            str(key):str(value)
+            for key,value in (
+                becomefox_profiles_by_enemy_id or {}
             ).items()
         }
         combined_selection_draws={
@@ -2408,6 +2465,7 @@ class LocalRuntimeSessionCoordinator:
                 or bool(allow_lighttakeed_skill)
                 or bool(allow_combined_skill)
                 or bool(allow_vary_skill)
+                or bool(allow_becomefox_skill)
                 or bool(allow_weaken_skill)
                 or bool(allow_refresh_skill)
                 or bool(allow_setmagicpet_skill)
@@ -2646,6 +2704,30 @@ class LocalRuntimeSessionCoordinator:
                         command2=int(submission.source_target_slot),
                     )
                     guard_break2_submissions[enemy_id]=submission
+                    continue
+
+                if (
+                    selected_skill is not None
+                    and selected_skill.function_name == BECOMEFOX_CALLBACK
+                    and bool(allow_becomefox_skill)
+                ):
+                    if enemy_id not in becomefox_profiles:
+                        raise ValueError(
+                            "BecomeFox requires explicit descendant profile for "
+                            + enemy_id
+                        )
+                    submission=resolve_enemy_ai_becomefox_submission(
+                        spawned,
+                        skill_slot=int(decision.skill_slot),
+                        target_slot=int(decision.target_slot),
+                        petskill_runtime=petskill_runtime,
+                        source_profile=becomefox_profiles[enemy_id],
+                    )
+                    commands[enemy_id]=BattleCommand(
+                        BATTLE_COM_S_BECOMEFOX,
+                        command2=int(submission.source_target_slot),
+                    )
+                    becomefox_submissions[enemy_id]=submission
                     continue
 
                 if (
@@ -3162,6 +3244,8 @@ class LocalRuntimeSessionCoordinator:
                 allowed_parts.append("PETSKILL_Combined")
             if bool(allow_vary_skill):
                 allowed_parts.append("PETSKILL_Vary")
+            if bool(allow_becomefox_skill):
+                allowed_parts.append("PETSKILL_BecomeFox")
             if bool(allow_weaken_skill):
                 allowed_parts.append("PETSKILL_Weaken")
             if bool(allow_refresh_skill):
@@ -3220,6 +3304,14 @@ class LocalRuntimeSessionCoordinator:
                 "Vary profile supplied for non-selected actors: "
                 + ",".join(unused_vary_profiles)
             )
+        unused_becomefox_profiles=sorted(
+            set(becomefox_profiles)-set(becomefox_submissions)
+        )
+        if unused_becomefox_profiles:
+            raise ValueError(
+                "BecomeFox profile supplied for non-selected actors: "
+                + ",".join(unused_becomefox_profiles)
+            )
 
         return EnemyAiCommonCommandBatch(
             commands=commands,
@@ -3241,6 +3333,7 @@ class LocalRuntimeSessionCoordinator:
             lighttakeed_submissions=lighttakeed_submissions,
             combined_submissions=combined_submissions,
             vary_submissions=vary_submissions,
+            becomefox_submissions=becomefox_submissions,
             weaken_submissions=weaken_submissions,
             refresh_submissions=refresh_submissions,
             setmagicpet_submissions=setmagicpet_submissions,
@@ -3476,6 +3569,21 @@ class LocalRuntimeSessionCoordinator:
         vary_profiles_by_enemy_id: Mapping[
             str,str
         ] | None = None,
+        becomefox_profiles_by_enemy_id: Mapping[
+            str,str
+        ] | None = None,
+        becomefox_draws_by_attack_id: Mapping[
+            str,int | None
+        ] | None = None,
+        becomefox_target_petflag_by_participant_id: Mapping[
+            str,int
+        ] | None = None,
+        becomefox_base_image_by_participant_id: Mapping[
+            str,int
+        ] | None = None,
+        becomefox_attacker_pig_marker_by_enemy_id: Mapping[
+            str,int
+        ] | None = None,
         barrier_rolls_by_attack_id: Mapping[
             str,BarrierActionRolls
         ] | None = None,
@@ -3605,6 +3713,8 @@ class LocalRuntimeSessionCoordinator:
             ),
             allow_vary_skill=True,
             vary_profiles_by_enemy_id=vary_profiles_by_enemy_id,
+            allow_becomefox_skill=True,
+            becomefox_profiles_by_enemy_id=becomefox_profiles_by_enemy_id,
             allow_weaken_skill=True,
             allow_refresh_skill=True,
             allow_setmagicpet_skill=True,
@@ -3659,6 +3769,112 @@ class LocalRuntimeSessionCoordinator:
             for value in normalized_combined_rolls.values()
         ):
             raise TypeError("enemy Combined action RNG wrong type")
+
+        becomefox_enemy_ids=set(enemy_batch.becomefox_submissions)
+        normalized_becomefox_draws={
+            str(key):(None if value is None else int(value))
+            for key,value in (
+                becomefox_draws_by_attack_id or {}
+            ).items()
+        }
+        if set(normalized_becomefox_draws)!=becomefox_enemy_ids:
+            missing=sorted(
+                becomefox_enemy_ids-set(normalized_becomefox_draws)
+            )
+            extra=sorted(
+                set(normalized_becomefox_draws)-becomefox_enemy_ids
+            )
+            raise ValueError(
+                "enemy BecomeFox RNG actors mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        if any(
+            value is not None and not 0<=int(value)<=99
+            for value in normalized_becomefox_draws.values()
+        ):
+            raise ValueError("enemy BecomeFox reduced rand draw must be 0..99")
+
+        normalized_becomefox_pig={
+            str(key):int(value)
+            for key,value in (
+                becomefox_attacker_pig_marker_by_enemy_id or {}
+            ).items()
+        }
+        if set(normalized_becomefox_pig)!=becomefox_enemy_ids:
+            missing=sorted(becomefox_enemy_ids-set(normalized_becomefox_pig))
+            extra=sorted(set(normalized_becomefox_pig)-becomefox_enemy_ids)
+            raise ValueError(
+                "enemy BecomeFox attacker pig-marker actors mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+
+        participant_by_id={
+            str(participant.participant_id):participant
+            for participant in (
+                state.session.player,
+                *state.session.allied_pets,
+                *state.session.enemies,
+            )
+        }
+        participant_id_by_slot={
+            int(slot):str(participant_id)
+            for participant_id,slot in state.slots.items()
+        }
+        selected_becomefox_target_ids=set()
+        for submission in enemy_batch.becomefox_submissions.values():
+            target_id=participant_id_by_slot.get(
+                int(submission.source_target_slot)
+            )
+            if target_id is None or target_id not in living_player_side_ids:
+                raise ValueError(
+                    "enemy BecomeFox selected target lacks living player-side identity"
+                )
+            selected_becomefox_target_ids.add(target_id)
+        selected_becomefox_pet_ids={
+            participant_id
+            for participant_id in selected_becomefox_target_ids
+            if participant_by_id[participant_id].kind=="pet"
+        }
+        normalized_becomefox_petflag={
+            str(key):int(value)
+            for key,value in (
+                becomefox_target_petflag_by_participant_id or {}
+            ).items()
+        }
+        if set(normalized_becomefox_petflag)!=selected_becomefox_pet_ids:
+            missing=sorted(
+                selected_becomefox_pet_ids-set(normalized_becomefox_petflag)
+            )
+            extra=sorted(
+                set(normalized_becomefox_petflag)-selected_becomefox_pet_ids
+            )
+            raise ValueError(
+                "enemy BecomeFox PETFLG witness targets mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
+        active_fox_ids=(
+            set()
+            if state.becomefox_overlay is None
+            else set(state.becomefox_overlay.runtime_by_participant_id)
+        )
+        new_becomefox_pet_ids=selected_becomefox_pet_ids-active_fox_ids
+        normalized_becomefox_base_image={
+            str(key):int(value)
+            for key,value in (
+                becomefox_base_image_by_participant_id or {}
+            ).items()
+        }
+        if set(normalized_becomefox_base_image)!=new_becomefox_pet_ids:
+            missing=sorted(
+                new_becomefox_pet_ids-set(normalized_becomefox_base_image)
+            )
+            extra=sorted(
+                set(normalized_becomefox_base_image)-new_becomefox_pet_ids
+            )
+            raise ValueError(
+                "enemy BecomeFox base-image witness targets mismatch; "
+                f"missing={missing}, extra={extra}"
+            )
 
         normalized_modifyattack_rand={str(key):value for key,value in (modifyattack_rand_by_attack_id or {}).items()}
         if set(normalized_modifyattack_rand)!=set(enemy_batch.modifyattack_submissions):
@@ -4353,6 +4569,21 @@ class LocalRuntimeSessionCoordinator:
             ),
             vary_submissions_by_participant_id=(
                 enemy_batch.vary_submissions
+            ),
+            becomefox_submissions_by_participant_id=(
+                enemy_batch.becomefox_submissions
+            ),
+            becomefox_draws_by_participant_id=(
+                normalized_becomefox_draws
+            ),
+            becomefox_target_petflag_by_participant_id=(
+                normalized_becomefox_petflag
+            ),
+            becomefox_base_image_by_participant_id=(
+                normalized_becomefox_base_image
+            ),
+            becomefox_attacker_pig_marker_by_participant_id=(
+                normalized_becomefox_pig
             ),
             fall_ground_submissions_by_participant_id=(
                 enemy_batch.fall_ground_submissions

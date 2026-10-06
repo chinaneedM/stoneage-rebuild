@@ -8464,3 +8464,31 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   exact ID625 selection/submission and the persistent overlay through the local
   runtime session coordinator. PetIn accessor divergence and wider ride/equipment
   composition remain explicit later seams.
+
+
+## 2026-10-06 — BecomeFox local session coordinator integration implemented (PENDING)
+
+- Ordered-round gate is green (128 tests / OK) and the persistent multi-round
+  gate is green after canonicalizing an empty BecomeFox overlay to None. The
+  resulting fix also restored the shared BattleModel base DamageSub regression.
+- The common recovered enemy-AI batch now recognizes exact
+  PETSKILL_BecomeFox selection only when the caller explicitly enables that
+  execution seam and supplies a descendant source profile. The bridge still
+  revalidates callback population ID625, template148/149 identity and runtime
+  slot index2/report slot3 before emitting a typed submission.
+- The coordinator uses the reconstruction-only BECOMEFOX command token only as
+  internal scheduling identity; it does not claim a stable historical enum
+  ordinal. The selected source target remains COM2.
+- Runtime evidence stays explicit: each selected caster requires a rand()%100
+  witness and attacker pig marker; each selected pet target requires PETFLG
+  provenance, while a newly foxed pet additionally requires base-image
+  provenance. These witnesses are normalized against the actually selected
+  actors/targets before the persistent round is invoked.
+- A focused end-to-end coordinator test now exercises enemy AI wa selection of
+  template148 ID625 against a player-side pet and requires the resulting FOXROUND
+  overlay to persist with post-action 80-percent work powers.
+- Highest-priority unfinished task: inspect the remote coordinator gate and full
+  local-session regression. If PASS, close the bounded BecomeFox runtime slice
+  with an acceptance receipt/pressure update. PetIn accessor divergence,
+  ride-bearing transformation and wider equipment/critical composition remain
+  explicit follow-up seams.
