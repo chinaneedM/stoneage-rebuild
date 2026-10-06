@@ -12,6 +12,11 @@ The original PvE death scan is in `BATTLE_AddExpItem`, reached through
 `BATTLE_AddProfit` when `dpbattle != 1`. Compile the original dispatcher,
 death scan, `BATTLE_UltimateExtra`, `BATTLE_NormalDeadExtra`,
 `BATTLE_PetDefaultExit` and `_BATTLE_Exit` together in a transient harness.
+Include original `BATTLE_BadStatusAllClr` with the explicitly declared base
+`StatusTbl` mapping, so status cleanup is executed rather than assumed.
+Derive its extent and `BATTLE_ST_END` from the chosen original header profile;
+account for unconditional descendant statuses outside the modern six-status
+scope instead of silently truncating the source table.
 Keep original function bodies, declare a reduced feature profile, and trap
 unexpected item/ride/duel/extension calls. Network, parameter recalculation,
 elder lookup and party notifications may be controlled external seams; their

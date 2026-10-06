@@ -7338,3 +7338,26 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   specs/STONEAGE-BATTLEMODEL-PROFIT-EXIT-COMPOSITION-PLAN-R1.md.
   Automatic AI, equipped/wider features, original build/profile ambiguity and
   BattleModel-specific golden/region/hash-verified pressure remain OPEN.
+
+
+### Explicit ultimate state main synchronization and replay verified — 2026-10-06
+
+- Main/runtime branch both6802d516ae65a6ce3e167e68adaaa9a3744ebac7,
+  treebcfd31b246287588119551bde308037cfae4acb7. Nonforce expected-head
+  fast-forward, accepted input ancestry and clean matching local/remote tree
+  verified. All33 exact-main workflows SUCCESS, superseding pending replay.
+- Main settlement37418404557/job112122080613 reproduces535 tests and prior
+  native gates. Golden37418404533 and full-region37418404329/job112122079384
+  SUCCESS; derived region reports unchanged. Same-code branch settlement
+ 37418401255 SUCCESS. Receipt now records every exact-main replay.
+- This checkpoint changes documentation/derived receipt only and uses skip-ci.
+  The original exact correction acceptance remains37417691024 and all33
+  input workflows. No full-suite/native-full-exit/lethal638/AI/slot claim.
+- **Highest-priority unfinished task:** execute the original native PvE
+  AddProfit/AddExpItem/UltimateExtra/NormalDeadExtra/PetDefaultExit/_BATTLE_Exit
+  composition, including original BadStatusAllClr and header-derived StatusTbl
+  extent. Do not replace the source table with the modern six-status subset.
+  Preserve scan order and ordinary per-hit versus BattleModel command-tail
+  boundaries; follow STONEAGE-BATTLEMODEL-PROFIT-EXIT-COMPOSITION-PLAN-R1.
+  Then isolate lethal638 integration and specific golden/region/hash-verified
+  pressure. Original build/profile, equipped/wider features and AI remain OPEN.

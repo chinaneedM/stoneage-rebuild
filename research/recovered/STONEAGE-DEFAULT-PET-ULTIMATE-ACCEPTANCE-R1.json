@@ -283,5 +283,248 @@
   "automatic_battlemodel_ai": "OPEN",
   "battlemodel_specific_golden_region_pressure": "OPEN",
   "positive_slots_promoted": 0,
-  "main_sync": "PENDING_NONFORCE_SYNC_AND_EXACT_MAIN_REPLAY; acceptance commit changes documentation/derived receipts only"
+  "main_sync": {
+    "commit": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+    "tree": "bcfd31b246287588119551bde308037cfae4acb7",
+    "mode": "NONFORCE_FAST_FORWARD_WITH_EXPECTED_HEAD",
+    "all_33_main_workflows_success": true,
+    "workflows": [
+      {
+        "id": 37418404381,
+        "name": "Validate StoneAge Barrier runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404381"
+      },
+      {
+        "id": 37418404384,
+        "name": "Validate StoneAge Mdfyattack runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404384"
+      },
+      {
+        "id": 37418404388,
+        "name": "Validate StoneAge WildViolentAttack runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404388"
+      },
+      {
+        "id": 37418404366,
+        "name": "Validate StoneAge battle core model",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404366"
+      },
+      {
+        "id": 37418404474,
+        "name": "Validate StoneAge DamageToHp runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404474"
+      },
+      {
+        "id": 37418404328,
+        "name": "Validate StoneAge BattleTimid runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404328"
+      },
+      {
+        "id": 37418404406,
+        "name": "Validate StoneAge ReLife runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404406"
+      },
+      {
+        "id": 37418404377,
+        "name": "Validate StoneAge Nocast guarded reference",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404377"
+      },
+      {
+        "id": 37418404321,
+        "name": "Validate StoneAge local runtime session coordinator",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404321"
+      },
+      {
+        "id": 37418404298,
+        "name": "Validate StoneAge AttackMagic round execution",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404298"
+      },
+      {
+        "id": 37418404478,
+        "name": "Validate StoneAge enemy AttackMagic coordinator",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404478"
+      },
+      {
+        "id": 37418404408,
+        "name": "Validate StoneAge BattleTear runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404408"
+      },
+      {
+        "id": 37418404421,
+        "name": "Validate StoneAge enemy ReHP runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404421"
+      },
+      {
+        "id": 37418404481,
+        "name": "Validate StoneAge Modifyattack runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404481"
+      },
+      {
+        "id": 37418404454,
+        "name": "Validate StoneAge AttackMagic round state adapter",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404454"
+      },
+      {
+        "id": 37418404411,
+        "name": "Validate StoneAge GuardBreak2 runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404411"
+      },
+      {
+        "id": 37418404423,
+        "name": "Validate StoneAge Combined runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404423"
+      },
+      {
+        "id": 37418404343,
+        "name": "Validate StoneAge Lighttakeed runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404343"
+      },
+      {
+        "id": 37418404517,
+        "name": "Validate StoneAge Weaken runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404517"
+      },
+      {
+        "id": 37418404490,
+        "name": "Validate StoneAge stable pet-skill core",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404490"
+      },
+      {
+        "id": 37418404382,
+        "name": "Validate StoneAge AttackCrazed runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404382"
+      },
+      {
+        "id": 37418404433,
+        "name": "Validate StoneAge BatFly runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404433"
+      },
+      {
+        "id": 37418404401,
+        "name": "Validate StoneAge 2BattleTimid runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404401"
+      },
+      {
+        "id": 37418404431,
+        "name": "Validate StoneAge MpDamage runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404431"
+      },
+      {
+        "id": 37418404543,
+        "name": "Validate StoneAge Vary runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404543"
+      },
+      {
+        "id": 37418404664,
+        "name": "Validate StoneAge Refresh runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404664"
+      },
+      {
+        "id": 37418404412,
+        "name": "Validate StoneAge SetMagicPet runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404412"
+      },
+      {
+        "id": 37418404555,
+        "name": "Validate StoneAge FallGround runtime",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404555"
+      },
+      {
+        "id": 37418404424,
+        "name": "Validate StoneAge Taiwan v1.0 gameplay model",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404424"
+      },
+      {
+        "id": 37418404557,
+        "name": "Validate StoneAge BattleModel base DamageSub settlement",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404557"
+      },
+      {
+        "id": 37418404533,
+        "name": "Validate StoneAge runtime golden contract",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404533"
+      },
+      {
+        "id": 37418404398,
+        "name": "Probe recovered StoneAge WildViolentAttack",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404398"
+      },
+      {
+        "id": 37418404329,
+        "name": "Validate StoneAge recovered25 region payload source",
+        "conclusion": "success",
+        "head_sha": "6802d516ae65a6ce3e167e68adaaa9a3744ebac7",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/37418404329"
+      }
+    ],
+    "settlement_job": 112122080613,
+    "region_job": 112122079384,
+    "branch_settlement_run": 37418401255,
+    "derived_region_reports_changed": false,
+    "checkpoint": "DOCUMENTATION_ONLY_SKIP_CI_FOLLOWS"
+  }
 }
