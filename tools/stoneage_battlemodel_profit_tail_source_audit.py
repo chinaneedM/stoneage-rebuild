@@ -29,6 +29,7 @@ from tools.stoneage_profit_exit_source_audit import (
     SOURCE_MACROS,
 )
 from tools.stoneage_default_pet_exit_model import DefaultPetExitAuthority
+from tools.stoneage_weaken_source_audit import _enum_values
 from tools.stoneage_profit_exit_scan_model import (
     ProfitExitCharacter,
     ProfitExitSnapshot,
@@ -72,31 +73,6 @@ def _macro_profile(headers: str) -> dict[str,str]:
     return result
 
 
-def _status_end(event_h: str) -> int:
-    clean=_strip(event_h)
-    blocks=re.findall(r"\benum\s*\{[^{}]*\}",clean,re.S)
-    blocks=[b for b in blocks if re.search(r"\bBATTLE_ST_END\b",b)]
-    if len(blocks)!=1:
-        raise ValueError("ambiguous BATTLE_ST_END enum")
-    names=[]
-    current=-1
-    values={}
-    for raw in blocks[0][blocks[0].find("{")+1:blocks[0].rfind("}")].split(","):
-        token=raw.strip()
-        if not token:
-            continue
-        if "=" in token:
-            name,value=(x.strip() for x in token.split("=",1))
-            current=int(value,0)
-        else:
-            name=token
-            current+=1
-        values[name]=current
-    if "BATTLE_ST_END" not in values:
-        raise ValueError("missing BATTLE_ST_END value")
-    return int(values["BATTLE_ST_END"])
-
-
 def _function_body(text: str, name: str) -> str:
     window=_definition(_strip(text),name,raw_window=True)
     return window[:window.rfind("}")+1]
@@ -122,7 +98,13 @@ def _source(name: str, root: Path):
         for k,v in (("BATTLE_ENTRY_MAX",10),("SIDE_OFFSET",10),("CHAR_MAXPETHAVE",5))
     ):
         raise ValueError("dispatch-tail witness requires original reduced SIDE_OFFSET10 layout")
-    st_end=_status_end(headers["battle_event.h"])
+    includes=["-I",str(base/"include")]
+    if name=="bismarck":
+        includes += [
+            "-I",str(root/"server/common"),
+            "-I",str(root/"shared/lua51"),
+        ]
+    st_end=int(_enum_values(["BATTLE_ST_END"],includes)["BATTLE_ST_END"])
     if st_end!=11:
         raise ValueError("dispatch-tail witness requires original ten status fields")
 
