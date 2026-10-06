@@ -81,6 +81,11 @@ def _same_harness_damage_source(name: str, root: Path):
     if renamed==damage_body:
         raise ValueError("exact DamageSub rename failed")
 
+    forward=r'''
+int BATTLE_getRidePet(int i);
+int CHAR_getItemIndex(int i,int slot);
+int print(char *fmt,...);
+'''
     wrapper=r'''
 int BATTLE_DamageSub(int attackindex,int defindex,int *pDamage,
                      int *pPetDamage,int *pRefrect){
@@ -95,7 +100,7 @@ int BATTLE_DamageSub(int attackindex,int defindex,int *pDamage,
 '''
     code=code.replace(
         old_stub,
-        renamed+"\n"+wrapper,
+        forward+"\n"+renamed+"\n"+wrapper,
     )
 
     # Enable only the source marker branch needed by the BattleModel call.
