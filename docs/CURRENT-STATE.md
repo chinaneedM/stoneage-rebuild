@@ -7553,7 +7553,7 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   weakened snapshots; independent prepared SetMagicPet powers are preserved.
   Original full complianceParameter/SetMagicPet expiry/ride/equipment seams
   and all intra-continuation late-status interactions are not newly certified.
--14 new actual-runtime cases plus related modules total642 tests PASS.
+-15 new actual-runtime cases plus related modules total643 tests PASS.
   Existing19656 scan/model comparisons and384 native Weaken recalculation
   vectors plus prior callback/probability gates PASS. No new native vectors.
   Spec STONEAGE-PLAYER-EXIT-STATUS-RUNTIME-R1; derived native replay report

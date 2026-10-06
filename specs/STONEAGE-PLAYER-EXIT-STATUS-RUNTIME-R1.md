@@ -45,11 +45,11 @@ active deep poison/unmodeled statuses and fails closed on the latter.
 
 ## Validation
 
-14 new actual ordinary/persistent/continuation regression tests cover clear
+15 new actual ordinary/persistent/continuation regression tests cover clear
 visibility before a later actor, both selected and unselected rosters, inactive
 and retained pets, cached attribute restoration, preserved independent buff,
 pet-only ultimate/normal death non-clears, missing roster and immutable failure.
-642 exact settlement/shared status regressions PASS locally. The existing
+643 exact settlement/shared status regressions PASS locally. The existing
 19656 scan/model native comparisons PASS. The existing Weaken source audit
 reproduces128 original Other_DefcharWorkInt recalculation vectors per pin,
 384 total, plus its callback/probability gates under ASan/UBSan. These are

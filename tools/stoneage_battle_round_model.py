@@ -5644,6 +5644,8 @@ def resolve_ordinary_round(
     def clear_player_exit_overlay(owner_id: str) -> None:
         if nocast_working is None:
             return
+        if owner_id not in default_authorities:
+            raise ValueError("player ultimate exit requires explicit default-pet authority")
         authority=default_authorities[owner_id]
         cleared=NocastRoundOverlay(nocast_working).after_player_exit(
             owner_id,authority.owned_pet_ids)

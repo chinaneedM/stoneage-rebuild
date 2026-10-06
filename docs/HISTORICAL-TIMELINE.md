@@ -990,6 +990,6 @@ adapter and ten-field/overlay clear are next.
   original session/independent buff views instead of retained Weaken powers.
 - Existing native evidence replays19656 scan comparisons and384 narrow
   Other_DefcharWorkInt recalculation vectors; no new source/version claim.
- 14 new actual runtime tests and642 related regressions PASS locally.
+ 15 new actual runtime tests and643 related regressions PASS locally.
 - OPEN: full command-native scan integration, original complianceParameter,
   intra-continuation late interactions, lethal638 and exact remote acceptance.

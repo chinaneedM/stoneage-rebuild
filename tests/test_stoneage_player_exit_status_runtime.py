@@ -174,6 +174,10 @@ class PlayerExitStatusRuntimeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"complete owned roster"):
             self.f.ordinary(authority,nocast_overlay=self.overlay())
 
+    def test_missing_owner_authority_with_overlay_has_explicit_validation_error(self):
+        with self.assertRaisesRegex(ValueError,"explicit default-pet authority"):
+            self.f.ordinary(nocast_overlay=self.overlay())
+
     def test_setmagicpet_prepared_powers_survive_weaken_cleanup(self):
         before=self.f.state(nocast_overlay=self.overlay(
             player=late(prepared_weaken_powers=PreparedWeakenPowers(80,24,32))),
