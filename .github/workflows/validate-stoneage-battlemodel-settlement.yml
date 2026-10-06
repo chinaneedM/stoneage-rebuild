@@ -15,6 +15,7 @@ on:
       - "tools/stoneage_battlemodel_round_action.py"
       - "tools/stoneage_default_pet_exit_source_audit.py"
       - "tools/stoneage_profit_exit_source_audit.py"
+      - "tools/stoneage_battlemodel_profit_tail_source_audit.py"
       - "tools/stoneage_profit_exit_scan_model.py"
       - "tools/stoneage_nocast_runtime_state.py"
       - "tools/stoneage_battle_round_model.py"
@@ -45,6 +46,7 @@ on:
       - "specs/STONEAGE-BATTLEMODEL-DEFAULT-EXIT-AUDIT-R1.md"
       - "specs/STONEAGE-PVE-PROFIT-EXIT-NATIVE-AUDIT-R1.md"
       - "specs/STONEAGE-PVE-PROFIT-EXIT-SCAN-MODEL-R1.md"
+      - "specs/STONEAGE-BATTLEMODEL-PROFIT-TAIL-SPLICE-R1.md"
       - "specs/STONEAGE-PLAYER-EXIT-STATUS-RUNTIME-R1.md"
       - "specs/STONEAGE-DEFAULT-PET-ULTIMATE-RUNTIME-R1.md"
       - "specs/STONEAGE-BATTLEMODEL-SETTLEMENT-AUDIT-R1.md"
@@ -140,6 +142,18 @@ jobs:
           test "$(grep -c '\"immutable_scan_model_native_comparisons\": 6552' /tmp/profit-exit-native.txt)" = 3
           grep -F 'MODEL|immutable_scan_model_native_comparisons=19656' /tmp/profit-exit-native.txt
           grep -F 'RESOLUTION|IMMUTABLE_PVE_PROFIT_EXIT_SCAN_MODEL_NATIVE_PASS' /tmp/profit-exit-native.txt
+      - name: Execute BattleModel dispatch-tail profit splice
+        run: |
+          python -m tools.stoneage_battlemodel_profit_tail_source_audit \
+            --gavin-dir /tmp/battlemodel-hit/gavin \
+            --iris-dir /tmp/battlemodel-hit/iris \
+            --bismarck-dir /tmp/battlemodel-hit/bismarck \
+            > /tmp/battlemodel-profit-tail.txt
+          cat /tmp/battlemodel-profit-tail.txt
+          test "$(grep -c '"native_dispatch_tail_cases": 3' /tmp/battlemodel-profit-tail.txt)" = 3
+          grep -F 'TOTAL|native_dispatch_tail_cases=9|profiles=3' /tmp/battlemodel-profit-tail.txt
+          grep -F 'RESOLUTION|BATTLEMODEL_DISPATCH_TAIL_PROFIT_SPLICE_NATIVE_PASS' \
+            /tmp/battlemodel-profit-tail.txt
       - name: Recheck original bounded Weaken attribute recalculation
         run: |
           python -m tools.stoneage_weaken_source_audit \
@@ -205,6 +219,7 @@ jobs:
           path: |
             /tmp/default-pet-exit.txt
             /tmp/profit-exit-native.txt
+            /tmp/battlemodel-profit-tail.txt
             /tmp/player-exit-weaken-native.txt
             /tmp/battlemodel-physical-attackseq.txt
             /tmp/battlemodel-itemcrush.txt
