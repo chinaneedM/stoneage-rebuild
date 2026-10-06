@@ -1,8 +1,9 @@
 """Typed, bounded BattleModel inputs for the existing ordinary round driver.
 
 No round-model import: the ordinary driver owns command/status timing and
-passes current work to the accepted physical loop. Death/ultimate settlement
-and persistent/coordinator dispatch remain outside this nonlethal scope.
+passes current work to the accepted physical loop. Normal death is admitted
+only by an explicit lethal-profit scope; ultimate/Exit settlement remains
+outside this bounded seam.
 """
 from __future__ import annotations
 
@@ -20,6 +21,13 @@ from tools.stoneage_battlemodel_physical_attackseq import (
 from tools.stoneage_battlemodel_itemcrush_model import BattleModelItemCrushContext
 
 BATTLEMODEL_ORDINARY_SCOPE_R1 = "nonlethal_base_round_empty_equipment_ID638_R1"
+BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1 = (
+    "lethal_normal_profit_base_round_empty_equipment_ID638_R1"
+)
+_BATTLEMODEL_ROUND_SCOPES_R1 = frozenset({
+    BATTLEMODEL_ORDINARY_SCOPE_R1,
+    BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
+})
 
 
 @dataclass(frozen=True)
@@ -33,8 +41,8 @@ class BattleModelRoundAction:
     draws: tuple[BattleModelDraw, ...]
 
     def __post_init__(self):
-        if self.scope != BATTLEMODEL_ORDINARY_SCOPE_R1:
-            raise ValueError("explicit nonlethal BattleModel ordinary scope required")
+        if self.scope not in _BATTLEMODEL_ROUND_SCOPES_R1:
+            raise ValueError("explicit bounded BattleModel ordinary scope required")
         if not isinstance(self.submission, EnemyAiBattleModelSubmission):
             raise TypeError("typed BattleModel submission required")
         if not isinstance(self.physical_context, BattleModelPhysicalContext):
@@ -90,6 +98,10 @@ def execute_current_battlemodel_round_action(
         source_pet_guard_flags=flags, itemcrush_context=action.itemcrush_context)
     if any(e.ultimate_flag for e in result.entries.values()):
         raise ValueError("BattleModel ultimate flags require full exit/profit integration")
-    if any(entries[s].hp > 0 and e.hp == 0 for s, e in result.entries.items()):
-        raise ValueError("BattleModel death requires full exit/profit integration")
+    normal_death = any(
+        entries[s].hp > 0 and e.hp == 0
+        for s, e in result.entries.items()
+    )
+    if normal_death and action.scope != BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1:
+        raise ValueError("BattleModel death requires explicit lethal-profit scope")
     return result
