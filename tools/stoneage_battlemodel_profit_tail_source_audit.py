@@ -136,6 +136,25 @@ def _source(name: str, root: Path):
     )
     if st_end!=11:
         raise ValueError("dispatch-tail witness requires original ten status fields")
+    reaction_values={
+        symbol:_feature_off_enum_value(headers["battle_event.h"],symbol)
+        for symbol in (
+            "BATTLE_MD_NONE",
+            "BATTLE_MD_ABSROB",
+            "BATTLE_MD_REFLEC",
+            "BATTLE_MD_VANISH",
+        )
+    }
+    if reaction_values != {
+        "BATTLE_MD_NONE":0,
+        "BATTLE_MD_ABSROB":1,
+        "BATTLE_MD_REFLEC":2,
+        "BATTLE_MD_VANISH":3,
+    }:
+        raise ValueError(
+            "feature-off BattleModel damage-reaction enum drift: "
+            f"{reaction_values}"
+        )
 
     clean_battle=_strip(battle)
     clean_event=_strip(event)
@@ -192,8 +211,7 @@ def _source(name: str, root: Path):
         "BATTLE_RET_NORMAL":4,
         "BATTLE_RET_CRITICAL":5,
         "BATTLE_RET_ARRANGE":6,
-        "BATTLE_MD_ABSROB":1,
-        "BATTLE_MD_VANISH":2,
+        **reaction_values,
         "TARGET_SIDE_0":20,
         "TARGET_SIDE_1":21,
         "PETSKILL_OPTION":0,
@@ -401,6 +419,7 @@ int main(void){
         "battle_flag_macros":{
             key:macros[key] for key in BATTLE_FLAG_MACROS
         },
+        "damage_reaction_enum":dict(reaction_values),
     }
 
 
