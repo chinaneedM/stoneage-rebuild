@@ -84,6 +84,7 @@ def _same_harness_damage_source(name: str, root: Path):
     forward=r'''
 int BATTLE_getRidePet(int i);
 int CHAR_getItemIndex(int i,int slot);
+void BATTLE_changeRideImage(int i);
 int print(char *fmt,...);
 '''
     wrapper=r'''
