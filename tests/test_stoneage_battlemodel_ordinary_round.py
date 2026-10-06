@@ -472,7 +472,11 @@ class OrdinaryBattleModelTests(unittest.TestCase):
         self.assertEqual(self.status["target"].status.paralysis, 0)
 
     def test_later_ordinary_death_stays_outside_both_battlemodel_scopes(self):
-        self.actors[0] = replace(self.actors[0], attack=10000)
+        # Kill the 500-HP enemy through the later ordinary attack without
+        # crossing the source maxHP*1.2+20 ultimate threshold. With the fixed
+        # no-element/newpower profile and damage_roll=0, attack=320 settles
+        # above 500 but below the direct-ultimate boundary.
+        self.actors[0] = replace(self.actors[0], attack=320)
         for scope in (
             BATTLEMODEL_ORDINARY_SCOPE_R1,
             BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
