@@ -7879,3 +7879,50 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   boundary without widening unsupported scheduler/status/presentation seams.
   Only after that gate may the two recovered positive BattleModel slots be
   evaluated for promotion. Build/version and wider runtime remain OPEN.
+
+## Phase 1 ID638 normal-death command-tail persistent/coordinator acceptance — 2026-10-06
+
+- Implementation head `6c4032a4d6f3c3ab12b2e2c0c9830033809ba33b`, tree
+  `ec14ccbe881f6065ac1afc73466a702758a6eba4`; final tested input
+  `89848f2ed92c4aa4c21c70d68356fe52b951ab40`, tree
+  `312a842d8d093fa57bb1b4a4200186dcaa63ce1a`, branch
+  `agent/lethal638-persistent-runtime-r1-20261006`.
+- **CLOSED_BOUNDED_ID638_NORMAL_DEATH_PERSISTENT_COORDINATOR.** An explicit
+  `lethal_normal_profit_base_round_empty_equipment_ID638_R1` scope now permits
+  only a **normal** ID638 BattleModel death to reach the source-shaped
+  BattleModel command-tail profit boundary. The pre-existing nonlethal scope
+  remains fail-closed for death.
+- Final BattleModel settlement `37443593822/112202958318` SUCCESS:
+  **655 tests**, **19656** original PvE profit/exit cases, **19656** immutable
+  scan/model-native comparisons, full original Battling **9/9**, exact
+  DamageSub **9/9**, original Guardian **9/9**, dispatch-tail **9/9**, and
+  **384** bounded Weaken recalculation vectors. Artifact `11401694955`,
+  digest
+  `sha256:d9bae433e4e06df60f2f18f7c6b11a697aff04377be8619fe6862e9ec6b1b41e`.
+- Integration pressure at the implementation head also passes: local runtime
+  coordinator `37443283037/112201941097` (**231 tests**), runtime golden
+  `37443283236/112201941937`, and recovered25 region/runtime-stack
+  `37443283255/112201946517` are all SUCCESS.
+- Accepted runtime chronology: coordinator re-admits the recovered ID638
+  submission against current template/skill/runtime identity; BattleModel
+  executes; one command-tail boundary is captured after all its hits; the
+  canonical immutable whole scan owns ISDIE/death processing; only its
+  `processed_death_ids` becomes persistent death authority. Input state and
+  coordinator context remain immutable.
+- Fail-closed boundaries remain deliberate: BattleModel ultimate flags and
+  BATTLE_UltimateExtra/BATTLE_Exit are still rejected; a death caused later by
+  an ordinary non-BattleModel action cannot borrow the ID638 lethal scope.
+  Automatic BattleModel AI, ride/equipment, wider callbacks, packets and
+  build/version remain OPEN.
+- Receipt:
+  `research/recovered/STONEAGE-BATTLEMODEL-ID638-NORMAL-DEATH-PERSISTENT-ACCEPTANCE-R1.json`.
+  **0 positive slots promoted.**
+- **Highest-priority unfinished task:** close the actual ID638
+  **ultimate/Exit** command-tail path. Carry BattleModel `ultimate_kind` into
+  the profit boundary and process multi-victim ultimate exits in original
+  AddProfit source-slot order rather than hit order. The critical witness is
+  Guardian pet slot5 hit before owner slot0 while AddProfit scans owner0→pet5;
+  default-pet clearing, player/pet Exit and duplicate suppression must match the
+  exact full-Battling chronology and canonical persistent/coordinator binder.
+  Only then may the two recovered positive BattleModel slots be evaluated for
+  promotion.
