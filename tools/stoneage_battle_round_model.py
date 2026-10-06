@@ -1126,6 +1126,108 @@ class OrdinaryRoundEvent:
     battlemodel_loop_resolution: BattleModelHitLoopResolution | None = None
 
 
+PROFIT_BOUNDARY_ORDINARY_PER_HIT = "ordinary_per_hit"
+PROFIT_BOUNDARY_COUNTER_CHAIN_CURRENT_DRIVER = "counter_chain_current_driver"
+PROFIT_BOUNDARY_COMBO_COMMAND_TAIL = "combo_command_tail"
+PROFIT_BOUNDARY_BATFLY_COMMAND_TAIL_CURRENT_DRIVER = "batfly_command_tail_current_driver"
+PROFIT_BOUNDARY_BATTLEMODEL_COMMAND_TAIL = "battlemodel_command_tail"
+
+_PROFIT_BOUNDARY_KINDS = frozenset({
+    PROFIT_BOUNDARY_ORDINARY_PER_HIT,
+    PROFIT_BOUNDARY_COUNTER_CHAIN_CURRENT_DRIVER,
+    PROFIT_BOUNDARY_COMBO_COMMAND_TAIL,
+    PROFIT_BOUNDARY_BATFLY_COMMAND_TAIL_CURRENT_DRIVER,
+    PROFIT_BOUNDARY_BATTLEMODEL_COMMAND_TAIL,
+})
+
+
+@dataclass(frozen=True)
+class OrdinaryProfitBoundarySnapshot:
+    """Immutable pre-AddProfit observation from the modern round driver.
+
+    This is chronology evidence, not settlement authority. The persistent
+    adapter must still run the accepted whole-scan model before charging any
+    death/loyalty effects.
+    """
+
+    boundary_kind: str
+    trigger_event_indexes: tuple[int, ...]
+    hp_by_slot: Mapping[int, int]
+    occupied_participant_id_by_slot: Mapping[int, str]
+    ultimate_kind_by_slot: Mapping[int, int]
+    prior_processed_death_ids: tuple[str, ...]
+    default_pet_authorities_by_owner_id: Mapping[
+        str, DefaultPetExitAuthority
+    ]
+    base_status_runtime_by_participant_id: Mapping[
+        str, BaseBattleStatusRuntime
+    ]
+    nocast_overlay: NocastRoundOverlay | None
+
+    def __post_init__(self) -> None:
+        if self.boundary_kind not in _PROFIT_BOUNDARY_KINDS:
+            raise ValueError("unknown profit boundary kind")
+        indexes=tuple(self.trigger_event_indexes)
+        if (
+            not indexes
+            or any(type(index) is not int or index < 0 for index in indexes)
+            or tuple(sorted(set(indexes))) != indexes
+        ):
+            raise ValueError("profit boundary requires ordered unique event indexes")
+        object.__setattr__(self, "trigger_event_indexes", indexes)
+
+        hp={int(slot):int(value) for slot,value in self.hp_by_slot.items()}
+        if any(not 0 <= slot < BATTLE_SLOT_COUNT for slot in hp):
+            raise ValueError("profit boundary HP slot outside battle array")
+        occupied={
+            int(slot):str(participant_id)
+            for slot,participant_id in self.occupied_participant_id_by_slot.items()
+        }
+        if set(occupied)-set(hp):
+            raise ValueError("profit boundary occupancy lacks HP slot")
+        if len(set(occupied.values())) != len(occupied):
+            raise ValueError("profit boundary occupancy duplicates participant")
+        ultimate={
+            int(slot):int(kind)
+            for slot,kind in self.ultimate_kind_by_slot.items()
+        }
+        if set(ultimate)-set(hp) or any(kind not in {1,2} for kind in ultimate.values()):
+            raise ValueError("profit boundary ultimate flag drift")
+        processed=tuple(str(pid) for pid in self.prior_processed_death_ids)
+        if len(set(processed)) != len(processed):
+            raise ValueError("profit boundary processed-death identities duplicate")
+        authorities=dict(self.default_pet_authorities_by_owner_id)
+        for owner_id,authority in authorities.items():
+            if (
+                not isinstance(authority,DefaultPetExitAuthority)
+                or str(owner_id) != authority.owner_id
+            ):
+                raise ValueError("profit boundary default-pet authority drift")
+        status=dict(self.base_status_runtime_by_participant_id)
+        if any(not isinstance(value,BaseBattleStatusRuntime) for value in status.values()):
+            raise TypeError("profit boundary requires typed base status runtime")
+        if self.nocast_overlay is not None and not isinstance(
+            self.nocast_overlay,NocastRoundOverlay
+        ):
+            raise TypeError("profit boundary late-status overlay has wrong type")
+        object.__setattr__(self,"hp_by_slot",MappingProxyType(hp))
+        object.__setattr__(
+            self,"occupied_participant_id_by_slot",MappingProxyType(occupied)
+        )
+        object.__setattr__(
+            self,"ultimate_kind_by_slot",MappingProxyType(ultimate)
+        )
+        object.__setattr__(self,"prior_processed_death_ids",processed)
+        object.__setattr__(
+            self,"default_pet_authorities_by_owner_id",
+            MappingProxyType(authorities),
+        )
+        object.__setattr__(
+            self,"base_status_runtime_by_participant_id",
+            MappingProxyType(status),
+        )
+
+
 @dataclass(frozen=True)
 class ResolvedOrdinaryRound:
     events: tuple[OrdinaryRoundEvent, ...]
@@ -1155,6 +1257,7 @@ class ResolvedOrdinaryRound:
     steal_item_slots_by_player_id: Mapping[str,tuple[int,...]] | None = None
     mp_by_participant_id: Mapping[str,int] | None = None
     battlemodel_cleared_command_ids: tuple[str, ...] = ()
+    profit_boundaries: tuple[OrdinaryProfitBoundarySnapshot, ...] = ()
 
 
 def _participant_battle_kind(participant: BattleParticipant) -> str:
@@ -5249,6 +5352,11 @@ def resolve_ordinary_round(
     exited_slots: set[int] = set()
     exited_ids: list[str] = []
     revivable_dead_ids=set(initial_revivable_dead_ids)
+    # Existing persistent revivable deaths correspond to already-processed
+    # source ISDIE entries. Within this round the set is advanced only at
+    # explicit profit boundaries; it is chronology metadata, not yet the
+    # persistent settlement authority.
+    profit_processed_death_ids=set(initial_revivable_dead_ids)
     capture_contexts=dict(capture_contexts or {})
     capture_rolls=dict(capture_rolls or {})
     abduct_contexts=dict(abduct_contexts or {})
@@ -5652,8 +5760,59 @@ def resolve_ordinary_round(
         nocast_working.clear()
         nocast_working.update(cleared.runtime_by_participant_id)
 
+    profit_boundaries: list[OrdinaryProfitBoundarySnapshot] = []
+
+    def capture_profit_boundary(
+        new_events: Sequence[OrdinaryRoundEvent],
+        *,
+        boundary_kind: str,
+    ) -> None:
+        if not new_events:
+            return
+        start=len(events)-len(new_events)
+        if start < 0 or any(
+            events[start+offset] is not event
+            for offset,event in enumerate(new_events)
+        ):
+            raise ValueError(
+                "profit boundary events must be the current chronological tail"
+            )
+        profit_boundaries.append(
+            OrdinaryProfitBoundarySnapshot(
+                boundary_kind=boundary_kind,
+                trigger_event_indexes=tuple(
+                    range(start,start+len(new_events))
+                ),
+                hp_by_slot=MappingProxyType(dict(hp_by_slot)),
+                occupied_participant_id_by_slot=MappingProxyType({
+                    int(slot):str(participant.participant_id)
+                    for slot,participant in by_slot.items()
+                    if int(slot) not in exited_slots
+                }),
+                ultimate_kind_by_slot=MappingProxyType(
+                    dict(ultimate_marked_slots)
+                ),
+                prior_processed_death_ids=tuple(
+                    sorted(profit_processed_death_ids)
+                ),
+                default_pet_authorities_by_owner_id=MappingProxyType(
+                    dict(default_authorities)
+                ),
+                base_status_runtime_by_participant_id=MappingProxyType(
+                    dict(status_runtime)
+                ),
+                nocast_overlay=(
+                    None
+                    if nocast_working is None
+                    else NocastRoundOverlay(nocast_working)
+                ),
+            )
+        )
+
     def register_ultimate_exits(
         new_events: Sequence[OrdinaryRoundEvent],
+        *,
+        boundary_kind: str,
     ) -> None:
         """Apply immediate BATTLE_UltimateExtra/BATTLE_Exit entry effects.
 
@@ -5690,6 +5849,11 @@ def resolve_ordinary_round(
                         "ultimate death resolved to an unknown battle slot"
                     )
                 ultimate_marked_slots[flag_slot]=int(event.ultimate_kind)
+
+        capture_profit_boundary(
+            new_events,
+            boundary_kind=boundary_kind,
+        )
 
         for event in new_events:
             if (
@@ -5790,6 +5954,19 @@ def resolve_ordinary_round(
                 )
                 active_ride=False
 
+        # Carry source-like ISDIE chronology to the next observed boundary.
+        # Ultimate/Exit entries are no longer occupied; normal dead occupied
+        # entries become processed. The persistent layer does not consume this
+        # metadata yet.
+        for observed_slot,observed in by_slot.items():
+            observed_id=str(observed.participant_id)
+            if int(observed_slot) in exited_slots:
+                profit_processed_death_ids.discard(observed_id)
+            elif int(hp_by_slot.get(observed_slot,0)) <= 0:
+                profit_processed_death_ids.add(observed_id)
+            else:
+                profit_processed_death_ids.discard(observed_id)
+
     def append_counter_chain(
         main_actor_id: str,
         main_actor_slot: int,
@@ -5835,7 +6012,10 @@ def resolve_ordinary_round(
             ride_runtime is not None and ride_runtime.mounted
         )
         events.extend(counter_events)
-        register_ultimate_exits(counter_events)
+        register_ultimate_exits(
+            counter_events,
+            boundary_kind=PROFIT_BOUNDARY_COUNTER_CHAIN_CURRENT_DRIVER,
+        )
 
     for entry in prepared.ordered_entries:
         apply_selection_events(default_authorities,events,by_slot)
@@ -6131,6 +6311,7 @@ def resolve_ordinary_round(
 
         if str(participant_id) in battlemodel_active_command_ids:
             action=battlemodel_actions[str(participant_id)]
+            battlemodel_event_start=len(events)
             before_hp=dict(hp_by_slot)
             loop=execute_current_battlemodel_round_action(action,actor_slot=slot,
                 by_slot=by_slot,hp_by_slot=hp_by_slot,status_runtime=status_runtime,
@@ -6141,6 +6322,10 @@ def resolve_ordinary_round(
             if loop is None:
                 events.append(OrdinaryRoundEvent(str(participant_id),slot,BATTLE_COM_NONE,
                     entry.action_value,"battlemodel_no_target",battlemodel_skill_id=638))
+                register_ultimate_exits(
+                    (events[-1],),
+                    boundary_kind=PROFIT_BOUNDARY_BATTLEMODEL_COMMAND_TAIL,
+                )
                 continue
             for target_slot,work in loop.entries.items():
                 target_id=work.participant_id
@@ -6173,6 +6358,10 @@ def resolve_ordinary_round(
             events.append(OrdinaryRoundEvent(str(participant_id),slot,BATTLE_COM_NONE,
                 entry.action_value,"battlemodel_action",battlemodel_skill_id=638,
                 battlemodel_loop_resolution=loop))
+            register_ultimate_exits(
+                tuple(events[battlemodel_event_start:]),
+                boundary_kind=PROFIT_BOUNDARY_BATTLEMODEL_COMMAND_TAIL,
+            )
             continue
 
         if command.command1 == BATTLE_COM_NONE:
@@ -7191,7 +7380,10 @@ def resolve_ordinary_round(
                 battle_abio_by_participant_id=battle_abio,
             )
             events.extend(combo_events)
-            register_ultimate_exits(combo_events)
+            register_ultimate_exits(
+                combo_events,
+                boundary_kind=PROFIT_BOUNDARY_COMBO_COMMAND_TAIL,
+            )
             active_ride=bool(
                 ride_runtime is not None and ride_runtime.mounted
             )
@@ -7484,7 +7676,10 @@ def resolve_ordinary_round(
             hp_by_slot[int(slot)]=int(batfly_resolution.attacker_hp_after)
             hp_by_id[batfly_actor_id]=int(batfly_resolution.attacker_hp_after)
             events.extend(batfly_events)
-            register_ultimate_exits(batfly_events)
+            register_ultimate_exits(
+                batfly_events,
+                boundary_kind=PROFIT_BOUNDARY_BATFLY_COMMAND_TAIL_CURRENT_DRIVER,
+            )
             continue
 
         vary_actor_id=str(participant_id)
@@ -8471,6 +8666,7 @@ def resolve_ordinary_round(
                 hp_by_slot[revived_slot]=int(relife_resolution.hp_after)
                 hp_by_id[revived_id]=int(relife_resolution.hp_after)
                 revivable_dead_ids.discard(revived_id)
+                profit_processed_death_ids.discard(revived_id)
                 events.append(
                     OrdinaryRoundEvent(
                         relife_actor_id,
@@ -9903,7 +10099,10 @@ def resolve_ordinary_round(
                 ultimate_kind=int(ultimate_kind),
             )
         )
-        register_ultimate_exits((events[-1],))
+        register_ultimate_exits(
+            (events[-1],),
+            boundary_kind=PROFIT_BOUNDARY_ORDINARY_PER_HIT,
+        )
         # Generic BATTLE_S_AttackDamage forces continuation FALSE on
         # Guardian/DamageReact. Dedicated BATTLE_S_FallGround does not: its
         # iRet is controlled by AttackSeq result, the post-react defindex's
@@ -10166,4 +10365,5 @@ def resolve_ordinary_round(
         ),
         mp_by_participant_id=MappingProxyType(dict(mp_working)),
         battlemodel_cleared_command_ids=tuple(sorted(battlemodel_cleared_command_ids)),
+        profit_boundaries=tuple(profit_boundaries),
     )

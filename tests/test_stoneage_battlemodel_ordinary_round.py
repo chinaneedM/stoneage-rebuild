@@ -17,6 +17,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_NONE, BATTLE_COM_ATTACK, BATTLE_COM_GUARD, BATTLE_COM_WAIT,
     BattleCommand, BattleCommandSetupEffects, BattleCombatProfile,
     OrdinaryAttackRolls, prepare_battle_round, resolve_ordinary_round,
+    PROFIT_BOUNDARY_BATTLEMODEL_COMMAND_TAIL,
 )
 from tools.stoneage_battle_status_model import BaseBattleStatusRuntime, BaseBattleStatusState, BaseStatusTurnRolls
 from tools.stoneage_battle_damage_react_model import BaseDamageReactState
@@ -124,6 +125,29 @@ class OrdinaryBattleModelTests(unittest.TestCase):
         return LocalRuntimeBattleContext("control-contract","control-world",1,
             state.session.origin_position,frozenset(),"control-payload",state.session,
             (spawned(),),state)
+
+    def test_battlemodel_records_one_command_tail_profit_boundary_after_all_hits(self):
+        result=self.run_round()
+        boundaries=[
+            boundary for boundary in result.profit_boundaries
+            if boundary.boundary_kind == PROFIT_BOUNDARY_BATTLEMODEL_COMMAND_TAIL
+        ]
+        self.assertEqual(len(boundaries),1)
+        boundary=boundaries[0]
+        self.assertEqual(boundary.hp_by_slot[0],372)
+        self.assertEqual(
+            dict(boundary.occupied_participant_id_by_slot),
+            {0:"target",10:"enemy"},
+        )
+        self.assertEqual(dict(boundary.ultimate_kind_by_slot),{})
+        self.assertEqual(boundary.prior_processed_death_ids,())
+        trigger=[result.events[index] for index in boundary.trigger_event_indexes]
+        self.assertEqual(trigger[-1].result,"battlemodel_action")
+        self.assertTrue(all(event.battlemodel_skill_id==638 for event in trigger))
+        self.assertEqual(
+            len([event for event in trigger if event.result.startswith("battlemodel_")]),
+            5,
+        )
 
     def test_coordinator_readmits_and_returns_new_context_without_modifying_before(self):
         context=self.context()

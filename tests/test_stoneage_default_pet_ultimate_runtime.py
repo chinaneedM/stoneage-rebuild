@@ -9,6 +9,7 @@ from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK, BATTLE_COM_WAIT, BATTLE_COM_S_RENZOKU,
     pack_battle_command3, prepare_battle_round, resolve_ordinary_round,
     resolve_continuation_nonbow_baseline,
+    PROFIT_BOUNDARY_ORDINARY_PER_HIT,
 )
 from tools.stoneage_battle_state_model import begin_persistent_battle, resolve_persistent_ordinary_round
 from tools.stoneage_battle_status_model import BaseBattleStatusRuntime, BaseBattleStatusState
@@ -58,6 +59,28 @@ class DefaultPetUltimateRuntimeTests(unittest.TestCase):
     def test_missing_authority_fails_closed_even_with_sole_pet(self):
         with self.assertRaisesRegex(ValueError,"explicit default-pet authority"):
             self.ordinary()
+
+    def test_player_ultimate_boundary_is_captured_before_exit_mutates_occupancy(self):
+        authority=self.authority()
+        result=self.ordinary(authority)
+        self.assertEqual(len(result.profit_boundaries),1)
+        boundary=result.profit_boundaries[0]
+        self.assertEqual(
+            boundary.boundary_kind,
+            PROFIT_BOUNDARY_ORDINARY_PER_HIT,
+        )
+        self.assertEqual(boundary.hp_by_slot[0],0)
+        self.assertEqual(
+            dict(boundary.occupied_participant_id_by_slot),
+            {0:"player",5:"pet",10:"enemy"},
+        )
+        self.assertGreater(boundary.ultimate_kind_by_slot[0],0)
+        self.assertEqual(boundary.prior_processed_death_ids,())
+        self.assertEqual(
+            boundary.default_pet_authorities_by_owner_id["player"].selected_pet_id,
+            "pet",
+        )
+        self.assertEqual(result.ultimate_exited_participant_ids,("player","pet"))
 
     def test_explicit_none_still_removes_paired_occupancy(self):
         result=self.ordinary(self.authority(None))
