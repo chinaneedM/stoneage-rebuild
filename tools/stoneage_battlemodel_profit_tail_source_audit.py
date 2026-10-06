@@ -200,7 +200,6 @@ def _source(name: str, root: Path):
 #define FALSE 0
 #define min(a,b) ((a)<(b)?(a):(b))
 #define max(a,b) ((a)>(b)?(a):(b))
-#define snprintf(...) ((void)0)
 typedef struct {union {int charaindex;int char_index;};int escape,flg,getitem[3];} BATTLE_ENTRY;
 typedef struct {int type;BATTLE_ENTRY Entry[10];} BATTLE_SIDE;
 typedef struct {int dpbattle,type,norisk,use; BATTLE_SIDE Side[2];} BATTLE;
