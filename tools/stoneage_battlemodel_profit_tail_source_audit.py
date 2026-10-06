@@ -203,6 +203,18 @@ def _source(name: str, root: Path):
         "CHAR_TYPEPET":202,
         "CHAR_TYPEENEMY":203,
         "CHAR_PETMAIL_NONE":0,
+        # battle_event.h bit flags must retain their original bit semantics.
+        # Synthetic sequential field IDs are invalid for masks because
+        # BCF_NORMAL & BCF_KAISHIN would otherwise overlap spuriously.
+        "BCF_DEATH":1 << 0,
+        "BCF_NORMAL":1 << 1,
+        "BCF_KAISHIN":1 << 2,
+        "BCF_GUARD":1 << 3,
+        "BCF_DODGE":1 << 5,
+        "BCF_ULTIMATE_1":1 << 6,
+        "BCF_ULTIMATE_2":1 << 7,
+        "BCF_GUARDIAN":1 << 9,
+        "BCF_CRUSH":1 << 13,
     }
     # These are synthetic control/field numbers only. Arithmetic/layout penalty
     # macros above retain the pinned original definitions.
@@ -388,6 +400,9 @@ def _expected(case: Case):
     # BattleModel with one living target and object_count=2 owns one excess RAND.
     rand_calls=1
     for _ in range(2):
+        # Helper checks the requested target first. Physical BattleModel then
+        # checks the Guardian slot even when AttackSeq returned -1; the source
+        # TargetCheck treats that absent slot as false.
         target_checks+=1
         if owner_hp<=0:
             continue
@@ -397,6 +412,7 @@ def _expected(case: Case):
         else:
             owner_hp=max(0,owner_hp-case.damage);damage_trace.append(("M",1,case.damage))
         damage_calls+=1
+        target_checks+=1
 
     chars={
         "1":ProfitExitCharacter("1","player",11,owner_hp,0,status_counters=(0,)*10,command=77),
