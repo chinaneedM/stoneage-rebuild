@@ -24,9 +24,17 @@ BATTLEMODEL_ORDINARY_SCOPE_R1 = "nonlethal_base_round_empty_equipment_ID638_R1"
 BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1 = (
     "lethal_normal_profit_base_round_empty_equipment_ID638_R1"
 )
+BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1 = (
+    "lethal_ultimate_exit_profit_base_round_empty_equipment_ID638_R1"
+)
 _BATTLEMODEL_ROUND_SCOPES_R1 = frozenset({
     BATTLEMODEL_ORDINARY_SCOPE_R1,
     BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
+    BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1,
+})
+_BATTLEMODEL_DEATH_SCOPES_R1 = frozenset({
+    BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
+    BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1,
 })
 
 
@@ -96,12 +104,25 @@ def execute_current_battlemodel_round_action(
         execution_scope=ITEMCRUSH_HIT_LOOP_SCOPE_R1, entries=entries,
         initial_living_slots=living, draws=action.draws, context=context,
         source_pet_guard_flags=flags, itemcrush_context=action.itemcrush_context)
-    if any(e.ultimate_flag for e in result.entries.values()):
-        raise ValueError("BattleModel ultimate flags require full exit/profit integration")
+    ultimate_entries = tuple(
+        (s,e) for s,e in result.entries.items() if e.ultimate_flag
+    )
+    if ultimate_entries:
+        if action.scope != BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1:
+            raise ValueError(
+                "BattleModel ultimate flags require explicit ultimate-exit scope"
+            )
+        if any(
+            entries[s].hp <= 0 or e.hp > 0
+            for s,e in ultimate_entries
+        ):
+            raise ValueError(
+                "BattleModel ultimate-exit scope requires a newly lethal ultimate flag"
+            )
     normal_death = any(
         entries[s].hp > 0 and e.hp == 0
         for s, e in result.entries.items()
     )
-    if normal_death and action.scope != BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1:
+    if normal_death and action.scope not in _BATTLEMODEL_DEATH_SCOPES_R1:
         raise ValueError("BattleModel death requires explicit lethal-profit scope")
     return result
