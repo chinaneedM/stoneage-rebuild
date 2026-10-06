@@ -49,3 +49,14 @@ and a bounded opt-in coordinator method. Remote exact-head acceptance is PENDING
 See `STONEAGE-BATTLEMODEL-AI-SELECTION-R1.md`. The former missing-carrier statement
 above is retained as the dated starting boundary; it no longer describes code.
 Actual active variant census/execution is separate from control AI evidence.
+
+
+## 2026-10-06 conditional seam acceptance and remaining gate
+
+The common-batch carrier and bounded selected normal-AI coordinator are accepted
+at `e2f957095a3c5a81133ed720df63dfe11396a2e1`; all four core remote workflows pass.
+The exact active variants2559/2560 have wa index2 weight0, so neither supplies
+an actual normal-AI ID638 selection. Conditional control goldens are not an
+actual-placement promotion certificate. The former missing-carrier blocker is
+resolved; actual command-entry provenance now blocks promotion. Retain both
+uses OPEN and continue `specs/STONEAGE-BATTLEMODEL-ACTUAL-DISPATCH-AUDIT-PLAN-R1.md`.

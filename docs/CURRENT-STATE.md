@@ -8078,3 +8078,63 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   failures, then evaluate remaining natural encounter/group/spawn and promotion
   gates. Do not promote on controlled AI options alone. Original active build,
   broader recipients, ride/items and historical presentation remain OPEN.
+
+
+## Phase 1 ID638 selected normal-AI conditional acceptance — 2026-10-06
+
+- **CLOSED_BOUNDED_ID638_SELECTED_NORMAL_AI_CONDITIONAL_SEAM.** Exact tested
+  input `e2f957095a3c5a81133ed720df63dfe11396a2e1`, tree `b872725d72a4967411ef01b2818667c0e8879225`; all four
+  core Actions SUCCESS: settlement **37456095056/112243963731** (674 tests),
+  coordinator **37456095209/112243962831** (244), golden
+  **37456094952/112243963191** (15), region
+  **37456095656/112243964801** (155 and826 materializable floors).
+  Local workflow-test union **850 PASS**. Initial implementation
+  `8c2ac8b829826fecbd1bf353c0a59c450d531352` also passed all27 triggered workflows.
+- Existing common normal-AI batch now carries immutable typed BattleModel
+  submissions. The bounded opt-in coordinator derives runtime index2/report
+  slot3, scheduling target and current powers, binds caller execution inputs,
+  and re-admits against exact current OPTION/template identity.
+- Both exact templates pass **60 explicit runtime goldens +60 selected normal-AI
+  control companions**, repeated in the concrete stack. Whole round/persistent
+  results match explicit selected-carrier actions; status-before-player-clock,
+  normal/ultimate deaths, default-pet Exit and command-tail whole scans remain
+  accepted. **12** current identity mutations reject per suite. Additional
+  missing/extra/unselected profiles, wrong/unused/suppressed RNG, command
+  overrides, undeclared death scopes and equipment reject without mutation.
+- **FACT, exact active configuration:** hash-verified enemy/group/encount census
+  finds one active variant per template. Both have TACTICS1, random target
+  selector1, no rn extension and **wa index2 weight0**:
+
+  | Template | Active enemy ID | wa index2 weight | Actual selected-AI cases |
+  | --- | --- | --- | --- |
+  | 1178 | 2559 | 0 | 0 |
+  | 1179 | 2560 | 0 | 0 |
+
+  Their decoded OPTION UTF8 digest is
+  `b3cacc228954fa200ec63a59e135c2aa73b58b6ff447b5ce4cb3108d075fc319`.
+  The current common weighted normal-AI path cannot select ID638 on these
+  actual configurations. Controls are independently authored, explicitly
+  labelled, and are not substituted for absent recovered selection evidence.
+  Both standalone and concrete-stack gates assert actual cases0.
+- **Promotion evaluation HOLD:** **0 slots promoted**. Complete pressure stays
+  **2486=2461 closed+22 OPEN+3 historical UB**, zero unresolved skill IDs and
+  BattleModel's two uses OPEN. A working conditional enemy seam does not prove
+  actual command-entry provenance for these recovered placements.
+- Full original Battling48 ultimate,19656 profit/exit and19656 immutable scan
+  comparisons, prior command-tail/physical/ItemCrush/status gates re-certified.
+  Native artifact11409193075 digest
+  `sha256:1862e778139c0136c25788ca92a929e1c672dfb9b88c8929cc3807ab3c5c942d`;
+  region artifact11408649935 digest
+  `sha256:cfec7c09b47e9d0a5bb8877bdad41d87a532bb97be78ef64d5317c7cc7e6d295`.
+  Derived report writeback `2bd37c14199551c42be7ab202bc32fa391abc97c` changes only the
+  aggregate stack census line relative to the exact tested input.
+- Receipt: `research/recovered/STONEAGE-BATTLEMODEL-AI-SELECTION-ACCEPTANCE-R1.json`. The preceding PENDING checkpoint
+  and earlier missing-carrier rationale are superseded by this acceptance.
+- **Highest-priority unfinished task:** audit ID638's actual command-entry
+  provenance and placement promotion criteria. Start with the exact active
+  normal variants2559/2560 and their zero wa index2 weights; determine whether
+  a player/pet command, script/NPC or other version-tagged path legitimately
+  supplies this skill. Do not alter recovered weights or infer reachability
+  from controls. Plan: `specs/STONEAGE-BATTLEMODEL-ACTUAL-DISPATCH-AUDIT-PLAN-R1.md`. Original active
+  build/Taiwan-v1 membership, wider recipients, ride/items and historical
+  scheduler/presentation remain OPEN.

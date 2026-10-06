@@ -1189,3 +1189,15 @@ adapter and ten-field/overlay clear are next.
   A separate hash-verified active variant census will distinguish real normal
   AI options from controls. This does not prove natural encounter reachability
   or original active-build/Taiwan-v1 membership;0 placements are promoted.
+
+
+- **2026-10-06 — FACT (bounded recovered25 conditional experiment):**
+  exact input `e2f957095a3c5a81133ed720df63dfe11396a2e1` passes four core workflows,
+  full826-floor region and850 local tests. The normal-AI selected typed ID638
+  seam is accepted with60 control companions plus60 exact-template runtime
+  cases, repeated in the concrete stack. Actual active variants2559/2560
+  (templates1178/1179) have normal TACTICS1 but wa index2 weight0; both have
+  zero actual selected-AI cases. This proves absence from that current common
+  weighted selection path, not universal absence of another command entry.
+  **No slot promoted**; ledger2461 closed/22 OPEN/3 UB retained.
+  Receipt: `research/recovered/STONEAGE-BATTLEMODEL-AI-SELECTION-ACCEPTANCE-R1.json`.

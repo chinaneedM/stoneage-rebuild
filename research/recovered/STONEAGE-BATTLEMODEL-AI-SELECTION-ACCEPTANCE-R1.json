@@ -1,0 +1,141 @@
+{
+  "schema": "stoneage.battlemodel-selected-normal-ai-acceptance.r1",
+  "status": "CLOSED_BOUNDED_ID638_SELECTED_NORMAL_AI_CONDITIONAL_SEAM",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "input_sha": "e2f957095a3c5a81133ed720df63dfe11396a2e1",
+  "input_tree": "b872725d72a4967411ef01b2818667c0e8879225",
+  "initial_implementation_sha": "8c2ac8b829826fecbd1bf353c0a59c450d531352",
+  "initial_all_workflows": {
+    "total": 27,
+    "success": 27
+  },
+  "counts": {
+    "local_unique_tests": 850,
+    "settlement_tests": 674,
+    "coordinator_tests": 244,
+    "golden_tests": 15,
+    "region_tests": 155,
+    "exact_template_runtime_goldens": 60,
+    "selected_normal_ai_controls_per_suite": 60,
+    "current_identity_rejections_per_suite": 12,
+    "actual_active_variant_goldens_per_suite": 0,
+    "materializable_floors": 826,
+    "native_ultimate_comparisons": 48,
+    "native_profit_exit_cases": 19656,
+    "immutable_scan_native_comparisons": 19656
+  },
+  "pressure": {
+    "total_positive_uses": 2486,
+    "closed_runtime": 2461,
+    "open": 22,
+    "historical_ub": 3,
+    "battlemodel_uses": 2,
+    "battlemodel_status": "open",
+    "promoted_slots": 0
+  },
+  "boundary": {
+    "version": "recovered25",
+    "evidence_role": "LATER_RECOVERED",
+    "work_and_rng": "explicit controlled experiments",
+    "normal_ai_control_option": "independently authored",
+    "normal_ai_typed_dispatch": "CLOSED_BOUNDED",
+    "actual_active_variant_to_ID638_selection": "OPEN_NO_ADMITTED_NORMAL_VARIANT",
+    "natural_encounter_group_spawn": "OPEN",
+    "original_active_build": "OPEN",
+    "ride_items_wider_recipients_scheduler_presentation": "OPEN"
+  },
+  "promotion": {
+    "decision": "HOLD",
+    "reason": "Exact active normal variants2559/2560 have wa index2 weight0; independent control options cannot certify actual recovered selection."
+  },
+  "accepted_at_utc": "2026-10-06T11:31:55.096Z",
+  "derived_report_sha": "2bd37c14199551c42be7ab202bc32fa391abc97c",
+  "derived_report_tree": "a876229759fd300b4e4227c4ee1b52d7eeb66a92",
+  "runs": [
+    {
+      "id": 37456095209,
+      "name": "Validate StoneAge local runtime session coordinator",
+      "head_sha": "e2f957095a3c5a81133ed720df63dfe11396a2e1",
+      "conclusion": "success",
+      "job_id": 112243962831
+    },
+    {
+      "id": 37456095656,
+      "name": "Validate StoneAge recovered25 region payload source",
+      "head_sha": "e2f957095a3c5a81133ed720df63dfe11396a2e1",
+      "conclusion": "success",
+      "job_id": 112243964801
+    },
+    {
+      "id": 37456094952,
+      "name": "Validate StoneAge runtime golden contract",
+      "head_sha": "e2f957095a3c5a81133ed720df63dfe11396a2e1",
+      "conclusion": "success",
+      "job_id": 112243963191
+    },
+    {
+      "id": 37456095056,
+      "name": "Validate StoneAge BattleModel base DamageSub settlement",
+      "head_sha": "e2f957095a3c5a81133ed720df63dfe11396a2e1",
+      "conclusion": "success",
+      "job_id": 112243963731
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11409193075,
+      "name": "battlemodel-settlement",
+      "digest": "sha256:1862e778139c0136c25788ca92a929e1c672dfb9b88c8929cc3807ab3c5c942d"
+    },
+    {
+      "id": 11408649935,
+      "name": "battlemodel-recovered-runtime-golden",
+      "digest": "sha256:cfec7c09b47e9d0a5bb8877bdad41d87a532bb97be78ef64d5317c7cc7e6d295"
+    }
+  ],
+  "actual_variant_census": [
+    {
+      "active_variants": 1,
+      "cases": 0,
+      "eligible_normal_variants": 0,
+      "option_utf8_sha256": null,
+      "tempno": 1178,
+      "variant_admissions": [
+        {
+          "enemy_id": 2559,
+          "option_utf8_sha256": "b3cacc228954fa200ec63a59e135c2aa73b58b6ff447b5ce4cb3108d075fc319",
+          "rejection_reasons": [
+            "wa_index2_zero_weight"
+          ],
+          "rn_extension": false,
+          "tactics": 1,
+          "target_selection": 1,
+          "wa_index2_weight": 0
+        }
+      ],
+      "witness_enemy_id": null
+    },
+    {
+      "active_variants": 1,
+      "cases": 0,
+      "eligible_normal_variants": 0,
+      "option_utf8_sha256": null,
+      "tempno": 1179,
+      "variant_admissions": [
+        {
+          "enemy_id": 2560,
+          "option_utf8_sha256": "b3cacc228954fa200ec63a59e135c2aa73b58b6ff447b5ce4cb3108d075fc319",
+          "rejection_reasons": [
+            "wa_index2_zero_weight"
+          ],
+          "rn_extension": false,
+          "tactics": 1,
+          "target_selection": 1,
+          "wa_index2_weight": 0
+        }
+      ],
+      "witness_enemy_id": null
+    }
+  ],
+  "next": "Audit actual ID638 command-entry provenance (pet commands/script or other version-tagged path) and placement promotion criteria, retaining exact active enemy weights and both uses OPEN."
+}

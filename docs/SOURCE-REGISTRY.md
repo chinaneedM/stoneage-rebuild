@@ -4131,3 +4131,28 @@ remain explicitly OPEN. No original source/payload committed.
 - Normal control OPTION is independently authored and explicitly labelled.
   Active recovered variant admission/execution and natural encounter provenance
   will be recorded from exact-head CI, not inferred from controls.
+
+
+## 2026-10-06 — Accepted ID638 conditional selected normal-AI seam
+
+- Tested input `e2f957095a3c5a81133ed720df63dfe11396a2e1`, tree `b872725d72a4967411ef01b2818667c0e8879225`.
+  Four core exact-head workflows SUCCESS: settlement37456095056/112243963731
+  (674 tests), coordinator37456095209/112243962831 (244), golden37456094952/
+  112243963191 (15), region37456095656/112243964801 (155,826 floors).
+  Local union850 PASS; initial implementation's27 triggered workflows PASS.
+- Native artifact11409193075
+  (`sha256:1862e778139c0136c25788ca92a929e1c672dfb9b88c8929cc3807ab3c5c942d`);
+  region artifact11408649935
+  (`sha256:cfec7c09b47e9d0a5bb8877bdad41d87a532bb97be78ef64d5317c7cc7e6d295`).
+  Writeback `2bd37c14199551c42be7ab202bc32fa391abc97c` contains derived aggregate metadata only.
+- Exact active census: template1178/enemy2559 and template1179/enemy2560,
+  TACTICS1/selector1, rn absent, wa index2 weight0, eligibility0 and actual
+  goldens0 per standalone/concrete suite. Decoded OPTION UTF8 SHA256
+  `b3cacc228954fa200ec63a59e135c2aa73b58b6ff447b5ce4cb3108d075fc319`.
+  This digest labels decoded text; active source file identity is separately
+  pinned by the complete enemy.txt SHA256 recorded above.
+- Independently authored control AI yields60 cases per suite. It does not
+  replace actual recovered configuration, certify natural reachability or
+  establish original active-build/Taiwan-v1 membership. Pressure remains
+  2486=2461 closed+22 OPEN+3 UB;0 slots promoted.
+- Full receipt `research/recovered/STONEAGE-BATTLEMODEL-AI-SELECTION-ACCEPTANCE-R1.json`; next gate `specs/STONEAGE-BATTLEMODEL-ACTUAL-DISPATCH-AUDIT-PLAN-R1.md`.
