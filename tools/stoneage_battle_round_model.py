@@ -37,6 +37,7 @@ from tools.stoneage_enemy_ai_attack_magic_bridge import (
 )
 from tools.stoneage_battlemodel_round_action import (
     BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
+    BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1,
     BattleModelRoundAction,
     execute_current_battlemodel_round_action,
 )
@@ -5888,16 +5889,24 @@ def resolve_ordinary_round(
                         str(by_slot[dead_slot].participant_id)
                     )
 
-        for event in new_events:
+        death_events=[
+            event for event in new_events
             if (
-                event.target_hp_before is None
-                or event.target_hp_after is None
-                or int(event.target_hp_before) <= 0
-                or int(event.target_hp_after) > 0
-                or event.resolved_target_slot is None
-            ):
-                continue
+                event.target_hp_before is not None
+                and event.target_hp_after is not None
+                and int(event.target_hp_before) > 0
+                and int(event.target_hp_after) == 0
+                and event.resolved_target_slot is not None
+            )
+        ]
+        if boundary_kind == PROFIT_BOUNDARY_BATTLEMODEL_COMMAND_TAIL:
+            # BattleModel may write HP in hit order that differs from the one
+            # command-tail BATTLE_AddProfit whole scan. Source AddProfit scans
+            # slot0..slot19, so ultimate/Exit side effects must follow slot
+            # order here rather than BattleModel hit order.
+            death_events.sort(key=lambda event:int(event.resolved_target_slot))
 
+        for event in death_events:
             target_slot=int(event.resolved_target_slot)
             if target_slot not in by_slot:
                 raise ValueError(
@@ -6369,7 +6378,9 @@ def resolve_ordinary_round(
                     guardian_redirected=actual is not None and actual!=hit.attack.target_slot,
                     guardian_slot=actual if actual!=hit.attack.target_slot else None,
                     status_application_resolution=hit.status_application,
-                    damage_react_resolution=hit.reaction,battlemodel_skill_id=638))
+                    damage_react_resolution=hit.reaction,
+                    ultimate_kind=int(hit.ultimate_kind),
+                    battlemodel_skill_id=638))
             events.append(OrdinaryRoundEvent(str(participant_id),slot,BATTLE_COM_NONE,
                 entry.action_value,"battlemodel_action",battlemodel_skill_id=638,
                 battlemodel_loop_resolution=loop))
@@ -10297,9 +10308,31 @@ def resolve_ordinary_round(
 
     carried_commands={}
     if battlemodel_actions and ultimate_marked_slots:
-        raise ValueError(
-            "BattleModel bounded round still excludes ultimate exit/profit compositions"
-        )
+        admitted_battlemodel_ultimate_slots=set()
+        for event in events:
+            if (
+                event.battlemodel_skill_id != 638
+                or int(event.ultimate_kind) <= 0
+                or event.resolved_target_slot is None
+                or event.target_hp_before is None
+                or event.target_hp_after is None
+                or int(event.target_hp_before) <= 0
+                or int(event.target_hp_after) != 0
+            ):
+                continue
+            action=battlemodel_actions.get(str(event.participant_id))
+            if (
+                action is not None
+                and action.scope == BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1
+            ):
+                admitted_battlemodel_ultimate_slots.add(
+                    int(event.resolved_target_slot)
+                )
+        if set(ultimate_marked_slots)-admitted_battlemodel_ultimate_slots:
+            raise ValueError(
+                "BattleModel bounded round still excludes ultimate "
+                "outside the explicit ID638 ultimate-exit scope"
+            )
     if battlemodel_actions:
         for event in events:
             is_death=(
@@ -10315,7 +10348,10 @@ def resolve_ordinary_round(
             if (
                 event.battlemodel_skill_id != 638
                 or action is None
-                or action.scope != BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1
+                or action.scope not in {
+                    BATTLEMODEL_LETHAL_PROFIT_SCOPE_R1,
+                    BATTLEMODEL_ULTIMATE_EXIT_SCOPE_R1,
+                }
             ):
                 raise ValueError(
                     "BattleModel bounded round excludes death outside the "
