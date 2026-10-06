@@ -1,0 +1,55 @@
+{
+  "schema": "STONEAGE_PERSISTENT_PROCESSED_DEATH_STATE_ACCEPTANCE_R1",
+  "status": "CLOSED_BOUNDED_PERSISTENT_PROCESSED_DEATH_STATE",
+  "date": "2026-10-06",
+  "baseline_main_commit": "5498fc95668a688908d593a19abd418e44b0f309",
+  "accepted_commit": "55416079254b542c2c792d2848b6d2a493345335",
+  "accepted_tree": "3a45d85cca0de26cdc597746f49a1d01655b6216",
+  "branch": "agent/processed-death-state-r1-20261006",
+  "remote_validation": {
+    "triggered_workflow_count": 32,
+    "all_success": true,
+    "settlement": {
+      "run_id": 37428752934,
+      "job_id": 112154374994,
+      "conclusion": "success",
+      "tests": 648,
+      "immutable_scan_model_native_comparisons": 19656,
+      "weaken_recalculation_vectors": 384
+    },
+    "recovered25_region": {
+      "run_id": 37428752792,
+      "job_id": 112154374696,
+      "conclusion": "success"
+    },
+    "artifact": {
+      "id": 11395837824,
+      "name": "battlemodel-settlement",
+      "digest": "sha256:6fe85f8dc911fa2854e1d68d5510effdfce87fd671e63d7f7e6374aa5dd6f372"
+    }
+  },
+  "accepted_scope": [
+    "PersistentBattleState carries profit_processed_death_ids independently from enemy ReLife eligibility",
+    "processed-death identities may be player pet or enemy, must remain in battle session, must have zero HP, and cannot be ordinary/ultimate exited",
+    "actual ordinary round receives explicit prior processed-death state and exposes the final processed-death state",
+    "normal occupied deaths advance processed-death state only after observed profit boundaries",
+    "ReLife removes revived identities from processed-death state",
+    "ultimate/Exit removes exited identities from processed-death state including owned pets removed by player Exit authority",
+    "capture transition removes captured identities",
+    "cross-round normal pet death remains visible as prior processed death at the next profit boundary"
+  ],
+  "explicit_nonclaims": [
+    "Persistent processed-death state is not yet settlement authority",
+    "_pending_profit_after_ordinary_round remains event-order based",
+    "whole-scan binder is not yet integrated",
+    "noncanonical or sparse original roster mapping is not admitted",
+    "counter/BatFly/Combo original command chronology is not newly certified",
+    "lethal BattleModel ID638 remains rejected",
+    "pet/party/ride/item profit recipients remain open",
+    "original build/version membership remains open"
+  ],
+  "historical_claims_added": false,
+  "original_source_or_assets_committed": false,
+  "positive_slots_promoted": 0,
+  "next_priority": "Build a fail-closed canonical SIDE_OFFSET10 boundary-to-ProfitExitSnapshot binder for supported ordinary per-hit and nonlethal BattleModel command-tail boundaries, execute resolve_profit_exit_scan sequentially, and replace supported death/charm/loyalty charges with processed_death_ids while leaving unsupported groupings on the legacy path until original chronology is certified."
+}

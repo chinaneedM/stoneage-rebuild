@@ -1030,3 +1030,16 @@ adapter and ten-field/overlay clear are next.
   original command chronology, actual Guardian/multi-victim composition and
   lethal638 remain unresolved.
 
+### 2026-10-06 — Persistent processed-death / ISDIE state accepted
+
+- MODEL/FACT: exact input `55416079254b542c2c792d2848b6d2a493345335` passes 32/32 triggered workflows.
+  Settlement `37428752934/112154374994` reports 648 tests, 19656 accepted
+  scan/model-native comparisons and 384 bounded Weaken recalculation vectors;
+  recovered25 region `37428752792` passes.
+- DESIGN: source ISDIE is now persistent runtime state independent from ReLife
+  eligibility. It may represent zero-HP player/pet/enemy entries still in the
+  battle array, survives rounds, and is cleared by revive or exit/removal.
+- OPEN: the state is not yet settlement authority. The persistent pending-profit
+  walk remains event-order based until a canonical boundary binder drives
+  `resolve_profit_exit_scan()` and consumes `processed_death_ids`.
+

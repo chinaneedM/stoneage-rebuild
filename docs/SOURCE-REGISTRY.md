@@ -3894,3 +3894,22 @@ remain explicitly OPEN. No original source/payload committed.
   bridge, actual Guardian/multi-victim composition, lethal638, wider profit
   recipients/features and build/version membership remain OPEN.
 
+### SRC-PERSISTENT-PROCESSED-DEATH-STATE-R1 — remote acceptance 2026-10-06
+
+- Modern runtime state certificate only; no original source/assets or new
+  original native vectors committed. Exact input `55416079254b542c2c792d2848b6d2a493345335`, tree
+  `3a45d85cca0de26cdc597746f49a1d01655b6216`.
+- **32/32** triggered workflows SUCCESS. Settlement
+  `37428752934/112154374994`: 648 tests, 19656 immutable scan/model-native
+  comparisons, 384 bounded Weaken recalculation vectors; artifact
+  `11395837824`,
+  `sha256:6fe85f8dc911fa2854e1d68d5510effdfce87fd671e63d7f7e6374aa5dd6f372`.
+  Recovered25 region `37428752792/112154374696` SUCCESS.
+- Accepted scope: persistent all-side processed-death/ISDIE state, cross-round
+  carry, ReLife/Exit/capture clearing, and later boundary visibility. ReLife
+  eligibility remains a separate enemy-only concept.
+- Receipt:
+  `research/recovered/STONEAGE-PERSISTENT-PROCESSED-DEATH-STATE-ACCEPTANCE-R1.json`.
+  Whole-scan settlement consumption, sparse/source roster mapping, full original
+  command chronology, lethal638 and wider recipients/features remain OPEN.
+

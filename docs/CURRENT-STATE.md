@@ -7640,3 +7640,35 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   automatic AI and specific638 golden/region/hash-verified pressure remain
   OPEN; no positive-slot promotion.
 
+## Phase 1 persistent processed-death / ISDIE state remote acceptance — 2026-10-06
+
+- Exact accepted input `55416079254b542c2c792d2848b6d2a493345335`, tree `3a45d85cca0de26cdc597746f49a1d01655b6216`, branch
+  `agent/processed-death-state-r1-20261006`.
+- **CLOSED_BOUNDED_PERSISTENT_PROCESSED_DEATH_STATE.** All **32/32** triggered
+  workflows SUCCESS. BattleModel settlement `37428752934/112154374994`
+  reports **648 tests**, **19656** immutable-scan/model-native comparisons and
+  the existing **384** bounded Weaken recalculation vectors. Artifact
+  `11395837824`, digest
+  `sha256:6fe85f8dc911fa2854e1d68d5510effdfce87fd671e63d7f7e6374aa5dd6f372`.
+  Full recovered25 region `37428752792/112154374696` also SUCCESS.
+- Accepted behavior: `profit_processed_death_ids` is now a true persistent
+  source-ISDIE projection independent from ReLife. It supports player/pet/enemy
+  identities that remain in-session at zero HP, rejects living or exited
+  identities, crosses round boundaries, is removed by ReLife/Exit/capture, and
+  is supplied to each later profit-boundary snapshot. A real two-round witness
+  confirms a normal pet death remains marked processed at the next boundary.
+- Receipt:
+  `research/recovered/STONEAGE-PERSISTENT-PROCESSED-DEATH-STATE-ACCEPTANCE-R1.json`.
+  This still does **not** make `_pending_profit_after_ordinary_round()`
+  source-shaped settlement authority and does not admit lethal638.
+- **Highest-priority unfinished task:** add a fail-closed canonical
+  SIDE_OFFSET10 boundary-to-`ProfitExitSnapshot` binder for only the supported
+  ordinary per-hit and nonlethal BattleModel command-tail boundaries, execute
+  `resolve_profit_exit_scan()` sequentially, and let
+  `processed_death_ids` drive new death/charm/loyalty charges. Sparse or
+  noncanonical roster layouts and unsupported grouping must remain rejected or
+  on the explicitly legacy path until original command chronology is certified.
+  Actual Guardian/multi-victim command composition remains required before
+  lethal638; pet/party/ride/item profit recipients, build/version, AI and
+  specific638 golden/region pressure remain OPEN.
+
