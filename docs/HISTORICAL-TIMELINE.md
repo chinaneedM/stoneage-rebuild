@@ -1324,3 +1324,18 @@ observations, not a deployed server or historical executable reconstruction.
 Unrelated subsystem bodies and full compliance/Exit are outside this native
 projection. No timing profile is flattened or source anomaly repaired. Pressure
 remains2465/18/3 of2486, and feature introduction/JSS/Taiwan-v1 membership stay OPEN.
+
+
+## 2026-10-07 — Descendant BecomePig complete restoration callers witnessed
+
+FACT within three pinned descendants and controlled helper domains: independent
+Action37624829843 passes165900 original complete compliance/Exit comparisons
+at O0/O2 GNU99 with nonrecovering UBSan. New rider lookup follows pig-image
+preservation in gavin/iris; Bismarck differs. Stat rebuilding precedes later
+appearance/ride guards. Unused-battle error can follow appearance/compliance/
+notification effects, so it is not a rollback guarantee. PETFALL sends temporary
+rider-2 before final-1; ordinary pig counter persists through the bounded exit.
+These complete caller bodies run with controlled equipment/stat/ride and recorded
+network/badstatus dependencies, not original helper implementations or deployed
+executable semantics. Full original composition and historical introduction remain
+OPEN. No capability promotions; pressure stays2465/18/3 out of2486.

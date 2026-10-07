@@ -1,0 +1,78 @@
+{
+  "schema": "stoneage.becomepig-restoration-caller-acceptance.r1",
+  "status": "CLOSED_BOUNDED_WHOLE_DEFAULT_COMPLIANCE_EXIT_CALLERS_WITH_CONTROLLED_DEPENDENCIES",
+  "accepted_on": "2026-10-07",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "515fc09b77a36c5c1ea46918c7abc24085c77034",
+    "tree": "ce80e0bfa2336d834f1c61e4f5c902849b0dd563"
+  },
+  "remote_validation": {
+    "run_id": 37624829843,
+    "job_id": 112803823511,
+    "conclusion": "success",
+    "tests": 29,
+    "source_profiles": 3,
+    "structural_gates_per_profile": 24,
+    "artifact_id": 11483293292,
+    "artifact_sha256": "949c5a2ce1fdef10e66eb8f8fbcf346798c30fcaae70062dedf883e1e8f013cc"
+  },
+  "derived_writeback": {
+    "sha": "9176fd1e88940f35541412329f30a8afefcebb9b",
+    "tree": "c194368e8d4580af906815016c9402784addc32b",
+    "path": "research/recovered/STONEAGE-BECOMEPIG-RESTORATION-NATIVE-R1.txt",
+    "sha256": "87bed383ed66307dc7368799c2a314879acc5c399c5c64a01a3e10e70fe976ac",
+    "matches_local_report": true
+  },
+  "source_domain_receipt": "research/recovered/STONEAGE-BECOMEPIG-RESTORATION-SOURCE-DOMAINS-R1.json",
+  "native": {
+    "entire_functions": [
+      "_CHAR_complianceParameter",
+      "_BATTLE_Exit"
+    ],
+    "default_preprocessing": "actual_version_h_and_source_include_paths",
+    "standard": "gnu99_preserving_Bismarck_typeof_min",
+    "optimization_levels": [
+      "O0",
+      "O2"
+    ],
+    "UBSan": "nonrecovering",
+    "direct_compliance_cases_per_profile_per_optimization": 3074,
+    "complete_exit_cases_per_profile_per_optimization": 24576,
+    "comparisons": 165900,
+    "prior_clock_snapshots_reproduced": 419904,
+    "comparison": "return_code_player_pet_state_all_battle_entries_and_full_ordered_call_image_rider_status_events"
+  },
+  "facts_within_declared_dependency_domain": [
+    "stat_rebuild_and_HP_MP_cap_precede_later_appearance_guards",
+    "gavin_iris_rider_lookup_follows_pig_image_preservation_and_can_replace_it",
+    "Bismarck_rider_image_guard_differs_and_new_rider_lookup_is_absent",
+    "invalid_battle_returns_before_appearance_but_unused_battle_returns_after_appearance_compliance_notifications",
+    "complete_Exit_retains_ordinary_pig_counter_and_matched_player_mode_is_FINAL",
+    "PETFALL_minus2_is_sent_before_RIDEPET_resets_minus1"
+  ],
+  "controlled_dependencies": [
+    "symbolic_field_handles_and_minimal_compatible_structures_not_original_ABI",
+    "work_init_equipment_stat_and_image_mapper_helpers_controlled_not_original_bodies",
+    "one_synthetic_static_ride_table_and_controlled_dynamic_lookups",
+    "badstatus_network_party_skillup_calls_recorded_only",
+    "valid_live_owned_pet_slot0_inactive_follow_profession_mail_oblivion_ticket",
+    "PvE_player_exit_lower_player_slots0_or4"
+  ],
+  "open": [
+    "original_helper_bodies_actual_equipment_ride_tables_and_cross_subsystem_timers",
+    "HP1_without_death_flag_pet_death_follow_ownership_repair_PvP_watch_larger_topologies",
+    "invalid_rider_enemy_deletion_and_original_signed_time_domains",
+    "main_hit_Guardian_counter_retarget_order",
+    "typed_ordered_persistent_coordinator_runtime",
+    "original_executable_build_PRNG_ordinals_feature_dates_JSS_Taiwan_v1"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  },
+  "next": "Gate original helper/equipment/ride and badstatus composition, main-hit/Guardian/counter/retarget order and cross-subsystem lifecycle before typed persistent/coordinator admission."
+}

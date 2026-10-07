@@ -8853,3 +8853,38 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   ride composition and main-hit/Guardian/counter/retarget order; broader Exit,
   timer interactions and typed/persistent/coordinator runtime remain OPEN.
   Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB;0 promotions.
+
+
+## 2026-10-07 — BecomePig complete restoration callers ACCEPTED within controlled dependencies
+
+- CLOSED_BOUNDED_WHOLE_DEFAULT_COMPLIANCE_EXIT_CALLERS_WITH_CONTROLLED_DEPENDENCIES.
+  Exact input515fc09b77a36c5c1ea46918c7abc24085c77034/tree
+  ce80e0bfa2336d834f1c61e4f5c902849b0dd563 passes Action37624829843/job
+  112803823511.29 tooling/domain/identity tests and24 structural gates/profile
+  PASS. Three clean pinned source trees and exact complete-function hashes match.
+- Whole default-header _CHAR_complianceParameter and _BATTLE_Exit bodies execute
+  without a control projection; Exit calls the complete original compliance
+  body. O0/O2 GNU99+nonrecovering UBSan165900 comparisons:3074 direct compliance
+  and24576 Exit cases per profile/optimization. Player/pet state, entry indices/
+  escapes and complete ordered calls/image/rider/status traces match oracle.
+- Controlled original dependencies remain: symbolic fields/minimal ABI witnesses,
+  work-init/equipment/stat/image mapper and static/dynamic ride outputs, recorded
+  bad-status/network/party/skill-up hooks. Original helper bodies/tables are not
+  accepted. Valid live owned pet, inert profession/follow/mail/oblivion/ticket,
+  PvE player slots0/4 only. Prior419904 clock snapshots reproduce unchanged.
+- FACT within that domain: stats rebuild/cap precedes appearance guards; gavin/
+  iris ride lookup can overwrite preserved pig image and differs from Bismarck.
+  Unused-battle error follows appearance/compliance notifications; invalid battle
+  rejects earlier. PETFALL temporary rider-2 reaches status before rider-1;
+  ordinary pig counter persists and matched player mode becomes FINAL.
+- Remote report matches local byte-for-byte; writeback9176fd1e88940f35541412329f30a8afefcebb9b.
+  Artifact11483293292 SHA256949c5a2ce1fdef10e66eb8f8fbcf346798c30fcaae70062dedf883e1e8f013cc.
+  Receipt research/recovered/STONEAGE-BECOMEPIG-RESTORATION-ACCEPTANCE-R1.json;
+  spec specs/STONEAGE-BECOMEPIG-RESTORATION-R1.md. PENDING superseded only in
+  complete-caller/controlled-dependency scope; full original restoration stays OPEN.
+- Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB;0 promotions.
+  Highest-priority unfinished task: gate original helper/equipment/ride and
+  bad-status composition, main-hit/Guardian/counter/retarget order and item/NPC/
+  map timer interactions before typed631/635, persistent/coordinator admission.
+  Broader HP1-without-death, pet-death/follow ownership, PvP/watch/larger entries,
+  invalid rider/enemy deletion and original executable/build/PRNG remain OPEN.

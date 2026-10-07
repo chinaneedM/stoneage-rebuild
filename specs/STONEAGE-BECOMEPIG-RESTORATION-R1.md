@@ -69,3 +69,15 @@ remains2486=2465 closed+18 OPEN+3 historical UB; zero BecomePig promotions.
 After remote PASS, gate actual helper composition and main-hit/Guardian/counter/
 retarget order, then composed lifecycle transitions before typed631/635 and
 persistent/coordinator admission. Preserve unused628 and all timing profiles.
+
+
+## 2026-10-07 — Complete caller gate ACCEPTED within declared dependencies
+
+The PENDING statement is superseded only for complete default-header function
+bodies under the dependency/domain boundaries above. Exact input
+515fc09b77a36c5c1ea46918c7abc24085c77034/treece80e0bfa2336d834f1c61e4f5c902849b0dd563
+passes Action37624829843/job112803823511.165900 native comparisons and29 tests
+PASS;419904 prior clock snapshots reproduce. Remote derived report matches
+local exactly. Receipt: research/recovered/STONEAGE-BECOMEPIG-RESTORATION-ACCEPTANCE-R1.json.
+Original helper/table composition and broader caller domains remain OPEN;
+no runtime promotions or historical executable claim.

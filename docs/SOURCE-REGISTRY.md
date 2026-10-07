@@ -4335,3 +4335,25 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
 - Source C remains transient. No whole-server/executable or original deployment
   configuration claim; no runtime promotions. Full Exit/compliance/equipment/
   ride, cross-subsystem timers and ordered attack composition remain OPEN.
+
+
+### SRC-BECOMEPIG-RESTORATION-CALLERS-R1 — bounded complete-function acceptance 2026-10-07
+
+- Exact input515fc09b77a36c5c1ea46918c7abc24085c77034/tree
+  ce80e0bfa2336d834f1c61e4f5c902849b0dd563 passes Action37624829843/job
+  112803823511.29 regression/domain/identity tests;3 source profiles24 structural
+  gates each. Complete char/char.c and battle/battle.c hashes plus actual-default
+  preprocessed function hashes in STONEAGE-BECOMEPIG-RESTORATION-SOURCE-DOMAINS-R1.json.
+- Whole original _CHAR_complianceParameter/_BATTLE_Exit execute, including nested
+  original compliance caller, at O0/O2 GNU99+nonrecovering UBSan165900 cases.
+  Original source remains transient. Return/state/entry/ordered-call traces agree
+  with oracle; previous419904 clock snapshots reproduce unchanged.
+- Fixed dependency witnesses, symbolic field/ABI and synthetic static/dynamic
+  ride/equipment results remain explicit. This does not execute original helper
+  bodies, actual tables or active bad-status systems. Inactive follow/profession/
+  mail/ticket and valid live owned pet define the bounded PvE player-exit slice.
+- Derived writeback9176fd1e88940f35541412329f30a8afefcebb9b; artifact11483293292
+  SHA256949c5a2ce1fdef10e66eb8f8fbcf346798c30fcaae70062dedf883e1e8f013cc.
+  Exact acceptance/report digest: STONEAGE-BECOMEPIG-RESTORATION-ACCEPTANCE-R1.json.
+  Zero runtime promotions; helper/order/cross-subsystem and broader Exit domains
+  remain OPEN. No historical executable, feature date or JSS/Taiwan-v1 inference.
