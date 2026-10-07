@@ -100,3 +100,14 @@ item/NPC/map timer composition; remaining stat/property/broader ownership paths
 stay explicit before typed631/635/persistent/coordinator admission. Preserve
 unused628 and all default-source/timing/OPTION distinctions. Pressure remains
 2486=2465 closed capability+18 OPEN+3 historical UB; BecomePig promotions0.
+
+## Remote acceptance
+
+CLOSED_BOUNDED_ORIGINAL_LOOKUP_TABLES_HELPERS_AND_COMPLETE_RESTORATION_COMPOSITION.
+Exact input164b0df7f3effd4667567a460d866ac7adf5a793/tree
+5619b5c3e67f7347a2f960460c7bf6ab319cc684 passes Action37632716905/job112830873632.
+50 tests and322872 original lookup/table/composition comparisons PASS. Previous
+373272 badstatus/165900 caller/419904 clock comparisons reproduce with unchanged
+reports. New derived report matches local byte-for-byte; receipt
+`research/recovered/STONEAGE-BECOMEPIG-LOOKUP-ACCEPTANCE-R1.json`.
+Broader dependency, inactive source and runtime domains are not promoted.

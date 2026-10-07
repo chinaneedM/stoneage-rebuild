@@ -1,0 +1,116 @@
+{
+  "schema": "stoneage.becomepig-lookup-composition-acceptance.r1",
+  "status": "CLOSED_BOUNDED_ORIGINAL_LOOKUP_TABLES_HELPERS_AND_COMPLETE_RESTORATION_COMPOSITION",
+  "accepted_on": "2026-10-07",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "164b0df7f3effd4667567a460d866ac7adf5a793",
+    "tree": "5619b5c3e67f7347a2f960460c7bf6ab319cc684"
+  },
+  "remote_validation": {
+    "run_id": 37632716905,
+    "conclusion": "success",
+    "tests": 50,
+    "source_profiles": 3,
+    "structural_gates_per_profile": 24,
+    "job_id": 112830873632,
+    "artifact_id": 11486732542,
+    "artifact_sha256": "d5956cfa8de4051c2e5325ce82dd13f670572e2fb4274f6996479106b52eba5d"
+  },
+  "derived_writeback": {
+    "path": "research/recovered/STONEAGE-BECOMEPIG-LOOKUP-NATIVE-R1.txt",
+    "sha256": "97c51a7bc9c1afce31511ceb95fcbb556c907ebeef36da7cf9e6e2d917b143a4",
+    "matches_local_report": true,
+    "sha": "3e14ce16be0707b99716b6268770749b7b13a9f1",
+    "tree": "4d00e56529d0cad83230f22b6ff0aebcf1ccaf5f"
+  },
+  "source_domain_receipt": "research/recovered/STONEAGE-BECOMEPIG-LOOKUP-SOURCE-DOMAINS-R1.json",
+  "native": {
+    "entire_caller_functions": [
+      "_CHAR_complianceParameter",
+      "_BATTLE_Exit",
+      "BATTLE_BadStatusAllClr"
+    ],
+    "original_default_helpers": [
+      "CHAR_getNewImagenumberFromEquip",
+      "RIDEPET_getNOindex",
+      "RIDEPET_getPETindex",
+      "RIDEPET_getRIDEno"
+    ],
+    "dynamic_helper_profiles": [
+      "gavin",
+      "iris"
+    ],
+    "inactive_Bismarck_dynamic_executed": false,
+    "tables": [
+      "CHAR_eqimagetbl",
+      "ridePetTable",
+      "RideCodeMode",
+      "RideNoList",
+      "RPlistMode",
+      "StatusTbl",
+      "MagicTbl"
+    ],
+    "standard": "gnu99",
+    "optimization_levels": [
+      "O0",
+      "O2"
+    ],
+    "UBSan": "nonrecovering",
+    "lookup_and_physical_table_comparisons": 181460,
+    "complete_caller_comparisons": 141412,
+    "comparisons": 322872,
+    "cases_per_profile_per_optimization": {
+      "gavin": {
+        "lookup_table": 67094,
+        "composition": 31848
+      },
+      "iris": {
+        "lookup_table": 18110,
+        "composition": 23298
+      },
+      "bismarck": {
+        "lookup_table": 5526,
+        "composition": 15560
+      }
+    },
+    "prior_badstatus_comparisons_reproduced": 373272,
+    "prior_complete_caller_comparisons_reproduced": 165900,
+    "prior_clock_snapshots_reproduced": 419904,
+    "comparison": "all_original_physical_table_fields_helper_returns_tracked_player_pet_work_property_entry_state_and_ordered_clear_image_rider_status_helper_events"
+  },
+  "facts_within_declared_dependency_domain": [
+    "original_equipment_first_match_current_duplicate_keys_nonconflicting",
+    "Bismarck_equipment_index_and_present_belt_preserve_current_image_before_table_category_guard",
+    "static_ride_first_match_accepts_current_or_base_image_then_active_dynamic_learned_mask_mapping_can_overwrite_it",
+    "item_NPC_transform_and_death_guards_prevent_later_ride_lookup",
+    "failed_total_ride_match_dismounts_restores_base_and_sends_appearance_rider_status",
+    "Bismarck_default_new_ride_path_inactive_static296_table104_initializers192_zero_fill_not_active_caller_capability",
+    "gavin_iris_active_new_ride_width12_10_and_table_maps_remain_versioned",
+    "prior_null_property_owned_pet_pig_and_Bismarck_NOCAST_order_differences_retained"
+  ],
+  "controlled_dependencies": [
+    "symbolic_ABI_field_handles_arithmetic_adjacency_compatible_structures_not_historical_ABI",
+    "item_presence_category_belt_and_Bismarck_debug_getter_adapters",
+    "work_initialization_equipment_STAT_effects_other_stat_helper_not_original_bodies",
+    "property_storage_empty_copy_constructFunctable_recorded",
+    "network_party_skillup_hooks_recorded",
+    "valid_live_battle_side_pet_owned_slot0_PvE_slots0_or4_inactive_follow_mail_oblivion_profession_ticket_invalid_rider_excluded"
+  ],
+  "open": [
+    "matching_equipment_row_category5_original_undefined_read_excluded_unmodified",
+    "inactive_Bismarck_dynamic_ride_other_feature_domains",
+    "main_hit_Guardian_counter_retarget_order_item_NPC_map_timer_composition",
+    "original_stat_property_bodies_broader_ownership_death_follow_PvP_watch_enemies_invalid_rider",
+    "historical_executable_build_ABI_PRNG_JSS_Taiwan_v1_feature_dates",
+    "typed_ordered_persistent_coordinator_runtime"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  },
+  "next": "Gate main-hit/Guardian/counter/retarget ordering and item/NPC/map timer composition; retain controlled stat/property/ownership domains before typed631/635 persistent/coordinator admission."
+}

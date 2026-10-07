@@ -1392,3 +1392,18 @@ OPEN. No capability promotions; pressure stays2465/18/3 out of2486.
   rows, verified as physical data without promoting inactive caller capability.
   Original source/table bytes transient only; remote acceptance pending. Stat/
   property/attack/timer/broader ownership/historical deployment/runtime stay OPEN.
+
+
+## 2026-10-07 — Actual lookup and original restoration composition bounded acceptance
+
+- Preceding actual-table/lookup/order distinctions pass322872 original native
+  comparisons on exact input164b0df7f3effd4667567a460d866ac7adf5a793,
+  Action37632716905 SUCCESS. Physical C census includes duplicates/zero-fill,
+  separately from helper returns and complete compliance/Exit/BadStatus composition.
+  Prior373272 badstatus/165900 caller/419904 clock reports reproduce unchanged.
+- Bismarck default ride caller remains inactive; static192 zero rows are verified
+  data, not feature activation. Real learned-mask/static-to-dynamic overwrite,
+  Bismarck belt guard and item/NPC/death ordering hold only under declared fixtures.
+  Category5 matching-row undefined read excluded without original repair.
+  Original stat/property/attack/timer/ownership and historical deployment/runtime
+  remain OPEN. Pending superseded only in accepted scope;0 promotions.

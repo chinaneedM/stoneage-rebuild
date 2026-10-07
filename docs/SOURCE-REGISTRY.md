@@ -4417,3 +4417,20 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   source guard unchanged. Spec specs/STONEAGE-BECOMEPIG-LOOKUP-COMPOSITION-R1.md;
   .github/workflows/validate-stoneage-becomepig-lookup.yml remote gate pending,
   requires old badstatus/caller/clock reports byte-for-byte.0 runtime promotions.
+
+
+## 2026-10-07 — Actual appearance lookup R1 remote acceptance
+
+- CLOSED_BOUNDED original selected equipment/ride helpers/tables and complete
+  compliance/Exit/BadStatusAllClr+actual status-map composition. Input
+  164b0df7f3effd4667567a460d866ac7adf5a793/tree5619b5c3e67f7347a2f960460c7bf6ab319cc684;
+  Action37632716905/job112830873632 SUCCESS,50 tests,24 source gates/profile,
+  322872 original lookup/table/composition comparisons O0/O2 GNU99+UBSan.
+- Prior373272 badstatus/165900 caller/419904 clock reports reproduce unchanged.
+  Writeback3e14ce16be0707b99716b6268770749b7b13a9f1/tree4d00e56529d0cad83230f22b6ff0aebcf1ccaf5f.
+  Local/remote report SHA25697c51a7bc9c1afce31511ceb95fcbb556c907ebeef36da7cf9e6e2d917b143a4.
+  Artifact11486732542 SHA256d5956cfa8de4051c2e5325ce82dd13f670572e2fb4274f6996479106b52eba5d.
+  Receipt research/recovered/STONEAGE-BECOMEPIG-LOOKUP-ACCEPTANCE-R1.json.
+- Pending superseded in declared lookup/complete-caller scope only. Actual stat/
+  property bodies, broader ownership/feature domains, original attack/timer order
+  and historical build/runtime remain OPEN.0 promotions; pressure2486 unchanged.

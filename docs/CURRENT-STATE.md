@@ -8983,3 +8983,45 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   coordinator admission. Broader stat/property/ownership/death/follow/PvP/watch/
   invalid-rider and historical executable/build/PRNG stay OPEN. Pressure unchanged
   2486=2465 closed+18 OPEN+3 historical UB;0 runtime promotions.
+
+
+## 2026-10-07 — BecomePig actual equipment/ride and restoration composition ACCEPTED
+
+- CLOSED_BOUNDED_ORIGINAL_LOOKUP_TABLES_HELPERS_AND_COMPLETE_RESTORATION_COMPOSITION.
+  Exact input164b0df7f3effd4667567a460d866ac7adf5a793/tree
+  5619b5c3e67f7347a2f960460c7bf6ab319cc684 passes Action37632716905/job
+  112830873632.50 tooling/domain/identity tests and24 source gates/profile PASS.
+  Clean pinned descendants/default helper/function/table/header identities match.
+- Original equipment-image helper, default-active dynamic ride helpers and actual
+  tables compose with complete compliance/Exit and original BadStatusAllClr/actual
+  status/magic maps. O0/O2 GNU99+nonrecovering UBSan322872 comparisons:181460
+  original lookup/physical-table checks +141412 complete-caller compositions.
+  All observed field/property/entry and ordered clear/image/rider/status/helper
+  traces match independent oracle. Prior373272 badstatus/165900 caller/419904
+  clock comparisons reproduce; old reports byte-for-byte unchanged.
+- FACT within domain: original first-match order retained; following learned-code
+  dynamic match can overwrite static match and preserved pig image. Item/NPC/death
+  guards block later rider lookup; total miss dismounts/restores/notifies. Bismarck
+  default ride path inactive, live-belt equipment branch preserves current image.
+  Its static296 declared/104 explicit/192 zero-filled rows checked only as data;
+  inactive new-ride code not promoted. gavin/iris dynamic widths12/10 remain separate.
+- Derived writeback3e14ce16be0707b99716b6268770749b7b13a9f1/tree
+  4d00e56529d0cad83230f22b6ff0aebcf1ccaf5f. Report SHA256
+  97c51a7bc9c1afce31511ceb95fcbb556c907ebeef36da7cf9e6e2d917b143a4
+  equals local bytes. Artifact11486732542 SHA256
+  d5956cfa8de4051c2e5325ce82dd13f670572e2fb4274f6996479106b52eba5d.
+  Receipt research/recovered/STONEAGE-BECOMEPIG-LOOKUP-ACCEPTANCE-R1.json;
+  spec specs/STONEAGE-BECOMEPIG-LOOKUP-COMPOSITION-R1.md. PENDING superseded
+  only within original lookup/map +complete-caller composition domain.
+- Controlled dependencies remain symbolic ABI/compatible structs, item presence/
+  category/belt/getters, work initialization/equipment STAT effects/other stat,
+  property storage/empty copy/construct hook, network/party/skill-up and selected
+  ownership. Category5 reaching matching row remains excluded original undefined
+  read, unmodified. Larger entries/invalid rider/broader ownership/feature domains
+  and full original restoration remain OPEN;0 runtime promotions.
+- Highest-priority unfinished work: gate original attack main-hit/Guardian/counter/
+  retarget order, then item/NPC/map timer composition and remaining stat/property/
+  ownership/death/follow/PvP/watch/enemy paths before typed631/635 and persistent/
+  coordinator admission. Preserve unused628 and all default-source/timing/OPTION
+  differences; original executable/build/ABI/PRNG/JSS/Taiwan-v1 remain OPEN.
+  Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB.
