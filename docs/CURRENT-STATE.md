@@ -8655,3 +8655,32 @@ reviewed discovery gate and its automated derived-report writeback is authorized
 - Highest-priority unfinished task: finish independent pinning Action; on PASS
   accept bounded source/data reference only, then execute original isolated C
   OPTION/postattack witnesses and trace elapsed-time owner before state modeling.
+
+
+## 2026-10-07 — BecomePig recovered25 source/data reference ACCEPTED
+
+- CLOSED_BOUNDED_RECOVERED25_SOURCE_DATA_REFERENCE. Independent exact pinning
+  inpute786dec2783a41a97f0d0c4d33472566d0c57488/tree
+  801b402492c18ba8975b9be191580a2568f5b2eb passes Action37616438050/job
+  112775782435. Eight probe tests and all3 pinned source profiles24/24 gates.
+  Whole active petskill/enemybase hashes, all3 callback rows and exact2 positive
+  placements are independently reproduced. Report-only writebackac4a4cae3e5818dcc5b4892bfe9642c8b907a440.
+- Population628/631/635, all FIELD1/TARGET7/COST2; unreferenced628 ILLEGAL5000
+  and empty OPTION; positive631/635 ILLEGAL20000, OPTION6/13 ASCII bytes with
+  exact digests. Placements170/IMG101766/base32,40,25,30/AI150/631 and
+  1147/IMG101871/base26,43,23,35/AI150/635, both runtime index2/report slot3.
+- Source OPTION/profile/guard differences remain explicit. Native parsing and
+  actual conversion counts are not inferred from lengths. Preliminary exact
+  getter/default-header/network observations reveal distinct clocks: gavin/iris
+  separate one-second checkT2, Bismarck a different10-second/sixth-iteration
+  structure. These follow-up source observations are not native/runtime acceptance.
+- Receipt research/recovered/STONEAGE-BECOMEPIG-REFERENCE-ACCEPTANCE-R1.json;
+  canonical reference specs/STONEAGE-BECOMEPIG-REFERENCE-R1.md. Artifact11480745785
+  digest9f471b84195eb3a946854b6360d282923a97ca4d142cfd42df70519bed53ad43.
+- Pressure unchanged2486=2465 closed capability+18 OPEN+3 historical UB;
+  BecomePig0 promotions. Earlier discovery/pinning PENDING entries superseded
+  only within source/data scope. Original JSS/Taiwan-v1/executable/PRNG remain OPEN.
+- Highest-priority unfinished task: execute original isolated C OPTION/postattack
+  witnesses and independently gate native timer/Exit lifecycle before modeling
+  ordered persistent state. Plan specs/STONEAGE-BECOMEPIG-NATIVE-RUNTIME-PLAN-R1.md;
+  preliminary lifecycle receipt research/recovered/STONEAGE-BECOMEPIG-LIFECYCLE-PRELIMINARY-OBSERVATION-R1.json.

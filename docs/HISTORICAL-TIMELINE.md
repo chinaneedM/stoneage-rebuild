@@ -1281,3 +1281,16 @@ paths require independent analysis; no BecomePig reference/runtime is accepted.
 Exact profiles/blobs and OPEN issues are in the preliminary source observation
 receipt. Actual time decrement/lifetime owner and recovered25 OPTION rows remain
 OPEN. Do not transfer BecomeFox's pet target or round timer into this skill.
+
+
+## 2026-10-07 — Later recovered25 BecomePig source/data reference closed
+
+FACT within the hash-verified later recovered25 specimen: complete callback
+family628/631/635 includes unused empty-OPTION628 and exactly two positive uses,
+631 on template170 and635 on1147, both report slot3. Independent discovery and
+pinning Actions37616100623/37616438050 PASS with8 probe tests and24 structural
+gates at each fixed source profile. This does not date introduction or establish
+original JSS/Taiwan-v1 membership. Native/runtime acceptance and actual OPTION
+conversion counts remain OPEN; capability pressure remains2465/18/3 of2486.
+Preliminary network/default-header/getter observations also expose separate
+source timing profiles; no original executable clock/build is selected.

@@ -1,0 +1,132 @@
+{
+  "schema": "stoneage.becomepig-reference-acceptance.r1",
+  "status": "CLOSED_BOUNDED_RECOVERED25_SOURCE_DATA_REFERENCE",
+  "accepted_on": "2026-10-07",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "e786dec2783a41a97f0d0c4d33472566d0c57488",
+    "tree": "801b402492c18ba8975b9be191580a2568f5b2eb"
+  },
+  "discovery": {
+    "run_id": 37616100623,
+    "job_id": 112774680169,
+    "input": "4e1eedf49da83e3440c7692061bb6b964d5073e0",
+    "report_writeback": "7abcc29ee27250b54e86b6ae49fe5a300d490d84",
+    "conclusion": "success"
+  },
+  "independent_pinning": {
+    "run_id": 37616438050,
+    "job_id": 112775782435,
+    "conclusion": "success",
+    "tests": 8,
+    "source_profiles": 3,
+    "structural_gates_per_profile": 24,
+    "artifact_id": 11480745785,
+    "artifact_sha256": "9f471b84195eb3a946854b6360d282923a97ca4d142cfd42df70519bed53ad43"
+  },
+  "derived_writeback": {
+    "sha": "ac4a4cae3e5818dcc5b4892bfe9642c8b907a440",
+    "files": [
+      "research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt"
+    ]
+  },
+  "source_profiles": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "recovered25": {
+    "callback": "PETSKILL_BecomePig",
+    "petskill_sha256": "f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4",
+    "enemybase_sha256": "1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63afa91df3e8b7",
+    "callback_ids": [
+      628,
+      631,
+      635
+    ],
+    "rows": [
+      {
+        "id": 628,
+        "field": 1,
+        "target": 7,
+        "cost": 2,
+        "illegal": 5000,
+        "slot_references": 0,
+        "option_bytes": 0,
+        "option_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "option_contains_nul": false,
+        "option_ascii": true,
+        "cp950_big5_agrees": true
+      },
+      {
+        "id": 631,
+        "field": 1,
+        "target": 7,
+        "cost": 2,
+        "illegal": 20000,
+        "slot_references": 1,
+        "option_bytes": 6,
+        "option_sha256": "d85413c542901fa592fc345cbaf6e7c3a0d186eb44ed86ffe12c028a5fdbe04e",
+        "option_contains_nul": false,
+        "option_ascii": true,
+        "cp950_big5_agrees": true
+      },
+      {
+        "id": 635,
+        "field": 1,
+        "target": 7,
+        "cost": 2,
+        "illegal": 20000,
+        "slot_references": 1,
+        "option_bytes": 13,
+        "option_sha256": "6f95294f982d8aa64e4b05f1b4a991463fc62c391d8a90ebb8ae02aecaa4814a",
+        "option_contains_nul": false,
+        "option_ascii": true,
+        "cp950_big5_agrees": true
+      }
+    ],
+    "placements": [
+      {
+        "tempno": 170,
+        "graphic_id": 101766,
+        "base_vital": 32,
+        "base_strength": 40,
+        "base_toughness": 25,
+        "base_dexterity": 30,
+        "ai": 150,
+        "report_slot": 3,
+        "runtime_index": 2,
+        "skill_id": 631
+      },
+      {
+        "tempno": 1147,
+        "graphic_id": 101871,
+        "base_vital": 26,
+        "base_strength": 43,
+        "base_toughness": 23,
+        "base_dexterity": 35,
+        "ai": 150,
+        "report_slot": 3,
+        "runtime_index": 2,
+        "skill_id": 635
+      }
+    ]
+  },
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  },
+  "boundaries": [
+    "structural_source_gates_only_not_native_equivalence",
+    "gavin_iris_nonnull_OPTION_vs_bismarck_literal_pointer_comparison_preserved",
+    "unchecked_conversion_and_signed_overflow_domains_open",
+    "default_header_and_net_timer_followup_observations_not_native_acceptance",
+    "actual_option_conversion_count_and_native_execution_open",
+    "ordered_round_persistent_world_clock_and_coordinator_open",
+    "original_executable_compiler_prng_and_JSS_Taiwan_v1_membership_open"
+  ],
+  "next": "Execute original isolated C OPTION/postattack witnesses and independently audit native timer/exit lifecycle before deterministic state modeling."
+}

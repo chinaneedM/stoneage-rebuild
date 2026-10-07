@@ -4265,3 +4265,25 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   Record: research/recovered/STONEAGE-BECOMEPIG-PRELIMINARY-SOURCE-OBSERVATION-R1.json.
 - Complete BecomePig row/OPTION/placement discovery and independent native
   gates remain OPEN; preliminary entry inspection promotes zero placements.
+
+
+### SRC-BECOMEPIG-RECOVERED25-REFERENCE-R1 — independent source/data acceptance 2026-10-07
+
+- Verified discovery37616100623/job112774680169 at4e1eedf; independent pinning
+  37616438050/job112775782435 at e786dec2783a41a97f0d0c4d33472566d0c57488/tree
+  801b402492c18ba8975b9be191580a2568f5b2eb SUCCESS. Eight tooling tests and
+  all3 exact source commits24 structural gates each. Both active whole-file
+  hashes reverified. Exact callback/dispatcher git blobs retained in receipts.
+- Complete callback family628/631/635. Exact metadata/OPTION lengths and digests
+  and template170/index2/631 plus1147/index2/635 independently reproduced;
+  unused628 retained. Source/data reference only; native/runtime and pressure
+  promotion remain OPEN. Receipt STONEAGE-BECOMEPIG-REFERENCE-ACCEPTANCE-R1.json.
+- Artifact11480745785 SHA256
+  9f471b84195eb3a946854b6360d282923a97ca4d142cfd42df70519bed53ad43;
+  report writebackac4a4cae3e5818dcc5b4892bfe9642c8b907a440. No source/OPTION
+  bytes or original names/descriptions/assets stored.
+- Separate preliminary lifecycle observation pins network/version/getter blobs:
+  gavin/iris separate one-second checkT2; Bismarck different10-second/sixth-loop
+  sites. Default-header flags and invalid getter return also diverge. These
+  observations do not replace original-C witnesses or select original builds.
+  STONEAGE-BECOMEPIG-LIFECYCLE-PRELIMINARY-OBSERVATION-R1.json.

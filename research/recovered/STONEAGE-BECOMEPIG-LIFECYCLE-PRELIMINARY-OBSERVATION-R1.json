@@ -1,0 +1,104 @@
+{
+  "schema": "stoneage.becomepig-lifecycle-preliminary-observation.r1",
+  "status": "PINNED_DESCENDANT_SOURCE_OBSERVATION_NOT_NATIVE_OR_RUNTIME_ACCEPTANCE",
+  "date": "2026-10-07",
+  "profiles": [
+    {
+      "profile": "gavin",
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "files": {
+        "network": {
+          "path": "gmsv/src/net.c",
+          "git_blob": "91b7911e48b9fc8e76eec9cc400efebbd7b1ef48",
+          "sha256": "cc69ee27d75237062eafd19fa1c936f77a43ebad0e823f0497a387fdb526236f"
+        },
+        "version": {
+          "path": "gmsv/src/include/version.h",
+          "git_blob": "af6c866fd609a39e2960236275f6bf39e7f47b2c",
+          "sha256": "e58232f8763dccedfbba775ddfb3eaa33e431505b090b2e9a7a87cf8d5945d4a"
+        },
+        "petskill": {
+          "path": "gmsv/src/battle/pet_skill.c",
+          "git_blob": "a510c713ba3cb6c85a6738040928299b3d93ce88",
+          "sha256": "12d95301b9ecaf60175fb9c94095e8ab05c152f375e1585c090d951fa416e672"
+        }
+      },
+      "default_header_features": {
+        "_PETSKILL_BECOMEPIG": true,
+        "_EQUIT_ARRANGE": true,
+        "_PREVENT_TEAMATTACK": true
+      },
+      "valid_option_storage": "petskill[index].string[element].string mutable row buffer",
+      "invalid_getChar_return": "NULL",
+      "timer_observation": "Separate checkT2 one-second site over used valid connections; active counter<=1 clamps0 during battle, resets-1 only outside battle; otherwise subtract1. Old subtract10 code is commented out.",
+      "clock_boundary": "One transition per qualifying poll; no inferred missed-tick catchup or historical wall-clock guarantee."
+    },
+    {
+      "profile": "iris",
+      "commit": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "files": {
+        "network": {
+          "path": "Source/gmsv/net.c",
+          "git_blob": "d117f6e02f555ad97ddb3cf0f73a6f0bf881137d",
+          "sha256": "8b22746856d32ecff8a0fa959e20e3cc49340a1a6aebfb87a165078966efe832"
+        },
+        "version": {
+          "path": "Source/gmsv/include/version.h",
+          "git_blob": "0e4bd3172db19e9b5db24171a4d1a688b93c8b9a",
+          "sha256": "a404dacc30266a04a58aa53e914bb4ba19aa583c982051ed5427ad71f8498bad"
+        },
+        "petskill": {
+          "path": "Source/gmsv/battle/pet_skill.c",
+          "git_blob": "575830ec81b43e8b4abc9a7abab0ffd46fc76b18",
+          "sha256": "e49dd8cd079231717c4f7af34eccae4bd6cafe6d54f07dd5270f461b1ae24fc8"
+        }
+      },
+      "default_header_features": {
+        "_PETSKILL_BECOMEPIG": true,
+        "_EQUIT_ARRANGE": true,
+        "_PREVENT_TEAMATTACK": true
+      },
+      "valid_option_storage": "petskill[index].string[element].string mutable row buffer",
+      "invalid_getChar_return": "NULL",
+      "timer_observation": "Separate checkT2 one-second site over used valid connections; active counter<=1 clamps0 during battle, resets-1 only outside battle; otherwise subtract1. Old subtract10 code is commented out.",
+      "clock_boundary": "One transition per qualifying poll; no inferred missed-tick catchup or historical wall-clock guarantee."
+    },
+    {
+      "profile": "bismarck",
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "files": {
+        "network": {
+          "path": "server/gmsv/net/net.c",
+          "git_blob": "ed2582c20723f21aa84ae2b2ac91655f31e6610f",
+          "sha256": "94c3cea288ab0933d44d6e50c6a35badfac30e3fbe972bdcc5825d2f3cec7a63"
+        },
+        "version": {
+          "path": "server/gmsv/include/version.h",
+          "git_blob": "b3fc0c80705973bc8d088287c98a5d66171bb6c2",
+          "sha256": "4996de26fa1fc795da5d903e05aca00d3170ee672300387e02e54675f5a79602"
+        },
+        "petskill": {
+          "path": "server/gmsv/battle/pet_skill.c",
+          "git_blob": "65d04f0267b474d898a5f6ef52f04ecc51c4ee76",
+          "sha256": "d6801f12373d6a4ca0d20829797ee230ce85d978e42b2d50e563e86ab4b1f4d4"
+        }
+      },
+      "default_header_features": {
+        "_PETSKILL_BECOMEPIG": true,
+        "_EQUIT_ARRANGE": false,
+        "_PREVENT_TEAMATTACK": false
+      },
+      "valid_option_storage": "petskill[index].string[element].string mutable row buffer",
+      "invalid_getChar_return": "empty string literal",
+      "timer_observation": "10-second outer loop: every sixth iteration pigcounter-1<=0 clamp/optional world reset, otherwise subtract10; world-only active counter subtract1 later in each outer iteration. No separate checkT2.",
+      "clock_boundary": "One transition per qualifying poll; no inferred missed-tick catchup or historical wall-clock guarantee."
+    }
+  ],
+  "open": [
+    "Native execution of actual recovered25 OPTION parse: determine conversion counts without inferring from byte lengths; retain unused empty ID628.",
+    "Literal comparison under invalid getters, compiler literal pooling and uninitialized values; do not normalize or claim deterministic UB.",
+    "Native timer boundary, negative counter states and battle/world/exit interaction.",
+    "Original executable feature/compiler/PRNG/lineage and ordered persistent reconstruction."
+  ],
+  "pressure_promotions": 0
+}
