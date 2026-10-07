@@ -8791,3 +8791,37 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   controls/recipient ownership on PASS. Then complete Exit/compliance/equipment/
   ride and attack main-hit/Guardian/counter/retarget order before state admission.
   Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB;0 promotions.
+
+
+## 2026-10-07 — BecomePig bounded clock controls and recipient ownership ACCEPTED
+
+- CLOSED_BOUNDED_ORIGINAL_SCHEDULER_CONTROL_PROJECTION_AND_RECIPIENT_OWNERSHIP.
+  Exact input7e5af49d21be40bd7d75c19c31263e39fd0b6a15/tree
+  a591b475fab081fc1f18ae2f5a68b7e6cd47fc0d passes Action37621151399/job
+  112791457781.22 clock/native-domain/data-identity tests and24 structural gates
+  per source profile PASS. Derived writebackfc1d619294c14b62985509f5e50fd052ee21c842.
+- Original retained scheduler controls execute419904 sequential native snapshots,
+  8748 scenarios/profile/optimization,8 polls each,4 actors/4 connections/6
+  mappings, O0/O2+nonrecovering UBSan. Remote report matches local byte-for-byte;
+  previous5364 isolated lifecycle comparisons reproduce unchanged.
+- FACT within this projection: gavin/iris visit each eligible connection in slot
+  order without character deduplication. Bismarck visits valid player-array slots
+  regardless of connection mapping. Default gavin excludesAC1; iris excludesAC1
+  plusM2 in controlled descriptor slots. Original deployments are not inferred.
+- Qualifying polls advance once without gap catchup; stored clock uses the second
+  sample. Distinct sample/store times, backward/repeated/gapped polls, wrap,
+  mixed modes and controlled battle/world transition preserve exact negative
+  markers, cleanup/status/talk and object recipients. Unrelated subsystem bodies
+  are omitted; compliance body remains stubbed. This is not full-server execution.
+- Receipt research/recovered/STONEAGE-BECOMEPIG-CLOCK-ACCEPTANCE-R1.json; spec
+  specs/STONEAGE-BECOMEPIG-CLOCK-CONTROLS-R1.md. Artifact11481838073 SHA256
+  d51ae22ba22cd0b231e3b736cb21317209499ad1fd9c91adec630afc0fe5654b.
+  Earlier clock-PENDING is superseded only within retained controls/ownership.
+- Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB;0 promotions.
+  Full network cross-subsystem effects, historical executable/build/PRNG and
+  typed/persistent/coordinator execution remain OPEN.
+- Highest-priority unfinished task: execute full Exit/compliance and appearance/
+  equipment/ride under explicitly declared domains, check item/NPC/map timer
+  interactions and main-hit/Guardian/counter/retarget order, then gate composed
+  transitions before typed631/635 and persistent/coordinator admission. Retain
+  unused628 and all distinct source timing/OPTION/default-header profiles.

@@ -1,0 +1,86 @@
+{
+  "schema": "stoneage.becomepig-clock-controls-acceptance.r1",
+  "status": "CLOSED_BOUNDED_ORIGINAL_SCHEDULER_CONTROL_PROJECTION_AND_RECIPIENT_OWNERSHIP",
+  "accepted_on": "2026-10-07",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "7e5af49d21be40bd7d75c19c31263e39fd0b6a15",
+    "tree": "a591b475fab081fc1f18ae2f5a68b7e6cd47fc0d"
+  },
+  "remote_validation": {
+    "run_id": 37621151399,
+    "job_id": 112791457781,
+    "conclusion": "success",
+    "tests": 22,
+    "source_profiles": 3,
+    "structural_gates_per_profile": 24,
+    "artifact_id": 11481838073,
+    "artifact_sha256": "d51ae22ba22cd0b231e3b736cb21317209499ad1fd9c91adec630afc0fe5654b"
+  },
+  "derived_writeback": {
+    "sha": "fc1d619294c14b62985509f5e50fd052ee21c842",
+    "tree": "1a454dc3bae9fe636689c2a34e413d0e4fc91d83",
+    "path": "research/recovered/STONEAGE-BECOMEPIG-CLOCK-NATIVE-R1.txt",
+    "sha256": "565feb32126126c84a4d1ec4208c6f49394fd82f011d6f7173d5e083e534104c"
+  },
+  "source_profiles": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "retained_control_sha256": {
+    "gavin": "15a58856c1d09821cd875c01348df8e3a041d33706b82ad323b06a0dd5adf9f9",
+    "iris": "44a2617df2da4e7fa810dd5866a2869f4d5b4ac0ec11029fcece25e4b7bd2b06",
+    "bismarck": "2fbbc0ef40b23a5464a5e750e7fda7c4f46e0dc713d938e9a69c89782f4769f6"
+  },
+  "default_service_descriptor_witness_exclusions": {
+    "gavin": [
+      1
+    ],
+    "iris": [
+      1,
+      2
+    ]
+  },
+  "native": {
+    "actor_slots": 4,
+    "connection_slots": 4,
+    "topologies": 6,
+    "scenarios_per_profile_per_optimization": 8748,
+    "sequential_polls_per_scenario": 8,
+    "snapshots_per_profile_per_optimization": 69984,
+    "total_snapshots": 419904,
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "UBSan": "nonrecovering",
+    "prior_isolated_lifecycle_comparisons_reproduced": 5364
+  },
+  "facts_within_control_projection": [
+    "gavin_iris_each_eligible_connection_is_a_visit_no_character_deduplication",
+    "Bismarck_valid_player_array_slots_own_pig_ticks_independent_of_connection_topology",
+    "service_descriptor_exclusions_differ_at_actual_default_headers",
+    "one_tick_per_qualifying_poll_no_missed_time_catchup",
+    "stored_clock_uses_second_sample_and_affects_later_eligibility",
+    "all_mutations_and_notification_actor_object_recipients_match_independent_oracle",
+    "source_negative_markers_and_missing_cleanup_preserved"
+  ],
+  "boundaries": [
+    "unrelated_subsystem_bodies_omitted_not_whole_server_execution",
+    "original_source_declarations_samples_controls_and_pig_sites_retained_without_semantic_repair",
+    "time_inputs_nonnegative_small_controlled_values_not_full_time_t_or_int_cast_domain",
+    "compliance_body_stubbed",
+    "battle_world_switch_controlled_input_not_original_Exit",
+    "fixed_witness_slot_counts_and_service_descriptor_numbers_not_deployment_configuration",
+    "historical_executable_PRNG_compiler_feature_dates_JSS_Taiwan_v1_open"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  },
+  "next": "Execute full Exit/compliance and appearance/equipment/ride under explicitly declared domains, check cross-subsystem timers and main-hit/Guardian/counter/retarget order before typed persistent/coordinator admission."
+}

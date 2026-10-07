@@ -1310,3 +1310,17 @@ versioned decrement/cleanup differences; full clock/recipient and Exit/complianc
 composition remain OPEN. No original executable/build/PRNG or feature date is
 identified; no JSS/Taiwan-v1 membership follows. Runtime remains OPEN and pressure
 unchanged2465/18/3 out of2486. Receipt: STONEAGE-BECOMEPIG-NATIVE-REFERENCE-ACCEPTANCE-R1.json.
+
+
+## 2026-10-07 — Descendant BecomePig scheduler ownership independently witnessed
+
+FACT only within exact pinned descendant scheduler controls: Action37621151399
+passes419904 sequential O0/O2 native state snapshots. gavin/iris tick by eligible
+connection visits without character deduplication; Bismarck ticks valid player
+array slots independently of connections. Default service exclusions also differ.
+Qualifying polls advance once rather than catching up elapsed gaps; a separate
+second time sample becomes the stored clock. These are controlled source-domain
+observations, not a deployed server or historical executable reconstruction.
+Unrelated subsystem bodies and full compliance/Exit are outside this native
+projection. No timing profile is flattened or source anomaly repaired. Pressure
+remains2465/18/3 of2486, and feature introduction/JSS/Taiwan-v1 membership stay OPEN.

@@ -4313,3 +4313,25 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   historical build/PRNG/ordinal and runtime/persistent/coordinator composition.
   Zero capability promotions. Bounded closure supersedes prior native-OPEN only
   within witnessed domains; no feature dating or JSS/Taiwan-v1 inference.
+
+
+### SRC-BECOMEPIG-CLOCK-CONTROLS-R1 — bounded native ownership acceptance 2026-10-07
+
+- Exact input7e5af49d21be40bd7d75c19c31263e39fd0b6a15/tree
+  a591b475fab081fc1f18ae2f5a68b7e6cd47fc0d passes Action37621151399/job
+  112791457781.22 tooling regressions and24 structural gates/profile; clean3
+  pinned source trees with exact network/retained-control hashes. O0/O2+
+  nonrecovering UBSan419904 sequential actor/state/call/clock snapshots.
+- gavin/iris original connection loop includes default service exclusions and
+  has no character deduplication. Bismarck's original pig sites are owned by
+  valid player-array slots and independent of the later connection loop. Exact
+  condition/clock sampling/cycle wrap and site order execute in the retained
+  control projection. Full unrelated subsystem bodies are omitted; compliance
+  is stubbed. Controlled battle/world switch does not execute original Exit.
+- Previous isolated timer/Exit report5364 comparisons reproduces unchanged.
+  Derived writebackfc1d619294c14b62985509f5e50fd052ee21c842; artifact11481838073
+  SHA256d51ae22ba22cd0b231e3b736cb21317209499ad1fd9c91adec630afc0fe5654b.
+  Report SHA256 and exact-control hashes: STONEAGE-BECOMEPIG-CLOCK-ACCEPTANCE-R1.json.
+- Source C remains transient. No whole-server/executable or original deployment
+  configuration claim; no runtime promotions. Full Exit/compliance/equipment/
+  ride, cross-subsystem timers and ordered attack composition remain OPEN.

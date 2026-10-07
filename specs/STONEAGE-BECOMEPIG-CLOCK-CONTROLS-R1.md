@@ -58,3 +58,15 @@ capability. Pressure remains2465/18/3 out of2486; zero BecomePig promotions.
 Require the independent remote Actions run, exact input tree, artifact and
 derived report before superseding PENDING. Then finish full Exit/appearance
 and attack ordering before typed/persistent/coordinator admission.
+
+
+## 2026-10-07 — Bounded clock control gate ACCEPTED
+
+PENDING above is superseded within retained-control/recipient scope. Exact
+input7e5af49d21be40bd7d75c19c31263e39fd0b6a15/tree
+ a591b475fab081fc1f18ae2f5a68b7e6cd47fc0d passes Action37621151399/job112791457781.
+Remote419904 native snapshots match local report;22 tooling tests pass and
+previous5364 isolated lifecycle comparisons reproduce. Receipt:
+research/recovered/STONEAGE-BECOMEPIG-CLOCK-ACCEPTANCE-R1.json. Scope exclusions
+above remain OPEN. Next full Exit/compliance/appearance and attack ordering;
+zero runtime promotions.
