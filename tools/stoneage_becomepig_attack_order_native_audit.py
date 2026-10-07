@@ -176,9 +176,10 @@ int BATTLE_DefaultAttacker(int battleindex,int side){
   }
   return -1;
 }
-'''int BATTLE_CheckSameSide(int charaindex,int defNo){
+int BATTLE_CheckSameSide(int charaindex,int defNo){
   (void)charaindex;(void)defNo;return 0;
 }
+'''
 
     if not re.search(r"\b(?:int|void)\s+BATTLE_MagicEffect\s*\(", head):
         controlled += r'''
