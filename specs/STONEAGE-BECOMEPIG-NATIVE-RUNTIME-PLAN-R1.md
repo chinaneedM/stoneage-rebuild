@@ -43,3 +43,15 @@ research/recovered/STONEAGE-BECOMEPIG-LIFECYCLE-PRELIMINARY-OBSERVATION-R1.json.
 These are separately pinned source observations, not remotely executed native
 witnesses or historical executable semantics. Pressure remains2465/18/3 out of
 2486. Original JSS/Taiwan-v1 membership/introduction remain OPEN.
+
+
+## 2026-10-07 — Native stage completed; next composition gate
+
+Earlier no-native-acceptance status is superseded only for steps1/2 and isolated
+step5 witnesses described in specs/STONEAGE-BECOMEPIG-NATIVE-REFERENCE-R1.md.
+Native diagnostics, actual effective values and default-header profiles are
+pinned and independently reproduced. Whole main-hit/Guardian/counter/retarget
+order (step4), complete clock/recipient ownership and full Exit/compliance are
+still OPEN. Complete those before typed state/persistent/coordinator work in
+steps6/7. Counter180/60 cannot be labeled historical wall durations from these
+isolated gates. Pressure remains2465/18/3 and no placements are promoted.

@@ -8733,3 +8733,34 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   Bismarck outer scheduler/recipients, full Exit/compliance and ordered persistent
   state remain OPEN. Highest priority: inspect independent native pinning gate,
   then complete named clock/Exit composition before runtime admission.
+
+
+## 2026-10-07 — BecomePig bounded original-C native reference ACCEPTED
+
+- CLOSED_BOUNDED_DESCENDANT_C_POSTATTACK_AND_ISOLATED_LIFECYCLE_REFERENCE.
+  Exact independent input66c466461c5355fc0674c82aacc48d6999e3be91/tree
+  8141af46b3cc2c49a6b3c26ee895aa4b9334925b passes Action37618923213/job
+  112783971981.16 domain/identity tests and all3 source profiles24 structural
+  gates pass; whole data/family/placement hashes are reverified. Both native
+  reports are unchanged from discovery235547f0217ae720c03a40cbe7822e88daa95b27.
+- Actual OPTION diagnostics628=EOF(-1),631=2,635=3 conversions. gavin/iris
+  effective631 rate30/counter180/image100250 and635 rate30/counter180/image100388;
+  empty unused628 is excluded from their postattack because rate/time are
+  uninitialized. Bismarck valid-buffer original else remains30/60/100250 on all
+  three IDs. These are versioned counter parameters, not accepted wall durations.
+- Exact extracted callback/getter/low macros and postattack pass62720 native
+  postattack comparisons; isolated timers/Exit pass5364. O0/O2+nonrecovering
+  UBSan, controlled draw, valid row buffers, no uninitialized/overflow domain.
+ 20 relevant local regression tests pass. Artifact11480773914 SHA256
+  b337151000d22d641cd736fc67f2ceceb63989443fe43e9d960c3fa107383d3c.
+- Canonical specs/STONEAGE-BECOMEPIG-NATIVE-REFERENCE-R1.md and receipt
+  research/recovered/STONEAGE-BECOMEPIG-NATIVE-REFERENCE-ACCEPTANCE-R1.json.
+  Earlier native-PENDING entries are superseded only within these isolated sites.
+- No runtime promotion; pressure remains2486=2465 closed+18 OPEN+3 historical UB.
+  Invalid getter/literal pooling, original executable/PRNG/compiler/command
+  ordinal and original JSS/Taiwan-v1 membership remain OPEN.
+- Highest-priority unfinished task: complete whole clock/recipient ownership
+  (especially Bismarck outer scheduler), full Exit/compliance/equipment/ride and
+  main-hit/Guardian/counter/retarget ordering. Then gate composed transitions
+  before typed631/635 admission, persistent/coordinator integration and pressure
+  evaluation. Preserve628 as unused population and all version differences.

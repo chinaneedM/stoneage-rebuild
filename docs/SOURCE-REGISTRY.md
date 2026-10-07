@@ -4287,3 +4287,29 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   sites. Default-header flags and invalid getter return also diverge. These
   observations do not replace original-C witnesses or select original builds.
   STONEAGE-BECOMEPIG-LIFECYCLE-PRELIMINARY-OBSERVATION-R1.json.
+
+
+### SRC-BECOMEPIG-NATIVE-REFERENCE-R1 — bounded original-C acceptance 2026-10-07
+
+- Source class: three pinned descendant C trees plus independently recovered
+  hash-verified later recovered25 data; transient original-C native witnesses
+  and exact GitHub Actions artifacts. No original executable selected.
+- Discovery Action37618493394/job112782542021 passes input090588e/tree575ca7a;
+  independent pinning Action37618923213/job112783971981 passes exact input
+  66c466461c5355fc0674c82aacc48d6999e3be91/tree
+  8141af46b3cc2c49a6b3c26ee895aa4b9334925b. Both reports unchanged at second
+  recovery.16 remote domain/identity tests;24 structural gates/profile.
+- Native62720 postattack comparisons and5364 isolated timer/Exit comparisons,
+  both O0/O2+nonrecovering UBSan. Valid actual row buffers, controlled draws,
+  bounded arithmetic; uninitialized source paths never accepted as deterministic.
+- Actual631 has2 conversions,635 has3; gavin/iris30/180 images100250/100388.
+  Bismarck valid-buffer else30/60/image100250; empty628 remains unused and its
+  gavin/iris postattack is excluded. Clock/Exit claims remain isolated-site scope.
+- Artifact11480773914 SHA256
+  b337151000d22d641cd736fc67f2ceceb63989443fe43e9d960c3fa107383d3c.
+  Report digests and exact profiles in STONEAGE-BECOMEPIG-NATIVE-REFERENCE-ACCEPTANCE-R1.json.
+  No original C, raw OPTION, descriptions or assets committed.
+- OPEN: whole clock/recipients, Exit/compliance/equipment/ride, attack ordering,
+  historical build/PRNG/ordinal and runtime/persistent/coordinator composition.
+  Zero capability promotions. Bounded closure supersedes prior native-OPEN only
+  within witnessed domains; no feature dating or JSS/Taiwan-v1 inference.

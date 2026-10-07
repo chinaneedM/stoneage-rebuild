@@ -66,3 +66,13 @@ JSS/Taiwan-v1 membership and historical feature dates are not inferred.
 After PASS: pin derived actual parse/effective semantic values, close only the
 witnessed native sites, then complete clock/Exit/ordered composition before any
 typed admission, persistent/coordinator integration or pressure evaluation.
+
+
+## 2026-10-07 — Gate accepted within bounded native scope
+
+The PENDING statement above is superseded by successful discovery37618493394
+and independent exact pinning37618923213. Canonical accepted reference:
+specs/STONEAGE-BECOMEPIG-NATIVE-REFERENCE-R1.md; exact-head/artifact/report receipt:
+research/recovered/STONEAGE-BECOMEPIG-NATIVE-REFERENCE-ACCEPTANCE-R1.json.
+62720 postattack and5364 isolated timer/Exit comparisons pass; runtime and named
+composition exclusions remain OPEN. No pressure promotion.

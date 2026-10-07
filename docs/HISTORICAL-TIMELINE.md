@@ -1294,3 +1294,19 @@ original JSS/Taiwan-v1 membership. Native/runtime acceptance and actual OPTION
 conversion counts remain OPEN; capability pressure remains2465/18/3 of2486.
 Preliminary network/default-header/getter observations also expose separate
 source timing profiles; no original executable clock/build is selected.
+
+
+## 2026-10-07 — Later-source BecomePig isolated native reference closed
+
+FACT within the pinned descendant-source and recovered25 witness domain:
+independent Actions37618493394/37618923213 reproduce62720 original-C postattack
+and5364 isolated timer/Exit comparisons at O0/O2 with nonrecovering UBSan. Native
+actual631 yields2 conversions and635 yields3; gavin/iris counter parameters180
+retain image100250/100388 respectively. Bismarck valid-buffer else instead uses
+counter60 and image100250. Unused empty628 is not a positive placement and its
+gavin/iris uninitialized postattack path is excluded. These source parameters
+are not historical wall-clock duration claims. Isolated timers demonstrate
+versioned decrement/cleanup differences; full clock/recipient and Exit/compliance
+composition remain OPEN. No original executable/build/PRNG or feature date is
+identified; no JSS/Taiwan-v1 membership follows. Runtime remains OPEN and pressure
+unchanged2465/18/3 out of2486. Receipt: STONEAGE-BECOMEPIG-NATIVE-REFERENCE-ACCEPTANCE-R1.json.
