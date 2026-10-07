@@ -8825,3 +8825,31 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   interactions and main-hit/Guardian/counter/retarget order, then gate composed
   transitions before typed631/635 and persistent/coordinator admission. Retain
   unused628 and all distinct source timing/OPTION/default-header profiles.
+
+
+## 2026-10-07 — BecomePig complete restoration caller gate implemented (PENDING)
+
+- Fresh remote main09b67dbfe42d32111558476290b986fe2de0b8bb/tree
+  328795cad6446b7a970e690607c8d66f3932f1ae; latest clock Action37621151399
+  SUCCESS. Continue highest priority Exit/compliance/appearance composition.
+- Complete original default-header _CHAR_complianceParameter and _BATTLE_Exit
+  bodies now execute transiently, preserving the full nested original compliance
+  call rather than the earlier stub. Source/default-function hashes and default
+  features are pinned in STONEAGE-BECOMEPIG-RESTORATION-SOURCE-DOMAINS-R1.json.
+- Controlled dependencies remain explicit: symbolic field/ABI witnesses, work-init/
+  equipment/stat/image and static/dynamic ride lookup outputs, no actual helper
+  bodies/maps. Bad-status/network/party/skill-up hooks record ordered calls. Valid
+  live owned pet, PvE player slots0/4, inert profession/follow/mail/ticket domains.
+- Local165900 complete function comparisons PASS at O0/O2 GNU99+nonrecovering
+  UBSan;29 domain/identity/regression tests PASS. Complete state/entry/ordered
+  appearance/rider/status traces agree with independent oracle. Spec:
+  specs/STONEAGE-BECOMEPIG-RESTORATION-R1.md.
+- Witnessed caller differences: new ride lookup after image preservation at
+  gavin/iris can overwrite it; Bismarck differs. Unused-battle return follows
+  appearance/compliance notifications; PETFALL=-2 is observable at status send
+  before final RIDEPET=-1. Pig counter persists; player exits to FINAL.
+- Highest priority: finish exact remote restoration gate, accept only complete
+  caller bodies under stated dependencies. Then execute original helper/image/
+  ride composition and main-hit/Guardian/counter/retarget order; broader Exit,
+  timer interactions and typed/persistent/coordinator runtime remain OPEN.
+  Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB;0 promotions.
