@@ -78,7 +78,7 @@ def _parts(name: str, root: Path) -> dict[str, str]:
     )
     map_timer = _if_with(
         net,
-        r"if\s*\(\s*CHAR_getWorkInt\s*\([^;{}]*CHAR_WORK_MAP_TIME",
+        r"if\s*\(\s*CHAR_getWorkInt\s*\([^)]*CHAR_WORK_MAP_TIME[^)]*\)\s*>\s*0",
         "CHAR_warpToSpecificPoint",
     )
 
