@@ -176,24 +176,27 @@ int BATTLE_DefaultAttacker(int battleindex,int side){
   }
   return -1;
 }
-'''
-    if not re.search(r"\bBATTLE_MagicEffect\s*\(", head):
+'''int BATTLE_CheckSameSide(int charaindex,int defNo){
+  (void)charaindex;(void)defNo;return 0;
+}
+
+    if not re.search(r"\b(?:int|void)\s+BATTLE_MagicEffect\s*\(", head):
         controlled += r'''
 int BATTLE_MagicEffect(int b,int d,int *list,int a,int c){
   (void)b;(void)d;(void)list;(void)a;(void)c;return 0;
 }
 '''
-    if not re.search(r"\bCHAR_talkToCli\s*\(", head):
+    if not re.search(r"\b(?:int|void)\s+CHAR_talkToCli\s*\(", head):
         controlled += r'''
 void CHAR_talkToCli(int i,int to,const char*s,int color){
   (void)i;(void)to;(void)s;(void)color;
 }
 '''
-    if not re.search(r"\bCHAR_getChar\s*\(", head):
+    if not re.search(r"\bchar\s*\*\s*CHAR_getChar\s*\(", head):
         controlled += r'''
 char *CHAR_getChar(int i,int f){(void)i;(void)f;return "native-target";}
 '''
-    if not re.search(r"\bBATTLE_changeRideImage\s*\(", head):
+    if not re.search(r"\b(?:int|void)\s+BATTLE_changeRideImage\s*\(", head):
         controlled += r'''
 void BATTLE_changeRideImage(int i){(void)i;}
 '''
