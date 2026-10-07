@@ -1,0 +1,17 @@
+StoneAge recovered25 BecomePig probe — R1 discovery
+Derived facts only; no names/descriptions/raw OPTION bytes/assets stored.
+COUNT|callback_rows|3
+COUNT|enemybase_slot_references|2
+COUNT|enemybase_templates|2
+BECOMEPIG_ROW|id=628|field=1|target=7|cost=2|illegal=5000|slot_references=0|option_bytes=0|option_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855|option_contains_nul=0|option_ascii=1|cp950_big5_agrees=1
+BECOMEPIG_ROW|id=631|field=1|target=7|cost=2|illegal=20000|slot_references=1|option_bytes=6|option_sha256=d85413c542901fa592fc345cbaf6e7c3a0d186eb44ed86ffe12c028a5fdbe04e|option_contains_nul=0|option_ascii=1|cp950_big5_agrees=1
+BECOMEPIG_ROW|id=635|field=1|target=7|cost=2|illegal=20000|slot_references=1|option_bytes=13|option_sha256=6f95294f982d8aa64e4b05f1b4a991463fc62c391d8a90ebb8ae02aecaa4814a|option_contains_nul=0|option_ascii=1|cp950_big5_agrees=1
+BECOMEPIG_TEMPLATE|tempno=170|graphic_id=101766|base_vital=32|base_strength=40|base_toughness=25|base_dexterity=30|ai=150|skill_slots=3|skill_ids=631
+BECOMEPIG_TEMPLATE|tempno=1147|graphic_id=101871|base_vital=26|base_strength=43|base_toughness=23|base_dexterity=35|ai=150|skill_slots=3|skill_ids=635
+RESOLUTION|RECOVERED25_BECOMEPIG_POSITIVE_REFERENCES_CLOSED
+RESOLUTION|RECOVERED25_BECOMEPIG_POPULATION_OPEN
+RESOLUTION|RECOVERED25_BECOMEPIG_EXACT_ROWS_OPEN
+RESOLUTION|RECOVERED25_BECOMEPIG_EXACT_TEMPLATES_OPEN
+DATA_SHA256|file=petskill|sha256=f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4
+DATA_SHA256|file=enemybase|sha256=1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63afa91df3e8b7
+BOUNDARY|discovery_only_complete_population_and_exact_identity_not_accepted
