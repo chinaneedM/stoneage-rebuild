@@ -201,7 +201,7 @@ static int ints[8][64],works[8][64];
 static int compliance_calls,sendc_calls,sendp_calls,talk_calls,delete_calls;
 static int warp_calls,warp_floor,warp_x,warp_y,charm_delta;
 static int item_fallthrough,npc_fallthrough;
-static char item_arg[64]="解猪";
+static char item_arg[64]="CURE_LITERAL";
 
 int CHAR_getInt(int i,int f){return ints[i][f];}
 int CHAR_setInt(int i,int f,int v){return ints[i][f]=v;}
@@ -303,6 +303,17 @@ int main(void){
   return 0;
 }
 '''
+    cure_match = re.search(
+        r'strstr\\s*\\(\\s*arg\\s*,\\s*"([^"]+)"',
+        p["recovery"],
+    )
+    if cure_match is None:
+        raise ValueError(f"{name}: unpig recovery literal missing")
+    cure_c = "".join(f"\\\\x{byte:02x}" for byte in cure_match.group(1).encode("utf-8"))
+    prefix = prefix.replace(
+        'static char item_arg[64]="CURE_LITERAL";',
+        f'static char item_arg[64]="{cure_c}";',
+    )
     return prefix + wrappers, p
 
 
