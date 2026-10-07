@@ -8542,3 +8542,47 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   dedicated BecomeFox gates before acceptance/fast-forward integration; then
   record receipt and mechanically advance to BecomePig631/635. Main's accepted
   pressure remains2463/20/3 until this reviewed runtime is accepted.
+
+
+## 2026-10-07 — BecomeFox bounded ordered runtime ACCEPTED; next OPEN BecomePig
+
+- **CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME.** Exact reviewed input
+  698660bc72a1933ec78d28263e5c5a4de324934d/tree
+  e7238917a88e34ba0a555ba067b05b02723d995c passes **35/35** triggered remote
+  workflows. Four required core gates SUCCESS: settlement37611414633/job
+  112759284435 (**704 tests**), coordinator37611414778/job112759284559 (**274**),
+  golden37611414397/job112759283452 (**44**), full region37611414719/job
+  112759285048 (**185**, verified bundle and **826** materializable floors).
+- Dedicated correction-head BecomeFox gates SUCCESS: admission22, ordered131,
+  persistent57, coordinator13 tests. Local unique workflow union **914 PASS**.
+  The earlier exact source/native oracle3840 vectors (1280/profile) is retained
+  on unchanged model/auditor files, not falsely reported as newly executed here.
+  Existing native whole-scan19656 and full Battling ultimate48 re-certified.
+- **Complete capability pressure ACCEPTED:** **2486=2465 closed+18 OPEN+3
+  historical UB**, unresolved skill IDs0. Exactly two ID625 placements promoted:
+  template148 and149, runtime index2/report slot3. Independent verified
+  pressure run37481236673 and correction-head full-region/concrete-stack
+  recomputation agree. This count is skill-placement capability, not total-game
+  reconstruction percentage or historical natural-trigger proof.
+- Reviewed/fixed no-ride boundary now rejects selected/active FOXROUND with
+  any supplied ride runtime and active entries with ride selection markers;
+  regression reproduced failures first. Empty overlays preserve unrelated ride
+  rounds. The specification's image typo101505 is corrected to source/model101749.
+- PetIn ordinary/work accessor divergence, ride/equipment composition, original
+  PRNG/enum/executable and original JSS/Taiwan-v1 membership remain OPEN.
+  Previous runtime/pressure/no-ride PENDING entries are superseded within this
+  bounded scope. Receipt: research/recovered/STONEAGE-BECOMEFOX-RUNTIME-ACCEPTANCE-R1.json.
+- Artifact settlement11477198502 digest
+  a8da9f9796ab2c046aae91cf38341f5b4376045a58095641549db2ae7847f3f3; region
+  11478388313 digest b72d7e241134fd058d6bed98268ccaa639eccc61cf1b9d6dbd45bd4a998bcbb8.
+  Region reports are unchanged at the correction input; no post-test code delta.
+- **Highest-priority unfinished task:** BecomePig ID631/635 exact recovered25
+  population/metadata/OPTION/placement discovery, followed by independent pinning
+  and source/native gates. Plan: specs/STONEAGE-BECOMEPIG-REFERENCE-DISCOVERY-PLAN-R1.md.
+  Preliminary inspection of all3 pinned callback/dispatcher blobs already finds
+  player-only eligibility, accumulated ordinary counter and materially different
+  OPTION handling. gavin/iris unchecked parsing and Bismarck literal pointer
+  comparison/default-rate divergence remain OPEN; do not reuse BecomeFox rules
+  or silently repair the source. Observation receipt:
+  research/recovered/STONEAGE-BECOMEPIG-PRELIMINARY-SOURCE-OBSERVATION-R1.json.
+  BecomePig0 promotions; engine/new-content decisions remain deferred.

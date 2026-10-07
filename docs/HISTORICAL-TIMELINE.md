@@ -1261,3 +1261,23 @@ post-attack fox/FOXROUND structure but materially diverge in PetIn FOXROUND
 accessor choice. This is later-source/data lineage evidence only; it does not
 date the feature, establish JSS/Taiwan-v1 membership or identify the recovered
 executable's exact descendant semantics.
+
+
+## 2026-10-07 — BecomeFox bounded runtime acceptance and BecomePig source divergence
+
+MODEL/FACT within the declared later recovered25 reconstruction slice:
+reviewed input698660bc passes35/35 remote workflows and914 unique local tests.
+BecomeFox's two exact positive placements are accepted as bounded execution
+capability; complete ledger2465 closed/18 OPEN/3 historical UB out of2486.
+No original JSS/Taiwan-v1 membership or natural encounter proof follows.
+The source/model fox image remains101749; one spec typo was corrected.
+
+FACT for separately pinned descendant source blobs only: BecomePig's callback
+queues a command, while its postattack eligibility requires a player and success
+adds to an ordinary BECOMEPIG counter. gavin/iris parse OPTION without checking
+conversion count; Bismarck instead contains a literal pointer-comparison branch
+and different else defaults. These source differences and potential undefined
+paths require independent analysis; no BecomePig reference/runtime is accepted.
+Exact profiles/blobs and OPEN issues are in the preliminary source observation
+receipt. Actual time decrement/lifetime owner and recovered25 OPTION rows remain
+OPEN. Do not transfer BecomeFox's pet target or round timer into this skill.

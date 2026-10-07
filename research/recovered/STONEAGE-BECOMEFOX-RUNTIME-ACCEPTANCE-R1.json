@@ -1,0 +1,335 @@
+{
+  "schema": "stoneage.becomefox-runtime-acceptance.r1",
+  "status": "CLOSED_BOUNDED_RECOVERED25_ORDERED_RUNTIME",
+  "accepted_at_utc": "2026-10-07T11:11:54+00:00",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "698660bc72a1933ec78d28263e5c5a4de324934d",
+    "tree": "e7238917a88e34ba0a555ba067b05b02723d995c"
+  },
+  "core_workflows": [
+    {
+      "run_id": 37611414633,
+      "job_id": 112759284435,
+      "name": "settlement/native regression",
+      "tests": 704,
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414778,
+      "job_id": 112759284559,
+      "name": "local coordinator",
+      "tests": 274,
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414397,
+      "job_id": 112759283452,
+      "name": "runtime golden",
+      "tests": 44,
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414719,
+      "job_id": 112759285048,
+      "name": "verified full region and concrete stack",
+      "tests": 185,
+      "materializable_floors": 826,
+      "conclusion": "success"
+    }
+  ],
+  "dedicated_correction_head_workflows": [
+    {
+      "run_id": 37611414683,
+      "job_id": 112759283858,
+      "name": "admission/FOXROUND",
+      "tests": 22,
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414723,
+      "job_id": 112759284234,
+      "name": "ordered round",
+      "tests": 131,
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414393,
+      "job_id": 112759283615,
+      "name": "persistent runtime",
+      "tests": 57,
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414650,
+      "job_id": 112759284157,
+      "name": "enemy-AI coordinator",
+      "tests": 13,
+      "conclusion": "success"
+    }
+  ],
+  "unchanged_source_evidence": {
+    "input": "97c6d3e71840259e35c6898333950c1a545d5a6f",
+    "run_id": 37471213887,
+    "job_id": 112294897327,
+    "conclusion": "success",
+    "native_postattack_vectors": 3840,
+    "per_profile": 1280,
+    "source_model_and_auditors_unchanged_at_correction_head": true
+  },
+  "pressure_evidence": {
+    "original_verified_run": 37481236673,
+    "original_job": 112329578618,
+    "original_input": "d46d8ad4423b5ad1a6aaf47d472596291f6dc331",
+    "tests": 24,
+    "conclusion": "success",
+    "classifier_unchanged": true,
+    "independent_correction_head_recertification_run": 37611414719,
+    "concrete_stack_recertified": true
+  },
+  "local_unique_workflow_tests": 914,
+  "correction_head_triggered_workflows": [
+    {
+      "run_id": 37611414633,
+      "name": "Validate StoneAge BattleModel base DamageSub settlement",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414723,
+      "name": "Validate StoneAge BecomeFox ordered round",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414650,
+      "name": "Validate StoneAge BecomeFox coordinator",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414656,
+      "name": "Validate StoneAge Refresh runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414441,
+      "name": "Validate StoneAge SetMagicPet runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414624,
+      "name": "Validate StoneAge BatFly runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414372,
+      "name": "Validate StoneAge enemy AttackMagic coordinator",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414377,
+      "name": "Validate StoneAge Lighttakeed runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414703,
+      "name": "Validate StoneAge FallGround runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414448,
+      "name": "Validate StoneAge AttackCrazed runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414391,
+      "name": "Validate StoneAge Weaken runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414645,
+      "name": "Validate StoneAge 2BattleTimid runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414397,
+      "name": "Validate StoneAge runtime golden contract",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414461,
+      "name": "Validate StoneAge GuardBreak2 runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414393,
+      "name": "Validate StoneAge BecomeFox persistent runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414727,
+      "name": "Validate StoneAge Modifyattack runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414744,
+      "name": "Validate StoneAge AttackMagic round execution",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414583,
+      "name": "Validate StoneAge Barrier runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414693,
+      "name": "Validate StoneAge BattleTimid runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414619,
+      "name": "Validate StoneAge Nocast guarded reference",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414622,
+      "name": "Validate StoneAge BattleTear runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414778,
+      "name": "Validate StoneAge local runtime session coordinator",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414617,
+      "name": "Validate StoneAge enemy ReHP runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414729,
+      "name": "Validate StoneAge Combined runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414686,
+      "name": "Validate StoneAge WildViolentAttack runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414764,
+      "name": "Validate StoneAge stable pet-skill core",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414672,
+      "name": "Validate StoneAge DamageToHp runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414724,
+      "name": "Validate StoneAge Vary runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414683,
+      "name": "Validate StoneAge BecomeFox admission and FOXROUND state",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414387,
+      "name": "Validate StoneAge MpDamage runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414598,
+      "name": "Validate StoneAge Mdfyattack runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414558,
+      "name": "Validate StoneAge ReLife runtime",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414601,
+      "name": "Validate StoneAge battle core model",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414722,
+      "name": "Validate StoneAge Taiwan v1.0 gameplay model",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 37611414719,
+      "name": "Validate StoneAge recovered25 region payload source",
+      "conclusion": "success"
+    }
+  ],
+  "artifacts": [
+    {
+      "run_id": 37611414633,
+      "id": 11477198502,
+      "digest": "sha256:a8da9f9796ab2c046aae91cf38341f5b4376045a58095641549db2ae7847f3f3"
+    },
+    {
+      "run_id": 37611414719,
+      "id": 11478388313,
+      "digest": "sha256:b72d7e241134fd058d6bed98268ccaa639eccc61cf1b9d6dbd45bd4a998bcbb8"
+    }
+  ],
+  "recovered25": {
+    "callback": "PETSKILL_BecomeFox",
+    "id": 625,
+    "metadata": [
+      1,
+      1,
+      2,
+      3000
+    ],
+    "option_bytes": 0,
+    "option_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "placements": [
+      {
+        "tempno": 148,
+        "runtime_index": 2,
+        "report_slot": 3
+      },
+      {
+        "tempno": 149,
+        "runtime_index": 2,
+        "report_slot": 3
+      }
+    ],
+    "fox_image": 101749
+  },
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "unresolved_skill_ids": 0,
+    "becomefox_promoted_slots": 2,
+    "next_open": {
+      "callback": "PETSKILL_BecomePig",
+      "ids": [
+        631,
+        635
+      ],
+      "slot_uses": 2,
+      "templates": 2
+    }
+  },
+  "review_corrections": [
+    "No-ride runtime scope now enforced for selected BecomeFox and carried FOXROUND with mounted or unmounted ride inputs.",
+    "Active FOXROUND entries reject a ride selection marker; empty overlays preserve unrelated ride rounds.",
+    "Runtime specification image corrected from101505 to101749; model/source literal was already correct."
+  ],
+  "boundaries": [
+    "PetIn accessor divergence unresolved",
+    "Ride-bearing transforms and wider equipment/critical compositions not admitted",
+    "Original PRNG and numeric command enum not established",
+    "Original active executable profile and JSS/Taiwan-v1 membership not established",
+    "Natural encounter/configured selection reachability not inferred from controlled coordinator witnesses"
+  ],
+  "next_plan": "specs/STONEAGE-BECOMEPIG-REFERENCE-DISCOVERY-PLAN-R1.md"
+}

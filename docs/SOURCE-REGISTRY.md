@@ -4243,3 +4243,25 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   original PRNG/build identity or historical membership is claimed; pressure
   promotion remains0.
 - Receipt: `research/recovered/STONEAGE-BECOMEFOX-REFERENCE-ACCEPTANCE-R1.json`.
+
+
+### 2026-10-07 — BecomeFox reviewed runtime acceptance; BecomePig entry observations
+
+- Source class: exact GitHub Actions runtime/native/data evidence and pinned
+  descendant source blobs; version scope later recovered25, not original v1.
+- Acceptance input698660bc72a1933ec78d28263e5c5a4de324934d, tree
+  e7238917a88e34ba0a555ba067b05b02723d995c. All35 workflows SUCCESS; core runs
+  37611414633/37611414778/37611414397/37611414719. Full-region independently
+  certifies826 floors, complete2465/18/3 pressure and existing concrete stack.
+- Exact BecomeFox postattack oracle remains3840 original-block vectors at
+  unchanged source/model/auditors; original run37471213887. No new historical
+  executable or PetIn/ride/PRNG provenance claim. Acceptance receipt:
+  research/recovered/STONEAGE-BECOMEFOX-RUNTIME-ACCEPTANCE-R1.json.
+- Next-OPEN BecomePig preliminary record preserves exact commits and callback/
+  dispatcher git blob identities for gavinlinasd/StoneAge, iriselia/StoneAge and
+  BismarckDD/stoneage. Only derived source observations are stored, including
+  player-only eligibility and OPTION divergence. Unchecked parsing and literal
+  pointer comparison are not normalized or executed as accepted semantics.
+  Record: research/recovered/STONEAGE-BECOMEPIG-PRELIMINARY-SOURCE-OBSERVATION-R1.json.
+- Complete BecomePig row/OPTION/placement discovery and independent native
+  gates remain OPEN; preliminary entry inspection promotes zero placements.

@@ -1,0 +1,92 @@
+{
+  "schema": "stoneage.becomepig-preliminary-source-observation.r1",
+  "status": "OBSERVED_PINNED_SOURCE_ONLY_NOT_REFERENCE_OR_RUNTIME_ACCEPTANCE",
+  "date": "2026-10-07",
+  "profiles": [
+    {
+      "profile": "gavin",
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "repository": "gavinlinasd/StoneAge",
+      "paths": {
+        "callback": {
+          "path": "gmsv/src/battle/pet_skill.c",
+          "git_blob": "a510c713ba3cb6c85a6738040928299b3d93ce88"
+        },
+        "dispatcher": {
+          "path": "gmsv/src/battle/battle.c",
+          "git_blob": "df5a04b94cbd7bbdab0da3cf91f9b0fa01327c6c"
+        }
+      },
+      "option_branch": "NONNULL_POINTER_BRANCH",
+      "missing_option_default_rate": 100,
+      "else_branch_constants": [
+        100,
+        60,
+        100250
+      ]
+    },
+    {
+      "profile": "iris",
+      "commit": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "repository": "iriselia/StoneAge",
+      "paths": {
+        "callback": {
+          "path": "Source/gmsv/battle/pet_skill.c",
+          "git_blob": "575830ec81b43e8b4abc9a7abab0ffd46fc76b18"
+        },
+        "dispatcher": {
+          "path": "Source/gmsv/battle/battle.c",
+          "git_blob": "3bd9f3603db416c46fc33cabf334592854bdddfd"
+        }
+      },
+      "option_branch": "NONNULL_POINTER_BRANCH",
+      "missing_option_default_rate": 100,
+      "else_branch_constants": [
+        100,
+        60,
+        100250
+      ]
+    },
+    {
+      "profile": "bismarck",
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "repository": "BismarckDD/stoneage",
+      "paths": {
+        "callback": {
+          "path": "server/gmsv/battle/pet_skill.c",
+          "git_blob": "65d04f0267b474d898a5f6ef52f04ecc51c4ee76"
+        },
+        "dispatcher": {
+          "path": "server/gmsv/battle/battle.c",
+          "git_blob": "99c3ad4ccfc4210964db4f37d9e866a77a364e1d"
+        }
+      },
+      "option_branch": "POINTER_COMPARISON_TO_STRING_LITERAL",
+      "missing_option_default_rate": null,
+      "else_branch_constants": [
+        30,
+        60,
+        100250
+      ]
+    }
+  ],
+  "facts": [
+    "Callback writes symbolic command, COM2 target, ready mode and low command3 array; callback has no OPTION parse or RNG.",
+    "Postattack eligibility is restricted to a living player target before the rate draw; BecomeFox non-player eligibility must not be reused.",
+    "Success clears item/NPC transformations and FOXROUND, can dismount, chooses pig image, and writes accumulated ordinary BECOMEPIG counter.",
+    "First-hit counter expression pettime+1+(-1) differs from repeat-hit pettime+compute; overflow guard is before the unchecked addition."
+  ],
+  "open": [
+    "Complete recovered25 callback population, row metadata, OPTION bytes/digests and exact placements.",
+    "Gavin/iris unchecked sscanf conversion count leaves rate/time uninitialized for inadequate OPTION conversions; native controls required.",
+    "Bismarck compares pointer to an empty string literal and uses different else rate; preserve literal source and do not silently normalize to gavin behavior.",
+    "Active macro guards, same-side argument domains, elapsed-time decrement/callback ownership, recall/exit interactions, native determinism and original executable lineage."
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promotions": 0
+  }
+}
