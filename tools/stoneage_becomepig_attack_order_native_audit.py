@@ -323,7 +323,7 @@ static void native_scenario_A(void){
   int counter_guardian_in=native_last_attackseq_guardian_in;
   int guardian_calls_after_counter=native_guardian_calls;
   native_apply_post(0);
-  printf("A %d %d %d %d %d %d %d %d %d %d %d %d %d|%s\n",
+  printf("A %d %d %d %d %d %d %d %d %d %d %d %d %d %d|%s\n",
     mainret,main_guardian,main_guardian_in,guardian_calls_after_main,
     counterret,counter_guardian_in,guardian_calls_after_counter,
     ints[1][CHAR_HP],ints[2][CHAR_HP],ints[10][CHAR_HP],
@@ -416,7 +416,7 @@ def _validate_rows(rows: list[str]) -> dict[str, int]:
         raise ValueError("native composition scenario labels drift")
 
     a = parsed["A"]
-    if len(a) != 13:
+    if len(a) != 14:
         raise ValueError("scenario A shape drift")
     (
         _mainret, main_guardian, main_guardian_in, guardian_calls_after_main,
