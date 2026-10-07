@@ -1,0 +1,83 @@
+{
+  "schema": "stoneage.becomepig-badstatus-composition-acceptance.r1",
+  "status": "CLOSED_BOUNDED_ORIGINAL_BADSTATUS_TABLES_AND_COMPLETE_CALLER_COMPOSITION",
+  "accepted_on": "2026-10-07",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "fad7a77ad6b9c1286e0ce574eec18e0587ca0a1d",
+    "tree": "53e88906c0710d7886de0c5bfcc774ea76e3a427"
+  },
+  "remote_validation": {
+    "run_id": 37628605267,
+    "job_id": 112816717818,
+    "conclusion": "success",
+    "tests": 38,
+    "source_profiles": 3,
+    "structural_gates_per_profile": 24,
+    "artifact_id": 11485057422,
+    "artifact_sha256": "cb999a01877eaa39eaabba312e591bbca88a8339205501a385c8e652e9f01d3d"
+  },
+  "derived_writeback": {
+    "path": "research/recovered/STONEAGE-BECOMEPIG-BADSTATUS-NATIVE-R1.txt",
+    "sha256": "417b12b7c95874b481f31371cb8dab8dadc84d08d747e5ed042e14efe9b77e39",
+    "matches_local_report": true,
+    "sha": "50c7cad1be9a0e07232482079a0101de852eec6b",
+    "tree": "ffa152fb0e330fc6dd3ef6a2578292152bcbef34"
+  },
+  "source_domain_receipt": "research/recovered/STONEAGE-BECOMEPIG-BADSTATUS-SOURCE-DOMAINS-R1.json",
+  "native": {
+    "entire_functions": [
+      "BATTLE_BadStatusAllClr",
+      "_CHAR_complianceParameter",
+      "_BATTLE_Exit"
+    ],
+    "original_selected_tables": [
+      "StatusTbl",
+      "MagicTbl"
+    ],
+    "loop_limit_validation": "actual_default_header_BATTLE_ST_END_enum_and_MAXSTATUSTYPE",
+    "standard": "gnu99",
+    "optimization_levels": [
+      "O0",
+      "O2"
+    ],
+    "UBSan": "nonrecovering",
+    "direct_helper_cases_per_profile_per_optimization": 1152,
+    "complete_caller_cases_per_profile_per_optimization": 61060,
+    "comparisons": 373272,
+    "prior_complete_caller_comparisons_reproduced": 165900,
+    "prior_clock_snapshots_reproduced": 419904,
+    "comparison": "return_player_pet_fields_entries_escapes_property_markers_all_clear_work_flag_counter_writes_and_ordered_caller_events"
+  },
+  "facts_within_declared_dependency_domain": [
+    "player_badstatus_clear_preserves_own_pig_counter_and_sets_valid_owned_pet_counters_minus1",
+    "pet_subject_badstatus_clear_does_not_clear_own_pig_counter",
+    "property_null_return_follows_early_status_and_death_clear_precedes_late_profession_and_owned_pet_pig_clear",
+    "complete_Exit_continues_after_helper_null_return",
+    "Bismarck_NOCAST_clear_after_NC_precedes_unused_battle_error_but_invalid_battle_rejects_before_it",
+    "gavin_iris_selected_status_count44_Bismarck12_magic_count6_all"
+  ],
+  "controlled_dependencies": [
+    "symbolic_field_handles_separate_int_work_flag_storage_adjacent_arithmetic_field_families_not_original_ABI",
+    "controlled_property_storage_and_empty_string_copy_constructFunctable_recorded",
+    "work_initialization_equipment_stat_and_image_mapper_helpers_not_original_bodies",
+    "synthetic_static_ride_table_and_controlled_dynamic_lookups",
+    "network_party_skillup_hooks_recorded",
+    "valid_live_battle_side_pet_owned_slot0_or_none_inactive_oblivion_mail_follow_profession_ticket_PvE_slots0_or4"
+  ],
+  "open": [
+    "actual_equipment_image_ride_helpers_and_tables_category5_matching_equipment_row_undefined_path",
+    "original_property_construction_stat_bodies_and_broader_pet_ownership_death_follow_PvP_watch_enemies_invalid_rider",
+    "main_hit_Guardian_counter_retarget_order_and_item_NPC_map_timer_composition",
+    "historical_executable_build_ABI_PRNG_feature_dates_JSS_Taiwan_v1",
+    "typed_ordered_persistent_coordinator_runtime"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  },
+  "next": "Gate actual equipment/image and ride lookup tables/helpers; exclude category5 matching-row undefined path. Then attack order and cross-subsystem timer composition before typed631/635 persistent/coordinator admission."
+}

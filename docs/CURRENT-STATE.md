@@ -8916,3 +8916,42 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   original undefined path. Attack main-hit/Guardian/counter/retarget order and item/
   NPC/map timer composition precede typed631/635 and persistent/coordinator admission.
   Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB;0 promotions.
+
+
+## 2026-10-07 — BecomePig original bad-status and full caller composition ACCEPTED
+
+- CLOSED_BOUNDED_ORIGINAL_BADSTATUS_TABLES_AND_COMPLETE_CALLER_COMPOSITION.
+  Exact inputfad7a77ad6b9c1286e0ce574eec18e0587ca0a1d/tree
+  53e88906c0710d7886de0c5bfcc774ea76e3a427 passes Action37628605267/job
+  112816717818.38 tooling/domain/identity tests and24 structural gates/profile
+  PASS. Three clean pinned source trees match function/table/default-feature pins.
+- Original complete BadStatusAllClr executes with actual default-selected status/
+  magic maps and independently checked original enum/macro loop lengths, inside
+  complete original compliance/Exit callers. O0/O2 GNU99+nonrecovering UBSan:
+  373272 comparisons;1152 direct-clear +61060 complete-caller cases/profile/opt.
+  Complete tracked field/property/entry state and ordered clear/caller traces
+  match oracle. Prior165900 caller and419904 clock comparisons reproduce unchanged.
+- FACT within bounded witnesses: player clear preserves own pig counter and
+  resets owned pet counter-1; pet clear does not clear own counter. Property NULL
+  returns after early status/death but before construct/late profession/owned-pet
+  reset. Exit continues after return, leaving active pet counter in that branch.
+  Bismarck NOCAST clear after NC precedes unused-battle error; gavin/iris preserve
+  it there. Invalid battle prevents the write. Real-world NULL remains unclaimed.
+- Remote report matches local byte-for-byte; writeback50c7cad1be9a0e07232482079a0101de852eec6b.
+  Artifact11485057422 SHA256cb999a01877eaa39eaabba312e591bbca88a8339205501a385c8e652e9f01d3d.
+  Receipt research/recovered/STONEAGE-BECOMEPIG-BADSTATUS-ACCEPTANCE-R1.json;
+  spec specs/STONEAGE-BECOMEPIG-BADSTATUS-COMPOSITION-R1.md. Earlier PENDING
+  superseded only in original bad-status/maps and complete-caller composition.
+- Remaining controlled dependencies: symbolic ABI/adjacent field families, property
+  storage/empty-copy/construct hook, work-init/equipment/other stat/image mapper,
+  synthetic static/dynamic ride outputs, network/skill-up/party. Valid battle-side
+  pet, owned slot0 ornone; inactive oblivion/follow/mail/ticket/profession hooks,
+  PvE player slots0/4. Full original restoration is still OPEN;0 promotions.
+- Highest priority: execute actual equipment/image and ride helpers/tables under
+  default-header source domains, preserve first-match/declared-bound/zero-fill
+  semantics and Bismarck belt/default-new-ride differences. Keep category5 matching
+  equipment row excluded as original undefined path; do not silently repair guard.
+  Then main-hit/Guardian/counter/retarget order and item/NPC/map timer composition
+  before typed631/635 and persistent/coordinator admission. Broader ownership/
+  death/follow/PvP/watch/enemy/invalid-rider and historical executable/build/PRNG
+  remain OPEN. Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB.

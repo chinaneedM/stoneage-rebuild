@@ -1362,3 +1362,16 @@ OPEN. No capability promotions; pressure stays2465/18/3 out of2486.
   unused-battle return; gavin/iris preserve it at that point. Invalid battle
   prevents this write. Previous zero-seeded caller witness remains valid within
   its scope but did not observe this distinction.
+
+
+## 2026-10-07 — Original bad-status and complete restoration composition bounded acceptance
+
+- The preceding BadStatus source/order claims reproduce in373272 original native
+  comparisons at O0/O2 GNU99+nonrecovering UBSan; exact inputfad7a77ad6b9c1286e0ce574eec18e0587ca0a1d,
+  Action37628605267 SUCCESS. Complete callers compose with actual status/magic maps.
+  Prior165900 callers/419904 clock snapshots remain byte-for-byte reproducible.
+- Property-null early return and seeded Bismarck NOCAST-before-unused-battle-error
+  difference are bounded reference facts, not historical deployment observations.
+  Original helper bytes/tables transient only; derived report/domain/acceptance
+  receipts retained. Equipment/ride/property/stat/full timer/attack/runtime domains
+  remain OPEN. Pending superseded only in accepted scope;0 runtime promotions.

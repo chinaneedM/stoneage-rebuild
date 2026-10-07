@@ -4378,3 +4378,21 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
 - Spec specs/STONEAGE-BECOMEPIG-BADSTATUS-COMPOSITION-R1.md; gate
   .github/workflows/validate-stoneage-becomepig-badstatus.yml. Remote acceptance
   pending; earlier restoration/clock reports must reproduce byte-for-byte.
+
+
+## 2026-10-07 — Original bad-status composition R1 remote acceptance
+
+- CLOSED_BOUNDED original default BadStatusAllClr +actual status/magic maps +whole
+  original compliance/Exit composition; controlled dependencies retained as in spec.
+  Inputfad7a77ad6b9c1286e0ce574eec18e0587ca0a1d/tree53e88906c0710d7886de0c5bfcc774ea76e3a427.
+  Action37628605267/job112816717818 SUCCESS;38 tests,24 source gates/profile,
+  373272 native comparisons. Prior165900 callers/419904 clock snapshots reproduce.
+- Derived writeback50c7cad1be9a0e07232482079a0101de852eec6b/tree
+  ffa152fb0e330fc6dd3ef6a2578292152bcbef34. Report SHA256
+  417b12b7c95874b481f31371cb8dab8dadc84d08d747e5ed042e14efe9b77e39
+  matches local byte-for-byte. Artifact11485057422 SHA256
+  cb999a01877eaa39eaabba312e591bbca88a8339205501a385c8e652e9f01d3d.
+  Receipt research/recovered/STONEAGE-BECOMEPIG-BADSTATUS-ACCEPTANCE-R1.json.
+- Prior pending scope superseded by remote evidence. Actual equipment/ride maps,
+  property construction/stat bodies, attacks/timers/ownership/historical builds
+  and runtime remain OPEN. Pressure2486 and BecomePig promotions0 unchanged.

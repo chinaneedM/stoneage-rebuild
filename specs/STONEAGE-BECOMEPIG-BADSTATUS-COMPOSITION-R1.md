@@ -75,3 +75,13 @@ pressure ledger without a separate registry decision.
 
 Pressure remains2486 = 2465 closed capability + 18 OPEN + 3 historical UB.
 BecomePig runtime promotions remain0; unused628 and versioned631/635 stay separate.
+
+## Remote acceptance
+
+CLOSED_BOUNDED_ORIGINAL_BADSTATUS_TABLES_AND_COMPLETE_CALLER_COMPOSITION.
+Action37628605267/job112816717818 SUCCESS on exact input
+fad7a77ad6b9c1286e0ce574eec18e0587ca0a1d/tree53e88906c0710d7886de0c5bfcc774ea76e3a427.
+38 tests and373272 original native comparisons PASS. Prior165900 callers and
+419904 clock snapshots reproduce unchanged. Derived report equals local bytes;
+receipt `research/recovered/STONEAGE-BECOMEPIG-BADSTATUS-ACCEPTANCE-R1.json`.
+No broader dependency or runtime domain is promoted.
