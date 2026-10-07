@@ -1375,3 +1375,20 @@ OPEN. No capability promotions; pressure stays2465/18/3 out of2486.
   Original helper bytes/tables transient only; derived report/domain/acceptance
   receipts retained. Equipment/ride/property/stat/full timer/attack/runtime domains
   remain OPEN. Pending superseded only in accepted scope;0 runtime promotions.
+
+
+## 2026-10-07 — Actual lookup tables preserve default restoration differences
+
+- FACT under pinned default/current-compiler reference: original equipment helper
+  uses first matching row; actual duplicate keys are nonconflicting but retained.
+  Bismarck live-belt branch preserves current image before table/category guard.
+  Equipment category5 matching-row read is undefined and excluded, not repaired.
+- Static/default-active new-ride mapping composes inside whole original compliance/
+  Exit/BadStatusAllClr. Static first match can use current or base player image;
+  following learned-code dynamic match can overwrite it/preserved pig image.
+  Item/NPC/death guards and failure dismount/status order stay original.
+- gavin/iris active dynamic widths12/10; Bismarck default dynamic/static caller
+  path inactive. Its declared296 static table contains104 explicit+192 zero-filled
+  rows, verified as physical data without promoting inactive caller capability.
+  Original source/table bytes transient only; remote acceptance pending. Stat/
+  property/attack/timer/broader ownership/historical deployment/runtime stay OPEN.

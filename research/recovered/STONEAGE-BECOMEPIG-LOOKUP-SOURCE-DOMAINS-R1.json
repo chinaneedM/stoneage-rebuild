@@ -1,0 +1,156 @@
+{
+  "schema": "stoneage-becomepig-lookup-source-domains-r1",
+  "scope": "actual default lookup maps/functions; symbolic ABI; zero runtime promotion",
+  "profiles": {
+    "gavin": {
+      "source_sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "files": {
+        "char/char_data.c": "594202c665a8f2f70c14a072939b61b2ff4eca0ed48a9e9870babef33473b2d6",
+        "char/char_base.c": "69b9ef4ce1f2fca199b917be33861bdf530767a9da5b835e58ed1aa098ad2f0f",
+        "include/char_base.h": "2959c40645149277878661dd49ccffd1653f11fcb55c93f03efe306e6d578d45",
+        "include/anim_tbl.h": "84563656137487695d159e57bbdfc9d5c135a949f96b8639c03c22885c828dd1",
+        "include/item.h": "3f7e7569ff6a2bdf2fd52162f61d463727a941cfdac691eeb1be074d8dbe07c7",
+        "include/version.h": "e58232f8763dccedfbba775ddfb3eaa33e431505b090b2e9a7a87cf8d5945d4a"
+      },
+      "functions": {
+        "CHAR_getNewImagenumberFromEquip": "0e07fa415869b6266f98d1a4254488a1ac828f5a20d10d83c67e01c936d10ee0",
+        "RIDEPET_getNOindex": "971f5d85e20056283c1c9834074cddddaf8f746c4581564538ca2302ba3af061",
+        "RIDEPET_getPETindex": "bb49576745ca90ec6e89b34d64512024fde532bf547b595942ff780069d098f8",
+        "RIDEPET_getRIDEno": "9a5a0fd9e6d0651ca4714d7b825ccefbba89f445dc8ed839dd4212b4f7635fb7"
+      },
+      "tables": {
+        "CHAR_eqimagetbl": {
+          "sha256": "63454b3d90b5690cc9b326c743f5edeed9d5dbc967ece42270cd5f73236ff06e",
+          "declared_dimensions": "[][5]",
+          "rows": 67
+        },
+        "ridePetTable": {
+          "sha256": "6497d031bf29e5b910ae48f2eb3d814ea1ece30b2f8dc47ea8a10f3dedc010ac",
+          "declared_dimensions": "[296]",
+          "rows": 296
+        },
+        "RideCodeMode": {
+          "sha256": "67285970f522a5ae0a04a96c03aee1fd7c94cfadc334aebedb163c560dde4477",
+          "declared_dimensions": "[]",
+          "rows": 12
+        },
+        "RideNoList": {
+          "sha256": "09cff4d34752219e5d7b22f8777c9074099799610a88d5fefaf87a28571f2984",
+          "declared_dimensions": "[]",
+          "rows": 12
+        },
+        "RPlistMode": {
+          "sha256": "eb5e2d9f0d7742b769b0802f415b1bf07d6879519daa9f82ce53f41d91e9740f",
+          "declared_dimensions": "[]",
+          "rows": 72
+        }
+      },
+      "static_initialized_rows": 296,
+      "static_zero_filled_rows": 0,
+      "maxnoindex": 12,
+      "item_fist": 0,
+      "equipment_index_argument": false,
+      "features": {
+        "_NEW_RIDEPETS": true,
+        "_GM_METAMO_RIDE": true,
+        "_RIDE_CF": false,
+        "_ITEM_EQUITSPACE": true,
+        "_MO_IMAGE_EXTENSION": false
+      }
+    },
+    "iris": {
+      "source_sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "files": {
+        "char/char_data.c": "bf676653ef0ab05d90b414333b81233e0dfb87b8a84ddb61bd845df3856ae91b",
+        "char/char_base.c": "9f72046d685db4d2697402227e9218d93aaf2ad90915cffcabbdaaa6025dfd6f",
+        "include/char_base.h": "d53f39efe6f18ad90b668457461624f2a9aef542b24389a4e0e14c6b64f92645",
+        "include/anim_tbl.h": "e19daa0e5a49c1d8f930ffc9f3474cd5f840e6df73d1d2036882fb28943462df",
+        "include/item.h": "fc4ae1abe7aef229cb5c44d9f623dca36ff4779778042b32f1e2e7c3de92f1cd",
+        "include/version.h": "a404dacc30266a04a58aa53e914bb4ba19aa583c982051ed5427ad71f8498bad"
+      },
+      "functions": {
+        "CHAR_getNewImagenumberFromEquip": "0e07fa415869b6266f98d1a4254488a1ac828f5a20d10d83c67e01c936d10ee0",
+        "RIDEPET_getNOindex": "971f5d85e20056283c1c9834074cddddaf8f746c4581564538ca2302ba3af061",
+        "RIDEPET_getPETindex": "bb49576745ca90ec6e89b34d64512024fde532bf547b595942ff780069d098f8",
+        "RIDEPET_getRIDEno": "619f450ebbf668fb4360fa9ad87e3279d8802d9271d92daa522fdfa473fca01b"
+      },
+      "tables": {
+        "CHAR_eqimagetbl": {
+          "sha256": "63454b3d90b5690cc9b326c743f5edeed9d5dbc967ece42270cd5f73236ff06e",
+          "declared_dimensions": "[][5]",
+          "rows": 67
+        },
+        "ridePetTable": {
+          "sha256": "e3d579d1a92f6c85d00acc6d75d543fd0e6eff7d2c8f8acb34c219b0fee2b8fc",
+          "declared_dimensions": "[122]",
+          "rows": 122
+        },
+        "RideCodeMode": {
+          "sha256": "790536fad99558f5a8af68c20a5446c6927143a2ff2b472b9d0003b35f5e4267",
+          "declared_dimensions": "[]",
+          "rows": 10
+        },
+        "RideNoList": {
+          "sha256": "60806ef9e7fa9d036657526bb5f188434f8e203d48fd89623efaf43a2c2cff64",
+          "declared_dimensions": "[]",
+          "rows": 12
+        },
+        "RPlistMode": {
+          "sha256": "e28f64c74e52466ed1d154bee71031caadeef391c28d05fe881ee47726f05f18",
+          "declared_dimensions": "[]",
+          "rows": 48
+        }
+      },
+      "static_initialized_rows": 122,
+      "static_zero_filled_rows": 0,
+      "maxnoindex": 10,
+      "item_fist": 0,
+      "equipment_index_argument": false,
+      "features": {
+        "_NEW_RIDEPETS": true,
+        "_GM_METAMO_RIDE": false,
+        "_RIDE_CF": false,
+        "_ITEM_EQUITSPACE": true,
+        "_MO_IMAGE_EXTENSION": false
+      }
+    },
+    "bismarck": {
+      "source_sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "files": {
+        "char/char_data.c": "135454197f29042a3876199397da0648dabea48b0a276d2e62ea22f9c14aed5b",
+        "char/char_base.c": "87942c458e497bca856dffab8387ed1f50628faac662a29d57e1fba38de588bb",
+        "include/char_base.h": "71bcc04e14959e6c4646759716e034c8d9209c17d8457d94a8b1071b5d4d5fa4",
+        "include/anim_tbl.h": "2a66bdd8f3a8507011d395e70f1122e1a99d60fda1691684dbbb911550c70e05",
+        "include/item.h": "13a8250cf2dba2b0ed8123878f0e1b6eb89cdceae40409580f78aaed066b8905",
+        "include/version.h": "4996de26fa1fc795da5d903e05aca00d3170ee672300387e02e54675f5a79602"
+      },
+      "functions": {
+        "CHAR_getNewImagenumberFromEquip": "df772e0e0d089cf7a0050507bab10e47645c6a84972cbc2dbd2063cb0fdbaf4b"
+      },
+      "tables": {
+        "CHAR_eqimagetbl": {
+          "sha256": "6722e89ffd7f2e5ff1ace5bfbb9c13309acbb7f7ce12d9d1066d75a90df986e6",
+          "declared_dimensions": "[][5]",
+          "rows": 76
+        },
+        "ridePetTable": {
+          "sha256": "fb2a0eada950adf6c03690261368a24e1075607bb4fb66007dfa565bfba5f7a0",
+          "declared_dimensions": "[296]",
+          "rows": 296
+        }
+      },
+      "static_initialized_rows": 104,
+      "static_zero_filled_rows": 192,
+      "maxnoindex": 0,
+      "item_fist": 0,
+      "equipment_index_argument": true,
+      "features": {
+        "_NEW_RIDEPETS": false,
+        "_GM_METAMO_RIDE": false,
+        "_RIDE_CF": true,
+        "_ITEM_EQUITSPACE": true,
+        "_MO_IMAGE_EXTENSION": false
+      }
+    }
+  }
+}

@@ -8955,3 +8955,31 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   before typed631/635 and persistent/coordinator admission. Broader ownership/
   death/follow/PvP/watch/enemy/invalid-rider and historical executable/build/PRNG
   remain OPEN. Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB.
+
+
+## 2026-10-07 — BecomePig actual equipment/ride lookup composition gate implemented (PENDING)
+
+- Fresh remote mainb9545386fec50252e35d1cf4489a1cb3e9518ef7/tree
+  aac31b0516d84b9595e2ac186417e29b553de0e3; Action37628605267 SUCCESS.
+  Highest-priority actual equipment/image and ride helpers/maps implemented.
+- Complete original equipment-image helper and default-active new-ride helpers
+  now execute with actual selected maps, inside complete compliance/Exit and
+  BadStatusAllClr with actual status/magic tables. Physical table census verifies
+  all values, duplicates and declared static zero fill, separately from callers.
+  Function/map/source/default identities pinned; original bytes transient only.
+- Equipment rows67/67/76; static declared296/122/296, initialized296/122/104.
+  Bismarck192 zero-filled rows are metadata/native table checks, not activation of
+  its default-disabled ride caller. Active new-ride widths12/10/0; Bismarck belt/
+  index-aware image helper differs. First-match order and enum ITEM_FIST0 retained.
+- Local322872 lookup/table/composition comparisons PASS at O0/O2 GNU99+UBSan;
+  50 domain/identity/regression tests PASS. Matching-row category5 undefined read
+  rejected before native execution; safe missing-row/belt-bypass cases retained.
+  No original guard repaired; pressure registry unchanged.
+- Remote gate pending. Controlled stat/work-init/equipment effects/property construct/
+  item presence/category/belt/network/party/skill-up/ownership and symbolic ABI stay
+  explicit. See specs/STONEAGE-BECOMEPIG-LOOKUP-COMPOSITION-R1.md and source pins.
+- After exact remote acceptance, highest priority main-hit/Guardian/counter/retarget
+  order and item/NPC/map timer composition before typed631/635 and persistent/
+  coordinator admission. Broader stat/property/ownership/death/follow/PvP/watch/
+  invalid-rider and historical executable/build/PRNG stay OPEN. Pressure unchanged
+  2486=2465 closed+18 OPEN+3 historical UB;0 runtime promotions.

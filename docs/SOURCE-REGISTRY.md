@@ -4396,3 +4396,24 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
 - Prior pending scope superseded by remote evidence. Actual equipment/ride maps,
   property construction/stat bodies, attacks/timers/ownership/historical builds
   and runtime remain OPEN. Pressure2486 and BecomePig promotions0 unchanged.
+
+
+## 2026-10-07 — BecomePig actual appearance lookup source domains R1
+
+- DERIVED/SOURCE: same clean pinned gavin/iris/Bismarck descendants. New source
+  identities cover char/char_data.c equipment-image map/helper, char/char_base.c
+  static/default-active dynamic ride tables/helpers, include/char_base.h,
+  include/anim_tbl.h, include/item.h and include/version.h. Receipt:
+  research/recovered/STONEAGE-BECOMEPIG-LOOKUP-SOURCE-DOMAINS-R1.json.
+- Selected helper and numeric physical-table hashes pin source order, duplicate
+  rows, static declared bound and C zero-fill. gavin/iris widths12/10; Bismarck
+  _NEW_RIDEPETS false while _RIDE_CF true; inactive branches not executed/promoted.
+  Bismarck static296 declaration has104 initializers+192 zero rows. Equipment
+ 67/67/76 rows and64/64/69 unique keys; duplicate keys currently nonconflicting.
+- Bounded original helpers/actual maps compose with complete compliance/Exit and
+  BadStatusAllClr/actual status maps. Original bytes remain transient. Symbolic
+  ABI/property/stat/item/network/ownership fixtures retain explicit boundaries.
+- Original matching-row category5 equipment read remains undefined/excluded;
+  source guard unchanged. Spec specs/STONEAGE-BECOMEPIG-LOOKUP-COMPOSITION-R1.md;
+  .github/workflows/validate-stoneage-becomepig-lookup.yml remote gate pending,
+  requires old badstatus/caller/clock reports byte-for-byte.0 runtime promotions.
