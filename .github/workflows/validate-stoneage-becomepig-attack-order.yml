@@ -1,0 +1,97 @@
+name: Validate StoneAge BecomePig attack order source gate
+
+concurrency:
+  group: stoneage-becomepig-attack-order-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-becomepig-attack-order.yml"
+      - "tools/stoneage_becomepig_attack_order_audit.py"
+      - "tests/test_stoneage_becomepig_attack_order.py"
+      - "specs/STONEAGE-BECOMEPIG-ATTACK-ORDER-R1.md"
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate attack-order detector
+        run: python -m unittest -v tests.test_stoneage_becomepig_attack_order
+
+      - name: Recover exact pinned descendant source trees
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_guard_break2_source_audit import PINNED
+
+          repos = {
+              "gavin": "gavinlinasd/StoneAge",
+              "iris": "iriselia/StoneAge",
+              "bismarck": "BismarckDD/stoneage",
+          }
+          root = Path("/tmp/becomepig-attack-order-source")
+          for name, sha in PINNED.items():
+              dst = root / name
+              subprocess.run(["git", "init", str(dst)], check=True)
+              subprocess.run(
+                  ["git", "-C", str(dst), "remote", "add", "origin",
+                   "https://github.com/" + repos[name] + ".git"],
+                  check=True,
+              )
+              subprocess.run(
+                  ["git", "-C", str(dst), "fetch", "--depth", "1", "origin", sha],
+                  check=True,
+              )
+              subprocess.run(
+                  ["git", "-C", str(dst), "checkout", "--detach", "FETCH_HEAD"],
+                  check=True,
+              )
+          PY
+
+      - name: Audit original attack Guardian counter and retarget order
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          python -m tools.stoneage_becomepig_attack_order_audit \
+            --gavin-dir /tmp/becomepig-attack-order-source/gavin \
+            --iris-dir /tmp/becomepig-attack-order-source/iris \
+            --bismarck-dir /tmp/becomepig-attack-order-source/bismarck \
+            > research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt
+          cat research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt
+          test "$(grep -c '^PROFILE|' research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt)" = 3
+          grep -F 'counter_caller_guardian_remap_between_seq_damage=0' \
+            research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt
+          grep -F 'RESOLUTION|BECOMEPIG_ORIGINAL_MAIN_GUARDIAN_COUNTER_RETARGET_ORDER_SOURCE_PASS_ZERO_RUNTIME_PROMOTIONS' \
+            research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt
+
+      - name: Preserve derived source-order evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: becomepig-attack-order-${{ github.sha }}
+          path: research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt
+
+      - name: Commit only derived source-order report
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt
+          if ! git diff --cached --quiet; then
+            git commit -m "research: verify original BecomePig attack order [skip ci]"
+            git push origin HEAD:"${GITHUB_REF_NAME}"
+          fi
