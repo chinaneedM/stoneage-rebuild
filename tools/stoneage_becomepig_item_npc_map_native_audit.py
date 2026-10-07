@@ -86,6 +86,10 @@ def _parts(name: str, root: Path) -> dict[str, str]:
     npc_compact = _compact(npc_fn)
     recovery_fn_compact = _compact(recovery_fn)
     recovery_compact = _compact(recovery)
+    recovery_delete = max(
+        recovery_compact.find("CHAR_DelItemMess(charaindex,haveitemindex,0)"),
+        recovery_compact.find("CHAR_DelItemMess(charaindex,haveitem_index,0)"),
+    )
     item_timer_compact = _compact(item_timer)
     map_timer_compact = _compact(map_timer)
 
@@ -108,9 +112,10 @@ def _parts(name: str, root: Path) -> dict[str, str]:
             < recovery_fn_compact.find("CHAR_getInt(toindex,CHAR_BECOMEPIG"),
         "recovery_clears_pig_before_compliance_and_item_consumption":
             recovery_compact.find("CHAR_setInt(toindex,CHAR_BECOMEPIG,-1)") >= 0
+            and recovery_delete >= 0
             and recovery_compact.find("CHAR_setInt(toindex,CHAR_BECOMEPIG,-1)")
             < recovery_compact.find("CHAR_complianceParameter(toindex)")
-            < recovery_compact.find("CHAR_DelItemMess(charaindex,haveitemindex,0)"),
+            < recovery_delete,
         "item_timeout_clears_item_and_npc_then_compliance":
             item_timer_compact.find("CHAR_setWorkInt")
             < item_timer_compact.find("CHAR_WORKNPCMETAMO")
@@ -246,7 +251,7 @@ static int npc_guard_probe(void){
 }
 
 static void recovery_probe(void){
-  int charaindex=1,toindex=1,haveitemindex=0;
+  int charaindex=1,toindex=1,haveitemindex=0,haveitem_index=0;
 ''' + p["recovery"] + r'''
 }
 
