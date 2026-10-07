@@ -17,7 +17,7 @@ This runtime is downstream of the accepted bounded BecomeFox reference:
   `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`;
 - template 148: IMG 101743, base 32/40/26/30, MODAI 150;
 - template 149: IMG 101744, base 28/45/22/32, MODAI 150;
-- transformed fox image **101505**;
+- transformed fox image **101749**;
 - the post-attack success threshold is `rand()%100 < 31`.
 
 No recovered-original executable profile is inferred from the descendant sources.
@@ -133,7 +133,9 @@ inventing source order. In particular:
 
 - active/selected actors are bounded to the admitted no-equipment-critical FIST
   physical profile;
-- ride-bearing transformation that would alter a ride image is rejected;
+- selected BecomeFox or an active FOXROUND overlay rejects any supplied ride
+  runtime, mounted or unmounted; active overlay entries also reject a nonnegative
+  ride selection marker;
 - PetIn FOXROUND behavior is not integrated;
 - wider equipment/critical interactions are not generalized;
 - another semantic callback cannot own the same actor action;

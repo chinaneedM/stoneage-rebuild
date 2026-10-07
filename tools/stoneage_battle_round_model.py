@@ -5159,6 +5159,12 @@ def resolve_ordinary_round(
         becomefox_overlay,BecomeFoxRuntimeOverlay
     ):
         raise TypeError("becomefox_overlay has wrong type")
+    if ride_pet_runtime is not None and (
+        becomefox_actor_ids
+        or (becomefox_overlay is not None
+            and becomefox_overlay.runtime_by_participant_id)
+    ):
+        raise ValueError("bounded BecomeFox execution excludes ride composition")
     if becomefox_overlay is not None:
         unknown=sorted(
             set(becomefox_overlay.runtime_by_participant_id)-set(slot_by_id)

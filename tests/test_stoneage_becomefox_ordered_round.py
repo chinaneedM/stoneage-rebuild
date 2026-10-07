@@ -1,6 +1,7 @@
 import unittest
 
 from tools.stoneage_battle_guardian_model import GuardianRegistration
+from tools.stoneage_battle_ride_damage_model import RidePetRuntime
 from tools.stoneage_battle_round_model import (
     BATTLE_COM_ATTACK,
     BATTLE_COM_GUARD,
@@ -69,7 +70,50 @@ def main_event(result,pid):
 
 
 class BecomeFoxOrderedRoundTests(unittest.TestCase):
-    def resolve_transform_round(self,*,guardian=False,draw=0,target_kind="pet"):
+    def test_carried_fox_rejects_ride_even_without_a_new_cast(self):
+        pet=actor("pet","player","pet",quick=70)
+        rider=actor("rider","player","player",quick=50)
+        dummy=actor("dummy","enemy","enemy",quick=10)
+        prepared=prepare_battle_round(
+            (pet,rider,dummy),
+            {pid:BattleCommand(BATTLE_COM_NONE) for pid in ("pet","rider","dummy")},
+            {pid:0 for pid in ("pet","rider","dummy")},
+        )
+        overlay=BecomeFoxRuntimeOverlay({
+            "pet":FoxParticipantRuntime(PROFILE_GAVIN,FoxState(
+                base_image=FOX_IMAGE,base_base_image=101111,
+                attack_power=80,defence_power=16,quick=40,
+                fix_str=100,fix_tough=20,fix_dex=50,fox_round=1,
+            ))
+        })
+        ride=RidePetRuntime(
+            rider_id="rider",pet_id="ride",hp=100,max_hp=100,defense_power=20,
+        )
+        kwargs=dict(
+            slots={"rider":0,"pet":5,"dummy":16},
+            profiles={pid:profile() for pid in ("pet","rider","dummy")},
+            attack_rolls={},defense_profile="newpower_70pct",
+            ride_pet_runtime=ride,becomefox_current_turn=2,
+        )
+        with self.assertRaisesRegex(ValueError,"ride"):
+            resolve_ordinary_round(prepared,becomefox_overlay=overlay,**kwargs)
+        # An empty overlay is not active and must preserve unrelated ride rounds.
+        result=resolve_ordinary_round(
+            prepared,becomefox_overlay=BecomeFoxRuntimeOverlay.empty(),**kwargs
+        )
+        self.assertEqual(result.ride_pet_runtime,ride)
+
+    def test_ride_composition_is_rejected_for_selected_becomefox(self):
+        for mounted in (False, True):
+            with self.subTest(mounted=mounted):
+                ride=RidePetRuntime(
+                    rider_id="rider",pet_id="ride",hp=100,max_hp=100,
+                    defense_power=20,mounted=mounted,
+                )
+                with self.assertRaisesRegex(ValueError, "ride"):
+                    self.resolve_transform_round(ride=ride)
+
+    def resolve_transform_round(self,*,guardian=False,draw=0,target_kind="pet",ride=None):
         pet=actor("pet","player",target_kind,attack=100,defense=0,quick=70)
         caster=actor("caster","enemy","enemy",attack=180,defense=10,quick=100)
         dummy=actor("dummy","enemy","enemy",hp=2000,defense=0,quick=10)
@@ -80,9 +124,17 @@ class BecomeFoxOrderedRoundTests(unittest.TestCase):
             "dummy":BattleCommand(BATTLE_COM_NONE),
         }
         kwargs={}
+        if ride is not None:
+            kwargs["ride_pet_runtime"]=ride
         slots={"caster":15,"pet":5,"dummy":16}
         profiles={"caster":profile(120),"pet":profile(90),"dummy":profile(80)}
         initiatives={"caster":0,"pet":0,"dummy":0}
+        if ride is not None:
+            participants.append(actor("rider","player","player",quick=5))
+            commands["rider"]=BattleCommand(BATTLE_COM_NONE)
+            slots["rider"]=0
+            profiles["rider"]=profile(80)
+            initiatives["rider"]=0
         if guardian:
             guard=actor("guard","player","pet",hp=2000,defense=0,quick=20)
             participants=[caster,pet,guard,dummy]

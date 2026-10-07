@@ -55,6 +55,8 @@ class FoxParticipantRuntime:
             raise ValueError("persistent BecomeFox runtime may carry active FOXROUND only")
         if int(self.state.base_image)!=FOX_IMAGE:
             raise ValueError("active FOXROUND runtime must carry fox image")
+        if int(self.state.ride_pet)!=-1:
+            raise ValueError("bounded BecomeFox runtime excludes ride-bearing state")
         object.__setattr__(self,"source_profile",profile)
 
     @property

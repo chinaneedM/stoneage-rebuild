@@ -21,6 +21,12 @@ def fox(profile=PROFILE_GAVIN,roundno=3,**changes):
 
 
 class BecomeFoxRuntimeStateTests(unittest.TestCase):
+    def test_ride_bearing_fox_state_cannot_enter_bounded_runtime(self):
+        for profile in (PROFILE_GAVIN, PROFILE_IRIS, PROFILE_BISMARCK):
+            with self.subTest(profile=profile):
+                with self.assertRaisesRegex(ValueError, "ride"):
+                    fox(profile, ride_pet=0)
+
     def test_source_profile_controls_arrange_and_petin_accessor_only(self):
         self.assertTrue(arrange_guard_active(PROFILE_GAVIN))
         self.assertTrue(arrange_guard_active(PROFILE_IRIS))

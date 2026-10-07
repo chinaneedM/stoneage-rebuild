@@ -1,6 +1,6 @@
 # Current State
 
-Last updated: 2026-10-06
+Last updated: 2026-10-07
 
 ## Current phase
 
@@ -8518,3 +8518,27 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   that remote gate succeeds.
 - Canonical runtime spec:
   `specs/STONEAGE-BECOMEFOX-RUNTIME-R1.md`.
+
+
+## 2026-10-07 — BecomeFox acceptance review; no-ride boundary correction (PENDING)
+
+- Startup re-read remote main b893685f3ce62a5810d200e9c18ce8ce40b8ca69/tree
+  55eb9ed1fbd9a7de34815f75b4c19358dbe9cd7d, branches, latest commits/Actions
+  and all protocol files. Existing runtime branch4ccd9efb8dd83c2495b0b39e106d555b2c6153de
+  is21 commits ahead/0 behind, not yet accepted on main.
+- Inspected final core input82dbf70e1992a59ff7bf1f8e9a16bcbc08979126:
+  settlement37482091920, coordinator37482091965, golden37482091943 and full
+  region37482092054 SUCCESS. Verified pressure37481236673 independently
+  recovered2486=2465 closed+18 OPEN+3 historical UB; NEXT_OPEN BecomePig631/635.
+- Review found bounded no-ride scope was documented but not enforced at the
+  ordinary-round admission boundary; a fresh cast and carried FOXROUND could
+  compose with supplied ride state, and persistent fox entries accepted ride
+  markers. Regression reproduced these gaps before the fix. Admission now
+  rejects selected/active fox plus any ride runtime and active fox ride markers.
+  Empty overlays preserve unrelated ride rounds. Reference native ride witnesses
+  remain valid outside this narrower runtime slice.
+- Corrected the runtime spec's fox image typo101505 to source/model101749.
+- Highest-priority unfinished item: require exact correction-head core and
+  dedicated BecomeFox gates before acceptance/fast-forward integration; then
+  record receipt and mechanically advance to BecomePig631/635. Main's accepted
+  pressure remains2463/20/3 until this reviewed runtime is accepted.
