@@ -1,0 +1,60 @@
+{
+  "schema": "stoneage.becomepig-attack-order-native-acceptance.r1",
+  "status": "CLOSED_BOUNDED_PINNED_DESCENDANT_NATIVE_COMPOSITION_ZERO_RUNTIME_PROMOTIONS",
+  "accepted_on": "2026-10-07",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "513a3ecea30142b8ab3470d0cb16184f9e0a6b8e",
+    "tree": "9e23c981055b52ed863e9ea06e6a8672939b2082"
+  },
+  "corrected_source_gate": {
+    "sha": "c8c57b5a0475d6505b46aad8c9d085bac4f26c50",
+    "run_id": 37640049824,
+    "conclusion": "success"
+  },
+  "remote_validation": {
+    "run_id": 37641017253,
+    "job_id": 112859670921,
+    "conclusion": "success",
+    "profiles": 3,
+    "scenarios_per_optimization": 3,
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "native_comparisons": 18,
+    "sanitizers": [
+      "address",
+      "undefined-nonrecovering"
+    ],
+    "artifact_id": 11492825940,
+    "artifact_sha256": "0e5f7e92de0e39b2317e00fead9b622b71f2fa6a8c181cc557f71dd15190331a"
+  },
+  "derived_writeback": {
+    "sha": "aa52f4bfd2106a14223dacf0241252d23941b8d7",
+    "tree": "e85ce4325a78809872c414bc00f47e41f4eb8ce9",
+    "path": "research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-NATIVE-R1.txt",
+    "git_blob": "be695aec168bdb161cc031f2b94e4855899cce29"
+  },
+  "facts": [
+    "ordinary_main_Attack_enters_AttackSeq_with_minus1_selects_Guardian_and_remaps_before_exact_DamageSub",
+    "exact_TargetAdjust_replaces_dead_requested_target_and_BecomePig_posteffect_uses_final_defNo",
+    "Counter_enters_AttackSeq_with_minus2_bypasses_GuardianCheck_and_exact_DamageSub_hits_original_defender"
+  ],
+  "controlled_seams": [
+    "CounterCheck_probability",
+    "DefaultAttacker_selection",
+    "presentation_packet_hooks",
+    "postattack_mod100_rng",
+    "item_status_sideeffects"
+  ],
+  "boundary": "pinned descendant native ownership composition only; no historical executable/compiler/ABI/PRNG/JSS/Taiwan-v1 or deployable runtime promotion",
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  },
+  "next": "Item/NPC/map timer composition, then remaining stat/property/ownership/death/follow/PvP/watch/enemy paths before typed631/635 persistent/coordinator admission."
+}

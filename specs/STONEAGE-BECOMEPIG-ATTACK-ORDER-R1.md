@@ -1,7 +1,7 @@
 # BecomePig original attack / Guardian / counter / retarget order source gate R1
 
 Date: 2026-10-07 (UTC+8)
-Status: **SOURCE_GATE_SEMANTIC_CORRECTION_PENDING_REMOTE_REVALIDATION_ZERO_RUNTIME_PROMOTIONS**
+Status: **CLOSED_BOUNDED_CORRECTED_PINNED_DESCENDANT_SOURCE_ORDER_ZERO_RUNTIME_PROMOTIONS**
 
 ## Scope
 
@@ -86,5 +86,13 @@ proved that wording too weak and materially misleading: Counter supplies
 `Guardian=-2`, while `BATTLE_AttackSeq` gates GuardianCheck on exactly `-1`.
 Thus Counter bypasses GuardianCheck. The earlier report remains historical
 evidence of the first audit iteration, but its Guardian interpretation is
-superseded. This corrected source gate must pass remotely before the source
-acceptance status is closed again.
+superseded. This corrected source gate passed remotely and supersedes the initial Guardian interpretation.
+
+
+## Corrected remote re-acceptance
+
+- Corrected gate input: `c8c57b5a0475d6505b46aad8c9d085bac4f26c50`, tree `60e25f5f7de706475ca4d31585585931f8861d0e`.
+- GitHub Actions run `37640049824`, job `112856277061`: **success**.
+- Artifact `11491361919`, digest `sha256:a0db883dde384f92471e61a1197572e3ee634b22472d16eedbd5e2f157cd3179`.
+- Derived corrected report commit `98c34f705d09141a58969daac1a461b4ce3f6b4d`, blob `fcf719083455b301fd789c1a326fbd3530c30d1a`.
+- The initial `8aa218c0...` acceptance remains historical audit evidence but its Counter/Guardian interpretation is superseded by this corrected acceptance.
