@@ -8764,3 +8764,30 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   main-hit/Guardian/counter/retarget ordering. Then gate composed transitions
   before typed631/635 admission, persistent/coordinator integration and pressure
   evaluation. Preserve628 as unused population and all version differences.
+
+
+## 2026-10-07 — BecomePig clock ownership native gate implemented (PENDING)
+
+- Fresh remote main626bbda927fea3f40212892cf48619775c33797e/tree
+  53f1b515b9dd6773db20a4bfa9fe2907498dbb7e; prior native Action37618923213
+  SUCCESS. No new remote stage supersedes next clock/Exit/order task.
+- New native gate retains exact original checkT2 controls at gavin/iris and exact
+  Bismarck10-second condition/static cycle/player loop/validity/sixth-cycle and
+  later world decrement controls. Unrelated subsystem bodies are omitted in an
+  explicit control projection; this is not whole-server execution.
+- Four controlled actor slots, four connection slots and six mappings include
+  duplicate actor visits, service descriptors, invalid and absent connections.
+  Eight sequential polls preserve state over three clock traces, including
+  repeats/backward/gaps and distinct sample/store times, cycle wraps and a
+  controlled battle-to-world switch. Notifications verify actor/object identity.
+- Local original-C O0/O2+nonrecovering UBSan passes419904 complete snapshots;
+  22 clock/domain/identity tests pass. Exact network and retained-control hashes
+  plus default descriptor exclusions are pinned. gavin excludesAC descriptor1;
+  iris additionally excludesM descriptor2 under its actual default header.
+- Source connection loops do not deduplicate character mappings; Bismarck's
+  player-array loop ignores connection mapping. Whole original server interactions,
+  compliance body, Exit/order/runtime and historical executable remain OPEN.
+- Highest priority: finish exact-input remote clock gate; accept only retained
+  controls/recipient ownership on PASS. Then complete Exit/compliance/equipment/
+  ride and attack main-hit/Guardian/counter/retarget order before state admission.
+  Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB;0 promotions.
