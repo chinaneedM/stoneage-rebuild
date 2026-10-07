@@ -4357,3 +4357,24 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   Exact acceptance/report digest: STONEAGE-BECOMEPIG-RESTORATION-ACCEPTANCE-R1.json.
   Zero runtime promotions; helper/order/cross-subsystem and broader Exit domains
   remain OPEN. No historical executable, feature date or JSS/Taiwan-v1 inference.
+
+
+## 2026-10-07 — BecomePig original bad-status dependency domains R1
+
+- DERIVED/SOURCE: same pinned gavin/iris/Bismarck source descendants as accepted
+  restoration. Additional identities: battle/battle.c original BadStatusAllClr,
+  battle/battle_event.c selected StatusTbl/MagicTbl, include/battle_event.h enum/
+  macro limits and include/version.h. SHA256/default-feature metadata in
+  research/recovered/STONEAGE-BECOMEPIG-BADSTATUS-SOURCE-DOMAINS-R1.json.
+- Bound original function/table execution composed with complete compliance/Exit;
+  actual tables default-selected, lengths independently checked against original
+  loop limits. Actual BadStatus work/flag/pet-counter writes and property null
+  ordering; controlled symbolic ABI/property storage/copy/construct/stat/equipment/
+  ride/network dependencies. Original bytes transient only. No runtime promotion.
+- OPEN source inspection leads: char/char_data.c equipment lookup has five-column
+  rows and category>5 guard, leaving category5 matching-row undefined access.
+  char/char_base.c static ride rows and default-active new-ride helpers/tables are
+  next bounded batch. No raw table rows committed or historical deploy inferred.
+- Spec specs/STONEAGE-BECOMEPIG-BADSTATUS-COMPOSITION-R1.md; gate
+  .github/workflows/validate-stoneage-becomepig-badstatus.yml. Remote acceptance
+  pending; earlier restoration/clock reports must reproduce byte-for-byte.

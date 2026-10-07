@@ -1,0 +1,93 @@
+{
+  "schema": "stoneage-becomepig-badstatus-source-domains-r1",
+  "scope": "pinned default-header reference; symbolic ABI; no runtime promotion",
+  "profiles": {
+    "gavin": {
+      "source_sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "files": {
+        "battle/battle.c": "a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602",
+        "battle/battle_event.c": "9a4607566b7cf6f6a94f2019c5d1dfc7088f7805421037b0a5f0095054b9db1d",
+        "include/battle_event.h": "ac9cc3ddd5aa0bbc1a44616303cbe3d9ceae2689513ac9ea514cd7fd7235cc91",
+        "include/version.h": "e58232f8763dccedfbba775ddfb3eaa33e431505b090b2e9a7a87cf8d5945d4a"
+      },
+      "default_function_sha256": "0fd67c89d375ad71cd699d7db00e589d65ced24457345e6219c879eb984c78f0",
+      "selected_table_sha256": {
+        "StatusTbl": "dd4b40be83c8c74472f182278901b88ffd0a9c07c09f52cb8f4fb639f51fff3f",
+        "MagicTbl": "7a41d61bb170fac0fa08c6117bc8fd146085d4781c4bcff74c2eae8ea26241e7"
+      },
+      "status_count": 44,
+      "magic_count": 6,
+      "features": {
+        "_OTHER_MAGICSTAUTS": true,
+        "_MAGICSTAUTS_RESIST": true,
+        "_IMPRECATE_ITEM": true,
+        "_PETSKILL_SETDUCK": true,
+        "_MAGICPET_SKILL": true,
+        "_BATTLE_PROPERTY": true,
+        "_PROFESSION_SKILL": true,
+        "_PETSKILL_BECOMEPIG": true,
+        "_STRENGTH_PETSKILL": false,
+        "_LOSTLOST_PETSKILL": false,
+        "_PETSKILL_NEW_PASSIVE": false
+      }
+    },
+    "iris": {
+      "source_sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "files": {
+        "battle/battle.c": "6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8",
+        "battle/battle_event.c": "2437d4fe88f1dd77e14ad5b976402053ddd1e297d471f45b4169c3588310d4db",
+        "include/battle_event.h": "d7fbfa0cd3d9cb7525f7e1a274f6788490aee8f79aee770c47274486ffdd7c02",
+        "include/version.h": "a404dacc30266a04a58aa53e914bb4ba19aa583c982051ed5427ad71f8498bad"
+      },
+      "default_function_sha256": "0fd67c89d375ad71cd699d7db00e589d65ced24457345e6219c879eb984c78f0",
+      "selected_table_sha256": {
+        "StatusTbl": "dd4b40be83c8c74472f182278901b88ffd0a9c07c09f52cb8f4fb639f51fff3f",
+        "MagicTbl": "7a41d61bb170fac0fa08c6117bc8fd146085d4781c4bcff74c2eae8ea26241e7"
+      },
+      "status_count": 44,
+      "magic_count": 6,
+      "features": {
+        "_OTHER_MAGICSTAUTS": true,
+        "_MAGICSTAUTS_RESIST": true,
+        "_IMPRECATE_ITEM": true,
+        "_PETSKILL_SETDUCK": true,
+        "_MAGICPET_SKILL": true,
+        "_BATTLE_PROPERTY": true,
+        "_PROFESSION_SKILL": true,
+        "_PETSKILL_BECOMEPIG": true,
+        "_STRENGTH_PETSKILL": false,
+        "_LOSTLOST_PETSKILL": false,
+        "_PETSKILL_NEW_PASSIVE": false
+      }
+    },
+    "bismarck": {
+      "source_sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "files": {
+        "battle/battle.c": "2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18",
+        "battle/battle_event.c": "b294f82e2a0b8382b59edd06fa8646fa3e50c00656eba496d8b78fa421c58ecc",
+        "include/battle_event.h": "8f97e94f70e5efdbbdf6267f4b44a6adb4c2c29eca06433093c1e19f626dc3fc",
+        "include/version.h": "4996de26fa1fc795da5d903e05aca00d3170ee672300387e02e54675f5a79602"
+      },
+      "default_function_sha256": "c390bcfa4ac75a9874b7da84bc985c1088a494407dd5dc45e3192a6c4fde8901",
+      "selected_table_sha256": {
+        "StatusTbl": "6d62977e2d8ee15e44a83b52456121ae0831b159d5c9251feeb47edc0eb68cc4",
+        "MagicTbl": "7a41d61bb170fac0fa08c6117bc8fd146085d4781c4bcff74c2eae8ea26241e7"
+      },
+      "status_count": 12,
+      "magic_count": 6,
+      "features": {
+        "_OTHER_MAGICSTAUTS": true,
+        "_MAGICSTAUTS_RESIST": true,
+        "_IMPRECATE_ITEM": true,
+        "_PETSKILL_SETDUCK": true,
+        "_MAGICPET_SKILL": true,
+        "_BATTLE_PROPERTY": true,
+        "_PROFESSION_SKILL": false,
+        "_PETSKILL_BECOMEPIG": true,
+        "_STRENGTH_PETSKILL": false,
+        "_LOSTLOST_PETSKILL": false,
+        "_PETSKILL_NEW_PASSIVE": false
+      }
+    }
+  }
+}

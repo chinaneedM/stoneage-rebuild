@@ -1339,3 +1339,26 @@ These complete caller bodies run with controlled equipment/stat/ride and recorde
 network/badstatus dependencies, not original helper implementations or deployed
 executable semantics. Full original composition and historical introduction remain
 OPEN. No capability promotions; pressure stays2465/18/3 out of2486.
+
+
+## 2026-10-07 — Original bad-status dependency narrows BecomePig Exit uncertainty
+
+- FACT/SOURCE under pinned default-header controlled witnesses: full original
+  BadStatusAllClr maps clear early status/death state before property-pointer
+  validation. NULL returns before later profession work and owned-pet pig reset;
+  a valid player property pointer permits owned pets' pig counters to become-1.
+  Player's own counter persists; a pet subject does not clear its own pig counter.
+  Complete original Exit proceeds after the helper's early return. Neither a
+  real-server NULL occurrence nor production runtime behavior is inferred.
+- gavin/iris actual selected status table44 vs Bismarck12; magic tables6 each.
+  The complete default function and selected maps are transient native inputs;
+  derived identities/specification only are retained. Property construction,
+  stat/equipment/ride/network bodies and original ABI/build remain OPEN.
+- Equipment five-column/category>5 guard leaves category5 matching-row access
+  undefined in source inspection; keep it excluded until separately classified.
+  Original helper batch gate pending; pressure2486 and0 promotions unchanged.
+
+- Additional FACT in seeded witnesses: Bismarck clears NOCAST after NC but before
+  unused-battle return; gavin/iris preserve it at that point. Invalid battle
+  prevents this write. Previous zero-seeded caller witness remains valid within
+  its scope but did not observe this distinction.

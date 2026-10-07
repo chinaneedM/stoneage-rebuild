@@ -8888,3 +8888,31 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   map timer interactions before typed631/635, persistent/coordinator admission.
   Broader HP1-without-death, pet-death/follow ownership, PvP/watch/larger entries,
   invalid rider/enemy deletion and original executable/build/PRNG remain OPEN.
+
+
+## 2026-10-07 — BecomePig original bad-status composition gate implemented (PENDING)
+
+- Fresh remote main98c79b85dd798bbd9c857abcd9fce429af6acb01/tree
+  8ae1cf144d4801f96a4b02e6698a31a43e209ccd; latest restoration Action37624829843
+  SUCCESS. Continue highest priority original helper composition in bounded batches.
+- Complete original BATTLE_BadStatusAllClr now executes with actual default-selected
+  StatusTbl/MagicTbl and original enum/macro loop limits inside complete original
+  compliance/Exit callers. Source/function/table hashes and default features pinned.
+  No original body/table bytes enter repository; symbolic ABI retains arithmetic
+  field adjacency. Stats/equipment/ride/property construct/network hooks stay controlled.
+- Local373272 native comparisons PASS at O0/O2 GNU99+nonrecovering UBSan;
+  38 tooling/domain/identity regressions PASS. Independent oracle tracks full clear
+  field states, player/pet counters, property markers and ordered writes/caller calls.
+  Null/valid/half-valid property pointers, ownership0/1, negative/zero/positive
+  seeds and counters, invalid/unused/unmatched/matched Exit and both sides/slots0/4.
+- FACT under this witness: player status clear writes owned pet pig counter-1,
+  preserving own pig counter. Property NULL returns after early status/death clear
+  but before property construct, late profession and owned-pet counter clear.
+  Exit continues afterwards. Bismarck separately clears NOCAST after NC before
+  unused-battle error; gavin/iris do not. Invalid battle rejects before that write.
+  This does not establish real-world NULL occurrence.
+- Pending exact remote gate and acceptance. Highest priority then actual equipment/
+  image and ride helpers/maps; matching-row equipment category5 remains excluded
+  original undefined path. Attack main-hit/Guardian/counter/retarget order and item/
+  NPC/map timer composition precede typed631/635 and persistent/coordinator admission.
+  Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB;0 promotions.
