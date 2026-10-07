@@ -1,0 +1,138 @@
+name: Probe recovered StoneAge BecomePig reference discovery
+
+concurrency:
+  group: stoneage-becomepig-reference-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/probe-stoneage-25-becomepig-reference.yml"
+      - "tools/stoneage_becomepig_preaudit.py"
+      - "tools/stoneage_recovered25_becomepig_probe.py"
+      - "tests/test_stoneage_recovered25_becomepig_probe.py"
+      - "research/recovered/STONEAGE-BECOMEPIG-PRELIMINARY-SOURCE-OBSERVATION-R1.json"
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate BecomePig discovery logic
+        run: python -m unittest -v tests.test_stoneage_recovered25_becomepig_probe
+
+      - name: Recover pinned descendant source profiles
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          profiles={
+            "gavin":("gavinlinasd/StoneAge","1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56"),
+            "iris":("iriselia/StoneAge","9e6c8ce2cd8ed532a7157773acd1c61582c178b5"),
+            "bismarck":("BismarckDD/stoneage","999ffdf1d220ec6666eb65339180689c9caf1876"),
+          }
+          for name,(repo,sha) in profiles.items():
+            root=Path("/tmp/becomepig-source")/name
+            root.mkdir(parents=True)
+            subprocess.run(["git","init",str(root)],check=True)
+            subprocess.run(["git","-C",str(root),"remote","add","origin","https://github.com/"+repo+".git"],check=True)
+            subprocess.run(["git","-C",str(root),"fetch","--depth","1","origin",sha],check=True)
+            subprocess.run(["git","-C",str(root),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+
+      - name: Reproduce pinned BecomePig source preaudit
+        run: |
+          mkdir -p research/recovered
+          python -m tools.stoneage_becomepig_preaudit             --gavin-dir /tmp/becomepig-source/gavin             --iris-dir /tmp/becomepig-source/iris             --bismarck-dir /tmp/becomepig-source/bismarck             > research/recovered/STONEAGE-BECOMEPIG-PREAUDIT-R1.txt
+          cat research/recovered/STONEAGE-BECOMEPIG-PREAUDIT-R1.txt
+          grep -F 'RESOLUTION|BECOMEPIG_PINNED_SOURCE_PREAUDIT_PASS_NOT_REFERENCE_OR_RUNTIME_ACCEPTANCE'             research/recovered/STONEAGE-BECOMEPIG-PREAUDIT-R1.txt
+          test "$(grep -c '^PROFILE|' research/recovered/STONEAGE-BECOMEPIG-PREAUDIT-R1.txt)" = 3
+          test "$(grep -c 'passed_gates=24' research/recovered/STONEAGE-BECOMEPIG-PREAUDIT-R1.txt)" = 3
+
+      - run: sudo apt-get update && sudo apt-get install -y unar
+      - name: Recover verified preservation bundle
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25
+          python3 - <<'PY'
+          import hashlib,html,json,re,http.cookiejar,urllib.parse,urllib.request
+          from pathlib import Path
+          ua="Mozilla/5.0"
+          hashes={
+            "ev7l29fw77891go":"7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5",
+            "ytaa168o5jih0lx":"567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb",
+          }
+          op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+          def get(key,suffix):
+            data=urllib.parse.urlencode({"quick_key":key,"response_format":"json"}).encode()
+            req=urllib.request.Request("https://www.mediafire.com/api/1.5/file/get_info.php",data=data,headers={"User-Agent":ua})
+            with op.open(req,timeout=60) as response:
+              info=json.load(response)["response"]["file_info"]
+            if str(info.get("hash","")).lower()!=hashes[key]:
+              raise SystemExit("metadata hash changed")
+            with op.open(urllib.request.Request(info["links"]["normal_download"],headers={"User-Agent":ua}),timeout=60) as response:
+              page=response.read().decode("utf-8","replace");ref=response.geturl()
+            match=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S) or re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+            if not match:
+              raise SystemExit("no direct link")
+            target=Path("/tmp/sa25")/("part."+suffix);digest=hashlib.sha256()
+            with op.open(urllib.request.Request(html.unescape(match.group(1)),headers={"User-Agent":ua,"Referer":ref}),timeout=300) as response,target.open("wb") as out:
+              while True:
+                block=response.read(1048576)
+                if not block: break
+                out.write(block);digest.update(block)
+            if digest.hexdigest()!=hashes[key]:
+              raise SystemExit("hash mismatch")
+          get("ev7l29fw77891go","001");get("ytaa168o5jih0lx","002")
+          PY
+          cat /tmp/sa25/part.001 /tmp/sa25/part.002 >/tmp/sa25/bundle.rar
+          test "$(sha256sum /tmp/sa25/bundle.rar|awk '{print $1}')" = "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+          mkdir -p /tmp/sa25/out
+          ulimit -c 0
+          unar -f -o /tmp/sa25/out /tmp/sa25/bundle.rar >/dev/null 2>&1
+
+      - name: Discover recovered25 BecomePig population and positive placements
+        run: |
+          D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
+          C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
+          test -n "$D"; test -n "$C"
+          python -m tools.stoneage_recovered25_becomepig_probe             --data-dir "$D" --setup "$C" --discover             > research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          cat research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          grep -F 'COUNT|enemybase_slot_references|2' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          grep -F 'COUNT|enemybase_templates|2' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          grep -F 'BECOMEPIG_ROW|id=631|' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          grep -F 'BECOMEPIG_ROW|id=635|' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_BECOMEPIG_POSITIVE_REFERENCES_CLOSED' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          grep -F 'BOUNDARY|discovery_only_complete_population_and_exact_identity_not_accepted' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+
+      - name: Preserve exact-input derived discovery reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: becomepig-reference-discovery-${{ github.sha }}
+          path: |
+            research/recovered/STONEAGE-BECOMEPIG-PREAUDIT-R1.txt
+            research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+
+      - name: Commit derived discovery reports
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-BECOMEPIG-PREAUDIT-R1.txt research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          if git diff --cached --quiet; then
+            echo 'BecomePig reports unchanged.'
+            exit 0
+          fi
+          git commit -m 'research: discover recovered25 BecomePig reference inputs'
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"

@@ -8586,3 +8586,49 @@ The project still lacks a provenance-preserving **publicly obtainable** 1999 JSS
   or silently repair the source. Observation receipt:
   research/recovered/STONEAGE-BECOMEPIG-PRELIMINARY-SOURCE-OBSERVATION-R1.json.
   BecomePig0 promotions; engine/new-content decisions remain deferred.
+
+
+## 2026-10-07 — BecomePig source/data discovery gate implemented (PENDING)
+
+- Startup re-read remote main2bee0b060f87c3b1d0a1884c772068eac487e7d9/tree
+  ebe826fee1b6dda8e999a06d38dc1bdd38f172d9, all branches, latest commits/Actions
+  and protocol files. Accepted BecomeFox correction input has35/35 SUCCESS.
+  No existing BecomePig branch was found.
+- New BecomePig census follows active setup.cf loaders, hashes whole petskill
+  and enemybase, emits all callback rows including unused IDs and exact positive
+  template/slot/base-stat/MODAI metadata. First discovery pins only referenced
+  IDs631/635 and2-use/2-template facts. Complete identity remains unpinned.
+- Three exact clean source commits and callback/dispatcher git blobs reproduce
+  24 structural gates each locally. Nonnull OPTION parsing vs literal pointer
+  comparison, rate100 vs30 defaults and guarded ARRANGE/same-side sites remain
+  separate. Same-side helper takes a character index, so its caller is not
+  reinterpreted as a battle-index bug. Exit retains active player pig image.
+- Eight focused discovery mutation/report-boundary tests PASS locally. Original
+  source/data/OPTION/assets are not stored. Native semantics, parse/overflow
+  domains, active builds, elapsed-time owner and ordered runtime remain OPEN.
+- Pressure unchanged2486=2465 closed capability+18 OPEN+3 historical UB;
+  BecomePig0 promotions. Spec: specs/STONEAGE-BECOMEPIG-REFERENCE-DISCOVERY-R1.md.
+- Highest-priority unfinished task: finish the exact remote discovery Action,
+  inspect emitted complete population/row/OPTION/template identities, pin them
+  and independently rerun before source/data reference acceptance.
+
+### BecomePig discovery local verification / remote gate not started
+
+- Local discovery and unchanged shared loader/BecomeFox census regression:
+  18 tests PASS. Three pinned source profiles reproduce24/24 gates each.
+  Workflow YAML, all embedded shell blocks and inline Python parse successfully.
+- Local implementation commit433c4879c1b60910358862e1a85b24ffbd208aae;
+  remote discovery has not started. Public push was blocked by automatic
+  approval review pending explicit publication authorization. No alternative
+  write path was attempted and no remote evidence/acceptance is claimed.
+- Next action remains publish the reviewable discovery branch, run exact verified
+  data/source workflow, inspect/pin complete identities and independently rerun.
+
+### 2026-10-07 — Continuing project publication authorization
+
+The user explicitly authorized necessary, reasonable project development,
+research, reviews/validation and publication of related code/derived reports,
+including future routine work. This supersedes the preceding publication pause.
+Continue within project scope without repeatedly requesting routine approval;
+account access and actions beyond that scope remain separate. Publishing this
+reviewed discovery gate and its automated derived-report writeback is authorized.
