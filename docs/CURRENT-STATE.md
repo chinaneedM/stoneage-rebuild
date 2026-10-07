@@ -8709,3 +8709,27 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   Action, inspect3 actual OPTION conversion counts and per-profile effective
   semantic values/counts, then accept only witnessed native sites and complete
   clock/Exit composition before deterministic runtime/state admission.
+
+
+## 2026-10-07 — BecomePig actual native semantics discovered; independent pinning gate
+
+- Exact native discovery090588e0a6e310aefb1dee5153acb731aa4797f4/tree
+  575ca7a52b18730dec8550e14dec669d41407105 passes Action37618493394/job
+  112782542021. Verified bundle rechecks all3 OPTION/row/placement identities and
+  all3 source profiles24 structural gates. Original-C native postattack comparisons
+  62720 plus isolated timer/Exit comparisons5364, both O0/O2+nonrecovering UBSan.
+  Derived writeback235547f0217ae720c03a40cbe7822e88daa95b27.
+- Actual native631 has2 successful decimal conversions,635 has3. gavin/iris
+  effective631=rate30/time180/image100250;635=30/180/100388. Unused empty628
+  yields EOF (-1) and uninitialized rate/time, so original postattack is excluded
+  on these profiles. Bismarck valid row buffers preserve else30/60/100250 on all
+  three rows; invalid getter/literal-pooling paths remain OPEN.
+- Exact derived conversion/effective values are now independently pinned in the
+  native gate, with a mutation test preventing profile flattening.16 domain/identity
+  tests PASS locally. Second exact-data native run is required before accepting
+  this bounded native milestone. Artifact11480289566 SHA256
+  48d6395368965adb6abd2c52667236328a8caec5019423ade3755043fa800b7a.
+- No runtime promotion. Pressure remains2465/18/3 out of2486. Whole attack,
+  Bismarck outer scheduler/recipients, full Exit/compliance and ordered persistent
+  state remain OPEN. Highest priority: inspect independent native pinning gate,
+  then complete named clock/Exit composition before runtime admission.

@@ -1,9 +1,23 @@
 import unittest
 
-from tools.stoneage_becomepig_native_audit import checked_decimal_prefix, _post_expected, INT_MAX, INT_MIN
+from tools.stoneage_becomepig_native_audit import (
+    checked_decimal_prefix, _post_expected, INT_MAX, INT_MIN,
+    check_native_option_identities, EXPECTED_NATIVE_OPTIONS,
+)
 
 
 class NativeDomainTests(unittest.TestCase):
+    def test_native_pins_reject_profile_flattening_and_conversion_loss(self):
+        keys=("id","conversions","initialized_rate_time","effective_rate","effective_time","effective_image")
+        for profile,values in EXPECTED_NATIVE_OPTIONS.items():
+            rows=[dict(zip(keys,row)) for row in values]
+            check_native_option_identities(profile,rows)
+            for key,value in (("effective_time",999),("effective_image",999),("conversions",0)):
+                changed=[dict(row) for row in rows]
+                changed[1][key]=value
+                with self.assertRaisesRegex(ValueError,"identity drift"):
+                    check_native_option_identities(profile,changed)
+
     def test_empty_and_partial_parse_are_not_three_initialized_ints(self):
         self.assertEqual(checked_decimal_prefix(b""), ())
         self.assertEqual(checked_decimal_prefix(b"30"), (30,))

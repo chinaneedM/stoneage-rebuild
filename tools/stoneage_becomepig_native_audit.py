@@ -23,6 +23,18 @@ from tools.stoneage_recovered25_enemybase_runtime import (
 INT_MIN = -(2**31)
 INT_MAX = 2**31-1
 SENTINEL = -123456789
+EXPECTED_NATIVE_OPTIONS = {
+    "gavin": ((628,-1,False,None,None,None),(631,2,True,30,180,100250),(635,3,True,30,180,100388)),
+    "iris": ((628,-1,False,None,None,None),(631,2,True,30,180,100250),(635,3,True,30,180,100388)),
+    "bismarck": ((628,-1,False,30,60,100250),(631,2,True,30,60,100250),(635,3,True,30,60,100250)),
+}
+
+
+def check_native_option_identities(name, rows):
+    observed = tuple(tuple(row[key] for key in ("id","conversions","initialized_rate_time",
+                     "effective_rate","effective_time","effective_image")) for row in rows)
+    if observed != EXPECTED_NATIVE_OPTIONS[name]:
+        raise ValueError("actual native conversion/effective profile identity drift")
 
 
 def checked_decimal_prefix(raw: bytes) -> tuple[int, ...]:
@@ -313,6 +325,7 @@ def main():
     total=0
     for name in PINNED:
         r=audit_postattack(name,getattr(args,name+"_dir").resolve(),options)
+        check_native_option_identities(name,r["options"])
         total+=r["postattack_cases_per_optimization"]*r["optimizations"]
         print(f"PROFILE|name={name}|sha={PINNED[name]}|callback_cases={r['callback_cases']}|postattack_cases_per_optimization={r['postattack_cases_per_optimization']}|optimizations=2|guard_active={int(r['arrange_same_side_guard_active'])}")
         for row in r["options"]:
