@@ -517,8 +517,9 @@ def analyze_profile(name: str, root: Path) -> dict:
             c_path.write_text(source, encoding="utf-8")
             built = subprocess.run(
                 [
-                    "cc", "-std=c11", optimization,
-                    "-fsanitize=undefined", "-fno-sanitize-recover=all",
+                    "cc", "-std=c11", optimization, "-g",
+                    "-fno-omit-frame-pointer",
+                    "-fsanitize=address,undefined", "-fno-sanitize-recover=all",
                     "-Wno-unused-value", "-Wno-unused-variable",
                     str(c_path), "-lm", "-o", str(binary),
                 ],
@@ -530,7 +531,11 @@ def analyze_profile(name: str, root: Path) -> dict:
                     + built.stderr[-16000:]
                 )
             run = subprocess.run(
-                [str(binary)], capture_output=True, text=True
+                [str(binary)], capture_output=True, text=True,
+                env={
+                    **__import__("os").environ,
+                    "ASAN_OPTIONS": "detect_leaks=0:abort_on_error=1:symbolize=1",
+                },
             )
             if run.returncode or run.stderr:
                 raise ValueError(
