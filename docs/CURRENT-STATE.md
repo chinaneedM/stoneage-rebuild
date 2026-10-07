@@ -9025,3 +9025,16 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   coordinator admission. Preserve unused628 and all default-source/timing/OPTION
   differences; original executable/build/ABI/PRNG/JSS/Taiwan-v1 remain OPEN.
   Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB.
+
+
+## 2026-10-07 — Large continuity-file retrieval fallback verified
+
+- FACT/TOOLING: at remote main0fa1e733dfd021a45de63150249c14af9e6fc436,
+  CURRENT-STATE1050607 bytes/blob a9377a2e1b2c080167fc1ab7af088cc497fbcf33.
+  File-read interface returned empty text for a nonempty file; exact Git blob
+  read returned full text and matches the fresh fetched checkout/tree. No evidence
+  was lost. Protocol section9 now requires nonzero-size metadata/blob fallback and
+  forbids suffix-only publication after an empty interface response.
+- Accepted lookup gate, exact input/Actions/reports and pressure remain unchanged.
+  Highest-priority unfinished work remains original main-hit/Guardian/counter/
+  retarget order, then timer/stat/property/ownership composition before runtime.

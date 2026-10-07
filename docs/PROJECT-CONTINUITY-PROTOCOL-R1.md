@@ -83,3 +83,22 @@ Historical reconstruction and modern game implementation are separate layers.
 Do not place copyrighted proprietary binaries/assets into the repository by default. Store hashes, metadata, filenames, screenshots only where legally appropriate, and research notes instead.
 
 Do not rewrite or delete historical evidence records to make a later theory look cleaner; supersede them with dated corrections.
+
+## 9. Large continuity-file retrieval
+
+An empty file-interface response does not establish that a repository file is
+empty. Resolve the fresh remote HEAD, tree and path metadata before interpreting
+an empty response. If metadata reports a nonzero size, retrieve the exact Git
+blob SHA from that tree with the Git blob interface. A clean checkout fetched
+from the same exact remote commit and `git show <commit>:<path>` is also a valid
+fallback. Do not fall back to an earlier chat's file content or progress.
+
+Before appending or publishing, validate that the retrieved text preserves the
+existing file; compare the resulting remote tree with the locally verified tree.
+Never publish a suffix-only replacement after an empty interface response.
+
+Observed on 2026-10-07 at main0fa1e733dfd021a45de63150249c14af9e6fc436:
+`docs/CURRENT-STATE.md` has1050607 bytes, blob
+`a9377a2e1b2c080167fc1ab7af088cc497fbcf33`. The file-read interface returned
+empty content for this nonempty file; the exact Git blob interface returns the
+complete current-state text. All earlier continuity records remain preserved.
