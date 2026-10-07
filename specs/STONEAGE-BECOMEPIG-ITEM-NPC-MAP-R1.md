@@ -15,7 +15,7 @@ The gate transiently extracts exact original conditionals from:
 
 - `ITEM_metamo`: active BecomePig guard;
 - `NPC_ActionChangePlayerBBI`: active BecomePig guard;
-- `ITEM_useRecovery_Field`: the unpig recovery branch;
+- `ITEM_useRecovery_Field`: the unpig keyword gate is statically pinned; its exact active-pig recovery conditional is executed;
 - `CONNECT_SysEvent_Loop`: item metamorph expiry and map timer blocks.
 
 Original source bytes remain transient and are never committed.
@@ -42,8 +42,7 @@ Each profile executes five scenarios at O0 and O2 under AddressSanitizer plus
 nonrecovering UBSan:
 
 - active pig blocks both item and NPC metamorph guards before later state writes;
-- an unpig recovery clears pig state, invokes compliance, consumes the item, and
-  both metamorph guards then fall through;
+- after the statically pinned unpig keyword gate, the exact active-pig recovery conditional clears pig state, invokes compliance, consumes the item, and both metamorph guards then fall through;
 - expired item metamorph clears item/NPC metamorph state, then the same loop's map
   timer expires and performs warp/HP/charm effects while pig state remains active;
 - item metamorph expiry uses strict `deadline < now`, so equality does not clear;

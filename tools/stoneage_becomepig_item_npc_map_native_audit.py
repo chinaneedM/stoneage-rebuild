@@ -68,7 +68,7 @@ def _parts(name: str, root: Path) -> dict[str, str]:
     )
     recovery = _if_with(
         recovery_fn,
-        r"if\s*\(\s*\(\s*p\s*=\s*strstr\s*\(\s*arg\s*,",
+        r"if\s*\(\s*CHAR_getInt\s*\(\s*toindex\s*,\s*CHAR_BECOMEPIG\s*\)\s*>\s*-1\s*\)",
         "CHAR_DelItemMess",
     )
     item_timer = _if_with(
@@ -84,6 +84,7 @@ def _parts(name: str, root: Path) -> dict[str, str]:
 
     item_compact = _compact(item_fn)
     npc_compact = _compact(npc_fn)
+    recovery_fn_compact = _compact(recovery_fn)
     recovery_compact = _compact(recovery)
     item_timer_compact = _compact(item_timer)
     map_timer_compact = _compact(map_timer)
@@ -101,8 +102,13 @@ def _parts(name: str, root: Path) -> dict[str, str]:
             item_pig >= 0 and item_set > item_pig,
         "npc_pig_guard_before_item_clear_and_npc_metamorph_write":
             npc_pig >= 0 and npc_item_clear > npc_pig and npc_set > npc_item_clear,
+        "recovery_keyword_gate_precedes_active_pig_clear":
+            recovery_fn_compact.find("strstr(arg,") >= 0
+            and recovery_fn_compact.find("strstr(arg,")
+            < recovery_fn_compact.find("CHAR_getInt(toindex,CHAR_BECOMEPIG"),
         "recovery_clears_pig_before_compliance_and_item_consumption":
-            recovery_compact.find("CHAR_setInt(toindex,CHAR_BECOMEPIG,-1)")
+            recovery_compact.find("CHAR_setInt(toindex,CHAR_BECOMEPIG,-1)") >= 0
+            and recovery_compact.find("CHAR_setInt(toindex,CHAR_BECOMEPIG,-1)")
             < recovery_compact.find("CHAR_complianceParameter(toindex)")
             < recovery_compact.find("CHAR_DelItemMess(charaindex,haveitemindex,0)"),
         "item_timeout_clears_item_and_npc_then_compliance":
@@ -201,7 +207,6 @@ static int ints[8][64],works[8][64];
 static int compliance_calls,sendc_calls,sendp_calls,talk_calls,delete_calls;
 static int warp_calls,warp_floor,warp_x,warp_y,charm_delta;
 static int item_fallthrough,npc_fallthrough;
-static char item_arg[64]="CURE_LITERAL";
 
 int CHAR_getInt(int i,int f){return ints[i][f];}
 int CHAR_setInt(int i,int f,int v){return ints[i][f]=v;}
@@ -242,7 +247,6 @@ static int npc_guard_probe(void){
 
 static void recovery_probe(void){
   int charaindex=1,toindex=1,haveitemindex=0;
-  char *p=NULL,*arg=item_arg;
 ''' + p["recovery"] + r'''
 }
 
@@ -303,17 +307,6 @@ int main(void){
   return 0;
 }
 '''
-    cure_match = re.search(
-        r'strstr\\s*\\(\\s*arg\\s*,\\s*"([^"]+)"',
-        p["recovery"],
-    )
-    if cure_match is None:
-        raise ValueError(f"{name}: unpig recovery literal missing")
-    cure_c = "".join(f"\\\\x{byte:02x}" for byte in cure_match.group(1).encode("utf-8"))
-    prefix = prefix.replace(
-        'static char item_arg[64]="CURE_LITERAL";',
-        f'static char item_arg[64]="{cure_c}";',
-    )
     return prefix + wrappers, p
 
 
