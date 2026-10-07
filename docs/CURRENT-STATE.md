@@ -8684,3 +8684,28 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   witnesses and independently gate native timer/Exit lifecycle before modeling
   ordered persistent state. Plan specs/STONEAGE-BECOMEPIG-NATIVE-RUNTIME-PLAN-R1.md;
   preliminary lifecycle receipt research/recovered/STONEAGE-BECOMEPIG-LIFECYCLE-PRELIMINARY-OBSERVATION-R1.json.
+
+
+## 2026-10-07 — BecomePig original-C postattack and lifecycle witness gate implemented (PENDING)
+
+- Re-read current remote main6bb846dd820e75969414317d052376475cd88aec/tree
+  2a3801c9817002bf12bc2521498b9c1a381f1ef1 before native work. No newer remote
+  work supersedes the accepted BecomePig source/data reference.
+- Original callback/getChar/packed-low macros and whole postattack conditional
+  now run transiently at O0/O2+nonrecovering UBSan over valid row buffers. Native
+  conversion count diagnoses missing writes; original underspecified parsing
+  is excluded, never initialized/repaired. Conversion and signed intermediate/
+  accumulated overflow domains are rejected before native execution.
+- Seven domain tests plus8 identity probe tests PASS locally. Three pinned source
+  profiles pass synthetic-OPTION controls; actual OPTIONS still require remote
+  recovery. Isolated original checkT2/connection/expiry, Bismarck explicit-sixth-
+  tick counter sites and Exit pig-image sites pass5364 native local comparisons.
+- Boundaries: Bismarck outer network clock/player loop, full Exit/compliance,
+  actual OPTION values, whole attack/Guardian/counter/retarget, original PRNG/
+  command ordinal and ordered persistent/coordinator composition remain OPEN.
+- Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB;0 promotions.
+  Spec specs/STONEAGE-BECOMEPIG-NATIVE-WITNESS-GATE-R1.md.
+- Highest-priority unfinished task: finish exact remote verified-data native
+  Action, inspect3 actual OPTION conversion counts and per-profile effective
+  semantic values/counts, then accept only witnessed native sites and complete
+  clock/Exit composition before deterministic runtime/state admission.
