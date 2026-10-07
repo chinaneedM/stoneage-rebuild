@@ -12,7 +12,7 @@ from pathlib import Path
 import re
 import subprocess
 
-from tools.stoneage_guard_break2_source_audit import PINNED, LAYOUTS, _function
+from tools.stoneage_guard_break2_source_audit import PINNED, LAYOUTS
 
 REPORT_RESOLUTION = (
     "BECOMEPIG_ORIGINAL_MAIN_GUARDIAN_COUNTER_RETARGET_ORDER_"
@@ -28,14 +28,22 @@ def _text(path: Path) -> str:
     return path.read_bytes().decode("utf-8", "replace")
 
 
+_DEF_RE = re.compile(
+    r"\b(?:static\s+)?(?:int|void|BOOL)\s+"
+    r"([A-Za-z_][A-Za-z0-9_]*)\s*\([^;{}]*\)\s*\{",
+    re.DOTALL,
+)
+
+
 def _definition(text: str, name: str) -> str:
-    match = re.search(
-        rf"\b(?:static\s+)?(?:int|void|BOOL)\s+{re.escape(name)}\s*\(",
-        text,
-    )
-    if match is None:
-        raise ValueError(f"missing definition {name}")
-    return _function(text, match.group(0))
+    """Return a raw definition region without brace-balancing preprocessor arms."""
+    matches = list(_DEF_RE.finditer(text))
+    for index, match in enumerate(matches):
+        if match.group(1) != name:
+            continue
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
+        return text[match.start():end]
+    raise ValueError(f"missing definition {name}")
 
 
 def _code_only(text: str) -> str:
