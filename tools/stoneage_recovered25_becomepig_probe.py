@@ -16,10 +16,43 @@ EXPECTED_ENEMYBASE_SHA256="1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63a
 EXPECTED_REFERENCED_IDS=(631,635)
 EXPECTED_POSITIVE_USES=2
 EXPECTED_POSITIVE_TEMPLATES=2
-# Complete identities remain intentionally unpinned during first discovery.
-EXPECTED_CALLBACK_IDS=None
-EXPECTED_EXACT_ROWS=None
-EXPECTED_TEMPLATE_ROWS=None
+# Identity discovered from verified Action37616100623; independent pinning gate required.
+EXPECTED_CALLBACK_IDS=(628, 631, 635)
+EXPECTED_EXACT_ROWS=((628,
+  1,
+  7,
+  2,
+  5000,
+  0,
+  0,
+  'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
+  False,
+  True,
+  True),
+ (631,
+  1,
+  7,
+  2,
+  20000,
+  1,
+  6,
+  'd85413c542901fa592fc345cbaf6e7c3a0d186eb44ed86ffe12c028a5fdbe04e',
+  False,
+  True,
+  True),
+ (635,
+  1,
+  7,
+  2,
+  20000,
+  1,
+  13,
+  '6f95294f982d8aa64e4b05f1b4a991463fc62c391d8a90ebb8ae02aecaa4814a',
+  False,
+  True,
+  True))
+EXPECTED_TEMPLATE_ROWS=((170, 101766, 32, 40, 25, 30, 150, (3,), (631,)),
+ (1147, 101871, 26, 43, 23, 35, 150, (3,), (635,)))
 
 
 def analyze_runtime_objects(
@@ -148,7 +181,9 @@ def main():
     enemy_digest=hashlib.sha256(_active_enemybase_path(args.data_dir,args.setup).read_bytes()).hexdigest()
     if enemy_digest!=EXPECTED_ENEMYBASE_SHA256:
         raise SystemExit("full active enemybase hash drift")
-    result=analyze_runtime_objects(pets,enemies)
+    pins = dict(expected_callback_ids=None, expected_exact_rows=None,
+                expected_template_rows=None) if args.discover else {}
+    result=analyze_runtime_objects(pets,enemies,**pins)
     emit(result)
     print("DATA_SHA256|file=petskill|sha256="+digest)
     print("DATA_SHA256|file=enemybase|sha256="+enemy_digest)

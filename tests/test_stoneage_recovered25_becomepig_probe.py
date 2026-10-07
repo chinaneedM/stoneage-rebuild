@@ -34,7 +34,8 @@ def pins():
 
 class BecomePigDiscoveryTests(unittest.TestCase):
     def test_discovery_cannot_accept_unpinned_population_or_placements(self):
-        r = analyze_runtime_objects(*fixture())
+        r = analyze_runtime_objects(*fixture(), expected_callback_ids=None,
+                                    expected_exact_rows=None, expected_template_rows=None)
         self.assertTrue(r["positive_references_closed"])
         for key in ("population", "exact_rows", "exact_templates"):
             self.assertFalse(r[key+"_closed"])

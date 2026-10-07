@@ -8632,3 +8632,26 @@ including future routine work. This supersedes the preceding publication pause.
 Continue within project scope without repeatedly requesting routine approval;
 account access and actions beyond that scope remain separate. Publishing this
 reviewed discovery gate and its automated derived-report writeback is authorized.
+
+
+## 2026-10-07 — BecomePig exact recovered25 identity discovered; pinning gate
+
+- Discovery input4e1eedf49da83e3440c7692061bb6b964d5073e0/tree
+  468a5b35d08a2ff45aed8ab60865279f306b59ea passes Action37616100623/job
+  112774680169. Eight tooling tests and all3 pinned source profiles24/24 gates.
+  Report-only writeback7abcc29ee27250b54e86b6ae49fe5a300d490d84.
+- Complete callback population has3 rows628/631/635, not just positive IDs.
+  All have FIELD1 TARGET7 COST2. Unreferenced628 has ILLEGAL5000/empty OPTION;
+  positive631/635 each have ILLEGAL20000 and OPTION6/13 ASCII bytes with exact
+  derived hashes. There are2 positive uses on2 templates, both runtime index2/
+  report slot3:170 IMG101766/base32,40,25,30/AI150 uses631;1147 IMG101871/
+  base26,43,23,35/AI150 uses635. Both active whole-file hashes reverified.
+- Complete population, row/digest/codec and placement identities are now pinned;
+  independent exact-data rerun remains required. Artifact11480870000 digest
+  07d81b655bb578f944f30bbae843953daf28a788a3bcef3e7cab1964340dbc75.
+- Source parsing/pointer/overflow domains, active guards, timing/lifecycle and
+  original native execution remain OPEN; no runtime promotion. Pressure remains
+  2486=2465 closed+18 OPEN+3 historical UB.
+- Highest-priority unfinished task: finish independent pinning Action; on PASS
+  accept bounded source/data reference only, then execute original isolated C
+  OPTION/postattack witnesses and trace elapsed-time owner before state modeling.

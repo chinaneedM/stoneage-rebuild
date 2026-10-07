@@ -107,14 +107,18 @@ jobs:
           D="$(find /tmp/sa25/out -type d -path '*/SA2.5服務端/gmsv/data' -print -quit)"
           C="$(find /tmp/sa25/out -type f -path '*/SA2.5服務端/gmsv/setup.cf' -print -quit)"
           test -n "$D"; test -n "$C"
-          python -m tools.stoneage_recovered25_becomepig_probe             --data-dir "$D" --setup "$C" --discover             > research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          python -m tools.stoneage_recovered25_becomepig_probe             --data-dir "$D" --setup "$C"             > research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
           cat research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
           grep -F 'COUNT|enemybase_slot_references|2' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
           grep -F 'COUNT|enemybase_templates|2' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
           grep -F 'BECOMEPIG_ROW|id=631|' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
           grep -F 'BECOMEPIG_ROW|id=635|' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
           grep -F 'RESOLUTION|RECOVERED25_BECOMEPIG_POSITIVE_REFERENCES_CLOSED' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
-          grep -F 'BOUNDARY|discovery_only_complete_population_and_exact_identity_not_accepted' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          grep -F 'COUNT|callback_rows|3' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          grep -F 'BECOMEPIG_ROW|id=628|field=1|target=7|cost=2|illegal=5000|slot_references=0|option_bytes=0|' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_BECOMEPIG_POPULATION_CLOSED' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_BECOMEPIG_EXACT_ROWS_CLOSED' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
+          grep -F 'RESOLUTION|RECOVERED25_BECOMEPIG_EXACT_TEMPLATES_CLOSED' research/recovered/STONEAGE-25-BECOMEPIG-PROBE-R1.txt
 
       - name: Preserve exact-input derived discovery reports
         uses: actions/upload-artifact@v4
