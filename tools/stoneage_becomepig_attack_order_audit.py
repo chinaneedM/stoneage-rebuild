@@ -132,7 +132,12 @@ def analyze_texts(battle_text: str, event_text: str) -> dict[str, bool | int]:
     battling = _code_only(_definition(battle_text, "BATTLE_Battling"))
 
     duck = _pos(attackseq, "BATTLE_DuckCheck")
-    seq_guard = _pos(attackseq, "BATTLE_GuardianCheck", start=duck)
+    seq_guard_sentinel = _regex_pos(
+        attackseq,
+        r"if\s*\(\s*\*pGuardian\s*==\s*-1\s*\)",
+        start=duck,
+    )
+    seq_guard = _pos(attackseq, "BATTLE_GuardianCheck", start=seq_guard_sentinel)
     seq_remap = _regex_pos(
         attackseq,
         r"defindex\s*=\s*GuardianIndex\s*;",
@@ -151,7 +156,10 @@ def analyze_texts(battle_text: str, event_text: str) -> dict[str, bool | int]:
     )
     main_damage = _pos(attack, "BATTLE_DamageSub", start=main_guard_remap)
 
-    counter_check = _pos(counter, "BATTLE_CounterCheck")
+    counter_guardian_init = _regex_pos(
+        counter, r"\bGuardian\s*=\s*-2\b"
+    )
+    counter_check = _pos(counter, "BATTLE_CounterCheck", start=counter_guardian_init)
     counter_seq = _pos(counter, "BATTLE_AttackSeq", start=counter_check)
     counter_scale = _regex_pos(
         counter, r"damage\s*\*=\s*0\.75\s*;", start=counter_seq
@@ -196,12 +204,18 @@ def analyze_texts(battle_text: str, event_text: str) -> dict[str, bool | int]:
     )
 
     return {
+        "attackseq_guardiancheck_requires_minus1":
+            duck < seq_guard_sentinel < seq_guard < seq_remap < critical,
         "attackseq_duck_guardian_remap_critical":
-            duck < seq_guard < seq_remap < critical,
+            duck < seq_guard_sentinel < seq_guard < seq_remap < critical,
         "main_attackseq_guardian_remap_damage":
             main_seq < main_guard_cond < main_guard_remap < main_damage,
+        "counter_initializes_guardian_minus2_before_attackseq":
+            counter_guardian_init < counter_check < counter_seq,
+        "counter_minus2_bypasses_attackseq_guardiancheck":
+            counter_guardian_init < counter_seq and seq_guard_sentinel < seq_guard,
         "counter_check_attackseq_scale_damage":
-            counter_check < counter_seq < counter_scale < counter_damage,
+            counter_guardian_init < counter_check < counter_seq < counter_scale < counter_damage,
         "counter_caller_guardian_remap_between_seq_damage":
             counter_guardian_remap,
         "dispatch_adjust_main_profit_readjust_counter_postpig":
@@ -266,7 +280,7 @@ def main() -> None:
         raise ValueError("expected exactly three source profiles")
     print("FACT|ordinary_dispatch_adjusts_target_before_main_hit")
     print("FACT|main_AttackSeq_redirects_to_Guardian_before_main_DamageSub")
-    print("FACT|counter_AttackSeq_computes_with_local_Guardian_but_counter_caller_does_not_remap_before_DamageSub")
+    print("FACT|counter_initializes_Guardian_minus2_so_AttackSeq_bypasses_GuardianCheck_and_DamageSub_keeps_original_defender")
     print("FACT|ordinary_dispatch_runs_profit_and_repeat_retarget_before_counter_chain")
     print("FACT|BecomePig_postattack_gate_runs_after_counter_chain_and_rechecks_final_defNo")
     print("BOUNDARY|pinned_descendant_source_order_only_no_historical_build_or_PRNG_or_native_runtime_promotion")

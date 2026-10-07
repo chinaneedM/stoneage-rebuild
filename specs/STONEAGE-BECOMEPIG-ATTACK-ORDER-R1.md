@@ -1,7 +1,7 @@
 # BecomePig original attack / Guardian / counter / retarget order source gate R1
 
 Date: 2026-10-07 (UTC+8)
-Status: **CLOSED_BOUNDED_PINNED_DESCENDANT_SOURCE_ORDER_ZERO_RUNTIME_PROMOTIONS**
+Status: **SOURCE_GATE_SEMANTIC_CORRECTION_PENDING_REMOTE_REVALIDATION_ZERO_RUNTIME_PROMOTIONS**
 
 ## Scope
 
@@ -25,10 +25,13 @@ from token matching:
 2. Ordinary `BATTLE_Attack`: `BATTLE_AttackSeq` returns first, then the caller
    maps a nonnegative Guardian to the authoritative defender, then
    `BATTLE_DamageSub` applies the main hit.
-3. `BATTLE_Counter`: counter eligibility precedes `BATTLE_AttackSeq`; positive
-   counter damage is scaled to 75%; `BATTLE_DamageSub` follows. Between its
-   `AttackSeq` and `DamageSub` call sites the counter caller does **not** map
-   `Guardian` back to `defindex`.
+3. `BATTLE_AttackSeq` only invokes `BATTLE_GuardianCheck` when the caller
+   supplies `*pGuardian == -1`. Ordinary `BATTLE_Attack` initializes that
+   sentinel to `-1`, but `BATTLE_Counter` initializes `Guardian = -2`.
+   Therefore the counter path bypasses GuardianCheck entirely before applying
+   its 75% positive-damage scale and calling `BATTLE_DamageSub` on the original
+   defender. The absence of a counter caller remap is secondary; no Guardian was
+   selected in the first place.
 4. Ordinary `BATTLE_Battling`: target adjustment precedes the main hit;
    per-hit profit work follows; later attack objects/attempts can target-adjust
    again before the counter chain; the counter chain follows the main-hit loop.
@@ -36,16 +39,18 @@ from token matching:
    `BATTLE_TargetCheck(..., defNo)` and resolves the post-effect participant from
    `defNo`, not from the main hit's local Guardian recipient.
 
-The counter distinction is source evidence, not a design recommendation. A
-modern reconstruction must not silently normalize it into ordinary-main-hit
-Guardian semantics without a separately declared compatibility policy.
+The counter `-2` sentinel distinction is source evidence, not a design
+recommendation. A modern reconstruction must not silently normalize counter
+handling into ordinary-main-hit Guardian semantics without a separately
+declared compatibility policy.
 
 ## Gate design
 
 `tools/stoneage_becomepig_attack_order_audit.py` reads only clean exact pinned
 checkouts and fails on commit drift, missing definitions, reordered required
-events, an inserted counter caller Guardian remap, or changed post-BecomePig
-target ownership. It emits SHA-256 identities and semantic booleans only.
+events, loss/change of the ordinary `-1` versus counter `-2` Guardian sentinel,
+an inserted counter caller Guardian remap, or changed post-BecomePig target
+ownership. It emits SHA-256 identities and semantic booleans only.
 
 `tests/test_stoneage_becomepig_attack_order.py` uses independent synthetic
 fixtures to prove the detector rejects main Guardian reordering and post-effect
@@ -71,3 +76,15 @@ composition and the remaining stat/property/ownership paths.
 - Derived report commit: `68e77d8cc3624904bd419d5862d3512c13ab46ce`.
 - Artifact: `11490360820`, digest `sha256:810941e1fb71b1271ea7d7306fa279f4cda01fd1e8a79edb3fc02a7b71d77908`.
 - Resolution: `BECOMEPIG_ORIGINAL_MAIN_GUARDIAN_COUNTER_RETARGET_ORDER_SOURCE_PASS_ZERO_RUNTIME_PROMOTIONS`.
+
+
+## Semantic correction discovered by native composition
+
+The initial accepted wording described Counter as computing through a local
+Guardian and merely omitting the caller remap. Controlled native composition
+proved that wording too weak and materially misleading: Counter supplies
+`Guardian=-2`, while `BATTLE_AttackSeq` gates GuardianCheck on exactly `-1`.
+Thus Counter bypasses GuardianCheck. The earlier report remains historical
+evidence of the first audit iteration, but its Guardian interpretation is
+superseded. This corrected source gate must pass remotely before the source
+acceptance status is closed again.

@@ -74,8 +74,10 @@ jobs:
             > research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt
           cat research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt
           test "$(grep -c '^PROFILE|' research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt)" = 3
-          grep -F 'counter_caller_guardian_remap_between_seq_damage=0' \
-            research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt
+          test "$(grep -c 'attackseq_guardiancheck_requires_minus1=1' research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt)" = 3
+          test "$(grep -c 'counter_initializes_guardian_minus2_before_attackseq=1' research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt)" = 3
+          test "$(grep -c 'counter_minus2_bypasses_attackseq_guardiancheck=1' research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt)" = 3
+          test "$(grep -c 'counter_caller_guardian_remap_between_seq_damage=0' research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt)" = 3
           grep -F 'RESOLUTION|BECOMEPIG_ORIGINAL_MAIN_GUARDIAN_COUNTER_RETARGET_ORDER_SOURCE_PASS_ZERO_RUNTIME_PROMOTIONS' \
             research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt
 

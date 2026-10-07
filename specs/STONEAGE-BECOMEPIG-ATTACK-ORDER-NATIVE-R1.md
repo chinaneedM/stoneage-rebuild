@@ -30,14 +30,15 @@ scenarios at both `-O0` and `-O2` under nonrecovering UBSan:
    kills the requested slot0 target; exact `BATTLE_TargetAdjust` invokes a
    controlled first-live default selector and stores slot1; the exact BecomePig
    post-effect then transforms slot1, not the dead former target.
-3. **counter Guardian distinction** — exact Counter AttackSeq selects a live
-   Guardian at slot15. A transparent recorder around the unchanged exact
-   GuardianCheck proves that selection. Exact Counter nevertheless passes its
-   original `defindex` to exact DamageSub; therefore the original defender
-   receives the HP write while the selected Guardian remains unchanged.
+3. **counter Guardian sentinel bypass** — a transparent recorder around exact
+   `BATTLE_AttackSeq` proves Counter enters with `Guardian=-2`. Because exact
+   AttackSeq calls GuardianCheck only for `-1`, the exact GuardianCheck recorder
+   remains untouched even when a valid Guardian is registered at slot15. Exact
+   Counter therefore damages the original defender; the registered Guardian
+   remains unchanged.
 
-Scenario 3 deliberately protects a source quirk. It is not authorization to
-"fix" counter Guardian handling by normalizing it to ordinary main-hit behavior.
+Scenario 3 protects this source quirk. It is not authorization to "fix" Counter
+by normalizing its sentinel to ordinary main-hit Guardian behavior.
 
 ## Controlled seams
 

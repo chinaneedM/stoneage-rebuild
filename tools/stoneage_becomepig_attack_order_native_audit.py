@@ -128,9 +128,19 @@ def _compose_source(name: str, root: Path) -> tuple[str, dict]:
     )
     if count != 1:
         raise ValueError("exact GuardianCheck interposition anchor drift")
+    renamed, attackseq_count = re.subn(
+        r"\b((?:static\s+)?int\s+)BATTLE_AttackSeq\s*\(",
+        r"\1BATTLE_AttackSeq_EXACT(",
+        renamed,
+        count=1,
+    )
+    if attackseq_count != 1:
+        raise ValueError("exact AttackSeq interposition anchor drift")
     head = (
         "static int native_last_guardian=-999,native_guardian_calls=0;\n"
+        "static int native_last_attackseq_guardian_in=-999,native_attackseq_calls_record=0;\n"
         "int BATTLE_GuardianCheck(int,int);\n"
+        "int BATTLE_AttackSeq(int,int,int*,int*,int);\n"
         + defines
         + renamed
     )
@@ -142,6 +152,11 @@ int BATTLE_GuardianCheck(int attackindex,int defindex){
   native_guardian_calls++;
   native_last_guardian=BATTLE_GuardianCheck_EXACT(attackindex,defindex);
   return native_last_guardian;
+}
+int BATTLE_AttackSeq(int attackindex,int defindex,int *pDamage,int *pGuardian,int opt){
+  native_attackseq_calls_record++;
+  native_last_attackseq_guardian_in=*pGuardian;
+  return BATTLE_AttackSeq_EXACT(attackindex,defindex,pDamage,pGuardian,opt);
 }
 '''
     head = head[:helper_at] + recorder + head[helper_at:]
@@ -212,6 +227,7 @@ static void native_reset_trace(void){
   trace_length=0;trace[0]=0;
   attackseq_calls=damage_calls=target_checks=rand_calls=rngcount=0;
   native_guardian_calls=0;native_last_guardian=-999;
+  native_attackseq_calls_record=0;native_last_attackseq_guardian_in=-999;
   native_counter_checks=native_default_target_calls=native_post_draws=0;
 }
 
@@ -301,11 +317,15 @@ static void native_scenario_A(void){
   works[10][CHAR_WORKBATTLECOM2]=0;
   int mainret=BATTLE_Attack(0,10,0);
   int main_guardian=native_last_guardian;
+  int main_guardian_in=native_last_attackseq_guardian_in;
+  int guardian_calls_after_main=native_guardian_calls;
   int counterret=BATTLE_Counter(0,0,10);
-  int counter_guardian=native_last_guardian;
+  int counter_guardian_in=native_last_attackseq_guardian_in;
+  int guardian_calls_after_counter=native_guardian_calls;
   native_apply_post(0);
-  printf("A %d %d %d %d %d %d %d %d %d %d %d|%s\n",
-    mainret,main_guardian,counterret,counter_guardian,
+  printf("A %d %d %d %d %d %d %d %d %d %d %d %d %d|%s\n",
+    mainret,main_guardian,main_guardian_in,guardian_calls_after_main,
+    counterret,counter_guardian_in,guardian_calls_after_counter,
     ints[1][CHAR_HP],ints[2][CHAR_HP],ints[10][CHAR_HP],
     ints[1][CHAR_BECOMEPIG],ints[2][CHAR_BECOMEPIG],
     ints[1][CHAR_BASEIMAGENUMBER],ints[2][CHAR_BASEIMAGENUMBER],trace);
@@ -328,9 +348,10 @@ static void native_scenario_C(void){
   native_init_world(1000,1000,1000,1000,1000,0,1);
   int enemy_before=ints[10][CHAR_HP],guardian_before=ints[3][CHAR_HP];
   int counterret=BATTLE_Counter(0,0,10);
-  printf("C %d %d %d %d %d %d %d|%s\n",
-    counterret,native_last_guardian,native_guardian_calls,
-    enemy_before,ints[10][CHAR_HP],guardian_before,ints[3][CHAR_HP],trace);
+  printf("C %d %d %d %d %d %d %d %d|%s\n",
+    counterret,native_last_attackseq_guardian_in,native_last_guardian,
+    native_guardian_calls,enemy_before,ints[10][CHAR_HP],
+    guardian_before,ints[3][CHAR_HP],trace);
 }
 
 int main(void){
@@ -395,16 +416,25 @@ def _validate_rows(rows: list[str]) -> dict[str, int]:
         raise ValueError("native composition scenario labels drift")
 
     a = parsed["A"]
-    if len(a) != 11:
+    if len(a) != 13:
         raise ValueError("scenario A shape drift")
     (
-        _mainret, main_guardian, _counterret, _counter_guardian,
+        _mainret, main_guardian, main_guardian_in, guardian_calls_after_main,
+        _counterret, counter_guardian_in, guardian_calls_after_counter,
         _owner_hp, _pet_hp, _enemy_hp, owner_pig, pet_pig,
         owner_image, pet_image,
     ) = a
     aid = _hp_ids(traces["A"])
-    if main_guardian != 5:
-        raise ValueError(f"scenario A main Guardian drift: {main_guardian}")
+    if main_guardian_in != -1 or main_guardian != 5 or guardian_calls_after_main != 1:
+        raise ValueError(
+            "scenario A ordinary Attack Guardian sentinel/selection drift: "
+            f"{a}"
+        )
+    if counter_guardian_in != -2 or guardian_calls_after_counter != guardian_calls_after_main:
+        raise ValueError(
+            "scenario A Counter did not preserve -2 Guardian bypass sentinel: "
+            f"{a}"
+        )
     if len(aid) < 2 or aid[0] != 2 or aid[1] != 10:
         raise ValueError(f"scenario A damage ownership drift: {aid}")
     if not (owner_pig >= 0 and pet_pig == -1):
@@ -435,16 +465,17 @@ def _validate_rows(rows: list[str]) -> dict[str, int]:
         raise ValueError("scenario B final-defNo image ownership drift")
 
     c = parsed["C"]
-    if len(c) != 7:
+    if len(c) != 8:
         raise ValueError("scenario C shape drift")
     (
-        _counterret, counter_guardian, guardian_calls,
+        _counterret, counter_guardian_in, last_guardian, guardian_calls,
         enemy_before, enemy_after, guard_before, guard_after,
     ) = c
     cid = _hp_ids(traces["C"])
-    if counter_guardian != 15 or guardian_calls < 1:
+    if counter_guardian_in != -2 or guardian_calls != 0 or last_guardian != -999:
         raise ValueError(
-            f"scenario C exact Counter AttackSeq Guardian selection drift: {c}"
+            "scenario C Counter must bypass GuardianCheck via the -2 sentinel: "
+            f"{c}"
         )
     if not cid or cid[0] != 10:
         raise ValueError(
@@ -453,13 +484,13 @@ def _validate_rows(rows: list[str]) -> dict[str, int]:
         )
     if not (enemy_after < enemy_before and guard_after == guard_before):
         raise ValueError(
-            "scenario C Guardian influenced AttackSeq but counter caller recipient "
-            f"was not original defender: {c}"
+            "scenario C Counter -2 Guardian bypass did not preserve original "
+            f"defender ownership: {c}"
         )
     return {
         "main_guardian_recipient_cases": 1,
         "retarget_posteffect_cases": 1,
-        "counter_guardian_distinction_cases": 1,
+        "counter_guardian_bypass_cases": 1,
     }
 
 
@@ -549,7 +580,7 @@ def main() -> None:
     print(f"TOTAL|native_comparisons={total}|profiles={len(PINNED)}")
     print("FACT|exact_ordinary_Attack_AttackSeq_Guardian_and_exact_DamageSub_route_main_hit_to_Guardian")
     print("FACT|exact_TargetAdjust_replaces_dead_requested_target_and_BecomePig_posteffect_uses_final_defNo")
-    print("FACT|exact_Counter_AttackSeq_can_select_Guardian_while_counter_caller_DamageSub_still_hits_original_defender")
+    print("FACT|exact_Counter_passes_Guardian_minus2_so_AttackSeq_bypasses_GuardianCheck_and_DamageSub_hits_original_defender")
     print("BOUNDARY|reduced_feature_profile_controlled_CounterCheck_DefaultAttacker_presentation_rng_and_no_item_ride_status_sideeffects")
     print("BOUNDARY|pinned_descendant_native_composition_only_no_historical_build_ABI_PRNG_or_runtime_promotion")
     print(f"RESOLUTION|{RESOLUTION}")

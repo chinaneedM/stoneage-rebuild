@@ -6,8 +6,10 @@ from tools.stoneage_becomepig_attack_order_audit import analyze_texts
 EVENT = r"""
 static int BATTLE_AttackSeq(int attackindex,int defindex,int *pDamage,int *pGuardian,int opt){
   if(BATTLE_DuckCheck(attackindex,defindex)) return 2;
-  *pGuardian=BATTLE_GuardianCheck(attackindex,defindex);
-  if(*pGuardian!=-1){ int GuardianIndex=BATTLE_No2Index(0,*pGuardian); defindex = GuardianIndex; }
+  if(*pGuardian==-1){
+    *pGuardian=BATTLE_GuardianCheck(attackindex,defindex);
+    if(*pGuardian!=-1){ int GuardianIndex=BATTLE_No2Index(0,*pGuardian); defindex = GuardianIndex; }
+  }
   BATTLE_CriticalCheck(attackindex,defindex);
   return 0;
 }
@@ -49,8 +51,11 @@ static int BATTLE_Battling(int battleindex){
 class BecomePigAttackOrderAuditTests(unittest.TestCase):
     def test_expected_order_and_counter_guardian_distinction(self):
         facts = analyze_texts(BATTLE, EVENT)
+        self.assertTrue(facts["attackseq_guardiancheck_requires_minus1"])
         self.assertTrue(facts["attackseq_duck_guardian_remap_critical"])
         self.assertTrue(facts["main_attackseq_guardian_remap_damage"])
+        self.assertTrue(facts["counter_initializes_guardian_minus2_before_attackseq"])
+        self.assertTrue(facts["counter_minus2_bypasses_attackseq_guardiancheck"])
         self.assertTrue(facts["counter_check_attackseq_scale_damage"])
         self.assertFalse(facts["counter_caller_guardian_remap_between_seq_damage"])
         self.assertTrue(facts["dispatch_adjust_main_profit_readjust_counter_postpig"])
@@ -66,6 +71,11 @@ class BecomePigAttackOrderAuditTests(unittest.TestCase):
         )
         with self.assertRaises(ValueError):
             analyze_texts(BATTLE, bad)
+
+    def test_counter_minus2_sentinel_is_required(self):
+        changed = EVENT.replace("int Guardian=-2,damage=4;", "int Guardian=-1,damage=4;")
+        with self.assertRaises(ValueError):
+            analyze_texts(BATTLE, changed)
 
     def test_counter_caller_guardian_remap_is_detected_not_silently_accepted(self):
         changed = EVENT.replace(
