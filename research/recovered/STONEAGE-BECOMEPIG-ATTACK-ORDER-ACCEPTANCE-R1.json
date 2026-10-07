@@ -1,0 +1,41 @@
+{
+  "schema": "stoneage.becomepig-attack-order-source-acceptance.r1",
+  "status": "CLOSED_BOUNDED_PINNED_DESCENDANT_SOURCE_ORDER_ZERO_RUNTIME_PROMOTIONS",
+  "accepted_on": "2026-10-07",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "8aa218c0b86f41ece267b3d73b92da470099b0ec",
+    "tree": "22d0ef8325421fb0f7e3a891585d9ae660039c27"
+  },
+  "remote_validation": {
+    "run_id": 37636720951,
+    "job_id": 112844768574,
+    "conclusion": "success",
+    "tests": 4,
+    "source_profiles": 3,
+    "artifact_id": 11490360820,
+    "artifact_sha256": "810941e1fb71b1271ea7d7306fa279f4cda01fd1e8a79edb3fc02a7b71d77908"
+  },
+  "derived_writeback": {
+    "sha": "68e77d8cc3624904bd419d5862d3512c13ab46ce",
+    "tree": "e8db103c40f25c37e47041208d6b13c1262ea7f7",
+    "path": "research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt",
+    "git_blob": "3970199a43c14d4cd159612758ad80412aa235f0"
+  },
+  "facts": [
+    "AttackSeq_Duck_before_Guardian_and_local_actual_defender_before_critical_damage",
+    "ordinary_Attack_caller_remaps_Guardian_before_main_DamageSub",
+    "Counter_checks_then_AttackSeq_then_75pct_scale_then_DamageSub_without_caller_Guardian_remap",
+    "ordinary_dispatch_target_adjust_main_hit_profit_repeat_retarget_before_counter_chain",
+    "BecomePig_postattack_gate_after_counter_chain_rechecks_and_resolves_final_defNo"
+  ],
+  "boundary": "pinned descendant source order only; no native runtime or historical executable/build/ABI/PRNG/JSS/Taiwan-v1 promotion",
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  },
+  "next": "Controlled native main-hit/Guardian/counter/retarget composition; then item/NPC/map timer and remaining stat/property/ownership paths."
+}

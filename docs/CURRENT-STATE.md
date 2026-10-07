@@ -9038,3 +9038,16 @@ reviewed discovery gate and its automated derived-report writeback is authorized
 - Accepted lookup gate, exact input/Actions/reports and pressure remain unchanged.
   Highest-priority unfinished work remains original main-hit/Guardian/counter/
   retarget order, then timer/stat/property/ownership composition before runtime.
+
+
+## 2026-10-07 — BecomePig main-hit / Guardian / counter / retarget source order accepted
+
+- Remote source-order gate input: `8aa218c0b86f41ece267b3d73b92da470099b0ec`.
+- Remote validation: GitHub Actions run `37636720951`, job `112844768574`, conclusion **success**; artifact `11490360820`, digest `sha256:810941e1fb71b1271ea7d7306fa279f4cda01fd1e8a79edb3fc02a7b71d77908`.
+- Derived report writeback: `68e77d8cc3624904bd419d5862d3512c13ab46ce`, `research/recovered/STONEAGE-BECOMEPIG-ATTACK-ORDER-SOURCE-AUDIT-R1.txt`.
+- All three exact pinned descendant profiles agree on the bounded order facts: Duck precedes Guardian inside `BATTLE_AttackSeq`; ordinary `BATTLE_Attack` remaps a successful Guardian before main `BATTLE_DamageSub`; ordinary dispatch target-adjusts before the main hit, performs per-hit profit work and later target adjustment before the counter chain; the BecomePig post-attack gate runs after the counter chain and rechecks/resolves the final `defNo`.
+- Preserved source distinction: in all three pinned profiles `BATTLE_Counter` calls `BATTLE_AttackSeq` and scales positive counter damage to 75%, but its caller does **not** remap `defindex` from the returned Guardian before `BATTLE_DamageSub`. This is retained as source behavior, not normalized away.
+- Resolution: `BECOMEPIG_ORIGINAL_MAIN_GUARDIAN_COUNTER_RETARGET_ORDER_SOURCE_PASS_ZERO_RUNTIME_PROMOTIONS`.
+- Boundary unchanged: pinned-descendant source-order fact only; no historical executable/build/ABI/PRNG/JSS/Taiwan-v1 promotion and **0 BecomePig runtime slots promoted**.
+- Pressure remains `2486 = 2465 closed capability + 18 OPEN + 3 historical UB`; this source gate does not change runtime pressure.
+- Highest-priority unfinished work now: controlled native composition for the same main-hit/Guardian/counter/retarget ownership order, then item/NPC/map timer composition and remaining stat/property/ownership/death/follow/PvP/watch/enemy paths before typed631/635 persistent/coordinator admission.

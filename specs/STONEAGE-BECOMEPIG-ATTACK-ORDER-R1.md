@@ -1,7 +1,7 @@
 # BecomePig original attack / Guardian / counter / retarget order source gate R1
 
 Date: 2026-10-07 (UTC+8)
-Status: **SOURCE_GATE_PENDING_REMOTE_ACCEPTANCE_ZERO_RUNTIME_PROMOTIONS**
+Status: **CLOSED_BOUNDED_PINNED_DESCENDANT_SOURCE_ORDER_ZERO_RUNTIME_PROMOTIONS**
 
 ## Scope
 
@@ -62,3 +62,12 @@ or persistent/coordinator behavior. No BecomePig runtime promotion is allowed.
 After remote acceptance, the next gate is a controlled native composition of
 the same order and ownership distinctions, followed by item/NPC/map timer
 composition and the remaining stat/property/ownership paths.
+
+
+## Remote acceptance
+
+- Gate input: `8aa218c0b86f41ece267b3d73b92da470099b0ec`.
+- GitHub Actions: run `37636720951`, job `112844768574`, **success**.
+- Derived report commit: `68e77d8cc3624904bd419d5862d3512c13ab46ce`.
+- Artifact: `11490360820`, digest `sha256:810941e1fb71b1271ea7d7306fa279f4cda01fd1e8a79edb3fc02a7b71d77908`.
+- Resolution: `BECOMEPIG_ORIGINAL_MAIN_GUARDIAN_COUNTER_RETARGET_ORDER_SOURCE_PASS_ZERO_RUNTIME_PROMOTIONS`.
