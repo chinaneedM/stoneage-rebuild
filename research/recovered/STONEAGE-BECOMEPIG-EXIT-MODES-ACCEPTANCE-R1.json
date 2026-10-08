@@ -1,0 +1,140 @@
+{
+  "schema": "stoneage.becomepig-exit-modes-acceptance.r1",
+  "status": "CLOSED_BOUNDED_PVP_WATCH_TYPED_ENEMY_EXIT_COMPOSITION_ZERO_RUNTIME_PROMOTIONS",
+  "accepted_on": "2026-10-09",
+  "timezone": "Asia/Shanghai",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "f56089259f6d53d27ebde3687be02f0494075c2f",
+    "tree": "9aab54f4fb44ab37d9aa4b23f39a6256a526e20c"
+  },
+  "remote_validation": {
+    "run_id": 37811014229,
+    "job_id": 113427551605,
+    "conclusion": "success",
+    "regression_tests": 62,
+    "native_comparisons": 263268,
+    "cases_per_profile_optimization": 43878,
+    "profiles": 3,
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "compiler_domain": "current Actions GNU99 compiler",
+    "sanitizers": [
+      "undefined-nonrecovering"
+    ],
+    "artifact_id": 11564608356,
+    "artifact_digest": "sha256:c05eff7966822be14913bc88d48696325090c382c4e9627bf9224a12d3010c26",
+    "prior_hp_death_semantic_digests_preserved": true
+  },
+  "derived_report": {
+    "path": "research/recovered/STONEAGE-BECOMEPIG-EXIT-MODES-NATIVE-R1.txt",
+    "git_blob": "61f8127452140c6487abcc9e7f2aeff9ff43d69c",
+    "sha256": "21cfc791be5f03f674c40369bfcc067dd757bd253f4ecd30ff414826be3a9533",
+    "remote_complete_ordered_job_log_report_matches_local_bytes": true
+  },
+  "local_native_validation_claimed": true,
+  "profile_semantic_digests": [
+    {
+      "profile": "gavin",
+      "source_sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "cases_per_optimization": "43878",
+      "native_comparisons": "87756",
+      "semantic_sha256": "687a7344857a7bf5d476e066dc16aeee9a4e258a9ede0cdd3e8f58a3f8e3bc64"
+    },
+    {
+      "profile": "iris",
+      "source_sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "cases_per_optimization": "43878",
+      "native_comparisons": "87756",
+      "semantic_sha256": "687a7344857a7bf5d476e066dc16aeee9a4e258a9ede0cdd3e8f58a3f8e3bc64"
+    },
+    {
+      "profile": "bismarck",
+      "source_sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "cases_per_optimization": "43878",
+      "native_comparisons": "87756",
+      "semantic_sha256": "641a203a67a64c550049ee70099e55e4d4d1b42a82e1e24cc0d27ad347195d2d"
+    }
+  ],
+  "source_identity_receipts": [
+    "STONEAGE-BECOMEPIG-LOOKUP-SOURCE-DOMAINS-R1.json",
+    "STONEAGE-BECOMEPIG-BADSTATUS-SOURCE-DOMAINS-R1.json",
+    "STONEAGE-BECOMEPIG-RESTORATION-SOURCE-DOMAINS-R1.json"
+  ],
+  "facts": [
+    "matched PvP player clears DUEL before FS and XYD; gavin/iris nine flags, Bismarck four",
+    "WATCH typed Exit retains player cleanup without PvP FS; watch link/unlink/Finish not accepted",
+    "matched enemy calls destruction hook, matched pet does not; neither enters player cleanup",
+    "original guard and nonplayer fox-before-use/membership order preserved"
+  ],
+  "boundaries": [
+    "WATCH typed Exit only; watch link/unlink/Finish coordinator OPEN",
+    "Enemy destruction retained-slot trace hook only; actual deallocation/post-destroy safety OPEN",
+    "symbolic ABI and controlled stats/work/property/ownership/network/timing",
+    "original executable/build/PRNG/JSS/Taiwan-v1 OPEN"
+  ],
+  "scope": {
+    "actor_kinds": [
+      "player",
+      "pet",
+      "enemy"
+    ],
+    "battle_types": [
+      "PvE",
+      "PvP",
+      "WATCH"
+    ],
+    "player_slots": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "nonplayer_slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "battle_sides": [
+      0,
+      1
+    ],
+    "no_membership": true,
+    "all_nine_flag_patterns": 512,
+    "membership_count": 1,
+    "enemy_deletion": "controlled retained-slot trace-only hook, not original deallocation",
+    "synthetic_combinations_world_reachability_claimed": false
+  },
+  "controlled_dependencies": [
+    "symbolic ABI",
+    "work/stat initialization",
+    "property storage/copy/construct",
+    "item inputs",
+    "ownership getter/one owned companion",
+    "network/party/skill-up",
+    "CheckDefBTime timing callback",
+    "retained enemy slot"
+  ],
+  "supersedes": {
+    "local_validation_receipt": "STONEAGE-BECOMEPIG-EXIT-MODES-VALIDATION-R1.json",
+    "interpretation": "publication block resolved by explicit current user authorization; prior local evidence and block history preserved"
+  },
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  },
+  "next": "Actual enemy destruction/post-destroy lifetime and WATCH link/Finish caller source audit, then broader ownership/follow/multi-pet/stat/property/timer composition before typed631/635 persistent/coordinator admission."
+}

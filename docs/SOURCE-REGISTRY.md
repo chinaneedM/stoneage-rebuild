@@ -4592,3 +4592,41 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   profile digests, then record bounded remote acceptance. Actual enemy lifetime/
   WATCH link/Finish follow next. All prior OPEN/runtime boundaries and pressure
   2486=2465 closed+18 OPEN+3 historical UB remain unchanged;0 runtime promotions.
+
+
+## 2026-10-09 (Asia/Shanghai) — PvP / WATCH-typed / enemy Exit ACCEPTED
+
+- CLOSED_BOUNDED_PVP_WATCH_TYPED_ENEMY_EXIT_COMPOSITION_ZERO_RUNTIME_PROMOTIONS.
+  Exact inputf56089259f6d53d27ebde3687be02f0494075c2f/tree
+  9aab54f4fb44ab37d9aa4b23f39a6256a526e20c passes Action37811014229/
+  job113427551605:62 regression checks and263268 native comparisons
+  (3 pinned profiles x43878 cases xO0/O2 GNU99+nonrecovering UBSan).
+  All tracked appearance/HP/MP/flags/work/entries/escape/property/status and
+  ordered traces match independent oracle; independent enemy/FS invariants pass.
+- Complete remote report equals local bytes, SHA256
+  21cfc791be5f03f674c40369bfcc067dd757bd253f4ecd30ff414826be3a9533,
+  blob61f8127452140c6487abcc9e7f2aeff9ff43d69c. Artifact11564608356 digest
+  sha256:c05eff7966822be14913bc88d48696325090c382c4e9627bf9224a12d3010c26.
+  Prior complete HP/death semantic digests reproduced unchanged. Receipt:
+  research/recovered/STONEAGE-BECOMEPIG-EXIT-MODES-ACCEPTANCE-R1.json.
+- FACT within controlled scope: matched PvP player clears DUEL before FS/XYD;
+  gavin/iris compose nine flags, Bismarck four. WATCH typed Exit retains player
+  cleanup without PvP FS. Matched enemy invokes destruction hook; pet does not;
+  neither enters player cleanup. Player slots0..4; nonplayer slots0..9, both sides/
+  no membership and invalid/unused guards retained. All512 flag patterns checked.
+- Scope limits unchanged: enemy destruction is retained-slot trace-only hook;
+  original deallocation/post-destroy safety remain OPEN. WATCH typed Exit does
+  not accept watch link/unlink/Finish/coordinator. Actual ownership/follow/multi-pet,
+  work/stat/property construction/network/timing, original executable/build/ABI/
+  PRNG/JSS/Taiwan-v1 and typed631/635 runtime admission remain OPEN. Pressure
+  unchanged2486=2465 closed capability+18 OPEN+3 historical UB;0 promotions.
+- Prior local-block/PENDING records superseded by this remote acceptance only
+  within the stated scope. Explicit user authorization resolved the publication
+  block and grants ongoing similar project submissions, Actions and acceptance
+  writeback. Exact statement preserved in protocol section10; no repeat approval
+  required for that authorized project scope. HTTPS Git lacks credentials;
+  connected GitHub interface published blobs/tree, each matching local identity.
+- Highest-priority unfinished work: actual enemy destruction/post-destroy lifetime
+  and WATCH link/Finish caller source audit, then broader ownership/follow/multi-pet/
+  helper and remaining stat/property/timer interactions before typed631/635
+  persistent/coordinator admission. No engine/content-design phase transition.

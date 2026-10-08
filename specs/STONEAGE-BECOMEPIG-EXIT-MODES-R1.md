@@ -1,8 +1,10 @@
 # BecomePig bounded PvP / WATCH-typed / enemy Exit composition R1
 
-Status: LOCAL PASS; remote publication blocked by automatic approval review.
-263268 native comparisons and 62 regression checks passed locally. Remote
-exact-input acceptance remains PENDING. Zero runtime promotions.
+Status: ACCEPTED bounded scope, 2026-10-09 (Asia/Shanghai).
+263268 native comparisons and 62 regression checks passed locally and in
+Actions run37811014229/job113427551605 at exact inputf56089259f6d53d27ebde3687be02f0494075c2f.
+Complete report bytes match; prior HP/death semantic digests preserved. Zero
+runtime promotions. Prior publication block resolved by explicit user authorization.
 
 The accepted three pinned descendant default profiles are reused without editing
 original C. Complete `_BATTLE_Exit`, compliance, BadStatusAllClr, actual accepted
@@ -24,7 +26,7 @@ FS input/output flags. Separate invariants require an enemy destruction hook
 only for a matched enemy, FS only for a matched PvP player, and no player cleanup
 for nonplayers. Native execution uses O0/O2 GNU99 and nonrecovering UBSan.
 
-Expected bounded facts, subject to native acceptance:
+Accepted bounded facts:
 
 - PvP player clears DUEL before FS and XYD. gavin/iris compose nine flags;
   Bismarck composes four, so five additional flags are retained as state but
@@ -45,3 +47,5 @@ executable/build/ABI/PRNG/JSS/Taiwan-v1 and typed631/635 runtime admission.
 
 Tool: `tools/stoneage_becomepig_exit_modes_audit.py`.
 Pressure unchanged: 2486 = 2465 closed capability + 18 OPEN + 3 historical UB.
+
+Acceptance receipt: `research/recovered/STONEAGE-BECOMEPIG-EXIT-MODES-ACCEPTANCE-R1.json`.

@@ -102,3 +102,21 @@ Observed on 2026-10-07 at main0fa1e733dfd021a45de63150249c14af9e6fc436:
 `a9377a2e1b2c080167fc1ab7af088cc497fbcf33`. The file-read interface returned
 empty content for this nonempty file; the exact Git blob interface returns the
 complete current-state text. All earlier continuity records remain preserved.
+
+
+## 10. Ongoing project publication authorization — 2026-10-09 (Asia/Shanghai)
+
+The user explicitly authorized publishing this turn's commits to
+`chinaneedM/stoneage-rebuild`, running Actions, and writing back to main after
+acceptance, then granted ongoing authorization for all similar work:
+
+> 我授权将本轮提交推送到 chinaneedM/stoneage-rebuild，执行 Actions，验收通过后写回主线。 今后所有类似内容 全部授权给你
+
+Within this project's established scope, research/development changes, tests,
+workflows, derived evidence and continuity records may therefore be submitted
+for remote validation and integrated after the relevant gates pass without
+asking the user to repeat this authorization. Preserve bounded evidence status
+and all unresolved historical/runtime distinctions. Use non-destructive ref
+updates; inspect a freshly changed main before integration. This records the
+user's project-specific instruction and does not grant authority over unrelated
+repositories or unrelated external publication.
