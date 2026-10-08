@@ -1,7 +1,7 @@
 # BecomePig pet death, mail, follow and ownership composition R1
 
 Date: 2026-10-08 (UTC+8)
-Status: PENDING_EXACT_REMOTE_ACCEPTANCE_ZERO_RUNTIME_PROMOTIONS
+Status: CLOSED_BOUNDED_PET_COMPOSITION_ZERO_RUNTIME_PROMOTIONS
 
 Full original default compliance/Exit/BadStatusAllClr and accepted actual
 equipment/status/ride helpers/maps execute through an expanded independent
@@ -35,3 +35,12 @@ natural world reachability. Zero BecomePig runtime promotions.
 Execution uses the exact-input GitHub Actions runner; no local native run is
 claimed for this gate. Prior HP/death semantic digests must reproduce unchanged
 after correcting CheckDefBTime timing labels; no loyalty behavior is inferred.
+
+## Exact remote acceptance
+
+Action37712138574/job113100233369 SUCCESS at input0df7b503d372d682cd1f3b72c32df575db8c761c,
+treeb81e6506cd40e1c9e16aff1c9369824728521f75:58 tests,138240 native comparisons.
+Artifact11521854622 sha256:061071e4c9c6329925670f08c081842c6c70e4913dd38c3eb0fcc71f9a36db6b. Prior HP/death numerical semantic
+digests reproduce unchanged; separate corrected-label Action37712138641 SUCCESS.
+Derived report is preserved from exact job output. No local native run claimed.
+Receipt:STONEAGE-BECOMEPIG-PET-STATE-ACCEPTANCE-R1.json.

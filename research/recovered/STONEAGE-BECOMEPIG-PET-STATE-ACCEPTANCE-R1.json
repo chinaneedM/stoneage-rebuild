@@ -1,0 +1,152 @@
+{
+  "schema": "stoneage.becomepig-pet-state-acceptance.r1",
+  "status": "CLOSED_BOUNDED_PET_DEATH_MAIL_FOLLOW_OWNED_SLOT_AND_BATTLE_OCCUPANCY_COMPOSITION_ZERO_RUNTIME_PROMOTIONS",
+  "accepted_on": "2026-10-08",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "0df7b503d372d682cd1f3b72c32df575db8c761c",
+    "tree": "b81e6506cd40e1c9e16aff1c9369824728521f75"
+  },
+  "remote_validation": {
+    "run_id": 37712138574,
+    "job_id": 113100233369,
+    "conclusion": "success",
+    "regression_tests": 58,
+    "profiles": 3,
+    "cases_per_optimization": 23040,
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "compiler_domain": "GNU99 current runner compiler",
+    "sanitizers": [
+      "undefined-nonrecovering"
+    ],
+    "native_comparisons": 138240,
+    "artifact_id": 11521854622,
+    "artifact_digest": "sha256:061071e4c9c6329925670f08c081842c6c70e4913dd38c3eb0fcc71f9a36db6b",
+    "prior_hp_death_semantic_digests_preserved": true
+  },
+  "derived_report": {
+    "path": "research/recovered/STONEAGE-BECOMEPIG-PET-STATE-NATIVE-R1.txt",
+    "git_blob": "73a3ec472be257894bdc9c04854a89aa2af97b2d",
+    "origin": "Complete ordered report block from the decoded successful exact-input job log; uploaded artifact provenance retained separately."
+  },
+  "local_native_validation_claimed": false,
+  "source_identity_receipts": [
+    "STONEAGE-BECOMEPIG-LOOKUP-SOURCE-DOMAINS-R1.json",
+    "STONEAGE-BECOMEPIG-BADSTATUS-SOURCE-DOMAINS-R1.json",
+    "STONEAGE-BECOMEPIG-RESTORATION-SOURCE-DOMAINS-R1.json"
+  ],
+  "profile_semantic_digests": [
+    {
+      "profile": "gavin",
+      "source_sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "cases_per_optimization": "23040",
+      "native_comparisons": "46080",
+      "semantic_sha256": "9c8492f52f10a1e1a2813e950d2859481a27f2ee32f7e9fb847f5e7a345fbb76"
+    },
+    {
+      "profile": "iris",
+      "source_sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "cases_per_optimization": "23040",
+      "native_comparisons": "46080",
+      "semantic_sha256": "9c8492f52f10a1e1a2813e950d2859481a27f2ee32f7e9fb847f5e7a345fbb76"
+    },
+    {
+      "profile": "bismarck",
+      "source_sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "cases_per_optimization": "23040",
+      "native_comparisons": "46080",
+      "semantic_sha256": "4c25dce5e7fe878f832bbfe14424f6137c80e3d641621cd62d93d5fa699f5f0d"
+    }
+  ],
+  "facts": [
+    "owned_nonmail_dead_or_HP_nonpositive_pet_normalizes_HP1_before_badstatus_and_compliance",
+    "mail_skips_owned_restore_not_earlier_player_badstatus_owned_pig_counter_reset",
+    "follow_invalid_cleared_or_valid_pet_invalid_owner_repaired_independently_from_roster",
+    "all_owned_slots_and_battle_occupancy_independent_no_default_selection_inferred"
+  ],
+  "scope": {
+    "valid_actors": [
+      "player0",
+      "pet1"
+    ],
+    "pet_hp": [
+      -2,
+      0,
+      1,
+      40,
+      150
+    ],
+    "pet_death_flag": [
+      0,
+      1
+    ],
+    "mail": [
+      0,
+      1
+    ],
+    "owned_roster_slot": [
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "battle_pet_occupancy": [
+      0,
+      1
+    ],
+    "follow_pointer": [
+      -1,
+      1,
+      2
+    ],
+    "pet_owner_pointer": [
+      -1,
+      0
+    ],
+    "property_pointer_masks": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "player_pig": [
+      -1,
+      180
+    ],
+    "pve_side_position": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "single_follow_pointer": true,
+    "synthetic_combinations_reachability_claimed": false
+  },
+  "controlled_dependencies": [
+    "symbolic ABI",
+    "work/stat initialization",
+    "property storage copy construct",
+    "item inputs",
+    "ownership getter",
+    "network party skill-up",
+    "CheckDefBTime timing callback"
+  ],
+  "timing_correction_receipt": "STONEAGE-BECOMEPIG-TIMING-LABEL-CORRECTION-R1.json",
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  },
+  "next": "PvP/watch/enemy controlled full-caller composition, actual ownership/follow/multi-pet integration and remaining stat/property/end-to-end timer composition before typed631/635 persistence/coordinator; original executable/build/ABI/PRNG/JSS/Taiwan-v1 OPEN."
+}

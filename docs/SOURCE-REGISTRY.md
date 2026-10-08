@@ -4495,3 +4495,45 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   rider, actual stat/property and end-to-end timer/caller interaction before
   typed631/635 persistence/coordinator admission. Original executable/build/ABI/
   PRNG/JSS/Taiwan-v1 remains OPEN. No engine/content-design phase transition.
+
+
+## 2026-10-08 — Pet death/mail/follow/owned-slot composition ACCEPTED; timing labels corrected
+
+- CLOSED_BOUNDED_PET_DEATH_MAIL_FOLLOW_OWNED_SLOT_BATTLE_OCCUPANCY_COMPOSITION.
+  Exact input0df7b503d372d682cd1f3b72c32df575db8c761c/tree
+  b81e6506cd40e1c9e16aff1c9369824728521f75 passes Action37712138574/
+  job113100233369:58 tooling/domain/regression tests and138240 native comparisons
+  (3 pinned profiles x23040 cases xO0/O2 GNU99+nonrecovering UBSan). All tracked
+  field/entry/property/ordered traces and added follow/owner writes match the
+  independent oracle. Independent pet-return/follow/counter invariants PASS.
+- FACT in one-pet/two-valid-actor controlled witnesses: owned nonmail death flag
+  or HP<=0 normalizes pet HP1 before badstatus/compliance. Mail skips that roster
+  restoration but not earlier player badstatus owned-pet pig-counter clearing
+  when its property guard permits. Invalid follow pointer clears; a valid pet
+  with invalid owner pointer is repaired independently of roster lookup.
+  Slots0..4/none and battle occupancy are independent; no default inferred.
+- Complete original default compliance/Exit/BadStatusAllClr plus actual accepted
+  equipment/ride/status maps/helpers are executed. Actual ownership getter,
+  follow lifecycle/multiple pets/multiple-follow, stats/work/property construct/
+  item/network/timing implementation and historical ABI remain controlled/OPEN.
+  Synthetic HP/death/mail/ownership combinations do not assert world reachability.
+- Artifact11521854622 sha256:061071e4c9c6329925670f08c081842c6c70e4913dd38c3eb0fcc71f9a36db6b. Derived report blob
+  73a3ec472be257894bdc9c04854a89aa2af97b2d is preserved from the exact successful
+  job's complete ordered report block; no local native run claimed.
+  Receipt:research/recovered/STONEAGE-BECOMEPIG-PET-STATE-ACCEPTANCE-R1.json;
+  spec:specs/STONEAGE-BECOMEPIG-PET-STATE-R1.md. Previous PENDING superseded
+  only in the stated controlled composition domain.
+- CORRECTION accepted: prior event27 is CheckDefBTime, with unsigned final addTime
+  parameter, a timing callback. Earlier loyalty/penalty labels were incorrect;
+  no loyalty mutation was proved. Action37712138641/job113100233734 reproduces
+  all36864 HP/death comparisons with corrected timing labels and54 tests.
+  Pet gate independently reproduces identical prior numerical semantic digests.
+  Corrected HP report writeback58937ff3b7bc4cbd9c2369bdc5b35465e0ee45b0; old
+  acceptance/report identities remain preserved and interpretation superseded
+  by STONEAGE-BECOMEPIG-TIMING-LABEL-CORRECTION-R1.json. Actual callback execution/
+  BDTime/PRNG integration remains OPEN; no global timing or loyalty closure.
+- Pressure unchanged2486=2465 closed capability+18 OPEN+3 historical UB;
+  BecomePig runtime promotions0. Highest priority now: bounded PvP/watch/enemy
+  full-caller gate, then actual ownership/follow/multi-pet/helper and remaining
+  stat/property/end-to-end timer interaction before typed631/635 persistence/
+  coordinator admission. Original executable/build/ABI/PRNG/JSS/Taiwan-v1 OPEN.

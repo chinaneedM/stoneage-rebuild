@@ -1,7 +1,7 @@
 {
   "schema": "stoneage.becomepig-hp-death-timing-label-correction.r1",
   "date": "2026-10-08",
-  "status": "SOURCE_VERIFIED_SEMANTIC_LABEL_CORRECTION_REMOTE_REGRESSION_PENDING",
+  "status": "ACCEPTED_SOURCE_VERIFIED_TIMING_LABEL_CORRECTION_WITH_NATIVE_REGRESSION",
   "supersedes_claim": "CheckDefBTime final argument10/0 is a loyalty penalty",
   "correct_claim": "CheckDefBTime final parameter is unsigned addTime in pinned net.c, a timing callback; recording its10/0 call argument proves no loyalty mutation or full callback implementation behavior.",
   "affected_acceptance": "research/recovered/STONEAGE-BECOMEPIG-HP-DEATH-ACCEPTANCE-R1.json",
@@ -33,5 +33,20 @@
     "open": 18,
     "historical_ub": 3,
     "becomepig_promoted_slots": 0
+  },
+  "remote_validation": {
+    "exact_input_sha": "0df7b503d372d682cd1f3b72c32df575db8c761c",
+    "exact_input_tree": "b81e6506cd40e1c9e16aff1c9369824728521f75",
+    "run_id": 37712138641,
+    "job_id": 113100233734,
+    "conclusion": "success",
+    "native_comparisons": 36864,
+    "tests": 54,
+    "artifact_id": 11522570303,
+    "artifact_digest": "sha256:4b8f17b475df442ee5ff4ebc7c0c5af5d62094988424cfe79e31d00831173c10",
+    "corrected_report_writeback": "58937ff3b7bc4cbd9c2369bdc5b35465e0ee45b0",
+    "corrected_report_blob": "65ef5ae1da0c647cfd5118b3dd9ad1ea3f635fc9",
+    "semantic_digests_preserved": true,
+    "independent_preservation_run": 37712138574
   }
 }
