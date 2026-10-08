@@ -1,0 +1,121 @@
+{
+  "schema": "stoneage.exit-lifetime-watch-source-domains.r1",
+  "profiles": {
+    "gavin": {
+      "source_sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "files": {
+        "char/char_base.c": "69b9ef4ce1f2fca199b917be33861bdf530767a9da5b835e58ed1aa098ad2f0f",
+        "char/char.c": "3aeb8fa3124aa68c69509ee351b0773a26193c3742e9c78ef57fad03e6d7fa19",
+        "battle/battle.c": "a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602",
+        "include/version.h": "e58232f8763dccedfbba775ddfb3eaa33e431505b090b2e9a7a87cf8d5945d4a",
+        "include/char_base.h": "2959c40645149277878661dd49ccffd1653f11fcb55c93f03efe306e6d578d45",
+        "include/battle.h": "5ec5972c6fff32a11f80cadb15529e4b4983cd92669cc9c3c60784baa41f1526"
+      },
+      "functions": {
+        "CHAR_endCharData": "4d29fd1281f4e9e4552a98688a96ffa30fce147b2fb06855141c3d56ae2e92c6",
+        "CHAR_removeHaveItem": "30c581415340a37ae90cfe012f0dcfb1d8f1d6a9806c42398d774abe3cda7b88",
+        "CHAR_removeHavePoolItem": "974a89d95fd3cd7dac6ba342611ccacc74f22ed94990eb1cffb6a34a65547f0d",
+        "_CHAR_CHECKINDEX": "870c220722a419e7b72aceda38f379832b245be05d6b7a3e921529cb77611c09",
+        "end_one": "23ee476acddb9076a98b8ef6cab5771b483873164de37302e7fd9ad4edb2ce87",
+        "get_int": "2ca85865d80fab32c28f7721e9680702834ef6cf0b95c0be098bd988a7bf1ec7",
+        "get_work": "13bf8b33c8899146e24f941b5f9af51697ed1260f8d662666003a0940bfa3e72",
+        "party": "d7bd6514ce3af4c6d6ce2a49cd75e2ef635930825949ffdc88e2be31147adf24",
+        "BATTLE_WatchLink": "032633ebe885d5f342d75414e92ff15fc4050d6ae216c1b619ea16d8f7308f91",
+        "BATTLE_WatchUnLink": "cb2df7e9d4d9ae6539a0feafa1b6ea7c1374993e070eb2550f60dfc1f248cf08",
+        "BATTLE_DeleteBattle": "5d9d0f82e4bf3148ebfa242f88e46388b1416be80e357aa8285a56753d5f96ef",
+        "BATTLE_Finish": "26e1b2e97f018362cac2eb31d1f2c523f577cd8ff3fefbb7f4d533d79aed2b2e"
+      },
+      "exit_sha256": "736ba7155804436751b51c84dbadb60de670cfbf537444ffaf1a23a8e874ffac",
+      "limits": {
+        "items": 24,
+        "pool": 30
+      },
+      "contracts": {
+        "slot_use_false_after_item_cleanup": true,
+        "character_slot_not_freed_or_zeroed_in_end_data": true,
+        "work_getter_checks_live_slot": false,
+        "party_checks_subject_before_read": false,
+        "exit_ticket_block_checks_live_slot": false,
+        "watch_delete_loop_reads_current_next_after_unlink": true
+      }
+    },
+    "iris": {
+      "source_sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "files": {
+        "char/char_base.c": "9f72046d685db4d2697402227e9218d93aaf2ad90915cffcabbdaaa6025dfd6f",
+        "char/char.c": "e1054617bc7079257bc6b39d97827e8f5ec6cdea3752abbbc3e40c7b93911149",
+        "battle/battle.c": "6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8",
+        "include/version.h": "a404dacc30266a04a58aa53e914bb4ba19aa583c982051ed5427ad71f8498bad",
+        "include/char_base.h": "d53f39efe6f18ad90b668457461624f2a9aef542b24389a4e0e14c6b64f92645",
+        "include/battle.h": "2c0e83a742f707383ef4db442f5c71c65beabbb4748deaf4b62c81ddba406278"
+      },
+      "functions": {
+        "CHAR_endCharData": "4d29fd1281f4e9e4552a98688a96ffa30fce147b2fb06855141c3d56ae2e92c6",
+        "CHAR_removeHaveItem": "30c581415340a37ae90cfe012f0dcfb1d8f1d6a9806c42398d774abe3cda7b88",
+        "CHAR_removeHavePoolItem": "974a89d95fd3cd7dac6ba342611ccacc74f22ed94990eb1cffb6a34a65547f0d",
+        "_CHAR_CHECKINDEX": "870c220722a419e7b72aceda38f379832b245be05d6b7a3e921529cb77611c09",
+        "end_one": "23ee476acddb9076a98b8ef6cab5771b483873164de37302e7fd9ad4edb2ce87",
+        "get_int": "2ca85865d80fab32c28f7721e9680702834ef6cf0b95c0be098bd988a7bf1ec7",
+        "get_work": "13bf8b33c8899146e24f941b5f9af51697ed1260f8d662666003a0940bfa3e72",
+        "party": "d7bd6514ce3af4c6d6ce2a49cd75e2ef635930825949ffdc88e2be31147adf24",
+        "BATTLE_WatchLink": "032633ebe885d5f342d75414e92ff15fc4050d6ae216c1b619ea16d8f7308f91",
+        "BATTLE_WatchUnLink": "cb2df7e9d4d9ae6539a0feafa1b6ea7c1374993e070eb2550f60dfc1f248cf08",
+        "BATTLE_DeleteBattle": "620f0eaced0a3065d7a5823ff3ba244fd5d9492f2fe490944c107b9d8aadf5a4",
+        "BATTLE_Finish": "26e1b2e97f018362cac2eb31d1f2c523f577cd8ff3fefbb7f4d533d79aed2b2e"
+      },
+      "exit_sha256": "da8df07cec3059de8b0bbf5bcce314afa50bc342b0200a82aa29897c02e99786",
+      "limits": {
+        "items": 24,
+        "pool": 30
+      },
+      "contracts": {
+        "slot_use_false_after_item_cleanup": true,
+        "character_slot_not_freed_or_zeroed_in_end_data": true,
+        "work_getter_checks_live_slot": false,
+        "party_checks_subject_before_read": false,
+        "exit_ticket_block_checks_live_slot": false,
+        "watch_delete_loop_reads_current_next_after_unlink": true
+      }
+    },
+    "bismarck": {
+      "source_sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "files": {
+        "char/char_base.c": "87942c458e497bca856dffab8387ed1f50628faac662a29d57e1fba38de588bb",
+        "char/char.c": "f191897baa48d7eaa721deb199a025d88e13c465007d8e3f9a48b23ac1ccfb99",
+        "battle/battle.c": "2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18",
+        "include/version.h": "4996de26fa1fc795da5d903e05aca00d3170ee672300387e02e54675f5a79602",
+        "include/char_base.h": "71bcc04e14959e6c4646759716e034c8d9209c17d8457d94a8b1071b5d4d5fa4",
+        "include/battle.h": "4b8515aad3b0e659cd0d86a554844b8c471af294cce6e0f40888c45814c56a69"
+      },
+      "functions": {
+        "CHAR_endCharData": "7a0932dab7df8e5b575bbcce8a666d381d8d9a20a67828d3cfb0ebe18c2ebc58",
+        "CHAR_removeHaveItem": "856262dd6b2916e896fe05b02fe1519e2d7e9db3b1488e6d456ddc3c65d9fde1",
+        "CHAR_removeHavePoolItem": "baafe2e16dc38c8bca06368e59a8c0924d8dc9825dabf0d54ac2a2eb64c321e0",
+        "_CHAR_CHECKINDEX": "934995d9b3160c26deb38dd1fa9828a70bc43986af9af7d1e216579c06ee9f1b",
+        "end_one": "ae9623f7cb4c6b439ef6b34882aa81af6a81eba07b803969284901d882943187",
+        "get_int": "395365f7ed827442ff3dbb4b5c2566bba32b0b7d64b049314a876e2068311be3",
+        "get_work": "f8a3201179dfd8f92f8616da32485bcbd9d3ceb4e8622d5104d788d95b3984fa",
+        "party": "1cd965acadae6db1aff51a3c27843f1c62dae01a6b03518e1c24c1bd38eebcb0",
+        "BATTLE_WatchLink": "d3a8a50f614ecaccbe99d4fece27e72a489a474505bdb71120bef2d7e79c1c55",
+        "BATTLE_WatchUnLink": "04b8947e07d27bd3cb3c4e25f5811fa73624042ea7ef379a511e1756794c61ae",
+        "BATTLE_DeleteBattle": "ef8eb6b286b31138760c951399b719ac7520e234268b28a24b2c990d14e7cab1",
+        "BATTLE_Finish": "6e89dd0e43d237757695d1ecea990c51e7d8aa83af29a69284aa7fcb361f31be",
+        "CheckCharMaxItemChar": "f5c0fb81a22b399e43790a204b4a528520f6823a09f72f1de137138c62983e9a",
+        "BATTLE_CHECKINDEX": "7128404b608b4721f07be308c8c1b35db505ddecd35ea83e9254d701295a9e75"
+      },
+      "exit_sha256": "dc99c6bb337f760af777e71e2b452c9ddf7f02a738dc9b487b24a26a96d8375b",
+      "limits": {
+        "items": 54,
+        "pool": 30
+      },
+      "contracts": {
+        "slot_use_false_after_item_cleanup": true,
+        "character_slot_not_freed_or_zeroed_in_end_data": true,
+        "work_getter_checks_live_slot": true,
+        "party_checks_subject_before_read": true,
+        "exit_ticket_block_checks_live_slot": true,
+        "watch_delete_loop_reads_current_next_after_unlink": true
+      }
+    }
+  }
+}

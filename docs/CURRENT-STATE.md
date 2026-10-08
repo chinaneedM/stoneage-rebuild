@@ -9322,3 +9322,36 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   and WATCH link/Finish caller source audit, then broader ownership/follow/multi-pet/
   helper and remaining stat/property/timer interactions before typed631/635
   persistent/coordinator admission. No engine/content-design phase transition.
+
+
+## 2026-10-09 — Enemy slot and watcher chain lifecycle gate PENDING
+
+- Fresh startup main2be1cb4124a57735a396aa69d180f27e368c36d0/tree
+  827f0ccade4f27dd9464e7fe8bbec00c1d267016; prior Exit-mode Action37811014229
+  success. Highest-priority actual destruction and watcher source audit resumed.
+- New original default-body gate: end-data/end-one/item removals/ordinary getters/
+  PartyUpdate plus WatchLink/UnLink/Delete/Finish, file/function/header identity
+  pinned at the three accepted descendant commits. Actual item capacities24/54
+  and pool30 remain profile-tagged. Original C retained only transiently.
+- LOCAL PASS576 comparisons (3 x(84 watcher+12 character) xO0/O2 GNU99+nonrecovering
+  UBSan),68 regression checks. Remote exact-input acceptance PENDING; prior263268
+  Exit-mode report reproduction required. Receipt/source identity:
+  STONEAGE-EXIT-LIFETIME-WATCH-SOURCE-DOMAINS-R1.json; spec
+  specs/STONEAGE-EXIT-LIFETIME-WATCH-R1.md.
+- Local bounded observations: each item slot cleared before its item-end hook,
+  then character use=false; fixed character slot not freed/zeroed by end-data.
+  gavin/iris ordinary getters and party code retain stale-slot reads; Bismarck
+  rejects/guards them. Exit ticket subject guard exists only in Bismarck source;
+  full Exit+actual destruction/ticket composition remains OPEN.
+- Historical watcher defect locally reproduced: Finish exits all linked watchers,
+  but deletes only first watch node then main because UnLink clears current pNext
+  before loop increment reads it. Later nodes remain used in an immediate residual
+  chain. No permanent-leak or no-later-cleanup claim; no original source patched.
+- Controlled ABI/structs/pointers/item-end/network/log/Exit/Profit/EntryInit/party
+  size. Full original Exit-destruction/item-end, watch creation/Stop/task cleanup,
+  corrupt cycles/invalid pointers/concurrency/reuse and original build/JSS/Taiwan-v1
+  remain OPEN. Pressure2486=2465 closed+18 OPEN+3 historical UB;0 promotions.
+- Next: exact remote acceptance; then complete original Exit with actual lifetime
+  guards and watcher Stop/task cleanup audit before broader ownership/stat/property/
+  timer and typed631/635 persistent/coordinator admission. User's section10 ongoing
+  publication/Actions/acceptance authorization applies; no repeat approval.
