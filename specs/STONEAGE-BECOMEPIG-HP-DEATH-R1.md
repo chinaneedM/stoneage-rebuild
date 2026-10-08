@@ -1,7 +1,7 @@
 # BecomePig player HP/death full-caller boundary R1
 
 Date: 2026-10-08 (UTC+8)
-Status: PENDING_EXACT_REMOTE_ACCEPTANCE_ZERO_RUNTIME_PROMOTIONS
+Status: CLOSED_BOUNDED_PLAYER_HP_DEATH_FULL_CALLER_ZERO_RUNTIME_PROMOTIONS
 
 Complete original default compliance, Exit, BadStatusAllClr and actual accepted
 equipment/status/ride maps/helpers execute through the existing independent
@@ -27,3 +27,14 @@ controlled domains. Pet death/follow/broader ownership, PvP/watch/enemy/invalid
 rider, full timer-to-caller/stat/property integration, historical executable/
 build/ABI/PRNG/JSS/Taiwan-v1 and typed631/635 persistence/coordinator remain OPEN.
 No pressure classification changes; BecomePig promotions0.
+
+## Remote acceptance
+
+Input47b72d809d487f754c45c1c10bd356d1ea540762/tree
+048672956b95eab6c6651a901968b1866079a802 passes Action37710777903/
+job113095926584:54 tooling tests and36864 native comparisons. Local report is
+byte-for-byte equal to derived writebackfa9bb5304e1133066b6cd492f74bae86ff127700.
+Artifact11521931737 SHA256bddce105821eea31fe18382a73952c9433788f33e746b8d0b0b59c40c5c1bdf7.
+Local related regressions60 PASS; timer Action37710777796 independently passes
+the same input. Receipt:STONEAGE-BECOMEPIG-HP-DEATH-ACCEPTANCE-R1.json.
+Previous PENDING is superseded only within the stated player-domain witness.

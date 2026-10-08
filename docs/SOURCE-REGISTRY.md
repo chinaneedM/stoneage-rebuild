@@ -4461,3 +4461,37 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   BecomePig runtime promotions0. Highest priority: bounded player HP1-without-
   death/death-flag full-caller gate, then pet-death/follow/ownership/PvP/watch/enemy
   and actual stat/property/full timer composition before typed631/635 persistence.
+
+
+## 2026-10-08 — BecomePig player HP/death complete-caller boundary ACCEPTED
+
+- CLOSED_BOUNDED_PLAYER_HP_DEATH_FULL_CALLER_COMPOSITION_ZERO_RUNTIME_PROMOTIONS.
+  Exact input47b72d809d487f754c45c1c10bd356d1ea540762/tree
+  048672956b95eab6c6651a901968b1866079a802 passes Action37710777903/
+  job113095926584:54 tooling/domain/identity tests;36864 native comparisons
+  at O0/O2 GNU99+nonrecovering UBSan. Local related60 tests PASS and remote
+  report equals local bytes. Timer revalidation Action37710777796 also SUCCESS.
+- Complete original compliance/Exit/BadStatusAllClr plus actual accepted
+  equipment/ride/status maps/helpers run through the accepted independent
+  full-state/entry/property/ordered-trace oracle. Separate loyalty-argument
+  oracle checks all matched player Exits. Fixed exact source/header identities.
+- FACT within synthetic player HP0/1/2/150 and independent death-flag witnesses:
+  gavin/iris HP1 without death invokes loyalty hook10; Bismarck invokes0.
+  Death flag invokes10 then clears player death flag and writesHP1 in all profiles.
+  Real-world reachability of synthetic combinations and actual loyalty effects
+  are not inferred. Work/stat/property construction/ownership/party/network/
+  loyalty implementation and symbolic ABI remain controlled as declared.
+- Writebackfa9bb5304e1133066b6cd492f74bae86ff127700/tree
+  3fd269877e8fa8beadeb5414aba1b41ea5f2a046; report blob
+  856e448da43f06bd11b09fcdeefff3626dcce93b, SHA256
+  ef0173710d823cc4c6f837bd0949f7b3e4bea0327fa00c1924d8d8a53c69eb57.
+  Artifact11521931737 SHA256bddce105821eea31fe18382a73952c9433788f33e746b8d0b0b59c40c5c1bdf7.
+  Receipt:research/recovered/STONEAGE-BECOMEPIG-HP-DEATH-ACCEPTANCE-R1.json;
+  spec:specs/STONEAGE-BECOMEPIG-HP-DEATH-R1.md. Prior PENDING superseded
+  within this bounded player-domain gate only.
+- Pressure unchanged2486=2465 closed capability+18 OPEN+3 historical UB;
+  BecomePig runtime promotions0. Highest-priority unfinished item now:
+  pet-death/follow/broader ownership composition; then PvP/watch/enemy/invalid
+  rider, actual stat/property and end-to-end timer/caller interaction before
+  typed631/635 persistence/coordinator admission. Original executable/build/ABI/
+  PRNG/JSS/Taiwan-v1 remains OPEN. No engine/content-design phase transition.

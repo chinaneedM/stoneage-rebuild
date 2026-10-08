@@ -1,0 +1,115 @@
+{
+  "schema": "stoneage.becomepig-player-hp-death-acceptance.r1",
+  "status": "CLOSED_BOUNDED_PLAYER_HP_DEATH_FULL_CALLER_COMPOSITION_ZERO_RUNTIME_PROMOTIONS",
+  "accepted_on": "2026-10-08",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "47b72d809d487f754c45c1c10bd356d1ea540762",
+    "tree": "048672956b95eab6c6651a901968b1866079a802"
+  },
+  "remote_validation": {
+    "run_id": 37710777903,
+    "job_id": 113095926584,
+    "conclusion": "success",
+    "tooling_domain_identity_tests": 54,
+    "profiles": 3,
+    "cases_per_optimization": 6144,
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "native_comparisons": 36864,
+    "compiler_domain": "GNU99 current runner compiler",
+    "sanitizers": [
+      "undefined-nonrecovering"
+    ],
+    "artifact_id": 11521931737,
+    "artifact_sha256": "bddce105821eea31fe18382a73952c9433788f33e746b8d0b0b59c40c5c1bdf7"
+  },
+  "derived_writeback": {
+    "sha": "fa9bb5304e1133066b6cd492f74bae86ff127700",
+    "tree": "3fd269877e8fa8beadeb5414aba1b41ea5f2a046",
+    "path": "research/recovered/STONEAGE-BECOMEPIG-HP-DEATH-NATIVE-R1.txt",
+    "git_blob": "856e448da43f06bd11b09fcdeefff3626dcce93b",
+    "sha256": "ef0173710d823cc4c6f837bd0949f7b3e4bea0327fa00c1924d8d8a53c69eb57"
+  },
+  "local_validation": {
+    "native_comparisons": 36864,
+    "related_tests": 60,
+    "report_byte_for_byte_equal": true
+  },
+  "timer_revalidation": {
+    "run_id": 37710777796,
+    "job_id": 113095926164,
+    "conclusion": "success",
+    "exact_input": "47b72d809d487f754c45c1c10bd356d1ea540762",
+    "native_comparisons": 30
+  },
+  "facts": [
+    "gavin_iris_HP1_without_death_flag_calls_loyalty_hook10_Bismarck_calls0",
+    "death_flag_calls_loyalty_hook10_then_clears_death_and_sets_player_HP1_all_profiles",
+    "complete_tracked_state_entry_property_and_ordered_trace_matches_independent_oracle"
+  ],
+  "scope": {
+    "player_hp": [
+      0,
+      1,
+      2,
+      150
+    ],
+    "death_flag": [
+      0,
+      1
+    ],
+    "pig": [
+      -1,
+      0,
+      180
+    ],
+    "pointer_masks": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "owned_pet_slot": "0 or none independently from valid live battle-side pet",
+    "sides": [
+      0,
+      1
+    ],
+    "player_positions": [
+      0,
+      4
+    ],
+    "actions": [
+      "complete_compliance",
+      "matched_valid_PvE_player_Exit"
+    ],
+    "rider": -1,
+    "pet_hp": 40,
+    "pet_death_flag": 0,
+    "synthetic_states_reachability_claimed": false
+  },
+  "controlled_dependencies": [
+    "work/stat initialization",
+    "property storage empty copy construct",
+    "item inputs",
+    "ownership getters",
+    "loyalty implementation",
+    "network party skill-up",
+    "symbolic ABI"
+  ],
+  "source_identity_receipts": [
+    "STONEAGE-BECOMEPIG-LOOKUP-SOURCE-DOMAINS-R1.json",
+    "STONEAGE-BECOMEPIG-BADSTATUS-SOURCE-DOMAINS-R1.json",
+    "STONEAGE-BECOMEPIG-RESTORATION-SOURCE-DOMAINS-R1.json"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  },
+  "next": "Pet-death/follow/broader ownership, PvP/watch/enemy/invalid-rider, actual stat/property and end-to-end timer/caller composition before typed631/635 persistent/coordinator admission; original executable/build/ABI/PRNG/JSS/Taiwan-v1 remains OPEN."
+}
