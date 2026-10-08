@@ -1,0 +1,56 @@
+{
+  "schema": "stoneage.becomepig-item-npc-map-acceptance.r1",
+  "status": "CLOSED_BOUNDED_ORIGINAL_CONDITIONAL_BLOCKS_CONTROLLED_DEPENDENCIES_ZERO_RUNTIME_PROMOTIONS",
+  "accepted_on": "2026-10-08",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "d1f7554336738a518f370ebe69eda0fefe5fa369",
+    "tree": "f4adc48861095abaee7286f1e7f865d167c3652e"
+  },
+  "remote_validation": {
+    "run_id": 37643425686,
+    "job_id": 112867901662,
+    "conclusion": "success",
+    "profiles": 3,
+    "scenarios_per_optimization": 5,
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "native_comparisons": 30,
+    "sanitizers": [
+      "address",
+      "undefined-nonrecovering"
+    ],
+    "artifact_id": 11492609019,
+    "artifact_sha256": "40c37ebd165e9699a2ce3001fde41df002866cc17e22dd1cf83ee72d920f55bf"
+  },
+  "derived_writeback": {
+    "sha": "fd20cf3c7ce33b5241ca2ff6aace9c47eacfdc88",
+    "tree": "22a5ce02d026e4415f624c4e01f8acad18e6699f",
+    "path": "research/recovered/STONEAGE-BECOMEPIG-ITEM-NPC-MAP-NATIVE-R1.txt",
+    "git_blob": "356999a4f23024c0fecdacf1596cbd0f230b8542",
+    "sha256": "9b2150a91e2e5e3a144275d201e0c48c1a86d3dedd9d25a53ee13e10458cd171"
+  },
+  "local_validation": {
+    "native_comparisons": 30,
+    "report_byte_for_byte_equal": true,
+    "related_regression_tests": 48
+  },
+  "facts": [
+    "active_pig_blocks_item_NPC_metamorph_guards",
+    "unpig_active_condition_clears_pig_before_compliance_and_item_consumption",
+    "strict_item_deadline_less_than_now_equality_preserves_state",
+    "item_expiry_clears_item_NPC_state_without_direct_pig_clear",
+    "map_timer_pauses_in_battle_else_decrements10_and_expiry_warps_sets_HP1_charm_minus3"
+  ],
+  "boundary": "Exact extracted conditional blocks and source-order assertions only. Compliance, presentation, item lookup and warp are controlled. No whole-loop scheduling, original caller entry/recovery keyword execution, full compliance/timer composition, original deployment/build/ABI/PRNG/JSS/Taiwan-v1 or runtime claim.",
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  },
+  "next": "Player HP1-without-death and death-flag full-caller slice; pet-death/follow/ownership/PvP/watch/enemy and actual stat/property/full timer composition remain OPEN before typed631/635 persistent/coordinator admission."
+}

@@ -1407,3 +1407,30 @@ OPEN. No capability promotions; pressure stays2465/18/3 out of2486.
   Category5 matching-row undefined read excluded without original repair.
   Original stat/property/attack/timer/ownership and historical deployment/runtime
   remain OPEN. Pending superseded only in accepted scope;0 promotions.
+
+
+## 2026-10-08 — BecomePig item/NPC/map conditional-block native gate ACCEPTED
+
+- Exact input d1f7554336738a518f370ebe69eda0fefe5fa369/tree
+  f4adc48861095abaee7286f1e7f865d167c3652e; Action37643425686/job112867901662
+  SUCCESS. Three pinned default-source profiles, five scenarios at O0/O2 with
+  ASan/nonrecovering UBSan:30 comparisons. Local rerun matches remote report
+  byte-for-byte;48 related regressions PASS. Writebackfd20cf3c7ce33b5241ca2ff6aace9c47eacfdc88
+  report SHA2569b2150a91e2e5e3a144275d201e0c48c1a86d3dedd9d25a53ee13e10458cd171.
+  Artifact11492609019 SHA25640c37ebd165e9699a2ce3001fde41df002866cc17e22dd1cf83ee72d920f55bf.
+- FACT within extracted conditional witnesses: active pig blocks item/NPC
+  metamorph guards; recovery clears pig before compliance and consumption;
+  strict item deadline equality preserves state; item expiry clears item/NPC
+  but does not directly clear pig; map timer pauses in battle, otherwise
+  decrements10 and expiry calls warp/HP1/charm-3. Item-before-map is a source-order
+  check, not a whole-server scheduling claim. Warp destination is statically
+  checked; native rows currently observe warp count rather than arguments.
+- Scope: exact original conditionals only. Recovery keyword is statically pinned,
+  not executed; compliance/presentation/item lookup/warp remain controlled.
+  Complete callers/loop/timer-to-compliance composition and deployment/build/ABI/
+  PRNG/JSS/Taiwan-v1 remain OPEN. Earlier whole-compliance acceptance is separate.
+  Receipt:research/recovered/STONEAGE-BECOMEPIG-ITEM-NPC-MAP-ACCEPTANCE-R1.json.
+- Pressure unchanged2486=2465 closed capability+18 OPEN+3 historical UB;
+  BecomePig runtime promotions0. Highest priority: bounded player HP1-without-
+  death/death-flag full-caller gate, then pet-death/follow/ownership/PvP/watch/enemy
+  and actual stat/property/full timer composition before typed631/635 persistence.

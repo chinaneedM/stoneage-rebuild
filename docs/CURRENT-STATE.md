@@ -9063,3 +9063,49 @@ reviewed discovery gate and its automated derived-report writeback is authorized
 - Resolution remains bounded: source-order correction plus native ownership composition only. Counter probability/default-target choice/presentation/RNG/item/status seams are controlled as declared; original executable/compiler/ABI/PRNG/JSS/Taiwan-v1 membership remains OPEN. **0 BecomePig runtime slots promoted**.
 - Pressure remains `2486 = 2465 closed capability + 18 OPEN + 3 historical UB`.
 - Highest-priority unfinished work now advances to item/NPC/map timer composition, then remaining stat/property/ownership/death/follow/PvP/watch/enemy paths before typed631/635 persistent/coordinator admission.
+
+
+## 2026-10-08 — BecomePig item/NPC/map conditional-block native gate ACCEPTED
+
+- Exact input d1f7554336738a518f370ebe69eda0fefe5fa369/tree
+  f4adc48861095abaee7286f1e7f865d167c3652e; Action37643425686/job112867901662
+  SUCCESS. Three pinned default-source profiles, five scenarios at O0/O2 with
+  ASan/nonrecovering UBSan:30 comparisons. Local rerun matches remote report
+  byte-for-byte;48 related regressions PASS. Writebackfd20cf3c7ce33b5241ca2ff6aace9c47eacfdc88
+  report SHA2569b2150a91e2e5e3a144275d201e0c48c1a86d3dedd9d25a53ee13e10458cd171.
+  Artifact11492609019 SHA25640c37ebd165e9699a2ce3001fde41df002866cc17e22dd1cf83ee72d920f55bf.
+- FACT within extracted conditional witnesses: active pig blocks item/NPC
+  metamorph guards; recovery clears pig before compliance and consumption;
+  strict item deadline equality preserves state; item expiry clears item/NPC
+  but does not directly clear pig; map timer pauses in battle, otherwise
+  decrements10 and expiry calls warp/HP1/charm-3. Item-before-map is a source-order
+  check, not a whole-server scheduling claim. Warp destination is statically
+  checked; native rows currently observe warp count rather than arguments.
+- Scope: exact original conditionals only. Recovery keyword is statically pinned,
+  not executed; compliance/presentation/item lookup/warp remain controlled.
+  Complete callers/loop/timer-to-compliance composition and deployment/build/ABI/
+  PRNG/JSS/Taiwan-v1 remain OPEN. Earlier whole-compliance acceptance is separate.
+  Receipt:research/recovered/STONEAGE-BECOMEPIG-ITEM-NPC-MAP-ACCEPTANCE-R1.json.
+- Pressure unchanged2486=2465 closed capability+18 OPEN+3 historical UB;
+  BecomePig runtime promotions0. Highest priority: bounded player HP1-without-
+  death/death-flag full-caller gate, then pet-death/follow/ownership/PvP/watch/enemy
+  and actual stat/property/full timer composition before typed631/635 persistence.
+
+
+## 2026-10-08 — Player HP/death full-caller boundary gate implemented (PENDING)
+
+- Full original compliance/Exit/BadStatusAllClr with actual accepted status,
+  equipment and ride maps/helpers now varies explicit player HP0/1/2/150
+  independently of death flag. Synthetic combinations do not assert world reachability.
+- Local36864 comparisons PASS:3 exact pinned profiles x6144 cases xO0/O2 GNU99
+  and nonrecovering UBSan. Complete tracked state/entry/property/ordered trace
+  agrees with accepted independent oracle; separate loyalty-call-argument
+  oracle checks every matched player Exit. Four new domain/identity tests PASS.
+- FACT within local witness: gavin/iris HP1 without death invokes loyalty hook
+  with10; Bismarck invokes0. Death flag invokes10 then clears player death flag
+  and writesHP1 in all profiles. The actual loyalty implementation is controlled.
+- Exact remote acceptance remains PENDING. No pressure/runtime promotion.
+  Controlled stat/work-init/property construction/network/ownership/symbolic ABI
+  unchanged; live battle-side pet, owned slot0 or none, no ride/follow/PvP/watch.
+  Pet-death/real ownership/follow/enemy paths and full timer/caller integration
+  remain OPEN. Next:accept exact HP/death gate, then pet-death/follow composition.

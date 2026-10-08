@@ -1,7 +1,7 @@
 # BecomePig item / NPC / map timer native composition R1
 
 Date: 2026-10-07 (UTC+8)
-Status: **NATIVE_COMPOSITION_GATE_PENDING_REMOTE_ACCEPTANCE_ZERO_RUNTIME_PROMOTIONS**
+Status: **CLOSED_BOUNDED_CONDITIONAL_BLOCK_NATIVE_COMPOSITION_ZERO_RUNTIME_PROMOTIONS**
 
 ## Scope
 
@@ -65,3 +65,19 @@ block/file hashes, identical O0/O2 semantic rows, no ASan/UBSan diagnostics, and
 Passing this gate does not promote typed631/635 or any persistent/coordinator
 runtime slot. Remaining priorities are broader stat/property/ownership/death/
 follow/PvP/watch/enemy paths and historical executable/build/ABI/PRNG provenance.
+
+## 2026-10-08 remote acceptance
+
+Exact input `d1f7554336738a518f370ebe69eda0fefe5fa369`, tree
+`f4adc48861095abaee7286f1e7f865d167c3652e`, passed run `37643425686`,
+job `112867901662`. All 30 native comparisons pass and local reproduction is
+byte-for-byte identical to derived report writeback `fd20cf3`. Related 48
+regression tests pass. Receipt: `STONEAGE-BECOMEPIG-ITEM-NPC-MAP-ACCEPTANCE-R1.json`.
+
+Acceptance is conditional-block execution plus static source-order checking,
+not complete item/NPC/recovery caller execution or original loop scheduling.
+The recovery keyword is statically inspected, not executed. Compliance remains
+a recording stub here; the previously accepted complete compliance witness is
+a separate gate. Their end-to-end timer/caller composition remains OPEN.
+Warp destinations are statically checked; the five semantic rows observe the
+warp call count, not destination arguments. No runtime slots are promoted.
