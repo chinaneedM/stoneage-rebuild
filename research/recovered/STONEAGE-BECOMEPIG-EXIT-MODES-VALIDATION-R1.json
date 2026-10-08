@@ -1,0 +1,79 @@
+{
+  "schema": "stoneage.becomepig-exit-modes-validation.r1",
+  "status": "LOCAL_PASS_REMOTE_PUBLICATION_BLOCKED_ZERO_RUNTIME_PROMOTIONS",
+  "verified_on": "2026-10-08",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "remote_startup": {
+    "sha": "eacfe83a8da2254daeae670af8c17c4ed5965179",
+    "tree": "3450679be0537d650f8f68ba9811fd04221826b4"
+  },
+  "local_validation": {
+    "regression_tests": 62,
+    "profiles": [
+      {
+        "profile": "gavin",
+        "source_sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+        "cases_per_optimization": "43878",
+        "native_comparisons": "87756",
+        "semantic_sha256": "687a7344857a7bf5d476e066dc16aeee9a4e258a9ede0cdd3e8f58a3f8e3bc64"
+      },
+      {
+        "profile": "iris",
+        "source_sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+        "cases_per_optimization": "43878",
+        "native_comparisons": "87756",
+        "semantic_sha256": "687a7344857a7bf5d476e066dc16aeee9a4e258a9ede0cdd3e8f58a3f8e3bc64"
+      },
+      {
+        "profile": "bismarck",
+        "source_sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+        "cases_per_optimization": "43878",
+        "native_comparisons": "87756",
+        "semantic_sha256": "641a203a67a64c550049ee70099e55e4d4d1b42a82e1e24cc0d27ad347195d2d"
+      }
+    ],
+    "cases_per_profile_optimization": 43878,
+    "native_comparisons": 263268,
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "compiler_domain": "current local GNU99 compiler",
+    "sanitizers": [
+      "undefined-nonrecovering"
+    ]
+  },
+  "report": {
+    "path": "research/recovered/STONEAGE-BECOMEPIG-EXIT-MODES-NATIVE-R1.txt",
+    "sha256": "21cfc791be5f03f674c40369bfcc067dd757bd253f4ecd30ff414826be3a9533"
+  },
+  "remote_validation": {
+    "started": false,
+    "conclusion": null,
+    "branch": "agent/becomepig-exit-modes-r1-20261008"
+  },
+  "blocked_action": "Publish validated research branch to existing project GitHub repository and run Actions",
+  "block_reason": "Automatic approval review rejected publication. It did not accept retrieved prior authorization as user-authored authorization in the active transcript; explicit current-turn publication authorization required.",
+  "boundaries": [
+    "WATCH typed Exit only; watch link/unlink/Finish coordinator OPEN",
+    "Enemy destruction retained-slot trace hook only; actual deallocation/post-destroy safety OPEN",
+    "symbolic ABI and controlled stats/work/property/ownership/network/timing",
+    "original executable/build/PRNG/JSS/Taiwan-v1 OPEN"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  },
+  "next": "Publish exact validated gate after explicit user authorization, verify remote report/digests and regressions, then accept bounded scope and audit actual enemy lifetime/WATCH link and Finish.",
+  "publication_authorization_update": {
+    "date": "2026-10-08",
+    "user_reply": "继续",
+    "automatic_review": "rejected",
+    "reason": "Review explicitly requires user-authored authorization naming GitHub publication; continuation after the permission question was not accepted.",
+    "remote_main_verified": "eacfe83a8da2254daeae670af8c17c4ed5965179",
+    "remote_validation_started": false
+  }
+}

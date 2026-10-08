@@ -4537,3 +4537,58 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   full-caller gate, then actual ownership/follow/multi-pet/helper and remaining
   stat/property/end-to-end timer interaction before typed631/635 persistence/
   coordinator admission. Original executable/build/ABI/PRNG/JSS/Taiwan-v1 OPEN.
+
+
+## 2026-10-08 — PvP / WATCH-typed / enemy Exit full-caller gate PENDING
+
+- Fresh remote startup main eacfe83a8da2254daeae670af8c17c4ed5965179/tree
+  3450679be0537d650f8f68ba9811fd04221826b4; prior pet Action37712138574 and
+  corrected HP/death Action37712138641 both success. Protocol/current records
+  and latest default-head changes reread; no prior-chat SHA used as current head.
+- New bounded gate executes complete pinned original default Exit/compliance/
+  BadStatusAllClr plus accepted actual lookup/status maps and helpers. Independent
+  actor kind/player-pet-enemy, PvE/PvP/WATCH type, every safe entry position on
+  both sides/no membership, HP/death/pig/fox/property/owned witnesses; all512
+  nine-flag combinations for each battle type and two representative sides.
+  Invalid actor/battle and unused-battle guards retained. Player slot0..4 only;
+  nonplayer slot0..9. One membership/at most one owned companion, no invalid ride.
+- LOCAL PASS:43878 cases/profile/optimization,263268 native comparisons over3
+  profiles xO0/O2 GNU99+nonrecovering UBSan;62 tooling/domain/regression checks.
+  Remote exact-input acceptance PENDING. Local semantic report is staged in
+  research/recovered/STONEAGE-BECOMEPIG-EXIT-MODES-NATIVE-R1.txt for byte comparison.
+- Observed bounded local facts: matched PvP player clears DUEL before FS and XYD;
+  gavin/iris compose nine flags, Bismarck four. WATCH-typed Exit retains player
+  cleanup without PvP FS. Matched enemy invokes destruction hook; pet does not;
+  neither enters player cleanup. Original fox-before-use/membership order remains.
+- Explicit scope: enemy destruction is a retained-slot trace-only hook, not actual
+  deallocation or proof of post-destroy safety. WATCH typed Exit is not watch
+  link/unlink/Finish/coordinator acceptance. Actual destruction/lifetime, ownership/
+  follow/multi-pet, stats/work/property construction, network/timing and original
+  executable/build/ABI/PRNG/JSS/Taiwan-v1 remain OPEN. Zero runtime promotions;
+  pressure unchanged2486=2465 closed capability+18 OPEN+3 historical UB.
+- Next: exact remote acceptance; then actual enemy destruction/lifetime and WATCH
+  link/Finish caller audit before remaining ownership/stat/property/timer and
+  typed631/635 persistent/coordinator admission. Spec STONEAGE-BECOMEPIG-EXIT-MODES-R1.md.
+
+
+## 2026-10-08 — Exit-modes LOCAL PASS; remote publication BLOCKED
+
+-263268 native comparisons and62 regression checks passed locally; report SHA256
+  21cfc791be5f03f674c40369bfcc067dd757bd253f4ecd30ff414826be3a9533.
+  Scope and semantic digests preserved in
+  research/recovered/STONEAGE-BECOMEPIG-EXIT-MODES-VALIDATION-R1.json.
+- Automatic approval review rejected publication to the existing project GitHub
+  repository. Read-only remote check confirms main remains
+  eacfe83a8da2254daeae670af8c17c4ed5965179 and proposed research branch does not
+  exist. No remote run or remote pass claimed. A retry after personal-context
+  authorization lookup was also rejected: reviewer requires user-authored
+  publication authorization in the active transcript, rather than retrieved
+  history. No connector/workaround publication attempted.
+- Local original gate commit8b7fa2d60774bc17e8996fa2196e5b579ee1c9e7 retains
+  all existing continuity-file bytes; added workflow now requires contents:read
+  because it only checks out and uploads derived artifact evidence.
+- Highest-priority unfinished item is publish/revalidate this concrete gate after
+  current explicit user authorization; compare complete native report bytes and
+  profile digests, then record bounded remote acceptance. Actual enemy lifetime/
+  WATCH link/Finish follow next. All prior OPEN/runtime boundaries and pressure
+  2486=2465 closed+18 OPEN+3 historical UB remain unchanged;0 runtime promotions.
