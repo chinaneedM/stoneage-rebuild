@@ -1,0 +1,137 @@
+{
+  "schema": "stoneage.exit-lifetime-watch-acceptance.r1",
+  "status": "CLOSED_BOUNDED_ORIGINAL_ENEMY_SLOT_WATCH_CHAIN_LIFECYCLE_ZERO_RUNTIME_PROMOTIONS",
+  "accepted_on": "2026-10-09",
+  "timezone": "Asia/Shanghai",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "aa2c08436115f21e163d9fade3a303c8f0903601",
+    "tree": "8a73c50fb05cfdf1ba42262669897e5cf67ba551"
+  },
+  "remote_validation": {
+    "run_id": 37813164553,
+    "job_id": 113434937532,
+    "conclusion": "success",
+    "regression_tests": 68,
+    "native_comparisons": 576,
+    "watch_cases_per_profile_optimization": 84,
+    "lifetime_cases_per_profile_optimization": 12,
+    "profiles": 3,
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "compiler_domain": "current Actions GNU99 compiler",
+    "sanitizers": [
+      "undefined-nonrecovering"
+    ],
+    "artifact_id": 11566545665,
+    "artifact_digest": "sha256:60a03dc0bbc2f0c931e687413b9001164bb9aad2b1bbcc0dbfc758ca0f99c3cf",
+    "prior_exit_modes_comparisons": 263268,
+    "prior_complete_exit_modes_report_reproduced_unchanged": true
+  },
+  "derived_report": {
+    "path": "research/recovered/STONEAGE-EXIT-LIFETIME-WATCH-NATIVE-R1.txt",
+    "git_blob": "3e23339b22607d01ec45043395abc9f0c5093e68",
+    "sha256": "f45a307738447df03550a03e87ef3534da59ac91f461e7eed194b5dd7a5f342f",
+    "remote_complete_ordered_job_log_report_matches_local_bytes": true
+  },
+  "profile_semantic_digests": [
+    {
+      "profile": "gavin",
+      "source_sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "watch_cases_per_optimization": "84",
+      "lifetime_cases_per_optimization": "12",
+      "native_comparisons": "192",
+      "semantic_sha256": "1e02902c57c9c3042a283dd21a0280b270c49eb16916d60a380d0463a3c4c575"
+    },
+    {
+      "profile": "iris",
+      "source_sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "watch_cases_per_optimization": "84",
+      "lifetime_cases_per_optimization": "12",
+      "native_comparisons": "192",
+      "semantic_sha256": "1e02902c57c9c3042a283dd21a0280b270c49eb16916d60a380d0463a3c4c575"
+    },
+    {
+      "profile": "bismarck",
+      "source_sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "watch_cases_per_optimization": "84",
+      "lifetime_cases_per_optimization": "12",
+      "native_comparisons": "192",
+      "semantic_sha256": "c5e5b18fa2eff33a452f9ac2545e88798f5fdd690c50e22b5a2980d882ab7357"
+    }
+  ],
+  "source_identity_receipt": "STONEAGE-EXIT-LIFETIME-WATCH-SOURCE-DOMAINS-R1.json",
+  "facts": [
+    "original item removal clears slot before controlled item-end hook; original end-data then marks character use=false while fixed slot storage remains",
+    "gavin/iris ordinary getters and PartyUpdate retain stale-slot reads; Bismarck getter and party liveness guards preserved",
+    "original Finish exits all linked watcher actors but deletes only first watcher then root; UnLink clears current pNext before loop increment",
+    "with at least two watchers remaining nodes stay used in an immediate relinked residual chain"
+  ],
+  "historical_defect_boundary": "Immediate post-Finish occupancy in valid acyclic chains only; no permanent-leak or absence-of-later-cleanup claim; original source unchanged.",
+  "scope": {
+    "watch_count": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "watch_entry_positions": [
+      0,
+      4,
+      9
+    ],
+    "watch_actions": [
+      "Link",
+      "UnLink",
+      "DeleteBattle",
+      "Finish"
+    ],
+    "character_initial_use": [
+      0,
+      1
+    ],
+    "controlled_pointer_available": [
+      0,
+      1
+    ],
+    "party_modes": [
+      0,
+      1,
+      2
+    ],
+    "carried_slots": {
+      "gavin": 24,
+      "iris": 24,
+      "bismarck": 54
+    },
+    "pool_slots": 30
+  },
+  "controlled_dependencies": [
+    "symbolic ABI and compatible structs",
+    "retained fixed character/battle arrays and valid acyclic pointers",
+    "item-end hooks",
+    "network/logging",
+    "generic Exit/Profit hooks",
+    "EntryInit",
+    "party size and property pointer availability"
+  ],
+  "open": [
+    "full original Exit with actual end-data/ticket/warp composition",
+    "actual item-end internals",
+    "watch creation/Stop/task cleanup",
+    "invalid addresses/cycles/concurrency/reuse",
+    "original compiler/executable/ABI/PRNG/JSS/Taiwan-v1",
+    "modern runtime admission"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  },
+  "supersedes": "Prior PENDING entries only within this bounded gate; append-only history retained.",
+  "next": "Compose complete original Exit with actual character lifetime guards and audit watcher Stop/task cleanup before broader ownership/stat/property/timer and typed631/635 persistent/coordinator admission."
+}

@@ -1,6 +1,10 @@
 # Enemy slot validity and watcher chain lifecycle R1
 
-Status: LOCAL PASS, remote exact-input acceptance PENDING. Zero runtime promotions.
+Status: ACCEPTED at exact input aa2c08436115f21e163d9fade3a303c8f0903601 / tree
+8a73c50fb05cfdf1ba42262669897e5cf67ba551. Action37813164553 / job113434937532
+success: 576 native comparisons, 68 regression checks, prior263268 Exit-mode
+comparisons reproduce the complete accepted report. Zero runtime promotions.
+Receipt: research/recovered/STONEAGE-EXIT-LIFETIME-WATCH-ACCEPTANCE-R1.json.
 
 This gate executes original default-profile character end-data/end-one,
 item-removal, integer/work getters and PartyUpdate bodies, plus original

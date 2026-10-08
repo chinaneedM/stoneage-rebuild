@@ -9355,3 +9355,35 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   guards and watcher Stop/task cleanup audit before broader ownership/stat/property/
   timer and typed631/635 persistent/coordinator admission. User's section10 ongoing
   publication/Actions/acceptance authorization applies; no repeat approval.
+
+
+## 2026-10-09 — Enemy slot and watcher chain lifecycle remote acceptance
+
+- Exact input aa2c08436115f21e163d9fade3a303c8f0903601 / tree
+  8a73c50fb05cfdf1ba42262669897e5cf67ba551 accepted by Action37813164553 /
+  job113434937532 success. 68 regression checks and576 native comparisons
+  (3 pinned profiles x(84 watcher+12 character) xO0/O2 GNU99+nonrecovering UBSan).
+  Prior263268 Exit-mode comparisons reproduced the complete report unchanged.
+- Complete remote lifecycle report equals local bytes: SHA256
+  f45a307738447df03550a03e87ef3534da59ac91f461e7eed194b5dd7a5f342f,
+  blob3e23339b22607d01ec45043395abc9f0c5093e68. Artifact11566545665 digest
+  sha256:60a03dc0bbc2f0c931e687413b9001164bb9aad2b1bbcc0dbfc758ca0f99c3cf.
+  Receipt: research/recovered/STONEAGE-EXIT-LIFETIME-WATCH-ACCEPTANCE-R1.json.
+- FACT within bounded original-body scope: item slots unlink before item-end
+  hooks; end-data subsequently marks use=false and retains fixed slot storage.
+  gavin/iris stale ordinary-getter and party reads differ from Bismarck guards.
+  Source ticket guard only in Bismarck; full Exit/end-data/ticket remains OPEN.
+- Historical defect remotely reproduced: Finish exits all linked actors, then
+  deletes only first watcher and root because UnLink clears current pNext before
+  traversal increment. With>=2 watchers, immediate residual chain stays used.
+  No permanent-leak/no-later-cleanup claim; no original source correction.
+- Symbolic ABI/compatible arrays/pointers, item-end/network/logging, generic
+  Exit/Profit/EntryInit and party dependencies controlled. Full Exit/destruction,
+  item-end internals, watcher creation/Stop/task cleanup, corrupt pointers/cycles/
+  reuse/concurrency and original executable/build/ABI/PRNG/JSS/Taiwan-v1 OPEN.
+  Pressure unchanged2486=2465 closed capability+18 OPEN+3 historical UB;0 promotions.
+- Previous PENDING entries superseded only in this bounded scope. Section10
+  user authorization covers publication, Actions and acceptance integration.
+  Next priority: complete original Exit with actual lifetime guards and watcher
+  Stop/task cleanup; then broader ownership/stat/property/timer interactions
+  before typed631/635 persistent/coordinator admission. No engine-design transition.
