@@ -16,13 +16,13 @@ synthetic field combinations do not establish historical world reachability.
 
 Three profiles and O0/O2 GNU99 with nonrecovering UBSan give36864 native
 comparisons. Every tracked field/entry/property/ordered trace matches the
-accepted independent full-state oracle. A separate oracle certifies loyalty
+accepted independent full-state oracle. A separate oracle certifies timing
 hook arguments: gavin/iris HP1 without death calls10; Bismarck calls0. Death
-flag calls10 in all profiles before death clear/HP1. Actual loyalty effects
+flag calls10 in all profiles before death clear/HP1. Actual timing effects
 remain controlled; this gate proves the call argument and order only.
 
 Work/stat initialization, property storage/copy/construct, item inputs, party/
-network/loyalty/skill-up, ownership getters and symbolic ABI retain prior
+network/timing/skill-up, ownership getters and symbolic ABI retain prior
 controlled domains. Pet death/follow/broader ownership, PvP/watch/enemy/invalid
 rider, full timer-to-caller/stat/property integration, historical executable/
 build/ABI/PRNG/JSS/Taiwan-v1 and typed631/635 persistence/coordinator remain OPEN.
@@ -38,3 +38,13 @@ Artifact11521931737 SHA256bddce105821eea31fe18382a73952c9433788f33e746b8d0b0b59c
 Local related regressions60 PASS; timer Action37710777796 independently passes
 the same input. Receipt:STONEAGE-BECOMEPIG-HP-DEATH-ACCEPTANCE-R1.json.
 Previous PENDING is superseded only within the stated player-domain witness.
+
+## 2026-10-08 correction of timing callback terminology
+
+Earlier loyalty labels were incorrect. The recorded event27 is CheckDefBTime,
+whose final parameter is unsigned addTime in exact pinned net.c. Values10/0
+are timing callback arguments. No loyalty mutation is proved. The original
+callback implementation and PRNG/BDTime composition are still controlled/OPEN.
+The earlier numerical state/trace witnesses remain valid. Original acceptance
+and report identities are preserved; the dated timing-label correction receipt
+supersedes only their misnamed interpretation.

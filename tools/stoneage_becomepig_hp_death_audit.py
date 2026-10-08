@@ -21,8 +21,8 @@ from tools.stoneage_guard_break2_source_audit import PINNED
 RESOLUTION = "BECOMEPIG_BOUNDED_PLAYER_HP_DEATH_FULL_CALLER_PASS_ZERO_RUNTIME_PROMOTIONS"
 
 
-def loyalty_penalty(profile: str, hp: int, dead: int) -> int:
-    """Independent profile rule; HP is the caller's already capped HP."""
+def exit_timing_extra_argument(profile: str, hp: int, dead: int) -> int:
+    """CheckDefBTime final argument; HP is the caller's already capped HP."""
     return 10 if dead or (profile != "bismarck" and hp == 1) else 0
 
 
@@ -82,9 +82,9 @@ def audit(profile: str, root: Path) -> dict:
         # inherited full-state oracle. Every valid matched player Exit calls it.
         penalties = [witness.trace[i + 2] for i in range(0, len(witness.trace), 3)
                      if witness.trace[i] == 27]
-        wanted = [loyalty_penalty(profile, min(hp, 100), v[12])] if v[0] else []
+        wanted = [exit_timing_extra_argument(profile, min(hp, 100), v[12])] if v[0] else []
         if penalties != wanted:
-            raise ValueError(profile + ': independent HP/death loyalty oracle drift')
+            raise ValueError(profile + ': independent HP/death timing oracle drift')
         expected.append(witness.row(result))
     source = native_source(lookup.native_composition(
         profile, functions, body, tables, identity['features'], c, domain,
@@ -95,7 +95,7 @@ def audit(profile: str, root: Path) -> dict:
     semantic_digest = hashlib.sha256(json.dumps(expected, separators=(',', ':')).encode()).hexdigest()
     return dict(profile=profile, source_sha=head, cases_per_optimization=len(cases),
                 optimizations=2, native_comparisons=len(cases) * 2,
-                hp1_without_death_loyalty_penalty=loyalty_penalty(profile, 1, 0),
+                hp1_without_death_exit_timing_extra_argument=exit_timing_extra_argument(profile, 1, 0),
                 semantic_sha256=semantic_digest)
 
 
@@ -110,10 +110,10 @@ def main():
         total += row['native_comparisons']
         print('PROFILE|' + '|'.join(f'{k}={v}' for k, v in row.items()))
     print(f'TOTAL|player_hp_death_comparisons={total}|profiles=3')
-    print('FACT|gavin_iris_HP1_without_death_flag_calls_loyalty_penalty10_Bismarck_calls0')
-    print('FACT|death_flag_calls_loyalty_penalty10_then_player_death_clear_and_HP1_in_all_profiles')
+    print('FACT|gavin_iris_HP1_without_death_flag_calls_exit_timing_extra_argument10_Bismarck_calls0')
+    print('FACT|death_flag_calls_exit_timing_extra_argument10_then_player_death_clear_and_HP1_in_all_profiles')
     print('BOUNDARY|synthetic_player_HP0_1_2_150_and_death_flags_not_claimed_reachable_world_states')
-    print('BOUNDARY|complete_original_compliance_exit_badstatus_actual_maps_helpers_controlled_stats_property_construct_loyalty_network_symbolic_ABI')
+    print('BOUNDARY|complete_original_compliance_exit_badstatus_actual_maps_helpers_controlled_stats_property_construct_timing_network_symbolic_ABI')
     print('OPEN|pet_death_follow_ownership_PvP_watch_enemy_invalid_rider_original_build_PRNG_and_runtime')
     print('RESOLUTION|' + RESOLUTION)
 

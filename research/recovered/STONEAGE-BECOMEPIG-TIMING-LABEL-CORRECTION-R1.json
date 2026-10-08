@@ -1,0 +1,37 @@
+{
+  "schema": "stoneage.becomepig-hp-death-timing-label-correction.r1",
+  "date": "2026-10-08",
+  "status": "SOURCE_VERIFIED_SEMANTIC_LABEL_CORRECTION_REMOTE_REGRESSION_PENDING",
+  "supersedes_claim": "CheckDefBTime final argument10/0 is a loyalty penalty",
+  "correct_claim": "CheckDefBTime final parameter is unsigned addTime in pinned net.c, a timing callback; recording its10/0 call argument proves no loyalty mutation or full callback implementation behavior.",
+  "affected_acceptance": "research/recovered/STONEAGE-BECOMEPIG-HP-DEATH-ACCEPTANCE-R1.json",
+  "preserved_native_fact": "gavin/iris player HP1 without death emits CheckDefBTime final argument10; Bismarck emits0. Death flag emits10 in all profiles in the accepted callers.",
+  "source_profiles": [
+    {
+      "profile": "gavin",
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "net_git_blob": "91b7911e48b9fc8e76eec9cc400efebbd7b1ef48",
+      "battle_git_blob": "df5a04b94cbd7bbdab0da3cf91f9b0fa01327c6c"
+    },
+    {
+      "profile": "iris",
+      "commit": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "net_git_blob": "d117f6e02f555ad97ddb3cf0f73a6f0bf881137d",
+      "battle_git_blob": "3bd9f3603db416c46fc33cabf334592854bdddfd"
+    },
+    {
+      "profile": "bismarck",
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "net_git_blob": "ed2582c20723f21aa84ae2b2ac91655f31e6610f",
+      "battle_git_blob": "99c3ad4ccfc4210964db4f37d9e866a77a364e1d"
+    }
+  ],
+  "boundary": "Source identity and label correction only; CheckDefBTime actual default implementation/RNG/BDTime composition remains controlled/OPEN. Old reports and acceptance receipts retained in exact commit history and superseded explicitly.",
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "becomepig_promoted_slots": 0
+  }
+}

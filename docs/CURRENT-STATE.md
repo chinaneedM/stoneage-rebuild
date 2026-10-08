@@ -9143,3 +9143,33 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   rider, actual stat/property and end-to-end timer/caller interaction before
   typed631/635 persistence/coordinator admission. Original executable/build/ABI/
   PRNG/JSS/Taiwan-v1 remains OPEN. No engine/content-design phase transition.
+
+
+## 2026-10-08 — HP/death callback terminology correction; pet composition gate PENDING
+
+- CORRECTION: earlier HP/death records misnamed CheckDefBTime event27 and its
+  final argument10/0 as loyalty/loyalty penalty. Exact pinned net.c declares
+  unsigned addTime and uses the callback for battle timing. No loyalty mutation
+  was witnessed. The already accepted numerical call argument and full-state
+  comparisons remain valid; actual timing implementation/RNG/BDTime is OPEN.
+  Correction receipt:research/recovered/STONEAGE-BECOMEPIG-TIMING-LABEL-CORRECTION-R1.json.
+  Earlier receipt/report identities remain preserved and explicitly superseded
+  in interpretation only. Tool/test labels now use exit_timing_extra_argument.
+- Highest-priority pet-death/mail/follow/owned-slot composition gate implemented.
+  Whole original default compliance/Exit/BadStatusAllClr plus accepted actual
+  helpers/maps cross23040 controlled cases/profile/optimization, expected
+ 138240 native comparisons at O0/O2 GNU99+nonrecovering UBSan.
+  Mail, roster slot-1/0..4, battle occupancy and follow/owner pointers are
+  independent inputs. No default selection or real ownership getter inferred.
+- Validation PENDING exact remote Actions. This gate uses the reproducible
+  Actions runner; no local native run claimed this turn. Four new tooling
+  tests and prior full HP/death semantic-digest preservation are required.
+  No native pass or capability promotion asserted before remote completion.
+- Controlled stat/work-init/property construction/item/ownership getters/
+  network/timing callback and symbolic ABI persist. Multiple pets/follow
+  topology, actual follow lifecycle/ownership, PvP/watch/enemy/invalid rider,
+  full timer/stat/property and original executable/build/ABI/PRNG/JSS/Taiwan-v1
+  remain OPEN. Pressure2486=2465 closed+18 OPEN+3 historical UB;0 promotions.
+- Next: finish exact remote pet-composition acceptance, then broader PvP/watch/
+  enemy and actual ownership/follow/helper integration before typed631/635
+  persistent/coordinator admission.
