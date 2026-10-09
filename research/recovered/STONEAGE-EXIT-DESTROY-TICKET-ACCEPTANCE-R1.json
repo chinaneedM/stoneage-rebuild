@@ -1,0 +1,106 @@
+{
+  "schema": "stoneage.exit-destroy-ticket-acceptance.r1",
+  "status": "CLOSED_BOUNDED_ORIGINAL_NONPLAYER_EXIT_ACTUAL_INVALIDATION_PARTY_TICKET_ZERO_RUNTIME_PROMOTIONS",
+  "accepted_on": "2026-10-09",
+  "timezone": "Asia/Shanghai",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "3e23981eb0f4e4471af1b19fd61a5362029eaa91",
+    "tree": "22a36614600a7b1ce5ac546311bb9ed9c9f6cdf9"
+  },
+  "remote_validation": {
+    "run_id": 37877110049,
+    "job_id": 113648118826,
+    "conclusion": "success",
+    "regression_tests": 86,
+    "native_comparisons": 196056,
+    "complete_exit_invocations": 392112,
+    "semantic_mutations_rejected": 12,
+    "profiles": 3,
+    "cases_per_profile_optimization": 32676,
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "compiler_domain": "current Actions GNU99 compiler",
+    "sanitizers": [
+      "undefined-nonrecovering"
+    ],
+    "artifact_id": 11593225456,
+    "artifact_digest": "sha256:057409dc9203b7ce63ee559f5008042f519a1adbda38764db0d0013e08b86367",
+    "prior_reports_reproduced_unchanged": {
+      "watch_cleanup_comparisons": 55350,
+      "lifetime_watch_comparisons": 576,
+      "exit_modes_comparisons": 263268
+    }
+  },
+  "derived_report": {
+    "path": "research/recovered/STONEAGE-EXIT-DESTROY-TICKET-NATIVE-R1.txt",
+    "sha256": "94f4590eec2e25496483fb75827cc40a6566508856f24d8648c62b9117249d20",
+    "remote_complete_ordered_job_log_report_matches_local_bytes": true,
+    "workflow_cmp_confirms_complete_report_equality": true
+  },
+  "source_identity_receipt": "STONEAGE-EXIT-DESTROY-TICKET-SOURCE-DOMAINS-R1.json",
+  "facts": [
+    "Matched enemy executes original end-data, clears carried/pool slots before item-end hooks, then invalidates use; second Exit rejects dead subject",
+    "Gavin/iris can read retained expired enemy tickets and invoke talk/warp hooks after destruction; actual setters reject both clear writes and ticket/start remain retained",
+    "Bismarck party/ticket subject guards skip destroyed actor, with separate party-owner guard; all three original integer/work setters guard live subject",
+    "Original Bismarck battle validity rejects unused battle before Fox restore, unlike gavin/iris bounds-only validity and later NOUSE branch"
+  ],
+  "scope": {
+    "nonplayer_membership": "both sides all slots0..9 or absent; at most one membership",
+    "player": "live unmatched positive ticket control; invalid/unused guards only; matched-player cleanup excluded",
+    "pointer": "controlled availability",
+    "party_modes": [
+      0,
+      1,
+      2
+    ],
+    "owner_use": [
+      0,
+      1
+    ],
+    "ticket_times": [
+      -1,
+      0,
+      999,
+      1000,
+      1001
+    ],
+    "ticket_start": [
+      0,
+      900
+    ],
+    "now": 1000,
+    "item_patterns": [
+      "empty",
+      "first_last",
+      "full"
+    ],
+    "calls_per_case": 2
+  },
+  "controlled_dependencies": [
+    "symbolic constants/ABI/field bounds and compatible fixed three-character array",
+    "pointer availability/time1000/party size5 and peer notification",
+    "item-end/message/network/warp collectors",
+    "unused matched-player cleanup dependencies abort"
+  ],
+  "warp_boundary": "Hook invocation to7001/41/6 with recorded character-use flag only; no successful world movement or original warp/object safety claim.",
+  "natural_reachability": "Synthetic enemy party/ticket states are not claimed naturally reachable; initialization/reuse provenance remains OPEN.",
+  "open": [
+    "actual warp/object/item-end and initialization/reuse/natural reachability",
+    "multi-membership/multi-actor/follow/ownership/stat/property/timer construction",
+    "matched-player composition with these actual helpers",
+    "watcher creation/multi-actor and typed631/635 persistent/coordinator admission",
+    "original executable/build/ABI/PRNG/JSS/Taiwan-v1"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promoted_slots": 0
+  },
+  "supersedes": "Local PENDING only within this bounded gate; previous controlled validity and destruction-hook evidence retained separately.",
+  "next": "Trace original warp/object and item-end with initialization/reuse provenance, then remaining actor-state/runtime boundaries."
+}

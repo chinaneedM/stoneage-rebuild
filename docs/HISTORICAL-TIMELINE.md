@@ -1731,3 +1731,73 @@ OPEN. No capability promotions; pressure stays2465/18/3 out of2486.
   actor interactions before typed631/635 persistent/coordinator admission. No
   engine/content-design transition. Section10 authorization used for Actions and
   acceptance integration; prior continuity file bytes preserved as prefixes.
+
+
+## 2026-10-09 — Complete Exit/actual invalidation/party/ticket LOCAL PASS; remote PENDING
+
+- Fresh mainc84d2a059bc2a799cc32fc4d042c725df7f8af50/tree
+  a355a29eb51b5d943bfe0af1d438e0951fb532bf; watcher cleanup accepted. Highest
+  priority full original Exit with actual lifetime guards resumed at same3 pins.
+- Entire unchanged _BATTLE_Exit with original end-one/end-data/removal/getters/
+  setters/CHECKINDEX/PartyUpdate/battle validity.196,056 native comparisons=
+  3 x32,676 cases xO0/O2 GNU99+nonrecovering UBSan; each case invokes Exit twice.
+  86 regressions;12 native semantic mutations rejected. All20 nonplayer slots/
+  absent membership, pointer failure/guards, party/owner validity, ticket boundary,
+  item patterns, Fox and representative battle types. Matched player excluded;
+  unmatched live player positive control. Synthetic enemy party/tickets not
+  claimed naturally reachable. Spec STONEAGE-EXIT-DESTROY-TICKET-R1.md.
+- Local bounded facts: matched enemy actual end-data unlinks items then use=false;
+  next Exit rejects invalid subject. gavin/iris can read retained expired ticket,
+  invoke talk/warp hooks after invalidation; actual setters reject both clear
+  writes, retained ticket/start stay unchanged. Bismarck party/ticket subject
+  guards skip them; owner validity separately guarded. Empty item slots still
+  invoke controlled item-end. Actual Bismarck battle-use guard rejects before Fox
+  restore, unlike gavin/iris bounds-only validity and later NOUSE branch.
+- Prior55,350 watcher,576 lifecycle and263,268 Exit-mode full reports reproduced
+  unchanged. New report SHA25694f4590eec2e25496483fb75827cc40a6566508856f24d8648c62b9117249d20.
+  New source-domain and validation receipts recorded; exact remote PENDING.
+- Fixed slots/symbolic ABI/pointer/time/party and item-end/message/network/warp
+  hooks controlled. Warp collector proves invocation only, not world movement.
+  Actual warp/object/item-end/initialization/reuse/natural reachability/multi-actor/
+  matched-player helper composition/ownership/stats/property/timer/original build/
+  JSS/Taiwan-v1/runtime remain OPEN. Pressure2486=2465 closed+18 OPEN+3 UB;
+  zero promotions. Next exact remote acceptance, then actual warp/object/item-end
+  and initialization/reuse provenance before remaining runtime boundaries.
+
+
+## 2026-10-09 — Complete Exit/actual invalidation/party/ticket remote ACCEPTED
+
+- Exact input3e23981eb0f4e4471af1b19fd61a5362029eaa91/tree
+  22a36614600a7b1ce5ac546311bb9ed9c9f6cdf9 passes Action37877110049/
+  job113648118826:86 regressions,196,056 native comparisons (3 x32,676 cases
+  xO0/O2 GNU99+nonrecovering UBSan),12 native semantic mutations rejected.
+  Each case invokes complete unchanged Exit twice (392,112 invocations).
+  Prior55,350 watch,576 lifecycle and263,268 Exit-mode complete reports unchanged.
+- Complete remote ordered report equals local bytes; workflow cmp passed. SHA256
+  94f4590eec2e25496483fb75827cc40a6566508856f24d8648c62b9117249d20.
+  Artifact11593225456 digest
+  sha256:057409dc9203b7ce63ee559f5008042f519a1adbda38764db0d0013e08b86367.
+  Receipt: research/recovered/STONEAGE-EXIT-DESTROY-TICKET-ACCEPTANCE-R1.json.
+- FACT in bounded complete original nonplayer Exit: matched enemy runs actual
+  end-data/item unlink then use=false; repeat Exit rejects invalid subject.
+  gavin/iris retained expired work tickets can trigger message/warp hooks after
+  invalidation; actual live-guarded setters reject both clearing writes, retained
+  ticket/start unchanged. Bismarck party/ticket subject guards skip invalid actor;
+  owner guard separately protects live-member/invalid-owner combinations. Actual
+  Bismarck battle-use validity rejects before Fox restore; gavin/iris bounds-only
+  validity reaches restore before NOUSE. Earlier controlled adapters remain
+  distinct evidence. Empty slot item-end calls are preserved, not item-death proof.
+- Complete unchanged Exit body, actual integer/work getters/setters, CHECKINDEX,
+  end-one/end-data/carried/pool cleanup and PartyUpdate execute. Fixed slots,
+  symbolic ABI, time1000, pointer availability, party size, item-end/network/talk/
+  warp collectors controlled. Hook proves invocation to7001/41/6 only. Synthetic
+  enemy party/tickets are not claimed naturally reachable; matched-player cleanup
+  excluded except earlier separate gates. Original warp/object/item-end/init/reuse/
+  natural reachability/multi-actor/stats/property/ownership/timer and original
+  executable/build/JSS/Taiwan-v1/runtime admission remain OPEN.
+- Prior PENDING superseded only in this scope; pressure2486=2465 closed capability
+  +18 OPEN+3 historical UB,zero promotions. Highest priority next: actual original
+  warp/object and item-end, plus initialization/reuse provenance; then remaining
+  actor-state and typed631/635 persistent/coordinator boundaries. No engine/content
+  transition. Section10 authorization covers publication/Actions/acceptance;
+  earlier continuity histories remain byte-identical prefixes.

@@ -1,6 +1,11 @@
 # Complete nonplayer Exit with actual slot invalidation and ticket lifetime R1
 
-Status: LOCAL PASS; remote exact-input acceptance PENDING. Zero runtime promotions.
+Status: ACCEPTED at exact input3e23981eb0f4e4471af1b19fd61a5362029eaa91/tree
+22a36614600a7b1ce5ac546311bb9ed9c9f6cdf9. Action37877110049/job113648118826
+success. Complete remote report equals local bytes; SHA256
+94f4590eec2e25496483fb75827cc40a6566508856f24d8648c62b9117249d20.
+Receipt: research/recovered/STONEAGE-EXIT-DESTROY-TICKET-ACCEPTANCE-R1.json.
+Zero runtime promotions.
 
 This gate executes the entire unchanged default _BATTLE_Exit body at all three
 pinned descendant commits. It replaces the former trace-only enemy destruction
