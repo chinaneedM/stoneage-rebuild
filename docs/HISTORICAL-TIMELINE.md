@@ -1940,3 +1940,16 @@ stats. Dirty-slot neighbors, cursor/sequence/RNG and full data/work/flags checke
 predecessor reports unchanged. Synthetic master/scripted Rand/empty dependencies
 mean natural content/ownership and full Exit-to-reuse remain OPEN. Local PASS;
 remote acceptance PENDING. No JSS/Taiwan-v1 historical or runtime promotion.
+
+
+## 2026-10-09 — Ordinary enemy creator source gate remote ACCEPTED
+
+Exact input a6bcde889b6e4f2279cc6d637662d2f42fab0156/tree
+80e9732c997ff82ab39c4cffde12890644c5a300 passes Action37883409372/
+job113667962896:126 regressions,27,840 primary calls,24 rejected mutations.
+Seven old reports unchanged; complete new ordered report equals local bytes.
+Prior PENDING superseded only in ordinary synthetic-record/no-equipment/current
+header LP64 witness. Ticket/start/object work0 after actual helper composition
+is bounded evidence; real loader/ownership/special paths and full Exit-to-reuse
+remain OPEN. Receipt STONEAGE-ENEMY-CREATION-ACCEPTANCE-R1.json; no original
+ABI/build/JSS/Taiwan-v1 claim or runtime promotion.

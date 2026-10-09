@@ -9751,3 +9751,30 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   then full creation-to-Exit-to-reuse. Special/items/nonempty callbacks and remaining
   actor/watcher/typed631/635/original build gates OPEN; no engine/content transition.
   Protocol section10 authorization covers publication/Actions/accepted integration.
+
+
+## 2026-10-09 — Complete ordinary unequipped enemy creation remote ACCEPTED
+
+- Exact input a6bcde889b6e4f2279cc6d637662d2f42fab0156/tree
+  80e9732c997ff82ab39c4cffde12890644c5a300 passes Action37883409372/
+  job113667962896:126 regressions,27,840 primary creator calls at GNU99
+  -fgnu89-inline O0/O2+nonrecovering UBSan,24 mutations rejected (48 additional
+  calls). Seven complete predecessor reports unchanged; all eight cmp gates pass.
+  Complete ordered remote report equals local bytes, including full-stream hashes.
+- Complete actual ordinary no-equipment creator and template/allocator/empty-name
+  lookup/rank/exp/stat/equip/accessor helpers execute. Successful ticket/start/
+  object work state remains0. Bounded synthetic master/scripted Rand/positive
+  partitions/empty registries and callbacks; not actual loaded content, world
+  object ownership/sentinel, complete bootstrap or original ABI/build evidence.
+- Receipt STONEAGE-ENEMY-CREATION-ACCEPTANCE-R1.json; report SHA256
+  1e4c78ebc12309baa6905eaa63626b21180cdce6e75c17dafb980e39998502d3. Artifact11594489097 digest
+  sha256:8db2166f71b415fd7a81ea383e7c6b49b2ac01aefa54e691b5fc4d650ffa80e7.
+  Artifact archive not independently downloaded; ordered job output and successful
+  complete cmp gates verified. Tested code unchanged; earlier histories preserved.
+- Supersedes local PENDING only in this scope. Pressure2486=2465 closed capability
+  +18 OPEN+3 historical UB;zero promotions. Highest priority: actual master/
+  template loader and world-object registration/ownership provenance, then full
+  creation-to-Exit-to-reuse composition. Special enemy IDs, drops/equipment,
+  nonempty callbacks, remaining actor/watcher/typed631/635 and original build/
+  JSS/Taiwan-v1 remain OPEN. No engine/content transition. Protocol section10
+  ongoing publication/Actions/accepted integration authorization applies.

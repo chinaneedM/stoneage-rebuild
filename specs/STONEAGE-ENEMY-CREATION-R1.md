@@ -1,6 +1,8 @@
 # Ordinary enemy creation R1
 
-Status: LOCAL PASS; exact-input remote acceptance PENDING.
+Status: REMOTE ACCEPTED on Action37883409372/job113667962896.
+Exact input a6bcde889b6e4f2279cc6d637662d2f42fab0156/tree
+80e9732c997ff82ab39c4cffde12890644c5a300; acceptance receipt recorded.
 
 FACT in a bounded descendant-source witness, not a released-game or Taiwan-v1
 runtime claim. Original source remains transient; the repository contains the

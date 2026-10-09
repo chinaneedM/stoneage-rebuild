@@ -5030,3 +5030,18 @@ seven previous reports unchanged; local PASS, remote PENDING. Zero ticket/start/
 object after ordinary creation is bounded evidence, not natural loaded content or
 ownership/sentinel proof. Real loader/registration, special/equipped/callback paths,
 Exit-to-reuse, original build/ABI/JSS/Taiwan-v1 remain OPEN;zero promotions.
+
+
+## 2026-10-09 — Ordinary enemy creation source gate remote ACCEPTED
+
+Exact input a6bcde889b6e4f2279cc6d637662d2f42fab0156/tree
+80e9732c997ff82ab39c4cffde12890644c5a300 passes Action37883409372/
+job113667962896:126 regressions,27,840 primary calls,24 rejected mutations.
+Seven predecessor full reports and complete new ordered report match local bytes;
+eight cmp gates pass. Receipt STONEAGE-ENEMY-CREATION-ACCEPTANCE-R1.json;
+report SHA2561e4c78ebc12309baa6905eaa63626b21180cdce6e75c17dafb980e39998502d3.
+Artifact11594489097 digest sha256:8db2166f71b415fd7a81ea383e7c6b49b2ac01aefa54e691b5fc4d650ffa80e7;
+archive not independently downloaded. PENDING superseded only for ordinary
+unequipped/synthetic-master/current-profile LP64 domain. Loader/ownership/special/
+equipment/callback/full Exit-to-reuse/original build/JSS/Taiwan-v1 stay OPEN;
+zero promotions, tested code unchanged and original source remains transient.
