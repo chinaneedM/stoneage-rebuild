@@ -1876,3 +1876,33 @@ OPEN. No capability promotions; pressure stays2465/18/3 out of2486.
   actor stats/property/timer/matched-player/watch multi-actor and typed631/635
   admission remain OPEN. No engine/content-design transition. Section10 ongoing
   publication/Actions/acceptance authorization applies; earlier histories preserved.
+
+
+## 2026-10-09 — Original default character and allocator reuse remote ACCEPTED
+
+- Exact input a543758d8d061646b810935503a1095181f0d9aa / tree
+  6b8a68ace1677287ef8d4b3a1360711e5dce6ff1 passes Action37880212015 /
+  job113657937185.108 regressions,25,344 native comparisons,50,688 allocations,
+  18 semantic mutations rejected. All five predecessor complete reports unchanged;
+  every cmp gate successful. Complete remote ordered report equals local bytes.
+- Report SHA256 cbebb27b3923817c7804545cfedb882d90f4a89423ee05dd32bf6eb1b0f9da5a. Artifact11593249623 digest
+  sha256:cd38d68dee6e7bdbabba8d0372947b2ab59ead340fdb3c881ebfb77cf2ef9261.
+  Receipt research/recovered/STONEAGE-CHARACTER-REUSE-ACCEPTANCE-R1.json.
+- FACT only within original getter/allocator/constructor functional bodies and
+  controlled tables/callbacks/positive partitions: fresh default work zeros;
+  unused destination replaced by input; callback failure keeps copied unused state
+  without cursor/sequence advance or construction. Success sets live, constructs,
+  advances cursor and assigns sequence. Dirty input/callback-origin state is
+  distinct from stale-slot retention. Tested direct-release reuse replaces it.
+- Default table/defaultPlayer/full enemy creator remain unexecuted; creator call/
+  absence of direct ticket/object symbols is static lexical evidence only. Zero
+  object work value does not establish actual object ownership or sentinel meaning.
+  Symbolic ABI/small controlled arrays/template table/lookup/callbacks/direct release
+  remain adapters; no full Exit-to-reuse or natural-state claim.
+- Supersedes local PENDING only in bounded domain; tested code and prior histories
+  preserved. Pressure2486=2465 closed capability+18 OPEN+3 historical UB;0 promotions.
+  Highest priority next: actual default-table/defaultPlayer with enum/layout/
+  compile-profile provenance, full enemy creator/init/helpers and natural ticket/
+  object provenance, then complete Exit-to-reuse composition. Remaining actor/
+  watcher/typed631/635 gates and original build/JSS/Taiwan-v1 remain OPEN. No
+  engine/content-design transition. Section10 publication authorization applies.

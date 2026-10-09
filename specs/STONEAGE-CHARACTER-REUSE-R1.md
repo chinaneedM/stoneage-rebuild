@@ -1,6 +1,6 @@
 # Original default-character construction and allocator reuse R1
 
-Status: LOCAL PASS; exact-input remote acceptance PENDING.
+Status: REMOTE ACCEPTED. Exact tested input a543758d8d061646b810935503a1095181f0d9aa / tree 6b8a68ace1677287ef8d4b3a1360711e5dce6ff1. Action37880212015 / job113657937185 succeeded. Acceptance metadata only; tested code unchanged.
 Evidence class: FACT bounded to three pinned descendant source profiles. No
 original executable/JSS/Taiwan-v1 equivalence, no runtime-pressure promotion.
 
@@ -82,3 +82,9 @@ boundaries remain separate gates. No engine/content-design transition.
 
 Pressure unchanged: 2486 = 2465 closed capability + 18 OPEN + 3 historical UB;
 zero runtime promotions. Receipt: STONEAGE-CHARACTER-REUSE-VALIDATION-R1.json.
+
+Remote complete ordered report equals local bytes; every workflow cmp gate passes.
+Receipt: research/recovered/STONEAGE-CHARACTER-REUSE-ACCEPTANCE-R1.json.
+Report SHA256 cbebb27b3923817c7804545cfedb882d90f4a89423ee05dd32bf6eb1b0f9da5a.
+Artifact11593249623 digest sha256:cd38d68dee6e7bdbabba8d0372947b2ab59ead340fdb3c881ebfb77cf2ef9261
+is GitHub metadata; archive bytes were not independently downloaded.
