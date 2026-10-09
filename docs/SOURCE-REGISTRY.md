@@ -5014,3 +5014,19 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   coordinator and original build/JSS/Taiwan-v1 gates OPEN. No engine/content
   transition. Protocol section10 ongoing authorization covers publication/Actions/
   acceptance integration without repeated confirmation.
+
+
+## 2026-10-09 — Ordinary enemy creation original-function source gate R1
+
+Same three pinned descendants/current active headers. Derived receipts
+STONEAGE-ENEMY-CREATION-SOURCE-DOMAINS-R1.json, VALIDATION-R1.json and NATIVE-R1.txt;
+spec STONEAGE-ENEMY-CREATION-R1.md and validate-stoneage-enemy-creation workflow.
+Actual creator/template/allocator/empty-name lookup/rank/experience/full stat and
+empty-inventory composition execute; all source/function/transitive header hashes
+pinned. Synthetic records and scripted Rand/positive partitions/empty registries
+are controlled inputs; unexecuted external dependencies abort if reached. Original
+source remains transient.27,840 primary calls,126 regressions,24 mutations rejected,
+seven previous reports unchanged; local PASS, remote PENDING. Zero ticket/start/
+object after ordinary creation is bounded evidence, not natural loaded content or
+ownership/sentinel proof. Real loader/registration, special/equipped/callback paths,
+Exit-to-reuse, original build/ABI/JSS/Taiwan-v1 remain OPEN;zero promotions.

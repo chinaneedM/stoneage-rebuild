@@ -1928,3 +1928,15 @@ Action37881477702/job113661909887;116 regressions,2,736 original getter calls,
 ordered report equals local. Prior PENDING superseded only in three pinned/current
 profile GNU99 LP64 scope; no original build/ABI/JSS/Taiwan-v1 claim or runtime
 promotion. Receipt STONEAGE-DEFAULT-TEMPLATE-ACCEPTANCE-R1.json.
+
+
+## 2026-10-09 — Ordinary enemy creation extends default-only evidence
+
+FACT in same pinned/current GNU99 LP64 descendant domain: complete ordinary
+unequipped creator plus actual stat/equip/lookup helpers leaves ticket/start/object
+work fields0. Allocation packs before growth; rank derives from original master
+stats. Dirty-slot neighbors, cursor/sequence/RNG and full data/work/flags checked.
+27,840 primary calls,126 regressions,24 rejected state mutations; seven complete
+predecessor reports unchanged. Synthetic master/scripted Rand/empty dependencies
+mean natural content/ownership and full Exit-to-reuse remain OPEN. Local PASS;
+remote acceptance PENDING. No JSS/Taiwan-v1 historical or runtime promotion.

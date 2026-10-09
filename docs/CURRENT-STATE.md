@@ -9717,3 +9717,37 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   coordinator and original build/JSS/Taiwan-v1 gates OPEN. No engine/content
   transition. Protocol section10 ongoing authorization covers publication/Actions/
   acceptance integration without repeated confirmation.
+
+
+## 2026-10-09 — Complete ordinary unequipped enemy creation LOCAL PASS; remote PENDING
+
+- Fresh remote main ae2d8f5d228f9ccef2d5fe236777e5042c1a9ad1/tree
+  93c6b60fa20a343da85ae348b5ff2f46f38f413f; continued actual creator/init/helper
+  priority at the same three clean descendant pins, without old-chat inference.
+- Complete original creator now executes with actual template/table/Char headers,
+  getter/allocator/constructor, empty-name lookup, rank/exp/ordinary RandomChange,
+  complete stat/compliance and empty-item equip/Other_DefcharWorkInt, checked
+  accessors/safe copies/image helper. Bismarck's executed capacity helper retained.
+  Function/source/transitive-header hashes pinned; no original C committed.
+- 4,640 cases/profile/optimization:27,840 primary creator calls at GNU99
+  -fgnu89-inline O0/O2+nonrecovering UBSan;126 regressions,24 rejected semantic
+  mutations (48 additional calls). Full data/work/flags match independent Python
+  oracle; cursor/sequence/RNG/neighbors/inventory/skills/strings/callbacks checked.
+  Seven previous complete reports reproduced byte-identically.
+- FACT bounded: successful ordinary no-equipment creation leaves ticket/start/
+  object work fields0 after actual helper composition. Not proof of world-object
+  ownership/sentinel or natural loaded master state. Packed allocation precedes
+  ten growth increments; rank uses unmodified master. Actual charm survives stat
+  composition. Full partition consumes RNG before failure; invalid guards do not.
+- Controlled synthetic master, scripted raw rand with original macro arithmetic,
+  ID1/image100250, zero drop/style, empty items/callback names, positive2/2/3
+  partitions and dirty slots. External domain dependencies abort if reached;
+  diagnostics/lookup counts instrumented. Current headers/LP64 configuration,
+  no original compiler/ABI/JSS/Taiwan-v1 claim or complete array bootstrap.
+- Spec STONEAGE-ENEMY-CREATION-R1.md; source/validation/native receipts. Report
+  SHA256 1e4c78ebc12309baa6905eaa63626b21180cdce6e75c17dafb980e39998502d3. Remote acceptance PENDING. Pressure2486=2465 closed capability
+  +18 OPEN+3 historical UB;zero promotions. Highest priority after exact-input
+  Actions: actual master/template loader and registration/ownership provenance,
+  then full creation-to-Exit-to-reuse. Special/items/nonempty callbacks and remaining
+  actor/watcher/typed631/635/original build gates OPEN; no engine/content transition.
+  Protocol section10 authorization covers publication/Actions/accepted integration.

@@ -1,0 +1,50 @@
+{
+  "schema": "stoneage-enemy-creation-validation-r1",
+  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "startup_main": "ae2d8f5d228f9ccef2d5fe236777e5042c1a9ad1",
+  "startup_tree": "93c6b60fa20a343da85ae348b5ff2f46f38f413f",
+  "primary_creator_calls": 27840,
+  "additional_mutation_creator_calls": 48,
+  "cases_per_profile_per_optimization": 4640,
+  "successful_per_profile_per_optimization": 4032,
+  "regression_checks": 126,
+  "semantic_mutations_rejected": 24,
+  "optimizations": [
+    "O0",
+    "O2"
+  ],
+  "dialect": "GNU99 with -fgnu89-inline for original INLINE bodies",
+  "sanitizer": "undefined, nonrecovering",
+  "host_domain": "LP64 current original headers, no original ABI/build claim",
+  "report_sha256": "1e4c78ebc12309baa6905eaa63626b21180cdce6e75c17dafb980e39998502d3",
+  "complete_ordinary_unequipped_enemy_creator_executed": true,
+  "real_master_loader_executed": false,
+  "world_object_registration_executed": false,
+  "full_Exit_to_reuse_composition_executed": false,
+  "zero_ticket_start_object_after_actual_creation_in_bounded_domain": true,
+  "open": [
+    "real master/template loader and records",
+    "special enemies and equipment/drops",
+    "nonempty callbacks",
+    "world-object registration/ownership",
+    "full creation to Exit to reuse",
+    "other profiles/original ABI/build/JSS/Taiwan-v1",
+    "actor/watcher/typed631/635 admission"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "prior_complete_report_sha256": {
+    "DEFAULT-TEMPLATE": "facfe62106ca3be1a9a800b5e33afcc14bf582a65e2dc93d2607d6c0be076c53",
+    "CHARACTER-REUSE": "cbebb27b3923817c7804545cfedb882d90f4a89423ee05dd32bf6eb1b0f9da5a",
+    "EXIT-WORLD-ITEM": "54ab876083faac9e87da83a6ce459b5edaa59fcb03a725aeb131ae9c9b7636ab",
+    "EXIT-DESTROY-TICKET": "94f4590eec2e25496483fb75827cc40a6566508856f24d8648c62b9117249d20",
+    "WATCH-CLEANUP": "b7724d88bf319ad0cf80e0463de21b78510db30505d007529a22cab3d6cf99da",
+    "EXIT-LIFETIME-WATCH": "f45a307738447df03550a03e87ef3534da59ac91f461e7eed194b5dd7a5f342f",
+    "BECOMEPIG-EXIT-MODES": "21cfc791be5f03f674c40369bfcc067dd757bd253f4ecd30ff414826be3a9533"
+  }
+}
