@@ -1,0 +1,44 @@
+{
+  "schema": "stoneage.exit-destroy-ticket-validation.r1",
+  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "startup_main": "c84d2a059bc2a799cc32fc4d042c725df7f8af50",
+  "startup_tree": "a355a29eb51b5d943bfe0af1d438e0951fb532bf",
+  "native_comparisons": 196056,
+  "complete_exit_invocations": 392112,
+  "regression_tests": 86,
+  "semantic_mutations_rejected": 12,
+  "profiles": [
+    {
+      "profile": "gavin",
+      "source_sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "cases_per_optimization": "32676",
+      "native_comparisons": "65352",
+      "semantic_mutations_rejected": "4",
+      "semantic_sha256": "a2cf9458ae436a32b8214aa6ebe1d9cd38fa6e82ee1e863c6879655ddb663aef"
+    },
+    {
+      "profile": "iris",
+      "source_sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "cases_per_optimization": "32676",
+      "native_comparisons": "65352",
+      "semantic_mutations_rejected": "4",
+      "semantic_sha256": "a2cf9458ae436a32b8214aa6ebe1d9cd38fa6e82ee1e863c6879655ddb663aef"
+    },
+    {
+      "profile": "bismarck",
+      "source_sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "cases_per_optimization": "32676",
+      "native_comparisons": "65352",
+      "semantic_mutations_rejected": "4",
+      "semantic_sha256": "bb535ada3ebb0aab706ce600d6406ff4144367cc694e8cb31e5d1d681a38f109"
+    }
+  ],
+  "report_sha256": "94f4590eec2e25496483fb75827cc40a6566508856f24d8648c62b9117249d20",
+  "runtime_promotions": 0,
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3
+  }
+}
