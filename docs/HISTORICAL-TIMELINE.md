@@ -1906,3 +1906,15 @@ OPEN. No capability promotions; pressure stays2465/18/3 out of2486.
   object provenance, then complete Exit-to-reuse composition. Remaining actor/
   watcher/typed631/635 gates and original build/JSS/Taiwan-v1 remain OPEN. No
   engine/content-design transition. Section10 publication authorization applies.
+
+
+## 2026-10-09 — Default template compiled-field evidence (bounded descendant profiles)
+
+FACT in same three pinned descendants/current version.h GNU99 LP64 witness:
+actual defaultPlayer/header/table/getter execute. Profile-specific data/work enum
+counts differ; gavin/iris have8/10 excess initializer warnings, Bismarck compiled
+static pig/image is100250/0 despite comment labels. Getter truncates at
+CHAR_INITDATA and outputs0/0 for those tail fields; image-type row assignment is
+overwritten by copied player prefix. These are source-profile observations, not
+JSS/Taiwan-v1 or released-executable claims. Spec STONEAGE-DEFAULT-TEMPLATE-R1.md.
+Remote acceptance PENDING; no runtime promotion.

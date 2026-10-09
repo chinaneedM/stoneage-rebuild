@@ -1,0 +1,801 @@
+{
+  "schema": "stoneage-default-template-source-domains-r1",
+  "profiles": {
+    "gavin": {
+      "source_sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "files": {
+        "gmsv/src/char/char_data.c": "594202c665a8f2f70c14a072939b61b2ff4eca0ed48a9e9870babef33473b2d6",
+        "gmsv/src/char/defaultPlayer.h": "6000ac5f4a920e0cfb756849766022c4341b670c38c8c23631a4f8da394330e9",
+        "gmsv/src/include/addressbook.h": "e09155917a946ce741ad862665d6d1888b75b44dd0d6629906495732d5743979",
+        "gmsv/src/include/anim_tbl.h": "84563656137487695d159e57bbdfc9d5c135a949f96b8639c03c22885c828dd1",
+        "gmsv/src/include/char.h": "8d3f5ec17266796ad6a4e381c1bf1324d2396072b6b7f816bff3b3dac40ae5f8",
+        "gmsv/src/include/char_base.h": "2959c40645149277878661dd49ccffd1653f11fcb55c93f03efe306e6d578d45",
+        "gmsv/src/include/char_data.h": "0314700d38e13deb46af7be62242d5504f7ba40454c835824ceed1accc806cba",
+        "gmsv/src/include/common.h": "66af915f7796d5bb6f7608e1fdc09bc5d1ff0d6802294d9e702ef5b89b49ba7a",
+        "gmsv/src/include/correct_bug.h": "1ffb0c13f9d0bdf4ddc2ca02d9a369e9d6741eae8b15d475f29f729f509ee38e",
+        "gmsv/src/include/item.h": "3f7e7569ff6a2bdf2fd52162f61d463727a941cfdac691eeb1be074d8dbe07c7",
+        "gmsv/src/include/link.h": "ae6f7f29eed7784dcf020fa18f511bfa26c03320aebd119c42cc10689b795a5c",
+        "gmsv/src/include/net.h": "9b20303af8f5828953382d404d81024a6f93cfeb0df72f14e7eb347e3743cda1",
+        "gmsv/src/include/skill.h": "663bf9e58eb86fd81a631a48d41684e67cfd818dd68a6a7f51b649650a7b6ac7",
+        "gmsv/src/include/title.h": "037855aea3de77dcf4d3752c746f16453588f95ce2bf2464e3ae581c3ad9af96",
+        "gmsv/src/include/util.h": "fc5f0a7343df926b4e5f06c941b4612091822dd4479f982c67510dd2fec54d06",
+        "gmsv/src/include/version.h": "e58232f8763dccedfbba775ddfb3eaa33e431505b090b2e9a7a87cf8d5945d4a",
+        "gmsv/src/include/version_pk.h": "c5a46db4f888433d2909a8f434a01657f75c4fe025b5d1350708bc3feaeb695c"
+      },
+      "getter_sha256": "9f2c757c7418b4172f68c91d94cc0f7306f67514a1774b6bc1cb4633c9700642",
+      "preprocessed_player_sha256": "713333a271b9354b72ec60c2908b4ca05f1b6030193141cf27c33ecf3a7b6e22",
+      "preprocessed_table_sha256": "149e8c20a9ca178012bf74ffcc7eee526fe4c188726e7ff29edc220f3b61a69e",
+      "feature_definitions_sha256": "7c12079cfe8050672d27d0e8bc66b08a3123e6e1751b7c1647d96579d510a7d7",
+      "feature_definition_count": 326,
+      "enum_values": {
+        "CHAR_DATAINTNUM": 162,
+        "CHAR_INITDATA": 85,
+        "CHAR_IMAGETYPE": 62,
+        "CHAR_WHICHTYPE": 54,
+        "CHAR_WORKDATAINTNUM": 317,
+        "CHAR_WORKOBJINDEX": 74,
+        "CHAR_WORKTICKETTIME": 314,
+        "CHAR_WORKTICKETTIMESTART": 315,
+        "CHAR_WORKFD": 84,
+        "CHAR_WORKCHATROOMNUM": 297,
+        "CHAR_BECOMEPIG": 137,
+        "CHAR_BECOMEPIG_BBI": 138
+      },
+      "template_initializer_ints": 170,
+      "excess_initializer_ints": 8,
+      "table_rows": [
+        [
+          100000,
+          2
+        ],
+        [
+          100005,
+          2
+        ],
+        [
+          100010,
+          2
+        ],
+        [
+          100015,
+          2
+        ],
+        [
+          100020,
+          1
+        ],
+        [
+          100025,
+          1
+        ],
+        [
+          100030,
+          1
+        ],
+        [
+          100035,
+          1
+        ],
+        [
+          100040,
+          1
+        ],
+        [
+          100045,
+          1
+        ],
+        [
+          100050,
+          1
+        ],
+        [
+          100055,
+          1
+        ],
+        [
+          100060,
+          1
+        ],
+        [
+          100065,
+          1
+        ],
+        [
+          100070,
+          1
+        ],
+        [
+          100075,
+          1
+        ],
+        [
+          100080,
+          4
+        ],
+        [
+          100085,
+          4
+        ],
+        [
+          100090,
+          4
+        ],
+        [
+          100095,
+          4
+        ],
+        [
+          100100,
+          4
+        ],
+        [
+          100105,
+          4
+        ],
+        [
+          100110,
+          4
+        ],
+        [
+          100115,
+          4
+        ],
+        [
+          100120,
+          3
+        ],
+        [
+          100125,
+          3
+        ],
+        [
+          100130,
+          3
+        ],
+        [
+          100135,
+          3
+        ],
+        [
+          100140,
+          0
+        ],
+        [
+          100145,
+          0
+        ],
+        [
+          100150,
+          0
+        ],
+        [
+          100155,
+          0
+        ],
+        [
+          100160,
+          0
+        ],
+        [
+          100165,
+          0
+        ],
+        [
+          100170,
+          0
+        ],
+        [
+          100175,
+          0
+        ],
+        [
+          100180,
+          0
+        ],
+        [
+          100185,
+          0
+        ],
+        [
+          100190,
+          0
+        ],
+        [
+          100195,
+          0
+        ],
+        [
+          100200,
+          5
+        ],
+        [
+          100205,
+          5
+        ],
+        [
+          100210,
+          5
+        ],
+        [
+          100215,
+          5
+        ],
+        [
+          100220,
+          5
+        ],
+        [
+          100225,
+          5
+        ],
+        [
+          100230,
+          5
+        ],
+        [
+          100235,
+          5
+        ],
+        [
+          100250,
+          7
+        ],
+        [
+          100251,
+          7
+        ],
+        [
+          100252,
+          7
+        ],
+        [
+          100253,
+          7
+        ],
+        [
+          100254,
+          7
+        ]
+      ],
+      "all_rows_share_player": true,
+      "template_pig_value": -1,
+      "template_pig_image": 100250,
+      "logical_data_sha256": "31c9c35f1b2a52d694472cdd7db5d6787e66e4cbde84b149b0e31f7c6c37254b",
+      "actual_headers_table_and_defaultPlayer": true,
+      "original_build_and_ABI_not_claimed": true
+    },
+    "iris": {
+      "source_sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "files": {
+        "Source/gmsv/char/char_data.c": "bf676653ef0ab05d90b414333b81233e0dfb87b8a84ddb61bd845df3856ae91b",
+        "Source/gmsv/char/defaultPlayer.h": "4fe467d0fa6a58d62b348a61a3ea3f38bc5a92280c958b00397312b87891a5d2",
+        "Source/gmsv/include/addressbook.h": "f000577dc7d989dc1dd7208ebc07620a94aef8464136355cd4e0a75e312b5f68",
+        "Source/gmsv/include/anim_tbl.h": "e19daa0e5a49c1d8f930ffc9f3474cd5f840e6df73d1d2036882fb28943462df",
+        "Source/gmsv/include/char.h": "455768541ae3d789ca40b64aaf362a67f084cf800cc1b39eb835a388cd245aa2",
+        "Source/gmsv/include/char_base.h": "d53f39efe6f18ad90b668457461624f2a9aef542b24389a4e0e14c6b64f92645",
+        "Source/gmsv/include/char_data.h": "231d8f8a595e40f1b7b586b983c9d72f10d1c4f12c97a6645cb9f5b38fba8eae",
+        "Source/gmsv/include/common.h": "d2ca77be801bf0ec67361708edcf3dde15124c64ca67f853ce5bd5f71b8dbfaa",
+        "Source/gmsv/include/correct_bug.h": "f5de96a6d5c3b9d2e8a918a98db4d4b9891e16e0d09028359546abe9fa4268a1",
+        "Source/gmsv/include/item.h": "fc4ae1abe7aef229cb5c44d9f623dca36ff4779778042b32f1e2e7c3de92f1cd",
+        "Source/gmsv/include/link.h": "4149a4ae79ad2f8add54f60dbfa835842bc927c4ba5f58204c93d1ba95a6bd27",
+        "Source/gmsv/include/net.h": "73ff3ecd936a45577c0ceee4c70c88bebaabaa77d018f85f93a971b36f6f58e8",
+        "Source/gmsv/include/skill.h": "400051e79c9246eb96c91312a8ad31a4038c168f40d68097a54059d38720800e",
+        "Source/gmsv/include/title.h": "037855aea3de77dcf4d3752c746f16453588f95ce2bf2464e3ae581c3ad9af96",
+        "Source/gmsv/include/util.h": "38d3e814cb495d7684ba013d3066aba04592e485e9853d2969c864669d157b7c",
+        "Source/gmsv/include/version.h": "a404dacc30266a04a58aa53e914bb4ba19aa583c982051ed5427ad71f8498bad",
+        "Source/gmsv/include/version_pk.h": "b987dfd1b8467aa54900d4cb34e3dfc6ace1cc022d620c01d912ab155d57ff7c"
+      },
+      "getter_sha256": "9f2c757c7418b4172f68c91d94cc0f7306f67514a1774b6bc1cb4633c9700642",
+      "preprocessed_player_sha256": "e7499a839e242b49202fc7a163bee3b1ad62f0d465eb292a2314eacb473959d7",
+      "preprocessed_table_sha256": "149e8c20a9ca178012bf74ffcc7eee526fe4c188726e7ff29edc220f3b61a69e",
+      "feature_definitions_sha256": "adbd5f97601caac8d4d2b009c1cd820fcb2ad8bc8f654cdd14b6809e2b98455d",
+      "feature_definition_count": 314,
+      "enum_values": {
+        "CHAR_DATAINTNUM": 159,
+        "CHAR_INITDATA": 84,
+        "CHAR_IMAGETYPE": 61,
+        "CHAR_WHICHTYPE": 54,
+        "CHAR_WORKDATAINTNUM": 316,
+        "CHAR_WORKOBJINDEX": 74,
+        "CHAR_WORKTICKETTIME": 313,
+        "CHAR_WORKTICKETTIMESTART": 314,
+        "CHAR_WORKFD": 84,
+        "CHAR_WORKCHATROOMNUM": 297,
+        "CHAR_BECOMEPIG": 136,
+        "CHAR_BECOMEPIG_BBI": 137
+      },
+      "template_initializer_ints": 169,
+      "excess_initializer_ints": 10,
+      "table_rows": [
+        [
+          100000,
+          2
+        ],
+        [
+          100005,
+          2
+        ],
+        [
+          100010,
+          2
+        ],
+        [
+          100015,
+          2
+        ],
+        [
+          100020,
+          1
+        ],
+        [
+          100025,
+          1
+        ],
+        [
+          100030,
+          1
+        ],
+        [
+          100035,
+          1
+        ],
+        [
+          100040,
+          1
+        ],
+        [
+          100045,
+          1
+        ],
+        [
+          100050,
+          1
+        ],
+        [
+          100055,
+          1
+        ],
+        [
+          100060,
+          1
+        ],
+        [
+          100065,
+          1
+        ],
+        [
+          100070,
+          1
+        ],
+        [
+          100075,
+          1
+        ],
+        [
+          100080,
+          4
+        ],
+        [
+          100085,
+          4
+        ],
+        [
+          100090,
+          4
+        ],
+        [
+          100095,
+          4
+        ],
+        [
+          100100,
+          4
+        ],
+        [
+          100105,
+          4
+        ],
+        [
+          100110,
+          4
+        ],
+        [
+          100115,
+          4
+        ],
+        [
+          100120,
+          3
+        ],
+        [
+          100125,
+          3
+        ],
+        [
+          100130,
+          3
+        ],
+        [
+          100135,
+          3
+        ],
+        [
+          100140,
+          0
+        ],
+        [
+          100145,
+          0
+        ],
+        [
+          100150,
+          0
+        ],
+        [
+          100155,
+          0
+        ],
+        [
+          100160,
+          0
+        ],
+        [
+          100165,
+          0
+        ],
+        [
+          100170,
+          0
+        ],
+        [
+          100175,
+          0
+        ],
+        [
+          100180,
+          0
+        ],
+        [
+          100185,
+          0
+        ],
+        [
+          100190,
+          0
+        ],
+        [
+          100195,
+          0
+        ],
+        [
+          100200,
+          5
+        ],
+        [
+          100205,
+          5
+        ],
+        [
+          100210,
+          5
+        ],
+        [
+          100215,
+          5
+        ],
+        [
+          100220,
+          5
+        ],
+        [
+          100225,
+          5
+        ],
+        [
+          100230,
+          5
+        ],
+        [
+          100235,
+          5
+        ],
+        [
+          100250,
+          7
+        ],
+        [
+          100251,
+          7
+        ],
+        [
+          100252,
+          7
+        ],
+        [
+          100253,
+          7
+        ],
+        [
+          100254,
+          7
+        ]
+      ],
+      "all_rows_share_player": true,
+      "template_pig_value": -1,
+      "template_pig_image": 100250,
+      "logical_data_sha256": "8cf3171d432db9527266c9af5cfecdcd8111bea8f5d4d97f5ed23336224b402f",
+      "actual_headers_table_and_defaultPlayer": true,
+      "original_build_and_ABI_not_claimed": true
+    },
+    "bismarck": {
+      "source_sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "files": {
+        "server/common/common.h": "8c2593161178738d4e23611374cdf00e11b38f72396cd978e406824b4985ef61",
+        "server/common/util.h": "2803712cef4caaff5b2aaf8822a4c8f6795ba974359bc20648f3f926240b6b34",
+        "server/common/utils/md5.h": "eb3200bb54384deb7417ffcb7d3760dfa722f049c34653918dadbdf0ab094e42",
+        "server/common/utils/util_file.h": "720872869ac6710ecae8e65160f592d07d200839a302a6e284c2480547859fec",
+        "server/common/utils/util_string.h": "4f71880783f00756e43a057c638b46cfe8fd48324fa428f9eec0886be95bdd5a",
+        "server/common/utils/util_time.h": "a7be69a49c25a09bf25f8051aa6cc0e5ca6111a0fe7023cc1141e72c1db434bb",
+        "server/common/utils/util_type.h": "71d263b350d2751d5dddb41b25eecec49ec3f4175d58e33cb51923cc7e464284",
+        "server/gmsv/char/char_data.c": "135454197f29042a3876199397da0648dabea48b0a276d2e62ea22f9c14aed5b",
+        "server/gmsv/include/addressbook.h": "6ef1513464648224366084ac390fd79b10c09b0731b4b754e8be5bb3118e1c62",
+        "server/gmsv/include/anim_tbl.h": "2a66bdd8f3a8507011d395e70f1122e1a99d60fda1691684dbbb911550c70e05",
+        "server/gmsv/include/char.h": "a5fb952b2a48f4c41ab5e4778680fc1d6a401fe124fcaa86172c5e68ab642a21",
+        "server/gmsv/include/char_base.h": "71bcc04e14959e6c4646759716e034c8d9209c17d8457d94a8b1071b5d4d5fa4",
+        "server/gmsv/include/char_data.h": "75459d86485c7e2542bd88cbcc04757c602abae1f3c93bb1021566b1a019f542",
+        "server/gmsv/include/correct_bug.h": "c7250eb0af3cc112b927591c84ac2022ab7d86b28f1fc52d1052e5fd0d92fa83",
+        "server/gmsv/include/defaultPlayer.h": "82d84a73c449b98517545f5dec3476cd156085369d38ff9b09d316db12b36dee",
+        "server/gmsv/include/item.h": "13a8250cf2dba2b0ed8123878f0e1b6eb89cdceae40409580f78aaed066b8905",
+        "server/gmsv/include/mylua/mylua.h": "df91827466083f525aeee785bab8d976c13cda93328669589d6902c878353eb2",
+        "server/gmsv/include/net.h": "0f69f6a6724f0ea6cd0dcf8c6c3c735f2c0fa986bf2bda1afb23b4d61886ca51",
+        "server/gmsv/include/skill.h": "4e44be6319024765d778c0e377293fb43d9bb38b29c2219ba0d7c3fd17aaf9b6",
+        "server/gmsv/include/title.h": "675bec975f3d7b2cf736e22db9fa066a1d067116be8e96f408491fddfe3e0249",
+        "server/gmsv/include/version.h": "4996de26fa1fc795da5d903e05aca00d3170ee672300387e02e54675f5a79602",
+        "shared/lua51/lauxlib.h": "b78c06da0d617e1aa9bba351b4a0b13f4b94a3d21e5dca02c20bb6a1e305749a",
+        "shared/lua51/lua.h": "7a60d2c41cca40f2ca4273df64939bc5fd43a0f617d24f9fdc468c6cd78f2cc6",
+        "shared/lua51/luaconf.h": "d1138f53c04a257e628738c5237f7291dca31a14cd42357f4bed56b5e58c19f0",
+        "shared/lua51/lualib.h": "e527ff032b4d1aabd3bea8ee16b49f072f5ac5ce6bc573e4e1dd1584cc94c017"
+      },
+      "getter_sha256": "5a066632fddafffd978ba516f8aa660f0a3d8b197f0989383fbd9149374677a8",
+      "preprocessed_player_sha256": "d2c1a912e871268a0bf5123679618b4f201084babde7b6f1b5cc19b0b545dc44",
+      "preprocessed_table_sha256": "149e8c20a9ca178012bf74ffcc7eee526fe4c188726e7ff29edc220f3b61a69e",
+      "feature_definitions_sha256": "2978a243cb63424b9eb0ac68d93844fab3a0833cadb38a1bde96e57603a808c9",
+      "feature_definition_count": 248,
+      "enum_values": {
+        "CHAR_DATAINTNUM": 131,
+        "CHAR_INITDATA": 87,
+        "CHAR_IMAGETYPE": 64,
+        "CHAR_WHICHTYPE": 55,
+        "CHAR_WORKDATAINTNUM": 214,
+        "CHAR_WORKOBJINDEX": 70,
+        "CHAR_WORKTICKETTIME": 199,
+        "CHAR_WORKTICKETTIMESTART": 200,
+        "CHAR_WORKFD": 82,
+        "CHAR_BECOMEPIG": 117,
+        "CHAR_BECOMEPIG_BBI": 118
+      },
+      "template_initializer_ints": 123,
+      "excess_initializer_ints": 0,
+      "table_rows": [
+        [
+          100000,
+          2
+        ],
+        [
+          100005,
+          2
+        ],
+        [
+          100010,
+          2
+        ],
+        [
+          100015,
+          2
+        ],
+        [
+          100020,
+          1
+        ],
+        [
+          100025,
+          1
+        ],
+        [
+          100030,
+          1
+        ],
+        [
+          100035,
+          1
+        ],
+        [
+          100040,
+          1
+        ],
+        [
+          100045,
+          1
+        ],
+        [
+          100050,
+          1
+        ],
+        [
+          100055,
+          1
+        ],
+        [
+          100060,
+          1
+        ],
+        [
+          100065,
+          1
+        ],
+        [
+          100070,
+          1
+        ],
+        [
+          100075,
+          1
+        ],
+        [
+          100080,
+          4
+        ],
+        [
+          100085,
+          4
+        ],
+        [
+          100090,
+          4
+        ],
+        [
+          100095,
+          4
+        ],
+        [
+          100100,
+          4
+        ],
+        [
+          100105,
+          4
+        ],
+        [
+          100110,
+          4
+        ],
+        [
+          100115,
+          4
+        ],
+        [
+          100120,
+          3
+        ],
+        [
+          100125,
+          3
+        ],
+        [
+          100130,
+          3
+        ],
+        [
+          100135,
+          3
+        ],
+        [
+          100140,
+          0
+        ],
+        [
+          100145,
+          0
+        ],
+        [
+          100150,
+          0
+        ],
+        [
+          100155,
+          0
+        ],
+        [
+          100160,
+          0
+        ],
+        [
+          100165,
+          0
+        ],
+        [
+          100170,
+          0
+        ],
+        [
+          100175,
+          0
+        ],
+        [
+          100180,
+          0
+        ],
+        [
+          100185,
+          0
+        ],
+        [
+          100190,
+          0
+        ],
+        [
+          100195,
+          0
+        ],
+        [
+          100200,
+          5
+        ],
+        [
+          100205,
+          5
+        ],
+        [
+          100210,
+          5
+        ],
+        [
+          100215,
+          5
+        ],
+        [
+          100220,
+          5
+        ],
+        [
+          100225,
+          5
+        ],
+        [
+          100230,
+          5
+        ],
+        [
+          100235,
+          5
+        ],
+        [
+          100250,
+          7
+        ],
+        [
+          100251,
+          7
+        ],
+        [
+          100252,
+          7
+        ],
+        [
+          100253,
+          7
+        ],
+        [
+          100254,
+          7
+        ]
+      ],
+      "all_rows_share_player": true,
+      "template_pig_value": 100250,
+      "template_pig_image": 0,
+      "logical_data_sha256": "96d53a80a2a7f9eca830ce9172fb693b573b389ef4f550bc9225ebdcf908143e",
+      "actual_headers_table_and_defaultPlayer": true,
+      "original_build_and_ABI_not_claimed": true
+    }
+  }
+}

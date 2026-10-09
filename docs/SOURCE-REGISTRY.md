@@ -4955,3 +4955,34 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   object provenance, then complete Exit-to-reuse composition. Remaining actor/
   watcher/typed631/635 gates and original build/JSS/Taiwan-v1 remain OPEN. No
   engine/content-design transition. Section10 publication authorization applies.
+
+
+## 2026-10-09 — Actual original default template/table/header layout LOCAL PASS; remote PENDING
+
+- Fresh remote main d35619a78ac266ab0bb28f539ccc98b7e617e478/tree
+  46e770c1a371146a592b2897fd67b69bcd7c4c22; latest Action37880212015 success.
+  Continued recorded actual-template/enum/layout priority at same3 clean pins.
+- Actual defaultPlayer.h, complete53-row default table and original Char/enums/
+  feature/animation headers plus unchanged getter execute; no symbolic structure
+  or replacement template.228 cases/profile/optimization, two calls/case:
+  2,736 getter calls at GNU99 O0/O2+nonrecovering UBSan.116 regressions;
+  24 semantic native mutations rejected. Six predecessor full reports required
+  byte-identical. Spec STONEAGE-DEFAULT-TEMPLATE-R1.md and source/validation receipts.
+- FACT bounded: all table rows share player; matched/fallback image type write
+  overwritten by data-prefix copy. Ticket/start/object/callback storage zero from
+  all tested dirty destinations; FD-1, chatroom-1 only gavin/iris. Original data
+  counts162/159/131; copy boundaries85/84/87; work counts317/316/214.
+- Actual compiler preserves8/10 excess initializer warnings gavin/iris. Static
+  pig/image values -1/100250 for them,100250/0 Bismarck under active positional
+  enum layout; Bismarck comments are not compiled field-position proof. All pig
+  fields beyond copy boundary, getter outputs0/0. No released-build defect claim.
+- Native comparisons include full object representation against separately built
+  expected storage and every data/work/flag element; actual header capacities.
+  LP64 host size/offset observations, current source feature configuration and
+  controlled destination fills; no original ABI/build claim. No natural object
+  ownership/sentinel claim from work0. Original C remains transient outside repo.
+- Remote acceptance PENDING. Pressure2486=2465 closed+18 OPEN+3 historical UB;
+  zero promotions. Next exact-input Actions, then complete enemy creator/init/
+  helper/data/function provenance and natural ticket/object states, followed by
+  full Exit-to-reuse. Remaining actor/watcher/typed631/635 and JSS/Taiwan-v1 gates
+  OPEN; no engine/content transition. Protocol section10 authorization applies.
