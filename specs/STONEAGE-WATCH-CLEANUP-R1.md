@@ -1,6 +1,11 @@
 # Original watcher Stop and task-loop cleanup R1
 
-Status: LOCAL PASS; exact remote acceptance PENDING. Zero runtime promotions.
+Status: ACCEPTED at exact input645edce3ed93fc77fd5cec2341238f21bbd86eb5/tree
+03d72be7670a9abfc271c5abe87914a763c32f62. Action37875728328/job113643760328
+success. Complete remote report equals local bytes; SHA256
+b7724d88bf319ad0cf80e0463de21b78510db30505d007529a22cab3d6cf99da.
+Receipt: research/recovered/STONEAGE-WATCH-CLEANUP-ACCEPTANCE-R1.json.
+Zero runtime promotions.
 
 This gate extends the accepted enemy-slot/watch-list gate with original default
 BATTLE_WatchStop, Stop/StopSet, FinishSet, CountAlive and Loop bodies at the same

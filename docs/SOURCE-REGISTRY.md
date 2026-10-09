@@ -4695,3 +4695,66 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   Next priority: complete original Exit with actual lifetime guards and watcher
   Stop/task cleanup; then broader ownership/stat/property/timer interactions
   before typed631/635 persistent/coordinator admission. No engine-design transition.
+
+
+## 2026-10-09 — Original watcher Stop/task cleanup LOCAL PASS; remote PENDING
+
+- Fresh startup main06c706f0ad26acc85014655f5f5b7050318fdfa9/tree
+  c1d6cf91428376160573287cee52c34edeb8ff21; latest lifecycle Action37813164553
+  success. Continued its explicit Stop/task cleanup priority with original
+  WatchStop/Stop/StopSet/FinishSet/CountAlive/Loop bodies at the same three pins.
+- LOCAL PASS55,350 native comparisons:3 profiles x9,225 cases xO0/O2 GNU99+
+  nonrecovering UBSan. All205 root/watch physical placement orders (0..3 watches
+  in5 slots), live/dead-flagged/pet actors, entry0/4/9, five actions and immediate/
+  next two task snapshots.76 regressions;12 semantic native mutations rejected.
+  Prior576 lifecycle and263,268 Exit-mode complete reports reproduce unchanged.
+- Bounded local facts: empty post-Finish residue is reclaimed by original Loop;
+  root Finish in an ascending scan may leave already-visited watch slots until
+  next scan. All tested empty residues are gone by end of second scan. WatchStop
+  does not delete/unlink immediately; Bismarck alone clears WATCHBATTLETYPE.
+  Root Stop does not exit linked living watchers; dead/pet-only watch nodes are
+  empty for CountAlive. No permanent-leak or real-time scheduling claim.
+- Source identity receipt STONEAGE-WATCH-CLEANUP-SOURCE-DOMAINS-R1.json; spec
+  specs/STONEAGE-WATCH-CLEANUP-R1.md. Generic Exit/Profit/item/network/party hooks,
+  symbolic ABI and fixed valid acyclic arrays remain controlled. This does not
+  execute full original Exit/end-data/ticket/warp, prove slot9 player legality,
+  or accept watch creation/multi-actor/ownership/reuse/concurrency/corrupt pointer/
+  original build/JSS/Taiwan-v1/runtime. Pressure2486=2465 closed+18 OPEN+3 UB;
+  zero promotions. Prior immediate-residue defect evidence remains preserved.
+- Next: exact-input remote acceptance and complete report equality, then complete
+  original Exit with actual lifetime guards before remaining ownership/stat/
+  property/timer and watcher creation/multi-actor/typed631/635 admission. No
+  engine-design transition. Protocol section10 ongoing publication authorization
+  applies; no repeat approval required.
+
+
+## 2026-10-09 — Original watcher Stop/task cleanup remote ACCEPTED
+
+- Exact input645edce3ed93fc77fd5cec2341238f21bbd86eb5/tree
+  03d72be7670a9abfc271c5abe87914a763c32f62 passes Action37875728328/
+  job113643760328:76 regression checks,55,350 native comparisons (3 profiles x
+  9,225 cases xO0/O2 GNU99+nonrecovering UBSan),12 semantic mutations rejected.
+  Prior576 lifecycle and263,268 Exit-mode complete reports reproduced unchanged.
+- Remote complete ordered report equals local bytes and workflow cmp passes;
+  SHA256b7724d88bf319ad0cf80e0463de21b78510db30505d007529a22cab3d6cf99da.
+  Artifact11592341408 digest
+  sha256:a4e3d18a3662a0a91de157166d8e0930d584e7768d87413cab691cdba9b3b998.
+  Receipt: research/recovered/STONEAGE-WATCH-CLEANUP-ACCEPTANCE-R1.json.
+- FACT within controlled scope: original Loop reclaims empty Finish residual
+  nodes. Direct Finish residues clear in next scan; root Finish inside scan can
+  leave already-visited slots until next scan, all tested empty residues clear by
+  end of second scan. WatchStop exits/discharges/notifies without direct deletion;
+  Bismarck alone clears WATCHBATTLETYPE. Root Stop leaves linked living player
+  watchers; dead/pet-only watcher nodes are empty for CountAlive. Preserves earlier
+  immediate-residue defect; no permanent-leak or wall-clock timing claim.
+- Generic Exit/Profit/item/party/network/rand hooks, symbolic ABI, one actor/node,
+  valid acyclic fixed arrays controlled. Complete original Exit/end-data/item-end/
+  ticket/warp, watch creation/multi-actor/follow/ownership/other modes/reuse/
+  concurrency/corrupt pointers/original executable/build/JSS/Taiwan-v1 and runtime
+  admission remain OPEN. Pressure2486=2465 closed capability+18 OPEN+3 UB;
+  zero promotions. This supersedes local PENDING only within this bounded gate.
+- Highest-priority next work: full original Exit with actual character lifetime
+  guards; then remaining ownership/stat/property/timer and watcher creation/multi-
+  actor interactions before typed631/635 persistent/coordinator admission. No
+  engine/content-design transition. Section10 authorization used for Actions and
+  acceptance integration; prior continuity file bytes preserved as prefixes.

@@ -1,0 +1,70 @@
+{
+  "schema": "stoneage.watch-cleanup-acceptance.r1",
+  "status": "CLOSED_BOUNDED_ORIGINAL_WATCH_STOP_TASK_CLEANUP_ZERO_RUNTIME_PROMOTIONS",
+  "accepted_on": "2026-10-09",
+  "timezone": "Asia/Shanghai",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "exact_input": {
+    "sha": "645edce3ed93fc77fd5cec2341238f21bbd86eb5",
+    "tree": "03d72be7670a9abfc271c5abe87914a763c32f62"
+  },
+  "remote_validation": {
+    "run_id": 37875728328,
+    "job_id": 113643760328,
+    "conclusion": "success",
+    "regression_tests": 76,
+    "native_comparisons": 55350,
+    "semantic_mutations_rejected": 12,
+    "profiles": 3,
+    "cases_per_profile_optimization": 9225,
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "compiler_domain": "current Actions GNU99 compiler",
+    "sanitizers": [
+      "undefined-nonrecovering"
+    ],
+    "artifact_id": 11592341408,
+    "artifact_digest": "sha256:a4e3d18a3662a0a91de157166d8e0930d584e7768d87413cab691cdba9b3b998",
+    "prior_reports_reproduced_unchanged": {
+      "lifetime_watch_comparisons": 576,
+      "exit_modes_comparisons": 263268
+    }
+  },
+  "derived_report": {
+    "path": "research/recovered/STONEAGE-WATCH-CLEANUP-NATIVE-R1.txt",
+    "sha256": "b7724d88bf319ad0cf80e0463de21b78510db30505d007529a22cab3d6cf99da",
+    "remote_complete_ordered_job_log_report_matches_local_bytes": true,
+    "workflow_cmp_confirms_complete_report_equality": true
+  },
+  "source_identity_receipt": "STONEAGE-WATCH-CLEANUP-SOURCE-DOMAINS-R1.json",
+  "facts": [
+    "Original Loop reclaims tested empty residual watch nodes by end of second controlled scan; direct Finish residues by end of first subsequent scan",
+    "Root Finish inside ascending task scan can leave already-visited watch slots until next scan",
+    "WatchStop exits/discharges/notifies actor without immediate node deletion; Bismarck alone clears WATCHBATTLETYPE",
+    "Root Stop deletes root without exiting linked living watch actors; dead/pet-only watch nodes are empty for CountAlive"
+  ],
+  "controlled_dependencies": [
+    "symbolic constants/ABI and compatible structs",
+    "one actor per node in five-slot valid acyclic arrays",
+    "generic Exit clearing entry and setting FINAL/workbattleindex=-1",
+    "Profit/item-end/network/logging/party discharge/rand and WatchBC return0"
+  ],
+  "open": [
+    "complete original Exit with actual character end-data/item-end/ticket/warp",
+    "watch creation/failures/multi-actor party/follow/ownership/other modes",
+    "reuse/concurrency/corrupt pointers/cycles and scheduler timing",
+    "original executable/build/ABI/PRNG/JSS/Taiwan-v1",
+    "persistent runtime/typed631/635 coordinator admission"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promoted_slots": 0
+  },
+  "supersedes": "Local remote-PENDING status only within this bounded gate; immediate Finish residue defect preserved and extended with later empty-node cleanup evidence.",
+  "next": "Complete original Exit with actual character lifetime guards, then remaining ownership/stat/property/timer and watcher creation/multi-actor interactions before typed631/635 persistent/coordinator admission."
+}
