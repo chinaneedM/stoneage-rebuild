@@ -1,0 +1,295 @@
+{
+  "schema": "stoneage-exit-world-item-source-domains-r1",
+  "profiles": {
+    "gavin": {
+      "source_sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "prior_domain": {
+        "source_sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+        "prior_domain": {
+          "source_sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+          "files": {
+            "char/char_base.c": "69b9ef4ce1f2fca199b917be33861bdf530767a9da5b835e58ed1aa098ad2f0f",
+            "char/char.c": "3aeb8fa3124aa68c69509ee351b0773a26193c3742e9c78ef57fad03e6d7fa19",
+            "battle/battle.c": "a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602",
+            "include/version.h": "e58232f8763dccedfbba775ddfb3eaa33e431505b090b2e9a7a87cf8d5945d4a",
+            "include/char_base.h": "2959c40645149277878661dd49ccffd1653f11fcb55c93f03efe306e6d578d45",
+            "include/battle.h": "5ec5972c6fff32a11f80cadb15529e4b4983cd92669cc9c3c60784baa41f1526"
+          },
+          "functions": {
+            "CHAR_endCharData": "4d29fd1281f4e9e4552a98688a96ffa30fce147b2fb06855141c3d56ae2e92c6",
+            "CHAR_removeHaveItem": "30c581415340a37ae90cfe012f0dcfb1d8f1d6a9806c42398d774abe3cda7b88",
+            "CHAR_removeHavePoolItem": "974a89d95fd3cd7dac6ba342611ccacc74f22ed94990eb1cffb6a34a65547f0d",
+            "_CHAR_CHECKINDEX": "870c220722a419e7b72aceda38f379832b245be05d6b7a3e921529cb77611c09",
+            "end_one": "23ee476acddb9076a98b8ef6cab5771b483873164de37302e7fd9ad4edb2ce87",
+            "get_int": "2ca85865d80fab32c28f7721e9680702834ef6cf0b95c0be098bd988a7bf1ec7",
+            "get_work": "13bf8b33c8899146e24f941b5f9af51697ed1260f8d662666003a0940bfa3e72",
+            "party": "d7bd6514ce3af4c6d6ce2a49cd75e2ef635930825949ffdc88e2be31147adf24",
+            "BATTLE_WatchLink": "032633ebe885d5f342d75414e92ff15fc4050d6ae216c1b619ea16d8f7308f91",
+            "BATTLE_WatchUnLink": "cb2df7e9d4d9ae6539a0feafa1b6ea7c1374993e070eb2550f60dfc1f248cf08",
+            "BATTLE_DeleteBattle": "5d9d0f82e4bf3148ebfa242f88e46388b1416be80e357aa8285a56753d5f96ef",
+            "BATTLE_Finish": "26e1b2e97f018362cac2eb31d1f2c523f577cd8ff3fefbb7f4d533d79aed2b2e"
+          },
+          "exit_sha256": "736ba7155804436751b51c84dbadb60de670cfbf537444ffaf1a23a8e874ffac",
+          "limits": {
+            "items": 24,
+            "pool": 30
+          },
+          "contracts": {
+            "slot_use_false_after_item_cleanup": true,
+            "character_slot_not_freed_or_zeroed_in_end_data": true,
+            "work_getter_checks_live_slot": false,
+            "party_checks_subject_before_read": false,
+            "exit_ticket_block_checks_live_slot": false,
+            "watch_delete_loop_reads_current_next_after_unlink": true
+          }
+        },
+        "callers": {
+          "_CHAR_complianceParameter": {
+            "path": "gmsv/src/char/char.c",
+            "file_sha256": "3aeb8fa3124aa68c69509ee351b0773a26193c3742e9c78ef57fad03e6d7fa19",
+            "default_function_sha256": "0f4216cf99fba0af920768c870db1f4a9a0deb785ea1607c1068642d3a1acac7"
+          },
+          "_BATTLE_Exit": {
+            "path": "gmsv/src/battle/battle.c",
+            "file_sha256": "a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602",
+            "default_function_sha256": "736ba7155804436751b51c84dbadb60de670cfbf537444ffaf1a23a8e874ffac"
+          }
+        },
+        "setters": {
+          "_CHAR_setInt": "c1a23fce25a3b2fc89f9c5b7a453d8087e847d3687375c48c2f281c5fe3753dd",
+          "_CHAR_setWorkInt": "8d5c981489ecb17190d07c096e9dc738506c532d175e03ac61eae51dec0773f5"
+        },
+        "contracts": {
+          "integer_and_work_setters_guard_live_slot": true,
+          "ticket_subject_guard": false
+        }
+      },
+      "files": {
+        "item/item.c": "a43b354cf8c15f74bdb5bbc9dda952604d250b905ef957189254fc533d4bc95a",
+        "char/char_base.c": "69b9ef4ce1f2fca199b917be33861bdf530767a9da5b835e58ed1aa098ad2f0f",
+        "char/char.c": "3aeb8fa3124aa68c69509ee351b0773a26193c3742e9c78ef57fad03e6d7fa19",
+        "object.c": "ecfb2f144b9082210757a89530494231c8beed9bd7722aa510b71f8fcb8d8775",
+        "map/readmap.c": "8c1af7a9abf84c765392359741b55df169d9e94790b3eba4cb4c4638a95b0708"
+      },
+      "functions": {
+        "ITEM_CHECKARRAYINDEX": "14d13ca60da024d59fd3480b55fc0cfd78a46afa6d0edcfd3a0769e9d4328f5f",
+        "_ITEM_CHECKINDEX": "c5a04ca6b53affd29cd7ca472d5f0b737d176b30f3d2c1c57c33084d671f3012",
+        "_ITEM_endExistItemsOne": "bd9834c600dda41fed37a92c68a2603c990bf0e5cbdf9050f19354476e7b4900",
+        "_CHAR_CHECKITEMINDEX": "4292b86983d944e0b73e49d2679f12d5d3a92bc44f80451dfd26fc3e36f5523a",
+        "_CHAR_getItemIndex": "811a6d9c11dbe6697fa6d5b01f1651df2117a6e6ba00081e57c38951dfdec3cc",
+        "CHAR_getPlayerMaxNum": "77509e946032bb89bf8958e7bb348bf24963204afea0a30ed31a993e18ac80c0",
+        "CHAR_initCharOneArray": "a9789379e1af2821409ff039f51a6373fca1d7034cd04d419db9ed8b62d022a7",
+        "_CHAR_warpToSpecificPoint": "533061e04534d02bcdf1119f83acdc374401a6d42a68e9b9f83dccd5b24fedd1",
+        "OBJECT_getType": "f4883779f72c84a164fd35fb0e1b464118eb1f7ba3fee4b1536b8da0368aea1a",
+        "OBJECT_getFloor": "9ca1a50059addfac5d841750313af828a757ec941584f3d3ff829253ffc00241",
+        "OBJECT_getX": "465851fd2eba8866c74e04d4fd782e71b7cf6f2681d98d8cabb621231e3cec1e",
+        "OBJECT_getY": "4508e08cd212e6aba362364287b8fd21ab9cda2a7713513d8ab53c054220e8b0",
+        "OBJECT_setFloor": "fc9d724c587bd94d850b196563ec71f6bd6577d5ed87ab6a8eaffbc6dbd0afac",
+        "OBJECT_setX": "2c45809e7b7d79baacd4b9133414a8b65c2a8d501461e6557d3506a12c31d846",
+        "OBJECT_setY": "60ffcf3263c46e932e54dd345a8c197d98420a2ed02b5db0673e03c61c80badf",
+        "_MAP_objmove": "70fbd7cc9e446da0523b3f00188ad66b66b8887aab9a3b42ec20cdd657054a1d"
+      },
+      "contracts": {
+        "item_scans_live_player_carried_slots_only": true,
+        "object_accessors_have_no_index_or_use_guard": true,
+        "map_old_floor_misplaced_link_recovery": false,
+        "allocator_replaces_slot_from_input_template": true,
+        "allocator_body_static_inspection_only": true
+      }
+    },
+    "iris": {
+      "source_sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "prior_domain": {
+        "source_sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+        "prior_domain": {
+          "source_sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+          "files": {
+            "char/char_base.c": "9f72046d685db4d2697402227e9218d93aaf2ad90915cffcabbdaaa6025dfd6f",
+            "char/char.c": "e1054617bc7079257bc6b39d97827e8f5ec6cdea3752abbbc3e40c7b93911149",
+            "battle/battle.c": "6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8",
+            "include/version.h": "a404dacc30266a04a58aa53e914bb4ba19aa583c982051ed5427ad71f8498bad",
+            "include/char_base.h": "d53f39efe6f18ad90b668457461624f2a9aef542b24389a4e0e14c6b64f92645",
+            "include/battle.h": "2c0e83a742f707383ef4db442f5c71c65beabbb4748deaf4b62c81ddba406278"
+          },
+          "functions": {
+            "CHAR_endCharData": "4d29fd1281f4e9e4552a98688a96ffa30fce147b2fb06855141c3d56ae2e92c6",
+            "CHAR_removeHaveItem": "30c581415340a37ae90cfe012f0dcfb1d8f1d6a9806c42398d774abe3cda7b88",
+            "CHAR_removeHavePoolItem": "974a89d95fd3cd7dac6ba342611ccacc74f22ed94990eb1cffb6a34a65547f0d",
+            "_CHAR_CHECKINDEX": "870c220722a419e7b72aceda38f379832b245be05d6b7a3e921529cb77611c09",
+            "end_one": "23ee476acddb9076a98b8ef6cab5771b483873164de37302e7fd9ad4edb2ce87",
+            "get_int": "2ca85865d80fab32c28f7721e9680702834ef6cf0b95c0be098bd988a7bf1ec7",
+            "get_work": "13bf8b33c8899146e24f941b5f9af51697ed1260f8d662666003a0940bfa3e72",
+            "party": "d7bd6514ce3af4c6d6ce2a49cd75e2ef635930825949ffdc88e2be31147adf24",
+            "BATTLE_WatchLink": "032633ebe885d5f342d75414e92ff15fc4050d6ae216c1b619ea16d8f7308f91",
+            "BATTLE_WatchUnLink": "cb2df7e9d4d9ae6539a0feafa1b6ea7c1374993e070eb2550f60dfc1f248cf08",
+            "BATTLE_DeleteBattle": "620f0eaced0a3065d7a5823ff3ba244fd5d9492f2fe490944c107b9d8aadf5a4",
+            "BATTLE_Finish": "26e1b2e97f018362cac2eb31d1f2c523f577cd8ff3fefbb7f4d533d79aed2b2e"
+          },
+          "exit_sha256": "da8df07cec3059de8b0bbf5bcce314afa50bc342b0200a82aa29897c02e99786",
+          "limits": {
+            "items": 24,
+            "pool": 30
+          },
+          "contracts": {
+            "slot_use_false_after_item_cleanup": true,
+            "character_slot_not_freed_or_zeroed_in_end_data": true,
+            "work_getter_checks_live_slot": false,
+            "party_checks_subject_before_read": false,
+            "exit_ticket_block_checks_live_slot": false,
+            "watch_delete_loop_reads_current_next_after_unlink": true
+          }
+        },
+        "callers": {
+          "_CHAR_complianceParameter": {
+            "path": "Source/gmsv/char/char.c",
+            "file_sha256": "e1054617bc7079257bc6b39d97827e8f5ec6cdea3752abbbc3e40c7b93911149",
+            "default_function_sha256": "0f4216cf99fba0af920768c870db1f4a9a0deb785ea1607c1068642d3a1acac7"
+          },
+          "_BATTLE_Exit": {
+            "path": "Source/gmsv/battle/battle.c",
+            "file_sha256": "6cbcf85a2e6533bf0423a71902faffe85d350ae7ad21267643a4884076b701f8",
+            "default_function_sha256": "da8df07cec3059de8b0bbf5bcce314afa50bc342b0200a82aa29897c02e99786"
+          }
+        },
+        "setters": {
+          "_CHAR_setInt": "e8b6cd594ed45ed28bf821e970e035aef1552d7b70a007f815e89444a2680762",
+          "_CHAR_setWorkInt": "77802482d15634a74383bd87f3f969c7229ce9c738b29981fdb6a1d3e0e8a8ad"
+        },
+        "contracts": {
+          "integer_and_work_setters_guard_live_slot": true,
+          "ticket_subject_guard": false
+        }
+      },
+      "files": {
+        "item/item.c": "3a352f87c2aadb1862e8f0e266953456635b1aa2602fd65664e48b1356c20cb1",
+        "char/char_base.c": "9f72046d685db4d2697402227e9218d93aaf2ad90915cffcabbdaaa6025dfd6f",
+        "char/char.c": "e1054617bc7079257bc6b39d97827e8f5ec6cdea3752abbbc3e40c7b93911149",
+        "object.c": "8210d0dc927d5a8214ff2dfdc72450646c6ac09c7c4dcf16a675edf01adbf30e",
+        "map/readmap.c": "e14349a15c146a5fb495b2fdc804dc8f493e0c7a9e579e8c65bb42dd956f0000"
+      },
+      "functions": {
+        "ITEM_CHECKARRAYINDEX": "14d13ca60da024d59fd3480b55fc0cfd78a46afa6d0edcfd3a0769e9d4328f5f",
+        "_ITEM_CHECKINDEX": "c5a04ca6b53affd29cd7ca472d5f0b737d176b30f3d2c1c57c33084d671f3012",
+        "_ITEM_endExistItemsOne": "bd9834c600dda41fed37a92c68a2603c990bf0e5cbdf9050f19354476e7b4900",
+        "_CHAR_CHECKITEMINDEX": "4292b86983d944e0b73e49d2679f12d5d3a92bc44f80451dfd26fc3e36f5523a",
+        "_CHAR_getItemIndex": "6996fbd5062ce08e8f8a8458b071e549107a630436c53b4fb3b01c77c69b7a22",
+        "CHAR_getPlayerMaxNum": "77509e946032bb89bf8958e7bb348bf24963204afea0a30ed31a993e18ac80c0",
+        "CHAR_initCharOneArray": "a9789379e1af2821409ff039f51a6373fca1d7034cd04d419db9ed8b62d022a7",
+        "_CHAR_warpToSpecificPoint": "e4e98e15dc4b598d6eae7bc11e28e5c41322f88f094441cb4e8d5fc4e1473d81",
+        "OBJECT_getType": "f4883779f72c84a164fd35fb0e1b464118eb1f7ba3fee4b1536b8da0368aea1a",
+        "OBJECT_getFloor": "9ca1a50059addfac5d841750313af828a757ec941584f3d3ff829253ffc00241",
+        "OBJECT_getX": "465851fd2eba8866c74e04d4fd782e71b7cf6f2681d98d8cabb621231e3cec1e",
+        "OBJECT_getY": "4508e08cd212e6aba362364287b8fd21ab9cda2a7713513d8ab53c054220e8b0",
+        "OBJECT_setFloor": "fc9d724c587bd94d850b196563ec71f6bd6577d5ed87ab6a8eaffbc6dbd0afac",
+        "OBJECT_setX": "2c45809e7b7d79baacd4b9133414a8b65c2a8d501461e6557d3506a12c31d846",
+        "OBJECT_setY": "60ffcf3263c46e932e54dd345a8c197d98420a2ed02b5db0673e03c61c80badf",
+        "_MAP_objmove": "5de18ddae50ebac9de75167b17d3c0e38f0f8abd5bce744e4e923ff37f980a7d"
+      },
+      "contracts": {
+        "item_scans_live_player_carried_slots_only": true,
+        "object_accessors_have_no_index_or_use_guard": true,
+        "map_old_floor_misplaced_link_recovery": false,
+        "allocator_replaces_slot_from_input_template": true,
+        "allocator_body_static_inspection_only": true
+      }
+    },
+    "bismarck": {
+      "source_sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "prior_domain": {
+        "source_sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+        "prior_domain": {
+          "source_sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+          "files": {
+            "char/char_base.c": "87942c458e497bca856dffab8387ed1f50628faac662a29d57e1fba38de588bb",
+            "char/char.c": "f191897baa48d7eaa721deb199a025d88e13c465007d8e3f9a48b23ac1ccfb99",
+            "battle/battle.c": "2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18",
+            "include/version.h": "4996de26fa1fc795da5d903e05aca00d3170ee672300387e02e54675f5a79602",
+            "include/char_base.h": "71bcc04e14959e6c4646759716e034c8d9209c17d8457d94a8b1071b5d4d5fa4",
+            "include/battle.h": "4b8515aad3b0e659cd0d86a554844b8c471af294cce6e0f40888c45814c56a69"
+          },
+          "functions": {
+            "CHAR_endCharData": "7a0932dab7df8e5b575bbcce8a666d381d8d9a20a67828d3cfb0ebe18c2ebc58",
+            "CHAR_removeHaveItem": "856262dd6b2916e896fe05b02fe1519e2d7e9db3b1488e6d456ddc3c65d9fde1",
+            "CHAR_removeHavePoolItem": "baafe2e16dc38c8bca06368e59a8c0924d8dc9825dabf0d54ac2a2eb64c321e0",
+            "_CHAR_CHECKINDEX": "934995d9b3160c26deb38dd1fa9828a70bc43986af9af7d1e216579c06ee9f1b",
+            "end_one": "ae9623f7cb4c6b439ef6b34882aa81af6a81eba07b803969284901d882943187",
+            "get_int": "395365f7ed827442ff3dbb4b5c2566bba32b0b7d64b049314a876e2068311be3",
+            "get_work": "f8a3201179dfd8f92f8616da32485bcbd9d3ceb4e8622d5104d788d95b3984fa",
+            "party": "1cd965acadae6db1aff51a3c27843f1c62dae01a6b03518e1c24c1bd38eebcb0",
+            "BATTLE_WatchLink": "d3a8a50f614ecaccbe99d4fece27e72a489a474505bdb71120bef2d7e79c1c55",
+            "BATTLE_WatchUnLink": "04b8947e07d27bd3cb3c4e25f5811fa73624042ea7ef379a511e1756794c61ae",
+            "BATTLE_DeleteBattle": "ef8eb6b286b31138760c951399b719ac7520e234268b28a24b2c990d14e7cab1",
+            "BATTLE_Finish": "6e89dd0e43d237757695d1ecea990c51e7d8aa83af29a69284aa7fcb361f31be",
+            "CheckCharMaxItemChar": "f5c0fb81a22b399e43790a204b4a528520f6823a09f72f1de137138c62983e9a",
+            "BATTLE_CHECKINDEX": "7128404b608b4721f07be308c8c1b35db505ddecd35ea83e9254d701295a9e75"
+          },
+          "exit_sha256": "dc99c6bb337f760af777e71e2b452c9ddf7f02a738dc9b487b24a26a96d8375b",
+          "limits": {
+            "items": 54,
+            "pool": 30
+          },
+          "contracts": {
+            "slot_use_false_after_item_cleanup": true,
+            "character_slot_not_freed_or_zeroed_in_end_data": true,
+            "work_getter_checks_live_slot": true,
+            "party_checks_subject_before_read": true,
+            "exit_ticket_block_checks_live_slot": true,
+            "watch_delete_loop_reads_current_next_after_unlink": true
+          }
+        },
+        "callers": {
+          "_CHAR_complianceParameter": {
+            "path": "server/gmsv/char/char.c",
+            "file_sha256": "f191897baa48d7eaa721deb199a025d88e13c465007d8e3f9a48b23ac1ccfb99",
+            "default_function_sha256": "b5a10e94d357f2f46973c6d1885e7aab5ba6b57068ccc360a0d06dcea5600336"
+          },
+          "_BATTLE_Exit": {
+            "path": "server/gmsv/battle/battle.c",
+            "file_sha256": "2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18",
+            "default_function_sha256": "dc99c6bb337f760af777e71e2b452c9ddf7f02a738dc9b487b24a26a96d8375b"
+          }
+        },
+        "setters": {
+          "_CHAR_setInt": "ed0c2a8f6f660e967c242cdb1e30963efc666fd0d507c17c4838c7dca2ec7fe8",
+          "_CHAR_setWorkInt": "4c1adf54566dab18fa1141ec0111f5f4ef350b6b0a682e881679dd39b43149ab"
+        },
+        "contracts": {
+          "integer_and_work_setters_guard_live_slot": true,
+          "ticket_subject_guard": true
+        }
+      },
+      "files": {
+        "item/item.c": "50b27efe0495afdc3b807e29f31fd2403d297f64127fac8357904853f8abe055",
+        "char/char_base.c": "87942c458e497bca856dffab8387ed1f50628faac662a29d57e1fba38de588bb",
+        "char/char.c": "f191897baa48d7eaa721deb199a025d88e13c465007d8e3f9a48b23ac1ccfb99",
+        "object.c": "ff0bb7af2eaed40b54fe02ec61c9825cce1abca46cdfa5e3b4521cca1cf521df",
+        "map/readmap.c": "6ad0df6345c9b1f70575b8a980208685e33ddb2b8dcd8e76f41b0fab08cd1843"
+      },
+      "functions": {
+        "ITEM_CHECKARRAYINDEX": "fed01b69d3996e9100c1e6605e4c817b83af96b87ddfd3daaf82043581d5b645",
+        "_ITEM_CHECKINDEX": "6c331ec47b0599394b3d26d9362ad091ec7623477a541ab45a163c96d53f63d6",
+        "_ITEM_endExistItemsOne": "51bed6684fac3fa61f8121f8d74c6dd99e19e6fafde6c9090103bc459de4222b",
+        "_CHAR_CHECKITEMINDEX": "157b161b5b07bd1ec720aa273ef16439551a6dd14bdb0ba89f283fa2ca1452c7",
+        "_CHAR_getItemIndex": "c8e4c2b15b94626f7aa7092af6d80a2d318cdeffe731ac9b24d4160e0ad39f35",
+        "CHAR_getPlayerMaxNum": "77509e946032bb89bf8958e7bb348bf24963204afea0a30ed31a993e18ac80c0",
+        "CHAR_initCharOneArray": "eec2822b2d81f123bdf63a286410ca0eef85abfd533213f154f7a6c1a5de4930",
+        "_CHAR_warpToSpecificPoint": "d451400e901c5f2681a233b26ae7ae5f173cf7409dc10ee9110d6b1e43281304",
+        "OBJECT_getType": "f4883779f72c84a164fd35fb0e1b464118eb1f7ba3fee4b1536b8da0368aea1a",
+        "OBJECT_getFloor": "9ca1a50059addfac5d841750313af828a757ec941584f3d3ff829253ffc00241",
+        "OBJECT_getX": "465851fd2eba8866c74e04d4fd782e71b7cf6f2681d98d8cabb621231e3cec1e",
+        "OBJECT_getY": "4508e08cd212e6aba362364287b8fd21ab9cda2a7713513d8ab53c054220e8b0",
+        "OBJECT_setFloor": "fc9d724c587bd94d850b196563ec71f6bd6577d5ed87ab6a8eaffbc6dbd0afac",
+        "OBJECT_setX": "2c45809e7b7d79baacd4b9133414a8b65c2a8d501461e6557d3506a12c31d846",
+        "OBJECT_setY": "60ffcf3263c46e932e54dd345a8c197d98420a2ed02b5db0673e03c61c80badf",
+        "_MAP_objmove": "5014b185b5fac6c347330e67bcc54e4a19c6115c8ee40e90bd74cad39b4bbd29"
+      },
+      "contracts": {
+        "item_scans_live_player_carried_slots_only": true,
+        "object_accessors_have_no_index_or_use_guard": true,
+        "map_old_floor_misplaced_link_recovery": true,
+        "allocator_replaces_slot_from_input_template": true,
+        "allocator_body_static_inspection_only": true
+      }
+    }
+  }
+}

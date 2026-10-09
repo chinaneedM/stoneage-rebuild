@@ -1,0 +1,32 @@
+{
+  "schema": "stoneage-exit-world-item-validation-r1",
+  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "startup_main": "db2fb4ae9375a87d887ec21aa24c8a52f8280b81",
+  "startup_tree": "8398c3d9f8d647a0a01b0549e6842c5cb6d25ea7",
+  "cases_per_profile_optimization": 7056,
+  "profiles": 3,
+  "optimizations": [
+    "-O0",
+    "-O2"
+  ],
+  "compiler": "GNU99 nonrecovering UBSan",
+  "native_comparisons": 42336,
+  "exit_invocations": 84672,
+  "regression_tests": 99,
+  "native_semantic_mutations_rejected": 12,
+  "report_sha256": "54ab876083faac9e87da83a6ce459b5edaa59fcb03a725aeb131ae9c9b7636ab",
+  "prior_reports_unchanged_comparisons": [
+    196056,
+    55350,
+    576,
+    263268
+  ],
+  "runtime_promotions": 0,
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3
+  },
+  "original_source_committed": false
+}
