@@ -1,0 +1,57 @@
+{
+  "schema": "stoneage-character-reuse-validation-r1",
+  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "startup_main": "b163e23ef673dae5071f1772aa069a0defe1d775",
+  "startup_tree": "47cd5815931891cc446d5b22047b8b403c9c2f7d",
+  "native_comparisons": 25344,
+  "cases_per_profile_per_optimization": 4224,
+  "regression_checks": 108,
+  "semantic_mutations_rejected": 18,
+  "optimizations": [
+    "O0",
+    "O2"
+  ],
+  "dialect": "GNU99",
+  "sanitizer": "undefined, nonrecovering",
+  "report_sha256": "cbebb27b3923817c7804545cfedb882d90f4a89423ee05dd32bf6eb1b0f9da5a",
+  "original_executed_functions": [
+    "CHAR_getDefaultChar",
+    "CHAR_initCharOneArray",
+    "CHAR_constructFunctable"
+  ],
+  "static_only": [
+    "ENEMY_createEnemy"
+  ],
+  "controlled": [
+    "default table and its templates",
+    "function lookup and init callback success/failure/mutation",
+    "symbolic field handles and compatible structures",
+    "positive fixed player/pet/other partitions",
+    "direct use=false release",
+    "logging"
+  ],
+  "open": [
+    "actual original template-table/defaultPlayer contents",
+    "complete enemy creation and init/helper effects",
+    "natural ticket/object provenance",
+    "full Exit-to-reuse composition",
+    "zero-size partitions",
+    "sequence wrap",
+    "original ABI/build/executable/JSS/Taiwan-v1",
+    "runtime promotion"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "prior_complete_report_sha256": {
+    "STONEAGE-EXIT-WORLD-ITEM": "54ab876083faac9e87da83a6ce459b5edaa59fcb03a725aeb131ae9c9b7636ab",
+    "STONEAGE-EXIT-DESTROY-TICKET": "94f4590eec2e25496483fb75827cc40a6566508856f24d8648c62b9117249d20",
+    "STONEAGE-WATCH-CLEANUP": "b7724d88bf319ad0cf80e0463de21b78510db30505d007529a22cab3d6cf99da",
+    "STONEAGE-EXIT-LIFETIME-WATCH": "f45a307738447df03550a03e87ef3534da59ac91f461e7eed194b5dd7a5f342f",
+    "STONEAGE-BECOMEPIG-EXIT-MODES": "21cfc791be5f03f674c40369bfcc067dd757bd253f4ecd30ff414826be3a9533"
+  }
+}

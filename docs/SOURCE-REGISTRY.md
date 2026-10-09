@@ -4887,3 +4887,41 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   actor before typed631/635 persistent/coordinator admission. Original map data/
   build/ABI/executable/network/JSS/Taiwan-v1/runtime remain OPEN; no engine/content
   transition. Protocol section10 ongoing authorization covers acceptance writeback.
+
+
+## 2026-10-09 — Original default character and allocator reuse LOCAL PASS; remote PENDING
+
+- Fresh main b163e23ef673dae5071f1772aa069a0defe1d775 / tree
+  47cd5815931891cc446d5b22047b8b403c9c2f7d; Action37878819171 success.
+  Highest-priority allocator/reuse execution resumed, separating template producer
+  and actual creator provenance rather than inferring inheritance from dead slots.
+- Complete original default getter/allocator/function-table constructor functional
+  bodies at same3 clean pins. Bismarck diagnostics collected only.25,344 native
+  comparisons=3 x4,224 cases xO0/O2 GNU99+nonrecovering UBSan;50,688 allocation
+  calls,108 regressions,18 native mutations rejected. All positive2/2/3 partition
+  occupancy masks/cursors, lazy counter init, player/pet/enemy/other types, input
+  use, clean/dirty input, absent/success/failure/state-writing callbacks and two
+  consecutive allocations with optional controlled direct release. Whole logical
+  state of all7 slots and lookup/callback/log sequence compared at both snapshots.
+- FACT bounded: getter resets ticket/start/object work to0; allocator replaces
+  unused slot from input before callback. Failure leaves copied unused state,
+  cursor/sequence unchanged and constructor skipped; success sets live, builds
+  functions, advances cursor and sequence. Full requested partition never borrows
+  other partitions. Controlled dirty input/callback can supply state; tested
+  independent fresh inputs do not inherit retained dead-slot fields. Object0 is
+  not itself proof of a valid world object or a no-object sentinel.
+- Static ENEMY_createEnemy call/default31010/allocator and complete body identity
+  pinned; no direct ticket/character-object work symbol. This lexical observation
+  does not establish transitive helper behavior or natural ticket/object absence.
+  Original default table/defaultPlayer and full creator remain unexecuted.
+- Receipts/spec/report STONEAGE-CHARACTER-REUSE-R1. Compatible symbolic structures,
+  small controlled arrays/default tables/callbacks/direct release; no original
+  ABI claim. Prior original Exit world/item,destruction/ticket,watch cleanup,
+  lifecycle and Exit-mode complete reports required unchanged. Remote PENDING.
+- Pressure2486=2465 closed capability+18 OPEN+3 historical UB;0 promotions.
+  Next exact remote acceptance, then actual default-table/defaultPlayer and full
+  enemy creator/init/helpers provenance plus Exit-to-reuse composition. Zero-size
+  partitions/input aliasing/sequence wrap, natural ticket/object ownership, remaining
+  actor stats/property/timer/matched-player/watch multi-actor and typed631/635
+  admission remain OPEN. No engine/content-design transition. Section10 ongoing
+  publication/Actions/acceptance authorization applies; earlier histories preserved.
