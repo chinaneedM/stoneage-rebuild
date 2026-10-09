@@ -1,0 +1,47 @@
+{
+  "schema": "stoneage.watch-cleanup-validation.r1",
+  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "startup_main": "06c706f0ad26acc85014655f5f5b7050318fdfa9",
+  "startup_tree": "c1d6cf91428376160573287cee52c34edeb8ff21",
+  "native_comparisons": 55350,
+  "regression_tests": 76,
+  "semantic_mutations_rejected": 12,
+  "profiles": [
+    {
+      "profile": "gavin",
+      "source_sha": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "cases_per_optimization": "9225",
+      "native_comparisons": "18450",
+      "semantic_mutations_rejected": "4",
+      "semantic_sha256": "f6955111999721b39cd2028ffe58f71658c407aa4787eeb3b17452a3cd744c6d"
+    },
+    {
+      "profile": "iris",
+      "source_sha": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "cases_per_optimization": "9225",
+      "native_comparisons": "18450",
+      "semantic_mutations_rejected": "4",
+      "semantic_sha256": "f6955111999721b39cd2028ffe58f71658c407aa4787eeb3b17452a3cd744c6d"
+    },
+    {
+      "profile": "bismarck",
+      "source_sha": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "cases_per_optimization": "9225",
+      "native_comparisons": "18450",
+      "semantic_mutations_rejected": "4",
+      "semantic_sha256": "5a4991a8389b5e2060aec001f3b185251dc83df193e1a974c8b87417958f3f7a"
+    }
+  ],
+  "report_sha256": "b7724d88bf319ad0cf80e0463de21b78510db30505d007529a22cab3d6cf99da",
+  "prior_complete_reports_equal": {
+    "lifetime_watch_comparisons": 576,
+    "exit_modes_comparisons": 263268
+  },
+  "runtime_promotions": 0,
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3
+  }
+}
