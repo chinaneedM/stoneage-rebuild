@@ -4828,3 +4828,62 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   actor-state and typed631/635 persistent/coordinator boundaries. No engine/content
   transition. Section10 authorization covers publication/Actions/acceptance;
   earlier continuity histories remain byte-identical prefixes.
+
+
+## 2026-10-09 — Original Exit/world/item lifetime source gate LOCAL PASS; remote PENDING
+
+- Same3 clean descendant pins, complete original Exit and accepted lifetime
+  helpers, plus original item/item.c validity/end, char/char_base.c player count/
+  item accessor/slot guard, char/char.c warp, object.c coordinate accessors and
+  map/readmap.c linked-list movement. Derived file/function identities in
+  research/recovered/STONEAGE-EXIT-WORLD-ITEM-SOURCE-DOMAINS-R1.json; original
+  sources remain transient outside repo. Allocator body is hashed/static-only.
+-42,336 comparisons at O0/O2 GNU99+UBSan,99 regressions,12 native mutations;
+  previous196,056/55,350/576/263,268 reports byte-identical. New complete report
+  SHA25654ab876083faac9e87da83a6ce459b5edaa59fcb03a725aeb131ae9c9b7636ab.
+- Proper player/pet/other partitions, valid object index, compatible symbolic
+  structs, synthetic maps/floor validity/encounter and network/message collectors.
+  Exact Exit destination asserted; cross-floor passes7001/41/6 unchanged;
+  same-floor control substitutes floor. FACT limited to executable witness,
+  not original map data/build/JSS/Taiwan-v1 or natural enemy state. Item scans
+  carried live-player references only; warp success does not imply map success.
+- Next exact-input remote acceptance, then template/enemy-init/allocator/reuse
+  execution and natural ticket/object provenance. Pressure unchanged,0 promotions.
+
+
+## 2026-10-09 — Original world/item source gate remote ACCEPTED
+
+- Exact inputfef1abd090fe6804453b7e0af264bdd54921cd9e/tree
+  33b767f45e791d77cc8b56e015709f4646a064c6 passes Action37878819171/
+  job113653500431:99 regressions,42,336 native comparisons (3 x7,056 xO0/O2
+  GNU99+nonrecovering UBSan),84,672 Exit calls,12 native mutations rejected.
+  Prior196,056 Exit-ticket,55,350 watch,576 lifecycle and263,268 Exit-mode
+  complete reports reproduce unchanged. Full ordered remote report equals local;
+  all workflow cmp gates passed. Report SHA256
+  54ab876083faac9e87da83a6ce459b5edaa59fcb03a725aeb131ae9c9b7636ab.
+  Artifact11593391695 digest
+  sha256:ec269f379aba2a165c7c581b5d49ab6e671ecb37ccf91b54d317dc0d9e17b415.
+  Receipt research/recovered/STONEAGE-EXIT-WORLD-ITEM-ACCEPTANCE-R1.json.
+- FACT within bounded original nonplayer Exit/item/warp/object/map composition:
+  item-end protects live-player carried aliases but ignores pool-only/unused-player
+  aliases. gavin/iris expired synthetic enemy ticket can move retained object/map
+  chain after character invalidation while actor coordinate/encounter writes
+  fail. Bismarck Exit guard skips this route. Warp may return true after failed
+  map movement with coordinates prewritten. Bismarck old-floor search recovers
+  tested misplaced nodes; middle-node removal/tail insertion retain neighbors.
+- Original complete item validity/end, item accessor/slot guard, full warp,
+  unchecked object accessors and full map movement execute at clean source pins.
+  Proper fixed partitions, valid object index, symbolic ABI, synthetic44x8 maps,
+  floor/coordinate/encounter/network/message hooks controlled. Cross-floor uses
+  original7001/41/6; same-floor controls replace floor only. Synthetic enemy
+  tickets/ownership/object state not claimed naturally reachable. Allocator
+  zero+template-copy is static-only; retained dead-slot fields do not prove reuse
+  inheritance. Direct invalid-object/Bismarck invalid-actor warp not executed.
+- Local PENDING superseded only in stated domain; all earlier records preserved.
+  Pressure2486=2465 closed capability+18 OPEN+3 historical UB,zero promotions.
+  Highest priority next: execute default character template/enemy creation/init
+  callbacks/allocator/reuse and establish natural ticket/object provenance. Then
+  remaining ownership/stats/property/timer/matched-player/watch creation/multi-
+  actor before typed631/635 persistent/coordinator admission. Original map data/
+  build/ABI/executable/network/JSS/Taiwan-v1/runtime remain OPEN; no engine/content
+  transition. Protocol section10 ongoing authorization covers acceptance writeback.

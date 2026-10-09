@@ -9520,3 +9520,73 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   actor-state and typed631/635 persistent/coordinator boundaries. No engine/content
   transition. Section10 authorization covers publication/Actions/acceptance;
   earlier continuity histories remain byte-identical prefixes.
+
+
+## 2026-10-09 — Complete Exit/original world movement/item death LOCAL PASS; remote PENDING
+
+- Fresh startup maindb2fb4ae9375a87d887ec21aa24c8a52f8280b81/tree
+  8398c3d9f8d647a0a01b0549e6842c5cb6d25ea7 and successful Action37877110049.
+  Continued highest-priority actual warp/object/item-end at the same3 clean pins.
+- Complete original nonplayer Exit composed with original item validity/end,
+  player maximum/item getter/slot guard, full warp, unchecked object coordinate
+  accessors and full MAP_objmove.42,336 native comparisons=3 x7,056 xO0/O2
+  GNU99+nonrecovering UBSan;84,672 Exit calls.99 regression checks;12 native
+  semantic mutations rejected. Prior196,056 Exit-ticket,55,350 watcher,576
+  lifecycle and263,268 Exit-mode complete reports reproduced unchanged.
+- FACT bounded: live player carried alias retains item; player pool-only or
+  unused-player aliases do not. gavin/iris synthetic expired enemy ticket reaches
+  actual warp after actor use=false: valid retained object/map link can move to
+  7001/41/6 while actor coordinate writes fail. Bismarck Exit guard skips it.
+  Warp can return true after MAP_objmove failure, leaving prewritten coordinates;
+  Bismarck old-floor scan recovers misplaced links in tested acyclic arrays.
+- Proper fixed partitions players0/1,pet2,enemy3; symbolic ABI, valid object0,
+  synthetic44x8 maps, floor/coordinate/encounter adapters and message/network
+  hooks controlled. Ordinary cross-floor call uses original7001/41/6; same-floor
+  controls replace floor only. No natural enemy ticket/object/ownership claim.
+  Allocator zero+template-copy structurally inspected, not executed; retained
+  dead-slot fields alone do not prove ticket inheritance on reuse.
+- Source/domain/spec/validation receipts STONEAGE-EXIT-WORLD-ITEM-R1; report
+  SHA25654ab876083faac9e87da83a6ce459b5edaa59fcb03a725aeb131ae9c9b7636ab.
+  Exact-input remote acceptance PENDING. Pressure2486=2465 closed+18 OPEN+3 UB;
+  zero runtime promotions. Next remote acceptance, then default templates/enemy
+  creation/init callbacks/allocator/reuse provenance, followed by remaining
+  ownership/stats/property/timer/matched-player/watch creation/multi-actor and
+  typed631/635 persistent/coordinator boundaries. No engine/content transition.
+
+
+## 2026-10-09 — Complete Exit/original world movement/item death remote ACCEPTED
+
+- Exact inputfef1abd090fe6804453b7e0af264bdd54921cd9e/tree
+  33b767f45e791d77cc8b56e015709f4646a064c6 passes Action37878819171/
+  job113653500431:99 regressions,42,336 native comparisons (3 x7,056 xO0/O2
+  GNU99+nonrecovering UBSan),84,672 Exit calls,12 native mutations rejected.
+  Prior196,056 Exit-ticket,55,350 watch,576 lifecycle and263,268 Exit-mode
+  complete reports reproduce unchanged. Full ordered remote report equals local;
+  all workflow cmp gates passed. Report SHA256
+  54ab876083faac9e87da83a6ce459b5edaa59fcb03a725aeb131ae9c9b7636ab.
+  Artifact11593391695 digest
+  sha256:ec269f379aba2a165c7c581b5d49ab6e671ecb37ccf91b54d317dc0d9e17b415.
+  Receipt research/recovered/STONEAGE-EXIT-WORLD-ITEM-ACCEPTANCE-R1.json.
+- FACT within bounded original nonplayer Exit/item/warp/object/map composition:
+  item-end protects live-player carried aliases but ignores pool-only/unused-player
+  aliases. gavin/iris expired synthetic enemy ticket can move retained object/map
+  chain after character invalidation while actor coordinate/encounter writes
+  fail. Bismarck Exit guard skips this route. Warp may return true after failed
+  map movement with coordinates prewritten. Bismarck old-floor search recovers
+  tested misplaced nodes; middle-node removal/tail insertion retain neighbors.
+- Original complete item validity/end, item accessor/slot guard, full warp,
+  unchecked object accessors and full map movement execute at clean source pins.
+  Proper fixed partitions, valid object index, symbolic ABI, synthetic44x8 maps,
+  floor/coordinate/encounter/network/message hooks controlled. Cross-floor uses
+  original7001/41/6; same-floor controls replace floor only. Synthetic enemy
+  tickets/ownership/object state not claimed naturally reachable. Allocator
+  zero+template-copy is static-only; retained dead-slot fields do not prove reuse
+  inheritance. Direct invalid-object/Bismarck invalid-actor warp not executed.
+- Local PENDING superseded only in stated domain; all earlier records preserved.
+  Pressure2486=2465 closed capability+18 OPEN+3 historical UB,zero promotions.
+  Highest priority next: execute default character template/enemy creation/init
+  callbacks/allocator/reuse and establish natural ticket/object provenance. Then
+  remaining ownership/stats/property/timer/matched-player/watch creation/multi-
+  actor before typed631/635 persistent/coordinator admission. Original map data/
+  build/ABI/executable/network/JSS/Taiwan-v1/runtime remain OPEN; no engine/content
+  transition. Protocol section10 ongoing authorization covers acceptance writeback.

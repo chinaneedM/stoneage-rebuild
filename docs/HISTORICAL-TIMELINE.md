@@ -1801,3 +1801,40 @@ OPEN. No capability promotions; pressure stays2465/18/3 out of2486.
   actor-state and typed631/635 persistent/coordinator boundaries. No engine/content
   transition. Section10 authorization covers publication/Actions/acceptance;
   earlier continuity histories remain byte-identical prefixes.
+
+
+## 2026-10-09 — Original item death and world movement LOCAL PASS; remote PENDING
+
+- Descendant evidence only: complete nonplayer Exit now invokes actual original
+  item-end, warp, object accessors and map link movement.42,336 controlled native
+  comparisons and99 regressions pass;12 semantic mutations rejected. All four
+  predecessor complete reports unchanged. No historical original-binary parity.
+- Within synthetic valid-object/maps/partition domains: carried live-player
+  aliases prevent item death, pool/dead-player aliases do not; gavin/iris expired
+  synthetic enemy tickets can move retained objects after character invalidation
+  while actor setters fail. Bismarck Exit guard prevents that route. Warp can
+  still return true after map movement false; Bismarck recovers a misplaced
+  old-floor node before moving it. These do not prove naturally reachable enemy
+  tickets or coherent world-object ownership in an original server execution.
+- Original allocator zero+input-template copy is a static observation, not a
+  reuse execution result. Exact remote acceptance, template/creator/allocator
+  execution and natural-state provenance remain OPEN;0 runtime promotions.
+
+
+## 2026-10-09 — Original world movement and item death remote ACCEPTED
+
+- Exact descendant witness fef1abd090fe6804453b7e0af264bdd54921cd9e/tree
+  33b767f45e791d77cc8b56e015709f4646a064c6 passes Action37878819171/job113653500431.
+  42,336 native comparisons,99 regressions,12 mutations; complete ordered report
+  equals local, prior196,056/55,350/576/263,268 reports unchanged. Receipt
+  STONEAGE-EXIT-WORLD-ITEM-ACCEPTANCE-R1.json. Artifact11593391695 digest
+  sha256:ec269f379aba2a165c7c581b5d49ab6e671ecb37ccf91b54d317dc0d9e17b415.
+- FACT bounded to controlled later-source nonplayer/map/item arrays: carried
+  live-player aliases protect items; pool/dead-player aliases do not. Expired
+  synthetic enemy ticket in gavin/iris can move retained object and map link after
+  actor invalidation; actor writes fail. Bismarck Exit guard skips it, and its
+  map helper recovers misplaced old-floor links. Warp success need not imply map
+  move success. No natural enemy ticket/world ownership or Taiwan-v1 parity.
+- Allocator remains static-only; default templates/creation/callbacks/reuse and
+  natural ticket/object provenance are next. Pressure unchanged,zero runtime
+  promotions. Supersedes PENDING only within this scope; histories retained.

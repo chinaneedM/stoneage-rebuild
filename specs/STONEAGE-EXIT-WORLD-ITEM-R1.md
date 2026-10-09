@@ -1,6 +1,6 @@
 # Original Exit, item lifetime and world object movement R1
 
-Status: LOCAL PASS; exact-input remote acceptance PENDING.
+Status: REMOTE ACCEPTED. Exact tested input fef1abd090fe6804453b7e0af264bdd54921cd9e / tree 33b767f45e791d77cc8b56e015709f4646a064c6. Action37878819171, job113653500431; acceptance metadata appended without changing tested code.
 
 Evidence class: FACT only within the controlled pinned descendant source domain.
 No Taiwan/Waei v1.0 or JSS executable equivalence and no runtime promotion.
@@ -96,3 +96,12 @@ multi-actor boundaries before typed631/635 persistent/coordinator admission.
 Invalid object indices, original map data, original binaries/build/ABI/network,
 concurrency, JSS/Taiwan v1.0 and runtime admission remain OPEN. No engine/content
 design transition.
+
+
+Remote acceptance receipt:
+`research/recovered/STONEAGE-EXIT-WORLD-ITEM-ACCEPTANCE-R1.json`.
+Complete remote ordered report matches staged local bytes; all workflow cmp
+checks passed. Report SHA25654ab876083faac9e87da83a6ce459b5edaa59fcb03a725aeb131ae9c9b7636ab.
+Artifact11593391695 digest
+sha256:ec269f379aba2a165c7c581b5d49ab6e671ecb37ccf91b54d317dc0d9e17b415
+is GitHub metadata; archive bytes were not independently downloaded.
