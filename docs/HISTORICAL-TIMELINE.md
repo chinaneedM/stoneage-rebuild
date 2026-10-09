@@ -1918,3 +1918,13 @@ CHAR_INITDATA and outputs0/0 for those tail fields; image-type row assignment is
 overwritten by copied player prefix. These are source-profile observations, not
 JSS/Taiwan-v1 or released-executable claims. Spec STONEAGE-DEFAULT-TEMPLATE-R1.md.
 Remote acceptance PENDING; no runtime promotion.
+
+
+## 2026-10-09 — Actual default template source gate remote ACCEPTED
+
+Exact input e180903ef2c1d06dfb44241419654d620b5c2c85/tree 8c130bc9d26a762353cf1d25dd049f50ddad3335 passes
+Action37881477702/job113661909887;116 regressions,2,736 original getter calls,
+24 rejected mutations. All six previous full reports unchanged and complete new
+ordered report equals local. Prior PENDING superseded only in three pinned/current
+profile GNU99 LP64 scope; no original build/ABI/JSS/Taiwan-v1 claim or runtime
+promotion. Receipt STONEAGE-DEFAULT-TEMPLATE-ACCEPTANCE-R1.json.

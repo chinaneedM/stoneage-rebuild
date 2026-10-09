@@ -1,6 +1,6 @@
 # Actual original default template, table and header layout R1
 
-Status: LOCAL PASS; exact-input remote acceptance PENDING.
+Status: REMOTE ACCEPTED. Exact tested input e180903ef2c1d06dfb44241419654d620b5c2c85 / tree 8c130bc9d26a762353cf1d25dd049f50ddad3335. Action37881477702 / job113661909887 succeeded. Acceptance metadata only; tested code unchanged.
 Evidence class: FACT bounded to the same three pinned descendant profiles and
 current version.h configuration. No original executable/JSS/Taiwan-v1 equivalence,
 no original build/ABI claim and zero runtime-pressure promotions.
@@ -80,3 +80,9 @@ remaining actor ownership/stats/property/timer and matched-player/watch creation
 multi-actor/typed631/635 persistent/coordinator admission remain OPEN.
 No engine/content-design transition. Pressure unchanged:
 2486 = 2465 closed capability + 18 OPEN + 3 historical UB; zero promotions.
+
+Remote complete ordered report equals local bytes; all seven workflow cmp gates
+passed. Receipt research/recovered/STONEAGE-DEFAULT-TEMPLATE-ACCEPTANCE-R1.json.
+Report SHA256 facfe62106ca3be1a9a800b5e33afcc14bf582a65e2dc93d2607d6c0be076c53.
+Artifact11594461395 digest sha256:2217b0c389e897bb15b19195709df88e0d822df17384217d87ed24234df710bc
+is GitHub metadata; archive bytes were not independently downloaded.

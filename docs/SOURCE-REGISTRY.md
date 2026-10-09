@@ -4986,3 +4986,31 @@ Local878 unique tests PASS; exact-head acceptance pending. Specification:
   helper/data/function provenance and natural ticket/object states, followed by
   full Exit-to-reuse. Remaining actor/watcher/typed631/635 and JSS/Taiwan-v1 gates
   OPEN; no engine/content transition. Protocol section10 authorization applies.
+
+
+## 2026-10-09 — Actual original default template/table/header layout remote ACCEPTED
+
+- Exact input e180903ef2c1d06dfb44241419654d620b5c2c85/tree
+  8c130bc9d26a762353cf1d25dd049f50ddad3335 passes Action37881477702/
+  job113661909887:116 regressions,2,736 getter calls at GNU99 O0/O2+
+  nonrecovering UBSan,24 native semantic mutations rejected. Six predecessor
+  complete reports unchanged; all seven cmp gates passed. Complete ordered remote
+  report equals local bytes, including per-profile full-stream semantic hashes.
+- Actual defaultPlayer/table/Char/enums/features/animation headers and complete
+  getter now execute in bounded current-profile LP64 witnesses. Source warnings
+  8/10 excess initializers retained; Bismarck positional pig/image100250/0 differs
+  from comment labels. Getter zeroes tail pig/image,ticket/start/object/callback
+  storage; image-type assignment overwritten by player prefix. Source-profile
+  findings only, no original released-build/ABI/JSS/Taiwan-v1 claim.
+- Acceptance receipt STONEAGE-DEFAULT-TEMPLATE-ACCEPTANCE-R1.json; report SHA256
+  facfe62106ca3be1a9a800b5e33afcc14bf582a65e2dc93d2607d6c0be076c53. Artifact11594461395 digest
+  sha256:2217b0c389e897bb15b19195709df88e0d822df17384217d87ed24234df710bc.
+  Artifact archive not independently downloaded; ordered job output and successful
+  report cmp gates verified. Tested code unchanged; earlier histories preserved.
+- Supersedes local PENDING only in this scope. Pressure2486=2465 closed capability
+  +18 OPEN+3 historical UB;zero promotions. Highest priority next: full original
+  enemy creator/init/helper/data/function provenance and natural ticket/object
+  states, then full Exit-to-reuse. Remaining actor/watcher/typed631/635 persistent/
+  coordinator and original build/JSS/Taiwan-v1 gates OPEN. No engine/content
+  transition. Protocol section10 ongoing authorization covers publication/Actions/
+  acceptance integration without repeated confirmation.
