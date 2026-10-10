@@ -110,7 +110,9 @@ def positive_drop_native(profile,source,battle,event,root):
     for name,body in actual.items():
         native_body=attack.definition(native,name)
         if hashlib.sha256(native_body.encode()).hexdigest()!=hashlib.sha256(body.encode()).hexdigest():
-            raise ValueError("native original enemy function drift "+profile)
+            import difflib
+            mismatch=next((op for op in difflib.SequenceMatcher(None,body,native_body,autojunk=False).get_opcodes() if op[0]!="equal"),None)
+            raise ValueError("native original enemy function drift "+profile+" original_sha="+hashlib.sha256(body.encode()).hexdigest()+" inherited_sha="+hashlib.sha256(native_body.encode()).hexdigest()+" first_delta="+str(mismatch)+" original_part="+repr(body[max(0,mismatch[1]-90):mismatch[2]+180])+" inherited_part="+repr(native_body[max(0,mismatch[3]-90):mismatch[4]+180]))
         print("ENEMY_ORIGINAL_DROP_SOURCE|"+profile+"|"+name+"|sha256="+hashlib.sha256(body.encode()).hexdigest(),flush=True)
     anchor='  demand(!memcmp(&specimen,&table_snapshot,sizeof specimen),"factory template immutable");'
     native=replace_once(native,anchor,anchor+"\n"+extra_controls(profile))
