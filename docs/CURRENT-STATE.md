@@ -10114,3 +10114,44 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   nonempty items/equipment/callbacks/Lua registry, original reclaimer/bootstrap,
   Iris encoding/ABI/build/JSS/Taiwan-v1/actor-watcher-typed631-635 remain OPEN.
   No engine/content transition; all prior evidence records preserved.
+
+
+## 2026-10-10 — Actual solo player battle creation/entry/healthy Exit REMOTE ACCEPTED
+
+- Action38026431963/job114138142010 succeeds at tested HEAD
+ 90c41828c9ba6792981b37600905900746e793ab/tree
+ 873c2bf31cf8ee61ab180381af20c4b40d6c166e. All22 job steps succeed;
+ 184 unit regressions and13 complete report cmp gates pass. Ordered9-line
+  remote report equals local bytes; all12 predecessor reports unchanged.
+- Accepted24,512 solo cycles/player Exits,49,020 original enemy births/Exits,
+ 73,536 complete player/147,060 complete enemy work stages;10 safe mutations
+  rejected. O0/O2 GNU99 -fgnu89-inline/nonrecovering UBSan real-header LP64.
+  Initial preparation and10 mutation cycles excluded. Complete original mode0
+  CreateVsEnemy/PartyNewEntry solo/empty default pet/ClearGetExp/effect/healthy
+  player Exit/compliance/enemy ExitAll/Delete/reuse execute; party/pets/profits
+  and Init/TaskLoop remain OPEN. Original cursor/sequence/arena progression
+  never reset, player baseline restored per case as a controlled preparation.
+- Every battle entry including swapped empty bids checked; player remains live
+  object0 owner. Complete player/enemy work/flags, initialized player nonwork/
+  nonflag bytes, world1/named objects/map links retained. No independent oracle
+  for every birth/player/object field or natural player progression claim.
+- Receipt STONEAGE-PLAYER-BATTLE-ACCEPTANCE-R1.json; report SHA256
+ 2bd5cbeb7170001e6231f463c031cbdb55bf4072262789d99116829d229c6c01.
+  Artifact11660546530 independently downloaded,963 bytes, sole report equals
+  local bytes; archive SHA256
+ ef127f6b6d59f2a22c874f0b38c5b1605bbd351bd2a99fb2aa311f26c5223506
+  matches metadata. Tested tool/test/workflow/source pins/native unchanged.
+- Supersedes local PENDING only within named source/input/host/adapter domain.
+  Original Gavin empty skill lookup and Bismarck missing-script FindLua/
+  EquipEffectFunction guards execute; actual Lua calls/search remain trapped.
+  Typed network/status/skill/flush/receive-time/anti-abuse collectors, descriptor7,
+  encounter/field/RNG/time1000/world/walk/watch/detached-node adapters remain
+  explicit; original transport/anti-abuse/reclaimer/full bootstrap unexecuted.
+- Pressure2486=2465 capability+18 OPEN+3 historical UB;0 promotions.
+  Highest next priority: actual party members/pets in successful CreateVsEnemy,
+  real player/pet Entry and complete Exit; then original BATTLE_Init/TaskLoop
+  and broader Finish/player-pet profits. Linked watchers, nonempty items/
+  callbacks/equipment/Lua registry, original reclaimer/bootstrap/Iris encoding/
+  ABI/build/JSS/Taiwan-v1/actor-watcher-typed631-635 remain OPEN.
+  No engine/content transition. Protocol section10 accepted integration applies;
+  all earlier evidence records and local-PENDING history preserved.

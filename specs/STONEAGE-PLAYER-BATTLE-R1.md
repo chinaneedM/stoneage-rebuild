@@ -1,6 +1,6 @@
 # StoneAge original solo player battle creation/entry/healthy Exit R1
 
-Status: LOCAL PASS; remote PENDING. FACT only within the named descendant pins,
+Status: LOCAL PASS / REMOTE ACCEPTED (Action38026431963). FACT only within the named descendant pins,
 input bytes, host layout, controlled preparation and adapters. Zero promotions.
 
 ## Executed composition

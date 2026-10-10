@@ -5211,3 +5211,24 @@ sources/data remain transient; earlier records preserved.
   Party members/pets/profit/Init/TaskLoop/nonempty items/watchers/callbacks,
   original reclaimer/server/ABI/Taiwan-v1 remain OPEN; pressure unchanged,
   zero promotions. Supersedes no earlier records.
+
+
+## 2026-10-10 — Solo player battle evidence R1 REMOTE ACCEPTED
+
+- Tested90c41828c9ba6792981b37600905900746e793ab/tree873c2bf31cf8ee61ab180381af20c4b40d6c166e;
+  Action38026431963/job114138142010 all22 steps success,184 unit checks and
+ 13 full-report cmp gates; prior12 reports unchanged. Accepted solo24,512,
+  enemy births/Exits49,020, player/ enemy work stages73,536/147,060, mutations10.
+- STONEAGE-PLAYER-BATTLE-ACCEPTANCE-R1.json persists run/job/HEAD/tree/report/
+  artifact identity and boundaries; validation/spec accepted. Native SHA256
+ 2bd5cbeb7170001e6231f463c031cbdb55bf4072262789d99116829d229c6c01;
+  artifact11660546530 independently downloaded,963-byte ZIP SHA256
+ ef127f6b6d59f2a22c874f0b38c5b1605bbd351bd2a99fb2aa311f26c5223506,
+  sole STONEAGE-PLAYER-BATTLE-NATIVE-R1.txt member equals local bytes.
+- Source identity links accepted pool pins by canonical hash; original function/
+  file/header/Lua declaration/typed collector signatures remain pinned. Tested
+  tool/test/workflow/pins/report unchanged; original C/headers/master transient.
+  No original network/monitor/reclaimer/full server/actual Lua claim; controlled
+  healthy solo baseline restored each case, explicit typed collectors retained.
+  Actual party/pet/profit/Init/TaskLoop/Iris/ABI/Taiwan-v1 remain OPEN. Pressure
+  unchanged,0 promotions. Earlier source records preserved; protocol10 applies.

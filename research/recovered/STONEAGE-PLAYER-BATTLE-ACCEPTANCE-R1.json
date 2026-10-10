@@ -1,6 +1,6 @@
 {
-  "schema": "stoneage-player-battle-validation-r1",
-  "status": "LOCAL_PASS_REMOTE_ACCEPTED",
+  "schema": "stoneage-player-battle-acceptance-r1",
+  "status": "REMOTE_ACCEPTED",
   "startup_main": "678e23905c450d253b80dde382e085ad500005ea",
   "startup_tree": "ab41044bd7095d28326d4281f703ddb349251b06",
   "executed_profiles": [
@@ -83,9 +83,54 @@
     "promotions": 0
   },
   "next": "Actual party/pet CreateVsEnemy entry and complete Exit, then original Init/TaskLoop and broader Finish.",
-  "remote_receipt": "research/recovered/STONEAGE-PLAYER-BATTLE-ACCEPTANCE-R1.json",
   "tested_head": "90c41828c9ba6792981b37600905900746e793ab",
   "tested_tree": "873c2bf31cf8ee61ab180381af20c4b40d6c166e",
   "run_id": 38026431963,
-  "job_id": 114138142010
+  "job_id": 114138142010,
+  "run_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38026431963",
+  "conclusion": "success",
+  "all22_job_steps_success": true,
+  "complete_ordered_remote_report_matches_local_bytes": true,
+  "all_thirteen_workflow_cmp_gates_passed": true,
+  "workflow_cmp_commands": [
+    "cmp /tmp/player-battle-native.txt research/recovered/STONEAGE-PLAYER-BATTLE-NATIVE-R1.txt",
+    "cmp /tmp/battle-pool-native.txt research/recovered/STONEAGE-BATTLE-POOL-NATIVE-R1.txt",
+    "cmp /tmp/enemy-entry-exit-native.txt research/recovered/STONEAGE-ENEMY-ENTRY-EXIT-NATIVE-R1.txt",
+    "cmp /tmp/object-ownership-native.txt research/recovered/STONEAGE-OBJECT-OWNERSHIP-NATIVE-R1.txt",
+    "cmp /tmp/enemy-loader-native.txt research/recovered/STONEAGE-ENEMY-LOADER-NATIVE-R1.txt",
+    "cmp /tmp/enemy-creation-native.txt research/recovered/STONEAGE-ENEMY-CREATION-NATIVE-R1.txt",
+    "cmp /tmp/default-template-native.txt research/recovered/STONEAGE-DEFAULT-TEMPLATE-NATIVE-R1.txt",
+    "cmp /tmp/character-reuse-native.txt research/recovered/STONEAGE-CHARACTER-REUSE-NATIVE-R1.txt",
+    "cmp /tmp/exit-world-item-native.txt research/recovered/STONEAGE-EXIT-WORLD-ITEM-NATIVE-R1.txt",
+    "cmp /tmp/exit-destroy-ticket-native.txt research/recovered/STONEAGE-EXIT-DESTROY-TICKET-NATIVE-R1.txt",
+    "cmp /tmp/watch-cleanup-native.txt research/recovered/STONEAGE-WATCH-CLEANUP-NATIVE-R1.txt",
+    "cmp /tmp/lifetime-watch-regression.txt research/recovered/STONEAGE-EXIT-LIFETIME-WATCH-NATIVE-R1.txt",
+    "cmp /tmp/exit-modes-regression.txt research/recovered/STONEAGE-BECOMEPIG-EXIT-MODES-NATIVE-R1.txt"
+  ],
+  "report_git_blob": "370c0c3a31f121a688780838e9db9b1a904098e5",
+  "artifact": {
+    "id": 11660546530,
+    "name": "player-battle-90c41828c9ba6792981b37600905900746e793ab",
+    "size_in_bytes": 963,
+    "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/11660546530",
+    "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/11660546530/zip",
+    "expired": false,
+    "created_at": "2026-10-10T05:15:48Z",
+    "expires_at": "2027-01-08T05:07:25Z",
+    "updated_at": "2026-10-10T05:15:48Z",
+    "digest": "sha256:ef127f6b6d59f2a22c874f0b38c5b1605bbd351bd2a99fb2aa311f26c5223506",
+    "workflow_run": {
+      "id": 38026431963,
+      "repository_id": 1374762421,
+      "head_repository_id": 1374762421,
+      "head_branch": "agent/player-battle-r1-20261010",
+      "head_sha": "90c41828c9ba6792981b37600905900746e793ab"
+    }
+  },
+  "artifact_archive_independently_downloaded": true,
+  "artifact_archive_sha256": "ef127f6b6d59f2a22c874f0b38c5b1605bbd351bd2a99fb2aa311f26c5223506",
+  "artifact_members": [
+    "STONEAGE-PLAYER-BATTLE-NATIVE-R1.txt"
+  ],
+  "artifact_report_matches_local_bytes": true
 }

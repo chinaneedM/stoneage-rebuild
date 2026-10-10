@@ -2080,3 +2080,18 @@ original transport/anti-abuse/Lua execution, original ABI/Taiwan-v1 equivalence,
 or independent all-field oracle. All original bytes remain transient.
 Derived report SHA256 2bd5cbeb7170001e6231f463c031cbdb55bf4072262789d99116829d229c6c01; remote acceptance PENDING.
 Pressure2486/2465/18/3,0 promotions; Init/TaskLoop/broader Finish remain OPEN.
+
+
+## 2026-10-10 — Preserved descendant solo player battle composition REMOTE ACCEPTED
+
+FACT in the bounded real-header Gavin/Bismarck controlled domain: Action38026431963
+at90c41828c9ba6792981b37600905900746e793ab/tree873c2bf31cf8ee61ab180381af20c4b40d6c166e
+passes all22 steps,184 regressions,13 report gates;24,512 solo cycles/player
+Exits,49,020 enemy births/Exits,73,536 player/147,060 enemy complete work stages
+and10 mutations reproduce. Nine-line report matches; artifact11660546530 ZIP
+independently downloaded and hash checked, sole member equals local report.
+Original source/input bytes transient; explicit player preparation/restoration,
+network/monitor/descriptor/watch/time/RNG/world adapters and original empty Lua
+registry guard stay bounded. Supersedes PENDING only for this composition;
+actual party/pet/profit/Init/TaskLoop/Lua/full server/original ABI/Taiwan-v1
+remain OPEN. Pressure2486/2465/18/3,zero promotions, no content transition.
