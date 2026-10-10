@@ -85,7 +85,7 @@ def domain(profile,root):
     return source,identity,data,flags,exps,ride
 
 
-def compile_probe(profile,root,source,exe,opt,traps=None):
+def compile_probe(profile,root,source,exe,opt,traps=None,*,link_libraries=()):
     """Discover unresolved symbols once, then pin the unreachable trap closure."""
     prior=json.loads((PIN_PATH.parent/'STONEAGE-ENEMY-CREATION-SOURCE-DOMAINS-R1.json').read_text())['profiles'][profile]['unreachable_traps']
     remaining=[]
@@ -93,7 +93,7 @@ def compile_probe(profile,root,source,exe,opt,traps=None):
         try:definition(source,name)
         except ValueError:remaining.append(name)
     source+=trap_definitions(profile,root,source,remaining)
-    args=['cc','-std=gnu99','-fgnu89-inline',opt,'-fsanitize=undefined','-fno-sanitize-recover=all',*include_args(profile,root),'-x','c','-','-o',str(exe)]
+    args=['cc','-std=gnu99','-fgnu89-inline',opt,'-fsanitize=undefined','-fno-sanitize-recover=all',*include_args(profile,root),'-x','c','-','-o',str(exe),*link_libraries]
     if traps is None:
         r=subprocess.run(args,input=source,text=True,capture_output=True)
         if r.returncode:
