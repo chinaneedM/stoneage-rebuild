@@ -11,11 +11,11 @@ also had outstanding source-closure/compilation errors, not gameplay proofs.
 Read complete original preprocessed Finish, GetProfit, GetExpGold and GetExp
 bodies from clean pinned Gavin and Bismarck late-descendant trees; verify the
 three source call edges and that original GetExp writes via CHAR_AddMaxExp.
-Preserve prior frozen Finish/GetProfit body hashes. Also read original
-profile-specific config file: Gavin configfile.c and Bismarck config_file.c,
+Preserve prior frozen Finish/GetProfit body hashes. Also inspect the original raw conditional profile-specific config file: Gavin configfile.c and Bismarck config_file.c,
 and record the original getBattleexp getter owner. Gavin is config.battleexp;
-Bismarck is gServerConfig.battleexp. These references are different
-config architectures, not automatically matching multiplier values.
+Bismarck is gServerConfig.battleexp. These original conditional references are different config architectures, not
+necessarily active in the pinned compiled build and not automatically matching
+multiplier values.
 
 No synthetic configuration value, reward amount or level threshold is
 permitted as historical FACT. The final native FINISH boundary remains
