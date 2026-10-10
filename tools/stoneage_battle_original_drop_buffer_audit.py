@@ -66,6 +66,21 @@ MORE=r"""
          "original recipient RAND and overflow replacement/discard RAND cardinality");
   demand(!memcmp(&expected_arena,arena,sizeof expected_arena),
          "complete battle arena exact pending three-slot and owner redirect oracle");
+  if(memcmp(expected_pool,reward_items,sizeof expected_pool)){
+   for(int q=0;q<256;q++)if(memcmp(&expected_pool[q],&reward_items[q],sizeof(ITEM_TYPE))){
+    printf("DROP_BUFFER_ITEM_DIFF|scenario=%d|id=%d|expected_use=%d|actual_use=%d|expected_owner=%d|actual_owner=%d|expected_obj=%d|actual_obj=%d\\n",
+           scenario,q,expected_pool[q].use,reward_items[q].use,
+           expected_pool[q].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX],
+           reward_items[q].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX],
+           expected_pool[q].ITEM_FIELD.workint[ITEM_WORKOBJINDEX],
+           reward_items[q].ITEM_FIELD.workint[ITEM_WORKOBJINDEX]);
+    const unsigned char *a=(const unsigned char *)&expected_pool[q],*b=(const unsigned char *)&reward_items[q];
+    for(int off=0,found=0;off<sizeof(ITEM_TYPE)&&found<8;off++)if(a[off]!=b[off]){
+     printf("DROP_BUFFER_BYTE_DIFF|scenario=%d|id=%d|offset=%d|expected=%u|actual=%u\\n",scenario,q,off,a[off],b[off]);found++;
+    }
+   }
+   fflush(stdout);
+  }
   demand(!memcmp(expected_pool,reward_items,sizeof expected_pool),
          "all 256 item records exact original overflow release/retain oracle");
   demand(ITEM_COUNT==current_count-(scenario!=0),
