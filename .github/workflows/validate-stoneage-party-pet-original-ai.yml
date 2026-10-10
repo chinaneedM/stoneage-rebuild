@@ -1,0 +1,48 @@
+name: Validate StoneAge original party pet AI decisions
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-party-pet-original-ai.yml"
+      - "tools/stoneage_party_pet_original_ai_audit.py"
+      - "tests/test_stoneage_party_pet_original_ai.py"
+permissions:
+  contents: read
+jobs:
+  native-original-ai:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Original AI regression and accepted native predecessors
+        run: python -m unittest -v tests.test_stoneage_party_pet_original_ai tests.test_stoneage_party_pet_command_input tests.test_stoneage_party_pet_command_wait tests.test_stoneage_party_pet_original_loop tests.test_stoneage_party_pet_init tests.test_stoneage_party_pet_full_exit
+      - name: Recover pinned original sources transiently
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_guard_break2_source_audit import PINNED
+          repos={"gavin":"gavinlinasd/StoneAge","iris":"iriselia/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for profile,sha in PINNED.items():
+              path=Path("/tmp/stoneage-party-original-ai")/profile
+              subprocess.run(["git","init",str(path)],check=True)
+              subprocess.run(["git","-C",str(path),"remote","add","origin","https://github.com/"+repos[profile]+".git"],check=True)
+              subprocess.run(["git","-C",str(path),"fetch","--depth","1","origin",sha],check=True)
+              subprocess.run(["git","-C",str(path),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Native original AI decision and exit on real headers
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_original_ai_audit --gavin-dir /tmp/stoneage-party-original-ai/gavin --iris-dir /tmp/stoneage-party-original-ai/iris --bismarck-dir /tmp/stoneage-party-original-ai/bismarck > /tmp/stoneage-party-original-ai.txt
+          cat /tmp/stoneage-party-original-ai.txt
+          grep -Fx "RESOLUTION|ORIGINAL_REAL_HEADER_PARTY_PET_AI_DECISION_BOUNDED_PASS" /tmp/stoneage-party-original-ai.txt
+          test "$(grep -c '^ACTUAL|.*|REAL_HEADER_AI_DECISION|' /tmp/stoneage-party-original-ai.txt)" -eq 8
+      - name: Upload derived observations only
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-party-pet-original-ai
+          path: /tmp/stoneage-party-original-ai.txt
