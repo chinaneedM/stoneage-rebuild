@@ -1,5 +1,5 @@
 {
-  "status": "SOURCE_PIN_ONLY_UNTIL_ACTION_SUCCESS",
+  "status": "SOURCE_AND_INHERITED_NATIVE_BODY_SHA_LOCKED_AWAITING_FINAL_ACTION",
   "source_profiles": [
     "gavin",
     "bismarck"
@@ -26,5 +26,9 @@
     "Master pairs are constructed, not a historically recovered gameplay drop table.",
     "Actual original ENEMY_createEnemy and ITEM_makeItemAndRegist are a later source descendant, not early Taiwan-v1 or JSS-1999 proof.",
     "Natural rarity, miss thresholds, weapon equipment, inventory transfer, combat reward tickets and callbacks are independent open gates."
-  ]
+  ],
+  "inherited_native_sha256": {
+    "gavin": "ec6956c81c157ee227c15208c26e03767f8c21ef15af2696760d690ad889d57a",
+    "bismarck": "fd3ad864fbf1a8bbbed7031f762904ed60a21d5220bfd97626c06d4fdbdd7502"
+  }
 }
