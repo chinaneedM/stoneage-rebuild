@@ -1,0 +1,87 @@
+{
+  "gate": "STONEAGE_PARTY_PET_ORIGINAL_INIT_PRECOMMAND_R1",
+  "status": "REMOTE_ACCEPTED_BOUNDED_ORIGINAL_HEADER_NATIVE",
+  "tested_commit": "1c0c27de29862e56b0d89370069b3c34174954d6",
+  "tested_tree": "b38771da8453e8040196c7edab84cfd0c6b89574",
+  "base_main": "2fe723bde92f60225c5a510398dd16fe9931b2f1",
+  "branch": "agent/party-pet-original-init-r1-20261010",
+  "ci": {
+    "run_id": 38033067497,
+    "job_id": 114157832582,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38033067497",
+    "conclusion": "success",
+    "steps_passed": 10,
+    "python_regressions": 18
+  },
+  "profiles": [
+    "gavin",
+    "bismarck"
+  ],
+  "source_pins": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "original_bodies": [
+    "BATTLE_Init",
+    "BATTLE_SurpriseCheck",
+    "BATTLE_PreCommandSeq",
+    "BATTLE_CharaBackUp",
+    "BATTLE_IsCharge",
+    "BATTLE_AllCharaCWaitSet",
+    "BATTLE_TurnParam",
+    "BATTLE_AttReverse",
+    "BATTLE_CreateVsEnemy",
+    "BATTLE_Exit",
+    "BATTLE_DeleteBattle"
+  ],
+  "optimizations": [
+    "-O0",
+    "-O2"
+  ],
+  "encounters_per_profile_per_optimization": 4,
+  "total_native_encounters": 16,
+  "pool_cursor": [
+    0,
+    1,
+    2,
+    0
+  ],
+  "sanitizer": "nonrecovering UBSan",
+  "state_oracles": [
+    "BATTLE_MODE_INIT->BATTLE_MODE_BATTLE",
+    "leader,member,pet BATTLE_CHARMODE_C_WAIT",
+    "BATTLE_FLG_FREEDP set",
+    "BATTLE timer equals pinned NowTime",
+    "player front 0/1 and pet rear5 occupancy preserved",
+    "BATTLE_CharaBackUp stores leader0 and member1 in both backups",
+    "owned pet2 still bound to leader0 slot0",
+    "original controlled ExitAll/DeleteBattle continues to complete"
+  ],
+  "trace_sha256": {
+    "gavin": "362fcd9ee1d3c1536bc1950dd8b7121d53c089ffcd614bfc6ccc0ada5e08bcfe",
+    "bismarck": "4e3acec05e99f92bdff7e606b90e050ced7833b1a495693f4f6be24ce9990807"
+  },
+  "bounded_adapters": [
+    "BATTLE_CharSendAll outbound packet collector, 1 call per encounter; no packet assembly or transport",
+    "BATTLE_ActSettingSend outbound packet collector, 1 call per encounter; no payload delivery",
+    "preexisting world/clock/descriptor/riding permission/empty Lua registry adapters"
+  ],
+  "optional_lua_battle_start_preprocessed_enabled": {
+    "gavin": false,
+    "bismarck": false
+  },
+  "limitations": [
+    "actual BATTLE_Loop not executed",
+    "actual BATTLE_Command, full attack round, Finish and profit not executed",
+    "surprise outcomes not exhaustively partitioned",
+    "full outbound network packet contents/transport not executed",
+    "no optional enabled Lua start callbacks under these pinned build flags",
+    "no original full server/bootstrapped networking, equipment or watchers; no JSS1999/Taiwan-v1 runtime equivalence",
+    "no global battle pressure promotion"
+  ],
+  "artifact": {
+    "id": 11663147028,
+    "sha256_metadata": "2b8ce42870686e0fba254f0db73734ff78d0fe21538d856c2d102f1683f7573a",
+    "zip_independently_downloaded": false
+  }
+}

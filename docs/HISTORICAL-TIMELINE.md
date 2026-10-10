@@ -2095,3 +2095,18 @@ network/monitor/descriptor/watch/time/RNG/world adapters and original empty Lua
 registry guard stay bounded. Supersedes PENDING only for this composition;
 actual party/pet/profit/Init/TaskLoop/Lua/full server/original ABI/Taiwan-v1
 remain OPEN. Pressure2486/2465/18/3,zero promotions, no content transition.
+
+
+## 2026-10-10 — Later-source native battle Init stage (not a first-release rule)
+
+FACT, bounded descendants only: Gavin pinned1f90cb6 and Bismarck pinned
+999ffdf1 original real-header BATTLE_Init/SurpriseCheck/PreCommandSeq,
+original character backup, CWait and turn parameters executed in runner
+38033067497 at commit1c0c27de, in 16 controlled encounters O0/O2 UBSan.
+Original INIT->BATTLE, timestamp/FREEDP, 0/1 player backups and leader,
+teammate, owned pet2 C_WAIT observed; preserved original Exit/Delete still
+succeeded. Two outbound packet creation paths were counted by strict
+adapters, not run. Bismarck Lua start callback compiled out. This is NOT
+historical confirmation of JSS1999 or Taiwan v1.0, original transport,
+actual BATTLE_Loop, full rounds, Finish/profit or natural time/RNG.
+See STONEAGE-PARTY-PET-ORIGINAL-INIT-ACCEPTANCE-R1.json.

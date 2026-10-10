@@ -10417,3 +10417,49 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   round/Finish/victory/profit. Preserve Gavin/Bismarck distinct source
   paths, no flattening, and independent source provenance. All prior
   continuity records preserved verbatim.
+
+
+## 2026-10-10 — Original real-header populated party/pet BATTLE_Init and PreCommandSeq REMOTE ACCEPTED (bounded)
+
+- Startup main2fe723bde92f60225c5a510398dd16fe9931b2f1/tree
+  f8a0c42f93e3728f31d300d3ef786a1791032b64; prior negative matrix
+  Action38032368154 SUCCESS. Original continuity blob
+  c968f7c7d994d3261f6914cc10345e1dbed11f44 retained verbatim.
+- Source/test/workflow input on branch agent/party-pet-original-init-r1-20261010
+  commit1c0c27de29862e56b0d89370069b3c34174954d6/tree
+  b38771da8453e8040196c7edab84cfd0c6b89574.
+  Action38033067497/job114157832582 SUCCESS all10 steps,18 regressions,
+  both exact pinned Gavin1f90cb6 and Bismarck999ffdf1 original bodies,
+  original headers GNU99 O0/O2 nonrecovering UBSan,4 real battles per
+  profile and optimization (16 total); same per-profile native O0/O2 trace.
+- Actual source functions BATTLE_Init, BATTLE_SurpriseCheck,
+  BATTLE_PreCommandSeq, BATTLE_CharaBackUp, BATTLE_IsCharge,
+  BATTLE_AllCharaCWaitSet, BATTLE_TurnParam, BATTLE_AttReverse inserted as
+  unmodified original function bodies; original populated party/pet
+  CreateVsEnemy/Exit/Delete reused. Assertions: INIT->BATTLE,
+  timer==NowTime.tv_sec, FREEDP, original leader/member backups0/1,
+  leader/member/pet C_WAIT, populated indexes & ownership retained,
+  original Exit/Delete success and pool reuse cursor0,1,2,0.
+- Output-only BATTLE_CharSendAll and BATTLE_ActSettingSend are typed bounded
+  collectors, one call per encounter, NOT original packet production or
+  server transport. Bismarck optional BattleStartFunction NOT enabled in
+  pinned preprocessed build (lua_boundary=0); no Lua execution claim.
+  Provenance trace SHA256 Gavin
+  362fcd9ee1d3c1536bc1950dd8b7121d53c089ffcd614bfc6ccc0ada5e08bcfe,
+  Bismarck4e3acec05e99f92bdff7e606b90e050ced7833b1a495693f4f6be24ce9990807.
+  Source-free artifact11663147028 metadata SHA256
+  2b8ce42870686e0fba254f0db73734ff78d0fe21538d856c2d102f1683f7573a
+  not independently ZIP-verified. Receipt
+  STONEAGE-PARTY-PET-ORIGINAL-INIT-ACCEPTANCE-R1.json.
+- FACT strictly controlled pinned descendants/driver only; NOT original
+  full BATTLE_Loop dispatch, BATTLE_Command, victory/profit/Finish, source
+  counterfactual surprise outcomes, original outbound network packets,
+  natural Lua/watch/equipment, original bootstrap/reclaimer or historical
+  JSS1999/Taiwan-v1 equivalence. No pressure promotion;
+  2486=2465 capability closed+18 OPEN+3 historical UB. Earlier state
+  preserved; no engine/content transition.
+- Highest NEXT: actual original BATTLE_Loop INIT dispatch with exact
+  original headers and guarded alternate unreachable modes, distinguish
+  Gavin use predicate vs Bismarck BATTLE_CHECKINDEX and feature-gated
+  NETWATCH. Then bounded Command/true round/Finish, original network
+  emitters, Lua variants and reward/profit; no premature promotion.

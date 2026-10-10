@@ -5299,3 +5299,28 @@ sources/data remain transient; earlier records preserved.
   3570fed9a53d96045f35c076f1dd02df90e74339c1a2c71a3beb0f3918f772be
   (not independently downloaded); receipt
   STONEAGE-PARTY-PET-REALHEADER-ACCEPTANCE-R1.json.
+
+
+## 2026-10-10 — Real-header descendant battle Init execution gate
+
+Repository evidence:
+- CI source/test input1c0c27de29862e56b0d89370069b3c34174954d6,
+  tree b38771da8453e8040196c7edab84cfd0c6b89574,
+  action38033067497/job114157832582 SUCCESS (10 steps,18 regressions).
+- Exact external source commits: Gavin1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56
+  and Bismarck999ffdf1d220ec6666eb65339180689c9caf1876.
+  Source/headers/master recovered only in CI ephemeral temp checkout.
+- Source originals extracted: BATTLE_Init/SurpriseCheck/PreCommandSeq,
+  CharaBackUp, IsCharge, AllCharaCWaitSet, TurnParam, AttReverse.
+  Four original Init/Exit cycles per profile/optimization, O0/O2 UBSan
+  agreeing, no redistribution of original bytes.
+- Controlled two outbound packet collectors; no native packet payload
+  or transport proof. Bismarck Lua start feature compiled out.
+  stdout traces SHA256 Gavin
+  362fcd9ee1d3c1536bc1950dd8b7121d53c089ffcd614bfc6ccc0ada5e08bcfe,
+  Bismarck4e3acec05e99f92bdff7e606b90e050ced7833b1a495693f4f6be24ce9990807.
+  Artifact11663147028 SHA256 metadata only
+  2b8ce42870686e0fba254f0db73734ff78d0fe21538d856c2d102f1683f7573a;
+  ZIP content not independently downloaded. Acceptance receipt
+  STONEAGE-PARTY-PET-ORIGINAL-INIT-ACCEPTANCE-R1.json.
+  Historical JSS1999/Taiwan-v1 semantics remain unproven.
