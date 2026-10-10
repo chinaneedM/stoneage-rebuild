@@ -10283,3 +10283,44 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   promotion. Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB,
   zero promotions. Next priority full real-header joint Exit/Delete/reuse.
   No premature engine/content transition. Entire previous state preserved.
+
+
+## 2026-10-10 — Populated real-header leader/teammate/owned pet original Exit/Delete REMOTE ACCEPTED (bounded one-case)
+
+- Verified initial main 0d04523dd5948a44fca3ead3d545cfc5865cfccf,
+  tree52bd64ce1e8728752dd2920eff466512ae224ea6; preserved entire
+  original 1,141,747-byte CURRENT-STATE blob c2cc7d284ed3fc226747cb36aa0bebbc320f818d.
+  New accepted tested input d063724a90a3def2528ff73c255db08d625d69ca,
+  tree e01cf5ddfb30f108030f56ad279fab43d35112bc.
+- Action38031083207/job114151987552 SUCCESS all steps;18 Python unit
+  checks. Unmodified pinned Gavin1f90cb6 and Bismarck999ffdf1 original
+  header/source CreateVsEnemy, leader BATTLE_Exit and paired selected
+  owned pet Exit, teammate Exit, ExitAll and DeleteBattle; both O0/O2
+  GNU99 + nonrecovering UBSan and byte-equal per-profile native traces.
+  Individual profile trace SHA256 pinned in acceptance receipt.
+- ACTUAL player0/front0, player1/front1, pet2/rear5 bid5 enter;
+  original leader Exit clears leader and paired pet entry, pet index-1
+  and mode NONE without loss of ownership/HP/liveness. Member Exit clears
+  front1 and returns FINAL. ExitAll + DeleteBattle free the battle;
+  world player objects0/1 remain. One controlled encounter/profile/opt.
+- Previously unreachable ride eligibility and network/status dependencies
+  were exposed by the actual exit path. Narrow bounded adapters:
+  zero ride-license result -1, abort on nonzero license; original Gavin
+  two-parameter vs Bismarck four-parameter ABI preserved; world
+  broadcast and owned-pet K status are typed bounded collectors;
+  status and battle-time observers admit player/teammate/pet where applicable.
+  No original game C/headers/master binaries committed.
+- Artifact11661903625 metadata SHA256 f8f356971b7bb046082971941a7b493989a07893843909c17833f4d3cf2f5106;
+  source-free ZIP **not independently downloaded/verified**. Receipt
+  STONEAGE-PARTY-PET-FULL-EXIT-ACCEPTANCE-R1.json. Scope FACT only for
+  named descendant sources/controlled fixture/host ABI; no original
+  JSS1999/Taiwan-v1 or all-player-profit/history promotion.
+- Highest priority NEXT: repeated original real-header full player/party/
+  pet CreateVsEnemy/ExitAll/Delete/reentry with slot/cursor/world/
+  ownership/HP and reset/delta oracles; include ineligible/dead/zero-HP
+  pet and teammate negatives without weakening true original behavior.
+  Then BATTLE_Init/TaskLoop, broader Finish, victory/profit and natural
+  roster/death/selection state. Real transport/Lua/equipment/watchers,
+  original reclaimer/full-server/bootstrap/Iris conversion/ABI/JSS/Taiwan-v1
+  remain OPEN. Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB,
+  zero new promotions. No premature engine/content transition.

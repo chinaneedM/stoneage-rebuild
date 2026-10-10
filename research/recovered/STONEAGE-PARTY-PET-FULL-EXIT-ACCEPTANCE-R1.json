@@ -1,0 +1,54 @@
+{
+  "gate": "STONEAGE_PARTY_PET_FULL_EXIT_R1",
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "tested_commit": "d063724a90a3def2528ff73c255db08d625d69ca",
+  "tested_tree": "e01cf5ddfb30f108030f56ad279fab43d35112bc",
+  "branch": "agent/party-pet-full-exit-r1-20261010",
+  "workflow_run_id": 38031083207,
+  "workflow_job_id": 114151987552,
+  "workflow_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38031083207",
+  "workflow_conclusion": "success",
+  "python_structural_regression_tests": 18,
+  "profiles": [
+    {
+      "profile": "gavin",
+      "upstream_pin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "trace_sha256": "84ef806477af23a0c2cfc097147fd9164f67af22b9b31c6620ed73db73259df5"
+    },
+    {
+      "profile": "bismarck",
+      "upstream_pin": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "trace_sha256": "581efe421782d968bfa708b6fec609bd11dd54a5d5201bb03debcd4a23149ac0"
+    }
+  ],
+  "optimizations": [
+    "-O0",
+    "-O2"
+  ],
+  "native_sanitizer": "-fsanitize=undefined -fno-sanitize-recover=all",
+  "controlled_fixture": "healthy party leader/player0, teammate/player1, default owned living pet2 in roster slot0, one eligible enemy selection; original actual-header CreateVsEnemy plus original Exit0, Exit1, ExitAll and DeleteBattle",
+  "accepted_behavior": [
+    "front player0 and player1 and selected pet rear index5 occupied on entry",
+    "leader and paired pet battle slots released by original leader Exit",
+    "pet battle mode NONE and index -1 after owner Exit; pet stays owned and live",
+    "member front slot released after own original Exit; battle deleted after ExitAll"
+  ],
+  "bounded_adapters": [
+    "transient original descendant C/headers/data; output collectors, empty original Lua registry, controlled world/clock/network/descriptor",
+    "zero-ride-license predicate adapter: Gavin two-argument versus Bismarck four-argument signature; any nonzero license aborts",
+    "bounded world broadcast collector for existing world objects 0/1",
+    "owned-pet K-status output collector restricts owner0 roster slot0",
+    "original teammate/member/pet typed player-status and battle-time collectors widened to actual actor scope"
+  ],
+  "artifact": {
+    "id": 11661903625,
+    "metadata_sha256": "f8f356971b7bb046082971941a7b493989a07893843909c17833f4d3cf2f5106",
+    "independent_archive_zip_verification": false
+  },
+  "limitations": [
+    "only one controlled encounter per profile per optimization; no multi-cycle stress/arena reuse oracle",
+    "no original real-server transport or observed natural runtime/original reclaimer",
+    "no victory, profit, original Init/TaskLoop, natural invalid/dead/low-HP roster variants or nonempty equipment/Lua/watchers",
+    "no Iris build conversion, original 1999 JSS or Taiwan-v1 binary equivalence; zero pressure/runtime promotions"
+  ]
+}
