@@ -14,8 +14,8 @@ class CommandWaitTests(unittest.TestCase):
  def test_timeout_equality_and_complete_state_oracles(self):
   self.assertIn('waiting_offsets[3]={0,BATTLE_TIME_LIMIT-1,BATTLE_TIME_LIMIT}',WAIT_OBSERVATIONS)
   self.assertIn('memcmp(&expected_waiting_arena,battle,sizeof(expected_waiting_arena))',WAIT_OBSERVATIONS)
-  self.assertIn('expected_waiting_arena.tv_sec=NowTime.tv_sec',WAIT_OBSERVATIONS)
-  self.assertIn('#ifdef _BATTLE_TIME',WAIT_OBSERVATIONS)
+  self.assertIn('SOURCE_PROFILE_WAIT_DELTA',WAIT_OBSERVATIONS)
+  self.assertIn('controlled initial PartTime zero',WAIT_OBSERVATIONS)
   self.assertIn('memcmp(&waiting_actors[actor],&slots[actor],sizeof(Char))',WAIT_OBSERVATIONS)
   self.assertIn('NowTime.tv_sec=waiting_clock',WAIT_OBSERVATIONS)
  def test_original_three_function_graph(self):

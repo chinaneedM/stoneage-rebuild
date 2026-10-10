@@ -49,19 +49,25 @@ WAIT_OBSERVATIONS=r"""
   time_t waiting_clock=NowTime.tv_sec;
   demand(BATTLE_TIME_LIMIT>0,"positive original timeout limit");
   int waiting_offsets[3]={0,BATTLE_TIME_LIMIT-1,BATTLE_TIME_LIMIT};
-  int dispatcher_clock_update=0;
+  demand(battle->PartTime==0,"controlled initial PartTime zero");
+  int parttime_arm=0;
   for(int waiting_tick=0;waiting_tick<3;waiting_tick++){
     NowTime.tv_sec=battle->timer+waiting_offsets[waiting_tick];
     BATTLE expected_waiting_arena=waiting_arena;
-#ifdef _BATTLE_TIME
-    /* Original dispatcher bookkeeping, not Command/turn mutation. */
-    expected_waiting_arena.tv_sec=NowTime.tv_sec;
-    expected_waiting_arena.tv_usec=NowTime.tv_usec;
-    dispatcher_clock_update=1;
-#endif
+    /* SOURCE_PROFILE_WAIT_DELTA */
     demand(BATTLE_Loop()==1,"original BATTLE_Loop BATTLE_Command dispatched");
+    if(memcmp(&expected_waiting_arena,battle,sizeof(expected_waiting_arena))){
+      unsigned char *expected_bytes=(unsigned char *)&expected_waiting_arena;
+      unsigned char *actual_bytes=(unsigned char *)battle;
+      for(size_t byte=0;byte<sizeof(BATTLE);byte++)
+        if(expected_bytes[byte]!=actual_bytes[byte])
+          printf("WAIT_DELTA|tick=%d|byte=%zu|expected=%u|actual=%u\n",
+                  waiting_tick,byte,expected_bytes[byte],actual_bytes[byte]);
+      printf("WAIT_CLOCK|parttime=%d|expected=%d|timer=%d|now=%ld\n",battle->PartTime,expected_waiting_arena.PartTime,battle->timer,(long)NowTime.tv_sec);
+      fflush(stdout);
+    }
     demand(!memcmp(&expected_waiting_arena,battle,sizeof(expected_waiting_arena)),
-           "original no-timeout arena permits only exact dispatcher clock update");
+           "original no-timeout arena permits only exact PartTime arm");
     for(int actor=0;actor<3;actor++)
       demand(!memcmp(&waiting_actors[actor],&slots[actor],sizeof(Char)),
              "original no-timeout Command keeps complete player/pet state");
@@ -81,8 +87,8 @@ WAIT_OBSERVATIONS=r"""
          "Command wait must preserve actor battle indexes");
   demand(Battle_getTotalBattleNum()==previous_enemies,"Command wait battle arena unchanged");
   demand(slots[0].data[CHAR_DEFAULTPET]==0&&CHAR_getCharPet(0,0)==2,"Command wait ownership unchanged");
-  printf("\nREAL_HEADER_COMMAND_WAIT|mode=%d|battle=%d|turn=%d|leader_wait=1|member_wait=1|pet_wait=1|owner=2|retained=1|ticks=3|timeout_equal_wait=1|arena_exact_delta=1|actors_unchanged=1|dispatcher_clock_update=%d\n",
-      mode,battle_at,battle->turn,dispatcher_clock_update);
+  printf("\nREAL_HEADER_COMMAND_WAIT|mode=%d|battle=%d|turn=%d|leader_wait=1|member_wait=1|pet_wait=1|owner=2|retained=1|ticks=3|timeout_equal_wait=1|arena_exact_delta=1|actors_unchanged=1|parttime_arm=%d\n",
+      mode,battle_at,battle->turn,parttime_arm);
 """
 
 def extend_native(profile, source, battle, event, root):
@@ -111,7 +117,9 @@ def extend_native(profile, source, battle, event, root):
         "static int BATTLE_Battling(int battleindex);",
         "int BATTLE_OnlyRescue(int battleindex,int side,int *pOnlyFlg);",
     )
-    native=native.replace(old,"\n".join(prototypes)+"\n"+cmds,1)
+    native=native.replace(old,"\n".join(prototypes)+
+                          "\n#define time audit_time\n"+cmds+
+                          "\n#undef time\n",1)
     # Original Command contains an untaken watcher-output branch. Preserve
     # its source-sized global storage; output adapters still abort on use.
     main_anchor="int main(int argc,char **argv){"
@@ -121,6 +129,18 @@ def extend_native(profile, source, battle, event, root):
                           "char szAllBattleString[BATTLE_STRING_MAX];\n"+
                           "\n".join(prototypes),1)
     body=WAIT_OBSERVATIONS
+    # The pinned inherited wall-clock adapter returns1000 independently of
+    # NowTime. Bismarck arms PartTime even when BeOk is zero; Gavin does not.
+    wait_body=definition(battle,"BATTLE_CommandWait")
+    if profile=="bismarck":
+        if " + 99;" not in wait_body or "return 1000;" not in native:
+            raise ValueError("original zero-command PartTime/fixed wall-clock drift")
+        wait_delta="expected_waiting_arena.PartTime=1099;parttime_arm=1;"
+    else:
+        if " + 99;" in wait_body:
+            raise ValueError("unexpected Gavin zero-command PartTime arm")
+        wait_delta=""
+    body=body.replace("/* SOURCE_PROFILE_WAIT_DELTA */",wait_delta,1)
     native=native.replace(EXIT_ANCHOR,body+EXIT_ANCHOR,1)
     # Need every potential downstream original function in the
     # compiler/linker but never silently execute them: original wait

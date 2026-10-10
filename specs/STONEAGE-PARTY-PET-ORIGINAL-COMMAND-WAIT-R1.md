@@ -18,11 +18,19 @@ original BATTLE_TIME_LIMIT minus one, and exactly BATTLE_TIME_LIMIT.
 Equality must still wait under the unchanged original strict greater-than
 timeout condition. The synthetic NowTime clock is restored before Exit.
 Complete BATTLE snapshots must match an exact expected delta after each
-tick: with original _BATTLE_TIME enabled, dispatcher tv_sec/tv_usec equal
-the current NowTime, while every other byte is preserved. With that feature
-disabled every byte is unchanged. All three Char object snapshots remain
-byte-equal. A strengthened local assertion exposed this Bismarck dispatcher
-clock update; it is retained and asserted, not removed from original code.
+tick: Bismarck CommandWait arms PartTime to fixed synthetic wall-clock1000
+plus99 even with BeOk zero; it stays1099 through these waiting ticks.
+Gavin retains PartTime zero. Every other arena byte and all three Char
+object snapshots remain byte-equal. This is a pinned descendant difference.
+The new original Command body extraction explicitly binds time(NULL) to
+the inherited synthetic audit_time adapter, fixed1000 independently of NowTime;
+these tests cover the separate NowTime timeout equality, not wall-clock
+PartTime expiration. The initial raw-source _BATTLE_TIME interpretation was
+rejected: that block is disabled in the actual preprocessed tested source.
+The predecessor's time macro had already been undefined before these newly
+extracted Command bodies. A local whole-arena comparison exposed that clock
+scope; this gate restores the explicit bounded time macro only around the
+three unchanged original Command functions, then undefines it again.
 No turn increment, no new Init packet sends,
 no actor index/party/pet ownership changes. All original potential
 AI/Battling/rescue/timeout transport dependencies are fail-closed
