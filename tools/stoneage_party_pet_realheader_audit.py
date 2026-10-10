@@ -25,9 +25,9 @@ static void demand(int truth,const char *name){
 int main(int argc,char **argv){
  demand(argc==3&&sizeof(void*)==8&&sizeof(int)==4,"host");
 SETUP
- demand(memInit(),"memory init");
+ fprintf(stderr,"TRACE|MEM_INIT\\n");\n demand(memInit(),"memory init");
  demand(ENEMYTEMP_initEnemy(argv[1])&&ENEMY_initEnemy(argv[2]),"master loaders");
- demand(BATTLE_initBattleArray(3),"battle arena");
+ fprintf(stderr,"TRACE|ARENA\\n");\n demand(BATTLE_initBattleArray(3),"battle arena");
  MAP_map=controlled_map;MAP_idtblsize=1;
  JUMP
  controlled_map[0].id=1;controlled_map[0].xsiz=controlled_map[0].ysiz=2;
@@ -35,7 +35,7 @@ SETUP
  initCharCounter[0]=(INITCHARCOUNTER){0,0,2};
  initCharCounter[1]=(INITCHARCOUNTER){2,2,4};
  initCharCounter[2]=(INITCHARCOUNTER){4,4,7};
- demand(initObjectArray(2),"world objects");
+ fprintf(stderr,"TRACE|WORLD_OBJECTS\\n");\n demand(initObjectArray(2),"world objects");
  for(int i=0;i<2;i++){
   int c,o;demand(CHAR_createCharacter(CHAR_TYPEPLAYER,1,1,1,0,&c,&o,1)&&c==i&&o==i,"world players");
   slots[i].data[CHAR_VITAL]=10000;
@@ -78,7 +78,7 @@ SETUP
  pet.workint[CHAR_WORKBATTLEINDEX]=-1;
  pet.workint[CHAR_WORKGETEXP]=777;
  for(int i=0;i<CHAR_MAXPETHAVE;i++)pet.unionTable.indexOfPet[i]=-1;
- int petIndex=CHAR_initCharOneArray(&pet);
+ fprintf(stderr,"TRACE|PET_ALLOC\\n");\n int petIndex=CHAR_initCharOneArray(&pet);
  demand(petIndex==2,"real pet allocator index");
  slots[0].unionTable.indexOfPet[0]=petIndex;
  slots[0].data[CHAR_DEFAULTPET]=0;
@@ -104,7 +104,7 @@ SETUP
   for(int k=0;k<3;k++)encounter_table[k]=array;
   encounter_table[1]=-1;
   battle_at=BATTLE_searchCnt%3;
-  int result=BATTLE_CreateVsEnemy(0,0,-1);
+  fprintf(stderr,"TRACE|CREATE\\n");\n int result=BATTLE_CreateVsEnemy(0,0,-1);\n fprintf(stderr,"TRACE|CREATE_RETURN|%d\\n",result);
   if(result)fprintf(stderr,"CREATE_RETURN|%d\n",result);
   demand(result==0,"real battle create");
   BATTLE *battle=&BattleArray[battle_at];
@@ -193,7 +193,7 @@ def main():
                 compile_probe(profile,roots[profile],csource,exe,opt,[n for n in pins["profiles"][profile]["unreachable_traps"] if n!="BATTLE_Index2No"])
                 run=subprocess.run([str(exe),*map(str,paths)],input=f"{chosen} 0\n",capture_output=True,text=True)
                 if run.returncode or run.stderr:
-                    raise ValueError("real-header "+profile+" "+opt+" "+run.stderr[-5000:]+" stdout "+run.stdout[-2000:])
+                    raise ValueError("real-header "+profile+" "+opt+" "+run.stderr[-5000:]+" code="+str(run.returncode)+" stdout "+run.stdout[-2000:])
                 if "REAL_HEADER_ENTRY|" not in run.stdout:raise ValueError("no real admission")
                 out.append(run.stdout)
             if out[0]!=out[1]:raise ValueError("real-header optimization disagreement")
