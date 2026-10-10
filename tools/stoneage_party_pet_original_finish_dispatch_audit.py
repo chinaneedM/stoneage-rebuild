@@ -46,7 +46,7 @@ def finish_native(profile,source,battle,event,root):
     native=native.replace(previous,finish_observations(profile).replace(
         "ENTRY_FIELD","char_index" if profile=="bismarck" else "charaindex"),1)
     bodies={}
-    for n in ("BATTLE_Finish","BATTLE_GetProfit","BATTLE_GetExpGold"):
+    for n in ("BATTLE_Finish","BATTLE_GetProfit","BATTLE_GetExpGold","BATTLE_GetExp"):
         bodies[n]=attack.definition(battle,n)
     anchor="int main(int argc,char **argv){"
     for n,body in bodies.items():
