@@ -1,0 +1,76 @@
+{
+  "schema": "stoneage-battle-pool-validation-r1",
+  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "startup_main": "da81b7ef6b461711f706068f24b43a9a9f8e4565",
+  "startup_tree": "d52ad2305815e8daac6445c980c0f51a68824c51",
+  "executed_profiles": [
+    "gavin",
+    "bismarck"
+  ],
+  "rollback_cycles": 24528,
+  "enemy_Finish_cycles": 24512,
+  "preserved_enemy_births": 85836,
+  "full_actor_work_stage_comparisons": 134856,
+  "successful_enemy_Exits": 85836,
+  "semantic_mutations_rejected": 10,
+  "additional_mutation_cycles": 10,
+  "regression_checks": 174,
+  "optimizations": [
+    "O0",
+    "O2"
+  ],
+  "dialect": "GNU99 with -fgnu89-inline",
+  "sanitizer": "undefined, nonrecovering",
+  "host_domain": "LP64 pointer8 int4; actual Char/Object/BATTLE/BATTLE_ENTRY/MAP headers; positive controlled arena/pool/partitions",
+  "actual_original_BATTLE_initBattleArray_and_allocateMemory_executed": true,
+  "actual_BATTLE_CreateVsEnemy_failed_array_and_full_enemy_partition_cleanup_executed": true,
+  "actual_enemy_only_Finish_and_no_profit_guards_executed": true,
+  "successful_player_party_CreateVsEnemy_executed": false,
+  "player_pet_profit_distribution_executed": false,
+  "battle_Init_TaskLoop_executed": false,
+  "watcher_linked_Finish_executed": false,
+  "original_freeMemory_executed": false,
+  "full_work_differential_oracle_from_captured_birth": true,
+  "all_birth_fields_have_independent_oracle": false,
+  "all_object_bytes_have_independent_oracle": false,
+  "complete_constructor_BATTLE_differential_bytes_from_initialized_baseline_checked": true,
+  "constructor_profile_difference": "Gavin retains unlisted fields; Bismarck zeroes entire BATTLE",
+  "natural_level_experience_boundary": "Original own-level RNG, 12 selected records per profile above 200-entry experience table; original guard returns zero when ENEMY_EXP=-1",
+  "adapters": [
+    "encounter table/NULL selector",
+    "field0 predicate",
+    "descriptor-1",
+    "observational birth wrapper with controlled per-birth RNG restart",
+    "inherited clock/world/walk/watch/detached-node collectors"
+  ],
+  "report_sha256": "421c5492f6d9352b5be263edd15eb93240c1d5499ec7d5f594c9b2c489c838f7",
+  "counts_exclude": "four initial prime/bootstrap/no-enemy sequences and ten additional mutation cycles",
+  "prior_complete_reports": [
+    "ENEMY-ENTRY-EXIT",
+    "OBJECT-OWNERSHIP",
+    "ENEMY-LOADER",
+    "ENEMY-CREATION",
+    "DEFAULT-TEMPLATE",
+    "CHARACTER-REUSE",
+    "EXIT-WORLD-ITEM",
+    "EXIT-DESTROY-TICKET",
+    "WATCH-CLEANUP",
+    "EXIT-LIFETIME-WATCH",
+    "BECOMEPIG-EXIT-MODES"
+  ],
+  "open": [
+    "successful player/party CreateVsEnemy and actual player/pet entry/Exit",
+    "BATTLE_Init and TaskLoop",
+    "nonempty watcher links/items/callbacks/equipment",
+    "original reclaimer/full server bootstrap",
+    "Iris Windows encoding",
+    "original ABI/build/JSS/Taiwan-v1 and remaining actor/watcher/typed631/635"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  }
+}

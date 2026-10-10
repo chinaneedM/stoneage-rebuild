@@ -10001,3 +10001,42 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   original reclaimer/bootstrap, Iris conversion, nonempty callbacks/equipment,
   actor/watcher/typed631/635 and original ABI/build/JSS/Taiwan-v1 remain OPEN.
   No engine/content transition. Protocol section10 accepted integration applies.
+
+
+## 2026-10-10 — Actual battle arena/rollback/enemy-only Finish LOCAL PASS; remote PENDING
+
+- Fresh main da81b7ef6b461711f706068f24b43a9a9f8e4565/tree
+  d52ad2305815e8daac6445c980c0f51a68824c51, latest Action38023653829 success.
+  Remote branches/HEAD/tree/latest commits/Actions and exact-tree startup files
+  re-read; continued recorded higher-level creation/battle-array/Finish priority.
+- Original BATTLE_initBattleArray/memInit/allocateMemory allocate/zero3 actual
+  BATTLE structures; original search/create/delete counters/cursor/empty entries
+  execute. Full battle pool拒绝, invalid caller and NULL encounter guards checked.
+  Initialized constructor bytes differential oracle: Gavin retains unlisted
+  seeded fields; Bismarck zeroes the whole BATTLE. No profile flattening.
+- Complete BATTLE_CreateVsEnemy executes controlled mode0 table/field0/descriptor-1
+  with world player0 caller; zero to3 valid births followed by invalid array, plus
+  four-valid-enemy table against3-slot character partition. Failure tail runs
+  original ExitAll/DeleteBattle. Successful player/party entry remains OPEN/trapped.
+- Complete Finish/GetProfit/GetExpGold execute enemy-only/no-profit path, empty
+  items/watch links/callbacks, actual Entry/Exit/destruction with real headers.
+ 24,528 rollback+24,512 Finish cycles,85,836 births/Exits,134,856 complete work stages;
+  O0/O2 GNU99 -fgnu89-inline/nonrecovering UBSan.10 safe mutations rejected;
+ 174 unit regressions. Eleven predecessor report cmp gates are required unchanged.
+- All1,532 selected records/RNG4 use original baselevel0/own-level ranges;12 records
+  per profile exceed200-entry experience table (implicit EXP original guard0).
+  Original character cursor/slots4/5/6 and birth sequence checked, never reset;
+  captured birth/full work differential, not independent all-birth-field oracle.
+  World0/1 named objects/map links unchanged; original reclaimer unexecuted.
+- Spec/source/validation/native: STONEAGE-BATTLE-POOL-R1. Native report SHA256
+  421c5492f6d9352b5be263edd15eb93240c1d5499ec7d5f594c9b2c489c838f7.
+  Controlled encounter/field/fd/birth trace/per-birth RNG/clock/world adapters,
+  original C/headers/data transient. Counts exclude4 initial prime/guard sequences
+  and10 mutation cycles. Remote PENDING, no successful player/party creation or
+  player/pet profit/Init/TaskLoop/linked watcher/nonempty item/callback claim.
+- Pressure2486=2465 closed capability+18 OPEN+3 historical UB;0 promotions.
+  Next exact-input Actions acceptance, then successful player/party CreateVsEnemy
+  with actual player/pet Entry/Exit; original Init/TaskLoop and broader Finish.
+  Original reclaimer/full server bootstrap/Iris conversion/ABI/build/JSS/Taiwan-v1,
+  nonempty callbacks/equipment and actor/watcher/typed631/635 remain OPEN.
+  No engine/content transition. Protocol section10 ongoing publication applies.

@@ -2033,3 +2033,17 @@ STONEAGE-ENEMY-LOADER-ACCEPTANCE-R1.json; earlier histories preserved.
 - FACT bounded descendant/profile/input/storage/adapters only. No whole battle
   lifecycle or original released ABI/JSS/Taiwan-v1 conclusion. Higher-level
   creation/bootstrap/Finish and other actors remain OPEN;zero runtime promotions.
+
+
+## 2026-10-10 — Actual battle arena/partial creation cleanup/enemy Finish local evidence
+
+- FACT bounded pinned Gavin/Bismarck real-header LP64 original arena bootstrap,
+  task cursor/full-pool refusal, creation/deletion and failed CreateVsEnemy tail.
+  Gavin retains unlisted constructor fields; Bismarck clears the whole structure.
+- Enemy-only complete Finish calls original no-profit guards/Exit/deletion.
+  Actual player0 is creation caller but no player enters battle; successful party
+  entry, player profit and original battle Init/TaskLoop remain OPEN.
+-24,528 rollback/24,512 Finish cycles,85,836 births,174 regressions/10 mutations.
+  Original own-level ranges include experience-table bounds guard, no input edits.
+  Explicit encounter/field/fd/RNG/clock/world adapters; original reclaimer OPEN.
+  Source/layout/derived receipts, remote PENDING;zero runtime promotions.

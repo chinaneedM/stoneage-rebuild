@@ -5152,3 +5152,21 @@ sources/data remain transient; earlier records preserved.
   adapters unchanged. Accepted ordinary enemy composition; higher-level battle
   creation/bootstrap/Finish, other actors, original reclamation/Iris conversion/
   original ABI/build/JSS/Taiwan-v1 remain OPEN;zero runtime promotions.
+
+
+## 2026-10-10 — Battle pool/rollback/enemy Finish derived source domains
+
+- STONEAGE-BATTLE-POOL-SOURCE-DOMAINS-R1.json nests accepted actual Entry/Exit
+  identity, pins12 complete original battle functions, private counters, RS_LIST,
+  exact file-local excluded signatures and transitive original headers.
+  Source roots retain existing Gavin/Bismarck pins; same-pin Gavin master specimen
+  only, Bismarck cross-profile bytes; Iris Windows conversion OPEN with no adapter.
+- Independent tools.stoneage_battle_pool_audit/test/workflow/spec plus validation/
+  native receipts. Report SHA256421c5492f6d9352b5be263edd15eb93240c1d5499ec7d5f594c9b2c489c838f7.
+  Original C/headers/master files transient; controlled encounter/field/fd/birth
+  trace/RNG/clock/inherited world collectors disclosed.174 regressions/10 safe
+  mutations;24,528 rollback/24,512 enemy Finish cycles/85,836 births.
+- Full original creation/Finish bodies compiled, limited executed paths only;
+  successful player/party creation and player/pet profit remain OPEN/trapped.
+  Arena bootstrap is not full server bootstrap; original reclaimer/ABI/JSS/
+  Taiwan-v1 OPEN. Remote PENDING,0 promotions;11 predecessor report gates required.
