@@ -174,8 +174,7 @@ def main():
         # Pet placement requires the ACTUAL original BATTLE_Index2No body;
         # the accepted solo composition never reached this function.
         extra=definition(pp_file(profile,roots[profile],LAYOUTS[profile]/'battle/battle.c'),'BATTLE_Index2No')
-        synthetic=definition(source,'BATTLE_Index2No')
-        source=source.replace(synthetic,extra,1)
+        source+='\n'+extra+'\n'
         sample=json.loads((Path(__file__).resolve().parents[1]/"research/recovered/STONEAGE-PLAYER-BATTLE-VALIDATION-R1.json").read_text())
         # Eligible record selection is selected by same accepted loader oracle.
         from tools.stoneage_enemy_loader_audit import loaded_oracle,eligible
@@ -191,7 +190,7 @@ def main():
             out=[]
             for opt in ("-O0","-O2"):
                 exe=Path(d)/("probe"+opt)
-                compile_probe(profile,roots[profile],csource,exe,opt,pins["profiles"][profile]["unreachable_traps"])
+                compile_probe(profile,roots[profile],csource,exe,opt,[n for n in pins["profiles"][profile]["unreachable_traps"] if n!="BATTLE_Index2No"])
                 run=subprocess.run([str(exe),*map(str,paths)],input=f"{chosen} 0\n",capture_output=True,text=True)
                 if run.returncode or run.stderr:
                     raise ValueError("real-header "+profile+" "+opt+" "+run.stderr[-5000:]+" stdout "+run.stdout[-2000:])
