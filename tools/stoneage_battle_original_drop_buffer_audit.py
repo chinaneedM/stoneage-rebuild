@@ -54,7 +54,7 @@ MORE=r"""
    expected_arena.Side[0].Entry[0].getitem[0]=3;
    expected_draws=1;
   }else if(scenario==1){
-   expected_pool[3].use=0;expected_draws=2;
+   expected_pool[3].use=0;expected_pool[3].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX]=-1;expected_draws=2;
   }else{
    expected_arena.Side[0].Entry[0].getitem[1]=3;
    expected_pool[241].use=0;expected_draws=3;
