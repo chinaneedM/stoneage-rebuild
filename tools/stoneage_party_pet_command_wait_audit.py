@@ -80,12 +80,28 @@ def extend_native(profile, source, battle, event, root):
     # Need every potential downstream original function in the
     # compiler/linker but never silently execute them: original wait
     # branch returns prior to AI/Battling/finish or timeout network path.
-    found=[]
-    for name in NEW_UNREACHED:
-        if not re.search(r"(?m)^[^;\n{}]*\b"+re.escape(name)+r"\s*\([^;{}]*\)\s*\{",native):
-            found.append(name)
-    if found:
-        native+= "\n" + trap_definitions(profile,root,native,found)
+    # Original true C signatures from pinned battle_ai.h, battle.h,
+    # battle_command.h, char.h and the private battle.c static declaration.
+    # Do not infer signatures from function-call expressions.
+    bounded={
+        "BATTLE_ai_all": "int BATTLE_ai_all(int battleindex,int side,int turn)",
+        "BATTLE_Battling": "static int BATTLE_Battling(int battleindex)",
+        "BATTLE_OnlyRescue": "int BATTLE_OnlyRescue(int battleindex,int side,int *pOnlyFlg)",
+        "BATTLE_MakeCharaString": "BOOL BATTLE_MakeCharaString(int battleindex,char *pszCommand,int size)",
+        "BATTLE_BpSendToWatch": "void BATTLE_BpSendToWatch(BATTLE *pBattle,char *pszBcString)",
+        "CHAR_DischargePartyNoMsg": "BOOL CHAR_DischargePartyNoMsg(int char_index)",
+        "BATTLE_CommandSend": "BOOL BATTLE_CommandSend(int char_index,char *pszCommand)",
+        "_BATTLE_CommandSend": "BOOL _BATTLE_CommandSend(int char_index,char *pszCommand,char *file,int line)",
+    }
+    required=[n for n in NEW_UNREACHED if n!="BATTLE_CommandSend"]+[
+        "_BATTLE_CommandSend" if profile=="bismarck" else "BATTLE_CommandSend"
+    ]
+    for name in required:
+        if re.search(r"(?m)^[^;\n{}]*\b"+re.escape(name)+r"\s*\([^;{}]*\)\s*\{",native):
+            continue
+        sig=bounded[name]
+        native+="\n"+sig+'{fputs("UNREACHED_ORIGINAL_COMMAND|'+name+'\\n",stderr);abort();'+(
+            "" if sig.startswith("void ") else "return 0;")+'}'+"\n"
     return native,has_lua
 
 def main():
