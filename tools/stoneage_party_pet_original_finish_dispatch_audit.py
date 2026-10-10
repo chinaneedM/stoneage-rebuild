@@ -15,7 +15,7 @@ FINISH_OBSERVATION = r"""
   demand(final_arena&&final_mode==BATTLE_MODE_FINISH,"original lethal finish state before next Loop");
   demand(final_winner==EXPECTED_WIN_SIDE,"original pre-Finish winning side");
   int finish_loop_ret=BATTLE_Loop();
-  printf("ORIGINAL_FINISH_NEXT_LOOP|arena=%d|ret=%d|use=%d|mode=%d|total_before=%d|total_after=%d|winner_before=%d|actor0_mode=%d|actor1_mode=%d\\n",
+  printf("ORIGINAL_FINISH_NEXT_LOOP|arena=%d|ret=%d|use=%d|mode=%d|total_before=%d|total_after=%d|winner_before=%d|actor0_mode=%d|actor1_mode=%d\n",
     battle_at,finish_loop_ret,BattleArray[battle_at].use,BattleArray[battle_at].mode,
     final_total,Total_BattleNum,final_winner,
     slots[0].workint[CHAR_WORKBATTLEMODE],slots[1].workint[CHAR_WORKBATTLEMODE]);
@@ -23,7 +23,7 @@ FINISH_OBSERVATION = r"""
   demand(BattleArray[battle_at].use==0,"original terminal arena released");
   demand(BattleArray[battle_at].mode==BATTLE_MODE_NONE,"original terminal arena mode NONE");
   demand(Total_BattleNum==final_total-1,"original terminal arena counter decremented");
-  printf("REAL_HEADER_FINISH_DISPATCH|mode=%d|battle=%d|original_finish_loop=1|released=1\\n",mode,battle_at);
+  printf("REAL_HEADER_FINISH_DISPATCH|mode=%d|battle=%d|original_finish_loop=1|released=1\n",mode,battle_at);
   /* Only test-fixture normalization; no gameplay code is modified. The
      inherited accepted Exit control then performs its own teardown. */
   Total_BattleNum=final_total;
@@ -53,8 +53,8 @@ def finish_native(profile,source,battle,event,root):
         except ValueError:pass
         else:native=native.replace(prior,"",1)
         # Add exact original signature declaration for potentially earlier use.
-        native=native.replace(anchor,body[:body.index("{")].strip()+";\\n"+anchor,1)
-    native=native.replace(anchor,"\\n".join(bodies.values())+"\\n"+anchor,1)
+        native=native.replace(anchor,body[:body.index("{")].strip()+";\n"+anchor,1)
+    native=native.replace(anchor,"\n".join(bodies.values())+"\n"+anchor,1)
     return native,has_lua
 
 def main():
