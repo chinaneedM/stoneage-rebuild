@@ -1,0 +1,47 @@
+name: Validate StoneAge original party pet second Loop Finish payout
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-party-pet-original-finish-dispatch.yml"
+      - "tools/stoneage_party_pet_original_finish_dispatch_audit.py"
+      - "tests/test_stoneage_party_pet_original_finish_dispatch.py"
+permissions:
+  contents: read
+jobs:
+  original-finish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Original Finish source mutation and physical regressions
+        run: python -m unittest -v tests.test_stoneage_party_pet_original_finish_dispatch tests.test_stoneage_party_pet_original_exp tests.test_stoneage_party_pet_original_lethal_loop tests.test_stoneage_party_pet_original_lethal_direct tests.test_stoneage_party_pet_original_attack
+      - name: Recover pinned sources transiently
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_party_pet_original_attack_audit import PINNED
+          repos={"gavin":"gavinlinasd/StoneAge","iris":"iriselia/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for p,sha in PINNED.items():
+              d=Path("/tmp/stoneage-party-finish-r3")/p
+              subprocess.run(["git","init",str(d)],check=True)
+              subprocess.run(["git","-C",str(d),"remote","add","origin","https://github.com/"+repos[p]+".git"],check=True)
+              subprocess.run(["git","-C",str(d),"fetch","--depth","1","origin",sha],check=True)
+              subprocess.run(["git","-C",str(d),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Native original second Loop Finish payout and complete state oracles
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_original_finish_dispatch_audit --gavin-dir /tmp/stoneage-party-finish-r3/gavin --iris-dir /tmp/stoneage-party-finish-r3/iris --bismarck-dir /tmp/stoneage-party-finish-r3/bismarck > /tmp/stoneage-party-finish-r3.txt
+          cat /tmp/stoneage-party-finish-r3.txt
+          grep -Fx 'RESOLUTION|ORIGINAL_REAL_HEADER_PARTY_PET_FINISH_DISPATCH_BOUNDED_PASS' /tmp/stoneage-party-finish-r3.txt
+          test "$(grep -c '^ACTUAL|.*REAL_HEADER_FINISH_DISPATCH|' /tmp/stoneage-party-finish-r3.txt)" -eq 8
+      - name: Upload only derived observations
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-party-original-finish-r3
+          path: /tmp/stoneage-party-finish-r3.txt
