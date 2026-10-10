@@ -2234,3 +2234,16 @@ fame. Full actor/arena state and automatic release verified O0/O2 UBSan. EXP was
 seeded and Gavin threshold table synthetic; complete settlement party roster
 explicitly prepared. Not natural progression, pet growth/items/gold/network or
 first-release historical equivalence. Zero historical/capability promotions.
+
+
+## 2026-10-10 — Later-descendant positive pet growth witness, bounded
+
+FACT only for pinned Gavin1f90cb6/Bismarck999ffdf1 fixture: Action38065547933
+executes16 original second-Loop Finish encounters,12 positive pet growth/4
+nonupgrade controls, exact original allocation/rank/random sequence effects,
+primary/derived stats and variableAI caps, complete actor/arena release. Bismarck
+pet residual fame and owner's growth fame are separate actual effects; Gavin
+synthetic constant thresholds yield zero growth feedpoint. Explicit rawPETexp1,
+seeded EXP and controlled rand, not natural reward/RNG or first-release fact.
+Original Loop's one discarded draw kept distinct. Zero historical/capability
+promotions, positive item ownership and broader pet/version behavior still OPEN.

@@ -11108,3 +11108,66 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   actor/arena oracles. Close original PetLevelUp/CheckPetDoLimitlevel dependencies
   without gameplay stubs; retain player-level and nonupgrade controls. Then
   positive reward item ownership/empty-inventory/full-inventory controls.
+
+
+## 2026-10-10 — Original positive PET EXP and growth REMOTE ACCEPTED (bounded)
+
+- Fresh main0e9f9537ebfc647fd616e5d243f5d50353650776, tree95381be95b9329ce4ff33f31e59c0bb0f44a0191.
+  Entire preceding CURRENT-STATE blob7c8e4f3e4b04d7a42085939cd76f79e38193b9c4,
+  1197578 bytes preserved verbatim. Older narrower witnesses remain intact.
+- Branch agent/party-pet-original-pet-growth-r1-20261010, exact tested input
+  5a6f8975b97d4cda9402ae0585fb1b4318bf844f, tree9165f3fb0532710007c5f27323ca0fa4115a88bf.
+  Action38065547933/job114252321832 SUCCESS,10 steps/40 checks. Original
+  Gavin1f90cb6/Bismarck999ffdf1 headers, GNU99 O0/O2 nonrecovering UBSan;
+  per-profile complete stdout bytes equal.16 actual second Loop Finish encounters,
+  12 positive pet-growth/4 one-below controls,16 aggregate pet levels. Preceding
+  player-level/admission/input/AI/guard/attack/lethal controls retained.
+- Post-lethal fixture explicitly prepares pet raw EXP1 and seeded persistent EXP;
+  this is NOT natural pet reward allocation. PetID1/LIMITLEVEL0, packed allocation
+  bytes20/30/40/50, primary VITAL/STR/TOUGH/DEX10000, initial LV100. Gavin payout1
+  and synthetic10000000 thresholds; Bismarck payout1000000 and complete original
+  table increments1345723/1442322. Levels1/1/2/0, residual0/17/23/one-below.
+- Unchanged original PetLevelUp/CheckPetDoLimitlevel/PetAddVariableAi execute.
+  Controlled rank0/min450,rank5/max600,invalid6->rank0 twice,nonupgrade: exact
+  growth103/148/189/234;138/198/252/312;206/296/378/468;0/0/0/0. Independently
+  rational-checked truncation and combat stats. Derived attack126/127/128/125,
+  defense127/128/129/125,quick102/103/104/100,maxHP709/713/719/700; primary HP
+  unchanged. Variable AI9800/1000/9500/1000->10000/1500/10000/1000, +500 perlevel,
+  upper cap10000, fixedAI100. Whole seven-actor and complete arena byte oracles PASS.
+- Original Loop discards one rand at entry; separate from exactly11 growth draws
+  per level (ten bins+rank factor).176 growth draws+16 dedicated second-Loop draws.
+  Bins3/3/2/2 from exact controlled rand stream; nonupgrade0 growth draws.
+  Earlier overflow assumption was rejected; original gameplay bodies unchanged.
+- Bismarck original HandleExp credits leveling pet fame only with positive residual,
+  final pet fame11/78/150/11. Original PetLevelUp credits OWNER62/62/134/0 on top
+  of prior player fame effects, final owner69/136/280/7. Both two-level growth
+  calls see final petLV102 and use previous threshold/20000=67. Gavin constant
+  synthetic table gives0 growth feedpoint; owner7/pet11 and momentum9/13 remain.
+  Original Gavin earnFame included but untaken; no general Gavin fame claim.
+  Empty family flag0 excludes clan/account callbacks; exact original family/
+  account headers and complete empty storage supplied, untaken calls remain traps.
+- Original RS owner positive packet includes pet0 row: Gavin
+  -2|1|1,0|1|1,,,,|||; Bismarck -2|1|4c92,0|1|4c92,,,,|||; nonupgrade both flags0.
+  Member packet unchanged. Generic K0 status1 only on positive pet upgrades,
+  zero on positive payout/nonupgrade. Earlier accepted exact player/party/world
+  output controls and original Exit pet status retained; descriptor7 is synthetic.
+- Actual original automatic Exit/Delete releases enemy/arena, total1->0; party,
+  pet owner/default/world objects retained. No terminal restoration or repeated
+  manual Exit/Delete. Full actor/arena expectations admit only declared growth,
+  profile fame, accepted player levels/EXP and Exit effects; real arena reuse.
+- Artifact11675067390 independently downloaded ZIP6071 bytes SHA256
+  bbddd1e2754835de9b56e2e2157a1685883cfbb110ac6988de24296df7b77b4f; report22874 bytes SHA256
+  3f98c0954cdc8dcbcb98c0322d3a008e57e58109f28b8a129dd4f6e457c754dd equals local derived bytes.
+  Spec/source manifest/receipt STONEAGE-PARTY-PET-ORIGINAL-PET-GROWTH-*R1;
+  no original source/assets committed. Pressure2486=2465 closed+18 OPEN+3
+  historical UB, zero promotions, no modern-engine phase transition.
+- OPEN: natural pet reward allocation/RNG/config, special401/718 ownership and
+  limit penalties, negative variableAI cap, equipment/transmigration/level limits,
+  positive items/gold, watchers/callbacks/real network/Lua/server ABI and original
+  JSS1999/Taiwan-v1 executable historical equivalence.
+- Highest NEXT: actual positive reward item ownership through original second
+  Loop/Finish/GetExpGold, exact recipient/inventory slot and entire original
+  item/actor/arena state. Add empty/full inventory and rejected-owner/release
+  controls; reuse only source-accurate typed item accessors/allocators, retaining
+  player/pet upgrade and nonupgrade witnesses. Existing exit-world-item source
+  domain is a dependency lead, not a substitute for real-header reward execution.

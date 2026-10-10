@@ -1,0 +1,503 @@
+{
+  "gate": "STONEAGE_PARTY_PET_ORIGINAL_PET_EXP_GROWTH_R1",
+  "status": "REMOTE_ACCEPTED_BOUNDED_PET_GROWTH",
+  "acceptance_date_Asia_Shanghai": "2026-10-10",
+  "baseline_main": "0e9f9537ebfc647fd616e5d243f5d50353650776",
+  "baseline_tree": "95381be95b9329ce4ff33f31e59c0bb0f44a0191",
+  "prior_state_blob": "7c8e4f3e4b04d7a42085939cd76f79e38193b9c4",
+  "prior_state_bytes": 1197578,
+  "branch": "agent/party-pet-original-pet-growth-r1-20261010",
+  "tested_commit": "5a6f8975b97d4cda9402ae0585fb1b4318bf844f",
+  "tested_tree": "9165f3fb0532710007c5f27323ca0fa4115a88bf",
+  "github_actions": {
+    "run_id": 38065547933,
+    "job_id": 114252321832,
+    "conclusion": "success",
+    "successful_steps": 10,
+    "tests_passed": 40,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38065547933"
+  },
+  "native": {
+    "profiles": [
+      "gavin1f90cb6",
+      "bismarck999ffdf1"
+    ],
+    "original_headers": true,
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_ubsan": true,
+    "optimization_trace_byte_identity": true,
+    "native_encounters": 16,
+    "actual_second_loop_finish_dispatches": 16,
+    "positive_pet_growth_encounters": 12,
+    "one_below_threshold_controls": 4,
+    "aggregate_pet_level_increments": 16,
+    "growth_rand_draws": 176,
+    "second_loop_discarded_rand_draws": 16,
+    "reward_sends": 32,
+    "whole_seven_actor_oracle": true,
+    "whole_arena_oracle": true,
+    "natural_automatic_exit_delete": true,
+    "manual_exit_repetition": false,
+    "terminal_resurrection": false,
+    "trace_sha256": {
+      "gavin": "1b9d5952b29c37d9f0239f73aed2f91fbf846b23b813962e86262e7b2a2bb6fe",
+      "bismarck": "9fb7821bff3f5a6d0cb3295db265dbe67314b890b6e7c681a325ea9023be00e9"
+    }
+  },
+  "original_function_sha256": {
+    "gavin": {
+      "BATTLE_Finish": "e440d90b269bcb0620dcd96fda4758a0720bf367f14936f035ab9bbc787006e4",
+      "BATTLE_GetProfit": "35edd4961868b6a4d50cade0c6141b1659cb28ba914e8ccd93c4a9347bcc855d",
+      "BATTLE_GetExpGold": "7e8dcab1862b6b845e529630f807d7f91e29a7b337f2ea486d9b01a88397822b",
+      "BATTLE_GetExp": "52351c2077b18737c59e0c28e308627b17a4a2ff10340c1c997e6e88ea830759",
+      "CHAR_AddMaxExp": "b5f4a8f8baac8027f17e7f008373e03f8d675108440caf57276157eaeda49496",
+      "getBattleexp": "c1e4dcb4474f4c18f667ad3347062ab6e4ba74b2f46a4726fbe9b7c17aa9b0db",
+      "CHAR_LevelUpCheck": "879135c53065745ae92c2b7a1df8634bb77abe46777f3077345e31c5ee82a718",
+      "CHAR_HandleExp": "89c5dd81594d549097c81115097f05b3cda4d5664b701fb6f0e083f17487ae93",
+      "CHAR_GetLevelExp": "e3b8700d4622e7ddbc2aed3eba75a49c4c0094d25b1a54cb04783eca80f04dfa",
+      "getBattleDebugMsg": "0c03f38f919109529331a56881a9f77b0ccec5003bca772bacd10bca0cb3f699",
+      "getMaxLevel": "563afd161c1ad374cc1a43704b78c39210b1df34bd15a25a9c1e8902307ffb2d",
+      "getYBLevel": "946df17898d8b248f388edd88bb52f93627eed0810f549f6bb552473912a8da8",
+      "getNeedLevelUpTbls": "70cac1dce90ee2cc29dc8b94e12055a971b5aee184f1d5608e32636d34075c4a",
+      "getChartrans": "db14540206e76abb5d09623feca29f8674d8dad91e3e444b33d55d950d49a6fa",
+      "getPettrans": "d2570692ca45ee0acc8a4499433e36b170ec6c21b480c5b437a4105b60c235f1",
+      "cnv10to62": "c3927f4be52d19bd26719ef16a179ed3158c69b4cac59a101198c63445f4b154",
+      "CHAR_PartyUpdate": "90077e61b0e686c21a8019c250ecf275fc67c6a941bbc7bfb84d0b9adca1558e",
+      "CHAR_PetLevelUp": "db00af09ac36b9c05d79c989079b48dce59fe0bd6335a6889a7facb704d7dc3c",
+      "CHAR_CheckPetDoLimitlevel": "470b5d7822759b294a93cf640716e38a3f046ef124b1b215a39497139708d079",
+      "CHAR_PetAddVariableAi": "eb30b4b9eb575d78aca60a72e92ba5bf6e5ec1e2dcd5e35b04f8cc6c7d23c908",
+      "CHAR_earnFame": "711a6bc1a716073fc8463a93a95982368f7245c380321a59942259942c5fb063"
+    },
+    "bismarck": {
+      "BATTLE_Finish": "b369c2af159f182ed7e918ec083f73ae76ade2e3e3f907ae7525306f5ec035b8",
+      "BATTLE_GetProfit": "5682714a9f08532fc7c492b854f09a8304a8f5fc0fe4c661a0a28bceb7f10e94",
+      "BATTLE_GetExpGold": "acf3c59f6475634b5d2354e10c7867676ef47a171c0e4fe60b5d67612508db36",
+      "BATTLE_GetExp": "f0c6d9ae3f32865adb0565f30749ebb3f37104d262a66e3e076acf221074d4a1",
+      "CHAR_AddMaxExp": "d19cf07f032e08ed2d2cd16e55252208abd89a3c137c0d77068b781ea1c07483",
+      "getBattleexp": "ed774e7ad7ff7fa3048ffd6005bfe5ae668c1ad660d2a10161c234eb6b172bcc",
+      "CHAR_GetLevelExp": "2278f525f8c17b25116f415c2ab2462d98fa2a3162f97d693e68148f79940954",
+      "CHAR_LevelUpCheck": "1052825a5a026101442c4be5aed71ee67f9a33e684aee481061af612b12e577c",
+      "CHAR_HandleExp": "d9800d6e26b81fd159924519a03b87e723b6cec71192d6e69e44c1a0bbb0f4f0",
+      "getBattleDebugMsg": "1ec345cc41e71e3f6291c3a3afdc5b74a0f91a86acb32caf8e99257c61b24f98",
+      "cnv10to62": "c108383561f7ed8a1f414423f2a4093ad2535a94729c2b907560546d7bc906d0",
+      "CHAR_PartyUpdate": "9bac1d6fcec7f201d89b4f94505ad95889d8ae5906b5f900160ed9471936e827",
+      "getPartyNum": "ce9b033824165611c4a9aaca3ccce582f22f76f4b6bbcd8c404f0569ef8ca0db",
+      "CHAR_earnFame": "63ad87d6eb8093ec883c57eb411b936f1129b3331ebd32aa48f0b7de4a5f07c0",
+      "CHAR_PetLevelUp": "1e3881effe62120b2196abcec89fd808d90afc73e7ddea370bfc8610bd15ad37",
+      "CHAR_CheckPetDoLimitlevel": "628af626c138ddcf11fcbc1b4b1e181e7508d24e1e9f41497a08dda738b70229",
+      "CHAR_PetAddVariableAi": "5337a9106bd29249d09d19346d6e11938c9f285ba7ee228068729ebab615e09c"
+    }
+  },
+  "original_declarations_sha256": {
+    "gavin": "980257dd0057a2b04c4fb38052fa7c33c3b3a040e5897884b9be6ccc4b7cbbb2",
+    "bismarck": "764c1659507f877f7761a8b707c778256851bdec197d2e89176f1b19dd654719"
+  },
+  "fixtures": {
+    "gavin": {
+      "initial_level": 100,
+      "raw_pet_EXP": 1,
+      "original_payout": 1,
+      "thresholds": [
+        10000000,
+        10000000
+      ],
+      "seed_level_residual_cases": [
+        [
+          9999999,
+          1,
+          0,
+          98
+        ],
+        [
+          10000016,
+          1,
+          17,
+          97
+        ],
+        [
+          20000022,
+          2,
+          23,
+          99
+        ],
+        [
+          9999998,
+          0,
+          9999999,
+          96
+        ]
+      ],
+      "petID": 1,
+      "pet_limit": 0,
+      "primary_initial": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "packed_alloc_bytes": [
+        20,
+        30,
+        40,
+        50
+      ],
+      "ranks": [
+        0,
+        5,
+        6,
+        0
+      ],
+      "growth": [
+        [
+          103,
+          148,
+          189,
+          234
+        ],
+        [
+          138,
+          198,
+          252,
+          312
+        ],
+        [
+          206,
+          296,
+          378,
+          468
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "derived_fixedvital_attack_defense_quick_maxhp": [
+        [
+          101,
+          126,
+          127,
+          102,
+          709
+        ],
+        [
+          101,
+          127,
+          128,
+          103,
+          713
+        ],
+        [
+          102,
+          128,
+          129,
+          104,
+          719
+        ],
+        [
+          100,
+          125,
+          125,
+          100,
+          700
+        ]
+      ],
+      "variable_ai_seeds": [
+        9800,
+        1000,
+        9500,
+        1000
+      ],
+      "variable_ai_final": [
+        10000,
+        1500,
+        10000,
+        1000
+      ],
+      "fixed_ai_final": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "owner_fame_final": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "pet_fame_final": [
+        11,
+        11,
+        11,
+        11
+      ]
+    },
+    "bismarck": {
+      "initial_level": 100,
+      "raw_pet_EXP": 1,
+      "original_payout": 1000000,
+      "thresholds": [
+        1345723,
+        1442322
+      ],
+      "seed_level_residual_cases": [
+        [
+          345723,
+          1,
+          0,
+          98
+        ],
+        [
+          345740,
+          1,
+          17,
+          97
+        ],
+        [
+          1788068,
+          2,
+          23,
+          99
+        ],
+        [
+          345722,
+          0,
+          1345722,
+          96
+        ]
+      ],
+      "petID": 1,
+      "pet_limit": 0,
+      "primary_initial": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "packed_alloc_bytes": [
+        20,
+        30,
+        40,
+        50
+      ],
+      "ranks": [
+        0,
+        5,
+        6,
+        0
+      ],
+      "growth": [
+        [
+          103,
+          148,
+          189,
+          234
+        ],
+        [
+          138,
+          198,
+          252,
+          312
+        ],
+        [
+          206,
+          296,
+          378,
+          468
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "derived_fixedvital_attack_defense_quick_maxhp": [
+        [
+          101,
+          126,
+          127,
+          102,
+          709
+        ],
+        [
+          101,
+          127,
+          128,
+          103,
+          713
+        ],
+        [
+          102,
+          128,
+          129,
+          104,
+          719
+        ],
+        [
+          100,
+          125,
+          125,
+          100,
+          700
+        ]
+      ],
+      "variable_ai_seeds": [
+        9800,
+        1000,
+        9500,
+        1000
+      ],
+      "variable_ai_final": [
+        10000,
+        1500,
+        10000,
+        1000
+      ],
+      "fixed_ai_final": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "owner_fame_final": [
+        69,
+        136,
+        280,
+        7
+      ],
+      "pet_fame_final": [
+        11,
+        78,
+        150,
+        11
+      ]
+    }
+  },
+  "rng": {
+    "scope": "dedicated second Loop only; preceding native RNG controls retained",
+    "loop_entry_discard": 1,
+    "attribute_draws_per_level": 10,
+    "rank_draws_per_level": 1,
+    "attribute_bin_indices": [
+      0,
+      1,
+      2,
+      3,
+      0,
+      1,
+      2,
+      3,
+      0,
+      1
+    ],
+    "bin_extra_counts": [
+      3,
+      3,
+      2,
+      2
+    ],
+    "bin_rand_ints": [
+      0,
+      536870912,
+      1073741824,
+      1610612736
+    ],
+    "rank_rand_min": 0,
+    "rank_rand_max": 2147483647,
+    "rank_factor_actual": [
+      450,
+      600,
+      450,
+      null
+    ],
+    "natural_RNG_claim": false
+  },
+  "fame_boundary": {
+    "bismarck_HandleExp_pet_actor_fame_positive_residual_only": [
+      0,
+      67,
+      139,
+      0
+    ],
+    "bismarck_PetLevelUp_owner_fame": [
+      62,
+      62,
+      134,
+      0
+    ],
+    "two_level_growth_calls_see_final_pet_level_102": true,
+    "gavin_growth_feedpoint_zero_due_synthetic_constant_thresholds": true,
+    "gavin_earnFame_body_included_but_untaken": true,
+    "gavin_momentum_owner9_pet13_preserved": true,
+    "family_membership_flag": 0,
+    "family_account_calls": 0
+  },
+  "presentation": {
+    "RS_owner_positive": {
+      "gavin": "-2|1|1,0|1|1,,,,|||",
+      "bismarck": "-2|1|4c92,0|1|4c92,,,,|||"
+    },
+    "nonupgrade_owner_and_pet_flags": 0,
+    "member_RS_unchanged": true,
+    "K0_generic_status_calls": [
+      1,
+      1,
+      1,
+      0
+    ],
+    "inherited_original_Exit_K_status_retained": true,
+    "accepted_player_party_status_and_world_broadcast_oracles_retained": true,
+    "descriptor7_synthetic": true
+  },
+  "representative_observations": [
+    "ACTUAL|gavin|REAL_HEADER_PET_GROWTH|mode=0|battle=0|levels=1|pet_lv=101|pet_exp=0|pet_raw=1|pet_payout=1|vital=10103|str=10148|tough=10189|dex=10234|variable_ai=10000|fixed_ai=100|attack=126|defense=127|quick=102|maxhp=709|rng=11|loop_rng=1|owner_fame=7|pet_fame=11|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|gavin|REAL_HEADER_PET_GROWTH|mode=1|battle=1|levels=1|pet_lv=101|pet_exp=17|pet_raw=1|pet_payout=1|vital=10138|str=10198|tough=10252|dex=10312|variable_ai=1500|fixed_ai=100|attack=127|defense=128|quick=103|maxhp=713|rng=11|loop_rng=1|owner_fame=7|pet_fame=11|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|gavin|REAL_HEADER_PET_GROWTH|mode=2|battle=2|levels=2|pet_lv=102|pet_exp=23|pet_raw=1|pet_payout=1|vital=10206|str=10296|tough=10378|dex=10468|variable_ai=10000|fixed_ai=100|attack=128|defense=129|quick=104|maxhp=719|rng=22|loop_rng=1|owner_fame=7|pet_fame=11|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|gavin|REAL_HEADER_PET_GROWTH|mode=3|battle=0|levels=0|pet_lv=100|pet_exp=9999999|pet_raw=1|pet_payout=1|vital=10000|str=10000|tough=10000|dex=10000|variable_ai=1000|fixed_ai=100|attack=125|defense=125|quick=100|maxhp=700|rng=0|loop_rng=1|owner_fame=7|pet_fame=11|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|bismarck|REAL_HEADER_PET_GROWTH|mode=0|battle=0|levels=1|pet_lv=101|pet_exp=0|pet_raw=1|pet_payout=1000000|vital=10103|str=10148|tough=10189|dex=10234|variable_ai=10000|fixed_ai=100|attack=126|defense=127|quick=102|maxhp=709|rng=11|loop_rng=1|owner_fame=69|pet_fame=11|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|bismarck|REAL_HEADER_PET_GROWTH|mode=1|battle=1|levels=1|pet_lv=101|pet_exp=17|pet_raw=1|pet_payout=1000000|vital=10138|str=10198|tough=10252|dex=10312|variable_ai=1500|fixed_ai=100|attack=127|defense=128|quick=103|maxhp=713|rng=11|loop_rng=1|owner_fame=136|pet_fame=78|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|bismarck|REAL_HEADER_PET_GROWTH|mode=2|battle=2|levels=2|pet_lv=102|pet_exp=23|pet_raw=1|pet_payout=1000000|vital=10206|str=10296|tough=10378|dex=10468|variable_ai=10000|fixed_ai=100|attack=128|defense=129|quick=104|maxhp=719|rng=22|loop_rng=1|owner_fame=280|pet_fame=150|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|bismarck|REAL_HEADER_PET_GROWTH|mode=3|battle=0|levels=0|pet_lv=100|pet_exp=1345722|pet_raw=1|pet_payout=1000000|vital=10000|str=10000|tough=10000|dex=10000|variable_ai=1000|fixed_ai=100|attack=125|defense=125|quick=100|maxhp=700|rng=0|loop_rng=1|owner_fame=7|pet_fame=11|whole_actor_oracle=1|whole_arena_oracle=1|released=1"
+  ],
+  "artifact": {
+    "id": 11675067390,
+    "name": "stoneage-party-original-pet-growth-r1",
+    "github_reported_digest": "sha256:bbddd1e2754835de9b56e2e2157a1685883cfbb110ac6988de24296df7b77b4f",
+    "independently_downloaded": true,
+    "zip_bytes": 6071,
+    "zip_sha256": "bbddd1e2754835de9b56e2e2157a1685883cfbb110ac6988de24296df7b77b4f",
+    "report_name": "stoneage-party-pet-growth-r1.txt",
+    "report_bytes": 22874,
+    "report_sha256": "3f98c0954cdc8dcbcb98c0322d3a008e57e58109f28b8a129dd4f6e457c754dd",
+    "identical_to_local": true
+  },
+  "local_rejected_assumptions": [
+    "original account/family prototypes required full source headers; inference-only trap signatures rejected",
+    "second Loop has one unconditional discarded rand; treating all calls as11-per-pet-level caused overflow and was rejected",
+    "Bismarck leader/member share zero-upgrade packet literal; whole owner ternary must be changed without altering teammate"
+  ],
+  "open": [
+    "natural pet reward allocation",
+    "special401/718 ownership/limit penalties",
+    "operator configuration/natural RNG",
+    "negative variableAI lower cap",
+    "equipment/transmigration/max-level controls",
+    "positive reward items/ownership/gold",
+    "watchers/callbacks/real network/Lua/server ABI",
+    "JSS1999/Taiwan-v1 executable historical identity"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "modern_engine_phase_transition": false
+}

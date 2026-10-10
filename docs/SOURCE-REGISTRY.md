@@ -5530,3 +5530,18 @@ eaf4f7977bb3842f29d1acb1f0dd72680bd0e69f2046ff7562143c067ecc1f26; report SHA256
 65a5d8c94c002c52a25d770e1d3cf83ab449ea8ac6befff6a28c0a3212dcd3e8 equals local19282 bytes. Explicit seededEXP,
 Gavin synthetic thresholds, complete post-lethal party roster and typed output
 collectors; no original source/assets committed, no historic/pressure promotion.
+
+
+## 2026-10-10 — Original PET growth derived witness R1
+
+Action38065547933/job114252321832 SUCCESS at5a6f8975b97d4cda9402ae0585fb1b4318bf844f,40 checks/10 steps.
+Gate tools/stoneage_party_pet_original_pet_growth_audit.py and R1 spec/source
+manifest/receipt. Original Gavin1f90cb6/Bismarck999ffdf1 pet LevelUp/LimitCheck/
+VariableAI/earnFame whole-body hashes plus inherited Finish/EXP/player fingerprints.
+16 original-header O0/O2 UBSan terminal encounters; complete Char/BATTLE byte
+oracles,16 aggregate pet levels,176 growth+16 separate Loop draws. Exact typed
+output and automatic release. Artifact11675067390 independently downloaded,
+ZIP SHA256 bbddd1e2754835de9b56e2e2157a1685883cfbb110ac6988de24296df7b77b4f; report SHA256
+3f98c0954cdc8dcbcb98c0322d3a008e57e58109f28b8a129dd4f6e457c754dd equals local22874 bytes.
+Explicit rawEXP1/seededEXP/packed points/ranks/controlledrand/empty-family scope;
+no original source/assets vendored or historic/pressure promotion.
