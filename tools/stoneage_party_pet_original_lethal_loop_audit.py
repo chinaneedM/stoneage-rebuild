@@ -23,7 +23,10 @@ def observed_lethal_round() -> str:
         # Any post-hit turn and arena state is still OPEN. Record precise
         # effects before adding independent exact oracles.
         ('demand(battle->turn==1&&battle->mode==BATTLE_MODE_BATTLE,"complete nonterminal ordinary attack round turn1");',
-         'printf("LETHAL_LOOP_MODE|mode=%d|arena=%d|turn=%d|battle_mode=%d|winside=%d\\n",mode,battle_at,battle->turn,battle->mode,battle->winside);fflush(stdout);'),
+         'demand(battle->mode==BATTLE_MODE_FINISH,"original lethal transition to FINISH");\n'
+         'demand(battle->winside==EXPECTED_WIN_SIDE,"original profile-specific winning side");\n'
+         'demand(BATTLE_CountAlive(battle_at,1)==0,"original opponent alive count zero");\n'
+         'printf("LETHAL_LOOP_MODE|mode=%d|arena=%d|turn=%d|battle_mode=%d|winside=%d|enemy_alive=0\\n",mode,battle_at,battle->turn,battle->mode,battle->winside);fflush(stdout);'),
         ('demand(!memcmp(expected_round,slots,sizeof expected_round),"complete all seven attack-round actor snapshots");',
          'printf("LETHAL_ACTOR_DIFF|equal=%d\\n",!memcmp(expected_round,slots,sizeof expected_round));fflush(stdout);'),
         ('demand(!memcmp(&expected_round_arena,battle,sizeof(BATTLE)),"complete exact attack-round arena delta");',
@@ -80,7 +83,8 @@ def lethal_round_native(profile,source,battle,event,root):
     else:
         native=native.replace(entry,original_finish_set+"\n"+entry,1)
     native=native.replace(entry,original_set_max_exp+"\n"+original_pet_die+"\n"+original_normal_dead+"\n"+entry,1)
-    return native.replace(anchor,anchor+LETHAL_ROUND_OBSERVATIONS.replace(
+    lethal=LETHAL_ROUND_OBSERVATIONS.replace("EXPECTED_WIN_SIDE","-1" if profile=="bismarck" else "0")
+    return native.replace(anchor,anchor+lethal.replace(
         "ENTRY_FIELD","char_index" if profile=="bismarck" else "charaindex",
     ),1),has_lua
 
