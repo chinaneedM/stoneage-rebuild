@@ -1,0 +1,75 @@
+{
+  "gate": "STONEAGE_PARTY_PET_BATTLE_REENTRY_R1",
+  "status": "REMOTE_ACCEPTED_BOUNDED_REPEATED_FIXTURE",
+  "tested_commit": "4ed3a719bc24b05318efbd561d59f04c7505b33e",
+  "tested_tree": "c0427c721fb5e09c5c600d8f9dbcc8c564679998",
+  "branch": "agent/party-pet-battle-reentry-r1-20261010",
+  "run_id": 38031552048,
+  "job_id": 114153368804,
+  "run_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38031552048",
+  "conclusion": "success",
+  "python_unittests": 19,
+  "execution": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "optimizations": [
+      "-O0",
+      "-O2"
+    ],
+    "encounters_per_profile_optimization": 4,
+    "total_encounters": 16,
+    "total_original_entry_records": 16,
+    "total_original_exit_records": 16,
+    "pool_cursor": [
+      0,
+      1,
+      2,
+      0
+    ],
+    "controlled_enemy_record": 4,
+    "selected_pet_id": 2,
+    "world_player_indices": [
+      0,
+      1
+    ],
+    "pet_owner_index": 0,
+    "pet_roster_slot": 0,
+    "source": "original pinned descendant function bodies with real headers",
+    "sanitizer": "-fsanitize=undefined -fno-sanitize-recover=all"
+  },
+  "profile_traces": [
+    {
+      "profile": "gavin",
+      "source_commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "stdout_sha256": "3aeb3916410172867479bde10a43099f6a2d931d070a56999a8b997b15081165"
+    },
+    {
+      "profile": "bismarck",
+      "source_commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "stdout_sha256": "8e05d934d0a58590c1b368ec3e1c532ef623e4c94e6b070af3d75fd94c63e005"
+    }
+  ],
+  "observed": [
+    "each entry sees player0 front0, player1 front1, selected owned pet2 rear5 with bid5",
+    "each first actor Exit removes leader and paired owned pet occupancy without destroying pet",
+    "each teammate Exit removes teammate front entry",
+    "each ExitAll and DeleteBattle clear the arena, allowing cursor rollover",
+    "pet remains live and owned at player0 slot0 across all four successful reentries",
+    "O0 and O2 native stdout equal per original descendant profile"
+  ],
+  "artifact": {
+    "id": 11662124223,
+    "metadata_sha256": "909e1de90de91e0046d91a24f668a38c5d7c921736b379c2573257df1ca1a20c",
+    "independently_downloaded": false
+  },
+  "boundaries": [
+    "fixture reuses already established 3 living actors, only one eligible enemy master record across four RNG modes",
+    "controlled world time/effects/net/status collectors and zero ride-license trap remain; original transport/lua/equipment/reclaimer not executed",
+    "only sampled four reentries per profile and optimization, not long soak/load balance proof",
+    "no victory, loss, rewards, profits, natural diverse party/pet statuses, full Init/TaskLoop or complete server",
+    "no earlier first-party 1999 JSS or Taiwan-v1 semantic equivalence",
+    "no global BattleModel pressure capability status or promotion"
+  ]
+}

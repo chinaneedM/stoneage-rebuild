@@ -10324,3 +10324,43 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   original reclaimer/full-server/bootstrap/Iris conversion/ABI/JSS/Taiwan-v1
   remain OPEN. Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB,
   zero new promotions. No premature engine/content transition.
+
+
+## 2026-10-10 — Repeated original real-header populated party/pet battle Entry→Exit→Delete→reentry REMOTE ACCEPTED (4 encounters)
+
+- Follow-on branch agent/party-pet-battle-reentry-r1-20261010.
+  Exact source/test/workflow input 4ed3a719bc24b05318efbd561d59f04c7505b33e,
+  tree c0427c721fb5e09c5c600d8f9dbcc8c564679998.
+  GitHub Action38031552048/job114153368804 SUCCESS; all steps passed,
+  19 Python structural/prior regressions passed.
+- Both pinned Gavin1f90cb6 and Bismarck999ffdf1 real original function
+  bodies with original header, GNU99 O0/O2 nonrecovering UBSan, perform
+  FOUR consecutive actual CreateVsEnemy + player0 and teammate1 original
+  BATTLE_Exit + ExitAll + DeleteBattle per profile/optimization.
+  Three-slot arena cursor traces0,1,2,0, including actual re-use of slot0.
+  Sixteen actual successful controlled encounters total and16 Entry/16 Exit
+  trace records. Native stdout byte identical across O0/O2 per profile.
+- Per battle real player front slots0/1, selected owned pet2/rear5/bid5;
+  original Exit releases player0 and paired pet, keeps pet2 live/owned at
+  roster slot0, pet mode NONE/index-1; teammate Exit releases front1 and
+  battle Delete frees arena. Controlled world objects0/1 remain registered.
+  Profile trace SHA256 Gavin
+  3aeb3916410172867479bde10a43099f6a2d931d070a56999a8b997b15081165,
+  Bismarck 8e05d934d0a58590c1b368ec3e1c532ef623e4c94e6b070af3d75fd94c63e005.
+- Artifact11662124223 metadata SHA256
+  909e1de90de91e0046d91a24f668a38c5d7c921736b379c2573257df1ca1a20c;
+  no independent ZIP content download/verification claim. Original source/
+  headers/master data transient, not committed. Synthetic world/network/time,
+  zero-license ride observer and original helper boundaries all retained.
+- FACT only for tested descendants/controlled healthy party and single
+  eligible encounter record/RNG modes. Not actual historic JSS/Taiwan-v1
+  executable or full server equivalence; no natural roster invalid/dead/
+  zeroHP/selection variants, no win/loss/profit, original Init/TaskLoop,
+  original real network/Lua/equipment/reclaimer or long soak acceptance.
+  Pressure unchanged2486=2465 capability closed+18 OPEN+3 historical UB;
+  zero promotions. No engine/content phase transition.
+- Highest next priority: source-profile-specific full real-header party/pet
+  negative/admission/Exit matrix (ineligible teammate, invalid/dead/zero-HP
+  selected pet, cleared default selection) with complete actor/world/ownership/
+  cursor/slot deltas and bounded typed collectors; then battle Init/TaskLoop,
+  Finish/victory/profit. Earlier continuity records preserved without edits.
