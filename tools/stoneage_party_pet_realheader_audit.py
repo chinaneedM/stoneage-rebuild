@@ -156,6 +156,10 @@ def patch_source(src,profile):
     fd=definition(src,'getfdFromCharaIndex')
     if fd.count('if(actor!=0)abort();')!=1:raise ValueError('original solo fd collector drift')
     src=src.replace(fd,fd.replace('if(actor!=0)abort();','if(actor!=0&&actor!=1)abort();'),1)
+    watch=definition(src,'CHAR_sendWatchEvent')
+    old_watch='if(index!=0||act!=CHAR_ACTBATTLE'
+    if watch.count(old_watch)!=1:raise ValueError('solo battle watcher drift')
+    src=src.replace(watch,watch.replace(old_watch,'if((index!=0&&index!=1)||act!=CHAR_ACTBATTLE'),1)
     return src
 
 def native(profile,source):
