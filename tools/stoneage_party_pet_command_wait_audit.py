@@ -26,7 +26,14 @@ EXIT_ANCHOR="  int exit0=BATTLE_Exit(0,battle_at);"
 ACTUAL_NAMES=("BATTLE_CommandWait","BATTLE_TimeOutCheck","BATTLE_Command")
 NEW_UNREACHED=("BATTLE_ai_all","BATTLE_Battling","BATTLE_OnlyRescue",
                "BATTLE_MakeCharaString","BATTLE_BpSendToWatch",
-               "CHAR_DischargePartyNoMsg","BATTLE_CommandSend")
+               "CHAR_DischargePartyNoMsg","CHAR_DischargeParty",
+               "lssproto_B_send","BATTLE_CommandSend")
+
+def has_function_body(source, name):
+    """A call inside an if/while is not a C function definition."""
+    return bool(re.search(
+        r"(?m)^\s*(?:static\s+)?(?:int|BOOL|void)\s+" +
+        re.escape(name) + r"\s*\([^;{}]*\)\s*\{", source))
 WAIT_OBSERVATIONS=r"""
   /* This is one more tick in original BATTLE_MODE_BATTLE; no command
      has been submitted by the two players or the selected pet. */
@@ -37,7 +44,29 @@ WAIT_OBSERVATIONS=r"""
   demand(slots[1].workint[CHAR_WORKBATTLEMODE]==BATTLE_CHARMODE_C_WAIT,"player1 ready for input");
   demand(slots[2].workint[CHAR_WORKBATTLEMODE]==BATTLE_CHARMODE_C_WAIT,"pet2 ready for input");
   demand(battle->pNext==NULL,"controlled no watch arena");
-  demand(BATTLE_Loop()==1,"original BATTLE_Loop BATTLE_Command dispatched");
+  BATTLE waiting_arena=*battle;
+  Char waiting_actors[3]={slots[0],slots[1],slots[2]};
+  time_t waiting_clock=NowTime.tv_sec;
+  demand(BATTLE_TIME_LIMIT>0,"positive original timeout limit");
+  int waiting_offsets[3]={0,BATTLE_TIME_LIMIT-1,BATTLE_TIME_LIMIT};
+  int dispatcher_clock_update=0;
+  for(int waiting_tick=0;waiting_tick<3;waiting_tick++){
+    NowTime.tv_sec=battle->timer+waiting_offsets[waiting_tick];
+    BATTLE expected_waiting_arena=waiting_arena;
+#ifdef _BATTLE_TIME
+    /* Original dispatcher bookkeeping, not Command/turn mutation. */
+    expected_waiting_arena.tv_sec=NowTime.tv_sec;
+    expected_waiting_arena.tv_usec=NowTime.tv_usec;
+    dispatcher_clock_update=1;
+#endif
+    demand(BATTLE_Loop()==1,"original BATTLE_Loop BATTLE_Command dispatched");
+    demand(!memcmp(&expected_waiting_arena,battle,sizeof(expected_waiting_arena)),
+           "original no-timeout arena permits only exact dispatcher clock update");
+    for(int actor=0;actor<3;actor++)
+      demand(!memcmp(&waiting_actors[actor],&slots[actor],sizeof(Char)),
+             "original no-timeout Command keeps complete player/pet state");
+  }
+  NowTime.tv_sec=waiting_clock;
   demand(battle->turn==previous_turn,"unsubmitted original Command must not advance turn");
   demand(battle->mode==BATTLE_MODE_BATTLE,"Command wait stays in BATTLE");
   demand(init_packets==previous_packets&&act_setting_packets==previous_settings,
@@ -52,8 +81,8 @@ WAIT_OBSERVATIONS=r"""
          "Command wait must preserve actor battle indexes");
   demand(Battle_getTotalBattleNum()==previous_enemies,"Command wait battle arena unchanged");
   demand(slots[0].data[CHAR_DEFAULTPET]==0&&CHAR_getCharPet(0,0)==2,"Command wait ownership unchanged");
-  printf("\nREAL_HEADER_COMMAND_WAIT|mode=%d|battle=%d|turn=%d|leader_wait=1|member_wait=1|pet_wait=1|owner=2|retained=1\n",
-      mode,battle_at,battle->turn);
+  printf("\nREAL_HEADER_COMMAND_WAIT|mode=%d|battle=%d|turn=%d|leader_wait=1|member_wait=1|pet_wait=1|owner=2|retained=1|ticks=3|timeout_equal_wait=1|arena_exact_delta=1|actors_unchanged=1|dispatcher_clock_update=%d\n",
+      mode,battle_at,battle->turn,dispatcher_clock_update);
 """
 
 def extend_native(profile, source, battle, event, root):
@@ -83,6 +112,14 @@ def extend_native(profile, source, battle, event, root):
         "int BATTLE_OnlyRescue(int battleindex,int side,int *pOnlyFlg);",
     )
     native=native.replace(old,"\n".join(prototypes)+"\n"+cmds,1)
+    # Original Command contains an untaken watcher-output branch. Preserve
+    # its source-sized global storage; output adapters still abort on use.
+    main_anchor="int main(int argc,char **argv){"
+    if native.count(main_anchor)!=1:
+        raise ValueError("accepted native main anchor drift")
+    native=native.replace("\n".join(prototypes),
+                          "char szAllBattleString[BATTLE_STRING_MAX];\n"+
+                          "\n".join(prototypes),1)
     body=WAIT_OBSERVATIONS
     native=native.replace(EXIT_ANCHOR,body+EXIT_ANCHOR,1)
     # Need every potential downstream original function in the
@@ -98,6 +135,8 @@ def extend_native(profile, source, battle, event, root):
         "BATTLE_MakeCharaString": "BOOL BATTLE_MakeCharaString(int battleindex,char *pszCommand,int size)",
         "BATTLE_BpSendToWatch": "void BATTLE_BpSendToWatch(BATTLE *pBattle,char *pszBcString)",
         "CHAR_DischargePartyNoMsg": "BOOL CHAR_DischargePartyNoMsg(int char_index)",
+        "CHAR_DischargeParty": "BOOL CHAR_DischargeParty(int char_index,int flg)",
+        "lssproto_B_send": "void lssproto_B_send(int fd,char *command)",
         "BATTLE_CommandSend": "BOOL BATTLE_CommandSend(int char_index,char *pszCommand)",
         "_BATTLE_CommandSend": "BOOL _BATTLE_CommandSend(int char_index,char *pszCommand,char *file,int line)",
     }
@@ -105,7 +144,7 @@ def extend_native(profile, source, battle, event, root):
         "_BATTLE_CommandSend" if profile=="bismarck" else "BATTLE_CommandSend"
     ]
     for name in required:
-        if re.search(r"(?m)^[^;\n{}]*\b"+re.escape(name)+r"\s*\([^;{}]*\)\s*\{",native):
+        if has_function_body(native,name):
             continue
         sig=bounded[name]
         native+="\n"+sig+'{fputs("UNREACHED_ORIGINAL_COMMAND|'+name+'\\n",stderr);abort();'+(
@@ -169,7 +208,11 @@ def main():
                 runs.append(execute.stdout)
         if runs[0]!=runs[1]:
             raise ValueError("original CommandWait trace O0/O2 divergence "+profile)
-        print(f"PROFILE|{profile}|actual_wait_dispatches_per_optimization=4|optimizations=O0,O2|sha256={hashlib.sha256(runs[0].encode()).hexdigest()}",flush=True)
+        print(f"PROFILE|{profile}|actual_wait_dispatches_per_optimization=12|encounters_per_optimization=4|optimizations=O0,O2|sha256={hashlib.sha256(runs[0].encode()).hexdigest()}",flush=True)
+        original_path=roots[profile]/LAYOUTS[profile]/"battle/battle.c"
+        print(f"PROVENANCE|{profile}|commit={PINNED[profile]}|battle_file_sha256={hashlib.sha256(original_path.read_bytes()).hexdigest()}",flush=True)
+        for name in ACTUAL_NAMES:
+            print(f"ORIGINAL_FUNCTION|{profile}|{name}|preprocessed_body_sha256={hashlib.sha256(definition(battle,name).encode()).hexdigest()}",flush=True)
         for row in runs[0].splitlines():
             if row.startswith("REAL_HEADER_COMMAND_WAIT|"):print("ACTUAL|"+profile+"|"+row,flush=True)
     print("BOUNDARY|original_BATTLE_Loop_to_original_Command_to_CommandWait_TimeOutCheck_wait_only_no_AI_no_Battling",flush=True)
