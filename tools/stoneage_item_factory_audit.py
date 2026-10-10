@@ -129,9 +129,11 @@ def factory_native(profile,source,battle,event,root):
          declaration+"\n".join(bodies.values())+"\n"+factory_controls(profile)+"\nint main(int argc,char **argv){")
     field="char_index" if profile=="bismarck" else "charaindex"
     previous=allocator.item.item_observations(profile).replace("ENTRY_FIELD",field)
-    replaced=replace_once(previous,"  allocator_controls(mode,battle);",
+    with_allocator=replace_once(previous,"  reward_phase=0;",
+                               "  reward_phase=0;\n  allocator_controls(mode,battle);")
+    replaced=replace_once(with_allocator,"  allocator_controls(mode,battle);",
                           "  allocator_controls(mode,battle);\n  factory_controls(mode,battle);")
-    native=replace_once(native,previous.replace("  reward_phase=0;","  reward_phase=0;\n  allocator_controls(mode,battle);"),replaced)
+    native=replace_once(native,with_allocator,replaced)
     return native,has_lua
 
 def main():
