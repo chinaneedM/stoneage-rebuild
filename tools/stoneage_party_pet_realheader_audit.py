@@ -174,7 +174,8 @@ def main():
         # Pet placement requires the ACTUAL original BATTLE_Index2No body;
         # the accepted solo composition never reached this function.
         extra=definition(pp_file(profile,roots[profile],LAYOUTS[profile]/'battle/battle.c'),'BATTLE_Index2No')
-        source+='\n'+extra+'\n'
+        synthetic=definition(source,'BATTLE_Index2No')
+        source=source.replace(synthetic,extra,1)
         sample=json.loads((Path(__file__).resolve().parents[1]/"research/recovered/STONEAGE-PLAYER-BATTLE-VALIDATION-R1.json").read_text())
         # Eligible record selection is selected by same accepted loader oracle.
         from tools.stoneage_enemy_loader_audit import loaded_oracle,eligible
