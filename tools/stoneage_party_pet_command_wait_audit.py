@@ -82,7 +82,7 @@ def extend_native(profile, source, battle, event, root):
         "static int BATTLE_Battling(int battleindex);",
         "int BATTLE_OnlyRescue(int battleindex,int side,int *pOnlyFlg);",
     )
-    native=native.replace(old,"\\n".join(prototypes)+"\\n"+cmds,1)
+    native=native.replace(old,"\n".join(prototypes)+"\n"+cmds,1)
     body=WAIT_OBSERVATIONS
     native=native.replace(EXIT_ANCHOR,body+EXIT_ANCHOR,1)
     # Need every potential downstream original function in the
