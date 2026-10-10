@@ -5280,3 +5280,22 @@ sources/data remain transient; earlier records preserved.
 - Runtime gate receipt STONEAGE-PARTY-PET-ENTRY-FUNCTION-RUNTIME-ACCEPTANCE-R1.json.
   Full real-header integrated populated party/pet CreateVsEnemy, full Exit/
   profit/Init/TaskLoop remain OPEN. No Taiwan-v1/JSS1999/history promotion.
+
+
+## 2026-10-10 — Real original-header actual party and selected owned pet battle admission
+
+- Action38029828829 job114148235571 success: tested original-body
+  2d8e5c90e44589f3475771909231e8c69adfcefc/tree
+  2f4f05c2ed352fdb40467f99ea529a072f63d5f0.
+  14 regression checks passed. Both exact pinned Gavin1f90cb6 and
+  Bismarck999ffdf1 live player0/member1/pet2 CreateVsEnemy O0/O2
+  original-header executions with UBSan agree. Original pet
+  CHAR_initCharOneArray, actual BATTLE_NewEntry and Index2No confirm
+  pet at owner back-row slot5/bid5, original GETEXP and ownership.
+- Controlled health/roster/descriptor/watch/world/master/network adapters
+  explicitly bounded. No joint original Exit/Finish/profit claim and no
+  historic JSS1999/Taiwan-v1 claim. Transient original bytes not
+  redistributed. Artifact11662126347 SHA256 metadata
+  3570fed9a53d96045f35c076f1dd02df90e74339c1a2c71a3beb0f3918f772be
+  (not independently downloaded); receipt
+  STONEAGE-PARTY-PET-REALHEADER-ACCEPTANCE-R1.json.

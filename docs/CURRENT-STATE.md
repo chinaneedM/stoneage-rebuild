@@ -10243,3 +10243,43 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   Original reclaimer/bootstrap, nonempty Lua/callback/equipment/watchers,
   Iris conversion/ABI/build/JSS1999/Taiwan-v1 remain OPEN. No engine/design
   stage transition; all earlier continuity text retained intact.
+
+
+## 2026-10-10 — REAL-HEADER populated party + selected owned pet original CreateVsEnemy REMOTE ACCEPTED
+
+- Fresh baseline main f1d83421a0665c534aacad63c5602b1ca6bd1475/tree
+  2a86f6bb8406ac7d9232a640136bcf798c48f7e6. Accepted branch
+  agent/party-pet-realheader-r1-20261010, exact tested input
+  2d8e5c90e44589f3475771909231e8c69adfcefc/tree
+  2f4f05c2ed352fdb40467f99ea529a072f63d5f0.
+- GitHub Action38029828829/job114148235571 SUCCESS: all9 steps passed,
+  14 Python structural and accepted-solo regression checks passed;
+  actual original-header original-source CreateVsEnemy through actual
+  original BATTLE_NewEntry, BATTLE_Index2No, BATTLE_PartyNewEntry,
+  BATTLE_PetDefaultEntry, BATTLE_ClearGetExp and CHAR_initCharOneArray,
+  Gavin1f90cb6 and Bismarck999ffdf1, O0/O2 with nonrecovering UBSan
+  and byte-equal per-profile traces.
+- Controlled constructed live world players0/1, healthy owned selected pet2
+  allocated with original pet allocator and attached to roster. ACTUAL
+  original battle front slots0 (leader)/1 (teammate), rear slot5/bid5 (pet),
+  preserved normal enemy entry, all three original actor battle indexes,
+  GETEXP resets, default pet and ownership preserved, and world objects
+  0/1 validated. No previous synthetic BATTLE_NewEntry stub was used.
+- Earlier failing runs revealed previously unreachable original Index2No
+  dependency and single-player-only test descriptor/watcher collectors.
+  Original Index2No was included unmodified; explicit descriptor and
+  CHAR_sendWatchEvent adapters were widened only for second world player,
+  with precise drift guard tests. This is a bounded runtime admission gate,
+  not full player/pet battle, Exit or rewards.
+- Original source, headers and enemy master bytes stay transient. Remote
+  derived artifact11662126347 metadata SHA256
+  3570fed9a53d96045f35c076f1dd02df90e74339c1a2c71a3beb0f3918f772be;
+  ZIP not independently downloaded. Receipt
+  STONEAGE-PARTY-PET-REALHEADER-ACCEPTANCE-R1.json.
+- Remaining OPEN: original complete populated party/player/pet BATTLE_Exit,
+  full natural roster/HP/death/selection/profile-negatives, victory/profit,
+  battle Init/TaskLoop, original server/bootstrap/ABI/Lua/equipment and
+  1999 JSS/Taiwan-v1 equivalence. No historical/general capability
+  promotion. Pressure unchanged2486=2465 closed+18 OPEN+3 historical UB,
+  zero promotions. Next priority full real-header joint Exit/Delete/reuse.
+  No premature engine/content transition. Entire previous state preserved.

@@ -1,6 +1,6 @@
 # Real-header original party + selected pet battle admission R1
 
-Status: CI PENDING. Bounded actual header and original code composition.
+Status: REMOTE ACCEPTED for bounded original real-header party+pet CreateVsEnemy ENTRY ONLY. Action38029828829; exact head2d8e5c90e44589f3475771909231e8c69adfcefc/tree2f4f05c2ed352fdb40467f99ea529a072f63d5f0; 14 tests; original Gavin/Bismarck O0/O2 UBSan. Full Exit/profit remain OPEN.
 
 This gate inherits and verifies the accepted original solo CreateVsEnemy source,
 headers, master loader, battle pool, original player and enemy actor slots.

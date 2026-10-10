@@ -1,0 +1,63 @@
+{
+  "schema": "stoneage-party-pet-realheader-admission-acceptance-r1",
+  "status": "REMOTE_ACCEPTED_BOUNDED_ORIGINAL_REAL_HEADER_JOINT_ADMISSION",
+  "start_main": "f1d83421a0665c534aacad63c5602b1ca6bd1475",
+  "tested_head": "2d8e5c90e44589f3475771909231e8c69adfcefc",
+  "tested_tree": "2f4f05c2ed352fdb40467f99ea529a072f63d5f0",
+  "branch": "agent/party-pet-realheader-r1-20261010",
+  "action_run_id": 38029828829,
+  "job_id": 114148235571,
+  "run_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38029828829",
+  "conclusion": "success",
+  "step_failures": 0,
+  "python_tests_passed": 14,
+  "pinned_profiles": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "original_function_bodies": [
+    "BATTLE_CreateVsEnemy",
+    "BATTLE_PartyNewEntry",
+    "BATTLE_PetDefaultEntry",
+    "BATTLE_NewEntry",
+    "BATTLE_Index2No",
+    "BATTLE_ClearGetExp",
+    "CHAR_initCharOneArray"
+  ],
+  "original_headers_and_battle_slots": true,
+  "real_party_member_index": 1,
+  "real_selected_pet_index": 2,
+  "real_pet_battle_slot": 5,
+  "real_pet_bid": 5,
+  "original_entrance_only": true,
+  "original_complete_party_pet_exit": false,
+  "original_rewards": false,
+  "original_jss1999_taiwan_v1_proven": false,
+  "original_source_committed": false,
+  "controlled_roster_network_world_watcher": true,
+  "optimizations": [
+    "O0",
+    "O2"
+  ],
+  "ubsan": "nonrecovering",
+  "optimization_traces_equal": true,
+  "source_trace_sha256": {
+    "gavin": "ea38c86273567cc8c2c8757e66ea54d13ccc296d6caff5287deb51c04e1ef3f2",
+    "bismarck": "622da328b4d8c2e263d53e47ad7a8e53aac8b50b465a1ca164dadea2708e4cd1"
+  },
+  "artifact": {
+    "id": 11662126347,
+    "name": "stoneage-party-pet-realheader",
+    "size_in_bytes": 654,
+    "digest": "sha256:3570fed9a53d96045f35c076f1dd02df90e74339c1a2c71a3beb0f3918f772be",
+    "independently_downloaded": false
+  },
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "next": "Real complete original player+teammate+pet Exit and Delete/reuse plus native negative cases"
+}
