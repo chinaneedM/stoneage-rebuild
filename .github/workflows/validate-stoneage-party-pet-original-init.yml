@@ -1,0 +1,49 @@
+name: Validate original populated party pet battle Init
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-party-pet-original-init.yml"
+      - "tools/stoneage_party_pet_init_audit.py"
+      - "tests/test_stoneage_party_pet_init.py"
+permissions:
+  contents: read
+jobs:
+  real-header-init:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run Init source-drift and predecessor regression tests
+        run: python -m unittest -v tests.test_stoneage_party_pet_init tests.test_stoneage_party_pet_variant_matrix tests.test_stoneage_party_pet_full_exit tests.test_stoneage_party_pet_realheader
+      - name: Recover pinned original C sources only in ephemeral runner
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_guard_break2_source_audit import PINNED
+          repos={"gavin":"gavinlinasd/StoneAge","iris":"iriselia/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for profile,sha in PINNED.items():
+              path=Path("/tmp/stoneage-party-original-init")/profile
+              subprocess.run(["git","init",str(path)],check=True)
+              subprocess.run(["git","-C",str(path),"remote","add","origin","https://github.com/"+repos[profile]+".git"],check=True)
+              subprocess.run(["git","-C",str(path),"fetch","--depth","1","origin",sha],check=True)
+              subprocess.run(["git","-C",str(path),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Run native original battle Init and pre-command chain in real headers
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_init_audit --gavin-dir /tmp/stoneage-party-original-init/gavin --iris-dir /tmp/stoneage-party-original-init/iris --bismarck-dir /tmp/stoneage-party-original-init/bismarck > /tmp/stoneage-party-original-init.txt
+          cat /tmp/stoneage-party-original-init.txt
+          grep -Fx "RESOLUTION|ORIGINAL_PARTY_PET_REALHEADER_INIT_PRECOMMAND_BOUNDED_PASS_NO_PROFIT_PROMOTION" /tmp/stoneage-party-original-init.txt
+          test "$(grep -c '^ACTUAL|.*|REAL_HEADER_INIT|' /tmp/stoneage-party-original-init.txt)" -eq 8
+          test "$(grep -c '^PROFILE|' /tmp/stoneage-party-original-init.txt)" -eq 2
+      - name: Upload derived output without original source
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-party-pet-original-init
+          path: /tmp/stoneage-party-original-init.txt
