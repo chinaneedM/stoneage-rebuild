@@ -10762,3 +10762,42 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   transport/Lua/ride/equipment/reclaimer/bootstrap/original ABI/JSS1999/Taiwan-v1
   remain OPEN. Pressure2486=2465 capability closed+18 OPEN+3 historic UB,
   zero promotions; no phase transition. All earlier evidence intact.
+
+
+## 2026-10-10 — Real-header terminal source route preflight REMOTE ACCEPTED; lethal runtime OPEN
+
+- Fresh baseline remote main b5c32cc080213bfa6064c399b3d09349c5af347a,
+  tree106b3247a94dcb700c575836f6d922827aca8d68. Full existing
+  CURRENT-STATE blob2a84d968d00e644e88ee4d8ea86a69ec1a4168b1
+  preserved verbatim, not replaced or abbreviated.
+- Dedicated source/test/workflow/spec branch
+  agent/party-pet-terminal-path-preflight-r1-20261010, accepted code
+  commit56906659e7a6170735a1915981837fb897952a78,
+  tree b3400016bc53f362e31a0d0eeed81ce37a78bfcb.
+  Action38056830504/job114226927331 SUCCESS, all10 workflow steps,
+  13 Python tests. Exact pinned Gavin1f90cb6/Bismarck999ffdf1 original
+  preprocessed battle.c: eight named terminal/reward/alive functions
+  per profile, frozen accepted body hashes for FinishSet/Finish/GetProfit,
+  original whole-file hashes and dependency inventories passed.
+- FACT limited to **source presence**: FinishSet has BATTLE_MODE_FINISH
+  assignment; GetProfit names duel/exp-gold routes; Finish names
+  GetProfit/Exit/DeleteBattle; GetExpGold names exp, character and pet
+  leveling routes. Gavin WinFunc branch tests winside==0, Bismarck
+  winside==-1; these are optional callback predicates in different
+  late descendant profiles, NOT inferred generic victory semantics.
+  Derived-only Actions artifact11671652770 metadata digest
+  sha256:12695f543fedc02c5bccf8f0d01c88b6d674aefc330cc1ae0d311b9ff18435ab;
+  ZIP/report not independently downloaded or byte-verified this milestone.
+- Gate is SOURCE_PREFLIGHT only, NOT lethal hit, death bookkeeping,
+  original FinishSet/Finish/GetProfit execution, positive EXP/items/money,
+  actual Exit/DeleteBattle invocation or general enemy multi-round runtime.
+  Exact source body inclusion/named calls does not establish reachability,
+  server/network/Lua, original executable ABI or historical JSS1999/Taiwan-v1.
+  No pressure promotions: 2486=2465 closed capability+18 OPEN+3 historical UB.
+- Highest NEXT: native original-header controlled lethal ordinary attack on
+  real allocator-selected enemy, derive expected HP/death deltas independently,
+  then separately execute original alive/winside/FinishSet, next Loop/Finish,
+  GetProfit and Exit/Delete; enforce Gavin/Bismarck divergent callback
+  sentinel boundaries, full actor/arena effect oracles and O0/O2 UBSan.
+  specs/STONEAGE-PARTY-PET-ORIGINAL-TERMINAL-PREFLIGHT-R1.md documents
+  ordered gates. Preserve unresolved source variant and historical boundaries.

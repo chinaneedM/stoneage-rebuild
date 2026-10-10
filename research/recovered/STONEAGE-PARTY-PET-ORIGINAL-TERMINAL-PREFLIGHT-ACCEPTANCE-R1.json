@@ -1,0 +1,67 @@
+{
+  "gate": "STONEAGE_PARTY_PET_ORIGINAL_TERMINAL_SOURCE_PREFLIGHT_R1",
+  "status": "REMOTE_ACCEPTED_SOURCE_ONLY_NOT_RUNTIME_TERMINAL",
+  "baseline_main": "b5c32cc080213bfa6064c399b3d09349c5af347a",
+  "baseline_tree": "106b3247a94dcb700c575836f6d922827aca8d68",
+  "previous_state_blob": "2a84d968d00e644e88ee4d8ea86a69ec1a4168b1",
+  "previous_state_characters": 1167663,
+  "tested_commit": "56906659e7a6170735a1915981837fb897952a78",
+  "tested_tree": "b3400016bc53f362e31a0d0eeed81ce37a78bfcb",
+  "branch": "agent/party-pet-terminal-path-preflight-r1-20261010",
+  "github_actions": {
+    "run_id": 38056830504,
+    "job_id": 114226927331,
+    "conclusion": "success",
+    "steps_passed": 10,
+    "unit_tests_passed": 13,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38056830504"
+  },
+  "source_only": {
+    "runtime_profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "original_terminal_named_functions_per_profile": 8,
+    "accepted_frozen_body_hashes": [
+      "BATTLE_FinishSet",
+      "BATTLE_Finish",
+      "BATTLE_GetProfit"
+    ],
+    "finishset_write": "BATTLE_MODE_FINISH",
+    "named_reward_paths": [
+      "BATTLE_GetDuelPoint",
+      "BATTLE_GetExpGold"
+    ],
+    "named_finish_paths": [
+      "BATTLE_GetProfit",
+      "BATTLE_Exit",
+      "BATTLE_DeleteBattle"
+    ],
+    "named_exp_gold_paths": [
+      "BATTLE_GetExp",
+      "CHAR_LevelUpCheck",
+      "CHAR_PetLevelUp"
+    ],
+    "winfunc_winside_sentinels": {
+      "gavin": 0,
+      "bismarck": -1
+    },
+    "winfunc_sentinel_is_victory_oracle": false
+  },
+  "artifact": {
+    "id": 11671652770,
+    "github_reported_archive_digest": "sha256:12695f543fedc02c5bccf8f0d01c88b6d674aefc330cc1ae0d311b9ff18435ab",
+    "independent_zip_verification": false
+  },
+  "runtime_death_executed": false,
+  "finish_executed": false,
+  "positive_profit_executed": false,
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "next": "native lethal original-header attack, death/alive/winside and full Finish/GetProfit/Exit/Delete independently"
+}
