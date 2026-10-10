@@ -1,6 +1,6 @@
 # Party/pet original-source entry preflight R1
 
-Status: **PENDING remote CI**. Source-level gate only, **not** party/pet runtime admission.
+Status: **REMOTE ACCEPTED** (Action38027458741, tested commit 7850d55). Source-level gate only, **not** party/pet runtime admission.
 
 ## Why this is the next gate
 
@@ -26,8 +26,9 @@ semantic observations**, never the proprietary original functions.
   battle occupancy directly; a zero wrapper return must not be treated as
   evidence that a pet was inserted.
 
-These are **proposed source observations** until the exact remote preflight
-passes; even when accepted, they establish no native party/pet path execution.
+These are **source observations within the pinned compiled descendant profiles**,
+accepted by the exact remote preflight. They establish no native populated
+party/pet path execution. Receipt: `research/recovered/STONEAGE-PARTY-PET-SOURCE-PREFLIGHT-ACCEPTANCE-R1.json`.
 
 ## After source acceptance
 

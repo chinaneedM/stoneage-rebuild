@@ -10155,3 +10155,42 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   ABI/build/JSS/Taiwan-v1/actor-watcher-typed631-635 remain OPEN.
   No engine/content transition. Protocol section10 accepted integration applies;
   all earlier evidence records and local-PENDING history preserved.
+
+
+## 2026-10-10 — Pinned party/pet entry source preflight REMOTE ACCEPTED; runtime still OPEN
+
+- Fresh remote main at startup 690a68a85324cf565991d11664ac7afee970bae9/tree
+  e021dd50c6078f3c786dc112d0dafa94aa1fafae; continuity and all required
+  startup files, latest branches/commit/Actions and exact CURRENT-STATE blob read.
+  This is a new source-preflight gate after accepted healthy solo battle, not
+  successful populated party/pet runtime execution.
+- Branch agent/party-pet-preflight-r1-20261010; tested
+  7850d55eb02226e43adbf5b5710c6d6a2f1cac9c/tree
+  ab95e66176a2a3297775b0fcafeea11d46a7acaf;
+  Action38027458741/job114141235353 PASS, seven guard/negative regressions
+  and two exact pinned descendant profile original preprocessed source audits.
+  Original Gavin1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56 and
+  Bismarck999ffdf1d220ec6666eb65339180689c9caf1876 trees transient;
+  original source not committed. No independent archive verification claim.
+- Static FACT within pinned compiled descendant profiles: Gavin fixed CHAR_PARTYMAX
+  party loop vs Bismarck getPartyNum and different eligible teammate battle
+  mode predicates; selected DEFAULTPET is checked for validity/death/HP.
+  Default-pet wrapper initializes a zero result and does not directly propagate
+  BATTLE_NewEntry result; actual slot occupancy must be measured. ClearGetExp
+  resets player and roster pet GETEXP when valid. These statements are source
+  preflight observations, not live party/pet battle-oracle results.
+- Spec STONEAGE-PARTY-PET-SOURCE-PREFLIGHT-R1.md, tool
+  stoneage_party_pet_source_preflight.py, seven tests and Actions workflow;
+  acceptance receipt STONEAGE-PARTY-PET-SOURCE-PREFLIGHT-ACCEPTANCE-R1.json.
+  Artifact11660457492 ZIP metadata SHA256
+  96e6f17f41a939393f1586ca705d4bdd3dc22a9aa43467687060403606e5eef7;
+  downloaded archive not independently checked.
+- Highest priority unchanged: actual successful populated party + explicitly
+  selected owned healthy pet CreateVsEnemy, each player/pet entry and full Exit,
+  invalid/dead/zero-HP pet and ineligible member negatives, source-profile
+  distinct variants, complete work and slot/ownership/delta oracles. Then
+  BATTLE_Init/TaskLoop, broader Finish and player/pet profit.
+  Iris conversion, original reclamation/full server/ABI/1999-JSS/Taiwan-v1,
+  linked watchers/nonempty items/equipment/Lua callbacks and actor/watcher/
+  typed631/635 remain OPEN. Pressure2486=2465+18+3, zero promotions.
+  No engine/content transition. Earlier state records preserved verbatim.

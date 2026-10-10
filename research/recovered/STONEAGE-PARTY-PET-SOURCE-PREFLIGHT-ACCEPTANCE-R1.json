@@ -1,0 +1,54 @@
+{
+  "schema": "stoneage-party-pet-source-preflight-acceptance-r1",
+  "status": "REMOTE_ACCEPTED_STATIC_ONLY",
+  "startup_main": "690a68a85324cf565991d11664ac7afee970bae9",
+  "startup_tree": "e021dd50c6078f3c786dc112d0dafa94aa1fafae",
+  "tested_head": "7850d55eb02226e43adbf5b5710c6d6a2f1cac9c",
+  "tested_tree": "ab95e66176a2a3297775b0fcafeea11d46a7acaf",
+  "branch": "agent/party-pet-preflight-r1-20261010",
+  "action_run_id": 38027458741,
+  "job_id": 114141235353,
+  "run_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38027458741",
+  "conclusion": "success",
+  "workflow_job_steps": 10,
+  "workflow_step_failures": 0,
+  "structural_regressions": 7,
+  "source_profiles": [
+    "gavin",
+    "bismarck"
+  ],
+  "pinned_source_commits": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "source_checks": "selected preprocessed original BATTLE_PetDefaultEntry/BATTLE_PartyNewEntry/BATTLE_ClearGetExp",
+  "observations": {
+    "gavin_party_bound": "CHAR_PARTYMAX",
+    "bismarck_party_bound": "getPartyNum",
+    "gavin_mode_exclusion": "nonzero",
+    "bismarck_mode_exclusion": "neither NONE nor FINAL",
+    "default_pet": "explicit selection plus CHECKINDEX !ISDIE HP>0",
+    "pet_wrapper_return": "initialized zero, does not propagate NewEntry success/failure",
+    "clear_getexp": "player plus valid owned pets"
+  },
+  "native_populated_party_pet_tested": false,
+  "full_exit_profit_tested": false,
+  "original_source_in_repository": false,
+  "original_reclaimer_executed": false,
+  "original_1999_JSS_Taiwan_v1_historical_rule_claim": false,
+  "source_report_artifact": {
+    "id": 11660457492,
+    "name": "stoneage-party-pet-source-preflight-7850d55eb02226e43adbf5b5710c6d6a2f1cac9c",
+    "size_in_bytes": 1273,
+    "digest": "sha256:96e6f17f41a939393f1586ca705d4bdd3dc22a9aa43467687060403606e5eef7",
+    "independently_downloaded": false
+  },
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "next": "Native populated party/pet successful CreateVsEnemy and complete Exit with source-profile splits and direct occupancy/ownership/GETEXP verification"
+}

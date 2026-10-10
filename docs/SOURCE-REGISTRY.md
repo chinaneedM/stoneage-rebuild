@@ -5232,3 +5232,27 @@ sources/data remain transient; earlier records preserved.
   healthy solo baseline restored each case, explicit typed collectors retained.
   Actual party/pet/profit/Init/TaskLoop/Iris/ABI/Taiwan-v1 remain OPEN. Pressure
   unchanged,0 promotions. Earlier source records preserved; protocol10 applies.
+
+
+## 2026-10-10 — Pinned party/pet battle entry source gate accepted
+
+- Original selected C code examined transiently from exact pinned Gavin and
+  Bismarck descendants; preprocessed BATTLE_PetDefaultEntry,
+  BATTLE_PartyNewEntry and BATTLE_ClearGetExp source fingerprints and file SHA256
+  are produced in derived artifact. Script/test/workflow/spec in branch
+  agent/party-pet-preflight-r1-20261010, exact tested commit
+  7850d55eb02226e43adbf5b5710c6d6a2f1cac9c/tree
+  ab95e66176a2a3297775b0fcafeea11d46a7acaf.
+- Action38027458741/job114141235353 success, seven negative/positive unit
+  guards and two source-profile checks; artifact11660457492 metadata digest
+  sha256:96e6f17f41a939393f1586ca705d4bdd3dc22a9aa43467687060403606e5eef7;
+  archive not independently downloaded. No original source is published.
+- Bounded source FACT: Gavin fixed party capacity and nonzero battle-mode guard;
+  Bismarck dynamic getPartyNum and NONE/FINAL eligibility; selected default-pet
+  retrieval/validity/death/HP guards, wrapper zero return independent of
+  successful pet slot insertion; GETEXP clears across valid owned pets.
+  Requires actual runtime occupancy verification. HYPOTHESIS cannot be promoted
+  to original Japanese/Taiwan-v1 semantics merely from descendants.
+- Receipt STONEAGE-PARTY-PET-SOURCE-PREFLIGHT-ACCEPTANCE-R1.json.
+  Successful populated party/pet admission and Exit, profit, Init/TaskLoop,
+  historic ABI/1999-JSS/Taiwan-v1 remain OPEN; no runtime promotion.
