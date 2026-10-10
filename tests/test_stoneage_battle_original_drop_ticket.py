@@ -11,7 +11,7 @@ class OriginalBattleDropTicketTests(unittest.TestCase):
                            "ENTRY_FIELD", "getitem[0]=3",
                            "indexOfExistItems[CHAR_STARTITEMARRAY]==-1",
                            "BATTLE_No2Index(battle_at,0)==0",
-                           "ITEM_COUNT==ticket_saved_use",
+                           "==ticket_saved_use",
                            "memcpy(reward_items,ticket_saved_items",
                            "*arena=ticket_saved_arena"):
                 if marker=="ENTRY_FIELD":continue
