@@ -19,7 +19,7 @@ class LethalLoopTests(unittest.TestCase):
   for profile,entry in (("gavin","charaindex"),("bismarck","char_index")):
    accepted=ATTACK_OBSERVATIONS.replace("ENTRY_FIELD",entry)
    with patch("tools.stoneage_party_pet_original_lethal_loop_audit.attack.attack_native",return_value=("prefix"+accepted+"suffix\nint main(int argc,char **argv){",False)),patch("tools.stoneage_party_pet_original_lethal_loop_audit.attack.pp_file",return_value="int CHAR_setMaxExp(int x,unsigned long y){return y;}"):
-    compiled,has_lua=lethal_round_native(profile,"","void Pet_Check_Die(int x){return;}\nint BATTLE_NormalDeadExtra(int b,int a,int c){return 0;}","","")
+    compiled,has_lua=lethal_round_native(profile,"","void Pet_Check_Die(int x){return;}\nint BATTLE_NormalDeadExtra(int b,int a,int c){return 0;}\nint BATTLE_FinishSet(int b){return 0;}","","")
    self.assertIn(accepted,compiled)
    self.assertIn("REAL_HEADER_LETHAL_LOOP|",compiled)
    self.assertFalse(has_lua)
