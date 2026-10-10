@@ -2167,3 +2167,17 @@ not natural configured selection, multi-enemy behavior, all-ready action round,
 Finish/profit or historical JSS1999/Taiwan-v1. Original guard/escape result.target
 may remain unspecified; those normal-mode branches were not executed. No
 historical promotion or replacement of earlier evidence.
+
+
+## 2026-10-10 — Original descendant nonterminal guard-round composition
+
+FACT under pinned Gavin1f90cb6/Bismarck999ffdf1 original headers only:
+Action38044522888 at 6b97f7ffb1948a7517ff074cb3146cecde54228e passes40 checks and16
+O0/O2 UBSan guard rounds. Actual original all-ready Loop/Command/full Battling
+advances turn0->1, emits four battle commands and returns to C_WAIT; complete
+seven-actor/arena snapshots and byte-equal optimization traces pass. Explicit
+all-guard/C_OK, fixed RNG/compliant pet and enemy tactics0 preparation; one enemy.
+This supersedes the earlier all-ready-round execution gap only for this control.
+Ordinary physical damage, terminal Finish/victory/positive profit, natural AI,
+full transport/server and historical JSS1999/Taiwan-v1 equivalence remain OPEN.
+No historical promotions; all earlier evidence remains preserved.

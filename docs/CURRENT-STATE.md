@@ -10657,3 +10657,51 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   real transport/Lua/equipment/reclaimer/bootstrap/original executable ABI and
   JSS1999/Taiwan-v1 remain OPEN. Pressure2486=2465 capability closed+18 OPEN+
   3 historic UB, zero promotions; no phase transition, earlier records intact.
+
+
+## 2026-10-10 — Original real-header party/pet guard control round REMOTE ACCEPTED
+
+- Fresh startup remote main 7db9ac44ce627ff24f20e12faaa389a78b83f176,
+  tree 2f601198f928367e3309be7d9ef776e62db2d222; current branches/HEAD/tree,
+  recent commits/Actions and protocol documents re-read. Full original
+  CURRENT-STATE blob ae4d5c6bc1d918804728147c9646e2af47be8a48,1166405 bytes,
+  and complete history/source-registry preserved verbatim before append.
+- Exact source/test/workflow/spec commit 6b97f7ffb1948a7517ff074cb3146cecde54228e,
+  tree fee4ac7b32ba6e83565c614cf2e790a6aa66e1d9, branch
+  agent/party-pet-original-round-r1-20261010. Action38044522888/job114191255405
+  SUCCESS,10 steps,40 checks. Gavin1f90cb6/Bismarck999ffdf1 real headers,
+  GNU99 O0/O2 nonrecovering UBSan:16 complete Create/Init/input/wait/AI/
+  all-ready guard-round/Exit/Delete encounters, pool0,1,2,0; four actors and
+  one spawned enemy per encounter. Full trace bytes equal O0/O2 per profile.
+- Unchanged original Loop -> Command -> full Battling now actually executes.
+  Original scheduler/ordering/status/magic-status/weapon/ride/throw/loyalty/
+  target/guard/profit-bookkeeping/OnlyRescue bodies and original declarations
+  retained; Bismarck original strncatsafe resolved output-assembly dependency.
+  Inclusion is not whole-branch execution. Untaken gameplay dependencies abort.
+  Presentation collectors preserve Gavin direct and Bismarck macro-expanded
+  CommandSend signatures; original battle string assembly remains untouched.
+- Controlled fixture: all four participants GUARD/C_OK, fixed RNG, obedient
+  pet preparation, enemy tactics0. Actual round advances turn0->1 and returns
+  to nonterminal C_WAIT/COM_NONE. HP unchanged, four outbound sends. Complete
+  seven-Char expected snapshots include pet FIXAI100->0 in original compliance;
+  exact whole arena permits only turn1, PartTime0 and cleared side-surprise bits.
+  Next original CommandWait FALSE. All actor/arena/RNG baselines restored before
+  inherited original Exit/Delete checks. Not natural commands or damage.
+- Full trace SHA256 Gavin be73841a45f9ce742b5e034fa0e751db1aeadb4ce25b6d794f670784a452dccc,
+  Bismarck 0e3a36dc82a82dae2576a13351f9eee8785d22c9aefc95284c1bcfb270252b88.
+  Independently downloaded artifact11667436659, ZIP3202 bytes SHA256
+  ae61188b05d026dfed498ec71920bb22d2b47c65f0c62aec555413407cd4b32e; sole
+  stoneage-party-original-round.txt equals local bytes SHA256
+  c75674c7626cccb554c26fd21f4d066224015ec1fbb4eb29976a3f690050b148.
+  Receipt research/recovered/STONEAGE-PARTY-PET-ORIGINAL-GUARD-ROUND-ACCEPTANCE-R1.json;
+  spec specs/STONEAGE-PARTY-PET-ORIGINAL-GUARD-ROUND-R1.md.
+- Highest NEXT: ordinary physical attack/damage in the same original-header
+  full Loop/Command/Battling domain. Select actual live enemy target via original
+  Index2No/arena entries, connect original Attack/default-attacker/BattleModel
+  and damage helpers with exact actor/arena effects; distinguish nonterminal
+  round from death/terminal Finish/victory/positive profit as separate gates.
+  All-guard control is accepted, ordinary damage/terminal Finish/profit OPEN.
+  Natural AI/valid skills/magic/attributes/multi-enemy/timeout-positive/transport/
+  Lua/equipment/reclaimer/bootstrap/original executable ABI/JSS1999/Taiwan-v1
+  remain OPEN. Pressure2486=2465 capability closed+18 OPEN+3 historic UB,
+  zero promotions; no engine/content phase transition. Earlier records intact.

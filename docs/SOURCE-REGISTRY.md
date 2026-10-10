@@ -5415,3 +5415,25 @@ Repository evidence:
   receipt for next work; not executed or complete transitive call graph.
   Action round/Finish/profit, full server/transport/Lua/original ABI and first
   release historical equivalence remain OPEN. Pressure2486/2465/18/3,0 promotions.
+
+
+## 2026-10-10 — Original real-header party/pet guard-round derived witness R1
+
+- tools/stoneage_party_pet_original_round_audit.py extracts unchanged original
+  full Battling and scheduler/status/loyalty/weapon/guard/profit-bookkeeping/
+  OnlyRescue helpers from pinned Gavin1f90cb6/Bismarck999ffdf1. Original local
+  scheduler types/tables/prototypes and Bismarck strncatsafe retained; file/body
+  SHA256 hashes in report/receipt. Original bytes transient, never committed.
+- Tested 6b97f7ffb1948a7517ff074cb3146cecde54228e/treefee4ac7b32ba6e83565c614cf2e790a6aa66e1d9,
+  Action38044522888/job114191255405 SUCCESS,40 checks;16 GNU99 original-header
+  O0/O2 UBSan all-guard rounds, exact complete actor/arena effects, turn1/C_WAIT.
+  Original body inclusion is not execution of every branch; untaken calls abort.
+- Artifact11667436659 independently downloaded ZIP SHA256
+  ae61188b05d026dfed498ec71920bb22d2b47c65f0c62aec555413407cd4b32e; sole
+  stoneage-party-original-round.txt equals local report SHA256
+  c75674c7626cccb554c26fd21f4d066224015ec1fbb4eb29976a3f690050b148.
+  research/recovered/STONEAGE-PARTY-PET-ORIGINAL-GUARD-ROUND-ACCEPTANCE-R1.json and
+  specs/STONEAGE-PARTY-PET-ORIGINAL-GUARD-ROUND-R1.md define bounded fixture scope.
+- FACT is controlled nonterminal all-guard round, not ordinary damage/death/
+  terminal Finish/profit, whole AI, real networking/Lua/server or first-release
+  historical equivalence. Pressure2486/2465/18/3,0 promotions; earlier records intact.

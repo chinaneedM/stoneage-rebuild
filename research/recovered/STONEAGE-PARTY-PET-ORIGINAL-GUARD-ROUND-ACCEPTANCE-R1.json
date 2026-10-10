@@ -1,0 +1,146 @@
+{
+  "gate": "STONEAGE_PARTY_PET_ORIGINAL_GUARD_ROUND_R1",
+  "status": "REMOTE_ACCEPTED_BOUNDED_ALL_GUARD_NONTERMINAL_ROUND",
+  "branch": "agent/party-pet-original-round-r1-20261010",
+  "tested_commit": "6b97f7ffb1948a7517ff074cb3146cecde54228e",
+  "tested_tree": "fee4ac7b32ba6e83565c614cf2e790a6aa66e1d9",
+  "base_main": "7db9ac44ce627ff24f20e12faaa389a78b83f176",
+  "preserved_current_state_blob": "ae4d5c6bc1d918804728147c9646e2af47be8a48",
+  "preserved_current_state_bytes": 1166405,
+  "github_actions": {
+    "run_id": 38044522888,
+    "job_id": 114191255405,
+    "conclusion": "success",
+    "steps_passed": 10,
+    "unit_tests_passed": 40,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38044522888"
+  },
+  "native": {
+    "profiles": {
+      "gavin": {
+        "guard_rounds_per_optimization": "4",
+        "encounters_per_optimization": "4",
+        "optimizations": "O0,O2",
+        "sha256": "be73841a45f9ce742b5e034fa0e751db1aeadb4ce25b6d794f670784a452dccc"
+      },
+      "bismarck": {
+        "guard_rounds_per_optimization": "4",
+        "encounters_per_optimization": "4",
+        "optimizations": "O0,O2",
+        "sha256": "0e3a36dc82a82dae2576a13351f9eee8785d22c9aefc95284c1bcfb270252b88"
+      }
+    },
+    "original_body_sha256": {
+      "gavin": {
+        "BATTLE_Battling": "18a87147bedac4d162a87caf7e980986490bb02c19ee9133788fa5faad2a1769",
+        "EntrySort": "b54c45e5803bff6c7548b06cb953d23b4410e9387115c205fae88ee94ded9476",
+        "EsCmp": "139804d53c95acc3f88048b1c6d7b76c4feea14c3ad70c0b605e78cd0c3d4ec7",
+        "Replacement_Entry": "545df09c56a29974b1ae42f9e9709d0a4d7a2b79b8e231d48e4cd57d0d08ae85",
+        "ComboCheck": "be2b446cdf2c3f34190715d9cd29d36549111d4d5809427c8bf19f0141a36de5",
+        "ComboCheck2": "2babdf5916355a1e16962686f646361b5b4f86752ffc23b325213eda91f6a1d9",
+        "BATTLE_DexCalc": "10266ff6220b597a5bee2eb90cbd4b8cbf477530cfb2edf26640dba8d8564751",
+        "BATTLE_StatusSeq": "f3cc334279d14574bfc42bbf671ba7482389b4e37019f6dba801e7eb6fc04825",
+        "BATTLE_MagicStatusSeq": "dfd5859ba2e53692bb0097d5d4d8ff2b5d549139345a90cedc49250a6a6dd32b",
+        "BATTLE_GetWepon": "7392ef7fc3f101524d1cf168b6740b5585411cedecb8d02fdb2db70399103247",
+        "BATTLE_GetAttackCount": "9dcc68df28496545d7c188b8b813ecc670c58ec059100d88cddab12fe92ba04d",
+        "BATTLE_PetLoyalCheck": "8e32cf5f34f1977ff635a79234c525e2316911b06d2f330458fede752ac1e448",
+        "BATTLE_TargetListSet": "721fa8d0368c52ff49ad8b1d6c22c22f7197074435a55b08458b5d0030905033",
+        "BATTLE_CountAlive": "62d1b25fdcbcd578439da798236be0358c0478e01c0186a9a589b6ca53b52323",
+        "BATTLE_No2Index": "1a5797ff0a94492c2304f733c650e1cf0ebe48fded7f5646efeb42213992a375",
+        "BATTLE_TargetCheck": "1877535f69cb257f08e1cc97c178b13d100dd7f5fbadfbae048177a5d5178a0d",
+        "BATTLE_getRidePet": "3ec2377354cb5fbde7018af8699d58850ccc3fb850a2b0fdb90050c6bfa9b1fb",
+        "BATTLE_IsThrowWepon": "1c355606f5f1dec5ce3aa6f3e1d91e6d88e8218b171abac1b7ce762e3e86c830",
+        "BATTLE_NoAction": "697c0eda54d334d30a7192fdd4537d824dff53881891324019377c0afeace2f3",
+        "BATTLE_Guard": "a9ab9147443c92d4f1869a4607ded5ede5471661c1534625cd98b4032affc88b",
+        "BATTLE_AddProfit": "15f9be5f9aeb2e938e351fe6dda9324a13404f85a27161b6775d0b6ade808708",
+        "BATTLE_AddExpItem": "8bf2e1bab742b3c468f13a8e94ea674be8b6fab4fa675fba13aa7f5f0a45080d",
+        "BATTLE_getBattleDieIndex": "1fd190e2a16dd6f5a3c792cc1334f939cdd6fe17fc45cf555f9af380d2817e96",
+        "BATTLE_OnlyRescue": "bdef8a7fc9e4bf69176a4c1845a3b4e60d50220d4633ee4918d5ff8135f46644",
+        "BATTLE_ProfessionStatusSeq": "8d30c4f754281b37ffe9aef1c9591bab19bef9a878c74b6c062facf862b4fa77",
+        "CHAR_CanCureFlg": "abc6b0367857f9b830337e8ad6a7204bbe6781307550bdf95e6d6801346caf50"
+      },
+      "bismarck": {
+        "BATTLE_Battling": "dd2e74a109a75a49b709dfee4d56fe0c7457b3985aac788be8cfc1a5478b3125",
+        "EntrySort": "38c7098eb803721d9e914c446244e2894266262236677e77e15709fec10b41df",
+        "EsCmp": "8fe27eaa0efd40db40e476cbc9db1a62e2d99783dd9293ecfa78320cb0a19782",
+        "Replacement_Entry": "f659d62b6c4170fd31a547053f9b1a765cc028e01791f8cdcb16787ec1b2562d",
+        "ComboCheck": "b583aa902f0a9b7c6270eb02335e909a1512a9cf984de0930379f145714b67be",
+        "ComboCheck2": "9c5322f14a8dc8a19c3f12c4a5e8cbce9803d5032078b9bdf994489a6c21300b",
+        "BATTLE_DexCalc": "c8b0b3dd5c5b114139242d76b5885590e978ddc71fcd1b12bea8f634c0b97505",
+        "BATTLE_StatusSeq": "b7d611849e6f1ea093ab6f7584605e99b4518f9e5216dc0d0bb72611a2a1f1a6",
+        "BATTLE_MagicStatusSeq": "1594897e664fde282879446605cbb7230b2651b730b6383617d1098f0eb6d9b5",
+        "BATTLE_GetWepon": "d4fd6a3701f887545b0b24ca4789b0fdcb1645d81b8eba7c450424f087f8dbe1",
+        "BATTLE_GetAttackCount": "1bd55ebee55c6379477a8833cca3d4345d5c0de95730befd7d2f8d306e18763b",
+        "BATTLE_PetLoyalCheck": "a19f6bcd314c833c6feb26169de542d332a228adb7abf29ec23637fc8eedc950",
+        "BATTLE_TargetListSet": "b682917e926e80312d98d88c0004d39f034f2762c23dc37845651050c587a6ee",
+        "BATTLE_CountAlive": "ee3b0d3751763a1927189a9c6e5f9099648ac72c94c173c6b79292df2add6cf8",
+        "BATTLE_No2Index": "8a7471eff0c9cbd99c2e78570d485d67bd909a439a0fad1aadca16d5155ccbc3",
+        "BATTLE_TargetCheck": "71ef734c60897e3f404edd44a9ebf952b9c8bfd55130dbfa6c084249cca1b0ba",
+        "BATTLE_getRidePet": "91f475a67c96835872b890e57f8a4e4a8a588b766555da4aff24f031f5f58848",
+        "BATTLE_IsThrowWepon": "35bb78a5b4c6e8fd0a78fc9e922fedf4ab7d7dde6c327ede66d863ca1a3d8d69",
+        "BATTLE_NoAction": "bb7fa9cb9fca3d5207a70b6cf03ae50231ecb1335b7a978ff35afc5e9ae7ab8b",
+        "BATTLE_Guard": "14dbf6fba6ce9de6e77f8c548d8fb973f8078fe7f331e5c39b90368968c73901",
+        "BATTLE_AddProfit": "b4f011ba48e99326375e74b4f19f37598e87f7a628d9db246a483026c8284429",
+        "BATTLE_AddExpItem": "0e77d7ea410eb0c62aa7db17878a860a740f85d04c873b5f10b57968d66b8e12",
+        "BATTLE_getBattleDieIndex": "89ed9642359c934507f575350f0f06e19ee476eb52f2db6650be000b5215ab84",
+        "BATTLE_OnlyRescue": "c3a603537944b02bde391f0856a28707e885657ff17d97bcb0aa0b7562f9a123",
+        "CHAR_CanCureFlg": "5f2de5a8ed1be4fe30672a9c697658f0f350ec255531de102cef0111d6ee616a",
+        "strncatsafe": "08bbfa83b3f1bfdd7815e29149e55f87a0e4bba9ce3cf26a319b95f6d1a141b5"
+      }
+    },
+    "source_provenance": {
+      "gavin": {
+        "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+        "battle_file_sha256": "a10380b862aee077a798fab359ea89445b98aac4fc809b51a2bc7c682c7eb602"
+      },
+      "bismarck": {
+        "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+        "battle_file_sha256": "2346951869d2f25e854ad5390bac1bd91608d91870922d96c84d9172d3d63e18"
+      }
+    },
+    "report_sha256": "c75674c7626cccb554c26fd21f4d066224015ec1fbb4eb29976a3f690050b148",
+    "report_bytes": 9079,
+    "compiler": "GNU99 original headers, nonrecovering UBSan",
+    "optimizations": [
+      "-O0",
+      "-O2"
+    ],
+    "encounters_per_profile_optimization": 4,
+    "total_guard_rounds": 16,
+    "enemies_per_encounter": 1,
+    "participants_per_encounter": 4,
+    "pool_cursor": [
+      0,
+      1,
+      2,
+      0
+    ],
+    "all_ready_loop_executed": true,
+    "full_original_Battling_executed": true,
+    "turn_before": 0,
+    "turn_after": 1,
+    "next_C_WAIT": true,
+    "complete_seven_actor_and_arena_snapshots": true,
+    "ordinary_damage_executed": false,
+    "terminal_Finish_executed": false,
+    "positive_profit_transfer_executed": false
+  },
+  "artifact": {
+    "id": 11667436659,
+    "zip_sha256": "ae61188b05d026dfed498ec71920bb22d2b47c65f0c62aec555413407cd4b32e",
+    "zip_bytes": 3202,
+    "zip_independently_downloaded": true,
+    "member": "stoneage-party-original-round.txt",
+    "report_sha256": "c75674c7626cccb554c26fd21f4d066224015ec1fbb4eb29976a3f690050b148",
+    "report_matches_local_bytes": true
+  },
+  "limitations": [
+    "explicit all-guard/C_OK fixture, fixed RNG, compliant pet, enemy tactics0; not naturally selected commands or whole AI",
+    "original body inclusion does not mean all branches executed; untaken dependency calls abort",
+    "output collectors only; Gavin direct and Bismarck macro-expanded CommandSend signatures preserved",
+    "all actor/arena/RNG baselines restored before inherited original Exit/Delete/pool reuse",
+    "ordinary attack damage/death/terminal Finish/victory/profit remain OPEN",
+    "natural AI, skills/magic/attribute, multi-enemy, timeout-positive, transport/Lua/bootstrap/original executable ABI/JSS1999/Taiwan-v1 remain OPEN",
+    "pressure2486=2465 capability closed+18 OPEN+3 historic UB; zero promotions"
+  ]
+}
