@@ -24,9 +24,9 @@ def observed_lethal_round() -> str:
         # effects before adding independent exact oracles.
         ('demand(battle->turn==1&&battle->mode==BATTLE_MODE_BATTLE,"complete nonterminal ordinary attack round turn1");',
          'printf("LETHAL_LOOP_MODE|mode=%d|arena=%d|turn=%d|battle_mode=%d|winside=%d\\n",mode,battle_at,battle->turn,battle->mode,battle->winside);fflush(stdout);'),
-        ('demand(!memcmp(expected_round,slots,sizeof expected_round),"complete all seven guard-round actor snapshots");',
+        ('demand(!memcmp(expected_round,slots,sizeof expected_round),"complete all seven attack-round actor snapshots");',
          'printf("LETHAL_ACTOR_DIFF|equal=%d\\n",!memcmp(expected_round,slots,sizeof expected_round));fflush(stdout);'),
-        ('demand(!memcmp(&expected_round_arena,battle,sizeof(BATTLE)),"complete exact guard-round arena delta");',
+        ('demand(!memcmp(&expected_round_arena,battle,sizeof(BATTLE)),"complete exact attack-round arena delta");',
          'printf("LETHAL_ARENA_DIFF|equal=%d\\n",!memcmp(&expected_round_arena,battle,sizeof(BATTLE)));fflush(stdout);'),
         ('demand(BATTLE_CommandWait(battle_at,0)==FALSE,"next original input waits");',
          'printf("LETHAL_NEXT_WAIT|skipped=1\\n");fflush(stdout);'),
