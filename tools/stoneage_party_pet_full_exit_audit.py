@@ -46,7 +46,7 @@ EXPECTED_INSERT=r"""
   demand(slots[2].use&&slots[0].use&&slots[1].use,"three living actors preserved");
   printf("\nREAL_HEADER_EXIT|array=%d|mode=%d|battle=%d|leader_slot=-1|member_slot=-1|pet_slot=-1|pet_mode=NONE|owned=2|battle_deleted=1\n",array,mode,battle_at);
 """
-MARKER=r"""   /* Exit is intentionally not asserted by this first admission gate.
+MARKER=r"""  /* Exit is intentionally not asserted by this first admission gate.
      The accepted solo teardown is not equivalent to populated pet Exit. */
 """
 def make_native(profile,source):
