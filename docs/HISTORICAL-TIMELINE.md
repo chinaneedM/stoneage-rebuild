@@ -1967,3 +1967,16 @@ rejected-prefix writes can survive later empty cells. Iris Windows conversion
 and object/battle caller facts remain STATIC/OPEN. Real object ownership/slot0/
 Exit-to-reuse and original release/ABI/JSS/Taiwan-v1 unproved. Local PASS; remote
 PENDING,zero promotions. Spec STONEAGE-ENEMY-LOADER-R1.md.
+
+
+## 2026-10-10 — Preserved master loading and ordinary birth source gate remote ACCEPTED
+
+Exact input1d0c11cd6b7b5134e9cd39014092e9a14a591085/tree
+c1fe0c01cd4809c040dd983f0eb6c521bd6deb48 passes Action38021001375/
+job114121749879:139 regressions,7,284+11,756 full loaded records,49,024 ordinary
+births and12 rejected mutations. Eight old reports unchanged; complete new ordered
+report equals local. Prior PENDING superseded only in same-pin Gavin configured
+bytes/Bismarck cross-profile/current-header LP64 domain. Iris Windows conversion
+and actual world-object ownership/slot0/full entry-Exit-reuse remain OPEN; no
+original build/ABI/JSS/Taiwan-v1 or runtime promotion. Receipt
+STONEAGE-ENEMY-LOADER-ACCEPTANCE-R1.json; earlier histories preserved.

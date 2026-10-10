@@ -5063,3 +5063,20 @@ ordinary births,139 regressions,12 rejected native mutations; eight old reports
 unchanged. Local PASS, remote PENDING. Born ticket/start/object0 is bounded
 source-input evidence, not ownership/sentinel/original release/JSS/Taiwan-v1 proof.
 Zero runtime promotions; registration/occupied slot0 and full Exit-to-reuse next.
+
+
+## 2026-10-10 — Original master loader and preserved birth source gate remote ACCEPTED
+
+Exact input1d0c11cd6b7b5134e9cd39014092e9a14a591085/tree
+c1fe0c01cd4809c040dd983f0eb6c521bd6deb48 passes Action38021001375/
+job114121749879:139 regressions,7,284+11,756 full loaded-record comparisons,
+49,024 ordinary births and12 rejected semantic mutations. Eight old full reports
+unchanged; full new ordered report matches local bytes; nine cmp gates pass.
+Receipt STONEAGE-ENEMY-LOADER-ACCEPTANCE-R1.json; report SHA256
+ce1e52eee5169fc123f8b1c71c252908bedd1f42067f87b4772b2d3f7f596538. Artifact11658451381 digest
+sha256:8ffca12b92ebff80d0a29ee9d039082bf5baf2269be4ec8fe262cc8e7ebedcf9;
+archive not independently downloaded. PENDING superseded only for Gavin own
+configured data/Bismarck cross-profile input/current-header LP64 witnesses.
+Iris conversion, ownership/occupied slot0/full Exit-to-reuse/original release/
+JSS/Taiwan-v1 remain OPEN;zero promotions. Tested code unchanged and original
+sources/data remain transient; earlier records preserved.

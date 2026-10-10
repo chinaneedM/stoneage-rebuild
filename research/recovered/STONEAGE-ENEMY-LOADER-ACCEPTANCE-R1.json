@@ -1,0 +1,52 @@
+{
+  "schema": "stoneage-enemy-loader-acceptance-r1",
+  "status": "REMOTE_ACCEPTED",
+  "tested_head": "1d0c11cd6b7b5134e9cd39014092e9a14a591085",
+  "tested_tree": "c1fe0c01cd4809c040dd983f0eb6c521bd6deb48",
+  "run_id": 38021001375,
+  "job_id": 114121749879,
+  "run_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38021001375",
+  "conclusion": "success",
+  "regression_checks": 139,
+  "executed_loader_profiles": [
+    "gavin",
+    "bismarck"
+  ],
+  "loaded_template_full_record_comparisons": 7284,
+  "loaded_enemy_full_record_comparisons": 11756,
+  "preserved_ordinary_birth_calls": 49024,
+  "additional_mutation_birth_calls": 6,
+  "semantic_mutations_rejected": 12,
+  "complete_ordered_remote_report_matches_local_bytes": true,
+  "all_nine_workflow_cmp_gates_passed": true,
+  "report_git_blob": "a54b45e0a5671c26837f2ea1be3add22de7390e7",
+  "report_sha256": "ce1e52eee5169fc123f8b1c71c252908bedd1f42067f87b4772b2d3f7f596538",
+  "artifact": {
+    "id": 11658451381,
+    "name": "enemy-loader-1d0c11cd6b7b5134e9cd39014092e9a14a591085",
+    "size_in_bytes": 995,
+    "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/11658451381",
+    "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/11658451381/zip",
+    "expired": false,
+    "created_at": "2026-10-10T03:35:54Z",
+    "expires_at": "2027-01-08T03:33:47Z",
+    "updated_at": "2026-10-10T03:35:54Z",
+    "digest": "sha256:8ffca12b92ebff80d0a29ee9d039082bf5baf2269be4ec8fe262cc8e7ebedcf9",
+    "workflow_run": {
+      "id": 38021001375,
+      "repository_id": 1374762421,
+      "head_repository_id": 1374762421,
+      "head_branch": "agent/enemy-loader-r1-20261010",
+      "head_sha": "1d0c11cd6b7b5134e9cd39014092e9a14a591085"
+    }
+  },
+  "artifact_archive_independently_downloaded": false,
+  "original_pool_and_loaders_executed": true,
+  "iris_loader_execution": "OPEN Windows conversion; no adapter",
+  "preserved_specimen": "same-pin Gavin setup-selected bytes; Bismarck cross-profile input only",
+  "all_birth_fields_have_independent_oracle": false,
+  "object_registration_provenance": "static only, not transitive ownership proof",
+  "full_Exit_to_reuse_composition_executed": false,
+  "runtime_promotions": 0,
+  "next": "Execute object registration/ownership and relation of loaded enemy work0 to occupied object slot0, then full actual entry/Exit/destruction/reuse."
+}

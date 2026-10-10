@@ -1,6 +1,8 @@
 # Original master loading and preserved ordinary births R1
 
-Status: LOCAL PASS; exact-input remote acceptance PENDING.
+Status: REMOTE ACCEPTED on Action38021001375/job114121749879.
+Exact input1d0c11cd6b7b5134e9cd39014092e9a14a591085/tree
+c1fe0c01cd4809c040dd983f0eb6c521bd6deb48; acceptance receipt recorded.
 
 FACT only in pinned descendant/current-profile LP64 witnesses. Original sources
 and game data remain transient outside the repository. Independently authored

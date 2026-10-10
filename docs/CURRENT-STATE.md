@@ -9821,3 +9821,36 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   Exit/destruction/reuse. Iris encoding and remaining actor/watcher/typed631/635,
   original build/ABI/JSS/Taiwan-v1 remain OPEN. No engine/content transition.
   Protocol section10 ongoing publication/Actions/acceptance authorization applies.
+
+
+## 2026-10-10 — Original master loading and preserved ordinary birth remote ACCEPTED
+
+- Exact input1d0c11cd6b7b5134e9cd39014092e9a14a591085/tree
+  c1fe0c01cd4809c040dd983f0eb6c521bd6deb48 passes Action38021001375/
+  job114121749879:139 regressions,7,284 template+11,756 enemy full-record
+  comparisons,49,024 preserved-record ordinary births at GNU99 -fgnu89-inline
+  O0/O2+nonrecovering UBSan;12 semantic mutations rejected (6 additional births).
+  All eight predecessor full reports unchanged; all nine cmp gates pass. Complete
+  ordered remote report equals local bytes, including full-stream semantic hashes.
+- Actual original pool/file loaders/tokenizers/checked setters/link/level helpers
+  and accepted ordinary creator/stat composition execute. Same-pin Gavin configured
+  unmodified bytes, Bismarck cross-profile input only. Loaded1,816 templates/2,935
+  variants,1,532 ordinary selected variants/profile. Birth ticket/start/object0
+  extends synthetic evidence to preserved source-input scope; no natural original
+  release/ownership/sentinel/complete bootstrap claim. Named birth fields checked;
+  complete birth data/work streams hashed and O0/O2 equal, not all-field oracle.
+- Receipt STONEAGE-ENEMY-LOADER-ACCEPTANCE-R1.json; report SHA256
+  ce1e52eee5169fc123f8b1c71c252908bedd1f42067f87b4772b2d3f7f596538. Artifact11658451381 digest
+  sha256:8ffca12b92ebff80d0a29ee9d039082bf5baf2269be4ec8fe262cc8e7ebedcf9.
+  Archive not independently downloaded; complete ordered logs and successful
+  report cmp gates verified. Tested code unchanged; all earlier histories preserved.
+- Iris Windows conversion is explicitly unexecuted OPEN with original identities,
+  no adapter. Object/battle caller facts remain STATIC, not transitive ownership
+  proof. Encrypted inputs/special/equipment/nonempty callbacks remain OPEN.
+- Supersedes local PENDING only in bounded executed profiles/input scope.
+  Pressure2486=2465 closed capability+18 OPEN+3 historical UB;zero promotions.
+  Highest priority: execute actual object registration/ownership and relation of
+  loaded enemy work0 to occupied object slot0, then complete actual battle entry/
+  Exit/destruction/reuse. Remaining actor/watcher/typed631/635 and original build/
+  ABI/JSS/Taiwan-v1 stay OPEN; no engine/content transition. Protocol section10
+  ongoing publication/Actions/acceptance integration authorization applies.
