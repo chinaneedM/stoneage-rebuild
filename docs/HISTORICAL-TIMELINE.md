@@ -2198,3 +2198,16 @@ This supersedes the ordinary nonterminal damage execution gap only. Death,
 terminal Finish/victory/positive rewards, natural commands/AI and historical
 JSS1999/Taiwan-v1 equivalence remain OPEN. No historical promotions or rewritten
 prior evidence; failed preparatory candidates remain in repository history.
+
+
+## 2026-10-10 — Later-descendant native EXP differences verified, bounded
+
+FACT under pinned Gavin1f90cb6/Bismarck999ffdf1 only: Action38061352391
+executes unchanged original GetExp/AddMaxExp directly with full recipient and
+arena byte oracles. Gavin raw13 yields13 (owner50% yields19); Bismarck's
+accepted eligible raw13 or0 yields1000000. Storage caps differ1224160000
+and1073741824. Explicit Gavin multiplier fixtures1/3, Bismarck active getter
+returns1 with its equipment branch untaken.16 encounters/144 EXP cases plus16
+invalid-recipient controls, O0/O2 UBSan; remote artifact independently verified.
+Not proof of operator settings, first-release behavior, leveling or complete
+terminal Finish/automatic Exit/Delete. Historical/capability promotions0.

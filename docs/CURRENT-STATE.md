@@ -10942,3 +10942,46 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   dependencies under explicitly justified fixture inputs; finish the second
   native Loop through GetProfit/Exit/Delete, compare actual payout recipient,
   amounts and full actor/arena state. No modern-engine phase transition.
+
+
+## 2026-10-10 — Original profile-specific direct EXP writes REMOTE ACCEPTED (bounded)
+
+- Fresh remote baseline main d21aafff4c7560acee8c677474d5d7fc4404c699,
+  tree8b338e62a8261936396b47cbda632fff63976cb7. Complete preceding CURRENT-STATE
+  blob f9273981b8668f322da12bbdf78fc46f40842593,1185661 bytes preserved verbatim.
+- Branch agent/party-pet-original-exp-r1-20261010, exact tested code
+  b770da490d073794f20cdd6a7bbab5362088948b, treef4acb7c7388806cd08f482c43476ed51c5bf9cab.
+  Action38061352391/job114240093703 SUCCESS,10 steps,21 regression tests.
+  GNU99 original-header Gavin1f90cb6/Bismarck999ffdf1 O0/O2 nonrecovering UBSan;
+  inherited populated Init/input/AI/guard/attack/lethal/Exit controls retained.
+- FACT under explicit fixture: unchanged BATTLE_GetExp and CHAR_AddMaxExp
+  execute144 direct case calls plus16 invalid-recipient controls over16 native
+  encounters. Complete seven-actor byte oracle admits only intended recipient
+  CHAR_EXP/CHAR_WORKGETEXP writes; complete arena unchanged. O0/O2 whole traces
+  byte-identical within each profile. Nine cases: player/pet+owner bonus,
+  negative/zero/positive input, storage saturation, pet ID1163, maximum upgrade
+  level, explicit configured Gavin multiplier3 and no-other-owner writes.
+- Active original **unsigned** getter reads Gavin config.battleexp; fixture1/3
+  are not operator configuration. Bismarck's active getter returns1, but is not
+  executed in its empty-equipment GetExp branch. Original Bismarck level-table
+  and CHAR_GetLevelExp are executed. No dummy gameplay getters or payout stubs.
+  Source fingerprints in STONEAGE-PARTY-PET-ORIGINAL-EXP-SOURCE-R1.json.
+- Version differences preserved, not generalized: raw13 -> Gavin13,
+  Bismarck1000000; owner50% ->19 versus1000000; raw0 ->0 versus1000000.
+  Persistent cap Gavin1224160000, Bismarck1073741824. Failed local candidate
+  caught common-cap assumption through full actor oracle; corrected separate
+  source caps accepted. Exact unsigned signature extraction also corrected.
+- Artifact11673262164 independently downloaded: ZIP4150 bytes SHA256
+  e2420d657e6a137f1a59dc3f5dc6012b087bd85d8200614dcfa08cd954deb7d0;
+  sole stoneage-party-exp.txt SHA256
+  cfba56b03245adfa7eed0e6bd588451a7a7c37de540730dc30c3e5913fb2decb
+  equals local derived bytes. Receipt STONEAGE-PARTY-PET-ORIGINAL-EXP-ACCEPTANCE-R1.json.
+- Accepted direct original EXP writes only. Second Loop/Finish/GetExpGold,
+  leveling, reward transport packets, positive items/gold, automatic terminal
+  Exit/Delete and JSS1999/Taiwan-v1 historical identity remain OPEN.
+  Pressure2486=2465 bounded closed+18 OPEN+3 historical UB, zero promotions.
+- Highest NEXT: source-accurate GetExpGold/CHAR_LevelUpCheck/reward serialization
+  dependency closure, then actual second Loop/Finish with precise whole actor,
+  arena, ownership, payout and automatic Exit/Delete oracles. Preserve million
+  floor, configured-multiplier and storage-cap source-profile boundaries.
+  No modern-engine phase transition; all earlier evidence remains intact.

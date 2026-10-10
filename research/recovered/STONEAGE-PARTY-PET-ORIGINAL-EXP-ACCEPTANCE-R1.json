@@ -1,0 +1,89 @@
+{
+  "gate": "STONEAGE_PARTY_PET_ORIGINAL_EXP_TRANSFER_R1",
+  "status": "REMOTE_ACCEPTED_BOUNDED_DIRECT_ORIGINAL_EXP_WRITES",
+  "baseline_main": "d21aafff4c7560acee8c677474d5d7fc4404c699",
+  "baseline_tree": "8b338e62a8261936396b47cbda632fff63976cb7",
+  "prior_state_blob": "f9273981b8668f322da12bbdf78fc46f40842593",
+  "prior_state_bytes": 1185661,
+  "tested_commit": "b770da490d073794f20cdd6a7bbab5362088948b",
+  "tested_tree": "f4acb7c7388806cd08f482c43476ed51c5bf9cab",
+  "branch": "agent/party-pet-original-exp-r1-20261010",
+  "github_actions": {
+    "run_id": 38061352391,
+    "job_id": 114240093703,
+    "conclusion": "success",
+    "steps_passed": 10,
+    "unit_tests_passed": 21,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38061352391"
+  },
+  "native": {
+    "profiles": [
+      "gavin1f90cb6",
+      "bismarck999ffdf1"
+    ],
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_ubsan": true,
+    "encounters_total": 16,
+    "positive_and_zero_exp_control_calls": 144,
+    "invalid_recipient_calls": 16,
+    "representative_markers": 72,
+    "complete_seven_actor_oracle": true,
+    "whole_arena_preservation": true,
+    "optimization_output_byte_identity": true,
+    "trace_sha256": {
+      "gavin": "e3fd68aae491e874750a244849fa51b53757fac7ae414c43a4b23143f46b9a70",
+      "bismarck": "db418d31efa105c2adf4e362649bb7275db9742769887fde566e1f6256cca5d5"
+    }
+  },
+  "active_preprocessed_getter": {
+    "gavin": "original unsigned getter reads config.battleexp; explicit test values 1 and 3",
+    "bismarck": "original unsigned getter returns 1; untaken equipment branches only in bounded GetExp"
+  },
+  "bounded_profile_difference": {
+    "gavin": {
+      "raw13": 13,
+      "owner_bonus50": 19,
+      "raw0": 0,
+      "persistent_exp_cap": 1224160000
+    },
+    "bismarck": {
+      "raw13": 1000000,
+      "owner_bonus50": 1000000,
+      "raw0": 1000000,
+      "persistent_exp_cap": 1073741824
+    }
+  },
+  "artifact": {
+    "id": 11673262164,
+    "zip_bytes": 4150,
+    "zip_sha256": "e2420d657e6a137f1a59dc3f5dc6012b087bd85d8200614dcfa08cd954deb7d0",
+    "derived_report_sha256": "cfba56b03245adfa7eed0e6bd588451a7a7c37de540730dc30c3e5913fb2decb",
+    "independently_downloaded_verified": true,
+    "remote_report_identical_to_local": true
+  },
+  "pressure": {
+    "total": 2486,
+    "closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "not_proven": [
+    "actual_second_Loop_Finish_composition",
+    "CHAR_LevelUpCheck",
+    "item_EXPUP",
+    "positive_items_gold",
+    "reward_packet",
+    "automatic_terminal_Exit_Delete",
+    "real_operator_configuration",
+    "JSS1999_Taiwan_v1_equivalence"
+  ],
+  "next": "original GetExpGold LevelUpCheck and reward transport dependencies, then second Loop Finish and full recipient/arena/ownership oracles",
+  "local_preacceptance_failures": [
+    "generic extractor initially dropped unsigned getter prefix; exact original unsigned declarations restored",
+    "independent complete-state oracle rejected uniform EXP storage cap; separate original caps retained"
+  ]
+}

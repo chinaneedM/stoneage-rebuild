@@ -5486,3 +5486,19 @@ Repository evidence:
   GitHub-reported derived artifact11673185532 sha256
   a50012961bec3687a9311c0e12d68151f416eb3f287b5bef5845ea56d70abad9,
   not independently downloaded.
+
+
+## 2026-10-10 — Original native EXP write witness R1
+
+Pinned original Gavin1f90cb6/Bismarck999ffdf1, gate
+tools/stoneage_party_pet_original_exp_audit.py and frozen
+research/recovered/STONEAGE-PARTY-PET-ORIGINAL-EXP-SOURCE-R1.json.
+Action38061352391/job114240093703 SUCCESS at b770da49,21 tests,144 direct
+EXP cases+16 invalid-recipient controls, O0/O2 UBSan, full actor/arena oracles.
+Independently downloaded artifact11673262164 ZIP SHA256
+e2420d657e6a137f1a59dc3f5dc6012b087bd85d8200614dcfa08cd954deb7d0;
+report SHA256 cfba56b03245adfa7eed0e6bd588451a7a7c37de540730dc30c3e5913fb2decb
+equals local bytes. Active unsigned getter, Bismarck million floor and different
+EXP caps versioned; no original code/assets vendored. Direct GetExp acceptance,
+not full Finish/leveling/items/gold/auto-exit or first-release historical fact.
+Receipt STONEAGE-PARTY-PET-ORIGINAL-EXP-ACCEPTANCE-R1.json.

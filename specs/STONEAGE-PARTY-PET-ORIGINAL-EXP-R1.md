@@ -1,6 +1,6 @@
 # Original real-header EXP transfer R1
 
-Status: candidate awaiting remote native acceptance. Late descendant bounded
+Status: REMOTE ACCEPTED, Actions38061352391 at b770da490d073794f20cdd6a7bbab5362088948b. Late descendant bounded
 capability only; not first-release JSS1999/Taiwan-v1 historical equivalence.
 
 ## Inputs and whole-state oracle
@@ -50,3 +50,9 @@ abort-on-call getBattleDebugMsg; it was not accepted or integrated. Guarded
 untaken dependencies still abort rather than fabricate gameplay values.
 Pressure remains2486=2465 closed capability+18 OPEN+3 historical UB;
 zero promotions and no phase transition.
+
+Acceptance:21 regression tests,10 successful workflow steps,16 native
+encounters,144 direct EXP case calls plus16 invalid-recipient calls. Complete
+O0/O2 output bytes agree per profile. Independently downloaded artifact
+11673262164 ZIP/report SHA256 and local byte identity are in the acceptance
+receipt. The frozen original source manifest is separate from runtime output.
