@@ -66,7 +66,7 @@ def lethal_round_native(profile,source,battle,event,root):
     entry="int main(int argc,char **argv){"
     if native.count(entry)!=1:
         raise ValueError("original native main entry drift")
-    native=native.replace(entry,original_set_max_exp+"\\n"+entry,1)
+    native=native.replace(entry,original_set_max_exp+"\n"+entry,1)
     return native.replace(anchor,anchor+LETHAL_ROUND_OBSERVATIONS.replace(
         "ENTRY_FIELD","char_index" if profile=="bismarck" else "charaindex",
     ),1),has_lua
