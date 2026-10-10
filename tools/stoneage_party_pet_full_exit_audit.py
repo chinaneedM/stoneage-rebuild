@@ -78,6 +78,15 @@ void CHAR_sendCToArroundCharacter(int objindex){
 """
 def make_native(profile,source):
     original=admission_native(profile,source)
+    # The prior entry-only network collector admits 0/1. During owned-pet
+    # teardown, original compliance may address the real pet actor index 2.
+    # This change is limited to the typed status output collector only.
+    actor="char_index" if profile=="bismarck" else "charaindex"
+    status=definition(original,"CHAR_send_P_StatusString")
+    scoped=f"if({actor}!=0&&{actor}!=1)abort();status_count++;"
+    if status.count(scoped)!=1:raise ValueError("accepted teammate status collector drift")
+    expanded=f"if({actor}!=0&&{actor}!=1&&{actor}!=2)abort();status_count++;"
+    original=original.replace(status,status.replace(scoped,expanded),1)
     if original.count(MARKER)!=1:raise ValueError("accepted admission body changed")
     anchor="int main(int argc,char **argv){"
     if original.count(anchor)!=1:raise ValueError("actual original main anchor drift")
