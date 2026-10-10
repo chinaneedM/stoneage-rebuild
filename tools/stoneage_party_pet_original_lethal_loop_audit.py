@@ -68,6 +68,17 @@ def lethal_round_native(profile,source,battle,event,root):
         raise ValueError("original native main entry drift")
     original_pet_die=attack.definition(battle,"Pet_Check_Die")
     original_normal_dead=attack.definition(battle,"BATTLE_NormalDeadExtra")
+    original_finish_set=attack.definition(battle,"BATTLE_FinishSet")
+    # The inherited probe explicitly rejects previously-unreached FinishSet;
+    # only the dedicated lethal variant replaces this with the original body.
+    try:
+        previous_finish_set=attack.definition(native,"BATTLE_FinishSet")
+    except ValueError:
+        previous_finish_set=None
+    if previous_finish_set is not None:
+        native=native.replace(previous_finish_set,original_finish_set,1)
+    else:
+        native=native.replace(entry,original_finish_set+"\n"+entry,1)
     native=native.replace(entry,original_set_max_exp+"\n"+original_pet_die+"\n"+original_normal_dead+"\n"+entry,1)
     return native.replace(anchor,anchor+LETHAL_ROUND_OBSERVATIONS.replace(
         "ENTRY_FIELD","char_index" if profile=="bismarck" else "charaindex",
