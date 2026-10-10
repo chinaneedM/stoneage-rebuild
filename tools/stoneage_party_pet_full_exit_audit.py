@@ -100,6 +100,14 @@ def make_native(profile,source):
     if status.count(scoped)!=1:raise ValueError("accepted teammate status collector drift")
     expanded=f"if({actor}!=0&&{actor}!=1&&{actor}!=2)abort();status_count++;"
     original=original.replace(status,status.replace(scoped,expanded),1)
+    # Original healthy teammate Exit reaches the same battle-time guard.
+    # Preserve all pinned fd/clock/time expectations; allow only the two
+    # concrete player actors in this controlled battle.
+    timer=definition(original,"CheckDefBTime")
+    solo=f"if({actor}!=0||fd!=7||lowTime!=1000||battletime!=2||addTime!=0)abort();"
+    pair=f"if(({actor}!=0&&{actor}!=1)||fd!=7||lowTime!=1000||battletime!=2||addTime!=0)abort();"
+    if timer.count(solo)!=1:raise ValueError("accepted battle time collector drift")
+    original=original.replace(timer,timer.replace(solo,pair),1)
     if original.count(MARKER)!=1:raise ValueError("accepted admission body changed")
     anchor="int main(int argc,char **argv){"
     if original.count(anchor)!=1:raise ValueError("actual original main anchor drift")
