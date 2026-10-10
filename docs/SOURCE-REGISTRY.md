@@ -5135,3 +5135,20 @@ sources/data remain transient; earlier records preserved.
   Differential work oracle from captured birth, not all-field birth oracle.
   No original C/headers/data committed. Remote PENDING; higher-level battle
   bootstrap/Finish/other actors/original reclaimer/ABI/JSS/Taiwan-v1 OPEN;0 promotions.
+
+
+## 2026-10-10 — Enemy Entry/Exit/reuse accepted derived evidence
+
+- STONEAGE-ENEMY-ENTRY-EXIT-ACCEPTANCE-R1.json records tested
+  178356adaed50d1bd6c8b170eac297259895d6af/tree
+  718b7227d6b72954ae6cbb9ce969077eb3f80778, Action38023653829/
+  job114129802080,164 checks,11 complete report cmp gates and ordered-log match.
+- Native report SHA2569765e8ebdaa7861e12887fe6ba73a5f4a46eb3d12b92ffe358bd8f0af9cd6f70,
+  Git blobfa995217a9fa95f0dc1a5028f9ded776bd72bce4.
+  Artifact11659251039 archive independently downloaded and digest verified:
+  sha256:1196cbf9c6dc9534e2d86a64e676a28a0b3f8a91795fff646c2922f52bb675f2;
+  sole report member equals local bytes. No original C/headers/master data published.
+- Existing pinned descendant/source/header/table/input domains and controlled
+  adapters unchanged. Accepted ordinary enemy composition; higher-level battle
+  creation/bootstrap/Finish, other actors, original reclamation/Iris conversion/
+  original ABI/build/JSS/Taiwan-v1 remain OPEN;zero runtime promotions.

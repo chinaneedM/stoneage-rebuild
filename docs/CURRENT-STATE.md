@@ -9968,3 +9968,36 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   array bootstrap/Finish and further player/pet/party/watcher compositions.
   Original reclamation/Iris conversion/ABI/build/JSS/Taiwan-v1 and actor/watcher/
   typed631/635 remain OPEN; no engine/content transition. Section10 authorization.
+
+
+## 2026-10-10 — Actual-header preserved enemy Entry/Exit/destruction/reuse REMOTE ACCEPTED
+
+- Action38023653829/job114129802080 success at tested HEAD
+  178356adaed50d1bd6c8b170eac297259895d6af/tree
+  718b7227d6b72954ae6cbb9ce969077eb3f80778. All20 job steps succeed;
+  164 regressions and11 complete report cmp gates pass. Complete ordered10-line
+  remote report equals local bytes; ten predecessor reports remain unchanged.
+- Accepted49,104 cycles (49,024 natural+80 controlled dirty),98,208 original births/
+  Entries/ordinary-enemy Exits,196,416 full-work-delta/stage comparisons and
+  785,664 rejection-guard calls, with12 safe semantic mutations rejected.
+  O0/O2 actual-header GNU99 -fgnu89-inline/nonrecovering UBSan scope only.
+- Real INIT1/FINAL6, entry removal, empty inventory, enemy slot invalidation,
+  repeated dead-slot guards and next-sequence birth reuse are checked. World
+  players/named objects0/1/map links remain unchanged. Gavin zero stale-ticket/
+  clock tail and Bismarck dead-slot guard difference preserved; no warp reached.
+- Acceptance STONEAGE-ENEMY-ENTRY-EXIT-ACCEPTANCE-R1.json; report SHA256
+  9765e8ebdaa7861e12887fe6ba73a5f4a46eb3d12b92ffe358bd8f0af9cd6f70.
+  Artifact11659251039 independently downloaded; archive digest
+  sha256:1196cbf9c6dc9534e2d86a64e676a28a0b3f8a91795fff646c2922f52bb675f2
+  matches metadata, sole report member matches local bytes. Tested code/source
+  pins/workflow/tests/native report unchanged; earlier histories preserved.
+- Supersedes local PENDING within this ordinary-enemy/source/input/adapter domain.
+  Full-work delta uses captured birth baseline; no independent all-birth-field or
+  all-Object-byte oracle. Controlled battle/map/pool/clock and inherited walk/
+  watch/detached-node collectors; original freeMemory remains unexecuted.
+- Pressure2486=2465 closed capability+18 OPEN+3 historical UB;zero promotions.
+  Highest priority: actual higher-level BATTLE_CreateVsEnemy and battle-array
+  bootstrap/Finish composition. Other player/pet/special/party/watcher paths,
+  original reclaimer/bootstrap, Iris conversion, nonempty callbacks/equipment,
+  actor/watcher/typed631/635 and original ABI/build/JSS/Taiwan-v1 remain OPEN.
+  No engine/content transition. Protocol section10 accepted integration applies.

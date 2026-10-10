@@ -2018,3 +2018,18 @@ STONEAGE-ENEMY-LOADER-ACCEPTANCE-R1.json; earlier histories preserved.
  164 regressions/12 mutations; ten prior reports unchanged. Fixed clock/battle/map
   and inherited world adapters; full higher-level battle/other actor/ABI/JSS/
   Taiwan-v1/reclaimer scope OPEN. Remote PENDING;zero promotions.
+
+
+## 2026-10-10 — Preserved ordinary enemy Entry/Exit/reuse remote acceptance
+
+- Tested178356adaed50d1bd6c8b170eac297259895d6af, Action38023653829/
+  job114129802080 succeeds:164 regressions,11 complete cmp gates, ordered report
+  and independently downloaded artifact match.49,104 cycles/98,208 births;
+  actual Entry and complete Exit execute through ordinary enemy path.
+- Actual headers establish INIT1/FINAL6; earlier symbolic ordinal fixtures remain
+  labels. Gavin post-destruction clock/zero-ticket tail and Bismarck liveness-
+  guarded tail differ. Entry removal/slot invalidation/rebirth work/flags and
+  registered world-object/map retention checked; original reclaimer unexecuted.
+- FACT bounded descendant/profile/input/storage/adapters only. No whole battle
+  lifecycle or original released ABI/JSS/Taiwan-v1 conclusion. Higher-level
+  creation/bootstrap/Finish and other actors remain OPEN;zero runtime promotions.

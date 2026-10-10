@@ -1,8 +1,11 @@
 # Actual-header preserved enemy Entry / Exit / destruction / reuse R1
 
-Status: bounded local validation; remote acceptance pending. Evidence applies to
-two pinned descendant sources and their current compile profiles, not original
-released builds or JSS/Taiwan-v1 runtime admission.
+Status: bounded remote acceptance at tested HEAD
+178356adaed50d1bd6c8b170eac297259895d6af, Action38023653829/job114129802080.
+164 regressions and11 full report cmp gates pass; ordered logs and independently
+downloaded artifact match. Evidence applies to two pinned descendant sources and
+their current compile profiles, not original released builds or JSS/Taiwan-v1
+runtime admission. Receipt: STONEAGE-ENEMY-ENTRY-EXIT-ACCEPTANCE-R1.json.
 
 ## Executed composition
 
