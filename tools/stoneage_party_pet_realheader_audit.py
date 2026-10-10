@@ -19,16 +19,22 @@ import hashlib
 import json
 
 BODY=r"""
+#include <execinfo.h>
+#include <signal.h>
+#include <unistd.h>
+static void fataltrace(int sig){void *pc[32];int n=backtrace(pc,32);fprintf(stderr,"ABORT_TRACE|signal=%d|frames=%d\n",sig,n);backtrace_symbols_fd(pc,n,2);_Exit(130+sig);}
 static void demand(int truth,const char *name){
  if(!truth){fprintf(stderr,"REAL_HEADER_FAIL|%s\n",name);abort();}
 }
 int main(int argc,char **argv){
+ signal(SIGABRT,fataltrace);signal(SIGSEGV,fataltrace);
+ fprintf(stderr,"TRACE|MAIN_ENTER\n");
  demand(argc==3&&sizeof(void*)==8&&sizeof(int)==4,"host");
 SETUP
- fprintf(stderr,"TRACE|MEM_INIT\\n");
+ fprintf(stderr,"TRACE|MEM_INIT\n");
  demand(memInit(),"memory init");
  demand(ENEMYTEMP_initEnemy(argv[1])&&ENEMY_initEnemy(argv[2]),"master loaders");
- fprintf(stderr,"TRACE|ARENA\\n");
+ fprintf(stderr,"TRACE|ARENA\n");
  demand(BATTLE_initBattleArray(3),"battle arena");
  MAP_map=controlled_map;MAP_idtblsize=1;
  JUMP
@@ -37,7 +43,7 @@ SETUP
  initCharCounter[0]=(INITCHARCOUNTER){0,0,2};
  initCharCounter[1]=(INITCHARCOUNTER){2,2,4};
  initCharCounter[2]=(INITCHARCOUNTER){4,4,7};
- fprintf(stderr,"TRACE|WORLD_OBJECTS\\n");
+ fprintf(stderr,"TRACE|WORLD_OBJECTS\n");
  demand(initObjectArray(2),"world objects");
  for(int i=0;i<2;i++){
   int c,o;demand(CHAR_createCharacter(CHAR_TYPEPLAYER,1,1,1,0,&c,&o,1)&&c==i&&o==i,"world players");
@@ -81,7 +87,7 @@ SETUP
  pet.workint[CHAR_WORKBATTLEINDEX]=-1;
  pet.workint[CHAR_WORKGETEXP]=777;
  for(int i=0;i<CHAR_MAXPETHAVE;i++)pet.unionTable.indexOfPet[i]=-1;
- fprintf(stderr,"TRACE|PET_ALLOC\\n");
+ fprintf(stderr,"TRACE|PET_ALLOC\n");
  int petIndex=CHAR_initCharOneArray(&pet);
  demand(petIndex==2,"real pet allocator index");
  slots[0].unionTable.indexOfPet[0]=petIndex;
@@ -108,7 +114,7 @@ SETUP
   for(int k=0;k<3;k++)encounter_table[k]=array;
   encounter_table[1]=-1;
   battle_at=BATTLE_searchCnt%3;
-  fprintf(stderr,"TRACE|CREATE\\n");
+  fprintf(stderr,"TRACE|CREATE\n");
  int result=BATTLE_CreateVsEnemy(0,0,-1);
  fprintf(stderr,"TRACE|CREATE_RETURN|%d\\n",result);
   if(result)fprintf(stderr,"CREATE_RETURN|%d\n",result);
@@ -198,7 +204,7 @@ def main():
                 exe=Path(d)/("probe"+opt)
                 compile_probe(profile,roots[profile],csource,exe,opt,[n for n in pins["profiles"][profile]["unreachable_traps"] if n!="BATTLE_Index2No"])
                 run=subprocess.run([str(exe),*map(str,paths)],input=f"{chosen} 0\n",capture_output=True,text=True)
-                if run.returncode or run.stderr:
+                if run.returncode or (run.stderr and "TRACE|" not in run.stderr):
                     raise ValueError("real-header "+profile+" "+opt+" "+run.stderr[-5000:]+" code="+str(run.returncode)+" stdout "+run.stdout[-2000:])
                 if "REAL_HEADER_ENTRY|" not in run.stdout:raise ValueError("no real admission")
                 out.append(run.stdout)
