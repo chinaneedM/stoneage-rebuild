@@ -72,7 +72,15 @@ def ticket_native(profile,source,battle,event,root):
     native,has_lua=drop.positive_drop_native(profile,source,battle,event,root)
     for name in ("BATTLE_AddExpItem","BATTLE_ItemDelCheck"):
         extracted=attack.definition(battle,name)
-        already=attack.definition(native,name)
+        try:
+            already=attack.definition(native,name)
+        except ValueError:
+            if name!="BATTLE_ItemDelCheck":raise
+            # This true original helper was not needed by the previous
+            # no-overflow source witness. Supply its unchanged C body now.
+            native=replace_once(native,"int main(int argc,char **argv){",
+                  extracted+"\nint main(int argc,char **argv){")
+            already=attack.definition(native,name)
         symbols=("BATTLE_AddExpItem","getitem","ENEMY","ITEM") if name=="BATTLE_AddExpItem" else ("ITEM","CHAR")
         if not all(z in already for z in symbols[1:]):
             raise ValueError("missing original reward function body "+name)
