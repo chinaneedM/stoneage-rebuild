@@ -15,4 +15,14 @@ class PartyPetExitTests(unittest.TestCase):
   with patch("tools.stoneage_party_pet_full_exit_audit.admission_native",return_value="missing accepted marker"):
    with self.assertRaises(ValueError):make_native("gavin","placeholder")
  def test_exact_marker(self):self.assertIn("Exit is intentionally not asserted",MARKER)
+ def test_bounded_four_encounter_loop_anchor(self):
+  from unittest.mock import patch
+  from tools.stoneage_party_pet_full_exit_audit import LOOP_END,make_reentry_native
+  self.assertIn("break;",LOOP_END)
+  with patch("tools.stoneage_party_pet_full_exit_audit.make_native",return_value="PREFIX"+LOOP_END):
+   changed=make_reentry_native("gavin","fixture")
+  self.assertNotIn(LOOP_END,changed)
+  self.assertIn("bounded multi-battle reentry",changed)
+  with patch("tools.stoneage_party_pet_full_exit_audit.make_native",return_value="missing"):
+   with self.assertRaises(ValueError):make_reentry_native("gavin","fixture")
 if __name__=="__main__":unittest.main()

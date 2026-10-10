@@ -1,4 +1,4 @@
-name: Validate StoneAge original party pet real-header full Exit
+name: Validate StoneAge original party pet real-header reentry
 on:
   workflow_dispatch:
   push:
@@ -39,11 +39,11 @@ jobs:
           set -euo pipefail
           python -m tools.stoneage_party_pet_full_exit_audit --gavin-dir /tmp/stoneage-party-full-exit/gavin --iris-dir /tmp/stoneage-party-full-exit/iris --bismarck-dir /tmp/stoneage-party-full-exit/bismarck > /tmp/stoneage-party-full-exit.txt
           cat /tmp/stoneage-party-full-exit.txt
-          grep -F "RESOLUTION|ORIGINAL_REAL_HEADER_PARTY_PET_EXIT_AND_DELETE_BOUNDED_PASS_NO_PROFIT_CLAIM" /tmp/stoneage-party-full-exit.txt
-          test "$(grep -c '^ACTUAL|.*|REAL_HEADER_EXIT|' /tmp/stoneage-party-full-exit.txt)" -eq 2
-          test "$(grep -c '^ACTUAL|.*|REAL_HEADER_ENTRY|' /tmp/stoneage-party-full-exit.txt)" -eq 2
+          grep -F "RESOLUTION|ORIGINAL_REAL_HEADER_PARTY_PET_REENTRY_FOUR_FIGHTS_BOUNDED_PASS_NO_PROFIT_CLAIM" /tmp/stoneage-party-full-exit.txt
+          test "$(grep -c '^ACTUAL|.*|REAL_HEADER_EXIT|' /tmp/stoneage-party-full-exit.txt)" -eq 8
+          test "$(grep -c '^ACTUAL|.*|REAL_HEADER_ENTRY|' /tmp/stoneage-party-full-exit.txt)" -eq 8
       - name: Upload derived source-free result
         uses: actions/upload-artifact@v4
         with:
-          name: stoneage-party-full-exit
+          name: stoneage-party-reentry
           path: /tmp/stoneage-party-full-exit.txt

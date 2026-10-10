@@ -130,6 +130,16 @@ def make_native(profile,source):
     field="char_index" if profile=="bismarck" else "charaindex"
     return original.replace(MARKER,EXPECTED_INSERT.replace("ENTRY_FIELD",field),1)
 
+LOOP_END="  break;\n }\n endObjectOne(0);endObjectOne(1);memEnd();"
+def make_reentry_native(profile,source):
+    original=make_native(profile,source)
+    if original.count(LOOP_END)!=1:
+        raise ValueError("accepted one-shot original battle loop boundary drift")
+    # Keep all original combat functions unchanged. The controlled driver
+    # now executes four full successful encounters with the same living party
+    # across battle pool cursor slots 0,1,2,0.
+    return original.replace(LOOP_END,"  /* bounded multi-battle reentry */\n }\n endObjectOne(0);endObjectOne(1);memEnd();",1)
+
 def main():
     ap=argparse.ArgumentParser()
     for p in PINNED:ap.add_argument("--"+p+"-dir",type=Path,required=True)
@@ -153,14 +163,14 @@ def main():
         temps,enemies=loaded_oracle(profile,loader,*[p.read_bytes() for p in paths],32,32)
         _,_,_,_,_,ride=solo_domain(profile,roots[profile])
         selection=eligible(loader,temps,enemies,ride)[0]
-        native=make_native(profile,source)
+        native=make_reentry_native(profile,source)
         with tempfile.TemporaryDirectory(prefix="stoneage-realheader-party-exit-") as d:
             observations=[]
             for opt in ("-O0","-O2"):
                 exe=Path(d)/("probe"+opt)
                 compile_probe(profile,roots[profile],native,exe,opt,
                     [x for x in accepted["profiles"][profile]["unreachable_traps"] if x not in ("BATTLE_Index2No","RIDEPET_getPETindex","CHAR_sendCToArroundCharacter","CHAR_send_K_StatusString")])
-                run=subprocess.run([str(exe),*map(str,paths)],input=f"{selection} 0\n",capture_output=True,text=True)
+                run=subprocess.run([str(exe),*map(str,paths)],input=''.join(f'{selection} {mode}\n' for mode in range(4)),capture_output=True,text=True)
                 if run.returncode or any(not line.startswith("TRACE|") for line in run.stderr.splitlines() if line.strip()):
                     offsets=re.findall(r"probe-(?:O0|O2)\(\+(0x[0-9a-f]+)\)",run.stderr)
                     symbols=subprocess.run(["addr2line","-f","-C","-e",str(exe),*offsets],
@@ -168,15 +178,23 @@ def main():
                     raise ValueError("actual original party/pet Exit "+profile+" "+opt+
                                      " rc="+str(run.returncode)+" stderr="+run.stderr[-7000:]+
                                      " symbols="+symbols+" stdout="+run.stdout[-2000:])
-                if run.stdout.count("REAL_HEADER_ENTRY|")!=1 or run.stdout.count("REAL_HEADER_EXIT|")!=1:
+                if run.stdout.count("REAL_HEADER_ENTRY|")!=4 or run.stdout.count("REAL_HEADER_EXIT|")!=4:
                     raise ValueError("missing actual entry/exit outputs")
+                entries=[line for line in run.stdout.splitlines() if line.startswith("REAL_HEADER_ENTRY|")]
+                exits=[line for line in run.stdout.splitlines() if line.startswith("REAL_HEADER_EXIT|")]
+                for mode,slot in enumerate((0,1,2,0)):
+                    prefix=f"|array={selection}|mode={mode}|battle={slot}|"
+                    if prefix not in entries[mode] or prefix not in exits[mode]:
+                        raise ValueError("battle cursor/reentry order drift "+profile+":"+str(mode))
+                    if "|owned=2|battle_deleted=1" not in exits[mode]:
+                        raise ValueError("reentry ownership/arena deletion drift")
                 observations.append(run.stdout)
             if observations[0]!=observations[1]:
                 raise ValueError("actual original populated player/pet Exit optimization mismatch")
-            print("PROFILE|"+profile+"|original_sources=PINNED|cycles=2|optimizations=O0,O2|sha256="+
+            print("PROFILE|"+profile+"|original_sources=PINNED|cycles=8|successful_encounters_per_optimization=4|pool_cursor=0,1,2,0|optimizations=O0,O2|sha256="+
                   hashlib.sha256(observations[0].encode()).hexdigest(),flush=True)
             for line in observations[0].splitlines():
                 if line.startswith("REAL_HEADER_ENTRY|") or line.startswith("REAL_HEADER_EXIT|"):
                     print("ACTUAL|"+profile+"|"+line,flush=True)
-    print("RESOLUTION|ORIGINAL_REAL_HEADER_PARTY_PET_EXIT_AND_DELETE_BOUNDED_PASS_NO_PROFIT_CLAIM",flush=True)
+    print("RESOLUTION|ORIGINAL_REAL_HEADER_PARTY_PET_REENTRY_FOUR_FIGHTS_BOUNDED_PASS_NO_PROFIT_CLAIM",flush=True)
 if __name__=="__main__":main()
