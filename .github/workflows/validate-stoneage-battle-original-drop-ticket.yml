@@ -6,6 +6,7 @@ on:
       - ".github/workflows/validate-stoneage-battle-original-drop-ticket.yml"
       - "tools/stoneage_battle_original_drop_ticket_audit.py"
       - "tests/test_stoneage_enemy_original_drop.py"
+      - "tests/test_stoneage_battle_original_drop_ticket.py"
       - "research/recovered/STONEAGE-BATTLE-ORIGINAL-DROP-TICKET-SOURCE-R1.json"
 permissions:
   contents: read
@@ -19,7 +20,7 @@ jobs:
         with: {python-version: "3.12"}
       - name: Original drop source and retained regression gates
         run: |
-          python -m unittest -v tests.test_stoneage_enemy_original_drop tests.test_stoneage_item_factory tests.test_stoneage_item_allocator tests.test_stoneage_party_pet_reward_ownership tests.test_stoneage_party_pet_original_reward_item tests.test_stoneage_party_pet_original_pet_growth tests.test_stoneage_party_pet_original_player_level
+          python -m unittest -v tests.test_stoneage_battle_original_drop_ticket tests.test_stoneage_enemy_original_drop tests.test_stoneage_item_factory tests.test_stoneage_item_allocator tests.test_stoneage_party_pet_reward_ownership tests.test_stoneage_party_pet_original_reward_item tests.test_stoneage_party_pet_original_pet_growth tests.test_stoneage_party_pet_original_player_level
       - name: Recover pinned historical descendant sources transiently
         run: |
           set -euo pipefail
