@@ -10076,3 +10076,41 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   original reclamation/full server bootstrap/Iris conversion/ABI/build/JSS/
   Taiwan-v1 and actor/watcher/typed631/635 remain OPEN. No engine/content
   transition. Protocol section10 accepted integration authorization applies.
+
+
+## 2026-10-10 — Actual solo player battle creation/entry/healthy Exit LOCAL PASS; remote PENDING
+
+- Fresh main678e23905c450d253b80dde382e085ad500005ea/tree
+  ab41044bd7095d28326d4281f703ddb349251b06, latest Action38024968843 success.
+  Branches/HEAD/tree/latest commits/Actions and exact-tree startup files re-read;
+  protocol section9 clean matching checkout and section10 publication apply.
+- Complete original CreateVsEnemy mode0/npc-1 succeeds with actual healthy player0
+  NewEntry, PartyNewEntry solo loops, PetDefaultEntry defaultpet-1 guard,
+  ClearGetExp empty-pet loop, original effect output, complete player Exit and
+  compliance, enemy ExitAll/Delete/reuse. Real original headers/arena allocator.
+  Actual party members/pets/profits/Init/TaskLoop remain OPEN.
+- 24,512 successful solo cycles,49,020 enemy births/Exits,73,536 complete player
+  work stages,147,060 complete enemy work stages; O0/O2 GNU99 -fgnu89-inline,
+  nonrecovering UBSan LP64.10 safe semantic mutations rejected;184 unit checks.
+ 13 report cmp gates include all12 unchanged predecessors. Counts exclude initial
+  preparation and10 mutation cycles. Source/input/hash/trap closure pinned.
+- Actual slot/cursor/sequence progression never reset. Every battle entry/bid/
+  escape/item checked including swapped empty enemy positions; player remains live
+  object0 owner, world1/named objects/map links unchanged. Full work/flags and
+  initialized player nonwork/nonflag bytes checked from captured baseline.
+  Controlled guarded player baseline is restored per case; no natural player
+  progression or independent all-birth/player/object-field oracle claim.
+- Gavin empty original skill lookup executes; Bismarck original EquipEffectFunction
+  and FindLua execute on controlled empty registry. Lua calls/nonempty search
+  abort. Original network/monitor replaced by explicit typed output collectors;
+  descriptor7/time1000/encounter/field/RNG/world/walk/watch/reclaim adapters.
+  Original reclaimer/full server unexecuted. Gavin receive-time vs Bismarck show
+  time1002/checkfd differences retained, no flattening.
+- Spec/source/validation/native STONEAGE-PLAYER-BATTLE-R1; report SHA256
+  2bd5cbeb7170001e6231f463c031cbdb55bf4072262789d99116829d229c6c01. Original C/headers/master bytes stay transient.
+  Remote PENDING. Pressure2486=2465 capability+18 OPEN+3 UB,0 promotions.
+- Next exact-input Actions acceptance; then actual party/pet successful creation,
+  player/pet Entry/Exit, original Init/TaskLoop/broader Finish/profits. Watchers,
+  nonempty items/equipment/callbacks/Lua registry, original reclaimer/bootstrap,
+  Iris encoding/ABI/build/JSS/Taiwan-v1/actor-watcher-typed631-635 remain OPEN.
+  No engine/content transition; all prior evidence records preserved.

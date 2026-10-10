@@ -1,0 +1,86 @@
+{
+  "schema": "stoneage-player-battle-validation-r1",
+  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "startup_main": "678e23905c450d253b80dde382e085ad500005ea",
+  "startup_tree": "ab41044bd7095d28326d4281f703ddb349251b06",
+  "executed_profiles": [
+    "gavin",
+    "bismarck"
+  ],
+  "successful_solo_cycles": 24512,
+  "preserved_enemy_births": 49020,
+  "successful_player_Exits": 24512,
+  "successful_enemy_Exits": 49020,
+  "complete_player_work_stages": 73536,
+  "complete_enemy_work_stages": 147060,
+  "semantic_mutations_rejected": 10,
+  "additional_mutation_cycles": 10,
+  "regression_checks": 184,
+  "optimizations": [
+    "O0",
+    "O2"
+  ],
+  "dialect": "GNU99 -fgnu89-inline",
+  "sanitizer": "undefined, nonrecovering",
+  "host_domain": "LP64 pointer8 int4 real Char/Object/MAP/BATTLE/BATTLE_ENTRY headers",
+  "actual_original_solo_CreateVsEnemy_and_player_Exit_executed": true,
+  "actual_party_member_pet_entry_executed": false,
+  "player_pet_profit_executed": false,
+  "battle_Init_TaskLoop_executed": false,
+  "original_network_transport_or_monitor_executed": false,
+  "original_freeMemory_executed": false,
+  "actual_Bismarck_EquipEffectFunction_FindLua_empty_registry_executed": true,
+  "Lua_scripts_or_nonempty_registry_executed": false,
+  "player_baseline_restored_per_case": true,
+  "complete_work_differential_from_captured_baselines": true,
+  "initialized_player_nonwork_nonflag_bytes_retained": true,
+  "all_birth_player_object_fields_independent_oracle": false,
+  "adapters": {
+    "gavin": [
+      "descriptor7",
+      "typed packet/status/skill/flush collectors",
+      "CheckDefBTime monitor collector/CONNECT_checkfd1",
+      "receive-time collector",
+      "battle effect watcher payload collector",
+      "inherited encounter/field/RNG/clock/walk/world/detached-node collectors"
+    ],
+    "bismarck": [
+      "descriptor7",
+      "typed packet/status/skill/flush collectors",
+      "CheckDefBTime monitor collector/CONNECT_checkfd1",
+      "receive-time collector",
+      "battle effect watcher payload collector",
+      "inherited encounter/field/RNG/clock/walk/world/detached-node collectors"
+    ]
+  },
+  "report_sha256": "2bd5cbeb7170001e6231f463c031cbdb55bf4072262789d99116829d229c6c01",
+  "counts_exclude": "initial world/preparation and ten additional mutation cycles",
+  "prior_complete_reports": [
+    "BATTLE-POOL",
+    "ENEMY-ENTRY-EXIT",
+    "OBJECT-OWNERSHIP",
+    "ENEMY-LOADER",
+    "ENEMY-CREATION",
+    "DEFAULT-TEMPLATE",
+    "CHARACTER-REUSE",
+    "EXIT-WORLD-ITEM",
+    "EXIT-DESTROY-TICKET",
+    "WATCH-CLEANUP",
+    "EXIT-LIFETIME-WATCH",
+    "BECOMEPIG-EXIT-MODES"
+  ],
+  "open": [
+    "actual party/pet CreateVsEnemy entry/Exit",
+    "BATTLE_Init/TaskLoop and broader Finish/player-pet profits",
+    "nonempty watchers/items/callbacks/equipment/Lua registry",
+    "original reclaimer/full bootstrap/Iris encoding/ABI/build/JSS/Taiwan-v1/actor-watcher-typed631-635"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "next": "Actual party/pet CreateVsEnemy entry and complete Exit, then original Init/TaskLoop and broader Finish."
+}

@@ -5187,3 +5187,27 @@ sources/data remain transient; earlier records preserved.
   harness/workflow/tests/report unchanged. Bounded failed-creation cleanup and
   enemy-only Finish, explicit input/world collectors; successful player/party
   creation and original reclaimer/full-server/ABI/JSS/Taiwan-v1 remain OPEN.
+
+
+## 2026-10-10 — Derived original solo player successful battle evidence R1 (LOCAL PASS / remote PENDING)
+
+- Source pins Gavin1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56 and
+  Bismarck999ffdf1d220ec6666eb65339180689c9caf1876; unchanged preserved Gavin
+ 1816-template/2935-enemy bytes,1532 selected records/RNG4. Bismarck input is
+  cross-profile, not historical local content. Iris encoding remains OPEN.
+- tools/stoneage_player_battle_audit.py, tests/test_stoneage_player_battle.py,
+  specs/STONEAGE-PLAYER-BATTLE-R1.md; SOURCE-DOMAINS/VALIDATION/NATIVE-R1 derived
+  files and validate-stoneage-player-battle workflow. Hashes/actual function and
+  header closure/typed collector signatures/abort traps/input receipt; no
+  original C/headers/master redistribution. Lua prototype declarations normalized
+  only for typed unreachable traps; original FindLua/EquipEffectFunction intact.
+- Successful solo CreateVsEnemy/actual player Entry/complete healthy Exit and
+  original compliance/enemy cleanup/reuse:24,512 cycles,49,020 enemy births/
+  Exits,73,536 player/147,060 enemy work stages;10 safe mutations,184 units,
+ 13 report gates. Native SHA256 2bd5cbeb7170001e6231f463c031cbdb55bf4072262789d99116829d229c6c01. Remote PENDING.
+- Explicit baseline preparation/restoration, descriptor7/network/status/skill/
+  monitor/receive-time/watch/time/encounter/field/RNG/world adapters. Original
+  Bismarck empty Lua registry guard executes; scripts/nonempty search trap.
+  Party members/pets/profit/Init/TaskLoop/nonempty items/watchers/callbacks,
+  original reclaimer/server/ABI/Taiwan-v1 remain OPEN; pressure unchanged,
+  zero promotions. Supersedes no earlier records.

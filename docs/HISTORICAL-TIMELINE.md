@@ -2063,3 +2063,20 @@ STONEAGE-ENEMY-LOADER-ACCEPTANCE-R1.json; earlier histories preserved.
 - Successful player/party battle creation, player/pet profits, Init/TaskLoop/
   watcher links/nonempty items/callbacks and original full-server/reclaimer/
   ABI/JSS/Taiwan-v1 remain OPEN. Original source/data transient;zero promotions.
+
+
+## 2026-10-10 — Preserved descendant solo player successful battle composition (LOCAL PASS / remote PENDING)
+
+FACT within Gavin1f90cb6/Bismarck999ffdf real-header LP64 controlled domain:
+complete original mode0 CreateVsEnemy enters healthy solo player0 and1..3
+ordinary preserved enemies, swaps enemy positions/bids, emits battle effect,
+runs complete healthy player Exit/compliance and enemy ExitAll/Delete/reuse.
+24,512 solo cycles/49,020 enemy births/Exits,73,536 player/147,060 enemy complete
+work stages;10 mutations rejected. Original empty skill and Bismarck empty-Lua
+registry guards execute. Descriptor/network/status/skill/monitor/watch/time/RNG/
+world collectors are adapters; guarded player baseline restored per case.
+This does not establish natural player progression, actual party/pet/profit,
+original transport/anti-abuse/Lua execution, original ABI/Taiwan-v1 equivalence,
+or independent all-field oracle. All original bytes remain transient.
+Derived report SHA256 2bd5cbeb7170001e6231f463c031cbdb55bf4072262789d99116829d229c6c01; remote acceptance PENDING.
+Pressure2486/2465/18/3,0 promotions; Init/TaskLoop/broader Finish remain OPEN.
