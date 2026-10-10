@@ -128,7 +128,7 @@ def positive_drop_native(profile,source,battle,event,root):
         print("ENEMY_ORIGINAL_DROP_SOURCE|"+profile+"|"+name+
               "|preprocessed_sha256="+hashlib.sha256(body.encode()).hexdigest()+
               "|inherited_raw_sha256="+digest+"|ordered_drop_symbols="+str(len(inherited_calls)),flush=True)
-    anchor='  demand(!memcmp(&specimen,&table_snapshot,sizeof specimen),"factory template immutable");'
+    anchor=' demand(!memcmp(&specimen,&table_snapshot,sizeof specimen),"factory template immutable");'
     native=replace_once(native,anchor,anchor+"\n"+extra_controls(profile))
     return native,has_lua
 
