@@ -1,6 +1,8 @@
 # Original terminal reward item ownership — R1
 
-Status: candidate pending exact remote Actions acceptance. Late-descendant
+Status: REMOTE ACCEPTED bounded; Action38066688918 at c479c172,45 regression
+checks,10 workflow steps. Artifact independently downloaded and byte-equal to
+local report; R1 acceptance receipt records complete provenance. Late-descendant
 Gavin `1f90cb6` / Bismarck `999ffdf1` only. No JSS1999/Taiwan-v1 historical
 identity or pressure capability promotion.
 

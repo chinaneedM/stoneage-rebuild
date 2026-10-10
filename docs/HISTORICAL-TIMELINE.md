@@ -2247,3 +2247,15 @@ synthetic constant thresholds yield zero growth feedpoint. Explicit rawPETexp1,
 seeded EXP and controlled rand, not natural reward/RNG or first-release fact.
 Original Loop's one discarded draw kept distinct. Zero historical/capability
 promotions, positive item ownership and broader pet/version behavior still OPEN.
+
+
+## 2026-10-11 — Later-descendant terminal reward item transfer, bounded
+
+FACT only for pinned Gavin1f90cb6/Bismarck999ffdf1 prepared fixtures:
+Action38066688918 executes16 original O0/O2 UBSan terminal encounters,12 reward
+acquisitions/four full-inventory releases,32 invalid recipient/item controls.
+Whole original item/actor/arena state, exact recipient packets and inherited
+player/pet levels/automatic release verified. Stale inactive carried slot is
+preserved by Gavin, reclaimed by Bismarck. Prepared item250/ID731 is not
+historical master-data/drop evidence; transport/logs synthetic. No first-release
+identity or pressure promotion; shared ownership and natural allocation OPEN.

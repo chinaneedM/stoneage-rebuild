@@ -5545,3 +5545,16 @@ ZIP SHA256 bbddd1e2754835de9b56e2e2157a1685883cfbb110ac6988de24296df7b77b4f; rep
 3f98c0954cdc8dcbcb98c0322d3a008e57e58109f28b8a129dd4f6e457c754dd equals local22874 bytes.
 Explicit rawEXP1/seededEXP/packed points/ranks/controlledrand/empty-family scope;
 no original source/assets vendored or historic/pressure promotion.
+
+
+## 2026-10-11 — Original reward ITEM ownership derived witness R1
+
+Action38066688918/job114255654462 SUCCESS atc479c172,45 tests/10 steps.
+R1 tools/spec/source manifest/receipt STONEAGE-PARTY-PET-ORIGINAL-REWARD-ITEM:
+original inventory accessors/add/release/unique-code setter/name/escape and exact
+escape-table hashes; complete real ITEM/Char/BATTLE layouts, O0/O2 UBSan.
+Artifact11674184219 independently downloaded ZIP8008 bytes SHA256
+ec980a57ad0c813d8f1e0a888c2eed8af1ae80d2ec31041ef8d53752ade26450;
+report27953 bytes SHA256730e5ab785cb8bd116dcb977dd9025b9f70c71ddb621a47d00cc132723323082
+equals local. Explicit prepared unattached item/empty/full/member/stale inputs;
+no original source/assets committed and no historical/capability promotion.

@@ -11171,3 +11171,51 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   controls; reuse only source-accurate typed item accessors/allocators, retaining
   player/pet upgrade and nonupgrade witnesses. Existing exit-world-item source
   domain is a dependency lead, not a substitute for real-header reward execution.
+
+
+## 2026-10-11 — Original positive reward ITEM ownership REMOTE ACCEPTED (bounded)
+
+- Fresh main894c3b2b7a7703d21bd3198b90c485d354a76cc8,
+  tree698b37220410a5ca477cd3024c796f3031691a8f. Complete predecessor CURRENT-STATE
+  blobcfbb7e74e3ff9582cfe8ada401c30659309e805c,1202354 bytes preserved verbatim; all older evidence intact.
+- Branch agent/party-pet-original-reward-item-r1-20261011, exact tested
+  inputc479c172a2f7639d392d9c538faf4f0ea008ee5f,
+  treef047c16c6f2a0cf6b144757945276093e7106d87. Action38066688918/
+  job114255654462 SUCCESS,10 steps/45 regressions. Pinned Gavin1f90cb6/
+  Bismarck999ffdf1 original headers/bodies, O0/O2 nonrecovering UBSan;
+  complete traces identical per profile,16 actual second Loop Finish encounters.
+- Explicit post-lethal original-layout item250/ID731/name Reward, unique code
+  bounded, owner-1/object19/time-limit0; no claim of recovered master item or
+  natural drop generation. Original findEmpty/addItem/setItemIndex/typed item
+  accessors/endExistItemsOne/name/escape execute unchanged. Original unique-code
+  setter executes without generation; empty/time branches remain abort traps.
+- Twelve acquisitions/four full-inventory releases. Leader empty ->slot9/owner0;
+  member empty ->slot9/owner1. Full live carried inventory unchanged, reward
+  use1->0/owner-1, original object19 retained and live counter decremented.
+  Stale inactive249: Gavin preserves slot9/uses10, Bismarck replaces slot9.
+  Profile-specific capacities preserved. Original invalid owner-1 and inactive
+  item249 are rejected with entire actor/item arrays and live count unchanged
+  (32 controls across16 encounters). No already-owned valid item rejection claim.
+- Entire256 original ITEM_exists/ITEM_Exists array, seven Char actors and arena
+  byte oracles PASS. Exact RS item name appears only for successful recipient;
+  full-inventory reward fields empty. Typed exact actor/slot/count log and
+  item-data collectors: original Bismarck additional sendItemDataOne per success,
+  Gavin0; not actual log/socket identity. Player/pet positive upgrades and
+  nonupgrade controls retained; automatic original Exit/Delete, enemy/arena
+  release, battle total1->0, pet owner/default/world retention and cursor0,1,2,0.
+- Local candidate caught inventory fixture carryover from prior full-inventory
+  case; corrected independent pre-snapshot preparation. No terminal-state
+  restoration or game-body edits. Compile header-order and original escape-table
+  dependency corrected before accepted code. Whole-body/table hashes frozen.
+- Artifact11674184219 independently downloaded, ZIP8008 bytes SHA256
+  ec980a57ad0c813d8f1e0a888c2eed8af1ae80d2ec31041ef8d53752ade26450;
+  report27953 bytes SHA256730e5ab785cb8bd116dcb977dd9025b9f70c71ddb621a47d00cc132723323082
+  equals local. Spec/source/receipt STONEAGE-PARTY-PET-ORIGINAL-REWARD-ITEM-*R1.
+  No original game source/assets vendored. Pressure2486=2465 bounded closed+
+  18 OPEN+3 historical UB, zero promotions, no modern-engine phase transition.
+- Highest NEXT: original shared carried/pool references and duplicate reward
+  ownership/release controls; multiple rewards/name escaping, then original
+  allocator and natural reward selection. Valid pre-existing ownership,
+  unique-code/time branches, positive gold, natural EXP/RNG/config, special pet
+  limits/equipment, watchers/callbacks/network/Lua/ABI and early executable
+  JSS1999/Taiwan-v1 equivalence remain OPEN.
