@@ -52,7 +52,8 @@ MARKER=r"""  /* Exit is intentionally not asserted by this first admission gate.
 def make_native(profile,source):
     original=admission_native(profile,source)
     if original.count(MARKER)!=1:raise ValueError("accepted admission body changed")
-    return original.replace(MARKER,EXPECTED_INSERT,1)
+    field="char_index" if profile=="bismarck" else "charaindex"
+    return original.replace(MARKER,EXPECTED_INSERT.replace("ENTRY_FIELD",field),1)
 
 def main():
     ap=argparse.ArgumentParser()
