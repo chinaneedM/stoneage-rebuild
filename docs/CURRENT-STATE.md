@@ -10600,3 +10600,60 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   equipment/reclaimer/full bootstrap/original executable ABI/JSS1999/Taiwan-v1
   remain OPEN. Pressure2486=2465 capability closed+18 OPEN+3 historic UB,
   zero promotions; no engine/content phase transition. Earlier records intact.
+
+
+## 2026-10-10 — Original real-header party/pet AI decisions REMOTE ACCEPTED
+
+- Fresh remote main 77c64f7dd39733529b832e268b8210bca696462b,
+  tree 02578a48d24ff03f2d3ff015bcf162897dc11af0; latest branches/commits/Actions
+  and protocol-specified complete documents re-read. CURRENT-STATE original
+  blob 3536bc76b46f98bcb7df93a2d40e126fbc167404 preserved verbatim,1162371 bytes.
+- Accepted exact source/test/workflow/spec commit 13da7c46f75d2b1a71ca07fd013d381905310762,
+  tree 74fbacc7391da1c527cb9edf162710508cb866e8, branch
+  agent/party-pet-original-ai-r1-20261010. Action38042867747/job114186442942
+  SUCCESS,10 steps,33 checks. Original-header GNU99 O0/O2 nonrecovering UBSan,
+  Gavin1f90cb6/Bismarck999ffdf1,16 complete Create/Init/input/wait/AI/Exit/Delete
+  encounters,128 controlled AI scenarios and48 AI guard calls, arena0,1,2,0.
+  Specimen spawns one enemy per encounter; no multi-enemy AI closure claimed.
+- Full unchanged original BATTLE_ai_all/BATTLE_ai_normal/GetSubdueAttribute/
+  BATTLE_CanMoveCheck included, original B_AI_RESULT/functbl/AI enums extracted,
+  original NPC_Util_GetStrFromStrWithDelim and workchar accessor resolved.
+  Unknown/missing branch symbols remain typed abort-on-call. Bodies/header
+  profiles preserved; original source/header/master bytes not committed.
+- Explicit controlled enemy tactics1, at:1;2;1 or at:1;3;1, fixed RNG0 and empty
+  NPC action condition: player attack selects entry0, pet attack entry5;
+  paralysis produces NONE/target0; surprise produces NONE with COM2 retained;
+  S_CHARGE retained; tactics0 leaves complete actor unchanged; dead or RESCUE
+  leader excluded, selects member entry1. Attack/paralysis/filter scenarios
+  consume exactly2 RNG calls/live enemy, other scenarios0. Invalid arena/side
+  and player-side AI return without complete actor/arena/RNG changes.
+- Complete seven-actor expected snapshots permit only exact enemy COM1/COM2/
+  mode deltas; allies and complete arena remain unchanged by decisions. No
+  input/network acknowledgement emitted. Fixture preparation is outside the
+  effect oracle; all actor/arena/RNG baselines restored before inherited Exit.
+  Direct AI call uses turn argument0, arena turn0; all-ready Loop not called.
+  Guard/escape normal-mode result.target may be unspecified, intentionally
+  outside deterministic attack-only gate. No natural configured selection,
+  valid skill/magic/attribute decision, multi-enemy or whole-AI closure inferred.
+- Complete per-profile output byte-equal O0/O2: Gavin trace SHA256
+  55401e925925597c1c63c1139ea49fe2b8ca390f3e688a63141da8b38cd7e874,
+  Bismarck 8a23e1c5afb1c1a6021abd444d4079d5d7e1f9dd77af4236fe633409ad5019b2.
+  Independently downloaded artifact11665454779 ZIP1289 bytes SHA256
+  b7a47baba78a629a6ff0d3c79f66dbff65e0c1f4f31f70c14fe5a20350791e84;
+  sole derived report equals local bytes SHA256
+  c01f4bd2455e0fc96ccfd603d8e7455a28456a8587450f5ab00685ab145294f1.
+  Receipt STONEAGE-PARTY-PET-ORIGINAL-AI-ACCEPTANCE-R1.json; spec
+  STONEAGE-PARTY-PET-ORIGINAL-AI-R1.md.
+- Highest NEXT: true all-ready original Loop -> Command -> full Battling
+  ordinary physical action round on the same original-header populated domain.
+  Connect original ordering, target/weapon/loyalty/attack/status helpers and
+  OnlyRescue, then distinguish nonterminal next-C_WAIT from Finish/profit.
+  Choose a live enemy target through original Index2No/actual arena entries,
+  rather than carrying prior parser probe H|F/-1 targets into an action claim.
+  Source-only preflight (receipt): full Battling Gavin57554/Bismarck51854 bytes,
+ 83/74 named call inventory; not execution or complete transitive closure.
+  AI is bounded controlled decision, not turn/damage/round/Finish/profit.
+  Valid pet/magic/NPC/attribute decisions, multi-enemy behavior, timeout-positive,
+  real transport/Lua/equipment/reclaimer/bootstrap/original executable ABI and
+  JSS1999/Taiwan-v1 remain OPEN. Pressure2486=2465 capability closed+18 OPEN+
+  3 historic UB, zero promotions; no phase transition, earlier records intact.

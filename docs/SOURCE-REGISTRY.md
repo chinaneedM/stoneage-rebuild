@@ -5390,3 +5390,28 @@ Repository evidence:
 - Capability FACT only within bounded late-source admission/readiness fixture.
   Original AI/action/round/Finish/profit, real network/Lua/full server ABI and
   JSS1999/Taiwan-v1 remain OPEN. No pressure promotion or engine phase change.
+
+
+## 2026-10-10 — Original real-header party/pet AI-decision derived witness R1
+
+- tools/stoneage_party_pet_original_ai_audit.py extracts complete original
+  BATTLE_ai_all/BATTLE_ai_normal/GetSubdueAttribute/CanMoveCheck bodies and
+  original result/table/enums/NPC option parser/workchar accessor; sourcepins
+  Gavin1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56 and
+  Bismarck999ffdf1d220ec6666eb65339180689c9caf1876. Sourcefile/body hashes
+  emitted. All original bytes transient; no original source/assets committed.
+- Tested13da7c46f75d2b1a71ca07fd013d381905310762/tree74fbacc7391da1c527cb9edf162710508cb866e8,
+  Action38042867747/job114186442942 SUCCESS,33 checks, GNU99 O0/O2 UBSan,
+  16 encounters/128 AI scenarios/48 guards, byte-equal native traces.
+- Artifact11665454779 independently downloaded ZIP SHA256
+  b7a47baba78a629a6ff0d3c79f66dbff65e0c1f4f31f70c14fe5a20350791e84;
+  sole stoneage-party-original-ai.txt equals local report SHA256
+  c01f4bd2455e0fc96ccfd603d8e7455a28456a8587450f5ab00685ab145294f1.
+  research/recovered/STONEAGE-PARTY-PET-ORIGINAL-AI-ACCEPTANCE-R1.json and
+  specs/STONEAGE-PARTY-PET-ORIGINAL-AI-R1.md define explicit fixture limits.
+- Controlled attack-only one-enemy decision FACT, not natural selection or
+  multi-enemy/guard/escape/magic/skill/attribute execution. Complete original
+  Battling/Command/OnlyRescue source-only named-call inventory retained in
+  receipt for next work; not executed or complete transitive call graph.
+  Action round/Finish/profit, full server/transport/Lua/original ABI and first
+  release historical equivalence remain OPEN. Pressure2486/2465/18/3,0 promotions.

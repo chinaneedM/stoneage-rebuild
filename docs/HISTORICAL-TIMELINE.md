@@ -2153,3 +2153,17 @@ Receipt STONEAGE-PARTY-PET-ORIGINAL-COMMAND-WAIT-ACCEPTANCE-R1.json.
   No original enemy AI/Battling/action round/Finish/profit or first-party
   JSS1999/Taiwan-v1 equivalence. Full original bodies included does not imply
   all their branches executed. No historical promotions; previous records intact.
+
+
+## 2026-10-10 — Original descendant AI decision composition, controlled and bounded
+
+FACT under pinned Gavin1f90cb6/Bismarck999ffdf1 original headers only:
+Action38042867747 succeeds at13da7c46f75d2b1a71ca07fd013d381905310762,
+33 checks,16 native encounters/128 AI scenarios/48 guards, O0/O2 UBSan and
+byte-equal complete traces. Original ai_all/normal choose controlled player/pet
+targets, skip dead/RESCUE leader, suppress paralysis/surprise actions and preserve
+charge/tactics0 behavior. One enemy/encounter, explicit option/RNG preparation;
+not natural configured selection, multi-enemy behavior, all-ready action round,
+Finish/profit or historical JSS1999/Taiwan-v1. Original guard/escape result.target
+may remain unspecified; those normal-mode branches were not executed. No
+historical promotion or replacement of earlier evidence.
