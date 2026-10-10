@@ -12,7 +12,9 @@ import tempfile
 from tools.stoneage_player_battle_audit import domain as solo_domain, native_source as solo_native, pinned_identity, PIN_PATH
 from tools.stoneage_enemy_entry_exit_audit import compile_probe
 from tools.stoneage_enemy_loader_audit import specimen
-from tools.stoneage_guard_break2_source_audit import PINNED
+from tools.stoneage_guard_break2_source_audit import PINNED, LAYOUTS
+from tools.stoneage_enemy_loader_audit import pp_file
+from tools.stoneage_enemy_creation_audit import definition
 import hashlib
 import json
 
@@ -169,6 +171,10 @@ def main():
         if pinned_identity(identity)!=pins["profiles"][profile]["identity"]:
             raise ValueError("accepted solo source changed")
         source=patch_source(source,profile)
+        # Pet placement requires the ACTUAL original BATTLE_Index2No body;
+        # the accepted solo composition never reached this function.
+        extra=definition(pp_file(profile,roots[profile],LAYOUTS[profile]/'battle/battle.c'),'BATTLE_Index2No')
+        source+='\n'+extra+'\n'
         sample=json.loads((Path(__file__).resolve().parents[1]/"research/recovered/STONEAGE-PLAYER-BATTLE-VALIDATION-R1.json").read_text())
         # Eligible record selection is selected by same accepted loader oracle.
         from tools.stoneage_enemy_loader_audit import loaded_oracle,eligible
