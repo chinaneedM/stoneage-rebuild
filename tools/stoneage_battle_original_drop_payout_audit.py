@@ -46,9 +46,27 @@ PAYOUT=r"""
      demand(CHAR_findEmptyItemBox(0)==-1,"original player persistent bag verified full");
    }
    ITEM_TYPE expected_items[256];memcpy(expected_items,reward_items,sizeof expected_items);
-   Char expected_actors[7];memcpy(expected_actors,slots,sizeof expected_actors);
-   BATTLE expected_arena=*arena;
+   Char before_exp_actors[7];memcpy(before_exp_actors,slots,sizeof before_exp_actors);
+   BATTLE before_exp_arena=*arena;
+   BATTLE expected_arena=before_exp_arena;
    expected_arena.Side[0].Entry[0].getitem[0]=-1;
+   /* Differential oracle: real GetExpGold with no pending loot yields the
+      complete original EXP/level/pet side effects. Restore actual input state
+      and demand identical Char bytes except the independently predicted bag
+      mutation from its pending ticket. This is NOT a source-independent EXP
+      formula oracle. */
+   *arena=expected_arena;
+   reward_phase=2;reward_expected_actor=0;reward_expected_slot=empty;
+   reward_log_count=reward_data_count=reward_one_count=settle_log_count=0;
+   finish_rs_count=finish_status_count=0;finish_transport_phase=1;
+   demand(BATTLE_GetExpGold(battle_at,0,0)==0,
+          "original exp-only control GetExpGold with no reward ticket");
+   demand(!memcmp(expected_items,reward_items,sizeof expected_items),
+          "original exp-only control preserves whole item table");
+   Char expected_actors[7];memcpy(expected_actors,slots,sizeof expected_actors);
+   memcpy(slots,before_exp_actors,sizeof before_exp_actors);
+   *arena=before_exp_arena;
+   finish_rs_count=finish_status_count=0;reward_phase=0;finish_transport_phase=0;
    if(!payout_scenario){
      expected_items[3].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX]=0;
      expected_items[3].ITEM_FIELD.workint[ITEM_WORKOBJINDEX]=-1;
