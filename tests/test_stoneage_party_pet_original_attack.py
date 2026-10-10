@@ -2,7 +2,7 @@
 import unittest
 from types import SimpleNamespace
 from unittest.mock import patch
-from tools.stoneage_party_pet_original_attack_audit import attack_native,ATTACK_OBSERVATIONS,ATTACK_SETUP,ROUND_OBSERVATIONS,definition
+from tools.stoneage_party_pet_original_attack_audit import attack_native,attack_originals,ATTACK_OBSERVATIONS,ATTACK_SETUP,ROUND_OBSERVATIONS,definition
 from tools.stoneage_enemy_entry_exit_audit import compile_probe
 BODIES={'BATTLE_Attack':'int BATTLE_Attack(int b,int a,int d){return BATTLE_DamageSub(a,d,0,0,0);}', 'BATTLE_DamageSub':'int BATTLE_DamageSub(int a,int d,int*x,int*y,int*z){return 0;}'}
 EVENT='float gKawashiPara=0.02;\nfloat gCriticalPara=0.09;\nfloat gCounterPara=0.08;\nchar *aszStatus[]={"all"};\nint BATTLE_CounterCheckPlayer(int a,int b,int*p){return 0;}\nint BATTLE_CounterCheckPet(int a,int b,int*p){return 0;}'
@@ -33,4 +33,10 @@ class AttackTests(unittest.TestCase):
     args=run.call_args.args[0]
     self.assertEqual('-lm' in args,bool(libraries))
     if libraries:self.assertGreater(args.index('-lm'),args.index('-'))
+ def test_bismarck_uses_its_original_magic_attribute_body(self):
+  body='int BATTLE_AttrCalc(int a){return a;}'
+  with patch('tools.stoneage_party_pet_original_attack_audit.ATTACK_NAMES',('BATTLE_ArrangeCheck','BATTLE_AttrCalc')),patch('tools.stoneage_party_pet_original_attack_audit.pp_file',return_value=body) as pp:
+   self.assertEqual(attack_originals('bismarck','','','/tmp'),{'BATTLE_AttrCalc':body})
+   self.assertTrue(str(pp.call_args.args[2]).endswith('battle/battle_magic.c'))
+   with self.assertRaises(ValueError):attack_originals('bismarck','','int BATTLE_ArrangeCheck(int a){return 0;}','/tmp')
 if __name__=='__main__':unittest.main()

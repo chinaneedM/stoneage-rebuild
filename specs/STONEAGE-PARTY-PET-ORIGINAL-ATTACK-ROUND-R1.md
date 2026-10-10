@@ -16,6 +16,8 @@ guard-round driver with original targeting, physical/critical/attribute/guard/
 reaction, DamageSub, wake-up/item-crush and function-pointer accessor bodies.
 Included bodies do not imply every branch executed. Untaken unresolved gameplay
 calls retain typed abort-on-call guards. No original source/assets are committed.
+Bismarck has no ArrangeCheck branch in this preprocessed profile and obtains
+its original AttrCalc body from battle_magic.c; Gavin uses battle_event.c.
 
 Each encounter retains original Create/Init/input/wait, bounded AI scenarios,
 guard control, original Exit/Delete and pool reuse. Four encounters per runtime

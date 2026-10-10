@@ -17,9 +17,16 @@ ATTACK_NAMES=("BATTLE_Attack","BATTLE_AttackSeq","BATTLE_DamageCalc",
  "BATTLE_ItemCrushSeq","BATTLE_ItemCrushCheck","BATTLE_TargetAdjust","BATTLE_DefaultAttacker",
  "BATTLE_Counter","BATTLE_CounterCheck")
 
-def attack_originals(profile,battle,event):
+def attack_originals(profile,battle,event,root=None):
     bodies={}
     for n in ATTACK_NAMES:
+        if profile=='bismarck' and n=='BATTLE_ArrangeCheck':
+            if re.search(r'\bBATTLE_ArrangeCheck\s*\(',event):raise ValueError('Bismarck arrangement profile drift')
+            continue
+        if profile=='bismarck' and n=='BATTLE_AttrCalc':
+            magic=pp_file(profile,root,LAYOUTS[profile]/'battle/battle_magic.c')
+            bodies[n]=definition(magic,n)
+            continue
         try:bodies[n]=definition(event,n)
         except ValueError:bodies[n]=definition(battle,n)
     return bodies
@@ -76,7 +83,7 @@ ATTACK_OBSERVATIONS=attack_observations()
 
 def attack_native(profile,source,battle,event,root):
     native,has_lua=round_native(profile,source,battle,event,root)
-    bodies=attack_originals(profile,battle,event)
+    bodies=attack_originals(profile,battle,event,root)
     base=pp_file(profile,root,LAYOUTS[profile]/'char/char_base.c')
     bodies['CHAR_getFunctionPointer']=definition(base,'CHAR_getFunctionPointer')
     extra='#include <math.h>\n'
@@ -159,7 +166,7 @@ def main():
         if runs[0]!=runs[1]:
             raise ValueError("original attack-round trace O0/O2 divergence "+profile)
         print(f"PROFILE|{profile}|attack_rounds_per_optimization=4|guard_rounds_per_optimization=4|encounters_per_optimization=4|optimizations=O0,O2|sha256={hashlib.sha256(runs[0].encode()).hexdigest()}",flush=True)
-        originals=attack_originals(profile,battle,event)
+        originals=attack_originals(profile,battle,event,roots[profile])
         char=pp_file(profile,roots[profile],LAYOUTS[profile]/'char/char_base.c')
         originals['CHAR_getFunctionPointer']=definition(char,'CHAR_getFunctionPointer')
         if profile=='bismarck':
