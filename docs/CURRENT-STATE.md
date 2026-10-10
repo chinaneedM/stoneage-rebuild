@@ -10985,3 +10985,19 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   arena, ownership, payout and automatic Exit/Delete oracles. Preserve million
   floor, configured-multiplier and storage-cap source-profile boundaries.
   No modern-engine phase transition; all earlier evidence remains intact.
+
+
+## 2026-10-10 — Next Finish dependency checkpoint (UNACCEPTED)
+
+- Continue from exploratory branch agent/party-pet-original-finish-closure-r2-20261010,
+  commit555a5dfbb8d9676905a89bcdd9b3c737817f5f73. This branch is NOT accepted main
+  gameplay evidence. Its derived wrapper and STONEAGE-PARTY-PET-ORIGINAL-FINISH-EXPLORATORY-R2.json
+  preserve the source-accurate GetExp/config/LevelUpCheck/GetLevelExp/HandleExp
+  composition and explicit non-leveling fixture inputs. Original-source bodies
+  remain transient; only extraction wrapper/metadata published.
+- Local Gavin O0 second Loop -> original Finish/GetProfit/GetExpGold stopped at
+  abort-on-call _CHAR_sendStatusString. Full payout, Bismarck/O2 execution,
+  complete actor/arena terminal oracle and automatic Exit/Delete remain OPEN.
+  Highest NEXT is this status-transport dependency and actual reward
+  serialization, then exact positive payout/ownership/automatic release oracles.
+  No approval needed for the already-authorized project continuation.
