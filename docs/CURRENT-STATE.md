@@ -9854,3 +9854,41 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   Exit/destruction/reuse. Remaining actor/watcher/typed631/635 and original build/
   ABI/JSS/Taiwan-v1 stay OPEN; no engine/content transition. Protocol section10
   ongoing publication/Actions/acceptance integration authorization applies.
+
+
+## 2026-10-10 — Original object registration and preserved enemy nonownership LOCAL PASS; remote PENDING
+
+- Fresh remote mainbfc3c18f1fb107b7e1356127c16b7f59301a1a3b/tree
+  d02f890b7140f9d8406066f7c88d170627102dc8; latest Action38021001375 success.
+  Latest branches/HEAD/tree/commits/Actions and exact-tree protocol startup
+  documents read; continued recorded actual object registration/ownership priority.
+- Complete original world constructor/object array allocator/accessors/search/
+  release and original map floor/get/append/add/remove linked-list helpers execute
+  beside accepted preserved master loading/enemy birth. Actual Char/Object/
+  MAP_Map/MAP_Objlink/transitive headers/private declarations/functions pinned;
+  original character/item-release empty registry guard also executes.
+- FACT bounded: slot0 is live, owned by world player0 or1 as original persistent
+  object cursor rotates. Preserved ordinary enemy slot4 has object work0, but
+  original owner search returns-1 and object0 names a different owner. Enemy
+  release/rebirth leaves world objects/map links unchanged. Character-only world
+  release retains its object/link; explicit object release unlinks it. Full-object
+  world constructor rolls Char back; subsequent object reuse appends at tail.
+-49,024 cycles/98,048 enemy births/147,072 successful world constructors/49,024
+  full-object rollbacks/441,216 named-stage comparisons at O0/O2 GNU99
+  -fgnu89-inline+nonrecovering UBSan;152 unit regressions;10 safe semantic
+  mutations rejected (10 additional cycles). All nine predecessor complete native
+  reports reproduced byte-identically. No original source/data committed.
+- Same-pin Gavin configured unmodified bytes, Bismarck cross-profile input only.
+  Controlled2/2/3 partitions/object capacity2/floor1 2x2 map/16MiB original pool.
+  Walk predicate/watch collector and detached map-node freeMemory collector are
+  explicit adapters. Original freeMemory/free-list reuse/full bootstrap unexecuted.
+  Named initialized object fields/list/order/birth fields checked, not every object
+  byte or birth field; unspecified original Object fields/padding never observed.
+- Spec STONEAGE-OBJECT-OWNERSHIP-R1.md; source/validation/native receipts.
+  Report SHA256 7f426e53b44afea3026dd8eefa2d575ba5e2a2b3562caf6c668e1f335528d9bd; remote PENDING.
+  Pressure2486=2465 closed capability+18 OPEN+3 historical UB;zero promotions.
+  Highest priority after exact-input Actions: actual battle entry and complete
+  creation-to-Exit/destruction/reuse with actual storage/header domains. Original
+  reclamation/bootstrap/Iris encoding/special/equipped/nonempty callbacks and
+  remaining actor/watcher/typed631/635/original ABI/build/JSS/Taiwan-v1 remain OPEN.
+  No engine/content transition. Protocol section10 publication authorization applies.

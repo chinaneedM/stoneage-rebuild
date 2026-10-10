@@ -1,0 +1,78 @@
+{
+  "schema": "stoneage-object-ownership-validation-r1",
+  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "startup_main": "bfc3c18f1fb107b7e1356127c16b7f59301a1a3b",
+  "startup_tree": "d02f890b7140f9d8406066f7c88d170627102dc8",
+  "executed_profiles": [
+    "gavin",
+    "bismarck"
+  ],
+  "registration_cycles": 49024,
+  "preserved_enemy_births": 98048,
+  "successful_world_constructors": 147072,
+  "full_object_constructor_rollbacks": 49024,
+  "named_stage_comparisons": 441216,
+  "stages_per_cycle": 9,
+  "semantic_mutations_rejected": 10,
+  "additional_mutation_cycles": 10,
+  "regression_checks": 152,
+  "optimizations": [
+    "O0",
+    "O2"
+  ],
+  "dialect": "GNU99 with -fgnu89-inline",
+  "sanitizer": "undefined, nonrecovering",
+  "host_domain": "LP64 pointer8 int4; actual original Char/Object/MAP_Map/MAP_Objlink headers and controlled partitions/map/pool",
+  "object_fields_checked": [
+    "type",
+    "index",
+    "floor",
+    "x",
+    "y"
+  ],
+  "all_object_bytes_have_independent_oracle": false,
+  "all_birth_fields_have_independent_oracle": false,
+  "original_freeMemory_executed": false,
+  "adapters": [
+    "MAP_walkAble bounded predicate",
+    "CHAR_sendWatchEvent collector",
+    "freeMemory detached map node collector, no original reclaimer/free-list reuse"
+  ],
+  "original_object_allocator_persistent_cursor_reset_injected": false,
+  "preserved_specimen": "same-pin gavin configured unmodified bytes; bismarck cross-profile witness",
+  "facts": [
+    "slot0 is live, owned by world player0 or1; preserved enemy slot4 has object-work0 but owner-search -1",
+    "original enemy release/rebirth leaves registered world objects and map links unchanged",
+    "character-only world release retains object and map link",
+    "full-object world constructor rolls newly allocated character back",
+    "explicit object release removes original map link; world reuse appends at tail"
+  ],
+  "full_battle_entry_Exit_reuse_composition_executed": false,
+  "report_sha256": "7f426e53b44afea3026dd8eefa2d575ba5e2a2b3562caf6c668e1f335528d9bd",
+  "prior_complete_report_sha256": {
+    "ENEMY-LOADER": "ce1e52eee5169fc123f8b1c71c252908bedd1f42067f87b4772b2d3f7f596538",
+    "ENEMY-CREATION": "1e4c78ebc12309baa6905eaa63626b21180cdce6e75c17dafb980e39998502d3",
+    "DEFAULT-TEMPLATE": "facfe62106ca3be1a9a800b5e33afcc14bf582a65e2dc93d2607d6c0be076c53",
+    "CHARACTER-REUSE": "cbebb27b3923817c7804545cfedb882d90f4a89423ee05dd32bf6eb1b0f9da5a",
+    "EXIT-WORLD-ITEM": "54ab876083faac9e87da83a6ce459b5edaa59fcb03a725aeb131ae9c9b7636ab",
+    "EXIT-DESTROY-TICKET": "94f4590eec2e25496483fb75827cc40a6566508856f24d8648c62b9117249d20",
+    "WATCH-CLEANUP": "b7724d88bf319ad0cf80e0463de21b78510db30505d007529a22cab3d6cf99da",
+    "EXIT-LIFETIME-WATCH": "f45a307738447df03550a03e87ef3534da59ac91f461e7eed194b5dd7a5f342f",
+    "BECOMEPIG-EXIT-MODES": "21cfc791be5f03f674c40369bfcc067dd757bd253f4ecd30ff414826be3a9533"
+  },
+  "open": [
+    "actual battle entry/full Exit to reuse composition",
+    "original reclamation/free-list reuse/map bootstrap",
+    "Iris Windows conversion",
+    "special enemies/equipment/nonempty callbacks",
+    "remaining actor/watcher/typed631/635 admission",
+    "original ABI/build/JSS/Taiwan-v1"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  }
+}

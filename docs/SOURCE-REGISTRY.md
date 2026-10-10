@@ -5080,3 +5080,26 @@ configured data/Bismarck cross-profile input/current-header LP64 witnesses.
 Iris conversion, ownership/occupied slot0/full Exit-to-reuse/original release/
 JSS/Taiwan-v1 remain OPEN;zero promotions. Tested code unchanged and original
 sources/data remain transient; earlier records preserved.
+
+
+### 2026-10-10 — Actual object registration beside preserved ordinary births R1
+
+- Tool/spec/derived receipts: stoneage_object_ownership_audit.py,
+  STONEAGE-OBJECT-OWNERSHIP-R1.md and SOURCE-DOMAINS/VALIDATION/NATIVE-R1.
+- Same fixed descendant pins and Gavin configured preserved bytes as accepted
+  loader gate; Bismarck cross-profile witness. Actual world constructor/object
+  allocator/owner search/map list helpers/empty-registry Char release execute with
+  real original headers. Complete source/body/declaration/header closure hashes
+  recorded. No original C/headers/data/assets committed.
+- FACT bounded LP64: live slot0 belongs to world0/1; enemy4's zero object work
+  is not ownership. Original owner search4=-1. Enemy character reuse preserves
+  world object/list state. Char-only world release retains object/list; explicit
+  object release unlinks and subsequent reuse appends at tail. Original object
+  cursor is retained, alternating owners naturally across controlled cycles.
+-49,024 cycles,98,048 births,147,072 world successes,49,024 rollbacks,441,216
+  named stages;152 regressions,10 mutations rejected, nine unchanged prior reports.
+  Original pool/map list allocation used; detached-node freeMemory collection,
+  walk predicate/watch collector are adapters, not original reclaimer/notifications.
+  Only five initialized Object fields observed; no all-byte/all-birth-field oracle.
+  Remote acceptance PENDING. Actual battle entry/full Exit/reuse, original reclaim/
+  bootstrap/Iris conversion/original ABI/JSS/Taiwan-v1 remain OPEN;zero promotions.

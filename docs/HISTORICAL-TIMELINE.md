@@ -1980,3 +1980,17 @@ bytes/Bismarck cross-profile/current-header LP64 domain. Iris Windows conversion
 and actual world-object ownership/slot0/full entry-Exit-reuse remain OPEN; no
 original build/ABI/JSS/Taiwan-v1 or runtime promotion. Receipt
 STONEAGE-ENEMY-LOADER-ACCEPTANCE-R1.json; earlier histories preserved.
+
+
+### 2026-10-10 — Bounded actual object ownership witness (descendants; not Taiwan-v1)
+
+- FACT in controlled original native composition: object index0 can be a live
+  registered world object owned by player0/1. Preserved ordinary enemy4 has work
+  object0 but original object owner-search4=-1; zero work is not owner identity.
+- FACT Char-only destruction preserves the world object/map link, while explicit
+  object release removes the link. World constructor rollback and tail-order reuse
+  execute.49,024 cycles/441,216 named stages, O0/O2 nonrecovering UBSan,10 mutations.
+- Actual original layouts/allocators/list helpers; controlled map/partitions/RNG
+  and walk/watch/reclamation adapters. Not original freeMemory, full battle entry/
+  Exit composition, full bootstrap/ABI/JSS/Taiwan-v1 proof. Iris encoding OPEN.
+  All nine predecessor reports unchanged; remote acceptance PENDING;zero promotions.
