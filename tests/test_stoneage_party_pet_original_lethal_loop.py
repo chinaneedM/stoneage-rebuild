@@ -9,7 +9,7 @@ from tools.stoneage_party_pet_original_lethal_loop_audit import (
 class LethalLoopTests(unittest.TestCase):
  def test_lethal_input_and_original_full_loop(self):
   for token in ("CHAR_HP]=60","BATTLE_Loop()","LETHAL_LOOP_MODE|",
-      "original full-loop lethal HP floor", "REAL_HEADER_LETHAL_LOOP|"):
+      "original full-loop lethal HP floor", "REAL_HEADER_LETHAL_LOOP|", "BATTLE_CountAlive(battle_at,1)==0", "BATTLE_MODE_FINISH", "EXPECTED_WIN_SIDE"):
    self.assertIn(token,LETHAL_ROUND_OBSERVATIONS)
   self.assertNotIn("slots[enemy_actor].data[CHAR_HP]=500;",LETHAL_ROUND_OBSERVATIONS)
  def test_mutation_protects_existing_driver(self):
