@@ -94,7 +94,7 @@ def ticket_native(profile,source,battle,event,root):
     # simulator. Here the accepted synthetic character partition is exactly 2
     # users; admit a one-function config boundary without game-rule rewrites.
     native=replace_once(native,"int main(int argc,char **argv){",
-          "unsigned int getFdnum(void){if(CHAR_playernum!=2)abort();return 2;}\\n"
+          "unsigned int getFdnum(void){if(CHAR_playernum!=2)abort();return 2;}\n"
           "int main(int argc,char **argv){")
     anchor=' demand(!memcmp(&specimen,&table_snapshot,sizeof specimen),\n        "original enemy drop does not mutate factory master template");'
     native=replace_once(native,anchor,anchor+"\n"+ticket_controls(profile))
