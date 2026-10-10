@@ -17,6 +17,7 @@ from tools.stoneage_enemy_loader_audit import pp_file
 from tools.stoneage_enemy_creation_audit import definition
 import hashlib
 import json
+import re
 
 BODY=r"""
 #include <execinfo.h>
@@ -205,7 +206,9 @@ def main():
                 compile_probe(profile,roots[profile],csource,exe,opt,[n for n in pins["profiles"][profile]["unreachable_traps"] if n!="BATTLE_Index2No"])
                 run=subprocess.run([str(exe),*map(str,paths)],input=f"{chosen} 0\n",capture_output=True,text=True)
                 if run.returncode or any(not line.startswith("TRACE|") for line in run.stderr.splitlines() if line.strip()):
-                    raise ValueError("real-header "+profile+" "+opt+" "+run.stderr[-5000:]+" code="+str(run.returncode)+" stdout "+run.stdout[-2000:])
+                    offsets=re.findall(r"probe-(?:O0|O2)\(\+(0x[0-9a-f]+)\)",run.stderr)
+                    symbols=subprocess.run(["addr2line","-f","-C","-e",str(exe),*offsets],capture_output=True,text=True).stdout if offsets else "NO_OFFSETS"
+                    raise ValueError("real-header "+profile+" "+opt+" "+run.stderr[-5000:]+" code="+str(run.returncode)+" symbols="+symbols+" stdout "+run.stdout[-2000:])
                 if "REAL_HEADER_ENTRY|" not in run.stdout:raise ValueError("no real admission")
                 out.append(run.stdout)
             if out[0]!=out[1]:raise ValueError("real-header optimization disagreement")
