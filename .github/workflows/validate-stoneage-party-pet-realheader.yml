@@ -1,0 +1,49 @@
+name: Validate StoneAge real header party pet admission
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-party-pet-realheader.yml"
+      - "tools/stoneage_party_pet_realheader_audit.py"
+      - "tests/test_stoneage_party_pet_realheader.py"
+permissions:
+  contents: read
+jobs:
+  native:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check real-header harness guards and accepted solo reference
+        run: python -m unittest -v tests.test_stoneage_party_pet_realheader tests.test_stoneage_player_battle
+      - name: Recover exact pinned descendants into transient work area
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_guard_break2_source_audit import PINNED
+          repos={"gavin":"gavinlinasd/StoneAge","iris":"iriselia/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for profile,sha in PINNED.items():
+              path=Path("/tmp/stoneage-party-realheader")/profile
+              subprocess.run(["git","init",str(path)],check=True)
+              subprocess.run(["git","-C",str(path),"remote","add","origin","https://github.com/"+repos[profile]+".git"],check=True)
+              subprocess.run(["git","-C",str(path),"fetch","--depth","1","origin",sha],check=True)
+              subprocess.run(["git","-C",str(path),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Execute real-header original party and pet CreateVsEnemy
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_realheader_audit --gavin-dir /tmp/stoneage-party-realheader/gavin --iris-dir /tmp/stoneage-party-realheader/iris --bismarck-dir /tmp/stoneage-party-realheader/bismarck > /tmp/stoneage-party-realheader.txt
+          cat /tmp/stoneage-party-realheader.txt
+          grep -F 'RESOLUTION|REAL_HEADER_PARTY_PET_CREATE_ENTRY_ONLY_EXIT_PROFIT_OPEN_NO_HISTORICAL_PROMOTION' /tmp/stoneage-party-realheader.txt
+          test "$(grep -c '^REAL_HEADER_ENTRY|' /tmp/stoneage-party-realheader.txt)" -eq 2
+      - name: Upload derived bounded real-header observations
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-party-pet-realheader
+          path: /tmp/stoneage-party-realheader.txt
