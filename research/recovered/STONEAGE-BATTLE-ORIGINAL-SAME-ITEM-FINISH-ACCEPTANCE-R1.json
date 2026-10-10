@@ -1,0 +1,83 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "date": "2026-10-11",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "prior_main": "7f1dc672afed20afbbc655f66ad03eeeb6d9a3ba",
+  "prior_main_tree": "5502202e6b64e9660299edef178be21afd8c5aa7",
+  "prior_continuity": {
+    "blob_sha": "0e14b67d820efb24a1372aac94e7341a16157752",
+    "decoded_chars": 1222536,
+    "repository_bytes": 1228907
+  },
+  "branch": "agent/original-same-item-finish-r1-20261011",
+  "tested_commit": "e402e6a2688e0dff4233fd7f2134fd2ba8314d4b",
+  "tested_tree": "325338429cf2a5e523871cce9c47dcbb1fda0db9",
+  "github_action": {
+    "run": 38074319496,
+    "job": 114277985148,
+    "conclusion": "success",
+    "python_unittests": 46
+  },
+  "original_native": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "optimization": [
+      "O0",
+      "O2",
+      "UBSan"
+    ],
+    "sequence": [
+      "ENEMY_createEnemy",
+      "ITEM_makeItemAndRegist",
+      "BATTLE_AddExpItem",
+      "BATTLE_Loop",
+      "BATTLE_Finish",
+      "BATTLE_GetProfit",
+      "BATTLE_GetExpGold",
+      "CHAR_addItemSpecificItemIndex",
+      "BATTLE_DeleteBattle"
+    ],
+    "synthetic_item_master_id": 1,
+    "registered_item_index": 3,
+    "origin_enemy_actor": 6,
+    "recipient_player_actor": 0,
+    "actual_bag_slots": {
+      "gavin": 11,
+      "bismarck": 9
+    },
+    "item_remains_live": true,
+    "owner_after_settlement": 0,
+    "battle_use_after": 0,
+    "battle_mode_after": "BATTLE_MODE_NONE",
+    "total_battles_after": 0,
+    "exact_whole_256_item_pool": true,
+    "exact_all_7_characters": true,
+    "exact_complete_battle_arena": true,
+    "differential_control": "execute same original second Loop/Finish with item3 pending absent, preserve the complete native EXP/status/exit effects; restore fixture then execute with the same originally registered item3, independently set only expected bag slot/owner and compare complete item, actor and arena bytes.",
+    "source_integrity": "original core C function bodies from pinned Gavin+Bismarck late-descendant trees, pre-existing exact function pins and original headers; no replacement of gameplay bodies",
+    "inventory_full_same_second_loop_tested": false,
+    "actual_historical_server_identification": false
+  },
+  "earlier_independent_bag_full_direct_gate": {
+    "run": 38073856673,
+    "conclusion": "success",
+    "only_direct_GetExpGold": true
+  },
+  "artifact": {
+    "id": 11677678052,
+    "github_reported_zip_bytes": 17207,
+    "github_reported_sha256": "5aab52a6ddc25029762e95cbfbf61b0327f8ff4c30222b16760a328cbbfe5cc7",
+    "independent_zip_sha_verified": false
+  },
+  "source_boundary": "Synthetic source-shaped enemy master, deterministic RNG, source-defined finite actor/item pool and fixed network config; genuine functions but no 1999 JSS or Taiwan-v1 server equality assertion",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "historical_promotions": 0
+  },
+  "next": "Same original second Loop/Finish with full player inventory and same registered item3; negative caller conditions (dead/not-player/invalid ticket), original factory natural data provenance and unique-code/time/callback/transport behavior; then separate modern game implementation only after historical baseline sufficiently resolved."
+}

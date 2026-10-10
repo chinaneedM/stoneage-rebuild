@@ -11547,3 +11547,53 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   deltas using original no-item control. Then independent original server
   provenance, natural probability, callback/unique/time and historical
   identity remain OPEN. No modern-engine phase transition.
+
+## 2026-10-11 — Original same registered ITEM through second BATTLE_Loop→BATTLE_Finish persistent bag REMOTE ACCEPTED (bounded)
+
+- Fresh remote main baseline 7f1dc672afed20afbbc655f66ad03eeeb6d9a3ba,
+  tree5502202e6b64e9660299edef178be21afd8c5aa7.
+  Preceding docs/CURRENT-STATE.md blob 0e14b67d820efb24a1372aac94e7341a16157752,
+  1222536 decoded characters (remote metadata1228907 bytes), retained
+  as an exact prefix in this appended record. No prior state rewritten.
+- On branch agent/original-same-item-finish-r1-20261011, final tested input
+  e402e6a2688e0dff4233fd7f2134fd2ba8314d4b, tree
+  325338429cf2a5e523871cce9c47dcbb1fda0db9. Action38074319496,
+  job114277985148 all SUCCESS: 46 Python tests, original exact-header
+  Gavin and Bismarck source native O0/O2 UBSan execution and byte-equivalent
+  outputs, independent item factory predecessor rerun PASS.
+- This new source gate exercises the SAME truly created and registered item3:
+  actual original ENEMY_createEnemy with bounded synthetic ten-pair master
+  spawns enemy actor6; original ITEM_makeItemAndRegist registers itemID1
+  as index3 and marks owner6; original BATTLE_AddExpItem queues it for player0.
+  The scenario then actually dispatches a distinct live original arena
+  through BATTLE_Loop (mode FINISH), original BATTLE_Finish,
+  BATTLE_GetProfit, BATTLE_GetExpGold, original persistent inventory add,
+  original BATTLE_Exit and BATTLE_DeleteBattle. The old accepted first Finish
+  is not falsely substituted for this separate second Loop.
+- Final source evidence in both profiles: item3 live with owner0, persistent
+  player0 bag slot Gavin11/Bismarck9. The arena is released, mode NONE,
+  Total_BattleNum returns to0. Full original 256-record item array,
+  seven complete Char records and entire native BATTLE bytes match expected.
+  No-loot real original second-Finish replay supplies a differential oracle
+  for existing EXP/pet/status/Exit side effects; with-item replay must match
+  that baseline except independently predicted real inventory slot and
+  registered item owner change. This is NOT an independent formula proof for
+  EXP or a positive server/protocol transport validation.
+- Tested two profiles, actual second Loop original finish and profit each,
+  independent previous original direct payout empty/full gate Action38073856673
+  already green; same-instance full-bag second Loop still OPEN. Also left
+  unproven: naturally recovered enemy/item master/drop percentages,
+  exact 1999 JSS/Taiwan1.0 server ancestry, unique item code/time/callback,
+  actual network or user clients, modern reimplementation. The source
+  witness uses later descendants, bounded actors, fixed 2-player config,
+  test RNG and synthetic master; cannot be promoted to historical FACT.
+- Artifact11677678052, GitHub reported ZIP17207 bytes, SHA256
+  5aab52a6ddc25029762e95cbfbf61b0327f8ff4c30222b16760a328cbbfe5cc7;
+  no independent artifact ZIP download/hash comparison claimed.
+  No original proprietary assets, original server code or binaries placed
+  into the reconstruction repository. Pressure unchanged
+  2486=2465 bounded closed+18 OPEN+3 historical UB, zero promotions.
+- Highest NEXT: execute original same-item second Loop/Finish with full player
+  inventory and assert item release/owner cleanup plus entire actor/arena/item
+  oracles; negative dead/invalid/non-player/duplicate edge gates, natural
+  master/historical provenance and transport/callbacks remain OPEN.
