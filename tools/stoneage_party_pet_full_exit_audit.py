@@ -55,11 +55,26 @@ MARKER=r"""  /* Exit is intentionally not asserted by this first admission gate.
 # This controlled fixture has CHAR_LOWRIDEPETS==0, so the exact predicate
 # must return -1 without needing the original ride-code table. Anything
 # beyond that bounded domain remains a hard failure, not simulated game code.
-ZERO_LICENSE_RIDE=r"""
+ZERO_LICENSE_RIDE_GAVIN=r"""
 static int zero_license_ride_queries=0;
 int RIDEPET_getPETindex(int petNo,int learnCode){
   (void)petNo;
   if(learnCode!=0){fputs("RIDE_LICENSE_SCOPE_VIOLATION",stderr);abort();}
+  zero_license_ride_queries++;
+  return -1;
+}
+"""
+# Bismarck's pinned _ADD_RIDE_CF header has the four-argument form;
+# all three permission masks are zero for this fixture. Never flatten
+# this profile difference into the Gavin two-argument signature.
+ZERO_LICENSE_RIDE_BISMARCK=r"""
+static int zero_license_ride_queries=0;
+int RIDEPET_getPETindex(int petNo,unsigned int learnCode,
+                         unsigned int learnCode1,unsigned int learnCode2){
+  (void)petNo;
+  if(learnCode||learnCode1||learnCode2){
+    fputs("RIDE_LICENSE_SCOPE_VIOLATION",stderr);abort();
+  }
   zero_license_ride_queries++;
   return -1;
 }
@@ -111,7 +126,7 @@ def make_native(profile,source):
     if original.count(MARKER)!=1:raise ValueError("accepted admission body changed")
     anchor="int main(int argc,char **argv){"
     if original.count(anchor)!=1:raise ValueError("actual original main anchor drift")
-    original=original.replace(anchor,ZERO_LICENSE_RIDE+WORLD_BROADCAST+PET_STATUS+anchor,1)
+    original=original.replace(anchor,(ZERO_LICENSE_RIDE_BISMARCK if profile=="bismarck" else ZERO_LICENSE_RIDE_GAVIN)+WORLD_BROADCAST+PET_STATUS+anchor,1)
     field="char_index" if profile=="bismarck" else "charaindex"
     return original.replace(MARKER,EXPECTED_INSERT.replace("ENTRY_FIELD",field),1)
 
