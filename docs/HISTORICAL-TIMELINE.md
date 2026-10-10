@@ -2005,3 +2005,16 @@ STONEAGE-ENEMY-LOADER-ACCEPTANCE-R1.json; earlier histories preserved.
   empty-registry release scope. Explicit walk/watch/reclamation adapters; full
   actual battle entry/Exit/reuse and original freeMemory/ABI/JSS/Taiwan-v1 OPEN.
   Pressure remains2486=2465 closed capability+18 OPEN+3 historical UB;zero promotions.
+
+
+### 2026-10-10 — Bounded actual-header enemy Entry/Exit/destruction/reuse witness
+
+- FACT in two pinned descendant/current-header LP64 domains: original Entry INIT1
+  and Exit FINAL6 execute through preserved ordinary enemy births, actual empty
+  inventory destruction and slot4 reuse. World objects/players/map links retained.
+  Earlier symbolic-fixture ordinals remain declared labels, not actual enums.
+- Gavin postdestroy clock/zero-ticket tail differs from Bismarck's liveness guards;
+  no warp reached.49,104 natural/dirty cycles,196,416 complete work-delta stages,
+ 164 regressions/12 mutations; ten prior reports unchanged. Fixed clock/battle/map
+  and inherited world adapters; full higher-level battle/other actor/ABI/JSS/
+  Taiwan-v1/reclaimer scope OPEN. Remote PENDING;zero promotions.

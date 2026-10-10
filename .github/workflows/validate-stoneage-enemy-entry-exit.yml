@@ -1,0 +1,237 @@
+name: Validate StoneAge preserved enemy Entry Exit and actual slot reuse
+
+concurrency:
+  group: stoneage-enemy-entry-exit-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-enemy-entry-exit.yml"
+      - "tools/stoneage_enemy_entry_exit_audit.py"
+      - "tests/test_stoneage_enemy_entry_exit.py"
+      - "research/recovered/STONEAGE-ENEMY-ENTRY-EXIT-SOURCE-DOMAINS-R1.json"
+      - "research/recovered/STONEAGE-ENEMY-ENTRY-EXIT-NATIVE-R1.txt"
+      - ".github/workflows/validate-stoneage-object-ownership.yml"
+      - "tools/stoneage_object_ownership_audit.py"
+      - "tests/test_stoneage_object_ownership.py"
+      - "research/recovered/STONEAGE-OBJECT-OWNERSHIP-SOURCE-DOMAINS-R1.json"
+      - "research/recovered/STONEAGE-OBJECT-OWNERSHIP-NATIVE-R1.txt"
+      - ".github/workflows/validate-stoneage-enemy-loader.yml"
+      - "tools/stoneage_enemy_loader_audit.py"
+      - "tests/test_stoneage_enemy_loader.py"
+      - "research/recovered/STONEAGE-ENEMY-LOADER-SOURCE-DOMAINS-R1.json"
+      - "research/recovered/STONEAGE-ENEMY-LOADER-NATIVE-R1.txt"
+      - ".github/workflows/validate-stoneage-enemy-creation.yml"
+      - "tools/stoneage_enemy_creation_audit.py"
+      - "tests/test_stoneage_enemy_creation.py"
+      - "research/recovered/STONEAGE-ENEMY-CREATION-SOURCE-DOMAINS-R1.json"
+      - "research/recovered/STONEAGE-ENEMY-CREATION-NATIVE-R1.txt"
+      - ".github/workflows/validate-stoneage-default-template.yml"
+      - "tools/stoneage_default_template_audit.py"
+      - "tests/test_stoneage_default_template.py"
+      - "research/recovered/STONEAGE-DEFAULT-TEMPLATE-SOURCE-DOMAINS-R1.json"
+      - "research/recovered/STONEAGE-DEFAULT-TEMPLATE-NATIVE-R1.txt"
+      - ".github/workflows/validate-stoneage-character-reuse.yml"
+      - "tools/stoneage_character_reuse_audit.py"
+      - "tests/test_stoneage_character_reuse.py"
+      - "research/recovered/STONEAGE-CHARACTER-REUSE-SOURCE-DOMAINS-R1.json"
+      - "research/recovered/STONEAGE-CHARACTER-REUSE-NATIVE-R1.txt"
+      - "tools/stoneage_exit_world_item_audit.py"
+      - "tests/test_stoneage_exit_world_item.py"
+      - "research/recovered/STONEAGE-EXIT-WORLD-ITEM-SOURCE-DOMAINS-R1.json"
+      - "research/recovered/STONEAGE-EXIT-WORLD-ITEM-NATIVE-R1.txt"
+      - "tools/stoneage_exit_destroy_ticket_audit.py"
+      - "tests/test_stoneage_exit_destroy_ticket.py"
+      - "research/recovered/STONEAGE-EXIT-DESTROY-TICKET-SOURCE-DOMAINS-R1.json"
+      - "research/recovered/STONEAGE-EXIT-DESTROY-TICKET-NATIVE-R1.txt"
+      - "tools/stoneage_watch_cleanup_audit.py"
+      - "tests/test_stoneage_watch_cleanup.py"
+      - "research/recovered/STONEAGE-WATCH-CLEANUP-SOURCE-DOMAINS-R1.json"
+      - "research/recovered/STONEAGE-WATCH-CLEANUP-NATIVE-R1.txt"
+      - "tools/stoneage_becomepig_hp_death_audit.py"
+      - "tools/stoneage_exit_lifetime_watch_audit.py"
+      - "tools/stoneage_becomepig_exit_modes_audit.py"
+      - "research/recovered/STONEAGE-EXIT-LIFETIME-WATCH-SOURCE-DOMAINS-R1.json"
+      - "tests/test_stoneage_becomepig_hp_death.py"
+      - "tests/test_stoneage_exit_lifetime_watch.py"
+      - "tests/test_stoneage_becomepig_exit_modes.py"
+      - "tools/stoneage_becomepig_lookup_audit.py"
+      - "tools/stoneage_becomepig_badstatus_audit.py"
+      - "tools/stoneage_becomepig_restore_audit.py"
+      - "tools/stoneage_becomepig_native_audit.py"
+      - "tools/stoneage_guard_break2_source_audit.py"
+      - "tools/stoneage_mdfyattack_source_audit.py"
+      - "research/recovered/STONEAGE-BECOMEPIG-LOOKUP-SOURCE-DOMAINS-R1.json"
+      - "research/recovered/STONEAGE-BECOMEPIG-BADSTATUS-SOURCE-DOMAINS-R1.json"
+      - "research/recovered/STONEAGE-BECOMEPIG-RESTORATION-SOURCE-DOMAINS-R1.json"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate lookup domains and previous regressions
+        run: python -m unittest -v tests.test_stoneage_enemy_entry_exit tests.test_stoneage_object_ownership tests.test_stoneage_enemy_loader tests.test_stoneage_enemy_creation tests.test_stoneage_default_template tests.test_stoneage_character_reuse tests.test_stoneage_exit_world_item tests.test_stoneage_exit_destroy_ticket tests.test_stoneage_watch_cleanup tests.test_stoneage_exit_lifetime_watch tests.test_stoneage_becomepig_exit_modes tests.test_stoneage_becomepig_pet_state tests.test_stoneage_becomepig_hp_death tests.test_stoneage_becomepig_lookup tests.test_stoneage_becomepig_badstatus tests.test_stoneage_becomepig_restore tests.test_stoneage_becomepig_clock tests.test_stoneage_becomepig_native_domains tests.test_stoneage_recovered25_becomepig_probe
+      - name: Recover exact descendant source trees
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_guard_break2_source_audit import PINNED
+          repos={"gavin":"gavinlinasd/StoneAge","iris":"iriselia/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for name,sha in PINNED.items():
+              root=Path("/tmp/exit-destroy-ticket-source")/name
+              subprocess.run(["git","init",str(root)],check=True)
+              subprocess.run(["git","-C",str(root),"remote","add","origin","https://github.com/"+repos[name]+".git"],check=True)
+              subprocess.run(["git","-C",str(root),"fetch","--depth","1","origin",sha],check=True)
+              subprocess.run(["git","-C",str(root),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Execute actual-header preserved enemy Entry Exit destruction and reuse
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_enemy_entry_exit_audit \
+            --gavin-dir /tmp/exit-destroy-ticket-source/gavin \
+            --iris-dir /tmp/exit-destroy-ticket-source/iris \
+            --bismarck-dir /tmp/exit-destroy-ticket-source/bismarck \
+            > /tmp/enemy-entry-exit-native.txt
+          cat /tmp/enemy-entry-exit-native.txt
+          cmp /tmp/enemy-entry-exit-native.txt research/recovered/STONEAGE-ENEMY-ENTRY-EXIT-NATIVE-R1.txt
+          grep -F 'TOTAL|natural_cycles=49024|dirty_status_cycles=80|entry_exit_reuse_cycles=49104|preserved_enemy_births=98208|full_work_delta_and_stage_comparisons=196416|rejected_guard_calls=785664|executed_profiles=2' /tmp/enemy-entry-exit-native.txt
+          grep -F 'MUTATIONS|semantic_mutations_rejected=12|entry_bid_object_status_clear_Exit_mode_entry_removal_slot_invalidation|additional_cycles=12' /tmp/enemy-entry-exit-native.txt
+          grep -F 'RESOLUTION|BOUNDED_ACTUAL_HEADER_PRESERVED_ENEMY_ENTRY_EXIT_REUSE_PASS_ZERO_RUNTIME_PROMOTIONS' /tmp/enemy-entry-exit-native.txt
+      - name: Execute original world registration and preserved enemy nonownership
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_object_ownership_audit \
+            --gavin-dir /tmp/exit-destroy-ticket-source/gavin \
+            --iris-dir /tmp/exit-destroy-ticket-source/iris \
+            --bismarck-dir /tmp/exit-destroy-ticket-source/bismarck \
+            > /tmp/object-ownership-native.txt
+          cat /tmp/object-ownership-native.txt
+          cmp /tmp/object-ownership-native.txt research/recovered/STONEAGE-OBJECT-OWNERSHIP-NATIVE-R1.txt
+          grep -F 'TOTAL|registration_cycles=49024|preserved_enemy_births=98048|successful_world_constructors=147072|full_object_constructor_rollbacks=49024|named_stage_comparisons=441216|executed_profiles=2' /tmp/object-ownership-native.txt
+          grep -F 'MUTATIONS|semantic_mutations_rejected=10|world_work_object_owner_map_reclaim_owner_search_enemy_object_work|additional_cycles=10' /tmp/object-ownership-native.txt
+          grep -F 'RESOLUTION|BOUNDED_ORIGINAL_OBJECT_REGISTRATION_AND_PRESERVED_ENEMY_NONOWNERSHIP_PASS_ZERO_RUNTIME_PROMOTIONS' /tmp/object-ownership-native.txt
+      - name: Execute original master file loaders and preserved ordinary births
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_enemy_loader_audit \
+            --gavin-dir /tmp/exit-destroy-ticket-source/gavin \
+            --iris-dir /tmp/exit-destroy-ticket-source/iris \
+            --bismarck-dir /tmp/exit-destroy-ticket-source/bismarck \
+            > /tmp/enemy-loader-native.txt
+          cat /tmp/enemy-loader-native.txt
+          cmp /tmp/enemy-loader-native.txt research/recovered/STONEAGE-ENEMY-LOADER-NATIVE-R1.txt
+          grep -F 'TOTAL|loaded_template_comparisons=7284|loaded_enemy_comparisons=11756|preserved_ordinary_birth_calls=49024|executed_profiles=2' /tmp/enemy-loader-native.txt
+          grep -F 'MUTATIONS|semantic_mutations_rejected=12|loader_link_level_empty_cell_and_birth_ticket_start_object|additional_birth_calls=6' /tmp/enemy-loader-native.txt
+          grep -F 'RESOLUTION|BOUNDED_ORIGINAL_MASTER_LOADING_AND_PRESERVED_ORDINARY_BIRTH_PASS_ZERO_RUNTIME_PROMOTIONS' /tmp/enemy-loader-native.txt
+      - name: Execute complete original ordinary unequipped enemy creator
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_enemy_creation_audit \
+            --gavin-dir /tmp/exit-destroy-ticket-source/gavin \
+            --iris-dir /tmp/exit-destroy-ticket-source/iris \
+            --bismarck-dir /tmp/exit-destroy-ticket-source/bismarck \
+            > /tmp/enemy-creation-native.txt
+          cat /tmp/enemy-creation-native.txt
+          cmp /tmp/enemy-creation-native.txt research/recovered/STONEAGE-ENEMY-CREATION-NATIVE-R1.txt
+          grep -F 'TOTAL|ordinary_enemy_creator_calls=27840|profiles=3' /tmp/enemy-creation-native.txt
+          grep -F 'MUTATIONS|semantic_mutations_rejected=24|successful_creator_state_fields=8|profiles=3' /tmp/enemy-creation-native.txt
+          grep -F 'RESOLUTION|BOUNDED_ORIGINAL_ORDINARY_UNEQUIPPED_ENEMY_CREATION_PASS_ZERO_RUNTIME_PROMOTIONS' /tmp/enemy-creation-native.txt
+      - name: Execute actual defaultPlayer table and original header layout
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_default_template_audit \
+            --gavin-dir /tmp/exit-destroy-ticket-source/gavin \
+            --iris-dir /tmp/exit-destroy-ticket-source/iris \
+            --bismarck-dir /tmp/exit-destroy-ticket-source/bismarck \
+            > /tmp/default-template-native.txt
+          cat /tmp/default-template-native.txt
+          cmp /tmp/default-template-native.txt research/recovered/STONEAGE-DEFAULT-TEMPLATE-NATIVE-R1.txt
+          grep -F 'TOTAL|actual_default_template_getter_calls=2736|profiles=3' /tmp/default-template-native.txt
+          grep -F 'RESOLUTION|BOUNDED_ACTUAL_DEFAULT_TEMPLATE_HEADERS_PASS_ZERO_RUNTIME_PROMOTIONS' /tmp/default-template-native.txt
+      - name: Execute original default character and allocator reuse
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_character_reuse_audit \
+            --gavin-dir /tmp/exit-destroy-ticket-source/gavin \
+            --iris-dir /tmp/exit-destroy-ticket-source/iris \
+            --bismarck-dir /tmp/exit-destroy-ticket-source/bismarck \
+            > /tmp/character-reuse-native.txt
+          cat /tmp/character-reuse-native.txt
+          cmp /tmp/character-reuse-native.txt research/recovered/STONEAGE-CHARACTER-REUSE-NATIVE-R1.txt
+          grep -F 'TOTAL|character_reuse_comparisons=25344|profiles=3' /tmp/character-reuse-native.txt
+          grep -F 'RESOLUTION|BOUNDED_DEFAULT_TEMPLATE_ALLOCATOR_REUSE_PASS_ZERO_RUNTIME_PROMOTIONS' /tmp/character-reuse-native.txt
+      - name: Execute complete original Exit with original item death and world movement
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_exit_world_item_audit \
+            --gavin-dir /tmp/exit-destroy-ticket-source/gavin \
+            --iris-dir /tmp/exit-destroy-ticket-source/iris \
+            --bismarck-dir /tmp/exit-destroy-ticket-source/bismarck \
+            > /tmp/exit-world-item-native.txt
+          cat /tmp/exit-world-item-native.txt
+          cmp /tmp/exit-world-item-native.txt research/recovered/STONEAGE-EXIT-WORLD-ITEM-NATIVE-R1.txt
+          grep -F 'TOTAL|exit_world_item_comparisons=42336|profiles=3' /tmp/exit-world-item-native.txt
+          grep -F 'RESOLUTION|BOUNDED_ORIGINAL_EXIT_WORLD_ITEM_PASS_ZERO_RUNTIME_PROMOTIONS' /tmp/exit-world-item-native.txt
+      - name: Execute complete original Exit with actual slot lifetime and ticket helpers
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_exit_destroy_ticket_audit \
+            --gavin-dir /tmp/exit-destroy-ticket-source/gavin \
+            --iris-dir /tmp/exit-destroy-ticket-source/iris \
+            --bismarck-dir /tmp/exit-destroy-ticket-source/bismarck \
+            > /tmp/exit-destroy-ticket-native.txt
+          cat /tmp/exit-destroy-ticket-native.txt
+          cmp /tmp/exit-destroy-ticket-native.txt research/recovered/STONEAGE-EXIT-DESTROY-TICKET-NATIVE-R1.txt
+          grep -F 'TOTAL|exit_destroy_ticket_comparisons=196056|profiles=3' /tmp/exit-destroy-ticket-native.txt
+          grep -F 'RESOLUTION|BOUNDED_ORIGINAL_EXIT_DESTROY_PARTY_TICKET_PASS_ZERO_RUNTIME_PROMOTIONS' /tmp/exit-destroy-ticket-native.txt
+      - name: Execute original watcher Stop and task-loop cleanup
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_watch_cleanup_audit \
+            --gavin-dir /tmp/exit-destroy-ticket-source/gavin \
+            --iris-dir /tmp/exit-destroy-ticket-source/iris \
+            --bismarck-dir /tmp/exit-destroy-ticket-source/bismarck \
+            > /tmp/watch-cleanup-native.txt
+          cat /tmp/watch-cleanup-native.txt
+          cmp /tmp/watch-cleanup-native.txt research/recovered/STONEAGE-WATCH-CLEANUP-NATIVE-R1.txt
+          grep -F 'TOTAL|watch_cleanup_comparisons=55350|profiles=3' /tmp/watch-cleanup-native.txt
+          grep -F 'RESOLUTION|BOUNDED_ORIGINAL_WATCH_STOP_LOOP_CLEANUP_PASS_ZERO_RUNTIME_PROMOTIONS' /tmp/watch-cleanup-native.txt
+      - name: Execute original enemy slot and watcher lifecycle bodies
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          ARGS="--gavin-dir /tmp/exit-destroy-ticket-source/gavin --iris-dir /tmp/exit-destroy-ticket-source/iris --bismarck-dir /tmp/exit-destroy-ticket-source/bismarck"
+          python -m tools.stoneage_exit_lifetime_watch_audit $ARGS > /tmp/lifetime-watch-regression.txt
+          cmp /tmp/lifetime-watch-regression.txt research/recovered/STONEAGE-EXIT-LIFETIME-WATCH-NATIVE-R1.txt
+          cat research/recovered/STONEAGE-EXIT-LIFETIME-WATCH-NATIVE-R1.txt
+          grep -F 'TOTAL|lifetime_watch_comparisons=576|profiles=3' research/recovered/STONEAGE-EXIT-LIFETIME-WATCH-NATIVE-R1.txt
+          grep -F 'RESOLUTION|BOUNDED_ENEMY_SLOT_WATCH_LIST_LIFECYCLE_PASS_ZERO_RUNTIME_PROMOTIONS' research/recovered/STONEAGE-EXIT-LIFETIME-WATCH-NATIVE-R1.txt
+      - name: Reproduce accepted complete Exit modes report
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_becomepig_exit_modes_audit \
+            --gavin-dir /tmp/exit-destroy-ticket-source/gavin \
+            --iris-dir /tmp/exit-destroy-ticket-source/iris \
+            --bismarck-dir /tmp/exit-destroy-ticket-source/bismarck \
+            > /tmp/exit-modes-regression.txt
+          cmp /tmp/exit-modes-regression.txt research/recovered/STONEAGE-BECOMEPIG-EXIT-MODES-NATIVE-R1.txt
+          echo 'Prior 263268 Exit-mode comparisons reproduce the complete accepted report'
+      - name: Preserve exact input derived enemy Entry Exit evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: enemy-entry-exit-${{ github.sha }}
+          path: research/recovered/STONEAGE-ENEMY-ENTRY-EXIT-NATIVE-R1.txt

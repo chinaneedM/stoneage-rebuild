@@ -9927,3 +9927,44 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   Iris encoding/special/equipped/nonempty callbacks/remaining actor/watcher/
   typed631/635/original ABI/build/JSS/Taiwan-v1 remain OPEN. No engine/content
   transition. Protocol section10 ongoing accepted integration authorization applies.
+
+
+## 2026-10-10 — Actual-header preserved enemy Entry/Exit/destruction/reuse LOCAL PASS; remote PENDING
+
+- Fresh remote main561178bbfdabf7540cd4f1e0d8e719d7aff54daf/tree
+  92770522752c6d7d53ea08359de3b2fec15a3a18; latest Action38022136836 success.
+  Latest branches/HEAD/tree/commits/Actions and exact-tree protocol startup
+  documents re-read; continued recorded actual battle entry/Exit/reuse priority.
+- Complete original BATTLE_NewEntry/EntryInit/BadStatusAllClr/_BATTLE_Exit/party
+  and checked flag/item/Char-release helpers execute through ordinary enemy path,
+  composed with accepted preserved master loader/creator/registered world0/1.
+  Actual Char/Object/BATTLE/BATTLE_ENTRY/map/header closure and original status/
+  magic tables pinned. Gavin original profession initializer reaches enemy guard;
+  player/profession/network/warp branches abort if unexpectedly reached.
+-49,024 natural+80 controlled dirty-status cycles,98,208 births/successful Entries/
+  enemy Exits,196,416 full-work-delta/named stages,785,664 rejected guard calls;
+  O0/O2 GNU99 -fgnu89-inline+nonrecovering UBSan.164 regressions,12 safely
+  executing semantic mutations rejected (12 extra cycles). All ten predecessor
+  complete reports reproduced byte-identically. Original C/headers/data transient.
+- FACT bounded actual enums INIT1/FINAL6; earlier symbolic-fixture ordinals are
+  labels, not historical numeric replacements. Entry clears/selects first hole/
+  bid/items/escape and battle/status work. Exit removes entry, stores FINAL6/
+  index-1, empties inventory and invalidates enemy4; repeated Exit/Entry return
+  original CHARAINDEX6. Rebirth reuses4 with next sequence and same birth work/flags.
+- Enemy ticket/start/object remain0 through Entry/Exit; original owner-search -1.
+  World players/initialized named objects0/1/map links unchanged. Gavin runs clock/
+  zero stale-ticket tail after destruction; Bismarck liveness guards skip it.
+  Fixed clock adapter; no warp reached. Actual ordinary enemy composition only;
+  higher-level BATTLE_CreateVsEnemy/bootstrap/Finish and other actor paths OPEN.
+- Full work delta oracle uses captured original birth baseline, not independent
+  all-birth-field oracle; named birth fields checked. All initialized Char data/
+  strings retained; uninitialized Object fields/padding unobserved. Controlled
+  battle holes/map/partitions/RNG, inherited walk/watch/reclamation adapters.
+  Original freeMemory/free-list/full bootstrap unexecuted; Iris encoding OPEN.
+- Spec STONEAGE-ENEMY-ENTRY-EXIT-R1.md/source/validation/native receipts; report
+  SHA256 9765e8ebdaa7861e12887fe6ba73a5f4a46eb3d12b92ffe358bd8f0af9cd6f70; remote PENDING.
+  Pressure2486=2465 closed capability+18 OPEN+3 historical UB;zero promotions.
+  Next exact-input Actions, then actual higher-level BATTLE_CreateVsEnemy/battle
+  array bootstrap/Finish and further player/pet/party/watcher compositions.
+  Original reclamation/Iris conversion/ABI/build/JSS/Taiwan-v1 and actor/watcher/
+  typed631/635 remain OPEN; no engine/content transition. Section10 authorization.

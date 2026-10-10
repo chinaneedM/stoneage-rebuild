@@ -1,0 +1,76 @@
+{
+  "schema": "stoneage-enemy-entry-exit-validation-r1",
+  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "startup_main": "561178bbfdabf7540cd4f1e0d8e719d7aff54daf",
+  "startup_tree": "92770522752c6d7d53ea08359de3b2fec15a3a18",
+  "executed_profiles": [
+    "gavin",
+    "bismarck"
+  ],
+  "natural_cycles": 49024,
+  "controlled_dirty_status_cycles": 80,
+  "entry_exit_reuse_cycles": 49104,
+  "preserved_enemy_births": 98208,
+  "successful_entries": 98208,
+  "successful_enemy_Exits": 98208,
+  "full_work_delta_and_stage_comparisons": 196416,
+  "rejected_guard_calls": 785664,
+  "semantic_mutations_rejected": 12,
+  "additional_mutation_cycles": 12,
+  "regression_checks": 164,
+  "optimizations": [
+    "O0",
+    "O2"
+  ],
+  "dialect": "GNU99 with -fgnu89-inline",
+  "sanitizer": "undefined, nonrecovering",
+  "host_domain": "LP64 pointer8 int4; actual Char/Object/BATTLE/BATTLE_ENTRY/MAP headers; controlled initialized battle/map/pool/partitions",
+  "actual_enum_values": {
+    "INIT": 1,
+    "FINAL": 6,
+    "CHARAINDEX_error": 6
+  },
+  "birth_fields": "named identity/growth/stats/HP/exp/ticket/start/object/flags/RNG/sequence",
+  "full_work_differential_oracle_from_captured_birth": true,
+  "all_birth_fields_have_independent_oracle": false,
+  "post_entry_Exit_data_and_string_retention": true,
+  "all_object_bytes_have_independent_oracle": false,
+  "ordinary_enemy_entry_complete_Exit_destruction_reuse_executed": true,
+  "higher_level_BATTLE_CreateVsEnemy_or_Finish_executed": false,
+  "matched_player_pet_special_party_watcher_Exit_executed": false,
+  "original_freeMemory_executed": false,
+  "adapters": [
+    "fixed time1000 collector",
+    "inherited world walk/watch/detached-node reclamation collectors"
+  ],
+  "Gavin_ticket_tail": "clock call and zero stale ticket after destruction, no warp reached",
+  "Bismarck_ticket_tail": "dead-slot liveness guards skip party/ticket clock path",
+  "report_sha256": "9765e8ebdaa7861e12887fe6ba73a5f4a46eb3d12b92ffe358bd8f0af9cd6f70",
+  "prior_complete_report_sha256": {
+    "OBJECT-OWNERSHIP": "7f426e53b44afea3026dd8eefa2d575ba5e2a2b3562caf6c668e1f335528d9bd",
+    "ENEMY-LOADER": "ce1e52eee5169fc123f8b1c71c252908bedd1f42067f87b4772b2d3f7f596538",
+    "ENEMY-CREATION": "1e4c78ebc12309baa6905eaa63626b21180cdce6e75c17dafb980e39998502d3",
+    "DEFAULT-TEMPLATE": "facfe62106ca3be1a9a800b5e33afcc14bf582a65e2dc93d2607d6c0be076c53",
+    "CHARACTER-REUSE": "cbebb27b3923817c7804545cfedb882d90f4a89423ee05dd32bf6eb1b0f9da5a",
+    "EXIT-WORLD-ITEM": "54ab876083faac9e87da83a6ce459b5edaa59fcb03a725aeb131ae9c9b7636ab",
+    "EXIT-DESTROY-TICKET": "94f4590eec2e25496483fb75827cc40a6566508856f24d8648c62b9117249d20",
+    "WATCH-CLEANUP": "b7724d88bf319ad0cf80e0463de21b78510db30505d007529a22cab3d6cf99da",
+    "EXIT-LIFETIME-WATCH": "f45a307738447df03550a03e87ef3534da59ac91f461e7eed194b5dd7a5f342f",
+    "BECOMEPIG-EXIT-MODES": "21cfc791be5f03f674c40369bfcc067dd757bd253f4ecd30ff414826be3a9533"
+  },
+  "open": [
+    "actual higher-level BATTLE_CreateVsEnemy and battle array bootstrap/Finish",
+    "other player/pet/special/party/watcher compositions",
+    "original reclaimer/free-list/bootstrap",
+    "Iris Windows conversion",
+    "nonempty callbacks/equipment and actor/watcher/typed631/635 admission",
+    "original ABI/build/JSS/Taiwan-v1"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  }
+}

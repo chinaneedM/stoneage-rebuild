@@ -5117,3 +5117,21 @@ sources/data remain transient; earlier records preserved.
   downloaded; ordered logs/report cmp gates verified. Tested code unchanged.
   Accepted only bounded descendant/source/header/map/adapter scope; no all-byte/
   all-birth-field/freeMemory/bootstrap/full-entry-Exit/JSS/Taiwan-v1 promotion.
+
+
+### 2026-10-10 — Actual-header preserved enemy Entry/Exit/reuse source gate R1
+
+- STONEAGE-ENEMY-ENTRY-EXIT source/validation/native receipts and spec/workflow;
+  same accepted pinned descendants/Gavin configured bytes, Bismarck cross-profile
+  only. Original Entry/complete Exit/bad-status tables/party/checked flag/Char/item
+  empty-registry release functions and actual header dependency closure pinned.
+- FACT in ordinary enemy composition: real INIT1/FINAL6, slot4 destroyed/reused,
+  dead guards error6, world objects/players/map links retained. Gavin postdestroy
+  clock/zero-ticket tail vs Bismarck liveness guard preserved. Nonparty/no-equipment/
+  empty-callback scope; controlled battle holes/fixed clock plus inherited world
+  walk/watch/reclamation adapters; other actor/network/warp/profession paths trap.
+-49,104 cycles/98,208 births/196,416 complete work-delta stages/785,664 guard
+  rejections;164 regressions,12 mutations,ten unchanged predecessor reports.
+  Differential work oracle from captured birth, not all-field birth oracle.
+  No original C/headers/data committed. Remote PENDING; higher-level battle
+  bootstrap/Finish/other actors/original reclaimer/ABI/JSS/Taiwan-v1 OPEN;0 promotions.
