@@ -1,0 +1,213 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "date": "2026-10-11 Asia/Shanghai",
+  "baseline_main": "3d2dc228c4696c8ce15fcb3a917dadf3919e0841",
+  "baseline_tree": "92423af0e9713597df6e1b3a61601aae70179281",
+  "preserved_continuity": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 1209606,
+      "blob": "cd988c9ecd5f7afc0226d1ae1fc8f251c0b1beec",
+      "sha256": "5207ec9c55defb834e636e2cffd460bf81513b572175a2ac355d3e119f781dfc"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 194703,
+      "blob": "2975858605a80a496f49b579dfa7c02926291648",
+      "sha256": "472b47e32e6b917f55bdbd4251ee861d23388769d9374f06aa18e23a41cd9767"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 412475,
+      "blob": "f2713de35666ebe91f1143b43b7a379f508f5f5f",
+      "sha256": "83d8270b92d15e00af530d719d6bc4c621c611106e294f18d8472ee02d6a1c8a"
+    }
+  },
+  "branch": "agent/item-allocator-r1-20261011",
+  "tested_commit": "f5bfbebcc26bed4bbdbbde06ed48bb9b41673187",
+  "tested_tree": "02b5c1470ca8444182cd2b9bb2bad16f69b407c9",
+  "action": 38068762702,
+  "job": 114261692113,
+  "conclusion": "success",
+  "steps": 11,
+  "regressions": 57,
+  "new_native_encounters": 16,
+  "retained_ownership_native_encounters": 16,
+  "total_native_encounters": 32,
+  "successful_allocations": 80,
+  "invalid_ID_rejections": 48,
+  "full_pool_rejections": 16,
+  "original_releases": 32,
+  "native_empty_name_lookups": 880,
+  "bismarck_original_empty_Lua_fallbacks": 400,
+  "optimizations": [
+    "O0",
+    "O2"
+  ],
+  "sanitizer": "nonrecovering UBSan",
+  "whole_output_equal_per_profile": true,
+  "literal_cursor_sequence": [
+    2,
+    2,
+    -1,
+    5,
+    6,
+    1
+  ],
+  "original_static_cursor_mutated": false,
+  "complete_pool_actor_arena_template_table_oracles": true,
+  "cases": [
+    "invalid table IDs",
+    "reserved zero",
+    "allocation two",
+    "release and wrap reuse two",
+    "full pool",
+    "stale carried slot four protected without counter increment",
+    "warehouse-only slot five reused without clearing reference",
+    "release five ignores warehouse reference",
+    "cursor continues six and wraps one",
+    "invalid native construction and Lua function bounds"
+  ],
+  "template_callback_addresses_are_synthetic_and_never_called": true,
+  "diagnostics": "Inherited presentation-only diagnostic collector; unchanged original gameplay bodies",
+  "artifact": 11676102734,
+  "artifact_verification": {
+    "zip_bytes": 16652,
+    "zip_sha256": "1c08eaa972dfda25a6b5be8f73331b1b2366e21f0188673c901e69613f46bbc9",
+    "reports": {
+      "stoneage-item-allocator-r1.txt": {
+        "bytes": 31513,
+        "sha256": "4f7eba16f68b448a5676c55e1762032d87fb18a2f2a1af43d9148603509e7941",
+        "independently_downloaded_equal_local": true
+      },
+      "stoneage-reward-ownership-retained-r1.txt": {
+        "bytes": 29043,
+        "sha256": "5b2c9365b5cf053c8d4c490867f7f56d268f571f4a5bad20132e59e857093992",
+        "independently_downloaded_equal_local": true
+      }
+    }
+  },
+  "original_initializer_dependencies_sha256": {
+    "gavin": {
+      "_ITEM_initExistItemsOne": "debe8ffbcb2b1ee58eba4ec3870210861bb62e8c3f11620e2c5799163c1cf558",
+      "ITEM_CHECKITEMTABLE": "9173177b3f0f93eebe443ed83392372c0966b3de94fce84fe29f8544897d90f8",
+      "ITEM_constructFunctable": "ea8563f1d39c23e5991540045a8a4ea2d793e5d836fbe1df5c394492b088cbc8"
+    },
+    "bismarck": {
+      "_ITEM_initExistItemsOne": "0cee50b39499960ce599b92d6364ea192d149b5d20fe5d5b400eb8afac711f56",
+      "ITEM_CHECKITEMTABLE": "dd98c9b6a39c8170072c8cda8250b91ea3bbc5109de4330de31ce621a9678c4f",
+      "ITEM_constructFunctable": "19d3ea136f8793e15cf7c2effe1206f6bb103c29aa8e89fbdbdd8d63c906d5cb",
+      "ITEM_setLUAFunction": "c80e56364d560a12ab8b872c2c587fcbaf2b8f7a3c0d36fdb30c2ab4dd00b86c"
+    }
+  },
+  "next_source_only_leads": {
+    "runtime_accepted": false,
+    "functions_sha256": {
+      "gavin": {
+        "ITEM_makeItem": "c82d3be6fd40ce6978e7a6a5790b4e15df739b9130dcefb4f1d9954a70372cca",
+        "ITEM_makeItemAndRegist": "9c0ebb9005c7e644fb196d2cd78ffe6cda08c90d83d3d7ba166b9c09a1487e2b"
+      },
+      "bismarck": {
+        "ITEM_makeItem": "6094372f1339f67bb14b95be012746c6d1579c09b8251b240bc8872bb540effa",
+        "ITEM_makeItemAndRegist": "ce89d79fc61d9a9b872e7b41a0483aabeb21ff529c782fd05b2d3fa61a8327d7"
+      }
+    },
+    "battle_drop_source_only": {
+      "gavin": {
+        "BATTLE_AddExpItem": {
+          "sha256": "8bf2e1bab742b3c468f13a8e94ea674be8b6fab4fa675fba13aa7f5f0a45080d",
+          "calls": [
+            "BATTLE_AddExpItem",
+            "BATTLE_CHECKSIDE",
+            "BATTLE_ItemDelCheck",
+            "BATTLE_No2Index",
+            "BATTLE_NormalDeadExtra",
+            "BATTLE_UltimateExtra",
+            "BATTLE_getRidePet",
+            "CHAR_CHECKINDEX",
+            "CHAR_PetAddVariableAi",
+            "CHAR_getFlg",
+            "CHAR_getInt",
+            "CHAR_getItemIndex",
+            "CHAR_getWorkInt",
+            "CHAR_setFlg",
+            "CHAR_setInt",
+            "CHAR_setItemIndex",
+            "CHAR_setMaxExp",
+            "CHAR_setWorkInt",
+            "ITEM_CHECKINDEX",
+            "ITEM_endExistItemsOne",
+            "ITEM_getWorkInt"
+          ]
+        },
+        "BATTLE_ItemDelCheck": {
+          "sha256": "9a6a8ac26641043cb26699eed0ca11edf8806e244626d3377ef8f607f2cf95ce",
+          "calls": [
+            "BATTLE_ItemDelCheck",
+            "CHAR_CHECKINDEX",
+            "CHAR_getItemIndex",
+            "CHAR_getUseName",
+            "ITEM_getAppropriateName"
+          ]
+        }
+      },
+      "bismarck": {
+        "BATTLE_AddExpItem": {
+          "sha256": "0e77d7ea410eb0c62aa7db17878a860a740f85d04c873b5f10b57968d66b8e12",
+          "calls": [
+            "BATTLE_AddExpItem",
+            "BATTLE_CHECKSIDE",
+            "BATTLE_ItemDelCheck",
+            "BATTLE_No2Index",
+            "BATTLE_NormalDeadExtra",
+            "BATTLE_UltimateExtra",
+            "BATTLE_getRidePet",
+            "CHAR_CHECKINDEX",
+            "CHAR_PetAddVariableAi",
+            "CHAR_getFlg",
+            "CHAR_getInt",
+            "CHAR_getItemIndex",
+            "CHAR_getWorkInt",
+            "CHAR_setFlg",
+            "CHAR_setInt",
+            "CHAR_setItemIndex",
+            "CHAR_setMaxExp",
+            "CHAR_setWorkInt",
+            "ITEM_CHECKINDEX",
+            "ITEM_endExistItemsOne",
+            "ITEM_getWorkInt"
+          ]
+        },
+        "BATTLE_ItemDelCheck": {
+          "sha256": "95d7897afdab2163b1b13b7a87d55e83e65b49018063487fedce85b19266c3cc",
+          "calls": [
+            "BATTLE_ItemDelCheck",
+            "CHAR_CHECKINDEX",
+            "CHAR_getItemIndex",
+            "CHAR_getUseName",
+            "ITEM_getAppropriateName"
+          ]
+        }
+      }
+    },
+    "enemy_creation_source_only": {
+      "gavin": {
+        "ENEMY_createEnemy_sha256": "a0a9732752729e5be378faf7341c9812d9dbd2ccab05eb386070b91b113508f7",
+        "drop_path": "nonzero ENEMY_ITEMPROB -> RAND threshold -> ITEM_makeItemAndRegist -> enemy carried slot/owner; current gate leaves these branches untaken"
+      },
+      "bismarck": {
+        "ENEMY_createEnemy_sha256": "fd3ad864fbf1a8bbbed7031f762904ed60a21d5220bfd97626c06d4fdbdd7502",
+        "drop_path": "nonzero ENEMY_ITEMPROB -> RAND threshold -> ITEM_makeItemAndRegist -> enemy carried slot/owner; current gate leaves these branches untaken"
+      }
+    },
+    "factory_profile_difference": "ITEM_makeItem copies direct Gavin ITEM_tbl[ID] versus Bismarck ITEM_gIndex[ID].index indirection; RAND draw for each original integer data field including zero random ranges; ITEM_LEAKLEVEL Gavin1/Bismarck0. Source-only, not runtime accepted."
+  },
+  "natural_reward_allocation_executed": false,
+  "nonempty_native_or_Lua_registry_executed": false,
+  "historical_equivalence_promoted": false,
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "next": "Actual original ITEM_makeItem/ITEM_makeItemAndRegist profile table indirection, per-field RNG and LEAKLEVEL divergence; then enemy-created drop to BATTLE_AddExpItem/Finish with justified data and RNG."
+}

@@ -11270,3 +11270,63 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   Cross-owner empty transfer, partial inventory/more rewards, unique-code/time,
   natural configuration/EXP, gold, special pet limits/equipment, callbacks/watchers/
   network/Lua/ABI and early JSS1999/Taiwan-v1 executable identity stay OPEN.
+
+
+## 2026-10-11 — Original item initializer/cursor/reuse REMOTE ACCEPTED (bounded)
+
+- Fresh remote main3d2dc228c4696c8ce15fcb3a917dadf3919e0841,
+  tree92423af0e9713597df6e1b3a61601aae70179281. Entire predecessor CURRENT-STATE
+  blobcd988c9ecd5f7afc0226d1ae1fc8f251c0b1beec,1209606 bytes preserved verbatim;
+  historical timeline and source registry also preserved completely.
+- Branch agent/item-allocator-r1-20261011; tested input
+  f5bfbebcc26bed4bbdbbde06ed48bb9b41673187,
+  tree02b5c1470ca8444182cd2b9bb2bad16f69b407c9. Action38068762702/
+  job114261692113 SUCCESS,11 steps/57 regressions/32 native encounters:
+  16 new real second-Loop reward encounters with allocator controls,16 independent
+  retained shared-reference/duplicate/escaped-multiple-item encounters. GNU99
+  O0/O2 nonrecovering UBSan and byte-equal complete output per profile.
+- Original pinned Gavin1f90cb6/Bismarck999ffdf1 _ITEM_initExistItemsOne,
+  ITEM_CHECKITEMTABLE,ITEM_constructFunctable and Bismarck active
+  ITEM_setLUAFunction extracted unchanged; exact function hashes frozen in
+  STONEAGE-ITEM-ALLOCATOR-SOURCE-R1.json. Complete original item/header/Char/BATTLE
+  witnesses inherited. No original game source/assets committed.
+- Explicit length3 ID table and ID1 template/eight-slot pool execute literal
+  cursor sequence2,2,-1,5,6,1 in each encounter: allocate2, release/wrap/reuse2,
+  full-pool rejection, protect carried stale4 then reuse warehouse-only5,
+  release5, continue6, wrap1. Static cursor untouched and naturally returns1
+  between encounters in the same process.80 successful allocations,48 invalid
+  template-ID rejections,16 full-pool rejections and32 original releases.
+- Whole256 ITEM records, seven Char records, BATTLE, template and profile ID
+  table comparisons PASS. Reserved0/records8-255 preserved. Invalid IDs/index/
+  function bounds leave expected domains unchanged. Native empty-name lookup
+  delta55 per encounter/880 total; Bismarck original empty complete Lua sentinel
+  fallback400 times clears synthetic nonnull template Lua/function-name fields.
+  Template native pointers are synthetic addresses never called; initialized
+  pointers becomeNULL; template/ID table/Lua sentinel remain immutable.
+- Original carried stale-slot protection marks use1 without increasing live
+  counter; exact mismatch preserved. Warehouse-only reference5 does not prevent
+  reinitialization and remains pointing5; original release frees5 without
+  clearing warehouse reference. These are bounded adversarial descendant
+  behaviors, not natural gameplay reachability or modern ownership decisions.
+  Fixture domains restored only AFTER all independent comparisons; original
+  static cursor never reset. Previous reward/player/pet growth/arena release
+  remain independently checked; typed output/diagnostic adapters remain bounded.
+- Artifact11676102734 independently downloaded ZIP16652 bytes SHA256
+  1c08eaa972dfda25a6b5be8f73331b1b2366e21f0188673c901e69613f46bbc9.
+  New report31513 bytes SHA2564f7eba16f68b448a5676c55e1762032d87fb18a2f2a1af43d9148603509e7941;
+  retained report29043 bytes SHA2565b2c9365b5cf053c8d4c490867f7f56d268f571f4a5bad20132e59e857093992;
+  both equal local bytes; retained report also equals prior accepted ownership
+  report. Spec/receipt STONEAGE-ITEM-ALLOCATOR-*R1. Pressure unchanged
+  2486=2465 bounded closed+18 OPEN+3 historical UB, zero promotions.
+- Highest NEXT: execute original ITEM_makeItem/ITEM_makeItemAndRegist with
+  justified template/random data, complete Gavin direct ITEM_tbl[ID] versus
+  Bismarck ITEM_gIndex[ID].index/ITEM_gTable domains, every integer-field RAND
+  draw including zero random ranges, original LEAKLEVEL Gavin1/Bismarck0.
+  Then original ENEMY_createEnemy probability -> item allocation -> enemy carried
+  owner -> BATTLE_AddExpItem recipient/replacement -> actual Finish path. Source-
+  only factory/drop/deletion/enemy hashes recorded in receipt; positive creation
+  branches and natural reward data/RNG are NOT runtime accepted by this gate.
+  Nonempty initializer callbacks/failure, unique-code/time generation, cross-
+  owner transfers/partial inventory, positive gold/natural EXP/config, Lua/
+  network/watchers/server ABI and JSS1999/Taiwan-v1 identity remain OPEN.
+  No modern-engine phase transition or first-release historical promotion.

@@ -2271,3 +2271,20 @@ retained native O0/O2 UBSan encounters, entire item/actor/arena oracles and
 automatic release. Not natural reachability or JSS1999/Taiwan-v1 identity.
 These behaviors are recorded without repairing source or deciding modern
 ownership. No pressure/historical promotion; original allocation remains OPEN.
+
+
+## 2026-10-11 — Bounded descendant item allocator and reference reuse
+
+FACT, bounded Gavin1f90cb6/Bismarck999ffdf1 only: original initializer/table/
+function construction and active Bismarck empty Lua fallback execute unchanged
+at f5bfbebc, Action38068762702/job114261692113 SUCCESS,57 checks/32 native
+encounters including retained ownership matrix. Explicit ID1/eight-slot pool:
+cursor2,2,-1,5,6,1;80 successes/48 invalid-ID+16 full-pool rejections/32 releases.
+Original stale carried protection changes use without count increment; warehouse
+reference does not prevent reuse or release and stays pointing to same index.
+Entire256 item/seven actor/arena/template/table and complete empty Lua sentinel
+oracles pass O0/O2 UBSan. Synthetic template addresses never called. These
+adversarial late-source observations do not establish natural reachability,
+first-release behavior or modern design. Natural factory/drop/RNG, callbacks,
+positive gold and early executable identity remain OPEN. Receipt
+STONEAGE-ITEM-ALLOCATOR-ACCEPTANCE-R1.json; pressure/promotions unchanged.

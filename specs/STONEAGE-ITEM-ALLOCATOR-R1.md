@@ -1,8 +1,11 @@
 # Original item initializer, static cursor and reuse — R1
 
-Status: LOCAL PASS, remote acceptance pending.57 regressions/16 native encounters
-with80 successful allocator calls,48 invalid-ID rejections and32 releases. Pinned Gavin `1f90cb6` and
-Bismarck `999ffdf1` late-source builds only; no JSS1999/Taiwan-v1 promotion.
+Status: REMOTE ACCEPTED bounded. Action38068762702/job114261692113 SUCCESS
+at f5bfbebcc26bed4bbdbbde06ed48bb9b41673187,11 steps/57 regressions/32 native
+encounters including16 retained ownership encounters.80 successful allocations,
+48 invalid-ID and16 full-pool rejections,32 original releases. Both artifact
+reports independently downloaded and equal local bytes. Pinned Gavin `1f90cb6`
+and Bismarck `999ffdf1` late-source builds only; no JSS1999/Taiwan-v1 promotion.
 
 The wrapper extracts unchanged original `_ITEM_initExistItemsOne`,
 `ITEM_CHECKITEMTABLE`, `ITEM_constructFunctable` and, for Bismarck, active

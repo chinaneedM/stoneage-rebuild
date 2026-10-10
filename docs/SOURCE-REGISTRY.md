@@ -5573,3 +5573,19 @@ retained report27953 bytes SHA256730e5ab785cb8bd116dcb977dd9025b9f70c71ddb621a47
 Both reports equal local. Source-only next initializer/table/function/Lua-fallback
 hashes distinguished from executed terminal evidence. No original source/assets
 vendored, natural drop provenance or historical/capability promotion.
+
+
+## 2026-10-11 — Original item allocator derived witness R1
+
+Action38068762702/job114261692113 SUCCESS atf5bfbebc,57 regressions/11 steps,
+32 native encounters including16 retained ownership. Tool/spec/source manifest/
+receipt STONEAGE-ITEM-ALLOCATOR-R1 freeze original Gavin1f90cb6/Bismarck999ffdf1
+initializer/table/function construction and Bismarck active empty Lua fallback.
+Full original layouts and inherited battle/level/growth/ownership evidence.
+Artifact11676102734 ZIP16652 independently downloaded SHA256
+1c08eaa972dfda25a6b5be8f73331b1b2366e21f0188673c901e69613f46bbc9;
+new report31513 bytes SHA2564f7eba16f68b448a5676c55e1762032d87fb18a2f2a1af43d9148603509e7941;
+retained report29043 bytes SHA2565b2c9365b5cf053c8d4c490867f7f56d268f571f4a5bad20132e59e857093992.
+Both equal local; retained equals prior accepted report. Original source/assets
+stay transient. Source-only factory/drop/enemy leads distinguish future positive
+creation from this direct initializer witness; no historical/capability promotion.
