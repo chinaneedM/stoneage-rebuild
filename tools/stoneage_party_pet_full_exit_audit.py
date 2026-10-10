@@ -76,6 +76,19 @@ void CHAR_sendCToArroundCharacter(int objindex){
   world_broadcasts++;
 }
 """
+# An owned pet's battle-return state is sent to its player in the original
+# K-status packet API. Transport remains outside this test. Only player0's
+# exactly selected and retained roster slot0 is admitted by this collector.
+PET_STATUS=r"""
+static int owned_pet_status_packets=0;
+BOOL CHAR_send_K_StatusString(int player,int roster_slot,unsigned int mask){
+  if(player!=0||roster_slot!=0||!mask||CHAR_getCharPet(0,0)!=2){
+    fputs("PET_STATUS_SCOPE_VIOLATION",stderr);abort();
+  }
+  owned_pet_status_packets++;
+  return TRUE;
+}
+"""
 def make_native(profile,source):
     original=admission_native(profile,source)
     # The prior entry-only network collector admits 0/1. During owned-pet
@@ -90,7 +103,7 @@ def make_native(profile,source):
     if original.count(MARKER)!=1:raise ValueError("accepted admission body changed")
     anchor="int main(int argc,char **argv){"
     if original.count(anchor)!=1:raise ValueError("actual original main anchor drift")
-    original=original.replace(anchor,ZERO_LICENSE_RIDE+WORLD_BROADCAST+anchor,1)
+    original=original.replace(anchor,ZERO_LICENSE_RIDE+WORLD_BROADCAST+PET_STATUS+anchor,1)
     field="char_index" if profile=="bismarck" else "charaindex"
     return original.replace(MARKER,EXPECTED_INSERT.replace("ENTRY_FIELD",field),1)
 
@@ -123,7 +136,7 @@ def main():
             for opt in ("-O0","-O2"):
                 exe=Path(d)/("probe"+opt)
                 compile_probe(profile,roots[profile],native,exe,opt,
-                    [x for x in accepted["profiles"][profile]["unreachable_traps"] if x not in ("BATTLE_Index2No","RIDEPET_getPETindex","CHAR_sendCToArroundCharacter")])
+                    [x for x in accepted["profiles"][profile]["unreachable_traps"] if x not in ("BATTLE_Index2No","RIDEPET_getPETindex","CHAR_sendCToArroundCharacter","CHAR_send_K_StatusString")])
                 run=subprocess.run([str(exe),*map(str,paths)],input=f"{selection} 0\n",capture_output=True,text=True)
                 if run.returncode or any(not line.startswith("TRACE|") for line in run.stderr.splitlines() if line.strip()):
                     offsets=re.findall(r"probe-(?:O0|O2)\(\+(0x[0-9a-f]+)\)",run.stderr)
