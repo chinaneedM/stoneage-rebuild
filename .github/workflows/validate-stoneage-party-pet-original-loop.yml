@@ -1,0 +1,48 @@
+name: Validate original populated party pet BATTLE_Loop INIT dispatch
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-party-pet-original-loop.yml"
+      - "tools/stoneage_party_pet_loop_dispatch_audit.py"
+      - "tests/test_stoneage_party_pet_original_loop.py"
+permissions:
+  contents: read
+jobs:
+  native-original-loop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify original loop and accepted predecessors
+        run: python -m unittest -v tests.test_stoneage_party_pet_original_loop tests.test_stoneage_party_pet_init tests.test_stoneage_party_pet_full_exit
+      - name: Recover exact pinned original source in ephemeral runner
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_guard_break2_source_audit import PINNED
+          repos={"gavin":"gavinlinasd/StoneAge","iris":"iriselia/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for profile,sha in PINNED.items():
+              path=Path("/tmp/stoneage-original-loop")/profile
+              subprocess.run(["git","init",str(path)],check=True)
+              subprocess.run(["git","-C",str(path),"remote","add","origin","https://github.com/"+repos[profile]+".git"],check=True)
+              subprocess.run(["git","-C",str(path),"fetch","--depth","1","origin",sha],check=True)
+              subprocess.run(["git","-C",str(path),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Execute actual original BATTLE_Loop INIT mode only
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_loop_dispatch_audit --gavin-dir /tmp/stoneage-original-loop/gavin --iris-dir /tmp/stoneage-original-loop/iris --bismarck-dir /tmp/stoneage-original-loop/bismarck > /tmp/stoneage-original-loop.txt
+          cat /tmp/stoneage-original-loop.txt
+          grep -Fx "RESOLUTION|ORIGINAL_PARTY_PET_REALHEADER_LOOP_INIT_DISPATCH_BOUNDED_PASS" /tmp/stoneage-original-loop.txt
+          test "$(grep -c '^ACTUAL|.*|REAL_HEADER_INIT|' /tmp/stoneage-original-loop.txt)" -eq 8
+      - name: Upload source-free derived output
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-party-pet-original-loop
+          path: /tmp/stoneage-original-loop.txt
