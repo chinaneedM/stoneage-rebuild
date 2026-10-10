@@ -79,6 +79,15 @@ def main():
         if pinned_identity(identity)!=accepted["profiles"][profile]["identity"]:
             raise ValueError("original domain identity drift "+profile)
         source=patch_source(source,profile)
+        if profile=="bismarck":
+            # Extend only the inherited typed NETWATCH collector. The real
+            # original dispatcher emits stage BATTLE_Init, whereas the
+            # predecessor had validated BATTLE_Finish.* instrumentation.
+            previous='if(strncmp(stage,"BATTLE_Finish.",14))abort();netwatch_count++;'
+            widened='if(strncmp(stage,"BATTLE_Finish.",14)&&!(strcmp(stage,"BATTLE_Init")==0&&value>=0&&value<3&&BattleArray[value].use))abort();netwatch_count++;'
+            if source.count(previous)!=1:
+                raise ValueError("original NETWATCH collector drift")
+            source=source.replace(previous,widened,1)
         battle=pp_file(profile,roots[profile],LAYOUTS[profile]/"battle/battle.c")
         event=pp_file(profile,roots[profile],LAYOUTS[profile]/"battle/battle_event.c")
         source+="\n"+definition(battle,"BATTLE_Index2No")+"\n"
