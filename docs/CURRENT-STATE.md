@@ -10506,3 +10506,46 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   bounded original actor/enemy decision and packet inputs; distinguish
   source-profile command waiting, actual action, turn Finish and profit
   as independent gates. Earlier continuity remains intact.
+
+
+## 2026-10-10 — Original real-header party/pet Command WAIT and timeout-equality REMOTE ACCEPTED
+
+- Fresh startup main b9bcbe80b13c14bf79e131c734ffdebc36d5d867,
+  tree38f66e994525e2fcc00177a5edd7f87e8fc298e7. Entire existing
+  CURRENT-STATE blob f9040c5f4ba2fc35639c8464b49806378a325ba9 retained
+  verbatim (1155840 bytes). Pending command-wait branch a514ec48 failed
+  linking and was recovered rather than recreated.
+- Accepted exact source/test/workflow input b34f33778209f2968b7ec6fa64392ee186135808, treebf417cf2b2d194d1f8e2ca48a2bc9bdfd38176c4,
+  branch agent/party-pet-command-wait-repair-r1-20261010.
+  Action38040961426/job114180944923 SUCCESS, all10 steps,20 Python checks.
+  Actual original BATTLE_Loop -> BATTLE_Command -> BATTLE_CommandWait /
+  BATTLE_TimeOutCheck over original headers and populated player0, member1,
+  selected owned pet2. Gavin1f90cb6/Bismarck999ffdf1, GNU99 O0/O2,
+  nonrecovering UBSan:16 complete Create/Init/wait/Exit/Delete encounters,
+  48 actual waiting dispatches, arena cursor0,1,2,0, byte-equal O0/O2 traces.
+- Three controlled NowTime offsets0, BATTLE_TIME_LIMIT-1, BATTLE_TIME_LIMIT
+  all keep turn0 and actors C_WAIT. Complete three Char snapshots stay
+  unchanged; complete BATTLE snapshot admits only precise source difference:
+  Bismarck arms PartTime=1099 for zero submitted commands (fixed wall-clock
+  adapter1000 +99), Gavin leaves PartTime0. The original _BATTLE_TIME
+  dispatcher clock block is compiled out; early raw-source clock hypothesis
+  rejected. Newly extracted Command bodies explicitly scope time to inherited
+  audit_time, then undefine the macro. No original function body edited.
+- Original function and complete battle-file hashes emitted. Fixed nested-if
+  call/definition detector and unresolved typed discharge/network/rescue
+  symbols; untaken AI/Battling/rescue/watcher/timeout output abort on use.
+  This is waiting evidence only, not submitted combat or expired timeout.
+- Independently downloaded artifact11665722365, ZIP SHA256
+  65314a92254b5ceb228c7565145e0e7661b5ca77077c537065ebd2e87a20ac66;
+  sole report matches local bytes, report SHA256
+  835e798ca4ec850d6003b21bf596366c703b7c5a7919a6b9aa4f1b2f060a8443.
+  Receipt STONEAGE-PARTY-PET-ORIGINAL-COMMAND-WAIT-ACCEPTANCE-R1.json.
+- Highest NEXT: prepared submitted player/pet command admission and original
+  enemy decision/AI dependencies; then true original action round, Finish,
+  victory/profit. Separate PartTime expiration and NowTime timeout-positive
+  exits require independent guards. Earlier full-Battling native witnesses
+  use synthetic types and cannot silently substitute for this real-header
+  populated party/pet composition. Natural transport/Lua/equipment/reclaimer,
+  full server/bootstrap/original executable ABI/JSS1999/Taiwan-v1 remain OPEN.
+  Pressure2486=2465 capability closed+18 OPEN+3 historic UB, zero promotions.
+  No engine/content phase transition; all earlier continuity preserved.

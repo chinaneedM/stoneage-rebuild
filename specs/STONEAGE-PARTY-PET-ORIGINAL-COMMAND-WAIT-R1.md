@@ -1,6 +1,6 @@
 # Native original party/pet command-wait gate R1
 
-Status **PENDING REMOTE**. This extends the previously accepted exact original
+Status **REMOTE ACCEPTED, BOUNDED** (Action38040961426; tested b34f33778209f2968b7ec6fa64392ee186135808). This extends the previously accepted exact original
 BATTLE_Loop INIT dispatcher with a second tick in BATTLE_MODE_BATTLE.
 The actual original BATTLE_Command and its original BATTLE_CommandWait
 and BATTLE_TimeOutCheck bodies are extracted intact from the pinned

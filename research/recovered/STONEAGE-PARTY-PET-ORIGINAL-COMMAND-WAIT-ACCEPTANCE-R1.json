@@ -1,0 +1,82 @@
+{
+  "gate": "STONEAGE_PARTY_PET_ORIGINAL_COMMAND_WAIT_R1",
+  "status": "REMOTE_ACCEPTED_BOUNDED_WAIT",
+  "branch": "agent/party-pet-command-wait-repair-r1-20261010",
+  "tested_commit": "b34f33778209f2968b7ec6fa64392ee186135808",
+  "tested_tree": "bf417cf2b2d194d1f8e2ca48a2bc9bdfd38176c4",
+  "base_main": "b9bcbe80b13c14bf79e131c734ffdebc36d5d867",
+  "preserved_current_state_blob": "f9040c5f4ba2fc35639c8464b49806378a325ba9",
+  "github_actions": {
+    "run_id": 38040961426,
+    "job_id": 114180944923,
+    "conclusion": "success",
+    "steps_passed": 10,
+    "unit_tests_passed": 20,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38040961426"
+  },
+  "native": {
+    "source_pins": {
+      "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+    },
+    "optimizations": [
+      "-O0",
+      "-O2"
+    ],
+    "compiler": "GNU99 original real headers; nonrecovering UBSan",
+    "encounters_per_profile_and_optimization": 4,
+    "total_encounters": 16,
+    "wait_ticks_per_encounter": 3,
+    "total_wait_dispatches": 48,
+    "pool_cursor": [
+      0,
+      1,
+      2,
+      0
+    ],
+    "nowtime_offsets": [
+      "0",
+      "BATTLE_TIME_LIMIT-1",
+      "BATTLE_TIME_LIMIT"
+    ],
+    "clock": "audit_time returns1000 scoped to three unchanged original Command function bodies; NowTime independent and restored before Exit",
+    "arena_delta": {
+      "gavin": "no byte changes, PartTime0",
+      "bismarck": "only PartTime0->1099 (1000+99), then preserved"
+    },
+    "actor_delta": "entire Char0/1/2 snapshots unchanged",
+    "sha256_traces": {
+      "gavin": "150a9e64d445d03c183d248132bcc748dc81e7fc702a6ad3cbc2df77ad1e7566",
+      "bismarck": "8a5edbda2af6435a043ff810367e4a0da74f3ee23dc9b91c907063aea1d0aed0"
+    }
+  },
+  "artifact": {
+    "id": 11665722365,
+    "zip_sha256": "65314a92254b5ceb228c7565145e0e7661b5ca77077c537065ebd2e87a20ac66",
+    "zip_independently_downloaded": true,
+    "zip_bytes": 1183,
+    "member": "stoneage-party-command-wait.txt",
+    "report_sha256": "835e798ca4ec850d6003b21bf596366c703b7c5a7919a6b9aa4f1b2f060a8443",
+    "report_matches_local_bytes": true
+  },
+  "limitations": [
+    "waiting only; no submitted attack, enemy AI/Battling, completed round or Finish/profit",
+    "PartTime expiration and positive NowTime timeout not executed",
+    "untaken action/rescue/watcher/timeout output functions abort; inherited network/world/ride collectors remain bounded",
+    "original dispatcher _BATTLE_TIME block compiled out in tested profile",
+    "not full server/transport/Lua or original executable ABI; no JSS1999/Taiwan-v1 historical equivalence",
+    "zero pressure promotions; 2486=2465 closed capability+18 OPEN+3 historical UB"
+  ],
+  "superseded_failures": [
+    {
+      "commit": "a514ec48e17ec76c57f77d0b54780d1aedfbce35",
+      "run": 38040312666,
+      "reason": "linkage symbols and call/definition detection"
+    },
+    {
+      "commit": "2538ee4982436718148c10e4ce0b9c73d37797a7",
+      "run": 38040766268,
+      "reason": "overstrict arena snapshot; zero-input PartTime and newly extracted clock scope not yet modeled"
+    }
+  ]
+}

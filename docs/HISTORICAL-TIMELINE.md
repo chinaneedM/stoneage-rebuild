@@ -2124,3 +2124,17 @@ NETWATCH BATTLE_Init stage observed through narrow collector. No
 actual Command, round, finish/profit, network, natural timing, enabled
 Lua, full server or first-party JSS1999/Taiwan-v1 identity established.
 Provenance receipt STONEAGE-PARTY-PET-ORIGINAL-LOOP-ACCEPTANCE-R1.json.
+
+
+## 2026-10-10 — Later-descendant Command waiting has a version-specific timer arm
+
+FACT, bounded Gavin1f90cb6/Bismarck999ffdf1 only: accepted input
+b34f33778209f2968b7ec6fa64392ee186135808, Action38040961426, original real-header
+BATTLE_Loop -> Command -> CommandWait/TimeOutCheck,16 encounters and48
+waiting dispatches O0/O2 UBSan. NowTime equal to timer+BATTLE_TIME_LIMIT
+still waits under the original strict greater-than condition. Bismarck
+arms PartTime by wall-clock+99 even with zero submitted commands; Gavin
+retains0. All actor bytes and all arena bytes except that precisely asserted
+PartTime delta remain preserved. Fixed synthetic wall-clock1000 is explicit;
+PartTime expiration, actual actions/rewards, JSS1999/Taiwan-v1 are unproven.
+Receipt STONEAGE-PARTY-PET-ORIGINAL-COMMAND-WAIT-ACCEPTANCE-R1.json.

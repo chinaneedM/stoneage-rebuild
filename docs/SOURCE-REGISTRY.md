@@ -5347,3 +5347,25 @@ Repository evidence:
   not independently verified as ZIP. Receipt
   STONEAGE-PARTY-PET-ORIGINAL-LOOP-ACCEPTANCE-R1.json.
   No 1999 Japanese or Taiwan-v1 historical equivalence.
+
+
+## 2026-10-10 — Original populated party/pet Command waiting source evidence
+
+- Exact tested input b34f33778209f2968b7ec6fa64392ee186135808, treebf417cf2b2d194d1f8e2ca48a2bc9bdfd38176c4;
+  Action38040961426/job114180944923 SUCCESS all10 steps,20 Python tests.
+- Pinned Gavin1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56 and
+  Bismarck999ffdf1d220ec6666eb65339180689c9caf1876 original headers and
+  original BATTLE_CommandWait/TimeOutCheck/Command bodies, unchanged.
+  Derived function and battle-file identities emitted; originals transient.
+- Four encounters/profile/optimization, three no-timeout ticks/encounter;
+  original Exit/Delete retained, arena rotation0,1,2,0. O0/O2 traces
+  Gavin150a9e64d445d03c183d248132bcc748dc81e7fc702a6ad3cbc2df77ad1e7566,
+  Bismarck8a5edbda2af6435a043ff810367e4a0da74f3ee23dc9b91c907063aea1d0aed0.
+- Bismarck zero-input PartTime wall-clock+99 differs from Gavin0. NowTime
+  and scoped fixed audit_time1000 remain distinct; raw _BATTLE_TIME source
+  block is disabled in actual preprocessing, not a tested dispatcher delta.
+- Independently downloaded artifact11665722365 ZIP SHA256
+  65314a92254b5ceb228c7565145e0e7661b5ca77077c537065ebd2e87a20ac66;
+  sole source-free report equals local bytes. Original AI/actions, expired
+  timeout, Finish/rewards/transport/Lua/JSS1999/Taiwan-v1 not established.
+  Receipt STONEAGE-PARTY-PET-ORIGINAL-COMMAND-WAIT-ACCEPTANCE-R1.json.
