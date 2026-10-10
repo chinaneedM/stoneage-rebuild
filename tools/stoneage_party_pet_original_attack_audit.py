@@ -87,7 +87,7 @@ def attack_native(profile,source,battle,event,root):
     base=pp_file(profile,root,LAYOUTS[profile]/'char/char_base.c')
     bodies['CHAR_getFunctionPointer']=definition(base,'CHAR_getFunctionPointer')
     extra='#include <math.h>\n'
-    for n in ('BATTLE_CounterCheckPlayer','BATTLE_CounterCheckPet'):
+    for n in ('BATTLE_CounterCheckPlayer','BATTLE_CounterCheckPet','BATTLE_ItemCrush'):
         body=definition(event,n)
         extra+=body[:body.index('{')].strip()+';\n'
     for n in ('gKawashiPara','gCriticalPara','gCounterPara'):

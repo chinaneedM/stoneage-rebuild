@@ -5,7 +5,7 @@ from unittest.mock import patch
 from tools.stoneage_party_pet_original_attack_audit import attack_native,attack_originals,ATTACK_OBSERVATIONS,ATTACK_SETUP,ROUND_OBSERVATIONS,definition
 from tools.stoneage_enemy_entry_exit_audit import compile_probe
 BODIES={'BATTLE_Attack':'int BATTLE_Attack(int b,int a,int d){return BATTLE_DamageSub(a,d,0,0,0);}', 'BATTLE_DamageSub':'int BATTLE_DamageSub(int a,int d,int*x,int*y,int*z){return 0;}'}
-EVENT='float gKawashiPara=0.02;\nfloat gCriticalPara=0.09;\nfloat gCounterPara=0.08;\nchar *aszStatus[]={"all"};\nint BATTLE_CounterCheckPlayer(int a,int b,int*p){return 0;}\nint BATTLE_CounterCheckPet(int a,int b,int*p){return 0;}'
+EVENT='float gKawashiPara=0.02;\nfloat gCriticalPara=0.09;\nfloat gCounterPara=0.08;\nchar *aszStatus[]={"all"};\nint BATTLE_CounterCheckPlayer(int a,int b,int*p){return 0;}\nint BATTLE_CounterCheckPet(int a,int b,int*p){return 0;}\nint BATTLE_ItemCrush(int a,int b,int c,int d){return 0;}'
 BASE='int main(int argc,char **argv){'+ROUND_OBSERVATIONS+'return 0;}'
 class AttackTests(unittest.TestCase):
  def build(self,event=EVENT,base=BASE):
