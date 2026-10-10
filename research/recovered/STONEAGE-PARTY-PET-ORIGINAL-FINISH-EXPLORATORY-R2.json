@@ -1,0 +1,20 @@
+{
+  "status": "UNACCEPTED_LOCAL_EXPLORATORY_CHECKPOINT",
+  "base": "2dd5ee3bad5dbd4f9378da019d160fddeb607a95",
+  "fixture": "post-lethal players/pet LV100 EXP0; Gavin original table getter with synthetic 10-million thresholds; Bismarck original LevelUpTbl",
+  "source_wrapper_sha256": "5697ef2d7299b854d756c781f3e2bcf14396b5a1afa6221648ba8a70c98e02b7",
+  "local_runtime": {
+    "profile": "gavin",
+    "optimization": "O0",
+    "result": "abort-on-call _CHAR_sendStatusString within original second Loop/Finish/GetProfit/GetExpGold"
+  },
+  "not_proven": [
+    "Bismarck execution",
+    "complete payout state oracle",
+    "whole actors/arena",
+    "automatic Exit/Delete",
+    "terminal reward transport",
+    "historical identity"
+  ],
+  "next": "source-accurate _CHAR_sendStatusString dependencies or strict presentation-only collector; original reward serialization; add complete payout/state oracles before acceptance"
+}
