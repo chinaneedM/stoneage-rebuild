@@ -1,0 +1,273 @@
+{
+  "gate": "STONEAGE_PARTY_PET_ORIGINAL_POSITIVE_PLAYER_LEVEL_R1",
+  "status": "REMOTE_ACCEPTED_BOUNDED_PLAYER_LEVELS",
+  "baseline_main": "9ddaefcccf8868b876ce54897dc88cac7c566de1",
+  "baseline_tree": "3615baa77983257453c79cbb1f1e0b3a837fd362",
+  "prior_state_blob": "e8ad6744c0b9c877f128ab507ad67d9ede469301",
+  "prior_state_bytes": 1193322,
+  "branch": "agent/party-pet-original-player-level-r1-20261010",
+  "tested_commit": "e6f65028b93cefe6d91b99e5201ebfd45e7a309d",
+  "tested_tree": "e3b1ab98e4d9bdd4acdb988245b62bf00be26d7f",
+  "github_actions": {
+    "run_id": 38064186794,
+    "job_id": 114248381131,
+    "conclusion": "success",
+    "successful_steps": 10,
+    "tests_passed": 33,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38064186794"
+  },
+  "native": {
+    "profiles": [
+      "gavin1f90cb6",
+      "bismarck999ffdf1"
+    ],
+    "original_headers": true,
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_ubsan": true,
+    "optimization_trace_byte_identity": true,
+    "native_encounters": 16,
+    "actual_second_loop_finish_dispatches": 16,
+    "positive_player_upgrade_encounters": 12,
+    "one_below_threshold_controls": 4,
+    "aggregate_level_increments": 16,
+    "reward_sends": 32,
+    "whole_seven_actor_oracle": true,
+    "whole_arena_oracle": true,
+    "natural_automatic_exit_delete": true,
+    "manual_exit_repetition": false,
+    "terminal_resurrection": false,
+    "trace_sha256": {
+      "gavin": "777c1603d0c879006cfd9b59c0a60e7be12edbd25f8ebb0624bc3007e82eaa95",
+      "bismarck": "b000fcd82e597caa6f600ab347cdfeaea1f75923eb66aaecdc8ee349d5009c6b"
+    }
+  },
+  "original_function_sha256": {
+    "gavin": {
+      "BATTLE_Finish": "e440d90b269bcb0620dcd96fda4758a0720bf367f14936f035ab9bbc787006e4",
+      "BATTLE_GetProfit": "35edd4961868b6a4d50cade0c6141b1659cb28ba914e8ccd93c4a9347bcc855d",
+      "BATTLE_GetExpGold": "7e8dcab1862b6b845e529630f807d7f91e29a7b337f2ea486d9b01a88397822b",
+      "BATTLE_GetExp": "52351c2077b18737c59e0c28e308627b17a4a2ff10340c1c997e6e88ea830759",
+      "CHAR_AddMaxExp": "b5f4a8f8baac8027f17e7f008373e03f8d675108440caf57276157eaeda49496",
+      "getBattleexp": "c1e4dcb4474f4c18f667ad3347062ab6e4ba74b2f46a4726fbe9b7c17aa9b0db",
+      "CHAR_LevelUpCheck": "879135c53065745ae92c2b7a1df8634bb77abe46777f3077345e31c5ee82a718",
+      "CHAR_HandleExp": "89c5dd81594d549097c81115097f05b3cda4d5664b701fb6f0e083f17487ae93",
+      "CHAR_GetLevelExp": "e3b8700d4622e7ddbc2aed3eba75a49c4c0094d25b1a54cb04783eca80f04dfa",
+      "getBattleDebugMsg": "0c03f38f919109529331a56881a9f77b0ccec5003bca772bacd10bca0cb3f699",
+      "getMaxLevel": "563afd161c1ad374cc1a43704b78c39210b1df34bd15a25a9c1e8902307ffb2d",
+      "getYBLevel": "946df17898d8b248f388edd88bb52f93627eed0810f549f6bb552473912a8da8",
+      "getNeedLevelUpTbls": "70cac1dce90ee2cc29dc8b94e12055a971b5aee184f1d5608e32636d34075c4a",
+      "getChartrans": "db14540206e76abb5d09623feca29f8674d8dad91e3e444b33d55d950d49a6fa",
+      "getPettrans": "d2570692ca45ee0acc8a4499433e36b170ec6c21b480c5b437a4105b60c235f1",
+      "cnv10to62": "c3927f4be52d19bd26719ef16a179ed3158c69b4cac59a101198c63445f4b154",
+      "CHAR_PartyUpdate": "90077e61b0e686c21a8019c250ecf275fc67c6a941bbc7bfb84d0b9adca1558e"
+    },
+    "bismarck": {
+      "BATTLE_Finish": "b369c2af159f182ed7e918ec083f73ae76ade2e3e3f907ae7525306f5ec035b8",
+      "BATTLE_GetProfit": "5682714a9f08532fc7c492b854f09a8304a8f5fc0fe4c661a0a28bceb7f10e94",
+      "BATTLE_GetExpGold": "acf3c59f6475634b5d2354e10c7867676ef47a171c0e4fe60b5d67612508db36",
+      "BATTLE_GetExp": "f0c6d9ae3f32865adb0565f30749ebb3f37104d262a66e3e076acf221074d4a1",
+      "CHAR_AddMaxExp": "d19cf07f032e08ed2d2cd16e55252208abd89a3c137c0d77068b781ea1c07483",
+      "getBattleexp": "ed774e7ad7ff7fa3048ffd6005bfe5ae668c1ad660d2a10161c234eb6b172bcc",
+      "CHAR_GetLevelExp": "2278f525f8c17b25116f415c2ab2462d98fa2a3162f97d693e68148f79940954",
+      "CHAR_LevelUpCheck": "1052825a5a026101442c4be5aed71ee67f9a33e684aee481061af612b12e577c",
+      "CHAR_HandleExp": "d9800d6e26b81fd159924519a03b87e723b6cec71192d6e69e44c1a0bbb0f4f0",
+      "getBattleDebugMsg": "1ec345cc41e71e3f6291c3a3afdc5b74a0f91a86acb32caf8e99257c61b24f98",
+      "cnv10to62": "c108383561f7ed8a1f414423f2a4093ad2535a94729c2b907560546d7bc906d0",
+      "CHAR_PartyUpdate": "9bac1d6fcec7f201d89b4f94505ad95889d8ae5906b5f900160ed9471936e827",
+      "getPartyNum": "ce9b033824165611c4a9aaca3ccce582f22f76f4b6bbcd8c404f0569ef8ca0db",
+      "CHAR_earnFame": "63ad87d6eb8093ec883c57eb411b936f1129b3331ebd32aa48f0b7de4a5f07c0"
+    }
+  },
+  "original_declarations_sha256": {
+    "gavin": "980257dd0057a2b04c4fb38052fa7c33c3b3a040e5897884b9be6ccc4b7cbbb2",
+    "bismarck": "764c1659507f877f7761a8b707c778256851bdec197d2e89176f1b19dd654719"
+  },
+  "fixtures": {
+    "gavin": {
+      "initial_level": 100,
+      "payout": 1,
+      "thresholds": [
+        10000000,
+        10000000
+      ],
+      "seed_level_residual_charm_cases": [
+        [
+          9999999,
+          1,
+          0,
+          98
+        ],
+        [
+          10000016,
+          1,
+          17,
+          97
+        ],
+        [
+          20000022,
+          2,
+          23,
+          99
+        ],
+        [
+          9999998,
+          0,
+          9999999,
+          96
+        ]
+      ],
+      "initial_skillpoints": 10,
+      "initial_duelpoints": 500,
+      "initial_fame": null,
+      "expected_skillpoints": [
+        13,
+        13,
+        16,
+        10
+      ],
+      "expected_charm": [
+        100,
+        99,
+        100,
+        96
+      ],
+      "expected_duelpoints": [
+        1510,
+        1510,
+        2530,
+        500
+      ],
+      "expected_fame": null
+    },
+    "bismarck": {
+      "initial_level": 100,
+      "payout": 1000000,
+      "thresholds": [
+        1345723,
+        1442322
+      ],
+      "seed_level_residual_charm_cases": [
+        [
+          345723,
+          1,
+          0,
+          98
+        ],
+        [
+          345740,
+          1,
+          17,
+          97
+        ],
+        [
+          1788068,
+          2,
+          23,
+          99
+        ],
+        [
+          345722,
+          0,
+          1345722,
+          96
+        ]
+      ],
+      "initial_skillpoints": 10,
+      "initial_duelpoints": 500,
+      "initial_fame": 7,
+      "expected_skillpoints": [
+        13,
+        13,
+        16,
+        10
+      ],
+      "expected_charm": [
+        100,
+        99,
+        100,
+        96
+      ],
+      "expected_duelpoints": [
+        1510,
+        1510,
+        2530,
+        500
+      ],
+      "expected_fame": [
+        7,
+        74,
+        146,
+        7
+      ]
+    }
+  },
+  "party_fixture": {
+    "preparation": "post-lethal leader self0/member1 and member owner0; previous roster restored AFTER terminal actor/arena oracles",
+    "upgrade_N_status_recipient": 1,
+    "upgrade_N_status_roster_slot": 0,
+    "upgrade_N_status_mask": "CHAR_N_STRING_LV",
+    "upgrade_P_status_recipient": 0,
+    "upgrade_P_status_mask": "LV|NEXTEXP|DUELPOINT",
+    "upgrade_world_broadcast_object": 0,
+    "positive_upgrade_presentation_calls_each": 1,
+    "non_upgrade_presentation_calls_each": 0,
+    "exit_P_status_calls": 2,
+    "exit_N_HP_status_calls": 2,
+    "BecomePig_image_status_calls": 0
+  },
+  "fixture_boundaries": [
+    "seeded preexisting EXP, not naturally earned campaign progression",
+    "Gavin multiplier1 and synthetic thresholds10000000, not operator configuration",
+    "Bismarck complete original level table; original HandleExp/earnFame",
+    "member and owned pet LV100; petEXP0; fixedAI100 capped",
+    "empty items/equipment; synthetic descriptor7 and typed presentation collectors",
+    "no assigned skill points; full primary/derived combat-stat bytes preserved except specified charm work value"
+  ],
+  "representative_observations": [
+    "ACTUAL|gavin|REAL_HEADER_PLAYER_LEVEL|mode=0|battle=0|seed_exp=9999999|payout=1|levels=1|lv=101|residual=0|skill=13|charm=100|duel=1510|fame=-1|pet_lv=100|pet_exp=0|status_calls=1|party_calls=1|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|gavin|REAL_HEADER_PLAYER_LEVEL|mode=1|battle=1|seed_exp=10000016|payout=1|levels=1|lv=101|residual=17|skill=13|charm=99|duel=1510|fame=-1|pet_lv=100|pet_exp=0|status_calls=1|party_calls=1|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|gavin|REAL_HEADER_PLAYER_LEVEL|mode=2|battle=2|seed_exp=20000022|payout=1|levels=2|lv=102|residual=23|skill=16|charm=100|duel=2530|fame=-1|pet_lv=100|pet_exp=0|status_calls=1|party_calls=1|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|gavin|REAL_HEADER_PLAYER_LEVEL|mode=3|battle=0|seed_exp=9999998|payout=1|levels=0|lv=100|residual=9999999|skill=10|charm=96|duel=500|fame=-1|pet_lv=100|pet_exp=0|status_calls=0|party_calls=0|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|bismarck|REAL_HEADER_PLAYER_LEVEL|mode=0|battle=0|seed_exp=345723|payout=1000000|levels=1|lv=101|residual=0|skill=13|charm=100|duel=1510|fame=7|pet_lv=100|pet_exp=0|status_calls=1|party_calls=1|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|bismarck|REAL_HEADER_PLAYER_LEVEL|mode=1|battle=1|seed_exp=345740|payout=1000000|levels=1|lv=101|residual=17|skill=13|charm=99|duel=1510|fame=74|pet_lv=100|pet_exp=0|status_calls=1|party_calls=1|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|bismarck|REAL_HEADER_PLAYER_LEVEL|mode=2|battle=2|seed_exp=1788068|payout=1000000|levels=2|lv=102|residual=23|skill=16|charm=100|duel=2530|fame=146|pet_lv=100|pet_exp=0|status_calls=1|party_calls=1|whole_actor_oracle=1|whole_arena_oracle=1|released=1",
+    "ACTUAL|bismarck|REAL_HEADER_PLAYER_LEVEL|mode=3|battle=0|seed_exp=345722|payout=1000000|levels=0|lv=100|residual=1345722|skill=10|charm=96|duel=500|fame=7|pet_lv=100|pet_exp=0|status_calls=0|party_calls=0|whole_actor_oracle=1|whole_arena_oracle=1|released=1"
+  ],
+  "artifact": {
+    "id": 11674645724,
+    "name": "stoneage-party-original-player-level-r1",
+    "github_reported_digest": "sha256:eaf4f7977bb3842f29d1acb1f0dd72680bd0e69f2046ff7562143c067ecc1f26",
+    "independently_downloaded": true,
+    "zip_bytes": 5347,
+    "zip_sha256": "eaf4f7977bb3842f29d1acb1f0dd72680bd0e69f2046ff7562143c067ecc1f26",
+    "report_name": "stoneage-party-player-level-r1.txt",
+    "report_bytes": 19282,
+    "report_sha256": "65a5d8c94c002c52a25d770e1d3cf83ab449ea8ac6befff6a28c0a3212dcd3e8",
+    "identical_to_local": true
+  },
+  "local_rejected_assumptions": [
+    "upgrade-only P collector rejected actual inherited Exit P calls; preserved original Exit masks",
+    "inherited party roster omitted leader self0 and PartyUpdate returned; explicit complete post-lethal roster separately tested",
+    "admitted original Exit N HP update and required two calls",
+    "BecomePig image/status and extra broadcasts were absent; corrected exact untaken branch oracle"
+  ],
+  "open": [
+    "positive petEXP/growth/variableAI",
+    "positive reward item ownership/gold",
+    "equipment modifiers/transmigration/level limit controls",
+    "natural commands/AI/RNG",
+    "watchers/callbacks/real network/Lua/server ABI",
+    "JSS1999/Taiwan-v1 executable historical identity"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "modern_engine_phase_transition": false
+}

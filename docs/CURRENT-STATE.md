@@ -11051,3 +11051,60 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   charm/duel-point/stat oracles, then pet reward/growth and item ownership controls.
   Keep late-source configured/million-floor/storage-cap differences versioned;
   do not infer original JSS1999/Taiwan-v1 from descendant runtime acceptance.
+
+
+## 2026-10-10 — Original positive PLAYER level settlement REMOTE ACCEPTED (bounded)
+
+- Fresh main9ddaefcccf8868b876ce54897dc88cac7c566de1, tree3615baa77983257453c79cbb1f1e0b3a837fd362.
+  Complete preceding CURRENT-STATE blob e8ad6744c0b9c877f128ab507ad67d9ede469301,
+  1193322 bytes preserved verbatim; all earlier records remain unchanged.
+- Branch agent/party-pet-original-player-level-r1-20261010, exact tested input
+  e6f65028b93cefe6d91b99e5201ebfd45e7a309d, treee3b1ab98e4d9bdd4acdb988245b62bf00be26d7f.
+  Action38064186794/job114248381131 SUCCESS,10 steps/33 regression checks.
+  Original Gavin1f90cb6/Bismarck999ffdf1 headers/bodies, GNU99 O0/O2 nonrecovering
+  UBSan, complete stdout byte-identical per profile.16 actual second Loop Finish
+  encounters (arena0,1,2,0),12 positive player upgrades,4 one-below controls,
+  16 aggregate level increments; inherited admission/input/AI/guard/attack/lethal
+  controls retained. Complete seven-actor and arena byte oracles PASS.
+- Explicit post-lethal LV100 fixture seeds player0 EXP near next thresholds;
+  not natural cumulative campaign earnings. Gavin synthetic10000000 thresholds,
+  payout1; Bismarck original increments1345723/1442322, payout1000000. Cases exact
+  threshold/residual17/two levels+residual23/one-below yield levels1/1/2/0,
+  final LV101/101/102/100. Skill10->13/13/16/10, charm98/97/99/96->100/99/100/96,
+  duel500->1510/1510/2530/500. Charm adds2 ONCE per positive settlement, not per
+  level. No skill allocation; all other primary/derived combat-stat bytes held.
+- Original Bismarck HandleExp->earnFame executed; positive remaining EXP adds
+  threshold/20000 (67 then72). Fame7->7/74/146/7; exact-threshold residual0 adds
+  no fame. Gavin source has no corresponding HandleExp fame call. WORKGETEXP
+  remains actual payout; residual CHAR_EXP separately checked. Member/pet do not
+  level; petEXP0, capped workAI100, owner/default/world objects preserved.
+- Complete settlement party metadata explicitly adds leader self0 to roster0
+  and member owner0 before snapshots. Prior admission fixture omitted self0,
+  causing original PartyUpdate early return. Original PartyUpdate now sends one
+  teammate1/roster0 N LV update per positive case; Bismarck original getPartyNum
+  included unchanged. Exact player0 P LV/NEXTEXP/DUELPOINT and object0 broadcast
+  each once; original Exit two P updates/two N HP updates retained, BecomePig
+  image/broadcast branch untaken. Nonupgrade has zero upgrade presentation calls.
+  Strict typed collectors and descriptor7 remain synthetic, not real transport.
+  Prior roster restored only AFTER all terminal oracles, for independent next
+  precursor encounter. No actor/arena resurrection or repeated manual teardown.
+- Exact original RS positive levelup flag1 and unchanged payout: Gavin leader
+  -2|1|1,,,,,|||, member -2|0|0,,,,,|||; Bismarck leader -2|1|4c92,,,,,|||,
+  member -2|0|4c92,,,,,|||. Negative case flag0. Actual automatic Exit/Delete,
+  enemy release, arena total1->0 and real pool reuse remain verified.
+- Artifact11674645724 independently downloaded, ZIP5347 bytes
+  SHA256 eaf4f7977bb3842f29d1acb1f0dd72680bd0e69f2046ff7562143c067ecc1f26; report19282 bytes
+  SHA256 65a5d8c94c002c52a25d770e1d3cf83ab449ea8ac6befff6a28c0a3212dcd3e8 equals local bytes.
+  Source manifest/spec/receipt STONEAGE-PARTY-PET-ORIGINAL-PLAYER-LEVEL-*R1;
+  all original bodies remain transient, no original source/assets vendored.
+- Bounded late-descendant player leveling only. Pet growth, positive items/gold,
+  equipment/limits/transmigration, natural commands/AI/RNG, watchers/callbacks,
+  network/Lua/server ABI and JSS1999/Taiwan-v1 historical equivalence OPEN.
+  Pressure2486=2465 bounded closed+18 OPEN+3 historical UB, zero promotions,
+  no modern-engine phase transition.
+- Highest NEXT: positive original PET EXP and growth through the actual second
+  Loop/Finish, exact pet level/residual EXP/vital/str/tough/dex/variableAI and
+  derived-stat/owner effects, controlled original rand consumption and complete
+  actor/arena oracles. Close original PetLevelUp/CheckPetDoLimitlevel dependencies
+  without gameplay stubs; retain player-level and nonupgrade controls. Then
+  positive reward item ownership/empty-inventory/full-inventory controls.

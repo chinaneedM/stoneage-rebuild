@@ -2222,3 +2222,15 @@ encounters with complete actor/arena oracles. Gavin player payouts1/0, Bismarck
 base62 oracle; no-level-up/empty-item fixture, synthetic descriptor/config inputs.
 No first-release historical equivalence, actual upgrade/growth/items/gold/network
 claim. All older evidence preserved, zero historical/capability promotions.
+
+
+## 2026-10-10 — Later-descendant positive player upgrade witness, bounded
+
+FACT in pinned Gavin1f90cb6/Bismarck999ffdf1 fixture only: Action38064186794
+executes16 original second-Loop Finish encounters,12 positive upgrades/4 one-below
+controls, exact residual EXP/level/skill/charm/duel and Bismarck original fame.
+Two-level charm adds2 once; exact-threshold remaining0 does not trigger Bismarck
+fame. Full actor/arena state and automatic release verified O0/O2 UBSan. EXP was
+seeded and Gavin threshold table synthetic; complete settlement party roster
+explicitly prepared. Not natural progression, pet growth/items/gold/network or
+first-release historical equivalence. Zero historical/capability promotions.

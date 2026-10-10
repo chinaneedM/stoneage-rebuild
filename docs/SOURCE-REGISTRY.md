@@ -5516,3 +5516,17 @@ independently downloaded ZIP SHA256 dd94e1ea0a2be4381739ca27c1c01638f272f07eb193
 report915dc7ad3c72de5c7f6cf72680340952c7faee65ed4c93387a2352bb1a600e4c equals local.
 No original source/assets committed; not full leveling/items/gold/network or
 first-release equivalence. Pressure/promotions unchanged.
+
+
+## 2026-10-10 — Original PLAYER level derived witness R1
+
+Action38064186794/job114248381131 SUCCESS ate6f65028b93cefe6d91b99e5201ebfd45e7a309d,33 checks/10 steps.
+Tools/spec/source manifest/receipt STONEAGE-PARTY-PET-ORIGINAL-PLAYER-LEVEL-R1:
+original Gavin1f90cb6/Bismarck999ffdf1 LevelUpCheck/HandleExp/GetExpGold/compliance,
+original PartyUpdate, Bismarck getPartyNum/earnFame body hashes frozen.16 native
+O0/O2 UBSan Finish encounters; full seven-actor/arena effects and automatic release.
+Artifact11674645724 independently downloaded ZIP SHA256
+eaf4f7977bb3842f29d1acb1f0dd72680bd0e69f2046ff7562143c067ecc1f26; report SHA256
+65a5d8c94c002c52a25d770e1d3cf83ab449ea8ac6befff6a28c0a3212dcd3e8 equals local19282 bytes. Explicit seededEXP,
+Gavin synthetic thresholds, complete post-lethal party roster and typed output
+collectors; no original source/assets committed, no historic/pressure promotion.
