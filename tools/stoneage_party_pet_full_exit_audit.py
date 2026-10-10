@@ -63,12 +63,24 @@ int RIDEPET_getPETindex(int petNo,int learnCode){
   return -1;
 }
 """
+# The original Exit graph broadcasts refreshed world-character state.
+# This is an explicit packet-output collector, not a claim to reproduce
+# original transport or all visible players in a real map.
+WORLD_BROADCAST=r"""
+static int world_broadcasts=0;
+void CHAR_sendCToArroundCharacter(int objindex){
+  if(objindex<0||objindex>1||searchObjectFromCharaIndex(objindex)!=objindex){
+    fputs("WORLD_BROADCAST_SCOPE_VIOLATION",stderr);abort();
+  }
+  world_broadcasts++;
+}
+"""
 def make_native(profile,source):
     original=admission_native(profile,source)
     if original.count(MARKER)!=1:raise ValueError("accepted admission body changed")
     anchor="int main(int argc,char **argv){"
     if original.count(anchor)!=1:raise ValueError("actual original main anchor drift")
-    original=original.replace(anchor,ZERO_LICENSE_RIDE+anchor,1)
+    original=original.replace(anchor,ZERO_LICENSE_RIDE+WORLD_BROADCAST+anchor,1)
     field="char_index" if profile=="bismarck" else "charaindex"
     return original.replace(MARKER,EXPECTED_INSERT.replace("ENTRY_FIELD",field),1)
 
@@ -101,7 +113,7 @@ def main():
             for opt in ("-O0","-O2"):
                 exe=Path(d)/("probe"+opt)
                 compile_probe(profile,roots[profile],native,exe,opt,
-                    [x for x in accepted["profiles"][profile]["unreachable_traps"] if x not in ("BATTLE_Index2No","RIDEPET_getPETindex")])
+                    [x for x in accepted["profiles"][profile]["unreachable_traps"] if x not in ("BATTLE_Index2No","RIDEPET_getPETindex","CHAR_sendCToArroundCharacter")])
                 run=subprocess.run([str(exe),*map(str,paths)],input=f"{selection} 0\n",capture_output=True,text=True)
                 if run.returncode or any(not line.startswith("TRACE|") for line in run.stderr.splitlines() if line.strip()):
                     raise ValueError("actual original party/pet Exit "+profile+" "+opt+
