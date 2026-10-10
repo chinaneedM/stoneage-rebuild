@@ -116,7 +116,7 @@ def positive_drop_native(profile,source,battle,event,root):
         symbols=("ENEMY_ITEMPROB1","ENEMY_ITEM1","ITEM_makeItemAndRegist",
                  "CHAR_setItemIndex","ITEM_setWorkInt","ITEM_WORKCHARAINDEX",
                  "ITEM_WORKOBJINDEX")
-        pattern=r"\\b(?:"+"|".join(symbols)+r")\\b"
+        pattern=r"\b(?:"+"|".join(symbols)+r")\b"
         original_calls=re.findall(pattern,body)
         inherited_calls=re.findall(pattern,native_body)
         if original_calls!=inherited_calls or len(original_calls)<10:
