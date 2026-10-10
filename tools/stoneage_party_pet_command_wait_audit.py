@@ -74,7 +74,15 @@ def extend_native(profile, source, battle, event, root):
     # Replace ONLY the previous synthetic unvisited Command stub. All
     # three original command functions are taken unmodified from pinned C.
     cmds="\n\n".join(definition(battle,n) for n in ACTUAL_NAMES)
-    native=native.replace(old,cmds,1)
+    # The original full translation unit declared these before Command.
+    # Restoring exact signatures here prevents C99 implicit extern calls
+    # from conflicting with a later private static fail-closed definition.
+    prototypes=(
+        "int BATTLE_ai_all(int battleindex,int side,int turn);",
+        "static int BATTLE_Battling(int battleindex);",
+        "int BATTLE_OnlyRescue(int battleindex,int side,int *pOnlyFlg);",
+    )
+    native=native.replace(old,"\\n".join(prototypes)+"\\n"+cmds,1)
     body=WAIT_OBSERVATIONS
     native=native.replace(EXIT_ANCHOR,body+EXIT_ANCHOR,1)
     # Need every potential downstream original function in the
