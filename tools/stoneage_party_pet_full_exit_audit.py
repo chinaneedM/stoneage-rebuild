@@ -10,6 +10,7 @@ import subprocess
 import tempfile
 import hashlib
 import json
+import re
 
 from tools.stoneage_party_pet_realheader_audit import native as admission_native, patch_source
 from tools.stoneage_player_battle_audit import domain as solo_domain, pinned_identity, PIN_PATH
@@ -116,9 +117,12 @@ def main():
                     [x for x in accepted["profiles"][profile]["unreachable_traps"] if x not in ("BATTLE_Index2No","RIDEPET_getPETindex","CHAR_sendCToArroundCharacter")])
                 run=subprocess.run([str(exe),*map(str,paths)],input=f"{selection} 0\n",capture_output=True,text=True)
                 if run.returncode or any(not line.startswith("TRACE|") for line in run.stderr.splitlines() if line.strip()):
+                    offsets=re.findall(r"probe-(?:O0|O2)\\(\\+(0x[0-9a-f]+)\\)",run.stderr)
+                    symbols=subprocess.run(["addr2line","-f","-C","-e",str(exe),*offsets],
+                                           capture_output=True,text=True).stdout if offsets else "NO_OFFSETS"
                     raise ValueError("actual original party/pet Exit "+profile+" "+opt+
                                      " rc="+str(run.returncode)+" stderr="+run.stderr[-7000:]+
-                                     " stdout="+run.stdout[-2000:])
+                                     " symbols="+symbols+" stdout="+run.stdout[-2000:])
                 if run.stdout.count("REAL_HEADER_ENTRY|")!=1 or run.stdout.count("REAL_HEADER_EXIT|")!=1:
                     raise ValueError("missing actual entry/exit outputs")
                 observations.append(run.stdout)
