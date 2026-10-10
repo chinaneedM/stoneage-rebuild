@@ -10705,3 +10705,60 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   Lua/equipment/reclaimer/bootstrap/original executable ABI/JSS1999/Taiwan-v1
   remain OPEN. Pressure2486=2465 capability closed+18 OPEN+3 historic UB,
   zero promotions; no engine/content phase transition. Earlier records intact.
+
+
+## 2026-10-10 — Original real-header ordinary party/pet attack round REMOTE ACCEPTED
+
+- Fresh remote main b7e4b3f1995d9522b3e1f6ae6890a1834063d323,
+  tree b4609d1adeac8e45e1e45a16dcba1343af979925; branches/HEAD/tree/latest commits/
+  Actions and complete protocol documents read afresh. Original CURRENT-STATE
+  blob ba09b245f97fde6c50fb6d8dc0b0f20e678c671a,1169847 bytes, and full
+  history/source-registry preserved verbatim before append.
+- Exact final source/test/workflow/spec commit c95949be8ea233a2baee39486007934441cdb29f,
+  tree d2db8c2b640677cb5583302f58332be5ccfd4248, branch
+  agent/party-pet-original-attack-r1-20261010. Action38045810852/job114194996158
+  SUCCESS,10 steps,47 checks. Gavin1f90cb6/Bismarck999ffdf1 original headers,
+  GNU99 O0/O2 nonrecovering UBSan+libm:16 Create/Init/input/wait/AI/guard/attack/
+  Exit/Delete encounters,16 ordinary attack rounds and16 guard controls;
+  pool0,1,2,0; complete per-profile trace bytes equal O0/O2.
+- Full unchanged original Loop/Command/Battling now dispatches actual ordinary
+  Attack/AttackSeq/DamageSub with original targeting/critical/attribute/guard/
+  reaction/wake-up/item checks and function-pointer accessor. No gameplay stub
+  substitutes. Typed abort-on-call guards protect untaken dependencies. Gavin
+  ArrangeCheck retained; Bismarck original profile excludes it and extracts its
+  AttrCalc from battle_magic.c. Original private counter/item-crush signatures
+  preserved. System math linkage opt-in; previous compile_probe default unchanged.
+- Explicit leader ATTACK, others GUARD/C_OK, enemy tactics0 and RNG2147483647.
+  Read actual current side1 entry5 actor (allocator slot can rotate), resolve
+  and round-trip original Index2No/No2Index; no fixed enemy actor or malformed
+  inherited parser target. Coherent base-stat fixture is recomputed by original
+  compliance: leader attack100, enemy defense40/maxHP525/currentHP500; zero
+  elements. Independent raw146/guarded73 oracle: enemy HP500->427, DAMAGECOUNT+1,
+  leader ISATTACKED; complete seven-Char snapshots also require C_WAIT/COM_NONE
+  and pet FIXAI100->0. Whole arena permits only turn1, PartTime0, side-surprise
+  clear and flgTime+150. Next CommandWait FALSE; four sends and original dynamic
+  target/NORMAL|GUARD/d49/p0 packet checked. Baselines restored between controls
+  and before inherited Exit. Not consecutive multi-turn or terminal combat.
+- Full native trace SHA256 Gavin 5b541701003c9bc00e846ed08f79d26ba776ed7b3a9889b0a7c05eb916758cb5,
+  Bismarck 82583b9f893b122c3f2977d90bf04eaa367d56a5478ebcaacfbffe823c0450ff.
+  Artifact11667553905 independently downloaded ZIP3141 bytes SHA256
+  76a7f27726ab8aa6601fd37cbd019e679e8569401776b85546314fbd40f9ecd7; sole
+  stoneage-party-original-attack.txt equals local bytes SHA256
+  cb4696b07951feb3e9bdab47a90884f5eb7e440da5d8332fc17369f1f7cc4502.
+  Shared compiler blob16df8f4c96e230949cd8db4629b447ac83198b5f unchanged across
+  candidate revisions: older default-path Action38045567081 (battle pool),
+  38045566999 (enemy Entry/Exit) and38045567065 (player battle) also SUCCESS.
+  First two attack candidates failed original-profile/private-signature closure;
+  corrected final candidate alone is accepted, failure history retained.
+  Receipt research/recovered/STONEAGE-PARTY-PET-ORIGINAL-ATTACK-ROUND-ACCEPTANCE-R1.json;
+  spec specs/STONEAGE-PARTY-PET-ORIGINAL-ATTACK-ROUND-R1.md.
+- Highest NEXT: controlled lethal ordinary hit on this same original-header
+  populated domain, exact death/ultimate/GETEXP bookkeeping and original
+  FinishSet -> Loop/Finish -> profit/Exit/Delete composition, with precise
+  victory/positive reward versus nonterminal effects. FinishSet/Finish/GetProfit
+  body hashes and named-call inventory retained source-only in receipt; not
+  execution or complete transitive closure. Natural AI/commands, unguarded
+  dodge/critical/counter, skills/magic/attributes/multi-enemy/timeout-positive,
+  transport/Lua/ride/equipment/reclaimer/bootstrap/original ABI/JSS1999/Taiwan-v1
+  remain OPEN. Pressure2486=2465 capability closed+18 OPEN+3 historic UB,
+  zero promotions; no phase transition. All earlier evidence intact.

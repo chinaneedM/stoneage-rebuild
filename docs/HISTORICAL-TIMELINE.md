@@ -2181,3 +2181,20 @@ This supersedes the earlier all-ready-round execution gap only for this control.
 Ordinary physical damage, terminal Finish/victory/positive profit, natural AI,
 full transport/server and historical JSS1999/Taiwan-v1 equivalence remain OPEN.
 No historical promotions; all earlier evidence remains preserved.
+
+
+## 2026-10-10 — Original descendant ordinary nonterminal attack composition
+
+FACT under pinned Gavin1f90cb6/Bismarck999ffdf1 original headers:
+Action38045810852 at c95949be8ea233a2baee39486007934441cdb29f passes47 checks,16
+ordinary attack rounds plus16 guard controls under O0/O2 nonrecovering UBSan.
+Actual original Loop/Command/full Battling/AttackSeq/DamageSub produce73 damage
+against one explicitly selected guarded enemy, HP500->427, DAMAGECOUNT+1 and
+turn1/C_WAIT; exact complete actor/arena snapshots and trace equality pass.
+Coherent controlled base stats, fixed RNG and enemy tactics0; separate controls
+restore baselines, not consecutive natural turns. Gavin arrangement branch and
+Bismarck original magic-file attribute body retain their source distinctions.
+This supersedes the ordinary nonterminal damage execution gap only. Death,
+terminal Finish/victory/positive rewards, natural commands/AI and historical
+JSS1999/Taiwan-v1 equivalence remain OPEN. No historical promotions or rewritten
+prior evidence; failed preparatory candidates remain in repository history.

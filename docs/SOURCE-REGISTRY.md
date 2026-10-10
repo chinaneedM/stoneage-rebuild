@@ -5437,3 +5437,31 @@ Repository evidence:
 - FACT is controlled nonterminal all-guard round, not ordinary damage/death/
   terminal Finish/profit, whole AI, real networking/Lua/server or first-release
   historical equivalence. Pressure2486/2465/18/3,0 promotions; earlier records intact.
+
+
+## 2026-10-10 — Original real-header ordinary attack-round derived witness R1
+
+- tools/stoneage_party_pet_original_attack_audit.py composes unchanged pinned
+  Loop/Command/full Battling with original targeting/AttackSeq/physical/attribute/
+  guarded damage/DamageSub/wake-up/item checks and CHAR function-pointer access.
+  Gavin1f90cb6/Bismarck999ffdf1 bodies hashed in report/receipt; Bismarck AttrCalc
+  from battle_magic.c, ArrangeCheck absent in original configuration. Private
+  declarations preserved; no original source/header/table/assets committed.
+- Tested c95949be8ea233a2baee39486007934441cdb29f/treed2db8c2b640677cb5583302f58332be5ccfd4248,
+  Action38045810852/job114194996158 SUCCESS,47 checks, GNU99 O0/O2 UBSan+libm,
+  16 nonterminal attack rounds/16 guard controls; one guarded enemy takes73,
+  HP500->427, exact complete seven-actor/arena effects. Controlled base stats,
+  dynamic current enemy actor/Index2No target, fixed RNG/tactics0; not natural
+  gameplay selection or all helper branches. Presentation transport collected.
+- Artifact11667553905 independently downloaded ZIP SHA256
+  76a7f27726ab8aa6601fd37cbd019e679e8569401776b85546314fbd40f9ecd7; sole
+  stoneage-party-original-attack.txt equals local report SHA256
+  cb4696b07951feb3e9bdab47a90884f5eb7e440da5d8332fc17369f1f7cc4502.
+  research/recovered/STONEAGE-PARTY-PET-ORIGINAL-ATTACK-ROUND-ACCEPTANCE-R1.json and
+  specs/STONEAGE-PARTY-PET-ORIGINAL-ATTACK-ROUND-R1.md preserve exact scope.
+  Default compiler-path regressions Action38045567081/38045566999/38045567065
+  succeed on identical shared compiler blob; receipt records exact earlier SHA.
+- FinishSet/Finish/GetProfit source-only hashes/call inventories guide next gate;
+  no terminal death/Finish/positive profit, whole AI/server/transport/Lua/original
+  ABI or first-release historical equivalence inferred. Pressure2486/2465/18/3,
+  zero promotions. All earlier records remain preserved.
