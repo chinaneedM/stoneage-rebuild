@@ -88,7 +88,7 @@ def lethal_round_native(profile,source,battle,event,root):
 def main():
     attack.main(
         native_builder=lethal_round_native,
-        extra_markers=("REAL_HEADER_LETHAL_LOOP|",),
+        extra_markers=("REAL_HEADER_LETHAL_LOOP|","LETHAL_LOOP_RET|","LETHAL_LOOP_MODE|","LETHAL_ACTOR_DIFF|","LETHAL_ARENA_DIFF|","LETHAL_NEXT_WAIT|","LETHAL_SENDS|","LETHAL_PACKET_OBS|"),
     )
     print("BOUNDARY|original_full_loop_lethal_HP_only;finish_profit_not_proven")
     print("RESOLUTION|ORIGINAL_REAL_HEADER_PARTY_PET_LETHAL_LOOP_HP_PASS")
