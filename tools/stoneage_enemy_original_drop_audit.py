@@ -71,8 +71,8 @@ CONTROL=r"""
  FACTORY_TABLE_ORACLE
  demand(!memcmp(&specimen,&table_snapshot,sizeof specimen),
         "original enemy drop does not mutate factory master template");
- printf("REAL_HEADER_ENEMY_POSITIVE_DROP|mode=%d|zero_prob_actor=%d|positive_actor=%d|item=3|item_id=1|positive_prob=1000|zero_draws=%d|positive_draws=%d|factory_draws=DATA_FIELDS|leak=%d|whole_item=1|whole_actor_others=1|whole_arena=1|source_table_immutable=1\n",
-        mode,zero_actor,positive_actor,zero_draws,rng_count,LEAK_EXPECTED);
+ printf("REAL_HEADER_ENEMY_POSITIVE_DROP|mode=%d|zero_prob_actor=%d|positive_actor=%d|item=3|item_id=1|positive_prob=1000|zero_draws=%d|positive_draws=%d|factory_draws=%d|leak=%d|whole_item=1|whole_actor_others=1|whole_arena=1|source_table_immutable=1\n",
+        mode,zero_actor,positive_actor,zero_draws,rng_count,DATA_FIELDS,LEAK_EXPECTED);
  /* Restore all fixture domains only after checking full original state.
     Original allocator static cursor/character sequence are never rewound. */
  memcpy(reward_items,before_spawn,sizeof before_spawn);
@@ -122,8 +122,8 @@ def positive_drop_native(profile,source,battle,event,root):
         if original_calls!=inherited_calls or len(original_calls)<10:
             raise ValueError("enemy original drop branch structure drift "+profile+" "+str((original_calls,inherited_calls)))
         digest=hashlib.sha256(native_body.encode()).hexdigest()
-        expected_inherited=json.loads(PINS.read_text()).get("inherited_native_sha256",{}).get(profile)
-        if expected_inherited and digest!=expected_inherited:
+        expected_inherited=json.loads(PINS.read_text())["inherited_native_sha256"][profile]
+        if digest!=expected_inherited:
             raise ValueError("inherited original enemy raw-body drift "+profile)
         print("ENEMY_ORIGINAL_DROP_SOURCE|"+profile+"|"+name+
               "|preprocessed_sha256="+hashlib.sha256(body.encode()).hexdigest()+
