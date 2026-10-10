@@ -1,0 +1,67 @@
+{
+  "schema": "stoneage-enemy-loader-validation-r1",
+  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "startup_main": "567c2cded4ed408a2675dd610ea1ad924cafaef9",
+  "startup_tree": "35ff3d9f0595dd9a71ee8db3e3ac3b51cf6886d8",
+  "executed_loader_profiles": [
+    "gavin",
+    "bismarck"
+  ],
+  "iris_loader_execution": "OPEN Windows conversion, no adapter",
+  "loader_scenarios_per_profile_per_optimization": 6,
+  "loaded_template_full_record_comparisons": 7284,
+  "loaded_enemy_full_record_comparisons": 11756,
+  "preserved_ordinary_birth_calls": 49024,
+  "additional_mutation_birth_calls": 6,
+  "preserved_templates_loaded_per_profile": 1816,
+  "preserved_enemies_loaded_per_profile": 2935,
+  "selected_ordinary_variants_per_profile": 1532,
+  "controlled_birth_levels": [
+    1,
+    20
+  ],
+  "raw_rand_modes": 4,
+  "regression_checks": 139,
+  "semantic_mutations_rejected": 12,
+  "optimizations": [
+    "O0",
+    "O2"
+  ],
+  "dialect": "GNU99 with -fgnu89-inline",
+  "sanitizer": "undefined, nonrecovering",
+  "host_domain": "LP64 pointer8 int4; current source headers and controlled original pool dimensions",
+  "report_sha256": "ce1e52eee5169fc123f8b1c71c252908bedd1f42067f87b4772b2d3f7f596538",
+  "original_pool_and_loaders_executed": true,
+  "full_independent_loaded_record_oracle": true,
+  "all_birth_fields_have_independent_oracle": false,
+  "birth_fields_checked": "growth/packing/rank/float exp/HP/maxHP/level/template/image/type/name/tactics/capture/petflags/sequence/RNG/ticket/start/object; full stream hashes and O0/O2 agreement",
+  "specimen": "same-pin gavin setup-selected files; bismarck cross-profile input only",
+  "object_registration_provenance": "static only, not transitive ownership proof",
+  "full_Exit_to_reuse_composition_executed": false,
+  "open": [
+    "Iris Windows encoding",
+    "encrypted-file paths",
+    "object registration/ownership and occupied slot0",
+    "full entry/Exit/destruction/reuse",
+    "special enemies/equipment/nonempty callbacks",
+    "original ABI/build/JSS/Taiwan-v1",
+    "actor/watcher/typed631/635 admission"
+  ],
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "prior_complete_report_sha256": {
+    "ENEMY-CREATION": "1e4c78ebc12309baa6905eaa63626b21180cdce6e75c17dafb980e39998502d3",
+    "DEFAULT-TEMPLATE": "facfe62106ca3be1a9a800b5e33afcc14bf582a65e2dc93d2607d6c0be076c53",
+    "CHARACTER-REUSE": "cbebb27b3923817c7804545cfedb882d90f4a89423ee05dd32bf6eb1b0f9da5a",
+    "EXIT-WORLD-ITEM": "54ab876083faac9e87da83a6ce459b5edaa59fcb03a725aeb131ae9c9b7636ab",
+    "EXIT-DESTROY-TICKET": "94f4590eec2e25496483fb75827cc40a6566508856f24d8648c62b9117249d20",
+    "WATCH-CLEANUP": "b7724d88bf319ad0cf80e0463de21b78510db30505d007529a22cab3d6cf99da",
+    "EXIT-LIFETIME-WATCH": "f45a307738447df03550a03e87ef3534da59ac91f461e7eed194b5dd7a5f342f",
+    "BECOMEPIG-EXIT-MODES": "21cfc791be5f03f674c40369bfcc067dd757bd253f4ecd30ff414826be3a9533"
+  }
+}

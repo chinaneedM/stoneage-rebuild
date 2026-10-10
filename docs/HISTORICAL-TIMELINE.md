@@ -1953,3 +1953,17 @@ header LP64 witness. Ticket/start/object work0 after actual helper composition
 is bounded evidence; real loader/ownership/special paths and full Exit-to-reuse
 remain OPEN. Receipt STONEAGE-ENEMY-CREATION-ACCEPTANCE-R1.json; no original
 ABI/build/JSS/Taiwan-v1 claim or runtime promotion.
+
+
+## 2026-10-10 — Preserved source-tree master loading extends synthetic-record birth evidence
+
+FACT in pinned/current GNU99 LP64 domain: actual Gavin configured file loaders and
+Bismarck cross-profile input loaders retain1,816 templates/2,935 variants. Original
+pool/tokenizers/linking/level normalization execute.49,024 births from selected
+1,532 ordinary unequipped variants/profile leave ticket/start/object work0.
+7,284+11,756 full loaded record comparisons;139 regressions,12 native mutations
+rejected; eight predecessor full reports unchanged. Duplicate templates map first;
+rejected-prefix writes can survive later empty cells. Iris Windows conversion
+and object/battle caller facts remain STATIC/OPEN. Real object ownership/slot0/
+Exit-to-reuse and original release/ABI/JSS/Taiwan-v1 unproved. Local PASS; remote
+PENDING,zero promotions. Spec STONEAGE-ENEMY-LOADER-R1.md.

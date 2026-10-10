@@ -9778,3 +9778,46 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   nonempty callbacks, remaining actor/watcher/typed631/635 and original build/
   JSS/Taiwan-v1 remain OPEN. No engine/content transition. Protocol section10
   ongoing publication/Actions/accepted integration authorization applies.
+
+
+## 2026-10-10 — Original master loading and preserved ordinary birth LOCAL PASS; remote PENDING
+
+- Fresh remote main567c2cded4ed408a2675dd610ea1ad924cafaef9/tree
+  35ff3d9f0595dd9a71ee8db3e3ac3b51cf6886d8; latest Action37883409372 success.
+  Remote branches/HEAD/tree/commits/Actions and all protocol startup documents read;
+  continued recorded master-loader/ownership priority. Three pinned clean source
+  checkouts restored; no old-chat progress inference or original content committed.
+- Gavin setup-selected enemybase1.txt/enemy1.txt whole bytes from same pinned tree
+  now pass original native file loaders/tokenizers/setters/linking/normalization.
+  Original memInit/allocateMemory/memEnd and pool declarations execute with positive
+  controlled16MiB dimensions; freeMemory/full bootstrap not executed. Bismarck
+  executes its callback/file helpers on those bytes as cross-profile input only,
+  not its own historical-content proof. Compiled template integer counts50/49.
+- Preserved input loads1,816 templates/2,935 enemies;1,532 existing ordinary
+  unequipped variants selected per executed profile without record rewriting.
+  Levels1/20,four scripted raw Rand values,O0/O2+nonrecovering UBSan:49,024 births;
+  ticket/start/object work0 after actual accepted creator/helper composition.
+  Complete loaded integer/string-byte/link/count/status oracle:7,284 template and
+  11,756 enemy comparisons across six scenarios/profile/optimization. Birth
+  assertions cover named stats/identity/HP/exp/sequence/RNG and ticket/start/object;
+  full birth streams hashed/O0/O2 equal, not a full independent birth-field oracle.
+- FACT bounded loader: duplicate TEMPNO maps first; rejected partial template writes
+  can survive a later empty cell. atoi decimal-prefix semantics preserved. Legacy
+  LF-only chomp/one-space trim and Bismarck CR normalization remain distinct.
+  139 regressions,12 semantic native mutations rejected (6 additional births);
+  all eight predecessor complete reports reproduce byte-identically.
+- Iris loaders/utf8ToBig5 original identities recorded but execution OPEN due to
+  Windows conversion APIs; no replacement/no-op adapter. Plaintext only; encrypted
+  data/special IDs/equipment/nonempty callbacks/other profiles remain OPEN.
+- STATIC only at all3 source pins: CHAR_createCharacter calls object allocator and
+  writes object work; _initObjectOne calls MAP_addNewObj. BATTLE_CreateVsEnemy
+  calls creator/entry and reads player/party objects without direct object-work
+  writes. Complete bodies hashed; no transitive ownership inference. Zero enemy
+  work0 is not an object sentinel/ownership proof. Spec STONEAGE-ENEMY-LOADER-R1.md,
+  source/validation/native receipts; report SHA256 ce1e52eee5169fc123f8b1c71c252908bedd1f42067f87b4772b2d3f7f596538. Remote PENDING.
+- Pressure2486=2465 closed capability+18 OPEN+3 historical UB;zero promotions.
+  Next exact-input Actions, then execute object registration/ownership and examine
+  loaded enemy work0 against occupied object slot0; compose actual battle entry/
+  Exit/destruction/reuse. Iris encoding and remaining actor/watcher/typed631/635,
+  original build/ABI/JSS/Taiwan-v1 remain OPEN. No engine/content transition.
+  Protocol section10 ongoing publication/Actions/acceptance authorization applies.

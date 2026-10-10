@@ -5045,3 +5045,21 @@ archive not independently downloaded. PENDING superseded only for ordinary
 unequipped/synthetic-master/current-profile LP64 domain. Loader/ownership/special/
 equipment/callback/full Exit-to-reuse/original build/JSS/Taiwan-v1 stay OPEN;
 zero promotions, tested code unchanged and original source remains transient.
+
+
+## 2026-10-10 — Original master loaders and preserved birth source gate R1
+
+STONEAGE-ENEMY-LOADER source/validation/native receipts and spec/workflow. Same-pin
+Gavin setup.cf SHA25613a52f3b66821fd74eacdd848356154139a63b0b68d2cfc4214c9356e106d9b0 selects
+complete enemybase1.txt SHA2567ffb17b161c9d66fcbbaa4e8bcf48d1a9a56223b35770074ae9c3401d270f5d7 and
+enemy1.txt SHA2567e06e1eff0abdf833c0fba2ce57de25170b9fad508237e3f535f7a40044e01ff.
+Actual Gavin loaders and Bismarck callback/file-helper loaders plus original
+pool/tokenizer/setter/link/level helpers execute. Bismarck use is cross-profile
+input only, not its own historical-data claim; compiled template fields50/49.
+Iris original loader/Windows-conversion identities and three-profile object/battle
+caller body hashes recorded STATIC/OPEN. Original source/data remain transient.
+7,284 template+11,756 enemy full-record comparisons;49,024 selected preserved
+ordinary births,139 regressions,12 rejected native mutations; eight old reports
+unchanged. Local PASS, remote PENDING. Born ticket/start/object0 is bounded
+source-input evidence, not ownership/sentinel/original release/JSS/Taiwan-v1 proof.
+Zero runtime promotions; registration/occupied slot0 and full Exit-to-reuse next.
