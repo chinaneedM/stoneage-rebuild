@@ -2047,3 +2047,19 @@ STONEAGE-ENEMY-LOADER-ACCEPTANCE-R1.json; earlier histories preserved.
   Original own-level ranges include experience-table bounds guard, no input edits.
   Explicit encounter/field/fd/RNG/clock/world adapters; original reclaimer OPEN.
   Source/layout/derived receipts, remote PENDING;zero runtime promotions.
+
+
+## 2026-10-10 — Battle arena/creation rollback/enemy-only Finish remote acceptance
+
+- FACT tested8178210c4babe0048a58f2297cc65482f8f3da18/tree
+  50875fa70d23025e61375906eb1cc425a510eefe; Action38024968843/
+  job114133769164 success,174 checks/12 complete cmp gates, ordered log report
+  and independently downloaded artifact match.24,528 rollback/24,512 Finish
+  cycles,85,836 original births/Exits;10 semantic mutations rejected.
+- Original actual-header battle arena/allocator/task cursor/deletion, failed
+  encounter cleanup and enemy-only Finish are accepted in bounded input/adapters.
+  Gavin partial constructor retention and Bismarck full memset stay distinct.
+  Actual character cursor/sequence continue; own-level experience guard executes.
+- Successful player/party battle creation, player/pet profits, Init/TaskLoop/
+  watcher links/nonempty items/callbacks and original full-server/reclaimer/
+  ABI/JSS/Taiwan-v1 remain OPEN. Original source/data transient;zero promotions.

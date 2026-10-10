@@ -10040,3 +10040,39 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   Original reclaimer/full server bootstrap/Iris conversion/ABI/build/JSS/Taiwan-v1,
   nonempty callbacks/equipment and actor/watcher/typed631/635 remain OPEN.
   No engine/content transition. Protocol section10 ongoing publication applies.
+
+
+## 2026-10-10 — Actual battle arena/rollback/enemy-only Finish REMOTE ACCEPTED
+
+- Action38024968843/job114133769164 succeeds at tested HEAD
+  8178210c4babe0048a58f2297cc65482f8f3da18/tree
+  50875fa70d23025e61375906eb1cc425a510eefe. All21 job steps succeed;
+  174 regressions and12 complete report cmp gates pass. Ordered9-line remote
+  report matches local bytes; all11 predecessor reports unchanged locally/remotely.
+- Accepted24,528 rollback/24,512 enemy-only Finish cycles,85,836 original births/
+  Exits,134,856 complete actor work stages;10 safe mutations rejected. Four initial
+  bootstrap/prime/guard sequences and10 mutation cycles excluded from these counts.
+  O0/O2 real-header GNU99 -fgnu89-inline/nonrecovering UBSan scope only.
+- Original arena allocation/zeroing, battle task cursor/full pool, create/delete,
+  invalid caller/NULL encounter, invalid enemy array and full enemy partition
+  rollback tails execute. Finish executes only enemy/no-profit/empty watch/item/
+  callback composition. Gavin partial constructor retention vs Bismarck whole
+  memset preserved; actual character cursor cycles4/5/6 without resets.
+- Receipt STONEAGE-BATTLE-POOL-ACCEPTANCE-R1.json; report SHA256
+  421c5492f6d9352b5be263edd15eb93240c1d5499ec7d5f594c9b2c489c838f7.
+  Artifact11659098098 independently downloaded; archive SHA256
+  59a25943bf0ae998f81d390ff8eb3eb5d680251b25657368f0c2768a36293a7c
+  matches metadata, sole report member equals local bytes. Tested tool/tests/
+  workflow/source pins/report unchanged; all earlier documentation preserved.
+- Supersedes local PENDING only for named descendant/source/input/storage/adapters.
+  Controlled encounter/field/fd/birth trace/RNG/clock/world; original arena
+  memInit/allocateMemory/memEnd execute, original reclaimer/full server bootstrap
+  do not. No independent all-birth-field/all-Object-byte oracle. Own-level
+  experience table range guard is checked without changing actual master bytes.
+- Pressure2486=2465 closed capability+18 OPEN+3 historical UB;zero promotions.
+  Highest next priority: successful player/party BATTLE_CreateVsEnemy with actual
+  player/pet Entry and complete Exit, then original BATTLE_Init/TaskLoop/broader
+  Finish. Player/pet profit, linked watchers, nonempty items/callbacks/equipment,
+  original reclamation/full server bootstrap/Iris conversion/ABI/build/JSS/
+  Taiwan-v1 and actor/watcher/typed631/635 remain OPEN. No engine/content
+  transition. Protocol section10 accepted integration authorization applies.

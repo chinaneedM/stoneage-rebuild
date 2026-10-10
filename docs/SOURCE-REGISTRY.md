@@ -5170,3 +5170,20 @@ sources/data remain transient; earlier records preserved.
   successful player/party creation and player/pet profit remain OPEN/trapped.
   Arena bootstrap is not full server bootstrap; original reclaimer/ABI/JSS/
   Taiwan-v1 OPEN. Remote PENDING,0 promotions;11 predecessor report gates required.
+
+
+## 2026-10-10 — Accepted battle arena/rollback/enemy Finish receipt
+
+- STONEAGE-BATTLE-POOL-ACCEPTANCE-R1.json identifies tested
+  8178210c4babe0048a58f2297cc65482f8f3da18/tree
+  50875fa70d23025e61375906eb1cc425a510eefe, Action38024968843/
+  job114133769164; all21 steps,174 regressions/12 complete cmp gates succeed.
+- Report Git blob64810e2fa8d7e4c7356070c8c5bcc394abfeeec9, SHA256
+  421c5492f6d9352b5be263edd15eb93240c1d5499ec7d5f594c9b2c489c838f7.
+  Artifact11659098098 archive independently downloaded and digest verified:
+  sha256:59a25943bf0ae998f81d390ff8eb3eb5d680251b25657368f0c2768a36293a7c.
+  Sole report member and complete ordered log equal local bytes.
+- Original source/header/master bytes remain transient; accepted source pins,
+  harness/workflow/tests/report unchanged. Bounded failed-creation cleanup and
+  enemy-only Finish, explicit input/world collectors; successful player/party
+  creation and original reclaimer/full-server/ABI/JSS/Taiwan-v1 remain OPEN.

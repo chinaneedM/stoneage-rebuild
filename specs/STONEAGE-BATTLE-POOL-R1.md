@@ -1,6 +1,10 @@
 # Actual battle arena / creation rollback / enemy-only Finish R1
 
-Status: bounded local pass; remote acceptance pending. Two pinned descendant
+Status: bounded remote acceptance at tested HEAD
+8178210c4babe0048a58f2297cc65482f8f3da18, Action38024968843/job114133769164.
+174 regressions,12 complete report cmp gates and all21 job steps pass. Ordered
+logs and independently downloaded artifact match local bytes. Receipt:
+STONEAGE-BATTLE-POOL-ACCEPTANCE-R1.json. Two pinned descendant
 profiles execute actual original headers on GNU99 `-fgnu89-inline`, LP64
 pointer8/int4, O0/O2 with nonrecovering UBSan. No original released-build,
 JSS/Taiwan-v1 admission or modern runtime promotion follows from this gate.
