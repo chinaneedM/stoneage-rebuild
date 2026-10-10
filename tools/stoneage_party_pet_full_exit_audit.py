@@ -1,0 +1,103 @@
+"""Execute original real-header populated party/pet battle teardown and slot reuse.
+
+Extends the accepted actual original combined entry domain; cannot promote
+the original 1999 client or complete victory/profit without independent tests.
+"""
+from __future__ import annotations
+import argparse
+from pathlib import Path
+import subprocess
+import tempfile
+import hashlib
+import json
+
+from tools.stoneage_party_pet_realheader_audit import native as admission_native, patch_source
+from tools.stoneage_player_battle_audit import domain as solo_domain, pinned_identity, PIN_PATH
+from tools.stoneage_enemy_entry_exit_audit import compile_probe
+from tools.stoneage_enemy_loader_audit import specimen, loaded_oracle, eligible
+from tools.stoneage_guard_break2_source_audit import PINNED, LAYOUTS
+from tools.stoneage_enemy_loader_audit import pp_file
+from tools.stoneage_enemy_creation_audit import definition
+
+EXPECTED_INSERT=r"""
+  /* Owner exit must release paired pet without inventing a pet packet. */
+  int exit0=BATTLE_Exit(0,battle_at);
+  demand(exit0==0,"leader original Exit return");
+  demand(battle->Side[0].Entry[0].ENTRY_FIELD==-1,"leader slot released");
+  demand(battle->Side[0].Entry[5].ENTRY_FIELD==-1,"owned pet paired slot released");
+  demand(battle->Side[0].Entry[1].ENTRY_FIELD==1,"teammate retained until own Exit");
+  demand(slots[0].workint[CHAR_WORKBATTLEINDEX]==-1,"leader leave battle index");
+  demand(slots[0].workint[CHAR_WORKBATTLEMODE]==BATTLE_CHARMODE_FINAL,"leader FINAL on direct Exit");
+  demand(slots[2].workint[CHAR_WORKBATTLEINDEX]==-1,"paired pet leave battle index");
+  demand(slots[2].workint[CHAR_WORKBATTLEMODE]==BATTLE_CHARMODE_NONE,"pet NONE after owner Exit");
+  demand(slots[0].data[CHAR_DEFAULTPET]==0&&slots[0].unionTable.indexOfPet[0]==2,"owned pet preserved on Exit");
+  demand(slots[2].use,"owned pet remains live");
+  demand(searchObjectFromCharaIndex(0)==0&&searchObjectFromCharaIndex(1)==1,"world objects preserved after leader exit");
+  int exit1=BATTLE_Exit(1,battle_at);
+  demand(exit1==0,"party member original Exit return");
+  demand(battle->Side[0].Entry[1].ENTRY_FIELD==-1,"member slot released");
+  demand(slots[1].workint[CHAR_WORKBATTLEINDEX]==-1,"member leave battle index");
+  demand(slots[1].workint[CHAR_WORKBATTLEMODE]==BATTLE_CHARMODE_FINAL,"member FINAL on direct Exit");
+  BATTLE_ExitAll(battle_at);
+  int del=BATTLE_DeleteBattle(battle_at);
+  demand(del==0,"original arena delete");
+  demand(BattleArray[battle_at].use==0,"battle pool freed");
+  demand(Battle_getTotalBattleNum()==0,"battle total freed");
+  demand(slots[2].use&&slots[0].use&&slots[1].use,"three living actors preserved");
+  printf("\nREAL_HEADER_EXIT|array=%d|mode=%d|battle=%d|leader_slot=-1|member_slot=-1|pet_slot=-1|pet_mode=NONE|owned=2|battle_deleted=1\n",array,mode,battle_at);
+"""
+MARKER=r"""   /* Exit is intentionally not asserted by this first admission gate.
+     The accepted solo teardown is not equivalent to populated pet Exit. */
+"""
+def make_native(profile,source):
+    original=admission_native(profile,source)
+    if original.count(MARKER)!=1:raise ValueError("accepted admission body changed")
+    return original.replace(MARKER,EXPECTED_INSERT,1)
+
+def main():
+    ap=argparse.ArgumentParser()
+    for p in PINNED:ap.add_argument("--"+p+"-dir",type=Path,required=True)
+    args=ap.parse_args()
+    roots={p:getattr(args,p+"_dir") for p in PINNED}
+    for p,root in roots.items():
+        if subprocess.check_output(["git","-C",str(root),"rev-parse","HEAD"],text=True).strip()!=PINNED[p]:
+            raise ValueError("source pin drift "+p)
+        if subprocess.check_output(["git","-C",str(root),"status","--porcelain"],text=True).strip():
+            raise ValueError("dirty source "+p)
+    paths,receipt=specimen(roots["gavin"])
+    accepted=json.loads(PIN_PATH.read_text())
+    if receipt!=accepted["preserved_specimen"]:raise ValueError("specimen drift")
+    for profile in ("gavin","bismarck"):
+        source,identity,*_=solo_domain(profile,roots[profile])
+        if pinned_identity(identity)!=accepted["profiles"][profile]["identity"]:
+            raise ValueError("accepted solo source drift")
+        source=patch_source(source,profile)
+        source+="\n"+definition(pp_file(profile,roots[profile],LAYOUTS[profile]/"battle/battle.c"),"BATTLE_Index2No")+"\n"
+        loader=identity["accepted_pool_identity"]["accepted_entry_identity"]["accepted_ownership_identity"]["accepted_loader_identity"]
+        temps,enemies=loaded_oracle(profile,loader,*[p.read_bytes() for p in paths],32,32)
+        _,_,_,_,_,ride=solo_domain(profile,roots[profile])
+        selection=eligible(loader,temps,enemies,ride)[0]
+        native=make_native(profile,source)
+        with tempfile.TemporaryDirectory(prefix="stoneage-realheader-party-exit-") as d:
+            observations=[]
+            for opt in ("-O0","-O2"):
+                exe=Path(d)/("probe"+opt)
+                compile_probe(profile,roots[profile],native,exe,opt,
+                    [x for x in accepted["profiles"][profile]["unreachable_traps"] if x!="BATTLE_Index2No"])
+                run=subprocess.run([str(exe),*map(str,paths)],input=f"{selection} 0\n",capture_output=True,text=True)
+                if run.returncode or any(not line.startswith("TRACE|") for line in run.stderr.splitlines() if line.strip()):
+                    raise ValueError("actual original party/pet Exit "+profile+" "+opt+
+                                     " rc="+str(run.returncode)+" stderr="+run.stderr[-7000:]+
+                                     " stdout="+run.stdout[-2000:])
+                if run.stdout.count("REAL_HEADER_ENTRY|")!=1 or run.stdout.count("REAL_HEADER_EXIT|")!=1:
+                    raise ValueError("missing actual entry/exit outputs")
+                observations.append(run.stdout)
+            if observations[0]!=observations[1]:
+                raise ValueError("actual original populated player/pet Exit optimization mismatch")
+            print("PROFILE|"+profile+"|original_sources=PINNED|cycles=2|optimizations=O0,O2|sha256="+
+                  hashlib.sha256(observations[0].encode()).hexdigest(),flush=True)
+            for line in observations[0].splitlines():
+                if line.startswith("REAL_HEADER_ENTRY|") or line.startswith("REAL_HEADER_EXIT|"):
+                    print("ACTUAL|"+profile+"|"+line,flush=True)
+    print("RESOLUTION|ORIGINAL_REAL_HEADER_PARTY_PET_EXIT_AND_DELETE_BOUNDED_PASS_NO_PROFIT_CLAIM",flush=True)
+if __name__=="__main__":main()

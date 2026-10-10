@@ -1,0 +1,49 @@
+name: Validate StoneAge original party pet real-header full Exit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-party-pet-full-exit.yml"
+      - "tools/stoneage_party_pet_full_exit_audit.py"
+      - "tests/test_stoneage_party_pet_full_exit.py"
+permissions:
+  contents: read
+jobs:
+  original-exit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Structural guards for party and pet Exit path
+        run: python -m unittest -v tests.test_stoneage_party_pet_full_exit tests.test_stoneage_party_pet_realheader tests.test_stoneage_player_battle
+      - name: Recover pinned original source in transient checkout
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_guard_break2_source_audit import PINNED
+          repos={"gavin":"gavinlinasd/StoneAge","iris":"iriselia/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for profile,sha in PINNED.items():
+              path=Path("/tmp/stoneage-party-full-exit")/profile
+              subprocess.run(["git","init",str(path)],check=True)
+              subprocess.run(["git","-C",str(path),"remote","add","origin","https://github.com/"+repos[profile]+".git"],check=True)
+              subprocess.run(["git","-C",str(path),"fetch","--depth","1","origin",sha],check=True)
+              subprocess.run(["git","-C",str(path),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Run exact original player teammate pet Exit and battle delete
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_full_exit_audit --gavin-dir /tmp/stoneage-party-full-exit/gavin --iris-dir /tmp/stoneage-party-full-exit/iris --bismarck-dir /tmp/stoneage-party-full-exit/bismarck > /tmp/stoneage-party-full-exit.txt
+          cat /tmp/stoneage-party-full-exit.txt
+          grep -F "RESOLUTION|ORIGINAL_REAL_HEADER_PARTY_PET_EXIT_AND_DELETE_BOUNDED_PASS_NO_PROFIT_CLAIM" /tmp/stoneage-party-full-exit.txt
+          test "$(grep -c '^ACTUAL|.*|REAL_HEADER_EXIT|' /tmp/stoneage-party-full-exit.txt)" -eq 2
+          test "$(grep -c '^ACTUAL|.*|REAL_HEADER_ENTRY|' /tmp/stoneage-party-full-exit.txt)" -eq 2
+      - name: Upload derived source-free result
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-party-full-exit
+          path: /tmp/stoneage-party-full-exit.txt
