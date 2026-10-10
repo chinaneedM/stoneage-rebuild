@@ -93,7 +93,7 @@ OBSERVATIONS = r"""
   dprintf(2,"TRACE|FLAG_VARIANT|scenario=%d|post_exit=%d\n",scenario,!!(slots[2].flg[CHAR_ISDIE/8]&(1u<<(CHAR_ISDIE%8))));
   demand(!(slots[2].flg[CHAR_ISDIE/8]&(1u<<(CHAR_ISDIE%8))),"variant pet death flag reset by original Exit");
   demand(searchObjectFromCharaIndex(0)==0&&searchObjectFromCharaIndex(1)==1,"variant world actors retained after Exit");
-  printf("MATRIX|scenario=%d|mode=%d|battle=%d|member=%d|pet=%d|default=%d|owned=%d|pet_HP=%d|pet_dead=%d|pet_exp=%d|arena_freed=1\n",
+  printf("\nMATRIX|scenario=%d|mode=%d|battle=%d|member=%d|pet=%d|default=%d|owned=%d|pet_HP=%d|pet_dead=%d|pet_exp=%d|arena_freed=1\n",
     scenario,mode,battle_at,want_member,want_pet,slots[0].data[CHAR_DEFAULTPET],
     slots[0].unionTable.indexOfPet[0],slots[2].data[CHAR_HP],
     !!(slots[2].flg[CHAR_ISDIE/8]&(1u<<(CHAR_ISDIE%8))),slots[2].workint[CHAR_WORKGETEXP]);
@@ -163,7 +163,7 @@ def main():
                                      " stderr="+run.stderr[-4500:]+
                                      " symbols="+trace+" stdout="+run.stdout[-1700:])
                 lines=[l for l in run.stdout.splitlines() if l.startswith("MATRIX|")]
-                if len(lines)!=len(SCENARIOS):raise ValueError("missing negative matrix cases "+profile)
+                if len(lines)!=len(SCENARIOS):raise ValueError("missing negative matrix cases "+profile+" rows="+str(len(lines))+" stdout_tail="+run.stdout[-1700:])
                 for i,l in enumerate(lines):
                     if f"|scenario={i}|mode={i%4}|battle={i%3}|" not in l:
                         raise ValueError("negative matrix sequence/cursor "+profile+" "+str(i))
