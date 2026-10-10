@@ -18,7 +18,7 @@ class LethalLoopTests(unittest.TestCase):
  def test_both_profile_source_injection(self):
   for profile,entry in (("gavin","charaindex"),("bismarck","char_index")):
    accepted=ATTACK_OBSERVATIONS.replace("ENTRY_FIELD",entry)
-   with patch("tools.stoneage_party_pet_original_lethal_loop_audit.attack.attack_native",return_value=("prefix"+accepted+"suffix",False)):
+   with patch("tools.stoneage_party_pet_original_lethal_loop_audit.attack.attack_native",return_value=("prefix"+accepted+"suffix",False)),patch("tools.stoneage_party_pet_original_lethal_loop_audit.attack.pp_file",return_value="int CHAR_setMaxExp(int x,unsigned long y){return y;}"):
     compiled,has_lua=lethal_round_native(profile,"","","","")
    self.assertIn(accepted,compiled)
    self.assertIn("REAL_HEADER_LETHAL_LOOP|",compiled)
