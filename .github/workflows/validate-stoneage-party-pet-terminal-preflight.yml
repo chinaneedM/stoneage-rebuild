@@ -1,0 +1,48 @@
+name: Validate StoneAge original party pet terminal source preflight
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-party-pet-terminal-preflight.yml"
+      - "tools/stoneage_party_pet_terminal_path_preflight.py"
+      - "tests/test_stoneage_party_pet_terminal_path_preflight.py"
+permissions:
+  contents: read
+jobs:
+  terminal-source-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Regression and strict terminal-source contract tests
+        run: python -m unittest -v tests.test_stoneage_party_pet_terminal_path_preflight tests.test_stoneage_party_pet_original_attack
+      - name: Recover unchanged pinned descendant sources outside repository
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_party_pet_terminal_path_preflight import PINNED
+          repos={"gavin":"gavinlinasd/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for profile in repos:
+              path=Path("/tmp/stoneage-party-pet-terminal-preflight")/profile
+              subprocess.run(["git","init",str(path)],check=True)
+              subprocess.run(["git","-C",str(path),"remote","add","origin","https://github.com/"+repos[profile]+".git"],check=True)
+              subprocess.run(["git","-C",str(path),"fetch","--depth","1","origin",PINNED[profile]],check=True)
+              subprocess.run(["git","-C",str(path),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Verify original complete terminal bodies and bounded call routes
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_terminal_path_preflight --gavin-dir /tmp/stoneage-party-pet-terminal-preflight/gavin --bismarck-dir /tmp/stoneage-party-pet-terminal-preflight/bismarck > /tmp/stoneage-party-pet-terminal-preflight.txt
+          cat /tmp/stoneage-party-pet-terminal-preflight.txt
+          grep -Fx 'RESOLUTION|ORIGINAL_PARTY_PET_TERMINAL_PATH_SOURCE_PREFLIGHT_PASS' /tmp/stoneage-party-pet-terminal-preflight.txt
+          test "$(grep -c '^SOURCE_PROFILE|' /tmp/stoneage-party-pet-terminal-preflight.txt)" -eq 2
+      - name: Upload only derived source call matrices
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-party-pet-terminal-source-preflight
+          path: /tmp/stoneage-party-pet-terminal-preflight.txt
