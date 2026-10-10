@@ -153,6 +153,9 @@ def patch_source(src,profile):
         if expected not in src:
             raise ValueError("collector anchor drift "+counter)
         src=src.replace(expected,replacement,1)
+    fd='int getfdFromCharaIndex(int actor){if(actor!=0)abort();fd_count++;return -1;}'
+    if src.count(fd)!=1:raise ValueError('original solo fd collector drift')
+    src=src.replace(fd,fd.replace('actor!=0','actor!=0&&actor!=1'))
     return src
 
 def native(profile,source):
