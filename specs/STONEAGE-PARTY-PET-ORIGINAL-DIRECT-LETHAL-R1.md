@@ -1,6 +1,6 @@
 # Original controlled direct lethal hit — runtime candidate R1
 
-**Status: PENDING Actions native execution.** Build from the accepted complete
+**Status: REMOTE ACCEPTED — bounded direct native lethal hit only.** Build from the accepted complete
 real-header nonterminal attack driver and both pinned descendant source profiles.
 This candidate preserves original Attack/AttackSeq/DamageSub function bodies
 and original seven-actor arena, input, guard, and original Exit controls.
@@ -21,3 +21,13 @@ must each be independently connected and proven. The static source preflight
 from the prior milestone is not substitute evidence. Candidate remains OPEN
 until CI and original observed effects support it. Never promote partial
 execution or source-only calls to runtime FACT.
+
+
+## Verified remote evidence
+
+Actions 38057154113 (17 tests, ten successful steps) and predecessor
+38057154180 both pass. Both original pinned profiles reach HP0 from controlled
+HP60 and increment DAMAGECOUNT exactly once under direct BATTLE_Attack;
+16 direct native calls total across O0/O2 and arena reuse. O0/O2 complete
+output traces are byte-equal by profile. This is not a completed lethal
+Loop/Battling turn or a claim about FinishSet, winside or positive rewards.

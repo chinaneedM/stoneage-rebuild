@@ -10801,3 +10801,50 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   sentinel boundaries, full actor/arena effect oracles and O0/O2 UBSan.
   specs/STONEAGE-PARTY-PET-ORIGINAL-TERMINAL-PREFLIGHT-R1.md documents
   ordered gates. Preserve unresolved source variant and historical boundaries.
+
+
+## 2026-10-10 — Original real-header controlled direct lethal attack REMOTE ACCEPTED
+
+- Fresh remote main6efb40d177f1062aed2f131747fb99570eeaa311,
+  tree038dde54335078cd5510202effc416207096cf96. Original
+  full CURRENT-STATE blob bd38e53a4ac9228b2b832e8a312ff9cc71187d9d
+  preserved verbatim before this append. Prior terminal source-only preflight
+  and all preceding evidence remain independently recorded.
+- Accepted original source/test/workflow/spec commit
+  8e2b0a23b225f299b238ae16d97b53f5e194f862, tree
+  cad766152f5e11f13b222c97fb420375e4c8d45d, branch
+  agent/party-pet-original-lethal-direct-r1-20261010.
+  Native Action38057154113/job114227859977 SUCCESS,10 steps,
+  17 regression tests. Original ordinary attack predecessor Action38057154180/
+  job114227860341 also SUCCESS. Both pin clean original Gavin1f90cb6 and
+  Bismarck999ffdf1 source profiles with GNU99 real headers, nonrecovering
+  UBSan O0/O2 and complete output-byte identity per profile.
+- Additive **direct** unchanged original BATTLE_Attack(battle,leader0,live
+  targetNo) after restored guard/nonterminal controls. Enemy actor read
+  from live allocator Side1 Entry5 and target round-tripped through original
+  Index2No/No2Index, not a fixed entity. Accepted recomputed leader attack100,
+  enemy defense40 and maxHP525; explicitly prepared enemy HP60, controlled
+  RNG2147483647; one guarded ordinary physical attack reaches enemy HP0
+  and original DAMAGECOUNT increments exactly1. Four arena modes0,1,2,0
+  per profile/optimization,16 native direct lethal invocations total.
+  Eight representative ACTUAL markers printed from optimization reference;
+  O0/O2 runs byte-equal. Existing nonterminal attack and guard controls
+  still execute; restored baseline before inherited Exit/Delete/pool reuse.
+  Full trace SHA256 Gavin4295779af6a111b1630c636112ed5897c20a0b361c17ce1c53db61e1f1cf5fdc,
+  Bismarck54b3361bcad2c1ce2ff9d6c0af57c9b7aec25f3b8e5fd81d0f8f1d815db28142.
+  GitHub-reported artifact11671743152 digest
+  sha256:4835d9336b24d44f1aeb153141c666b163b607375925793653726995b3206929;
+  no independent ZIP/report byte verification for this run.
+- Scope: actual direct original physical lethal hit and HP floor **only**,
+  not fully scheduled all-ready lethal Loop/Battling/Command round.
+  Enemy death-flags/alive bookkeeping, winning side, FinishSet,
+  next Loop/Finish, positive GetProfit and terminal cleanup sequence remain
+  unexecuted OPEN. Also no natural AI or server/net/Lua, executable ABI
+  or historical JSS1999/Taiwan-v1 equivalence inferred. No pressure
+  promotions:2486=2465 closed capability+18 OPEN+3 historical UB.
+- Highest NEXT: compose lethal hit with actual original all-ready
+  BATTLE_Loop/Command/Battling, isolate death/alive/winside and FinishSet
+  state effects, then separately execute original next Loop/Finish,
+  positive EXP/gold/items and Exit/Delete on bounded profiles.
+  Source-profile WinFunc sentinel difference remains versioned and
+  cannot substitute for runtime evidence. No modern implementation stage.

@@ -1,0 +1,78 @@
+{
+  "gate": "STONEAGE_PARTY_PET_ORIGINAL_DIRECT_LETHAL_R1",
+  "status": "REMOTE_ACCEPTED_BOUNDED_DIRECT_PHYSICAL_LETHAL_NOT_TERMINAL_FINISH",
+  "tested_commit": "8e2b0a23b225f299b238ae16d97b53f5e194f862",
+  "tested_tree": "cad766152f5e11f13b222c97fb420375e4c8d45d",
+  "branch": "agent/party-pet-original-lethal-direct-r1-20261010",
+  "baseline_main": "6efb40d177f1062aed2f131747fb99570eeaa311",
+  "previous_current_state_blob": "bd38e53a4ac9228b2b832e8a312ff9cc71187d9d",
+  "previous_current_state_characters": 1170165,
+  "native_action": {
+    "run_id": 38057154113,
+    "job_id": 114227859977,
+    "conclusion": "success",
+    "steps_passed": 10,
+    "unit_tests_passed": 17,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38057154113"
+  },
+  "predecessor_action": {
+    "run_id": 38057154180,
+    "job_id": 114227860341,
+    "conclusion": "success",
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38057154180"
+  },
+  "native_profiles": {
+    "gavin": {
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "o0_o2_trace_sha256": "4295779af6a111b1630c636112ed5897c20a0b361c17ce1c53db61e1f1cf5fdc"
+    },
+    "bismarck": {
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "o0_o2_trace_sha256": "54b3361bcad2c1ce2ff9d6c0af57c9b7aec25f3b8e5fd81d0f8f1d815db28142"
+    }
+  },
+  "controlled_scope": {
+    "enemy_count": 1,
+    "live_target": true,
+    "player_attack_work": 100,
+    "enemy_defense_work": 40,
+    "enemy_maxhp": 525,
+    "enemy_initial_hp": 60,
+    "enemy_final_hp": 0,
+    "enemy_damagecount_increment": 1,
+    "normal_guarded_damage_reference": 73,
+    "fixed_rng": 2147483647,
+    "direct_lethal_invocations": 16,
+    "arena_cursor": [
+      0,
+      1,
+      2,
+      0
+    ],
+    "optimizations": [
+      "-O0",
+      "-O2"
+    ],
+    "nonterminal_regressions_retained": true,
+    "original_functions_unchanged": true,
+    "source_observed_realheader": true
+  },
+  "original_death_flag_claim": false,
+  "all_ready_lethal_Battling_executed": false,
+  "FinishSet_executed": false,
+  "Finish_executed": false,
+  "positive_profit_executed": false,
+  "artifact": {
+    "id": 11671743152,
+    "github_reported_archive_digest": "sha256:4835d9336b24d44f1aeb153141c666b163b607375925793653726995b3206929",
+    "independent_zip_verified": false
+  },
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "highest_next": "native full Loop lethal death/alive/winside/FinishSet, then original terminal Finish/profit/Exit under separate acceptance"
+}
