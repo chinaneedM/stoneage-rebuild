@@ -11,6 +11,8 @@ class RealHeaderAdmissionTests(unittest.TestCase):
  def test_scoped_profile_collectors(self):
   s="".join(f"if(charaindex!=0)abort();{c}++;" for c in ("ca_count","cd_count","status_count","skill_count"))
   s+='int getfdFromCharaIndex(int actor){if(actor!=0)abort();fd_count++;return -1;}'
+  s+='void CHAR_sendWatchEvent(int index,int act,int *opt,int len,int mine){if(index!=0||act!=CHAR_ACTBATTLE||!opt||len!=3||mine!=1)abort();}'
+  self.assertIn("index!=0&&index!=1",patch_source(s,"gavin"))
   self.assertIn("actor!=0&&actor!=1",patch_source(s,"gavin"))
   for c in ("ca_count","cd_count","status_count","skill_count"):
    self.assertIn("charaindex!=0&&charaindex!=1",patch_source(s,"gavin"))
