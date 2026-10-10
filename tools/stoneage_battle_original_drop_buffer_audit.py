@@ -59,6 +59,15 @@ MORE=r"""
    expected_arena.Side[0].Entry[0].getitem[1]=3;
    expected_pool[241].use=0;expected_draws=3;
   }
+  if(scenario==2){
+   int bagrefs=0;
+   for(int actor=0;actor<2;actor++)for(int j=0;j<CHAR_MAXITEMHAVE;j++)
+    if(CHAR_getItemIndex(actor,j)==241)bagrefs++;
+   int maydelete=BATTLE_ItemDelCheck(241);
+   printf("DROP_BUFFER_OLD_ITEM_GUARD|item=241|bag_refs=%d|deletion_allowed=%d|item_use=%d|owner=%d\\n",
+          bagrefs,maydelete,reward_items[241].use,reward_items[241].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX]);
+   fflush(stdout);
+  }
   rng_mode=scenario==2?1:0;rng_count=0;
   int result=BATTLE_AddExpItem(battle_at,lists);
   demand(result==0,"real original AddExpItem overflow or pet ticket returns success");
