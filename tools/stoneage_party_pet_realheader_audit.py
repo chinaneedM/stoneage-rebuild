@@ -134,7 +134,7 @@ SETUP
   demand(slots[2].workint[CHAR_WORKGETEXP]==0,"pet exp");
   demand(slots[0].data[CHAR_DEFAULTPET]==0&&slots[0].unionTable.indexOfPet[0]==2,"pet selection retained");
   demand(searchObjectFromCharaIndex(0)==0&&searchObjectFromCharaIndex(1)==1,"world actor ownership");
-  printf("REAL_HEADER_ENTRY|array=%d|mode=%d|battle=%d|leader=0|member=1|pet=2|pet_bid=5|GETEXP=0\n",array,mode,battle_at);
+  printf("\nREAL_HEADER_ENTRY|array=%d|mode=%d|battle=%d|leader=0|member=1|pet=2|pet_bid=5|GETEXP=0\n",array,mode,battle_at);
   /* Exit is intentionally not asserted by this first admission gate.
      The accepted solo teardown is not equivalent to populated pet Exit. */
   break;
