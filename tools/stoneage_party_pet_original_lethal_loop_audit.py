@@ -67,7 +67,8 @@ def lethal_round_native(profile,source,battle,event,root):
     if native.count(entry)!=1:
         raise ValueError("original native main entry drift")
     original_pet_die=attack.definition(battle,"Pet_Check_Die")
-    native=native.replace(entry,original_set_max_exp+"\n"+original_pet_die+"\n"+entry,1)
+    original_normal_dead=attack.definition(battle,"BATTLE_NormalDeadExtra")
+    native=native.replace(entry,original_set_max_exp+"\n"+original_pet_die+"\n"+original_normal_dead+"\n"+entry,1)
     return native.replace(anchor,anchor+LETHAL_ROUND_OBSERVATIONS.replace(
         "ENTRY_FIELD","char_index" if profile=="bismarck" else "charaindex",
     ),1),has_lua
