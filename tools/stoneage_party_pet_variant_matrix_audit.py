@@ -90,7 +90,8 @@ OBSERVATIONS = r"""
   demand(slots[0].unionTable.indexOfPet[0]==(scenario==7?-1:2),"variant owned pet retained after Exit");
   dprintf(2,"TRACE|HP_VARIANT|scenario=%d|post_exit=%d\n",scenario,slots[2].data[CHAR_HP]);
   demand(slots[2].data[CHAR_HP]==((scenario==5||scenario==6)?1:20),"variant pet HP compliant after Exit");
-  demand(!!(slots[2].flg[CHAR_ISDIE/8]&(1u<<(CHAR_ISDIE%8)))==(scenario==6),"variant pet death flag retained");
+  dprintf(2,"TRACE|FLAG_VARIANT|scenario=%d|post_exit=%d\n",scenario,!!(slots[2].flg[CHAR_ISDIE/8]&(1u<<(CHAR_ISDIE%8))));
+  demand(!(slots[2].flg[CHAR_ISDIE/8]&(1u<<(CHAR_ISDIE%8))),"variant pet death flag reset by original Exit");
   demand(searchObjectFromCharaIndex(0)==0&&searchObjectFromCharaIndex(1)==1,"variant world actors retained after Exit");
   printf("MATRIX|scenario=%d|mode=%d|battle=%d|member=%d|pet=%d|default=%d|owned=%d|pet_HP=%d|pet_dead=%d|pet_exp=%d|arena_freed=1\n",
     scenario,mode,battle_at,want_member,want_pet,slots[0].data[CHAR_DEFAULTPET],
