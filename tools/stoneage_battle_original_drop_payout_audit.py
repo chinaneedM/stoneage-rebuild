@@ -66,7 +66,7 @@ PAYOUT=r"""
    demand(!memcmp(expected_items,reward_items,sizeof expected_items),
           "complete 256 native item records as original source payout or full-bag release");
    demand(ITEM_COUNT==expected_live,"exact native live item count after original source payout");
-   demand(!memcmp(expected_arena,arena,sizeof expected_arena),
+   demand(!memcmp(&expected_arena,arena,sizeof expected_arena),
           "whole native BATTLE arena and all three tickets exact after GetExpGold");
    if(memcmp(expected_actors,slots,sizeof expected_actors)){
       for(int actor=0;actor<7;actor++)for(int j=0;j<CHAR_WORKDATAINTNUM;j++)
