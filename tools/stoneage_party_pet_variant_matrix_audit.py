@@ -87,6 +87,7 @@ OBSERVATIONS = r"""
   demand(slots[0].use&&slots[1].use&&slots[2].use,"variant original actors retained");
   demand(slots[0].data[CHAR_DEFAULTPET]==want_selection,"variant selected pet retained after Exit");
   demand(slots[0].unionTable.indexOfPet[0]==(scenario==7?-1:2),"variant owned pet retained after Exit");
+  dprintf(2,"TRACE|HP_VARIANT|scenario=%d|post_exit=%d\\n",scenario,slots[2].data[CHAR_HP]);
   demand(slots[2].data[CHAR_HP]==(scenario==5?0:20),"variant pet HP retained");
   demand(!!(slots[2].flg[CHAR_ISDIE/8]&(1u<<(CHAR_ISDIE%8)))==(scenario==6),"variant pet death flag retained");
   demand(searchObjectFromCharaIndex(0)==0&&searchObjectFromCharaIndex(1)==1,"variant world actors retained after Exit");
